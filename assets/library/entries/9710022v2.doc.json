@@ -1,0 +1,2780 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "9710022v2",
+  "title": "plancherelfinal.dvi",
+  "variant": "pdf",
+  "pages": 60,
+  "tocSource": "none",
+  "tocMethod": null,
+  "toc": [],
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 161,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum lorentz",
+          "heading": false
+        },
+        {
+          "term": "montpellier",
+          "heading": false
+        },
+        {
+          "term": "roche",
+          "heading": false
+        },
+        {
+          "term": "cern",
+          "heading": false
+        },
+        {
+          "term": "lorentz group",
+          "heading": false
+        }
+      ],
+      "extract": "q-alg/9710022 v2 18 Jan 1999 Harmonic Analysis on the quantum Lorentz group E. Buffenoir* Laboratoire de Physique Mathématique et Théorique! Université Montpellier 2, Place Eugéne Bataillon 34000 Montpellier France Ph. Roche? TH Division CERN, CH-1211 Geneva 23 Switzerland on leave from CPT Ecole Polytechnique’ 91128 Palaiseau Cedex France January 18, 1999 Abstract This work begins with a review of complexification",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-001"
+      ]
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 731,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "combinatorial quantization",
+          "heading": false
+        },
+        {
+          "term": "canonical quantization",
+          "heading": false
+        },
+        {
+          "term": "non compact",
+          "heading": false
+        },
+        {
+          "term": "quantum gravity",
+          "heading": false
+        },
+        {
+          "term": "harmonic analysis",
+          "heading": false
+        },
+        {
+          "term": "compact group",
+          "heading": false
+        },
+        {
+          "term": "chern-simons theory",
+          "heading": false
+        },
+        {
+          "term": "compact case",
+          "heading": false
+        }
+      ],
+      "extract": "1 Introduction Our interest in the subject of harmonic analysis on SLq(2,C)g stems from our desire to apply the program of combinatorial quantization of Chern-Simons theory [18, 1, 9] to the case where the quantum group is a quantization of a non compact group. By SL,(2,C)z we mean a quantization, for q real, of the group SL(2,C) considered as a real Lie group. We have kept in mind that there is a close relationship",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-002"
+      ]
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 652,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "realification",
+          "heading": false
+        },
+        {
+          "term": "complexification",
+          "heading": false
+        },
+        {
+          "term": "star structure",
+          "heading": false
+        },
+        {
+          "term": "hopf algebras",
+          "heading": false
+        },
+        {
+          "term": "complex conjugate",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        },
+        {
+          "term": "vector space",
+          "heading": false
+        },
+        {
+          "term": "coalgebra",
+          "heading": false
+        }
+      ],
+      "extract": "like the description of characters and the Plancherel theorem, which would have been hard to obtain outside this formulation. It will be clear to the reader that our constructions and proofs can be generalized, with some work, to the case of the quantization of any complex group. We have only analysed the case where q is real. Although the study of SL,(2,C)p, when q is any complex number, is of great physical",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-003"
+      ]
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 755,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "involutive antimorphism",
+          "heading": false
+        },
+        {
+          "term": "antilinear involutive",
+          "heading": false
+        },
+        {
+          "term": "envelopping algebra",
+          "heading": false
+        },
+        {
+          "term": "universal envelopping",
+          "heading": false
+        },
+        {
+          "term": "star structure",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "quasi-hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "real lie",
+          "heading": false
+        }
+      ],
+      "extract": "to A© by C linearity. It is the process of realification which cannot be straightforwardly generalized. Indeed if V is a C coalgebra, and A: V > V @c V is the coproduct, then the restriction of the field naturally defines a vector space Vg but the restriction of the coproduct that we will denote Ap maps Ve to (V @c V)p and this space is not canonically embedded in Vg ®g Ve. So unless A satisfies very specific",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-004"
+      ]
+    },
+    {
+      "id": "page-005",
+      "number": null,
+      "title": "Page 5",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 681,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "real hopf",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "star structure",
+          "heading": false
+        },
+        {
+          "term": "real forms",
+          "heading": false
+        },
+        {
+          "term": "pure imaginary",
+          "heading": false
+        },
+        {
+          "term": "litterature",
+          "heading": false
+        },
+        {
+          "term": "mop",
+          "heading": false
+        },
+        {
+          "term": "commutation relations",
+          "heading": false
+        }
+      ],
+      "extract": "Unfortunately no simple formula for F is known up to now. This definition appears restricted in the litterature and usually only Fy, = 1 and F_ = 1 are considered, this is also the choice we will take in this article. This restriction has two drawbacks, first it will generate an assymmetry in the quasitriangular case between (C'+) and (C—) and it will restrict severely the value of the deformation parameter. It is",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-005"
+      ]
+    },
+    {
+      "id": "page-006",
+      "number": null,
+      "title": "Page 6",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 522,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quasitriangular hopf",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "star structure",
+          "heading": false
+        },
+        {
+          "term": "coproduct defined",
+          "heading": false
+        },
+        {
+          "term": "real form",
+          "heading": false
+        },
+        {
+          "term": "resp",
+          "heading": false
+        },
+        {
+          "term": "type",
+          "heading": false
+        },
+        {
+          "term": "endowed",
+          "heading": false
+        }
+      ],
+      "extract": "equal to (A,m, A?) with A°? = a o A, where o is the permutation operator. Let A be a Hopf algebra, and A the Hopf algebra with coproduct A defined by A(@) = 3) @ ® G@. As soon as A is endowed with a * structure of type (C'+) we can identify A with A? using for example the isomorphisms of Hopf algebra: pt : A > A”, a ++ S#!(a*). If x is a representation of A acting on a vector space V, we can define the",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-006"
+      ]
+    },
+    {
+      "id": "page-007",
+      "number": null,
+      "title": "Page 7",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 502,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quasitriangular hopf",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "r'r",
+          "heading": false
+        },
+        {
+          "term": "star structure",
+          "heading": false
+        },
+        {
+          "term": "ifa",
+          "heading": false
+        },
+        {
+          "term": "quantum double",
+          "heading": false
+        },
+        {
+          "term": "drinfeld",
+          "heading": false
+        },
+        {
+          "term": "invertible",
+          "heading": false
+        }
+      ],
+      "extract": "The quantum double of a Hopf algebra is a particular case of this construction. Let A be a Hopf algebra of finite dimension, let e; be any choice of basis of A and let us denote by e’ the dual basis, we define C to be the Hopf algebra C = A* @p Agp where F~! = Yo, e; @ e’. It is easy to show that F = 7, e; ® Sy/e? satisfies (12). The quantum double is by definition the quasitriangular Hopf algebra D(A) = C* with R",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-007"
+      ]
+    },
+    {
+      "id": "page-008",
+      "number": null,
+      "title": "Page 8",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 485,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "adjoint actions",
+          "heading": false
+        },
+        {
+          "term": "hermitian product",
+          "heading": false
+        },
+        {
+          "term": "define hermitian",
+          "heading": false
+        },
+        {
+          "term": "rory",
+          "heading": false
+        },
+        {
+          "term": "vae",
+          "heading": false
+        },
+        {
+          "term": "star structure",
+          "heading": false
+        },
+        {
+          "term": "realification",
+          "heading": false
+        }
+      ],
+      "extract": "An action (or antiaction) satisfying the last property will be called derivation. We can define two other actions, called adjoint actions, of A on A* defined as follows: ad* 41 * ap b= > < S*\"(a1),b1 > bg < a2,b3 >, Vae A,Vb € A*. (27) (a),(6) Note that, unless the coproduct on A is cocommutative, these adjoint actions are not derivations. We will make a constant use of the following property: let b be an element of",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-008"
+      ]
+    },
+    {
+      "id": "page-009",
+      "number": null,
+      "title": "Page 9",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 384,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "factorizable hopf",
+          "heading": false
+        },
+        {
+          "term": "star hopf",
+          "heading": false
+        },
+        {
+          "term": "star structure",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "realification",
+          "heading": false
+        },
+        {
+          "term": "quasitriangular",
+          "heading": false
+        },
+        {
+          "term": "quantum double",
+          "heading": false
+        }
+      ],
+      "extract": "It is still possible to twist this construction and we will use for this purpose the construction of =o twisted product. Let Q be an invertible element of A ” @ A such that (Azer ® id)(Q) = Q23Q13, (id @Aa)l(Q)=Q2Qis, Qi2 = Qa, (34) we will denote as usual A ®g A” the Hopf algebra obtained from A ®c A” by twisting. It is easy to show that this Hopf algebra can be endowed with a star structure of type C+ by the",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-009"
+      ]
+    },
+    {
+      "id": "page-010",
+      "number": null,
+      "title": "Page 10",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 529,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "star structure",
+          "heading": false
+        },
+        {
+          "term": "realification",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "lorentz group",
+          "heading": false
+        },
+        {
+          "term": "irr",
+          "heading": false
+        },
+        {
+          "term": "quantum deformation",
+          "heading": false
+        },
+        {
+          "term": "structure defined",
+          "heading": false
+        },
+        {
+          "term": "automorphisms",
+          "heading": false
+        }
+      ],
+      "extract": "A is the quantum double of A [36][13]. On the otherhand, if A is factorizable, endowed with a star structure of type C+, and if R satisfies the other condition R*®* = R-! then D(A) is isomorphic to A @c A with star structure defined by (a @ y)* = a* @ y*. Up to this point the reader can be puzzled by the fact that there exist more than one realification of a Hopf algebra depending on the choice of Q. In order to",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-010"
+      ]
+    },
+    {
+      "id": "page-011",
+      "number": null,
+      "title": "Page 11",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 424,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "clebsch-gordan maps",
+          "heading": false
+        },
+        {
+          "term": "clebsch-gordan coefficients",
+          "heading": false
+        },
+        {
+          "term": "trg",
+          "heading": false
+        },
+        {
+          "term": "dimv",
+          "heading": false
+        },
+        {
+          "term": "irr",
+          "heading": false
+        },
+        {
+          "term": "resp",
+          "heading": false
+        },
+        {
+          "term": "representations",
+          "heading": false
+        },
+        {
+          "term": "hom",
+          "heading": false
+        }
+      ],
+      "extract": "representation of spin 0 is associated to the counit. The representation of dimension 2/ + 1 and associated to w, (w* = 1) is Tt OT. K Let M be an element of End(V), we will define trg(M) = try (ji M). In particular the Vv q-dimension of the representation F is by definition [dx] = trg(1) = [2K + 1]. The tensor product of elements of Irr(A) behaves as in the classical case: I4Jd anr= @ &. (44) K=|I-J| aN It will be",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-011"
+      ]
+    },
+    {
+      "id": "page-012",
+      "number": null,
+      "title": "Page 12",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 334,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "indices labelling",
+          "heading": false
+        },
+        {
+          "term": "star hopf",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "pol",
+          "heading": false
+        },
+        {
+          "term": "unitarity",
+          "heading": false
+        },
+        {
+          "term": "letter",
+          "heading": false
+        }
+      ],
+      "extract": "We will define the linear forms id =< ed (Je: > and Pol(SU;(2)) the star Hopf algebra Tj generated as a vector space by (Ui) redztjijet.2r41 By a direct application of the definitions, we have ° IJ M ul U1U2 = Son U wy, (46) M A(ug) = Sout @ uy. (47) . The first equation implies the exchange relations WJ op g gy ts Riz uitz = ut Riv, (48) IIo, yg where R = (7 ®7)(R). Due to the unitarity of the elements of Irr(A),",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-012"
+      ]
+    },
+    {
+      "id": "page-013",
+      "number": null,
+      "title": "Page 13",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 445,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "star lie",
+          "heading": false
+        },
+        {
+          "term": "lie bialgebra",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        },
+        {
+          "term": "exchange relations",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "pol",
+          "heading": false
+        },
+        {
+          "term": "toy",
+          "heading": false
+        },
+        {
+          "term": "classical limit",
+          "heading": false
+        }
+      ],
+      "extract": "The first equation implies the exchange relations IJ I. J J I Id RL L® = LPL Ry» (56) I Explicit relations between generators of {q(su(2)) and matrix elements of I/*) are recalled in the Appendix. The quantum double of {,(su(2)) is the Hopf algebra D = {,(su(2))@Pol(SU,(2))?”. We will denote by of the elements ue embedded in Pol(SU,(2))°” C D. This is a star algebra with the following definition of star: (gt)* =",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-013"
+      ]
+    },
+    {
+      "id": "page-014",
+      "number": null,
+      "title": "Page 14",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 472,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dimensional irreducible",
+          "heading": false
+        },
+        {
+          "term": "dimensional representations",
+          "heading": false
+        },
+        {
+          "term": "finite dimensional",
+          "heading": false
+        },
+        {
+          "term": "trg",
+          "heading": false
+        },
+        {
+          "term": "factorization theorem",
+          "heading": false
+        },
+        {
+          "term": "chapter",
+          "heading": false
+        },
+        {
+          "term": "acting",
+          "heading": false
+        },
+        {
+          "term": "generators",
+          "heading": false
+        }
+      ],
+      "extract": "From a direct application of the factorization theorem, we have the following relations: Id I ,. Jy. J /. Top. yItd Ryu MS) = MSMR, (61) Id I ,. Jy. J. Ti .y\\Td ROMO MSP = MIP MOY RO (62) I J 1 J an I MUI Me) = Mer) (63) with i € {r,l},0,0' € {+,—}. This factorization theorem gives an immediate description of the finite dimensional repre- sentations of D. Indeed from the isomorphism of complex algebra between D and",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-014"
+      ]
+    },
+    {
+      "id": "page-015",
+      "number": null,
+      "title": "Page 15",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 663,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "let pol",
+          "heading": false
+        },
+        {
+          "term": "normed algebra",
+          "heading": false
+        },
+        {
+          "term": "fun",
+          "heading": false
+        },
+        {
+          "term": "compact matrix",
+          "heading": false
+        },
+        {
+          "term": "compact group",
+          "heading": false
+        },
+        {
+          "term": "matrix pseudo",
+          "heading": false
+        },
+        {
+          "term": "unitary representations",
+          "heading": false
+        },
+        {
+          "term": "matrix coefficients",
+          "heading": false
+        }
+      ],
+      "extract": "to give a detailed account of this theory but we will give a simple exposition of the main ideas and of the tools used in the rest of this work. The reader is urged to read the papers of Woronowicz [50], Podles and Woronowicz[36] and Van Daele [43, 44] where he will find a complete exposition of multiplier Hopf algebras as well as detailed proofs of the theorems. The aim of the theory of multipliers, applied to the",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-015"
+      ]
+    },
+    {
+      "id": "page-016",
+      "number": null,
+      "title": "Page 16",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 606,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "right multiplier",
+          "heading": false
+        },
+        {
+          "term": "left multiplier",
+          "heading": false
+        },
+        {
+          "term": "affiliated elements",
+          "heading": false
+        },
+        {
+          "term": "polynomial algebra",
+          "heading": false
+        },
+        {
+          "term": "non degenerate",
+          "heading": false
+        },
+        {
+          "term": "unit element",
+          "heading": false
+        },
+        {
+          "term": "continuous functions",
+          "heading": false
+        },
+        {
+          "term": "resp",
+          "heading": false
+        }
+      ],
+      "extract": "subspaces or the pointwise convergence. Unfortunately, because the notion of point looses its meaning in the quantum case, the generalization of weaker convergences cannot be directly generalized. So, contrary to the compact case, we cannot construct the algebra of continuous functions from a completion of the polynomial algebra. This is the major obstacle to define noncompact quantum group, the algebra of",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-016"
+      ]
+    },
+    {
+      "id": "page-017",
+      "number": null,
+      "title": "Page 17",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 566,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "affiliated",
+          "heading": false
+        },
+        {
+          "term": "multipliers",
+          "heading": false
+        },
+        {
+          "term": "unit element",
+          "heading": false
+        },
+        {
+          "term": "linear operator",
+          "heading": false
+        },
+        {
+          "term": "star",
+          "heading": false
+        },
+        {
+          "term": "bounded",
+          "heading": false
+        },
+        {
+          "term": "dense",
+          "heading": false
+        },
+        {
+          "term": "algebra",
+          "heading": false
+        }
+      ],
+      "extract": "When the algebra law is non degenerate the mappings M(A) > L(A), (p1,p2) + pi and M(A) > R(A), (p1, p2) 4 pe are easily seen to be injections, so it will be convenient to identify M(A) with a subspace of L(A) or with a subspace of R(A) (this should create no confusion). The equation (71) is rewritten (ap)b = a(pb) using all these identifications. Let us give two examples which should illuminate the construction.",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-017",
+        "library/9710022v2/blocks/ex-page-017-01",
+        "library/9710022v2/blocks/ex-page-017-02"
+      ]
+    },
+    {
+      "id": "page-018",
+      "number": null,
+      "title": "Page 18",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 663,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multiplier hopf",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "nen",
+          "heading": false
+        },
+        {
+          "term": "continuous functions",
+          "heading": false
+        },
+        {
+          "term": "discrete quantum",
+          "heading": false
+        },
+        {
+          "term": "invariant integral",
+          "heading": false
+        },
+        {
+          "term": "property holds",
+          "heading": false
+        },
+        {
+          "term": "norm",
+          "heading": false
+        }
+      ],
+      "extract": "Example 1. Let X be a locally compact space and let A = Funo(X) be the C* algebra of continuous functions which vanishes at infinity with norm |||] = sup, cx |f(«)|. The set of bounded multi- pliers of A is identified to the set of continuous bounded functions on X, whereas the affiliated elements are the set of complex continuous functions on X. In this example, we can define the star algebra Fun.(X) of compact",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-018",
+        "library/9710022v2/blocks/ex-page-018-01",
+        "library/9710022v2/blocks/ex-page-018-02"
+      ]
+    },
+    {
+      "id": "page-019",
+      "number": null,
+      "title": "Page 19",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 588,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multiplier hopf",
+          "heading": false
+        },
+        {
+          "term": "pol",
+          "heading": false
+        },
+        {
+          "term": "star algebra",
+          "heading": false
+        },
+        {
+          "term": "fun",
+          "heading": false
+        },
+        {
+          "term": "quantum analog",
+          "heading": false
+        },
+        {
+          "term": "harmonic analysis",
+          "heading": false
+        },
+        {
+          "term": "non compact",
+          "heading": false
+        },
+        {
+          "term": "quantum group",
+          "heading": false
+        }
+      ],
+      "extract": "3.2.5 Multiplier Hopf algebras: the C* algebra theory This subject will not be developped here, it is a rapidly evolving subject which basic axioms are not completely fixed up to now, see the references [50], [36], [29]. The motivations of these works is to give axioms of non compact quantum groups, sufficiently general to include all the known examples and to prove in this theory an existence theorem for a left",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-019"
+      ]
+    },
+    {
+      "id": "page-020",
+      "number": null,
+      "title": "Page 20",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 407,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multiplier hopf",
+          "heading": false
+        },
+        {
+          "term": "funo",
+          "heading": false
+        },
+        {
+          "term": "normed star",
+          "heading": false
+        },
+        {
+          "term": "fun",
+          "heading": false
+        },
+        {
+          "term": "star algebra",
+          "heading": false
+        },
+        {
+          "term": "slq",
+          "heading": false
+        },
+        {
+          "term": "pol",
+          "heading": false
+        },
+        {
+          "term": "fune",
+          "heading": false
+        }
+      ],
+      "extract": "M(Fune(ANg(2)@Fune(ANg(2))) = Tp,se42+ Matar41(C) @ Matas41 (C). It is easy to compute the coproduct by duality: i)(i (Et) “Ove 8 where this infinite sum as to be understood as the multiplier all r \\é EY ® E )anKehzt (80) In order not to obscure formulas we will stick to the notation with the sum. It is therefore an easy task to check the axioms of a star multiplier Hopf algebra on Fun,(AN,(2)). Up to this point we",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-020"
+      ]
+    },
+    {
+      "id": "page-021",
+      "number": null,
+      "title": "Page 21",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 349,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "slq",
+          "heading": false
+        },
+        {
+          "term": "pol",
+          "heading": false
+        },
+        {
+          "term": "affiliated elements",
+          "heading": false
+        },
+        {
+          "term": "iwasawa decomposition",
+          "heading": false
+        },
+        {
+          "term": "suj",
+          "heading": false
+        },
+        {
+          "term": "funee",
+          "heading": false
+        }
+      ],
+      "extract": "It is easy to check the axioms of a multiplier Hopf algebra. It is also easy to check that, although the coproduct A maps Fun.-(SLq(2, C)r) to M(Fune(SLq(2, Or) ® Funee(SLq(2, Cr)), one can still define actions ge (resp. a) of U,(sl(2, C)r) on Funee(SLq(2, Cir) by the formulas (26). As an algebra we can define Pol(SLq(2,C)z) = Pol(SU;(2)) ® Mq(su(2))op, which elements are affiliated elements to Fung(SL,(2, C)r). 3.3",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-021"
+      ]
+    },
+    {
+      "id": "page-022",
+      "number": null,
+      "title": "Page 22",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 340,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "affiliated element",
+          "heading": false
+        },
+        {
+          "term": "fung",
+          "heading": false
+        },
+        {
+          "term": "finite dimensional",
+          "heading": false
+        },
+        {
+          "term": "dimensional representations",
+          "heading": false
+        },
+        {
+          "term": "coproduct",
+          "heading": false
+        },
+        {
+          "term": "triangular",
+          "heading": false
+        }
+      ],
+      "extract": "I I T(+)-1 comes from the fact that the coproduct on T(+) is inverted with respect to the usual I I I coproduct on k. With our conventions the matrix T(—) is lower triangular whereas T is upper triangular, and their expressions as affiliated elements of Fung(AN,(2)) is the following: I Id J TP)-te > @ R(+)—ee By (90) JEZZt 3.4 Characters of finite dimensional representations of ,(s1(2,C)r) we will be particularly",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-022"
+      ]
+    },
+    {
+      "id": "page-023",
+      "number": null,
+      "title": "Page 23",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 184,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "irf",
+          "heading": false
+        },
+        {
+          "term": "amr",
+          "heading": false
+        },
+        {
+          "term": "sax",
+          "heading": false
+        }
+      ],
+      "extract": "where sAX' (A, B) is defined by: SS ri TX, Vv The left handside is equal to: EIS Pe bela “s ; Vv ELS | (ae dv ‘A: _ A B|M) vp, vm => OO {i N|D } ee) 2 K: M\\ vp, UM yi UB UNUK we From the definition of the 6j symbols it is easy to show that if Y(A,B,M). Y(K,N,D).Y(K,B,D).Y(A,B,D)= A B|M oen {5 D (91) involves just a finite number of M. This can be written as a picture in terms of coefficients of R matrix in IRF",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-023"
+      ]
+    },
+    {
+      "id": "page-024",
+      "number": null,
+      "title": "Page 24",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 322,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fun",
+          "heading": false
+        },
+        {
+          "term": "right integral",
+          "heading": false
+        },
+        {
+          "term": "left integral",
+          "heading": false
+        },
+        {
+          "term": "linear forms",
+          "heading": false
+        },
+        {
+          "term": "discrete quantum",
+          "heading": false
+        },
+        {
+          "term": "quantum group",
+          "heading": false
+        },
+        {
+          "term": "character",
+          "heading": false
+        }
+      ],
+      "extract": "i mepeenall From this diagram we can apply the succession of moves of the previous proof, and we finally obtain a new expression for pAK/V (A, B) : r BA\\|M 2 yA UND 1 KN N UMUK \\1 D D Ba YR IRF o Let us now study the case of the strange representations Cn ots. It is easy to show from the definition of 7, that the character of the one dimensional representation €, is the affiliated J element Wyerze(-D) Et (this is",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-024"
+      ]
+    },
+    {
+      "id": "page-025",
+      "number": null,
+      "title": "Page 25",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 247,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "slq",
+          "heading": false
+        },
+        {
+          "term": "funce",
+          "heading": false
+        },
+        {
+          "term": "classical limit",
+          "heading": false
+        },
+        {
+          "term": "bdv",
+          "heading": false
+        },
+        {
+          "term": "fun",
+          "heading": false
+        }
+      ],
+      "extract": "Proof: Let h be the linear form defined by (98). We have: . I _ N B km & EX Et, BF & RYRPS*(kL) @ Et, A ) I MAN mM B => (-1)774[dal6r01 @ Eb A d 3B bdv _ A -oayo-op, [dalldc], _ = oy (1) droldc}i @ Et By Cy I Cc = S> Ebdro[dc]l @ 1, = ACK @EX)1 o Using this integral we can define on Fun.-(SL,(2,C)r) an hermitian form defined by (a, b) = h(a*b), Va, b € Funce(SLq(2, C)g). As a result Funee(SLq(2, C)g) is equiped with",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-025"
+      ]
+    },
+    {
+      "id": "page-026",
+      "number": null,
+      "title": "Page 26",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 369,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "affiliated elements",
+          "heading": false
+        },
+        {
+          "term": "haar measure",
+          "heading": false
+        },
+        {
+          "term": "right measure",
+          "heading": false
+        },
+        {
+          "term": "compact support",
+          "heading": false
+        },
+        {
+          "term": "fun",
+          "heading": false
+        },
+        {
+          "term": "commute",
+          "heading": false
+        }
+      ],
+      "extract": "a An element g € AN(2) can be written as g = ( n an ) with a€ Rt*,n€C. As usual a and n can be thought as being functions of g. The expressions of the right and left Haar measure dm, and dm; on Fun,(AN(2)) are given by [amis = [ogadaén . [ o(aam.(a) = [ oo)a-% dad’n. (99) The aim of what follows is to prove that the expressions (97) are certain types of Jackson integral discretizing the previous classical Haar",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-026"
+      ]
+    },
+    {
+      "id": "page-027",
+      "number": null,
+      "title": "Page 27",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 476,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "irreducible unitary",
+          "heading": false
+        },
+        {
+          "term": "itt",
+          "heading": false
+        },
+        {
+          "term": "unitary representations",
+          "heading": false
+        },
+        {
+          "term": "ordering",
+          "heading": false
+        },
+        {
+          "term": "classified",
+          "heading": false
+        },
+        {
+          "term": "argument",
+          "heading": false
+        },
+        {
+          "term": "trace",
+          "heading": false
+        },
+        {
+          "term": "variable",
+          "heading": false
+        }
+      ],
+      "extract": "where €, = —1,e¢ = 1. After the change of variable p? + a? + a~? = 2cosh(x),a = exp(y) this integral is rewritten: 00 2/2 an [ ae [ o(e\", 2coshx)e?\"Y sinh a dy oo —2/2 This integral is transformed into a Riemann sum by discretizing « = h(2J + 1),y = mh where q=eh Je $Zt and m € $Z. As a result we have: J ic C)dm,a(g) = Jim n?8n 3 > bg”, Itt + ret} gin (Itt — 72-4), JE4Z+m=—J This last expression can also be written",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-027"
+      ]
+    },
+    {
+      "id": "page-028",
+      "number": null,
+      "title": "Page 28",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 28,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 302,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "strange complementary",
+          "heading": false
+        },
+        {
+          "term": "complementary series",
+          "heading": false
+        },
+        {
+          "term": "principal series",
+          "heading": false
+        },
+        {
+          "term": "representation belonging",
+          "heading": false
+        },
+        {
+          "term": "infinite dimensional",
+          "heading": false
+        },
+        {
+          "term": "continuation",
+          "heading": false
+        }
+      ],
+      "extract": "2. No =Ni = $f. In this case 7 is the one dimensional representation 7 = €,. 3. Wo+1=F(m+ip) 2Wi.+1=4(-m+ip), meEN*,pe [0,4] or m=0,p€ [0,7]. x is an infinite dimensional representation belonging to the so called principal series. We will denote by D, the set of representations belonging to the principal series. 4. 2No + 1 = 28; + 1 =p €)0,1[. z is an infinite dimensional representation belonging to the so called",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-028"
+      ]
+    },
+    {
+      "id": "page-029",
+      "number": null,
+      "title": "Page 29",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 329,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unitary irreducible",
+          "heading": false
+        },
+        {
+          "term": "complex numbers",
+          "heading": false
+        },
+        {
+          "term": "constraint",
+          "heading": false
+        },
+        {
+          "term": "act",
+          "heading": false
+        },
+        {
+          "term": "relations",
+          "heading": false
+        },
+        {
+          "term": "representation",
+          "heading": false
+        }
+      ],
+      "extract": "[Theorem 3: Unitary Irreducible representations of {,(sl(2, C)r) Let x be an infinite dimensional unitary irreducible representation of Uq(sl(2,C)R), and assume that Xo, take one of the value described above and associated to the principal series or to one of the two complementary series. 7 is equivalent to the following representation of MU, (sl(2, C)p) : the representation space is given by V = @Bacizt+ aLmen V",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-029"
+      ]
+    },
+    {
+      "id": "page-030",
+      "number": null,
+      "title": "Page 30",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 30,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 204,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "casimir elements",
+          "heading": false
+        },
+        {
+          "term": "pulp",
+          "heading": false
+        },
+        {
+          "term": "aie",
+          "heading": false
+        },
+        {
+          "term": "vit",
+          "heading": false
+        }
+      ],
+      "extract": "We first have: Aj vit aiah)-8= DO (FA FEDC ° C y|AB pk y Clip/\\EB 1 PG BP } P) AAGAEP _ i R)K\\Vgm(n|AB)) ¢ \"Va Blm) I> KI] G1 Cs _fuvm|R p|kK P ak] & n|A BY) yere ~\\F K |p Rin z AB|m/)\\K]jl FP © We can derive a more compact expression for these constraints. Indeed we have, for the first part of the equality Do APEAEE | | > << = aoe Vv ~r. AW AE|C > AC,’ BD _ = So ARGARP {pulp} ” , |= DCEU -B: — — V using a similar",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-030"
+      ]
+    },
+    {
+      "id": "page-031",
+      "number": null,
+      "title": "Page 31",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 284,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bolu",
+          "heading": false
+        },
+        {
+          "term": "pox",
+          "heading": false
+        },
+        {
+          "term": "tbd",
+          "heading": false
+        },
+        {
+          "term": "vave",
+          "heading": false
+        },
+        {
+          "term": "bara",
+          "heading": false
+        }
+      ],
+      "extract": "VAVE 41 4 EGR Nae “ee . _ VAUL | ry 1p[2D +1] A =r le Me pay d) PA+1] bord “ D VAUL ap[2D+1 = Fan YS Are la *MAe Das Ty} “ which are the equations (111). As a first conclusion, we obtain that unitary irreducible represen- tations of {,(sl(2,C)p) give solutions of the relations (110,111) on the set of complex numbers A&G, and inversely solutions of these equations give a representation of U,(sl(2,C)r) (the irre-",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-031"
+      ]
+    },
+    {
+      "id": "page-032",
+      "number": null,
+      "title": "Page 32",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 32,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 228,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "irf",
+          "heading": false
+        },
+        {
+          "term": "mah",
+          "heading": false
+        },
+        {
+          "term": "uns",
+          "heading": false
+        },
+        {
+          "term": "ween",
+          "heading": false
+        }
+      ],
+      "extract": "Using the pictorial representation, it is easy to show that this relation is true. Indeed, the righthandside of the relation (113) can also be represented as -B G ~ aw KMOR, NAVBNOND eX ao and, using the usual graphical rules ‘the folk owing equations hold: IRF |S KMUX2 >> 3B F IRF -B A ween, D ~B 7 B > IRF F BD|G AC|G AC No No Ni] Ne No Ni | Ns No Ni which conclude the proof of the relation (113). In order to prove",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-032"
+      ]
+    },
+    {
+      "id": "page-033",
+      "number": null,
+      "title": "Page 33",
+      "level": 1,
+      "pageStart": 33,
+      "pageEnd": 33,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 378,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vector space",
+          "heading": false
+        },
+        {
+          "term": "unitary",
+          "heading": false
+        },
+        {
+          "term": "representation",
+          "heading": false
+        },
+        {
+          "term": "action",
+          "heading": false
+        },
+        {
+          "term": "irreducible",
+          "heading": false
+        },
+        {
+          "term": "operator",
+          "heading": false
+        }
+      ],
+      "extract": "The irreducibility of the representation can be easily proved. Indeed, the action of U,(su(2)), on A, AL, . : . each vector space generated by {€;,i = 1---dimV} is irreducible, any operator commuting with the action of the whole algebra must be scalar in each of these vector spaces . Let us denote by 1 Xa its value in the vector space labelled by A. Then by analysing the action of 9 we can easily 4, lo see that, if",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-033"
+      ]
+    },
+    {
+      "id": "page-034",
+      "number": null,
+      "title": "Page 34",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 414,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shifted cocycle",
+          "heading": false
+        },
+        {
+          "term": "complex continuation",
+          "heading": false
+        },
+        {
+          "term": "coefficients",
+          "heading": false
+        },
+        {
+          "term": "universal",
+          "heading": false
+        },
+        {
+          "term": "denoted",
+          "heading": false
+        },
+        {
+          "term": "expression",
+          "heading": false
+        }
+      ],
+      "extract": "above. In particular the value of Age 1 (No, Ni) uses a square root and implies the constraint —t044 p €]0, 1[ for the two complementary series. Oo From the definition of the complex continuation of the 6j symbols we would expect that A3¢ is a rational function in 2 where z = q?'+1. We will show that in fact AZG as well as (A3%%)? are Laurent polynomials in the variable x (this is clear for B = 4 from the explicit",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-034",
+        "library/9710022v2/blocks/lem-page-034-01"
+      ]
+    },
+    {
+      "id": "page-035",
+      "number": null,
+      "title": "Page 35",
+      "level": 1,
+      "pageStart": 35,
+      "pageEnd": 35,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 316,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "toh",
+          "heading": false
+        },
+        {
+          "term": "fya",
+          "heading": false
+        },
+        {
+          "term": "cla",
+          "heading": false
+        },
+        {
+          "term": "nac",
+          "heading": false
+        },
+        {
+          "term": "vim",
+          "heading": false
+        }
+      ],
+      "extract": "Proof: Using the relations connecting F(z) to the complex 6j coefficients, we can rewrite equation (109) as VA aN ) (a, 2) AR S (No.1 va NAc, m) x vpvc\\i (2 |B C\\ ag, 9192 Ux 42 BG) gtigt (ai of | D x Vi 7 oa o1 c)y toh Octes (@) Vim lB oo m )- (120) In the last sum we necessarily have 0; + 02 = 3, it is then natural to introduce the matrix 01,02 _ UR te14e9 Gay oo Uy toh 5 element G(x) introduced in the",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-035"
+      ]
+    },
+    {
+      "id": "page-036",
+      "number": null,
+      "title": "Page 36",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 36,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 418,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pol",
+          "heading": false
+        },
+        {
+          "term": "multiplier hopf",
+          "heading": false
+        },
+        {
+          "term": "rog",
+          "heading": false
+        },
+        {
+          "term": "degree less",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "rational function",
+          "heading": false
+        },
+        {
+          "term": "odd",
+          "heading": false
+        }
+      ],
+      "extract": "and we can decompose this rational function in simple poles: Arpt + Bre, Rr,p(a) = Pig) +S alr es with P,,,(x) polynomial of degree less or equal to 2pk — n. Because Rz,p(x) has the same parity as n, we necessarely have Aj,¢,p = 0 if n is even, and Bix.) = 0 if n is odd. When n is odd we get Arkp = (-1'(q- at)\" fn!) Le — I]q72Pk(F+9 , therefore n n k+l 1yl—n x)= a Pyyp(@) + > OT @ (7) «me — Ij. k,l=0 The second term",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-036",
+        "library/9710022v2/blocks/prop-page-036-01",
+        "library/9710022v2/blocks/rem-page-036-02"
+      ]
+    },
+    {
+      "id": "page-037",
+      "number": null,
+      "title": "Page 37",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 37,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 449,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "slq",
+          "heading": false
+        },
+        {
+          "term": "fun",
+          "heading": false
+        },
+        {
+          "term": "funce",
+          "heading": false
+        },
+        {
+          "term": "pol",
+          "heading": false
+        },
+        {
+          "term": "ars",
+          "heading": false
+        },
+        {
+          "term": "non zero",
+          "heading": false
+        },
+        {
+          "term": "left action",
+          "heading": false
+        },
+        {
+          "term": "finite number",
+          "heading": false
+        }
+      ],
+      "extract": "A. ; in duality with Funcc(SLq(2,C)r). Let X4 € Pol(SU,(2))* be the dual basis of gi. ie < A. . Xi, gh >= 6.480; 64, the structure of algebra on Pol(SU,(2))*®Pol(SU;(2)), is defined by the quantum double, i.e jade = Slo g OM (124) M A, B, ia k . XEXE = bapojX' (125) A. and a braided relation between Xj, and ot that can be computed from (16). By duality the ale A ~ A. AB, B The element L* € D are multipliers of D and",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-037"
+      ]
+    },
+    {
+      "id": "page-038",
+      "number": null,
+      "title": "Page 38",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 38,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 287,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "slq",
+          "heading": false
+        },
+        {
+          "term": "xan",
+          "heading": false
+        },
+        {
+          "term": "funce",
+          "heading": false
+        },
+        {
+          "term": "akj",
+          "heading": false
+        },
+        {
+          "term": "jcm",
+          "heading": false
+        }
+      ],
+      "extract": "RL RL This definition is chosen in order that if f € Fun(SL,(2,C)r), « b u(f) =v(a > f). From these definitions we obtain the following proposition: Proposition 2: Va € Uy (sl(2, Or a(xB d) = x(S(2))a(4), a(x P 4) = 2(G)a(S“ (2), VO € Punce(SLq(2,C)x) ae Xn = 9? (2x) b Xx; (ad* invariance) o* é Vn =w* yn, where w* are the eigenvalues of the Casimir operator. Proof: Easy application of the definitions. o We can",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-038",
+        "library/9710022v2/blocks/prop-page-038-01",
+        "library/9710022v2/blocks/prop-page-038-02"
+      ]
+    },
+    {
+      "id": "page-039",
+      "number": null,
+      "title": "Page 39",
+      "level": 1,
+      "pageStart": 39,
+      "pageEnd": 39,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 200,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bla",
+          "heading": false
+        },
+        {
+          "term": "baa",
+          "heading": false
+        },
+        {
+          "term": "rov",
+          "heading": false
+        },
+        {
+          "term": "yap",
+          "heading": false
+        }
+      ],
+      "extract": "The element y, is therefore ad* invariant if the following relation holds: j l|D za|BaA c p|B m|MC nilR f\\C A) yap _ 2 Ble D i MCIl Bla n/J\\C Ale Rit j AA _ m|C M\\(i p|R\\(fIAC)\\) (5 I/D «|B A) \\ap — Le ufr Bita ACle RijuJ\\A Bla Dimi AA The left handside of this equation is nicely described by the following picture -R ragep — ABD — = > © Cc A which can be written using the definitions of 67 symbols and the unitarity",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-039"
+      ]
+    },
+    {
+      "id": "page-040",
+      "number": null,
+      "title": "Page 40",
+      "level": 1,
+      "pageStart": 40,
+      "pageEnd": 40,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 244,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "t-m",
+          "heading": false
+        },
+        {
+          "term": "irf",
+          "heading": false
+        },
+        {
+          "term": "rts",
+          "heading": false
+        },
+        {
+          "term": "r-t",
+          "heading": false
+        },
+        {
+          "term": "lnb",
+          "heading": false
+        }
+      ],
+      "extract": "2(M,T.R) [R+M+T+3] M+gT+y, [R+T-M+3] w—ara3 [T+M-R- 3] M-3T-3, [M+R-T+3] | mqar—2 _ a [2R+2] | Rta [2R+2] | Rts [2R+2] R+y [2R+2] 9 Rts [T+M—R+3] meirgs [RtM-T— $],m—t742 [R+T-M— $3], par—2 [R+M+T+$] —ar-4 =Z(M,T,R)§———- AP 824 Fg ep jo? ? (MT, if [2R] rat [2R] R-3 [2R] R-5 [2R] R-3 (134) [R+ T+ M43]? [R+T-M+4]? [M+ R-T+4]? [M+ T-R+4]? where Z(M,R,T)= pry The coefficients A¥% satisfy additional linear relations,",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-040",
+        "library/9710022v2/blocks/lem-page-040-01"
+      ]
+    },
+    {
+      "id": "page-041",
+      "number": null,
+      "title": "Page 41",
+      "level": 1,
+      "pageStart": 41,
+      "pageEnd": 41,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 366,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "irf",
+          "heading": false
+        },
+        {
+          "term": "linear equations",
+          "heading": false
+        },
+        {
+          "term": "linear relations",
+          "heading": false
+        },
+        {
+          "term": "eigenvector",
+          "heading": false
+        },
+        {
+          "term": "right action",
+          "heading": false
+        },
+        {
+          "term": "symbols",
+          "heading": false
+        }
+      ],
+      "extract": "[ Proposition 5: Action of Casimir elements The coefficients ABE (No, Ni) satisfy the following linear relations: awe (ALOE S a] e fle et cnaciags yas MN for all A,B,C,D,I € 4Z+, with the definition wt(I) = oR est Ul ww (1) = eee This system of linear equation, when I = 3 is equivalent to the fact that Xx is an eigenvector of the right action of Q'*) with eigenvalues WH. Proof: From the relations satisfied by the",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-041"
+      ]
+    },
+    {
+      "id": "page-042",
+      "number": null,
+      "title": "Page 42",
+      "level": 1,
+      "pageStart": 42,
+      "pageEnd": 42,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 398,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "plancherel density",
+          "heading": false
+        },
+        {
+          "term": "triangular system",
+          "heading": false
+        },
+        {
+          "term": "plancherel formula",
+          "heading": false
+        },
+        {
+          "term": "slq",
+          "heading": false
+        },
+        {
+          "term": "equation containing",
+          "heading": false
+        },
+        {
+          "term": "arc",
+          "heading": false
+        },
+        {
+          "term": "eliminate",
+          "heading": false
+        }
+      ],
+      "extract": "very simple, it uses the fact that we can always eliminate one of the indeterminate ARYER SS in the system (136) by taking linear combination of the equation containing w, and the equation containing w_. BC wae a soe : : B+ict+th As aresult we can compute AZ on the antidiagonal OF4 by eliminating the point Ay . -1o-1 The point AR 702 does not contribute because its coefficient vanishes (we also assumed that ARC = 0",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-042",
+        "library/9710022v2/blocks/thm-page-042-01"
+      ]
+    },
+    {
+      "id": "page-043",
+      "number": null,
+      "title": "Page 43",
+      "level": 1,
+      "pageStart": 43,
+      "pageEnd": 43,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 251,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cdf",
+          "heading": false
+        },
+        {
+          "term": "plancherel formula",
+          "heading": false
+        },
+        {
+          "term": "bpe",
+          "heading": false
+        },
+        {
+          "term": "dain",
+          "heading": false
+        }
+      ],
+      "extract": "Lemma 8: Assume that (f(m,.))men is a family of C! even functions on Ip such that Plancherel for- mula holds, i.e ¥ [x (m, p)(@) f(m, p)dp = €(¢) Vo € Funee(SLy(2,C)r) (138) then f(m,p) = P(m, p). A B Proof: We first compute h( x(m,p) S~'(k4) @ E%), this is equal to: ug (GLE) (2|DC\\c4; n> kus @ BPE (2 D ) (; Di yi NAG\" (m,p)) CDF _ baci t 1p r(j l|F z =v age sinnt de) (eo plo) Ee CDF _ [dB] tr|F «|B A) B_ipypr ~ fal",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-043",
+        "library/9710022v2/blocks/lem-page-043-01"
+      ]
+    },
+    {
+      "id": "page-044",
+      "number": null,
+      "title": "Page 44",
+      "level": 1,
+      "pageStart": 44,
+      "pageEnd": 44,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 361,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "linear system",
+          "heading": false
+        },
+        {
+          "term": "non zero",
+          "heading": false
+        },
+        {
+          "term": "satisfied",
+          "heading": false
+        },
+        {
+          "term": "induction",
+          "heading": false
+        },
+        {
+          "term": "assumption",
+          "heading": false
+        },
+        {
+          "term": "equivalent",
+          "heading": false
+        }
+      ],
+      "extract": "the system (140) is equivalent to a linear system on a?, which is trivial to solve and which unique non zero solution under the assumption that f (0, p) is an even function gives f(m,p) = P(m,p). In particular, only the Fourier modes (0,—1,1) of f(m,.) are non zero. Oo It remains to show that the system of equations EE (a aE) s(t m=0 is satisfied. This is trivially the case for B = 0, because if we put B = 0 in the",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-044",
+        "library/9710022v2/blocks/lem-page-044-01"
+      ]
+    },
+    {
+      "id": "page-045",
+      "number": null,
+      "title": "Page 45",
+      "level": 1,
+      "pageStart": 45,
+      "pageEnd": 45,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 373,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "b-k",
+          "heading": false
+        },
+        {
+          "term": "plancherel formula",
+          "heading": false
+        },
+        {
+          "term": "linear equations",
+          "heading": false
+        },
+        {
+          "term": "imposes",
+          "heading": false
+        },
+        {
+          "term": "satisfied",
+          "heading": false
+        },
+        {
+          "term": "arc",
+          "heading": false
+        }
+      ],
+      "extract": "f Lemma 10: The explicit expressions for M8° on the boundaries of V4 are: B ~ —1)?8 _. (A+ ® A-Z AK (np) =P DG Yo (SUF) (G2). orn 2 Ge), k=—B B+k}),\\B-k/, ¥(4, 8) A+24B—k\\ (A-#+B+k ARC (m, p) = “(Are \\ea ) ert) PoR) ), ye B-k 1 Bt+k 1 - rag i Sy (A-B+C—k\\) (AF B4CHh ABC(m,p) =¥(4, ye Sa we ( 2 ) ( 2 ) . (art). 2 Coc) h=-C C-k q C+k q (144) The equations (141) are satisfied on ar‘, or4,. Proof: In order to show that",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-045"
+      ]
+    },
+    {
+      "id": "page-046",
+      "number": null,
+      "title": "Page 46",
+      "level": 1,
+      "pageStart": 46,
+      "pageEnd": 46,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 278,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "a-s",
+          "heading": false
+        },
+        {
+          "term": "handside",
+          "heading": false
+        },
+        {
+          "term": "pce",
+          "heading": false
+        },
+        {
+          "term": "qg-analogues",
+          "heading": false
+        }
+      ],
+      "extract": "identities, for B #0 E45) C5) B80 Gyro) CS) 0 (48) ae -().GE)(O.(EQ. am If we take the sum of these two equations, the left handside is the lefthandside of (145) and the right handside is, after the use of two qg-analogues of Pascal relations, equal to the righthandside of (145). Let us first recall that if x,y are two elements satisfying the relation ya = q’ay, then we have the identity: n (y= So (\") weraryr (148)",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-046"
+      ]
+    },
+    {
+      "id": "page-047",
+      "number": null,
+      "title": "Page 47",
+      "level": 1,
+      "pageStart": 47,
+      "pageEnd": 47,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 423,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "slq",
+          "heading": false
+        },
+        {
+          "term": "funce",
+          "heading": false
+        },
+        {
+          "term": "lans",
+          "heading": false
+        },
+        {
+          "term": "funec",
+          "heading": false
+        },
+        {
+          "term": "plancherel formula",
+          "heading": false
+        },
+        {
+          "term": "hilbert space",
+          "heading": false
+        },
+        {
+          "term": "yee",
+          "heading": false
+        }
+      ],
+      "extract": "which is trivial to show, and obtain E) C5). H), (oa) P : . +b A+1 _ (,-2 +4 A4+1 _ —q-24-B) EC p (2-1? (a ~g?etb—q-y)(et y)4 (a +b) (q*(@+y)) atb—q2(«#+y) = G74) Cp parte (a + y)A((a+ b)4 — (q?@ + y))4\")) __gvpu( 4) (A+1 Bri q B q which ends the proof of the first relation (146). The second relation (147) is proved with exactly the same method. The proofs of (141) on arat are similar and we leave them to the",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-047",
+        "library/9710022v2/blocks/thm-page-047-01",
+        "library/9710022v2/blocks/thm-page-047-02"
+      ]
+    },
+    {
+      "id": "page-048",
+      "number": null,
+      "title": "Page 48",
+      "level": 1,
+      "pageStart": 48,
+      "pageEnd": 48,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 439,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "induction",
+          "heading": false
+        },
+        {
+          "term": "obtain",
+          "heading": false
+        },
+        {
+          "term": "integer",
+          "heading": false
+        },
+        {
+          "term": "implies",
+          "heading": false
+        },
+        {
+          "term": "finite",
+          "heading": false
+        },
+        {
+          "term": "function",
+          "heading": false
+        }
+      ],
+      "extract": "As a result it will be sufficient to show that if (fm)m<inf(A,D) € L?(Ip), with (Y)(A, B) = (Y)(D, @) =1, is such that X [| fn ARG, p)aP(m,p) =0.NB.C € 52% (151) ae Tn then fm = 0,Vm. Let us prove this result. If we assume that >7,, Sin fm (p)AKG (m, p)dP(m, p) = 0,VB,C, we obtain using the linear equations (135) that X [Fe snl PARE, p)APCm. p) = 0.¥B.C.T. J m 2th This can be written as X [lm + iat om ion ARG(mp\\do",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-048"
+      ]
+    },
+    {
+      "id": "page-049",
+      "number": null,
+      "title": "Page 49",
+      "level": 1,
+      "pageStart": 49,
+      "pageEnd": 49,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 340,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unitary representations",
+          "heading": false
+        },
+        {
+          "term": "liouville theory",
+          "heading": false
+        },
+        {
+          "term": "tensor product",
+          "heading": false
+        },
+        {
+          "term": "quantization",
+          "heading": false
+        },
+        {
+          "term": "study",
+          "heading": false
+        },
+        {
+          "term": "symbols",
+          "heading": false
+        },
+        {
+          "term": "program",
+          "heading": false
+        },
+        {
+          "term": "characters",
+          "heading": false
+        }
+      ],
+      "extract": "From a purely mathematical point of view, it would be nice to generalize our work to the quantization of other complex Lie algebras. This should be quite a hard and technical problem, involving the precise study of generalized 6j symbols to compact quantum groups, but the main structures that we develop in our article should not suffer a lot of modifications, apart from the multiplicities, because many of the proofs",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-049"
+      ]
+    },
+    {
+      "id": "page-050",
+      "number": null,
+      "title": "Page 50",
+      "level": 1,
+      "pageStart": 50,
+      "pageEnd": 50,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 309,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "star hopf",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "relations",
+          "heading": false
+        },
+        {
+          "term": "conventions",
+          "heading": false
+        },
+        {
+          "term": "coefficients",
+          "heading": false
+        },
+        {
+          "term": "defined",
+          "heading": false
+        }
+      ],
+      "extract": "7 Appendix 7.1 Conventions and commutation relations Let z be a complex number, we will denote by [x], = [a] the q-number associated to « defined by [a] = a . The q— factorial is defined by [n]! = [];_,[k] » € Z** with the convention that [0]! = 1. The g— binomial coefficients are defined by: n [n]! - = ———_, n>0,0<pK<n. 157 (;) inca \"=o a They satisfy the two relations: 1 (5°) ef) veo) 09 Psy P/ q p-l/, () ae) ve)",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-050"
+      ]
+    },
+    {
+      "id": "page-051",
+      "number": null,
+      "title": "Page 51",
+      "level": 1,
+      "pageStart": 51,
+      "pageEnd": 51,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 241,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "casimir element",
+          "heading": false
+        },
+        {
+          "term": "d-q",
+          "heading": false
+        },
+        {
+          "term": "ajp",
+          "heading": false
+        },
+        {
+          "term": "jtf",
+          "heading": false
+        }
+      ],
+      "extract": "i The relations between generators of U,(su(2)) and matrix elements of Le) 3 J. —2 3 — J. 7 * (log? )J- | a gc 0 wale ( LO = 164 0 g* (1-@)Jy a7 (64) The mixed relations of the quantum double are que _ geq? qb _ q7tbq™ [a= , a] =0 [a”:.d] =0 [.d=0 [Lo =0 [=a @ra-g\"d) [J_,d=a(q\"d-q a) J_a=q'aJ_+bq™ aJp=qhatq\"ve dJ_=q'J_d+q\"b JInd=qdJ, +cq\". (165) The application of the factorization theorem gives an explicit",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-051"
+      ]
+    },
+    {
+      "id": "page-052",
+      "number": null,
+      "title": "Page 52",
+      "level": 1,
+      "pageStart": 52,
+      "pageEnd": 52,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 243,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "i-a",
+          "heading": false
+        },
+        {
+          "term": "bcp",
+          "heading": false
+        },
+        {
+          "term": "clebsh-gordan",
+          "heading": false
+        }
+      ],
+      "extract": "7.2 Clebsch-Gordan coefficients, and Vertex pictures Definitions In the sequel we shall frequently use the following notations: k [Plk = [iP +i - 1] The R matrix elements and the Clebsh-Gordan coefficients can be computed and are given by (see [22] for a precise derivation) AB ni na _(q-¢\")\" gomne—n(na—m say, [A= rid + ra + nltlB + nal ~ no + nl! misnnasn [n]! [A= n, — n]![A + ni ]![B + ng — n]![B - no]! mn) = Om",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-052"
+      ]
+    },
+    {
+      "id": "page-053",
+      "number": null,
+      "title": "Page 53",
+      "level": 1,
+      "pageStart": 53,
+      "pageEnd": 53,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 184,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "a4b",
+          "heading": false
+        },
+        {
+          "term": "nae",
+          "heading": false
+        },
+        {
+          "term": "yoo",
+          "heading": false
+        }
+      ],
+      "extract": "Contragredient: SO __ im(-C+B) [dc] 1 A- * __ in(-C4B) [dc] 1 Se =e aap” ae , > =e Capp” rane B v Nae v Normalization: A- _ eT 5p a Va ~A _ eR A ~\\ -0 ~ J{dp] A yoo ~ /{dB] N < v NL v BB v 7 v One has to add to these relations those coming from elementary topological moves on ribbon graphs, which come from Yang-Baxter equation and quasitriangularity equations. Definitions of 67 symbols, relations and formulas ABJE\\",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-053"
+      ]
+    },
+    {
+      "id": "page-054",
+      "number": null,
+      "title": "Page 54",
+      "level": 1,
+      "pageStart": 54,
+      "pageEnd": 54,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 207,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "irf",
+          "heading": false
+        },
+        {
+          "term": "doa",
+          "heading": false
+        },
+        {
+          "term": "bap",
+          "heading": false
+        }
+      ],
+      "extract": "which is nicely pictured in the next subsection. We give the value of 6] symbols for one spin fixed to the value 0 or $ : 0 B/B\\_ AA|0])_ in _c [dc] {i é| oh Y(A,B,C) {3 3 a = Y(A,B,C)ei™(At+B-C) Tals] (174) {Pee Bap} oO poppy OED (16,5 ,}- Eig Pl sya {he 3 54a} er) Fee 7.3 6—j coefficients and IRF pictures Pictorial representation -A B)|_ f[EA|D A B-| fF B|C coe Flos) < ~ (A BE] DS’ D —E F IRF E FH irr “A BOS]",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-054"
+      ]
+    },
+    {
+      "id": "page-055",
+      "number": null,
+      "title": "Page 55",
+      "level": 1,
+      "pageStart": 55,
+      "pageEnd": 55,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 417,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "irf",
+          "heading": false
+        },
+        {
+          "term": "complex continuation",
+          "heading": false
+        },
+        {
+          "term": "half integers",
+          "heading": false
+        },
+        {
+          "term": "spins",
+          "heading": false
+        },
+        {
+          "term": "step",
+          "heading": false
+        },
+        {
+          "term": "coefficients",
+          "heading": false
+        },
+        {
+          "term": "polynomial equations",
+          "heading": false
+        },
+        {
+          "term": "symbols",
+          "heading": false
+        }
+      ],
+      "extract": "B A I IRF B ] ~ IRF H H Adc RF H Racah-Wigner Symmetry: D A> -B. D a rer ldo] } OB Am > in-c+ey [de] Doc Ke] =e\" ; | =e\") q [dp] aXe [dz] -B E De r J ine A . ae BF IRF Normalization: c A- _ e™ sna c ~A c _ e™éona c o<s ~ J[da] | AB B>~o- ~ VJfdal | BA D AW =v oN v -A DY a v One has to add to these relations the pentagonal relation, and the hexagonal one. It is important to remark that the ranges of summations in",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-055"
+      ]
+    },
+    {
+      "id": "page-056",
+      "number": null,
+      "title": "Page 56",
+      "level": 1,
+      "pageStart": 56,
+      "pageEnd": 56,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 426,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "complex continuation",
+          "heading": false
+        },
+        {
+          "term": "complex spins",
+          "heading": false
+        },
+        {
+          "term": "t-a",
+          "heading": false
+        },
+        {
+          "term": "n-t",
+          "heading": false
+        },
+        {
+          "term": "parameter complex",
+          "heading": false
+        },
+        {
+          "term": "constraints",
+          "heading": false
+        },
+        {
+          "term": "m-n",
+          "heading": false
+        },
+        {
+          "term": "ren",
+          "heading": false
+        }
+      ],
+      "extract": "A+M B+P . . B C| A In order to define the 6) coefficient of the form { REN RN | N4M Z,XveEC— 3Z) we will proceed to the variable change \\ (where A,B,C € $Z+,M,N € T=U—2X in the summation in (171). In order to avoid the use of g —T functions, we remark that the following simple equalities hold .. | Pnear 1 [V+ On = [2K +1]! A(L,J,K)’ [U-I-J-K]! — [UI JHB Deseo RL [2]! = 9 _ _ [I+ K)! [IK]! rx = I Trem | Tom",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-056"
+      ]
+    },
+    {
+      "id": "page-057",
+      "number": null,
+      "title": "Page 57",
+      "level": 1,
+      "pageStart": 57,
+      "pageEnd": 57,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 341,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "buffenoir",
+          "heading": false
+        },
+        {
+          "term": "roche",
+          "heading": false
+        },
+        {
+          "term": "alekseev",
+          "heading": false
+        },
+        {
+          "term": "schomerus",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "combinatorial quantization",
+          "heading": false
+        },
+        {
+          "term": "chern-simons theory",
+          "heading": false
+        },
+        {
+          "term": "grosse",
+          "heading": false
+        }
+      ],
+      "extract": "by the usual trivial symmetries (172) can be defined in the same way and these symmetries are again verified. At this point, we have just given definitions and it is checked that the usual properties of 67 coefficients (such as Unitarity, Racah , Pentagonal, or Hexagonal relations) are verified [14, 23]. It is easy to compute using the formula (176) the 67 symbols when one of the spins is equal to 0 or $. The values",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-057"
+      ]
+    },
+    {
+      "id": "page-058",
+      "number": null,
+      "title": "Page 58",
+      "level": 1,
+      "pageStart": 58,
+      "pageEnd": 58,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 318,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gervais",
+          "heading": false
+        },
+        {
+          "term": "quantum groups",
+          "heading": false
+        },
+        {
+          "term": "lorentz group",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "roussel",
+          "heading": false
+        },
+        {
+          "term": "algebraic quantum",
+          "heading": false
+        },
+        {
+          "term": "cremmer",
+          "heading": false
+        },
+        {
+          "term": "minimal models",
+          "heading": false
+        }
+      ],
+      "extract": "[14] [15] [16] [17] [18] [25] [26] [27] [28] [29] [30] [31] E.Cremmer, J.L.Gervais, J.F.Roussel, The Quantum Group Structure of 2D gravity and Minimal Models (II): The Genus Zero Chiral Bootstrap Comm.Math.Phys. 161, 597 (1994). E.Cremmer, J.L.Gervais, J.Schnittger, Hidden U;,(sl(2)) x Ug(sl(2)) quantum group sym- metry in two dimensional gravity. Comm.Math.Phys. 183, 609 (1997). U.Carow-Watamura, M.Schlieker,",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-058"
+      ]
+    },
+    {
+      "id": "page-059",
+      "number": null,
+      "title": "Page 59",
+      "level": 1,
+      "pageStart": 59,
+      "pageEnd": 59,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 289,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum lorentz",
+          "heading": false
+        },
+        {
+          "term": "lorentz group",
+          "heading": false
+        },
+        {
+          "term": "van daele",
+          "heading": false
+        },
+        {
+          "term": "wonorowicz",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "comm",
+          "heading": false
+        },
+        {
+          "term": "unitary representations",
+          "heading": false
+        },
+        {
+          "term": "math",
+          "heading": false
+        }
+      ],
+      "extract": "[32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] T.Masuda, K.Mimachi, Y.Nakagami, M.Noumi, Y.Saburi, K.Ueno, Unitary Repre- sentations of Quantum group SU,(1,1) I: Structure of the dual space of {,(si(2)), Lett.Math.Phys 19 ,187-194 (1990) II: Matrix elements of unitary representations and the Hypergeometric functions, Lett.Math.Phys 19, 195-204 (1990). J.E.Nelson,",
+      "extractCut": true,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-059"
+      ]
+    },
+    {
+      "id": "page-060",
+      "number": null,
+      "title": "Page 60",
+      "level": 1,
+      "pageStart": 60,
+      "pageEnd": 60,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 29,
+      "summary": null,
+      "keywords": [],
+      "extract": "[51] S.L.Wonorowicz, S.Zakrzewski, Quantum deformations of the Lorentz group. The Hopf «- algebra level, Compositio Math,90,211-243, (1994). [52] S.Zakrzewski, Poisson Structures on the Lorentz Group, Lett.Math.Phys 32, 11-23,(1994). 60",
+      "extractCut": false,
+      "blocks": [
+        "library/9710022v2/blocks/prose-page-060"
+      ]
+    }
+  ],
+  "checks": {},
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "star hopf",
+      "heading": false
+    },
+    {
+      "term": "star algebra",
+      "heading": false
+    },
+    {
+      "term": "algebra fun",
+      "heading": false
+    },
+    {
+      "term": "multiplier hopf",
+      "heading": false
+    },
+    {
+      "term": "define star",
+      "heading": false
+    },
+    {
+      "term": "complex hopf",
+      "heading": false
+    },
+    {
+      "term": "algebra defined",
+      "heading": false
+    },
+    {
+      "term": "star structure",
+      "heading": false
+    },
+    {
+      "term": "quasitriangular hopf",
+      "heading": false
+    },
+    {
+      "term": "define pol",
+      "heading": false
+    },
+    {
+      "term": "real hopf",
+      "heading": false
+    },
+    {
+      "term": "star lie",
+      "heading": false
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "not-extracted",
+      "note": "split one section per page; no contents was trusted"
+    },
+    {
+      "kind": "sections",
+      "state": "partial",
+      "count": 60,
+      "note": "one per page, not by heading"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p57); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "not-extracted",
+      "note": "a glossary section is in the text (p52); its entries are not extracted"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 60 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/9710022v2"
+  }
+}

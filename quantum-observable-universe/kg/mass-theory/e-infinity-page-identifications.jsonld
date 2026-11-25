@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-e-infinity-page-identifications",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:e-infinity-page-identifications",
+  "kind": "proposition",
+  "title": "$E_\\infty$-page identifications with the six mass-formula terms",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-jet-prefix-gb-filtration",
+    "papers/quantum-observable-universe/blocks/prop-chirality-from-frobenius-self-pairing"
+  ],
+  "tags": [
+    "spectral-sequence",
+    "hochschild",
+    "page-identification",
+    "mass-formula",
+    "derivation"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.e_infinity_identifications",
+  "text": "e-infinity-page-identifications.md",
+  "provenance": "authored"
+}

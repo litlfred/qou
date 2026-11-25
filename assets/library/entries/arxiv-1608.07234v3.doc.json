@@ -1,0 +1,431 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1608.07234v3",
+  "title": "arxiv-1608.07234v3",
+  "variant": "pdf",
+  "pages": 87,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Derived Hecke algebra",
+      "number": "2",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-derived-hecke-algebra"
+    },
+    {
+      "level": 1,
+      "title": "Torus localization and Satake isomorphism",
+      "number": "3",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Iwahori-Hecke algebra",
+      "number": "4",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "The trivial representation",
+      "number": "5",
+      "page": 31,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Setup for patching",
+      "number": "6",
+      "page": 39,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Patching and the derived Hecke algebra",
+      "number": "7",
+      "page": 50,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "The reciprocity law",
+      "number": "8",
+      "page": 55,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Some very poor evidence for the main conjecture: Tori and the trivial representation",
+      "number": "9",
+      "page": 74,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. Remedial algebra",
+      "number": null,
+      "page": 76,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Appendix B.  Koszul algebra; other odds and ends",
+      "number": null,
+      "page": 82,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Index of symbols and important notation",
+      "number": null,
+      "page": 85,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-index-of-symbols-and-important-notation"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 86,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 5591,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ghecke otimes",
+          "heading": false
+        },
+        {
+          "term": "mathbf mathfrak",
+          "heading": false
+        },
+        {
+          "term": "dim bwq",
+          "heading": false
+        },
+        {
+          "term": "bwq delta",
+          "heading": false
+        },
+        {
+          "term": "frob mathfrak",
+          "heading": false
+        },
+        {
+          "term": "rho chi",
+          "heading": false
+        },
+        {
+          "term": "mathfrak rightarrow",
+          "heading": false
+        },
+        {
+          "term": "eqref dheckegalois",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\GG$ be a semisimple $\\Q$-group, and let $Y(K)$ be the associated arithmetic manifold (see \\eqref{YKdef}). Particularly when $Y(K)$ is not an algebraic variety, it often happens that the same Hecke eigensystem can occur in several different cohomological degrees (see \\S \\ref{sec:MV}). Our goal is to construct extra endomorphisms of cohomology that partly explain this, and give evidence that these extra",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-derived-hecke-algebra",
+      "number": "2",
+      "title": "Derived Hecke algebra",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 85,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 38712,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "derived hecke",
+          "heading": true
+        },
+        {
+          "term": "ghecke triv",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": true
+        },
+        {
+          "term": "ghecke rightarrow",
+          "heading": false
+        },
+        {
+          "term": "varprojlim ghecke",
+          "heading": false
+        },
+        {
+          "term": "ghecke otimes",
+          "heading": false
+        },
+        {
+          "term": "index ghecke",
+          "heading": false
+        },
+        {
+          "term": "ghecke infty",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{introdha} Let $v$ be a prime, $G_v = \\GG(\\Q_v)$ and $K_v$ a maximal compact subgroup. The usual Hecke algebra at $v$, with coefficients in a (say finite) ring $S$, can be described as $ \\Hom_{S G_v} \\left( S[G_v/K_v], S[G_v/K_v] \\right).$ If in place of $\\Hom$ we use $\\Ext$ (see \\S \\ref{sec:dha} for more details) we get a graded extension, which we may call the ``local derived Hecke algebra'':",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-index-of-symbols-and-important-notation",
+      "number": null,
+      "title": "Index of symbols and important notation",
+      "level": 1,
+      "pageStart": 85,
+      "pageEnd": 86,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 258,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "taylor wiles",
+          "heading": false
+        },
+        {
+          "term": "wiles datum",
+          "heading": false
+        },
+        {
+          "term": "derived hecke",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        }
+      ],
+      "extract": "Av, 21 B_, dual Borel , 11 Bv, 21 F , 10 Gv, 10, 21 H 1 f , 56 K0, 39 Kv, 11 M ˚ , dual of a Galois module, 56 R, 40 Rn, 51 RQn , 51 S (set of ramiﬁed places), 40 Sn, 43 T , 22 T (set of places), 40 T _, dual torus, 11 Tn, 43 Tq, 57 Wn, 62 Ws, 42 X˚ , 10, 22 Y p1q, 39 Y pKq, 10 Y0pQnq, 43 Y0pqq, 42 Y1pqq, 42 Y1pq, n q, 42 Y ˚ 1 pQnq, 43 Ad˚ , 56 q, minimal degree of tempered cohomology, 2 FrobT q , 42 Π , 39, 40 S,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 86,
+      "pageEnd": 87,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 913,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "toby gee",
+          "heading": false
+        },
+        {
+          "term": "birkhäuser boston",
+          "heading": false
+        },
+        {
+          "term": "frank calegari",
+          "heading": false
+        },
+        {
+          "term": "arithmetic grou",
+          "heading": false
+        },
+        {
+          "term": "automorphic representations",
+          "heading": false
+        },
+        {
+          "term": "automorphic forms",
+          "heading": false
+        },
+        {
+          "term": "ana caraiani",
+          "heading": false
+        },
+        {
+          "term": "armand borel",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Patrick Allen, Bao Le Hung, Ana Caraiani, Frank Calegari , Toby Gee, David Helm, James New- ton, Richard Taylor, Jack Thorne, and Peter Scholze. Potent ial automorphy over CM ﬁelds. preprint, http://math.uchicago.edu/ fcale/papers/Ramanujan.pdf . [2] Spencer Bloch and Kazuya Kato. L-functions and Tamagawa numbers of motives. In The Grothendieck Festschrift, Vol. I, volume 86 of Progr . Math., pages 333–400.",
+      "extractCut": true
+    }
+  ],
+  "checks": {},
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "dheckegalois ghecke",
+      "heading": false
+    },
+    {
+      "term": "ghecke rightarrow",
+      "heading": false
+    },
+    {
+      "term": "ghecke triv",
+      "heading": false
+    },
+    {
+      "term": "algebra ghecke",
+      "heading": false
+    },
+    {
+      "term": "ghecke otimes",
+      "heading": false
+    },
+    {
+      "term": "endomorphisms ghecke",
+      "heading": false
+    },
+    {
+      "term": "index ghecke",
+      "heading": false
+    },
+    {
+      "term": "derived hecke",
+      "heading": true
+    },
+    {
+      "term": "ghecke subset",
+      "heading": false
+    },
+    {
+      "term": "ghecke infty",
+      "heading": false
+    },
+    {
+      "term": "ghecke acts",
+      "heading": false
+    },
+    {
+      "term": "ghecke preserves",
+      "heading": false
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 13,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 4,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p86); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 4 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1608.07234v3"
+  }
+}

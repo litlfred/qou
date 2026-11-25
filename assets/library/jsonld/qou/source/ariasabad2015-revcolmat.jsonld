@@ -1,0 +1,62 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ariasabad2015-revcolmat/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "ariasabad2015-revcolmat",
+  "contains": [
+    "library/ariasabad2015-revcolmat/sections/sec-front-matter",
+    "library/ariasabad2015-revcolmat/sections/sec-000",
+    "library/ariasabad2015-revcolmat/sections/sec-001",
+    "library/ariasabad2015-revcolmat/sections/sec-002",
+    "library/ariasabad2015-revcolmat/sections/sec-003",
+    "library/ariasabad2015-revcolmat/sections/sec-004",
+    "library/ariasabad2015-revcolmat/sections/sec-005",
+    "library/ariasabad2015-revcolmat/sections/sec-006",
+    "library/ariasabad2015-revcolmat/sections/sec-007",
+    "library/ariasabad2015-revcolmat/sections/sec-008",
+    "library/ariasabad2015-revcolmat/sections/sec-009",
+    "library/ariasabad2015-revcolmat/sections/sec-010",
+    "library/ariasabad2015-revcolmat/sections/sec-011",
+    "library/ariasabad2015-revcolmat/sections/sec-012",
+    "library/ariasabad2015-revcolmat/sections/sec-013",
+    "library/ariasabad2015-revcolmat/sections/sec-014",
+    "library/ariasabad2015-revcolmat/sections/sec-015",
+    "library/ariasabad2015-revcolmat/sections/sec-016",
+    "library/ariasabad2015-revcolmat/sections/sec-017",
+    "library/ariasabad2015-revcolmat/sections/sec-018",
+    "library/ariasabad2015-revcolmat/sections/sec-019"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Introduction to representations of braid groups — These are lecture notes prepared for a minicourse given at the Cimpa Research School Algebraic and geometric aspects of representation the- ory, held\n\n**Introduction to representations of braid groups**\n\n*Revista Colombiana de Matemáticas*\n\n38 pp, 21 sections.\n\n**Abstract.** These are lecture notes prepared for a minicourse given at the Cimpa Research School Algebraic and geometric aspects of representation the- ory, held in Curitiba, Brazil in March 2013. The purpose of the course is to provide an introduction to the study of representations of braid groups. Three general classes of representations of braid groups are considered: homological representations via mapping class groups, monodromy representations via the Knizhnik-Zamolodchikov connection, and solutions of the Yang-Baxter equa- tion via quasi-triangular bialgebras. Some of the remarkable relations between these three diﬀerent constructions are described.\n\n**Outline.** Front matter; 1 Introduction; 2 Braid Groups; 2.1 Artin’s Presentation; 2.2 Conﬁguration Spaces; 2.3 Mapping Class Groups; 2.4 Pure Braids; 3 Homological Representations; 3.1 The Burau Representation; 3.1 There; 3.2 Homological Interpretation; 3.3 Braids, Knots and the Alexander Conway Pol; 3.4 The Lawrence-Krammer-Bigelow Representatio; 4 The Knizhnik-Zamolodchikov Connection; 4.1 Cohomology of Conﬁguration Spaces and the ; 4.2 Representations of sl2(C) and Lawrence-Kra; 5 The Yang-Baxter Equation and the Drinfeld-Ko; 5.1 The Yang-Baxter Equation and Quasi-Triangu",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "ariasabad2015-revcolmat",
+    "title_source": "slug",
+    "source_file": "ariasabad2015-revcolmat.pdf",
+    "source_sha256": "822d696773a274e09ea983c9c2aca64c1e8801d672c9a24599b3b472b2f7fa7c",
+    "pages": 38,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

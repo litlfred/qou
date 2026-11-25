@@ -1,0 +1,272 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0905.0488v5",
+  "blocks": [
+    {
+      "id": "library/arxiv-0905.0488v5/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 11,
+      "target": "../sections/sec-000-0-introduction.md",
+      "narrative": null,
+      "content": "\\label{sec:Int}\n\\numberwithin{equation}{subsection}\n\n\n\\subsection{Deformation Quantization}\nLet $\\K$ be a field of characteristic $0$, and let $X$ be a\nsmooth algebraic variety over $\\K$, with structure sheaf\n$\\mcal{O}_X$. Suppose $R$ is a {\\em parameter algebra} over $\\K$;\nnamely $R$ is a complete local noetherian commutative \n$\\K$-algebra, with maximal ideal $\\m$ and residue field $R / \\m = \\K$. \nThe main example is $R = \\K[[\\hbar]]$, the formal power series ring in the\nvariable $\\hbar$. An {\\em associative $R$-deformation of $\\mcal{O}_X$} is a\nsheaf $\\mcal{A}$ of flat $\\m$-adically complete",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0488v5/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC\nVARIETIES\nAMNON YEKUTIELI\nDedicated to Rina Yekutieli, my Mother, on her 80th Birthday\nAbstract. Let X be a smooth algebraic variety over a ﬁeld K containing\nthe real numbers. We introduce the notion of twisted associative (resp. Pois-\nson) deformation of the structure sheaf OX. These are stack-like versions of\nusual deformations. We prove that there is a twisted quantization operation\nfrom twisted Poisson deformations to twisted associative deformations, which\nis canonical and bijective on gauge equivalence classes. This result extends\nwork of Kon",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0488v5/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Background on Crossed Groupoids and Stacks",
+      "pageStart": 11,
+      "pageEnd": 15,
+      "target": "../sections/sec-001-1-background-on-crossed-groupoids-and-stacks.md",
+      "narrative": null,
+      "content": "\\label{sec:back}\n\\numberwithin{equation}{section}\n\nIn this paper we work a lot with stacks on topological spaces. The reader can\nconsult our earlier paper \\cite{Ye4}, that contains a pretty detailed account\nof $2$-categories, stacks and gerbes, with the same notation (Sections 1-2 of\nthat paper). \n\nRegarding set theoretic considerations, we employ Grothendieck universes. We \nconsider a universe $\\cat{U}$, that we call the small universe. Elements of\n$\\cat{U}$ are called small sets. By default all groups, rings etc.\\ are small,\ni.e.\\ their underlying sets are small. And by default all categorie",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0488v5/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Deformations of Sheaves of Rings",
+      "pageStart": 15,
+      "pageEnd": 19,
+      "target": "../sections/sec-002-2-deformations-of-sheaves-of-rings.md",
+      "narrative": null,
+      "content": "\\label{sec:defs-alg-vars}\n\nIn this section we recall material from the companion papers\n\\cite{Ye7} and \\cite{Ye9}.\nFor the rest of the paper we work over a base field $\\K$ of characteristic\n$0$. All algebras are by default $\\K$-algebras, and all homomorphisms are by\ndefault over $\\K$. Further conventions are that associative algebras are\nunital, and commutative algebras are associative (and unital). \nFor $\\K$-modules $M, N$ we write $M \\ot N := M \\ot_{\\K} N$  and\n$\\opn{Hom}(M, N) := \\opn{Hom}_{\\K}(M, N)$.\n\n\\begin{dfn} \\label{dfn:13}\nA {\\em parameter $\\K$-algebra} is a \ncomplete local noetheria",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0488v5/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "DG Lie Algebras and Deformations of Affine Varieties",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "../sections/sec-003-3-dg-lie-algebras-and-deformations-of-affine-var.md",
+      "narrative": null,
+      "content": "\\label{sec:defs-DG-Lie}\n\nWe now recall some facts on DG Lie algebras from \\cite{Ye7, Ye9}. \n\n\\begin{dfn} \\label{dfn:220}\n\\begin{enumerate}\n\\item A DG Lie algebra \n$\\g = \\bigoplus_{i \\in \\mbb{Z}} \\mfrak{g}^{i}$\nis said to be of {\\em quantum type} if $\\g^i = 0$ for $i < -1$.\n\n\\item A {\\em quasi quantum type DG Lie algebra} is a DG Lie algebra \n$\\til{\\mfrak{g}}$ that admits a DG Lie quasi-isomorphism\n$\\til{\\g} \\to \\g$ to some quantum type DG Lie algebra $\\g$.\n\\end{enumerate}\n\\end{dfn}\n\nFix a quasi quantum type DG Lie $\\K$-algebra $\\g$, and a parameter $\\K$-algebra \n$(R, \\m)$. There is an induced",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0488v5/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted Objects in a Stack of Crossed Groupoids",
+      "pageStart": 21,
+      "pageEnd": 25,
+      "target": "../sections/sec-004-4-twisted-objects-in-a-stack-of-crossed-groupoid.md",
+      "narrative": null,
+      "content": "\\label{sec:tw.sh}\n\nIn this section we present some geometric constructions that generalize the\nconcepts of gerbe and stack of algebroids.\n\nAs a warmup we begin with the non-geometric version. \nRecall that a crossed groupoid \n$\\cat{P} =\n(\\cat{P}_1, \\cat{P}_2, \\opn{Ad}_{\\cat{P}_1 \\crvar \\cat{P}_{2}}, \\opn{D})$\ndetermines a functor \n$\\opn{IG} : \\cat{P}_1 \\to \\cat{Grp}$,\nand a natural transformation \n$\\opn{ig} : \\opn{IG} \\twoto \\opn{Aut}_{\\cat{P}_1}$\nof functors $\\cat{P}_1 \\to \\cat{Grp}$. \nNamely \n$\\opn{IG}(A) = \\cat{P}_2(A)$ for any object $A$ of $\\cat{P}$,\nand $\\opn{ig} = \\opn{D}$. See Definitio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0488v5/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Combinatorial Descent Data",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "../sections/sec-005-5-combinatorial-descent-data.md",
+      "narrative": null,
+      "content": "\\label{sec:cosim}\n\nWe begin with a quick review of cosimplicial theory. \nLet $\\bsym{\\Delta}$ denote the simplex category. The set\nof objects of $\\bsym{\\Delta}$ is the set $\\mbb{N}$ of natural\nnumbers. Given $p, q \\in \\mbb{N}$, the morphisms $\\alpha : p \\to q$\nin $\\bsym{\\Delta}$ are the order preserving functions\n$\\alpha : \\{ 0, \\ldots, p \\} \\to \\{ 0, \\ldots, q \\}$.\nWe denote this set of morphisms by\n$\\bsym{\\Delta}^q_p$.\nAn element of $\\bsym{\\Delta}^q_p$ may be thought of as a sequence\n$\\bsym{i} = (i_0, \\ldots, i_p)$ of integers with\n$0 \\leq i_0 \\leq \\cdots \\leq i_p \\leq q$. \nWe call \n$\\bsym{\\D",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0488v5/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometric Descent Data and Decomposition",
+      "pageStart": 28,
+      "pageEnd": 33,
+      "target": "../sections/sec-006-6-geometric-descent-data-and-decomposition.md",
+      "narrative": null,
+      "content": "\\label{sec:mdd}\n\nIn this section we study the decomposition of twisted objects on open\ncoverings.\n\nGiven a set $K$ and $p \\in \\N$, we let \n\\begin{equation} \\label{eqn:mdd.111}\n\\bsym{\\Delta}_p(K) := \\{ (k_0, \\ldots, k_p) \\mid k_i \\in K \\} .\n\\end{equation}\nThe collection $\\{ \\bsym{\\Delta}_p(K) \\}_{p \\in \\N}$ is a simplicial set. \nRecall that for an open covering $\\bsym{U} = \\{ U_k \\}_{k \\in K}$ of a\ntopological space $X$, and for \n$\\bsym{k} = (k_0, \\ldots, k_p) \\in \\bsym{\\Delta}_p(K)$, \nwe write \n$U_{\\bsym{k}} = U_{k_0} \\cap \\cdots \\cap U_{k_p}$.\n\nLet $\\{ G^j \\}_{j \\in J}$ be a collection of cro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0488v5/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Total Trivialization of Twisted Deformations",
+      "pageStart": 33,
+      "pageEnd": 36,
+      "target": "../sections/sec-007-7-total-trivialization-of-twisted-deformations.md",
+      "narrative": null,
+      "content": "\\label{sec:tttf}\n\nIn this section we assume Setup \\ref{setup:200}. \nAcyclic open sets were introduced in Definition \\ref{dfn:23}.\n\nLet $\\mcal{A}$ be an $R$-deformation of $\\mcal{O}_U$\n(associative of Poisson) , for some open set \n$U \\subset X$. By \\cite[Corollary 3.8]{Ye9}, for every $p \\geq 1$ \nthe sheaf of $R$-modules $\\m^p \\mcal{A}$ is $\\m$-adically complete.\nAs explained in Section \\ref{sec:defs-alg-vars}, there is a sheaf of\npronilpotent groups $\\opn{Exp}(\\m^p \\mcal{A})$ on $U$, with an isomorphism of\nsheaves of sets \n$\\exp : \\m^p \\mcal{A} \\iso \\opn{Exp}(\\m^p \\mcal{A})$.\nIf $V \\subset U$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0488v5/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lie Descent Data",
+      "pageStart": 36,
+      "pageEnd": 39,
+      "target": "../sections/sec-008-8-lie-descent-data.md",
+      "narrative": null,
+      "content": "\\label{sec:Lie-desc}\n\nWe begin this section by recalling what are $\\mrm{L}_{\\infty}$ morphisms\nbetween DG Lie algebras,\nfollowing \\cite[Sections 7-8]{Ye7}; see also \\cite{Ko1, Hi2, CKTB}.\nWe denote by $\\cat{DGLie} (\\K)$ the category of differential graded Lie algebras\nover $\\K$, and by $\\cat{DGCog}(\\K)$ the category of DG unital cocommutative\ncoalgebras over $\\K$. There are functors \n\\[ \\cat{DGLie}(\\K) \\xar{\\opn{C}} \\cat{DGCog}(\\K) \\xar{\\opn{L}}\n\\cat{DGLie}(\\K) , \\]\ncalled the {\\em bar} and {\\em cobar} functors respectively. \nThese functors are adjoint to each other, and they have explicit for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0488v5/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From Lie Descent to Geometric Descent",
+      "pageStart": 39,
+      "pageEnd": 42,
+      "target": "../sections/sec-009-9-from-lie-descent-to-geometric-descent.md",
+      "narrative": null,
+      "content": "\\label{sec:Lie-Geo}\n\nSuppose $\\mcal{G}$ is a sheaf of abelian groups on a topological space $X$. \nLet us recall how to construct the \\v{C}ech cosimplicial abelian group\n$\\mrm{C}(\\bsym{U}, \\mcal{G})$ associated to $\\mcal{G}$ and to an  \nopen covering $\\bsym{U} = \\{ U_k \\}_{k \\in K}$ of $X$. \nFor $p \\in \\mbb{N}$ we take the abelian group\n\\begin{equation} \\label{eqn:Lie-Geo.103}\n\\mrm{C}^p(\\bsym{U}, \\mcal{G}) := \n\\prod_{\\bsym{k} \\in \\bsym{\\Delta}_p(K)}\n\\Gamma(U_{\\bsym{k}}, \\mcal{G}) .\n\\end{equation}\nSee formula (\\ref{eqn:mdd.111}) regarding the set $\\bsym{\\Delta}_p(K)$.\nIf $\\bsym{k} \\in \\bsym{\\Del",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0488v5/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cosimplicial Formality",
+      "pageStart": 42,
+      "pageEnd": 45,
+      "target": "../sections/sec-010-10-cosimplicial-formality.md",
+      "narrative": null,
+      "content": "\\label{sec:cosim-form}\n\nIn this section we prove Theorem \\ref{thm:221}. We work in Setup\n\\ref{setup:6}.\n\nRecall the sheaves of DG Lie algebras \n$\\mcal{T}_{\\mrm{poly}, X}$ and \n$\\mcal{D}_{\\mrm{poly}, X}$ from Section \\ref{sec:defs-DG-Lie}. \nThe Lie brackets are not $\\mcal{O}_X$-linear (they are differential operators),\nbut forgetting them, both $\\mcal{T}_{\\mrm{poly}, X}$ and \n$\\mcal{D}_{\\mrm{poly}, X}$ are bounded below complexes of quasi-coherent \n$\\mcal{O}_X$-modules.\n\nThe antisymmetrization homomorphism (also called the HKR map)\n\\begin{equation} \\label{eqn:TDQ.120}\n\\Upsilon_1 : \\mcal{T}^p_{\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0488v5/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted Quantization",
+      "pageStart": 45,
+      "pageEnd": 48,
+      "target": "../sections/sec-011-11-twisted-quantization.md",
+      "narrative": null,
+      "content": "\\label{sec:TDQ}\n\nLet $X$ be a smooth algebraic variety over $\\K$, and $R$ a parameter algebra.\nWe have the stacks of crossed groupoids \n$\\twocat{PoisDef}(R, \\mcal{O}_X)$ and \n$\\twocat{AssDef}(R, \\mcal{O}_X)$ on $X$.\nRecall that a twisted object of $\\twocat{PoisDef}(R, \\mcal{O}_X)$\nis a twisted Poisson $R$-deformation of $\\OX$, and \na twisted object of $\\twocat{AssDef}(R, \\mcal{O}_X)$\nis a twisted associative $R$-deformation of $\\OX$.\nWe denote by $\\ol{\\opn{TwOb}}(-)$ the sets of twisted gauge equivalence classes\nof twisted objects. First order brackets were defined in Definition\n\\ref{dfn:22}.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0488v5/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 48,
+      "pageEnd": 50,
+      "target": "../sections/sec-012-references.md",
+      "narrative": null,
+      "content": "[BGNT1] P. Bressler, A. Gorokhovsky, R. Nest and B. Tsygan, Deformation quantization of\ngerbes, Advances Math. 214, Issue 1 (2007), 230-266.\n[BGNT2] P. Bressler, A. Gorokhovsky, R. Nest and B. Tsygan, Deformations of algebroid stacks,\nAdvances Math. 226 (2011), 3018-3087.\n[BGNT3] P. Bressler, A. Gorokhovsky, R. Nest and B. Tsygan, Formality for Algebroids I: Nerves\nof Two-Groupoids, eprint arXiv:1211.6603.\n[BGNT4] P. Bressler, A. Gorokhovsky, R. Nest and B. Tsygan, Formality for Algebroids II: For-\nmality Theorem for Gerbes, eprint arXiv:1308.3951.\n[BK]\nR.V. Bezrukavnikov and D. Kaledin, Fedos",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1508.07379v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Convergence of Mayer and Virial expansions and the Penrose tree-graph identity",
+      "dcterms:creator": [
+        "Procacci∗, Aldo",
+        "Yuhjtman†, Sergio A."
+      ],
+      "dcterms:issued": "D:20181118",
+      "dcterms:identifier": "https://arxiv.org/abs/1508.07379",
+      "dcterms:abstract": "We establish new lower bounds for the convergence radius of the Mayer series and the Virial series of a continuous particle system interacting via a stable and tempered pair potential. Our bounds considerably improve those given by Penrose and Ruelle in 1963 for the Mayer series and by Lebowitz and Penrose in 1964 for the Virial series. To get our results we exploit the tree-graph identity given by Penrose in 1967 using a new partition scheme based on minimum spanning trees.",
+      "dcterms:source": "library/arxiv-1508.07379v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1508.07379v2"
+    }
+  ]
+}

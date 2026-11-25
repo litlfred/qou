@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/witten1989-cmp-jones/sections/sec-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "References",
+  "pageStart": 47,
+  "pageEnd": 50,
+  "contains": [
+    "library/witten1989-cmp-jones/blocks/prose-sec-009"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/witten1989-cmp-jones",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/witten1989-cmp-jones",
+  "provenance": "ingested"
+}

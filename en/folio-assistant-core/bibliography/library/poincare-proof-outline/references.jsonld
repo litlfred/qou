@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/poincare-proof-outline",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "Formalization of the Poincare disc model of hyperbolic geometry",
+      "dcterms:creator": [
+        "Simić, Danijela"
+      ],
+      "dcterms:issued": "D:20260206",
+      "dcterms:abstract": "We describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL proof assistant. The model is deﬁned within the extended complex plane (one dimensional complex projective space CP 1), formalized in the AFP entry “Complex Geometry” [6]. Points, lines, congruence of pairs of points, betweenness of triples of points, circles, and isometries are deﬁned within the model. It is shown that the model satisﬁes all Tarski’s axioms except the Euclid’s axiom. It is shown that it satisﬁes its negation and the limiting parallels axiom (which proves it to be a model of hyperbolic geometry).",
+      "dcterms:source": "library/poincare-proof-outline/manifest.jsonld",
+      "dcterms:hasVersion": "library/poincare-proof-outline"
+    }
+  ]
+}

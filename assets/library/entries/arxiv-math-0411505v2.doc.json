@@ -1,0 +1,1429 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0411505v2",
+  "title": "arxiv-math-0411505v2",
+  "variant": "pdf",
+  "pages": 22,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "The Jones polynomial of a knot",
+      "number": "1.1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-the-jones-polynomial-of-a-knot"
+    },
+    {
+      "level": 2,
+      "title": "Statement of the main result",
+      "number": "1.2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-statement-of-the-main-result"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgement",
+      "number": "1.3",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-acknowledgement"
+    },
+    {
+      "level": 1,
+      "title": "The zeta function of a graph and the quantum MacMahon Master Theorem",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-2-the-zeta-function-of-a-graph-and-the-quantum-m"
+    },
+    {
+      "level": 1,
+      "title": "The arc-graph of a knot projection",
+      "number": "3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-3-the-arc-graph-of-a-knot-projection"
+    },
+    {
+      "level": 1,
+      "title": "The enhanced arc-graph and the Jones polynomial",
+      "number": "4",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-4-the-enhanced-arc-graph-and-the-jones-polynomia"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem 2",
+      "number": "5",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-5-proof-of-theorem-2"
+    },
+    {
+      "level": 2,
+      "title": "Row and column arcs order",
+      "number": "5.1",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-51-row-and-column-arcs-order"
+    },
+    {
+      "level": 2,
+      "title": "Flows on GK and monomials of GB'K(m1,…mr)",
+      "number": "5.2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-52-flows-on-gk-and-monomials-of-gbkm1mr"
+    },
+    {
+      "level": 1,
+      "title": "Cabling of the arc graph",
+      "number": "6",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-6-cabling-of-the-arc-graph"
+    },
+    {
+      "level": 2,
+      "title": "Comparison of excess numbers",
+      "number": "6.1",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-61-comparison-of-excess-numbers"
+    },
+    {
+      "level": 1,
+      "title": "Sortings and multiplicities of flows",
+      "number": "7",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-7-sortings-and-multiplicities-of-flows"
+    },
+    {
+      "level": 2,
+      "title": "Sortings",
+      "number": "7.1",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Sortings and the Jones polynomial",
+      "number": "7.2",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-72-sortings-and-the-jones-polynomial"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem 7",
+      "number": "7.3",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-73-proof-of-theorem-7"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. The zeta function of a graph and the Foata-Zeilberger formula",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-appendix-a-the-zeta-function-of-a-graph-and-the"
+    },
+    {
+      "level": 2,
+      "title": "A.1. The Foata-Zeilberger formula",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-a1-the-foata-zeilberger-formula"
+    },
+    {
+      "level": 1,
+      "title": "Appendix B. A state sum for the Jones polynomial",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-appendix-b-a-state-sum-for-the-jones-polynomial"
+    },
+    {
+      "level": 2,
+      "title": "B.1. Rotation and Excess numbers",
+      "number": null,
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-b1-rotation-and-excess-numbers"
+    },
+    {
+      "level": 1,
+      "title": "Appendix C. A combinatorial counting of structures",
+      "number": null,
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-appendix-c-a-combinatorial-counting-of-structure"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 159,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "jones function",
+          "heading": false
+        },
+        {
+          "term": "quantum ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "ﬁeld theory",
+          "heading": false
+        },
+        {
+          "term": "non-commutative",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0411505v2 [math.QA] 7 Mar 2005 A NON-COMMUTATIVE FORMULA FOR THE COLORED JONES FUNCTION STAVROS GAROUFALIDIS AND MARTIN LOEBL Abstract. The colored Jones function of a knot is a sequence of Laurent polynomials that encodes the Jones polynomial of a knot and its parallels. It has been understood in terms of representations of quantum groups and Witten gave an intrinsic quantum ﬁeld theory interpretation of",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0411505v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "Introduction 1",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-the-jones-polynomial-of-a-knot",
+      "number": "1.1",
+      "title": "The Jones polynomial of a knot",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 739,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jones polynomial",
+          "heading": true
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "jones function",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomial",
+          "heading": false
+        },
+        {
+          "term": "knot",
+          "heading": true
+        },
+        {
+          "term": "planar projection",
+          "heading": false
+        },
+        {
+          "term": "weight systems",
+          "heading": false
+        },
+        {
+          "term": "skein theory",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sub.history} In 1985, V. Jones discovered a celebrated invariant of knots, the Jones polynomial, \\cite{J1}. Jones's original formulation of the Jones polynomial was given in terms of {\\em representations of braid groups} and {\\em Hecke algebras}, \\cite{J1}. It soon became apparent that the Jones polynomial can be defined as a {\\em state sum} of a {\\em statistical mechanics} model that uses as input a planar",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-statement-of-the-main-result",
+      "number": "1.2",
+      "title": "Statement of the main result",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 921,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lbl def",
+          "heading": false
+        },
+        {
+          "term": "definition lbl",
+          "heading": false
+        },
+        {
+          "term": "lbl thm",
+          "heading": false
+        },
+        {
+          "term": "theorem lbl",
+          "heading": false
+        },
+        {
+          "term": "ferm",
+          "heading": false
+        },
+        {
+          "term": "red transition",
+          "heading": false
+        },
+        {
+          "term": "special arc",
+          "heading": false
+        },
+        {
+          "term": "ref def",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sub.sta} \\begin{definition} \\lbl{def.com} We consider $5r$ indeterminates $r^-_i,r^+_i,u^-_i,u^+_i,z_i, 1\\leq i\\leq r$. Let $A$ be a $r$ by $r$ matrix where each indeterminate appears at most once in an entry, and each entry is an indeterminate times a power of $q$. We assume $q$ is an indeterminate which commutes with all other indeterminates. Moreover we assume that each column contains at most one $u$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-acknowledgement",
+      "number": "1.3",
+      "title": "Acknowledgement",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 27,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ttq",
+          "heading": false
+        },
+        {
+          "term": "staudacher",
+          "heading": false
+        },
+        {
+          "term": "kricker",
+          "heading": false
+        }
+      ],
+      "extract": "The authors wish to thank A. Kricker, M. Klazar, TTQ. Le and M. Staudacher for helpful discussions. TTQ. Le has informed us that he also has a non-commutative expression for the colored Jones function for braids, obtained by a different method.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-004-2-the-zeta-function-of-a-graph-and-the-quantum-m",
+      "number": "2",
+      "title": "The zeta function of a graph and the quantum MacMahon Master Theorem",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 791,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zeta function",
+          "heading": true
+        },
+        {
+          "term": "weighted digraph",
+          "heading": false
+        },
+        {
+          "term": "lbl def",
+          "heading": false
+        },
+        {
+          "term": "lbl thm",
+          "heading": false
+        },
+        {
+          "term": "definition lbl",
+          "heading": false
+        },
+        {
+          "term": "theorem lbl",
+          "heading": false
+        },
+        {
+          "term": "cite glz",
+          "heading": false
+        },
+        {
+          "term": "right-quantum matrix",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sec.zeta} One of main ingredients in our result is combinatorics of non-negative integer flows on digraphs. They appear in an expression of the zeta function. Let us recall what is the zeta function of a digraph. We will consider digraphs (that is, graphs with oriented edges) with weights on their edges. Let $G=(V,E)$ be a digraph with vertex set $V$ and directed edges $E \\subset V \\times V$, and let",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-the-arc-graph-of-a-knot-projection",
+      "number": "3",
+      "title": "The arc-graph of a knot projection",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 586,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arc-graph",
+          "heading": true
+        },
+        {
+          "term": "blue edges",
+          "heading": false
+        },
+        {
+          "term": "knot projection",
+          "heading": true
+        },
+        {
+          "term": "lbl def",
+          "heading": false
+        },
+        {
+          "term": "definition lbl",
+          "heading": false
+        },
+        {
+          "term": "directed edges",
+          "heading": false
+        },
+        {
+          "term": "weighted digraph",
+          "heading": false
+        },
+        {
+          "term": "psdraw",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sec.arcgraph} Given a knot projection $K$, we define the arc-graph $G_{\\K}$ as follows: \\begin{itemize} \\item The vertices of $G_{\\K}$ are in 1-1 correspondence with the arcs of $\\K$. \\item The edges of $G_{\\K}$ are in 1-1 correspondence with {\\em transitions} of $\\K$, when we walk along $\\K$ and we either go under a crossing (blue edges), or jump up at a crossing (red edges) according to Figure",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-4-the-enhanced-arc-graph-and-the-jones-polynomia",
+      "number": "4",
+      "title": "The enhanced arc-graph and the Jones polynomial",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 711,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lbl thm",
+          "heading": false
+        },
+        {
+          "term": "arcs entering",
+          "heading": false
+        },
+        {
+          "term": "red arcs",
+          "heading": false
+        },
+        {
+          "term": "theorem lbl",
+          "heading": false
+        },
+        {
+          "term": "arc-graph",
+          "heading": true
+        },
+        {
+          "term": "jones polynomial",
+          "heading": true
+        },
+        {
+          "term": "long arcs",
+          "heading": false
+        },
+        {
+          "term": "arcs obtained",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sub.enhanced} In order to express the Jones polynomial as a function of the arc graph, we need to enhance the arc-graph as follows. \\begin{definition} \\lbl{def.rotten} {\\rm (a)} We introduce a {\\em linear order} $<_v$ on the set of edges of $G_K$ terminating at vertex $v$ as follows. Recall that $v$ corresponds to an arc $a_v$ of $K$. If we travel on $a_v$ along the orientation of $K$, we 'see' one by one the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-5-proof-of-theorem-2",
+      "number": "5",
+      "title": "Proof of Theorem 2",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 27,
+      "summary": null,
+      "keywords": [],
+      "extract": "Theorem 7 is used in this section to prove the main Theorem 2. In the rest of the paper we then prove Theorem 7 from Theorem 6.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-51-row-and-column-arcs-order",
+      "number": "5.1",
+      "title": "Row and column arcs order",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 322,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arcs",
+          "heading": true
+        },
+        {
+          "term": "deﬁne permutation",
+          "heading": false
+        },
+        {
+          "term": "right-quantum",
+          "heading": false
+        },
+        {
+          "term": "arc",
+          "heading": false
+        }
+      ],
+      "extract": "with r + 1 crossings. We order the arcs of K so that they appear in increasing order as we walk in the direction of the knot, and we denote by K the long knot obtained by breaking the arc ar+1. We also order the crossings of K so that arc ai ends at the ith crossing, for i = 1, . . . , r. Deﬁnition 5.1. (1) We deﬁne two permutations S, T on the set of the arcs of K as follows. For arc ai of K let T (i) = T (i, 1), .",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-52-flows-on-gk-and-monomials-of-gbkm1mr",
+      "number": "5.2",
+      "title": "Flows on GK and monomials of GB'K(m1,…mr)",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 560,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qsign",
+          "heading": false
+        },
+        {
+          "term": "γij appear",
+          "heading": false
+        },
+        {
+          "term": "ebv",
+          "heading": false
+        },
+        {
+          "term": "xij",
+          "heading": false
+        },
+        {
+          "term": "canonical monomial",
+          "heading": false
+        },
+        {
+          "term": "qexc",
+          "heading": false
+        },
+        {
+          "term": "appear ordered",
+          "heading": false
+        },
+        {
+          "term": "acquire",
+          "heading": false
+        }
+      ],
+      "extract": "K(m1, . . . mr). We interpret each entry γij with no z indeter- minate as arc (ij) of the arc-graph GK. Then each monomial in GB′ K(m1, . . . , mr) corresponds to a ﬂow on GK with indeg(i) = outdeg(i) = mi, i = 1, . . . , r. If f is such a ﬂow, we denote by G(f) the sum of all monomials of P GB′ K(m1, . . . , mr) corresponding to f. Summarizing we can write Observation 1. ∞ X m1,...,mr=0 GB′ K(m1, . . . , mr) = X f",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-6-cabling-of-the-arc-graph",
+      "number": "6",
+      "title": "Cabling of the arc graph",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 955,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cabling",
+          "heading": true
+        },
+        {
+          "term": "admissible subgraphs",
+          "heading": false
+        },
+        {
+          "term": "directed path",
+          "heading": false
+        },
+        {
+          "term": "psdraw cab",
+          "heading": false
+        },
+        {
+          "term": "black vertices",
+          "heading": false
+        },
+        {
+          "term": "lbl lem",
+          "heading": false
+        },
+        {
+          "term": "directed edge",
+          "heading": false
+        },
+        {
+          "term": "red edges",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sec.stateCJ} Recall the operation of {\\em cabling} $\\K^{(n)}$ the knot projection $\\K$ $n$ times. Recall that $a_1,\\dots, a_{r+1}$ are the arcs of $\\K$. Each $a_l$ is in the cabling replaced by $n^2$ arcs $a^l_{i,j}$, $i,j=1,\\dots, n$, with the agreement that the 'long arcs' obtained by cabling arc $a_k$ will be $a^k_{1j}$, $j=1,\\dots, n$ and the 'small arcs' obtained by cabling of crossing $k$ will be denoted",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-61-comparison-of-excess-numbers",
+      "number": "6.1",
+      "title": "Comparison of excess numbers",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 510,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quad prec",
+          "heading": false
+        },
+        {
+          "term": "text red",
+          "heading": false
+        },
+        {
+          "term": "lbl def",
+          "heading": false
+        },
+        {
+          "term": "text blue",
+          "heading": false
+        },
+        {
+          "term": "quad sign",
+          "heading": false
+        },
+        {
+          "term": "item projects",
+          "heading": false
+        },
+        {
+          "term": "exc",
+          "heading": false
+        },
+        {
+          "term": "definition lbl",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sub.coexcess} Given an admissible subgraph $c$ in $G_K^{(n)}$, let $f$ be the corresponding flow in $G_K$, to which $c$ projects, under the projection $$ \\pi: G_K^{(n)} \\to G_K. $$ In this section, we compare $\\exc(f)$ (in Definition \\ref{def.rotten}) with $\\exc(c)$. As we will see, the two excess numbers do not agree. In this section we will determine their difference. We begin by introducing a partial",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-7-sortings-and-multiplicities-of-flows",
+      "number": "7",
+      "title": "Sortings and multiplicities of flows",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 404,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sortings",
+          "heading": true
+        },
+        {
+          "term": "lbl def",
+          "heading": false
+        },
+        {
+          "term": "lbl lem",
+          "heading": false
+        },
+        {
+          "term": "definition lbl",
+          "heading": false
+        },
+        {
+          "term": "lemma lbl",
+          "heading": false
+        },
+        {
+          "term": "mult",
+          "heading": false
+        },
+        {
+          "term": "flows",
+          "heading": true
+        },
+        {
+          "term": "fix flow",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sec.categorifying} \\subsection{Sortings} \\lbl{sub.CAlex} In this section we introduce one of our key tools, which is a categorification of multiplicities of the flows on $G_K$. Let $f$ be a flow on $G_K$. If $e$ is an edge of $G_K$ then we let $F(e)\\subset F$ be the set of $f(e)$ copies of $e$; we choose an {\\em arbitrary} total order on each $F(e)$. Let $F= \\cup_{e\\in E_K}F(e)$ and let $F_r\\subset F$ consists",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-72-sortings-and-the-jones-polynomial",
+      "number": "7.2",
+      "title": "Sortings and the Jones polynomial",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 605,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lbl def",
+          "heading": false
+        },
+        {
+          "term": "sortings",
+          "heading": true
+        },
+        {
+          "term": "admissible sortings",
+          "heading": false
+        },
+        {
+          "term": "red edge",
+          "heading": false
+        },
+        {
+          "term": "definition lbl",
+          "heading": false
+        },
+        {
+          "term": "item defect",
+          "heading": false
+        },
+        {
+          "term": "blue edges",
+          "heading": false
+        },
+        {
+          "term": "exc",
+          "heading": false
+        }
+      ],
+      "extract": "\\lbl{sub.CJones} Here we define admissible sortings and give a formula for the colored Jones function in terms of them. \\begin{definition} \\lbl{def.AConf} Fix a flow $f$ of $G_K$ and a natural number $n$. Let $P=(C,v)$ be an n-sorting of $f$. We say that $P$ is {\\em admissible} if \\begin{itemize} \\item For every two edges $e,e' \\in F_r$ such that $v_e=v_{e'}$ and $e$ ends in vertex $i$ and $e'$ ends in vertex $j$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-73-proof-of-theorem-7",
+      "number": "7.3",
+      "title": "Proof of Theorem 7",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 557,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ebv",
+          "heading": false
+        },
+        {
+          "term": "multt",
+          "heading": false
+        },
+        {
+          "term": "def",
+          "heading": false
+        },
+        {
+          "term": "sign",
+          "heading": false
+        },
+        {
+          "term": "ﬁnishes",
+          "heading": false
+        },
+        {
+          "term": "starts",
+          "heading": false
+        }
+      ],
+      "extract": "Deﬁnition 7.8. Let e ∈Fr. We deﬁne set P(f, e) as follows: if e ∈F(e′), e1 ∈F(e′ 1) then e1 ∈P(f, e) if t(e′) = t(e′ 1) = v and e′ 1 <v e′, or e′ = e′ 1 and e1 < e in our ﬁxed total order of F(e). Deﬁnition 7.9. Let e ∈Fr. We deﬁne • def1(C, v, e) = |{e′ ∈P(f, e) : ve′ < ve}|, • def2(C, v, e) = |{e′ ∈Cd(e) : ve′ < ve}|, where d(e) is the biggest index such that d(e) ≥t(e) and e̸ ∈Cd(e). Recall that t(e) denotes the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-appendix-a-the-zeta-function-of-a-graph-and-the",
+      "number": null,
+      "title": "Appendix A. The zeta function of a graph and the Foata-Zeilberger formula",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-016-a1-the-foata-zeilberger-formula",
+      "number": null,
+      "title": "A.1. The Foata-Zeilberger formula",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 487,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lyndon words",
+          "heading": false
+        },
+        {
+          "term": "zeilberger deﬁne",
+          "heading": false
+        },
+        {
+          "term": "foata",
+          "heading": false
+        },
+        {
+          "term": "rearrangement",
+          "heading": false
+        },
+        {
+          "term": "unique factorization",
+          "heading": false
+        },
+        {
+          "term": "bij",
+          "heading": false
+        },
+        {
+          "term": "x1x",
+          "heading": false
+        },
+        {
+          "term": "flow",
+          "heading": false
+        }
+      ],
+      "extract": "Zeilberger [FZ, Theorem 1.1] in the language of our paper, resulting in Theorem 3. Consider the complete graph Kr with r vertices equipped with a weight martix B = (bij) of size r with independent commuting variables, and let R = Z[[bij]]. Let X = {x1, . . . , xr} denote an alphabet on r letters and X⋆denote the set of words on X. Recall the notion of a Lyndon word l ∈X, that is a word which is not a nontrivial",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-appendix-b-a-state-sum-for-the-jones-polynomial",
+      "number": null,
+      "title": "Appendix B. A state sum for the Jones polynomial",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 19,
+      "labelStart": "16",
+      "labelEnd": "19",
+      "words": 1209,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "state sum",
+          "heading": true
+        },
+        {
+          "term": "even subgraph",
+          "heading": false
+        },
+        {
+          "term": "admissible subgraphs",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": true
+        },
+        {
+          "term": "circles colored",
+          "heading": false
+        },
+        {
+          "term": "indegree",
+          "heading": false
+        },
+        {
+          "term": "planar projection",
+          "heading": false
+        },
+        {
+          "term": "err",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we review the proof of Theorem] The Jones polynomial V of a link is determined by the skein theory: wOeerO)ew-or 9) together with the initial condition V(unknot)(g) = q + q~!. We will be using a normalized version of the Jones polynomial defined by J(K)(t) = V(K)(#!/?)/V (unknot)(#\"/?). We review a state sum definition of the Jones polynomial V discussed by Turaev (see also [Ji]) and further studied",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-b1-rotation-and-excess-numbers",
+      "number": null,
+      "title": "B.1. Rotation and Excess numbers",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 384,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "admissible subgraph",
+          "heading": false
+        },
+        {
+          "term": "exc",
+          "heading": false
+        },
+        {
+          "term": "admissible state",
+          "heading": false
+        },
+        {
+          "term": "part-arcs",
+          "heading": false
+        },
+        {
+          "term": "arc",
+          "heading": false
+        },
+        {
+          "term": "arc-graph",
+          "heading": false
+        },
+        {
+          "term": "rot",
+          "heading": false
+        }
+      ],
+      "extract": "edges of Gx so that for each admissible state s and its corresponding (see Lemma[B.2) admissible subgraph c of Gx, rot(s) = >.<, rot(e). Definition B.6. There is a Gauss map d : K — S$ which together with the orientation of K and the counterclockwise orientation of S! induces a map Hy (Px, Z) —+ Hy(S',Z) = Z. The above composition is defined to be the rotation number rot. We can think of the rotation number as an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-appendix-c-a-combinatorial-counting-of-structure",
+      "number": null,
+      "title": "Appendix C. A combinatorial counting of structures",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": "20",
+      "labelEnd": "22",
+      "words": 913,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "k-structure",
+          "heading": false
+        },
+        {
+          "term": "def",
+          "heading": false
+        },
+        {
+          "term": "red edges",
+          "heading": false
+        },
+        {
+          "term": "ordering",
+          "heading": false
+        },
+        {
+          "term": "claim",
+          "heading": false
+        },
+        {
+          "term": "combinatorial",
+          "heading": true
+        },
+        {
+          "term": "deﬁnition",
+          "heading": false
+        },
+        {
+          "term": "structures",
+          "heading": true
+        }
+      ],
+      "extract": "In this section we consider structures on a set [k] = {1, . . ., k}, and their combinatorial countings. Deﬁnition C.1. Let k be a positive integer. A k-structure is a pair S = (A, B) such that • A = (A1, . . . , Al), B = (B1, . . . , Bl) for some l, Ai, Bi ⊂[k], Ai̸ = ∅for all i, • A is a partition of {1, . . . , k} such that for every i < j, x ∈Ai, y ∈Aj we have x < y. • Bi ⊂∪j<iAj. In particular B1 = ∅. • B is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 614,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ihara-selberg zeta",
+          "heading": false
+        },
+        {
+          "term": "melvin-morton conjecture",
+          "heading": false
+        },
+        {
+          "term": "melvin-morton expansion",
+          "heading": false
+        },
+        {
+          "term": "preprint math",
+          "heading": false
+        },
+        {
+          "term": "advances math",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "bureau representation",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        }
+      ],
+      "extract": "[A] J.W. Alexander, Topological invariants of knots and links, Trans. Amer. Math. Soc. 30 (1928) 275–306. [BG] D. Bar-Natan and S. Garoufalidis, On the Melvin-Morton-Rozansky conjecture, Inventiones, 125 (1996) 103–133. [Ch] S. Chmutov, A proof of the Melvin-Morton conjecture and Feynman diagrams, J. Knot Theory and its Rami. 7 (1998) 23–40. [FRT] L. Fadeev, N. Reshetikhin and L. Takhtadjian, Quantization of Lie",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 2,
+        "items": [
+          "Introduction",
+          "Sortings"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "lbl def",
+      "heading": false
+    },
+    {
+      "term": "red edges",
+      "heading": true
+    },
+    {
+      "term": "definition lbl",
+      "heading": false
+    },
+    {
+      "term": "lemma lbl",
+      "heading": false
+    },
+    {
+      "term": "theorem lbl",
+      "heading": false
+    },
+    {
+      "term": "blue edges",
+      "heading": true
+    },
+    {
+      "term": "lbl thm",
+      "heading": false
+    },
+    {
+      "term": "lbl lem",
+      "heading": false
+    },
+    {
+      "term": "lbl sub",
+      "heading": false
+    },
+    {
+      "term": "lbl sec",
+      "heading": false
+    },
+    {
+      "term": "directed edges",
+      "heading": false
+    },
+    {
+      "term": "red arcs",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "From a planar projection to the arc-graph. Transitions in the planar projection are indicated by dashed paths, and the corresponding edges in the arc-graph are blue (depicted with a small circle on them) or red",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 22,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 22,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p22); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 22 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0411505v2"
+  }
+}

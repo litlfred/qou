@@ -1,0 +1,664 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0703096v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0703096v1  [math.GT]  3 Mar 2007\nKNOTS\nFrom combinatorics of knot diagrams to combinatorial topology\nbased on knots\nWarszawa, November 30, 1984 – Bethesda, March 3, 2007\nJ´ozef H. Przytycki\nLIST OF CHAPTERS:\nChapter I: Preliminaries\nChapter II: History of Knot Theory\nThis e-print. Chapter II starts at page 3\nChapter III: Conway type invariants\nChapter IV: Goeritz and Seifert matrices\nChapter V: Graphs and links\ne-print: http://arxiv.org/pdf/math.GT/0601227\nChapter VI: Fox n-colorings, Rational moves,\nLagrangian tangles and Burnside groups\nChapter VII: Symmetries of links\nChapter VII",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "History of Knot Theory",
+      "pageStart": 3,
+      "pageEnd": 7,
+      "target": "../sections/sec-000-history-of-knot-theory.md",
+      "narrative": null,
+      "content": "Abstract. Leibniz wrote in 1679: “I consider that we need yet an-\nother kind of analysis, . . . which deals directly with position.” He called it\n“geometry of position”(geometria situs). The ﬁrst convincing example of\ngeometria situs was Euler’s solution to the bridges of K¨onigsberg problem\n(1735). The ﬁrst mathematical paper which mentions knots was written by\nA. T. Vandermonde in 1771: “Remarques sur les problemes de situation”.\nWe sketch in this chapter the history of knot theory from Vandermonde to\nJones stressing the combinatorial aspect of the theory that is so visible in\nJones type inv",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/figure-img-p005-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/figure-img-p006-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/figure-img-p007-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../images/img-p007-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From Heraclas to Dürer",
+      "pageStart": 7,
+      "pageEnd": 12,
+      "target": "../sections/sec-001-from-heraclas-to-dürer.md",
+      "narrative": null,
+      "content": "From Heraclas to D¨urer\nIt is tempting to look for the origin of knot theory in Ancient Greek mathe-\nmatics (if not earlier). There is some justiﬁcation to do so: a Greek physician\n3On the pages 179-180 they comment: The majority of the pictorial surface is covered\nwith the inter- twined coils of a serpent, forming a lattice pattern. To the right its tail\nappears below the coils and its head above, with a bird perched upon it. Two snakes\nintertwined rather than one are shown on earlier representations of this motif. Snakes\ntwist themselves together in this fashion when mating, suggesting this",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/recommendation-sec-001-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 12,
+      "target": "recommendation-sec-001-01.md",
+      "narrative": null,
+      "content": "Heraklas’ essay should be taken seriously as far as knot theory is con- cerned even if it is not knot theory proper but rather its application.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/figure-img-p010-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../images/img-p010-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/figure-img-p011-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../images/img-p011-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dawn of Knot Theory",
+      "pageStart": 12,
+      "pageEnd": 24,
+      "target": "../sections/sec-002-dawn-of-knot-theory.md",
+      "narrative": null,
+      "content": "Dawn of Knot Theory\nWe would argue, that modern knot theory has its roots with Gottfried Wil-\nhelm Leibniz (1646-1716) speculation that aside from calculus and analytical\ngeometry there should exist a “geometry of position” (geometria situs) which\ndeals with relations depending on position alone (ignoring magnitudes). In\na letter to Christian Huygens (1629-1695), written in 1679 [Lei], he declared:\n“I am not content with algebra, in that it yields neither the shortest proofs\nnor the most beautiful constructions of geometry.\nConsequently, in view\nof this, I consider that we need yet another kin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/recommendation-sec-002-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 24,
+      "target": "recommendation-sec-002-01.md",
+      "narrative": null,
+      "content": "Dawn of Knot Theory We would argue, that modern knot theory has its roots with Gottfried Wil- helm Leibniz (1646-1716) speculation that aside from calculus and analytical geometry there should exist a “geometry of position” (geometria situs) which deals with relations depending on position alone (ignoring magnitudes).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/recommendation-sec-002-02",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 24,
+      "target": "recommendation-sec-002-02.md",
+      "narrative": null,
+      "content": "One should add that Kuhn was the ﬁrst person to suggest geometric interpretation of complex numbers [Jan].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/recommendation-sec-002-03",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 24,
+      "target": "recommendation-sec-002-03.md",
+      "narrative": null,
+      "content": "DAWN OF KNOT THEORY 19 theory should be associated with four physicists: Hermann Von Helmholtz (1821-1894), William Thomson (Lord Kelvin) (1824-1907), Maxwell and Pe- ter Guthrie Tait (1831-1901).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/recommendation-sec-002-04",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 24,
+      "target": "recommendation-sec-002-04.md",
+      "narrative": null,
+      "content": "After more than a hundred years the paper is not translated (only Tait summary exists [Ta-2]) and one should repeat Tait appeal again: The paper very much deserves translation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/figure-img-p016-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../images/img-p016-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algebraic topology in Knot Theory",
+      "pageStart": 24,
+      "pageEnd": 28,
+      "target": "../sections/sec-003-algebraic-topology-in-knot-theory.md",
+      "narrative": null,
+      "content": "Algebraic topology in Knot Theory\nThe fundamental problem in knot theory is to be able to distinguish non-\nequivalent knots. It was not achieved (even in the simple case of the unknot\nand the trefoil knot) until Jules Henri Poincar´e (1854-1912) in his “Analy-\nsis Situs” paper ([Po-1] 1895) laid foundations for algebraic topology. Poul\nHeegaard (1871-1948) in his Copenhagen Dissertation of 1898 ([Heeg]) con-\nstructed the 2-fold branch cover of a trefoil knot and showed that it is the\nlens space, L(3, 1), in modern terminology. He also showed that the anal-\nogous branch cover of the unknot is S",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Jones revolution",
+      "pageStart": 28,
+      "pageEnd": 53,
+      "target": "../sections/sec-004-jones-revolution.md",
+      "narrative": null,
+      "content": "Jones revolution\nIn the spring of 1984, Vaughan Jones discovered his invariant of links, VL(t)\n[Jo-0, Jo-1, Jo-2]37, and still in May of 1984 he was trying various substi-\ntutions to the variable t, in particular t = −1. He observed that VL(−1)\nis equal to the classical knot invariant – determinant of a knot; however,\ninitially he was unable to prove it. Soon he realized that his polynomial\nsatisﬁes the local relation analogous to that discovered by Alexander and\nConway and established the meaning of t = −1.38 Thus the Jones polyno-\nmial is deﬁned recursively as follows:\n(i) Vo = 1,\n(ii)\n1\nt V",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/recommendation-sec-004-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 53,
+      "target": "recommendation-sec-004-01.md",
+      "narrative": null,
+      "content": "It should be noted, as ﬁrst observed by Kauﬀman, that bracket < >µ,A,B is an isotopy invariant of alternating links (and their connected sums) under the assumption that the third Tait conjecture (soon after proven by Menasco and Thistlethwaite [M-T-1, M-T-2]) holds.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/recommendation-sec-004-02",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 53,
+      "target": "recommendation-sec-004-02.md",
+      "narrative": null,
+      "content": "Alexander must also have read Tietze 1908 at this time, because in short order he disposed of two of the most important of Ti- etze’s conjectures: Alexander 1919a42 shows that there are nonhomeomorphic lens spaces with the same group, while Alexander 1919b43 proves that any orientable 3-manifold is a branched cover of S3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/recommendation-sec-004-03",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 53,
+      "target": "recommendation-sec-004-03.md",
+      "narrative": null,
+      "content": "When we shall construct a theory of functions with two independent variables, it will therefore be natural to look for a similar presentation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/recommendation-sec-004-04",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 53,
+      "target": "recommendation-sec-004-04.md",
+      "narrative": null,
+      "content": "L’analogie qui souvent est un guide excellent, peut devenir ici bien trompeuse.”44 Another diﬃculty on the way towards a lucid presentation is of course the fact that the geometrical structures that should play the part of the Riemann surfaces are 4-dimensional.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/recommendation-sec-004-05",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 53,
+      "target": "recommendation-sec-004-05.md",
+      "narrative": null,
+      "content": "9, 1887) should also be mentioned here.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/recommendation-sec-004-06",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 53,
+      "target": "recommendation-sec-004-06.md",
+      "narrative": null,
+      "content": "To let the examinations be considered as they should be, it will perhaps be a good idea to advance a line of thought that have been the guide of my examinations.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/recommendation-sec-004-07",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 53,
+      "target": "recommendation-sec-004-07.md",
+      "narrative": null,
+      "content": "39), I shall not go into details of the proof here.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/recommendation-sec-004-08",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 53,
+      "target": "recommendation-sec-004-08.md",
+      "narrative": null,
+      "content": "50 BIBLIOGRAPHY My thought was that it could be possible to construct a theorem similar to that for the algebraic surfaces, but before that a lot of work ought to be done: there should be created something for algebraic surfaces that could correspond to the Riemann surfaces of algebraic curves; next topological criteria for their unique cor- respondence should be advanced.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/recommendation-sec-004-09",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 53,
+      "target": "recommendation-sec-004-09.md",
+      "narrative": null,
+      "content": "It should be enough to remind oneself of • the studies of topological knots, nets, and the like by Tait or Simony; • the graphs; • the appearance of the graphical curves; the problem of colorings, and hereby separating, the countries on a map by means of 4 diﬀerent colors; • the problem of folding a stamp • and “last but not least” of the extensive attempts to make a theory of the connectivity numbers of the n-dimensional manifolds, and of generalizing Euler’s theorem of polyhedra – 2 attempts that are closely connected.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/recommendation-sec-004-10",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 53,
+      "target": "recommendation-sec-004-10.md",
+      "narrative": null,
+      "content": "In theory, the logic should be enough to ensure the development of mathematics, but practice shows us, what a mighty lever is the sense of tact that develops when a theory is applied to a large class of the concrete cases; even if a theory appears to be very logical and plausible, it can very easily contain mistakes that will only be revealed when it is additionally controlled by the understanding.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/recommendation-sec-004-11",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 53,
+      "target": "recommendation-sec-004-11.md",
+      "narrative": null,
+      "content": "The question that arises is, how we shall cut a closed manifold (vari´ete ferm´ee; Poincar´e 1.c. &1) to make it simply connected.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/recommendation-sec-004-12",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 53,
+      "target": "recommendation-sec-004-12.md",
+      "narrative": null,
+      "content": "If we succeed in proposing normal forms into which the diagrams could be reduced, then the fact that the normal forms of the diagrams are identical will be the necessary and suﬃcient condition for two diagrams to be equivalent. – But the nucleus of the diagram indicates the cuts that shall be done to make the given manifold simply connected; if we make the discussed extending in reverse order, then the manifold, which remains after performing the cuts determined by the diagram, will contract into that elementary manifold, which is removed by the puncture.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/table-001",
+      "types": [
+        "folio-assistant-core:Table",
+        "doco:Table"
+      ],
+      "kind": "table",
+      "title": "Figure 5.1",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "../tables/table-1.csv",
+      "narrative": null,
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/table-002",
+      "types": [
+        "folio-assistant-core:Table",
+        "doco:Table"
+      ],
+      "kind": "table",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "../tables/table-2.csv",
+      "narrative": null,
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/table-003",
+      "types": [
+        "folio-assistant-core:Table",
+        "doco:Table"
+      ],
+      "kind": "table",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 35,
+      "target": "../tables/table-3.csv",
+      "narrative": null,
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/table-004",
+      "types": [
+        "folio-assistant-core:Table",
+        "doco:Table"
+      ],
+      "kind": "table",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 36,
+      "target": "../tables/table-4.csv",
+      "narrative": null,
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/table-005",
+      "types": [
+        "folio-assistant-core:Table",
+        "doco:Table"
+      ],
+      "kind": "table",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 38,
+      "target": "../tables/table-5.csv",
+      "narrative": null,
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/table-006",
+      "types": [
+        "folio-assistant-core:Table",
+        "doco:Table"
+      ],
+      "kind": "table",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 39,
+      "target": "../tables/table-6.csv",
+      "narrative": null,
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/table-007",
+      "types": [
+        "folio-assistant-core:Table",
+        "doco:Table"
+      ],
+      "kind": "table",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 40,
+      "target": "../tables/table-7.csv",
+      "narrative": null,
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/table-008",
+      "types": [
+        "folio-assistant-core:Table",
+        "doco:Table"
+      ],
+      "kind": "table",
+      "title": "",
+      "pageStart": 42,
+      "pageEnd": 42,
+      "target": "../tables/table-8.csv",
+      "narrative": null,
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/table-009",
+      "types": [
+        "folio-assistant-core:Table",
+        "doco:Table"
+      ],
+      "kind": "table",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 43,
+      "target": "../tables/table-9.csv",
+      "narrative": null,
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0703096v1/blocks/table-010",
+      "types": [
+        "folio-assistant-core:Table",
+        "doco:Table"
+      ],
+      "kind": "table",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 44,
+      "target": "../tables/table-10.csv",
+      "narrative": null,
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

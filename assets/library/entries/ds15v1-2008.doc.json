@@ -1,0 +1,2139 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "ds15v1-2008",
+  "title": "ds15v1-2008",
+  "variant": "pdf",
+  "pages": 59,
+  "tocSource": "none",
+  "tocMethod": null,
+  "toc": [],
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 209,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "west chester",
+          "heading": false
+        },
+        {
+          "term": "chester university",
+          "heading": false
+        },
+        {
+          "term": "slater papers",
+          "heading": false
+        },
+        {
+          "term": "anderson hall",
+          "heading": false
+        },
+        {
+          "term": "type identities",
+          "heading": false
+        },
+        {
+          "term": "theta functions",
+          "heading": false
+        },
+        {
+          "term": "ramanujan",
+          "heading": false
+        }
+      ],
+      "extract": "Rogers-Ramanujan-Slater Type Identities James Mc Laughlin Department of Mathematics, 124 Anderson Hall, West Chester University, West Chester, PA 19383 USA jmclaughlin@wcupa.edu Andrew V. Sills Department of Mathematical Sciences, 203 Georgia Avenue, Georgia Southern University, Statesboro, GA 30460 USA asills@georgiasouthern.edu Peter Zimmer Department of Mathematics, 124 Anderson Hall, West Chester University,",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-001"
+      ]
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 269,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quintuple product",
+          "heading": false
+        },
+        {
+          "term": "product identity",
+          "heading": false
+        },
+        {
+          "term": "ramanujan",
+          "heading": false
+        },
+        {
+          "term": "ola",
+          "heading": false
+        }
+      ],
+      "extract": "for |ab| < 1. It is called a theta function, despite the lack of a theta in the notation, because it is equivalent, via change of variable, to the theta function of Jacobi [46, p. 463]: O(z, Ww) = > (=1)\"w\" e2\", (1.1.2) where |w| < 1. The following special cases of f(a,b) arise so often that they were given there own special notation by Ramanujan [9, p. 11]: e(q) = f(4,9) (1.1.3) v(@) = f(a\") (1.1.4) f(-@) =",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-002",
+        "library/ds15v1-2008/blocks/cor-page-002-01"
+      ]
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 283,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "certain q-series",
+          "heading": false
+        },
+        {
+          "term": "theta series",
+          "heading": false
+        },
+        {
+          "term": "bailey",
+          "heading": false
+        },
+        {
+          "term": "ifn",
+          "heading": false
+        },
+        {
+          "term": "fea",
+          "heading": false
+        }
+      ],
+      "extract": "Quintuple product identity. Q(w, 2) := f(—we?, —w?a) + wf (—wa, —w*2?) _ f(wart, x) f(-—wa*, —wa?) ~ f(-—w?, -w*) 1 —2,w; W)oo(war-?, Wr; W) oo. (1.1.12) = (-wa7 Bailey [14, p. 220, Eq. (4.1)] showed how certain linear combinations of theta series can be simplified to a single theta series: fq? P27) + 2h(P2,q27) = flee\"). (1.1.13) 1.2. Bailey Pairs and Bailey’s lemma Of central importance are the two",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-003"
+      ]
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 242,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bailey pair",
+          "heading": false
+        },
+        {
+          "term": "onur",
+          "heading": false
+        },
+        {
+          "term": "rogers",
+          "heading": false
+        },
+        {
+          "term": "ped",
+          "heading": false
+        }
+      ],
+      "extract": "Ramanujan [9, 10] discovered a number of identities of this type. W. N. Bailey studied Rogers’s work and as a result was able to simplify and extend it in [12, 13]. L. J. Slater used and extended Bailey’s methods to obtain a large collection of identities of Rogers- Ramanujan type in [40, 41]. Bailey’s transform. If Bn = > OpUn—rUn+r (1.2.3) r=0 and so Wn = > OpUr—nUr-ns (1.2.4) then - x > AnYn = > BnOn- n=0 n=0",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-004"
+      ]
+    },
+    {
+      "id": "page-005",
+      "number": null,
+      "title": "Page 5",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 243,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tbl",
+          "heading": false
+        },
+        {
+          "term": "pbl",
+          "heading": false
+        },
+        {
+          "term": "soa",
+          "heading": false
+        }
+      ],
+      "extract": "Proof. See Andrews [8, pp. 25-27, Theorem 3.3]. Oo Corollary 2. lee) 1 lee) So 2\"q\" Pale, a) = Sead (cx, q) (1.2.8) n=0 £4) oo r=0 . n mc . 2) 8 (a 2) _ (= £9; vi fo} > ag’ (-4 Pry (x 2) (1 2 9) da 1 (4. 0)nBal@.@) = Toray Caney rea 2. =0 , r=0 , ’ oe _» OO nt gt (r+1)/2 1 an n(n+1 2 (_ ( XQ) oo vg (— )r aq xq a,(x,q) (1.2.10) dX UYnBu(a, 4) = (XQ) oo dX (—2q)r ( Proof. Let n, pz — oo in (1.2.7) to obtain oe (-1))a",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-005",
+        "library/ds15v1-2008/blocks/cor-page-005-01",
+        "library/ds15v1-2008/blocks/cor-page-005-02",
+        "library/ds15v1-2008/blocks/cor-page-005-03"
+      ]
+    },
+    {
+      "id": "page-006",
+      "number": null,
+      "title": "Page 6",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 185,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bailey pair",
+          "heading": false
+        },
+        {
+          "term": "s2bl",
+          "heading": false
+        },
+        {
+          "term": "r-d",
+          "heading": false
+        }
+      ],
+      "extract": "Proof. To obtain (S2BL), set x = q and pp = ~gq in (1.2.11). L = py =q in (1.2.11). Example 5. The pair (an(,q), Gn(2, (-1)Pargr@r-V?? q)), where (1— 2¢?\")(e)n To obtain (FBL), set one THe and 1 Pla) = Ty form a Bailey pair. Proof. an(e,q) = Sp ore 0 (Q)n—r (29) n4r r n __ 1 (Gr ¢_gyrgnrrr-D2g, (4 (DnltMn dX logy, 1)\"q (2, q) 2 (= 2 Er or? ~ (@n(#4)n dX (q)r(1 — x)(agr*!),. q a So lava)\" (6)? () (@)n(@a)n P25 (Van",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-006",
+        "library/ds15v1-2008/blocks/ex-page-006-01"
+      ]
+    },
+    {
+      "id": "page-007",
+      "number": null,
+      "title": "Page 7",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 157,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "extremes",
+          "heading": false
+        },
+        {
+          "term": "rogers-ramanujan",
+          "heading": false
+        },
+        {
+          "term": "ramanujan-slater",
+          "heading": false
+        }
+      ],
+      "extract": "oo d= ( yrgn' 5n—1)/2 n= —oo ww iz q) 3 ied (by (1.1.7) the extremes of which are the first Rogers-Ramanujan identity. Upon inserting a and (1.2.13) into (TBL), we obtain yee = (eden yn grin 1) ae) n=0 eT De yrgnn-V) aa b(—4) the extremes of which are the first Ramanujan-Slater/Géllnitz-Gordon identity. Finally, inserting (1.2.12) and (1.2.13) into (S1BL), we obtain (by (1.1.7)) ico qhrtb/?( 1) . dX On “=F 25 (Ee rg",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-007"
+      ]
+    },
+    {
+      "id": "page-008",
+      "number": null,
+      "title": "Page 8",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 308,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "andrews g-analog",
+          "heading": false
+        },
+        {
+          "term": "slater list",
+          "heading": false
+        },
+        {
+          "term": "designation",
+          "heading": false
+        },
+        {
+          "term": "nth identity",
+          "heading": false
+        },
+        {
+          "term": "rogers-ramanujan type",
+          "heading": false
+        },
+        {
+          "term": "type identities",
+          "heading": false
+        }
+      ],
+      "extract": "Identity 8 (Lebesgue). oo Gg’ *D/?(a)n <= (On (Lebesgue [30]; cf. Andrews [6, p. 21, Cor. 2.7]) Identity 9 (Heine’s g-analog of GauB’s sum). (49; 7) o0(—@)oo = (C/a)oo _ > (=1rergrh? YP (a)n (H) (C)oo 10 a(g)n(e)n ([26]; cf. Gasper and Rahman [22, Eq. (II.8)]) Identity 10 (Andrews’ g-analog of Gauf’s 2Fi( 4) sum). ( (aq; 1) 00 (bq; 1) oo _ oe (a Ln b)pqrant) )/2 PICO 2 eb (AG) (Andrews [4, p. 526, Eq. (1.8)]; cf.",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-008"
+      ]
+    },
+    {
+      "id": "page-009",
+      "number": null,
+      "title": "Page 9",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 183,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "starcher",
+          "heading": false
+        },
+        {
+          "term": "witha",
+          "heading": false
+        },
+        {
+          "term": "pra",
+          "heading": false
+        }
+      ],
+      "extract": "2.1 gq-series Expansions of Constants and Theta Functions 0= > ((E) with z = —1) (2.1.1) n=0 = ; (=1)\"¢\" ogers D l= d Pan (Rogers [37, p. 333 (4)]) (2.1.2) 1= > a (M.-S.-Z. [34, Eq. (2.3)]) (2.1.3) _ °° ghn-Y/2 2= dX (ae (2.1.4) f(-—d = Soe pra PP +4\") (Euler; S. 1) (2.1.5) n=0 ! -y qv uler > (C) with z= Fca = dX ae (Euler [20]; (C) with z = q) (2.1.6) »=- yr grin) 2a) n n=0 —9)n (Starcher [44, p. 805, (3.6)]; (H)",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-009"
+      ]
+    },
+    {
+      "id": "page-010",
+      "number": null,
+      "title": "Page 10",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 182,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ramanujan",
+          "heading": false
+        },
+        {
+          "term": "ent",
+          "heading": false
+        },
+        {
+          "term": "ntl",
+          "heading": false
+        }
+      ],
+      "extract": "Cf CO (__4)n,n?/__. 2 fa =9) = > Ura\" (CGT n (Ramanujan [10, Entry 5.3.6]; S$. 4) (2.2.2) £1.07) GeO ?-aP)n weg 4am (223) = 250 Caan P)n (H) (2.2.4) n=0 (Q)on41 f( So gnin+1)/2 fe =>! a ((E) with z=q;8.2) (2.3.1) n=0 n f=) ye __brgnen) e(-@) dX (-GP nel? Pn (8.5) (232) La) = S (Dn (Ramanujan [10, Ent. 4.2.8]; S. 6c) (2.3.3) Fa ~ 2+ Ween famannjan [10, Ent. 4.2.8]; 8. 8 = > ee (Ramanujan [10, Entry 4.2.9]) (2.3.4)",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-010"
+      ]
+    },
+    {
+      "id": "page-011",
+      "number": null,
+      "title": "Page 11",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 176,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "witha",
+          "heading": false
+        },
+        {
+          "term": "tcp",
+          "heading": false
+        },
+        {
+          "term": "rogers",
+          "heading": false
+        }
+      ],
+      "extract": "~ y —p. ((L) with a=—q?) (2.4.6) n=0 = > a ((H); Ramanujan [10, Ent. 1.7.13]) (2.4.7) n=0 an+1 => mee. ((H) witha=-1,c=\\@) (2.48) n=0 mn fa?) weer) ackson ne 3): TCP) => un (Jackson [28, p. 179, line -3]; S. 9) (2.4.9) f(a, ia) _ . q™ (Don c v(-9) »> (PP )n(@s an (S.10c) (2.4.10) ee =f = an GT)n (8.66) (2.4.11) n=0 , 2n c( 3 co n(n+2) 2 aoe -y! — oe Gn (S. 67) (2.4.12) n=0 , n a0) a _@@(—a)on y(-@) dX (GP )nvildts",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-011"
+      ]
+    },
+    {
+      "id": "page-012",
+      "number": null,
+      "title": "Page 12",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 158,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nels",
+          "heading": false
+        },
+        {
+          "term": "rogers",
+          "heading": false
+        },
+        {
+          "term": "pgp",
+          "heading": false
+        }
+      ],
+      "extract": "_ _ f(-4, —q') _ oS (—1)\"qr@n-2) x(-q) A (q) = f(-®) ~ dX HG P@nlGiAn (Rogers a p. 330 (5)]; S. 15) grrr?) 7 “Lc nels Gn Roxajen [9, p. 252 (11.2.7)]) fe? =) ra 960) =F = ean (Rogers [36, p. 339, Ex. 2]; S. 19) _ fea) sae b(-q) (Gn (Rogers [37, p. 331, abv (7)]; S. 16) : 2 3 o% n? x(-7)G(@ = fe. ) dX CTO (Rogers [36, p. 330]; S. 20) f tu 5) ico yr ghin+?) aye (GP)n =a nels An a 2G [34, Eq. (2.7)]) ue me Sarat",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-012"
+      ]
+    },
+    {
+      "id": "page-013",
+      "number": null,
+      "title": "Page 13",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 157,
+      "summary": null,
+      "keywords": [],
+      "extract": "f(a =P) gO 'a Pn v(-9) (GS )n amanujan [10, Entry 4.2.11], Stanton [43 2.6.2 R E ) A 8 _< am . = i (Ramanujan [10, Ent. 4.2.7]; S. 25) (2.6.3) -9) n=0 oo yr g A i 0 = Yo ((E) with z=—V@;$. 23) (2.6.4) n=0 flea =P) os PO(HOn y(—4) (GP )n+i(Q)n (Ramanujan (10, Entry 4.2.12], Bailey [11, p. 72, Eq. (10)]; S. 22) (2.6.5) A) + Pniln (8.26) (2.6.6) =v ae (M.-S.-Z. [34]) (2.6.7) n=0 , n ” 5 © 2n(nt1)(_ 7. 72 Fey ~ dX a (8.",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-013"
+      ]
+    },
+    {
+      "id": "page-014",
+      "number": null,
+      "title": "Page 14",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 182,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "géllnitz",
+          "heading": false
+        },
+        {
+          "term": "ico",
+          "heading": false
+        },
+        {
+          "term": "rogers",
+          "heading": false
+        }
+      ],
+      "extract": "AGP) LVL )n g(-P) dX (don AED) _ SGP )n V-Q (an (Ramanujan [7, p. 178 (3.1)], [10, Ent. 5.2.3]; S. 29) 1 _ oo gh r-Y(@: q)n GE,P;P)0o <Z (Q)3n (special case of (H); cf. Corteel and Savage [19}) 1 _ oo gh r+ D/2(¢4- q)n GP.PiPo (anv (special case of (H); cf. Corteel and Savage [19]) 2.7 The Rogers-Selberg Mod 7 Identities 2n(n+1) f(-¢,-@°) > q Fa) Cara ar ae (Rogers [37, p. 331 (6)]; S. 31) n=0 f(-@,-@) 7 ico grrr)",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-014"
+      ]
+    },
+    {
+      "id": "page-015",
+      "number": null,
+      "title": "Page 15",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 177,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ramanujan",
+          "heading": false
+        },
+        {
+          "term": "pomp",
+          "heading": false
+        },
+        {
+          "term": "v-p",
+          "heading": false
+        }
+      ],
+      "extract": "co g” (4 0)n w(-q) = (PP )n (Ramanujan [10, Ent. 1.7.11, 4.2.15]; S. 36) f(=G 9) POPP ($4: P)n(=O)n p(—49) n=O (Q)an+i (Ramanujan [10, Entry 1.7.6]; S. 35) FP =P) POPE HPP n y(-4) (GP )niil(Qn (Ramanujan [10, Entry 1.7.5]) LP =P) POMP ($4: P)n(=O)n y(—49) 0 (Q)an+i (Ramanujan {10, Entry 1.7.8]; S. 37) F(sat a\") POMP“ Pn 9(—4) <= (Dn(Ga\")n (Ramanujan [10, Entry 1.7.4]) £40) Gert) 7C#) ~ 24 Wan (S. 38) {G.e) ae f(-@)",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-015"
+      ]
+    },
+    {
+      "id": "page-016",
+      "number": null,
+      "title": "Page 16",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 188,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bailey",
+          "heading": false
+        },
+        {
+          "term": "mod identities",
+          "heading": false
+        },
+        {
+          "term": "rogers",
+          "heading": false
+        }
+      ],
+      "extract": "2.8.2 Quintuple products _ > (LP )n ((H) with a = 1, c= V7 S. 47) (2.8.15) n=0 2.9 Mod 9 Identities flea) — BP @an41 - ; = ; : 2.9.1 f(-@) » (25 )n(Gs Gants (29-1) (Bailey [12, p. 422, (1.7)]; S. 40c) f(-@, —q') _ oo Pre) (g)an(1 _ gn*?) FB) PPG Pane 292) (Bailey [12, p. 422, (1.8)]; S. 41c) f(-<d.-@) SF (an f(-@) » (4; @)n (Gs Pan 293) ((R1) a = —q?; Bailey [12, p. 422, (1.6)]; S. 42c) f(-0,-0) — Sa (1) n(-G Pn",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-016"
+      ]
+    },
+    {
+      "id": "page-017",
+      "number": null,
+      "title": "Page 17",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 172,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rogers",
+          "heading": false
+        },
+        {
+          "term": "som",
+          "heading": false
+        },
+        {
+          "term": "pop",
+          "heading": false
+        }
+      ],
+      "extract": "H(ag?) _ fl-a?.=d) _ Ss _gmerr? 7 dX CE @)n+1(Q)n (Rogers [37, p. 330 (2), line 2]; S. 44) GP) _ fea) _ SS gone x(—q) f(-9) (GP )n(Dn (Rogers [36, p. 341, Ex. 1]; S. 46) gnanth/2 > Som (4.9) n+1(Q)n (Rogers [37, p. 330 (2), line 1)) 2.10.2 Quintuple Products AP) Q@,-a A POMMP (—@)n = = (S. 62) x(-g) (9g) A (ant gn nD? (—q) n n=0 (G)on (Rogers [37, p. 332 (12), 1st Eq.]) HP?) QQ =) a PrP? (an x(q) (a) (ants (Rogers",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-017"
+      ]
+    },
+    {
+      "id": "page-018",
+      "number": null,
+      "title": "Page 18",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 168,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "faa",
+          "heading": false
+        },
+        {
+          "term": "dyson",
+          "heading": false
+        },
+        {
+          "term": "a-q",
+          "heading": false
+        }
+      ],
+      "extract": "(Ramanujan [9, Ent. 11.3.1]; S. 29) faa. =a\") VG Panes f-G) Ga ans f(-@,-0) SP\" (GP )an 7a) aa ((R1) with a = —,/q; S. 53) £(-P.-P) GPO (-4 0 )n v(-q) » (GP nid Tn f(-d', —q) = mQn-l)(_¢: )n q (PP )n(P37)n 3 f(-@, -q) _ > ge (qe; @)3n w(—q>) — (q?; @?) (qs @)on (S. 54c) (S. 55) (S. 27) (S. 52) ((R2) a = —q'/3; Dyson [13, p. 9, Eq. (7.5)]) f(-a-q!) > P\" (PsP) 3n41 HP) aT Maal — F (Dyson [13, p. 9, Eq. (7.6)]) f(a q)",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-018"
+      ]
+    },
+    {
+      "id": "page-019",
+      "number": null,
+      "title": "Page 19",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 155,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rogers",
+          "heading": false
+        },
+        {
+          "term": "qrnt",
+          "heading": false
+        },
+        {
+          "term": "ghin",
+          "heading": false
+        }
+      ],
+      "extract": "2.12.2 Quintuple Products Qa, 9) _ ~ getve(-1; G)n(—n ~(—4) n=O (q)on(—1)n QPP) Pe? (-@: Pn y(-q) n=0 (Qent QD) 4 re GP nl-dn y(—9) (q)an(Q)n—1 Qa, 7) _ iad qQherrDi2(@; @)n(—@)n y-ad | (q)an+1(@)n 2.14 Mod 14 Identities 2.14.1 Triple Products f(-@, —q'’) 7 co ghin+?) f —q) 7 » (4; P)n+i(Qn fl-@, —q'°) 7 oo qrnt)) f(-4) 7 » (4; P)n+i(Qn Ag. -d A M@YP(-an > (Gan Qg =P) Rare P? (an y(—4) => (q) ) n(n+3 ae 2n+1 Qn n=0",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-019"
+      ]
+    },
+    {
+      "id": "page-020",
+      "number": null,
+      "title": "Page 20",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 219,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mod identities",
+          "heading": false
+        },
+        {
+          "term": "pwc",
+          "heading": false
+        },
+        {
+          "term": "f-p",
+          "heading": false
+        }
+      ],
+      "extract": "2.15 Mod 15 Identities bn? —4 f(-a-a\") > PG a n—G4s Pn (—4°) nal (Fon f(-@, -¢'3) oo P(e; ¢ 5) (gs P41 =1- > I(-@) — (9; @? Jan f(-¢@,-a) (GF Pn (PP nt =1-)¢ - I(-@) — (9; @? Jan fea =a\") > P(g; P ns Pn f(-@) (on f(-0. =P) — BOG PwC Pn f(-@) » (P; Pan 3 ll ° PP (PP )nl@s@)n (9°; g°)an wm Tv ray ~I | ray 2 Il Me 3 ll ° 2.16 Mod 16 Identities 2.16.1 Triple Products ((R1) with a = —q'3/5) ((R1) with a = —q\"/*) ((R1)",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-020"
+      ]
+    },
+    {
+      "id": "page-021",
+      "number": null,
+      "title": "Page 21",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 175,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quintuple products",
+          "heading": false
+        },
+        {
+          "term": "dyson",
+          "heading": false
+        },
+        {
+          "term": "starcher",
+          "heading": false
+        }
+      ],
+      "extract": "iad qr 2 (—@?: @2)n-2(1 + grt?) = q _ a= gaa) * n=2 (a)an (M.-S.-Z. [34]) we q) =1+ = (Pn (F@n (S. 72) =1+ = oo (Gessel-Stanton [24, Eq. (7.13)]) n=1 2.16.2 Quintuple Products Qd,-g Se ica 4m (S. 83) Q(¢, -@) 7 oo ghent)) s f(-@ ~ dX (Q)on+1 ( , 84) _ > _— (Starcher [44, p. 809, Eq. (3.29)]; S. 85) n=0 2n aa, —q) 7 oo gn n+1) f(-@ ~ y (q Jon+1 (Ss. 86) 2.18 Mod 18 Identities 2.18.1 Triple Products f=P =P?) ROP PPP",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-021"
+      ]
+    },
+    {
+      "id": "page-022",
+      "number": null,
+      "title": "Page 22",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 162,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rogers",
+          "heading": false
+        },
+        {
+          "term": "ml-s",
+          "heading": false
+        },
+        {
+          "term": "mls",
+          "heading": false
+        }
+      ],
+      "extract": "a = » heh (M.-S. [32], Eq. (1.4)) (2.18.5) a = » pes (M.-S. [32], Eq. (1.5)) (2.18.6) a = » ee (MLS. (32), Bq. (1.6) (2.18.7) a =1+ > Tie — \") (M-S. [32], Eq. (1.7)) (2.18.8) i =e > Pe ns 24\") (ML-S. [32], Eq. (18) (2.18.9) QE See em) a )_ » a (MS. [32], Eq. (1.10)) (2.18.11) 2.20 Mod 20 Identities 2.20.1 Triple Products A(q') — f(-d',-d'8) ane? x(-q) U(-a) » (Q)ant1 Gq’) _ f(-@.-a?) Sa x(-g) (-g) » (q)an 2.20.2",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-022"
+      ]
+    },
+    {
+      "id": "page-023",
+      "number": null,
+      "title": "Page 23",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 179,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rogers",
+          "heading": false
+        },
+        {
+          "term": "rer",
+          "heading": false
+        },
+        {
+          "term": "pnp",
+          "heading": false
+        }
+      ],
+      "extract": "(Rogers [36, p. 331, Eq. (6)]; S. 94) H(q') _ Qa\", =a‘) re) x(—4) f(-4@) (Gone (Rogers [36, p. 331, Eq. (7)]; S. 96) Qa, =a) Sa\" (-4. Pn v(-4) (PP )an Qa\". -F) Gl )(-G Pn v(-4) » (P:@)an _ > rer) (=G: net 0 (PP ant 2.24 Mod 24 Identities oa ee ans Lan (-1;¢7)n n=0 Q(q?, =P) — Aa (=0 On w(-@) » (?? 39 2 Von Qa? =@) — a (—G P)n(-15 Pn v(-9) » (—1L@?)n(P Pon n( (n-+2)( 3. 6), a Sg ae q Oy 4 = pnt Qi? =\") _ > gre) (~G5",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-023"
+      ]
+    },
+    {
+      "id": "page-024",
+      "number": null,
+      "title": "Page 24",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 234,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dyson",
+          "heading": false
+        },
+        {
+          "term": "ont",
+          "heading": false
+        },
+        {
+          "term": "ansi",
+          "heading": false
+        }
+      ],
+      "extract": "Qa\") yy S g\" (=a: 4 )n(4°4°)n—1( + 22?” (2; Pon (G5 @)n-1 Qa? a) _ > P(g n(=G Pn ( (PP )ansi(G Pn ) Qa?) _ > PO) (G8: n= P neil — Pr? 1( _ (275 7 )ont2(97; @?)n Q(q?.=@) _ > PO) (“PP )nl=05 Pn =0 (Q)2n(—@)2n41(—93 P)n (M.-S. [32, Eq. (1.18)}) (2.24.8) (S. 110c) (2.24.9) (S. 108c) (2.24.10) (M.-S. [32, Eq. (1.21)]) \" (2.24.11) QG?, =P) — BR POM (-P PO )n(—F Pn = M.-S. [32, Eq. (1.23 (-4@) dX (G5 Pont (-—G Pn ( [ : 4",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-024"
+      ]
+    },
+    {
+      "id": "page-025",
+      "number": null,
+      "title": "Page 25",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 188,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nti",
+          "heading": false
+        },
+        {
+          "term": "mod identities",
+          "heading": false
+        },
+        {
+          "term": "hesd",
+          "heading": false
+        }
+      ],
+      "extract": "LP =18) SLOPE Pn f(-@ << (g)ans1(Q)n f(-q, —q') 7 q”. (q°; @)n—1 f(-@ ~h* 1 (Qen-1(G)n n= 2.28 Mod 28 Identities (Dyson [12, p. (Dyson [12, p. Qq4,-d — Re )'(-G Pn (4) => (P:@?)2n Qa, -8) Sa (-GP)n W(—q) => (P:@)on Qi =-@) POP) (—G 7 nti w(—4) => (@?; 4?) ont ll ° n 2.32 Mod 32 Identities 16 q’) oo ) =14 ea gq” Qa’, —q') _ hesd inte) ! _ f(-@) n=0 (q Qa’, —q°) _ oe ghin+?) (-¢ P)n f(-4@) n=0 (q 2.36 Mod 36",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-025"
+      ]
+    },
+    {
+      "id": "page-026",
+      "number": null,
+      "title": "Page 26",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 174,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gantt",
+          "heading": false
+        },
+        {
+          "term": "mod identity",
+          "heading": false
+        },
+        {
+          "term": "prr",
+          "heading": false
+        }
+      ],
+      "extract": "‘(—q, -¢q 7) P(-a?, = Jars ee DP n-U(-GP)n w(-q) “(V3 P )an- mC Pn (Dyson [12, p. 434, Eq. (C3)]; S. 114) (2.36.4) 2.36.2 Quintuple Products Q(q oo 2n(n+1) 3. 6 n say = 2s Gantt (MS: B83) 2365) n=0 ‘ , ” iad mn? (3. 76 oe a = > -* va = (Ramanujan [10, Ent. 5.3.4]) (2.36.6) n=0 , mh ” Q(¢8, q@) 7 oo Prr+d (@?; q)n TP) 24 Wma Pn (S124) (28617) Q(q8,q7 2 g2nln+2) (3. gS), Hay eG malrth (S-128) 2368) 3. q-series",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-026"
+      ]
+    },
+    {
+      "id": "page-027",
+      "number": null,
+      "title": "Page 27",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 192,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mod identities",
+          "heading": false
+        },
+        {
+          "term": "nal",
+          "heading": false
+        },
+        {
+          "term": "q4s",
+          "heading": false
+        }
+      ],
+      "extract": "3.12 Mod 12 Identities f(-¢,-7) +4f(-a,-\") Sa (HLA n Fl—a) on (S. 47) f(-@,-4\") — af(-a-!) SB POO(-L@)n Fla) ~e (S. 48) 3.15 Mod 15 Identities f(a, @) _ af (?, q) 7 ico gh Ort D/2(_@), = S. 62 y(—49) << (Q)ant1 ( ) C8 n(3n—1)/2(__ = ga can (Rogers [37, p. 332]) n=0 (q)on fdi.¢) -af(a¢) _ < Gre Pan y(—4) 7 10 (Q)an4a 3.16 Mod 16 Identities f(a.) +aF(P.q4) _ > gh) (—g)on y(-4’) n=0 (Q)onsi(q4s Gn f=, =a\") tafe? =a)",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-027"
+      ]
+    },
+    {
+      "id": "page-028",
+      "number": null,
+      "title": "Page 28",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 28,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 215,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mod identities",
+          "heading": false
+        },
+        {
+          "term": "rogers",
+          "heading": false
+        },
+        {
+          "term": "awed",
+          "heading": false
+        }
+      ],
+      "extract": "f(-@,-@) — af(-¢@, -¢*) mmr D2 (—g) (Gs \\n—1 / =1 S. 75) (3.18.3 p(—49) > (q)n—1(q)2n ( _ 3.21 Mod 21 Identities So n(n) /2(_ Sal’.4 awed oe) _ = a. d — an (Rogers [37, p. 331 (1)]; S. 81) (3.21.1) _ e SO n(ntl1)/ fa’, erie ”) = dX a — an (Rogers [37, p. 331 (1)]; S. 80) (3.21.2) 5 5 SO n(nt+3)/ fa’, o — ga\") _ =x qn — Dn (Rogers (37, p. 331 (1)); 8. 82) (3.21.3) 3.24 Mod 24 Identities fla.a®) = af.) _ a f(-@) ~ dX",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-028"
+      ]
+    },
+    {
+      "id": "page-029",
+      "number": null,
+      "title": "Page 29",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 143,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mod identities",
+          "heading": false
+        },
+        {
+          "term": "alana",
+          "heading": false
+        },
+        {
+          "term": "fata",
+          "heading": false
+        }
+      ],
+      "extract": "fg ey dhea 330%) _ 7? gre ( eral a\") (ML-s. (33, Eq. (1.6)]) (3.27.4) 6 ay ap ty ag _ f(-.-4 wae gi) 3 q SL v) (S. 88c) (3.27.5) f(-a,~4 ala =\") yee (S. 89c) (3.27.6) 3.30 Mod 30 Identities fata\") alana\") _ » (Rogers [36, p. 333]; $.99) (3.30.1) a ¢°) “> - (S.98) (3.30.2) fer Thad) “> ae (Rogers (36, p. 334]); 8. 94) (3.30.3) f(a, ae hae _ » aes (S. 96) (3.30.4) f(a, ri) afl g) y enn (S. 100c) (3.30.5) fq, Pei gy _",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-029"
+      ]
+    },
+    {
+      "id": "page-030",
+      "number": null,
+      "title": "Page 30",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 30,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 243,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "onl",
+          "heading": false
+        },
+        {
+          "term": "cpe",
+          "heading": false
+        },
+        {
+          "term": "puy",
+          "heading": false
+        }
+      ],
+      "extract": "n(n+1)/2 (= @)n(—Qn+i(l — g\"*) (q)ant2 £@°,.P)- PGE?) Sa y(—9) > f(a a8) -PFC.0) 6 Ger vy? (4G @)\\n(—G)n (4) 7 > (Q)ont1 f(q'8,a'®) — af (a4 ght D2 (5 gn a(—n yiy y(—-4) > (q)2n (3.32.3) (S. 105) (3.32.4) (S. 104) (3.32.5) faa\") + f(a?) = FPP) - PLE) =24y0 Qe (0s Pn—a(=D)n y(-4) — (G)on (S. 101c) (3.32.6) f(¢?,@°) +af(¢,@\") _ a f(g, ¢3) _ af (i,q?) _ oo gD? (—@?: g?)n(—G)n41 ~(—4) n=0 (Q)an+2 (S. 102) (3.32.7) 3.36",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-030"
+      ]
+    },
+    {
+      "id": "page-031",
+      "number": null,
+      "title": "Page 31",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 213,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mod identities",
+          "heading": false
+        },
+        {
+          "term": "epp",
+          "heading": false
+        },
+        {
+          "term": "hesd",
+          "heading": false
+        }
+      ],
+      "extract": "3.42 Mod 42 Identities f(a?) = gf GP) LOPE Pn v(-9) (PP )an fq?) - FFG .a) _ 3 gq” (-4 Pn w(-q) = (P5P)an f(q3, 7°) _ fq, q’) _ hesd q+?) (—¢; P) nt w(-4) 3.48 Mod 48 Identities 7 a) (P79? )on+1 f(a, 7?) _ af (q™, @4) 7 grin) (-¢ P)n— f(-9) a x f(¢?, 7°) _ f(g? ¢ qr -9q a) \\n— 1 f(-4) “tt yeep (Q)2n FPP) = PFPA) LOO EPP )n f(-9) << (dante MP.) - FG a) _ > PY (=G. Pn f(-9) (ant ((H) with aq = —c = q°/*) Pe LOOP VHP",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-031"
+      ]
+    },
+    {
+      "id": "page-032",
+      "number": null,
+      "title": "Page 32",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 32,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 225,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "b-m",
+          "heading": false
+        },
+        {
+          "term": "mod identities",
+          "heading": false
+        },
+        {
+          "term": "dnt",
+          "heading": false
+        }
+      ],
+      "extract": "PP a) = FPA) SA PEO a nog ann (S. 127) (3.64.2) v(-4) — (Pa? )2n 6/20 4d) 5 ed 60 © n(n+2) ¢ PP a) = P Fah) yn a : Onsst- gig')n (S. 128¢) (3.64.3) w(-q) n=0 (PP ans LG?.2\") = PFC) _ => LO) (9; P nnl-G )n (S. 129) (3.64.4) v(—4) — (75 )ont2 f@?.a\") +af@4,0%) — PFE.) — Ff.) v(-9) - me —__ Gn (S. 130) (3.64.5) 3.108 Mod 108 Identities f(—@3, <2!) — 25° f(q®, g) + 2g! f(q-3, 111) Jays PP )n f(-9) < (=G)n(Qan+2 (B-M.-S.",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-032"
+      ]
+    },
+    {
+      "id": "page-033",
+      "number": null,
+      "title": "Page 33",
+      "level": 1,
+      "pageStart": 33,
+      "pageEnd": 33,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 350,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "slater list",
+          "heading": false
+        },
+        {
+          "term": "hnsi",
+          "heading": false
+        },
+        {
+          "term": "mod",
+          "heading": false
+        },
+        {
+          "term": "tnsi",
+          "heading": false
+        }
+      ],
+      "extract": "4 Equivalent Products in Slater’s List There is no canonical way to represent ratios of theta functions, and it often happens that two seemingly different products are in fact equivalent. The table below summarizes such occurrences in Slater’s list. If a particularly nice form of the infinite product was observed, then that form of the product is recorded in the table. HnsiG = 7\") (S. 1) Hoi. +4\") SV=S5=-S8.9= (S.",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-033",
+        "library/ds15v1-2008/blocks/prop-page-033-01"
+      ]
+    },
+    {
+      "id": "page-034",
+      "number": null,
+      "title": "Page 34",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 317,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tns",
+          "heading": false
+        },
+        {
+          "term": "tins",
+          "heading": false
+        },
+        {
+          "term": "hnsi",
+          "heading": false
+        }
+      ],
+      "extract": "Tns1 1/0 — @\");n £ 0,+4 (mod 10) (S. 46) = (S. 62) Tht 0+) S47) = (S10) = (8. 54)+9x(S. 49 (S. 48) = (S.54)—qx(S. 49) T]ns1 1/0 — @\");n £ 0,+1 (mod 12) (S. 49) Tns11/ — @\");n £ 0,2 (mod 12) (S. 50) Hnsi1/G— 9\");n £0 (mod 4) (S. 51) = (S. 8) = (8. 11) = (S. 64) Tana) B= 85) = (S. 9) = (S. 84) = (8. 85) TIns11/G -— ¢\");n 0,45 (mod 12) (S. 54) (S. 55) = (S. 57-) (S. 57) = (S. 55-) T]ns1 1/0 — @\");n ¥ 0,42 (mod 14) (S.",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-034"
+      ]
+    },
+    {
+      "id": "page-035",
+      "number": null,
+      "title": "Page 35",
+      "level": 1,
+      "pageStart": 35,
+      "pageEnd": 35,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 352,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tnsi",
+          "heading": false
+        },
+        {
+          "term": "mod",
+          "heading": false
+        },
+        {
+          "term": "tins",
+          "heading": false
+        }
+      ],
+      "extract": "Tns1 1/ — @\");n = £1, £4, +6, +7 (mod 16) (S. 86) = (S. 38) TIns11/G -— ¢\");n = +1,+4+5 (mod 12) (S. 87) = (S. 27) (S. 88)= (S. 91)—q?x(S. 90 (S. 89)= (S. 93)=qx(8. 9) T]ns1 1/0 — @\");n ¥ 0,£3 (mod 27) (S. 90) Tns1 1/0 — @\");n € 0,£6 (mod 27) (S. 91) Toi 1/0 — ¢\");n £0 (mod 9) (S. 92) TIns1 1/0 — ¢\");n 4 0, +12 (mod 27) (S. 93) T]nsi 1/0 — a\"); n ¥ 0,10, +3,+4,+7 (mod 20) (S. 94) = (S. 17-) (S. 95)= (S. 97) Tnsi 1/(",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-035"
+      ]
+    },
+    {
+      "id": "page-036",
+      "number": null,
+      "title": "Page 36",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 36,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 250,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "false theta",
+          "heading": false
+        },
+        {
+          "term": "theta series",
+          "heading": false
+        },
+        {
+          "term": "iad",
+          "heading": false
+        },
+        {
+          "term": "series identities",
+          "heading": false
+        },
+        {
+          "term": "qrnt",
+          "heading": false
+        }
+      ],
+      "extract": "let us define the corresponding false theta series as oo oo _ So ar DP nO DP _ Se are DPD? n=0 n=1 Notice that although f(a,b) = f(b, a), in general, U(a,b) 4 V(b, a). L.J. Rogers [37] studied q-series expansions for many instances of f(+q*,-+q°) and W(+q°, +9), which he called theta (resp. false theta) series of order (a + 3)/2. A false theta series identity for the series Y(+gq®, +q°) arises from the same Bailey",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-036"
+      ]
+    },
+    {
+      "id": "page-037",
+      "number": null,
+      "title": "Page 37",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 37,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 239,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "false theta",
+          "heading": false
+        },
+        {
+          "term": "rogers",
+          "heading": false
+        },
+        {
+          "term": "grr",
+          "heading": false
+        }
+      ],
+      "extract": "5.3 False Theta Series Identities of Order 3 2 om Rogers [37, p. 333 (4)]; F. 26 AG Pn (Rogers [ (4)]: F. 26) . ico (-1) grin) v(—¢, —¢) = a (Rogers [37, p. 333 (4)]; F. 22; F. 28) n=0 Gq )nt1 jr grr) /2( = Gant 3nt ES G@)an+1 co -y = (2; enti jr grr) Pq )3 n(1 _ g\"*?) s 5.4 False Theta Series Identities of Order 4 iad (—1)\"qr*D/?2(—@)n U(—¢°,-4°) = }) —— _ ( ) d (4; P)n41 (Rogers [37, p. 333 (5)]) ; iad yng) P(- ?;",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-037"
+      ]
+    },
+    {
+      "id": "page-038",
+      "number": null,
+      "title": "Page 38",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 38,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 195,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "false theta",
+          "heading": false
+        },
+        {
+          "term": "theta series",
+          "heading": false
+        },
+        {
+          "term": "rogers",
+          "heading": false
+        }
+      ],
+      "extract": "5.8 False Theta Series Identities of Order 2 (—)rgrerPP@)n (q)on Me v(P,q') — q¥(¢,¢\") (Rogers [37, p. 333 (2)]) ll ° (5.8.1) (-1)rgr@r+d/2 (Q)n @ (Rogers [37, p. 333 (2)]; F. 62) 2n+1 Me Vga) +q¥(¢,q) ll ° (5.8.2) (- 1)\" ge\" (n+))/2(q),, (Qonui (Rogers [37, p. 333 (2)]) we V(q',q'\"') +q¥(q,q\"4) = ll ° (5.8.3) 5.9 False Theta Series Identities of Order 9 oo yr ghin+3) 2 @;@) (M.-S. (32, Eq. (1.32)]) (5.9.1) yt",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-038"
+      ]
+    },
+    {
+      "id": "page-039",
+      "number": null,
+      "title": "Page 39",
+      "level": 1,
+      "pageStart": 39,
+      "pageEnd": 39,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 256,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ico",
+          "heading": false
+        },
+        {
+          "term": "false theta",
+          "heading": false
+        },
+        {
+          "term": "theta series",
+          "heading": false
+        }
+      ],
+      "extract": "Oo (1) nyn(n+1)/2 U(g?,¢\") —q¥(q.d') = ye (Rogers [37, p. 332 (1)]; F. 81) n=0 2n (5.11.2) . . oo 1)\" n(n+3)/2 n vag?) +a.) = oe (Rogers [37, p. 332 (1)]; F. 82) n=0 q)2n-41 (5.11.3) 5.16 False Theta Series Identities of Order 16 : (<1) gh? Q\\ng(—P3 Pn U(—¢°, —q2) = ( + ; (-¢°, -¢°*) » oma (M.-S.-Z be Eq. (2.14)]; F. 103) (5.16.1) . oo jr q’ — ) (4; q) U(q2, @°) + qh(q’, Dr\\~G Tn (@,q\"°) +4 yay Gn, (M.-S.-Z. [34,",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-039"
+      ]
+    },
+    {
+      "id": "page-040",
+      "number": null,
+      "title": "Page 40",
+      "level": 1,
+      "pageStart": 40,
+      "pageEnd": 40,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 343,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "series-equivalent",
+          "heading": false
+        },
+        {
+          "term": "infinite product",
+          "heading": false
+        },
+        {
+          "term": "free parameters",
+          "heading": false
+        },
+        {
+          "term": "identities",
+          "heading": false
+        },
+        {
+          "term": "general series",
+          "heading": false
+        },
+        {
+          "term": "specializing",
+          "heading": false
+        }
+      ],
+      "extract": "(M.-S. [32, Eq. (1.40)]) (5.18.6) 6 Inter-Dependence Between Identities A number of pairs of identities on Slater’s list are easily seen to be equivalent, either by simply replacing g by —q (for example, $24 and $30), replacing gq by q? (for example, S2 and $7), specializing a free parameter in a general series = product identity (for example, S8) or rearranging the finite g-products on the series side (for example,",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-040"
+      ]
+    },
+    {
+      "id": "page-041",
+      "number": null,
+      "title": "Page 41",
+      "level": 1,
+      "pageStart": 41,
+      "pageEnd": 41,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 271,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "goo",
+          "heading": false
+        },
+        {
+          "term": "ico",
+          "heading": false
+        },
+        {
+          "term": "caf",
+          "heading": false
+        }
+      ],
+      "extract": "oo qr 7)\" n \"1 D7 -yr (G7) aca Pn (1 Poo > qr —\"(—y)” -~ _ *2n( yr (9/6 PnP Pm = Ole P xo \\n qh rian ye Gr — mn (73 4)n(GQn (3 Goo = (45 4\") 3 (b; Pn ghr-Di2(—y)r _ (: ») oo ani (bs D)nl(G Dn SAPP (0G Pal V3 Don oo grr ae 7)\" a g! (3n?—3n)/' /2(— by)” (b:Q)nlG On Dx D4 \\n(b; Q)n(15 Dn y qn\" qs?) * “7\"(=4/0: don 24 G/0 Dil Dn a Cran PP; P)n(—10 Pn 3 (a: Q)ng™ *\"(by/a)” s! tal q)ngrer Van A (bg; nl D WG Dn (= Dw SK (=",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-041"
+      ]
+    },
+    {
+      "id": "page-042",
+      "number": null,
+      "title": "Page 42",
+      "level": 1,
+      "pageStart": 42,
+      "pageEnd": 42,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 546,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lost notebook",
+          "heading": false
+        },
+        {
+          "term": "ramanujan lost",
+          "heading": false
+        },
+        {
+          "term": "page",
+          "heading": true
+        },
+        {
+          "term": "andrews",
+          "heading": false
+        },
+        {
+          "term": "limiting case",
+          "heading": false
+        },
+        {
+          "term": "identities above",
+          "heading": false
+        },
+        {
+          "term": "letting",
+          "heading": false
+        },
+        {
+          "term": "transformation",
+          "heading": false
+        }
+      ],
+      "extract": "(3n? +n)/2q2n S (@54)nd _ (0G: Q)0 5! =a; ng? (ag) (6.1.21) — (9; @)n —AaY;, q)o0 “= (49,9 @)n Some of the identities above are derived from other identities above, as limiting cases. However, we list them explicitly to have the available for what follows below. Several follow from identities in Andrews’ two papers [1], [2] and some also follow from identities in Ramanujan’s notebooks. The transformation at (6.1.2)",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-042"
+      ]
+    },
+    {
+      "id": "page-043",
+      "number": null,
+      "title": "Page 43",
+      "level": 1,
+      "pageStart": 43,
+      "pageEnd": 43,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 378,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "slater list",
+          "heading": false
+        },
+        {
+          "term": "indicated base",
+          "heading": false
+        },
+        {
+          "term": "ico",
+          "heading": false
+        },
+        {
+          "term": "iad",
+          "heading": false
+        },
+        {
+          "term": "both sides",
+          "heading": false
+        },
+        {
+          "term": "specified",
+          "heading": false
+        },
+        {
+          "term": "series",
+          "heading": false
+        }
+      ],
+      "extract": "Note that the case a = q in (6.1.5) implies that, for |g) < 1 and y € C, ico qh rian a es “= (=9, )n+1 The tables are to be understood as follows: let the parameters have the specified values in the specified transformations (listed in the first column), and then, if applicable, make the indicated base changes in either both sides of the transformation or else recognize that one of the series equals the series in",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-043"
+      ]
+    },
+    {
+      "id": "page-044",
+      "number": null,
+      "title": "Page 44",
+      "level": 1,
+      "pageStart": 44,
+      "pageEnd": 44,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 260,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jacobi triple",
+          "heading": false
+        },
+        {
+          "term": "triple product",
+          "heading": false
+        },
+        {
+          "term": "inter-dependence",
+          "heading": false
+        }
+      ],
+      "extract": "These identities are somewhat reminiscent of the following identities of Gessel and Stanton [24]: . an) Jong 3 5 8.8 (=@?; 1 )oo ir (8; PB) n(Pi Wn ee (5 d\")oo | 61.24) >, ae Jon qr ten _ (a =a Moca a, (6.1.25) n= :@) 2n+1 (-@; qd 4) nH (q 74 Joo Transform. | Identity a b 7 base change 6.1.4 8.2 0 q 6.1.4 8.3 1 q 6.1.3 S.4 | —q'/? | -q¢ | —¢/? qo 6.1.4 S.9 1 -g q-@ 6.1.3 S.10 -1 q q q- 6.1.3 $.11 -q |q@ ¢ q-@ 6.1.4",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-044"
+      ]
+    },
+    {
+      "id": "page-045",
+      "number": null,
+      "title": "Page 45",
+      "level": 1,
+      "pageStart": 45,
+      "pageEnd": 45,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 300,
+      "summary": null,
+      "keywords": [],
+      "extract": "Transf. | Left Right a b Y base change 6.1.13 S6 $29 -1 qi? | -qi? | qo. -4 6.1.6 $44 $14 g 6.1.7 S17 $14 -¢ 6.1.8 S16 $14 —¢ 6.1.11 S16 S97 -q gl? q- 7g - —4 6.1.9 S96 $14 gi? (qoP)q-¢ 6.1.6 S46 S18 q 6.1.7 S20 S18 -~4q 6.1.8 S99 S18 -¢ 6.1.9 S79 $18 ql? qe-Pq-¢ 6.1.11 | S20 S19 -—q | qi? qo 6.1.13 | S22 S50 -q | qi? | ¢@? qo 6.1.3 $25 $48 | —q'/?2 | -¢ ql? qo 6.1.13 | S27 $28 | —q'/? | -—q'/? 1 qe @ 6.1.3 S28 |",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-045"
+      ]
+    },
+    {
+      "id": "page-046",
+      "number": null,
+      "title": "Page 46",
+      "level": 1,
+      "pageStart": 46,
+      "pageEnd": 46,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 348,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "doo",
+          "heading": false
+        },
+        {
+          "term": "jtp-dependent",
+          "heading": false
+        },
+        {
+          "term": "pgp",
+          "heading": false
+        },
+        {
+          "term": "ppp",
+          "heading": false
+        }
+      ],
+      "extract": "= PGP 00 — (PPP oc — FEO PGP 27: (m = 3) 34 14 crue = (-9?, =F, 0°: 0 — (-4 =~ F (-9\"°, = 3848 Poo + P Note that the right sides required some elementary manipulations in the cases m = 3 and m= 4, Now suppose we have a finite set of “Series S; = Product P;” identities (1 <i <n). Clearly i=1 i=l holds for any set of complex constants a;. If, for a certain set of a;, (6.2.3) follows as a consequence of the Jacobi",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-046"
+      ]
+    },
+    {
+      "id": "page-047",
+      "number": null,
+      "title": "Page 47",
+      "level": 1,
+      "pageStart": 47,
+      "pageEnd": 47,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 290,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qxs",
+          "heading": false
+        },
+        {
+          "term": "indicated identities",
+          "heading": false
+        },
+        {
+          "term": "identities sums",
+          "heading": false
+        },
+        {
+          "term": "q-product",
+          "heading": false
+        },
+        {
+          "term": "gade",
+          "heading": false
+        }
+      ],
+      "extract": "Here also the right sides required some elementary manipulations in the cases m = 3 and m= 4. Secondly, replace q by q? and set « = —q to get (4: Deo (9: da (-q',-¢', 0°: Bo — 24(-0°, -0°, 0°: Joo, (m=2) (6.2.5) = (P2050) — 29(9 0,095 0\" Joc (m= 3) = (-9\"°, -9'°, Fs goo — 2q(-9\"4, - 4°, gg) + 29-9\", -9\" asd Jac, (m= 4) The table is to be understood as follows: in each case it is easily checked that the combinations",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-047"
+      ]
+    },
+    {
+      "id": "page-048",
+      "number": null,
+      "title": "Page 48",
+      "level": 1,
+      "pageStart": 48,
+      "pageEnd": 48,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 269,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "doo",
+          "heading": false
+        },
+        {
+          "term": "qxs",
+          "heading": false
+        },
+        {
+          "term": "jtp-dependent",
+          "heading": false
+        },
+        {
+          "term": "nls",
+          "heading": false
+        }
+      ],
+      "extract": ": (<4: 7 )oo S111-¢?xS116=1 6.2.4)|ma3 X 6.24) mas i von I: oo $126-qx$128=1 6.2.4) maa X (6.2.4) |m=a (Fa) $127-°xS129=1 (6.2.4)|m=4 * Cad oe (ease) $78-29¢xS876=1 (6.2.5) |ma3 X ~ ite (9; Doo §104-qx$103=1 (6.2.5) |m=a X ce Table 4: Sets of JTP-dependent identities. A similar consideration of $53 +qxS55 yields 3 @” (-—G @)on(1 _ gin _ g8rt2 _ ge\") _ (q; Doo a GOna Caos Likewise, considering $40, $41 and $42 (each",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-048",
+        "library/ds15v1-2008/blocks/lem-page-048-01"
+      ]
+    },
+    {
+      "id": "page-049",
+      "number": null,
+      "title": "Page 49",
+      "level": 1,
+      "pageStart": 49,
+      "pageEnd": 49,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 303,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "joo",
+          "heading": false
+        },
+        {
+          "term": "rearranged",
+          "heading": false
+        },
+        {
+          "term": "hoo",
+          "heading": false
+        },
+        {
+          "term": "tenuous",
+          "heading": false
+        }
+      ],
+      "extract": "The dependence of identities via (6.3.1) is more tenuous than dependence via series- equivalence or the Jacobi triple product. We give the following example to illustrate the concept. If we replace q by q’° in (6.3.2) and set {a1, @2, a3; bi, be, bs} = (1,-7.5, -97, @F, then after a little simplification we get that ot lag, —F, a: lo — (PP. -8, -0 7 Joo = 0. (6.3.3) ala.4,-9°,—4\"34 This identity can be rearranged to",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-049"
+      ]
+    },
+    {
+      "id": "page-050",
+      "number": null,
+      "title": "Page 50",
+      "level": 1,
+      "pageStart": 50,
+      "pageEnd": 50,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 325,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bailey pairs",
+          "heading": false
+        },
+        {
+          "term": "pairs she",
+          "heading": false
+        },
+        {
+          "term": "rogers-ramanujan type",
+          "heading": false
+        },
+        {
+          "term": "slater",
+          "heading": false
+        },
+        {
+          "term": "ppp",
+          "heading": false
+        },
+        {
+          "term": "doo",
+          "heading": false
+        },
+        {
+          "term": "series transformations",
+          "heading": false
+        }
+      ],
+      "extract": "That (PP G5 q Jo 5 (qd Joo 4 (4; W044) oo (45 9) 20(4 9) o0( =, = 44, = 9°, — 47g\" oo follows from (6.3.7). We say that pairs of identities which are dependent via (6.3.1) are W-dependent. We give one other example of a pair of identities are W-dependent. The first is S.56: oo n(n-+2) _g. gil. gid. ql2 irr — 6a Pd oo (6.3.10) (G5 P nvilG Gaon (9; Doo The second is 33 be = = n 3, 3 . ool; co ir os r —.4 PPP )oo(=F",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-050"
+      ]
+    },
+    {
+      "id": "page-051",
+      "number": null,
+      "title": "Page 51",
+      "level": 1,
+      "pageStart": 51,
+      "pageEnd": 51,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 208,
+      "summary": null,
+      "keywords": [],
+      "extract": "[BP | (PBL) | (TBL) | (SIBL) | (S2BL) | (FBL) | Al | S98 S117 A2| soa sso | (5.11.1) A3 | S99 S118 Sg1_ | (5.11.2) A4 | S96 S119 $82 | (5.11.3) A5 | $83 $100 (3.15.2) | (5.8.1) AG | S84 $62 | (5.8.2) A7 | S85 S95 (5.8.3) A8 S97 S63 BI | S18 536 SI S13 B2 | S14 $34 B3 S8 CI | Sol S79 (2.10.3) c3 | S60 $45 | (5.5.1) c4 | $59 (2.20.1) $43 | (5.5.2) C5 | (2.10.6) S52 C6 | S46 $26 | (5.3.1) c7 | S44 $22 | (5.3.2) D5",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-051"
+      ]
+    },
+    {
+      "id": "page-052",
+      "number": null,
+      "title": "Page 52",
+      "level": 1,
+      "pageStart": 52,
+      "pageEnd": 52,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 400,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bailey pairs",
+          "heading": false
+        },
+        {
+          "term": "slater list",
+          "heading": false
+        },
+        {
+          "term": "pairs contains",
+          "heading": false
+        },
+        {
+          "term": "pair relative",
+          "heading": false
+        },
+        {
+          "term": "stated value",
+          "heading": false
+        },
+        {
+          "term": "duals",
+          "heading": false
+        },
+        {
+          "term": "she",
+          "heading": false
+        }
+      ],
+      "extract": "117 | S56 S69 $37. | (5.4.3) 118 | $50 S68 $35 | (5.4.4) wt | S93 S14 S73 J2 | sss | S108, $113 S74 J3 | S89 S111 S75 | (5.9.4) J4 | $124 $109 S107 | (5.18.5) J5 | S125 $110 Je | $90 S112 S76 | (5.9.3) Ki | S121 $126 S101 K2 | $120 $127 S104 K3 | S51 S130 S105 K4 $70 S106 | (5.16.2) K5 | $123 $128 $102 K6 | $122 $129 $103 | (5.16.1) L2 | $53 (2.8.12) M2 | S57 M3 | S55 Table 5: Slater’s Bailey pairs and associated",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-052"
+      ]
+    },
+    {
+      "id": "page-053",
+      "number": null,
+      "title": "Page 53",
+      "level": 1,
+      "pageStart": 53,
+      "pageEnd": 53,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 294,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pair slater",
+          "heading": false
+        },
+        {
+          "term": "bailey pair",
+          "heading": false
+        },
+        {
+          "term": "dual pair",
+          "heading": false
+        },
+        {
+          "term": "gna",
+          "heading": false
+        }
+      ],
+      "extract": "Bn(a,q)) into the equation 3s 1 Dnaag gna (e (7.2.1) Bn(a,q) = r=0 use Mathematica to compute 3,(a, q) for low values of n and hopefully recognize the form of 3,(a, q) for arbitrary n. If this does not work, then we try substituting the stated value for B,(a,q) into (7.2.1), and use Mathematica to compute successive values for a,,(a, g), again try to find the formula for a,,(a,q). Of course there is the possibility",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-053"
+      ]
+    },
+    {
+      "id": "page-054",
+      "number": null,
+      "title": "Page 54",
+      "level": 1,
+      "pageStart": 54,
+      "pageEnd": 54,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 184,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bailey pairs",
+          "heading": false
+        },
+        {
+          "term": "corrected versions",
+          "heading": false
+        },
+        {
+          "term": "typographic",
+          "heading": false
+        }
+      ],
+      "extract": "K.1 K.2 L.A L.3 K.3 K.4 L.2 L.2 K.5 K.6 L.4* L.6 L.5* L.5* Table 6: A * indicates a typographic error in Slater’s Paper, corrected versions of these Bailey pairs are given below. The five new Bailey pairs (7.2.2)—(7.2.6) are also stated below. The new Bailey pairs found (by deriving the duals of Bailey pairs given by Slater whose duals were not given by her) are the following. =n(n+3) (yea =e) An = a= 7.2.2 c=)",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-054"
+      ]
+    },
+    {
+      "id": "page-055",
+      "number": null,
+      "title": "Page 55",
+      "level": 1,
+      "pageStart": 55,
+      "pageEnd": 55,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 129,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "corrected bailey",
+          "heading": false
+        },
+        {
+          "term": "bailey pairs",
+          "heading": false
+        },
+        {
+          "term": "qos",
+          "heading": false
+        }
+      ],
+      "extract": "Corrected Bailey pairs THE ELECTRONIC JOURNAL OF COMBINATORICS 15 (2008), #DS15 BP An Bn (—1)\"gr?-n(1—gin +2) gn E6 (=?) (—4,959)n ok _4)n,—n (1-1) (=1)\"q-\" E7 (-1)\"q (1=q) (—4.9;9)n H.1* q” (q? +q°2) oe (q?..9:4)n L.15* n2 (a3) (<a? :a)n (1+q?) (4? :4)n(4?:4?)n mk n(n) n (=ha)n L.5 q (1+q\") (4:9)n(q47)n (2n+1) ox nQn+t) (140 : ) (<at a? )on M.2 q (1447) (q?;q)2n (2n+1) pax | (_47)\\n, nent) (14 : ) (qtiq2 Jon M.3 (",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-055"
+      ]
+    },
+    {
+      "id": "page-056",
+      "number": null,
+      "title": "Page 56",
+      "level": 1,
+      "pageStart": 56,
+      "pageEnd": 56,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 350,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bailey chain",
+          "heading": false
+        },
+        {
+          "term": "slater list",
+          "heading": false
+        },
+        {
+          "term": "lost notebook",
+          "heading": false
+        },
+        {
+          "term": "warnaar",
+          "heading": false
+        },
+        {
+          "term": "ramanujan lost",
+          "heading": false
+        },
+        {
+          "term": "berkovich",
+          "heading": false
+        },
+        {
+          "term": "melzer",
+          "heading": false
+        },
+        {
+          "term": "mccoy",
+          "heading": false
+        }
+      ],
+      "extract": ": ; n(—Jeg2 L.8* (—1)\"q@\" (q” 4 a) (—1)\"@\" (ert _ q”) g(-lig*)n (4,979?) n ant+4 2 11 2n+3 ag? 1.16* —1)n Qn? (1+q°\"\" 2) —1)rtlg2n +2n+3 (+9 ) (<a Jn ( ) q (1+q2) ( ) 4 (121?) (@2:42)n (12 42a) n n(n—1) L.4* (—1)rgrr-D (1 +\") 0 q_ 2 “——I._,i tI. (—9? :q)n(q7 397 )an Corrected Bailey pair BP A3n-1 A3n A3n+1 Bn 3n(3n~1) “ 3.9g3)y,— KI 0 fue a\") | 0 | aia 8 Conclusion We have only touched on a small part of the",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-056"
+      ]
+    },
+    {
+      "id": "page-057",
+      "number": null,
+      "title": "Page 57",
+      "level": 1,
+      "pageStart": 57,
+      "pageEnd": 57,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 335,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lost notebook",
+          "heading": false
+        },
+        {
+          "term": "ramanujan lost",
+          "heading": false
+        },
+        {
+          "term": "andrews",
+          "heading": false
+        },
+        {
+          "term": "london math",
+          "heading": false
+        },
+        {
+          "term": "rogers-ramanujan type",
+          "heading": false
+        },
+        {
+          "term": "mock theta",
+          "heading": false
+        },
+        {
+          "term": "hypergeometric series",
+          "heading": false
+        },
+        {
+          "term": "bailey",
+          "heading": false
+        }
+      ],
+      "extract": "Acknowledgements As with any long list of identities, keyed into ETRX by hand, there are bound to be typographical errors, and errors of omission. Accordingly, the authors would like to thank in advance the kind readers who will bring such errors, omissions, and updates to our attention, so that we can make this survey as useful to our readers as possible. References [1] G. E. Andrews, On basic hypergeometric",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-057"
+      ]
+    },
+    {
+      "id": "page-058",
+      "number": null,
+      "title": "Page 58",
+      "level": 1,
+      "pageStart": 58,
+      "pageEnd": 58,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 349,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sills",
+          "heading": false
+        },
+        {
+          "term": "ramanujan-slater type",
+          "heading": false
+        },
+        {
+          "term": "mclaughlin",
+          "heading": false
+        },
+        {
+          "term": "messenger",
+          "heading": false
+        },
+        {
+          "term": "math",
+          "heading": false
+        },
+        {
+          "term": "identities",
+          "heading": false
+        },
+        {
+          "term": "jackson",
+          "heading": false
+        },
+        {
+          "term": "cooper",
+          "heading": false
+        }
+      ],
+      "extract": "[16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] D. Bowman, J. McLaughlin, and A. V. Sills, Some more identities of Rogers- Ramanujan type, Ramanujan J., to appear. S. Cooper, The quintuple product identity, Int. J. Number Thoery 2 (2006), 115-161. S. Cooper and M. D. Hirschhorn, On some infinite product identities. Rocky Moun- tain J. Math. 31 (2001), 131-139. S.",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-058"
+      ]
+    },
+    {
+      "id": "page-059",
+      "number": null,
+      "title": "Page 59",
+      "level": 1,
+      "pageStart": 59,
+      "pageEnd": 59,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 233,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "london math",
+          "heading": false
+        },
+        {
+          "term": "rogers-ramanujan type",
+          "heading": false
+        },
+        {
+          "term": "sills",
+          "heading": false
+        },
+        {
+          "term": "slater",
+          "heading": false
+        },
+        {
+          "term": "rogers",
+          "heading": false
+        },
+        {
+          "term": "identities",
+          "heading": false
+        }
+      ],
+      "extract": "[35] S. Ramanujan, The Lost Notebook and Other Unpublished Papers, Narosa, New Delhi, 1988. [36] L. J. Rogers, Second memoir on the expansion of certain infinite products, Proc. London Math. Soc. 25 (1894) 318-343. [37] L. J. Rogers, On two theorems of combinatory analysis and some allied identities, Proc. London Math. Soc. 16 (1917) 315-336. [38] A. V. Sills, On identities of the Rogers-Ramanujan type, Ramanujan J.",
+      "extractCut": true,
+      "blocks": [
+        "library/ds15v1-2008/blocks/prose-page-059"
+      ]
+    }
+  ],
+  "checks": {},
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "electronic journal",
+      "heading": false
+    },
+    {
+      "term": "mod identities",
+      "heading": false
+    },
+    {
+      "term": "slater bailey",
+      "heading": false
+    },
+    {
+      "term": "rogers-ramanujan identities",
+      "heading": false
+    },
+    {
+      "term": "series identities",
+      "heading": false
+    },
+    {
+      "term": "q-series identities",
+      "heading": false
+    },
+    {
+      "term": "type identities",
+      "heading": false
+    },
+    {
+      "term": "product identities",
+      "heading": false
+    },
+    {
+      "term": "series-equivalent identities",
+      "heading": false
+    },
+    {
+      "term": "indicated identities",
+      "heading": false
+    },
+    {
+      "term": "some identities",
+      "heading": false
+    },
+    {
+      "term": "identities sums",
+      "heading": false
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "not-extracted",
+      "note": "split one section per page; no contents was trusted"
+    },
+    {
+      "kind": "sections",
+      "state": "partial",
+      "count": 59,
+      "note": "one per page, not by heading"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p57); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 59 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/ds15v1-2008"
+  }
+}

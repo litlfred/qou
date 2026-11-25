@@ -1,0 +1,1947 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2509.02354v2",
+  "title": "The holonomy braiding for $\\mathcal{U}_\\xi(\\mathfrak{sl}_2)$ in terms of geometric quantum dilogarithms",
+  "variant": "pdf",
+  "pages": 41,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Quantum sl2 and Weyl algebras",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-quantum-sl2-and-weyl-algebras"
+    },
+    {
+      "level": 2,
+      "title": "The braiding for quantum sl2",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-the-braiding-for-quantum-sl2"
+    },
+    {
+      "level": 2,
+      "title": "The braiding for Uq(sl2)",
+      "number": "2.2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-the-braiding-for-uqsl2"
+    },
+    {
+      "level": 2,
+      "title": "Representation into the Weyl algebra",
+      "number": "2.3",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-representation-into-the-weyl-algebra"
+    },
+    {
+      "level": 1,
+      "title": "Specialization to a root of unity",
+      "number": "3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-3-specialization-to-a-root-of-unity"
+    },
+    {
+      "level": 2,
+      "title": "Central subalgebras at roots of unity",
+      "number": "3.1",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-31-central-subalgebras-at-roots-of-unity"
+    },
+    {
+      "level": 2,
+      "title": "Uξ-modules.",
+      "number": "3.2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-32-uξ-modules"
+    },
+    {
+      "level": 2,
+      "title": "The braiding on characters",
+      "number": "3.3",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-33-the-braiding-on-characters"
+    },
+    {
+      "level": 2,
+      "title": "The homomorphism from Uq to the Weyl algebra at root of unity",
+      "number": "3.4",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-34-the-homomorphism-from-uq-to-the-weyl-algebra"
+    },
+    {
+      "level": 2,
+      "title": "Braiding of Uξ-modules.",
+      "number": "3.5",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-35-braiding-of-uξ-modules"
+    },
+    {
+      "level": 2,
+      "title": "Wξ-modules",
+      "number": "3.6",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-36-wξ-modules"
+    },
+    {
+      "level": 1,
+      "title": "The R-matrix in the Fourier dual basis",
+      "number": "4",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-4-the-r-matrix-in-the-fourier-dual-basis"
+    },
+    {
+      "level": 2,
+      "title": "Recursions for the R-matrix coefficients",
+      "number": "4.1",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-41-recursions-for-the-r-matrix-coefficients"
+    },
+    {
+      "level": 2,
+      "title": "The normalized R-matrix",
+      "number": "4.2",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-42-the-normalized-r-matrix"
+    },
+    {
+      "level": 2,
+      "title": "Factorization of the R-matrix",
+      "number": "4.3",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-43-factorization-of-the-r-matrix"
+    },
+    {
+      "level": 2,
+      "title": "The holonomy Yang-Baxter equation",
+      "number": "4.4",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-44-the-holonomy-yang-baxter-equation"
+    },
+    {
+      "level": 1,
+      "title": "R-matrix computations",
+      "number": "5",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-5-r-matrix-computations"
+    },
+    {
+      "level": 2,
+      "title": "Log-parameter dependence",
+      "number": "5.1",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-51-log-parameter-dependence"
+    },
+    {
+      "level": 2,
+      "title": "The pinched limit of the R-matrix",
+      "number": "5.2",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-52-the-pinched-limit-of-the-r-matrix"
+    },
+    {
+      "level": 2,
+      "title": "The determinant of the R-matrix",
+      "number": "5.3",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-53-the-determinant-of-the-r-matrix"
+    },
+    {
+      "level": 2,
+      "title": "The Fourier transform of the R-matrix",
+      "number": "5.4",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-54-the-fourier-transform-of-the-r-matrix"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. Quantum dilogarithms",
+      "number": null,
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-appendix-a-quantum-dilogarithms"
+    },
+    {
+      "level": 2,
+      "title": "A.1. Basic definitions",
+      "number": null,
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-a1-basic-definitions"
+    },
+    {
+      "level": 2,
+      "title": "A.2. Fusion identities",
+      "number": null,
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-a2-fusion-identities"
+    },
+    {
+      "level": 2,
+      "title": "A.3. Fourier transform identities",
+      "number": null,
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-a3-fourier-transform-identities"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 259,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calvin mcphail-snyder",
+          "heading": false
+        },
+        {
+          "term": "holonomy braiding",
+          "heading": false
+        },
+        {
+          "term": "holonomy yang-baxter",
+          "heading": false
+        },
+        {
+          "term": "nicolai reshetikhin",
+          "heading": false
+        },
+        {
+          "term": "quantum dilogarithms",
+          "heading": false
+        },
+        {
+          "term": "r-matrix",
+          "heading": false
+        },
+        {
+          "term": "fourier transform",
+          "heading": false
+        }
+      ],
+      "extract": "THE HOLONOMY BRAIDING FOR Uξ(sl2) IN TERMS OF GEOMETRIC QUANTUM DILOGARITHMS CALVIN MCPHAIL-SNYDER AND NICOLAI RESHETIKHIN Abstract. We derive an explicit formula for the holonomy R-matrix of quantum sl2 at a root of unity. We show it factorizes into a product of four quantum dilogarithms and satisfies a holonomy Yang-Baxter equation. This factorization extends previously known results and we collect many existing",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2509.02354v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 562,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum dilogarithms",
+          "heading": false
+        },
+        {
+          "term": "quantum sla",
+          "heading": false
+        },
+        {
+          "term": "quantum-dilogarithms",
+          "heading": false
+        },
+        {
+          "term": "holonomy matrix",
+          "heading": false
+        },
+        {
+          "term": "quantum mathfrak",
+          "heading": false
+        },
+        {
+          "term": "q-algebra",
+          "heading": false
+        },
+        {
+          "term": "factorization",
+          "heading": false
+        },
+        {
+          "term": "fadeev",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:Introduction label=\"sec:Introduction\"} Holonomy $R$-matrices were used in [@Kashaev2005] to describe invariants of knots with flat connections in the complement. These $R$-matrices were introduced in [@Reshetikhin1995] to describe the braiding for the de Concini-Kac specialization of quantum groups corresponding to simple finite dimensional Lie algebras at a root of unity. In that case the quantized",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-quantum-sl2-and-weyl-algebras",
+      "number": "2",
+      "title": "Quantum sl2 and Weyl algebras",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 25,
+      "summary": null,
+      "keywords": [],
+      "extract": "[]{#sec:q-algebra label=\"sec:q-algebra\"} Here we recall basic facts about quantum $\\sla$, its structure at a root of unity and its braiding properties.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-the-braiding-for-quantum-sl2",
+      "number": "2.1",
+      "title": "The braiding for quantum sl2",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 74,
+      "summary": null,
+      "keywords": [],
+      "extract": "by K±1, E, F with defining relations1 KE = q2EK KF = q−2FK [E, F] = (q −q−1)(K −K−1). It is a Hopf algebra, with the coproduct ∆(K) = K ⊗K, ∆(E) = E ⊗K + 1 ⊗E, ∆(F) = F ⊗1 + K−1 ⊗F and antipode S(K) = K−1, S(E) = −EK−1, S(F) = −KF. The center of Uq(sl2) is freely generated by the Casimir element2 (2.1) Ω= EF + q−1K + qK−1.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-22-the-braiding-for-uqsl2",
+      "number": "2.2",
+      "title": "The braiding for Uq(sl2)",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 312,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "otimes delta",
+          "heading": false
+        },
+        {
+          "term": "aligned mathcal",
+          "heading": false
+        },
+        {
+          "term": "mathcal acts",
+          "heading": false
+        },
+        {
+          "term": "automorphism mathcal",
+          "heading": false
+        },
+        {
+          "term": "sum otimes",
+          "heading": false
+        },
+        {
+          "term": "sla",
+          "heading": false
+        },
+        {
+          "term": "mathrm div",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:outer-R-matrix label=\"sec:outer-R-matrix\"} The algebra $\\mathcal{U}_q(\\sla)$ is not quasitriangular. Instead it is *braided* [@Reshetikhin1995] which means there is an outer automorphism $$\\mathcal{R}: \\mathop{\\mathrm{Div}}(\\mathcal{U}_q(\\sla)^{\\otimes 2}) \\to \\mathop{\\mathrm{Div}}(\\mathcal{U}_q(\\sla)^{\\otimes 2})$$ of the division ring of $\\mathcal{U}_q(\\sla)^{\\otimes 2}$ which intertwines the coproduct and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-representation-into-the-weyl-algebra",
+      "number": "2.3",
+      "title": "Representation into the Weyl algebra",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 358,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathcal otimes",
+          "heading": false
+        },
+        {
+          "term": "mathrm div",
+          "heading": false
+        },
+        {
+          "term": "otimes phi",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "r-action-on-weyl",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        },
+        {
+          "term": "end aligned",
+          "heading": false
+        },
+        {
+          "term": "algebra",
+          "heading": true
+        }
+      ],
+      "extract": "The $q$-Weyl algebra $W_q$ is an associative algebra over $\\mathbb{C}[q, q^{-1}]$ generated by invertible generators $x,y$ satisfying $$xy = q^2 yx.$$ The following is well known: ::: proposition There is a unique algebra homomorphism $\\phi : \\mathcal{U}_q(\\sla) \\to W_q[z,z^{-1}]$ acting on generators as $$\\phi(K)=x, \\ \\ \\phi(E)=qy(z-x), \\ \\ \\phi(F)=y^{-1}(1-z^{-1}x^{-1})$$ ::: It is easy to compute the image of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-specialization-to-a-root-of-unity",
+      "number": "3",
+      "title": "Specialization to a root of unity",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-31-central-subalgebras-at-roots-of-unity",
+      "number": "3.1",
+      "title": "Central subalgebras at roots of unity",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 218,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "subalgebra mathcal",
+          "heading": false
+        },
+        {
+          "term": "begin bmatrix",
+          "heading": false
+        },
+        {
+          "term": "end bmatrix",
+          "heading": false
+        },
+        {
+          "term": "slg",
+          "heading": false
+        },
+        {
+          "term": "hopf subalgebra",
+          "heading": false
+        },
+        {
+          "term": "casimir",
+          "heading": false
+        },
+        {
+          "term": "chi",
+          "heading": false
+        }
+      ],
+      "extract": "Set $\\xi=\\exp(\\frac{\\pi i}{N})$ for $N \\ge 2$ an integer. Denote by $\\mathcal{U}_\\xi$ the specialization of $\\mathcal{U}_q(\\sla)$ to $q=\\xi$. ::: proposition []{#thm:qgrp-center label=\"thm:qgrp-center\"} ::: thmenum The center $\\mathcal{Z}$ of $\\mathcal{U}_\\xi$ is generated by $$\\mathcal{Z}_0 = \\mathbb{C}[K^{\\pm N}, E^N, F^N]$$ and the Casimir element $\\Omega$ [\\[eq:Casimir\\]](#eq:Casimir){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-32-uξ-modules",
+      "number": "3.2",
+      "title": "Uξ-modules.",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 249,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "character chi",
+          "heading": false
+        },
+        {
+          "term": "hat chi",
+          "heading": false
+        },
+        {
+          "term": "cdot chi",
+          "heading": false
+        },
+        {
+          "term": "cyclic-reps",
+          "heading": false
+        },
+        {
+          "term": "standard-rep",
+          "heading": false
+        },
+        {
+          "term": "highest weight",
+          "heading": false
+        },
+        {
+          "term": "slg",
+          "heading": false
+        }
+      ],
+      "extract": "We say a $\\mathcal{U}_\\xi$ module $V$ has character $\\chi \\in \\slg^*$ if $$z \\cdot v = \\chi(z) v \\text{ for all } v \\in V, z \\in \\mathcal{Z}_0.$$ In particular any simple $\\mathcal{U}_\\xi$-module has a character. Because the multiplication on characters is compatible with the coproduct the category of $\\mathcal{U}_\\xi$-modules with characters is graded by $\\slg^*$: if $V_1, V_2$ have characters $\\chi_1, \\chi_2$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-33-the-braiding-on-characters",
+      "number": "3.3",
+      "title": "The braiding on characters",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 259,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "slg times",
+          "heading": false
+        },
+        {
+          "term": "chi otimes",
+          "heading": false
+        },
+        {
+          "term": "characters chi",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathcal characters",
+          "heading": false
+        },
+        {
+          "term": "braiding",
+          "heading": true
+        },
+        {
+          "term": "braiding root",
+          "heading": false
+        },
+        {
+          "term": "braid relation",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:braiding root of unity label=\"sec:braiding root of unity\"} Next we describe how $\\mathcal{R}$ gives an action of the braid group on $\\mathcal{Z}_{0}$-characters. Set $Y = 1 + K_1^{-N} E_1^N F_2^N K_2^N \\in \\mathcal{Z}_0 \\otimes \\mathcal{Z}_0$. In the ring $\\mathcal{U}_\\xi^{\\otimes 2}[Y^{-1}]$ the element $(1 - q^{-1} K_1^{-1} E_1 F_2 K_2)$ is invertible, so $\\mathcal{R}$ induces a map $$\\mathcal{R}:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-34-the-homomorphism-from-uq-to-the-weyl-algebra",
+      "number": "3.4",
+      "title": "The homomorphism from Uq to the Weyl algebra at root of unity",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "9",
+      "words": 828,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hat chi",
+          "heading": false
+        },
+        {
+          "term": "chi otimes",
+          "heading": false
+        },
+        {
+          "term": "mathcal otimes",
+          "heading": false
+        },
+        {
+          "term": "aligned frac",
+          "heading": false
+        },
+        {
+          "term": "wchar",
+          "heading": false
+        },
+        {
+          "term": "aligned phi",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        }
+      ],
+      "extract": "We now consider the presentation of $\\mathcal{U}_q$ in terms of $\\mathcal{W}_q$ at $q = \\xi$. The map $\\phi$ takes the center of $\\mathcal{U}_\\xi$ to the center of $\\mathcal{W}_\\xi$: ::: lemma The center of $\\mathcal{W}_{\\xi}$ is generated by $z$, $x^N$, and $y^N$ and $\\phi$ takes the center of $\\mathcal{U}_\\xi$ to the center of $\\mathcal{W}_{\\xi}$. Explicitly, $$\\begin{aligned} \\phi(K^N) &= x^N \\\\ \\phi(E^N) &=",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-35-braiding-of-uξ-modules",
+      "number": "3.5",
+      "title": "Braiding of Uξ-modules.",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 519,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hat chi",
+          "heading": false
+        },
+        {
+          "term": "chi arrow",
+          "heading": false
+        },
+        {
+          "term": "chi otimes",
+          "heading": false
+        },
+        {
+          "term": "rep hat",
+          "heading": false
+        },
+        {
+          "term": "braiding",
+          "heading": true
+        },
+        {
+          "term": "otimes mathcal",
+          "heading": false
+        },
+        {
+          "term": "character hat",
+          "heading": false
+        },
+        {
+          "term": "aligned hat",
+          "heading": false
+        }
+      ],
+      "extract": "The map $\\mathcal{R}$ gives a braiding on the algebra $\\mathcal{U}_{\\xi}$, but we want to construct a braiding on $\\mathcal{U}_{\\xi}$-modules. Given $\\mathcal{U}_\\xi$-modules $(\\pi_{i}, V_{i})$ with characters $\\chi_{i}$ related as in [\\[thm:braiding formulas\\]](#thm:braiding formulas){reference-type=\"ref\" reference=\"thm:braiding formulas\"} a is a linear map $$R : V_{1} \\otimes V_{2} \\to V_{1'} \\otimes V_{2'}$$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-36-wξ-modules",
+      "number": "3.6",
+      "title": "Wξ-modules",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 268,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hat chi",
+          "heading": false
+        },
+        {
+          "term": "rep hat",
+          "heading": false
+        },
+        {
+          "term": "rep alpha",
+          "heading": false
+        },
+        {
+          "term": "chi otimes",
+          "heading": false
+        },
+        {
+          "term": "omega beta",
+          "heading": false
+        },
+        {
+          "term": "otimes mathcal",
+          "heading": false
+        },
+        {
+          "term": "r-mat-module-diagram",
+          "heading": false
+        },
+        {
+          "term": "cyclic-reps",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:cyclic-reps label=\"sec:cyclic-reps\"} Here we define a local trivialization of the bundle of irreducible representations of $\\mathcal{W}_{\\xi}$. ::: definition []{#def:standard-rep label=\"def:standard-rep\"} Recall that $\\omega = \\xi^2 = \\exp(2\\pi i /N)$ and set $\\omega^{x} =\\exp(2 \\pi i x/N)$ for all $x\\in \\mathbb{C}$. For any $\\alpha, \\beta, \\mu \\in \\mathbb{C}$, let $\\rep{\\alpha, \\beta, \\mu} = (\\pi_{\\alpha,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-4-the-r-matrix-in-the-fourier-dual-basis",
+      "number": "4",
+      "title": "The R-matrix in the Fourier dual basis",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-013-41-recursions-for-the-r-matrix-coefficients",
+      "number": "4.1",
+      "title": "Recursions for the R-matrix coefficients",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 796,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vbh omega",
+          "heading": false
+        },
+        {
+          "term": "beta vbh",
+          "heading": false
+        },
+        {
+          "term": "alpha vbh",
+          "heading": false
+        },
+        {
+          "term": "rmat omega",
+          "heading": false
+        },
+        {
+          "term": "vbh sum",
+          "heading": false
+        },
+        {
+          "term": "rmat left",
+          "heading": false
+        },
+        {
+          "term": "pinched eigenlines",
+          "heading": false
+        },
+        {
+          "term": "omega zeta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:recurrences label=\"subsec:recurrences\"} ::: marginfigure ::: We can now explicitly compute the matrix coefficients of $R$ as a function of the geometric parameters $\\hat \\chi_{i}$. We begin by fixing some terminology and conventions. ::: definition We say a crossing is if it its segments (labeled as in [\\[fig:crossing-regions\\]](#fig:crossing-regions){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-42-the-normalized-r-matrix",
+      "number": "4.2",
+      "title": "The normalized R-matrix",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 461,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qlf zeta",
+          "heading": false
+        },
+        {
+          "term": "qlf recurrence",
+          "heading": false
+        },
+        {
+          "term": "frac qlf",
+          "heading": false
+        },
+        {
+          "term": "omega zeta",
+          "heading": false
+        },
+        {
+          "term": "log-colored crossing",
+          "heading": false
+        },
+        {
+          "term": "kappa gamma",
+          "heading": false
+        },
+        {
+          "term": "r-matrix",
+          "heading": true
+        },
+        {
+          "term": "rep hat",
+          "heading": false
+        }
+      ],
+      "extract": "We need to define some more log-parameters associated to a log-colored crossing $C$. Set $\\epsilon = 1$ if $C$ is positive and $\\epsilon = -1$ if it is negative. If $C$ is not pinched, $$K= \\frac{e^{2\\pi i \\gamma_{\\lN}}}{1 - \\left(b_{2'}/b_{1}\\right)^{\\epsilon}}$$ is not $\\infty$, so we can choose $\\kappa \\in \\mathbb{C}$ with $$e^{2\\pi i \\kappa} = K.$$ We will show in [\\[thm:R-matrix transformation\\]](#thm:R-matrix",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-43-factorization-of-the-r-matrix",
+      "number": "4.3",
+      "title": "Factorization of the R-matrix",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 17,
+      "labelStart": "15",
+      "labelEnd": "17",
+      "words": 593,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qlf zeta",
+          "heading": false
+        },
+        {
+          "term": "widehat mathcal",
+          "heading": false
+        },
+        {
+          "term": "widehat overline",
+          "heading": false
+        },
+        {
+          "term": "frac qlf",
+          "heading": false
+        },
+        {
+          "term": "factorization",
+          "heading": true
+        },
+        {
+          "term": "widehat end",
+          "heading": false
+        },
+        {
+          "term": "ideal octahedron",
+          "heading": false
+        },
+        {
+          "term": "r-mat-pinched",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:factorization label=\"sec:factorization\"} A remarkable property of the $R$-matrices in [\\[def:R-mat\\]](#def:R-mat){reference-type=\"ref\" reference=\"def:R-mat\"} is that they factor into four operators, each defined in terms of a quantum dilogarithm. <figure id=\"fig:build-ideal-octahedron\"> <figcaption>Building an ideal octahedron.</figcaption> </figure> ::: theorem []{#thm:R-factorization",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-44-the-holonomy-yang-baxter-equation",
+      "number": "4.4",
+      "title": "The holonomy Yang-Baxter equation",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 23,
+      "labelStart": "17",
+      "labelEnd": "23",
+      "words": 2116,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "riii beta",
+          "heading": false
+        },
+        {
+          "term": "chi coloring",
+          "heading": false
+        },
+        {
+          "term": "hat chi",
+          "heading": false
+        },
+        {
+          "term": "standard log-coloring",
+          "heading": false
+        },
+        {
+          "term": "rep hat",
+          "heading": false
+        },
+        {
+          "term": "admissible chi",
+          "heading": false
+        },
+        {
+          "term": "operatorname admissible",
+          "heading": false
+        },
+        {
+          "term": "chi otimes",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:braid groupoids label=\"sec:braid groupoids\"} Next we show our $R$-matrices satisfy braid relations. We discuss how to use these braid relations to define tangle and link invariants in [@McPhailSnyderVolume], extending [@Kashaev2005]. The holonomy $R$-matrix satisfies a *family* of braid relations parametrized by all admissible choices of colors, which have a natural interpretation in terms of flat $\\sla$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-5-r-matrix-computations",
+      "number": "5",
+      "title": "R-matrix computations",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 240,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "omega zeta",
+          "heading": false
+        },
+        {
+          "term": "frac omega",
+          "heading": false
+        },
+        {
+          "term": "omega theta",
+          "heading": false
+        },
+        {
+          "term": "r-mat-negative",
+          "heading": false
+        },
+        {
+          "term": "quantum-dilogarithms",
+          "heading": false
+        },
+        {
+          "term": "times omega",
+          "heading": false
+        },
+        {
+          "term": "phantom times",
+          "heading": false
+        },
+        {
+          "term": "r-mat-positive",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:R-matrix-computations label=\"sec:R-matrix-computations\"} This section contains computations with the $R$-matrices. We refer frequently to the identities concerning shifted $q$-factorials and quantum dilogarithms collected in [\\[sec:quantum-dilogarithms\\]](#sec:quantum-dilogarithms){reference-type=\"ref\" reference=\"sec:quantum-dilogarithms\"}. ::: lemma []{#thm:R-mat-phi-form label=\"thm:R-mat-phi-form\"} The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-51-log-parameter-dependence",
+      "number": "5.1",
+      "title": "Log-parameter dependence",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 25,
+      "labelStart": "23",
+      "labelEnd": "25",
+      "words": 577,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qlf zeta",
+          "heading": false
+        },
+        {
+          "term": "frac qlf",
+          "heading": false
+        },
+        {
+          "term": "aligned rmat",
+          "heading": false
+        },
+        {
+          "term": "r-matrix transformation",
+          "heading": false
+        },
+        {
+          "term": "tilde mathfrak",
+          "heading": false
+        },
+        {
+          "term": "kappa gamma",
+          "heading": false
+        },
+        {
+          "term": "beta tilde",
+          "heading": false
+        },
+        {
+          "term": "frac omega",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:log-paramater-dependence label=\"sec:log-paramater-dependence\"} Here we compute the dependence of the $R$-matrix on the choice of log-coloring as used in the proof of [\\[thm:RIII\\]](#thm:RIII){reference-type=\"ref\" reference=\"thm:RIII\"}. ::: lemma []{#thm:R-matrix transformation label=\"thm:R-matrix transformation\"} ::: thmenum []{#thm:R-matrix transformation:kappa label=\"thm:R-matrix transformation:kappa\"} The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-52-the-pinched-limit-of-the-r-matrix",
+      "number": "5.2",
+      "title": "The pinched limit of the R-matrix",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 28,
+      "labelStart": "25",
+      "labelEnd": "28",
+      "words": 1279,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "modb qlog",
+          "heading": false
+        },
+        {
+          "term": "cutoff modb",
+          "heading": false
+        },
+        {
+          "term": "zeta modb",
+          "heading": false
+        },
+        {
+          "term": "omega modb",
+          "heading": false
+        },
+        {
+          "term": "pinched limit",
+          "heading": true
+        },
+        {
+          "term": "modb text",
+          "heading": false
+        },
+        {
+          "term": "modb equiv",
+          "heading": false
+        },
+        {
+          "term": "phantom cutoff",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:pinched-limit label=\"sec:pinched-limit\"} In the computation of the $R$-matrix in [\\[sec:R-matrix\\]](#sec:R-matrix){reference-type=\"ref\" reference=\"sec:R-matrix\"} we excluded certain singular (\"pinched\") configurations of characters. We now explain how to derive the $R$-matrix there as a limit of the generic case. ::: definition []{#def:standard-flattening label=\"def:standard-flattening\"} Consider a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-53-the-determinant-of-the-r-matrix",
+      "number": "5.3",
+      "title": "The determinant of the R-matrix",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": "28",
+      "labelEnd": "29",
+      "words": 323,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qlf zeta",
+          "heading": false
+        },
+        {
+          "term": "det mathcal",
+          "heading": false
+        },
+        {
+          "term": "exp mathopen",
+          "heading": false
+        },
+        {
+          "term": "mathopen left",
+          "heading": false
+        },
+        {
+          "term": "aligned det",
+          "heading": false
+        },
+        {
+          "term": "frac qlf",
+          "heading": false
+        },
+        {
+          "term": "det tau",
+          "heading": false
+        },
+        {
+          "term": "frac epsilon",
+          "heading": false
+        }
+      ],
+      "extract": "Here we compute the determinant of the $R$-matrix, a key step in the proof of [\\[thm:RIII\\]](#thm:RIII){reference-type=\"ref\" reference=\"thm:RIII\"}. ::: lemma []{#thm:R-mat-det label=\"thm:R-mat-det\"} Let $R$ be the $R$-matrix associated to a log-colored crossing $c$ of sign $\\epsilon$. The determinant of the associated braiding $\\tau R$ is $$\\begin{aligned} \\det \\tau R = \\exp\\left(-\\frac{N}{2\\pi i} I(c)\\right) \\left(",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-54-the-fourier-transform-of-the-r-matrix",
+      "number": "5.4",
+      "title": "The Fourier transform of the R-matrix",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 33,
+      "labelStart": "29",
+      "labelEnd": "33",
+      "words": 1764,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qlog zeta",
+          "heading": false
+        },
+        {
+          "term": "frac qlog",
+          "heading": false
+        },
+        {
+          "term": "qlog alpha",
+          "heading": false
+        },
+        {
+          "term": "omega zeta",
+          "heading": false
+        },
+        {
+          "term": "omega modb",
+          "heading": false
+        },
+        {
+          "term": "omega theta",
+          "heading": false
+        },
+        {
+          "term": "times omega",
+          "heading": false
+        },
+        {
+          "term": "del omega",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:fourier-transform-R-mat label=\"sec:fourier-transform-R-mat\"} In our computation of the $R$-matrix coefficients in [\\[subsec:recurrences\\]](#subsec:recurrences){reference-type=\"ref\" reference=\"subsec:recurrences\"} we used a nonstandard basis $\\left\\{ \\def\\given{\\ \\middle| \\ } \\vbh n \\given n \\in \\mathbb{Z}/N\\mathbb{Z} \\right\\}$ Fourier dual to the usual highest-weight basis $\\left\\{ \\def\\given{\\ \\middle| \\ }",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-appendix-a-quantum-dilogarithms",
+      "number": null,
+      "title": "Appendix A. Quantum dilogarithms",
+      "level": 1,
+      "pageStart": 33,
+      "pageEnd": 33,
+      "labelStart": "33",
+      "labelEnd": "33",
+      "words": 82,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dilogarithms",
+          "heading": true
+        },
+        {
+          "term": "πix",
+          "heading": false
+        },
+        {
+          "term": "appendix",
+          "heading": true
+        }
+      ],
+      "extract": "This appendix contains some facts about quantum dilogarithms and q-series used in the earlier parts of the paper (of which it is logically independent). Most of them were previously known; they are collected here for convenience and to ensure they match our conventions. Recall that N ≥2 is an integer and ω := exp(2πi/N) and ωx := exp(2πix/N) for x ∈C. To define the complex logarithm we take a branch cut along the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-a1-basic-definitions",
+      "number": null,
+      "title": "A.1. Basic definitions",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 36,
+      "labelStart": "33",
+      "labelEnd": "36",
+      "words": 816,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "πiζ log",
+          "heading": false
+        },
+        {
+          "term": "e2πiζ",
+          "heading": false
+        },
+        {
+          "term": "recurrence relation",
+          "heading": false
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "ωkζ",
+          "heading": false
+        },
+        {
+          "term": "exp",
+          "heading": false
+        },
+        {
+          "term": "cyclic quantum",
+          "heading": false
+        },
+        {
+          "term": "sinh",
+          "heading": false
+        }
+      ],
+      "extract": "dilogarithm is defined by (A.1) Φb(z) := exp Z R+iϵ exp(−2izw) 4 sinh(wb) sinh(w/b) dw w for | Im z| < | Im cb|, where (A.2) cb := i 2 \u0000b + b−1\u0001 . Φb extends to a meromorphic function on C with an essential singularity at infinity. We consider the case where b = √ N and the normalization (A.3) φ(ζ) = φN(ζ) := Φ√ N \u0012 i ζ √ N −c√ N + i √ N \u0013 34 CALVIN MCPHAIL-SNYDER AND NICOLAI RESHETIKHIN One reason for this is to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-a2-fusion-identities",
+      "number": null,
+      "title": "A.2. Fusion identities",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 37,
+      "labelStart": "36",
+      "labelEnd": "37",
+      "words": 199,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-pochhammer",
+          "heading": false
+        },
+        {
+          "term": "mod",
+          "heading": false
+        },
+        {
+          "term": "braiding",
+          "heading": false
+        }
+      ],
+      "extract": "(A.21) 1 −ωNα 1 −ωNβ = ωNγ and consider the sum (A.22) f \u0012 α β γ \u0013 := X k w(α|k) w(β|k)ωkγ It clearly depends only on the parameters α, β, γ ∈C modulo NZ. By [18, eq. A.14] we have (A.23) f \u0012 α + k β + l γ + m \u0013 = f \u0012 α β γ \u0013 w(α −β −1|k −l) w(β|l) w(−γ|−m) ωl(γ+m)ωm(β+1)w(α|k) w(α −β −γ −1|k −l −m) THE HOLONOMY BRAIDING FOR Uξ(sl2) 37 when γ̸ ∈Z. In the special case where γ is an integer, so α ≡β (mod Z) this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-a3-fourier-transform-identities",
+      "number": null,
+      "title": "A.3. Fourier transform identities",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 39,
+      "labelStart": "37",
+      "labelEnd": "39",
+      "words": 480,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fourier transform",
+          "heading": true
+        },
+        {
+          "term": "nkλ",
+          "heading": false
+        },
+        {
+          "term": "ωkζ",
+          "heading": false
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "cyclic quantum",
+          "heading": false
+        },
+        {
+          "term": "applying lemma",
+          "heading": false
+        },
+        {
+          "term": "determinant",
+          "heading": false
+        }
+      ],
+      "extract": "how the operators appearing in the factorization of the R-matrix in Theorem 4.5 act in the basis {vn} Fourier dual to {bvn}. In particular, we want to compute the determinant of the circulant matrices ZN and ZS. To do this we find the discrete Fourier transform of the cyclic quantum dilogarithm. Similar results are given by Hikami and Inoue [13]. Theorem A.6. The Fourier transform of the cyclic quantum dilogarithm",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 39,
+      "pageEnd": 41,
+      "labelStart": "39",
+      "labelEnd": "41",
+      "words": 988,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calvin mcphail-snyder",
+          "heading": false
+        },
+        {
+          "term": "issn",
+          "heading": false
+        },
+        {
+          "term": "doi",
+          "heading": false
+        },
+        {
+          "term": "hyuk kim",
+          "heading": false
+        },
+        {
+          "term": "seonhwa kim",
+          "heading": false
+        },
+        {
+          "term": "rinat kashaev",
+          "heading": false
+        },
+        {
+          "term": "arxiv",
+          "heading": false
+        },
+        {
+          "term": "hitoshi murakami",
+          "heading": false
+        }
+      ],
+      "extract": "39 References [1] Stéphane Baseilhac and Riccardo Benedetti. “Quantum hyperbolic invariants of 3- manifolds with PSL(2,C)-characters”. In: Topology 43.6 (Nov. 2004), pp. 1373–1423. doi: 10.1016/j.top.2004.02.001. arXiv: math/0306280 [math.GT]. [2] V V Bazhanov and N Yu Reshetikhin. “Remarks on the quantum dilogarithm”. In: Journal of Physics A: Mathematical and General 28.8 (Apr. 1995), pp. 2217–2226. doi:",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Wξ-modules"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "omega zeta",
+      "heading": false
+    },
+    {
+      "term": "qlf zeta",
+      "heading": false
+    },
+    {
+      "term": "zeta frac",
+      "heading": false
+    },
+    {
+      "term": "qlog zeta",
+      "heading": false
+    },
+    {
+      "term": "aligned mathcal",
+      "heading": false
+    },
+    {
+      "term": "chi otimes",
+      "heading": false
+    },
+    {
+      "term": "rmat omega",
+      "heading": false
+    },
+    {
+      "term": "beta omega",
+      "heading": false
+    },
+    {
+      "term": "zeta modb",
+      "heading": false
+    },
+    {
+      "term": "hat chi",
+      "heading": false
+    },
+    {
+      "term": "zeta label",
+      "heading": false
+    },
+    {
+      "term": "mathcal slg",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Labels for the segments and the regions near a crossing. 4. The R-matrix in the Fourier dual basis 4.1. Recursions for the R-matrix coefficients. We can now explicitly compute the matrix coefficients of R as a function of the geometric parameters ˆχi. We begin by fixing some terminology and conventi",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Building an ideal octahedron",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "A side view of the ideal octahedron in Figure 2d. The grey dashed edges indicate the identification of the ideal vertices P+, P ′",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "χ-colorings of the braid diagrams occurring in an R3 move. β",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "A log-colored R3 move is allowed when the log-parameters of the boundary regions and segments are the same on both sides and additionally",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Invariance under R3 moves follows from showing that Jξ is the identity map on this diagram for every choice of coloring and any log-coloring with trivial log-decoration and matching values on the boundary. A coloring of the whole diagram is determined by the choice of colors χ1, χ2, χ3 on the top",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "We require the log-parameters of the boundary regions and segments to be compatible as shown. We allow any choice of internal log-parameters as long as β2 −β2′ + β2′′ −β2′′′ = 0",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Signs for the dependence of the R-matrix on the segment logparameters βi",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 27,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 28,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "8 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p39); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 29
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 28 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2509.02354v2"
+  }
+}

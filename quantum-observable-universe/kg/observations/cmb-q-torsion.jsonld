@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-cmb-q-torsion",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:cmb-q-torsion",
+  "kind": "remark",
+  "title": "CMB non-uniformity from $q$-torsion",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-q-torsion-leaf"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-substrate-parameter",
+  "tags": [
+    "cmb",
+    "torsion",
+    "observation"
+  ],
+  "text": "cmb-q-torsion.md",
+  "provenance": "authored"
+}

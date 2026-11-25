@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/ant-v14-n7-s-p06",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Moments of quadratic twists of elliptic curve L-functions over function fields",
+      "dcterms:creator": [
+        "Bui, Hung M.",
+        "Florea, Alexandra",
+        "Keating, Jonathan P.",
+        "Roditty-Gershon, Edva"
+      ],
+      "bibo:doi": "10.2140/ant.2020.14.1853",
+      "dcterms:identifier": "https://doi.org/10.2140/ant.2020.14.1853",
+      "dcterms:source": "library/ant-v14-n7-s-p06/manifest.jsonld",
+      "dcterms:hasVersion": "library/ant-v14-n7-s-p06"
+    }
+  ]
+}

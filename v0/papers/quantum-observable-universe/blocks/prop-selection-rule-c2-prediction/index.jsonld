@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-selection-rule-c2-prediction",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:selection-rule-c2-prediction",
+  "kind": "proposition",
+  "title": "Per-component selection rule at c=2: $\\mathrm{lw}(2) = (q+1)^2/(3q)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-selection-rule-anchors-c1-c3"
+  ],
+  "tags": [
+    "selection-rule",
+    "linking-weight",
+    "wedderburn",
+    "gelfand",
+    "prediction",
+    "hopf",
+    "c2",
+    "lean"
+  ],
+  "leanRef": "qou:QOU.Mass.selection_rule_c2_prediction_derived",
+  "text": "selection-rule-c2-prediction.md",
+  "leanSource": "selection-rule-c2-prediction.lean",
+  "provenance": "authored"
+}

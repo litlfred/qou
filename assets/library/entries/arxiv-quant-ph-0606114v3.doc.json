@@ -1,0 +1,3371 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-quant-ph-0606114v3",
+  "title": "q - Deformed Spin Networks, Knot Polynomials and Anyonic Topological Quantum Computation",
+  "variant": "pdf",
+  "pages": 88,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Abstract",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-abstract"
+    },
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "0",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-001-0-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Knots and Braids",
+      "number": "1",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-1-knots-and-braids"
+    },
+    {
+      "level": 2,
+      "title": "Braid Generators",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-braid-generators"
+    },
+    {
+      "level": 2,
+      "title": "Hopf Link",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-hopf-link"
+    },
+    {
+      "level": 2,
+      "title": "Figure Eight Knot",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-figure-eight-knot"
+    },
+    {
+      "level": 2,
+      "title": "Trefoil Knot",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-trefoil-knot"
+    },
+    {
+      "level": 2,
+      "title": "CL(b)",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-clb"
+    },
+    {
+      "level": 1,
+      "title": "Quantum Mechanics and Quantum Computation",
+      "number": "2",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-2-quantum-mechanics-and-quantum-computation"
+    },
+    {
+      "level": 2,
+      "title": "What is a Quantum Computer?",
+      "number": "2.1",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-21-what-is-a-quantum-computer"
+    },
+    {
+      "level": 2,
+      "title": "Universal Gates",
+      "number": "2.2",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-010-22-universal-gates"
+    },
+    {
+      "level": 1,
+      "title": "SU(2) Representations of the Artin Braid Group",
+      "number": "3",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-011-3-su2-representations-of-the-artin-braid-group"
+    },
+    {
+      "level": 1,
+      "title": "The Bracket Polynomial and the Jones Polynomial",
+      "number": "4",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-012-4-the-bracket-polynomial-and-the-jones-polynomia"
+    },
+    {
+      "level": 2,
+      "title": "or",
+      "number": null,
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-013-or"
+    },
+    {
+      "level": 2,
+      "title": "Quantum Computation of the Jones Polynomial",
+      "number": "4.1",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-014-41-quantum-computation-of-the-jones-polynomial"
+    },
+    {
+      "level": 3,
+      "title": "The Hadamard Test",
+      "number": null,
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-015-the-hadamard-test"
+    },
+    {
+      "level": 1,
+      "title": "Quantum Topology, Cobordism Categories, Temperley-Lieb Algebra and Topological Quantum Field Theory",
+      "number": "5",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-016-5-quantum-topology-cobordism-categories-temperle"
+    },
+    {
+      "level": 2,
+      "title": "Identity",
+      "number": null,
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-017-identity"
+    },
+    {
+      "level": 2,
+      "title": "SU = US = U",
+      "number": null,
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-018-su-us-u"
+    },
+    {
+      "level": 2,
+      "title": "PQP P",
+      "number": null,
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-019-pqp-p"
+    },
+    {
+      "level": 1,
+      "title": "Braiding and Topological Quantum Field Theory",
+      "number": "6",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-020-6-braiding-and-topological-quantum-field-theory"
+    },
+    {
+      "level": 2,
+      "title": "Trinion",
+      "number": null,
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-021-trinion"
+    },
+    {
+      "level": 2,
+      "title": "B = F RF",
+      "number": null,
+      "page": 51,
+      "pageLabel": "51",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-022-b-f-rf"
+    },
+    {
+      "level": 1,
+      "title": "Spin Networks and Temperley-Lieb Recoupling Theory",
+      "number": "7",
+      "page": 51,
+      "pageLabel": "51",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-023-7-spin-networks-and-temperley-lieb-recoupling-th"
+    },
+    {
+      "level": 2,
+      "title": "n strands",
+      "number": null,
+      "page": 52,
+      "pageLabel": "52",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-024-n-strands"
+    },
+    {
+      "level": 2,
+      "title": "Tet",
+      "number": null,
+      "page": 56,
+      "pageLabel": "56",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-025-tet"
+    },
+    {
+      "level": 2,
+      "title": "Evaluations",
+      "number": "7.1",
+      "page": 57,
+      "pageLabel": "57",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-026-71-evaluations"
+    },
+    {
+      "level": 2,
+      "title": "Symmetry and Unitarity",
+      "number": "7.2",
+      "page": 58,
+      "pageLabel": "58",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-027-72-symmetry-and-unitarity"
+    },
+    {
+      "level": 1,
+      "title": "Fibonacci Particles",
+      "number": "8",
+      "page": 64,
+      "pageLabel": "64",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-028-8-fibonacci-particles"
+    },
+    {
+      "level": 1,
+      "title": "dim(V ) = 2",
+      "number": null,
+      "page": 66,
+      "pageLabel": "66",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-029-dimv-2"
+    },
+    {
+      "level": 1,
+      "title": "dim(V ) = 1",
+      "number": null,
+      "page": 66,
+      "pageLabel": "66",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-030-dimv-1"
+    },
+    {
+      "level": 2,
+      "title": "Tree of squences with no occurence of **",
+      "number": null,
+      "page": 68,
+      "pageLabel": "68",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-031-tree-of-squences-with-no-occurence-of"
+    },
+    {
+      "level": 1,
+      "title": "The Fibonacci Recoupling Model",
+      "number": "9",
+      "page": 68,
+      "pageLabel": "68",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-032-9-the-fibonacci-recoupling-model"
+    },
+    {
+      "level": 2,
+      "title": "Forbidden Process",
+      "number": null,
+      "page": 70,
+      "pageLabel": "70",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-033-forbidden-process"
+    },
+    {
+      "level": 1,
+      "title": "Quantum Computation of Colored Jones Polynomials and the Witten-Reshetikhin- Turaev Invariant",
+      "number": "10",
+      "page": 80,
+      "pageLabel": "80",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-034-10-quantum-computation-of-colored-jones-polynomi"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 83,
+      "pageLabel": "83",
+      "confidence": 0.8,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-035-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 65,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "baltimore",
+          "heading": false
+        },
+        {
+          "term": "computer science",
+          "heading": false
+        },
+        {
+          "term": "illinois",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:quant-ph/0606114v3 9 Feb 2007 q - Deformed Spin Networks, Knot Polynomials and Anyonic Topological Quantum Computation Louis H. Kauﬀman Department of Mathematics, Statistics and Computer Science (m/c 249) 851 South Morgan Street University of Illinois at Chicago Chicago, Illinois 60607-7045 <kauﬀman@uic.edu> and Samuel J. Lomonaco Jr. Department of Computer Science and Electrical Engineering University of",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-quant-ph-0606114v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-abstract",
+      "number": null,
+      "title": "Abstract",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 112,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bracket",
+          "heading": false
+        },
+        {
+          "term": "polynomi",
+          "heading": false
+        },
+        {
+          "term": "fibonacci",
+          "heading": false
+        },
+        {
+          "term": "rooted",
+          "heading": false
+        }
+      ],
+      "extract": "We review the q-deformed spin network approach to Topological Quantum Field Theory and apply these methods to produce unitary representations of the braid groups that are dense in the unitary groups. Our methods are rooted in the bracket state sum model for the Jones polynomial. We give our results for a large class of representations based on values for the bracket polynomial that are roots of unity. We make a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-0-introduction",
+      "number": "0",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 6,
+      "labelStart": "2",
+      "labelEnd": "6",
+      "words": 1314,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lieb recoupling",
+          "heading": false
+        },
+        {
+          "term": "temperley-lieb recoupling",
+          "heading": false
+        },
+        {
+          "term": "recoupling theory",
+          "heading": false
+        },
+        {
+          "term": "recoupling transformations",
+          "heading": false
+        },
+        {
+          "term": "artin braid",
+          "heading": false
+        },
+        {
+          "term": "fibonacci model",
+          "heading": false
+        },
+        {
+          "term": "temperley lieb",
+          "heading": false
+        },
+        {
+          "term": "air force",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction This paper describes the background for topological quantum computing in terms of Temperley–Lieb recoupling theory. This is a recoupling theory that generalizes standard angular momentum recoupling theory, generalizes the Penrose theory of spin networks and is inherently topological. Temperley–Lieb recoupling Theory is based on the bracket polynomial model [34, 41] for the Jones polynomial. It is built",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-1-knots-and-braids",
+      "number": "1",
+      "title": "Knots and Braids",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 409,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "knots",
+          "heading": true
+        },
+        {
+          "term": "knot theory",
+          "heading": false
+        },
+        {
+          "term": "ambient isotopy",
+          "heading": false
+        },
+        {
+          "term": "molecules",
+          "heading": false
+        },
+        {
+          "term": "braids",
+          "heading": true
+        },
+        {
+          "term": "dna",
+          "heading": false
+        },
+        {
+          "term": "dimensional space",
+          "heading": false
+        },
+        {
+          "term": "embedding",
+          "heading": false
+        }
+      ],
+      "extract": "Knots and Braids The purpose of this section is to give a quick introduction to the diagrammatic theory of knots, links and braids. A knot is an embedding of a circle in three- dimensional space, taken up to ambient isotopy. The problem of deciding whether two knots are isotopic is an example of a placement problem, a problem of studying the topological forms that can be made by placing one space inside another. In",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-braid-generators",
+      "number": null,
+      "title": "Braid Generators",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 191,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reidemeister moves",
+          "heading": false
+        },
+        {
+          "term": "braid",
+          "heading": true
+        },
+        {
+          "term": "knot invariants",
+          "heading": false
+        },
+        {
+          "term": "trated",
+          "heading": false
+        },
+        {
+          "term": "illus",
+          "heading": false
+        }
+      ],
+      "extract": "1 s 1-1 s = 1 1 s 2 s 1 s 2 s 1 s 2 s = 1 s 3 s 1 s 3 s = Figure 4 - Braid Generators. Ambient isotopy is mathematically the same as the equivalence relation generated on diagrams by the Reidemeister moves. These moves are illus- trated in Figure 3. Each move is performed on a local part of the diagram that is topologically identical to the part of the diagram illustrated in this ﬁgure (these ﬁgures are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-hopf-link",
+      "number": null,
+      "title": "Hopf Link",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-figure-eight-knot",
+      "number": null,
+      "title": "Figure Eight Knot",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-trefoil-knot",
+      "number": null,
+      "title": "Trefoil Knot",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 11,
+      "summary": null,
+      "keywords": [],
+      "extract": "Figure 5 - Closing Braids to form knots and links. b",
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-clb",
+      "number": null,
+      "title": "CL(b)",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 655,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "artin braid",
+          "heading": false
+        },
+        {
+          "term": "bottom strands",
+          "heading": false
+        },
+        {
+          "term": "sisj sjsi",
+          "heading": false
+        },
+        {
+          "term": "top strands",
+          "heading": false
+        },
+        {
+          "term": "braid groups",
+          "heading": false
+        },
+        {
+          "term": "braid generators",
+          "heading": false
+        },
+        {
+          "term": "sisi",
+          "heading": false
+        },
+        {
+          "term": "elementary braids",
+          "heading": false
+        }
+      ],
+      "extract": "Figure 6 - Borromean Rings as a Braid Closure. Another signiﬁcant structure related to knots and links is the Artin Braid Group. A braid is an embedding of a collection of strands that have their ends top and bottom row points in two rows of points that are set one above the other with respect to a choice of vertical. The strands are not individually knotted and they are disjoint from one another. See Figures 4, 5",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-2-quantum-mechanics-and-quantum-computation",
+      "number": "2",
+      "title": "Quantum Mechanics and Quantum Computation",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "13",
+      "words": 659,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "intermediate states",
+          "heading": false
+        },
+        {
+          "term": "ket-bra",
+          "heading": false
+        },
+        {
+          "term": "quantum",
+          "heading": true
+        },
+        {
+          "term": "conjugate transpose",
+          "heading": false
+        },
+        {
+          "term": "ket",
+          "heading": false
+        },
+        {
+          "term": "quantum information",
+          "heading": false
+        },
+        {
+          "term": "speciﬁc quantum",
+          "heading": false
+        },
+        {
+          "term": "quantum process",
+          "heading": false
+        }
+      ],
+      "extract": "tation We shall quickly indicate the basic principles of quantum mechanics. The quantum information context encapsulates a concise model of quantum theory: The initial state of a quantum process is a vector |v⟩in a complex vector space H. Measurement returns basis elements β of H with probability |⟨β |v⟩|2/⟨v |v⟩ where ⟨v |w⟩= v†w with v† the conjugate transpose of v. A physical process oc- curs in steps |v⟩−→U |v⟩=",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-21-what-is-a-quantum-computer",
+      "number": "2.1",
+      "title": "What is a Quantum Computer?",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 525,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum computer",
+          "heading": true
+        },
+        {
+          "term": "unitary transforma",
+          "heading": false
+        },
+        {
+          "term": "idealized quantum",
+          "heading": false
+        },
+        {
+          "term": "ket",
+          "heading": false
+        },
+        {
+          "term": "transforma tions",
+          "heading": false
+        },
+        {
+          "term": "quantum mechanical",
+          "heading": false
+        },
+        {
+          "term": "initial state",
+          "heading": false
+        },
+        {
+          "term": "qubit",
+          "heading": false
+        }
+      ],
+      "extract": "What is a Quantum Computer? A quantum computer is, abstractly, a composition U of unitary transforma- tions, together with an initial state and a choice of measurement basis. One runs the computer by repeatedly initializing it, and then measuring the result of applying the unitary transformation U to the initial state. The results of these measurements are then analyzed for the desired information that the computer",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-22-universal-gates",
+      "number": "2.2",
+      "title": "Universal Gates",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 338,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "universal gates",
+          "heading": true
+        },
+        {
+          "term": "two-qubit gate",
+          "heading": false
+        },
+        {
+          "term": "unitary transformations",
+          "heading": false
+        },
+        {
+          "term": "local unitary",
+          "heading": false
+        },
+        {
+          "term": "cnot",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst qubit",
+          "heading": false
+        },
+        {
+          "term": "entangling",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": false
+        }
+      ],
+      "extract": "Universal Gates A two-qubit gate G is a unitary linear mapping G : V ⊗V −→V where V is a two complex dimensional vector space. We say that the gate G is universal for quantum computation (or just universal) if G together with local unitary transformations (unitary transformations from V to V ) generates all unitary transformations of the complex vector space of dimension 2n to itself. It is well- known [65] that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-3-su2-representations-of-the-artin-braid-group",
+      "number": "3",
+      "title": "SU(2) Representations of the Artin Braid Group",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 21,
+      "labelStart": "15",
+      "labelEnd": "21",
+      "words": 1956,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ghg hgh",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": true
+        },
+        {
+          "term": "evλ cos",
+          "heading": false
+        },
+        {
+          "term": "three-strand braid",
+          "heading": false
+        },
+        {
+          "term": "pure quaternion",
+          "heading": false
+        },
+        {
+          "term": "unit quaternions",
+          "heading": false
+        },
+        {
+          "term": "length quaternion",
+          "heading": false
+        },
+        {
+          "term": "quaternion multiplication",
+          "heading": false
+        }
+      ],
+      "extract": "Group The purpose of this section is to determine all the representations of the three strand Artin braid group B3 to the special unitary group SU(2) and concomi- tantly to the unitary group U(2). One regards the groups SU(2) and U(2) as acting on a single qubit, and so U(2) is usually regarded as the group of local unitary transformations in a quantum information setting. If one is looking for a coherent way to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-4-the-bracket-polynomial-and-the-jones-polynomia",
+      "number": "4",
+      "title": "The Bracket Polynomial and the Jones Polynomial",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 23,
+      "labelStart": "21",
+      "labelEnd": "23",
+      "words": 454,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bracket polynomial",
+          "heading": true
+        },
+        {
+          "term": "jones polynomial",
+          "heading": true
+        },
+        {
+          "term": "reidemeister moves",
+          "heading": false
+        },
+        {
+          "term": "straight segment",
+          "heading": false
+        },
+        {
+          "term": "curved line",
+          "heading": false
+        },
+        {
+          "term": "curl",
+          "heading": false
+        },
+        {
+          "term": "crossing",
+          "heading": false
+        },
+        {
+          "term": "letter",
+          "heading": false
+        }
+      ],
+      "extract": "nomial We now discuss the Jones polynomial. We shall construct the Jones polynomial by using the bracket state summation model [34]. The bracket polynomial, invariant under Reidmeister moves II and III, can be normalized to give an invariant of all three Reidemeister moves. This normalized invariant, with a change of variable, is the Jones polynomial [32, 33]. The Jones polynomial was originally discovered by a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-or",
+      "number": null,
+      "title": "or",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 26,
+      "labelStart": "23",
+      "labelEnd": "26",
+      "words": 1015,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "trefoil diagram",
+          "heading": false
+        },
+        {
+          "term": "state summation",
+          "heading": false
+        },
+        {
+          "term": "crossing signs",
+          "heading": false
+        },
+        {
+          "term": "bracket polynomial",
+          "heading": false
+        },
+        {
+          "term": "switching formula",
+          "heading": false
+        },
+        {
+          "term": "smoothing",
+          "heading": false
+        },
+        {
+          "term": "unknot diagram",
+          "heading": false
+        },
+        {
+          "term": "statistical mechanics",
+          "heading": false
+        }
+      ],
+      "extract": "the removal of the curl from the corresponding diagram. The bracket is invariant under regular isotopy and can be normalized to an invariant of ambient isotopy by the deﬁnition fK(A) = (−A3)−w(K) < K > (A), where we chose an orientation for K, and where w(K) is the sum of the crossing signs of the oriented link K. w(K) is called the writhe of K. The convention for crossing signs is shown in Figure 8. or or + - + + -",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-41-quantum-computation-of-the-jones-polynomial",
+      "number": "4.1",
+      "title": "Quantum Computation of the Jones Polynomial",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 28,
+      "labelStart": "26",
+      "labelEnd": "28",
+      "words": 737,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "three-strand braid",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": true
+        },
+        {
+          "term": "bracket polynomial",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": false
+        },
+        {
+          "term": "temperley-lieb algebra",
+          "heading": false
+        },
+        {
+          "term": "unitary representation",
+          "heading": false
+        },
+        {
+          "term": "quantum computation",
+          "heading": true
+        },
+        {
+          "term": "local unitary",
+          "heading": false
+        }
+      ],
+      "extract": "Quantum Computation of the Jones Polynomial Quantum algorithms for computing the Jones polynomial have been discussed elsewhere. See [46, 52, 1, 54, 2, 79]. Here, as an example, we give a local unitary representation that can be used to compute the Jones polynomial for closures of 3-braids. We analyse this representation by making explicit how the bracket polynomial is computed from it, and showing how the quantum",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-the-hadamard-test",
+      "number": null,
+      "title": "The Hadamard Test",
+      "level": 3,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": "28",
+      "labelEnd": "29",
+      "words": 233,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hadamard test",
+          "heading": true
+        },
+        {
+          "term": "control bit",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst qubit",
+          "heading": false
+        },
+        {
+          "term": "contemplate",
+          "heading": false
+        },
+        {
+          "term": "expectation",
+          "heading": false
+        }
+      ],
+      "extract": "In order to (quantum) compute the trace of a unitary matrix U, one can use the Hadamard test to obtain the diagonal matrix elements ⟨ψ|U|ψ⟩of U. The trace is then the sum of these matrix elements as |ψ⟩runs over an orthonormal basis for the vector space. We ﬁrst obtain 1 2 + 1 2Re⟨ψ|U|ψ⟩ as an expectation by applying the Hadamard gate H H|0⟩= 1 √ 2(|0⟩+ |1⟩) H|1⟩= 1 √ 2(|0⟩−|1⟩) to the ﬁrst qubit of CU ◦(H",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-5-quantum-topology-cobordism-categories-temperle",
+      "number": "5",
+      "title": "Quantum Topology, Cobordism Categories, Temperley-Lieb Algebra and Topological Quantum Field Theory",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 33,
+      "labelStart": "29",
+      "labelEnd": "33",
+      "words": 1201,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cobordism categories",
+          "heading": true
+        },
+        {
+          "term": "topological quantum",
+          "heading": true
+        },
+        {
+          "term": "cat consists",
+          "heading": false
+        },
+        {
+          "term": "temperley-lieb",
+          "heading": true
+        },
+        {
+          "term": "cob",
+          "heading": false
+        },
+        {
+          "term": "represents cobordism",
+          "heading": false
+        },
+        {
+          "term": "identity morphism",
+          "heading": false
+        },
+        {
+          "term": "ordered row",
+          "heading": false
+        }
+      ],
+      "extract": "Temperley-Lieb Algebra and Topological Quan- tum Field Theory The purpose of this section is to discuss the general idea behind topological quantum ﬁeld theory, and to illustrate its application to basic quantum me- chanics and quantum mechanical formalism. It is useful in this regard to have available the concept of category, and we shall begin the section by discussing this far-reaching mathematical concept.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-identity",
+      "number": null,
+      "title": "Identity",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 35,
+      "labelStart": "33",
+      "labelEnd": "35",
+      "words": 384,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cob",
+          "heading": false
+        },
+        {
+          "term": "cobordism",
+          "heading": false
+        },
+        {
+          "term": "scalar",
+          "heading": false
+        },
+        {
+          "term": "vector spaces",
+          "heading": false
+        },
+        {
+          "term": "behaves",
+          "heading": false
+        },
+        {
+          "term": "category",
+          "heading": false
+        },
+        {
+          "term": "dirac",
+          "heading": false
+        }
+      ],
+      "extract": "p f: p p p p p * p p * Figure 10 - Elementary Cobordisms In Figure 11, we have indicated more morphisms in Cob[0], and we have named the morphisms just discussed as |Ω⟩: p ⊗p −→∗, ⟨Θ| : ∗−→p ⊗p. The point to notice is that the usual conventions for handling Dirac bra-kets are essentially the same as the compostion rules in this topological category. Thus in Figure 11 we have that ⟨Θ| ◦|Ω⟩= ⟨Θ|Ω⟩: ∗−→∗ represents a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-su-us-u",
+      "number": null,
+      "title": "SU = US = U",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 38,
+      "labelStart": "35",
+      "labelEnd": "38",
+      "words": 1152,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "straightening",
+          "heading": false
+        },
+        {
+          "term": "line segment",
+          "heading": false
+        },
+        {
+          "term": "cobordism category",
+          "heading": false
+        },
+        {
+          "term": "θij",
+          "heading": false
+        },
+        {
+          "term": "kets",
+          "heading": false
+        },
+        {
+          "term": "bra",
+          "heading": false
+        },
+        {
+          "term": "mappings",
+          "heading": false
+        },
+        {
+          "term": "morphisms",
+          "heading": false
+        }
+      ],
+      "extract": "SU = US = U Figure 12 - Permutations < | | > 1 < | | > 1 = = P Q | > < | 1 1 { } { } Θ Θ Ω Ω Θ Ω { } } { Figure 13 - Projectors in Tensor Lines and Elementary Topology Getting back to the contents of Figure 11, note how the zero dimensional cobordism category has structural parallels to the Dirac ket–bra formalism U = |Ω⟩⟨Θ| UU = |Ω⟩⟨Θ|Ω⟩⟨Θ| = ⟨Θ|Ω⟩|Ω⟩⟨Θ| = ⟨Θ|Ω⟩U. In the cobordism category, the bra–ket and ket–bra",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-pqp-p",
+      "number": null,
+      "title": "PQP P",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 41,
+      "labelStart": "38",
+      "labelEnd": "41",
+      "words": 471,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circle",
+          "heading": false
+        },
+        {
+          "term": "ket-bra",
+          "heading": false
+        },
+        {
+          "term": "cobordisms",
+          "heading": false
+        },
+        {
+          "term": "pants",
+          "heading": false
+        }
+      ],
+      "extract": "= = R R 1 = Figure 14 - The Basic Temperley-Lieb Relation φ | > ψ | > Θ Ω Ω Θ φ | > ψ | > Ω Θ φ | > ψ | > = | > < | Θ | > Ω < | Ω Θ Figure 15 - The Key to Teleportation Figure 15 illustrates the staightening of |Θ⟩and ⟨Ω|, and the straightening of a composition of these applied to |ψ⟩, resulting in |φ⟩. In the left-hand part of the bottom of Figure 15 we illustrate the preparation of the tensor product",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-6-braiding-and-topological-quantum-field-theory",
+      "number": "6",
+      "title": "Braiding and Topological Quantum Field Theory",
+      "level": 1,
+      "pageStart": 41,
+      "pageEnd": 43,
+      "labelStart": "41",
+      "labelEnd": "43",
+      "words": 772,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "trinion",
+          "heading": false
+        },
+        {
+          "term": "graphical pattern",
+          "heading": false
+        },
+        {
+          "term": "trivalent graph",
+          "heading": false
+        },
+        {
+          "term": "trivalent vertex",
+          "heading": false
+        },
+        {
+          "term": "topological quantum",
+          "heading": true
+        },
+        {
+          "term": "cobordism",
+          "heading": false
+        },
+        {
+          "term": "dimensional manifold",
+          "heading": false
+        },
+        {
+          "term": "linear mappings",
+          "heading": false
+        }
+      ],
+      "extract": "ory The purpose of this section is to discuss in a very general way how braid- ing is related to topological quantum ﬁeld theory. In the section to follow, we will use the Temperley-Lieb recoupling theory to produce specﬁc unitary representations of the Artin braid group. The ideas in the subject of topological quantum ﬁeld theory (TQFT) are well expressed in the book [5] by Michael Atiyah and the paper [78] by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-trinion",
+      "number": null,
+      "title": "Trinion",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 51,
+      "labelStart": "43",
+      "labelEnd": "51",
+      "words": 1762,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "trinion",
+          "heading": true
+        },
+        {
+          "term": "trivalent graphs",
+          "heading": false
+        },
+        {
+          "term": "trivalent vertex",
+          "heading": false
+        },
+        {
+          "term": "trivalent vertices",
+          "heading": false
+        },
+        {
+          "term": "particle interactions",
+          "heading": false
+        },
+        {
+          "term": "trinion decomposition",
+          "heading": false
+        },
+        {
+          "term": "intertwining identity",
+          "heading": false
+        },
+        {
+          "term": "hexagon identity",
+          "heading": false
+        }
+      ],
+      "extract": "Figure 17 - Decomposition of a Surface into Trinions a b c d e f a b c ε V( ) V( ) ε Figure 18 - Trivalent Vectors = Figure 19 - Trinion Associativity A B C A B C = Figure 20 - Tube Twist From the point of view that we shall take in this paper, the key to the mathematical structure of three-dimensional TQFT lies in the trivalent graphs, including the braiding of grapical arcs. We can think of these braided graphs as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-b-f-rf",
+      "number": null,
+      "title": "B = F RF",
+      "level": 2,
+      "pageStart": 51,
+      "pageEnd": 51,
+      "labelStart": "51",
+      "labelEnd": "51",
+      "words": 175,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braiding operator",
+          "heading": false
+        },
+        {
+          "term": "complex braiding",
+          "heading": false
+        },
+        {
+          "term": "recoupling",
+          "heading": false
+        },
+        {
+          "term": "collaborators",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": false
+        }
+      ],
+      "extract": "B = F RF -1 F -1 Figure 28 - A More Complex Braiding Operator A key point in the application of TQFT to quantum information theory is contained in the structure illustrated in Figure 28. There we show a more complex braiding operator, based on the composition of recoupling with the elementary braiding at a vertex. (This structure is implicit in the Hexagon identity of Figure 27.) The new braiding operator is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-7-spin-networks-and-temperley-lieb-recoupling-th",
+      "number": "7",
+      "title": "Spin Networks and Temperley-Lieb Recoupling Theory",
+      "level": 1,
+      "pageStart": 51,
+      "pageEnd": 52,
+      "labelStart": "51",
+      "labelEnd": "52",
+      "words": 125,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "recoupling theory",
+          "heading": true
+        },
+        {
+          "term": "spin networks",
+          "heading": true
+        },
+        {
+          "term": "temperley-lieb",
+          "heading": true
+        },
+        {
+          "term": "bracket polynomial",
+          "heading": false
+        }
+      ],
+      "extract": "pling Theory In this section we discuss a combinatorial construction for spin networks that generalizes the original construction of Roger Penrose. The result of this gen- eralization is a structure that satisﬁes all the properties of a graphical TQFT as described in the previous section, and specializes to classical angular mo- mentum recoupling theory in the limit of its basic variable. The construction is based",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-n-strands",
+      "number": null,
+      "title": "n strands",
+      "level": 2,
+      "pageStart": 52,
+      "pageEnd": 56,
+      "labelStart": "52",
+      "labelEnd": "56",
+      "words": 889,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "projector",
+          "heading": false
+        },
+        {
+          "term": "recoupling formula",
+          "heading": false
+        },
+        {
+          "term": "tetrahedral graph",
+          "heading": false
+        },
+        {
+          "term": "trivalent vertices",
+          "heading": false
+        },
+        {
+          "term": "graph evaluations",
+          "heading": false
+        },
+        {
+          "term": "theta graph",
+          "heading": false
+        },
+        {
+          "term": "bracket polynomial",
+          "heading": false
+        },
+        {
+          "term": "three-vertices",
+          "heading": false
+        }
+      ],
+      "extract": "= n n = (A ) -3 t( ) σ ~σ (1/{n}!) Σ σ ε Sn ~ = A A-1 = -A2 -2 - A = + {n}! = Σ σ ε Sn (A )t( ) σ -4 = n n = 0 = d Figure 29 - Basic Projectors = −1/δ = −∆ /∆ n n+1 n 1 1 n 1 1 n 1 = 2 δ ∆ 1 ∆ = -1= 0 ∆0 ∆n+1 = ∆n - n-1 Figure 30 - Two Strand Projector a b c i j k a b c i + j = a j + k = b i + k = c Figure 31 -Vertex In Figure 29 we indicate how the basic projector (symmetrizer, Jones-Wenzl projector) is constructed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-tet",
+      "number": null,
+      "title": "Tet",
+      "level": 2,
+      "pageStart": 56,
+      "pageEnd": 57,
+      "labelStart": "56",
+      "labelEnd": "57",
+      "words": 223,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braiding relation",
+          "heading": false
+        },
+        {
+          "term": "tet",
+          "heading": true
+        },
+        {
+          "term": "figure tetrahedron",
+          "heading": false
+        }
+      ],
+      "extract": "a b c d i k i Figure 34 - Tetrahedron Network { } a b c d i j Σ = j a a b b c c d d i j k Σ = j Θ( , , ) a Θ( , , ) c d ∆ b j j j δ j k k { } a b c d i j = Θ( , , ) a Θ( , , ) c d ∆ b { } a b c d i k k k k = Θ( , , ) { } a b c d i k [ ] Tet a b c d i k Θ( , , ) k k d c a b ∆j ∆j ∆k Figure 35 - Tetrahedron Formula for Recoupling Coeﬃcients Finally, there is the braiding relation, as illustrated in Figure 36. a b c λ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-71-evaluations",
+      "number": "7.1",
+      "title": "Evaluations",
+      "level": 2,
+      "pageStart": 57,
+      "pageEnd": 58,
+      "labelStart": "57",
+      "labelEnd": "58",
+      "words": 242,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "evaluations",
+          "heading": true
+        },
+        {
+          "term": "recoupling",
+          "heading": false
+        },
+        {
+          "term": "eiπ",
+          "heading": false
+        },
+        {
+          "term": "quantum integer",
+          "heading": false
+        }
+      ],
+      "extract": "Evaluations In this section we discuss the structure of the evaluations for ∆n and the theta and tetrahedral networks. We refer to [36] for the details behind these formulas. Recall that ∆n is the bracket evaluation of the closure of the n- strand projector, as illustrated in Figure 32. For the bracket variable A, one ﬁnds that ∆n = (−1)nA2n+2 −A−2n−2 A2 −A−2 . One sometimes writes the quantum integer [n] =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-72-symmetry-and-unitarity",
+      "number": "7.2",
+      "title": "Symmetry and Unitarity",
+      "level": 2,
+      "pageStart": 58,
+      "pageEnd": 64,
+      "labelStart": "58",
+      "labelEnd": "64",
+      "words": 1048,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "modiﬁed recoupling",
+          "heading": false
+        },
+        {
+          "term": "recoupling coeﬃcients",
+          "heading": false
+        },
+        {
+          "term": "recoupling formula",
+          "heading": false
+        },
+        {
+          "term": "recoupling matrix",
+          "heading": false
+        },
+        {
+          "term": "modv ert",
+          "heading": false
+        },
+        {
+          "term": "recoupling transformations",
+          "heading": false
+        },
+        {
+          "term": "recoupling theory",
+          "heading": false
+        },
+        {
+          "term": "modiﬁed bubble",
+          "heading": false
+        }
+      ],
+      "extract": "Symmetry and Unitarity The formula for the recoupling coeﬃcients given in Figure 35 has less symmetry than is actually inherent in the structure of the situation. By multiplying all the vertices by an appropriate factor, we can reconﬁgure the formulas in this theory so that the revised recoupling transformation is orthogonal, in the sense that its transpose is equal to its inverse. This is a very useful fact. It",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-8-fibonacci-particles",
+      "number": "8",
+      "title": "Fibonacci Particles",
+      "level": 1,
+      "pageStart": 64,
+      "pageEnd": 66,
+      "labelStart": "64",
+      "labelEnd": "66",
+      "words": 383,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fibonacci",
+          "heading": true
+        },
+        {
+          "term": "unmarked state",
+          "heading": false
+        },
+        {
+          "term": "marked state",
+          "heading": false
+        },
+        {
+          "term": "fibonacci model",
+          "heading": false
+        },
+        {
+          "term": "single particle",
+          "heading": false
+        },
+        {
+          "term": "nesting",
+          "heading": false
+        },
+        {
+          "term": "asterisk",
+          "heading": false
+        },
+        {
+          "term": "recoupling theory",
+          "heading": false
+        }
+      ],
+      "extract": "Fibonacci Particles In this section and the next we detail how the Fibonacci model for anyonic quantum computing [56, 67] can be constructed by using a version of the two- stranded bracket polynomial and a generalization of Penrose spin networks. This is a fragment of the Temperly-Lieb recoupling theory [36]. We already gave in the preceding sections a general discussion of the theory of spin net- works and their",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-dimv-2",
+      "number": null,
+      "title": "dim(V ) = 2",
+      "level": 1,
+      "pageStart": 66,
+      "pageEnd": 66,
+      "labelStart": "66",
+      "labelEnd": "66",
+      "words": 4,
+      "summary": null,
+      "keywords": [],
+      "extract": "dim(V ) = 2",
+      "extractCut": false
+    },
+    {
+      "id": "sec-030-dimv-1",
+      "number": null,
+      "title": "dim(V ) = 1",
+      "level": 1,
+      "pageStart": 66,
+      "pageEnd": 68,
+      "labelStart": "66",
+      "labelEnd": "68",
+      "words": 530,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unmarked state",
+          "heading": false
+        },
+        {
+          "term": "upward branches",
+          "heading": false
+        },
+        {
+          "term": "tree",
+          "heading": false
+        },
+        {
+          "term": "asterisks",
+          "heading": false
+        },
+        {
+          "term": "marked",
+          "heading": false
+        },
+        {
+          "term": "particle",
+          "heading": false
+        },
+        {
+          "term": "dim",
+          "heading": true
+        },
+        {
+          "term": "labels",
+          "heading": false
+        }
+      ],
+      "extract": "P P P P P P P P P P P P P P Figure 44 - Fibonacci Trees From here on we shall denote the Fibonacii particle by the letter P. Thus the two possible interactions of P with itself are as follows. 1. P, P −→∗ 2. P, P −→P In Figure 43 we indicate in small tree diagrams the two possible interactions of the particle P with itself. In the ﬁrst interaction the particle vanishes, producing the asterix. In the second",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-tree-of-squences-with-no-occurence-of",
+      "number": null,
+      "title": "Tree of squences with no occurence of **",
+      "level": 2,
+      "pageStart": 68,
+      "pageEnd": 68,
+      "labelStart": "68",
+      "labelEnd": "68",
+      "words": 13,
+      "summary": null,
+      "keywords": [],
+      "extract": "Tree of squences with no occurence of ** Figure 45 - Fibonacci Sequence",
+      "extractCut": false
+    },
+    {
+      "id": "sec-032-9-the-fibonacci-recoupling-model",
+      "number": "9",
+      "title": "The Fibonacci Recoupling Model",
+      "level": 1,
+      "pageStart": 68,
+      "pageEnd": 70,
+      "labelStart": "68",
+      "labelEnd": "70",
+      "words": 289,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "recoupling model",
+          "heading": true
+        },
+        {
+          "term": "fibonacci",
+          "heading": true
+        },
+        {
+          "term": "fibonacci particle",
+          "heading": false
+        },
+        {
+          "term": "recoupling theory",
+          "heading": false
+        },
+        {
+          "term": "projector",
+          "heading": false
+        },
+        {
+          "term": "bracket polynomial",
+          "heading": false
+        },
+        {
+          "term": "figure",
+          "heading": false
+        }
+      ],
+      "extract": "The Fibonacci Recoupling Model We now show how to make a model for recoupling the Fibonacci particle by using the Temperley Lieb recoupling theory and the bracket polynomial. Ev- erything we do in this section will be based on the 2-projector, its properties and evaluations based on the bracket polynomial model for the Jones poly- nomial. While we have outlined the general recoupling theory based on the bracket",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-forbidden-process",
+      "number": null,
+      "title": "Forbidden Process",
+      "level": 2,
+      "pageStart": 70,
+      "pageEnd": 80,
+      "labelStart": "70",
+      "labelEnd": "80",
+      "words": 1436,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "recoupling matrix",
+          "heading": false
+        },
+        {
+          "term": "figure braiding",
+          "heading": false
+        },
+        {
+          "term": "single strand",
+          "heading": false
+        },
+        {
+          "term": "figure illustrates",
+          "heading": false
+        },
+        {
+          "term": "figure calculate",
+          "heading": false
+        },
+        {
+          "term": "calculate tetrahedron",
+          "heading": false
+        },
+        {
+          "term": "nets",
+          "heading": false
+        },
+        {
+          "term": "braiding operator",
+          "heading": false
+        }
+      ],
+      "extract": "Process Figure 47 - Fibonacci Particle as 2-Projector Note that in Figure 47 we have adopted a single strand notation for the particle interactions, with a solid strand corresponding to the marked particle, a dotted strand (or nothing) corresponding to the unmarked particle. A dark vertex indicates either an interaction point, or it may be used to indicate the single strand is shorthand for two ordinary strands.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-10-quantum-computation-of-colored-jones-polynomi",
+      "number": "10",
+      "title": "Quantum Computation of Colored Jones Polynomials and the Witten-Reshetikhin- Turaev Invariant",
+      "level": 1,
+      "pageStart": 80,
+      "pageEnd": 83,
+      "labelStart": "80",
+      "labelEnd": "83",
+      "words": 929,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored jones",
+          "heading": true
+        },
+        {
+          "term": "jones polynomials",
+          "heading": true
+        },
+        {
+          "term": "quantum computation",
+          "heading": true
+        },
+        {
+          "term": "plat closure",
+          "heading": false
+        },
+        {
+          "term": "dubrovnik polynomial",
+          "heading": false
+        },
+        {
+          "term": "colored bracket",
+          "heading": false
+        },
+        {
+          "term": "fibonacci model",
+          "heading": false
+        },
+        {
+          "term": "witten-reshetikhin",
+          "heading": true
+        }
+      ],
+      "extract": "Polynomials and the Witten-Reshetikhin- Turaev Invariant In this section we make some brief comments on the quantum computation of colored Jones polynomials. This material will be expanded in a subsequent publication. = 0 a b if b = 0 Σ = 0 0 0 = x y , x y 0 B(x,y) 0 0 0 = a a a a a a a a a a Σ = x y , x y 0 B(x,y) a a = 0 a a B(0,0) 0 0 = B(0,0) ∆a ( ) 2 B P(B) Figure 57 - Evaluation of the Plat Closure of a Braid",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 83,
+      "pageEnd": 88,
+      "labelStart": "83",
+      "labelEnd": "88",
+      "words": 1544,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quant-ph",
+          "heading": false
+        },
+        {
+          "term": "kauﬀman",
+          "heading": false
+        },
+        {
+          "term": "quantum gates",
+          "heading": false
+        },
+        {
+          "term": "world scientiﬁc",
+          "heading": false
+        },
+        {
+          "term": "quantum gravity",
+          "heading": false
+        },
+        {
+          "term": "quantum mechanics",
+          "heading": false
+        },
+        {
+          "term": "topological quantum",
+          "heading": false
+        },
+        {
+          "term": "lomonaco",
+          "heading": false
+        }
+      ],
+      "extract": "[1] D. Aharonov, V. Jones, Z. Landau, A polynomial quantum algorithm for approximating the Jones polynomial, quant-ph/0511096. [2] D. Aharonov, I. Arad, The BQP-hardness of approximating the Jones polynomial, quant-ph/0605181. [3] Y.Akutsu and M.Wadati. Knot invariants and critical statistical systems. J.Phys.Soc.Japan 56 (1987)839-842. [4] J.W.Alexander. Topological invariants of knots and",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "figure recoupling",
+      "heading": true
+    },
+    {
+      "term": "fibonacci recoupling",
+      "heading": true
+    },
+    {
+      "term": "temperley-lieb recoupling",
+      "heading": true
+    },
+    {
+      "term": "recoupling theory",
+      "heading": true
+    },
+    {
+      "term": "recoupling model",
+      "heading": true
+    },
+    {
+      "term": "unitary braid",
+      "heading": false
+    },
+    {
+      "term": "recoupling transformations",
+      "heading": false
+    },
+    {
+      "term": "recoupling matrix",
+      "heading": true
+    },
+    {
+      "term": "recoupling formula",
+      "heading": true
+    },
+    {
+      "term": "figure braiding",
+      "heading": true
+    },
+    {
+      "term": "lieb recoupling",
+      "heading": false
+    },
+    {
+      "term": "recoupling coeﬃcients",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 67,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 69,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 71,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 72,
+      "label": "72",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 73,
+      "label": "73",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 74,
+      "label": "74",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 75,
+      "label": "75",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 76,
+      "label": "76",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 77,
+      "label": "77",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 78,
+      "label": "78",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 79,
+      "label": "79",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 80,
+      "label": "80",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 81,
+      "label": "81",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 82,
+      "label": "82",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 83,
+      "label": "83",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 84,
+      "label": "84",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 85,
+      "label": "85",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 86,
+      "label": "86",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 87,
+      "label": "87",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 88,
+      "label": "88",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Braiding Anyons. Aspects of the quantum Hall eﬀect are related to topological quantum ﬁeld theory [77, 23, 14, 15], where, in two dimensional space, the braiding of quasi-particles or collective excitations leads to non-trival representations of the Artin braid group. Such particles are called Anyon",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "A knot diagram",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The Reidemeister Moves",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Braid Generators",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Closing Braids to form knots and links",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Borromean Rings as a Braid Closure. Another signiﬁcant structure related to knots and links is the Artin Braid Group. A braid is an embedding of a collection of strands that have their ends top and bottom row points in two rows of points that are set one above the other with respect to a choice of v",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Bracket Smoothings",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Crossing Signs and Curls",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Trefoil and Two Relatives Figure 9 shows a trefoil diagram K, an unknot diagram U and another unknot diagram U′. Applying the switching formula, we have A−1 < K > −A < U >= (A−2 −A2) < U′ > and < U >= −A3 and < U′ >= (−A−3)2 = A−6. Thus A−1 < K > −A(−A3) = (A−2 −A2)A−6",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Elementary Cobordisms In Figure 11, we have indicated more morphisms in Cob[0], and we have named the morphisms just discussed as |Ω⟩: p ⊗p −→∗, ⟨Θ| : ∗−→p ⊗p",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Bras, Kets and Projectors 34",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "Permutations",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "Projectors in Tensor Lines and Elementary Topology Getting back to the contents of Figure 11, note how the zero dimensional cobordism category has structural parallels to the Dirac ket–bra formalism U = |Ω⟩⟨Θ| UU = |Ω⟩⟨Θ|Ω⟩⟨Θ| = ⟨Θ|Ω⟩|Ω⟩⟨Θ| = ⟨Θ|Ω⟩U",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "The Basic Temperley-Lieb Relation 38",
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "The Key to Teleportation Figure 15 illustrates the staightening of |Θ⟩and ⟨Ω|, and the straightening",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "16",
+      "title": "Corbordisms of 1-Manifolds are Surfaces",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "17",
+      "title": "Decomposition of a Surface into Trinions",
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "18",
+      "title": "Trivalent Vectors",
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "19",
+      "title": "Trinion Associativity",
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "20",
+      "title": "Tube Twist From the point of view that we shall take in this paper, the key to the mathematical structure of three-dimensional TQFT lies in the trivalent graphs, including the braiding of grapical arcs. We can think of these braided graphs as representing idealized Feynman diagrams, with the trivale",
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "21",
+      "title": "Creation and Fusion Once one introduces trivalent vertices for fusion and creation, there is the question how these interactions will behave in respect to the braiding operators",
+      "page": 46,
+      "pageLabel": "46",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "22",
+      "title": "YangBaxterEquation",
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "23",
+      "title": "Braiding",
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "24",
+      "title": "Intertwining It is to be expected that there will be an operator that expresses the recoupling of vertex interactions as shown in Figure 25 and labeled by Q. This corresponds to the associativity at the level of trinion combinations shown in",
+      "page": 48,
+      "pageLabel": "48",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "25",
+      "title": "Recoupling",
+      "page": 48,
+      "pageLabel": "48",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "26",
+      "title": "Pentagon Identity",
+      "page": 49,
+      "pageLabel": "49",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "27",
+      "title": "Hexagon Identity",
+      "page": 49,
+      "pageLabel": "49",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "28",
+      "title": "A More Complex Braiding Operator A key point in the application of TQFT to quantum information theory is contained in the structure illustrated in Figure 28. There we show a more complex braiding operator, based on the composition of recoupling with the elementary braiding at a vertex. (This structu",
+      "page": 51,
+      "pageLabel": "51",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "29",
+      "title": "Basic Projectors 52",
+      "page": 52,
+      "pageLabel": "52",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "30",
+      "title": "Two Strand Projector",
+      "page": 53,
+      "pageLabel": "53",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "31",
+      "title": "Vertex In Figure 29 we indicate how the basic projector (symmetrizer, Jones-Wenzl projector)",
+      "page": 53,
+      "pageLabel": "53",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "32",
+      "title": "Orthogonality of Trivalent Vertices 55",
+      "page": 55,
+      "pageLabel": "55",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "33",
+      "title": "Recoupling Formula",
+      "page": 56,
+      "pageLabel": "56",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "34",
+      "title": "Tetrahedron Network",
+      "page": 56,
+      "pageLabel": "56",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "35",
+      "title": "Tetrahedron Formula for Recoupling Coeﬃcients 56",
+      "page": 56,
+      "pageLabel": "56",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "36",
+      "title": "Local Braiding Formula With the braiding relation in place, this q-deformed spin network theory satisﬁes the pentagon, hexagon and braiding naturality identities needed for a topological quantum ﬁeld theory. All these identities follow naturally from the basic underlying topological construction of",
+      "page": 57,
+      "pageLabel": "57",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "39",
+      "title": "The result shown in Figure 39 and Figure 40 is the following formula for the recoupling matrix elements",
+      "page": 60,
+      "pageLabel": "60",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "37",
+      "title": "Modiﬁed Three Vertex",
+      "page": 61,
+      "pageLabel": "61",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "38",
+      "title": "Modiﬁed Bubble Identiy",
+      "page": 61,
+      "pageLabel": "61",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "40",
+      "title": "Modiﬁed Recoupling Formula",
+      "page": 63,
+      "pageLabel": "63",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "41",
+      "title": "Modiﬁed Recoupling Matrix",
+      "page": 63,
+      "pageLabel": "63",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "42",
+      "title": "Modiﬁed Matrix Transpose Theorem 2",
+      "page": 64,
+      "pageLabel": "64",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "43",
+      "title": "Fibonacci Particle Interaction We shall make a recoupling theory based on this particle, but it is worth noting some of its purely combinatorial properties ﬁrst",
+      "page": 65,
+      "pageLabel": "65",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "44",
+      "title": "Fibonacci Trees From here on we shall denote the Fibonacii particle by the letter P. Thus the two possible interactions of P with itself are as follows",
+      "page": 66,
+      "pageLabel": "66",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "45",
+      "title": "Fibonacci Sequence",
+      "page": 68,
+      "pageLabel": "68",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "46",
+      "title": "The 2-Projector",
+      "page": 69,
+      "pageLabel": "69",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "47",
+      "title": "Fibonacci Particle as 2-Projector Note that in Figure 47 we have adopted a single strand notation for the particle interactions, with a solid strand corresponding to the marked particle, a dotted strand (or nothing) corresponding to the unmarked particle. A dark vertex indicates either an interactio",
+      "page": 70,
+      "pageLabel": "70",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "48",
+      "title": "Theta, Delta and Tetrahedron 71",
+      "page": 71,
+      "pageLabel": "71",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "49",
+      "title": "LoopEvaluation–1",
+      "page": 72,
+      "pageLabel": "72",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "50",
+      "title": "LoopEvaluation–2 72",
+      "page": 72,
+      "pageLabel": "72",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "51",
+      "title": "Calculate Theta, Delta",
+      "page": 73,
+      "pageLabel": "73",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "52",
+      "title": "Calculate Tetrahedron – 1 73",
+      "page": 73,
+      "pageLabel": "73",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "53",
+      "title": "Calculate Tetrahedron – 2",
+      "page": 74,
+      "pageLabel": "74",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "54",
+      "title": "Recoupling for 2-Projectors 75",
+      "page": 75,
+      "pageLabel": "75",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "55",
+      "title": "Braiding at the Three-Vertex 76",
+      "page": 76,
+      "pageLabel": "76",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "56",
+      "title": "Braiding at the Null-Three-Vertex Figures 55 and 56 work out the exact formulas for the braiding at a three-vertex in this theory. When the 3-vertex has three marked lines, then the braiding operator is multiplication by −A4, as in Figure 55. When the 3-vertex has two",
+      "page": 77,
+      "pageLabel": "77",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "57",
+      "title": "Evaluation of the Plat Closure of a Braid 80",
+      "page": 80,
+      "pageLabel": "80",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "58",
+      "title": "Dubrovnik Polynomial Specialization at Two Strands The (a) - colored bracket polynonmial of a link L, denoted < L >a, is the evaluation of that link where each single strand has been replaced by a parallel strands and the insertion of Jones-Wenzl projector (as discussed in Section 7)",
+      "page": 81,
+      "pageLabel": "81",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 36,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 37,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "58 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p83); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 37 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-quant-ph-0606114v3"
+  }
+}

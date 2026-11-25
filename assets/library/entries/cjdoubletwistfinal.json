@@ -1,0 +1,564 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "cjdoubletwistfinal",
+  "blocks": [
+    {
+      "id": "library/cjdoubletwistfinal/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER\nSERIES FOR DOUBLE TWIST KNOTS\nJEREMY LOVEJOY AND ROBERT OSBURN\nIn memory of Toshie Takata\nAbstract. Using a result of Takata, we prove a formula for the colored Jones polynomial of the\ndouble twist knots K(−m,−p) and K(−m,p) where m and p are positive integers. In the (−m, −p)\ncase, this leads to new families of q-hypergeometric series generalizing the Kontsevich-Zagier\nseries. Comparing with the cyclotomic expansion of the colored Jones polynomials of K(m,p)\ngives a generalization of a duality at roots of unity between the Kontsevich-Zagier f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cjdoubletwistfinal/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "2\nJEREMY LOVEJOY AND ROBERT OSBURN\n2m \n2p \nFigure 1. Double twist knots\nand\nJN(K(m,−p); q)\n=\nX\nn≥0\nn=nm≥nm−1≥···≥n1≥0\nn=sp≥sp−1≥···≥s1≥0\n(q1+N)n(q1−N)n(−1)nq−(n+1\n2 )\nm−1\nY\ni=1\nqn2\ni +ni\n\u0014\nni+1\nni\n\u0015 p−1\nY\nj=1\nq−sj−sj+1sj\n\u0014\nsj+1\nsj\n\u0015\n.\n(1.2)\nHere we have used the usual q-binomial coeﬃcient\n\u0014\nn\nk\n\u0015\n=\n\u0014\nn\nk\n\u0015\nq\n:=\n(q)n\n(q)n−k(q)k\n(1.3)\nwith the standard q-hypergeometric notation\n(a)n = (a; q)n :=\nn−1\nY\nk=0\n(1 −aqk).\nRecall that\nJN(K; q−1) = JN(K∗; q),\n(1.4)\nwhere K∗denotes the mirror image of the knot K. Thus, since K(m,p) = K(p,m) and K(−m,−p)\nis the mirror image of K(m,p), equations (1.1) and (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cjdoubletwistfinal/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "THE COLORED JONES POLYNOMIAL FOR DOUBLE TWIST KNOTS\n3\nwhere 1 ≤i < j ≤2mp −1 with m ∤i and\nγi,m =\n(\n1,\nif i ≡1, . . . , m −1\n(mod 2m),\n−1\notherwise\n(1.6)\nwhere 1 ≤i ≤2mp −2. Our ﬁrst main result is the following.\nTheorem 1.1. For positive integers m and p, we have\nJN(K(−m,−p); q)\n= q1−N\nX\nN−1≥n2mp−1≥···≥n1≥0\n(q1−N)n2mp−1(−1)n2mp−1q−(\nn2mp−1+1\n2\n)\nY\n1≤i<j≤2mp−1\nm∤i\nqϵi,j,mninj\n×\n2p−1\nY\ni=1\n(−1)nmiq(−1)iNnmi+(nmi+1\n2\n)\n2mp−2\nY\ni=1\nq−nini+1+γi,mni\n\u0014\nni+1\nni\n\u0015\n.\n(1.7)\nThe case m = 1 of Theorem 1.1 was proved by Takata [28]1. Here K(1,p) = Kp>0, the usual\npth twist knot. As K(−1,−p) is the mirror i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cjdoubletwistfinal/blocks/thm-page-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "thm-page-003-01.md",
+      "narrative": null,
+      "content": "For positive integers m and p, we have JN(K(−m,−p); q) = q1−N X N−1≥n2mp−1≥···≥n1≥0 (q1−N)n2mp−1(−1)n2mp−1q−( n2mp−1+1 ) Y 1≤i<j≤2mp−1 m∤i qϵi,j,mninj × 2p−1 Y i=1 (−1)nmiq(−1)iNnmi+(nmi+1 ) 2mp−2 Y i=1 q−nini+1+γi,mni \u0014 ni+1 ni \u0015 . (1.7) The case m = 1 of Theorem 1.1 was proved by Takata [28]1. Here K(1,p) = Kp>0, the usual pth twist knot. As K(−1,−p) is the mirror image of K(1,p), one recovers JN(K∗ p>0; q) by taking m = 1 in (1.7) and simplifying. Namely, we have (cf. equation (15) in [28]) JN(K∗ p>0; q) = q1−N X N−1≥n2p−1≥···≥n1≥0 (q1−N)n2p−1q−Nn2p−1 2p−2 Y i=1 (−1)niq(−1)iNni+(ni 2 )−nini",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cjdoubletwistfinal/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "4\nJEREMY LOVEJOY AND ROBERT OSBURN\nwhere 1 ≤i < j ≤2mp with m ∤i and\nβi,m =\n\n\n\n\n\n1,\nif i ≡1, . . . , m −1\n(mod 2m),\n−1\nif i ≡m + 1, . . . , 2m −1\n(mod 2m),\n0,\notherwise\n(1.11)\nwhere 1 ≤i ≤2mp −1. Our second main result is the following.\nTheorem 1.2. For positive integers m and p, we have\nJN(K(−m,p); q)\n=\nX\nN−1≥n2mp≥···≥n1≥0\n(q1−N)n2mp(−1)n2mpq−(\nn2mp+1\n2\n)\nY\n1≤i<j≤2mp\nm∤i\nq∆i,j,mninj\n×\n2p−1\nY\ni=1\n(−1)nmiq(−1)i+1Nnmi+(nmi+1\n2\n)\n2mp−1\nY\ni=1\nqβi,mni\n\u0014\nni+1\nni\n\u0015\n.\n(1.12)\nAgain, the case m = 1 was established by Takata [28]. As K(1,−p) = Kp<0 and K(−1,p) is the\nmirror image of K(1,−p), one rec",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cjdoubletwistfinal/blocks/thm-page-004-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "thm-page-004-01.md",
+      "narrative": null,
+      "content": "For positive integers m and p, we have JN(K(−m,p); q) = X N−1≥n2mp≥···≥n1≥0 (q1−N)n2mp(−1)n2mpq−( n2mp+1 ) Y 1≤i<j≤2mp m∤i q∆i,j,mninj × 2p−1 Y i=1 (−1)nmiq(−1)i+1Nnmi+(nmi+1 ) 2mp−1 Y i=1 qβi,mni \u0014 ni+1 ni \u0015 . (1.12) Again, the case m = 1 was established by Takata [28]. As K(1,−p) = Kp<0 and K(−1,p) is the mirror image of K(1,−p), one recovers JN(K∗ p<0; q) by taking m = 1 in (1.12) and simplifying. Namely, we have (cf. equation (14) in [28]) JN(K∗ p<0; q) = X N−1≥n2p≥···≥n1≥0 (q1−N)n2p(−1)n2pq−( n2p+1 ) 2p−1 Y i=1 (−1)niq(−1)i+1Nni+(ni+1 2 ) \u0014 ni+1 ni \u0015 . (1.13) For an example with m > 1, ta",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cjdoubletwistfinal/blocks/cor-page-005-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "cor-page-005-01.md",
+      "narrative": null,
+      "content": "If ζN is any Nth root of unity, then we have Fm,p(ζN) = Um,p(−1; ζ−1 N ). (1.23) Next we turn our attention to (1.12) and (1.2). Motivated by these expressions, we deﬁne Fm,p(q) and Um,p(x; q) by Fm,p(q) = X n2mp≥···≥n1≥0 (q)n2mp(−1)n2mpq−( n2mp+1 ) Y 1≤i<j≤2mp m∤i q∆i,j,mninj × 2p−1 Y i=1 (−1)nmiq(nmi+1 ) 2mp−1 Y i=1 qβi,mni \u0014 ni+1 ni \u0015 (1.24)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cjdoubletwistfinal/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "THE COLORED JONES POLYNOMIAL FOR DOUBLE TWIST KNOTS\n5\nand\nUm,p(x; q) =\nX\nn≥0\nn=nm≥nm−1≥···≥n1≥0\nn=sp≥sp−1≥···≥s1≥0\n(−xq)n(−x−1q)nqn\nm−1\nY\ni=1\nqn2\ni +ni\n\u0014\nni+1\nni\n\u0015 p−1\nY\nj=1\nqs2\nj+sj\n\u0014\nsj+1\nsj\n\u0015\n.\n(1.16)\nNote that if ζN is any Nth root of unity, we have\nFm,p(ζN) = JN(K(−m,−p); ζN)\n(1.17)\nand\nUm,p(−1; ζN) = JN(K(m,p); ζN).\n(1.18)\nThe base case F1,1(q) is q times the Kontsevich-Zagier series,\nF(q) :=\nX\nn≥0\n(q)n,\n(1.19)\none of the foundational examples of Zagier’s quantum modular forms [31, 32], while\nU1,1(x; q) = q−1U(x; q),\n(1.20)\nwhere U(x; q) is the generating function for strongly unimodal s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cjdoubletwistfinal/blocks/cor-page-006-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "cor-page-006-01.md",
+      "narrative": null,
+      "content": "If ζN is any Nth root of unity, then we have Fm,p(ζN) = Um,p(−1; ζ−1 N ). (1.28) We expect (1.7), (1.12) and Theorems 1.1 and 1.2 in [23] to be of considerable interest to those working at the overlap of number theory, quantum topology, combinatorics and physics. Recently, Park [25] used (1.7) and (1.12) to check conjectures of Gukov and Manolescu [12] concerning the existence of a two-variable invariant (with origins in string theory) for knot complements. In [22], the ﬁrst author initiated the study of quantum q-series identities with",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cjdoubletwistfinal/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "6\nJEREMY LOVEJOY AND ROBERT OSBURN\nand\nUm,p(x; q)\n=\nX\nn≥0\nn=nm≥nm−1≥···≥n1≥0\nn=sp≥sp−1≥···≥s1≥0\n(−xq)n(−x−1q)n(−1)nq−(n+1\n2 )\nm−1\nY\ni=1\nqn2\ni +ni\n\u0014\nni+1\nni\n\u0015 p−1\nY\nj=1\nq−sj−sj+1sj\n\u0014\nsj+1\nsj\n\u0015\n.\n(1.25)\nNeither Fm,p(q) nor Um,p(x; q) is deﬁned anywhere except at roots of unity. Note that\nFm,p(ζN) = JN(K(−m,p); ζN)\n(1.26)\nand\nUm,p(−1; ζN) = JN(K(m,−p); ζN).\n(1.27)\nAs a result of (1.4), (1.26) and (1.27), we immediately obtain the following duality at roots of\nunity.\nCorollary 1.4. If ζN is any Nth root of unity, then we have\nFm,p(ζN) = Um,p(−1; ζ−1\nN ).\n(1.28)\nWe expect (1.7), (1.12) and Theorems",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cjdoubletwistfinal/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "THE COLORED JONES POLYNOMIAL FOR DOUBLE TWIST KNOTS\n7\nConsider the family of 2-bridge knots b(l, t) [5]. The main result in [28] is an explicit formula\nfor the colored Jones polynomial of b(l, t)∗.\nTheorem 2.1. We have\nJN(b(l, t)∗; q) =\nX\nN−1≥np′≥...≥n1≥0\nqa(n)N+b1(n)+b2(n)X(n)\n(2.3)\nwhere2\na(n) = −1\n2\np′\nX\nj=1\n \np′\nX\nk=r′(j)\n(σik + σip′+1−k)\n!\n(nj −nj−1) −1\n2\np′−1\nX\nj=1\n(σj+1 + σp′+1−j)nj\n−1\n2(σp′ + 1)np′ −\np′\nX\nj=1\nσj,\nb1(n) = −a(n) +\nl−t\n2\nX\nk=1\n1 −σik\n2\nnik−1 −\np′\nX\nk= l−t\n2 +1\nnik−1 +\np′\nX\nk= l−t\n2 +1\n1 + σik\n2\nnik −(1 + σp′)np′\n+ 1\n2\np′−1\nX\nj=1\n(σj+1 −σj)nj\n−1\n2\np′−1\nX\nk=1\np′\nX\nk′=k+1\n1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cjdoubletwistfinal/blocks/thm-page-007-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "thm-page-007-01.md",
+      "narrative": null,
+      "content": "We have JN(b(l, t)∗; q) = X N−1≥np′≥...≥n1≥0 qa(n)N+b1(n)+b2(n)X(n) (2.3) where2 a(n) = −1 p′ X j=1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cjdoubletwistfinal/blocks/lem-page-008-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "lem-page-008-01.md",
+      "narrative": null,
+      "content": "Let l = 4mp + 1 and t = 4mp −2p + 1. Then for 1 ≤k ≤p′ and 1 ≤j ≤p′ −1 we have (i) σik + σip′+1−k = 0",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cjdoubletwistfinal/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "8\nJEREMY LOVEJOY AND ROBERT OSBURN\nLemma 2.2. For l = 4mp −1 and t = 4mp −2p −1, we have\n(i) σj =\n\u001a\n1\nif j ≡1, 2, . . . , m (mod 2m)\n−1\nif j ≡0, m + 1, . . . , 2m −1 (mod 2m).\n(ii) To compute ik, apply the following algorithm.\nDivide the integers from 1 to p′ into\n2m −1 intervals, each of length p, and a ﬁnal interval of length p −1. The value of ik\nis 2m(p −k) + m in the ﬁrst interval and 1 −(2m(p −k) + m) in the second. If j > 1\nis odd, then to obtain the value of ik in the jth interval, add 4mp −1 to the formula for\nik in the (j −2)th interval. If j > 2 is even, then to obtain the value of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cjdoubletwistfinal/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "THE COLORED JONES POLYNOMIAL FOR DOUBLE TWIST KNOTS\n9\n(ii) σj+1 + σp′+1−j =\n\n\n\n2\nif j ≡0 (mod 2m)\n−2\nif j ≡m (mod 2m)\n0\notherwise.\nWe now illustrate the computation of a(n) and b1(n) + b2(n) for l = 8p −1 and t = 6p −1.\nThe routine evaluation of X(n) is left to the reader. First, we take m = 2 in Lemmas 2.2 and\n2.3 to obtain\nσj =\n\u001a\n1\nif j ≡1, 2\n(mod 4)\n−1\nif j ≡0, 3\n(mod 4),\n(2.4)\nik =\n\n\n\n\n\n\n\n4(p −k) + 2\nif 1 ≤k ≤p,\n4(k −p) −1\nif p + 1 ≤k ≤2p,\n12p −4k + 1\nif 2p + 1 ≤k ≤3p,\n4k −12p\nif 3p + 1 ≤k ≤4p −1,\n(2.5)\nσik =\n\n\n\n\n\n\n\n1\nif 1 ≤k ≤p,\n−1\nif p + 1 ≤k ≤2p,\n1\nif 2p + 1 ≤k ≤3p,\n−1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cjdoubletwistfinal/blocks/prose-page-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 10",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/page-010.md",
+      "narrative": null,
+      "content": "10\nJEREMY LOVEJOY AND ROBERT OSBURN\n−\n4p−1\nX\nk=p+1\nnik−1 = −\n \n2p\nX\nk=p+1\nnik−1 +\n3p\nX\nk=2p+1\nnik−1 +\n4p−1\nX\nk=3p+1\nnik−1\n!\n= −\n p\nX\nj=1\n(n4j−2 + n4j−4) +\np−1\nX\nj−1\nn4j−1\n!\n,\n(2.10)\n4p−1\nX\nk=p+1\n1 + σik\n2\nnik =\n3p\nX\nk=2p+1\nnik =\np\nX\nj=1\nn4j−3,\n(2.11)\n1\n2\n4p−2\nX\nj=1\n(σj+1 −σj)nj =\n2p−1\nX\nj=1\n(−1)jn2j\n(2.12)\nand\nb2(n) =\n3p−1\nX\nk=p+1\n1 + σik\n2\nnik−1 =\n3p−1\nX\nk=2p+1\nnik−1 =\np\nX\nj=2\nn4j−4.\n(2.13)\nBy (2.9)–(2.13), the sum of b2(n) and the ﬁrst six terms in b1(n) equals\n1 + n4p−1 +\np\nX\nj=1\n(n4j−3 −n4j−2 −n4j−1).\n(2.14)\nTo compute the seventh term in b1(n), we use (2.5) and (2.6) to observe that k < k",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cjdoubletwistfinal/blocks/prose-page-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 11",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/page-011.md",
+      "narrative": null,
+      "content": "THE COLORED JONES POLYNOMIAL FOR DOUBLE TWIST KNOTS\n11\n+\np\nX\nj=1\nj\nX\nj′=1\n(n4j−1 −n4j−2)(n4j′−3 −n4j′−4) −\np\nX\nj=1\nj\nX\nj′=2\n(n4j−3 −n4j−4)(n4j′−4 −n4j′−5).\n(2.15)\nFinally, using (2.4) and (2.5), then reindexing and simplifying gives the eighth term in b1(n),\n4p−1\nX\nj=1\nσj\n\u0010r′(j)\nX\nk=1\n(nik −nik−1)\n\u0011\nnj−1\n=\np\nX\nj=1\nσ4j−3\n\u00103p−j+1\nX\nk=1\n(nik −nik−1)\n\u0011\nn4j−4 +\np\nX\nj=1\nσ4j−2\n\u0010p−j+1\nX\nk=1\n(nik −nik−1)\n\u0011\nn4j−3\n+\np−1\nX\nj=1\nσ4j\n\u00103p+j\nX\nk=1\n(nik −nik−1)\n\u0011\nn4j−1 +\np\nX\nj=1\nσ4j−1\n\u0010p+j\nX\nk=1\n(nik −nik−1)\n\u0011\nn4j−2\n=\np\nX\nj=1\n p\nX\nk=1\n(n4p−4k+2 −n4p−4k+1) +\n2p\nX\nk=p+1\n(n4k−4p−1 −n4k−4p−2)\n+\n3p−j+1\nX\nk=2p+1\n(n12",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cjdoubletwistfinal/blocks/prose-page-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 12",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/page-012.md",
+      "narrative": null,
+      "content": "12\nJEREMY LOVEJOY AND ROBERT OSBURN\n1 + n4p−1 +\np\nX\nj=1\n(n4j−3 −n4j−2 −n4j−1)\n−\np\nX\nj=1\nj\nX\nj′=2\n(n4j−2 −n4j−3)(n4j′−5 −n4j′−6) −\np\nX\nj=1\nj\nX\nj′=2\n(n4j−2 −n4j−3)(n4j′−4 −n4j′−5)\n+\np\nX\nj=1\nj\nX\nj′=1\n(n4j−1 −n4j−2)(n4j′−3 −n4j′−4) −\np\nX\nj=1\nj\nX\nj′=2\n(n4j−3 −n4j−4)(n4j′−4 −n4j′−5)\n+\np\nX\nj=1\n j−1\nX\nj′=1\n(n4j′−1 −n4j′−3) +\np\nX\nj=j′\n(n4j′−1 −n4j′−4)\n!\nn4j−4 +\np\nX\nj=1\n \np\nX\nj′=j\n(n4j′−2 −n4j′−3)\n!\nn4j−3\n−\np−1\nX\nj=1\n \np\nX\nj′=j+1\n(n4j′−1 −n4j′−4) + n4j\n!\nn4j−1\n−\np\nX\nj=1\n \nj\nX\nj′=1\n(n4j′−1 −n4j′−3) +\np\nX\nj′=j+1\n(n4j′−2 −n4j′−3)\n!\nn4j−2.\n3. Proofs of Theorems 1.1 and 1.2\nProof of Theorem 1.1. As (1.7) red",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cjdoubletwistfinal/blocks/prose-page-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 13",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/page-013.md",
+      "narrative": null,
+      "content": "THE COLORED JONES POLYNOMIAL FOR DOUBLE TWIST KNOTS\n13\n+\np\nX\nj=1\n \np\nX\nj′=j\n(n2mj′−m −n2mj′−m−1)\n!\nn2mj−m−1\n−\np−1\nX\nj=1\n \np\nX\nj′=j+1\n(n2mj′−1 −n2mj′−2m) + n2mj\n!\nn2mj−1\n−\nm−1\nX\ns=1\np\nX\nj=1\n \nj\nX\nj′=1\n(n2mj′−m+s −n2mj′−m−s) +\np\nX\nj′=j+1\n(n2mj′−m+s−1 −n2mj′−m−s)\n!\nn2mj−m+s−1.\n(3.2)\nAlso, by (2.1) and (2.2)\nX(n) = (−1)n2mp−1q−Nn2mp−1 (q)N−1(q)n2mp−1\n(q)N−n2mp−1−1\n×\np\nY\nj=1\n(−1)n2mj−1−n2mj−mq\n1\n2\nm\nP\ns=1\n(n2mj−2m+s−n2mj−2m+s−1)(n2mj−2m+s−n2mj−2m+s−1+1)\n2m−1\nY\ns=1\n(q)n2mj−2m+s−n2mj−2m+s−1\n×\np−1\nY\nj=1\n(−1)n2mj−n2mj−1\n(q)n2mj−n2mj−1\n.\n(3.3)\nUpon comparing (2.3) and (3.1)–(3.3) with (1.7) and then sim",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cjdoubletwistfinal/blocks/prose-page-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 14",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/page-014.md",
+      "narrative": null,
+      "content": "14\nJEREMY LOVEJOY AND ROBERT OSBURN\n−\nm−1\nX\ns=1\np\nX\nj=1\n \nj\nX\nj′=1\n(n2mj′−m+s −n2mj′−m−s) +\np\nX\nj′=j+1\n(n2mj′−m+s−1 −n2mj′−m−s)\n!\nn2mj−m+s−1\n+\np\nX\nj=1\n\"\u0012n2mj−2m+1 + 1\n2\n\u0013\n−n2mj−2m+1n2mj−2m +\n\u0012n2mj−m−1\n2\n\u0013\n−n2mj−mn2mj−m−1\n+ 1\n2\nm−1\nX\ns=2\n(n2mj−2m+s −n2mj−2m+s−1)(n2mj−2m+s −n2mj−2m+s−1 + 1)\n#\n(3.4)\nequals\nX\n1≤i<j≤2mp−1\nm∤i\nϵi,j,mninj −\n2mp−2\nX\ni=1\nnini+1\n(3.5)\nwhere ϵi,j,m is given by (1.5). Here, we have used the fact that\np\nX\nj=1\n m−1\nX\ni=1\nn2mj−2m+i −\n2m−2\nX\ni=m\nn2mj−2m+i\n!\n−\np−1\nX\nj=1\nn2mj−1 =\n2mp−2\nX\ni=1\nγi,mni +\np−1\nX\ni=1\nn2mi,\n(3.6)\nwhere γi,m is given by (1.6), together with the identiti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cjdoubletwistfinal/blocks/prose-page-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 15",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/page-015.md",
+      "narrative": null,
+      "content": "THE COLORED JONES POLYNOMIAL FOR DOUBLE TWIST KNOTS\n15\nL7 + L8 =\np−1\nX\nj=0\nm−1\nX\ni=1\nn2\n2mj+i −\np−1\nX\nj=0\nm\nX\ni=1\nn2mj+i−1n2mj+i.\n(3.9)\nNext, observe that both L1 and L2 simplify as the sum on k′ telescopes in each case. Thus,\nL1 =\nm−1\nX\nk=1\np\nX\nj=1\nj\nX\nj′=1\n(n2mj−k −n2mj−k−1)(n2mj′−2m+k −n2mj′−2m)\n(3.10)\nL2 = −\nm\nX\nk=1\np\nX\nj=1\nj\nX\nj′=1\n(n2mj−m−k+1 −n2mj−m−k)(n2mj′−2m −n2mj′−3m+k−1).\n(3.11)\nNow, splitting L1 into two sums according to the second factor and then using the fact that the\nresulting second sum telescopes gives\nL1 =\nm−1\nX\nk=1\np\nX\nj=1\nj\nX\nj′=1\n(n2mj−k −n2mj−k−1)n2mj′−2m+k +\np\nX\nj=1\nj",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cjdoubletwistfinal/blocks/prose-page-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 16",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/page-016.md",
+      "narrative": null,
+      "content": "16\nJEREMY LOVEJOY AND ROBERT OSBURN\nthen this cancels with the fourth sum of (3.12) and the second sum of (3.13). Putting all of this\ntogether and expanding sums we have that (3.4) equals\nm−1\nX\nk=1\np\nX\nj=1\nj\nX\nj′=1\nn2mj−kn2mj′−2m+k −\nm−1\nX\nk=1\np\nX\nj=1\nj\nX\nj′=1\nn2mj−k−1n2mj′−2m+k\n+\nm\nX\nk=1\np\nX\nj=1\nj\nX\nj′=1\nn2mj−m−k+1n2mj′−3m+k−1 −\nm\nX\nk=1\np\nX\nj=1\nj\nX\nj′=1\nn2mj−m−kn2mj′−3m+k−1\n+\nm−1\nX\ns=1\np\nX\nj=1\nj−1\nX\nj′=1\nn2mj′−sn2mj−2m+s−1 −\nm−1\nX\ns=1\np\nX\nj=1\nj−1\nX\nj′=1\nn2mj′−2m+sn2mj−2m+s−1\n+\nm−1\nX\ns=2\np\nX\nj=1\np\nX\nj′=j\nn2mj′−sn2mj−2m+s−1 −\nm−1\nX\ns=2\np\nX\nj=1\np\nX\nj′=j\nn2mj′−2m+s−1n2mj−2m+s−1\n+\np\nX\nj=1\np\nX\nj′=j",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cjdoubletwistfinal/blocks/prose-page-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 17",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/page-017.md",
+      "narrative": null,
+      "content": "THE COLORED JONES POLYNOMIAL FOR DOUBLE TWIST KNOTS\n17\nWe now remove the k = m term from the second sum in (3.15) and note that what remains\ncancels with the second sum in the penultimate line of (3.14). In total, this yields that (3.4)\nequals\nm−1\nX\nk=1\np\nX\nj=1\nj\nX\nj′=1\nn2mj−kn2mj′−2m+k −\nm−1\nX\nk=1\np\nX\nj=1\nj\nX\nj′=1\nn2mj−k−1n2mj′−2m+k\n+\nm\nX\nk=1\np\nX\nj=1\nj−1\nX\nj′=1\nn2mj−m−k+1n2mj′−m+k−1 −\np\nX\nj=1\nj−1\nX\nj′=1\nn2mj−2mn2mj′−1\n+\nm−1\nX\ns=1\np\nX\nj=1\nj−1\nX\nj′=1\nn2mj′−sn2mj−2m+s−1 −\nm−1\nX\ns=1\np\nX\nj=1\nj−1\nX\nj′=1\nn2mj′−2m+sn2mj−2m+s−1\n+\nm−1\nX\ns=2\np\nX\nj=1\np\nX\nj′=j\nn2mj′−sn2mj−2m+s−1 −\nm\nX\ns=2\np\nX\nj=1\nj−1\nX\nj′",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cjdoubletwistfinal/blocks/prose-page-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 18",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/page-018.md",
+      "narrative": null,
+      "content": "18\nJEREMY LOVEJOY AND ROBERT OSBURN\n+\nm−1\nX\ns=1\np\nX\nj=1\nj−1\nX\nj′=1\nn2mj′−sn2mj−2m+s−1 +\nm−1\nX\ns=1\np\nX\nj=1\nj\nX\nj′=1\nn2mj′−m−sn2mj−m+s−1\n−\nm−1\nX\ns=1\np\nX\nj=1\nj−1\nX\nj′=1\nn2mj′−2m+sn2mj−2m+s−1 −\nm−1\nX\ns=1\np\nX\nj=1\nj−1\nX\nj′=1\nn2mj′−m+sn2mj−m+s−1\n−\nm\nX\ns=2\np\nX\nj′=1\nj−1\nX\nj′=1\nn2mj′−2m+s−1n2mj−2m+s−1 −\nm\nX\ns=2\np−1\nX\nj=1\np\nX\nj′=j+1\nn2mj−m+s−1n2mj′−m+s−1\n−\nm−1\nX\ns=1\np\nX\nj=1\nn2mj−m+sn2mj−m+s−1 −\np−1\nX\nj=0\nm\nX\ni=0\nn2mj+i−1n2mj+i.\n(3.17)\nNow we see that this is equal to (3.5) as follows. The ﬁrst four lines of (3.17) correspond to the\nﬁrst term in (3.5); namely, the ﬁrst line of (3.17) corresponds to (i, j)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cjdoubletwistfinal/blocks/prose-page-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 19",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/page-019.md",
+      "narrative": null,
+      "content": "THE COLORED JONES POLYNOMIAL FOR DOUBLE TWIST KNOTS\n19\n−\np\nX\nj=1\n \np\nX\nj′=j\n(n2mj′−m+1 −n2mj′−m)\n!\nn2mj−m\n−\nm−1\nX\ns=1\np\nX\nj=1\n j−1\nX\nj′=1\n(n2mj′−m+s −n2mj′−m−s) +\np\nX\nj′=j\n(n2mj′−m+s+1 −n2mj′−m−s)\n!\nn2mj−m+s.\n(3.19)\nAlso, by (2.1) and (2.2)\nX(n) = (−1)n2mpq−Nn2mp (q)N−1(q)n2mp\n(q)N−n2mp−1\n×\np\nY\nj=1\n(−1)n2mj−n2mj−mq\n1\n2\nm\nP\ns=1\n(n2mj−2m+s−n2mj−2m+s−1)(n2mj−2m+s−n2mj−2m+s−1+1)\n2m\nY\ns=1\n(q)n2mj−2m+s−n2mj−2m+s−1\n.\n(3.20)\nUpon comparing (2.3) and (3.18)–(3.20) with (1.12) and then simplifying, it suﬃces to prove\nthat for m ≥2\nm\nX\nk=1\np\nX\nj=1\nj\nX\nj′=1\n(n2mj−k+1 −n2mj−k)(n2mj′−2m+k −n2mj′−2m)\n−\nm−1\nX",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cjdoubletwistfinal/blocks/prose-page-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 20",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/page-020.md",
+      "narrative": null,
+      "content": "20\nJEREMY LOVEJOY AND ROBERT OSBURN\n+ 1\n2\nm−1\nX\ns=2\n(n2mj−2m+s −n2mj−2m+s−1)(n2mj−2m+s −n2mj−2m+s−1 + 1)\n#\n(3.21)\nequals\nX\n1≤i<j≤2mp\nm∤i\n∆i,j,mninj\n(3.22)\nwhere ∆i,j,m is given by (1.10). Here, we have used (3.7), (3.8) and the fact that\np\nX\nj=1\n\"m−1\nX\ni=0\nn2mj−2m+i −\n2m−1\nX\ni=m+1\nn2mj−2m+i\n#\n=\n2mp−1\nX\ni=1\nβi,mni +\np−1\nX\ni=1\nn2mi\n(3.23)\nwhere βi,m is given by (1.11).\nWe now sketch how to go from (3.21) to (3.22). Let ˆLi denote the ith line of (3.21). We ﬁrst\nsplit ˆL1 into two parts according to the second factor and note that the sum on k in the second\npart telescopes. Thus,\nˆL1 =\nm\nX\nk=1\np",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cjdoubletwistfinal/blocks/prose-page-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 21",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/page-021.md",
+      "narrative": null,
+      "content": "THE COLORED JONES POLYNOMIAL FOR DOUBLE TWIST KNOTS\n21\nm−1\nX\nk=1\np\nX\nj=1\nj\nX\nj′=1\nn2mj−k+1n2mj′−2m+k −\nm−1\nX\nk=1\np\nX\nj=1\nj\nX\nj′=1\nn2mj−kn2mj′−2m+k\n+\nm−1\nX\ns=1\np\nX\nj=2\nj\nX\nj′=2\nn2mj−m−s+1n2mj′−3m+s −\nm−1\nX\ns=1\np\nX\nj=2\nj\nX\nj′=2\nn2mj−m−sn2mj′−3m+s\n+\nm−1\nX\ns=1\np\nX\nj=1\nj\nX\nj′=1\nn2mj′−sn2mj−2m+s −\nm−1\nX\ns=1\np\nX\nj=1\nj\nX\nj′=1\nn2mj′−2m+sn2mj−2m+s\n+\nm−1\nX\ns=1\np\nX\nj=1\np\nX\nj′=j+1\nn2mj′−sn2mj−2m+s −\nm−1\nX\ns=1\np\nX\nj=1\np\nX\nj′=j+1\nn2mj′−2m+s+1n2mj−2m+s\n−\nm−1\nX\ns=1\np\nX\nj=1\nj−1\nX\nj′=1\nn2mj′−m+sn2mj−m+s +\nm−1\nX\ns=1\np\nX\nj=1\nj−1\nX\nj′=1\nn2mj′−m−sn2mj−m+s\n−\nm−1\nX\ns=1\np\nX\nj=1\np\nX\nj′=j\nn2mj′−m+s+1n2mj−m+s +\nm−1\nX\ns=1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cjdoubletwistfinal/blocks/prose-page-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 22",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/page-022.md",
+      "narrative": null,
+      "content": "22\nJEREMY LOVEJOY AND ROBERT OSBURN\n−\nm−1\nX\ns=1\np\nX\nj=1\np\nX\nj′=j\nn2mj′−m+s+1n2mj−m+s +\nm−1\nX\ns=1\np\nX\nj=1\np\nX\nj′=j\nn2mj′−m−sn2mj−m+s\n−\np−1\nX\nj=0\nm\nX\ni=2\nn2mj+i−1n2mj+i.\n(3.27)\nNow, the last line of (3.27) is just the j′ = j term of the fourth line. In the second line,\nperform the shift j′ →j′ + 1 and start the sum at j = 1. The second sum on this line then\ncancels with the second sum of penultimate line, except for the j′ = j term. But this term now\nbecomes the j′ = j term for the second sum in the ﬁfth line. After simplifying and gathering\nterms, we have\nm−1\nX\nk=1\np\nX\nj=1\nj\nX\nj′=1\nn2mj′−2m+kn2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cjdoubletwistfinal/blocks/prose-page-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 23",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/page-023.md",
+      "narrative": null,
+      "content": "THE COLORED JONES POLYNOMIAL FOR DOUBLE TWIST KNOTS\n23\nthe duality in Theorem 1.3, much more is known in the case of torus knots. For example, the\nfunctions Ft(q) have explicit quantum modular properties which were given by Hikami [15]. For\nthe case of torus knots T(3,2t), see Corollary 4.1 in [9]. As for (4.2), it can be written in terms\nof indeﬁnite ternary theta series [18]. It is natural to ask whether the Fm,p(q) (and/or Fm,p(q))\nhave quantum modularity or other related properties (e.g., asymptotic expansions near roots of\nunity), and whether the Um,p(x; q) (and/or the Um,p(x; q)) have an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cjdoubletwistfinal/blocks/prose-page-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 24",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/page-024.md",
+      "narrative": null,
+      "content": "24\nJEREMY LOVEJOY AND ROBERT OSBURN\n[16] K. Hikami, Asymptotics of the colored Jones polynomial and the A-polynomial, Nuclear Phys. B 773 (2007),\nno. 3, 184–202.\n[17] K. Hikami, Hecke type formula for uniﬁed Witten-Reshetikhin-Turaev invariants as higher-order mock theta\nfunctions, Int. Math. Res. Not. IMRN 2007, no. 7, Art. ID rnm 022, 32pp.\n[18] K. Hikami, J. Lovejoy, Torus knots and quantum modular forms, Res. Math. Sci. 2 (2015), Art. 2, 15pp.\n[19] K. Hikami, J. Lovejoy, Hecke-type formulas for families of uniﬁed Witten-Reshetikhin-Turaev invariants,\nCommun. Number Theory Phys. 11 (2017),",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

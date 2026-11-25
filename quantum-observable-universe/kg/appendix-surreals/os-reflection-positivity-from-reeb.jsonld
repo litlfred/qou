@@ -1,0 +1,48 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-os-reflection-positivity-from-reeb",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:os-reflection-positivity-from-reeb",
+  "kind": "conjecture",
+  "title": "Osterwalder--Schrader reflection positivity from the Reeb $\\mathbb{Z}_2$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-reeb-u1-chart-swap",
+    "papers/quantum-observable-universe/blocks/thm-categorical-reeb-exists",
+    "papers/quantum-observable-universe/blocks/def-contact-affine-chart",
+    "papers/quantum-observable-universe/blocks/def-frobenius-hopf-substrate",
+    "papers/quantum-observable-universe/blocks/def-archimedean-realization-functor",
+    "papers/quantum-observable-universe/blocks/rem-yang-mills-surreal-bound",
+    "papers/quantum-observable-universe/blocks/thm-quantum-gap-collapse",
+    "papers/quantum-observable-universe/blocks/rem-kashaev-as-archimedean-realization"
+  ],
+  "cites": [
+    "references/osterwalder1973",
+    "references/osterwalder1975",
+    "references/glimm1981",
+    "references/faddeev1994"
+  ],
+  "tags": [
+    "tier:S",
+    "yang-mills",
+    "mass-gap",
+    "millennium-problem",
+    "wightman-axioms",
+    "osterwalder-schrader",
+    "reflection-positivity",
+    "reeb",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.Observations.AppendixSurreals.OSReflectionPositivity",
+  "text": "os-reflection-positivity-from-reeb.md",
+  "leanSource": "os-reflection-positivity-from-reeb.lean",
+  "provenance": "authored"
+}

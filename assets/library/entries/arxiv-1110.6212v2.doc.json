@@ -1,0 +1,793 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1110.6212v2",
+  "title": "arxiv-1110.6212v2",
+  "variant": "pdf",
+  "pages": 34,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Definitions and setup",
+      "number": "1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Root systems and Weyl groups",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-11-root-systems-and-weyl-groups"
+    },
+    {
+      "level": 2,
+      "title": "Parameter systems",
+      "number": "1.2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-12-parameter-systems"
+    },
+    {
+      "level": 2,
+      "title": "Affine Hecke algebras",
+      "number": "1.3",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Harmonic analysis for the affine Hecke algebra",
+      "number": "1.4",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Representations of affine Hecke algebras",
+      "number": "2",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Principal series representations",
+      "number": "2.1",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-principal-series-representations"
+    },
+    {
+      "level": 2,
+      "title": "A combinatorial construction of irreducible calibrated HL-modules",
+      "number": "2.2",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-a-combinatorial-construction-of-irreducible-c"
+    },
+    {
+      "level": 2,
+      "title": "Examples",
+      "number": "2.3",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-examples"
+    },
+    {
+      "level": 2,
+      "title": "Characters",
+      "number": "2.4",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-24-characters"
+    },
+    {
+      "level": 1,
+      "title": "The Plancherel Theorem",
+      "number": "3",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-3-the-plancherel-theorem"
+    },
+    {
+      "level": 2,
+      "title": "The rank 1 algebras",
+      "number": "3.1",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-31-the-rank-1-algebras"
+    },
+    {
+      "level": 2,
+      "title": "The 2(q) algebras with L=Q",
+      "number": "3.2",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The 2(q) algebras with L=P",
+      "number": "3.3",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The 2(q1,q2) algebras with L=Q",
+      "number": "3.4",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The 2(q1,q2) algebras with L=P",
+      "number": "3.5",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The 2(q1,q2) algebras with L=Q",
+      "number": "3.6",
+      "page": 25,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The 2(q0,q1,q2) algebras with L=Q",
+      "number": "3.7",
+      "page": 28,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "A Constants and c-functions",
+      "number": null,
+      "page": 31,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-a-constants-and-c-functions"
+    },
+    {
+      "level": 2,
+      "title": "A.1 2(q1,q2) algebras with L=Q",
+      "number": null,
+      "page": 31,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "A.2 2(q1,q2) algebras with L=P",
+      "number": null,
+      "page": 31,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "A.3 2(q1,q2) algebras with L=Q",
+      "number": null,
+      "page": 31,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "A.4 2(q0,q1,q2) algebras with L=Q",
+      "number": null,
+      "page": 32,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-11-root-systems-and-weyl-groups",
+      "number": "1.1",
+      "title": "Root systems and Weyl groups",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 598,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alpha vee",
+          "heading": false
+        },
+        {
+          "term": "mid alpha",
+          "heading": false
+        },
+        {
+          "term": "root systems",
+          "heading": true
+        },
+        {
+          "term": "alpha rangle",
+          "heading": false
+        },
+        {
+          "term": "langle alpha",
+          "heading": false
+        },
+        {
+          "term": "alpha notin",
+          "heading": false
+        },
+        {
+          "term": "cdots ell",
+          "heading": false
+        },
+        {
+          "term": "qquad textrm",
+          "heading": false
+        }
+      ],
+      "extract": "Let $R$ be an irreducible (not necessarily reduced) finite crystallographic root system with simple roots $\\alpha_1,\\ldots,\\alpha_n$ in an $n$-dimensional real vector space $V$ with inner product $\\langle\\cdot,\\cdot\\rangle$. Let $R^+$ be the set of positive roots relative to the simple roots $\\alpha_1,\\ldots,\\alpha_n$. Let $W_0$ be the *Weyl group*; the subgroup of $GL(V)$ generated by the reflections $s_{\\alpha}$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-12-parameter-systems",
+      "number": "1.2",
+      "title": "Parameter systems",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2108,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vee textrm",
+          "heading": false
+        },
+        {
+          "term": "alpha vee",
+          "heading": false
+        },
+        {
+          "term": "overline mathscr",
+          "heading": false
+        },
+        {
+          "term": "mathrm gen",
+          "heading": false
+        },
+        {
+          "term": "aligned alpha",
+          "heading": false
+        },
+        {
+          "term": "mathrm supp",
+          "heading": false
+        },
+        {
+          "term": "mathscr module",
+          "heading": false
+        },
+        {
+          "term": "qquad textrm",
+          "heading": false
+        }
+      ],
+      "extract": "Let $q_0,q_1,\\ldots,q_n\\in\\mathbb{C}^{\\times}$ be such that $q_i=q_j$ whenever $s_i$ and $s_j$ are conjugate in $W_Q$. We call the sequence $(q_i)$ a *parameter system*. By [@bourbaki IV, §5, No.5, Prop 5] the product $$q_w=q_{i_1}\\cdots q_{i_{\\ell}}\\quad\\textrm{(where $w=s_{i_1}\\cdots s_{i_{\\ell}}\\in W_Q$ is reduced)}$$ does not depend on the particular reduced expression for $w$. If $\\alpha\\in W_0\\alpha_i\\cap",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-principal-series-representations",
+      "number": "2.1",
+      "title": "Principal series representations",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 264,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mid alpha",
+          "heading": false
+        },
+        {
+          "term": "principal series",
+          "heading": true
+        },
+        {
+          "term": "mathrm hom",
+          "heading": false
+        },
+        {
+          "term": "mathbb times",
+          "heading": false
+        },
+        {
+          "term": "kato",
+          "heading": false
+        },
+        {
+          "term": "mathscr",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        }
+      ],
+      "extract": "The large commutative subalgebra $\\mathbb{C}[L]$ of $\\mathscr{H}_L$ can be used to construct finite dimensional representations of $\\mathscr{H}_L$. The *principal series representation* with *central character* $t\\in\\mathrm{Hom}(L,\\mathbb{C}^{\\times})$ is $$M(t)=\\mathrm{Ind}_{\\mathbb{C}[L]}^{\\mathscr{H}_L}(\\mathbb{C}v_t)=\\mathscr{H}_L\\otimes_{\\mathbb{C}[L]}(\\mathbb{C}v_t),$$ where $\\mathbb{C}v_t$ is the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-a-combinatorial-construction-of-irreducible-c",
+      "number": "2.2",
+      "title": "A combinatorial construction of irreducible calibrated HL-modules",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1752,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "irreducible calibrated",
+          "heading": true
+        },
+        {
+          "term": "iwt big",
+          "heading": false
+        },
+        {
+          "term": "alpha vee",
+          "heading": false
+        },
+        {
+          "term": "calib label",
+          "heading": false
+        },
+        {
+          "term": "tilde i-q",
+          "heading": false
+        },
+        {
+          "term": "aligned tilde",
+          "heading": false
+        },
+        {
+          "term": "lambda tilde",
+          "heading": false
+        },
+        {
+          "term": "cdots tilde",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sect:combconst label=\"sect:combconst\"} Following [@ramcalib], the *calibration graph* of $t\\in\\mathrm{Hom}(L,\\mathbb{C}^{\\times})$ is the graph $\\Gamma(t)$ with $$\\begin{aligned} &\\textrm{vertex set $\\{wt\\mid w\\in W_0\\}$, and}\\\\ &\\textrm{edges $\\{wt,s_iwt\\}$ if and only if $\\alpha_i\\notin N(wt)$.} \\end{aligned}$$ For each $J\\subseteq N(t)$ define $$F_J(t)=\\{w\\in W_0\\mid R(w^{-1})\\cap N(t)=J\\textrm{ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-examples",
+      "number": "2.3",
+      "title": "Examples",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1509,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alpha vee",
+          "heading": false
+        },
+        {
+          "term": "pmatrix frac",
+          "heading": false
+        },
+        {
+          "term": "repmain",
+          "heading": false
+        },
+        {
+          "term": "omega alpha",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "calibration graph",
+          "heading": false
+        },
+        {
+          "term": "mathrm diag",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sect:examples label=\"sect:examples\"} Let us give some concrete examples of the construction from Theorem [\\[thm:repmain\\]](#thm:repmain){reference-type=\"ref\" reference=\"thm:repmain\"}. Most of these examples will arise in the Plancherel Theorems in the later parts of this paper (see Section [\\[sect:plancherel\\]](#sect:plancherel){reference-type=\"ref\" reference=\"sect:plancherel\"}). Of interest, we see in the third",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-characters",
+      "number": "2.4",
+      "title": "Characters",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1125,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tau lambda",
+          "heading": false
+        },
+        {
+          "term": "character chi",
+          "heading": false
+        },
+        {
+          "term": "qquad textrm",
+          "heading": false
+        },
+        {
+          "term": "alpha vee",
+          "heading": false
+        },
+        {
+          "term": "lambda mid",
+          "heading": false
+        },
+        {
+          "term": "tausquared",
+          "heading": false
+        },
+        {
+          "term": "mathscr",
+          "heading": false
+        },
+        {
+          "term": "tau otimes",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sect:characters label=\"sect:characters\"} We conclude this section with some observations about characters that will be used for the Plancherel Theorems. Let $f_t(h)$ be as in ([\\[eq:f\\]](#eq:f){reference-type=\"ref\" reference=\"eq:f\"}). ::: lemma []{#lem:milage label=\"lem:milage\"} Let $\\pi$ be an irreducible representation of $\\mathscr{H}_L$ with central character $t$, and suppose that the character $\\chi$ of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-3-the-plancherel-theorem",
+      "number": "3",
+      "title": "The Plancherel Theorem",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 200,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "plancherel theorem",
+          "heading": true
+        },
+        {
+          "term": "prelim main",
+          "heading": false
+        },
+        {
+          "term": "calc",
+          "heading": false
+        },
+        {
+          "term": "lower dimensional",
+          "heading": false
+        },
+        {
+          "term": "lower terms",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "prop",
+          "heading": false
+        },
+        {
+          "term": "lem",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sect:plancherel label=\"sect:plancherel\"} In this section we state and prove the Plancherel Theorem for each irreducible affine Hecke algebra of rank $1$ or rank $2$. In each case we give the generators and relations for the algebra, and construct the representations that appear in the Plancherel Theorem (see the appendix for some explicit matrices). We then state the Plancherel Theorem, and give a proof starting",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-31-the-rank-1-algebras",
+      "number": "3.1",
+      "title": "The rank 1 algebras",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 10021,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ind sch",
+          "heading": false
+        },
+        {
+          "term": "alpha vee",
+          "heading": false
+        },
+        {
+          "term": "vee cdot",
+          "heading": false
+        },
+        {
+          "term": "frac chi",
+          "heading": false
+        },
+        {
+          "term": "vee omega",
+          "heading": false
+        },
+        {
+          "term": "align frac",
+          "heading": false
+        },
+        {
+          "term": "vee emptyset",
+          "heading": false
+        },
+        {
+          "term": "contours frac",
+          "heading": false
+        }
+      ],
+      "extract": "\\noindent(1) The $\\tilde{A}_1(q)$, $L=Q$, algebra has generators $T=T_1$ and $x=x^{\\alpha_1^{\\vee}}$ with relations \\begin{align*} T^2=1+(q^{\\frac{1}{2}}-q^{-\\frac{1}{2}})T,\\qquad Tx=x^{-1}T+(q^{\\frac{1}{2}}-q^{-\\frac{1}{2}})(1+x). \\end{align*} Let $\\pi_t=\\mathrm{Ind}_{\\CC[Q]}^{\\scH}(\\CC v_t)$ be the principal series representation with central character~$t\\in\\CC^{\\times}$, where $x\\cdot v_t=t v_t$. Let $\\pi$ be the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-a-constants-and-c-functions",
+      "number": null,
+      "title": "A Constants and c-functions",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1521,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q1q",
+          "heading": false
+        },
+        {
+          "term": "aﬃne hecke",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "q0q",
+          "heading": false
+        },
+        {
+          "term": "opdam",
+          "heading": false
+        },
+        {
+          "term": "q2s",
+          "heading": false
+        },
+        {
+          "term": "university press",
+          "heading": false
+        },
+        {
+          "term": "plancherel measure",
+          "heading": false
+        }
+      ],
+      "extract": "We write σ1(x) = 1 + x and σ2(x) = 1 + x + x2. A.1 ˜C2(q1, q2) algebras with L = Q c(t) = (1 − q−1 1 t−1 1 )(1 − q−1 1 t−1 1 t−2 2 )(1 − q−1 2 t−1 2 )(1 − q−1 2 t−1 1 t−1 2 ) (1 − t−1 1 )(1 − t−1 1 t−2 2 )(1 − t−1 2 )(1 − t−1 1 t−1 2 ) c1(s) = (1 + q − 1 2 1 s−1)(1 − q − 1 2 1 q−1 2 s−1)(1 − q 1 2 1 q−1 2 s−1) (1 − s−2)(1 − q 1 2 1 s−1) c2(s) = (1 − q−1 1 q−1 2 s−1)(1 − q−1 1 q2s−1) (1 − s−1)(1 − q2s−1) A = (q1q2 −",
+      "extractCut": true
+    }
+  ],
+  "checks": {},
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "alpha vee",
+      "heading": false
+    },
+    {
+      "term": "vee textrm",
+      "heading": false
+    },
+    {
+      "term": "aligned alpha",
+      "heading": false
+    },
+    {
+      "term": "vee emptyset",
+      "heading": false
+    },
+    {
+      "term": "frac alpha",
+      "heading": false
+    },
+    {
+      "term": "vee neq",
+      "heading": false
+    },
+    {
+      "term": "mid alpha",
+      "heading": false
+    },
+    {
+      "term": "vee cdot",
+      "heading": false
+    },
+    {
+      "term": "vee omega",
+      "heading": false
+    },
+    {
+      "term": "mathbb textrm",
+      "heading": false
+    },
+    {
+      "term": "qquad textrm",
+      "heading": false
+    },
+    {
+      "term": "dimensional mathscr",
+      "heading": false
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 23,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p31); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1110.6212v2"
+  }
+}

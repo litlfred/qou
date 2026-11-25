@@ -1,0 +1,575 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1707.02991v1",
+  "title": "BPS states, knots and quivers",
+  "variant": "pdf",
+  "pages": 6,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "BPS states, knots and quivers",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-bps-states-knots-and-quivers"
+    },
+    {
+      "level": 2,
+      "title": "Abstract",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Knot invariants, knot homologies, and LMOV conjecture",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-knot-invariants-knot-homologies-and-lmov-conject"
+    },
+    {
+      "level": 3,
+      "title": "Moduli of quiver representations",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-moduli-of-quiver-representations"
+    },
+    {
+      "level": 3,
+      "title": "Knot invariants from quiver representation theory",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-knot-invariants-from-quiver-representation-theor"
+    },
+    {
+      "level": 3,
+      "title": "Example – trefoil knot",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-example-trefoil-knot"
+    },
+    {
+      "level": 3,
+      "title": "Summary",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-summary"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "CALT-2017-039",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-1707.02991v1/blocks/prose-sec-front-matter",
+        "library/arxiv-1707.02991v1/blocks/figure-img-p001-1"
+      ]
+    },
+    {
+      "id": "sec-000-bps-states-knots-and-quivers",
+      "number": null,
+      "title": "BPS states, knots and quivers",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 953,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bps states",
+          "heading": true
+        },
+        {
+          "term": "lmov invariants",
+          "heading": false
+        },
+        {
+          "term": "lmov conjecture",
+          "heading": false
+        },
+        {
+          "term": "supersymmetric quiver",
+          "heading": false
+        },
+        {
+          "term": "motivic donaldson-thomas",
+          "heading": false
+        },
+        {
+          "term": "quiver rep",
+          "heading": false
+        },
+        {
+          "term": "quiver quantum",
+          "heading": false
+        },
+        {
+          "term": "corresponding quiver",
+          "heading": false
+        }
+      ],
+      "extract": "Piotr Kucharski1, Markus Reineke2, Marko Stoˇsi´c3,4, and Piotr Su lkowski1,5 1 Faculty of Physics, University of Warsaw, ul. Pasteura 5, 02-093 Warsaw, Poland 2 Faculty of Mathematics, Ruhr-Universit¨at Bochum, Universit¨atsstrasse 150, 44780 Bochum, Germany 3 CAMGSD, Departamento de Matem´atica, Instituto Superior T´ecnico, Av. Rovisco Pais, 1049-001 Lisboa, Portugal 4 Mathematical Institute SANU, Knez Mihailova",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-knot-invariants-knot-homologies-and-lmov-conject",
+      "number": null,
+      "title": "Knot invariants, knot homologies, and LMOV conjecture",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 764,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lmov invariants",
+          "heading": true
+        },
+        {
+          "term": "lmov conjecture",
+          "heading": true
+        },
+        {
+          "term": "knot invariants",
+          "heading": true
+        },
+        {
+          "term": "colored homfly-pt",
+          "heading": false
+        },
+        {
+          "term": "homfly-pt polynomials",
+          "heading": false
+        },
+        {
+          "term": "homfly-pt homology",
+          "heading": false
+        },
+        {
+          "term": "frac overline",
+          "heading": false
+        },
+        {
+          "term": "zuv",
+          "heading": false
+        }
+      ],
+      "extract": "Ever since its birth knot theory attracted attention of physicists, and various knot invariants turned out to have physical interpretation. In particular various knot polynomials have been reinterpreted as expectation values in Chern-Simons theory in [@Witten_Jones], and subsequently they were expressed in terms of topological string theory amplitudes [@Witten:1992fb]. In [@OoguriV] the topological string setup was",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-moduli-of-quiver-representations",
+      "number": null,
+      "title": "Moduli of quiver representations",
+      "level": 3,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 291,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quiver representations",
+          "heading": true
+        },
+        {
+          "term": "moduli",
+          "heading": true
+        },
+        {
+          "term": "donaldson-thomas invariants",
+          "heading": false
+        },
+        {
+          "term": "moduli space",
+          "heading": false
+        },
+        {
+          "term": "efimov",
+          "heading": false
+        },
+        {
+          "term": "motivic",
+          "heading": false
+        },
+        {
+          "term": "dimension vector",
+          "heading": false
+        },
+        {
+          "term": "prod",
+          "heading": false
+        }
+      ],
+      "extract": "We now turn to a seemingly unrelated field of moduli of quiver representations. A quiver $Q$ is an oriented graph with a finite set of vertices $Q_0$ and finitely many arrows between vertices $\\alpha:i\\rightarrow j$. On ${\\bf Z}Q_0$, we define the Euler form of $Q$ by $\\langle {\\bm d},{\\bm e}\\rangle_Q=\\sum_{i\\in Q_0}d_ie_i-\\sum_{\\alpha:i\\rightarrow j}d_ie_j.$ A quiver representation assigns to each vertex $i\\in Q_0$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-knot-invariants-from-quiver-representation-theor",
+      "number": null,
+      "title": "Knot invariants from quiver representation theory",
+      "level": 3,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 956,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quiver",
+          "heading": true
+        },
+        {
+          "term": "knot invariants",
+          "heading": true
+        },
+        {
+          "term": "pxc",
+          "heading": false
+        },
+        {
+          "term": "uncolored superpolynomial",
+          "heading": false
+        },
+        {
+          "term": "colored homfly-pt",
+          "heading": false
+        },
+        {
+          "term": "lmov invariants",
+          "heading": false
+        },
+        {
+          "term": "homfly-pt homology",
+          "heading": false
+        },
+        {
+          "term": "homfly-pt polynomials",
+          "heading": false
+        }
+      ],
+      "extract": "We present now our main claim, which is the statement that various types of knot invariants, for a given knot, are encoded in the data of moduli spaces of quiver representations of a certain quiver, assigned to this knot. As explained in the introduction, from physical perspective this is a consequence of the supersymmetric quiver quantum mechanics description of BPS states in brane systems representing knots.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-example-trefoil-knot",
+      "number": null,
+      "title": "Example – trefoil knot",
+      "level": 3,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 349,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pxc",
+          "heading": false
+        },
+        {
+          "term": "colored homfly-pt",
+          "heading": false
+        },
+        {
+          "term": "homfly-pt homology",
+          "heading": false
+        },
+        {
+          "term": "homfly-pt polynomials",
+          "heading": false
+        },
+        {
+          "term": "pqx-omega",
+          "heading": false
+        },
+        {
+          "term": "lmov",
+          "heading": false
+        },
+        {
+          "term": "brack",
+          "heading": false
+        },
+        {
+          "term": "trefoil",
+          "heading": true
+        }
+      ],
+      "extract": "We illustrate the above correspondence in the example of trefoil knot, whose reduced colored HOMFLY-PT polynomials arise by setting $t=-1$ in ([\\[Pr-31\\]](#Pr-31){reference-type=\"ref\" reference=\"Pr-31\"}). Using the $q$-binomial identity $(z;q)_k=\\sum_i {k \\brack i} (-z)^i q^{\\frac{i(i-1)}{2}}$, the $q$-binomial and the last product in ([\\[Pr-31\\]](#Pr-31){reference-type=\"ref\" reference=\"Pr-31\"}) take form $${r",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-summary",
+      "number": null,
+      "title": "Summary",
+      "level": 3,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 935,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homfly-pt polynomials",
+          "heading": false
+        },
+        {
+          "term": "colored homfly-pt",
+          "heading": false
+        },
+        {
+          "term": "lmov invariants",
+          "heading": false
+        },
+        {
+          "term": "pxc",
+          "heading": false
+        },
+        {
+          "term": "pqx-omega",
+          "heading": false
+        },
+        {
+          "term": "knot homologies",
+          "heading": false
+        },
+        {
+          "term": "quivers",
+          "heading": false
+        },
+        {
+          "term": "presented above",
+          "heading": false
+        }
+      ],
+      "extract": "In this letter we presented a surprising duality between knots and quivers, which underlies the supersymmetric quiver quantum mechanics description of BPS states in brane systems describing knots. To conclude, let us indicate various directions in which relations presented above could be generalized. It is natural to expect that various properties, well known on one side of the duality, should have their",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "lmov invariants",
+      "heading": true
+    },
+    {
+      "term": "colored homfly-pt",
+      "heading": false
+    },
+    {
+      "term": "homfly-pt polynomials",
+      "heading": false
+    },
+    {
+      "term": "lmov conjecture",
+      "heading": true
+    },
+    {
+      "term": "quiver moduli",
+      "heading": true
+    },
+    {
+      "term": "corresponding lmov",
+      "heading": false
+    },
+    {
+      "term": "homfly-pt homology",
+      "heading": false
+    },
+    {
+      "term": "quiver representations",
+      "heading": true
+    },
+    {
+      "term": "classical lmov",
+      "heading": false
+    },
+    {
+      "term": "donaldson-thomas invariants",
+      "heading": false
+    },
+    {
+      "term": "supersymmetric quiver",
+      "heading": false
+    },
+    {
+      "term": "label pxc",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Trefoil knot and the corresponding quiver",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 8,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 7,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 7 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1707.02991v1"
+  }
+}

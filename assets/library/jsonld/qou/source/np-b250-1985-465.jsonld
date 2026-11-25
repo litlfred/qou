@@ -1,0 +1,85 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/np-b250-1985-465/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "PII: 0550-3213(85)90492-4",
+  "contains": [
+    "library/np-b250-1985-465/sections/sec-front-matter",
+    "library/np-b250-1985-465/sections/sec-000",
+    "library/np-b250-1985-465/sections/sec-001",
+    "library/np-b250-1985-465/sections/sec-002",
+    "library/np-b250-1985-465/sections/sec-003",
+    "library/np-b250-1985-465/sections/sec-004",
+    "library/np-b250-1985-465/sections/sec-005",
+    "library/np-b250-1985-465/sections/sec-006",
+    "library/np-b250-1985-465/sections/sec-007",
+    "library/np-b250-1985-465/sections/sec-008",
+    "library/np-b250-1985-465/sections/sec-009",
+    "library/np-b250-1985-465/sections/sec-010",
+    "library/np-b250-1985-465/sections/sec-011",
+    "library/np-b250-1985-465/sections/sec-012",
+    "library/np-b250-1985-465/sections/sec-013",
+    "library/np-b250-1985-465/sections/sec-014",
+    "library/np-b250-1985-465/sections/sec-015",
+    "library/np-b250-1985-465/sections/sec-016",
+    "library/np-b250-1985-465/sections/sec-017",
+    "library/np-b250-1985-465/sections/sec-018",
+    "library/np-b250-1985-465/sections/sec-019",
+    "library/np-b250-1985-465/sections/sec-020",
+    "library/np-b250-1985-465/sections/sec-021",
+    "library/np-b250-1985-465/sections/sec-022",
+    "library/np-b250-1985-465/sections/sec-023",
+    "library/np-b250-1985-465/sections/sec-024",
+    "library/np-b250-1985-465/sections/sec-025",
+    "library/np-b250-1985-465/sections/sec-026",
+    "library/np-b250-1985-465/sections/sec-027",
+    "library/np-b250-1985-465/sections/sec-028",
+    "library/np-b250-1985-465/sections/sec-029",
+    "library/np-b250-1985-465/sections/sec-030",
+    "library/np-b250-1985-465/sections/sec-031",
+    "library/np-b250-1985-465/sections/sec-032",
+    "library/np-b250-1985-465/sections/sec-033",
+    "library/np-b250-1985-465/sections/sec-034",
+    "library/np-b250-1985-465/sections/sec-035",
+    "library/np-b250-1985-465/sections/sec-036",
+    "library/np-b250-1985-465/sections/sec-037",
+    "library/np-b250-1985-465/sections/sec-038",
+    "library/np-b250-1985-465/sections/sec-039",
+    "library/np-b250-1985-465/sections/sec-040",
+    "library/np-b250-1985-465/sections/sec-041"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Chiral Perturbation Theory: Expansions in the Mass of the Strange Quark — 43 sections: Front matter; Introduction; Gasser, H. Leutwvler / Chiral pert\n\n**Chiral Perturbation Theory: Expansions in the Mass of the Strange Quark**\n\n*North-Holland Publishing Company*\n\n52 pp, 43 sections.\n\n**Outline.** Front matter; 1 Introduction; J Gasser, H. Leutwvler / Chiral perturbation t; 3 Effective low-energy lagrangian; 4 Ground state; J Gasser, H. Leut~Tler / Chiral perturbation t; 5 Low-energy expansion at leading order; 6 Effective lagrangian to order p4; Z = Z, +ZA+Z,+Zoo~,,,op; D(fl )f( v' a' s' p' O) = I dx [tr { i[fl' a~'; J Gasser, H. Leutwyler / ('hiral perturbation ; Nc I; 483 and D stands for the differential operator; C V UV.U V~O>-aS(V' ~'-+U V.CV- ~-+U V.O>-; _N(F~_IF~,.L~j+); 8 Tadpoles and unitarity corrections; M~ln(MZp/pf)-M~ln(M~/p. 2) M~- MZo; 9 Vacuum expectation values",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "np-b250-1985-465",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "NP_B250_1985_465.pdf",
+    "source_sha256": "8568b8322e8204276ac6f6f043dcbde0fe90b015e740515dd6651a0f1dda3b94",
+    "pages": 52,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

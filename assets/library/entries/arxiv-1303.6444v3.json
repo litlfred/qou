@@ -1,0 +1,272 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1303.6444v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1303.6444v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "[]{#sec: intro label=\"sec: intro\"} In this article, further bounds on the virial coefficients and consequently the radius of convergence of the virial expansion are developed in a similar way to how they are achieved in the paper by Lebowitz and Penrose [@LPen64], that is via cluster expansion bounds. These techniques are shown in general and they rely upon the Lambert W-function. They give bounds which improve upon those given by Lebowitz and Penrose and they are applied to a more recent version of cluster expansion bounds, detailed by Poghosyan and Ueltschi [@PU09]. The new bounds display an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1303.6444v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Background to the Paper",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-11-background-to-the-paper.md",
+      "narrative": null,
+      "content": "The bounds on the virial coefficients and consequently, the radius of convergence of the virial expansion, were mainly achieved in the 1960s by Lebowitz and Penrose [@LPen64], Groeneveld [@G62] and Ruelle [@R69]. These bounds have not been improved upon in the literature, even though our understanding of cluster and virial expansions has improved since then. Moreover, further, more refined, techniques have been developed, which mainly focus on tree-graph identities. Recent work by Pulvirenti and Tsagkarogiannis [@PT12] and Morais and Procacci [@MP13] have made some gains in understanding bound",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1303.6444v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "VIRIAL EXPANSION BOUNDS\nSTEPHEN JAMES TATE\nAbstract. In the 1960s, the technique of using cluster expansion bounds in order to\nachieve bounds on the virial expansion was developed by Lebowitz and Penrose (1964)\nand Ruelle (1969). This technique is generalised to more recent cluster expansion bounds\nby Poghosyan and Ueltschi (2009), which are related to the work of Procacci (2007) and\nthe tree-graph identity, detailed by Brydges (1986). The bounds achieved by Lebowitz\nand Penrose can also be sharpened by doing the actual optimisation and achieving ex-\npressions in terms of the Lambert W-functio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1303.6444v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main Results",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-2-main-results.md",
+      "narrative": null,
+      "content": "The main results of this paper rely on the particle model of the classical gas. The main parameters in the model are: the inverse temperature $\\beta = \\frac{1}{kT}$, where $k$ is Boltzmann's constant and $T$ is the temperature; the fugacity $z$; the pressure $P$; and the density $\\rho$.\n\nWe start with the Grand Canonical Partition function for a classical gas: $$\\Xi(z)  = \\sum\\limits_{N=0}^{\\infty}Z_Nz^n$$ Where $Z_N$ is the $N$-particle configuration integral: $$Z_N = \\frac{1}{N!}\\prod\\limits_{i=1}^N\\left(\\int_{\\mathbb{R}^d}\\, \\mathrm{d}^dx_i\\right) e^{-\\beta\\sum\\limits_{1 \\leq i<j \\leq N}\\Ph",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1303.6444v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Obtaining the Relationship",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-3-obtaining-the-relationship.md",
+      "narrative": null,
+      "content": "Lagrange Inversion techniques are the usual approach to obtaining the virial coefficients and this has a nice representation as a contour integral. If we want to compute the coefficient $c_n$, we can take the contour integral (around $0$) of $\\frac{\\partial P}{\\partial \\rho}$ divided by $n\\rho^n$. This gives us the formula: $$c_n = \\frac{1}{2\\pi i}\\oint_C \\, \\frac{\\frac{\\partial P}{\\partial \\rho}}{n\\rho^n}\\mathrm{d}\\rho$$ We can manipulate this equation to get it in terms of the $z$-variable, since we know about the cluster expansion already. $$\\begin{aligned}\n c_n &= \\frac{1}{2 \\pi i} \\oint_{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1303.6444v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "General Derivation: Derivation for Theorem 2.1",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-4-general-derivation-derivation-for-theorem-21.md",
+      "narrative": null,
+      "content": "[]{#sec: general label=\"sec: general\"} We wish to obtain bounds on virial coefficients using those which come from cluster coefficients, in order to gain an estimate of the lower bound for the radius of convergence of the virial expansion. The derivation loosely follows the method used by Ruelle in [@R69] and that of Lebowitz and Penrose in [@LPen64]. The starting point is the cluster expansion bound, which is given in the form: $$|nb_n| \\leq a \\frac{n^{n-1}}{n!}b^n \\label{generalcluster}$$ Where $a$ and $b$ are positive functions of temperature defined by the particular bound we use.\n\nThe sta",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1303.6444v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Derivation of Corollary 2.2 and comparisons with previous results",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-5-derivation-of-corollary-22-and-comparisons-wit.md",
+      "narrative": null,
+      "content": "[]{#sec: oldbounds label=\"sec: oldbounds\"}\n\n## Derivation of Corollary [\\[cor:lebpenbound\\]](#cor:lebpenbound){reference-type=\"ref\" reference=\"cor:lebpenbound\"}\n\nWe have the bound on cluster expansions from [@R69] as: $$|nb_n| \\leq \\frac{n^{n-1}}{n!}e^{2\\beta B(n-2)}C(\\beta)^{-1}$$ Where, the parameter $C(\\beta)< \\infty$ defines a tempered potential, which is defined in [\\[Cbeta\\]](#Cbeta){reference-type=\"eqref\" reference=\"Cbeta\"}, and $B$ is the stability parameter from Assumption [\\[ass: stability\\]](#ass: stability){reference-type=\"ref\" reference=\"ass: stability\"}. This corresponds to setti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1303.6444v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Morais-Procacci Bound",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-006-52-morais-procacci-bound.md",
+      "narrative": null,
+      "content": "This is an alternative derivation of the Morais-Procacci bounds using the method outlined in Section [\\[sec: general\\]](#sec: general){reference-type=\"ref\" reference=\"sec: general\"}.\n\nIn the recent paper [@MP13], Morais and Procacci obtain a bound for the virial coefficients via the Canonical Ensemble, using polymer expansion methods and the bounds for cluster coefficients, in the form: $$|nb_n| \\leq \\frac{n^{n-1}}{n!}e^{2\\beta B(n-2)}C(\\beta)^{-1}$$\n\nThe values $a=C(\\beta)^{-1}e^{-4\\beta B}$; $b=e^{2 \\beta B}C{\\beta}$; and thus $ab=e^{-2\\beta B}$ are substituted into [\\[reqn\\]](#reqn){referen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1303.6444v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lebowitz-Penrose",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-007-53-lebowitz-penrose.md",
+      "narrative": null,
+      "content": "We again use the same bounds on the cluster expansion and follow the method outlined in [@LPen64] and starting with [\\[uform\\]](#uform){reference-type=\"eqref\" reference=\"uform\"}, we arrange our expression $r(s)$ into the form: $$r(s)=\\frac{C(\\beta)^{-1}}{1+u}\\frac{s}{u^2}\\left((1+u)^2e^{-s}-(1+u)\\right) \\label{lebpenstart}$$ We use the identity: $\\frac{1+u}{u^2}=\\frac{(1+u)^2}{u^2}-\\frac{1+u}{u}$, to rewrite it as: $$r(s)=\\frac{C(\\beta)^{-1}}{1+u}\\left(s\\frac{1+u}{u}-s^2\\frac{(1+u)^2}{u^2}\\left(\\frac{1-e^{-s}}{s}\\right)\\right)$$ We make the change of variables $v= s\\frac{1+u}{u}$ and define $g",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1303.6444v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparison of the Bounds",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-008-54-comparison-of-the-bounds.md",
+      "narrative": null,
+      "content": "r1 := e−4βB (W\n\u0010\ne\n1+e2βB\n\u0011\n−1)2\nW\n\u0010\ne\n1+e2βB\n\u0011\n(5.28)\nr2 :=\n1\n1 + e2βB 2(W( e\n2) −1)2\nW( e\n2)\n(5.29)\nIn order to concentrate on the factor over which the two bounds (5.27) and (5.7) diﬀer, we\nneed only concentrate on r1 and r2 above. In Figure 1, we see that the optimised bound\nshows a slight improvement over the Lebowitz-Penrose bound. Furthermore, considering\nthe quotient r1\nr2 in Figure 2, we see that the optimised bound is 1.25 times better for the\nlow temperature limit, whereas at high temperatures the two bounds are approximately the\nsame. This is explained by emphasising that the appro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1303.6444v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Alternative Bound: Corollary 2.3",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-009-6-the-alternative-bound-corollary-23.md",
+      "narrative": null,
+      "content": "There are alternative cluster coeﬃcient bounds relating to Tree-Graph-Identities found\nin [Bry86], [Pro07] and [Pog09]. The bounds are given by:\n|nbn| ≤nn−1\nn! R(β)n−1enβB\n(6.1)\nwhere\nR(β) =\n\n\n|B|rd + β\nZ\n|y|>r\n|Φ(0, y)|ddy\n\n\n\n(6.2)\nwhere |B| denotes the surface area of the unit sphere in d-dimensions.\nIn this case our\nparameters are: a = R(β)−1; b = R(β)eβB; ab = eβB; and µ = eβB+1\n1+eβB .\nThe general bound for |ρ| is (from (4.13)):\n|ρ| ≤R(β)−1 (W( eβB+1\n1+eβB ) −1)2\nW( eβB+1\n1+eβB )\n(6.3)\nWhich gives the bound on the coeﬃcients as:\n|cn| ≤β−1\nn R(β)n−1\n\n\n\nW\n\u0010\neβB+1\n1+eβB\n\u0011\n\u0010\nW\n\u0010\neβB+",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1303.6444v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparison of the Separate Bound: Proposition 2.4",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-010-7-comparison-of-the-separate-bound-proposition-2.md",
+      "narrative": null,
+      "content": "[]{#sec: comparison label=\"sec: comparison\"} This approach would be better for potentials where $\\zeta R(\\beta) < C(\\beta)$, for some $\\zeta$ representing the quotient of the coefficients $\\frac{f_1}{f_2}$, where: $$\\begin{aligned}\n f_1&:=e^{-4\\beta B}\\frac{\\left(W\\left(\\frac{e}{1+e^{2\\beta B}}\\right)-1\\right)^2}{W\\left(\\frac{e}{1+e^{2\\beta B}}\\right)} \\label{f1} \\\\\nf_2&:=\\frac{\\left(W\\left(\\frac{e^{\\beta B+1}}{1+e^{\\beta B}}\\right)-1\\right)^2}{W\\left(\\frac{e^{\\beta B+1}}{1+e^{\\beta B}}\\right)} \\label{f2}\n\\end{aligned}$$ $f_2$ is actually smaller than $f_1$, as detailed in Figure [1](#fig:quot",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1303.6444v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. Lagrange Inversion",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-011-appendix-a-lagrange-inversion.md",
+      "narrative": null,
+      "content": "To ﬁnd the inverse of the function se−s as a power series, we can use the one-dimensional\nLagrange inversion form from [Mer06]. We want to ﬁnd a power series of s in terms of\ny = se−s, which amounts to ﬁnding the inverse. We write the equation in the convenient\nform:\ns = yes\n(A.1)\nFor a formal power series s(y), implicitly deﬁned by s = yφ(s), the Lagrange Inversion\nFormula can be stated as:\n[yn]s = 1\nn[sn−1]φ(s)n\n(A.2)\nwhere the notation [yn]f(y) is used to denote the coeﬃcient of yn in the expression f(y).\nThe function φ on which we wish to perform Lagrange Inversion is φ(s) = es and the\nfor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1303.6444v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-012-references.md",
+      "narrative": null,
+      "content": "[Bry86] Brydges, D. C. A Short Course in Cluster Expansions, in ”Ph´enom`enes critiques, syst`emes\nal´eatoires, th´eories de jauge”, Les Houches 1984, 129-183 (1986)\n[Cor97] Corless, R. M., Jeﬀrey, D. J., Knuth, D. E., A Sequence of Series for the Lambert W Function,\nISSAC ’97 Proceedings of the 1997 international symposium on Symbolic and algebraic computation,\n197-204 (1997)\n[Fer08] Fernandez, R., Procacc, A., Regions without Complex zeroes for Chromatic Polynomials on Graphs\nwith Bounded Degree, Journal of Combinatorics, Probability and Computing, 17, 225 (2008)\n[Gro62] Groeneveld, J., Two",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

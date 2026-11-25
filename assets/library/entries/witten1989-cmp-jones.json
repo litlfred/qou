@@ -1,0 +1,871 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "witten1989-cmp-jones",
+  "blocks": [
+    {
+      "id": "library/witten1989-cmp-jones/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Communications in\nCommun. Math. Phys. 121, 351-399 (1989) \nMathematical\nPhysics\n© Springer-Verlag 1989\nQuantum Field Theory and the Jones Polynomial\nEdward Witten **\nSchool of Natural Sciences, Institute for Advanced Study, Olden Lane, Princeton,\nNJ 08540, USA\nAbstract. It is shown that 2+1 dimensional quantum Yang-Mills theory, with\nan action consisting purely of the Chern-Simons term, is exactly soluble and\ngives a natural framework for understanding the Jones polynomial of knot\ntheory in three dimensional terms. In this version, the Jones polynomial can be\ngeneralized from S3 to arbitrary t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Chern-Simons Action",
+      "pageStart": 3,
+      "pageEnd": 15,
+      "target": "../sections/sec-000-1-the-chern-simons-action.md",
+      "narrative": null,
+      "content": "We have been urged [1] to try to interpret the Jones polynomial in terms of three\ndimensional Yang-Mills theory. So we begin on an oriented three manifold M\nwith a compact simple gauge group G. We pick a G bundle E, which may as well be\ntrivial, and on E we place a connection /if, which can be viewed as a Lie algebra\nvalued one form (a runs over a basis of the Lie algebra, and / is tangent to M). An\ninfinitesimal gauge transformation is\nA^Ai-DiC, \n(1.1)\nwhere £, a generator of the gauge group, is a Lie algebra valued zero form and the\ncovariant derivative is Dts = dtε -h [ A t , ε]. The curvat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-000-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 15,
+      "target": "recommendation-sec-000-01.md",
+      "narrative": null,
+      "content": "For this purpose, it is necessary and sufficient that the \"constant\" in (1.4) should be an integral multiple of 2π.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-000-02",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 15,
+      "target": "recommendation-sec-000-02.md",
+      "narrative": null,
+      "content": "If G is SU(N) and \"Tr\" means a trace in the TV dimensional representation, then the requirement is that k should be an integer.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-000-03",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 15,
+      "target": "recommendation-sec-000-03.md",
+      "narrative": null,
+      "content": "It is no accident that the reasoning which shows that k must be quantized in (1.3) has a 1 + 1 dimensional analogue [26] which leads to quantization of the central charge in the represent- ation theory of affine algebras.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-000-04",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 15,
+      "target": "recommendation-sec-000-04.md",
+      "narrative": null,
+      "content": "Likewise, (1.6) depends on the orientations of the Ct , since these enter in defining the Wilson lines (in computing the holonomy around Ch one must decide in which direction to integrate around Ct ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-000-05",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 15,
+      "target": "recommendation-sec-000-05.md",
+      "narrative": null,
+      "content": "Triυialization of the Tangenί Bundle Now, let us discuss how the mysterious phase factor e ίπη(0]/2 in (2.17) should be interpreted.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-000-06",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 15,
+      "target": "recommendation-sec-000-06.md",
+      "narrative": null,
+      "content": "Two regularizations should differ by a local counterterm, and in this case, since the problem phase (2.19) depends on the background metric only, we want a counterterm that depends on the background metric only.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-000-07",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 15,
+      "target": "recommendation-sec-000-07.md",
+      "narrative": null,
+      "content": "Whether or not \"counterterm\" is the right word, we will have to view (2.20) as a correction that must be added to the action if one wishes to work in the gauge DtA l = 0 Quantum Field Theory and the Jones Polynomial 361 is a topological invariant, depending that is on the oriented three manifold M with a choice of trivialization of the tangent bundle, but not on the metric of M.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-000-08",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 15,
+      "target": "recommendation-sec-000-08.md",
+      "narrative": null,
+      "content": "4 It is clear, therefore, what we must do.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-000-09",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 15,
+      "target": "recommendation-sec-000-09.md",
+      "narrative": null,
+      "content": "On 5 3, there is a canonical framing of every knot; it is determined by asking that the self-linking number should be zero.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-000-10",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 15,
+      "target": "recommendation-sec-000-10.md",
+      "narrative": null,
+      "content": "First of all, let us note that while, in general, there is no canonical zero in the set of possible framings of a knot in a three manifold, if one compares two framings they always differ by a definite integer, which is the relative twist in going 6 The discussion should make it clear that the need to frame knots is analogous to the need to frame three manifolds, as found in the last section.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(Wy-+exp(2πit",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-001-wy-exp2πit.md",
+      "narrative": null,
+      "content": "(nllk)) \n<^F>. \n(2.32)\nThe nonabelian analog of that result will be derived in Sect. 5.1; the transform-\nation law in the non-abelian case is\n<^>->exp(2πzf ' Λ) <^>, \n(2.33)\nwhere h is the conformal weight of a certain primary field in 1 + 1 dimensional\ncurrent algebra. This result, though it may seem rather technical, is a key\ningredient enabling the Chern-Simons theory to work. It means that although we\nneed to pick a framing for every link, because the self-linking integrals have no\nnatural definition otherweise, there is no loss of information since we have a\ndefinite law for how the parti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-001-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "recommendation-sec-001-01.md",
+      "narrative": null,
+      "content": "In the relationship that we will develop between the 2 + 1 dimensional Chern-Simons theory and rational conformal field theory in 1 + 1 dimensions, the need to frame all knots is the 2 + 1 dimensional analog of the monodromies that arise in 1 + 1 dimensions. [This will be clear in the derivation of (2.33).] Were it not for the seeming nuisance that knots must be framed to define the Wilson lines as quantum observables, one would end up proving that the Jones knot invariants were trivial.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Canonical Quantization",
+      "pageStart": 16,
+      "pageEnd": 24,
+      "target": "../sections/sec-002-3-canonical-quantization.md",
+      "narrative": null,
+      "content": "The basic strategy for solving the Yang-Mills theory with Chern-Simons action on\nan arbitrary three manifold Mis to develop a machinery for chopping Min pieces,\nsolving the problem on the pieces, and gluing things back together. So to begin\nwith we consider a three manifold M, perhaps with Wilson lines, as in Fig. 4a. We\n\"cut\" M along a Riemann surface Σ. Near the cut, M looks like Σ x R*, and our\nfirst step in learning to understand the theory on an arbitrary three manifold is to\nsolve it on Σ x R\n1.\nThe special case of a three manifold of the form Σ x R\n1 is tractable by means of\ncanonical q",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-002-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 24,
+      "target": "recommendation-sec-002-01.md",
+      "narrative": null,
+      "content": "According to Segal [16], Jfj in fact has a canonical projective Hubert space structure Quantum Field Theory and the Jones Polynomial 367 Actually, the general situation that must be studied is that in which possible Wilson lines on M are \"cut\" by Σ, as in the figure.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-002-02",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 24,
+      "target": "recommendation-sec-002-02.md",
+      "narrative": null,
+      "content": "If one reverses the orientation of Σ (and replaces the representations Rt associated with the marked points with their complex conjugates) the vector space 3^Σ must be replaced with its dual.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-002-03",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 24,
+      "target": "recommendation-sec-002-03.md",
+      "narrative": null,
+      "content": "(3.2) Before rushing ahead to quantize these commutation relations, we should remember that the system is subject to a \"Gauss law\" constraint, which is Ό = 0, or (ignoring the Wilson lines) (3.3) This constraint equation is nonlinear (since F contains a quadratic term), and - as (3.1) is certainly a free theory - this nonlinearity is what remains of the underlying nonlinearity of (1.3).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-002-04",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 24,
+      "target": "recommendation-sec-002-04.md",
+      "narrative": null,
+      "content": "The constraints (3.2) are functions that should vanish, but they also generate gauge transformations via Poisson brackets.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-002-05",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 24,
+      "target": "recommendation-sec-002-05.md",
+      "narrative": null,
+      "content": "In the case at hand, the first step means that we should consider only \"flat connections\", that is, connections for which Ffj = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-002-06",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 24,
+      "target": "recommendation-sec-002-06.md",
+      "narrative": null,
+      "content": "Quantizing the Chern-Simons theory in the presence of the Wilson lines should give a Hubert space J^Σ.PijRι that is canonically associated with the oriented surface Σ together with the choice of Pi and R{.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-002-07",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 24,
+      "target": "recommendation-sec-002-07.md",
+      "narrative": null,
+      "content": "It is pretty clear what problem in conformal field theory this should correspond to.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-002-08",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 24,
+      "target": "recommendation-sec-002-08.md",
+      "narrative": null,
+      "content": "Instead of simply considering correlation functions of the descendants of the identity, we should consider in the conformal field theory primary fields transforming in the Rt representations of G.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-002-09",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 24,
+      "target": "recommendation-sec-002-09.md",
+      "narrative": null,
+      "content": "Again, there is an algebra- geometric description of this space [16], and this is what we should expect to recover by quantizing the Chern-Simons theory in the presence of the Wilson lines.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-002-10",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 24,
+      "target": "recommendation-sec-002-10.md",
+      "narrative": null,
+      "content": "A representation Rt of a group G should be seen as a quantum object.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-002-11",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 24,
+      "target": "recommendation-sec-002-11.md",
+      "narrative": null,
+      "content": "This representation should be obtained by quantizing a classical theory.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-002-12",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 24,
+      "target": "recommendation-sec-002-12.md",
+      "narrative": null,
+      "content": "For the Chern-Simons theory, this means that unless the representations Rt are all integrable, the zero vector is the only vector in the physical Hubert space.) Finally, let us note that the Borel-Weil-Bott theorem should not be used simply as a tool in quantization.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-002-13",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 24,
+      "target": "recommendation-sec-002-13.md",
+      "narrative": null,
+      "content": "It should be built into the three dimensional description.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-002-14",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 24,
+      "target": "recommendation-sec-002-14.md",
+      "narrative": null,
+      "content": "Quantum Field Theory and the Jones Polynomial 373 One should use the theorem to replace the Wilson lines (1.5) that appear in (1.6) with a functional integral over maps of the circle 5 into G/T(or actually an integral over sections of a G/T bundle, twisted by the restriction to S of the G-bundle E).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-002-15",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 24,
+      "target": "recommendation-sec-002-15.md",
+      "narrative": null,
+      "content": "No matter how weak the gauge coupling may be, we must remember that in a closed universe the total charge must be zero (since the electric flux has nowhere to go).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-002-16",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 24,
+      "target": "recommendation-sec-002-16.md",
+      "narrative": null,
+      "content": "The total charge being zero means in a nonabelian theory that all of the charges together must be coupled to the trivial representation of G.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Calculability",
+      "pageStart": 24,
+      "pageEnd": 29,
+      "target": "../sections/sec-003-4-calculability.md",
+      "narrative": null,
+      "content": "Our considerations so far may have seemed somewhat abstract, and we would\nnow like to show that in fact these considerations can actually be used to calculate\nthings. As an introduction to the requisite ideas, we will first deduce a certain\ntheoretical principle that is of great importance in its own right.\nConsider, as in Fig. 5 a, a three manifold M which is the connected sum of two\nthree manifolds Mγ and M2, joined along a two sphere S\n2. There may be knots in\nM1 or M2, but if so they do not pass through the joining two sphere. If for every\nthree manifold X we denote the partition function",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "JJ+P",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/sec-004-jjp.md",
+      "narrative": null,
+      "content": "+\n= 0\nFig. 10. A special case of the use of Fig. 8. The idea is that the three pictures are identical outside\nof the dotted lines, and look like figure (4.11) inside them\nand unknotted circles in the N dimensional representation of SU(N) as Z(S\n3; CV),\nthen (4.11) amounts in this case to the assertion that\nγ)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "; C)+βZ(S",
+      "pageStart": 29,
+      "pageEnd": 35,
+      "target": "../sections/sec-005-cβzs.md",
+      "narrative": null,
+      "content": "3;\n(4.12)\nTogether with (4.7),\n10 this implies that the expectation value of an unknotted\nWilson line in the N dimensional representation of SU(N) is\n(4.13)\nPresently we will make this formula completely explicit by computing α, /?, and γ in\nterms of the fundamental quantum field theory parameters N and k.\nThe induction sketched above expresses any knot expectation value as a\nrational function of α, β and γ (a ratio of polynomials), after finitely many steps. It\nis in this sense that the Jones knot invariants and their generalizations are\n\"polynomials\". While it is, as we have seen, comparativ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-005-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 35,
+      "target": "recommendation-sec-005-01.md",
+      "narrative": null,
+      "content": "Equations (4.11) can be used in many different ways to obtain the expectation value of a given link, and one must show that one does not run into 10 This is the only point at which (4.7) has to be used.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-005-02",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 35,
+      "target": "recommendation-sec-005-02.md",
+      "narrative": null,
+      "content": "We want to compute α, /?, and y, but as a prelude we must discuss a certain technical point.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-005-03",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 35,
+      "target": "recommendation-sec-005-03.md",
+      "narrative": null,
+      "content": "So after using (4.19) to compute α, /?, y, we must, if we wish to agree with the knot theory literature, multiply β by exp ( — 2πihR) and γ by exp( — 4π/Λ R).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-005-04",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 35,
+      "target": "recommendation-sec-005-04.md",
+      "narrative": null,
+      "content": "It must be understood that a Wilson line in the trivial representation is equal to 1, so the vector v0 obtained by this definition is the same as the vector χ which in the last subsection was obtained by a path integral on U with no Wilson lines: X = »o (4-24) A diffeomorphism K of Σ is represented in the Verlinde basis by an explicit matrix K^ defined by the formula",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "V^ΣK/VJ.",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "../sections/sec-006-k-vσkvj.md",
+      "narrative": null,
+      "content": "(4.25)\nj\nIn the space spanned by the ι;ί5 there is a natural inner product, defined by the\ntensor gtj which is one if Rt is the dual oΐRj and zero otherwise. We may sometimes\nuse this metric to raise and lower indices, letting Ktj = ΣgmjKi™-\nm\nWe can now get a much more concrete description of the behavior of the\nquantum field theory partition function under surgery. In discussing surgery, we\nbegan with a three manifold M and a knot C. Cutting out a tubular neighborhood\nof this knot, whose boundary we call Σ, we separated M into ML and MR, with MR\nbeing a solid torus. The path integrals on ML",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Since we already know the partition function of S 2 xS",
+      "pageStart": 38,
+      "pageEnd": 40,
+      "target": "../sections/sec-007-3-since-we-already-know-the-partition-function-o.md",
+      "narrative": null,
+      "content": "already know the partition function of S\n2 xS\nl, we will try to interpret S\n3 as a\nmanifold obtained by surgery on S\n2 x S\n1. This is readily done. We consider the\ncircle C in S\n2 x S\n 1 indicated in Fig. 1 5 a. A tubular neighborhood of C is a torus Σ;\nwe pick a basis of H\nl (Σ\\ Z) consisting of cycles a and b indicated in the figure.\nNow we wish to make a particular surgery associated with a very special\ndiffeomorphism S: Σ -» Σ. We pick S to map atob and b to - a.\n 1 5 This surgery -\nremoving the interior of Σ from S\n2 x S\n1 and gluing it back after acting with S -\nproduces a three manifold",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-007-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 40,
+      "target": "recommendation-sec-007-01.md",
+      "narrative": null,
+      "content": "A little mental gymnastics, comparing the argument we gave in connection with (a) to that in (b), shows that to make S 3 we must glue together T and T' after making the modular transformation S on the boundary of Γ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Z(S*) = (TST",
+      "pageStart": 40,
+      "pageEnd": 47,
+      "target": "../sections/sec-008-zs-tst.md",
+      "narrative": null,
+      "content": "m)w \n(4.40)\nThis may readily be evaluated. In the Verlinde basis, Γis a diagonal matrix with\nT \nΌΪ = £\n2πί(\nΛ'-< /\n24 ) . v.-y fa. is the conformal weight of the primary field in the\nrepresentation Rt and c is the central charge for current algebra with symmetry\ngroup G at level k. Since hQ = 0, if we replace (4.38) by (4.40) the partition function\ntransforms as\nZ-»Z exp (2πi(n-m) \n. \n(4.41)\nThough we have obtained this formula in the example of a particular surgery\n(giving S\n3 from S\n2 x S\n1), the same ambiguity arises in any process of surgery.\nWhenever one makes surgery on a circle C, in a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-008-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 47,
+      "target": "recommendation-sec-008-01.md",
+      "narrative": null,
+      "content": "2, we know what topological structure on three manifolds must be considered in order to keep track of the factors of exp(2τπ c /24).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-008-02",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 47,
+      "target": "recommendation-sec-008-02.md",
+      "narrative": null,
+      "content": "One must consider \"framed\" three manifolds.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-008-03",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 47,
+      "target": "recommendation-sec-008-03.md",
+      "narrative": null,
+      "content": "We must recall that the symbol (C> in (4.23) represented a ratio <C> - Z(S 3;R)/Z(S 3).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-008-04",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 47,
+      "target": "recommendation-sec-008-04.md",
+      "narrative": null,
+      "content": "To quantize (5.1) on the disc, we must impose the constraints, which generate the gauge transformations (5.2).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-008-05",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 47,
+      "target": "recommendation-sec-008-05.md",
+      "narrative": null,
+      "content": "As D has a boundary, we must choose boundary conditions on At and ε (for closed surfaces this question did not arise).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-008-06",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 47,
+      "target": "recommendation-sec-008-06.md",
+      "narrative": null,
+      "content": "Then we must identify two [7's that differ by an element of the restricted gauge group Gl.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-008-07",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 47,
+      "target": "recommendation-sec-008-07.md",
+      "narrative": null,
+      "content": "This means that we must impose the equivalence relation U~ VU for any V such that V=\\ on the boundary S.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-008-08",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 47,
+      "target": "recommendation-sec-008-08.md",
+      "narrative": null,
+      "content": "This restriction defines an element of the loop group LG, but because of the freedom (5.3), we should actually regard U as an element of LG/G.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/recommendation-sec-008-09",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 47,
+      "target": "recommendation-sec-008-09.md",
+      "narrative": null,
+      "content": "Finally, ί must thank S.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/witten1989-cmp-jones/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 47,
+      "pageEnd": 50,
+      "target": "../sections/sec-009-references.md",
+      "narrative": null,
+      "content": "1. Atiyah, M.F.: New invariants of three and four dimensional manifolds. In: The mathemati-\ncal heritage of Hermann Weyl. Proc. Symp. Pure Math., vol. 48. Wells R. (ed.). Providence,\nRI: American Mathematical Society 1988, pp. 285-299\n2. Donaldson, S.: An application of gauge theory to the topology of four manifolds. J. Diff.\nGeom. 18, 269 (1983), Polynomial invariants for smooth four-manifolds. Oxford preprint\n3. Floer, A.: An instanton invariant for three manifolds. Courant Institute preprint (1987).\nMorse theory for fixed points of symplectic diffeomorphisms. Bull. AMS 16, 279 (1987)\n4. Wit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,709 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-th-9303139v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-th/9303139v2  5 Apr 1993\nITEP-M2/931\nITFA 93-10\nMarch 1993\nA.Morozov\nINTEGRABILITY AND MATRIX MODELS\nABSTRACT\nThe theory of matrix models is reviewed from the point of view of its\nrelation to integrable hierarchies. Discrete 1-matrix, 2-matrix, ”conformal”\n(multicomponent) and Kontsevich models are considered in some detail, to-\ngether with the Ward identites (”W-constraints”), determinantal formulas\nand continuum limits, taking one kind of models into another. Subtle points\nand directions of the future research are also discussed.\nLectures presented at the University of Amsterdam an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ward identities for the simplest matrix models",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-2-ward-identities-for-the-simplest-matrix-models.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ward identites versus equations of motion",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-002-21-ward-identites-versus-equations-of-motion.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Virasoro constraints for the discrete 1-matrix model",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-003-22-virasoro-constraints-for-the-discrete-1-matri.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "CFT formulation of matrix models",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-004-23-cft-formulation-of-matrix-models.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gross-Newman equation",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-005-24-gross-newman-equation.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ward identities for Generalized Kontsevich Model",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-006-25-ward-identities-for-generalized-kontsevich-mo.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discrete Virasoro constraints for the Gaussian Kontsevich model",
+      "pageStart": 2,
+      "pageEnd": 32,
+      "target": "../sections/sec-007-26-discrete-virasoro-constraints-for-the-gaussia.md",
+      "narrative": null,
+      "content": "2.7. Continuous Virasoro constraints for the V = X3\n3 Kontsevich model\n2.8. ˜W-constraints for the asymmetric 2-matrix model\n2.9. ˜W-constraints for generic 2-matrix model\n2.10. ˜W-operators in Kontsevich model\n3. Eigenvalue models\n3.1. What are eigenvalue models\n3.2. 1-matrix model\n3.3. Itzykson-Zuber and Kontsevich integrals\n3.4. Conventional Multimatrix models\n3.5. Determinant formulas for eigenvalue models\n3.6. Orthogonal polinomials\n3.7. Two-component models in Miwa parametrization\n3.8. Equivalence of the discrete 1-matrix and Gaussian Kontsevich models\n3.9. Volume of unitary group\n4. Int",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Continuous Virasoro constraints for the $V = \\frac{X^3}{3}$ Kontsevich model",
+      "pageStart": 32,
+      "pageEnd": 46,
+      "target": "../sections/sec-008-27-continuous-virasoro-constraints-for-the-v-fra.md",
+      "narrative": null,
+      "content": "This example is a little more complicated than that in the previous\nsubsection, and we do not present calculations in full details (see\n\\cite{MMM} and \\cite{GKM}). Our goal is to demonstrate that the\nconstraints which arise in this model,\nthough still form  (Borel subalgebra of) some Virasoro\nalgebra, are $different$  from (\\ref{virdid}). From the point of view of the\nCFT-formulation the relevant model is that of the $twisted$ (in this\nparticular case - antiperiodic) free fields. These so called \"continuous\nVirasoro constraints\" give the simplest illustration of the difference between\ndiscrete",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Eigenvalue models",
+      "pageStart": 46,
+      "pageEnd": 46,
+      "target": "../sections/sec-009-3-eigenvalue-models.md",
+      "narrative": null,
+      "content": "Eigenvalue models",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "What are eigenvalue models",
+      "pageStart": 46,
+      "pageEnd": 47,
+      "target": "../sections/sec-010-31-what-are-eigenvalue-models.md",
+      "narrative": null,
+      "content": "\\bigskip\n\nGiven the present state of knowledge we need to consider in most cases\nonly the narrow class of the \"eigenvalue\" models.\nThese models have the property of being associated with conventional\nintegrable hierarchies (of (multicomponent) KP and Toda type), where\nintegrable flows just commute (instead of forming less trivial closed\nalgebras), and thus with the level-1 Kac-Moody algebras (by artificial tricks,\nfamiliar from the bosonization formalism in conformal field theory\n\\cite{Turb} these can be\nsometimes generalized to particular other levels like $k=2$). This means that\nthe models a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "1-matrix model",
+      "pageStart": 47,
+      "pageEnd": 49,
+      "target": "../sections/sec-011-32-1-matrix-model.md",
+      "narrative": null,
+      "content": "Hermitean matrix integrals are usually transformed to the eigenvalue form by\nseparation of angular and eigenvalue variables. As usually, the simplest is\nthe case of the 1-matrix model\n\n\\be\nZ_N\\{t\\} \\equiv c_N\\int_{N\\times N} dH e^{\\sum_{k=0}^{\\infty} t_k {\\rm Tr}\nH^k},\n\\label{1mamo\"}\n\\ee\nwhere this separations does not involve any information about unitary-matrix\nintegrals. Take\n\\be\nH = U^{\\dagger}DU,\n\\label{diag}\n\\ee\nwhere $U$ is a unitary matrix and\ndiagonal matrix $D = {\\rm diag}(h_1...h_N)$ has eigenvalues of $H$ as its\nentries. Then integration measure\n\\be\ndH = \\prod_{i,j=1}^N dH_{ij} = \\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Itzykson-Zuber and Kontsevich integrals",
+      "pageStart": 49,
+      "pageEnd": 52,
+      "target": "../sections/sec-012-33-itzykson-zuber-and-kontsevich-integrals.md",
+      "narrative": null,
+      "content": "Let us proceed now to Kontsevich integral,\n\\be\n{\\cal F}_{V,n}\\{ L\\} =\n\\int_{n\\times n} dX e^{- {\\rm tr} V(X) + {\\rm tr} L X}.\n\\label{KI'}\n\\ee\nWe shall see shortly that it in fact depends only on the eigenvalues of the\nmatrix $ L$ (this fact was already used in the previous section),\nhowever, this time somewhat more sophisticated unitary matrix integrals will\nbe involved.\n\nSubstitute $X = U_X^{\\dagger}D_XU_X;  \\ \\  L = U_{ L}^{\\dagger}\nD_{ L}U_{ L}$ in (\\ref{KI'}) and denote\n$U \\equiv U_XU_{ L}^{\\dagger}$. Then\n\\be\n&{\\cal F}_{V,n}\\{ L\\} = \\nn \\\\\n&= \\prod_{i=1}^n \\int dx_i e^{-V(x_i)}\n\\Delta^2(x",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conventional Multimatrix models",
+      "pageStart": 52,
+      "pageEnd": 53,
+      "target": "../sections/sec-013-34-conventional-multimatrix-models.md",
+      "narrative": null,
+      "content": "The multimatrix integrals of the form\n\\be\nZ_N\\{t^{(\\alpha)}\\} \\equiv \\nn \\\\\n\\equiv c_N^{p-1}\\int_{N\\times N} dH^{(1)}...dH^{(p-1)}\n\\prod_{\\alpha = 1}^{p-1} e^{\\sum_{k=0}^{\\infty}t_k^{(\\alpha)}{\\rm Tr}\nH_{(\\alpha)}^k} \\prod_{\\alpha = 1}^{p-2} e^{{\\rm\nTr}H^{(\\alpha)}H^{(\\alpha+1)}}\n\\label{mumamo'}\n\\ee\ncan be rewritten in the eigenvalue form using the same Itzykson-Zuber formula\n(\\ref{IZ}). Indeed, substituting\n$H^{(\\alpha)} = \\left.U^{(\\alpha)}\\right.^{\\dagger}D^{(\\alpha)} U^{\\alpha)}$\nand then defyining $U^{(\\alpha)}\\left.U^{(\\alpha+1)}\\right.^{\\dagger}\n\\equiv \\tilde U^{(\\alpha)}$, we\nobtain:\n\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Determinant formulas for eigenvalue models",
+      "pageStart": 53,
+      "pageEnd": 59,
+      "target": "../sections/sec-014-35-determinant-formulas-for-eigenvalue-models.md",
+      "narrative": null,
+      "content": "We are now prepared to make the crucial step towards understanding of\nmathematical structure behind eigenvalue models, which distinguishes their\npartition functions in the entire variety of arbitrary $N$-fold integrals.\nThis structure expresses itself in the form of determinantal formulas, which\nwe are now going to discuss. In the next section 4 these formulas will be\nidentified as examples of $\\tau$-functions of KP and Toda hierarchies.\n\nLooking at the relevant\nintegrals (\\ref{1mamoev}), (\\ref{mumamoev}) one can notice that\nintegrals over different eigenvalues with non-trivial measures which",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Orthogonal polinomials",
+      "pageStart": 59,
+      "pageEnd": 65,
+      "target": "../sections/sec-015-36-orthogonal-polinomials.md",
+      "narrative": null,
+      "content": "Formalism of orthogonal polinomials was intensively used at the early days of\nthe theory of matrix models. It is applicable to scalar-product\neigenvalue models\nand allows to further transform (diagonalize) the remaining determinants into\nproducts. In variance with both reduction from\noriginal $N^2$-fold matrix integrals to the eigenvalue problem, which (when\npossible) reflects a physical phenomenon - decoupling of angular\n(unitary-matrix) degrees of freedom (associated with $d$-dimensional gauge\nbosons), - and with occurence of determinant formulas which reflects\nintegrability of the model,  o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Scalar-product models in Miwa parametrization",
+      "pageStart": 65,
+      "pageEnd": 66,
+      "target": "../sections/sec-016-37-scalar-product-models-in-miwa-parametrization.md",
+      "narrative": null,
+      "content": "We shall now make the first step towards clarification of the interrelation\nbetween the scalar-product and Kontsevich models.\nWe already know that in the latter\ncase the important role is played by representation of time-variables in the\nform of\n\\be\nT_k = \\frac{1}{k} {\\rm tr} \\Lambda ^{-k},\n\\label{MiwaT}\n\\ee\nwith $n\\times n$ matrix $\\Lambda $,\nwhich will be further refered to as Miwa parametrization (expressions of\nsome similar form were first introduced in \\cite{Miwa}). Let us now perfrom\nsuch transformation in the case of the scalar-product model.\nLet us use eq.(\\ref{tbartmeas}) to define th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Equivalence of the discrete 1-matrix and Gaussian Kontsevich models",
+      "pageStart": 66,
+      "pageEnd": 68,
+      "target": "../sections/sec-017-38-equivalence-of-the-discrete-1-matrix-and-gaus.md",
+      "narrative": null,
+      "content": "Let us take the ordinary 1-matrix model with the $local$ measure $d\\mu_h =\ne^{U(h)}dh $ to be the scalar-product model, considered in\nthe previous subsection and take Miwa parametrization with upper signs and\nwith $r_k =\n-\\frac{1}{2}\\delta_{k,2}$ (as we did in the section 2.6). Then $\\hat V(h) =\n\\sum_k r_kh^k = -\\frac{h^2}{2} = \\frac{(ih)^2}{2}$.\nThe relevant orthogonal polinomials $\\hat Q$ are just Hermite\npolinomials of $imaginary$ argument:\\footnote{\nNote that this system of functions $\\varphi_k = i^{-k}{\\rm He}_k(ih)$\nlooks like $\\varphi_0 = 1,\\\n\\varphi_1 = h,\\ \\varphi_2 = h^2+1, \\ldots$,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Volume of unitary group",
+      "pageStart": 68,
+      "pageEnd": 70,
+      "target": "../sections/sec-018-39-volume-of-unitary-group.md",
+      "narrative": null,
+      "content": "Formalism of orthogonal polinomials provides also a simple derivation of\neq.(\\ref{volun}) for the volume of unitary group. Consider\neq.(\\ref{1mamoev}) with $U(H) = H^2$. Then Gaussian matrix integral can be\neasily evaluated:\n\\be\nc_N\\int_{N\\times N} dH e^{-\\frac{1}{2}{\\rm Tr}H^2} =\nc_N\\prod_{i=1}^N \\int dH_{ii}e^{-\\frac{1}{2}H_{ii}^2}\n\\prod_{i<j}^N \\int d^2H_{ij} e^{-\\mid H_{ij}\\mid^2} =\n(2\\pi)^{N^2/2}, \\nn\n\\ee\nwhile according to eqs.(\\ref{orthopol}) and (\\ref{ZNprod})\nthe same integral is equal to\n\\be\n\\frac{1}{N!}\\prod_{i=1}^N\\int_{-\\infty}^{+\\infty}e^{-\\frac{1}{2}h_i^2}\n\\prod_{i>j}^N (h_i-h_j",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Integrable structure of eigenvalue models",
+      "pageStart": 70,
+      "pageEnd": 70,
+      "target": "../sections/sec-019-4-integrable-structure-of-eigenvalue-models.md",
+      "narrative": null,
+      "content": "Integrable structure of eigenvalue models",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The concept of integrability",
+      "pageStart": 70,
+      "pageEnd": 75,
+      "target": "../sections/sec-020-41-the-concept-of-integrability.md",
+      "narrative": null,
+      "content": "Integrable structure of dynamical system implies that all the dynamical\ncharacteristics - solutions of equations of motion for a classical system and\nfunctional integrals for a quantum one - can be found exactly. According to\nthis description the notion of integrability is not very concrete, and in fact\nit evolves with time, including more and more classes of theories into the\nclass of integable systems. Nowadays we consider the following types of\ntheories as clearly belonging to this class:\n\n- Free motion (classical or quantum) on group manifolds and homogeneous\nspaces;\n\n- 2-dimensional confo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The notion of $\\tau$-function",
+      "pageStart": 75,
+      "pageEnd": 83,
+      "target": "../sections/sec-021-42-the-notion-of-tau-function.md",
+      "narrative": null,
+      "content": "There are several different definitions of $\\tau$-functions, but all of them\nare particular realizations of the following idea:\n$\\tau$-function is a generating functional of all the correlation functions in\nthe theory of free particles in 1+1 dimensions. This basic quantity is a kind\nof \"$det \\ D$\", where \"$D$\" is a time-evolution operator (continuous or\ndiscrete) and \"$det$\" is a sort of a product over eigenvalues of \"$D$\",\nwhich is usually expressed in the form of a functional integral, associated\nwith free particles (it is not $a\\ priori$ Gaussian in original variables).\nThis quantity is th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basic determinant formula for the free-fermion correlator",
+      "pageStart": 83,
+      "pageEnd": 87,
+      "target": "../sections/sec-022-44-basic-determinant-formula-for-the-free-fermio.md",
+      "narrative": null,
+      "content": "Let us consider the following matrix element:\n\\be\n\\tau_N\\{t,\\bar t\\mid G\\} =\n\\langle N \\mid e^H \\ G \\ e^{\\bar H} \\mid N \\rangle\n\\label{pretaf}\n\\ee\nwhere\n\\be\n\\new\n\\begin{array}{c}\n\\psi( z) = \\sum_{n\\in Z}\\psi_n z^n d z^{1/2}; \\ \\ \\\n\\tilde\\psi( z) = \\sum_{n\\in Z}\\tilde\\psi_n z^{-n-1}d z^{1/2};\\\\\nG = \\exp\\left( \\sum_{m,n\\in Z}{A}_{mn}\\psi_m\\tilde\\psi_n \\right);  \\\\\nH = \\sum_{k>0} t_kJ_k, \\ \\ \\ \\bar H = \\sum_{k>0} \\bar t_kJ_{-k} \\\\\n\n\n\nJ( z) = \\psi( z)\\tilde\\psi( z) =\n\\sum_{n\\in Z}J_n z^{-n-1}d z; \\ \\ \\ J_n =\n\\sum_k\\psi_k\\tilde\\psi_{k+n};   \\\\\n\\phantom. [\\tilde\\psi_m,\\psi_n]_+ = \\delta_{m,n}; \\ \\ \\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Toda-lattice $\\tau$-function and linear reductions of Toda hierarchy",
+      "pageStart": 87,
+      "pageEnd": 92,
+      "target": "../sections/sec-023-45-toda-lattice-tau-function-and-linear-reductio.md",
+      "narrative": null,
+      "content": "In the previous subsection we derived a formula\n\\be\n\\tau_N\\{t,\\bar t\\mid G\\} = \\left.{\\rm Det}\\right._{i,j<0} {\\cal H}_{i+N,j+N}\n\\label{todatau}\n\\ee\nfor the basic correlator, which defines\n\"Toda-lattice $\\tau$-function\". For obvious reasons $\\bar t$ are often refered\nto as negative-times. $\\tau$-function\ncan be normalized by dividing over the same\nquantity for all time-variables vanishing, but this is not always convenient.\nEq.(\\ref{todatau}) has generalizations - when similar\nmatrix elements in a multifermion system is considered - this leads to\n\"multicomponent Toda\" (or AKNS) $\\tau$-function",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fermion correlator in Miwa coordinates",
+      "pageStart": 92,
+      "pageEnd": 99,
+      "target": "../sections/sec-024-46-fermion-correlator-in-miwa-coordinates.md",
+      "narrative": null,
+      "content": "Let us now return to original correlator (\\ref{pretaf}) and\ndiscuss in a little more details the implications of bosonization\nidentity (\\ref{bosid}). In order not to write down integrals of $J$, we\nintroduce scalar field:\\footnote{\nOne can consider $\\phi $ as introduced for simplicity of notation,\nbut it should be kept in mind that the scalar-field\nrepresentation is in fact more fundamental for {\\it generic} $\\tau$-functions,\nnot related to the level $k=1$ Kac-Moody algebras (this phenomenon is well\nknown in conformal filed theory, see \\cite{GMMOS} for more details).\n}\n\\be\n\\phi(z) = \\sum_{\\sta",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Matrix models versus $\\tau$-functions.",
+      "pageStart": 99,
+      "pageEnd": 104,
+      "target": "../sections/sec-025-47-matrix-models-versus-tau-functions.md",
+      "narrative": null,
+      "content": "We are now prepared to return to our main subject and discuss integrability\nproperties of eigenvalue matrix models. The claim is that partition functions\nof all these models, when considered as functions of time-variables\n(parametrizing the shapes of  potentials) are in fact $\\tau$-functions of\n(perhaps, multicomponent) Toda-lattice and/or KP type. (Interesting\nnon-eigenvalue models are believed to be related to integrable systems of more\ngeneral type, not restricted to level $k=1$ Kac-Moody algebras.)\n\nPartition functions are, however, not generic Toda or KP $\\tau$-functions:\nfirst, they usua",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "String equations and general concept of reduction",
+      "pageStart": 104,
+      "pageEnd": 110,
+      "target": "../sections/sec-026-48-string-equations-and-general-concept-of-reduc.md",
+      "narrative": null,
+      "content": "The role of string equation is to fix the point $G$ in the universal module\nspace (UMS), associated with the particular matrix model, so that partition\nfunction, considered as a function of time variables, will appear as  the\ncorresponding $\\tau$-function of a fixed shape. In this sense the idea behind\nthe string equation is exatly the same as reduction of integrable hierarchies.\nThe difference is that {\\it linear} reductions, as defined in the section 4.5\nabove, are not enough to fix $G$ unambiguously: they just specify certain\nsubsets in the Grassmannian, which are still infinite-dimensional",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "On the theory of GKM",
+      "pageStart": 110,
+      "pageEnd": 118,
+      "target": "../sections/sec-027-49-on-the-theory-of-gkm.md",
+      "narrative": null,
+      "content": "We remind that GKM is abbreviation for the Generalized Kontsevich model,\nThis theory is the naturally broad collection of topics for a separate big\nsection in these notes. However, we decided not to include such detailed\npresentation. This is because GKM theory seems too incomplete now. First, we\nbelieve that the natural invariant formulation - of which existing matrix\nintegral is\nonly a specific realization - is still lacking. Second, GKM is not yet\ngeneralized enough to fulfil its main purpose of incorporating infromation\nabout {\\it all} the models of $2d$ gravity (in fact it should include",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "1-Matrix model versus Toda-chain hierarchy",
+      "pageStart": 118,
+      "pageEnd": 121,
+      "target": "../sections/sec-028-410-1-matrix-model-versus-toda-chain-hierarchy.md",
+      "narrative": null,
+      "content": "At the end of this section we use an explicit example of dicrete 1-matrix\nmodel \\cite{GMMMO} to illustrate, how a more familiar Lax description of\nintegrable hierarchies arises from determinant formulas. This example will be\nalso usefull in Section 5.3 below, when one of the ways to take double-scaling\ncontinuum limit of the 1-matrix model will be discussed.\nLax representation appears usually after some coordinate system is chosen\nin the Grassmannian. In the example which we are now considering this\nsystem is introduced by the use of orthogonal polinomials.\n\nWe already know from section 3.6, t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Continuum limits of discrete matrix models",
+      "pageStart": 121,
+      "pageEnd": 121,
+      "target": "../sections/sec-029-5-continuum-limits-of-discrete-matrix-models.md",
+      "narrative": null,
+      "content": "els",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "What is continuum limit",
+      "pageStart": 121,
+      "pageEnd": 124,
+      "target": "../sections/sec-030-51-what-is-continuum-limit.md",
+      "narrative": null,
+      "content": "Continuum limit of matrix models is, of course, the crucial issue for their\nphysical applications whenever these models are interpreted as discrete\n(lattice) approximations to continuum theory. The very first thing to be kept\nin mind is that it is $not$ the only possible view on matrix models. Another\napproach considers them as describing $topological$ (and thus also in a\ncertain sense \"discrete\") properties of the theory. Such models, when appearing\nin the field of, say, quantum gravity (which after all is a sort of a pure\ntopological theory) do $not$ require any continuum limit to be taken:",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From Toda-chain to KdV",
+      "pageStart": 124,
+      "pageEnd": 126,
+      "target": "../sections/sec-031-52-from-toda-chain-to-kdv.md",
+      "narrative": null,
+      "content": "We begin with the simplest existing example: continuum limit, in which the\nlowest  equation of the \"Volterra hierarchy\",\n\\be\n\\frac{\\partial R_n}{\\partial t} = - R_n(R_{n+1}-R_{n-1}),\n\\label{lowVolt}\n\\ee\nturns into the lowest KdV equation:\n\\be\n\\frac{\\partial r}{\\partial T_3} = - \\frac{1}{3}r''' - 2rr'.\n\\label{lowKdV}\n\\ee\nVolterra hierarchy is a reduction of Toda-chain hierarchy, with\n$R_n = e^{\\phi_n-\\phi_{n-1}}$, arising when all the odd-times $t_{2k+1} = 0$\nand all $\\phi_n$ are supposed to be independent of them. Therefore this\nhierarchy is clearly related to the discrete 1-matrix model. We\"l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Double-scaling limit of 1-matrix model",
+      "pageStart": 126,
+      "pageEnd": 134,
+      "target": "../sections/sec-032-53-double-scaling-limit-of-1-matrix-model.md",
+      "narrative": null,
+      "content": "Now we proceed to discussion of a slightly different approach to continuum\nlimits, which is directly adjusted to the needs of matrix models. The naive\nidea \\cite{mamo},\\cite{FKN}\nis to forget about integrability and just look at the Ward\nidentities (Virasoro constraints in the 1-matrix case) and take a continuum\nlimit of these identities. This approach makes close contact with the standard\ntechnique of \"loop equations\" (Makeenko-Migdal equations \\cite{MaMi})\nin the theory of\nmatrix models, of which Virasoro and $W$-constraints are just particular\nexamples.\\footnote{One of the puzzles in the th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From Gaussian to $X^3$ Kontsevich model",
+      "pageStart": 134,
+      "pageEnd": 138,
+      "target": "../sections/sec-033-54-from-gaussian-to-x3-kontsevich-model.md",
+      "narrative": null,
+      "content": "We shall now abandon these complicated matters and give a simple illustration\nof how the things can work, if expressed in the adequate terms. Namely, as\nalternative to the sophisticated procedure, involving explicit\nswitch to Kazakov\nvariables and the study of limits of Ward-identites (loop equations), we shall\njust use the equivalence of the discrete 1-matrix model and Gaussian\nKontsevich model, proved in the section 3.8 above in order to take the\ncontinuum limit just of this simplest Kontsevich model. This procedure,\nsuggested in ref.\\cite{Toda}  appears\nto be just a kind of a standard evelu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion",
+      "pageStart": 138,
+      "pageEnd": 140,
+      "target": "../sections/sec-034-6-conclusion.md",
+      "narrative": null,
+      "content": "We came to the end of our brief review of the facts, that are already known\nabout the relation between matrix models and integrable hierarchies. There are\nstill several topics, which are already discussed in the literature, but not\npresented in these notes.\n\nFirst of all, we did not discuss the relation between matrix models and\ntheories of topological (Landau-Ginzburg) gravity (LGG). This field is fastly\ndeveloping during the last months and will be soon ready to inclusion in this\nkind of reviews. The list of things which are already clarified enough,\nincludes realization of the Ward identiti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9303139v2/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 140,
+      "pageEnd": 149,
+      "target": "../sections/sec-035-7-acknowledgements.md",
+      "narrative": null,
+      "content": "Acknowledgements\nThese notes reﬂect the content of the lectures, given at the University of\nAmsterdam and NIKHEF in February-March 1993. I am deeply indebted to\ncolleagues at Amsterdam for their patience and attention and especially to\nSander Bais for his hospitality and encouragement.\nIt is a pleasure to thank my collaborators and friends, mentioned by\nnames in the end of the Introduction for the lessons that they taught me\nduring our work on the subject of matrix models.\nI also aknowledge the support of FOM during the time when these notes\nwere being written.\nReferences\n[1] A.Morozov, UFN 16",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

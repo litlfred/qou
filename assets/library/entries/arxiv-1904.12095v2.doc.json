@@ -1,0 +1,1099 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1904.12095v2",
+  "title": "Verified computations for closed hyperbolic 3-manifolds",
+  "variant": "pdf",
+  "pages": 28,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Hyperbolic structures on finite triangulations",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-hyperbolic-structures-on-finite-triangulations"
+    },
+    {
+      "level": 1,
+      "title": "Cocycles",
+      "number": "3",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-cocycles"
+    },
+    {
+      "level": 1,
+      "title": "Extending cocycles on genus 0 surfaces",
+      "number": "4",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-extending-cocycles-on-genus-0-surfaces"
+    },
+    {
+      "level": 1,
+      "title": "Extending cocycles on triangulations",
+      "number": "5",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-extending-cocycles-on-triangulations"
+    },
+    {
+      "level": 1,
+      "title": "Examples of (non-)gimbal lock",
+      "number": "6",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-6-examples-of-non-gimbal-lock"
+    },
+    {
+      "level": 1,
+      "title": "Algorithm",
+      "number": "7",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-7-algorithm"
+    },
+    {
+      "level": 1,
+      "title": "Results",
+      "number": "8",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-8-results"
+    },
+    {
+      "level": 1,
+      "title": "Discussion",
+      "number": "9",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-9-discussion"
+    },
+    {
+      "level": 1,
+      "title": "Appendix: The uncited theorem HIKMOT relies on",
+      "number": "10",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-10-appendix-the-uncited-theorem-hikmot-relies-on"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 185,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "extending cocycles",
+          "heading": false
+        },
+        {
+          "term": "hikmot",
+          "heading": false
+        },
+        {
+          "term": "lock",
+          "heading": false
+        },
+        {
+          "term": "census",
+          "heading": false
+        },
+        {
+          "term": "triangulations",
+          "heading": false
+        },
+        {
+          "term": "algorithm",
+          "heading": false
+        }
+      ],
+      "extract": "Veriﬁed computations for closed hyperbolic 3-manifolds Matthias Goerner Abstract. Extending methods ﬁrst used by Casson, we show how to verify a hyper- bolic structure on a ﬁnite triangulation of a closed 3-manifold using interval arith- metic methods. A key ingredient is a new theoretical result (akin to a theorem by Neumann-Zagier and Moser for ideal triangulations upon which HIKMOT is based) showing that there is",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1904.12095v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 1446,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gimbal lock",
+          "heading": false
+        },
+        {
+          "term": "spun triangulations",
+          "heading": false
+        },
+        {
+          "term": "geometric spun",
+          "heading": false
+        },
+        {
+          "term": "incompleteness locus",
+          "heading": false
+        },
+        {
+          "term": "finite triangulations",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic branched",
+          "heading": false
+        },
+        {
+          "term": "finding geometric",
+          "heading": false
+        },
+        {
+          "term": "hikmot",
+          "heading": false
+        }
+      ],
+      "extract": "Up to isometry, a finite hyperbolic 3-simplex is determined by its $6$ edge parameters, by which we mean either the edge lengths $l_{ij}$ or the respective entries of its vertex Gram matrix $v_{ij}=-\\cosh(l_{ij})$. Thus, an assignment of a parameter to each edge of a finite triangulation $\\mathcal{T}$ of a closed 3-manifold determines a hyperbolic structure for each $3$-simplex of $\\mathcal{T}\\!{}$. If certain",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-hyperbolic-structures-on-finite-triangulations",
+      "number": "2",
+      "title": "Hyperbolic structures on finite triangulations",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 586,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vertex gram",
+          "heading": false
+        },
+        {
+          "term": "simplex delta",
+          "heading": false
+        },
+        {
+          "term": "gram matrix",
+          "heading": false
+        },
+        {
+          "term": "heardthesis",
+          "heading": false
+        },
+        {
+          "term": "singlegeomsimp",
+          "heading": false
+        },
+        {
+          "term": "arccos left",
+          "heading": false
+        },
+        {
+          "term": "edge lengths",
+          "heading": false
+        },
+        {
+          "term": "hypstru",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:hypStru label=\"sec:hypStru\"} Consider the isometry class of a positively oriented, finite geodesic simplex $\\Delta$ with vertices labeled $0, \\dots, 3$ in $\\mathbb H^3$. We briefly review the relationship of the edge lengths and the angles of $\\Delta$ following [@heardThesis] with one difference though: we use a slightly simpler definition for the vertex Gram matrix $G$ where all diagonal entries are $-1$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-cocycles",
+      "number": "3",
+      "title": "Cocycles",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 9,
+      "labelStart": "6",
+      "labelEnd": "9",
+      "words": 1185,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "imath eta",
+          "heading": false
+        },
+        {
+          "term": "mathrm pgl",
+          "heading": false
+        },
+        {
+          "term": "overline mathcal",
+          "heading": false
+        },
+        {
+          "term": "cocycles",
+          "heading": true
+        },
+        {
+          "term": "simplex overline",
+          "heading": false
+        },
+        {
+          "term": "imath end",
+          "heading": false
+        },
+        {
+          "term": "overline delta",
+          "heading": false
+        },
+        {
+          "term": "hypstruct",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:cocycles label=\"sec:cocycles\"} We will describe how to compute a representation[^1] $\\pi_1(\\mathcal{T})\\to\\mathrm{PGL}_{2}(\\mathbb C)$ from an assignment of parameters $\\nu_e$ as in Theorem [\\[thm:hypStruct\\]](#thm:hypStruct){reference-type=\"ref\" reference=\"thm:hypStruct\"} using cocycles inspired by [@higherGluingEqns Section 9] as follows: ::: definition Let $\\mathcal{G}$ be a group and $X$ be a space with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-extending-cocycles-on-genus-0-surfaces",
+      "number": "4",
+      "title": "Extending cocycles on genus 0 surfaces",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 12,
+      "labelStart": "9",
+      "labelEnd": "12",
+      "words": 1193,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gimbal lock",
+          "heading": false
+        },
+        {
+          "term": "gimbal loop",
+          "heading": false
+        },
+        {
+          "term": "gimbal matrix",
+          "heading": false
+        },
+        {
+          "term": "gimballoop label",
+          "heading": false
+        },
+        {
+          "term": "defgimbalfunction",
+          "heading": false
+        },
+        {
+          "term": "loop gamma",
+          "heading": false
+        },
+        {
+          "term": "edge-loop gamma",
+          "heading": false
+        },
+        {
+          "term": "setminus bigcup",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:vertexCocycles label=\"sec:vertexCocycles\"} Let us define a punctured topological polyhedron which we will use as model for a \"vertex link\" of $\\hat\\mathcal{T}$ when removing some prisms. ::: definition []{#def:puncTopPolyhed label=\"def:puncTopPolyhed\"} Let $L$ be a topological polyhedron, i.e., a decomposition of an oriented $2$-sphere into polygons. Let $P_1, \\dots, P_p$ be selected two-cells of $L$ such",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-extending-cocycles-on-triangulations",
+      "number": "5",
+      "title": "Extending cocycles on triangulations",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 772,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gimbal lock",
+          "heading": false
+        },
+        {
+          "term": "gimbal loops",
+          "heading": false
+        },
+        {
+          "term": "gimbal function",
+          "heading": false
+        },
+        {
+          "term": "dots theta",
+          "heading": false
+        },
+        {
+          "term": "theta sim",
+          "heading": false
+        },
+        {
+          "term": "edge sim",
+          "heading": false
+        },
+        {
+          "term": "cdot gamma",
+          "heading": false
+        },
+        {
+          "term": "triggimbalfunction",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:extendCocycles label=\"sec:extendCocycles\"} Let $\\mathcal{T}$ be a triangulation with an assignment of edge parameters $\\nu_e<-1$ such that each $G_\\Delta$ is realized (i.e., fulfills the conditions of Lemma [\\[lemma:singleGeomSimp\\]](#lemma:singleGeomSimp){reference-type=\"ref\" reference=\"lemma:singleGeomSimp\"}). Let $E^\\sim \\cup E^==E(\\mathcal{T})$ be a partition of the edges into two disjoint sets where",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-examples-of-non-gimbal-lock",
+      "number": "6",
+      "title": "Examples of (non-)gimbal lock",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 669,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gimbal lock",
+          "heading": true
+        },
+        {
+          "term": "sim theta",
+          "heading": false
+        },
+        {
+          "term": "spherical cone",
+          "heading": false
+        },
+        {
+          "term": "sim cdot",
+          "heading": false
+        },
+        {
+          "term": "cone singularities",
+          "heading": false
+        },
+        {
+          "term": "cone angle",
+          "heading": false
+        },
+        {
+          "term": "cone structure",
+          "heading": false
+        },
+        {
+          "term": "assume theta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#section:examples label=\"section:examples\"} This section is giving examples where the condition $\\Theta_e=2\\pi$ from Theorem [\\[thm:hypStruct\\]](#thm:hypStruct){reference-type=\"ref\" reference=\"thm:hypStruct\"} is known to be fulfilled for most but not all edges. Let $\\mathcal{T}$ be a finite, orientable triangulation with $o$ vertices and $m$ edges. We partition the edges as $E^\\sim=\\{e^\\sim_1,\\dots,e^\\sim_l\\}$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-7-algorithm",
+      "number": "7",
+      "title": "Algorithm",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 20,
+      "labelStart": "15",
+      "labelEnd": "20",
+      "words": 1469,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "var m-3o",
+          "heading": false
+        },
+        {
+          "term": "nolimits cdot",
+          "heading": false
+        },
+        {
+          "term": "prod nolimits",
+          "heading": false
+        },
+        {
+          "term": "intervalnewton",
+          "heading": false
+        },
+        {
+          "term": "intervals underline",
+          "heading": false
+        },
+        {
+          "term": "mathrm var",
+          "heading": false
+        },
+        {
+          "term": "underline overline",
+          "heading": false
+        },
+        {
+          "term": "find gimbal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:algo label=\"sec:algo\"} ## Overview Let $\\mathcal{T}$ be an oriented, finite 3-dimensional triangulation. Let $o=V(\\mathcal{T})$ be the number of vertices and index the edges $E(\\mathcal{T})=\\{e_1,\\dots,e_m\\}$. Assume we are given floating-point approximations for the edge parameters $\\nu_{e_1},\\dots,\\nu_{e_m}$ such that the $\\Theta_{e_1}, \\dots, \\Theta_{e_m}$ are approximately $2\\pi$ (e.g, using the program",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-8-results",
+      "number": "8",
+      "title": "Results",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 518,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyperbolicbrancheddoublecovers",
+          "heading": false
+        },
+        {
+          "term": "spun triangulations",
+          "heading": false
+        },
+        {
+          "term": "finite triangulations",
+          "heading": false
+        },
+        {
+          "term": "branched double",
+          "heading": false
+        },
+        {
+          "term": "orb",
+          "heading": false
+        },
+        {
+          "term": "regina",
+          "heading": false
+        },
+        {
+          "term": "snappy",
+          "heading": false
+        },
+        {
+          "term": "algo",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:results label=\"sec:results\"} Our implementation of the algorithm in Section [\\[sec:algo\\]](#sec:algo){reference-type=\"ref\" reference=\"sec:algo\"} is available at [@veriClosedRepo]. Lists of all knots and links from Theorem [\\[thm:hyperbolicBranchedDoubleCovers\\]](#thm:hyperbolicBranchedDoubleCovers){reference-type=\"ref\" reference=\"thm:hyperbolicBranchedDoubleCovers\"} as well as the isomorphism signatures of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-9-discussion",
+      "number": "9",
+      "title": "Discussion",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 25,
+      "labelStart": "21",
+      "labelEnd": "25",
+      "words": 1992,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "overrightarrow partial",
+          "heading": false
+        },
+        {
+          "term": "ccc overrightarrow",
+          "heading": false
+        },
+        {
+          "term": "frac overrightarrow",
+          "heading": false
+        },
+        {
+          "term": "let overrightarrow",
+          "heading": false
+        },
+        {
+          "term": "gimbal lock",
+          "heading": false
+        },
+        {
+          "term": "mathrm sol",
+          "heading": false
+        },
+        {
+          "term": "tilde mathcal",
+          "heading": false
+        },
+        {
+          "term": "gamma mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:discussion label=\"sec:discussion\"} Let $\\mathcal{T}$ be a finite, orientable triangulation with $o$ vertices and $m$ edges. We have proven that $\\mathcal{T}$ admits a hyperbolic structure if the checks in each step of the algorithm in Section [\\[sec:algo\\]](#sec:algo){reference-type=\"ref\" reference=\"sec:algo\"} pass. But are there hyperbolic structures which the algorithm cannot verify --- even as we increase",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-10-appendix-the-uncited-theorem-hikmot-relies-on",
+      "number": "10",
+      "title": "Appendix: The uncited theorem HIKMOT relies on",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 28,
+      "labelStart": "25",
+      "labelEnd": "28",
+      "words": 1067,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "matthias goerner",
+          "heading": false
+        },
+        {
+          "term": "saul schleimer",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifolds",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic three-manifolds",
+          "heading": false
+        },
+        {
+          "term": "hik",
+          "heading": false
+        },
+        {
+          "term": "carlo petronio",
+          "heading": false
+        },
+        {
+          "term": "ver sion",
+          "heading": false
+        },
+        {
+          "term": "edge equations",
+          "heading": false
+        }
+      ],
+      "extract": "As pointed out in the introduction, the full system of equations for ﬁnding a hyperbolic structure on a triangulation fails to have rank equal to the number of variables in both the ﬁnite and ideal case. Thus, veriﬁcation by interval methods in the ideal case also relies on a theorem showing that if a suitable subsystem is fulﬁlled, all equations are fulﬁlled. Unfortunately, the paper [HIK+16] did not cite this",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 6,
+        "items": [
+          "8 Results",
+          "9 Discussion",
+          "10 Appendix: The uncited theorem HIKMOT relies on",
+          "8 Results",
+          "9 Discussion",
+          "10 Appendix: The uncited theorem HIKMOT relies on"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "gimbal lock",
+      "heading": true
+    },
+    {
+      "term": "gimbal matrix",
+      "heading": false
+    },
+    {
+      "term": "gimbal loop",
+      "heading": true
+    },
+    {
+      "term": "pick gimbal",
+      "heading": false
+    },
+    {
+      "term": "avoids gimbal",
+      "heading": false
+    },
+    {
+      "term": "gimbal matrices",
+      "heading": false
+    },
+    {
+      "term": "avoiding gimbal",
+      "heading": false
+    },
+    {
+      "term": "find gimbal",
+      "heading": false
+    },
+    {
+      "term": "gimbal function",
+      "heading": false
+    },
+    {
+      "term": "called gimbal",
+      "heading": false
+    },
+    {
+      "term": "edge sim",
+      "heading": false
+    },
+    {
+      "term": "triangulation mathcal",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Angles of simplex",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "A doubly truncated",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "A prism",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "A simplex in different standard positions",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The edge loop obtained when dropping the Pl from a gimbal loop Γ",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The edge loop obtained when replacing Pl by ∂Pl in a gimbal loop Γ",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Homotoping the edge loop obtained from gimbal loop Γ such that it bounds a disk",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "A gimbal",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Gimbal loops for two “vertex links” (only some part of each is shown). The thick line is the edge in the triangulation",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Procedure to ﬁnd a gimbal loop Γ",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Edge in 1-vertex triangulation",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p012-1",
+      "file": "images/img-p012-1.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 10,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 1,
+      "note": "11 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p25); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1904.12095v2"
+  }
+}

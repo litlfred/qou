@@ -1,0 +1,66 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0205308v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "WDVV Equations as Functional Relations",
+  "contains": [
+    "library/arxiv-hep-th-0205308v2/sections/sec-front-matter",
+    "library/arxiv-hep-th-0205308v2/sections/sec-000",
+    "library/arxiv-hep-th-0205308v2/sections/sec-001",
+    "library/arxiv-hep-th-0205308v2/sections/sec-002",
+    "library/arxiv-hep-th-0205308v2/sections/sec-003",
+    "library/arxiv-hep-th-0205308v2/sections/sec-004"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "WDVV Equations as Functional Relations — 6 sections: Front matter; Introduction; WDVV and dispersionless Hirota equ\n\n**WDVV Equations as Functional Relations**\n\n*H.W. Braden1 and A. Marshakov2*\n\n9 pp, 6 sections.\n\n**Outline.** Front matter; Introduction; WDVV and dispersionless Hirota equations; The associativity equations as cocycle conditi; Example: perturbative Seiberg-Witten prepotent; Discussion",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-th/0205308&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-hep-th-0205308v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0205308v2.pdf",
+    "source_sha256": "2de5a4f40d80174c10370befaf89d78ebc5290a1773452e01173a674d2cf7572",
+    "pages": 9,
+    "arxiv": {
+      "id": "hep-th/0205308",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "29 May 2006"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

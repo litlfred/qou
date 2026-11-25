@@ -1,0 +1,1123 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2410.14661v1",
+  "title": "arxiv-2410.14661v1",
+  "variant": "pdf",
+  "pages": 62,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "Defintion of the Reshetikhin-Turaev invariants",
+      "number": "2.1",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-defintion-of-the-reshetikhin-turaev-invariant"
+    },
+    {
+      "level": 2,
+      "title": "Dilogarithm and Lobachevsky functions",
+      "number": "2.2",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-dilogarithm-and-lobachevsky-functions"
+    },
+    {
+      "level": 2,
+      "title": "Quantum dilogrithm functions",
+      "number": "2.3",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-quantum-dilogrithm-functions"
+    },
+    {
+      "level": 2,
+      "title": "Saddle point method",
+      "number": "2.4",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-24-saddle-point-method"
+    },
+    {
+      "level": 1,
+      "title": "Computations of the potential function",
+      "number": "3",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-3-computations-of-the-potential-function"
+    },
+    {
+      "level": 1,
+      "title": "Poisson summation formula",
+      "number": "4",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-4-poisson-summation-formula"
+    },
+    {
+      "level": 1,
+      "title": "Asymptotic expansions",
+      "number": "5",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-5-asymptotic-expansions"
+    },
+    {
+      "level": 2,
+      "title": "Preparations",
+      "number": "5.1",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-51-preparations"
+    },
+    {
+      "level": 2,
+      "title": "The case m2=0",
+      "number": "5.2",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The case m2=0 but (m1,m3)=(0,0)",
+      "number": "5.3",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The contribution of N(0,0,0)",
+      "number": "5.4",
+      "page": 32,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Final proof",
+      "number": "5.5",
+      "page": 41,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-55-final-proof"
+    },
+    {
+      "level": 1,
+      "title": "Appendices",
+      "number": "6",
+      "page": 41,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-6-appendices"
+    },
+    {
+      "level": 2,
+      "title": "Geometry of the critical point",
+      "number": "6.1",
+      "page": 41,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-61-geometry-of-the-critical-point"
+    },
+    {
+      "level": 2,
+      "title": "Critical value gives the complex volume",
+      "number": "6.2",
+      "page": 43,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-62-critical-value-gives-the-complex-volume"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Proposition 5.2",
+      "number": "6.3",
+      "page": 45,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-63-proof-of-proposition-52"
+    },
+    {
+      "level": 2,
+      "title": "Estimation of the critical value",
+      "number": "6.4",
+      "page": 46,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-64-estimation-of-the-critical-value"
+    },
+    {
+      "level": 2,
+      "title": "Two-dimensional saddle point method",
+      "number": "6.5",
+      "page": 52,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-65-two-dimensional-saddle-point-method"
+    },
+    {
+      "level": 2,
+      "title": "One-dimensional saddle point method",
+      "number": "6.6",
+      "page": 55,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-66-one-dimensional-saddle-point-method"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 61,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1269,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theorem-critical volume",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "frac left",
+          "heading": false
+        },
+        {
+          "term": "sqrt left",
+          "heading": false
+        },
+        {
+          "term": "reshetikhin-turaev invariants",
+          "heading": false
+        },
+        {
+          "term": "cdot frac",
+          "heading": false
+        },
+        {
+          "term": "theorem-main",
+          "heading": false
+        },
+        {
+          "term": "sqrt mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "Volume Conjectures relate the exponential growth rate of various quantum invariants of hyperbolic 3- manifolds at certain root of unity to the hyperbolic volume of the manifolds. In a series started from [@CZ23-1; @CZ23-2], we plan to prove various volume conjectures related to the twist knots. In [@CZ23-1] and [@CZ23-2], we have proved the Detcherry-Kalfagianni-Yang's volume conjecture [@DKY18] and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-defintion-of-the-reshetikhin-turaev-invariant",
+      "number": "2.1",
+      "title": "Defintion of the Reshetikhin-Turaev invariants",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 431,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "langle raisebox",
+          "heading": false
+        },
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "pdf rangle",
+          "heading": false
+        },
+        {
+          "term": "aligned langle",
+          "heading": false
+        },
+        {
+          "term": "kauffman bracket",
+          "heading": false
+        },
+        {
+          "term": "bracket skein",
+          "heading": false
+        },
+        {
+          "term": "omega rangle",
+          "heading": false
+        },
+        {
+          "term": "link mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "We use the skein theory approach of Reshetikhin-Turaev invariants [@BHMV92; @Lic93] following the concise illustration given in [@WongYang23]. We focus on the $SO(3)$ TQFT theory and consider the root of unity $e^{\\frac{2\\pi\\sqrt{-1}}{r}}$, where $r$ is an odd number, we write $r=2N+1$ with $N\\geq 1$. ::: definition Let $F$ be an oriented surface, given $A=e^{\\frac{\\pi\\sqrt{-1}}{r}}$. The Kauffman bracket skein",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-dilogarithm-and-lobachevsky-functions",
+      "number": "2.2",
+      "title": "Dilogarithm and Lobachevsky functions",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 249,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aligned right",
+          "heading": false
+        },
+        {
+          "term": "aligned left",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        },
+        {
+          "term": "end aligned",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\log: \\mathbb{C}\\setminus (-\\infty,0]\\rightarrow \\mathbb{C}$ be the standard logarithm function defined by $$\\begin{aligned} \\log z=\\log |z|+\\sqrt{-1}\\arg z \\end{aligned}$$ with $-\\pi <\\arg z<\\pi$. The dilogarithm function $\\text{Li}_2: \\mathbb{C}\\setminus (1,\\infty)\\rightarrow \\mathbb{C}$ is defined by $$\\begin{aligned} \\text{Li}_2(z)=-\\int_0^{z}\\frac{\\log(1-x)}{x}dx \\end{aligned}$$ where the integral is along",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-quantum-dilogrithm-functions",
+      "number": "2.3",
+      "title": "Quantum dilogrithm functions",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 339,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lemma-varphixi label",
+          "heading": false
+        },
+        {
+          "term": "sqrt theta",
+          "heading": false
+        },
+        {
+          "term": "frac varphi",
+          "heading": false
+        },
+        {
+          "term": "aligned varphi",
+          "heading": false
+        },
+        {
+          "term": "varphi left",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "sqrt text",
+          "heading": false
+        },
+        {
+          "term": "frac log",
+          "heading": false
+        }
+      ],
+      "extract": "For a positive integer $N$, we set $t=e^{\\frac{2\\pi\\sqrt{-1}}{N+\\frac{1}{2}}}$. We introduce the holomorphic function $\\varphi_N(\\theta)$ for $\\{\\theta\\in \\mathbb{C}| 0< \\text{Re}(\\theta) < 1\\}$, by the following integral $$\\begin{aligned} \\varphi_N(\\theta)=\\int_{-\\infty}^{+\\infty}\\frac{e^{(2\\theta-1)x}dx}{4x \\sinh x \\sinh\\frac{x}{N+\\frac{1}{2}}}. \\end{aligned}$$ Noting that this integrand has poles at $n\\pi",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-saddle-point-method",
+      "number": "2.4",
+      "title": "Saddle point method",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 337,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proposition-saddlemethod",
+          "heading": false
+        },
+        {
+          "term": "formula-domain",
+          "heading": false
+        },
+        {
+          "term": "aligned psi",
+          "heading": false
+        },
+        {
+          "term": "frac partial",
+          "heading": false
+        },
+        {
+          "term": "oht",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        },
+        {
+          "term": "end aligned",
+          "heading": false
+        },
+        {
+          "term": "frac lambda",
+          "heading": false
+        }
+      ],
+      "extract": "We need to use the following version of saddle point method as illustrated in [@Oht18]. ::: proposition []{#proposition-saddlemethod label=\"proposition-saddlemethod\"} Let $A$ be a non-singular symmetric complex $3\\times 3$ matrix, and let $\\Psi(z_1,z_2,z_3)$ and $r(z_1,z_2,z_3)$ be holomorphic functions of the forms, $$\\begin{aligned} \\Psi(z_1,z_2,z_3)&=\\mathbf{z}^{T}A\\mathbf{z}+r(z_1,z_2,z_3), \\\\\\nonumber",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-3-computations-of-the-potential-function",
+      "number": "3",
+      "title": "Computations of the potential function",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2260,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac theta",
+          "heading": false
+        },
+        {
+          "term": "nonumber varphi",
+          "heading": false
+        },
+        {
+          "term": "n-a sum",
+          "heading": false
+        },
+        {
+          "term": "varphi left",
+          "heading": false
+        },
+        {
+          "term": "nonumber kappa",
+          "heading": false
+        },
+        {
+          "term": "sqrt frac",
+          "heading": false
+        },
+        {
+          "term": "aligned frac",
+          "heading": false
+        },
+        {
+          "term": "frac sin",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Section-Potentialfunction label=\"Section-Potentialfunction\"} Let $M_{p,q}$ be the 3-manifold obtained by the doing $q$-surgery along the twist knot $\\mathcal{K}_p$, (see Figure [1](#figure-twistknot){reference-type=\"ref\" reference=\"figure-twistknot\"}) where the index $p$ represents $2p$ crossings (half-twists). For example, $\\mathcal{K}_{-1}=4_1$, $\\mathcal{K}_1=3_1$, $\\mathcal{K}_2=5_2$. <figure",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-4-poisson-summation-formula",
+      "number": "4",
+      "title": "Poisson summation formula",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1324,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theta nonumber",
+          "heading": false
+        },
+        {
+          "term": "sqrt theta",
+          "heading": false
+        },
+        {
+          "term": "theta frac",
+          "heading": false
+        },
+        {
+          "term": "leq theta",
+          "heading": false
+        },
+        {
+          "term": "theta right",
+          "heading": false
+        },
+        {
+          "term": "tilde theta",
+          "heading": false
+        },
+        {
+          "term": "aligned hat",
+          "heading": false
+        },
+        {
+          "term": "nonumber sin",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Section-Poissonsummation label=\"Section-Poissonsummation\"} By Proposition [\\[Prop-RTN\\]](#Prop-RTN){reference-type=\"ref\" reference=\"Prop-RTN\"}, we have $$\\begin{aligned} g_{N}(a,k,l)=\\sin\\left(\\frac{(a+\\frac{1}{2})\\pi}{N+\\frac{1}{2}}\\right)\\sin\\left(\\frac{2\\pi(l+\\frac{1}{2})}{N+\\frac{1}{2}}\\right)e^{(N+\\frac{1}{2})\\hat{V}_N\\left(\\frac{a+\\frac{1}{2}}{N+\\frac{1}{2}},\\frac{k+\\frac{1}{2}}{N+\\frac{1}{2}},\\frac{l+\\frac",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-5-asymptotic-expansions",
+      "number": "5",
+      "title": "Asymptotic expansions",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 16,
+      "summary": null,
+      "keywords": [],
+      "extract": "[]{#Section-asympticexpansion label=\"Section-asympticexpansion\"} The goal of this section is to estimate each Fourier coefficients $\\hat{h}_N(m_1,m_2,m_3)$ appearing in ([\\[formula-RTN\\]](#formula-RTN){reference-type=\"ref\" reference=\"formula-RTN\"}).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-51-preparations",
+      "number": "5.1",
+      "title": "Preparations",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 41,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 6092,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theta nonumber",
+          "heading": false
+        },
+        {
+          "term": "aligned theta",
+          "heading": false
+        },
+        {
+          "term": "sqrt theta",
+          "heading": false
+        },
+        {
+          "term": "frac theta",
+          "heading": false
+        },
+        {
+          "term": "theta text",
+          "heading": false
+        },
+        {
+          "term": "partial theta",
+          "heading": false
+        },
+        {
+          "term": "theta p-m",
+          "heading": false
+        },
+        {
+          "term": "theta right",
+          "heading": false
+        }
+      ],
+      "extract": "Recall the functions $$\\begin{aligned} \\label{formula-PotentialV} &\\hat{V}_N(\\theta_1,\\theta_2,\\theta_3)\\\\\\nonumber &=\\pi\\sqrt{-1}\\left(\\left(\\frac{q}{2}-1\\right)\\theta_1^2-\\theta_1+(2p+1)\\theta_3^2-(2p+3)\\theta_3-2\\theta_2+\\frac{3}{2}q-\\frac{1}{12}\\right.\\\\\\nonumber &\\left.+\\frac{2\\theta_2}{N+\\frac{1}{2}}+\\frac{p-2q+\\frac{7}{4}}{N+\\frac{1}{2}}-\\frac{3(p+q)+2}{6(N+\\frac{1}{2})^2}\\right)\\\\\\nonumber",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-55-final-proof",
+      "number": "5.5",
+      "title": "Final proof",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 41,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 75,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "formula-omega",
+          "heading": false
+        },
+        {
+          "term": "formula-proprt",
+          "heading": false
+        },
+        {
+          "term": "theorem-main",
+          "heading": false
+        },
+        {
+          "term": "prop-m0n",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsection-final label=\"subsection-final\"} Now we can finish the proof of Theorem [\\[theorem-main\\]](#theorem-main){reference-type=\"ref\" reference=\"theorem-main\"} as follows. ::: proof *Proof.* Using formula ([\\[formula-propRT\\]](#formula-propRT){reference-type=\"ref\" reference=\"formula-propRT\"}), together with Proposition [\\[prop-m0n0\\]](#prop-m0n0){reference-type=\"ref\" reference=\"prop-m0n0\"}, we obtain",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-6-appendices",
+      "number": "6",
+      "title": "Appendices",
+      "level": 1,
+      "pageStart": 41,
+      "pageEnd": 41,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-012-61-geometry-of-the-critical-point",
+      "number": "6.1",
+      "title": "Geometry of the critical point",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 43,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 318,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aligned log",
+          "heading": false
+        },
+        {
+          "term": "nonumber log",
+          "heading": false
+        },
+        {
+          "term": "sqrt log",
+          "heading": false
+        },
+        {
+          "term": "aligned frac",
+          "heading": false
+        },
+        {
+          "term": "nonumber left",
+          "heading": false
+        },
+        {
+          "term": "equantion-geom",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        },
+        {
+          "term": "end aligned",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Appendix-geometry label=\"Appendix-geometry\"} ### The geometric equation Note that the hyperbolic geometric equations (which include the gluing equations and Dehn filling equations) for the $M_{p,q}$ can be written as follows: $$\\label{equantion-geom1} \\left\\{ \\begin{aligned} &\\log w+\\log x+\\log y+\\log z = 2\\pi\\sqrt{-1}, \\\\ & \\log(1-w)+\\log(1-x)-\\log(1-y)-\\log(1-z)=0,\\\\ &qu_1+v_1=-2\\pi\\sqrt{-1}, \\\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-62-critical-value-gives-the-complex-volume",
+      "number": "6.2",
+      "title": "Critical value gives the complex volume",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 45,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 610,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sqrt theta",
+          "heading": false
+        },
+        {
+          "term": "hat theta",
+          "heading": false
+        },
+        {
+          "term": "theta log",
+          "heading": false
+        },
+        {
+          "term": "partial theta",
+          "heading": false
+        },
+        {
+          "term": "frac theta",
+          "heading": false
+        },
+        {
+          "term": "theta right",
+          "heading": false
+        },
+        {
+          "term": "theta left",
+          "heading": false
+        },
+        {
+          "term": "theorem-critical volume",
+          "heading": false
+        }
+      ],
+      "extract": "Recall that $$\\begin{aligned} \\hat{V}&=\\pi\\sqrt{-1}\\left(\\frac{3}{2}q+\\frac{q}{2}\\theta_1^2-\\theta_1^2-\\theta_1-2\\theta_2-(2p+3)\\theta_3+(2p+1)\\theta_3^2\\right)\\\\\\nonumber &+\\frac{1}{2\\pi\\sqrt{-1}}\\left(\\frac{\\pi^2}{6}-\\text{Li}_2(e^{2\\pi\\sqrt{-1}(\\theta_2-\\theta_1)})-\\text{Li}_2(e^{2\\pi\\sqrt{-1}(\\theta_2+\\theta_1)})-\\text{Li}_2(e^{2\\pi\\sqrt{-1}\\theta_2})\\right.\\\\\\nonumber",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-63-proof-of-proposition-52",
+      "number": "6.3",
+      "title": "Proof of Proposition 5.2",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 46,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 422,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "e2π",
+          "heading": false
+        },
+        {
+          "term": "arg",
+          "heading": false
+        },
+        {
+          "term": "critical point",
+          "heading": false
+        },
+        {
+          "term": "thatf",
+          "heading": false
+        }
+      ],
+      "extract": "Proposition 5.3 in [4]. Lemma 6.4. Suppose (θ0 1,θ 0 2,θ 0 3) is a critical point of ˆV (θ1,θ 2,θ 3) with (Re(θ0 1), Re(θ0 2), Re(θ0 3))∈ D0, then we have (Re(θ0 1), Re(θ0 2), Re(θ0 3))∈U0. Proof. Supposeθ0 i =θ0 iR+X 0 i √−1, (i = 1, 2, 3) is a critical point ofˆV with (θ0 1R,θ 0 2R,θ 0 3R)∈ D0, i.e. (6.34)    ∂ ˆV ∂θ1 (θ0 1,θ 0 2,θ 0 3) = 0, ∂ ˆV ∂θ2 (θ0 1,θ 0 2,θ 0 3) = 0. ∂ ˆV ∂θ3 (θ0 1,θ 0 2,θ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-64-estimation-of-the-critical-value",
+      "number": "6.4",
+      "title": "Estimation of the critical value",
+      "level": 2,
+      "pageStart": 46,
+      "pageEnd": 52,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1783,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "formula-vtheta hat",
+          "heading": false
+        },
+        {
+          "term": "nonumber theta",
+          "heading": false
+        },
+        {
+          "term": "sqrt theta",
+          "heading": false
+        },
+        {
+          "term": "gamma theta",
+          "heading": false
+        },
+        {
+          "term": "aligned theta",
+          "heading": false
+        },
+        {
+          "term": "frac theta",
+          "heading": false
+        },
+        {
+          "term": "cdots nonumber",
+          "heading": false
+        },
+        {
+          "term": "theta right",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we prove the Lemma [\\[lemma-volumeestimate\\]](#lemma-volumeestimate){reference-type=\"ref\" reference=\"lemma-volumeestimate\"} which gives the estimation of the critical value $\\zeta_{\\mathbb{R}}(p,q)$. Recall that $\\zeta_{\\mathbb{R}}(p,q)$ is given by $$\\begin{aligned} \\zeta_{\\mathbb{R}}(p,q)=\\text{Re} \\hat{V}(p,q,\\theta_1^0,\\theta_2^0,\\theta_3^0), \\end{aligned}$$ where",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-65-two-dimensional-saddle-point-method",
+      "number": "6.5",
+      "title": "Two-dimensional saddle point method",
+      "level": 2,
+      "pageStart": 52,
+      "pageEnd": 55,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1027,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hat theta",
+          "heading": false
+        },
+        {
+          "term": "sqrt theta",
+          "heading": false
+        },
+        {
+          "term": "gamma nonumber",
+          "heading": false
+        },
+        {
+          "term": "nonumber frac",
+          "heading": false
+        },
+        {
+          "term": "frac tilde",
+          "heading": false
+        },
+        {
+          "term": "aligned hat",
+          "heading": false
+        },
+        {
+          "term": "frac log",
+          "heading": false
+        },
+        {
+          "term": "case theta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Appendix-twodimsaddle label=\"Appendix-twodimsaddle\"} We consider the potential function $$\\begin{aligned} &\\hat{V}(p,q;\\theta_1,\\theta_2,\\theta_3;m_1,m_2,m_3)\\\\\\nonumber &=\\pi\\sqrt{-1}\\left(\\frac{3q}{2}+\\left(\\frac{q}{2}-1\\right)\\theta_1^2-(2m_1+1)\\theta_1-(2m_2+2)\\theta_2+(2p+1)\\theta_3^2-(2p+3+2m_3)\\theta_3\\right)\\\\\\nonumber",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-66-one-dimensional-saddle-point-method",
+      "number": "6.6",
+      "title": "One-dimensional saddle point method",
+      "level": 2,
+      "pageStart": 55,
+      "pageEnd": 61,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1338,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nonumber sin",
+          "heading": false
+        },
+        {
+          "term": "sqrt sin",
+          "heading": false
+        },
+        {
+          "term": "sqrt theta",
+          "heading": false
+        },
+        {
+          "term": "frac sin",
+          "heading": false
+        },
+        {
+          "term": "frac cos",
+          "heading": false
+        },
+        {
+          "term": "hat theta",
+          "heading": false
+        },
+        {
+          "term": "nonumber log",
+          "heading": false
+        },
+        {
+          "term": "theta right",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#appendix-onedim label=\"appendix-onedim\"} Consider the function, $$\\begin{aligned} \\hat{V}(\\theta_1,\\theta_2,\\theta_3;m_1,m_2,m_3)=\\hat{V}(\\theta_1,\\theta_2,\\theta_3)-2\\pi\\sqrt{-1}m_1\\theta_1-2\\pi\\sqrt{-1}m_2\\theta_2-2\\pi\\sqrt{-1}m_3\\theta_3. \\end{aligned}$$ Let $\\theta_1=c_1$, $\\theta_3=c_3$ with $(c_1,c_3)\\in [0,\\frac{1}{4}]\\times [\\frac{1}{2},\\frac{3}{4}]$ then $$\\begin{aligned}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 61,
+      "pageEnd": 62,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 601,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "turaev-viro invariants",
+          "heading": false
+        },
+        {
+          "term": "quantum topol",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "three-manifold invariants",
+          "heading": false
+        },
+        {
+          "term": "chen",
+          "heading": false
+        },
+        {
+          "term": "asymptotic expansion",
+          "heading": false
+        },
+        {
+          "term": "twist knots",
+          "heading": false
+        },
+        {
+          "term": "figure-eight knot",
+          "heading": false
+        }
+      ],
+      "extract": "[1] C. Blanchet, N. Habegger, G. Masbaum and P. Vogel: Three-manifold invariants derived from the Kauffman bracket. Topology 31(4), 685–699 (1992) [2] Q. Chen and J. Murakami, Asymptotics of quantum 6j symbols, J. Differential Geom. 123 (1) 1-20, 1 January 2023. arxiv: 1706.04887. [3] Q. Chen and T. Yang, Volume conjectures for the Reshetikhin-Turaev and the Turaev-Viro invariants, Quantum Topol. 9 (2018), 419–460.",
+      "extractCut": true
+    }
+  ],
+  "checks": {},
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "aligned theta",
+      "heading": false
+    },
+    {
+      "term": "sqrt theta",
+      "heading": false
+    },
+    {
+      "term": "nonumber theta",
+      "heading": false
+    },
+    {
+      "term": "frac theta",
+      "heading": false
+    },
+    {
+      "term": "hat theta",
+      "heading": false
+    },
+    {
+      "term": "theta right",
+      "heading": false
+    },
+    {
+      "term": "theta left",
+      "heading": false
+    },
+    {
+      "term": "theta text",
+      "heading": false
+    },
+    {
+      "term": "theta log",
+      "heading": false
+    },
+    {
+      "term": "theta end",
+      "heading": false
+    },
+    {
+      "term": "aligned begin",
+      "heading": false
+    },
+    {
+      "term": "sqrt sin",
+      "heading": false
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 22,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 19,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p61); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 19 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2410.14661v1"
+  }
+}

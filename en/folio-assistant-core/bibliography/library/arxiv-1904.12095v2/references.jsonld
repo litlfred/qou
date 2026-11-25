@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1904.12095v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Verified computations for closed hyperbolic 3-manifolds",
+      "dcterms:creator": [
+        "Goerner, Matthias"
+      ],
+      "dcterms:issued": "D:20210107",
+      "dcterms:identifier": "https://arxiv.org/abs/1904.12095",
+      "dcterms:abstract": "Extending methods ﬁrst used by Casson, we show how to verify a hyper- bolic structure on a ﬁnite triangulation of a closed 3-manifold using interval arith- metic methods. A key ingredient is a new theoretical result (akin to a theorem by Neumann-Zagier and Moser for ideal triangulations upon which HIKMOT is based) showing that there is a redundancy among the edge equations if the edges avoid “gim- bal lock”. We successfully test the algorithm on known examples such as the ori- entable closed manifolds in the Hodgson-Weeks census and the bundle census by Bell. We also tackle a previously unsolved problem and determine all knots and links with up to 14 crossings that have a hyperbolic branched double cover.",
+      "dcterms:source": "library/arxiv-1904.12095v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1904.12095v2"
+    }
+  ]
+}

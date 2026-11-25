@@ -1,0 +1,78 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-nucl-th-0409040v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-nucl-th-0409040v2/blocks/prop-sec-front-matter-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "prop-sec-front-matter-01.md",
+      "narrative": null,
+      "content": "Our results agree with the (Coulomb corrected) experimental value Bexp α = (29.0±0.1) MeV to within 10%.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-nucl-th-0409040v2/blocks/prop-sec-front-matter-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "prop-sec-front-matter-02.md",
+      "narrative": null,
+      "content": "Our results are in good agreement with the experimental value and agree within the expected error bounds given by an estimate of higher order contributions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-nucl-th-0409040v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:nucl-th/0409040v2  22 Nov 2004\nFZJ-IKP-TH-2005-15, HISKP-TH-04/19, INT-PUB 04-24\nOn the correlation between the binding energies of the triton and\nthe α-particle\nL. Platter∗\nForschungszentrum J¨ulich, Institut f¨ur Kernphysik, D-52425 J¨ulich, Germany and\nHelmholtz-Institut f¨ur Strahlen- und Kernphysik (Theorie),\nUniversit¨at Bonn, Nußallee 14-16, D-53115 Bonn, Germany\nH.-W. Hammer†\nInstitute for Nuclear Theory, University of Washington, Seattle, WA 98195, USA\nUlf-G. Meißner‡\nHelmholtz-Institut f¨ur Strahlen- und Kernphysik (Theorie),\nUniversit¨at Bonn, Nußallee 14-16, D-53115 Bonn, Ger",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0409040v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-000-acknowledgments.md",
+      "narrative": null,
+      "content": "We thank A. Nogga for valuable discussions and comments on the manuscript. L. Plat-\nter thanks the INT in Seattle for its hospitality during completion of this work.\nThis\nresearch was supported in part by the German Academic Exchange Service (DAAD), the\nUS Department of Energy under grant DE-FG02-00ER41132, and the Deutsche Forschungs-\ngemeinschaft through funds provided to the SFB/TR 16.\n[1] V. Eﬁmov, Sov. J. Nucl. Phys. 12, 589 (1971).\n[2] E. Braaten and H.-W. Hammer, arXiv:cond-mat/0410417.\n[3] P.\nF.\nBedaque\nand\nU.\nvan\nKolck,\nAnn.\nRev.\nNucl.\nPart.\nSci.\n52,\n339\n(2002)\n[arXiv:nucl-th/0203055]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

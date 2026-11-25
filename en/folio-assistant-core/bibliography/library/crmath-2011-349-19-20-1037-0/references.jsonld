@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/crmath-2011-349-19-20-1037-0",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières",
+      "dcterms:creator": [
+        "Paris, C. R. Acad. Sci.",
+        "I, Ser."
+      ],
+      "dcterms:issued": "D:20111007",
+      "bibo:doi": "10.1016/j.crma.2011.09.002",
+      "dcterms:identifier": "https://doi.org/10.1016/j.crma.2011.09.002",
+      "dcterms:abstract": "Van der Put and Reversat described the form of a pure q-difference module with non integral slopes. We deduce from this explicit matricial descriptions of the isoformal analytic classes and of the Galois group of pure q-difference modules with non integral slopes. © 2011 Académie des sciences. Publié par Elsevier Masson SAS. Tous droits réservés. Notations Le corps des séries de Laurent convergentes sera noté K = C({z}) = C{z}[z~'] et RK désignera le corps des séries formelles C((z)) = C[[z]][z~!]. Soit q € C* tel que |g| > 1, on définit l’opérateur o, automorphisme de K (ou R) par o(f(z)) = f (qz). Un module aux q-différences sera un couple M = (K\", ®,) ot! ®4 est un automorphisme o-linéaire de K\" défini par @4(X) = A~'a(X), A € GL,(K). Un morphisme de modules aux q-différences de (K\", ®,) dans (K?, g) est une matrice F €Mpn(K) telle que o(F)A = BF.",
+      "dcterms:source": "library/crmath-2011-349-19-20-1037-0/manifest.jsonld",
+      "dcterms:hasVersion": "library/crmath-2011-349-19-20-1037-0"
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "noniterativeroth2",
+  "blocks": [
+    {
+      "id": "library/noniterativeroth2/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "A PROOF OF ROTH’S THEOREM ON ARITHMETIC\nPROGRESSIONS\nERNIE CROOT AND OLOF SISASK\nAbstract. We present a proof of Roth’s theorem that follows a slightly diﬀerent\nstructure to the usual proofs, in that there is not much iteration. Although our proof\nworks using a type of density increment argument (which is typical of most proofs of\nRoth’s theorem), we do not pass to a progression related to the large Fourier coeﬃcients\nof our set (as most other proofs of Roth do). Furthermore, in our proof, the density\nincrement is achieved through an application of a quantitative version of Varnavides’s\ntheore",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/noniterativeroth2/blocks/thm-page-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "thm-page-001-01.md",
+      "narrative": null,
+      "content": "We have that r3(N) = o(N). Roughly, we achieve this by showing that r3(N)/N is asymptotically decreasing. We will do this by starting with a set S ⊆[N], |S| = r3(N), such that S has no three term progressions, and then convolving it with a measure on a carefully chosen three term arithmetic progression {0, x, 2x}. The set T where this convolution is positive will have very few three term arithmetic progressions; and, by making use of a quantitative version of a theorem of Varnavides [7], we will show that r3(M)/M is much larger than r3(N)/N, for M = (log N)1/8−o(1). This will clearly imply tha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/noniterativeroth2/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "2\nERNIE CROOT AND OLOF SISASK\nnumber of Fourier coeﬃcients; and, (2) one has a quantative version of Varnavides’s\ntheorem. This might prove especially useful in certain contexts, because the particular\nsets on which our method achieves a density increment (via Varnavides) are unrelated\nto the particular additive characters where the Fourier transform of S is “large”. 1\n2. Notation\nWe shall require a modicum of notation: given a function f : Fp →[0, 1], we write\nΛ(f) := Ex,d∈Fpf(x)f(x + d)f(x + 2d)\n(where E represents an averaged sum; thus the E above represents p−2 P). Thus Λ\ngives an average",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/noniterativeroth2/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "A PROOF OF ROTH’S THEOREM ON ARITHMETIC PROGRESSIONS\n3\nLet S ⊂[N] be a set free of three term progressions with |S| = r3(N). Thinking of S as\na subset of Fp in the obvious way, we shall write f = 1S : Fp →{0, 1} for the indicator\nfunction of S. Let\nR := {r ∈Fp : | bf(r)| ⩾(2 log log p/ log p)1/2}.\nBy Parseval’s identity, this set of large Fourier coeﬃcients cannot be too big; certainly,\n|R| ⩽log p/2 log log p.\nWe may therefore dilate these points of R to be contained in a short part of Fp. Indeed,\nby Dirichlet’s box principle there is an integer dilate x satisfying\n|x| < p1−1/(|R|+1) ≪p/ log p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/noniterativeroth2/blocks/lem-page-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "lem-page-004-01.md",
+      "narrative": null,
+      "content": "[2] For any 1 ⩽M ⩽N, and for any set T ′ ⊆[N], we have Λ(T ′) ≫|T ′|/N −r3(M)/M M 2 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/noniterativeroth2/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "4\nERNIE CROOT AND OLOF SISASK\n[7], whose proof consists of a simple averaging procedure, will help us make use of this\ninformation.\nLemma 3.1. [2] For any 1 ⩽M ⩽N, and for any set T ′ ⊆[N], we have\nΛ(T ′) ≫|T ′|/N −r3(M)/M\nM 2\n.\nWe will be using\nM = ⌊(log p/ log log p)1/8⌋.\nNow we observe that if\n|T ′| < 4|S|/3,\nand N is suﬃciently large, then we would have that\n|T| < 3|S|/2.\nClearly, then, there exists s ∈S such that the arithmetic progression s, s−x, s−2x ∈S,\nsince otherwise we would have g(n) ⩽2/3 for all n ∈Fp, which would imply that\n|S| =\nX\nn∈Fp\ng(n) ⩽(2/3)|T| < |S|,\na contradiction. But",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/noniterativeroth2/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "A PROOF OF ROTH’S THEOREM ON ARITHMETIC PROGRESSIONS\n5\nReferences\n[1] J. Bourgain, On triples in arithmetic progression, Geom. and Funct. Anal. 9 (1999), 107-156.\n[2] E. Croot, The structure of critical sets for Fp arithmetic progressions, preprint\n[3] D.R. Heath-Brown, Integer sets containing no arithmetic progressions, JLMS 35 (1987), 385-394.\n[4] K.F. Roth, On certain sets of integers, J. London Math. Soc. 28 (1953), 104-109.\n[5] E. Szemer´edi, An old new proof of Roth’s Theorem, to appear in the Montreal Conference Pro-\nceedings on Additive Combinatorics.\n[6] ———, Integer sets containing n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

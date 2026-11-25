@@ -1,0 +1,424 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0904.1556v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-0904.1556v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "[]{#sec:introduction label=\"sec:introduction\"}\n\nThe Standard Model of particle physics is one of the greatest triumphs of physics. This theory is our best attempt to describe all the particles and all the forces of nature\\... *except* gravity. It does a great job of fitting experiments we can do in the lab. But physicists are dissatisfied with it. There are three main reasons. First, it leaves out gravity: that force is described by Einstein's theory of general relativity, which has not yet been reconciled with the Standard Model. Second, astronomical observations suggest that there may be for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0904.1556v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0904.1556v2  [hep-th]  1 May 2010\nThe Algebra of Grand Uniﬁed Theories\nJohn Baez and John Huerta\nDepartment of Mathematics\nUniversity of California\nRiverside, CA 92521 USA\nNovember 26, 2024\nAbstract\nThe Standard Model is the best tested and most widely accepted theory of\nelementary particles we have today. It may seem complicated and arbitrary,\nbut it has hidden patterns that are revealed by the relationship between three\n‘grand uniﬁed theories’: theories that unify forces and particles by extend-\ning the Standard Model symmetry group U(1) × SU(2) × SU(3) to a larger\ngroup. These three a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0904.1556v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Guide to Further Reading",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-11-guide-to-further-reading.md",
+      "narrative": null,
+      "content": "Guide to Further Reading\nWe have tried to limit our prerequisites to the bare minimum. This includes basic\nfacts about Lie groups, Lie algebras, and their representations—especially ﬁnite-\ndimensional unitary representations of compact Lie groups. We will not need the\nstructure theory for simple Lie groups. We do, however, assume a little familiarity\nwith the classical Lie groups GL(n), SL(n), O(n), SO(n), U(n), and SU(n), as well\nas their Lie algebras.\nThere are countless books on Lie groups, Lie algebras and their representations,\nbut the text by Hall [14] has everything we need, and more. S",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0904.1556v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Standard Model",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-2-the-standard-model.md",
+      "narrative": null,
+      "content": "[]{#sec:sm label=\"sec:sm\"}\n\nToday, most educated people know that the world is made of atoms, and that atoms, in turn, are made of electrons, protons, and neutrons. The electrons orbit a dense nucleus made of protons and neutrons, and as the outermost layer of any atom's structure, they are responsible for all chemistry. They are held close to the nucleus by electromagnetic forces: the electrons carry a negative electric charge, and protons carry a positive charge. Opposite charges attract, and this keeps the electrons and the nucleus together.\n\nAt one point in time, electrons, protons, and ne",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0904.1556v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Isospin and SU(2)",
+      "pageStart": 6,
+      "pageEnd": 13,
+      "target": "../sections/sec-003-21-isospin-and-su2.md",
+      "narrative": null,
+      "content": "[]{#sec:isospin label=\"sec:isospin\"}\n\nBecause like charges repel, it is remarkable that the atomic nucleus stays together. After all, the protons are all positively charged and are repelled from each other electrically. To hold these particles so closely together, physicists hypothesized a new force, the **strong force**, strong enough to overcome the electric repulsion of the protons. It must be strongest only at short distances (about $10^{-15}$ m), and then it must fall off rapidly, for protons are repelled electrically unless their separation is that small. Neutrons must also experience it",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0904.1556v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Fundamental Fermions",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-004-22-the-fundamental-fermions.md",
+      "narrative": null,
+      "content": "[]{#sec:fermions label=\"sec:fermions\"}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0904.1556v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quarks",
+      "pageStart": 13,
+      "pageEnd": 17,
+      "target": "../sections/sec-005-221-quarks.md",
+      "narrative": null,
+      "content": "[]{#sec:quarks label=\"sec:quarks\"}\n\nIn the last section, we learned how Heisenberg unified the proton and neutron into the nucleon, and that Yukawa proposed that nucleons interact by exchanging pions. This viewpoint turned out to be at least approximately true, but it was based on the idea that the proton, neutron and pions were all fundamental particles without internal structure, which was not ultimately supported by the evidence.\n\nProtons and neutrons are not fundamental. They are made of particles called **quarks**. There are a number of different types of quarks, called **flavors**. Howev",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0904.1556v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Leptons",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-006-222-leptons.md",
+      "narrative": null,
+      "content": "[]{#sec:leptons label=\"sec:leptons\"}\n\nWith the quarks and electron, we have met all the fundamental fermions required to make atoms, and almost all of the particles we need to discuss the Standard Model. Only one player remains to be introduced: the **neutrino**, $\\nu$. This particle completes the **first generation** of fundamental fermions: 1em\n\n::: center\n  **The First Generation of Fermions --- Charge**                 \n  ------------------------------------------------- ------------- ----------------\n  Name                                                 Symbol          Charge",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0904.1556v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Fundamental Forces",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/sec-007-23-the-fundamental-forces.md",
+      "narrative": null,
+      "content": "[]{#sec:forces label=\"sec:forces\"}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0904.1556v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Isospin and SU(2), Redux",
+      "pageStart": 19,
+      "pageEnd": 22,
+      "target": "../sections/sec-008-231-isospin-and-su2-redux.md",
+      "narrative": null,
+      "content": "[]{#sec:redux label=\"sec:redux\"}\n\nThe tale we told of isospin in Section [\\[sec:isospin\\]](#sec:isospin){reference-type=\"ref\" reference=\"sec:isospin\"} only concerned the strong force, which binds nucleons together into nuclei. We learned about an approximation in which nucleons live in the fundamental rep ${\\mathbb C}^2$ of the isospin symmetry group ${\\rm SU}(2)$, and that they interact by exchanging pions, which live in the complexified adjoint rep of this group, namely $\\mathfrak{sl}(2, {\\mathbb C})$.\n\nBut this tale is mere prelude to the modern story, where *weak* isospin, defined in Secti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0904.1556v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hypercharge and U(1)",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "../sections/sec-009-232-hypercharge-and-u1.md",
+      "narrative": null,
+      "content": "[]{#sec:hypercharge label=\"sec:hypercharge\"}\n\nIn Section [\\[sec:leptons\\]](#sec:leptons){reference-type=\"ref\" reference=\"sec:leptons\"}, we saw how to extend the notion of isospin to weak isospin, which proved to be more fundamental, since we saw in Section [\\[sec:redux\\]](#sec:redux){reference-type=\"ref\" reference=\"sec:redux\"} how this gives rise to interactions among left-handed fermions mediated via $W$ bosons.\n\nWe grouped all the fermions into ${\\rm SU}(2)$ representations. When we did this in Section [\\[sec:isospin\\]](#sec:isospin){reference-type=\"ref\" reference=\"sec:isospin\"}, we saw that",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0904.1556v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Electroweak Symmetry Breaking",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "../sections/sec-010-233-electroweak-symmetry-breaking.md",
+      "narrative": null,
+      "content": "[]{#sec:electroweak label=\"sec:electroweak\"}\n\nIn the Standard Model, electromagnetism and the weak force are unified into the electroweak force. This is is a ${\\rm U}(1) \\times {\\rm SU}(2)$ gauge theory, and without saying so, we just told you all about it in sections [\\[sec:redux\\]](#sec:redux){reference-type=\"ref\" reference=\"sec:redux\"} and [\\[sec:hypercharge\\]](#sec:hypercharge){reference-type=\"ref\" reference=\"sec:hypercharge\"}. The fermions live in representations of hypercharge ${\\rm U}(1)$ and weak isospin ${\\rm SU}(2)$, exactly as we described in those sections, and we tensor these toge",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0904.1556v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Color and SU(3)",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-011-234-color-and-su3.md",
+      "narrative": null,
+      "content": "[]{#sec:color label=\"sec:color\"}\n\nThere is one more fundamental force in the Standard Model: the **strong force**. We have already met this force, as the force that keeps the nucleus together, but we discussed it before we knew that protons and neutrons are made of quarks. Now we need a force to keep quarks together inside the nucleons, and quark confinement tells us it must be a very strong force indeed. It is this force that, in modern parlance, is called the strong force and is considered fundamental. The force between nucleons is a side effect of these more fundamental interactions among q",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0904.1556v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Standard Model Representation",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "../sections/sec-012-24-the-standard-model-representation.md",
+      "narrative": null,
+      "content": "[]{#sec:smrep label=\"sec:smrep\"}\n\nWe are now in a position to put the entire Standard Model together in a single picture, much as we combined the isospin ${\\rm SU}(2)$ and hypercharge ${\\rm U}(1)$ into the electroweak gauge group, ${\\rm U}(1) \\times {\\rm SU}(2)$, in Section [\\[sec:electroweak\\]](#sec:electroweak){reference-type=\"ref\" reference=\"sec:electroweak\"}. We then tensored the hypercharge ${\\rm U}(1)$ representations with the isospin ${\\rm SU}(2)$ representations to get the electroweak representations.\n\nNow let us take this process one step further, by bringing in a factor of ${\\rm SU}(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0904.1556v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generations",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-013-25-generations.md",
+      "narrative": null,
+      "content": "[]{#sec:generations label=\"sec:generations\"}\n\nOur description of the Standard Model is almost at an end. We have told you about its gauge group, ${G_{\\mbox{\\rm SM}}}$, its representation $F \\oplus F^*$ on the first generation of fermions and antifermions, and a bit about how these fermions interact by exchanging gauge bosons, which live in the complexified adjoint rep of ${G_{\\mbox{\\rm SM}}}$. For the grand unified theories we are about to discuss, that is all we need. The stage is set.\n\nYet we would be derelict in our duty if we did not mention the *second* and *third* generation of fermions.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0904.1556v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Grand Unified Theories",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "../sections/sec-014-3-grand-unified-theories.md",
+      "narrative": null,
+      "content": "[]{#sec:guts label=\"sec:guts\"}\n\nNot all of the symmetries of ${G_{\\mbox{\\rm SM}}}$, the gauge group of the Standard Model, are actually seen in ordinary life. This is because some of the symmetries are 'spontaneously broken'. This means that while they are symmetries of the laws of physics, they are not symmetries of the vacuum. To see these symmetries we need to do experiments at very high energies, where the asymmetry of the vacuum has less effect. So, the behavior of particles at lower energies is like a shadow of the fundamental laws of physics, cast down from on high: a cryptic clue we mu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0904.1556v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The SU(5) GUT",
+      "pageStart": 32,
+      "pageEnd": 42,
+      "target": "../sections/sec-015-31-the-su5-gut.md",
+      "narrative": null,
+      "content": "[]{#sec:su(5) label=\"sec:su(5)\"}\n\nThe ${\\rm SU}(5)$ grand unified theory appeared in a 1974 paper by Howard Georgi and Sheldon Glashow [@{GeorgiGlashow:su(5)}]. It was the first grand unified theory, and is still considered the prototypical example. As such, there are many accounts of it in the physics literature. The textbooks by Ross [@ross:gut] and Mohapatra [@mohapatra:us] both devote an entire chapter to the ${\\rm SU}(5)$ theory, and a lucid summary can be found in a review article by Witten [@witten:grandunification], which also discusses the supersymmetric generalization of this theory.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0904.1556v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Spin(10) Theory",
+      "pageStart": 42,
+      "pageEnd": 48,
+      "target": "../sections/sec-016-32-the-spin10-theory.md",
+      "narrative": null,
+      "content": "[]{#sec:so(10) label=\"sec:so(10)\"}\n\nWe now turn our attention to another grand unified theory. Physicists call it the '${\\rm SO}(10)$ theory', but we shall call it the ${\\rm Spin}(10)$ theory, because the Lie group involved is really ${\\rm Spin}(10)$, the double cover of ${\\rm SO}(10)$. This theory appeared in a 1974 paper by Georgi [@{georgi:so(10)}], shortly after his paper with Glashow on the ${\\rm SU}(5)$ theory. However, Georgi has said that he conceived of the ${\\rm Spin}(10)$ theory first. See Zee [@zee:nutshell], Chapter VII.7, for a concise and readable account.\n\nThe ${\\rm SU}(5)$ GUT",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0904.1556v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Pati–Salam Model",
+      "pageStart": 48,
+      "pageEnd": 55,
+      "target": "../sections/sec-017-33-the-patisalam-model.md",
+      "narrative": null,
+      "content": "[]{#sec:g(2,2,4) label=\"sec:g(2,2,4)\"}\n\nNext we turn to a unified theory that is not so 'grand': its gauge group is not a simple Lie group, as it was for the ${\\rm SU}(5)$ and ${\\rm Spin}(10)$ theories. This theory is called the Pati--Salam model, after its inventors [@PatiSalam:model]; it has gauge group ${\\rm SU}(2) \\times {\\rm SU}(2) \\times {\\rm SU}(4)$, which is merely semisimple.\n\nWe might imagine the ${\\rm SU}(5)$ theory as an answer to this question:\n\n> Why are the hypercharges in the Standard Model what they are?\n\nThe answer it provides is something like this:\n\n> Because ${\\rm SU}(5)$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0904.1556v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Route to Spin(10) via Pati–Salam",
+      "pageStart": 55,
+      "pageEnd": 62,
+      "target": "../sections/sec-018-34-the-route-to-spin10-via-patisalam.md",
+      "narrative": null,
+      "content": "[]{#sec:route label=\"sec:route\"}\n\nIn the last section, we showed how the Pati--Salam model answers two questions about the Standard Model:\n\n> Why are quarks and leptons so similar? Why are left and right so different?\n\nWe were able to describe leptons as a fourth color of quark, 'white', and treat right-handed and left-handed particles on a more equal footing. Neither of these ideas worked on its own, but together, they made a full-fledged extension of the Standard Model, much like ${\\rm SU}(5)$ and ${\\rm Spin}(10)$, but based on seemingly different principles.\n\nYet thinking of leptons as 'whi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0904.1556v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Question of Compatibility",
+      "pageStart": 62,
+      "pageEnd": 65,
+      "target": "../sections/sec-019-35-the-question-of-compatibility.md",
+      "narrative": null,
+      "content": "[]{#sec:compatibility label=\"sec:compatibility\"}\n\nWe now have two routes to the ${\\rm Spin}(10)$ theory. In Section [\\[sec:so(10)\\]](#sec:so(10)){reference-type=\"ref\" reference=\"sec:so(10)\"} we saw how to reach it via the ${\\rm SU}(5)$ theory:\n\n$$\\xymatrix{\n{G_{\\mbox{\\rm SM}}}\\ar[r]^-\\phi \\ar[d] & {\\rm SU}(5) \\ar[r]^-\\psi \\ar[d] & {\\rm Spin}(10) \\ar[d] \\\\  \n{\\rm U}(F \\oplus F^*) \\ar[r]^-{{\\rm U}(f)} & {\\rm U}(\\Lambda{\\mathbb C}^5) \\ar[r]^-1 & {\\rm U}(\\Lambda{\\mathbb C}^5) \\\\\n}$$ $$\\xymatrix{ & \\ar@{~>}[r]_{\\txt{More Unification}} & }$$\n\nOur work in that section and in Section [\\[sec:su(5)\\]](#",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0904.1556v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion",
+      "pageStart": 65,
+      "pageEnd": 73,
+      "target": "../sections/sec-020-4-conclusion.md",
+      "narrative": null,
+      "content": "[]{#sec:conclusion label=\"sec:conclusion\"}\n\nWe have studied three different grand unified theories: the ${\\rm SU}(5)$, ${\\rm Spin}(4) \\times {\\rm Spin}(6)$ and ${\\rm Spin}(10)$ theories. The ${\\rm SU}(5)$ and ${\\rm Spin}(4) \\times {\\rm Spin}(6)$ theories were based on different visions about how to extend the Standard Model. However, we saw that both of these theories can be extended to the ${\\rm Spin}(10)$ theory, which therefore unites these visions.\n\nThe ${\\rm SU}(5)$ theory is all about treating isospin and color on an equal footing: it combines the two isospins of ${\\mathbb C}^2$ with the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

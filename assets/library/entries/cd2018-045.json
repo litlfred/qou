@@ -1,0 +1,672 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "cd2018-045",
+  "blocks": [
+    {
+      "id": "library/cd2018-045/blocks/prop-page-001-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "prop-page-001-01.md",
+      "narrative": null,
+      "content": "PoS(CD2018)045 On the Cottingham formula and the electromagnetic contribution to the proton-neutron mass splitting André Walker-Loud∗† Nuclear Science Division, Lawrence Berkeley National Laboratory, Berkeley, CA 94720, USA E-mail: walkloud@lbl.gov The excess mass of the neutron over the proton arises from two sources within the Standard Model, electromagnetism and the splitting of the down and up quark masses.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cd2018-045/blocks/prop-page-001-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "prop-page-001-02.md",
+      "narrative": null,
+      "content": "The Cottingham Formula provides a means of determining the QED corrections from the forward Compton Am- plitude, but this is challenged by the need for a subtraction function and the mixing of the QED and QCD (electro-weak) effects.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cd2018-045/blocks/prop-page-001-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "prop-page-001-03.md",
+      "narrative": null,
+      "content": "I review the present understanding of the Cottingham Formula, including a discussion on the development of the formula, its renormalization which induces the mixing of QED and QCD effects, and the necessary modeling of the subtraction function that must be done to arrive a numerical prediction.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cd2018-045/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "PoS(CD2018)045\nOn the Cottingham formula and the electromagnetic\ncontribution to the proton-neutron mass splitting\nAndré Walker-Loud∗†\nNuclear Science Division, Lawrence Berkeley National Laboratory, Berkeley, CA 94720, USA\nE-mail: walkloud@lbl.gov\nThe excess mass of the neutron over the proton arises from two sources within the Standard\nModel, electromagnetism and the splitting of the down and up quark masses. The Cottingham\nFormula provides a means of determining the QED corrections from the forward Compton Am-\nplitude, but this is challenged by the need for a subtraction function and the mi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cd2018-045/blocks/prop-page-002-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "prop-page-002-01.md",
+      "narrative": null,
+      "content": "The Cottingham Formula The Cottingham Formula [1] provides the following, model independent, leading order QED mass shift for the isovector nucleon mass, under one assumption:1 δMγ = αfs 2πM Z Λ2 0 dQ2 ( 1 2(1+τel) \u0014 (G2 E −2τelG2 M) \u0012 1 √τel (1+τel)3/2 −τel \u0013 +3τelG2 M \u0015 + Z ∞ νth dν \u0014 F1 3Q ν2 \u0012 τ3/2 −τ √ 1+τ + √τ 2 \u0013 +F2 M Qν \u0012 (1+τ)3/2 −τ3/2 −3 2 √τ \u0013\u0015 −3 8T inel 1 (0,Q2) ) ± 3α fs 8πM ln \u0012Λ2 UV Λ2 \u0013 e2 umu −e2 dmd δ ⟨p|δ( ¯uu−¯dd)|p⟩.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cd2018-045/blocks/prop-page-002-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "prop-page-002-02.md",
+      "narrative": null,
+      "content": "Given the non-perturbative nature of QCD, the only contribution from the counterterm we can determine exactly, without resorting to non-perturbative methods such as lattice QCD (LQCD), is the exact cancellation of the UV divergence appearing from the integral and the isovector quark mass operator.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cd2018-045/blocks/prop-page-002-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "prop-page-002-03.md",
+      "narrative": null,
+      "content": "One begins by convolving a photon propa- gator with the forward Compton Amplitude (and regulating the integral and adding a counterterm) δMγ = i 2M αfs (2π)3 Z R d4qTµν(p·q,q2)gµν q2 +iε +c.t.(R), (1.2) 1As we will explain in some detail, the one requisite assumption is that, in the ﬁxed Q2 dispersive representation of the scalar functions arising in the Compton Amplitude, the T2(ν,Q2) function does not require a subtracted dispersion integral while the T1(ν,Q2) function only requires a single subtraction.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cd2018-045/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "PoS(CD2018)045\nCottingham and Mp −Mn\nAndré Walker-Loud\n1. The Cottingham Formula\nThe Cottingham Formula [1] provides the following, model independent, leading order QED\nmass shift for the isovector nucleon mass, under one assumption:1\nδMγ = αfs\n2πM\nZ Λ2\n0 dQ2\n(\n1\n2(1+τel)\n\u0014\n(G2\nE −2τelG2\nM)\n\u0012\n1\n√τel\n(1+τel)3/2 −τel\n\u0013\n+3τelG2\nM\n\u0015\n+\nZ ∞\nνth\ndν\n\u0014\nF1\n3Q\nν2\n\u0012\nτ3/2 −τ\n√\n1+τ +\n√τ\n2\n\u0013\n+F2\nM\nQν\n\u0012\n(1+τ)3/2 −τ3/2 −3\n2\n√τ\n\u0013\u0015\n−3\n8T inel\n1\n(0,Q2)\n)\n± 3α fs\n8πM ln\n\u0012Λ2\nUV\nΛ2\n\u0013 e2\numu −e2\ndmd\nδ\n⟨p|δ( ¯uu−¯dd)|p⟩.\n(1.1)\nIn this expression, αfs = e2\n4π , M is the nucleon mass, τel =\nQ2\n4M2 , τ = ν2\nQ2 , νth = mπ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cd2018-045/blocks/prop-page-003-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "prop-page-003-01.md",
+      "narrative": null,
+      "content": "Shortly after this work, Harari used “the most successful and least controversial prediction of Regge pole theory” to con- clusively demonstrate that a subtracted dispersion integral was necessary as even in the isovector combination, one of the stucture functions scales as |t∆I=1 1 (ν,Q2)|ν→∞∝ν0.4 at ﬁxed Q2 [14].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cd2018-045/blocks/prop-page-003-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "prop-page-003-02.md",
+      "narrative": null,
+      "content": "However, the present theoretical uncer- tainty arising from the Cottingham Formula is not competitive with that from LQCD calculations 2",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cd2018-045/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "PoS(CD2018)045\nCottingham and Mp −Mn\nAndré Walker-Loud\nwhere we have left the regulator/renormalization-scheme (R) implicit. The Compton Amplitude\nTµν = i\n2 ∑\ns\nZ\nd4xeiq·x⟨p,s|T{Jµ(x)Jν(0)}|p,s⟩,\n(1.3)\nis given by the time-ordered product of two electromagnetic currents between on-shell proton states\nand summed over the spin orientations. The Cottingham Formula, Eq. (1.1) is obtained from\nEq. (1.2) after straightforward manipulations of the integrand followed by a dispersive parame-\nterization of the structure functions arising in the Compton Amplitude, Eq. (1.3),\nδMγ = αfs\n8π2\nZ Λ2\n0 dQ2\nZ Q",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cd2018-045/blocks/prop-page-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "prop-page-004-01.md",
+      "narrative": null,
+      "content": "PoS(CD2018)045 Cottingham and Mp −Mn André Walker-Loud which either compute only the strong md −mu correction, and then determine the QED correction by subtracting this from the experimental value [28, 29, 30, 31, 32, 33, 34], or from calculations which incorporate QED in the LQCD calculations [35, 36, 37, 38].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cd2018-045/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "PoS(CD2018)045\nCottingham and Mp −Mn\nAndré Walker-Loud\nwhich either compute only the strong md −mu correction, and then determine the QED correction\nby subtracting this from the experimental value [28, 29, 30, 31, 32, 33, 34], or from calculations\nwhich incorporate QED in the LQCD calculations [35, 36, 37, 38].\n2. Dispersive Representation of the Compton Amplitude\nThere are two common parameterizations of the Compton Amplitude of the nucleon\nTµν = d(1)\nµν q2 t1(ν,q2)−d(2)\nµν q2 t2(ν,q2) = −D(1)\nµν T1(ν,q2)+D(2)\nµν T2(ν,q2),\n(2.1)\nwhere\nd(1)\nµν = D(1)\nµν = gµν −qµqν\nq2\n,\nd(2)\nµν =\n1\nM2\n\u0012\npµ pν",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cd2018-045/blocks/prop-page-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "prop-page-005-01.md",
+      "narrative": null,
+      "content": "PoS(CD2018)045 Cottingham and Mp −Mn André Walker-Loud 2.1 Subtraction function and renormalization Collins ﬁrst worked out the renormalization of the Cottingham formula [2], which we sum- marize here.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cd2018-045/blocks/prop-page-005-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "prop-page-005-02.md",
+      "narrative": null,
+      "content": "It is instructive to recall that the divergence that appears in the Cottingham Formula and the renormalization must behave just like the QED self-energy correction to the the electron mass, as ultimately, at asymptotically high Q2, the divergence will arise from the QED self-energy shift of the individual quarks.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cd2018-045/blocks/prop-page-005-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "prop-page-005-03.md",
+      "narrative": null,
+      "content": "If the regularization scheme used respects chiral symmetry, then the counterterm must be proportional to a quark mass operator.3 If we focus on the DIS contribution to the Cottingham Formula, we have δMDIS ≃3αfs 16πM Z ΛUV ΛDIS dQ2 Q2 \u001a −Q2T1(0,Q2)+M2 Z 1 0dx[2xF1(x)+F2(x)] \u001b +c.t.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cd2018-045/blocks/prop-page-005-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "prop-page-005-04.md",
+      "narrative": null,
+      "content": "(2.10) To arrive at this expression, we used the approximate isospin symmetry of QCD to relate matrix elements such as ⟨n| ¯uu|n⟩≃⟨p| ¯dd|p⟩, see for example [41, 42] It is interesting to note, the renormalization of the Cottingham Formula causes a mixing of QED and QCD (md −mu) effects, such that a rigorous separation of the contribution to Mp −Mn 3If the self-energy of an individual nucleon is considered, there are additional counterterms that can arise, but in the isovector case, the only operator with the required ﬂavor structure is the isovector quark mass operator.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cd2018-045/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "PoS(CD2018)045\nCottingham and Mp −Mn\nAndré Walker-Loud\n2.1 Subtraction function and renormalization\nCollins ﬁrst worked out the renormalization of the Cottingham formula [2], which we sum-\nmarize here. It is instructive to recall that the divergence that appears in the Cottingham Formula\nand the renormalization must behave just like the QED self-energy correction to the the electron\nmass, as ultimately, at asymptotically high Q2, the divergence will arise from the QED self-energy\nshift of the individual quarks. If the regularization scheme used respects chiral symmetry, then the\ncounterterm mu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cd2018-045/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "PoS(CD2018)045\nCottingham and Mp −Mn\nAndré Walker-Loud\nfrom QED and QCD is not possible in a scheme independent manner. However, as Colins noted,\nthe size of the isovector quark mass splitting is comparable to the quark masses themselves, at least\nwhen compared to the typical QCD scale, and so, practically speaking, this mixing of QED and\nQCD is numerically in size the same as second order isospin breaking corrections. Therefore, if we\nare content with understanding such isospin breaking effects to leading order, we can meaningfully\nspeak of separating the QCD and QED corrections. A recent pro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cd2018-045/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "PoS(CD2018)045\nCottingham and Mp −Mn\nAndré Walker-Loud\nhigh Q2 regions, we can make a reasonable estimate for the upper bound on the size of the error we\nare making with this model. In the high Q2 regime, perturbative QCD requires [2]\nT1(0,Q2) ∝Q−2 ,\nfor Q2 ≫Λ2\nQCD.\n(2.13)\nIn the low Q2 regime, effective ﬁeld theory constrains the behavior [44, 45, 46, 47, 48, 49, 50]\nT1(0,Q2) = 2κ(2+κ)−Q2\n\u001a2\n3\n\u0002\n(1+κ)2r2\nM −r2\nE\n\u0003\n+ κ\nM2 −2M βM\nαfs\n\u001b\n+Q4 2\n3\ng2\nAκs\n(4πFπmπ)2 +O(Q6).\n(2.14)\nκ, rE,M and βM are the anomalous magnetic moment, electric and magnetic charge radii and the\nmagnetic polarizability resp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cd2018-045/blocks/prop-page-008-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "prop-page-008-01.md",
+      "narrative": null,
+      "content": "Conclusions We have reviewed the development of the Cottingham Formula [1], discussed its renormal- ization [2] and the need for introducing a model of the subtraction function so that a numerical prediction can be made.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cd2018-045/blocks/prop-page-008-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "prop-page-008-02.md",
+      "narrative": null,
+      "content": "This will provide a rigorous test of low-energy QCD predictions that can be confronted with results from lattice QCD.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cd2018-045/blocks/prop-page-008-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "prop-page-008-03.md",
+      "narrative": null,
+      "content": "Collins, Renormalization of the Cottingham Formula, Nucl.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cd2018-045/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "PoS(CD2018)045\nCottingham and Mp −Mn\nAndré Walker-Loud\ninto the hadronic regime. They therefore suggested an improved interpolation model that more\nsmoothly connects the hadronic and large Q2 regimes, thus improving the determination:\nδMγ\np−n[18] = 1.30(03)(47) MeV,\nδMγ\np−n[23] = 1.04(35) MeV.\n(2.17)\nThe uncertainty is still dominated by lack of precise knowledge of the isovector magnetic polariz-\nability, β p−n\nM\n.\n3. Conclusions\nWe have reviewed the development of the Cottingham Formula [1], discussed its renormal-\nization [2] and the need for introducing a model of the subtraction function",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cd2018-045/blocks/prop-page-009-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "prop-page-009-01.md",
+      "narrative": null,
+      "content": "Miller, Cottingham formula for the electromagnetic self-energy contribution to Mp −Mn, PoS LATTICE2012 (2012) 136 [1210.7777]. [20] A.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cd2018-045/blocks/prop-page-009-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "prop-page-009-02.md",
+      "narrative": null,
+      "content": "Walker-Loud, Baryons in/and Lattice QCD, PoS CD12 (2013) 017 [1304.6341]. [21] A.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cd2018-045/blocks/prop-page-009-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "prop-page-009-03.md",
+      "narrative": null,
+      "content": "Rusetsky, Cottingham formula and nucleon polarisabilities, Eur.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cd2018-045/blocks/prop-page-009-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "prop-page-009-04.md",
+      "narrative": null,
+      "content": "Walker-Loud, Towards a direct lattice calculation of md −mu, PoS LATTICE2010 (2010) 243 [1011.4015]. [28] S.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cd2018-045/blocks/prop-page-009-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "prop-page-009-05.md",
+      "narrative": null,
+      "content": "Savage, Strong-isospin violation in the neutron-proton mass difference from fully-dynamical lattice QCD and PQQCD, Nucl.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cd2018-045/blocks/prop-page-009-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "prop-page-009-06.md",
+      "narrative": null,
+      "content": "Walker-Loud, Strong isospin breaking with twisted mass lattice QCD, 0904.2404. [30] G.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cd2018-045/blocks/prop-page-009-07",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "prop-page-009-07.md",
+      "narrative": null,
+      "content": "M. de Divitiis et al., Isospin breaking effects due to the up-down mass difference in Lattice QCD, JHEP 04 (2012) 124 [1110.6294]. [31] QCDSF, UKQCD collaboration, Isospin breaking in octet baryon mass splittings, Phys.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cd2018-045/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "PoS(CD2018)045\nCottingham and Mp −Mn\nAndré Walker-Loud\n[11] C. de Vries, R. Hofstadter and R. Herman, Neutron form factors and nucleon structure, Phys. Rev.\nLett. 8 (1962) 381.\n[12] R. Hofstadter and R. Herman, Electric and Magnetic Structure of the Proton and Neutron, Phys. Rev.\nLett. 6 (1961) 293.\n[13] S. Bergia, A. Stanghellini, S. Fubini and C. Villi, Electromagnetic Form Factors of the Nucleon and\nPion-Pion Interaction, Phys. Rev. Lett. 6 (1961) 367.\n[14] H. Harari, Superconvergent Dispersion Relations and Electromagnetic Mass Differences, Phys. Rev.\nLett. 17 (1966) 1303.\n[15] S. R. Colem",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cd2018-045/blocks/prop-page-010-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "prop-page-010-01.md",
+      "narrative": null,
+      "content": "Walker-Loud, Quantifying the sensitivity of Big Bang Nucleosynthesis to isospin breaking with input from lattice QCD, 1706.04991. [35] T.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cd2018-045/blocks/prop-page-010-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "prop-page-010-02.md",
+      "narrative": null,
+      "content": "Uno et al., Electromagnetic mass splittings of the low lying hadrons and quark masses from 2+1 ﬂavor lattice QCD+QED, Phys.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cd2018-045/blocks/prop-page-010-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "prop-page-010-03.md",
+      "narrative": null,
+      "content": "D82 (2010) 094508 [1006.1311]. [36] BUDAPEST-MARSEILLE-WUPPERTAL collaboration, Isospin splittings in the light baryon octet from lattice QCD and QED, Phys.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cd2018-045/blocks/prop-page-010-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "prop-page-010-04.md",
+      "narrative": null,
+      "content": "Borsanyi et al., Ab initio calculation of the neutron-proton mass difference, Science 347 (2015) 1452 [1406.4088]. [38] R.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cd2018-045/blocks/prop-page-010-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "prop-page-010-05.md",
+      "narrative": null,
+      "content": "Horsley et al., Isospin splittings of meson and baryon masses from three-ﬂavor lattice QCD + QED, J.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cd2018-045/blocks/prose-page-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 10",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/page-010.md",
+      "narrative": null,
+      "content": "PoS(CD2018)045\nCottingham and Mp −Mn\nAndré Walker-Loud\n[32] RM123 collaboration, Leading isospin breaking effects on the lattice, Phys. Rev. D87 (2013) 114505\n[1303.4896].\n[33] D. A. Brantley, B. Joo, E. V. Mastropas, E. Mereghetti, H. Monge-Camacho, B. C. Tiburzi et al.,\nStrong isospin violation and chiral logarithms in the baryon spectrum, 1612.07733.\n[34] M. Heffernan, P. Banerjee and A. Walker-Loud, Quantifying the sensitivity of Big Bang\nNucleosynthesis to isospin breaking with input from lattice QCD, 1706.04991.\n[35] T. Blum, R. Zhou, T. Doi, M. Hayakawa, T. Izubuchi, S. Uno et al., Elec",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

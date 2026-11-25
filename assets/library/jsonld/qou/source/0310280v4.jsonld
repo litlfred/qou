@@ -1,0 +1,53 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0310280v4/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Stabilization in the braid groups II: Transversal simplicity of knots",
+  "contains": [
+    "library/0310280v4/sections/sec-front-matter",
+    "library/0310280v4/sections/sec-000",
+    "library/0310280v4/sections/sec-001",
+    "library/0310280v4/sections/sec-002",
+    "library/0310280v4/sections/sec-003",
+    "library/0310280v4/sections/sec-004",
+    "library/0310280v4/sections/sec-005",
+    "library/0310280v4/sections/sec-006",
+    "library/0310280v4/sections/sec-007",
+    "library/0310280v4/sections/sec-008"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Stabilization in the braid groups II: Transversal simplicity of knots — 10 sections: Front matter; Introduction and description of re; The MTWS and transversal isotopies\n\n**Stabilization in the braid groups II: Transversal simplicity of knots**\n\n*JOAN S BIRMAN*\n\n28 pp, 10 sections.\n\n**Outline.** Front matter; 1 Introduction and description of results; 2 The MTWS and transversal isotopies; 2.1 Block-strand diagrams, templates and the M; 2.2 The construction of transversal clasp annu; 2.3 Braid foliations on transversal clasp annu; 2.4 A weak transversal MTWS; 3 Transversal simplicity and its failure; 3.1 The failure of transversal simplicity for ; 3.2 Future work and some open problems",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "0310280v4",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0310280v4.pdf",
+    "source_sha256": "1e146ee4ebc157f2b803d0fef8081f145c3a467c899ab705d32e88eebd8f9e38",
+    "pages": 28,
+    "arxiv": null,
+    "doi": "10.2140/gt.2006.10.1425",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

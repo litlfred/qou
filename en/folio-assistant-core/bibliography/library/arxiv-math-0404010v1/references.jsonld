@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-0404010v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "YANG–BAXTER OPERATORS ARISING FROM ALGEBRA STRUCTURES AND THE ALEXANDER POLYNOMIAL OF KNOTS",
+      "dcterms:creator": [
+        "MASSUYEAU, GWÉNAËL",
+        "NICHITA, FLORIN F."
+      ],
+      "dcterms:issued": "D:20190429",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0404010",
+      "dcterms:abstract": "In this paper, we consider the problem of constructing knot invariants from Yang–Baxter operators associated to algebra structures. We ﬁrst compute the enhancements of these operators. Then, we conclude that Turaev’s procedure to derive knot invariants from these enhanced operators, as modiﬁed by Murakami, invariably produces the Alexander polynomial of knots.",
+      "dcterms:source": "library/arxiv-math-0404010v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-0404010v1"
+    }
+  ]
+}

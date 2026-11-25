@@ -1,0 +1,18 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/sec-topological-mass-galois-baryons-preamble",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:topological-mass-galois-baryons-preamble",
+  "kind": "prose",
+  "text": "topological-mass-galois-baryons-intro.md",
+  "provenance": "authored"
+}

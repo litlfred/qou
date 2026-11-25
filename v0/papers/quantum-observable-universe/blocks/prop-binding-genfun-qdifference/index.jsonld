@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-binding-genfun-qdifference",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:binding-genfun-qdifference",
+  "kind": "proposition",
+  "title": "The binding generating function's q-difference equation gives a depth-d recurrence",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-sw-period-residue-sum"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-binding-genfun-qdifference"
+  ],
+  "leanRef": "qou:QOU.Mass.binding_qdifference_recurrence",
+  "text": "binding-genfun-qdifference.md",
+  "leanSource": "binding-genfun-qdifference.lean",
+  "provenance": "authored"
+}

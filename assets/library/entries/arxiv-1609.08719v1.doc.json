@@ -1,0 +1,1448 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1609.08719v1",
+  "title": "arxiv-1609.08719v1",
+  "variant": "pdf",
+  "pages": 17,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Neumann's conjecture",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-11-neumanns-conjecture"
+    },
+    {
+      "level": 2,
+      "title": "Neumann's weaker conjecture",
+      "number": "1.2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "A stronger, false conjecture",
+      "number": "1.3",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-13-a-stronger-false-conjecture"
+    },
+    {
+      "level": 2,
+      "title": "Exotic volumes",
+      "number": "1.4",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-14-exotic-volumes"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "Background",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-2-background"
+    },
+    {
+      "level": 2,
+      "title": "Cross-ratios",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-21-cross-ratios"
+    },
+    {
+      "level": 2,
+      "title": "The invariant trace field",
+      "number": "2.2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-22-the-invariant-trace-field"
+    },
+    {
+      "level": 2,
+      "title": "The Bloch group",
+      "number": "2.3",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-23-the-bloch-group"
+    },
+    {
+      "level": 2,
+      "title": "Gluing Equations",
+      "number": "2.4",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-24-gluing-equations"
+    },
+    {
+      "level": 2,
+      "title": "Ptolemy coordinates",
+      "number": "2.5",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-25-ptolemy-coordinates"
+    },
+    {
+      "level": 2,
+      "title": "Lattice matching",
+      "number": "2.6",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-26-lattice-matching"
+    },
+    {
+      "level": 1,
+      "title": "Experimentation",
+      "number": "3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-3-experimentation"
+    },
+    {
+      "level": 2,
+      "title": "Manifold generation",
+      "number": "3.1",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-31-manifold-generation"
+    },
+    {
+      "level": 2,
+      "title": "Lattice matching",
+      "number": "3.2",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-32-lattice-matching"
+    },
+    {
+      "level": 2,
+      "title": "Linear combinations for exotic volumes",
+      "number": "3.3",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-33-linear-combinations-for-exotic-volumes"
+    },
+    {
+      "level": 1,
+      "title": "A counter-example to conjecture 1.3",
+      "number": "4",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-4-a-counter-example-to-conjecture-13"
+    },
+    {
+      "level": 1,
+      "title": "Evidence for conjecture 1.2",
+      "number": "5",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-5-evidence-for-conjecture-12"
+    },
+    {
+      "level": 2,
+      "title": "Examples of missing fields",
+      "number": "5.1",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-51-examples-of-missing-fields"
+    },
+    {
+      "level": 2,
+      "title": "Data analysis",
+      "number": "5.2",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-52-data-analysis"
+    },
+    {
+      "level": 1,
+      "title": "Selected examples",
+      "number": "6",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-6-selected-examples"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 94,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bloch group",
+          "heading": false
+        },
+        {
+          "term": "census",
+          "heading": false
+        },
+        {
+          "term": "huston",
+          "heading": false
+        }
+      ],
+      "extract": "AN EXPERIMENTAL INVESTIGATION OF NEUMANN’S CONJECTURE STEPHEN GILLES AND PETER HUSTON Abstract. We use a large census of hyperbolic 3-manifolds to experimentally investigate a conjecture of Neumann regarding the Bloch Group. We present an augmented census including, for feasible invariant trace ﬁelds, explicit man- ifolds (associated to that ﬁeld) that appear to generate the Bloch group of that ﬁeld. We also make",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1609.08719v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-11-neumanns-conjecture",
+      "number": "1.1",
+      "title": "Neumann's conjecture",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 148,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exotic volumes",
+          "heading": false
+        },
+        {
+          "term": "conjecture",
+          "heading": true
+        },
+        {
+          "term": "lattice matching",
+          "heading": false
+        },
+        {
+          "term": "neumann",
+          "heading": true
+        }
+      ],
+      "extract": "Contents 1. Introduction 2 1.1. Neumann’s conjecture 2 1.2. Neumann’s weaker conjecture 2 1.3. A stronger, false conjecture 2 1.4. Exotic volumes 2 Acknowledgments 3 2. Background 3 2.1. Cross-ratios 3 2.2. The invariant trace ﬁeld 3 2.3. The Bloch group 4 2.4. Gluing Equations 4 2.5. Ptolemy coordinates 7 2.6. Lattice matching 8 3. Experimentation 10 3.1. Manifold generation 10 3.2. Lattice matching 11 3.3. Linear",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 251,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "census",
+          "heading": false
+        },
+        {
+          "term": "invariant trace",
+          "heading": false
+        },
+        {
+          "term": "main-result",
+          "heading": false
+        }
+      ],
+      "extract": "Our primary result, described in section~\\ref{sec:main-result}, is a large census of hyperbolic 3-manifolds, organized by invariant trace field, together with tables expressing volumes as linear combinations of other manifolds' volumes. This census is available at \\url{http://www.curve.unhyperbolic.org/linComb}. Examining this census has allowed us, in many cases, to explicitly list manifolds which give rise to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-13-a-stronger-false-conjecture",
+      "number": "1.3",
+      "title": "A stronger, false conjecture",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 92,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ref conj",
+          "heading": false
+        },
+        {
+          "term": "conjecture",
+          "heading": true
+        },
+        {
+          "term": "neumann-main",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifold",
+          "heading": false
+        }
+      ],
+      "extract": "We also considered whether conjecture~\\ref{conj:neumann-main} could be strengthened somewhat to the following form, which directly regards volumes of manifolds rather than Bloch group elements. \\begin{conjecture} \\label{conj:false-strengthening} Let $F \\subset \\mathbb{C}$ be a number field not contained in $\\mathbb{R}$. Let $S = \\set{ \\vol(M) \\given M \\text{ a hyperbolic $3$-manifold with invariant trace field }",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-14-exotic-volumes",
+      "number": "1.4",
+      "title": "Exotic volumes",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 175,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rho text",
+          "heading": false
+        },
+        {
+          "term": "representation rho",
+          "heading": false
+        },
+        {
+          "term": "text geo",
+          "heading": false
+        },
+        {
+          "term": "exotic",
+          "heading": true
+        },
+        {
+          "term": "chernsimons",
+          "heading": false
+        },
+        {
+          "term": "definedterm",
+          "heading": false
+        }
+      ],
+      "extract": "Recall that for a closed hyperbolic 3-manifold and a representation $\\rho : \\pi_1(M) \\to \\SL(n, \\mathbb{C})$, Cheeger-Chern-Simons invariant $\\cheegerchernsimons(\\rho)$ is given by \\begin{equation} \\label{eq:cheeger-chern-simons} \\cheegerchernsimons(\\rho) = \\frac{1}{2} \\int_{M} s^{\\ast} \\left( \\tr \\left( A \\wedge \\dx{A} + \\frac{2}{3} A \\wedge A \\wedge A \\right) \\right) \\in \\mathbb{C} / 4\\pi^2\\mathbb{Z},",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 25,
+      "summary": null,
+      "keywords": [],
+      "extract": "The authors would like to thank Christian Zickert for guidance and advice, and the 2014 MAPS-REU program at the University of Maryland, led by Kasso Okoudjou, as part of which this work was undertaken.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-2-background",
+      "number": "2",
+      "title": "Background",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-21-cross-ratios",
+      "number": "2.1",
+      "title": "Cross-ratios",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 211,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cross-ratios",
+          "heading": true
+        },
+        {
+          "term": "hyperbolic manifolds",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "delta",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        },
+        {
+          "term": "volumes",
+          "heading": false
+        },
+        {
+          "term": "equation label",
+          "heading": false
+        }
+      ],
+      "extract": "It is a feature of hyperbolic geometry that the volume of a complete 3-manifold (if finite) is actually a topological invariant (see e.g.\\ \\parencite[83]{benedetti1992lectures} for a proof). For an ideal hyperbolic 3-simplex $\\Delta = (a,b,c,d)$ defined by four points in $\\partial \\mathbb{H}^3 \\cong \\mathbb{C} \\cup \\set{\\infty}$, $\\vol(\\Delta)$ can be determined knowing just the cross-ratio $\\crossratio{a}{b}{c}{d}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-22-the-invariant-trace-field",
+      "number": "2.2",
+      "title": "The invariant trace field",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 141,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "trace field",
+          "heading": true
+        },
+        {
+          "term": "subgroup gamma",
+          "heading": false
+        },
+        {
+          "term": "definedterm",
+          "heading": false
+        },
+        {
+          "term": "psl",
+          "heading": false
+        },
+        {
+          "term": "smooths",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{definition} For a hyperbolic manifold $M = \\mathbb{H}^3 / \\Gamma$ defined by a discrete subgroup $\\Gamma$ of $\\PSL(2, \\mathbb{C})$, the \\definedterm{trace field} of $\\Gamma$, denoted $\\tracefield{\\Gamma}$, is \\[ \\mathbb{Q}( \\set{ \\tr \\gamma : \\pi(\\gamma) \\in \\Gamma } ) \\] where $\\pi: \\SL(2, \\mathbb{C}) \\to \\PSL(2, \\mathbb{C})$ is the standard projection map. \\end{definition} Since for any matrices $a, b \\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-23-the-bloch-group",
+      "number": "2.3",
+      "title": "The Bloch group",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 214,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "scope draw",
+          "heading": false
+        },
+        {
+          "term": "style shift",
+          "heading": false
+        },
+        {
+          "term": "filldraw",
+          "heading": false
+        },
+        {
+          "term": "begin scope",
+          "heading": false
+        },
+        {
+          "term": "end scope",
+          "heading": false
+        },
+        {
+          "term": "opacity",
+          "heading": false
+        },
+        {
+          "term": "every coordinate",
+          "heading": false
+        },
+        {
+          "term": "node",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:bloch-group} \\begin{definition} For any field $F$, the \\definedterm{Pre-Bloch group on $F$}, denoted $\\prebloch{F}$, is defined as \\[ \\prebloch{F} = \\frac{\\langle \\set{z \\in F \\given z \\ne 0_F, 1_F} \\rangle}{[z_1] - [z_2] + \\left[\\frac{z_2}{z_1}\\right] - \\left[\\frac{1 - z_2}{1 - z_1}\\right] + \\left[ \\frac{1 - z_2^{-1}}{1 - z_1^{-1}}\\right]}. \\] \\end{definition} The relation in the denominator is known",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-24-gluing-equations",
+      "number": "2.4",
+      "title": "Gluing Equations",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": "4",
+      "labelEnd": "7",
+      "words": 927,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "definedterm edge",
+          "heading": false
+        },
+        {
+          "term": "definedterm cusp",
+          "heading": false
+        },
+        {
+          "term": "gluing equations",
+          "heading": true
+        },
+        {
+          "term": "draw",
+          "heading": false
+        },
+        {
+          "term": "tikzpicture caption",
+          "heading": false
+        },
+        {
+          "term": "begin minipage",
+          "heading": false
+        },
+        {
+          "term": "end minipage",
+          "heading": false
+        },
+        {
+          "term": "dashed",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:gluing-equations} Given a hyperbolic 3-manifold $M$ with cusps, the standard procedure for determining $\\vol(M)$ is to first triangulate $M$ into a collection of simplices $\\set{\\Delta_i}$ (together with face pairings), next to compute the cross ratio $z_i$ of each $\\Delta_i$, and finally to compute $\\vol(M)$ by equation~\\ref{eq:sum-of-simplex-vols}. The first step is well-understood: the manifolds",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-25-ptolemy-coordinates",
+      "number": "2.5",
+      "title": "Ptolemy coordinates",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 281,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ptolemy",
+          "heading": true
+        },
+        {
+          "term": "definedterm ptolemy",
+          "heading": false
+        },
+        {
+          "term": "parencite garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "ptolemy assignment",
+          "heading": false
+        },
+        {
+          "term": "ptolemy relations",
+          "heading": false
+        },
+        {
+          "term": "fixed triangulation",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        }
+      ],
+      "extract": "The Ptolemy coordinates of Garoufalidis-Thurston-Zickert offer an alternative representation of the information encoded in the gluing and cusp equations. For our purposes, their principal use is encoding information about arbitrary representations $\\rho : \\pi_1(M) \\to \\PSL(n, \\mathbb{C})$. We refer the reader to \\parencite{garoufalidis2015}, \\parencite{1401.5542}, and present a brief overview here, specialized for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-26-lattice-matching",
+      "number": "2.6",
+      "title": "Lattice matching",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 1034,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bmatrix frac",
+          "heading": false
+        },
+        {
+          "term": "gcd gets",
+          "heading": false
+        },
+        {
+          "term": "det gets",
+          "heading": false
+        },
+        {
+          "term": "begin bmatrix",
+          "heading": false
+        },
+        {
+          "term": "end bmatrix",
+          "heading": false
+        },
+        {
+          "term": "fit ratio",
+          "heading": false
+        },
+        {
+          "term": "gets rational",
+          "heading": false
+        },
+        {
+          "term": "state gcd",
+          "heading": false
+        }
+      ],
+      "extract": "Given a large collection of (numerically approximated) hyperbolic 3-manifold volumes (with the same invariant trace field), we desired to construct the coarsest lattice containing the point given by each volume. We desired to reconstruct the linear combination whose sum was the volume of the manifold - we refer to the volume as the projection of the lattice point to $\\mathbb{R}$. Searching for representative",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-3-experimentation",
+      "number": "3",
+      "title": "Experimentation",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 51,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "parencite",
+          "heading": false
+        },
+        {
+          "term": "snap",
+          "heading": false
+        },
+        {
+          "term": "prog",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:main-result} Our main results are the following data. For our work, we used the volumes for a large number of hyperbolic 3-manifolds, which we obtained by performing Dehn surgery on manifolds from a base census. We used \\prog{SnapPy} \\parencite{snappy}, although for invariant trace field calculations we used the older \\prog{Snap} \\parencite{snap} interface.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-013-31-manifold-generation",
+      "number": "3.1",
+      "title": "Manifold generation",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 203,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "codebit linkexteriors",
+          "heading": false
+        },
+        {
+          "term": "prog snappy",
+          "heading": false
+        },
+        {
+          "term": "url",
+          "heading": false
+        },
+        {
+          "term": "trace fields",
+          "heading": false
+        },
+        {
+          "term": "invariant trace",
+          "heading": false
+        },
+        {
+          "term": "lattice generators",
+          "heading": false
+        },
+        {
+          "term": "enough data",
+          "heading": false
+        },
+        {
+          "term": "hline",
+          "heading": false
+        }
+      ],
+      "extract": "The code we used to collect manifold information can be found at \\url{https://github.com/s-gilles/maps-reu-code}. We considered all orientable, cusped, hyperbolic manifolds which can be triangulated using 9 tetrahedra or less (the \\codebit{OrientableCuspedCensus} within \\prog{SnapPy} at the time of work), as well as all link complements using 3 crossings or more (a subset of \\codebit{LinkExteriors}). We also",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-32-lattice-matching",
+      "number": "3.2",
+      "title": "Lattice matching",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 82,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lattice",
+          "heading": true
+        },
+        {
+          "term": "trace ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "lattice generators",
+          "heading": false
+        }
+      ],
+      "extract": "data to conjecture partial lattice generators for 5,900 invariant trace ﬁelds. Of those, for 312 invariant trace ﬁelds we have enough data to conjecture not only generating volumes for the full lattice, but also representative manifolds associated to the in- variant trace ﬁeld which exhibit those volumes. This data can be found at http:// www.curve.unhyperbolic.org/linComb/finalized_data/volume_spans.csv, and the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-33-linear-combinations-for-exotic-volumes",
+      "number": "3.3",
+      "title": "Linear combinations for exotic volumes",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 104,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exotic volumes",
+          "heading": true
+        },
+        {
+          "term": "linear combinations",
+          "heading": true
+        },
+        {
+          "term": "bloch group",
+          "heading": false
+        }
+      ],
+      "extract": "coordinates for computing volumes of hyperbolic 3-manifolds, the computations may be generalized to compute the volume of any representation ρ : Γ →PSL(n, C). The extended Bloch group is exactly the Bloch group up to torsion, so another method for experimentally testing conjecture 1.1 is to produce linear combinations of hyperbolic volumes matching exotic volumes, where these exotic volumes arise from generalized",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-4-a-counter-example-to-conjecture-13",
+      "number": "4",
+      "title": "A counter-example to conjecture 1.3",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 219,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "counter-example",
+          "heading": true
+        },
+        {
+          "term": "conjecture",
+          "heading": true
+        },
+        {
+          "term": "hyperbolic volume",
+          "heading": false
+        },
+        {
+          "term": "trace ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "obstruc",
+          "heading": false
+        }
+      ],
+      "extract": "A secondary result of our work is a counter-example to conjecture 1.3. Assum- ing the conjecture holds, two of the manfold volumes catologued would imply the existence of a manifold with an impossibly small volume. Theorem 4.1 ([GMM09, Corollary 1.3]). The Weeks manifold is the unique closed orientable hyperbolic 3-manifold of smallest volume: 0.9427 . . . . 12 GILLES AND HUSTON Counter-example 4.2. Conjecture 1.3",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-5-evidence-for-conjecture-12",
+      "number": "5",
+      "title": "Evidence for conjecture 1.2",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 40,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "opportunity",
+          "heading": false
+        },
+        {
+          "term": "examining",
+          "heading": false
+        },
+        {
+          "term": "neu",
+          "heading": false
+        }
+      ],
+      "extract": "Our data provides an opportunity for examining the strength of conjecture 1.2. It is known that every ﬁeld with one complex place arises as the invariant trace ﬁeld of a hyperbolic manifold [MR03], but an open question in general [Neu11].",
+      "extractCut": false
+    },
+    {
+      "id": "sec-018-51-examples-of-missing-fields",
+      "number": "5.1",
+      "title": "Examples of missing fields",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 180,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dotsc",
+          "heading": false
+        },
+        {
+          "term": "fields",
+          "heading": true
+        },
+        {
+          "term": "concrete number",
+          "heading": false
+        },
+        {
+          "term": "neumann-main",
+          "heading": false
+        },
+        {
+          "term": "item some",
+          "heading": false
+        }
+      ],
+      "extract": "Our data is necessarily incomplete. Some interesting absences: \\begin{enumerate} \\item Some fields associated to ``simple'' polynomials such as $x^4 - 2x^2 + 4$, $x^4 + 9$, and $x^7 - 3$ do not arise. This also includes some degree $2$ polynomials such as $x^2 + 13$, $x^2 + 22$, and $x^2 - x + 17$, even though it is known that all fields with one complex place must be exhibited by some manifold. \\item Some number",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-52-data-analysis",
+      "number": "5.2",
+      "title": "Data analysis",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 715,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hline multicolumn",
+          "heading": false
+        },
+        {
+          "term": "multicolumn restrictions",
+          "heading": false
+        },
+        {
+          "term": "lll hline",
+          "heading": false
+        },
+        {
+          "term": "field percentages",
+          "heading": false
+        },
+        {
+          "term": "observed percentage",
+          "heading": false
+        },
+        {
+          "term": "total hline",
+          "heading": false
+        },
+        {
+          "term": "hline end",
+          "heading": false
+        },
+        {
+          "term": "tabular caption",
+          "heading": false
+        }
+      ],
+      "extract": "By comparing the fields we observed (under some reasonable restrictions) to a proven-complete census under the same restrictions, we obtain an estimate of the probability that an arbitrary field (within these restrictions) appears in our census. If conjecture~\\ref{conj:neumann-weaker} holds, then our census samples from all possible fields. If our sample was uniformly random, we would then expect that our census",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-6-selected-examples",
+      "number": "6",
+      "title": "Selected examples",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 17,
+      "labelStart": "14",
+      "labelEnd": "17",
+      "words": 750,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dotsc exotic",
+          "heading": false
+        },
+        {
+          "term": "exotic cdot",
+          "heading": false
+        },
+        {
+          "term": "dotsc geometric",
+          "heading": false
+        },
+        {
+          "term": "cdot vol",
+          "heading": false
+        },
+        {
+          "term": "exotic volumes",
+          "heading": false
+        },
+        {
+          "term": "meta index",
+          "heading": false
+        },
+        {
+          "term": "anchor angle",
+          "heading": false
+        },
+        {
+          "term": "meta explicit",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:lattice-examples} We present a selection of lattices, together with the manifolds which may be generators. These are constructed from the \\codebit{volume\\_spans.csv} and \\codebit{linear\\_combinations} files of our results. Each of the following lattices are two-dimensional: each is associated to a polynomial with two complex places. Our results contain data for three and even four complex places, but",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 307,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pari group",
+          "heading": false
+        },
+        {
+          "term": "isbn",
+          "heading": false
+        },
+        {
+          "term": "url",
+          "heading": false
+        },
+        {
+          "term": "issn",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic geometry",
+          "heading": false
+        },
+        {
+          "term": "e-mail address",
+          "heading": false
+        },
+        {
+          "term": "arxiv",
+          "heading": false
+        }
+      ],
+      "extract": "17 References [Ben92] R. Benedetti. Lectures on Hyperbolic Geometry. Berlin, Heidelberg: Springer Berlin Heidelberg, 1992. isbn: 978-3-642-58158-8. [CDW] Marc Culler, Nathan Dunﬁeld, and Jeﬀrey Weeks. SnapPy. url: http: //www.math.uic.edu/t3m/SnapPy/. [Dup01] Johan Dupont. Scissors congruences, group homology and characteristic classes. Singapore River Edge, NJ: World Scientiﬁc, 2001. isbn: 978- 9810245085. [GGZ15]",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "A stronger, false conjecture"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [
+      "figure 5",
+      "figure 6",
+      "figure 8"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "exotic volumes",
+      "heading": true
+    },
+    {
+      "term": "hyperbolic manifolds",
+      "heading": false
+    },
+    {
+      "term": "geometric volumes",
+      "heading": false
+    },
+    {
+      "term": "parencite snappy",
+      "heading": false
+    },
+    {
+      "term": "generating volumes",
+      "heading": false
+    },
+    {
+      "term": "definedterm ptolemy",
+      "heading": false
+    },
+    {
+      "term": "dotsc exotic",
+      "heading": false
+    },
+    {
+      "term": "invariant trace",
+      "heading": true
+    },
+    {
+      "term": "trace field",
+      "heading": true
+    },
+    {
+      "term": "parencite garoufalidis",
+      "heading": false
+    },
+    {
+      "term": "begin conjecture",
+      "heading": false
+    },
+    {
+      "term": "definedterm edge",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "contents",
+      "confidence": 0.6
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The Pachner 2-3 move",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Piecing together a torus from a triangulation",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Identifying torus traversal with multiplication in C",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Piecing together a polygon from a triangulation",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "The torus boundary of m032",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Observed concrete ﬁeld percentages by restriction",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Observed abstract ﬁeld percentages by restriction",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "p(x) = x4−3x2+4, root −1.322 . . .+0.5i, prospective basis: vol(v1859(−1, 3)), vol(t07828) with ﬁt ratio 1",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "p(x) = x4 + x2 −2x + 1, root −0.624 . . . + 1.300 . . . i, prospective basis: vol(v3318), vol(L14n54610) with ﬁt ratio 2",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 23,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 23,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "9 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p17); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 5
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 23 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1609.08719v1"
+  }
+}

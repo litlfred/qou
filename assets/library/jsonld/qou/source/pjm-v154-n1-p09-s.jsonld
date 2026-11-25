@@ -1,0 +1,67 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/pjm-v154-n1-p09-s/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "The period matrix of Bring's curve",
+  "contains": [
+    "library/pjm-v154-n1-p09-s/sections/page-001",
+    "library/pjm-v154-n1-p09-s/sections/page-002",
+    "library/pjm-v154-n1-p09-s/sections/page-003",
+    "library/pjm-v154-n1-p09-s/sections/page-004",
+    "library/pjm-v154-n1-p09-s/sections/page-005",
+    "library/pjm-v154-n1-p09-s/sections/page-006",
+    "library/pjm-v154-n1-p09-s/sections/page-007",
+    "library/pjm-v154-n1-p09-s/sections/page-008",
+    "library/pjm-v154-n1-p09-s/sections/page-009",
+    "library/pjm-v154-n1-p09-s/sections/page-010",
+    "library/pjm-v154-n1-p09-s/sections/page-011",
+    "library/pjm-v154-n1-p09-s/sections/page-012",
+    "library/pjm-v154-n1-p09-s/sections/page-013",
+    "library/pjm-v154-n1-p09-s/sections/page-014",
+    "library/pjm-v154-n1-p09-s/sections/page-015",
+    "library/pjm-v154-n1-p09-s/sections/page-016",
+    "library/pjm-v154-n1-p09-s/sections/page-017",
+    "library/pjm-v154-n1-p09-s/sections/page-018",
+    "library/pjm-v154-n1-p09-s/sections/page-019",
+    "library/pjm-v154-n1-p09-s/sections/page-020",
+    "library/pjm-v154-n1-p09-s/sections/page-021",
+    "library/pjm-v154-n1-p09-s/sections/page-022",
+    "library/pjm-v154-n1-p09-s/sections/page-023",
+    "library/pjm-v154-n1-p09-s/sections/page-024",
+    "library/pjm-v154-n1-p09-s/sections/page-025"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "The period matrix of Bring's curve — 25 sections: Page 1; Page 2; Page 3\n\n**The period matrix of Bring's curve**\n\n*GONZALO RIERA AND RUBI RODRIGUEZ*\n\n25 pp, 25 sections.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12; Page 13; Page 14; Page 15; Page 16; Page 17; Page 18",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "pjm-v154-n1-p09-s",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "pjm-v154-n1-p09-s.pdf",
+    "source_sha256": "cbf5c02babe5a61ed34fdd5b67f8af30c4c8b8fcdb8d4a64c33c94fc02860538",
+    "pages": 25,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

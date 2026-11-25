@@ -1,0 +1,913 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0903.1376v1",
+  "title": "Particle Topology, Braids and Braided Belts",
+  "variant": "pdf",
+  "pages": 21,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The Artin Braid Group",
+      "number": null,
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-the-artin-braid-group"
+    },
+    {
+      "level": 1,
+      "title": "Braided Belts",
+      "number": null,
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-braided-belts"
+    },
+    {
+      "level": 2,
+      "title": "Framed braid multiplication",
+      "number": null,
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-framed-braid-multiplication"
+    },
+    {
+      "level": 2,
+      "title": "Making 3-belts",
+      "number": null,
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-making-3-belts"
+    },
+    {
+      "level": 1,
+      "title": "Algebra",
+      "number": null,
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-algebra"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions",
+      "number": null,
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-conclusions"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 220,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "caroline street",
+          "heading": false
+        },
+        {
+          "term": "street north",
+          "heading": false
+        },
+        {
+          "term": "physics caroline",
+          "heading": false
+        },
+        {
+          "term": "perimeter institute",
+          "heading": false
+        },
+        {
+          "term": "waterloo",
+          "heading": false
+        },
+        {
+          "term": "ontario",
+          "heading": false
+        },
+        {
+          "term": "canada",
+          "heading": false
+        }
+      ],
+      "extract": "Particle Topology, Braids and Braided Belts Sundance Bilson-Thompson Perimeter Institute for Theoretical Physics 31 Caroline Street North Waterloo, Ontario N2L 2Y5,Canada Jonathan Hackett, Perimeter Institute for Theoretical Physics 31 Caroline Street North Waterloo, Ontario N2L2Y5,Canada and Department of Physics Unversity of Waterloo Waterloo, Ontario N2J 2W9,Canada Louis H. Kauﬀman Department of Mathematics,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0903.1376v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 408,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braided belts",
+          "heading": false
+        },
+        {
+          "term": "framed braids",
+          "heading": false
+        },
+        {
+          "term": "artin braid",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": false
+        },
+        {
+          "term": "quantum gravity",
+          "heading": false
+        },
+        {
+          "term": "strands",
+          "heading": false
+        },
+        {
+          "term": "simpliﬁed form",
+          "heading": false
+        },
+        {
+          "term": "classiﬁed",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction It has long been hoped that the fundamental particles, of which all matter in the Universe is composed, would turn out to be topological structures of some type. This prospect is appealing because if correct it would indicate that the permanence of matter and its properties (obeying principles like the conservation of electric charge) could be explained in terms of diﬀerent topological classes, which",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-the-artin-braid-group",
+      "number": null,
+      "title": "The Artin Braid Group",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 589,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "artin braid",
+          "heading": true
+        },
+        {
+          "term": "braid group",
+          "heading": true
+        },
+        {
+          "term": "braid generators",
+          "heading": false
+        },
+        {
+          "term": "braid word",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst braid",
+          "heading": false
+        },
+        {
+          "term": "generator induces",
+          "heading": false
+        },
+        {
+          "term": "z-coordinate",
+          "heading": false
+        },
+        {
+          "term": "elementary braids",
+          "heading": false
+        }
+      ],
+      "extract": "The Artin Braid Group Let Bn denote the Artin braid group on n strands [4]. We recall here that Bn is generated by elementary braids {σ1, . . . , σn−1} with relations 1. σiσj = σjσi for |i −j| > 1, 2. σiσi+1σi = σi+1σiσi+1 for i = 1, · · · , n −2. 2 Figure 1: Braid Generators and Relations See Fig. 1 for an illustration of the elementary braids and their relations. Note that the braid group has a diagrammatic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-braided-belts",
+      "number": null,
+      "title": "Braided Belts",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 806,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braided belts",
+          "heading": true
+        },
+        {
+          "term": "trinion ﬂip",
+          "heading": false
+        },
+        {
+          "term": "ribbon strands",
+          "heading": false
+        },
+        {
+          "term": "appropriate trinion",
+          "heading": false
+        },
+        {
+          "term": "upper ribbons",
+          "heading": false
+        },
+        {
+          "term": "framed braid",
+          "heading": false
+        },
+        {
+          "term": "lower ribbon",
+          "heading": false
+        },
+        {
+          "term": "braid word",
+          "heading": false
+        }
+      ],
+      "extract": "Braided Belts We now turn to studying surfaces that we shall call “braided belts”. As Figs 3-6 indicate, the braiding we are considering is a braiding of ribbon strands. This requires a natural generalization of the braid group to the framed braid group where each strand of the braid has been replaced by a ribbon, which can carry twist. We count the twist on each strand or ribbon in terms of the number of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-framed-braid-multiplication",
+      "number": null,
+      "title": "Framed braid multiplication",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 721,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pure twist-word",
+          "heading": false
+        },
+        {
+          "term": "braid",
+          "heading": true
+        },
+        {
+          "term": "braid word",
+          "heading": false
+        },
+        {
+          "term": "framed braids",
+          "heading": false
+        },
+        {
+          "term": "braided belts",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst braid",
+          "heading": false
+        },
+        {
+          "term": "σ1σ",
+          "heading": false
+        },
+        {
+          "term": "twists",
+          "heading": false
+        }
+      ],
+      "extract": "Framed braid multiplication As mentioned above, a braid with several crossings is speciﬁed by its braid word, which corresponds with several generators multiplied together. Unframed braids are multiplied together by joining the tops of the strands of the second braid to the bottoms of the strands of the ﬁrst braid. Framed braids are multiplied in an analogous way, however there are extra complications introduced by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-making-3-belts",
+      "number": null,
+      "title": "Making 3-belts",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1675,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pure twist-word",
+          "heading": false
+        },
+        {
+          "term": "braided belt",
+          "heading": false
+        },
+        {
+          "term": "braid word",
+          "heading": false
+        },
+        {
+          "term": "trivial belt",
+          "heading": false
+        },
+        {
+          "term": "left-handed positron",
+          "heading": false
+        },
+        {
+          "term": "twist word",
+          "heading": false
+        },
+        {
+          "term": "negatively-charged fermions",
+          "heading": false
+        },
+        {
+          "term": "symbol stack",
+          "heading": false
+        }
+      ],
+      "extract": "Making 3-belts Consider a braided belt (or framed braid) on three strands. In the particular (trivial) case where the strands do not cross each other, the associated braid word is clearly the identity, I. In the case where the strands are untwisted, the associated twist-word is also the identity. Such an untwisted trivial braid - the identity braid on three strands - can be made by cutting two parallel slits in a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-algebra",
+      "number": null,
+      "title": "Algebra",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1013,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "σ1σ2σ σ2σ1σ",
+          "heading": false
+        },
+        {
+          "term": "twist word",
+          "heading": false
+        },
+        {
+          "term": "braid word",
+          "heading": false
+        },
+        {
+          "term": "framed permutations",
+          "heading": false
+        },
+        {
+          "term": "pure twist",
+          "heading": false
+        },
+        {
+          "term": "pure twist-word",
+          "heading": false
+        },
+        {
+          "term": "permutations induced",
+          "heading": false
+        },
+        {
+          "term": "permutation matrix",
+          "heading": false
+        }
+      ],
+      "extract": "Algebra In this section we give a representation of the three-strand braid group in terms of permutation matrices. A permutation matrix P is a matrix whose columns are a permutation of the columns of the identity matrix. Such a matrix acts as a permutation on the standard basis (column vectors that have a single unit entry). We shall sometimes refer to P as a permutation, rather than a permutation matrix, for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-conclusions",
+      "number": null,
+      "title": "Conclusions",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 639,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braided belts",
+          "heading": false
+        },
+        {
+          "term": "pure twist",
+          "heading": false
+        },
+        {
+          "term": "sundance",
+          "heading": false
+        },
+        {
+          "term": "network",
+          "heading": false
+        },
+        {
+          "term": "bilson-thompson",
+          "heading": false
+        },
+        {
+          "term": "future work",
+          "heading": false
+        },
+        {
+          "term": "braids",
+          "heading": false
+        },
+        {
+          "term": "node",
+          "heading": false
+        }
+      ],
+      "extract": "Conclusions We have demonstrated several equivalent approaches to manipulating framed braids on three strands, carried on a surface with boundary (i.e. “braided belts”), which yield an invariant form having no crossings. The twists on each strand in this form deﬁne a triplet of numbers. Any braided belts having the same triplet of associated numbers (the pure twist word) are isotopically equiv- alent. We have",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "braided belt",
+      "heading": true
+    },
+    {
+      "term": "framed braid",
+      "heading": true
+    },
+    {
+      "term": "braid word",
+      "heading": false
+    },
+    {
+      "term": "pure twist-word",
+      "heading": true
+    },
+    {
+      "term": "ribbon strands",
+      "heading": false
+    },
+    {
+      "term": "ﬁrst braid",
+      "heading": false
+    },
+    {
+      "term": "braid generators",
+      "heading": true
+    },
+    {
+      "term": "artin braid",
+      "heading": true
+    },
+    {
+      "term": "braid group",
+      "heading": true
+    },
+    {
+      "term": "twist word",
+      "heading": false
+    },
+    {
+      "term": "associated twist-word",
+      "heading": false
+    },
+    {
+      "term": "braid structure",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Braid Generators and Relations",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The product of two braids, A1 and A2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Turning over a node induces crossings and twists in the “legs” of that node (left). A trinion ﬂip may be used to eliminate crossing while creating twists (right)",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Trinion bent to form a generator of the braid group",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "A Trip performed on a closed 3-Belt",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Braiding a Belt",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "A braided belt can be embedded within a larger network, represented by the box",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Finding the pure twist-word for a braid [ 1",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "The Positron, in fully-braided form (left), resolved in stages to its pure twist form (right)",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "By assuming that the outer edge of the braided belt is closed (when we trace it through the rest of the network), we can equate a link (right) to the pure twist form (left) of any braid, in this case the left-handed positron as illustrated in Fig 9",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Left-handed negatively-charged fermions, as per the structure proposed by Bilson-Thompson, and their associated pure twist form",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "Right-handed negatively-charged fermions, as per the structure proposed by Bilson-Thompson, and their associated pure twist form",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "Left-handed positively-charged fermions, as per the structure proposed by Bilson-Thompson, and their associated pure twist form",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "Right-handed positively-charged fermions, as per the structure proposed by Bilson-Thompson, and their associated pure twist form",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "Uniquely forming the product of two braids (left) by joining them box-to-box, to yield a link (right)",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "16",
+      "title": "If the edge running through the external network (represented by the box) carries no twists, other than those on the braided belt strands themselves, the strands may be cyclically permuted by passing one strand under (or around) the others (top row, left to right). Fig. 7 gives an explicit example o",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p19); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0903.1376v1"
+  }
+}

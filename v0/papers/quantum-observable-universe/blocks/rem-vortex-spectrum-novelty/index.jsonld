@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-vortex-spectrum-novelty",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:vortex-spectrum-novelty",
+  "kind": "remark",
+  "title": "Categorical reframing of the vortex spectrum",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-discrete-vortex-spectrum"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-discrete-vortex-spectrum",
+  "text": "discrete-vortex-spectrum-novelty.md",
+  "provenance": "authored"
+}

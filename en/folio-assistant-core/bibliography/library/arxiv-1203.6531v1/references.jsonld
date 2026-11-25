@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1203.6531v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Groebner-Shirshov basis and reduced words for affine Weyl group A_n",
+      "dcterms:creator": [
+        "BASIS, GRÖBNER-SHIRSHOV",
+        "FOR, REDUCED WORDS"
+      ],
+      "dcterms:issued": "D:20210726",
+      "dcterms:identifier": "https://arxiv.org/abs/1203.6531",
+      "dcterms:abstract": "Using Buchberger-Shirshov Algorithm and Composition-Diamond lemma we obtain the reduced Gr¨obner-Shirshov bases of f An and classify all reduced words of the aﬃne Weyl group f An.",
+      "dcterms:source": "library/arxiv-1203.6531v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1203.6531v1"
+    }
+  ]
+}

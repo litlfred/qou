@@ -1,0 +1,1865 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "deligne-mostow-1986",
+  "blocks": [
+    {
+      "id": "library/deligne-mostow-1986/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "PUBLICATIONS MATHÉMATIQUES DE L’I.H.É.S.\nPIERRE DELIGNE\nG. D. MOSTOW\nMonodromy of hypergeometric functions and non-\nlattice integral monodromy\nPublications mathématiques de l’I.H.É.S., tome 63 (1986), p. 5-89\n<http://www.numdam.org/item?id=PMIHES_1986__63__5_0>\n© Publications mathématiques de l’I.H.É.S., 1986, tous droits réservés.\nL’accès aux archives de la revue « Publications mathématiques de l’I.H.É.S. » (http://\nwww.ihes.fr/IHES/Publications/Publications.html) implique l’accord avec les conditions géné-\nrales d’utilisation (http://www.numdam.org/conditions). Toute utilisation commerciale",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "AND NON-LATTICE INTEGRAL MONODROMY",
+      "pageStart": 2,
+      "pageEnd": 7,
+      "target": "../sections/sec-000-and-non-lattice-integral-monodromy.md",
+      "narrative": null,
+      "content": "by P. DELIGNE and G. D. MOSTOW (*)\ni. Introduction\nThe hypergeometric series\n(x) \n^c^^^^^^ \nM<r\nn==o \n{c, n) \nn\\\nn-l\nwhere (a, n) = JI (a + t), defined for ^ not an integer <_ o, was first introduced by\nEuler in 1778 as a solution of the hypergeometric differential equation\n(2) \nx{i - x)y + (c — {a + b + i) x) y — aby = o.\nF(fl, b; c; x) represents the unique solution of (2) which is holomorphic at x = o and\ntakes the value i at x = o. If neither b nor c — b is an integer <_ o, Euler knew\nthe integral representation\n(3) \n^w^——&)F(a,&;.;.)=fl^(I-^-^(I-^-^\nL\\c) \n•/O\nReplacing z by u~1, (3) also",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "12.11",
+      "pageStart": 2,
+      "pageEnd": 7,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "combined with (12.9) says in effect: For each non-arithmetic lattice arising in Theorem (11.4), there is an algebraic family defined over Q^ of algebraic curves X whose monodromy group is a subgroup ofAut H^XQ, Z) which is not of finite covolume in its Zariski-closure. The example 15 of § (14.3) corresponds for instance to the family of curves, depending on the parameters x, y^ with equation v12 == u\\u - i)5 (u - x)5 (u -yY (a cyclic covering of order 12 of P1). The integrality condition that (i — ^ — (A,)\"1 be an integer ensures that the key map of this paper is etale in codimension one. A mo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cohomology of a rank one local system on a punctured projective line",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-001-2-cohomology-of-a-rank-one-local-system-on-a-pun.md",
+      "narrative": null,
+      "content": "(2.1) Let us start with the following data:\nP : a complex projective line;\nN : an integer > o;\nS : a set of N points of P;\na == (ajggg : a family of complex numbers indexed by S, satisfying the condition\nria, = i.\nWe will be mainly interested in the case when N >_ 3 and none of the (Xg is i.\nIf a base point o e P — S is given, the functor \" fibre at o\" is an equivalence\nof the category of complex local systems (== flat vector bundles) on P — S with that\nof complex vector spaces provided with an action of 7ri(P—S, o). In particular,\nrank one local systems correspond to homomorphisms Hi(P — S) =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/cor-sec-002-06",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "a. 12",
+      "pageStart": 9,
+      "pageEnd": 15,
+      "target": "cor-sec-002-06.md",
+      "narrative": null,
+      "content": "— If S^ = 2, ^r^ i^ M^ to a constant/actor one and only one non zero form co e r^P.j^Q^L)) wA<w valuation at s e S ^ ^ — (JL,. 0^ Aaj ^(<*>) == — ^s and (o i^ invertible on P — S. For P = P1, oo ^ S, and e a multivalued horizontal section of L, one has (up to a factor) G) = II (^ — s^^.e.dz. If oo e S, one has o = {z — s^^.e.dz, se s sgs— oo",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/ex-sec-002-10",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "2.17",
+      "pageStart": 9,
+      "pageEnd": 15,
+      "target": "ex-sec-002-10.md",
+      "narrative": null,
+      "content": "— We take P = PI, S ={o, i, 00} and we assume that none of the ^ is an integer, and that S^ = 2. For X, == i - ^, this means S\\ = i. We normalize L by fixing a section e of it on ]o, i[, and we let e^ be the dual base ofl^ on ]o, i[. Take co =. z^~\\i — z^-^edz, the <( principal \" determination of ^°-1 and of (1-^)^-1 on ]o, i[ is used (cf. (2.8)). By (2.5.1), the homology H^(P — S, 1^) is one-dimensional, generated by the current ^.]o, i[. The content of (2.13) here is that (2.17.1) P/J^-^i - ^-l^+o. The generalization (2.15) of (2.13) can be used to extend this to the case when \\ and ^, if in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/lem-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "2.5.2",
+      "pageStart": 9,
+      "pageEnd": 15,
+      "target": "lem-sec-002-03.md",
+      "narrative": null,
+      "content": "— Ifli is a non trivial rank one local system on S1, then H'^S1, L) = o. The H° is o by non triviality, and /(S1, L) = ^(S1) == o.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "2.3.1",
+      "pageStart": 9,
+      "pageEnd": 15,
+      "target": "prop-sec-002-01.md",
+      "narrative": null,
+      "content": "— If a, + i for at least one s e S, then H^P - S, L) and H^(P — S, L) vanish for i =t= i, W dim H^P - S, L) == dim H^(P - S, L) = N - 2. Currents (2.4). — Instead of using the G00 de Rham complex, consisting of forms written in local coordinates as S f^dx^ A ... ^ dx^.e, with <? an horizontal section of L and ^ a C°°-function, one can as well use the complex of currents, where /i is allowed to be a generalized function (distribution). This complex can be used to express Poincard duality as a cap-product isomorphism between homology and cohomo- logy: for G a L^-valued chain, there is a unique c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "2.5.1",
+      "pageStart": 9,
+      "pageEnd": 15,
+      "target": "prop-sec-002-02.md",
+      "narrative": null,
+      "content": "— If II a, + i, the elements ^(a).(B | a, for a an edge of T, sG Si or Ta, form a basis of H^P — S, V).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-002-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "2.6.1",
+      "pageStart": 9,
+      "pageEnd": 15,
+      "target": "prop-sec-002-04.md",
+      "narrative": null,
+      "content": "— If all OL, are different from i, then H;(P-S,L)^H*(P-S,L).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-002-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "2.11.1",
+      "pageStart": 9,
+      "pageEnd": 15,
+      "target": "prop-sec-002-05.md",
+      "narrative": null,
+      "content": "— The line bundle (P{^,s) (L) ij of degree S^. pyoo^ — We may assume P == P1 and oo ^ S. Let e be a multivalued horizontal section of L. The product u= n (^-^-^^ ses is an invertible section of ^(S^.^)(L) on the affine line. At oo, u is meromorphic, of valuation S^,. The degree of ^(S(A,J)(L), equal to the sum at all A: e P of the degree of any non zero meromorphic section, is hence Sptg. P. D E L I G N E A N D G. D. M O S T O W We define ^(^.^(L) :== ^(S^.^) (L) ® Q1. It results from (2.11) that (2.11.1) deg^S^KL) = - 2 +S^. In particular, if S(^ == 2, the line bundle ^(S^.j) (L) is of degree",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-002-07",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "2.13",
+      "pageStart": 9,
+      "pageEnd": 15,
+      "target": "prop-sec-002-07.md",
+      "narrative": null,
+      "content": "— Assume that S^ =2, N^3, flnrf ^A^ no^ of the a, ^ i (i.e. that none of the ^ is an integer). Then the cohomology class of the form co of (2.12) is not zero.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-002-08",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "2.14",
+      "pageStart": 9,
+      "pageEnd": 15,
+      "target": "prop-sec-002-08.md",
+      "narrative": null,
+      "content": "— Assume that none of the a, is i. If a non zero form co is such that S^(co) ^ i — N, z'^y cohomology class is not zero.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "-^H^P-p^UT,),^)-^",
+      "pageStart": 9,
+      "pageEnd": 15,
+      "target": "../sections/sec-002--hp-put.md",
+      "narrative": null,
+      "content": "P. D E L I G N E A N D G. D. M O S T O W\n(for this, S + 0 suffices). The same applies to the dual ^ of L, with monodromy a-1,\nand Poincard duality gives vanishing for IF and H^. The Euler-Poincard characteristic\nbeing known ((2.2.1) and (2.2.2)), we get\nProposition (2.3.1). — If a, + i for at least one \ns e S, then H^P - S, L) \nand\nH^(P — S, L) vanish for i =t= i, W\ndim H^P - S, L) == dim H^(P - S, L) = N - 2.\nCurrents (2.4). — Instead of using the G00 de Rham complex, consisting of forms\nwritten in local coordinates as S f^dx^ A ... ^ dx^.e, with \n<? an horizontal section\nof L and ^ a C°°-fun",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/rem-sec-002-09",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "2. i6",
+      "pageStart": 9,
+      "pageEnd": 15,
+      "target": "rem-sec-002-09.md",
+      "narrative": null,
+      "content": "— Let us assume that none of the a, is i. If co is an holomorphic section of Q^L) on P - S, by (2.6.1), the class [o] of co in H^P - S, L) is the image of a unique class, again denoted [co], in H^(P — S, L). For any locally finite cycle or current G with coefficient in L^, <[CJ, [<o]> is defined: H^(P — S, L^) is indeed paired with H^(P •— S, L). We want to prove that <rC],[o)]>==J^<o. This is not completely obvious, especially since the integral may be divergent. The problem is rather to understand which value the cohomological formalism attaches to the integral. ist answer: One replaces G by",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "2.19",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "prop-sec-003-01.md",
+      "narrative": null,
+      "content": "— If ^ and (^ are each either in H^P — S, L) or in H^P — S, L), one has, for the corresponding cohomology classes [oj and [o^], <K[^iL [^2]) = Sy_Q^i^ ^ Let us assume, for definiteness, that <^ is in H^^P — S, L). Choose D,, (^),gg> as in (2.12), and let <^ be the characteristic function of D^. It follows from (2.12) that the class of <0i in H^(P — S, L) is also the class of the compactly supported current G)i—Srf(<p^). Hence (2.3) ?1]. E<1) - ^([^iL [^2]) = Jp_g («>i - S ^(<p, u,)) A coa",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "^: Hi(P-S.L) XcH^P-S.L) ->H^(P-S,C) == C",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-003-hip-sl-xchp-sl--hp-sc-c.md",
+      "narrative": null,
+      "content": "((2.3)5 (2.6.i)). The vector space H^P — S, L) \nis the complex conjugate of\n^(P — S, L), and ^{u, u) defines a non degenerate skew-Hermitian form ^ on\nH^(P — S, L). Anticommutativity of the cup product shows that\n^o(^)~ == — ^o(^), i.e.\n(2.18.1) \n^{u,v)~ == -^u).\nWriting (u, v) := —^ ^(u, v) = ——r ^o(^ v), we have a Hermitian form\n(2.18.2) \n{u,v)~ == {v,u).\nA section <o ofj^ ^(L) is said to be of the first kind if o,(co) > — i for each s e S.\nThose are the forms for which the integral f _ \n<o A <o is convergent. The integrand\nis defined as follows: if, locally, G), == ^.P, (i = i, 2, ^ a i-for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/cor-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "2.21",
+      "pageStart": 16,
+      "pageEnd": 32,
+      "target": "cor-sec-004-02.md",
+      "narrative": null,
+      "content": "— Notation being as above (a, == exp(27n(JiJ w^A o< (J^< i), the signature of the Hermitian form ( , ) on H^P — S, L) is (S^ — i? S(i — (A,) — i).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/ex-sec-004-09",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "4.2",
+      "pageStart": 16,
+      "pageEnd": 32,
+      "target": "ex-sec-004-09.md",
+      "narrative": null,
+      "content": "— The cross-ratio c{z^^ z^ ^3, ^4) == -1——3 : -1——^ of four ^3 — ^ ^4 — •2'2 points in P := P1 is defined and is a continuous map into P1 as long as no three of z^ -^ ^ ^ are e(lual• When two of the ^ are equal, the cross-ratio takes one of the values o, i, oo, the value depending only on the partition of { i , 2, 3,4} consisting of the subset {i,j} with ^ == ^ and its complement. Suppose S = = { i , 2 , 3 , 4 } and ^ == - for all s e S. One can show that the cross-ratio map Mgg^ ->' P1 descends to Q^gst and yields a homeomorphism onto the projective line. (4.3) Let M' be the space of y eP8 su",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/lem-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "3.5",
+      "pageStart": 16,
+      "pageEnd": 32,
+      "target": "lem-sec-004-04.md",
+      "narrative": null,
+      "content": "— The section w^ is holomorphic.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/lem-sec-004-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "3.12",
+      "pageStart": 16,
+      "pageEnd": 32,
+      "target": "lem-sec-004-08.md",
+      "narrative": null,
+      "content": "-— Assume that card S ^ 4. If positive real numbers (ys)se^ sum u? to 2 and if/or each of the pairs of elements s + t of S for which v, + v< ^ i, Vg + v< is rationale then all v^ are rational. We may and shall assume that S is the set of integer from i to N, N ^ 4, and that v^< ... ^ v^. Case j. — ^ + v^^ i. For any distinct i,j< N one can find k < N distinct from i and j. One has v/c + ^N ^ v! + ^N ^ I? hence V, + V^ 2 - (V/, + VN) ^ I is rational. If three numbers a, 6, c, are such that a + 6, b + c and c + a are rational, they are rational. Applying this to the v, {i< N), we find that they",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/lem-sec-004-10",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "4.4.1",
+      "pageStart": 16,
+      "pageEnd": 32,
+      "target": "lem-sec-004-10.md",
+      "narrative": null,
+      "content": "— Fix a Riemannian metric on P. Let ^ be the set of all subsets T of S with S [Lg > i. For y e P8, <fe/m^ 8GT ^V =^diamj/(T) and a[y) == sup rf(^). g e PGL(2) TA^ ^r^ is a> o such that a[y)>_ a for all y e Mg^«",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/lem-sec-004-11",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "4.4.2",
+      "pageStart": 16,
+      "pageEnd": 32,
+      "target": "lem-sec-004-11.md",
+      "narrative": null,
+      "content": "— Q^ is compact. Fix a > o as in (4.4.1), and define M'C P8 to be the set of y such that dianv(T)^<? for each T C S with S p.,> i. The subset M' of P8 is closed, sGT hence compact. It is contained in Mgg^ and, by (4.4.1), it maps onto Q^gsf Compact- ness follows. (4.5) By contrast with Q^ which is a manifold, the points of Q,cusp rswf be singular. Let ^ denote the natural projection of Mgg^ onto Q^ggf Let {S^, S[} be the partition corresponding to a point ^ e Mgygp. We shall describe a neighborhood of ^(j^) in Q^ggf We can assume that j^(J) = o for all s e S^ and y^{s) = oo for all s e S[. Fix",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "2.20",
+      "pageStart": 16,
+      "pageEnd": 32,
+      "target": "prop-sec-004-01.md",
+      "narrative": null,
+      "content": "— Under the assumption (2.18) that |aJ == i, a, 4= i for s e S> the natural map ff'^P - S, L) C H^P - S, L) ^ H^P ~ S, L) = Hi(P - S, L) is an isomorphism. The Hermitianform ( , ) is positive definite on H110, negative definite on H^^ and the decomposition is orthogonal. If o is in H^P-S.L) (resp. H^P - S, L)), the integrand ^-4 G) A G> 27Tt is ^ o (resp. < o), and vanishes only for <o = o. If ^ and (02 are one m H1'0 and the other in H011, the integrand —.(O-.A (Og vanishes. This implies that H110®!!011 27CI injects into IT(P — S, L). It remains only to prove the surjectivity of H1'0 ® H°'1 -",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-004-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "3.9",
+      "pageStart": 16,
+      "pageEnd": 32,
+      "target": "prop-sec-004-06.md",
+      "narrative": null,
+      "content": "— S^:C[-^B(a)o ^ A^. Proo/. — We may take P = P1 and replace Qby My, as in (3.7). The problem is local. Take m e My, let e be a trivialization of L—near m—on R^ near oo. We may take co == II {z-m{s))-^.dz.e w(»)+oo v ' / / (cf. (2.8)). Choose cycles G, as in (3.5.4). Differentiating in m, one has ^AL, (0 = ^M (0) ^JG, JG, ^0 ., , v ^dm{s) with ^Mo(0 == s ———— .^. ^) , 4=0, 6, c 2; — w(^) The spaces Q,and B(a)o have the same dimension N — 3. The map w is hence ^tale at m if and only if rf(S^) is injective, i.e. if and only if for no tangent vector v =)= o at m is the family (^J <*>). proportion",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-004-12",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "5.5",
+      "pageStart": 16,
+      "pageEnd": 32,
+      "target": "prop-sec-004-12.md",
+      "narrative": null,
+      "content": "— Fix I e ^B4\" and let A be a discrete subgroup ofthe protective unitary group PU(V) stabilizing t and respecting a <( distance to t ^function d^. If I has a neighborhood V [in the topology 5.4) such that V/A is compact, the volume of (V n B^/A is finite. The subgroup ofPU(V) respecting I and ^ is the isomorphic image of the stabilizer H ofv in U(V). It is an extension of the unitary group U^1/^) by the unipotent subgroup N of H consisting of the n e U(V) respecting the filtration V 3 v10 Cv 3 o and acting trivially on the successive quotients. The extension is split: H and N act transitively",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "^P-UD^^+^L/^",
+      "pageStart": 16,
+      "pageEnd": 32,
+      "target": "../sections/sec-004-p-udl.md",
+      "narrative": null,
+      "content": "When we let the D, shrink, the first term converges to f \ncoiAcog. We want\nj s~'— s\nto show that all others tend to o. When the radius r ofD, tends to zero, the size of u, ^\non 3D, is O^^^)). One has \nv,{u,) = v^) + i. The forms ^ and ^\nbeing of the first kind, the size is 0^), with \n(B > — i. On the other hand, the length\nof 9Ds is 0(r); the boundary term is hence C^r0'1\"1) and tends to zero.\nProposition (2.20). — Under the assumption (2.18) that |aJ == i, a, 4= i for s e S>\nthe natural map\nff'^P - S, L) C H^P - S, L) ^ H^P ~ S, L) = Hi(P - S, L)\nis an isomorphism. \nThe Hermitianform ( , ) is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/rem-sec-004-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "2.22",
+      "pageStart": 16,
+      "pageEnd": 32,
+      "target": "rem-sec-004-03.md",
+      "narrative": null,
+      "content": "— (2.20) is a special case of Hodge theory for the cohomology of a curve with values in a polarized variation of Hodge structures: a local system, provided with an horizontal positive Hermitian structure, can be viewed as a polarized variation of type (o, o). The artificial counting argument above enabled us to shortcut the general theory, for which the reader may consult S. Zucker [25]. (2.23) In our applications, the Og will be roots of unity. When this is the case, (2.20) can also be deduced from the Hodge theory of suitable coverings of P. Let X be an irreducible abelian covering of P, wit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/rem-sec-004-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "3.6",
+      "pageStart": 16,
+      "pageEnd": 32,
+      "target": "rem-sec-004-05.md",
+      "narrative": null,
+      "content": "— A more general method to get horizontal linear forms on R1 ^ L is to start with a C^-trivialization of (PU,L) giving 9^:?^^?^, L^^^L^, and with I^-valued cycle or current C on P^, and to take f . For instance, if •^m'*^) G is a path from m{s) to m(t), together with a section e ofL^ on it, one deforms it with w' so that G(w') remains a path from m'(s) to m'(t). (3.7) The group G of automorphisms of P is isomorphic to PGL(2). Its action on P induces an action on M C P8, on the space P^, and on the flat projective bundle B(a)^ on M. The section co^ is preserved. The action on M is free. Let Q^=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/thm-sec-004-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "3.11",
+      "pageStart": 16,
+      "pageEnd": 32,
+      "target": "thm-sec-004-07.md",
+      "narrative": null,
+      "content": "— Assume that (INT) The numbers ^ defined by o^ = exp(2TC, ^), o < ^ < i, ^^ S^, = 2 and, for all s 4= t in S J^A ^ ^ + ^< i, (i — ^ — ^)~1 ^ ^ ^^?r. Then, the image T of (3.10.2) is a lattice in the protective unitary group PU IH^ LJ, —4^ PU(i, N - 3). V 27n / The theorem will be proved in section n, where it is restated as theorem (11.4). The strategy of the proof is presented in the next paragraphs. In § 4, we define a partial compactification Q^ of Q. We also define a compac- tification Q^. with Q^sst D Q.st D Q. and Q^ - Q.st finite. In § 8, we recall a construction of R. H. Fox to define",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/cor-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "6.8",
+      "pageStart": 32,
+      "pageEnd": 36,
+      "target": "cor-sec-005-03.md",
+      "narrative": null,
+      "content": "— For y e Q^, there exists a neighborhood V ofy in Q^ and a horizontal section by o/B(a) on Qn V J^A that Q{by{y), w^(y)) -> o for y ' ->y (y e QJ. For j^ e Q,, the corollary just tells once more that the section w is continuous atj\\ (6.9) A partition T of S is stable if for each C e T, ^.(T)c : == 2 ^ is < i. sec Define a(T)c = exp(27r^(T)c) = H a,. For T stable, let M^C M^ be the space s e G ofmapsj/ from S to P, such that jy{s) ==y{t) if and only ifj and t are in the same coset of T. It is the inverse image in M^ of a subspace Q^p of Q^- The MT (resp. 0^) for T stable form a partition of M^",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/cor-sec-005-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "6. n",
+      "pageStart": 32,
+      "pageEnd": 36,
+      "target": "cor-sec-005-05.md",
+      "narrative": null,
+      "content": "— If (A satisfies INT and T is a stable partition of S (cf. (6.9)), the family (JI(T) defined by (x(T)c=^^ (GET) again satisfies INT.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/lem-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "6.5",
+      "pageStart": 32,
+      "pageEnd": 36,
+      "target": "lem-sec-005-02.md",
+      "narrative": null,
+      "content": "—LetD be a disc ofradius R, (^)»gi be a family of points ofD and{^)^^ a family of real numbers, such that o< (JL,< i and S(JL,< i. Then, writing z == x + ly, one has r _ r 27^R 2(l- slJt* ) n\\z-a,\\-^dxdy<} \\z\\-^idxdy==-—————. -/D •' —JI^KR'",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "6.4",
+      "pageStart": 32,
+      "pageEnd": 36,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "— 6(^, PcUcoJ17) tends to o for y eM ^fe'^ ^ w. Proo/'. — This will result at once from the two statements (6.4.1) (o)y, o)y) -> (co^, coj forj/->m; (6.4.2) ((0^ cUcoJ^-. (co^, oj forj/-^m. If it made sense, we would like to say that o -> co^ in the lAnorm, for y -> m, but (Oy and co^ do not live in the same space, having different ramification. Let KR be the complement in P1 of discs of radius R around each point ofm(S). One assumes R small enough for these discs to be disjoint; on a connected neighborhood U ofj/, small enough forjy(S) to stay disjoint from KR, one can compare <x)y |K^ and Q)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-005-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "6.10",
+      "pageStart": 32,
+      "pageEnd": 36,
+      "target": "prop-sec-005-04.md",
+      "narrative": null,
+      "content": "— If p. satisfies condition INT of (3. n): o < [L,< i, S^ == 2 and/or all s^ t in S such that [L, + ^< i, (i - ^ — ^)-1 ^ a^ n^r, ^ any subset G C S /or wAi^A S ^ < i A^J at most three elements, and for any such subset with at least s e c two elements, (i — S (JiJ\"1 ^ an integer. sec The condition INT implies that ^ + ^ is always ^ 1/2 for j + t. Averaging over the pairs in C C S, we get that for card (C) ^ 2, the mean of the ^ (j e C) is >: 1/4. From S ^< i there results card (C) < 4. sec The case card (G) == 2 is trivial by INT. Suppose G == {a, b, c}. The , . i i i relations i — ^ — ^ = —,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "= Idet^nt^-SLieH)!",
+      "pageStart": 32,
+      "pageEnd": 36,
+      "target": "../sections/sec-005-idetnt-slieh.md",
+      "narrative": null,
+      "content": "J i\ndh.\nA\\H\nThis leads us to evaluate \ndet(Int a(\\)~1, Lie H). One checks that the character\nJX^R\ndet(Int <2(X)~\n1, Lie H) of X eR4'* tends to zero for X -> o, and the integral is hence\nfinite.\nThe computation above is of course exactly the one used to prove that Siegel\ndomains have finite volume ([2 b], Lemma 1.9).\n35\n36 \nP . D E L I G N E A N D G . D . M O S T O W\n6. Stable points\n(6.1) Notation and assumptions (4.0) are in force in this section as well as the\nassumption N ^ 4. Our aim is to investigate the asymptotic behaviour of the section co^\nof B(a)^, for y e M converging to a stable po",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/cor-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "7.3",
+      "pageStart": 36,
+      "pageEnd": 42,
+      "target": "cor-sec-007-02.md",
+      "narrative": null,
+      "content": "— For each semi-stable pointy of Q^usp? there is on a neighborhood V of y a horizontal family of functions d on the balls B(a)y, (y e V n QJ—^A a \" distance to a point of ^B(a)y, \"function—such that d(w^{y')) -> o for y ' -^y. 8. Extending S^ by continuity Let X, Y be complex algebraic varieties which are separated as algebraic varieties, i.e. which are Hausdorff in their complex topology. (8.1) One knows that any quasi-finite map /: X ->Y—i.e. a map whose fibers are finite—admits a factorization X <^ X -^ Y, with j an open embedding, and / a finite map (== quasi-finite and proper). If X and Y",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/ex-sec-007-04",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "8.4",
+      "pageStart": 36,
+      "pageEnd": 42,
+      "target": "ex-sec-007-04.md",
+      "narrative": null,
+      "content": "— If we take for Y the unit disk D C C, for U the punctured unit disk D* and for X the universal covering of D*, the completion of X over D is deduced P. D E L I G N E A N D G. D. M O S T O W from X by adding one point above o : X = X u {o}. For X real > o, the function ^ has a limit for z -> o in X, but it has no limit for non real \\ with 8S\\ > o. Similarly z. log z has no limit. (8.5) With the assumptions (8.2.1) and (8.2.2) on (Y, U), let 3S be the flat fiber space on U defined by an action 6 of 7i:i(U, o) on a regular topological space B, and let (X, o) be the smallest covering of (U, o) o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "7.2",
+      "pageStart": 36,
+      "pageEnd": 42,
+      "target": "prop-sec-007-01.md",
+      "narrative": null,
+      "content": "— For y variable in W, ifC(y) tends to o, the d^{w^) tend to o.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-007-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "8.7",
+      "pageStart": 36,
+      "pageEnd": 42,
+      "target": "prop-sec-007-05.md",
+      "narrative": null,
+      "content": "— The map S^ of (3.8) extends as a continuous map from C[^ to the closed ball B(a)^, provided with the topology (5.4). The inverse image ofB{(x.)^ consists of the stable points,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Semi-stable points",
+      "pageStart": 36,
+      "pageEnd": 36,
+      "target": "../sections/sec-006-7-semi-stable-points.md",
+      "narrative": null,
+      "content": "(7.1) The notation and assumptions (4.0) are in force in this section; we assume\nalso N^4. Let (S(i), S(2)) be a partition of S, such that \nS a, = i.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "We want",
+      "pageStart": 36,
+      "pageEnd": 42,
+      "target": "../sections/sec-007-we-want.md",
+      "narrative": null,
+      "content": "ses(i)lo\nto investigate the asymptotic behavior on Q,of co^, fory converging to a point in Q,\noftype(S(i),S(2)).\n39\n40 \nP . D E L I G N E A N D G . D . M O S T O W\nFix a eS(i) and b eS(2), identify P with P == P1, and let W be the space\nof y e P8 such that y{a} = o, y(b) == oo, and\nsup{|^)||.eS(i)}<inf{|^)||.eS(2)}\n(as in section 4 where we wrote V instead of W). \nWe put A(j) == sup {|j/(j) [ ] s e S(i)},\nB(j^) = inf{ \\y{s) \\\\se 8(2)}, G(jQ == A(j/)/B(j). \nThe quotient map \nTT : W -> Q^\nsends a pointy with C(^) = o to the semistable point J of type (S(i), 8(2)) and iden-\ntifies (W — '^~1{J))|G",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/rem-sec-007-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 42,
+      "target": "rem-sec-007-03.md",
+      "narrative": null,
+      "content": "— Let K denote the kernel of the action of7i;i(U, o) on X. Then T^(U, o)/K acts properly discontinuously on X but not necessarily on X. (8.3) Let w be a continuous function from X to a topological space B. We assume B regular, i.e. that any neighborhood of any point contains a closed neighborhood. The function w then extends as a continuous function on X if and only if, for any ^ e X, w{x) has a limit for x -> x in X (convergence ofw on the filter of traces on X of neighbor- hoods of x in X). In the situation (8.2) (with o e V for simplicity), one can treat w as a multivalued function on U. If",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "8.9",
+      "pageStart": 42,
+      "pageEnd": 42,
+      "target": "prop-sec-008-01.md",
+      "narrative": null,
+      "content": "— For any component Q^ off^y, w^ \\ ^ is an etale map from ^ to a sub-ball o/B(a)^.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "9.2",
+      "pageStart": 42,
+      "pageEnd": 47,
+      "target": "prop-sec-009-01.md",
+      "narrative": null,
+      "content": "— In a suitable basis ofV^^Py^ L), the above action of the monodromy around Q^ is given by a diagonal matrix diag(ai ocg, i, ..., i).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "^D^JO^",
+      "pageStart": 42,
+      "pageEnd": 42,
+      "target": "../sections/sec-008-djo.md",
+      "narrative": null,
+      "content": "From (3.9), we hence get:\nProposition (8.9). — For any component Q^ off^y, w^ \\ ^ is an etale map from ^\nto a sub-ball o/B(a)^.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Codimension i etaleness",
+      "pageStart": 42,
+      "pageEnd": 47,
+      "target": "../sections/sec-009-9-codimension-i-etaleness.md",
+      "narrative": null,
+      "content": "In this section, the notation and assumptions (4.0) as well as the assumption\nN ^ 4 are continued.\nLet T be a stable partition of S (cf. (6.9)), with card T = card S — i; one\ncoset ofT has two elements and all others only one. Our aim in this section is to describe\nthe flat bundle B(a)o over Q,(cf. (3.7)) and the holomorphic section w^ in the neighbor-\nhood of a point in Q^p C Q^ (cf (6.9)).\n(9.1) The subspace QT of Q^, defined in (6.9), is a locally closed purely one\ncodimensional complex submanifold of the complex manifold Q^ and Q u Q^ is\nopen in Q^. The monodromy around Q^ is the following",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/rem-sec-009-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "9.3",
+      "pageStart": 42,
+      "pageEnd": 47,
+      "target": "rem-sec-009-02.md",
+      "narrative": null,
+      "content": "— In the computation (9.2), we have made use of the assumption V-i + ^2 < T only in the weaker form o^ o^ 4= i. In the case ^ + ^ > i, the mono- dromy when s^ turns around s-^ would be given by the same formula, but the basis e in which it holds would have (<?i, ^) > o instead of (^, ^) < o: it would be a pseudo- reflection with respect to a hyperplane not meeting the ball B(a)+. More precisely, one checks that if the section I {a) of L, for a the only edge of T^, is chosen of length one: (f{a),f{d)) == i, then (e e\\ - ~~ I 1 ^al+ T 4- a2+ I} [e! 3 ^lJ — ——r • - * ———— + ———— • 2?n 2 \\ai — i o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/lem-sec-010-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "10.3",
+      "pageStart": 47,
+      "pageEnd": 52,
+      "target": "lem-sec-010-04.md",
+      "narrative": null,
+      "content": "— Let D^, Dg and Dg be three distinct lines in C2 passing through o, and n^ n^ n^ integers > i such that — 4- — 4- — > i. Fix a base point b e C2 — (Di U Da u Dg), »i ^2 ^3 and consider the coverings of (C2 — (Di u Dg u D3), b), with ramification index along D dividing n^ (i == i, 2, 3): ^ monodromy permutation of the sheets^ when turning around D,, is of order dividing n^ Then the universal such covering is a finite covering.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/lem-sec-010-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "10.6",
+      "pageStart": 47,
+      "pageEnd": 52,
+      "target": "lem-sec-010-07.md",
+      "narrative": null,
+      "content": "—I/condition (INT) is satisfied, Q^ admits a structure of normal analytic space, such that each y^ e Q^ has an open neighborhood U whose inverse image in Q^ is a dis- joint sum of finite ramified coverings of U. It suffices to show that each J^o e Q.st has an open neighborhood U whose inverse image in Q^ is a disjoint sum of finite (topological) coverings of U n Q which, in suitable local coordinates atj/o, are of the type considered in (10.5). This we proceed to show, using the control over ramification in codimension i provided by § 9. Fix VQ e Q,st, and let T be the corresponding stable par",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/lem-sec-010-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "10.7",
+      "pageStart": 47,
+      "pageEnd": 52,
+      "target": "lem-sec-010-08.md",
+      "narrative": null,
+      "content": "— I/condition INT is satisfied, the map w^: (^^ -^B-^a^ is etale. The map w^ is holomorphic on C[ by (3.5) and continuous on C[st ^ (8 • ?)• It is hence holomorphic on Q^. By (6.9), it has an injective differential on the strata of a suitable analytic stratification. The fibers of w^ hence have no component of dimen- sion > o and 2^ is locally finite-to-one. We know from § 9 that w^ is etale outside of a closed analytic subset of CLt of complex codimension > 2. By the purity of the branch locus theorem (the fact that the branch locus is always purely of codimension one), it follows that S^ is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "9. xo",
+      "pageStart": 47,
+      "pageEnd": 52,
+      "target": "prop-sec-010-01.md",
+      "narrative": null,
+      "content": "— TA^ wfl^ Q.I -> Q,i ls a branched cover with branch locus U Q,r ^ order K. By (9.8), the problem is local around each ^eQ,T* The claim then results from (9.2) and the fact that the order in the projective unitary group of diag((Xg <X(, i, ..., i) is the denominator of i — ^ — (JL(.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "9.11",
+      "pageStart": 47,
+      "pageEnd": 52,
+      "target": "prop-sec-010-02.md",
+      "narrative": null,
+      "content": "— The map Z^: CL —^B^a),, is holomorphic. For w^ is holomorphic on ^and is continuous on CL by Proposition (8.7). Since Q^ — Q has C-codimension i, the assertion follows from the theorem on removable singularities.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-010-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "9.12",
+      "pageStart": 47,
+      "pageEnd": 52,
+      "target": "prop-sec-010-03.md",
+      "narrative": null,
+      "content": "— Assume that INT o<(Ji3<i,S^=2 and for all s, t e S distinct and with [Ly + ^ <^ I? (i — p., — P1^\"1 zj> flw integer. Then, w^ : Q^^ -> B+(a)o u ^a^. This follows from the local description (9.6). xo. Proof of discreteness In this section, the notation and assumptions (4.0) as well as the assumption N ^ 4 are continued. (10.1) We will give two proofs that when condition INT is satisfied, the image F of 7^(0^, o) in PU(i, N — 2) is discrete. The first is shorter, but relies on a detailed local analysis of analytic varieties and holds only when Q^ == Q^gf The second is longer but more elementar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "D E L I G N E AND G. D. M O S T O W",
+      "pageStart": 47,
+      "pageEnd": 52,
+      "target": "../sections/sec-010-p-d-e-l-i-g-n-e-and-g-d-m-o-s-t-o-w.md",
+      "narrative": null,
+      "content": "P. D E L I G N E AND G. D. M O S T O W\n(9.9) We now assume that the ^ are rational (cf. (2. i2)). Let ^i denote the\nfamily of stable partitions T of S such that card T = card S — i. For T in ^i> and {.?, t}\nthe coset of T with two elements, let k^ be the denominator of i — ^ — (JL(. \nSet\na,=Qu^ft,,^\nQi == completion of Q over Q^,\nK(Q^) == ^T for each T e ^.\nProposition (9. xo). — TA^ wfl^ Q.I -> Q,i ls a branched cover with branch locus U Q,r\n^ order K.\nBy (9.8), the problem is local around each ^eQ,T* \nThe claim then\nresults from (9.2) and the fact that the order in the projective unitary gro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/rem-sec-010-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "10.4",
+      "pageStart": 47,
+      "pageEnd": 52,
+      "target": "rem-sec-010-05.md",
+      "narrative": null,
+      "content": "— (i) The proof showed that the universal covering (10.3) is of , [ /i i i \\- 1] 2 order 2 — + — + — - — i . It is a Galois covering, with group a central exten- L V^i ^2 ^3 / J sion of W4' by a cyclic group of order |W4' |. (ii) If (AI + ^ = i — —, (ig 4- p.3 == i — — and ^3 + ^ = i — — , one has ^3 ^1 ^2 i — F4 -— ^2 — P-3 == - — + — + ~ ~~ 11 • ^ne condition — + — + — > i amounts 2 \\n^ n^ n^ ) n^ n^ n^ to [AI + (Jig + ^3 < i, and when it holds (i — ^ — ^ — ^)~1 == | W4-1 is an integer, as observed in (6.10). (iii) The fundamental group of C2 — (D^ u Dg u D3) is generated by three elements y",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/rem-sec-010-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "10.5",
+      "pageStart": 47,
+      "pageEnd": 52,
+      "target": "rem-sec-010-06.md",
+      "narrative": null,
+      "content": "— Let J = J'u J\" u J'\" be a finite index set. For j ej', let n^j), n^j), n^j) satisfy —— + —— + ——> i; for j ej\", let n(j) be any integer^ i. We define nlu) n2u) n3u) XU) = C2 - D, - D, - D3C C2 forj ej', C - { 0 } CC2 forjej\", C for^ej'\". The product X of the X(j) is the complement of a divisor in Y := (C2)^ X C3'1113111. The covering X of X, with ramification index along pn^D,) dividing n^j), {j ej'), with ramification index along pr^^o}) dividing n{j) {j ej\"), and universal with respect to those properties, is the product of the corresponding coverings of each X(j). Hence X is a finite cove",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/cor-sec-011-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "10.12.2",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "cor-sec-011-05.md",
+      "narrative": null,
+      "content": "— The point o has a fundamental system of open neighborhoods X' such that f or \"V a suitable open neighborhood of p, X' — 9-l(^) is open and closed in 9~1(Y/ —{p}) and is a covering of Y' — {j&}. MONODROMY OF HYPERGEOMETRIC FUNCTIONS First take X^, YQ as in (10.12), and W a neighborhood of o such that W~C XQ. If X', Y' are as in (10.12), with X' C W, Y' C Yo and if X^:== Xo n <p-1 Y', then both X[ — 9-1^) and X' - <p~1^) (C X[ - 9~1^)) are coverings of Y' - {p}\\ hence X' - 9-1^) is open and closed in X[ - 9-1^). As (X' - y\"1^))\" C W- C X^ X' — (?~~l{p) is also open and closed in (p'^Y' — {?})•",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/cor-sec-011-06",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "10.12.3",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "cor-sec-011-06.md",
+      "narrative": null,
+      "content": "— If o is not isolated in X, and if p has a fundamental system of neighborhoods V such that V — p is connected (in particular, non empty), then 9 is open at o. Ifo is not isolated, X' cannot be contained in ^~l(p); for applying (10.12) a) to x in X' near o would contradict <p(X') C {p}. It follows that y(X' — ^{p)) = Y' — {p} and hence that <p(X') = Y'. Openness follows.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/cor-sec-011-10",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "10.13.3",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "cor-sec-011-10.md",
+      "narrative": null,
+      "content": "— If, in addition to the assumptions of (10.12) and (10.13). the V — {p} for V in V are simply connected^ then 9 is a local homeomorphism at o. Indeed, with the notation of (10.13)5 Y ' — { p } is simply connected; hence 9 : X' — {o} -> Y' — {p} is a homeomorphism as well as 9': X' -> Y'. (10.14) We shall require a simpler variant of (10.12) in our extension of the map 3^ to cusp points. In that situation, we shall be dealing with a continuous map 9 : (X, o) -> (Y,j&). Metrics are given only on X — {0} and Y — {p}, and we assume a) The 9-1(V), for V a neighborhood ofp in Y, form a fundamental",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/cor-sec-011-13",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "10.15.4",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "cor-sec-011-13.md",
+      "narrative": null,
+      "content": "— In addition to the hypothesis of ( 1 0 . 1 5 . 1 ) assume that Y — Yi is locally simple connected and that c') Each p' e Y^ close to p has a fundamental system of neighborhood V with V — Y^ connected and simply connected. d) Each o' e X^ close to o has a fundamental system of neighborhood V with V — X^ connected. Then 9 is a local homeomorphism at o. (10.16) We will apply (10.15.4) iteratively to some stratified spaces. In the next proposition, \" stratified space \" means a Haussdorf topological space U, provided with a partition S into locally closed subsets, the strata, where MONODROMY OF H",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/cor-sec-011-19",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "10.19. i",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "cor-sec-011-19.md",
+      "narrative": null,
+      "content": "— For any y e C[^ ^ stabilizer Fy ofy in F zj a ^m^ ^ro^.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/cor-sec-011-20",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "10.19.2",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "cor-sec-011-20.md",
+      "narrative": null,
+      "content": "— C[ is the normal covering of Q universal with respect to the pro- perty [R]: for each stable partition T of S with card T = card S — i, z/ ^ z'j defined as m (9-9)9 ^ ramification index along Q^ divides ky.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/cor-sec-011-21",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "10.19.3",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "cor-sec-011-21.md",
+      "narrative": null,
+      "content": "— Above a suitably small neighborhood U of a point x eQ^, each connected component of Q^n p^U ^ the universal covering of Qn U w^ r^^ ^0 ^ ramification property [R].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/cor-sec-011-22",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "10.19.4",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "cor-sec-011-22.md",
+      "narrative": null,
+      "content": "— The stabilizer in T of a point x in the ball is generated by C-reflections.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/lem-sec-011-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "10.11.1",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "lem-sec-011-02.md",
+      "narrative": null,
+      "content": "— Let 9 : X ->Y be a continuous map with Y connected and X Hausdorjf. Let X^ and Xg be open in X and such that 9 induces homeomorphisms from X, to Y, i == i, 2. TA^n X^ = X^ or X^ n X^ = 0. Let ^ : Y -> X be the inverse of 9 | X,. The set of y e Y with ^(j) = s^{y) is closed. It is also open, being the image of X^ n Xg by 9 : X^ ^ Y. It is hence the whole of Y or empty; i.e. X^ == X^ or X^ n X^ = 0. Proof of (10.11). — For V C Y, let 9y be the map induced by 9 from 9-1(V) to V. We have to show that each y e Y has a neighborhood V such that (P-^V), 9v) ^ (V X D, pr^) with D discrete. Take V as",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/lem-sec-011-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "10.12.1",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "lem-sec-011-04.md",
+      "narrative": null,
+      "content": "— Each x in X' n 9~1(B^2)(^)) has an open neighborhood B' in X' which maps homeomorphically onto an open subset of Y containing B /^(j?). As x eX', one of the conditions (i) (ii) holds. In the first case {x eV), one has B^)(A:)CU, and we claim that B^(^) n 9-1(Y') C X'. For if x' eB^(^) and 9(,y') e Y', then either x' e X, by virtue of (i) or x' e U — V and x' e X' by virtue of (i) with x^ = x\\ In the first case, B' == ~B^{x) n 9'~1(Y') and one uses (^). In the second case, take B' = Bg(^i) n ^~l(yf) and use (*). The assumptions of (10.12) remain valid if we replace X and Y by open neighbor- h",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/lem-sec-011-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "10.13.1",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "lem-sec-011-08.md",
+      "narrative": null,
+      "content": "— N — 9-l(^) is connected. Let ACN—cp\" 1^) be open and closed. Each x e ^~l(p) — {0} has a neighborhood W C N with W — {x}^ 9(W) — {p} connected. For such a W, W — {x} == W — (P~l{p) lies either in A or in its complement. It follows that the closure of A in N — {0} is again open and closed and, by hypothesis, is empty or the whole of N — {o}. If it is empty (resp. the whole of N —{o}), A is empty (resp. the whole of N-9-1^)). Since Y — {p} is locally connected, so is the covering space X — ^~l{p). Each connected component of X — ^~l{p) is open and closed in X — (?~l{p) anc!- is a covering of Y",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/lem-sec-011-09",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "10.13.2",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "lem-sec-011-09.md",
+      "narrative": null,
+      "content": "— N\\ n ^~l{p) =={o}. Any x =t= o in ^~l{p) has an open neighborhood W such that 9 induces a homeo- morphism ofW with an open neighborhood ofp in Y. Take V in i^ with VC 9(W) and define W := W n 9-1(V). One has 9 : W ^ V. P . D E L I G N E A N D G . D . M O S T O W The assumption 7ri(V — {?}) ^ ^i(Y — {?}) implies that for any covering map ^ : Z - > Y — { ^ } , one has ^(^'\"^(V — {p})) ^ ^o(Z). In particular, as N1 is con- nected, so is NI n (p^V). Both N3 n 9'~1(V) and W — {x} are connected coverings of V —{p}, contained in the covering ^\"\"^V —{?})' They are not equal: x is the only point of 9",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/lem-sec-011-15",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "10.17",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "lem-sec-011-15.md",
+      "narrative": null,
+      "content": "— If condition (INT) is satisfied, the map w^ : Q^ -^B^o^o is a local homeomorphism.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/lem-sec-011-16",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "10.18.1",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "lem-sec-011-16.md",
+      "narrative": null,
+      "content": "— If condition (INT) is satisfied^ the map S^:CLg^->B4' is a local homeomorphism.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "10.11",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "prop-sec-011-01.md",
+      "narrative": null,
+      "content": "— Let 9 : X ->Y be a continuous map with Y locally connected and X Hausdorjf. Assume that each y e Y admits a neighborhood V such that each x e (p'^V) has an open neighborhood U with <p(U) 3 V such that 9 induces a homeomorphismfrom U to 9(U). Then 9 is a covering map. We first prove the",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-011-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "lo.ia",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "prop-sec-011-03.md",
+      "narrative": null,
+      "content": "— Let 9 : (X, o) -> (Y,j&) be a continuous map of metric spaces, with Y —{?} locally connected. We write d for the metric on both X and Y. Assume that there exists a neighborhood V of o such that for each neighborhood V of o, one has a) there exists e> o such that for all x e U -- V, the open ball B^x) maps homeo- morphically onto an open set ofY; b) for all e > o there is T] > o such that for each x e U — V, ^{x) 3 B^ 9^). Then, there exist open neighborhoods X' ofo and Y' of? such that 9 : X' -- 9~1^) -> Y' — p is a covering map. P . D E L I G N E A N D G . D . M O S T O W Roughly speaking,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-011-07",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "10.13",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "prop-sec-011-07.md",
+      "narrative": null,
+      "content": "— In addition to the hypothesis of (10.12), assume that Y — {?} is locally simply connected and that c) p has a fundamental system of open neighborhoods i^, such that each V — {?} (V in i^) is connected and that for V C V, both in V, n^V - {p}) ^> n^V — {p}). d) o has a fundamental system of open neighborhoods N with N — {0} connected {non- empty). Then, one can find X' and Y' as in (10.12) such that 9' : X' -^Y' has the following additional properties: Y' is in V^, 9'-l(^) =={o}, X' — {0} is connected, andX' is the completion of X'-{o} above Y'. Proof, of (10.13). — Shrinking X and Y, we may",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-011-11",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "10.15.1",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "prop-sec-011-11.md",
+      "narrative": null,
+      "content": "—Let 9: (X,Xi,o) ->(Y,Y^,^) be a continuous map of metric spaces, with Y — Y^ locally connected. Assume that there exists a neighborhood U of o such that MONODROMY OF HYPERGEOMETRIC FUNCTIONS for each neighborhood V o/'X^, the conditions a) b) of (10.12) hold. Assume further that X^ is locally compact and that the map <pi: Xj^ -> Y^ induced by 9 is a local homeomorphism at o. Then there are open neighborhoods X' of o and Y' ofp such that y : X' — (y~l(Y-^>) —> Y' — Y^ is a covering map.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-011-12",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "10.15.3",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "prop-sec-011-12.md",
+      "narrative": null,
+      "content": "— Assume that Y — Y^ is locally simply connected and that c) p has an open neighborhood VQ with VQ — Y^ connected^ and each p' e Yi c/oj^ enough to p has a fundamental system of neighborhoods VC Vo with V — Yj connected and ^(V-Yi)^(Vo-Yi). ^ Each o' e X^ ^fo^ enough to o has a fundamental system of neighborhoods N with N — X^ connected. Then one can find X' aW Y' as in ( 1 0 . 1 5 . 1 ) such that 9' : X' -> Y' Aaj the following additional properties: c) holds with Vo = Y' for all p' eY^ n VQ, X' — X^ z'j connected^ X^ := X^ n X' zj ^ inverse image of Y[ := Y^ n Y', 9' induces a homeomorphism",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-011-14",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "10.16.1",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "prop-sec-011-14.md",
+      "narrative": null,
+      "content": "— Consider a diagram Uo c-^ Ui —> U -^ Y Un <—> U, c_^ u ^o —^ ^i where a) U zj locally compact stratified space; Uo ^ a connected open and dense stratum, and U^ — Uo is a union of strata', each point has a fundamental system of neighborhoods whose traces on Uo are connected. b) Uo is a covering space of Uo, and U^ (resp. LJ) is the completion of Uo over U^ (resp. U). c) The covering Uo of Uo is Galois, with group F. d) Y is a manifold, provided with a metric and an action of F by isometrics. The map 9 is equivariant. e) 9 I U\\ is a local homeomorphism. f) For any stratum S, S := p'^S) is a co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Q.-UQ.T",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "../sections/sec-011-q-uqt.md",
+      "narrative": null,
+      "content": "where T runs through all stable partitions of cardinality ^ card S — i. Then Q^ = Q,\nQ.N-3 == Q,sf \nSet \nQ.N-2 == Q,ssf \nLet CL denote the completion of d-^Q.\nover Q^ (i == i, . .., N — 2). We shall prove inductively that w^ is etale on Q^.\nProposition (10.17) below will be used repeatedly to show at each stage that as one\nadds on a submanifold, the extended map w^ remains etale. We lead up to it via some\ngeneral topological remarks, especially Proposition (10.15.1) and Corollary (10.15.4).\nProposition (10.11). — Let 9 : X ->Y \nbe a continuous map with Y locally connected\nand X Hausdorjf. \nAss",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/thm-sec-011-17",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "10.18.2",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "thm-sec-011-17.md",
+      "narrative": null,
+      "content": "— Assume condition (INT). Then the map Z^: Q^ -> B4\" restricts to a homeomorphism of Q^ onto B4' and maps Q^ homeomorphically onto an open subset of^ in the (5.4) topology.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/thm-sec-011-18",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "10.19",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "thm-sec-011-18.md",
+      "narrative": null,
+      "content": "— If^ satisfies condition (INT), then T is a discrete subgroup of Ant B^ and discontinuous on B4'. Proo/1 — By Theorem (10.17. i), the action of F on B4' is equivalent to the action of r on Q^- The latter action is discontinuous on Q, since F is the covering group of the covering map Q, -> Q.. It follows at once that F is discontinuous on a dense open subset of B4'. Since F acts on B4' via isometrics, it follows that F is discrete in Aut B^, the isometry group of B4'. Since Aut B 4^ operates transitively on B4' with a compact isotropy group, F operates discontinously on B4'.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/lem-sec-012-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "11.5",
+      "pageStart": 62,
+      "pageEnd": 64,
+      "target": "lem-sec-012-03.md",
+      "narrative": null,
+      "content": "The subgroup I\\ is Zariski-dense in PU(V). The proof will be by induction on card S. By (3.10.2), we can lift I\\ C PU(V) to a group r^ C U(V) which is generated by pseudo-reflections (cf. (9.2), (12.3.2)); recall the definition: y is a pseudo-reflection if and only if y — i has rank i. Hence r^ is irreducible on the linear span L of the one dimensional subspaces of V corre- sponding to its pseudo-reflections. It is easy to verify that L = V. Thus F^ stabilizes no proper vector subspace ofV. We start the induction at N = 4. Here I\\ operates on the complex i-ball as a triangle group, rotating th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "PU(V),/N = U(V\")",
+      "pageStart": 62,
+      "pageEnd": 64,
+      "target": "../sections/sec-012-puvn-uv.md",
+      "narrative": null,
+      "content": "which is compact, and PU(V)^/N = R x U(V\"). Hence PU(V),/N contains all\ncompact subgroups of PU(V)^/N. Therefore, as is well-known, PU(V), contains all\ncompact subgroups ofPU(V)^ (because PU(V), contains a maximal reductive subgroup\nand all maximal reductive subgroups of PU(V)^ are conjugate by an element of N).\nFrom (11.2.1), one infers\n(n.3.i) \nr^cpu(V),.\n65\n9\n66 \nP. D E L I G N E A N D G. D. M O S T O W\nRemark. — A more direct proof of (i i .3.1) results from (7.3)—more precisely from\nthe fact that on W, we have a horizontal family of functions d. It follows at once that F\npreserves a \"dist",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/rem-sec-012-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 62,
+      "pageEnd": 64,
+      "target": "rem-sec-012-01.md",
+      "narrative": null,
+      "content": "— A more direct proof of (i i .3.1) results from (7.3)—more precisely from the fact that on W, we have a horizontal family of functions d. It follows at once that F preserves a \"distance to ^\"function (5.3).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/thm-sec-012-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "11.4",
+      "pageStart": 62,
+      "pageEnd": 64,
+      "target": "thm-sec-012-02.md",
+      "narrative": null,
+      "content": "— Let S be a finite set, o < ^ < i, a, = exp 271 v^^T^, S^ == 2 {all s e S ) . Let 6: ^(Q, o) ->PU(V) be the monodromy action defined in (3.10.2). Assume (INT) For all s + t in S such that ^ + ^< i, (i — ^ — (Ji<)~ 1 is an integer. Then F, the image of 6, ?j a lattice in PU(V).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/cor-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "12.2.8",
+      "pageStart": 64,
+      "pageEnd": 70,
+      "target": "cor-sec-013-01.md",
+      "narrative": null,
+      "content": "— A lattice FC G is arithmetic in G if and only if ^ for each embed- ding a ofF in R, not inducing the identity embedding of E in R, the real group Gp ®p g R is compact [i.e. °G(R) is a compact group).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/lem-sec-013-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "12.3.2",
+      "pageStart": 64,
+      "pageEnd": 70,
+      "target": "lem-sec-013-02.md",
+      "narrative": null,
+      "content": "— Set ^ = yi,2 ^ and w^ == y, 3 ^,^ = i, ..., N - 2. TA^z ^=^002^, ^ ==^2(1 —ai) Wi + ^2, ^= ^ ^> 2, ^^ Z^l == 003 Wi + 02(03 — i) W^ ^2 == a2 03(001 - i) ^ + (003 a^ - 003 + i) w^ ^3 = «2 003(1 — aj Wi + 003(1 — a^) ^2+^3, if N — 3 > i, w^ == w^ k >, 3. ^ MONODROMY OF HYPERGEOMETRIC FUNCTIONS 7i",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/lem-sec-013-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "12.5",
+      "pageStart": 64,
+      "pageEnd": 70,
+      "target": "lem-sec-013-03.md",
+      "narrative": null,
+      "content": "— As in (12.1), set F == Q^T) and 1^ = Im 6'. Then (\".5.1)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Define",
+      "pageStart": 64,
+      "pageEnd": 70,
+      "target": "../sections/sec-013-define.md",
+      "narrative": null,
+      "content": "local subsystem ofL on P^ (suitably chosen using a base point on Po) with fiber the sub-\nfield F (resp. subring 0) of C. The pairing of L with its complex conjugate induces an\n^P-valued pairing on L^). Then one can define cohomology combinatorially as in (2.2)\nwith coefficients in L(^); one can also define the skew-hermitian cup product\n^: ir(P,, LW OOH^P,, LW ->H^, 0) w (9\ncombinatorially; set\nV(^)==Hi(P^LTO, \nV(F)==HI(P,,L(F),).\nDefine\n( 1 2 . 1 . 1 ) \nM^v) ==j<p(M,y),\nwhere j = b — ~b for some b e 0 — 0 n R. This ^ is a hermitian form on V defined\nover 0 and may be identified with the form",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "12.5.5",
+      "pageStart": 70,
+      "pageEnd": 72,
+      "target": "prop-sec-014-01.md",
+      "narrative": null,
+      "content": "T? rfc 2 7r 9 n o n n 7r ^ 1 L == Q l cos2 —, cos2 —, cos2 —, cos — cos .—cos — . L ^IZ ^23 ^31 ^12 ^23 ^31 J",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "%[Trr,]==F",
+      "pageStart": 70,
+      "pageEnd": 72,
+      "target": "../sections/sec-014-trrf.md",
+      "narrative": null,
+      "content": "(12.5.2) \nQJTr Ad r^] == F n R if card S > 4.\nProof of (13.5.1). — By (12.1.2), %[Tr F,] C F. By (9.2) %[Tr P,] con-\ntains a, a,,, for each distinct pair s, s' e S. It follows that %(Tr F^) D Q,(^/T) where n\nis the least common denominator of {^ + ^ | j, j' e S, s = s'}. For any 3 distinct\nelements ^,^3, ^ of S, we have\n^ - ^, = (^ + ^.) - (^. + ^.).\nHence for any distinct j, j' in S, QJTr 1^] contains a,, a^^\nWe choose a basis {^, ..., w^_^} in H?(P,, L) as in (12.3). Then Yi.3-Ti,2 has\nas matrix with respect to this basis the upper 2 X 2 diagonal of\n(\n03 \n^^(oci — i) \nai 003(1 — ai)\\ \n/agOCi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/lem-sec-015-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "12.10",
+      "pageStart": 72,
+      "pageEnd": 76,
+      "target": "lem-sec-015-06.md",
+      "narrative": null,
+      "content": "—Let n: X -> M 6^ an algebraic fiber bundle satisfying (12.9.2) and with non-trivial ramification for each s e S. Let F denote the ly-monodromy group of the fibering, let G be the ^ariski-closure of F in Aut H^Xo, C). If F is of finite covolume in G(R), then in the euclidean topology 1^, the projection ofT on Aut V is dense in U(V, ^^, where ^ and V are as in (12.9.4), ^ is as in (i 2 . 1 . i), provided there is a a e Gal Q^(^T) w^A °^ indefinite and CT ={= db i. Proo/. — Suppose that G(R)/F has finite Haar volume. Then defining the integral structure on H^X,,, C) as H^X^, Z), we infer that F",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-015-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "12.6.1",
+      "pageStart": 72,
+      "pageEnd": 76,
+      "target": "prop-sec-015-02.md",
+      "narrative": null,
+      "content": "— I\\ is arithmetic in PU(V) if and only if for each a e Gal F whose restriction on E is not the identity, °^ is a definite Hermitian form on °V.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-015-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "12.6.2",
+      "pageStart": 72,
+      "pageEnd": 76,
+      "target": "prop-sec-015-03.md",
+      "narrative": null,
+      "content": "— Assume card S > 4. Then I\\ is arithmetic in PU(V) if and only if for each a e Gal F with a =t= identity or complex conjugation, °^o is a definite Hermitian form on °V.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-015-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "12.6.3",
+      "pageStart": 72,
+      "pageEnd": 76,
+      "target": "prop-sec-015-04.md",
+      "narrative": null,
+      "content": "— Assume card S == 4 and ^ satisfies condition (INT). Set ( i ^12 ^i\\ 8 == det«^, ^.» = det c^ i c^ [ ^11 c^ i / ^Sl ^S wA^ c- == —cos-^-, i <^,7<3. 7^ I\\ ^ non-arithmetic in PU(V) if and only if k^ °8 < o for some a e Gal E with a 4= i on E.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prop-sec-015-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "12.7",
+      "pageStart": 72,
+      "pageEnd": 76,
+      "target": "prop-sec-015-05.md",
+      "narrative": null,
+      "content": "— For any b e Q, let < b > denote the fractional part ofb i.e. o <_ < b > < i and b — <A > e Z. Let ^ == {(JiJ s e S} satisfy condition (INT) of ( 3 . 1 1 ) and let d denote the least common denominator of [L. Then I\\ is an arithmetic lattice in PU(V) if and only if (12.7.1) for each integer A relatively prime to d with i < A < d — i, S <A^> == i or card S — i. proof. — Let A be an integer relatively prime to d and let e be a primitive root of unity of F = Q^(^T). Then c^ : s -> ^A is an automorphism of F which is non- trivial on F n R if and only if A =(= ± i (mod rf). The automorphism o^ sen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tr^...^=.^(-2)^n^^ ^.^",
+      "pageStart": 72,
+      "pageEnd": 76,
+      "target": "../sections/sec-015-tr-2n.md",
+      "narrative": null,
+      "content": "where \n^= -cos^ ^^^S,\nT? \n^' ==y.\nFrom this it is clear that %[Tr A] is the field E' on the right side of (12.5.5). Suppose\nnow (T : E' -> C is a monomorphism fixing each element ofE. By the argument used in\n(12.2.1) (ii) for any y e A and A:eAdI\\, y-10^ is in the centralizer of S0(2, i, R).\nHence y~1 °y == ± i and °y = ±y. It follows that °detj^ = ± detj^. \nBut y e 0(2, i)\nhas determinant db i and this value is fixed by CT. Therefore °y -== y and °Try = Try\ni.e. or fixes each element of E. Consequently, E == E'.\n(12.6) Assume card S > 4. Let {\\L,\\ s e S} be a family of numbers o < ^ < i\nsatis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/thm-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "11.4",
+      "pageStart": 72,
+      "pageEnd": 76,
+      "target": "thm-sec-015-01.md",
+      "narrative": null,
+      "content": "3 the group I\\ is a discrete subgroup of finite covolume in PU(V, ipo) where V == H^P,, L,). Set E=%[TrAdrj, F = Q(^T) as in (12.1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/thm-sec-015-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "12.11",
+      "pageStart": 72,
+      "pageEnd": 76,
+      "target": "thm-sec-015-07.md",
+      "narrative": null,
+      "content": "— Let X be the algebraic family (12.9. i) and let T be the H^mono- dromy group of the fibering. Assume that ^ satisfies condition (INT) of (3.11). If F is of finite covolume in its ^ariski-closure G(R) in Aut H^XQ , R), then I\\ is an arithmetic lattice in U(V, ^).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/cor-sec-016-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "13.1.2",
+      "pageStart": 76,
+      "pageEnd": 78,
+      "target": "cor-sec-016-02.md",
+      "narrative": null,
+      "content": "— If ^ satisfies (INT), then the monodromy group I\\ is a finite subgroup of U(N — 2), N == card Si and H^P,, L,)/I\\ w M^.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/cor-sec-016-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "13.2.2",
+      "pageStart": 76,
+      "pageEnd": 78,
+      "target": "cor-sec-016-05.md",
+      "narrative": null,
+      "content": "— If ^ satisfies (INT), then the monodromy group I\\ contains a subgroup of finite index T of translations of the afjine space H, H/T is an abelian variety, and ?N-2 = Q.st ^ H/I\\ = (abelian variety)/(F/T), where N == card S. i4« Lists of [L associated to discrete groups (14.1) Elliptic and Euclidean lists. Set card Sg == N, assume ^ > o for all s e Sg and S ^ ^ i. For any . 5 £ S^ ^ 4= t m Sg, set ^,< == (T — P-< — ^)~1? \"'c-.?./-'\"- We assume (INT): each kg ^ eZ u oo. By a <( miracle of small numbers 5? it will be seen that D is an integer or oo (cf. (6.10) and (10.4) (i)). Summing the N(N —",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Elliptic and Euclidean Cases",
+      "pageStart": 76,
+      "pageEnd": 78,
+      "target": "../sections/sec-016-13-elliptic-and-euclidean-cases.md",
+      "narrative": null,
+      "content": "The investigation of the map w^\\ C[^ ->B(a)o can be generalized to obtain a\nclass of elliptic and euclidean groups which generalize the stabilizers in I\\ of points\nin B(a)o4' and on its boundary. We shall merely sketch the method.\n(13.1) Elliptic Case.\nLet ^ == (pj,^ satisfy\na) \n^ > o,\nb) \nS ^<i.\nseSi\nAugment Si by adjoining an additional element c and set S === Siu{f}. Set\n^ == 2 —^g ^5 ^ == (^ses- Fix a local system L on P — S with monodromy a\n(a == exp 27r^. By (2.21) (in which ^ must be replaced by ^ — i) the intersection\nform ( , ) is negative definite. Fix a e Si, take as moduli space M",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/rem-sec-016-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 76,
+      "pageEnd": 78,
+      "target": "rem-sec-016-03.md",
+      "narrative": null,
+      "content": "— The fact that H^P,, L,)/I\\ « C1^-2 comes from the fact that I\\ is generated by pseudo-reflections (cf. [4] (V.5.3) th^oreme 3). (13.2) Euclidean Case. Let ^= (^a),es, satisfy a) ^ > o, ^ ,?,,•'• ='- Augment Si as above, setting S == S^ u {<:}, ^ == 2 — S ^==1, and fix a E Sr Define M,, = {j/ e P8 |^M == a), j/(a) = o, ^(S,) C P - a), ^(S^) + {o}}. ^et Q.st = ^st/^w^ lt ls compact. We define L on P^ and define Wy as above. The local system L has no monodromy at oo. Accordingly, we set S' = {c} and work with H^g.)(Po, L^), cohomology of P — o(S) with support in the family 9(8') of subsets of P",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/thm-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "13.1.1",
+      "pageStart": 76,
+      "pageEnd": 78,
+      "target": "thm-sec-016-01.md",
+      "narrative": null,
+      "content": "— i) 2^ extends to a map M^ -^H^P^, L^). 2) If p4 satisfies (INT): for all s + t in S^, (i — ^ — pL<)~ 1 e Z, ^w the extension of w^ is an isomorphism.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/thm-sec-016-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "13.2.1",
+      "pageStart": 76,
+      "pageEnd": 78,
+      "target": "thm-sec-016-04.md",
+      "narrative": null,
+      "content": "— i) w^ extends to a map w^ of Q^ ->H. 2) If (AI satisfies (INT), then the extended w^ is an isomorphism. MONODROMY OF HYPERGEOMETRIC FUNCTIONS",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "^((-^KH^))",
+      "pageStart": 78,
+      "pageEnd": 79,
+      "target": "../sections/sec-017--kh.md",
+      "narrative": null,
+      "content": "(I4.I.I) \n^ = = ^ ( 1 - S ^ + 2 ^ 1 ) = — - _ .\n2 \nRfu \nU\n81\n11\n82 \nP . D E L I G N E A N D G . D . M O S T O W\n(14.1.2) The number D satisfying (4)3 must be an even integer or oo.\nFor if a sum of three integer reciprocals exceeds i, the excess is an integer reciprocal\n(cf. (6.10)).\nWe list all the possibilities:\nk^ \nD \nn, = ^ D\nN = 3\nElliptic \n2, 2,^ \nM \nn- i, n- i, i\n^3,3 \ni2 \n5, 3, 3\n2,3,4 \n24 \nii, 7, 5\n2? 3? 5 \n6o \n29,IQ? I][",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Euclidean",
+      "pageStart": 79,
+      "pageEnd": 86,
+      "target": "../sections/sec-018-euclidean.md",
+      "narrative": null,
+      "content": "2,3,6 \noo \n^= i/^\n2, 4, 4 \noo\n3,3.3 \noo\nN = 4\nEuclidean \n2, 2, 2, 2 \noo \n^ = 1/4\n(14.2) Let N = cardS and assume that N^5. The foregoing results permit\none to infer limitations on the possible \n(A = (pj^g satisfying\n1) ^8 ^ ° fof each s e S,\n2) ^==2,\n3) ^ == (i - ^ ~ ^<)~1 e Z if ^ + ^ < i.\nCase A: for some ^ 4= t in S, ^ + ^ > i. By (14. i), applied to the complement\nof {j, t} in S, we have N = 5. Set S == {j, ^, a, 6, <:}. We define D by\n^ + ^ = I + jy\nThen ^ + ^ + ^ = i -- ^ and by (14. i. i) ^, ^, ^ < I — _. Choosing ^ ^ ^\nwe find ^ + ^< i for u e{a, b, c}.\n(14.2.1) D is an even integer (b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/deligne-mostow-1986/blocks/thm-sec-018-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "10.18.2",
+      "pageStart": 79,
+      "pageEnd": 86,
+      "target": "thm-sec-018-01.md",
+      "narrative": null,
+      "content": "(whose proof simplifies vastly for N = 4). We show finally that the circular arcs are geodesic lines in B(a)+. Regarded as a single valued map of Q^gst, w is a ^(Q^ o)-equivariant map. Set ^ = 2^(^)5 using the determination ofw described above, and let ^ denote the reflection in ^ (z == i, 2, 3). Then or^ a^ is a holomorphic self-map of P1 with cr^ o^ w an analytic continuation of w regarded as a multivalued holomorphic function on Q^. Indeed if i^j, c^a. is the monodromy in 1^ corresponding to one turn of x around ^ n SCj. Consequently {°i °j5 I ^ z ^ J ^3} generates 1^, B(a)+ = r^(A u ^ A),",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

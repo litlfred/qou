@@ -1,0 +1,64 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9310070v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Quantum dilogarithm",
+  "contains": [
+    "library/arxiv-hep-th-9310070v1/sections/page-001",
+    "library/arxiv-hep-th-9310070v1/sections/page-002",
+    "library/arxiv-hep-th-9310070v1/sections/page-003",
+    "library/arxiv-hep-th-9310070v1/sections/page-004",
+    "library/arxiv-hep-th-9310070v1/sections/page-005",
+    "library/arxiv-hep-th-9310070v1/sections/page-006",
+    "library/arxiv-hep-th-9310070v1/sections/page-007",
+    "library/arxiv-hep-th-9310070v1/sections/page-008",
+    "library/arxiv-hep-th-9310070v1/sections/page-009"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Quantum dilogarithm — A quantum generalization of Rogers’ ﬁve term, or “pentagon” dilogarithm identity is suggested. It is shown that the classical limit gives usual Rogers’ identity.\n\n**Quantum dilogarithm**\n\n*L.D. Faddeev1,2,†, R.M. Kashaev1,∗,†*\n\n9 pp, 9 sections.\n\n**Abstract.** A quantum generalization of Rogers’ ﬁve term, or “pentagon” dilogarithm identity is suggested. It is shown that the classical limit gives usual Rogers’ identity. The case where the quantum identity is realized in ﬁnite dimensional space is also considered and the quantum dilogarithm is constructed as a function on Fermat curve, while the identity itself is equivalent to the restricted star-triangle relation introduced by Bazhanov and Baxter. † Supported by the Russian Academy of Sciences and Academy of Finland ∗On leave of absence from St. Petersburg Nuclear Physics Institute, Gatchina, St. Petersburg 188350, Russia\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-th/9310070&metadataPrefix=arXiv), submitted 1993-10-13, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-hep-th-9310070v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "9310070v1.pdf",
+    "source_sha256": "b979ebf2f47a465388a723997e70cc863ce0a1ecc5f8a049d195b24014ff08b6",
+    "pages": 9,
+    "arxiv": {
+      "id": "hep-th/9310070",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "13 Oct 1993"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

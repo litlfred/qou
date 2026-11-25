@@ -1,0 +1,29 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/akemann-2022-j-phys-a-math-theor-55-194002",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Consecutive level spacings in the chiral Gaussian unitary ensemble: from the hard and soft edge to the bulk",
+      "dcterms:issued": "D:20220409",
+      "bibo:doi": "10.1088/1751-8121/ac5f16",
+      "dcterms:identifier": "https://doi.org/10.1088/1751-8121/ac5f16",
+      "dcterms:source": "library/akemann-2022-j-phys-a-math-theor-55-194002/manifest.jsonld",
+      "dcterms:hasVersion": "library/akemann-2022-j-phys-a-math-theor-55-194002"
+    }
+  ]
+}

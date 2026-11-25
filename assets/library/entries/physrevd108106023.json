@@ -1,0 +1,211 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "physrevd108106023",
+  "blocks": [
+    {
+      "id": "library/physrevd108106023/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/physrevd108106023/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "INTRODUCTION",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-i-introduction.md",
+      "narrative": null,
+      "content": "Knot-quiver correspondence (KQC) conjectured by\nKucharski-Reineke-Stosic-Sulkowski [1] provides a new\nencoding of HOMFLY-PT invariants of knots in terms of the\nrepresentation theory of quivers. Such a correspondence\nwas motivated by studying the supersymmetric quiver\nquantum mechanics description of BPS states in brane\nsystems describing knots [2].\nQuivers are denoted as directed graphs with finite number\nof vertices connected by oriented edges. For a quiver with n\nnumber of vertices, the directed graph is encoded in a n × n\nquiver matrix C. The diagonal elements Cii refer to the\nnumber of loo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/physrevd108106023/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Knot-quiver correspondence for double twist knots\nVivek Kumar Singh\n*\nCenter for Quantum and Topological Systems (CQTS), NYUAD Research Institute,\nNew York University Abu Dhabi, P.O. Box 129188, Abu Dhabi, United Arab Emirates\nSachin Chauhan\nand P. Ramadevi\nDepartment of Physics, Indian Institute of Technology Bombay, Powai, Mumbai 400076, India\nAditya Dwivedi\nand B. P. Mandal\nDepartment of Physics, Institute of Science, Banaras Hindu University, Varanasi 221005, India\nSiddharth Dwivedi\nDepartment of Physics, School of Physical Sciences, Central University of Rajasthan, Ajmer, India\n(Received",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/physrevd108106023/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Reverse engineering of Melvin-Morton-Rozansky (MMR) expansion",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-a-reverse-engineering-of-melvin-morton-rozansky.md",
+      "narrative": null,
+      "content": "(MMR) expansion\nMelvin-Morton-Rozansky (MMR) expansion states that\nthe symmetric r-colored HOMFLY-PT for knot K has the\nfollowing semiclassical expansion:\nlim\nℏ→0;r→∞PKr ðA;q ¼ eℏÞ≃\n1\nΔKðxÞN−1\nþ\nX\n∞\nk¼1\n\u0002RK\nk ðx;NÞ\nΔKðxÞ\n\u0003Nþ2k−1\nℏk;\nð2Þ\nwith the leading term being the Alexander polynomial\nΔKðxÞ, and the variable x in terms of color r is\nFIG. 1.\nDouble twist knots (m, p denote number of full twists).\nx ¼ qr ¼ const. The symbol RK\nk ðx; NÞ represents polyno-\nmials in the variable x. The reverse approach is to obtain\nPKr ðA; qÞ using the Alexander polynomial ΔKðxÞ [13]. This\napproach also has obs",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/physrevd108106023/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "DOUBLE TWIST KNOTS",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-ii-double-twist-knots.md",
+      "narrative": null,
+      "content": "Kðp; −mÞ\nKnots\nKðp; −1Þ\nTwist knots\nKð2; −2Þ\n83\nKð3; −2Þ\n103\n\u0004 r\n\u0005\nX\nr\nq−rkðAqr; qÞk˜cK\nPKr ðA; qÞ ¼\nk\nk\nk¼0\ncan be transformed into the following form to\ndeduce the corresponding quiver QK:\nP\nP\ni;j CK\ni;jdidjðq2; q2Þr\nQm\nX\ni γidi q\nPKr ðA; qÞ ¼\nð−1Þ\ni¼1ðq2; q2Þdi\nd\nP\nP\nαidiA\nβidi:\nð4Þ\n× q\nHere, CK\ni;j is the quiver matrix, and the variables αi,\nβi and γi are integer parameters. The set fdig ≡d\nmust obey r ¼ d1 þ d2… þ dn with di ≥0. Even\nthough such a transformation is motivated by\ncomparing Ooguri-Vafa partition function [16] with\nthe motivic generating series [17–19], it is still a\nhard pro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/physrevd108106023/blocks/prop-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "prop-sec-004-01.md",
+      "narrative": null,
+      "content": "The r-colored Jones polynomial for double twist knots Kðp; −mÞ, with p ≥m, can be expressed in the quiver representation, JrðKðp; −mÞ; qÞ ¼ X d1þd2þ\u0002\u0002\u0002þd4pmþ1¼r ð−1ÞΛðp;−mÞqΞðp;−mÞ × ðq2; q2Þr Q4pmþ1 i¼1 ðq2; q2Þdi q P i;j CKðp;−mÞdidj; ð8Þ where the linear term Ξðp;−mÞ ≡P i ξidi, phase factor Λðp;−mÞ ≡P i γidi. The block structure of the matrix CKðp;−mÞ for some examples lead to the following conjecture:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/physrevd108106023/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Colored HOMFLY-PT polynomials for a class of double twist knots Kðp; −mÞ",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-a-colored-homfly-pt-polynomials-for-a-class-of-d.md",
+      "narrative": null,
+      "content": "of double twist knots Kðp; −mÞ\nFor given positive integers p and m, the Alexander\npolynomial of a double twist knot of type Kðp; −mÞ takes\nthe form\nΔKðp;−mÞðxÞ ¼ 1 −ðpmÞX:\nð5Þ\nHere, X ¼ ð1−xÞ2\nx\n. Such a linear expression appeared in\nmany knots [13], suggesting the inverse binomial expan-\nsion to take the following form:\n1\nΔKðp;−mÞðxÞN−1 ¼\nX\n∞\n0≤k1≤…≤k2mp\n\u0002 N þ k2mp −2\nk2mp\n\u0003\n×\nY\n2mp−1\ni¼1\n\u0002 kiþ1\nki\n\u0003 ð1 −xÞ2k2mp\nxk2mp\n:\nð6Þ\nFurther, using the quantum deformation procedure dis-\ncussed in [13] and taking A →q2ðN ¼ 2Þ in Eq. (6), the\ncolored Jones polynomial can be written as\nJrðKðp; −mÞ; qÞ ¼\nX",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/physrevd108106023/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "KNOT-QUIVER CORRESPONDENCE",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-iii-knot-quiver-correspondence.md",
+      "narrative": null,
+      "content": "OF DOUBLE TWIST KNOTS Kðp; −mÞ\nWe observe that the quiver matrix has a block structure\nby performing a similar analysis of the previous section for\nother examples of the double twist knots Kðp; −mÞ. Our\nexplicit computation suggests the following proposition.\nProposition. The r-colored Jones polynomial for double\ntwist knots Kðp; −mÞ, with p ≥m, can be expressed in the\nquiver representation,\nJrðKðp; −mÞ; qÞ ¼\nX\nd1þd2þ\u0002\u0002\u0002þd4pmþ1¼r\nð−1ÞΛðp;−mÞqΞðp;−mÞ\n×\nðq2; q2Þr\nQ4pmþ1\ni¼1\nðq2; q2Þdi\nq\nP\ni;j CKðp;−mÞdidj;\nð8Þ\nwhere the linear term Ξðp;−mÞ ≡P\ni ξidi, phase factor\nΛðp;−mÞ ≡P\ni γidi.\nThe block str",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/physrevd108106023/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "CONCLUSION AND DISCUSSION",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-iv-conclusion-and-discussion.md",
+      "narrative": null,
+      "content": "Double twist knots Kðp; −mÞ depend on two full twist\nparameters p; m ∈Zþ belong to the arborescent family\n(see Fig. 1). Finding a quiver with matrix (9) associated\nto each of the double twist knots was attempted using\nreverse engineering of Melvin-Morton-Rozansky expan-\nsion. We observed the Alexander polynomial form to be\nΔðXÞ ¼ 1 −pmX, almost similar to twist knots Kðp; −1Þ\nstudied in Ref. [1]. Comparing the structure of twist knot\nquiver, we put forth a proposition (8) for colored Jones in a\nquiver presentation as well as conjectured (9) the structure\nof the quiver matrix CKðp;−mÞ for any d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/physrevd108106023/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "ACKNOWLEDGMENTS",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-006-acknowledgments.md",
+      "narrative": null,
+      "content": "The work of V. K. S. is supported by “Tamkeen under\nthe NYU Abu Dhabi Research Institute Grant No. CG008\nand ASPIRE Abu Dhabi under Project AARE20-336”.\nV. K. S. would like to thank P. Sulkowski, Q. Chen,\nHisham Sati, and Urs Schreiber for the helpful discussion.\nP. R. is thankful for the SERB (MATRICS) MTR/2019/\n000956 funding, which enabled her to visit University of\nWarsaw and present these results. P. R. would also like to\nacknowledge the ICTP’s Associate programme, which\nhelped her to complete this project during the visit as a\nsenior associate. S. C. and P. R. would like to thank all the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/physrevd108106023/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "APPENDIX: QUIVER MATRIX",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-007-appendix-quiver-matrix.md",
+      "narrative": null,
+      "content": "For clarity, we present the steps in obtaining the quiver\nrepresentation for a knot 83 in this appendix. The Alexander\npolynomial in variable X is Δ83ðXÞ ¼ ð1 −4XÞ. Such a\nform implied that we could perform the reverse MMR\nmethod discussed [13] for ΔKðXÞ ¼ 1 −pX with p being\ninteger. The r-colored Jones polynomials take the following\ninteresting form:\nJrð83; qÞ ¼\nX\nr≥k8≥…≥k1≥0\nðq2; q2Þk8\n\u0004 r\nk8\n\u0005\u0004 k8\nk7\n\u0005\u0004 k7\nk6\n\u0005\u0004 k6\nk5\n\u0005\u0004 k5\nk4\n\u0005\u0004 k4\nk3\n\u0005\u0004 k3\nk2\n\u0005\u0004 k2\nk1\n\u0005\nq\nPp\ni;j¼1 aijkikjq\nPp\ni¼1 bikið−1Þ\nPp\ni¼1 ciki:\nBy comparing these polynomials with known r-colored Jones polynomials, we have successfu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

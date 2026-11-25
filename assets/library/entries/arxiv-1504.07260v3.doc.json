@@ -1,0 +1,2389 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1504.07260v3",
+  "title": "Fricke S-duality in CHL models",
+  "variant": "pdf",
+  "pages": 56,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction and Summary",
+      "number": "1",
+      "page": 3,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction-and-summary"
+    },
+    {
+      "level": 2,
+      "title": "Fricke S-duality",
+      "number": "1.1",
+      "page": 3,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-fricke-s-duality"
+    },
+    {
+      "level": 2,
+      "title": "Black hole microstate counting",
+      "number": "1.2",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-black-hole-microstate-counting"
+    },
+    {
+      "level": 2,
+      "title": "Connection with moonshine",
+      "number": "1.3",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-connection-with-moonshine"
+    },
+    {
+      "level": 2,
+      "title": "Outline",
+      "number": "1.4",
+      "page": 10,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-outline"
+    },
+    {
+      "level": 1,
+      "title": "Non-geometric CHL models",
+      "number": "2",
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-2-non-geometric-chl-models"
+    },
+    {
+      "level": 2,
+      "title": "Heterotic-type II duality",
+      "number": "2.1",
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-21-heterotic-type-ii-duality"
+    },
+    {
+      "level": 2,
+      "title": "Generalities on CHL models",
+      "number": "2.2",
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-22-generalities-on-chl-models"
+    },
+    {
+      "level": 2,
+      "title": "Consistency and level matching",
+      "number": "2.3",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-23-consistency-and-level-matching"
+    },
+    {
+      "level": 2,
+      "title": "Classification",
+      "number": "2.4",
+      "page": 15,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-24-classification"
+    },
+    {
+      "level": 1,
+      "title": "Fricke S-duality and N-modularity",
+      "number": "3",
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-3-fricke-s-duality-and-n-modularity"
+    },
+    {
+      "level": 2,
+      "title": "String-string duality and Fricke S-duality",
+      "number": "3.1",
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-31-string-string-duality-and-fricke-s-duality"
+    },
+    {
+      "level": 2,
+      "title": "Self-duality and the Witten index",
+      "number": "3.2",
+      "page": 20,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-32-self-duality-and-the-witten-index"
+    },
+    {
+      "level": 2,
+      "title": "Heterotic T-duality",
+      "number": "3.3",
+      "page": 22,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-33-heterotic-t-duality"
+    },
+    {
+      "level": 2,
+      "title": "Atkin-Lehner dualities",
+      "number": "3.4",
+      "page": 22,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-34-atkin-lehner-dualities"
+    },
+    {
+      "level": 1,
+      "title": "Lattice of electric-magnetic charges",
+      "number": "4",
+      "page": 25,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-4-lattice-of-electric-magnetic-charges"
+    },
+    {
+      "level": 2,
+      "title": "Purely electric charges",
+      "number": "4.1",
+      "page": 26,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-41-purely-electric-charges"
+    },
+    {
+      "level": 2,
+      "title": "Purely magnetic charges",
+      "number": "4.2",
+      "page": 27,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-42-purely-magnetic-charges"
+    },
+    {
+      "level": 2,
+      "title": "Fricke S-duality and N-modular lattices",
+      "number": "4.3",
+      "page": 29,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-43-fricke-s-duality-and-n-modular-lattices"
+    },
+    {
+      "level": 1,
+      "title": "BPS-state counting",
+      "number": "5",
+      "page": 30,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-5-bps-state-counting"
+    },
+    {
+      "level": 2,
+      "title": "The type II helicity supertrace",
+      "number": "5.1",
+      "page": 31,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-51-the-type-ii-helicity-supertrace"
+    },
+    {
+      "level": 2,
+      "title": "Helicity supertrace for type IIA CHL models",
+      "number": "5.2",
+      "page": 32,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-52-helicity-supertrace-for-type-iia-chl-models"
+    },
+    {
+      "level": 2,
+      "title": "Topological amplitudes and Fricke S-duality",
+      "number": "5.3",
+      "page": 33,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-53-topological-amplitudes-and-fricke-s-duality"
+    },
+    {
+      "level": 2,
+      "title": "The heterotic helicity supertrace",
+      "number": "5.4",
+      "page": 34,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-54-the-heterotic-helicity-supertrace"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions",
+      "number": "6",
+      "page": 36,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-6-conclusions"
+    },
+    {
+      "level": 1,
+      "title": "A Non-geometric CHL models: general case",
+      "number": null,
+      "page": 37,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-a-non-geometric-chl-models-general-case"
+    },
+    {
+      "level": 2,
+      "title": "A.1 Lattice of purely electric charges",
+      "number": null,
+      "page": 38,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-a1-lattice-of-purely-electric-charges"
+    },
+    {
+      "level": 2,
+      "title": "A.2 Heterotic S-duality and T-duality",
+      "number": null,
+      "page": 39,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-a2-heterotic-s-duality-and-t-duality"
+    },
+    {
+      "level": 2,
+      "title": "A.3 Witten index of the quantum symmetry",
+      "number": null,
+      "page": 41,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-a3-witten-index-of-the-quantum-symmetry"
+    },
+    {
+      "level": 2,
+      "title": "A.4 Lattice of electric-magnetic charges",
+      "number": null,
+      "page": 44,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-a4-lattice-of-electric-magnetic-charges"
+    },
+    {
+      "level": 1,
+      "title": "B Heterotic T-duality",
+      "number": null,
+      "page": 47,
+      "pageLabel": "46",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-b-heterotic-t-duality"
+    },
+    {
+      "level": 1,
+      "title": "C Symmetries and lattices",
+      "number": null,
+      "page": 50,
+      "pageLabel": "49",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-c-symmetries-and-lattices"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 417,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fricke s-duality",
+          "heading": false
+        },
+        {
+          "term": "chl models",
+          "heading": false
+        },
+        {
+          "term": "non-geometric chl",
+          "heading": false
+        },
+        {
+          "term": "heterotic t-duality",
+          "heading": false
+        },
+        {
+          "term": "helicity supertrace",
+          "heading": false
+        },
+        {
+          "term": "electric charges",
+          "heading": false
+        },
+        {
+          "term": "electric-magnetic charges",
+          "heading": false
+        },
+        {
+          "term": "magnetic charges",
+          "heading": false
+        }
+      ],
+      "extract": "Prepared for submission to JHEP Fricke S-duality in CHL models Daniel Persson1 Roberto Volpato2,3 1Fundamental Physics, Chalmers University of Technology, 412 96, Gothenburg, Sweden 2Theory Group, SLAC National Accelerator Laboratory, Menlo Park, CA 94025, USA 3Stanford Institute for Theoretical Physics, Department of Physics, Stanford University, Stanford, CA 94305, USA E-mail: daniel.persson@chalmers.se,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1504.07260v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction-and-summary",
+      "number": "1",
+      "title": "Introduction and Summary",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 192,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fricke s-duality",
+          "heading": false
+        },
+        {
+          "term": "dabholkar",
+          "heading": false
+        },
+        {
+          "term": "chl models",
+          "heading": false
+        },
+        {
+          "term": "govindarajan",
+          "heading": false
+        },
+        {
+          "term": "s-duality group",
+          "heading": false
+        },
+        {
+          "term": "chaudhuri",
+          "heading": false
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "string theory",
+          "heading": false
+        }
+      ],
+      "extract": "CHL models are orbifolds of heterotic string theory on $T^6$ preserving $\\mathcal{N}=4$ supersymmetry, or, equivalently, of type II string theory on $K3\\times T^2$ [@Chaudhuri:1995fk; @Chaudhuri:1995bf; @Chaudhuri:1995dj; @Chaudhuri:1995ee]. These models have been a remarkable arena for testing string dualities and analyzing black hole microstates (see [@Dabholkar:2004yr; @Dabholkar:2005by; @Dabholkar:2005dt;",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-fricke-s-duality",
+      "number": "1.1",
+      "title": "Fricke S-duality",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 8,
+      "labelStart": "2",
+      "labelEnd": "7",
+      "words": 1733,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fricke s-duality",
+          "heading": true
+        },
+        {
+          "term": "heterotic chl",
+          "heading": false
+        },
+        {
+          "term": "text iia",
+          "heading": false
+        },
+        {
+          "term": "chl model",
+          "heading": false
+        },
+        {
+          "term": "type iia",
+          "heading": false
+        },
+        {
+          "term": "iia theory",
+          "heading": false
+        },
+        {
+          "term": "coupled heterotic",
+          "heading": false
+        },
+        {
+          "term": "text het",
+          "heading": false
+        }
+      ],
+      "extract": "Consider heterotic string theory on $T^6$ and decompose the torus according to $T^6=T^4 \\times S^1\\times \\tilde{S}^1$. We want to take the orbifold of this by a cyclic group $G$ of symmetries that preserve all the spacetime supersymmetries. This implies, in particular, that $G$ must act trivially on the left-moving (supersymmetric) sector. From the type IIA perspective, the target space is $K3\\times S^1\\times",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-black-hole-microstate-counting",
+      "number": "1.2",
+      "title": "Black hole microstate counting",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 612,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "text chl",
+          "heading": false
+        },
+        {
+          "term": "chl models",
+          "heading": false
+        },
+        {
+          "term": "fricke s-duality",
+          "heading": false
+        },
+        {
+          "term": "frameshape",
+          "heading": false
+        },
+        {
+          "term": "dabholkar",
+          "heading": false
+        },
+        {
+          "term": "mathbb tau",
+          "heading": false
+        },
+        {
+          "term": "bps-states",
+          "heading": false
+        },
+        {
+          "term": "black holes",
+          "heading": false
+        }
+      ],
+      "extract": "The counting of BPS-states in CHL models have lead to deep insights into the quantum properties of certain black holes. In this paper we shall focus on 1/2 BPS-states which in the heterotic picture correspond to Dabholkar-Harvey states [@Dabholkar:1990yf], i.e. with zero excitations in the right-moving sector but arbitrary excitations in the left-moving sector. In the type IIA picture these are electrically charged",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-connection-with-moonshine",
+      "number": "1.3",
+      "title": "Connection with moonshine",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 458,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "moonshine",
+          "heading": true
+        },
+        {
+          "term": "fricke s-duality",
+          "heading": false
+        },
+        {
+          "term": "mckay-thompson series",
+          "heading": false
+        },
+        {
+          "term": "gaberdiel",
+          "heading": false
+        },
+        {
+          "term": "electric-magnetic duality",
+          "heading": false
+        },
+        {
+          "term": "chl model",
+          "heading": false
+        },
+        {
+          "term": "taormina",
+          "heading": false
+        },
+        {
+          "term": "monster group",
+          "heading": false
+        }
+      ],
+      "extract": "Monstrous moonshine relates representations of the monster group $\\mathbb{M}$ with modular forms, Borcherds-Kac-Moody algebras and conformal field theory. To each element $g\\in \\mathbb{M}$ one associates a modular form $T_g(\\tau)$ (McKay-Thompson series), whose Fourier coefficients are characters of the monster group. The basic conjecture of Conway-Norton, later proven by Borcherds, was that the McKay-Thompson",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-outline",
+      "number": "1.4",
+      "title": "Outline",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 205,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-geometric chl",
+          "heading": false
+        },
+        {
+          "term": "chl models",
+          "heading": false
+        },
+        {
+          "term": "heterotic chl",
+          "heading": false
+        },
+        {
+          "term": "fricke s-duality",
+          "heading": false
+        },
+        {
+          "term": "hettdual",
+          "heading": false
+        },
+        {
+          "term": "bpscount",
+          "heading": false
+        },
+        {
+          "term": "charge lattices",
+          "heading": false
+        },
+        {
+          "term": "emlattices",
+          "heading": false
+        }
+      ],
+      "extract": "In section [\\[sec:CHL\\]](#sec:CHL){reference-type=\"ref\" reference=\"sec:CHL\"} we introduce the CHL models that we shall analyse in the paper and we discuss them from the point of view of heterotic-type II duality. We also prove consistency of a non-geometric CHL models and present a partial classification. In section [\\[s:Sdual\\]](#s:Sdual){reference-type=\"ref\" reference=\"s:Sdual\"} we then prove that these CHL models",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-2-non-geometric-chl-models",
+      "number": "2",
+      "title": "Non-geometric CHL models",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 111,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chl models",
+          "heading": true
+        },
+        {
+          "term": "non-geometric",
+          "heading": true
+        },
+        {
+          "term": "heterotic-type",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:CHL label=\"sec:CHL\"} In this section we introduce the CHL models we will study in this paper. To this end we begin by recalling some standard facts about heterotic-type II dualities, after which we present the (non-geometric) CHL models and demonstrate their consistency. We also provide a partial classification of all such models.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-21-heterotic-type-ii-duality",
+      "number": "2.1",
+      "title": "Heterotic-type II duality",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 386,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "text iia",
+          "heading": false
+        },
+        {
+          "term": "heterotic axio-dilaton",
+          "heading": false
+        },
+        {
+          "term": "text het",
+          "heading": false
+        },
+        {
+          "term": "het leftrightarrow",
+          "heading": false
+        },
+        {
+          "term": "iia picture",
+          "heading": false
+        },
+        {
+          "term": "type iia",
+          "heading": false
+        },
+        {
+          "term": "narain lattice",
+          "heading": false
+        },
+        {
+          "term": "lattice gamma",
+          "heading": false
+        }
+      ],
+      "extract": "Let us first recall some basic properties of compactification of heterotic string on $T^6$. The moduli space of such compactification is $$O(6,22,\\mathbb{Z})\\backslash O(6,22)/(O(6)\\times O(22))\\times SL(2,\\mathbb{Z})\\backslash SL(2,\\mathbb{R})/U(1)\\ .$$The first factor is the Narain moduli space, parametrizing the metric and B-field of the torus $T^6$ as well as the Wilson lines along the internal directions, while",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-22-generalities-on-chl-models",
+      "number": "2.2",
+      "title": "Generalities on CHL models",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "11",
+      "labelEnd": "13",
+      "words": 959,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chl",
+          "heading": true
+        },
+        {
+          "term": "text het",
+          "heading": false
+        },
+        {
+          "term": "mathbb hat",
+          "heading": false
+        },
+        {
+          "term": "space-time supersymmetries",
+          "heading": false
+        },
+        {
+          "term": "chlclass",
+          "heading": false
+        },
+        {
+          "term": "symmetry hat",
+          "heading": false
+        },
+        {
+          "term": "chl model",
+          "heading": false
+        },
+        {
+          "term": "mod hat",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s:CHLgeneral label=\"s:CHLgeneral\"} In this paper, we discuss certain four dimensional CHL models with $16$ supersymmetries. These models are obtained by orbifolding the heterotic string on $T^6\\equiv T^4\\times S^1\\times \\tilde S^1$ (or, equivalently, of type IIA on $K3\\times S^1\\times \\tilde S^1$) by a cyclic group of symmetries preserving all space-time supersymmetries. We focus on cyclic groups generated by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-23-consistency-and-level-matching",
+      "number": "2.3",
+      "title": "Consistency and level matching",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 446,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "level matching",
+          "heading": true
+        },
+        {
+          "term": "levelmatch",
+          "heading": false
+        },
+        {
+          "term": "mismatch delta",
+          "heading": false
+        },
+        {
+          "term": "heterotic frame",
+          "heading": false
+        },
+        {
+          "term": "delta equiv",
+          "heading": false
+        },
+        {
+          "term": "lambda mathbb",
+          "heading": false
+        },
+        {
+          "term": "hat mathbb",
+          "heading": false
+        },
+        {
+          "term": "equiv frac",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s:levelmatch label=\"s:levelmatch\"} In order for the model to be consistent, the level matching condition has to be satisfied, namely the eigenvalues of $L_0-\\bar L_0$ in each $g^r$-twisted sector should take values in $\\mathbb{Z}/\\hat{N}\\mathbb{Z}$, where $\\hat N$ is the order of the symmetry. For $\\hat g=(g,\\delta)$, with $g\\in O(\\Gamma^{6,22})$ of order $N$ and $\\delta\\in \\Gamma^{6,22}\\otimes \\mathbb{R}$ fixed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-24-classification",
+      "number": "2.4",
+      "title": "Classification",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 785,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hat lambda",
+          "heading": false
+        },
+        {
+          "term": "chl models",
+          "heading": false
+        },
+        {
+          "term": "fixing sublattice",
+          "heading": false
+        },
+        {
+          "term": "cong gamma",
+          "heading": false
+        },
+        {
+          "term": "oplus gamma",
+          "heading": false
+        },
+        {
+          "term": "gamma otimes",
+          "heading": false
+        },
+        {
+          "term": "frame shapes",
+          "heading": false
+        },
+        {
+          "term": "order hat",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s:CHLclass label=\"s:CHLclass\"} We are considering four dimensional CHL models obtained by orbifolding symmetry $\\hat g=(\\delta,g)$ where $g\\in O(\\Gamma^{6,22})$ fixes a sublattice $\\Gamma_{S^1}\\oplus \\Gamma_{\\tilde S^1}\\cong \\Gamma^{2,2}$ and $\\delta\\in \\Gamma_{S^1}\\otimes\\mathbb{R}$ has finite order modulo $\\Gamma_{S^1}$. Each CHL model can be labeled by the corresponding pair $(\\delta,g)$. However, this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-3-fricke-s-duality-and-n-modularity",
+      "number": "3",
+      "title": "Fricke S-duality and N-modularity",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 88,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sdual",
+          "heading": false
+        },
+        {
+          "term": "hat times",
+          "heading": false
+        },
+        {
+          "term": "times tilde",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s:Sdual label=\"s:Sdual\"} The equivalence between type IIA string theory compactified on $(K3\\times S^1)/\\mathbb{Z}_{\\hat N}\\times \\tilde S^1$ and heterotic string theory on $(T^4\\times S^1)/\\mathbb{Z}_{\\hat N}\\times \\tilde S^1$ can be explained using the standard adiabatic argument of [@VafaWitten95]. We will use this argument to discuss the strong coupling limit of the heterotic CHL model. This will lead us to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-31-string-string-duality-and-fricke-s-duality",
+      "number": "3.1",
+      "title": "String-string duality and Fricke S-duality",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 20,
+      "labelStart": "15",
+      "labelEnd": "19",
+      "words": 1699,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fricke s-duality",
+          "heading": true
+        },
+        {
+          "term": "iia tilde",
+          "heading": false
+        },
+        {
+          "term": "iia string",
+          "heading": false
+        },
+        {
+          "term": "iia frac",
+          "heading": false
+        },
+        {
+          "term": "iia qquad",
+          "heading": false
+        },
+        {
+          "term": "text iia",
+          "heading": false
+        },
+        {
+          "term": "type iia",
+          "heading": false
+        },
+        {
+          "term": "iia picture",
+          "heading": false
+        }
+      ],
+      "extract": "For definiteness, we restrict to a point in the moduli space where, in the type IIA picture, the circles $S^1$ and $\\tilde S^1$ are orthogonal and the B-field and Wilson lines along $S^1$ and $\\tilde S^1$ vanish. We denote by $R$ and $\\tilde R$ the radii of the circles in the type IIA picture. In this section, we consider symmetries $\\hat g=(\\delta,g)$ where $g$ is a symmetry of order $N$ of the internal K3 model",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-32-self-duality-and-the-witten-index",
+      "number": "3.2",
+      "title": "Self-duality and the Witten index",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": "19",
+      "labelEnd": "21",
+      "words": 1088,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "witten index",
+          "heading": true
+        },
+        {
+          "term": "orbifold mathcal",
+          "heading": false
+        },
+        {
+          "term": "cycle shape",
+          "heading": false
+        },
+        {
+          "term": "quantsymm",
+          "heading": false
+        },
+        {
+          "term": "frame shape",
+          "heading": false
+        },
+        {
+          "term": "chl model",
+          "heading": false
+        },
+        {
+          "term": "symmetry mathcal",
+          "heading": false
+        },
+        {
+          "term": "cft mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s:quantsymm label=\"s:quantsymm\"} From the above discussion, it is clearly important to determine which CHL models are self-dual under Fricke S-duality. This can be determined simply in terms of the Frame shape $\\prod_{a|N} a^{m(a)}$ of $g$, by analyzing the associated Witten index as we now show. Let $\\mathcal{C}$ be a non-linear sigma model on K3 and $g$ be a symmetry of $\\mathcal{C}$ of order $N$ preserving",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-33-heterotic-t-duality",
+      "number": "3.3",
+      "title": "Heterotic T-duality",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 144,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "heterotic",
+          "heading": true
+        },
+        {
+          "term": "heterotic chl",
+          "heading": false
+        },
+        {
+          "term": "t-duality",
+          "heading": true
+        },
+        {
+          "term": "text het",
+          "heading": false
+        },
+        {
+          "term": "hettdual",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s:hetTdual label=\"s:hetTdual\"} The analysis of T-duality in the type IIA frame of CHL models can be repeated without essential modifications to describe T-duality in the heterotic frame (equivalently, S-duality in the type IIA frame). Under a change in the moduli $$T_{\\text{het}}\\to -\\frac{1}{NT_{\\text{het}}}\\ ,\\qquad U_{\\text{het}}\\to -\\frac{1}{NU_{\\text{het}}}\\ , \\qquad S_{\\text{het}}\\to S_{\\text{het}}\\ ,$$the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-34-atkin-lehner-dualities",
+      "number": "3.4",
+      "title": "Atkin-Lehner dualities",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 25,
+      "labelStart": "21",
+      "labelEnd": "24",
+      "words": 1130,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "atkin-lehner",
+          "heading": true
+        },
+        {
+          "term": "color blue",
+          "heading": false
+        },
+        {
+          "term": "iia frame",
+          "heading": false
+        },
+        {
+          "term": "atkin-lehner involutions",
+          "heading": false
+        },
+        {
+          "term": "text iia",
+          "heading": false
+        },
+        {
+          "term": "iia frac",
+          "heading": false
+        },
+        {
+          "term": "text het",
+          "heading": false
+        },
+        {
+          "term": "pmatrix tilde",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s:AtkinLehner label=\"s:AtkinLehner\"} The Fricke S-duality $S\\to -1/NS$ can be generalized to dualities acting on the heterotic axio-dilaton by Atkin-Lehner involutions. Let $e$ be an exact divisor of $N$ (denoted by $e\\| N$), i.e $e| N$ and $\\gcd(e,N/e)=1$. An Atkin-Lehner involution is an element of $SL(2,\\mathbb{R})$ of the form[^1] $$\\label{ALdef} W_e=\\frac{1}{\\sqrt{e}}\\begin{pmatrix} ae & b\\\\ Nc & de",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-4-lattice-of-electric-magnetic-charges",
+      "number": "4",
+      "title": "Lattice of electric-magnetic charges",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 306,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sublattices lambda",
+          "heading": false
+        },
+        {
+          "term": "lambda oplus",
+          "heading": false
+        },
+        {
+          "term": "lambda subseteq",
+          "heading": false
+        },
+        {
+          "term": "electric charges",
+          "heading": false
+        },
+        {
+          "term": "emlattices",
+          "heading": false
+        },
+        {
+          "term": "genlatticeem",
+          "heading": false
+        },
+        {
+          "term": "magnetic charges",
+          "heading": false
+        },
+        {
+          "term": "lambda cong",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s:emlattices label=\"s:emlattices\"} The lattice of electric-magnetic charges $\\Lambda_{em}$ of a CHL models contains the sublattices $\\Lambda_e$ and $\\Lambda_m$ of purely electric and purely electric charges $$\\label{emlattices} \\Lambda_e\\oplus \\Lambda_m\\subseteq \\Lambda_{em}\\ .$$By convention, purely electric charges are the ones carried by perturbative heterotic states. Correspondingly, the electric fields are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-41-purely-electric-charges",
+      "number": "4.1",
+      "title": "Purely electric charges",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 678,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "electric charges",
+          "heading": true
+        },
+        {
+          "term": "gamma tilde",
+          "heading": false
+        },
+        {
+          "term": "gamma oplus",
+          "heading": false
+        },
+        {
+          "term": "hat twisted",
+          "heading": false
+        },
+        {
+          "term": "gamma otimes",
+          "heading": false
+        },
+        {
+          "term": "iia picture",
+          "heading": false
+        },
+        {
+          "term": "hat invariant",
+          "heading": false
+        },
+        {
+          "term": "cdot qquad",
+          "heading": false
+        }
+      ],
+      "extract": "The lattice of electric charges of the CHL model can be most conveniently described in the heterotic frame. Let $u,u^*$ denote two null vectors generating $\\Gamma_{S^1}$, so that $$u\\cdot u=u^*\\cdot u^*=0\\qquad u\\cdot u^*=1\\qquad \\Gamma_{S^1}=\\langle u, u^*\\rangle\\ .$$We can consider $u$ as representing a unit of winding along $S^1$ and $u^*$ as a unit of momentum. Let $g$ be a symmetry of order $N$ of the K3 model",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-42-purely-magnetic-charges",
+      "number": "4.2",
+      "title": "Purely magnetic charges",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 29,
+      "labelStart": "26",
+      "labelEnd": "28",
+      "words": 768,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnetic charges",
+          "heading": true
+        },
+        {
+          "term": "gamma tilde",
+          "heading": false
+        },
+        {
+          "term": "gamma oplus",
+          "heading": false
+        },
+        {
+          "term": "rangle oplus",
+          "heading": false
+        },
+        {
+          "term": "oplus langle",
+          "heading": false
+        },
+        {
+          "term": "mathbb oplus",
+          "heading": false
+        },
+        {
+          "term": "tilde along",
+          "heading": false
+        },
+        {
+          "term": "tilde bigr",
+          "heading": false
+        }
+      ],
+      "extract": "Let us now determine the lattice $\\Lambda_m$ of purely magnetic charges. Once again, we will focus on the case $\\lambda=1$, postponing the discussion of the general case to section [\\[s:genlatticeem\\]](#s:genlatticeem){reference-type=\"ref\" reference=\"s:genlatticeem\"}. By the Dirac quantization condition, the lattice of purely magnetic charges $\\Lambda_m$ must be contained in the dual of the lattice",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-43-fricke-s-duality-and-n-modular-lattices",
+      "number": "4.3",
+      "title": "Fricke S-duality and N-modular lattices",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": "28",
+      "labelEnd": "29",
+      "words": 607,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lattices",
+          "heading": true
+        },
+        {
+          "term": "self-dual chl",
+          "heading": false
+        },
+        {
+          "term": "chl model",
+          "heading": false
+        },
+        {
+          "term": "s-duality",
+          "heading": true
+        },
+        {
+          "term": "oplus gamma",
+          "heading": false
+        },
+        {
+          "term": "hetmodsdual",
+          "heading": false
+        },
+        {
+          "term": "gamma tilde",
+          "heading": false
+        },
+        {
+          "term": "cong gamma",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s:Nmodular label=\"s:Nmodular\"} In the previous section, we derived the lattice $\\Lambda_{em}$ of electric-magnetic charges of a CHL model, in the case $\\lambda=1$. Suppose that the CHL model is in case 1 of section [\\[s:Sdual\\]](#s:Sdual){reference-type=\"ref\" reference=\"s:Sdual\"}, i.e. the symmetry $g$ has balanced cycle shape. In this case, the Fricke S-duality connects two different points in the moduli space",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-5-bps-state-counting",
+      "number": "5",
+      "title": "BPS-state counting",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": "29",
+      "labelEnd": "30",
+      "words": 157,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chl models",
+          "heading": false
+        },
+        {
+          "term": "bps-states",
+          "heading": false
+        },
+        {
+          "term": "bpscount",
+          "heading": false
+        },
+        {
+          "term": "index omega",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:BPScount label=\"sec:BPScount\"} In this section we shall calculate the 1/2 BPS-indices in arbitrary CHL models, both from the type IIA and the heterotic perspective. In $\\mathcal{N}=4$ string theories the 1/2 BPS-states are counted by the index $$\\Omega_4:= \\text{Tr}(-1)^F J_3^{4},$$ where $F$ is the spacetime fermion number and $J_3$ is the Cartan generator of the massive little group in four dimensions. Due",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-51-the-type-ii-helicity-supertrace",
+      "number": "5.1",
+      "title": "The type II helicity supertrace",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 32,
+      "labelStart": "30",
+      "labelEnd": "31",
+      "words": 349,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bar upsilon",
+          "heading": false
+        },
+        {
+          "term": "partial upsilon",
+          "heading": false
+        },
+        {
+          "term": "upsilon frac",
+          "heading": false
+        },
+        {
+          "term": "big upsilon",
+          "heading": false
+        },
+        {
+          "term": "upsilon nonumber",
+          "heading": false
+        },
+        {
+          "term": "upsilon right",
+          "heading": false
+        },
+        {
+          "term": "bar eta",
+          "heading": false
+        },
+        {
+          "term": "frac vartheta",
+          "heading": false
+        }
+      ],
+      "extract": "It is convenient to introduce a generating function, called the *helicity string partition function* in [@Kiritsis:1997hj]: $$Z( \\upsilon, \\bar{ \\upsilon})=\\text{Tr}(-1)^F e^{2\\pi i \\upsilon J_3^{R}} e^{2\\pi i \\bar{ \\upsilon} J_3^{L}} q^{L_0} \\bar{q}^{\\bar{L}_0},$$ where $( \\upsilon, \\bar{ \\upsilon})$ are chemical potentials for the left- and right-moving spacetime helicities $(J_3^{R}, J_3^L)$. From the generating",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-52-helicity-supertrace-for-type-iia-chl-models",
+      "number": "5.2",
+      "title": "Helicity supertrace for type IIA CHL models",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 33,
+      "labelStart": "31",
+      "labelEnd": "32",
+      "words": 559,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chl",
+          "heading": true
+        },
+        {
+          "term": "helicity supertrace",
+          "heading": true
+        },
+        {
+          "term": "iia",
+          "heading": true
+        },
+        {
+          "term": "hat bigl",
+          "heading": false
+        },
+        {
+          "term": "hat theta",
+          "heading": false
+        },
+        {
+          "term": "hat mathop",
+          "heading": false
+        },
+        {
+          "term": "text chl",
+          "heading": false
+        },
+        {
+          "term": "frac hat",
+          "heading": false
+        }
+      ],
+      "extract": "Let us now generalize the previous analysis to CHL models in type IIA string theory. We are interested in the case where the orbifold group $G$ is cyclic of order $\\hat N$, with generator $\\hat g$ acting by a shift $\\delta$ of a $1/\\hat N$ period along one of the cycles of $T^2$ and by a symmetry $g$ of the K3 sigma model. Then, the generating function $Z^{\\text{IIA}}_{\\text{CHL}[\\hat g]}$ is obtained from",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-53-topological-amplitudes-and-fricke-s-duality",
+      "number": "5.3",
+      "title": "Topological amplitudes and Fricke S-duality",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 34,
+      "labelStart": "32",
+      "labelEnd": "33",
+      "words": 296,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fricke s-duality",
+          "heading": true
+        },
+        {
+          "term": "text iia",
+          "heading": false
+        },
+        {
+          "term": "hat text",
+          "heading": false
+        },
+        {
+          "term": "text chl",
+          "heading": false
+        },
+        {
+          "term": "hat bigl",
+          "heading": false
+        },
+        {
+          "term": "prod hat",
+          "heading": false
+        },
+        {
+          "term": "frac hat",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "Our aim is now to test the Fricke S-duality in the context of 1/2 BPS-state counting. Recall that the fourth helicity supertrace determines the one-loop topological amplitude according to the formula: $$F_1=\\frac{2}{3}\\int_{\\mathcal{F}} d^2\\tau\\, B_4 \\ .$$ where $\\mathcal{F}$ is a fundamental domain for $SL(2,\\mathbb{Z})\\backslash \\mathbb{H}$. The $T_{\\text{IIA}}$-dependent part of this amplitude determines the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-54-the-heterotic-helicity-supertrace",
+      "number": "5.4",
+      "title": "The heterotic helicity supertrace",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 36,
+      "labelStart": "33",
+      "labelEnd": "35",
+      "words": 541,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "helicity supertrace",
+          "heading": true
+        },
+        {
+          "term": "bar upsilon",
+          "heading": false
+        },
+        {
+          "term": "het text",
+          "heading": false
+        },
+        {
+          "term": "upsilon frac",
+          "heading": false
+        },
+        {
+          "term": "rvert upsilon",
+          "heading": false
+        },
+        {
+          "term": "het leftrightarrow",
+          "heading": false
+        },
+        {
+          "term": "partial upsilon",
+          "heading": false
+        },
+        {
+          "term": "text chl",
+          "heading": false
+        }
+      ],
+      "extract": "Let us now analyse the counting of BPS-states from the heterotic perspective. The generating function of helicity supertraces for heterotic strings on $T^6$ is [@Kiritsis:1997hj] $$Z^{\\text{het}}(\\upsilon,\\bar\\upsilon)= \\frac{\\vartheta_1(\\upsilon/2)^4 }{\\eta^{12}\\bar\\eta^{24}}\\frac{\\xi(\\upsilon)\\bar\\xi(\\bar\\upsilon)}{\\tau_2}\\Theta_{\\Gamma^{6,22}}\\ ,$$and the fourth helicity supertrace is[^1]",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-6-conclusions",
+      "number": "6",
+      "title": "Conclusions",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 37,
+      "labelStart": "35",
+      "labelEnd": "36",
+      "words": 902,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monstrous moonshine",
+          "heading": false
+        },
+        {
+          "term": "chl models",
+          "heading": false
+        },
+        {
+          "term": "fricke s-duality",
+          "heading": false
+        },
+        {
+          "term": "text chl",
+          "heading": false
+        },
+        {
+          "term": "fricke involution",
+          "heading": false
+        },
+        {
+          "term": "siegel modular",
+          "heading": false
+        },
+        {
+          "term": "helicity supertraces",
+          "heading": false
+        },
+        {
+          "term": "bps-states",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:conclusions label=\"sec:conclusions\"} In this paper we have analysed a large class of non-geometric CHL models and showed that they exhibit larger symmetries than previously expected. These models are in particular invariant under Fricke involution $S\\to -1/(NS)$ which lies outside of the $SL(2,\\mathbb{Z})$-symmetry of the original unorbifolded model. We showed that this leads to new non-trivial",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-a-non-geometric-chl-models-general-case",
+      "number": null,
+      "title": "A Non-geometric CHL models: general case",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 38,
+      "labelStart": "36",
+      "labelEnd": "37",
+      "words": 35,
+      "summary": null,
+      "keywords": [],
+      "extract": "Non-geometric CHL models: general case In this section, we generalize the analysis of CHL models to the most general case, where the level matching condition for a g-twisted sector is not satisﬁed. – 36 –",
+      "extractCut": false
+    },
+    {
+      "id": "sec-026-a1-lattice-of-purely-electric-charges",
+      "number": null,
+      "title": "A.1 Lattice of purely electric charges",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 39,
+      "labelStart": "37",
+      "labelEnd": "38",
+      "words": 576,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "electric charges",
+          "heading": true
+        },
+        {
+          "term": "lattice",
+          "heading": true
+        },
+        {
+          "term": "type iia",
+          "heading": false
+        },
+        {
+          "term": "magnetic charges",
+          "heading": false
+        },
+        {
+          "term": "string-string duality",
+          "heading": false
+        },
+        {
+          "term": "untwisted sector",
+          "heading": false
+        },
+        {
+          "term": "ˆg-invariant",
+          "heading": false
+        },
+        {
+          "term": "nλu",
+          "heading": false
+        }
+      ],
+      "extract": "Lattice of purely electric charges The calculation lattice of purely electric charges is similar to the λ = 1 case. In this case, δ = u ˆ N is a shift of order ˆN = Nλ. In the untwisted sector, the lattice of electric charges before the projection onto g-invariant states is again (Γg K3)∗⊕⟨u, u∗⟩⊕Γ ˜S1 . (A.1) However, in this case ˆg acts on a vector with winding-momentum p = nu+ku∗∈ΓS1 along S1 by multiplication",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-a2-heterotic-s-duality-and-t-duality",
+      "number": null,
+      "title": "A.2 Heterotic S-duality and T-duality",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 41,
+      "labelStart": "38",
+      "labelEnd": "40",
+      "words": 1036,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "heterotic s-duality",
+          "heading": true
+        },
+        {
+          "term": "t-duality",
+          "heading": true
+        },
+        {
+          "term": "type iia",
+          "heading": false
+        },
+        {
+          "term": "g-twisted sector",
+          "heading": false
+        },
+        {
+          "term": "internal cft",
+          "heading": false
+        },
+        {
+          "term": "theory compactiﬁed",
+          "heading": false
+        },
+        {
+          "term": "chl model",
+          "heading": false
+        },
+        {
+          "term": "twisted sectors",
+          "heading": false
+        }
+      ],
+      "extract": "Heterotic S-duality and T-duality The properties of the CHL models under the T-dualities in type IIA and heterotic frame, described in section 3, generalize to the case where λ > 1. The heterotic and type IIA frame are very similar and can be treated together. Let us generically denote by C the internal CFT in a six dimensional compactiﬁcation of string theory. For heterotic strings compactiﬁed on T 4, C is a N =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-a3-witten-index-of-the-quantum-symmetry",
+      "number": null,
+      "title": "A.3 Witten index of the quantum symmetry",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 44,
+      "labelStart": "40",
+      "labelEnd": "43",
+      "words": 993,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "witten index",
+          "heading": true
+        },
+        {
+          "term": "cycle shape",
+          "heading": false
+        },
+        {
+          "term": "standard orbifold",
+          "heading": false
+        },
+        {
+          "term": "quantum symmetry",
+          "heading": true
+        },
+        {
+          "term": "orbifold theory",
+          "heading": false
+        },
+        {
+          "term": "twining",
+          "heading": false
+        },
+        {
+          "term": "elliptic genus",
+          "heading": false
+        },
+        {
+          "term": "multiple",
+          "heading": false
+        }
+      ],
+      "extract": "Witten index of the quantum symmetry Let C be a non-linear sigma model on K3, g be a symmetry preserving the N = (4, 4) superconformal algebra and let us assume that the orbifold theory C′ = C/⟨g⟩is consistent, i.e. the twisted sectors satisfy the level-matching condition (λ = 1). In this section, we compute the twined Witten index of the quantum symmetry Q. By deﬁnition of Q, this is given by IC′ Qk = N X t=1 e",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-a4-lattice-of-electric-magnetic-charges",
+      "number": null,
+      "title": "A.4 Lattice of electric-magnetic charges",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 47,
+      "labelStart": "43",
+      "labelEnd": "46",
+      "words": 1878,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "electric-magnetic charges",
+          "heading": true
+        },
+        {
+          "term": "heterotic t-duality",
+          "heading": false
+        },
+        {
+          "term": "iia t-duality",
+          "heading": false
+        },
+        {
+          "term": "heterotic s-duality",
+          "heading": false
+        },
+        {
+          "term": "iia frame",
+          "heading": false
+        },
+        {
+          "term": "heterotic string",
+          "heading": false
+        },
+        {
+          "term": "type iia",
+          "heading": false
+        },
+        {
+          "term": "magnetic charges",
+          "heading": false
+        }
+      ],
+      "extract": "Lattice of electric-magnetic charges In this section, we determine the lattice of electric-magnetic charges in a CHL model with λ > 1 under the assumption that string-string duality and heterotic S-duality (or, equiva- lently, type IIA T-duality along S1 × ˜S1) hold. As stressed in section (A.1), one expects the lattice of purely magnetic charges Λm to contain a summand of the form Γg K3, correspond- ing to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-b-heterotic-t-duality",
+      "number": null,
+      "title": "B Heterotic T-duality",
+      "level": 1,
+      "pageStart": 47,
+      "pageEnd": 50,
+      "labelStart": "46",
+      "labelEnd": "49",
+      "words": 945,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "heterotic t-duality",
+          "heading": true
+        },
+        {
+          "term": "g-twisted sector",
+          "heading": false
+        },
+        {
+          "term": "heterotic strings",
+          "heading": false
+        },
+        {
+          "term": "frame shapes",
+          "heading": false
+        },
+        {
+          "term": "world-sheet currents",
+          "heading": false
+        },
+        {
+          "term": "orbifold theory",
+          "heading": false
+        },
+        {
+          "term": "vector multiplets",
+          "heading": false
+        },
+        {
+          "term": "prime order",
+          "heading": false
+        }
+      ],
+      "extract": "Heterotic T-duality In this appendix we show that the orbifold of heterotic strings on T 4 by a symmetry g ∈O(Γ4,20), if consistent, is again a compactiﬁcation of heterotic strings on T 4. The orbifold projection preserves the left-moving (supersymmetric) sector and projects out 20−d – 46 – world-sheet currents in the right-moving (bosonic) sector, each one corresponding to a vector multiplet in the six dimensional",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-c-symmetries-and-lattices",
+      "number": null,
+      "title": "C Symmetries and lattices",
+      "level": 1,
+      "pageStart": 50,
+      "pageEnd": 56,
+      "labelStart": "49",
+      "labelEnd": "55",
+      "words": 2557,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathieu moonshine",
+          "heading": false
+        },
+        {
+          "term": "chl dyons",
+          "heading": false
+        },
+        {
+          "term": "umbral moonshine",
+          "heading": false
+        },
+        {
+          "term": "chl models",
+          "heading": false
+        },
+        {
+          "term": "arxiv e-prints",
+          "heading": false
+        },
+        {
+          "term": "chl orbifolds",
+          "heading": false
+        },
+        {
+          "term": "lattices",
+          "heading": true
+        },
+        {
+          "term": "black holes",
+          "heading": false
+        }
+      ],
+      "extract": "Symmetries and lattices The entries in tables 1, 2, 3 in this appendix correspond to the 42 conjugacy classes of the Conway group that ﬁx a sublattice of the Leech lattice Λ of rank at least four. Each of these classes corresponds to a CHL model. For each class, we provide the order of g ∈O(ΓK3) ⊂O(Γ6,22), the parameter λ determined as in (2.16) (λ > 1 denotes a failure of the level matching condition in the",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "heterotic chl",
+      "heading": true
+    },
+    {
+      "term": "chl model",
+      "heading": true
+    },
+    {
+      "term": "iia s-duality",
+      "heading": true
+    },
+    {
+      "term": "text chl",
+      "heading": false
+    },
+    {
+      "term": "self-dual chl",
+      "heading": true
+    },
+    {
+      "term": "iia frame",
+      "heading": false
+    },
+    {
+      "term": "iia t-duality",
+      "heading": false
+    },
+    {
+      "term": "dimensional chl",
+      "heading": false
+    },
+    {
+      "term": "iia string",
+      "heading": false
+    },
+    {
+      "term": "iia frac",
+      "heading": false
+    },
+    {
+      "term": "iia tilde",
+      "heading": false
+    },
+    {
+      "term": "same chl",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "21",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 23,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "24",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 26,
+      "label": "25",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 27,
+      "label": "26",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 28,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 29,
+      "label": "28",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 30,
+      "label": "29",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 31,
+      "label": "30",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 32,
+      "label": "31",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 33,
+      "label": "32",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 34,
+      "label": "33",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 35,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 36,
+      "label": "35",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 37,
+      "label": "36",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 38,
+      "label": "37",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 39,
+      "label": "38",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 40,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 41,
+      "label": "40",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 42,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 43,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 44,
+      "label": "43",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 45,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 46,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 47,
+      "label": "46",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 48,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 49,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 50,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 51,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 52,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 53,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 54,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 55,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 56,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The web of dualities in the case when the CHL model is self-dual under Fricke S-duality. The strongly coupled limit is given by the same CHL model at a diﬀerent point in the moduli space",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "",
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The web of dualities in the case when the CHL model is not self-dual under Fricke S-duality, but maps from a strongly coupled heterotic theory to a genuinely diﬀerent, weakly coupled type IIA theory. Note in particular that the weakly coupled theory in the lower left corner is of (4,0)-type (i.e. al",
+      "page": 7,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Symmetries of K3 models whose Frame shape Q",
+      "page": 51,
+      "pageLabel": "50",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Symmetries of K3 model whose Frame shape is not balanced and such that the orbifold is a",
+      "page": 52,
+      "pageLabel": "51",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "The symmetries of K3 models whose orbifold is a torus. They are characterized by frame",
+      "page": 52,
+      "pageLabel": "51",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 32,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 33,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "3 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "3 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p50); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 10
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 33 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1504.07260v3"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/phys-rep09/sections/sec-002",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Motivation, overview and history",
+  "pageStart": 3,
+  "pageEnd": 6,
+  "contains": [
+    "library/phys-rep09/blocks/prose-sec-002",
+    "library/phys-rep09/blocks/figure-img-p006-1",
+    "library/phys-rep09/blocks/figure-img-p006-2"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/phys-rep09/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/phys-rep09/manifest.jsonld",
+  "provenance": "ingested"
+}

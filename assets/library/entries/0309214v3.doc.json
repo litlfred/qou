@@ -1,0 +1,2468 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "0309214v3",
+  "title": "The colored Jones function is q –holonomic",
+  "variant": "pdf",
+  "pages": 41,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Zeilberger meets Jones",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-zeilberger-meets-jones"
+    },
+    {
+      "level": 2,
+      "title": "Synonymous notions to holonomicity",
+      "number": "1.2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-synonymous-notions-to-holonomicity"
+    },
+    {
+      "level": 2,
+      "title": "Plan of the proof",
+      "number": "1.3",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-plan-of-the-proof"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgements",
+      "number": "1.4",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "q--holonomic and q--hypergeometric functions",
+      "number": "2",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-2-q--holonomic-and-q--hypergeometric-functions"
+    },
+    {
+      "level": 2,
+      "title": "q--holonomicity in many variables",
+      "number": "2.1",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-21-q--holonomicity-in-many-variables"
+    },
+    {
+      "level": 2,
+      "title": "Assembling q--holonomic functions",
+      "number": "2.2",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-22-assembling-q--holonomic-functions"
+    },
+    {
+      "level": 2,
+      "title": "Examples of q--holonomic functions",
+      "number": "2.3",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-23-examples-of-q--holonomic-functions"
+    },
+    {
+      "level": 2,
+      "title": "q--hypergeometric functions",
+      "number": "2.4",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-24-q--hypergeometric-functions"
+    },
+    {
+      "level": 1,
+      "title": "The colored Jones function for sl2",
+      "number": "3",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-3-the-colored-jones-function-for-sl2"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem ?? for links",
+      "number": "3.1",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-31-proof-of-theorem-for-links"
+    },
+    {
+      "level": 2,
+      "title": "A multisum formula for the colored Jones function of a knot",
+      "number": "3.2",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-32-a-multisum-formula-for-the-colored-jones-func"
+    },
+    {
+      "level": 1,
+      "title": "The cyclotomic function of a knot is q--holonomic",
+      "number": "4",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-4-the-cyclotomic-function-of-a-knot-is-q--holono"
+    },
+    {
+      "level": 1,
+      "title": "Complexity",
+      "number": "5",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-5-complexity"
+    },
+    {
+      "level": 2,
+      "title": "Finding a recursion relation for multisums",
+      "number": "5.1",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-51-finding-a-recursion-relation-for-multisums"
+    },
+    {
+      "level": 2,
+      "title": "Upper bounds for initial conditions",
+      "number": "5.2",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-52-upper-bounds-for-initial-conditions"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem ??",
+      "number": "5.3",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-53-proof-of-theorem"
+    },
+    {
+      "level": 1,
+      "title": "In computer talk",
+      "number": "6",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-6-in-computer-talk"
+    },
+    {
+      "level": 2,
+      "title": "Recursion relations for the cyclotomic function of twist knots",
+      "number": "6.1",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-61-recursion-relations-for-the-cyclotomic-functi"
+    },
+    {
+      "level": 2,
+      "title": "Recursion relations for the colored Jones function of the figure 8 knot",
+      "number": "6.2",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-62-recursion-relations-for-the-colored-jones-fun"
+    },
+    {
+      "level": 1,
+      "title": "The colored Jones function for a simple Lie algebra",
+      "number": "7",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-7-the-colored-jones-function-for-a-simple-lie-al"
+    },
+    {
+      "level": 2,
+      "title": "Preliminaries",
+      "number": "7.1",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-71-preliminaries"
+    },
+    {
+      "level": 3,
+      "title": "The quantum group U",
+      "number": "7.1.1",
+      "page": 25,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-711-the-quantum-group-u"
+    },
+    {
+      "level": 3,
+      "title": "Verma modules and finite dimensional modules",
+      "number": "7.1.2",
+      "page": 25,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-712-verma-modules-and-finite-dimensional-modules"
+    },
+    {
+      "level": 3,
+      "title": "Quantum braid group action",
+      "number": "7.1.3",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-713-quantum-braid-group-action"
+    },
+    {
+      "level": 3,
+      "title": "Ordering of the roots",
+      "number": "7.1.4",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-714-ordering-of-the-roots"
+    },
+    {
+      "level": 3,
+      "title": "PBW basis for U-, U+, and U",
+      "number": "7.1.5",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-715-pbw-basis-for-u--u-and-u"
+    },
+    {
+      "level": 3,
+      "title": "A commutation rule",
+      "number": "7.1.6",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-716-a-commutation-rule"
+    },
+    {
+      "level": 2,
+      "title": "q--holonomicity of quantum groups",
+      "number": "7.2",
+      "page": 28,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-72-q--holonomicity-of-quantum-groups"
+    },
+    {
+      "level": 3,
+      "title": "q--holonomicity of transition matrix",
+      "number": "7.2.1",
+      "page": 28,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-721-q--holonomicity-of-transition-matrix"
+    },
+    {
+      "level": 3,
+      "title": "Structure constants",
+      "number": "7.2.2",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-722-structure-constants"
+    },
+    {
+      "level": 3,
+      "title": "Actions on Verma modules are q--holonomic",
+      "number": "7.2.3",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-723-actions-on-verma-modules-are-q--holonomic"
+    },
+    {
+      "level": 2,
+      "title": "Quantum knot invariants",
+      "number": "7.3",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-73-quantum-knot-invariants"
+    },
+    {
+      "level": 3,
+      "title": "The quasi-R--matrix",
+      "number": "7.3.1",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-731-the-quasi-r--matrix"
+    },
+    {
+      "level": 3,
+      "title": "The R--matrix and the braiding",
+      "number": "7.3.2",
+      "page": 30,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-732-the-r--matrix-and-the-braiding"
+    },
+    {
+      "level": 3,
+      "title": "q--holonomicity of quantum invariants of knots",
+      "number": "7.3.3",
+      "page": 31,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-733-q--holonomicity-of-quantum-invariants-of-kno"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem ??",
+      "number": "7.4",
+      "page": 33,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-74-proof-of-theorem"
+    },
+    {
+      "level": 3,
+      "title": "r is q--holonomic",
+      "number": "7.4.1",
+      "page": 33,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-741-r-is-q--holonomic"
+    },
+    {
+      "level": 3,
+      "title": "Uq(sl2) is q--holonomic",
+      "number": "7.4.2",
+      "page": 33,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-742-uqsl2-is-q--holonomic"
+    },
+    {
+      "level": 3,
+      "title": "Ek, Fk2mu-:6muplus1muUU are q--holonomic in k",
+      "number": "7.4.3",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "T is q--holonomic",
+      "number": "7.4.4",
+      "page": 35,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-744-t-is-q--holonomic"
+    },
+    {
+      "level": 3,
+      "title": "Proof of Theorem ??",
+      "number": "7.4.5",
+      "page": 36,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-745-proof-of-theorem"
+    },
+    {
+      "level": 1,
+      "title": "A Appendix: Proof of Proposition ?? for A2 and B2",
+      "number": null,
+      "page": 37,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-a-appendix-proof-of-proposition-for-a2-and-b2"
+    },
+    {
+      "level": 2,
+      "title": "A.1 The case of A2",
+      "number": null,
+      "page": 37,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-043-a1-the-case-of-a2"
+    },
+    {
+      "level": 2,
+      "title": "A.2 The case of B2",
+      "number": null,
+      "page": 38,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-044-a2-the-case-of-b2"
+    },
+    {
+      "level": 1,
+      "title": "Bibliography",
+      "number": null,
+      "page": 39,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 198,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "thang lˆe",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "jones function",
+          "heading": false
+        },
+        {
+          "term": "holonomic",
+          "heading": false
+        },
+        {
+          "term": "gatech",
+          "heading": false
+        },
+        {
+          "term": "geometry topology",
+          "heading": false
+        }
+      ],
+      "extract": "ISSN 1364-0380 (on line) 1465-3060 (printed) 1253 Geometry & Topology Volume 9 (2005) 1253–1293 Published: 24 July 2005 The colored Jones function is q–holonomic Stavros Garoufalidis Thang T Q Lˆe School of Mathematics, Georgia Institute of Technology Atlanta, GA 30332-0160, USA Email: stavros@math.gatech.edu, letu@math.gatech.edu URL: http://www.math.gatech.edu/~stavros Abstract A function of several variables is",
+      "extractCut": true,
+      "blocks": [
+        "library/0309214v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "Introduction",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-zeilberger-meets-jones",
+      "number": "1.1",
+      "title": "Zeilberger meets Jones",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 896,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "zeilberger",
+          "heading": true
+        },
+        {
+          "term": "holonomic functions",
+          "heading": false
+        },
+        {
+          "term": "recursion ideal",
+          "heading": false
+        },
+        {
+          "term": "recursion relation",
+          "heading": false
+        },
+        {
+          "term": "term recursion",
+          "heading": false
+        },
+        {
+          "term": "recursion formula",
+          "heading": false
+        },
+        {
+          "term": "qqe",
+          "heading": false
+        }
+      ],
+      "extract": "Zeilberger meets Jones The colored Jones function of a framed knot K in 3–space JK : N −→Z[q±1/4] is a sequence of Laurent polynomials that essentially measures the Jones poly- nomial of a knot and its cables. This is a powerful but not well understood invariant of knots. As an example, the colored Jones function of the 0–framed right-hand trefoil is given by JK(n) = q1/2−n/2 1 −q−1 n−1 X k=0 q−kn(1 −q−n)(1 −q1−n) .",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-synonymous-notions-to-holonomicity",
+      "number": "1.2",
+      "title": "Synonymous notions to holonomicity",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 179,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "synonymous",
+          "heading": true
+        },
+        {
+          "term": "holonomicity",
+          "heading": true
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "linear recursion",
+          "heading": false
+        },
+        {
+          "term": "recursion relations",
+          "heading": false
+        }
+      ],
+      "extract": "Synonymous notions to holonomicity We have chosen to phrase the results of our paper mostly using the high-school language of linear recursion relations. We could have used synonymous terms such as linear q–diﬀerence equations, or q–holonomic functions, or D–modules, or maximally overdetermined systems of linear PDEs which is more common in the area of algebraic analysis, see for example [24]. The geometric notion",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-plan-of-the-proof",
+      "number": "1.3",
+      "title": "Plan of the proof",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 361,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "holonomic functions",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "recursion relations",
+          "heading": false
+        },
+        {
+          "term": "building blocks",
+          "heading": false
+        },
+        {
+          "term": "planar projection",
+          "heading": false
+        },
+        {
+          "term": "local building",
+          "heading": false
+        },
+        {
+          "term": "proper hypergeometric",
+          "heading": false
+        },
+        {
+          "term": "plan",
+          "heading": true
+        }
+      ],
+      "extract": "Plan of the proof In Section 2, we discuss in detail the notion of a q–holonomic function. We give examples of q–holonomic functions (our building blocks), together with rules that create q–holonomic functions from known ones. In Section 3, we discuss the colored Jones function of a link in 3–space, using state sums associated to a planar projection of the link. The colored Jones function is built out of local",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-acknowledgements",
+      "number": "1.4",
+      "title": "Acknowledgements",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 110,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "authors wish",
+          "heading": false
+        },
+        {
+          "term": "zeilberger",
+          "heading": false
+        },
+        {
+          "term": "acknowledgements",
+          "heading": true
+        }
+      ],
+      "extract": "Acknowledgements The authors wish to express their gratitude to D Zeilberger who introduced them to the wonderful world of holonomic functions and its relation to discrete mathematics. Zeilberger is a philosophical co-author of the present paper. Geometry & Topology, Volume 9 (2005) 1258 Stavros Garoufalidis and Thang T Q Lˆe In addition, the authors wish to thank A Bernstein, G Lusztig, and N Xie for help in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-2-q--holonomic-and-q--hypergeometric-functions",
+      "number": "2",
+      "title": "q--holonomic and q--hypergeometric functions",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 119,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "holonomic functions",
+          "heading": false
+        },
+        {
+          "term": "holonomicity",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "combinatorial identities",
+          "heading": false
+        }
+      ],
+      "extract": "Theorem 1 follows from the fact that the colored Jones function can be built from elementary blocks that are q–holonomic, and the operations that patch the blocks together to give the colored Jones function preserve q–holonomicity. IN Bernstein deﬁned the notion of holonomic functions f : Rr −→C, [2, 3]. For an excellent and complete account, see Bjork [4]. Zeilberger’s brilliant idea was to link the abstract notion",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-21-q--holonomicity-in-many-variables",
+      "number": "2.1",
+      "title": "q--holonomicity in many variables",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 585,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "relq",
+          "heading": false
+        },
+        {
+          "term": "homological dimension",
+          "heading": false
+        },
+        {
+          "term": "holonomicity",
+          "heading": false
+        },
+        {
+          "term": "discrete function",
+          "heading": false
+        },
+        {
+          "term": "weyl algebra",
+          "heading": false
+        },
+        {
+          "term": "holonomic",
+          "heading": false
+        },
+        {
+          "term": "left ideal",
+          "heading": false
+        },
+        {
+          "term": "monomial",
+          "heading": false
+        }
+      ],
+      "extract": "We brieﬂy review here the deﬁnition of q–holonomicity. First of all, we need an r–dimensional version of the q–Weyl algebra. Consider the operators Ei and Qj for 1 ≤i, j ≤r which act on discrete functions f : Nr −→Z[q±] by: (Qif)(n1, . . . , nr) = qnif(n1, . . . , nr) (Eif)(n1, . . . , nr) = f(n1, . . . , ni−1, ni + 1, ni+1, . . . , nr). It is easy to see that the following relations hold: QiQj = QjQi EiEj = EjEi",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-22-assembling-q--holonomic-functions",
+      "number": "2.2",
+      "title": "Assembling q--holonomic functions",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 264,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "holonomic functions",
+          "heading": false
+        },
+        {
+          "term": "multisums",
+          "heading": false
+        },
+        {
+          "term": "diagonals",
+          "heading": false
+        },
+        {
+          "term": "specializations",
+          "heading": false
+        }
+      ],
+      "extract": "Despite the unwelcoming deﬁnition of q–holonomic functions, in this paper we will use not the deﬁnition itself, but rather the closure properties of the set of q–holonomic functions under some natural operations. Fact 0 • Sums and products of q–holonomic functions are q–holonomic. • Specializations and extensions of q–holonomic functions are q–holonomic. In other words, if f(n1, . . . , nm) is q–holonomic, the so",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-23-examples-of-q--holonomic-functions",
+      "number": "2.3",
+      "title": "Examples of q--holonomic functions",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 156,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "holonomic",
+          "heading": false
+        },
+        {
+          "term": "functions",
+          "heading": true
+        },
+        {
+          "term": "multisums",
+          "heading": false
+        }
+      ],
+      "extract": "Here are a few examples of q–holonomic functions. In fact, we will encounter only sums, products, extensions, specializations, diagonals, and multisums of these functions. In what follows we usually extend the ground ring Z[q±1] to Geometry & Topology, Volume 9 (2005) The colored Jones function is q–holonomic 1261 the fractional ﬁeld Q(q1/D), where D is a positive integer. We also use v to denote a root of q, v2 =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-24-q--hypergeometric-functions",
+      "number": "2.4",
+      "title": "q--hypergeometric functions",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 197,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "annihilation ideal",
+          "heading": false
+        },
+        {
+          "term": "eif",
+          "heading": false
+        },
+        {
+          "term": "hypergeometric",
+          "heading": false
+        },
+        {
+          "term": "holonomic",
+          "heading": false
+        }
+      ],
+      "extract": "Deﬁnition 2.2 A discrete function f : Zr −→Q(q) is q–hypergeometric iﬀ Eif/f ∈Q(q, qn1, . . . , qnr) for all i = 1, . . . , r. In that case, we know generators for the annihilation ideal of f . Namely, let Eif/f = (Ri/Si)|Qi=qni for Ri, Si ∈Z[q, Q1, . . . , Qr]. Then, the annihilation ideal of f is generated by SiEi −Ri. All the functions in the previous subsections are q–hypergeometric. Unfortunately,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-3-the-colored-jones-function-for-sl2",
+      "number": "3",
+      "title": "The colored Jones function for sl2",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 7,
+      "summary": null,
+      "keywords": [],
+      "extract": "The colored Jones function for sl2 3.1",
+      "extractCut": false
+    },
+    {
+      "id": "sec-011-31-proof-of-theorem-for-links",
+      "number": "3.1",
+      "title": "Proof of Theorem ?? for links",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1136,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "broken link",
+          "heading": false
+        },
+        {
+          "term": "holonomic",
+          "heading": false
+        },
+        {
+          "term": "jones function",
+          "heading": false
+        },
+        {
+          "term": "matrix entry",
+          "heading": false
+        },
+        {
+          "term": "eim",
+          "heading": false
+        },
+        {
+          "term": "discrete function",
+          "heading": false
+        },
+        {
+          "term": "quantum trace",
+          "heading": false
+        }
+      ],
+      "extract": "We will formulate and prove an analog of Theorem 1 (see Theorem 3 below) for colored links. Our proof will use a state-sum deﬁnition of the colored Jones function, coming from a representation of the quantum group Uq(sl2), as was discovered by Reshetikhin and Turaev in [29, 32]. Suppose L is a framed, oriented link of p components. Then the colored Jones function JL : Np →Z[q±1/4] = Z[v±1/2] can be deﬁned using the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-32-a-multisum-formula-for-the-colored-jones-func",
+      "number": "3.2",
+      "title": "A multisum formula for the colored Jones function of a knot",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 590,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "incoming part-arc",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": true
+        },
+        {
+          "term": "multisum",
+          "heading": true
+        },
+        {
+          "term": "outgoing part-arc",
+          "heading": false
+        },
+        {
+          "term": "jones function",
+          "heading": true
+        },
+        {
+          "term": "proper hypergeometric",
+          "heading": false
+        },
+        {
+          "term": "long knot",
+          "heading": false
+        },
+        {
+          "term": "coloring",
+          "heading": false
+        }
+      ],
+      "extract": "A multisum formula for the colored Jones function of a knot In this section we will give explicit multisum formulas for the sl2–colored Jones function of a knot. The calculation here is computerized in Section 6. Consider a word w = σǫ1 i1 . . . σǫc ic of length m written in the standard generators σ1, . . . , σs−1 of the braid group Bm with m strands, where ǫi = ±1 for all i. w gives rise to a braid β ∈Bm, and we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-4-the-cyclotomic-function-of-a-knot-is-q--holono",
+      "number": "4",
+      "title": "The cyclotomic function of a knot is q--holonomic",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 292,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cyclotomic function",
+          "heading": true
+        },
+        {
+          "term": "habiro",
+          "heading": false
+        },
+        {
+          "term": "knot",
+          "heading": true
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "holonomic",
+          "heading": false
+        }
+      ],
+      "extract": "Habiro [15] proved that the colored Jones polynomial (of sl2) can be rearranged in the following convenient form, known as the cyclotomic expansion of the colored Jones polynomial: For every 0–framed knot K, there exists a function CK : Z>0 →Z[q±1] such that JK(n) = ∞ X k=1 CK(k)S(n, k), where S(n, k) := {n + k −1}2k−1/(v −v−1) = Qn+k−1 n−k+1 (vi −v−i) v −v−1 . Note that S(n, k) does not depend on the knot K. Note",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-5-complexity",
+      "number": "5",
+      "title": "Complexity",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 26,
+      "summary": null,
+      "keywords": [],
+      "extract": "Complexity In this section we show that Theorem 1 is eﬀective. In other words, we give a priori bounds and computations that appear in Theorem 2.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-015-51-finding-a-recursion-relation-for-multisums",
+      "number": "5.1",
+      "title": "Finding a recursion relation for multisums",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 818,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "recursion relation",
+          "heading": true
+        },
+        {
+          "term": "multisums",
+          "heading": true
+        },
+        {
+          "term": "annihilating ideal",
+          "heading": false
+        },
+        {
+          "term": "inhomogeneous recursion",
+          "heading": false
+        },
+        {
+          "term": "certiﬁcate",
+          "heading": false
+        },
+        {
+          "term": "wilf zeilberger",
+          "heading": false
+        },
+        {
+          "term": "free recursion",
+          "heading": false
+        },
+        {
+          "term": "proper hypergeometric",
+          "heading": false
+        }
+      ],
+      "extract": "Finding a recursion relation for multisums Our starting point are multisums of q–proper hypergeometric functions. Recall the deﬁnition 2.3 of a q–proper hypergeometric function F(n, k) from Section 2.4, and let G denote G(n) := X k≥0 F(n, k) throughout this section. With the notation of Equation (1), Wilf–Zeilberger show that: Theorem 5 ([33, Sec.5.2]) (a) F(n, k) satisﬁes a k–free recurrence relation of order at",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-52-upper-bounds-for-initial-conditions",
+      "number": "5.2",
+      "title": "Upper bounds for initial conditions",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 252,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "upper bounds",
+          "heading": true
+        },
+        {
+          "term": "initial conditions",
+          "heading": true
+        },
+        {
+          "term": "yen",
+          "heading": false
+        },
+        {
+          "term": "degq",
+          "heading": false
+        },
+        {
+          "term": "hypergeometric summand",
+          "heading": false
+        },
+        {
+          "term": "principal symbol",
+          "heading": false
+        }
+      ],
+      "extract": "Upper bounds for initial conditions In another direction, one may ask the following question: if a q–holonomic function satisﬁes a nontrivial recursion relation, it follows that it is uniquely determined by a ﬁnite number of initial conditions. How many? This was answered by Yen, [34]. If G is a discrete function which satisﬁes a recursion relation of order J⋆, consider its principal symbol σ(q, Q), that is the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-53-proof-of-theorem",
+      "number": "5.3",
+      "title": "Proof of Theorem ??",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 86,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "luck",
+          "heading": false
+        },
+        {
+          "term": "geomet",
+          "heading": false
+        },
+        {
+          "term": "lucky",
+          "heading": false
+        }
+      ],
+      "extract": "Theorem 2 follows from Proposition 3.7 together with the discussion of Sections 5.1 and 5.2. Our luck with the colored Jones function is that we can identify it with a multisum of a q–proper hypergeometric function. Are we really lucky, or is there some deeper explanation? We believe that there is a underlying geomet- ric reason for coincidence, which in a sense explains the underlying geometry of topological",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-6-in-computer-talk",
+      "number": "6",
+      "title": "In computer talk",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 108,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multisum formula",
+          "heading": false
+        },
+        {
+          "term": "talk",
+          "heading": true
+        },
+        {
+          "term": "qekhad",
+          "heading": false
+        }
+      ],
+      "extract": "In computer talk In this section we will show that Proposition 3.7 can be implemented by com- puter. For every knot, one can write down a multisum formula for the colored Jones function, where the summand is q–hypergeometric. Occasionally, this multisum formula can be written as a single sum. There are various programs that can compute the recursion relations and their orders for multisums. In maple, one may use",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-61-recursion-relations-for-the-cyclotomic-functi",
+      "number": "6.1",
+      "title": "Recursion relations for the cyclotomic function of twist knots",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 710,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "recursion relations",
+          "heading": true
+        },
+        {
+          "term": "twist knots",
+          "heading": true
+        },
+        {
+          "term": "cyclotomic function",
+          "heading": true
+        },
+        {
+          "term": "nth colored",
+          "heading": false
+        },
+        {
+          "term": "full twists",
+          "heading": false
+        },
+        {
+          "term": "masbaum",
+          "heading": false
+        },
+        {
+          "term": "skein",
+          "heading": false
+        },
+        {
+          "term": "ﬁxed",
+          "heading": false
+        }
+      ],
+      "extract": "Recursion relations for the cyclotomic function of twist knots The twist knots Kp for integer p are shown in Figure 2. Their planar projec- tions have 2|p| + 2 crossings, 2|p| of which come from the full twists, and 2 come from the negative clasp. ... full twists p Figure 2: The twist knot Kp, for integers p. For p = −1, it is the Figure 8, for p = 0 it is the unknot, for p = 1 it is the left trefoil and for p = 2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-62-recursion-relations-for-the-colored-jones-fun",
+      "number": "6.2",
+      "title": "Recursion relations for the colored Jones function of the figure 8 knot",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 606,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored jones",
+          "heading": true
+        },
+        {
+          "term": "recursion relations",
+          "heading": true
+        },
+        {
+          "term": "jones function",
+          "heading": true
+        },
+        {
+          "term": "figure knot",
+          "heading": true
+        },
+        {
+          "term": "inhomogeneous relation",
+          "heading": false
+        },
+        {
+          "term": "qfac",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure knot",
+          "heading": false
+        },
+        {
+          "term": "geometry topology",
+          "heading": false
+        }
+      ],
+      "extract": "Recursion relations for the colored Jones function of the ﬁgure 8 knot The Mathematica package qMultiSum.m can compute recursion relations for q–multisums. Using this, we can compute equally easily the recursion relation for the colored Jones function. Due to the length of the output, we illustrate this by computing the recursion relation for the colored Jones function of the Figure 8 knot. Recall from Equation (2)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-7-the-colored-jones-function-for-a-simple-lie-al",
+      "number": "7",
+      "title": "The colored Jones function for a simple Lie algebra",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 250,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored jones",
+          "heading": true
+        },
+        {
+          "term": "lie algebra",
+          "heading": true
+        },
+        {
+          "term": "jones function",
+          "heading": true
+        },
+        {
+          "term": "simple lie",
+          "heading": true
+        },
+        {
+          "term": "holonomic",
+          "heading": false
+        },
+        {
+          "term": "fundamental weights",
+          "heading": false
+        },
+        {
+          "term": "ﬁxed fundamental",
+          "heading": false
+        }
+      ],
+      "extract": "The colored Jones function for a simple Lie algebra Fix a simple complex Lie algebra g of rank ℓ. For every knot K and every ﬁnite-dimensional g–module V , called the color of the knot, one can deﬁne the quantum invariant JK(V ) ∈Z[q±1/2D], where D is the determinant of the Cartan matrix of g. Simple g–modules are parametrized by the set of dominant weights, which can be identiﬁed, after we choose ﬁxed fundamental",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-71-preliminaries",
+      "number": "7.1",
+      "title": "Preliminaries",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 232,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "preliminaries",
+          "heading": true
+        },
+        {
+          "term": "cartan",
+          "heading": false
+        },
+        {
+          "term": "word",
+          "heading": false
+        },
+        {
+          "term": "lattice",
+          "heading": false
+        }
+      ],
+      "extract": "Preliminaries Fix a Cartan subalgebra h of g and a basis {α1, . . . , αℓ} of simple roots for the dual space h∗. Let h∗ R be the R–vector space spanned by α1, . . . , αℓ. The root lattice Y is the Z–lattice generated by {α1, . . . , αℓ}. Let X be the weight lattice that is spanned by the fundamental weights λ1, . . . , λℓ. Normalize the Geometry & Topology, Volume 9 (2005) The colored Jones function is q–holonomic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-711-the-quantum-group-u",
+      "number": "7.1.1",
+      "title": "The quantum group U",
+      "level": 3,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 189,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum group",
+          "heading": true
+        },
+        {
+          "term": "jantzen",
+          "heading": false
+        },
+        {
+          "term": "lusztig",
+          "heading": false
+        }
+      ],
+      "extract": "The quantum group U The quantum group U = Uq(g) associated to g is a Hopf algebra deﬁned over Q(v), where v is the usual quantum parameter (see [17, 22]). Here our v is the same as v of Lusztig [22] and is equal to q of Jantzen [17], while our q is v2. The standard generators of U are Eα, Fα, Kα for α ∈{α1, . . . , αℓ}. For a full set of relations, as well as a good introduction to quantum groups, see [17]. Note",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-712-verma-modules-and-finite-dimensional-modules",
+      "number": "7.1.2",
+      "title": "Verma modules and finite dimensional modules",
+      "level": 3,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 170,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "verma",
+          "heading": true
+        },
+        {
+          "term": "maximal submodule",
+          "heading": false
+        },
+        {
+          "term": "dimensional module",
+          "heading": false
+        }
+      ],
+      "extract": "Verma modules and ﬁnite dimensional modules Let λ ∈X be a weight. The Verma module M(λ) is a U –module with under- lying vector space U−and with the action of U that is uniquely determined by the following condition. Here η is the unit of the algebra U−: Eα · η = 0 for all α Kα · η = v(α,λ)η for all α Fα · x = Fαx for all α ∈{α1, . . . , αℓ}, x ∈U− Geometry & Topology, Volume 9 (2005) 1278 Stavros Garoufalidis and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-713-quantum-braid-group-action",
+      "number": "7.1.3",
+      "title": "Quantum braid group action",
+      "level": 3,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 178,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coxeter moves",
+          "heading": false
+        },
+        {
+          "term": "braid",
+          "heading": true
+        },
+        {
+          "term": "tαir",
+          "heading": false
+        }
+      ],
+      "extract": "Quantum braid group action For each fundamental root α ∈{α1, . . . , αℓ} there is an algebra automorphism Tα : U →U , as described in [17, Chapter 8]. These automorphisms satisfy the following relations, known as the braid relations, or Coxeter moves. If (α, β) = 0, then TαTβ = TβTα. If (α, β) = −1, then TαTβTα = TβTαTβ . If (α, β) = −2, then TαTβTαTβ = TβTαTβTα. If (α, β) = −3, then TαTβTαTβTαTβ = TβTαTβTαTβTα.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-714-ordering-of-the-roots",
+      "number": "7.1.4",
+      "title": "Ordering of the roots",
+      "level": 3,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 163,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "roots",
+          "heading": true
+        },
+        {
+          "term": "reduced word",
+          "heading": false
+        },
+        {
+          "term": "word representing",
+          "heading": false
+        },
+        {
+          "term": "si1si",
+          "heading": false
+        }
+      ],
+      "extract": "Ordering of the roots Suppose w = si1si2 . . . sit is a reduced word representing the longest element ω0 of the Weyl group. For r between 1 and t let γr(w) := si1si2 . . . sir−1(αir). Then the set {γi, i = 1, ..., t} is exactly the set of positive roots. We totally order the set of positive roots by γ1 < γ2 < · · · < γt. This order depends on the reduced word w, and has the following convexity property: If β1, β2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-715-pbw-basis-for-u--u-and-u",
+      "number": "7.1.5",
+      "title": "PBW basis for U-, U+, and U",
+      "level": 3,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 302,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pbw",
+          "heading": true
+        },
+        {
+          "term": "reduced word",
+          "heading": false
+        },
+        {
+          "term": "tαir",
+          "heading": false
+        }
+      ],
+      "extract": "Suppose w = si1 . . . sit is a reduced word representing the longest element of W . Let us deﬁne er(w) = Tαi1Tαi2 . . . Tαir−1(Eαir ), fr(w) = Tαi1Tαi2 . . . Tαir−1(Fαir ). Then |er| = γr = −|fr|. (We drop w if there is no confusion.) If γr is one of the fundamental roots, γr = α ∈{α1, . . . , αℓ}, then er(w) = Eα, fr(w) = Fα (and do not depend on w). For t ≥j ≥i ≥1 let U−[j, i] be the vector space spanned by f nj j",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-716-a-commutation-rule",
+      "number": "7.1.6",
+      "title": "A commutation rule",
+      "level": 3,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 149,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "commutation rule",
+          "heading": true
+        },
+        {
+          "term": "consecutive variables",
+          "heading": false
+        },
+        {
+          "term": "pbw",
+          "heading": false
+        }
+      ],
+      "extract": "A commutation rule For x, y ∈U homogeneous let us deﬁne [x, y]q := xy −v(|x|,|y|)yx. Note that, in general, [y, x]q is not proportional to [x, y]q. An important property of the PBW basis is the following commutation rule, see [18]. If i < j then [fi, fj]q belongs to U−[j −1, i + 1] (which is 0 if j = i + 1). Geometry & Topology, Volume 9 (2005) 1280 Stavros Garoufalidis and Thang T Q Lˆe It follows that U−[j, i] is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-72-q--holonomicity-of-quantum-groups",
+      "number": "7.2",
+      "title": "q--holonomicity of quantum groups",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 28,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 113,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pbw basis",
+          "heading": false
+        },
+        {
+          "term": "matrix entry",
+          "heading": false
+        },
+        {
+          "term": "holonomic",
+          "heading": false
+        }
+      ],
+      "extract": "Suppose A: U →U is a linear operator. Using the PBW basis of U (see Equation (4)), we can present A by a matrix: A(xσ) = X σ′ Aσ′ σ xσ′, with Aσ′ σ ∈Q(v). We call (σ, σ′) the coordinates of the matrix entry Aσ′ σ . Deﬁnition 7.2 We say that A is q–holonomic if the matrix entry Aσ′ σ , con- sidered as a function of (σ, σ′) is q–holonomic with respect to all the variables. A priori this deﬁnition depends on the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-721-q--holonomicity-of-transition-matrix",
+      "number": "7.2.1",
+      "title": "q--holonomicity of transition matrix",
+      "level": 3,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 164,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transition matrix",
+          "heading": true
+        },
+        {
+          "term": "coxeter move",
+          "heading": false
+        },
+        {
+          "term": "rank lie",
+          "heading": false
+        },
+        {
+          "term": "holonomic",
+          "heading": false
+        }
+      ],
+      "extract": "Suppose xσ(w′) is another PBW basis associate to another reduced word w′ representing the longest element of W . Then we have the transition matrix Mσ′ σ between the two bases, with entries in Q(v). The next proposition checks that the entries of the transition matrix are q–holonomic, by a standard reduction to the rank 2 case. Proposition 7.3 Except for the case of G2, the matrix entry Mσ′ σ is q– holonomic with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-722-structure-constants",
+      "number": "7.2.2",
+      "title": "Structure constants",
+      "level": 3,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 67,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "structure constants",
+          "heading": true
+        },
+        {
+          "term": "pbw",
+          "heading": false
+        },
+        {
+          "term": "holonomic",
+          "heading": false
+        }
+      ],
+      "extract": "Structure constants Recall the PBW basis {xσ | σ ∈S} of the algebra U . The multiplication in U is determined by the structure constants c(σ, σ′, σ′′) ∈Q(v) deﬁned by: xσxσ′ = X σ′′ c(σ, σ′, σ′′)xσ′′. We will show the following: Theorem 7 The structure constant c(σ, σ′, σ′′) is q–holonomic with respect to all its variables. Proof will be given in subsection 7.4.5. 7.2.3",
+      "extractCut": false
+    },
+    {
+      "id": "sec-032-723-actions-on-verma-modules-are-q--holonomic",
+      "number": "7.2.3",
+      "title": "Actions on Verma modules are q--holonomic",
+      "level": 3,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 122,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pbw basis",
+          "heading": false
+        },
+        {
+          "term": "verma",
+          "heading": true
+        },
+        {
+          "term": "entry",
+          "heading": false
+        }
+      ],
+      "extract": "Each Verma module M(λ) is naturally isomorphic to U−, as a vector space, via the map u →u · η. Using this isomorphism we identify a PBW basis of U− with a basis of M(λ), also called a PBW basis. If u ∈U , then the action of u on M(λ) in a PBW basis can be written by a matrix un′ n with entries in Q(v). We call (n, n′) ∈Nt × Nt the coordinates of the matrix entry. Proposition 7.4 For every r with 1 ≤r ≤t, the entries",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-73-quantum-knot-invariants",
+      "number": "7.3",
+      "title": "Quantum knot invariants",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4,
+      "summary": null,
+      "keywords": [],
+      "extract": "Quantum knot invariants 7.3.1",
+      "extractCut": false
+    },
+    {
+      "id": "sec-034-731-the-quasi-r--matrix",
+      "number": "7.3.1",
+      "title": "The quasi-R--matrix",
+      "level": 3,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 253,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pbw basis",
+          "heading": false
+        },
+        {
+          "term": "holonomic",
+          "heading": false
+        },
+        {
+          "term": "lˆe",
+          "heading": false
+        },
+        {
+          "term": "propo",
+          "heading": false
+        }
+      ],
+      "extract": "Fix a reduced word w representing the longest element of W . For each r, 1 ≤ r ≤t, let Θr := X k∈N ck f k r ⊗ek r, where ck = (−1)kv−k(k−1)/2 γr (vγr −v−1 γr )k [k]γr! . Geometry & Topology, Volume 9 (2005) 1282 Stavros Garoufalidis and Thang T Q Lˆe Here vγ = v(γ|γ)/2, and [k]γ! = k Y i=1 vi γ −v−i γ vγ −v−1 γ . The main thing to observe is that ck is q–holonomic with respect to k. Note that although Θr is an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-732-the-r--matrix-and-the-braiding",
+      "number": "7.3.2",
+      "title": "The R--matrix and the braiding",
+      "level": 3,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 176,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braiding",
+          "heading": true
+        },
+        {
+          "term": "holonomic",
+          "heading": false
+        },
+        {
+          "term": "d-th",
+          "heading": false
+        }
+      ],
+      "extract": "As usual, let us deﬁne the weight on M(λ) by declaring the weight of Fn · η to be λ −P niγi, where n = (n1, . . . , nt). The space M(λ) is the direct sum of its weight subspaces. Let D: M(λ) ⊗M(λ) →M(λ) ⊗M(λ) be the linear operator deﬁned by D(x ⊗y) = v−(|x|,|y|)x ⊗y. Clearly D is q–holonomic; it’s called the diagonal part of the R–matrix, which is R := ΘD. The braiding is B := Rσ, where σ(x⊗y) = y⊗x. Combining the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-733-q--holonomicity-of-quantum-invariants-of-kno",
+      "number": "7.3.3",
+      "title": "q--holonomicity of quantum invariants of knots",
+      "level": 3,
+      "pageStart": 31,
+      "pageEnd": 33,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 615,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dimq",
+          "heading": false
+        },
+        {
+          "term": "long knot",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "quantum trace",
+          "heading": false
+        },
+        {
+          "term": "holonomic",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite number",
+          "heading": false
+        },
+        {
+          "term": "knot invariant",
+          "heading": false
+        },
+        {
+          "term": "basis element",
+          "heading": false
+        }
+      ],
+      "extract": "First let us recall the deﬁnition of quantum knot invariant. Using the braiding B: M(λ) →M(λ) one can deﬁne a representation of the braid group τ : Bm →(M(λ))⊗m by putting τ(σi) := id⊗i−1 ⊗B ⊗id⊗m−i−1 . Let ρ denote the half-sum of positive roots. For an element x ∈U and an U –module V , the quantum trace is deﬁned as trq(x, V ) := tr(xK−2ρ, V ). Suppose a framed knot K is obtained by closing a braid β ∈Bm. We would",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-74-proof-of-theorem",
+      "number": "7.4",
+      "title": "Proof of Theorem ??",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 33,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "7.4.1",
+      "extractCut": false
+    },
+    {
+      "id": "sec-038-741-r-is-q--holonomic",
+      "number": "7.4.1",
+      "title": "r is q--holonomic",
+      "level": 3,
+      "pageStart": 33,
+      "pageEnd": 33,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 281,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reduced word",
+          "heading": false
+        },
+        {
+          "term": "holonomic",
+          "heading": false
+        },
+        {
+          "term": "v2n",
+          "heading": false
+        },
+        {
+          "term": "eqn",
+          "heading": false
+        }
+      ],
+      "extract": "We will need the linear maps rα, r′ α : U± →U±, as deﬁned in [17, Chapter 6]. Their restriction to U−is uniquely characterized by the properties: rα(xy) = rα(x) y + v(α,|x|) x rα(y) r′ α(xy) = x r′ α(y) + v(α,|x|) r′ α(x) y (5) and for any two fundamental roots α, β, (see [17, Eqn.(6.15.4)]) and rα(F n β ) = r′ α(F n β ) = δα,β 1 −v2n α 1 −v2α F n−1 α , (6) where vα := v(α,α)/2; see [17, Eqn.(8.26.2)]. Lemma 7.9 For",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-742-uqsl2-is-q--holonomic",
+      "number": "7.4.2",
+      "title": "Uq(sl2) is q--holonomic",
+      "level": 3,
+      "pageStart": 33,
+      "pageEnd": 35,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 662,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pbw basis",
+          "heading": false
+        },
+        {
+          "term": "holonomic",
+          "heading": false
+        },
+        {
+          "term": "right multiplication",
+          "heading": false
+        },
+        {
+          "term": "left multiplication",
+          "heading": false
+        },
+        {
+          "term": "past",
+          "heading": false
+        },
+        {
+          "term": "matrix entry",
+          "heading": false
+        },
+        {
+          "term": "geometry topology",
+          "heading": false
+        },
+        {
+          "term": "moving",
+          "heading": false
+        }
+      ],
+      "extract": "Lemma 7.10 Theorem 7 holds true for g = sl2. Geometry & Topology, Volume 9 (2005) 1286 Stavros Garoufalidis and Thang T Q Lˆe Proof The PBW basis for U is F nKjEm, with m, n ∈N and j ∈Z. First of all we know that Em α F n α = ∞ X i=0 \u0014 m i \u0015 vα \u0014 n i \u0015 vα F n−i α b(Kα; 2i −n −m, i) Em−i α , where b(Kα; a, i) := iY j=1 Kαva−j+1 α −K−1 α v−a+j−1 α vα −v−1 α . Here for any root γ, one deﬁnes vγ = v(γ,γ)/2, and \u0014 m i \u0015",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-744-t-is-q--holonomic",
+      "number": "7.4.4",
+      "title": "T is q--holonomic",
+      "level": 3,
+      "pageStart": 35,
+      "pageEnd": 36,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 375,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pbw basis",
+          "heading": false
+        },
+        {
+          "term": "holonomic",
+          "heading": false
+        },
+        {
+          "term": "reduced word",
+          "heading": false
+        },
+        {
+          "term": "ent",
+          "heading": false
+        },
+        {
+          "term": "kβem",
+          "heading": false
+        }
+      ],
+      "extract": "Proposition 7.12 For a ﬁxed fundamental root α ∈{α1, . . . , αℓ}, the braid operator Tα : U →U and its inverse T −1 α are q–holonomic. Proof By Proposition 7.3 we can use any PBW basis. Choose a reduced word w′ = si1 . . . sit representing the longest element ω0 that begins with α: αi1 = α. Then w = si2 . . . sits¯α is another reduced word representing ω0, where ¯α is the dual of α: ¯α = −ω0(α). Geometry & Topology,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-745-proof-of-theorem",
+      "number": "7.4.5",
+      "title": "Proof of Theorem ??",
+      "level": 3,
+      "pageStart": 36,
+      "pageEnd": 37,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 126,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "holonomic",
+          "heading": false
+        },
+        {
+          "term": "tαi",
+          "heading": false
+        },
+        {
+          "term": "left multiplication",
+          "heading": false
+        }
+      ],
+      "extract": "It is clear that for each j ∈Zℓ, the operator Kj : U →U of left multiplication is q–holonomic. Fix a reduced word w representing the longest element of W . It suﬃces to show that for each 1 ≤r ≤t the operators ek r, f k r : U →U (left multiplication) are q–holonomic with respect to all variables, including k. This is true if er = Eα and fr = Fα, where α is one of the fundamental roots, by Proposition 7.11. But any",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-a-appendix-proof-of-proposition-for-a2-and-b2",
+      "number": null,
+      "title": "A Appendix: Proof of Proposition ?? for A2 and B2",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 37,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 86,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transition matrix",
+          "heading": false
+        },
+        {
+          "term": "brute-force",
+          "heading": false
+        },
+        {
+          "term": "trix",
+          "heading": false
+        }
+      ],
+      "extract": "In this appendix we will prove Proposition 7.3 for the rank 2 Lie algebras A2 and B2. We will achieve this by a brute-force calculation. First, let us discuss some simpliﬁcation, due to symmetry. The transition ma- trix of U leaves invariant each of U+, U−, U0. On U0 the transition matrix is identity. Hence it’s enough to consider the restriction of the transition matrix in U−and U+. Furthermore, the Cartan symmetry",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-a1-the-case-of-a2",
+      "number": null,
+      "title": "A.1 The case of A2",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 38,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 417,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pbw basis",
+          "heading": false
+        },
+        {
+          "term": "holonomic",
+          "heading": false
+        },
+        {
+          "term": "fαfβ",
+          "heading": false
+        },
+        {
+          "term": "fβfα",
+          "heading": false
+        },
+        {
+          "term": "s2s1s",
+          "heading": false
+        }
+      ],
+      "extract": "The case of A2 There are two fundamental roots denoted by α and β. The set of positive roots is {α, β, α+β}. The reduced representations of the longest element of the Weyl group are w = s1s2s1 and w′ = s2s1s2, where s1 = sα and s2 = sβ . The total ordering (see Section 7.1.4) of the set of positive roots corresponding to w and w′ are, respectively: (γ1, γ2, γ3) = (α, α + β, β) (γ1′, γ2′, γ3′) = (β, α + β, α). Notice",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-a2-the-case-of-b2",
+      "number": null,
+      "title": "A.2 The case of B2",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 41,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1242,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pbw basis",
+          "heading": false
+        },
+        {
+          "term": "english translation",
+          "heading": false
+        },
+        {
+          "term": "holonomic",
+          "heading": false
+        },
+        {
+          "term": "riese",
+          "heading": false
+        },
+        {
+          "term": "zeilberger",
+          "heading": false
+        },
+        {
+          "term": "priloˇzen",
+          "heading": false
+        },
+        {
+          "term": "funkcional",
+          "heading": false
+        },
+        {
+          "term": "paule",
+          "heading": false
+        }
+      ],
+      "extract": "The case of B2 There are two fundamental roots denoted here by α and β, where α is the short root. The set of positive roots is {α, β, 2α + β, α + β}. The reduced representations of the longest element of the Weyl group are w = s1s2s1s2 and w′ = s2s1s2s1, where s1 = sα and s2 = sβ. The total ordering of the set of positive roots corresponding to w and w′ are, respectively: (γ1, γ2, γ3, γ4) = (α, 2α + β, α + β, β)",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "holonomic function",
+      "heading": false
+    },
+    {
+      "term": "colored jones",
+      "heading": true
+    },
+    {
+      "term": "thang lˆe",
+      "heading": false
+    },
+    {
+      "term": "pbw basis",
+      "heading": true
+    },
+    {
+      "term": "geometry topology",
+      "heading": false
+    },
+    {
+      "term": "stavros garoufalidis",
+      "heading": false
+    },
+    {
+      "term": "colored links",
+      "heading": false
+    },
+    {
+      "term": "jones polynomial",
+      "heading": false
+    },
+    {
+      "term": "hypergeometric function",
+      "heading": false
+    },
+    {
+      "term": "nth colored",
+      "heading": false
+    },
+    {
+      "term": "recursion relations",
+      "heading": true
+    },
+    {
+      "term": "satisﬁes recursion",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "A word w, the corresponding braid β, its long closure K′, and a coloring of",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The twist knot Kp, for integers p. For p = −1, it is the Figure 8, for p = 0 it is the unknot, for p = 1 it is the left trefoil and for p = 2 it is the Stevedore’s ribbon knot",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 47,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 46,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "2 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p38); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 46 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/0309214v3"
+  }
+}

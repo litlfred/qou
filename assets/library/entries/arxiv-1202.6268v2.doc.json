@@ -1,0 +1,3324 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1202.6268v2",
+  "title": "arxiv-1202.6268v2",
+  "variant": "pdf",
+  "pages": 53,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "The Kashaev invariant and perturbative Chern-Simons theory",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-11-the-kashaev-invariant-and-perturbative-chern"
+    },
+    {
+      "level": 2,
+      "title": "The Neumann-Zagier datum",
+      "number": "1.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-the-neumann-zagier-datum"
+    },
+    {
+      "level": 2,
+      "title": "The 1-loop invariant",
+      "number": "1.3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-the-1-loop-invariant"
+    },
+    {
+      "level": 2,
+      "title": "Expectations",
+      "number": "1.4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-expectations"
+    },
+    {
+      "level": 2,
+      "title": "The higher-loop invariants",
+      "number": "1.5",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-15-the-higher-loop-invariants"
+    },
+    {
+      "level": 2,
+      "title": "Feynman diagrams",
+      "number": "1.6",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-16-feynman-diagrams"
+    },
+    {
+      "level": 2,
+      "title": "The 2-loop invariant",
+      "number": "1.7",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-17-the-2-loop-invariant"
+    },
+    {
+      "level": 2,
+      "title": "The 3-loop invariant",
+      "number": "1.8",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-18-the-3-loop-invariant"
+    },
+    {
+      "level": 2,
+      "title": "Generalizations",
+      "number": "1.9",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-19-generalizations"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgment",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-acknowledgment"
+    },
+    {
+      "level": 1,
+      "title": "Mechanics of triangulations",
+      "number": "2",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-2-mechanics-of-triangulations"
+    },
+    {
+      "level": 2,
+      "title": "Ideal tetrahedra",
+      "number": "2.1",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-21-ideal-tetrahedra"
+    },
+    {
+      "level": 2,
+      "title": "The gluing matrices",
+      "number": "2.2",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-22-the-gluing-matrices"
+    },
+    {
+      "level": 2,
+      "title": "The Neumann-Zagier matrices",
+      "number": "2.3",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-23-the-neumann-zagier-matrices"
+    },
+    {
+      "level": 2,
+      "title": "Combinatorial flattenings",
+      "number": "2.4",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-24-combinatorial-flattenings"
+    },
+    {
+      "level": 2,
+      "title": "The shape solutions to the gluing equations",
+      "number": "2.5",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-25-the-shape-solutions-to-the-gluing-equations"
+    },
+    {
+      "level": 2,
+      "title": "Example: 41",
+      "number": "2.6",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-26-example-41"
+    },
+    {
+      "level": 1,
+      "title": "Topological invariance of our torsion",
+      "number": "3",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-3-topological-invariance-of-our-torsion"
+    },
+    {
+      "level": 2,
+      "title": "Example: 41 continued",
+      "number": "3.1",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-31-example-41-continued"
+    },
+    {
+      "level": 2,
+      "title": "Independence of a choice of quad type",
+      "number": "3.2",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-32-independence-of-a-choice-of-quad-type"
+    },
+    {
+      "level": 2,
+      "title": "Independence of a choice of edge",
+      "number": "3.3",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-33-independence-of-a-choice-of-edge"
+    },
+    {
+      "level": 2,
+      "title": "Independence of a choice of meridian path",
+      "number": "3.4",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-34-independence-of-a-choice-of-meridian-path"
+    },
+    {
+      "level": 2,
+      "title": "Independence of a choice of flattening",
+      "number": "3.5",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-35-independence-of-a-choice-of-flattening"
+    },
+    {
+      "level": 2,
+      "title": "Invariance under 2–3 moves",
+      "number": "3.6",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-36-invariance-under-23-moves"
+    },
+    {
+      "level": 1,
+      "title": "Torsion on the character variety",
+      "number": "4",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-4-torsion-on-the-character-variety"
+    },
+    {
+      "level": 2,
+      "title": "A review of -regular ideal triangulations",
+      "number": "4.1",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-41-a-review-of--regular-ideal-triangulations"
+    },
+    {
+      "level": 2,
+      "title": "The Epstein-Penner cell decomposition and its triangulations",
+      "number": "4.2",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-42-the-epstein-penner-cell-decomposition-and-its"
+    },
+    {
+      "level": 2,
+      "title": "Neumann-Zagier datum and the geometric component",
+      "number": "4.3",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-43-neumann-zagier-datum-and-the-geometric-compon"
+    },
+    {
+      "level": 2,
+      "title": "Flattening compatible with a longitude",
+      "number": "4.4",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-44-flattening-compatible-with-a-longitude"
+    },
+    {
+      "level": 2,
+      "title": "Invariance of the generalized torsion",
+      "number": "4.5",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-45-invariance-of-the-generalized-torsion"
+    },
+    {
+      "level": 2,
+      "title": "Example: 41 continued",
+      "number": "4.6",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-46-example-41-continued"
+    },
+    {
+      "level": 1,
+      "title": "The state integral and higher loops",
+      "number": "5",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-5-the-state-integral-and-higher-loops"
+    },
+    {
+      "level": 2,
+      "title": "Critical points",
+      "number": "5.1",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-51-critical-points"
+    },
+    {
+      "level": 2,
+      "title": "Volume",
+      "number": "5.2",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-52-volume"
+    },
+    {
+      "level": 2,
+      "title": "Torsion revisited",
+      "number": "5.3",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-53-torsion-revisited"
+    },
+    {
+      "level": 2,
+      "title": "Feynman diagrams and higher loops",
+      "number": "5.4",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-54-feynman-diagrams-and-higher-loops"
+    },
+    {
+      "level": 2,
+      "title": "n-loop invariants on the character variety",
+      "number": "5.5",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-55-n-loop-invariants-on-the-character-variety"
+    },
+    {
+      "level": 2,
+      "title": "Example: 41 completed",
+      "number": "5.6",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-56-example-41-completed"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. Symplectic properties of A and B",
+      "number": null,
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-appendix-a-symplectic-properties-of-a-and-b"
+    },
+    {
+      "level": 1,
+      "title": "Appendix B. The shape parameters are rational functions on the character variety",
+      "number": null,
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-appendix-b-the-shape-parameters-are-rational-fun"
+    },
+    {
+      "level": 1,
+      "title": "Appendix C. Deriving the state integral",
+      "number": null,
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-appendix-c-deriving-the-state-integral"
+    },
+    {
+      "level": 2,
+      "title": "C.1. Symplectic gluing",
+      "number": null,
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-c1-symplectic-gluing"
+    },
+    {
+      "level": 2,
+      "title": "C.2. Quantization",
+      "number": null,
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-043-c2-quantization"
+    },
+    {
+      "level": 2,
+      "title": "C.3. Quantum reduction",
+      "number": null,
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-044-c3-quantum-reduction"
+    },
+    {
+      "level": 2,
+      "title": "C.4. Introducing a flattening",
+      "number": null,
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-045-c4-introducing-a-flattening"
+    },
+    {
+      "level": 2,
+      "title": "C.5. Normalization and invariance",
+      "number": null,
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-046-c5-normalization-and-invariance"
+    },
+    {
+      "level": 1,
+      "title": "Appendix D. Computer implementation and computations",
+      "number": null,
+      "page": 46,
+      "pageLabel": "46",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-047-appendix-d-computer-implementation-and-computati"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-048-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 248,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gluing equations",
+          "heading": false
+        },
+        {
+          "term": "reidemeister-ray-singer",
+          "heading": false
+        },
+        {
+          "term": "power series",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulation",
+          "heading": false
+        },
+        {
+          "term": "formal power",
+          "heading": false
+        },
+        {
+          "term": "shapes",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1202.6268v2 [math.GT] 25 Oct 2012 THE QUANTUM CONTENT OF THE GLUING EQUATIONS TUDOR DIMOFTE AND STAVROS GAROUFALIDIS Abstract. The gluing equations of a cusped hyperbolic 3-manifold M are a system of polynomial equations in the shapes of an ideal triangulation T of M that describe the complete hyperbolic structure of M and its deformations. Given a Neumann-Zagier datum (comprising the shapes together with the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1202.6268v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-11-the-kashaev-invariant-and-perturbative-chern",
+      "number": "1.1",
+      "title": "The Kashaev invariant and perturbative Chern-Simons theory",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 364,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kashaev invariant",
+          "heading": true
+        },
+        {
+          "term": "neumann-zagier datum",
+          "heading": false
+        },
+        {
+          "term": "chern-simons theory",
+          "heading": true
+        },
+        {
+          "term": "ideal triangulations",
+          "heading": false
+        },
+        {
+          "term": "feynman diagrams",
+          "heading": false
+        },
+        {
+          "term": "loop invariant",
+          "heading": false
+        },
+        {
+          "term": "gluing equations",
+          "heading": false
+        },
+        {
+          "term": "character variety",
+          "heading": false
+        }
+      ],
+      "extract": "The Kashaev invariant and perturbative Chern-Simons theory 3 1.2. The Neumann-Zagier datum 4 1.3. The 1-loop invariant 5 1.4. Expectations 6 1.5. The higher-loop invariants 6 1.6. Feynman diagrams 8 1.7. The 2-loop invariant 8 1.8. The 3-loop invariant 9 1.9. Generalizations 10 Date: October 25, 2012. The work of SG is supported by NSF grant DMS-11-05678. The work of TD is supported primarily by the Friends of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 592,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n-loop invariants",
+          "heading": false
+        },
+        {
+          "term": "putative torsion",
+          "heading": false
+        },
+        {
+          "term": "kashaev invariant",
+          "heading": false
+        },
+        {
+          "term": "volume conjecture",
+          "heading": false
+        },
+        {
+          "term": "chern-simons theory",
+          "heading": false
+        },
+        {
+          "term": "invariant trace",
+          "heading": false
+        },
+        {
+          "term": "gar",
+          "heading": false
+        },
+        {
+          "term": "formal power",
+          "heading": false
+        }
+      ],
+      "extract": "1. Introduction THE QUANTUM CONTENT OF THE GLUING EQUATIONS 3 1.1. The Kashaev invariant and perturbative Chern-Simons theory. The Kashaev invariant ⟨K⟩N ∈C of a knot K in 3-space (for N = 2, 3, . . . ) is a powerful sequence of complex numbers determined by the Jones polynomial of the knot [Jon87] and its cablings [Tur88, Wit89]. The Volume Conjecture of Kashaev and Murakami-Murakami [Kas94, Kas95, MM01] relates",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-the-neumann-zagier-datum",
+      "number": "1.2",
+      "title": "The Neumann-Zagier datum",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 549,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "neumann-zagier datum",
+          "heading": true
+        },
+        {
+          "term": "beta mathcal",
+          "heading": false
+        },
+        {
+          "term": "widehat beta",
+          "heading": false
+        },
+        {
+          "term": "regular ideal",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulation",
+          "heading": false
+        },
+        {
+          "term": "bloch group",
+          "heading": false
+        },
+        {
+          "term": "mathbf",
+          "heading": false
+        },
+        {
+          "term": "combinatorial flattening",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.introNZ label=\"sec.introNZ\"} All manifolds and all ideal triangulations in this paper will be oriented. The volume of a hyperbolic manifold $M$, appearing in the Volume Conjecture and contributing to $S_{M,0}$, is already known to have a simple expression in terms of shape parameters of a regular ideal triangulation, *i.e.*, one that recovers the complete hyperbolic structure of $M$. (For extended discussion",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-the-1-loop-invariant",
+      "number": "1.3",
+      "title": "The 1-loop invariant",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 236,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tau mathcal",
+          "heading": false
+        },
+        {
+          "term": "mathcal rho",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulation",
+          "heading": false
+        },
+        {
+          "term": "mathbf delta",
+          "heading": false
+        },
+        {
+          "term": "regular ideal",
+          "heading": false
+        },
+        {
+          "term": "indep",
+          "heading": false
+        },
+        {
+          "term": "text diag",
+          "heading": false
+        },
+        {
+          "term": "torsion",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.1loopdef label=\"sub.1loopdef\"} ::: definition []{#def.1loopdef label=\"def.1loopdef\"} Given a one-cusped hyperbolic manifold $M$ with regular ideal triangulation $\\mathcal{T}$ and enhanced Neumann-Zagier datum $\\widehat\\beta_\\mathcal{T}$ we define: $$\\qquad\\tau_{\\mathcal{T}} := \\pm \\frac12\\det\\big(\\mathbf A\\Delta_{z''} +\\mathbf B\\Delta_z^{-1}\\big)z^{f''}z''^{-f} \\quad\\in\\,E_M/\\{\\pm 1\\}\\,, \\label{torintro}$$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-expectations",
+      "number": "1.4",
+      "title": "Expectations",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 398,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tau mathrm",
+          "heading": false
+        },
+        {
+          "term": "tau mathcal",
+          "heading": false
+        },
+        {
+          "term": "mathcal rho",
+          "heading": false
+        },
+        {
+          "term": "torsion tau",
+          "heading": false
+        },
+        {
+          "term": "invariant tau",
+          "heading": false
+        },
+        {
+          "term": "conj",
+          "heading": false
+        },
+        {
+          "term": "cusped hyperbolic",
+          "heading": false
+        },
+        {
+          "term": "que",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.ought label=\"sub.ought\"} We may pose some questions and conjectures about the 1-loop invariant $\\tau_{\\mathcal{T}}$ and the structure of the set $\\mathcal X_{\\rho_0}$. Let us begin with two questions whose answer is unfortunately unknown. ::: question []{#que.can label=\"que.can\"} Is $\\mathcal X_{\\rho_0}$ connected by 2--3 moves? ::: ::: question []{#que.constanttau label=\"que.constanttau\"} Is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-15-the-higher-loop-invariants",
+      "number": "1.5",
+      "title": "The higher-loop invariants",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 473,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac hbar",
+          "heading": false
+        },
+        {
+          "term": "psi hbar",
+          "heading": false
+        },
+        {
+          "term": "frac12x mathcal",
+          "heading": false
+        },
+        {
+          "term": "hbar right",
+          "heading": false
+        },
+        {
+          "term": "widetilde mathcal",
+          "heading": false
+        },
+        {
+          "term": "tau mathcal",
+          "heading": false
+        },
+        {
+          "term": "infty mathcal",
+          "heading": false
+        },
+        {
+          "term": "mathbf",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.nloop label=\"sub.nloop\"} In this section we define the higher loop invariants $S_{\\mathcal{T},n}$ for $n \\geq 2$. They are analyzed in detail in Section [\\[sec.SIM\\]](#sec.SIM){reference-type=\"ref\" reference=\"sec.SIM\"}, using a state integral [\\[SIM\\]](#SIM){reference-type=\"eqref\" reference=\"SIM\"}. The result, however, may be summarized as follows. Let us introduce a formal power series $$\\label{eq.psixz}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-16-feynman-diagrams",
+      "number": "1.6",
+      "title": "Feynman diagrams",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 247,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diagrams",
+          "heading": true
+        },
+        {
+          "term": "valencies",
+          "heading": false
+        },
+        {
+          "term": "feynman",
+          "heading": true
+        },
+        {
+          "term": "n-vector",
+          "heading": false
+        }
+      ],
+      "extract": "diagrams, using Wick’s theorem to express each term ST ,n as a ﬁnite sum of connected diagrams with at most n loops, where the number of loops of a connected graph is its ﬁrst betti number. This is well known and explained in detail, e.g. in [HKK+03, Ch.9], [BIZ80, Pol05]. The Feynman rules for computing the ST ,n, described in Section 5, turn out to be the following.1 One draws all connected graphs D with vertices",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-17-the-2-loop-invariant",
+      "number": "1.7",
+      "title": "The 2-loop invariant",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 235,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coeﬀ",
+          "heading": false
+        },
+        {
+          "term": "πii",
+          "heading": false
+        },
+        {
+          "term": "ℏof",
+          "heading": false
+        },
+        {
+          "term": "symmetry factors",
+          "heading": false
+        }
+      ],
+      "extract": "1, together with their symmetry factors. 1 8 1 8 1 12 1 2 1 2 1 2 Figure 1. Diagrams contributing to SM,2 with symmetry factors. The top row of diagrams have exactly two loops, while the bottom row have fewer loops and additional 1-vertices and 2-vertices. 1To derive these from (1.12), one should ﬁrst rescale x →ℏ−1 2 x. THE QUANTUM CONTENT OF THE GLUING EQUATIONS 9 Their evaluation gives the following formula for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-18-the-3-loop-invariant",
+      "number": "1.8",
+      "title": "The 3-loop invariant",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 222,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "loop invariant",
+          "heading": true
+        },
+        {
+          "term": "contributing",
+          "heading": false
+        },
+        {
+          "term": "n-loop",
+          "heading": false
+        },
+        {
+          "term": "diagrams",
+          "heading": false
+        }
+      ],
+      "extract": "tribute, collecting the coeﬃcient of ℏ2 of their evaluation. In addition, there are 34 new diagrams that satisfy the inequality (1.15); they are shown in Figures 2 and 3. Calculations indicate that the 3-loop invariant ST ,3 is well deﬁned, independent of the regular triangula- tion T . The invariants ST ,0, τT , ST ,2, ST ,3 have been programmed in Mathematica and take as input a Neumann-Zagier datum available from",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-19-generalizations",
+      "number": "1.9",
+      "title": "Generalizations",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 200,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "usim",
+          "heading": false
+        },
+        {
+          "term": "utor",
+          "heading": false
+        },
+        {
+          "term": "indep",
+          "heading": false
+        },
+        {
+          "term": "tau mathcal",
+          "heading": false
+        },
+        {
+          "term": "multiple cusps",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulation",
+          "heading": false
+        },
+        {
+          "term": "extensions",
+          "heading": false
+        },
+        {
+          "term": "generalizations",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sec.genintro label=\"sec.genintro\"} There are several natural extensions of the results presented above. First, one could attempt to prove the independence of the all-loop invariants $Z_{\\mathcal{T}}(\\hbar)$, including the entire series of $S_{\\mathcal{T},n}$'s, under 2--3 moves and different choices of Neumann-Zagier datum. This was done non-rigorously in [@D1], but a full mathematical argument in the spirit of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-acknowledgment",
+      "number": null,
+      "title": "Acknowledgment",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 10,
+      "summary": null,
+      "keywords": [],
+      "extract": "phine Yu and Don Zagier for many extremely enlightening conversations.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-011-2-mechanics-of-triangulations",
+      "number": "2",
+      "title": "Mechanics of triangulations",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 60,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "triang",
+          "heading": false
+        },
+        {
+          "term": "triangulations",
+          "heading": true
+        },
+        {
+          "term": "reviewing",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.triang label=\"sec.triang\"} We begin by reviewing the gluing rules for ideal hyperbolic tetrahedra and the equations that determine their shape parameters. We essentially follow the classic [@Th; @NZ], but find it helpful to work with additive logarithmic (rather than multiplicative) forms of the gluing equations. Recall that all manifolds and all ideal triangulations are *oriented*.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-012-21-ideal-tetrahedra",
+      "number": "2.1",
+      "title": "Ideal tetrahedra",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 269,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ideal tetrahedron",
+          "heading": false
+        },
+        {
+          "term": "tetrahedron delta",
+          "heading": false
+        },
+        {
+          "term": "tet",
+          "heading": false
+        },
+        {
+          "term": "oriented ideal",
+          "heading": false
+        },
+        {
+          "term": "shape parameters",
+          "heading": false
+        },
+        {
+          "term": "opposite edges",
+          "heading": false
+        },
+        {
+          "term": "quad type",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.tet label=\"sec.tet\"} Combinatorially, an *oriented ideal tetrahedron* $\\Delta$ is a topological ideal tetrahedron with three complex *shape parameters* $(z,z',z'')$ assigned to pairs of opposite edges (Figure [1](#fig.tet){reference-type=\"ref\" reference=\"fig.tet\"}). The shapes always appear in the same cyclic order (determined by the orientation) around every vertex, and they satisfy $$\\label{tetexp}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-22-the-gluing-matrices",
+      "number": "2.2",
+      "title": "The gluing matrices",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 485,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sum mathbf",
+          "heading": false
+        },
+        {
+          "term": "gluing",
+          "heading": true
+        },
+        {
+          "term": "glue",
+          "heading": false
+        },
+        {
+          "term": "one-cusped manifold",
+          "heading": false
+        },
+        {
+          "term": "gluing equation",
+          "heading": false
+        },
+        {
+          "term": "sum big",
+          "heading": false
+        },
+        {
+          "term": "triang",
+          "heading": false
+        },
+        {
+          "term": "subtended",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.glue label=\"sec.glue\"} We now discuss an important combinatorial invariant of ideal triangulations, namely the gluing and Neumann-Zagier matrices, their symplectic properties, and the notion of a combinatorial flattening. Although these notions are motivated by hyperbolic geometry (namely the gluing of ideal tetrahedra around their faces and edges to describe a complete hyperbolic structure on a cusped",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-23-the-neumann-zagier-matrices",
+      "number": "2.3",
+      "title": "The Neumann-Zagier matrices",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 306,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "neumann-zagier matrices",
+          "heading": true
+        },
+        {
+          "term": "quad mathbf",
+          "heading": false
+        },
+        {
+          "term": "sum mathbf",
+          "heading": false
+        },
+        {
+          "term": "tetp",
+          "heading": false
+        },
+        {
+          "term": "array quad",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "end array",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.NZ label=\"sec.NZ\"} The matrices $\\mathbf G$, $\\mathbf G'$ and $\\mathbf G''$ have both symmetry and redundancy. We have already observed that any one of the edge constraints [\\[glue\\]](#glue){reference-type=\"eqref\" reference=\"glue\"} can be removed. Let us then ignore the edge $I=N$. We can also use [\\[tetP\\]](#tetP){reference-type=\"eqref\" reference=\"tetP\"} to eliminate one of the three shapes for each",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-24-combinatorial-flattenings",
+      "number": "2.4",
+      "title": "Combinatorial flattenings",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 226,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "combinatorial flattenings",
+          "heading": true
+        },
+        {
+          "term": "flattrip",
+          "heading": false
+        },
+        {
+          "term": "mathbf",
+          "heading": false
+        },
+        {
+          "term": "def",
+          "heading": false
+        },
+        {
+          "term": "gluing equations",
+          "heading": false
+        },
+        {
+          "term": "triangulation mathcal",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulation",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.flat label=\"sub.flat\"} We now have all ingredients to define what is a combinatorial flattening. ::: definition []{#def.flattening label=\"def.flattening\"} Given an ideal triangulation $\\mathcal T$ of $M$, a *combinatorial flattening* is a collection of $3N$ integers $(f_i,f_i',f_i'') \\in \\mathbb Z^3$ for $i=1,\\dots,N$ that satisfy $$\\begin{equation} f_i+f_i'+f_i'' = 1\\,,\\qquad i=1,...,N\\,, \\label{flattrip}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-25-the-shape-solutions-to-the-gluing-equations",
+      "number": "2.5",
+      "title": "The shape solutions to the gluing equations",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 112,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gluing",
+          "heading": true
+        },
+        {
+          "term": "equations",
+          "heading": true
+        },
+        {
+          "term": "zaz",
+          "heading": false
+        }
+      ],
+      "extract": "(2.4), and set (zi, z′ i, z′′ i ) = (eZi, eZ′ i, eZ′′ i ), we obtain that (zi, z′ i, z′′ i ) satisfy Equation (2.1). If we combine the exponentiated equations (2.6) with the nonlinear relation (2.1b) for each tetrahedron, we obtain (2.12) zAz′′B = zA(1 −z−1)B = (−1)ν , where zA := Q j z Aij j . These N equations in N variables are just the gluing equations of Thurston [Thu77] and Neumann and Zagier [NZ85], and fully",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-26-example-41",
+      "number": "2.6",
+      "title": "Example: 41",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 478,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cusp neighborhood",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure-eight knot",
+          "heading": false
+        },
+        {
+          "term": "ﬂattening",
+          "heading": false
+        },
+        {
+          "term": "gluing equations",
+          "heading": false
+        },
+        {
+          "term": "z2w2z",
+          "heading": false
+        }
+      ],
+      "extract": "the ﬁgure-eight knot complement M. It has a well known regular ideal triangulation T consisting of N = 2 tetrahedra, to which we assign logarithmic shape parameters (Z, Z′, Z′′) and (W, W ′, W ′′). z z′ z′′ w w′ w′′ E1 E2 µ z z′ z′′ w w′ w′′ z z′ z′′ w w′ w′′ z z′ z′′ w w′ w′′ Figure 5. The boundary of the cusp neighborhood for the ﬁgure-eight knot. A map of the boundary of the cusp neighborhood is shown in Figure",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-3-topological-invariance-of-our-torsion",
+      "number": "3",
+      "title": "Topological invariance of our torsion",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 282,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbf delta",
+          "heading": false
+        },
+        {
+          "term": "tau mathcal",
+          "heading": false
+        },
+        {
+          "term": "neumann-zagier datum",
+          "heading": false
+        },
+        {
+          "term": "triangulation mathcal",
+          "heading": false
+        },
+        {
+          "term": "torsion",
+          "heading": true
+        },
+        {
+          "term": "indep",
+          "heading": false
+        },
+        {
+          "term": "triang",
+          "heading": false
+        },
+        {
+          "term": "quad type",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.torsion label=\"sec.torsion\"} Given a one-cusped hyperbolic manifold $M$ with regular triangulation $\\mathcal{T}=\\{\\Delta_i\\}_{i=1}^N$ and Neumann-Zagier datum $\\widehat\\beta_\\mathcal{T}=(z,\\mathbf A,\\mathbf B,f)$, we have proposed that the nonabelian torsion is given by $$\\label{tor} \\qquad \\tau_{\\mathcal{T}} := \\pm \\frac12\\det\\big(\\mathbf A\\Delta_{z''} +\\mathbf B\\Delta_z^{-1}\\big)z^{f''}z''^{-f}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-31-example-41-continued",
+      "number": "3.1",
+      "title": "Example: 41 continued",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 158,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pmatrix notag",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "notag frac",
+          "heading": false
+        },
+        {
+          "term": "torintro",
+          "heading": false
+        },
+        {
+          "term": "tau mathbf",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.torexample label=\"sub.torexample\"} To illustrate the Definition [\\[torintro\\]](#torintro){reference-type=\"ref\" reference=\"torintro\"}, consider the figure-eight knot complement again. From Section [\\[sec.41triang\\]](#sec.41triang){reference-type=\"ref\" reference=\"sec.41triang\"}, we already have one possible choice for the Neumann-Zagier matrices [\\[NZ41\\]](#NZ41){reference-type=\"eqref\" reference=\"NZ41\"} and a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-32-independence-of-a-choice-of-quad-type",
+      "number": "3.2",
+      "title": "Independence of a choice of quad type",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 524,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "widetilde mathbf",
+          "heading": false
+        },
+        {
+          "term": "tilde widetilde",
+          "heading": false
+        },
+        {
+          "term": "mathbf big",
+          "heading": false
+        },
+        {
+          "term": "quad widetilde",
+          "heading": false
+        },
+        {
+          "term": "delta mathbf",
+          "heading": false
+        },
+        {
+          "term": "det big",
+          "heading": false
+        },
+        {
+          "term": "notag det",
+          "heading": false
+        },
+        {
+          "term": "neumann-zagier datum",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.invgauge label=\"sec.invgauge\"} Now, let us fix a manifold $M$, a triangulation $\\mathcal{T}$ with $N$ tetrahedra, and an enhanced Neumann-Zagier datum $\\widehat\\beta_\\mathcal{T}=(z,\\mathbf A,\\mathbf B,f)$. To prove independence of quad type, it is sufficient to check that $\\tau_\\mathcal{T}$ is invariant under a cyclic permutation of the first triple of shape parameters $(z_1,z_1',z_1'')$, while holding fixed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-33-independence-of-a-choice-of-edge",
+      "number": "3.3",
+      "title": "Independence of a choice of edge",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 236,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "widetilde mathbf",
+          "heading": false
+        },
+        {
+          "term": "delta mathbf",
+          "heading": false
+        },
+        {
+          "term": "det big",
+          "heading": false
+        },
+        {
+          "term": "edge",
+          "heading": true
+        },
+        {
+          "term": "invglue",
+          "heading": false
+        },
+        {
+          "term": "tau mathcal",
+          "heading": false
+        },
+        {
+          "term": "cdots",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.invglue label=\"sec.invglue\"} We fix $M,\\,\\mathcal{T},\\,\\widehat\\beta_\\mathcal{T}=(z,\\mathbf A,\\mathbf B,f)$. In order to choose matrices $\\mathbf A,\\,\\mathbf B$, we must ignore the redundant gluing equation corresponding to an edge of $\\mathcal T$. This was discussed in Section [\\[sec.NZ\\]](#sec.NZ){reference-type=\"ref\" reference=\"sec.NZ\"}. Suppose, then, that we choose a different edge to ignore. For",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-34-independence-of-a-choice-of-meridian-path",
+      "number": "3.4",
+      "title": "Independence of a choice of meridian path",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 531,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "meridian path",
+          "heading": true
+        },
+        {
+          "term": "widetilde mathbf",
+          "heading": false
+        },
+        {
+          "term": "mathbf delta",
+          "heading": false
+        },
+        {
+          "term": "logarithmic meridian",
+          "heading": false
+        },
+        {
+          "term": "meridian loops",
+          "heading": false
+        },
+        {
+          "term": "meridian constraints",
+          "heading": false
+        },
+        {
+          "term": "delta big",
+          "heading": false
+        },
+        {
+          "term": "det big",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.invmerid label=\"sec.invmerid\"} Recall that an ideal triangulation on $M$ induces a triangulation of its boundary torus $\\partial M$. Consider two simple closed meridian loops in $\\partial M$ in general (normal) position with respect to the triangulation of $\\partial M$. Recall that these paths are drawn on the triangulated 2-dimensional torus $\\partial M$ where faces of tetrahedra correspond to edges in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-35-independence-of-a-choice-of-flattening",
+      "number": "3.5",
+      "title": "Independence of a choice of flattening",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": "19",
+      "labelEnd": "19",
+      "words": 268,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbf widetilde",
+          "heading": false
+        },
+        {
+          "term": "cdot widetilde",
+          "heading": false
+        },
+        {
+          "term": "notag exp",
+          "heading": false
+        },
+        {
+          "term": "flattening",
+          "heading": true
+        },
+        {
+          "term": "exp big",
+          "heading": false
+        },
+        {
+          "term": "invgauge",
+          "heading": false
+        },
+        {
+          "term": "flattening invariance",
+          "heading": false
+        },
+        {
+          "term": "indep",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.invflat label=\"sec.invflat\"} Now suppose that we choose two flattenings $(f,f',f'')$ and $(\\widetilde f,\\widetilde f',\\widetilde f'')$, both satisfying $$\\mathbf A f + \\mathbf B f'' = \\nu\\,,\\qquad f+ f'+ f''=1\\,.$$ $$\\mathbf A \\widetilde f + \\mathbf B\\widetilde f'' = \\nu\\,,\\qquad \\widetilde f+\\widetilde f'+\\widetilde f''=1\\,.$$ We may assume that we have a quad type with $\\mathbf B$ non-degenerate. Indeed,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-36-invariance-under-23-moves",
+      "number": "3.6",
+      "title": "Invariance under 2–3 moves",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 22,
+      "labelStart": "19",
+      "labelEnd": "22",
+      "words": 1136,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "widetilde mathbf",
+          "heading": false
+        },
+        {
+          "term": "pmatrix mathbf",
+          "heading": false
+        },
+        {
+          "term": "tilde widetilde",
+          "heading": false
+        },
+        {
+          "term": "delta mathbf",
+          "heading": false
+        },
+        {
+          "term": "bigcup widetilde",
+          "heading": false
+        },
+        {
+          "term": "widetilde mathcal",
+          "heading": false
+        },
+        {
+          "term": "tilde big",
+          "heading": false
+        },
+        {
+          "term": "pmatrix frac",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.inv23 label=\"sec.inv23\"} We finally come to the proof of Theorem [\\[thm.1\\]](#thm.1){reference-type=\"ref\" reference=\"thm.1\"}, *i.e.*the invariance of $\\tau_{\\mathcal{T}}$ under 2--3 moves. We set up the problem as in Figure [1](#fig.23){reference-type=\"ref\" reference=\"fig.23\"}. Namely, we suppose that $M$ has two different regular triangulations $\\mathcal{T}$ and $\\widetilde\\mathcal{T}$, with $N$ and $N+1$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-4-torsion-on-the-character-variety",
+      "number": "4",
+      "title": "Torsion on the character variety",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 469,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathcal rho",
+          "heading": false
+        },
+        {
+          "term": "utor",
+          "heading": false
+        },
+        {
+          "term": "rho regular",
+          "heading": false
+        },
+        {
+          "term": "tau mathcal",
+          "heading": false
+        },
+        {
+          "term": "character variety",
+          "heading": true
+        },
+        {
+          "term": "representations rho",
+          "heading": false
+        },
+        {
+          "term": "utorsion",
+          "heading": false
+        },
+        {
+          "term": "torsion",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sec.extensions label=\"sec.extensions\"} Having given a putative formula for the non-abelian torsion of a cusped hyperbolic manifold $M$ at the discrete faithful representation $\\rho_0$, it is natural to ask whether the formula generalizes to other settings. In this section, we extend the torsion formula to general representations $\\rho:\\pi_1(M)\\longrightarrow\\text{(P)SL}(2,\\mathbb C)$ for manifolds $M$ with torus",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-41-a-review-of--regular-ideal-triangulations",
+      "number": "4.1",
+      "title": "A review of -regular ideal triangulations",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 370,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "regular ideal",
+          "heading": true
+        },
+        {
+          "term": "ideal triangulations",
+          "heading": true
+        },
+        {
+          "term": "mathcal rho",
+          "heading": false
+        },
+        {
+          "term": "mathrm psl",
+          "heading": false
+        },
+        {
+          "term": "mathrm geom",
+          "heading": false
+        },
+        {
+          "term": "let rho",
+          "heading": false
+        },
+        {
+          "term": "mathcal denote",
+          "heading": false
+        },
+        {
+          "term": "dev",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.revrho label=\"sub.revrho\"} In this section we discuss the $\\rho$-regular ideal triangulations that are needed to generalize our torsion invariant. Let $M$ denote a 3-manifold with nonempty boundary and let $\\rho: \\pi_1(M)\\longrightarrow\\mathrm{PSL}(2,\\mathbb C)$ be a $\\mathrm{PSL}(2,\\mathbb C)$ representation of its fundamental group. Let $\\mathcal X$ denote the set of combinatorial ideal triangulations",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-42-the-epstein-penner-cell-decomposition-and-its",
+      "number": "4.2",
+      "title": "The Epstein-Penner cell decomposition and its triangulations",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 414,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cell decomposition",
+          "heading": true
+        },
+        {
+          "term": "triangulations",
+          "heading": true
+        },
+        {
+          "term": "ideal triangulations",
+          "heading": false
+        },
+        {
+          "term": "geometric bistellar",
+          "heading": false
+        },
+        {
+          "term": "regular triangulations",
+          "heading": false
+        },
+        {
+          "term": "mathcal mathrm",
+          "heading": false
+        },
+        {
+          "term": "flips",
+          "heading": false
+        },
+        {
+          "term": "epstein-penner",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sub.EP label=\"sub.EP\"} Now we consider the canonical ideal cell decomposition of a hyperbolic manifold $M$ with cusps [@EP], and finally prove Proposition [\\[prop.EP\\]](#prop.EP){reference-type=\"ref\" reference=\"prop.EP\"}. It is easy to see that every convex ideal polyhedron can be triangulated into ideal tetrahedra with non-degenerate shapes, see for instance [@HRS]. One wishes to know that every two such",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-43-neumann-zagier-datum-and-the-geometric-compon",
+      "number": "4.3",
+      "title": "Neumann-Zagier datum and the geometric component",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 396,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uglue",
+          "heading": false
+        },
+        {
+          "term": "ugluel",
+          "heading": false
+        },
+        {
+          "term": "rho regular",
+          "heading": false
+        },
+        {
+          "term": "representation rho",
+          "heading": false
+        },
+        {
+          "term": "meridian eigenvalue",
+          "heading": false
+        },
+        {
+          "term": "triangulation mathcal",
+          "heading": false
+        },
+        {
+          "term": "dev",
+          "heading": false
+        },
+        {
+          "term": "longrightarrow mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.GE label=\"sub.GE\"} Let $M$ be a manifold with torus boundary and $\\mathcal{T}$ a (combinatorial) ideal triangulation. The Neumann-Zagier datum $\\beta_\\mathcal{T}=(z,\\mathbf A,\\mathbf B)$ may be generalized for representations $\\rho\\in X_M$ besides the discrete faithful. To begin, choose a representation $\\rho:\\pi_1(M)\\longrightarrow\\mathrm{PSL}(2,\\mathbb C)$, and, if desired, a lift to ${\\rm SL}(2,\\mathbb",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-44-flattening-compatible-with-a-longitude",
+      "number": "4.4",
+      "title": "Flattening compatible with a longitude",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 492,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "flattening compatible",
+          "heading": true
+        },
+        {
+          "term": "mathbf cdot",
+          "heading": false
+        },
+        {
+          "term": "combinatorial flattening",
+          "heading": false
+        },
+        {
+          "term": "longitude",
+          "heading": true
+        },
+        {
+          "term": "uflat",
+          "heading": false
+        },
+        {
+          "term": "ugluel",
+          "heading": false
+        },
+        {
+          "term": "flatg",
+          "heading": false
+        },
+        {
+          "term": "flattrip",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.uflat label=\"sec.uflat\"} In this section we define a restricted combinatorial flattening that is compatible with a longitude. Recall what is a combinatorial flattening of an ideal triangulation $\\mathcal{T}$ from Definition [\\[def.flattening\\]](#def.flattening){reference-type=\"ref\" reference=\"def.flattening\"}. Given a simple peripheral curve $\\lambda$ on the boundary of $M$ that represents a longitude --- in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-45-invariance-of-the-generalized-torsion",
+      "number": "4.5",
+      "title": "Invariance of the generalized torsion",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "26",
+      "labelEnd": "27",
+      "words": 590,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cdot mathbf",
+          "heading": false
+        },
+        {
+          "term": "generalized torsion",
+          "heading": true
+        },
+        {
+          "term": "cdot widetilde",
+          "heading": false
+        },
+        {
+          "term": "cdot tilde",
+          "heading": false
+        },
+        {
+          "term": "utor",
+          "heading": false
+        },
+        {
+          "term": "partial mathbf",
+          "heading": false
+        },
+        {
+          "term": "f-f cdot",
+          "heading": false
+        },
+        {
+          "term": "mathbf delta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.utorsion label=\"sec.utorsion\"} We finally have all the required ingredients for the generalized torsion formula. Let $M$ be a three-manifold with torus boundary, and $\\rho_m:\\pi_1(M)\\to \\text{(P)SL}(2,\\mathbb{C})$ a representation with meridian eigenvalue $m$. Let $\\mathcal{T}$ be a $\\rho_m$-regular triangulation of $M$, which exists by Lemma [\\[lem.wellknown\\]](#lem.wellknown){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-46-example-41-continued",
+      "number": "4.6",
+      "title": "Example: 41 continued",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 29,
+      "labelStart": "27",
+      "labelEnd": "29",
+      "words": 492,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ageom",
+          "heading": false
+        },
+        {
+          "term": "longitude path",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure-eight knot",
+          "heading": false
+        },
+        {
+          "term": "geometric component",
+          "heading": false
+        },
+        {
+          "term": "ﬂattening",
+          "heading": false
+        },
+        {
+          "term": "shape parameters",
+          "heading": false
+        },
+        {
+          "term": "character variety",
+          "heading": false
+        },
+        {
+          "term": "knot complement",
+          "heading": false
+        }
+      ],
+      "extract": "41 continued. We brieﬂy demonstrate the generalized torsion formula, using representations on the geometric component of the character variety X41 for the ﬁgure- eight knot complement. z z′ z′′ w w′ w′′ µ z z′ z′′ w w′ w′′ z z′ z′′ w w′ w′′ z z′ z′′ w w′ w′′ λ Figure 8. Longitude path for the ﬁgure-eight knot complement. We may consider the same triangulation as in Section 2.6. The edge and meridian equa- tions",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-5-the-state-integral-and-higher-loops",
+      "number": "5",
+      "title": "The state integral and higher loops",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": "29",
+      "labelEnd": "30",
+      "words": 570,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "state integral",
+          "heading": true
+        },
+        {
+          "term": "tfrac hbar",
+          "heading": false
+        },
+        {
+          "term": "hbar mathcal",
+          "heading": false
+        },
+        {
+          "term": "hbar big",
+          "heading": false
+        },
+        {
+          "term": "frac hbar",
+          "heading": false
+        },
+        {
+          "term": "psi hbar",
+          "heading": false
+        },
+        {
+          "term": "cdot mathbf",
+          "heading": false
+        },
+        {
+          "term": "det mathbf",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.SIM label=\"sec.SIM\"} Our explicit formulas for the torsion $\\tau_\\mathcal{T}$, as well as higher invariants $S_{\\mathcal{T},n}$, have been obtained from a state integral model for analytically continued $\\mathrm{SL}(2,\\mathbb{C})$ Chern-Simons theory. In this section, we will review the state integral, and analyze its asymptotics in order to re-derive the full asymptotic expansion $$\\label{asympSIM}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-51-critical-points",
+      "number": "5.1",
+      "title": "Critical points",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 32,
+      "labelStart": "30",
+      "labelEnd": "32",
+      "words": 884,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "critical points",
+          "heading": true
+        },
+        {
+          "term": "cdot mathbf",
+          "heading": false
+        },
+        {
+          "term": "crit",
+          "heading": false
+        },
+        {
+          "term": "nzlin",
+          "heading": false
+        },
+        {
+          "term": "diags",
+          "heading": false
+        },
+        {
+          "term": "psi hbar",
+          "heading": false
+        },
+        {
+          "term": "triang",
+          "heading": false
+        },
+        {
+          "term": "widetilde",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.saddle label=\"sec.saddle\"} We begin by showing that the critical points of [\\[SIM\\]](#SIM){reference-type=\"eqref\" reference=\"SIM\"} are indeed solutions to the gluing equations. For this purpose, we need to know the quantum dilogarithm $\\psi_{\\hbar}(Z)$. The latter is given by [@DGLZ Eqn.3.22] $$\\label{qdl} \\psi_{\\hbar}(Z) = \\prod_{r=1}^\\infty \\frac{1-q^r e^{-Z}} {1-({}^Lq)^{-r+1}e^{-{}^LZ}}\\,,$$ for $|q|<1$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-52-volume",
+      "number": "5.2",
+      "title": "Volume",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 33,
+      "labelStart": "32",
+      "labelEnd": "33",
+      "words": 291,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cdot mathbf",
+          "heading": false
+        },
+        {
+          "term": "qquad big",
+          "heading": false
+        },
+        {
+          "term": "sum widetilde",
+          "heading": false
+        },
+        {
+          "term": "volume",
+          "heading": true
+        },
+        {
+          "term": "crit",
+          "heading": false
+        },
+        {
+          "term": "z-i",
+          "heading": false
+        },
+        {
+          "term": "complex volume",
+          "heading": false
+        },
+        {
+          "term": "discrete faithful",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.vol label=\"sec.vol\"} By substituting a solution to [\\[crit\\]](#crit){reference-type=\"eqref\" reference=\"crit\"} back into the $\\hbar^{-1}$ (leading order) part of the integrand, we obtain the following formula for the complex volume of a representation: $$S_{\\mathcal{T},0} = -\\frac{\\pi^2}{2}f\\cdot \\mathbf B^{-1}\\nu -i\\pi Z\\cdot\\mathbf B^{-1}\\nu+\\frac1{2}Z\\cdot\\mathbf{B}^{-1}\\mathbf A Z +\\sum_i\\widetilde{{\\rm",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-53-torsion-revisited",
+      "number": "5.3",
+      "title": "Torsion revisited",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 33,
+      "labelStart": "33",
+      "labelEnd": "33",
+      "words": 307,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "det mathbf",
+          "heading": false
+        },
+        {
+          "term": "cdot mathbf",
+          "heading": false
+        },
+        {
+          "term": "label torcorr",
+          "heading": false
+        },
+        {
+          "term": "delta mathbf",
+          "heading": false
+        },
+        {
+          "term": "torintro",
+          "heading": false
+        },
+        {
+          "term": "frac cdot",
+          "heading": false
+        },
+        {
+          "term": "exp big",
+          "heading": false
+        },
+        {
+          "term": "mathcal big",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.torsion2 label=\"sec.torsion2\"} Next, we can derive our torsion formula [\\[torintro\\]](#torintro){reference-type=\"eqref\" reference=\"torintro\"}. The torsion comes from the $\\hbar^0$ part in the asymptotic expansion of the state integral, which has several contributions. From formal Gaussian integration around a critical point [\\[crit\\]](#crit){reference-type=\"eqref\" reference=\"crit\"}, we get a determinant",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-54-feynman-diagrams-and-higher-loops",
+      "number": "5.4",
+      "title": "Feynman diagrams and higher loops",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 35,
+      "labelStart": "33",
+      "labelEnd": "35",
+      "words": 664,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hbar zeta",
+          "heading": false
+        },
+        {
+          "term": "tfrac hbar",
+          "heading": false
+        },
+        {
+          "term": "hbar big",
+          "heading": false
+        },
+        {
+          "term": "frac hbar",
+          "heading": false
+        },
+        {
+          "term": "feynman diagrams",
+          "heading": true
+        },
+        {
+          "term": "hbar corrections",
+          "heading": false
+        },
+        {
+          "term": "hbar piece",
+          "heading": false
+        },
+        {
+          "term": "hbar det",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.diags label=\"sec.diags\"} The remainder of the invariants $S_{\\mathcal{T},n}$ can be obtained by continuing the saddle-point (stationary phase) expansion of the state integral to higher order. The calculation can be systematically organized into a set of Feynman rules (*cf.* [@MirrorSym Ch.9], [@BIZ; @Polyak]). The resulting formulas --- summarized in the Introduction --- are explicit algebraic functions of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-55-n-loop-invariants-on-the-character-variety",
+      "number": "5.5",
+      "title": "n-loop invariants on the character variety",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 37,
+      "labelStart": "35",
+      "labelEnd": "37",
+      "words": 850,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hbar big",
+          "heading": false
+        },
+        {
+          "term": "cdot mathbf",
+          "heading": false
+        },
+        {
+          "term": "tfrac hbar",
+          "heading": false
+        },
+        {
+          "term": "hbar mathcal",
+          "heading": false
+        },
+        {
+          "term": "usim",
+          "heading": false
+        },
+        {
+          "term": "frac12z cdot",
+          "heading": false
+        },
+        {
+          "term": "mathbf delta",
+          "heading": false
+        },
+        {
+          "term": "uglue",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.uSIM label=\"sec.uSIM\"} Just as we extended the torsion formula to general representations $\\rho\\in X_M$ in Section [\\[sec.extensions\\]](#sec.extensions){reference-type=\"ref\" reference=\"sec.extensions\"}, we may now generalize the entire state integral. The basic result for the higher invariants $S_{\\mathcal{T},n}$ is that their formulas remain completely unchanged. The shapes $z_i$ simply become functions of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-56-example-41-completed",
+      "number": "5.6",
+      "title": "Example: 41 completed",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 37,
+      "labelStart": "37",
+      "labelEnd": "37",
+      "words": 300,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac mathbf",
+          "heading": false
+        },
+        {
+          "term": "tau mathbf",
+          "heading": false
+        },
+        {
+          "term": "widetilde mathbf",
+          "heading": false
+        },
+        {
+          "term": "loopexplicit",
+          "heading": false
+        },
+        {
+          "term": "tordivide",
+          "heading": false
+        },
+        {
+          "term": "zw41m",
+          "heading": false
+        },
+        {
+          "term": "frac big",
+          "heading": false
+        },
+        {
+          "term": "utor",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.41Sn label=\"sec.41Sn\"} We may demonstrate the power of the Feynman-diagram approach by computing the first two subleading corrections $S_{\\mathcal{T},2}$ and $S_{\\mathcal{T},3}$ for the figure-eight knot complement. We can use the same Neumann-Zagier datum described in Section [\\[sec.41triang\\]](#sec.41triang){reference-type=\"ref\" reference=\"sec.41triang\"}, along with the generalized flattening of Section",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-appendix-a-symplectic-properties-of-a-and-b",
+      "number": null,
+      "title": "Appendix A. Symplectic properties of A and B",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 39,
+      "labelStart": "37",
+      "labelEnd": "39",
+      "words": 595,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symplectic",
+          "heading": true
+        },
+        {
+          "term": "complementary columns",
+          "heading": false
+        },
+        {
+          "term": "maximal rank",
+          "heading": false
+        },
+        {
+          "term": "symplectic matrix",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst columns",
+          "heading": false
+        },
+        {
+          "term": "abt",
+          "heading": false
+        },
+        {
+          "term": "symplectic condition",
+          "heading": false
+        },
+        {
+          "term": "upper half",
+          "heading": false
+        }
+      ],
+      "extract": "The N × N Neumann-Zagier matrices A and B form the top half of a symplectic ma- trix ( A B C D ) ∈Sp(2N, Q) [NZ85]. In this section we discuss some elementary properties of symplectic matrices. 38 TUDOR DIMOFTE AND STAVROS GAROUFALIDIS Lemma A.1. The N × 2N matrix (A B) is the upper half of a symplectic matrix if and only if ABT is symmetric and (A B) has maximal rank N. Proof. It is easy to see that the rows of (A",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-appendix-b-the-shape-parameters-are-rational-fun",
+      "number": null,
+      "title": "Appendix B. The shape parameters are rational functions on the character variety",
+      "level": 1,
+      "pageStart": 39,
+      "pageEnd": 40,
+      "labelStart": "39",
+      "labelEnd": "40",
+      "words": 578,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shape parameters",
+          "heading": true
+        },
+        {
+          "term": "character variety",
+          "heading": true
+        },
+        {
+          "term": "rational functions",
+          "heading": true
+        },
+        {
+          "term": "augmented character",
+          "heading": false
+        },
+        {
+          "term": "psl",
+          "heading": false
+        },
+        {
+          "term": "bdrv",
+          "heading": false
+        },
+        {
+          "term": "regular ideal",
+          "heading": false
+        },
+        {
+          "term": "dunﬁeld",
+          "heading": false
+        }
+      ],
+      "extract": "Appendix B. The shape parameters are rational functions on the character variety In this appendix, we prove that the shape parameters of a regular ideal triangulation are rational functions on Y geom M , the geometric component of the SL2(C) A-polynomial curve. Proposition B.1. Fix a regular ideal triangulation T of a one-cusped hyperbolic manifold M. Then every shape parameter of T is a rational function on Y geom",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-appendix-c-deriving-the-state-integral",
+      "number": null,
+      "title": "Appendix C. Deriving the state integral",
+      "level": 1,
+      "pageStart": 40,
+      "pageEnd": 40,
+      "labelStart": "40",
+      "labelEnd": "40",
+      "words": 73,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "state",
+          "heading": true
+        },
+        {
+          "term": "appendix",
+          "heading": true
+        },
+        {
+          "term": "gluing",
+          "heading": false
+        }
+      ],
+      "extract": "In this appendix, we explain the connection between the quantization formalism of [Dim] and the special state integrals (5.2) and (5.23) that led to all the formulas in the present paper. We will ﬁrst review classical “symplectic gluing” of tetrahedra, then extend gluing to the quantum setting and construct the state integral. There are multiple points in the construction that have yet to be made mathematically",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-c1-symplectic-gluing",
+      "number": null,
+      "title": "C.1. Symplectic gluing",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 41,
+      "labelStart": "40",
+      "labelEnd": "41",
+      "words": 329,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symplectic",
+          "heading": true
+        },
+        {
+          "term": "gluing",
+          "heading": true
+        },
+        {
+          "term": "phase space",
+          "heading": false
+        },
+        {
+          "term": "ﬂat",
+          "heading": false
+        },
+        {
+          "term": "connections",
+          "heading": false
+        },
+        {
+          "term": "punctures",
+          "heading": false
+        }
+      ],
+      "extract": "viewed, both classically and quantum mechanically, as a process of symplectic reduction. Suppose we have a one-cusped manifold M with a triangulation T = {∆i}N i=1. Classically, each tetrahedron ∆i comes with a phase space P∂∆i = {ﬂat SL(2, C) connections on ∂∆i} ≈{(Zi, Z′ i, Z′′ i ) ∈C\\(2πiZ) | Zi + Z′ i + Z′′ i = iπ} , (C.1) with (holomorphic) symplectic structure (C.2) ω∂∆i = dZ ∧dZ′′ , and a Lagrangian",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-c2-quantization",
+      "number": null,
+      "title": "C.2. Quantization",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 42,
+      "labelStart": "41",
+      "labelEnd": "42",
+      "words": 665,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ˆzi",
+          "heading": false
+        },
+        {
+          "term": "operators ˆxi",
+          "heading": false
+        },
+        {
+          "term": "product wavefunction",
+          "heading": false
+        },
+        {
+          "term": "ˆpi",
+          "heading": false
+        },
+        {
+          "term": "ˆpn",
+          "heading": false
+        },
+        {
+          "term": "ˆxj",
+          "heading": false
+        },
+        {
+          "term": "product hilbert",
+          "heading": false
+        },
+        {
+          "term": "hilbert space",
+          "heading": false
+        }
+      ],
+      "extract": "a wavefunction Z∆i(Zi), and a quantum operator ˆL∂∆i that annihilates the wavefunction. The symplectic-gluing procedure extends to the quantum setting, with appropriate quantum generalizations of all the above operations. Roughly, one forms a product wavefunction (C.7) Z×(Z1, ..., ZN) = Z∆1 ⊗· · · ⊗Z∆N ∈ H× = H∂∆1 ⊗· · · ⊗H∂∆N , and restricts the product Hilbert space using N −1 new polarizations coming from the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-c3-quantum-reduction",
+      "number": null,
+      "title": "C.3. Quantum reduction",
+      "level": 2,
+      "pageStart": 42,
+      "pageEnd": 44,
+      "labelStart": "42",
+      "labelEnd": "44",
+      "words": 651,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dnz",
+          "heading": false
+        },
+        {
+          "term": "aﬃne symplectic",
+          "heading": false
+        },
+        {
+          "term": "aﬃne shifts",
+          "heading": false
+        },
+        {
+          "term": "πiℏ",
+          "heading": false
+        },
+        {
+          "term": "wavefunction",
+          "heading": false
+        },
+        {
+          "term": "ˆxi",
+          "heading": false
+        },
+        {
+          "term": "symplectic group",
+          "heading": false
+        },
+        {
+          "term": "reduction",
+          "heading": true
+        }
+      ],
+      "extract": "constraints XI →0, and the meridian XN →2u. In Section C.1, these functions were actu- ally used as moment maps to perform a symplectic reduction. Now we should do the same thing quantum mechanically. In order to reduce the product wavefunction Z×(Z1, ..., ZN) of (C.7) to the ﬁnal wavefunction ZM(u) of the glued manifold M, we must transform the wavefunction to a representation (or “polarization”) in which the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-045-c4-introducing-a-flattening",
+      "number": null,
+      "title": "C.4. Introducing a flattening",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 44,
+      "labelStart": "44",
+      "labelEnd": "44",
+      "words": 265,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dnz",
+          "heading": false
+        },
+        {
+          "term": "νλu",
+          "heading": false
+        },
+        {
+          "term": "btd",
+          "heading": false
+        },
+        {
+          "term": "dtb",
+          "heading": false
+        }
+      ],
+      "extract": "the paper, we can introduce a generalized ﬂattening (as in Section 4.4) and use it to simplify (C.21). Note that the discrete-faithful state integral (5.2) follows immediately from (5.23) upon setting u = (0, ..., 0, u) →0. Suppose, then, that we have integers (f, f ′′) that satisfy (C.22) \u0012 A B C D \u0013 \u0012 f f ′′ \u0013 = \u0012 ν νP \u0013 , for some νP whose last entry is νλ. We will assume that a completed symplectic matrix ( A B",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-c5-normalization-and-invariance",
+      "number": null,
+      "title": "C.5. Normalization and invariance",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 46,
+      "labelStart": "44",
+      "labelEnd": "46",
+      "words": 582,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "weil representation",
+          "heading": false
+        },
+        {
+          "term": "πiℏ",
+          "heading": false
+        },
+        {
+          "term": "normalization",
+          "heading": true
+        },
+        {
+          "term": "state integral",
+          "heading": false
+        },
+        {
+          "term": "fkv",
+          "heading": false
+        },
+        {
+          "term": "quad type",
+          "heading": false
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "cyclic permutation",
+          "heading": false
+        }
+      ],
+      "extract": "has always been a subtle issue. For the integral of [Dim], ambiguities in the normalization come from two sources: the projectivity of the Weil representation, and the incomplete invariance of the integral (even formally) under a change of “quad type” and a 2–3 move. Let us consider the Weil representation ﬁrst. We will assume that all symplectic matrices are in Sp(2N, Z), and that all shifts involve integers (like",
+      "extractCut": true
+    },
+    {
+      "id": "sec-047-appendix-d-computer-implementation-and-computati",
+      "number": null,
+      "title": "Appendix D. Computer implementation and computations",
+      "level": 1,
+      "pageStart": 46,
+      "pageEnd": 47,
+      "labelStart": "46",
+      "labelEnd": "47",
+      "words": 590,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "neumann-zagier datum",
+          "heading": false
+        },
+        {
+          "term": "enhanced neumann-zagier",
+          "heading": false
+        },
+        {
+          "term": "cusped hyperbolic",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifold",
+          "heading": false
+        },
+        {
+          "term": "cusp shape",
+          "heading": false
+        },
+        {
+          "term": "torsion",
+          "heading": false
+        },
+        {
+          "term": "digits",
+          "heading": false
+        },
+        {
+          "term": "precision",
+          "heading": false
+        }
+      ],
+      "extract": "An enhanced Neumann-Zagier datum is a tuple (z, A, B, f) attached to a regular ideal triangulation of a cusped hyperbolic manifold M. The program SnapPy [CDW] in its python and sage implementation computes the gluing matrices G, G′, G′′ of Sections 2.4 and 4.4; and therefore it can easily compute an enhanced Neumann-Zagier datum bβT = (z, A, B, f). The shape parameters z are algebraic numbers that are computed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 47,
+      "pageEnd": 53,
+      "labelStart": "47",
+      "labelEnd": null,
+      "words": 1635,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "sergei gukov",
+          "heading": false
+        },
+        {
+          "term": "tudor dimofte",
+          "heading": false
+        },
+        {
+          "term": "modern phys",
+          "heading": false
+        },
+        {
+          "term": "acta math",
+          "heading": false
+        },
+        {
+          "term": "erˆome dubois",
+          "heading": false
+        },
+        {
+          "term": "hyam rubinstein",
+          "heading": false
+        },
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        }
+      ],
+      "extract": "[AK] Jørgen Ellegaard Andersen and Rinat Kashaev, A tqft from quantum teichmller theory, arXiv: 1109.6295, Preprint 2011. [Bar99] E. W. Barnes, The genesis of the double gamma functions, Proc. London Math. Soc. 31 (1899), 358–381. [BDRV] David W. Boyd, Nathan M. Dunﬁeld, and Fernando Rodriguez-Villegas, Mahler’s measure and the dilogarithm (II), arXiv:math.NT/0308041, Preprint 2005. [BIZ80] D. Bessis, C. Itzykson,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 2,
+        "items": [
+          "A review of ρ-regular ideal triangulations",
+          "Volume"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 2,
+        "items": [
+          "Introduction: listed p2, found p33",
+          "Example: 41 continued: listed p27, found p16"
+        ]
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mathbf big",
+      "heading": false
+    },
+    {
+      "term": "mathcal mathbf",
+      "heading": false
+    },
+    {
+      "term": "mathbf widetilde",
+      "heading": false
+    },
+    {
+      "term": "tau mathbf",
+      "heading": false
+    },
+    {
+      "term": "det mathbf",
+      "heading": false
+    },
+    {
+      "term": "quad mathbf",
+      "heading": false
+    },
+    {
+      "term": "frac mathbf",
+      "heading": false
+    },
+    {
+      "term": "equations mathbf",
+      "heading": false
+    },
+    {
+      "term": "delta mathbf",
+      "heading": false
+    },
+    {
+      "term": "cdot mathbf",
+      "heading": false
+    },
+    {
+      "term": "qquad mathbf",
+      "heading": false
+    },
+    {
+      "term": "mathbf begin",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 53,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Diagrams contributing to SM,2 with symmetry factors. The top row of diagrams have exactly two loops, while the bottom row have fewer loops and additional 1-vertices and 2-vertices",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Diagrams with three loops contributing to S3",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Diagrams with 1-vertices and 2-vertices contributing to S3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "An ideal tetrahedron Borrowing common terminology from the theory of normal surfaces, cf. [Bur, Kan05, KR04, Til08], we deﬁne the quadrilateral type (in short, quad type) of ∆to be the distinguished pair of opposite edges labelled by z. Clearly, there is a three-fold choice of quad type for any orie",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The boundary of the cusp neighborhood for the ﬁgure-eight knot. A map of the boundary of the cusp neighborhood is shown in Figure 5. We have chosen",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The fundamental move for changing a meridian path. Here, we deform through an edge EI with gluing constraint XI = Z + W + R1 + ... +",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "The geometry of the 2–3 move: a bipyramid split into two tetra-",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Longitude path for the ﬁgure-eight knot complement. We may consider the same triangulation as in Section 2.6. The edge and meridian equations (2.14) are deformed to (4.16)",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Rotating the standard branch cuts of Li2(e−Z) and Li1(e−Z) to",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 49,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 50,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "9 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p47); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 17
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 50 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1202.6268v2"
+  }
+}

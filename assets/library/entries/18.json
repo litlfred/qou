@@ -1,0 +1,453 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "18",
+  "blocks": [
+    {
+      "id": "library/18/blocks/lem-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "lem-sec-001-01.md",
+      "narrative": null,
+      "content": "The Hessian H of S is negative semi-deﬁnite – its null-space is spanned by the vector r.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/18/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Let M 3 be a triangulated three-dimensional manifold.\nIn this paper\nwe deﬁne a combinatorial analogue of scalar curvature for M 3, and also a\ncombinatorial analogue of conformal deformation of the metric. We further\ndeﬁne a functional S on the combinatorial conformal deformation space,\nshow that S is concave, and show that critical points of S correspond pre-\ncisely to metrics of constant combinatorial scalar curvature on M 3. These\nresults are then applied to showing rigidity of ball packings with prescribed\ncombinatorics (the concepts are quite similar to Colin de Verdi`ere’s work\non circle",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/18/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conformal simplices",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-1-conformal-simplices.md",
+      "narrative": null,
+      "content": "results. In section 3 we extend these techniques to conformal simplices in\nH3. In section 4 we study the deformation space of conformal simplices. In\nsection 5 we prove the results on scalar curvature alluded to above, and in\nsection 6 we discuss the ball-packing results.\n1. Conformal simplices\nLet T be a simplex in E3. Denote the vertices of T by v1, . . . , v4, and\ndenote the edge joining vi and vj by eij. The length of eij shall be denoted\nby lij, while the dihedral angle of eij shall be denoted by αij. The solid\nangle at the vertex vi of T shall be denoted by Si. From the Gauss-Bonnet\nform",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/18/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Mathematical Research Letters 3, 51–60 (1996)\nCOMBINATORIAL SCALAR CURVATURE\nAND RIGIDITY OF BALL PACKINGS\nDaryl Cooper and Igor Rivin",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/18/blocks/thm-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "thm-sec-001-02.md",
+      "narrative": null,
+      "content": "Fix the scale of the simplices under consideration, by set- ting (1.2) r1 + r2 + r3 + r4 = 1. Then the regular simplex, for which ri = 1/4, is a critical point of the function S, and furthermore, the regular simplex cannot be conformally deformed while keeping the solid angles ﬁxed.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/18/blocks/thm-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "thm-sec-001-03.md",
+      "narrative": null,
+      "content": "A conformal simplex cannot be deformed while keeping the solid angles ﬁxed; that is, the set CS1,S2,S3,S4 ⊂C1 is discrete.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/18/blocks/lem-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "lem-sec-002-01.md",
+      "narrative": null,
+      "content": "dS = − \u0003 i=1 Si κ2 i dκi. The following result follows from the proof of Lemma 1.2",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/18/blocks/lem-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "lem-sec-002-02.md",
+      "narrative": null,
+      "content": "The Hessian H of S with respect to κ is negative semi- deﬁnite – its null-space is spanned by the vector κ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/18/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Another coordinate system",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-2-another-coordinate-system.md",
+      "narrative": null,
+      "content": "While the radii ri are a natural set of coordinates for the space of confor-\nmal simplices, it turns out that, in many ways, the curvatures of the spheres\nare better. That is, instead of r1, . . . , r4, use κ1, . . . , κ4, where κiri = 1.\nUsing this parametrization embeds CT as an open set in R4. Call this open\nset Cκ\nT .\nConsider again the function S, as in Section 1. As a function of κ =\n(κ1, . . . , κ4), S can be written as\n(2.1)\nS =\n4\n\u0003\ni=1\nSi/κi.\nThe following lemma is shown the same way as in Lemma 1.1.\nLemma 2.1.\ndS = −\n4\n\u0003\ni=1\nSi\nκ2\ni\ndκi.\nThe following result follows from the proof of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/18/blocks/lem-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "lem-sec-003-01.md",
+      "narrative": null,
+      "content": "dSh = \u0003 i=1 Sidri. The following is the hyperbolic analogue of Lemma 1.2:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/18/blocks/lem-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "lem-sec-003-02.md",
+      "narrative": null,
+      "content": "The Hessian Hh of Sh is negative deﬁnite.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/18/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "A simplex T is conformal if and only if there exists a unique sphere sT which is tangent to all of the edges of T. Furthermore, the point of tangency of sT with the edge eij is at distance ri from vi.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/18/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hyperbolic conformal simplices",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-3-hyperbolic-conformal-simplices.md",
+      "narrative": null,
+      "content": "3. Hyperbolic conformal simplices\nIn this section we consider conformal simplices (deﬁned as in Section 1)\nin hyperbolic 3-space H3, rather than in E3. Rather than repeating all of\nthe deﬁnitions, we will simply point out the diﬀerences. The main one of\nthese is in the deﬁnition of the function S. We will now deﬁne Sh as\n(3.1)\nSh(r) =\n\u0003\nSiri + 2 vol T.\nThen, Schl¨aﬂi’s formula 1.1 immediately implies the following analogue of\nLemma 1.1:\nLemma 3.1.\ndSh =\n4\n\u0003\ni=1\nSidri.\nThe following is the hyperbolic analogue of Lemma 1.2:\nLemma 3.2. The Hessian Hh of Sh is negative deﬁnite.\nProof. The proof of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/18/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The space of conformal simplices",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-4-the-space-of-conformal-simplices.md",
+      "narrative": null,
+      "content": "In this section we will describe the space of Euclidean conformal sim-\nplices CT introduced in section 1. The ﬁrst observation is the following:\n56\nDARYL COOPER AND IGOR RIVIN\nLemma 4.1. A simplex T is conformal if and only if there exists a unique\nsphere sT which is tangent to all of the edges of T. Furthermore, the point\nof tangency of sT with the edge eij is at distance ri from vi.\nProof. We will show this result in all dimensions greater than 1. The “if”\ndirection is trivial. We will show the “only if” direction by induction on\ndimension. In dimension 2, where all triangles are conformal,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/18/blocks/thm-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "thm-sec-004-02.md",
+      "narrative": null,
+      "content": "The space of isometry classes of Euclidean conformal sim- plices CT can be naturally identiﬁed with the hyperbolic space H3. In par- ticular, CT is homeomorphic to the ball B4 = H3 × R. Note. The discussion above applies just as well to hyperbolic conformal simplices, except that since we can no longer normalize by ﬁxing the radius of the mid-sphere st, and so CH ≃H3 × R+, where CH is the deformation space of hyperbolic conformal simplices. It will be useful to know exactly how CT is parametrized by our coor- dinates, in particular, what the boundary of CT (as a subset of R4) looks like. Note",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/18/blocks/thm-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "thm-sec-004-03.md",
+      "narrative": null,
+      "content": "The space CT ⊂R4 is not convex.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/18/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conformal deformation space of singular Euclidean metrics",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-5-conformal-deformation-space-of-singular-euclid.md",
+      "narrative": null,
+      "content": "Consider a closed three-dimensional manifold M 3, together with a topo-\nlogical triangulation T . If we equip all of the simplices of T with metrics,\nso that they are isometric to geodesic simplices in E3, and, furthermore,\nthese metrics are compatible (which is to say that all of the gluing maps\nare Euclidean isometries), M 3 acquires a metric, which is ﬂat on the com-\nplement of the 1-skeleton of T . We deﬁne the solid angle Sv of (M 3, T ) at\na vertex v to be the sum of the solid angles of the simplices of T incident\nto v at the vertex identiﬁed to v. The quantity 4π −Sv is a combinatorial",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/18/blocks/rem-sec-005-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "rem-sec-005-02.md",
+      "narrative": null,
+      "content": "By the results in section 3 everything in this section, with the exception of the preceding Note, translates essentially verbatim to the case of hyperbolic conformal structures on M 3 (those where the simplices of T are hyperbolic confromal simplices).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/18/blocks/thm-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "thm-sec-005-01.md",
+      "narrative": null,
+      "content": "A conformal structure on (M 3, T ) cannot be deformed (ex- cept by rescaling) while keeping the solid angles at the vertices of T ﬁxed; that is, the set of conformal structures with prescribed solid angles is a discrete subset of C1. Note. The proof actually shows something a bit stronger than Theorem 5.1 – we need only keep the diﬀerences between the solid angles ﬁxed.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/18/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Applications to ball packing",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-006-6-applications-to-ball-packing.md",
+      "narrative": null,
+      "content": "Consider the special case of the situation in the previous section where\nthe metric on (M, T ) is in fact non-singular Euclidean or hyperbolic in the\nCOMBINATORIAL SCALAR CURVATURE\n59\ninterior (though the boundary may be polyhedral). The conformality of the\nstructure means that there are Euclidean (resp. hyperbolic) balls centered\nat the vertices of T , such that the radius of the ball Bv centered at v is\nequal to rv. Two of such balls Bv and Bw are tangent whenever v and w\nshare an edge, and Theorem 5.1 tells us:\nTheorem 6.1. Let M 3 be a Euclidean (hyperbolic) 3-manifold with poly-\nhedral bo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/18/blocks/thm-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "thm-sec-006-01.md",
+      "narrative": null,
+      "content": "Let M 3 be a Euclidean (hyperbolic) 3-manifold with poly- hedral boundary. A ball packing whose nerve is a triangulation T of M is cannot be deformed (except by rescaling in the Euclidean case) while keeping the solid angles at the boundary of M ﬁxed. Note. If M is a closed manifold the clause following “while’ is vacuous. The theorem says that the sets of structures corresponding to ball-packings are discrete subsets of C1 and CH respectively. A particularly simple example of a Euclidean manifold with boundary is a polyhedron in Rn. Since one can always stereographically project the sphere Sn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/18/blocks/thm-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "thm-sec-006-02.md",
+      "narrative": null,
+      "content": "The geometry of ball-packing of the sphere S3 whose nerve is a triangulation T is rigid up to M¨obius transformations.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/18/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Remarks and questions",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-007-7-remarks-and-questions.md",
+      "narrative": null,
+      "content": "The results above can be viewed as generalizing of the work of Colin\nde Verdi`ere [2] to higher dimensions. A rather diﬃcult problem (perhaps\nintractable in dimension greater than 3) is obtaining any sort of existence\nresults.\nIt is known that no analogue of the results in two dimensions\n(that any triangulation of a surface is the nerve a circle packing) exists\n(see [4]), but no characterization is known. Indeed, it is not obvious to\nthe authors that there is an inﬁnite family of ball-packings of S3. Nor is\nit obvious that every hyperbolic manifold admits even one ball-packing. A\ncharacterizat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/18/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-008-acknowledgements.md",
+      "narrative": null,
+      "content": "The authors would like to thanks Oded Schramm for pointing out an\noversight in a previous version of this paper. The second author would like\nto thank Melbourne University for its hospitality.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/18/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-009-references.md",
+      "narrative": null,
+      "content": "1. D. V. Alekseevskij, E. Vinberg, and A. S. Solodovnikov, Geometry of spaces of\nconstant curvature, Geometry I, EMS 29; Springer Verlag, Berlin (1993).\n\n2. Yves Colin de Verdiére, Un principe variationnel pour les empilements des cercles,\nInvent. Math. 104 (1991).\n\n3. M. D. Kovalev, On curvatures of tangent spheres, Trudy Mat. Inst. Steklov.; in\nRussian 196 (1991), 90-92.\n\n4. Greg Kuperberg and Oded Schramm, Average kissing numbers for non-congruent\nsphere packings, Math. Res. Lett. 1; no. 3 (1994).\n\n5. Igor Rivin, Euclidean structures on simplicial surfaces and hyperbolic volume, Ann.\nof Mat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

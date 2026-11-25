@@ -1,0 +1,327 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2306.13098v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2306.13098v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "[]{#sec:Introduction label=\"sec:Introduction\"} Despite its great practical success in colliders and other experiments, there are several unexplained features of the Standard Model of particle physics (SM) which lack a deeper theoretical motivation. These include, among others, a derivation of the SM gauge group from first principles, an explanation for why some representations of the SM gauge group correspond to particle multiplets whereas others do not, and an account for why fermions come in three generations. These theoretical shortcomings may be suggestive that the SM ultimately emerges fr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2306.13098v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Three generations of colored fermions with S3 family symmetry\nfrom Cayley-Dickson sedenions\nNiels G. Gresnigt1⋆, Liam Gourlay1 and Abhinav Varma1\n1 Department of Physics, School of Mathematics and Physics, Xi’an Jiaotong-Liverpool University,\nSuzhou, China\n* niels.gresnigt@xjtlu.edu.cn\nAbstract\nAn algebraic representation of three generations of fermions with SU(3)C color symmetry based on the\nCayley-Dickson algebra of sedenions S is constructed.\nRecent constructions based on division algebras\nconvincingly describe a single generation of leptons and quarks with Standard Model gauge symmetries.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2306.13098v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Normed division algebras",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-normed-division-algebras.md",
+      "narrative": null,
+      "content": "[]{#sec:normeddivisionalgebras label=\"sec:normeddivisionalgebras\"}\n\nA division algebra is an algebra over a field where division is always well-defined, except by zero. A normed division algebra has the additional property that it is also normed vector spaces, with the norm defined in terms of a conjugate. A well-known result by Hurwitz [@hurwitz1898ueber] is that there exist only four normed division algebras (over the field of real numbers): $\\mathbb{R}$, $\\mathbb{C}$, $\\mathbb{H}$, $\\mathbb{O}$, of dimensions one, two, four and eight respectively. In going to higher-dimensional algebras, su",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2306.13098v2/blocks/figure-img-p004-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2306.13098v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "One generation of electrocolor states from CO",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-one-generation-of-electrocolor-states-from-co.md",
+      "narrative": null,
+      "content": "[]{#Furey label=\"Furey\"}\n\nLet $e_1:= L_{i_1},...,e_6:=L_{i_6}$ be a generating basis (over $\\mathbb{C}^6$) for $\\mathbb{C}\\ell(6)$ associated with the left multiplication algebra of the complex octonions, satisfying $e_i^2=-1,\\;e_ie_j=-e_je_i$. Define the Witt basis $$\\begin{aligned}\n\\notag\n\\alpha_1^\\dagger &=& \\frac{1}{2}(e_1+ie_5),\\quad \\alpha_2^\\dagger = \\frac{1}{2}(e_2+ie_6),\\quad \\alpha_3^\\dagger = \\frac{1}{2}(e_3+ie_7)\\\\\\notag\n\\alpha_1 &=& \\frac{1}{2}(-e_1+ie_5), \\quad \\alpha_2 = \\frac{1}{2}(-e_2+ie_6),\\quad \\alpha_3 = \\frac{1}{2}(-e_3+ie_7).\n\\end{aligned}$$ Here ${}^{\\dagger}$ correspon",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2306.13098v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Cayley-Dickson construction and the algebra of sedenions",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-the-cayley-dickson-construction-and-the-algebra.md",
+      "narrative": null,
+      "content": "[]{#sedenions label=\"sedenions\"}\n\nThe CD process is an iterative construction that generates at each stage an algebra (with involution) of dimension twice that of the previous. Each algebra is constructed as a direct sum of the previous algebra, so that $\\mathbb{C}=\\mathbb{R}\\oplus\\mathbb{R}i$ where $i$ is the complex structure introduced in the process. Similarly, $\\mathbb{H} = \\mathbb{C} \\oplus \\mathbb{C} J$, where $i$, $J$ and $iJ$ are identified with the quaternion imaginary bases $I, J, K$, and similarly $\\mathbb{O} = \\mathbb{H}\\oplus\\mathbb{H}i_4$.\n\nThis process does not terminate with $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2306.13098v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Octonion subalgebras inside the sedenions",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-octonion-subalgebras-inside-the-sedenions.md",
+      "narrative": null,
+      "content": "Let us now use $\\{e_0,e_1,...,e_{n^2-1}\\}$ to denote an orthonormal basis for $\\mathbb{A}_n$, so that $$\\begin{aligned}\n    \\mathbb{A}_1=\\mathbb{C}&:& \\{e_0,e_1\\},\\quad\\textrm{where}\\quad e_1=i,\\\\\n    \\mathbb{A}_2=\\mathbb{H}&:& \\{e_0,e_1,e_2,e_3\\},\\quad\\textrm{where}\\quad e_1=i=I,\\; e_2=J,\\; e_3=K\\\\\n    \\mathbb{A}_3=\\mathbb{O}&:& \\{e_0,e_1,...,e_7\\},\\quad\\textrm{where}\\quad e_1=i=I=i_1,...,e_7=i_7\\\\\n    \\mathbb{A}_4=\\mathbb{S}&:& \\{e_0,e_1,...,e_{15}\\},\\quad\\textrm{where}\\quad e_1=i=I=i_1=s_1,...,e_{15}=s_{15}.\n\\end{aligned}$$\n\nConsider $\\mathbb{A}_2=\\mathbb{H}$ with basis $\\{e_0,e_1,e_2,e_3\\}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2306.13098v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The left multiplication algebra of CS",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-the-left-multiplication-algebra-of-cs.md",
+      "narrative": null,
+      "content": "Despite the algebra $\\mathbb{S}$ being non-associative and non-alternative, just as for $\\mathbb{O}$, we can consider the left actions of $\\mathbb{S}$ on itself as linear operators generating an associative algebra.\n\nThe generalisation from $(\\mathbb{C}\\otimes\\mathbb{O})_L$ to $(\\mathbb{C}\\otimes\\mathbb{S})_L$ is not immediately obvious because the identities which held for $(\\mathbb{C}\\otimes\\mathbb{O})_L$, namely $$\\begin{aligned}\n    L_{i_1}L_{i_2}L_{i_3}L_{i_4}L_{i_5}L_{i_6}x&=&L_{i_7}x,\\\\\n    ...L_{i_b}L_{i_a}L_{i_a}L_{i_c}....x&=&-...L_{i_b}L_{i_c}....x,\\label{octidentity1}\\\\\n    ...L_{i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2306.13098v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Automorphisms of sedenions",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-006-automorphisms-of-sedenions.md",
+      "narrative": null,
+      "content": "Schafer [@schafer1954algebras] showed that for CD algebras $\\mathbb{A}_n$ with $n\\geq 4$ ($\\mathbb{A}_0=\\mathbb{R}$), the derivation algebra $\\mathfrak{der}(\\mathbb{A}_n)$ consists of derivations of the form $a+bu\\rightarrow aD+(bD)u$, where $a,b\\in\\mathbb{A}_{n-1}$, $u$ is the new anticommuting imaginary unit $u$ introduces in the CD construction of $\\mathbb{A}_n$ from $\\mathbb{A}_{n-1}$, and $D$ is a derivation of $\\mathbb{A}_{n-1}$. Brown [@brown1967generalized] demonstrated that if $\\theta\\in Aut(\\mathbb{A}_{n-1})$, then $$\\begin{aligned}\n\\theta'&:& a+bu\\rightarrow a\\theta+(b\\theta)u,\\\\\n\\e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2306.13098v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Three generations of color states from CS",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-007-three-generations-of-color-states-from-cs.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2306.13098v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Why not sedenions?",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-008-why-not-sedenions.md",
+      "narrative": null,
+      "content": "Since one generation of electrocolor states are efficiently represented starting from $\\mathbb{C}\\otimes\\mathbb{O}$, one might ask if $\\mathbb{S}$ (or rather $\\mathbb{C}\\otimes\\mathbb{S}$) is an appropriate larger algebraic structure capable of describing three generations. Not being a division algebra is not grounds to disqualify $\\mathbb{S}$, for we point out that neither $\\mathbb{C}\\otimes\\mathbb{O}$ nor $\\mathbb{C}\\ell(6)$ generated as the left multiplication algebra are themselves division algebras. Furthermore, the algebra $\\mathbb{R}\\otimes\\mathbb{C}\\otimes\\mathbb{H}\\otimes\\mathbb{O}$ i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2306.13098v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "One generation of electrocolor states from CS",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-009-one-generation-of-electrocolor-states-from-cs.md",
+      "narrative": null,
+      "content": "One generation of electrocolor states from C ⊗S\nWe proceed by first constructing a single generation with unbroken SU(3)C × U(1) symmetry from C ⊗S.\nConsidering the three octonion subalgebras O1, O2, O3 of S defined above:\nO1\n:\n{e0, e1, e4, e5, e8, e9, e12, e13}\n(56)\nO2\n:\n{e0, e2, e4, e6, e8, e10, e12, e14}\n(57)\nO3\n:\n{e0, e3, e4, e7, e8, e11, e12, e15}.\n(58)\nFor each Oi subalgebra, we define a single pair of raising and lowering operators as follows:\nA†\n1\n≡\n1\n2\n√\n2(e1 + ie5 + e9 + ie13),\nA1 ≡\n1\n2\n√\n2(−e1 + ie5 −e9 + ie13)\n(59)\nA†\n2\n≡\n1\n2\n√\n2(e2 + ie6 + e10 + ie14),\nA2 ≡\n1\n2\n√\n2(−e2 + ie6 −e10",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2306.13098v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generating two additional generations from S3 automorphisms",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-010-generating-two-additional-generations-from-s3-au.md",
+      "narrative": null,
+      "content": "Having constructed one generation of electrocolor states, we now proceed to apply $\\psi$ to the ladder operators eqns. ([\\[newladder1\\]](#newladder1){reference-type=\"ref\" reference=\"newladder1\"})-([\\[newladder3\\]](#newladder3){reference-type=\"ref\" reference=\"newladder3\"}), and subsequently the basis states of the minimal left ideals, in order to generate two additional generations.\n\nThe first thing to check is that the $S_3$ automorphisms of $\\mathbb{S}$ carry over the automorphisms of the left multiplication algebra $\\mathbb{C}\\ell(8)$. Given the generating basis $e_0,...,e_8$ for $\\mathbb{C}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2306.13098v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "SU(3)C color symmetries of three generations",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-011-su3c-color-symmetries-of-three-generations.md",
+      "narrative": null,
+      "content": "The anticommutators between ladder operators belonging to different generations are not the standard fermionic anticommutation relations. That is $$\\begin{aligned}\n    \\{A_i,B_j\\}w\\neq 0,\\qquad \\{B_i,C_j\\}w\\neq 0,\\qquad \\{C_i,A_j\\}w\\neq 0, \\quad\\textrm{whenever}\\;i\\neq j\n    \n    \n\\end{aligned}$$ and likewise for the other anticommutation relations. Surprisingly however, it turns out that all three generations of states transform correctly under a single copy of $SU(3)$, which may be generated from any of the three sets of $\\mathbb{C}\\ell(6)$ ladder operators. We will here use the $SU(3)_C$ ge",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2306.13098v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Linear dependence of minimal ideal states",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-012-linear-dependence-of-minimal-ideal-states.md",
+      "narrative": null,
+      "content": "Although we have been able to construct three pairs of minimal ideals to represent three generations of fermions, these minimal ideals are not linearly independent. Indeed, one might expect a certain degree of overlap of the minimal ideals, given the condition eqn. ([\\[conditionladder\\]](#conditionladder){reference-type=\"ref\" reference=\"conditionladder\"}) above.\n\nWe propose (as in [@gillard2019three] and [@manogue2022octions]) that the inevitable overlap of the three generations could form a basis for including quark mixing and neutrino oscillations into the present algebraic model based on se",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2306.13098v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outlook",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-013-outlook.md",
+      "narrative": null,
+      "content": "The model presented here is clearly far from complete as our focus has been restricted to the $SU(3)_C$ color gauge symmetry, and we have not considered the remaining internal symmetries nor the spacetime symmetries.\n\nOne way to include chiral $SU(2)_L$ states it is via a copy of $\\mathbb{C}\\ell(4)$ [@furey2018demonstration]. In [@furey2016standard] it is shown that the right actions of $\\mathbb{C}\\otimes\\mathbb{H}$ together with the right actions of the $\\mathbb{C}\\ell(6)$ nilpotents $\\omega$ and $\\omega^{\\dagger}$ generate the required $\\mathbb{C}\\ell(4)$ to represent chiral $SU(2)_L$ states",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2306.13098v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discussion",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "../sections/sec-014-discussion.md",
+      "narrative": null,
+      "content": "Discussion\nWe have argued that the CD algebra S provides a suitable algebraic structure to describe three generations.\nOur focus has been restricted to the SU(3)C color gauge symmetry. Three intersecting O subalgebras of S\nare used to construct a Witt basis for Cℓ(6). Two minimal left ideals are then use to represent one generation\nof electrocolor states. Subsequently, the S3 automorphism of order three of S is then applied to the Cℓ(6)\nWitt basis in order to obtain exactly two additional generations of color states, but not electrocolor states.\nIn [4, 5], Cℓ(6) arises as the left multiplicati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

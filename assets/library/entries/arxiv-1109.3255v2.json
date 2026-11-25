@@ -1,0 +1,716 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1109.3255v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1109.3255v2  [math.SG]  13 Feb 2014\nFLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE\nPLANE AND A BINODAL CUBIC CURVE\nJAMES PASCALEFF\nAbstract. We construct a family of Lagrangian submanifolds in the Landau–\nGinzburg mirror to the projective plane equipped with a binodal cubic curve as\nanticanonical divisor.\nThese objects correspond under mirror symmetry to the\npowers of the twisting sheaf O(1), and hence their Floer cohomology groups form\nan algebra isomorphic to the homogeneous coordinate ring. An interesting feature\nis the presence of a singular torus ﬁbration on the mirror, of which t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "[]{#sec:intro label=\"sec:intro\"}\n\nThis article is concerned with a case of mirror symmetry relating the algebraic geometry of a Fano manifold to the symplectic geometry of a Landau--Ginzburg model. The Fano manifold is the projective plane $\\CP^2$ with homogeneous coordinates $x, y, z$, and additionally we choose as anticanonical divisor $D = C\n\\cup L$, the union of a conic $C = \\{xz-y^2\\}$ and a line $L = \\{y=0\\}$ (a binodal cubic curve). According to Auroux [@auroux07], the mirror of this pair $(\\CP^2,D)$ is the Landau--Ginzburg model $(X^\\vee,W)$ $$\\begin{split}\n    X^\\vee = \\{(u,v) \\in \\C^",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary of results",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-11-summary-of-results.md",
+      "narrative": null,
+      "content": "[]{#sec:outline label=\"sec:outline\"} The piece of symplectic geometry in the Landau--Ginzburg model $(X^\\vee,W)$ we study is the Floer cohomology of Lagrangian submanifolds, while on the mirror side $\\CP^2$ we consider the cohomology of the coherent sheaves $\\cO_{\\CP^2}(d)$. We construct a symplectic manifold $X(B)$, that serves as our symplectic model for $X^\\vee$, and a collection of Lagrangian submanifolds $\\{L(d)\\}_{d\\in\n  \\Z}$ in $X(B)$ that is mirror to the collection $\\{\\cO_{\\CP^2}(d)\\}_{d\\in \\Z}$. The constructions of $X(B)$ and $L(d)$ are based on the SYZ picture of mirror symmetry in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Context and related work",
+      "pageStart": 5,
+      "pageEnd": 10,
+      "target": "../sections/sec-002-12-context-and-related-work.md",
+      "narrative": null,
+      "content": "[]{#sec:context label=\"sec:context\"}\n\n### Manifolds with effective anticanonical divisor and Landau--Ginzburg models {#sec:intro-fano}\n\nThe class of spaces originally considered in mirror symmetry were Calabi--Yau manifolds. Roughly speaking, the mirror to a compact Calabi--Yau manifold $X$ is another compact Calabi--Yau manifold $X^\\vee$ of the same dimension. For example, it is in this context that we have the equivalence, discovered by Candelas--de la Ossa--Green--Parkes [@candelas-etal] and proven mathematically by Givental [@givental-equivariant-GW] and Lian--Liu--Yau [@lly], between the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-003-13-acknowledgments.md",
+      "narrative": null,
+      "content": "[]{#sec:acknowledgements label=\"sec:acknowledgements\"} This paper is a version of my doctoral thesis. It represents research done at MIT under the supervision of Denis Auroux, whose support and generosity contributed greatly to the completion of this work. I thank him, Paul Seidel, and Mohammed Abouzaid for suggestions that proved to be invaluable in its development. I thank Tom Mrowka for his interest in this work and several helpful discussions. I thank the referees who provided comments and helpful suggestions that improved the paper in many ways.\n\nThis work was partially supported by NSF g",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The fiber of W and its tropicalization",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-2-the-fiber-of-w-and-its-tropicalization.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Torus fibrations on CP2 D and its mirror",
+      "pageStart": 11,
+      "pageEnd": 16,
+      "target": "../sections/sec-005-21-torus-fibrations-on-cp2-d-and-its-mirror.md",
+      "narrative": null,
+      "content": "[]{#sec:torus-fibrations label=\"sec:torus-fibrations\"}\n\nLet $$D = \\{xyz-y^3 = 0\\} \\subset \\CP^2$$ be a binodal cubic curve. We equip $\\CP^2$ and $\\CP^2 \\setminus D$ with standard Fubini-Study symplectic forms. Both $\\CP^2 \\setminus D$ and its mirror $X^\\vee = \\{(u,v)\\in\n\\C^2\\mid uv \\neq 1\\}$ admit special Lagrangian torus fibrations. In fact, these spaces are diffeomorphic, each being $\\C^2$ minus a conic. The torus fibrations are essentially the same on both sides, but we are interested in the *symplectic* affine structure associated to the fibration on $\\CP^2 \\setminus D$ and the *complex* a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/figure-img-p012-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../images/img-p012-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The topology of the map W",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-006-22-the-topology-of-the-map-w.md",
+      "narrative": null,
+      "content": "[]{#sec:topology-W label=\"sec:topology-W\"}\n\nA direct computation shows that the superpotential $W$ given by [\\[eq:main-lg-model\\]](#eq:main-lg-model){reference-type=\"eqref\" reference=\"eq:main-lg-model\"} has three critical points $$\\label{eq:W-crit-pts}\n  \\Crit(W) = \\{(v = e^{\\Lambda/3}e^{2\\pi i (n/3)}, w = 1) \\mid n = 0, 1, 2\\},$$ and corresponding critical values $$\\label{eq:W-crit-vals}\n  \\Critv(W) = \\{3e^{-\\Lambda/3}e^{-2\\pi i (n/3)} \\mid n = 0, 1, 2\\}.$$ As expected, $\\Critv(W)$ is the set of eigenvalues of quantum multiplication by $c_1(T\\CP^2)$ in $QH^*(\\CP^2)$, that is, multiplication b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tropicalization in a singular affine structure",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-007-23-tropicalization-in-a-singular-affine-structur.md",
+      "narrative": null,
+      "content": "[]{#sec:tropicalization label=\"sec:tropicalization\"}\n\nOur goal is to find the same affine manifold $B$ (that comes from symplectic structure of $\\CP^2\\setminus D$) embedded in the base of the torus fibration on $X^\\vee$, equipped with the *complex* affine structure. We shall see that it is obtained as a bounded chamber inside a particular tropical curve, the tropicalization of the fiber of $W$.\n\nFor some real number $\\epsilon > 0$, consider the curve $W^{-1}(e^{\\epsilon \\Lambda})$: $$\\label{eq:fiber-to-trop}\n  W = u + \\frac{e^{-\\Lambda}v^2}{w} = e^{\\epsilon \\Lambda}$$ The tropicalization corre",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symplectic constructions",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-008-3-symplectic-constructions.md",
+      "narrative": null,
+      "content": "[]{#sec:main-construction label=\"sec:main-construction\"}\n\nLet $B$ the affine manifold which is the bounded chamber of the tropicalization of the fiber of $W$, constructed in the previous section. In this section we construct a symplectic manifold $X(B)$, which is a torus fibration over $B$, together with a Lefschetz fibration $w: X(B) \\to X(I)$, where $X(I)$ is an annulus. We also construct a collection $\\{L(d)\\}_{d\\in \\Z}$ of Lagrangian submanifolds. These submanifolds are sections of the torus fibration $X(B) \\to B$, and they fiber over paths with respect to the Lefschetz fibration $w: X(B)\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symplectic monodromy associated to a Hessian metric",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-009-31-symplectic-monodromy-associated-to-a-hessian.md",
+      "narrative": null,
+      "content": "[]{#sec:monodromy-hessian label=\"sec:monodromy-hessian\"}\n\nLet $B$ be a two-dimensional affine manifold with affine coordinates $(\\eta,\\xi)$ that embed $B$ as a subset of $\\R^2$. In this subsection $B$ does not have any singularities. Suppose that $\\eta: B \\to \\R$ is a submersion over some interval $I \\subset \\R$, and that the fibers of this map are connected intervals. For our purposes, we consider the case where $B$ is a quadrilateral, bounded on two opposite sides by line segments of constant $\\eta$ (the *vertical* boundary $\\partial^v B$), and on the other two sides by line segments that ar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Focus-focus singularities and Lefschetz singularities",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "../sections/sec-010-32-focus-focus-singularities-and-lefschetz-singu.md",
+      "narrative": null,
+      "content": "[]{#sec:focus-focus-lefschetz label=\"sec:focus-focus-lefschetz\"}\n\nNow we consider the case where the affine structure on $B$ contains a focus-focus singularity, that is, a singularity with monodromy conjugate to $\\begin{pmatrix}1& 0\\\\ 1 &1\\end{pmatrix}$, and the monodromy invariant direction of this singularity is parallel to the fibers of the map $\\eta: B \\to I$. The goal is to construct a symplectic manifold $X(B)$, along with a Lefschetz fibration $w: X(B) \\to X(I)$. Topologically $X(B)$ is a torus fibration over $B$ with a single pinched torus fiber over the singular point.\n\nLet $B$ be an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lagrangians fibered over paths",
+      "pageStart": 25,
+      "pageEnd": 32,
+      "target": "../sections/sec-011-33-lagrangians-fibered-over-paths.md",
+      "narrative": null,
+      "content": "[]{#sec:lags-construction label=\"sec:lags-construction\"}\n\nThe base of the Lefschetz fibration is the annulus $X(I) = \\{R^{-1}\n\\leq |w| \\leq R\\}$ with a critical value at $w = -1$. The symplectic structures constructed in [\\[sec:focus-focus-lefschetz\\]](#sec:focus-focus-lefschetz){reference-type=\"ref\" reference=\"sec:focus-focus-lefschetz\"} have the property that the symplectic connection is flat throughout the annuli $X(I_{-\\epsilon}) = \\{R^{-1} \\leq |w| \\leq e^{-\\epsilon}\\}$, $X(I_{+\\epsilon}) = \\{e^\\epsilon \\leq |w| \\leq R\\}$, as well as through a band along the positive real axis joining the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/figure-img-p027-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../images/img-p027-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/figure-img-p028-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "target": "../images/img-p028-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/figure-img-p032-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../images/img-p032-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A degeneration of holomorphic triangles",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../sections/sec-012-4-a-degeneration-of-holomorphic-triangles.md",
+      "narrative": null,
+      "content": "Since we have set up our Lagrangians as ﬁbered over paths, a holomorphic triangle\nwith boundary on the Lagrangians composed with the projection is a holomorphic\ntriangle in the base, which is an annulus, with boundary along the corresponding\npaths. The triangles that are most interesting are those that pass over the critical\nvalue w = −1 (possibly several times). In general, such triangles are immersed in\nthe annulus, and, after passing the the universal cover of the annulus, are embedded.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Triangles as sections",
+      "pageStart": 32,
+      "pageEnd": 37,
+      "target": "../sections/sec-013-41-triangles-as-sections.md",
+      "narrative": null,
+      "content": "[]{#sec:triangles-sections label=\"sec:triangles-sections\"}\n\nLet $q_1 \\in HF^0(L(0),L(n))$ and $q_2 \\in HF^0(L(n),L(n+m))$ be two degree zero morphisms whose Floer product $\\mu^2(q_2,q_1)$ we wish to compute. Suppose that $p \\in HF^0(L(0),L(n+m))$ contributes to this product. Let $S$ denote a disk with three boundary punctures, and a complex structure that is allowed to vary. To find the coefficient of $p$ in $\\mu^2(q_2,q_1)$, we count pseudo-holomorphic triangles, that is, pseudo-holomorphic maps $u: S \\to X(B)$ that send the punctures to $q_1,q_2,p$ and the boundary components to $L(0),L(n),L",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/figure-img-p034-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 34,
+      "target": "../images/img-p034-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Extending the fiber",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "../sections/sec-014-42-extending-the-fiber.md",
+      "narrative": null,
+      "content": "[]{#sec:extend-fiber label=\"sec:extend-fiber\"}\n\nOne problem with our Lagrangian boundary conditions $L(d)$ is that they intersect the horizontal boundary $\\partial^h X(B)$. This raises the possibility that as we degenerate the fibration, part of a pseudo-holomorphic section can escape through $\\partial^h X(B)$.\n\nWe now describe a technical trick that, by attaching bands to the fiber, allows us to close up the Lagrangians for the purpose of a particular computation, and thereby use only the results in the literature on sections with Lagrangian boundary conditions disjoint from the boundaries of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Degenerating the fibration",
+      "pageStart": 38,
+      "pageEnd": 40,
+      "target": "../sections/sec-015-43-degenerating-the-fibration.md",
+      "narrative": null,
+      "content": "[]{#sec:degenerated-spaces label=\"sec:degenerated-spaces\"}\n\nBy propositions [\\[prop:triangles-sections\\]](#prop:triangles-sections){reference-type=\"ref\" reference=\"prop:triangles-sections\"} and [\\[prop:extended-sections\\]](#prop:extended-sections){reference-type=\"ref\" reference=\"prop:extended-sections\"}, in order to compute the Floer product between two morphisms $q_1 \\in HF^0(L(0),L(n))$ and $q_2 \\in\nHF^0(L(n),L(n+m))$, it is just as good to count sections of the fibration $\\hat{X}_T \\to T$ with Lagrangian boundary conditions $\\hat{L}(0)$, $\\hat{L}(n)$, $\\hat{L}(n+m)$.\n\nIn order to obtain the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Horizontal sections over a disk with one critical value",
+      "pageStart": 40,
+      "pageEnd": 44,
+      "target": "../sections/sec-016-44-horizontal-sections-over-a-disk-with-one-crit.md",
+      "narrative": null,
+      "content": "[]{#sec:horiz-sections label=\"sec:horiz-sections\"}\n\nWe now determine the counts of pseudo-holomorphic sections of the Lefschetz fibrations $E_i \\to D_i$ using the theory of horizontal sections developed by Seidel in [@seidel-les]. In particular we will apply results from section 2.5 of that paper, so we adopt its notation. This theory involves analysis of the symplectic connection, whose horizontal subspaces are the symplectic orthogonal subspaces to the fibers, and the symplectic parallel transport defined by horizontal lifting of paths in the base of the fibration.\n\nIn order for this techniq",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Polygons with fixed conformal structure",
+      "pageStart": 44,
+      "pageEnd": 52,
+      "target": "../sections/sec-017-45-polygons-with-fixed-conformal-structure.md",
+      "narrative": null,
+      "content": "[]{#sec:sections-polygon label=\"sec:sections-polygon\"}\n\nRecall from section [\\[sec:degenerated-spaces\\]](#sec:degenerated-spaces){reference-type=\"ref\" reference=\"sec:degenerated-spaces\"} the trivial fibration $\\pi: \\hat{X}^0 \\to T^0$, with fiber $M$, where $T^0$ is a a disk with $(k+3)$ boundary punctures. We have $\\hat{X}^0 = M \\times T^0$ symplectically. We equip $\\hat{X}^0$ with a product almost complex structure $J = J_M \\times j$, where $j$ is the complex structure on $T^0$.\n\n::: proposition\n[]{#prop:sections-polygon label=\"prop:sections-polygon\"} The $(j,J)$-holomorphic sections $u: T^0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Signs",
+      "pageStart": 52,
+      "pageEnd": 54,
+      "target": "../sections/sec-018-46-signs.md",
+      "narrative": null,
+      "content": "[]{#sec:signs label=\"sec:signs\"}\n\nIn order to determine the signs appearing in the counts of triangles, we need to specify the brane structures on the Lagrangians $L(d)$. Since $L(d)$ fibers over a curve in the base, and its intersection with each fiber is a curve, the tangent bundle of $L(d)$ is trivial, and we can define a framing of $TL(d)$ using the vertical and horizontal tangent vectors at each point. Using this framing, we can give $L(d)$ a trivial $\\Spin(2)$ structure, which is induced by product of the trivial $\\Spin(1)$ structures on the horizontal an vertical tangent bundles.\n\nAltho",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A tropical count of triangles",
+      "pageStart": 54,
+      "pageEnd": 54,
+      "target": "../sections/sec-019-5-a-tropical-count-of-triangles.md",
+      "narrative": null,
+      "content": "[]{#sec:trop-fuk label=\"sec:trop-fuk\"} Abouzaid, Gross and Siebert have proposed a definition of a category defined from the tropical geometry of an integral affine manifold, which is meant to describe some part of the Fukaya category of the corresponding symplectic manifold. The starting point for this definition is an integral affine manifold $B$. The objects are then the non-negative integers, with $\\hom^0(d_1,d_2) = \\Span\nB(\\frac{1}{d_2-d_1}\\Z)$ when $d_1 < d_2$, and chains on $B$ when $d_1\n= d_2$. The composition is defined by counting a certain type of tropical curve that is balanced aft",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tropical polygons",
+      "pageStart": 54,
+      "pageEnd": 58,
+      "target": "../sections/sec-020-51-tropical-polygons.md",
+      "narrative": null,
+      "content": "[]{#sec:tropical-polygons label=\"sec:tropical-polygons\"}\n\nLet $\\nabla$ denote the canonical torsion-free flat connection on $B$ associated to the affine structure. The following definitions are due to Abouzaid [@abouzaid-msri-dec09].\n\n::: definition\n[]{#def:tropical-disk label=\"def:tropical-disk\"} Let $B$ be a two-dimensional singular affine manifold with focus-focus singularities, and let $x \\in B$ be a non-singular point. Let $\\Gamma$ be a tree all of whose edges are finite. Label one univalent vertex $p_{\\text{out}}$, and denote the other univalent vertices by $p_1,\\dots,p_r$. A *tropical d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/figure-img-p058-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 58,
+      "target": "../images/img-p058-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tropical triangles for (CP2, D)",
+      "pageStart": 58,
+      "pageEnd": 60,
+      "target": "../sections/sec-021-52-tropical-triangles-for-cp2-d.md",
+      "narrative": null,
+      "content": "[]{#sec:tropical-our-case label=\"sec:tropical-our-case\"}\n\nWe now write out explicitly the tropical curves contributing to the triangle products in the case of $(\\CP^2, D)$. Let us use coordinates $(\\eta,\\xi)$ where the point $q_{a,i} \\in B(\\frac{1}{n}\\Z)$ has coordinates $(a/n,-i/n)$\n\nThere is one family of simple tropical disks that emanate from the singularity on the $\\eta = 0$ line in the vertical direction. Their primitive tangent vectors are $\\pm (0,1)$.\n\nFigure [1](#fig:tropical-triangle){reference-type=\"ref\" reference=\"fig:tropical-triangle\"} shows the the tropical triangle representing",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Parallel monodromy–invariant directions",
+      "pageStart": 60,
+      "pageEnd": 60,
+      "target": "../sections/sec-022-6-parallel-monodromyinvariant-directions.md",
+      "narrative": null,
+      "content": "[]{#sec:other-manifolds label=\"sec:other-manifolds\"}\n\nIn this section we describe a class of affine manifolds to which the results obtained for $(\\CP^2,D)$ naturally generalize. Consider an integral affine manifold $B$, compact with boundary. We require that $B$ has the following properties. Recall that a focus-focus singularity has a monodromy invariant direction, corresponding to the tangent vector field that is fixed by the monodromy.\n\n1.  The boundary faces of $B$ are straight with respect to the affine structure.\n\n2.  The singularities of $B$ are focus-focus singularities, and the monodro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symplectic forms",
+      "pageStart": 60,
+      "pageEnd": 61,
+      "target": "../sections/sec-023-61-symplectic-forms.md",
+      "narrative": null,
+      "content": "[]{#sec:other-symplectic label=\"sec:other-symplectic\"}\n\nLet $x_1,\\dots,x_n$ denote the singularities of $B$. Let $[a_0,a_{n+1}]$ be the image of $B$ under $\\eta$, and let $a_i =\n\\eta(x_i)$. We split up $B$ along the monodromy invariant lines of each singularity, and obtain intervals $I_i =\n[a_{i}+\\epsilon,a_{i+1}-\\epsilon]$, with fibrations $X(B_i) \\to\nX(I_i)$. Choosing an affine function $\\xi$ on $B_i$ such that $(\\eta,\\xi)$ are coordinates, $X(B_i)$ has corresponding complex coordinates $(w,z_i)$, while the coordinate on $X(I_i)$ is $w$.\n\nEach piece $B_i$ is an affine manifold whose horizont",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lagrangian submanifolds",
+      "pageStart": 61,
+      "pageEnd": 62,
+      "target": "../sections/sec-024-62-lagrangian-submanifolds.md",
+      "narrative": null,
+      "content": "[]{#sec:other-lagrangian label=\"sec:other-lagrangian\"}\n\nAs before, the construction of Lagrangian sections proceeds by taking paths in the base and a Lagrangian in the fiber, and sweeping out a Lagrangian in the total space by symplectic parallel transport. Potentially, we have more freedom than in the mirror to $\\CP^2$.\n\nThe admissible Lagrangian submanifolds we consider have boundary conditions given by a complex curve in $\\partial X(B)$ along each boundary face. This gives two complex curves $\\Sigma_0$ and $\\Sigma_1$ for the bottom and top horizontal boundary faces. At the vertical boundary",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Holomorphic and tropical triangles",
+      "pageStart": 62,
+      "pageEnd": 63,
+      "target": "../sections/sec-025-63-holomorphic-and-tropical-triangles.md",
+      "narrative": null,
+      "content": "[]{#sec:other-triangles label=\"sec:other-triangles\"}\n\nHaving chosen a family of Lagrangians $\\{L(d)\\}_{d\\in\\Z}$ corresponding to the powers of an ample line bundle, we find that after positively perturbation, $HF^*(L(d_1),L(d_2))$ is concentrated in degree $0$ when $d_1 \\leq d_2$. The techniques of section [\\[sec:degeneration\\]](#sec:degeneration){reference-type=\"ref\" reference=\"sec:degeneration\"} allow us to compute the holomorphic triangles contributing to the multiplication $$HF^*(L(d_2),L(d_3))\\otimes HF^*(L(d_1),L(d_2))\\to HF^*(L(d_1),L(d_3))$$ Looking at the winding numbers of the Lagran",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mirrors to divisor complements",
+      "pageStart": 63,
+      "pageEnd": 64,
+      "target": "../sections/sec-026-7-mirrors-to-divisor-complements.md",
+      "narrative": null,
+      "content": "[]{#sec:complements label=\"sec:complements\"}\n\nIn this section we examine the relationship between the wrapped Floer cohomology of our Lagrangians $L(d)$ and the cohomology of coherent sheaves on complements of components of the anticanonical divisor in $\\CP^2$. Let $D = C \\cup L$ denote the anticanonical divisor which is the union of a conic $C$ and a line $L$. We can consider the divisor complements $U_D =\\CP^2 \\setminus D$, $U_C = \\CP^2 \\setminus\nC$, and $U_L = \\CP^2 \\setminus L$. The torus fibration $\\CP^2\n\\setminus D$ can be restricted to such a complement, and T-duality gives the same spa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algebraic motivation",
+      "pageStart": 64,
+      "pageEnd": 64,
+      "target": "../sections/sec-027-71-algebraic-motivation.md",
+      "narrative": null,
+      "content": "[]{#sec:algebraic-motivation label=\"sec:algebraic-motivation\"}\n\nIn order to motivate the symplectic constructions of wrapped Floer cohomology, it is useful to understand the algebraic side first. The starting point is the following proposition ([@seidel-a-infinity-subalgebras], statement (1.10)).\n\n::: proposition\nLet $X$ be a smooth quasiprojective variety over $\\C$, $Y \\subset\n  X$ a hypersurface, and $U = X \\setminus Y$ the complement. Write $Y\n  = s^{-1}(0)$, where $s$ is the canonical section of the line bundle $\\cL = \\cO_X(Y)$. Let $\\cF$ be a coherent sheaf on $X$. Multiplication by $s$ d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Wrapping",
+      "pageStart": 64,
+      "pageEnd": 68,
+      "target": "../sections/sec-028-72-wrapping.md",
+      "narrative": null,
+      "content": "[]{#sec:wrapping label=\"sec:wrapping\"}\n\nIn this subsection we describe the geometric setup for wrapped Floer cohomology in the mirrors of $U_L,U_C$, and $U_D$.\n\n### Completions {#sec:completions}\n\nWrapped Floer cohomology is formulated in terms of noncompact manifolds containing noncompact Lagrangian submanifolds. These can be defined as (partial) completions of compact manifolds with boundary.\n\nThe starting point for all three cases is the original Lefschetz fibration $X(B)\\to X(I)$ containing the Lagrangians $\\{L(d)\\}_{d\\in\\Z}$. We define completions $\\hat{X}_L$, $\\hat{X}_C$, and $\\hat{X}_D$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Continuation maps and products",
+      "pageStart": 68,
+      "pageEnd": 70,
+      "target": "../sections/sec-029-73-continuation-maps-and-products.md",
+      "narrative": null,
+      "content": "[]{#sec:continuation-product label=\"sec:continuation-product\"}\n\nWe saw above that for $r > d_1-d_2$, the generators of $CF^*(L(d_1),L(d_2);rH)$ all have degree $0$, so there are no differentials, and we can identify these complexes with their homologies. In order to obtain the wrapped Floer cohomology, we must determine the continuation maps.\n\nLet it be understood that we require $r \\in \\Z$ in case $L$, $r \\in\n2\\Z$ in case $C$, and $r \\in 3\\Z$ in case $D$.\n\nTo get started, we consider the wrapped Floer cohomology of $L(d_1)$ with itself. Each complex $CF^*(L(d_1),L(d_1);rH)$ has a distinguishe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1109.3255v2/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 70,
+      "pageEnd": 72,
+      "target": "../sections/sec-030-references.md",
+      "narrative": null,
+      "content": "1. Mohammed Abouzaid, Homogeneous coordinate rings and mirror symmetry for toric varieties,\nGeom. Topol. 10 (2006), 1097–1157 (electronic). MR 2240909 (2007h:14052)\n2. Mohammed Abouzaid, 2009, Private communication.\n3. Mohammed Abouzaid, Morse homology, tropical geometry, and homological mirror symmetry\nfor toric varieties, Selecta Math. (N.S.) 15 (2009), no. 2, 189–270. MR 2529936\n4.\n, Toward a tropical Fukaya category, Talk given in the MSRI workshop “Tropical Struc-\ntures in Geometry and Physics”, December 2009, video available on MSRI website.\n5. Mohammed Abouzaid and Paul Seidel, An open",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

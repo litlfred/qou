@@ -1,0 +1,792 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0707.3910v1",
+  "title": "arxiv-0707.3910v1",
+  "variant": "pdf",
+  "pages": 20,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The reduction formula",
+      "number": "2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-the-reduction-formula"
+    },
+    {
+      "level": 1,
+      "title": "The quartic case",
+      "number": "3",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-the-quartic-case"
+    },
+    {
+      "level": 1,
+      "title": "The symmetric case of degree 8",
+      "number": "4",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-the-symmetric-case-of-degree-8"
+    },
+    {
+      "level": 1,
+      "title": "A sequence of Landen transformations",
+      "number": "5",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-a-sequence-of-landen-transformations"
+    },
+    {
+      "level": 1,
+      "title": "The sixth degree case",
+      "number": "6",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-6-the-sixth-degree-case"
+    },
+    {
+      "level": 1,
+      "title": "Examples",
+      "number": "7",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-7-examples"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. Two binomial sums",
+      "number": null,
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-appendix-a-two-binomial-sums"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 64,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "landen",
+          "heading": false
+        },
+        {
+          "term": "rational functions",
+          "heading": false
+        },
+        {
+          "term": "boros",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0707.3910v1 [math.CA] 26 Jul 2007 LANDEN TRANSFORMATIONS AND THE INTEGRATION OF RATIONAL FUNCTIONS GEORGE BOROS AND VICTOR H. MOLL Abstract. We present a rational version of the classical Landen transfor- mation for elliptic integrals. This is employed to obtain explicit closed-form expressions for a large class of integrals of even rational functions and to de- velop an algorithm for numerical integration of",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0707.3910v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1339,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ift frac",
+          "heading": false
+        },
+        {
+          "term": "map mathfrak",
+          "heading": false
+        },
+        {
+          "term": "rational functions",
+          "heading": false
+        },
+        {
+          "term": "sequence mathbf",
+          "heading": false
+        },
+        {
+          "term": "even rational",
+          "heading": false
+        },
+        {
+          "term": "ref sec-degree",
+          "heading": false
+        },
+        {
+          "term": "landen transformation",
+          "heading": false
+        },
+        {
+          "term": "bigcup infty",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec-intro} \\setcounter{equation}{0} We consider the space of even rational functions of degree $2p$ \\ba {\\E}_{2p} & := & \\left\\{ R(z) = \\frac{P(z)}{Q(z)} \\; {\\Big{|}} \\; P(z) := \\sum_{k=0}^{p-1} b_{k} z^{2(p-1-k)} \\text{ and } Q(z) := \\sum_{k=0}^{p} a_{k} z^{2(p-k)} \\right\\} \\nn \\ea \\no with positive real coefficients $a_{k}, \\, b_{k} \\in \\rplus$ normalized by the condition $a_{0} = a_{p} = 1$, the space \\ba",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-reduction-formula",
+      "number": "2",
+      "title": "The reduction formula",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 579,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "p-n binom",
+          "heading": false
+        },
+        {
+          "term": "p-k binom",
+          "heading": false
+        },
+        {
+          "term": "sum p-k",
+          "heading": false
+        },
+        {
+          "term": "p-2n",
+          "heading": false
+        },
+        {
+          "term": "theta left",
+          "heading": false
+        },
+        {
+          "term": "int infty",
+          "heading": false
+        },
+        {
+          "term": "infty frac",
+          "heading": false
+        },
+        {
+          "term": "p-1-j",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec-reduc} \\setcounter{equation}{0} In this section we present a map ${\\mathfrak{F}}_{p}: {\\mathfrak{E}}_{2p}^{m,s} \\to {\\mathfrak{E}}_{p}^{m}$ that is the basis of the integration algorithm described in Section \\ref{sec-landen}. The proof is elementary and the binomial sums discussed in the Appendix are employed. Let $D_{p}(z)$ be the general symmetric polynomial of degree $4p$. We express the integral of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-the-quartic-case",
+      "number": "3",
+      "title": "The quartic case",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 575,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "binom m-n",
+          "heading": false
+        },
+        {
+          "term": "m-j binom",
+          "heading": false
+        },
+        {
+          "term": "binom m-2j",
+          "heading": false
+        },
+        {
+          "term": "binom m-2k",
+          "heading": false
+        },
+        {
+          "term": "m-k binom",
+          "heading": false
+        },
+        {
+          "term": "times binom",
+          "heading": false
+        },
+        {
+          "term": "binom left",
+          "heading": false
+        },
+        {
+          "term": "sum m-n",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec-quartic} \\setcounter{equation}{0} In this section we describe the computability of rational functions $R \\in {\\E}_{4}^{m}$. These are functions of the form \\ba R(z) & = & \\frac{P(z)}{(z^{4} + 2az^{2} + 1)^{m+1} } \\nn \\ea \\no where $P(z)$ is an even polynomial of degree $4m+2$. Observe that the normalization $a_{0}=a_{2} = 1$ makes the denominator of $R$ automatically symmetric. It suffices to evaluate \\ba",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-the-symmetric-case-of-degree-8",
+      "number": "4",
+      "title": "The symmetric case of degree 8",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 308,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sum k-m",
+          "heading": false
+        },
+        {
+          "term": "int infty",
+          "heading": false
+        },
+        {
+          "term": "binom",
+          "heading": false
+        },
+        {
+          "term": "infty frac",
+          "heading": false
+        },
+        {
+          "term": "m-k",
+          "heading": false
+        },
+        {
+          "term": "k-n",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec-degree8} \\setcounter{equation}{0} In this section we prove the computability of the set ${\\E}_{8}^{m,s}$ of symmetric rational functions with denominator of degree $8$ and establish an explicit formula for the integral \\ba N_{n,8}(a_{1},a_{2};m) & = & \\int_{0}^{\\infty} \\frac{z^{2n} \\; dz} { (z^{8} + a_{2} z^{6} + 2a_{1}z^{4} + a_{2}z^{2} + 1)^{m+1} } \\nn \\ea \\no where $0 \\leq n \\leq 4m+3$ is required for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-a-sequence-of-landen-transformations",
+      "number": "5",
+      "title": "A sequence of Landen transformations",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 809,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "binom p-1-k",
+          "heading": false
+        },
+        {
+          "term": "sum p-k",
+          "heading": false
+        },
+        {
+          "term": "frac alpha",
+          "heading": false
+        },
+        {
+          "term": "int infty",
+          "heading": false
+        },
+        {
+          "term": "mathbf",
+          "heading": false
+        },
+        {
+          "term": "p-i",
+          "heading": false
+        },
+        {
+          "term": "times left",
+          "heading": false
+        },
+        {
+          "term": "bcoeff",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec-landen} \\setcounter{equation}{0} The transformation theory of elliptic integrals was initiated by Landen in 1771. He proved the invariance of the function \\ba G(a,b) & := & \\int_{0}^{\\pi/2} \\frac{d \\, \\theta} { \\sqrt{ a^{2} \\cos^{2} \\theta + b^{2} \\sin^{2} \\theta } } \\label{gab} \\ea \\no under the transformation \\ba a_{1} = (a+b)/2 & \\qquad & b_{1} = \\sqrt{ab}, \\label{transgl} \\ea \\no i.e. that \\ba",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-the-sixth-degree-case",
+      "number": "6",
+      "title": "The sixth degree case",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 622,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "computable curves",
+          "heading": false
+        },
+        {
+          "term": "ift frac",
+          "heading": false
+        },
+        {
+          "term": "computable functions",
+          "heading": false
+        },
+        {
+          "term": "curves mathbb",
+          "heading": false
+        },
+        {
+          "term": "mathfrak",
+          "heading": false
+        },
+        {
+          "term": "diagonal delta",
+          "heading": false
+        },
+        {
+          "term": "mathbf",
+          "heading": false
+        },
+        {
+          "term": "remains open",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec-degree6} \\setcounter{equation}{0} We discuss the map ${\\mathfrak{T}}_{2p}: {{\\mathfrak{E}}_{2p}} \\to {{\\mathfrak{E}}_{2p}}$ for the case $p=3$. The effect of ${\\mathfrak{T}}_{6}$ on the coefficients ${\\mathfrak{P}}_{6} = \\{ b_{0},b_{1},b_{2},a_{1},a_{2} \\}$ is denoted by $\\Phi_{6} : {{\\mathfrak{O}}}_{6}^{+} \\to {{\\mathfrak{O}}}_{6}^{+}$ and is given explicitly by \\ba a_{1} & \\to & \\frac{9 + 5a_{1} +",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-7-examples",
+      "number": "7",
+      "title": "Examples",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1889,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac ift",
+          "heading": false
+        },
+        {
+          "term": "begin bmatrix",
+          "heading": false
+        },
+        {
+          "term": "bmatrix end",
+          "heading": false
+        },
+        {
+          "term": "vskip",
+          "heading": false
+        },
+        {
+          "term": "tfrac binom",
+          "heading": false
+        },
+        {
+          "term": "infty frac",
+          "heading": false
+        },
+        {
+          "term": "ref quartic",
+          "heading": false
+        },
+        {
+          "term": "symmetric integrals",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec-examples} \\setcounter{equation}{0} In this section we present a variety of closed-form evaluations of integrals of rational functions. \\\\ \\no {\\bf Example 1}. The integral \\ba \\ift \\frac{z^2}{(z^4 + 4z^2 + 1)^9} \\; dz & = & \\frac{23698523 \\, \\pi} {12230590464 \\sqrt{6} } \\nn \\ea \\no is computed by Mathematica 3.0 using (\\ref{quartic1}) in $.01$ seconds. The direct calculation took $12.27$ seconds and $6.4$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-appendix-a-two-binomial-sums",
+      "number": null,
+      "title": "Appendix A. Two binomial sums",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 778,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kxk",
+          "heading": false
+        },
+        {
+          "term": "z2p",
+          "heading": false
+        },
+        {
+          "term": "hand side",
+          "heading": false
+        },
+        {
+          "term": "x2n",
+          "heading": false
+        },
+        {
+          "term": "sums",
+          "heading": true
+        },
+        {
+          "term": "left hand",
+          "heading": false
+        },
+        {
+          "term": "style",
+          "heading": false
+        }
+      ],
+      "extract": "The closed-form evaluation of sums involving binomials coeﬃcients can be ob- tained by traditional analytical techniques or by using the powerful WZ-method as described in [16]. We discuss two sums used to simplify expressions in later sections, presenting one proof in each style. Lemma A.1. Let k, N be positive integers with k ≤N. Then N−k X j=0 \u00122N + 1 2j \u0013\u0012N −j k \u0013 = \u00122N −k k \u0013 4N−k. (A.1) Proof. Multiply the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 385,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fractions rationelles",
+          "heading": false
+        },
+        {
+          "term": "moll",
+          "heading": false
+        },
+        {
+          "term": "integration des",
+          "heading": false
+        },
+        {
+          "term": "boros",
+          "heading": false
+        },
+        {
+          "term": "academic press",
+          "heading": false
+        },
+        {
+          "term": "university press",
+          "heading": false
+        },
+        {
+          "term": "tulane",
+          "heading": false
+        },
+        {
+          "term": "orleans",
+          "heading": false
+        }
+      ],
+      "extract": "[1] BOROS, G. - MOLL, V.: A criterion for unimodality. Elec. Jour. of Combinatorics, 6 (1999), #R10. [2] BOROS, G. - MOLL, V.: An integral hidden in Gradshteyn and Ryzhik. Jour. Comp. Appl. Math. 106, 361-368, 1999. [3] BOROS, G. - MOLL, V.: A rational Landen transformation. Contemporary Mathematics 251, 83-91, 2000. [4] BORWEIN, J. - BORWEIN, P.: Pi and the AGM. Canadian Mathematical Society. Wiley- Interscience",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "frac binom",
+      "heading": false
+    },
+    {
+      "term": "frac ift",
+      "heading": false
+    },
+    {
+      "term": "p-k binom",
+      "heading": false
+    },
+    {
+      "term": "binom left",
+      "heading": false
+    },
+    {
+      "term": "sum binom",
+      "heading": false
+    },
+    {
+      "term": "times binom",
+      "heading": false
+    },
+    {
+      "term": "binom p-1-k",
+      "heading": false
+    },
+    {
+      "term": "m-k binom",
+      "heading": false
+    },
+    {
+      "term": "m-j binom",
+      "heading": false
+    },
+    {
+      "term": "binom m-2j",
+      "heading": false
+    },
+    {
+      "term": "p-n binom",
+      "heading": false
+    },
+    {
+      "term": "binom m-2k",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 10,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p19); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 5
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 10 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0707.3910v1"
+  }
+}

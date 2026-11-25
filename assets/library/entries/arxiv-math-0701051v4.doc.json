@@ -1,0 +1,1508 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0701051v4",
+  "title": "arxiv-math-0701051v4",
+  "variant": "pdf",
+  "pages": 20,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Normalized characters",
+      "number": "1.1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-normalized-characters"
+    },
+    {
+      "level": 2,
+      "title": "Short history of the problem",
+      "number": "1.2",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-short-history-of-the-problem"
+    },
+    {
+      "level": 2,
+      "title": "The main result",
+      "number": "1.3",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-the-main-result"
+    },
+    {
+      "level": 2,
+      "title": "Young diagrams",
+      "number": "1.4",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-young-diagrams"
+    },
+    {
+      "level": 2,
+      "title": "The main tool: reformulation of Stanley character formula",
+      "number": "1.5",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-15-the-main-tool-reformulation-of-stanley-charac"
+    },
+    {
+      "level": 2,
+      "title": "Overview of the paper",
+      "number": "1.6",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-16-overview-of-the-paper"
+    },
+    {
+      "level": 1,
+      "title": "Stanley character formula",
+      "number": "2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-2-stanley-character-formula"
+    },
+    {
+      "level": 2,
+      "title": "Young symmetrizer",
+      "number": "2.1",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-21-young-symmetrizer"
+    },
+    {
+      "level": 2,
+      "title": "Forgetting injectivity",
+      "number": "2.2",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-22-forgetting-injectivity"
+    },
+    {
+      "level": 2,
+      "title": "Generalization to Young diagrams on R+2",
+      "number": "2.3",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-23-generalization-to-young-diagrams-on-r2"
+    },
+    {
+      "level": 1,
+      "title": "Characters of symmetric groups, random matrices and free probability",
+      "number": "3",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-3-characters-of-symmetric-groups-random-matrices"
+    },
+    {
+      "level": 2,
+      "title": "Stanley character formula and random matrices",
+      "number": "3.1",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-31-stanley-character-formula-and-random-matrices"
+    },
+    {
+      "level": 2,
+      "title": "Free cumulants of the transition measure",
+      "number": "3.2",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-32-free-cumulants-of-the-transition-measure"
+    },
+    {
+      "level": 2,
+      "title": "Generalized circular operators",
+      "number": "3.3",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-33-generalized-circular-operators"
+    },
+    {
+      "level": 1,
+      "title": "Technical estimates",
+      "number": "4",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-4-technical-estimates"
+    },
+    {
+      "level": 2,
+      "title": "Estimates for the number of colorings N(1,2)",
+      "number": "4.1",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-41-estimates-for-the-number-of-colorings-n12"
+    },
+    {
+      "level": 2,
+      "title": "Estimates for the number of factorizations",
+      "number": "4.2",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-42-estimates-for-the-number-of-factorizations"
+    },
+    {
+      "level": 1,
+      "title": "Asymptotics of characters",
+      "number": "5",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-5-asymptotics-of-characters"
+    },
+    {
+      "level": 2,
+      "title": "Upper bound for characters: proof of Theorem ??",
+      "number": "5.1",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-51-upper-bound-for-characters-proof-of-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Error term for balanced Young diagrams",
+      "number": "5.2",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-52-error-term-for-balanced-young-diagrams"
+    },
+    {
+      "level": 2,
+      "title": "Characters of symmetric groups related to Thoma characters",
+      "number": "5.3",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-53-characters-of-symmetric-groups-related-to-tho"
+    },
+    {
+      "level": 2,
+      "title": "Concluding remarks",
+      "number": "5.4",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-54-concluding-remarks"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 18,
+      "summary": null,
+      "keywords": [],
+      "extract": "arXiv:math/0701051v4 [math.RT] 21 Mar 2011 VALENTIN FÉRAY AND PIOTR ´SNIADY Tr ρλ(π) ≤ \u0014 a max Tr ρλ(e)",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-math-0701051v4/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 135,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symmetric groups",
+          "heading": false
+        },
+        {
+          "term": "vershik-kerov",
+          "heading": false
+        },
+        {
+          "term": "character",
+          "heading": false
+        }
+      ],
+      "extract": "(1) Σλ(π) = (n)l χλ(π), χλ(π) = Tr ρλ(π) is the character rescaled in such a way that χλ(e) = 1. \u0014 \u0012r(λ) (2) |χλ(π)| ≤ max 1 ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS RELATED TO STANLEY CHARACTER FORMULA ABSTRACT. We prove an upper bound for characters of the symmetric groups. Namely, we show that there exists a constant a > 0 with a property that for every Young diagram λ with n boxes, r(λ) rows and c(λ)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-normalized-characters",
+      "number": "1.1",
+      "title": "Normalized characters",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 31,
+      "summary": null,
+      "keywords": [],
+      "extract": "a permutation π ∈Sl (where l ≤n) we deﬁne the normalized character where (n)l = n(n −1) · · ·(n −l + 1) denotes the falling power and where Tr ρλ(e)",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-12-short-history-of-the-problem",
+      "number": "1.2",
+      "title": "Short history of the problem",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 120,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "supp",
+          "heading": false
+        },
+        {
+          "term": "roi",
+          "heading": false
+        },
+        {
+          "term": "characters",
+          "heading": false
+        }
+      ],
+      "extract": "calculating characters, the Murnaghan–Nakayama rule, quickly becomes cumbersome and hence intractable for computing characters corresponding to large Young diagrams. Nevertheless Roichman [Roi96] showed that it is possible to use it to ﬁnd an upper bound for characters, namely he proved that there exist constants 0 < q < 1 and b > 0 such that \u0013\u0015b | supp π| n , c(λ) n , q , where r(λ), c(λ) denote the numbers of rows",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-the-main-result",
+      "number": "1.3",
+      "title": "The main result",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 467,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rectangular young",
+          "heading": false
+        },
+        {
+          "term": "young diagram",
+          "heading": false
+        },
+        {
+          "term": "kerov polynomials",
+          "heading": false
+        },
+        {
+          "term": "normalized character",
+          "heading": false
+        },
+        {
+          "term": "transition measure",
+          "heading": false
+        },
+        {
+          "term": "bia",
+          "heading": false
+        },
+        {
+          "term": "biane",
+          "heading": false
+        },
+        {
+          "term": "estimates",
+          "heading": false
+        }
+      ],
+      "extract": "\u0014 |χλ(π)| ≤ a max where n denotes the number of boxes of λ. since it provides rather weak estimates in the case when the Young diagram λ is balanced, i.e. r(λ), c(λ) = O(√n). Another approach to this problem was initiated by Biane [Bia98, Bia03] who showed that the value of the normalized character Σλ(π) can be ex- pressed as a polynomial (called Kerov polynomial) in free cumulants of the transition measure of a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-young-diagrams",
+      "number": "1.4",
+      "title": "Young diagrams",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 65,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lambda",
+          "heading": false
+        },
+        {
+          "term": "young",
+          "heading": true
+        },
+        {
+          "term": "leq",
+          "heading": false
+        }
+      ],
+      "extract": "In the following we shall identify a Young diagram $\\lambda$ with the set of its boxes which we regard as a subset of $\\mathbb{N}^2$ given by a graphical representation of $\\lambda$ according to the French notation; namely, for a partition $\\lambda=(\\lambda_1,\\dots,\\lambda_k)$ it is the set $$\\label{eq:identifyNatural} \\lambda = \\bigcup_{1\\leq i\\leq k} \\{1,2,\\dots,\\lambda_i\\} \\times \\{i\\}= \\{(p,q)\\in\\mathbb{N}^2:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-15-the-main-tool-reformulation-of-stanley-charac",
+      "number": "1.5",
+      "title": "The main tool: reformulation of Stanley character formula",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 376,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sigma lambda",
+          "heading": false
+        },
+        {
+          "term": "lambda big",
+          "heading": false
+        },
+        {
+          "term": "bipartite graph",
+          "heading": false
+        },
+        {
+          "term": "character-sniady",
+          "heading": false
+        },
+        {
+          "term": "rho lambda",
+          "heading": false
+        },
+        {
+          "term": "diagram lambda",
+          "heading": false
+        },
+        {
+          "term": "neq emptyset",
+          "heading": false
+        },
+        {
+          "term": "cap neq",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:mainresult label=\"subsec:mainresult\"} Our main tool in our investigations will be the following reformulation of Stanley character formula. The set of cycles of a permutation $\\pi$ is denoted by $C(\\pi)$. For given permutations $\\sigma_1,\\sigma_2\\in S_l$ we shall consider colorings $h$ of the cycles of $\\sigma_1$ (where each cycle is colored by the number of some column of $\\lambda$) and of the cycles of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-16-overview-of-the-paper",
+      "number": "1.6",
+      "title": "Overview of the paper",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 68,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "random-matrices",
+          "heading": false
+        },
+        {
+          "term": "stanley-feray",
+          "heading": false
+        },
+        {
+          "term": "character-sniady",
+          "heading": false
+        },
+        {
+          "term": "theo",
+          "heading": false
+        },
+        {
+          "term": "character formula",
+          "heading": false
+        }
+      ],
+      "extract": "In Section [\\[sec:stanley-feray\\]](#sec:stanley-feray){reference-type=\"ref\" reference=\"sec:stanley-feray\"} we will prove the new formulation of Stanley-Féray character formula, Theorem [\\[theo:character-sniady\\]](#theo:character-sniady){reference-type=\"ref\" reference=\"theo:character-sniady\"}. In Section [\\[sec:random-matrices\\]](#sec:random-matrices){reference-type=\"ref\" reference=\"sec:random-matrices\"} we present a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-2-stanley-character-formula",
+      "number": "2",
+      "title": "Stanley character formula",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 68,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "character-sniady",
+          "heading": false
+        },
+        {
+          "term": "stanley-feray",
+          "heading": false
+        },
+        {
+          "term": "stanley",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sec:stanley-feray label=\"sec:stanley-feray\"} In this section, we prove Theorem [\\[theo:character-sniady\\]](#theo:character-sniady){reference-type=\"ref\" reference=\"theo:character-sniady\"}. It is quite easy to show that it is equivalent to a recent formula, conjectured by Stanley [@Stanley-preprint] and proved by the first author [@{F'eray-preprint}]. But the formulation given here is more useful for the purposes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-21-young-symmetrizer",
+      "number": "2.1",
+      "title": "Young symmetrizer",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 841,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sigma tilde",
+          "heading": false
+        },
+        {
+          "term": "supp sigma",
+          "heading": false
+        },
+        {
+          "term": "tilde lambda",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "sigma circ",
+          "heading": false
+        },
+        {
+          "term": "frac mathop",
+          "heading": false
+        },
+        {
+          "term": "substack sigma",
+          "heading": false
+        },
+        {
+          "term": "sum tilde",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\lambda$ be a Young diagram consisting of $n$ boxes. In the following we will distinguish the symmetric group $S_n$ which permutes the elements $\\{1,\\dots,n\\}$ and the symmetric group $\\tilde{S}_n$ which permutes the boxes of $\\lambda$. For a box $\\Box\\in\\lambda$ we denote by $r(\\Box)\\in\\mathbb{N}$ (respectively, $c(\\Box)\\in\\mathbb{N}$) the row (respectively, the column) of $\\Box$; in this way",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-22-forgetting-injectivity",
+      "number": "2.2",
+      "title": "Forgetting injectivity",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 368,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "substack sigma",
+          "heading": false
+        },
+        {
+          "term": "sigma hat",
+          "heading": false
+        },
+        {
+          "term": "hat lambda",
+          "heading": false
+        },
+        {
+          "term": "bubu",
+          "heading": false
+        },
+        {
+          "term": "sum substack",
+          "heading": false
+        },
+        {
+          "term": "rightarrow lambda",
+          "heading": false
+        },
+        {
+          "term": "character-sniady",
+          "heading": false
+        },
+        {
+          "term": "circ",
+          "heading": false
+        }
+      ],
+      "extract": "For a pair of permutations $\\sigma_1,\\sigma_2\\in S_l$ we define $\\hat{N}^{\\lambda}(\\sigma_1,\\sigma_2)$ as the number of all functions $f:\\{1,\\dots,l\\}\\rightarrow \\lambda$ (with values in the set of boxes of $\\lambda$) with a property that $r\\circ f$ is constant on each cycle of $\\sigma_2$ and $c\\circ f$ is constant on each cycle of $\\sigma_1$. ::: lemma []{#lem:kasowanie label=\"lem:kasowanie\"} For any Young diagram",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-23-generalization-to-young-diagrams-on-r2",
+      "number": "2.3",
+      "title": "Generalization to Young diagrams on R+2",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 230,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "young diagrams",
+          "heading": true
+        },
+        {
+          "term": "skew young",
+          "heading": false
+        },
+        {
+          "term": "character-sniady",
+          "heading": false
+        },
+        {
+          "term": "lambda",
+          "heading": false
+        },
+        {
+          "term": "theo",
+          "heading": false
+        },
+        {
+          "term": "generalized",
+          "heading": false
+        },
+        {
+          "term": "sigma",
+          "heading": false
+        },
+        {
+          "term": "mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "We may identify a Young diagram with a subset of $\\mathbb{R}^2$ given by a graphical representation of $\\lambda$ (according to the French notation). For example, for a partition $\\lambda=(\\lambda_1,\\dots,\\lambda_k)$ it is the set $$\\label{eq:identify} \\bigcup_{1\\leq i\\leq k} [0,\\lambda_i] \\times [i-1,i] .$$ In this way we may consider colorings $h$ of the cycles of permutations $\\sigma_1$ and $\\sigma_2$ which take",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-3-characters-of-symmetric-groups-random-matrices",
+      "number": "3",
+      "title": "Characters of symmetric groups, random matrices and free probability",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "FREE PROBABILITY",
+      "extractCut": false
+    },
+    {
+      "id": "sec-012-31-stanley-character-formula-and-random-matrices",
+      "number": "3.1",
+      "title": "Stanley character formula and random matrices",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 617,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sigma lambda",
+          "heading": false
+        },
+        {
+          "term": "lambda star",
+          "heading": false
+        },
+        {
+          "term": "character-sniady",
+          "heading": false
+        },
+        {
+          "term": "overline big",
+          "heading": false
+        },
+        {
+          "term": "ldots overline",
+          "heading": false
+        },
+        {
+          "term": "sum sigma",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "lambda ast",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\lambda$ be a Young diagram and $N\\geq r(\\lambda),c(\\lambda)$. We consider a random matrix $T_\\lambda=(t_{ij})_{1\\leq i,j\\leq N}$ such that - its entries $(t_{ij})$ are independent random variables; - if $(i,j) \\in \\lambda$ then $t_{ij}$ is a complex centered Gaussian variable, that is to say that $$\\mathbb{E}(t_{ij}) =0, \\quad \\mathbb{E}(t_{ij} \\overline{t_{ij}}) = 1, \\quad \\mathbb{E}(t_{ij}^2) =0;$$ -",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-32-free-cumulants-of-the-transition-measure",
+      "number": "3.2",
+      "title": "Free cumulants of the transition measure",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 312,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "free cumulants",
+          "heading": true
+        },
+        {
+          "term": "cumulants lambda",
+          "heading": false
+        },
+        {
+          "term": "sigma lambda",
+          "heading": false
+        },
+        {
+          "term": "transition measure",
+          "heading": true
+        },
+        {
+          "term": "diagram lambda",
+          "heading": false
+        },
+        {
+          "term": "cumulants label",
+          "heading": false
+        },
+        {
+          "term": "young diagram",
+          "heading": false
+        },
+        {
+          "term": "main-theorem",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:cumulants label=\"subsec:cumulants\"} For a (continuous) Young diagram $\\lambda$ we denote by $\\mu^{\\lambda}$ its transition measure (which is a probability measure on the real line) [@Kerov1993; @Biane1998] and by $R_{m}^{\\lambda}:=R_m(\\mu^{\\lambda})$ we denote the $m$-th free cumulant of $\\mu^{\\lambda}$. The importance of free cumulants $R_m^{\\lambda}$ in the study of the asymptotics of symmetric groups",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-33-generalized-circular-operators",
+      "number": "3.3",
+      "title": "Generalized circular operators",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 318,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nonumber big",
+          "heading": false
+        },
+        {
+          "term": "phi big",
+          "heading": false
+        },
+        {
+          "term": "freecumulants-come",
+          "heading": false
+        },
+        {
+          "term": "ast",
+          "heading": false
+        },
+        {
+          "term": "mathcal rightarrow",
+          "heading": false
+        },
+        {
+          "term": "diagram lambda",
+          "heading": false
+        },
+        {
+          "term": "free cumulants",
+          "heading": false
+        },
+        {
+          "term": "theo",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\mathcal{D}$ be the algebra of continuous functions on $\\mathbb{R}_+$. We equip it with an expected value $\\phi:\\mathcal{D}\\rightarrow \\mathbb{C}$ given by $\\phi(f)=\\int_0^{\\infty} f(t) dt$. We consider an operator-valued probability space, which by definition is some $\\ast$-algebra $\\mathcal{A}$ such that $\\mathcal{D}\\subseteq \\mathcal{A}$ and equipped with a conditional expectation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-4-technical-estimates",
+      "number": "4",
+      "title": "Technical estimates",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-016-41-estimates-for-the-number-of-colorings-n12",
+      "number": "4.1",
+      "title": "Estimates for the number of colorings N(1,2)",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 441,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bipartite graph",
+          "heading": false
+        },
+        {
+          "term": "graph tilde",
+          "heading": false
+        },
+        {
+          "term": "mathrm orbits",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "diagram lambda",
+          "heading": false
+        },
+        {
+          "term": "sum lambda",
+          "heading": false
+        },
+        {
+          "term": "sigma",
+          "heading": false
+        },
+        {
+          "term": "bipartite-graphs",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#eq:estimate-lambda label=\"eq:estimate-lambda\"} As we already mentioned in Example [\\[example1\\]](#example1){reference-type=\"ref\" reference=\"example1\"} to permutations $\\sigma_1,\\sigma_2$ we can associate a bipartite graph $C(\\sigma_1)\\sqcup C(\\sigma_2)$ with an edge between $c_1\\in C(\\sigma_1)$ and $c_2\\in C(\\sigma_2)$ if $c_1\\cap c_2\\neq \\emptyset$. For a bipartite graph $G=C_1\\sqcup C_2$ (not necessarily",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-42-estimates-for-the-number-of-factorizations",
+      "number": "4.2",
+      "title": "Estimates for the number of factorizations",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 795,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sigma leq",
+          "heading": false
+        },
+        {
+          "term": "sigma rangle",
+          "heading": false
+        },
+        {
+          "term": "langle sigma",
+          "heading": false
+        },
+        {
+          "term": "sigma containing",
+          "heading": false
+        },
+        {
+          "term": "left-most edge",
+          "heading": false
+        },
+        {
+          "term": "decorated vertices",
+          "heading": false
+        },
+        {
+          "term": "every cycle",
+          "heading": false
+        },
+        {
+          "term": "decorated vertex",
+          "heading": false
+        }
+      ],
+      "extract": "Now, we have to find a bound of the number of factorizations of $\\pi$ with a given value of the statistic $o(\\sigma_1,\\sigma_2)$. ::: lemma []{#lem:feray label=\"lem:feray\"} Let $\\pi,\\sigma_1,\\sigma_2\\in S_l$ be such that $\\pi=\\sigma_1 \\sigma_2$. There exist permutations $\\sigma_1',\\sigma_2'\\in S_l$ such that $\\pi=\\sigma_1' \\sigma_2'$, $|\\sigma_1'|+|\\sigma_2'|=|\\sigma_1|+|\\sigma_2|$, $|\\sigma_2'|=",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-5-asymptotics-of-characters",
+      "number": "5",
+      "title": "Asymptotics of characters",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 307,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "marked edge",
+          "heading": false
+        },
+        {
+          "term": "a2s",
+          "heading": false
+        },
+        {
+          "term": "decorated vertex",
+          "heading": false
+        },
+        {
+          "term": "left-most",
+          "heading": false
+        },
+        {
+          "term": "bicolored",
+          "heading": false
+        }
+      ],
+      "extract": "15 It might happen also for two adjacent (with respect to the planar structure) edges e1, e2 of G′′ that each of these edges ei corresponds to a pair or a triple of consecutive edges fi = (fi1, fi2[, fi3]) of G′ and these tuples f1 and f2 have one edge in common. There are at most 2s −3 such pairs of adjacent edges which accounts for at most 22s−3 choices. If the root of G is not a decorated vertex, it might happen",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-51-upper-bound-for-characters-proof-of-theorem",
+      "number": "5.1",
+      "title": "Upper bound for characters: proof of Theorem ??",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 246,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "leq l-r",
+          "heading": false
+        },
+        {
+          "term": "l-r left",
+          "heading": false
+        },
+        {
+          "term": "l-r sum",
+          "heading": false
+        },
+        {
+          "term": "sigma leq",
+          "heading": false
+        },
+        {
+          "term": "sigma lambda",
+          "heading": false
+        },
+        {
+          "term": "substack sigma",
+          "heading": false
+        },
+        {
+          "term": "permutations sigma",
+          "heading": false
+        },
+        {
+          "term": "nie-za-duzo",
+          "heading": false
+        }
+      ],
+      "extract": "::: proof *Proof of Theorem [\\[theo:rough\\]](#theo:rough){reference-type=\"ref\" reference=\"theo:rough\"}.* Let $k_1,\\dots,k_r\\geq 2$ be the lengths of the non-trivial cycles in the cycle decomposition of $\\pi\\in S_n$. It follows that $l:=k_1+\\cdots+k_r=|\\mathop{\\mathrm{supp}}\\pi|$ and in the following we will regard $\\pi$ as an element of $S_l$. We denote $A=\\max(l,r(\\lambda),c(\\lambda))$. We consider a map which to a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-52-error-term-for-balanced-young-diagrams",
+      "number": "5.2",
+      "title": "Error term for balanced Young diagrams",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 364,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "swider",
+          "heading": false
+        },
+        {
+          "term": "bipartite-graphs",
+          "heading": false
+        },
+        {
+          "term": "balanced",
+          "heading": true
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "feray",
+          "heading": false
+        },
+        {
+          "term": "equiv-cumulants",
+          "heading": false
+        },
+        {
+          "term": "mathrm orbits",
+          "heading": false
+        },
+        {
+          "term": "sigma",
+          "heading": false
+        }
+      ],
+      "extract": "Biane [@Biane1998] proved that if the permutation $\\pi$ is fixed, its non-trivial cycle lengths are equal to $k_1,\\dots,k_r\\geq 2$, and the Young diagram $\\lambda$ is balanced (i.e. $r(\\lambda),c(\\lambda)=O(\\sqrt{n})$) then $$\\chi^\\lambda(\\pi) = \\frac{1}{(n)_{|\\mathop{\\mathrm{supp}}(\\pi)|}} \\prod_{i=1}^r R_{k_i+1}(\\lambda) + O\\left(n^{-\\frac{|\\pi|+2}{2}}\\right).$$ The following theorem gives a uniform estimate for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-53-characters-of-symmetric-groups-related-to-tho",
+      "number": "5.3",
+      "title": "Characters of symmetric groups related to Thoma characters",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 551,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac lambda",
+          "heading": false
+        },
+        {
+          "term": "varepsilon frac",
+          "heading": false
+        },
+        {
+          "term": "equiv-cumulants",
+          "heading": false
+        },
+        {
+          "term": "vershik-kerov",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "theo",
+          "heading": false
+        },
+        {
+          "term": "chi lambda",
+          "heading": false
+        },
+        {
+          "term": "prod left",
+          "heading": false
+        }
+      ],
+      "extract": "Vershik and Kerov [@VershikKerov1981] proved that if $\\pi$ is a fixed permutation with the lengths of non-trivial cycles $k_1,\\dots,k_r$ then for any Young diagram $\\lambda$ with $n$ boxes $$\\chi^{\\lambda}(\\pi) = \\prod_{i=1}^r \\left[ \\sum_j \\alpha_j^{k_i} - \\sum_j (-\\beta_{j})^{k_i} \\right] + O\\left(\\frac{1}{n}\\right)$$ where $\\alpha_j=\\frac{\\lambda_j}{n}$, $\\beta_j=\\frac{\\lambda'_j}{n}$; we prefer to write this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-54-concluding-remarks",
+      "number": "5.4",
+      "title": "Concluding remarks",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 97,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reprove",
+          "heading": false
+        },
+        {
+          "term": "technicalities",
+          "heading": false
+        },
+        {
+          "term": "permutations",
+          "heading": false
+        }
+      ],
+      "extract": "In the case where $\\pi$ is a fixed permutation, we only need Lemma 11 and we can avoid most of the technicalities. Therefore, our method gives a unified, simple way to reprove three important results on asymptotics of character values on fixed permutations as well as new results: the intermediate case between balanced diagrams ($A=\\Theta(\\sqrt{n})$) and diagrams with long rows and/or columns ($A=\\Theta(n)$) has, to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 71,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "contract",
+          "heading": false
+        },
+        {
+          "term": "qp-applications",
+          "heading": false
+        },
+        {
+          "term": "p03a",
+          "heading": false
+        }
+      ],
+      "extract": "Research of PŚ is supported by the MNiSW research grant P03A 013 30, by the EU Research Training Network \"QP-Applications\\\", contract HPRN-CT-2002-00279 and by the EC Marie Curie Host Fellowship for the Transfer of Knowledge \"Harmonic Analysis, Nonlinear Analysis and Probability\\\", contract MTKD-CT-2004-013389. VF has been supported by the Project Polonium, one of Egide's PHC to visit PŚ. He also would like to thank",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 528,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "piotr sniady",
+          "heading": false
+        },
+        {
+          "term": "valentin féray",
+          "heading": false
+        },
+        {
+          "term": "philippe biane",
+          "heading": false
+        },
+        {
+          "term": "free probability",
+          "heading": false
+        },
+        {
+          "term": "symmetric groups",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "labri",
+          "heading": false
+        },
+        {
+          "term": "bia",
+          "heading": false
+        }
+      ],
+      "extract": "[Bia97] Philippe Biane. Some properties of crossings and partitions. Discrete Math., 175(1-3):41–53, 1997. [Bia98] Philippe Biane. Representations of symmetric groups and free probability. Adv. Math., 138(1):126–181, 1998. [Bia03] Philippe Biane. Characters of symmetric groups and free cumulants. In Asymp- totic combinatorics with applications to mathematical physics (St. Petersburg, 2001), volume 1815 of Lecture",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "lambda sigma",
+      "heading": false
+    },
+    {
+      "term": "sigma leq",
+      "heading": false
+    },
+    {
+      "term": "permutation sigma",
+      "heading": false
+    },
+    {
+      "term": "sum sigma",
+      "heading": false
+    },
+    {
+      "term": "gathered sigma",
+      "heading": false
+    },
+    {
+      "term": "sigma tilde",
+      "heading": false
+    },
+    {
+      "term": "character sigma",
+      "heading": false
+    },
+    {
+      "term": "supp sigma",
+      "heading": false
+    },
+    {
+      "term": "substack sigma",
+      "heading": false
+    },
+    {
+      "term": "diagram lambda",
+      "heading": false
+    },
+    {
+      "term": "sigma geq",
+      "heading": false
+    },
+    {
+      "term": "lambda big",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Bipartite graph associated to the factorization",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 25,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 26,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p19); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 26 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0701051v4"
+  }
+}

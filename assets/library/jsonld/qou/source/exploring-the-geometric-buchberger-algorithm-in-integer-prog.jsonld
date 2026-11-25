@@ -1,0 +1,49 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/exploring-the-geometric-buchberger-algorithm-in-integer-prog/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "exploring-the-geometric-buchberger-algorithm-in-integer-prog",
+  "contains": [
+    "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/page-001",
+    "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/page-002",
+    "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/page-003",
+    "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/page-004",
+    "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/page-005",
+    "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/page-006",
+    "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/page-007",
+    "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/sections/page-008"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "exploring-the-geometric-buchberger-algorithm-in-integer-prog — 8 sections: Page 1; Page 2; Page 3\n\n**exploring-the-geometric-buchberger-algorithm-in-integer-prog**\n\n8 pp, 8 sections.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "exploring-the-geometric-buchberger-algorithm-in-integer-prog",
+    "title_source": "slug",
+    "source_file": "Exploring the Geometric Buchberger Algorithm in Integer Programming.pdf",
+    "source_sha256": "73854bc5e3bcffb077c7b33c26ca1cb507db17677f21112024bea49d2484bef1",
+    "pages": 8,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

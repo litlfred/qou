@@ -1,0 +1,822 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2412.02281v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Set $q\\in\\mathbb{R}$ with $0<q<1$.    Take the Lie algebra ${\\mathfrak {gl}_n}$ over the field of complex numbers with a positive integer $n$. Consider the confluent hypergeometric $q$-difference  system\n\\begin{equation}\\label{u+A/z}\n\tD_qF_q(z):=\\frac{\\sigma_qF_q(z)-F_q(z)}{qz-z}=\\left(u+\\frac{A}{z}\\right)F_q(z),\n\\end{equation}\nwhere $\\sigma_q F(z)=F(q z)$, $u=\\mathrm{diag}\\left(u_1,...,u_{n-1},u_n\\right)$ and $A=(a_{ij})\\in {\\mathfrak {gl}_n}$.  The infinity $z=\\infty$ is a  Fuchsian singularity  of    \\eqref{u+A/z} if the diagonal matrix $u$ is invertible. One can use the method of isomonodr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:2412.02281v1  [math.CA]  3 Dec 2024\nExplicit evaluation of the q-Stokes matrices for certain conﬂuent\nhypergeometric q-diﬀerence equations\nJinghong Lin, Yiming Ma and Xiaomeng Xu\nAbstract\nWe prove a connection formula for the basic hypergeomtric function nϕn−1 (a1, ..., an−1, 0; b1, ..., bn−1; q, z)\nby using the q-Borel resummation. As an application, we compute q-Stokes matrices of a special conﬂuent\nhypergeometric q-diﬀerence system with an irregular singularity. We show that by letting q →1, the q-Stokes\nmatrices recover the known expressions of the Stokes matrices of the correspondin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connection Formula of the Equation (5)",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-connection-formula-of-the-equation-5.md",
+      "narrative": null,
+      "content": "computes explicitly the q-Stokes matrix of the system (2). Section 4 studies the behavior of the connection\nformula and the q-Stokes matrix as q →1.\nAcknowledgments\nWe would like to thank Qian Tang for the discussion and valuable feedback on the paper. The authors are\nsupported by the National Key Research and Development Program of China (No. 2020YFE0204200), by\nthe National Key Research and Development Program of China (No. 2021YFA1002000) and by the National\nNatural Science Foundation of China (No. 12171006).\n2\nConnection Formula of the Equation (5)\nThis section derives explicitly the conne",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basic Notations",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-basic-notations.md",
+      "narrative": null,
+      "content": "\\label{notation}\n        We recall some basic notations of $q$-calculus with $0<q<1$ (referring to \\cite{gasper2004basic} for more details): \n        \\begin{itemize}\n            \\item The $q$-Pochhammer symbol is \n            \\begin{equation*}\n          (a ; q)_n:=  \\left\\{\n          \\begin{array}{lr}\n             1,   & \\text{if} \\ \\ n=0,       \\\\\n\\prod_{l=0}^{n-1} (1-aq^{l}),         & \\text{if} \\ \\ n \\geq 1.\n             \\end{array}\n\\right.\n\\end{equation*}\nMoreover, $(a ; q)_{\\infty}:=\\prod_{l=0}^{\\infty}\\left(1-a q^l\\right)$ and \n\\begin{equation*}\n    \\left(a_1, a_2, \\ldots, a_m ; q\\right)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basic Hypergeometric Series",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-basic-hypergeometric-series.md",
+      "narrative": null,
+      "content": "\\label{hyper series}\n\\begin{defn}\\label{def:basic f}\n    A basic hypergeometric series associated to   $\\boldsymbol{a}=(a_1,a_2,...,a_n)$ and  $\\boldsymbol{b}=(b_1,b_2,...,b_m)$ is\n\\begin{equation*}\n    {}_n\\varphi_m\\left(\\begin{array}{c}\na_1, a_2, ..., a_n \\\\\nb_1, ..., b_m\n\\end{array} ; q, z\\right)\n:=\n\\sum_{k=0}^{\\infty} \\frac{ \\prod_{l=1}^n    \\left(a_l ; q\\right)_k}{(q ; q)_k\\prod_{l=1}^m \\left(b_l ; q\\right)_k }\\left[(-1)^k q^{\\frac{k(k-1)}{2}}\\right]^{1+m-n} z^k,\n\\end{equation*}\nfor  $b_1,...,b_m\\notin q^{-\\mathbb{N}  }$.\n{ We also denote it by ${}_n\\varphi_m(a_1, a_2, ..., a_n ;b_1, ...,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prop-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "prop-sec-004-01.md",
+      "narrative": null,
+      "content": "In a suﬃciently small punctured neighbourhood of inﬁnity, L[λ;q] q;1 f has poles of order at most 1, that are contained in the q-spiral [−λ−1; q]. Now let us introduce [λ; q]-summable functions. Deﬁnition 2.10. For ˆf ∈C[[z−1]], if ˆBq;1 ˆf ∈H[λ;q] q;1 for some λ ∈C∗, then we say ˆf is [λ; q]-summable and call L[λ;q] q;1 ◦ˆBq;1 ˆf its [λ; q]-sum. The q-summability of convergent power series is given as follows.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prop-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "prop-sec-004-02.md",
+      "narrative": null,
+      "content": "If the disc of convergence of ˆf ∈C[[z−1]] is {z ∈C∗| R < |z|}, then ˆf is [λ; q]-summable for any λ ∈C∗and L[λ;q] q;1 ◦ˆBq;1 ˆf = ˆf, for z ∈{z ∈C∗| R < |z|} \\[−λ−1; q]. The q-summability of the basic hypergeometric series nϕn−2 \u0000a; b; q, z−1\u0001 is given as follows.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prop-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "[1, 6]",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "prop-sec-004-03.md",
+      "narrative": null,
+      "content": "If a = (a1, ..., an), b = (b1, ..., bn−2) satisfy ai̸ = 0, ai/aj /∈qZ, for 1 ≤i̸ = j ≤n, and bl /∈{0} ∪q−N, for 1 ≤l ≤n −2, (13) the formal series nϕn−2 \u0000a; b; q, z−1\u0001 is [λ; q]-summable for any λ ∈C∗\\ [−1; q]. Moreover, for c ∈C∗, the formal series nϕn−2 \u0000a; b; q, cz−1\u0001 is [λ; q]-summable for any λ ∈C∗\\ [−1/c; q]. The q-Borel resummation can be applied to a [λ; q]-summable formal power series solution of a linear q-diﬀerence equation (or a linear q-diﬀerence system) bm(z)y (qmz) + bm−1(z)y Ä qm−1z ä + ... + b0(z)y (z) = 0, (14) to obtain a meromorphic solution. That is,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prop-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "prop-sec-004-04.md",
+      "narrative": null,
+      "content": "For λ ∈C∗, it follows that • If coeﬃcients bi(z) are rational functions, ˆf ∈C[[z−1]] is [λ; q]-summable and satisﬁes the equation (14), then L[λ;q] q;1 ◦ˆBq;1 ˆf is a meromorphic solution of (14). • If coeﬃcients bi(z) are rational matrix-valued functions, ˆF = \u0000 ˆfij \u0001 is a formal matrix-valued solution of the system (14), with ˆfij ∈C[[z−1]] being [λ; q]-summable, then F = Ä L[λ;q] q;1 ◦ˆBq;1 ˆfij ä is a meromorphic solution of (14). Deﬁnition 2.14. Let λ ∈C∗and ˆf = P∞ n=0 anz−n ∈C[[z−1]]. Suppose f is a function that is analytic on some neighbourhood of inﬁnity except along the q-spiral [",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prop-sec-004-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "prop-sec-004-05.md",
+      "narrative": null,
+      "content": "If ˆf ∈C[[z−1]] is [λ; q]-summable, then L[λ;q] q;1 ◦ˆBq;1 ˆf is asymptotic to ˆf with q-Gevrey order 1 along the direction λ. Similarly, we can deﬁne the q-Borel resummation for ˆg ∈C[[z]]. Deﬁnition 2.16. Given ˆg = P∞ n=0 anzn ∈C[[z]], the q-Borel transformation ˆBq;1ˆg is deﬁned as: ( ˆBq;1ˆg)(ξ) := ∞ X n=0 anq n(n−1) ξn ∈C[[ξ]]. If ˆBq;1ˆg ∈H[λ;q] q;1 for some λ ∈C∗, then its q-Laplace transformation is given by L[λ;q] q;1 ◦ˆBq;1ˆg := ∞ X n=−∞ ˆBq;1ˆg (λqn) θq Ä λqn z ä . In this case, we call ˆg is [λ; q]-summable and L[λ;q] q;1 ◦ˆBq;1ˆg is the [λ; q]-sum of ˆg. The q-summability of nϕn−",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prop-sec-004-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "[1, 6]",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "prop-sec-004-06.md",
+      "narrative": null,
+      "content": "If a = (a1, ..., an), b = (b1, ..., bn−2) satisfy (13), the formal series nϕn−2 (a; b; q, z) is [λ; q]-summable for any λ ∈C∗\\ [−1; q]. We use the following notation to denote the [λ; q]-sum of nϕn−2 (a; b; q, z) for simplicity. Deﬁnition 2.18. For a = (a1, ..., an), b = (b1, ..., bn−2) satisfying (13) and λ ∈C∗\\ [−1; q], the [λ; q]-sum of nϕn−2 (a; b; q, z) is denoted by nfn−2 (a; b; λ; q, z) := Ä L[λ;q] q;1 ◦ˆBq;1nϕn−2 (a; b; q, z) ä (z). We can use the function nfn−2 (a; b; λ; q, z) to rewrite the [λ; q]-sum of nϕn−2 \u0000a; b; q, z−1\u0001 . That is,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prop-sec-004-07",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "prop-sec-004-07.md",
+      "narrative": null,
+      "content": "For a = (a1, ..., an), b = (b1, ..., bn−2) satisfying (13), we have L[λ;q] q;1 ◦ˆBq;1nϕn−2 Ä a; b; q, z−1ä = nfn−2 Ä a; b; λ; q, z−1ä , (15) L[λ;q] q;1 ◦ˆBq;1nϕn−2 Ä a; b; q, cz−1ä = nfn−2 Ä a; b; cλ; q, cz−1ä . (16) Here in (15) we require λ ∈C∗\\ [−1; q], and in (16) we require c ∈C∗, λ ∈C∗\\ [−1/c; q].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "q-Borel Resummation",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-q-borel-resummation.md",
+      "narrative": null,
+      "content": "q-Borel Resummation\nIn this subsection, we give a brief review to the theory of q-Borel resummation (see e.g., [1, 7, 18, 30, 42]).\nThe deﬁnitions and properties can be found in [1, 7, 42]. Denote that\n• C[[z−1]] (or C[[z]]) is the ring of formal power series of the variable z−1 (or z);\n• M(C∗, 0) is the ﬁeld of functions which are meromorphic on some punctured neighbourhood of 0 in C∗;\n• S(a, b) = {z ∈f\nC∗| a < arg(z) < b} is an open sector with opening angle b −a on the Riemann surface\nf\nC∗of the natural logarithm, for two real numbers a < b;\n• [λ; q] is the discrete q-spiral {λqn | n ∈Z}.\nD",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/cor-sec-005-07",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "cor-sec-005-07.md",
+      "narrative": null,
+      "content": "Under the condition of Theorem 2.26, it follows that (note that we denote bn = q here) f (∞) q (z)n = n X i=1 Qn−1 l=1 (bi/al; q)∞ Qn l=1,l̸=i (bi/bl; q)∞ θq Ä −z Qn−1 l=1 al \u000e Qn l=1,l̸=i bl ä θq(−z) z Pn−1 l=1 logq(al/bl) z1−logq bi f (0) q (z)i.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/lem-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "lem-sec-005-02.md",
+      "narrative": null,
+      "content": "When the following condition holds for a = (a1, ..., an) and b = (b1, ..., bn−1): ai̸ = 0, ai/aj /∈qZ, for 1 ≤i̸ = j ≤n, and bl /∈{0} ∪q−N, for 1 ≤l ≤n −1, the solutions nϕn−1(a; b; q, z) around the origin and (10) around inﬁnity of the equation (9) are related by nϕn−1 (a; b; q, z) = n X i=1 (a1, ..., “ ai, ..., an, b1/ai, ..., bn−1/ai; q)∞ (b1, ..., bn−1, a1/ai, ..., ’ ai/ai, ..., an/ai; q)∞ θq(−aiz) θq(−z) × nϕn−1 Ç ai, aiq/b1, ..., aiq/bn−1 aiq/a1, ..., ÷ aiq/ai, ..., aiq/an ; q, q Qn−1 l=1 bl z Qn l=1 al å . Here “ ai, ’ ai/ai, ÷ aiq/ai mean the terms ai, ai/ai, aiq/ai are skipped respect",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/lem-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "lem-sec-005-03.md",
+      "narrative": null,
+      "content": "([1]). If the condition (13) holds for a = (a1, ..., an) and b = (b1, ..., bn−2), then for λ ∈ C∗\\[−1; q], z ∈C∗\\[−λ; q] and",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/lem-sec-005-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "lem-sec-005-04.md",
+      "narrative": null,
+      "content": "([45]) Let ai ∈C∗, bi ∈C∗\\[−1; q], for 1 ≤i ≤n. If Qn i=1 ai = Qn i=1 bi, then we have lim m∈N n→+∞ \u0000−a1q−m, ..., −anq−m; q \u0001 ∞ (−b1q−m, ..., −bnq−m; q)∞ = Qn i=1 θq(ai) Qn i=1 θq(bi) . The conﬂuence process (17) is given in the following.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "There is a fundamental system of meromorphic solutions of (5): f (∞) q (z, λ) = Ä f (∞) q (z, λ)1, ..., f (∞) q (z, λ)n−1, f (∞) q (z)n ä :=",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prop-sec-005-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "prop-sec-005-05.md",
+      "narrative": null,
+      "content": "If the condition (13) holds for a1, ..., an, b1, ..., bn−2, then for any λ ∈C∗\\ [−1; q], and z ∈C∗\\ [−λ; q], one has lim m∈N m→+∞ nϕn−1 Å a1, ..., an b1, ..., bn−2, −1/(λqm) ; q, − z λqm ã = nfn−2 Å a1, ..., an b1, ..., bn−2 ; λ; q, z ã . (19)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Explicit Expression of Connection Formula of the Equation (5)",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "../sections/sec-005-explicit-expression-of-connection-formula-of-the.md",
+      "narrative": null,
+      "content": "Explicit Expression of Connection Formula of the Equation (5)\nIn this subsection, we derive the explicit connection formula of the equation (5) by studying the conﬂuence of\nthe known connection formulas of certain basic hypergeometric series.\nFrom Proposition 2.12 and Proposition 2.13, we obtain a fundamental system of meromorphic solutions of\nthe equation (5) via the q-Borel resummation, which can be written down explicitly by Proposition 2.19 as\nfollows.\nProposition 2.20. There is a fundamental system of meromorphic solutions of (5):\nf (∞)\nq\n(z, λ) =\nÄ\nf (∞)\nq\n(z, λ)1, ..., f (∞)\nq\n(z, λ)n−1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/rem-sec-005-08",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "rem-sec-005-08.md",
+      "narrative": null,
+      "content": "A similar method can be used to derive the connection formula of nϕn(a1, ..., an; b1, ..., bn; z), which is included in [27]).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/thm-sec-005-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "thm-sec-005-06.md",
+      "narrative": null,
+      "content": "If the following condition holds for a1, a2, ..., an−1, b1, b2, ..., bn−1: ai̸ = 0, ai/aj /∈qZ, for 1 ≤i̸ = j ≤n −1, and bl /∈{0} ∪q−N, for 1 ≤l ≤n −1, and the following condition holds for λ, z: λ ∈C∗, λ /∈−aiqZ, for 1 ≤i ≤n −1, and z ∈C∗, z /∈qZ, z /∈− Qn−1 l=1 bl λ Qn−1 l=1 al qZ, it follows that nϕn−1 Å a1, ..., an−1, 0 b1, ..., bn−1 ; q, z ã = n−1 X i=1 (a1, ..., “ ai, ..., an−1, b1/ai, ..., bn−1/ai; q)∞ (b1, ..., bn−1, a1/ai, ..., ’ ai/ai, ..., an−1/ai; q)∞ θq(−aiz) θq(−z) × nfn−2 Ç ai, aiq/b1, ..., aiq/bn−1 aiq/a1, ..., ÷ aiq/ai, ..., aiq/an−1 ; λ ai ; q, Qn−1 l=1 bl aiz Qn−1 l=1 al å +",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connection Matrix, q-Stokes Matrix of the System (2)",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-006-connection-matrix-q-stokes-matrix-of-the-system.md",
+      "narrative": null,
+      "content": "\\label{main section}\nThis section computes explicitly the  connection matrix and $q$-Stokes matrix of the  system \\eqref{qdes}. In particular, Section \\ref{sec:sol zero inf} introduces the connection matrix and $q$-Stokes matrix of the systems \\eqref{qdes}. Section \\ref{sec:diag}  \ngives a gauge transformation that diagonalizes the upper left block of the system \\eqref{qdes}. Sections \\ref{sec:diagsol}--\\ref{sec:diagqdes} derive the explicit expressions of the connection matrix and $q$-Stokes matrix of the system after the gauge transformation. Section \\ref{sec:qdes} then obtains the connectio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fundamental Solution, Connection Matrix and q-Stokes Matrix",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-007-fundamental-solution-connection-matrix-and-q-sto.md",
+      "narrative": null,
+      "content": "\\label{sec:sol zero inf}\n The fundamental solution of \\eqref{u+A/z} is studied in \\cite{birkhoff1913generalized} (especially when $u$ is invertible).  If $u$ is not invertible, there is     a slightly different formal  fundamental solution   (see e.g.,  \\cite{dreyfus2015confluence}). Particularly,  the system \\eqref{qdes} has a  formal fundamental solution around infinity as follows\n \\begin{equation*}\n    \\hat{F}_q(z;E_{n n},A)=\\hat{H}_q(z;E_{nn},A)  z^{\\delta^{(n-1)}_{q}(A)}   e_q\\left( E_{n n} q^{ -\\delta_{q}^{(n-1)}(A) } z \\right),\n\\end{equation*}\nwhere $\\hat{H}_q(z;E_{nn},A)=\\mathrm{Id}_n+",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Diagonalization of the Upper Left Submatrix of A",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-008-diagonalization-of-the-upper-left-submatrix-of-a.md",
+      "narrative": null,
+      "content": "\\label{sec:diag}\n We first introduce a diagonalized system under   the   conditions:\n\\begin{align}\\label{ineq1}\n\\lambda^{\\left(n-1\\right)}_i & \\ne \\lambda^{\\left(n-1\\right)}_j, \\text{ for } \\ 1\\leq i\\neq j \\leq n-1,\\\\ \\label{ineq2}\n\\lambda^{\\left(n-1\\right)}_i & \\ne \\lambda^{\\left(n-2\\right)}_j, \\text{ for } \\ 1\\leq i \\leq n-1, \\  1\\leq j \\leq n-2 .\n\\end{align}\n\n Under the conditions \\eqref{ineq1} and \\eqref{ineq2},    let us take the $\\left(n-1\\right)\\times \\left(n-1\\right)$ matrix $P_{n-1}$ given by\n\\begin{equation*}\n    (P_{n-1})_{ij}:=\\frac{(-1)^{i+j}\\Delta^{1,...,n-2}_{1,...,\\hat{i},...,n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prop-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "prop-sec-009-01.md",
+      "narrative": null,
+      "content": "Under the conditions (3) (with the condition (30) included) and (31), the formal funda- mental solution ˆFq(z; Enn, An−1) of (33) is given by ˆFq(z; Enn, An−1) = ˆHq(z; Enn, An−1) · zδ(n−1) q (An−1)eq Å Ennq−δ(n−1) q (An−1)z ã , where δ(n−1) q (An−1) = diag(ν1, ..., νn−1, νn) (recall (29) for the operator δ(n−1) q ), with denoting νn := n X l=1 µl − n−1 X l=1 νl, (34) for convenience. Here the entries of ˆHq(z; Enn, An−1) are ˆHq(z; Enn, An−1)ij = dq;ij · nϕn−2",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prop-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "prop-sec-009-02.md",
+      "narrative": null,
+      "content": "Under the conditions (3) (with the condition (30) included) and (31), for λ ∈C∗\\∪1≤l≤n−1 [−(1 −q)/qνl; q], the fundamental solution F (∞) q (z, λ; Enn, An−1) of (33) is given by F (∞) q (z, λ; Enn, An−1) = H(∞) q (z, λ; Enn, An−1) · zδ(n−1) q (An−1)eq Å Ennq−δ(n−1) q (An−1)z ã , (35) with H(∞) q (z, λ; Enn, An−1)ij = L[λ;q] q;1 ◦ˆBq;1( ˆHq (z; Enn, An−1)ij). The entries are for 1 ≤i ≤n, 1 ≤j ≤n−1: H(∞) q (z, λ; Enn, An−1)ij = dq;ij · nfn−2",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prop-sec-009-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "prop-sec-009-03.md",
+      "narrative": null,
+      "content": "Under the nonresonant condition (4) and the conditions (30), (31), the fundamental solution F (0) q (z; Enn, An−1) of (33) is given by (recalling logq(1 −(1 −q)An) = diag(µ1, ..., µn)) F (0) q (z; Enn, An−1) = H(0) q (z; Enn, An−1) · zlogq(1−(1−q)An), (37) with (i, j)-th entry H(0) q (z; Enn, An−1)ij given by H(0) q (z; Enn, An−1)ij = a(n−1) i λ(n) j −λ(n−1) i nϕn−1 Ç q1+µj −ν−δ(n−1) i , 0 q1+µj −µˆj ; q, (1 −q)z qνn å , 1 ≤i ≤n −1, 1 ≤j ≤n, H(0) q (z; Enn, An−1)nj = nϕn−1 Å q1+µj −ν, 0 q1+µj−µˆj ; q, (1 −q)z qνn ã , 1 ≤j ≤n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fundamental Solutions of the System (33)",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-009-fundamental-solutions-of-the-system-33.md",
+      "narrative": null,
+      "content": "Fundamental Solutions of the System (33)\nIn this subsection, we compute the fundamental solution around the origin and inﬁnity of (33) explicitly.\nProposition 3.5. Under the conditions (3) (with the condition (30) included) and (31), the formal funda-\nmental solution ˆFq(z; Enn, An−1) of (33) is given by\nˆFq(z; Enn, An−1) = ˆHq(z; Enn, An−1) · zδ(n−1)\nq\n(An−1)eq\nÅ\nEnnq−δ(n−1)\nq\n(An−1)z\nã\n,\nwhere δ(n−1)\nq\n(An−1) = diag(ν1, ..., νn−1, νn) (recall (29) for the operator δ(n−1)\nq\n), with denoting\nνn :=\nn\nX\nl=1\nµl −\nn−1\nX\nl=1\nνl,\n(34)\nfor convenience. Here the entries of ˆHq(z; Enn, An−1) are\nˆHq(z;",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relationship between the System (33) and the Equation (5)",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-010-relationship-between-the-system-33-and-the-equat.md",
+      "narrative": null,
+      "content": "Relationship between the System (33) and the Equation (5)\nThe computation of the connection matrix and q-Stokes matrix of (33) can be transformed into the connection\nproblem of the equation (5). In this subsection, we clarify the relationship between the system (33) and the\nequation (5).\nFrom explicit expressions of fundamental solutions in Proposition 3.6 and Proposition 3.7, one gets that:\n• For 1 ≤i, k ≤n −1, 1 ≤j ≤n, F (0)\nq\n(z; Enn, An−1)ij and F (∞)\nq\n(z, λ; Enn, An−1)ik satisfy the equation\nn\nY\nl=1\n(z · Dq −λ(n)\nl\n)y(z) =\nn−1\nY\nl=1\nÇ\nq−δliσq −1\nq −1\n−λ(n−1)\nl\nå\n(z · y(z)),\n(38)\nwhere δl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Explicit Evaluation of Connection Matrix and q-Stokes Matrix of (33)",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "../sections/sec-011-explicit-evaluation-of-connection-matrix-and-q-s.md",
+      "narrative": null,
+      "content": "Explicit Evaluation of Connection Matrix and q-Stokes Matrix of (33)\nIn this subsection, we compute the connection matrix Uq(z, λ; Enn, An−1) (see Theorem 3.8) and the q-Stokes\nmatrix Sq (z, λ, µ; Enn, An−1) (see Theorem 3.10) of the system (33). The computation depends on the con-\nnection formula of the equation (5) (see Theorem 1.2 or Theorem 2.26 equivalently).\nWe introduce the following conditions:\nµi −µj /∈Z,\nfor all 1 ≤i, j ≤n, (with the nonresonant condition (4) included),\nνi −νj /∈Z,\nfor all 1 ≤i, j ≤n −1, (with the condition (30) included),\nλ(n−1)\nj̸\n= λ(n−2)\nl\n,\nfor all 1 ≤j ≤n −1, 1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/thm-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "thm-sec-011-01.md",
+      "narrative": null,
+      "content": "Under the condition (42), and for z, λ such that λ ∈C∗, λ /∈−1 −q qνl qZ, for 1 ≤l ≤n −1, and z ∈C∗, z /∈ qνn 1 −q qZ, z /∈−1 λqZ, the entries of the connection matrix Uq(z, λ; Enn, An−1) are (see (34) for νn) Uq(z, λ; Enn, An−1)ij = a(n−1) i λ(n) j −λ(n−1) i Qn−1 l=1,l̸=i(q1+µj−νl; q)∞ Qn l=1,l̸=j(q1+νi−µl; q)∞ Qn l=1,l̸=j(q1+µj −µl; q)∞ Qn−1 l=1,l̸=i(q1+νi−νl; q)∞ × θq \u0000−qµj−νi−νn(1 −q)z \u0001 θq (−q−νn(1 −q)z) zµj −νi, for 1 ≤i ≤n −1, 1 ≤j ≤n, (43) Uq(z, λ; Enn, An−1)nj = Qn−1 l=1 (q1+µj−νl; q)∞ Qn l=1,l̸=j(q1+µj−µl; q)∞ × Qn l=1,l̸=j θq((1 −q)q1−µl/λ) Qn−1 l=1 θq((1 −q)q1−νl/λ) θq \u0000qµj−νnλz\u0001 θ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/thm-sec-011-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "thm-sec-011-02.md",
+      "narrative": null,
+      "content": "Under the condition (42), and for z, λ such that λ ∈C∗, λ /∈−1 −q qνl qZ, for 1 ≤l ≤n −1, and z ∈C∗, z /∈ qνn 1 −q qZ, z /∈−1 λqZ, the entries of Uq(z, λ; Enn, An−1)−1 are for 1 ≤i ≤n, 1 ≤j ≤n −1: Ä Uq(z, λ; Enn, An−1)−1ä ij = −b(n−1) j Qn l=1,l̸=i(q1+µl−νj ; q)∞ Qn−1 l=1,l̸=j(qνl−µi; q)∞ Qn−1 l=1,l̸=j(q1+νl−νj; q)∞ Qn l=1,l̸=i(qµl−µi; q)∞ × θq \u0000λz/q1+µi−νj\u0001 θq (λz) θq (λqµi/(1 −q)) θq (λqνj−1/(1 −q))zνj−µi−1, (46) Ä Uq(z, λ; Enn, An−1)−1ä in = Qn−1 l=1 \u0000qνl−µi; q\u0001 ∞ Qn l=1,l̸=i (qµl−µi; q)∞ θq \u0000−q1+µi\u000e((1 −q)z)\u0001 θq (−q−νn(1 −q)z) zνn−µi. (47)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/thm-sec-011-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "thm-sec-011-03.md",
+      "narrative": null,
+      "content": "Under the condition (42), and for z, λ, µ such that λ, µ ∈C∗, λ, µ /∈−1 −q qνl qZ, for 1 ≤l ≤n −1, µ /∈λqZ, and z ∈C∗, z /∈−1 λqZ, z /∈−1 µqZ, the q-Stokes matrix Sq (z, λ, µ; Enn, An−1) of the system (33) takes the block matrix form Sq (z, λ, µ; Enn, An−1) = Ç Idn−1 b(n) q å , (49) where Idn−1 is the (n −1) × (n −1) identity matrix, b(n) q = Ä\u0000b(n) q \u0001 1, ..., \u0000b(n) q \u0001 n−1 ä with (see (34) for νn) \u0000b(n) q \u0001 j = −b(n−1) j n X k=1 Qn−1 l=1 (q1+µk−νl; q)∞ Qn l=1,l̸=k(q1+µk−µl; q)∞ Qn l=1,l̸=k(q1+µl−νj; q)∞ Qn−1 l=1,l̸=j(qνl−µk; q)∞ Qn−1 l=1,l̸=j(q1+νl−νj; q)∞ Qn l=1,l̸=k(qµl−µk; q)∞ × Qn l=1,l̸",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Explicit Evaluation of Connection Matrix and q-Stokes Matrix of (2)",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-012-explicit-evaluation-of-connection-matrix-and-q-s.md",
+      "narrative": null,
+      "content": "\\label{sec:qdes}\n\n\nSince the matrices $E_{n n}$ and $\\operatorname{diag}\\left({P}_{n-1},1\\right)$ commute with each other, we get\n\\begin{prop}\\label{conjugation}\nUnder the  condition \\eqref{eq:vivj} (with   the   condition \\eqref{ineq1} included), the nonresonant condition \\eqref{qnreso},    and  condition \\eqref{ineq2},   for       $\\lambda\\in \\mathbb{C}^{*}\\backslash \\cup_{1\\leq l \\leq n-1} [-{(1-q)}/{q^{\\nu_l}};q]$,     we  have\n\\begin{align*}\n&     {F}_q^{(\\infty)}(z,\\lambda;E_{nn},A)=\\operatorname{diag}\\left({P}_{n-1},1\\right) {F}_q\\left(z,\\lambda;E_{nn},A_{n-1}\\right)\\operatorname{diag}\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Behavior of the Equation (5) and the System (2) as q1",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-013-behavior-of-the-equation-5-and-the-system-2-as-q.md",
+      "narrative": null,
+      "content": "Behavior of the Equation (5) and the System (2) as q →1\nIn this section, we study the behavior of the connection formula for the equation (5) (see Section 4.1), as well\nas the connection matrix and the q-Stokes matrix of the system (2) (see Section 4.2) as q →1. See [33] for\nmore discussions in the Fuchsian case and [6] in the irregular case.\n4.1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Behavior of the Connection Formula as q1",
+      "pageStart": 18,
+      "pageEnd": 22,
+      "target": "../sections/sec-014-behavior-of-the-connection-formula-as-q1.md",
+      "narrative": null,
+      "content": "\\label{subsec:eqlim}\nWe focus on the  behavior of  the connection formula   as $q\\rightarrow 1$ of the equation\n \\begin{equation}\\label{sec:qconf eq}\n    \\prod_{l=1}^{n-1}\\left(zD_q+\\alpha_{l} \\right)y(z)=D_q\\prod_{l=1}^{n-1}\\left(zD_q+\\beta_{l}-1 \\right)y(z),\n\\end{equation}\nwhich takes the general  form of the equation \\eqref{Fnj eq}.  See \\cite{morita2013connection} for more discussion of  $n=2$ case.  If\n    the   complex numbers    $\\alpha_l\\neq  \\frac{1}{q-1}  $, $\\beta_l\\neq  \\frac{q}{q-1} $,  for $1\\leq l \\leq  n-1$,  \nwe take the  parameters   $a_1,...,a_{n-1},b_1,...,b_{n-1}$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/lem-sec-015-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 28,
+      "target": "lem-sec-015-07.md",
+      "narrative": null,
+      "content": "For 1 ≤i ≤n, 1 ≤j ≤n −1, as q →1, we have the limit: lim q→1 H(∞) q (z, λ; Enn, An−1)ij = H(∞)(z; Enn, An−1)ij.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prop-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 28,
+      "target": "prop-sec-015-01.md",
+      "narrative": null,
+      "content": "There are unique meromorphic solutions F (∞) ± (z; Enn, A) = H(∞) ± (z; Enn, A)zδ(n−1)(A)eEnnz of (68), with the asymptotic expansion H(∞) ± (z; Enn, A) ∼Idn + ∞ X m=1 Hmz−m, as z →∞in Sect±. Here recall that Sect+ = S(−π/2, 3π/2) and Sect−= S(−3π/2, π/2) (see the notation S (a, b) in Section 2.3). Deﬁnition 4.10. Let U±(Enn, A) be the connection matrices of (68) deﬁned by F (0)(z; Enn, A) = F (∞) ± (z; Enn, A) · U±(Enn, A), for z ∈Sect±. (69) The Stokes matrices S±(Enn, A) of (68) are deﬁned by F (∞) + (z; Enn, A) = F (∞) − (z; Enn, A)S+(Enn, A), for z ∈S(−π/2, π/2), F (∞) − (ze−2πi; Enn, A)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prop-sec-015-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "see e.g., [4, 38]",
+      "pageStart": 22,
+      "pageEnd": 28,
+      "target": "prop-sec-015-02.md",
+      "narrative": null,
+      "content": "The system (70) has a (formal) fundamental solution as follows. Around the origin, there exists a convergent fundamental solution of (70): F (0) (z; Enn, An−1) = H(0) (z; Enn, An−1) · zAn, (71) where An = diag Ä λ(n) , ..., λ(n) n ä and H(0) (z) is an n × n matrix, with (i, j)-th entry H(0)(z)ij given by H(0) (z)ij = a(n−1) i λ(n) j −λ(n−1) i · n−1Fn−1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prop-sec-015-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 28,
+      "target": "prop-sec-015-03.md",
+      "narrative": null,
+      "content": "If F (∞) ± (z; Enn, An−1) := H(∞) ± (z; Enn, An−1)zδ(n−1)(An−1)eEnnz is the fundamental so- lutions on Sect± of (70), then F (∞) ± (z; Enn, An−1) = diag Ä P −1 n−1, 1 ä F (∞) ± (z; Enn, A) diag (Pn−1, 1) . (72) Moreover, the connection matrices and the Stokes matrices of the systems (68) and (70) are related by S± (Enn, A) = diag (Pn−1, 1) S± (Enn, An−1) diag Ä P −1 n−1, 1 ä , U± (Enn, A) = diag (Pn−1, 1) U± (Enn, An−1) . Deﬁnition 4.13. For 1 ≤i ≤n, 1 ≤j ≤n−1, the analytic continuation of the function H(∞) + (z; Enn, An−1)ij deﬁned on Sect+ to › C∗is denoted as H(∞)(z; Enn, An−1)ij. Similar t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prop-sec-015-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 28,
+      "target": "prop-sec-015-04.md",
+      "narrative": null,
+      "content": "For 1 ≤i ≤n, 1 ≤j ≤n −1, the entry H(∞) ± (z; Enn, An−1)ij is given by H(∞) ± (z; Enn, An−1)ij =dij n X k=1 Qn−1 l=1,l̸=j Γ(δil + λ(n−1) l −λ(n−1) j + 1 −δij) Qn l=1,l̸=k Γ(λ(n) l −λ(n) k ) Qn l=1,l̸=k Γ(λ(n) l −λ(n−1) j + 1 −δij) Qn−1 l=1,l̸=j Γ(δil + λ(n−1) l −λ(n) k ) × n−1Fn−1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prop-sec-015-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 28,
+      "target": "prop-sec-015-05.md",
+      "narrative": null,
+      "content": "For 1 ≤i ≤n −1, and 1 ≤j ≤n, entries of U± (Enn, An−1) are given by (U±(Enn, An−1))ij = a(n−1) i λ(n) j −λ(n−1) i Qn l=1,l̸=j Γ(1 + λ(n) j −λ(n) l ) Qn−1 l=1,l̸=i Γ(1 + λ(n) j −λ(n−1) l ) Qn−1 l=1,l̸=i Γ(1 + λ(n−1) i −λ(n−1) l ) Qn l=1,l̸=j Γ(1 + λ(n−1) i −λ(n) l ) e±πiλ(n) j e±πiλ(n−1) i , (U+ (Enn, An−1))nj = (U−(Enn, An−1))nj = Qn l=1,l̸=j Γ(1 + λ(n) j −λ(n) l ) Qn−1 l=1 Γ(1 + λ(n) j −λ(n−1) l ) . For convenience, here we denote λ(n−1) n := ann = Pn l=1 λ(n) l −Pn−1 l=1 λ(n−1) l . Moreover, the Stokes matrix S−(En, An−1) of (70) is lower triangular with the form S−(En, An−1) =",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prop-sec-015-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 28,
+      "target": "prop-sec-015-06.md",
+      "narrative": null,
+      "content": "As q →1, it follows that (1) The convergent fundamental solution F (0) q (z; Enn, An−1) (see (37)) of (33) converges to the convergent fundamental solution F (0) (z) (see (71)) of (70): lim q→1 F (0) q (z; Enn, An−1) = F (0) (z; Enn, An−1) . (75) (2) The fundamental solution F (∞) q (z, λ; Enn, An−1) (see (35)) of (33) converges to the fundamental solution F (∞) ± (z; Enn, An−1) (see (72)) of (70): lim q→1 F (∞) q (z, λ; Enn, An−1)ij = F (∞) (z; Enn, An−1)ij , if arg(z) ∈(−arg(λ) −π, −arg(λ) + π), (76) lim q→1 F (∞) q (z, λ; Enn, An−1)in = ® F (∞) + (z; Enn, An−1)in , if arg(z) ∈(0, −arg(λ) +",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Behavior of Connection Matrix and q-Stokes Matrix of the System (2) as q1",
+      "pageStart": 22,
+      "pageEnd": 28,
+      "target": "../sections/sec-015-behavior-of-connection-matrix-and-q-stokes-matri.md",
+      "narrative": null,
+      "content": "Behavior of Connection Matrix and q-Stokes Matrix of the System (2)\nas q →1\nThe q-diﬀerence system (2) converges in the form to the diﬀerential system\nd\ndz F(z) =\nÅ\nEnn + A\nz\nã\nF(z).\n(68)\nSimilar to the equation (57) case, there is a formal fundamental solution of (68) around inﬁnity (see e.g.,\n[4, 38]):\nˆF(z; Enn, A) = ˆH(z; Enn, A)zδ(n−1)(A)eEnnz, with ˆH(z; Enn, A) = Idn +\n∞\nX\nm=1\nHmz−m,\nwhere\nδ(n−1) (A)ij :=\nß aij,\nif 1 ≤i, j ≤n −1, or i = j = n;\n0,\notherwise.\nAnd under the nonresonant assumption\nλ(n)\ni\n−λ(n)\nj\n/∈Z>0, for all 1 ≤i, j ≤n,\nthere is a convergent fundamental solution of (68) a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2412.02281v1/blocks/rem-sec-015-08",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 28,
+      "target": "rem-sec-015-08.md",
+      "narrative": null,
+      "content": "The formula (82) can be checked under the conditions (80) and (81) from the explicit expression of Sq (z, λ, µ; Enn, An−1) in Theorem 3.10. References [1] S. Adachi. The q-Borel sum of divergent basic hypergeometric series rϕs(a; b; q, x). SIGMA Symmetry Integrability Geom. Methods Appl., 15:Paper No. 016, 12, 2019. [2] C. Adams. On the linear ordinary q-diﬀerence equation. Ann. of Math. (2), 30(1-4):195–205, 1928/29. [3] R. Askey. The q-gamma and q-beta functions. Applicable Anal., 8(2):125–141, 1978/79. [4] W. Balser. Formal power series and linear systems of meromorphic ordinary diﬀerential",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

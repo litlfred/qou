@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/aif-2009-59-1-347-0/sections/sec-012",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "B.1. Degenerate cases of the Watson's formula",
+  "pageStart": 23,
+  "pageEnd": 28,
+  "contains": [
+    "library/aif-2009-59-1-347-0/blocks/prose-sec-012",
+    "library/aif-2009-59-1-347-0/blocks/prop-sec-012-01",
+    "library/aif-2009-59-1-347-0/blocks/rem-sec-012-02",
+    "library/aif-2009-59-1-347-0/blocks/cor-sec-012-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2009-59-1-347-0/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2009-59-1-347-0/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-binding-functional-is-the-log",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:binding-functional-is-the-log",
+  "kind": "proposition",
+  "title": "Only the logarithmic binding functional is extensive; the linear rival fails by $-\\alpha(1-x)(1-y)$ and carries a ceiling",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-markov-stabilisation-needs-a-fresh-generator"
+  ],
+  "tags": [
+    "binding-functional",
+    "extensivity",
+    "markov-trace",
+    "deuteron"
+  ],
+  "leanRef": "qou:QOU.Nuclear.InterfaceScalar.linearForm_extensivity_defect",
+  "text": "binding-functional-is-the-log.md",
+  "provenance": "authored"
+}

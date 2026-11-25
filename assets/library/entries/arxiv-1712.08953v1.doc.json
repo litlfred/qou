@@ -1,0 +1,976 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1712.08953v1",
+  "title": "arxiv-1712.08953v1",
+  "variant": "pdf",
+  "pages": 57,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Generators and relations",
+      "number": "2",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-generators-and-relations"
+    },
+    {
+      "level": 1,
+      "title": "Connection to $\\operatorname{Rep} U_q(\\mathfrak{gl}_n)$",
+      "number": "3",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "The affine oriented skein category",
+      "number": "4",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-4-the-affine-oriented-skein-category"
+    },
+    {
+      "level": 1,
+      "title": "Shortest word theory",
+      "number": "5",
+      "page": 25,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-5-shortest-word-theory"
+    },
+    {
+      "level": 1,
+      "title": "Branching rules and characters",
+      "number": "6",
+      "page": 36,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-6-branching-rules-and-characters"
+    },
+    {
+      "level": 1,
+      "title": "Categorical action",
+      "number": "7",
+      "page": 46,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-7-categorical-action"
+    },
+    {
+      "level": 1,
+      "title": "Modifications in the degenerate case",
+      "number": "8",
+      "page": 54,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-8-modifications-in-the-degenerate-case"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 128,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "skein category",
+          "heading": false
+        },
+        {
+          "term": "oriented skein",
+          "heading": false
+        },
+        {
+          "term": "underpins",
+          "heading": false
+        },
+        {
+          "term": "karoubi",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1712.08953v1 [math.RT] 24 Dec 2017 REPRESENTATIONS OF THE ORIENTED SKEIN CATEGORY JONATHAN BRUNDAN Abstract. The oriented skein category OS(z, t) is a ribbon category which un- derpins the deﬁnition of the HOMFLY-PT invariant of an oriented link, in the same way that the Temperley-Lieb category underpins the Jones polynomial. In this article, we develop its representation theory using a highest weight theory",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1712.08953v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 6283,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "darkblue scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "tikzpicture mathord",
+          "heading": false
+        },
+        {
+          "term": "color darkblue",
+          "heading": false
+        },
+        {
+          "term": "darkred scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "qquad mathord",
+          "heading": false
+        },
+        {
+          "term": "mathord begin",
+          "heading": false
+        },
+        {
+          "term": "quad mathord",
+          "heading": false
+        },
+        {
+          "term": "underbrace mathord",
+          "heading": false
+        }
+      ],
+      "extract": "{\\noindent {\\bf 1.1.}} We begin by recalling briefly the definition of the category $\\FOT$ of {\\em framed oriented tangles}; this is the framed analog of the oriented tangle category $\\mathcal{OT}$ introduced by Turaev in \\cite{Turaev3} and also appears in \\cite[Remark 8.10.3]{EGNO} where it is denoted $\\mathcal{FT}$. By definition, it is the strict monoidal category with objects given by the set $\\words$ of all",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-generators-and-relations",
+      "number": "2",
+      "title": "Generators and relations",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4685,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "darkblue scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "tikzpicture mathord",
+          "heading": false
+        },
+        {
+          "term": "color darkblue",
+          "heading": false
+        },
+        {
+          "term": "morphisms mathord",
+          "heading": false
+        },
+        {
+          "term": "mathord begin",
+          "heading": false
+        },
+        {
+          "term": "qquad mathord",
+          "heading": false
+        },
+        {
+          "term": "scriptstyle diamondsuit",
+          "heading": false
+        },
+        {
+          "term": "end tikzpicture",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sgr} The monoidal category $\\FOT$ from the introduction is the category $\\mathcal{R}ib_{\\mathcal V}$ from \\cite[$\\S$I.2.3]{Turaev1}, taking $\\mathcal V$ to be the trivial monoidal category with just one object $*$ and one morphism $1_*:* \\rightarrow *$. Our generating objects $\\up$ and $\\down$ are Turaev's $(*,-)$ and $(*,+)$. As we explained in the introduction, objects in $\\FOT$ are words $\\a, \\b, \\dots$ in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-4-the-affine-oriented-skein-category",
+      "number": "4",
+      "title": "The affine oriented skein category",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1375,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "darkblue scriptstyle",
+          "heading": false
+        },
+        {
+          "term": "color darkblue",
+          "heading": false
+        },
+        {
+          "term": "tikzpicture mathord",
+          "heading": false
+        },
+        {
+          "term": "scriptstyle bullet",
+          "heading": false
+        },
+        {
+          "term": "align mathord",
+          "heading": false
+        },
+        {
+          "term": "mathord begin",
+          "heading": false
+        },
+        {
+          "term": "qquad mathord",
+          "heading": false
+        },
+        {
+          "term": "label mathord",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{aos} In this section, $\\k$ is a commutative ground ring and $z,t \\in \\k^\\times$ are arbitrary. The {\\em affine oriented skein category} $\\AOS(z,t)$ is the strict $\\k$-linear monoidal category obtained from $\\OS(z,t)$ by adjoining an additional generating morphism $\\mathord{ \\begin{tikzpicture}[baseline = -1mm] \\node at (0,0) {$\\color{darkblue}\\scriptstyle\\bullet$}; \\draw[<-,thick,darkblue] (0,0.25) to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-5-shortest-word-theory",
+      "number": "5",
+      "title": "Shortest word theory",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 36,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 5634,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rpar r-d",
+          "heading": false
+        },
+        {
+          "term": "down s-d",
+          "heading": false
+        },
+        {
+          "term": "par r-d",
+          "heading": false
+        },
+        {
+          "term": "infl flat",
+          "heading": false
+        },
+        {
+          "term": "infl sharp",
+          "heading": false
+        },
+        {
+          "term": "shortest word",
+          "heading": true
+        },
+        {
+          "term": "down circ",
+          "heading": false
+        },
+        {
+          "term": "ultra thick",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sswt} For the next few sections, we assume that $\\k$ is a field of characteristic $p \\geq 0$ and $z = q-q^{-1}$ for $q \\in \\k^\\times\\setminus\\{\\pm 1\\}$. Since we are going to be discussing linear representations rather than tensor ones, it is natural to replace the category $\\OS(z,t)$ with the associative algebra $$ OS = \\bigoplus_{\\a,\\b \\in \\words} 1_\\a OS 1_\\b \\qquad\\text{where}\\qquad 1_\\a OS 1_\\b :=",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-6-branching-rules-and-characters",
+      "number": "6",
+      "title": "Branching rules and characters",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 46,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4970,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tikzpicture mathord",
+          "heading": false
+        },
+        {
+          "term": "scriptstyle circ",
+          "heading": false
+        },
+        {
+          "term": "ultra thick",
+          "heading": false
+        },
+        {
+          "term": "circ down",
+          "heading": false
+        },
+        {
+          "term": "otimes mathord",
+          "heading": false
+        },
+        {
+          "term": "darkblue",
+          "heading": false
+        },
+        {
+          "term": "longrightarrow circ",
+          "heading": false
+        },
+        {
+          "term": "mathord begin",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{schars} We continue with the setup of the previous section. In this section, we introduce a biadjoint pair of endofunctors $E$ and $F$ of $\\Mod OS$, which lift the endofunctors $\\up \\otimes ?$ and $\\down \\otimes ?$ of $\\OS(z,t)$. We will use the Jucys-Murphy elements from section \\ref{aos} to decompose these endofunctors into direct sums of refined functors $E_i$ and $F_i$, which we study by comparing them to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-7-categorical-action",
+      "number": "7",
+      "title": "Categorical action",
+      "level": 1,
+      "pageStart": 46,
+      "pageEnd": 54,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4298,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rpar rho",
+          "heading": false
+        },
+        {
+          "term": "color darkblue",
+          "heading": false
+        },
+        {
+          "term": "darkblue bullet",
+          "heading": false
+        },
+        {
+          "term": "color darkred",
+          "heading": false
+        },
+        {
+          "term": "mathord begin",
+          "heading": false
+        },
+        {
+          "term": "rightarrow pmod",
+          "heading": false
+        },
+        {
+          "term": "tikzpicture bigg",
+          "heading": false
+        },
+        {
+          "term": "tikzpicture big",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{tpc} Recall that $q \\in \\k^\\times$ is either not a root of unity (in which case $e=0$), or that $q^2$ is a primitive $e$th root of unity for some $e > 1$. We are going to show that $\\Mod OS$ has the structure of a tensor product categorification in the general sense of Losev and Webster \\cite{LW}. This is most interesting when $t \\in \\{\\pm q^n\\:|\\:n \\in \\ZZ\\}$ (so that the $\\g$-module",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-8-modifications-in-the-degenerate-case",
+      "number": "8",
+      "title": "Modifications in the degenerate case",
+      "level": 1,
+      "pageStart": 54,
+      "pageEnd": 57,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1904,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "walled brauer",
+          "heading": false
+        },
+        {
+          "term": "brauer algebras",
+          "heading": false
+        },
+        {
+          "term": "brauer category",
+          "heading": false
+        },
+        {
+          "term": "advances math",
+          "heading": false
+        },
+        {
+          "term": "oriented brauer",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "london math",
+          "heading": false
+        },
+        {
+          "term": "aﬃne hecke",
+          "heading": false
+        }
+      ],
+      "extract": "Assume in this section that k is a ﬁeld of characteristic p ≥0. As we have said already in the introduction, when z = 0, the category OS(z, t) should be replaced with the oriented Brauer category OB(δ) studied in [BCNR]. Proof of Theorem 1.10. This follows by the same general argument as used to prove Theorem 1.3 (also Remark 3.4). Instead of the quantized Schur-Weyl duality used before, one uses classical",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "darkblue scriptstyle",
+      "heading": false
+    },
+    {
+      "term": "color darkblue",
+      "heading": false
+    },
+    {
+      "term": "tikzpicture mathord",
+      "heading": false
+    },
+    {
+      "term": "darkblue bullet",
+      "heading": false
+    },
+    {
+      "term": "otimes mathord",
+      "heading": false
+    },
+    {
+      "term": "align mathord",
+      "heading": false
+    },
+    {
+      "term": "scriptstyle circ",
+      "heading": false
+    },
+    {
+      "term": "mathord begin",
+      "heading": false
+    },
+    {
+      "term": "qquad mathord",
+      "heading": false
+    },
+    {
+      "term": "equation mathord",
+      "heading": false
+    },
+    {
+      "term": "mapsto mathord",
+      "heading": false
+    },
+    {
+      "term": "ultra thick",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 53,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 54,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 55,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 56,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 57,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Reidemeister-type relations",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Bipartition graph up to word length 3",
+      "page": 45,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 8,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "2 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p54); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 7
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1712.08953v1"
+  }
+}

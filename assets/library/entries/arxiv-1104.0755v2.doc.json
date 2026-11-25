@@ -1,0 +1,694 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1104.0755v2",
+  "title": "A connection formula between the Ramanujan function and the q -Airy function",
+  "variant": "pdf",
+  "pages": 12,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Standard notations",
+      "number": "2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-standard-notations"
+    },
+    {
+      "level": 1,
+      "title": "Two types of the q-analogue of the Airy function",
+      "number": "3",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-two-types-of-the-q-analogue-of-the-airy-functi"
+    },
+    {
+      "level": 2,
+      "title": "The Ramanujan function Aq(x)",
+      "number": "3.1",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-31-the-ramanujan-function-aqx"
+    },
+    {
+      "level": 2,
+      "title": "The q-Airy function Aiq(x)",
+      "number": "3.2",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-32-the-q-airy-function-aiqx"
+    },
+    {
+      "level": 2,
+      "title": "Shearing transformations",
+      "number": "3.3",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-33-shearing-transformations"
+    },
+    {
+      "level": 2,
+      "title": "The q-Airy equation around the infinity",
+      "number": "3.4",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-34-the-q-airy-equation-around-the-infinity"
+    },
+    {
+      "level": 1,
+      "title": "The q-Borel transformation, the q-Laplace transformation and the connection formula",
+      "number": "4",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-4-the-q-borel-transformation-the-q-laplace-trans"
+    },
+    {
+      "level": 2,
+      "title": "The q-Borel transformation and the q-Laplace transformation",
+      "number": "4.1",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-41-the-q-borel-transformation-and-the-q-laplace"
+    },
+    {
+      "level": 2,
+      "title": "The connection formula of the q-Airy function",
+      "number": "4.2",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-42-the-connection-formula-of-the-q-airy-function"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 77,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-airy function",
+          "heading": false
+        },
+        {
+          "term": "ramanujan function",
+          "heading": false
+        },
+        {
+          "term": "connection formula",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1104.0755v2 [math.CA] 1 Jul 2011 A connection formula between the Ramanujan function and the q-Airy function Takeshi MORITA‡ Abstract We show a connection formula between two diﬀerent q-Airy func- tions. One is called the Ramanujan function which appears in Ra- manujan’s ”Lost notebook”. Another one is called the q-Airy function that obtained in the study of the second q-Painlev´e equation. We use the q-Borel",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1104.0755v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 706,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "airy function",
+          "heading": false
+        },
+        {
+          "term": "hahn-exton bessel",
+          "heading": false
+        },
+        {
+          "term": "ramanujan function",
+          "heading": false
+        },
+        {
+          "term": "infty varphi",
+          "heading": false
+        },
+        {
+          "term": "infty left",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "abx right",
+          "heading": false
+        },
+        {
+          "term": "theta left",
+          "heading": false
+        }
+      ],
+      "extract": "In the study of the $q$-analysis, it is known that there exist several different $q$-special functions corresponding to a special function defined by a differential equation. For example, three types of $q$-Bessel functions are known. We denote them $J_\\nu^{(1)}(x;q)$, $J_\\nu^{(2)}(x;q)$ and $J_\\nu^{(3)}(x;q)$ due to Ismail [@Is]. The first and the second one are called Jackson's first and second $q$-Bessel function",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-standard-notations",
+      "number": "2",
+      "title": "Standard notations",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 293,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theta function",
+          "heading": false
+        },
+        {
+          "term": "mathbb satisfies",
+          "heading": false
+        },
+        {
+          "term": "hypergeometric series",
+          "heading": false
+        },
+        {
+          "term": "basic hypergeometric",
+          "heading": false
+        },
+        {
+          "term": "cdots",
+          "heading": false
+        },
+        {
+          "term": "defi",
+          "heading": false
+        },
+        {
+          "term": "jacobi",
+          "heading": false
+        },
+        {
+          "term": "infty",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we fix our notations. We assume that $q\\in\\mathbb{C}^*$ satisfies $0<~|q|<1$. We define the $q$-Pochhammer symbol $(a;q)_n$. ::: defi For any $n\\in\\mathbb{Z}_{\\ge 0}$, $$(a;q)_n= \\begin{cases} 1,&\\qquad n=0,\\\\ (1-a)(1-aq)\\cdots (1-aq^{n-1}),&\\qquad n\\ge 1, \\end{cases}$$ and $$(a;q)_\\infty =\\lim_{n\\to\\infty}(a;q)_n.$$ Moreover, $$(a_1,a_2,\\cdots ,a_m;q)_\\infty =(a_1;q)_\\infty (a_2;q)_\\infty\\cdots",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-two-types-of-the-q-analogue-of-the-airy-functi",
+      "number": "3",
+      "title": "Two types of the q-analogue of the Airy function",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 95,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "airy function",
+          "heading": true
+        },
+        {
+          "term": "ramanujan function",
+          "heading": false
+        },
+        {
+          "term": "kmnoy",
+          "heading": false
+        }
+      ],
+      "extract": "There are two different $q$-analogue of the Airy function. One is called the Ramanujan function which appears in [@Ramanujan]. Ismail [@Is] pointed out that the Ramanujan function can be considered as a $q$-analogue of the Airy function. The other one is called the $q$-Airy function which is obtained by K. Kajiwara, T. Masuda, M. Noumi, Y. Ohta and Y. Yamada [@KMNOY] . In this section, we see the properties of these",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-31-the-ramanujan-function-aqx",
+      "number": "3.1",
+      "title": "The Ramanujan function Aq(x)",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 236,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ramanujan function",
+          "heading": true
+        },
+        {
+          "term": "airy function",
+          "heading": false
+        },
+        {
+          "term": "delta frac",
+          "heading": false
+        },
+        {
+          "term": "frac left",
+          "heading": false
+        },
+        {
+          "term": "function operatorname",
+          "heading": false
+        },
+        {
+          "term": "frac log",
+          "heading": false
+        },
+        {
+          "term": "delta right",
+          "heading": false
+        },
+        {
+          "term": "qai",
+          "heading": false
+        }
+      ],
+      "extract": "The Ramanujan function appears in Ramanujan's \\\"Lost notebook\\\" [@Ramanujan]. Ismail has pointed out that the Ramanujan function can be considered as a $q$-analogue of the Airy function. The Ramanujan function is defined by following convergent series; $$\\operatorname{A}_q(x):=\\sum_{n\\ge 0}\\frac{q^{n^2}}{(q;q)_n}(-x)^n ={_0\\varphi_1}(-;0;q,-qx).$$ In the theory of ordinary differencial equations, the term",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-32-the-q-airy-function-aiqx",
+      "number": "3.2",
+      "title": "The q-Airy function Aiq(x)",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 229,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-airy function",
+          "heading": true
+        },
+        {
+          "term": "aiq",
+          "heading": true
+        },
+        {
+          "term": "q-painlev equations",
+          "heading": false
+        },
+        {
+          "term": "airy function",
+          "heading": false
+        }
+      ],
+      "extract": "The q-Airy function Aiq(x) The q-Airy function is found by K. Kajiwara, T. Masuda, M. Noumi, Y. Ohta and Y. Yamada [7], in their study of the q-Painlev´e equations. This function is the special solution of the second q-Painlev´e equations and given by the following series Aiq(x) := X n≥0 1 (−q, q; q)n n (−1)nq n(n−1) 2 o (−x)n = 1ϕ1(0; −q; q, −x). T. Hamamoto, K. Kajiwara, N. S. Witte [5] proved following asymptotic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-33-shearing-transformations",
+      "number": "3.3",
+      "title": "Shearing transformations",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 102,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shearing",
+          "heading": true
+        },
+        {
+          "term": "shearing transformation",
+          "heading": false
+        },
+        {
+          "term": "cdot sigma",
+          "heading": false
+        }
+      ],
+      "extract": "We define a shearing transformation of a second order linear $q$-difference equation. ::: defi For a $q$-difference equation $$\\label{sh} a(x)u(q^2x)+b(x)u(qx)+c(x)u(x)=0,$$ we define the shearing transformation as follows $$t^2:=x,\\quad v(t):=u(t^2),\\quad p:=\\sqrt{q}.$$ ::: The shearing transform of the equation ([\\[sh\\]](#sh){reference-type=\"ref\" reference=\"sh\"}) is given by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-34-the-q-airy-equation-around-the-infinity",
+      "number": "3.4",
+      "title": "The q-Airy equation around the infinity",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 135,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qaeq",
+          "heading": false
+        },
+        {
+          "term": "sigma mathcal",
+          "heading": false
+        },
+        {
+          "term": "kram",
+          "heading": false
+        },
+        {
+          "term": "qai",
+          "heading": false
+        }
+      ],
+      "extract": "We consider the behavior of the equation ([\\[qai\\]](#qai){reference-type=\"ref\" reference=\"qai\"}) around the infinity. We set $x=1/t$ and $z(t)=u(1/t)$. Then $z(t)$ satisfies $$\\left(-\\sigma_q^2+\\frac{1}{q^2t}\\sigma_q+1\\right)z(t)=0.$$ We set $\\mathcal{E}(t)=1/\\theta (-q^2t)$ and $f(t)=\\sum_{n\\ge 0}a_nt^n,\\quad a_0=1$. We assume that $z(t)$ can be described as $$z(t)=\\mathcal{E}(t)f(t)=\\frac{1}{\\theta",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-4-the-q-borel-transformation-the-q-laplace-trans",
+      "number": "4",
+      "title": "The q-Borel transformation, the q-Laplace transformation and the connection formula",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 20,
+      "summary": null,
+      "keywords": [],
+      "extract": "In this section, we show a connection formula for $f(t)$. In order to obtain a connection formula, we need the $q$-Borel transformation and the $q$-Laplace transformation following Zhang [@Z1].",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-41-the-q-borel-transformation-and-the-q-laplace",
+      "number": "4.1",
+      "title": "The q-Borel transformation and the q-Laplace transformation",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 132,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac tau",
+          "heading": false
+        },
+        {
+          "term": "laplace transformation",
+          "heading": false
+        },
+        {
+          "term": "borel transformation",
+          "heading": false
+        },
+        {
+          "term": "orqb",
+          "heading": false
+        }
+      ],
+      "extract": "::: defi For $f(t)=\\sum_{n\\ge 0}a_nt^n$, the $q$-Borel transformation is defined by $$g(\\tau )=\\left(\\mathcal{B}_qf\\right)(\\tau ):=\\sum_{n\\ge 0}a_nq^{-\\frac{n(n-1)}{2}}\\tau^n,$$ and the $q$-Laplace transformation is given by $$\\left(\\mathcal{L}_qg\\right)(t):=\\frac{1}{2\\pi i}\\int_{|\\tau |=r}g(\\tau )\\theta\\left(\\frac{t}{\\tau}\\right)\\frac{d\\tau}{\\tau },\\qquad 0<r<\\frac{1}{|q^2|}.$$ ::: The $q$-Borel transformation can",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-42-the-connection-formula-of-the-q-airy-function",
+      "number": "4.2",
+      "title": "The connection formula of the q-Airy function",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 677,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-airy function",
+          "heading": true
+        },
+        {
+          "term": "connection formula",
+          "heading": true
+        },
+        {
+          "term": "aiq",
+          "heading": false
+        },
+        {
+          "term": "ramanujan function",
+          "heading": false
+        },
+        {
+          "term": "hypergeometric series",
+          "heading": false
+        },
+        {
+          "term": "basic hypergeometric",
+          "heading": false
+        },
+        {
+          "term": "res",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential equations",
+          "heading": false
+        }
+      ],
+      "extract": "The connection formula of the q-Airy function Applying the q-Borel transformation in 4.1 to the equation (7) and using lemma 6, we obtain the ﬁrst order q-diﬀerence equation g(qτ) = (1 + q2τ)(1 −q2τ)g(τ). Since g(0) = 1, g(τ) is given by an inﬁnite product g(τ) = 1 (−q2τ; q)∞(q2τ; q)∞ which has single poles at \b τ; τ = ±q−2−k, ∀k ∈Z≥0 . By Cauchy’s residue theorem, the q-Laplace transform of g(τ) is f(t) = 1 2πi Z",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "ramanujan function",
+      "heading": true
+    },
+    {
+      "term": "airy function",
+      "heading": true
+    },
+    {
+      "term": "q-airy function",
+      "heading": true
+    },
+    {
+      "term": "frac right",
+      "heading": false
+    },
+    {
+      "term": "frac left",
+      "heading": false
+    },
+    {
+      "term": "theta function",
+      "heading": false
+    },
+    {
+      "term": "function operatorname",
+      "heading": false
+    },
+    {
+      "term": "infty frac",
+      "heading": false
+    },
+    {
+      "term": "sigma right",
+      "heading": false
+    },
+    {
+      "term": "varphi left",
+      "heading": false
+    },
+    {
+      "term": "equation left",
+      "heading": false
+    },
+    {
+      "term": "frac log",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 10,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p10); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1104.0755v2"
+  }
+}

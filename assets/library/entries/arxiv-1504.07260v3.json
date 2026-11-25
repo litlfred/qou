@@ -1,0 +1,650 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1504.07260v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Prepared for submission to JHEP\nFricke S-duality in CHL models\nDaniel Persson1 Roberto Volpato2,3\n1Fundamental Physics, Chalmers University of Technology,\n412 96, Gothenburg, Sweden\n2Theory Group, SLAC National Accelerator Laboratory,\nMenlo Park, CA 94025, USA\n3Stanford Institute for Theoretical Physics, Department of Physics,\nStanford University, Stanford, CA 94305, USA\nE-mail: daniel.persson@chalmers.se, volpato@slac.stanford.edu\nAbstract: We consider four dimensional CHL models with sixteen spacetime supersym-\nmetries obtained from orbifolds of type IIA superstring on K3×T 2 by a ZN symmetr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction and Summary",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction-and-summary.md",
+      "narrative": null,
+      "content": "CHL models are orbifolds of heterotic string theory on $T^6$ preserving $\\mathcal{N}=4$ supersymmetry, or, equivalently, of type II string theory on $K3\\times T^2$ [@Chaudhuri:1995fk; @Chaudhuri:1995bf; @Chaudhuri:1995dj; @Chaudhuri:1995ee]. These models have been a remarkable arena for testing string dualities and analyzing black hole microstates (see [@Dabholkar:2004yr; @Dabholkar:2005by; @Dabholkar:2005dt; @Dabholkar:2006xa; @Dabholkar:2006bj; @Dabholkar:2007vk; @Sen:2007qy; @Cheng:2008fc; @Cheng:2008kt; @Govindarajan:2008vi; @Banerjee:2008yu; @Dabholkar:2008zy; @Govindarajan:2009qt; @Cheng",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fricke S-duality",
+      "pageStart": 3,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-11-fricke-s-duality.md",
+      "narrative": null,
+      "content": "Consider heterotic string theory on $T^6$ and decompose the torus according to $T^6=T^4 \\times S^1\\times \\tilde{S}^1$. We want to take the orbifold of this by a cyclic group $G$ of symmetries that preserve all the spacetime supersymmetries. This implies, in particular, that $G$ must act trivially on the left-moving (supersymmetric) sector. From the type IIA perspective, the target space is $K3\\times S^1\\times \\tilde{S}^1$ and the orbifold group must be a symmetry of the $\\mathcal{N}=(4,4)$ superconformal sigma model $\\mathcal{C}$ on $K3$. All such symmetries were classified in [@K3symm] and sh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Black hole microstate counting",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-12-black-hole-microstate-counting.md",
+      "narrative": null,
+      "content": "The counting of BPS-states in CHL models have lead to deep insights into the quantum properties of certain black holes. In this paper we shall focus on 1/2 BPS-states which in the heterotic picture correspond to Dabholkar-Harvey states [@Dabholkar:1990yf], i.e. with zero excitations in the right-moving sector but arbitrary excitations in the left-moving sector. In the type IIA picture these are electrically charged black holes with zero classical entropy (so called 'small black holes'). In the non-orbifold situation the degeneracy $\\Omega(Q)$ of 1/2 BPS-states with electric charge vector $Q\\in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connection with moonshine",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-13-connection-with-moonshine.md",
+      "narrative": null,
+      "content": "Monstrous moonshine relates representations of the monster group $\\mathbb{M}$ with modular forms, Borcherds-Kac-Moody algebras and conformal field theory. To each element $g\\in \\mathbb{M}$ one associates a modular form $T_g(\\tau)$ (McKay-Thompson series), whose Fourier coefficients are characters of the monster group. The basic conjecture of Conway-Norton, later proven by Borcherds, was that the McKay-Thompson series $T_g(\\tau)$ should be invariant under a certain genus zero subgroup $\\Gamma_g\\subset SL(2,\\mathbb{R})$. For some elements $g$, the invariance group $\\Gamma_g$ contains a Fricke in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outline",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-14-outline.md",
+      "narrative": null,
+      "content": "In section [\\[sec:CHL\\]](#sec:CHL){reference-type=\"ref\" reference=\"sec:CHL\"} we introduce the CHL models that we shall analyse in the paper and we discuss them from the point of view of heterotic-type II duality. We also prove consistency of a non-geometric CHL models and present a partial classification. In section [\\[s:Sdual\\]](#s:Sdual){reference-type=\"ref\" reference=\"s:Sdual\"} we then prove that these CHL models are invariant under Fricke S-duality and analyse the implications for heterotic-type II duality. We also show that the Fricke S-duality in fact generalise to the full Atkin-Lehner",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Non-geometric CHL models",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-005-2-non-geometric-chl-models.md",
+      "narrative": null,
+      "content": "[]{#sec:CHL label=\"sec:CHL\"}\n\nIn this section we introduce the CHL models we will study in this paper. To this end we begin by recalling some standard facts about heterotic-type II dualities, after which we present the (non-geometric) CHL models and demonstrate their consistency. We also provide a partial classification of all such models.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Heterotic-type II duality",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-21-heterotic-type-ii-duality.md",
+      "narrative": null,
+      "content": "Let us first recall some basic properties of compactification of heterotic string on $T^6$. The moduli space of such compactification is $$O(6,22,\\mathbb{Z})\\backslash O(6,22)/(O(6)\\times O(22))\\times SL(2,\\mathbb{Z})\\backslash SL(2,\\mathbb{R})/U(1)\\ .$$The first factor is the Narain moduli space, parametrizing the metric and B-field of the torus $T^6$ as well as the Wilson lines along the internal directions, while $SL(2,\\mathbb{R})/U(1)$ factor represent the heterotic axio-dilaton modulus $S_{\\text{het}}$. The discrete groups $O(6,22,\\mathbb{Z})$ and $SL(2,\\mathbb{Z})$ are the T-duality and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalities on CHL models",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-007-22-generalities-on-chl-models.md",
+      "narrative": null,
+      "content": "[]{#s:CHLgeneral label=\"s:CHLgeneral\"}\n\nIn this paper, we discuss certain four dimensional CHL models with $16$ supersymmetries. These models are obtained by orbifolding the heterotic string on $T^6\\equiv T^4\\times S^1\\times \\tilde S^1$ (or, equivalently, of type IIA on $K3\\times S^1\\times \\tilde S^1$) by a cyclic group of symmetries preserving all space-time supersymmetries.\n\nWe focus on cyclic groups generated by symmetries $\\hat g$ of finite order $\\hat N$ of the form $\\hat g=(g,\\delta)$. Here, $g$ is an element of the T-duality group $g\\in O(6,22,\\mathbb{Z})$ that fixes a sublattice $\\Gamm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Consistency and level matching",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-008-23-consistency-and-level-matching.md",
+      "narrative": null,
+      "content": "[]{#s:levelmatch label=\"s:levelmatch\"}\n\nIn order for the model to be consistent, the level matching condition has to be satisfied, namely the eigenvalues of $L_0-\\bar L_0$ in each $g^r$-twisted sector should take values in $\\mathbb{Z}/\\hat{N}\\mathbb{Z}$, where $\\hat N$ is the order of the symmetry. For $\\hat g=(g,\\delta)$, with $g\\in O(\\Gamma^{6,22})$ of order $N$ and $\\delta\\in \\Gamma^{6,22}\\otimes \\mathbb{R}$ fixed by $g$, this means $$\\label{levelmatch} \\Delta E_g+\\frac{\\delta^2}{2}\\in \\frac{1}{\\hat N}\\mathbb{Z}\\ ,$$where $\\Delta E_g:= E_{g,L}-E_{g,R}$ is the level mismatch for the $g$-twis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classification",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-009-24-classification.md",
+      "narrative": null,
+      "content": "[]{#s:CHLclass label=\"s:CHLclass\"}\n\nWe are considering four dimensional CHL models obtained by orbifolding symmetry $\\hat g=(\\delta,g)$ where $g\\in O(\\Gamma^{6,22})$ fixes a sublattice $\\Gamma_{S^1}\\oplus \\Gamma_{\\tilde S^1}\\cong \\Gamma^{2,2}$ and $\\delta\\in \\Gamma_{S^1}\\otimes\\mathbb{R}$ has finite order modulo $\\Gamma_{S^1}$. Each CHL model can be labeled by the corresponding pair $(\\delta,g)$. However, this labelling is highly redundant, in the sense that there are infinitely many pairs $(\\delta,g)$ leading to the same CHL model, i.e. to the same connected component in the moduli space. A f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fricke S-duality and N-modularity",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-010-3-fricke-s-duality-and-n-modularity.md",
+      "narrative": null,
+      "content": "[]{#s:Sdual label=\"s:Sdual\"}\n\nThe equivalence between type IIA string theory compactified on $(K3\\times S^1)/\\mathbb{Z}_{\\hat N}\\times \\tilde S^1$ and heterotic string theory on $(T^4\\times S^1)/\\mathbb{Z}_{\\hat N}\\times \\tilde S^1$ can be explained using the standard adiabatic argument of [@VafaWitten95]. We will use this argument to discuss the strong coupling limit of the heterotic CHL model. This will lead us to discover new Fricke-type S- and T-dualities. In this section we derive these new dualities and analyse their implications for heterotic-type II duality and electric-magnetic dualit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "String-string duality and Fricke S-duality",
+      "pageStart": 16,
+      "pageEnd": 20,
+      "target": "../sections/sec-011-31-string-string-duality-and-fricke-s-duality.md",
+      "narrative": null,
+      "content": "For definiteness, we restrict to a point in the moduli space where, in the type IIA picture, the circles $S^1$ and $\\tilde S^1$ are orthogonal and the B-field and Wilson lines along $S^1$ and $\\tilde S^1$ vanish. We denote by $R$ and $\\tilde R$ the radii of the circles in the type IIA picture. In this section, we consider symmetries $\\hat g=(\\delta,g)$ where $g$ is a symmetry of order $N$ of the internal K3 model such that the $g$-twisted sectors satisfy the level-matching condition (i.e. $\\lambda=1$ in the language of the previous section), while the case $\\lambda>1$ is left to appendix [\\[s:",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Self-duality and the Witten index",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-012-32-self-duality-and-the-witten-index.md",
+      "narrative": null,
+      "content": "[]{#s:quantsymm label=\"s:quantsymm\"}\n\nFrom the above discussion, it is clearly important to determine which CHL models are self-dual under Fricke S-duality. This can be determined simply in terms of the Frame shape $\\prod_{a|N} a^{m(a)}$ of $g$, by analyzing the associated Witten index as we now show.\n\nLet $\\mathcal{C}$ be a non-linear sigma model on K3 and $g$ be a symmetry of $\\mathcal{C}$ of order $N$ preserving the $\\mathcal{N}=(4,4)$ superconformal algebra. We will assume that the orbifold of $\\mathcal{C}$ by $g$ is a consistent CFT $\\mathcal{C}'$; in our previous notation, this means tha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Heterotic T-duality",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-013-33-heterotic-t-duality.md",
+      "narrative": null,
+      "content": "[]{#s:hetTdual label=\"s:hetTdual\"}\n\nThe analysis of T-duality in the type IIA frame of CHL models can be repeated without essential modifications to describe T-duality in the heterotic frame (equivalently, S-duality in the type IIA frame). Under a change in the moduli $$T_{\\text{het}}\\to -\\frac{1}{NT_{\\text{het}}}\\ ,\\qquad U_{\\text{het}}\\to -\\frac{1}{NU_{\\text{het}}}\\ , \\qquad S_{\\text{het}}\\to S_{\\text{het}}\\ ,$$the heterotic CHL model is mapped to another four dimensional $\\mathcal{N}=4$ string model.\n\nIn analogy with the type IIA T-duality, one can argue that the six dimensional decompactif",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Atkin-Lehner dualities",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "../sections/sec-014-34-atkin-lehner-dualities.md",
+      "narrative": null,
+      "content": "[]{#s:AtkinLehner label=\"s:AtkinLehner\"}\n\nThe Fricke S-duality $S\\to -1/NS$ can be generalized to dualities acting on the heterotic axio-dilaton by Atkin-Lehner involutions. Let $e$ be an exact divisor of $N$ (denoted by $e\\| N$), i.e $e| N$ and $\\gcd(e,N/e)=1$. An Atkin-Lehner involution is an element of $SL(2,\\mathbb{R})$ of the form[^1] $$\\label{ALdef} W_e=\\frac{1}{\\sqrt{e}}\\begin{pmatrix}\nae & b\\\\ Nc & de\n\\end{pmatrix}\\qquad \\qquad a,b,c,d,e,N\\in \\mathbb{Z}, \\quad ade^2-Nbc=e,\\quad e\\|N\\ .$$Atkin-Lehner involutions are elements of the normalizer of $\\Gamma_0(N)$ within $SL(2,\\mathbb{R})$ a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lattice of electric-magnetic charges",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-015-4-lattice-of-electric-magnetic-charges.md",
+      "narrative": null,
+      "content": "[]{#s:emlattices label=\"s:emlattices\"}\n\nThe lattice of electric-magnetic charges $\\Lambda_{em}$ of a CHL models contains the sublattices $\\Lambda_e$ and $\\Lambda_m$ of purely electric and purely electric charges $$\\label{emlattices} \\Lambda_e\\oplus \\Lambda_m\\subseteq \\Lambda_{em}\\ .$$By convention, purely electric charges are the ones carried by perturbative heterotic states. Correspondingly, the electric fields are given by the metric and B-field with one leg along the compactified $T^6$ and one along the space-time directions, as well as the the $U(1)^{16}$ group coming from the spontaneousl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Purely electric charges",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-016-41-purely-electric-charges.md",
+      "narrative": null,
+      "content": "The lattice of electric charges of the CHL model can be most conveniently described in the heterotic frame. Let $u,u^*$ denote two null vectors generating $\\Gamma_{S^1}$, so that $$u\\cdot u=u^*\\cdot u^*=0\\qquad u\\cdot u^*=1\\qquad \\Gamma_{S^1}=\\langle u, u^*\\rangle\\ .$$We can consider $u$ as representing a unit of winding along $S^1$ and $u^*$ as a unit of momentum. Let $g$ be a symmetry of order $N$ of the K3 model in the dual type IIA picture, so that $g$ acts by automorphisms of $\\Gamma_{K3}\\cong \\Gamma^{4,20}$ and fixes $\\Gamma_{S^1}$ and $\\Gamma_{\\tilde S^1}$. The symmetry $g$ fixes a subl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Purely magnetic charges",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "../sections/sec-017-42-purely-magnetic-charges.md",
+      "narrative": null,
+      "content": "Let us now determine the lattice $\\Lambda_m$ of purely magnetic charges. Once again, we will focus on the case $\\lambda=1$, postponing the discussion of the general case to section [\\[s:genlatticeem\\]](#s:genlatticeem){reference-type=\"ref\" reference=\"s:genlatticeem\"}.\n\nBy the Dirac quantization condition, the lattice of purely magnetic charges $\\Lambda_m$ must be contained in the dual of the lattice [\\[electLattsimpl\\]](#electLattsimpl){reference-type=\"eqref\" reference=\"electLattsimpl\"}, that is\n\n$$\\label{magnincl} \\Lambda_m\\subseteq \\Lambda_e^*=\\Gamma_{K3}^g\\oplus \\langle N u^*, u\\rangle \\opl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fricke S-duality and N-modular lattices",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-018-43-fricke-s-duality-and-n-modular-lattices.md",
+      "narrative": null,
+      "content": "[]{#s:Nmodular label=\"s:Nmodular\"}\n\nIn the previous section, we derived the lattice $\\Lambda_{em}$ of electric-magnetic charges of a CHL model, in the case $\\lambda=1$. Suppose that the CHL model is in case 1 of section [\\[s:Sdual\\]](#s:Sdual){reference-type=\"ref\" reference=\"s:Sdual\"}, i.e. the symmetry $g$ has balanced cycle shape. In this case, the Fricke S-duality connects two different points in the moduli space of the same CHL model. In particular, the moduli $S_{\\text{het}},T_{\\text{het}},U_{\\text{het}}$ of the dual theories are related as in [\\[hetmodSdual\\]](#hetmodSdual){reference-typ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "BPS-state counting",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-019-5-bps-state-counting.md",
+      "narrative": null,
+      "content": "[]{#sec:BPScount label=\"sec:BPScount\"}\n\nIn this section we shall calculate the 1/2 BPS-indices in arbitrary CHL models, both from the type IIA and the heterotic perspective. In $\\mathcal{N}=4$ string theories the 1/2 BPS-states are counted by the index $$\\Omega_4:= \\text{Tr}(-1)^F J_3^{4},$$ where $F$ is the spacetime fermion number and $J_3$ is the Cartan generator of the massive little group in four dimensions. Due to the insertion of $J_3^4$ this trace is sensitive only to 1/2 BPS-states. The 1/4 BPS-states only contribute to the index $\\Omega_6$ which has an insertion of $J_3^6$. More gene",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The type II helicity supertrace",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "../sections/sec-020-51-the-type-ii-helicity-supertrace.md",
+      "narrative": null,
+      "content": "It is convenient to introduce a generating function, called the *helicity string partition function* in [@Kiritsis:1997hj]: $$Z( \\upsilon, \\bar{ \\upsilon})=\\text{Tr}(-1)^F e^{2\\pi i  \\upsilon J_3^{R}} e^{2\\pi i \\bar{ \\upsilon} J_3^{L}} q^{L_0} \\bar{q}^{\\bar{L}_0},$$ where $( \\upsilon, \\bar{ \\upsilon})$ are chemical potentials for the left- and right-moving spacetime helicities $(J_3^{R}, J_3^L)$. From the generating function $Z( \\upsilon, \\bar{ \\upsilon})$ one can compute the associated helicity supertraces $B_n$ can then be computed by taking derivatives of the partition function: $$B_n=\\left",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Helicity supertrace for type IIA CHL models",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "../sections/sec-021-52-helicity-supertrace-for-type-iia-chl-models.md",
+      "narrative": null,
+      "content": "Let us now generalize the previous analysis to CHL models in type IIA string theory. We are interested in the case where the orbifold group $G$ is cyclic of order $\\hat N$, with generator $\\hat g$ acting by a shift $\\delta$ of a $1/\\hat N$ period along one of the cycles of $T^2$ and by a symmetry $g$ of the K3 sigma model. Then, the generating function $Z^{\\text{IIA}}_{\\text{CHL}[\\hat g]}$ is obtained from [\\[ZIIA\\]](#ZIIA){reference-type=\"eqref\" reference=\"ZIIA\"} by the usual orbifold formula $$Z^{\\text{IIA}}_{\\text{CHL}[\\hat g]}(\\upsilon,\\bar \\upsilon)=\\frac{\\vartheta_1(\\upsilon/2)^2\\bar\\var",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Topological amplitudes and Fricke S-duality",
+      "pageStart": 33,
+      "pageEnd": 34,
+      "target": "../sections/sec-022-53-topological-amplitudes-and-fricke-s-duality.md",
+      "narrative": null,
+      "content": "Our aim is now to test the Fricke S-duality in the context of 1/2 BPS-state counting. Recall that the fourth helicity supertrace determines the one-loop topological amplitude according to the formula: $$F_1=\\frac{2}{3}\\int_{\\mathcal{F}} d^2\\tau\\, B_4 \\ .$$ where $\\mathcal{F}$ is a fundamental domain for $SL(2,\\mathbb{Z})\\backslash \\mathbb{H}$. The $T_{\\text{IIA}}$-dependent part of this amplitude determines the coupling $f_{R^2}$ associated with the $R^2$-correction term in the low-energy effective action. Explicitly the relation between $F_1$ and $f_{R^2}$ is [@Gregori:1997hi] $$\\partial_{T_{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The heterotic helicity supertrace",
+      "pageStart": 34,
+      "pageEnd": 36,
+      "target": "../sections/sec-023-54-the-heterotic-helicity-supertrace.md",
+      "narrative": null,
+      "content": "Let us now analyse the counting of BPS-states from the heterotic perspective. The generating function of helicity supertraces for heterotic strings on $T^6$ is [@Kiritsis:1997hj] $$Z^{\\text{het}}(\\upsilon,\\bar\\upsilon)=\n\\frac{\\vartheta_1(\\upsilon/2)^4  }{\\eta^{12}\\bar\\eta^{24}}\\frac{\\xi(\\upsilon)\\bar\\xi(\\bar\\upsilon)}{\\tau_2}\\Theta_{\\Gamma^{6,22}}\\ ,$$and the fourth helicity supertrace is[^1] $$B_4=\\left(\\frac{1}{2\\pi i} \\frac{\\partial}{\\partial \\upsilon}+\\frac{1}{2\\pi i} \\frac{\\partial}{\\partial \\bar\\upsilon}\\right)^4 Z^{\\text{het}}(\\upsilon,\\bar \\upsilon)_{\\rvert \\upsilon=0}=\\left(\\frac{1}{2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-024-6-conclusions.md",
+      "narrative": null,
+      "content": "[]{#sec:conclusions label=\"sec:conclusions\"} In this paper we have analysed a large class of non-geometric CHL models and showed that they exhibit larger symmetries than previously expected. These models are in particular invariant under Fricke involution $S\\to -1/(NS)$ which lies outside of the $SL(2,\\mathbb{Z})$-symmetry of the original unorbifolded model. We showed that this leads to new non-trivial heterotic-type II dualities and gives rise to strong constraints on the associated electric and magnetic charge lattices. In particular, for self-dual CHL models these lattice are required to be",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Non-geometric CHL models: general case",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "../sections/sec-025-a-non-geometric-chl-models-general-case.md",
+      "narrative": null,
+      "content": "Non-geometric CHL models: general case\nIn this section, we generalize the analysis of CHL models to the most general case, where\nthe level matching condition for a g-twisted sector is not satisﬁed.\n– 36 –",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.1 Lattice of purely electric charges",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "../sections/sec-026-a1-lattice-of-purely-electric-charges.md",
+      "narrative": null,
+      "content": "Lattice of purely electric charges\nThe calculation lattice of purely electric charges is similar to the λ = 1 case. In this case,\nδ = u\nˆ\nN is a shift of order ˆN = Nλ. In the untwisted sector, the lattice of electric charges\nbefore the projection onto g-invariant states is again\n(Γg\nK3)∗⊕⟨u, u∗⟩⊕Γ ˜S1 .\n(A.1)\nHowever, in this case ˆg acts on a vector with winding-momentum p = nu+ku∗∈ΓS1 along\nS1 by multiplication by a ˆN-th root of unity\nˆg|nu + ku∗⟩= e\n2πik\nNλ |nu + ku∗⟩,\n(A.2)\nwhile the ˆg-eigenvalues on oscillators and winding-momenta along ΓK3 are N-th roots of\nunity.\nIt follows that the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.2 Heterotic S-duality and T-duality",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "../sections/sec-027-a2-heterotic-s-duality-and-t-duality.md",
+      "narrative": null,
+      "content": "Heterotic S-duality and T-duality\nThe properties of the CHL models under the T-dualities in type IIA and heterotic frame,\ndescribed in section 3, generalize to the case where λ > 1. The heterotic and type IIA\nframe are very similar and can be treated together. Let us generically denote by C the\ninternal CFT in a six dimensional compactiﬁcation of string theory. For heterotic strings\ncompactiﬁed on T 4, C is a N = (4, 0) superconformal ﬁeld theory with central charges\n(c, ˜c) = (6, 16).\nIn type IIA compactiﬁed on K3, C denotes a N = (4, 4) SCFT with\ncentral charges (c, ˜c) = (6, 6). Let us cons",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.3 Witten index of the quantum symmetry",
+      "pageStart": 41,
+      "pageEnd": 44,
+      "target": "../sections/sec-028-a3-witten-index-of-the-quantum-symmetry.md",
+      "narrative": null,
+      "content": "Witten index of the quantum symmetry\nLet C be a non-linear sigma model on K3, g be a symmetry preserving the N = (4, 4)\nsuperconformal algebra and let us assume that the orbifold theory C′ = C/⟨g⟩is consistent,\ni.e. the twisted sectors satisfy the level-matching condition (λ = 1). In this section, we\ncompute the twined Witten index of the quantum symmetry Q. By deﬁnition of Q, this is\ngiven by\nIC′\nQk =\nN\nX\nt=1\ne\n2πikt\nN sdim(H⟨g⟩\ngt ) ,\n(A.17)\nwhere Hgt denotes the space of gt-twisted Ramond-Ramond ground states (i.e. with con-\nformal weights (1\n4, 1\n4)), H⟨g⟩\ngt is its g-invariant subspace an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prop-sec-029-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 47,
+      "target": "prop-sec-029-01.md",
+      "narrative": null,
+      "content": "Lattice of electric-magnetic charges In this section, we determine the lattice of electric-magnetic charges in a CHL model with λ > 1 under the assumption that string-string duality and heterotic S-duality (or, equiva- lently, type IIA T-duality along S1 × ˜S1) hold.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.4 Lattice of electric-magnetic charges",
+      "pageStart": 44,
+      "pageEnd": 47,
+      "target": "../sections/sec-029-a4-lattice-of-electric-magnetic-charges.md",
+      "narrative": null,
+      "content": "Lattice of electric-magnetic charges\nIn this section, we determine the lattice of electric-magnetic charges in a CHL model with\nλ > 1 under the assumption that string-string duality and heterotic S-duality (or, equiva-\nlently, type IIA T-duality along S1 × ˜S1) hold. As stressed in section (A.1), one expects the\nlattice of purely magnetic charges Λm to contain a summand of the form Γg\nK3, correspond-\ning to the ˆg-invariant states of the original unorbifolded theory. By (A.5) and by the Dirac\nquantization condition, this is the ﬁnest possible lattice of magnetic charges with respect\nto the U(1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B Heterotic T-duality",
+      "pageStart": 47,
+      "pageEnd": 50,
+      "target": "../sections/sec-030-b-heterotic-t-duality.md",
+      "narrative": null,
+      "content": "Heterotic T-duality\nIn this appendix we show that the orbifold of heterotic strings on T 4 by a symmetry\ng ∈O(Γ4,20), if consistent, is again a compactiﬁcation of heterotic strings on T 4. The\norbifold projection preserves the left-moving (supersymmetric) sector and projects out 20−d\n– 46 –\nworld-sheet currents in the right-moving (bosonic) sector, each one corresponding to a vector\nmultiplet in the six dimensional theory. Thus, we have to show that the same number of\nworld-sheet currents appear in the twisted sectors or, equivalently, that the six dimensional\ntheory has still 24 vector multip",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1504.07260v3/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "C Symmetries and lattices",
+      "pageStart": 50,
+      "pageEnd": 56,
+      "target": "../sections/sec-031-c-symmetries-and-lattices.md",
+      "narrative": null,
+      "content": "Symmetries and lattices\nThe entries in tables 1, 2, 3 in this appendix correspond to the 42 conjugacy classes of\nthe Conway group that ﬁx a sublattice of the Leech lattice Λ of rank at least four. Each\nof these classes corresponds to a CHL model.\nFor each class, we provide the order of\ng ∈O(ΓK3) ⊂O(Γ6,22), the parameter λ determined as in (2.16) (λ > 1 denotes a failure\nof the level matching condition in the g-twisted sector), the Frame shape of g, and the\nﬁxed lattice Γg\nK3. Our notation is as follows: L(n) denotes a lattice L with the quadratic\nform rescaled by n; Am, Dm, E8 denote the root",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

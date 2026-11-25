@@ -1,0 +1,812 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2002.04901v5",
+  "title": "arxiv-2002.04901v5",
+  "variant": "pdf",
+  "pages": 20,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "0",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-0-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Idealistic Derived Completion and Torsion",
+      "number": "1",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-idealistic-derived-completion-and-torsion"
+    },
+    {
+      "level": 1,
+      "title": "Sequential Derived Completion and Torsion",
+      "number": "2",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-sequential-derived-completion-and-torsion"
+    },
+    {
+      "level": 1,
+      "title": "Weak Proregularity: When Idealistic and Sequential Agree",
+      "number": "3",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-3-weak-proregularity-when-idealistic-and-sequent"
+    },
+    {
+      "level": 1,
+      "title": "Weak Proregularity and Adic Flatness",
+      "number": "4",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-4-weak-proregularity-and-adic-flatness"
+    },
+    {
+      "level": 1,
+      "title": "Weak Proregularity and Quotient Rings",
+      "number": "5",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-5-weak-proregularity-and-quotient-rings"
+    },
+    {
+      "level": 1,
+      "title": "The Local Nature of Weak Proregularity",
+      "number": "6",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-6-the-local-nature-of-weak-proregularity"
+    },
+    {
+      "level": 1,
+      "title": "Weak Proregularity and Prisms",
+      "number": "7",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-7-weak-proregularity-and-prisms"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 153,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "weak proregularity",
+          "heading": false
+        },
+        {
+          "term": "adic ﬂatness",
+          "heading": false
+        },
+        {
+          "term": "derived completion",
+          "heading": false
+        },
+        {
+          "term": "prisms",
+          "heading": false
+        },
+        {
+          "term": "perfectoid",
+          "heading": false
+        }
+      ],
+      "extract": "WEAK PROREGULARITY, DERIVED COMPLETION, ADIC FLATNESS, AND PRISMS AMNON YEKUTIELI Abstract. We begin by recalling the role that weak proregularity of an ideal in a commu- tative ring has in derived completion and adic ﬂatness. We also introduce the new concepts of idealistic and sequential derived completion, and prove a few results about them, includ- ing the fact that these two concepts agree iﬀthe ideal is weakly",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2002.04901v5/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-0-introduction",
+      "number": "0",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1629,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adic flatness",
+          "heading": false
+        },
+        {
+          "term": "idealistic derived",
+          "heading": false
+        },
+        {
+          "term": "adic prism",
+          "heading": false
+        },
+        {
+          "term": "adic completion",
+          "heading": false
+        },
+        {
+          "term": "sequential derived",
+          "heading": false
+        },
+        {
+          "term": "perfectoid rings",
+          "heading": false
+        },
+        {
+          "term": "perfect prisms",
+          "heading": false
+        },
+        {
+          "term": "bounded prisms",
+          "heading": false
+        }
+      ],
+      "extract": "Let $A$ be a commutative ring. Various authors have previously considered two kinds of derived completions of complexes of $A$-modules, without a careful distinction between them, leading to some confusion. We begin our paper by recalling these two kinds of derived completions, and giving them names. The first kind of derived completion is determined by a finitely generated ideal $\\a \\sub A$, and accordingly we call",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-idealistic-derived-completion-and-torsion",
+      "number": "1",
+      "title": "Idealistic Derived Completion and Torsion",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 874,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "idealistic derived",
+          "heading": true
+        },
+        {
+          "term": "derived torsion",
+          "heading": true
+        },
+        {
+          "term": "functor mrm",
+          "heading": false
+        },
+        {
+          "term": "iso mrm",
+          "heading": false
+        },
+        {
+          "term": "tau mrm",
+          "heading": false
+        },
+        {
+          "term": "isomorphisms mrm",
+          "heading": false
+        },
+        {
+          "term": "idealistic sense",
+          "heading": false
+        },
+        {
+          "term": "cite psy",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:idealistic} Throughout the paper $A$ is a commutative ring. It is {\\em not} assumed that $A$ is a noetherian ring. We denote by $\\cat{M}(A)$ the category of $A$-modules, and by $\\cat{D}(A)$ its unbounded derived category. Our reference for derived categories is the book \\cite{Ye3}. In this section, $\\a$ is a finitely generated ideal of the ring $A$. For an $A$-module $M$, its $\\a$-adic completion is \\[",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-sequential-derived-completion-and-torsion",
+      "number": "2",
+      "title": "Sequential Derived Completion and Torsion",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1871,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sequential derived",
+          "heading": true
+        },
+        {
+          "term": "opn tel",
+          "heading": false
+        },
+        {
+          "term": "opn vee",
+          "heading": false
+        },
+        {
+          "term": "derived completion",
+          "heading": true
+        },
+        {
+          "term": "opn rhom",
+          "heading": false
+        },
+        {
+          "term": "bigl opn",
+          "heading": false
+        },
+        {
+          "term": "opn mult",
+          "heading": false
+        },
+        {
+          "term": "complexes opn",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:sequential} Here again $A$ is a commutative ring. A finite sequence $\\aa = (a_1, \\ldots, a_n)$ of elements of $A$ gives rise to several complexes of $A$-modules. We start with a single element $a \\in A$. For an $A$-module $M$ we denote by $\\opn{mult}_M(a) : M \\to M$ the endomorphism $\\opn{mult}_M(a)(m) := a \\cd m$. Recall that the {\\em Koszul complex} associated to the element $a$ is \\begin{equation}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-weak-proregularity-when-idealistic-and-sequent",
+      "number": "3",
+      "title": "Weak Proregularity: When Idealistic and Sequential Agree",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1318,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "opn rhom",
+          "heading": false
+        },
+        {
+          "term": "lto mrm",
+          "heading": false
+        },
+        {
+          "term": "opn vee",
+          "heading": false
+        },
+        {
+          "term": "mrm lim",
+          "heading": false
+        },
+        {
+          "term": "cat pro",
+          "heading": false
+        },
+        {
+          "term": "cat fun",
+          "heading": false
+        },
+        {
+          "term": "opn tel",
+          "heading": false
+        },
+        {
+          "term": "tau mrm",
+          "heading": false
+        }
+      ],
+      "extract": "We continue with the commutative ring $A$. In this section we recall the definition of {\\em weak proregularity}, and explain some of its useful properties. An inverse system of modules $\\{ N_i \\}_{i \\in \\N}$ is called {\\em pro-zero} if for every $i$ there is some $j \\geq i$ such that the homomorphism $N_j \\to N_i$ is zero. See Remark \\ref{rem:300} regarding this notion. Given a sequence $\\aa = (a_1, \\ldots, a_n)$ in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-weak-proregularity-and-adic-flatness",
+      "number": "4",
+      "title": "Weak Proregularity and Adic Flatness",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 858,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adic flatness",
+          "heading": true
+        },
+        {
+          "term": "flat module",
+          "heading": false
+        },
+        {
+          "term": "adic completion",
+          "heading": false
+        },
+        {
+          "term": "module opn",
+          "heading": false
+        },
+        {
+          "term": "opn mrm",
+          "heading": false
+        },
+        {
+          "term": "begin dfn",
+          "heading": false
+        },
+        {
+          "term": "end dfn",
+          "heading": false
+        },
+        {
+          "term": "opn tor",
+          "heading": false
+        }
+      ],
+      "extract": "Again, $A$ is some commutative ring. \\begin{dfn} \\label{dfn:225} Let $\\a$ be a finitely generated ideal in $A$, and let $M$ be an $A$-module. We say that $M$ is {\\em $\\a$-adically flat} if $\\opn{Tor}^{A}_q(N, M) = 0$ for every $\\a$-torsion $A$-module $N$ and every $q > 0$. \\end{dfn} This definition is copied from \\cite{Ye2}. In \\cite{BS2}, \\cite{CS} the term used is {\\em $\\a$-completely flat}. Here is a useful",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-weak-proregularity-and-quotient-rings",
+      "number": "5",
+      "title": "Weak Proregularity and Quotient Rings",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1623,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "opn mult",
+          "heading": false
+        },
+        {
+          "term": "opn ann",
+          "heading": false
+        },
+        {
+          "term": "opn bigl",
+          "heading": false
+        },
+        {
+          "term": "geq opn",
+          "heading": false
+        },
+        {
+          "term": "complexes opn",
+          "heading": false
+        },
+        {
+          "term": "cong opn",
+          "heading": false
+        },
+        {
+          "term": "iff opn",
+          "heading": false
+        },
+        {
+          "term": "opn ker",
+          "heading": false
+        }
+      ],
+      "extract": "Again $A$ is some commutative ring. The purpose of this extremely technical section is to prove Theorem \\ref{thm:105}. \\begin{dfn} \\label{dfn:106} An element $a \\in A$ is called a {\\em weakly proregular element} if the length one sequence $\\aa := (a)$ is weakly proregular in $A$. \\end{dfn} Given an element $a \\in A$ and an $A$-module $M$, the {\\em annihilator} of $a$ in $M$ is the submodule \\[ \\opn{Ann}_M(a) :=",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-6-the-local-nature-of-weak-proregularity",
+      "number": "6",
+      "title": "The Local Nature of Weak Proregularity",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 418,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wpr sequence",
+          "heading": false
+        },
+        {
+          "term": "opn bigl",
+          "heading": false
+        },
+        {
+          "term": "opn spec",
+          "heading": false
+        },
+        {
+          "term": "ideal sub",
+          "heading": false
+        },
+        {
+          "term": "covering sequence",
+          "heading": false
+        },
+        {
+          "term": "smallsmile",
+          "heading": false
+        },
+        {
+          "term": "ref eqn",
+          "heading": false
+        },
+        {
+          "term": "homomorphism begin",
+          "heading": false
+        }
+      ],
+      "extract": "As before, $A$ is a commutative ring. A sequence of elements $\\ss = (s_1, \\ldots, s_n)$ in $A$ is called a {\\em covering sequence} if $\\opn{Spec}(A) = \\bigcup\\nolimits_{i} \\opn{Spec}(A_{s_i})$. Here $A_{s_i} = A[s_i^{-1}]$, the localized ring. Clearly $\\ss$ is a covering sequence iff $\\sum_{i = 1, \\ldots, n} A \\cd s_i = A$. \\begin{thm} \\label{thm:306} Let $A$ be a ring and let $\\a \\sub A$ be an ideal. The following",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-7-weak-proregularity-and-prisms",
+      "number": "7",
+      "title": "Weak Proregularity and Prisms",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 330,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "element mbar",
+          "heading": false
+        },
+        {
+          "term": "let mbar",
+          "heading": false
+        },
+        {
+          "term": "adic prism",
+          "heading": false
+        },
+        {
+          "term": "wpr",
+          "heading": false
+        },
+        {
+          "term": "ideal sub",
+          "heading": false
+        },
+        {
+          "term": "begin dfn",
+          "heading": false
+        },
+        {
+          "term": "end dfn",
+          "heading": false
+        },
+        {
+          "term": "label dfn",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:prisms} For a prime number $p$ let $\\Z_p \\sub \\Q$ denote the local ring of $\\Z$ at $p$; i.e.\\ $\\Z_p = \\Z_{\\p}$ where $\\p := (p) \\in \\opn{Spec}(\\Z)$. (This is not to be confused with the complete local ring $\\what{\\Z}_p = \\what{\\Z}_{\\p}$.) \\begin{dfn}[\\cite{BS2}] \\label{dfn:135} A {\\em $p$-adic prism} is a pair $(A, I)$, where $A$ is a $\\Z_p$-ring, and $I \\sub A$ is an ideal. The conditions are:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 360,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bhatt",
+          "heading": false
+        },
+        {
+          "term": "scholze",
+          "heading": false
+        },
+        {
+          "term": "local homology",
+          "heading": false
+        },
+        {
+          "term": "yekutieli",
+          "heading": false
+        },
+        {
+          "term": "greenlees",
+          "heading": false
+        },
+        {
+          "term": "complete modules",
+          "heading": false
+        },
+        {
+          "term": "prisms",
+          "heading": false
+        },
+        {
+          "term": "eprint",
+          "heading": false
+        }
+      ],
+      "extract": "[AJL] L. Alonso, A. Jeremias and J. Lipman, Local homology and cohomology on schemes, Ann. Sci. ENS 30 (1997), 1-39. Correction: http://www.math.purdue.edu/~lipman. [BMS] B. Bhatt, M. Morrow and P. Scholze, Topological Hochschild Homology and Integral p-Adic Hodge Theory, Publ. Math. IHES 129 (2019), 199-310. [BS1] B. Bhatt and P. Scholze, The pro-étale topology for schemes, Astérisque 369 (2015), 99–201. [BS2] B.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mrm opn",
+      "heading": false
+    },
+    {
+      "term": "bigl opn",
+      "heading": false
+    },
+    {
+      "term": "homomorphism opn",
+      "heading": false
+    },
+    {
+      "term": "module opn",
+      "heading": false
+    },
+    {
+      "term": "opn vee",
+      "heading": false
+    },
+    {
+      "term": "opn rhom",
+      "heading": false
+    },
+    {
+      "term": "complexes opn",
+      "heading": false
+    },
+    {
+      "term": "opn spec",
+      "heading": false
+    },
+    {
+      "term": "opn tel",
+      "heading": false
+    },
+    {
+      "term": "opn mult",
+      "heading": false
+    },
+    {
+      "term": "geq opn",
+      "heading": false
+    },
+    {
+      "term": "complex opn",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 10,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p20); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 10 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2002.04901v5"
+  }
+}

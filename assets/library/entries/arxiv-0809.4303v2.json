@@ -1,0 +1,44 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0809.4303v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-0809.4303v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 10,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0809.4303v2  [hep-th]  5 May 2009\nExact vortex solutions in an extended Skyrme-Faddeev model\nL. A. Ferreira1\nInstituto de F´ısica de S˜ao Carlos; IFSC/USP;\nUniversidade de S˜ao Paulo - USP\nCaixa Postal 369, CEP 13560-970, S˜ao Carlos-SP, Brazil\nAbstract\nWe construct exact vortex solutions in 3 + 1 dimensions to a theory which is\nan extension, due to Gies, of the Skyrme-Faddeev model, and that is believed to\ndescribe some aspects of the low energy limit of the pure SU(2) Yang-Mills theory.\nDespite the eﬀorts in the last decades those are the ﬁrst exact analytical solutions\nto be construct",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0809.4303v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-000-references.md",
+      "narrative": null,
+      "content": "[1] L. D. Faddeev, “Quantization of solitons,”, Princeton preprint IAS Print-75-QS70\n(1975).\nL. D. Faddeev, in 40 Years in Mathematical Physics , (World Scientiﬁc, 1995);\n[2] R. A. Battye and P. M. Sutcliﬀe,\n“Knots as stable soliton solutions in a\nthree-dimensional classical ﬁeld theory,”\nPhys.\nRev. Lett. 81,\n4798 (1998)\n[arXiv:hep-th/9808129];\n[3] J. Hietarinta and P. Salo, “Ground state in the Faddeev-Skyrme model,” Phys. Rev.\nD 62, 081701(R) (2000).\n[4] L. D. Faddeev and A. J. Niemi,\n“Knots and particles,”\nNature 387,\n58\n(1997) [arXiv:hep-th/9610193], “Toroidal conﬁgurations as stable solit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

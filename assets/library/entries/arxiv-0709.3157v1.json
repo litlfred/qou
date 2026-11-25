@@ -1,0 +1,158 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0709.3157v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-0709.3157v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Chiral perturbation theory ($\\chi$PT for short) is regarded nowadays as the effective field theory dual to QCD at very low energies. It describes the dynamics of the pseudo--Goldstone bosons ($\\pi,\\, K,\\,\\eta$) in an expansion in powers of external momenta and masses. It incorporates the assumed QCD symmetries such as parity, charge conjugation and, most important, the spontaneous breakdown of chiral symmetry.\n\nThe idea of building the chiral Lagrangian was pioneered by Weinberg [@Wei] and systematized by Gasser and Leutwyler [@Gass1], who prepared the machinery for the computation of loop dia",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0709.3157v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0709.3157v1  [hep-ph]  20 Sep 2007\nChiral Lagrangians with tensor sources\n1\nV. Mateu\nDepartament de Física Teòrica, IFIC, Universitat de València-CSIC\nApt. Correus 22085, E-46071 València, Spain.\nAbstract. The implementation of tensor sources in Chiral Lagrangians allows the computation of\nGreen functions and form factors involving tensor currents, that is, quark bilinears of the form\n¯qi σ µν q j. Whereas only four new terms show up at O(p4), we ﬁnd around a hundred of them\nat O(p6). So it becomes essential to ensure that this set o operators is indeed minimal and non–\nredundant (i.e.,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0709.3157v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "QCD in the presence of external sources",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-qcd-in-the-presence-of-external-sources.md",
+      "narrative": null,
+      "content": "The external field method was first introduced by Leutwyler [@Leut], and makes easier the computation of QCD Green functions and form factors. It enforces chiral Ward identities exactly by promoting the global chiral symmetry to a local one. The basic idea is to introduce in the QCD action a set of local fields coupled to the QCD currents : $$\\!Z[v_{\\mu},a_{\\mu},s,p,{\\bar{t}}_{\\,\\mu\\nu}]=\\!\\!\\int\\! {\\cal{D}}{\\bar{q}}\\,{\\cal{D}}q\\,{\\cal{D}}G_{\\mu} \\,{\\mathrm{exp}}\\!\\left[i\\!\\int\\! d^4x\\,\\left\\{ {\\cal{L}}_{QCD}^0+{\\cal{L}}_{ext}(v_{\\mu},a_{\\mu},s,p,{\\bar{t}}_{\\mu\\nu})\\right\\}\\right],$$ where ${\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0709.3157v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chiral building blocks",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-chiral-building-blocks.md",
+      "narrative": null,
+      "content": "$\\chi$PT is based on the spontaneous breakdown of the global $G=SU(n_f)_L\\otimes SU(n_f)_R$ flavour symmetry down to its subgroup $SU(n_f)_V$. The dynamical fields $\\phi^a=(\\pi,K,\\eta)$ are assumed to be the (pseudo--)Goldstone bosons associated to this breakdown. The general formalism for effective Lagrangians with spontaneously broken symmetries was worked out by Callan, Coleman, Wess and Zumino [@CWZ], and for our case groups the $n_f^2-1$ fields in the matrix $u$ transforming under $G$ as $$u(\\phi^a)\\,=\\,{\\mathrm{exp}}\\left(\\frac{i}{2\\,F_0}\\,\\,\\phi^a\\,\\lambda^a\\right)\\,,\\quad u(\\phi^a)\\rig",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0709.3157v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The chiral Lagrangian",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-the-chiral-lagrangian.md",
+      "narrative": null,
+      "content": "The number of operators entering in the chiral Lagrangian is of course not restricted by symmetry. So in principle there are an infinite number of them, each one multiplied by an unknown coefficient (this is in agreement with the fact that $\\chi$PT is not normalizable *stricto sensu*). So if one has to take them all into account in any calculation, loses all predictive power. At low energies (compared with the chiral scale $\\Lambda_\\chi\\sim4\\pi F\\sim 1\\, \\mathrm{GeV}$) pieces with lower powers of momentum and quark masses dominate, and this allows to truncate the number of operators. This idea",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0709.3157v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two comments on tensor sources",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-two-comments-on-tensor-sources.md",
+      "narrative": null,
+      "content": "So far we have restricted ourselves to the even--intrinsic sector. The odd--intrinsic sector involving external sources is characterized by being proportional to the Levi--Civitá symbol $\\varepsilon_{\\mu\\nu\\sigma\\rho}$. Using the fact that this symbol appears on the definition of the tensor chiral projectors, Eq. ([\\[chiral-projector\\]](#chiral-projector){reference-type=\"ref\" reference=\"chiral-projector\"}), in Ref. [@Cata:2007ns] it was demonstrated that when acting on a tensor source it can be written in a form which is manifestly even--intrinsic. Then the odd--intrinsic--parity sector with t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0709.3157v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tensor sources in the Resonance chiral theory and the radiative pion decay",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-005-tensor-sources-in-the-resonance-chiral-theory-an.md",
+      "narrative": null,
+      "content": "It is well known that if one wishes to extend the energy domain of $\\chi$PT resonances must be include as active degrees of freedom. The idea of constructing chiral Lagrangians with resonances fields was pioneered in Ref. [@EGPR], but the inclusion of tensor sources was first considered in Ref. [@CMinprogress]. For a consistent introduction of tensor sources one has to consider spin--one resonances of $J^{PC}=1^{+-}$ quantum numbers, first included in Ref. [@Zauner]. It can be shown that such resonances only manifest themselves dynamically when coupled to tensor sources [@CMinprogress]. Howeve",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0709.3157v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-006-conclusions.md",
+      "narrative": null,
+      "content": "We have included tensor sources in the $\\chi$PT formalism and explicitly constructed the $\\mathcal{O}(p^4)$ and $\\mathcal{O}(p^6)$ Lagrangians. The challenging part of this construction is to find a complete and non--redundant set of operators. For the reduction of the basis we have followed standard procedures. We have demonstrated that there is no odd--intrinsic--parity sector with tensor sources at the $\\mathcal{O}(p^6)$ level.\n\nThis formalism has proved to be useful for a better understanding of vector--meson spectroscopy and also for disentangling a possible tensor interaction beyond the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

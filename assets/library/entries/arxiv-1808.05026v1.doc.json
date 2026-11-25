@@ -1,0 +1,557 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1808.05026v1",
+  "title": "arxiv-1808.05026v1",
+  "variant": "pdf",
+  "pages": 9,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-preliminaries"
+    },
+    {
+      "level": 1,
+      "title": "Review of results for the Temperley-Lieb algebra of type An-1",
+      "number": "3",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-review-of-results-for-the-temperley-lieb-algeb"
+    },
+    {
+      "level": 1,
+      "title": "Gröbner-Shirshov bases for the Temperley-Lieb algebras of type Bn",
+      "number": "4",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-gröbner-shirshov-bases-for-the-temperley-lieb"
+    },
+    {
+      "level": 1,
+      "title": "Gröbner-Shirshov bases for the Temperley-Lieb algebras of type Dn",
+      "number": "5",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-gröbner-shirshov-bases-for-the-temperley-lieb"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 39,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "obner-shirshov bases",
+          "heading": false
+        },
+        {
+          "term": "temperley-lieb algebras",
+          "heading": false
+        },
+        {
+          "term": "sungsoon",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1808.05026v1 [math.RA] 15 Aug 2018 GR¨OBNER-SHIRSHOV BASES FOR TEMPERLEY-LIEB ALGEBRAS OF TYPES B AND D SUNGSOON KIM1 AND DONG-IL LEE2,∗ Abstract. For Temperley-Lieb algebras of types B and D, we construct their Gr¨obner-Shirshov bases and the corresponding standard monomials.",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-1808.05026v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 375,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "temperley-lieb algebras",
+          "heading": false
+        },
+        {
+          "term": "standard monomials",
+          "heading": false
+        },
+        {
+          "term": "associative algebras",
+          "heading": false
+        },
+        {
+          "term": "algorithm cite",
+          "heading": false
+        },
+        {
+          "term": "shirshov",
+          "heading": false
+        },
+        {
+          "term": "smallskip",
+          "heading": false
+        },
+        {
+          "term": "stembridge",
+          "heading": false
+        },
+        {
+          "term": "fan",
+          "heading": false
+        }
+      ],
+      "extract": "\\bigskip Originally, the Temperley-Lieb algebra appears in the context of statistical mechanics \\cite{TemperleyLieb}, and later its structure has been studied in connection with knot theory, where it is known to be a quotient of the Hecke algebra of type $A$ \\cite{Jones1987}. \\smallskip Our method for understanding the structure of Temperley-Lieb algebras is from the noncommutative \\G basis theory, called the {\\em",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 660,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "mathbb langle",
+          "heading": false
+        },
+        {
+          "term": "end defn",
+          "heading": false
+        },
+        {
+          "term": "begin defn",
+          "heading": false
+        },
+        {
+          "term": "enumerate item",
+          "heading": false
+        },
+        {
+          "term": "monic elements",
+          "heading": false
+        },
+        {
+          "term": "equiv mod",
+          "heading": false
+        },
+        {
+          "term": "overline",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we recall a basic theory of {\\em \\GS bases} for associative algebras so as to make the paper self-contained. There will be some properties listed without proofs which are well-known and necessary for this paper. \\\\ Let $X$ be a set and let $\\langle X\\rangle$ be the free monoid of associative words on $X$. We denote the empty word by $1$ and the {\\em length} (or {\\em degree}) of a word $u$ by $l(u)$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-review-of-results-for-the-temperley-lieb-algeb",
+      "number": "3",
+      "title": "Review of results for the Temperley-Lieb algebra of type An-1",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 439,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "temperley-lieb algebra",
+          "heading": true
+        },
+        {
+          "term": "e1e",
+          "heading": false
+        },
+        {
+          "term": "standard monomials",
+          "heading": false
+        },
+        {
+          "term": "brt",
+          "heading": false
+        },
+        {
+          "term": "ejei",
+          "heading": false
+        },
+        {
+          "term": "jei",
+          "heading": false
+        },
+        {
+          "term": "review",
+          "heading": true
+        }
+      ],
+      "extract": "First, we review the results on Temperley-Lieb algebras T (An−1) (n ≥2). Deﬁne T (An−1) to be the associative algebra over the complex ﬁeld C, generated by X = {E1, E2, . . . , En−1} with deﬁning relations: E2 i = δEi for 1 ≤i ≤n −1, RT (An−1) : EiEj = EjEi for i > j + 1 (commutative relations), EiEjEi = Ei for j = i ± 1, where δ ∈C is a parameter. Our monomial order < is taken to be the degree-lexicographic order",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-gröbner-shirshov-bases-for-the-temperley-lieb",
+      "number": "4",
+      "title": "Gröbner-Shirshov bases for the Temperley-Lieb algebras of type Bn",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1041,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "e0e",
+          "heading": false
+        },
+        {
+          "term": "eiejeiej eiej",
+          "heading": false
+        },
+        {
+          "term": "brt",
+          "heading": false
+        },
+        {
+          "term": "standard monomials",
+          "heading": false
+        },
+        {
+          "term": "jei",
+          "heading": false
+        },
+        {
+          "term": "j1ei",
+          "heading": false
+        },
+        {
+          "term": "eip",
+          "heading": false
+        },
+        {
+          "term": "e0ei",
+          "heading": false
+        }
+      ],
+      "extract": "Let T (Bn) (n ≥2) be the Temperley-Lieb algebra of type Bn, that is, the associative algebra over the complex ﬁeld C, generated by X = {E0, E1, . . . , En−1} with deﬁning relations: E2 i = δEi for 0 ≤i ≤n −1, RT (Bn) : EiEj = EjEi for i > j + 1, (4.1) EiEjEi = Ei for j = i ± 1, i, j > 0, EiEjEiEj = 2EiEj for {i, j} = {0, 1}, where δ ∈C is a parameter. . Fix our monomial order < to be the degree-lexicographic order",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-gröbner-shirshov-bases-for-the-temperley-lieb",
+      "number": "5",
+      "title": "Gröbner-Shirshov bases for the Temperley-Lieb algebras of type Dn",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 859,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "temperley-lieb algebras",
+          "heading": true
+        },
+        {
+          "term": "e0e",
+          "heading": false
+        },
+        {
+          "term": "brt",
+          "heading": false
+        },
+        {
+          "term": "standard monomials",
+          "heading": false
+        },
+        {
+          "term": "e0ei",
+          "heading": false
+        },
+        {
+          "term": "jei",
+          "heading": false
+        },
+        {
+          "term": "eiei",
+          "heading": false
+        },
+        {
+          "term": "e1e",
+          "heading": false
+        }
+      ],
+      "extract": "Now we consider T (Dn) (n ≥4), the Temperley-Lieb algebra of type Dn, which is the associative algebra over the complex ﬁeld C, generated by X = {E0, E1, E2, . . . , En−1} with deﬁning relations: E2 i = δEi for 0 ≤i ≤n −1, EiEj = EjEi for 1 < j + 1 < i ≤n −1, RT (Dn) : EiE0 = E0Ei for i̸ = 2 (5.1) EiEjEi = Ei for j = i ± 1, i, j > 0, EiEjEi = Ei for {i, j} = {0, 2}, where δ ∈C is a parameter. TEMPERLEY-LIEB ALGEBRAS",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 369,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "obner-shirshov bases",
+          "heading": false
+        },
+        {
+          "term": "coxeter groups",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "bokut",
+          "heading": false
+        },
+        {
+          "term": "e-mail address",
+          "heading": false
+        },
+        {
+          "term": "lee",
+          "heading": false
+        },
+        {
+          "term": "shirshov",
+          "heading": false
+        },
+        {
+          "term": "seoul",
+          "heading": false
+        }
+      ],
+      "extract": "References [1] G. M. Bergman, The diamond lemma for ring theory, Adv. Math. 29 (1978), 178–218. [2] L. A. Bokut, Imbedding into simple associative algebras, Algebra and Logic 15 (1976), 117–142. [3] L. A. Bokut, L.-S. Shiao, Gr¨obner-Shirshov bases for Coxeter groups, Comm. Algebra 29 (2001), 4305–4319. [4] B. Buchberger, An algorithm for ﬁnding the basis elements of the residue class ring of a zero dimensional",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "standard monomials",
+      "heading": false
+    },
+    {
+      "term": "temperley-lieb algebras",
+      "heading": true
+    },
+    {
+      "term": "monomials becomes",
+      "heading": false
+    },
+    {
+      "term": "monomials containing",
+      "heading": false
+    },
+    {
+      "term": "let brt",
+      "heading": false
+    },
+    {
+      "term": "obner-shirshov bases",
+      "heading": false
+    },
+    {
+      "term": "eiej ejei",
+      "heading": false
+    },
+    {
+      "term": "obner-shirshov basis",
+      "heading": false
+    },
+    {
+      "term": "associative algebras",
+      "heading": false
+    },
+    {
+      "term": "e0e",
+      "heading": false
+    },
+    {
+      "term": "jei",
+      "heading": false
+    },
+    {
+      "term": "hecke algebras",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 6,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 7,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p9); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 7 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1808.05026v1"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-lean-community-libraries-dag",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:lean-community-libraries-dag",
+  "kind": "table",
+  "title": "Dependency graph and module inventory of the six standalone Lean 4 Reservoir community libraries",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prose-formalisation-coverage"
+  ],
+  "tags": [
+    "lean-infrastructure",
+    "reservoir",
+    "community-libraries",
+    "dag",
+    "appendix"
+  ],
+  "text": "lean-community-libraries-dag.md",
+  "provenance": "authored"
+}

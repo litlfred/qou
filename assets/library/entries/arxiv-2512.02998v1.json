@@ -1,0 +1,344 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2512.02998v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2512.02998v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\n1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.02998v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motivation",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-11-motivation.md",
+      "narrative": null,
+      "content": "The notion of \\emph{ambient isotopy} is used in classical knot theory\nto distinguish between different knot classes. It follows from a result\nof Fisher \\cite[Theorem~15]{fisher_1960} that \ntwo knots $\\g_1,\\g_2\\in C^0(\\R/\\Z,\\R^3)$\nare ambiently isotopic if there exists an orientation preserving\nhomeomorphism $h:\\R^3\\to\\R^3$ such that $h\\circ\\g_1=\\g_2$. In concrete applications\nit might be hard to come up with such a homeomorphism, but in the smooth category one\nhas the following useful stability theorem which to the best of our knowledge\nhas first been explicitly stated and proven by Diao et al",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.02998v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "STABILITY OF KNOT EQUIVALENCE AT LOW REGULARITY, AND\nSYMMETRIC CRITICAL KNOTS FOR THE M¨OBIUS ENERGY\nSIMON BLATT, ALEXANDRA GILSBACH, PHILIPP REITER, AND HEIKO VON DER MOSEL\nAbstract. We present sufficient criteria for the equivalence of tame knots at low regularity. To\nthis end, we introduce a localized version of Gromov’s distortion for any closed path-connected\nsubset of Rn.\nIf two such sets have local Gromov distortion below a universal dimension-\ndependent constant gn at some scale, and if their Hausdorff-distance is less than one quarter\nof that scale, we can show that the fundamental gr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.02998v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Isomorphic fundamental groups via localized distortion",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-12-isomorphic-fundamental-groups-via-localized-d.md",
+      "narrative": null,
+      "content": "In order to apply the results on knot equivalence, i.e., Theorem~\\ref{thm:gordon-luecke},\nunder low regularity assumptions\nwe are going to use a localized version of Gromov's distortion \\cite{gromov_1978}. \nFor a closed, path-connected set $M\\subset\\R^n$ its \\emph{distortion} is defined as\nthe quantity\n\\begin{equation}\\label{eq:distortion}\n\\delta(M):=\\sup_{x,y\\in M\\atop x\\not= y}\\frac{d_M(x,y)}{|x-y|}\n\\qquad\\ge 1,\n\\end{equation}\nwhere $d_M(x,y)$ denotes the  \n\\emph{intrinsic distance} between the points $x,y$, i.e.,\nthe length of the shortest curve  in $M$ connecting $x$ with $y$. It is well-k",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.02998v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stability of knot equivalence",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-13-stability-of-knot-equivalence.md",
+      "narrative": null,
+      "content": "As an immediate consequence of Theorem~\\ref{thm:isomorphic} in combination with\npart (iii) of Theorem~\\ref{thm:gordon-luecke} we obtain a simple\nsufficient geometric criterion for knot equivalence.\n\\begin{corollary}[Knot equivalence via local distortion]\n\\label{cor:equiv-knots}\nTwo tame knots $\\g_i\\in C^0(\\R/\\Z,\\R^3)$ with local \ndistortion \n $\\delta(\\g_i(\\R/\\Z),r_{\\g_i})<g_3$\nat scales $r_{\\g_i}>0$\nfor $i=1,2$, and\n$\\dist_{\\HH}(\\g_1(\\R/\\Z),\\g_2(\\R/\\Z))$\n$<\\frac 14 \\min\\{r_{\\g_1},r_{\\g_2}\\}$, are equivalent.\n\\end{corollary}\n\nNotice that a small Hausdorff-distance, even an arbitrarily\nsmall $L^",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.02998v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetric critical points for scale-invariant knot energies",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-14-symmetric-critical-points-for-scale-invariant.md",
+      "narrative": null,
+      "content": "The fractional Sobolev space $W^{\\frac32, 2}(\\R/\\Z,\\R^3)$ is the natural\nenergy space for  the \n\\emph{M\\\"obius energy}\n\\begin{equation}\\label{eq:emob}\nE_\\textnormal{M\\\"ob}(\\g):=\\int_{\\R/\\Z}\\int_{\\R/\\Z}\\left(\n\\frac1{|\\g(s)-\\g(t)|^2}-\n\\frac{1}{d_\\g(\\g(s),\\g(t))^2}\\right)|\\g'(s)||\\g'(t)|\\,dsdt.\n\\end{equation}\nIndeed, an arclength parametrized\ncurve $\\g:\\R/\\Z\\to\\R^3$ has finite M\\\"obius energy  \n\nif and only if \n$\\g$ is embedded and of\nclass $W^{\\frac32,2}(\\R/\\Z,\\R^3)$ as shown in \\cite{blatt_2012a} \n(see \n\\cite[Theorem~3.2 (i)]{gilsbach-vdm_2018} for an explicit a priori bound\non the fractional s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.02998v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Strategy and outline of the paper",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-005-15-strategy-and-outline-of-the-paper.md",
+      "narrative": null,
+      "content": "\\label{sec:strategy}\nIn Section~\\ref{sec:distortion} we analyze the effects\nof the smallness\ncondition on local distortion  on general\nclosed, path-connected subsets $M\\subset\\R^n$. For \neach $x$ near (but not in) $M$ we find\na direction that ``points away from $M$''. These\ndirections are glued together in Section~\\ref{sec:pseudo}\nwith a partition of unity to construct a kind of\npseudo-gradient vector field for the distance function $\\dist(\\cdot,M)$.  We solve\nuniquely and globally two different flow equations with respect\nto this vector field to define homotopies in the complement\n$\\R^n\\setmi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.02998v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sets with local distortion below a quarter circle",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "../sections/sec-006-2-sets-with-local-distortion-below-a-quarter-cir.md",
+      "narrative": null,
+      "content": "\\label{sec:distortion}\nLet $M\\subset\\R^n$ for $n\\ge 3$ \nbe a nonempty closed path-connected set \nwith local\ndistortion strictly below the dimension-dependent \nconstant $g_n$ defined in\n\\eqref{eq:dekster-jung}.\nLet $r_M=r_M(n)$ be an admissible scale.\nSince the function $g(x):=\\frac{x/2}{\\sin(x/2)}\n$ is strictly increasing on $[0,\\pi]$ with \n$\\lim_{x\\searrow 0}g(x)=1$ and\n$\\lim_{x\\nearrow \\pi}g(x)=\\frac{\\pi}2>g_n>\n\\frac{\\pi}{\\sqrt{8}}>1$ for all $n\\in\\N,$\n$n\\ge 3$, there exist unique angles $0<\\alpha_M<\\beta_n<\\pi $ such that\n$1\\le g(\\alpha_M)=\\delta(M,r_M)<g_n=g(\\beta_n)<\\frac{\\pi}2$. \nWe call",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.02998v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pseudo-gradient flow for the distance function",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-007-3-pseudo-gradient-flow-for-the-distance-function.md",
+      "narrative": null,
+      "content": "\\label{sec:pseudo}\nThe globally defined vector field $V$ constructed in Proposition \\ref{prop:vf}\nfor the set $M\\subset\\R^n$ satisfying the local distortion bound induces\ngeometric flows on the complement $\\R^n\\setminus M$ increasing or decreasing the distance\nto $M$. To construct a \\emph{distance-increasing} flow $h_M^+:\\R^n\\setminus M\\times [0,1]\\to\n\\R^n\\setminus M$ take a cut-off function $\\varphi\\in C^\\infty(\\R^n)$ with\n\\begin{equation}\\label{eq:varphi}\n\\begin{cases}\n\\varphi\\ge 0 & \\ON\\R^n,\\\\\n\\varphi\\equiv 1 & \\ON B_{\\frac12{r_M}-\\rho}(M),\\\\\n\\varphi\\equiv 0 & \\ON \\R^n\\setminus B_{\\frac12{r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.02998v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Isomorphisms of fundamental groups",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "../sections/sec-008-4-isomorphisms-of-fundamental-groups.md",
+      "narrative": null,
+      "content": "\\label{sec:iso}\nThis section is devoted to the proof of Theorem~\\ref{thm:isomorphic}. \nTo start with, notice that  the mappings $r\\mapsto\\delta(M_i,r)$,\n$i=1,2$, are non-decreasing, where $M_i$ are\n\n\nthe two non-empty,\nclosed and path-connected sets with path-connected complement \n$\\R^n\\setminus M_i$,\n\nsuch that\n\\begin{equation}\\label{eq:distortion-assumptions}\n\\delta(M_i,r_{M_i})< g_n\\quad\\Fo i=1,2, \\quad\\AND \n\\dist_{\\HH}(M_1,M_2)<\\frac14\n\\min\\{r_{M_1},r_{M_2}\\},\n\\end{equation}\nas requested in Theorem~\\ref{thm:isomorphic}. \nSo, we set\n\\begin{equation}\\label{eq:r*}\nr^*:=\\min\\{r_{M_1},r_{M_2}\\}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.02998v1/blocks/cor-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "Fractional seminorm controls bilipschitz constant",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "cor-sec-009-02.md",
+      "narrative": null,
+      "content": "If γ ∈W 2 ,2(I, Rn) is arc- length parametrized, then (5.10) |γ(t) −γ(s)|2 ≥ \u00001 −1 2⌊γ′⌋2 2 ,2,I \u0001 |t −s|2 for all s, t ∈I.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2512.02998v1/blocks/lem-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "lem-sec-009-01.md",
+      "narrative": null,
+      "content": "Let I ⊂R be an interval and γ : I →Rn an absolutely continuous immersed curve with positive speed vγ = essinfI |γ′|. Then one has for all s, t ∈I with s < t (5.9) |γ(t) −γ(s)|2 ≥ n v2 γ −1 t ˆ s t ˆ s |γ′(u) −γ′(v)|2 |u −v|2 dudv o |t −s|2. As an immediate consequence one deduces 9In [21] a bilipschitz constant is defined as any number L > 0 such that L−1dγ(u, v)| ≤|γ(u) −γ(v)| ≤ Ldγ(u, v) holds for all u, v ∈R/Z. If γ is parametrized by arclength then the infimum of those L is biLipI(γ)−1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2512.02998v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stability of knot equivalence",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-009-5-stability-of-knot-equivalence.md",
+      "narrative": null,
+      "content": "The equivalence of two tame knots γ1, γ2 ∈C0(R/Z, R3) with local distortion below g3 (or\neven below\nπ\n√\n8) at some positive scales, such that the knots are sufficiently close in terms of\nthese scales, was stated in Corollary 1.3. This was a direct consequence of Theorem 1.2 applied\nto the knots’ images Mi := γi(R/Z), i = 1, 2, in combination with Theorem B. We are going\nto apply Corollary 1.3 now to a knot and a small Lipschitz perturbation of that knot to prove\nthe Lipschitz stability of knot equivalence, i.e., Corollary 1.4. For that we specify the local\ndistortion at some scale r > 0 as def",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.02998v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Harmonic substitution",
+      "pageStart": 17,
+      "pageEnd": 23,
+      "target": "../sections/sec-010-6-harmonic-substitution.md",
+      "narrative": null,
+      "content": "\\label{sec:harmonic}\nIn this section we study the effects on the local distortion of\na curve if we replace some subarcs of\na curve by straight segments, since this is\nwhat we will do later to adequately modify minimizing sequences  for the\nM\\\"obius energy. By Blatt's characterization \\cite[Theorem~1.1]{blatt_2012a}\nof the corresponding\nenergy space we can assume  arclength parametrized  curves of class \n$W^{\\frac32,2}(\\R/\\Z,\\R^n)$, but keep in mind \nthat such a replacement by straight\nsegments generally destroys this fractional Sobolev regularity.\n\nWe begin with a result that basically reflect",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.02998v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weak fractional compactness",
+      "pageStart": 23,
+      "pageEnd": 29,
+      "target": "../sections/sec-011-7-weak-fractional-compactness.md",
+      "narrative": null,
+      "content": "\\label{sec:compactness}\nFrom the introduction we recall  \nDefinition~\\eqref{eq:symmetric-subset} of\nthe $p$-rotationally symmetric subset $\\Sigma_p(\\mathcal{K})$ of a given\nknot equivalence class $\\mathcal{K}$ for $p\\in\\N\\setminus\\{1\\}$. \nConsider now for given constants\n$L\\ge 1$ and $R>0$ the subset\n\\begin{equation}\\label{eq:compact-subset}\n\\mathcal{F}_{p,L,R}(\\mathcal{K}):=\n\\{\\eta\\in\\Sigma_p(\\mathcal{K})\\!\\cap\\! W^{\\frac32,2}(\\R/\\Z,\\R^3):\n|\\eta'|\\!=\\!1\\,\\textnormal{a.e.},\\,\\bilip(\\eta)\\!\\ge\\!\n\\textstyle\\frac1{L},\\,\\max\\{|\\eta(0)|,\\lfloor\\eta'\n\\rfloor^2_{\\frac12,2}\\}\\!\\le\\! R\\},\n\\end{equation",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.02998v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetric critical knots",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "../sections/sec-012-8-symmetric-critical-knots.md",
+      "narrative": null,
+      "content": "\\label{sec:symm-critical}\nIn this section we are going to use our weak compactness result, Theorem\n\\ref{thm:fractional-compactness}, to prove the existence of rotationally\nsymmetric critical knots for the M\\\"obius energy.\n\n{\\it Proof of Theorem~\\ref{thm:symm-crit-prime}.}\\,\nSince $\\Sigma_p(\\mathcal{K})$ contains a knot with finite M\\\"obius energy,\nthe knot equivalence class $\\mathcal{K}$ is tame according to\n\\cite[Theorem~4.1]{freedman-etal_1994}, \nthe infimum of the energy is finite, and there is a minimizing sequence\n$(\\g_m)_m\\subset\\Sigma_p(\\mathcal{K})$ with \n$$\n\\emob(\\g_m)\\to\\inf_{\\Sigma_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.02998v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../sections/sec-013-acknowledgements.md",
+      "narrative": null,
+      "content": "S.B.\\@ was partially funded through FWF grant no. P 29487-N32 ``Gradient flows of curvature energies''.\nA.G.\\@ gratefully acknowledges funding through an incoming grant of the University\nof Salzburg, and through the stipend  ``International Research Fellow of JSPS (Postdoctoral Fellowships for Research in Japan)''.\nPh.R.\\@ has been partially supported by the\nGerman Research Foundation (DFG) through project number 289032105.\nH.v.d.M.\\@'s work is partially funded by the Excellence Initiative of the\nGerman federal and state governments.\n\nWhile working on an early draft of this paper, A.G.\\@ \nenjo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.02998v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "../sections/sec-014-references.md",
+      "narrative": null,
+      "content": "[1] S. Blatt. Note on continuously differentiable isotopies. Report 34, RWTH Aachen University, 2009.\n[2] S. Blatt. Boundedness and regularizing effects of O’Hara’s knot energies. J. Knot Theory Ramifications,\n21(1):1250010, 9, 2012.\n[3] S. Blatt. Curves between Lipschitz and C1 and their relation to geometric knot theory. J. Geom. Anal.,\n29(4):3270–3292, 2019.\n[4] S. Blatt and Ph. Reiter. Modeling repulsive forces on fibres via knot energies. Computational and Mathe-\nmatical Biophysics, 2(1):56–72, 2014.\n[5] S. Blatt, Ph. Reiter, and A. Schikorra. Harmonic analysis meets critical knots. Criti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

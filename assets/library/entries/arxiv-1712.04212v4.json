@@ -1,0 +1,177 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1712.04212v4",
+  "blocks": [
+    {
+      "id": "library/arxiv-1712.04212v4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 8,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "In the present paper,\nwe consider a concentration of measure problem on manifolds with boundary.\nWe study concentration phenomena of non-negative $1$-Lipschitz functions with Dirichlet boundary condition.\n\n\n\n\\subsection{Motivations}\nLet us recall the following well-known fact:\nThe normalized volume measure on the $n$-dimensional unit sphere concentrates around the equator when $n$ is large.\nOne can rephrase this fact as follows:\nThe normalized volume measure on the $n$-dimensional unit hemisphere concentrates around the boundary when $n$ is large.\n\nWe call a triple $X=(X,d_{X},\\mu_{X})$ a \\tex",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04212v4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1712.04212v4  [math.MG]  16 Aug 2018",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04212v4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 8,
+      "pageEnd": 14,
+      "target": "../sections/sec-001-2-preliminaries.md",
+      "narrative": null,
+      "content": "\\label{sec:Preliminaries}\nThroughout this section,\nlet $(M,d_{M},m_{M,f})$ denote an $n$-dimensional weighted Riemannian manifold with boundary defined as (\\ref{eq:weighted volume measure}). \n\n\n\n\\subsection{Curvatures}\\label{sec:Curvatures}\nWe denote by $\\ric_{g}$ the Ricci curvature on $M$ determined by the Riemannian metric $g$,\nand by $\\ric_{M}$ the infimum of $\\ric_{g}$ on the unit tangent bundle over $M$.\nFor $N\\in (-\\infty,\\infty]$,\nthe \\textit{$N$-weighted Ricci curvature} $\\ric^{N}_{f}$ is defined as follows:\nIf $N \\in (-\\infty,\\infty)\\setminus \\{n\\}$,\nthen\n\\begin{equation*}\n\\ric^{N}_{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04212v4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariants",
+      "pageStart": 14,
+      "pageEnd": 19,
+      "target": "../sections/sec-002-3-invariants.md",
+      "narrative": null,
+      "content": "\\label{sec:Invariants}\n\n\n\n\\subsection{Isomophisms}\nWe first introduce the following notion:\n\\begin{defi}\\label{defi:dominance}\nFor $i=1,2$,\nlet $X_{i}=(X_{i},d_{X_{i}},\\mu_{X_{i}})$ be metric measure spaces with boundary.\nWe say that \\textit{$X_{1}$ dominates $X_{2}$} if\nthere exists a $1$-Lipschitz map $\\Phi:X_{1}\\to X_{2}$ such that\n\\begin{equation}\\label{eq:dominance}\n\\Phi_{\\#}\\mu_{X_{1}}=\\mu_{X_{2}},\\quad \\Phi(\\partial X_{1})\\subset \\partial X_{2},\n\\end{equation}\nwhere $\\Phi_{\\#}\\mu_{X_{1}}$ denotes the push-forward of $\\mu_{X_{1}}$ by $\\Phi$.\nWe also say that\n$X_{1}$ and $X_{2}$ are \\text",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04212v4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dirichlet eigenvalues",
+      "pageStart": 19,
+      "pageEnd": 22,
+      "target": "../sections/sec-003-4-dirichlet-eigenvalues.md",
+      "narrative": null,
+      "content": "\\label{sec:Dirichlet eigenvalues}\nIn what follows,\nlet $(M,d_{M},m_{M,f})$ denote an $n$-dimensional weighted Riemannian manifold with boundary defined as (\\ref{eq:weighted volume measure}) such that $m_{M,f}$ is a Borel probability measure.\nWe study the metric measure space with boundary $(M,f)$ defined as (\\ref{eq:weighted Riemannian manifold}).\n\n\n\n\\subsection{Boundary separation distances and Dirichlet eigenvalues}\nLet us show the following relation between the boundary separation distance and the Dirichlet eigenvalue:\n\\begin{lem}\\label{lem:Dirichlet eigenvalue and Dirichlet separation dist",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04212v4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Finite dimensional comparisons",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "../sections/sec-004-5-finite-dimensional-comparisons.md",
+      "narrative": null,
+      "content": "\\label{sec:Comparisons}\n\n\n\n\\subsection{Estimates}\nTo prove Theorem \\ref{thm:main theorem},\nwe begin with the following:\n\\begin{lem}\\label{lem:key lemma}\nLet $\\bm$ be compact.\nFor $N\\in [n,\\infty)$,\nlet us assume $\\ric^{N}_{f,\\bm^{\\perp}}\\geq (N-1)\\kappa$ and $H_{f,\\bm} \\geq (N-1)\\lambda$.\nSuppose additionally that\n$\\IR M\\leq D$ for some $D>0$.\nFor $\\eta \\in (0,1)$,\nlet $\\Omega \\subset M$ be a Borel subset with $m_{M,f}(\\Omega)\\geq \\eta$ and $d_{M}(\\Omega,\\bm)>0$.\nThen we have\n\\begin{equation*}\ns_{N,\\kappa,\\lambda}(d_{M}(\\Omega,\\bm)) \\leq s_{N,\\kappa,\\lambda}(D)(1-\\eta),\n\\end{equation*} \nwhere",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04212v4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Infinite dimensional comparisons",
+      "pageStart": 26,
+      "pageEnd": 30,
+      "target": "../sections/sec-005-6-infinite-dimensional-comparisons.md",
+      "narrative": null,
+      "content": "\\label{sec:Infinite dimensional comparisons}\n\n\n\n\\subsection{Relative volume comparisons}\\label{sec:Relative volume comparisons}\nIn order to prove Theorem \\ref{thm:infinite dimensional main theorem},\nwe develop comparison geometry of manifolds with boundary under the curvature condition (\\ref{eq:infinite dimensional curvature bound}).\nWe notice that\nin our comparison theorems in this subsection,\n$m_{M,f}$ need not be a probability measure.\n\nWe first show the following Laplacian comparison:\n\\begin{lem}\\label{lem:Laplacian comparison}\nLet $z\\in \\bm$.\nLet us assume that\n$\\ric^{\\infty}_{f}(\\gamma'_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04212v4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Boundary concentration phenomena",
+      "pageStart": 30,
+      "pageEnd": 35,
+      "target": "../sections/sec-006-7-boundary-concentration-phenomena.md",
+      "narrative": null,
+      "content": "\\label{sec:Boundary concentration phenomena}\n\n\n\n\\subsection{Critical scale orders}\\label{sec:Sequences of model spaces}\n\nWe first state the following assertion concerning the critical scale order of sequences of hemispheres (cf. Proposition \\ref{prop:ball distribution laws}, Subsection 1.1 in \\cite{GM}, Corollary 2.22 in \\cite{Sh}, Theorem 8.1.1 and Corollary 8.5.7 in \\cite{Sh1}):\n\\begin{thm}\\label{thm:sequence of hemisphere}\nFor $\\kappa>0$,\nand for every $\\eta \\in (0,1]$\nwe have\n\\begin{equation}\\label{eq:sequence of hemisphere}\n\\lim_{n\\to \\infty}\\OI(B^{n}_{\\kappa/n,0};-\\eta)= \\PI(G_{\\kappa,0}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04212v4/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 35,
+      "pageEnd": 37,
+      "target": "../sections/sec-007-references.md",
+      "narrative": null,
+      "content": "[1] D. Bakry and M. ´Emery, Diﬀusions hypercontractives, S´eminaire de proba-\nbilit´es, XIX, 1983/84, 177–206, Lecture Notes in Math., 1123, Springer, Berlin,\n1985.\n[2] D. Bakry and M. Ledoux, L´evy-Gromov’s isoperimetric inequality for an\ninﬁnite-dimensional diﬀusion generator, Invent. Math. 123 (1996), no. 2, 259–\n281.\n[3] V. Bayle, Propri´et´es de concavit´e du proﬁl isop´erim´etrique et applications, PhD\nThesis, Universit´e Joseph-Fourier-Grenoble I, 2003.\n[4] P. Buser, A note on the isoperimetric constant, Ann. Sci. ´Ecole Norm. Sup.\n(4) 15 (1982), no. 2, 213–230.\n[5] J. Cheeger, A lower",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

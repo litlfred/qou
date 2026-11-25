@@ -1,0 +1,3079 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "210811825v1",
+  "title": "Properties of Eigenvalues on Riemann Surfaces with Large Symmetry Groups",
+  "variant": "pdf",
+  "pages": 163,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 12,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Background",
+      "number": null,
+      "page": 36,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-background"
+    },
+    {
+      "level": 2,
+      "title": "Spectral theory",
+      "number": null,
+      "page": 36,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-spectral-theory"
+    },
+    {
+      "level": 2,
+      "title": "Hyperbolic geometry",
+      "number": null,
+      "page": 43,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-hyperbolic-geometry"
+    },
+    {
+      "level": 2,
+      "title": "Harmonic analysis on H",
+      "number": null,
+      "page": 48,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-harmonic-analysis-on-h"
+    },
+    {
+      "level": 2,
+      "title": "Representation theory",
+      "number": null,
+      "page": 53,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-representation-theory"
+    },
+    {
+      "level": 2,
+      "title": "Selberg's trace formula",
+      "number": null,
+      "page": 54,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-selbergs-trace-formula"
+    },
+    {
+      "level": 1,
+      "title": "The Bolza Surface",
+      "number": null,
+      "page": 61,
+      "pageLabel": "51",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-the-bolza-surface"
+    },
+    {
+      "level": 2,
+      "title": "Symmetry group of the Bolza surface",
+      "number": null,
+      "page": 61,
+      "pageLabel": "51",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-symmetry-group-of-the-bolza-surface"
+    },
+    {
+      "level": 2,
+      "title": "Length spectrum of the Bolza surface",
+      "number": null,
+      "page": 66,
+      "pageLabel": "56",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-length-spectrum-of-the-bolza-surface"
+    },
+    {
+      "level": 2,
+      "title": "Upper bounds on eigenvalues of the Bolza surface",
+      "number": null,
+      "page": 67,
+      "pageLabel": "57",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-upper-bounds-on-eigenvalues-of-the-bolza-surface"
+    },
+    {
+      "level": 2,
+      "title": "First eigenspace of the Bolza surface",
+      "number": null,
+      "page": 75,
+      "pageLabel": "65",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-first-eigenspace-of-the-bolza-surface"
+    },
+    {
+      "level": 2,
+      "title": "Second eigenspace of Bolza surface",
+      "number": null,
+      "page": 96,
+      "pageLabel": "86",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-second-eigenspace-of-bolza-surface"
+    },
+    {
+      "level": 1,
+      "title": "The Klein Quartic",
+      "number": null,
+      "page": 99,
+      "pageLabel": "89",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-the-klein-quartic"
+    },
+    {
+      "level": 2,
+      "title": "Systole of the Klein quartic",
+      "number": null,
+      "page": 99,
+      "pageLabel": "89",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-systole-of-the-klein-quartic"
+    },
+    {
+      "level": 2,
+      "title": "Fenchel-Nielsen parameters of the Klein quartic",
+      "number": null,
+      "page": 101,
+      "pageLabel": "91",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-fenchel-nielsen-parameters-of-the-klein-quartic"
+    },
+    {
+      "level": 2,
+      "title": "Spectral theory of the Klein quartic",
+      "number": null,
+      "page": 104,
+      "pageLabel": "94",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-spectral-theory-of-the-klein-quartic"
+    },
+    {
+      "level": 1,
+      "title": "Concluding Remarks",
+      "number": null,
+      "page": 109,
+      "pageLabel": "99",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-concluding-remarks"
+    },
+    {
+      "level": 1,
+      "title": "GAP Code for Bolza Surface",
+      "number": null,
+      "page": 112,
+      "pageLabel": "102",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-gap-code-for-bolza-surface"
+    },
+    {
+      "level": 1,
+      "title": "GAP Code for Klein Quartic",
+      "number": null,
+      "page": 116,
+      "pageLabel": "106",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-gap-code-for-klein-quartic"
+    },
+    {
+      "level": 1,
+      "title": "FreeFEM++ Code for Genus 2",
+      "number": null,
+      "page": 119,
+      "pageLabel": "109",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-freefem-code-for-genus-2"
+    },
+    {
+      "level": 1,
+      "title": "FreeFEM++ Code for Genus 3",
+      "number": null,
+      "page": 131,
+      "pageLabel": "121",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-freefem-code-for-genus-3"
+    },
+    {
+      "level": 1,
+      "title": "FreeFEM++ Code for Genus 4",
+      "number": null,
+      "page": 145,
+      "pageLabel": "135",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-freefem-code-for-genus-4"
+    },
+    {
+      "level": 1,
+      "title": "Mathematica Code for Bolza Surface",
+      "number": null,
+      "page": 151,
+      "pageLabel": "141",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-mathematica-code-for-bolza-surface"
+    },
+    {
+      "level": 1,
+      "title": "Alternative approach to proving Conjecture 3.12",
+      "number": null,
+      "page": 154,
+      "pageLabel": "144",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-alternative-approach-to-proving-conjecture-312"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": "1",
+      "words": 1091,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bolza surface",
+          "heading": false
+        },
+        {
+          "term": "klein quartic",
+          "heading": false
+        },
+        {
+          "term": "freefem code",
+          "heading": false
+        },
+        {
+          "term": "loughborough university",
+          "heading": false
+        },
+        {
+          "term": "gap code",
+          "heading": false
+        },
+        {
+          "term": "joseph cook",
+          "heading": false
+        },
+        {
+          "term": "leeds",
+          "heading": false
+        },
+        {
+          "term": "riemann surfaces",
+          "heading": false
+        }
+      ],
+      "extract": "Properties of Eigenvalues on Riemann Surfaces with Large Symmetry Groups by Joseph Cook A Doctoral Thesis Submitted in partial fulﬁllment of the requirements for the award of Doctor of Philosophy of Loughborough University December 2, 2018 c⃝by Joseph Cook, 2018 Abstract On compact Riemann surfaces, the Laplacian ∆has a discrete, non-negative spectrum of eigenvalues {λi} of ﬁnite multiplicity. The spectrum is",
+      "extractCut": true,
+      "blocks": [
+        "library/210811825v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 35,
+      "labelStart": "1",
+      "labelEnd": "25",
+      "words": 8113,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bolza surface",
+          "heading": false
+        },
+        {
+          "term": "klein quartic",
+          "heading": false
+        },
+        {
+          "term": "fermat quartic",
+          "heading": false
+        },
+        {
+          "term": "riemann surface",
+          "heading": false
+        },
+        {
+          "term": "orientable surface",
+          "heading": false
+        },
+        {
+          "term": "hurwitz surface",
+          "heading": false
+        },
+        {
+          "term": "klein curve",
+          "heading": false
+        },
+        {
+          "term": "weierstrass points",
+          "heading": false
+        }
+      ],
+      "extract": "Paris, February 1809 The court of Napoleon Bonaparte ﬁlls with the sound of a Haydn melody, as our performer teases a curious rotating glass cylinder with felt-covered rods. The performer is Ernst Chladni, the “father of acoustics”. Upon ﬁnishing his concert, he proceeds to demonstrate his experiments with acoustics to the emperor. These involve bowing a ﬁxed plate at diﬀerent frequencies, and observing how the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-background",
+      "number": null,
+      "title": "Background",
+      "level": 1,
+      "pageStart": 35,
+      "pageEnd": 35,
+      "labelStart": "25",
+      "labelEnd": "25",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-spectral-theory",
+      "number": null,
+      "title": "Spectral theory",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 43,
+      "labelStart": "25",
+      "labelEnd": "33",
+      "words": 2501,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "compact resolvent",
+          "heading": false
+        },
+        {
+          "term": "resolvent operator",
+          "heading": false
+        },
+        {
+          "term": "self-adjoint operator",
+          "heading": false
+        },
+        {
+          "term": "dirichlet laplacian",
+          "heading": false
+        },
+        {
+          "term": "self-adjoint extension",
+          "heading": false
+        },
+        {
+          "term": "bounded operator",
+          "heading": false
+        },
+        {
+          "term": "sesquilinear form",
+          "heading": false
+        },
+        {
+          "term": "rellich-kondrachov embedding",
+          "heading": false
+        }
+      ],
+      "extract": "Spectral theory The Laplace-Beltrami operator ∆, on a Riemannian manifold M, is given in local coor- dinates by the formula ∆= − n X i, k=1 1 √g ∂ ∂xi √ggik ∂ ∂xk , where gik is the metric tensor, g its determinant, and gik are the components of the dual metric on the cotangent bundle of M. There exists an orthonormal basis {φi | i ∈N0} in L2(M) consisting of eigenfunctions ∆φi = λiφi (2.1) such that 0 = λ0 < λ1 ≤λ2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-hyperbolic-geometry",
+      "number": null,
+      "title": "Hyperbolic geometry",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 47,
+      "labelStart": "33",
+      "labelEnd": "37",
+      "words": 1329,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arccosh cot",
+          "heading": false
+        },
+        {
+          "term": "arccosh cos",
+          "heading": false
+        },
+        {
+          "term": "arccosh csc",
+          "heading": false
+        },
+        {
+          "term": "isometries isom",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic triangle",
+          "heading": false
+        },
+        {
+          "term": "fuchsian group",
+          "heading": false
+        },
+        {
+          "term": "poincaré disk",
+          "heading": false
+        },
+        {
+          "term": "angled hyperbolic",
+          "heading": false
+        }
+      ],
+      "extract": "H = {z ∈C | ℑz > 0}, with metric ds2 H = y−2 \u0000dx2 + dy2\u0001 . The Laplacian with this metric takes the form ∆H = −y2 \u0012 ∂2 ∂x2 + ∂2 ∂y2 \u0013 . The distance function is ρ(z, w) = log \u0012|z −w| + |z −w| |z −w| −|z −w| \u0013 . Geodesics in H are semicircles and half lines perpendicular to the real line. The isometries of hyperbolic space are given by Möbius transformations t : z 7→az + b cz + d, such that a, b, c, d ∈R and ad−bc =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-harmonic-analysis-on-h",
+      "number": null,
+      "title": "Harmonic analysis on H",
+      "level": 2,
+      "pageStart": 47,
+      "pageEnd": 52,
+      "labelStart": "37",
+      "labelEnd": "42",
+      "words": 1313,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cosh",
+          "heading": false
+        },
+        {
+          "term": "core geodesic",
+          "heading": false
+        },
+        {
+          "term": "sinh",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic cylinder",
+          "heading": false
+        },
+        {
+          "term": "fermi coordinates",
+          "heading": false
+        },
+        {
+          "term": "collar",
+          "heading": false
+        },
+        {
+          "term": "disk",
+          "heading": false
+        },
+        {
+          "term": "exp",
+          "heading": false
+        }
+      ],
+      "extract": "Harmonic analysis on H 2.3.1 Disks Here we take “disk” to mean a general disk in hyperbolic space rather than the Poincaré disk model. Due to the radial symmetry of the disk, it is possible to give an explicit formula for the eigenfunctions. From these, we can calculate the eigenvalues of the disk and use them to bound the eigenvalues of a domain in our surface from below. First, we introduce a more convenient polar",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-representation-theory",
+      "number": null,
+      "title": "Representation theory",
+      "level": 2,
+      "pageStart": 52,
+      "pageEnd": 53,
+      "labelStart": "42",
+      "labelEnd": "43",
+      "words": 628,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "peter-weyl theorem",
+          "heading": false
+        },
+        {
+          "term": "unitary representation",
+          "heading": false
+        },
+        {
+          "term": "irreducible representation",
+          "heading": false
+        },
+        {
+          "term": "g-invariant",
+          "heading": false
+        },
+        {
+          "term": "laplacian",
+          "heading": false
+        },
+        {
+          "term": "eigenspaces",
+          "heading": false
+        },
+        {
+          "term": "hilbert space",
+          "heading": false
+        },
+        {
+          "term": "direct sum",
+          "heading": false
+        }
+      ],
+      "extract": "Representation theory Deﬁnition 2.36 (Representation) Let V be an n-dimensional vector space over C. Then GL(V ) denotes the the group of isomorphisms V →V . If V has a ﬁnite basis of vectors {e1, . . . , en}, then each linear map a : V →V is deﬁned by an n × n matrix (aij) such that a(ej) = n X i=j aijei. A representation of a ﬁnite group G is a group homomorphism ρ : G →GL(V ). For each g, h ∈G, we have a map ρ(g)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-selbergs-trace-formula",
+      "number": null,
+      "title": "Selberg's trace formula",
+      "level": 2,
+      "pageStart": 53,
+      "pageEnd": 60,
+      "labelStart": "43",
+      "labelEnd": "50",
+      "words": 1683,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "selberg trace",
+          "heading": true
+        },
+        {
+          "term": "trace formula",
+          "heading": true
+        },
+        {
+          "term": "trk",
+          "heading": false
+        },
+        {
+          "term": "glide reﬂection",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic conjugacy",
+          "heading": false
+        },
+        {
+          "term": "non-elliptic sum",
+          "heading": false
+        },
+        {
+          "term": "fundamental domain",
+          "heading": false
+        },
+        {
+          "term": "reversing isometries",
+          "heading": false
+        }
+      ],
+      "extract": "We start by following the basic presentation of the trace formula given in [10, 38, 56]. Recall that a hyperbolic surface S can be represented as a quotient of the hyperbolic plane by a Fuchsian group that only has hyperbolic elements (with the exception of the 43 identity), that is, S ∼= Γ \\ H. The space of square integrable functions on S comes from the functions f ∈L2(H) that are invariant under the action of an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-symmetry-group-of-the-bolza-surface",
+      "number": null,
+      "title": "Symmetry group of the Bolza surface",
+      "level": 2,
+      "pageStart": 60,
+      "pageEnd": 61,
+      "labelStart": "50",
+      "labelEnd": "51",
+      "words": 249,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bolza surface",
+          "heading": true
+        },
+        {
+          "term": "orientation preserving",
+          "heading": false
+        },
+        {
+          "term": "centre",
+          "heading": false
+        },
+        {
+          "term": "risjt",
+          "heading": false
+        },
+        {
+          "term": "ritu",
+          "heading": false
+        }
+      ],
+      "extract": "Symmetry group of the Bolza surface In his thesis, Jenni [41] lists the generators of the group of isometries, and the relations between them. The whole isometry group is generated by 4 actions, which are shown in Figure 3.1: • R - rotation of order 8 around the origin (centre of the Bolza surface) that maps Qi 7→Qi+1 (modulo 8), and preserves P1 and P2; • S - reﬂection in the real line that maps Qi 7→Q9−i, and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-the-bolza-surface",
+      "number": null,
+      "title": "The Bolza Surface",
+      "level": 1,
+      "pageStart": 61,
+      "pageEnd": 65,
+      "labelStart": "51",
+      "labelEnd": "55",
+      "words": 1040,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bolza surface",
+          "heading": true
+        },
+        {
+          "term": "equilateral triangles",
+          "heading": false
+        },
+        {
+          "term": "rsrs",
+          "heading": false
+        },
+        {
+          "term": "stst",
+          "heading": false
+        },
+        {
+          "term": "tessellated",
+          "heading": false
+        },
+        {
+          "term": "satz",
+          "heading": false
+        },
+        {
+          "term": "arccosh",
+          "heading": false
+        },
+        {
+          "term": "bold",
+          "heading": false
+        }
+      ],
+      "extract": "P2 P2 P2 P2 P2 P2 P2 P2 Q7 Q6 Q2 P1 Q3 Q8 Q1 Q5 Q4 Calculations in GAP [26] show that the relations given in Satz 32 of Jenni’s thesis give a ﬁnitely presented group of order 12. This implies that there is a problem with at least one of his relations. After scrutinizing the actions of R, S, T, and U on the tessellation regular octagons, we oﬀer the following corrected theorem: Theorem 3.3 (Correction to Satz 32 in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-length-spectrum-of-the-bolza-surface",
+      "number": null,
+      "title": "Length spectrum of the Bolza surface",
+      "level": 2,
+      "pageStart": 65,
+      "pageEnd": 66,
+      "labelStart": "55",
+      "labelEnd": "56",
+      "words": 288,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bolza surface",
+          "heading": true
+        },
+        {
+          "term": "length spectrum",
+          "heading": true
+        },
+        {
+          "term": "primitive geodesics",
+          "heading": false
+        },
+        {
+          "term": "cosh",
+          "heading": false
+        },
+        {
+          "term": "sinh",
+          "heading": false
+        }
+      ],
+      "extract": "Length spectrum of the Bolza surface An expression for the lengths of primitive geodesics of the Bolza surface in terms of algebraic numbers has been given in [2]. We have seen the form of the generators in the introduction; an equivalent form is given by gk = cosh \u0000 l0 2 \u0001 exp \u0000i \u0000 kπ 4 \u0001\u0001 sinh \u0000 l0 2 \u0001 exp \u0000−i \u0000 kπ 4 \u0001\u0001 sinh \u0000 l0 2 \u0001 cosh \u0000 l0 2 \u0001 ! , k = 0, . . . , 3, where cosh \u0012l0 2 \u0013 = cot \u0010π 8 \u0011 = 1 + √ 2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-upper-bounds-on-eigenvalues-of-the-bolza-surface",
+      "number": null,
+      "title": "Upper bounds on eigenvalues of the Bolza surface",
+      "level": 2,
+      "pageStart": 66,
+      "pageEnd": 74,
+      "labelStart": "56",
+      "labelEnd": "64",
+      "words": 3972,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "upper bounds",
+          "heading": true
+        },
+        {
+          "term": "bolza surface",
+          "heading": true
+        },
+        {
+          "term": "simpson rule",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst eigenfunction",
+          "heading": false
+        },
+        {
+          "term": "sart",
+          "heading": false
+        },
+        {
+          "term": "error bound",
+          "heading": false
+        },
+        {
+          "term": "grad",
+          "heading": false
+        },
+        {
+          "term": "sqrt",
+          "heading": false
+        }
+      ],
+      "extract": "Upper bounds on eigenvalues of the Bolza surface We use the Rayleigh quotient (Theorem 1.20) to give upper bounds on the ﬁrst two distinct positive eigenvalues of ∆(B). We have calculated these numerically and listed them in Table C.1; in particular, the ﬁrst and second positive eigenvalues are roughly equal to 3.84 and 5.35 respectively. Since the Rayleigh quotient is an equality for the ﬁrst eigenfunction, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-first-eigenspace-of-the-bolza-surface",
+      "number": null,
+      "title": "First eigenspace of the Bolza surface",
+      "level": 2,
+      "pageStart": 74,
+      "pageEnd": 95,
+      "labelStart": "64",
+      "labelEnd": "85",
+      "words": 6378,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bolza surface",
+          "heading": true
+        },
+        {
+          "term": "faber-krahn inequality",
+          "heading": false
+        },
+        {
+          "term": "dirichlet eigenvalue",
+          "heading": false
+        },
+        {
+          "term": "eigenspace",
+          "heading": true
+        },
+        {
+          "term": "dirichlet boundary",
+          "heading": false
+        },
+        {
+          "term": "dirichlet region",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst dirichlet",
+          "heading": false
+        },
+        {
+          "term": "nodal domains",
+          "heading": false
+        }
+      ],
+      "extract": "First eigenspace of the Bolza surface Theorem 3.9 The dimension of the ﬁrst eigenspace E1 of ∆is 3, and the irreducible representation appearing in this eigenspace is χ8. 64 In order to calculate the dimension of the ﬁrst eigenspace, we must use the irreducible representations of Isom(B) to create boundary value problems on the surface. Then, using the Faber-Krahn inequality, we can determine which irreducible",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-second-eigenspace-of-bolza-surface",
+      "number": null,
+      "title": "Second eigenspace of Bolza surface",
+      "level": 2,
+      "pageStart": 95,
+      "pageEnd": 98,
+      "labelStart": "85",
+      "labelEnd": "88",
+      "words": 573,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bolza surface",
+          "heading": true
+        },
+        {
+          "term": "nodal domains",
+          "heading": false
+        },
+        {
+          "term": "eigenspace",
+          "heading": true
+        },
+        {
+          "term": "selberg trace",
+          "heading": false
+        },
+        {
+          "term": "shortest closed",
+          "heading": false
+        },
+        {
+          "term": "upper bound",
+          "heading": false
+        },
+        {
+          "term": "closed geodesic",
+          "heading": false
+        },
+        {
+          "term": "tanh",
+          "heading": false
+        }
+      ],
+      "extract": "Second eigenspace of Bolza surface Having calculated lower bounds for the eigenvalues of each irreducible representation, we have done the bulk of the work to make a statement about the second eigenspace, E2. We begin with the following Lemma 3.21 The dimension of E2 is a multiple of 4. Proof: Recall our upper bound on λ2 in Section 3.3. The only irreducible representations that can appear in this eigenspace are χ8",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-the-klein-quartic",
+      "number": null,
+      "title": "The Klein Quartic",
+      "level": 1,
+      "pageStart": 98,
+      "pageEnd": 98,
+      "labelStart": "88",
+      "labelEnd": "88",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-014-systole-of-the-klein-quartic",
+      "number": null,
+      "title": "Systole of the Klein quartic",
+      "level": 2,
+      "pageStart": 98,
+      "pageEnd": 100,
+      "labelStart": "88",
+      "labelEnd": "90",
+      "words": 777,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "systole",
+          "heading": true
+        },
+        {
+          "term": "klein quartic",
+          "heading": true
+        },
+        {
+          "term": "arccosh csc",
+          "heading": false
+        },
+        {
+          "term": "arcsinh csc",
+          "heading": false
+        },
+        {
+          "term": "csc sin",
+          "heading": false
+        },
+        {
+          "term": "central heptagon",
+          "heading": false
+        },
+        {
+          "term": "right-angled hyperbolic",
+          "heading": false
+        },
+        {
+          "term": "adjoining edges",
+          "heading": false
+        }
+      ],
+      "extract": "Systole of the Klein quartic The systole of the Klein quartic is described in Klein’s original paper [48] on the prop- erties of the quartic curve, and is expounded upon in [44,80]. We will use K to denote the surface. Consider a tessellation of K by heptagons (these can be barycentrically sub- divided into 14 (2, 3, 7) triangles, see Figure 4.2). Starting with the central heptagon, join the midpoints of two",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-fenchel-nielsen-parameters-of-the-klein-quartic",
+      "number": null,
+      "title": "Fenchel-Nielsen parameters of the Klein quartic",
+      "level": 2,
+      "pageStart": 100,
+      "pageEnd": 103,
+      "labelStart": "90",
+      "labelEnd": "93",
+      "words": 742,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fenchel-nielsen parameters",
+          "heading": true
+        },
+        {
+          "term": "klein quartic",
+          "heading": true
+        },
+        {
+          "term": "pants",
+          "heading": false
+        },
+        {
+          "term": "twist parameters",
+          "heading": false
+        },
+        {
+          "term": "bold curves",
+          "heading": false
+        },
+        {
+          "term": "geodesic segment",
+          "heading": false
+        },
+        {
+          "term": "systole",
+          "heading": false
+        },
+        {
+          "term": "unique geodesic",
+          "heading": false
+        }
+      ],
+      "extract": "Fenchel-Nielsen parameters of the Klein quartic To discuss Fenchel-Nielsen parameters, we ﬁrst need to introduce the notion of a pants decomposition. A pair of pants (sometimes called a Y-piece) is the simplest hyperbolic surface; topologically, it is a sphere with three disks removed. A compact Riemann surface of genus g ≥2 can be decomposed into pairs of pants by cutting along 3g −3 simple, closed,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-spectral-theory-of-the-klein-quartic",
+      "number": null,
+      "title": "Spectral theory of the Klein quartic",
+      "level": 2,
+      "pageStart": 103,
+      "pageEnd": 108,
+      "labelStart": "93",
+      "labelEnd": "98",
+      "words": 1785,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "klein quartic",
+          "heading": true
+        },
+        {
+          "term": "cot csc",
+          "heading": false
+        },
+        {
+          "term": "cosh csc",
+          "heading": false
+        },
+        {
+          "term": "csc cos",
+          "heading": false
+        },
+        {
+          "term": "bolza surface",
+          "heading": false
+        },
+        {
+          "term": "exp cosh",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst eigenspace",
+          "heading": false
+        },
+        {
+          "term": "simpson rule",
+          "heading": false
+        }
+      ],
+      "extract": "Spectral theory of the Klein quartic The symmetry group of the Klein quartic comes from the 336 (2, 3, 7) triangles that tessellate the surface. We saw the presentation of such a group in the hyperbolic ge- ometry section; since there are side associations on our surface, we have the following presentation: ⟨a, b, c | a2 = b2 = c2 = (ab)2 = (ac)7 = (bc)3 = (abc)8 = e⟩, where the lengths of a, b and c are given in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-concluding-remarks",
+      "number": null,
+      "title": "Concluding Remarks",
+      "level": 1,
+      "pageStart": 108,
+      "pageEnd": 111,
+      "labelStart": "98",
+      "labelEnd": "101",
+      "words": 865,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bolza surface",
+          "heading": false
+        },
+        {
+          "term": "klein quartic",
+          "heading": false
+        },
+        {
+          "term": "fermat quartic",
+          "heading": false
+        },
+        {
+          "term": "hurwitz surface",
+          "heading": false
+        },
+        {
+          "term": "riemann surfaces",
+          "heading": false
+        },
+        {
+          "term": "laplace-beltrami operator",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst eigenspace",
+          "heading": false
+        },
+        {
+          "term": "nega tive",
+          "heading": false
+        }
+      ],
+      "extract": "The spectral theory of Riemann surfaces has been a popular and fruitful ﬁeld of study for many years, and is still an active area of research. The main body of this work documented the investigation of the Laplace spectra of two speciﬁc surfaces: the Bolza surface and the Klein quartic. These are of particular interest because they have maximal symmetry among all compact Riemann surfaces with constant negative",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-gap-code-for-bolza-surface",
+      "number": null,
+      "title": "GAP Code for Bolza Surface",
+      "level": 1,
+      "pageStart": 111,
+      "pageEnd": 115,
+      "labelStart": "101",
+      "labelEnd": "105",
+      "words": 1587,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "irreduciblea ffordingrepresentation",
+          "heading": false
+        },
+        {
+          "term": "gap irreduciblea",
+          "heading": false
+        },
+        {
+          "term": "gap irreducibleaffordingrepresentation",
+          "heading": false
+        },
+        {
+          "term": "character table",
+          "heading": false
+        },
+        {
+          "term": "conjugacy classes",
+          "heading": false
+        },
+        {
+          "term": "bolza",
+          "heading": true
+        },
+        {
+          "term": "conjugacyclasses",
+          "heading": false
+        },
+        {
+          "term": "structuredescription",
+          "heading": false
+        }
+      ],
+      "extract": "The following output gives details of the isometry group of the Bolza surface, computed by the computer algebra package GAP [26]. We ﬁrst deﬁne the group as a free group on the 4 generators introduced in Section 3.1 with the relevant relations. We conﬁrm that the order of this group is 96, and the “StructureDescription” command tells us that it is isomorphic to GL2(Z3) ⋊Z2. Representatives of each conjugacy class of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-gap-code-for-klein-quartic",
+      "number": null,
+      "title": "GAP Code for Klein Quartic",
+      "level": 1,
+      "pageStart": 115,
+      "pageEnd": 118,
+      "labelStart": "105",
+      "labelEnd": "108",
+      "words": 1938,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gap",
+          "heading": true
+        },
+        {
+          "term": "code",
+          "heading": true
+        },
+        {
+          "term": "repsn",
+          "heading": false
+        }
+      ],
+      "extract": "[Ld The GAP code in this appendix has the same format as that in Appendix A; please refer to the commentary there in order to interpret this code. gap> f:=FreeGroup(\"a\",\"b\",\"c\"); <free group on the generators [ a, b, c |> gap> g:=f/[f.172,f.272,f£.372,(f.1*f.2)72,(f.2*f.3)73,(f.1*f.3)77,(f.1*f.2ef.3)>8] <fp group on the generators [ a, b, c |> gap> Order(g); 336 gap> StructureDescription(g); \"PSL(3 ,2):C2\" gap>",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-freefem-code-for-genus-2",
+      "number": null,
+      "title": "FreeFEM++ Code for Genus 2",
+      "level": 1,
+      "pageStart": 118,
+      "pageEnd": 130,
+      "labelStart": "108",
+      "labelEnd": "120",
+      "words": 1854,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cyt sin",
+          "heading": false
+        },
+        {
+          "term": "int nev",
+          "heading": false
+        },
+        {
+          "term": "solver crout",
+          "heading": false
+        },
+        {
+          "term": "cos real",
+          "heading": false
+        },
+        {
+          "term": "cxt cos",
+          "heading": false
+        },
+        {
+          "term": "int2d",
+          "heading": false
+        },
+        {
+          "term": "border",
+          "heading": false
+        },
+        {
+          "term": "saving real",
+          "heading": false
+        }
+      ],
+      "extract": "The following box contains the FreeFEM-++ code for the{Balza surface. It contains basic comments, but for more information about the various solvers and finite element spaces available in the software, please consult the manual [32]. int n = 30; //number of modes int nev=100; //number of eigenvalues to be calculated string fnm = \"bolza_surface_30n_100nev.txt\"; //file name for saving real r = 0.4550898605622276;",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-freefem-code-for-genus-3",
+      "number": null,
+      "title": "FreeFEM++ Code for Genus 3",
+      "level": 1,
+      "pageStart": 130,
+      "pageEnd": 144,
+      "labelStart": "120",
+      "labelEnd": "134",
+      "words": 3472,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "irreduciblea ffordingrepresentation",
+          "heading": false
+        },
+        {
+          "term": "gap irreduciblea",
+          "heading": false
+        },
+        {
+          "term": "cos border",
+          "heading": false
+        },
+        {
+          "term": "cos sin",
+          "heading": false
+        },
+        {
+          "term": "cxt cos",
+          "heading": false
+        },
+        {
+          "term": "solver crout",
+          "heading": false
+        },
+        {
+          "term": "real cos",
+          "heading": false
+        },
+        {
+          "term": "gap irreducibleaffordingrepresentation",
+          "heading": false
+        }
+      ],
+      "extract": "LT Similarly to Appendix C, here we give the FreeFEM++ codes for particular surfaces of genus 3. We start with the Klein quartic: int n=30; int nev=100; string fnm=\"klein_quartic—Eigenvalues—n30—nev100.txt\"; //file name for saving real cx = 1.031969722; real r = 0.254875473; real s=0.7770942488589633; real x06=s*cos(5*pi/7); real y06=s*sin(5*pi/7); real x03=s*cos(2*pi/7); real y03=s*sin(2*pi/7); real",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-freefem-code-for-genus-4",
+      "number": null,
+      "title": "FreeFEM++ Code for Genus 4",
+      "level": 1,
+      "pageStart": 144,
+      "pageEnd": 150,
+      "labelStart": "134",
+      "labelEnd": "140",
+      "words": 2455,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "border",
+          "heading": false
+        },
+        {
+          "term": "cos",
+          "heading": false
+        },
+        {
+          "term": "bring surface",
+          "heading": false
+        },
+        {
+          "term": "code",
+          "heading": true
+        },
+        {
+          "term": "x-x",
+          "heading": false
+        },
+        {
+          "term": "hurwitz surface",
+          "heading": false
+        },
+        {
+          "term": "nev",
+          "heading": false
+        },
+        {
+          "term": "theta",
+          "heading": false
+        }
+      ],
+      "extract": "Figure E.1: Fundamental polygon for Bring’s surface The most symmetric surface of genus 4 is Bring’s surface (also referred to as Bring’s curve) [71]. It can be obtained by associating the sides of a hyperbolic icosagon of area 12π, as shown in Figure E.1. Similarly to the Bolza surface and Klein quartic, we conjecture that because it has maximal symmetry among hyperbolic surfaces of genus 4, it also maximizes the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-mathematica-code-for-bolza-surface",
+      "number": null,
+      "title": "Mathematica Code for Bolza Surface",
+      "level": 1,
+      "pageStart": 150,
+      "pageEnd": 153,
+      "labelStart": "140",
+      "labelEnd": "143",
+      "words": 1024,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nodal line",
+          "heading": false
+        },
+        {
+          "term": "arccosh",
+          "heading": false
+        },
+        {
+          "term": "arcsinh",
+          "heading": false
+        },
+        {
+          "term": "sart",
+          "heading": false
+        },
+        {
+          "term": "ell",
+          "heading": false
+        },
+        {
+          "term": "code",
+          "heading": true
+        },
+        {
+          "term": "sinh",
+          "heading": false
+        },
+        {
+          "term": "plot",
+          "heading": false
+        }
+      ],
+      "extract": "The following block of code helps us to choose the optimal value of L to deﬁne the spectral function h(t) in Section 3.4. We ﬁrst deﬁne “lemult” as the ordered list of lengths of geodesics in the length spectrum, using the formula in Section 3.2, along with their multiplicities. Note that only the multiplicity of the ﬁrst length in the spectrum is precise; all others have been calculated numerically. Also note that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-alternative-approach-to-proving-conjecture-312",
+      "number": null,
+      "title": "Alternative approach to proving Conjecture 3.12",
+      "level": 1,
+      "pageStart": 153,
+      "pageEnd": 163,
+      "labelStart": "143",
+      "labelEnd": "153",
+      "words": 3148,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathematische annalen",
+          "heading": false
+        },
+        {
+          "term": "nikolai nadirashvili",
+          "heading": false
+        },
+        {
+          "term": "commentarii mathematici",
+          "heading": false
+        },
+        {
+          "term": "business media",
+          "heading": false
+        },
+        {
+          "term": "felix klein",
+          "heading": false
+        },
+        {
+          "term": "shing-tung yau",
+          "heading": false
+        },
+        {
+          "term": "felix jenni",
+          "heading": false
+        },
+        {
+          "term": "laplace-operators auf",
+          "heading": false
+        }
+      ],
+      "extract": "Conjecture 3.12 In this appendix, we outline another method that could be used to prove Conjecture 3.12. As in Section 3.4.1, consider the annulus Ωin Figure 3.18 with Dirichlet boundary con- ditions. In particular, we can take Ωto be a subspace of a hyperbolic cylinder with α as its core geodesic. We have a Dirichlet boundary condition on α, so one method that we could use to bound λ1(Ω) would be to compare it to",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 2,
+        "items": [
+          "0 (Ω) with respect to the Sobolev norm.",
+          "0 (Ω), an integration by parts shows that"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "bolza surface",
+      "heading": true
+    },
+    {
+      "term": "cos sin",
+      "heading": false
+    },
+    {
+      "term": "arccosh cos",
+      "heading": false
+    },
+    {
+      "term": "csc cos",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic surface",
+      "heading": false
+    },
+    {
+      "term": "klein quartic",
+      "heading": true
+    },
+    {
+      "term": "riemann surface",
+      "heading": false
+    },
+    {
+      "term": "cos border",
+      "heading": false
+    },
+    {
+      "term": "cosh cos",
+      "heading": false
+    },
+    {
+      "term": "dirichlet eigenvalue",
+      "heading": false
+    },
+    {
+      "term": "hurwitz surface",
+      "heading": false
+    },
+    {
+      "term": "cos real",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": "ii",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "iii",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 5,
+      "label": "iv",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "v",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 7,
+      "label": "vi",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "vii",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 9,
+      "label": "viii",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "ix",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 36,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 43,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 48,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 53,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 54,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 61,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 66,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 67,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 69,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 71,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 72,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 73,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 74,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 75,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 76,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 77,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 78,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 79,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 80,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 81,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 82,
+      "label": "72",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 83,
+      "label": "73",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 84,
+      "label": "74",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 85,
+      "label": "75",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 86,
+      "label": "76",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 87,
+      "label": "77",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 88,
+      "label": "78",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 89,
+      "label": "79",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 90,
+      "label": "80",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 91,
+      "label": "81",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 92,
+      "label": "82",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 93,
+      "label": "83",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 94,
+      "label": "84",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 95,
+      "label": "85",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 96,
+      "label": "86",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 97,
+      "label": "87",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 98,
+      "label": "88",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 99,
+      "label": "89",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 100,
+      "label": "90",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 101,
+      "label": "91",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 102,
+      "label": "92",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 103,
+      "label": "93",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 104,
+      "label": "94",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 105,
+      "label": "95",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 106,
+      "label": "96",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 107,
+      "label": "97",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 108,
+      "label": "98",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 109,
+      "label": "99",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 110,
+      "label": "100",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 111,
+      "label": "101",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 112,
+      "label": "102",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 113,
+      "label": "103",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 114,
+      "label": "104",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 115,
+      "label": "105",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 116,
+      "label": "106",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 117,
+      "label": "107",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 118,
+      "label": "108",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 119,
+      "label": "109",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 120,
+      "label": "110",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 121,
+      "label": "111",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 122,
+      "label": "112",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 123,
+      "label": "113",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 124,
+      "label": "114",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 125,
+      "label": "115",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 126,
+      "label": "116",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 127,
+      "label": "117",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 128,
+      "label": "118",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 129,
+      "label": "119",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 130,
+      "label": "120",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 131,
+      "label": "121",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 132,
+      "label": "122",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 133,
+      "label": "123",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 134,
+      "label": "124",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 135,
+      "label": "125",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 136,
+      "label": "126",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 137,
+      "label": "127",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 138,
+      "label": "128",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 139,
+      "label": "129",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 140,
+      "label": "130",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 141,
+      "label": "131",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 142,
+      "label": "132",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 143,
+      "label": "133",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 144,
+      "label": "134",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 145,
+      "label": "135",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 146,
+      "label": "136",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 147,
+      "label": "137",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 148,
+      "label": "138",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 149,
+      "label": "139",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 150,
+      "label": "140",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 151,
+      "label": "141",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 152,
+      "label": "142",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 153,
+      "label": "143",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 154,
+      "label": "144",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 155,
+      "label": "145",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 156,
+      "label": "146",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 157,
+      "label": "147",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 158,
+      "label": "148",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 159,
+      "label": "149",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 160,
+      "label": "150",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 161,
+      "label": "151",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 162,
+      "label": "152",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 163,
+      "label": "153",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1.1",
+      "title": "Principal directions at a point p on S2 n",
+      "page": 12,
+      "pageLabel": "2",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1.2",
+      "title": "The Möbius strip is not orientable",
+      "page": 13,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1.3",
+      "title": "Domain monotonicity for a torus with a disk removed",
+      "page": 16,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1.4",
+      "title": "The Bolza surface in D",
+      "page": 26,
+      "pageLabel": "16",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1.5",
+      "title": "Boundary value problems on a semicircle, [39] (dashed lines indicate a Neumann boundary condition, and solid, Dirichlet)",
+      "page": 29,
+      "pageLabel": "19",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1.6",
+      "title": "Boundary value problems on a pentagon",
+      "page": 29,
+      "pageLabel": "19",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1.7",
+      "title": "Creating a double cover of the Riemann sphere",
+      "page": 30,
+      "pageLabel": "20",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1.8",
+      "title": "Plotting the values of the functions in the ﬁrst eigenspace in R3",
+      "page": 31,
+      "pageLabel": "21",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1.9",
+      "title": "The Klein quartic",
+      "page": 33,
+      "pageLabel": "23",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.1",
+      "title": "Geodesics in the Poincare disk",
+      "page": 45,
+      "pageLabel": "35",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.2",
+      "title": "Generators of an (l, m, n) triangle group",
+      "page": 46,
+      "pageLabel": "36",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.3",
+      "title": "Collar Cw contained in hyperbolic cylinder C",
+      "page": 49,
+      "pageLabel": "39",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.4",
+      "title": "Fundamental domain for the centralizer of a hyperbolic element",
+      "page": 57,
+      "pageLabel": "47",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.1",
+      "title": "• R - rotation of order 8 around the origin (centre of the Bolza surface) that maps Qi 7→Qi+1 (modulo 8), and preserves P1 and P2; • S - reﬂection in the real line that maps Qi 7→Q9−i, and preserves P1 and P2; • T - reﬂection that switches the centre point with the outmost, that is, maps P1 7→P2 and",
+      "page": 60,
+      "pageLabel": "50",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.2",
+      "title": "The Bolza surface tessellated by 16 equilateral triangles",
+      "page": 62,
+      "pageLabel": "52",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3.1",
+      "title": "Actions of isometries on equilateral triangles Triangle",
+      "page": 63,
+      "pageLabel": "53",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.3",
+      "title": "Tessellation of B by (2, 3, 8) and (4, 4, 4) (in bold) triangles",
+      "page": 64,
+      "pageLabel": "54",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3.2",
+      "title": "Checking the relations between the generators of the Bolza surface",
+      "page": 64,
+      "pageLabel": "54",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.4",
+      "title": "The domain of integration ΩT in H",
+      "page": 67,
+      "pageLabel": "57",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.5",
+      "title": "Kite K with one line of symmetry",
+      "page": 76,
+      "pageLabel": "66",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.6",
+      "title": "Boundary conditions for χ2",
+      "page": 79,
+      "pageLabel": "69",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.7",
+      "title": "Boundary conditions for χ3",
+      "page": 80,
+      "pageLabel": "70",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.8",
+      "title": "Boundary conditions for χ4",
+      "page": 80,
+      "pageLabel": "70",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.9",
+      "title": "Boundary conditions for χ5",
+      "page": 81,
+      "pageLabel": "71",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.10",
+      "title": "Boundary conditions for χ6",
+      "page": 82,
+      "pageLabel": "72",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.11",
+      "title": "(4, 4, 4) triangle with line of symmetry",
+      "page": 82,
+      "pageLabel": "72",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.12",
+      "title": "Boundary conditions for χ7",
+      "page": 82,
+      "pageLabel": "72",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.13",
+      "title": "Boundary conditions for χ8",
+      "page": 83,
+      "pageLabel": "73",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.14",
+      "title": "Boundary conditions for χ9",
+      "page": 83,
+      "pageLabel": "73",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.15",
+      "title": "Boundary conditions for χ10",
+      "page": 84,
+      "pageLabel": "74",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.16",
+      "title": "Pentagon with boundary conditions",
+      "page": 84,
+      "pageLabel": "74",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.17",
+      "title": "Hexagon from reﬂection along the vertical",
+      "page": 85,
+      "pageLabel": "75",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.18",
+      "title": "Cylinder from gluing a to a′",
+      "page": 86,
+      "pageLabel": "76",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.19",
+      "title": "Comparing the nodal line of the test function w, as a function of t (blue curve), to the boundary of Ω(red, lilac, green curves)",
+      "page": 93,
+      "pageLabel": "83",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.20",
+      "title": "h(t) on [0, 4]",
+      "page": 96,
+      "pageLabel": "86",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.1",
+      "title": "Calculating 1",
+      "page": 99,
+      "pageLabel": "89",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.2",
+      "title": "Geodesics of length equal to the systole",
+      "page": 100,
+      "pageLabel": "90",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.3",
+      "title": "A hyperbolic pair of pants can be split into two identical hexagons",
+      "page": 101,
+      "pageLabel": "91",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.4",
+      "title": "Calculating the twist parameter t1 of γ1",
+      "page": 102,
+      "pageLabel": "92",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.5",
+      "title": "The domain of integration in H",
+      "page": 103,
+      "pageLabel": "93",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p029-1",
+      "file": "images/img-p029-1.png",
+      "page": 29,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p029-2",
+      "file": "images/img-p029-2.png",
+      "page": 29,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p031-1",
+      "file": "images/img-p031-1.png",
+      "page": 31,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p100-1",
+      "file": "images/img-p100-1.png",
+      "page": 100,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p144-1",
+      "file": "images/img-p144-1.png",
+      "page": 144,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 25,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 26,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 5,
+      "note": "38 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "2 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p153); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 26 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/210811825v1"
+  }
+}

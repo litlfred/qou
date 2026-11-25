@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1609.08719v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "AN EXPERIMENTAL INVESTIGATION OF NEUMANN’S CONJECTURE",
+      "dcterms:creator": [
+        "GILLES, STEPHEN",
+        "HUSTON, PETER"
+      ],
+      "dcterms:issued": "D:20210712",
+      "dcterms:identifier": "https://arxiv.org/abs/1609.08719",
+      "dcterms:abstract": "We use a large census of hyperbolic 3-manifolds to experimentally investigate a conjecture of Neumann regarding the Bloch Group. We present an augmented census including, for feasible invariant trace ﬁelds, explicit man- ifolds (associated to that ﬁeld) that appear to generate the Bloch group of that ﬁeld. We also make use of Ptolemy coordinates to compute “exotic volumes” of representations, and attempt to realize these volumes as linear combinations of generator volumes. We thus present a large body of empirical support for Neumann’s conjecture.",
+      "dcterms:source": "library/arxiv-1609.08719v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1609.08719v1"
+    }
+  ]
+}

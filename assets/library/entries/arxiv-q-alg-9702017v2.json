@@ -1,0 +1,496 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-q-alg-9702017v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-q-alg-9702017v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The Hecke algebras of type A have played a central role in the original discovery of\nthe Homﬂy polynomial for links, as described by Ocneanu [17]. They also relate\nto the representation theory of the quantum groups SU(N)q in a very direct\ncounterpart to the classical relations between the symmetric group algebras and\nthe representation theory of the linear groups GL(N), [21, 24]. As a result they\nform a natural means of transition between the invariants of a knot determined\nfrom quantum-group representations and those determined by using the Homﬂy\npolynomial of suitable decorations of the knot",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9702017v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:q-alg/9702017v2  7 Feb 2019\nIdempotents of Hecke algebras of type A.\nA.K. Aiston and H.R. Morton ∗\nDepartment of Mathematical Sciences,\nUniversity of Liverpool,\nLiverpool,\nL69 3BX.\nFebruary 8, 2019\nVersion 1.6\nAbstract\nWe use a skein-theoretic version of the Hecke algebras of type A to\npresent three-dimensional diagrammatic views of Gyoja’s idempotent el-\nements, based closely on the corresponding Young diagram λ.\nIn this\ncontext we give straightforward calculations for the eigenvalues fλ and mλ\nof two natural central elements in the Hecke algebras, namely the full curl\nand the sum of th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9702017v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Hecke algebra and Homfly skein theory",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-2-the-hecke-algebra-and-homfly-skein-theory.md",
+      "narrative": null,
+      "content": "The Hecke algebra and Homﬂy skein theory\nWe give a brief description of skein theory based on planar pieces of knot diagrams\nand a framed version of the Homﬂy polynomial. The ideas go back to Conway\nand have been substantially developed by Lickorish and others. A fuller version\nof this account can be found in [13]. At a later stage we shall expand our view\nfrom diagrams to actual pieces of knot lying in controlled regions of 3-dimensional\nspace, under suitable equivalence.\nWe shall work with the framed Homﬂy polynomial X . This is an invariant\nof framed oriented links, constructed from the Hom",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9702017v2/blocks/cor-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "cor-sec-002-02.md",
+      "narrative": null,
+      "content": "If λ̸ = µ then either λ and µ∨are inseparable or λ∨and µ are inseparable.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9702017v2/blocks/cor-sec-002-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "cor-sec-002-05.md",
+      "narrative": null,
+      "content": "If π = ρπ′ with ρ ∈R(λ) then ωπ = ωρ′ωρ′′ωπ′, for some ρ′, ρ′′ ∈ R(λ). A similar result holds for left cosets.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9702017v2/blocks/lem-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "lem-sec-002-01.md",
+      "narrative": null,
+      "content": "If λ > µ then λ and µ∨are inseparable. T(ν) = 2 3 T(ν∨) = 4 5 Figure 7: The tableaux T(ν) and T(ν∨) Idempotents of the Hecke algebra.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9702017v2/blocks/lem-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "lem-sec-002-03.md",
+      "narrative": null,
+      "content": "Let π be a permutation which separates λ from λ∨. Then the positive permutation braid ωπ can be written as ωπ = ωρωπλωσ for some ρ ∈R(λ) and σ ∈R(λ∨).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9702017v2/blocks/lem-sec-002-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "lem-sec-002-04.md",
+      "narrative": null,
+      "content": "In each right coset R(λ)π′ of the subgroup R(λ) there is a unique π such that ωπ = ωρωπ, where ρ ∈R(λ) and π = ρπ runs through the coset.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9702017v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Young diagrams",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-3-young-diagrams.md",
+      "narrative": null,
+      "content": "Young diagrams\nThere is a wealth of detail about the features of Young tableaux in many texts\nsuch as [25, 7, 10]. Here we emphasize certain properties which will be to the\nfore in this article.\nA partition of n can be represented by a Young diagram; a collection of n\ncells arranged in rows, with λ1 cells in the ﬁrst row, λ2 cells in the second row up\nto λk cells in the kth row where λ1 ≥λ2 ≥· · · ≥λk > 0 and Pk\ni=1 λi = n. We\nshall denote both the partition and its Young diagram by λ. The Young diagram\nfor (0) is the empty diagram. We denote the number of cells in λ by |λ|. The\nconjugate λ∨of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9702017v2/blocks/cor-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "cor-sec-003-02.md",
+      "narrative": null,
+      "content": "We can factorise an and bn in Hn as an = (σi −a)a(i) n = a′(i) n (σi −a) , bn = (σi −b)b(i) n = b′(i) n (σi −b) . Idempotents of the Hecke algebra. Eν(a) = a a2 . Figure 9: The element Eν(a)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9702017v2/blocks/cor-sec-003-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "cor-sec-003-04.md",
+      "narrative": null,
+      "content": "If λ and µ are inseparable then Eλ(a)HnEµ(b) = 0 = Eλ(b)HnEµ(a) .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9702017v2/blocks/lem-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "lem-sec-003-03.md",
+      "narrative": null,
+      "content": "Let λ and µ be Young diagrams with n cells, and let π ∈Sn be a permutation which does not separate λ from µ. Then Eλ(a)ωπEµ(b) = 0 = Eλ(b)ωπEµ(a).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9702017v2/blocks/lem-sec-003-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "lem-sec-003-05.md",
+      "narrative": null,
+      "content": "Let λ have n cells. Then Eλ(a)ωπEλ∨(b) is a scalar multiple of Eλ(a)ωπλEλ∨(b) for each π ∈Sn. Idempotents of the Hecke algebra.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9702017v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Idempotents",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "../sections/sec-003-4-idempotents.md",
+      "narrative": null,
+      "content": "9\n4\nIdempotents\nThe Hecke algebra Hn is closely related to the group algebra of Sn, whose idem-\npotents are described by the classical Young symmetrisers. For a Young diagram\nλ its Young symmetriser is the product of the sum of permutations which pre-\nserve the rows of T(λ) and the alternating sum of permutations which preserve\ncolumns.\nWith care it is possible to make a similar construction of idempo-\ntents in Hn, replacing permutations by suitably weighted positive permutation\nbraids. Jones [11] gives a good description of the two idempotents corresponding\nto single row and column Young diag",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9702017v2/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[13]",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "For each i, we can factorise En in Hn as En = (σi + 1)E(i) n , En = E′(i) n (σi + 1), Idempotents of the Hecke algebra. where E(i) n = X π(i)<π(i+1) ωπ and E′(i) n = X π(i)<π(i+1) ωπ−1 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9702017v2/blocks/thm-sec-003-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "thm-sec-003-06.md",
+      "narrative": null,
+      "content": "Let λ and µ be Young diagrams with n cells. Then eλeµ = for λ̸ = µ, e2 λ = αλeλ for some scalar αλ. Thus distinct Young diagrams determine orthogonal elements, while each eλ is a quasi-idempotent element of Hn.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9702017v2/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 25,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "Let Q ⊂D2 with |Q| = n. There is a unique element aQ in the Idempotents of the Hecke algebra. algebra HQ which corresponds to an ∈Hn under every choice of isomorphism S(β).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9702017v2/blocks/lem-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 25,
+      "target": "lem-sec-004-02.md",
+      "narrative": null,
+      "content": "Let S(ω) : S(B, P) →S(B, P) be the linear map induced from a geometric partition ω of P. (a) If λ(ω) and µ(ω) are inseparable then S(ω) = 0. (b) If λ(ω) is just separable from µ(ω) (when µ(ω) = λ(ω)∨) then S(ω) has rank 1. Its image is spanned by S(ω)(T), where T is any tangle whose arcs separate λ(ω) from µ(ω).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9702017v2/blocks/lem-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 25,
+      "target": "lem-sec-004-03.md",
+      "narrative": null,
+      "content": "Let ω′ be a subpartition of ω, in the sense that every disk of ω′ is contained in a disk of ω. Then S(ω) (S(ω′)(T)) is a non-zero multiple of S(ω)(T) for every T.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9702017v2/blocks/lem-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 25,
+      "target": "lem-sec-004-04.md",
+      "narrative": null,
+      "content": "Suppose that some of the strings of a tangle T can be enclosed in a ball B′ ⊂B which does not meet the remaining strings of T. A given geometric partition ω of P = T ∩∂B determines a partition ω′ of P ′ = P ∩B′, using disks Dα ∩B′. If λ(ω′) and µ(ω′) are inseparable then S(ω)(T) = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9702017v2/blocks/lem-sec-004-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 25,
+      "target": "lem-sec-004-06.md",
+      "narrative": null,
+      "content": "Suppose that the jth cell of λ has coordinates (k, l). Then EI λS(β)(M(j))EO λ = sl−k[l −k] Eλ .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9702017v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Framing and the Murphy operators",
+      "pageStart": 14,
+      "pageEnd": 25,
+      "target": "../sections/sec-004-5-framing-and-the-murphy-operators.md",
+      "narrative": null,
+      "content": "Framing and the Murphy operators\nIn this section we return to the 3-dimensional views of the skein S(B, P) for a\nball B ∼= B3 with a set P of 2n distinguished points on its boundary, introduced\nin Sect. 4.\nIdempotents of the Hecke algebra.\n15\nT\nQ\nQ\nQ\nQ\n-1\nβ\nβ\n/\n/\nFigure 11: The wiring of (D2 × I, P ′) into (D2 × I, P)\nWe noted earlier that this skein is linearly isomorphic to Hn. In order to\ntranslate the results about Hn from the previous section into a 3-dimensional\nsetting we shall use some explicit choices of isomorphism in a couple of standard\ncases.\nWe start with the case when B = D2 × I",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9702017v2/blocks/thm-sec-004-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 25,
+      "target": "thm-sec-004-05.md",
+      "narrative": null,
+      "content": "Let λ be a Young diagram with n cells. Then Fneλ = fλeλ, where fλ = x|λ|2v−|λ|snλ and nλ = X (i,j)∈λ 2(j −i).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9702017v2/blocks/thm-sec-004-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 25,
+      "target": "thm-sec-004-07.md",
+      "narrative": null,
+      "content": "Let λ be a Young diagram with n cells. Set M = Pn j=1 M(j). Then M is central in Hn and Meλ = mλeλ where mλ = X (k,l)∈λ s(l−k)[l −k] = X (k,l)∈λ s2(l−k) −1 s −s−1 . The Young diagram λ is determined by mλ and n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9702017v2/blocks/prop-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "[2]",
+      "pageStart": 25,
+      "pageEnd": 40,
+      "target": "prop-sec-005-02.md",
+      "narrative": null,
+      "content": "For every Young diagram λ with n cells, the endomor- phism of V ⊗n ✷ determined by Φ(eλ) is a scalar multiple of the projection map onto a single copy of the irreducible SU(N)q–module Vλ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9702017v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connections with the quantum group invariants",
+      "pageStart": 25,
+      "pageEnd": 40,
+      "target": "../sections/sec-005-6-connections-with-the-quantum-group-invariants.md",
+      "narrative": null,
+      "content": "ants\nHere we discuss brieﬂy the relationship between the Homﬂy polynomial and the\nSU(N)q–invariants and the bearing the idempotent elements of Sect. 4 have on\nthis relationship. For more details, the reader is referred to [2] and [15].\nLet Qλ denotes the closure of (1/αλ) eλ in the Homﬂy skein of the annulus,\nor equally of (1/αλ) Eλ in the skein of D2 × S1.\nTheorem 6.1 ([20]) The quantum invariant J(L; V✷, · · ·, V✷) of the link L with\neach component decorated by the fundamental representation is given as a function\nof s by the framed Homﬂy polynomial X (L), evaluated at x = s−1/N and v = s−N.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9702017v2/blocks/thm-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[20]",
+      "pageStart": 25,
+      "pageEnd": 40,
+      "target": "thm-sec-005-01.md",
+      "narrative": null,
+      "content": "The quantum invariant J(L; V✷, · · ·, V✷) of the link L with each component decorated by the fundamental representation is given as a function of s by the framed Homﬂy polynomial X (L), evaluated at x = s−1/N and v = s−N.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9702017v2/blocks/thm-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[2]",
+      "pageStart": 25,
+      "pageEnd": 40,
+      "target": "thm-sec-005-03.md",
+      "narrative": null,
+      "content": "Let C be a framed knot coloured by the irreducible represen- tation Vλ. Let S be the satellite knot C ∗Qλ with companion C and pattern Qλ. Then J(C; Vλ) = XN(S) . The result also holds for links where each component coloured by Vλ is replaced by its satellite, with pattern Qλ. Idempotents of the Hecke algebra. It is not diﬃcult to show that the elements Qλ form a linear basis for the skein of the annulus, by expressing them in terms of Turaev’s basis, as discussed in Sect. 2. There is no nice skein theory proof that the expression for QλQµ in terms of this basis is identical to that for the de",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

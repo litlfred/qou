@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/proof-editor.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/proof-editor",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "proof-editor",
+      "title": "Proof Editor (Coordinator)",
+      "description": "Coordinator skill for proof review and repair. Runs the full proof skill suite (gap audit, lean review, completeness, simplifier, triage), deduplicates findings across reviewers, ranks by severity and dependency order, and delivers a single author-ready action plan with concrete suggested edits (never applying them without author approval).",
+      "instructionsPath": "skills/local/proof-editor.md",
+      "instructionLines": 250,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

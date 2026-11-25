@@ -1,0 +1,103 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2111.06645v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Knots, Perturbative Series and Quantum Modularity",
+  "contains": [
+    "library/arxiv-2111.06645v3/sections/sec-front-matter",
+    "library/arxiv-2111.06645v3/sections/sec-000",
+    "library/arxiv-2111.06645v3/sections/sec-001",
+    "library/arxiv-2111.06645v3/sections/sec-002",
+    "library/arxiv-2111.06645v3/sections/sec-003",
+    "library/arxiv-2111.06645v3/sections/sec-004",
+    "library/arxiv-2111.06645v3/sections/sec-005",
+    "library/arxiv-2111.06645v3/sections/sec-006",
+    "library/arxiv-2111.06645v3/sections/sec-007",
+    "library/arxiv-2111.06645v3/sections/sec-008",
+    "library/arxiv-2111.06645v3/sections/sec-009",
+    "library/arxiv-2111.06645v3/sections/sec-010",
+    "library/arxiv-2111.06645v3/sections/sec-011",
+    "library/arxiv-2111.06645v3/sections/sec-012",
+    "library/arxiv-2111.06645v3/sections/sec-013",
+    "library/arxiv-2111.06645v3/sections/sec-014",
+    "library/arxiv-2111.06645v3/sections/sec-015",
+    "library/arxiv-2111.06645v3/sections/sec-016",
+    "library/arxiv-2111.06645v3/sections/sec-017",
+    "library/arxiv-2111.06645v3/sections/sec-018",
+    "library/arxiv-2111.06645v3/sections/sec-019",
+    "library/arxiv-2111.06645v3/sections/sec-020",
+    "library/arxiv-2111.06645v3/sections/sec-021",
+    "library/arxiv-2111.06645v3/sections/sec-022",
+    "library/arxiv-2111.06645v3/sections/sec-023",
+    "library/arxiv-2111.06645v3/sections/sec-024",
+    "library/arxiv-2111.06645v3/sections/sec-025",
+    "library/arxiv-2111.06645v3/sections/sec-026",
+    "library/arxiv-2111.06645v3/sections/sec-027",
+    "library/arxiv-2111.06645v3/sections/sec-028",
+    "library/arxiv-2111.06645v3/sections/sec-029",
+    "library/arxiv-2111.06645v3/sections/sec-030",
+    "library/arxiv-2111.06645v3/sections/sec-031",
+    "library/arxiv-2111.06645v3/sections/sec-032",
+    "library/arxiv-2111.06645v3/sections/sec-033",
+    "library/arxiv-2111.06645v3/sections/sec-034",
+    "library/arxiv-2111.06645v3/sections/sec-035",
+    "library/arxiv-2111.06645v3/sections/sec-036",
+    "library/arxiv-2111.06645v3/sections/sec-037",
+    "library/arxiv-2111.06645v3/sections/sec-038",
+    "library/arxiv-2111.06645v3/sections/sec-039",
+    "library/arxiv-2111.06645v3/sections/sec-040",
+    "library/arxiv-2111.06645v3/sections/sec-041",
+    "library/arxiv-2111.06645v3/sections/sec-042",
+    "library/arxiv-2111.06645v3/sections/sec-043",
+    "library/arxiv-2111.06645v3/sections/sec-044",
+    "library/arxiv-2111.06645v3/sections/sec-045",
+    "library/arxiv-2111.06645v3/sections/sec-046"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Knots, Perturbative Series and Quantum Modularity — We introduce an invariant of a hyperbolic knot which is a map α 7→Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns\n\n**Knots, Perturbative Series and Quantum Modularity**\n\n*SIGMA 20 (2024), 055, 87 pages*\n\n87 pp, 48 sections.\n\n**Abstract.** We introduce an invariant of a hyperbolic knot which is a map α 7→Φα(h) from Q/Z to matrices with entries in Q[[h]] and with rows and columns indexed by the boundary parabolic SL2(C) representations of the fundamental group of the knot.\n\n**Outline.** Front matter; Part 0: Introduction and overview; Part I: The main story; 1 The original quantum modularity conjecture; 2 A collection of formal power series; 2.1 The indexing set P_K; 2.2 Four constructions of the power series Phi; 3 Interrelations among the power series Phi_a^; 3.1 The generalized quantum modularity conject; 3.2 Lifting the QMC from constant terms to pow; 3.3 Quadratic relations; 3.4 Asymptotics of the coefficients; 4 Refining the quantum modularity conjecture; 4.1 Improving the quantum modularity conjectur; 4.2 New elements of the Habiro ring; 4.3 Smoothed optimal truncation; 4.4 Strengthening the generalized quantum modu; 4.5 The refined quantum modularity conjecture",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://creativecommons.org/licenses/by-sa/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by-sa/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2111.06645&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2111.06645v3",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "2111.06645v3.pdf",
+    "source_sha256": "2a4826bd1c2f0823c99f8e3cccfd835c5044d70d30eb20b36fea38dcb8dd83de",
+    "pages": 87,
+    "arxiv": {
+      "id": "2111.06645",
+      "version": "3",
+      "primary_class": "math.GT",
+      "stamp_date": "24 Jun 2024"
+    },
+    "doi": "10.3842/SIGMA.2024.055",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

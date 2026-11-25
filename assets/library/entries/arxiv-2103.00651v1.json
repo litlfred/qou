@@ -1,0 +1,101 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2103.00651v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2103.00651v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "In many statistical settings, vector-valued estimators naturally arise and determining their statistical rates is essential. As an example, assume that $X=(X_1,\\ldots, X_n)$ corresponds to a random sample drawn from a product measure $\\nu_{\\theta}^{\\otimes n}$, denoted by $X\\sim \\nu_{\\theta}^{\\otimes n}$, where $\\theta$ is a parameter vector taking values in a compact set $\\Theta \\subset \\mathbb{R}^k$ with a fixed dimension $k$ independent of $n$. In this case, $\\hat{\\theta}_n=f(X)$ is a candidate vector-valued estimator of $\\theta$, where $f$ is a measurable function with respect to $X$. In s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2103.00651v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:2103.00651v1  [math.PR]  28 Feb 2021\nOn Concentration Inequalities for Vector-Valued Lipschitz\nFunctions\nDimitrios Katselis\nkatselis@illinois.edu\nECE Department, University of Illinois at Urbana-Champaign, USA\nXiaotian Xie\nxx5@illinois.edu\nISE Department and Coordinated Science Lab, University of Illinois at Urbana-Champaign, USA\nCarolyn L. Beck\nbeck3@illinois.edu\nISE Department and Coordinated Science Lab, University of Illinois at Urbana-Champaign, USA\nR. Srikant\nrsrikant@illinois.edu\nECE Department and Coordinated Science Lab, University of Illinois at Urbana-Champaign, USA\nAbstract\nW",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2103.00651v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries and Main Result",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-preliminaries-and-main-result.md",
+      "narrative": null,
+      "content": "Let $(\\mathbb{X},d_{\\mathbb{X}})$ be a Polish space and $\\rho$ be a (Borel) probability measure on $(\\mathbb{X},d_{\\mathbb{X}})$. The triplet $(\\mathbb{X},d_{\\mathbb{X}},\\rho)$ defines a metric probability space in the sense of Gromov [@rs13], [@g07]. Given two metric spaces $(\\mathbb{X}, d_{\\mathbb{X}})$ and $(\\mathbb{Y}, d_{\\mathbb{Y}})$, let $f:\\mathbb{X}\\rightarrow \\mathbb{Y}$ be a Lipschitz mapping with Lipschitz constant $\\|f\\|_{\\rm Lip}$, i.e., $d_{\\mathbb{Y}}(f(x),f(\\tilde{x}))\\leq \\|f\\|_{\\rm Lip} d_{\\mathbb{X}}(x,\\tilde{x}),$ $\\forall x,\\tilde{x}\\in \\mathbb{X}$. In the following, the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2103.00651v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 1 and Additional Results",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-3-proof-of-theorem-1-and-additional-results.md",
+      "narrative": null,
+      "content": "[]{#sec:ProofMain label=\"sec:ProofMain\"}\n\n**Proof of the first bound in ([\\[eq:MainThm_1\\]](#eq:MainThm_1){reference-type=\"ref\" reference=\"eq:MainThm_1\"})**: The proof of the first bound relies on covering arguments; see [@v18; @w19; @lc20] and references therein for results based on such arguments. For some $\\varepsilon$ in the interval $(0,1]$, let $\\mathcal{N}(\\varepsilon)$ be an $\\varepsilon$-net of the unit Euclidean sphere $\\mathbb{S}^{k-1}$ in $\\mathbb{R}^k$ with cardinality $\\left|\\mathcal{N}(\\varepsilon)\\right|\\leq \\left(1+\\frac{2}{\\varepsilon}\\right)^k$ [@v18]. Additionally, by Exerc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2103.00651v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Example",
+      "pageStart": 5,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-4-example.md",
+      "narrative": null,
+      "content": "Consider a sample $X_{0:n-1}=\\{X_0,X_1,\\ldots, X_{n-1}\\}$ of size $n$ drawn from an ergodic, discrete-time, finite-state Markov chain $(X_k)_{k\\geq 0}$ with state space $\\mathbb{E}=[K]=\\{1,2,\\ldots, K\\}$, transition matrix $\\mathrm{P}=[\\mathrm{P}_{ij}]$ and $X_0\\sim \\varrho$, where $\\varrho$ denotes the initial measure of the chain. We denote such a Markov chain by $(\\mathrm{P},\\varrho)$ and the corresponding stationary chain by $(\\mathrm{P},\\pi)$, where $\\pi$ is the underlying invariant measure. Let the chain be $r$-contractive with Dobrushin coefficient $r<1$. Consider the natural plug-in es",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

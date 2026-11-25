@@ -1,0 +1,559 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-gr-qc-0407051v2",
+  "title": "Black hole entropy from quantum geometry",
+  "variant": "pdf",
+  "pages": 14,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction and results",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction-and-results"
+    },
+    {
+      "level": 1,
+      "title": "The horizon quantum states",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-the-horizon-quantum-states"
+    },
+    {
+      "level": 1,
+      "title": "The combinatoric formulation of the problem",
+      "number": "3",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-the-combinatoric-formulation-of-the-problem"
+    },
+    {
+      "level": 1,
+      "title": "The entropy calculations",
+      "number": "4",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-the-entropy-calculations"
+    },
+    {
+      "level": 1,
+      "title": "The spin probability distribution",
+      "number": "5",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-5-the-spin-probability-distribution"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 191,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "quantum geometry",
+          "heading": false
+        },
+        {
+          "term": "entropy",
+          "heading": false
+        },
+        {
+          "term": "institut",
+          "heading": false
+        },
+        {
+          "term": "counting",
+          "heading": false
+        },
+        {
+          "term": "literature",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:gr-qc/0407051v2 23 Aug 2004 Black hole entropy from Quantum Geometry Marcin Domagala1 and Jerzy Lewandowski1,2,3 1. Instytut Fizyki Teoretycznej, Uniwersytet Warszawski, ul. Ho˙za 69, 00-681 Warszawa, Poland 2. Physics Department, 104 Davey, Penn State, University Park, PA 16802, USA 3. Max Planck Institut f¨ur Gravitationsphysik, Albert Einstein Institut, 14476 Golm, Germany Abstract Quantum Geometry (the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-gr-qc-0407051v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction-and-results",
+      "number": "1",
+      "title": "Introduction and results",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 932,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black-hole entropy",
+          "heading": false
+        },
+        {
+          "term": "horizon area",
+          "heading": false
+        },
+        {
+          "term": "horizon states",
+          "heading": false
+        },
+        {
+          "term": "quantum area",
+          "heading": false
+        },
+        {
+          "term": "gammaabk",
+          "heading": false
+        },
+        {
+          "term": "gamma ell",
+          "heading": false
+        },
+        {
+          "term": "bulk states",
+          "heading": false
+        },
+        {
+          "term": "barbero-immirzi parameter",
+          "heading": false
+        }
+      ],
+      "extract": "Quantum Geometry [@thiembook; @rovbook; @alrev] provides microscopic degrees of freedom that account for the black-hole entropy. The issue was raised in works by Krasnov [@krasentropy] and Rovelli [@roventropy]. The final quantum Isolated Horizon framework was introduced by Ashtekar, Baez, Corichi and Krasnov [@abk]. The framework describes a black-hole in equilibrium surrounded by a quite arbitrary space-time. In",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-horizon-quantum-states",
+      "number": "2",
+      "title": "The horizon quantum states",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": "4",
+      "labelEnd": "7",
+      "words": 1678,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "horizon",
+          "heading": true
+        },
+        {
+          "term": "cal vec",
+          "heading": false
+        },
+        {
+          "term": "horizon area",
+          "heading": false
+        },
+        {
+          "term": "isolated horizon",
+          "heading": false
+        },
+        {
+          "term": "horizon hilbert",
+          "heading": false
+        },
+        {
+          "term": "cal sigma",
+          "heading": false
+        },
+        {
+          "term": "horizon framework",
+          "heading": false
+        },
+        {
+          "term": "cal bigoplus",
+          "heading": false
+        }
+      ],
+      "extract": "Our departure point is the quantum Isolated Horizon theory introduced in [@abk]. A classical (weakly) isolated horizon is a null, non-expanding world-surface of a space-like 2-sphere $S$, equipped with a null vector field of a constant self-acceleration. This idea gave rise to a new quasi-local theory of black-hole in equilibrium interesting also from purely classical point of view [@IH]. The local degrees of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-the-combinatoric-formulation-of-the-problem",
+      "number": "3",
+      "title": "The combinatoric formulation of the problem",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "9",
+      "words": 519,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phim",
+          "heading": false
+        },
+        {
+          "term": "gamma ell",
+          "heading": false
+        },
+        {
+          "term": "quantum horizon",
+          "heading": false
+        },
+        {
+          "term": "mzero",
+          "heading": false
+        },
+        {
+          "term": "sphys",
+          "heading": false
+        },
+        {
+          "term": "frac mathbb",
+          "heading": false
+        },
+        {
+          "term": "sum sqrt",
+          "heading": false
+        },
+        {
+          "term": "combinatoric",
+          "heading": true
+        }
+      ],
+      "extract": "From now our treatment starts to differ from that of [@abk]. Our aim is to define the number of the quantum states of the horizon which contribute to the entropy in a form of a clear and precise combinatoric formula. Recall that the classical area $a$ of the horizon is fixed as $$a\\ =\\ 4\\pi\\gamma{\\ell}_{\\rm Pl}^2 k,\\ \\ \\ k\\in {\\mathbb{N}}.$$ Calculation of the horizon entropy consists in counting those quantum",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-the-entropy-calculations",
+      "number": "4",
+      "title": "The entropy calculations",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 12,
+      "labelStart": "9",
+      "labelEnd": "12",
+      "words": 1063,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gammaabk",
+          "heading": false
+        },
+        {
+          "term": "frac gamma",
+          "heading": false
+        },
+        {
+          "term": "rec",
+          "heading": false
+        },
+        {
+          "term": "frac ell",
+          "heading": false
+        },
+        {
+          "term": "mzero",
+          "heading": false
+        },
+        {
+          "term": "frac mathbb",
+          "heading": false
+        },
+        {
+          "term": "barbero-immirzi parameter",
+          "heading": false
+        },
+        {
+          "term": "meis",
+          "heading": false
+        }
+      ],
+      "extract": "To find an upper bound for the number $N(a)$ introduced in the previous section (recall that $a=4\\pi\\gamma{\\ell}_{\\rm Pl}^2k$, and $k\\in {\\mathbb{N}}$), consider the set $M^+_k$ of all the finite sequences $(m_1,...,m_n)$ of non-zero elements of $\\frac{1}{2}{\\mathbb{Z}}$ which satisfy the inequality in ([\\[mzero\\]](#mzero){reference-type=\"ref\" reference=\"mzero\"}), but do not necessarily sum to zero,that is, $$M^+_k\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-the-spin-probability-distribution",
+      "number": "5",
+      "title": "The spin probability distribution",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 747,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac a-a",
+          "heading": false
+        },
+        {
+          "term": "john baez",
+          "heading": false
+        },
+        {
+          "term": "rightarrow infty",
+          "heading": false
+        },
+        {
+          "term": "gamma ell",
+          "heading": false
+        },
+        {
+          "term": "limit rightarrow",
+          "heading": false
+        },
+        {
+          "term": "probability",
+          "heading": true
+        },
+        {
+          "term": "frac mathbb",
+          "heading": false
+        },
+        {
+          "term": "finite sequences",
+          "heading": false
+        }
+      ],
+      "extract": "Given any value $a$ of the classical horizon area, and the $N(a)$ quantum states of the horizon labeled by all the finite sequences $(m_1,...,m_n)$ of the non-zero half-integers such that ([\\[N(a)\\]](#N(a)){reference-type=\"ref\" reference=\"N(a)\"}) one can fix any arbitrary $$0\\not=m\\in\\frac{1}{2}{\\mathbb{Z}}$$ and consider the subset of states corresponding to the sequences such that $$m_1=m .$$ Denote the number of",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "horizon entropy",
+      "heading": false
+    },
+    {
+      "term": "horizon area",
+      "heading": false
+    },
+    {
+      "term": "quantum horizon",
+      "heading": true
+    },
+    {
+      "term": "horizon states",
+      "heading": true
+    },
+    {
+      "term": "horizon hilbert",
+      "heading": false
+    },
+    {
+      "term": "black-hole entropy",
+      "heading": false
+    },
+    {
+      "term": "horizon framework",
+      "heading": false
+    },
+    {
+      "term": "isolated horizon",
+      "heading": false
+    },
+    {
+      "term": "classical horizon",
+      "heading": false
+    },
+    {
+      "term": "horizon degrees",
+      "heading": false
+    },
+    {
+      "term": "gamma ell",
+      "heading": false
+    },
+    {
+      "term": "horizon theory",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 5,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 6,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 6 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-gr-qc-0407051v2"
+  }
+}

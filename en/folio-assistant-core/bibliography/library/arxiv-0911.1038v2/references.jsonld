@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-0911.1038v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "ASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS: STRUCTURE OF KEROV CHARACTER POLYNOMIALS",
+      "dcterms:creator": [
+        "˛EGA, MACIEJ DOŁ",
+        "ŚNIADY, PIOTR"
+      ],
+      "dcterms:issued": "D:20211105",
+      "dcterms:identifier": "https://arxiv.org/abs/0911.1038",
+      "dcterms:abstract": "We study asymptotics of characters of the symmetric groups on a ﬁxed conjugacy class. It was proved by Kerov that such a character can be expressed as a polynomial in free cumulants of the Young dia- gram (certain functionals describing the shape of the Young diagram). We show that for each genus there exists a universal symmetric polyno- mial which gives the coefﬁcients of the part of Kerov character polyno- mials with the prescribed homogeneous degree. The existence of such symmetric polynomials was conjectured by Lassalle.",
+      "dcterms:source": "library/arxiv-0911.1038v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-0911.1038v2"
+    }
+  ]
+}

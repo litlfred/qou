@@ -1,0 +1,817 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1911.04486v4",
+  "title": "Knots and the Maxwell Equations",
+  "variant": "pdf",
+  "pages": 26,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Maxwell's equations",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-maxwells-equations"
+    },
+    {
+      "level": 2,
+      "title": "Maxwell's equations in the three-dimensional formulation",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-maxwells-equations-in-the-three-dimensional-f"
+    },
+    {
+      "level": 2,
+      "title": "Maxwell equations in covariant formulation",
+      "number": "2.2",
+      "page": 7,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-maxwell-equations-in-covariant-formulation"
+    },
+    {
+      "level": 1,
+      "title": "Knots in Maxwell's electrodynamics",
+      "number": "3",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-3-knots-in-maxwells-electrodynamics"
+    },
+    {
+      "level": 2,
+      "title": "Ranãda solutions",
+      "number": "3.1",
+      "page": 10,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-31-ranãda-solutions"
+    },
+    {
+      "level": 2,
+      "title": "Electromagnetic knot fields",
+      "number": "3.2",
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-32-electromagnetic-knot-fields"
+    },
+    {
+      "level": 1,
+      "title": "Electric and magnetic knots in Bateman parametrization",
+      "number": "4",
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-4-electric-and-magnetic-knots-in-bateman-paramet"
+    },
+    {
+      "level": 1,
+      "title": "Knots in nonlinear electrodynamics",
+      "number": "5",
+      "page": 19,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-5-knots-in-nonlinear-electrodynamics"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 100,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-linear electrodynamics",
+          "heading": false
+        },
+        {
+          "term": "maxwell equations",
+          "heading": false
+        },
+        {
+          "term": "ısica",
+          "heading": false
+        },
+        {
+          "term": "nada",
+          "heading": false
+        }
+      ],
+      "extract": "Knots and the Maxwell Equations Ion V. Vancea Grupo de F´ısica Te´orica e Matem´atica F´ısica Departamento de F´ısica Universidade Federal Rural do Rio de Janeiro Serop´edica - Rio de Janeiro, Brazil ionvancea@ufrrj.br 25 March 2020 Abstract In this chapter, we review the Ra˜nada ﬁeld line solutions of Maxwell’s equations in the vacuum, which describe a topologically non-trivial electro- magnetic ﬁeld, as well as",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1911.04486v4/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 560,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite ranada",
+          "heading": false
+        },
+        {
+          "term": "cite alves",
+          "heading": false
+        },
+        {
+          "term": "cite arrayas",
+          "heading": false
+        },
+        {
+          "term": "electromagnetic fields",
+          "heading": false
+        },
+        {
+          "term": "cite irvine",
+          "heading": false
+        },
+        {
+          "term": "topological electromagnetic",
+          "heading": false
+        },
+        {
+          "term": "maxwell equations",
+          "heading": false
+        },
+        {
+          "term": "physics cite",
+          "heading": false
+        }
+      ],
+      "extract": "The discovery of the knot solutions of Maxwell's equations in the vacuum represents one of the most exciting results obtained recently in the modern classical electrodynamics. Since their first appearance in the seminal papers \\cite{Trautman:1977im,Ranada:1989wc,Ranada:1990,Ranada:1992hw}, many interesting properties, applications, and generalizations of the knot electromagnetic fields have been discovered. The knot",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-maxwells-equations",
+      "number": "2",
+      "title": "Maxwell's equations",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 51,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "maxwell",
+          "heading": true
+        },
+        {
+          "term": "electrodynamics",
+          "heading": false
+        },
+        {
+          "term": "three-dimensions",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we will briefly review the formulation of Maxwell's electrodynamics in terms of differential forms in the three-dimensions Euclidian space and in the four-dimensional space-time (the covariant formulation). This is a well-known material which can be found in standard textbooks on classical electrodynamics such as \\cite{Jackson:1998nia,Frankel:1997ec}.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-maxwells-equations-in-the-three-dimensional-f",
+      "number": "2.1",
+      "title": "Maxwell's equations in the three-dimensional formulation",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 7,
+      "labelStart": "2",
+      "labelEnd": "6",
+      "words": 1253,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "refeq tbl",
+          "heading": false
+        },
+        {
+          "term": "maxwell equations",
+          "heading": true
+        },
+        {
+          "term": "omega wedge",
+          "heading": false
+        },
+        {
+          "term": "table refeq",
+          "heading": false
+        },
+        {
+          "term": "wedge sigma",
+          "heading": false
+        },
+        {
+          "term": "dots wedge",
+          "heading": false
+        },
+        {
+          "term": "mathbf mathcal",
+          "heading": false
+        },
+        {
+          "term": "align mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "The two formulations of Maxwell's equations that are our concern in this paper are: the formulation in terms of differential forms and the covariant formulation. Both formulations are equivalent to the one in terms of three-dimensional vectors that is known from the undergraduate textbooks on electrodynamics, see e. g. \\cite{Jackson:1998nia}. Consider the following standard form of Maxwell's equations in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-maxwell-equations-in-covariant-formulation",
+      "number": "2.2",
+      "title": "Maxwell equations in covariant formulation",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 830,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "refeq maxwell-4d",
+          "heading": false
+        },
+        {
+          "term": "maxwell equations",
+          "heading": true
+        },
+        {
+          "term": "label maxwell-4d",
+          "heading": false
+        },
+        {
+          "term": "boldsymbol star",
+          "heading": false
+        },
+        {
+          "term": "mathbf boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "form star",
+          "heading": false
+        },
+        {
+          "term": "electromagnetic fields",
+          "heading": false
+        },
+        {
+          "term": "inhomogeneous equations",
+          "heading": false
+        }
+      ],
+      "extract": "The geometric properties of the electromagnetic field are highlighted in the formulation of Maxwell's equations in terms of differential forms on $\\mathbb{R}^3$. However, the fundamental symmetry of Maxwell's equations, which is the invariance under the Lorentz transformations, is explicitly displayed only in the Minkowski space-time $\\mathbb{R}^{1,3}$. Therefore, it is important to write the Maxwell equations in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-knots-in-maxwells-electrodynamics",
+      "number": "3",
+      "title": "Knots in Maxwell's electrodynamics",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 81,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "trautman",
+          "heading": false
+        },
+        {
+          "term": "ranada",
+          "heading": false
+        },
+        {
+          "term": "maxwell",
+          "heading": true
+        }
+      ],
+      "extract": "In this section, we are going to review the field line solutions of Maxwell's equations and their relationship with the Hopf knots. These solutions were discovered by Ra\\~{n}ada and were communicated in \\cite{Ranada:1989wc,Ranada:1990}. An important study of the Hopf fibration in the context of the classical electromagnetism can be found in the early pioneering work by Trautman \\cite{Trautman:1977im}. In our",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-31-ranãda-solutions",
+      "number": "3.1",
+      "title": "Ranãda solutions",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 975,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "refeq ranada-b",
+          "heading": false
+        },
+        {
+          "term": "refeq ranada-e",
+          "heading": false
+        },
+        {
+          "term": "refeq null-field",
+          "heading": false
+        },
+        {
+          "term": "refeq ranada-electric-solution",
+          "heading": false
+        },
+        {
+          "term": "refeq ranada-magnetic-solution",
+          "heading": false
+        },
+        {
+          "term": "refeq maxwell-4d",
+          "heading": false
+        },
+        {
+          "term": "partial theta",
+          "heading": false
+        },
+        {
+          "term": "bar theta",
+          "heading": false
+        }
+      ],
+      "extract": "The Ran\\~{a}da solutions form a particular class of \\emph{field line solutions} whose main feature is that the field lines completly characterize the electromagnetic field. In general, one can associate a field line to any smooth vector field through its integral flow. The path formed by the field line is tangent in each of its points to the vector obtained by taking the value of the vector field at that point. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-32-electromagnetic-knot-fields",
+      "number": "3.2",
+      "title": "Electromagnetic knot fields",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 16,
+      "labelStart": "11",
+      "labelEnd": "15",
+      "words": 975,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "varepsilon jmn",
+          "heading": false
+        },
+        {
+          "term": "align mathbf",
+          "heading": false
+        },
+        {
+          "term": "jmn partial",
+          "heading": false
+        },
+        {
+          "term": "varepsilon jkl",
+          "heading": false
+        },
+        {
+          "term": "frac mathbf",
+          "heading": false
+        },
+        {
+          "term": "refeq",
+          "heading": false
+        },
+        {
+          "term": "mathbf left",
+          "heading": false
+        },
+        {
+          "term": "varepsilon nrs",
+          "heading": false
+        }
+      ],
+      "extract": "As we have seen above, the electromagnetic field characterized by the equations (\\refeq{Ranada-magnetic-solution}) and (\\refeq{Ranada-electric-solution}) is parametrized by $g$ and $f$. In particular, by choosing these functions as in the equations (\\refeq{Ranada-E}) and (\\refeq{Ranada-B}), the field line solutions display non-trivial topological properties. In order to see that, we note that $\\phi$ and $\\theta$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-4-electric-and-magnetic-knots-in-bateman-paramet",
+      "number": "4",
+      "title": "Electric and magnetic knots in Bateman parametrization",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 19,
+      "labelStart": "15",
+      "labelEnd": "18",
+      "words": 1164,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bateman",
+          "heading": true
+        },
+        {
+          "term": "refeq maxwell-4d",
+          "heading": false
+        },
+        {
+          "term": "bateman solutions",
+          "heading": false
+        },
+        {
+          "term": "cite hoyos",
+          "heading": false
+        },
+        {
+          "term": "bxa begin",
+          "heading": false
+        },
+        {
+          "term": "cite kedia",
+          "heading": false
+        },
+        {
+          "term": "align alpha",
+          "heading": false
+        },
+        {
+          "term": "beta partial",
+          "heading": false
+        }
+      ],
+      "extract": "In the previous section, we have discussed several parametrizations of the field line solutions. In this section, we present the factorized parametrization of the self-dual electromagnetic fields in terms of 1-forms given by Bateman in \\cite{Bateman:2016}. This representation is useful for the generalization of the field line solutions to the gravitating electromagnetic fields \\cite{Vancea:2017tmx} as well as to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-5-knots-in-nonlinear-electrodynamics",
+      "number": "5",
+      "title": "Knots in nonlinear electrodynamics",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 26,
+      "labelStart": "18",
+      "labelEnd": "25",
+      "words": 2095,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "refeq null-field",
+          "heading": false
+        },
+        {
+          "term": "electrodynamics",
+          "heading": true
+        },
+        {
+          "term": "born-infeld electrodynamics",
+          "heading": false
+        },
+        {
+          "term": "non-linear born-infeld",
+          "heading": false
+        },
+        {
+          "term": "maxwell electrodynamics",
+          "heading": false
+        },
+        {
+          "term": "field mathbf",
+          "heading": false
+        },
+        {
+          "term": "varepsilon jmn",
+          "heading": false
+        },
+        {
+          "term": "cite alves",
+          "heading": false
+        }
+      ],
+      "extract": "A very important application of Bateman method to non-linear electrodynamical models that generalize Maxwell's electrodynamics in the strong field regime, was given recently in \\cite{Alves:2017ggb,Alves:2017zjt}. In these works, the authors showed that there are knot solutions of the equations of motion in any non-linear extension of Maxwell's electrodynamics that satisfies strong field requirement. Let us see how",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "refeq maxwell-4d",
+      "heading": false
+    },
+    {
+      "term": "refeq null-field",
+      "heading": false
+    },
+    {
+      "term": "refeq ranada-b",
+      "heading": false
+    },
+    {
+      "term": "refeq ranada-e",
+      "heading": false
+    },
+    {
+      "term": "refeq ranada-electric-solution",
+      "heading": false
+    },
+    {
+      "term": "refeq ranada-magnetic-solution",
+      "heading": false
+    },
+    {
+      "term": "refeq duality-symmetry",
+      "heading": false
+    },
+    {
+      "term": "refeq maxwell-ampere",
+      "heading": false
+    },
+    {
+      "term": "refeq maxwell-gauss-el",
+      "heading": false
+    },
+    {
+      "term": "refeq tbl",
+      "heading": false
+    },
+    {
+      "term": "table refeq",
+      "heading": false
+    },
+    {
+      "term": "align mathbf",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "21",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "22",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "23",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "24",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "25",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Field content of Maxwell’s equations Vector",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 10,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 10 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1911.04486v4"
+  }
+}

@@ -1,0 +1,517 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0302267v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0302267v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0302267v2  [math.NT]  27 Feb 2003\nGroupes fondamentaux motiviques de Tate mixte\nP. Deligne et A. B. Goncharov∗\nR´esum´e. Nous d´eﬁnissons la cat´egorie des motifs de Tate mixte\nsur l’anneau des S-entiers d’un corps de nombres, et le groupe\nfondamental motivique (rendu unipotent) d’une vari´et´e unira-\ntionnelle sur un corps de nombres. Nous consid´erons plus en\nd´etail le groupe fondamental motivique de la droite projective\nmoins 0, ∞et les racines N-i`emes de l’unit´e.\nAbstract. We deﬁne the category of mixed Tate motives over\nthe ring of S-integers of a number ﬁeld. We deﬁne the m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0302267v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bibliographie",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-bibliographie.md",
+      "narrative": null,
+      "content": "Bibliographie\n82\ni",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0302267v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-0-introduction.md",
+      "narrative": null,
+      "content": "Si k est un corps de nombres, on dispose d’une cat´egorie tannakienne MT(k) des motifs\nde Tate mixte sur k, pour laquelle les groupes d’extensions de Q(0) par Q(n) ont la relation\nd´esir´ee avec les groupes de K-th´eorie de k. C’est le coeur d’une t-structure sur une sous-\ncat´egorie de la cat´egorie triangul´ee motivique de Levine (1998) ou Voevodsky (2000). La\nconjecture d’annulation de Beilinson-Soul´e est vraie sur k, et c’est ce qui permet de d´eﬁnir\nla t-structure requise. Par Levine (1998) et Huber (2000), on dispose sur cette cat´egorie\ntannakienne de foncteurs ﬁbres “r´ealisation” cor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0302267v2/blocks/prop-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 15,
+      "target": "prop-sec-002-01.md",
+      "narrative": null,
+      "content": "La coaction eM est fonctorielle en M et compatible au produit tensoriel. Preuve. La v´eriﬁcation de la fonctorialit´e en M est laiss´ee au lecteur. Pour x ∈ωm(M) et y ∈ωn(N), on doit montrer que (1.3.1) eM⊗N(x ⊗y) = eM(x) ⊗y + x ⊗eN(y). Par fonctorialit´e, on peut pour le v´eriﬁer remplacer M par W−2m(M), une extension de Q(m) ⊗ωm(M) par W−2(m+1)(M), puis par l’image inverse de cette extension par x: Q(m) →Q(m) ⊗ωm(M). De mˆeme pour N, n et y. On se ram`ene ainsi `a supposer que M = W−2m(M), ωm(M) = Q, x = 1, et de mˆeme pour N, n et y. On a alors ωm+n+1(M ⊗N) ∼ −→ωm+n+1(M ⊗(quotient Q(n) de N",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0302267v2/blocks/prop-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 15,
+      "target": "prop-sec-002-02.md",
+      "narrative": null,
+      "content": "Soit ℓun nombre premier distinct de la caract´eristique r´esiduelle de v. Pour qu’un motif de Tate mixte M sur k soit non ramiﬁ´e en v, il faut et il suﬃt que sa r´ealisation ℓ-adique Mℓsoit non ramiﬁ´ee en v. Preuve. La r´ealisation ℓ-adique est un Qℓ-espace vectoriel d´ependant fonctoriellement du choix d’une clˆoture alg´ebrique ¯k de k. La fonctorialit´e en ¯k en fait une repr´esentation continue de Gal(¯k/k). Nous utiliserons que (a) la r´ealisation l-adique de Q(1) est Qℓ(1) := Zℓ(1) ⊗ZℓQℓ, avec Zℓ(1) = lim µℓn(¯k); (b) Pour n̸ = m, puisque Hom(Q(n), Q(m)) = 0, une extension de Q(n) par",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0302267v2/blocks/prop-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 15,
+      "target": "prop-sec-002-03.md",
+      "narrative": null,
+      "content": "Soit Γ un sous-espace vectoriel de Ext1(Q(0), Q(1)). (i) Pour r ≥2, Ext1(Q(n), Q(n + r)) est le mˆeme dans MT(k) et dans MT(k)Γ. (ii) Les Ext2 de Yoneda sont nuls dans MT(k)Γ. Preuve. (i) Si r ≥2, une extension de Q(n) par Q(n + r) est en eﬀet automatiquement dans MT(k)Γ. (ii) Il suﬃt de v´eriﬁer la nullit´e des Ext2(Q(n), Q(m)). Pour toute classe c dans cet Ext2, il existe dans MT(k)Γ une extension (1.8.1) 0 →F →E1 →Q(n) →0, de classe not´ee c1, et une extension E2 de F par Q(m), de classe c2, telle que c soit le produit de Yoneda c2c1. Ce produit est l’image de c2 par le cobord ∂: Ext1(F, Q(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0302267v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motifs de Tate mixte sur l’anneau des S-entiers de k",
+      "pageStart": 5,
+      "pageEnd": 15,
+      "target": "../sections/sec-002-1-motifs-de-tate-mixte-sur-lanneau-des-s-entiers.md",
+      "narrative": null,
+      "content": "1.1. Soit k un corps. Nombre de r´esultats cit´es d´ependant de la r´esolution des singularit´es,\nnous supposons k de caract´eristique 0. Hanamura (1995), Levine (1998) et Voevodsky\n(2000) ont chacun d´eﬁni une cat´egorie triangul´ee de motifs sur k, et Levine (1998) VI 2.5.5\nconstruit une ´equivalence entre sa cat´egorie triangul´ee et celle de Voevodsky. Cette derni`ere\nsera pour nous la plus commode. Nous la noterons DM(k) et noterons DM(k)Q celle qui s’en\nd´eduit par tensorisation avec Q. On dispose dans DM(k) d’objets de Tate Z(n) (n ∈Z),\ndont les images dans DM(k)Q seront not´ees Q(n). S",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0302267v2/blocks/prop-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 28,
+      "target": "prop-sec-003-01.md",
+      "narrative": null,
+      "content": "(i) L’alg`ebre de Lie gradu´ee ugr ω est `a degr´es > 0 et est en chaque degr´e de dimension ﬁnie. Elle d´etermine Uω par Uω = lim exp(ugr ω /partie de degr´e ≥N). (ii) Le foncteur ω induit une ´equivalence de MT(OS) avec la cat´egorie des espaces vectoriels de dimension ﬁnie gradu´es, munis d’une action de ugr ω compatible aux graduations. Que les Ext2(Q(0), Q(n)) soient nuls admet la traduction suivante.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0302267v2/blocks/prop-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 28,
+      "target": "prop-sec-003-02.md",
+      "narrative": null,
+      "content": "L’alg`ebre de Lie ugr ω est libre. On en obtient un syst`eme g´en´erateur homog`ene libre en relevant une base de chaque (2.3.1) (ugr ω )ab n = dual de (2.1.3) dans (ugr ω )n. 2.4 Mise en garde. On ne dispose pas d’un rel`evement canonique de (ugr ω )ab n dans (ugr ω )n. On ne dispose donc pas d’un isomorphisme canonique de ugr ω avec l’alg`ebre de Lie librement engendr´ee par l’espace vectoriel gradu´e (2.4.2) (ugr ω )ab = ⊕(Ext1(Q(0), Q(n)) ∨en degr´e n). 2.5. La cat´egorie tannakienne MT(k) est la r´eunion ﬁltrante des sous-cat´egories pleines MT(OS), pour S de plus en plus grand. On a donc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0302267v2/blocks/prop-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 28,
+      "target": "prop-sec-003-03.md",
+      "narrative": null,
+      "content": "Le foncteur ﬁbre DR sur MT(k) est canoniquement isomorphe au foncteur d´eduit du foncteur ﬁbre ω par extension des scalaires de Q `a k. 2.11. Pour C une clˆoture alg´ebrique de R et σ un plongement de k dans C, `a la th´eorie de cohomologie X sur k 7−→H∗(espace topologique X(C), Q) correspond un foncteur ﬁbre M 7→Mσ, fonctoriel en C. Parler de “plongement dans C” plutˆot que de plongement complexe (i.e. dans C) a l’avantage que la fonctorialit´e en C fournit un isomorphisme Mσ →M¯σ. Pour un plongement r´eel, i.e. pour σ = ¯σ, cet isomorphisme est une involution de Mσ, le Frobenius r´eel. Un is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0302267v2/blocks/prop-sec-003-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 28,
+      "target": "prop-sec-003-04.md",
+      "narrative": null,
+      "content": "Il existe aσ dans Gω(C) tel que (2.12.1) Mσ = compσ,ω(aσMω). Si i est une racine carr´ee de −1 dans C, on peut choisir les aσ de la forme (2.12.2) aσ = a0 στ(2πi) avec a0 σ ∈Uω(C) et a0 ¯σ = (a0 σ)−, d’o`u pour σ r´eel, (2.12.3) a0 σ ∈Uω(R) (pour σ = ¯σ) La preuve est la mˆeme que celle de Deligne (1989) 8.10. Noter que (2.12.1) d´etermine aσ `a multiplication `a droite pr`es par un ´el´ement de Gω(Q). Choisissons i dans C. La fonctorialit´e en C montre que si aσ v’eriﬁe (2.12.1), alors ¯aσ v´eriﬁe (2.12.1) pour ¯σ. Si on impose `a aσ d’ˆetre de la forme (2.12.2), avec a0 σ dans Uω(C), alors ¯",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0302267v2/blocks/prop-sec-003-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 28,
+      "target": "prop-sec-003-05.md",
+      "narrative": null,
+      "content": "Le foncteur realH: MT(k) →RH k est pleinement ﬁd`ele, d’image es- sentielle stable par sous-objet. Le point essentiel est que le foncteur realH induit une injection de Ext1(Q(0), Q(n)) dans Ext1(realH(Q(0)), realH(Q(n))). Pour n = 1, cette injectivit´e est celle de (log σ): k∗⊗Q → Y σ: k→C C/2πiQ (et un σ suﬃt `a l’injectivit´e). Pour n > 1, elle est une cons´equence de l’injectivit´e de l’application r´egulateur sur K2n−1(k). Preuve. Le foncteur ﬁbre ω identiﬁe la cat´egorie RH k `a celle des repr´esentations d’un groupe alg´ebrique Gm ⋉U H ω , et le foncteur realH au foncteur Rep(Gm ⋉Uω) →Re",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0302267v2/blocks/prop-sec-003-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 28,
+      "target": "prop-sec-003-06.md",
+      "narrative": null,
+      "content": "Pour qu’un objet M de MAT(k1/k) soit dans MT(k), il faut et il suﬃt que l’action de Gal(k1/k) sur ω(M) soit triviale. Si M est purement de poids 0, la proposition r´esulte du “cas particulier” ci-dessus. Le cas o`u M est pur, i.e. purement d’un seul poids, en r´esulte par tensorisation avec un Q(n). Il reste `a v´eriﬁer une stabilit´e par extensions. 1ere preuve. Une suite spectrale d’Hochschild-Serre fournit, pour M et N dans MT(k), des isomorphismes Extp MAT(k1/k)(M, N) ∼ −→Extp(M(k1), N(k1))Gal(k1/k). Pour v´eriﬁer que Extp MT(k)(M, N) →Extp MAT(k′/k)(M, N) = Extp MT(k1)(M(k1), N(k1))Gal(k1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0302267v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Le point de vue tannakien",
+      "pageStart": 15,
+      "pageEnd": 28,
+      "target": "../sections/sec-003-2-le-point-de-vue-tannakien.md",
+      "narrative": null,
+      "content": "2.1. Soient k un corps de nombres et S un ensemble ﬁni de places ﬁnies de k. Le foncteur\nω, d´eduit du foncteur gradu´e ω∗de 1.1 par oubli de la graduation, est un foncteur ﬁbre de la\ncat´egorie `a produit tensoriel MT(OS) d´eﬁnie en 1.6. Cette cat´egorie est donc tannakienne,\net si Gω est le sch´ema en groupe des automorphismes du ⊗-foncteur ω, le foncteur ω induit\nune ´equivalence de MT(OS) avec la cat´egorie des repr´esentations (lin´eaires, de dimension\nﬁnie) de Gω.\nL’action de Gω sur ω(Q(1)) = Q d´eﬁnit un morphisme\n(2.1.1)\nGω →Gm.\nSoit Uω son noyau. Le groupe multiplicatif Gm agit sur le",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0302267v2/blocks/prop-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 43,
+      "target": "prop-sec-004-01.md",
+      "narrative": null,
+      "content": "(i) Pour i < n, Hi(Xn, bKa) = 0. (ii) Pour b variable, le syst`eme local sur X des Hn(Xn, bKa), muni en b = a de (3.3.4), est le dual du syst`eme local (Λ/In+1)˜ de 3.1, muni du transpos´e de (3.1.1). Preuve. Pour n = 0, Xn est r´eduit `a un point, bKa est le faisceau constant k en degr´e 0 et (i) (ii) sont clairs. Prouvons 3.4 par r´ecurrence sur n ≥1; l’hypoth`ese de r´ecurrence est la validit´e de 3.4 pour m si m < n. Soit q la premi`ere projection: Xn →X. Nous utiliserons la suite spectrale de Leray pour q. Ceci revient `a ´ecrire que RΓ(Xn, ) = RΓ(X, Rq∗ ) et `a ﬁltrer Rq∗par la ﬁltra- ti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0302267v2/blocks/prop-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 43,
+      "target": "prop-sec-004-02.md",
+      "narrative": null,
+      "content": "Si S• est un objet simplicial d’une cat´egorie karoubienne, le complexe C∗(∆n, S•) et le tronqu´e normalis´e σ ≥−nNS• sont fonctoriellement homotopes. Nous v´eriﬁerons par la m´ethode des mod`eles acycliques l’´enonc´e dual, pour un objet cosimplicial S•, σ ≤nNS• et C∗(∆n, S•). Preuve. Nous noterons CZ la cat´egorie pr´eadditive ayant les mˆemes objets qu’une cat´egorie C, pour laquelle Hom(A, B) est le groupe ab´elien librement engendr´e par HomC(A, B). Nous noterons Ckar son enveloppe karoubienne, obtenue par adjonction formelle de sommes ﬁnies et de facteurs directs noyaux d’endomorphismes",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0302267v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cohomologie et groupe fondamental",
+      "pageStart": 28,
+      "pageEnd": 43,
+      "target": "../sections/sec-004-3-cohomologie-et-groupe-fondamental.md",
+      "narrative": null,
+      "content": "3.1. Soit X un espace topologique s´epar´e et connexe. On note bPa l’ensemble des classes\nd’homotopie de chemins de a `a b, et δγ la composition des chemins cPb × bPa →cPa. Noter\nl’ordre des facteurs, choisi pour que si V est un syst`eme local sur X et que γv ∈Vb denote\nle transport de v ∈Va le long de γ ∈bPa, on ait (δγ)v = δ(γv).\nNous ferons sur X les hypoth`eses (a) (b) (c) suivantes. (a) La th´eorie classique du π1\ns’applique. Par exemple: X localement connexe par arcs et localement simplement connexe.\n(b) Le groupe fondamental est de type ﬁni. (c) Pour une projection p: Xn×Xm →Xn et un\nfa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0302267v2/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 53,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "Supposons que ¯X soit une compactiﬁcation normale de la vari´et´e uni- rationelle X, et soient x, y ∈X. Si les composantes irr´eductibles de codimension un dans X de Y := ¯X −X sont absolument irr´eductibles, alors P mot y,x est un MT(k)-sch´ema. Preuve. Supposons d’abord que x = y. Pour que π1(X, x) soit un MT(k)-sch´ema il suﬃt que Lie π1(X, x) soit dans MT(k). D’apr`es 2.18, il suﬃt mˆeme que son gradu´e par le poids le soit. Ce gradu´e ´etant engendr´e par H1(X), purement de poids −2, il suﬃt que l’action de Gal(¯k/k) sur ωH1(X) soit triviale. Ce groupe est O∗(X¯k)/¯k∗⊗Q et ses ´el´ements",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0302267v2/blocks/prop-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 53,
+      "target": "prop-sec-005-02.md",
+      "narrative": null,
+      "content": "Soit S un ensemble ﬁni de places ﬁnies de k et supposons que la vari´et´e unirationelle X est la ﬁbre g´en´erale du compl´ement XO, dans ¯XO propre et lisse sur Spec(OS), d’un diviseur `a croisements normaux relatif, r´eunion de diviseurs lisses, chacun de ﬁbre g´en´erale absolument irr´eductible. Si x et y dans X(k) proviennent de xO, yO dans XO(OS), alors P mot y,x est dans MT(OS). Preuve. Pour tout nombre premier ℓ, l’hypoth`ese assure que la r´ealisation ℓ-adique de P mot y,x est non ramiﬁ´ee en dehors de S et des places au-dessus de ℓ, et on applique 1.5. 4.18 Remarque. Un ´enonc´e analog",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0302267v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Le groupe fondamental unipotent motivique d’une vari´et´e rationnelle",
+      "pageStart": 43,
+      "pageEnd": 53,
+      "target": "../sections/sec-005-4-le-groupe-fondamental-unipotent-motivique-dune.md",
+      "narrative": null,
+      "content": "4.1. Soient k un corps de nombres, P une droite projective sur k, X le compl´ement d’un\nensemble ﬁni S de points rationnels et x, y ∈X(k). Dans Deligne (1989) §13, nous avons\nd´eﬁni un “espace de (classes d’homotopie de) chemins motivique” not´e Py,x. Sous les\nhypoth`eses ci-dessus, et apr`es oubli de l’aspect cristallin de loc. cit., c’est un sch´ema aﬃne\nen la cat´egorie tannakienne RH+ℓde 2.15. Nous le noterons ici P H+ℓ\ny,x , ou P H+ℓ\ny,x (X) s’il y a\nlieu de pr´eciser X. On dispose d’une “composition des chemins” P H+ℓ\nz,y\n× P H+ℓ\ny,x\n→P H+ℓ\nz,x .\nPosons πH+ℓ\n1\n(X, x) := P H+ℓ\nx,x . Pour",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0302267v2/blocks/prop-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 53,
+      "pageEnd": 70,
+      "target": "prop-sec-006-01.md",
+      "narrative": null,
+      "content": "Notons 1y,x l’´el´ement neutre de la copie Q y,x de Q. Avec les notations de 5.9 et 5.10, le morphisme v 7→v(11,0) est un isomorphisme de sch´emas de Vω avec Q 1,0. Rappelons que pour ξ ∈µN, [ξ] est l’automorphisme de Q qui induit sur l’alg`ebre de Lie ex 7→eξx. On notera Q 0,1 le \u0010Q 1,1, Q 0,0 \u0011 -bitorseur inverse du \u0010Q 0,0, Q 1,1 \u0011 -bitorseur Q 1,0. C’est une nouvelle copie Q. Pour x, y, z ∈{0, 1}, on dispose d’une “composition des chemins” Q z,y × Q y,x →Q z,x, simplement donn´ee par la loi de groupe de Q. Preuve. Soit v dans Vω et posons a := v(11,0). Puisque Vω agit trivialement sur (1)ω",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0302267v2/blocks/prop-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 53,
+      "pageEnd": 70,
+      "target": "prop-sec-006-02.md",
+      "narrative": null,
+      "content": "On a (5.13.1) {a, b} = [a, b] + ∂a(b) −∂b(a). Preuve. V´eriﬁons d’abord que (5.13.2) [∂a, ∂b] = ∂[a,b]+∂a(b)−∂b(a). Puisque, comme ∂a et ∂b, la d´erivation [∂a, ∂b] de L ∧ﬁxe e0 et est µN-´equivariante, il suﬃt de tester son action sur e1. On a ∂a∂b: e1 7−→−[b, e1] 7−→−[∂a(b), e1] + [b, [a, e1]] ∂b∂a: e1 7−→−[a, e1] 7−→−[∂b(a), e1] + [a, [b, e1]] [∂a, ∂b]: e1 7−→−[∂a(b) −∂b(a) + [a, b], e1]. Deux m´ethodes pour d´eduire (5.13.1) de (5.13.2): a. Le crochet { , } est compatible aux graduations, toutes les constructions faites ´etant compatibles `a l’action de Gm. Le noyau de l’action de L ∧= Lie",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0302267v2/blocks/prop-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 53,
+      "pageEnd": 70,
+      "target": "prop-sec-006-03.md",
+      "narrative": null,
+      "content": "L’´el´ement ⟨dch(σ)⟩τ(2πi) de Hω(C) transforme les Q-formes (P0,0)ω et (P1,0)ω de (P0,0)ω ⊗C et (P1,0)ω ⊗C en les Q-formes (P0,0)σ et (P1,0)σ. Preuve. Les ´el´ements de π1(X(C), 10) ont dans Q(C) une image rationnelle pour la Q- forme (P0,0)σ. Ce π1 contient la monodromie locale en 0 et le chemin allant droit pr`es de 1, tournant autour de 1, et revenant. Images: exp(2πi e0) et dch(σ)−1 exp(2πi e1)dch(σ). Ce sont les images de exp(e0) et exp(e1) par ⟨dch(σ)) τ(2πi). La Q-forme (P0,0)σ est µN- ´equivariante. Les images des exp(eζ) par ⟨dch(σ)⟩τ(2πi) sont donc elles aussi rationnelles. La pro-al",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0302267v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Le groupe fondamental motivique du compl´ement, dans P1, de 0, ∞et µN",
+      "pageStart": 53,
+      "pageEnd": 70,
+      "target": "../sections/sec-006-5-le-groupe-fondamental-motivique-du-complement.md",
+      "narrative": null,
+      "content": "5.1. Soient N un entier >1, k engendré sur Q par une racine primitive N**™° de lunité\net O l’anneau de ses entiers. I] est commode de ne pas supposer que k soit le sous-corps\nQ(exp(27i/N)) de C. Notons Ax, ou simplement A la droite affine type sur k et posons\nA* = A—{0} = Speck[u, u~+]. Soit X le complément dans A* de l’ensemble pay := pun (k)\ndes racines Ni*™es de lunité. S’il y a ambiguité sur N, on écrira plutot ky, On et Xv.\nLe groupe dihédral Z/2 « jun agit sur X C P}: le générateur de Z/2 agit par uw ut,\net € € un agit par ur Eu. Pour N = 1,2 ou 4, le groupe des projectivités transforman",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0302267v2/blocks/prop-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 70,
+      "pageEnd": 84,
+      "target": "prop-sec-007-01.md",
+      "narrative": null,
+      "content": "L’action “D-degr´e” ρD de Gm sur Q respecte les actions ⟨g⟩0 et ⟨g⟩10 de (Q, ◦) sur Q. Elle respecte donc la loi de groupe ◦sur Q et le crochet { , } de L∧. L’action ⟨g⟩0 de g ∈Q sur le groupe Q est caract´eris´ee par les propri´et´es de commuter `a l’action de µN sur Q, de ﬁxer exp(e0) et d’envoyer exp(e1) sur g−1 exp(e1)g. Son conjugu´e par ρD(λ) commute encore `a µN, ﬁxe exp(e0) et envoie exp(λe1) sur ρD(λ)(g)−1 exp(λe1)ρD(λ)(g). Cette derni`ere propri´et´e ´equivaut `a envoyer exp(e1) sur ρD(λ)(g)−1 exp(e1)ρD(λ)(g): ρD(λ) conjugue ⟨g⟩0 en ⟨ρD(λ)(g)⟩0. Conjugant ⟨g⟩10 : x 7→ g ⟨g⟩0 (x) par",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0302267v2/blocks/prop-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 70,
+      "pageEnd": 84,
+      "target": "prop-sec-007-02.md",
+      "narrative": null,
+      "content": "Le morphisme 5.15 de U dans V se factorise par D1V . Le quotient D1V/D2 ´etant ab´elien, ce morphisme induit (6.6.1) U ab →D1V/D2V. Preuve. D’apr`es 6.5, il suﬃt de v´eriﬁer que U agit trivialement sur P1,0/D1, le Q(1)- torseur des chemins, dans A∗, de 10 `a 1. En eﬀet, Pµ,λ0 (A∗) est canoniquement isomorphe `a Pµ,λ(A∗), et, faisant λ = µ, on voit que P1,0/D1 est le Q(1)-torseur trivial, sur lequel U agit trivialement. 6.7. Nous nous proposons de montrer que (6.6.1) est injectif et de calculer son image. Noter que l’action de U sur U ab, ainsi que l’action de U sur D1V/D2V (d´eduite de l’actio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0302267v2/blocks/prop-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 70,
+      "pageEnd": 84,
+      "target": "prop-sec-007-03.md",
+      "narrative": null,
+      "content": "6. L’alg`ebre aﬃne de V est le dual topologique de la cog`ebre Uv, compl´et´ee pour la topologie I-adique. Dualement, le dual (muni de la topologie faible) de l’alg`ebre aﬃne de V est U ∧v. Les points de V `a valeurs dans une alg`ebre A (homomorphismes de l’alg`ebre aﬃne dans A) sont les ´el´ements groupaux g de Ab⊗U ∧v: les ´el´ements d’augmentation 1 tels que ∆g = g ⊗g. Compatibilit´es: l’application exponentielle (A.4.1) est l’exponentielle, de A ⊗g dans V (A) ⊂Ab⊗U ∧v. La loi de groupe est le produit dans U ∧v. A.7. Un sch´ema en groupe aﬃne G est la limite projective de ses quotients Gα q",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0302267v2/blocks/prop-sec-007-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 70,
+      "pageEnd": 84,
+      "target": "prop-sec-007-04.md",
+      "narrative": null,
+      "content": "15. Sous les hypoth`eses de A.14: G = Gm ⋉V , Lie V `a degr´es > 0, Ext1 Rep(G)(k(0), k(n)) de dimension ﬁnie, le foncteur ρ 7→dρ est une ´equivalence de la cat´egorie des repr´esentations de G avec celle des espaces vectoriels gradu´es munis d’une action de l’alg`ebre de Lie gradu´ee vgr. On a Ext1 Rep(G)(k(0), k(n)) = (vab gr ) ∨ n. Bibliographie H. Bass. Generators and relations for cyclotomic units, Nagoya Math. J. 27 (1966), p. 401–407. A. Beilinson, J. Bernstein, et P. Deligne. Faisceaux pervers, in: Analyse et topologie sur les espaces singuliers, Ast´erisque 100, SMF (1982). S. Bloch.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0302267v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Profondeur",
+      "pageStart": 70,
+      "pageEnd": 84,
+      "target": "../sections/sec-007-6-profondeur.md",
+      "narrative": null,
+      "content": "6.1. Avec les notations de 5.1, pour tout point base x, l’inclusion de X dans A∗induit un\nmorphisme du groupe fondamental motivique de X dans celui, Q(1), de A∗. On d´eﬁnit la\nﬁltration par la profondeur D de π1(X, x) par\nD0π1(X, x) := π1(X, x)\n(6.1.1)\nD1π1(X, x) := Ker(π1(X, x) →π1(A∗, x)\net, pour n ≥1,\nDnπ1(X, x) :=le ni`eme groupe de la\ns´erie centrale descendante de D1π1(X, x).\nOn ﬁltre de mˆeme les alg`ebres de Lie:\n(6.1.2)\nDnLie π1(X, x) = Lie Dnπ1(X, x).\nSi on pousse le π1(X, x)-torseur Py,x par π1 →π1/Dn, les Py,x/Dn obtenus forment\nun groupo¨ıde quotient du groupo¨ıde des Py,x.\nAppliq",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

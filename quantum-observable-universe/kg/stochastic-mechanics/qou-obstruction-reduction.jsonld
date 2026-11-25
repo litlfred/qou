@@ -1,0 +1,42 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-qou-obstruction-reduction",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:qou-obstruction-reduction",
+  "kind": "theorem",
+  "title": "Conditional on the Wigner-axiom inputs: the obstruction is a single integer $\\chi_A$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-wigner-axiom",
+    "papers/quantum-observable-universe/blocks/def-classical-limit-obstruction",
+    "papers/quantum-observable-universe/blocks/thm-qu-to-qou",
+    "papers/quantum-observable-universe/blocks/rem-three-euler-characteristics"
+  ],
+  "cites": [
+    "references/yekutieli2010",
+    "references/brown-zhang-2008",
+    "references/feng-tsygan-1991",
+    "references/hadfield-krahmer-2005",
+    "references/weibel1994"
+  ],
+  "tags": [
+    "obstruction",
+    "classical-limit",
+    "hochschild-cohomology",
+    "observability",
+    "frobenius-duality",
+    "euler-characteristic",
+    "kummer"
+  ],
+  "leanRef": "qou:QOU.BringsSurface.qou_obstruction_reduction",
+  "text": "qou-obstruction-reduction.md",
+  "provenance": "authored"
+}

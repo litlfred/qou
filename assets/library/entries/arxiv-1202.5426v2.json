@@ -1,0 +1,526 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1202.5426v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1202.5426v2  [math.AP]  23 Jul 2012\nHard analysis meets critical knots\nStationary points of the M¨obius energy are smooth\nS. Blatt∗\nΦ. Reiter∗∗\nA. Schikorra∗∗∗\nJune 30, 2018\nWe prove that if a curve γ ∈H3/2(R/Z, Rn) parametrized by arc length is a sta-\ntionary point of the M¨obius energy introduced by Jun O’Hara in [O’H91], then γ\nis smooth. Our methods only rely on purely analytical arguments, entirely with-\nout using M¨obius invariance. Furthermore, they are not fundamentally restricted\nto one-dimensional domains, but are generalizable to arbitrary dimensions.\nContents\n1. Introduction",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "To ﬁnd nice geometric representatives within a given knot class, several new energies have\nbeen invented in the last two decades. The earliest knot energy for smooth curves was the\nso-called M¨obius energy introduced by Jun O’Hara in [O’H91],\nE(2)(γ) :=\nZ\nR/Z\n1/2\nZ\n−1/2\n \n1\n|γ(u + w) −γ(u)|2 −\n1\ndγ(u + w, u)2\n! \n\nγ′(u + w)\n\nγ′(u)\n\n dw du\nwhich was later on extended to the family of energies\nE(α,p)(γ) :=\nZ\nR/Z\n1/2\nZ\n−1/2\n \n1\n|γ(u + w) −γ(u)|α −\n1\ndγ(u + w, u)α\n!p \n\nγ′(u + w)\n\nγ′(u)\n\n dw du\nfor α, p ∈[1, ∞), see [O’H94]. Here dγ(u+w, u) denotes the intrinsic distance between γ(u+w)\nand γ(u) on t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "E(2",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "∈C1(H3/2 ir ∩H1,∞)). The energy E(2) is continuously diﬀerentiable on the space of injective and regular curves belonging to H3/2 ∩H1,∞. Furthermore, if γ ∈H3/2 is injective and parametrized by arc-length and ϕ ∈H3/2 ∩H1,∞the ﬁrst variation δE(2)(γ; ϕ) := lim τ→0 E(2)(γ + τϕ) −E(2)(γ) τ exists and equals 2 lim εց0 \" Uε",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/thm-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Stationary points are smooth",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "thm-sec-000-02.md",
+      "narrative": null,
+      "content": "Any stationary point γ ∈H 2 (R/Z, Rn) of E(2), i.e., any curve γ ∈H 2 (R/Z, Rn) for which δE(2)(γ; h) = 0 for all h ∈C∞(R/Z, Rn), belongs to C∞when parametrized by arc-length. In [BR12], improving a previous result [Rt12], the smoothness of stationary points of ﬁnite energy was already shown for the case of E(α) := E(α,1), α ∈(2, 3), instead of the M¨obius energy. It is worth noting, that those energies lead to a subcritical Euler-Langrage equation, and that in some sense the regularity theory can be based on Sobolev embeddings for fractional Sobolev and Besov spaces. In contrast to this, the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/thm-sec-000-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Initial regularity",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "thm-sec-000-03.md",
+      "narrative": null,
+      "content": "Let γ ∈H 2 (R/Z, Rn), γ′ ∈Sn−1, be a stationary point of the M¨obius energy, i.e. satisfying δE(2)(γ, ϕ) = 0 for all ϕ ∈C∞(R/Z, Rn). Then γ ∈C1,α, for some α > 0, and γ ∈H 2 ,p(R/Z, Rn) for some p > 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/thm-sec-000-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Bootstrapping",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "thm-sec-000-04.md",
+      "narrative": null,
+      "content": "For some p > 2, let γ ∈H 2 ,p(R/Z, Rn), γ′ ∈Sn−1, be a stationary point of the M¨obius energy. Then γ is smooth.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/lem-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 16,
+      "target": "lem-sec-001-01.md",
+      "narrative": null,
+      "content": "(H3/2 ir ∩H1,∞is open in H3/2∩H1,∞). For any γ ∈H3/2 ir (R/Z, Rn)∩H1,∞(R/Z, Rn) there is some τ0 = τ0(γ) > 0 with Y := n γ + ϕ",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/lem-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 16,
+      "target": "lem-sec-001-03.md",
+      "narrative": null,
+      "content": "For ε ∈(0, 1 2) the functional E(2) ε is continuously diﬀerentiable on the space of all injective regular curves in H3/2(R/Z, Rn) ∩H1,∞(R/Z, Rn). The directional derivative at γ ∈H3/2 ir (R/Z, Rn) ∩H1,∞(R/Z, Rn) in direction ϕ ∈H3/2(R/Z, Rn) ∩H1,∞(R/Z, Rn) is given by δE(2) ε (γ; ϕ) = \" Uε ( |γ(u + w) −γ(u)|2 − dγ(u + w, u)2 ! * γ′(u) |γ′(u)|2 , ϕ′(u) + −  ⟨γ(u + w) −γ(u), ϕ(u + w) −ϕ(u)⟩ |γ(u + w) −γ(u)|4 − d dτ",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/lem-sec-001-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 16,
+      "target": "lem-sec-001-04.md",
+      "narrative": null,
+      "content": "We have E(2) ε (γ) →E(2)(γ) for all γ ∈H3/2 ir ∩H1,∞. Furthermore, for any γ0 ∈H3/2 ir ∩H1,∞there is an open subset Y ⊂H3/2 ir ∩H1,∞and a constant C = C(γ0) < ∞such that lim sup ε1,ε2→0 lipXδ∩Y(E(2) ε1 −E(2) ε2 ) ≤Cδ (2.7) for all subsets Xδ ⊂H3/2 ∩H1,∞satisfying (2.6) with δ ∈[0, 1].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/prop-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 16,
+      "target": "prop-sec-001-02.md",
+      "narrative": null,
+      "content": "The energy E(2) is continuously diﬀerentiable on \u0010 H3/2 ir ∩H1,∞\u0011 (R/Z, Rn). The derivative of E(2) at γ ∈H3/2 ir ∩H1,∞in direction ϕ ∈H3/2 ir ∩H1,∞exists and is given by δE(2)(γ; ϕ) = 2 lim εց0 \" Uε ( |γ(u + w) −γ(u)|2 − dγ(u + w, u)2 ! * γ′(u) |γ′(u)|2 , ϕ′(u) + −  ⟨γ(u + w) −γ(u), ϕ(u + w) −ϕ(u)⟩ |γ(u + w) −γ(u)|4 − d dτ",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Euler-Lagrange equation: Proof of Theorem I",
+      "pageStart": 5,
+      "pageEnd": 16,
+      "target": "../sections/sec-001-2-euler-lagrange-equation-proof-of-theorem-i.md",
+      "narrative": null,
+      "content": "This section is devoted to the proof of Theorem I which especially involves the derivation of\na formula for the ﬁrst variation.\nBy H3/2\nir\nwe will denote the set of injective and regular curves in H3/2. The set H1,∞\nir\nis deﬁned\naccordingly. First we will need the following lemma, to guarantee that E(2) is well deﬁned on\na suﬃciently small H3/2 ∩H1,∞neighborhood of the curve γ:\nLemma 2.1 (H3/2\nir ∩H1,∞is open in H3/2∩H1,∞). For any γ ∈H3/2\nir (R/Z, Rn)∩H1,∞(R/Z, Rn)\nthere is some τ0 = τ0(γ) > 0 with\nY :=\nn\nγ + ϕ\n\n ϕ ∈H1,∞(R/Z, Rn),\n\nϕ′\n\nL∞≤τ0\no\n⊂H1,∞\nir .\n(2.1)\nMoreover, there is a constant c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/lem-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Normal part",
+      "pageStart": 16,
+      "pageEnd": 32,
+      "target": "lem-sec-002-01.md",
+      "narrative": null,
+      "content": "For any s ∈[0, 1 2) there exists θ > 0 such that for any Br ⊂[0, 1], Λ > 4 ∥|D|s⟨g′, |D| 2 g′⟩∥( 1+2s ,∞),Br ≲∥|D| 2 g′∥ (2,∞),BΛr+ Λ−θ ∥|D| 2 g′∥(2,∞),R ∞ X k=1 2−θk ∥|D| 2 g′∥(2,∞),B2kΛr+r 2 +s. (3.11) For the readers’ convenience, a proof will be given in the appendix.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/lem-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Tangential part",
+      "pageStart": 16,
+      "pageEnd": 32,
+      "target": "lem-sec-002-02.md",
+      "narrative": null,
+      "content": "There is θ > 0, s0 ∈(0, 1 2) such that for all φ ∈C∞ 0 (Br), Λ > 16, s ∈[0, s0) we have Z |D| 2 g′ iωi jH1/2(g′ j, φ)dx ≲∥|D|−s+1/2φ∥( 1−2s ,1) ∥|D| 2 g′∥2 (2,∞),BΛr + Λ−θ∥|D| 2 g′∥(2,∞),R ∞ X k=1 2−θ(k−1)∥|D| 2 g′∥(2,∞),B2kΛr . A proof is provided in the appendix. It remains to estimate the ﬁrst term on the right-hand side of Equation (3.12) for which we will use the Euler-Langrange equation (1.6). Combining this equation with the formula Z R |D| 2 f ′ 1 |D| 2 f ′ = c lim εց0 Z R Z R\\(−ε,ε)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/lem-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Essential estimate of the Euler-Lagrange equation",
+      "pageStart": 16,
+      "pageEnd": 32,
+      "target": "lem-sec-002-03.md",
+      "narrative": null,
+      "content": "There is a constant C < ∞such that Z R D |D| 2 g′, |D| 2 φ E ≤C Z R |φ(u)|Γ(u)du + C∥φ∥L2 (3.14) for any φ ∈C∞ 0 ((4/10, 6/10), Rn) with ⟨φ, γ′⟩≡0 where Γ(u) := Z (−1,1)3 1/4 Z −1/4 |g′(u) −g′(u + s2w)| |g′(u + s3w) −g′(u + s4w)|2 |w|2 dw ds. The heart of the proof of Theorem III is the following pointwise estimate of the most prob- lematic term Γ(u), which permits to localize it and which afterwards will be transformed into a bound of its L1-norm.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/lem-sec-002-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Estimate of the critical term",
+      "pageStart": 16,
+      "pageEnd": 32,
+      "target": "lem-sec-002-04.md",
+      "narrative": null,
+      "content": "We have Γ(u) ≲ |D|−1 12 ||D| 2 g′|(u)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/lem-sec-002-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 32,
+      "target": "lem-sec-002-05.md",
+      "narrative": null,
+      "content": "There exist R > 0, s0 ∈(0, 1 2), and σ > 0 such that for any Λ > 2, s ∈[0, s0), BΛr ⊂( 5 10, 6 10), r ∈(0, Λ−1R) and ϕ ∈C∞ 0 (Br) we have Z g′ iωi j|D| 2 g′ j |D| 2 ϕ ≲∥Is|D| 2 ϕ∥( 1−2s ,1) rσ + ∥|D| 2 g′∥ (2,∞),BΛr + Λ−θ∥|D| 2 g′∥(2,∞),R ∞ X k=1 2−θk ∥|D| 2 g′∥(2,∞),B2kΛr .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Initial regularity: Proof of Theorem III",
+      "pageStart": 16,
+      "pageEnd": 32,
+      "target": "../sections/sec-002-3-initial-regularity-proof-of-theorem-iii.md",
+      "narrative": null,
+      "content": "Note that if we consider the constant factors to be irrelevant with respect to the mathematical\nargument, for the sake of simplicity we will omit them in the calculations, writing ≲, ≳, ≈\ninstead of ≤, ≥and =.\nMost techniques for dealing with critical partial diﬀerential equations of fractional order have\nbeen developed for equations on the whole Euclidean space. For that reason, we prefer work-\ning on the real line over working on the circle.\n16\nWe will show that for every u ∈R/Z we have\n|D|\n1\n2 g′ ∈Lp((u −1/20, u + 1/20))\nfor a p > 2. Due to the invariance of the problem under shifting the p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/cor-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 49,
+      "target": "cor-sec-003-03.md",
+      "narrative": null,
+      "content": "Let γ, β0, β,p and q be as in Lemma 4.3 and p′ be such that 1/p + 1/p′ = 1. Then • for all α ≥2 there is a constant C such that |T α s1,s2,τ1,τ2(h)| ≤C∥h∥H1−β,p′ for all s1, s2, τ1, τ2 ∈[0, 1] and h ∈C∞, • the operator T(γ, ·) = T1(γ, ·) + T2(γ, ·) ∈ \u0010 H3/2(R/Z, Rn) \u0011∗can be extended to a bounded operator on H1−β,p′.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/lem-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Fractional chain rule",
+      "pageStart": 32,
+      "pageEnd": 49,
+      "target": "lem-sec-003-01.md",
+      "narrative": null,
+      "content": "Let f ∈Hs,p(R/Z, Rn), s > 0, p ∈(1, ∞). If ψ ∈C∞(R) is globally Lipschitz continuous and ψ and all its derivatives vanish at 0 then ψ ◦f ∈Hs,p and ∥ψ ◦f∥Hs,p ≤C∥ψ∥Ck∥f∥Hs,p where k is the smallest integer greater than or equal to s. The key to the proof of Theorem IV is the following lemma.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/lem-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 49,
+      "target": "lem-sec-003-02.md",
+      "narrative": null,
+      "content": "Let γ ∈H 2 +β0,q(R/Z, Rn), α ≥2, and β0 ≥β ≥0, p, q ∈(1, ∞) be such that β0 −1/q > β −1 2p. Then for all τ1, τ2, s1 ∈[0, 1] the function g(u) := 1/2 Z −1/2 Gα γ(u + w) −γ(u) w ! |γ′(u + τ1w) −γ′(u + τ2w)|2 w2 γ′(u + s1w)dw is in Hβ,p. Furthermore, there is a constant C < ∞depending on ∥γ∥H3/2+β0,q and α, but not on τ1, τ2, and s1, such that ∥g∥Hβ,p ≤C.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/lem-sec-003-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 49,
+      "target": "lem-sec-003-04.md",
+      "narrative": null,
+      "content": "Let γ ∈H3/2+β0,q(R/Z, Rn), β0 ≥0, q ∈[2, ∞) and β0 −1 q > −1/2 be a stationary point of the M¨obius energy parametrized by arc length. Then, • if β0 = 0, we have γ ∈Hs for all s < 3/2 + 2(1/2 −1/q), • if 0 < β0 < 1/2, we have γ ∈Hs for all s < 3/2 + 2(β0 + 1/2 −1/q), • if β0 ≥1/2, we have γ ∈H3/2+β0+1/4.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/lem-sec-003-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 49,
+      "target": "lem-sec-003-05.md",
+      "narrative": null,
+      "content": "1 (Quasi-locality). Let p1, p2, q1, q2 ∈[1, ∞], where we assume that q2 = 1 if p2 = 1, s ∈(−1, 1) and Ω1, Ω2 be disjoint domains with d := dist(Ω1, Ω2) > 0 and with positive and ﬁnite Lebesgue measure. Then, for any f ∈S(R), ∥∆ s 2 (fχΩ2)∥(p1,q1),Ω1 ≲d−1−s|Ω1|1/p1|Ω2|1−1/p2∥f∥(p2,q2),Ω2 where we set ∆ s 2 :=  |D|s if s > 0, id if s = 0, I|s| if s < 0. Note, that ∥· ∥(1,q1), ∥· ∥(∞,q∞) are only considered in the inequalities that follow for q1 = 1 and q∞= ∞.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/lem-sec-003-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 49,
+      "target": "lem-sec-003-06.md",
+      "narrative": null,
+      "content": "2. Let p ∈(1, ∞), q, ˜q ∈[1, ∞], s ∈(−1, 1/p) and −1 p∗= s −1 p. (i) For f ∈S(R) with supp f ⊂Br we have ∥∆−s 2 f∥(p∗,q);R−BΛr ≲Λ−1+ 1 p ∥f∥(p,˜q),Br uniformly for all Λ > 2. (ii) If s ∈[0, 1 p), we have for all f ∈S(R) ∥Is f∥(p∗,q);R−BΛr ≲Λ−1+ 1 p ∥f∥(p,˜q);Br + ∥f∥(p,q);R−Br uniformly for all Λ > 2. (iii) For s ∈[0, 1 p) and any f ∈S(R), we have ∥Is f∥(p∗,q),Br ≲∥f∥(p,q),BΛr + Λ−1 p∗ ∞ X k=1 \u0010 2−k\u0011 1 p∗∥f∥(p,˜q),Ak Λ,r uniformly for all Λ > 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/lem-sec-003-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 49,
+      "target": "lem-sec-003-08.md",
+      "narrative": null,
+      "content": "4. Let δ ∈[0, 1], α ∈(0, 1). Then for almost all x, y, ξ ∈Rn we have",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/lem-sec-003-09",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 49,
+      "target": "lem-sec-003-09.md",
+      "narrative": null,
+      "content": "5 ([Sch11]). For s ∈[0, 1 2) and functions a, b ∈S(R) the following holds for any ε, ε′ ∈[0, 1 6 −s 3): |H1/2+s(a, b)| ≲I1/6−s/3(I1/6−s/3−ε||D|1/2−εa| I1/6−s/3−ε′||D|1/2−ε′b|) + I1/3−2s/3−ε||D|1/2−εa| I1/6−s/3−ε′||D|1/2−ε′b| + I1/6−s/3−ε||D|1/2−εa| I1/3−2s/3−ε′||D|1/2−ε′b| + I1/4−s/2−ε||D|1/2−εa| I1/4−s/2−ε′||D|1/2−ε′b|.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/lem-sec-003-10",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 49,
+      "target": "lem-sec-003-10.md",
+      "narrative": null,
+      "content": "6 (Lower order products). Let for s > 0, 0 ≤s1, s2, s3 ≤1/2, s1 + s2 + s3 = s, and at least two of these si, i = 1, 2, 3, non-zero. Let p ∈(1, ∞), p2 ∈(1, 1 s2 ), p3 ∈(1, 1 s3 ) and such that p = 1 p2 + 1 p3 −s. Assume moreover that |G(u, v)| ≲Is1 \u0000Is2|u| Is3|v|\u0001 , then there is some θ > 0 such that we have for any Λ > 4, and 1 q = 1 q1 + 1 q2 , ∥G(u, v)∥(p,q),Br (A.2) ≲∥u∥(p2,q1),BΛr∥v∥(p3,q2),BΛr + ∥u∥(p2,q1)Λ−θ ∞ X k=2 2−θk∥v∥(p3,q2),BΛ2kr. If supp |D|tv ⊂Br for some t ∈[0, 1 2], we furthermore get for any k ≥2, Λ > 16, ∥G(u, v)∥(p,q),Ak Λ,r ≲Λ−θ2−θk∥u∥(p2,∞),R ∥v∥(p3,1),R. (A.3)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/lem-sec-003-11",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 49,
+      "target": "lem-sec-003-11.md",
+      "narrative": null,
+      "content": "7. There is a ε0 > 0 such that for δ, ε ∈[0, ε0), for any a, b ∈S(R), Λ > 4 ∥H 1 2 (a, b)∥(2,q),Br ≲∥|D|1/2−δa∥( 1−2δ ,q1),BΛr∥|D|1/2−εb∥( 1−2ε ,q2),BΛr+ + ∥|D|1/2−δa∥( 1−2δ ,q1)Λ−θ ∞ X k=1 2−θ(k−1)∥|D|1/2−εb∥( 1−2ε ,q2),B2kΛr. If supp b ⊂Br we furthermore get for any k ≥2, Λ > 16, s ∈[0, 1 2) ∥H 1 2 (a, b)∥( 1+2s ,q),Ak Λ,r ≲(Λ2k)−θ∥|D| 2 a∥(2,∞),R ∥|D|1/2−εb∥( 1−2ε ,1),R.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/lem-sec-003-12",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 49,
+      "target": "lem-sec-003-12.md",
+      "narrative": null,
+      "content": "8 (Iteration lemma). Let C < ∞and θ > 0 be given. If bk ≥0, k ∈N0, satisfy bk+m ≤εbk + C 2−θ(k+m) + 2−θm k X l=1 2−θlbk−l  (A.4) for all k ∈N0 and ε > 0 is small enough, m is big enough, then bk ≲2−˜θk for all k ∈N0 with ˜θ = θ/2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/prop-sec-003-07",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 49,
+      "target": "prop-sec-003-07.md",
+      "narrative": null,
+      "content": "3. For p ∈(1, ∞), q ∈[1, ∞], s, t ≥0 with 0 < s + t < 1 there is a θ > 0 such that we have for any f ∈Lp,q(R), Λ > 2, and r > 0 ∥|D|s f∥(p,q),Br ≲ sup ϕ∈C∞ 0 (BΛ2r), ∥|D|tϕ∥(p′,q′)≤1 Z f|D|s+tϕ + r−sΛ−θ ∥f∥(p,q);BΛr + r−sΛ−θ ∞ X l=1 2−θl∥f∥(p,q),Al Λ,r.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.5426v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bootstrapping: Proof of Theorem IV",
+      "pageStart": 32,
+      "pageEnd": 49,
+      "target": "../sections/sec-003-4-bootstrapping-proof-of-theorem-iv.md",
+      "narrative": null,
+      "content": "In Theorem III we have shown, that |D|\n1\n2 g′ ∈Lp for some p > 2. We now work with Bessel-\npotential / Sobolev spaces Hs,q, cf. [RS96, Tar07, Tri83], and the fact that |D|\n1\n2 g′ ∈Lp readily\nimplies that g′ ∈H\n3\n2 , ˜p for some ˜p ∈(2, p). The proof of Theorem IV relies on the decomposi-\ntion of the ﬁrst variation\nδE(2)(γ, h) = 2 lim\nεց0\n\"\nUε\n \n⟨γ′(u), h′(u)⟩\n|γ(u + w) −γ(u)|2 −⟨γ(u + w) −γ(u), h(u + w) −h(u)⟩\n|γ(u + w) −γ(u)|4\n!\ndw du,\nUε as in (1.2), into\n2 (Q(γ, h) −T1(γ, h) −T2(γ, h)).\nFor a stationary point of the M¨obius energy we have\nQ(γ, h) = T(γ, h) := T1(γ, h) + T2(γ, h)\nfor all h ∈",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

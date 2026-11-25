@@ -1,0 +1,745 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1808.08110v1",
+  "title": "arxiv-1808.08110v1",
+  "variant": "pdf",
+  "pages": 18,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Unimodularity of SU(3)c and the quark-lepton symmetry",
+      "number": "2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-unimodularity-of-su3c-and-the-quark-lepton-sym"
+    },
+    {
+      "level": 1,
+      "title": "The 3 generations and the triality in J83",
+      "number": "3",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-the-3-generations-and-the-triality-in-j83"
+    },
+    {
+      "level": 1,
+      "title": "The factor J82=JSpin9 for one generation",
+      "number": "4",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-the-factor-j82jspin9-for-one-generation"
+    },
+    {
+      "level": 1,
+      "title": "W2-triality and the 3 generations",
+      "number": "5",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-w2-triality-and-the-3-generations"
+    },
+    {
+      "level": 1,
+      "title": "The extended electroweak symmetry SU(3)ew",
+      "number": "6",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-6-the-extended-electroweak-symmetry-su3ew"
+    },
+    {
+      "level": 1,
+      "title": "The internal symmetry SU(3)cSU(3)ew/Z3",
+      "number": "7",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-7-the-internal-symmetry-su3csu3ewz3"
+    },
+    {
+      "level": 1,
+      "title": "Discussion",
+      "number": "8",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-8-discussion"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "3",
+      "words": 237,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hermitian octonionic",
+          "heading": false
+        },
+        {
+          "term": "electroweak symmetry",
+          "heading": false
+        },
+        {
+          "term": "fundamental fermions",
+          "heading": false
+        },
+        {
+          "term": "internal space",
+          "heading": false
+        },
+        {
+          "term": "octonionic matrices",
+          "heading": false
+        },
+        {
+          "term": "generations",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1808.08110v1 [hep-th] 24 Aug 2018 EXCEPTIONAL QUANTUM GEOMETRY AND PARTICLE PHYSICS II Michel DUBOIS-VIOLETTE 1 and Ivan TODOROV 2 Abstract We continue the study undertaken in [13] of the relevance of the exceptional Jordan algebra J8 3 of hermitian 3 × 3 octonionic matrices for the description of the internal space of the fundamental fermions of the Standard Model with 3 generations. By using the suggestion",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1808.08110v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 949,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbb oplus",
+          "heading": false
+        },
+        {
+          "term": "mdv",
+          "heading": false
+        },
+        {
+          "term": "array ccc",
+          "heading": false
+        },
+        {
+          "term": "jordan algebra",
+          "heading": false
+        },
+        {
+          "term": "quark-lepton symmetry",
+          "heading": false
+        },
+        {
+          "term": "color group",
+          "heading": false
+        },
+        {
+          "term": "hermitian times",
+          "heading": false
+        },
+        {
+          "term": "exceptional group",
+          "heading": false
+        }
+      ],
+      "extract": "It is natural to associate the finite spectrum of fundamental particles to a finite quantum space endowed possibly with some additional structure. This point of view underlies, with some variations, most noncommutative geometric approaches to particle physics (see e.g. [@mdv-ker-mad:1989a], [@mdv-ker-mad:1988b], [@mdv:1991], [@ac-lot:1990], [@cha-ac:1997], [@cha-ac-mar:2007]). Such a finite quantum space is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-unimodularity-of-su3c-and-the-quark-lepton-sym",
+      "number": "2",
+      "title": "Unimodularity of SU(3)c and the quark-lepton symmetry",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": null,
+      "words": 569,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "centerdot rangle",
+          "heading": false
+        },
+        {
+          "term": "langle centerdot",
+          "heading": false
+        },
+        {
+          "term": "mathbb oplus",
+          "heading": false
+        },
+        {
+          "term": "cross-product times",
+          "heading": false
+        },
+        {
+          "term": "overline langle",
+          "heading": false
+        },
+        {
+          "term": "mathbb acted",
+          "heading": false
+        },
+        {
+          "term": "rangle sharp",
+          "heading": false
+        },
+        {
+          "term": "interpret mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "The space of internal states of a quark is the 3-dimensional complex space $\\mathbb C^3$ acted by the color group $SU(3)$. Since $SU(3)$ is a subgroup of $U(3)$ this means that the above state's space is a 3-dimensional complex Hilbert space $\\mathbb C^3$ but the role of the unimodularity of $SU(3)$ that is of a corresponding normalized volume on $\\mathbb C^3$ is not transparent. As an element of comparison, one has",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-the-3-generations-and-the-triality-in-j83",
+      "number": "3",
+      "title": "The 3 generations and the triality in J83",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": "9",
+      "words": 802,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "oplus cal",
+          "heading": false
+        },
+        {
+          "term": "factor jspin",
+          "heading": false
+        },
+        {
+          "term": "mathbb oplus",
+          "heading": false
+        },
+        {
+          "term": "triality",
+          "heading": true
+        },
+        {
+          "term": "algebra cal",
+          "heading": false
+        },
+        {
+          "term": "exceptional jordan",
+          "heading": false
+        },
+        {
+          "term": "euclidean jordan",
+          "heading": false
+        },
+        {
+          "term": "vhv ast",
+          "heading": false
+        }
+      ],
+      "extract": "As recalled in Section 3.2 of [@mdv:2016b] and originally analyzed in [@jor-vn-wig:1934], the algebra of observables of a finite quantum space should be a finite-dimensional Euclidean Jordan algebra which is clearly not the case of the octonion algebra $\\mathbb O$.\\ However, as pointed out in Section 3.1 of [@mdv:2016b], the existence of three generations of fundamental fermions reveals a sort of triality underlying",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-the-factor-j82jspin9-for-one-generation",
+      "number": "4",
+      "title": "The factor J82=JSpin9 for one generation",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 12,
+      "labelStart": "9",
+      "labelEnd": "12",
+      "words": 859,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jspin",
+          "heading": true
+        },
+        {
+          "term": "euclidean jordan",
+          "heading": false
+        },
+        {
+          "term": "jordan algebra",
+          "heading": false
+        },
+        {
+          "term": "associative unital",
+          "heading": false
+        },
+        {
+          "term": "generation",
+          "heading": true
+        },
+        {
+          "term": "associative envelop",
+          "heading": false
+        },
+        {
+          "term": "special jordan",
+          "heading": false
+        },
+        {
+          "term": "universal unital",
+          "heading": false
+        }
+      ],
+      "extract": "2 = JSpin9 for one generation The spin factor J8 2 = JSpin9 of hermitian octonionic 2 × 2-matrices is a 10-dimensional Euclidean Jordan algebra which is strongly special [24]. This means essentially that it is a special Jordan algebra which is such that its unital Jordan modules can be extracted from its universal unital associative envelop. The universal unital associative envelop of J8 2 = JSpin9 is the Clif- ford",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-w2-triality-and-the-3-generations",
+      "number": "5",
+      "title": "W2-triality and the 3 generations",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 553,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "array ccc",
+          "heading": false
+        },
+        {
+          "term": "jordan subalgebras",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        },
+        {
+          "term": "projective line",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "end array",
+          "heading": false
+        },
+        {
+          "term": "generation containing",
+          "heading": false
+        },
+        {
+          "term": "line passing",
+          "heading": false
+        }
+      ],
+      "extract": "We now consider the triality as corresponding to the 3 canonical Jordan subalgebras $J_{(1)}, J_{(2)}, J_{(3)}$ isomorphic to $J^8_2$ of $J^8_3$ where $J_{(1)}$ consists of the matrices of $J^8_3$ having vanishing elements in the first row and the first column, $J_{(2)}$ consists of the matrices having vanishing elements in the second row and the second column while $J_{(3)}$ consists of the matrices having",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-the-extended-electroweak-symmetry-su3ew",
+      "number": "6",
+      "title": "The extended electroweak symmetry SU(3)ew",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 220,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "electroweak symmetry",
+          "heading": true
+        },
+        {
+          "term": "spl",
+          "heading": false
+        },
+        {
+          "term": "mbox aut",
+          "heading": false
+        },
+        {
+          "term": "mathbb oplus",
+          "heading": false
+        },
+        {
+          "term": "splitting mathbb",
+          "heading": false
+        },
+        {
+          "term": "internal structure",
+          "heading": false
+        },
+        {
+          "term": "external structure",
+          "heading": false
+        },
+        {
+          "term": "group mbox",
+          "heading": false
+        }
+      ],
+      "extract": "The subgroup of $F_4$ which preserves the splitting $\\mathbb C\\oplus \\mathbb C^3$ of the octonions entering into the matrices of the elements of $J^8_3$ is $$\\label{Spl} SU(3) \\times SU(3)/\\mathbb Z_3=SU(3)_c\\times SU(3)/\\mathbb Z_3$$ where the first factor is the color group $SU(3)_c$ as explained in [@mdv:2016b]. It is our aim in this section to give a similar interpretation for the second $SU(3)$ factor occurring",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-7-the-internal-symmetry-su3csu3ewz3",
+      "number": "7",
+      "title": "The internal symmetry SU(3)cSU(3)ew/Z3",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 134,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "internal",
+          "heading": true
+        },
+        {
+          "term": "external structure",
+          "heading": false
+        },
+        {
+          "term": "spacetime",
+          "heading": false
+        },
+        {
+          "term": "same role",
+          "heading": false
+        }
+      ],
+      "extract": "It is important to understand that in our approach here as well as in [13], the exceptional Jordan algebra J8 3 plays the same role for the internal struc- ture of fundamental particles as the algebra C(M) of smooth functions on spacetime for the external structure. In particular the automorphism group F4 of J8 3 plays the same role for the internal structure as the diﬀeomorphism group Diﬀ(M) of spacetime for the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-8-discussion",
+      "number": "8",
+      "title": "Discussion",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 18,
+      "labelStart": "15",
+      "labelEnd": null,
+      "words": 959,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exceptional jordan",
+          "heading": false
+        },
+        {
+          "term": "jordan algebras",
+          "heading": false
+        },
+        {
+          "term": "jordan modules",
+          "heading": false
+        },
+        {
+          "term": "dubois-violette",
+          "heading": false
+        },
+        {
+          "term": "exceptional quantum",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential geometry",
+          "heading": false
+        },
+        {
+          "term": "kerner",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        }
+      ],
+      "extract": "Discussion The advantage of the approach of this paper to the correspondence triality- generations with respect to the one of [13] is that here one does not need the introduction of new fundamental fermions and that the formulation of the electroweak symmetry is straightforward. This new approach which is based on the key observation that the Euclidean Jordan algebra J8 2 can be associated with a complete generation",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 1,
+        "items": [
+          "3 The 3 generations and the triality in J8"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "exceptional jordan",
+      "heading": false
+    },
+    {
+      "term": "jordan algebra",
+      "heading": false
+    },
+    {
+      "term": "euclidean jordan",
+      "heading": false
+    },
+    {
+      "term": "unital jordan",
+      "heading": false
+    },
+    {
+      "term": "jordan subalgebras",
+      "heading": false
+    },
+    {
+      "term": "canonical jordan",
+      "heading": false
+    },
+    {
+      "term": "jordan modules",
+      "heading": false
+    },
+    {
+      "term": "special jordan",
+      "heading": false
+    },
+    {
+      "term": "mathbb oplus",
+      "heading": false
+    },
+    {
+      "term": "factor jspin",
+      "heading": true
+    },
+    {
+      "term": "mathbb times",
+      "heading": false
+    },
+    {
+      "term": "splitting mathbb",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 8,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p15); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1808.08110v1"
+  }
+}

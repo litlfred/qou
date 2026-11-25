@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1104.0755v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "A connection formula between the Ramanujan function and the q -Airy function",
+      "dcterms:creator": [
+        "MORITA‡, Takeshi"
+      ],
+      "dcterms:issued": "D:20210830",
+      "dcterms:identifier": "https://arxiv.org/abs/1104.0755",
+      "dcterms:abstract": "We show a connection formula between two diﬀerent q-Airy func- tions. One is called the Ramanujan function which appears in Ra- manujan’s ”Lost notebook”. Another one is called the q-Airy function that obtained in the study of the second q-Painlev´e equation. We use the q-Borel transformation and the q-Laplace transformation following C. Zhang to obtain the connection formula.",
+      "dcterms:source": "library/arxiv-1104.0755v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1104.0755v2"
+    }
+  ]
+}

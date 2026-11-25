@@ -1,0 +1,291 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1003.4808v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1003.4808v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Quantum Field Theory and the Volume Conjecture\nTudor Dimofte and Sergei Gukov\nCalifornia Institute of Technology 452-48, Pasadena, CA 91125\nThe volume conjecture states that for a hyperbolic knot K in the three-sphere S3\nthe asymptotic growth of the colored Jones polynomial of K is governed by the hy-\nperbolic volume of the knot complement S3\\K. The conjecture relates two topological\ninvariants, one combinatorial and one geometric, in a very nonobvious, nontrivial man-\nner. The goal of the present lectures∗is to review the original statement of the volume\nconjecture and its recent extensions a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4808v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 2,
+      "pageEnd": 6,
+      "target": "../sections/sec-000-1-preliminaries.md",
+      "narrative": null,
+      "content": "[]{#sec:basics label=\"sec:basics\"}\n\nLet $K$ be an oriented knot (or link) in the three-sphere $S^3$. The original volume conjecture [@Kashaev-1997; @Mur-Mur] relates the $N$-colored Jones polynomial of $K$ to the hyperbolic volume of the knot complement $S^3\\backslash K$:\n\n$$\\begin{array}{c@{\\qquad}c@{\\qquad}c} \\text{$N$-colored Jones poly of $K$} & \\longleftrightarrow & \\text{hyperbolic volume of $S^3\\backslash K$} \\\\\n\\text{(combinatorial, rep. theory)} & & \\text{(geometric)\\,.}\n\\end{array} \\label{VCtext}$$\n\nWe begin by reviewing some of the definitions and ingredients that enter on the two s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4808v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The many dimensions of the volume conjecture",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-2-the-many-dimensions-of-the-volume-conjecture.md",
+      "narrative": null,
+      "content": "[]{#sec:gen label=\"sec:gen\"}\n\nThere are several natural ways in which one might try to generalize the basic volume conjecture [\\[VC\\]](#VC){reference-type=\"eqref\" reference=\"VC\"}. One possibility is to consider not just $k=N$ (or $q=e^{\\frac{2\\pi i}{N}}$), but arbitrary values of $k$ (or $q$). Another option would be to ask what happens to subleading terms in the asymptotic expansion of $V_N(K;q)$ as $N\\to\\infty$. It might also be interesting to consider not just hyperbolic knots in $S^3$ but arbitrary links in more complicated three-manifolds. It turns out that all these generalizations make",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4808v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Parametrized VC",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-21-parametrized-vc.md",
+      "narrative": null,
+      "content": "The original volume conjecture only held for a special root of unity $q = e^{\\frac{2\\pi i}{N}}$. In order to generalize to arbitrary $q=e^{\\frac{2\\pi i}{k}}$, the appropriate limit to consider is\n\n$$k\\to\\infty\\,,\\qquad N\\to\\infty\\,,\\qquad u := i\\pi\\frac { N} k \\quad\\text{fixed}\\, \\label{lim}$$\n\n(or $q\\to 1$, $q^N = e^{2u}$ fixed). The question, then, is how to understand\n\n$$\\lim_{k,N\\to\\infty} J_N(K;q)^{1/k}\\quad ?$$\n\nThe answer, described in [@gukov-2003], uses the fact that in correspondence with the \"deformation\" in the colored Jones polynomial, there exists a one-parameter deformation of t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4808v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum VC",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-003-22-quantum-vc.md",
+      "narrative": null,
+      "content": "The second option for generalizing the volume conjecture [\\[VC\\]](#VC){reference-type=\"eqref\" reference=\"VC\"} is to ask for higher-order terms in the asymptotic expansion of the colored Jones polynomial. Let us define a new \"quantum\" parameter $\\hbar$ as\n\n$$\\hbar = \\frac{i\\pi}{k}\\,,$$\n\nso that\n\n$$q = e^{2\\hbar}\\,.$$\n\nThe two parameters $N$ and $k$ of the colored Jones polynomial can be traded for $\\hbar$ and $u$, and the limit [\\[lim\\]](#lim){reference-type=\"eqref\" reference=\"lim\"} is simply $\\hbar\\to 0$. At $u=i\\pi$, higher-order asymptotics are then predicted [@gukov-2003; @DGLZ] to have the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4808v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Groups and representations",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-004-23-groups-and-representations.md",
+      "narrative": null,
+      "content": "So far, we have considered two continuous deformations of the volume conjecture, in $u$ and $\\hbar$, as drawn schematically in Figure [1](#fig:uh){reference-type=\"ref\" reference=\"fig:uh\"}. In addition, there are two discrete generalizations that we can make.\n\n![Continuous and discrete generalizations of the volume conjecture.](VCgens){#fig:uh width=\"3.5in\"}\n\nThe first such generalization involves the \"gauge groups\" and representations that define colored Jones polynomials. Recall from Section [\\[sec:basics\\]](#sec:basics){reference-type=\"ref\" reference=\"sec:basics\"} that the $N$-colored Jones",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4808v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Links and 3-manifolds",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-005-24-links-and-3-manifolds.md",
+      "narrative": null,
+      "content": "[]{#sec:links label=\"sec:links\"}\n\nThe final generalization of the volume conjecture that we consider is to arbitrary links in arbitrary three-manifolds. Here we really begin to require a true TQFT description of the \"quantum $G$-invariants\" of knots and links. This was supplied by quantum Chern-Simons theory with compact gauge group $G$ in [@Wit-Jones], and reinterpreted via quantum groups and R-matrices in [@Resh-Tur]. Using either of these approaches, one may define a quantum partition function\n\n$$Z^G(M,L;\\{R_a\\};\\hbar) \\label{ZM}$$\n\nfor a link $L$ in any three-manifold $M$, where each compo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4808v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "TQFT",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-006-3-tqft.md",
+      "narrative": null,
+      "content": "[]{#sec:TQFT label=\"sec:TQFT\"}\n\nWe have just seen that the volume conjecture admits a multitude of generalizations, all of which seem to be related to Chern-Simons quantum field theory. The most complete statement of the volume conjecture [\\[fullVC\\]](#fullVC){reference-type=\"eqref\" reference=\"fullVC\"} involves Chern-Simons theory with compact gauge group $G$ on the left-hand side and Chern-Simons theory with complex gauge group $G_{\\mathbb{C}}$ on the right:\n\n$$\\begin{array}{ccc}\n\\underline{\\text{\\emph{combinatorics/rep. theory}}} && \\underline{\\text{\\emph{geometry}}} \\vspace{.2cm} \\\\\n\\text{q",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4808v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cutting and gluing",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-007-31-cutting-and-gluing.md",
+      "narrative": null,
+      "content": "[]{#sec:cut label=\"sec:cut\"}\n\nIn its more mathematical incarnation, a 3-dimensional TQFT can be thought of as a functor $Z$ that assigns\n\n$$\\begin{array}{c@{\\qquad}c@{\\qquad}c}\n \\text{closed 3-manifold $M$} & \\leadsto & \\text{number $Z(M)$} \\\\\n \\text{closed 2-manifold $\\Sigma$} &\\leadsto & \\text{vector space $Z(\\Sigma)$} \\\\\n \\text{closed 1-manifold $S^1$} &\\leadsto & \\text{category $Z(S^1)$} \\\\\n \\text{point $p$} &\\leadsto & \\text{2-category $Z(p)$}\\,.\n\\end{array}$$\n\nFor our applications to Chern-Simons theory, we will really only need the top two levels $Z(M)$ and $Z(\\Sigma)$. The finer struct",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4808v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantization",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-008-32-quantization.md",
+      "narrative": null,
+      "content": "[]{#sec:quant label=\"sec:quant\"}\n\nThe basic problem of quantization begins with a pair $({\\cal M},\\omega)$, where ${\\cal M}$ is a manifold with symplectic structure $\\omega$, called a classical \"phase space.\" Quantization takes this pair and constructs a quantum Hilbert space ${\\cal H}$. Moreover, quantization should map the algebra of functions on ${\\cal M}$ to an algebra ${\\cal A}_{\\hbar}$ of operators on ${\\cal H}$:\n\n$$\\begin{array}{ccc}\n (M,\\omega) & \\leadsto & {\\cal H}~(=\\text{Hilbert space}) \\\\\n  && \\raisebox{-.1cm}{\\includegraphics[width=.5cm]{actsbelow}} \\\\\n \\text{alg. of functions on",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4808v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Methods",
+      "pageStart": 18,
+      "pageEnd": 21,
+      "target": "../sections/sec-009-321-methods.md",
+      "narrative": null,
+      "content": "The problem of quantization can be approached in many different ways. Each approach has its advantages and disadvantages, but in the end all methods are expected to yield the same result. The classic approach of *geometric quantization* (*cf.* [@woodhouse-1992]) starts by defining a prequantum line bundle $L \\to {\\cal M}$ with a unitary connection of curvature $\\frac{1}{\\hbar}\\omega$. Note that such a line bundle only exists for\n\n$$\\frac{1}{2\\pi\\hbar}\\omega\\in H^2({\\cal M};{\\mathbb{Z}})\\,, \\label{wquant}$$\n\nwhich can lead to a quantization of $\\hbar^{-1}$ (*i.e.* a restriction of $\\hbar$ to a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4808v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Simple examples",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-010-322-simple-examples.md",
+      "narrative": null,
+      "content": "Let us now adapt the general statements here to some specific examples.\n\n### Harmonic oscillator\n\nThe quintessential simplest nontrivial problem of quantization is the harmonic oscillator. Consider a classical system that consists of a particle moving on a line (with coordinate $x=x(t)$) with a potential energy $V = \\frac12 x^2$. This is depicted in Figure [1](#fig:harm){reference-type=\"ref\" reference=\"fig:harm\"}. The total (potential + kinetic) energy of the particle at any moment of time is given by the Hamiltonian\n\n$$H = \\frac12 x^2 + \\frac12 p^2\\,,$$\n\nwhere classically $p = \\dot x = \\frac{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4808v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chern-Simons theory",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-011-33-chern-simons-theory.md",
+      "narrative": null,
+      "content": "Finally, we arrive at our goal, Chern-Simons theory. Let us recall for a second why we began discussing quantization in the first place. In Section [\\[sec:cut\\]](#sec:cut){reference-type=\"ref\" reference=\"sec:cut\"}, we reviewed how partition functions in TQFT could be obtained by cutting and gluing three-manifolds. We explained that the partition function of a manifold with a knot is equivalent to the partition function of the corresponding knot complement, projected onto appropriate boundary conditions in ${\\cal H}(T^2)$ as in [\\[uR\\]](#uR){reference-type=\"eqref\" reference=\"uR\"}. To make compl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4808v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantization of Chern-Simons theory",
+      "pageStart": 24,
+      "pageEnd": 27,
+      "target": "../sections/sec-012-331-quantization-of-chern-simons-theory.md",
+      "narrative": null,
+      "content": "[]{#sec:TQFT_CS label=\"sec:TQFT_CS\"}\n\nConsider Chern-Simons theory with gauge group $G$ --- either compact or complex --- on a knot complement $M = \\widetilde{M}\\backslash K$, with $\\partial M = T^2$. The phase space ${\\cal M}$ associated to $T^2$ is simply the space of flat $G$-connections on $T^2$, modulo gauge equivalence. Since a flat connection is completely determined by the conjugacy classes of its holonomies, we have\n\n$$\\begin{aligned}\n {\\cal M}&= {\\cal M}_{{\\rm flat}} (G;T^2) \\\\\n &= \\left\\{ \\text{representations :}\\;\\;\\pi_1(T^2)\\to G \\right\\}/\\text{conjugation}\\,.\n\\end{aligned}$$\n\nThe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1003.4808v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Synthesis",
+      "pageStart": 27,
+      "pageEnd": 32,
+      "target": "../sections/sec-013-332-synthesis.md",
+      "narrative": null,
+      "content": "[]{#sec:path label=\"sec:path\"}\n\nIt is fairly clear from the above discussion of quantization that there should be a relation between the partition function for Chern-Simons theory with compact gauge group $G$ and the partition function for Chern-Simons theory with complex gauge group $G_{\\mathbb{C}}$. Essentially the same equations [\\[Acpt\\]](#Acpt){reference-type=\"eqref\" reference=\"Acpt\"} and [\\[Acx\\]](#Acx){reference-type=\"eqref\" reference=\"Acx\"} define the two partition functions --- though in one case they are difference equations and in the other they are differential equations. This rela",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

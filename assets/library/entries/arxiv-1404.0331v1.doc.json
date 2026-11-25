@@ -1,0 +1,846 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1404.0331v1",
+  "title": "arxiv-1404.0331v1",
+  "variant": "pdf",
+  "pages": 9,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "0",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-0-introduction"
+    },
+    {
+      "level": 2,
+      "title": "The colored Jones polynomial",
+      "number": "0.1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-01-the-colored-jones-polynomial"
+    },
+    {
+      "level": 2,
+      "title": "The recurrence ideal and recurrence polynomial",
+      "number": "0.2",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-02-the-recurrence-ideal-and-recurrence-polynomia"
+    },
+    {
+      "level": 2,
+      "title": "The AJ conjecture",
+      "number": "0.3",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-03-the-aj-conjecture"
+    },
+    {
+      "level": 2,
+      "title": "Main result",
+      "number": "0.4",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-04-main-result"
+    },
+    {
+      "level": 2,
+      "title": "Plan of the paper",
+      "number": "0.5",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-05-plan-of-the-paper"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgment",
+      "number": "0.6",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-06-acknowledgment"
+    },
+    {
+      "level": 1,
+      "title": "The Colored Jones polynomial of cabled knots",
+      "number": "1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-1-the-colored-jones-polynomial-of-cabled-knots"
+    },
+    {
+      "level": 1,
+      "title": "On the strong AJ conjecture",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-2-on-the-strong-aj-conjecture"
+    },
+    {
+      "level": 1,
+      "title": "Case s>2 is odd and q>2",
+      "number": "3",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-3-case-s2-is-odd-and-q2"
+    },
+    {
+      "level": 1,
+      "title": "Case s>2 is odd and q=2",
+      "number": "4",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-4-case-s2-is-odd-and-q2"
+    },
+    {
+      "level": 1,
+      "title": "Case s>2 is even",
+      "number": "5",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-5-case-s2-is-even"
+    },
+    {
+      "level": 1,
+      "title": "Case s=2",
+      "number": "6",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-6-case-s2"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 27,
+      "summary": null,
+      "keywords": [],
+      "extract": "arXiv:1404.0331v1 [math.GT] 1 Apr 2014 THE STRONG AJ CONJECTURE FOR CABLES OF TORUS KNOTS ANH T. TRAN Abstract. The AJ conjecture, formulated by Garoufalidis, relates the A-polynomial",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-1404.0331v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-01-the-colored-jones-polynomial",
+      "number": "0.1",
+      "title": "The colored Jones polynomial",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 58,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cabled knots",
+          "heading": false
+        },
+        {
+          "term": "torus knots",
+          "heading": false
+        },
+        {
+          "term": "a-ideal",
+          "heading": false
+        }
+      ],
+      "extract": "torus knots, some classes of two-bridge knots and pretzel knots, and most cabled knots over torus knots. The strong AJ conjecture, formulated by Sikora, relates the A-ideal and the colored Jones polynomial of a knot. It was conﬁrmed for all torus knots. In this paper we conﬁrm the strong AJ conjecture for most cabled knots over torus knots.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-0-introduction",
+      "number": "0",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 149,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "usual jones",
+          "heading": false
+        }
+      ],
+      "extract": "0.1. The colored Jones polynomial. For a knot K in S3 and a positive integer n, let JK(n) ∈Z[t±1] denote the n-colored Jones polynomial of K with zero-framing. The polynomial JK(n) is the quantum link invariant, as deﬁned by Reshetikhin and Turaev [RT], associated to the Lie algebra sl2(C), with the color n standing for the irreducible sl2(C)-module Vn of dimension n. Here we use the functorial normalization, i.e.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-02-the-recurrence-ideal-and-recurrence-polynomia",
+      "number": "0.2",
+      "title": "The recurrence ideal and recurrence polynomial",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 323,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "recurrence ideal",
+          "heading": true
+        },
+        {
+          "term": "principal left-ideal",
+          "heading": false
+        },
+        {
+          "term": "left-ideal domain",
+          "heading": false
+        },
+        {
+          "term": "polynomial alpha",
+          "heading": false
+        },
+        {
+          "term": "tilde",
+          "heading": false
+        },
+        {
+          "term": "mathcal",
+          "heading": false
+        },
+        {
+          "term": "ring",
+          "heading": false
+        }
+      ],
+      "extract": "Consider a discrete function $f: \\BZ \\to \\CR:=\\BC[t^{\\pm 1}]$ and define the linear operators $L, M$ acting on such functions by $$(Lf)(n) := f(n+1), \\qquad (Mf )(n) := t^{2n} f(n).$$ It is easy to see that $LM = t^2 ML$, and that $L^{\\pm 1}, M^{\\pm 1}$ generate the quantum torus $\\CT$, a non-commutative ring with presentation $$ \\mathcal T := \\mathbb \\CR\\langle L^{\\pm1}, M^{\\pm 1} \\rangle/ (LM - t^2 ML).$$ Let",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-03-the-aj-conjecture",
+      "number": "0.3",
+      "title": "The AJ conjecture",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 231,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite ccgls",
+          "heading": false
+        },
+        {
+          "term": "garoufalidis cite",
+          "heading": false
+        },
+        {
+          "term": "tran cite",
+          "heading": false
+        },
+        {
+          "term": "pretzel knots",
+          "heading": false
+        },
+        {
+          "term": "torus knots",
+          "heading": false
+        },
+        {
+          "term": "conjecture",
+          "heading": true
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        }
+      ],
+      "extract": "The colored Jones polynomials are powerful invariants of knots, but little is known about their relationship with classical invariants like the fundamental group. Inspired by the theory of noncommutative A-ideals of Frohman, Gelca and Lofaro \\cite{FGL, Ge} and the theory of $q$-holonomicity of quantum invariants of Garoufalidis and Le \\cite{GL}, Garoufalidis \\cite{Ga04} formulated the following conjecture that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-04-main-result",
+      "number": "0.4",
+      "title": "Main result",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 487,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cabled knot",
+          "heading": false
+        },
+        {
+          "term": "sigma mid",
+          "heading": false
+        },
+        {
+          "term": "sigma invariant",
+          "heading": false
+        },
+        {
+          "term": "sikora cite",
+          "heading": false
+        },
+        {
+          "term": "torus knots",
+          "heading": false
+        },
+        {
+          "term": "chi",
+          "heading": false
+        },
+        {
+          "term": "tau",
+          "heading": false
+        },
+        {
+          "term": "longitude",
+          "heading": false
+        }
+      ],
+      "extract": "For a finitely generated group $G$, let $\\chi(G)$ denote the $SL_2(\\BC)$-character variety of $G$, see \\cite{CS}. For a manifold $Y$ we use $\\chi(Y)$ also to denote $\\chi(\\pi_1(Y))$. Suppose $G=\\BZ^2$. Every pair of generators $\\mu, \\lambda$ will define an isomorphism between $\\chi(G)$ and $(\\BC^*)^2/\\tau$, where $(\\BC^*)^2$ is the set of non-zero complex pairs $(M,L)$ and $\\tau$ is the involution",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-05-plan-of-the-paper",
+      "number": "0.5",
+      "title": "Plan of the paper",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 45,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cjp",
+          "heading": false
+        },
+        {
+          "term": "theorem ref",
+          "heading": false
+        },
+        {
+          "term": "section ref",
+          "heading": false
+        }
+      ],
+      "extract": "In Section \\ref{cjp} we prove some properties of the colored Jones polynomial of cabled knots. In Section \\ref{general} we prove a result about the relationship between the AJ conjecture and the strong AJ conjecture, and consequently prove one part of Theorem \\ref{th2}. The proof of the other part of Theorem \\ref{th2} is given in Sections \\ref{q>2}--\\ref{s=2}.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-06-acknowledgment",
+      "number": "0.6",
+      "title": "Acknowledgment",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-1-the-colored-jones-polynomial-of-cabled-knots",
+      "number": "1",
+      "title": "The Colored Jones polynomial of cabled knots",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 235,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        },
+        {
+          "term": "sum frac",
+          "heading": false
+        },
+        {
+          "term": "cabled",
+          "heading": true
+        },
+        {
+          "term": "begin lemma",
+          "heading": false
+        },
+        {
+          "term": "begin proof",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{cjp} By \\cite{Mo}, the formula for the colored Jones polynomial of the $(r,s)$-cabled knot $K^{(r,s)}$ over a knot $K$ is given by \\begin{equation} \\label{cjp-cable} J_{K^{(r,s)}}(n)= t^{-rs(n^2-1)} \\sum_{j=-\\frac{n-1}{2}}^{\\frac{n-1}{2}} t^{4rj(js+1)} J_K(2sj+1). \\end{equation} \\begin{lemma} \\label{J_C} One has \\begin{eqnarray*} && J_{K^{(r,s)}}(n+2) - t^{-4rs(n+1)} J_{K^{(r,s)}}(n) \\\\ &=& t^{-2rs(n+1)}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-2-on-the-strong-aj-conjecture",
+      "number": "2",
+      "title": "On the strong AJ conjecture",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 665,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pqs",
+          "heading": false
+        },
+        {
+          "term": "pqm",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        },
+        {
+          "term": "frac varepsilon",
+          "heading": false
+        },
+        {
+          "term": "subset sqrt",
+          "heading": false
+        },
+        {
+          "term": "begin lemma",
+          "heading": false
+        },
+        {
+          "term": "lemma ref",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{general} Let $\\ve$ be the map reducing $t=-1$. \\begin{lemma} \\label{AJ} Suppose the AJ conjecture holds true for a knot $K$ and the A-polynomial $A_K$ does not have any non-trivial $M$-factors. Then $\\sqrt{\\ve(\\CA_K^{\\sigma})} \\subset \\fp$. \\end{lemma} \\begin{proof} Since the AJ conjecture holds true for $K$, we have $\\ve(\\alpha_K)=f(M)A_K$ for some non-zero $f(M) \\in \\BC(M)$. For every $\\delta \\in \\CA_K$, by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-3-case-s2-is-odd-and-q2",
+      "number": "3",
+      "title": "Case s>2 is odd and q>2",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 339,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pqs",
+          "heading": false
+        },
+        {
+          "term": "pqm",
+          "heading": false
+        },
+        {
+          "term": "pgi",
+          "heading": false
+        },
+        {
+          "term": "rsm",
+          "heading": false
+        },
+        {
+          "term": "p1p",
+          "heading": false
+        },
+        {
+          "term": "odd",
+          "heading": true
+        },
+        {
+          "term": "lemma",
+          "heading": false
+        }
+      ],
+      "extract": "From [Tr, Lemma 1.1] we have JT(n + 2) −t−4pq(n+1)JT(n) ∈R[t±2n], i.e. (3.1) (L2 −t−4pqM−2pq)JT ∈R[M±1]. Lemma 3.1. For all positive integers m, one has (L2m −t−4pqm2M−2pqm)JT ∈R[M±1]. Proof. From (3.1) we have (L2M2pq −t4pq)JT ∈R[M±1]. It follows that ((L2M2pq)m −t4pqm)JT ∈R[M±1]. Since (L2M2pq)m = t−4pqm(m−1)L2mM2pqm, we have (L2mM2pqm −t4pqm2)JT ∈R[M±1]. The lemma follows since L2mM2pqm = t8pqm2M2pqmL2m. □",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-4-case-s2-is-odd-and-q2",
+      "number": "4",
+      "title": "Case s>2 is odd and q=2",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 166,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "t2r",
+          "heading": false
+        },
+        {
+          "term": "t2p",
+          "heading": false
+        },
+        {
+          "term": "odd",
+          "heading": true
+        }
+      ],
+      "extract": "From [Tr, Lemma 1.5] we have JT(n + 1) + t−2p(2n+1)JT(n) ∈R[t±2n], i.e. (4.1) (L + t−2pM−2p)JT ∈R[M±1]. Lemma 4.1. When q = 2, for all positive integers m, one has (Lm −(−1)mt−2pm2M−2pm)JT ∈R[M±1]. Proof. From (4.1) we have (LM2p + t2p)JT ∈R[M±1]. It follows that ((LM2p)m −(−t2p)m)JT ∈R[M±1]. Since (LM2p)m = t−2pm(m−1)LmM2pm, we have (LmM2pm −(−1)mt2pm2)JT ∈R[M±1]. The lemma follows since LmM2pm = t4pm2M2pmLm. □",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-5-case-s2-is-even",
+      "number": "5",
+      "title": "Case s>2 is even",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 90,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "t2r pqs",
+          "heading": false
+        },
+        {
+          "term": "anh",
+          "heading": false
+        },
+        {
+          "term": "tran",
+          "heading": false
+        }
+      ],
+      "extract": "Proposition 5.1. When s is even, one has (LMpqs2 + L−1M−pqs2 −t2r−pqs(s+2) −t−2r+pqs(3s+2))G1 ∈ R[M±1], (LMpqs2 + L−1M−pqs2 −t−2r−pqs(s−2) −t2r+pqs(3s−2))G2 ∈ R[M±1]. 8 ANH T. TRAN Proof. From Lemma 3.1 we have JT(s(n + 2) + 1) −t−pqs(2sn+3s+2)JT(s(n + 1) + 1) ∈R[t±2n]. It follows that G1(n + 1) −t2r−pqs(2sn+3s+2)G1(n) ∈R[t±2n]. Hence (L −t2r−pqs(3s+2)M−pqs2)G1 ∈R[M±1], which implies that (LMpqs2 −t2r−pqs(s+2))G1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-6-case-s2",
+      "number": "6",
+      "title": "Case s=2",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 233,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pqm",
+          "heading": false
+        },
+        {
+          "term": "rjc",
+          "heading": false
+        },
+        {
+          "term": "lemma",
+          "heading": false
+        }
+      ],
+      "extract": "In the case s = 2 we let G(n) = JK(2n + 1). Then, by Lemma 1.2, we have (6.1) Mr(L + t−2rM−2r)JC = G. Proposition 6.1. One has (LM4pq + L−1M−4pq −1 −t8pq)G ∈R[M±1]. Proof. From [Tr, Lemma 1.1] we have JT(2n + 3) −t−8pq(n+1)JT(2n + 1) ∈R[t±2n], i.e. (L −t−8pqM−4pq)G ∈R[M±1]. It follows that (LM4pq −1)G ∈R[M±1]. Hence (1 −L−1M−4pq)(LM4pq −1)G ∈R[M±1]. The proposition follows. □ Let P = LM4pq + L−1M−4pq −1 −t8pq. Note",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 373,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "torus knots",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "character varieties",
+          "heading": false
+        },
+        {
+          "term": "jones function",
+          "heading": false
+        },
+        {
+          "term": "topol",
+          "heading": false
+        },
+        {
+          "term": "tran",
+          "heading": false
+        },
+        {
+          "term": "gelca",
+          "heading": false
+        }
+      ],
+      "extract": "References [CCGLS] D. Cooper, M. Culler, H. Gillet, D. Long and P. Shalen, Plane curves associated to character varieties of 3-manifolds, Invent. Math. 118 (1994), pp. 47–84. [CS] M. Culler and P. Shalen, Varieties of group representations and splittings of 3-manifolds, Ann. of Math. (2) 117 (1983), no. 1, 109–146. [FGL] C. Frohman, R. Gelca, and W. Lofaro, The A-polynomial from the noncommutative viewpoint, Trans.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "t2r pqs",
+      "heading": false
+    },
+    {
+      "term": "cabled knot",
+      "heading": false
+    },
+    {
+      "term": "colored jones",
+      "heading": true
+    },
+    {
+      "term": "torus knot",
+      "heading": false
+    },
+    {
+      "term": "jones polynomial",
+      "heading": true
+    },
+    {
+      "term": "tran cite",
+      "heading": false
+    },
+    {
+      "term": "begin conjecture",
+      "heading": false
+    },
+    {
+      "term": "end conjecture",
+      "heading": false
+    },
+    {
+      "term": "sikora cite",
+      "heading": false
+    },
+    {
+      "term": "cite ccgls",
+      "heading": false
+    },
+    {
+      "term": "cite fgl",
+      "heading": false
+    },
+    {
+      "term": "pqm",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 14,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 15,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p9); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 15 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1404.0331v1"
+  }
+}

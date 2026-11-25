@@ -1,0 +1,1235 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-th-9211141v1",
+  "title": "arxiv-hep-th-9211141v1",
+  "variant": "pdf",
+  "pages": 34,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "INTRODUCTION AND SUMMARY OF RESULTS",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction-and-summary-of-results"
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The System of Partial Differential Equations",
+      "number": "1.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-12-the-system-of-partial-differential-equations"
+    },
+    {
+      "level": 2,
+      "title": "The Ordinary Differential Equations",
+      "number": "1.3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-13-the-ordinary-differential-equations"
+    },
+    {
+      "level": 2,
+      "title": "Asymptotics and the Commuting Differential Operator",
+      "number": "1.4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-14-asymptotics-and-the-commuting-differential-op"
+    },
+    {
+      "level": 2,
+      "title": "Probability Density for the $n^{th}$ Largest Eigenvalue",
+      "number": "1.5",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-15-probability-density-for-the-nth-largest-eigen"
+    },
+    {
+      "level": 1,
+      "title": "THE SYSTEM OF PARTIAL DIFFERENTIAL EQUATIONS",
+      "number": "2",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-2-the-system-of-partial-differential-equations"
+    },
+    {
+      "level": 2,
+      "title": "Derivation of the Equations",
+      "number": "2.1",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-21-derivation-of-the-equations"
+    },
+    {
+      "level": 2,
+      "title": "Hamiltonian Structure",
+      "number": "2.2",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-22-hamiltonian-structure"
+    },
+    {
+      "level": 1,
+      "title": "THE ORDINARY DIFFERENTIAL EQUATIONS",
+      "number": "3",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-3-the-ordinary-differential-equations"
+    },
+    {
+      "level": 1,
+      "title": "ASYMPTOTICS",
+      "number": "4",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-4-asymptotics"
+    },
+    {
+      "level": 2,
+      "title": "Asymptotics via Painlev'e",
+      "number": "4.1",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-41-asymptotics-via-painleve"
+    },
+    {
+      "level": 2,
+      "title": "Asymptotics via the Commuting Differential Operator",
+      "number": "4.2",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-42-asymptotics-via-the-commuting-differential-op"
+    },
+    {
+      "level": 3,
+      "title": "The region $x<<t^{-1/2}$",
+      "number": "4.2.1",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-421-the-region-xt-12"
+    },
+    {
+      "level": 3,
+      "title": "The region $x>>t^{-2}$, $t-x>>t^{1/4}$",
+      "number": "4.2.2",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-013-422-the-region-xt-2-t-xt14"
+    },
+    {
+      "level": 3,
+      "title": "The region $x-t>>t^{1/4}$",
+      "number": "4.2.3",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-014-423-the-region-x-tt14"
+    },
+    {
+      "level": 3,
+      "title": "The region $\\vert x-t \\vert <<t$",
+      "number": "4.2.4",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "The asymptotics of $\\lambda_i$",
+      "number": "4.2.5",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-015-425-the-asymptotics-of-lambda-i"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 193,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "airy kernel",
+          "heading": false
+        },
+        {
+          "term": "sine kernel",
+          "heading": false
+        },
+        {
+          "term": "fredholm determinant",
+          "heading": false
+        },
+        {
+          "term": "e-mail address",
+          "heading": false
+        },
+        {
+          "term": "level-spacing",
+          "heading": false
+        },
+        {
+          "term": "widom",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-th/9211141v1 1 Dec 1992 ITD 92/93–9 Level-Spacing Distributions and the Airy Kernel Craig A. Tracy∗ Department of Mathematics and Institute of Theoretical Dynamics, University of California, Davis, CA 95616, USA Harold Widom† Department of Mathematics, University of California, Santa Cruz, CA 95064, USA Scaling level-spacing distribution functions in the “bulk of the spectrum” in random matrix models of N",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9211141v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction-and-summary-of-results",
+      "number": "1",
+      "title": "INTRODUCTION AND SUMMARY OF RESULTS",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 659,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sine kernel",
+          "heading": false
+        },
+        {
+          "term": "airy kernel",
+          "heading": false
+        },
+        {
+          "term": "mehta book",
+          "heading": false
+        },
+        {
+          "term": "fredholm determinant",
+          "heading": false
+        },
+        {
+          "term": "infinitesimal intervals",
+          "heading": false
+        },
+        {
+          "term": "rightarrow infty",
+          "heading": false
+        },
+        {
+          "term": "intro summary",
+          "heading": false
+        },
+        {
+          "term": "x-y",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:intro_summary label=\"sec:intro_summary\"} ## Introduction {#subsec:intro} In this paper we present new results for the *level spacing distribution functions* obtained from scaling random matrix models of $N\\times N$ hermitian matrices at the edge of the support of the (tree-level) eigenvalue densities when the parameters of the potential $V$ are not \"finely tuned.\" This universality class is already present",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-12-the-system-of-partial-differential-equations",
+      "number": "1.2",
+      "title": "The System of Partial Differential Equations",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 254,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "airy partial",
+          "heading": false
+        },
+        {
+          "term": "dlog tau",
+          "heading": false
+        },
+        {
+          "term": "label airy",
+          "heading": false
+        },
+        {
+          "term": "i-k",
+          "heading": false
+        },
+        {
+          "term": "partial sum",
+          "heading": false
+        },
+        {
+          "term": "sum pde",
+          "heading": false
+        },
+        {
+          "term": "sum neq",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:sum_pde label=\"subsec:sum_pde\"} We set $$J=\\bigcup_{j=1}^m\\left(a_{2j-1},a_{2j}\\right)$$ and write $D(J;\\lambda)$ for the Fredholm determinant of $K$ acting on $J$. We think of this as a function of $a=(a_1,\\ldots,a_{2m})$. Then $$d_a \\log D(J;\\lambda) = - \\sum_{j=1}^{2m} (-1)^j R(a_j,a_j)\\, da_j \\label{dlog_tau}$$ where $R(x,y)$ is the kernel of the operator $K(I-K)^{-1}$ and $d_a$ denotes exterior",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-13-the-ordinary-differential-equations",
+      "number": "1.3",
+      "title": "The Ordinary Differential Equations",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 198,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ablowitz segur",
+          "heading": false
+        },
+        {
+          "term": "dlog tau",
+          "heading": false
+        },
+        {
+          "term": "prime",
+          "heading": false
+        },
+        {
+          "term": "sum ode",
+          "heading": false
+        },
+        {
+          "term": "painleve",
+          "heading": false
+        },
+        {
+          "term": "mcleod",
+          "heading": false
+        },
+        {
+          "term": "transcendent",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:sum_ode label=\"subsec:sum_ode\"} For the special case $J=(s,\\infty)$ the above equations can be used to show that $q(s;\\lambda)$ (the quantity $q$ of the last section corresponding to the end-point $s$) satisfies $$q^{\\prime\\prime}= s\\, q + 2 q^3 \\, ,\\ \\ \\ (^\\prime={d\\over ds}) \\label{p2}$$ with $$q(s;\\lambda) \\sim \\sqrt{\\lambda}\\> {\\rm Ai}(s) \\ \\ \\ {\\rm as}\\ \\ s\\rightarrow\\infty. \\label{p2_bc}$$ This",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-14-asymptotics-and-the-commuting-differential-op",
+      "number": "1.4",
+      "title": "Asymptotics and the Commuting Differential Operator",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 631,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eig repr",
+          "heading": false
+        },
+        {
+          "term": "differential operator",
+          "heading": true
+        },
+        {
+          "term": "sine kernel",
+          "heading": false
+        },
+        {
+          "term": "asymptotics",
+          "heading": true
+        },
+        {
+          "term": "vert lambda",
+          "heading": false
+        },
+        {
+          "term": "zeta prime",
+          "heading": false
+        },
+        {
+          "term": "partial lambda",
+          "heading": false
+        },
+        {
+          "term": "rightarrow infty",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:sum_commuting label=\"subsec:sum_commuting\"} Again we take $J=(s,\\infty)$ and consider asymptotics as $s\\rightarrow -\\infty$. (Asymptotics as $s\\rightarrow\\infty$ can be obtained trivially from the Neumann series for $(I-K)^{-1}$.) From the random matrix point of view the interesting quantities are $$E(n;s):= {(-1)^n\\over n!}\\> {\\partial^n\\over \\partial \\lambda^n} \\, D(I;\\lambda)\\biggr\\vert_{\\lambda=1} \\,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-15-probability-density-for-the-nth-largest-eigen",
+      "number": "1.5",
+      "title": "Probability Density for the $n^{th}$ Largest Eigenvalue",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 128,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "largest",
+          "heading": true
+        },
+        {
+          "term": "probability",
+          "heading": true
+        },
+        {
+          "term": "eigenvalue",
+          "heading": true
+        }
+      ],
+      "extract": "An elementary probability argument shows that if $F(n;s)$ ($n=0,1,\\cdots$) denotes the probability density for the (scaled) position of the $n^{th}$ largest eigenvalue ($n=0$ is the largest), then $$F(0;s) = {d E(0;s)\\over ds}$$ and for $n\\geq 1$ $$F(n;s)-F(n-1,s)={d E(n;s)\\over ds}\\, .$$ From the preceding expressions for $E(n;s)$ in terms of $q(s;1)$ and $q_n(s)$ we can derive formulas for $F(n;s)$ which can in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-2-the-system-of-partial-differential-equations",
+      "number": "2",
+      "title": "THE SYSTEM OF PARTIAL DIFFERENTIAL EQUATIONS",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-21-derivation-of-the-equations",
+      "number": "2.1",
+      "title": "Derivation of the Equations",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 14,
+      "labelStart": "9",
+      "labelEnd": "14",
+      "words": 1397,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rbrack doteq",
+          "heading": false
+        },
+        {
+          "term": "i-k right",
+          "heading": false
+        },
+        {
+          "term": "rbrack prime",
+          "heading": false
+        },
+        {
+          "term": "left lbrack",
+          "heading": false
+        },
+        {
+          "term": "partial right",
+          "heading": false
+        },
+        {
+          "term": "eqnarray par",
+          "heading": false
+        },
+        {
+          "term": "ref airy",
+          "heading": false
+        },
+        {
+          "term": "equation partial",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:derivation_pde} A central role in the derivation of our equations is played by the commutator identity \\begin{equation} \\left\\lbrack L,\\left(I-K\\right)^{-1}\\right\\rbrack = \\left(I-K\\right)^{-1} \\left\\lbrack L,K\\right\\rbrack \\left(I-K\\right)^{-1} \\label{CR_1} \\end{equation} for any operators $K$ and $L$. Taking $L$ to be $D$ ($=d/dx$) or $M$ (=multiplication by the independent variable) give two of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-22-hamiltonian-structure",
+      "number": "2.2",
+      "title": "Hamiltonian Structure",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "16",
+      "words": 362,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "airy",
+          "heading": false
+        },
+        {
+          "term": "rde",
+          "heading": false
+        },
+        {
+          "term": "hamiltonian",
+          "heading": true
+        },
+        {
+          "term": "prime left",
+          "heading": false
+        },
+        {
+          "term": "hamilton eqn",
+          "heading": false
+        },
+        {
+          "term": "label prime",
+          "heading": false
+        },
+        {
+          "term": "hamiltonian system",
+          "heading": false
+        },
+        {
+          "term": "rbrace",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:hamiltonian label=\"subsec:hamiltonian\"} The partial differential equations ([\\[airy_1\\]](#airy_1){reference-type=\"ref\" reference=\"airy_1\"})--([\\[airy_6\\]](#airy_6){reference-type=\"ref\" reference=\"airy_6\"}) can be rewritten in a compact form that reveals a symplectic structure with ([\\[airy_7\\]](#airy_7){reference-type=\"ref\" reference=\"airy_7\"}) defining a family of commuting Hamiltonians. To see this we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-3-the-ordinary-differential-equations",
+      "number": "3",
+      "title": "THE ORDINARY DIFFERENTIAL EQUATIONS",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 239,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diﬀerentiate",
+          "heading": false
+        },
+        {
+          "term": "airy",
+          "heading": false
+        },
+        {
+          "term": "says",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we specialize to the case J = (s, ∞) and derive the diﬀerential equations (1.11), (1.13) and (1.14). In the notation of the last section m = 1, a1 = s, a2 = ∞. All terms in the formulas we derived which contain a2 vanish because of the decay of the Airy kernel at +∞. Recall that we now denote the quantity q corresponding to the endpoint a1 = s by q(s), and write R(s) for R(s, s). First, equation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-4-asymptotics",
+      "number": "4",
+      "title": "ASYMPTOTICS",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-41-asymptotics-via-painleve",
+      "number": "4.1",
+      "title": "Asymptotics via Painlev'e",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 19,
+      "labelStart": "17",
+      "labelEnd": "19",
+      "words": 753,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "asy painleve",
+          "heading": false
+        },
+        {
+          "term": "label asy",
+          "heading": false
+        },
+        {
+          "term": "asy end",
+          "heading": false
+        },
+        {
+          "term": "clarkson mcleod",
+          "heading": false
+        },
+        {
+          "term": "rightarrow infty",
+          "heading": false
+        },
+        {
+          "term": "analogous expansions",
+          "heading": false
+        },
+        {
+          "term": "rde",
+          "heading": false
+        },
+        {
+          "term": "int infty",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:asy_painleve label=\"subsec:asy_painleve\"} Hastings and McLeod [@hastings_mcleod] (see also [@clarkson_mcleod1; @clarkson_mcleod2]) have shown that $q(s;1)$, the unique solution to equation ([\\[p2\\]](#p2){reference-type=\"ref\" reference=\"p2\"}) which is asymptotic to ${\\rm Ai}(s)$ as $s\\rightarrow +\\infty$, is asymptotically equal to $\\sqrt{-s/2}$ as $s\\rightarrow -\\infty$. In fact there is a complete",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-42-asymptotics-via-the-commuting-differential-op",
+      "number": "4.2",
+      "title": "Asymptotics via the Commuting Differential Operator",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": "19",
+      "labelEnd": "21",
+      "words": 472,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eigs asy",
+          "heading": false
+        },
+        {
+          "term": "asy diffop",
+          "heading": false
+        },
+        {
+          "term": "eig eqn",
+          "heading": false
+        },
+        {
+          "term": "differential operator",
+          "heading": true
+        },
+        {
+          "term": "label eig",
+          "heading": false
+        },
+        {
+          "term": "partial alpha",
+          "heading": false
+        },
+        {
+          "term": "alpha prime",
+          "heading": false
+        },
+        {
+          "term": "partial beta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:asy_diffop label=\"subsec:asy_diffop\"} We begin with the integral identity $$K(x,y)=\\int_0^\\infty A(x+z) A(y+z)\\, dz \\, . \\label{K_identity}$$ This appears in [@clarkson_mcleod1] but we give a simple proof here. Think of ([\\[partial_K\\]](#partial_K){reference-type=\"ref\" reference=\"partial_K\"}) as a differential equation for the \"unknown\" function $K(x,y)$. Since $$\\left({\\partial\\over\\partial",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-421-the-region-xt-12",
+      "number": "4.2.1",
+      "title": "The region $x<<t^{-1/2}$",
+      "level": 3,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 108,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "t2x",
+          "heading": false
+        },
+        {
+          "term": "hand side",
+          "heading": false
+        },
+        {
+          "term": "right hand",
+          "heading": false
+        }
+      ],
+      "extract": "If we make the substitutions f(x) = h(t2x) = h(y) then (4.7) becomes (yh′(y))′ −h(y) = t−2 y2 t4 −2y t −µ ! h(y) . The solution of the equation with the right hand side replaced by 0 which satisﬁes h(0) = 1 is I0(2√y) where I0 is the usual modiﬁed Bessel function. The actual solution h(y) will be asymptotic to this in any interval over which the integral of the factor of h(y) on the right hand side of the equation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-422-the-region-xt-2-t-xt14",
+      "number": "4.2.2",
+      "title": "The region $x>>t^{-2}$, $t-x>>t^{1/4}$",
+      "level": 3,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 418,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "x2α",
+          "heading": false
+        },
+        {
+          "term": "region",
+          "heading": true
+        },
+        {
+          "term": "aey",
+          "heading": false
+        }
+      ],
+      "extract": "If in equation (4.8) we set α(x) = (t −x)2 −µ x , y = Z x 0 q α(z) dz , h(y) = α(x)1/4g(x) then the equation for h(y) is h′′(y) −h(y) = \"1 4 α′′ α2 −5 16 α′2 α3 − 1 4x2α # h(y) , where on the right side ′ = d dx. Since dy = α(x)1/2 dx, the integral with respect to y (of the factor of h(y) on the right side of the equation) over any interval equals Z 1 4 α′′ α3/2 −5 16 α′2 α5/2 − 1 4x2α1/2 ! dx over the corresponding",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-423-the-region-x-tt14",
+      "number": "4.2.3",
+      "title": "The region $x-t>>t^{1/4}$",
+      "level": 3,
+      "pageStart": 23,
+      "pageEnd": 25,
+      "labelStart": "23",
+      "labelEnd": "25",
+      "words": 439,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "x-t",
+          "heading": true
+        },
+        {
+          "term": "appx hspace",
+          "heading": false
+        },
+        {
+          "term": "eig eqn",
+          "heading": false
+        },
+        {
+          "term": "label appx",
+          "heading": false
+        },
+        {
+          "term": "x-t right",
+          "heading": false
+        },
+        {
+          "term": "lbrack sqrt",
+          "heading": false
+        },
+        {
+          "term": "t-x",
+          "heading": false
+        },
+        {
+          "term": "right rbrack",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsubsec:region1 label=\"subsubsec:region1\"} If we make the substitutions $$f(x) = h(t^2x)=h(y)$$ then ([\\[eig_eqn1\\]](#eig_eqn1){reference-type=\"ref\" reference=\"eig_eqn1\"}) becomes $$\\left(y h^\\prime(y) \\right)^\\prime - h(y) = t^{-2}\\left( {y^2\\over t^4} -2 {y\\over t} -\\mu\\right) h(y)\\, .$$ The solution of the equation with the right hand side replaced by $0$ which satisfies $h(0)=1$ is $I_0(2\\sqrt{y})$ where",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-425-the-asymptotics-of-lambda-i",
+      "number": "4.2.5",
+      "title": "The asymptotics of $\\lambda_i$",
+      "level": 3,
+      "pageStart": 25,
+      "pageEnd": 34,
+      "labelStart": "25",
+      "labelEnd": "34",
+      "words": 2058,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eigs asy",
+          "heading": false
+        },
+        {
+          "term": "painlevé transcendent",
+          "heading": false
+        },
+        {
+          "term": "fifth painlevé",
+          "heading": false
+        },
+        {
+          "term": "appx",
+          "heading": false
+        },
+        {
+          "term": "letts",
+          "heading": false
+        },
+        {
+          "term": "mcleod",
+          "heading": false
+        },
+        {
+          "term": "spacing distributions",
+          "heading": false
+        },
+        {
+          "term": "asymptotics",
+          "heading": true
+        }
+      ],
+      "extract": "If we look at the asymptotics of $f_i(x)$ (the eigenfunction associated with the eigenvalue $\\mu_i$ of $L$, normalized so that $f_i(0)=1$) given by ([\\[appx1\\]](#appx1){reference-type=\"ref\" reference=\"appx1\"}), ([\\[appx3\\]](#appx3){reference-type=\"ref\" reference=\"appx3\"}), ([\\[appx5\\]](#appx5){reference-type=\"ref\" reference=\"appx5\"}), and ([\\[appx8\\]](#appx8){reference-type=\"ref\" reference=\"appx8\"}) we see that the",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "prime right",
+      "heading": false
+    },
+    {
+      "term": "airy kernel",
+      "heading": false
+    },
+    {
+      "term": "prime left",
+      "heading": false
+    },
+    {
+      "term": "airy partial",
+      "heading": false
+    },
+    {
+      "term": "rbrack prime",
+      "heading": false
+    },
+    {
+      "term": "ref airy",
+      "heading": false
+    },
+    {
+      "term": "eigs asy",
+      "heading": false
+    },
+    {
+      "term": "label airy",
+      "heading": false
+    },
+    {
+      "term": "airy operator",
+      "heading": false
+    },
+    {
+      "term": "alpha prime",
+      "heading": false
+    },
+    {
+      "term": "i-k right",
+      "heading": false
+    },
+    {
+      "term": "sine kernel",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 18,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 17,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 5
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 17 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-th-9211141v1"
+  }
+}

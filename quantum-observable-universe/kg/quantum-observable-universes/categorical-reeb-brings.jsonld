@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-categorical-reeb-brings",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:categorical-reeb-brings",
+  "kind": "example",
+  "title": "Constructive Reeb derivation on Bring's coordinate ring",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-categorical-reeb-exists",
+    "papers/quantum-observable-universe/blocks/ex-reeb-su2",
+    "papers/quantum-observable-universe/blocks/def-brings-coordinate-ring",
+    "papers/quantum-observable-universe/blocks/ex-weight-decomposition-su2"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-categorical-reeb-exists",
+  "cites": [
+    "references/woronowicz1987-twisted-su2",
+    "references/woronowicz1989"
+  ],
+  "tags": [
+    "brings-surface",
+    "reeb",
+    "constructive",
+    "maurer-cartan"
+  ],
+  "text": "categorical-reeb-brings.md",
+  "provenance": "authored"
+}

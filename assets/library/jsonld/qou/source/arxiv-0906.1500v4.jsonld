@@ -1,0 +1,85 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0906.1500v4/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-0906.1500v4",
+  "contains": [
+    "library/arxiv-0906.1500v4/sections/sec-front-matter",
+    "library/arxiv-0906.1500v4/sections/sec-000",
+    "library/arxiv-0906.1500v4/sections/sec-001",
+    "library/arxiv-0906.1500v4/sections/sec-002",
+    "library/arxiv-0906.1500v4/sections/sec-003",
+    "library/arxiv-0906.1500v4/sections/sec-004",
+    "library/arxiv-0906.1500v4/sections/sec-005",
+    "library/arxiv-0906.1500v4/sections/sec-006",
+    "library/arxiv-0906.1500v4/sections/sec-007",
+    "library/arxiv-0906.1500v4/sections/sec-008",
+    "library/arxiv-0906.1500v4/sections/sec-009",
+    "library/arxiv-0906.1500v4/sections/sec-010",
+    "library/arxiv-0906.1500v4/sections/sec-011",
+    "library/arxiv-0906.1500v4/sections/sec-012",
+    "library/arxiv-0906.1500v4/sections/sec-013",
+    "library/arxiv-0906.1500v4/sections/sec-014",
+    "library/arxiv-0906.1500v4/sections/sec-015",
+    "library/arxiv-0906.1500v4/sections/sec-016",
+    "library/arxiv-0906.1500v4/sections/sec-017",
+    "library/arxiv-0906.1500v4/sections/sec-018",
+    "library/arxiv-0906.1500v4/sections/sec-019",
+    "library/arxiv-0906.1500v4/sections/sec-020",
+    "library/arxiv-0906.1500v4/sections/sec-021",
+    "library/arxiv-0906.1500v4/sections/sec-022",
+    "library/arxiv-0906.1500v4/sections/sec-023",
+    "library/arxiv-0906.1500v4/sections/sec-024",
+    "library/arxiv-0906.1500v4/sections/sec-025",
+    "library/arxiv-0906.1500v4/sections/sec-026",
+    "library/arxiv-0906.1500v4/sections/sec-027",
+    "library/arxiv-0906.1500v4/sections/sec-028",
+    "library/arxiv-0906.1500v4/sections/sec-029",
+    "library/arxiv-0906.1500v4/sections/sec-030"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Twisted Alexander invariant and non-abelian Reidemeister torsion for hyperbolic three-manifolds — We study a computational method of the hyperbolic Reidemeister torsion (also called in the literature\n\n**Twisted Alexander invariant and non-abelian Reidemeister torsion for hyperbolic three-manifolds**\n\n*JÉR ÔME DUBOIS AND YOSHIKAZU YAMAGUCHI*\n\n29 pp, 32 sections.\n\n**Abstract.** We study a computational method of the hyperbolic Reidemeister torsion (also called in the literature the non–abelian Reidemeister torsion) considered by J. Porti for complete hyperbolic three–dimensional manifolds with cusps. The derivative of the twisted Alexander invariant for a hyperbolic knot exterior gives the hyperbolic torsion. We prove such a derivative formula of the twisted Alexander invariant for hyperbolic link exteriors like the Whitehead link exterior. We provide the framework for the derivative formula to work, which consists of assumptions on the topology of the manifold and on the representations involved in the deﬁnition of the twisted Alexander invariant, and prove derivative formula in that context.\n\n**Outline.** Front matter; 1 Introduction; Organization; Acknowledgments; 2 Preliminaries; 2.1 The Reidemeister torsion; Torsion of a chain complex; Torsion of a CW-complex; 2.2 The Multiplicativity Lemma for torsions; 3 Definition of the polynomial torsion; 3.1 Technical assumptions; 3.2 Acyclicity; 3.2.1 The acyclicity of local system for manif; 4 Examples of computations; 4.1 The figure eight knot exterior; 4.2 The Whitehead link exterior; 5 Change of coefficients; 6 A derivative formula",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0906.1500&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0906.1500v4",
+    "title_source": "slug",
+    "source_file": "0906.1500v4.pdf",
+    "source_sha256": "9a586f6d134ca47fc357e1a8197e401828d6680ac1ddf378ce4ad0a84ed52b1f",
+    "pages": 29,
+    "arxiv": {
+      "id": "0906.1500",
+      "version": "4",
+      "primary_class": "math.GT",
+      "stamp_date": "16 Jan 2012"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

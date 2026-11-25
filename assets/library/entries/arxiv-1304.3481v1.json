@@ -1,0 +1,215 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1304.3481v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1304.3481v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The categorification of quantum knot invariants started with Khovanov's seminal paper \\cite{Khfirst}, where he defined a doubly-graded homology theory, whose homotopy type is an invariant of a knot, and such that its graded Euler characteristic is equal to the Jones polynomial. This opened a fast-growing field in low-dimensional topology and started work on categorification of other quantum knot invariants. Unlike the quantum polynomial invariants of a knot $K$, denoted by $P^{g,\\lambda}(K)(q)$, which are explicitly defined for any representation $\\lambda$ of Lie algebra $g$, their categorific",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.3481v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1304.3481v1  [math.QA]  11 Apr 2013\nQuadruply-graded colored homology of knots\nEugene Gorsky, Sergei Gukov, and Marko Stoˇsi´c\nAbstract. We conjecture the existence of four independent gradings in the\ncolored HOMFLY homology.\nWe describe these gradings explicitly for the\nrectangular colored homology of torus knots and make qualitative predictions\nof various interesting structures and symmetries in the colored homology of\ngeneral knots. We also give a simple representation-theoretic model for the\nHOMFLY homology of the unknot colored by any representation. While some\nof these structures h",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.3481v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bosonic and Fermionic generators",
+      "pageStart": 7,
+      "pageEnd": 19,
+      "target": "../sections/sec-001-2-bosonic-and-fermionic-generators.md",
+      "narrative": null,
+      "content": "\\label{sec:bosonic}\n\n\n\\subsection{The algebra of BPS states and knot cobordisms}\n\\label{sec:geomphys}\n\n\nWhile most of this paper is probably aimed at a more mathematical reader, here we offer a geometric\ninterpretation of some of our observations in the framework more familiar to physicists.\nTherefore, the purpose of this section is twofold. First, it will help physicists to\nunderstand better some of our observations (which, we believe, may go beyond the scope of the present\npaper and are worth studying further in the context of BPS state counting).\nSecond, the physical interpretation / motiva",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.3481v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gradings, Differentials, Mirror Symmetry",
+      "pageStart": 19,
+      "pageEnd": 35,
+      "target": "../sections/sec-002-3-gradings-differentials-mirror-symmetry.md",
+      "narrative": null,
+      "content": "\\label{sec:gradings}\n\n\n\n\\subsection{Introduction}\nFor any Young diagram $\\lambda$, the $\\lambda$-colored HOMFLY polynomial of a knot $K$, denoted $P^{\\lambda}(K)(a,q)$, is a two-variable polynomial knot invariant whose $a=q^N$ one-variable specialization \\eqref{PPN} equals the quantum knot invariant obtained by the representation $\\lambda$ of the quantum $sl(N)$. Throughout the paper, $P^{\\lambda}(K)$ denotes the reduced polynomial, i.e. it is normalized so that the value of the unknot is equal to 1.\n\nWe conjecture the existence of the homology theory $\\CH^{\\lambda}(K)$ categorifying the polyn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.3481v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 35,
+      "pageEnd": 47,
+      "target": "../sections/sec-003-4-examples.md",
+      "narrative": null,
+      "content": "\\label{sec:examples}\n\nIn this section we give some examples of the quadruply-graded colored HOMFLY homology that exhibit all of the structure and satisfy all of the conjectures from the previous sections. This gives a highly non-trivial check of the existence and consistency of such large and beautiful structure in the colored HOMFLY homology.\n\n\n\n\\subsection{Trefoil}\n\\label{sec:trefoil}\n\nWe start with the trefoil and its $S^2$ and $\\Lambda^2$ colored homologies.\nThe uncolored HOMFLY homology of the trefoil is (\\cite{DGR}):\n\\be\\label{fund31}\n\\CP^{\\tableau1}(3_1)(a,q,t)=a^2q^{-2}+a^2q^2t^2+a^4t^",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.3481v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Colored HOMFLY homology for torus knots",
+      "pageStart": 47,
+      "pageEnd": 55,
+      "target": "../sections/sec-004-5-colored-homfly-homology-for-torus-knots.md",
+      "narrative": null,
+      "content": "\\label{sec:algmodel}\n\nIn this part we describe various algebraic and geometric approaches to the colored homology of\ntorus knots.\n\n\n\\subsection{Stable HOMFLY homology of torus knots}\n\\label{sec:torus}\n\n\nWe will be interested in the stable limit of the colored HOMFLY polynomials of $(n,m)$ torus knots at $m\\to\\infty$.\nUsing e.g. \\cite[eq. (5.4)]{stevan}, one can prove the following result.\n\n\\begin{proposition}\nLet $\\kappa(\\mu)=\\sum_{(i,j)\\in \\mu}(i-j).$\nDefine\n$$P_{st}^{\\lambda}(T({m,n})) := q^{-mn\\kappa(\\lambda)+\\frac{m}{n}\\kappa(n\\lambda)}a^{-\\frac{m(n-1)|\\lambda|}{2}}P^{\\lambda}(T({m,n})).$$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.3481v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "HOMFLY homology from A-model and B-model",
+      "pageStart": 55,
+      "pageEnd": 61,
+      "target": "../sections/sec-005-6-homfly-homology-from-a-model-and-b-model.md",
+      "narrative": null,
+      "content": "\\label{sec:mirror}\n\nIn this section, we wish to look for geometric and physical models for colored HOMFLY homology,\neventually formulating it in the language of symplectic geometry or the so-called A-model.\n\nIndeed, in mirror symmetry, the so-called B-model is famous for its formulation in the language of\ncomplex (algebraic) geometry, while the A-model side involves symplectic invariants, Fukaya category, and quantum cohomology \\cite{KontsevichHMS}.\nClearly, the algebraic model described in the previous section is closer to the B-model, and therefore\nit will be our natural starting point here.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.3481v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "``Bottom row'' of the colored HOMFLY homology",
+      "pageStart": 61,
+      "pageEnd": 68,
+      "target": "../sections/sec-006-7-bottom-row-of-the-colored-homfly-homology.md",
+      "narrative": null,
+      "content": "\\label{sec:bottom}\n\nIn this part we wish to study the ``bottom row'' of the colored superpolynomial, defined as\n\\be\n\\CP^{\\lambda}_{\\text{bottom}} (q,t) \\; : = \\; \\lim_{\\a \\to 0} \\, \\a^{\\#} \\, \\CP^{\\lambda} (\\a,q,t) \\,,\n\\label{bottomrow}\n\\ee\nwhere $\\a^{\\#}$ denotes the appropriate power of $a$, such that the product $\\a^{\\#} \\, \\CP^{\\lambda} (\\a,q,t)$\ncontains only non-negative $a$-degrees starting from zero.\n\n\n\\subsection{Combinatorial interpretation for torus knots}\n\\label{sec:combbot}\n\nFirst, let us recall the conjectural combinatorial description of the uncolored triply graded homology\nfor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.3481v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. Rectangle-colored invariants of (2,m) torus knots",
+      "pageStart": 68,
+      "pageEnd": 69,
+      "target": "../sections/sec-007-appendix-a-rectangle-colored-invariants-of-2m-to.md",
+      "narrative": null,
+      "content": "As we use the quantum invariants of $(2,m)$ torus knots colored\nby the representations labeled by the rectangular Young diagrams in many examples throughout the paper, we would like\nto provide a reader with a handy formula for them.\n\nLet us first recall the general formula for the colored invariants of torus knots \\cite{LZ,RJ,stevan}. Define the coefficients $c_{\\lambda,n}^{\\mu}$ by the equation\n\\begin{equation}\ns_{\\lambda}(x_1^n,x_2^n,\\ldots)=\\sum_{|\\mu|=n|\\lambda|}c_{\\lambda,n}^{\\mu}s_{\\mu}.\n\\end{equation}\nThe $\\lambda$-colored invariant of the $(n,m)$ torus knot can be expressed via the col",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.3481v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix B. Unreduced colored HOMFLY homology",
+      "pageStart": 69,
+      "pageEnd": 75,
+      "target": "../sections/sec-008-appendix-b-unreduced-colored-homfly-homology.md",
+      "narrative": null,
+      "content": "\\subsection{General structure}\nAs explained in Section \\ref{sec:geomphys}, the unreduced $\\lambda$-colored homology $\\bar{\\CH}^{\\lambda}(K)$ for any rectangular diagram $\\lambda$ and any knot $K$ is a free module over the unreduced $\\lambda$-colored homology of the unknot $\\bar{\\CH}^{\\lambda}(U)$. Therefore, for every knot $K$ the unreduced homology $\\bar{\\CH}^{\\lambda}(K)$ is determined by the reduced homology ${\\CH}^{\\lambda}(K)$\nand the unreduced homology of the unknot $\\bar{\\CH}^{\\lambda}(U)$. In terms of the corresponding Poincare polynomials we have:\n\\be\\label{simprel}\n\\bar{\\CP}^{\\lambda",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.3481v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 75,
+      "pageEnd": 78,
+      "target": "../sections/sec-009-references.md",
+      "narrative": null,
+      "content": "[1] M. Abouzaid, On the Fukaya Categories of Higher Genus Surfaces, arXiv:math/0606598.\n[2] M.\nAganagic,\nS.\nShakirov,\nKnot\nHomology\nfrom\nReﬁned\nChern-Simons\nTheory,\narXiv:1105.5117.\n[3] M. Aganagic, C. Vafa, Mirror symmetry and supermanifolds, hep-th/0403192.\n[4] R. Auzzi, M. Shifman, A. Yung, Composite non-Abelian ﬂux tubes in N=2 SQCD, Phys. Rev.\nD 73, 105012 (2006) [Erratum-ibid. D 76, 109901 (2007)] [hep-th/0511150].\n[5] J.M.\nBaptista,\nNon-abelian\nvortices,\nHecke\nmodiﬁcations\nand\nsingular\nmonopoles,\narXiv:0907.1752.\n[6] A. Berele, A. Regev, Hook Young diagrams with applications to combinat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

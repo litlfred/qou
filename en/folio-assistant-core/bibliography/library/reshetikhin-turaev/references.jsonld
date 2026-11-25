@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/reshetikhin-turaev",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "Ribbon graphs and their invariants derived from quantum groups",
+      "dcterms:creator": [
+        "Graphs, Ribbon",
+        "Derived, Their Invariants"
+      ],
+      "dcterms:issued": "Sat Jul 02",
+      "dcterms:abstract": "The generalization of Jones polynomial of links to the case of graphs in R 3 is presented. It is constructed as the functor from the category of graphs to the category of representations of the quantum group.",
+      "dcterms:source": "library/reshetikhin-turaev/manifest.jsonld",
+      "dcterms:hasVersion": "library/reshetikhin-turaev"
+    }
+  ]
+}

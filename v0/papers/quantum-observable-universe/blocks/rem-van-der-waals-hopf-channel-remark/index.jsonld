@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-van-der-waals-hopf-channel-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:van-der-waals-hopf-channel-remark",
+  "kind": "remark",
+  "title": "The Hopf channel and the van der Waals force",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-van-der-waals-hopf-channel"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-van-der-waals-hopf-channel",
+  "tags": [
+    "definition-commentary"
+  ],
+  "text": "van-der-waals-hopf-channel-remark.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-co2-lp-dual-shadow-prices",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:co2-lp-dual-shadow-prices",
+  "kind": "remark",
+  "title": "Shadow prices and why the symmetric $(2,2)$ configuration wins",
+  "interprets": "papers/quantum-observable-universe/blocks/prop-co2-lp-dual-binding",
+  "tags": [
+    "CO2",
+    "LP-dual",
+    "shadow-price",
+    "symmetric"
+  ],
+  "text": "co2-lp-dual-shadow-prices.md",
+  "provenance": "authored"
+}

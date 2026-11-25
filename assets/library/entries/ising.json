@@ -1,0 +1,458 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "ising",
+  "blocks": [
+    {
+      "id": "library/ising/blocks/prop-sec-front-matter-08",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 8,
+      "target": "prop-sec-front-matter-08.md",
+      "narrative": null,
+      "content": "This was observed in the case of Markov chains, which are one-dimensional Markov random ﬁelds, in [10, Section 10].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ising/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 8,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL\nJEHANNE DOUSSE AND VALENTIN F´ERAY\nAbstract. Weighted dependency graphs have been recently introduced by the second author, as a\ntoolbox to prove central limit theorems. In this paper, we prove that spins in the d-dimensional Ising\nmodel display such a weighted dependency structure. We use this to obtain various central limit\ntheorems for the number of occurrences of local and global patterns in a growing box.\n1. Introduction and statement of results\n1.1. Cumulants in the Ising model. The Ising model is a mathematical model of ferro-magnetism\nin s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ising/blocks/rem-sec-front-matter-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 8,
+      "target": "rem-sec-front-matter-01.md",
+      "narrative": null,
+      "content": "In the very high temperature and strong magnetic ﬁeld regimes, one can chose ε(d) independent of the dimension and Dr = 1 for all r ≥1 (see the end of Section 3.1). This choice of Dr is important to study the speed of convergence in the central limit theorem for the magnetization (see [11, Section 5.3]), but is irrelevant for the purpose of the present article. WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL 1.2. Weighted dependency graphs. The theory of weighted dependency graphs, recently intro- duced by the second author in [10], is a toolbox to prove central limit theorems. It extends the w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ising/blocks/rem-sec-front-matter-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 8,
+      "target": "rem-sec-front-matter-02.md",
+      "narrative": null,
+      "content": "This is actually a simpliﬁed deﬁnition, suﬃcient for the purpose of this paper. It corre- sponds to the case Ψ ≡1 of the general deﬁnition given in [10]. Informally, that a family of random variables {Ya, a ∈A} admits a weighted graph G as weighted dependency graph means the following: • G has vertex-set A, i.e. we have one vertex in G per variable in {Ya, a ∈A}. • The smaller the weight of an edge {a, b} is, the closer to independent Ya and Yb should be. In particular, an edge of weight 0 – or equivalently no edge – between a and b means that Ya and Yb are independent. This closeness to indep",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ising/blocks/rem-sec-front-matter-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 8,
+      "target": "rem-sec-front-matter-05.md",
+      "narrative": null,
+      "content": "The proof of Theorem 1.6 is almost identical to the proof of the normality criterion in [10, Section 4.3] replacing σn by an. Indeed, as noticed in [10, Section 4.3], in the special case Ψ ≡1 to which we restrict ourselves in this article, the quantities Rn and Qn deﬁned there can be replaced respectively by Nn (the number of vertices) and ∆n (the maximal weighted degree plus one). Recall from the previous section that spins, and therefore products of spins, admit a weighted dependency graph. The normality criterion above can thus be used to ﬁnd CLTs for polynomials of spins in a growing box Λ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ising/blocks/thm-sec-front-matter-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 8,
+      "target": "thm-sec-front-matter-03.md",
+      "narrative": null,
+      "content": "Let ω = (σi(ω))i∈Zd be a spin conﬁguration distributed according to µβ,h, where (β, h) ∈ R(β1, β2, h1). Let G be the complete weighted graph with vertex set Zd, such that every edge e = {i, j} has weight we = ε(d) ∥i−j∥1 , where ε(d) comes from Theorem 1.1. Then G is a C-weighted dependency graph for the family {σi : i ∈Zd}, for some sequence C = (Cr)r≥1, depending only on d.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ising/blocks/thm-sec-front-matter-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 8,
+      "target": "thm-sec-front-matter-04.md",
+      "narrative": null,
+      "content": "Suppose that, for each n, {Yn,i, 1 ≤i ≤Nn} is a family of random variables with ﬁnite moments deﬁned on the same probability space. Let C = (Cr)r≥1 be a ﬁxed sequence that does not depend on n. Assume that, for each n, one has a C-weighted dependency graph Gn for {Yn,i, 1 ≤j ≤Nn} and denote ∆n −1 its maximal weighted degree. Let Xn = PNn i=1 Yn,i and v2 n = V ar(Xn). Assume that there exists a sequence (an), an integer s ≥3 and a real number v such that (1) v2 n a2n −−−−→ n→∞v2, (2) for all n, a2 n ≤C2Nn∆n, (3) \u0012Nn ∆n \u0013 1 s ∆n an −−−−→ n→∞0. Then in distribution, Xn −E(Xn) an d −−−−→ n→∞N(0, v",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ising/blocks/thm-sec-front-matter-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 8,
+      "target": "thm-sec-front-matter-06.md",
+      "narrative": null,
+      "content": "Consider the Ising model on Zd, with inverse temperature β and magnetic ﬁeld h, such that (β, h) ∈R(β1, β2, h1). Let P be a local pattern. Then Sn,P −E(Sn,P) p |Λn| d −−−−→ n→∞N(0, v2 P), where v2 P = lim n→∞ Var(Sn,P) |Λn| . Similarly, if Sn, ˜ P denotes the number of occurrences of a global pattern ˜P in Λn, we have the following result.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ising/blocks/thm-sec-front-matter-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 8,
+      "target": "thm-sec-front-matter-07.md",
+      "narrative": null,
+      "content": "Consider the Ising model on Zd, with inverse temperature β and magnetic ﬁeld h, such that (β, h) ∈R(β1, β2, h1). Let ˜P be a global pattern of size m. We assume that, for some positive constants A and η (1.2) Var(Sn, ˜ P) ≥A|Λn|2m−2+η. Then Sn, ˜ P −E(Sn, ˜ P) q Var(Sn, ˜ P) d −−−−→ n→∞N(0, 1). We do not have in general an estimate for the variance Var(Sn, ˜ P). However, when the pattern consists of positive spins only, we can prove that (1.2) is satisﬁed (with η = 1) — see Proposition 4.10 below. The reverse inequality Var(Sn, ˜ P) ≤B|Λn|2m−1 is always fulﬁlled (see the proof of Theorem 1.9).",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ising/blocks/lem-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "high temperature representation",
+      "pageStart": 8,
+      "pageEnd": 12,
+      "target": "lem-sec-000-01.md",
+      "narrative": null,
+      "content": "We have (3.1) ZA Λ;β,h = (cosh β)|EΛ|(2 cosh βh)|Λ|   r Y j=1 cosh(tj)  ΞA Λ;β,h, where ΞA Λ;β,h = X E⊆EΛ,B⊆Λ: B∆Vo(E)⊆A W(E, B).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ising/blocks/lem-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 12,
+      "target": "lem-sec-000-02.md",
+      "narrative": null,
+      "content": "There exists a constant βht ce(d, h1) such that the following holds for |h| ≤h1 and β < βht ce(d, h1). For each ﬁxed pair (E⋆, B⋆) where E⋆and B⋆are ﬁnite subsets of EZd and Zd respectively, one has S(E⋆,B⋆) := X E⊆EZd ,B⊆Zd: (E,B) connected W(E, B) e|V (E,B)|",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ising/blocks/lem-sec-000-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 12,
+      "target": "lem-sec-000-04.md",
+      "narrative": null,
+      "content": "Fix h1 > 0. Then there exist constants βht jc (d, h1) > 0 and ε > 0 such that, for (β, h) with β ≤βht jc (d) and |h| ≤h1, we have the following inequality: X X: x1∈Xand e(X)≥R |ϕ(X)| (tanh β)e(X)| tanh βh|b(X) ≤εR.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ising/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "At very high temperature, with a weak magnetic ﬁeld.",
+      "pageStart": 8,
+      "pageEnd": 12,
+      "target": "../sections/sec-000-31-at-very-high-temperature-with-a-weak-magnetic.md",
+      "narrative": null,
+      "content": "3.1.1. The cluster expansion of the (multivariate) moment generating function. Fix h1 > 0. For The-\norem 1.1, we will specialize h1 to the threshold value of the strong magnetic ﬁeld regime, but, in this\nsection, we work with an arbitrary value of h1. We consider the regime where |h| ≤h1 and β is\nsuﬃciently small (very high temperature and weak magnetic ﬁeld).\nWe ﬁx a ﬁnite domain Λ ⊂Zd and let A = {x1, . . . , xr} be a set of points in Λ. We consider the\n(multivariate) moment generating function\n*\nexp\n\n\nr\nX\nj=1\ntjσxj\n\n\n+\nΛ;β,h\n=\nP\nω∈ΩΛ exp\n\u0010Pr\nj=1 tjσxj(ω)\n\u0011\ne−HΛ;β,h(ω)\nZΛ;β,h\n.\nTo state",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ising/blocks/rem-sec-000-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 12,
+      "target": "rem-sec-000-03.md",
+      "narrative": null,
+      "content": "To prove the convergence of cluster expansion, it is actually enough to prove a weaker version of this lemma, where E⋆and B⋆fulﬁl B⋆∆Vo(E⋆) ⊆A and where the sum only runs over pairs (E, B) with the additional conditions E ⊆EΛ, B ⊆Λ and B∆Vo(E) ⊆A. The stronger version stated here will be useful in the proof of Lemma 3.6 below.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ising/blocks/lem-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 16,
+      "target": "lem-sec-001-01.md",
+      "narrative": null,
+      "content": "Let A be a ﬁnite subset of Zd of size r. Then for β large enough, |Qβ,0 (σj; j ∈A) −1| ≤Cre−cβℓT (A), where c = c(d) and Cr are positive constants depending respectively on d and r.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ising/blocks/prop-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 16,
+      "target": "prop-sec-001-02.md",
+      "narrative": null,
+      "content": "Let A be a ﬁnite subset of Zd of size r. Then, for β large enough, |κβ,0 (σj; j ∈A) | ≤Dre −cβℓT (A) , where c = c(d) is given by Lemma 3.9 and Dr is a positive constant depending on r.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ising/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "At very low temperature, without magnetic ﬁeld.",
+      "pageStart": 12,
+      "pageEnd": 16,
+      "target": "../sections/sec-001-32-at-very-low-temperature-without-magnetic-ﬁeld.md",
+      "narrative": null,
+      "content": "3.2.1. The cluster expansion of the partition function. We now turn to the regime without magnetic\nﬁeld (h = 0) and very low temperature (β large). Intuitively, in that case, the spin conﬁgurations with\nfewer pairs of neighbours having opposite spins appear with higher probability. To emphasize the role\nof these pairs, we rewrite the Hamiltonian as follows:\nHη\nΛ;β,0(ω) = −β|Eη\nΛ| −β\nX\n{i,j}∈Eη\nΛ\n(σi(ω)σj(ω) −1).\nThe only non-zero terms in the sum are those where two neighbours i and j have opposite spins. Let\nus consider a ﬁnite subset Λ ⊂Zd with + boundary condition. A typical spin conﬁgurati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ising/blocks/cor-sec-002-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "cor-sec-002-04.md",
+      "narrative": null,
+      "content": "Suppose that (β, h) ∈R(β1, β2, h1). The limit v2 := lim n→∞ v2 n |Λn| = X i∈Zd ⟨σ0; σi⟩β,h is ﬁnite.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ising/blocks/lem-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "strong magnetic ﬁeld representation",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "lem-sec-002-01.md",
+      "narrative": null,
+      "content": "With the above notation, Z+ Λ,β,h = exp \u0000β|Eb Λ| + h|Λ| \u0001  X Λ−⊆Λ W(Λ−)  .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ising/blocks/lem-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "lem-sec-002-03.md",
+      "narrative": null,
+      "content": "[8, Lemma V.7.1] The limit v2 := lim n→∞ v2 n |Λn| exists as an extended real valued number and v2 = X i∈Zd ⟨σ0; σi⟩β,h. But by Theorem 1.1, in the regimes we consider, the cumulants (so in particular the covariance) are exponentially small, so the sum is absolutely convergent and we actually have the stronger statement:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ising/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weighted dependency graph for the σi’s and central limit theorem for the magnetization.",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "../sections/sec-002-41-weighted-dependency-graph-for-the-σis-and-cen.md",
+      "narrative": null,
+      "content": "JEHANNE DOUSSE AND VALENTIN F´ERAY\nThus |κβ,0 (σj; j ∈A) | ≤Dre\n−cdβℓT (A)\n2\n, as claimed.\n□\n3.3. With a strong magnetic ﬁeld. The last regime we consider is the Ising model with a strong\nmagnetic ﬁeld, i.e. h is bigger than some value h1 > 0 (h1 is to be determined later). The case of\nnegative h (smaller than −h1 < 0) is obviously symmetric.\nIn this regime, there is also a well-known cluster expansion for the partition function [13, Section\n5.7]. Let us present it brieﬂy.\nFix Λ ⊂Zd and consider the Ising model on Λ with + boundary conditions. We ﬁrst write its\npartition function in a suitable",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ising/blocks/thm-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "thm-sec-002-02.md",
+      "narrative": null,
+      "content": "Consider the Ising model on Zd, with inverse temperature β and magnetic ﬁeld h, such that (β, h) ∈R(β1, β2, h1). Then there exists v = v(β, h, d) such that Sn −E(Sn) p |Λn| d −−−−→ n→∞N(0, v2). Moreover v2 > 0 so the Gaussian law is non-degenerate. We start by a lemma of [8] on the asymptotics of the variance of Sn. JEHANNE DOUSSE AND VALENTIN F´ERAY",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ising/blocks/lem-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 24,
+      "target": "lem-sec-003-02.md",
+      "narrative": null,
+      "content": "As n tends to inﬁnity, the quantity v2 n,P |Λn| tends to v2 P := P k∈Zd⟨ZP 0 ; ZP k ⟩β,h < ∞.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ising/blocks/prop-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 24,
+      "target": "prop-sec-003-03.md",
+      "narrative": null,
+      "content": "Let ˜P be a global pattern of size m and assume that the function s deﬁning ˜P takes only value +1. Then there exists a constant A such that Var(Sn, ˜ P) ≥A|Λn|2m−1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ising/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Central limit theorem for occurrences of given patterns.",
+      "pageStart": 19,
+      "pageEnd": 24,
+      "target": "../sections/sec-003-42-central-limit-theorem-for-occurrences-of-give.md",
+      "narrative": null,
+      "content": "4.2.1. Power of weighted dependency graphs. A major advantage of the theory of weighted dependency\ngraphs is that this structure is stable by taking powers.\nDeﬁnition 4.4. Let G be an edge-weighted graph with vertex set A and weight function w; we also\nconsider a positive integer m. We denote by MSet≤m(A) the set of multisets of elements of A with\ncardinality at most m.\nThen the m-th power Gm of G is by deﬁnition the graph with vertex-set\nMSet≤m(A) and where the weight between I and J is given by wm(I, J) = maxi∈I,j∈J w(i, j). As\nusual, edges not in the graph should be seen as edges of weight",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ising/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 24,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "Consider the Ising model on Zd, with inverse temperature β and magnetic ﬁeld h, such that (β, h) ∈R(β1, β2, h1). Let m be a ﬁxed positive integer; for multisets I of elements of Zd × {+, −}, we deﬁne ZI := Q i∈I Xi. Then Gm s is a Dm-weighted dependency graph for the family of random variables {ZI; I ∈MSet≤m \u0000Zd × {+, −} \u0001 }, for some sequence Dm depending only on m. 4.2.2. Local patterns. In this section, we prove Theorem 1.8, that is the CLT for the number of occur- rences of a given local pattern of spins (for example, the number of isolated + spins). To ﬁnd a weighted dependency graph for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

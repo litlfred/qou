@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/agt-v7-n2-p13-s",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Quantum hyperbolic geometry",
+      "dcterms:creator": [
+        "BASEILHAC, STEPHANE"
+      ],
+      "dcterms:issued": "D:20080503",
+      "bibo:doi": "10.2140/agt.2007.7.845",
+      "dcterms:identifier": "https://doi.org/10.2140/agt.2007.7.845",
+      "dcterms:source": "library/agt-v7-n2-p13-s/manifest.jsonld",
+      "dcterms:hasVersion": "library/agt-v7-n2-p13-s"
+    }
+  ]
+}

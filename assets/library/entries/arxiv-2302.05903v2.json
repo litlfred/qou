@@ -1,0 +1,291 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2302.05903v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2302.05903v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Borel transform [@Borel] is an important tool in the study of non-perturbative phenomena. It is used to extract information from divergent series which typically arise in perturbative expansions. Non-perturbative partition functions depend on extra parameters, like the choice of integration contour, this dependence seems to disappear in perturbative expansion, but is in fact traded for divergence of the series. New parameters appear as an ambiguity in the Borel transform. All this is well seen already in the simplest example of the exponential Borel transform $$\\begin{aligned}\n\\sum_r   r!\\cdot",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.05903v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "MIPT/TH-06/22\nFIAN/TD-03/22\nITEP/TH-06/22\nIITP/TH-05/22\nOn combinatorial generalization(s) of Borel transform: Averaging\nmethod in combinatorics of symmetric polynomials\nA. Mironovb,c,d 1, A. Morozova,c,d 2\na MIPT, Dolgoprudny, 141701, Russia\nb Lebedev Physics Institute, Moscow 119991, Russia\nc Institute for Information Transmission Problems, Moscow 127994, Russia\nd NRC “Kurchatov Institute” - ITEP, Moscow 117218, Russia\nAbstract\nWe elaborate on the recent suggestion to consider averaging of Cauchy identities for the Schur functions\nover power sum variables. This procedure has apparent paralle",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.05903v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basic example of averaging method",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-basic-example-of-averaging-method.md",
+      "narrative": null,
+      "content": "Eq.([\\[gendia\\]](#gendia){reference-type=\"ref\" reference=\"gendia\"}) counts Young diagrams, or the ordered integer partitions, while ([\\[Cauchy\\]](#Cauchy){reference-type=\"ref\" reference=\"Cauchy\"}) is the Cauchy identity for the Schur functions, i.e. for the characters of linear groups $GL_N$. Technically, upon choosing $p_k=\\bar p_k=\\delta_{k,1}$ in ([\\[Cauchy\\]](#Cauchy){reference-type=\"ref\" reference=\"Cauchy\"}), the difference between the two formulas is in the power of $d_R:=S_R\\{\\delta_{k,1}\\}$: they are the sums of $d_R^0$ and $d_R^2$, accordingly. Generally, $|R|!\\cdot d_R={\\rm dim}_R$ a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.05903v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Simple generalizations",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-simple-generalizations.md",
+      "narrative": null,
+      "content": "Simple generalizations",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.05903v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Derivation of various sum formulas by the averaging method",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-derivation-of-various-sum-formulas-by-the-averag.md",
+      "narrative": null,
+      "content": "The averaging method can be easily modified to handle more examples. Say, we can ask the average $\\left<S_R\\right>=1$ only for *even* diagrams $R$, i.e. with all rows of even lengths, and vanishes otherwise. The corresponding measure is still Gaussian, $$\\begin{aligned}\n\\text{\\bf Measure B}: \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\\n\\left\\{\\begin{array}{ccc}\\left<S_R\\right>^{\\bf\\!B}=1 && {\\rm for\\ even}\\ R  \\\\\n\\left<S_R\\right>^{\\bf\\!B}=0 && {\\rm otherwise} \\end{array} \\right. :  \\ \\ \\ \\ \\ \\ \\ \\\nd\\mu^{\\bf\\!B} \\sim \\prod_{k=1}^\\infty dp_k \\exp\\left(-\\frac{p_{2k-1}^2}{2(2k-1)} - \\frac{(p_{2k}-1)^2}{4k}\\right)\n\\end{a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.05903v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Extension to skew functions",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-extension-to-skew-functions.md",
+      "narrative": null,
+      "content": "Now, one can easily obtain similar formulas for sums of the skew Schur functions $S_{R/P}$. To this end, one needs a slight generalization of the Cauchy identity ([\\[Cauchy\\]](#Cauchy){reference-type=\"ref\" reference=\"Cauchy\"}): $$\\begin{aligned}\n\\label{C2}\n\\sum_R S_{R/P}\\{p\\}S_{R}\\{\\bar p\\}=\\exp\\left(\\sum_{k=1}^\\infty{p_k\\bar p_k\\over k}\\right)S_{P}\\{\\bar p\\}\n\\end{aligned}$$ Taking the average of this identity over $\\bar p_k$ with measure ([\\[Gm\\]](#Gm){reference-type=\"ref\" reference=\"Gm\"}), one obtains $$\\begin{aligned}\n\\label{av}\n\\sum_R S_{R/P}\\{p\\}\\Big<S_{R}\\{\\bar p\\}\\Big>^{\\bf\\!A}_{\\bar p}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.05903v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A collection of sum formulas",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-a-collection-of-sum-formulas.md",
+      "narrative": null,
+      "content": "To summarize, we can reproduce the whole collection of the single-Schur sums from [@Mac secs.1.5,3.4,3.5].\n\nThey are naturally divided in three blocks, and the formulas are given also in terms of symmetric variables $x_i$ such that $p_k=\\sum_ix_i^k$.\n\n**1.** The first one is already familiar $$\\begin{aligned}\n\\label{1}\n\\sum_RS_R=\\prod_i{1\\over 1-x_i}\\prod_{i<j}{1\\over 1-x_ix_j}\n= \\exp\\left\\{\\sum_{k=1}^\\infty \\left({p_k^2\\over 2k}+{p_{2k-1}\\over 2k-1}\\right)\\right\\}\\\\\n\\sum_{R\\ even}S_R=\\prod_i{1\\over 1-x_i^2}\\prod_{i<j}{1\\over 1-x_ix_j}\n=\\exp\\left\\{\\sum_{k=1}^\\infty\\left({p_k^2\\over 2k}+{p_{2k}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.05903v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Gaussian measure",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-006-the-gaussian-measure.md",
+      "narrative": null,
+      "content": "The main Gaussian measure ([\\[Gm\\]](#Gm){reference-type=\"ref\" reference=\"Gm\"}) itself enjoys a curious property: it can be expanded into a simple sum over the Schur functions containing only self-conjugated Young diagrams: $$\\begin{aligned}\n\\label{Gmex}\nd\\mu \\sim\n\\exp\\left\\{-\\sum_{k=1}^\\infty \\left( \\frac{p_{2k-1}^2-2p_{2k-1}}{2(2k-1)} + \\frac{p_{2k}^2}{4k}\\right)\\right\\}\n=\\sum_{R=R^\\vee}(-1)^{|R|(|R|+1)+h_R(h_R+1)\\over 2}S_R\n= \\nonumber\\\\\n= \\sum_{h_R=1}^\\infty \\sum_{k_1\\ge k_2 \\ge k_{h_R}\\geq 0}^\\infty  (-1)^{\\sum_{i=1}^{h_R} k_i}\\cdot\nS_{(k_1,\\ldots,k_{h_R}|k_1,\\ldots,k_{h_R})}\n\\end{aligned}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.05903v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Calculating various sums",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-007-calculating-various-sums.md",
+      "narrative": null,
+      "content": "Note that the averaging procedure allows one to evaluate various sums of combinatorics quantities by evaluating the Gaussian moment. For instance (using the Fröbenius formula [@Fulton]), $$\\begin{aligned}\n\\left<p_\\Delta\\right>^{\\bf A}=\\sum_R\\psi_R(\\Delta)\\left<S_R\\right>^{\\bf A}=\\sum_R\\psi_R(\\Delta)\n\\end{aligned}$$ i.e. (see also [@Mac Example 11, sec.I.7]) $$\\begin{aligned}\n\\sum_R\\psi_R(\\Delta)=\\prod_{i=1}^\\infty\\left<p_i^{m_i}\\right>^{\\bf A}\n\\end{aligned}$$ are products of the Gaussian moments. Here $\\Delta$ is a partition with parts $\\delta_i$, $p_\\Delta:=\\prod_{i=1}^{l_\\Delta}p_{\\delta_i}$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.05903v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Strong superintegrability and W-operators",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-008-strong-superintegrability-and-w-operators.md",
+      "narrative": null,
+      "content": "As we saw in the previous sections, the Schur functions form a full set of polynomials that have simple averages, this phenomenon is called superintegrability [@MMsi]. Similarly, one can construct a full set of *bilinear* combinations with simple averages too. This phenomenon is called strong superintegrability, and first we remind how this phenomenon looks like in the case of the Gaussian Hermitian matrix model.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.05903v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Strong integrability in Gaussian Hermitian matrix model",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-009-strong-integrability-in-gaussian-hermitian-matri.md",
+      "narrative": null,
+      "content": "The bilinear correlators in the Gaussian Hermitian matrix model are generated by the action of the $W$-operators $\\hat W^{(-)}$ on the Schur function $S_R$ as functions of $P_k:={\\rm Tr}\\,H^k$ [@MMNek], $$\\begin{aligned}\n\\label{da}\n\\Big<S_Q\\{\\hat W^{(-)}_k\\}\\cdot S_R\\{P_k\\}\\Big>=\n{\\displaystyle{S_{R/Q}\\{\\delta_{k,2}\\}S_R\\{N\\}}\\over \\displaystyle{S_R\\{\\delta_{k,1}\\}}}\\nonumber\\\\\n\\hat W^{(-)}_k:={\\rm Tr}\\,\\left({\\partial\\over\\partial H}\\right)^k\n\\end{aligned}$$ where $H$ is the matrix that is integrated over in the matrix model, and, by the matrix derivative, we imply the derivative w.r.t. matri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.05903v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Strong superintegrability in the p-Gaussian model",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-010-strong-superintegrability-in-the-p-gaussian-mode.md",
+      "narrative": null,
+      "content": "In the $p$-Gaussian model with the measure ([\\[Gm\\]](#Gm){reference-type=\"ref\" reference=\"Gm\"}), which is under our consideration in this paper, there is a formula for the bilinear correlator similar to ([\\[da\\]](#da){reference-type=\"ref\" reference=\"da\"}), however, in this case, one has to deal with the operators[^1] $\\hat W_\\Delta^{(0)}$. They are defined as $$\\begin{aligned}\n\\hat W_\\Delta^{(0)}={1\\over z_\\Delta}\\ :\\ \\prod_{i=1}^{l_\\Delta}{\\rm Tr}\\,\\left(\\Lambda{\\partial\\over\\partial\\Lambda}\\right)^{\\delta_i}\\ :\n\\end{aligned}$$ where $\\Lambda$ is a matrix such that the $p_k$-variables are par",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.05903v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relation of sum formulas to Ramanujan sums",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-011-relation-of-sum-formulas-to-ramanujan-sums.md",
+      "narrative": null,
+      "content": "Another amusing fact about the two nice cases ([\\[0powerdR\\]](#0powerdR){reference-type=\"ref\" reference=\"0powerdR\"}) and ([\\[1powerdR\\]](#1powerdR){reference-type=\"ref\" reference=\"1powerdR\"}) is their possible relation to the celebrated Ramanujan sums [@Ram] $$\\begin{aligned}\nc_{m,k}:= \\sum_{(a,m)=1}^k e^{\\frac{2\\pi i ak}{m}}\n\\end{aligned}$$ where the sum goes over $a$, which are coprime with $m$, and it is always a positive integer. Counterparts of ([\\[0powerdR\\]](#0powerdR){reference-type=\"ref\" reference=\"0powerdR\"}) and ([\\[1powerdR\\]](#1powerdR){reference-type=\"ref\" reference=\"1powerdR\"}),",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.05903v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hurwitz tau-functions",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-012-hurwitz-tau-functions.md",
+      "narrative": null,
+      "content": "The combinatorial Borel transform allows one to enrich the set of the Hurwitz $\\tau$-functions [@MMN; @AMMN] $$\\begin{aligned}\n\\tau^{(n)}\\{p^{(1)},\\ldots,p^{(n)}\\}:=\\sum_R q^{|R|} d_R^{2-n} S_R\\{p^{(1)}\\}\\ldots S_R\\{p^{(n)}\\}\n\\end{aligned}$$ to make the power of $d_R$ and the number of Schur functions independent: suppose $m>n$, then $$\\begin{aligned}\n\\sum_R d_R^{2-m} S_R\\{p^{(1)}\\}\\ldots S_R\\{p^{(n)}\\}\n= \\left<\\tau^{(m)}\\{p^{(1)},\\ldots,p^{(n)},p^{(n+1)}, \\ldots, p^{(m)}\\}\\right>_{p^{(n+1)}, \\ldots , p^{(m)}}\n\\end{aligned}$$ Averaging here is performed over the $m-n$ sets of time variables. F",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.05903v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-013-conclusion.md",
+      "narrative": null,
+      "content": "In this paper we raised the trick of [@2212.04859] to the level of a *method*, applicable to a large variety of functions and providing a unified treatment of the so far sporadic set of amusing identities. We emphasize its conceptual relation to the Borel transform, which is used in physics to explain and put under control the ambiguity of divergent series. As we demonstrate, the abilities of our suggested *combinatorial Borel transform* are much wider and applications are not restricted to divergent series. There are plenty of different directions to develop these ideas, and also a number of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

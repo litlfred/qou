@@ -1,0 +1,177 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2509.20302v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2509.20302v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Observables",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-2-observables.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2509.20302v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-1-introduction.md",
+      "narrative": null,
+      "content": "Tracy--Widom distributions [@Tracy:1993xj] appear in many areas of physics and mathematics, providing surprising connections between seemingly unrelated systems. In particular, distributions related to Bessel kernels describe eigenvalues of random matrices in the Laguerre ensemble in an appropriate scaling limit [@Forrester:1993vtx]. Their generalizations have recently emerged in supersymmetric gauge theories - especially in the context of the AdS/CFT correspondence [@Aharony:1999ti] - yielding exact expressions valid at all values of the 't Hooft coupling for a variety of observables, includi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2509.20302v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Universality in the resurgence of generalized Tracy-Widom distributions\nZoltan Bajnoka, Bercel Boldisa,b, Dennis le Plata\naHUN-REN Wigner Research Centre for Physics, 1121 Budapest, Konkoly-Thege Miklós út 29-33, Hungary\nbDepartment of Theoretical Physics, Budapest University of Technology and Economics, M˝uegyetem rkp. 3., H-1111 Budapest, Hungary\nAbstract\nWe analyze determinants associated with Bessel kernels and generic symbol functions, which govern a class of ob-\nservables across all values of the ’t Hooft coupling in supersymmetric gauge theories. Previous approaches, based\non integro-di",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2509.20302v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Trans-series expansion",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-3-trans-series-expansion.md",
+      "narrative": null,
+      "content": "Based on the previous results [@Bajnok2024; @Bajnok20251], concrete examples and many consistency checks we conjecture that the strong coupling expansion (valid for $g>0$) has the trans-series structure $$\\begin{aligned}\n{\\cal D}(g)=A & e^{4\\pi g\\sum_{i}(x_{i}-y_{i})}g^{\\frac{\\beta^{2}+2\\ell\\beta}{2}}\\times\\\\\n & \\quad\\sum_{\\{\\delta_{i}=0,1\\}}e^{-8\\pi g\\sum_{i}\\delta_{i}x_{i}}S^{\\{\\delta_{i}\\}}{\\cal D}^{\\{\\delta_{i}\\}}(g)\\nonumber \n\\end{aligned}$$ where ${\\cal D}^{\\{\\delta_{i}\\}}(g)$ are asymptotic series in $g^{-1}$, $e^{-8\\pi gx_{i}}$ are non-perturbative scales and $S^{\\{\\delta_{i}\\}}$ are t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2509.20302v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Resurgence relations between ${\\cal D}^{\\{\\}}$ and ${\\cal D}^{\\{1\\}}$",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-31-resurgence-relations-between-cal-d-and-cal-d1.md",
+      "narrative": null,
+      "content": "The perturbative series ${\\cal D}^{\\{\\}}(g)$ and the non-perturbative correction ${\\cal D}^{\\{1\\}}(g)$ are related by resurgence relations, see [@Marino:2012zq; @Dorigoni:2014hea; @Aniceto:2018bis] for modern references. This correspondence originates from ambiguity cancellations and are manifested in asymptotic relations: the large order behaviour of the peturbative coefficients ${\\cal D}_{k}^{\\{\\}}$ are related to the non-perturbative correction ${\\cal D}_{k}^{\\{1\\}}$ as $${\\cal D}_{k}^{\\{\\}}=\\sum_{j=0}\\frac{S^{\\{1\\}}\\Gamma(k-j+1)}{i\\pi(8\\pi x_{1})^{k-j}}{\\cal D}_{j}^{\\{1\\}}+\\dots\\label{eq:a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2509.20302v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generic relations",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-32-generic-relations.md",
+      "narrative": null,
+      "content": "For generic $\\{x_{j}\\}$ the non-perturbative corrections of order $e^{-8\\pi gx_{j}}$ satisfy the same equations as for $x_{1}$, merely $x_{1}$ is replaced with $x_{j}$. Thus we can conclude that ${\\cal D}^{\\{j\\}}\\equiv{\\cal D}^{\\{0,\\dots,0,1,0,\\dots,\\}}$ has the same form as ${\\cal D}^{\\{\\}}$ but with $I_{n}^{\\{j\\}}=I_{n}^{\\{\\}}+\\frac{2(-1)^{n}}{(2\\pi x_{j})^{2n-1}}$. The corresponding Stokes constant is $$\\begin{aligned}\nS^{\\{j\\}} & =\\frac{e^{i\\pi\\ell_{\\beta}}}{4\\pi x_{j}}\\frac{\\Phi(2i\\pi x_{j})}{\\Phi'(-2i\\pi x_{j})}\\\\\n & =-ie^{i\\pi\\ell_{\\beta}}\\prod_{m\\neq j}\\frac{(x_{j}+x_{m})}{(x_{j}-x_{m}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2509.20302v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Example",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-005-33-example.md",
+      "narrative": null,
+      "content": "In the case of $\\{x_{1},x_{2},x_{3}\\vert y_{1},\\dots\\}$ the non-perturbative corrections can be represented by a 3 dimensional cube. The vertex $\\{\\}$ represents the perturbative part, ${\\cal D}^{\\{\\}}$, while each other vertex represents a non-perturbative correction $,{\\cal D}^{\\{1\\}},\\dots$. The oriented edges show non-trivial resurgence relations between them. The alien derivatives move in the corresponding directions and add their index to the set.\n\nIn the general case of the symbol $\\{x_{1},\\dots,x_{l}\\vert y_{1},\\dots\\}$ the non-perturbative corrections and resurgence relations can be v",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2509.20302v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-006-4-conclusions.md",
+      "narrative": null,
+      "content": "In this Letter we derived the complete trans-series for semi-infinite determinants associated with the Bessel kernel, generalizations of the Tracy--Widom distributions that appear in many contexts, including observables of ${\\cal N}=4$ super Yang--Mills theory. We found that the non-perturbative corrections exhibit a special structure: each non-perturbative scale enters only linearly, and the corrections can be labeled by a set of integers $\\{j_{k}\\}$ specifying which scales $e^{-8\\pi x_{j_{k}}g}$ are present. All perturbative series multiplying a given correction share the same universal form",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2509.20302v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-007-5-acknowledgements.md",
+      "narrative": null,
+      "content": "The research was supported by the Doctoral Excel-\nlence Fellowship Programme funded by the National\nResearch Development and Innovation Fund of the Min-\nistry of Culture and Innovation and the Budapest Uni-\nversity of Technology and Economics, under a grant\nagreement with the National Research, Development\n5\nand Innovation Office (NKFIH). DlP acknowledges\nsupport by the Alexander von Humboldt Foundation.\nReferences\n[1] C. A. Tracy, H. Widom, Level spacing distri-\nbutions and the Bessel kernel, Commun. Math.\nPhys. 161 (1994) 289–310. arXiv:hep-th/9304063,\ndoi:10.1007/BF02099779.\n[2] P. J. Forre",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

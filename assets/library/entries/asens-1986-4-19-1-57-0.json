@@ -1,0 +1,1357 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "asens-1986-4-19-1-57-0",
+  "blocks": [
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "ANNALES SCIENTIFIQUES DE L’É.N.S.\nMIHAI PIMSNER\nSORIN POPA\nEntropy and index for subfactors\nAnnales scientiﬁques de l’É.N.S. 4e série, tome 19, no 1 (1986), p. 57-106\n<http://www.numdam.org/item?id=ASENS_1986_4_19_1_57_0>\n© Gauthier-Villars (Éditions scientiﬁques et médicales Elsevier), 1986, tous droits réservés.\nL’accès aux archives de la revue « Annales scientiﬁques de l’É.N.S. » (http://www.\nelsevier.com/locate/ansens) implique l’accord avec les conditions générales d’utilisation\n(http://www.numdam.org/conditions). Toute utilisation commerciale ou impression systé-\nmatique est constitutive",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Let M be a type II i factor with normalized trace T and NcM a subf actor. In a\nrecent paper [13] V. Jones considered the coupling constant of N in his representation\non L2(M, T) as an invariant for N up to conjugations by automorphisms of M. He\ncalls this invariant the index of N in M and denotes it [M: N]. In the case M and N\nare the group algebras of some discrete groups Go<=G, [M:N] is just the index of Go in\nG. This exemple provides the motivation for the notation and for the name \"index\". It\nalso suggests that [M: N] may take only integer values. However, even in the hyperfinite\nHi factor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/lem-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "lem-sec-001-01.md",
+      "narrative": null,
+      "content": "— Operators of the form ^ ^e^b^ a^ b^eM give a dense ^-subalgebra mM,=(MU{^}r. ANNALES SCIENTIFIQUES DE L'ECOLE NORMALE SUPERIEURE M. PIMSNER AND POPA",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/lem-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "lem-sec-001-02.md",
+      "narrative": null,
+      "content": "- Suppose M^=(MU{e^}y is a ^-extension of M by N. For any xeM^ there exists a unique meM such that xe^=me^.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prop-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "prop-sec-001-03.md",
+      "narrative": null,
+      "content": "- There exists a family {m^.}^^^i of elements in M, \\vith n equal to the integer part of [M: N], satisfying the properties: (a) EN(mfmfc)=0,7^fe; (fc) EN(mfm,)=l, l^/^; (c) EN(m^+im^+i) is a projection of trace [M:N]-n. Moreover any such family satisfies: (1) mj€^ are partial isometries, l^j^n+1; n + l (2) ^ m^N^*=l; j=i n + l (3) ^m,mf=[M:N]; j=i n+l (4) Every meM has a unique decomposition m= ^ m^. with ^-eN, j'=i ^-neEN(m^im^i)N. V {^i^j^n+i is another family with the properties (a), (b\\ (c) then (^^i*^-))!, j=(^j)i^i, j^n+i is a unitary element in N^ (where a=[M:N] and N^ is the ^-amplific",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-0-preliminaries.md",
+      "narrative": null,
+      "content": "In this section we fix the notations and, for the convenience of the reader, recall some\nof Jones' terminology and results in [13], to be more frequently used in the paper.\nThroughout M will be a finite von Neumann algebra with a fixed normal faithful\ntrace T, T (!)=!. We denote by ll.xll^T^*^)^2 the Hilbert norm on M given by T\nand L2(M, r) the completion of M in the norm || l^. Thus L2(M, r) is the Hilbert\nspace of the GNS representation of M, given by T, and M acts on L2(M, r) by left\nmultiplication. This representation of M is called the standard representation. The\ncanonical conjugation o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "^(m:fmj)e^=e^m:fmje^=e^",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-mfmjeemfmjee.md",
+      "narrative": null,
+      "content": "l^/'^n, \nso \nthat\nE^(mfmj)=l and similary E^(m^+^m^+^)e^=fe^ where/eN is a projection such that\nT(^+l)=T(/^)=T(/)T(^)=T(/)[M:N]-l. Thus EN(m;!^m^)=/ and r(/)=\nT(^+i)[M:N]=[M:N]-n.\nLet {m;.}^^^+i be another family satisfying (a), (fo), (c). \nIf 1^/^n then\ne^m/j*mje^=E^(mj*mj)e^=e^ so that m^ are partial isometries and similary m^^e^\nis a partial isometry. Moreover by (a), Q^^m^m^e^e^m^m^e^ for j^k, so\nthat m^N have mutually orthogonal left supports and by (fc), (c), m^rn^.* fill up the\nidentity in Mp Applying the conditional expectation E^ of M^ on M we also get\nl=EM(Zm^N^J•*)=[M:N]-l^m;•m;•*.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prop-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "prop-sec-003-01.md",
+      "narrative": null,
+      "content": "- Let Nc=M be type II^ factors mth finite index a=[M:N]. Let McM^cM^ be the factors obtained by iterating the basic construction, i.e. M^ is the extension of M by N and M^ 15 the extension of M^ by M. // i: N -> M, j : M^ -^ M^ ^r^ ^ inclusion maps then there exist isomorphisms p : N^ -> M^, cr : M^ ^ M^ such that the diagram N, ^M, p! 1° Mi ^M^ commutes.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prop-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 15,
+      "target": "prop-sec-004-02.md",
+      "narrative": null,
+      "content": "— Let ^f(M) denote the unitary group ofM and J^(N) the normalizer o/N in M. For ue^(M) let ^(u)=ue^u*eM^. (i) The map (p induces a one to one correspondence between ^(M)/^(N) and the projections p in M^ with E^ (p) = [M: N] ~1. 1^. Moreover EN (u) = 0 iff e^ (p (u) = 0. Q.E.D. (ii) The map (p induces a one to one correspondence between ^(^/^(N) and the projections p in N' 0 M^ with E^ (p) = [M: N] ~1. 1^.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prop-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 15,
+      "target": "prop-sec-004-03.md",
+      "narrative": null,
+      "content": "- Let N c= M be II i factors with [M: N] = 'k~ 1 < oo. Suppose that Wr\\M==C.l. (1) The trace of every projection p in N' U M^ is greater than or equal to X. (2) If the trace of the projection p eN' Pi M^ equals ^, then p is central. (3) More generally ifpeWf^M^ and T(^)<(fe+l)?i then p lies in a factor-summand ofW 0 Mi of dimension at most k (as usual M^ is the extension ofM by N).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prop-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 15,
+      "target": "prop-sec-004-04.md",
+      "narrative": null,
+      "content": "— Let N c M be type II^ factors, co a free ultrafilter on N and N\" c= M\" the corresponding ultrapower factors [17]. Then [M\": N\"] = [M: N].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prop-sec-004-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 15,
+      "target": "prop-sec-004-05.md",
+      "narrative": null,
+      "content": "— Let M be a type II i factor N c: M a sub factor of finite index. (i) M is a full factor iff^ is. (ii) M is a Me Duff factor iff^ is.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prop-sec-004-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 15,
+      "target": "prop-sec-004-06.md",
+      "narrative": null,
+      "content": "— Let N c M be separable type II i factors with [M:N]<oo. If any maximal abelian subalgebra o/N is maximal abelian in M then M=N.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prop-sec-004-07",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 15,
+      "target": "prop-sec-004-07.md",
+      "narrative": null,
+      "content": "— Let M be a type II i factor and N c= M a sub factor of finite index fe=[M:N]. Then E^(x)^k~lx for all xeM+.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "By",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-by.md",
+      "narrative": null,
+      "content": "o- : N -> M, i. e. or,, : N^ -> M^ acts on the entires of the matrix.\n1.5. PROPOSITION. - Let Nc=M be type II^ factors mth finite index a=[M:N]. Let\nMcM^cM^ be the factors obtained by iterating the basic construction, i.e. M^ is the\nextension of M by N and M^ 15 the extension of M^ by M. // i: N -> M, j : M^ -^ M^\n^r^ ^ inclusion maps then there exist isomorphisms p : N^ -> M^, cr : M^ ^ M^ such that\nthe diagram\nN, ^M,\np! \n1°\nMi ^M^\ncommutes.\nProof. - Let us first show that any family {mJi^.^+icM as described in the\npreceding \nproposition \ndefines \na \n^-isomorphism \np : N^ -> M^ \nby\nP(.(yij)i^",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "^^(^^.^^(a'^m.^^^M.Ca'^^N^eM^",
+      "pageStart": 9,
+      "pageEnd": 15,
+      "target": "../sections/sec-004-ammcanem.md",
+      "narrative": null,
+      "content": "», j\ntakes values in M^ when restricted to N^. This follows from the fact that\n^M^tM:^-1^^-1^./: [13]).\nQ.E.D.\n1.6. Remark. - The isomorphism between N^ and the extension of M by N, M^, in\n4\" SERIE - TOME 19 - 1986 - N° 1\nENTROPY AND INDEX FOR SUBFACTORS \n65\nthe preceding proposition is just the fact that N and M^ are Morita equivalent via\nM. The second statement may be viewed as an analogue of the duality for crossed\nproducts by finite groups, and express the fact that M^ is obtained by inducing the\nmodule M.\nThe next proposition gives another type of duality results, connecting unitaries in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/rem-sec-004-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 15,
+      "target": "rem-sec-004-01.md",
+      "narrative": null,
+      "content": "- The isomorphism between N^ and the extension of M by N, M^, in 4\" SERIE - TOME 19 - 1986 - N° 1 ENTROPY AND INDEX FOR SUBFACTORS the preceding proposition is just the fact that N and M^ are Morita equivalent via M. The second statement may be viewed as an analogue of the duality for crossed products by finite groups, and express the fact that M^ is obtained by inducing the module M. The next proposition gives another type of duality results, connecting unitaries in M to projections in M^ (the extension of M by N).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/thm-sec-004-08",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 15,
+      "target": "thm-sec-004-08.md",
+      "narrative": null,
+      "content": "— 7/N is a sub factor of the type II i factor M then [M:N] - l=max{^elR+|EN(x)^Xx,xeM+} =inf{||EN(x)||j/||x|[j xeM^x^O} =inf{||EN(x)||/||x|||xeM^x^O} =inf{ || EN(/) || |/nonzero projection in M }.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "^(E^(x)2)=^(xE^(x))^(x2\\",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-005-ex2xexx2.md",
+      "narrative": null,
+      "content": "so \nthat \n||EN(x)||j^||x||i This \nshows \nthat\n^i ^^2- \nMoreover if/eM is a projection, then\n||B^/)||j=T(E^/)2)^||E^(/)||T(E^(/))=||E^/)||T(/)=||E^(/)||[|/||i\nThus ^2 ^ ^4-\nNow if the index [M:N] is finite then by 2.1 [M::^]-1^ and by [13] there exists a\nprojection e e M such that E^ O?) = [M: N] -1. Thus ^4 ^ || E^ ((?) || = [M: N] -1.\nFor the proof of the case [M: N] = oo we need a technical result. \nIts proof is the\nsame as that of 2.4 in [20] so we give here only a sketch.\n2.3. LEMMA. - Let Mi be a type 11^ factor \\vith semifinite trace (p and McM^ a\ntype Hi subfactor. Assume that M' 0 M^ c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "||i;xy*-x||^||x||^",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-006-ixy-xx.md",
+      "narrative": null,
+      "content": "for \nall \nunitaries \nueM, \nwe \nget\n2Re(p(.x*uxi;*)^||x||2 so that 2Re(p(x*^)^||x||^ for all yeK^, which for y=yo=0\ngives 0^||x||(p, a contradiction.\nBy an approximation argument (e.g. using spectral decomposition) we may assume\nthat the unitary ueM satisfying ||MXM*-x||<p>||x||<p has finite spectrum, i.e. it is of the\nform M=^^.^. for some scalars ^-eC, |A-,|=1 and projections ^eM, ^=1. Then\nwe have",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "4||^IL2-4||Z^x.J|,2=4||S^x.,||^||E(^X,-l).,^|^^",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-007-4il2-4zxj24sxex-l.md",
+      "narrative": null,
+      "content": "i^J \ni^J\nso that\nIIS^^IL2=£ll^^l|^3/4||x||,2.\nThis proves the statement for e = ^/3/2. But for any projection e e M the algebras\nM^c(Mi)^ still satisfy that M^r^Mi^^M' 0 M^ contains no finite projections of\n(M^. Indeed because if/eM'OMi is such that (p (^/) < oo then letting w^, . . ., w^ e M\nbe partial isometrics such that ^w^w*=l, we get ^w^/w*=^w^w*/=/and thus\n(p (/) ^ mq> (6?/) < oo, which is a contradiction unless f= 0. This shows that we can apply\nrecursively 5 times the inequality for £=/3/2 to get it for s=( /3/2)5.\nQ.E.D.\nEnd of the proof of theorem 2.2. - If [M:N]=oo then obviously [",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/lem-sec-010-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 22,
+      "target": "lem-sec-010-03.md",
+      "narrative": null,
+      "content": "— J/B^cBi are von Neumann subalgebras in M and S'cS is the set of all finite families (xo, x\\, x^..., x^) in S mth each x^ f^ 1, a scalar multiple of a projection and x^eB^, then H(BjB^)= sup S(TTiEB,(xO-TTiE^)). (^)eS' i",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/lem-sec-010-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 22,
+      "target": "lem-sec-010-04.md",
+      "narrative": null,
+      "content": "— Let BcM ^ a uon Neumann subalgebra and {fn}n>i a sequence of projections in M with || /„— 1 \\\\^ -> 0. (i) J/^eB, n^l, then H(M|B)=lim H(M^ B^). n (ii) Iff^ e W H M and B 15 a factor then again H (M | B) = lim H (M^ | B^). n [In both (i), (ii) the entropy H(M^ B^) is considered with respect to the induced trace T^ (/.x/,) = T (/,) -1 T (/^).]",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prop-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 22,
+      "target": "prop-sec-010-02.md",
+      "narrative": null,
+      "content": "— (i) // {B^}, {A^} are increasing sequences of von Neumann subalgebras in the finite von Neumann algebra M, such that A^ c B^, n^l, and if B=UB^, A=UA^, r^n X(B,A)^limsup?i(B^A^). (ii) If in addition E^^E^=E^ n ^ 1, ^n ^ (B, A) = lim ^ (B^, AJ, decreasingly.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "II^^IL",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-008-iiil.md",
+      "narrative": null,
+      "content": "2=II^^IL\n2=l|EN(/^IL\n2==||EN(y;.)||j.\nThus||EN(y,)||2<£|y;||2.\nLet now p be the spectral projection of E^^.) corresponding to the interval\n[0, e^2]. Then we have\n^(^",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "=£||y;•|j>^EN(y;•)",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-009-yjeny.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "^T((l-^)EN(y;.)",
+      "pageStart": 17,
+      "pageEnd": 22,
+      "target": "../sections/sec-010-2-tl-eny.md",
+      "narrative": null,
+      "content": "2)^£T(l-^)\nso that T (/?) + T (^) > 1. \nIf we denote q =p A y;. e M then\nT^)=T(^)+T(y;)-T(^vy;)^T(^)+T(y;.)-i>o.\nMoreover ^ satisfies\n^(q)=^(pAf,)^(pf,p)=pE^(f,)p^2p^2.\nThus given arbitrary e>0 we can find a nonzero projection qeM such that\nEN (<?) ^ s^2- This shows that ^4 = 0.\nQ.E.D.\n2.4. Remark. — One can use the preceding theorem and a maximality argument to\nshow that if [M:N]=oo then for any e>0 there exists a nonzero projection eeM such\nthat: (i). EN«)^£. IN; (ii) the spectral projection of E^(e) corresponding to the set{e}\nhas trace ^1—e. It would be interesting to decide whether one ca",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/rem-sec-010-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 22,
+      "target": "rem-sec-010-01.md",
+      "narrative": null,
+      "content": "— One can use the preceding theorem and a maximality argument to show that if [M:N]=oo then for any e>0 there exists a nonzero projection eeM such that: (i). EN«)^£. IN; (ii) the spectral projection of E^(e) corresponding to the set{e} has trace ^1—e. It would be interesting to decide whether one can find the projection e such that Ey(e)=s 1^. Each of the four constants involved in the formulas of Theorem 2.2 make sense for any pair of finite von Neumann algebras (and even for arbitrary von Neumann algebras in case there is a normal conditional expectation of M onto N). Therefore we can chose",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/lem-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "lem-sec-013-01.md",
+      "narrative": null,
+      "content": "— The maximum of the expression -Z^(E^,lnWfc,) i k on the set ^w^=l, ^viwki=^k' ^i^? v^Q for every ie! and feeK, is -ZP.ln(MZP,)-1) k I and is attained only when ^ki= Pfc (S Pf) ~1 f01^ ^^V ^ vi being arbitrary. i 4. Computation of H (MIN) for type II i factors In this section we shall obtain a formula for the relative entropy H(M|N) in the case M and N are factors. It will depend on both the relative commutant and the index of N in M. First of all we note a straightforward consequence of 2.2 and 3.4; it will provide an estimate of H(M |N) from above.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "If",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-011-if.md",
+      "narrative": null,
+      "content": "Now if B is a factor then EB(^)=T(/^). Ig and by the above inequalities we get\nH (M | B) ^ T (/,)2 ^ (^ T| EB^ (x,) - ^ r| x,) so that\nH (M | B) ^ lim sup H (M^ | B^).\nQ.E.D.\n3.3. Remark. — In (ii) of the preceding lemma the condition that B is a factor is in\nfact superfluous. However the proof of the general case requires a much more careful\nanalysis.\nLike the constant ^ considered in Section 2, the relative entropy H behaves well with\nrespect to inductive limits:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "PROPOSITION.",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-012-35-proposition.md",
+      "narrative": null,
+      "content": "bras in M, such that A^ c= B^, n ^ 1, and if B = UB^, A = UA^, \nthen H (B | A) ^ lim inf\nH (B^ |AJ. // m addition E^, Eg^ = E^, n ^ 1, r^n H (B | A) = lim H (B^ | A^), increasin-\nn\ngly'\nProof. — Let x^,..., x^ be a partition of the unity in M. As E^(Xi)=limE^ (x,),\nn\n^(^I^I^KB^^I-) m Ae strong operator topology, it follows that\nn\n^ (Til EA (x;) - TT| En (x,)) = lim ^ (TTI E^ (x,) - TTI Eg,, (x,)) ^ lim inf H (B, | A,).\ni\" \nn \ni \nn\nIf E^, Eg, = EA, then by induction E^, Eg^ = E^ so that E^ EB, = E^ and if Xi,..., x,\nis a partition of the unity in B,, then\nS (^n EA, (x,) - rr| x,-) = ^ (Tr| EA (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "NcM",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-013-ncm.md",
+      "narrative": null,
+      "content": "is \na \nvon \nNeumann \nsubalgebra \nthen\nH(M|N)^-ln?i(M,N).\nProof. - If ^=^(M, N) then E^(x)^'kx, xeM+. Since In is operator increasing we\nget\nxl/2(lnEN(x))xl/2^xl/2(ln?lx)xl/2=xlnX+xlnx\nANNALES SCIENTIFIQUES DE L'ECOLE NORMALE SUPERIEURE\n78 \nM. PIMSNER AND POPA\nand thus TriENW—Trix^T^ln^\" 1. Summing up over a partition of the unity (x^)\nin M and taking the supremum we get H(M|N)^ln^~ 1.\nQ.E.D.\nWe end this section with a useful technical lemma. Its proof is standard calculus and\nwill be omitted.\n3.6. LEMMA. — The maximum of the expression\n-Z^(E^,lnWfc,)\ni \nk\non the set ^w^=l, ^viwki=^k' ^i^? v^Q",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/rem-sec-011-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "rem-sec-011-01.md",
+      "narrative": null,
+      "content": "— In (ii) of the preceding lemma the condition that B is a factor is in fact superfluous. However the proof of the general case requires a much more careful analysis. Like the constant ^ considered in Section 2, the relative entropy H behaves well with respect to inductive limits:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/lem-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "lem-sec-014-01.md",
+      "narrative": null,
+      "content": "— Let NcM be arbitrary finite von Neumann algebras and qeM. a projection such that E^ ^ M (q) = cffor some scalar c and some projection fe W C} M. Then ^MiN^c-^riE^).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "COROLLARY.",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-014-41-corollary.md",
+      "narrative": null,
+      "content": "— If M \nLS a type II i factor and NcM a sub factor then\nH(M N)^ln[M:N].\nThe next lemma is the key result in proving the estimate of H(M | N) from below.\n4.2. LEMMA. — Let NcM be arbitrary finite von Neumann algebras and qeM. a\nprojection such that E^ ^ M (q) = cffor some scalar c and some projection fe W C} M. \nThen\n^MiN^c-^riE^).\nProof. ^ Since T((?)=T(EN^M(<?))=^(/) we have c=T(^)T(/)-1. Let x=q-cf\nand ^=00^ {vxv*\\v unitary element in N}. As in the proof of 2.3 it follows that\nthere exists y^ e K^ U N'. But E^ ^ M (vxv*) = v E^ M (x)y* =£N'01^ (x) = 0 (by the uni-\nqueness of the conditional",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "-^W+^cnr^.qv^-^^E^-^y,)",
+      "pageStart": 24,
+      "pageEnd": 29,
+      "target": "../sections/sec-015--wcnrqv-e-y.md",
+      "narrative": null,
+      "content": "i\n^nT^((l+5)cn)-lT(^)+n((l+5)cn)-lT1^EN(g)\n-nr|(((l+8)cn)-l)T(^)-^(r|T^;-T•^.^',)\nI\n=((l+5)c)-lT1^EN(g)-^((l+8)cn)-lr^T(u,^*-^ A v,qv*).\ni\nSince y^. qvf, p ^f we have\nX(? A F,^*)^T^)+T(^)-T(/)^T(^-(88-1)2T(/)\nso that T^qvf-p A ^.^^^(eS-^T^). But for s small enough, (£5-1)2T(/)^^-1\nand \nbecause T| \nis \nincreasing \non \n[0, e ~1] \nwe \nobtain \nT|T (v^ qvf -p A v, qv*) ^\nr|((e8~l)2T(/)), so that by the preceding inequalities:\nH(M|N)^(l4-8)-lc-lTr|EN(^)-n(l+8)-ln-lc-lr|((£5-l)2T(/))\n=(l+8)-lc-lTr|EN(^)-(l+5)-lc-lr|((£8-l)2T(/)).\nANNALES SCIENTIFIQUES DE L'ECOLE NORMALE SUPERIEURE\n80 \nM. PIMSNER AND",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/thm-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 29,
+      "target": "thm-sec-015-01.md",
+      "narrative": null,
+      "content": "- Let M be a type II i /actor and N a sub factor of M. //N'Fl M ftas a completely nonatomic part then H (M | N) = oo. J/ N' P| M fs atomic and { f^ }k are atoms in N' P| M such that ^ f^ = 1 then H(M|N)=2^TiT(/,)+^T(/,)ln[M^:NJ=^T(/,)ln([M^:N^]/Ta)2)). fc fc fc Proo/ — If N' Pi M has a completely nonatomic part with support /^O then for each n^l there exist f\\, f^..., /,eN' n M such that T^)^-1^/), ^/;=/ Since N is a factor EN (fi) is a scalar, so that EN (/3 = n~ 1 T (/). IN. Thus H(M|N)^^(Tr|EN(/D-^/D=nr|(n-lT(/))=T(/)ln(T(/)-ln)-^oo. Assume now that N' n M is atomic and denote B={f^nM. By 3",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(a)fn=f,^=j%",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-016-afnfj.md",
+      "narrative": null,
+      "content": "W yij^O if and only if the isomorphism 8;^~1 : N, ->^j is implemented by^.:\na,^-1^)^-^ \n^^N,;\n(c) if ^ ^ 0, /,, ^ 0 then y;, /,, =f^\n(d) N /nM=span{^.}^,.\nBy (2) and (3) we have^^^g, and fj qf, = q^ qq, so that if/^O then\n^ (fij q) = ^ (/„ (/, ^)) = T (/„ q, qq,) = T (y;,^. qp,)\n= T (8,871 (p,)^ qp,) = T a, ^, 9,871 ^)) = 0,\nwhere the last equality follows by (4). As\n^fuq)=^fiq)=^fiqfi)=^fi)^(qi)=^fu)^q)\nit follows by (d) that T (gx) = T (q) T (x), for x e N' U M, i. e. E^ M (2) = T (^). 1 M.\nWe compute \nnow \nEN^) and TriE^). \nSince Nc©N^c@M^. we \nhave\nj \nj\nEN=EN^E^N,°EeM, so that by (1)-(4),",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/cor-sec-018-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "cor-sec-018-01.md",
+      "narrative": null,
+      "content": "- If WC^M=C then H(M|N)=ln [M:N]. Conversely if H(M N)=ln[M:N]an^4<[M:N]<8, [M:N]^(l+2cos7c/n)2, n^3, thenW HM=C. ANNALES SCIENTIFIQUES DE L'ECOLE NORMALE SUPERIEURE M. PIMSNER AND POPA",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/cor-sec-018-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "cor-sec-018-03.md",
+      "narrative": null,
+      "content": "— Let M be a typell^ factor NcM a subfactor of finite index [M:^]='k~1^4andt>0 with t(l -0==[M:N]-1. (i) H(M|N)^2r|r+2r|(l-0; (ii) // [M: N] > 4 then H (M N) = 2 T| t + 2 T| (1 -1) if and only if there exist a projection f e N' C\\ M with T (/) = t and an isomorphism 8 : M^. -> M^ _^ such that N={x©8(x)|xeM^.}; (iii) If [M: N] = 4 r^n H (M | N) = In 4 anrf ^r/u?r N' 0 M = C or there exist a projection f e N' n M wft/i T (/) = 1/2 anri an isomorphism 8 : M^. -> M^ _^. 5Mch r^ N={x@8(x)|xeM^}. 4e SERIE - TOME 19 - 1986 - N 1 ENTROPY AND INDEX FOR SUBFACTORS",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/lem-sec-018-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "lem-sec-018-02.md",
+      "narrative": null,
+      "content": "- (a) J / 0 < f < l then 2r| r+2r|(l -t)^ -lnr(l-0 mth equality iff r=l/2. (b) If ^,...,r,e^, n^2, ^t,=l, 0<r<l and ^1 ^rl +(1-0~1 then ^r|r^r|r+r|(l-0 and the equality holds iffn=2 and [t^ t^}={t, \\-t}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/lem-sec-018-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "lem-sec-018-05.md",
+      "narrative": null,
+      "content": "— ^Vf^ the preceding notations we have",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "COROLLARY.",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "../sections/sec-017-45-corollary.md",
+      "narrative": null,
+      "content": "4.5. COROLLARY. \n— Let Nc=M be typell^ factors with [M:N]<oo. \nDenote by\n/i, ...,/„ a set of minimal projections in N' 0 M mth ^ /i= 1 and by e a projection in M\nmth EN (e) = [M: N] ~1. 1^ (cf. [13]). \nTTi^n r^ following conditions are equivalent:\n(i) H(M|N)=ln[M:N];\n(ii) [M^. : N^.]/T (/,)2 = [M: N] /or a« i = 1, . . ., n;\n(iii) E^MOO^MiN]-1.!^\n(iv) (/Y is r^ normalized trace on W then T | N' C} M =T' | N' 0 M;\n(v) if \nMi \nis ^ \nextension \nof \nM \nby \nN \n^h^n t^ \nantiisomorphism\nW C}M3x\\—> JxJ e M' n Mi LS ?rac^ preserving.\n«\nProo/. — (i)o(ii). \nBy the preceding theorem,\nH(M|N)=^T(y,)ln([M^. :",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "14^[M^.:N^/TO,)=[M:N].",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "../sections/sec-018-0-14mntomn.md",
+      "narrative": null,
+      "content": "(iii) =>(i) If E^^M^)^^^\"1- ^M ^en taking q=e in Lemma 4.2 it follows that\nH(M|N)^ln [M:N], so that by 4.1, H(M N)=ln[M:N].\n(ii) => \n(iii). The projection \nq constructed \nin \nthe proof \nof \n4.4 satisfies\nE^M^-tM:^-1. IM and E^)^^)2/^ '' N^.)])5, for some mutually ortho-\ngonal projections s, e N, ^ s^. = 1. Thus if (ii) holds then E^ (q) = [M: N] ~ 1. 1^. \nBy 1. 8,\ne \nand \n^ \nare \nconjugated \nby \na \nunitary \nelement \nMEN, \ne=uqu*. Thus\nE^M^B^M^^-tM:^-1.^.\n(ii) <=> (iv) is an imediate consequence of the formula 0.13 for the index.\n(iv) o (v) is trivial.\nQ.E.D.\n4.6. COROLLARY. - If WC^M=C then H(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/rem-sec-018-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "rem-sec-018-04.md",
+      "narrative": null,
+      "content": "— 1° Note that the preceding corollary doesn't solve the problem of classifying the conjugacy classes of subfactors NcM of the form {x©8(x)|xeM^}, & an isomorphism from My onto Mi_y. In fact if N, N()C:M are given as above by 8, QQ : My -> Mi_y then N, No are conjugated in M iff there exists an automorphism a of M such that cr(/)=/and a. 8=80 a- 2° By 4.8 it follows that if the factor M has a subf actor N of index [M: N] > 4 and entropy 2r|r+2r|(l—?) then the fundamental group of M is nontrivial.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/cor-sec-019-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 34,
+      "target": "cor-sec-019-01.md",
+      "narrative": null,
+      "content": "- J/N c M ^s finite index [M, N] = 'k~ \\ then H (M | N) ^ H (R | R^).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "^AO^KA^ ^1",
+      "pageStart": 33,
+      "pageEnd": 34,
+      "target": "../sections/sec-019-aoka-1.md",
+      "narrative": null,
+      "content": "^^ \nENER=E^.\nProo/. - From the axioms (a\\ {b\\ (c) it is easily seen that E^ ^o)=^-. As it is\nproved in [13], any element xeAo^ is a linear combination of worcfs in e^ e^ . . ., ^\nwith 6?o appearing at most once, so x=^+^^.^o^- with a, ^., fc^Ai^. \nSince A^^cN\nwe get EN(x)=a+^a,EN(^o)^=a+^a,fc,eAi^. But NnAo,^Ai^ so that if\n^^i^N then T(X^)=T(EN(X^))=T(EN(X)^). This shows that if x is orthogonal to\nAI „ then EN<X) is also orthogonal to A^ ^ and since E^(x)eA^^ E^(x)==Q. Thus\nEN EAQ ^ = EA^ ^ \nLetting n ^ oo it follows EN ER = E^.\nQ.E.D.\n5.2. COROLLARY. - J/N c M ^s finite index [M, N] = 'k~ \\ t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/cor-sec-020-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 37,
+      "target": "cor-sec-020-02.md",
+      "narrative": null,
+      "content": "— Ifk<\\/4 then Q^ is the noncommutative Bernoulli shift of weights t, 1 -1, where t (1 -1) = X-. In particular H (9,,) = T| t + T| (1 -1). The computation of H(9^) for ^>1/4 is entirely different and does not involve the results obtained in the preceding sections.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/lem-sec-020-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 37,
+      "target": "lem-sec-020-01.md",
+      "narrative": null,
+      "content": "Using the notations of that lemma we have T(/^o)=T(ER(/)^o)- But ^/^^(/^^((l-O^O-O^ while if R ^ H R = = C then in particular ER(/)eR^OR is a scalar so that T(ER(/)^o)=T(/)T(^o)=^r• Since t^l—t, this is a contradiction. As factor M we can take any factor having t/\\—t in its fundamental group, for instance the hyperfinite factor. We shall now derive a useful consequence of the preceding argument and of",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prop-sec-020-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 37,
+      "target": "prop-sec-020-03.md",
+      "narrative": null,
+      "content": "- If'k=(4cos2K/n)~\\n^3, then H(9^)= -(l/2)lnX.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "^=(l-/)-9(p),sothat",
+      "pageStart": 34,
+      "pageEnd": 37,
+      "target": "../sections/sec-020-l--9psothat.md",
+      "narrative": null,
+      "content": "T(^)=I-^-^.^=?I.\nt\nConsider also a partial isometry veM such that v*v=p, vv*=q. Finally denote\nCQ = (1 — t)p + tq + (t (1 — r))^2 (v + r*). It is easy to verify that CQ is a projection and that\nE^(^o)=^. \nBy [13] there exists NiC=No=N such that M is the extension of No by N^\nand eQxeQ==E^^(x)e, xeNo (in fact N^ can be found explicitely without use\nof [13]). Thus No and CQ can be considered as a first step of the construction in\nLemma 5.1. Using the notations of that lemma we have T(/^o)=T(ER(/)^o)- \nBut\n^/^^(/^^((l-O^O-O^\nwhile \nif \nR ^ H R = = C then in particular ER(/)eR^OR \nis a scalar so t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "In",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "../sections/sec-021-in.md",
+      "narrative": null,
+      "content": "By [13] there exists no such that if n^rio then\nkn=kn+2 and ^ n + 2 = ^j n- \nsince Z ^ » ^n = 1 and H (AQ, „) = ^ r^ r|£^, it folloWS that\nJ \n.7\nH(Ao,.)=-Z^n^ln^6,^_2fc=E rJn £J•n l n 87,n-2fc-^ln^\njn J\" A\" 'w \"j, n - 2fc \nL^ j n \" j n '\nJ \n.1\nIf A; is the integral part of (n-no)/2 then e^_2fc(={e^ i, . . ., e^} so that, for some\nc>0\n-ErJn£Jnl^£J•,.-2k^^S^£,n=^\n./ \n7\nThus\n^H(AoJ ^(.^^i^^^o = _(i/2)ln^\nn \nn \nIn\nQ.E.D.\n5. 8. Remarks. — 1° We believe that for ^> 1/4 the automorphisms 9^ are not Bernoulli\nshifts and even that they normalize no nontrivial abelian *— subalgebras ofR.\n2° The computat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/thm-sec-021-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "thm-sec-021-01.md",
+      "narrative": null,
+      "content": "- (^-(M, N^'^maxQ^^Sfe/^), w^r^ ^=min{a^, n^}. I k",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "THEOREM :",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "../sections/sec-022-62-theorem.md",
+      "narrative": null,
+      "content": "H(M(N)=-^m^^ln^+^m^^lnm^+^nfc5fclnSfc-^^Sfclnnfc+^nfca^^lnc^,\nfc,f\nw^r^ c^==min [n^/a^ 1}.\nWe now discuss some equivalent forms of the formulas 6.1, 6.2 under the additional\nhypothesis a^e{0, 1} and, more generally a^ ^ n^. Then we give two simple examples\nand finally proceed with the proof of the theorems.\nFirst some notations that will be used in all the rest of the section.\nWe denote by ek and f1 the minimal central projections in N and respectively M (e^ is\nthe support of N^ in N and^ the support of Mi in M). Thus ^.f\\ feeK, ;eL, are the\nminimal central projection in N'0 M and T(^/^)=n^^^.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/lem-sec-024-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "lem-sec-024-01.md",
+      "narrative": null,
+      "content": "— Let Q be a finite von Neumann algebra, S c: Q a von Neumann subalgebra and e e Q a projection such that e S e = C e. If Eg (e) ^ 'k e for some positive scalar 'k then Eg(x) ^ 'kx for all positive elements x in the weak closed ^-algebra generated by SeS.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/lem-sec-024-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "lem-sec-024-02.md",
+      "narrative": null,
+      "content": "— t^'r/i the notations at the beginning of this section, let e^Mj^ c: M be a minimal projection and f the support of E^' ^ M (e)' Then Alg (N e N) =/ M f=f M^ /. Proo/ — As M, N are finite dimensional, Alg(N^N) is a weakly closed ^-subalgebra in M. Its support in M is the projection//= v {ueu* \\ u unitary element in N} and in 4° SERIE - TOME 19 - 1986 - N° 1 ENTROPY AND INDEX FOR SUBFACTORS fact if G is a group of unitaries in N generating N then/'== v {ueu* | ucG}. Moreover if G is finite and | G | is the cartinality of G then EN'nM(^)=T——T Z ueu* |<j| u e G so that the support of EN' ^ M (e)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/lem-sec-024-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "lem-sec-024-03.md",
+      "narrative": null,
+      "content": "— Let Q be a type Iq factor and S <= Q a type I, sub factor o/Q. IfeeQ is a minimal projection and f is the support of Eg/ ^ Q (e) then ^ smm{5,^/s} ^",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "H(M | ^^sfT^^ln-^+T^/^ln'^)",
+      "pageStart": 39,
+      "pageEnd": 39,
+      "target": "../sections/sec-023-hm-sftln-tln.md",
+      "narrative": null,
+      "content": "H(M | ^^sfT^^ln-^+T^/^ln'^)\n\\ \nT(^) \nT(^)/\nwhere the sum is taken over fe and (, for ^f1 + 0.\n6.5. Examples. — 1° Let M and N be factors of type !„, and respectively !„. Then\nthe embedding matrix A is just the number m/n, t^=t=l/m, Si=s=l/n, so that by 6.1\nand 6.2 when m/n ^ n we have fk(M,^)~i=(m|n)2, H(M | N)=ln(m/n)2 and when\nm/n > n we have ^(M,N) - l=m, H(M|N)=lnm. Note that we allways have\n[M:N]=(m/n)2.\n2° Let M be a factor of type 1^ and N= ^ N^, so that ^n^=m. If d denotes the\nf c e K\ncardinal of K then 6.3 and 6.4 give\nHM, N)=l/rf \nand",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "H(M | N)=^Ti(n,/m)",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "../sections/sec-024-hm-ntinm.md",
+      "narrative": null,
+      "content": "(see also 4.3).\nFor the proof of 6.1 we first need some technical lemmas. The key result is the\nfollowing:\n6.6. LEMMA. — Let Q be a finite von Neumann algebra, S c: Q a von Neumann subalgebra\nand e e Q a projection such that e S e = C e. If Eg (e) ^ 'k e for some positive scalar 'k then\nEg(x) ^ 'kx for all positive elements x in the weak closed ^-algebra generated by SeS.\nProof. \n— \nLet ^=(^^i^i)*((^flj^-), \na^ bjeS, so that by the hypothesis\ni \nJ\nx=^bfkijebj for some scalars X^., where ^e^ea* OjC. Since (afa^ j is a positive\n»\\ j\nmatrix over S it follows that (^-)^ is a positive matrix. Thus",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/cor-sec-026-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 43,
+      "target": "cor-sec-026-01.md",
+      "narrative": null,
+      "content": "— X(M, N)=inf {||EN(^)|| | e nonzero projection in M}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/lem-sec-026-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 43,
+      "target": "lem-sec-026-02.md",
+      "narrative": null,
+      "content": "— L^ p be a minimal projection in M such that p ^ ^ f1. Ifu^e R+ ar^ defined by pflaP=UaP then ENCP)== Z ^-^a a e Afe( Sj^ m^i ^ minimal projections in N, ^ ^ ^.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "BN^^/^-^-^EN^/')",
+      "pageStart": 41,
+      "pageEnd": 41,
+      "target": "../sections/sec-025-1-bn--en.md",
+      "narrative": null,
+      "content": ", \n—r^i \\~LK ~ j / \n,\n^fcf ^ \n^fcf ^fcf\n1 \nT(^/') \nk \n1 ^c^ \n1 ^\n-^ - ,———— —————^fc= —— ~^\nfcfc^fci ^(^) \n\\^u ^kSk \nbki Sfc\nIt follows that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "EN(^())=IA— J-^",
+      "pageStart": 41,
+      "pageEnd": 43,
+      "target": "../sections/sec-026-enia-j.md",
+      "narrative": null,
+      "content": "k \nb^i Sk\n4e SERIE - TOME 19 - 1986 - N° 1\nENTROPY AND INDEX FOR SUBFACTORS \n97\nand if we take o^ = —kl k \nthen E^ (^o) = ^ S ^fc-\n2A^ \nfc\n/c\nSince ^^ is a projection and since the support of E^o) majorizes e^ we get\nEN (^o) ^ ^ ^o ^d ^ ls tne best constant for which this inequality holds.\nQ.E.D.\nFrom Theorem 6.1 and the last part of its proof we easily get:\n6.9. COROLLARY. — X(M, N)=inf {||EN(^)|| | e nonzero projection in M}.\nProof. — The inequality ^ allways holds (see the remark at the end of Section 2). In\nthe proof of 6.1 it was shown that there exists a projection ^eM such that E^o)\nis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/lem-sec-027-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 44,
+      "target": "lem-sec-027-01.md",
+      "narrative": null,
+      "content": "—Suppose {^Jiei ^ a partition of ^f1 (^e.^yi=ekfl) each y^ being a i positive multiple of a minimal projection in M. Then ^ T (T| (EN (Yi))) - T (r| 0^)) ^ - ^ a^ ti In ^ + n^ a^ ^ In s^ + ^ a^ ^ In fc^ i ie\\ where b^=mm[a^ nj.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "It",
+      "pageStart": 43,
+      "pageEnd": 44,
+      "target": "../sections/sec-027-it.md",
+      "narrative": null,
+      "content": "It\nfollows that\nBN(^)= E ^(flaPfla)= S t^E^)= E M^^\nae\\u \naeAkI \na e Afc; \nS^\nQ.E.D.\n6.11. LEMMA. —Suppose {^Jiei ^ a partition of ^f1 (^e.^yi=ekfl) each y^ being a\ni\npositive multiple of a minimal projection in M. \nThen\n^ T (T| (EN (Yi))) - T (r| 0^)) ^ - ^ a^ ti In ^ + n^ a^ ^ In s^ + ^ a^ ^ In fc^ i\nie\\\nwhere b^=mm[a^ nj.\nProof. — Write yi=c^p^ where C(GIR+, and each 7?^ is a minimal projection smaller\nthan e^1.\nTo prove the inequality with b^i^n^ note first that for every zeN^, z ^ 0,\nT(r|(z)) ^ r|(T(z))+T(z)ln(n^s^). To see this denote by T^ the normalized trace on\nN^, that is Tfe=(l/n^Sf",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "ST(C.M,P.)=ET(^.^)=T(^)",
+      "pageStart": 44,
+      "pageEnd": 44,
+      "target": "../sections/sec-028-stcmpett.md",
+      "narrative": null,
+      "content": "i e I \ni 6 I\nso that\n(^) \nZ^^-^\nl 6 l\nMoreover the preceding lemma shows that\nEN(^)= S c^ai-1^ \nwhere T(^)=Sfc.\naeAfef \nS^\nIt follows that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "S(T(T|(E^)))-T(TI(^)))",
+      "pageStart": 44,
+      "pageEnd": 44,
+      "target": "../sections/sec-029-stte-tti.md",
+      "narrative": null,
+      "content": "l 6 l\n= E ^ f ^ f Z ^^^^)-T(TI^))\ni-el \\ \nVaeAfcf \nS^ \n//\n^Z I ^f^f^^-^)^))-ST(Tl(c,)^)\ni aeAfcA \\ \\ \nSfe/ \n// \ni\n=Z E",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "rl(^^-L)sfc-Er|(c,)^",
+      "pageStart": 44,
+      "pageEnd": 46,
+      "target": "../sections/sec-030-rl-lsfc-erc.md",
+      "narrative": null,
+      "content": "i aeAk,i \\ \n5fc/ \ni\n=E E ^a^ln^-^ ^ c,M^,^lnc,\ni a e Afe^ \ni a e Afc, |\n-S S ^^f^ln^-S S c,M^,^ln^4-S^^ln^\ni a e Afcj \ni a e Afe^ \ni\nThe inequality used above is the well known T(r|(x+jO)^T(r| (x))+T(r| (y)) (property\n(5), Section 3).\nANNALES SCIENTIFIQUES DE L'ECOLE NORMALE SUPERIEURE\n100 \nM. PIMSNER AND POPA\nProperty (^) implies that the first term equals n^a^ti In s^ and the forth term equals\n— n ^ a ^ ^ l n ^ while (^) shows that the second and last term annihilate each\nother. Finally the concavity of the logarithm, (or the technical lemma 3.6) shows that\nthe third term may be majorized by",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/lem-sec-031-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 47,
+      "target": "lem-sec-031-01.md",
+      "narrative": null,
+      "content": "- Let feeK and leL be fixed. There exist [ P a i S i e [ l , n^, a e A^ orthogonal projections in M, p^ f\\ ^p^e^1 and such that a, i ^ ^ (EN (A,,)) = t, In ^, for every i e [1, nj, a 6 A,,, ANNALES SCIENTIFIQUES DE L-ECOLE NORMALE SUPERIEURE M. PIMSNER AND POPA \\vhere fc^=min{a^, n^}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "= E ^^(EN^^^-ET^^))",
+      "pageStart": 46,
+      "pageEnd": 47,
+      "target": "../sections/sec-031-e-en-et.md",
+      "narrative": null,
+      "content": "1. I. fc \n^ J\n= E n (^ ^) ^ + E ^ ^ r, In 5AJ - ^ T (T| (x,,))\nl' f' fc \nfc. f \n^ \nI, I\n= - E ^Wf In c,i- E c^i^ In M^\ni' l' k \ni, Ik\n+ E ^ ^ ^ /5fc-^ +1; c,, ?, In c,,.\nk, I \nt^ \n^ i\nSince ^u^i=\\ the first and last term vanish.\nk\nApplying the technical lemma 3.6 to the second term, noting by (4) that\nL Cu Ukuti-u^ au t, and obviously ^ n, a,, (, = m, t,, we can majorize further by\n' \nk \n'\nY i - T n n f 1« ( nk au ^^ • -^ \n, S^b,,,\nL\\ \nL^akitiint——— I+^^ ay ((In-*-\"\n• v \nk \n\\ mltl // \nk, l \nti\n- V n a t In ^wli st fc\" ^ \nV \n1 \n/W, Si \n\\\n- L \"k^iti In I — - — l= ^ n^f in -! -t c,, .\n>;> ' \n\\ ^",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "T(T^(E^J)=f--A-ln-^^^5fc=^lnak^",
+      "pageStart": 47,
+      "pageEnd": 48,
+      "target": "../sections/sec-032-ttejf--a-ln-5fclnak.md",
+      "narrative": null,
+      "content": "\\ \n^iSf, \nakisj \nti\nIf a^^Ufc then we embedd in the same way a^ copies of matrix algebras of dimension n^\nin M^k ^ i to get the desired projections as\n1 \nnk\nPaj~ \n2-» ^ \nJ ( a + s , s)(a+s+t, s+t)?\n^s, (=1\nwith\n, \n/27cA\n?i=exp ——\n\\ ^ /\nAs in the case a^^n^ we get\n1 \n^\nEN^-)=-S -fc^S\n^5=1 •S'\n4e SERIE - TOME 19 - 1986 - N°\nENTROPY AND INDEX FOR SUBFACTORS \n1Q3\nand\n^^^(Pa,jW=t^nnksk\n^\nQ.E.D.\n6.14. LEMMA. - For each leL denote",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Q={feeK|A^0}",
+      "pageStart": 48,
+      "pageEnd": 49,
+      "target": "../sections/sec-033-qfeeka0.md",
+      "narrative": null,
+      "content": "and \nB^=A^x[l, nj.\nFor every family {p,} be U ^ of minimal projections in M, such that ^ p^e^ffor\nkecl \nbeBki\nevery keC, there exists a partition {x,}^ o/^(i.e. ^x,^; x^O) mth the properties:\n(1) ^•=c^., c,eR+ and q, a minimal projection in M^\n(2) ek x, ek = c, (n, a,, r,/m, r,) ^^ , wf^ q^ €{p,\\beB^} for each k e K, i € I.\npnw/ ~ ^^(/^ec^ n B^ a multiindex. Since ^^^^ it follows that p . p.\nkeCi \nJk \n^ \n^ J k ^ J k '\n==0 if k^k\\ k, ^eQand since the p^s are all minimal in M, we may embedd in M\n(nonunotally) a factor M, pf dimension c,, equal to the cardinality of Q, in such a way\nthat the p^s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "= Z TfriL'^^^EN^^",
+      "pageStart": 49,
+      "pageEnd": 49,
+      "target": "../sections/sec-034-z-tfrilen.md",
+      "narrative": null,
+      "content": "f, I, k \\ \\ l^ltl \n) ) \ni,l\n\\-- \n( \n( \nnfc afcf rf^c / \n\\\\\n= s ^m ^—— EN(^)\ni, i,k \\ \\ miti \n) \n)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "+ ^ T^^'^^JEN^,^",
+      "pageStart": 49,
+      "pageEnd": 49,
+      "target": "../sections/sec-035-tjen.md",
+      "narrative": null,
+      "content": "f, f , f c \\",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/asens-1986-4-19-1-57-0/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "^itl",
+      "pageStart": 49,
+      "pageEnd": 51,
+      "target": "../sections/sec-036-itl.md",
+      "narrative": null,
+      "content": ")\n4e SERIE - TOME 19 - 1986 - N 3 1\nENTROPY AND INDEX FOR SUBFACTORS \n1Q5\n=- ^ c.^^ln^^ ^ ^\"^In^\nl. J.\n fc \nm^ \n^i \ni, i,k l \nmi \nti\n+E^lnc,,=- ^ c.^^inc,\nI. ^ \ni, i, k \nmi\n, y \n^kiti, / Sfc m, b^\\\n+ Z. c^——— In \n— — — + ^ en ti In c,,.\n.^ \nm, \n\\n, t, a,J ^ \nll\nSince ^n,a^=mi the first and last term disappear and using that S^=w^, the\nsecond term becomes:\nS\ni \nsk ml\n^a^ln-^-1^,\nwhich gives the desired result since\nL^^i^^m^i \nand \nT.nkakltl=^ksk•\n'fc ^i tl = i^k\ni\nQ.E.D.\nREFERENCES\n[1] T. ANDO, Topics on Operator Inequalities (Lecture Notes, Saporo, 1978).\n[2] 0. BRATTELI, Inductive Limits of F",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

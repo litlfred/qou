@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/czechmathj-60-2010-1-4",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "Czechoslovak Mathematical Journal",
+      "dcterms:creator": [
+        "Chen, Yuqun",
+        "Chen, Yongshan",
+        "Zhong, Chanyan"
+      ],
+      "dcterms:issued": "D:20200703",
+      "dcterms:source": "library/czechmathj-60-2010-1-4/manifest.jsonld",
+      "dcterms:hasVersion": "library/czechmathj-60-2010-1-4"
+    }
+  ]
+}

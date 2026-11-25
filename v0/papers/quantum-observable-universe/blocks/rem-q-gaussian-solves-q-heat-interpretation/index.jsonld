@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-gaussian-solves-q-heat-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-gaussian-solves-q-heat-interpretation",
+  "kind": "remark",
+  "title": "Time-rescaling interpretation of the Reeb-invariant $q$-Gaussian",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-gaussian-solves-q-heat"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-q-gaussian-solves-q-heat",
+  "text": "q-gaussian-solves-q-heat-interpretation.md",
+  "provenance": "authored"
+}

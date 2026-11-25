@@ -1,0 +1,266 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1011.1343v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1011.1343v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The early days at Stony Brook",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-the-early-days-at-stony-brook.md",
+      "narrative": null,
+      "content": "I first met Gerry on the occasion of the Erice school in 1981, where he and Mannque Rho were giving quite interesting lectures on the chiral bag model and related issues. At that point, I was close to finishing my diploma thesis under the supervision of Manfred Gari at Bochum, working on two-meson exchange currents in the framework of unitary transformations. More specifically, the goal was to find out the relative contribution of the isoscalar $\\rho \\pi^2 \\gamma$ current compared to the well-established leading order isoscalar $\\rho \\pi \\gamma$ current. This calculation turned out to be - to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.1343v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1011.1343v1  [nucl-th]  5 Nov 2010\nChiral symmetry, nuclear forces and all that\nUlf-G. Meißner\nHISKP and Bethe Center for Theoretical Physics\nUniversität Bonn, D-53115 Bonn, Germany\nand\nInstitut für Kernphysik, Institute for Advanced Simulation and JCHP\nForschungszentrum Jülich, D-52425 Jülich, Germany\nDedicated to Gerry Brown on the occasion of his 85th birthday\nThese are personal recollections of how Gerry Brown’s work and thinking\ninﬂuenced the development of the chiral eﬀective Lagrangian based theory\nof nuclear forces.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.1343v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A first step: Studying pion-nucleon scattering in chiral perturbation theory",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-2-a-first-step-studying-pion-nucleon-scattering.md",
+      "narrative": null,
+      "content": "\\begin{figure}[t]\n\\begin{center}\n\\includegraphics[width=3cm,angle=270]{ci.eps}\n\\end{center}\n\\caption{\\label{fig:ci}\nThe LECs $c_i$ (circles) in pion-nucleon scattering (left), the \ntwo-nucleon (NN) interaction (center) and the three-nucleon\n(NNN) interaction (right).\n}\n\\end{figure}\nDuring my stay as a Heisenberg fellow at Bern, I was lucky to learn\nchiral perturbation theory (CHPT) from J\\\"urg Gasser and Heiri Leutwyler,\nwho had transformed Weinberg's ideas into an effective machinery to\nanalyze low-energy QCD. With V\\'eronique Bernard and Norbert Kaiser\nwe systematically analyzed electroweak",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.1343v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Flashback: The Texas revolution",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-3-flashback-the-texas-revolution.md",
+      "narrative": null,
+      "content": "Already in the early nineties a decisive step towards a systematic theory of the nuclear forces had been done. This was initiated by a series of papers by Steven Weinberg, who had already pioneered the use of effective chiral Lagrangians decades earlier under the nowadays somewhat strange-reading title \"Phenomenological Lagrangians\" [@Weinberg:1978kz]. In that marvelous paper the idea of the power counting was developed in detail and further a very illuminating application of the renormalization group to work out the so-called chiral logarithms was presented. Years later, while teaching the ef",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.1343v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The chiral theory of nuclear forces as a precision tool",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-4-the-chiral-theory-of-nuclear-forces-as-a-preci.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.1343v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The nucleon-nucleon interaction",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-41-the-nucleon-nucleon-interaction.md",
+      "narrative": null,
+      "content": "When I was still at Bonn filling in for the vacant chair of Max Huber, then rector of Bonn University, I met a few times with Karl Holinde of the IKP Jülich. Karl had become famous for his work on the Bonn potential and was hired by Josef Speth at Jülich in 1984, which gave Karl a fantastic home base to continue his work. We talked about the chiral potential of the Texas group, and he was clearly interested but also aware that the precision was not yet competitive. So we decided to work together to try to improve the Texas potential. Unfortunately, before really getting started, this collabora",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.1343v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Three-nucleon interactions",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-005-42-three-nucleon-interactions.md",
+      "narrative": null,
+      "content": "[]{#sec:three label=\"sec:three\"}\n\nOne of the biggest advantages of the chiral Lagrangian approach to the nuclear force problem - as stressed early in Weinberg's papers - is the consistent derivation of the 3- and 4-nucleon forces and also the meson-exchange currents (that is, the response to electroweak probes). It is worth mentioning that decades earlier Gerry was aware of the role of chiral symmetry in the description of three-body forces in nuclei - see his nice paper with Saul Barshay in 1972 [@Barshay:1974aj]. But let me come back to the modern approach. As already noted, the three-nucleo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.1343v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The nuclear matter problem",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-006-43-the-nuclear-matter-problem.md",
+      "narrative": null,
+      "content": "[]{#sec:nucmat label=\"sec:nucmat\"}\n\nAnother important question in nuclear physics is to understand the saturation properties of nuclear matter - an idealized infinite system of nucleons in which all Coulomb effects are switched off. From the properties of heavy nuclei using some sophisticated mass formula, one can extrapolate to nuclear matter - and determine its saturation properties. The binding energy per nucleon $E/A$ is approximately $-16\\,$ MeV at a Fermi momentum of about 1.3 fm$^{-1}$. So what does chiral EFT have to say? A first important step was taken by Norbert Kaiser, Wolfram Weis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.1343v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Back to square one - meson-exchange currents",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-007-44-back-to-square-one---meson-exchange-currents.md",
+      "narrative": null,
+      "content": "<figure id=\"fig:MEX\">\n<div class=\"center\">\n<embed src=\"Fig4.eps\" style=\"width:13cm\" />\n</div>\n<figcaption><span id=\"fig:MEX\" label=\"fig:MEX\"></span> Predictions for the <span class=\"math inline\"><em>n</em></span>-<span class=\"math inline\"><em>d</em></span> and <span class=\"math inline\"><em>n</em></span>-<span class=\"math inline\"><sup>3</sup><em>H</em><em>e</em></span> capture reactions. Chiral EFT: the curve labeled N3LO(S-L) includes pion loop corrections contact terms, while the curve labeled N3LO(LECs) includes in addition contributions from (higher order) pion exchanges and non-minimal con",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.1343v1/blocks/prop-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "prop-sec-008-01.md",
+      "narrative": null,
+      "content": "Right panel: Nuclear phase diagram as accessible by lattice QCD and by nuclear lattice EFT.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1011.1343v1/blocks/prop-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "prop-sec-008-02.md",
+      "narrative": null,
+      "content": "It is important to stress that the approximate Wigner SU(4) symmetry of the nuclear interactions strongly suppresses the sign oscillations and thus makes such nuclear lattice simulations easier to handle than lattice QCD calculations.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1011.1343v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Flash forward: Combining nuclear EFT with lattice simulations",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-008-5-flash-forward-combining-nuclear-eft-with-latti.md",
+      "narrative": null,
+      "content": "<figure id=\"fig:nuclat\">\n<embed src=\"phasediagram.eps\" style=\"width:60.0%\" />\n<embed src=\"NuclLatt.eps\" style=\"width:35.0%\" />\n<figcaption><span id=\"fig:nuclat\" label=\"fig:nuclat\"></span> Left panel: Euclidean space-time lattice with point-like nucleons on the lattice sites and a typical lattice spacing of <span class=\"math inline\"><em>a</em> = 2</span> fm. Right panel: Nuclear phase diagram as accessible by lattice QCD and by nuclear lattice EFT. Figure courtesy of Dean Lee. </figcaption>\n</figure>\n\nHaving now constructed nuclear forces between two, three and four nucleons, one has a new tool",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.1343v1/blocks/prop-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 19,
+      "target": "prop-sec-009-01.md",
+      "narrative": null,
+      "content": "Eventually, lattice QCD might also contribute significantly - but there are still quite a few obstacles to be overcome, see e.g [@Beane:2009mb].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1011.1343v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some final words",
+      "pageStart": 15,
+      "pageEnd": 19,
+      "target": "../sections/sec-009-6-some-final-words.md",
+      "narrative": null,
+      "content": "The chiral effective Lagrangian of QCD offers a tool to systematically investigate the structure of the nucleon and the nuclear interactions with high accuracy - it appears that we are now on the right track to achieve what could only be dreamed about a few decades ago - see the discussion in Sec. 1. Nuclear physics will no longer be based on model-building and phenomenological approaches, although still quite a bit of work is ahead of us. But this work - even if hard and time-consuming - will be very rewarding at the end. Furthermore, strangeness nuclear physics can also be addressed within t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

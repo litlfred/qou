@@ -1,0 +1,146 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1910.12400v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1910.12400v2/blocks/prop-sec-front-matter-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "prop-sec-front-matter-01.md",
+      "narrative": null,
+      "content": "The measurements reveal a large fourth-order angular modulation of cos 4∆φ = (16.8 ± 2.5)% and smooth invariant mass distribution absent of vector mesons (φ, ω and ρ) at the experimental limit of ≤0.2% of the observed yields.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1910.12400v2/blocks/prop-sec-front-matter-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "prop-sec-front-matter-02.md",
+      "narrative": null,
+      "content": "The cross section for exclusively produced e+e−pairs was measured in a ﬁdu- cial phase space deﬁned by the acceptance for daughter particles, corresponding to pairs with an invariant mass of 0.4 < Mee < 2.6 GeV and with transverse momentum of P⊥< 0.1 GeV.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1910.12400v2/blocks/prop-sec-front-matter-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "prop-sec-front-matter-03.md",
+      "narrative": null,
+      "content": "The quoted uncertainties on the measured cross section are for statistical, systematic and the overall scale un- certainty, respectively.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1910.12400v2/blocks/prop-sec-front-matter-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "prop-sec-front-matter-04.md",
+      "narrative": null,
+      "content": "The contribution from isotropic e+e− emission is determined via a template ﬁt and found to be consistent with zero [(1 ± 2)% of the measured cross section].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1910.12400v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Measurement of e+e−Momentum and Angular Distributions from Linearly Polarized\nPhoton Collisions\nJ. Adam,6 L. Adamczyk,2 J. R. Adams,39 J. K. Adkins,30 G. Agakishiev,28 M. M. Aggarwal,40 Z. Ahammed,59\nI. Alekseev,3, 35 D. M. Anderson,53 A. Aparin,28 E. C. Aschenauer,6 M. U. Ashraf,11 F. G. Atetalla,29 A. Attri,40\nG. S. Averichev,28 V. Bairathi,22 K. Barish,10 A. Behera,51 R. Bellwied,20 A. Bhasin,27 J. Bielcik,14 J. Bielcikova,38\nL. C. Bland,6 I. G. Bordyuzhin,3 J. D. Brandenburg,48, 6 A. V. Brandin,35 J. Butterworth,44 H. Caines,62\nM. Calder´on de la Barca S´anchez,8 D. Cebra,8 I. Chakaberia,2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1910.12400v2/blocks/prop-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "prop-sec-000-01.md",
+      "narrative": null,
+      "content": "The total measured cross section agrees with all three calculations at the ±1σ level.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1910.12400v2/blocks/prop-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "prop-sec-000-02.md",
+      "narrative": null,
+      "content": "Klein et al., STARlight: A Monte Carlo simulation program for ultra-peripheral collisions of relativistic ions, Comput.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1910.12400v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "STAR",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "../sections/sec-000-star.md",
+      "narrative": null,
+      "content": "< 0.1 GeV\n < 0.76 GeV, P\nee\n0.45 < M\n / 20)\nπ\ncounts  / (\n1200\nAu+Au UPC\n 0.65\n×\nAu+Au 60-80% \nAu+Au UPC\n 0.65\n×\nAu+Au 60-80% \n )\nφ\n∆\ncos 4\nφ\n∆\n4\n + A\nφ\n∆\ncos 2\nφ\n∆\n2\n( 1 + A\n×\nFit: C\nσ\n 1 \n±\n1000\n800\n600\n400\n200\n :\n−\ne\n+\n e\n→\n γ\nγ\nPolarized \nWithout Polarization :\nQED\nSuperChic\nSTARLight\n0\n0\n2\nπ\nπ\ne\nφ\n \n−\n \nee\nφ\n = \nφ\n∆\nFIG. 4.\nThe ∆φ = φee −φe distribution from UPCs and\n60 −80% central collisions for Mee > 0.45 GeV with calcula-\ntions from QED [44], STARLight [35] and from the publicly\navailable SuperChic3 code [8].\nin Figs. 3 and 4 are plotted with statistical (vertical bars)\nand systematic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

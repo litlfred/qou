@@ -1,0 +1,1026 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0808.1533v3",
+  "title": "On the third order helicity of magnetic fields on invariant domains in S³",
+  "variant": "pdf",
+  "pages": 30,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The Milnor mu-123-invariant and the Hopf degree.",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-the-milnor-mu-123-invariant-and-the-hopf-degree"
+    },
+    {
+      "level": 1,
+      "title": "Invariants of volume preserving flows. Helicities.",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-invariants-of-volume-preserving-flows-helicities"
+    },
+    {
+      "level": 1,
+      "title": "Definition of ``mu-123-helicity'' on invariant unlinked handlebodies.",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-definition-of-mu-123-helicity-on-invariant-unlin"
+    },
+    {
+      "level": 1,
+      "title": "The ergodic interpretation of H-123",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-the-ergodic-interpretation-of-h-123"
+    },
+    {
+      "level": 1,
+      "title": "Flux formula for H-123.",
+      "number": null,
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-flux-formula-for-h-123"
+    },
+    {
+      "level": 1,
+      "title": "Energy bound.",
+      "number": null,
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-energy-bound"
+    },
+    {
+      "level": 1,
+      "title": "Comparison to the known approaches via Massey products.",
+      "number": null,
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-comparison-to-the-known-approaches-via-massey-pr"
+    },
+    {
+      "level": 1,
+      "title": "Equations for the frozen-in-field forms",
+      "number": null,
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-equations-for-the-frozen-in-field-forms"
+    },
+    {
+      "level": 1,
+      "title": "Zero contribution of short paths to the time average",
+      "number": null,
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-zero-contribution-of-short-paths-to-the-time-ave"
+    },
+    {
+      "level": 1,
+      "title": "Notation in Section ??",
+      "number": null,
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-notation-in-section"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 127,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "µ123-invariant",
+          "heading": false
+        },
+        {
+          "term": "order helicity",
+          "heading": false
+        },
+        {
+          "term": "l2-energy",
+          "heading": false
+        },
+        {
+          "term": "komendarczyk",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0808.1533v3 [math.DG] 18 Jun 2009 The third order helicity of magnetic ﬁelds via link maps. R. Komendarczyk∗† October 28, 2018 Abstract We introduce an alternative approach to the third order helicity of a volume preserving vector ﬁeld B, which leads us to a lower bound for the L2-energy of B. The proposed approach exploits correspondence between the Milnor ¯µ123-invariant for 3-component links and the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0808.1533v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 755,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "order helicity",
+          "heading": false
+        },
+        {
+          "term": "milnor bar",
+          "heading": false
+        },
+        {
+          "term": "sdiff",
+          "heading": false
+        },
+        {
+          "term": "link homotopy",
+          "heading": false
+        },
+        {
+          "term": "homotopy invariants",
+          "heading": false
+        },
+        {
+          "term": "mu-and-hopf",
+          "heading": false
+        },
+        {
+          "term": "magnetic field",
+          "heading": false
+        },
+        {
+          "term": "koschorke",
+          "heading": false
+        }
+      ],
+      "extract": "A purpose of this paper is to develop a particular formula for the third order helicity on certain invariant sets of a volume preserving vector field $B$. The third order helicity, [@Khesin98], is an invariant of $B$ under the action of volumorphisms isotopic to the identity (denoted here by $\\text{\\rm SDiff}_0(M)$). Importance of such invariants stems from the basic fact that the evolution of the vorticity in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-the-milnor-mu-123-invariant-and-the-hopf-degree",
+      "number": null,
+      "title": "The Milnor mu-123-invariant and the Hopf degree.",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 10,
+      "labelStart": "3",
+      "labelEnd": "10",
+      "words": 2958,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mbox bbb",
+          "heading": false
+        },
+        {
+          "term": "bbb times",
+          "heading": false
+        },
+        {
+          "term": "hopf degree",
+          "heading": true
+        },
+        {
+          "term": "text borr",
+          "heading": false
+        },
+        {
+          "term": "text bor",
+          "heading": false
+        },
+        {
+          "term": "milnor bar",
+          "heading": false
+        },
+        {
+          "term": "omega ast",
+          "heading": false
+        },
+        {
+          "term": "wedge hat",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:mu-and-hopf label=\"sec:mu-and-hopf\"} The $\\bar{\\mu}$-invariants of $n$-component links in $S^3$ have been introduced by Milnor in [@Milnor54; @Milnor57] as invariants of links up to *link homotopy*. Recall that the link homotopy is a deformation of a link in $S^3$ which allows each component to pass through itself but not through a different component. Clearly, this is a weaker equivalence than the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-invariants-of-volume-preserving-flows-helicities",
+      "number": null,
+      "title": "Invariants of volume preserving flows. Helicities.",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 496,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "helicity mathsf",
+          "heading": false
+        },
+        {
+          "term": "bar mathscr",
+          "heading": false
+        },
+        {
+          "term": "orbits mathscr",
+          "heading": false
+        },
+        {
+          "term": "wedge iota",
+          "heading": false
+        },
+        {
+          "term": "times bar",
+          "heading": false
+        },
+        {
+          "term": "helicity-asymp",
+          "heading": false
+        },
+        {
+          "term": "mathcal times",
+          "heading": false
+        },
+        {
+          "term": "helicities",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sec:invariants-flows label=\"sec:invariants-flows\"} Given finitely many volume preserving vector fields $B_1$, $B_2$, $\\ldots B_k\\in \\text{\\rm SVect}(M)$ on $M=S^3$ or a homology 3-sphere one seeks quantities $\\mathsf{I}(B_1,B_2,\\ldots,B_k)$ invariant under the action of volumorphisms isotopic to the identity $g\\in \\text{\\rm SDiff}_0(M)$, commonly known as *helicities* or *higher helicities*: $$\\begin{gathered}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-definition-of-mu-123-helicity-on-invariant-unlin",
+      "number": null,
+      "title": "Definition of ``mu-123-helicity'' on invariant unlinked handlebodies.",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 15,
+      "labelStart": "11",
+      "labelEnd": "15",
+      "words": 1540,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unlinked handlebodies",
+          "heading": true
+        },
+        {
+          "term": "wedge iota",
+          "heading": false
+        },
+        {
+          "term": "omega wedge",
+          "heading": false
+        },
+        {
+          "term": "wedge alpha",
+          "heading": false
+        },
+        {
+          "term": "ast iota",
+          "heading": false
+        },
+        {
+          "term": "iota hat",
+          "heading": false
+        },
+        {
+          "term": "unlinked handlebody",
+          "heading": false
+        },
+        {
+          "term": "handlebody mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:handlebody label=\"sec:handlebody\"} In this section we apply the formulation of the $\\bar{\\mu}_{123}$-invariant for the 3-component links in $S^3$, obtained in Section [\\[sec:mu-and-hopf\\]](#sec:mu-and-hopf){reference-type=\"ref\" reference=\"sec:mu-and-hopf\"}, to define the third order helicity of a volume preserving vector field $B$ on certain invariant sets $\\mathcal{T}$ of $B$ in $S^3$. In the following",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-the-ergodic-interpretation-of-h-123",
+      "number": null,
+      "title": "The ergodic interpretation of H-123",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 19,
+      "labelStart": "15",
+      "labelEnd": "19",
+      "words": 1508,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bar mathscr",
+          "heading": false
+        },
+        {
+          "term": "wedge iota",
+          "heading": false
+        },
+        {
+          "term": "mathscr ast",
+          "heading": false
+        },
+        {
+          "term": "omega wedge",
+          "heading": false
+        },
+        {
+          "term": "alpha wedge",
+          "heading": false
+        },
+        {
+          "term": "int mathscr",
+          "heading": false
+        },
+        {
+          "term": "mathcal widetilde",
+          "heading": false
+        },
+        {
+          "term": "ergodic",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sec:ergodic label=\"sec:ergodic\"} The following statement is often seen in literature [@Cantarella-DeTurck-Gluck01; @Cantarella-DeTurck-Gluck-Teytel00]: > *Helicity measures the extent to which vector fields twist and coil around each other.* A beauty of Arnold's ergodic approach to the helicity $\\mathsf{H}_{12}(B)$ is that it makes this statement precise, by interpreting $\\mathsf{H}_{12}(B)$ as an average",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-flux-formula-for-h-123",
+      "number": null,
+      "title": "Flux formula for H-123.",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": "19",
+      "labelEnd": "21",
+      "words": 782,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "flux",
+          "heading": true
+        },
+        {
+          "term": "borromean flux",
+          "heading": false
+        },
+        {
+          "term": "bar mathscr",
+          "heading": false
+        },
+        {
+          "term": "flux tubes",
+          "heading": false
+        },
+        {
+          "term": "text flux",
+          "heading": false
+        },
+        {
+          "term": "flux sigma",
+          "heading": false
+        },
+        {
+          "term": "int bar",
+          "heading": false
+        },
+        {
+          "term": "widehat mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "The following formula is a well known property of the ordinary helicity $\\mathsf{H}_{12}(B;\\mathcal{T})$ of the flux tubes $\\mathcal{T}$ modeled on a 2-component link $L=\\{L_1,L_2\\}$ (see e.g. [@Laurence-Avellaneda93; @Cantarella00]) $$\\label{eq:helicity12-flux-tubes} \\mathsf{H}_{12}(B;\\mathcal{T})=\\mathsf{H}_{12}(B_1,B_2)=\\text{lk}(L_1,L_2)\\,\\text{Flux}(B_1)\\,\\text{Flux}(B_2).$$ Here we show an analogous property",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-energy-bound",
+      "number": null,
+      "title": "Energy bound.",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 25,
+      "labelStart": "21",
+      "labelEnd": "25",
+      "words": 1419,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wedge iota",
+          "heading": false
+        },
+        {
+          "term": "omega wedge",
+          "heading": false
+        },
+        {
+          "term": "wedge ast",
+          "heading": false
+        },
+        {
+          "term": "eta wedge",
+          "heading": false
+        },
+        {
+          "term": "helicity mathsf",
+          "heading": false
+        },
+        {
+          "term": "widetilde mathcal",
+          "heading": false
+        },
+        {
+          "term": "mathcal bigl",
+          "heading": false
+        },
+        {
+          "term": "alpha omega",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:energy label=\"sec:energy\"} In this section we indicate how the quantity $\\mathsf{H}_{123}(B;\\mathcal{T})$ invariant under frozen-in-field deformations provides a lower bound for the $L^2$-energy $E_2(B)$ of a volume preserving field $B$ on $M=S^3$. We restrict our considerations to the case of an invariant unlinked handlebody $\\mathcal{T}$, defined in Section",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-comparison-to-the-known-approaches-via-massey-pr",
+      "number": null,
+      "title": "Comparison to the known approaches via Massey products.",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 28,
+      "labelStart": "25",
+      "labelEnd": "28",
+      "words": 1122,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "massey products",
+          "heading": true
+        },
+        {
+          "term": "ﬂux tubes",
+          "heading": false
+        },
+        {
+          "term": "borromean ﬂux",
+          "heading": false
+        },
+        {
+          "term": "mutual helicity",
+          "heading": false
+        },
+        {
+          "term": "magnetic ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "asymptotic linking",
+          "heading": false
+        },
+        {
+          "term": "ergodic interpretation",
+          "heading": false
+        },
+        {
+          "term": "ﬂuid dynamics",
+          "heading": false
+        }
+      ],
+      "extract": "Comparison to the known approaches via Massey products. In several prior works [5, 13, 25, 27] helicities were developed via the Massey product for- mula for ¯µ123. These approaches are equivalent to the one presented here in the sense that invariants obtained this way measure the same topological information. Most notably the work [25] provides an explicit expression for the third order helicity of the Borromean",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-equations-for-the-frozen-in-field-forms",
+      "number": null,
+      "title": "Equations for the frozen-in-field forms",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": "28",
+      "labelEnd": "29",
+      "words": 254,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ιbiµ",
+          "heading": false
+        },
+        {
+          "term": "volume preserving",
+          "heading": false
+        },
+        {
+          "term": "sdiﬀ",
+          "heading": false
+        },
+        {
+          "term": "justiﬁes",
+          "heading": false
+        }
+      ],
+      "extract": "Equations for the frozen-in-ﬁeld forms Given a volume preserving vector ﬁeld B on M and a path t −→g(t) ∈SDiﬀ(M), let Bt := g∗(t)B . Then for B0 = B, by deﬁnition ˙Bt = d dtBt t=0= −LV B = −[V, B], (A.1) and as a result d dtιBtµ|t=0 = −ι[V,B]µ Next, calculate (∂t + LV ≡L∂t+V ) (∂t + LV )ιBtµ = ∂t(ιBtµ) + LV ιBtµ = ι ˙Btµ + ιBt(LV µ) + ι[V,Bt]µ = ι ˙Bt+[V,Bt]µ, where in the second identity we applied the general",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-zero-contribution-of-short-paths-to-the-time-ave",
+      "number": null,
+      "title": "Zero contribution of short paths to the time average",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": "29",
+      "labelEnd": "29",
+      "words": 189,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "short paths",
+          "heading": true
+        },
+        {
+          "term": "average",
+          "heading": true
+        },
+        {
+          "term": "contribution",
+          "heading": true
+        }
+      ],
+      "extract": "Zero contribution of short paths to the time average It is clear when β ∈Ω3( eT ) is at least a C1 on eT ⊂S3 × S3 × S3, then f = β(B1, B2, B3) is continuous on eT and Z ¯ O1 T (x) Z ¯ O2 T (y) Z ¯ O3 T (z) f = \u0000Z O1 T (x) + Z σ(Φ1(x,T),x) \u0001\u0000Z O2 T (y) + Z σ(Φ2(y,T),y) \u0001\u0000Z O3 T (z) + Z σ(Φ3(z,T),z) \u0001 f . After expanding, it is obvious that we must show the following (for all choices), when T →∞: 1 T 3 Z σ(Φ1(x,T),x)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-notation-in-section",
+      "number": null,
+      "title": "Notation in Section ??",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": "29",
+      "labelEnd": "30",
+      "words": 278,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rako",
+          "heading": false
+        },
+        {
+          "term": "upenn",
+          "heading": false
+        },
+        {
+          "term": "normal component",
+          "heading": false
+        },
+        {
+          "term": "neumann",
+          "heading": false
+        },
+        {
+          "term": "harmonic",
+          "heading": false
+        },
+        {
+          "term": "edu",
+          "heading": false
+        }
+      ],
+      "extract": "We adopt notation from the elegant exposition in [34]. Let M be an orientable manifold with smooth boundary. 29 Ωk(M) = C∞(M, Λk), smooth diﬀerential forms on M. Ωk N(M) = {φ ∈Ωk(M) | nφ = 0, ndφ = 0} the subspace satisfying the Neumann boundary conditions, (n denotes a normal component of a form along ∂M). The L2-inner product on Ωk(M) is deﬁned as \u0000ω, η \u0001 L2 = Z M ω ∧∗η, L2Ωk(M), L2-diﬀerential forms on M. Hk N(M)",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "helicity mathsf",
+      "heading": false
+    },
+    {
+      "term": "wedge iota",
+      "heading": false
+    },
+    {
+      "term": "wedge ast",
+      "heading": false
+    },
+    {
+      "term": "omega wedge",
+      "heading": false
+    },
+    {
+      "term": "bar ast",
+      "heading": false
+    },
+    {
+      "term": "mathcal bar",
+      "heading": false
+    },
+    {
+      "term": "alpha wedge",
+      "heading": false
+    },
+    {
+      "term": "bar mathscr",
+      "heading": false
+    },
+    {
+      "term": "vector mathsf",
+      "heading": false
+    },
+    {
+      "term": "arnold helicity",
+      "heading": false
+    },
+    {
+      "term": "mathcal text",
+      "heading": false
+    },
+    {
+      "term": "ast bigl",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "left: ¯µ123 = ±1 and right: ¯µ123 = ±n. πk(Confn(R3)), and [Sk, Confn(S3)] = πk(Confn(S3)) (c.f. [17, p. 421]). Thus considering the based homotopies, in context of the link homotopy of Borromean links, and base point free homotopies is equivalent in this setting",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The model of LBorr parametrized by {L1 = pr(x(s)), L2 = pr(y(t)), L3 = pr(z(u))}. Arc A1 is a part of the unit circle on xy-plane, A2 is a part of circle of radius 1 + ǫ",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Four positions corresponding to angles: s = 0, π",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Projection of lS,N on the su-face and st-face of T. The strands lS (solid line) and",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The simplest unlinked handlebodies: ﬂux tubes T Borr modeled on the Borromean rings (left), and unlinked genus 2 handlebodies (right)",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p011-1",
+      "file": "images/img-p011-1.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-2",
+      "file": "images/img-p011-2.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 2,
+      "note": "5 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p25); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0808.1533v3"
+  }
+}

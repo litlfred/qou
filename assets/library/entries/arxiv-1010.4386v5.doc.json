@@ -1,0 +1,881 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1010.4386v5",
+  "title": "arxiv-1010.4386v5",
+  "variant": "pdf",
+  "pages": 33,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "0",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-0-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries on Homological Algebra",
+      "number": "1",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-preliminaries-on-homological-algebra"
+    },
+    {
+      "level": 1,
+      "title": "The Derived Completion and Torsion Functors",
+      "number": "2",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-the-derived-completion-and-torsion-functors"
+    },
+    {
+      "level": 1,
+      "title": "Koszul Complexes and Weak Proregularity",
+      "number": "3",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-3-koszul-complexes-and-weak-proregularity"
+    },
+    {
+      "level": 1,
+      "title": "The Telescope Complex",
+      "number": "4",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-4-the-telescope-complex"
+    },
+    {
+      "level": 1,
+      "title": "Permanence of Weak Proregularity",
+      "number": "5",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-5-permanence-of-weak-proregularity"
+    },
+    {
+      "level": 1,
+      "title": "MGM Equivalence",
+      "number": "6",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-6-mgm-equivalence"
+    },
+    {
+      "level": 1,
+      "title": "Derived Localization",
+      "number": "7",
+      "page": 28,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-7-derived-localization"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 32,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 106,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proregular",
+          "heading": false
+        },
+        {
+          "term": "a-torsion",
+          "heading": false
+        },
+        {
+          "term": "porta",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1010.4386v5 [math.AC] 16 Oct 2012 ON THE HOMOLOGY OF COMPLETION AND TORSION MARCO PORTA, LIRAN SHAUL AND AMNON YEKUTIELI Abstract. Let A be a commutative ring, and a a weakly proregular ideal in A. This includes the noetherian case: if A is noetherian then any ideal in it is weakly proregular; but there are other interesting examples. In this paper we prove the MGM equivalence, which is an equivalence between",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1010.4386v5/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-0-introduction",
+      "number": "0",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1412,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tel bsym",
+          "heading": false
+        },
+        {
+          "term": "cat mod",
+          "heading": false
+        },
+        {
+          "term": "opn tel",
+          "heading": false
+        },
+        {
+          "term": "mrm lambda",
+          "heading": false
+        },
+        {
+          "term": "mrm gamma",
+          "heading": false
+        },
+        {
+          "term": "functor mrm",
+          "heading": false
+        },
+        {
+          "term": "sequence bsym",
+          "heading": false
+        },
+        {
+          "term": "proregular ideal",
+          "heading": false
+        }
+      ],
+      "extract": "Let $A$ be a commutative ring, and let $\\a$ be an ideal in it. (We do not assume that $A$ is noetherian or $\\a$-adically complete.) There are two operations associated to this data: the {\\em $\\a$-adic completion} and the {\\em $\\a$-torsion}. For an $A$-module $M$ its $\\a$-adic completion is the $A$-module \\[ \\Lambda_{\\a} (M) = \\what{M} := \\lim_{\\leftarrow i} \\, M / \\a^i M . \\] An element $m \\in M$ is called an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-preliminaries-on-homological-algebra",
+      "number": "1",
+      "title": "Preliminaries on Homological Algebra",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1335,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "opn stt",
+          "heading": false
+        },
+        {
+          "term": "cat mod",
+          "heading": false
+        },
+        {
+          "term": "hom cat",
+          "heading": false
+        },
+        {
+          "term": "opn amp",
+          "heading": false
+        },
+        {
+          "term": "let cat",
+          "heading": false
+        },
+        {
+          "term": "cat exists",
+          "heading": false
+        },
+        {
+          "term": "stt leq",
+          "heading": false
+        },
+        {
+          "term": "cong opn",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:prelim} This paper relies on delicate work with derived functors. Therefore we begin with a review of some facts on homological algebra. There are also a few new results. By default all rings considered in the paper are commutative. Let $\\cat{M}$ be an abelian category. As in \\cite{RD} we denote by $\\cat{C}(\\cat{M})$ the category of complexes of objects of $\\cat{M}$, by $\\cat{K}(\\cat{M})$ its homotopy",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-the-derived-completion-and-torsion-functors",
+      "number": "2",
+      "title": "The Derived Completion and Torsion Functors",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1343,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cat tup",
+          "heading": false
+        },
+        {
+          "term": "cat mod",
+          "heading": false
+        },
+        {
+          "term": "subcategory cat",
+          "heading": false
+        },
+        {
+          "term": "mrm lambda",
+          "heading": false
+        },
+        {
+          "term": "tau mrm",
+          "heading": false
+        },
+        {
+          "term": "mrm gamma",
+          "heading": false
+        },
+        {
+          "term": "sigma mrm",
+          "heading": false
+        },
+        {
+          "term": "tup tor",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:comp} In this section $A$ is a commutative ring, and $\\a$ is an ideal in it. We do not assume that $\\a$ is finitely generated or that $A$ is $\\a$-adically complete. For any $i \\in \\N$ let $A_i := A / \\a^{i+1}$. The collection of rings $\\{ A_i \\}_{i \\in \\N}$ forms an inverse system. Following \\cite{GM, AJL1}, for an $A$-module $M$ we write \\begin{equation} \\Lambda_{\\a} (M) := \\lim_{\\leftarrow i}\\, (A_i",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-koszul-complexes-and-weak-proregularity",
+      "number": "3",
+      "title": "Koszul Complexes and Weak Proregularity",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2757,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bsym vee",
+          "heading": false
+        },
+        {
+          "term": "opn vee",
+          "heading": false
+        },
+        {
+          "term": "sequence bsym",
+          "heading": false
+        },
+        {
+          "term": "otimes opn",
+          "heading": false
+        },
+        {
+          "term": "bigl mrm",
+          "heading": false
+        },
+        {
+          "term": "cong opn",
+          "heading": false
+        },
+        {
+          "term": "let bsym",
+          "heading": false
+        },
+        {
+          "term": "equation opn",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:kosz} In this section we define {\\em weakly proregular sequences}. We also set up notation to be used later. The definitions and most of the results in this section are contained in \\cite{AJL1} and \\cite{Sc}. We have included our own short proofs, for the benefit of the reader. We also give a new motivating example at the end. Let $A$ be a commutative ring (not necessarily noetherian). Recall that for an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-the-telescope-complex",
+      "number": "4",
+      "title": "The Telescope Complex",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2463,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tel bsym",
+          "heading": false
+        },
+        {
+          "term": "opn tel",
+          "heading": false
+        },
+        {
+          "term": "mrm bsym",
+          "heading": false
+        },
+        {
+          "term": "tel vee",
+          "heading": false
+        },
+        {
+          "term": "bigl opn",
+          "heading": false
+        },
+        {
+          "term": "homomorphism bsym",
+          "heading": false
+        },
+        {
+          "term": "circ bsym",
+          "heading": false
+        },
+        {
+          "term": "equation bsym",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:tel} The purpose of this section is to prove Theorem \\ref{thm:250}. Let $A$ be a commutative ring (not necessarily noetherian). For a set $X$ and an $A$-module $M$ we denote by $\\opn{F}(X, M)$ the set of all functions $f : X \\to M$. This is an $A$-module in the obvious way. We denote by $\\opn{F}_{\\mrm{fin}}(X, M)$ the submodule of $\\opn{F}(X, M)$ consisting of functions with finite support. Note that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-permanence-of-weak-proregularity",
+      "number": "5",
+      "title": "Permanence of Weak Proregularity",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1056,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "til bsym",
+          "heading": false
+        },
+        {
+          "term": "opn tel",
+          "heading": false
+        },
+        {
+          "term": "sqrt til",
+          "heading": false
+        },
+        {
+          "term": "sequences til",
+          "heading": false
+        },
+        {
+          "term": "hat bsym",
+          "heading": false
+        },
+        {
+          "term": "til phi",
+          "heading": false
+        },
+        {
+          "term": "cong opn",
+          "heading": false
+        },
+        {
+          "term": "let bsym",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:permanence} In this section we show that derived completion and derived torsion are independent of the ring, when the the ideal is weakly proregular (Theorem \\ref{thm:6.2}). \\begin{thm} \\label{thm:290} Let $A$ be a ring, let $\\bsym{a}$ and $\\bsym{b}$ be finite sequences of elements of $A$, and let $\\a := (\\bsym{a})$ and $\\b := (\\bsym{b})$, the ideals generated by these sequences. Assume that $\\sqrt{\\a} =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-6-mgm-equivalence",
+      "number": "6",
+      "title": "MGM Equivalence",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 28,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1775,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "opn tel",
+          "heading": false
+        },
+        {
+          "term": "mgm equivalence",
+          "heading": true
+        },
+        {
+          "term": "opn rhom",
+          "heading": false
+        },
+        {
+          "term": "opn hom",
+          "heading": false
+        },
+        {
+          "term": "xleftarrow opn",
+          "heading": false
+        },
+        {
+          "term": "opn vee",
+          "heading": false
+        },
+        {
+          "term": "tup mrm",
+          "heading": false
+        },
+        {
+          "term": "xar opn",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:MGM} In this section $A$ is a commutative ring. We do not assume that $A$ is noetherian or complete. Weak proregularity was defined in Definition \\ref{dfn:250}. Recall that any finite sequence in a noetherian ring is weakly proregular, and any ideal in a noetherian ring is weakly proregular (Theorem \\ref{thm:253}). \\begin{lem} \\label{lem:4.1} Let $\\bsym{a}$ be a finite sequence in $A$, let $\\a$ be the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-7-derived-localization",
+      "number": "7",
+      "title": "Derived Localization",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 32,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1689,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "opn bsym",
+          "heading": false
+        },
+        {
+          "term": "bsym smallsmile",
+          "heading": false
+        },
+        {
+          "term": "dgmod opn",
+          "heading": false
+        },
+        {
+          "term": "bsym otimes",
+          "heading": false
+        },
+        {
+          "term": "cat dgmod",
+          "heading": false
+        },
+        {
+          "term": "opn rhom",
+          "heading": false
+        },
+        {
+          "term": "phi bsym",
+          "heading": false
+        },
+        {
+          "term": "bsym text",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:der-loc} In this final section we give an alternative characterization of cohomologically complete complexes (Theorem \\ref{thm:263}). This result is inspired by the paper \\cite{KS2}. See Remark \\ref{rem:derloc.1} for a comparison. We make this assumption throughout the section: $\\bsym{a} = (a_1, \\ldots, a_n)$ is a weakly proregular sequence in the ring $A$, and $\\a$ is the ideal generated by $\\bsym{a}$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 33,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 435,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eprint arxiv",
+          "heading": false
+        },
+        {
+          "term": "formal schemes",
+          "heading": false
+        },
+        {
+          "term": "porta",
+          "heading": false
+        },
+        {
+          "term": "shaul",
+          "heading": false
+        },
+        {
+          "term": "triangulated categories",
+          "heading": false
+        },
+        {
+          "term": "local homology",
+          "heading": false
+        },
+        {
+          "term": "local cohomology",
+          "heading": false
+        },
+        {
+          "term": "yekutieli",
+          "heading": false
+        }
+      ],
+      "extract": "[AJL1] L. Alonso, A. Jeremias and J. Lipman, Local homology and cohomology on schemes, Ann. Sci. ENS 30 (1997), 1-39. Correction, availabe online at http://www.math.purdue.edu/~lipman/papers/homologyfix.pdf [AJL2] L. Alonso, A. Jeremias and J. Lipman, Duality and ﬂat base change on formal schemes. in: “Studies in duality on Noetherian formal schemes and non-Noetherian ordinary schemes”, Contemporary Mathematics, 244",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mrm bsym",
+      "heading": false
+    },
+    {
+      "term": "opn mrm",
+      "heading": false
+    },
+    {
+      "term": "tel bsym",
+      "heading": false
+    },
+    {
+      "term": "tup mrm",
+      "heading": false
+    },
+    {
+      "term": "bigl mrm",
+      "heading": false
+    },
+    {
+      "term": "mod mrm",
+      "heading": false
+    },
+    {
+      "term": "bsym vee",
+      "heading": false
+    },
+    {
+      "term": "complexes opn",
+      "heading": false
+    },
+    {
+      "term": "xar bsym",
+      "heading": false
+    },
+    {
+      "term": "cong mrm",
+      "heading": false
+    },
+    {
+      "term": "mrm gamma",
+      "heading": false
+    },
+    {
+      "term": "mrm lambda",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 10,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p32); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 10 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1010.4386v5"
+  }
+}

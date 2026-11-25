@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/build-docs.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/build-docs",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "build-docs",
+      "title": "/build-docs",
+      "description": "Builds the Lean HTML documentation (doc-gen4) locally in the workspace.",
+      "instructionsPath": "skills/local/build-docs.md",
+      "instructionLines": 34,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

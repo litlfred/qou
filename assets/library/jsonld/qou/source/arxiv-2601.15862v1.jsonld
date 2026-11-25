@@ -1,0 +1,59 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2601.15862v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Synthetic Differential Jet Bundles are Reduced",
+  "contains": [
+    "library/arxiv-2601.15862v1/sections/sec-front-matter",
+    "library/arxiv-2601.15862v1/sections/sec-000",
+    "library/arxiv-2601.15862v1/sections/sec-001",
+    "library/arxiv-2601.15862v1/sections/sec-002",
+    "library/arxiv-2601.15862v1/sections/sec-003"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Synthetic Differential Jet Bundles are Reduced — We have previously observed that the theory of solutions of par- tial differential equations, regarded as diffieties inside jet bundles, acquires a\n\n**Synthetic Differential Jet Bundles are Reduced**\n\n*GRIGORIOS GIOTOPOULOS, IGOR KHAVKINE, HISHAM SATI, AND URS SCHREIBER*\n\n16 pp, 5 sections.\n\n**Abstract.** We have previously observed that the theory of solutions of par- tial differential equations, regarded as diffieties inside jet bundles, acquires a powerful comonadic formulation after passage from the category of Fr´echet smooth manifolds to the Cahiers topos of formal smooth sets (a well-adapted model for Synthetic Differential Geometry). However, the tacit assumption that this passage preserves the projective limits that define infinite jet bundles had remained unproven. Here we provide a detailed proof.\n\n**Outline.** Front matter; 1 Introduction; 2 Statement and Proof; Appendix A. Background; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2601.15862&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2601.15862v1",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "2601.15862v1.pdf",
+    "source_sha256": "e37fa9b4515f58d167754cb63ea6fc117e6394ae4b480dd9b9283b61922721b2",
+    "pages": 16,
+    "arxiv": {
+      "id": "2601.15862",
+      "version": "1",
+      "primary_class": "math.DG",
+      "stamp_date": "22 Jan 2026"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

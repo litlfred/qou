@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1304.2705v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "FROM STATE INTEGRALS TO q-SERIES",
+      "dcterms:creator": [
+        "ALIDIS, STA VROS GAROUF",
+        "KASHAEV, RINAT"
+      ],
+      "dcterms:issued": "D:20180918",
+      "dcterms:identifier": "https://arxiv.org/abs/1304.2705",
+      "dcterms:abstract": "It is well-known to the experts that multi-dimensional state integra ls of prod- ucts of Faddeev’s quantum dilogarithm which arise in Quantum Topolog y can be written as ﬁnite sums of products of basic hypergeometric series in q = e2πiτ and ˜q = e− 2πi/τ . We illustrate this fact by giving a detailed proof for a family of one-dimens ional integrals which includes state-integral invariants of 4 1 and 5 2 knots.",
+      "dcterms:source": "library/arxiv-1304.2705v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1304.2705v1"
+    }
+  ]
+}

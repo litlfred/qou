@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/np-b250-1985-465/sections/sec-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Gasser, H. Leutwyler / ('hiral perturbation theory",
+  "pageStart": 16,
+  "pageEnd": 16,
+  "contains": [
+    "library/np-b250-1985-465/blocks/prose-sec-009"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/np-b250-1985-465/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/np-b250-1985-465/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,1179 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1210.5756v1",
+  "title": "Contact Graphs of Unit Sphere Packings Revisited ∗",
+  "variant": "pdf",
+  "pages": 19,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Proof of (i) in Theorem 1",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-proof-of-i-in-theorem-1"
+    },
+    {
+      "level": 1,
+      "title": "Upper bounds for Lattice Packings",
+      "number": "3",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-upper-bounds-for-lattice-packings"
+    },
+    {
+      "level": 2,
+      "title": "Proof of (ii) in Theorem 1",
+      "number": "3.1",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-31-proof-of-ii-in-theorem-1"
+    },
+    {
+      "level": 2,
+      "title": "Proof of (ii) in Theorem 2",
+      "number": "3.2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-32-proof-of-ii-in-theorem-2"
+    },
+    {
+      "level": 1,
+      "title": "Proof of (i) in Theorem 2 using Theorem 3",
+      "number": "4",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-4-proof-of-i-in-theorem-2-using-theorem-3"
+    },
+    {
+      "level": 1,
+      "title": "The Polygon Lemmas on S2 for Theorem 3",
+      "number": "5",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-5-the-polygon-lemmas-on-s2-for-theorem-3"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem 3",
+      "number": "6",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-6-proof-of-theorem-3"
+    },
+    {
+      "level": 2,
+      "title": "An upper bound on touching triplets on S2",
+      "number": "6.1",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-61-an-upper-bound-on-touching-triplets-on-s2"
+    },
+    {
+      "level": 2,
+      "title": "An upper bound on touching pairs on S2",
+      "number": "6.2",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-62-an-upper-bound-on-touching-pairs-on-s2"
+    },
+    {
+      "level": 1,
+      "title": "Explicit Constructions",
+      "number": "7",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-7-explicit-constructions"
+    },
+    {
+      "level": 2,
+      "title": "The Octahedral Construction",
+      "number": "7.1",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-71-the-octahedral-construction"
+    },
+    {
+      "level": 2,
+      "title": "Tightness of the estimates in Problem 2",
+      "number": "7.2",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-72-tightness-of-the-estimates-in-problem-2"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 185,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arbitrary packing",
+          "heading": false
+        },
+        {
+          "term": "touching triplets",
+          "heading": false
+        },
+        {
+          "term": "packing elements",
+          "heading": false
+        },
+        {
+          "term": "unit balls",
+          "heading": false
+        },
+        {
+          "term": "contact graph",
+          "heading": false
+        }
+      ],
+      "extract": "Contact Graphs of Unit Sphere Packings Revisited ∗ K´aroly Bezdek†and Samuel Reid‡ May 8, 2018 Abstract The contact graph of an arbitrary ﬁnite packing of unit balls in Euclidean 3-space is the (simple) graph whose vertices correspond to the packing elements and whose two vertices are connected by an edge if the corresponding two packing elements touch each other. One of the most basic questions on contact graphs is",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1210.5756v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 1179,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "touching triplets",
+          "heading": false
+        },
+        {
+          "term": "touching pairs",
+          "heading": false
+        },
+        {
+          "term": "arbitrary packing",
+          "heading": false
+        },
+        {
+          "term": "lattice packing",
+          "heading": false
+        },
+        {
+          "term": "unit balls",
+          "heading": false
+        },
+        {
+          "term": "packing elements",
+          "heading": false
+        },
+        {
+          "term": "quadruples",
+          "heading": false
+        },
+        {
+          "term": "congruent circular",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction Let Ed denote d-dimensional Euclidean space. Then the contact graph of an arbitrary ﬁnite packing of unit balls (i.e., of an arbitrary ﬁnite family of non-overlapping balls having unit radii) in Ed is the (simple) graph whose vertices correspond to the packing elements and whose two vertices are connected by an edge if and only if the corresponding two packing elements touch each other. One of the most",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-proof-of-i-in-theorem-1",
+      "number": "2",
+      "title": "Proof of (i) in Theorem 1",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": "3",
+      "labelEnd": "6",
+      "words": 2022,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "let ˆsi",
+          "heading": false
+        },
+        {
+          "term": "touching neighbours",
+          "heading": false
+        },
+        {
+          "term": "voronoi cells",
+          "heading": false
+        },
+        {
+          "term": "truncated voronoi",
+          "heading": false
+        },
+        {
+          "term": "unit balls",
+          "heading": false
+        },
+        {
+          "term": "ball centered",
+          "heading": false
+        },
+        {
+          "term": "circumscribed circle",
+          "heading": false
+        },
+        {
+          "term": "uij",
+          "heading": false
+        }
+      ],
+      "extract": "Proof of (i) in Theorem 1 The proof presented in this section follows the ideas of the proof of (i) of Theorem 1.1 in [2] with some proper modiﬁcations based on the recent breakthrough results of Hales [6]. The details are as follows. Let B denote the (closed) unit ball centered at the origin o of E3 and let P := {c1+B, c2+B, . . . , cn+B} denote the packing of n unit balls with centers c1, c2, . . . , cn in E3",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-upper-bounds-for-lattice-packings",
+      "number": "3",
+      "title": "Upper bounds for Lattice Packings",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 5,
+      "summary": null,
+      "keywords": [],
+      "extract": "Upper bounds for Lattice Packings",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-31-proof-of-ii-in-theorem-1",
+      "number": "3.1",
+      "title": "Proof of (ii) in Theorem 1",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 649,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "λfcc",
+          "heading": false
+        },
+        {
+          "term": "strict voronoi",
+          "heading": false
+        },
+        {
+          "term": "unit balls",
+          "heading": false
+        },
+        {
+          "term": "resp",
+          "heading": false
+        },
+        {
+          "term": "touching pairs",
+          "heading": false
+        },
+        {
+          "term": "lattice point",
+          "heading": false
+        },
+        {
+          "term": "packings",
+          "heading": false
+        },
+        {
+          "term": "dist",
+          "heading": false
+        }
+      ],
+      "extract": "Proof of (ii) in Theorem 1 Let us imagine that we generate packings of n unit balls in E3 in such a special way that each and every center of the n unit balls chosen, is a lattice point of some ﬁxed lattice Λ (resp., of the face-centered cubic lattice Λfcc) with shortest non-zero lattice vector of length 2. (Here, a lattice means a (discrete) set of points having position vectors that are integer linear combinations",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-32-proof-of-ii-in-theorem-2",
+      "number": "3.2",
+      "title": "Proof of (ii) in Theorem 2",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 193,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "touching triplets",
+          "heading": false
+        },
+        {
+          "term": "unit balls",
+          "heading": false
+        },
+        {
+          "term": "λfcc",
+          "heading": false
+        },
+        {
+          "term": "edge length",
+          "heading": false
+        },
+        {
+          "term": "quadruples",
+          "heading": false
+        }
+      ],
+      "extract": "Proof of (ii) in Theorem 2 Based on the previous subsection, it is suﬃcient to prove the estimate in question on the touching triplets (resp., quadruples) when the packing P of n unit balls in E3 is given in such a special way that each center is a lattice point of the face-centered cubic lattice Λfcc with shortest non-zero lattice vector of length 2. Then we take the contact graph G(P) of P with vertices identical",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-4-proof-of-i-in-theorem-2-using-theorem-3",
+      "number": "4",
+      "title": "Proof of (i) in Theorem 2 using Theorem 3",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 385,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "touching triplets",
+          "heading": false
+        },
+        {
+          "term": "regular triangles",
+          "heading": false
+        },
+        {
+          "term": "unit balls",
+          "heading": false
+        },
+        {
+          "term": "regular tetrahedra",
+          "heading": false
+        },
+        {
+          "term": "edge length",
+          "heading": false
+        },
+        {
+          "term": "spherical cap",
+          "heading": false
+        },
+        {
+          "term": "sharing vertex",
+          "heading": false
+        },
+        {
+          "term": "angular radius",
+          "heading": false
+        }
+      ],
+      "extract": "Proof of (i) in Theorem 2 using Theorem 3 Let P be an arbitrary packing of n unit balls in E3. Let B stand for the unit ball centered at the origin of E3 and let P = {c1 +B, ..., cn +B}. Then, we take the contact graph G(P) of P whose vertices are c1, ..., cn with an edge connected between two vertices if ci + B and cj + B touch each other, i.e., dist(ci, cj) = 2. Every touching triplet ci + B, cj + B, and ck + B",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-5-the-polygon-lemmas-on-s2-for-theorem-3",
+      "number": "5",
+      "title": "The Polygon Lemmas on S2 for Theorem 3",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 13,
+      "labelStart": "8",
+      "labelEnd": "13",
+      "words": 2403,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arccos cos",
+          "heading": false
+        },
+        {
+          "term": "sin arccos",
+          "heading": false
+        },
+        {
+          "term": "irregular triangles",
+          "heading": false
+        },
+        {
+          "term": "delaunay triangles",
+          "heading": false
+        },
+        {
+          "term": "spherical hexagon",
+          "heading": false
+        },
+        {
+          "term": "triangulated hexagon",
+          "heading": false
+        },
+        {
+          "term": "hexagon lemma",
+          "heading": false
+        },
+        {
+          "term": "side lengths",
+          "heading": false
+        }
+      ],
+      "extract": "The Polygon Lemmas on S2 for Theorem 3 On S2, we take a point set X = {x1, ..., xN} with minimum spherical distance π/3 between any two points in X. The solution to the Newton-Gregory problem (of determining the maximum number of non-overlapping unit balls which can touch a ﬁxed unit ball) by Sch¨utte and van der Waerden [14] implies that N ≤12. Taking the Delaunay triangulation DX of X on S2, we notice that we can",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-6-proof-of-theorem-3",
+      "number": "6",
+      "title": "Proof of Theorem 3",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 58,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arccos",
+          "heading": false
+        },
+        {
+          "term": "delaunay",
+          "heading": false
+        },
+        {
+          "term": "surrounded",
+          "heading": false
+        }
+      ],
+      "extract": "Proof of Theorem 3 We ﬁrst mention a rather straightforward but important fact which will be used throughout the following two sub-sections. Remark 1. Let X be a point set on S2 with minimum spherical distance π/3. Then a point in X cannot be entirely surrounded by regular Delaunay triangles of side length π/3 since 2π arccos(1/3) /∈N.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-61-an-upper-bound-on-touching-triplets-on-s2",
+      "number": "6.1",
+      "title": "An upper bound on touching triplets on S2",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 16,
+      "labelStart": "13",
+      "labelEnd": "16",
+      "words": 1829,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "touching triplets",
+          "heading": true
+        },
+        {
+          "term": "irregular triangles",
+          "heading": false
+        },
+        {
+          "term": "quadrilateral lemma",
+          "heading": false
+        },
+        {
+          "term": "either quadrilateral",
+          "heading": false
+        },
+        {
+          "term": "regular triangles",
+          "heading": false
+        },
+        {
+          "term": "arccos frac",
+          "heading": false
+        },
+        {
+          "term": "polygons share",
+          "heading": false
+        },
+        {
+          "term": "irregular ones",
+          "heading": false
+        }
+      ],
+      "extract": "Our main goal is to show that the number of touching triplets in an arbitrary packing of spherical caps of angular radius $\\pi/6$ on $\\mathbb{S}^2$ is at most 11. Let $X=\\{\\mathbf{x}_{1},...,\\mathbf{x}_{N}\\}$ be a point set on $\\mathbb{S}^2$ with $N \\leq 12$ and minimum spherical distance $\\pi/3$ between any two points in $X$. Taking the Delaunay triangulation $\\mathcal{D}_{X}$ of $X$ on $\\mathbb{S}^2$, we let $f$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-62-an-upper-bound-on-touching-pairs-on-s2",
+      "number": "6.2",
+      "title": "An upper bound on touching pairs on S2",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 388,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "touching pairs",
+          "heading": true
+        },
+        {
+          "term": "irregular triangle",
+          "heading": false
+        },
+        {
+          "term": "indirect assumption",
+          "heading": false
+        },
+        {
+          "term": "spherical caps",
+          "heading": false
+        },
+        {
+          "term": "spherical-main-theorem",
+          "heading": false
+        },
+        {
+          "term": "means triangle",
+          "heading": false
+        },
+        {
+          "term": "angular radius",
+          "heading": false
+        },
+        {
+          "term": "mathcal means",
+          "heading": false
+        }
+      ],
+      "extract": "Our goal is to show that the number of touching pairs in an arbitrary packing of spherical caps of angular radius $\\pi/6$ on $\\mathbb{S}^2$ is at most $25$. The proof presented here is indirect and it is based on the previous section. The details are as follows. Let $X=\\{\\mathbf{x}_{1},...,\\mathbf{x}_{N}\\}$ be a point set on $\\mathbb{S}^2$ with $N \\leq 12$ and minimum spherical distance $\\pi/3$ between any two",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-7-explicit-constructions",
+      "number": "7",
+      "title": "Explicit Constructions",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "Explicit Constructions",
+      "extractCut": false
+    },
+    {
+      "id": "sec-011-71-the-octahedral-construction",
+      "number": "7.1",
+      "title": "The Octahedral Construction",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": "16",
+      "labelEnd": "18",
+      "words": 517,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "octahedral construction",
+          "heading": true
+        },
+        {
+          "term": "touching quadruples",
+          "heading": false
+        },
+        {
+          "term": "touching triplets",
+          "heading": false
+        },
+        {
+          "term": "arccos",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "main-theorem",
+          "heading": false
+        },
+        {
+          "term": "edge length",
+          "heading": false
+        },
+        {
+          "term": "face-centered cubic",
+          "heading": false
+        }
+      ],
+      "extract": "We now consider an explicit construction of a unit sphere packing placed over the face-centered cubic lattice for which we obtain a high number of touching triplets and quadruples of unit balls in $\\mathbb{E}^3$. For any positive integer $k \\geq 2$, place $n(k)=\\frac{2k^{3}+k}{3}$ lattice points of the face-centered cubic lattice such that their convex hull is a regular octahedron $\\mathbf{K} \\subset \\mathbb{E}^3$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-72-tightness-of-the-estimates-in-problem-2",
+      "number": "7.2",
+      "title": "Tightness of the estimates in Problem 2",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 511,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arccos",
+          "heading": false
+        },
+        {
+          "term": "bezdek",
+          "heading": false
+        },
+        {
+          "term": "polar coordinates",
+          "heading": false
+        },
+        {
+          "term": "arctan",
+          "heading": false
+        },
+        {
+          "term": "isoperimetric inequality",
+          "heading": false
+        },
+        {
+          "term": "tightness",
+          "heading": true
+        },
+        {
+          "term": "minimum spherical",
+          "heading": false
+        },
+        {
+          "term": "spherical distance",
+          "heading": false
+        }
+      ],
+      "extract": "Tightness of the estimates in Problem 2 We need to construct the corresponding polar coordinates for 12 points on S2 with minimum spherical distance π/3 spanning 10 regular triangles of side length π/3. By taking the points with the following polar coordinates, we can construct such a point set P as seen in Figure 13: Table 6. Polar coordinates of the points in P Polar Coordinates v1 \u0010 1, 0, 0 \u0011 v2 \u0010 1, π/3, 0 \u0011 v3",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "touching triplets",
+      "heading": true
+    },
+    {
+      "term": "touching quadruples",
+      "heading": false
+    },
+    {
+      "term": "touching pairs",
+      "heading": true
+    },
+    {
+      "term": "touching neighbours",
+      "heading": false
+    },
+    {
+      "term": "least touching",
+      "heading": false
+    },
+    {
+      "term": "unit balls",
+      "heading": true
+    },
+    {
+      "term": "arbitrary packing",
+      "heading": false
+    },
+    {
+      "term": "lattice packing",
+      "heading": false
+    },
+    {
+      "term": "arccos cos",
+      "heading": false
+    },
+    {
+      "term": "sphere packing",
+      "heading": false
+    },
+    {
+      "term": "ﬁnite packing",
+      "heading": false
+    },
+    {
+      "term": "arccos frac",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The isosceles triangle △o1pq",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The plane reﬂections to obtain o′",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Voronoi cells of a packing with yellow ci + B’s and blue ci + ˆrB’s",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Projecting a spherical cap between two unit balls",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Three types of irregular triangles, types I, II, and III from left to right. Dashed sides represent side lengths of greater than π/3 and non-dashed sides represent side lengths of exactly π/3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "A triangulated C4 quadrilateral with side lengths of π/3",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Cases for the Quadrilateral Lemma Cases",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "A triangulated C5 pentagon with side lengths of π/3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Cases for the Pentagon Lemma Cases",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "A triangulated C6 hexagon with side lengths of π/3",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "Cases for C6 of the Hexagon Lemma α",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "A triangulated C′",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4",
+      "title": "Cases for C′",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "A triangulated C′′",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "5",
+      "title": "Cases for C′′",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "The conﬁguration described in case (5)12",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "The Octahedral Construction for k = 4",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "An explicit construction of 10 tetrahedra sharing a vertex",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "6",
+      "title": "Polar coordinates of the points in P Polar Coordinates v1",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 13,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 14,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "13 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "6 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p18); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 14 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1210.5756v1"
+  }
+}

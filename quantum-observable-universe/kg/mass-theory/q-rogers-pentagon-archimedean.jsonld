@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-q-rogers-pentagon-archimedean",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:q-rogers-pentagon-archimedean",
+  "kind": "proposition",
+  "title": "Post-τ pentagon = pre-τ pentagon + q-log² Rogers correction",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-dilogarithm",
+    "papers/quantum-observable-universe/blocks/rem-pre-tau-vs-post-tau"
+  ],
+  "cites": [
+    "references/rogers1907",
+    "references/abel1826",
+    "references/lewin1981"
+  ],
+  "tags": [
+    "pentagon",
+    "rogers-five-term",
+    "archimedean-wall",
+    "q-logarithm",
+    "log-squared-correction"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.QRogersAnalyticContinuation",
+  "text": "q-rogers-pentagon-archimedean.md",
+  "provenance": "authored"
+}

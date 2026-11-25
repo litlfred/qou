@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/sections/page-010",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 10",
+  "pageStart": 10,
+  "pageEnd": 10,
+  "contains": [
+    "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/prose-page-010",
+    "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/thm-page-010-01",
+    "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/lem-page-010-02",
+    "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/lem-page-010-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/yanagihara-1980-meromorphic-solutions-difference-equations/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/yanagihara-1980-meromorphic-solutions-difference-equations/manifest.jsonld",
+  "provenance": "ingested"
+}

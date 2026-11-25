@@ -1,0 +1,2021 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2311.14221v2",
+  "title": "arxiv-2311.14221v2",
+  "variant": "pdf",
+  "pages": 48,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Background",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-background"
+    },
+    {
+      "level": 2,
+      "title": "Our approach",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-our-approach"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "1",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-1-preliminaries"
+    },
+    {
+      "level": 1,
+      "title": "Representations of tensor categories",
+      "number": "2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-2-representations-of-tensor-categories"
+    },
+    {
+      "level": 2,
+      "title": "Finite tensor categories",
+      "number": "2.1",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-21-finite-tensor-categories"
+    },
+    {
+      "level": 2,
+      "title": "Module categories over tensor categories",
+      "number": "2.2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-22-module-categories-over-tensor-categories"
+    },
+    {
+      "level": 2,
+      "title": "The internal Hom",
+      "number": "2.3",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-23-the-internal-hom"
+    },
+    {
+      "level": 1,
+      "title": "The (co)end for module categories",
+      "number": "3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-3-the-coend-for-module-categories"
+    },
+    {
+      "level": 2,
+      "title": "Existence of (co)ends",
+      "number": "3.1",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-31-existence-of-coends"
+    },
+    {
+      "level": 1,
+      "title": "Hopf algebras in braided tensor categories",
+      "number": "4",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-4-hopf-algebras-in-braided-tensor-categories"
+    },
+    {
+      "level": 2,
+      "title": "Hopf algebras in braided tensor categories",
+      "number": "4.1",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-4-hopf-algebras-in-braided-tensor-categories"
+    },
+    {
+      "level": 2,
+      "title": "Yetter-Drinfeld modules",
+      "number": "4.2",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-42-yetter-drinfeld-modules"
+    },
+    {
+      "level": 1,
+      "title": "Monoidal module categories",
+      "number": "5",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-5-monoidal-module-categories"
+    },
+    {
+      "level": 2,
+      "title": "Sections of monoidal functors",
+      "number": "5.1",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-51-sections-of-monoidal-functors"
+    },
+    {
+      "level": 2,
+      "title": "Some natural module transformations",
+      "number": "5.2",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-52-some-natural-module-transformations"
+    },
+    {
+      "level": 1,
+      "title": "Fiber functors and reconstruction results",
+      "number": "6",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-6-fiber-functors-and-reconstruction-results"
+    },
+    {
+      "level": 2,
+      "title": "Coalgebras constructed from a coend",
+      "number": "6.1",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-61-coalgebras-constructed-from-a-coend"
+    },
+    {
+      "level": 2,
+      "title": "Some auxiliary results",
+      "number": "6.2",
+      "page": 30,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-62-some-auxiliary-results"
+    },
+    {
+      "level": 2,
+      "title": "Reconstruction results",
+      "number": "6.3",
+      "page": 32,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-63-reconstruction-results"
+    },
+    {
+      "level": 2,
+      "title": "Hopf algebras in C constructed from a coend",
+      "number": "6.4",
+      "page": 35,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-64-hopf-algebras-in-c-constructed-from-a-coend"
+    },
+    {
+      "level": 2,
+      "title": "The antipode of H(F)",
+      "number": "6.5",
+      "page": 40,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-65-the-antipode-of-hf"
+    },
+    {
+      "level": 1,
+      "title": "Examples and Applications",
+      "number": "7",
+      "page": 44,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-7-examples-and-applications"
+    },
+    {
+      "level": 2,
+      "title": "Generic Example",
+      "number": "7.1",
+      "page": 44,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-71-generic-example"
+    },
+    {
+      "level": 2,
+      "title": "Generic Consequences",
+      "number": "7.2",
+      "page": 45,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-72-generic-consequences"
+    },
+    {
+      "level": 2,
+      "title": "Lifting and cocycles deformations",
+      "number": "7.3",
+      "page": 45,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-73-lifting-and-cocycles-deformations"
+    },
+    {
+      "level": 2,
+      "title": "The logarithmic Kazhdan Lusztig conjecture",
+      "number": "7.4",
+      "page": 45,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-74-the-logarithmic-kazhdan-lusztig-conjecture"
+    },
+    {
+      "level": 1,
+      "title": "Questions",
+      "number": "8",
+      "page": 47,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-8-questions"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 47,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 330,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tensor categories",
+          "heading": false
+        },
+        {
+          "term": "hopf alge",
+          "heading": false
+        },
+        {
+          "term": "braided tensor",
+          "heading": false
+        },
+        {
+          "term": "module categories",
+          "heading": false
+        },
+        {
+          "term": "hopf algebras",
+          "heading": false
+        },
+        {
+          "term": "lentner",
+          "heading": false
+        },
+        {
+          "term": "mombelli",
+          "heading": false
+        },
+        {
+          "term": "reconstruction",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:2311.14221v2 [math.QA] 16 May 2024 FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS SIMON LENTNER AND MART´IN MOMBELLI Abstract. The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B →C is an exact faithful monoidal functor of tensor categories, one would like to realize B as category of representations of a braided Hopf alge- bra H(F)",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2311.14221v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "Introduction",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-background",
+      "number": null,
+      "title": "Background",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 415,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "functor widehat",
+          "heading": false
+        },
+        {
+          "term": "monoidal functor",
+          "heading": false
+        },
+        {
+          "term": "fibre functor",
+          "heading": false
+        },
+        {
+          "term": "monoidal category",
+          "heading": false
+        },
+        {
+          "term": "mathrm comod",
+          "heading": false
+        },
+        {
+          "term": "coend int",
+          "heading": false
+        },
+        {
+          "term": "equation vspace",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        }
+      ],
+      "extract": "The main objective of the present paper is to present a version of the Tannaka-Krein type reconstruction theorems. It is known that if $\\Bc$ is a $\\ku$-linear abelian locally finite category, $F:\\Bc\\to \\vect_\\ku$ is a fibre functor, that is an exact faithful functor, then the coend $$ C=\\int^{B\\in \\Bc} F(B)\\otk F(B)^*,$$ has structure of $\\ku$-coalgebra, and the functor $F$ factorizes as \\begin{equation*} \\xymatrix{",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-our-approach",
+      "number": null,
+      "title": "Our approach",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 802,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monoidal module",
+          "heading": false
+        },
+        {
+          "term": "monoidal functor",
+          "heading": false
+        },
+        {
+          "term": "rigid monoidal",
+          "heading": false
+        },
+        {
+          "term": "module categories",
+          "heading": false
+        },
+        {
+          "term": "relative coend",
+          "heading": false
+        },
+        {
+          "term": "module category",
+          "heading": false
+        },
+        {
+          "term": "braided tensor",
+          "heading": false
+        },
+        {
+          "term": "monoidal product",
+          "heading": false
+        }
+      ],
+      "extract": "The point of view of this paper owes a lot to \\cite{PS}. However, we shall work only with finite categories. Let $\\ku$ be an arbitrary field, and let $\\Bc, \\vc$ be finite $\\ku$-linear abelian categories. Assume both $\\ca, \\Bc$ are rigid monoidal categories, and $F:\\Bc\\to \\vc$ is a monoidal functor. If $F$ has a {\\it section} $G:\\vc\\to \\Bc$, that is $F\\circ G\\simeq \\Id_\\vc$ as monoidal functors, then it is possible",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 120,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "humboldt foundation",
+          "heading": false
+        },
+        {
+          "term": "von humboldt",
+          "heading": false
+        },
+        {
+          "term": "alexander von",
+          "heading": false
+        },
+        {
+          "term": "done during",
+          "heading": false
+        }
+      ],
+      "extract": "The work of both authors was partially done during the \\emph{Workshop on Hopf algebras and Tensor categories} held in May 2023, in Marburg, Germany. We thank the organizers, and in particular to Istvan Heckenberger. The attendance of M.M., to this workshop, was possible due to a grant of the Alexander von Humboldt Foundation, under a Research Group Linkage Programme. Part of the work of M.M. was done during a visit",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-1-preliminaries",
+      "number": "1",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 282,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "linear category",
+          "heading": false
+        },
+        {
+          "term": "medbreak",
+          "heading": false
+        },
+        {
+          "term": "linear categories",
+          "heading": false
+        },
+        {
+          "term": "vect",
+          "heading": false
+        },
+        {
+          "term": "vector spaces",
+          "heading": false
+        },
+        {
+          "term": "finite dimensional",
+          "heading": false
+        },
+        {
+          "term": "bullet",
+          "heading": false
+        }
+      ],
+      "extract": "Throughout this paper, $\\ku$ will denote an arbitrary field. We shall denote by $\\vect_\\ku$ the category of finite dimensional $\\ku$-vector spaces. A \\emph{finite category} \\cite{EO} is an abelian $\\ku$-linear category such that it has only a finite number of isomorphism classes of simple objects, Hom spaces are finite-dimensional $\\ku$-vector spaces, all objects have finite lenght and every simple object has a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-2-representations-of-tensor-categories",
+      "number": "2",
+      "title": "Representations of tensor categories",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-21-finite-tensor-categories",
+      "number": "2.1",
+      "title": "Finite tensor categories",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 349,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tensor categories",
+          "heading": true
+        },
+        {
+          "term": "quad coev",
+          "heading": false
+        },
+        {
+          "term": "finite tensor",
+          "heading": true
+        },
+        {
+          "term": "duals begin",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "uno",
+          "heading": false
+        },
+        {
+          "term": "end align",
+          "heading": false
+        },
+        {
+          "term": "begin split",
+          "heading": false
+        }
+      ],
+      "extract": "A finite tensor category $\\ca$ is a monoidal rigid category, with simple unit object $\\uno\\in \\ca$. We refer to \\cite{EO} for more details on finite tensor categories. Without loss of generality, we shall assume that tensor categories in this work are strict. \\medbreak If $\\ca, \\Do$ are monoidal categories, a monoidal functor is a functor $F:\\ca\\to \\Do$ equipped with natural isomorphisms $$\\xi_{A,B}:F(A)\\ot F(B)\\to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-22-module-categories-over-tensor-categories",
+      "number": "2.2",
+      "title": "Module categories over tensor categories",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "9",
+      "words": 570,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "triangleright",
+          "heading": false
+        },
+        {
+          "term": "triangleleft",
+          "heading": false
+        },
+        {
+          "term": "modfunctor pentagon",
+          "heading": false
+        },
+        {
+          "term": "module",
+          "heading": true
+        },
+        {
+          "term": "label modfunctor",
+          "heading": false
+        },
+        {
+          "term": "emph module",
+          "heading": false
+        },
+        {
+          "term": "module functors",
+          "heading": false
+        },
+        {
+          "term": "module category",
+          "heading": false
+        }
+      ],
+      "extract": "A left \\emph{module} category over $\\ca$ is a category $\\Mo$ together with a $\\ku$-bilinear bifunctor $\\rhd: \\ca \\times \\Mo \\to \\Mo$, exact in each variable, endowed with natural associativity and unit isomorphisms $$m_{X,Y,M}: (X\\otimes Y)\\triangleright M \\to X\\triangleright (Y\\triangleright M), \\ \\ \\ell_M: \\uno \\triangleright M\\to M.$$ These isomorphisms are subject to the following conditions:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-23-the-internal-hom",
+      "number": "2.3",
+      "title": "The internal Hom",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 181,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm coev",
+          "heading": false
+        },
+        {
+          "term": "internal hom",
+          "heading": true
+        },
+        {
+          "term": "triangleleft",
+          "heading": false
+        },
+        {
+          "term": "begin tikzcd",
+          "heading": false
+        },
+        {
+          "term": "end tikzcd",
+          "heading": false
+        },
+        {
+          "term": "column sep",
+          "heading": false
+        },
+        {
+          "term": "swap",
+          "heading": false
+        },
+        {
+          "term": "uhom",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsection:internal-hom} Let $\\ca$ be a tensor category and $\\Mo$ be a left $\\C$-module category. For any pair of objects $M, N\\in\\Mo$, the \\emph{internal Hom} is an object $\\uhom(M,N)\\in \\C$ representing the left exact functor $$\\Hom_{\\Mo}(-\\triangleright M,N):\\ca^{\\op}\\to \\vect_\\ku.$$ This means that, there are natural isomorphisms $$\\Hom_{\\ca}(X,\\uhom_\\Mo(M,N))\\simeq \\Hom_{\\Mo}(X\\triangleright M,N).$$ The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-3-the-coend-for-module-categories",
+      "number": "3",
+      "title": "The (co)end for module categories",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 15,
+      "labelStart": "10",
+      "labelEnd": "15",
+      "words": 1189,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "triangleright mathrm",
+          "heading": false
+        },
+        {
+          "term": "coend oint",
+          "heading": false
+        },
+        {
+          "term": "textit prebalancing",
+          "heading": false
+        },
+        {
+          "term": "prebalancing beta",
+          "heading": false
+        },
+        {
+          "term": "prebalancing gamma",
+          "heading": false
+        },
+        {
+          "term": "lambda triangleleft",
+          "heading": false
+        },
+        {
+          "term": "module categories",
+          "heading": true
+        },
+        {
+          "term": "simeq oint",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{Section:mcoends} In this Section we recall the notion of \\textit{relative (co)ends}; a tool developed in \\cite{BM} in the context of representations of tensor categories, generalizing the well-known notion of (co)ends in category theory. \\medbreak Let $\\ca$ be a tensor category and $\\Mo$ be a left $\\ca$-module category. Assume that $\\Ac$ is a category and $S:\\Mo^{\\op}\\times \\Mo\\to \\Ac$ is a functor equipped",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-31-existence-of-coends",
+      "number": "3.1",
+      "title": "Existence of (co)ends",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 17,
+      "labelStart": "15",
+      "labelEnd": "17",
+      "words": 508,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "simeq oint",
+          "heading": false
+        },
+        {
+          "term": "coend widetilde",
+          "heading": false
+        },
+        {
+          "term": "triangleleft",
+          "heading": false
+        },
+        {
+          "term": "simeq hom",
+          "heading": false
+        },
+        {
+          "term": "mapsto widetilde",
+          "heading": false
+        },
+        {
+          "term": "functor phi",
+          "heading": false
+        },
+        {
+          "term": "label existence-coend",
+          "heading": false
+        },
+        {
+          "term": "uhom",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{Section_coendExists} In this Section we shall prove that certain (co)ends exists. All these (co)ends will be used in subsequent sections. We shall use ideas from \\cite{Sh5}. \\medbreak Let $\\vc$ be a tensor category, $\\Bc$ be a right $\\vc$-module category. Since our definition of module category includes that the action is right exact in each variable, hypothesis of \\cite[Thm. 2.24]{DSS} are fulfilled. This",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-4-hopf-algebras-in-braided-tensor-categories",
+      "number": "4",
+      "title": "Hopf algebras in braided tensor categories",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 453,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "grau vline",
+          "heading": false
+        },
+        {
+          "term": "grau vlineo",
+          "heading": false
+        },
+        {
+          "term": "grau dmult",
+          "heading": false
+        },
+        {
+          "term": "grau draw",
+          "heading": false
+        },
+        {
+          "term": "grau black",
+          "heading": false
+        },
+        {
+          "term": "braided tensor",
+          "heading": true
+        },
+        {
+          "term": "begin grform",
+          "heading": false
+        },
+        {
+          "term": "end grform",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{Section_Hopf} \\subsection{Hopf algebras in braided tensor categories} Let us briefly recall the notion of Hopf algebras in braided tensor categories, and how their corepresentation categories are again tensor categories. For more details, the reader is referred to \\cite{Majid}, \\cite{Majid2}, \\cite{Ta} and references therein. \\medbreak A \\textit{braided tensor category} is a pair $(\\vc,\\sigma)$ where $\\vc$ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-42-yetter-drinfeld-modules",
+      "number": "4.2",
+      "title": "Yetter-Drinfeld modules",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 438,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "yetter-drinfeld modules",
+          "heading": true
+        },
+        {
+          "term": "grau vline",
+          "heading": false
+        },
+        {
+          "term": "daction grau",
+          "heading": false
+        },
+        {
+          "term": "grau black",
+          "heading": false
+        },
+        {
+          "term": "grau vlineo",
+          "heading": false
+        },
+        {
+          "term": "begin grform",
+          "heading": false
+        },
+        {
+          "term": "end grform",
+          "heading": false
+        },
+        {
+          "term": "rho otimes",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{Section_YD} Let $H$ be a finite dimensional Hopf algebra in $\\vect_\\ku$. Then we shall denote by ${}^H_H\\YD$ the category of finite-dimensional \\textit{Yetter-Drinfeld modules.} An object $V\\in {}^H_H\\YD(\\vect_\\ku)$ is a left $H$-module $\\cdot:H\\otk V\\to V$, and a left $H$-comodule $\\lambda:V\\to H\\otk V$ such that \\begin{equation}\\label{yd-module} \\lambda(h\\cdot v)=h\\_1 v\\_{-1} \\Sc(h\\_3)\\ot h\\_2\\cdot v\\_0,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-5-monoidal-module-categories",
+      "number": "5",
+      "title": "Monoidal module categories",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": "20",
+      "labelEnd": "22",
+      "words": 432,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "triangleright uno",
+          "heading": false
+        },
+        {
+          "term": "uno triangleleft",
+          "heading": false
+        },
+        {
+          "term": "simeq uno",
+          "heading": false
+        },
+        {
+          "term": "edge node",
+          "heading": false
+        },
+        {
+          "term": "tens-acting begin",
+          "heading": false
+        },
+        {
+          "term": "label tens-acting",
+          "heading": false
+        },
+        {
+          "term": "monoidal",
+          "heading": true
+        },
+        {
+          "term": "tensor category",
+          "heading": false
+        }
+      ],
+      "extract": "Given $\\vc$, $\\Bc$ tensor categories. We shall define what means that a tensor category $\\vc$ \\textit{acts} on $\\Bc$. \\begin{defi}\\label{definition:monoidal-mod} We call $\\Bc$ a \\emph{monoidal left $\\vc$-module category} if $\\Bc$ is a left $\\vc$-module category, with action given by $\\triangleright:\\vc\\times \\Bc\\to \\Bc, $ such that $\\uno\\triangleright\\uno\\simeq \\uno,$ and there are natural isomorphisms $l_{X,B}: X",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-51-sections-of-monoidal-functors",
+      "number": "5.1",
+      "title": "Sections of monoidal functors",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 24,
+      "labelStart": "22",
+      "labelEnd": "24",
+      "words": 775,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uno triangleleft",
+          "heading": false
+        },
+        {
+          "term": "monoidal",
+          "heading": true
+        },
+        {
+          "term": "monoidal functor",
+          "heading": false
+        },
+        {
+          "term": "monoidal module",
+          "heading": false
+        },
+        {
+          "term": "medbreak item",
+          "heading": false
+        },
+        {
+          "term": "tensor functor",
+          "heading": false
+        },
+        {
+          "term": "right monoidal",
+          "heading": false
+        },
+        {
+          "term": "forgetful functor",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{defi}\\label{def_section} Let $\\vc, \\Bc$ be tensor categories. If $F:\\Bc\\to \\vc$ is a tensor functor, a \\textit{section} to $F$ is a right exact tensor functor $G:\\vc\\to \\Bc$ such that $F\\circ G\\simeq \\Id_\\vc$ as monoidal functors. \\end{defi} \\begin{exa} \\begin{enumerate} \\item Any (linear) tensor functor $F:\\Bc \\to \\vect_\\ku$ has a canonical section given by $$G:\\vect_\\ku \\to \\Bc,$$ $$G(V)= V \\bullet \\uno.$$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-52-some-natural-module-transformations",
+      "number": "5.2",
+      "title": "Some natural module transformations",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 26,
+      "labelStart": "24",
+      "labelEnd": "26",
+      "words": 708,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uno triangleleft",
+          "heading": false
+        },
+        {
+          "term": "natural module",
+          "heading": true
+        },
+        {
+          "term": "natural transformations",
+          "heading": true
+        },
+        {
+          "term": "module functor",
+          "heading": false
+        },
+        {
+          "term": "monoidal module",
+          "heading": false
+        },
+        {
+          "term": "eqref monoidal-mod-functor",
+          "heading": false
+        },
+        {
+          "term": "module category",
+          "heading": false
+        },
+        {
+          "term": "module structure",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsection:nat-bimod} It is known that natural transformations between additive functors are additive. For example, if $(F,\\xi)$ is an additive monoidal functor, then, natural isomorphisms $$\\xi_{A,B}:F(A)\\ot F(B)\\to F(A\\ot B), $$ are additive in each variable. In this section, we shall study what happens when $F$ is a monoidal module functor. We aim at proving that $\\xi$ is a \\textit{module} natural",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-6-fiber-functors-and-reconstruction-results",
+      "number": "6",
+      "title": "Fiber functors and reconstruction results",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "26",
+      "labelEnd": "26",
+      "words": 151,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reconstruction",
+          "heading": true
+        },
+        {
+          "term": "fiber",
+          "heading": true
+        },
+        {
+          "term": "fiber functor",
+          "heading": false
+        },
+        {
+          "term": "coend",
+          "heading": false
+        }
+      ],
+      "extract": "It is a classical result that, out of a fiber functor, which is a monoidal, exact and faithful functor $F:\\Bc\\to \\vect_\\ku$, one can reconstruct a (usual) Hopf algebra $H$ such that $\\Bc$ is monoidally equivalent to the category of left $H$-comodules. We shall generalize these reconstruction theorems for a fiber functor $F:\\Bc\\to \\vc$, where $\\vc$ is an arbitrary braided tensor category acting monoidally on $\\Bc$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-61-coalgebras-constructed-from-a-coend",
+      "number": "6.1",
+      "title": "Coalgebras constructed from a coend",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 30,
+      "labelStart": "26",
+      "labelEnd": null,
+      "words": 1191,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coend",
+          "heading": true
+        },
+        {
+          "term": "widehat psi",
+          "heading": false
+        },
+        {
+          "term": "simeq oint",
+          "heading": false
+        },
+        {
+          "term": "eqref dinat",
+          "heading": false
+        },
+        {
+          "term": "dinatural transformations",
+          "heading": false
+        },
+        {
+          "term": "eqref coproduct-c",
+          "heading": false
+        },
+        {
+          "term": "circ widehat",
+          "heading": false
+        },
+        {
+          "term": "begin lema",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\vc$ be a tensor category, and $\\Bc$ be a right $\\vc$-module category. For the rest of this section, $(F,c):\\Bc\\to \\vc$ will denote a right exact module functor. \\medbreak Consider the functor $$S^F:\\Bc^{\\op}\\times \\Bc\\to \\vc, $$ $$S^F(A,B)=F(B)\\ot {}^*F(A).$$ This functor has a canonical prebalancing, given by \\begin{equation}\\label{preb-s2}\\begin{split} \\beta^X_{A,B}: F(B)\\ot {}^*F(A \\triangleleft X) \\to F(B",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-62-some-auxiliary-results",
+      "number": "6.2",
+      "title": "Some auxiliary results",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 32,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 661,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "widetilde triangleleft",
+          "heading": false
+        },
+        {
+          "term": "triangleleft coev",
+          "heading": false
+        },
+        {
+          "term": "lambda triangleleft",
+          "heading": false
+        },
+        {
+          "term": "widetilde rho",
+          "heading": false
+        },
+        {
+          "term": "widetilde psi",
+          "heading": false
+        },
+        {
+          "term": "dinatural transformations",
+          "heading": false
+        },
+        {
+          "term": "eqref dinat",
+          "heading": false
+        },
+        {
+          "term": "relative coend",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we shall present some technical results that will be used later. In particular, these results will be used in the proof of our main result Theorem \\ref{recons-th}. \\medbreak Let $\\Bc$ be a right $\\vc$-module category, and $(F,c):\\Bc\\to \\vc$ be a module functor. To make calculations easier, we shall assume that the associativity of the $\\vc$-module category $\\Bc$ is trivial. Recall the relative coend",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-63-reconstruction-results",
+      "number": "6.3",
+      "title": "Reconstruction results",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 35,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1050,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "triangleleft coev",
+          "heading": false
+        },
+        {
+          "term": "widetilde triangleleft",
+          "heading": false
+        },
+        {
+          "term": "triangleleft rho",
+          "heading": false
+        },
+        {
+          "term": "delta triangleleft",
+          "heading": false
+        },
+        {
+          "term": "comodule morphism",
+          "heading": false
+        },
+        {
+          "term": "quad widetilde",
+          "heading": false
+        },
+        {
+          "term": "left comodule",
+          "heading": false
+        },
+        {
+          "term": "comodule structure",
+          "heading": false
+        }
+      ],
+      "extract": "The following Theorem is one of our main results and is a generalization of \\cite[Thm. 2.2.8]{PS}. \\begin{teo}\\label{recons-th} Let $\\vc$ be a tensor category, and $\\Bc$ be a right $\\vc$-module category. Let $(F,c):\\Bc\\to \\vc$ be an exact and faithful module functor. Let $C=\\oint^{B\\in \\Bc} F(B)\\ot {}^*F(B)\\in\\vc$ be the relative coend coalgebra introduced in Proposition \\ref{coalg-coend} and consider its category",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-64-hopf-algebras-in-c-constructed-from-a-coend",
+      "number": "6.4",
+      "title": "Hopf algebras in C constructed from a coend",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 40,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1394,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boxtimes mathcal",
+          "heading": false
+        },
+        {
+          "term": "triangleleft",
+          "heading": false
+        },
+        {
+          "term": "coend",
+          "heading": true
+        },
+        {
+          "term": "dinatural transformations",
+          "heading": false
+        },
+        {
+          "term": "ref hopf-rec",
+          "heading": false
+        },
+        {
+          "term": "medbreak begin",
+          "heading": false
+        },
+        {
+          "term": "coev",
+          "heading": false
+        },
+        {
+          "term": "epf begin",
+          "heading": false
+        }
+      ],
+      "extract": "In the case $\\Bc$ is a monoidal $\\vc$-module category, and the functor $(F,c,\\xi):\\Bc\\to \\vc$ is a monoidal module functor, one can endow the coalgebra $C=C(F)$ with a Hopf algebra structure. In this Section, we shall explain the construction of the product and antipode on $C(F).$ The new hypothesis needed to construct such Hopf algebra is that $\\vc$ posses a braiding. \\medbreak To construct the product $m:C(F)\\ot",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-65-the-antipode-of-hf",
+      "number": "6.5",
+      "title": "The antipode of H(F)",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 44,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1549,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "triangleleft coev",
+          "heading": false
+        },
+        {
+          "term": "alpha triangleleft",
+          "heading": false
+        },
+        {
+          "term": "antipode",
+          "heading": true
+        },
+        {
+          "term": "reconstructed antipode",
+          "heading": false
+        },
+        {
+          "term": "eqref antipode",
+          "heading": false
+        },
+        {
+          "term": "epf begin",
+          "heading": false
+        },
+        {
+          "term": "ref antipode-natural",
+          "heading": false
+        },
+        {
+          "term": "begin lema",
+          "heading": false
+        }
+      ],
+      "extract": "In the next results we shall construct an antipode $S:H(F)\\to H(F)$, making the bialgebra $ H(F)$ a Hopf algebra in $\\vc$. \\begin{lema}\\label{antipode-lema} Let $(\\vc,\\sigma)$ be a braided tensor category, and $\\Bc$ be a monoidal right $\\vc$-module category. Let $(F,c):\\Bc\\to \\vc$ be an exact and faithful monoidal module functor. For any $B\\in \\Bc$, $V\\in \\vc$ there are natural isomorphisms",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-7-examples-and-applications",
+      "number": "7",
+      "title": "Examples and Applications",
+      "level": 1,
+      "pageStart": 44,
+      "pageEnd": 44,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-023-71-generic-example",
+      "number": "7.1",
+      "title": "Generic Example",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 45,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 293,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "leftarrow rep",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "end exa",
+          "heading": false
+        },
+        {
+          "term": "forgetful functor",
+          "heading": false
+        },
+        {
+          "term": "begin exa",
+          "heading": false
+        },
+        {
+          "term": "tensor category",
+          "heading": false
+        },
+        {
+          "term": "vect",
+          "heading": false
+        },
+        {
+          "term": "iota",
+          "heading": false
+        }
+      ],
+      "extract": "The next example was treated along the paper. At the end we proved that the reconstructed Hopf algebra from the forgetful functor $F:{^H}\\vc\\to \\vc$ coincides with $H.$ \\begin{exa} Let $H$ be a Hopf algebra in a braided finite tensor category $\\vc$ and consider the tensor category $\\Bc={^H}\\vc$. Then the forgetful functor admits an exact faithful monoidal functor $F:{^H}\\vc\\to \\vc$ and the counit $\\varepsilon_H$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-72-generic-consequences",
+      "number": "7.2",
+      "title": "Generic Consequences",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 45,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 101,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exa",
+          "heading": false
+        },
+        {
+          "term": "antipode-natural",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        }
+      ],
+      "extract": "Our results has certain general implications, for example \\begin{exa} If $(\\vc, \\sigma)$ is a braided tensor category, then the forgetful functor $f:Z(\\vc)\\to \\vc$ has a section $G:\\vc\\to Z(\\vc)$, $G(V)=(V, \\sigma_V)$. Theorems \\ref{recons-th} and \\ref{antipode-natural} imply that there exists a Hopf algebra $H\\in \\vc$ such that $Z(\\vc)\\simeq {}^H\\vc$. For $\\vc=\\Rep(H)$ for a factorizable Hopf algebra $H$ this can",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-73-lifting-and-cocycles-deformations",
+      "number": "7.3",
+      "title": "Lifting and cocycles deformations",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 45,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 201,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lifting",
+          "heading": true
+        },
+        {
+          "term": "mathrm comod",
+          "heading": false
+        },
+        {
+          "term": "cocycle twist",
+          "heading": false
+        },
+        {
+          "term": "tensor functor",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "question",
+          "heading": false
+        }
+      ],
+      "extract": "In the classification of (e.g. pointed) Hopf algebras $H$ the strategy in the Andruskiewisch-Schneider program \\cite{AS10} is to consider the coradical $H_0$ (which is assumed to be a Hopf algebra, for example a group ring) and classify the possible Nichols algebras $R$, and then obtain $H$ as a lifting of $\\mathrm{gr}(H)=R\\#H_0$. It is an important question to determine whether this lifting is a $2$-cocycle twist,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-74-the-logarithmic-kazhdan-lusztig-conjecture",
+      "number": "7.4",
+      "title": "The logarithmic Kazhdan Lusztig conjecture",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 47,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 505,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rep loc",
+          "heading": false
+        },
+        {
+          "term": "cite clr",
+          "heading": false
+        },
+        {
+          "term": "clr section",
+          "heading": false
+        },
+        {
+          "term": "mathcal lambda",
+          "heading": false
+        },
+        {
+          "term": "vect lambda",
+          "heading": false
+        },
+        {
+          "term": "nichols algebra",
+          "heading": false
+        },
+        {
+          "term": "cong mathcal",
+          "heading": false
+        },
+        {
+          "term": "subset mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "In conformal field theory, there is in good situations a modular tensor category of representations of a vertex algebra $\\mathcal{V}$, which reflects the analytic properties for example of solution spaces to certain differential equations (e.g. the braiding reflects the monodromy around the singularity $z=0$). One is often confronted with the very difficult question to determine the representation category of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-8-questions",
+      "number": "8",
+      "title": "Questions",
+      "level": 1,
+      "pageStart": 47,
+      "pageEnd": 47,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 113,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "begin question",
+          "heading": false
+        },
+        {
+          "term": "end question",
+          "heading": false
+        },
+        {
+          "term": "coradical",
+          "heading": false
+        },
+        {
+          "term": "yetter-drinfeld",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{question} The result should be applicable if $\\vc$ is merely locally finite tensor category an/or if $\\mathcal{N}$ is infinite. The example we have in mind is maybe the quantum group $U_q(\\mathfrak{g})$ at generic $q$. \\end{question} \\begin{question} For given classes of semisimple modular tensor categories $\\mathcal{C}$ (for example: the category of representations of an affine Lie algebra at positive",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 47,
+      "pageEnd": 48,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 516,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braided tensor",
+          "heading": false
+        },
+        {
+          "term": "lentner",
+          "heading": false
+        },
+        {
+          "term": "hopf algebras",
+          "heading": false
+        },
+        {
+          "term": "tensor categories",
+          "heading": false
+        },
+        {
+          "term": "braided groups",
+          "heading": false
+        },
+        {
+          "term": "squared hopf",
+          "heading": false
+        },
+        {
+          "term": "cat egories",
+          "heading": false
+        },
+        {
+          "term": "pointed hopf",
+          "heading": false
+        }
+      ],
+      "extract": "[1] I. Angiono and A. Garcia Iglesias, Pointed Hopf algebras: a guided tour to the liftings, Rev. Colomb. Math. 53 (2019) p. 1-44. [2] N. Andruskiewitsch and H.-J. Schneider, On the classiﬁcation of ﬁnite- dimensional pointed Hopf algebras, Ann. of Math. 171/1 (2010), 375–417. [3] N. Bortolussi and M. Mombelli. (Co)ends for representations of tensor cat- egories, Theory and Applications of Categories, Vol. 37, No.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Background"
+        ]
+      },
+      "found_not_listed": {
+        "count": 1,
+        "items": [
+          "2 If F is exact (respect. faithful) then bF is exact (respect. faithful)."
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "triangleleft uno",
+      "heading": false
+    },
+    {
+      "term": "triangleleft coev",
+      "heading": false
+    },
+    {
+      "term": "triangleleft widetilde",
+      "heading": false
+    },
+    {
+      "term": "triangleleft end",
+      "heading": false
+    },
+    {
+      "term": "triangleleft rho",
+      "heading": false
+    },
+    {
+      "term": "lambda triangleleft",
+      "heading": false
+    },
+    {
+      "term": "delta triangleleft",
+      "heading": false
+    },
+    {
+      "term": "gamma triangleleft",
+      "heading": false
+    },
+    {
+      "term": "alpha triangleleft",
+      "heading": false
+    },
+    {
+      "term": "module functor",
+      "heading": false
+    },
+    {
+      "term": "triangleright uno",
+      "heading": false
+    },
+    {
+      "term": "tensor functor",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 30,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 30,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p47); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 30 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2311.14221v2"
+  }
+}

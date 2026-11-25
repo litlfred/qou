@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-confinement-sdp-multi-operator",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:confinement-sdp-multi-operator",
+  "kind": "remark",
+  "title": "Multi-operator binding from active dual support",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-confinement-sdp"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-confinement-sdp",
+  "tags": [
+    "interpretation",
+    "multi-operator-binding",
+    "active-support",
+    "shell-closure",
+    "magic-numbers"
+  ],
+  "text": "confinement-sdp-multi-operator.md",
+  "provenance": "authored"
+}

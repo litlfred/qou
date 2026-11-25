@@ -1,0 +1,44 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-ph-9306237v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-ph-9306237v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 11,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-ph/9306237v1  7 Jun 1993\nKEK-TH-349\nKEK preprint 92-169\nApril, 1993\nChiral Perturbation to One Loop\nIncluding the ρ Meson\nMasaharu Tanabashi∗\nNational Laboratory for High Energy Physics (KEK)\nTsukuba, Ibaraki 305, Japan\nAbstract\nWe formulate the chiral perturbation theory at the one loop level in the ef-\nfective lagrangian including the ρ meson as a dynamical gauge boson of a hidden\nlocal symmetry(HLS). The size of radiative correction to the phenomenological\nparameter a of HLS is estimated to be about 10%. The complete list of O(E4)\nterms is given and the one loop counter terms are",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9306237v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "../sections/sec-000-references.md",
+      "narrative": null,
+      "content": "[1] S. Weinberg, Physica 96A (1979) 327.\n[2] J. Gasser and H. Leutwyler, Ann. Phys. (N.Y.) 158 (1984) 142; Nucl. Phys. B250\n(1985) 465.\n[3] B. Holdom and J. Terning, Phys. Lett. B247 (1990) 88; M. Golden and L. Randall,\nNucl. Phys. B361 (1991) 3; H. Georgi, Nucl. Phys. B363 (1991) 301; A.F. Falk,\nM. Luke, E.H. Simmons, Nucl. Phys. B365 (1991) 523.\n[4] M. Bando, T. Kugo, S. Uehara, K. Yamawaki and T. Yanagida, Phys. Rev. Lett.\n54 (1985) 1215; For a review, see M. Bando, T. Kugo and K. Yamawaki, Phys.\nReports 164 (1988) 218.\n[5] S. Weinberg, Phys. Rev. 166 (1968) 1568.\n[6] J.J. Sakurai, Currents",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

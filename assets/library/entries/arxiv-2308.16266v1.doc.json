@@ -1,0 +1,334 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2308.16266v1",
+  "title": "Distilling the essential elements of nuclear binding via neural-network quantum states",
+  "variant": "pdf",
+  "pages": 7,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Distilling the essential elements of nuclear binding via neural-network quantum states",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-distilling-the-essential-elements-of-nuclear-bin"
+    },
+    {
+      "level": 2,
+      "title": "Abstract",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Appendix: Wigner-Eckart",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-appendix-wigner-eckart"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-distilling-the-essential-elements-of-nuclear-bin",
+      "number": null,
+      "title": "Distilling the essential elements of nuclear binding via neural-network quantum states",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 7,
+      "labelStart": "1",
+      "labelEnd": "7",
+      "words": 5016,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nuclear binding",
+          "heading": true
+        },
+        {
+          "term": "neural-network quantum",
+          "heading": true
+        },
+        {
+          "term": "giuseppe carleo",
+          "heading": false
+        },
+        {
+          "term": "alessandro lovato",
+          "heading": false
+        },
+        {
+          "term": "πeft hamiltonian",
+          "heading": false
+        },
+        {
+          "term": "nucl-th",
+          "heading": false
+        },
+        {
+          "term": "monte carlo",
+          "heading": false
+        },
+        {
+          "term": "medium-mass nuclei",
+          "heading": false
+        }
+      ],
+      "extract": "Alex Gnech,1, 2 Bryce Fore,3 and Alessandro Lovato2, 3, 4 1European Center for Theoretical Studies in Nuclear Physics and Related Areas (ECT*) and Fondazione Bruno Kessler Strada delle Tabarelle 286, I-38123 Villazzano (TN), Italy 2INFN-TIFPA Trento Institute of Fundamental Physics and Applications, 38123 Trento, Italy 3Physics Division, Argonne National Laboratory, Argonne, IL 60439, USA 4Computational Science",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-appendix-wigner-eckart",
+      "number": null,
+      "title": "Appendix: Wigner-Eckart",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 298,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wigner-eckart",
+          "heading": true
+        },
+        {
+          "term": "magnetic moments",
+          "heading": false
+        },
+        {
+          "term": "wigner-eckart theorem",
+          "heading": false
+        },
+        {
+          "term": "nqs",
+          "heading": false
+        },
+        {
+          "term": "exploiting",
+          "heading": false
+        }
+      ],
+      "extract": "In this Section, we outline the procedure used to com- pute the magnetic moments of nuclei with J < L + S, such as 15O and 15N. The starting point are the NQS with with good Lz, which are linear combinations of J, Jz eigenstates |L, Lz; S, Sz⟩= X J,Jz ⟨L, Lz; S, Sz|J, Jz⟩|J, Jz⟩, (A.4) where ⟨L, Lz; S, Sz|J, Jz⟩are the Clebsch-Gordan coef- ficient [60]. We define the magnetic moments of these states as µLz = ⟨L, Lz;",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "nqs onto",
+      "heading": true
+    },
+    {
+      "term": "giuseppe carleo",
+      "heading": false
+    },
+    {
+      "term": "alessandro lovato",
+      "heading": false
+    },
+    {
+      "term": "magnetic moments",
+      "heading": true
+    },
+    {
+      "term": "πeft hamiltonian",
+      "heading": false
+    },
+    {
+      "term": "medium-mass nuclei",
+      "heading": false
+    },
+    {
+      "term": "atomic nuclei",
+      "heading": false
+    },
+    {
+      "term": "closed-shell nuclei",
+      "heading": false
+    },
+    {
+      "term": "light nuclei",
+      "heading": false
+    },
+    {
+      "term": "heavier nuclei",
+      "heading": false
+    },
+    {
+      "term": "selected nuclei",
+      "heading": true
+    },
+    {
+      "term": "nucl-th",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "VMC-NQS energy per particle (upper panel) and charge radii (lower panel) of selected nuclei with up to A = 20 nucleons as obtained from the LO EFT Hamiltonian “o” of Ref. [30] with R3 = 1.1 fm compared with experimental data",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Total angular momentum, its projection on the zaxis, and the magnetic moment of 7Li while projecting the NQS onto the state with J, Jz = 3/2, 3/2. The magnetic field Bz = 2.5 MeV is switched off after 2500 iterations as indicated by the vertical green line. The orange dashed lines represent the targ",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Magnetic moments of selected A ≤20 nuclei obtained from VMC-NQS calculations compared with experimental data",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 4,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 2,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "3 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 6
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 2 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2308.16266v1"
+  }
+}

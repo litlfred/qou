@@ -1,0 +1,158 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1901.08945v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1901.08945v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The concept of a *twisted sheaf* goes back to Giraud and his formal treatment of the Brauer group in terms of *gerbes* [@giraud1971 Section V.4]. During the last two decades, twisted sheaves and their derived categories have gained a renewed interest, starting with the thesis of Căldăraru [@caldararu2000], who studied moduli problems for semi-stable sheaves on varieties, and the work by de Jong [@dejong2004] and Lieblich [@lieblich2004; @lieblich2015] on the period--index problem for the Brauer group. For a survey on later developments, we refer to Lieblich [@lieblich2017 Section 4].\n\nAlthough",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1901.08945v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1901.08945v2  [math.AG]  19 Feb 2019\nDECOMPOSITIONS OF DERIVED CATEGORIES OF GERBES\nAND OF FAMILIES OF BRAUER–SEVERI VARIETIES\nDANIEL BERGH AND OLAF M. SCHN¨URER\nAbstract. It is well known that the category of quasi-coherent sheaves on\na gerbe banded by a diagonalizable group decomposes according to the char-\nacters of the group.\nWe establish the corresponding decomposition of the\nunbounded derived category of complexes of sheaves with quasi-coherent co-\nhomology. This generalizes earlier work by Lieblich for gerbes over schemes\nwhereas our gerbes may live over arbitrary algebraic stacks",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1901.08945v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Torsion pairs and decompositions of derived categories",
+      "pageStart": 5,
+      "pageEnd": 13,
+      "target": "../sections/sec-001-2-torsion-pairs-and-decompositions-of-derived-ca.md",
+      "narrative": null,
+      "content": "[]{#sec:torsion-pairs-decomp label=\"sec:torsion-pairs-decomp\"}\n\nWe give criteria ensuring that a torsion pair in an abelian category gives rise to a semi-orthogonal decomposition on the level of derived categories. Our main assumption on the torsion pair is that its two components are abelian subcategories of the ambient abelian category. For bounded derived categories this is straightforward (see Theorem [\\[t:sod-DbBA\\]](#t:sod-DbBA){reference-type=\"ref\" reference=\"t:sod-DbBA\"}) as soon as some foundational results for such torsion pairs are established (see Proposition [\\[p:abelian-torsion-p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1901.08945v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gerbes",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "../sections/sec-002-3-gerbes.md",
+      "narrative": null,
+      "content": "[]{#sec:gerbes-and-twisted label=\"sec:gerbes-and-twisted\"} In this section, we collect some results from the theory on gerbes, bandings by abelian groups and the relation to cohomology. Throughout the section, $S$ will be an arbitrary algebraic stack. By a *stack* we mean a, not necessarily algebraic, stack in groupoids over the big *fppf* site of schemes over $S$. The symbol $\\Delta$ will always denote an abelian group in $S_{\\operatorname{fppf}}$. Later on, we will specialize to the situation when $\\Delta$ is a diagonalizable group. Accordingly, we will use multiplicative notation for $\\Delt",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1901.08945v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted sheaves",
+      "pageStart": 16,
+      "pageEnd": 20,
+      "target": "../sections/sec-003-4-twisted-sheaves.md",
+      "narrative": null,
+      "content": "[]{#sec:quasi-coher-sheav label=\"sec:quasi-coher-sheav\"} In this section, $\\Delta$ will denote a diagonalizable group scheme (over $\\mathop{\\mathrm{Spec}}\\mathbb{Z}$) with character group $A := \\mathop{\\mathrm{Hom}}_{\\mathop{\\mathrm{Spec}}\\mathbb{Z}}(\\Delta, {\\ensuremath{\\mathbb{G}_{\\operatorname{m}}}})$. Recall that $A$ is a finitely generated abelian group. We will usually use multiplicative notation for $A$, except when we identify it with something like the additive group of $\\mathbb{Z}$.\n\nLet $S$ be an algebraic stack. By a $\\Delta$-gerbe on $S$ we mean a $\\Delta_S$-gerbe on $S$. Fix a $\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1901.08945v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The derived category of a gerbe",
+      "pageStart": 20,
+      "pageEnd": 24,
+      "target": "../sections/sec-004-5-the-derived-category-of-a-gerbe.md",
+      "narrative": null,
+      "content": "[]{#sec:decomp-deriv-categ label=\"sec:decomp-deriv-categ\"} In this section we generalize some of the results by Căldăraru [@caldararu2000 Chapter 2] and Lieblich [@lieblich2004 Section 2.2.4] on the basic structure of derived categories of gerbes and twisted sheaves. Throughout the section, we let $\\alpha\\colon X \\to S$ be a gerbe banded by a diagonalizable group $\\Delta$ with character group $A$.\n\n::: definition\n[]{#def:derived-twisted label=\"def:derived-twisted\"} Given a character $\\chi \\colon \\Delta_S \\to {\\ensuremath{\\mathbb{G}_{\\operatorname{m},S}}}$, we say that an object $\\mathcal{F}$ i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1901.08945v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Semi-orthogonal decompositions for Brauer–Severi schemes",
+      "pageStart": 24,
+      "pageEnd": 27,
+      "target": "../sections/sec-005-6-semi-orthogonal-decompositions-for-brauersever.md",
+      "narrative": null,
+      "content": "[]{#sec:brau-severi-vari label=\"sec:brau-severi-vari\"} In this section, we demonstrate how to use the theory of gerbes developed by Giraud to obtain a simple and conceptually appealing proof for the existence of the semi-orthogonal decomposition of the derived category of a Brauer--Severi scheme given by Bernardara [@bernardara-BS-schemes Theorem 4.1]. We start by recalling some basic facts on Brauer--Severi schemes and their trivializing gerbes from [@giraud1971 Example V.4.8].\n\nLet $S$ be an arbitrary algebraic stack. An algebraic stack $P$ over $S$ is called a *Brauer--Severi scheme* over $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1901.08945v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-006-references.md",
+      "narrative": null,
+      "content": "[AOV08] Dan Abramovich, Martin Olsson, and Angelo Vistoli. Tame stacks in positive charac-\nteristic. Ann. Inst. Fourier (Grenoble), 58(4):1057–1091, 2008.\n[Beh03] Kai A. Behrend. Derived l-adic categories for algebraic stacks. Mem. Amer. Math. Soc.,\n163(774):viii+93, 2003.\n[Ber09] Marcello Bernardara. A semiorthogonal decomposition for Brauer-Severi schemes. Math.\nNachr., 282(10):1406–1413, 2009.\n[Ber17] Daniel Bergh. Functorial destackiﬁcation of tame stacks with abelian stabilisers. Compo-\nsitio Mathematica, 153(6):1257–1315, 2017.\n[BM19] Michael K. Brown and Tasos Moulinos. Topological K-th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

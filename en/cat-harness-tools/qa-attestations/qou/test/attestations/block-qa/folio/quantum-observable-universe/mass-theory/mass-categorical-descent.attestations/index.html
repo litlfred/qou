@@ -1,0 +1,1181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/mass-categorical-descent.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../../../assets/navbar/rail-1agswvkam2g.js" defer></script><script src="../../../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../../../.." data-fa-to-root="../../../../../../../../../../..">{"data":"rail-1agswvkam2g","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/mass-categorical-descent.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/mass-categorical-descent.attestations</h1>
+<p class="m">A <a href="../../../../../../../../">qa-attestations</a> node held by <a href="../../../../../../../">qou</a>, at <code>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/mass-categorical-descent.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>block-qa</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;block&quot;,
+  &quot;id&quot;: &quot;folio/quantum-observable-universe/mass-theory/mass-categorical-descent&quot;,
+  &quot;path&quot;: &quot;folio/quantum-observable-universe/mass-theory/mass-categorical-descent&quot;
+}</pre></dd>
+<dt>criteria</dt><dd><pre>{
+  &quot;voice-scholarly-default&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8781d5361c3d&quot;,
+        &quot;ts&quot;: &quot;94fe9fa2e8c6&quot;,
+        &quot;lean&quot;: &quot;fb0438b8c2c6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;voice-ai-slop&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;8781d5361c3d&quot;,
+        &quot;ts&quot;: &quot;94fe9fa2e8c6&quot;,
+        &quot;lean&quot;: &quot;fb0438b8c2c6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;proof-no-placeholder-stub&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f7f9a23623ca&quot;,
+        &quot;ts&quot;: &quot;94fe9fa2e8c6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/lean-proof-vacuity-audit&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;,
+        &quot;agent_skill&quot;: &quot;local/lean-proof-vacuity-audit&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32&quot;,
+      &quot;notes&quot;: &quot;4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): current Lean is honest — real statement/derivation or cited sorry; the 2026-06-22 placeholder-marker fail predates the 2026-06-30 rewrite (hash drift verified). Criterion pass.&quot;
+    }
+  ],
+  &quot;voice-statement-no-interpretation&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f7f9a23623ca&quot;,
+        &quot;ts&quot;: &quot;94fe9fa2e8c6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;The statement is written in standard scholarly mathematical and physics voice.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    }
+  ],
+  &quot;fit-section-chapter&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f7f9a23623ca&quot;,
+        &quot;ts&quot;: &quot;94fe9fa2e8c6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b4ea040723a1332bd55c196ec3957bef43bc0abd&quot;,
+      &quot;notes&quot;: &quot;The block content is well-aligned with the chapter scope.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:35:29.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2dc215f2de4a1a8207927cd6756c468ff664c332&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f7f9a23623ca&quot;,
+        &quot;ts&quot;: &quot;94fe9fa2e8c6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;wall-side-statement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f7f9a23623ca&quot;,
+        &quot;ts&quot;: &quot;94fe9fa2e8c6&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;The sibling Lean file folio/quantum-observable-universe/mass-theory/mass-categorical-descent.lean is missing entirely.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/mass-categorical-descent.md:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;ee282c20716b&quot;,
+        &quot;ts&quot;: &quot;85f8412342dc&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;claude-fable-5-1&quot;,
+        &quot;agent_date&quot;: &quot;2026-09-03T20:29:12Z&quot;,
+        &quot;agent_skill&quot;: &quot;local/dispatch-agent&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-09-03T20:29:12Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4a4e5ce3d2cbbfd6b22fdfc08b74b38323a736e3&quot;,
+      &quot;notes&quot;: &quot;Statement is a units-free descent decomposition of the physically-indexed binding B(Z,N) into Hecke-centre and exceptional-divisor components, matching mass-theory&#39;s archimedean/physical-face regime, with the §7c side flagged in the .ts authorNote; no numeric q_0, MeV, Real.* or order hypothesis appears, and the prior fail judged Lean-sibling presence, not the wall.&quot;,
+      &quot;evidence&quot;: &quot;REGIME. Chapter `mass-theory` is listed in ARCHIMEDEAN_CHAPTERS (folio-assistant/cat-harness/content/pipeline/_folio-chapter-profiles.qou.ts:174-175) with permitted q-regimes {na, symbolic, generic-R, real-positive, real-gt-1, fixed-q0} (:88-90); its manifest docstring calls it &#39;the detailed geometric, archimedean, and physical faces of the mass endomorphism&#39; consuming the algebraic core stated upstream in &#39;The Mass Endomorphism&#39; chapter (mass-theory.ts:5-9). The block sits in section &#39;Geometric face: mass-volume factorisation and crossing expansion&#39; (`sec:mass-geometric-face`, mass-theory.ts:598-600; block listed at :623). So the expected regime is archimedean/physical with symbolic form permitted. STATEMENT TOKENS (the whole .md is the statement; the proof is the separate block mass-categorical-descent-proof). md:4 `B(Z,N) = B^desc + B^trans` — a binding energy indexed by proton/neutron numbers, i.e. a physically-named quantity, but with NO units, NO MeV, NO numeric q_0, NO CODATA, NO m_e, NO Real.*/sqrt/log/exp/cos, NO order hypothesis, NO Vol(K), NO limit. md:7 &#39;center of the Hecke algebra&#39; / &#39;exceptional divisors of the brane blow-up&#39; (categorical). md:10 &#39;Casimir operators&#39;, &#39;volume, pairing, and Wigner terms of the liquid-drop model&#39; (physical phenomenology names), &#39;quantum factorials scaled by Plancherel weights&#39; (algebraic). md:13 &#39;surface boundary, Coulomb charge locus, exchange parity locus, magic-number shell closures&#39; (physical loci), &#39;quantum dilogarithm correction&#39; (formal q-series, no archimedean evaluation asserted), &#39;Schur-Weyl magnetic quantum number&#39; (algebraic), &#39;electromagnetic coupling&#39; (physical). Outside the statement: mass-categorical-descent.ts:52-62 authorNote (kind note, 2026-08-08) &#39;§7c base-ring note (archimedean specialisation) … binding energies B, B_desc, B_trans, B_BW as physical quantities … the block sits on the archimedean side of the §7c wall by construction&#39;. BRANCHES. FAIL-A (generic chapter hard-coding archimedean constructs) does not apply: the chapter is archimedean and the statement hard-codes no archimedean construct anyway. FAIL-B (archimedean-chapter statement that is a purely algebraic identity belonging upstream): the bare sum-split B = B_desc + B_trans is algebraic, but the narrative statement&#39;s content is the identification of the two components with physical loci (liquid-drop volume/pairing/Wigner terms; surface, Coulomb, exchange-parity, magic-number shells) of a physically-indexed B(Z,N) — that is the physical/archimedean face, which is exactly what this chapter is for; it does not belong upstream in the algebraic-core chapter. WARN (mixed regimes unflagged): the statement does mix categorical vocabulary (Hecke centre, Casimir, Plancherel, quantum dilogarithm) with physical vocabulary, but this is the declared purpose of a &#39;faces&#39; chapter, the statement asserts no numerical evaluation on either side, and the .ts authorNote (ts:52-62) explicitly names the side (archimedean by construction). PASS: statement regime matches its chapter regime and the side is flagged in the manifest. PRIOR ENTRY. The 2026-07-07 fail (reviewed_sha 6b830a632a24, field_hash md f7f9a23623ca / ts 94fe9fa2e8c6) cites only &#39;sibling Lean file is MISSING&#39; with evidence md:1 — a Lean-presence complaint, not a wall-side judgement; depends_on is [&#39;md&#39;] and the criterion text never mentions a sibling. It is also stale: current hashes are md ee282c20716b / ts 85f8412342dc. Side note only: no sibling .lean exists, but lean.ref points to the library file folio/quantum-observable-universe/lean/QOU/ParticleInteractions/mass_categorical_descent.lean (present, 10965 bytes), which per AGENTS.md §0a is the intended resolution route; not a wall-side matter. Peers in the same section on this criterion: thurston-volume-additivity pass, nuclear-knot-classification pass, vhat-pair-commutation-trace pass, delta-max-uniform-bound pass, markov-pair-z2 pass; the two fails (crossed-module-euler-characteristic, volume-perturbation-formula) carry the identical &#39;sibling Lean file is missing&#39; template and are the same false-positive class.&quot;
+    }
+  ],
+  &quot;wall-side-proof&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f7f9a23623ca&quot;,
+        &quot;ts&quot;: &quot;94fe9fa2e8c6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b4ea040723a1332bd55c196ec3957bef43bc0abd&quot;,
+      &quot;notes&quot;: &quot;Proof machinery matches the statement regime.&quot;
+    }
+  ],
+  &quot;proof-narrative-lean-equiv&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1b6eab9a63c2&quot;,
+        &quot;ts&quot;: &quot;344d2013e743&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:sidecar-review-2026-11-15&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-16T07:13:31.071Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5f209b510c5b50294fd755d263c17c75d49be3ed&quot;,
+      &quot;evidence&quot;: &quot;Conjecture block: statement-to-Lean equivalence is not applicable; the Lean carrier is a conjecture class, not a proof.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f2a5609184e0&quot;,
+        &quot;ts&quot;: &quot;422f0d51f594&quot;,
+        &quot;lean&quot;: &quot;878089a05175&quot;,
+        &quot;lean_statement&quot;: &quot;df85612ed1e4&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:sidecar-review-2026-11-15&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-17T18:13:37.585Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;677b0a1284456bd582792110bdc22f48ab47322d&quot;,
+      &quot;evidence&quot;: &quot;Re-read 2026-11-17. Conjecture block, so equivalence does not apply. Note for the owner: the Lean carrier mass_categorical_descent derives B_total = B_desc + B_trans from a channel class, while the md now says that split has content only once M and Phi are defined, and neither is. The carrier encodes a weaker, additive form than the md&#39;s items 1-2.&quot;
+    }
+  ],
+  &quot;proof-rater-strategy-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;proof-rater-goal-plausibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;proof-rater-novelty&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;proof-statement-integrity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-self-assuming-projection&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-trivial-true&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-false-premise&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-unused-hypotheses&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-decide-masking&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-false-claim&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f7f9a23623ca&quot;,
+        &quot;ts&quot;: &quot;94fe9fa2e8c6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-false-claim.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:35:29.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2dc215f2de4a1a8207927cd6756c468ff664c332&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-vacuous&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f7f9a23623ca&quot;,
+        &quot;ts&quot;: &quot;94fe9fa2e8c6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-vacuous.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:35:29.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2dc215f2de4a1a8207927cd6756c468ff664c332&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-circular&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f7f9a23623ca&quot;,
+        &quot;ts&quot;: &quot;94fe9fa2e8c6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-circular.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:35:29.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2dc215f2de4a1a8207927cd6756c468ff664c332&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-overclaim&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cd956a6d456f&quot;,
+        &quot;ts&quot;: &quot;94fe9fa2e8c6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T05:50:25.638Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-overclaim.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f7f9a23623ca&quot;,
+        &quot;ts&quot;: &quot;94fe9fa2e8c6&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;qa-reviewer-swarm-32&quot;,
+        &quot;version&quot;: &quot;1.0&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3d013432534476e0631face07ace0a9965f94c53&quot;,
+      &quot;severity&quot;: &quot;critical&quot;,
+      &quot;evidence&quot;: &quot;Table mapping Bethe-Weizsäcker terms (Volume, Pairing, Wigner, Surface, Coulomb, Exchange, Shell, Hook) to Casimir levels and blow-up loci.&quot;,
+      &quot;notes&quot;: &quot;Severe post-hoc rationalization. Mapping macroscopic empirical droplet model terms perfectly to algebraic representation theory constructs is highly suspicious.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:35:29.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2dc215f2de4a1a8207927cd6756c468ff664c332&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-hidden-dof&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f7f9a23623ca&quot;,
+        &quot;ts&quot;: &quot;94fe9fa2e8c6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-hidden-dof.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:35:29.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2dc215f2de4a1a8207927cd6756c468ff664c332&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-non-sequitur&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f7f9a23623ca&quot;,
+        &quot;ts&quot;: &quot;94fe9fa2e8c6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-non-sequitur.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:35:29.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2dc215f2de4a1a8207927cd6756c468ff664c332&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-citation-misuse&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f7f9a23623ca&quot;,
+        &quot;ts&quot;: &quot;94fe9fa2e8c6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-citation-misuse.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:35:29.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2dc215f2de4a1a8207927cd6756c468ff664c332&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-definitional-ambiguity&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f7f9a23623ca&quot;,
+        &quot;ts&quot;: &quot;94fe9fa2e8c6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-definitional-ambiguity.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:35:29.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2dc215f2de4a1a8207927cd6756c468ff664c332&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-empirical-fragility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f7f9a23623ca&quot;,
+        &quot;ts&quot;: &quot;94fe9fa2e8c6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-empirical-fragility.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:35:29.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2dc215f2de4a1a8207927cd6756c468ff664c332&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-physical-implausibility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f7f9a23623ca&quot;,
+        &quot;ts&quot;: &quot;94fe9fa2e8c6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-physical-implausibility.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/mass-categorical-descent.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:35:29.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2dc215f2de4a1a8207927cd6756c468ff664c332&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-reproducibility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f7f9a23623ca&quot;,
+        &quot;ts&quot;: &quot;94fe9fa2e8c6&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-reproducibility.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:35:29.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2dc215f2de4a1a8207927cd6756c468ff664c332&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-referee-verdict&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f7f9a23623ca&quot;,
+        &quot;ts&quot;: &quot;94fe9fa2e8c6&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;Referee verdict: open-objection. Objection: Sibling Lean file is missing.&quot;,
+      &quot;severity&quot;: &quot;critical&quot;,
+      &quot;verdict&quot;: &quot;open-objection&quot;,
+      &quot;referee_argument&quot;: &quot;The referenced Lean sibling file is missing, preventing formal verification of the claims.&quot;,
+      &quot;evidence&quot;: &quot;Referee verdict: open-objection. Objection: Sibling Lean file is missing.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:35:29.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2dc215f2de4a1a8207927cd6756c468ff664c332&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-lean-narrative-divergence&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f7f9a23623ca&quot;,
+        &quot;ts&quot;: &quot;94fe9fa2e8c6&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f3d72fed878bb395c3da0a8557bada5ec408ece0&quot;,
+      &quot;notes&quot;: &quot;The referenced Lean file folio/quantum-observable-universe/mass-theory/mass-categorical-descent.lean is missing, leading to complete divergence.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;The referenced Lean file folio/quantum-observable-universe/mass-theory/mass-categorical-descent.lean is missing, leading to complete divergence.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:35:29.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2dc215f2de4a1a8207927cd6756c468ff664c332&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;milnor-amalgamated-flow&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Rewritten extensively to cut down verbiage and enforce H1-H8. Replaced passives with active voice.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;milnor-editor&quot;,
+        &quot;version&quot;: &quot;v1&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.863814Z&quot;
+      },
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f7f9a23623ca&quot;,
+        &quot;ts&quot;: &quot;94fe9fa2e8c6&quot;
+      }
+    }
+  ],
+  &quot;expo-milnor-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:16:30.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;715a9a708c210d840f41c621cb20b53301cf19b6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-19&quot;
+      }
+    }
+  ],
+  &quot;milnor-brevity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Valid structural intro correctly bridging semantic gaps within complex theoretical constructs.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:35:29.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2dc215f2de4a1a8207927cd6756c468ff664c332&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;voice-branch-jargon&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-08-08T08:19:18Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/branch-jargon-sweep&quot;,
+        &quot;agent_skill&quot;: &quot;local/one-voice-audit&quot;
+      }
+    }
+  ],
+  &quot;trap-negation-contrast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;ee282c20716b&quot;,
+        &quot;ts&quot;: &quot;85f8412342dc&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:v02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T21:35:36.478Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10&quot;,
+      &quot;evidence&quot;: &quot;Full read. No assert-by-denial; the descended/transient split is a genuine decomposition, stated positively.&quot;
+    }
+  ],
+  &quot;trap-rhetorical-pivot&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;ee282c20716b&quot;,
+        &quot;ts&quot;: &quot;85f8412342dc&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:v02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T21:35:36.545Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10&quot;,
+      &quot;evidence&quot;: &quot;No pivot.&quot;
+    }
+  ],
+  &quot;trap-em-dash&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;ee282c20716b&quot;,
+        &quot;ts&quot;: &quot;85f8412342dc&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:v02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T21:35:36.613Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10&quot;,
+      &quot;evidence&quot;: &quot;None.&quot;
+    }
+  ],
+  &quot;trap-triples&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;ee282c20716b&quot;,
+        &quot;ts&quot;: &quot;85f8412342dc&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:v02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T21:35:36.705Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10&quot;,
+      &quot;evidence&quot;: &quot;&#39;volume, pairing, and Wigner terms&#39; are three named liquid-drop terms; the transient list has four items.&quot;
+    }
+  ],
+  &quot;trap-closing-aphorism&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;ee282c20716b&quot;,
+        &quot;ts&quot;: &quot;85f8412342dc&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:v02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T21:35:36.756Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;The block ends on a scope-broadening one-liner that generalises beyond anything the block derived: &#39;The descent decomposition [universally] structures both the mass endomorphism and the electromagnetic coupling.&#39; Nothing above concerns the electromagnetic coupling, so the closer imports a second domain purely for the sake of a wide final line.&quot;,
+      &quot;notes&quot;: &quot;Superlative half fixed inline (see trap-superlative). The remaining structural issue is the electromagnetic-coupling claim itself: proposed either to drop the clause, or to keep it and add a uses[] edge / cross-reference to the block where the EM-coupling descent is actually established.&quot;
+    }
+  ],
+  &quot;trap-meta-commentary&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;ee282c20716b&quot;,
+        &quot;ts&quot;: &quot;85f8412342dc&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:v02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T21:35:36.819Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10&quot;,
+      &quot;evidence&quot;: &quot;None.&quot;
+    }
+  ],
+  &quot;trap-thesis-restatement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;ee282c20716b&quot;,
+        &quot;ts&quot;: &quot;85f8412342dc&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:v02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T21:35:36.876Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10&quot;,
+      &quot;evidence&quot;: &quot;The closer over-generalises rather than restates; recorded under trap-closing-aphorism.&quot;
+    }
+  ],
+  &quot;trap-performed-warmth&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;ee282c20716b&quot;,
+        &quot;ts&quot;: &quot;85f8412342dc&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:v02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T21:35:36.939Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10&quot;,
+      &quot;evidence&quot;: &quot;Institutional register.&quot;
+    }
+  ],
+  &quot;trap-superlative&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;ee282c20716b&quot;,
+        &quot;ts&quot;: &quot;85f8412342dc&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:v02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T21:35:37.006Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10&quot;,
+      &quot;evidence&quot;: &quot;FIX APPLIED. Unqualified universal quantifier removed from the final sentence.&quot;,
+      &quot;notes&quot;: &quot;fix applied: &#39;The descent decomposition universally structures both the mass endomorphism and the electromagnetic coupling.&#39; -&gt; &#39;The descent decomposition structures both the mass endomorphism and the electromagnetic coupling.&#39; Nothing in the block quantifies over a class of decompositions, so &#39;universally&#39; was unearned. Math delimiters re-checked ($$ balanced).&quot;
+    }
+  ],
+  &quot;trap-nonspeakable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;ee282c20716b&quot;,
+        &quot;ts&quot;: &quot;85f8412342dc&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:v02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T21:35:37.072Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10&quot;,
+      &quot;evidence&quot;: &quot;Speakable; &#39;Schur-Weyl magnetic quantum number&#39; is a defined compound.&quot;
+    }
+  ]
+}</pre></dd>
+</dl>
+</main>
+</body>
+</html>

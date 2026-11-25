@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-frobenius-self-duality-forces-lp-dual-extraction",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:frobenius-self-duality-forces-lp-dual-extraction",
+  "kind": "proposition",
+  "title": "Frobenius self-duality of $(H_n(R,q),\\tau)$ forces $\\tau$-extraction to produce LP-dual variables",
+  "tags": [
+    "frobenius-self-duality",
+    "lp-duality",
+    "shadow-price",
+    "markov-trace",
+    "observation-frame",
+    "structural-justification"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.FrobeniusSelfDualityForcesLPDualExtraction",
+  "text": "frobenius-self-duality-forces-lp-dual-extraction.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,42 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-qou-infra-discharges-goncharov-zeta5",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:qou-infra-discharges-goncharov-zeta5",
+  "kind": "conjecture",
+  "title": "QOU's Hecke-NF + Bring-$S_5$ infrastructure discharges Goncharov's depth-3 conjecture at $F = \\mathbb{Q}(\\zeta_5)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-depth-2-identification-bloch-suslin",
+    "papers/quantum-observable-universe/blocks/rem-conway-kt-vol-injectivity-test"
+  ],
+  "cites": [
+    "references/deligne-goncharov2005",
+    "references/bloch2000",
+    "references/kontsevich1995",
+    "references/zagier1986",
+    "references/malkin2021"
+  ],
+  "tags": [
+    "tier:famous",
+    "goncharov-conjecture",
+    "depth-3",
+    "bring-S5",
+    "hecke-NF",
+    "qou-infra-program",
+    "graded-mikusinski",
+    "research-program",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.Observations.QouInfraDischargesGoncharovZeta5",
+  "text": "qou-infra-discharges-goncharov-zeta5.md",
+  "provenance": "authored"
+}

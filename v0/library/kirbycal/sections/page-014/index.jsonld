@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/kirbycal/sections/page-014",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Page 14",
+  "pageStart": 14,
+  "pageEnd": 14,
+  "contains": [
+    "library/kirbycal/blocks/prose-page-014",
+    "library/kirbycal/blocks/prop-page-014-01",
+    "library/kirbycal/blocks/cor-page-014-02",
+    "library/kirbycal/blocks/prop-page-014-03"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kirbycal/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kirbycal/manifest.jsonld",
+  "provenance": "ingested"
+}

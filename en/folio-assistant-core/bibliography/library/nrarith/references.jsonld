@@ -1,0 +1,30 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/nrarith",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "Arithmetic of Hyperbolic Manifolds",
+      "dcterms:creator": [
+        "Neumann, Walter D.",
+        "Reid, Alan W."
+      ],
+      "dcterms:source": "library/nrarith/manifest.jsonld",
+      "dcterms:hasVersion": "library/nrarith"
+    }
+  ]
+}

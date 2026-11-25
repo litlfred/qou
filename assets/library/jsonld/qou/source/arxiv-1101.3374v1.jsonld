@@ -1,0 +1,66 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1101.3374v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Pontryagin invariants and integral formulas for Milnor's triple linking number",
+  "contains": [
+    "library/arxiv-1101.3374v1/sections/sec-front-matter",
+    "library/arxiv-1101.3374v1/sections/sec-000",
+    "library/arxiv-1101.3374v1/sections/sec-001",
+    "library/arxiv-1101.3374v1/sections/sec-002",
+    "library/arxiv-1101.3374v1/sections/sec-003",
+    "library/arxiv-1101.3374v1/sections/sec-004",
+    "library/arxiv-1101.3374v1/sections/sec-005",
+    "library/arxiv-1101.3374v1/sections/sec-006",
+    "library/arxiv-1101.3374v1/sections/sec-007",
+    "library/arxiv-1101.3374v1/sections/sec-008",
+    "library/arxiv-1101.3374v1/sections/sec-009",
+    "library/arxiv-1101.3374v1/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Pontryagin invariants and integral formulas for Milnor's triple linking number — To each three-component link in the 3-sphere, we associate a geometrically natural characteristic map from the 3-torus\n\n**Pontryagin invariants and integral formulas for Milnor's triple linking number**\n\n*DENNIS DETURCK, HERMAN GLUCK, RAFAL KOMENDARCZYK*\n\n60 pp, 12 sections.\n\n**Abstract.** To each three-component link in the 3-sphere, we associate a geometrically natural characteristic map from the 3-torus to the 2-sphere, and show that the pairwise linking numbers and Milnor triple linking number that classify the link up to link ho- motopy correspond to the Pontryagin invariants that classify its characteristic map up to homotopy. This can be viewed as a natural extension of the familiar fact that the linking number of a two-component link in 3-space is the degree of its associated Gauss map from the 2-torus to the 2-sphere. When the pairwise linking numbers are all zero, we give an integral formula for the triple linking number analogous to the Gauss integral for the pairwise linking numbers.\n\n**Outline.** Front matter; 1 Introduction; 2 The Milnor -invariant; 3 The Pontryagin -invariant; 4 Explicit formulas for the characteristic map; 5 The Pontryagin -invariant of the characteris; 6 Proof of Theorem ??; 7 Sketch of an algebraic proof of Theorem ??; 8 Proof of Theorem ??, formulas (1) and (2); 9 Fourier series and the Proof of Theorem ??, ; Appendix. Whitehead's integral formula for the; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1101.3374&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1101.3374v1",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "1101.3374v1.pdf",
+    "source_sha256": "01d76c1d259c1d512ac9d5bafd411de4d4f34822ba33db0d8ba1a92459953526",
+    "pages": 60,
+    "arxiv": {
+      "id": "1101.3374",
+      "version": "1",
+      "primary_class": "math.GT",
+      "stamp_date": "18 Jan 2011"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

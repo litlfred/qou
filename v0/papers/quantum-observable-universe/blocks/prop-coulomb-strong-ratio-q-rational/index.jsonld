@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-coulomb-strong-ratio-q-rational",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:coulomb-strong-ratio-q-rational",
+  "kind": "proposition",
+  "title": "Coulomb/strong ratio $\\tanh(\\ln q)$ is the q-rational $(q^2-1)/(q^2+1)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-coulomb-charge"
+  ],
+  "tags": [
+    "coulomb",
+    "ratio",
+    "tanh",
+    "q-rational",
+    "identity",
+    "lean"
+  ],
+  "leanRef": "qou:QOU.Braiding.coulomb_strong_ratio_q_rational",
+  "text": "coulomb-strong-ratio-q-rational.md",
+  "leanSource": "coulomb-strong-ratio-q-rational.lean",
+  "provenance": "authored"
+}

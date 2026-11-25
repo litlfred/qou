@@ -1,0 +1,805 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0907.4143v1",
+  "title": "Soft and Supersoft X-ray Sources in Symbiotic Stars 1",
+  "variant": "pdf",
+  "pages": 14,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The model",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-the-model"
+    },
+    {
+      "level": 2,
+      "title": "Symbiotic stars",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-symbiotic-stars"
+    },
+    {
+      "level": 2,
+      "title": "X-ray sources",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-x-ray-sources"
+    },
+    {
+      "level": 2,
+      "title": "Basic parameters of the Monte Carlo simulation",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-basic-parameters-of-the-monte-carlo-simulation"
+    },
+    {
+      "level": 1,
+      "title": "Results",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-results"
+    },
+    {
+      "level": 2,
+      "title": "Population of X-ray sources",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-population-of-x-ray-sources"
+    },
+    {
+      "level": 2,
+      "title": "Properties of X-ray sources",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-properties-of-x-ray-sources"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-conclusions"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 161,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symbiotic stars",
+          "heading": false
+        },
+        {
+          "term": "x-ray sources",
+          "heading": false
+        },
+        {
+          "term": "soft x-ray",
+          "heading": false
+        },
+        {
+          "term": "runaways",
+          "heading": false
+        },
+        {
+          "term": "binaries",
+          "heading": false
+        },
+        {
+          "term": "galactic",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0907.4143v1 [astro-ph.SR] 23 Jul 2009 Soft and Supersoft X-ray Sources in Symbiotic Stars1 Chunhua Zhua,b, Guoliang L¨ub, Zhaojun Wanga,b and Jun Zhang ∗b aSchool of Science, Xi’an Jiaotong University, Xi’an, 710049, China bSchool of Physics, Xinjiang University, Urumqi, 830046, China Abstract Assuming that soft X-ray sources in symbiotic stars result from strong thermonu- clear runaways, and supersoft X-ray",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0907.4143v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 464,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "x-ray sources",
+          "heading": false
+        },
+        {
+          "term": "hard x-ray",
+          "heading": false
+        },
+        {
+          "term": "type x-ray",
+          "heading": false
+        },
+        {
+          "term": "galactic population",
+          "heading": false
+        },
+        {
+          "term": "dwarf accretors",
+          "heading": false
+        },
+        {
+          "term": "cite mur",
+          "heading": false
+        },
+        {
+          "term": "white dwarf",
+          "heading": false
+        },
+        {
+          "term": "syss",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{intro} Symbiotic stars (SySs) are usually interacting binaries, composed of a cool star, a hot component and a nebula. The cool component is a red giant which is a first giant branch (FGB) or an asymptotic giant branch (AGB) star. The hot component is a white dwarf (WD), a subdwarf, an accreting low-mass main-sequence star, or a neutron star \\citep{kw84,mur91}. The peculiar optical spectrum of SySs is a very",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-the-model",
+      "number": null,
+      "title": "The model",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 26,
+      "summary": null,
+      "keywords": [],
+      "extract": "\\label{mod} For binary evolution, we use a rapid binary star evolution (BSE) code of \\cite{h02}. Below we describe our algorithm from several aspects.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-symbiotic-stars",
+      "number": null,
+      "title": "Symbiotic stars",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 538,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mass-loss rate",
+          "heading": false
+        },
+        {
+          "term": "citet",
+          "heading": false
+        },
+        {
+          "term": "terminal velocity",
+          "heading": false
+        },
+        {
+          "term": "winters",
+          "heading": false
+        },
+        {
+          "term": "esc",
+          "heading": false
+        },
+        {
+          "term": "giant branch",
+          "heading": false
+        },
+        {
+          "term": "odot",
+          "heading": false
+        },
+        {
+          "term": "syss",
+          "heading": false
+        }
+      ],
+      "extract": "SySs are complex binary systems, and can be divided into two subgroups: `ordinary' SySs, which are assumed to burn hydrogen steadily; and symbiotic novae, which experience thermonuclear runaways in their surface hydrogen layers \\citep{ty76,m03}. There are many uncertain physical parameters which can affect the population of SySs. \\citet{lu06} showed that the numbers of SySs and the occurrences of symbiotic novae are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-x-ray-sources",
+      "number": null,
+      "title": "X-ray sources",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 550,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "x-ray sources",
+          "heading": true
+        },
+        {
+          "term": "symbiotic nova",
+          "heading": false
+        },
+        {
+          "term": "thermonuclear runaways",
+          "heading": false
+        },
+        {
+          "term": "symbiotic novae",
+          "heading": false
+        },
+        {
+          "term": "x-ray emissions",
+          "heading": false
+        },
+        {
+          "term": "strong symbiotic",
+          "heading": false
+        },
+        {
+          "term": "accreted mater",
+          "heading": false
+        },
+        {
+          "term": "weak symbiotic",
+          "heading": false
+        }
+      ],
+      "extract": "\\cite{v92} explained super-soft X-ray emissions by steady nuclear burning of hydrogen accreted onto WD. Most of the known SySs are sufficiently bright X-ray sources. As mentioned in Introduction, \\cite{mur97} divided X-ray sources into SSSs, SSs and relatively hard X-ray resources. It is well known that the SSSs in SySs are hot WDs whose photospheres can produce sufficiently hard ($h\\nu\\approx0.2$kev) photons. For",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-basic-parameters-of-the-monte-carlo-simulation",
+      "number": null,
+      "title": "Basic parameters of the Monte Carlo simulation",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 239,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mass-ratio distribution",
+          "heading": false
+        },
+        {
+          "term": "population synthesis",
+          "heading": false
+        },
+        {
+          "term": "binary systems",
+          "heading": false
+        },
+        {
+          "term": "odot",
+          "heading": false
+        },
+        {
+          "term": "citep",
+          "heading": false
+        },
+        {
+          "term": "primary mass",
+          "heading": false
+        }
+      ],
+      "extract": "We carry out binary population synthesis via Monte Carlo simulation technique in order to obtain the properties of SSs and SSSs' population in SySs. For the population synthesis of binary stars, the main input model parameters are: (i) the initial mass function (IMF) of the primaries; (ii) the mass-ratio distribution of the binaries; (iii) the distribution of orbital separations; (iv) the eccentricity distribution;",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-results",
+      "number": null,
+      "title": "Results",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 144,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stellar wind",
+          "heading": false
+        },
+        {
+          "term": "terminal velocity",
+          "heading": false
+        },
+        {
+          "term": "binaries",
+          "heading": false
+        },
+        {
+          "term": "ref tab",
+          "heading": false
+        },
+        {
+          "term": "times initial",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{res} We construct a set of models in which we vary different input parameters relevant to the population of SSSs and SSs in SySs. Table \\ref{tab:case} gives all cases considered in this work. Many observational evidences showed that the terminal velocity of stellar wind $v(\\infty)$ increases when a star ascends along the AGB \\citep{o02,w03,b05}. In this work, we take $v(\\infty)$ calculated by Eq.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-population-of-x-ray-sources",
+      "number": null,
+      "title": "Population of X-ray sources",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 9,
+      "labelStart": "6",
+      "labelEnd": "9",
+      "words": 1015,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "x-ray sources",
+          "heading": true
+        },
+        {
+          "term": "cline multicolumn",
+          "heading": false
+        },
+        {
+          "term": "symbiotic novae",
+          "heading": false
+        },
+        {
+          "term": "multicolumn occurrence",
+          "heading": false
+        },
+        {
+          "term": "iii multicolumn",
+          "heading": false
+        },
+        {
+          "term": "multicolumn total",
+          "heading": false
+        },
+        {
+          "term": "ordinary syss",
+          "heading": false
+        },
+        {
+          "term": "weak symbiotic",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{table*} \\caption{Different models of the population of SSSs and SSs in SySs. The first column gives case number according to Table \\ref{tab:case}. Columns 2, 3 and 4 give the occurrence rate of SSs which have undergone channel I, II and III, respectively. Column 5 shows the total occurrence rate of SSs. Columns 6, 7 and 8 give the numbers of SSSs which have undergone channel I, II and III, respectively.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-properties-of-x-ray-sources",
+      "number": null,
+      "title": "Properties of X-ray sources",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 12,
+      "labelStart": "9",
+      "labelEnd": "12",
+      "words": 724,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "x-ray sources",
+          "heading": true
+        },
+        {
+          "term": "galactic syss",
+          "heading": false
+        },
+        {
+          "term": "symbiotic novae",
+          "heading": false
+        },
+        {
+          "term": "ordinary syss",
+          "heading": false
+        },
+        {
+          "term": "hydrogen burning",
+          "heading": false
+        },
+        {
+          "term": "orbital periods",
+          "heading": false
+        },
+        {
+          "term": "represent sss",
+          "heading": false
+        },
+        {
+          "term": "weak symbiotic",
+          "heading": false
+        }
+      ],
+      "extract": "In this subsection, we describe potentially observable physical quantities of SSSs and SSs in SySs. \\begin{figure*} \\begin{tabular}{c@{\\hspace{3pc}}c} \\includegraphics[totalheight=4.5in,width=3.2in,angle=-90]{fig1.ps}\\\\ \\end{tabular} \\caption{Number distributions of X-ray sources in the Galactic SySs as a function of orbital periods (all numbers are normalized to 1). The solid, dashed and dotted lines represent SSs,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-conclusions",
+      "number": null,
+      "title": "Conclusions",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 656,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symbiotic novae",
+          "heading": false
+        },
+        {
+          "term": "apj",
+          "heading": false
+        },
+        {
+          "term": "symbiotic stars",
+          "heading": false
+        },
+        {
+          "term": "x-ray spectra",
+          "heading": false
+        },
+        {
+          "term": "mnras",
+          "heading": false
+        },
+        {
+          "term": "yungelson",
+          "heading": false
+        },
+        {
+          "term": "x-ray sources",
+          "heading": false
+        },
+        {
+          "term": "medium absorptions",
+          "heading": false
+        }
+      ],
+      "extract": "Conclusions Assuming that SSs in SySs result from the violent collisions of the stellar winds during strong symbiotic novae, and SSSs from weak symbiotic novae or steady hydrogen burning SySs, we investigate the Galactic population of SSs and SSSs in SySs. The Galactic occurrence rates of SSs and SSSs are from ∼ 2 to 20 yr−1, and ∼2 to 17 yr−1, respectively. The numbers of X-ray sources in SySs range from 2390 to",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "syss citep",
+      "heading": false
+    },
+    {
+      "term": "galactic syss",
+      "heading": true
+    },
+    {
+      "term": "symbiotic novae",
+      "heading": true
+    },
+    {
+      "term": "x-ray sources",
+      "heading": true
+    },
+    {
+      "term": "ordinary syss",
+      "heading": true
+    },
+    {
+      "term": "symbiotic stars",
+      "heading": true
+    },
+    {
+      "term": "weak symbiotic",
+      "heading": true
+    },
+    {
+      "term": "symbiotic nova",
+      "heading": false
+    },
+    {
+      "term": "strong symbiotic",
+      "heading": false
+    },
+    {
+      "term": "x-ray emissions",
+      "heading": false
+    },
+    {
+      "term": "soft x-ray",
+      "heading": false
+    },
+    {
+      "term": "ssss",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Number distributions of X-ray sources in the Galactic SySs as a function of orbital periods (all numbers are normalized to 1). The solid, dashed and dotted lines represent SSs, SSSs from weak symbiotic novae and from steady hydrogen burning ‘ordinary’ SySs, respectively",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Number distributions of X-ray sources in the Galactic SySs as a function of WD mass (all numbers are normalized to 1). The solid, dashed and dotted lines represent SSs, SSSs from weak symbiotic novae and steady hydrogen burning ‘ordinary’ SySs, respectively",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Gray-scale maps of WD’s mass vs. orbital period distributions for SSs and SSSs in SySs for case 1. The gradations of gray-scale correspond to the regions where the number density of systems is, respectively, within 1 – 1/2, 1/2 – 1/4, 1/4 – 1/8, 1/8 – 0 of the maximum of",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Number distributions of X-ray sources in the Galactic SySs as a function of the mass accretion rate of WD (all numbers are normalized to 1). The solid, dashed and dotted lines represent SSs, SSSs from weak symbiotic novae and from steady hydrogen burning ‘ordinary’ SySs, respectively",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p011-1",
+      "file": "images/img-p011-1.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-2",
+      "file": "images/img-p011-2.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-3",
+      "file": "images/img-p011-3.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 10,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 3,
+      "note": "4 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p12); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 10 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0907.4143v1"
+  }
+}

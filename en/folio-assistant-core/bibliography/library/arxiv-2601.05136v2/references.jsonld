@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2601.05136v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "State integrals for the quantized SL 2 ( C ) Chern-Simons invariant",
+      "dcterms:creator": [
+        "McPhail-Snyder, Calvin"
+      ],
+      "dcterms:identifier": "https://arxiv.org/abs/2601.05136",
+      "dcterms:abstract": "Previous work of the author and N. Reshetikhin deﬁnes an invariant Zψ N(K, ρ, µ) of a knot K, a representation ρ: π1(S3 \\ K) →SL2(C), and a logarithm µ of a meridian eigenvalue of ρ. It can be interpreted as a geometric twist of the Kashaev invariant or as a quantization of the SL2(C) Chern-Simons invariant and is deﬁned via a discrete state-sum involving quantum dilogarithms. In this paper we show how to express Zψ N(K, ρ, µ) as a sum over contour integrals in a space parametrizing hyperbolic struc- tures on the knot complement. Such state integral presentations are an important step in determining the asymptotics of quantum invariants as predicted by the Volume Conjecture. We discuss this perspective and the remaining obstacles to establishing exponential growth of Zψ N.",
+      "dcterms:source": "library/arxiv-2601.05136v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2601.05136v2"
+    }
+  ]
+}

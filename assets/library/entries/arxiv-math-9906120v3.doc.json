@@ -1,0 +1,725 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-9906120v3",
+  "title": "Discrete orthogonal polynomial ensembles and the Plancherel measure",
+  "variant": "pdf",
+  "pages": 38,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Abstract",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-abstract"
+    },
+    {
+      "level": 1,
+      "title": "Introduction and results",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-1-introduction-and-results"
+    },
+    {
+      "level": 1,
+      "title": "The Plancherel measure as a limit of the Meixner ensemble",
+      "number": "2",
+      "page": 9,
+      "pageLabel": "267",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-2-the-plancherel-measure-as-a-limit-of-the-meixn"
+    },
+    {
+      "level": 1,
+      "title": "The Plancherel measure as a limit of the Charlier ensemble",
+      "number": "3",
+      "page": 12,
+      "pageLabel": "270",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-3-the-plancherel-measure-as-a-limit-of-the-charl"
+    },
+    {
+      "level": 1,
+      "title": "Random words and the Charlier ensemble",
+      "number": "4",
+      "page": 27,
+      "pageLabel": "285",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-4-random-words-and-the-charlier-ensemble"
+    },
+    {
+      "level": 1,
+      "title": "Applications of the Krawtchouk ensemble",
+      "number": "5",
+      "page": 29,
+      "pageLabel": "287",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-5-applications-of-the-krawtchouk-ensemble"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 22,
+      "summary": null,
+      "keywords": [],
+      "extract": "arXiv:math/9906120v3 [math.CO] 24 Feb 2004 Annals of Mathematics, 153 (2001), 259–296 Discrete orthogonal polynomial ensembles and the Plancherel measure By Kurt Johansson",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-math-9906120v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-abstract",
+      "number": null,
+      "title": "Abstract",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 205,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "charlier ensemble",
+          "heading": false
+        },
+        {
+          "term": "meixner ensemble",
+          "heading": false
+        },
+        {
+          "term": "increasing subsequences",
+          "heading": false
+        },
+        {
+          "term": "random words",
+          "heading": false
+        },
+        {
+          "term": "polynomial ensembles",
+          "heading": false
+        },
+        {
+          "term": "plancherel measure",
+          "heading": false
+        }
+      ],
+      "extract": "We consider discrete orthogonal polynomial ensembles which are discrete analogues of the orthogonal polynomial ensembles in random matrix theory. These ensembles occur in certain problems in combinatorial probability and can be thought of as probability measures on partitions. The Meixner ensemble is related to a two-dimensional directed growth model, and the Charlier ensemble is related to the lengths of weakly",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-introduction-and-results",
+      "number": "1",
+      "title": "Introduction and results",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": "267",
+      "words": 2851,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "charlier ensemble",
+          "heading": false
+        },
+        {
+          "term": "meixner ensemble",
+          "heading": false
+        },
+        {
+          "term": "kurt johansson",
+          "heading": false
+        },
+        {
+          "term": "poissonized plancherel",
+          "heading": false
+        },
+        {
+          "term": "plancherel measure",
+          "heading": false
+        },
+        {
+          "term": "tracy-widom distribution",
+          "heading": false
+        },
+        {
+          "term": "increasing subsequence",
+          "heading": false
+        },
+        {
+          "term": "toeplitz determinant",
+          "heading": false
+        }
+      ],
+      "extract": "During the last years there has been a lot of activity around the problem of the distribution of the length of a longest increasing subsequence of a random permutation, its generalizations and their connection with random matrices, see for example [Ge], [Ra], [BDJ1], [Jo3], [Ok], [BR2], [Bi], and also [AD] for connections with patience and the history of the problem. Let π be a random permutation from the symmetric",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-the-plancherel-measure-as-a-limit-of-the-meixn",
+      "number": "2",
+      "title": "The Plancherel measure as a limit of the Meixner ensemble",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 12,
+      "labelStart": "267",
+      "labelEnd": "270",
+      "words": 800,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kurt johansson",
+          "heading": false
+        },
+        {
+          "term": "aij",
+          "heading": false
+        },
+        {
+          "term": "deﬁnes map",
+          "heading": false
+        },
+        {
+          "term": "measure",
+          "heading": true
+        },
+        {
+          "term": "submatrix",
+          "heading": false
+        },
+        {
+          "term": "plancherel",
+          "heading": true
+        },
+        {
+          "term": "plan",
+          "heading": false
+        },
+        {
+          "term": "ensemble",
+          "heading": true
+        }
+      ],
+      "extract": "The setting is the same as in [Jo3]. Let MN denote the set of all N × N matrices with elements in N. We deﬁne a probability measure, Pq N[·] on MN by letting each element aij in A ∈MN be geometrically distributed with parameter q ∈(0, 1), and requiring all elements to be independent. Then (2.1) Pq N[A] = (1 −q)N2qΣ(A), A ∈MN, where Σ(A) = PN i,j=1 aij. Let MN(k) denote the set of all A in MN for which Σ(A) = k. Note",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-the-plancherel-measure-as-a-limit-of-the-charl",
+      "number": "3",
+      "title": "The Plancherel measure as a limit of the Charlier ensemble",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 27,
+      "labelStart": "270",
+      "labelEnd": "285",
+      "words": 5032,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "charlier ensemble",
+          "heading": true
+        },
+        {
+          "term": "plancherel measure",
+          "heading": true
+        },
+        {
+          "term": "kurt johansson",
+          "heading": false
+        },
+        {
+          "term": "coulomb gas",
+          "heading": false
+        },
+        {
+          "term": "charlier kernel",
+          "heading": false
+        },
+        {
+          "term": "charlier polynomials",
+          "heading": false
+        },
+        {
+          "term": "poissonized plancherel",
+          "heading": false
+        },
+        {
+          "term": "pch",
+          "heading": false
+        }
+      ],
+      "extract": "3.1. The limit of the Charlier ensemble. The Charlier ensemble is deﬁned by (1.16). It can be obtained as a limit of the Meixner ensemble (1.14) by taking q = α/MN and letting N →∞with M ﬁxed. In this limit (1 −q)MN M−1 Y j=0 (N −M)! j!(N −M + j)! M Y i=1 \u0012λi + N −i λi + M −i \u0013 qλi (3.1) →   M−1 Y j=1 1 j!  WM(λ) M Y i=1 \u0014\u0010 α M \u0011λi e−α/M \u0015 , so we obtain (1.16). In light of Theorem 1.1 we see that it is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-random-words-and-the-charlier-ensemble",
+      "number": "4",
+      "title": "Random words and the Charlier ensemble",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 29,
+      "labelStart": "285",
+      "labelEnd": "287",
+      "words": 783,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "charlier",
+          "heading": true
+        },
+        {
+          "term": "meixner",
+          "heading": false
+        },
+        {
+          "term": "lier",
+          "heading": false
+        },
+        {
+          "term": "random",
+          "heading": true
+        },
+        {
+          "term": "semistandard",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we will prove our results on random words. Proof of Proposition 1.5. Let L(M, N, λ) denote the number of pairs (P, Q) of tableaux of shape λ ∈Ω(N) M with P semistandard with elements in {1, . . . , M} and Q standard with elements in {1, . . . , N}. Then (4.1) PW,M,N[S−1(λ)] = 1 MN L(M, N, λ). The number of possible P’s is, by [Fu], (4.2) dλ(M) = Y 1≤i<j≤M λi −λj + j −i j −i =   M−1 Y j=1 1 j! ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-applications-of-the-krawtchouk-ensemble",
+      "number": "5",
+      "title": "Applications of the Krawtchouk ensemble",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 38,
+      "labelStart": "287",
+      "labelEnd": "296",
+      "words": 3754,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "krawtchouk ensemble",
+          "heading": true
+        },
+        {
+          "term": "domino tilings",
+          "heading": false
+        },
+        {
+          "term": "aztec diamond",
+          "heading": false
+        },
+        {
+          "term": "random domino",
+          "heading": false
+        },
+        {
+          "term": "north-going dominoes",
+          "heading": false
+        },
+        {
+          "term": "zig-zag path",
+          "heading": false
+        },
+        {
+          "term": "east south",
+          "heading": false
+        },
+        {
+          "term": "gov abs",
+          "heading": false
+        }
+      ],
+      "extract": "5.1. Sepp¨al¨ainen’s ﬁrst passage percolation model. The Krawtchouk en- semble is deﬁned by (1.7) with the weight w(x) = \u0000K x \u0001 pxqK−x, 0 ≤x ≤K, i.e. we consider the probability measure PKr,N,K,p[h] = 1 ZN,K,p ∆N(h)2 N Y j=1 \u0012K hj \u0013 phjqK−hj 288 KURT JOHANSSON on {0, . . . , K}N, where ZN,K,p = N! \u0012QN−1 j=0 j! (K−j)! \u0013 (K!)N(pq)N(N−1)/2. The ﬁrst problem where the Krawtchouk ensemble appears is in the simpliﬁed",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "charlier ensemble",
+      "heading": true
+    },
+    {
+      "term": "kurt johansson",
+      "heading": false
+    },
+    {
+      "term": "meixner ensemble",
+      "heading": true
+    },
+    {
+      "term": "plancherel measure",
+      "heading": true
+    },
+    {
+      "term": "charlier kernel",
+      "heading": false
+    },
+    {
+      "term": "krawtchouk ensemble",
+      "heading": true
+    },
+    {
+      "term": "random tilings",
+      "heading": false
+    },
+    {
+      "term": "random domino",
+      "heading": false
+    },
+    {
+      "term": "charlier polynomials",
+      "heading": false
+    },
+    {
+      "term": "probability measure",
+      "heading": false
+    },
+    {
+      "term": "poissonized plancherel",
+      "heading": false
+    },
+    {
+      "term": "aztec diamond",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "260",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "261",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "262",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "263",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "264",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "265",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "266",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "267",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "268",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "269",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "270",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "271",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "272",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "273",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "274",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "275",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "276",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "277",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "278",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "279",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "280",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "281",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "282",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "283",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "284",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "285",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "286",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "287",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "288",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "289",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "290",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "291",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "292",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "293",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "294",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "295",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "296",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 6,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 7,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p29); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 7 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-9906120v3"
+  }
+}

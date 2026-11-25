@@ -1,0 +1,531 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "ant-v14-n7-s-p07",
+  "blocks": [
+    {
+      "id": "library/ant-v14-n7-s-p07/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "ALGEBRA AND NUMBER THEORY 14:7 (2020)\nhttps://doi.org/10.2140/ant.2020.14.1895\n\nNonvanishing of hyperelliptic zeta functions\nover finite fields\n\nJordan S. Ellenberg, Wanlin Li and Mark Shusterman\n\nFixing f € R and a finite field F, of odd characteristic, we give an explicit upper bound on the proportion\nof genus g hyperelliptic curves over F, whose zeta function vanishes at 5 + it. Our upper bound is\nindependent of g and tends to 0 as g grows.\n\nAn errata was submitted on 27 Aug 2021 and posted online on I Sep 2021.\n\n1. Introduction\n\nLet p be an odd prime, set g = p* for some positive integer k",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p07/blocks/thm-page-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Theorem 3.2",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "thm-page-001-01.md",
+      "narrative": null,
+      "content": "Fix a prime p, a real number t, and set s = 3 +it. Then as k > o we",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p07/blocks/cor-page-002-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "Corollary 3.3",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "cor-page-002-01.md",
+      "narrative": null,
+      "content": "Let A be a constant abelian variety deﬁned over Fq(x). For each f ∈Fqm[x], denote by A f the quadratic twist of A ⊗Fqm(x) by f . Let Rn,m be the set { f ∈ Fqm[x], squarefree, of deg n : A f has positive rank}. Then, lim m→∞lim sup n→∞ |Rn,m| qm(n+1) = 0. Motivated by [Bui and Florea 2018, Corollary 2.2] and the analogous results over Z of Conrey, Ghosh and Gonek [Conrey et al. 1998], we bound the multiplicity of the zeros of ZC, and obtain further information on nonvanishing at s = 1 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p07/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "1896\nJordan S. Ellenberg, Wanlin Li and Mark Shusterman\nSection 1]) that there are only ﬁnitely many p for which p−s is algebraic, so hq,s =0 for any q not divisible\nby these p (as ZC(s) is a rational function in q−s). Hence, it sufﬁces to work with one characteristic at a\ntime, as we do in the theorem above. For s = 1\n2, since the upper bound in Corollary 2.6 holds for any ℓ\nwhen q is a perfect square, we can conclude limq→∞hq,s = 0 ranging over q which is an even power of\na prime.\nAdditional motivation for Theorem 1.2 comes from the ability to write ZC(s) as a rational function in\nq−s, with",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p07/blocks/thm-page-002-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "thm-page-002-02.md",
+      "narrative": null,
+      "content": "Let C be a hyperelliptic curve of genus at least 2 over Fq and S be the set of Weierstrass points of C. The Frobenius acts on S by permuting the 2g + 2 Weierstrass points via some permutation π. Suppose that either • g is even and π is a (2g+2)-cycle; or • π is the product of two disjoint cycles of odd length. Then: (1) The point s = 1 2 is not a zero of ZC. (2) All zeros of ZC are of multiplicity at most 2. Moreover, if π is the product of two disjoint cycles of coprime lengths, all zeros of ZC are simple. In the language of Dirichlet characters, this implies in particular the nonvanishing (a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p07/blocks/cor-page-003-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "cor-page-003-01.md",
+      "narrative": null,
+      "content": "Let χ be a quadratic character over Fq(x) with conductor f ∈Fq[x]. If f is irreducible and 4∤deg f , then L \u0000 1 2, χ \u0001̸ = 0. In particular, the number of quadratic characters with irreducible conductor of size at most X whose L-function does not vanish at s = 1 2 is ≫X/ log X as X →∞. This result improves on the work of Andrade and Keating [2013, Corollary 2.6] and of Andrade, Bae, and Jung [Andrade et al. 2016,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p07/blocks/cor-page-003-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "cor-page-003-02.md",
+      "narrative": null,
+      "content": "Let ℓbe an odd prime different from the characteristic of a ﬁxed ﬁnite ﬁeld Fq. The number of ℓ-cyclic Dirichlet characters over Fq(x) with conductor at most X and whose L-function does not vanish at s = 1 2 is ≫X/(log X)1/2 as X →∞. The main idea that connects all the theorems in this paper is the study of L-functions modulo ℓ. The value of an L-function over Fq(x) at a complex number s can be expressed as a polynomial P(T ) ∈Z[T ] evaluated at T = q−s. So if we want to prove that P(T ) is nonvanishing, it sufﬁces to prove that P(T ) is nonvanishing modulo ℓfor some prime ℓ. For Theorem 1.2,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p07/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "Nonvanishing of hyperelliptic zeta functions over ﬁnite ﬁelds\n1897\nCorollary 1.6. Let χ be a quadratic character over Fq(x) with conductor f ∈Fq[x]. If f is irreducible\nand 4∤deg f , then L\n\u0000 1\n2, χ\n\u0001̸\n= 0.\nIn particular, the number of quadratic characters with irreducible conductor of size at most X whose\nL-function does not vanish at s = 1\n2 is ≫X/ log X as X →∞. This result improves on the work\nof Andrade and Keating [2013, Corollary 2.6] and of Andrade, Bae, and Jung [Andrade et al. 2016,\nCorollary 2.8], which give a proportion on order (log X)−2, and goes beyond the methods of Andrade\nand",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p07/blocks/prop-page-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "prop-page-004-01.md",
+      "narrative": null,
+      "content": "Let a ∈(Z/ℓZ)×. With notation as in Section 2A, there exist constants Cℓ, Nℓ, Qℓonly depending on ℓsuch that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p07/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "1898\nJordan S. Ellenberg, Wanlin Li and Mark Shusterman\nis nonvanishing mod 2 at s = 1\n2. For the similar Theorem 1.7, the ℓis again the order of the Dirichlet\ncharacter in question.\n2. Main theorem and proof\n2A. Setup and notations. Throughout the paper, Fq is a ﬁnite ﬁeld of odd characteristic p. Let Qn,q be\nthe set of squarefree polynomials over Fq of degree n. For each f ∈Qn,q, write J f for the Jacobian of\nthe hyperelliptic curve\ny2 = f (x)\nand Pf (x) ∈Z[x] for the characteristic polynomial of geometric Frobenius acting on the ℓ-adic Tate\nmodule of J f . Let ℓbe a prime not equal to the c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p07/blocks/rem-page-004-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "rem-page-004-02.md",
+      "narrative": null,
+      "content": "While this paper was in proof, we learned that Proposition 2.1 follows from the proof of",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p07/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "Nonvanishing of hyperelliptic zeta functions over ﬁnite ﬁelds\n1899\nbecause the form in which we present the proof here is conducive to proving the explicit bounds for\nthe stable range obtained in Proposition 2.7 below. It would be interesting to address the questions of\nexplicit bounds for the stable range in the more general situations considered by [loc. cit.], where the\ngroup-theoretic part of the proof of Proposition 2.7 would presumably be more complicated.\nWhen a = 1 and n is odd, Proposition 2.1 is essentially Theorem 8.8 of [Ellenberg et al. 2016], and\nindeed the proof here is a modiﬁc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p07/blocks/lem-page-006-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "lem-page-006-01.md",
+      "narrative": null,
+      "content": "With notation as in Section 2A, Yo mal f) = (= DIXE(FQ)I- LEQng",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p07/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "1900 Jordan S. Ellenberg, Wanlin Li and Mark Shusterman\n\npoints on A\\! with monodromy type c. (We do not specify whether or how the cover is branched at 00.)\nIn fact [Romagny and Wewers 2006, Theorem 2.1], for a scheme S, the set Hng n(S) corresponds to\nisomorphism classes of tame G-covers over S, suitably defined; we will not need to spell out that definition\nhere. Once the n branch points are chosen on A! there are finitely many choices for f and @. Thus the\ndimension of Hn@ ,, equals to n.\n\nFrom now on, we suppose that k is F,, that G is the dihedral group Z/£Z = Z/2Z, and that c is the\ncon",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p07/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "Nonvanishing of hyperelliptic zeta functions over ﬁnite ﬁelds\n1901\nProof. A point of Xa\nn(Fq) is a point of Xn(Fq) such that Frobq ·x = ⟨a⟩· x. In other words, it is a triple\n(g, φ, h)/Fq such that Frobq ·(g, φ, h) is isomorphic to (g, aφ, h). The fact that the isomorphism class\nof h is ﬁxed by Frobenius implies that the branch locus of h is an Fq-rational divisor. Let f (x) ∈Fq[x]\nbe the unique monic squarefree polynomial which vanishes precisely at the branch locus of h. Then C is\nisomorphic (over Fq) to the smooth completion of the hyperelliptic curve deﬁned by y2 = f (x).\nFixing such an h,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p07/blocks/cor-page-008-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "cor-page-008-01.md",
+      "narrative": null,
+      "content": "There are constants C′ ℓ, Qℓ, Nℓsuch that for any a ∈(Z/ℓZ)× we have |Qa,ℓ n,q| |Qn,q| ≤ ℓ−1 + C′ ℓq−1/2 for all n ≥Nℓ, q ≥Qℓ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p07/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "1902\nJordan S. Ellenberg, Wanlin Li and Mark Shusterman\nWe begin by computing the main term:\nTr(Frobq | H2n\nc,ét((Xa\nn)Fq; Qλ) = qn.\nThis follows immediately from the fact that (Xa\nn)Fq ∼= (Xn)Fq is irreducible. When n is odd, this is shown\nin the proof of [Ellenberg et al. 2016, Theorem 8.8] as a consequence of a big monodromy theorem\nof J.K. Yu. (This is actually the only place where we need n to be large, and indeed n = 3 would be\nenough.) When n is even, we argue as follows. The map from Xn to the conﬁguration space Confn A1\nsending a G-cover to its branch locus is a ﬁnite cover [loc. cit.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p07/blocks/prop-page-009-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "prop-page-009-01.md",
+      "narrative": null,
+      "content": "Corollary 2.6 holds with C′ ℓ= 2(ℓ−1)−1(4ℓ)138 and Qℓ= 4 · (4ℓ)156.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p07/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "Nonvanishing of hyperelliptic zeta functions over ﬁnite ﬁelds\n1903\nProof. Write δ for the quantity |Qn,q|−1|Qa,ℓ\nn,q| to be bounded.\nSince ma( f ) is the number of nonzero elements of a vector space over Z/ℓZ, it is at least ℓ−1 if it is\ngreater than 0. In particular,\n|Qn,q|−1 X\nf ∈Qn,q\nma( f ) ≥|Qn,q|−1(ℓ−1)|Qa,ℓ\nn,q| = (ℓ−1)δ\nBy Proposition 2.1, we now have\n(ℓ−1)δ < 1 + Cℓq−1/2\nfor all sufﬁciently large n, q, which yields the desired result by taking C′\nℓ= Cℓ/(ℓ−1).\n□\nSo far, we have used the results of [Ellenberg et al. 2016] as they appear in that paper. However, for\nthe present applicatio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p07/blocks/prose-page-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 10",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/page-010.md",
+      "narrative": null,
+      "content": "1904\nJordan S. Ellenberg, Wanlin Li and Mark Shusterman\ngroup; the ring R is a graded Q-algebra whose degree-n part is spanned by the set of orbits of that action,\nwhich set we denote 6n. The multiplication in R is given by concatenation of n-tuples.\nThe key fact about R is that it contains a central element U with the property that R[U] and R/U R\nboth have ﬁnite degree (that is, they are supported in only ﬁnitely many grades.) In the dihedral case, R\nand U are particularly easy to describe. For any n, there is map from 6n to G sending (τ1, . . . , τn) to the\nproduct τ1 · · · τn, which is call",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p07/blocks/lem-page-011-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "lem-page-011-01.md",
+      "narrative": null,
+      "content": "Let f be a monic squarefree polynomial in Fq[x] and χ f be the quadratic character with conductor f . Let C be the hyperelliptic curve deﬁned by y2 = f (x) and let P ∈Z[x] be the characteristic polynomial of geometric Frobenius acting on the Jacobian of C. Then for any s̸ = 0, L(s, χ f ) = 0 if and only if P(qs) = 0. This is immediate from the description of P as the numerator of the zeta function of C, and the connection of the latter to L(s, χ f ) (see, for instance, [Rudnick 2010, Section 2]).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p07/blocks/prose-page-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 11",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/page-011.md",
+      "narrative": null,
+      "content": "Nonvanishing of hyperelliptic zeta functions over ﬁnite ﬁelds\n1905\nand consider only ﬁelds of characteristic p. We note that, if χ f is a quadratic character of Fq(x), then\nL(s, χ f ) can vanish only at a point s such that qs is a q-Weil number of weight 1. We ﬁrst recall the\nfollowing lemma relating the vanishing of the L-function of a quadratic character in terms of the Frobenius\neigenvalues of a hyperelliptic curve;\nLemma 3.1. Let f be a monic squarefree polynomial in Fq[x] and χ f be the quadratic character with\nconductor f . Let C be the hyperelliptic curve deﬁned by y2 = f (x) and let P",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p07/blocks/thm-page-011-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "thm-page-011-02.md",
+      "narrative": null,
+      "content": "For any squarefree polynomial f ∈Qn,q, let L(s, χ f ) be the Dirichlet L-function associ- ated to the quadratic character χ f as was deﬁned in Section 2A. Then for any s̸ = 0, lim sup n→∞ |{ f ∈Qn,q | L(s, χ f ) = 0}| |Qn,q| ≪q−1/276 where the limit is taken over all powers q of a ﬁxed odd prime number p.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p07/blocks/cor-page-012-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "cor-page-012-01.md",
+      "narrative": null,
+      "content": "Let A be an abelian variety deﬁned over a ﬁnite ﬁeld Fq of odd characteristic. For each f ∈Qn,qm, denote by A f the quadratic twist of A ×Fq Fqm(x) by f . Let Rn,m be the set { f ∈Qn,qm : A f has positive rank}. Then lim m→∞lim sup n→∞ |Rn,m| |Qn,qm| = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p07/blocks/prose-page-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 12",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/page-012.md",
+      "narrative": null,
+      "content": "1906\nJordan S. Ellenberg, Wanlin Li and Mark Shusterman\nthe general “minimalist conjecture” philosophy, which holds that positive ranks should be a density 0\nphenomenon except when forced by parity considerations from the functional equation (in this setting the\nfunctional equation never forces positive rank, and the rank is always even.)\nCorollary 3.3. Let A be an abelian variety deﬁned over a ﬁnite ﬁeld Fq of odd characteristic. For each\nf ∈Qn,qm, denote by A f the quadratic twist of A ×Fq Fqm(x) by f . Let Rn,m be the set { f ∈Qn,qm :\nA f has positive rank}. Then\nlim\nm→∞lim sup\nn→∞\n|Rn,m|\n|",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p07/blocks/prose-page-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 13",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/page-013.md",
+      "narrative": null,
+      "content": "Nonvanishing of hyperelliptic zeta functions over ﬁnite ﬁelds\n1907\n1-cycle. In either case, when 4∤deg f we can apply Theorem 1.5 to conclude that ZC f does not vanish at\n1\n2 and so behaves L(s, χ f ).\nFor any X = q2g+2, the set of irreducible polynomials of odd degree at most 2g + 1 gives quadratic\ncharacters with bounded conductor whose L-function does not vanish at the central point s = 1\n2. By the\nprime number theorem for function ﬁelds, the number of irreducible polynomials in Fq[x] of degree at\nmost n is ≫qn/n. This gives the lower bound in statement.\n□\nThe proof of Theorem 1.7 is very s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p07/blocks/prose-page-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 14",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/page-014.md",
+      "narrative": null,
+      "content": "1908\nJordan S. Ellenberg, Wanlin Li and Mark Shusterman\nIf k1, . . . , kr are mutually coprime, then Sr\nj=1 µ′\nk j has no repeated values. So the only possible multiple\neigenvalue of Frobenius on J(C)[ℓ] is 1, and this eigenvalue appears multiple times only if r ≥3. This\ncompletes the proof.\n□\nProof of Corollary 1.8. Consider curves over Fq with deﬁning equations of the form yℓ= f (x) where\nf ∈Fq[x] is monic, squarefree of degree n and n is a multiple of ℓ. This gives ℓ−1 cyclic Dirichlet\ncharacters of conductor f and order ℓ. Such a curve C f admits a Z/ℓZ cover of P1\nFq branched at the\nvanis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p07/blocks/prose-page-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 15",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/page-015.md",
+      "narrative": null,
+      "content": "Nonvanishing of hyperelliptic zeta functions over ﬁnite ﬁelds\n1909\n[Bui and Florea 2018] H. M. Bui and A. Florea, “Zeros of quadratic Dirichlet L-functions in the hyperelliptic ensemble”, Trans.\nAmer. Math. Soc. 370:11 (2018), 8013–8045. MR Zbl\n[Chavdarov 1997] N. Chavdarov, “The generic irreducibility of the numerator of the zeta function in a family of curves with\nlarge monodromy”, Duke Math. J. 87:1 (1997), 151–180. MR Zbl\n[Conrey et al. 1998] J. B. Conrey, A. Ghosh, and S. M. Gonek, “Simple zeros of the Riemann zeta-function”, Proc. Lond. Math.\nSoc. (3) 76:3 (1998), 497–522. MR Zbl\n[David",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p07/blocks/prose-page-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 16",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/page-016.md",
+      "narrative": null,
+      "content": "_(no text on this page)_",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

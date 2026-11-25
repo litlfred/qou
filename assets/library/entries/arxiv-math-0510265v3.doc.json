@@ -1,0 +1,406 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0510265v3",
+  "title": "Triply-graded link homology and Hochschild homology of Soergel bimodules",
+  "variant": "pdf",
+  "pages": 19,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 17,
+      "labelStart": "1",
+      "labelEnd": "17",
+      "words": 5607,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homology hhh",
+          "heading": false
+        },
+        {
+          "term": "soergel bimodules",
+          "heading": false
+        },
+        {
+          "term": "hochschild grading",
+          "heading": false
+        },
+        {
+          "term": "graded r-bimodule",
+          "heading": false
+        },
+        {
+          "term": "hochschild cohomology",
+          "heading": false
+        },
+        {
+          "term": "koszul resolution",
+          "heading": false
+        },
+        {
+          "term": "indecomposable bimodules",
+          "heading": false
+        },
+        {
+          "term": "g-equivariant cohomology",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0510265v3 [math.GT] 28 May 2006 Triply-graded link homology and Hochschild homology of Soergel bimodules Mikhail Khovanov October 14, 2005 Abstract We trade matrix factorizations and Koszul complexes for Hochschild homology of Soergel bimodules to modify the construction of triply- graded link homology and relate it to Kazhdan-Lusztig theory. Hochschild homology. Let R be a k-algebra, where k is a ﬁeld,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0510265v3/blocks/prose-sec-front-matter",
+        "library/arxiv-math-0510265v3/blocks/ex-sec-front-matter-01",
+        "library/arxiv-math-0510265v3/blocks/prop-sec-front-matter-02",
+        "library/arxiv-math-0510265v3/blocks/thm-sec-front-matter-03",
+        "library/arxiv-math-0510265v3/blocks/prop-sec-front-matter-04",
+        "library/arxiv-math-0510265v3/blocks/prop-sec-front-matter-05",
+        "library/arxiv-math-0510265v3/blocks/prop-sec-front-matter-06",
+        "library/arxiv-math-0510265v3/blocks/ex-sec-front-matter-07"
+      ]
+    },
+    {
+      "id": "sec-000-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 19,
+      "labelStart": "17",
+      "labelEnd": "19",
+      "words": 547,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arxiv math",
+          "heading": false
+        },
+        {
+          "term": "khovanov homology",
+          "heading": false
+        },
+        {
+          "term": "khovanov-rozansky homology",
+          "heading": false
+        },
+        {
+          "term": "homol ogy",
+          "heading": false
+        },
+        {
+          "term": "intersection homology",
+          "heading": false
+        },
+        {
+          "term": "cyclic homology",
+          "heading": false
+        },
+        {
+          "term": "link homol",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        }
+      ],
+      "extract": "[BN1] D. Bar-Natan, Khovanov’s homology for tangles and cobordisms, Geom. Topol. 9 (2005) 1443-1499, arxiv math.GT/0410495. [BN2] D. Bar-Natan, I’ve computed Kh(T(9,5)) and I’m happy, talk at George Washington University, February 2005, available online. [BN3] D. Bar-Natan, Knot Atlas, http://katlas.math.toronto.edu/wiki. [BB] A. Beilinson and J. Bernstein, Localization de g-modules, C. R. Acad. Sci. Paris (1) 292",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "homology hhh",
+      "heading": false
+    },
+    {
+      "term": "hochschild homology",
+      "heading": true
+    },
+    {
+      "term": "soergel bimodules",
+      "heading": false
+    },
+    {
+      "term": "hochschild grading",
+      "heading": false
+    },
+    {
+      "term": "khovanov homology",
+      "heading": false
+    },
+    {
+      "term": "hochschild cohomology",
+      "heading": false
+    },
+    {
+      "term": "link homology",
+      "heading": false
+    },
+    {
+      "term": "homology groups",
+      "heading": false
+    },
+    {
+      "term": "graded bimodules",
+      "heading": false
+    },
+    {
+      "term": "graded r-bimodule",
+      "heading": false
+    },
+    {
+      "term": "khovanov-rozansky homology",
+      "heading": false
+    },
+    {
+      "term": "intersection homology",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "From left to right: R-bimodules R, M, N ⊗R M; Hochschild homology of M",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "To left and right pictures we assign R-bimodules R and Bi, respectively",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "To the left picture we assign R3-bimodule B2 ⊗B1 ⊗B2; to the right picture–the Hochschild homology of this bimodule",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "A resolution D of a braid’s closure",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 1,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 2,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "4 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p17); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 2 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0510265v3"
+  }
+}

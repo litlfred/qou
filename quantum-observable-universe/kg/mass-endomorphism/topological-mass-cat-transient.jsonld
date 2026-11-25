@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-topological-mass-cat-transient",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:topological-mass-cat-transient",
+  "kind": "lemma",
+  "title": "Transient terms localise to blow-up centres (categorical)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-brane-boundary",
+    "papers/quantum-observable-universe/blocks/lem-topological-mass-cat-eigenspace"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-topological-mass-cat-transient"
+  ],
+  "tags": [
+    "transient",
+    "blow-up",
+    "brane-boundary",
+    "mass-defect"
+  ],
+  "leanRef": "qou:QOU.MassTheory.cat_transient_localises_blowup",
+  "text": "topological-mass-cat-transient.md",
+  "provenance": "authored"
+}

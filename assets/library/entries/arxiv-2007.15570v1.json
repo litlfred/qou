@@ -1,0 +1,344 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2007.15570v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2007.15570v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A quantum Monte Carlo based approach to intranuclear cascades",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-a-quantum-monte-carlo-based-approach-to-intranuc.md",
+      "narrative": null,
+      "content": "Joshua Isaacson a, William I. Jay a, Alessandro Lovato b,c, Pedro A. N. Machado a, Noemi Rocco a,b,\naTheoretical Physics Department, Fermi National Accelerator Laboratory, P.O. Box 500, Batavia, IL 60510, USA\nbPhysics Division, Argonne National Laboratory, Argonne, Illinois 60439, USA\ncINFN-TIFPA Trento Institute of Fundamental Physics and Applications, Via Sommarive, 14, 38123 Trento, Italy\n(Dated: July 31, 2020)\nWe propose a novel approach to intranuclear cascades which takes as input quantum Monte\nCarlo nuclear conﬁgurations and uses a semi-classical, impact-parameter based algorithm to mod",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.15570v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "I Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-i-introduction.md",
+      "narrative": null,
+      "content": "The propagation of nucleons through the nuclear medium is an important aspect of nuclear reactions, heavy-ion collisions, and astrophysical environments. It is also crucial in the analysis of electron-nucleus scattering experiments (see e.g. Refs. [@Barreau:1983ht; @Makins:1994mm; @Anghinolfi:1995bz; @Abbott:1997bc; @Dutta:2000sn; @Dutta:2003yt; @Rohe:2005vc; @Dai:2018xhi; @Dai:2018gch; @Murphy:2019wed]), neutrino oscillation experiments [@Abe:2016tmq; @Ayres:2007tu; @Abe:2018uyc; @Abi:2020wmh], and dark matter searches [@Akesson:2018vlm]. For example, scattering of neutrinos on nuclei can pro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.15570v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "FERMILAB-PUB-20-368-T",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.15570v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "II The physics of the impact parameter based intranuclear cascade model",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-002-ii-the-physics-of-the-impact-parameter-based-int.md",
+      "narrative": null,
+      "content": "PARAMETER BASED INTRANUCLEAR\nCASCADE MODEL\nWe now discuss in detail the physical content of our\nINC and how several ingredients were incorporated in\nthe model. The INC starts by generating a nuclear con-\nﬁguration, which describes the spatial distribution of pro-\ntons and neutrons inside the nucleus. A large number of\nthese conﬁgurations are computed from quantum Monte\nCarlo (QMC) methods [50] that use as input the highly-\nrealistic Argonne v18 (AV18) [51] plus Illinois 7 (IL7) [52]\nHamiltonian – more details can be found in Sec. II A. All",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.15570v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Nuclear configuration",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-a-nuclear-configuration.md",
+      "narrative": null,
+      "content": "[]{#sec:nuclear-configuration label=\"sec:nuclear-configuration\"}\n\nNuclei are complicated many-body systems of fermions, whose structure and dynamics emerge from individual interactions among the constituent protons and neutrons. To a remarkably large extent, the latter can be modeled by the non-relativistic Hamiltonian $$H=\\sum_{i}\\frac{{\\bf p}_i^2}{2m_N}+\\sum_{i<j} v_{ij}+ \\sum_{i<j<k}V_{ijk}\\,,\n\\label{NMBT:ham}$$ where ${\\bf p}_i$ denotes the momentum of the $i$-th nucleon with mass $m_N$, while $v_{ij}$ and $V_{ijk}$ are the nucleon-nucleon ($N\\!N$) and three-nucleon ($3N$) potentials, resp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.15570v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B Nucleon momentum distribution",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-b-nucleon-momentum-distribution.md",
+      "narrative": null,
+      "content": "As mentioned above, when a nucleon is struck, its momentum is obtained assuming either a local or global Fermi gas distribution. In the case of the local Fermi gas, the magnitude of the three-momentum is randomly sampled in the interval $[0,k^N_F(r)]$ where $k^N_F(r)$ is the Fermi Momentum defined in terms of the single nucleon density $k^N_F(r)=(\\rho_N(r)3\\pi^3)^{1/3}$ and $N=p,n$. In the case of the global Fermi gas, the momentum is determined in the same way, but $k^N_F$ is position independent. The local Fermi gas model is known to provide a more realistic nucleon momentum distribution for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.15570v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "C Nucleon-nucleon interaction algorithm",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-005-c-nucleon-nucleon-interaction-algorithm.md",
+      "narrative": null,
+      "content": "To check if an interaction between nucleons occurs, an accept-reject test is performed on the closest nucleon according to a probability distribution $P(b)$ (see e.g. Ref. [@Sjostrand:1987su] for similar considerations) where $b$ is the impact parameter. We impose two conditions on this probability, $$\\label{eq:int_prob_conds}\n    P(0)=1\\quad\\textrm{and}\\quad\n    \\int_0^{2\\pi}\\int_0^\\infty d\\varphi \\,b db P(b) = \\sigma,$$ where the cross section $\\sigma$ depends on the incoming particle content and the center-of-mass energy, which is sampled from the nuclear configuration. The second condition",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.15570v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "D Phase space, Pauli blocking and after-interaction",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-006-d-phase-space-pauli-blocking-and-after-interacti.md",
+      "narrative": null,
+      "content": "If an interaction occurred, the phase space of the outgoing particles is generated using fully differential nucleon-nucleon cross sections. Note that, at the moment, we only include protons and neutrons in our INC model. Pauli blocking enforces Fermi-Dirac statistics for the nucleons and amounts to testing whether their final-state momenta are above the Fermi momentum. Two different models of the Pauli exclusion principle have been approximately implemented. The *global* and *local* Pauli blocking routines essentially forbid a scattering if the momentum of any of the final state particles is b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.15570v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "E Exiting the nucleus",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-007-e-exiting-the-nucleus.md",
+      "narrative": null,
+      "content": "When the radial position of a propagating particle is larger than a certain distance, much larger than the nuclear radius, a test is performed to check if the particle has enough energy to escape the nuclear potential. If its kinetic energy is larger than the the nuclear potential barrier, then the particle escapes the nucleus and is labeled as a final state particle. The momentum of the particle is modified to include the effective nuclear binding. Final state particles do not propagate and are essentially the input that should be given to a detector simulation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.15570v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "III Results and Model Validation",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-008-iii-results-and-model-validation.md",
+      "narrative": null,
+      "content": "In this Section, we present the validation tests we performed and the results we obtained within our INC model. For comparison purposes, we also implement a version of the nucleon-nucleon interaction algorithm that we dub *mean free path* (MFP). This approach is routinely used in event generators. Within this algorithm, the system is not evolved in time steps but rather in constant position steps that we indicate as $\\lambda_{\\rm max}$. At each step of the loop the mean free path of the propagating particle reads $$\\tilde{\\lambda}=1/\\Big(\\rho_{p}(r)\\sigma_{Np}+\\rho_{n}(r)\\sigma_{Nn}\\Big)$$ whe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.15570v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Mean free path",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-009-a-mean-free-path.md",
+      "narrative": null,
+      "content": "The simplest validation consists of calculating the\nmean free path of a nucleon travelling through a medium\nof uniformly distributed nucleons, with ﬁxed interaction\ncross sections. Our goal is to obtain\nλmfp = 1\nσρ,\n(11)\nwhere σ is the nucleon-nucleon cross section, and ρ is the\nnumber density of nucleons. We simulate a background\nof static, randomly and uniformly distributed protons\nand neutrons at rest. For an event, we insert into the\nmedium a test particle with a ﬁxed energy and propa-\ngate it through the medium. When the ﬁrst interaction\nhappens, we record the length the test particle has",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.15570v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B Proton-carbon Scattering Data",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-010-b-proton-carbon-scattering-data.md",
+      "narrative": null,
+      "content": "Reproducing the proton-nucleus cross section measurements is an important test of the accuracy of the INC model. Proton-nucleus scattering probes the nucleon-nucleon cross section which is typically divided into two pieces, the reaction and the elastic cross sections, $$\\sigma_{\\rm tot} = \\sigma_R + \\sigma_{\\rm el}.$$ In the elastic part, no energy is transferred into nuclear excitation and the nucleus remains unbroken, that is $n+A \\rightarrow n+A$. The reaction cross section includes transition to nuclear excited states, $n+A \\rightarrow n+A^*$, as well as inelastic reactions $n+A \\rightarro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.15570v1/blocks/prop-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "prop-sec-011-01.md",
+      "narrative": null,
+      "content": "In our Monte Carlo simulation, the nuclear transparency has been obtained via the following procedure.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.15570v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "C Nuclear transparency",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-011-c-nuclear-transparency.md",
+      "narrative": null,
+      "content": "The nuclear transparency yields the average probability that a struck nucleon (either a proton or a neutron) leaves the nucleus without interacting with the spectator particles. Measurements of the nuclear transparency to high energy protons in quasielastic $e+A\\to e+p+A'$ scattering have been carried out by a number of experiments  [@ONeill:1994znv; @Abbott:1997bc; @Rohe:2005vc; @Garrow:2001di; @Dutta:2003yt; @Garino:1992ca]. These measurements are performed with fixed kinematics (i.e., for a fixed incoming beam energy and scattering angle) and measure the outgoing electron and proton. The pr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.15570v1/blocks/figure-img-p009-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../images/img-p009-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2007.15570v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "D Correlation effects",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-012-d-correlation-effects.md",
+      "narrative": null,
+      "content": "[]{#sec:corr:eff label=\"sec:corr:eff\"}\n\n::: figure*\n![image](figures/xsec_0p5.pdf){width=\".45\\\\textwidth\"} ![image](figures/xsec_10.pdf){width=\".45\\\\textwidth\"}\\\n![image](figures/xsec_50.pdf){width=\".45\\\\textwidth\"} ![image](figures/xsec_100.pdf){width=\".45\\\\textwidth\"}\n:::\n\nThe role played by nuclear correlations in final state interactions of the recoiling nucleon has been investigated in Refs. [@Pandharipande:1992zz; @Radici:1994wy; @Benhar:1993zz; @Nikolaev:1993sj; @Benhar:2013dq]. As discussed in Ref. [@Benhar:1995xa] the hit nucleon is surrounded by a short-distance correlation hole prod",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.15570v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "V Acknowledgments",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-013-v-acknowledgments.md",
+      "narrative": null,
+      "content": "We thank John Arrington, Omar Benhar, Donald\nF. Geesaman, Stefan H¨oche, T.S. Harry Lee, Kajetan\nNiewczas, Stefan Prestel, Jan Sobczyk, and Mike Wag-\nman for useful discussions . PM and AL thank the Ar-\ngonne Physics Division and the Fermilab theory group,\nrespectively, for providing consistent oﬃce space neces-\nsary for the completion of this work. Fermilab is operated\nby the Fermi Research Alliance, LLC under contract No.\nDE-AC02-07CH11359 with the United States Depart-\nment of Energy. The present research is supported by the\nU.S. Department of Energy, Oﬃce of Science, Oﬃce of\nNuclear Physic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2007.15570v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Nucleon-nucleon interaction Models",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-014-a-nucleon-nucleon-interaction-models.md",
+      "narrative": null,
+      "content": "The nucleon-nucleon cross sections used in our INC\nare obtained externally. The elastic cross section is taken\nfrom the SAID database [63], obtained using GEANT4 [64].\nThe total cross section, including inelastic contributions\n(e.g. pion production) is taken from Ref. [65]. For refer-\nence, we reproduce those in Figs. 10. As it can be seen,\nthe cross sections from these databases are similar in the\nregion where the elastic contribution dominates, that is,\nbelow 300 MeV for pp interactions and 500 MeV for np\ninteractions. The diﬀerences at high energy can be at-\ntributed to inelastic contributi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

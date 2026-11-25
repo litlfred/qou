@@ -1,0 +1,519 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin",
+  "blocks": [
+    {
+      "id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Matem´atica Contemporˆanea, Vol. 34, 251–283\nhttp://doi.org/10.21711/231766362008/rmc3411\n©2008, Sociedade Brasileira de Matem´atica\nTRIPLE LINKING NUMBERS,\nAMBIGUOUS HOPF INVARIANTS\nAND INTEGRAL FORMULAS FOR\nTHREE-COMPONENT LINKS\nD. DeTurck\nH. Gluck\nR. Komendarczyk\nP. Melvin\nC. Shonkwiler\nD. S. Vela-Vick\nTo Manfredo do Carmo, in friendship and admiration, on his 80th birthday\nAbstract\nThree-component links in the 3-dimensional sphere were classi-\nfied up to link homotopy by John Milnor in his senior thesis, pub-\nlished in 1954. A complete set of invariants is given by the pairwise\nlinking num",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/figure-img-p002-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../images/img-p002-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/figure-img-p003-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Statement of results",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-statement-of-results.md",
+      "narrative": null,
+      "content": "Statement of results\nConsider the configuration space\nConf3S3 ⊂S3 × S3 × S3\nof ordered triples (x, y, z) of distinct points in the unit 3-sphere S3 in R4.\nSince x, y and z are distinct, they span a 2-plane in R4. Orient this plane\nso that the vectors from x to y and from x to z form a positive basis, and\nthen move it parallel to itself until it passes through the origin. The result\nis an element G(x, y, z) of the Grassmann manifold G2R4 of all oriented\n2-planes through the origin in R4. This defines the Grassmann map\nG : Conf3S3 −→G2R4.\nIt is equivariant with respect to the diagonal O(4) actio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/rem-sec-000-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "rem-sec-000-02.md",
+      "narrative": null,
+      "content": "Milnor’s µ-invariant, typically denoted µ123, is descriptive of a single three-component link. In contrast, Pontryagin’s ν-invariant is the cohomology class of a difference cocycle comparing two maps from T 3 to S2 that are homotopic on the 2-skeleton of T 3. In particular, it assigns to any pair g, g′ of such maps whose degrees on the coordinate 2-tori are p, q and r, an integer ν(g, g′) that is well-defined modulo 2 gcd(p, q, r). With this understanding, the last statement in Theorem A asserts that 2(µ(L) −µ(L′)) ≡ν(gL, gL′) mod 2 gcd(p, q, r), for any two links L and L′ with the same pairwi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "The pairwise linking numbers p, q and r of the link L are equal to the degrees of its characteristic map gL on the 2-dimensional coordinate subtori of T 3, while twice Milnor’s µ-invariant for L is equal to Pontryagin’s ν-invariant for gL.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/thm-sec-000-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "thm-sec-000-03.md",
+      "narrative": null,
+      "content": "If the pairwise linking numbers p, q and r of the three components of L are all zero, then Milnor’s µ-invariant of L is given by the formula µ(L) = 1 Z T 3×T 3 VL(σ) × VL(τ)  ∇σφ (σ −τ) dσ dτ. Here ∇σ indicates the gradient with respect to σ, the difference σ −τ is taken in the abelian group structure of the torus, and dσ and dτ are volume elements. The integrand is invariant under the action of the group SO(4) of orientation-preserving rigid motions of S3 on the link L, attesting to the naturality of the formula. We will see in the next section that the integral above expresses the “helicity",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Background and motivation",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-background-and-motivation.md",
+      "narrative": null,
+      "content": "Background and motivation\nLet L be an ordered oriented link in R3 with two parametrized compo-\nnents\nX = {x(s) | s ∈S1} and Y = {y(t) | t ∈S1}.\nThe classical linking number Lk(X, Y ) is the degree of the Gauss map\nS1 × S1 →S2 sending (s, t) to (y(t) −x(s))/∥y(t) −x(s)∥, and can be\n256\nDETURC, GLUCK, KOMENDARCZYK, MELVIN et al\nexpressed by the famous integral formula of Gauss [1833],\nLk(X,Y ) = 1\n4π\nZ\nS1×S1 x′(s) × y′(t) \nx(s) −y(t)\n∥x(s) −y(t)∥3 ds dt\n=\nZ\nS1×S1 x′(s) × y′(t)  ∇x φ (∥x(s) −y(t)∥) ds dt,\nwhere φ(r) = −1/(4πr) is the fundamental solution of the scalar Laplacian\nin R3. The integ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Explicit formula for the characteristic map gL",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-explicit-formula-for-the-characteristic-map-gl.md",
+      "narrative": null,
+      "content": "Explicit formula for the characteristic map gL\nView R4 as the space of quaternions, with 1, i, j, k as basis, and consider\nthe map F : Conf3S3 →R3 −{0} defined by\nF(x, y, z) =\n\n\n\nix  y + iy  z + iz  x\njx  y + jy  z + jz  x\nkx  y + ky  z + kz  x\n\n\n.\nHere\n denotes the dot product in R4. The components of F(x, y, z) are\nquadratic polynomials in the components of x, y and z in R4, and the\nnorm ∥F(x, y, z)∥is twice the area of the triangle in R4 with vertices at\nx, y and z. This is a consequence of the fact that in R4, the area of a\nparallelogram with edges a and b is given by\n\u0002\n(ia",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/figure-img-p009-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../images/img-p009-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An asymmetric version of the characteristic map",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-an-asymmetric-version-of-the-characteristic-map.md",
+      "narrative": null,
+      "content": "An asymmetric version of the characteristic map\nContinuing to view S3 ⊂R4, let ℘x denote stereographic projection of\nS3 −{x} onto the 3-space R3\nx through the origin in R4 that is orthogonal\nto the vector x, as shown in Figure 2.\nFigure 2: Stereographic projection\nFor any (x, y, z) ∈Conf3S3, consider the points ℘xy and ℘xz in R3\nx.\nTranslation in R3\nx moves ℘xz to the origin, and then dilation in R3\nx makes\nthe translated ℘xy into a unit vector. Composing with ℘−1\nx , we see that x\nhas been kept fixed, y has moved to the point (℘xy−℘xz)/∥℘xy−℘xz∥on\nthe equatorial 2-sphere S2\nx = S3∩R3\nx, and z",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/figure-img-p010-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../images/img-p010-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sketch of the topological proof of Theorem A",
+      "pageStart": 10,
+      "pageEnd": 17,
+      "target": "../sections/sec-004-sketch-of-the-topological-proof-of-theorem-a.md",
+      "narrative": null,
+      "content": "Sketch of the topological proof of Theorem A\nStarting with a link in the 3-sphere, consider the delta move shown in\nFigure 3, which may be thought of as a higher order variant of a crossing\nchange. It takes place within a 3-ball, outside of which the link is left\nfixed. This move was introduced by Matveev [1987].\nFigure 3: The delta move L →L′\nTRIPLE LINKING NUMBERS AND INTEGRAL FORMULAS\n261\nIt was shown by Murakami and Nakanishi [1989] that an appropriate\nsequence of such moves can transform any link into any other link with\nthe same number of components, provided the two links have the same",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/figure-img-p011-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../images/img-p011-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/figure-img-p012-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../images/img-p012-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/figure-img-p013-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/figure-img-p014-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/figure-img-p015-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../images/img-p015-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/figure-img-p016-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../images/img-p016-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/figure-img-p017-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../images/img-p017-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sketch of the algebraic proof of Theorem A",
+      "pageStart": 17,
+      "pageEnd": 23,
+      "target": "../sections/sec-005-sketch-of-the-algebraic-proof-of-theorem-a.md",
+      "narrative": null,
+      "content": "Sketch of the algebraic proof of Theorem A\nThis proof is organized around the following key diagram:\nThe left half represents the geometric-topological problem we are trying\nto solve, and is devoid of algebraic structure. The right half represents the\nalgebraic structures that we impose on the left half via the two horizontal\nmaps in order to solve the problem.\nIn the upper left corner of (∗) we have the set of link-homotopy classes\nof three-component links in the 3-sphere S3, and in the lower left corner\nthe set of homotopy classes of maps of the 3-torus to the 2-sphere. The\nvertical map g be",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/figure-img-p018-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/figure-img-p019-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../images/img-p019-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/figure-img-p022-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sketch of the proof of Theorem B",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "../sections/sec-006-sketch-of-the-proof-of-theorem-b.md",
+      "narrative": null,
+      "content": "Sketch of the proof of Theorem B\nLet L be a 3-component link in S3 with pairwise linking numbers p, q\nand r all zero. We saw in Theorem A that these numbers are the degrees\nof the characteristic map gL : T 3 →S2 on the 2-dimensional coordinate\nsubtori. Thus gL is homotopic to a map which collapses the 2-skeleton of\nT 3, and so is in effect a map of S3 →S2. The Hopf invariant of this map,\nwhich we will regard as the Hopf invariant of gL, is equal to Pontryagin’s\nν-invariant comparing gL to the constant map, and we will denote this by\nν(gL).\nTo calculate this Hopf invariant, we adapt J. H. C. Wh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/prop-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "prop-sec-007-01.md",
+      "narrative": null,
+      "content": "The fundamental solution of the scalar Laplacian on the 3-torus T 3 = S1 × S1 × S1 is given by the formula φ(x, y, z) = −1 8π3 ∞ X m,n,p=−∞ m2+n2+p2̸=0 ei(mx+ny+pz) m2 + n2 + p2 . Even though we have expressed φ in terms of complex exponentials, the value of φ is real for real values of x, y and z because of the symmetry of the coefficients, and can therefore also be expressed as a Fourier cosine series. Figure 12 shows the graph of the corresponding fundamental solution of the scalar Laplacian on the 2-torus S1 × S1, displayed over the range −3π ≤x, y ≤3π. If we think of the 2-torus as obtain",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The fundamental solution of the Laplacian on the 3-torus",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-007-the-fundamental-solution-of-the-laplacian-on-the.md",
+      "narrative": null,
+      "content": "The fundamental solution of the Laplacian on the\n3-torus\nProposition 1. The fundamental solution of the scalar Laplacian on the\n3-torus T 3 = S1 × S1 × S1 is given by the formula\nφ(x, y, z) = −1\n8π3\n∞\nX\nm,n,p=−∞\nm2+n2+p2̸=0\nei(mx+ny+pz)\nm2 + n2 + p2 .\nEven though we have expressed φ in terms of complex exponentials, the\nvalue of φ is real for real values of x, y and z because of the symmetry\nof the coefficients, and can therefore also be expressed as a Fourier cosine\nseries.\nFigure 12 shows the graph of the corresponding fundamental solution\nof the scalar Laplacian on the 2-torus S1 × S1, disp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/figure-img-p026-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../images/img-p026-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Completing the proof of Theorem B",
+      "pageStart": 26,
+      "pageEnd": 33,
+      "target": "../sections/sec-008-completing-the-proof-of-theorem-b.md",
+      "narrative": null,
+      "content": "Completing the proof of Theorem B\nNow we have an explicit formula for the fundamental solution φ of the\nscalar Laplacian on the 3-torus T 3, and just as in R3, both the scalar and\nTRIPLE LINKING NUMBERS AND INTEGRAL FORMULAS\n277\nvector Green’s operators act by convolution with φ. In particular, if V is\na smooth vector field on T 3, then Gr(V ) = V ∗φ, that is,\nGr(V )(τ) =\nZ\nT 3 V (σ)φ(τ −σ) dσ.\nTo obtain the formula for the magnetic field BS(V ), we take the negative\ncurl of the above formula and get\nBS(V )(τ) = −∇τ × Gr(V )(τ) = −\nZ\nT 3 ∇τ × (V (σ)φ(τ −σ)) dσ\n=\nZ\nT 3 V (σ) × ∇τφ(τ −σ) dσ.\nThe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

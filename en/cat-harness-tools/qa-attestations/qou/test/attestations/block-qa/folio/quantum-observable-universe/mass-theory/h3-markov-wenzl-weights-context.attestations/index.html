@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/h3-markov-wenzl-weights-context.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../../../assets/navbar/rail-1pdbe0y89vk.js" defer></script><script src="../../../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../../../.." data-fa-to-root="../../../../../../../../../../..">{"data":"rail-1pdbe0y89vk","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/h3-markov-wenzl-weights-context.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/h3-markov-wenzl-weights-context.attestations</h1>
+<p class="m">A <a href="../../../../../../../../">qa-attestations</a> node held by <a href="../../../../../../../">qou</a>, at <code>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/h3-markov-wenzl-weights-context.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>block-qa</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;block&quot;,
+  &quot;id&quot;: &quot;folio/quantum-observable-universe/mass-theory/h3-markov-wenzl-weights-context&quot;,
+  &quot;path&quot;: &quot;folio/quantum-observable-universe/mass-theory/h3-markov-wenzl-weights-context&quot;
+}</pre></dd>
+<dt>criteria</dt><dd><pre>{
+  &quot;voice-branch-jargon&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Fixed: the `docs/audits/2026-05-05-y-lambda-tr-m-equivalence-proof.md` path and its time-stamp are gone; the surviving \&quot;caught in review\&quot; in the correction note is ordinary editorial prose.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-08-08T12:00:00Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/branch-jargon-rereview&quot;,
+        &quot;agent_skill&quot;: &quot;local/one-voice-audit&quot;
+      }
+    }
+  ],
+  &quot;trap-negation-contrast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f60f46f9728f&quot;,
+        &quot;ts&quot;: &quot;e6a82f102fe4&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:18:45.306Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aacea43e017db3fbd968cec390ab55a49a297bbc&quot;,
+      &quot;evidence&quot;: &quot;Around a dozen &#39;not X&#39; constructions, but each is the substantive-mathematical-contrast class: &#39;stated, not assumed&#39;, &#39;a definitional erratum, not a production defect&#39;, &#39;the heat-kernel decay rate, not a Markov-trace ingredient&#39; (symbol-collision disambiguation), &#39;not invariant under this automorphism&#39; (the chirality claim itself), &#39;not decided by experimental match&#39; (anti-fit discipline). Only &#39;There is now one trace in the framework&#39;s compute, not two&#39; is the bare template, and it clarifies against the prior state.&quot;
+    }
+  ],
+  &quot;trap-rhetorical-pivot&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f60f46f9728f&quot;,
+        &quot;ts&quot;: &quot;e6a82f102fe4&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:18:45.344Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aacea43e017db3fbd968cec390ab55a49a297bbc&quot;,
+      &quot;evidence&quot;: &quot;Read in full (remark, 191 lines). VERIFIED (not traps) — this block recomputes unusually well: convention-D weights at the proton pin are (0.505404, 0.247298, 0) against the stated (0.5054, 0.2473, 0); h^2+4 = [2]_q^2 exactly (4.043706209 both sides); z_D = 0.61268804 solves z*[N]_q = q^N at N = 2.0 exactly while z_C = 0.49932033 gives N = 2.5995155, matching the stated 2.5995; sum_lambda w_lambda(q) at n=3 = 0.98744, matching 0.987; and the q=1 cycle-counting trace 2^{c(w)-3} reproduces (1/2, 1/4, 0) by Schur orthogonality on the three S_3 classes. Convention C appears throughout but only as the excised comparand — the argument does not depend on C.&quot;
+    }
+  ],
+  &quot;trap-em-dash&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f60f46f9728f&quot;,
+        &quot;ts&quot;: &quot;e6a82f102fe4&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:18:45.379Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aacea43e017db3fbd968cec390ab55a49a297bbc&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Roughly fifteen spaced em-dashes. Four of the five section headings use one template, &#39;Label — gloss&#39; (Scope, Immediate corollary, Non-uniformity of the weights, Notation note), and at least three body dashes join independent clauses rather than set off a parenthetical: &#39;is not invariant under this automorphism — it is chiral, weighting ...&#39;; &#39;at q = 1 only — the q-deformed sum ... is not 1&#39;; &#39;from this proposition — and the identity ... holds exactly for all q&#39;.&quot;,
+      &quot;notes&quot;: &quot;proposed (structural, not applied): convert the four dashed headings to plain noun phrases (&#39;Scope: which trace, in which channel&#39; or just &#39;Scope&#39;), and split the three clause-joining dashes into full stops. The appositive dashes (the 1/delta gloss, the &#39;which is writhe 0 with pi = id&#39; parenthetical) should stay.&quot;
+    }
+  ],
+  &quot;trap-triples&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f60f46f9728f&quot;,
+        &quot;ts&quot;: &quot;e6a82f102fe4&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:18:45.413Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aacea43e017db3fbd968cec390ab55a49a297bbc&quot;,
+      &quot;evidence&quot;: &quot;&#39;verified three ways: Schur orthogonality ..., the exact q-dependent closed forms above, and canonical reproduction ... at 30 digits&#39; is a substantive enumeration of three genuinely different verification routes. Separately reported: &#39;canonical reproduction&#39; in that same clause is the known canonical-for-numerical sweep substitution.&quot;
+    }
+  ],
+  &quot;trap-closing-aphorism&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f60f46f9728f&quot;,
+        &quot;ts&quot;: &quot;e6a82f102fe4&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:18:45.456Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aacea43e017db3fbd968cec390ab55a49a297bbc&quot;,
+      &quot;evidence&quot;: &quot;Read in full (remark, 191 lines). VERIFIED (not traps) — this block recomputes unusually well: convention-D weights at the proton pin are (0.505404, 0.247298, 0) against the stated (0.5054, 0.2473, 0); h^2+4 = [2]_q^2 exactly (4.043706209 both sides); z_D = 0.61268804 solves z*[N]_q = q^N at N = 2.0 exactly while z_C = 0.49932033 gives N = 2.5995155, matching the stated 2.5995; sum_lambda w_lambda(q) at n=3 = 0.98744, matching 0.987; and the q=1 cycle-counting trace 2^{c(w)-3} reproduces (1/2, 1/4, 0) by Schur orthogonality on the three S_3 classes. Convention C appears throughout but only as the excised comparand — the argument does not depend on C.&quot;
+    }
+  ],
+  &quot;trap-meta-commentary&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f60f46f9728f&quot;,
+        &quot;ts&quot;: &quot;e6a82f102fe4&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:18:45.500Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aacea43e017db3fbd968cec390ab55a49a297bbc&quot;,
+      &quot;evidence&quot;: &quot;Read in full (remark, 191 lines). VERIFIED (not traps) — this block recomputes unusually well: convention-D weights at the proton pin are (0.505404, 0.247298, 0) against the stated (0.5054, 0.2473, 0); h^2+4 = [2]_q^2 exactly (4.043706209 both sides); z_D = 0.61268804 solves z*[N]_q = q^N at N = 2.0 exactly while z_C = 0.49932033 gives N = 2.5995155, matching the stated 2.5995; sum_lambda w_lambda(q) at n=3 = 0.98744, matching 0.987; and the q=1 cycle-counting trace 2^{c(w)-3} reproduces (1/2, 1/4, 0) by Schur orthogonality on the three S_3 classes. Convention C appears throughout but only as the excised comparand — the argument does not depend on C.&quot;
+    }
+  ],
+  &quot;trap-thesis-restatement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f60f46f9728f&quot;,
+        &quot;ts&quot;: &quot;e6a82f102fe4&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:18:45.537Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aacea43e017db3fbd968cec390ab55a49a297bbc&quot;,
+      &quot;evidence&quot;: &quot;Read in full (remark, 191 lines). VERIFIED (not traps) — this block recomputes unusually well: convention-D weights at the proton pin are (0.505404, 0.247298, 0) against the stated (0.5054, 0.2473, 0); h^2+4 = [2]_q^2 exactly (4.043706209 both sides); z_D = 0.61268804 solves z*[N]_q = q^N at N = 2.0 exactly while z_C = 0.49932033 gives N = 2.5995155, matching the stated 2.5995; sum_lambda w_lambda(q) at n=3 = 0.98744, matching 0.987; and the q=1 cycle-counting trace 2^{c(w)-3} reproduces (1/2, 1/4, 0) by Schur orthogonality on the three S_3 classes. Convention C appears throughout but only as the excised comparand — the argument does not depend on C.&quot;
+    }
+  ],
+  &quot;trap-performed-warmth&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f60f46f9728f&quot;,
+        &quot;ts&quot;: &quot;e6a82f102fe4&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:18:45.580Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aacea43e017db3fbd968cec390ab55a49a297bbc&quot;,
+      &quot;evidence&quot;: &quot;Read in full (remark, 191 lines). VERIFIED (not traps) — this block recomputes unusually well: convention-D weights at the proton pin are (0.505404, 0.247298, 0) against the stated (0.5054, 0.2473, 0); h^2+4 = [2]_q^2 exactly (4.043706209 both sides); z_D = 0.61268804 solves z*[N]_q = q^N at N = 2.0 exactly while z_C = 0.49932033 gives N = 2.5995155, matching the stated 2.5995; sum_lambda w_lambda(q) at n=3 = 0.98744, matching 0.987; and the q=1 cycle-counting trace 2^{c(w)-3} reproduces (1/2, 1/4, 0) by Schur orthogonality on the three S_3 classes. Convention C appears throughout but only as the excised comparand — the argument does not depend on C.&quot;
+    }
+  ],
+  &quot;trap-superlative&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f60f46f9728f&quot;,
+        &quot;ts&quot;: &quot;e6a82f102fe4&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:18:45.617Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aacea43e017db3fbd968cec390ab55a49a297bbc&quot;,
+      &quot;evidence&quot;: &quot;&#39;The extreme expression of this asymmetry&#39;, &#39;no integer fibre dimension at all&#39; and &#39;exactly&#39; are intensifiers, but each sits on a claim the block then substantiates numerically (y_(1^3) = 0 identically; N_C = 2.5995155, verified non-integer). Not maximum-strength claims left unqualified.&quot;
+    }
+  ],
+  &quot;trap-nonspeakable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;f60f46f9728f&quot;,
+        &quot;ts&quot;: &quot;e6a82f102fe4&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:w00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:18:45.656Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aacea43e017db3fbd968cec390ab55a49a297bbc&quot;,
+      &quot;evidence&quot;: &quot;Read in full (remark, 191 lines). VERIFIED (not traps) — this block recomputes unusually well: convention-D weights at the proton pin are (0.505404, 0.247298, 0) against the stated (0.5054, 0.2473, 0); h^2+4 = [2]_q^2 exactly (4.043706209 both sides); z_D = 0.61268804 solves z*[N]_q = q^N at N = 2.0 exactly while z_C = 0.49932033 gives N = 2.5995155, matching the stated 2.5995; sum_lambda w_lambda(q) at n=3 = 0.98744, matching 0.987; and the q=1 cycle-counting trace 2^{c(w)-3} reproduces (1/2, 1/4, 0) by Schur orthogonality on the three S_3 classes. Convention C appears throughout but only as the excised comparand — the argument does not depend on C.&quot;
+    }
+  ]
+}</pre></dd>
+</dl>
+</main>
+</body>
+</html>

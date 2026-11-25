@@ -1,0 +1,411 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "cspaper",
+  "blocks": [
+    {
+      "id": "library/cspaper/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "In this paper we prove some results on combinatorics of triangulations of 3-dimensional\npseudo-manifolds, improving on results of [NZ], and apply them to obtain a simplicial\nformula for the Chern-Simons invariant of an ideally triangulated hyperbolic 3-manifold.\nCombining this with [MN] gives a simplicial formula for the η invariant also.\nIn effect, the main ingredient in the formula is the sum of the “Rogers dilogarithm”\nof the complex parameters of the ideal tetrahedra of the triangulation, but the choice of\nthe appropriate branch of the Rogers dilogarithm for each simplex involves unexpecte",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cspaper/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Combinatorics of Triangulations and the\nChern-Simons Invariant for Hyperbolic 3-Manifolds\nWalter D. Neumann",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cspaper/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "Given any solution c ∈C2n to (∗), there exists a constant α = α(c) such that if M ′ is the result of hyperbolic Dehn surgery on M, then V(M ′) = α −π h X j=1 λj −i n X ν=1 \u0012 R(zν) −iπ \u0000c′ν log(1 −zν) −c′′ν log(zν) \u0001\u0013 . Moreover, if c ∈R2n then α is pure imaginary and if c ∈Q2n then α ∈iπ2Q.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cspaper/blocks/thm-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "thm-sec-000-02.md",
+      "narrative": null,
+      "content": "There exist solutions c to (∗) in Z2n satisfying the parity condition. For such c, the constant α of Theorem 1 is well-deﬁned (i.e., independent of c) modulo iπ2/2 (and is conjecturally an integer multiple of iπ2/6). The formula of Theorem 1 is a fairly easy application of the methods in [NZ]; we prove it in Sect. 3, along with the rationality statement for α and the second sentence of Theorem 2. The existence of c as in Theorem 2 needs the combinatorial results of Sects. 4–6 and is proved in Sect. 6. Remarks. 1. If one drops the parity condition in Theorem 2 then α is well-deﬁned modulo iπ2/4",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cspaper/blocks/thm-sec-000-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "thm-sec-000-03.md",
+      "narrative": null,
+      "content": "it should be associated with some kind of extra structure on M. Remark 4 and Section 2 both give some support for this belief. Acknowledgements. The support of the N.S.F. for this work is gratefully acknowledged. Don Zagier encouraged me to ﬁnally write up this work, despite the lack of proof of the conjecture of Theorem 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cspaper/blocks/lem-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "lem-sec-001-01.md",
+      "narrative": null,
+      "content": "d(C) = −P ±ϵj, where the ϵj are the ϵ’s (cf. equation (2.3)) at the vertices that C passes, with signs ± given as above. Consistency and cusp conditions. For each edge E of our triangulation we have the consistency condition (2.2). At each cusp of M choose two curves C as above representing a basis of the ﬁrst homology of the cusp and consider the corresponding cusp conditions (2.7). The complete hyperbolic structure on M —the one with tetrahedral parameters z0 ν —is determined by all of these consistency and cusp conditions together. This is a system of linear equations with integral coefﬁcie",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cspaper/blocks/prop-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "prop-sec-001-02.md",
+      "narrative": null,
+      "content": "The equation Uc = d (equation (∗) of the Introduction) is equivalent to the following conditions: C1. the sum of the η ’s around any edge E of the triangulation is 2; C2. for any path C as above in a torus section of an end of M, the signed sum of the η ’s over the vertices adjacent to the path C is zero.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cspaper/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Consistency and cusp conditions, and the conditions on c",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-2-consistency-and-cusp-conditions-and-the-condit.md",
+      "narrative": null,
+      "content": "An ideal hyperbolic structure on a tetrahedron ∆is speciﬁed by assigning a complex\nnumber with positive imaginary part to each edge, these numbers being related as in\nFig. 1. The geometric meaning of these parameters is that the Euclidean triangle cut off\nby a horosphere section at a vertex is similar to the Euclidean triangle pictured in Fig. 1\nwith vertices 0, 1, and z in the complex plane; the parameter z is only well-deﬁned\nafter choosing an edge of ∆, and parameters for different edges are related as illustrated.\nInstead of these parameters z, 1/(1 −z), and (z −1)/z, it will be convenient",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cspaper/blocks/rem-sec-001-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "rem-sec-001-03.md",
+      "narrative": null,
+      "content": "The parity condition C3 implies that C1 holds modulo 2. Given that C1 holds modulo 2, the parity of c along C is easily seen to depend only on the homology class of C and to give a homomorphism H1(M; Z/2) →Z/2. If C2 holds modulo 2, this homomorphism vanishes on H1(E; Z/2), where E is the union of the ends of M. Thus, one then need only check the parity condition on a set of representatives for generators of H1(M; Z/2)/ Im H1(E; Z/2) = H1(M ∗; Z/2), where M ∗is the end compactiﬁcation of M.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cspaper/blocks/lem-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 15,
+      "target": "lem-sec-002-01.md",
+      "narrative": null,
+      "content": "Given x and y in C2n satisfying Rx = Ry = 0, we have xtJ2ny = 1 2xtCtJ2hCy.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cspaper/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The formula for the Chern-Simons invariant",
+      "pageStart": 8,
+      "pageEnd": 15,
+      "target": "../sections/sec-002-3-the-formula-for-the-chern-simons-invariant.md",
+      "narrative": null,
+      "content": "In this section we prove Theorems 1 and 2 of the Introduction, assuming Theorem 2.4,\nwhich will be proved in Sect. 6.\nProof of Theorem 1. Let M be triangulated, as in the previous section, into ideal\ntetrahedra with parameters zν.\nWe do not assume M has the complete hyperbolic\nstructure. Under certain conditions that we recall below, the metric completion M ′ of\nthis structure on M is a hyperbolic manifold, in which case it is a Dehn ﬁlling of M in\nthe topological sense. To review the conditions we need some notation.\nNumber the ends of M by j = 1, . . . , h say. Choose a speciﬁc oriented basi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cspaper/blocks/rem-sec-002-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 15,
+      "target": "rem-sec-002-02.md",
+      "narrative": null,
+      "content": "It is easy to check that the formula for V(M ′) of Theorem 2 is invariant modulo iπ2/6 under “cocycle moves” to change the triangulation: replace two ideal simplices ⟨V0, V1, V2, V3⟩and ⟨V ′ 0, V1, V2, V3⟩which have a common face by three— ⟨V0, V ′ 0, V1, V2⟩, ⟨V0, V ′ 0, V2, V3⟩, and ⟨V0, V ′ 0, V3, V1⟩.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cspaper/blocks/lem-sec-003-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 27,
+      "target": "lem-sec-003-05.md",
+      "narrative": null,
+      "content": "(i) γ ◦δ: H1(∂K0) →H1(∂K0) is multiplication by 2. (ii) γ and δ are isomorphisms after tensoring with Z[ 1 2]. (iii) ⟨δx, δy⟩= 2x · y, where x · y means intersection form in H1(∂K0). (iv) γa · γb = 2⟨a, b⟩for a, b ∈H3(J). (v) x · γa = ⟨δx, a⟩for a ∈H3(J) and x ∈H1(∂K0), that is, γ: H3(J)/{Torsion} →H1(∂K0) and δ: H1(∂K0) →H3(J)/{Torsion} are adjoint maps with respect to the forms on H1(∂K0) and H3(J)/{Torsion}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cspaper/blocks/lem-sec-003-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 27,
+      "target": "lem-sec-003-06.md",
+      "narrative": null,
+      "content": "In a similar way we shall describe γ′ 2: H3(J ⊗Z/2) →H1(K0; Z/2) as the dual of a map δ2: H1(K0; Z/2) →H3(J ⊗Z/2): γ′ 2(a)(c) = ⟨a, δ2(c)⟩ for c ∈H1(K0; Z/2), (5.2) where δ2 is deﬁned as follows. If c ∈H1(K0; Z/2) is represented by a general closed path C in K0, then each time C passes through a 3-simplex ∆from one face to another, it determines an edge e of ∆, namely the edge common to the two faces, and hence an element, also denoted e, of J ⊗Z/2. We let δ2(c) be the class in H3(J ⊗Z/2) of the sum of these elements e. The proof that this sum is indeed a cycle, i.e., in Ker(β∗⊗Z/2), and that",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cspaper/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Combinatorics of 3-cycles",
+      "pageStart": 15,
+      "pageEnd": 27,
+      "target": "../sections/sec-003-4-combinatorics-of-3-cycles.md",
+      "narrative": null,
+      "content": "By an n-cycle with boundary will be meant any n-complex K obtained from a ﬁnite\ndisjoint union of closed n-simplices by iteratively gluing together pairs of free (n −\n1)-faces by simplicial identiﬁcation maps (a “free” face is one that has not yet been glued)\nin such a way that any open q-simplex still embeds after the identiﬁcation. If no free\nfaces remain K will be called a closed n-cycle or just an n-cycle (these are also called\n“n-dimensional normal pseudo-manifolds” in the literature).\nAlternatively, 1-cycles\nare compact quasi-simplicial 1-manifolds and n-cycles can then be deﬁned inducti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cspaper/blocks/rem-sec-003-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 27,
+      "target": "rem-sec-003-02.md",
+      "narrative": null,
+      "content": "In [NZ, Theorem 2.2 to Proposition 2.5] combinatorial results equivalent to the above Theorem were proved under the extra assumption that the complement of the vertices, K −K0, carries a complete hyperbolic structure of ﬁnite volume.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cspaper/blocks/rem-sec-003-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 27,
+      "target": "rem-sec-003-04.md",
+      "narrative": null,
+      "content": "The isomorphism of H2(J) with H1(K; Z/2) is given by the obvious map— an element of Ker α∗represents a modulo-2 simplicial 1-cycle in K. The torsion of H3(J) then follows by the universal coefﬁcient theorem. The map of H3(J)/{Torsion} to H is less obvious, and is pictured in Fig. 9 below. In Theorem 5.1 we give a more direct computation of H3(J) in terms of cohomology, which we need later, but its proof uses the above theorem.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cspaper/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 27,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "The sequence J: 0 −→C0 α −→C1 β −→J β∗ −→C1 α∗ −→C0 −→0 is a chain complex. Tensored with Z[ 1 2], it is exact except in the middle, where its homology is the ﬁrst homology of ∂K0: (Ker β∗/ Im β) ⊗Z[1 2] = H1(∂K0; Z[1 2]) = a V ∈K0 H1(LV ; Z[1 2]). Moreover, the bilinear form ⟨, ⟩on (Ker β∗/ Im β)⊗Z[ 1 2] is twice the intersection form on H1(∂K0; Z[ 1 2]).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cspaper/blocks/thm-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 27,
+      "target": "thm-sec-003-03.md",
+      "narrative": null,
+      "content": "The homology groups Hi(J) are H5(J) = 0, H4(J) = Z/2, H1(J) = Z/2, H3(J) = H ⊕H1(K; Z/2), H2(J) = H1(K; Z/2), where H = Ker(H1(∂K0; Z) →H1(K0; Z/2)). The isomorphism H3(J)/{Torsion} →H is an isometry for the form on H3(J) = Ker β∗/ Im β and the intersection form on H ⊆H1(∂K0) = ` H1(LV ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cspaper/blocks/thm-sec-003-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 27,
+      "target": "thm-sec-003-07.md",
+      "narrative": null,
+      "content": "The following diagram is a pullback diagram: H3(J) γ′ −→ H1(∂K0; Z) yγ′ 2ι yr H1(K0; Z/2) i∗ −→ H1(∂K0; Z/2), where i∗is induced by i: ∂K0 →K0 and r is reduction modulo 2. Equivalently, the following sequence is exact: 0 →H3(J) (γ′,γ′ 2ι) −−−−→H 1(∂K0; Z) ⊕H1(K0; Z/2) r−i∗ −−−→H1(∂K0; Z/2) →0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cspaper/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "Suppose every component of ∂K0 is a torus. Then there exists an element η ∈J satisfying: 1. the J∆component of η has coefﬁcient sum 1 for each 3-simplex ∆, 2. β2(η) = 2 P E, twice the sum of all the edges of K, 3. γ(η)(C) = 0 for every general essential simple closed curve C in ∂K0 with no back-tracking, 4. γ2(η)(C) = 0 modulo 2 for every general closed curve in K0 with no back- tracking. Moreover, any such η is unique up to Im β1β.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/cspaper/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 2.4",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "../sections/sec-004-6-proof-of-theorem-24.md",
+      "narrative": null,
+      "content": "Let J∆be deﬁned like J∆but without the relation e1 + e2 + e3 = 0; that is, J∆is\ngenerated by the six edges e1, . . . , e6 of ∆with the relations ei = ei+3 for i = 1, 2, 3.\nWe give J ∆the standard bilinear form (ei, ej) = δij for i, j ∈{1, 2, 3}. Let J be the\northogonal sum of the J ∆. The map β∗: J →C2 can be factored as\nβ∗: J\nβ1\n−→J\nβ2\n−→C2,\nwith β1 and β2 deﬁned on the ∆-component by\nβ1(ei) = ei+1 −ei+2\nβ2(ei) = j(ei) + j(ei+3)\no\nfor i = 1, 2, 3.\n(6.1)\nNote that β1: J →J and the natural projection p: J →J are adjoint maps with respect\nto the forms on J and J; that is,\n(β1(a), x) = ⟨a, p(x)⟩",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/cspaper/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/sec-005-references.md",
+      "narrative": null,
+      "content": "[CS]\nM. Culler and P. B. Shalen, Varieties of group representations and splittings of 3-manifolds,\nAnn. of Math. 117 (1983), 109–146\n[D]\nJohan L. Dupont, The dilogarithm as a characteristic class for ﬂat bundles, Proc. of the\nNorthwestern conference on cohomology of groups (Evanston, Ill., 1985), J. Pure Appl.\nAlgebra 44 (1987), 137–164.\n[HMW] Craig D. Hodgson, G. Robert Meyerhoff, and Jeffrey R. Weeks, Surgeries on the White-\nhead link yield geometrically similar manifolds, These Proceedings.\n[MN]\nR. Meyerhoff and Walter D. Neumann, An asymptotic formula for the eta invariants of\nhyperbolic 3",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

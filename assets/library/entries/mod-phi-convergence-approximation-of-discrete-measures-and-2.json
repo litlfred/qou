@@ -1,0 +1,1386 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "mod-phi-convergence-approximation-of-discrete-measures-and-2",
+  "blocks": [
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "ANNALES DE\nL’INSTITUT FOURIER\nUniversité Grenoble Alpes\nLes Annales de l’institut Fourier sont membres du\nCentre Mersenne pour l’édition scientiﬁque ouverte\nwww.centre-mersenne.org\nReda Chhaibi, Freddy Delbaen,\nPierre-Loïc Méliot & Ashkan Nikeghbali\nMod-φ convergence: Approximation of discrete measures and\nharmonic analysis on the torus\nTome 70, no 3 (2020), p. 1115-1197.\n<http://aif.centre-mersenne.org/item/AIF_2020__70_3_1115_0>\n© Association des Annales de l’institut Fourier, 2020,\nCertains droits réservés.\nCet article est mis à disposition selon les termes de la licence\nCreative Commons at",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Poisson approximation of lattice-valued random variables",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-11-poisson-approximation-of-lattice-valued-rando.md",
+      "narrative": null,
+      "content": "Consider a sequence (Bi)i⩾1 of independent Bernoulli random variables,\nwith P[Bi = 1] = pi and P[Bi = 0] = 1 −pi. We set\nXn =\nn\nX\ni=1\nBi.\nThe Poisson approximation ensures that if the pi’s are small but their sum\nλn = Pn\ni=1 pi is large, then the distribution of Xn is close to the distribution\nof a Poisson random variable with parameter λn = Pn\ni=1 pi. To make this\nresult quantitative, one can introduce the total variation distance between\ntwo probability measures µ and ν on Z. Let us set\ndTV(µ, ν) =\nX\nk∈Z\n|µ({k}) −ν({k})| ;\nthis deﬁnition diﬀers by a multiplicative factor 2 from the usual con",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/ex-sec-002-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "ex-sec-002-02.md",
+      "narrative": null,
+      "content": "— With d = 1, suppose that X follows a Poisson distribu- tion P(λ) with parameter λ. In this case, φ(ξ) = λ \u0000eiξ −1 \u0001 = iλξ −λ ξ2 2 + o(ξ2).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/ex-sec-002-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "ex-sec-002-03.md",
+      "narrative": null,
+      "content": "— More generally, ﬁx a random variable Z with values in Z, and consider the compound Poisson distribution X = PP(λ) i=1 Zi, where the Zi’s are independent copies of Z, and P(λ) is an independent Poisson variable. One obtains a new inﬁnitely divisible law with values on the lattice TOME 70 (2020), FASCICULE 3 R. CHHAIBI, F. DELBAEN, P.-L. MÉLIOT & A. NIKEGHBALI Z, and the corresponding Lévy–Khintchine exponent is φ(ξ) = λ \u0000E[eiξZ] −1 \u0001 = iλ E[Z] ξ −λ E[Z2] ξ2 2 + o(ξ2).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Infinitely divisible distributions and distances between probability measures",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-12-infinitely-divisible-distributions-and-distan.md",
+      "narrative": null,
+      "content": "probability measures\nLet us start by presenting the reference inﬁnitely divisible laws and the\ndistances between probability distributions that we shall work with. Fix a\ndimension d ⩾1. If X is a random variable with values in Zd, we denote\nµX its probability law\nµX(k1, k2, . . . , kd) = P[X = (k1, k2, . . . , kd)],\nand bµX its Fourier transform, which is deﬁned on the torus Td = (R/2πZ)d:\nbµX(ξ) = E[ei⟨ξ | X⟩] =\nX\nk1,...,kd∈Z\nµX(k1, . . . , kd) exp\n\ni\nd\nX\nj=1\nkjξj\n\n.\nANNALES DE L’INSTITUT FOURIER\nAPPROXIMATION OF DISCRETE MEASURES\n1119\nAssume that the law of X is inﬁnitely divisible. Then",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/rem-sec-002-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "rem-sec-002-01.md",
+      "narrative": null,
+      "content": "— Let (γ ∈Rd, A ∈M(d × d, R), Π) be the triplet of the Lévy–Khintchine representation of the Fourier transform of an inﬁnitely divisible random variable X (cf. [53, Theorem 8.1]). Then, X is supported on Zd and has a moment of order 2 if and only if: (1) A = 0 and γ ∈Zd; (2) the Lévy measure Π is supported on Zd and has a second moment.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/ex-sec-003-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "ex-sec-003-01.md",
+      "narrative": null,
+      "content": "— Consider as in Section 1.1 a sum of independent random variables Xn = n X i=1 Bi, with Bi following a law B(pi): P[Bi = 1] = 1−P[Bi = 0] = pi. Let us assume that P∞ i=1 pi = +∞and P∞ i=1(pi)2 < +∞. Then, setting λn = Pn i=1 pi and µn = µXn, bµn(ξ) = n Y i=1 \u00001 + pi(eiξ −1) \u0001 = eλn(eiξ−1) n Y i=1 \u00001 + pi(eiξ −1) \u0001 e−pi(eiξ−1) = eλn(eiξ−1) n Y i=1 \u0012 1 −(pi(eiξ −1))2 (1 + o(1)) \u0013 = eλn(eiξ−1) ψn(ξ) with ψn(ξ) →ψ(ξ) = Q∞ i=1 \u00001 + pi(eiξ −1) \u0001 e−pi(eiξ−1). This inﬁnite prod- uct converges uniformly on the circle because of the hypothesis P∞ i=1(pi)2 < ∞. So, one has mod-Poisson convergence with p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/ex-sec-003-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "ex-sec-003-02.md",
+      "narrative": null,
+      "content": "— If σ is a permutation of the integers in [[1, n]], denote ℓ(σ) its number of disjoint cycles, including the ﬁxed points. We then set ℓn = ℓ(σn), where σn is taken at random uniformly among the n! permutations of Sn. Using Feller’s coupling (cf. [1]), one can show that ℓn admits the following representation in law: ℓn = n X i=1 B \u00121 i \u0013 , where the Bernoulli random variables are independent. This representation will also be made clear by the discussion of Section 5.3 in the present paper. By the discussion of the previous example, (ℓn)n∈N converges mod-Poisson with parameters Hn = Pn i=1 i an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/ex-sec-003-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "ex-sec-003-03.md",
+      "narrative": null,
+      "content": "— As pointed out in [35, 41], mod-φ convergence is a com- mon phenomenon in probabilistic number theory. For instance, denote ω(k) the number of distinct prime divisors of an integer k ⩾1, and ω(Nn) the number of distinct prime divisors of a random integer Nn smaller than n, taken according to the uniform law. Then, it can be shown by using the Selberg–Delange method (cf. [57, Section II.5]) that E[ezω(Nn)] = 1 n n X k=1 ezω(k) = e(log log n)(ez−1) \u0012 Ψ(ez) + O \u0012 log n \u0013\u0013 with Ψ(z) = Γ(z) Y p prime \u0012 1 + z −1 p \u0013 e−z−1 p , and where the remainder O( log n) is uniform for z in a compact subset o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mod-phi convergent sequences of random variables",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-13-mod-phi-convergent-sequences-of-random-variab.md",
+      "narrative": null,
+      "content": "We consider an inﬁnitely divisible law ν of exponent φ on Zd, and a\nsequence of random variables (Xn)n∈N on Zd. Following [23, 26, 35], we say\nthat (Xn)n∈N converges mod-φ with parameters λn →+∞and limiting\nfunction ψ if\nE\nh\nei⟨ξ | Xn⟩i\n= eλnφ(ξ) ψn(ξ)\nwith\nlim\nn→∞ψn(ξ) = ψ(ξ).\nThe precise hypotheses on the convergence ψn →ψ will be made explicit\nwhen needed; typically, we shall assume it to occur in some space C r(Td)\nendowed with the norm\n∥f∥C r = sup\n|α|⩽r\nsup\nξ∈Td |(∂αf)(ξ)|.\nLet us provide a few examples which should enhance the understanding of\nthis notion, as well as show its large scop",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/def-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "def-sec-004-01.md",
+      "narrative": null,
+      "content": "— The Wiener algebra A = A (T) is the algebra of continuous functions on the circle whose Fourier series converges absolutely. It is a Banach algebra for the pointwise product and the norm ∥f∥A := X n∈Z |cn(f)|, where cn(f) denotes the Fourier coeﬃcient R 2π f(eiθ) e−inθ dθ 2π.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/def-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "def-sec-004-03.md",
+      "narrative": null,
+      "content": "— Let (Xn)n∈N be a sequence of random variables in Zd that is mod-φ convergent with parameters (λn)n∈N. A general ap- proximation scheme for (Xn)n∈N is given by a sequence of discrete signed measures (νn)n∈N on Zd, such that c µn(ξ) = E[ei⟨ξ | Xn⟩] = eλnφ(ξ) ψn(ξ); c νn(ξ) = eλnφ(ξ) χn(ξ), with limn→+∞ψn(ξ) = ψ(ξ) and limn→+∞χn(ξ) = χ(ξ). Here, the residues ψn, ψ, χn and χ are functions on the torus Td = (R/2πZ)d that have ab- solutely convergent Fourier series, and with χn(0) = χ(0) = 1 (hence, ANNALES DE L’INSTITUT FOURIER APPROXIMATION OF DISCRETE MEASURES νn(Zd) = 1). The convergence of th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/ex-sec-004-04",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "ex-sec-004-04.md",
+      "narrative": null,
+      "content": "— An important case of approximation scheme in the sense of Deﬁnition 1.10 is the approximation scheme of order r ⩾1. Suppose that d = 1 and that the functions ψn(ξ) can be represented on the torus as absolutely convergent series ψn(ξ) = 1 + ∞ X k=1 bk,n (eiξ −1)k + n X k=1 ck,n (e−iξ −1)k. The coeﬃcients ak,n of ψn(ξ) = P∞ k=−∞ak,n eikξ are related to the coeﬃ- cients bk,n and ck,n by the equations bk,n = X l⩾k \u0012l k \u0013 al,n ; ck,n = X l⩾k \u0012l k \u0013 a−l,n for all k ⩾1. Set then χ(r) n (ξ) = P (r) n (eiξ) = 1 + r X k=1 bk,n (eiξ −1)k + r X k=1 ck,n (e−iξ −1)k. The χ(r) n (ξ) are the Laurent polynom",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prop-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "prop-sec-004-02.md",
+      "narrative": null,
+      "content": "(Wiener’s 1 f theorem). — Let f ∈A . Then f never vanishes on the circle if and only if 1 f ∈A . We refer to [45] for a short proof of the Wiener theorem. As a conse- quence, if Xn is a Z-valued random variable and if ν is an inﬁnitely divisible distribution with exponent φ, then the deconvolution residue ψn(ξ) = E[eiξXn] e−λnφ(ξ) belongs to A , so it is a convergent Fourier series ψn(ξ) = P∞ k=−∞ak,n eikξ. The idea is then to replace this residue ψn by a simpler residue χn ∈A , which after reconvolution by eλnφ(ξ) yields a signed measure approximating the law of Xn. We are thus led to:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prop-sec-004-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "prop-sec-004-05.md",
+      "narrative": null,
+      "content": "— In the previous setting, if (ν(r) n )n∈N is the approximation scheme of order r ⩾ 1 of a sequence of probability measures (µn)n∈N that is mod-φ convergent, then for any square-integrable function f, ν(r) n (f) = E[(P (r) n (S)(f))(Yn)], where Yn follows an inﬁnitely divisible law with exponent λnφ. Thus, to estimate at order r the expectation µn(f) = E[f(Xn)]: (1) one replaces Xn by an inﬁnitely divisible random variable Yn; (2) and one also replaces the function f by P (r) n (S)(f), which is better suited for discrete approximations. ANNALES DE L’INSTITUT FOURIER APPROXIMATION OF DISCRETE M",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Wiener algebra and the general scheme of approximation",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "../sections/sec-004-14-the-wiener-algebra-and-the-general-scheme-of.md",
+      "narrative": null,
+      "content": "approximation\nAs explained before, we shall be interested in more general approximation\nschemes, with signed measures νn that are closer to µn than the basic\nscheme. When d = 1, the appearance of signed measures is natural in\nthe setting of the Wiener algebra of absolutely convergent Fourier series\n(see [37, 39]):\nTOME 70 (2020), FASCICULE 3\n1124\nR. CHHAIBI, F. DELBAEN, P.-L. MÉLIOT & A. NIKEGHBALI\nDefinition 1.8. — The Wiener algebra A = A (T) is the algebra of\ncontinuous functions on the circle whose Fourier series converges absolutely.\nIt is a Banach algebra for the pointwise product and th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/rem-sec-004-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "rem-sec-004-06.md",
+      "narrative": null,
+      "content": "— Our notion of approximation scheme should be com- pared to the one of [34], which is the particular case where the reference inﬁnitely divisible law is Poissonian, and the residues χn are constant equal to one. One of the main interest of our approach is that we are able to con- struct better schemes of approximation, by allowing quite general residues χn in the Fourier transform of the laws νn that approximate the ran- dom variables Xn. On the other hand, we consider only three distances among those studied in [34], but there should be no diﬃculty in adapting our results to the other distan",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/rem-sec-004-07",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "rem-sec-004-07.md",
+      "narrative": null,
+      "content": "— The approximation scheme of order r ⩾1 can be con- sidered as a discrete analogue of the Edgeworth expansion in the central limit theorem, which is with respect to the Gaussian approximation, and thus gives results for a diﬀerent scale of ﬂuctuations [47, Chapter VI].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outline of the paper",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-005-15-outline-of-the-paper.md",
+      "narrative": null,
+      "content": "Placing ourselves in the setting of a general approximation scheme, one\nbasic idea in order to evaluate the distances between the distributions µn\nand νn is to relate them to the distances between the two residues ψn(ξ)\nand χn(ξ) in the Wiener algebra A (Td). In Section 2, we prove various\nconcentration inequalities in this algebra, and we explain how to use them\nin order to compute distances between distributions. In Section 3, we apply\nthese results to obtain asymptotic estimates for the distances in the general\napproximation scheme (see our main Theorems 3.3, 3.6 and 3.11). In these\ntwo sec",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Concentration inequalities in the Wiener algebra",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-006-2-concentration-inequalities-in-the-wiener-algeb.md",
+      "narrative": null,
+      "content": "For convenience, until Section 5, we shall focus on the one-dimensional\ncase (d = 1) and the corresponding torus T = R/2πZ, which we view as the\nANNALES DE L’INSTITUT FOURIER\nAPPROXIMATION OF DISCRETE MEASURES\n1129\nset of complex numbers of modulus 1. Thus, a function on T will be a func-\ntion of eiξ with ξ ∈[0, 2π). For p ∈[1, +∞), the space of complex-valued\nfunctions on T whose p-powers are Lebesgue integrable will be denoted\nL p = L p(T); it is a Banach space for the norm\n∥f∥p :=\n\u0012Z 2π\n0\n|f(eiξ)|p dt\n2π\n\u0013 1\np\n.\nFor p = +∞, L ∞(T) is the space of essentially bounded functions on the\ntorus,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/lem-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Fundamental inequality for deconvolution residues",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "lem-sec-007-01.md",
+      "narrative": null,
+      "content": "Let µ and ν be two signed measures on Z and δ = bµ bν be the deconvolution residue (we assume that bν does not vanish on T). For any c ∈A , dTV(µ, ν) ⩽∥c(δ −1)bν∥A + ∥δ −1∥A ∥(1 −c)bν∥A .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Deconvolution residues in the Wiener algebra",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-007-21-deconvolution-residues-in-the-wiener-algebra.md",
+      "narrative": null,
+      "content": "Recall that the Wiener algebra A (T) is the complex algebra of absolutely\nconvergent Fourier series, endowed with the norm ∥f∥A = P\nn∈Z |cn(f)|.\nWe shall use the following property of A (T), which is akin to Poincaré’s\ninequality for Sobolev spaces (see [39, Section 6.2]):\nProposition 2.1. — There is a constant CH =\nπ\n√\n3 = 1.814 . . . such\nthat\n∥f∥A ⩽|c0(f)| + CH∥f ′∥L 2\nfor all f ∈A .\nProof. — Combining the Cauchy–Schwarz inequality and the Parseval\nidentity, we obtain\n∥f∥A = |c0(f)| +\nX\nn̸=0\n1\nn |n cn(f)|\n⩽|c0(f)| +\nsX\nn̸=0\n1\nn2\nsX\nn̸=0\n|n cn(f)|2\n⩽|c0(f)| +\nr\nπ2\n3 ∥f ′∥L 2.\nNote that the i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/lem-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 23,
+      "target": "lem-sec-008-02.md",
+      "narrative": null,
+      "content": "— Under the assumptions of Theorem 2.3,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/lem-sec-008-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 23,
+      "target": "lem-sec-008-03.md",
+      "narrative": null,
+      "content": "— Under the assumptions of Theorem 2.3, we have:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Estimates of norms in the Wiener algebra",
+      "pageStart": 18,
+      "pageEnd": 23,
+      "target": "../sections/sec-008-22-estimates-of-norms-in-the-wiener-algebra.md",
+      "narrative": null,
+      "content": "In this paragraph, we ﬁx two discrete measures µ and ν on Z, both being\nconvolutions of an inﬁnitely divisible law with exponent λφ by residues ψ\nand χ:\nbµ(ξ) = eλφ(ξ) ψ(ξ);\nbν(ξ) = eλφ(ξ) χ(ξ).\nIn Section 3, we shall recover the setting of a general approximation scheme\nby adding indices n to this situation. We denote m and σ2 the ﬁrst two\ncoeﬃcients of the Taylor expansion of φ around 0:\nφ(ξ) = miξ −σ2ξ2\n2\n+ o(ξ2).\nWe then ﬁx an integer r ⩾0 such that:\n(1) the residues ψ and χ are assumed to be (r + 1) times continuously\ndiﬀerentiable on [−ε, ε] for a certain ε > 0;\n(2) their Taylor expansio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/rem-sec-008-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 23,
+      "target": "rem-sec-008-04.md",
+      "narrative": null,
+      "content": "— One can broaden slightly the scope of Theorem 2.3, if one notes that regarding the residues ψ and χ, one only used the bounds |ψ(ξ) −χ(ξ)| ⩽βr+1(ε) |ξ|r+1 (r + 1)! and |ψ′(ξ) −χ′(ξ)| ⩽βr+1(ε) |ξ|r r! TOME 70 (2020), FASCICULE 3 R. CHHAIBI, F. DELBAEN, P.-L. MÉLIOT & A. NIKEGHBALI for any ξ ∈[−ε, ε]. In particular, if one assumes that ψ and χ belong to C 1(T) and that ψ′(ξ) −χ′(ξ) = βr+1 ξr (1 + oξ(1)) r! in a neighborhood [−ε, ε] of 0, then the previous bounds are satisﬁed and the conclusions of Theorem 2.3 hold. We shall use this important remark in Section 3.3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/thm-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Norm estimate",
+      "pageStart": 18,
+      "pageEnd": 23,
+      "target": "thm-sec-008-01.md",
+      "narrative": null,
+      "content": "— Take ε small enough so that γ(ε) ⩽ σ2 2 , and suppose that λ is large enough so that λ ⩾ σ2 . Then: ∥bµ −bν∥A ⩽∥ψ −χ∥A",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prop-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "prop-sec-009-01.md",
+      "narrative": null,
+      "content": "— Consider a general scheme of approximation such that the convergences ψn →ψ and χn →χ occur in C 1(T). Then, one has dTV(µn, νn) →0, and as well for dL(µn, νn) and dK(µn, νn).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotics of distances for a general scheme of approximation",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-009-3-asymptotics-of-distances-for-a-general-scheme.md",
+      "narrative": null,
+      "content": "approximation\nWe now consider a general scheme of approximation of a sequence of\nZ-valued random variables (Xn)n∈N by a sequence of laws (νn)n∈N, with\nc\nµn(ξ) = E[eiξXn] = eλnφ(ξ) ψn(ξ) ,\nc\nνn(ξ) = eλnφ(ξ) χn(ξ) ,\nlimn→∞ψn(ξ) = ψ(ξ) and limn→∞χn(ξ) = χ(ξ) as in Deﬁnition 1.10. We\ncan immediately deduce from Theorem 2.3:\nProposition 3.1. — Consider a general scheme of approximation such\nthat the convergences ψn →ψ and χn →χ occur in C 1(T). Then, one has\ndTV(µn, νn) →0, and as well for dL(µn, νn) and dK(µn, νn).\nProof. — Taking r = 0 in Theorem 2.3, we have\ndTV(µn, νn) = ∥µn −νn∥A = O\n\u0012\n1\n(λn)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prop-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 27,
+      "target": "prop-sec-010-01.md",
+      "narrative": null,
+      "content": "— The error term being uniform in k ∈Z, one has µn({k}) −νn({k}) = (−1)r+1 β √ 2π (σ2λn) r 2 +1 ∂r+1 ∂αr+1 \u0010 e−α2 \u0011",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The local distance",
+      "pageStart": 24,
+      "pageEnd": 27,
+      "target": "../sections/sec-010-31-the-local-distance.md",
+      "narrative": null,
+      "content": "Until the end of this section, (Xn)n∈N denotes a sequence that is mod-φ\nconvergent with parameters (λn)n∈N, and (νn)n∈N is a scheme of approx-\nimation of it, which satisﬁes the hypothesis (H1). The main tool in the\ncomputation of the local distance dL(µn, νn) is:\nProposition 3.2. — The error term being uniform in k ∈Z, one has\nµn({k}) −νn({k})\n=\n(−1)r+1 β\n√\n2π (σ2λn)\nr\n2 +1\n∂r+1\n∂αr+1\n\u0010\ne−α2\n2\n\u0011\n\nα= k−λnm\nσ√\nλn\n+ o\n\u0012\n1\n(λn)\nr\n2 +1\n\u0013\n.\nProof. — The computations hereafter are very similar to those of [26,\nSection 3], but they are performed at a diﬀerent scale for k. We combine\nthe Fourier invers",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/thm-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 27,
+      "target": "thm-sec-010-02.md",
+      "narrative": null,
+      "content": "— Under the assumptions stated at the beginning of this section (general scheme of approximation with condition (H1)), one has dL(µn, νn) = |β| |Gr+1(zr+2)| √ 2π (σ2λn) r 2 +1 + o \u0012 (λn) r 2 +1 \u0013 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/ex-sec-011-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "ex-sec-011-03.md",
+      "narrative": null,
+      "content": "— Consider the basic scheme of approximation of a mod-φ convergent sequence of random variables (Xn)n∈N: c νn(ξ) = eλnφ(ξ). TOME 70 (2020), FASCICULE 3 R. CHHAIBI, F. DELBAEN, P.-L. MÉLIOT & A. NIKEGHBALI Hence, νn is the law of an inﬁnitely divisible random variable Yn with Lévy– Khintchine exponent λnφ. Then, if c µn(ξ) = eλnφ(ξ) ψn(ξ) and ψn(ξ) →ψ(ξ) in C 1(T), the hypothesis (H1) is satisﬁed with r = 0 and βn →β = ψ′(0). Therefore, in this setting, dL(Xn, Yn) = |ψ′(0)| e−1 √ 2π σ2λn + o \u0012 1 λn \u0013 ; dK(Xn, Yn) = |ψ′(0)| √2π σ2λn + o \u0012 √λn \u0013 . The second result should be compared with a compu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prop-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "prop-sec-011-01.md",
+      "narrative": null,
+      "content": "— The error term being uniform in k ∈Z, one has µn([[k, +∞]]) −νn([[k, +∞]]) = (−1)r β √ 2π (σ2λn) r+1 ∂r ∂αr \u0010 e−α2 \u0011",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Kolmogorov distance",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "../sections/sec-011-32-the-kolmogorov-distance.md",
+      "narrative": null,
+      "content": "To evaluate the Kolmogorov distance between µn and νn, we use the\nclassical integral formula\nµn([[k, +∞]]) −νn([[k, +∞]]) =\nZ\nT\n(ψn(ξ) −χn(ξ)) eλnφ(ξ)\ne−ikξ\n1 −e−iξ\ndξ\n2π .\nIndeed, for any l ⩾k, one has\nµn([[k, l]]) −νn([[k, l]]) =\nl\nX\nj=k\nZ\nT\n(ψn(ξ) −χn(ξ)) eλnφ(ξ) e−ijξ dξ\n2π\n=\nZ\nT\n(ψn(ξ) −χn(ξ)) eλnφ(ξ) e−ikξ −e−i(l+1)ξ\n1 −e−iξ\ndξ\n2π .\nANNALES DE L’INSTITUT FOURIER\nAPPROXIMATION OF DISCRETE MEASURES\n1141\nSince ψn(ξ) −χn(ξ) = βn (iξ)r+1 (1 + o(1)), the quotient\nψn(ξ)−χn(ξ)\n1−eiξ\nis\nactually a continuous function on the torus, hence bounded. The same\nholds for eλnφ(ξ) = E[eiξYn], where Yn is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/thm-sec-011-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "thm-sec-011-02.md",
+      "narrative": null,
+      "content": "— Under the assumptions stated at the beginning of this section (general scheme of approximation with condition (H1)), one has dK(µn, νn) = |β| |Gr(zr+1)| √ 2π (σ2λn) r+1 + o",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/ex-sec-012-07",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 35,
+      "target": "ex-sec-012-07.md",
+      "narrative": null,
+      "content": "— For the basic scheme of approximation (χn = χ = 1), assume that the residues ψn converge in C 2(T), which implies hypothe- sis (H2) with r = 0 and |β| = |ψ′(0)|. We get the following estimate for the total variation distance between Xn and an inﬁnitely divisible random variable Yn with exponent λnφ: dTV(Xn, Yn) = 2 |ψ′(0)| √2πσ2λn + o \u0012 √λn \u0013 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/lem-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 35,
+      "target": "lem-sec-012-01.md",
+      "narrative": null,
+      "content": "— Denote ν(0) n the inﬁnitely divisible discrete law on Z with exponent λnφ. The signed measure ρn whose Fourier transform is c ρn(ξ) = eλnφ(ξ) (ψn(ξ) −βn (eiξ −1)r+1) is given by ρn({k}) = µn({k}) −βn r+1 X l=0 (−1)r+1−l \u0012r + 1 l \u0013 ν(0) n ({k −l}).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/lem-sec-012-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 35,
+      "target": "lem-sec-012-03.md",
+      "narrative": null,
+      "content": "— Let (νn)n∈N be a general approximation scheme of a mod-φ convergent sequence (Xn)n∈N, with the new hypothesis (H2) satis- ﬁed. Then, with ρn deﬁned as in Lemma 3.8, dTV(ρn, νn) = o",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prop-sec-012-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 35,
+      "target": "prop-sec-012-04.md",
+      "narrative": null,
+      "content": "For the same reason, one has a uniform bound on the parameters βr+2,n(ε) = sup ξ∈[−ε,ε]",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The total variation distance",
+      "pageStart": 29,
+      "pageEnd": 35,
+      "target": "../sections/sec-012-33-the-total-variation-distance.md",
+      "narrative": null,
+      "content": "Before we estimate the total variation distance between the laws µn and\nνn, let us make some observations with Proposition 3.2. Assume again that\none has a general scheme of approximation which satisﬁes the hypothe-\nsis (H1). For any ﬁxed interval I = [a, b], one can write\ndTV(µn, νn) =\nX\nk∈Z\n|µn({k}) −νn({k})|\n⩾\n⌊λnm+b σ√λn⌋\nX\nk=⌊λnm+a σ√λn⌋\n|µn({k}) −νn({k})|\n⩾\n|βn|\n√\n2π (σ2λn)\nr\n2 +1\n\n\n⌊λnm+b σ √λn⌋\nX\nk= ⌊λnm+a σ √λn⌋\n\n\u0010\nHr+1(α) e−α2\n2\n\u0011\nα= k−λnm\nσ√\nλn\n\n\n\n+ o\n \n(b −a)\n(σ2λn)\nr+1\n2\n!\n⩾\n|βn|\n√\n2π (σ2λn)\nr+1\n2\nZ b\na\n\nHr+1(α) e−α2\n2\n\n dα + o\n \n(b −a)\n(σ2λn)\nr+1\n2\n!\n,\n(RS)\nANNALES DE L’INSTI",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/rem-sec-012-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 35,
+      "target": "rem-sec-012-02.md",
+      "narrative": null,
+      "content": "— Suppose in particular that φ(ξ) = eiξ −1 is the exponent of the Poisson law P(1). We then have µn({k}) −ρn({k}) = βn (r+1)∧k X l=0 (−1)r+1−l \u0012r + 1 l \u0013 (λn)k−l e−λn (k −l)! = βn ν(0) n ({k}) (r+1)∧k X l=0 (−1)r+1−l \u0012r + 1 l \u0013 (λn)−l k! (k −l)! = βn ν(0) n ({k}) c(r + 1, k, λn), where c(r+1, k, λn) is a Poisson–Charlier polynomial, see [56, Section 2.8.1].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/rem-sec-012-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 35,
+      "target": "rem-sec-012-06.md",
+      "narrative": null,
+      "content": "— The ﬁrst values of Vr = R R |Gr+1(α)| dα are: V0 = 2; V1 = 4 e−1 2 ; V2 = 2 (1 + 4 e−3 2 ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/thm-sec-012-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 35,
+      "target": "thm-sec-012-05.md",
+      "narrative": null,
+      "content": "— Consider a general scheme of approximation (νn)n∈N of a mod-φ convergent sequence of random variables (Xn)n∈N. We also as- sume that the reference law φ has a third moment, so that in the neigh- borhood of 0, φ(ξ) = −σ2ξ2 + O(|ξ|3). If the hypothesis (H2) is satisﬁed, then dTV(µn, νn) = |β| √ 2π (σ2λn) r+1 \u0012Z R |Gr+1(α)| dα \u0013 + o",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/def-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "def-sec-013-01.md",
+      "narrative": null,
+      "content": "— Let (νn)n∈N be a general scheme of approximation of a sequence of random variables (Xn)n∈N that converges mod-φ with parameters λn. The derived scheme of approximation with constant residue is the new scheme (σn)n∈N, deﬁned by the Fourier transforms c σn(ξ) = eλnφ(ξ) χ(ξ), where χ(ξ) = limn→∞χn(ξ) is the limit of the residues of the law νn (with the notations of Deﬁnition 1.10).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/ex-sec-013-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "ex-sec-013-02.md",
+      "narrative": null,
+      "content": "— Suppose that νn = ν(r) n is the scheme of approximation of order r of (Xn)n∈N (see Example 1.11), and that the convergence ψn →ψ occurs in C r(T). Then, the derived scheme with constant residue (σn)n∈N is deﬁned by the Fourier transforms c σn(ξ) = eλnφ(ξ) P (r)(eiξ), where P (r)(eiξ) is the Laurent polynomial of degree r associated to the limit ψ of the mod-φ convergence. Thus, to compute σn(f) with f : Z →C, one can take a random variable Yn with law of exponent λnφ, and then calculate E[(P (r)(S)f)(Yn)] where T = P (r)(S) is a ﬁxed linear operator, which is a ﬁnite linear com- bination of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Derived scheme of approximation with constant residue",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "../sections/sec-013-34-derived-scheme-of-approximation-with-constant.md",
+      "narrative": null,
+      "content": "To conclude this section, let us simplify a bit the general setting of ap-\nproximation of discrete measures presented in Deﬁnition 1.10. Until now,\nwe have worked with measures νn such that\nc\nνn(ξ) = eλnφ(ξ) χn(ξ),\nwhere the residues χn(ξ) converge to a residue χ(ξ), and on the other\nhand approximate the residues ψn(ξ) associated to the random variables\nXn. For instance, χn(ξ) can be the Laurent polynomial of degree r in eiξ\nderived from ψn(ξ) (scheme of approximation of order r). In this setting, the\nresidues χn(ξ) are usually very good approximations of the residues ψn(ξ),\nbut on the other h",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/thm-sec-013-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "thm-sec-013-03.md",
+      "narrative": null,
+      "content": "— Let (νn)n∈N be a general scheme of approximation of a sequence (Xn)n∈N that is mod-φ convergent. We denote (σn)n∈N the derived scheme with constant residue. (1) Suppose that (νn)n∈N satisﬁes the hypothesis (H1). If ∥χn −χ∥∞= o \u0010 (λn) r 2 +1 \u0011 , then dL(µn, σn) = |β| |Gr+1(zr+2)| √ 2π (σ2λn) r 2 +1 + o \u0012 (λn) r 2 +1 \u0013 . TOME 70 (2020), FASCICULE 3 R. CHHAIBI, F. DELBAEN, P.-L. MÉLIOT & A. NIKEGHBALI (2) Suppose that (νn)n∈N satisﬁes the hypothesis (H1). If ∥χ′ n−χ′∥∞= o \u0012 (λn) r+1 \u0013 , then dK(µn, σn) = |β| |Gr(zr+1)| √ 2π (σ2λn) r+1 + o",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "One-dimensional applications",
+      "pageStart": 38,
+      "pageEnd": 38,
+      "target": "../sections/sec-014-4-one-dimensional-applications.md",
+      "narrative": null,
+      "content": "In this section, we apply our main Theorems 3.3, 3.6 and 3.11 to vari-\nous one-dimensional examples, most of them coming from number theory\nor combinatorics. In each case, we compute the exact asymptotics of the\ndistances for the basic approximation scheme, and for some better approx-\nimation schemes, which are derived from the approximation schemes of\norder r ⩾1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Poisson approximation of a sum of independent Bernoulli variables",
+      "pageStart": 38,
+      "pageEnd": 41,
+      "target": "../sections/sec-015-41-poisson-approximation-of-a-sum-of-independent.md",
+      "narrative": null,
+      "content": "variables\nAs in Example 1.5, we consider a sum Xn = Pn\nj=1 B(pj) of independent\nBernoulli random variables, with P∞\nj=1 pj = +∞and P∞\nj=1(pj)2 < +∞.\nThe corresponding Fourier transforms are:\nc\nµn(ξ) = eλn(eiξ−1) ψn(ξ)\nwith ψn(ξ) =\nn\nY\nj=1\n(1 + pj(eiξ −1)) e−pj(eiξ−1).\nIt is convenient to have an exact formula for the expansion in Laurent series\nof the deconvolution residues ψn. Denote\np1,n = 0\nand\npk⩾2,n =\nn\nX\nj=1\n(pj)k.\nOne has\nψn(ξ) =\n\n\nn\nY\nj=1\n(1 + pj(eiξ −1))\n\ne\n−Pn\nj=1 pj(eiξ−1)\n= exp\n\n\nn\nX\nj=1\nlog(1 + pj(eiξ −1)) −pj(eiξ −1)\n\n\nTOME 70 (2020), FASCICULE 3\n1152\nR. CHHAIBI, F. DELBA",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/rem-sec-015-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 41,
+      "target": "rem-sec-015-01.md",
+      "narrative": null,
+      "content": "— Performing the same computations as in Lemma 3.8, one can give an exact formula for ν(2) n ({k}): ν(2) n ({k}) = e−λn (λn)k k! \u0012 1 + β \u0012 1 −2k λn + k(k −1) (λn)2 \u0013\u0013 , here with β = −p2,n 2 . At ﬁrst sight this might look like an important deformation of the Poisson measure with parameter λn, but note that in the range k = λn(1+o(1)) where the Poisson law ν(0) n = P(λn) has its mass concentrated, one has 1 −2k λn + k(k −1) (λn)2 = 1 −2(1 + o(1)) + (1 + o(1)) = o(1). More generally, assume that the remainder of the series P+∞ j=n+1(pj)2 is asymptotically smaller than any negative power of λn.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Poisson approximation schemes and formal alphabets",
+      "pageStart": 41,
+      "pageEnd": 45,
+      "target": "../sections/sec-016-42-poisson-approximation-schemes-and-formal-alph.md",
+      "narrative": null,
+      "content": "The description of the approximation schemes and of the asymptotic es-\ntimates for the distances by means of the parameters pk and ek is actually\npossible for many other examples of discrete random variables. Thus, the\nANNALES DE L’INSTITUT FOURIER\nAPPROXIMATION OF DISCRETE MEASURES\n1155\ncombinatorics of approximation schemes can be encoded in the algebra of\nsymmetric functions Sym. From an algebraic point of view, the language\nof λ-rings and formal alphabets make this description even more striking.\nDenote Sym the algebra of symmetric functions, that is to say symmet-\nric polynomials in an in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Number of disjoint cycles of a random permutation",
+      "pageStart": 45,
+      "pageEnd": 48,
+      "target": "../sections/sec-017-43-number-of-disjoint-cycles-of-a-random-permuta.md",
+      "narrative": null,
+      "content": "In this section, we study the number ℓn of disjoint cycles of a random\npermutation σn ∈Sn. If the permutation σn is chosen according to the uni-\nform probability measure (Example 1.6), then the discussion of Section 4.1\napplies, with the parameters pj taken equal to 1\nj , and\nλn =\nn\nX\nj=1\n1\nj = Hn ≃log n;\n+∞\nX\nj=n+1\n(pj)2 ≃1\nn = o\n\u0012\n1\n(λn)r\n\u0013\nfor every r ⩾0.\nTherefore, if one looks for instance at the derived scheme with constant\nresidue from the approximation scheme of order r = 2:\nd\nσ(2)\nn (ξ) = eHn(eiξ−1)\n\u0012\n1 −π2\n12 (eiξ −1)2\n\u0013\nthen\ndL(ℓn, σ(2)\nn ) =\n(\n√\n6 −2) ζ(3)\np\n2π e3−\n√\n6 (log n)2 + o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/thm-sec-017-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[46, Lemma 4.1]",
+      "pageStart": 45,
+      "pageEnd": 48,
+      "target": "thm-sec-017-01.md",
+      "narrative": null,
+      "content": "— Assume that gΘ(z) is holomorphic on a domain ∆0(r, R, φ) = {z ∈C, |z| < R, z̸ = r, |arg(z −r)| > φ} with 0 < r < R and φ ∈(0, π 2 ), see Figure 4.1. Suppose moreover that the singularity of gΘ at z = r is logarithmic: gΘ(z) = θ log \u0012 1 −z r \u0013 + K + O(|z −r|). Then, one has the asymptotics EΘ,n \u0002 ezℓn\u0003 = e(θ log n+K)(ez−1) \u0012 Γ(θ) Γ(θez) + O \u0012 1 n \u0013\u0013 , TOME 70 (2020), FASCICULE 3 R. CHHAIBI, F. DELBAEN, P.-L. MÉLIOT & A. NIKEGHBALI R r φ Figure 4.1. Domain of analyticity of the generating series gΘ(z). with a uniform remainder on compact subsets of C. Hence, (ℓn)n∈N con- verges mod-Poisson wit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/thm-sec-017-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 48,
+      "target": "thm-sec-017-02.md",
+      "narrative": null,
+      "content": "— We consider a generalized weighted measure PΘ,n, with a generating series gΘ(z) which satisﬁes the hypotheses of Theo- rem 4.2. For any r ⩾1, we introduce the scheme of approximation (σ(r) n )n∈N, deﬁned by the Fourier transforms d σ(r) n (ξ) = e(θHn+K)(eiξ−1) r X k=0 ek(Θ) (eiξ −1)k ! , where Θ is the specialisation of Sym speciﬁed by Equation (Θ). Note that the residue is equal to 1 for r = 1 (basic scheme of approximation). One has the asymptotics: dL(ℓn, σ(r) n ) = |er+1(Θ) Gr+1(zr+2)| √ 2π (θ log n) r 2 +1 + o \u0012 (log n) r 2 +1 \u0013 ; dK(ℓn, σ(r) n ) = |er+1(Θ) Gr(zr+1)| √ 2π (θ log n) r+1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/ex-sec-018-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 48,
+      "pageEnd": 56,
+      "target": "ex-sec-018-01.md",
+      "narrative": null,
+      "content": "— If f ∈Fn = F([[1, n]] , [[1, n]]), the functional graph cor- responding to f is the directed graph G(f) with vertex set [[1, n]], and with edges (k, f(k)), k ∈[[1, n]]. Since f is a map, G(f) is a disjoint union of cycles on which trees are grafted, see [28] and Figure 4.2. We denote X(f) the number of connected components of the functional graph G(f). This generalizes the notion of cycle of a permutation. If T = (Tn)n∈N is the com- binatorial class of unordered rooted labeled trees, recall that its generating function T(z) = P∞ n=1 zn n! |Tn| is the solution of T(z) = zeT (z), because a ANN",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/ex-sec-018-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 48,
+      "pageEnd": 56,
+      "target": "ex-sec-018-02.md",
+      "narrative": null,
+      "content": "— If P ∈Pn = (Fq[t])n, then it writes uniquely as a prod- uct of monic irreducible polynomials, each of these monic irreducible poly- nomials appearing with a certain multiplicity. In terms of generating series, introducing the combinatorial class I = (In)n∈N of monic irreducibles, this can be rewritten as: P(z) = X P ∈P zdeg P = Y P ∈I (1 + zdeg P + z2 deg P + · · · ) = Y P ∈I 1 −zdeg P = exp X P ∈I log \u0012 1 −zdeg P \u0013! = exp ∞ X k=1 X P ∈I zk deg P k ! = exp ∞ X k=1 I(zk) k ! , where P(z) = P n⩾0 |Pn| zn and I(z) = P n⩾1 |In| zn. Similarly, if Y (P) and Z(P) are respectively the number of dist",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mod-Poisson convergence and algebraico-logarithmic singularities",
+      "pageStart": 48,
+      "pageEnd": 56,
+      "target": "../sections/sec-018-44-mod-poisson-convergence-and-algebraico-logari.md",
+      "narrative": null,
+      "content": "singularities\nThe discussion of Section 4.3 can be extended to any statistic of a random\ncombinatorial object, whose double generating series admits a certain form\nof singularity. Suppose given a combinatorial class, that is to say a sequence\nC = (Cn)n∈N of ﬁnite sets. We write card Cn = |Cn|. In this paragraph, we\nshall in particular study the following two examples, cf. [32, Section 5,\nExample 2] and [30, p. 449 and p. 671]:\n(1) Fn = F([[1, n]] , [[1, n]]) is the set of maps from the ﬁnite set [[1, n]] to\nitself. It has cardinality nn.\n(2) Pn = (Fq[t])n is the set of monic polynomials of deg",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/rem-sec-018-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 48,
+      "pageEnd": 56,
+      "target": "rem-sec-018-04.md",
+      "narrative": null,
+      "content": "— A central limit theorem for the random variables Yn has been proved by Rhoades in [51]. Our results immediately yield the speed of convergence of this analogue on function ﬁelds of the Erdős–Kac central limit theorem.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/thm-sec-018-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 48,
+      "pageEnd": 56,
+      "target": "thm-sec-018-03.md",
+      "narrative": null,
+      "content": "— Let Xn be the number of components of a random map in F([[1, n]] , [[1, n]]), and Yn and Zn be the numbers of irreducible factors of a random monic polynomial in (Fq[t])n∈N, counted respectively without and with multiplicity. The sequences of random variables (Xn)n∈N, (Yn)n∈N and (Zn)n∈N converge mod-Poisson with parameters λX n = 1 2 (log 2n + γ) ; λY n = log n + R(q−1) + γ; λZ n = log n + S(q−1) + γ. ANNALES DE L’INSTITUT FOURIER APPROXIMATION OF DISCRETE MEASURES and limiting functions ψX/Y/Z(ξ) = P∞ k=0 ek(X/Y/Z) (eiξ −1)k, where the parameters ek(X), ek(Y ) and ek(Z) correspond to the s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Number of distinct prime divisors of a random integer",
+      "pageStart": 56,
+      "pageEnd": 58,
+      "target": "../sections/sec-019-45-number-of-distinct-prime-divisors-of-a-random.md",
+      "narrative": null,
+      "content": "As pointed out in the introduction, number theory provides another area\nwhere the phenomenon of mod-Poisson convergence is prominent; see in\nparticular the discussion of [26, Section 7.2]. Consider as in Example 1.7\nthe number ω(Nn) of distinct prime divisors of a random integer chosen\nTOME 70 (2020), FASCICULE 3\n1170\nR. CHHAIBI, F. DELBAEN, P.-L. MÉLIOT & A. NIKEGHBALI\nuniformly in [[1, n]]. This quantity satisﬁes the celebrated Erdős–Kac central\nlimit theorem:\nω(Nn) −log log n\n√log log n\n⇀NR(0, 1),\nwhere NR(0, 1) denotes a standard one-dimensional Gaussian distribution\nof mean 0 and variance",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/thm-sec-019-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Rényi–Turán",
+      "pageStart": 56,
+      "pageEnd": 58,
+      "target": "thm-sec-019-01.md",
+      "narrative": null,
+      "content": "— Locally uniformly in z ∈C, E[ezω(Nn)] = e(log log n+γ)(ez−1) ×  Y n∈N \u0012 1 + ez −1 n \u0013 e−ez−1 n Y p∈P \u0012 1 + ez −1 p \u0013 e−ez−1 p + O \u0012 log n \u0013 . This formula ﬁrst appeared in [50], and it can be obtained by an appli- cation of the Selberg–Delange method, see [57, Chapter II.5]. It is actually stronger than the prime number theorem, as it requires a larger zero-free re- gion of the Riemann zeta function than the line Re(s) = 1. The problem of the rate of convergence in the Erdős–Kac central limit theorem was already studied by Harper in [31] for the Kolmogorov distance to the Gaussian ap- pr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/thm-sec-019-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 56,
+      "pageEnd": 58,
+      "target": "thm-sec-019-02.md",
+      "narrative": null,
+      "content": "— For any r ⩾1, we introduce the scheme of approxi- mation (σ(r) n )n∈N, deﬁned by the Fourier transforms d σ(r) n (ξ) = e(log log n+γ)(eiξ−1) r X k=0 ek(N∗−1 + P−1) (eiξ −1)k ! , ANNALES DE L’INSTITUT FOURIER APPROXIMATION OF DISCRETE MEASURES where the parameters ek(N∗−1 + P−1) correspond to the specialisation of Sym: p1(N∗−1 + P−1) = 0 ; pk⩾2(N∗−1 + P−1) = ζ(k) + X p∈P pk . With log2 n := log log n, one has the asymptotic formulas: dL(ω(Nn), σ(r) n ) = |er+1(N∗−1 + P−1) Gr+1(zr+2)| √ 2π (log2 n) r 2 +1 + o \u0012 (log2 n) r 2 +1 \u0013 ; dK(ω(Nn), σ(r) n ) = |er+1(N∗−1 + P−1) Gr(zr+1)| √ 2π (log2 n)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The multi-dimensional case",
+      "pageStart": 58,
+      "pageEnd": 60,
+      "target": "../sections/sec-020-5-the-multi-dimensional-case.md",
+      "narrative": null,
+      "content": "In this last section, we extend the theoretical results of Sections 2 and 3 to\nthe multi-dimensional case, that is to say that we are going to approximate\nTOME 70 (2020), FASCICULE 3\n1172\nR. CHHAIBI, F. DELBAEN, P.-L. MÉLIOT & A. NIKEGHBALI\nthe laws of random variables with values in Zd⩾2. Thus, we consider a\nsequence of random variables (Xn)n∈N in Zd that converges mod-φ with\nparameters λn, where φ is an inﬁnitely divisible distribution with minimal\nlattice Zd:\nµn(ξ) = E\n\u0014\neiPd\ni=1 ξiXn,i\n\u0015\n= eλn φ(ξ) ψn(ξ1, . . . , ξd),\nwith limn→∞ψn = ψ uniformly on the torus. In all the examples that we\nsh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/cor-sec-021-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 60,
+      "pageEnd": 69,
+      "target": "cor-sec-021-04.md",
+      "narrative": null,
+      "content": "— With the assumptions of Theorem 5.3, for any r ⩾ ⌊d 2⌋, there exists a positive constant C3(r, d, c, φ) such that, if ε > 0 is ﬁxed and λ ⩾2 is suﬃciently large (chosen according to ε), then ∥bµ −bν∥A ⩽C3(r, d, c, φ) (∥ψ −χ∥A + βr+1(ε)) (log λ)r+1 λ r 2 + 1 . ANNALES DE L’INSTITUT FOURIER APPROXIMATION OF DISCRETE MEASURES",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/lem-sec-021-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 60,
+      "pageEnd": 69,
+      "target": "lem-sec-021-02.md",
+      "narrative": null,
+      "content": "— Under the assumptions of Theorem 5.3, there exists a constant C(d, c, φ) such that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/lem-sec-021-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 60,
+      "pageEnd": 69,
+      "target": "lem-sec-021-03.md",
+      "narrative": null,
+      "content": "— Under the assumptions of Theorem 5.3, there exists an- other constant C(d, c, φ) such that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The multi-dimensional Wiener algebra",
+      "pageStart": 60,
+      "pageEnd": 69,
+      "target": "../sections/sec-021-51-the-multi-dimensional-wiener-algebra.md",
+      "narrative": null,
+      "content": "Definition 5.1. — The multi-dimensional Wiener algebra A = A (Td)\nis the algebra of continuous functions on the d-torus whose Fourier series\nconverges absolutely. It is a Banach algebra for the norm\n∥f∥A :=\nX\nn∈Zd\n|cn(f)|,\nwhere cn(f) denotes the Fourier coeﬃcient\ncn(f) =\nZ 2π\nθ1=0\n· · ·\nZ 2π\nθd=0\nf(eiθ1, . . . , eiθd) e−iPd\ni=1 niθi\ndθ\n(2π)d ,\nwhere n = (n1, . . . , nd).\nAs in the case d = 1, if µ is a (signed) measure on Zd, then its total\nvariation norm is equal to ∥µ∥TV = ∥bµ∥A . On the other hand, one has the\nanalogue of Proposition 2.1:\nProposition 5.2. — There is a constant CH,d such th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/thm-sec-021-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 60,
+      "pageEnd": 69,
+      "target": "thm-sec-021-01.md",
+      "narrative": null,
+      "content": "— Fix ε ∈(0, 1) such that γ(ε) ⩽mini∈[[1,d]] σ2 i 2 . There exist some positive constants C1(d, c, φ) and C2(d, c, φ), that depend only on d, the cut function c and the reference distribution φ, such that ∥bµ −bν∥A ⩽C1(d, c, φ) \u0012 1 + C2(d, c, φ) √ λ \u0013 ×",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotics of distances in the multi-dimensional setting",
+      "pageStart": 69,
+      "pageEnd": 72,
+      "target": "../sections/sec-022-52-asymptotics-of-distances-in-the-multi-dimensi.md",
+      "narrative": null,
+      "content": "As in the one-dimensional case, a combination of the Laplace method\nand of the norm estimates given by Corollary 5.6 yields under appropri-\nate hypotheses the asymptotics of dL(µn, νn) and of dTV(µn, νn), where\n(νn)n∈N is a general scheme of approximation of the laws µn of the mod-φ\nconvergent random variables Xn in Zd. The only diﬀerence is that, for the\ncomputation of the total variation distance, we shall need to assume the\norder of approximation r to be larger than some minimal value ⌊d\n2⌋.\nUntil the end of this paragraph, (Xn)n∈N is a sequence of random vari-\nables with values in Zd, whic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/thm-sec-022-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 69,
+      "pageEnd": 72,
+      "target": "thm-sec-022-01.md",
+      "narrative": null,
+      "content": "— Under the hypothesis (H1d), one has dL(µn, νn) = sup x∈Rd  e−∥x∥2",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/thm-sec-022-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 69,
+      "pageEnd": 72,
+      "target": "thm-sec-022-02.md",
+      "narrative": null,
+      "content": "— Consider a general approximation scheme (νn)n∈N of a mod-φ convergent sequence (Xn)n∈N in Zd. We assume that r ⩾⌊d 2⌋and that the hypothesis (H2d) is satisﬁed. Then, dTV(µn, νn) = 1 + o(1) (2π) d 2 (λn) r+1   Z Rd e−∥x∥2",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cycle-type of random coloured permutations",
+      "pageStart": 72,
+      "pageEnd": 78,
+      "target": "../sections/sec-023-53-cycle-type-of-random-coloured-permutations.md",
+      "narrative": null,
+      "content": "In this section, we study random elements of the group of d-coloured\npermutations:\nGn = Sn ≀(Z/dZ) = Sn ⋉(Z/dZ)n .\nIt can be viewed as the group of complex matrices of size n times n, with\none non-zero coeﬃcient on each row and each column, and these non-\nzero coeﬃcients belonging to the group of d-th roots of unity Z/dZ =\n{1, ω, ω2, . . . , ωd−1}, with ω = e\n2iπ\nd . Another alternative deﬁnition is the\nfollowing: if we identify Snd with S(Z/nZ × Z/dZ), then\nGn = {σ ∈Snd | ∀(a, b) ∈Z/nZ × Z/dZ, σ(a, b + 1) = σ(a, b) + (0, 1)}.\nFrom this deﬁnition, it appears that a d-coloured permutation is en",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/thm-sec-023-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 72,
+      "pageEnd": 78,
+      "target": "thm-sec-023-01.md",
+      "narrative": null,
+      "content": "— The sequence of random vectors (ℓn)n∈N converges modulo a d-dimensional Poisson law of exponent φ(ξ) = 1 d Pd i=1 (eiξi −1), with parameters Hn and limiting function ψ(ξ) = ∞ Y n=1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Distinct prime divisors counted according to their residue classes",
+      "pageStart": 78,
+      "pageEnd": 82,
+      "target": "../sections/sec-024-54-distinct-prime-divisors-counted-according-to.md",
+      "narrative": null,
+      "content": "classes\nSimilar to the generalisation of Section 4.3 by the study of random\ncoloured permutations, there is a natural generalisation of the discussion of\nSection 4.5 on distinct prime divisors of a random integer, which involves\nresidue classes of prime numbers.\nFix an integer a ⩾2, and denote d = ϕ(a) the cardinality of the multi-\nplicative group (Z/aZ)∗. This quantity is the usual Euler ϕ-function, and\nit is equal to the number of integers in [[1, a]] that are coprime to a. We\nlabel the elements of (Z/aZ)∗as b1, b2, . . . , bd. If n ∈N and i ∈[[1, d]], we\ndenote ωi(n) the number of distinct",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bibliography",
+      "pageStart": 82,
+      "pageEnd": 84,
+      "target": "../sections/sec-025-bibliography.md",
+      "narrative": null,
+      "content": "[1] R. Arratia, A. D. Barbour & S. Tavaré, Logarithmic Combinatorial Structures:\na Probabilistic Approach, EMS Monographs in Mathematics, European Mathemat-\nical Society, 2003.\n[2] R. Arratia, L. Goldstein & L. Gordon, “Two moments suﬃce for Poisson ap-\nproximations: the Chen-–Stein method”, Ann. Probab. 17 (1989), no. 1, p. 9-25.\n[3] E. Artin, The gamma function, Athena Series. Selected Topics in Mathematics,\nHolt, Rinehart and Winston, 1964.\n[4] A. D. Barbour & V. Čekanavičius, “Total variation asymptotics for sums of\nindependent integer random variables”, Ann. Probab. 30 (2002), no. 2, p. 5",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

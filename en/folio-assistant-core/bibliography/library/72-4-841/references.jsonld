@@ -1,0 +1,30 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/72-4-841",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "Progress of Theoretical Physics, Vol. 72, No.4, October 1984 Euclidean Quantum Gravity on a Flat Lattice",
+      "dcterms:creator": [
+        "KONDO, Kei-ichi"
+      ],
+      "dcterms:issued": "D:20021031",
+      "dcterms:source": "library/72-4-841/manifest.jsonld",
+      "dcterms:hasVersion": "library/72-4-841"
+    }
+  ]
+}

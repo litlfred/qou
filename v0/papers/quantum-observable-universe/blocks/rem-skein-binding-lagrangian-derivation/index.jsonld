@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-skein-binding-lagrangian-derivation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:skein-binding-lagrangian-derivation",
+  "kind": "remark",
+  "title": "Derivation of the Skein binding Lagrangian from the canonical action",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-skein-binding-lagrangian",
+    "papers/quantum-observable-universe/blocks/prop-qou-canonical-action",
+    "papers/quantum-observable-universe/blocks/def-categorical-lagrangian"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-skein-binding-lagrangian",
+  "tags": [
+    "lagrangian",
+    "binding",
+    "skein",
+    "nuclear",
+    "bethe-weizsacker",
+    "canonical-action"
+  ],
+  "text": "skein-binding-lagrangian-derivation.md",
+  "provenance": "authored"
+}

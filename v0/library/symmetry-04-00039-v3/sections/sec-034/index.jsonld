@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/symmetry-04-00039-v3/sections/sec-034",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Available Junctions",
+  "pageStart": 63,
+  "pageEnd": 64,
+  "contains": [
+    "library/symmetry-04-00039-v3/blocks/prose-sec-034",
+    "library/symmetry-04-00039-v3/blocks/figure-img-p064-1",
+    "library/symmetry-04-00039-v3/blocks/figure-img-p064-2",
+    "library/symmetry-04-00039-v3/blocks/figure-img-p064-3"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/symmetry-04-00039-v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/symmetry-04-00039-v3/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-local-system",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-local-system",
+  "kind": "remark",
+  "title": "From monodromy to $q$-monodromy",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-local-system"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-local-system",
+  "tags": [
+    "geometric-langlands",
+    "monodromy"
+  ],
+  "text": "q-local-system-remark.md",
+  "provenance": "authored"
+}

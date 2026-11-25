@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1102.3530v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "The colored Jones polynomial, the Chern-Simons invariant, and the Reidemeister torsion",
+      "dcterms:creator": [
+        "INVARIANT",
+        "THE, THE REIDEMEISTER TORSION OF"
+      ],
+      "dcterms:issued": "D:20190704",
+      "dcterms:identifier": "https://arxiv.org/abs/1102.3530",
+      "dcterms:abstract": "W e show that from the asymptotic behavior of an evaluation of the colored Jones polynomial of the ﬁgure-eight knot we can extr act the Chern– Simons invariant and the twisted Reidemeister torsion asso ciated with a rep- resentation of the fundamental group of the knot complement to the two- dimensional complex special linear group.",
+      "dcterms:source": "library/arxiv-1102.3530v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1102.3530v1"
+    }
+  ]
+}

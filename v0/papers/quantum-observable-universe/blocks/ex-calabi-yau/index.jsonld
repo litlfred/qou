@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-calabi-yau",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:calabi-yau",
+  "kind": "example",
+  "title": "Real hypersurface in a Calabi--Yau $2$-fold",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-c-quantum-observable-universe",
+    "papers/quantum-observable-universe/blocks/ex-reeb-decomposition",
+    "papers/quantum-observable-universe/blocks/def-categorical-instanton"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-weight-decomposition",
+  "tags": [
+    "calabi-yau",
+    "k3",
+    "hyper-kahler"
+  ],
+  "text": "calabi-yau.md",
+  "provenance": "authored"
+}

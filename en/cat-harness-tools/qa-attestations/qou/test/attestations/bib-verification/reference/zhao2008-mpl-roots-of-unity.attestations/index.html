@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/bib-verification/reference/zhao2008-mpl-roots-of-unity.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../assets/navbar/rail-1kz8v2wub2v.js" defer></script><script src="../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../.." data-fa-to-root="../../../../../../../../..">{"data":"rail-1kz8v2wub2v","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/bib-verification/reference/zhao2008-mpl-roots-of-unity.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/bib-verification/reference/zhao2008-mpl-roots-of-unity.attestations</h1>
+<p class="m">A <a href="../../../../../../">qa-attestations</a> node held by <a href="../../../../../">qou</a>, at <code>test/attestations/bib-verification/reference/zhao2008-mpl-roots-of-unity.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>bib-verification</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;reference&quot;,
+  &quot;id&quot;: &quot;zhao2008-mpl-roots-of-unity&quot;,
+  &quot;path&quot;: null
+}</pre></dd>
+<dt>verifications</dt><dd><pre>[
+  {
+    &quot;position&quot;: 192,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/arxiv-0810.1064v1/0810.1064v1.pdf&quot;
+      },
+      &quot;id&quot;: &quot;zhao2008-mpl-roots-of-unity&quot;,
+      &quot;status&quot;: &quot;unreviewed&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;supporting&quot;,
+        &quot;rationale&quot;: &quot;Number theory of multiple polylogarithm values (MPVs) at N-th roots of unity: dimension bounds for the Q-span, and the finding that Racinet&#39;s standard double-shuffle/distribution relations are NOT complete at level 4 (weight 3, 4) nor at weight 2 for many N. QOU maintains a live period-depth thread — conj:gb-depth-period-correspondence (tau_arch(G^(n)) subset of Goncharov&#39;s period filtration P_n) and the transcendental-accounting ledger, which classifies every period in the paper by Goncharov depth and asks which post-archimedean relations are forced by pre-archimedean q-rational structure versus &#39;archimedean accidents&#39;. Zhao bears on that ledger in two ways: the Deligne-Goncharov bound D(w,N) caps how many independent constants can exist at a given weight and level, and the incompleteness result is a direct warning that counting standard relations UNDERSTATES the true relation set. This is background/technique for a live thread rather than a result the corpus consumes today, hence supporting, not core. Note QOU&#39;s own level-relevant values are MPVs: Vol(4_1) = 2*Cl_2(pi/3) is level 6, and Lambda(pi/4) = G/2 (already cited via lewin1981) is level 4 — the exact level where Zhao finds the standard relations incomplete.&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;Proposition 1 (= [Deligne-Goncharov, 5.25]), §1&quot;,
+            &quot;statement&quot;: &quot;d(w,N) &lt;= D(w,N), where the D(w,N) are the coefficients of an explicit generating function depending only on Euler&#39;s totient phi(N) and the number of prime factors nu(N).&quot;,
+            &quot;useForFolio&quot;: &quot;A closed-form upper bound on the number of Q-independent polylog constants of weight w at level N. This is a formalize-first prune of exactly the kind AGENTS.md mandates before a wide search: any PSLQ or closed-form hunt over polylog values at roots of unity (the Lambda(pi/3), Lambda(pi/4), Li_2 at cyclotomic points that populate the transcendental-accounting table) has its basis size bounded a priori by D(w,N), so an over-large candidate basis is refutable on entropy grounds before it is run.&quot;,
+            &quot;targets&quot;: [
+              &quot;rem:transcendental-accounting&quot;,
+              &quot;conj:gb-depth-period-correspondence&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;eq. (2) + §1 &#39;Fact (*)&#39;, level 4 weight 3&quot;,
+            &quot;statement&quot;: &quot;There is an explicit Q-linear relation among weight-3, level-4 MPVs (5*Li_{1,2}(-1,-i) = ... , nine terms) that does NOT follow from the standard relations; it is derived instead from the octahedral symmetry of P^1 - ({0, infinity} U mu_4).&quot;,
+            &quot;useForFolio&quot;: &quot;A concrete counterexample to &#39;the standard relation set is complete&#39; at exactly the level (4) where the corpus&#39;s Catalan/Lambda(pi/4) values live. It supports the ledger&#39;s own distinction between relations forced by structure and relations that appear only after archimedean realization — here a genuine extra relation arises from a SYMMETRY (octahedral), not an accident, which is the ledger&#39;s Fact-2 mechanism in a different guise.&quot;,
+            &quot;targets&quot;: [
+              &quot;rem:transcendental-accounting&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;add-reference&quot;,
+            &quot;rationale&quot;: &quot;Orphan: no ref() entry, and no Zhao / MPV entry exists in references.ts although the corpus already carries Deligne, Goncharov-adjacent and Bloch-Wigner material. Suggested id zhao2008mpv.&quot;,
+            &quot;target&quot;: &quot;folio/schema/references.ts&quot;,
+            &quot;bean&quot;: &quot;qou-g1t3&quot;
+          },
+          {
+            &quot;action&quot;: &quot;new-remark&quot;,
+            &quot;rationale&quot;: &quot;The transcendental-accounting ledger indexes periods by Goncharov depth but records no dimension bound on the span at a given weight/level. A remark recording D(w,N) as the available upper bound — and Zhao&#39;s warning that the standard relations do not exhaust the relations at level 4 — makes the ledger&#39;s independence claims auditable rather than asserted.&quot;,
+            &quot;target&quot;: &quot;rem:transcendental-accounting&quot;,
+            &quot;bean&quot;: &quot;qou-zdli&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-08T16:12:29.859Z&quot;,
+        &quot;source_sha&quot;: &quot;b2d7514c5382&quot;
+      },
+      &quot;note&quot;: &quot;Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \&quot;held but uncitable\&quot;; the join already existed on the references.ts side.&quot;,
+      &quot;verified_at&quot;: &quot;2026-09-03T04:37:40Z&quot;,
+      &quot;verified_by&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;model&quot;: &quot;claude-opus-5&quot;
+      }
+    }
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

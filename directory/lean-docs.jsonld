@@ -1,0 +1,26 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/directory/lean-docs.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/directory/lean-docs",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Subgraph",
+      "name": "lean-docs",
+      "path": "lean/",
+      "contentSource": {
+        "@id": "https://github.com/litlfred/qou/tree/cat/folio-assistant-sci/lean-docs",
+        "kind": "branch",
+        "branch": "cat/folio-assistant-sci/lean-docs",
+        "keyedBy": "tip",
+        "declaredIn": "declaration"
+      },
+      "holdsGraph": [
+        "https://litlfred.github.io/cat-harness/v0/ns/graphTypology/lean"
+      ],
+      "description": "The rendered Lean library: the Lean knowledge-graph viewer (one thin page plus data/ shards loaded on demand) made by folio-assistant-sci's lean-kg-publish from doc-gen4's declaration data, kept on its own branch and mounted here by state:mount, never committed to main (skill lean-html-docs). scripts/build-site.sh copies the mount to _site/lean/, the route the `lean` entry below declares as its visualiser, so a site build needs no Lean toolchain.",
+      "fileCount": 0,
+      "inSubgraph": "https://litlfred.github.io/qou/directory/lean-docs"
+    }
+  ]
+}

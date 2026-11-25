@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-antiparticle-crossing-reversal",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:antiparticle-crossing-reversal",
+  "kind": "proposition",
+  "title": "Antiparticles from crossing reversal",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-knot-particle-generation"
+  ],
+  "tags": [
+    "trefoil",
+    "chirality",
+    "electron",
+    "positron",
+    "antiparticle",
+    "crossing-energy"
+  ],
+  "leanRef": "qou:QOU.LiftingDescent.antiparticle_crossing_reversal",
+  "text": "antiparticle-crossing-reversal.md",
+  "leanSource": "antiparticle-crossing-reversal.lean",
+  "provenance": "authored"
+}

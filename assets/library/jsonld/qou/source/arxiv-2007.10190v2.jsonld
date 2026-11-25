@@ -1,0 +1,72 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2007.10190v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2007.10190v2",
+  "contains": [
+    "library/arxiv-2007.10190v2/sections/sec-front-matter",
+    "library/arxiv-2007.10190v2/sections/sec-000",
+    "library/arxiv-2007.10190v2/sections/sec-001",
+    "library/arxiv-2007.10190v2/sections/sec-002",
+    "library/arxiv-2007.10190v2/sections/sec-003",
+    "library/arxiv-2007.10190v2/sections/sec-004",
+    "library/arxiv-2007.10190v2/sections/sec-005",
+    "library/arxiv-2007.10190v2/sections/sec-006",
+    "library/arxiv-2007.10190v2/sections/sec-007",
+    "library/arxiv-2007.10190v2/sections/sec-008",
+    "library/arxiv-2007.10190v2/sections/sec-009",
+    "library/arxiv-2007.10190v2/sections/sec-010",
+    "library/arxiv-2007.10190v2/sections/sec-011",
+    "library/arxiv-2007.10190v2/sections/sec-012",
+    "library/arxiv-2007.10190v2/sections/sec-013",
+    "library/arxiv-2007.10190v2/sections/sec-014",
+    "library/arxiv-2007.10190v2/sections/sec-015",
+    "library/arxiv-2007.10190v2/sections/sec-016",
+    "library/arxiv-2007.10190v2/sections/sec-017"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "THE RESURGENT STRUCTURE OF QUANTUM KNOT INVARIANTS — The asymptotic expansion of quantum knot invariants in complex Chern-Simons theory gives rise to factorially divergent formal power series.\n\n**THE RESURGENT STRUCTURE OF QUANTUM KNOT INVARIANTS**\n\n*STAVROS GAROUFALIDIS, JIE GU, AND MARCOS MARIÑO*\n\n25 pp, 19 sections.\n\n**Abstract.** The asymptotic expansion of quantum knot invariants in complex Chern-Simons theory gives rise to factorially divergent formal power series. We conjecture that these series are resurgent functions whose Stokes automorphism is given by a pair of matrices of q-series with integer coeﬃcients, which are determined explicitly by the fundamental solutions of a pair of linear q-diﬀerence equations. We further conjecture that for a hyperbolic knot, a dis- tinguished entry of those matrices equals to the Dimofte-Gaiotto-Gukov 3D-index, and thus is given by a counting of BPS states. We illustrate our conjectures explicitly by matching theoretically and numerically computed integers for the cases of the 41 and the 52 knots.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Asymptotic expansions in perturbative quan; 1.2 Resurgence in complex Chern-Simons theory; 2 The equation (1-x)(1-x-1)=1 and the 41 knot; 3 The equation x-2(1-x)3=1 and the 52 knot; 4 Descendants; 4.1 The Kashaev invariant and its descendants; 4.2 The q-series (G00,G10) and their descendan; 4.3 The state integral and its descendants; 5 Computations; 5.1 Resurgent analysis; 5.2 The 41 knot; 5.3 The 52 knot; 6 Open questions; Acknowledgements; Appendix A. q-series associated with the 52 kn; A.1. The state integral of the 52 knot",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2007.10190&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2007.10190v2",
+    "title_source": "slug",
+    "source_file": "2007.10190v2.pdf",
+    "source_sha256": "37bcbd3a343bb21a191f6fe52776315c4140cdc83c00e7510b6edabe967869e3",
+    "pages": 25,
+    "arxiv": {
+      "id": "2007.10190",
+      "version": "2",
+      "primary_class": "hep-th",
+      "stamp_date": "2 Dec 2020"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

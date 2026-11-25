@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1806.09450v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Deducing the symmetry of the standard model from the automorphism and structure groups of the exceptional Jordan algebra ∗",
+      "dcterms:creator": [
+        "Ivan Todorov1, Michel Dubois-Violette2"
+      ],
+      "dcterms:issued": "D:20180626",
+      "dcterms:identifier": "https://arxiv.org/abs/1806.09450",
+      "dcterms:abstract": "We continue the study undertaken in [DV] of the exceptional Jordan algebra J = J8 3 as (part of) the ﬁnite-dimensional quantum algebra in an almost classical space-time approach to particle physics. Along with reviewing known properties of J and of the associated exceptional Lie groups we argue that the symmetry of the model can be deduced from the Borel-de Siebenthal theory of maximal connected subgroups of simple compact Lie groups. ∗Updated version of IHES/P/17/03 with minor corrections. 1 arXiv:1806.09450v1 [hep-th] 17 Jun 2018",
+      "dcterms:source": "library/arxiv-1806.09450v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1806.09450v1"
+    }
+  ]
+}

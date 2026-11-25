@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/lean-proof-review.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/lean-proof-review",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "lean-proof-review",
+      "title": "Lean 4 Proof & Reservoir Style Review (`lean-proof-review`)",
+      "description": "Review Lean 4 formalizations for mathematical soundness, statement integrity, vacuity freedom, §7c base-ring generality, and Mathlib4 / Lean Reservoir community style (`#lint`, `BP001`–`BP009`). Records structured verdicts in per-block `.qa.json` sidecars and `docs/audits/lean-vacuity-review-ledger.json`.",
+      "instructionsPath": "skills/local/lean-proof-review.md",
+      "instructionLines": 94,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

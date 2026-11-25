@@ -1,0 +1,44 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "xi",
+  "blocks": [
+    {
+      "id": "library/xi/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Abstract",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-abstract.md",
+      "narrative": null,
+      "content": "This is a series of 4 lectures on cellular algebras. In the lectures we introduce\nthe theory of cellular algebras which were deﬁned ﬁrst by Graham and Lehrer\nin 1996 to deal systematically with parameterizing irreducible representations of\nalgebras and related problems. If a ﬁnite-dimensional algebra is given by quiver\nwith relations, the irreducible representations over such an algebra are very easy to\ndescribe. But in the real world, algebras, especially those with the interesting ap-\nplications in mathematics and physics, appear very often not in this form. It turns\nout that the determinati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/xi/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Advanced school and conference on representation\ntheory and related topics. ICTP, Trieste. Jan. 9-28, 2005\nCellular algebras\nChangchang Xi\nSchool of Mathematical Sciences, Beijing Normal University,\n100875 Beijing, People’s Republic of China;\nE-mail: xicc@bnu.edu.cn",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

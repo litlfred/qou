@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1306.3655v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "The Murnaghan-Nakayama rule and some virtual S n characters",
+      "dcterms:creator": [
+        "Regev, Amitai"
+      ],
+      "dcterms:issued": "D:20220530",
+      "dcterms:identifier": "https://arxiv.org/abs/1306.3655",
+      "dcterms:abstract": "We construct certain virtual characters for the symmetric groups, then compute a formula which calculates the values of these virtual characters.",
+      "dcterms:source": "library/arxiv-1306.3655v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1306.3655v1"
+    }
+  ]
+}

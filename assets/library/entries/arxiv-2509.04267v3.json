@@ -1,0 +1,291 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2509.04267v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-2509.04267v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "QUANTUM COCYCLE INVARIANTS OF KNOTS FROM YANG-BAXTER\nCOHOMOLOGY\nMASAHICO SAITO AND EMANUELE ZAPPALA\nAbstract. Yang-Baxter operators (YBOs) have been employed to construct quantum knot invari-\nants. More recently, cohomology theories for YBOs have been independently developed, drawing\ninspiration from analogous theories for quandles and other discrete algebraic structures. Quandle\ncohomology, in particular, gives rise to cocycle invariants for knots via 2-cocycles, which are closely\nrelated to quandle extensions, and knotted surfaces via 3-cocycles. These quandle cocycle knot\ninvariants have al",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2509.04267v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-2-preliminaries.md",
+      "narrative": null,
+      "content": "[]{#sec:prelim label=\"sec:prelim\"}\n\nIn this section we review two approaches for defining quantum knot invariants, one via traces and the other via height functions and maxima/minima. We follow these two approaches to construct quantum cocycle invariants in later sections. Unless otherwise specified, we use the notation $\\mathbb k$ for a unital ring, and $V$ for a module over $\\mathbb k$.\n\nRecall that for an invertible map $R: V \\otimes V \\rightarrow V \\otimes V$ of a ${\\mathbb k}$-module $V$, the equation $$(R \\otimes {\\mathbb 1}) ({\\mathbb 1} \\otimes R) (R \\otimes {\\mathbb 1}) \n=({\\mathbb 1}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2509.04267v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Knot invariants from closed braids and traces",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-21-knot-invariants-from-closed-braids-and-traces.md",
+      "narrative": null,
+      "content": "There are two main constructions of quantum knot invariants from YBOs: one is through braid group representations and their trace maps that are invariant under Markov moves, and the other is by fixing a height function on the plane of projection and incorporate maps corresponding to maxima/minima of knot diagrams. Although these two approaches are closely related, we examine these approaches separately to take advantages of computations of known invariants and their deformations. In this subsection we review the first approach of trace, and in the next subsection we review the second maxima/mi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2509.04267v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Knot invariants using maxima/minima",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-22-knot-invariants-using-maximaminima.md",
+      "narrative": null,
+      "content": "invariants using maxima/minima of knot diagrams with a fixed height function (see, for example,\n[13]). This approach is used for unoriented knots and their diagrams.\nA pairing ∪: V ⊗V →k and a copairing ∩: k →V ⊗V in a module V over a unital ring k are\nsaid to have (or satisfy) the switchback property if they satisfy the equalities\n(∪⊗1)(1 ⊗∩) = 1 = (1 ⊗∪)(∩⊗1).\nLet R be a YBO. A pairing ∪is said to satisfy (or have) the passcup property with respect to R\nif it satisfies\n(1 ⊗∪)(R ⊗1) = (∪⊗1)(1 ⊗R−1),\n(1 ⊗∪)(R−1 ⊗1) = (∪⊗1)(1 ⊗R).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2509.04267v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Yang-Baxter cohomology",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-3-yang-baxter-cohomology.md",
+      "narrative": null,
+      "content": "5\nSimilarly a copairing ∩is said to satisfy (or have) the passcap property with respect to R if it\nsatisfies\n(R ⊗1)(1 ⊗∩) = (1 ⊗R−1)(∩⊗1),\n(R−1 ⊗1)(1 ⊗∩) = (1 ⊗R)(∩⊗1).\nIn Figure 2, the switchback, passcup and passcap moves are depicted from left to right, respectively.\nFigure 2\nA k-module V with a YBO and a pairing and copairing that satisfy switchback, passcup, and\npasscap properties provide a knot invariant up to regular isotopy equivalence relation without type\nI Reidemeister move, see [13], by interpreting a given knot diagram as a linear map from k to k,\ncorresponding to empty to empty s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2509.04267v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "YB cohomology in low dimensions",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-31-yb-cohomology-in-low-dimensions.md",
+      "narrative": null,
+      "content": "In this subsection we review YB cohomology theory from [@SZ-YBH] in low dimensions, as it is used in the several sections that follow.\n\nThe cochain groups are defined by $C^0_{\\rm YB}(V,V)=0$ and $C^n_{\\rm YB}(V,V)={\\rm Hom} (V^{\\otimes n},V^{\\otimes n})$ for $n>0$. We define the differentials for $f \\in C^1_{\\rm YB}(V,V)$ and $\\phi \\in C^2_{\\rm YB}(V,V)$ by $$\\begin{aligned}\n    \\delta^1_{\\rm YB} (f) \n    &=&\n    R ( f \\otimes {\\mathbb 1}) + R ( {\\mathbb 1} \\otimes  f ) \n    -  ( f \\otimes {\\mathbb 1}) R - ( {\\mathbb 1} \\otimes  f )  R ,\\\\\n    \\delta^2_{\\rm YB} (\\phi) &=&\n    (R \\otimes {\\mat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2509.04267v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "YB cohomology in higher dimensions",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-32-yb-cohomology-in-higher-dimensions.md",
+      "narrative": null,
+      "content": "In this subsection we review definitions of YB cohomology theory from [@SZ-YBH], see also [@SZ-BC].\n\nWe set $\\sigma_{n,i} = \\mathbb 1^{\\otimes (i-1)}\\otimes R \\otimes \\mathbb 1^{\\otimes(n-i-1)}$. Then, for $\\phi \\in {\\rm Hom}(V^{\\otimes n}, V^{\\otimes n})$, the partial differentials for YB cohomology are defined as $$\\begin{aligned}\n    d_{{\\rm YB},i}^n(\\phi) &=& \\sigma_{n+1,n+1-i}\\cdots\\sigma_{n+1,2}\\sigma_{n+1,1}(\\mathbb 1\\otimes \\phi)\\sigma_{n+1,1}\\cdots\\sigma_{n+1,i-1}\\sigma_{n+1,i}\\\\\n    && - \\sigma_{n+1,i+1}\\cdots\\sigma_{n+1,n}\\sigma_{n+1,n+1}(\\phi \\otimes \\mathbb 1)\\sigma_{n+1,n+1}\\cdot",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2509.04267v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum cocycle invariants via traces",
+      "pageStart": 8,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-4-quantum-cocycle-invariants-via-traces.md",
+      "narrative": null,
+      "content": "[]{#sec:inf_def label=\"sec:inf_def\"}\n\nLet $S = (R, \\alpha, \\beta, \\mu)$ be an EYBO. Suppose that there is an infinitesimal deformation $$\\tilde R=\\phi_0 + \\hbar \\phi_1=R + \\hbar \\phi\n\\quad {\\rm on} \\quad \n\\tilde V={\\mathbb k} [[ \\hbar ]] / (\\hbar^2 )  \\otimes V .$$ Suppose further that there is $\\tilde \\mu = \\mu + \\hbar \\mu_1 : \\tilde V \\rightarrow \\tilde V$ such that $\\tilde S = (\\tilde R, \\alpha, \\beta, \\tilde \\mu )$ is an EYBO on $\\tilde V$. Then we say that $\\tilde S$ is an *infinitesimal deformation* of an EYBO $S$, or $S$ is deformed to $\\tilde S$. In this situation we also denote the de",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2509.04267v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples via traces",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-007-5-examples-via-traces.md",
+      "narrative": null,
+      "content": "[]{#sec:traces label=\"sec:traces\"}\n\nIn this section we provide examples that yield nontrivial values of the quantum cocycle invariant defined in the preceding section via traces.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2509.04267v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariants from deformations of the transposition",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "../sections/sec-008-51-invariants-from-deformations-of-the-transposi.md",
+      "narrative": null,
+      "content": "Let us consider a finite dimensional vector space $V$ along with the transposition map $R=\\tau : V\\otimes V \\rightarrow V\\otimes V$, which is a YBO on $V$.\n\n::: lemma\nFor $R=\\tau$, we have $H^2_{\\rm YB}(V, V) = C^2_{\\rm YB}(V, V) = {\\rm Hom} (V^{\\otimes 2}, V^{\\otimes 2})$.\n:::\n\n::: proof\n*Proof.* For a $2$-cochain $\\phi$, we use the structure constants $\\phi(e_i\\otimes e_j) = \\phi_{ij}^{k\\ell}e_k\\otimes e_\\ell$, where we employ the usual Einstein notation for the sums of repeated indices, and we have denoted by $e_1, \\ldots, e_n$ a basis for $V$. The first term in the 2-cocycle condition is $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2509.04267v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariants from the tensor version of quandle 2-cocycle invariants",
+      "pageStart": 15,
+      "pageEnd": 19,
+      "target": "../sections/sec-009-52-invariants-from-the-tensor-version-of-quandle.md",
+      "narrative": null,
+      "content": "[]{#subsec:Q label=\"subsec:Q\"}\n\nWe now discuss a class of example of importance, which motivates the name of quantum cocycle invariants.\n\nA *quandle* $(Q, *)$ is a set $Q$ with an idempotent operation $*$ such that the right translation $R_y: x \\mapsto x*y$, $x\\in Q$, is a $*$-automorphism for all $y$. A group with the conjugation operation is a typical example of a quandle. A quandle homology theory was developed in [@CJKLS] and quandle cocycle invariant was defined with applications to knots and knotted surfaces.\n\nThe quandle 2-cocycle invariant for a knot diagram is defined as follows. Let",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2509.04267v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum cocycle invariants via maxima/minima",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "../sections/sec-010-6-quantum-cocycle-invariants-via-maximaminima.md",
+      "narrative": null,
+      "content": "[]{#sec:cupcap label=\"sec:cupcap\"}\n\nIn this section we describe a construction of quantum cocycle invariants by deforming maxima and minima for knot diagrams with a height function specified. Throughout this section, a height function is fixed on the plane where knot diagrams lie, and diagrams are in general position, so that they have isolated maxima, minima, and double crossings. Diagrams are unoriented.\n\nLet $R$ be a YBO on $V$. Let $\\tilde R = \\phi_0 + \\hbar \\phi_1$, where $\\phi_0 := R$ and $\\phi_1 := \\phi$, be a deformed YBO. Denote by $\\tilde R^{-1} = \\hat \\phi_0 + \\hbar \\hat \\phi_1$ as",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2509.04267v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples via maxima/minima",
+      "pageStart": 21,
+      "pageEnd": 26,
+      "target": "../sections/sec-011-7-examples-via-maximaminima.md",
+      "narrative": null,
+      "content": "[]{#sec:bracket label=\"sec:bracket\"}\n\nThe Kauffman bracket polynomial [@K&P] for knots up to regular isotopy is defined by the skein relation in Figure [1](#skeinbracket){reference-type=\"ref\" reference=\"skeinbracket\"}. The bracket value for the unknot diagram with no crossing is set to be $1$. In this section we examine invariants defined from YB $2$-cocycles and the bracket following the definition in Section [\\[sec:cupcap\\]](#sec:cupcap){reference-type=\"ref\" reference=\"sec:cupcap\"}. In this section we assume that $\\mathbb k$ contains $\\sqrt{-1}$ and an invertible element $A$ that serves as a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2509.04267v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Higher order invariants",
+      "pageStart": 26,
+      "pageEnd": 29,
+      "target": "../sections/sec-012-8-higher-order-invariants.md",
+      "narrative": null,
+      "content": "[]{#sec:higher_def label=\"sec:higher_def\"}\n\nWe consider now higher order deformations of YBOs, where the condition of being enhanced is preserved for the trace approach. It is known that YBOs can be nontrivially deformed to higher order, as seen explicitly in [@EZ_perturbative]. Our objective in this section is to characterize when higher order deformations define EYBOs, and how to use such deformed EYBOs to define higher order quantum cocycle invariants. Although a similar higher order deformations can be formulated, we focus on the trace approach in the remaining sections, as our purpose of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2509.04267v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Jones and Alexander polynomials as higher order invariants",
+      "pageStart": 29,
+      "pageEnd": 33,
+      "target": "../sections/sec-013-9-the-jones-and-alexander-polynomials-as-higher.md",
+      "narrative": null,
+      "content": "[]{#sec:Jones_Alex label=\"sec:Jones_Alex\"}\n\nIn this section we discuss how to interpret the Jones and Alexander polynomials as quantum cocycle invariants. We need a slight generalization of the framework considered up to now, before proceeding with the main results of the section.\n\nNote that YB cohomology used in this article does not depend on the invertibility of the YBO, as opposed to that used in [@Eis; @Eis1], for example. Therefore, it still makes sense to discuss YB cocycles of pre-YB operators, i.e. operators that satisty the YBE, but are not necessarily invertible. While we have assum",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

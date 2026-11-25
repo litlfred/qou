@@ -1,0 +1,82 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0405126v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0405126v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0405126v1  [math.GT]  7 May 2004\nASYMPTOTIC BEHAVIORS OF THE COLORED JONES\nPOLYNOMIALS OF A TORUS KNOT\nHITOSHI MURAKAMI\nAbstract. We study the asymptotic behaviors of the colored Jones polyno-\nmials of torus knots. Contrary to the works by R. Kashaev, O. Tirkkonen,\nY. Yokota, and the author, they do not seem to give the volumes or the\nChern–Simons invariants of the three-manifolds obtained by Dehn surgeries.\nOn the other hand it is proved that in some cases the limits give the inverse\nof the Alexander polynomial.\nLet K be a knot in the three-sphere and JN(K; t) the colored Jones pol",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405126v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Statement of the result",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-statement-of-the-result.md",
+      "narrative": null,
+      "content": "Let $T(a,b)$ be the $(a,b)$-torus knot for coprime integers $a$ and $b$ ($a>1$, $b>1$). Then its colored Jones polynomial $J_N\\bigl(T(a,b);t\\bigr)$ is given as follows [@Morton:MATPC95]. $$J_N\\bigl(T(a,b);t\\bigr)\n  =\n  \\frac{t^{-ab(N^2-1)/4}}{t^{N/2}-t^{-N/2}}\n  \\sum_{\\varepsilon=\\pm1}\n  \\sum_{k=-(N-1)/2}^{(N-1)/2}\n  \\varepsilon\n  t^{abk^2+k(a+\\varepsilon{b})+\\varepsilon/2}.$$\n\nWe will show the following theorem.\n\n::: thm\n[]{#thm label=\"thm\"} There exists a neighborhood $U$ of $1\\in\\mathbb{C}$ such that if $r\\in{U}$ and $r\\notin\\mathbb{R}$, then $$\\begin{gathered}\n  \\lim_{N\\to\\infty}J_N\\left(T",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405126v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-2-proof.md",
+      "narrative": null,
+      "content": "When $t=e^{2\\pi{r}\\sqrt{-1}/N}$ for $r\\in\\mathbb{C}\\setminus{\\mathbb{Z}}$, $J_N\\left(T(a,b);e^{2\\pi{r}\\sqrt{-1}/N}\\right)$ can be given by the following integral form [@Kashaev/Tirkkonen:ZAPNS200 Lemma 1]. $$J_N\\left(T(a,b),e^{2\\pi{r}\\sqrt{-1}/N}\\right)\n  =\n  \\Phi_{a,b,r}(N)\n  \\int_{C}\n  e^{Nf_{a,b,r}(z)}\n  \\tau_{a,b}(z)\n  dz.$$ Here $$\\begin{aligned}\n  \\Phi_{a,b,r}(N)\n  &:=g_{a,b,r}\\sqrt{N}\n     e^{-\\left(ab\\left(N^2-1\\right)+a/b+b/a\\right)\\pi{r}\\sqrt{-1}/(2N)}\n  \\\\\n  &\\text{\n    with\n      $g_{a,b,r}\n       :=\n       \\frac{\\sqrt{ab}}\n            {2\\pi\\sqrt{2r}\n            e^{\\pi\\sqrt{-1}/4}\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405126v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comments",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-3-comments.md",
+      "narrative": null,
+      "content": "Here are a couple of probably inaccurate comments about the relation of the limit\nof the colored Jones polynomials of a torus knot and its Alexander polynomial.\nComment 3.1. The Melvin–Morton–Rozansky conjecture proved by D. Bar-Natan\nand S. Garoufalidis [1], which was proposed by P. Melvin and H. Morton [15] and\n‘proved’ non-rigorously by L. Rozansky [22], tells that if we expand the colored\nJones polynomial of a knot as a power series\nJN\n\u0000K; eh\u0001\n=\nX\nd,l≥0\nbdl(K)hdN l,\nthen\n(i) bdl(K) = 0 if l > d,\n6\nHITOSHI MURAKAMI\n(ii) the diagonal coeﬃcients give the inverse of the Alexander polynomial, t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,553 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1705.10485v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1705.10485v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.10485v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mod-$\\phi$ convergence",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-11-mod-phi-convergence.md",
+      "narrative": null,
+      "content": "Let $(X_n)_{n \\in \\mathbb{N}}$ be a sequence of real-valued random variables. In many situations, there exists a scale $s_n$ and a limiting law $\\phi$ which is infinitely divisible, such that $(X_n/s_n)_{n\\in \\mathbb{N}}$ converges in law towards $\\phi$. For instance, in the classical central limit theorem, if $X_n=\\sum_{i=1}^n A_i$ is a sum of centered i.i.d. random variables with $\\mathbb{E}[(A_1)^2]<\\infty$, then $$s_n=\\sqrt{n\\,\\mathbb{E}[(A_1)^2]}$$ and the limit is the standard Gaussian distribution $\\mathcal{N}_{\\mathbb{R}}(0,1)$. In [@JKN11] and the subsequent papers [@DKN11; @FMN16], t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.10485v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Mod-φ convergence, II: Estimates on the speed of\nconvergence\nValentin Féray, Pierre-Loïc Méliot, and Ashkan Nikeghbali\nAbstract In this paper, we give estimates for the speed of convergence towards a limiting stable law\nin the recently introduced setting of mod-φ convergence. Namely, we deﬁne a notion of zone of control,\nclosely related to mod-φ convergence, and we prove estimates of Berry–Esseen type under this hypothesis.\nApplications include:\n• the winding number of a planar Brownian motion;\n• classical approximations of stable laws by compound Poisson laws;\n• examples stemming from determi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.10485v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Results and outline of the paper",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-12-results-and-outline-of-the-paper.md",
+      "narrative": null,
+      "content": "We take as reference law a stable distribution $\\phi$ of index $\\alpha \\in (0,2]$. Let $(X_n)_{n\\in \\mathbb{N}}$ be a sequence of variables that admits a zone of control (this notion will be defined in Definition [\\[def:zone\\]](#def:zone){reference-type=\"ref\" reference=\"def:zone\"}; this is closely related to the mod-$\\phi$ convergence of $(X_n)_{n\\in \\mathbb{N}}$). As we will see in Proposition [\\[prop:zone_CLT\\]](#prop:zone_CLT){reference-type=\"ref\" reference=\"prop:zone_CLT\"}, this implies that some renormalization $Y_n$ of $X_n$ converges in distribution towards $\\phi$ and we are interested",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.10485v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stable distributions and mod-stable convergence",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-13-stable-distributions-and-mod-stable-convergen.md",
+      "narrative": null,
+      "content": "[]{#Sect:Background_Stable label=\"Sect:Background_Stable\"} Let us recall briefly the classification of stable distributions (see [@Sato99 Chapter 3]). Fix $c>0$ (the *scale* parameter), $\\alpha \\in (0,2]$ (the *stability* parameter), and $\\beta \\in [-1,1]$ (the *skewness* parameter).\n\n::: definition\nThe stable distribution of parameters $(c,\\alpha,\\beta)$ is the infinitely divisible law $\\phi=\\phi_{c,\\alpha,\\beta}$ whose Fourier transform $$\\widehat{\\phi}(\\xi)=\\int_{\\mathbb{R}}\\E^{\\I x\\xi} \\,\\phi(\\!\\,d\\hspace*{-0.3mm}{x}) = \\E^{\\eta(\\I\\xi)}$$ has for Lévy exponent $\\eta(\\I\\xi)=\\eta_{c,\\alpha,\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.10485v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Speed of convergence estimates",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-2-speed-of-convergence-estimates.md",
+      "narrative": null,
+      "content": "[]{#sec:testfunctions label=\"sec:testfunctions\"}\n\nThe goal of this section is to introduce the notion of zone of control (Section [\\[sec:zone\\]](#sec:zone){reference-type=\"ref\" reference=\"sec:zone\"}) and to estimate the speed of convergence in the resulting central limit theorem. More precisely, we take as reference law a stable distribution $\\phi_{c,\\alpha,\\beta}$ and a sequence $(X_n)_{n \\in \\mathbb{N}}$ that admits a zone of control (with respect to $\\phi_{c,\\alpha,\\beta}$). As for mod-$\\phi_{c,\\alpha,\\beta}$ convergent sequences, it is easy to prove that in this framework, an appropriate r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.10485v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The notion of zone of control",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-21-the-notion-of-zone-of-control.md",
+      "narrative": null,
+      "content": "[]{#sec:zone label=\"sec:zone\"}\n\n::: definition\n[]{#def:zone label=\"def:zone\"} Let $(X_n)_{n \\in \\mathbb{N}}$ be a sequence of real random variables, $\\phi_{c,\\alpha,\\beta}$ a reference stable law, and $(t_n)_{n \\in \\mathbb{N}}$ a sequence growing to infinity. Consider the following assertions:\n\n1.  []{#hyp:firstcondition label=\"hyp:firstcondition\"} Fix $v > 0$, $w > 0$ and $\\gamma \\in \\mathbb{R}$. There exists a zone $[-K(t_n)^\\gamma,K(t_n)^\\gamma]$ such that, for all $\\xi$ in this zone, if $\\theta_n(\\xi) = \\mathbb{E}[\\E^{\\I \\xi X_n}]\\,\\E^{-t_n \\eta_{c,\\alpha,\\beta}(\\I\\xi)}$, then $$|\\theta_n(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.10485v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spaces of test functions",
+      "pageStart": 8,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-22-spaces-of-test-functions.md",
+      "narrative": null,
+      "content": "[]{#subsec:distributions label=\"subsec:distributions\"} Until the end of Section [\\[sec:testfunctions\\]](#sec:testfunctions){reference-type=\"ref\" reference=\"sec:testfunctions\"}, all the spaces of functions considered will be spaces of complex valued functions on the real line. If $f \\in \\mathrm{L}^1(\\mathbb{R})$, we denote its Fourier transform $$\\widehat{f}(\\xi)=\\int_{\\mathbb{R}} \\E^{\\I x\\xi}\\,f(x)\\,d\\hspace*{-0.3mm}{x}.$$ Recall that the Schwartz space $\\mathscr{S}(\\mathbb{R})$ is by definition the space of infinitely differentiable functions whose derivatives tend to $0$ at infinity faster t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.10485v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Estimates for test functions",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-007-23-estimates-for-test-functions.md",
+      "narrative": null,
+      "content": "We now give an estimate of $\\mathbb{E}[f_n(Y_n)]-\\mathbb{E}[f_n(Y)]$, where $(f_n)_{n \\in \\mathbb{N}}$ is a sequence of test functions in $\\mathscr{T}_0(\\mathbb{R})$ or $\\mathscr{T}_1(\\mathbb{R})$, and $(Y_n)_{n\\in\\mathbb{N}}$ is a sequence of random variables associated to a sequence $(X_n)_{n\\in \\mathbb{N}}$ which has a zone of control.\n\n::: proposition\n[]{#prop:zonedistribution label=\"prop:zonedistribution\"} Let $(X_n)_{n \\in \\mathbb{N}}$ be a sequence of random variables, $\\phi_{c,\\alpha,\\beta}$ a reference stable law, $Y$ with law $\\phi_{c,\\alpha,\\beta}$ and $Y_n$ as in Proposition [\\[pro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.10485v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Smoothing techniques",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "../sections/sec-008-24-smoothing-techniques.md",
+      "narrative": null,
+      "content": "[]{#subsec:smoothing label=\"subsec:smoothing\"} We now explain how to relate the estimates on test functions or distributions to estimates on the Kolmogorov distance. The main tool with respect to this problem is the following:\n\n::: lemma\n[]{#lem:kernelD1 label=\"lem:kernelD1\"} There exists a function $\\rho$ (called kernel) on $\\mathbb{R}$ with the following properties.\n\n1.  The kernel $\\rho$ is non-negative, with $\\int_{\\mathbb{R}} \\rho(x)\\,d\\hspace*{-0.3mm}{x}=1$.\n\n2.  The support of $\\widehat{\\rho}$ is $[-1,1]$ (hence, $\\rho$ is a test function in $\\mathscr{T}_0(\\mathbb{R})$).\n\n3.  The functi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.10485v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bounds on the Kolmogorov distance",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-009-25-bounds-on-the-kolmogorov-distance.md",
+      "narrative": null,
+      "content": "[]{#sec:berry label=\"sec:berry\"} We are now ready to get an estimate for the Komogorov distance under a zone of control hypothesis.\n\n::: theorem\n[]{#thm:kolmogorov label=\"thm:kolmogorov\"} Fix a reference stable distribution $\\phi_{c,\\alpha,\\beta}$ and consider a sequence $(X_n)_{n \\in \\mathbb{N}}$ of random variables with a zone of control $[-K(t_n)^\\gamma,K(t_n)^\\gamma]$ of *index* $(v,w)$. Assume in addition that $\\gamma \\leq \\tfrac{v-1}{\\alpha}$. As before, we denote $Y$ a random variable with law $\\phi_{c,\\alpha,\\beta}$, and $Y_n$ the renormalization of $X_n$ as in Proposition [\\[prop:clt\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.10485v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples with an explicit Fourier transform",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-010-3-examples-with-an-explicit-fourier-transform.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.10485v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sums of independent random variables",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-011-31-sums-of-independent-random-variables.md",
+      "narrative": null,
+      "content": "[]{#subsec:independent label=\"subsec:independent\"} As a direct application of Theorem [\\[thm:kolmogorov\\]](#thm:kolmogorov){reference-type=\"ref\" reference=\"thm:kolmogorov\"}, one recovers the classical Berry--Esseen estimates. Let $(A_n)_{n \\in \\mathbb{N}}$ be a sequence of centered i.i.d. random variables with a third moment. We denote $\\mathbb{E}[(A_i)^2]=\\sigma^2$ and $\\mathbb{E}[|A_i|^3]=\\rho$. Set $S_n=\\sum_{i=1}^n A_i$, $X_n=S_n/(\\sigma n^{1/3})$, $$t_n=n^{1/3}\\qquad;\\qquad K=\\frac{\\sigma^3}{\\rho}\\qquad;\\qquad v=w=3 \\qquad;\\qquad \\gamma=1.$$ Notice that $K \\leq 1$ as a classical applicati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.10485v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Winding number of a planar Brownian motion",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-012-32-winding-number-of-a-planar-brownian-motion.md",
+      "narrative": null,
+      "content": "[]{#Sect:Winding label=\"Sect:Winding\"} In this section, we consider a standard planar Brownian motion $(Z_t)_{t \\in \\mathbb{R}_+}$ starting from $z=1$. It is well known that, a.s., $Z_t$ never touches the origin. One can thus write $Z_t=R_t\\,\\E^{\\I\\varphi_t}$, for continuous functions $t\\mapsto R_t$ and $t\\mapsto \\varphi_t$, where $\\varphi_0=0$, see Figure [1](#fig:winding){reference-type=\"ref\" reference=\"fig:winding\"}.\n\n<figure id=\"fig:winding\">\n<div class=\"center\">\n<embed src=\"winding.pdf\" />\n</div>\n<figcaption>Planar Brownian motion and its winding number; we will see that the latter is asy",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.10485v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Approximation of a stable law by compound Poisson laws",
+      "pageStart": 21,
+      "pageEnd": 24,
+      "target": "../sections/sec-013-33-approximation-of-a-stable-law-by-compound-poi.md",
+      "narrative": null,
+      "content": "[]{#subsec:compoundpoisson label=\"subsec:compoundpoisson\"} Let $\\phi_{c,\\alpha,\\beta}$ be a stable law; the Lévy--Khintchine formula for its exponent allows one to write $$\\E^{\\eta_{c,\\alpha,\\beta}(\\I\\xi)} = \\begin{cases}\n    \\E^{-|c\\xi|^2} &\\text{if }\\alpha=2,\\\\\n    \\exp\\left(\\I m\\xi+\\int_{\\mathbb{R}}(\\E^{\\I \\xi x}-1-1_{|x|<1}\\I\\xi x)\\,\\pi_{c,\\alpha,\\beta}(\\!\\,d\\hspace*{-0.3mm}{x})\\right)& \\text{if }\\alpha\\in(0,2),\n\\end{cases}$$ where $\\pi_{c,\\alpha,\\beta}(\\!\\,d\\hspace*{-0.3mm}{x})$ is the Lévy measure defined for $\\alpha \\in (0,2)$ by $$\\pi_{c,\\alpha,\\beta}(\\!\\,d\\hspace*{-0.3mm}{x}) = \\frac{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.10485v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Convergence of Ornstein--Uhlenbeck processes to stable laws",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "../sections/sec-014-34-convergence-of-ornstein--uhlenbeck-processes.md",
+      "narrative": null,
+      "content": "[]{#subsec:ornstein label=\"subsec:ornstein\"} Another way to approximate a stable law $\\phi_{c,\\alpha,\\beta}$ is by using the marginales of a random process of Ornstein--Uhlenbeck type. Consider more generally a self-decomposable law $\\phi$ on $\\mathbb{R}$, that is an infinitely divisible distribution such that for any $b\\in (0,1)$, there exists a probability measure $p_b$ on $\\mathbb{R}$ such that $$\\widehat{\\phi}(\\xi) = \\widehat{\\phi}(b\\xi)\\,\\widehat{p}_b(\\xi);\\label{eq:selfdecomposable}$$ see [@Sato99 Chapter 3, Definition 15.1]. In Equation [\\[eq:selfdecomposable\\]](#eq:selfdecomposable){re",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.10485v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Logarithms of characteristic polynomials of random matrices",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "../sections/sec-015-35-logarithms-of-characteristic-polynomials-of-r.md",
+      "narrative": null,
+      "content": "In [@KN12 Sections 3 and 4] and [@FMN16 Section 7.5], the mod-Gaussian convergence of the following random variables was proven:\n\n::: center\n         random matrix $M_n$                             random variable $X_n$                       parameters $t_n$                 residue $\\theta(\\xi)$\n  ---------------------------------- ------------------------------------------------------------- -------------------- -------------------------------------------------\n    $\\mathrm{Haar}(\\mathrm{U}(n))$                 $\\mathrm{Re}(\\log \\det(I_n-M_n))$                $\\frac{\\log n}{2}$   $\\frac{(G(1+",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.10485v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cumulants and dependency graphs",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "target": "../sections/sec-016-4-cumulants-and-dependency-graphs.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.10485v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cumulants, zone of control and Kolmogorov bound",
+      "pageStart": 28,
+      "pageEnd": 31,
+      "target": "../sections/sec-017-41-cumulants-zone-of-control-and-kolmogorov-boun.md",
+      "narrative": null,
+      "content": "In this section, we will see that appropriate bounds on the cumulants of a sequence of random variables $(S_n)_{n \\in \\mathbb{N}}$ imply the existence of a large zone of control for a renormalized version of $S_n$. In this whole section and in the next one, the reference stable law is the *standard Gaussian law.* We also assume that the random variables $S_n$ are centered.\n\nLet us first recall the definition of cumulants. If $X$ is a real-valued random variable with exponential generating function $$\\mathbb{E}[\\E^{zX}] = \\sum_{r=0}^\\infty \\frac{\\mathbb{E}[X^r]}{r!}\\,z^r$$ convergent in a neigh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.10485v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dependency graphs",
+      "pageStart": 31,
+      "pageEnd": 35,
+      "target": "../sections/sec-018-42-dependency-graphs.md",
+      "narrative": null,
+      "content": "[]{#subsec:dependency label=\"subsec:dependency\"} In this paragraph, we will see that the uniform bounds on cumulants are satisfied for sums $S_n = \\sum_{i=1}^n A_{i,n}$ of dependent random variables with specific dependency structure.\n\nMore precisely, if $(A_v)_{v \\in V}$ is a family of real valued random variables, we call *dependency graph* for this family a graph $G=(V,E)$ with the following property: if $V_1$ and $V_2$ are two disjoint subsets of $V$ with no edge $e \\in E$ joining a vertex $v_1 \\in V_1$ to a vertex $v_2 \\in V_2$, then $(A_v)_{v \\in V_1}$ and $(A_v)_{v \\in V_2}$ are indepen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.10485v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Unbounded random variables and truncation methods",
+      "pageStart": 35,
+      "pageEnd": 40,
+      "target": "../sections/sec-019-43-unbounded-random-variables-and-truncation-met.md",
+      "narrative": null,
+      "content": "A possible generalization regards sums of *unbounded* random variables. In the following, we develop a truncation method that yields a criterion of asymptotic normality similar to Lyapunov's condition (see [@Bil95 Chapter 27]). A small modification of this method would similarly yield a Lindeberg type criterion. Let $S_n = \\sum_{i=1}^{N_n} A_{i,n}$ be a sum of centered random variables, with $$\\left(\\mathbb{E}[|A_{i,n}|^{2+\\delta}]\\right)^{\\frac{1}{2+\\delta}} \\leq A$$ for some constant $A$ independent of $i$ and $n$, and some $\\delta>0$. We suppose as before that the family of random variables",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.10485v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ising model and Markov chains",
+      "pageStart": 40,
+      "pageEnd": 40,
+      "target": "../sections/sec-020-5-ising-model-and-markov-chains.md",
+      "narrative": null,
+      "content": "[]{#sec:markov label=\"sec:markov\"}\n\nIn this section, we present examples of random variables that admit uniform bounds on cumulants, which do not come from dependency graphs. Their structure is nevertheless not so different since the variables that we consider write as sums of random variables that are *weakly dependent*. The technique to prove uniform bounds on cumulants relies then on the notion of *uniform weighted dependency graph*, which generalizes the notion of standard dependency graph (see Proposition [\\[Prop:BoundCumulantUWDG\\]](#Prop:BoundCumulantUWDG){reference-type=\"ref\" reference",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.10485v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weighted graphs and spanning trees",
+      "pageStart": 40,
+      "pageEnd": 41,
+      "target": "../sections/sec-021-51-weighted-graphs-and-spanning-trees.md",
+      "narrative": null,
+      "content": "An *edge-weighted graph* $G$, or *weighted graph* for short, is a graph $G$ in which each edge $e$ is assigned a weight $w_G(e)$. Here we restrict ourselves to weights $w_G(e)$ with $w_G(e) \\in \\mathbb{R}_+$. Edges not in the graph can be thought of as edges of weight $0$, all our definitions being consistent with this convention.\n\nIf $B$ is a multiset of vertices of $G$, we can consider the graph $G[B]$ induced by $G$ on $B$ and defined as follows: the vertices of $G[B]$ correspond to elements of $B$ (if $B$ contains an element with multiplicity $m$, then $m$ vertices correspond to this eleme",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.10485v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Uniform weighted dependency graphs",
+      "pageStart": 41,
+      "pageEnd": 42,
+      "target": "../sections/sec-022-52-uniform-weighted-dependency-graphs.md",
+      "narrative": null,
+      "content": "If $A_1,\\ldots,A_r$ are real-valued random variables, there is a notion of joint cumulant that generalize the cumulants of Section [\\[sec:dependency\\]](#sec:dependency){reference-type=\"ref\" reference=\"sec:dependency\"}: $$\\kappa(A_1,A_2,\\ldots,A_r) = [z_1z_2\\cdots z_r]\\left(\\log \\mathbb{E}[\\E^{z_1A_1+z_2A_2+\\cdots+z_rA_r}]\\right).$$ The joint cumulants are multilinear and symmetric functionals of $A_1,\\ldots,A_r$. On the other hand, $$\\kappa^{(r)}(X) = \\kappa(X,X,\\ldots,X)$$ with $r$ occurrences of $X$ in the right-hand side. In particular, if $S=\\sum_{v \\in V}A_v$ is a sum of random variables,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.10485v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Magnetization of the Ising model",
+      "pageStart": 42,
+      "pageEnd": 44,
+      "target": "../sections/sec-023-53-magnetization-of-the-ising-model.md",
+      "narrative": null,
+      "content": "[]{#subsec:Ising label=\"subsec:Ising\"} We consider here the nearest-neighbour Ising model on a finite subset $\\Lambda$ of $\\mathbb{Z}^d$ with a quadratic potential, *i.e.* for a *spin configuration* $\\sigma$ in $\\{-1,+1\\}^{\\Lambda}$, its energy is given by $$\\mathcal{H}^\\Lambda_{\\beta,h}(w)=  - \\beta\\!\\!\\! \\sum_{\\substack{ i,j \\in \\Lambda \\\\ \\{i,j\\} \\in E_{\\mathbb{Z}^d}}} \\!\\!\\! \\sigma_i\\sigma_j\\,\\,\\,-h \\sum_{i \\in \\Lambda} \\sigma_i,$$ where $E_{\\mathbb{Z}^d}$ is the set of edges of the lattice $\\mathbb{Z}^d$ and $h$ and $\\beta$ are two real parameters with $\\beta > 0$. The probability $\\mu_{\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.10485v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Functionals of Markov chains",
+      "pageStart": 44,
+      "pageEnd": 49,
+      "target": "../sections/sec-024-54-functionals-of-markov-chains.md",
+      "narrative": null,
+      "content": "In this section, we consider a discrete time Markov chain $(M_t)_{t \\ge 0}$ on a finite state space $\\mathfrak{X}$, which is ergodic (irreducible and aperiodic) with invariant measure $\\pi$. Its transition matrix is denoted $P$. To simplify the discussion, we shall also assume that the Markov chain is stationary, that is to say that the initial measure (*i.e.* the law of $M_0$) is $\\pi$; most results have easy corollaries for any initial measure, using the fast mixing of such Markov chains.\n\nLet us consider a sequence $(f_t)_{t \\ge 0}$ of functions on $\\mathfrak{X}$ that is uniformly bounded b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.10485v2/blocks/prop-sec-025-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 49,
+      "pageEnd": 53,
+      "target": "prop-sec-025-01.md",
+      "narrative": null,
+      "content": "Suppose that the ergodic Markov chain is reversible: π(x) P(x, y) = π(y) P(y, x) for any x, y. Then, if f is a non-constant function, Σ2(f) > 0 and the bound (13) holds.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1705.10485v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The case of linear functionals of the empirical measure",
+      "pageStart": 49,
+      "pageEnd": 53,
+      "target": "../sections/sec-025-55-the-case-of-linear-functionals-of-the-empiric.md",
+      "narrative": null,
+      "content": "As a particular case of Theorem 55, one recovers the central limit theorem for linear functionals of\nempirical measures of Markov chains, that are random variables\nYn = Sn −E[Sn]\n√n\n=\n1\n√n\nn\nX\nt=1\n(f(Xt) −π(f))\nwith f : X →R ﬁxed function (independent of the time t). Thus, assuming for instance limn→∞Var(Yn) =\nΣ2(f) > 0, we have\ndKol\n \nSn −E[Sn]\np\nVar(Sn)\n, NR(0, 1)\n!\n≤77\n \n∥f∥∞\n√\nM\nΣ(f)\n!3 \u00121 + θP\n1 −θP\n\u00132\n1\n√n\n(13)\n50\nValentin Féray, Pierre-Loïc Méliot, and Ashkan Nikeghbali\nfor n large enough. We refer to [Cog72, KV86, Jon04, Häg05] and the references therein for the general\nbackground of t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1705.10485v2/blocks/rem-sec-025-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 49,
+      "pageEnd": 53,
+      "target": "rem-sec-025-02.md",
+      "narrative": null,
+      "content": "In this remark, we discuss mod-Gaussian convergence for linear statistics of Markov chains. We use the above notation and assume that Σ2(f) > 0. Consider the third cumulant of Sn. One can easily prove that ρ = 1 n lim n→∞κ3(Sn) = X j,k∈Z κ(f(X0, Xj, Xk)), where (Xt)t∈Z is a bi-inﬁnite stationary Markov chain with transition matrix P. (The sum on the right- hand side is ﬁnite, as consequence of Proposition 54). Let us call ρ this limit. We then consider the rescaled random variables Xn = \u0012 Sn −E[Sn] (Var(Sn))1/3 \u0013 n∈N . As for the magnetization in the Ising model, from [FMN16, Section 5] (with",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

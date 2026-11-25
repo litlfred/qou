@@ -1,0 +1,67 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1304.2705v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1304.2705v1",
+  "contains": [
+    "library/arxiv-1304.2705v1/sections/sec-000",
+    "library/arxiv-1304.2705v1/sections/sec-001",
+    "library/arxiv-1304.2705v1/sections/sec-002",
+    "library/arxiv-1304.2705v1/sections/sec-003",
+    "library/arxiv-1304.2705v1/sections/sec-004",
+    "library/arxiv-1304.2705v1/sections/sec-005",
+    "library/arxiv-1304.2705v1/sections/sec-006",
+    "library/arxiv-1304.2705v1/sections/sec-007",
+    "library/arxiv-1304.2705v1/sections/sec-008",
+    "library/arxiv-1304.2705v1/sections/sec-009",
+    "library/arxiv-1304.2705v1/sections/sec-010",
+    "library/arxiv-1304.2705v1/sections/sec-011",
+    "library/arxiv-1304.2705v1/sections/sec-012",
+    "library/arxiv-1304.2705v1/sections/sec-013"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "FROM STATE INTEGRALS TO q-SERIES — It is well-known to the experts that multi-dimensional state integra ls of prod- ucts of Faddeev’s quantum dilogarithm which arise in Quantum Topolog y can be\n\n**FROM STATE INTEGRALS TO q-SERIES**\n\n*STA VROS GAROUF ALIDIS AND RINAT KASHAEV*\n\n16 pp, 14 sections.\n\n**Abstract.** It is well-known to the experts that multi-dimensional state integra ls of prod- ucts of Faddeev’s quantum dilogarithm which arise in Quantum Topolog y can be written as ﬁnite sums of products of basic hypergeometric series in q = e2πiτ and ˜q = e− 2πi/τ . We illustrate this fact by giving a detailed proof for a family of one-dimens ional integrals which includes state-integral invariants of 4 1 and 5 2 knots.\n\n**Outline.** 1 Introduction; 1.1 State-integrals and their q-series; 1.3 The case of the 41 knot; 1.4 The case of the 52 knot; 2 Proofs; 2.1 A residue computation; 2.5 Some auxiliary power series; 2.6 Proof of Proposition 2.2; 2.7 Proof of Lemma 1.5; 3 An application: state-integrals of the 41 an; 3.1 Proof of Corollary 1.7; 3.2 Proof of Corollary 1.8; Acknowledgments; References\n\n**Extracted claims (proposals, not verified).**\n- Corollary 1.6: (a) If we deﬁne ω(q, x) = FA,B(q, qx)/FA,B(q, x) and ω(q, x)n =∏ n\n- Lemma 2.6: For part (b), we will use the series",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1304.2705&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1304.2705v1",
+    "title_source": "slug",
+    "source_file": "1304.2705v1.pdf",
+    "source_sha256": "cb07e66e418e11f235fe5368f3d882048d43a8a19f0fa53c219db88ce78260cb",
+    "pages": 16,
+    "arxiv": {
+      "id": "1304.2705",
+      "version": "1",
+      "primary_class": "math.GT",
+      "stamp_date": "9 Apr 2013"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

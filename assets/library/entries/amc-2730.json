@@ -1,0 +1,398 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "amc-2730",
+  "blocks": [
+    {
+      "id": "library/amc-2730/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Introduction\nThe Jones polynomial VLptq is an invariant of knots and links defined using quantum rep-\nresentations of braids. It can be uniquely characterized as the polynomial-valued invariant\nof oriented links with V⃝ptq “ 1 for ⃝the unknot and satisfying the skein relation\nt´1VL`ptq ´ tVL´ptq “ pt1{2 ´ t´1{2qVL0ptq,\n*The authors are especially grateful to Alexander Stoimenow for providing crucial input. They would also like\nto thank Homayun Karimi, Robert Osburn, Andrew Nicas, Will Rushworth, and Cornelia Van Cott for valuable\nfeedback.\n†Corresponding author. The author would like to acknow",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/amc-2730/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "ISSN 1855-3966 (printed edn.), ISSN 1855-3974 (electronic edn.)\nARS MATHEMATICA CONTEMPORANEA 23 (2023) #P1.10\nhttps://doi.org/10.26493/1855-3974.2730.6ac\n(Also available at http://amc-journal.eu)\nBraid representatives minimizing the number of\nsimple walks*\nHans U. Boden †\n, Matthew Shimoda ‡\nMathematics & Statistics, McMaster University, Hamilton, Ontario, Canada\nReceived 15 November 2021, accepted 19 July 2022, published online 21 November 2022\nAbstract\nGiven a knot, we develop methods for finding a braid representative that minimizes\nthe number of simple walks. Such braids lead to an effici",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/amc-2730/blocks/lem-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "lem-sec-001-01.md",
+      "narrative": null,
+      "content": "ENpbs `cr `ad `q “ qrpN´1´dq d´1 ź i“0 p1 ´ qN´1´r´iq ENpbs ´cr ´ad ´q “ q´rpN´1q d´1 ź i“0 p1 ´ qr`i`1´Nq We will apply this lemma to the local weights Spiq of each stack at each crossing. However, before we can apply Lemma 2.3, we must first put the local weights at a crossing into the preferred order. This can always be achieved using the following relations: a`b` “ b`a`, a`c` “ qc`a`, b`c` “ q2c`b` a´b´ “ q2b´a´, a´c´ “ q´1c´a´, b´c´ “ q´2c´b´ Once the local weights have been put into the preferred order at each crossing, The- orem 2.2 and Lemma 2.3 can be applied locally at each crossing",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/amc-2730/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The colored Jones polynomial and walks along braids",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-the-colored-jones-polynomial-and-walks-along-bra.md",
+      "narrative": null,
+      "content": "The colored Jones polynomial and walks along braids\nGiven a knot K and integer N ě 2, the colored Jones polynomial JN,Kpqq is a Laurent\npolynomial in the variable q1{2. It is normalized so that JN,⃝pqq “ 1, where ⃝is the un-\nknot. When N “ 2, the colored Jones polynomial agrees with the usual Jones polynomial.\nIn general, the N-th colored Jones polynomial of a knot K can be expressed in terms of\nthe usual Jones polynomial of the pN ´ 1q strand cable of K. However, since the crossing\nnumber of the pN ´ 1q strand cable of a knot is pN ´ 1q2 times the crossing number of the\nknot, this does not le",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/amc-2730/blocks/ex-sec-002-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "ex-sec-002-01.md",
+      "narrative": null,
+      "content": "The braid word σ´1 2 σ1σ3 2σ1 represents the knot 52 and has two simple walks with J Ď t2, 3u. They are A “ qa1,´c3,`a4,`b5,` and B “ q3b1,´c1,´c2,`c3,`a4,` b5,`b6,` (see Figure 1). Notice that A has J “ t3u and B has J “ t2, 3u. Since the walks A and B both traverse the third strand at top and bottom, stacks only need to be considered up to level N ´ 1. Using Theorem 2.2, we can write the colored Jones polynomial as the following: JN,Kpqq “ qp1´Nq N´1 ÿ n“0 ENppA ` Bqnq, “ qp1´Nq N´1 ÿ n“0 ENppqa1,´c3,`a4,`b5,` ` q3b1,´c1,´c2,`c3,`a4,`b5,`b6,`qnq.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/amc-2730/blocks/ex-sec-002-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "ex-sec-002-02.md",
+      "narrative": null,
+      "content": "The braid word σ1σ2σ1´1σ3´1σ2σ3´1σ1 represents the knot 61 and has three simple walks with J Ď t2, 3, 4u. They are A “ qa4,´a6,´, B “ q3c2,`a3,´a4,´b5,` b6,´c6,´ and C “ q5c1,`c2,`b3,´c3,´a4,´b5,`b6,´c6,´b7,` (see Figure 2). Notice that A has J “ t4u, B has J “ t3, 4u, and C has J “ t2, 3, 4u. Since the walks A, B and C all traverse the fourth strand at top and bottom, stacks only need to be considered up to level N ´ 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/amc-2730/blocks/ex-sec-002-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "ex-sec-002-03.md",
+      "narrative": null,
+      "content": "The braid word σ1σ2σ3 3σ´1 1 σ2σ1σ´1 represents the knot 72 and has three simple walks with J Ď t2, 3, 4u. They are A “ qc3,`a4,`b5,`a9,´, which has has J “ t4u; B “ q3c2,`c3,´a4,`b5,`a6,´b7,`b9,´c9,´, which has has J “ t3, 4u; and C “ q5c2,`c3,`a4,`b5,`b6,´c6,´b7,`b8,´b9,´c9,´, which has J “ t2, 3, 4u (see Fig- ure 3). Since the walks A, B and C all traverse the fourth strand at top and bottom, stacks only need to be considered up to N ´ 1. We use Theorem 2.2 to write the colored Jones polynomial for 72 as: JN,Kpqq “ qp1´Nq N´1 ÿ n“0 EN ppA ` B ` Cqnq , “ qp1´Nq N´1 ÿ n“0 EN ` pqc3,`a4,`b5,`a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/amc-2730/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The colored Jones polynomial in closed form",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "../sections/sec-002-the-colored-jones-polynomial-in-closed-form.md",
+      "narrative": null,
+      "content": "The colored Jones polynomial in closed form\nIn this section, we apply Theorem 2.2 and Lemma 2.3 to compute JN,Kpqq, the colored\nJones polynomial, for the knots 52, 61 and 72. This is achieved by choosing favorable braid\nrepresentatives, namely those with only a few simple walks.\nIn [22], Masbaum uses skein theory to compute the colored Jones polynomial for all\ntwist knots, a class which includes 52, 61, and 72. More general calculations of the colored\nJones polynomial for the double twist knots can be found in [20, 21].\n \n \nFigure 1: The simple walks A and B shown as arcs with zebra stripes fo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/amc-2730/blocks/def-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "def-sec-003-02.md",
+      "narrative": null,
+      "content": "The Markov moves include conjugation and stabilization (see Figure 4). Given a braid β P Bm, conjugation involves replacing it with αβα´1 for some α P Bm. Stabilization involves replacing β with either βσm or βσ´1 m . Note that conjugation pre- serves the braid width and stabilization increases it by one. The next result is attributed to Markov. For a proof, see [5, Theorem 2.3].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/amc-2730/blocks/prop-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "prop-sec-003-03.md",
+      "narrative": null,
+      "content": "If K is a knot, then any braid representative for K that minimizes the number of simple walks can be assumed to be given by a reduced and irreducible braid word. In addition, one can apply symmetry operations to alter the braid word without chang- ing its knot or link closure. We will use these operations to find braid representatives that minimize the number of simple walks. The three operations we will consider are called reflection, rotation, and reversal, and we introduce them next. For a given braid β, its reflection is denoted β˚ and is obtained by switching all the crossings of β. If β",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/amc-2730/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Representing knots as braids",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "../sections/sec-003-representing-knots-as-braids.md",
+      "narrative": null,
+      "content": "Representing knots as braids\nOne of the objectives in this paper is to find braid representations of knots that minimize\nthe number of simple walks. To do that, we will apply several different operations that\nalter the braid word without changing its representative knot. These operations include\nreflection, rotation, and cyclic permutation of the braid word, and each of them can be used\nto reduce the number of simple walks. We begin with a review of some standard material\non representing knots as braids (see also [5]).\n· · ·\nβ\n· · ·\n· · ·\nα\nβ\nα−1\n· · ·\nConjugation\n· · ·\nβ\n· · ·\n· · ·\nβ\n· · ·\n·",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/amc-2730/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "Every oriented knot or link is equivalent to the closure pβ for some braid β P Bm.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/amc-2730/blocks/lem-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "lem-sec-004-02.md",
+      "narrative": null,
+      "content": "Suppose β “ σε1 i1 σε2 i2 ¨ ¨ ¨ σεℓ iℓis a braid word with i1 ‰ 1. Let β1 “ σε2 i2 ¨ ¨ ¨ σεℓ iℓσε1 i1 be the braid obtained by cyclic permutation. Then SWβ “ SWβ1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/amc-2730/blocks/lem-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "lem-sec-004-03.md",
+      "narrative": null,
+      "content": "Suppose β “ σε1 i1 σε2 i2 ¨ ¨ ¨ σεℓ iℓis a braid word with i1 “ 1. Let β1 “ σε2 i2 ¨ ¨ ¨ σεℓ iℓσε1 i1 be the braid obtained by cyclic permutation. Then Sβ “ Sβ1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/amc-2730/blocks/prop-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "prop-sec-004-04.md",
+      "narrative": null,
+      "content": "Let β “ σε1 i1 ¨ ¨ ¨ σεℓ iℓbe a braid word on m strands, and let β: “ σε1 m´i1 ¨ ¨ ¨ σεℓ m´iℓbe its rotation. Then the sets of semi-simple walks of β and β: are equal, namely Sβ “ Sβ:.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/amc-2730/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Semi-simple walks and cyclic permutation",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "../sections/sec-004-semi-simple-walks-and-cyclic-permutation.md",
+      "narrative": null,
+      "content": "Semi-simple walks and cyclic permutation\nThe main result in this section is an invariance property which asserts that under the cyclic\npermutation, the total number of simple walks on a braid β and its reflection β˚ does not\nchange. To see this, we introduce the notion of semi-simple walks and study their behavior\nunder reflection.\nRecall the definition of SWβ in Equation (4). Previously, we identified walks W with\ntheir weights, given by the ordered product of operators tai,˘, bi,˘, ci,˘u for each crossing\ntraversed. However, it will be more convenient to record W using only the operators ai,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/amc-2730/blocks/thm-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "thm-sec-004-01.md",
+      "narrative": null,
+      "content": "The set of semi-simple walks Sβ is invariant under cyclic permutation of the braid word. The theorem is a direct consequence of the next two lemmas. The first lemma implies that cyclic permutation of β does not alter the set of simple walks unless β starts with σ1 or σ´1 1 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/amc-2730/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "Let fpnq be the number of simple walks on the p2, nq torus braid βn. Then fpnq “ ˆ 5 ` ? ˙ ˆ 1 ` ? ˙n ` ˆ 5 ´ ? ˙ ˆ 1 ´ ? ˙n .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/amc-2730/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Simple walks on (2,n) torus braids",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-005-simple-walks-on-2n-torus-braids.md",
+      "narrative": null,
+      "content": "In this section, we show that the number of simple walks on the braid βn with closure\nthe p2, nq torus link is given by the n-th term in the Fibonacci sequence 1, 2, 3, 5, 8, 13,\n21, 34, 55, 89, 144, . . . We will find a closed form solution for the number of simple walks\nand use it to show they grow exponentially in n.\nFor n ě 1 let βn “ σ´n\n1 . The closure of βn is the p2, nq torus knot if n is odd and the\np2, nq torus link if n is even. For that reason, we refer to βn as the (negative) p2, nq torus\nbraid.\nProposition 6.1. Let fpnq be the number of simple walks on the p2, nq torus braid βn.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/amc-2730/blocks/prop-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 21,
+      "target": "prop-sec-006-01.md",
+      "narrative": null,
+      "content": "Let gpnq be the number of simple walks on the p3, nq torus braid γn. Then gpnq “ c1αn ` c2βn ` c3γn, where α, β, γ are the roots of t3 ´ t2 ´ t ´ 1 (see Equation (7) for explicit formulas for the roots) and where c1 “ 1 ` 3α´1 ´α2 ` 4α ´ 1, c2 “ 1 ` 3β´1 ´β2 ` 4β ´ 1, c3 “ 1 ` 3γ´1 ´γ2 ` 4γ ´ 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/amc-2730/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Simple walks on (3,n) torus braids",
+      "pageStart": 18,
+      "pageEnd": 21,
+      "target": "../sections/sec-006-simple-walks-on-3n-torus-braids.md",
+      "narrative": null,
+      "content": "In this section, we show that the number of simple walks on the braid γn with closure the\np3, nq torus link is given by the n-th term of the sequence 0, 1, 4, 5, 10, 19, 34, 63, 116, 213,\n392, 721, 1326, . . . We will find a closed form solution for the number of simple walks and\nuse it to show they grow exponentially in n.\nFor n ě 1, let γn “ pσ´1\n1 σ´1\n2 qn.\nThe closure of γn is the p3, nq torus knot if\nn ı 0 pmod 3q and the p3, nq torus link if n ” 0 pmod 3q. For that reason, we refer\nto γn as the (negative) p3, nq torus braid.\nProposition 7.1. Let gpnq be the number of simple walks on the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/amc-2730/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Minimal braid representatives",
+      "pageStart": 21,
+      "pageEnd": 27,
+      "target": "../sections/sec-007-minimal-braid-representatives.md",
+      "narrative": null,
+      "content": "Minimal braid representatives\nIn Table 5, we list knots up to 9 crossings with the braid representatives giving minimal\nnumbers of simple walks. More extensive tables of knots up to 13 crossings and braid\nrepresentatives for them can be found online at [7]. (In [7] and Table 1 below, we use the\nnotation for braid words from sagemath, meaning that a braid word σε1\na1 ¨ ¨ ¨ σεℓ\naℓis denoted\nby rε1a1, . . . , εℓaℓs. Tables 4 and 5 use even more compactified notation similar to that at\nthe end of [16].)\nThese results are empirical. The braid words listed in Table 5 and [7] are the output of\na sage",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

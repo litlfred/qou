@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/bib-verification/reference/jacoby-lawrence2004.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../assets/navbar/rail-15g2v9gtotf.js" defer></script><script src="../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../.." data-fa-to-root="../../../../../../../../..">{"data":"rail-15g2v9gtotf","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/bib-verification/reference/jacoby-lawrence2004.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/bib-verification/reference/jacoby-lawrence2004.attestations</h1>
+<p class="m">A <a href="../../../../../../">qa-attestations</a> node held by <a href="../../../../../">qou</a>, at <code>test/attestations/bib-verification/reference/jacoby-lawrence2004.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>bib-verification</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;reference&quot;,
+  &quot;id&quot;: &quot;jacoby-lawrence2004&quot;,
+  &quot;path&quot;: null
+}</pre></dd>
+<dt>verifications</dt><dd><pre>[
+  {
+    &quot;position&quot;: 407,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/04procbryden/04procbryden.pdf&quot;
+      },
+      &quot;id&quot;: &quot;jacoby-lawrence2004&quot;,
+      &quot;status&quot;: &quot;unreviewed&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;core&quot;,
+        &quot;rationale&quot;: &quot;Identified from front matter as a conference-proceedings article on computations of the Ohtsuki series Z_inf(M) = sum lambda_m (q-1)^m of integer homology 3-spheres (NOT the figure-eight Kashaev kappa-tower that the corpus calls &#39;the Ohtsuki tower&#39; in QOU/QBeta/OhtsukiTowerBarParity.lean — two distinct objects both named after Ohtsuki; conflating them is the main hazard when reading this document into the corpus). It is core because of Sigma(2,3,5) = S^3/2I, the corpus&#39;s own keystone manifold: the paper states the exact closed form of its Ohtsuki series and the growth rate of its coefficients, both of which are directly checkable against the live keystone probes computations/probes/keystone_colored_sigma235_wrt.py and computations/lr_modulus_identification_sigma235.py. Citation status checked all three ways: no ref() id matches (481 ids enumerated; nothing for Jacoby, Lawrence-Rozansky, or Ohtsuki&#39;s lambda_n papers — only lawrence-zagier-1999 and hikami2005brieskorn are registered), no cite{} in content/**/*.md, no &#39;-- Ref:&#39; in content/**/*.lean; grep for the surnames and for the filename stem returns only the ledger row. Corpus-grep for the gap this closes (docs/audits/, content/, computations/, docs/coordination/) finds no lambda_n / Casson-invariant / Ohtsuki-series axis anywhere: every &#39;Casson&#39; hit in the tree is Casson-Rivin angle-structure duality, an unrelated object, and docs/audits/2026-05-19-delta-lambda-thread-closure.md line 64 records Seifert-piece Casson-type invariants as explicitly &#39;not in main&#39;. Scope note on the 5_2 gap: this paper&#39;s family K(S/T) does include 5_2 at (S,T)=(3,2) and it prints 21 coefficients of Z_inf for the manifold obtained by +3/2 surgery on 5_2 (section 4.1, p.64), but that is the Ohtsuki series of a surgered 3-manifold, NOT the 5_2 knot&#39;s state-integral / Kashaev asymptotics. It is therefore NOT an independent source for the corpus&#39;s 5_2 DT-spectrum data (QOU/QBeta/FiveTwoDTSpectrumSplit.lean, GGM eqs 96/97/98) and must not be presented as one.&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;Section 1, p. 55&quot;,
+            &quot;statement&quot;: &quot;q(q-1) Z_inf(Sigma(2,3,5))(q) = 1 - (1/2) sum_{n&gt;=1} chi(n) q^{(n^2-1)/120}, where chi : Z/60Z -&gt; {-1,0,1} is odd and takes the value +1 precisely at 1, 11, 19, 29 and nowhere else.&quot;,
+            &quot;useForFolio&quot;: &quot;Independently confirms the support set {1,11,19,29} that computations/probes/keystone_colored_sigma235_wrt.py hardcodes, and simultaneously pins the exponent normalisation as (n^2-1)/120 — which makes every exponent an integer (n=1,11,19,29 give 0,1,3,7) — whereas that probe uses Psi(q) = sum chi(n) q^{n^2/120}. The two differ by an overall q^{-1/120}; at the probe&#39;s evaluation point that is a factor ~1.00088, i.e. it moves the operational number Psi(1/q0) = 2.32958 in its fourth significant digit. This is a normalisation cross-check to run, not a number to adopt.&quot;,
+            &quot;targets&quot;: [
+              &quot;computations/probes/keystone_colored_sigma235_wrt.py&quot;,
+              &quot;computations/lr_modulus_identification_sigma235.py&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Section 4.3, p. 65&quot;,
+            &quot;statement&quot;: &quot;Defines the slope sigma(M) = lim_{n-&gt;inf} lambda_n(M) / (n lambda_{n-1}(M)); cites Lawrence-Rozansky that the slope exists for Seifert fibred manifolds and equals sigma(Sigma(Q_1/P_1,...,Q_N/P_N)) = ±P/pi^2 = ±(1/pi^2)(sum_i Q_i/P_i)^{-1}, so pi^2 sigma(M) is in Q for such manifolds and in Z when they are additionally integer homology spheres.&quot;,
+            &quot;useForFolio&quot;: &quot;For Sigma(2,3,5) both readings of P give |pi^2 sigma| = 30 = p1 p2 p3, the same 30 the keystone&#39;s McKay 2I &lt;-&gt; affine E8 derivation uses as h(E8) = sum of Coxeter marks (docs/coordination/s5-so3-keystone.md, 2026-07-12 row). So the growth rate of the perturbative coefficients is that same P: lambda_n grows like (30/pi^2)^n n!, i.e. Z_inf(Sigma(2,3,5)) is Gevrey-1 with zero radius of convergence. That is a quantitative reason why the keystone&#39;s h = q-1 expansion cannot simply be evaluated at the substrate (h_0 ~ 0.11) and why the bar-involution route into the disk (q -&gt; 1/q, where the false theta converges) is the correct one — it corroborates a route the ledger already chose, and supplies the divergence rate the ledger currently does not record.&quot;,
+            &quot;targets&quot;: [
+              &quot;docs/coordination/s5-so3-keystone.md&quot;,
+              &quot;computations/probes/keystone_colored_sigma235_wrt.py&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Section 4.2, p. 64-65&quot;,
+            &quot;statement&quot;: &quot;Z_K(Mbar)(q) = Z_K(M)(q^{-1}) at all roots of unity, hence Z_inf(Mbar) is obtained from Z_inf(M) by q -&gt; q^{-1}, i.e. h -&gt; -h/(1+h); together with lambda_1 = 6 lambda_Casson and explicit degree-2m polynomials for lambda_m(S,T).&quot;,
+            &quot;useForFolio&quot;: &quot;States the q -&gt; q^{-1} bar involution at the level of the 3-manifold WRT/Ohtsuki series itself, which is exactly the involution the keystone uses to move from q0 ~ 1.10998 to 1/q0 ~ 0.901. Gives the keystone&#39;s bar step a literature statement at the right level of generality (manifold invariant, not just the false theta), and supplies the orientation-reversal bookkeeping any lambda_n cross-check needs.&quot;,
+            &quot;targets&quot;: [
+              &quot;docs/coordination/s5-so3-keystone.md&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;add-reference&quot;,
+            &quot;rationale&quot;: &quot;Orphan with no ref() entry, and it is the only registered-or-unregistered source in the tree stating the Sigma(2,3,5) Ohtsuki series in closed form with an explicit normalisation. Per the skill, creating the ref() entry is the first action, not the last; metadata (title, authors, year, venue) goes in folio/schema/references.ts, never here.&quot;,
+            &quot;target&quot;: &quot;folio/schema/references.ts&quot;,
+            &quot;bean&quot;: &quot;qou-eohf&quot;
+          },
+          {
+            &quot;action&quot;: &quot;compute-check&quot;,
+            &quot;rationale&quot;: &quot;Cross-check the probe&#39;s Psi(q) = sum chi(n) q^{n^2/120} against this paper&#39;s q(q-1) Z_inf = 1 - (1/2) sum chi(n) q^{(n^2-1)/120}. The support set agrees (independent confirmation); the exponent offset q^{-1/120} and the q(q-1) prefactor do not obviously agree, and they move the operational Psi(1/q0) = 2.32958 in the fourth digit. A disagreement is a normalisation bug in the transcription; an agreement is an independent confirmation. Either way the external number is never adopted — only compared.&quot;,
+            &quot;target&quot;: &quot;computations/probes/keystone_colored_sigma235_wrt.py&quot;,
+            &quot;bean&quot;: &quot;qou-t8mi&quot;
+          },
+          {
+            &quot;action&quot;: &quot;new-remark&quot;,
+            &quot;rationale&quot;: &quot;Record in the keystone ledger that the Ohtsuki series of Sigma(2,3,5) is Gevrey-1 with slope pi^2 sigma = ±30 = P = h(E8), so the h-expansion has zero radius of convergence and the bar-involution route into the disk is forced rather than merely convenient. This interprets an external result for the folio; it does not discharge any Lean hypothesis, so it is a remark and not an aid-proof.&quot;,
+            &quot;target&quot;: &quot;docs/coordination/s5-so3-keystone.md&quot;,
+            &quot;bean&quot;: &quot;qou-wupb&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-09T00:10:43.091Z&quot;,
+        &quot;source_sha&quot;: &quot;8baffbc6542c&quot;
+      },
+      &quot;note&quot;: &quot;Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \&quot;held but uncitable\&quot;; the join already existed on the references.ts side.&quot;,
+      &quot;verified_at&quot;: &quot;2026-09-03T04:37:40Z&quot;,
+      &quot;verified_by&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;model&quot;: &quot;claude-opus-5&quot;
+      }
+    }
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/disssubmission/sections/sec-039",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "A smooth global family",
+  "pageStart": 139,
+  "pageEnd": 143,
+  "contains": [
+    "library/disssubmission/blocks/prose-sec-039",
+    "library/disssubmission/blocks/lem-sec-039-01",
+    "library/disssubmission/blocks/lem-sec-039-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/disssubmission/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/disssubmission/manifest.jsonld",
+  "provenance": "ingested"
+}

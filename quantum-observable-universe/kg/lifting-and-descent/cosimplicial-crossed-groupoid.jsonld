@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-cosimplicial-crossed-groupoid",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:cosimplicial-crossed-groupoid",
+  "kind": "proposition",
+  "title": "Cosimplicial crossed groupoid",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-yekutieli-triple"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-cosimplicial-crossed-groupoid"
+  ],
+  "tags": [
+    "cosimplicial",
+    "crossed-groupoid",
+    "gerbe",
+    "yekutieli"
+  ],
+  "leanRef": "qou:QOU.LiftingDescent.LiftingDescentRoot.cosimplicial_crossed_groupoid_exists",
+  "text": "cosimplicial-crossed-groupoid.md",
+  "leanSource": "cosimplicial-crossed-groupoid.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,288 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0111022v1",
+  "title": "Some remarks on q-deformed multiple polylogarithms",
+  "variant": "pdf",
+  "pages": 11,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Motivation",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-motivation"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 146,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-deformed multiple",
+          "heading": false
+        },
+        {
+          "term": "multiple polylogarithms",
+          "heading": false
+        },
+        {
+          "term": "noncocommutative",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "boltzmanngasse",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0111022v1 [math.QA] 2 Nov 2001 Some remarks on q-deformed multiple polylogarithms Karl-Georg Schlesinger Erwin Schr¨odinger Institute for Mathematical Physics Boltzmanngasse 9 A-1090 Vienna, Austria e-mail: kgschles@esi.ac.at Abstract We introduce general q-deformed multiple polylogarithms which even in the dilogarithm case diﬀer slightly from the deformation usu- ally discussed in the literature. The",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0111022v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-motivation",
+      "number": "1",
+      "title": "Motivation",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2544,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multiple polylogarithms",
+          "heading": false
+        },
+        {
+          "term": "deformed multiple",
+          "heading": false
+        },
+        {
+          "term": "multiple zeta",
+          "heading": false
+        },
+        {
+          "term": "zeta left",
+          "heading": false
+        },
+        {
+          "term": "suspended noncommutative",
+          "heading": false
+        },
+        {
+          "term": "cos varphi",
+          "heading": false
+        },
+        {
+          "term": "connes-kreimer algebra",
+          "heading": false
+        },
+        {
+          "term": "varphi frac",
+          "heading": false
+        }
+      ],
+      "extract": "In [@CL] a family of noncommutative deformations $S^{4,\\theta }$ of the four dimensional sphere has been introduced from the instanton algebra. Concretely, the algebra of functions on $S^{4,\\theta }$ is given by the generators $t,\\alpha ,\\alpha ^{*},\\beta ,\\beta ^{*}$ and relations $$\\begin{aligned} \\alpha \\alpha ^{*} &=&\\alpha ^{*}\\alpha ,\\ \\beta \\beta ^{*}=\\beta ^{*}\\beta \\\\ \\alpha \\beta &=&\\lambda \\beta \\alpha ,\\",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "multiple polylogarithms",
+      "heading": false
+    },
+    {
+      "term": "deformed multiple",
+      "heading": false
+    },
+    {
+      "term": "multiple zeta",
+      "heading": false
+    },
+    {
+      "term": "q-deformed multiple",
+      "heading": false
+    },
+    {
+      "term": "classical multiple",
+      "heading": false
+    },
+    {
+      "term": "hopf algebra",
+      "heading": false
+    },
+    {
+      "term": "suspended noncommutative",
+      "heading": false
+    },
+    {
+      "term": "connes-kreimer algebra",
+      "heading": false
+    },
+    {
+      "term": "zeta left",
+      "heading": false
+    },
+    {
+      "term": "noncommutative sphere",
+      "heading": false
+    },
+    {
+      "term": "cos varphi",
+      "heading": false
+    },
+    {
+      "term": "varphi frac",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 1,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 2,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 2 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0111022v1"
+  }
+}

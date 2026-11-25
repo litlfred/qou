@@ -1,0 +1,196 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1911.04486v4",
+  "blocks": [
+    {
+      "id": "library/arxiv-1911.04486v4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Knots and the Maxwell Equations\nIon V. Vancea\nGrupo de F´ısica Te´orica e Matem´atica F´ısica\nDepartamento de F´ısica\nUniversidade Federal Rural do Rio de Janeiro\nSerop´edica - Rio de Janeiro, Brazil\nionvancea@ufrrj.br\n25 March 2020\nAbstract\nIn this chapter, we review the Ra˜nada ﬁeld line solutions of Maxwell’s\nequations in the vacuum, which describe a topologically non-trivial electro-\nmagnetic ﬁeld, as well as their relation with the knot theory. Also, we present\na generalization of these solutions to the non-linear electrodynamics recently\npublished in the literature.\nKeywords:\nMaxwell’s e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1911.04486v4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The discovery of the knot solutions of Maxwell's equations in the vacuum represents one of the most exciting results obtained recently in the modern classical electrodynamics. Since their first appearance in the seminal papers \\cite{Trautman:1977im,Ranada:1989wc,Ranada:1990,Ranada:1992hw}, many interesting properties, applications, and generalizations of the knot electromagnetic fields have been discovered. \n\nThe knot solutions of Maxwell's equations can be described in terms of electric and magnetic field lines, and their topology can be given in terms of a pair of complex scalar fields that",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1911.04486v4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Maxwell's equations",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-maxwells-equations.md",
+      "narrative": null,
+      "content": "In this section, we will briefly review the formulation of Maxwell's electrodynamics in terms of differential forms in the three-dimensions Euclidian space and in the four-dimensional space-time (the covariant formulation). This is a well-known material which can be found in standard textbooks on classical electrodynamics such as \\cite{Jackson:1998nia,Frankel:1997ec}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1911.04486v4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Maxwell's equations in the three-dimensional formulation",
+      "pageStart": 3,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-21-maxwells-equations-in-the-three-dimensional-f.md",
+      "narrative": null,
+      "content": "The two formulations of Maxwell's equations that are our concern in this paper are: the formulation in terms of differential forms and the covariant formulation. Both formulations are  equivalent to the one in terms of three-dimensional vectors that is known from the undergraduate textbooks on electrodynamics, see e. g. \\cite{Jackson:1998nia}.\n\nConsider the following standard form of Maxwell's equations in the Heaviside units\n\\begin{align}\n\\nabla \\cdot \\mathbf{D} & = \\rho \\, ,\n\\label{Maxwell-Gauss-El-1}\n\\\\\n\\nabla \\cdot \\mathbf{B} & = 0 \\, ,\n\\label{Maxwell-Gauss-Mag-2}\n\\\\\n\\nabla \\times \\mathbf{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1911.04486v4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Maxwell equations in covariant formulation",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-22-maxwell-equations-in-covariant-formulation.md",
+      "narrative": null,
+      "content": "The geometric properties of the electromagnetic field are highlighted in the formulation of Maxwell's equations in terms of differential forms on $\\mathbb{R}^3$. However, the fundamental symmetry of Maxwell's equations, which is the invariance under the Lorentz transformations, is explicitly displayed only in the Minkowski space-time $\\mathbb{R}^{1,3}$. Therefore, it is important to write the Maxwell equations in terms of differential forms on $\\mathbb{R}^{1,3}$. To this end, the canonical basis $\\{ dx^i \\}$ on $\\mathbb{R}^3$ must be  extended to the corresponding basis on $\\mathbb{R}^{1,3}$,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1911.04486v4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Knots in Maxwell's electrodynamics",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-004-3-knots-in-maxwells-electrodynamics.md",
+      "narrative": null,
+      "content": "In this section, we are going to review the field line solutions of Maxwell's equations and their relationship with the Hopf knots. These solutions were discovered by Ra\\~{n}ada and were communicated in \\cite{Ranada:1989wc,Ranada:1990}. An important study of the Hopf fibration in the context of the classical electromagnetism can be found in the early pioneering work by Trautman \\cite{Trautman:1977im}. In our presentation, we follow the very good indepth review of these solutions and their applications given in the reference \\cite{Arrayas:2017sfq}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1911.04486v4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ranãda solutions",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-31-ranãda-solutions.md",
+      "narrative": null,
+      "content": "The Ran\\~{a}da solutions form a particular class of \\emph{field line solutions} whose main feature is that the field lines completly characterize the electromagnetic field. In general, one can associate a field line to any smooth vector field through its integral flow. The path formed by the field line is tangent in each of its points to the vector obtained by taking the value of the vector field at that point. The picture of all field lines at a given instant of time can be used to visualize the state of the vector field at that instant.\n\nAs we can see from the equations (\\refeq{Maxwell-4d-1}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1911.04486v4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Electromagnetic knot fields",
+      "pageStart": 12,
+      "pageEnd": 16,
+      "target": "../sections/sec-006-32-electromagnetic-knot-fields.md",
+      "narrative": null,
+      "content": "As we have seen above, the electromagnetic field characterized by the equations (\\refeq{Ranada-magnetic-solution}) and (\\refeq{Ranada-electric-solution}) is parametrized by $g$ and $f$. In particular, by choosing these functions as in the equations (\\refeq{Ranada-E}) and (\\refeq{Ranada-B}), the field line solutions display non-trivial topological properties. In order to see that, we note that $\\phi$ and $\\theta$ should be chosen such that the electromagnetic field and the observables constructed from it, e. g. energy, linear momentum, and angular momentum, be finite. Therefore, if the field is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1911.04486v4/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Electric and magnetic knots in Bateman parametrization",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "../sections/sec-007-4-electric-and-magnetic-knots-in-bateman-paramet.md",
+      "narrative": null,
+      "content": "In the previous section, we have discussed several parametrizations of the field line solutions. In this section, we present the factorized parametrization of the self-dual electromagnetic fields in terms of 1-forms given by Bateman in \\cite{Bateman:2016}. This representation is useful for the generalization of the field line solutions to the gravitating electromagnetic fields \\cite{Vancea:2017tmx} as well as to the non-linear electromagnetism \\cite{Alves:2017ggb,Alves:2017zjt}. For extensive reviews of the properties of the Hopfions in the Bateman representation see  \\cite{Hoyos:2015bxa,Array",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1911.04486v4/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Knots in nonlinear electrodynamics",
+      "pageStart": 19,
+      "pageEnd": 26,
+      "target": "../sections/sec-008-5-knots-in-nonlinear-electrodynamics.md",
+      "narrative": null,
+      "content": "A very important application of Bateman method to non-linear electrodynamical models that generalize Maxwell's electrodynamics in the strong field regime, was given recently in \\cite{Alves:2017ggb,Alves:2017zjt}.\nIn these works, the authors showed that there are knot solutions of the equations of motion in any non-linear extension of Maxwell's electrodynamics that satisfies strong field requirement. \n\nLet us see how the Bateman method can be applied to the Born-Infeld electrodynamics. The non-linear Born-Infeld action has the following form\n\\begin{equation}\nS_{BI} = - \\gamma^2 \\int d^4 x \\left",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

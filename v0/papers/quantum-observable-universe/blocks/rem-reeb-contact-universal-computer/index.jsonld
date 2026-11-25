@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-reeb-contact-universal-computer",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:reeb-contact-universal-computer",
+  "kind": "remark",
+  "title": "The Frobenius–Hopf contact structure is a universal computer",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-reeb-flow-bridge",
+    "papers/quantum-observable-universe/blocks/rem-reeb-turing-completeness"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-categorical-reeb-derivation",
+  "cites": [
+    "references/cardona2021"
+  ],
+  "tags": [
+    "reeb",
+    "contact-geometry",
+    "frobenius-hopf",
+    "universal-computation",
+    "miranda",
+    "substrate"
+  ],
+  "text": "reeb-contact-universal-computer.md",
+  "provenance": "authored"
+}

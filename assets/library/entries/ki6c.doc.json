@@ -1,0 +1,2165 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "ki6c",
+  "title": "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings",
+  "variant": "pdf",
+  "pages": 72,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "Some behaviors of the dilogarithm function",
+      "number": "2.2",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-22-some-behaviors-of-the-dilogarithm-function"
+    },
+    {
+      "level": 2,
+      "title": "Deﬁnition of the Kashaev invariant",
+      "number": "2.3",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-23-deﬁnition-of-the-kashaev-invariant"
+    },
+    {
+      "level": 2,
+      "title": "The Poisson summation formula",
+      "number": "2.4",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-24-the-poisson-summation-formula"
+    },
+    {
+      "level": 2,
+      "title": "The saddle point method",
+      "number": "2.5",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-25-the-saddle-point-method"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem 1.1 for the 61 knot",
+      "number": "3.1",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-31-proof-of-theorem-11-for-the-61-knot"
+    },
+    {
+      "level": 2,
+      "title": "Estimate of the range of ∆′",
+      "number": "3.2",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-32-estimate-of-the-range-of"
+    },
+    {
+      "level": 2,
+      "title": "Calculation of the critical value",
+      "number": "3.3",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-33-calculation-of-the-critical-value"
+    },
+    {
+      "level": 2,
+      "title": "Verifying the assumption of the Poisson summation formula",
+      "number": "3.4",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-34-verifying-the-assumption-of-the-poisson-summa"
+    },
+    {
+      "level": 2,
+      "title": "Verifying the assumption of the saddle point method",
+      "number": "3.5",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-010-35-verifying-the-assumption-of-the-saddle-point"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem 1.1 for the 62 knot",
+      "number": "4.1",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-011-41-proof-of-theorem-11-for-the-62-knot"
+    },
+    {
+      "level": 2,
+      "title": "Estimate of the range of ∆′",
+      "number": "4.2",
+      "page": 30,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-012-42-estimate-of-the-range-of"
+    },
+    {
+      "level": 2,
+      "title": "Calculation of the critical value",
+      "number": "4.3",
+      "page": 33,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-013-43-calculation-of-the-critical-value"
+    },
+    {
+      "level": 2,
+      "title": "Verifying the assumption of the Poisson summation formula",
+      "number": "4.4",
+      "page": 35,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-014-44-verifying-the-assumption-of-the-poisson-summa"
+    },
+    {
+      "level": 2,
+      "title": "Verifying the assumption of the saddle point method",
+      "number": "4.5",
+      "page": 37,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-015-45-verifying-the-assumption-of-the-saddle-point"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem 1.1 for the 63 knot",
+      "number": "5.1",
+      "page": 44,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-016-51-proof-of-theorem-11-for-the-63-knot"
+    },
+    {
+      "level": 2,
+      "title": "Estimate of the range of ∆′",
+      "number": "5.2",
+      "page": 48,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-017-52-estimate-of-the-range-of"
+    },
+    {
+      "level": 2,
+      "title": "Calculation of the critical value",
+      "number": "5.3",
+      "page": 50,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-018-53-calculation-of-the-critical-value"
+    },
+    {
+      "level": 2,
+      "title": "Verifying the assumption of the Poisson summation formula",
+      "number": "5.4",
+      "page": 52,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-019-54-verifying-the-assumption-of-the-poisson-summa"
+    },
+    {
+      "level": 2,
+      "title": "Verifying the assumption of the saddle point method",
+      "number": "5.5",
+      "page": 53,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-020-55-verifying-the-assumption-of-the-saddle-point"
+    },
+    {
+      "level": 1,
+      "title": "A Estimate of solutions of systems of equations",
+      "number": null,
+      "page": 55,
+      "pageLabel": null,
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-021-a-estimate-of-solutions-of-systems-of-equations"
+    },
+    {
+      "level": 2,
+      "title": "Estimate of solutions of (35)",
+      "number": null,
+      "page": 56,
+      "pageLabel": null,
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-022-estimate-of-solutions-of-35"
+    },
+    {
+      "level": 2,
+      "title": "Estimate of a solution of (36)",
+      "number": null,
+      "page": 56,
+      "pageLabel": null,
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-023-estimate-of-a-solution-of-36"
+    },
+    {
+      "level": 2,
+      "title": "Estimate of a solution of (58)",
+      "number": null,
+      "page": 58,
+      "pageLabel": null,
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-024-estimate-of-a-solution-of-58"
+    },
+    {
+      "level": 2,
+      "title": "Curvature of the boundary of a convex domain in a plane",
+      "number": null,
+      "page": 59,
+      "pageLabel": null,
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-025-curvature-of-the-boundary-of-a-convex-domain-in"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 70,
+      "pageLabel": null,
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-026-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 170,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "asymptotic expansions",
+          "heading": false
+        },
+        {
+          "term": "kashaev invariant",
+          "heading": false
+        },
+        {
+          "term": "knots",
+          "heading": false
+        },
+        {
+          "term": "yoshiyuki",
+          "heading": false
+        },
+        {
+          "term": "domain",
+          "heading": false
+        }
+      ],
+      "extract": "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings Tomotada Ohtsuki and Yoshiyuki Yokota Abstract We give presentations of the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings. In particular, we show the volume conjecture for these knots, which states that the leading terms of the expansions present the hyperbolic volume and the Chern-Simons invariant of",
+      "extractCut": true,
+      "blocks": [
+        "library/ki6c/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1390,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jsps kakenhi",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic knots",
+          "heading": false
+        },
+        {
+          "term": "kashaev invariant",
+          "heading": false
+        },
+        {
+          "term": "torus knots",
+          "heading": false
+        },
+        {
+          "term": "kakenhi grant",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic volume",
+          "heading": false
+        },
+        {
+          "term": "e2π",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure-eight knot",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction In [12, 13] Kashaev deﬁned the Kashaev invariant ⟨L ⟩N ∈C of a link L for N = 2, 3, · · · by using the quantum dilogarithm. In [14] he conjectured that, for any hyperbolic link L, 2π N log ⟨L ⟩N goes to the hyperbolic volume of S3−L as N →∞, and veriﬁed the conjecture for some simple knots, by formal calculations. In 1999, H. Murakami and J. Murakami [18] proved that the Kashaev invariant ⟨L ⟩N of any",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 510,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "e2π",
+          "heading": false
+        },
+        {
+          "term": "preliminaries",
+          "heading": true
+        },
+        {
+          "term": "q-factorials",
+          "heading": false
+        },
+        {
+          "term": "erties",
+          "heading": false
+        }
+      ],
+      "extract": "Preliminaries In this section, we review deﬁnitions and basic properties of the notation used in this paper. 2.1 Integral presentation of (q)n In this section, we review the integral expression of q-factorials (q)n and their basic prop- erties. Let N be an integer ≥2. We put q = exp(2π√−1/N), and put (x)n = (1 −x)(1 −x2) · · · (1 −xn) for n ≥0. It is known [18] (see also [20]) that for any n, m with n ≤m,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-22-some-behaviors-of-the-dilogarithm-function",
+      "number": "2.2",
+      "title": "Some behaviors of the dilogarithm function",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 307,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "some behaviors",
+          "heading": true
+        },
+        {
+          "term": "dilogarithm function",
+          "heading": true
+        },
+        {
+          "term": "lig",
+          "heading": false
+        }
+      ],
+      "extract": "Some behaviors of the dilogarithm function In this section, we show some behaviors of the dilogarithm function. We put Λ(t) = Re ( 1 2π√−1 Li2(e2π√−1 t) ) . Since Λ′(t) = −log 2 sin πt, Λ′′(t) = −π cot πt, the behavior of Λ(t) is as follows. t 0 · · · 1 6 · · · 1 2 · · · 5 6 · · · 1 Λ(t) 0 → Λ(1 6) → 0 → −Λ(1 6) → 0 Λ′(t) + 0 − − − 0 + Λ′′(t) − − − 0 + + + Here, Λ( 1 6) = 0.161533... . For the graph of Λ(t), see",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-23-deﬁnition-of-the-kashaev-invariant",
+      "number": "2.3",
+      "title": "Deﬁnition of the Kashaev invariant",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 278,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kashaev invariant",
+          "heading": true
+        },
+        {
+          "term": "elementary tangle",
+          "heading": false
+        },
+        {
+          "term": "tangle diagrams",
+          "heading": false
+        },
+        {
+          "term": "critical points",
+          "heading": false
+        },
+        {
+          "term": "end points",
+          "heading": false
+        },
+        {
+          "term": "crossings",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we review the definition of the Kashaev invariant of oriented knots. Following Yokota [333],? we review the definition of the Kashaev invariant. We put N = {0,1,:+-,N— 1}. For i,j,k, EN, we put Ngai - Nght Ri = = ——, R= = — , Ml (De-aDy—9(Q) pe (@) eg © @p-a(Dp—a(De-wr—- Diea where [m] € NV denotes the residue of m modulo N, and we put gi 1 if fQ-g]) + -Y+l[l-k-14+[k-dy=N-1, 0 otherwise. Let K be an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-24-the-poisson-summation-formula",
+      "number": "2.4",
+      "title": "The Poisson summation formula",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1321,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "poisson summation",
+          "heading": true
+        },
+        {
+          "term": "summation formula",
+          "heading": true
+        },
+        {
+          "term": "required formula",
+          "heading": false
+        },
+        {
+          "term": "holomorphic function",
+          "heading": false
+        },
+        {
+          "term": "domains",
+          "heading": false
+        },
+        {
+          "term": "pushing",
+          "heading": false
+        },
+        {
+          "term": "put",
+          "heading": false
+        }
+      ],
+      "extract": "The Poisson summation formula In this section, we review the Poisson summation formula and a proposition obtained from it. Recall (see e.g. [23]) that the Poisson summation formula states that ∑ m ∈Zn f(m) = ∑ m ∈Zn ˆf(m) (13) for a continuous integrable function f on Rn which satisﬁes that |f(z)| ≤C ( 1 + |z| )−n−δ, | ˆf(z)| ≤C ( 1 + |z| )−n−δ (14) for some C, δ > 0, where ˆf is the Fourier transform of f deﬁned by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-25-the-saddle-point-method",
+      "number": "2.5",
+      "title": "The saddle point method",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 409,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "saddle point",
+          "heading": true
+        },
+        {
+          "term": "point method",
+          "heading": true
+        },
+        {
+          "term": "bijkzizjzk",
+          "heading": false
+        },
+        {
+          "term": "cijklzizjzkzl",
+          "heading": false
+        },
+        {
+          "term": "holomorphic functions",
+          "heading": false
+        }
+      ],
+      "extract": "The saddle point method In this section, we review a proposition obtained from the saddle point method. Proposition 2.6 (see [20]). Let A be a non-singular symmetric complex 3×3 matrix, and let ψ(z1, z2, z3) and r(z1, z2, z3) be holomorphic functions of the forms, ψ(z1, z2, z3) = zTA z + r(z1, z2, z3), r(z1, z2, z3) = ∑ i,j,k bijkzizjzk + ∑ i,j,k,l cijklzizjzkzl + · · · , (26) deﬁned in a neighborhood of 0 ∈C3. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-31-proof-of-theorem-11-for-the-61-knot",
+      "number": "3.1",
+      "title": "Proof of Theorem 1.1 for the 61 knot",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1370,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "knot",
+          "heading": true
+        },
+        {
+          "term": "kashaev invariant",
+          "heading": false
+        },
+        {
+          "term": "hesse matrix",
+          "heading": false
+        },
+        {
+          "term": "critical point",
+          "heading": false
+        },
+        {
+          "term": "e2π",
+          "heading": false
+        },
+        {
+          "term": "enς",
+          "heading": false
+        },
+        {
+          "term": "mirror image",
+          "heading": false
+        },
+        {
+          "term": "put",
+          "heading": false
+        }
+      ],
+      "extract": "Proof of Theorem 1.1 for the 61 knot In this section, we show a proof of Theorem 1.1 for the 61 knot. Since the Kashaev invariant of the mirror image of a knot is equal to the complex conjugate of the Kashaev invariant of the original knot, it is suﬃcient to show the theorem for the mirror image 61 of the 61 knot. The 61 knot is the closure of the following tangle. 0 0 0 N −1 n i j 0 1 k k−1 0 0 l 0 1 0 (28) 12 As",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-32-estimate-of-the-range-of",
+      "number": "3.2",
+      "title": "Estimate of the range of ∆′",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1005,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "estimate",
+          "heading": true
+        },
+        {
+          "term": "newton method",
+          "heading": false
+        },
+        {
+          "term": "calculating solution",
+          "heading": false
+        },
+        {
+          "term": "maximal value",
+          "heading": false
+        },
+        {
+          "term": "minimal value",
+          "heading": false
+        },
+        {
+          "term": "wmax",
+          "heading": false
+        },
+        {
+          "term": "smin",
+          "heading": false
+        },
+        {
+          "term": "range",
+          "heading": true
+        }
+      ],
+      "extract": "Estimate of the range of ∆′ In this section, we calculate the concrete values of the bounds of the inequalities in (31) so that they satisfy that ∆−∆′ ⊂(30). Putting Λ as in Section 2.2, we have that Re ˆV (t, s, u) = 2 Λ(t) + Λ(s) + Λ(u). We consider the domain { (t, s, u) ∈∆ 2 Λ(t) + Λ(s) + Λ(u) ≥ςR } , (34) where we put ςR = 0.5035603... as in (41). We note that this domain is symmetric with respect to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-33-calculation-of-the-critical-value",
+      "number": "3.3",
+      "title": "Calculation of the critical value",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 656,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "critical value",
+          "heading": true
+        },
+        {
+          "term": "e2π",
+          "heading": false
+        },
+        {
+          "term": "hesse matrix",
+          "heading": false
+        },
+        {
+          "term": "critical point",
+          "heading": false
+        },
+        {
+          "term": "unique critical",
+          "heading": false
+        }
+      ],
+      "extract": "Calculation of the critical value In this section, we calculate the concrete values of a critical point and the Hesse matrix of ˆV . The diﬀerentials of ˆV are presented by ∂ ∂t ˆV (t, s, u) = −2 log(1 −x) + 2π √ −1 ( 3t + 2s + u −3 2 ) , (37) ∂ ∂s ˆV (t, s, u) = −log(1 −y) + 2π √ −1 (2t + 2s + u −1), (38) ∂ ∂u ˆV (t, s, u) = −log(1 −z) + 2π √ −1 ( t + s + u −1 2 ) , (39) where x = e2π√−1 t, y = e2π√−1 s and z =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-34-verifying-the-assumption-of-the-poisson-summa",
+      "number": "3.4",
+      "title": "Verifying the assumption of the Poisson summation formula",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 940,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "poisson summation",
+          "heading": true
+        },
+        {
+          "term": "summation formula",
+          "heading": true
+        },
+        {
+          "term": "assumption",
+          "heading": true
+        },
+        {
+          "term": "middle term",
+          "heading": false
+        },
+        {
+          "term": "arg",
+          "heading": false
+        },
+        {
+          "term": "e2π",
+          "heading": false
+        }
+      ],
+      "extract": "Verifying the assumption of the Poisson summation formula In this section, we verify the assumption of the Poisson summation formula in Lemma 3.4, which is used in the proof of Theorem 1.1 for the 61 knot in Section 3.1. As we mentioned in Remark 2.5, we verify the assumption for ˆV (t, s, u) instead of V (t, s, u), since V (t, s, u) converges uniformly to ˆV (t, s, u) on ∆′ in the form mentioned in Remark 2.5. Re",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-35-verifying-the-assumption-of-the-saddle-point",
+      "number": "3.5",
+      "title": "Verifying the assumption of the saddle point method",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2030,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "saddle point",
+          "heading": true
+        },
+        {
+          "term": "point method",
+          "heading": true
+        },
+        {
+          "term": "unique minimal",
+          "heading": false
+        },
+        {
+          "term": "e2π",
+          "heading": false
+        },
+        {
+          "term": "log sin",
+          "heading": false
+        },
+        {
+          "term": "ˆgi",
+          "heading": false
+        },
+        {
+          "term": "assumption",
+          "heading": true
+        },
+        {
+          "term": "unique zero",
+          "heading": false
+        }
+      ],
+      "extract": "Verifying the assumption of the saddle point method In this section, we verify the assumption of the saddle point method in Lemma 3.9. In order to show this lemma, we show Lemmas 3.5–3.8 in advance. As we mentioned in Remark 2.7, we verify the assumption for ˆV (t, s, u) instead of V (t, s, u), since V (t, s, u) converges uniformly to ˆV (t, s, u) on ∆′ in the form mentioned in Remark 2.7. In the proof of Lemma 3.9,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-41-proof-of-theorem-11-for-the-62-knot",
+      "number": "4.1",
+      "title": "Proof of Theorem 1.1 for the 62 knot",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 30,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1220,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "put e2π",
+          "heading": false
+        },
+        {
+          "term": "hesse matrix",
+          "heading": false
+        },
+        {
+          "term": "critical point",
+          "heading": false
+        },
+        {
+          "term": "knot",
+          "heading": true
+        },
+        {
+          "term": "enς",
+          "heading": false
+        },
+        {
+          "term": "kashaev invariant",
+          "heading": false
+        },
+        {
+          "term": "exist some",
+          "heading": false
+        },
+        {
+          "term": "concrete",
+          "heading": false
+        }
+      ],
+      "extract": "Proof of Theorem 1.1 for the 62 knot In this section, we show a proof of Theorem 1.1 for the 62 knot. 26 The 62 knot is the closure of the following tangle. 0 0 0 i n 0 j 0 1 N −1 k 0 l 0 0 As shown in [33], we can put the labelings of edges adjacent to the unbounded regions as shown above. Hence, from the deﬁnition of the Kashaev invariant, the Kashaev invariant of the 62 knot is presented by ⟨62 ⟩N = ∑ N q−1 2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-42-estimate-of-the-range-of",
+      "number": "4.2",
+      "title": "Estimate of the range of ∆′",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 33,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1484,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "estimate",
+          "heading": true
+        },
+        {
+          "term": "convex domain",
+          "heading": false
+        },
+        {
+          "term": "newton method",
+          "heading": false
+        },
+        {
+          "term": "calculating solution",
+          "heading": false
+        },
+        {
+          "term": "tmax",
+          "heading": false
+        },
+        {
+          "term": "above estimate",
+          "heading": false
+        },
+        {
+          "term": "tmin",
+          "heading": false
+        },
+        {
+          "term": "tangent points",
+          "heading": false
+        }
+      ],
+      "extract": "Estimate of the range of ∆′ In this section, we calculate the concrete values of the bounds of the inequalities in (53) so that they satisfy that ∆−∆′ ⊂(52). Putting Λ as in Section 2.2, we have that Re ˆV (t, s, u) = −2 Λ(t) + Λ(t −s) + 2 Λ(s) + Λ(u). We consider the domain { (t, s, u) ∈∆ −2 Λ(t) + Λ(t −s) + 2 Λ(s) + Λ(u) ≥ςR } . (56) We note that this domain is symmetric with respect to the exchange of (t, s, u)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-43-calculation-of-the-critical-value",
+      "number": "4.3",
+      "title": "Calculation of the critical value",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 35,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 634,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "critical value",
+          "heading": true
+        },
+        {
+          "term": "e2π",
+          "heading": false
+        },
+        {
+          "term": "hesse matrix",
+          "heading": false
+        },
+        {
+          "term": "critical point",
+          "heading": false
+        },
+        {
+          "term": "unique critical",
+          "heading": false
+        }
+      ],
+      "extract": "Calculation of the critical value In this section, we calculate the concrete values of a critical point and the Hesse matrix of ˆV . The diﬀerentials of ˆV are presented by ∂ ∂t ˆV (t, s, u) = 2 log(1 −x) −log ( 1 −y x ) −2π √ −1 ( t −1 2 ) , (59) ∂ ∂s ˆV (t, s, u) = −2 log(1 −y) + log ( 1 −y x ) + 2π √ −1 ( 2s + u −1 ) , (60) ∂ ∂u ˆV (t, s, u) = −log(1 −z) + 2π √ −1 ( s + u −1 2 ) , (61) where x = e2π√−1 t, y =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-44-verifying-the-assumption-of-the-poisson-summa",
+      "number": "4.4",
+      "title": "Verifying the assumption of the Poisson summation formula",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 37,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 778,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "poisson summation",
+          "heading": true
+        },
+        {
+          "term": "summation formula",
+          "heading": true
+        },
+        {
+          "term": "e2π",
+          "heading": false
+        },
+        {
+          "term": "assumption",
+          "heading": true
+        },
+        {
+          "term": "middle term",
+          "heading": false
+        }
+      ],
+      "extract": "Verifying the assumption of the Poisson summation formula In this section, we verify the assumption of the Poisson summation formula in Lemma 4.3, which is used in the proof of Theorem 1.1 for the 62 knot in Section 4.1. As we mentioned in Remark 2.5, we verify the assumption for ˆV (t, s, u) instead of V (t, s, u), since V (t, s, u) converges uniformly to ˆV (t, s, u) on ∆′ in the form mentioned in Remark 2.5. By",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-45-verifying-the-assumption-of-the-saddle-point",
+      "number": "4.5",
+      "title": "Verifying the assumption of the saddle point method",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 44,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3206,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "saddle point",
+          "heading": true
+        },
+        {
+          "term": "max sin",
+          "heading": false
+        },
+        {
+          "term": "ﬂow goes",
+          "heading": false
+        },
+        {
+          "term": "e2πy",
+          "heading": false
+        },
+        {
+          "term": "point method",
+          "heading": true
+        },
+        {
+          "term": "hesse matrix",
+          "heading": false
+        },
+        {
+          "term": "e2π",
+          "heading": false
+        },
+        {
+          "term": "summand goes",
+          "heading": false
+        }
+      ],
+      "extract": "Verifying the assumption of the saddle point method In this section, we verify the assumption of the saddle point method in Lemma 4.9. In order to show this lemma, we show Lemmas 4.4–4.8 in advance. As we mentioned in Remark 2.7, we verify the assumption for ˆV (t, s, u) instead of V (t, s, u), since V (t, s, u) converges uniformly to ˆV (t, s, u) on ∆′ in the form mentioned in Remark 2.7. − − 0 0 5 5 −5 5 10 10 −10",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-51-proof-of-theorem-11-for-the-63-knot",
+      "number": "5.1",
+      "title": "Proof of Theorem 1.1 for the 63 knot",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 48,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1153,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hesse matrix",
+          "heading": false
+        },
+        {
+          "term": "knot",
+          "heading": true
+        },
+        {
+          "term": "e2π",
+          "heading": false
+        },
+        {
+          "term": "enς",
+          "heading": false
+        },
+        {
+          "term": "critical point",
+          "heading": false
+        },
+        {
+          "term": "kashaev invariant",
+          "heading": false
+        },
+        {
+          "term": "noting",
+          "heading": false
+        }
+      ],
+      "extract": "Proof of Theorem 1.1 for the 63 knot In this section, we show a proof of Theorem 1.1 for the 63 knot. 44 The 63 knot is the closure of the following tangle. 0 0 n 0 i 0 0 N −1 j 0 k 1 l 0 0 As shown in [33], we can put the labelings of edges adjacent to the unbounded regions as shown above. Hence, from the deﬁnition of the Kashaev invariant, the Kashaev invariant of the 63 knot is presented by ⟨63 ⟩N = ∑ N q 1 2 −n",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-52-estimate-of-the-range-of",
+      "number": "5.2",
+      "title": "Estimate of the range of ∆′",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 50,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 978,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "estimate",
+          "heading": true
+        },
+        {
+          "term": "convex domain",
+          "heading": false
+        },
+        {
+          "term": "smin",
+          "heading": false
+        },
+        {
+          "term": "smax",
+          "heading": false
+        },
+        {
+          "term": "above estimate",
+          "heading": false
+        },
+        {
+          "term": "newton method",
+          "heading": false
+        },
+        {
+          "term": "maximal value",
+          "heading": false
+        },
+        {
+          "term": "calculating solution",
+          "heading": false
+        }
+      ],
+      "extract": "Estimate of the range of ∆′ In this section, we calculate the concrete values of the bounds of the inequalities in (79) so that they satisfy that ∆−∆′ ⊂(78). Putting Λ as in Section 2.2, we have that Re ˆV (t, s, u) = 2 Λ(t) + Λ(s −t) −2 Λ(s) + Λ(s −u) + 2 Λ(u). We consider the domain { (t, s, u) ∈∆ 2 Λ(t) + Λ(s −t) −2 Λ(s) + Λ(s −u) + 2 Λ(u) ≥ς } , (82) where we put ς = 0.906072... as in (86). We note that this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-53-calculation-of-the-critical-value",
+      "number": "5.3",
+      "title": "Calculation of the critical value",
+      "level": 2,
+      "pageStart": 50,
+      "pageEnd": 52,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 726,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "critical value",
+          "heading": true
+        },
+        {
+          "term": "e2π",
+          "heading": false
+        },
+        {
+          "term": "hesse matrix",
+          "heading": false
+        },
+        {
+          "term": "critical point",
+          "heading": false
+        },
+        {
+          "term": "unique critical",
+          "heading": false
+        }
+      ],
+      "extract": "Calculation of the critical value In this section, we calculate the concrete values of a critical point and the Hesse matrix of ˆV . The diﬀerentials of ˆV are presented by ∂ ∂t ˆV (t, s, u) = −2 log(1 −x) + log ( 1 −x y ) + 2π √ −1 ( t −1 2 ) , (83) ∂ ∂s ˆV (t, s, u) = 2 log(1 −y) −log ( 1 −x y ) −log ( 1 −y z ) −2π √ −1 ( s −1 2 ) , (84) ∂ ∂u ˆV (t, s, u) = −2 log(1 −z) + log ( 1 −y z ) + 2π √ −1 ( u −1 2 ) , (85)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-54-verifying-the-assumption-of-the-poisson-summa",
+      "number": "5.4",
+      "title": "Verifying the assumption of the Poisson summation formula",
+      "level": 2,
+      "pageStart": 52,
+      "pageEnd": 53,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 592,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "poisson summation",
+          "heading": true
+        },
+        {
+          "term": "summation formula",
+          "heading": true
+        },
+        {
+          "term": "assumption",
+          "heading": true
+        },
+        {
+          "term": "arg",
+          "heading": false
+        }
+      ],
+      "extract": "Verifying the assumption of the Poisson summation formula In this section, we verify the assumption of the Poisson summation formula in Lemma 5.2, which is used in the proof of Theorem 1.1 for the 63 knot in Section 5.1. As we mentioned in Remark 2.5, we verify the assumption for ˆV (t, s, u) instead of V (t, s, u), since V (t, s, u) converges uniformly to ˆV (t, s, u) on ∆′ in the form mentioned in Remark 2.5. By",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-55-verifying-the-assumption-of-the-saddle-point",
+      "number": "5.5",
+      "title": "Verifying the assumption of the saddle point method",
+      "level": 2,
+      "pageStart": 53,
+      "pageEnd": 55,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1008,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "saddle point",
+          "heading": true
+        },
+        {
+          "term": "e2π",
+          "heading": false
+        },
+        {
+          "term": "hesse matrix",
+          "heading": false
+        },
+        {
+          "term": "point method",
+          "heading": true
+        },
+        {
+          "term": "assumption",
+          "heading": true
+        },
+        {
+          "term": "minimal point",
+          "heading": false
+        },
+        {
+          "term": "unique minimal",
+          "heading": false
+        },
+        {
+          "term": "verifying",
+          "heading": true
+        }
+      ],
+      "extract": "Verifying the assumption of the saddle point method In this section, we verify the assumption of the saddle point method in Lemma 5.5. In order to show this lemma, we show Lemmas 5.3 and 5.4 in advance. As we mentioned in Remark 2.7, we verify the assumption for ˆV (t, s, u) instead of V (t, s, u), since V (t, s, u) converges uniformly to ˆV (t, s, u) on ∆′ in the form mentioned in Remark 2.7. In the proof of Lemma",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-a-estimate-of-solutions-of-systems-of-equations",
+      "number": null,
+      "title": "A Estimate of solutions of systems of equations",
+      "level": 1,
+      "pageStart": 55,
+      "pageEnd": 56,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 84,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "estimate",
+          "heading": true
+        },
+        {
+          "term": "solutions",
+          "heading": true
+        },
+        {
+          "term": "systems",
+          "heading": true
+        }
+      ],
+      "extract": "Estimate of solutions of systems of equations In Sections 3.2, 4.2 and 5.2, we estimate solutions of some systems of equations by using numerical solutions obtained by Newton’s method. As mentioned in Remarks 3.1, 3.2 and 55 4.1, this argument is not partially rigorous, since we do not estimate the error terms of such solutions. In order to complete their proofs, we show how to estimate such solutions rigorously in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-estimate-of-solutions-of-35",
+      "number": null,
+      "title": "Estimate of solutions of (35)",
+      "level": 2,
+      "pageStart": 56,
+      "pageEnd": 56,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 149,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "estimate solutions",
+          "heading": true
+        },
+        {
+          "term": "tmax",
+          "heading": false
+        },
+        {
+          "term": "tmin",
+          "heading": false
+        }
+      ],
+      "extract": "Estimate of solutions of (35) In this section, we explain how to estimate solutions in 1-variable case. We explain it for solutions of (35); we can estimate solutions in other 1-variable cases in similar ways. As mentioned in Section 3.2, there are exactly two solutions of (35) in 0 < t < 0.5. We put them to be tmin and tmax (such that tmin < tmax). As we mentioned in Remark 3.1, we give a rigorous proof of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-estimate-of-a-solution-of-36",
+      "number": null,
+      "title": "Estimate of a solution of (36)",
+      "level": 2,
+      "pageStart": 56,
+      "pageEnd": 58,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 442,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "estimate solution",
+          "heading": true
+        },
+        {
+          "term": "wmax",
+          "heading": false
+        },
+        {
+          "term": "sin",
+          "heading": false
+        },
+        {
+          "term": "following range",
+          "heading": false
+        },
+        {
+          "term": "put",
+          "heading": false
+        },
+        {
+          "term": "cos",
+          "heading": false
+        },
+        {
+          "term": "rewritten",
+          "heading": false
+        }
+      ],
+      "extract": "Estimate of a solution of (36) In this section, we explain how to estimate a solution in 2-variable case. We explain it for a solution of (36); we can estimate solutions in other 2-variable cases in similar ways. As mentioned in Section 3.2, there are exactly two solutions of (36). We put wmax to be w of the solution whose w is the larger one. As we mentioned in Remark 3.2, we give a rigorous proof of an estimate of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-estimate-of-a-solution-of-58",
+      "number": null,
+      "title": "Estimate of a solution of (58)",
+      "level": 2,
+      "pageStart": 58,
+      "pageEnd": 59,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 660,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arcsin",
+          "heading": false
+        },
+        {
+          "term": "estimate",
+          "heading": true
+        },
+        {
+          "term": "sin",
+          "heading": false
+        },
+        {
+          "term": "solution",
+          "heading": true
+        },
+        {
+          "term": "maximal value",
+          "heading": false
+        },
+        {
+          "term": "minimal values",
+          "heading": false
+        },
+        {
+          "term": "right-hand side",
+          "heading": false
+        },
+        {
+          "term": "domain",
+          "heading": false
+        }
+      ],
+      "extract": "Estimate of a solution of (58) In this section, we explain how to estimate a solution in 3-variable case. We explain it for a solution of (58); we can estimate solutions in other 3-variable cases in similar ways. As mentioned in Section 4.2, there are exactly two solutions of (58). These solutions give the maximal and minimal values of 2s+u. We put the solution for the maximal value to be (t1, s1, u1). Then, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-curvature-of-the-boundary-of-a-convex-domain-in",
+      "number": null,
+      "title": "Curvature of the boundary of a convex domain in a plane",
+      "level": 2,
+      "pageStart": 59,
+      "pageEnd": 70,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4445,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "convex domain",
+          "heading": true
+        },
+        {
+          "term": "hesse matrix",
+          "heading": false
+        },
+        {
+          "term": "fxy",
+          "heading": false
+        },
+        {
+          "term": "smooth concave",
+          "heading": false
+        },
+        {
+          "term": "fyy",
+          "heading": false
+        },
+        {
+          "term": "log sin",
+          "heading": false
+        },
+        {
+          "term": "curvature",
+          "heading": true
+        },
+        {
+          "term": "π2s",
+          "heading": false
+        }
+      ],
+      "extract": "Curvature of the boundary of a convex domain in a plane In this section, we consider 2-variable case. Let F(x, z) be a smooth concave function whose maximal value is positive. Then, the domain { (x, z) ∈R2 F(x, z) ≥0 } (95) is a convex domain and its boundary is a smooth curve. The aim of this section is to show the following lemma. 5We use this fact, when we show that the system of equations presenting such tangent",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 70,
+      "pageEnd": 72,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 780,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kashaev invariant",
+          "heading": false
+        },
+        {
+          "term": "acta math",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic knots",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "volume conjecture",
+          "heading": false
+        },
+        {
+          "term": "torus knots",
+          "heading": false
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "chern-simons theory",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Andersen, J.E., Hansen, S.K., Asymptotics of the quantum invariants for surgeries on the ﬁgure 8 knot, J. Knot Theory Ramiﬁcations 15 (2006) 479–548. [2] Dimofte T.D., Garoufalidis, S., The quantum content of the gluing equations, Geom. Topol. 17 (2013) 1253–1315. [3] Dimofte, T., Gukov, S., Lenells, J., Zagier, D., Exact results for perturbative Chern-Simons theory with complex gauge group, Commun. Number",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "put e2π",
+      "heading": false
+    },
+    {
+      "term": "hesse matrix",
+      "heading": false
+    },
+    {
+      "term": "whose hesse",
+      "heading": false
+    },
+    {
+      "term": "convex domain",
+      "heading": true
+    },
+    {
+      "term": "critical value",
+      "heading": true
+    },
+    {
+      "term": "following domain",
+      "heading": false
+    },
+    {
+      "term": "critical point",
+      "heading": false
+    },
+    {
+      "term": "estimate solutions",
+      "heading": true
+    },
+    {
+      "term": "log sin",
+      "heading": false
+    },
+    {
+      "term": "maximal value",
+      "heading": false
+    },
+    {
+      "term": "following lemma",
+      "heading": false
+    },
+    {
+      "term": "unique critical",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 53,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 54,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 55,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 56,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 57,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 58,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 59,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 60,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 61,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 62,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 63,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 64,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 65,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 66,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 67,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 68,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 69,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 70,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 71,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 72,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The graph of Λ(t) for 0 ≤t ≤1",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The domain (57)",
+      "page": 31,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Contour lines of Re ˆV (0.8 + X√−1, 0.18 + Y √−1, 0.1) −ςR",
+      "page": 37,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The set of (t, s) satisfying that Re ˆV (t, s, u) ≥ς for some u",
+      "page": 48,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 27,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 28,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "4 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p70); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 6
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 28 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/ki6c"
+  }
+}

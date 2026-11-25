@@ -1,0 +1,628 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0508291v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Given a fixed $m \\times m$ matrix, it is natural to study\n\tthe distribution of its eigenvalues, where each eigenvalue is\n\tchosen with probability $\\frac{1}{m}$. As a motivating example\n\taround which discussion can be centered, consider the $n!\n\t\\times n!$ transition matrix for random walk on the symmetric\n\tgroup $S_n$, where the generating set consists of all\n\t$i$-cycles. Diaconis and Shahshahani \\cite{DS} proved that the\n\teigenvalues of this matrix are the numbers\n\t$\\frac{\\chi^{\\lambda}_{(i,1^{n-i})}}{dim(\\lambda)}$ occurring\n\twith multiplicity $dim(\\lambda)^2$. Here $\\lambda$\n\tparameterizes",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0508291v1  [math.CO]  16 Aug 2005\nStein’s Method and Random Character Ratios\nRunning head: Stein’s Method and Random Character Ratios\nVersion of 8/13/05\nBy Jason Fulman\nUniversity of Pittsburgh\nDepartment of Mathematics, 301 Thackeray Hall, Pittsburgh PA 15260\nemail: fulman@math.pitt.edu\nAbstract: Stein’s method is used to prove limit theorems for random\ncharacter ratios.\nTools are developed for four types of structures: ﬁnite\ngroups, Gelfand pairs, twisted Gelfand pairs, and association schemes. As\none example an error term is obtained for a central limit theorem of Kerov\non the sp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stein's Method for Normal Approximation",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-2-steins-method-for-normal-approximation.md",
+      "narrative": null,
+      "content": "\\label{stein}\n\n\tIn this section we briefly review Stein's method for normal\n\tapproximation, using the method of exchangeable pairs\n\t\\cite{Stn}. One can also use couplings to prove normal\n\tapproximations by Stein's method (see \\cite{Re} for a survey),\n\tbut the exchangeable pairs approach is effective for our\n\tpurposes. For a survey discussing both exchangeable pairs and\n\tcouplings, the paper \\cite{RR2} can be consulted.\n\n\tTwo random variables $W,W'$ on a state space $X$ are called\n\texchangeable if for all $w_1,w_2$, $\\pp(W=w_1,W'=w_2)$ is\n\tequal to $\\pp(W=w_2,W'=w_1)$. As is typical in probabil",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Finite groups",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-3-finite-groups.md",
+      "narrative": null,
+      "content": "This section uses Stein’s method to study the spectrum of random walk\non a ﬁnite group G, where the generating set is a conjugacy class C which\nsatisﬁes C = C−1. As will be explained in Subsection 3.1, by [DSh] this is\n7\nequivalent to studying the distribution of the character ratio\nχλ(C)\ndim(λ) where\nλ is chosen from the Plancherel measure of the group G.\nThe organization of this section is as follows. Subsection 3.1 recalls the",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Background from representation theory",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-31-background-from-representation-theory.md",
+      "narrative": null,
+      "content": "\\label{rtgroup}\n\n\tWe recall facts from the representation theory of finite\n\tgroups, referring the reader to \\cite{Sa} or \\cite{Se} for\n\tmore details. In what follows, $\\chi$ denotes a character of\n\tthe finite group $G$, $dim(\\chi)$ is the dimension of the\n\tcorresponding representation, and $Irr(G)$ is the set of all\n\tirreducible characters of $G$. Also $\\overline{z}$ denotes\n\tcomplex conjugate of a number $z$.\n\n\\begin{lemma} \\label{inverse} Let $\\chi$ be an irreducible representation of $G$. Then $\\chi(C^{-1}) = \\overline{\\chi(C)}$. Thus if $C=C^{-1}$, then $\\chi(C)$ is real. \\end{lemma}\n\n\tNex",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Central limit theorems for character ratios",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "../sections/sec-004-32-central-limit-theorems-for-character-ratios.md",
+      "narrative": null,
+      "content": "\\label{groupCLT}\n\t\n\tThe goal of this subsection is to prove a central limit\n\ttheorem for the random variable $W$ defined by $W(\\lambda) =\n\t\\frac{|C|^{1/2} \\chi^{\\lambda}(C)}{dim(\\lambda)}$, where $C$\n\tis a fixed conjugacy class such that $C=C^{-1}$ and $\\lambda$\n\tis random from the Plancherel measure of $G$.\n\n\tFor this purpose, it is useful to construct a Markov chain on\n\tthe set of irreducible representations of $G$ as\n\tfollows. First, fix a non-trivial irreducible representation\n\t$\\tau$ whose character is real valued. This gives a Markov chain\n\t$L_{\\tau}$ by defining the probability of trans",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Example: Cayley Graphs of the Symmetric Group",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-005-33-example-cayley-graphs-of-the-symmetric-group.md",
+      "narrative": null,
+      "content": "\\label{Sn}\n\n\tThis subsection applies the theory of Subsection\n\t\\ref{groupCLT} to the case where the group is $S_n$ and $C$ is\n\tthe conjugacy class of $i$-cycles.\n\n\tIt is useful to recall some facts about the symmetric\n\tgroup. Since $K=K^{-1}$ for all conjugacy classes $K$ of\n\t$S_n$, Lemma \\ref{inverse} implies that all irreducible\n\tcharacters of $S_n$ are real valued. Also it is elementary\n\tthat $|K| = \\frac{n!}{\\prod_j j^{m_j} m_j!}$, where $m_j$ is\n\tthe number of cycles of length $j$ of an element of $K$.\n\n\tIn order to upper bound the error terms in Theorem \\ref{main1}, the\n\tfollowing estima",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gelfand pairs",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-006-4-gelfand-pairs.md",
+      "narrative": null,
+      "content": "If G is a ﬁnite group and K is a subgroup of G such that the induced\nrepresentation 1G\nK is multiplicity free, then the pair (G, K) is called a Gelfand\npair. This section shows that the results of Section 3 have an analog for\nGelfand pairs.\nSubsection 4.1 discusses the representation theory of Gelfand pairs. Sub-\nsection 4.2 derives a general central limit theorem for random spherical func-\ntions of a Gelfand pair. Subsection 4.3 illustrates the theory on a toy exam-\nple, proving a central limit theorem for the spectrum of the hypercube. A\n16\nmore serious example is considered in Subsection 4.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/lem-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "lem-sec-007-01.md",
+      "narrative": null,
+      "content": "([Mac], page 389) Let ω be a spherical function of the Gelfand pair (G, K). Then ω(x−1) = ω(x). The following two orthogonality relations are also useful.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/lem-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "lem-sec-007-02.md",
+      "narrative": null,
+      "content": "([Mac], page 389) For 0 ≤i, j ≤s, di |G| s X r=0 |Kr|ωi(gr)ωj(gr) = δi,j.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/lem-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "lem-sec-007-03.md",
+      "narrative": null,
+      "content": "For 0 ≤r, t ≤s, s X i=0 diωi(gr)ωi(gt) = δr,t |G| |Kr|.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/lem-sec-007-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "lem-sec-007-04.md",
+      "narrative": null,
+      "content": "Let P be the K biinvariant probability on G which associates mass 1 to the double coset Ku and mass 0 to all other K double cosets of G. Then for 0 ≤r ≤s, pm(Kr) = |Kr| s X i=0 di |G|ωi(gu)mωi(gr).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/lem-sec-007-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "lem-sec-007-05.md",
+      "narrative": null,
+      "content": "Let (G, K) be a symmetric Gelfand pair. Then for any double coset Ku, random walk on the graph Hu has eigenvalues ωi(gu) occurring with multiplicity di for 0 ≤i ≤s.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Background from representation theory",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-007-41-background-from-representation-theory.md",
+      "narrative": null,
+      "content": "about the representation theory of Gelfand pairs. A useful reference is Chap-\nter 7 of [Mac].\nThe induced representation 1G\nK decomposes in a multiplicity free way as\n⊕s\nr=0Vr, where V0 denotes the trivial representation of G. Let dr denote the\ndimension of Vr. For 0 ≤r ≤s, let ωr denote the corresponding spherical\nfunction on G, deﬁned by\nωr(x) =\n1\n|K|\nX\nk∈K\nχ(r)(x−1k)\nwhere χ(r) is the character of Vr. The functions ωr are a basis of the space\nof functions on G which are constant on the double cosets of K in G. Let\nK0, · · · , Ks denote the double cosets of K in G and let g0, · · · , gs be c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Central limit theorem for spherical functions",
+      "pageStart": 18,
+      "pageEnd": 23,
+      "target": "../sections/sec-008-42-central-limit-theorem-for-spherical-functions.md",
+      "narrative": null,
+      "content": "\\label{gelfandCLT}\n\n\tThe aim of this subsection is to prove a central limit theorem\n\tfor the random variable $W$ defined by\n\t$W(i)=\\frac{|K_u|^{1/2}}{|K|^{1/2}} \\omega_i(g_u)$. Here $g_u$\n\tis fixed satisfying $Kg_uK= K g_u^{-1}K$ and $i$ is random\n\tfrom the Plancherel measure of the Gelfand pair $(G,K)$. It is not\n\tassumed that the Gelfand pair $(G,K)$ is symmetric.\n\n\tTo construct an exchangeable pair to be used for Stein's\n\tmethod, it is helpful to define a Markov chain on the set of\n\tspherical functions of $(G,K)$. To do this fix $t$ with $1\n\t\\leq t \\leq s$ such that the spherical function $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Example: The Hypercube",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "../sections/sec-009-43-example-the-hypercube.md",
+      "narrative": null,
+      "content": "\\label{hypercube}\n\n\tThe $n$ dimensional hypercube $\\zz_2^n$ consists of $n$-tuples\n        of 0's and 1's. Random walk on it proceeds by picking a random\n        coordinate and changing it. The spectrum of this random walk\n        is well known; for each $0 \\leq i \\leq n$ there is an\n        eigenvalue $1-\\frac{2i}{n}$ occurring with multiplicity ${n\n        \\choose i}$ (see for instance page 28 of \\cite{Di}). Thus by\n        the usual central limit theorem for the binomial distribution, the\n        spectrum of the hypercube is asymptotically normal with an\n        error term $O(n^{-1/2})$. Th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Example: Graphs on Perfect Matchings",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "../sections/sec-010-44-example-graphs-on-perfect-matchings.md",
+      "narrative": null,
+      "content": "\\label{matching}\n\n\tIn this example $G=S_{2n}$ and $K$ is the hyperoctahedral\n\tgroup of signed permutations on $n$ symbols, of size $2^n\n\tn!$. This Gelfand pair is discussed at length in Chapter 7 of\n\t\\cite{Mac} and in Section 3 of \\cite{HSS}, to which we refer\n\tthe reader for proofs of facts in the next two\n\tparagraphs. Another useful reference is \\cite{DHol}.\n\n\tThe induced representation $1_K^G$ decomposes as\n\t$\\oplus_{|\\lambda|=n} V_{\\lambda}$, where $\\lambda$ ranges\n\tover all partitions of size $n$. An explicit formula for the\n\tnumbers $d_{\\lambda}$ appears in \\cite{Mac} and is not needed",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted Gelfand Pairs",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "../sections/sec-011-5-twisted-gelfand-pairs.md",
+      "narrative": null,
+      "content": "Let G be a ﬁnite group and H a subgroup of G. If φ is a linear charac-\nter of H such that the induced representation IndG\nH(φ) is multiplicity free,\n28\nthen (G, H, φ) is referred to as a twisted Gelfand pair (this terminology was\nintroduced in [Stm]).\nThe approach taken in this section is a bit diﬀerent than that in the\nsections on ﬁnite groups and Gelfand pairs. Due both to a lack of interesting\nexamples which are not Gelfand pairs and to technical complications which\ndo not arise for ﬁnite groups or Gelfand pairs, a completely general theory is\nnot developed. Instead, we focus on one very in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/thm-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "thm-sec-011-01.md",
+      "narrative": null,
+      "content": "([I]) Fix i ≥1. Let λ be chosen from the shifted Plancherel measure on strict partitions of size n. Then as n →∞, the random variable n 2i+1 Xλ (2i+1,1n−2i−1) 2i√2i+1gλ converges in distribution to a normal random variable with mean 0 and variance 1. This section reﬁnes the result of Ivanov, which was proved by the method of moments, so as to obtain an error term. In the statement of the result, recall that zµ = Q j≥1 jmj(µ)mj(µ)!, where mj(µ) is the number of parts of µ of size j.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/thm-sec-011-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "thm-sec-011-02.md",
+      "narrative": null,
+      "content": "Fix i ≥1 and let µ = (2i+1, 1n−2i−1). Choosing λ from the shifted Plancherel measure on partitions of size n, deﬁne a random variable W = s n! zµ2n−l(µ) Xλ µ gλ . Then there is a constant Ai such that for all real x0,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/lem-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 32,
+      "target": "lem-sec-012-01.md",
+      "narrative": null,
+      "content": "([Mac], page 247) For λ, ρ ∈DP(n), X µ∈OP (n) 2l(µ) zµ Xλ µXρ µ = δλ,ρ2l(λ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/lem-sec-012-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 32,
+      "target": "lem-sec-012-02.md",
+      "narrative": null,
+      "content": "([Mac], page 247) For µ, σ ∈OP(n), X λ∈DP (n) 2l(λ) Xλ µXλ σ = δµ,σ zµ 2l(µ) . As in Subsection 4.4, the double cosets of Bn in S2n are indexed by partitions ν of n. It is useful to specify representatives wν. For the case ν = (n), one deﬁnes w(n) = (1, 2, · · · , 2n), and for the general case ν = (ν1, · · · , νl), one deﬁnes ων = w(ν1) ◦· · · ◦w(νl) where the operation x ◦y (for x ∈S2i, y ∈S2j) denotes the embedding of S2i × S2j in S2i+2j with S2i acting on {1, · · · , 2i} and S2j acting on {2i + 1, · · · , 2i + 2j}. For ν ∈OP(n), deﬁne ˜Kν = |Bn|2 X x1,x2∈Bn φ(x1x2)x1wνx2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/lem-sec-012-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 32,
+      "target": "lem-sec-012-03.md",
+      "narrative": null,
+      "content": "Suppose that µ1, · · · , µm, ν ∈OP(n). Then the coeﬃcient of ˜Kν in ˜Kµ1 · · · ˜Kµm is equal to 2l(µ1)−n · · · 2l(µm)−n zν X ρ∈DP (n) 2n−l(ρ)g2 ρ Xρ ν gρ Xρ µ1 gρ · · · Xρ µm gρ . In particular, the coeﬃcient of ˜ Kν in ( ˜Kµ)m is n!(2l(µ)−n)m zν E \u0014Xρ ν gρ \u0012Xρ µ gρ \u0013m\u0015 , where ρ is random from shifted Plancherel measure on partitions of size n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/lem-sec-012-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 32,
+      "target": "lem-sec-012-04.md",
+      "narrative": null,
+      "content": "derives an explicit formula for X(n−1,1) µ . This is crucial to our approach.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/lem-sec-012-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 32,
+      "target": "lem-sec-012-05.md",
+      "narrative": null,
+      "content": "Let m1(µ) denote the number of parts of size 1 of µ. Suppose that n ≥3, so that (n −1, 1) is a strict partition. Then X(n−1,1) µ = m1(µ) −2 for all odd partitions µ of size n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Background from representation theory",
+      "pageStart": 29,
+      "pageEnd": 32,
+      "target": "../sections/sec-012-51-background-from-representation-theory.md",
+      "narrative": null,
+      "content": "studies a Markov chain to be used in the construction of an exchangeable\npair for a Stein’s method proof of Theorem 5.2. This is more subtle than\nthe corresponding treatment in earlier sections and involves interesting com-\nbinatorics, since the “obvious” adaptation of the construction for Gelfand\npairs does not work. Subsection 5.3 studies the exchangeable pair arising\nfrom the Markov chain in Section 5.2, and uses it to prove Theorem 5.2.\n5.1. Background from representation theory. If G is a ﬁnite group,\nK a subgroup of G, and φ a linear character of K such that IndG\nK(φ) is\nmultiplicity fre",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Markov chains on strict partitions",
+      "pageStart": 32,
+      "pageEnd": 34,
+      "target": "../sections/sec-013-52-markov-chains-on-strict-partitions.md",
+      "narrative": null,
+      "content": "\\label{exchange}\n\n\tThis subsection discusses a Markov chain on $DP(n)$ to be used\n\tin defining an exchangeable pair for the proof of Theorem\n\t\\ref{projerror}. \n\n\tMotivated by constructions in the group and Gelfand pair\n\tcases, it would be natural, for $\\tau$ a fixed element of\n\t$DP(n)$, to define a ``Markov chain'' $J_{\\tau}$ on $DP(n)$\n\twith transition ``probabilities'' \\[ J_{\\tau}(\\lambda,\\rho) :=\n\t\\frac{g_{\\rho}}{2^{l(\\rho)} g_{\\lambda} g_{\\tau}} \\sum_{\\nu\n\t\\in OP(n)} \\frac{2^{l(\\nu)} X^{\\lambda}_{\\nu} X^{\\rho}_{\\nu}\n\tX^{\\tau}_{\\nu}}{z_{\\nu}} .\\] Using Lemma \\ref{torthog2}, one\n\tcan see tha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Central limit theorem for shifted Plancherel measure",
+      "pageStart": 34,
+      "pageEnd": 42,
+      "target": "../sections/sec-014-53-central-limit-theorem-for-shifted-plancherel.md",
+      "narrative": null,
+      "content": "\\label{twCLT}\n\n\tThis subsection studies the statistic $W=\\sqrt{\n\t\\frac{n!}{z_{\\mu} 2^{n-l(\\mu)}}}\n\t\\frac{X^{\\lambda}_{\\mu}}{g_{\\lambda}}$, where $\\mu \\in OP(n)$\n\tis fixed and $\\lambda \\in DP(n)$ is chosen from shifted\n\tPlancherel measure. The main goal is a proof of Theorem\n\t\\ref{projerror}.\n\n\tUsing $L$, one constructs an exchangeable pair $(W,W')$ as\n\tfollows. Choose $\\lambda$ from the shifted Plancherel measure on\n\tpartitions of size $n$. Then choose $\\rho$ with probability\n\t$L(\\lambda,\\rho)$ and let $(W,W')=(W(\\lambda),W(\\rho))$. Using\n\t$J_{\\tau}$, one constructs an ``exchangeable pair'' $(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Association Schemes",
+      "pageStart": 42,
+      "pageEnd": 42,
+      "target": "../sections/sec-015-6-association-schemes.md",
+      "narrative": null,
+      "content": "\\label{assoc}\n\n\tThis final section adapts techniques from earlier sections to\n\tstudy the spectrum of an adjacency matrix of an\n\tassociation scheme. As is well known (see for instance Chapter\n\t3 of \\cite{BI}) this includes the spectrum a distance regular\n\tgraph as a special case.\n\n\tSubsection \\ref{rtassoc} discusses needed facts about\n\tassociation schemes. Subsection \\ref{assocCLT} derives a\n\tgeneral central limit theorem for the spectrum of an\n\tassociation scheme. Subsection \\ref{Hamming} illustrates the\n\ttheory of Subsection \\ref{assocCLT} for the special case of\n\tthe Hamming scheme, where th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Background on association schemes",
+      "pageStart": 42,
+      "pageEnd": 44,
+      "target": "../sections/sec-016-61-background-on-association-schemes.md",
+      "narrative": null,
+      "content": "\\label{rtassoc}\n\n\tThis subsection gives preliminaries about association\n\tschemes, using notation from \\cite{MS}. Another useful\n\treference is \\cite{BI}, and what we call association schemes\n\tsome authors call symmetric association schemes.\n\n\t{\\bf Definition}. An association scheme with $n$ classes\n\tconsists of a finite set $X$ with $n+1$\n\trelations $R_0,\\cdots,R_n$ defined on $X$ which satisfy:\n\n\\begin{enumerate}\n\\item Each $R_i$ is symmetric: $(x,y) \\in R_i \\Rightarrow (y,x) \\in R_i$.\n\\item For every $x,y \\in X$, one has that $(x,y) \\in R_i$ for exactly one $i$.\n\\item $R_0=\\{(x,x):x \\in X\\}$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Central limit theorem for the spectrum",
+      "pageStart": 44,
+      "pageEnd": 49,
+      "target": "../sections/sec-017-62-central-limit-theorem-for-the-spectrum.md",
+      "narrative": null,
+      "content": "\\label{assocCLT}\n\n\tRecall that the goal is to study Plancherel measure of\n\tassociation schemes, which chooses $i \\in \\{0,\\cdots,n\\}$ with\n\tprobability $\\frac{\\mu_i}{|X|}$. More precisely, for $s$\n\tfixed, a central limit theorem is proved for the random\n\tvariable $W$ whose value at $i \\in \\{0,\\cdots,n \\}$ is\n\t$\\frac{\\phi_s(i)}{\\sqrt{v_s}}$.\n\n \tGiven $t \\in \\{0,\\cdots,n\\}$, we define a Markov chain $L_t$ on\n\tthe set $\\{0,\\cdots,n \\}$ which moves from $i$ to $j$ with\n\tprobability \\[ L_t(i,j) := \\frac{\\mu_j}{|X|} \\sum_{r=0}^n\n\t\\frac{\\phi_r(i) \\phi_r(t) \\phi_r(j)}{(v_r)^2} .\\]\n\n\\begin{lemma} \\label",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Example: Hamming Scheme",
+      "pageStart": 49,
+      "pageEnd": 50,
+      "target": "../sections/sec-018-63-example-hamming-scheme.md",
+      "narrative": null,
+      "content": "\\label{Hamming}\n\n\tThis subsection illustrates the theory of Subsection\n\t\\ref{assocCLT} for the Hamming scheme $H(d,q)$, where $d,q$\n\tare positive integers and $q \\geq 2$.\n\n\tTo begin we recall the definition of $H(d,q)$ and its basic\n\tproperties, referring the reader to Chapter 3 of \\cite{BI} for\n\tmore details. The elements $X$ of $H(d,q)$ are d-tuples of\n\tnumbers chosen from $\\{1,\\cdots,q\\}$; clearly $|X|=q^d$. A\n\tpair $(x,y)$ is in $R_i$ if $x$ and $y$ differ in exactly i\n\tcoordinates. For $0 \\leq i \\leq d$, one has that $v_i=(q-1)^i\n\t{d \\choose i}$ and $\\mu_i=(q-1)^i {d \\choose i}$. Thus the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 50,
+      "pageEnd": 50,
+      "target": "../sections/sec-019-7-acknowledgements.md",
+      "narrative": null,
+      "content": "The author was supported by NSA grant H98230-05-1-0031 and NSF grant DMS-0503901.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0508291v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 50,
+      "pageEnd": 52,
+      "target": "../sections/sec-020-references.md",
+      "narrative": null,
+      "content": "[AlD]\nAldous, D. and Diaconis, P., Longest increasing subsequences: from patience sort-\ning to the Baik-Deift-Johansson theorem, Bull. Amer. Math. Soc. 36 (1999), 413-\n432.\n[BaI]\nBannai, E. and Ito, T., Algebraic combinatorics, I. Association schemes, Ben-\njamin/Cummings Publishing Co., Inc., Menlo Park, CA, 1984.\n[Bi]\nBiane, P., Permutation model for semi-circular systems and quantum random\nwalks, Paciﬁc J. Math. 171 (1995), 373-387.\n51\n[BOO] Borodin, A., Okounkov, A., and Olshanski, G., Asymptotics of Plancherel measure\nfor symmetric groups, J. Amer. Math. Soc. 13 (2000), 481-515.\n[BO1] Boro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

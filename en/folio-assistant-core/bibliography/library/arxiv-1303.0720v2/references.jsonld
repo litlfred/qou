@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1303.0720v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "ASYMPTOTIC EXPANSION OF POLYANALYTIC BERGMAN KERNELS",
+      "dcterms:creator": [
+        "HAIMI, ANTTI",
+        "HEDENMALM, HAAKAN"
+      ],
+      "dcterms:issued": "D:20211119",
+      "dcterms:identifier": "https://arxiv.org/abs/1303.0720",
+      "dcterms:abstract": "We consider the q-analytic functions on a given planar domain Ω, square integrable with respect to a weight. This gives us a q-analytic Bergman kernel, which we use to extend the Bergman metric to this context. We recall that f is q-analytic if ¯∂q f = 0 for the given positive integer q. We also obtain asymptotic formulae for the q-analytic Bergman kernel in the setting of de- generating power weights e−2mQ, as the positive real parameter m tends to inﬁnity. This is only known for q = 1 in view of the work of Tian, Yau, Zelditch, and Catlin. We remark here that since a q-analytic function may be identiﬁed with a vector-valued holomorphic function, the Bergman space of q-analytic functions may be understood as a vector-valued holomorphic Bergman space supplied with a certain singular local metric on the vectors. Finally, we apply the obtained asymptotics for q = 2 to the bianalytic Bergman metrics, and after suitable blow-up, the result is independent of Q for a wide class of potentials Q. We interpret this as an instance of geometric universality. 1. Overview In Section 2, we deﬁne, in the one-variable context, the weighted Bergman spaces and their polyanalytic extensions, and in Section 3, we consider the various possible ramiﬁcations for Bergman metrics. It should be remarked that the polyanalytic Bergman spaces can be understood as vector-valued (analytic) Bergman spaces with singular local inner product matrix. Generally speaking, Bergman kernels are diﬃcult to obtain in explicit form. However, it is sometimes possible to obtain an asymptotic expansion for them, for instance as the weight degenerates in a power fashion. In Sections 5–9, we extend the asymptotic expansion to the polyanalytic context. Our analysis is based on the microlocal PDE approach of Berman, Berndtsson, Sjöstrand [8]. We focus mainly on the biholomorphic (bianalytic) case, and obtain the explicit form of the ﬁrst few terms of the expansion. In Section 4, we estimate the norm of point evaluat",
+      "dcterms:source": "library/arxiv-1303.0720v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1303.0720v2"
+    }
+  ]
+}

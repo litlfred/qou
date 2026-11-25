@@ -1,0 +1,2357 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "symmetry-04-00039-v3",
+  "blocks": [
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 8,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "There are eleven sections in this paper. The first six sections—not quite half of the paper—develop \nthe subject model. Section 7 relates and contrasts that model with the Standard Model in terms of the \nparticles and interactions most commonly encountered and Section 8 extends the discussion to the \ntriplication of particles and interactions observed in the high energy domain. Section 10 is a \nrecapitulation and summation and Section 11 summarizes some connections to additional topics of \nOPEN ACCESS\nSymmetry 2012, 4 \n \n40 \n \ninterest. Six subjects have been relegated to the back as appendice",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Symmetry 2012, 4, 39-115; doi:10.3390/sym4010039 \n \nsymmetry \nISSN 2073-8994 \nwww.mdpi.com/journal/symmetry \nArticle \nKnots on a Torus: A Model of the Elementary Particles \nJack S. Avrin \n28715 Leacrest Drive, Rancho Palos Verdes, CA 90275, USA; E-Mail: javrin@aol.com \nReceived: 16 November 2011; in revised form: 27 December 2011 / Accepted: 16 January 2012 / \nPublished: 9 February 2012 \n \nAbstract: Two knots; just two rudimentary knots, the unknot and the trefoil. That’s all we \nneed to build a model of the elementary particles of physics, one with fermions and bosons, \nhadrons and leptons, i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p004-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p005-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p006-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p006-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p007-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../images/img-p007-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p008-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Basic Particle Model",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-2-the-basic-particle-model.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 8,
+      "pageEnd": 12,
+      "target": "../sections/sec-002-21-introduction.md",
+      "narrative": null,
+      "content": "To anticipate what we have to look forward to in what follows, here’s another quotation [3]: “The \ntopologically iconic Moebius strip (MS) is a closed ribbon that incorporates a single half-twist but it \ncan be generalized to any (integral) number of half-twists (NHT). Flattened Moebius strips (FMS) are \ngeneralized MS with a prescribed direction of traverse and an essentially two-dimensional \nconfiguration that can take the form of an elementary, triangular planform or the contiguous composite \nof such configurations. The composites result from an operation called fusion in which elementary",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p009-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../images/img-p009-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p010-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../images/img-p010-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p011-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../images/img-p011-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p012-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../images/img-p012-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p012-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../images/img-p012-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Antiparticles and Some Aspects of Time",
+      "pageStart": 12,
+      "pageEnd": 17,
+      "target": "../sections/sec-003-22-antiparticles-and-some-aspects-of-time.md",
+      "narrative": null,
+      "content": "To discuss composites we need one more definition: associated with each of the four fermions in \nFigure 6 is an antifermion, an example of which is the one associated with fermion C and labeled C* in \nFigure 10. As shown in the figure, antifermions are distinguished simply by a reversed direction of \ntraverse. As per the discussion in the preceding section, we must also consider the corners of the \nantifermions to be antiquirks, each conjugate to the charge of its corresponding quirk. Thus the \ncharges of the antiup quirk and the antidown quirk are −2e/3 and e/3, respectively so that the overa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p013-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p013-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p014-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p014-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p014-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p015-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../images/img-p015-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p015-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../images/img-p015-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p017-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../images/img-p017-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fusion",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-004-3-fusion.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-005-31-introduction.md",
+      "narrative": null,
+      "content": "First, we selectively recall that part of the quotation that introduced the previous section: \n“Flattened Moebius strips (FMS)—can take the form of an elementary, triangular planform or the \ncontiguous composite of such configurations. The composites result from an operation called fusion in \nwhich elementary configurations are combined to produce configurations with various values of twist. \nAll values of twist can be realized in this manner but the process is degenerate; a multiplicity of \nconfigurations can exist with the same value of NHT.” \nThe all-important topic of degeneracy will be tr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p018-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p018-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hopf Algebra",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-006-33-hopf-algebra.md",
+      "narrative": null,
+      "content": "These functions turn out to find expression as coefficients in a tensor formalism [2] that describes \nthe operations of fusion and fission, which implicate this model’s identity as a Hopf algebra [14]. \nAppendix (C) discusses that connection in more detail but, briefly, we need to associate the process of \nfusion with the Hopf algebraic operation of multiplication and the process of fission with the operation \nof comultiplication. This gives us two essential components of a bialgebra, and with the inclusion of \nwhat’s known as an antipode, the essential elements of a Hopf algebra [14].  \nFor c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p019-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../images/img-p019-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p019-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../images/img-p019-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "First-Order Fusion",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-007-33-first-order-fusion.md",
+      "narrative": null,
+      "content": "As to those compositional products, two examples of what we shall designate as first order fusion \nare shown in Figure 20 (in this case it turns out that these are mesons, or more explicitly, pions). \nFigure 20. Two mutually conjugate pions. \n \nOn the left we see fermion C fused with the conjugate of fermion B and we note that the continuity \nof traverse is automatically maintained; we see traverse circulating around the “figure eight-like” \nconfiguration that results in each case, counterclockwise around the fermion and clockwise around the \nantifermion. The composite particle on the right is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Dirac Connection",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-008-34-the-dirac-connection.md",
+      "narrative": null,
+      "content": "The fact that traverse in our model does, indeed proceed one way through the fermion component \nand the opposite way through the antifermion highlights how yet another historically iconic item, in \nthis case the Dirac theory, has direct bearing on our model. According to all accounts, the theoretical \nconcept that antiparticles exist emerges in the combination of Quantum Mechanics and Special \nRelativity via the Dirac theory. To set the stage for certain conclusions, pertinent to the matter of \nfusion as implied by that well-known theory, we abstract it as follows: First, the equation for a pa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p021-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../images/img-p021-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p022-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Formalizing First-Order Fusion",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "../sections/sec-009-35-formalizing-first-order-fusion.md",
+      "narrative": null,
+      "content": "We are now in a position to discuss the fusion of the complete set of basic spin 1/2 fermions with \nthe associated conjugate set. At this level of taxonomical organization, it is expedient to consider an \nabstract, group theoretic approach, which bypasses the detail but summarizes the general architecture \nof the taxonomy. In this approach (cited in [1] as per the treatment in [5]), a particle hierarchy is \ndeveloped as the direct product of vector spin spaces.  \nOf course, the actual, physical process, corresponding to the direct product, is fusion. \nCorrespondingly, the abstract result is ex",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p023-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../images/img-p023-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p024-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../images/img-p024-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p025-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../images/img-p025-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Second Order Fusion",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-010-4-second-order-fusion.md",
+      "narrative": null,
+      "content": "As per the comment made above in connection with Equation (3-16), we can view second-order \nfusion as Matrix M operating on basic fermion vector V, that is, in analogy with Equation (3-14), we \ncan write \n1\n2\n1  2\n1 \n2\n1 \n2  1\n                \n  \n  \n  \n      \n  \n- \n- \nS\nS\nS\nS\nS\nS\nS\nS\nM\nV\nP\nP\nP\n\n\n\n\n\n\n\n\n \n(4-1)\nwhich equals\n1/2\n3/2\nP\nP\n\n for s1 = 1 (or 0) and s2 = 1/2. The result can be viewed as a 4-vector,  \n1\n2\n3\n4\n ( , \n, \n, \n)T\nP\nP P\nP\nP\n\n \n(4-2)\nwhose elements are the matrices  \n \n \nk\nk",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MV",
+      "pageStart": 25,
+      "pageEnd": 29,
+      "target": "../sections/sec-011-p-mv.md",
+      "narrative": null,
+      "content": "MV\n\n, with k = A, B, C, or D \n(4-3)\nFor example,\n1P is a matrix whose elements are three letter words, formed by appending the letter A \nto each of the elements of matrix M.  \nGeometrically, we can picture the vector P as a vertical stack of four horizontal planes, the \nkP . \nHowever, since we are preoccupied with the aggregation of elements in terms of twist, we note that the \ntwist loci are a set of inclined planes [3] where, as indicated in Figure 25 the values of twist range \nantiymmetrically from −9 to +9, an inclination that is quite analogous to the inclined loci of Figure 22 \nfor the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p026-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../images/img-p026-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p026-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../images/img-p026-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p027-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../images/img-p027-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p028-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "target": "../images/img-p028-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p028-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "target": "../images/img-p028-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fusion Summary",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-012-5-fusion-summary.md",
+      "narrative": null,
+      "content": "The results summarized in Figure 24 for first order and Figures 28 and 29 for second order fusion \nare readily predictable on a combinatorial basis and we finish this section with a short discussion to \nthat effect. First, we note that the arithmetic of fusing two basic letters (the second a conjugate letter) \ntaken independently from the basic letter list for which NHT = −3, −1, +1 and +3, a contiguous, \nbalanced sequence of odd integers means that we end up with a contiguous, balanced sequence of even \nintegers: seven values of twist, namely NHT =0, \n2, \n4, and \n6\n\n\n\n. Similarly, fusing t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p030-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "../images/img-p030-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Detailed Composition and Contingency",
+      "pageStart": 30,
+      "pageEnd": 34,
+      "target": "../sections/sec-013-6-detailed-composition-and-contingency.md",
+      "narrative": null,
+      "content": "To this point we have ignored a major mismatch, namely that between our direct \nproduct/convolution approach and what we might describe as a configurational approach to tabulating \ndegeneracy [2,3]. Suppose we consider the taxonomy from the point of view of the availability  \nof choices imposed by the basic topology of each order of fusion. Continuing with the \nlexicographic/geometric system we have been using, all words (i.e., composites) will be assumed to \nbegin with a basic letter (i.e., fermion) rather than a basic conjugate letter (antifermion). With that \nstipulation, the first order fu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p031-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../images/img-p031-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p031-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../images/img-p031-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p032-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../images/img-p032-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p034-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 34,
+      "target": "../images/img-p034-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Standard Model Connection",
+      "pageStart": 34,
+      "pageEnd": 34,
+      "target": "../sections/sec-014-7-the-standard-model-connection.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ambiguities",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "../sections/sec-015-71-ambiguities.md",
+      "narrative": null,
+      "content": "Full disclosure: our alternative model is inherently ambiguous in that a given label (one of the \ncapital letters) may represent more than one fundamental particle of the Standard Model depending on \nthe elementary particle interaction that is being modeled. The ambiguity is summarized in Figure 35. \nAs indicated, the nucleons are represented in the first row and the leptons in the next three rows. The \nlabels employed heretofore in this paper are in the bottom row and the idea of the figure is that, a priori, \nsuch a label may represent any one of the particles in its column. However, the lab",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p035-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 35,
+      "target": "../images/img-p035-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p035-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 35,
+      "target": "../images/img-p035-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Delta Creation and Decay",
+      "pageStart": 35,
+      "pageEnd": 37,
+      "target": "../sections/sec-016-72-delta-creation-and-decay.md",
+      "narrative": null,
+      "content": "For example, consider the creation of delta particles by the excitation of nucleons operated upon by \npions (or conversely, delta decay into nucleons) as summarized in Figure 36 (cf. [1]). This figure is \nessentially that presented in [16]) with the exception that there are two versions, \n0R\n\nand \n0L\n\n, shown \nhere of the neutral pion rather than the one, \n0\n usually shown in the SM. \nFigure 36. Nucleons and excited state interactions mediated by pions. \n \nFor convenience we reproduce the boson operator matrix (Equation 3-16). \nSymmetry 2012, 4 \n \n74 \n \n \nNow, recalling the previous discuss",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p036-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 36,
+      "target": "../images/img-p036-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p037-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 37,
+      "target": "../images/img-p037-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p037-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 37,
+      "target": "../images/img-p037-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "CC* -BB*",
+      "pageStart": 37,
+      "pageEnd": 37,
+      "target": "../sections/sec-017-0-cc--bb.md",
+      "narrative": null,
+      "content": "CC* -BB*\n      \n uu*u*u-dd*u*u\nR\nL\n\n\n\n\n\n\n \n(7-4)\nin terms of the quirks available after formation of the composites. Upon eliminating the common factor, \nu*u from each term we are left with \n0\nuu* dd*\n\n\n \n(7-5)\nwhich “is the accepted SM composition (also viewed as a superposition) for the \n0\n.” In the same vein, \nwe note that the two pion versions can also form the superposition for the  particle, viz:  \n0R\n0L\n+\n uu* + dd*\n\n\n\n\n\n \n(7-6)\nExperimental evidence for two varieties of the neutral pion is discussed in [17].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Beta Decay Examples",
+      "pageStart": 37,
+      "pageEnd": 39,
+      "target": "../sections/sec-018-73-beta-decay-examples.md",
+      "narrative": null,
+      "content": "Modeling weak interactions is quite different: in the case of the beta decay of the neutron, we begin, \nagain, with its excited states as shown in the NHT = −1 column of Figure 29, noting specifically the \nterms AC*C and CC*A (which are operationally identical for our purpose) in the uppermost triplet of \nthe −1 column. Using AC*C, Figure 38 shows the first stage of an alternative model version of \nneutron Beta decay—that is, of the process  \n  \n *\nn\np\ne\n\n\n\n\n \n(7-7)\nwhere, as defined previously, x and y represent the dd* and uu* junctions, respectively. \nSymmetry 2012, 4 \n \n76 \n \nFigure 38",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p038-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 38,
+      "target": "../images/img-p038-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p038-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 38,
+      "target": "../images/img-p038-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p039-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 39,
+      "target": "../images/img-p039-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p039-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 39,
+      "target": "../images/img-p039-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p039-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 39,
+      "target": "../images/img-p039-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Boson Matrix as per the SM",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "../sections/sec-019-74-the-boson-matrix-as-per-the-sm.md",
+      "narrative": null,
+      "content": "For reference, here is the bosonic operator matrix one more time: \n \nand here (Figure 42) it is translated into Standard Model nomenclature mainly according to the \ninteractions we have been reviewing: \nSymmetry 2012, 4 \n \n78 \n \nFigure 42. The bosonic operator matrix in SM nomenclature.  \n \nThe empty corners signify the previously mentioned impossible combinations, and in fact, the \nupper row and right hand column—six items in all—are also combinations that are not involved in \nactual SM interactions. There is an important functional symmetry between the lower left hand \nquadrant and the overl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p040-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 40,
+      "target": "../images/img-p040-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p040-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 40,
+      "target": "../images/img-p040-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Expansion to Three Generations",
+      "pageStart": 41,
+      "pageEnd": 41,
+      "target": "../sections/sec-020-8-expansion-to-three-generations.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Scaffolds for the Family Tree",
+      "pageStart": 41,
+      "pageEnd": 46,
+      "target": "../sections/sec-021-81-scaffolds-for-the-family-tree.md",
+      "narrative": null,
+      "content": "So far, our model has been discussed in terms of a single generation of particles whereas the SM, as \nis well known, actually consists of a family of three generations. The object of this section is to display \na corresponding triplication of our model, in fact a family structure consisting of three and only three \ngenerations, most of which is demonstrated in detail in [1]. Here, while omitting much of the detail, we \nshall, nevertheless, go a bit further in terms of the symmetries inherent to the model. Following [1] we \ntherefore arrange the four basic fermion representations, in order of t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p042-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 42,
+      "pageEnd": 42,
+      "target": "../images/img-p042-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p042-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 42,
+      "pageEnd": 42,
+      "target": "../images/img-p042-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p042-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 42,
+      "pageEnd": 42,
+      "target": "../images/img-p042-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p043-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 43,
+      "target": "../images/img-p043-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p044-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 44,
+      "target": "../images/img-p044-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p044-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 44,
+      "target": "../images/img-p044-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p045-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 45,
+      "target": "../images/img-p045-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p045-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 45,
+      "target": "../images/img-p045-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p045-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 45,
+      "target": "../images/img-p045-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Triplication of Time",
+      "pageStart": 46,
+      "pageEnd": 47,
+      "target": "../sections/sec-022-82-triplication-of-time.md",
+      "narrative": null,
+      "content": "We are not yet done with the “speculative vein” adopted above: given the duadic planes, the role if \nany of the associated orthogonal coordinate system comes into question and, in that regard, we recall, \nonce more, our identification of the out-of-plane coordinate for individual FMS with time as in the \nimmediately preceding sections. Here we have three duadic planes, with, in the sense posited above, a \ngiven duadic plane uniquely constituting the internal space for the FMS of a corresponding generation. \nThe next step is not inevitable but neither is it unreasonable: we simply associate a u",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p047-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 47,
+      "pageEnd": 47,
+      "target": "../images/img-p047-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Occupancy of the Three Generational Scaffold",
+      "pageStart": 47,
+      "pageEnd": 49,
+      "target": "../sections/sec-023-83-occupancy-of-the-three-generational-scaffold.md",
+      "narrative": null,
+      "content": "We now return to the detailed particle occupancy of the icoshedral surface. In particular, to round \nout this section, we need to illustrate what it is that is emplaced upon loci in the triangular faces of the \nscaffolds discussed above. As mentioned, a prototypical triangular face can accommodate up to a \ndecuplet of detailed particle models but before we show an example of such a decuplet, suppose we \nignore the three corner locations of the face as shown in Figure 52. \nFigure 52. The Spin ½ Baryon Octet. \n \nNominally we would be left with the intermediate seven. However, in the process of d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p048-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 48,
+      "pageEnd": 48,
+      "target": "../images/img-p048-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p048-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 48,
+      "pageEnd": 48,
+      "target": "../images/img-p048-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p048-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 48,
+      "pageEnd": 48,
+      "target": "../images/img-p048-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some Quantum Mechanical Connections",
+      "pageStart": 49,
+      "pageEnd": 52,
+      "target": "../sections/sec-024-9-some-quantum-mechanical-connections.md",
+      "narrative": null,
+      "content": "Since this paper is not concerned with particle kinematics, position/momentum relationships are not \nan issue. However, there is clearly a statistical element in the way FMS are combined in the fusion \noperation and this should rightly be treated in a quantum mechanical manner. We begin by recalling \nSection 4 wherein matrix M is characterized as an operator that converts a vector representing the set \nof four basic, single component fermions into a vector of matrices whose elements are three-\ncomponent fermions.  \nIn detail, the operator role is actually implemented by the individual elements",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p050-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 50,
+      "pageEnd": 50,
+      "target": "../images/img-p050-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Retrospective",
+      "pageStart": 52,
+      "pageEnd": 53,
+      "target": "../sections/sec-025-10-retrospective.md",
+      "narrative": null,
+      "content": "The model described herein is based on quite a small set of basic notions:  \n1. The particles of the model are localized distortions in and of an otherwise undistorted spacetime. \n2. There is an underlying toroidal topology embodied in a basic set of four Moebius strips (MS), or \nequivalently, two rudimentary torus knots, each twisted both left and right. \n3. To create a basic set of particles, each of the four MS is flattened into a triangular two \ndimensional planform, an FMS. \n4. A counterclockwise direction of traverse is chosen around the planforms. \n5. Time is identified as the odd dimen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some Connections",
+      "pageStart": 53,
+      "pageEnd": 54,
+      "target": "../sections/sec-026-11-some-connections.md",
+      "narrative": null,
+      "content": "While this paper has emphasized the role of Moebius strips as the basis of elementary particle \nontology, clearly, the interdependence of MS and torus knots is fundamental, whether we describe the \nlatter as the boundary of the former or, conversely, the former as the concatenation of the latter. All of \nwhich makes the knot connection to physics important to our model and this paper, a connection that, \nas we saw goes back to the valiant mid-19th century efforts of Kelvin to model atoms as knots in the \n“ether”. Also, we recall once again the 1917 article by Einstein in which he essentially d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "String Theory",
+      "pageStart": 54,
+      "pageEnd": 54,
+      "target": "../sections/sec-027-111-string-theory.md",
+      "narrative": null,
+      "content": "Nowadays, there is a large and growing literature [8,21] on the connection between knots and \nphysics, not the least of which involves the connection between knots and Topological Quantum field",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "TQFT",
+      "pageStart": 54,
+      "pageEnd": 56,
+      "target": "../sections/sec-028-112-tqft.md",
+      "narrative": null,
+      "content": "reason than the connection between the words “knots” and “strings”! However, there is more to the \nstring theory connection than that. For one thing, the coefficient of the kinematic term in the \nLagrangian yielding the Sine-Gordon equation is identifiable as string tension. And, in terms of \nconcatenating torus knots, we note that, by definition, each is explicitly wound around a torus, which \namounts to “toroidal compactification” as in string theory. Also, as noted in [1], a couple of decades \nago, an historic shift in attention from ten to eleven dimensions was associated [22] with the ext",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p055-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 55,
+      "target": "../images/img-p055-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p056-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 56,
+      "pageEnd": 56,
+      "target": "../images/img-p056-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prop-sec-029-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 56,
+      "pageEnd": 57,
+      "target": "prop-sec-029-01.md",
+      "narrative": null,
+      "content": "As to the pentaquark, the report (http://www.phy.ohiou.edu/~hicks/thplus/thplus3.html) of the experimental result states that “The valence quark configuration of the exotic state contains two up quarks, two down quarks, and an anti strange quark”8 (See Figure 57 below) which was found to decay into a neutron and a K  meson.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "New Particles",
+      "pageStart": 56,
+      "pageEnd": 57,
+      "target": "../sections/sec-029-113-new-particles.md",
+      "narrative": null,
+      "content": "The difference between how bosons and higher spin fermions are portrayed in our model and in the \nSM was discussed in Section 9. It evokes some experimentation that as mentioned in [1] “points to the \nexistence of heretofore unobserved particles”. The particles of interest are a four-quark meson \n(http://xxx.lanl.gov/abs/hep.lat/0001023) and a “pentaquark”, a five-quark baryon which decayed into \na neutron and a K  meson (http://www.phy.ohiou.edu/~hicks/thplus/thplus3.html).  \nRegarding the meson we note that all bosons in our model consist of two quirks and two antiquirks. \nAs to the pentaqu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p057-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 57,
+      "target": "../images/img-p057-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dark Matter",
+      "pageStart": 57,
+      "pageEnd": 58,
+      "target": "../sections/sec-030-114-dark-matter.md",
+      "narrative": null,
+      "content": "As is well known, there are numerous candidates for the constituents of dark matter (and dark \nenergy as well). Here is our model’s candidate: Always lurking at the perimeters of disquisition but \nnever really contributing is the enigmatic fourth elementary fermion, the one labeled “D” with an NHT \nof +3 and a charge of +2e. Clearly, this FMS and its combinations have absolutely nothing to do with \nthe alternative model’s taxonomy or interactions. Nevertheless, they must appear by virtue of \nsymmetry and so they do, at each level of fusion as a completely dual organization, a kind of  \nparticl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Solitonic Behavior",
+      "pageStart": 58,
+      "pageEnd": 61,
+      "target": "../sections/sec-031-appendix-a-solitonic-behavior.md",
+      "narrative": null,
+      "content": "This Appendix is essentially a summary of [4] insofar as it characterizes (m, n) torus knots as\nsolitons in spacetime. Its purpose is not only to demonstrate the solitonic nature’ of a torus knot/MS\ntype of disturbance in spacetime but the equal validity of particles and anti particles as so portrayed in\nthe our model. In what follows we will mostly indicate only the basic assumptions and results of [4],\nomitting most of the intermediate steps. Two approaches were employed in that paper with identical\nresults. With reference to figure 1 of the main body of this paper and its formal description",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Contingency in Second Order Fusion",
+      "pageStart": 61,
+      "pageEnd": 63,
+      "target": "../sections/sec-032-appendix-b-contingency-in-second-order-fusion.md",
+      "narrative": null,
+      "content": "As mentioned in Section 3, the salient feature here is that the junctions available for the second \norder fusion depend on junction selection in the first fusion. The results of analysis of that selection \nprocess were summarized in Table 3-2, which lists half of the second order permutations with \ncoefficients that embody contingencies and Figure 3-14, the resulting degeneracy table, both repeated \nhere for reference. \nSymmetry 2012, 4 \n \n100 \n \nTable 3-2. Half of contingency-enhanced permutaions; second-order fusion. \nAA*A (x)(2x*) \nBA*A (2x)(2x*) \nAA*B (x)(4x*) \nBA*B (2x)(4x*) \nAA*C (x)(2x*",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p062-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 62,
+      "pageEnd": 62,
+      "target": "../images/img-p062-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p063-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 63,
+      "pageEnd": 63,
+      "target": "../images/img-p063-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Available Antiquirks",
+      "pageStart": 63,
+      "pageEnd": 63,
+      "target": "../sections/sec-033-available-antiquirks.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Available Junctions",
+      "pageStart": 63,
+      "pageEnd": 64,
+      "target": "../sections/sec-034-available-junctions.md",
+      "narrative": null,
+      "content": "Available Antiquirks\nAvailable Junctions \nAvailable Antiquirks\nAA*(x) \n2d* \nCA*(x) \n2d* \n AB* (2x) \n2(d* + u*) \nCB*(2x + 2y) \n4d* + 2(d* + u*) \nAC* (x) \n2u* \nCC*(4y + x) \n4(d* + u*) + 2u* \nAD* (0) \n0 \n CD*(2y) \n2u* \n BA* (2x) \n2d* \nDA*(0) \n0 \nBB* (4x +y) \n4(d* +u*) + 2d* \nDB*(y) \n2d* \n BC* (2x + 2y) \n2(d* + u*) + 4u* \n DC*(2y) \n2d* + 2u* \n     BD* (y) \n2u* \nDD*(y) \n2u* \nAs an example of the impact of the availability coefficients, recall the general convolutional format \nfor second order fusion. As portrayed at the stage portrayed below in figure B1 it is poised to generate \nthe terms for n =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p064-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 64,
+      "pageEnd": 64,
+      "target": "../images/img-p064-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p064-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 64,
+      "pageEnd": 64,
+      "target": "../images/img-p064-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p064-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 64,
+      "pageEnd": 64,
+      "target": "../images/img-p064-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hopf Algebra",
+      "pageStart": 64,
+      "pageEnd": 67,
+      "target": "../sections/sec-035-appendix-c-hopf-algebra.md",
+      "narrative": null,
+      "content": "The objective here is to summarize a demonstration of the relationship between our model and a \nHopf algebra. Briefly, if we can associate the process of fusion with the Hopf algebraic operation of \nmultiplication and the process of fission with the operation of comultiplication we have two essential \ncomponents of a bialgebra, and with the inclusion of an antipode, the essential elements of a Hopf \nalgebra [8,14]. Basic fusion and fission were schematically depicted in Figure 18 for both types of \njunctions as reproduced (in part) here for reference; the act of fusion goes from top to bottom",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p066-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 66,
+      "pageEnd": 66,
+      "target": "../images/img-p066-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p067-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 67,
+      "pageEnd": 67,
+      "target": "../images/img-p067-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p067-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 67,
+      "pageEnd": 67,
+      "target": "../images/img-p067-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p067-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 67,
+      "pageEnd": 67,
+      "target": "../images/img-p067-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Beta Switch",
+      "pageStart": 67,
+      "pageEnd": 68,
+      "target": "../sections/sec-036-appendix-d-the-beta-switch.md",
+      "narrative": null,
+      "content": "The object here is to demonstrate a knot theoretic demonstration of how the switching of quirks in \nbeta decay comes about. We begin with Figures D1 to D3 to show that the difference between the two \nintersection situations is equivalent to the unknot [8].  \nFigure D1. Two Different Intersections. \n \nSymmetry 2012, 4 \n \n106 \n \nSuppose we view an intersection as a short duration loop out of the plane, an overpass so to speak, \nas in figure D2, which is perceived as proceeding to the left and right by a traveler approaching along \nthe underpass, in the directions of the arrows in situations a an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p068-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 68,
+      "pageEnd": 68,
+      "target": "../images/img-p068-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p068-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 68,
+      "pageEnd": 68,
+      "target": "../images/img-p068-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p068-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 68,
+      "pageEnd": 68,
+      "target": "../images/img-p068-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p068-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 68,
+      "pageEnd": 68,
+      "target": "../images/img-p068-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quaternions",
+      "pageStart": 68,
+      "pageEnd": 68,
+      "target": "../sections/sec-037-appendix-e-quaternions.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introductory",
+      "pageStart": 68,
+      "pageEnd": 70,
+      "target": "../sections/sec-038-e1-introductory.md",
+      "narrative": null,
+      "content": "Quaternions are useful for manipulating quantities in four dimensions as are complex variables in \ntwo. In this section we investigate first how they relate to the 1 + 3 dimensional spacetime introduced \nSymmetry 2012, 4 107\n\nin Section 8 to help explain the triplication of generations on the particle family tree. There are also\ntaxonomical implications which follow.\nA quaternion can be expressed as\n\nB= pa+p (1)\n- fghy =! hha hah, = 2\nwhere p = pA,+ p,A, + pyAy, and AA, = AA, = A, AA, = Asa, = 4, «\n4a ==I ha, = Ah = Ay\n\nWhile the p's and q's provide the information explicit to diverse situatio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p069-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 69,
+      "pageEnd": 69,
+      "target": "../images/img-p069-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p070-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 70,
+      "pageEnd": 70,
+      "target": "../images/img-p070-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p070-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 70,
+      "pageEnd": 70,
+      "target": "../images/img-p070-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Time Triplication",
+      "pageStart": 70,
+      "pageEnd": 71,
+      "target": "../sections/sec-039-e2-time-triplication.md",
+      "narrative": null,
+      "content": "In Section 8 it was suggested that quaternions might prove useful in characterizing the 1 + 3 \ndimensional “personal spacetime” experienced in the traversal of an FMS in the case of time \ntriplication. With that in mind, we consider the case of a 4-vector and its conjugate in such a  \nspacetime, defining \n0\n*\n*\n*\n0\nS\nS\nT\nS\nS\nT\n\n\n\n\n\n\n\n \n(E-4)\nwhere with s associated with space, the t's with time and with the unit vectors isomorphic to the s\n of \nEqation (E-1), we have \n\n\n0\n1\n2\n3\nS\ns\nT\nt i\nt j\nt k\n\n\n\n\n\n\n \n(E-5)\nand similarly for the conjugate. Instead of Figure E1 we now ha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Taxonomical Implications",
+      "pageStart": 71,
+      "pageEnd": 73,
+      "target": "../sections/sec-040-e3-taxonomical-implications.md",
+      "narrative": null,
+      "content": "As discussed in the foregoing, the four basic FMS give rise to a “super(anti)symmetric” kind of\nduplicate taxonomy: there is a half that involves the fermion triplet A, B and C and their conjugates\nand combinations and which largely replicates the taxonomony of the Standard Model; and there is\nanother half involving D, C and B, which has no such connection but which exists by reasons of\nsymmetry. We recall, that with the replacement of A, B and C by D, C and B, respectively, the two\n\nhalves are manifestly isomorphic.\nSymmetry 2012, 4 \n \n110 \n \nIn Section 9 we have seen the development of a com",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p072-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 72,
+      "pageEnd": 72,
+      "target": "../images/img-p072-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p073-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 73,
+      "pageEnd": 73,
+      "target": "../images/img-p073-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p073-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 73,
+      "pageEnd": 73,
+      "target": "../images/img-p073-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "AB* AC*",
+      "pageStart": 73,
+      "pageEnd": 74,
+      "target": "../sections/sec-041-0-ab-ac.md",
+      "narrative": null,
+      "content": "BA*   0      BC*\n(A, B, C)\nCA*  CB*    0\n\n \nSymmetry 2012, 4 \n \n112 \n \nwhich evaluates as the direct sum of six matrices, listed below. Together these contain a total of 27 \nthree letter terms, each of which coincides uniquely with one of the 27 three letter terms that remain in \nFigures 28 and 29 of Section 4 after all terms containing letters D or D* are deleted.  \n    0          0          0\n   0         0         0\nAA*A  AA*B  AA*C \n    0          0          0\n, BB*A  BB*B  BB*C ,    0          0          0\nCC*A  CC*B   CC*C\n   0           0         0\n   0          0          0\n, \nAC*A",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "On the Kauffman Bracket Polynomial of (2, n) Torus Knots",
+      "pageStart": 74,
+      "pageEnd": 76,
+      "target": "../sections/sec-042-appendix-f-on-the-kauffman-bracket-polynomial-of.md",
+      "narrative": null,
+      "content": "Both the Kauffman bracket polynomial [8] and (2, n) torus knots have been studied at considerable \nlength. The main interest here is a symmetric closed form reformulation of the KBP in the case of \ncomposite (2, n) torus knots, that is, knots where n is the sum of individual terms each of which is \nequal to the NHT of a constituent of a composite FMS. Also of interest as we shall see is the \nconvolutional nature of this particular reformulation and its relationship to sampled data  \nfeedback systems.  \nWe begin with the recursion formula of the Kauffman bracket polynomial [8] for the (2, n)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/figure-img-p075-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 75,
+      "pageEnd": 75,
+      "target": "../images/img-p075-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/symmetry-04-00039-v3/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 76,
+      "pageEnd": 77,
+      "target": "../sections/sec-043-references.md",
+      "narrative": null,
+      "content": "1. Avrin, J.S. A Visualizable Representation of the Elementary Particles. J. Knot Theory Ramif-\n2005, 14, 131-176.\n\n2. Avrin, J.S. Flattened Moebius strips; Their Physics,GeometryandTaxonomy. J. Knot Theory\nRamif. 2008, 17, 835-876.\n\n3. Avrin, JS. On the taxonomy of Flattened Moebius Strips; J. Knot Theory Ramif: 2012, 21,\ndoi: 10.1142/S0218216511009571\n\n4. Avrin, J.S. Torus Knots Embodying Curvature and Torsion in an Otherwise Featurless Continuum.\nJ. Knot Theory Ramif. 2011, 20, 1723-1739.\n\n5. Sternberg, S. Group Theory and Physics; Cambridge University Press: Cambridge, UK, 1994.\nMcGraw-Hil",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

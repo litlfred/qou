@@ -1,0 +1,1437 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-th-9712256v2",
+  "title": "On structure constants and fusion rules in the SL(2,C)/SU(2) WZNW model",
+  "variant": "pdf",
+  "pages": 25,
+  "tocSource": "undetermined",
+  "tocMethod": "regex",
+  "toc": [],
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 489,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "noncompact cft",
+          "heading": false
+        },
+        {
+          "term": "wznw model",
+          "heading": false
+        },
+        {
+          "term": "hole cft",
+          "heading": false
+        },
+        {
+          "term": "primary ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "ﬁeld theories",
+          "heading": false
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "fusion rules",
+          "heading": false
+        },
+        {
+          "term": "liouville theory",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-th/9712256v2 27 Jun 1998 LPM-97/03 hep-th/9712256 ON STRUCTURE CONSTANTS AND FUSION RULES IN THE SL(2, C)/SU(2) WZNW MODEL J. TESCHNER Abstract. A closed formula for the structure constants in the SL(2,C)/SU(2) WZNW model is derived by a method previously used in Liouville theory. With the help of a reﬂection amplitude that follows from the structure constants one obtains a proposal for the fusion rules",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9712256v2/blocks/prose-page-001"
+      ]
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 565,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fusion rules",
+          "heading": false
+        },
+        {
+          "term": "wznw model",
+          "heading": false
+        },
+        {
+          "term": "current algebra",
+          "heading": false
+        },
+        {
+          "term": "zero mode",
+          "heading": false
+        },
+        {
+          "term": "algebra representations",
+          "heading": false
+        },
+        {
+          "term": "canonical quantization",
+          "heading": false
+        },
+        {
+          "term": "harmonic analysis",
+          "heading": false
+        },
+        {
+          "term": "structure constants",
+          "heading": false
+        }
+      ],
+      "extract": "2 J. TESCHNER and SL(2, R) by Gelfand, Naimark and Bargmann was the starting point for the representation theory of noncomapct groups in general. The present paper is part of a series of three papers on that subject. The ﬁrst one [T1] studies the semiclassical or mini-superspace limit in detail. The theory essentially reduces to harmonic analysis on the symmetric space H+ 3 , so a rather complete and rigorous",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9712256v2/blocks/prose-page-002"
+      ]
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 354,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wznw model",
+          "heading": false
+        },
+        {
+          "term": "anω",
+          "heading": false
+        },
+        {
+          "term": "canonical quantization",
+          "heading": false
+        },
+        {
+          "term": "nδn",
+          "heading": false
+        },
+        {
+          "term": "ane",
+          "heading": false
+        },
+        {
+          "term": "commutators",
+          "heading": false
+        }
+      ],
+      "extract": "ON STRUCTURE CONSTANTS AND FUSION RULES IN THE SL(2, C)/SU(2) WZNW MODEL 1 3 The starting point of the present discussion will be the following action S = 1 π Z ∞ −∞ dτ Z 2π 0 dσ \u0000∂+φ∂−φ + ∂+u∂−¯ue−2φ\u0001 , (2) where τ and σ denote the time and (periodic) space variables respectively. This action may be obtained [Ga] from a SL(2, C)-WZNW model by gauging the SU(2) subgroup in the Lagrangian formalism. Anyway, action",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9712256v2/blocks/prose-page-003"
+      ]
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 429,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nδn",
+          "heading": false
+        },
+        {
+          "term": "hermiticity relations",
+          "heading": false
+        },
+        {
+          "term": "oscillators",
+          "heading": false
+        },
+        {
+          "term": "aiω",
+          "heading": false
+        },
+        {
+          "term": "hermitian form",
+          "heading": false
+        },
+        {
+          "term": "indeﬁnite",
+          "heading": false
+        }
+      ],
+      "extract": "4 J. TESCHNER The quantum Hamiltonian, normal ordered corresponding to the choice of Fock vacuum then reads H =HF + HI HF =2(P 2 + ibP) + ∞ X k=1 \u00002a−kak + 2¯a−k¯ak + Πv,−kvk + v−kΠv,k −Π¯v,−k¯vk −¯v−kΠ¯v,k \u0001 HI =2 Z 2π 0 dσ 2π Πv(σ)Π¯v(σ) : e2bϕ : (10) The operator H will initially be considered to act in the space S of all Ψ = X I AIΩΨI(q, v, ¯v), (11) where the AI are monomials in the oscillators labelled by",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9712256v2/blocks/prose-page-004"
+      ]
+    },
+    {
+      "id": "page-005",
+      "number": null,
+      "title": "Page 5",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 517,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "e2bϕ",
+          "heading": false
+        },
+        {
+          "term": "current algebra",
+          "heading": false
+        },
+        {
+          "term": "free ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "sugawara",
+          "heading": false
+        },
+        {
+          "term": "ﬁeld representation",
+          "heading": false
+        },
+        {
+          "term": "modes",
+          "heading": false
+        },
+        {
+          "term": "canonical variables",
+          "heading": false
+        },
+        {
+          "term": "highest",
+          "heading": false
+        }
+      ],
+      "extract": "ON STRUCTURE CONSTANTS AND FUSION RULES IN THE SL(2, C)/SU(2) WZNW MODEL 2 5 One may then ﬁnally deﬁne the space of states V as the completion of S w.r.t. ∥.∥ 2.2. Current algebra. In terms of the canonical variables one may construct the currents J−(σ) =iΠ¯v(σ) J0(σ) = + i : ¯v(σ)Π¯v(σ) : +ib−1 2 \u0000Πϕ(σ) + ϕ′(σ) \u0001 J+(σ) = −i \u0010 k¯v′(σ)+ : (¯v(σ))2Π¯v(σ) : +b−1¯v(σ) \u0000Πϕ(σ) + ϕ′(σ) \u0001 + Πv(σ) : e2bϕ(σ) : \u0011 , (19) as",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9712256v2/blocks/prose-page-005"
+      ]
+    },
+    {
+      "id": "page-006",
+      "number": null,
+      "title": "Page 6",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 486,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "prolongation",
+          "heading": false
+        },
+        {
+          "term": "dense subspace",
+          "heading": false
+        },
+        {
+          "term": "bsl",
+          "heading": false
+        },
+        {
+          "term": "current algebra",
+          "heading": false
+        },
+        {
+          "term": "irreducible representations",
+          "heading": false
+        },
+        {
+          "term": "spanned",
+          "heading": false
+        }
+      ],
+      "extract": "6 J. TESCHNER satisﬁes [Hµ, Ja µ(σ)] = −i∂σJa µ(σ) [Hµ, ¯Ja µ(σ)] = i∂σ ¯Ja µ(σ) (25) for any value of µ. By taking the value µ = 1 one recovers the canonical Hamiltonian of the H+ 3 -WZNW model. 2.3. The Spectrum. The decompostion of the space of states into irreducible representations of the current algebra sl2 ⊕sl2 was found in [Ga] by explicitely evaluating the path integral on the torus. The result was then",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9712256v2/blocks/prose-page-006"
+      ]
+    },
+    {
+      "id": "page-007",
+      "number": null,
+      "title": "Page 7",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 495,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "primary states",
+          "heading": false
+        },
+        {
+          "term": "current algebra",
+          "heading": false
+        },
+        {
+          "term": "zero mode",
+          "heading": false
+        },
+        {
+          "term": "ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "factorization",
+          "heading": false
+        },
+        {
+          "term": "resp",
+          "heading": false
+        },
+        {
+          "term": "lowest",
+          "heading": false
+        },
+        {
+          "term": "representations",
+          "heading": false
+        }
+      ],
+      "extract": "ON STRUCTURE CONSTANTS AND FUSION RULES IN THE SL(2, C)/SU(2) WZNW MODEL 3 7 which are irreducible by the results in [T2]. It is important to note that although one has chiral factorization on the level of the algebra, one has no factorization of the representation Pj in the form Rj ⊗¯Rj, where Rj (resp. ¯Rj) are irreducible representations of the current algebras generated by Ja n (resp. ¯Ja n). By the Sugawara",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9712256v2/blocks/prose-page-007"
+      ]
+    },
+    {
+      "id": "page-008",
+      "number": null,
+      "title": "Page 8",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 375,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "primary ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "descendant",
+          "heading": false
+        },
+        {
+          "term": "ope",
+          "heading": false
+        },
+        {
+          "term": "jil",
+          "heading": false
+        }
+      ],
+      "extract": "8 J. TESCHNER The corresponding primary ﬁelds Φ[Ψ(j; x|.)|z) will be denoted Φj(x|z). The transformation law (36) may then be reformulated as the following OPE Ja(z)Φj(x|w) = 1 z −wDa j Φj(x|w), ¯Ja(¯z)Φj(x|w) = 1 ¯z −¯w ¯Da j Φj(x|w) (38) where the diﬀerential operators Da j representing sl2 are D+ j = −¯x2∂¯x + 2j¯x D0 j = −¯x∂¯x −j D− j = ∂¯x, (39) the ¯Da j their complex conjugates. The representations with spin",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9712256v2/blocks/prose-page-008"
+      ]
+    },
+    {
+      "id": "page-009",
+      "number": null,
+      "title": "Page 9",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 533,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conformal blocks",
+          "heading": false
+        },
+        {
+          "term": "fusion rules",
+          "heading": false
+        },
+        {
+          "term": "four point",
+          "heading": false
+        },
+        {
+          "term": "current algebra",
+          "heading": false
+        },
+        {
+          "term": "structure constants",
+          "heading": false
+        },
+        {
+          "term": "algebra symmetries",
+          "heading": false
+        },
+        {
+          "term": "product expansions",
+          "heading": false
+        },
+        {
+          "term": "point function",
+          "heading": false
+        }
+      ],
+      "extract": "ON STRUCTURE CONSTANTS AND FUSION RULES IN THE SL(2, C)/SU(2) WZNW MODEL 4 9 In order to use the current algebra symmetries to get information on n-point functions for n > 3 one postulates operator product expansions of the form Φj2(x2|z2)Φj1(x1|z1) = Z S dµ(j) |z2 −z1|2(hj−h2−h1) × ∞ X n,¯n=0 (z2 −z1)n(z2 −z1)¯nOj n¯n \u0002 j2 x2 j1 x1 \u0003 (z1). (44) The measure dµ(j) was introduced to simplify notation as one will in",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9712256v2/blocks/prose-page-009"
+      ]
+    },
+    {
+      "id": "page-010",
+      "number": null,
+      "title": "Page 10",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 484,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "j3j j4j",
+          "heading": false
+        },
+        {
+          "term": "degenerate ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "primary ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "conformal blocks",
+          "heading": false
+        },
+        {
+          "term": "fusion relations",
+          "heading": false
+        },
+        {
+          "term": "structure constants",
+          "heading": false
+        },
+        {
+          "term": "crossing symmetry",
+          "heading": false
+        },
+        {
+          "term": "degeneracy",
+          "heading": false
+        }
+      ],
+      "extract": "10 J. TESCHNER A fundamental physical requirement, which is equivalent to mutual locality of primary ﬁelds, is that the expansions (48) and (49) into s-channel and t-channel conformal blocks produce the same correlation functions (crossing symmetry). One may hope to infer from the equality of the two decompositions (48), (49) the existence of fusion relations by an argument similar to that given for RCFT in [MS]:",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9712256v2/blocks/prose-page-010"
+      ]
+    },
+    {
+      "id": "page-011",
+      "number": null,
+      "title": "Page 11",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 483,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fst j3j",
+          "heading": false
+        },
+        {
+          "term": "j3j j4j",
+          "heading": false
+        },
+        {
+          "term": "conformal blocks",
+          "heading": false
+        },
+        {
+          "term": "degenerate ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "fusion matrices",
+          "heading": false
+        },
+        {
+          "term": "ﬁelds satisfy",
+          "heading": false
+        },
+        {
+          "term": "crossing symmetry",
+          "heading": false
+        },
+        {
+          "term": "four point",
+          "heading": false
+        }
+      ],
+      "extract": "ON STRUCTURE CONSTANTS AND FUSION RULES IN THE SL(2, C)/SU(2) WZNW MODEL 5 11 where Ja(x|z) = exJ− 0 Ja(z)e−xJ− 0 . 4.2. The method, assumptions. The method to be used will consist of considering four point functions in which one of the operators is a degenerate ﬁeld Φr,s, the others generic. The main assumption will be that these four point functions are crossing symmetric. More precisely the assumption is that the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9712256v2/blocks/prose-page-011"
+      ]
+    },
+    {
+      "id": "page-012",
+      "number": null,
+      "title": "Page 12",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 546,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "liouville case",
+          "heading": false
+        },
+        {
+          "term": "conformal blocks",
+          "heading": false
+        },
+        {
+          "term": "fusion matrices",
+          "heading": false
+        },
+        {
+          "term": "normalization",
+          "heading": false
+        },
+        {
+          "term": "reads",
+          "heading": false
+        },
+        {
+          "term": "crossing",
+          "heading": false
+        },
+        {
+          "term": "determine",
+          "heading": false
+        },
+        {
+          "term": "analysis",
+          "heading": false
+        }
+      ],
+      "extract": "12 J. TESCHNER and ∆= j1 + j2 + j3 −j4. There are now three independent solutions in the s-channel case corresponding to j21 = j1 ∓t/2 as well as j21 = −j1 −1 + t/2. They will be denoted F 1,2 s± and F 1,2 s× respectively. The fusion matrices F 1,2 στ are deﬁned similarly as in (57), with obvious modiﬁcations. Again the explicit expressions for conformal blocks and fusion matrices are to be found in the appendix.",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9712256v2/blocks/prose-page-012"
+      ]
+    },
+    {
+      "id": "page-013",
+      "number": null,
+      "title": "Page 13",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 489,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "liouville case",
+          "heading": false
+        },
+        {
+          "term": "functional relations",
+          "heading": false
+        },
+        {
+          "term": "sinh",
+          "heading": false
+        },
+        {
+          "term": "linear combination",
+          "heading": false
+        },
+        {
+          "term": "analysis",
+          "heading": false
+        },
+        {
+          "term": "reference",
+          "heading": false
+        }
+      ],
+      "extract": "ON STRUCTURE CONSTANTS AND FUSION RULES IN THE SL(2, C)/SU(2) WZNW MODEL 6 13 where µL(b) represents the only leftover freedom, which corresponds to the cosmological constant. Inserting this into (60) yields the functional relation for CL(α3, α2, α1) derived in [TL]: CL(α3, α2, α1 + b) CL(α3, α2, α1) = \u0000µL(b) \u0001−1γ(b(2α1 + b))γ(2bα1)γ(b(α3 + α4 −α1 −b)) γ(b(α1 + α3 −α4))γ(b(α1 + α4 −α3))γ(b(α1 + α3 + α4 −b) −1). A",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9712256v2/blocks/prose-page-013"
+      ]
+    },
+    {
+      "id": "page-014",
+      "number": null,
+      "title": "Page 14",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 438,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conformal blocks",
+          "heading": false
+        },
+        {
+          "term": "edb",
+          "heading": false
+        },
+        {
+          "term": "liouville case",
+          "heading": false
+        },
+        {
+          "term": "ﬁnds",
+          "heading": false
+        },
+        {
+          "term": "σgσ",
+          "heading": false
+        }
+      ],
+      "extract": "14 J. TESCHNER In terms of the G’s it is therefore easy to write the most general crossing invariant and single valued combination of conformal blocks: To simplify notation I will drop the superscript (1,2) and subscript s in the following. Ψ ≡< Φj4 . . . Φj1 >= X σ=+,− EL σGσ(x, z)Gσ(¯x, ¯z) + EDGs(x, z)Gs(¯x, ¯z), where ED is arbitrary. Written in the F-basis of conformal blocks there appear non-diagonal terms: Ψ",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9712256v2/blocks/prose-page-014"
+      ]
+    },
+    {
+      "id": "page-015",
+      "number": null,
+      "title": "Page 15",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 521,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fusion rules",
+          "heading": false
+        },
+        {
+          "term": "spectral decomposition",
+          "heading": false
+        },
+        {
+          "term": "eigenvectors",
+          "heading": false
+        },
+        {
+          "term": "eigenvalue condition",
+          "heading": false
+        },
+        {
+          "term": "primary",
+          "heading": false
+        },
+        {
+          "term": "issue",
+          "heading": false
+        },
+        {
+          "term": "allow",
+          "heading": false
+        },
+        {
+          "term": "representations",
+          "heading": false
+        }
+      ],
+      "extract": "ON STRUCTURE CONSTANTS AND FUSION RULES IN THE SL(2, C)/SU(2) WZNW MODEL 7 15 5. Fusion rules Fusion rules are the rules determining the set of irreducible representations contributing in the decomposition of the vector obtained by acting with a primary ﬁeld Φj2(x|z) on a primary state Ψj1. In most current algebra representations relevant in the present context there are no nullvectors (cf. [T2]). The determination",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9712256v2/blocks/prose-page-015"
+      ]
+    },
+    {
+      "id": "page-016",
+      "number": null,
+      "title": "Page 16",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 466,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "intertwining operator",
+          "heading": false
+        },
+        {
+          "term": "reﬂection amplitude",
+          "heading": false
+        },
+        {
+          "term": "primary ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "d2v",
+          "heading": false
+        },
+        {
+          "term": "fourier transform",
+          "heading": false
+        },
+        {
+          "term": "thereby",
+          "heading": false
+        },
+        {
+          "term": "nothing",
+          "heading": false
+        },
+        {
+          "term": "asymptotics",
+          "heading": false
+        }
+      ],
+      "extract": "16 J. TESCHNER rapidly converging (like ∼exp(−ebq)). Suppressing the diverging solution means that there must be a ﬁxed relation F − N = R(j)F + N between F ± N , thereby deﬁning an operator R(j). This is nothing but the statement that the interaction term in the H+ 3 -Hamiltonian acts perfectly reﬂecting as the “Liouville-wall” does [S][P]. These considerations lead to the conjecture that for any given value of j",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9712256v2/blocks/prose-page-016"
+      ]
+    },
+    {
+      "id": "page-017",
+      "number": null,
+      "title": "Page 17",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 599,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reﬂection amplitude",
+          "heading": false
+        },
+        {
+          "term": "normalizability",
+          "heading": false
+        },
+        {
+          "term": "fusion rules",
+          "heading": false
+        },
+        {
+          "term": "contour",
+          "heading": false
+        },
+        {
+          "term": "asymptotics",
+          "heading": false
+        },
+        {
+          "term": "operator product",
+          "heading": false
+        },
+        {
+          "term": "product expansion",
+          "heading": false
+        },
+        {
+          "term": "state",
+          "heading": false
+        }
+      ],
+      "extract": "ON STRUCTURE CONSTANTS AND FUSION RULES IN THE SL(2, C)/SU(2) WZNW MODEL 8 17 In terms of the Φj µ¯µ(z) the primary ﬁeld transformation law takes the following form: [J+ n , Φj µ¯µ(z)] =zn \u0012 ¯µ ∂2 ∂¯µ2 −2j ∂ ∂¯µ \u0013 Φj µ¯µ(z) [J− n , Φj µ¯µ(z)] = −¯µΦj µ¯µ(z) [J0 n, Φj µ¯µ(z)] = zn \u0012 ¯µ ∂ ∂¯µ −j \u0013 Φj µ¯µ(z). (79) It is a diﬃcult task to ﬁnd such operators in terms of the elementary operators used in canonical",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9712256v2/blocks/prose-page-017"
+      ]
+    },
+    {
+      "id": "page-018",
+      "number": null,
+      "title": "Page 18",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 606,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fusion rules",
+          "heading": false
+        },
+        {
+          "term": "analytic continuation",
+          "heading": false
+        },
+        {
+          "term": "residue terms",
+          "heading": false
+        },
+        {
+          "term": "structure constants",
+          "heading": false
+        },
+        {
+          "term": "picked",
+          "heading": false
+        },
+        {
+          "term": "non-vanishing",
+          "heading": false
+        },
+        {
+          "term": "contour",
+          "heading": false
+        },
+        {
+          "term": "poles",
+          "heading": false
+        }
+      ],
+      "extract": "18 J. TESCHNER contributions. This procedure allows to unambigously deﬁne the fusion rules of two generic operators. 5.4. Consistency of fusion rules with structure constants. The fusion rules for the de- generate ﬁelds are severely restricted by the additional diﬀerential equations they satisfy. It is a nontrivial check on the previously obtained results on structure constants and fusion rules that by analytic",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9712256v2/blocks/prose-page-018"
+      ]
+    },
+    {
+      "id": "page-019",
+      "number": null,
+      "title": "Page 19",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": "19",
+      "labelEnd": "19",
+      "words": 621,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fusion rules",
+          "heading": false
+        },
+        {
+          "term": "degenerate ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "proposed fusion",
+          "heading": false
+        },
+        {
+          "term": "primary ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "generic ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "structure constants",
+          "heading": false
+        },
+        {
+          "term": "conformal blocks",
+          "heading": false
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        }
+      ],
+      "extract": "ON STRUCTURE CONSTANTS AND FUSION RULES IN THE SL(2, C)/SU(2) WZNW MODEL 9 19 oneself that for any pole of Υ−1(α1 + α2 −b 2iσ)Υ−1(α1 + α2 −b 2 + iσ) that is missed one gets an additional pole from Υ−1(α1 −α2 + b 2 −iσ)Υ−1(α2 −α1 + b 2 −iσ). It follows that analytic continuation of the operator product expansion (44) indeed yields the correct fusion rules for the operator product expansion of a degenerate and a",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9712256v2/blocks/prose-page-019"
+      ]
+    },
+    {
+      "id": "page-020",
+      "number": null,
+      "title": "Page 20",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 397,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "decoupling equations",
+          "heading": false
+        },
+        {
+          "term": "conformal blocks",
+          "heading": false
+        },
+        {
+          "term": "fusion matrix",
+          "heading": false
+        },
+        {
+          "term": "solutions",
+          "heading": false
+        },
+        {
+          "term": "phases",
+          "heading": false
+        },
+        {
+          "term": "course",
+          "heading": false
+        }
+      ],
+      "extract": "20 J. TESCHNER 7. Appendix 7.1. Solutions to the Liouville decoupling equations. In order to write down the solutions, introduce the parameters u = b(α1 + α3 + α4 −3b/2) −1 ¯u = b−1(α1 + α3 + α4 −3b−1/2) −1 v = b(α1 + α3 −α4 −b/2) ¯v = b−1(α1 + α3 −α4 −b−1/2) w = b(2α1 −b) ¯w = b−1(2α1 −b−1) Then the solutions to the decoupling equation (59) that correspond to s-channel conformal blocks are given by F L2,1 s+ =",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9712256v2/blocks/prose-page-020"
+      ]
+    },
+    {
+      "id": "page-021",
+      "number": null,
+      "title": "Page 21",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 504,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "partial diﬀerential",
+          "heading": false
+        },
+        {
+          "term": "conformal blocks",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential equations",
+          "heading": false
+        },
+        {
+          "term": "independent solutions",
+          "heading": false
+        },
+        {
+          "term": "wznw",
+          "heading": false
+        },
+        {
+          "term": "decoupling",
+          "heading": false
+        }
+      ],
+      "extract": "ON STRUCTURE CONSTANTS AND FUSION RULES IN THE SL(2, C)/SU(2) WZNW MODEL 11 21 in the limit of ﬁrst taking z →0, then x →0. A set of normalized solutions for the s- and t-channel are then given by (t−= t−1) F 2,1 s+ = zt−j1(1 −z)t−j3 \u0010 F(u + 1, v, w; z) −x v wF(u + 1, v + 1, w + 1; z) \u0011 F 2,1 s−= z−t−(j1+1)(1 −z)t−j3\u0010 xF(u −w + 1, v −w + 1, 1 −w; z) − z u −w + 1 1 −w F(u −w + 2, v −w + 1, 2 −w; z) \u0011 , F 2,1 t+ = (1",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9712256v2/blocks/prose-page-021"
+      ]
+    },
+    {
+      "id": "page-022",
+      "number": null,
+      "title": "Page 22",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 490,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conformal blocks",
+          "heading": false
+        },
+        {
+          "term": "solutions",
+          "heading": false
+        },
+        {
+          "term": "cit",
+          "heading": false
+        },
+        {
+          "term": "chap",
+          "heading": false
+        },
+        {
+          "term": "loc",
+          "heading": false
+        },
+        {
+          "term": "task",
+          "heading": false
+        },
+        {
+          "term": "satisﬁed",
+          "heading": false
+        }
+      ],
+      "extract": "22 J. TESCHNER Chap. III, pp. 55-65, each of them can be expressed in terms of the function F1 itself, for which one has representations F1(α, β, β′, γ; x, z) = Γ(γ) Γ(α)Γ(γ −α) Z 1 0 dt tα−1(1 −t)γ−α−1(1 −xt)−β(1 −zt)−β′ (88) or as the power series F1(α, β, β′, γ; x, z) = ∞ X n,m=0 (α)m+n(β)m(β′)n γm+n xm m! yn n! The task now is to identify solutions to the F1 equations with conformal blocks corresponding to",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9712256v2/blocks/prose-page-022"
+      ]
+    },
+    {
+      "id": "page-023",
+      "number": null,
+      "title": "Page 23",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 421,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eπi",
+          "heading": false
+        },
+        {
+          "term": "πij",
+          "heading": false
+        },
+        {
+          "term": "arg",
+          "heading": false
+        },
+        {
+          "term": "πiα",
+          "heading": false
+        },
+        {
+          "term": "exempliﬁed",
+          "heading": false
+        }
+      ],
+      "extract": "ON STRUCTURE CONSTANTS AND FUSION RULES IN THE SL(2, C)/SU(2) WZNW MODEL 12 23 complicated since none of the solutions given in loc. cit. has the required asymptotic behavior. Consider however Z8 = x−αF1 \u0012 α, α + 1 −γ, β′, α + 1 −β; 1 x, z x \u0013 From the power series expansion of F1 one easily sees that Z8 is analytic as function of z in a neighborhood of z = 0 and Z8|z=0 = x−αF(α, α + 1 −γ; α + 1 −β; 1/x), where F(α,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9712256v2/blocks/prose-page-023"
+      ]
+    },
+    {
+      "id": "page-024",
+      "number": null,
+      "title": "Page 24",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": "24",
+      "labelEnd": "24",
+      "words": 493,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conformal blocks",
+          "heading": false
+        },
+        {
+          "term": "liouville conformal",
+          "heading": false
+        },
+        {
+          "term": "fusion relations",
+          "heading": false
+        },
+        {
+          "term": "eπi",
+          "heading": false
+        }
+      ],
+      "extract": "24 J. TESCHNER F 1,2 s× =Γ(γ −β) Γ(1 −β) Γ(2 −γ)Γ(γ −β −β′ −α) Γ(γ −β −β′)Γ(1 −α) F 1,2 t+ −eπiγ Γ(2 −γ)Γ(α + β′ −γ) Γ(1 + α −γ)Γ(β′) F 1,2 t− + eπiγ \u0012 eπi(β+β′−γ) sin πγ sin πβ − sin π(γ −α) sin π(γ −α −β′) \u0013 Γ(2 −γ)Γ(α + β + β′ −γ) Γ(β)Γ(1 + α + β′ −γ) F 1,2 t× ! 7.3.2. Alternative choice of basis for conformal blocks. An important simpliﬁcation of the fusion relations is achieved by using the following linear",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9712256v2/blocks/prose-page-024"
+      ]
+    },
+    {
+      "id": "page-025",
+      "number": null,
+      "title": "Page 25",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": "25",
+      "labelEnd": "25",
+      "words": 609,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conformal ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "liouville theory",
+          "heading": false
+        },
+        {
+          "term": "wznw model",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "nucl",
+          "heading": false
+        },
+        {
+          "term": "teschner",
+          "heading": false
+        },
+        {
+          "term": "zamolodchikov",
+          "heading": false
+        },
+        {
+          "term": "gawedzki",
+          "heading": false
+        }
+      ],
+      "extract": "ON STRUCTURE CONSTANTS AND FUSION RULES IN THE SL(2, C)/SU(2) WZNW MODEL 13 25 one ﬁnds that G 1,2 s+, G 1,2 s−, G 1,2 t+, G 1,2 t−reduce to F L1,2 s+ , F L1,2 s−, F L1,2 t+ , F L1,2 t− respectively for x →z. G× however will not be analytic in x around x = z but rather behave as Gs ∼(x −z)1−β−β′(C1 + O(x −z)) References [Ga] C. Gawedzki: Non-compact WZW conformal ﬁeld theories, in: Proceedings of NATO ASI Cargese",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9712256v2/blocks/prose-page-025"
+      ]
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "fusion rules",
+      "heading": false
+    },
+    {
+      "term": "conformal blocks",
+      "heading": false
+    },
+    {
+      "term": "liouville conformal",
+      "heading": false
+    },
+    {
+      "term": "fusion relations",
+      "heading": false
+    },
+    {
+      "term": "wznw model",
+      "heading": false
+    },
+    {
+      "term": "conformal ﬁeld",
+      "heading": false
+    },
+    {
+      "term": "fusion matrices",
+      "heading": false
+    },
+    {
+      "term": "proposed fusion",
+      "heading": false
+    },
+    {
+      "term": "primary ﬁelds",
+      "heading": false
+    },
+    {
+      "term": "s-channel conformal",
+      "heading": false
+    },
+    {
+      "term": "fusion matrix",
+      "heading": false
+    },
+    {
+      "term": "structure constants",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "not-extracted",
+      "note": "split one section per page; no contents was trusted"
+    },
+    {
+      "kind": "sections",
+      "state": "partial",
+      "count": 25,
+      "note": "one per page, not by heading"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p25); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 25 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-th-9712256v2"
+  }
+}

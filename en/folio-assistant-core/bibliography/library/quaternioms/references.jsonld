@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/quaternioms",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations",
+      "dcterms:creator": [
+        "Mathematical, Computation:"
+      ],
+      "dcterms:issued": "D:20251201",
+      "bibo:doi": "10.3390/quantum7040055",
+      "dcterms:identifier": "https://doi.org/10.3390/quantum7040055",
+      "dcterms:source": "library/quaternioms/manifest.jsonld",
+      "dcterms:hasVersion": "library/quaternioms"
+    }
+  ]
+}

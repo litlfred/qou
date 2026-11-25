@@ -1,0 +1,1058 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "thurston",
+  "blocks": [
+    {
+      "id": "library/thurston/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "William P. Thurston\nThe Geometry and Topology of Three-Manifolds\nElectronic version 1.1 - March 2002\nhttp://www.msri.org/publications/books/gt3m/\nThis is an electronic edition of the 1980 notes distributed by Princeton University.\nThe text was typed in TEX by Sheila Newbery, who also scanned the ﬁgures. Typos\nhave been corrected (and probably others introduced), but otherwise no attempt has\nbeen made to update the contents. Genevieve Walsh compiled the index.\nNumbers on the right margin correspond to the original edition’s page numbers.\nThurston’s Three-Dimensional Geometry and Topology, Vol.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "_(no text on this page)_",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "Introduction\nThese notes (through p. 9.80) are based on my course at Princeton in 1978–\n79. Large portions were written by Bill Floyd and Steve Kerckho↵. Chapter 7, by\nJohn Milnor, is based on a lecture he gave in my course; the ghostwriter was Steve\nKerckho↵. The notes are projected to continue at least through the next academic\nyear. The intent is to describe the very strong connection between geometry and low-\ndimensional topology in a way which will be useful and accessible (with some e↵ort)\nto graduate students and mathematicians working in related ﬁelds, particularly 3-\nmanifolds and Kle",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "_(no text on this page)_",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "Contents\nIntroduction\niii\nChapter 1.\nGeometry and three-manifolds\n1\nChapter 2.\nElliptic and hyperbolic geometry\n9\n2.1.\nThe Poincar´e disk model.\n10\n2.2.\nThe southern hemisphere.\n11\n2.3.\nThe upper half-space model.\n12\n2.4.\nThe projective model.\n13\n2.5.\nThe sphere of imaginary radius.\n16\n2.6.\nTrigonometry.\n17\nChapter 3.\nGeometric structures on manifolds\n27\n3.1.\nA hyperbolic structure on the ﬁgure-eight knot complement.\n29\n3.2.\nA hyperbolic manifold with geodesic boundary.\n31\n3.3.\nThe Whitehead link complement.\n32\n3.4.\nThe Borromean rings complement.\n33\n3.5.\nThe developing map.\n34\n3.8.\nHorosphere",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "CONTENTS\nChapter 5.\nFlexibility and rigidity of geometric structures\n85\n5.2.\n86\n5.3.\n88\n5.4.\nSpecial algebraic properties of groups of isometries of H3.\n92\n5.5.\nThe dimension of the deformation space of a hyperbolic three-manifold. 96\n5.7.\n101\n5.8.\nGeneralized Dehn surgery and hyperbolic structures.\n102\n5.9.\nA Proof of Mostow’s Theorem.\n106\n5.10.\nA decomposition of complete hyperbolic manifolds.\n112\n5.11.\nComplete hyperbolic manifolds with bounded volume.\n116\n5.12.\nJørgensen’s Theorem.\n119\nChapter 6.\nGromov’s invariant and the volume of a hyperbolic manifold\n123\n6.1.\nGromov’s invariant\n123\n6.3",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "CONTENTS\nChapter 9.\nAlgebraic convergence\n225\n9.1.\nLimits of discrete groups\n225\n9.3.\nThe ending of an end\n233\n9.4.\nTaming the topology of an end\n240\n9.5.\nInterpolating negatively curved surfaces\n242\n9.6.\nStrong convergence from algebraic convergence\n257\n9.7.\nRealizations of geodesic laminations for surface groups with extra cusps,\nwith a digression on stereographic coordinates\n261\n9.9.\nErgodicity of the geodesic ﬂow\n277\nNOTE\n283\nChapter 11.\nDeforming Kleinian manifolds by homeomorphisms of the sphere\nat inﬁnity\n285\n11.1.\nExtensions of vector ﬁelds\n285\nChapter 13.\nOrbifolds\n297\n13.1.\nSome exam",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "_(no text on this page)_",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/figure-img-p009-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../images/img-p009-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "CHAPTER 1\nGeometry and three-manifolds\n1.1\nThe theme I intend to develop is that topology and geometry, in dimensions up\nthrough 3, are very intricately related.\nBecause of this relation, many questions\nwhich seem utterly hopeless from a purely topological point of view can be fruitfully\nstudied. It is not totally unreasonable to hope that eventually all three-manifolds\nwill be understood in a systematic way.\nIn any case, the theory of geometry in\nthree-manifolds promises to be very rich, bringing together many threads.\nBefore discussing geometry, I will indicate some topological constructions",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 10",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/page-010.md",
+      "narrative": null,
+      "content": "1. GEOMETRY AND THREE-MANIFOLDS\nThe complement of a knot can be very enigmatic, if you try to think about it\nfrom an intrinsic point of view. Papakyriakopoulos proved that a knot complement\nhas fundamental group Z if and only if the knot is trivial. This may seem intuitively\nclear, but justiﬁcation for this intuition is diﬃcult. It is not known whether knots\nwith homeomorphic complements are the same.\n2. Cut out a tubular neighborhood of a knot or link, and glue it back in by a\ndi↵erent identiﬁcation. This is called Dehn surgery. There are many ways to do\nthis, because the torus has many di↵eo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/figure-img-p011-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../images/img-p011-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 11",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/page-011.md",
+      "narrative": null,
+      "content": "1. GEOMETRY AND THREE-MANIFOLDS\n5.\nHeegaard decompositions.\nEvery three-manifold can be obtained from two\nhandlebodies (of some genus) by gluing their boundaries together.\n1.4\nThe set of possible gluing maps is large and complicated. It is hard to tell, given\ntwo gluing maps, whether or not they represent the same three-manifold (except\nwhen there are homological invariants to distinguish them).\n6. Identifying faces of polyhedra. Suppose P1, . . . , Pk are polyhedra such that the\nnumber of faces with K sides is even, for each K.\nChoose an arbitrary pattern of orientation-reversing identiﬁcatio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/ex-page-012-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "ex-page-012-01.md",
+      "narrative": null,
+      "content": "Here is one of the simplest possible gluing diagrams for a three- manifold. Begin with two tetrahedra with edges labeled: There is a unique way to glue the faces of one tetrahedron to the other so that arrows are matched. For instance, A is matched with A0. All the 6−! arrows are identiﬁed and all the 6 6−! arrows are identiﬁed, so the resulting complex has 2 tetrahedra, 4 triangles, 2 edges and 1 vertex. Its Euler characteristic is +1, and (it follows that) a neighborhood of the vertex is the cone on a torus. Let M be the manifold obtained by removing the vertex. It turns out that this manifo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/thurston/blocks/figure-img-p012-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../images/img-p012-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/thurston/blocks/figure-img-p012-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../images/img-p012-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 12",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/page-012.md",
+      "narrative": null,
+      "content": "1. GEOMETRY AND THREE-MANIFOLDS\nsuch a phenomenon takes place among three-manifolds; but how can we tell?\nExample. Here is one of the simplest possible gluing diagrams for a three-\nmanifold. Begin with two tetrahedra with edges labeled:\nThere is a unique way to glue the faces of one tetrahedron to the other so that\narrows are matched. For instance, A is matched with A0. All the 6−! arrows are\nidentiﬁed and all the 6 6−! arrows are identiﬁed, so the resulting complex has 2\ntetrahedra, 4 triangles, 2 edges and 1 vertex. Its Euler characteristic is +1, and (it\nfollows that) a neighborhood of the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/figure-img-p013-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/thurston/blocks/figure-img-p013-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/thurston/blocks/figure-img-p013-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../images/img-p013-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 13",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/page-013.md",
+      "narrative": null,
+      "content": "1. GEOMETRY AND THREE-MANIFOLDS\n1.6\nAnother view of the ﬁgure-eight knot\nThis knot is familiar from extension cords, as the most commonly occurring knot,\nafter the trefoil knot\nIn order to see this homeomorphism we can draw a more suggestive picture of the\nﬁgure-eight knot, arranged along the one-skeleton of a tetrahedron. The knot can be\nTetrahedron with ﬁgure-eight knot, viewed from above\nThurston — The Geometry and Topology of 3-Manifolds\n5",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/figure-img-p014-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/thurston/blocks/figure-img-p014-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 14",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/page-014.md",
+      "narrative": null,
+      "content": "1. GEOMETRY AND THREE-MANIFOLDS\nspanned by a two-complex, with two edges, shown as arrows, and four two-cells, one\nfor each face of the tetrahedron, in a more-or-less obvious way:\n1.7\nThis pictures illustrates the typical way in which a two-cell is attached. Keeping in\nmind that the knot is not there, the cells are triangles with deleted vertices. The two\ncomplementary regions of the two-complex are the tetrahedra, with deleted vertices.\nWe will return to this example later. For now, it serves to illustrate the need for\na systematic way to compare and to recognize manifolds.\nNote. Suggestive p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/figure-img-p015-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../images/img-p015-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 15",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/page-015.md",
+      "narrative": null,
+      "content": "1. GEOMETRY AND THREE-MANIFOLDS\nFrom the picture, a cell-division of the complement is produced. In this case,\nhowever, the three-cells are not tetrahedra.\nThe boundary of a three-cell, ﬂattened out on the plane.\nThurston — The Geometry and Topology of 3-Manifolds\n7",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 16",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/page-016.md",
+      "narrative": null,
+      "content": "William P. Thurston\nThe Geometry and Topology of Three-Manifolds\nElectronic version 1.1 - March 2002\nhttp://www.msri.org/publications/books/gt3m/\nThis is an electronic edition of the 1980 notes distributed by Princeton University.\nThe text was typed in TEX by Sheila Newbery, who also scanned the ﬁgures. Typos\nhave been corrected (and probably others introduced), but otherwise no attempt has\nbeen made to update the contents. Genevieve Walsh compiled the index.\nNumbers on the right margin correspond to the original edition’s page numbers.\nThurston’s Three-Dimensional Geometry and Topology, Vol.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 17",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/page-017.md",
+      "narrative": null,
+      "content": "_(no text on this page)_",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/figure-img-p018-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 18",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/page-018.md",
+      "narrative": null,
+      "content": "CHAPTER 2\nElliptic and hyperbolic geometry\nThere are three kinds of geometry which possess a notion of distance, and which\nlook the same from any viewpoint with your head turned in any orientation: these\nare elliptic geometry (or spherical geometry), Euclidean or parabolic geometry, and\nhyperbolic or Lobachevskiian geometry. The underlying spaces of these three geome-\ntries are naturally Riemannian manifolds of constant sectional curvature +1, 0, and\n−1, respectively.\nElliptic n-space is the n-sphere, with antipodal points identiﬁed. Topologically\nit is projective n-space, with geometry inheri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 19",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/page-019.md",
+      "narrative": null,
+      "content": "2. ELLIPTIC AND HYPERBOLIC GEOMETRY\ndistressing to live in elliptic space, since you would always be confronted with an im-\nage of yourself, turned inside out, upside down and ﬁlling out the entire background\nof your ﬁeld of view. Euclidean space is familiar to all of us, since it very closely\napproximates the geometry of the space in which we live, up to moderate distances.\nHyperbolic space is the least familiar to most people. Certain surfaces of revolution\nin R3 have constant curvature −1 and so give an idea of the local picture of the\nhyperbolic plane.\n2.3\nThe simplest of these is the pseu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/figure-img-p020-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../images/img-p020-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 20",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/page-020.md",
+      "narrative": null,
+      "content": "2.2. THE SOUTHERN HEMISPHERE.\nthe extended sense, to include the limiting case of a line or plane.\nThis model\nis conformally correct, that is, hyperbolic angles agree with Euclidean angles, but\ndistances are greatly distorted. Hyperbolic arc length\np\nds2 is given by the formula\n2.4\nds2 =\n⇣\n1\n1 −r2\n⌘2\ndx2,\nwhere\np\ndx2 is Euclidean arc length and r is distance from the origin. Thus, the\nEuclidean image of a hyperbolic object, as it moves away from the origin, shrinks in\nsize roughly in proportion to the Euclidean distance from @Dn (when this distance\nis small).\nThe object never actually arrives",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/figure-img-p021-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../images/img-p021-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/thurston/blocks/figure-img-p021-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../images/img-p021-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 21",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/page-021.md",
+      "narrative": null,
+      "content": "2. ELLIPTIC AND HYPERBOLIC GEOMETRY\nStereographic projection (Euclidean) from the north pole of @Dn+1 sends the\nPoincar´e disk Dn to the southern hemisphere of Dn+1.\nThus hyperbolic lines in the Poincar´e disk go to circles on Sn orthogonal to the\nequator Sn−1.\nThere is a more natural construction for this map, using only hyperbolic geometry.\nFor each point p in Hn ⇢Hn+1, consider the hyperbolic ray perpendicular to Hn at\np, and downward normal. This ray converges to a point on the sphere at inﬁnity,\n2.6\nwhich is the same as the Euclidean stereographic image of p.\n2.3. The upper half-space mod",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/figure-img-p022-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 22",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/page-022.md",
+      "narrative": null,
+      "content": "2.4. THE PROJECTIVE MODEL.\nstereographic projection from the top of Sn (which is now on the equator) sends the\nsouthern hemisphere to the upper half-space xn > 0 in Rn+1.\n2.7\nA hyperbolic line, in the upper half-space, is a circle perpendicular to the bounding\nplane Rn−1 ⇢Rn. The hyperbolic metric is ds2 = (1/xn)2 dx2. Thus, the Euclidean\nimage of a hyperbolic object moving toward Rn−1 has size precisely proportional to\nthe Euclidean distance from Rn−1.\n2.4. The projective model.\nThis is obtained by Euclidean orthogonal projection of the southern hemisphere\nof Sn back to the disk Dn. Hyperboli",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/figure-img-p023-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../images/img-p023-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 23",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/page-023.md",
+      "narrative": null,
+      "content": "2. ELLIPTIC AND HYPERBOLIC GEOMETRY\nas the interior of a disk in his visual sphere. As he moves farther up, this visual disk\nshrinks; as he moves down, it expands; but (unlike in Euclidean space), the visual\nradius of this disk is always strictly less than ⇡/2. A line on H2 appears visually\nstraight.\nIt is possible to give an intrinsic meaning within hyperbolic geometry for the\npoints outside the sphere at inﬁnity in the projective model. For instance, in the\ntwo-dimensional projective model, any two lines meet somewhere. The conventional\nsense of meeting means to meet inside the sphere at inﬁ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 24",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/page-024.md",
+      "narrative": null,
+      "content": "2.4. THE PROJECTIVE MODEL.\n2.8a\nEvenly spaced lines. The region inside the circle is a plane, with a base line and a family of\nits perpendiculars, spaced at a distance of .051 fundamental units, as measured along the base\nline shown in perspective in hyperbolic 3-space (or in the projective model). The lines have been\nextended to their imaginary meeting point beyond the horizon. U, the observer, is directly above\nthe X (which is .881 fundamental units away from the base line). To see the view from di↵erent\nheights, use the following table (which assumes that the Euclidean diameter of the circl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 25",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/page-025.md",
+      "narrative": null,
+      "content": "2. ELLIPTIC AND HYPERBOLIC GEOMETRY\nto L, the plane determined by U and K is perpendicular to Q, hence contains M;\nhence the visual line determined by K in the visual sphere of U passes through the\nvisual point determined by K. The converse is similar.\n2.10\nThis gives a one-to-one correspondence between the set of points x outside the\nsphere at inﬁnity, and (in general) the set of hyperplanes L in Hn. L corresponds\nto the common intersection point of all its perpendiculars.\nSimilarly, there is a\ncorrespondence between points in Hn and hyperplanes outside the sphere at inﬁnity:\na point p corres",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/figure-img-p026-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../images/img-p026-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 26",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/page-026.md",
+      "narrative": null,
+      "content": "2.6. TRIGONOMETRY.\n2.11\nThe metric dx2 restricted to this hyperboloid is positive deﬁnite, and it is not\nhard to check that it has constant curvature −1. Any plane through the origin is dx2-\northogonal to the hyperboloid, so it follows from elementary Riemannian geometry\nthat it meets the hyperboloid in a geodesic. The projective model for hyperbolic space\nis reconstructed by projection of the hyperboloid from the origin to a hyperplane in\nRn. Conversely, the quadratic form x2\n1 + · · · + x2\nn −x2\nn+1 can be reconstructed from\nthe projective model. To do this, note that there is a unique quadr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 27",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/page-027.md",
+      "narrative": null,
+      "content": "2. ELLIPTIC AND HYPERBOLIC GEOMETRY\nspace as one sheet of the “sphere” of radius i with respect to the quadratic form\nQ(X) = X2\n1 + · · · + X2\nn −X2\nn+1\nin Rn+1. The set Rn+1, equipped with this quadratic form and the associated inner\nproduct\nX · Y =\nn\nX\ni=1\nX1Y1 −Xn+1Yn+1,\nis called En,1. First we will describe the geodesics on level sets Sr = {X : Q(X) = r2}\nof Q. Suppose that Xt is such a geodesic, with speed\ns =\nq\nQ( ˙Xt).\nWe may di↵erentiate the equations\nXt · Xt = r2,\n˙Xt · ˙Xt = s2,\nto obtain\nXt · ˙Xt = 0,\n˙Xt · ¨Xt = 0,\nand\nXt · ¨Xt = −˙Xt · ˙Xt = −s2.\nSince any geodesic must lie in a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/figure-img-p028-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "target": "../images/img-p028-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 28",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "target": "../sections/page-028.md",
+      "narrative": null,
+      "content": "2.6. TRIGONOMETRY.\nWe will use the notation Y ? to denote this hyperplane, with the normal orientation\ndetermined by Y . (We have seen this correspondence before, in 2.4.)\n2.6.2.\nIf X and Y 2 Hn, then c(X, Y ) = cosh d (X, Y ),\nwhere d (X, Y ) denotes the hyperbolic distance between X and Y .\nTo prove this formula, join X to Y by a geodesic Xt of unit speed. From 2.6.1 we\n2.14\nhave\n¨Xt = Xt,\nXt · ˙X0 = 0,\nso we get c( ¨Xt, Xt) = c(Xt, Xt), c( ˙X0, X0) = 0, c(X, X0) = 1; thus c(X, Xt) = cosh t.\nWhen t = d (X, Y ), then Xt = Y , giving 2.6.2.\nIf X? and Y ? are distinct hyperplanes, then\n2.6.3.\nX",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/figure-img-p029-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../images/img-p029-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 29",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/page-029.md",
+      "narrative": null,
+      "content": "2. ELLIPTIC AND HYPERBOLIC GEOMETRY\n2.6.4.\nX? and Y ? have a common perpendicular () Q has type (1, 1) on hX, Y i\n() c(X, Y )2 > 1\n=) c(X, Y ) = ± cosh\n!\nd (X?, Y ?)\n\"\n.\nThe sign is positive if the normal orientations of the common perpendiculars coincide,\nand negative otherwise.\n2.16\nThe proof is similar to 2.6.2. We may assume X and Y have unit length. Since\nhX, Y i intersects Hn as the common perpendicular to X? and Y ?, Q restricted to\nhX, Y i has type (1, 1). Replace X by −X if necessary so that X and Y lie in the\nsame component of S1\\hX, Y i. Join X to Y by a geodesic Xt of speed i. From",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/figure-img-p030-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "../images/img-p030-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 30",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "../sections/page-030.md",
+      "narrative": null,
+      "content": "2.6. TRIGONOMETRY.\nThere is one more case in which to interpret c(X, Y ):\n2.6.6.\nIf X is a point in Hn and Y ? a hyperplane, then\nc(X, Y ) = sinh\n!\nd (X, Y ?)\n\"\ni\n,\nwhere d (X, Y ?) is the oriented distance.\n2.17\nThe proof is left to the untiring reader.\nWith our dictionary now complete, it is easy to derive hyperbolic trigonometric\nformulae from linear algebra. To solve triangles, note that the edges of a triangle\nwith vertices u, v and w in H2 are U ?, V ? and W ?, where U is a vector orthogonal\nto v and w, etc. To ﬁnd the angles of a triangle from the lengths, one can ﬁnd\nthree vectors u, v",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/figure-img-p031-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../images/img-p031-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 31",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../sections/page-031.md",
+      "narrative": null,
+      "content": "2. ELLIPTIC AND HYPERBOLIC GEOMETRY\n{\np\n−det Ci},\n−adj C = (−det C) · C−1 =\n2\n4\n−✏2✏3(1 −c2\n23)\n−✏12✏3(c13c23 −c12)\n−✏13✏2(c12c23 −c13)\n−✏12✏3(c13c23 −c12)\n−✏1✏3(1 −c2\n13)\n−✏23✏1(c12c13 −c23)\n−✏13✏2(c12c23 −c13)\n−✏23✏1(c12c13 −c23)\n−✏1✏2(1 −c2\n12)\n3\n5 .\nIf v1, v2, v3 is the dual basis, and cij = c(vi, vj), we can compute\n2.6.7.\nc12 = ✏·\nc13c23 −c12\np\n1 −c2\n23\np\n1 −c2\n13\n,\nwhere it is easy to deduce the sign\n✏=\n−✏12✏3\np−✏2✏3\np−✏1✏3\ndirectly. This specializes to give a number of formulas, in geometrically distinct cases.\nIn a real triangle,\n2.6.8.\ncosh C = cos ↵cos β + cos γ\nsin ↵sin β\n,\n2.19\n2.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/figure-img-p032-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../images/img-p032-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/thurston/blocks/figure-img-p032-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../images/img-p032-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 32",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../sections/page-032.md",
+      "narrative": null,
+      "content": "2.6. TRIGONOMETRY.\n2.6.10.\ncosh C = cosh ↵cosh β + cosh γ\nsinh ↵sinh β\n.\n(See also 2.6.18.) Such hexagons are useful in the study of hyperbolic structures on\nsurfaces. Similar formulas can be obtained for pentagons with four right angles, or\nquadrilaterals with two adjacent right angles:\n2.20\nBy taking the limit of 2.6.8 as the vertex with angle γ tends to the circle at\ninﬁnity, we obtain useful formulas:\nThurston — The Geometry and Topology of 3-Manifolds\n23",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/thurston/blocks/figure-img-p033-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "../images/img-p033-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/thurston/blocks/prose-page-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 33",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "../sections/page-033.md",
+      "narrative": null,
+      "content": "2. ELLIPTIC AND HYPERBOLIC GEOMETRY\nγ\n↵\nβ\nC\n2.6.11.\ncosh C = cos ↵cos β + 1\nsin ↵sin β\n,\nand in particular\n2.6.12.\ncosh C =\n1\nsin ↵.\nThese formulas for a right triangle are worth mentioning separately, since they are\nparticularly simple.\n2.21\n24\nThurston — The Geometry and Topology of 3-Manifolds",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

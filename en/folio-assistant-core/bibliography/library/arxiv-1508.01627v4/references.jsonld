@@ -1,0 +1,29 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1508.01627v4",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "REPRESENTATION THEORY An Electronic Journal of the American Mathematical Society (Xxxx XX, XXXX) S 1088-4165(XX)0000-0 A MURNAGHAN–NAKAYAMA RULE FOR VALUES OF UNIPOTENT CHARACTERS IN CLASSICAL GROUPS",
+      "dcterms:issued": "D:20180919",
+      "dcterms:identifier": "https://arxiv.org/abs/1508.01627",
+      "dcterms:abstract": "We derive a Murnaghan–Nakayama type formula for the values of unipotent characters of ﬁnite classical groups on regular semisimple elements. This relies on Asai’s explicit decomposition of Lusztig restriction. We use our formula to show that most complex irreducible characters vanish on some ℓ-singular element for certain primes ℓ. As an application we classify the simple endotrivial modules of the ﬁnite quasi-simple classical groups. As a further application we show that for ﬁnite simple classical groups and primes ℓ≥3 the ﬁrst Cartan invariant in the principal ℓ-block is larger than 2 unless Sylow ℓ-subgroups are cyclic.",
+      "dcterms:source": "library/arxiv-1508.01627v4/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1508.01627v4"
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2111.12409v4",
+  "blocks": [
+    {
+      "id": "library/arxiv-2111.12409v4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-0-introduction.md",
+      "narrative": null,
+      "content": "Introduction",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.12409v4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "History",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-01-history.md",
+      "narrative": null,
+      "content": "\\label{hi}\nThe celebrated Roth's theorem proved in \\cite{roth} asserts that the irrationality measure of a real algebraic number is $2$. An equivalent, but more detailed statement is the following:\n\\begin{thm}[Roth]\nLet $\\alpha$ be a real algebraic number and let $\\varepsilon>0$ be a real number. Then there exists a real constant $C(\\alpha,\\varepsilon)>0$ such that for every pair of coprime integers $(p,q)$ with $q>C(\\alpha,\\varepsilon)$, it holds that:\n$$\n\\left|\\alpha-\\frac{p}{q}\\right|> q^{-2-\\varepsilon}\n$$\n\\end{thm}\n\nThe above statement can be  naturally generalised in different directions",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.12409v4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:2111.12409v4  [math.NT]  13 May 2023\nOn the generalisation of Roth’s theorem\nPaolo Dolce\nFrancesco Zucconi",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.12409v4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Results in this paper",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-02-results-in-this-paper.md",
+      "narrative": null,
+      "content": "The goal of this paper is to generalise Roth's theorem  in a wider framework which includes Corvaja's and Vojta's settings.\n\nThe theory of  adelic curves introduced by Chen and Moriwaki in \\cite{Ch-Mo} provides such natural framework:  an adelic curve $\\mathbb X$ consists of a field $\\mathbb K$ of characteristic $0$ and a measure space $(\\Omega,\\mathcal A, \\mu)$ endowed with a function  $\\phi:\\omega\\mapsto \\vert\\cdot \\vert_{\\omega}$ that maps $\\Omega$ into the set of places of $\\mathbb K$ and such that $\\omega\\mapsto\\log|a|_\\omega$ is  in $L^1(\\Omega,\\mu)$ for any $a\\in\\mathbb K^\\times$. On $\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.12409v4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Adelic curves",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-1-adelic-curves.md",
+      "narrative": null,
+      "content": "\\label{introad}\nWe will use the following notations throughout the whole paper:\n\n$$\\log^+ x := \\max\\{0, \\log x\\}\\,,\\quad \\log^- x := \\min\\{0, \\log x\\}\\,;\\quad\\forall x\\in \\mathbb R_{>0}$$\n\nIn this section we closely follow \\cite[Chapter 3]{Ch-Mo}. For simplicity we restrict to the characteristic $0$ case, but all the definitions work also in positive characteristic.\n\\begin{defn}\\label{AdCu}\n Let $\\mathbb K$ be a field of characteristic $0$,  let $M_{\\mathbb K}$ be the set of all absolute values of $\\mathbb K$ and let $\\Omega=(\\Omega,\\mathcal A, \\mu)$ be a  measure space endowed with  a map \n\\b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.12409v4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The interpolating polynomial",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-2-the-interpolating-polynomial.md",
+      "narrative": null,
+      "content": "\\label{aux}\n\nWe fix a proper adelic curve $\\mathbb X=(\\mathbb K,\\Omega, \\phi)$  and an algebraic closure of $\\mathbb K$. In this section we recall the existence of an interpolating polynomial $\\delta\\in\\mathbb K[X_1,\\ldots,X_N]$ associated to  some elements $\\bm{\\alpha}_1,\\ldots,\\bm{\\alpha}_n\\in\\mathbb K^N$ having some explicit bounds on: the degree, the $\\bm{d}$-index at all the $\\bm{\\alpha}_j$'s and the height. The complete construction of $\\delta$ can be found in \\cite{C}, and we will recall it in appendix \\ref{ap}.\n\nWe fix for the whole section the following data: two natural numbers $n,N\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.12409v4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Integral estimates",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "../sections/sec-005-3-integral-estimates.md",
+      "narrative": null,
+      "content": "\\label{estimates}\nThis technical section is ``the heart'' of the proof of our results since here we will prove some integral bounds for very particular integrable functions $\\theta:S\\subset\\Omega\\to \\mathbb R_{\\ge 0}$. We continue with all the notations fixed in section \\ref{aux} since we want to make full use of Proposition \\ref{interpolationpoly}. \n\nConsider an adelic curve $(\\mathbb K,\\Omega, \\phi)$ and a set of vectors $\\bm{\\alpha}_1,\\ldots,\\bm{\\alpha}_n,\\bm{\\beta}\\in\\mathbb K^N$ which are componentwise different. We construct the following  matrices $T:=T(\\bm{\\alpha}_1,\\ldots\\bm{\\alpha}_n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.12409v4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Roth's theorem for adelic curves (A)",
+      "pageStart": 13,
+      "pageEnd": 17,
+      "target": "../sections/sec-006-4-roths-theorem-for-adelic-curves-a.md",
+      "narrative": null,
+      "content": "\\label{mainsect}\n\n\n\\begin{defn}\\label{st_muequi}\nA proper adelic curve $\\mathbb X=(\\mathbb K,\\Omega, \\mu)$ satisfies the \\emph{ strong $\\mu$-equicontinity condition} if for any measurable set $S\\subset\\Omega$ of finite measure and any real number $\\varepsilon>0$ there exists a finite measurable cover $C_1,\\ldots, C_m$ of $S$ satisfying the following conditions: for all $\\beta\\in\\mathbb K^\\times$ there exists a measurable set $U_{\\beta}\\subset\\Omega_\\infty$ such that $\\mu(U_\\beta)=0$ and\n\\[\n\\left\\vert-\\log^-\\vert\\beta\\vert_{\\omega}+\\log^-\\vert\\beta\\vert_{\\omega'} \\right\\vert<\\varepsilon h(\\beta",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.12409v4/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Roth's theorem for adelic curves (B)",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-007-5-roths-theorem-for-adelic-curves-b.md",
+      "narrative": null,
+      "content": "\\label{mainsect2}\n\nWe weaken Definition \\ref{st_muequi} by requiring the ``equicontinuity property'' outside from sets of arbitrary small measure:\n\\begin{defn}\\label{muequi}\nA proper adelic curve $\\mathbb X=(\\mathbb K,\\Omega, \\mu)$ satisfies the \\emph{$\\mu$-equicontinuity condition} if for any measurable set $S\\subset\\Omega$ of finite measure and any real numbers $\\varepsilon,\\delta>0$ there exists a finite measurable cover $C_1,\\ldots, C_m$ of $S$ satisfying the following conditions. For all $\\beta\\in\\mathbb K^\\times$ there exists a measurable set $U_\\beta\\subset\\Omega_\\infty$ such that $\\mu(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.12409v4/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendices",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/sec-008-appendices.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.12409v4/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Construction of the interpolating polynomial",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-009-a-construction-of-the-interpolating-polynomial.md",
+      "narrative": null,
+      "content": "Construction of the interpolating polynomial\nIn this appendix we will sketch the construction of the interpolating polynomial δ of section 2. For\nall the details the reader can check [Cor97].\nWe employ the same notations of section 2. We are going to construct a complicated matrix\nA(X) depending on the following parameters: s, t1, . . . , tn ∈R, with 0 < s < 1 and 0 < th < N\n2 for\nh = 1, . . . , n. The columns of the matrix are indexed by a ∈GN; the rows are indexed by ih ∈Gth\n(for any h = 1, . . . , n) and moreover we put in+1 ∈Gs. The order on multi-indices is the lexicographic\none.\nA(X) :=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2111.12409v4/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-010-references.md",
+      "narrative": null,
+      "content": "[BG06]\nE. Bombieri and W. Gubler. Heights in diophantine geometry. Cambridge University Press,\nCambridge New York, 2006.\n[BvdP88] E. Bombieri and A. J. van der Poorten. Some quantitative results related to Roth’s theorem.\nJ. Austral. Math. Soc. Ser. A, 45(2):233–248, 1988.\n[BvdP90] E. Bombieri and A. J. van der Poorten. Corrigenda: “Some quantitative results related to\nRoth’s theorem”. J. Austral. Math. Soc. Ser. A, 48(1):154–155, 1990.\n[CM20]\nH. Chen and A. Moriwaki. Arakelov geometry over Adelic curves. Springer, Singapore,\n2020.\n[Cor95]\nP. Corvaja. An explicit version of the theorem of Roth",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

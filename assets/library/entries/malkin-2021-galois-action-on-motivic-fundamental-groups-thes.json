@@ -1,0 +1,1446 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "malkin-2021-galois-action-on-motivic-fundamental-groups-thes",
+  "blocks": [
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Abstract\nOn the Galois Action on Motivic Fundamental Groups\nof Punctured Elliptic and Rational Curves\nNikolay Malkin\n2021\nThe main motive of this thesis is to study the action of the motivic Galois group on the motivic fundamental\ngroup of an algebraic curve 푋punctured at a ﬁnite set of points 푆:\nGalMot ⟳휋Mot\n1\n(푋−푆, 푣0).\n(1)\nThe algebraic, geometric, and analytic aspects of this action are examined in two cases: for 푋= P1 and for 푋\nan elliptic curve.\nTo study this action, we rely on motivic correlators, canonical elements in the fundamental Lie coalgebra\nof the category of mixed motives over",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "List of figures",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-000-list-of-figures.md",
+      "narrative": null,
+      "content": "Introduction\n1\nOne of the trees contributing to CorH(푎, 푏, 푐, 휔). . . . . . . . . . . . . . . . . . . . . . . . . . .\n4\nAbove: The typical term in the 훿푆component of the coproduct.\nBelow: The typical term in the 훿Cas component. . . . . . . . . . . . . . . . . . . . . . . . .\n7\nHodge correlator with two arguments: CorH(푧0, 푧1) = (2휋푖)−1 log |푧0 −푧1|. . . . . . . . . . . . .\n11\nHodge correlator with three arguments. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n11\nShuﬄe relations for Hodge and motivic correlators on P1\n26\nDeﬁnition of Cor∗\nH: CorH(푧0, 0, . . . , 0\n|   {z   }\n푛1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-001-acknowledgments.md",
+      "narrative": null,
+      "content": "Above all, I express gratitude to my advisor, Professor Alexander Goncharov, for introducing me to the\nproblems studied in this thesis, for his patient explanations of mixed motives and much else, and for teaching\nme everything from the quantum dilogarithm to the value of a clear introduction and a daily promenade.\nIn addition, I wish to thank Professors Yifeng Liu and Daniil Rudenko for serving as my thesis readers.\nI thank my teachers, colleagues, and staﬀat Yale, who built a genial and stimulating work environment.\nLastly, I am grateful to my academic brother Oleksii Kislinskyi and to my fa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-002-introduction.md",
+      "narrative": null,
+      "content": "The main motive of this thesis is to study the action of the motivic Galois group on the motivic fundamental\ngroup of an algebraic curve 푋punctured at a ﬁnite set of points 푆:\nGalMot ⟳휋Mot\n(푋−푆, 푣0).\n(1.1)\nThis thesis consists of two parts, in which the algebraic, geometric, and analytic aspects of this action are\nexamined in two cases: for 푋= P1 (Chapter 2) and for 푋an elliptic curve (Chapter 3).\nTo study this action, we rely on motivic correlators, canonical elements in the fundamental Lie coalgebra\nof the category of mixed motives over a number ﬁeld that were constructed by Goncharov in [G9",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hodge and motivic correlators",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-hodge-and-motivic-correlators.md",
+      "narrative": null,
+      "content": "Hodge and motivic correlators",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hodge correlator integrals",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-004-hodge-correlator-integrals.md",
+      "narrative": null,
+      "content": "Hodge correlator integrals\nLet 푋be a complex curve (in this thesis, 푋= P1(C) or an elliptic curve). The Hodge correlator functions,\ndeﬁned in [G9], are functions\nCorH(푥0, . . . , 푥푛),\nwhere each 푥푖is either a point of 푋or a 1-form representing a class in 퐻1(푋; C). The depth of this expression\nis the number of points among the 푥푖minus one, if 푋is an elliptic curve, or the number of points distinct from\n0 among the 푥푖minus one, if 푋= P1. The weight is 푛plus the depth.\nThe Hodge correlators depend on the choice of a tangential base point – a base point 푠∈푋and a tangent\nvector 푣0 at 푠. If 푛= 1 and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 18,
+      "target": "lem-sec-005-02.md",
+      "narrative": null,
+      "content": "If 푥∈CL∨ 푋/퐵,푆,푣0 of type (푝, 푞), and weight 푝+푞> 2, has 훿(CorHod(푥)) = 0, and CorH(푥|푏) = 0 at some 푏∈퐵, then CorHod(푥) = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 18,
+      "target": "lem-sec-005-03.md",
+      "narrative": null,
+      "content": "Suppose 푥∈ \u0010 CLMot 푋,푆,푣∞ \u0011∨ is of type (푝, 푞) with weight 푝+ 푞> 2, 훿CorMot(푥) = 0, and CorH(푟(푥)) = 0 for every embedding 푟: 퐹→C. Then CorMot(푥) = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Correlator coalgebra and fundamental group",
+      "pageStart": 12,
+      "pageEnd": 18,
+      "target": "../sections/sec-005-correlator-coalgebra-and-fundamental-group.md",
+      "narrative": null,
+      "content": "Correlator coalgebra and fundamental group\nWe review the construction of Hodge and motivic correlators from [G9]. The Hodge correlator functions\nCorH(푥0, . . . , 푥푛) of the previous section are upgraded to elements of the Tannakian Lie coalgebra Lie∨\nHod of\nthe category of R-mixed Hodge structures:\nCorHod(푧0, . . . , 푧푛) ∈Lie∨\nHod.\n(1.6)\nThe upgraded Hodge correlators (1.6) satisfy the ﬁrst shuﬄe relations, and their coproduct in the coalgebra\nLie∨\nHod is given by a simple formula, which we state below.\nHodge-theoretic setup\nLet MHSR of be the tensor category of R-mixed Hodge structures and HS",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/thm-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[G9], Theorem 1.12",
+      "pageStart": 12,
+      "pageEnd": 18,
+      "target": "thm-sec-005-01.md",
+      "narrative": null,
+      "content": "(a) For 푥∈CL∨ 푋,푆,푣0, CorH(푥) = (2휋푖)−푛푝(CorHod(푥)), where 푝is the canonical period map Lie∨ Hod →R. (b) The mixed Hodge structure on 휋nil determined by the dual Hodge correlator map coincides with the standard mixed Hodge structure on 휋nil 1 . Furthermore, let 푋/퐵be a smooth curve over a base 퐵. For a collection of nonintersecting sections 푆and choice of relative tangent vector 푣0, we can analogously deﬁne CL∨ 푋/퐵,푆,푣0. In this setting, for 푥∈CL∨ 푋/퐵,푆,푣0, [G9] constructs a connection on the ﬁberwise CorHod(푥) that makes CorHod(푥) a variation of mixed Hodge structures over 퐵. We have the foll",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 25,
+      "target": "lem-sec-007-03.md",
+      "narrative": null,
+      "content": "We translate this result to our setting. Consider the map [푙] : P1 →P1, 푧↦→푧푙(푙∈Z>0). Let 푆′ = [푙]−1(푆). It induces a map [푙]∗: CL푋,푆,푣∞→CL푋,푆′,푣∞, (푧0 ⊗· · · ⊗푧푛)(1) ↦→1 푙(푧′ 0 ⊗· · · ⊗푧′ 푛)(1), where 푧′ 푖=   Í 푦푙 푖=푧푖(푦푖) 푧푖≠0 푙· (0) 푧푖= 0 . The factor 1 푙comes from the degree of the induced map on 퐻2(푋). Then the diagram commutes: CL푋,푆,푣∞ [푙]∗/ CorHod & CL푋,푆′,푣∞ CorHod \u000f Lie∨ HT.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hodge correlators",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-006-hodge-correlators.md",
+      "narrative": null,
+      "content": "all results in Chapter 3 – the second shuﬄe relations for Hodge correlators and the map from the Bianchi\ncomplexes to an algebra of Hodge correlators – should hold with “Hodge” replaced by “motivic”.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mixed Tate motives and correlators on rational curves",
+      "pageStart": 18,
+      "pageEnd": 25,
+      "target": "../sections/sec-007-mixed-tate-motives-and-correlators-on-rational-c.md",
+      "narrative": null,
+      "content": "Mixed Tate motives and correlators on rational curves\nIn this section, we trace in greater detail the constructions of §1.1 in the Tate case. This will mainly be used\nin Chapter 2.\n1.2.1\nHodge correlators\nHodge correlator integrals\nLet 푋= P1(C). The Hodge correlator integrals CorH deﬁned in §1.1.1 can be thought of as functions\nof 푛+ 1 complex variables CorH(푧0, . . . , 푧푛), deﬁned by the expression (1.4) via the Green’s function\n퐺∞(푥, 푦) = (2휋푖)−1 log |푥−푦|.\nLet us consider the simplest examples. The Hodge correlator integral of weight 2 (semiweight1 1) is\nshown in Figure 1.3.\n1. We will very",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/thm-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[G9], Theorem 1.12",
+      "pageStart": 18,
+      "pageEnd": 25,
+      "target": "thm-sec-007-01.md",
+      "narrative": null,
+      "content": "(a) Let 푥∈CL∨ 푋,푆,푣∞be homogeneous of weight 푛. Then CorH(푥) = (2휋푖)−푛푝(CorHod(푥)), where 푝is the canonical period map Lie∨ HT →R. (b) The mixed Hodge structure on 휋nil determined by the dual Hodge correlator map coincides with the standard mixed Hodge structure on 휋nil 1 . Correlators in families The construction of the Hodge correlator coalgebra can be performed over a base. Let 푋→퐵be a smooth family of genus-0 curves. Generalizing from the case of 퐵a point, one simply replaces the punctures 푠by nonintersecting sections 푠: 퐵→푋and the tangential base point by a nonvanishing section 푣∞: 퐵→푇1 푋",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/thm-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[G9], Theorem 1.12",
+      "pageStart": 18,
+      "pageEnd": 25,
+      "target": "thm-sec-007-02.md",
+      "narrative": null,
+      "content": "(a) There is a ﬂat connection on V making it a variation of mixed Hodge structures over M′ 0,푛. (b) This variation coincides with the standard variation of mixed Hodge structures on 휋nil 1 . A consequence of Theorem 1.5 is that the coalgebra structure on CL∨ 푋,푆,푠0 should translate into diﬀerential equations on the periods over M′ 0,푛. We now describe these equations. Extend the period map CorH to a map deﬁned on homogeneous elements by CorH : ∧2CL푋/퐵,푆,푣∞→A1 퐵, 퐶1 ∧퐶2 ↦→2푤2 −1 2(푤−1) CorH(퐶2) 푑C 퐵CorH(퐶1) −2푤1 −1 2(푤−1) CorH(퐶1) 푑C 퐵CorH(퐶2), where 푤푖= wt 퐶푖and 푤= 푤1 + 푤2. Then we have a diag",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 29,
+      "target": "lem-sec-008-02.md",
+      "narrative": null,
+      "content": "Let 푋\\푆be a rational curve over 퐹. Suppose 푥∈ \u0010 CLMot 푋,푆,푣∞ \u0011∨ has weight > 1, 훿CorMot(푥) = 0, and CorH(푟(푥)) = 0 for every embedding 푟: 퐹→C. Then CorMot(푥) = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motivic correlators",
+      "pageStart": 25,
+      "pageEnd": 29,
+      "target": "../sections/sec-008-motivic-correlators.md",
+      "narrative": null,
+      "content": "Motivic correlators\nMixed motives\nLet 퐹be a number ﬁeld and MTM퐹the category of mixed Tate motives over 퐹. It should be a full tensor\nsubcategory of the conjectural mixed motive category MM퐹. It is generated by objects Q(푛) = Q(1) ⊗푛for\n푛∈Z, where Q(1) is the Tate motive, pure of weight −1. This induces a canonical weight ﬁltration on objects\nof MTM퐹. There is a functor gr푊: MTM퐹→PM퐹, where PM퐹is the category of pure motives over\n퐹.\nSuch a category with desirable properties has been constructed by [DG]. If 푋is a rational curve, then\n퐻(푋) is a mixed Tate motive. The simple objects of MTM퐹are Q(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/thm-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 29,
+      "target": "thm-sec-008-01.md",
+      "narrative": null,
+      "content": "If 푥∈Lie∨ MT/퐹is of weight at least 2 with 훿(푥) = 0 and 푝(푟Hod(푥)) = 0 for every embedding 푟: 퐹→C, then 푥= 0. Motivic correlator coalgebra The construction of the Hodge correlator coalgebra CL∨ 푋,푆,푣∞can be upgraded to the motivic setting. The deﬁnition of the motivic correlator coalgebra mimics that of its Hodge realization: \u0010 CLMot 푋,푆,푣∞ \u0011∨ := 푇 \u0010 (Q(1)푆\\{∞})∨\u0011 relations ⊗퐻2(푋), a graded Lie coalgebra in the category of pure motives over 퐹, where the relations imposed are the cyclic symmetry, ﬁrst shuﬄes, and quotient by nonpositive weight. Then CLMot 푋,푆,푣0 is isomorphic to the algebra of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Multiple polylogarithms",
+      "pageStart": 29,
+      "pageEnd": 34,
+      "target": "../sections/sec-009-multiple-polylogarithms.md",
+      "narrative": null,
+      "content": "Multiple polylogarithms\nWe review the properties of multiple polylogarithms ([G3]).\nIt is well known that these functions obey a family of double shuﬄe relations, similar to our relations\nfor the Hodge correlators that we will show in Chapter 2. However, they do not enjoy some of their other\nproperties. They are multi-valued and do not satisfy dihedral symmetry relations. The shuﬄe relations\nbetween multiple polylogarithms involve products, while for Hodge correlators they are linear.\nDeﬁnition and properties\nThe multiple polylogarithms are deﬁned by\nLi푛1,...,푛푟(푧1, . . . , 푧푟) =\nÕ\n0<푘1<···<푘푟",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Shuffle relations for Hodge and motivic correlators on P1",
+      "pageStart": 34,
+      "pageEnd": 34,
+      "target": "../sections/sec-010-shuffle-relations-for-hodge-and-motivic-correlat.md",
+      "narrative": null,
+      "content": "correlators on P1\nThe results of this chapter have appeared in [M2].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction and main results",
+      "pageStart": 34,
+      "pageEnd": 34,
+      "target": "../sections/sec-011-introduction-and-main-results.md",
+      "narrative": null,
+      "content": "Introduction and main results",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary",
+      "pageStart": 34,
+      "pageEnd": 36,
+      "target": "../sections/sec-012-summary.md",
+      "narrative": null,
+      "content": "Summary\nThe Hodge correlators CorH(푧0, 푧1, . . . , 푧푛) are functions of several complex variables, deﬁned by an explicit\nintegral formula in [G9]. They satisfy some linear relations: the dihedral symmetry relations, the distribution\nrelations, and the shuﬄe relations.\nWe found new relations, called second shuﬄe relations. When 푧푖∈{0} ∪휇푁, where 휇푁are the 푁-th\nroots of unity, they should give almost all relations: the results of [G10] suggest that the other relations are\nsporadic, i.e., cannot be described by universal formulae.\nWhen the 푧푖run through a ﬁnite subset 푆of C, the Hodge correlators",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/cor-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 41,
+      "target": "cor-sec-013-01.md",
+      "narrative": null,
+      "content": "The Hodge correlators in weight 3 satisfy the relations: CorH(1, 0, 0, 푥) + CorH(1, 0, 0, 1 −푥) + CorH(1, 0, 0, 1 −푥−1) = CorH(1, 0, 0, 1), (2.6) CorH(0, 푥, 1, 푦) = −CorH(1, 0, 0, 1 −푥−1) −CorH(1, 0, 0, 1 −푦−1) −CorH \u0010 1, 0, 0, 푦 푥 \u0011 −CorH \u0012 1, 0, 0, 1 −푦 1 −푥 \u0013 + CorH \u0012 1, 0, 0, 1 −푦−1 1 −푥−1 \u0013 + CorH(1, 0, 0, 1). (2.7) We have noted that the double shuﬄe and dihedral symmetry relations give all relations between Hodge correlators in weight 2. In weight 3, the Hodge correlators of depth 1 are expressed in terms of the single- valued trilogarithm L3 (see the end of §1.2.3). By the results of [",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hodge correlator integrals and shuffle relations",
+      "pageStart": 36,
+      "pageEnd": 41,
+      "target": "../sections/sec-013-hodge-correlator-integrals-and-shuffle-relations.md",
+      "narrative": null,
+      "content": "Hodge correlator integrals and shuﬄe relations\nThe main result of this chapter is a set of functional equations on the Hodge correlator integrals and the\nHodge-theoretic and motivic upgrades of these relations. Let us ﬁrst state the results for the Hodge correlator\nintegrals.\nSecond shuﬄe relation\nRecall the ﬁrst shuﬄe relation for the Hodge correlator integrals (1.5):\nÕ\n휎∈Σ푖, 푗\nCorH(푥0, 푥휎−1(1), 푥휎−1(2), . . . , 푥휎−1(푖+ 푗)) = 0.\nThe shuﬄe relations may be considered “easy” because they hold on the level of the sum over trees of the\nintegrands in (1.3).\nWe found another relation on the Hodge c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quasidihedral Lie coalgebras",
+      "pageStart": 41,
+      "pageEnd": 44,
+      "target": "../sections/sec-014-quasidihedral-lie-coalgebras.md",
+      "narrative": null,
+      "content": "Quasidihedral Lie coalgebras\nLet 퐺be an abelian group. We use the multiplicative notation for 퐺; the identity element is 1 ∈퐺. Typically,\n퐺will be the multiplicative group of a ﬁeld 퐹× or the group of 푁-th roots of unity 휇푁. We adjoin to 퐺a\nformal element 0, where 0 · 푔= 0 for 푔∈퐺∪{0}.\nWe deﬁne the quasidihedral Lie coalgebra D(퐺). It generalizes the dihedral Lie coalgebra of [G4]. The\naim of the construction of D(퐺) is twofold:\n(1) It is the main combinatorial ingredient in the proof of the double shuﬄe relations for correlators.\n(2) The Lie coalgebra D(퐺) describes the coproduct of motivic c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/thm-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 44,
+      "target": "thm-sec-014-01.md",
+      "narrative": null,
+      "content": "The second shuﬄes form a coideal in e D(퐺). The coproduct on e D(퐺) descends to a well- deﬁned coproduct on D(퐺).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relations for Hodge and motivic correlators",
+      "pageStart": 44,
+      "pageEnd": 45,
+      "target": "../sections/sec-015-relations-for-hodge-and-motivic-correlators.md",
+      "narrative": null,
+      "content": "Relations for Hodge and motivic correlators\nHodge correlators\nRecall from §1.2 that the Hodge correlators are objects in the fundamental Lie coalgebra of the category of\nR-mixed Hodge structures, and are Hodge-theoretic upgrades of the Hodge correlator functions. Speciﬁcally,\ngiven any collection of complex numbers 푧0, . . . , 푧푛, the Hodge correlators CorH(푧0, . . . , 푧푛) were upgraded\nto elements of the Tannakian Lie coalgebra Lie∨\nHT of the category of R-mixed Hodge structures:\nCorHod(푧0, . . . , 푧푛) ∈Lie∨\nHT.\n(2.10)\nThe upgraded Hodge correlators (2.10) satisfy the dihedral and ﬁrst shuﬄe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/thm-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 45,
+      "target": "thm-sec-015-01.md",
+      "narrative": null,
+      "content": "Let 퐹be a number ﬁeld and 푋= P1. (a) Restricted to the subspace of \u0010 CLMot 푋,푆,푣∞ \u0011∨ generated by elements (푥0 ⊗· · · ⊗푥푛)(1) with not all 푥푖equal, the map CorMot factors through D◦(퐹×). (Here 푆⊂P1(퐹) is any ﬁnite set of punctures containing all points appearing in the relation in (b).) (b) Suppose that 푟, 푠> 1 and that not all 푛푖= 0 or not all 푤푖= 1. Then the motivic correlators satisfy the same relation as in Theorem 2.6, with Cor∗ Hod replaced by Cor∗ Mot. (c) The motivic correlators satisfy all specializations of this relation as any subset of the 푤푖(1 ≤푖≤푛) approaches 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Construction of the quasidihedral Lie coalgebra",
+      "pageStart": 45,
+      "pageEnd": 45,
+      "target": "../sections/sec-016-construction-of-the-quasidihedral-lie-coalgebra.md",
+      "narrative": null,
+      "content": "Construction of the quasidihedral Lie coalgebra",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definitions",
+      "pageStart": 45,
+      "pageEnd": 52,
+      "target": "../sections/sec-017-definitions.md",
+      "narrative": null,
+      "content": "Deﬁnitions\nFor an abelian group 퐺, we deﬁned the Lie coalgebra e\nD(퐺) as the quotient of the tensor algebra of Q[퐺∪{0}]\nby cyclic symmetry, ﬁrst shuﬄe, distribution, and scaling relations.\nRecall Theorem 2.5:\nTheorem. The second shuﬄes form a coideal in e\nD(퐺). The coproduct on e\nD(퐺) descends to a well-deﬁned\ncoproduct on D(퐺).\n푤0 . . . 푤푘−1 = 푥푘−1\n0\n0\n푤1 . . . 푤푘= 푥푘\n0\n0\n푥0 = 1\n0\n0\n푥1 = 푤1\n푥푖−1 = 푤1 . . . 푤푖−10\n0\n푤1 . . . 푤푖= 푥푖\n푛푘\n푛0\n푛1\n푛푖\n(푤푘| 푡푘)\n(푤0 | 푡0)\n(푤1 | 푡1)\n(푤푖| 푡푖)\n· · ·\n|   {z   }\n· · ·\n|   {z   }\n· · ·\n|   {z   }\n· · ·\n|   {z   }\n· · ·\n· · ·\nFigure 2.3. Deﬁnition of the genera",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-018-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Step 0",
+      "pageStart": 52,
+      "pageEnd": 71,
+      "target": "lem-sec-018-01.md",
+      "narrative": null,
+      "content": "The shuﬄe relations for |푇푖| =",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-018-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Step 1",
+      "pageStart": 52,
+      "pageEnd": 71,
+      "target": "lem-sec-018-02.md",
+      "narrative": null,
+      "content": "Modulo shuﬄe relations of lower depth and elements 퐶(0, 푥), 훿(푄−푅퐴−푅퐵) = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-018-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Step 2",
+      "pageStart": 52,
+      "pageEnd": 71,
+      "target": "lem-sec-018-03.md",
+      "narrative": null,
+      "content": "Modulo lower-depth shuﬄe relations and terms 퐶(0, 푥) ∧퐶(0, 푦), 훿(푄−푅퐴−푅퐵) =  푚 Õ 푖=1 퐶(0, 푎푖)(푡푖−푣) + 푛 Õ 푗=1 퐶(0, 푏푗)(푢푗−푣)  ∧(푄−푅퐴−푅퐵). (2.31) Proof of Step 1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-018-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 71,
+      "target": "lem-sec-018-04.md",
+      "narrative": null,
+      "content": "Computation 2.16 (Step 1(a)). Modulo shuﬄe relations of lower depth and elements 퐶(0, 푥), 훿푄is given by the sum of expressions (2.74)-(2.78) below. Group all terms of 훿푄by the type of cut as deﬁned in the outline above. Some computational lemmas will simplify the contributions to 훿푄coming from the cuts of each type. The contribution of cuts (1a/b/c/d) is computed in Lemma 2.17, and cuts (2a/b/c) are dealt with in Lemma 2.21.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-018-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 71,
+      "target": "lem-sec-018-05.md",
+      "narrative": null,
+      "content": "Computation 2.18. Case 1 (푖1 −푖0 > 0 and 푗1 −푗0 > 0) contributes 0 to 훿푄.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-018-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 71,
+      "target": "lem-sec-018-06.md",
+      "narrative": null,
+      "content": "Computation 2.19. The contribution of Case 2 (푖1−푖0 = −1) to 훿푄is given by the sum of expressions (2.33)-(2.36) below.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-018-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 71,
+      "target": "lem-sec-018-07.md",
+      "narrative": null,
+      "content": "Computation 2.20. The contribution of Case 3 (푖1 −푖0 = 0) to the 훿푄is given by the sum of expressions (2.45) and (2.46) below.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-018-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 71,
+      "target": "lem-sec-018-08.md",
+      "narrative": null,
+      "content": "Computation 2.21. The contribution of cuts of type (2) to 훿푄is given by the sum of expressions (2.73)-(2.77) below, plus symmetrical terms.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-018-09",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 71,
+      "target": "lem-sec-018-09.md",
+      "narrative": null,
+      "content": "Computation 2.22 (Step 1(b)). Modulo elements 퐶(0, 푥), 훿푅퐵and 훿푅퐴are given by expression (2.91) below and its symmetric expression, respectively.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 2.5",
+      "pageStart": 52,
+      "pageEnd": 71,
+      "target": "../sections/sec-018-proof-of-theorem-25.md",
+      "narrative": null,
+      "content": "Proof of Theorem 2.5\nSummary of the proof\nThe proof of the Theorem 2.5 will be by induction on the depth of the second shuﬄes.\nDeﬁne\nQSh푟,푠(푤1|푆1, . . . , 푤푛|푆푛, 푤0|푆0) =\n=\nÕ\n휎∈Σ푟,푠\n(−1)푟+푠−푀휎횲∗\u0000푤휎−1(1), . . . , 푤휎−1(푀휎), 푤0 | 푆휎−1(1), . . . , 푆휎−1(푀휎), 푆0\n\u0001,\nwhere 푤푖∈퐺with Î\n푖푤푖= 1, and\nQSh\n푟,푠(푤1|푆1, . . . , 푤푛|푆푛, 푤0|푆0) = QSh푟,푠(푤1|푆1, . . . , 푤푛|푆푛, 푤0|푆0)\n(2.28)\n−횲∗\u0000푤1, . . . , 푤푟, 푤{푟+1,...,푟+푠,0} | 푆1, . . . , 푆푟, 푆{푟+1,...,푟+푠,0}\n\u0001\n(2.29)\n−횲∗\u0000푤푟+1, . . . , 푤푟+푠, 푤{1,...,푟,0} | 푆푟+1, . . . , 푆푟+푠, 푆{1,...,푟,0}\n\u0001.\n(2.30)\nWe must show that the elements QSh form a coideal, i.e., their cop",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Specialization theorem for Hodge correlators",
+      "pageStart": 71,
+      "pageEnd": 76,
+      "target": "../sections/sec-019-specialization-theorem-for-hodge-correlators.md",
+      "narrative": null,
+      "content": "Specialization theorem for Hodge correlators\nWe now study how the Hodge correlators over a base 퐵behave when the sections collide. This will require\nextending the theory of Hodge correlators to nodal curves.\nThe correlator Lie coalgebra for nodal curves\nRecall the moduli space M′\n0,푛of 푛distinct points and a distinguished tangent vector on P1. Its Deligne-\nMumford compactiﬁcation M\n′\n0,푛consists of the nodal curves of genus 0, i.e., those whose dual graph is a\ntree and in which every component is a punctured projective line. with 푛marked points and a distinguished\ntangent vector 푣∞.\nLet 푋= Ð\n푖",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/thm-sec-019-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 71,
+      "pageEnd": 76,
+      "target": "thm-sec-019-01.md",
+      "narrative": null,
+      "content": "Suppose 퐵→M′ 0,푛is a family of curves (푋, 푆, 푣∞) extending to 퐵→M ′ 0,푛, with 퐷= 퐵\\ 퐵 a normal crossings divisor, and suppose 푥∈CL∨ 푋/퐵,푆,푠0 of weight 푛> 1. (a) The Deligne’s canonical extension to 퐷of the variation of framed mixed Hodge structures determined by CorHod(푥) is independent of the normal vector to 퐷. Thus there is a specialized map Spec퐷CorHod : \u0010 CL푋/퐵,푆,푣∞→Lie∨ HT/퐷 \u0011 푤>1. (b) This specialized map coincides with the Hodge correlator of the degeneration map: \u0010 CL∨ 푋/퐵,푆,푣∞ \u0011 푤>1 휋퐷/ CorHod \u000f \u0010 CL∨ 푋/퐷,푆,푣∞ \u0011 푤>1 CorHod \u000f (Lie∨ HT/퐵) Spec퐷 / (Lie∨ HT/퐷). . (c) Let 푡= 0 be a local",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The second shuffle relations",
+      "pageStart": 76,
+      "pageEnd": 76,
+      "target": "../sections/sec-020-the-second-shuffle-relations.md",
+      "narrative": null,
+      "content": "The second shuﬄe relations",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proofs of Theorems 2.1, 2.6, and 2.7",
+      "pageStart": 76,
+      "pageEnd": 79,
+      "target": "../sections/sec-021-proofs-of-theorems-21-26-and-27.md",
+      "narrative": null,
+      "content": "Proofs of Theorems 2.1, 2.6, and 2.7\nIn this section we will prove the second shuﬄe relations for Hodge and motivic correlators.\nProof for Hodge correlators\nRecall Theorem 2.6:\nTheorem. (a) Restricted to the subspace of CL∨\n푋,푆,푣∞generated by elements (푥0 ⊗· · · ⊗푥푛)(1) with not\nall 푥푖equal, the map CorHod factors through D◦(C∗). (Here 푆⊂P1(C) is any ﬁnite set of punctures\ncontaining all points appearing in the relation in (b).)\n(b) Suppose that 푟, 푠> 1 and that not all 푛푖= 0 or not all 푤푖= 1. Then the Hodge correlators satisfy the\nrelation:\nÕ\n휎∈Σ푟,푠\n(−1)푟+푠−푀휎Cor∗\nHod(푤휎−1(1)|푛휎−1(1), . . . ,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/thm-sec-021-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 76,
+      "pageEnd": 79,
+      "target": "thm-sec-021-01.md",
+      "narrative": null,
+      "content": "Let 퐹be a number ﬁeld and 푋= P1. (a) Restricted to the subspace of \u0010 CLMot 푋,푆,푣∞ \u0011∨ generated by elements (푥0 ⊗· · · ⊗푥푛)(1) with not all 푥푖equal, the map CorMot factors through D◦(퐹×). (Here 푆⊂P1(퐹) is any ﬁnite set of punctures containing all points appearing in the relation in (b).) (b) Suppose that 푟, 푠> 1 and that not all 푛푖= 0 or not all 푤푖= 1. Then the motivic correlators satisfy the same relation as in Theorem 2.6, with Cor∗ Hod replaced by Cor∗ Mot. (c) The motivic correlators satisfy all specializations of this relation as any subset of the 푤푖(1 ≤푖≤푛) approaches 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/cor-sec-022-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 79,
+      "pageEnd": 82,
+      "target": "cor-sec-022-01.md",
+      "narrative": null,
+      "content": "The Hodge correlators in weight 3 satisfy the relations: CorH(1, 0, 0, 푥) + CorH(1, 0, 0, 1 −푥) + CorH(1, 0, 0, 1 −푥−1) = CorH(1, 0, 0, 1), (2.112) CorH(0, 푥, 1, 푦) = −CorH(1, 0, 0, 1 −푥−1) −CorH(1, 0, 0, 1 −푦−1) −CorH \u0010 1, 0, 0, 푦 푥 \u0011 −CorH \u0012 1, 0, 0, 1 −푦 1 −푥 \u0013 + CorH \u0012 1, 0, 0, 1 −푦−1 1 −푥−1 \u0013 + CorH(1, 0, 0, 1). (2.113)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Applications",
+      "pageStart": 79,
+      "pageEnd": 82,
+      "target": "../sections/sec-022-applications.md",
+      "narrative": null,
+      "content": "Applications\nAdditive shuﬄe relation\nSpecializing all 푤푖to 1 in the second shuﬄe relation, where all 푛푖= 0, we extract an additive second shuﬄe\nrelation, which does not have lower-depth terms:\nCorollary 2.25. Let 푚, 푛> 0. The additive shuﬄe\nÕ\n휎∈Σ푚,푛\nCorH(휀휎−1(1), 휀휎−1(1) + 휀휎−1(2), . . . , 휀휎−1(1) + · · · + 휀휎−1(푚+푛), 0).\nis a constant independent of (휀1, . . . , 휀푛) ∈C푛\\ 0.\nProof. This is a specialization of the second shuﬄe relation with 푤푖= 1 + 푡휀푖as 푡→0. The terms are the\nspecializations of those in the second shuﬄe relation arising from proper shuﬄes. The specializations of the\nlower-dept",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motivic 1 of CM elliptic curves and geometry of Bianchi hyperbolic threefolds",
+      "pageStart": 82,
+      "pageEnd": 82,
+      "target": "../sections/sec-023-motivic-1-of-cm-elliptic-curves-and-geometry-of.md",
+      "narrative": null,
+      "content": "geometry of Bianchi hyperbolic\nthreefolds\nThe results of this chapter have appeared in [M1].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction and main results",
+      "pageStart": 82,
+      "pageEnd": 82,
+      "target": "../sections/sec-024-introduction-and-main-results.md",
+      "narrative": null,
+      "content": "Introduction and main results\nIn this chapter we describe a connection between the realizations of motivic fundamental groups of CM\nelliptic curves and the geometry of Bianchi hyperbolic threefolds. The ﬁrst instance of this connection was\ndescribed by Goncharov in [G8].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary",
+      "pageStart": 82,
+      "pageEnd": 87,
+      "target": "../sections/sec-025-summary.md",
+      "narrative": null,
+      "content": "Summary\nMotivation\nWe aim to study the action of the motivic Galois group on the motivic fundamental group of an elliptic curve\npunctured at the 픭-torsion points with tangential base point 푣0:\nGalMot ⟳휋Mot\n1\n(퐸−퐸[픭], 푣0).\n(3.1)\nThe objects in (3.1) are still conjectural, but we can study them in their realizations. The results of this chapter\nare in the Hodge realization. However, the picture is easiest to introduce in the ℓ-adic realization.\nAs a running example, take 퐸to be the CM elliptic curve 퐸= C/(Z + Z[푖]) and 픭⊂Z[푖] an ideal. The\nℓ-adic realization of the motivic fundamental group, 휋(ℓ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relations for correlators",
+      "pageStart": 87,
+      "pageEnd": 89,
+      "target": "../sections/sec-026-relations-for-correlators.md",
+      "narrative": null,
+      "content": "Relations for correlators\nRecall from §1.1.1 that the Hodge correlators satisfy a ﬁrst shuﬄe relation, and that in Chapter 2 we describe\na family of second shuﬄe relations for correlators on P1, the terms of which were formed by permuting\nquotients of successive arguments. One of the main results of this chapter is that the Hodge correlators on an\nelliptic curve satisfy second shuﬄe relations in depth 2.\n0\n푎\n푎+ 푏\n푆푛1,푛′\n1\n푆푛2,푛′\n2\n푆푛0,푛′\n0\n+\n0\n푏\n푎+ 푏\n푆푛2,푛′\n2\n푆푛1,푛′\n1\n푆푛0,푛′\n0\nFigure 3.2. The highest-depth terms of the second shuﬄe relation on an elliptic curve.\nFor Hodge correlators of depth",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motivic correlators on elliptic curves",
+      "pageStart": 89,
+      "pageEnd": 89,
+      "target": "../sections/sec-027-motivic-correlators-on-elliptic-curves.md",
+      "narrative": null,
+      "content": "Motivic correlators on elliptic curves",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main properties",
+      "pageStart": 89,
+      "pageEnd": 93,
+      "target": "../sections/sec-028-main-properties.md",
+      "narrative": null,
+      "content": "Main properties\nDeﬁnitions\nWe work with a complex elliptic curve 퐸. Recall 푆⊂퐸is a ﬁnite set of punctures. Let O = End(퐸), so\neither O = Z or a lattice in an imaginary quadratic ﬁeld.\nLet 휔, 휔be a symplectic basis for 퐻1(퐸; C). CL∨\n퐸,푆,푣0 is generated by elements\n퐶푠(Ω0, 푠0, . . . , Ω푛, 푠푛) = 휔0,1 ⊗· · · ⊗휔0,푘0\n|                 {z                 }\nΩ0\n⊗{푠0}\n⊗휔1,1 ⊗· · · ⊗휔1,푘1\n|                 {z                 }\nΩ1\n⊗{푠1}\n⊗· · ·\n⊗휔푛,1 ⊗· · · ⊗휔푛,푘푛\n|                  {z                  }\nΩ푛\n⊗{푠푛}\n푠푖∈푆and Ω푖range over the basis of 푇Z(퐻1(퐸, C)) consisting of elements Ë푘푖\n푗=1 휔푖, 푗with 휔푖, 푗∈{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-029-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Change of base point formula",
+      "pageStart": 93,
+      "pageEnd": 100,
+      "target": "lem-sec-029-01.md",
+      "narrative": null,
+      "content": "Suppose that 푝≠푞. Then the following relation holds for Hodge correlators in weight > 2: Cor푝(푥) = Cor푞 \u0000휌푝(푥)\u0001 . (3.11) On the right side stands a sum of correlators obtained from the one on the left by taking all possible replacements of punctures and pairs of adjacent cohomology classes with (푝), taken with the appropriate sign. Before proceeding to the proof, let us illustrate the formula on some examples. In weight 4, Cor푝(푎, 푏, 푐) = Cor푞(푎, 푏, 푐) −Cor푞(푝, 푏, 푐) −Cor푞(푎, 푝, 푐) −Cor푞(푎, 푏, 푝), Cor푝(푎, 푏, 휔, 휔) = Cor푞(푎, 푏, 휔, 휔) −Cor푞(푝, 푏, 휔, 휔) −Cor푞(푎, 푝, 휔, 휔) −Cor푞(푎, 푏, 푝) + Cor푞(푝,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-029-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 93,
+      "pageEnd": 100,
+      "target": "lem-sec-029-03.md",
+      "narrative": null,
+      "content": "There exist elements, independent of choice of symplectic basis of 퐻1(푋), satisfying (3.12).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetric correlators modulo depth",
+      "pageStart": 93,
+      "pageEnd": 100,
+      "target": "../sections/sec-029-symmetric-correlators-modulo-depth.md",
+      "narrative": null,
+      "content": "Symmetric correlators modulo depth\nIn this section, 퐻1(푋) always refers to 퐻1(푋; C).\nChange of base point formula\nFix 푝∈푆. Let us deﬁne a map 휌푝: 푇(퐻1(푋)) →푇(퐻1(푋) ⊕Q[푆]) as follows.\nFor a word 휔1 ⊗· · · ⊗휔푛∈푇(퐻1(푋)),\n휌푝(휔1 ⊗· · · ⊗휔푛) =\nÕ\n푘\n(−1)푘\nÕ\n푖1<푖2,···<푖푘<푛\n푖푗+1>푖푗+1\n휔1 ⊗· · · ⊗(\n\n휔푖푗, 휔푖푗+1\n\n(푝)) ⊗· · · ⊗휔푛,\nwhere ⟨, ⟩is the skew-symmetric pairing: ⟨휔, 휔⟩= −⟨휔, 휔⟩= 1. That is, it is the sum over all possible\nreplacements of pairs (휔⊗휔) and (휔⊗휔) by the puncture 푝, taken with appropriate sign. For example, we\nhave:\n휌푝(1) = 1,\n휌푝(휔) = 휔,\n휌푝(휔⊗휔) = 휔⊗휔,\n휌푝(휔⊗휔) = (휔⊗휔) −(푝),\n휌푝(휔⊗휔⊗휔) = (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/thm-sec-029-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 93,
+      "pageEnd": 100,
+      "target": "thm-sec-029-02.md",
+      "narrative": null,
+      "content": "The symmetric Hodge correlators in weight > 2 are independent of the base point modulo the depth ﬁltration. Formally, let 푥∈퐶푇(퐻1(푋) ⊕Q[푆]). Then there exists e푥, equal to 푥modulo lower-depth terms, such that Cor푝(e푥) is independent of 푝. In terms of generating functions, this theorem implies:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/conj-sec-030-02",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 100,
+      "pageEnd": 101,
+      "target": "conj-sec-030-02.md",
+      "narrative": null,
+      "content": "The second shuﬄe relations for symmetric elliptic Hodge correlators hold modulo the depth ﬁltration. The lower-depth terms are independent of the base point 푠. The lower-depth correction terms in depth > 2 are not known. In particular, the corrected correlators do not satisfy the second shuﬄe relations in higher depth. However, calculations in low weight support this conjecture. We may expect the elliptic relations to be deformations of the relations for P1 (see §3.4.2).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Second shuffle relations",
+      "pageStart": 100,
+      "pageEnd": 101,
+      "target": "../sections/sec-030-second-shuffle-relations.md",
+      "narrative": null,
+      "content": "Second shuﬄe relations\nThe depth 2 case: Dihedral symmetry\nTheorem 3.8. The corrected symmetric Hodge correlators in depth 2 satisfy the second shuﬄe (dihedral\nsymmetry) relations modulo terms of lower depth that are independent of the base point.\nThe corrected element for\n푆푚0,푚′\n0 ⊗(0) ⊗푆푚1,푚′\n1 ⊗(푥1) ⊗푆푚2,푚′\n2 ⊗(푥1 + 푥2)\n+ 푆푚0,푚′\n0 ⊗(0) ⊗푆푚2,푚′\n2 ⊗(푥2) ⊗푆푚1,푚′\n1 ⊗(푥1 + 푥2)\n(3.13)\nlies in the kernel of the map Cor푠for every 푠.\nProof. The corrected element for (3.13 changes sign under the map 푥↦→(푥1 + 푥2 −푥) and reﬂection. On the\nother hand, it is invariant under this operation up to an additi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/thm-sec-030-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 100,
+      "pageEnd": 101,
+      "target": "thm-sec-030-01.md",
+      "narrative": null,
+      "content": "The corrected symmetric Hodge correlators in depth 2 satisfy the second shuﬄe (dihedral symmetry) relations modulo terms of lower depth that are independent of the base point. The corrected element for 푆푚0,푚′ 0 ⊗(0) ⊗푆푚1,푚′ 1 ⊗(푥1) ⊗푆푚2,푚′ 2 ⊗(푥1 + 푥2) + 푆푚0,푚′ 0 ⊗(0) ⊗푆푚2,푚′ 2 ⊗(푥2) ⊗푆푚1,푚′ 1 ⊗(푥1 + 푥2) (3.13) lies in the kernel of the map Cor푠for every 푠.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bianchi hyperbolic threefolds and modular complexes",
+      "pageStart": 101,
+      "pageEnd": 101,
+      "target": "../sections/sec-031-bianchi-hyperbolic-threefolds-and-modular-comple.md",
+      "narrative": null,
+      "content": "Bianchi hyperbolic threefolds and modular complexes",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bianchi tessellations and orbifolds",
+      "pageStart": 101,
+      "pageEnd": 103,
+      "target": "../sections/sec-032-bianchi-tessellations-and-orbifolds.md",
+      "narrative": null,
+      "content": "Bianchi tessellations and orbifolds\nDeﬁnition\nLet 퐾= Q[\n√\n−푑] be an imaginary quadratic ﬁeld with lattice of integers O. The Bianchi tessellation ([B4])\nis an ideal polyhedral tessellation of the upper half-space H3 associated with O, whose cell complex has a\nnatural structure of a complex of GL2(O)-modules. We deﬁne it now.\nLet F be the space of positive semideﬁnite Hermitian forms on (O2 ⊗O C)∗. The subset F of positive\ndeﬁnite forms is a dense open subset of F . We identify H3 and its compactiﬁcation H\n3 = H3 ∪P1(C) with\nthe real projectivizations of F and F , respectively. The action of GL",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-033-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 103,
+      "pageEnd": 106,
+      "target": "lem-sec-033-01.md",
+      "narrative": null,
+      "content": "The map 휓is an isomorphism of complexes of GL2(O)-modules.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Modular complexes",
+      "pageStart": 103,
+      "pageEnd": 106,
+      "target": "../sections/sec-033-modular-complexes.md",
+      "narrative": null,
+      "content": "Modular complexes\nDeﬁnition\nLet O = Z or the lattice of integers in an imaginary quadratic ﬁeld. We are going to deﬁne the modular\ncomplexes 푀•\n푘, complexes of left GL푘(O)-modules that generalize the complexes deﬁned by [G3] for GL푘(Z).\nFix a 푘-dimensional O-vector space 푉. An extended basis of 푉is a sequence of vectors ⟨푣0, 푣1, . . . , 푣푘⟩,\n푣푖∈푉, such that 푣0 + · · · + 푣푘= 0 and 푣1, . . . , 푣푘form a basis of 푉. (Consequently, any other set of 푘vectors\nin this sequence form a basis.) We also use the notation\n[푣1, . . . , 푣푘] = ⟨−푣1 −· · · −푣푘, 푣1, 푣2, . . . , 푣푘⟩,\n[푣1 : · · · : 푣푘] = [푣2 −푣1,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/conj-sec-034-03",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 106,
+      "pageEnd": 109,
+      "target": "conj-sec-034-03.md",
+      "narrative": null,
+      "content": "The map 휃descends to a morphism of complexes 휃: 푇푘⊗Γ1(픭) 푀• 푘→CE• \u0010 gr퐷Lie∨ sym(퐸, 퐸[픭]) \u0011 퐷=푘.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relating the modular and Bianchi complexes to the Galois Lie coalgebra",
+      "pageStart": 106,
+      "pageEnd": 109,
+      "target": "../sections/sec-034-relating-the-modular-and-bianchi-complexes-to-th.md",
+      "narrative": null,
+      "content": "Relating the modular and Bianchi complexes to the Galois Lie coalgebra\nMotivic correlators at torsion points and averaged base point Hodge correlators\nLet 퐸be an elliptic curve, 푝a prime, 픭⊂End퐸a prime over 푝, and 푆= 퐸[픭]. There is an canonical up\nto root of unity choice of tangent vector 푣0 at 0 ∈퐸, given by the Dedekind eta function. Extend it to a\ntranslation-invariant vector ﬁeld on 퐸and take 푣푠to be its ﬁber at 푠.\nRecall that we packaged the Lie coalgebras CL∨\n퐸,푆,푣푠into a coalgebra CL∨\n퐸,푆= É\n푠CL∨\n퐸,푆,푣푠. The\nCL∨\n퐸,푆,푣푠for diﬀerent 푠are canonically isomorphic, so there is a natural diago",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/thm-sec-034-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 106,
+      "pageEnd": 109,
+      "target": "thm-sec-034-01.md",
+      "narrative": null,
+      "content": "The map 휃is a well-deﬁned surjective morphism of complexes of graded O-modules.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/thm-sec-034-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 106,
+      "pageEnd": 109,
+      "target": "thm-sec-034-02.md",
+      "narrative": null,
+      "content": "Let 퐸be one of the CM elliptic curves 퐸= C/Z[푖] or 퐸= C/Z[휌]. Then 휃◦휓: CE• \u0010 gr퐷Lie∨ av(퐸, 퐸[픭]) \u0011 퐷=2 is a surjective morphism of complexes. It is tempting to extend Theorem 3.12 to higher depth by showing the map 휃descends to the modular complex 푀• 푘. This requires showing the second shuﬄe relations for the averaged base point Hodge correlators modulo the depth ﬁltration. The following would follow from Conjecture 3.9:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-036-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 109,
+      "pageEnd": 112,
+      "target": "lem-sec-036-01.md",
+      "narrative": null,
+      "content": "Let 퐸be an elliptic curve over a number ﬁeld. Then, for 푎, 푏, 푐∈퐸[픭] \\ {0} with 푎+ 푏+ 푐= 0, the elements 휃퐸(푎: 푏: 푐) are equal up to a constant multiple to Corav(푎, 푏, 푐).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-036-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 109,
+      "pageEnd": 112,
+      "target": "lem-sec-036-03.md",
+      "narrative": null,
+      "content": "For 퐸any elliptic curve and 푎, 푏∈퐸[픭], Corav(푎, 푏, 푆0,0 ∗푆0,0) = 0, Corav(푎, 푆0,0 ∗푆0,0 ∗푆0,0) = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Applications",
+      "pageStart": 109,
+      "pageEnd": 109,
+      "target": "../sections/sec-035-applications.md",
+      "narrative": null,
+      "content": "Applications",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The weight 4 case: Euler complexes",
+      "pageStart": 109,
+      "pageEnd": 112,
+      "target": "../sections/sec-036-the-weight-4-case-euler-complexes.md",
+      "narrative": null,
+      "content": "The weight 4 case: Euler complexes\nLet us show how the map in Theorem 3.13 generalizes those constructed by [GL, G8]. To be consistent with\nthose sources, we use the motivic language in this section, but the same results hold in the Hodge realization\nas well.\nThe elements 휃퐸\nFor torsion points 푎, 푏, 푐∈퐸with 푎+ 푏+ 푐= 0, elements 휃퐸(푎, 푏, 푐) are constructed by [G8] as follows.\nFor 퐸an elliptic curve over a ﬁeld 푘, 픭⊂End퐸a prime over 푝, and 푧a nonzero 픭-torsion point of 퐸,\nthere are elements 휃퐸(푧), which are 푝-torsion elements in 푘\n∗\n푧⊗Z\nh\n1\n푝\ni\n, where 푘푧is the extension generated\nby the coordin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/thm-sec-036-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 109,
+      "pageEnd": 112,
+      "target": "thm-sec-036-02.md",
+      "narrative": null,
+      "content": "The map 휃′ is a constant multiple of the component of 휃◦휓corresponding to the constant term of the local system 푇2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-037-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 112,
+      "pageEnd": 120,
+      "target": "lem-sec-037-01.md",
+      "narrative": null,
+      "content": "The map 휋퐷is a morphism of coalgebras.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-037-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 112,
+      "pageEnd": 120,
+      "target": "lem-sec-037-03.md",
+      "narrative": null,
+      "content": "(a) Let 푥be an element of D of weight 2. Then CorH(푥) has a logarithmic singularity at 푞= 0, and there are constants 푐, 퐶such that lim푡→∞Cor(퐸휏) H (푥) −퐶 푡−푐Cor(P1) H (휋퐷(푥)) = 0. (b) Let 푥= 푥0 ⊗· · · ⊗푥푛, where each 푥푖∈{푠푎, 휔, 휔}, be a generator in D of weight 푤> 2. Suppose lim푡→∞Cor(퐸휏) H (푥) −Cor(P1) H (휋퐷(푥)) is independent of the choice of 푍푆. Then this diﬀerence is 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/lem-sec-037-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 112,
+      "pageEnd": 120,
+      "target": "lem-sec-037-04.md",
+      "narrative": null,
+      "content": "For 푚0, 푚1, 푚2 ≥0 and 푎, 푏, 푐∈퐸with 푎+ 푏+ 푐= 0, Cor \u0010 퐶푚0,푚1,푚2(푎, 푎+ 푏, 푎+ 푏+ 푐) + 퐶푚0,푚2,푚1(푎, 푎+ 푐, 푎+ 푏+ 푐) \u0011 = 0. This is a diﬀerent version of a second shuﬄe relation. The proof is identical to that of Theorem 3.8 (we may suppose 푎= 0). Now suppose 푎, 푎+ 푏, 푎+ 푐, 푎+ 푏+ 푐are distinct and take the correlator with base point 0 over a family with varying 휏: Cor \u0010 퐶푚0,푚1,푚2(푠푎, 푠푎+푏, 푠푎+푏+푐) + 퐶푚0,푚2,푚1(푠푎, 푠푎+푐, 푠푎+푏+푐) \u0011 = 0. (3.22) An abuse of notation has taken place: the deﬁnition of 퐶is assumed to use the relative 1-forms 휔, 휔as in the previous section. The specialization of the correla",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Degeneration to rational curves: Voronoi complexes and multiple -values",
+      "pageStart": 112,
+      "pageEnd": 120,
+      "target": "../sections/sec-037-degeneration-to-rational-curves-voronoi-complexe.md",
+      "narrative": null,
+      "content": "Degeneration to rational curves: Voronoi complexes and multiple 휁-values\nIn this section we study the behavior of the motivic correlators at the boundary of the moduli space M′\n1,푛of\nelliptic curves with 푛marked points and a distinguished tangent vector. The results here are a new case of the\nspecialization theorem for correlators on rational curves (§2.3), and the deﬁnitions and proof are analogous.\n(We envision a similar picture for other boundary strata and for higher-genus curves, which can be regarded\nas the higher-weight version of the results of Wentworth [W] about degeneration of Green",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/thm-sec-037-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 112,
+      "pageEnd": 120,
+      "target": "thm-sec-037-02.md",
+      "narrative": null,
+      "content": "Suppose 푥∈D is of weight 푛> 2. 푠푎 푠푏 푠푐 · · · · · · 휔 휔∗ 휔 휔∗ | {z } | {z } 푛1 푛2 푠푎 푠푏 푠푐 푠푑 · · · · · · 휔 휔∗ 휔 휔∗ | {z } | {z } 휔 휔∗ 휔 휔∗ | {z } | {z } 휔 휔 푛3 푛4 푛1 푛2 휔휔 푒2휋푖푎 푒2휋푖푏 푒2휋푖푐 · · · · · · | {z } | {z } 푛1 푛2 푒2휋푖푎 푒2휋푖푏 푒2휋푖푐 푒2휋푖푑 · · · · · · | {z } | {z } | {z } | {z } 푛3 푛4 푛1 푛2 Figure 3.5. Bijection used in the proof of Lemma 3.18 (a) This specialization of the Hodge correlator CorHod(푥) coincides with the Hodge correlator of the degen- eration: D푤>2 휋퐷/ CorHod \u000f \u0010 CL∨ P1,푍푆∪{0},푣0 ⊕CL∨ P1,푍푆∪{∞},푣0 \u0011 푤>2 CorHod \u000f Lie∨ Hod/퐵 Spec퐷 / Lie∨ Hod . (b) The Hodge correlator funct",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 120,
+      "pageEnd": 123,
+      "target": "../sections/sec-038-references.md",
+      "narrative": null,
+      "content": "[B1]\nA.A. Beilinson. Higher regulators and values of 퐿-functions. Journal of Soviet Mathematics,\n30(2):2036–2070, 1985.\n[B2]\nA.A. Beilinson. Higher regulators of modular curves. In Applications of algebraic 퐾-theory to\nalgebraic geometry and number theory, volume 5 of Contemporary Mathematics, pages 1–34.\nAMS, 1986.\n[B3]\nA.A. Beilinson. Height pairing between algebraic cycles. In 퐾-theory, arithmetic, and geometry,\nvolume 1289 of Lecture Notes in Mathematics, pages 1–26. Springer, 1987.\n[B4]\nL. Bianchi. Sui gruppi di sostituzioni lineari con coeﬃcienti appartenenti a corpi quadratici imagi-\nna",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/malkin-2021-galois-action-on-motivic-fundamental-groups-thes/blocks/figure-img-p123-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 123,
+      "pageEnd": 123,
+      "target": "../images/img-p123-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

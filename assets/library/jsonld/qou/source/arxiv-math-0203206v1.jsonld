@@ -1,0 +1,71 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0203206v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0203206v1",
+  "contains": [
+    "library/arxiv-math-0203206v1/sections/sec-front-matter",
+    "library/arxiv-math-0203206v1/sections/sec-000",
+    "library/arxiv-math-0203206v1/sections/sec-001",
+    "library/arxiv-math-0203206v1/sections/sec-002",
+    "library/arxiv-math-0203206v1/sections/sec-003",
+    "library/arxiv-math-0203206v1/sections/sec-004",
+    "library/arxiv-math-0203206v1/sections/sec-005",
+    "library/arxiv-math-0203206v1/sections/sec-006",
+    "library/arxiv-math-0203206v1/sections/sec-007",
+    "library/arxiv-math-0203206v1/sections/sec-008",
+    "library/arxiv-math-0203206v1/sections/sec-009",
+    "library/arxiv-math-0203206v1/sections/sec-010",
+    "library/arxiv-math-0203206v1/sections/sec-011",
+    "library/arxiv-math-0203206v1/sections/sec-012",
+    "library/arxiv-math-0203206v1/sections/sec-013",
+    "library/arxiv-math-0203206v1/sections/sec-014",
+    "library/arxiv-math-0203206v1/sections/sec-015",
+    "library/arxiv-math-0203206v1/sections/sec-016"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "arXiv:math/0203206v1 [math.QA] 20 Mar 2002 — We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups which are related to the Tannaka-Krein\n\n**arXiv:math/0203206v1 [math.QA] 20 Mar 2002**\n\n*M. Müger, J. E. Roberts and L. Tuset*\n\n43 pp, 18 sections.\n\n**Abstract.** We give a pedagogical survey of those aspects of the abstract representation theory of quantum groups which are related to the Tannaka-Krein reconstruction problem. We show that every concrete semisimple tensor ∗-category with conjugates is equivalent to the category of ﬁnite dimensional non-degenerate ∗- representations of a discrete algebraic quantum group. Working in the self-dual framework of algebraic quantum groups, we then relate this to earlier results of S. L. Woronowicz and S. Yamagami. We establish the relation between braidings and R-matrices in this context. Our approach emphasizes the role of the natural transformations of the embedding functor. Thanks to the semisimplicity of our categories and the emphasis on representations rather than corepresentations, our proof is more direct and conceptual than previous reconstructions.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 2.1 Tensor Categories; 2.2 Algebraic Quantum Groups; 2.3 Discrete and Compact Case; 2.4 Examples; 3 Representation Theory; 3.1 The Universal Corepresentation; 3.2 Representations vs. Corepresentations as T; 3.3 Conjugates for Representations and Corepre; 4 Cocommutative Algebraic Quantum Groups vs. C; 5 From Concrete Tensor Categories to Discrete ; 5.1 Natural Transformations of $*$-Preserving ; 5.2 Concrete Tensor $*$-Categories and Discret; 5.3 Conjugates and Antipodes: Discrete Quantum; 5.4 The Non-$*$ Case; 6 Concrete Braided and Symmetric Categories",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0203206&metadataPrefix=arXiv), submitted 2002-03-20, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0203206v1",
+    "title_source": "slug",
+    "source_file": "0203206v1.pdf",
+    "source_sha256": "371611f719e6f53ce655b98560163dfc538246e949059cf8c2f790bfc81c154c",
+    "pages": 43,
+    "arxiv": {
+      "id": "math/0203206",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "20 Mar 2002"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

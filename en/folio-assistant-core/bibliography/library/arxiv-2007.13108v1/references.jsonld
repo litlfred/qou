@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2007.13108v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Log concavity and concentration of Lipschitz functions on the Boolean hypercube",
+      "dcterms:creator": [
+        "Shamir†, Ronen Eldan∗and Omer"
+      ],
+      "dcterms:issued": "D:20200727",
+      "dcterms:identifier": "https://arxiv.org/abs/2007.13108",
+      "dcterms:abstract": "It is well-known that measures whose density is the form e−V where V is a uniformly convex potential on Rn attain strong concentration properties. In search of a notion of log-concavity on the discrete hypercube, we consider measures on {−1, 1}n whose multi- linear extension f satisﬁes log ∇2f(x) ⪯βIn, for β ≥0, which we refer to as β-semi-log- concave. We prove that these measures satisfy a nontrivial concentration bound, namely, any Hamming Lipchitz test function ϕ satisﬁes Varν[ϕ] ≤n2−Cβ for Cβ > 0. As a corol- lary, we prove a concentration bound for measures which exhibit the so-called Rayleigh property. Namely, we show that for measures such that under any external ﬁeld (or ex- ponential tilt), the correlation between any two coordinates is non-positive, Hamming- Lipschitz functions admit nontrivial concentration.",
+      "dcterms:source": "library/arxiv-2007.13108v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2007.13108v1"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-fai-projector-coadjoint-orbit",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:fai-projector-coadjoint-orbit",
+  "kind": "lemma",
+  "title": "Rank-1 projectors embed $\\mathbb{P}(V)$ as a coadjoint orbit in $\\mathrm{Ad}(A)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-involutive-structure"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-fai-projector-coadjoint-orbit"
+  ],
+  "tags": [
+    "rank-one-projector",
+    "coadjoint-orbit",
+    "involution",
+    "categorical-trace"
+  ],
+  "leanRef": "qou:QOU.Core.fai_projector_coadjoint_orbit",
+  "text": "fai-projector-coadjoint-orbit.md",
+  "provenance": "authored"
+}

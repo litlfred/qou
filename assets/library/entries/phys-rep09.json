@@ -1,0 +1,2195 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "phys-rep09",
+  "blocks": [
+    {
+      "id": "library/phys-rep09/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/figure-img-p001-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Magnus expansion and some of its applications",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-the-magnus-expansion-and-some-of-its-application.md",
+      "narrative": null,
+      "content": "S. Blanes?, F. Casas, J.A. Oteo‘, J. Ros °**\n\n* Instituto de Matematica Multidisciplinar, Universidad Politécnica de Valencia, E-46022 Valencia, Spain\n> Departament de Matematiques, Universitat Jaume I, E-12071 Castell6n, Spain\n\n© Departament de Fisica Teorica, Universitat de Valéncia, E-46100 Burjassot, Valencia, Spain\n\n4 IFIC, Centre Mixt Universitat de Valéncia-CSIC, E-46100 Burjassot, Valencia, Spain\n\nARTICLE INFO ABSTRACT\n\nArticle history:\n\nAccepted 13 November 2008\nAvailable online 25 November 2008\neditor: D.L. Mills\n\nApproximate resolution of linear systems of differential equations wit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Physics Reports 470 (2009) 151-238\n\nContents lists available at ScienceDirect\n\nPHYSICS REPORTS\n\nPhysics Reports\n\njournal homepage: www.elsevier.com/locate/physrep",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-introduction.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motivation, overview and history",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-motivation-overview-and-history.md",
+      "narrative": null,
+      "content": "The outstanding mathematician Wilhelm Magnus (1907-1990) made important contributions to a wide variety of fields\nin mathematics and mathematical physics [1]. Among them, one can mention combinatorial group theory [2] and his\ncollaboration in the Bateman project on higher transcendental functions and integral transforms [3]. In this report we review\nanother of his long-lasting constructions: the so-called Magnus expansion (hereafter referred to as ME). ME was introduced\nas a tool to solve non-autonomous linear differential equations for linear operators. It is interesting to observe that, in h",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/figure-img-p006-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/figure-img-p006-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mathematical preliminaries and notations",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-mathematical-preliminaries-and-notations.md",
+      "narrative": null,
+      "content": "Here we collect, for the reader’s convenience, some mathematical expressions, terminology and notations which appear\nmost frequently in the text. Needless to say, we have made no attempt at being completely rigorous. We just try to facilitate\nthe casual reading of isolated sections.\n\nAs already mentioned, the natural mathematical habitat for most of the objects we will deal with in this report is a Lie\ngroup, or its associated Lie algebra. Although most of the results discussed in these pages are valid in a more general setting,\nwe will essentially consider only matrix Lie groups and algebras.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/lem-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "lem-sec-005-01.md",
+      "narrative": null,
+      "content": "The derivative of a matrix exponential can be written alternatively as",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/lem-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Baker 1905",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "lem-sec-005-02.md",
+      "narrative": null,
+      "content": "If the eigenvalues of the linear operator adg are different from 2mmi withm € {+1,+2,...}, then dexPg is invertible. Furthermore,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Magnus expansion (ME)",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-the-magnus-expansion-me.md",
+      "narrative": null,
+      "content": "Magnus’ proposal with respect to the linear evolution equation\n\nY(t) = A(H)YO) (30)\nwith initial condition Y (0) = I, was to express the solution as the exponential of a certain function,\nY(t) = exp 2(t). (31)\n\nThis is in contrast to the representation\n\nY(t)h=T (cx [ oc)\n0\n\nin terms of the time-ordering operator J introduced by Dyson [13].\n\nIt turns out that 2(t) in (31) can be obtained explicitly in a number of ways. The crucial point is to derive a differential\nequation for the operator @ that replaces (30). Here we reproduce the result first established by Magnus as Theorem III\nin [4]:\n\nThe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A proof of Magnus' Theorem",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-005-a-proof-of-magnus-theorem.md",
+      "narrative": null,
+      "content": "The proof of this theorem is largely based on the derivative of the matrix exponential map, which we discuss next. Given\na scalar function w(t) € R, the derivative of the exponential is given by d exp(w(t))/dt = w'(t) exp(w(t)). One could think\nof a similar formula for a matrix §2(t). However, this is not the case, since in general [§2, 2’] # 0. Instead, one has the\nfollowing result.\n\nLemma 2. The derivative of a matrix exponential can be written alternatively as\n\nd\n\n(a) a exp(2(t)) = d expe (2’(t)) exp(2(t)), (33)\nd\n\n(b) a exp(2(t)) = exp(2(t))d exp_an(2'(0)), (34)\n\nd 1\n(©) 4, exp(2(t) = | XO",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/thm-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Magnus 1954",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "thm-sec-004-01.md",
+      "narrative": null,
+      "content": "Let A(t) be a known function of t (in general, in an associative ring), and let Y(t) be an unknown function satisfying (30) with Y(0) = I. Then, if certain unspecified conditions of convergence are satisfied, Y(t) can be written in the form",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/thm-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "thm-sec-005-03.md",
+      "narrative": null,
+      "content": "The solution of the differential equation Y' = A(t)Y with initial condition Y(0) = Yo can be written as Y(t) = exp({2(t))Yo with 2(t) defined by",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Formulae for the first terms in Magnus expansion",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-formulae-for-the-first-terms-in-magnus-expansion.md",
+      "narrative": null,
+      "content": "Suppose now that A is of first order in some parameter ¢ and try a solution in the form of a series\n\nQ(t) = > A(t), (40)\n\nn=1\n\nwhere £2, is supposed to be of order e\". Equivalently, we replace A by ¢A in (30) and determine the successive terms of\n\nES\nQ(t) = D> e\"2,(0). (41)\nn=1\nThis can be done explicitly, at least for the first terms, by substituting the series (41) in (39) and equating powers of e.\nObviously, the Magnus series (40) is recovered by taking « = 1. Thus, using the notation A(t;) = Aj, the first four orders\nread\n\n(1) 2, =A,so that\nt\nQ(t) -|/ dtyAy. (42)\n0\n\n(2) 25 = —$[Q;, A]. Thu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Magnus expansion generator",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-007-magnus-expansion-generator.md",
+      "narrative": null,
+      "content": "The above procedure can, indeed, provide a recursive procedure to generate all the terms in the Magnus series (40). Thus,\nby substituting Q(t) = aa 2, into Eq. (39) and equating terms of the same order, one gets in general\n\nQ=A\nQ= 5 Big\nn= TS n>2, (47)\nj=l\nwhere\nSO = IQ, [2 ALM Ge Fe Hie == 1). (48)\n\nNotice that, in the last equation, the order in A has been explicitly reckoned, whereas k represents the number of 2's. The\nnewly defined operators sW can again be calculated recursively. The recurrence relations are now given by\n\nnj\n\nSP =) [2m Sion], 2<isn—1 (49)\n\nm=1\nSi? = [QnA], SU? = ad 1(A).",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Magnus expansion and time-dependent perturbation theory",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-008-magnus-expansion-and-time-dependent-perturbation.md",
+      "narrative": null,
+      "content": "It is not difficult to establish a connection between Magnus series and Dyson perturbative series [13]. The latter gives the\nsolution of (30) as\n\nY(t) =1+ D7 Palo), (52)\n\nn=1\nS. Blanes et al. / Physics Reports 470 (2009) 151-238 163\n\nwhere P,, are time-ordered products\n\nt tn-1\nr= [ ay... f dt, AyA2 ... An\n0 0\n\nwhere A; = A(t;). Then\n\nY- Q(t) = log ( + 00) .\nj=l j=l\n\nAs stated by Salzman [55],\nyy\"\n=P,\" UR, n>2, (53)\nif\nwhere\nR® = So Pi Pig «+= Pip (iy +++) +i, =n)\nobeys the quadratic recursion formula\nn—j+1\n1\nRP = SO RP Rom (54)\npm\nRP =P,, RY = Pr.\n\nEq. (54) represents the Magnus expansion gene",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Graph theoretical analysis of Magnus expansion",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-009-graph-theoretical-analysis-of-magnus-expansion.md",
+      "narrative": null,
+      "content": "The previous recursions allow us, in principle, to express any 2; in the Magnus series in terms of 21, ..., 2,—1. In fact,\nthis procedure has some advantages from a computational point of view. On the other hand, as we have mentioned before,\nwhen the recursions are solved explicitly, 82, can be expanded as a linear combination of terms that are composed from\nintegrals and commutators acting iteratively on A. The actual expression, however, becomes increasingly complex with k, as\nit should be evident from the first terms (42)-(46). An alternative form of the Magnus expansion, amenable also for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Time-symmetry of the expansion",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-010-time-symmetry-of-the-expansion.md",
+      "narrative": null,
+      "content": "The map g! : Y(t) —> Y(t) corresponding to the linear differential equation (30) with Y (to) = Yo is time symmetric,\ngy ‘og! =Id, since integrating (30) from t = to tot = ty for every ty > fo and back to to leads us to the original initial value\nY(to) = Yo. Observe that, according to (3), the map gy! can be expressed in terms of the fundamental matrix (or evolution\noperator) U(t, to) as yf (Yo) = U(ty, to) Yo. Then time-symmetry establishes that\n\nU(to, ty) = U- (ty, to)\nor, in terms of the Magnus expansion,\nQty, to) = —2(to, ty).\n\nTo take advantage of this feature, let us write the solution of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Convergence of the Magnus expansion",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-011-convergence-of-the-magnus-expansion.md",
+      "narrative": null,
+      "content": "As we pointed out in the introduction, from a mathematical point of view, there are at least two different issues of\nparamount importance at the very basis of the Magnus expansion:\n\n(1) (Existence). For what values of t and for what operators A does Eq. (30) admit an exponential solution in the form\nY(t) = exp(Q2(t)) for a certain Q(t)?\n(2) (Convergence). Given a certain operator A(t), for what values of t does the Magnus series (40) converge?\n\nOf course, given the relevance of the expansion, both problems have been extensively treated in the literature since\nMagnus proposed this formalism in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "On the existence of Ω (t)",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-012-on-the-existence-of-ω-t.md",
+      "narrative": null,
+      "content": "In most cases, one is interested in the case where A belongs to a Lie algebra g under the commutator product. In this\ngeneral setting, the Magnus theorem can be formulated as four statements concerning the solution of Y’ = A(t)Y, each one\nmore stringent than the preceding [16]. Specifically,\n\n(A) The differential equation Y’ = A(t)Y has a solution of the form Y(t) = exp 2(t).\n\n(B) The exponent {2(t) lies in the Lie algebra g.\n\n(C) The exponent £2(t) is a continuous differentiable function of A(t) and t, satisfying the nonlinear differential equation\nQ! = dexpy' (A(t).\n\n(D) The operator §2(t) c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/thm-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "thm-sec-012-01.md",
+      "narrative": null,
+      "content": "The equation A(t) = d expg (2) can be solved by 2' = d expy' A(t) for an arbitrary n x n matrix A if and only if none of the differences between any two of the eigenvalues of 92 equals 2xim, where m = +1, +2,..., (m# 0).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Convergence of the Magnus series",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-013-convergence-of-the-magnus-series.md",
+      "narrative": null,
+      "content": "For dealing with the validity of statement (D) one has to analyze the convergence of the series rant 92. Magnus also\nconsidered the question of when the series terminates at some finite index m, thus giving a globally valid 2 = Q,+---+Q2m.\nThis will happen, for instance, if\n\nt\n[ao f Acsas| =0\n0\n\nidentically for all values of t, since then 2 = 0 fork > 1. A sufficient (but not necessary) condition for the vanishing of all\nterms 2, with k > nis that\n\n[A(s1), [A(s2), [A(S3), -.-, [AGn), AGn41)] -- J] = 0\n\nfor any choice of s;,...,5n41. In fact, the termination of the series cannot be established",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/lem-sec-014-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "lem-sec-014-02.md",
+      "narrative": null,
+      "content": "For any x € #,x # 0, Ang{Y(t; €)x, x} < |e] Io \\|A(s) |Ids.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/lem-sec-014-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "lem-sec-014-03.md",
+      "narrative": null,
+      "content": "Let T be a (bounded) operator on #. If Ang{Tx, x} < y and Ang{T'x, x} < y for anyx 4 0,x € H, where Tt denotes the adjoint operator of T, then the spectrum of T, 0 (T), is contained in the set",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An improved radius of convergence",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-014-an-improved-radius-of-convergence.md",
+      "narrative": null,
+      "content": "The previous results on the convergence of the Magnus series have been established for n x n real matrices: if A(t) is a\nreal n x n matrix, then (67) gives a condition for Y(t) to have a real logarithm. In fact, under the same condition, the Magnus\nseries (40) converges precisely to this logarithm, i.e., its sum §2(t) satisfies exp(2(t)) = Y(t) [71].\n\nOne should have in mind, however, that the original expansion was conceived by requiring only that A(t) be a linear\noperator depending on a real variable t in an associative ring (Theorem 1). The idea was to define, in terms of A, an operator\n§2(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/thm-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "thm-sec-014-01.md",
+      "narrative": null,
+      "content": "The function g(e) = log Y(t; €) is an analytic function of ¢ in the set B,, with",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/thm-sec-014-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "thm-sec-014-04.md",
+      "narrative": null,
+      "content": "Let us consider the differential equation Y’ = A(t)Y defined in a Hilbert space #€ with Y(0) = I, and let A(t) bea bounded operator in #. Then, the Magnus series 2(t) = ran Q2x(t), with 2, given by (51) converges in the interval t € [0, T) such that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/ex-sec-015-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "ex-sec-015-01.md",
+      "narrative": null,
+      "content": "Moan and Niesen [71] consider the coefficient matrix",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/ex-sec-015-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "ex-sec-015-02.md",
+      "narrative": null,
+      "content": "Let us introduce the matrices",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Further discussion",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "../sections/sec-015-further-discussion.md",
+      "narrative": null,
+      "content": "Theorem 9 provides sufficient conditions for the convergence of the Magnus series based on an estimate by the norm\nof the operator A. In particular, it guarantees that the operator 2(t) in Y(t) = exp &2(t) can safely be obtained with the\nconvergent series Mer y(t) for 0 < t < T when the terms §2;(t) are computed with (51). A natural question at this stage\nis — what is the optimal convergence domain? In other words, is the bound estimate r, = 7 given by Theorem 9 sharp or\nis there still room for improvement? In order to clarify this issue, we next analyze two simple examples involving 2 x 2\nmat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Magnus expansion and the BCH formula",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-016-magnus-expansion-and-the-bch-formula.md",
+      "narrative": null,
+      "content": "The Magnus expansion can also be used to explicitly obtain the terms of the series Z in\nZ = log(e™! e%2),\nX, and X2 being two non commuting indeterminate variables. As it is well known [41],\n\n00\n\nZ =X, +X + D> GAG, X2), (81)\n\nn=2\nwhere G,,(X1, X2) is a homogeneous Lie polynomial in X; and X2 of grade n; in other words, G, can be expressed in terms\nof X; and X2 by addition, multiplication by rational numbers and nested commutators. This result is often known as the\nBaker-Campbell-Hausdorff (BCH) theorem and proves to be very useful in various fields of mathematics (theory of linear\ndifferential",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/ex-sec-017-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "ex-sec-017-01.md",
+      "narrative": null,
+      "content": "Suppose we have the 2 x 2 matrix A(t) = a(t)X1 + B(t)X2, (84)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminary linear transformations",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-017-preliminary-linear-transformations.md",
+      "narrative": null,
+      "content": "To improve the accuracy and the bounds on the convergence domain of the Magnus series for a given problem, it is quite\ncommon to first consider a linear transformation on the system in such a way that the resulting differential equation can be\nmore easily handled in a certain sense, to be specified for each problem. To illustrate the procedure, let us consider a simple\nexample.\n\nExample. Suppose we have the 2 x 2 matrix\nA(t) = a(t)X1 + B(t)X2, (84)\n\nwhere X;, and X; are given by (76) and @ and # are complex functions of time, a, 8 : R —> C. Then the exact solution of\nY’ =A(t)Y, Y(0) = Lis\n\nt\nJ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Exponential product representations",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/sec-018-exponential-product-representations.md",
+      "narrative": null,
+      "content": "In contrast to Magnus expansion, much less attention has been paid to solutions of (30) in the form of a product of\nexponential operators. Both approaches are by no means equivalent, since, in general, the operators 2, do not commute\nwith each other. For instance, for a quantum system as in Eq. (88), the ansatz U = [| exp(®,) (where @, are skew-Hermitian\noperators to be determined) is an alternative to the Magnus expansion, also preserving the unitarity of the time-evolution\noperator. One such procedure was devised by Fer in 1958 in a paper devoted to the study of systems of linear differentia",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fer method",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "../sections/sec-019-fer-method.md",
+      "narrative": null,
+      "content": "An intuitive way to introduce Fer formalism is the following [59]. Given the matrix linear system Y’ = A(t)Y, Y(O) = I,\nwe know that\n\nY(t) = exp(Fi(t)) (95)\n\nis the exact solution if A commutes with its time integral F,(t) = Io A(s)ds, and Y(t) evolves in the Lie group @ if A lies in\nits corresponding Lie algebra g. If the goal is to respect the Lie-group structure in the general case, we need to ‘correct’ (95)\nwithout losing this important feature.\n\nTwo possible remedies arise in a quite natural way. The first is just to seek a correction A(t) evolving in the Lie algebra\ng so that\n\nY(t) = exp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Wilcox method",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-020-wilcox-method.md",
+      "narrative": null,
+      "content": "A more tractable form of infinite product expansion has been devised by Wilcox [19] in analogy with the Magnus\napproach. The idea, as usual, is to treat ¢ in\n\nY'=cA(t)Y, Y(O)=I (105)\nas an expansion parameter and to determine the successive factors in the product\nY(t) =e eM eM3... (106)\n\nby assuming that W,, is exactly of order e”. Hence, it is clear from the very beginning that the methods of Fer and Wilcox\ngive rise indeed to completely different infinite product representations of the solution Y(t).\n\nThe explicit expressions of W,, W2 and W; are given in [19]. It is noteworthy that the oper",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Wei--Norman factorization",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-021-wei--norman-factorization.md",
+      "narrative": null,
+      "content": "Now suppose that A and Y in Eq. (30) are linear operators and that A(t) can be expressed in the form\n\nm\n\nA(t) = Do uj()X;,  m finite, (110)\ni=1\n\nwhere the u;(t) are scalar functions of time, and Xj, X2, ... , Xm are time-independent operators. Furthermore, suppose that\n\nthe Lie algebra g generated by the X; is of finite dimension | (this is obviously true if A and Y are finite dimensional matrix\n\noperators). Under these conditions, if X;, X2, ... , X; is a basis for g, the Magnus expansion allows us to express the solution\n\nlocally in the form Y(t) = exp()-)_y fi(t)Xi). Wei and Norman, on the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The continuous BCH formula",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-022-the-continuous-bch-formula.md",
+      "narrative": null,
+      "content": "When applied to the equation Y’ = A(t)Y with the matrix A(t) given by (110), the Magnus expansion adopts a particularly\nsimple form. Furthermore, by making use of the structure constants of the Lie algebra, it is relatively easy to get explicit\nexpressions for the canonical coordinates of the first kind fj(t). Let us illustrate the procedure by considering the particular\ncase\n\nA(t) = uy(t)X1 + ug(t)X2.\n\nDenoting by a;(t) = to u;(s)ds, and, for a given function jz,\n\n([») (= i] uj(s)u(s)ds,\n\na straightforward calculation shows that the first terms of $2 in the Magnus expansion can be written as",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalizations of the Magnus expansion",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-023-generalizations-of-the-magnus-expansion.md",
+      "narrative": null,
+      "content": "In view of the attractive properties of the Magnus expansion as a tool to construct approximate solutions of non-\nautonomous systems of linear ordinary differential equations, it is hardly surprising that several attempts have been made\nS. Blanes et al. / Physics Reports 470 (2009) 151-238 177\n\nalong the years, either to extend the procedure to a more general setting or to manipulate the series to achieve further\nimprovements. In this section, we review some of these generalizations, with special emphasis on the treatment of nonlinear\ndifferential equations.\n\nFirst we reconsider an iterative m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Voslamber iterative method",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "../sections/sec-024-voslamber-iterative-method.md",
+      "narrative": null,
+      "content": "Let us consider Eq. (30) when there is a perturbation parameter ¢ in the (in general, complex) matrix A, i-e., Eq. (105).\nTheorem 9 guarantees that, for sufficiently small values of t, Y(t; ¢) = exp 2(t; €), where\n\nA(tre)= vie\" Qy(t). (115)\nn=1\n\nThe advantages of this representation and the approximations obtained when the series is truncated have been sufficiently\nrecognized in the treatment done in previous sections. There is, however, a property of the exact solution not shared by any\ntruncation of the series (115) which could be relevant in certain physical applications: (1/¢) a é\"92,(t) w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/thm-sec-024-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "thm-sec-024-01.md",
+      "narrative": null,
+      "content": "guarantees that, for sufficiently small values of t, Y(t; ¢) = exp 2(t; €), where",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Floquet--Magnus expansion",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-025-floquet--magnus-expansion.md",
+      "narrative": null,
+      "content": "We now turn our attention to a specific case of Eq. (30) with important physical and mathematical applications, namely\nwhen the (complex) n x n matrix-valued function A(t) is periodic with period T. Then further information is available on\nthe structure of the exact solution, as is given by the celebrated Floquet theorem, which ensures the factorization of the\nsolution in a periodic part and a purely exponential factor. More specifically,\n\nY(t) = P(t) exp(tF), (125)\nwhere F and P aren x n matrices, P(t) = P(t + T) for allt and F is constant. Thus, albeit a solution of (30) is not, in general,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/ex-sec-026-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "ex-sec-026-01.md",
+      "narrative": null,
+      "content": "The double bracket equation Y’=[[Y,N],Y], | Y() = Yo € Sym(n) (149)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Magnus expansions for nonlinear matrix equations",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "../sections/sec-026-magnus-expansions-for-nonlinear-matrix-equations.md",
+      "narrative": null,
+      "content": "It is possible to extend the procedure leading to the Magnus expansion for the linear equation (30), and obtain\napproximate solutions for the nonlinear matrix equation\n\nY'=A(t,Y)Y, YO)=Y% 4%, (139)\n\nwhere ¢ is a matrix Lie group, A : R, x % —~> g and g denotes the corresponding Lie algebra. Eq. (139) appears in\nrelevant physical fields such as rigid body mechanics, in the calculation of Lyapunov exponents (¢ = SO(n)) and other\nproblems arising in Hamiltonian dynamics (9 = Sp(n)). In fact, it can be shown that every differential equation evolving on\na matrix Lie group 9, can be written in the f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Treatment of general nonlinear equations",
+      "pageStart": 32,
+      "pageEnd": 35,
+      "target": "../sections/sec-027-treatment-of-general-nonlinear-equations.md",
+      "narrative": null,
+      "content": "As a matter of fact, the Magnus expansion can be formally generalized to any nonlinear explicitly time-dependent\ndifferential equation. Given the importance of the expansion, it has, indeed, been (re)derived a number of times along\nthe years in different settings. We have to mention, in this respect, the work of Agrachev and Gamkrelidze [106-108], and\nS. Blanes et al. / Physics Reports 470 (2009) 151-238 183\n\nStrichartz [53]. In the context of Hamiltonian dynamical systems, the expansion was first proposed in [109] and subsequently\napplied in a more general context in [110] with the aim of des",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Treatment of Hamiltonian systems",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "../sections/sec-028-treatment-of-hamiltonian-systems.md",
+      "narrative": null,
+      "content": "We have seen how the algebraic setting we have developed for linear systems of differential equations may be extended\nformally to nonlinear systems. We will next review how it can be adapted to the important class of Hamiltonian systems. In\nthis context, the role of a Lie bracket of vector fields (156) is played by the classical Poisson bracket [113].\n\nThe Lie algebraic presentation of Hamiltonian systems in Classical Mechanics has been approached in different ways, and\nthe Magnus expansion invoked in this context by diverse authors [114-116]. More explicit use of the Magnus expansion is\ndone",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Magnus expansion and the Chen--Fliess series",
+      "pageStart": 36,
+      "pageEnd": 38,
+      "target": "../sections/sec-029-magnus-expansion-and-the-chen--fliess-series.md",
+      "narrative": null,
+      "content": "Suppose that f in Eq. (159) has the form f(t, x) = an uj(t)f;(x), ie., we are dealing with the nonlinear differential\nequation\n\nXO) = Do ui(t) f(D), x(0) = p, (171)\ni=1\n\nwhere u;(t) are integrable functions of time. Systems of the form (171) appear, for instance, in nonlinear control theory. In\nthat context, the functions u; are the controls and f; are related to the non-varying geometry of the system. Observe that this\nproblem constitutes the natural (nonlinear) generalization of the case studied in Section 2.11.\n\nOne of the most basic procedures for obtaining x(T) for a given T is by applyin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Illustrative examples",
+      "pageStart": 38,
+      "pageEnd": 38,
+      "target": "../sections/sec-030-illustrative-examples.md",
+      "narrative": null,
+      "content": "After having reviewed, in the preceding two sections, the main theoretical aspects of the Magnus expansion and other\nexponential methods, in this section we gather some examples of their application. All of them are standard problems\nof Quantum Mechanics where the exact solution for the evolution operator U(t) is well known. Due to their simplicity,\nhigher order computations are possible with a reasonable amount of effort. The comparison between approximate and\nexact analytic results may help the reader to grasp the advantages as well as the technical difficulties of the methods we\nhave analyz",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "ME in the Interaction Picture",
+      "pageStart": 38,
+      "pageEnd": 38,
+      "target": "../sections/sec-031-me-in-the-interaction-picture.md",
+      "narrative": null,
+      "content": "We illustrate the application of ME in the Interaction Picture (see Section 2.9) by means of two simple time-dependent\nphysical systems frequently encountered in the literature, for which exact solutions are available: the time-dependent forced\nharmonic oscillator, and a particle of spin 3 in a constant magnetic field. In the first case we fix h = 1 for convenience.\n\nAs we will see, ME in the Interaction Picture is appropriate whenever the characteristic time scale of the perturbation is\nshorter than the proper time scale of the system.\n\nTo illustrate and evaluate the quality of the various ap",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Linearly forced harmonic oscillator",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "../sections/sec-032-linearly-forced-harmonic-oscillator.md",
+      "narrative": null,
+      "content": "The Hamiltonian function describing a linearly driven harmonic oscillator reads (h = 1)\n\n= : _ 1 2 2 = V2\nH= Hy +V(t), with Hy = Seo(p? + 4°), Vid) = V2F(Oq (179)\nand f(t) is real. Here q and p stand for the position and momentum operators satisfying [q, p] = iand wo gives the energy\n\nlevel spacing in absence of the perturbation V(t). We introduce the usual operators a, = 34 = ip), so that [a_, a4] = 1.\nWith this notation we have\n\n1\nHy = wo (0.0. + :) . V=fO\\(@a,+a_). (180)\n\nThe eigenstates of Ho are denoted by |n), so that Ho|n) = wo(n + Hn), where n stands for the quantum number. With this\nn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two-level quantum systems",
+      "pageStart": 39,
+      "pageEnd": 43,
+      "target": "../sections/sec-033-two-level-quantum-systems.md",
+      "narrative": null,
+      "content": "The generic Hamiltonian for a two-level quantum system can be written down in the form\n\nno=(2 2) ow\n\nwhere E;(t), E2(t) are real functions and C(t) is, in general, a complex function of t. We define the solvable piece of the\nHamiltonian as the diagonal matrix\n\nHolt) = (0° Eo) (190)\n\nand all the time-dependent interaction described by the function C(t) is considered as a perturbation. In the Interaction\nPicture, the new Hamiltonian reads (see (92))\n\nt\n\n0 C(t) exp (if\n0\n\nC*(t) exp (-i[ av'ott)) 0\n0\n\nwith w = (E; — E2)/h. Suppose now that Hp is time-independent. Then U(t) = exp(Hot)U; (t). Withou",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/figure-img-p041-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 41,
+      "target": "../images/img-p041-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/figure-img-p041-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 41,
+      "target": "../images/img-p041-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/figure-img-p042-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 42,
+      "pageEnd": 42,
+      "target": "../images/img-p042-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/figure-img-p043-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 43,
+      "target": "../images/img-p043-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/figure-img-p043-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 43,
+      "target": "../images/img-p043-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "ME in the Adiabatic Picture",
+      "pageStart": 43,
+      "pageEnd": 44,
+      "target": "../sections/sec-034-me-in-the-adiabatic-picture.md",
+      "narrative": null,
+      "content": "Here we will illustrate the effect of using the Adiabatic Picture introduced in Section 2.9. The use of this type of\npreliminary transformation is convenient whenever the time scale of the interaction is much larger than the proper time of\nthe unperturbed system.\n194 S. Blanes et al. / Physics Reports 470 (2009) 151-238\n\nSince an adiabatic regime conveys a smooth profile for the perturbation, namely, existence of derivatives, the case of the\nrectangular step cannot be properly used for the sake of illustration.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Linearly forced harmonic oscillator",
+      "pageStart": 44,
+      "pageEnd": 44,
+      "target": "../sections/sec-035-linearly-forced-harmonic-oscillator.md",
+      "narrative": null,
+      "content": "For the linearly driven harmonic oscillator, the procedure yields the exact solution, as in the preceding Section 4.1.2,\nalbeit the method is a bit more technically involved [120].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rosen--Zener model",
+      "pageStart": 44,
+      "pageEnd": 45,
+      "target": "../sections/sec-036-rosen--zener-model.md",
+      "narrative": null,
+      "content": "Following [122] we will deal with the Rosen-Zener model (see Section 4.1.2 and [15]) since it allows a clear illustration\nof the adiabatic regime.\n\nThe preliminary linear transformation G(s) defined in (94) for the Hamiltonian (202) is given by G(s) = b- o, where the\nunit vectorb points in the direction b = atk (k = unit vector along the z-axis). Remember that s = t/T is the dimensionless\ntime-variable. The evolution operator then gets factorized as\n\nUg(s) = G'(s)U(8)G(s0), (205)\nwhich, according to (90), satisfies the equation\ndUg -\n—— = He(s)Uc. (206)\nds\n\nHere Hg = —iHg/h is given by\nHe(s) r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/figure-img-p045-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 45,
+      "target": "../images/img-p045-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fer and Wilcox infinite-product expansions",
+      "pageStart": 45,
+      "pageEnd": 45,
+      "target": "../sections/sec-037-fer-and-wilcox-infinite-product-expansions.md",
+      "narrative": null,
+      "content": "Next we illustrate the use of Fer and Wilcox infinite-product expansions by using the same time-dependent systems as\nbefore.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Linearly forced harmonic oscillator",
+      "pageStart": 45,
+      "pageEnd": 45,
+      "target": "../sections/sec-038-linearly-forced-harmonic-oscillator.md",
+      "narrative": null,
+      "content": "Since the commutator [a_, a] is ac-number, Fer iterated Hamiltonians H withn > 1 eventually vanish so that F, = 0\nforn > 2. The Wilcox operators W, with n > 2 in eq. (106) vanish for the same reason. Thus, in this particular case, the\nsecond-order approximation in either method leads to the exact solution of the Schrodinger equation, just as ME did. To\nsum up, the final result reads\n\nU, = e212 — eWieWW2 — efigl2 — eB en ilaay+a%a—) (214)\nwhere a(t) and B(t) are given in (185) and (186), respectively.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two-level quantum system: Rectangular step",
+      "pageStart": 45,
+      "pageEnd": 46,
+      "target": "../sections/sec-039-two-level-quantum-system-rectangular-step.md",
+      "narrative": null,
+      "content": "For the Hamiltonian (194), the first-order Fer and Wilcox operators in the Interaction Picture verify\n\nt\nFp=W, = 2) = [ dt, F(t), (215)\n0\n\nwhere H(t) is given by (198). The explicit expression is collected in (200) (first equation). Analogously, the second equation\nthere also corresponds to the second-order Wilcox operator W2 = 922.\n\nTo proceed further with Fer’s method, we must calculate the modified Hamiltonian A® in (96). After straightforward\nalgebra, one eventually obtains\n\n~ 1 /sin’@ 1 /sin20 ~\nAM. 1 (= —sin20 + — (=\" - c0520) r) (Fi. Ar), (216)\n\n20 @ é\n\nwhere 6 = (2y/€) sin(&/2) (notice",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/figure-img-p046-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 46,
+      "target": "../images/img-p046-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/figure-img-p046-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 46,
+      "target": "../images/img-p046-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Voslamber iterative method",
+      "pageStart": 46,
+      "pageEnd": 47,
+      "target": "../sections/sec-040-voslamber-iterative-method.md",
+      "narrative": null,
+      "content": "Just to keep the same structure as in preceding subsections, we mention that the Voslamber iterative method of\nSection 3.1 also yields the exact solution for the linearly driven harmonic oscillator after computing the second iteration.\n\nNext, for the two-level system with a rectangular step, described by the Hamiltonian (194), we compute the second iterate\n2 and compare with second order ME approximation for U;. As a test, we shall again obtain the transition probability P(t)\ngiven by (196). The expression (193) will be calculated here, assuming: U; ~ exp 2‘ = exp 2;, U; © exp(Qy + 22) and\nU,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/figure-img-p047-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 47,
+      "pageEnd": 47,
+      "target": "../images/img-p047-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/figure-img-p047-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 47,
+      "pageEnd": 47,
+      "target": "../images/img-p047-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Linear periodic systems: Floquet--Magnus formalism",
+      "pageStart": 47,
+      "pageEnd": 48,
+      "target": "../sections/sec-041-linear-periodic-systems-floquet--magnus-formalis.md",
+      "narrative": null,
+      "content": "Next we deal with a periodically driven harmonic oscillator, where the infinite expansions obtained from\nFloquet-Magnus recurrences (see Section 3.2), are utterly summed. Comparison with the exact solution illustrates the\nfeasibility of the method.\n\nThe particular system we consider is described by the Hamiltonian (179) with f(t) = 45 cos wt and wp < w. Once the\nrecurrences of the Floquet-Magnus expansion (see Section 3.2) are explicitly computed for several orders, their general term\n198 S. Blanes et al. / Physics Reports 470 (2009) 151-238\n\n1.0 =\nExact\n—-—-> Iterative-2\n0.8 4 — — — Magnus-2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/figure-img-p048-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 48,
+      "pageEnd": 48,
+      "target": "../images/img-p048-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Numerical integration methods based on the Magnus expansion",
+      "pageStart": 48,
+      "pageEnd": 48,
+      "target": "../sections/sec-042-numerical-integration-methods-based-on-the-magnu.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 48,
+      "pageEnd": 50,
+      "target": "../sections/sec-043-introduction.md",
+      "narrative": null,
+      "content": "The Magnus expansion, as formulated in Section 2, has found extensive use in mathematical physics, quantum chemistry,\ncontrol theory etc, essentially as a perturbative tool in the treatment of the linear equation\nY’=A(t)Y, — Y(to) = Yo. (223)\n\nWhen the recurrence (49)-(50) is applied, one is able to explicitly get the successive terms 2; in the series, defining @ as\nlinear combinations of multivariate integrals containing commutators acting iteratively on the coefficient matrix A, as in\nS. Blanes et al. / Physics Reports 470 (2009) 151-238 199\n\n(42)-(46). As a result, with this scheme, analyti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-044",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Runge--Kutta methods",
+      "pageStart": 50,
+      "pageEnd": 52,
+      "target": "../sections/sec-044-runge--kutta-methods.md",
+      "narrative": null,
+      "content": "The Runge-Kutta (RK) class of methods are possibly the most frequently used algorithms for numerically solving ODEs.\nAmong them, perhaps the most successful during more than half a century has been the 4th-order method, which, applied\nto Eq. (224), provides the following numerical approximation for the integration step t, > thy: = th +h:\n\nY; =Xn\n\nh\nY2 = Xn + hltn, Ys)\nh h\nYs = 1+ 58( t+ 5.¥ (227)\nh\nYq = Xp, + hf | t+ 7%3\n\nh h h\nKnut = Xa te (f1.¥) + 2t(t + A) + 2t(t + a) + (ty + nv.) .\n\nNotice that the function f can always be computed explicitly because each Y; depends only on the Yj, j < i,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-045",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preservation of qualitative properties",
+      "pageStart": 52,
+      "pageEnd": 53,
+      "target": "../sections/sec-045-preservation-of-qualitative-properties.md",
+      "narrative": null,
+      "content": "Notice that the numerical solution provided by the class of Runge-Kutta schemes, and in general by an integrator of the\nform (225), is constructed as a sum of vectors in R¢. Let us point out some (undesirable) consequences of this fact. Suppose,\nfor instance, that x is a vector known to evolve on a sphere. One does not expect that x, built as a sum of two vectors as in\n(225), preserves this feature of the exact solution, whereas approximations of the form X,41 = QnXn, with Q, an orthogonal\nmatrix, clearly lie on the sphere.\n\nIn Section 3.3 we have introduced isospectral flows (143), which incl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-046",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Magnus integrators for linear systems",
+      "pageStart": 53,
+      "pageEnd": 56,
+      "target": "../sections/sec-046-magnus-integrators-for-linear-systems.md",
+      "narrative": null,
+      "content": "Since the Magnus series only converges locally, as we have pointed out before, when the length of the time-integration\ninterval exceeds the bound provided by Theorem 9, and in the spirit of any numerical integration method, the usual\nprocedure consists of dividing the time interval [to, t;] into N steps such that the Magnus series converges in each subinterval\n[tr—1. tn],n = 1,...,N, with ty = ty. In this way, the solution of (223) at the final time ty is represented by\n\nN\n¥ (tw) = | [ exp(2(ty, tn—1))Yo, (240)\n\nn=1\n\nand the series 92 (tn, ta_1) has to be appropriately truncated.\n\nEarly steps",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-047",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From Magnus to Fer and Cayley methods",
+      "pageStart": 56,
+      "pageEnd": 56,
+      "target": "../sections/sec-047-from-magnus-to-fer-and-cayley-methods.md",
+      "narrative": null,
+      "content": "For arbitrary matrix Lie groups, it is feasible to design numerical methods based also on the Fer and Wilcox expansions,\nwhereas for the J-orthogonal group (Eq. (21)) the Cayley transform also maps the Lie algebra onto the Lie group [41] and\nthus it allows us to build a new class of Lie-group methods. Here we briefly show how these integration methods can be\neasily constructed from the previous schemes, based on Magnus. In other words, if the solution of (223) in a neighborhood\nof to is written as\n\nY(to +h) =e? Y. (Magnus) (259)\n= eiMeh™...y) (Fer) (260)\n= eM eS2l |. 52M e5i(y¥) (Symmetric Fer",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-048",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fer based methods",
+      "pageStart": 56,
+      "pageEnd": 57,
+      "target": "../sections/sec-048-fer-based-methods.md",
+      "narrative": null,
+      "content": "To obtain integration methods based on the Fer factorization (260) one applies the Baker-Campbell-Hausdorff (BCH)\nformula after equating to the Magnus expansion (259). More specifically, in the domain of convergence of expansions (259)\nand (260) we can write\n\n2) = gFill) oa) |.\nS. Blanes et al. / Physics Reports 470 (2009) 151-238 207\n\nwhere F; = , is the first term in the Magnus series, F; = O(h*) and F; = O(h’). Then, a p-th order algorithm with\n3 < p <6, based on the Fer expansion requires one to compute Fpl such that\n\nY (ty +h) = ef @2\" y(¢,) + OchPt), (263)\nTaking into account that\n\ner\")",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-049",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cayley-transform methods",
+      "pageStart": 57,
+      "pageEnd": 58,
+      "target": "../sections/sec-049-cayley-transform-methods.md",
+      "narrative": null,
+      "content": "We have seen in Section 1.2 that, for the J-orthogonal group O,(n), the Cayley transform (23) provides a useful alternative\nto the exponential mapping, relating the Lie algebra to the Lie group. This fact is particularly important for numerical\nmethods where the evaluation of the exponential matrix is the most computation-intensive part of the algorithm.\n\nIf the solution of Eq. (223) is written as\n\n1 7 1\nY(t) = (: - 12) (' + 12) Yo (268)\nthen C(t) € 0;(n) satisfies the equation [135]\n1 1\nC=A- 5IC. Al - rae t>to,  C(to) =0. (269)\n\nTime-symmetric methods of order 4 and 6 have been obtained, base",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-050",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Numerical illustration: The Rosen--Zener model revisited",
+      "pageStart": 58,
+      "pageEnd": 60,
+      "target": "../sections/sec-050-numerical-illustration-the-rosen--zener-model-re.md",
+      "narrative": null,
+      "content": "Next we apply the previous numerical schemes to the integration of the differential equation governing the evolution of\na particular quantum two-level system. Our purpose here is to illustrate the main issues involved, and compare the different\napproximations obtained with both the analytical treatment done in Section 4 and the exact result. Specifically, we consider\nthe Rosen-Zener model in the Interaction Picture already analyzed in Section 4.1.2. In this case, the equation to be solved is\nU; = H,(t)U;, or equivalently, Eq. (223) with Y(t) = U;(t) and coefficient matrix (fh = 1)\n\nA(t) = A(t)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/figure-img-p059-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 59,
+      "pageEnd": 59,
+      "target": "../images/img-p059-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/figure-img-p059-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 59,
+      "pageEnd": 59,
+      "target": "../images/img-p059-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/figure-img-p060-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 60,
+      "pageEnd": 60,
+      "target": "../images/img-p060-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-051",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Computing the exponential of a matrix",
+      "pageStart": 60,
+      "pageEnd": 61,
+      "target": "../sections/sec-051-computing-the-exponential-of-a-matrix.md",
+      "narrative": null,
+      "content": "We have seen that the numerical schemes based on the Magnus expansion provide excellent results when applied to Eq.\n(223) with coefficient matrix (272). In fact, they are even more efficient than several Runge-Kutta algorithms. Of course,\nfor this particular example, the number of A(t) evaluations is a good indication of the computational cost required by the\nnumerical schemes, since the evaluation of exp({2) can be done analytically by means of formula (18). In general, however,\nthe matrix exponential also has to be approximated numerically, and thus the performance of the numerical integrati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/figure-img-p061-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 61,
+      "pageEnd": 61,
+      "target": "../images/img-p061-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-052",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Scaling and squaring with Padé approximation",
+      "pageStart": 61,
+      "pageEnd": 62,
+      "target": "../sections/sec-052-scaling-and-squaring-with-padé-approximation.md",
+      "narrative": null,
+      "content": "Among one of the least dubious ways of computing exp(C) is by scaling and squaring in combination with a diagonal\nPadé approximation [139]. The procedure is based on a fundamental property of the exponential function, namely\n\ne& = (eH\n\nfor any integer j. The idea, then, is to choose j to be a power of two for which exp(C /j) can be reliably and efficiently computed,\nand then to form the matrix (exp(C/j))! by repeated squaring. If the integer j is chosen as the smallest power of two for which\n||C||/j < 1, then exp(C/j) can be satisfactorily computed by diagonal Padé approximants of order, say,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-053",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chebyshev approximation",
+      "pageStart": 62,
+      "pageEnd": 63,
+      "target": "../sections/sec-053-chebyshev-approximation.md",
+      "narrative": null,
+      "content": "Another valid alternative is to use polynomial approximations to the exponential of C as a whole. Suppose, in particular,\nthat C is a matrix of the form C = —itH, with H Hermitian and t > 0, as is the case in Quantum Mechanics. In the\nChebyshev approach, the evolution operator exp(—itH) is expanded in a truncated series of Chebyshev polynomials, in\nanalogy with the approximation of a scalar function [144]. As is well known, given a function F(x) in the interval [—1, 1], the\nChebyshev polynomial approximations are optimal, in the sense that the maximum error in the approximation is minimal\ncomp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-054",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Krylov space methods",
+      "pageStart": 63,
+      "pageEnd": 63,
+      "target": "../sections/sec-054-krylov-space-methods.md",
+      "narrative": null,
+      "content": "As we have already pointed out, very often what is really required, rather than the exponential of the matrix C itself,\nis the computation of exp(C) applied to a vector. In this situation, evaluating e° is somehow analogous to computing C~!\nto get the solution of the linear system of equations Cx = b for many different b’s: other procedures are clearly far more\ndesirable. The computation of e“v can be efficiently done with Krylov subspace methods, in which approximations to the\nsolution are obtained from the Krylov spaces spanned by the vectors {v, Cv, C?v, ..., Civ} for some j that is typical",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-055",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Splitting methods",
+      "pageStart": 63,
+      "pageEnd": 64,
+      "target": "../sections/sec-055-splitting-methods.md",
+      "narrative": null,
+      "content": "Frequently, one has to exponentiate a matrix which can be split into several parts which are either solvable or easy to\ndeal with. Let us assume for simplicity that C = A+ B, where the computation e‘ is very expensive, but e“ and e® are cheap\nand easy to evaluate. In such circumstances, it makes sense to approximate e®¢ with ¢, a small parameter, by the following\nscheme:\n\nye = etbmBgeamA .., gebiByraA —_ g&(A+8) 4 @(gPt1) (279)\n\nwith appropriate parameters aj, bj. This can be seen as the approximations to the solution at t = e of the equation\nY’ = (A+ B)Y by a composition of the exact solution",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-056",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Additional numerical examples",
+      "pageStart": 64,
+      "pageEnd": 66,
+      "target": "../sections/sec-056-additional-numerical-examples.md",
+      "narrative": null,
+      "content": "The purpose of Section 5.5 was to illustrate the main features of the numerical schemes based on the Magnus expansion\nin comparison with other standard integrators (such as Runge-Kutta schemes) and other Lie-group methods (e.g., Fer and\nCayley) on a solvable system. For larger systems the efficiency analysis is more challenging since the (exact or approximate)\ncomputation of exponential matrices play an important role on the performance of the methods. It makes sense, then, to\nanalyze from this point of view, more realistic problems, where one necessarily has to approximate the exponential in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/figure-img-p065-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 65,
+      "pageEnd": 65,
+      "target": "../images/img-p065-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/figure-img-p066-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 66,
+      "pageEnd": 66,
+      "target": "../images/img-p066-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-057",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Modified Magnus integrators",
+      "pageStart": 66,
+      "pageEnd": 66,
+      "target": "../sections/sec-057-modified-magnus-integrators.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-058",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Variations on the basic algorithm",
+      "pageStart": 66,
+      "pageEnd": 67,
+      "target": "../sections/sec-058-variations-on-the-basic-algorithm.md",
+      "narrative": null,
+      "content": "The examples collected in Sections 5.5 and 5.7 show that the numerical methods constructed from the Magnus expansion\ncan be, computationally, very efficient indeed. It is fair to say, however, that this efficiency can be seriously affected when\ndealing with certain types of problems.\n\nSuppose, for instance, that one has to numerically integrate a problem defined in SU(n). Although Magnus integrators\nare unconditionally stable in this setting (since they preserve unitarity up to round-off, independently of the step size h), in\npractice only small values of h are used for achieving accurate resu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-059",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Commutator-free Magnus integrators",
+      "pageStart": 67,
+      "pageEnd": 70,
+      "target": "../sections/sec-059-commutator-free-magnus-integrators.md",
+      "narrative": null,
+      "content": "All numerical methods based on the Magnus expansion appearing in the preceding sections require the evaluation\nof a matrix exponential which contains several nested commutators. As we have repeatedly pointed out, computing the\nexponential is frequently the most consuming part of the algorithm. There are problems where the matrix A(t) has a\nsufficiently simple structure which allows one to efficiently approximate the exponential exp(A(t;)), or the exponential\nof a linear combination of the matrix A(t) evaluated at different points. In some sense, this is equivalent to having efficient\nmethods t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-060",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Magnus integrators for nonlinear differential equations",
+      "pageStart": 70,
+      "pageEnd": 70,
+      "target": "../sections/sec-060-magnus-integrators-for-nonlinear-differential-eq.md",
+      "narrative": null,
+      "content": "The success of Magnus methods applied to the numerical integration of linear systems has motivated several attempts to\nadapt the schemes for solving time dependent nonlinear differential equations. For completeness we present some recently\nproposed generalizations of Magnus integrators. We consider two different problems: (i) a nonlinear matrix equation\ndefined in a Lie group, and (ii) a general nonlinear equation to which the techniques of Section 3.4 can be applied.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-061",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Nonlinear matrix equations in Lie groups",
+      "pageStart": 70,
+      "pageEnd": 70,
+      "target": "../sections/sec-061-nonlinear-matrix-equations-in-lie-groups.md",
+      "narrative": null,
+      "content": "As we have already mentioned, the strategy adopted by most Lie-group methods for solving the nonlinear matrix\ndifferential equation (139),\n\nY=A(L,Y)Y, YO =%E¥Y\n\ndefined in a Lie group 9, whilst preserving its Lie group structure, is to lift Y(t) from % to the underlying Lie algebra g\n(usually with the exponential map), then formulate and numerically solve there an associated differential equation, and\nfinally map the solution back to 9. In this way, the discretization procedure works in a linear space rather than in the Lie\ngroup. In particular, the idea of the so-called Runge-Kutta-Munthe-Kaa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-062",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The general nonlinear problem",
+      "pageStart": 70,
+      "pageEnd": 71,
+      "target": "../sections/sec-062-the-general-nonlinear-problem.md",
+      "narrative": null,
+      "content": "In principle, it is possible to adapt all methods built for linear problems to the general nonlinear non-autonomous\nequation (159)\n\nx’ = f(t, x),\nor equivalently, the operator differential equation (160),\n\nfore ot, =\na? 7 fy) Y= Xo.\n\nAs we pointed out in Section 3.4, there are two problematic aspects when designing practical numerical schemes based on\nMagnus expansion in the nonlinear case. The first one is how to compute or approximate the truncated Magnus expansion\n(or its action on the initial conditions). The second one is how to evaluate the required Lie transforms. For example, to\ncomput",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-063",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some applications of the numerical integrators based on ME",
+      "pageStart": 71,
+      "pageEnd": 72,
+      "target": "../sections/sec-063-some-applications-of-the-numerical-integrators-b.md",
+      "narrative": null,
+      "content": "In this section we collect several examples where the numerical integration methods based on the Magnus expansion\nhave been applied in the recent literature. Special attention is dedicated to the numerical integration of the Schrédinger\nequation, since the Magnus series expansion has been extensively used in this setting almost since its very formulation.\nThe time-independent Schrédinger equation can be considered as a particular example of a Sturm-Liouville problem, so we\nalso review the applicability of Magnus based techniques in this context. Then we consider a particular nonlinear system\n(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/figure-img-p072-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 72,
+      "pageEnd": 72,
+      "target": "../images/img-p072-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-064",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Case study: Numerical treatment of the Schrödinger equation",
+      "pageStart": 72,
+      "pageEnd": 72,
+      "target": "../sections/sec-064-case-study-numerical-treatment-of-the-schrödinge.md",
+      "narrative": null,
+      "content": "Before embarking on the use of numerical methods based on the Magnus expansion in the integration of the Schrodinger\nequation, let us establish first the theoretical framework which allows one to use numerical integrators in this setting for\nobtaining approximate solutions in time and space.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-065",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Time-dependent Schrödinger equation",
+      "pageStart": 72,
+      "pageEnd": 75,
+      "target": "../sections/sec-065-time-dependent-schrödinger-equation.md",
+      "narrative": null,
+      "content": "To keep the treatment as simple as possible, we commence by considering the one-dimensional time-dependent\nSchrédinger equation (fi = 1)\na) 1 a?\ni—w(t,x) = Hw(t,x) = —~— W(t, x) + V@)w(e, x), (311)\nat 2 dx?\nwith initial condition y (0, x) = Wo(x). If we look for a solution of the form y(t, x) = $(t)g(x), itis clear that, by substituting\ninto (311), one gets #(t) = e~, where E is a constant and (x) is the solution of the second order differential equation\n\noy\n\ndx?\nIf E > V the solution is oscillatory, whereas if E < V the solution is a linear combination of exponentially increasing and\ndecreasi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-066",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Time-independent Schrödinger equation",
+      "pageStart": 75,
+      "pageEnd": 75,
+      "target": "../sections/sec-066-time-independent-schrödinger-equation.md",
+      "narrative": null,
+      "content": "Restricting ourselves to the time-independent Schrédinger equation (312), we next illustrate how Magnus integrators\ncan, in fact, be used to compute the discrete eigenvalues defined by the problem. Although only the Schrodinger equation\nin a finite domain is considered,\n\nCo\n\ndx?\nthe procedure can be easily adapted to other types of eigenvalue problems, in which one has to find both A = E and ¢. Here\nit is assumed that the potential is smooth, V € C™(a, b) and, for simplicity, g(a) = gy(b) = 0.\n\nUnder these assumptions, it is well known that the eigenvalues are real, distinct and bounded from b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-067",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sturm--Liouville problems",
+      "pageStart": 75,
+      "pageEnd": 76,
+      "target": "../sections/sec-067-sturm--liouville-problems.md",
+      "narrative": null,
+      "content": "The system defined by (328) with boundary conditions g(a) = y(b) = Ois just one particular example of a second order\nSturm-Liouville problem [186,187]. It is thus quite natural to try to apply Magnus integrators to more general problems\nwithin this class.\n226 S. Blanes et al. / Physics Reports 470 (2009) 151-238\n\nA second order Sturm-Liouville eigenvalue problem has the form\n\nd dy\n= | p(x) = (x) } + a@)y(x) = Ar(x)y(x)_ on (a, b) (331)\ndx dx\n\nwith separated boundary conditions which commonly have the form\n\nAiy(a) + A2p(a)y'(a) =0 Bi y(b) + Bop(b)y'(b) = 0 (332)\n\nfor given constants A;, Bj and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-068",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The differential Riccati equation",
+      "pageStart": 76,
+      "pageEnd": 78,
+      "target": "../sections/sec-068-the-differential-riccati-equation.md",
+      "narrative": null,
+      "content": "Let us now consider the two-point boundary value problem in the t variable defined by the linear differential equation\n\n»_ (vi A(t) Bit)\\ (yi;\n= = , O<t<T 334\ny (Y cw) Diy) \\y, <ts< (334)\nwith separated boundary conditions\n(Kir Ki2) (¥:) =n, (K21 K22) (7) =). (335)\nY2} (=o Y2) par\n\nHere A € C1*4,B € C1*?,C © CP*4, D © CP*?, whereas y;, y2 € C’, y2, v1 € C4 and the matrices Kj have appropriate\ndimensions. We next introduce the time-dependent change of variables (or picture) y = Yo(t)w, with\n\nYo(t) = (to ?) (336)\n\nand choose the matrix X € C?*4 so as to ensure that in the new variables w = Y, (O",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-069",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stochastic differential equations",
+      "pageStart": 78,
+      "pageEnd": 80,
+      "target": "../sections/sec-069-stochastic-differential-equations.md",
+      "narrative": null,
+      "content": "In recent years, the use of stochastic differential equations (SDEs) has become widespread in the simulation of random\nphenomena appearing in physics, engineering, economics etc, such as turbulent diffusion, polymer dynamics and investment\nfinance [197]. Although models based on SDEs can offer a more realistic representation of the system than ordinary\ndifferential equations, the design of effective numerical schemes for solving SDEs is, in comparison with ODEs, a less\ndeveloped field of research. This fact notwithstanding, it is true that, recently, new classes of integration methods have\nbee",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-070",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Physical applications",
+      "pageStart": 80,
+      "pageEnd": 80,
+      "target": "../sections/sec-070-physical-applications.md",
+      "narrative": null,
+      "content": "From previous sections it should be clear that ME has a strong bearing on both Classical and Quantum Mechanics. As\nfar as Classical Mechanics is concerned, this has been most explicitly shown in Section 3.4. On its turn Quantum Mechanics\nhas been repeatedly invoked as a source of applications, among others, in Sections 2.9 and 4. In this section we present ina\nvery schematic way, and with no aim at completeness, some applications of ME in different areas of the physical sciences.\nThis will show that, over the years, ME has been one of the preferred options to deal with Eq. (4) which, under dif",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-071",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Nuclear, atomic and molecular physics",
+      "pageStart": 80,
+      "pageEnd": 80,
+      "target": "../sections/sec-071-nuclear-atomic-and-molecular-physics.md",
+      "narrative": null,
+      "content": "As far as we know, the first physical application of ME dates back to 1963. Robinson [18] published a brand new formalism\nto investigate multiple Coulomb excitations of deformed nuclei. As a matter of fact, he states explicitly that only after\ncompletion of his work did he discover the ME. His derivation of ME formulas is certainly worth reading.\n\nThe Coulomb excitation process yields information about the low lying nuclear states. Prior to Robinson’s work, the\ntheory was essentially based on perturbation expansions, which requires that the bombarding energy is kept so low that\nno nuclear reac",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-072",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Nuclear magnetic resonance: Average Hamiltonian theory",
+      "pageStart": 80,
+      "pageEnd": 81,
+      "target": "../sections/sec-072-nuclear-magnetic-resonance-average-hamiltonian-t.md",
+      "narrative": null,
+      "content": "This is certainly the field where ME has been most systematically used and so we consider it separately. From\nelementary quantum mechanics, it is known that a constant magnetic field breaks the degeneracy of the energy levels of\nan atomic nucleus with spin. If the nuclear spin is s then 2s + 1 sub-levels appear. In a sample, these states are occupied,\naccording to Boltzman distribution, with an exponentially distributed population. When a time-dependent radio-frequency\nelectromagnetic field of appropriate frequency is applied, energy can be absorbed by certain nuclei, which are consequently\npr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-073",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum field theory and high energy physics",
+      "pageStart": 81,
+      "pageEnd": 82,
+      "target": "../sections/sec-073-quantum-field-theory-and-high-energy-physics.md",
+      "narrative": null,
+      "content": "The starting point of any quantum field theory (QFT) calculation is again Eq. (4) which is conventionally treated by time-\ndependent perturbation theory. So the first question which arises is the connection between ME and Dyson-type series.\nThis has already been dealt with in Section 2.4. The main advantage of the first one is, as has already been repeatedly\npointed out, that the unitary character of the evolution operator is preserved at all orders of approximation. In the historical\ndevelopment of QFT it was, however, the Dyson approach which was followed. The lost of unitarity was not thoug",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-074",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Electromagnetism",
+      "pageStart": 82,
+      "pageEnd": 82,
+      "target": "../sections/sec-074-electromagnetism.md",
+      "narrative": null,
+      "content": "The Maxwell equations govern the evolution of electromagnetic waves. The equations are linear in the usual form and,\nalthough they have been extensively studied, the complexity of obtaining approximate solutions is rather significant. When\nreformulating the equations for a given problem, where the geometry, the boundary conditions etc, are considered, and\nappropriate discretizations are taken into account, it is common to end with linear non-autonomous equations, so the\nMagnus expansion can be of interest here.\n\nTo illustrate some possible applications, let us consider the Maxwell equations\n\nO",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-075",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Optics",
+      "pageStart": 82,
+      "pageEnd": 83,
+      "target": "../sections/sec-075-optics.md",
+      "narrative": null,
+      "content": "In the review paper [228] one can find references to some early applications of ME to Optics. For example, to Hamiltonians\ninvolving the generators of SU(2), SU(1, 1) and Heisenberg—Weyl groups, with applications to laser-plasma scattering and\npulse propagation in free-electron lasers. Here, as representatives of the more modern interest of ME in Optics, we quote\ntwo applications referring to Helmholtz equation, and to the study of Stokes parameters.\n\nHelmholtz equation in one spatial dimension with a variable refractive index n(x) reads\n\nW(x) + Pr? (x) W(x) = 0, (358)\nwhere k is the wavenumbe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-076",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "General Relativity",
+      "pageStart": 83,
+      "pageEnd": 83,
+      "target": "../sections/sec-076-general-relativity.md",
+      "narrative": null,
+      "content": "To illustrate, once more, the pervasive presence of the linear differential equation (4), let us mention reference [237] in\nwhich the aim is to determine the time elapsed between two events when the space-time is treated as in General Relativity.\nThen it turns out to be necessary to solve a two-point boundary value problem for null geodesics. In so doing, one needs\nto know a Jacobian whose expression involves a 8 x 8 matrix function obeying the basic Eq. (4). In [237] an eighth order\nnumerical method from [39] is used, which is proved to be an efficient scheme.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-077",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Search of periodic orbits",
+      "pageStart": 83,
+      "pageEnd": 83,
+      "target": "../sections/sec-077-search-of-periodic-orbits.md",
+      "narrative": null,
+      "content": "The search of periodic orbits for some non-linear differential autonomous equations, x’ = f(x), x € R¢ is of interest in\nCelestial Mechanics (periodic orbits of the N-body problem) as well as in the general theory of dynamical systems. Due to\nthe complexity of this process, it is important to have efficient numerical algorithms.\n\nThe Lindstedt-Poincaré technique is frequently used to calculate periodic orbits. An iterative process proposed in [238]\nconsists of starting with a guessed periodic orbit, and this guess is subsequently improved by solving a correlation non-\nautonomous linear differe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-078",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometric control of mechanical systems",
+      "pageStart": 83,
+      "pageEnd": 84,
+      "target": "../sections/sec-078-geometric-control-of-mechanical-systems.md",
+      "narrative": null,
+      "content": "Many mechanical systems studied in control theory can be modeled by an ordinary differential equation of the form\n[90,239]\n\nX() = folx() + D> uit) £iK(0), (361)\n\ni=1\n234 S. Blanes et al. / Physics Reports 470 (2009) 151-238\n\ninitialized at x(0) = p. Here x € R¢ represents all the possible states of the system, fj are (real) analytic vector fields and\nthe function u = (uy, ..., Um) (the controls) is assumed to be integrable with respect to time and taking values in a compact\nsubset U C R™. The vector field fy is called the drift vector field, whereas f;, i > 1, are referred to as the control ve",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-079",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions",
+      "pageStart": 84,
+      "pageEnd": 84,
+      "target": "../sections/sec-079-conclusions.md",
+      "narrative": null,
+      "content": "In this report, we have thoroughly reviewed the abiding work on Magnus expansion carried out over more than fifty\nyears, from very different perspectives.\n\nAs a result of a real interdisciplinary activity, some aspects of the original formulation have been refined. This applies,\nfor example, to the convergence properties of the expansion which have been much sharpened.\n\nIn other features, much practical progress has been made. This is the case of the calculation of the terms of the series, both\nexplicitly and recurrently. New techniques, like the ones borrowed from graph theory, have also prof",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-080",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 84,
+      "pageEnd": 85,
+      "target": "../sections/sec-080-acknowledgments.md",
+      "narrative": null,
+      "content": "One of us (J.A.O) was introduced to the field of Magnus expansion by Prof. Silvio Klarsfeld (Orsay) to whom we also\nacknowledge his continuous interest in our work. Encouraging comments by Prof. A.J. Dragt (Maryland) in early stages of\nour involvement with ME are deeply acknowledged. During the last decade, we have benefited from enlightening discussions\nwith, and useful comments by, Prof. Arieh Iserles. We would like to thank him for that, as much as for the kind hospitality\nextended to us during our visits to his group in DAMTP in Cambridge. We also thank Prof. Iserles for providing us with",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/phys-rep09/blocks/prose-sec-081",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 85,
+      "pageEnd": 88,
+      "target": "../sections/sec-081-references.md",
+      "narrative": null,
+      "content": "[1] W. Abikoff, J.S. Birman, K. Kuiken (Eds.), The Mathematical Legacy of Wilhelm Magnus. Groups, Geometry and Special Functions, American\nMathematical Society, 1994.\n[2] W. Magnus, A. Karrass, D. Solitar, Combinatorial Group Theory, Dover, 2004.\n[3] A. Erdelyi, W. Magnus, F. Oberhettinger, F.G. Tricomi, Higher Transcendental Functions, Vols. |, II, III, McGraw Hill, 1953.\n[4] W. Magnus, On the exponential solution of differential equations for a linear operator, Commun. Pure Appl. Math. VII (1954) 649-673.\n[5] K.O. Friedrichs, Mathematical aspects of the quantum theory of fields, part V, Comm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

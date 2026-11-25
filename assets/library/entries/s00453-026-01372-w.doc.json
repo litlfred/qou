@@ -1,0 +1,841 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "s00453-026-01372-w",
+  "title": "Concentration of Submodular Functions and Read-k Families Under Negative Dependence",
+  "variant": "pdf",
+  "pages": 19,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Concentration of Submodular Functions and Read-k Families Under Negative Dependence",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-concentration-of-submodular-functions-and-read-k"
+    },
+    {
+      "level": 2,
+      "title": "Abstract",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-abstract"
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Preliminaries",
+      "number": "2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-2-preliminaries"
+    },
+    {
+      "level": 3,
+      "title": "Notions of Negative Dependence",
+      "number": "2.1",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-21-notions-of-negative-dependence"
+    },
+    {
+      "level": 3,
+      "title": "Submodular Functions",
+      "number": "2.2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-22-submodular-functions"
+    },
+    {
+      "level": 2,
+      "title": "Submodular Chernoff Bounds",
+      "number": "3",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-3-submodular-chernoff-bounds"
+    },
+    {
+      "level": 3,
+      "title": "1-Negative Association and Weak Negative Regression",
+      "number": "3.1",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-31-1-negative-association-and-weak-negative-regr"
+    },
+    {
+      "level": 3,
+      "title": "Proof of Submodular Concentration",
+      "number": "3.2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-32-proof-of-submodular-concentration"
+    },
+    {
+      "level": 3,
+      "title": "Concentration of read-k families",
+      "number": "3.3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-33-concentration-of-read-k-families"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-acknowledgements"
+    },
+    {
+      "level": 2,
+      "title": "A 1-Negative Association and Weak Negative Regression",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "B Concentration of Read-k Families",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "References",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4,
+      "summary": null,
+      "keywords": [],
+      "extract": "Algorithmica (2026) 88:21 https://doi.org/10.1007/s00453-026-01372-w",
+      "extractCut": false,
+      "blocks": [
+        "library/s00453-026-01372-w/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-concentration-of-submodular-functions-and-read-k",
+      "number": null,
+      "title": "Concentration of Submodular Functions and Read-k Families Under Negative Dependence",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 38,
+      "summary": null,
+      "keywords": [],
+      "extract": "Families Under Negative Dependence Sharmila Duppala1 · George Z. Li2 · Juan Luque1 · Aravind Srinivasan1 · Renata Valieva1 Received: 8 May 2025 / Accepted: 21 January 2026 / Published online: 16 February 2026 © The Author(s) 2026",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-abstract",
+      "number": null,
+      "title": "Abstract",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 120,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "submodular functions",
+          "heading": false
+        },
+        {
+          "term": "random variables",
+          "heading": false
+        },
+        {
+          "term": "concentration",
+          "heading": false
+        },
+        {
+          "term": "dependent-rounding",
+          "heading": false
+        }
+      ],
+      "extract": "We study the question of whether submodular functions of random variables satisfying various notions of negative dependence satisfy Chernoff-like concentration inequal- ities. We prove such a concentration inequality for the lower tail when the random variables satisfy negative association or negative regression, partially resolving an open problem raised in ([1]). Previous work showed such concentration results for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": "5",
+      "words": 1895,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "submodular concentration",
+          "heading": false
+        },
+        {
+          "term": "pipage rounding",
+          "heading": false
+        },
+        {
+          "term": "rounding algorithms",
+          "heading": false
+        },
+        {
+          "term": "swap rounding",
+          "heading": false
+        },
+        {
+          "term": "submodular maximization",
+          "heading": false
+        },
+        {
+          "term": "lower-tail bound",
+          "heading": false
+        },
+        {
+          "term": "submodular functions",
+          "heading": false
+        },
+        {
+          "term": "random variables",
+          "heading": false
+        }
+      ],
+      "extract": "Concentration inequalities are ubiquitous in discrete mathematics and theoretical com- puter science [5, 6]. The most canonical examples are the Chernoff-Hoeffding bounds, which show strong concentration for linear combinations of independent random vari- ables [7, 8]. In some applications, the condition of independence is too restrictive, so weaker notions have been considered [9–11]. Of interest to us is the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-004-21-notions-of-negative-dependence",
+      "number": "2.1",
+      "title": "Notions of Negative Dependence",
+      "level": 3,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 426,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cylinder dependence",
+          "heading": false
+        },
+        {
+          "term": "strong rayleigh",
+          "heading": false
+        },
+        {
+          "term": "random variables",
+          "heading": false
+        },
+        {
+          "term": "rayleigh property",
+          "heading": false
+        },
+        {
+          "term": "regression",
+          "heading": false
+        },
+        {
+          "term": "association",
+          "heading": false
+        },
+        {
+          "term": "non-decreasing",
+          "heading": false
+        },
+        {
+          "term": "strengthening",
+          "heading": false
+        }
+      ],
+      "extract": "We begin by deﬁning the notion of negative dependence commonly found in the literature. Negative Cylinder Dependence. A collection of Boolean random variables X1, . . . , Xn is said to be negative cylinder dependent if for every S ⊆[n], E \u0002\u0003 i∈S Xi \u0004 ≤\u0003 i∈S E [Xi] and E \u0002\u0003 i∈S (1 −Xi) \u0004 ≤\u0003 i∈S E [1 −Xi] . Negative cylinder dependence is the weaker notion considered here. It is known to imply Chernoff bounds for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-22-submodular-functions",
+      "number": "2.2",
+      "title": "Submodular Functions",
+      "level": 3,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 300,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "submodular functions",
+          "heading": true
+        },
+        {
+          "term": "supermodular",
+          "heading": false
+        },
+        {
+          "term": "multilinear extension",
+          "heading": false
+        }
+      ],
+      "extract": "We also give a quick review of the basics of submodular functions. Submodular Functions. We say that a function f : {0, 1}n →R is submodular if f (X1, . . . , Xi−1, 1, Xi+1, . . . Xn) −f (X1, . . . , Xi−1, 0, Xi+1, . . . Xn) is a non-increasing function of X1, . . . , Xi−1, Xi+1, . . . , Xn for each i ∈[n]. When viewing the binary input of f as the indicator vector for a set, this is equivalent to the more common",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-3-submodular-chernoff-bounds",
+      "number": "3",
+      "title": "Submodular Chernoff Bounds",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-31-1-negative-association-and-weak-negative-regr",
+      "number": "3.1",
+      "title": "1-Negative Association and Weak Negative Regression",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 242,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "regression",
+          "heading": true
+        },
+        {
+          "term": "association",
+          "heading": true
+        },
+        {
+          "term": "binary random",
+          "heading": false
+        },
+        {
+          "term": "weak",
+          "heading": true
+        },
+        {
+          "term": "random variables",
+          "heading": false
+        },
+        {
+          "term": "remaining random",
+          "heading": false
+        }
+      ],
+      "extract": "We ﬁrst deﬁne the weaker notion of negative dependence which we work with, called 1-negative association, and prove some simple properties about it. We also deﬁne a related notion of weak negative regression, which is the analogue of 1-negative asso- ciation for the notion of negative regression, and we show the equivalence between the two for binary random variables and show that weak negative regression is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-32-proof-of-submodular-concentration",
+      "number": "3.2",
+      "title": "Proof of Submodular Concentration",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 10,
+      "labelStart": "7",
+      "labelEnd": "10",
+      "words": 1276,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "submodular",
+          "heading": true
+        },
+        {
+          "term": "supermodular function",
+          "heading": false
+        },
+        {
+          "term": "marginal distributions",
+          "heading": false
+        },
+        {
+          "term": "random variables",
+          "heading": false
+        },
+        {
+          "term": "same marginal",
+          "heading": false
+        },
+        {
+          "term": "ﬁnal inequality",
+          "heading": false
+        },
+        {
+          "term": "independent random",
+          "heading": false
+        },
+        {
+          "term": "chernoff bound",
+          "heading": false
+        }
+      ],
+      "extract": "We will now prove our main result. As mentioned in the introduction, our proof is based on the standard technique of bounding the exponential moments, which can be enhanced using the p-th moment method. The following lemma contains our main technical contribution, which implies that the exponential moments of f (X1, . . . , Xn) under 1-negative association are dominated by that under independence. Our results will",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-33-concentration-of-read-k-families",
+      "number": "3.3",
+      "title": "Concentration of read-k families",
+      "level": 3,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "12",
+      "words": 974,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "read-k families",
+          "heading": true
+        },
+        {
+          "term": "supermodular functions",
+          "heading": false
+        },
+        {
+          "term": "random variables",
+          "heading": false
+        },
+        {
+          "term": "submodular functions",
+          "heading": false
+        },
+        {
+          "term": "chernoff bound",
+          "heading": false
+        },
+        {
+          "term": "concentration",
+          "heading": true
+        },
+        {
+          "term": "averaged expectation",
+          "heading": false
+        },
+        {
+          "term": "associated random",
+          "heading": false
+        }
+      ],
+      "extract": "In this subsection, we illustrate an application of our proof technique to give concen- tration for a read-k family of supermodular functions. Read-k families arise naturally in problems such as subgraph counting in random graphs, and can be seen as a comple- mentary weak dependence notion to that of low-degree polynomials [29]. Our work gives the ﬁrst concentration results for these problems under negative",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 17,
+      "labelStart": "12",
+      "labelEnd": "17",
+      "words": 2058,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "commons licence",
+          "heading": false
+        },
+        {
+          "term": "regression",
+          "heading": false
+        },
+        {
+          "term": "random variables",
+          "heading": false
+        },
+        {
+          "term": "creative commons",
+          "heading": false
+        },
+        {
+          "term": "read-k",
+          "heading": false
+        },
+        {
+          "term": "binary random",
+          "heading": false
+        },
+        {
+          "term": "association",
+          "heading": false
+        },
+        {
+          "term": "dom variables",
+          "heading": false
+        }
+      ],
+      "extract": "Author Contributions All ﬁve authors participated in discussion of the proofs, reviewed and approved the ﬁnal version of the manuscript. Funding All authors were supported in part by NSF award number CCF-1918749. Data Availability No datasets were generated or analysed during the current study. Declarations Competing interests Funding: All authors were supported in part by NSF award number CCF-1918749. Employment:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-references",
+      "number": null,
+      "title": "References",
+      "level": 3,
+      "pageStart": 17,
+      "pageEnd": 19,
+      "labelStart": "17",
+      "labelEnd": "19",
+      "words": 837,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "annual acm",
+          "heading": false
+        },
+        {
+          "term": "annual acm-siam",
+          "heading": false
+        },
+        {
+          "term": "acm symposium",
+          "heading": false
+        },
+        {
+          "term": "dagstuhl leibniz-zentrum",
+          "heading": false
+        },
+        {
+          "term": "schloss dagstuhl",
+          "heading": false
+        },
+        {
+          "term": "leibniz-zentrum für",
+          "heading": false
+        },
+        {
+          "term": "dependent rounding",
+          "heading": false
+        },
+        {
+          "term": "ieee computer",
+          "heading": false
+        }
+      ],
+      "extract": "1. Qiu, F., Singla, S.: Submodular dominance and applications. In: Chakrabarti, A., Swamy, C. (eds.) Approximation, Randomization, and Combinatorial Optimization. Algorithms and Techniques, APPROX/RANDOM 2022. LIPIcs, vol. 245, pp. 44–14421. Schloss Dagstuhl - Leibniz-Zentrum für Informatik, ??? (2022). https://doi.org/10.4230/LIPIcs.APPROX/RANDOM.2022.44 2. Chekuri, C., Vondrák, J., Zenklusen, R.: Dependent",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "submodular concentration",
+      "heading": true
+    },
+    {
+      "term": "random variables",
+      "heading": false
+    },
+    {
+      "term": "monotone submodular",
+      "heading": false
+    },
+    {
+      "term": "submodular functions",
+      "heading": true
+    },
+    {
+      "term": "binary random",
+      "heading": false
+    },
+    {
+      "term": "submodular maximization",
+      "heading": false
+    },
+    {
+      "term": "supermodular functions",
+      "heading": false
+    },
+    {
+      "term": "dependent random",
+      "heading": false
+    },
+    {
+      "term": "independent random",
+      "heading": false
+    },
+    {
+      "term": "associated random",
+      "heading": false
+    },
+    {
+      "term": "read-k families",
+      "heading": true
+    },
+    {
+      "term": "chernoff bound",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 14,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 13,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p17); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 13 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/s00453-026-01372-w"
+  }
+}

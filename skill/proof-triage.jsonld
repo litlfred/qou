@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/proof-triage.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/proof-triage",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "proof-triage",
+      "title": "Proof Triage & Resolution",
+      "description": "Systematically triages and resolves `sorry` stubs across the Lean codebase. Inventories all sorry sites, orders them by dependency, attempts proofs using mathlib/library search, and escalates to a proof writer with similar-lemma suggestions when stuck.",
+      "instructionsPath": "skills/local/proof-triage.md",
+      "instructionLines": 376,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

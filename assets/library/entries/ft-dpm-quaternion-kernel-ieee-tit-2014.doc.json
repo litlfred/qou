@@ -1,0 +1,1863 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "ft-dpm-quaternion-kernel-ieee-tit-2014",
+  "title": "Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions",
+  "variant": "pdf",
+  "pages": 14,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "INTRODUCTION",
+      "number": "I",
+      "page": 1,
+      "pageLabel": "5736",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-i-introduction"
+    },
+    {
+      "level": 1,
+      "title": "INCE",
+      "number": "S",
+      "page": 1,
+      "pageLabel": "5736",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-s-ince"
+    },
+    {
+      "level": 1,
+      "title": "QUATERNION VECTOR SPACES",
+      "number": "II",
+      "page": 2,
+      "pageLabel": "5737",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-ii-quaternion-vector-spaces"
+    },
+    {
+      "level": 2,
+      "title": "The Quaternion Division Ring",
+      "number": "A",
+      "page": 2,
+      "pageLabel": "5737",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-a-the-quaternion-division-ring"
+    },
+    {
+      "level": 2,
+      "title": "Quaternion-Valued Hilbert Spaces",
+      "number": "B",
+      "page": 2,
+      "pageLabel": "5737",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-b-quaternion-valued-hilbert-spaces"
+    },
+    {
+      "level": 1,
+      "title": "QUATERNION REPRODUCING KERNEL",
+      "number": "III",
+      "page": 3,
+      "pageLabel": "5738",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-iii-quaternion-reproducing-kernel"
+    },
+    {
+      "level": 2,
+      "title": "Riesz Representation Theorem",
+      "number": "A",
+      "page": 3,
+      "pageLabel": "5738",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-a-riesz-representation-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Moore-Aronszajn Theorem",
+      "number": "B",
+      "page": 4,
+      "pageLabel": "5739",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-b-moore-aronszajn-theorem"
+    },
+    {
+      "level": 1,
+      "title": "COMPARISON TO OTHER",
+      "number": "IV",
+      "page": 4,
+      "pageLabel": "5739",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-iv-comparison-to-other"
+    },
+    {
+      "level": 2,
+      "title": "Vector-Valued RKHS (Matrix-Valued Kernels)",
+      "number": "A",
+      "page": 5,
+      "pageLabel": "5740",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-a-vector-valued-rkhs-matrix-valued-kernels"
+    },
+    {
+      "level": 2,
+      "title": "Multikernel Learning",
+      "number": "B",
+      "page": 5,
+      "pageLabel": "5740",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-010-b-multikernel-learning"
+    },
+    {
+      "level": 2,
+      "title": "Quaternion Kernels",
+      "number": "C",
+      "page": 5,
+      "pageLabel": "5740",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-011-c-quaternion-kernels"
+    },
+    {
+      "level": 2,
+      "title": "Connections Between High-Dimensional Kernels",
+      "number": "D",
+      "page": 6,
+      "pageLabel": "5741",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-012-d-connections-between-high-dimensional-kernels"
+    },
+    {
+      "level": 2,
+      "title": "Computational Complexity",
+      "number": "E",
+      "page": 7,
+      "pageLabel": "5742",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-013-e-computational-complexity"
+    },
+    {
+      "level": 1,
+      "title": "DESIGN OF QUATERNION-VALUED MERCER KERNELS",
+      "number": "V",
+      "page": 7,
+      "pageLabel": "5742",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-014-v-design-of-quaternion-valued-mercer-kernels"
+    },
+    {
+      "level": 2,
+      "title": "Polynomial Kernel: The Quaternion Cubic Example",
+      "number": "A",
+      "page": 7,
+      "pageLabel": "5742",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-015-a-polynomial-kernel-the-quaternion-cubic-example"
+    },
+    {
+      "level": 2,
+      "title": "Real-Valued Gaussian Kernel",
+      "number": "B",
+      "page": 8,
+      "pageLabel": "5743",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-016-b-real-valued-gaussian-kernel"
+    },
+    {
+      "level": 2,
+      "title": "Quaternion-Valued Gaussian Kernel",
+      "number": "C",
+      "page": 8,
+      "pageLabel": "5743",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-017-c-quaternion-valued-gaussian-kernel"
+    },
+    {
+      "level": 1,
+      "title": "KERNEL RIDGE REGRESSION IN QUATERNION RKHS",
+      "number": "VI",
+      "page": 9,
+      "pageLabel": "5744",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-018-vi-kernel-ridge-regression-in-quaternion-rkhs"
+    },
+    {
+      "level": 2,
+      "title": "Introduction to Kernel Ridge Regression",
+      "number": "A",
+      "page": 9,
+      "pageLabel": "5744",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-019-a-introduction-to-kernel-ridge-regression"
+    },
+    {
+      "level": 2,
+      "title": "Multivariate Body Motion Tracking: Cubic Kernels",
+      "number": "B",
+      "page": 9,
+      "pageLabel": "5744",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-020-b-multivariate-body-motion-tracking-cubic-kernel"
+    },
+    {
+      "level": 2,
+      "title": "Nonlinear Channel Equalisation: Real and Quaternion",
+      "number": "C",
+      "page": 10,
+      "pageLabel": "5745",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-021-c-nonlinear-channel-equalisation-real-and-quater"
+    },
+    {
+      "level": 1,
+      "title": "CONCLUSIONS",
+      "number": "VII",
+      "page": 12,
+      "pageLabel": "5747",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-022-vii-conclusions"
+    },
+    {
+      "level": 2,
+      "title": "Quaternion Widely-Linear Ridge Regression",
+      "number": "B",
+      "page": 12,
+      "pageLabel": "5747",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-023-b-quaternion-widely-linear-ridge-regression"
+    },
+    {
+      "level": 2,
+      "title": "Model Comparison for Nonlinear Channel Equalisation",
+      "number": "C",
+      "page": 13,
+      "pageLabel": "5748",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-024-c-model-comparison-for-nonlinear-channel-equalis"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "5736",
+      "labelEnd": "5736",
+      "words": 183,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quaternion rkhs",
+          "heading": false
+        },
+        {
+          "term": "quaternion kernel",
+          "heading": false
+        },
+        {
+          "term": "ridge regression",
+          "heading": false
+        },
+        {
+          "term": "reproducing kernel",
+          "heading": false
+        },
+        {
+          "term": "kernel hilbert",
+          "heading": false
+        },
+        {
+          "term": "quaternion-valued",
+          "heading": false
+        },
+        {
+          "term": "hilbert spaces",
+          "heading": false
+        }
+      ],
+      "extract": "Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions Felipe A. Tobar and Danilo P. Mandic, Fellow, IEEE Abstract—The existence and uniqueness conditions of quater- nion reproducing kernel Hilbert spaces (QRKHS) are established in order to provide a mathematical foundation for the develop- ment of quaternion-valued kernel learning algorithms. This is achieved through a rigorous account of",
+      "extractCut": true,
+      "blocks": [
+        "library/ft-dpm-quaternion-kernel-ieee-tit-2014/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-i-introduction",
+      "number": "I",
+      "title": "INTRODUCTION",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "5736",
+      "labelEnd": "5736",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-s-ince",
+      "number": "S",
+      "title": "INCE",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "5736",
+      "labelEnd": "5737",
+      "words": 743,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quaternion rkhs",
+          "heading": false
+        },
+        {
+          "term": "quaternion kernel",
+          "heading": false
+        },
+        {
+          "term": "reproducing kernel",
+          "heading": false
+        },
+        {
+          "term": "kernel estimation",
+          "heading": false
+        },
+        {
+          "term": "ridge regression",
+          "heading": false
+        },
+        {
+          "term": "kernel algorithms",
+          "heading": false
+        },
+        {
+          "term": "kernel trick",
+          "heading": false
+        },
+        {
+          "term": "kernel least",
+          "heading": false
+        }
+      ],
+      "extract": "INCE their introduction in the early 1980s [1], support vector machines (SVM) have become a de facto standard for classiﬁcation and regression with application in areas including semantic analysis [2], gene selection [3], and ﬁnancial prediction [4]. An extension of the original SVM algorithm to nonlinear classiﬁcation [5] employs the so-called kernel trick [6], which enables operation in higher dimensional spaces",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-ii-quaternion-vector-spaces",
+      "number": "II",
+      "title": "QUATERNION VECTOR SPACES",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "5737",
+      "labelEnd": "5737",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-a-the-quaternion-division-ring",
+      "number": "A",
+      "title": "The Quaternion Division Ring",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "5737",
+      "labelEnd": "5737",
+      "words": 623,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "division ring",
+          "heading": true
+        },
+        {
+          "term": "quaternion",
+          "heading": true
+        },
+        {
+          "term": "quaternion multiplication",
+          "heading": false
+        },
+        {
+          "term": "quaternion product",
+          "heading": false
+        },
+        {
+          "term": "real ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "multiplicative inverse",
+          "heading": false
+        },
+        {
+          "term": "distributes",
+          "heading": false
+        },
+        {
+          "term": "abelian group",
+          "heading": false
+        }
+      ],
+      "extract": "The quaternion set H is a four-dimensional vector space over the real ﬁeld R spanned by the linearly independent basis {1, i, j, k} [29]. Accordingly, any element q ∈H can be written as a linear combination q = a1 + bi + cj + dk, where a, b, c, d ∈R. The sum and the scalar multiplication are deﬁned in an element-wise fashion as in R4, that is ⎛ ⎜⎜⎝ a1 b1 c1 d1 ⎞ ⎟⎟⎠+ ⎛ ⎜⎜⎝ a2 b2 c2 d2 ⎞ ⎟⎟⎠= ⎛ ⎜⎜⎝ a1 + a2 b1 + b2 c1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-b-quaternion-valued-hilbert-spaces",
+      "number": "B",
+      "title": "Quaternion-Valued Hilbert Spaces",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "5737",
+      "labelEnd": "5738",
+      "words": 425,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hilbert spaces",
+          "heading": true
+        },
+        {
+          "term": "quaternion hilbert",
+          "heading": false
+        },
+        {
+          "term": "quaternion-valued",
+          "heading": true
+        },
+        {
+          "term": "quaternion left",
+          "heading": false
+        },
+        {
+          "term": "complex hilbert",
+          "heading": false
+        },
+        {
+          "term": "inner product",
+          "heading": false
+        },
+        {
+          "term": "left-module",
+          "heading": false
+        },
+        {
+          "term": "vector space",
+          "heading": false
+        }
+      ],
+      "extract": "To introduce the concept of quaternion Hilbert space, we ﬁrst need to deﬁne quaternion vector spaces and their algebraic properties. Since (H, +, ·) is a division ring and not a ﬁeld (it lacks the commutativity property), strictly speaking it is not possible to construct a general vector space over H; however, we can still construct a left-module. A module [36], [37] is a generalisation of vector space which allows",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-iii-quaternion-reproducing-kernel",
+      "number": "III",
+      "title": "QUATERNION REPRODUCING KERNEL",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "5738",
+      "labelEnd": "5738",
+      "words": 80,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quaternion reproducing",
+          "heading": true
+        },
+        {
+          "term": "reproducing kernel",
+          "heading": true
+        },
+        {
+          "term": "kernel hilbert",
+          "heading": false
+        }
+      ],
+      "extract": "HILBERT SPACES We now introduce quaternion reproducing kernel Hilbert spaces to provide both theoretical support and physical insight for the design and implementation of quaternion-valued kernel estimation algorithms. Deﬁnition 2 (QuaternionReproducingKernelHilbert Space): Let X be an arbitrary set and H a left quaternion Hilbert space of functions from X to H. We say that H is a quaternion reproducing kernel",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-a-riesz-representation-theorem",
+      "number": "A",
+      "title": "Riesz Representation Theorem",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "5738",
+      "labelEnd": "5739",
+      "words": 754,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "riesz representation",
+          "heading": true
+        },
+        {
+          "term": "quaternion riesz",
+          "heading": false
+        },
+        {
+          "term": "quaternion kernel",
+          "heading": false
+        },
+        {
+          "term": "reproducing kernel",
+          "heading": false
+        },
+        {
+          "term": "reproducing property",
+          "heading": false
+        },
+        {
+          "term": "quaternion left",
+          "heading": false
+        },
+        {
+          "term": "representation theorem",
+          "heading": true
+        },
+        {
+          "term": "qrkhs",
+          "heading": false
+        }
+      ],
+      "extract": "We can now introduce the following theorem in order to guarantee the existence of a reproducing kernel for any given QRKHS. Theorem 1 (Quaternion Riesz Representation Theorem): For every bounded linear functional L deﬁned over a quaternion left Hilbert space H, there exists a unique element g ∈H such that L( f ) = ⟨f, g⟩, ∀f ∈H. Proof: The proof follows from [10, Th. 6.2.4] and the properties of the inner product in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-b-moore-aronszajn-theorem",
+      "number": "B",
+      "title": "Moore-Aronszajn Theorem",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "5739",
+      "labelEnd": "5739",
+      "words": 782,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "moore-aronszajn theorem",
+          "heading": true
+        },
+        {
+          "term": "unique qrkhs",
+          "heading": false
+        },
+        {
+          "term": "reproducing kernel",
+          "heading": false
+        },
+        {
+          "term": "quaternion-valued kernel",
+          "heading": false
+        },
+        {
+          "term": "inner product",
+          "heading": false
+        },
+        {
+          "term": "feature hilbert",
+          "heading": false
+        },
+        {
+          "term": "quaternion",
+          "heading": false
+        },
+        {
+          "term": "deﬁnite",
+          "heading": false
+        }
+      ],
+      "extract": "In the real-valued case, the existence of a unique QRKHS generated by a positive deﬁnite kernel is ensured via either (i) the Mercer theorem [38], where the feature Hilbert space is spanned by the eigenfunctions of the kernel K, or (ii) the Moore-Aronszajn theorem, in which the feature Hilbert space is spanned by the functions Kx = K(x, ·). We now state two equivalent deﬁnitions of positive def- initeness in order",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-iv-comparison-to-other",
+      "number": "IV",
+      "title": "COMPARISON TO OTHER",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "5739",
+      "labelEnd": "5740",
+      "words": 42,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "high-dimensional kernels",
+          "heading": false
+        },
+        {
+          "term": "differences",
+          "heading": false
+        },
+        {
+          "term": "existing",
+          "heading": false
+        }
+      ],
+      "extract": "HIGH-DIMENSIONAL KERNELS We shall now revisit existing approaches to high- dimensional kernels in order to highlight the differences between our proposed quaternion kernel framework and those based upon existing high-dimensional kernels. We address these differences in both theoretical and computational- complexity terms.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-a-vector-valued-rkhs-matrix-valued-kernels",
+      "number": "A",
+      "title": "Vector-Valued RKHS (Matrix-Valued Kernels)",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5740",
+      "labelEnd": "5740",
+      "words": 389,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rkhs",
+          "heading": true
+        },
+        {
+          "term": "kernel regression",
+          "heading": false
+        },
+        {
+          "term": "multivariate regression",
+          "heading": false
+        },
+        {
+          "term": "matrix-valued",
+          "heading": true
+        },
+        {
+          "term": "vector-valued",
+          "heading": true
+        },
+        {
+          "term": "vrkhs",
+          "heading": false
+        },
+        {
+          "term": "vector kernel",
+          "heading": false
+        },
+        {
+          "term": "feature space",
+          "heading": false
+        }
+      ],
+      "extract": "Unlike the original RKHS theory, where the elements of the feature space are (scalar) real-valued functions, the feature space can be constructed using the basis {\u0005(x) : X −→Rn, x ∈X}, therefore yielding a vector-valued RKHS (VRKHS) with matrix-valued reproducing kernels K(x, y) = \u0005 H(x)\u0005(y) ∈Rn×n. The VRKHS theory was introduced in [39] and [40], and recent results exploiting this concept includes multi-category",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-b-multikernel-learning",
+      "number": "B",
+      "title": "Multikernel Learning",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5740",
+      "labelEnd": "5740",
+      "words": 486,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multikernel",
+          "heading": true
+        },
+        {
+          "term": "multikernel concept",
+          "heading": false
+        },
+        {
+          "term": "vector-valued kernel",
+          "heading": false
+        },
+        {
+          "term": "subkernels",
+          "heading": false
+        },
+        {
+          "term": "learning",
+          "heading": true
+        },
+        {
+          "term": "valued kernel",
+          "heading": false
+        },
+        {
+          "term": "vector valued",
+          "heading": false
+        },
+        {
+          "term": "regression",
+          "heading": false
+        }
+      ],
+      "extract": "The multikernel concept also uses a VRKHS as feature space and redeﬁnes the inner product [21] so as to only 3For x ∈X, \u0005(x) ∈R|X|×n, and the coefﬁcient M ∈R|X|×1, where |X| is the (possibly inﬁnite) cardinality of X. Observe that R|X|×1 is the space of lin- ear mappings between the empirical feature space \u0016 \u0005(x) ∈R|X|×n, x ∈X \u0017 and Rn. preserve the diagonal elements of the matrix-valued prod- uct \u0005 H\u0005. This yields",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-c-quaternion-kernels",
+      "number": "C",
+      "title": "Quaternion Kernels",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5740",
+      "labelEnd": "5741",
+      "words": 513,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quaternion",
+          "heading": true
+        },
+        {
+          "term": "quaternion kernel",
+          "heading": false
+        },
+        {
+          "term": "gram matrix",
+          "heading": false
+        },
+        {
+          "term": "kkk",
+          "heading": false
+        },
+        {
+          "term": "real-valued matrix",
+          "heading": false
+        },
+        {
+          "term": "deﬁnite",
+          "heading": false
+        },
+        {
+          "term": "deﬁniteness",
+          "heading": false
+        },
+        {
+          "term": "matrix representation",
+          "heading": false
+        }
+      ],
+      "extract": "The introduced quaternion-valued feature spaces allow us to adopt the standard regression formulation, that is, ˆy = N \u000f i=1 ai K(x, xi), ai ∈H. The following lemma states properties of quaternion posi- tive deﬁnite kernels. Lemma 2: Let K = Kr +i Ki + j K j +kKk be a quaternion kernel, then (a) K is Hermitian iff Kr is symmetric positive deﬁnite and Ki = −K T i , K j = −K T j and Kk = −K T k . (b) If K is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-d-connections-between-high-dimensional-kernels",
+      "number": "D",
+      "title": "Connections Between High-Dimensional Kernels",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "5741",
+      "labelEnd": "5742",
+      "words": 549,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quaternion kernel",
+          "heading": false
+        },
+        {
+          "term": "vector kernel",
+          "heading": false
+        },
+        {
+          "term": "vector-valued",
+          "heading": false
+        },
+        {
+          "term": "computational complexity",
+          "heading": false
+        },
+        {
+          "term": "subkernels",
+          "heading": false
+        },
+        {
+          "term": "vector-kernel",
+          "heading": false
+        },
+        {
+          "term": "qrkhs",
+          "heading": false
+        },
+        {
+          "term": "deﬁnite",
+          "heading": false
+        }
+      ],
+      "extract": "We next show that the matrix-valued, vector-valued, and quaternion-valued kernels are not alternative representations of the same mapping; they are different classes of kernels and generate different feature spaces. For the matrix-valued kernel this follows from its dimension, which is given by the number of data channels of the output. Consequently, a matrix kernel cannot be designed to have an arbitrary dimension",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-e-computational-complexity",
+      "number": "E",
+      "title": "Computational Complexity",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "5742",
+      "labelEnd": "5742",
+      "words": 143,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quaternion kernel",
+          "heading": false
+        },
+        {
+          "term": "complexity",
+          "heading": true
+        },
+        {
+          "term": "computational",
+          "heading": true
+        },
+        {
+          "term": "multikernel",
+          "heading": false
+        },
+        {
+          "term": "complexities",
+          "heading": false
+        }
+      ],
+      "extract": "Table I illustrates the computational complexity of kernel regression algorithms for scalar, quaternion, multikernel and matrix-kernel approaches. Observe that scalar kernels are simplest, whereas the complexity of matrix kernels grows quadratically with the dimension of the signal. In order to compare the complexity associated to vector- and quaternion-valued kernels, observe that (i) μR involves four pure real",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-v-design-of-quaternion-valued-mercer-kernels",
+      "number": "V",
+      "title": "DESIGN OF QUATERNION-VALUED MERCER KERNELS",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "5742",
+      "labelEnd": "5742",
+      "words": 49,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "design",
+          "heading": true
+        },
+        {
+          "term": "kernels",
+          "heading": true
+        },
+        {
+          "term": "svr",
+          "heading": false
+        }
+      ],
+      "extract": "Theorem 2 gives the justiﬁcation for the design and imple- mentation of nonlinear kernel algorithms operating in QRKHS to simplify into the choice of a positive-semideﬁnite kernel. We next introduce and analyse the properties of some speciﬁc kernels of quaternion variable and justify their use within quaternion SVR algorithms.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-015-a-polynomial-kernel-the-quaternion-cubic-example",
+      "number": "A",
+      "title": "Polynomial Kernel: The Quaternion Cubic Example",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "5742",
+      "labelEnd": "5743",
+      "words": 535,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "yhy xhx",
+          "heading": false
+        },
+        {
+          "term": "quaternion cubic",
+          "heading": true
+        },
+        {
+          "term": "xhx xhy",
+          "heading": false
+        },
+        {
+          "term": "cubic kernel",
+          "heading": true
+        },
+        {
+          "term": "polynomial kernel",
+          "heading": true
+        },
+        {
+          "term": "factorisation",
+          "heading": false
+        },
+        {
+          "term": "dxdy",
+          "heading": false
+        },
+        {
+          "term": "deﬁniteness",
+          "heading": false
+        }
+      ],
+      "extract": "The polynomial kernel is standard in kernel-based estima- tion due to its robustness and ease of implementation. For real- and complex-valued samples xr, yr, the polynomial kernel is given by K P(xr, yr) = 1 + xT r yr p where p ∈N is referred to as the order of the kernel. On the other hand, the real-valued polynomial kernel of quaternion samples x, y K RP : X2 →R, that is, the polynomial kernel of the real-valued",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-b-real-valued-gaussian-kernel",
+      "number": "B",
+      "title": "Real-Valued Gaussian Kernel",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "5743",
+      "labelEnd": "5743",
+      "words": 283,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gaussian kernel",
+          "heading": true
+        },
+        {
+          "term": "real-valued",
+          "heading": true
+        },
+        {
+          "term": "kxk",
+          "heading": false
+        },
+        {
+          "term": "quaternion",
+          "heading": false
+        },
+        {
+          "term": "samples",
+          "heading": false
+        },
+        {
+          "term": "dictionary",
+          "heading": false
+        },
+        {
+          "term": "deﬁnite",
+          "heading": false
+        }
+      ],
+      "extract": "Together with the polynomial kernel, the Gaussian kernel is extensively used in machine learning and signal processing applications. It serves as a deviation measure between samples, hence, providing reliable estimates for known regions of the input space (dictionary), while vanishing for inputs that deviate from the dictionary. The Gaussian kernel can be extended to operate on quaternion samples by accommodating",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-c-quaternion-valued-gaussian-kernel",
+      "number": "C",
+      "title": "Quaternion-Valued Gaussian Kernel",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "5743",
+      "labelEnd": "5744",
+      "words": 388,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gaussian kernel",
+          "heading": true
+        },
+        {
+          "term": "kqg",
+          "heading": false
+        },
+        {
+          "term": "kernel estimation",
+          "heading": false
+        },
+        {
+          "term": "estimation algorithms",
+          "heading": false
+        },
+        {
+          "term": "real gaussian",
+          "heading": false
+        },
+        {
+          "term": "ixi",
+          "heading": false
+        },
+        {
+          "term": "kxk",
+          "heading": false
+        }
+      ],
+      "extract": "Recent complex-valued extensions of kernel estimation algorithms [17], [18] consider a complex-valued positive def- inite version of the real Gaussian kernel [47]. A quaternion version of such a kernel is KQG(x, y) = exp \" −AQ x −y∗ T x −y∗ # , (14) where AQ > 0 is the kernel parameter. Observe that the differences between KQG and K RG are in that KQG is a function of x −y∗(rather than x −y, hence allowing for the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-vi-kernel-ridge-regression-in-quaternion-rkhs",
+      "number": "VI",
+      "title": "KERNEL RIDGE REGRESSION IN QUATERNION RKHS",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "5744",
+      "labelEnd": "5744",
+      "words": 139,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quater nion",
+          "heading": false
+        },
+        {
+          "term": "quaternion",
+          "heading": true
+        },
+        {
+          "term": "kernel",
+          "heading": true
+        },
+        {
+          "term": "gaussian kernel",
+          "heading": false
+        },
+        {
+          "term": "ridge",
+          "heading": true
+        }
+      ],
+      "extract": "We validated the proposed QRKHS, together with the intro- duced quaternion kernels, in the kernel ridge regression (KRR) setting presented in Section VI-A against both scalar and vector-valued real kernels; these results complement previous quaternion kernel applications which considered linear (quater- nion) kernels only [31]. Section VI-B illustrates the prediction of body sensor signals and shows that the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-a-introduction-to-kernel-ridge-regression",
+      "number": "A",
+      "title": "Introduction to Kernel Ridge Regression",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "5744",
+      "labelEnd": "5744",
+      "words": 395,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "body sensor",
+          "heading": false
+        },
+        {
+          "term": "inertial body",
+          "heading": false
+        },
+        {
+          "term": "qrkhs",
+          "heading": false
+        },
+        {
+          "term": "krr",
+          "heading": false
+        },
+        {
+          "term": "coordinate system",
+          "heading": false
+        },
+        {
+          "term": "optimisation",
+          "heading": false
+        },
+        {
+          "term": "training",
+          "heading": false
+        },
+        {
+          "term": "optimal",
+          "heading": false
+        }
+      ],
+      "extract": "Consider the collection of available measurement pairs CN = {(xi, yi)}i=1:N ∈X × Y corresponding to the input and output of a nonlinear system. The aim of KRR is to model the relationship between the input x and the output y of such a system by ˆy = ⟨ω, φx⟩, (15) whereby both the (ﬁxed) element ω and the transformation φx lie on a QRKHS H0 with inner product ⟨·, ·⟩. To avoid the need for the optimisation in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-b-multivariate-body-motion-tracking-cubic-kernel",
+      "number": "B",
+      "title": "Multivariate Body Motion Tracking: Cubic Kernels",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "5744",
+      "labelEnd": "5745",
+      "words": 740,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cubic kernels",
+          "heading": true
+        },
+        {
+          "term": "sensor signal",
+          "heading": false
+        },
+        {
+          "term": "signal tracking",
+          "heading": false
+        },
+        {
+          "term": "krr algorithms",
+          "heading": false
+        },
+        {
+          "term": "angle signal",
+          "heading": false
+        },
+        {
+          "term": "quaternion cubic",
+          "heading": false
+        },
+        {
+          "term": "body sensor",
+          "heading": false
+        },
+        {
+          "term": "real kernel",
+          "heading": false
+        }
+      ],
+      "extract": "We implemented KRR algorithms using real, vector and quaternion cubic kernels to perform a one-step-ahead predic- tion of the trajectory of limbs in Tai Chi sequences. Data sets for training and validation of the algorithms corresponded to different realisations of Tai Chi movements. 1) Data Acquisition and Preprocessing: Four accelerome- ters (placed at wrists and ankles) recorded the three Euler angles (Fig. 3),",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-c-nonlinear-channel-equalisation-real-and-quater",
+      "number": "C",
+      "title": "Nonlinear Channel Equalisation: Real and Quaternion",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "5745",
+      "labelEnd": "5747",
+      "words": 790,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "channel equalisation",
+          "heading": true
+        },
+        {
+          "term": "training mse",
+          "heading": false
+        },
+        {
+          "term": "validation mse",
+          "heading": false
+        },
+        {
+          "term": "ridge regression",
+          "heading": false
+        },
+        {
+          "term": "quaternion",
+          "heading": true
+        },
+        {
+          "term": "training performance",
+          "heading": false
+        },
+        {
+          "term": "quaternion gaussian",
+          "heading": false
+        },
+        {
+          "term": "regression algorithms",
+          "heading": false
+        }
+      ],
+      "extract": "Gaussian Kernels We next validated the real and quaternion Gaussian kernels for the problem of nonlinear channel equalisation. 1) Channel Model: The transmission channel was modelled as a linear (moving average) ﬁlter with a memoryless nonlin- earity stage corrupted by noise: yn = a1xn + a2xn−1 sn = yn + a3y2 n + ϵn, where {xn}n∈N is the transmitted message (input to the channel), {yn}n∈N is an unobserved latent",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-vii-conclusions",
+      "number": "VII",
+      "title": "CONCLUSIONS",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "5747",
+      "labelEnd": "5747",
+      "words": 565,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quaternion kernels",
+          "heading": false
+        },
+        {
+          "term": "quaternion valued",
+          "heading": false
+        },
+        {
+          "term": "cubic polynomials",
+          "heading": false
+        },
+        {
+          "term": "quaternion-valued",
+          "heading": false
+        },
+        {
+          "term": "left-hand side",
+          "heading": false
+        },
+        {
+          "term": "demonstrated",
+          "heading": false
+        },
+        {
+          "term": "basis",
+          "heading": false
+        },
+        {
+          "term": "algorithms",
+          "heading": false
+        }
+      ],
+      "extract": "We have investigated the existence of quaternion reproduc- ing kernel Hilbert spaces (QRKHS), as well as the advan- tages of quaternion kernels over vector-kernels. This has been achieved based on (i) a rigorous derivation and analysis of quaternion versions of the Riesz representation and the Moore-Aronszajn theorems, and (ii) an account of the dif- ferences between vector and quaternion kernels in terms of both",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-b-quaternion-widely-linear-ridge-regression",
+      "number": "B",
+      "title": "Quaternion Widely-Linear Ridge Regression",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "5747",
+      "labelEnd": "5748",
+      "words": 330,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "widely-linear",
+          "heading": true
+        },
+        {
+          "term": "widely-linear estimator",
+          "heading": false
+        },
+        {
+          "term": "ksk",
+          "heading": false
+        },
+        {
+          "term": "isi",
+          "heading": false
+        },
+        {
+          "term": "quaternion",
+          "heading": true
+        },
+        {
+          "term": "ridge",
+          "heading": true
+        }
+      ],
+      "extract": "Strictly-linear models assume that the minimum mean square estimator (MMSE) E{x|s} of a vector x given an observation vector s is, regardless of the real or quaternion nature of the vectors, given by7 ˆx = As, (19) where A is a coefﬁcient matrix. On the other hand, widely- linear quaternion models exploit the linear dependency between the vector x and each of the components of the regressor s = sr +isi + js j +ksk,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-c-model-comparison-for-nonlinear-channel-equalis",
+      "number": "C",
+      "title": "Model Comparison for Nonlinear Channel Equalisation",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "5748",
+      "labelEnd": "5749",
+      "words": 1811,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ieee signal",
+          "heading": false
+        },
+        {
+          "term": "signal processing",
+          "heading": false
+        },
+        {
+          "term": "adaptive ﬁltering",
+          "heading": false
+        },
+        {
+          "term": "ieee trans",
+          "heading": false
+        },
+        {
+          "term": "signal process",
+          "heading": false
+        },
+        {
+          "term": "speech signal",
+          "heading": false
+        },
+        {
+          "term": "nonlinear adaptive",
+          "heading": false
+        },
+        {
+          "term": "ieee transactions",
+          "heading": false
+        }
+      ],
+      "extract": "In Section VI-C we compared the proposed Gaussian kernel (real- and quaternion-valued) algorithms against strictly-linear and widely-linear models. The underlying idea is that a novel nonlinear estimation algorithm is only justiﬁed if it outper- forms existing (strictly and widely) linear approaches. A com- pact description of the models implemented in Section VI-C, together with their optimal least-squares",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 14,
+      "items": [
+        "p1: pdf-labels 1, printed 5736",
+        "p2: pdf-labels 2, printed 5737",
+        "p3: pdf-labels 3, printed 5738",
+        "p4: pdf-labels 4, printed 5739",
+        "p5: pdf-labels 5, printed 5740",
+        "p6: pdf-labels 6, printed 5741",
+        "p7: pdf-labels 7, printed 5742",
+        "p8: pdf-labels 8, printed 5743",
+        "p9: pdf-labels 9, printed 5744",
+        "p10: pdf-labels 10, printed 5745",
+        "p11: pdf-labels 11, printed 5746",
+        "p12: pdf-labels 12, printed 5747",
+        "p13: pdf-labels 13, printed 5748",
+        "p14: pdf-labels 14, printed 5749"
+      ]
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "quaternion kernel",
+      "heading": true
+    },
+    {
+      "term": "quaternion reproducing",
+      "heading": true
+    },
+    {
+      "term": "quaternion rkhs",
+      "heading": true
+    },
+    {
+      "term": "quaternion samples",
+      "heading": false
+    },
+    {
+      "term": "quaternion hilbert",
+      "heading": false
+    },
+    {
+      "term": "quaternion riesz",
+      "heading": false
+    },
+    {
+      "term": "quaternion gaussian",
+      "heading": false
+    },
+    {
+      "term": "quaternion-valued kernel",
+      "heading": true
+    },
+    {
+      "term": "quaternion valued",
+      "heading": false
+    },
+    {
+      "term": "quaternion cubic",
+      "heading": true
+    },
+    {
+      "term": "kernel regression",
+      "heading": true
+    },
+    {
+      "term": "quaternion product",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "5736",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "5737",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "5738",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "5739",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5740",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5741",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "5742",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "5743",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "5744",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "5745",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "5746",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "5747",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "5748",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "5749",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Real (left) and i-imaginary (right) parts of KQP. The colourmap is",
+      "page": 8,
+      "pageLabel": "5743",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Real (left) and i-imaginary (right) parts of KQG. The colourmap is",
+      "page": 8,
+      "pageLabel": "5743",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Inertial body sensor setting. [Left] Fixed coordinate system (red), sensor coordinate system (blue) and Euler angles (green). [Right] A 3D inertial body sensor at the right wrist",
+      "page": 9,
+      "pageLabel": "5744",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Raw angle measurements and considered features. [Top] Original discontinuous angle recording and [Bottom] the corresponding continuous sine and cosine mapping. Observe that in the right (left) circle only cosine (sine) preserves the dynamics of the angle signal accurately",
+      "page": 10,
+      "pageLabel": "5745",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Body sensor signal tracking: Angle features (sin θ, cos θ) and KRR estimates",
+      "page": 10,
+      "pageLabel": "5745",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Performance of KRR algorithms for body sensor signal tracking as a function of the number of support vectors",
+      "page": 10,
+      "pageLabel": "5745",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Computation time of KRR algorithms for body sensor signal tracking",
+      "page": 10,
+      "pageLabel": "5745",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Choice of kernel parameters (red) AR and AQ based on the second",
+      "page": 11,
+      "pageLabel": "5746",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Training MSE of ridge regression algorithms for channel equalisation",
+      "page": 11,
+      "pageLabel": "5746",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Validation MSE of ridge regression algorithms for channel equalisation",
+      "page": 12,
+      "pageLabel": "5747",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p002-1",
+      "file": "images/img-p002-1.png",
+      "page": 2,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p008-3",
+      "file": "images/img-p008-3.png",
+      "page": 8,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p008-4",
+      "file": "images/img-p008-4.png",
+      "page": 8,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p008-5",
+      "file": "images/img-p008-5.png",
+      "page": 8,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p008-6",
+      "file": "images/img-p008-6.png",
+      "page": 8,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p009-1",
+      "file": "images/img-p009-1.png",
+      "page": 9,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p009-2",
+      "file": "images/img-p009-2.png",
+      "page": 9,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 25,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 26,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 7,
+      "note": "10 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p13); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 7
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 26 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/ft-dpm-quaternion-kernel-ieee-tit-2014"
+  }
+}

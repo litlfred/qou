@@ -1,0 +1,491 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0610591v3",
+  "title": "arxiv-math-0610591v3",
+  "variant": "pdf",
+  "pages": 17,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Surjectivity of",
+      "number": "2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-surjectivity-of"
+    },
+    {
+      "level": 1,
+      "title": "Surjectivity of",
+      "number": "3",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-surjectivity-of"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 62,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schur weyl",
+          "heading": false
+        },
+        {
+          "term": "weyl duality",
+          "heading": false
+        },
+        {
+          "term": "vey",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0610591v3 [math.RT] 28 Aug 2008 SCHUR–WEYL DUALITY IN POSITIVE CHARACTERISTIC STEPHEN DOTY Abstract. Complete proofs of Schur–Weyl duality in positive characteristic are scarce in the literature. The purpose of this sur- vey is to write out the details of such a proof, deriving the result in positive characteristic from the classical result in characteristic zero, using only known facts from",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0610591v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 523,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tensor position",
+          "heading": false
+        },
+        {
+          "term": "endγ",
+          "heading": false
+        },
+        {
+          "term": "endsr",
+          "heading": false
+        },
+        {
+          "term": "ksr",
+          "heading": false
+        },
+        {
+          "term": "inﬁnite ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "schur weyl",
+          "heading": false
+        },
+        {
+          "term": "endk",
+          "heading": false
+        },
+        {
+          "term": "weyl duality",
+          "heading": false
+        }
+      ],
+      "extract": "Given a set A write SA for the symmetric group on A, i.e., the group of bijections of A. For σ ∈SA and a ∈A we always write aσ for the image of a under σ. In other words, we choose to write maps in SA on the right of their argument. This means that στ (for σ, τ ∈SA) is deﬁned by a(στ) = (aσ)τ. We will write Sr as a shorthand for S{1,...,r}. Consider the group Γ = GL(V ) of linear automorphisms on an n- dimensional",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-surjectivity-of",
+      "number": "2",
+      "title": "Surjectivity of",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1838,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dimk endsr",
+          "heading": false
+        },
+        {
+          "term": "basis eab",
+          "heading": false
+        },
+        {
+          "term": "coeﬃcients rab",
+          "heading": false
+        },
+        {
+          "term": "endk",
+          "heading": false
+        },
+        {
+          "term": "schur weyl",
+          "heading": false
+        },
+        {
+          "term": "k-valued map",
+          "heading": false
+        },
+        {
+          "term": "inﬁnite ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "weyl duality",
+          "heading": false
+        }
+      ],
+      "extract": "Let us ﬁrst establish half of Theorem 1, namely the surjectivity of the induced map Ψ : KΓ →EndSr(V ⊗r) in (1.3). For a very direct (and shorter) approach to this result, see the argument on page 210 of [1]. As already stated, the strategy followed here is to argue that the algebras Ψ(KΓ), EndSr(V ⊗r) have dimension (as vector spaces over K) which is independent of the characteristic of the inﬁnite ﬁeld K. We ﬁrst",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-surjectivity-of",
+      "number": "3",
+      "title": "Surjectivity of",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4042,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dimk endγ",
+          "heading": false
+        },
+        {
+          "term": "algebra ksr",
+          "heading": false
+        },
+        {
+          "term": "standard λ-tableaux",
+          "heading": false
+        },
+        {
+          "term": "equality dimk",
+          "heading": false
+        },
+        {
+          "term": "standard λ-tableau",
+          "heading": false
+        },
+        {
+          "term": "stephen doty",
+          "heading": false
+        },
+        {
+          "term": "standard tableaux",
+          "heading": false
+        },
+        {
+          "term": "schur weyl",
+          "heading": false
+        }
+      ],
+      "extract": "3. Surjectivity of Φ It remains to establish the surjectivity of the induced map Φ in (1.3). This surjectivity was ﬁrst established in positive characteristic in [3, Theorem 4.1].5 We will outline an alternative proof here, following our avowed strategy of showing that the dimensions of Φ(KSr), EndΓ(V ⊗r) are independent of the characteristic of the inﬁnite ﬁeld K. In order to establish the independence statement",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 502,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "university press",
+          "heading": false
+        },
+        {
+          "term": "lecture notes",
+          "heading": false
+        },
+        {
+          "term": "symmetric groups",
+          "heading": false
+        },
+        {
+          "term": "tilting modules",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite groups",
+          "heading": false
+        },
+        {
+          "term": "classical groups",
+          "heading": false
+        },
+        {
+          "term": "algebraic groups",
+          "heading": false
+        }
+      ],
+      "extract": "[1] R. Carter and G. Lusztig, On the modular representations of general linear and symmetric groups, Math. Zeit. 136 (1974), 193–242. [2] C. Curtis and I. Reiner, Representation theory of ﬁnite groups and associative algebras, Interscience (Wiley) 1962; reprinted by AMS Chelsea Publishing, Providence, RI, 2006. [3] C. de Concini and C. Procesi, A characteristic free approach to invariant theory, Advances in Math. 21",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "dimk endsr",
+      "heading": false
+    },
+    {
+      "term": "dimk endγ",
+      "heading": false
+    },
+    {
+      "term": "schur weyl",
+      "heading": false
+    },
+    {
+      "term": "algebra ksr",
+      "heading": false
+    },
+    {
+      "term": "stephen doty",
+      "heading": false
+    },
+    {
+      "term": "weyl duality",
+      "heading": false
+    },
+    {
+      "term": "equalities dimk",
+      "heading": false
+    },
+    {
+      "term": "equality dimk",
+      "heading": false
+    },
+    {
+      "term": "weyl modules",
+      "heading": false
+    },
+    {
+      "term": "inﬁnite ﬁeld",
+      "heading": false
+    },
+    {
+      "term": "dual weyl",
+      "heading": false
+    },
+    {
+      "term": "group gln",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 4,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 5,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p16); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 7
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 5 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0610591v3"
+  }
+}

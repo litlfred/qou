@@ -1,0 +1,1125 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0611504v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0611504v1  [math.GT]  16 Nov 2006\nQUANTUM HYPERBOLIC GEOMETRY\nST´EPHANE BASEILHAC1 AND RICCARDO BENEDETTI2\n1 Universit´e Grenoble I, Institut Joseph Fourier, UMR CNRS 5582, 100 rue des Maths, B.P. 74, 38402\nSaint Martin d’H`eres Cedex, FRANCE\n2 Dipartimento di Matematica, Universit`a di Pisa, Largo Bruno Pontecorvo 5, I-56127 Pisa, ITALY\nEmails: stephane.baseilhac@ujf-grenoble.fr\nand benedett@dm.unipi.it\nContents\n1.\nIntroduction\n2\n2.\nUniversal QHG\n4\n2.1.\nBuilding blocks\n4\n2.2.\nQHG triangulated pseudomanifolds\n7\n2.3.\nQHG universal functor\n9\n2.4.\nTowards geometric specializations\n10\n3",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "In this paper we construct a new family {HN}, indexed by the odd integers N ≥1, of (2 + 1)-\ndimensional quantum ﬁeld theories (QFT) that we call Quantum Hyperbolic Field Theories (QHFT).\nHere, following [2, 30], by QFT we mean a functor from a (2 + 1)-bordism category, possibly non\npurely topological, to the tensorial category of ﬁnite dimensional complex linear spaces.\nThe QHFT bordism category is based on triples (Y, LF, ρ), where Y is a compact oriented 3-manifold,\npossibly with non-empty boundary ∂Y , LF is a properly embedded framed tangle (ie. a framed 1-\ndimensional non oriented submani",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/rem-sec-000-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "rem-sec-000-01.md",
+      "narrative": null,
+      "content": "The results of this paper can be repeated almost verbatim to deﬁne Cheeger-Chern- Simons invariants for QHFT bordisms, by replacing the matrix dilogarithms for N > 1 with Neu- mann’s extended Rogers dilogarithm, corresponding to N = 1 (see Remark 5.5). This is described with all details in [5] for the case of cusped manifolds and triples (W, L, ρ) (ie. for quantum hyperbolic invariants). Hence in the following we concentrate on the quantum theory N > 1, which is technically harder. Here is the content of the paper. The universal QHG functors are deﬁned in section 2, where we recall also from [",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prop-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "prop-sec-002-01.md",
+      "narrative": null,
+      "content": "There is a canonical family {˜φn Q}n∈Z : ( b X1 × b X2, bQ) →( b X3 × b X4, bQ′) of analytic symplectomorphisms equivariant for the S4-action on S2 Q, given by (see Figure 2) ˜φn Q((l(u1; p1), l(v1; q1)), (l(u2; p2), l(v2; q2))) = ((l(u′ 1; p′ 1), l(v′ 1; q′ 1)), (l(u′ 2; q′ 2), l(v′ 2; q′ 2))), where we identify b X with C2 (ﬁrst two coordinates) and \u001a l(u′ 1; p′ 1) = l(u1; p1) −l(u′ 2; p′ 2) l(v′ 1; q′ 1) = l(v1; q1) + l(u2; p2) \u001a l(u′ 2; p′ 2) = l(u2; p2) −l((1 −u1v2)−1; n) l(v′ 2; q′ 2) = l(v2; q2) + l(u′ 1; p′ 1) + l(v′ 1; q′ 1) . The maps ˜φn Q satisfy the pentagon relation, that is, ˜φn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Universal QHG",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-2-universal-qhg.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Building blocks",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-21-building-blocks.md",
+      "narrative": null,
+      "content": "matrix dilogarithms RN(∆(b, w, f, c)) ∈Aut(CN ⊗CN) deﬁned for every odd positive integer N [5].\nFlat/charged-I tetrahedra. Consider the half-space model of the oriented hyperbolic space H3,\nwith the group of direct isometries identiﬁed with PSL(2, C) by the conformal action on ∂H\n3 = CP1 =\nC ∪{∞} by Moebius transformations. An I-tetrahedron is an oriented ideal tetrahedron ∆in ∂H\n3\nwith distinct ordered vertices v0, v1, v2 and v3 on ∂H\n3.\nIn fact we consider ∆as an abstract oriented simplex equipped with an additional decoration. The\nordering of the vertices is encoded by a branching b, that i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "QHG triangulated pseudomanifolds",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-22-qhg-triangulated-pseudomanifolds.md",
+      "narrative": null,
+      "content": "plicity, but all what follows makes sense for arbitrary singular 3-cycles whose non manifold locus is\nof codimension ≥2. By a pseudomanifold Z, possibly with non-empty boundary ∂Z, we mean a\ncompact oriented polyhedron with at most a ﬁnite set of non manifold points. The boundary is a\npseudo-surface.\nA QHG triangulated pseudomanifold (Z, T ) is a pseudomanifold Z obtained as the quotient of a ﬁnite\nfamily Z = {(∆i, bi, wi, f i, ci)} of ﬂat/charged I-tetrahedra, via a system of orientation reversing\nsimplicial identiﬁcations of pairs of 2-faces such that the branchings match. The resulting tria",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/rem-sec-003-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "rem-sec-003-01.md",
+      "narrative": null,
+      "content": "It is easily seen that WT (e) is a cross ratio for the four ‘extremal’ points on ∂H determined by gluing oriented hyperbolic ideal tetrahedra with moduli w(h)∗b along a common edge (by continuity WT (e) = 1 for a degenerate quadrilateral with three distinct vertices). It is well-known that any two arbitrary naked triangulations T , T ′ of Z with the same boundary triangulation can be connected (keeping the boundary triangulation ﬁxed) by a ﬁnite sequence of the local moves shown in Figure 4, the 2 ↔3 move (top) and the bubble move (bottom). Figure 4. The moves on naked singular triangulations.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/rem-sec-003-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "rem-sec-003-02.md",
+      "narrative": null,
+      "content": "For every QHG transit supported by a 2 ↔3 move (top of Figure 4), if E0 denotes the new edge in T ′ then WT ′(E0) = 1, LT ′(E0) = 0, CT ′(E0) = 2. QUANTUM HYPERBOLIC GEOMETRY For every QHG bubble transit, let f ′ be the unique new 2-simplex of T ′ that contains the marked edge e. Denote by E1 and E2 the other edges of f ′, and by E3 the further new edge of T ′. Then we have WT ′(Ej) = 1, LT ′(Ej) = 0, j = 1, 2, 3 (10) CT ′(E1) = CT ′(E2) = 0, CT ′(E3) = 2. Deﬁnition 2.4. A QHG isomorphism between QHG triangulated pseudomanifolds is any ﬁnite com- position of QHG transit conﬁgurations and orien",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prop-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "prop-sec-004-01.md",
+      "narrative": null,
+      "content": "For every odd N ≥1, up to sign and multiplication by Nth roots of unity the trace tensor HN(T ) is invariant up to QHG isomorphism. This result is a restatement of Theorem 2.1 (2) and Lemma 6.7 of [5], and summarizes the fundamental functional relations satisﬁed by the matrix dilogarithms. In particular those corresponding to 2 ↔3 QHG transits are usually called ﬁve terms identities. In Figure 5 we show one instance in dual terms. The normalization factor N −vI in (11) is due to the bubble move, that changes by 1 the number of internal vertices. y x2 x x3 x1 = Figure 5. A 2 ↔3 QHG move (x1 = y",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "QHG universal functor",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-004-23-qhg-universal-functor.md",
+      "narrative": null,
+      "content": "pseudomanifold (Z, T ) a trace tensor HN(T ), as follows. Deﬁne an N-state of T as a function that\ngives every 2-simplex an index, with values in {0, . . . , N −1}. Every N-state determines an entry\nfor each matrix dilogarithm RN(∆, b, w, f, c). As two tetrahedra induce opposite orientations on a\ncommon 2-face, an index is down for the RN of one tetrahedron while it is up for the other (see Figure\n1). By summing over repeated indices we get the total contraction of the tensors {RN(∆, b, w, f, c)},\nthat we denote Q\n∆⊂T RN(∆, b, w, f, c). Let vI and vδ be the number of vertices of T \\ ∂T and ∂T",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/lem-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "lem-sec-005-01.md",
+      "narrative": null,
+      "content": "([4], section 2.4) The idealization TI is an I-triangulation of Z. The following fact will be important below (a version of it was implicitely used in [4]; see (3), Lemma 2.12 and §3.2 in that paper):",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/lem-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "lem-sec-005-02.md",
+      "narrative": null,
+      "content": "The idealization TI is canonically ﬂattened by taking for each 3-simplex the log-branches (with the notations of Deﬁnition 2.7): l0 := log(u2 −u1) + log(u3) −log(u2) −log(u3 −u1) l1 := log(u2) + log(u3 −u1) −log(u0) −log(u3 −u2) + √ −1π l2 := log(u3 −u2) + log(u0) −log(u3) −log(u2 −u1) − √ −1π. Moreover, replacing at each edge of TI the standard log with any other log determination still makes it ﬂattened.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Towards geometric specializations",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-24-towards-geometric-specializations.md",
+      "narrative": null,
+      "content": "built ad hoc on the functional properties of the matrix dilogarithms.\nIn order to eventually get\nspecializations with a geometric content, such as QHFT, it is necessary to reﬁne more and more our\nrough ﬂat/charged I-triangulations. In fact we have to impose some global constraints that would\nbe preserved by (possibly reﬁned) QHG isomorphisms. It is useful to recall at once some of these\nreﬁnements, and related matter. We adopt the notations introduced above.\nDeﬁnition 2.6. A triple T = (T, b, w) is an I-triangulation if at each edge e not contained in ∂T\nwe have the edge compatibility relation",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/rem-sec-005-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "rem-sec-005-03.md",
+      "narrative": null,
+      "content": "The residue mod(2 √ −1πN) of the classical log-branches of a ﬂattened I-triangulation are equivalently given by Nth roots w′(h) of the cross-ratio moduli w(h) such that w′(e1)w′(e2)w′(e3) = 1 at each 3-simplex and Q h∈ǫ−1 T (e) w′(h)∗b = 1 at each edge, with the notations of (7). For level N quantum log-branches of distinguished ﬂat/charged I-triangulations this is replaced with w′(e1)w′(e2)w′(e3) = exp(−∗b √ −1π/N) and Y h∈ǫ−1 T (e) w′(h)∗b = \u001a 1 exp(−2 √ −1π/N) if e ⊂H otherwise. Cohomological weights and structural facts. Given an I-triangulation T = (T, b, w) without boundary, let T0 be th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/thm-sec-005-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "thm-sec-005-04.md",
+      "narrative": null,
+      "content": "([24], Theorem 5.1) The sequence 0 →H3(J ) (γ2,γ) −→H1(T0; Z/2Z) ⊕H1(∂T0; Z) i∗−r −→H1(∂T0; Z/2Z) →0 is exact, where r : H1(∂T0; Z) →H1(∂T0; Z/2Z) is the coeﬃcient map and i∗: H1(T0; Z/2Z) → H1(∂T0; Z/2Z) is induced by the inclusion ∂T0 →T0. In particular, any pair (h, k) ∈H1(T0; Z/2Z) × H1(∂T0; Z) with r(k) = i∗(h) is a weight for some global charges. This fact extends to log-branches as follows. Assume that the holonomy of T restricted to each component of ∂T0 takes values in a Borel subgroup of PSL(2, C), so that it ﬁxes some point in ∂H 3. Let γ′ be deﬁned as above, except that for each 3-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Parameters for PSL(2,C)-characters of surfaces",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-006-3-parameters-for-psl2c-characters-of-surfaces.md",
+      "narrative": null,
+      "content": "Parameters for PSL(2, C)-characters of surfaces\nFix a compact closed oriented surface S of genus g with a non empty set V = {v1, . . . , vr} of marked\npoints, and negative Euler characteristic χ(S \\ V ) < 0. Denote by π the fundamental group of S \\ V ,\nand by\nR(g, r) = Hom(π, PSL(2, C))/PSL(2, C)\nthe set of all conjugacy classes of PSL(2, C)-valued representations of π. The group π is free of rank\nκ = 2g+r−1. Any choice of free generators of π identiﬁes the set Hom(π, PSL(2, C)) with PSL(2, C)κ.\nDiﬀerent such identiﬁcations are related by algebraic automorphisms of PSL(2, C)κ. Moreover, the\nis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/lem-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "lem-sec-007-01.md",
+      "narrative": null,
+      "content": "For every (g, r)̸ = (0, 3), every triangulation T ′ of S with r vertices admits t-injective corner maps.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Efficient triangulations",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-007-31-efficient-triangulations.md",
+      "narrative": null,
+      "content": "from S the interior of small 2-disks Di such that vi ∈∂Di.\nA triangulation T ′ of S with the set of vertices equal to V is called a topological ideal triangulation\nof S \\ V . Given such a T ′, we need a marking of corners of the 2-simplices. The best suited to\n3-dimensional extension are induced by global branchings b′ of T ′, and it is known that pairs (T ′, b′)\nalways exist. Then, as in section 2, we have a sign function σ = σ(T ′,b′). A corner map v 7→cv\nassociates to each vertex v of T ′ the corner at v of a triangle, say tv, in its star. We say that v 7→cv\nis t-injective if v 7→tv is inje",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prop-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "prop-sec-008-01.md",
+      "narrative": null,
+      "content": "For every C±, the projection p± : Z(T, b)± →R(g, r) restricts to a complex aﬃne algebraic principal G(T, b, C±)-bundle Z(T, b, C±) →R(g, r, C). The map Ψ in (15) yields an isomorphism Z(T, b, C±) ∼= Z(T, b, C∓). Moreover we have: dim(Z(T, b, C±) = −3χ(F) dim(R(g, r, C)) = −3χ(F) −dim(G(T, b, tC)) dim(R(g, r, tC)) = dim(R(g, r, C)) + α(tC) where tC is the type of C and α(tC) is the number of generic entries of tC. Observe that: if tgen is the purely generic type, then dim(R(g, r, tgen)) = −3χ(F); if tpar is purely parabolic, then dim(R(g, r, tpar)) = −3χ(F) −r; if tI is purely trivial, then dim",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cocycle parameters",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-008-32-cocycle-parameters.md",
+      "narrative": null,
+      "content": "respective fundamental groups.\nFix an e-triangulation (T, b) of F. Denote by Z(T, b) the space of PSL(2, C)-valued 1-cocycles on\n(T, b); we stipulate that on a triangle with ordered b-oriented edges e0, e1, e2 the cocycle relation is\nz(e0)z(e1)z(e2)−1 = 1. In this section we construct a parametrization of R(g, r) based on cocycle\ncoeﬃcients by specifying subsets of Z(T, b) with small ‘residual gauge groups’, that make principal\nalgebraic bundles over the “strata” of a suitable partition of R(g, r). These strata are determined by\nthe holonomies around the boundary components of F.\nWrite C(T, b)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/rem-sec-008-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "rem-sec-008-02.md",
+      "narrative": null,
+      "content": "For parabolic elements g ∈PSL(2, R) we have two conjugacy classes, that can be distinguished by a sign. So, replacing PSL(2, C) with PSL(2, R), the constructions of this section still work by associating a sign to each parabolic end of the surface S \\ V . Note that for PSL(2, R)-valued cocycles the idealization procedure described in Section 3.3 below gives only degenerate triangles and tetrahedra (with real shapes or cross-ratio moduli).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prop-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 20,
+      "target": "prop-sec-009-01.md",
+      "narrative": null,
+      "content": "If C has no trivial entries the (−)-exponential I-parameter map W −: ZI(T, b, C−) → W −(T, b, C) is invariant under gauge transformations. ST´EPHANE BASEILHAC1 AND RICCARDO BENEDETTI2 Geometry and computation of Θ±. The maps Θ± can be deﬁned directly in terms of I-parameters. A way to see this is to consider I triangulations of cylinders C = F × [0, 1], as discussed in Section 6.3, and the corresponding pseudo-developing maps. We give here another description. Let us just consider Θ−. Recall that PSL(2, C) is isomorphic to Isom+(H3), with the natural conformal action on CP1 = ∂¯H3 via linear f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cross-ratio parameters",
+      "pageStart": 16,
+      "pageEnd": 20,
+      "target": "../sections/sec-009-33-cross-ratio-parameters.md",
+      "narrative": null,
+      "content": "parameters for R(g, r) which are related to the shear-bend coordinates for pleated hyperbolic surfaces.\nThese parameters are obtained via an idealization procedure that includes the choice of a base point\non the Riemann sphere. We ﬁx this base point as 0. Note that the B+(2, C)-orbit of 0 is the whole of\nC, while B−(2, C) ﬁxes 0. Hence the symmetry between Z(T, b)+ and Z(T, b)−given by the map Ψ\nin (15) shall be broken.\nDeﬁnition 3.6. (Compare with Deﬁnition 2.7.) Let (K, b) be any oriented surface branched triangu-\nlation. Let z be any PSL(2, C)-valued cocycle on (K, b). We say that z is idea",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/rem-sec-009-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 20,
+      "target": "rem-sec-009-02.md",
+      "narrative": null,
+      "content": "Exponential shear-bend parameters do not depend on branchings but the orientation of F (taking the opposite branching edge orientation simultaneously exchanges the left and right tri- angles). However, branchings govern all choices in QHFT tensors. Also, they allow us to interpret exponential shear-bend parameters as exponential I-parameters, thus coming from 1-cocycles repre- senting arbitrary PSL(2, C)-characters on the triangulated boundary of arbitrary compact orientable 3-manifolds. When C has no trivial entries, the maps W ± deﬁne decorated shear-bend parameter spaces similar to those oc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/rem-sec-009-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 20,
+      "target": "rem-sec-009-03.md",
+      "narrative": null,
+      "content": "For types C with no trivial entries, we can use simpler e-triangulations of F (see Figure 9): for each of the triangles tv of the base surface S we remove the interior of a monogon inside tv, and triangulate the resulting quadrilateral by adding an edge ev with endpoints v and the b-output vertex of the opposite edge. We extend b by orienting ev from that vertex to v. Proposition 3.4 applies to the cocycle parameters based on such e-triangulations, for points of R(g, r), and also the treatment of exponential I-parameters works as well. Figure 9. More economic e-triangulation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The QHFT bordism category",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-010-4-the-qhft-bordism-category.md",
+      "narrative": null,
+      "content": "We deﬁne ﬁrst a topological (2 + 1)-bordism category. Then we will give it more structure, including\nthe parameter spaces of the previous sections.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Marked topological bordisms",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-011-41-marked-topological-bordisms.md",
+      "narrative": null,
+      "content": "r > 0, and r > 2 if g = 0, ﬁx a compact closed oriented base surface S of genus g with a set\nV = {v1, . . . , vr} of r marked points. Denote by −S the same surface with the opposite orientation,\nand write ∗S for S = +S or −S. Moreover, ﬁx a set of disjoint embedded closed segments avi in S\nsuch that avi has one end point at vi. We say that vi is framed by avi.\nWe say that two orientation preserving diﬀeomorphisms φ1 : ∗S →Σ1 and φ2 : ∗S →Σ2 are equivalent\nif there is an orientation-preserving diﬀeomorphism h : Σ1 →Σ2 such that (φ2)−1 ◦h ◦φ1 pointwise\nﬁxes the segments avi and is isotopic to th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Boundary structures",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-012-42-boundary-structures.md",
+      "narrative": null,
+      "content": "tures by using the notions of section 3. Fix an e-triangulation (T, b) of F. Following Remark 2.2 and\nthe deﬁnition of log-branches, we put:\nDeﬁnition 4.1. Let z ∈ZI(T, b)±, and e be a non boundary edge of T . Denote lz(e) the canonical log-\nbranch of W ±(z)(e), computed from the idealization of Star(e) as in Lemma 2.9 and before Deﬁnition\n3.8. For any collection m = {mλ}λ of integers, one for each edge λ in T , the classical Log-I-parameter\nof (z, m) at e is\nl(z,m)(e) = lz(e) +\n√\n−1π(ma + mc −mb −md),\nwhere a, . . . , d make Link(e) with a, c opposite and e, a have coherent branching orientat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The QHFT functor",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-013-5-the-qhft-functor.md",
+      "narrative": null,
+      "content": "Consider a QHFT bordism B = ( ˜Y , ˜LF, ρ, α±). For every odd integer N ≥1, we associate a ﬁnite\ndimensional complex linear space V (α±) to α±, and a linear map HN(B) : V (α−) →V (α+) to\nB, well-deﬁned up to sign and multiplication by Nth roots of unity.\nThis deﬁnes a (moderately\nprojective) functor HN : QHB →Vect, where Vect is the tensor category of complex linear spaces.\nThe construction immediately implies that HN is a modular functor, in the sense of [30], III.1.2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From QHFT bordisms to QHG-triangulated pseudomanifolds",
+      "pageStart": 22,
+      "pageEnd": 24,
+      "target": "../sections/sec-014-51-from-qhft-bordisms-to-qhg-triangulated-pseudo.md",
+      "narrative": null,
+      "content": "a pseudomanifold Z(B). Fill each tunnel boundary component of ˜Y with a solid tube, thus recovering\na copy of the manifold Y . The cores of the solid tubes make a parallel unframed copy λ′′ of L. We\ndeﬁne Z(B) as the result of collapsing to one point each component of λ′′. In other words, we glue\nto each tunnel component of ˜Y the oriented topological cusp ˆC = B × [0, +∞]/(B × {∞}) with base\nequal to either B = S1 × [−1, 1] or B = S1 × S1.\nNext we describe a procedure to convert Z(B) to a distinguished QHG-triangulated pseudomanifold.\nWe refer to the notions introduced in Subsection 2.4.\nWe s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/thm-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 24,
+      "target": "thm-sec-014-01.md",
+      "narrative": null,
+      "content": "For every bordism B = ( ˜Y , ˜LF, ρ, α±) and every (h, k) ∈H1( ˜Y ; Z/2Z) × H1(˜LF; C) satisfying the properties (14), there are distinguished ﬂat/charged I-triangulations T (B) of Z(B) with weight (h, k), and any two are QHG-isomorphic. ST´EPHANE BASEILHAC1 AND RICCARDO BENEDETTI2",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prop-sec-015-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "prop-sec-015-04.md",
+      "narrative": null,
+      "content": "(Functoriality) For any composition B′′ = B′ ∗B of bordisms, HN(B′′, h′′, k′′) coincides with HN(B′, h′, k′) ◦HN(B, h, k) up to sign and multiplication by Nth roots of unity. This is a direct consequence of Theorem 5.4. Also, we prove as in Proposition 4.29 of [5]:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prop-sec-015-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "prop-sec-015-05.md",
+      "narrative": null,
+      "content": "(Polarity) Write ¯B for the QHFT bordism with opposite orientation and complex conjugate holonomy ¯ρ. Then HN( ¯B, −h, −k) and HN(B, h, k)∗, the adjoint for the hermitian structure of V (α±), coincide up to sign and multiplication by Nth roots of unity. In the proof of Theorem 5.3 we have seen that the space ˜W +(T, b) of (+)-Log-I-parameters over W +(T, b) (the disjoint union of spaces W +(T, b, C)) is isomorphic to ˜C−3χ(F )+2p, where ˜C is the universal cover of C \\ {0}. Similarly, for any admissible triangulation τ of a topological cusp with n 2-simplices, we have the analytic subspace Def",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prop-sec-015-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "prop-sec-015-06.md",
+      "narrative": null,
+      "content": "(Analyticity) For every N ≥1, the amplitudes of QHFT bordisms supported by X = (Y, LF, α±) vary analytically with the boundary structure in Def(X), up to sign and multiplication by Nth roots of unity. This follows immediately from the fact that the matrix dilogarithms are analytic, together with the fact that any path in Def(X) lifts to a path of log-branches via the relations induced by Deﬁnition 5.2 (4).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Amplitudes",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "../sections/sec-015-52-amplitudes.md",
+      "narrative": null,
+      "content": "V −1 for the dual space. Both are endowed with the hermitian inner product with orthonormal basis\nthe vectors e0 and (ei + eN−i)/\n√\n2, i = 1, . . . , N −1.\nRecall the notations of section 3.\nFor each base surface F ﬁx an e-triangulation (T, b), an or-\ndering of the set T (2) of 2-simplices, and let V (T, b) = ⊗t∈T (2)V σ±(t).\nGiven a QHFT bordism\nB = ( ˜Y , ˜LF, ρ, α±) with a distinguished ﬂat/charged I-triangulation T (B), the trace tensor in (11)\nis a morphism HN(T (B)) ∈Hom(V (α−), V (α+)), where V (α±) is the tensor product of isomorphic\ncopies of the spaces V (T, b) over the (ordered) com",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/rem-sec-015-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "rem-sec-015-03.md",
+      "narrative": null,
+      "content": "(Cheeger-Chern-Simons invariants and H1.) By the results of [25], there is an injective homomorphism from H3(PSL(2, C); Z) (discrete homology) to a scissors congruence group ˆP(C), such that the dilogarithm (3), deﬁned on ˆP(C), restricts to the universal Cheeger-Chern-Simons class ˆC2 : H3(PSL(2, C); Z) →C/π2Z. Hence H1 is a natural extension of exp( ˆC2/iπ), the exponential of a constant times Vol + iCS, to classes representing QHFT bordisms. Recently J. Dupont and C. Zickert produced dilogarithmic formulas for the lift ˆC′ 2 of ˆC2 to H3(SL(2, C); Z), such that exp( ˆC′ 2/iπ) coincides with",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/thm-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "thm-sec-015-01.md",
+      "narrative": null,
+      "content": "The morphism HN(B, h, k) = HN(T (B)) does not depend on the choice of T (B) up to sign and multiplication by Nth roots of unity, and HN(B, h, k) = HN(B, h′, k′) if the mod(NZ) reductions of h and h′ (resp. k and k′) are the same, that is, if we have k −k′ ∈H1(˜LF; Z) and k −k′ = 0 ∈H1(˜LF; Z/NZ), and similarly for h and h′. Moreover, there is no sign ambiguity if we restrict to even valued ﬂattenings as in Lemma 2.9 (hence with h = 0). We call HN(B, h, k) the amplitude of (B, h, k).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/thm-sec-015-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "thm-sec-015-02.md",
+      "narrative": null,
+      "content": "For the dependance with respect to the mod(NZ) reductions of weights, we note that the associated systems of Nth roots of moduli (see Remark 2.11) are connected by QHG isomorphisms. Indeed, the diﬀerence k −k′ ∈H1(˜LF; NZ) coincides with γ(f)−γ(f ′)/ √ −1π and γ(c)−γ(c′)/ √ −1π for some f, f ′ and c, c′, and similarly for h −h′ and the γ2 maps. By ﬁrst considering (k −k′)/N we can eventually take the collections of values of f −f ′ and c −c′ in NZ, and equal. Hence the conclusion follows from (5) and (6). For even valued ﬂattenings, the claim follows from the fact that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/cor-sec-017-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "cor-sec-017-02.md",
+      "narrative": null,
+      "content": "For any ﬁxed ρ ∈R(g, r), the homomorphisms ψ 7→HN([ψ]) induce a conjugacy class of linear representations of Mod(g, r), well-deﬁned up to sign and multiplication by Nth roots of unity. For SL(2, R)-valued characters ρ these representations are unitary. 5.5. Tunneling the (+)/(−) states. We use (+)-Log-I-parameters to deﬁne the QHFT because of the existence of strongly idealizable cocycles on QHFT bordism triangulations, which makes functo- riality easy to check. Here we exhibit a family of tensors correlating the (±)-Log-I-parameters, thus recovering, in particular, the direct and nice interpr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/lem-sec-017-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "lem-sec-017-01.md",
+      "narrative": null,
+      "content": "Up to sign and multiplication by Nth roots of unity (denoted ”=N”) we have : (1) For any ﬁxed (T, b, L) the amplitudes HN( ˜Y , ˜LF, ρ, (±F, (T, b, L)), [ψ±]) depend only on [ψ]. We denote them HN([ψ]). (2) HN([id]) is the identity map from EN(α−) to EN(α+), and HN([h2]) ◦HN([h1]) =N HN([h2h1]). In particular, for any [ψ] ∈Mod(g, r) the QHFT tensor HN([ψ]) is invertible, with inverse HN([ψ−1]), and for a homotopically d-periodic [ψ] the QHFT tensor HN([ψ]) is of ﬁnite order less than or equal to d. (3) If ψ(ρ) coincides with ρ, then Trace \u0000HN([ψ]) \u0001 =N HN( ˜ W[ψ], ˜L[ψ], ρ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prop-sec-017-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "prop-sec-017-03.md",
+      "narrative": null,
+      "content": "There exists a canonical family F of ﬂat/charged I-triangulations covering a portion of Z(F), with invertible trace tensor HN(F) : E(F)+ →E(F)−.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "QHFT variants",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-016-53-qhft-variants.md",
+      "narrative": null,
+      "content": "QHFT0: Consider the bordism category supported by triples (Y, L, ρ), where L is an non-empty\nunframed tangle in Y and ρ is a PSL(2, C)-character on the whole of Y (ie.\nρ is trivial at the\nmeridians of L). In fact, we restrict to holonomies ρ such that (Y, L, ρ) admits D-triangulations that\nextend a topological branched ideal triangulation (T ′, b′) of each boundary component, say (S, V ), and\nfor which the link L is realized as a Hamiltonian subcomplex (hence with no I-cusp). In particular the\nobjects of this bordism category incorporate the idealization of (necessarily idealizable) cocycles o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mapping class group representations",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "../sections/sec-017-54-mapping-class-group-representations.md",
+      "narrative": null,
+      "content": "Set ˜YF = F × [−1, 1], ˜L = ∂F × [−1, 1]\nwith trivial vertical framing, and let Mod(g, r) be the mapping class group of F, that is, the group\nof homotopy classes of orientation-preserving diﬀeomorphisms of F ﬁxing pointwise each boundary\ncomponent. Given ψ± : (±F, (T, b, L)) →F × {±1}, put ψ = ψ−1\n+ ψ−and [ψ] for the corresponding\nelement in Mod(g, r).\nDenote by ˜W[ψ] the mapping torus (F × [−1, 1])/(x, −1) ∼(ψ(x), 1) of ψ,\nwith tunnel boundary ˜L[ψ].\nLet ρ be the conjugacy class of PSL(2, C)-valued representations of\nπ1(F × [−1, 1]) (identiﬁed with π1(F))) associated to L. To simplify notatio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/thm-sec-017-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "thm-sec-017-04.md",
+      "narrative": null,
+      "content": "there exists integral charges on (C(T, b), H). Let F ×[−1, 3] be triangulated by two adjacent copies of C(T, b), glued each to the other at F ×{+1}. For any z ∈ZI(T, b)+, consider the unique cocycle C0(z) on the composition C(T, b) ∗C(T, b) that: extends z ∪Ψ(z), given on (F × {−1}) ∪(F × {3}); takes the value P of (15) on each vertical edge contained in F × [1, 2]; takes the value 1 on each vertical edge contained in F × [−1, 1]. Perturb C0(z) with a 0-cochain s that: takes the value 1 on (F × {−1}) ∪(F × {3}); takes values in PB+(2, C) at ST´EPHANE BASEILHAC1 AND RICCARDO BENEDETTI2 each ver",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Partition functions",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-018-6-partition-functions.md",
+      "narrative": null,
+      "content": "Assume that W is a closed oriented 3-manifold, and that L is a link in W with a framed part LF and\nan unframed one L0. Each variant of quantum hyperbolic ﬁeld theory (see Section 5.3) leads to the\nrespective partition functions.\nIf ρ is trivial at each meridian of L0, we have the QHFT partition functions\nHN(W, LF, L0, ρ, h, k)\nthat specialize to the QHFT0 ones when L = L0:\nHN(W, L, ρ, h, k) = HN(W, ∅, L0, h, k) .\nIf ρ is also assumed to be non trivial at each meridian of LF, we have also\nHe\nN(W, LF, L0, ρ, h, k) .\nThese partition functions are scalars, well-deﬁned up to sign and multiplication",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/cor-sec-020-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 35,
+      "target": "cor-sec-020-03.md",
+      "narrative": null,
+      "content": "If {(Wn, Ln, ρn)} is a sequence of closed hyperbolic Dehn ﬁllings converging to the cusp manifold M, then for every arc a we have limn HN(Wn, Ln, ρn) =N HN(M, a). Hence HN(M) = HN(M, a) is always a well deﬁned invariant of M (beyond the weakly-gentle case). Remarks 6.5. (1) Theorem 6.3 is the analog for N > 1 of Theorems 14.7 and Theorem 14.5 in [25], which describe surgery formulas for the volume, Vol(W), and Chern-simons invariant, CS(W), of W: √ −1(Vol(W) + √ −1CS(W)) = X ∆⊂T R(∆, b, w′, f ′) −π√−1 X j λ(Lj) where R is given by (3) and λ(Lj) is the complex length of Lj, that is, the logarit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/cor-sec-020-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 35,
+      "target": "cor-sec-020-05.md",
+      "narrative": null,
+      "content": "For every r ≥2 we have HN(W, λr, ρ) =N HN(W, λ2, ρ) . Remarks 6.8. (1) Though disjoint and complementary by hypothesis, formula (21) is formally the same as that of Proposition 6.1, when replacing l by m. (2) Assume (for simplicity) that L = LF. When l is a longitude of Lj, l∗inherits a natural framing in W(l). Hence we get a triple (W(l), ˆL ˆ F, ρ). It follows from the very deﬁnition of the QHFT tensors that HN(W, LF, ρ, 0, 0) = HN(W(l), ˆL ˆ F, ρ, 0, 0) and the same with He N (when deﬁned) replacing HN. (3) We have seen that both HN and He N partitions functions display interesting features",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/lem-sec-020-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 35,
+      "target": "lem-sec-020-01.md",
+      "narrative": null,
+      "content": "(See [25], p. 469) Let z′ be a small deformation of z0 producing (W, L), and mj be a meridian of each link component Lj. Then there exist ﬂattenings f ′′ for the deformed trian- gulation (T, b, w′) such that the weight γ(f ′′) associated to the collection of log-branches of T ′′ = (T, H, b, w′, f ′′, c) satisﬁes γ(f ′′)(mj) = 0 for all j. QUANTUM HYPERBOLIC GEOMETRY",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/lem-sec-020-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 35,
+      "target": "lem-sec-020-07.md",
+      "narrative": null,
+      "content": "Let c be a global charge on (T, H) such that the charge weight of the curve C is 0. Then c extends to a global charge c′ on (T ′, H′).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prop-sec-019-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "prop-sec-019-01.md",
+      "narrative": null,
+      "content": "HN(W, LF ∪L0 F0, ∅, ρ, 0, 0) =N HN(W, LF, ¯λ, ρ, 0, 0) .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "QHFT vs QHFT0 partition functions",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/sec-019-61-qhft-vs-qhft0-partition-functions.md",
+      "narrative": null,
+      "content": "HN(W, L, ρ, 0, 0) coincide with the invariants HN(W, L, ρ) constructed in [4, 5]. Let us consider more\ngenerally (W, LF, L0, ρ, 0, 0).\nFix also a framing F0 for L0.\nThen we can consider the partition\nfunction HN(W, LF ∪L0\nF0, ∅, ρ, 0, 0). Let us denote by ¯λ the unframed link obtained by splitting each\ncomponent of L0 in the two corresponding parallel boundary components of the ribbon link L0\nF0. We\nhave:\nProposition 6.1.\nHN(W, LF ∪L0\nF0, ∅, ρ, 0, 0) =N HN(W, LF, ¯λ, ρ, 0, 0) .\nProof. For simplicity, assume that L = L0. Fix a D-triangulation of ( ˜W, ˜LF, ρ) where each tunnel\ncomponent B has a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariants of cusped manifolds and surgery formulas",
+      "pageStart": 29,
+      "pageEnd": 35,
+      "target": "../sections/sec-020-62-invariants-of-cusped-manifolds-and-surgery-fo.md",
+      "narrative": null,
+      "content": "manifold triangulations T used in [5] (see Deﬁnition 6.2 and Deﬁnition 6.3 in that paper) to deﬁne\nthe quantum hyperbolic invariant trace tensors HN(T ) for oriented cusped hyperbolic manifolds.\nLet M be a cusped manifold.\nDenote Z the pseudo-manifold obtained by taking the one point\ncompactiﬁcation of each cusp of M. M admits a triangulation by positively embedded hyperbolic ideal\ntetrahedra, possibly including some degenerate ones of null volume (ie. having real cross-ratios). Such\na triangulation can be obtained by subdividing the canonical Epstein-Penner cell decomposition of M.\nThis gives",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/rem-sec-020-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 35,
+      "target": "rem-sec-020-06.md",
+      "narrative": null,
+      "content": "Note that in general there are very few simplicial curves on a given Link(v). Hence to get such a simplicial description of an arbitrary Dehn ﬁlling, we will usually have to modify a given triangulation. For the peculiar QHG pseudo-manifold triangulations considered in this section, retriangulating will be possible by using QHG isomorphisms, hence without altering the trace tensors. In fact, any two triangulations of ∂N(v) are connected by a ﬁnite sequence of 2-dimensional 1 ↔1 “ﬂip” moves (see Figure 6), and 1 ↔3 moves obtained by replacing a 2-simplex with the cone of its boundary to a point",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/thm-sec-020-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 35,
+      "target": "thm-sec-020-02.md",
+      "narrative": null,
+      "content": "[Cusped manifold surgery formula] Let (W, L) be obtained by completion of a small deformation z′ of z0, and T ′, T ′′ be associated triangulations. Denote by ρ the hyperbolic holonomy of W. Then we have HN(W, L, ρ) =N HN(T ′′). Moreover, associated to each cusp Cj of M there is an explicitely known map Λj N(T ′′) : {N −states of T} →C such that the following surgery formula holds: HN(W, L, ρ) =N X s Y ∆⊂T RN(∆, b, w′, f ′, c)s Y j Λj N(T ′′)(s) where s runs over the N-states of T and RN(∆, b, w′, f ′, c)s is the matrix dilogarithm entry determined by s, for the tetrahedron with the continuousl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/thm-sec-020-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 35,
+      "target": "thm-sec-020-04.md",
+      "narrative": null,
+      "content": "[Closed manifold surgery formula] Assume that ρ(l) = id ∈PSL(2, C) and the weight k satisﬁes k([l]) = 0. Denote: ρ′ the natural extension of ρ|W\\U to W(l); eLF = LF \\ Lj; k′ the restriction of k to W(l). We have (20) HN(W, LF, L0, ρ, 0, k) =N HN(W(l), eLF, L0 ∪l∗∪¯λj, ρ′, 0, k′) . If moreover ρ is not trivial at the meridians of LF and l is a longitude of ∂U, then ST´EPHANE BASEILHAC1 AND RICCARDO BENEDETTI2 (21) He N(W, LF, L0, ρ, 0, k) =N He N(W(l), eLF, L0 ∪l∗∪L′ j, ρ′, 0, k′) . Let us assume now that L0 is made by r parallel copies of Lj along the ribbon LF that encodes the framing. So den",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/ex-sec-021-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 40,
+      "target": "ex-sec-021-03.md",
+      "narrative": null,
+      "content": "the ﬁgure-eight knot complement Here we compute the QHFT partition functions of (S3, K0), where K0 is the 0-framed ﬁgure-eight knot in S3. Recall that S3 \\ K is ﬁbered over S1, with ﬁber the once-punctured torus Σ1,1; the 0-framing of K is induced by the ﬁbration. For QUANTUM HYPERBOLIC GEOMETRY simplicity, below we consider only characters ρ of injective representations π1(S3 \\ K) →PSL(2, C). The restriction to Σ1,1 of such representations can be realized by (−)-Log-I-parameters on any ideal triangulation of Σ1,1, so that, by (24), we can determine the corresponding subspace (still denoted De",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prop-sec-021-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 40,
+      "target": "prop-sec-021-01.md",
+      "narrative": null,
+      "content": "If Int( ˜W[ψ]) supports a (necessarily unique) complete hyperbolic structure with holonomy ρc, then HN( ˜ W[ψ], ˜L[ψ], ρc, 0, 0) =N N 2l HN(W \\ L).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Manifolds that fiber over S1 - Examples",
+      "pageStart": 35,
+      "pageEnd": 40,
+      "target": "../sections/sec-021-63-manifolds-that-fiber-over-s1---examples.md",
+      "narrative": null,
+      "content": "the QHFT partition functions of mapping tori.\nA speciﬁc class of distinguished ﬂat/charged I-\ntriangulations of ( ˜\nW[ψ], ˜L[ψ], ρ) is obtained by composing one for the trivial mapping cylinder F ×\n[−1, 1], say Ttriv, with the monodromy action on the e-triangulation (T, b) of F × {1}, and then gluing\nthe two boundary components. The monodromy action can always be decomposed as a sequence of\nﬂip moves: a single ﬂip on the ideal triangulation T ′ associated to T deﬁnes a ﬂip on (T, b) if it is\nnot adjacent to a marked corner, and it lifts to sequences as in Figure 17 otherwise. We view these\nseq",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/rem-sec-021-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 40,
+      "target": "rem-sec-021-02.md",
+      "narrative": null,
+      "content": "The formula HN(W \\ L) = Tr(HN(T ′ s )) expresses the quantum hyperbolic invariants of ﬁbered cusped manifolds as amplitudes between two markings of the ﬁber, identiﬁed with a pleated hyperbolic surface. For a similar construction based on representations of quantum Teichmuller spaces, see [9].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/rem-sec-021-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 40,
+      "target": "rem-sec-021-04.md",
+      "narrative": null,
+      "content": "Recall the space C in (25). As already mentionned after Deﬁnition 2.6, we have a holonomy map hol : C →X to the character variety X = X(π1(S3 \\ K)). (See [28] or [18] for a complete description of the latter). The map hol is generically 2 : 1, and is onto the geometric component of X [12]. We can express the above partition functions in terms of standard generators of X by the following observation. Considering S3 \\ K as the mapping torus of the monodromy Φ, the edges e0, e1 of ∆+ are identiﬁed with a longitude l and meridian m of the punctured torus Σ1,1, and in ∆−we have (e′ 0 is opposite to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/rem-sec-021-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 40,
+      "target": "rem-sec-021-05.md",
+      "narrative": null,
+      "content": "Formulas for Cheeger-Chern-Simons invariants H1(S3, K0, ρ) of arbitrary PSL(2, C)- characters of S3 \\ K come exactly in the same way (See Remark 1.1 and Remark 5.5). In the peculiar situation of the complete hyperbolic structure and its hyperbolic Dehn ﬁllings, they coincide with those of [25], Section 15. ST´EPHANE BASEILHAC1 AND RICCARDO BENEDETTI2",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611504v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 40,
+      "pageEnd": 40,
+      "target": "../sections/sec-022-references.md",
+      "narrative": null,
+      "content": "[1] W. Abikoﬀ, The Real Analytic Theory of Teichm¨uller Space, Lect. Notes Math. 820, Springer (1980)\n[2] M.F. Atiyah, Topological quantum ﬁeld theories, Publ. Math. IHES 68 (1988) 175–186\n[3] S. Baseilhac, Hyperbolic ﬁeld theories, geometric quantization and the dynamics of surface diﬀeomorphisms, in\npreparation\n[4] S. Baseilhac, R. Benedetti, Quantum hyperbolic invariants of 3-manifolds with P SL(2, C)-characters, Topology 43\n(2004) 1373–1423\n[5] S. Baseilhac, R. Benedetti, Classical and quantum dilogarithmic invariants of ﬂat P SL(2, C)-bundles over 3-\nmanifolds, Geom. Topol. 9 (2005) 493–5",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

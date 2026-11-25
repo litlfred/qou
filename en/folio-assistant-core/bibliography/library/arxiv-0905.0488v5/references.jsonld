@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-0905.0488v5",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC VARIETIES",
+      "dcterms:creator": [
+        "YEKUTIELI, AMNON"
+      ],
+      "dcterms:issued": "D:20181107",
+      "dcterms:identifier": "https://arxiv.org/abs/0905.0488",
+      "dcterms:abstract": "Let X be a smooth algebraic variety over a ﬁeld K containing the real numbers. We introduce the notion of twisted associative (resp. Pois- son) deformation of the structure sheaf OX. These are stack-like versions of usual deformations. We prove that there is a twisted quantization operation from twisted Poisson deformations to twisted associative deformations, which is canonical and bijective on gauge equivalence classes. This result extends work of Kontsevich, and our own earlier work, on deformation quantization of algebraic varieties.",
+      "dcterms:source": "library/arxiv-0905.0488v5/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-0905.0488v5"
+    }
+  ]
+}

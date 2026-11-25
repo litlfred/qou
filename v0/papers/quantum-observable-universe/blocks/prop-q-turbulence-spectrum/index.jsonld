@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-q-turbulence-spectrum",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:q-turbulence-spectrum",
+  "kind": "proposition",
+  "title": "$q$-deformed energy cascade and modified Kolmogorov spectrum",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-planck-reynolds"
+  ],
+  "tags": [
+    "turbulence",
+    "kolmogorov",
+    "energy-cascade",
+    "fluid-dynamics",
+    "prediction"
+  ],
+  "leanRef": "qou:QOU.FluidDynamics.q_turbulence_spectrum",
+  "text": "q-turbulence-spectrum.md",
+  "provenance": "authored"
+}

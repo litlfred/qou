@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/pending-show.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/pending-show",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "pending-show",
+      "title": "/pending-show — what is this session working on?",
+      "description": "Show the current session's pending work — beans list + ledger intent. Read-only.",
+      "instructionsPath": "skills/local/pending-show.md",
+      "instructionLines": 56,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

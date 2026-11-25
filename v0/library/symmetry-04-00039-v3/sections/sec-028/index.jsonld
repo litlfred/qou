@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/symmetry-04-00039-v3/sections/sec-028",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "TQFT",
+  "pageStart": 54,
+  "pageEnd": 56,
+  "contains": [
+    "library/symmetry-04-00039-v3/blocks/prose-sec-028",
+    "library/symmetry-04-00039-v3/blocks/figure-img-p055-1",
+    "library/symmetry-04-00039-v3/blocks/figure-img-p056-1"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/symmetry-04-00039-v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/symmetry-04-00039-v3/manifest.jsonld",
+  "provenance": "ingested"
+}

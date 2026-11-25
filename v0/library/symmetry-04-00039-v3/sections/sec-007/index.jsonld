@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/symmetry-04-00039-v3/sections/sec-007",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "First-Order Fusion",
+  "pageStart": 19,
+  "pageEnd": 20,
+  "contains": [
+    "library/symmetry-04-00039-v3/blocks/prose-sec-007"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/symmetry-04-00039-v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/symmetry-04-00039-v3/manifest.jsonld",
+  "provenance": "ingested"
+}

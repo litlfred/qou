@@ -1,0 +1,329 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1010.5321v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1010.5321v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "In the first section we give certain formulas with respect to some important coordinate systems and models, respectively.\n\nThen we collect the classical results on three-dimensional hyperbolic volume of J.Bolyai and N.I.Lobachevsky. The most famous volume-integral (dependent on the dihedral angles of the orthosceme) discovered by N.I.Lobachevsky known and investigated worldwide however it is not well-known that for this volume J.Bolyai also gave two integrals. He used as parameters both of the measure of the dihedral angles and the edges, respectively. We observed that there is no volume-formu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1010.5321v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Notation",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-11-notation.md",
+      "narrative": null,
+      "content": "$\\mathbb{R}^{n}$, $\\mathbb{E}^{n}$, $\\mathbb{H}^{n}$:\n\n:   The space of the $n$-dimensional real vectors, the $n$-dimensional Euclidean space and the $n$-dimensional hyperbolic space, respectively.\n\n$x_i$:\n\n:   The $i^{th}$ coordinate axis, and coordinate value with respect to an Cartesian coordinate system of $\\mathbb{E}^{n}$ or $\\mathbb{H}^{n}$.\n\n$\\xi_i$:\n\n:   The $i^{th}$ coordinate axis, and coordinate value with respect to paracyclic coordinate system of $\\mathbb{H}^{n}$.\n\n$\\phi_i$, $r_i$:\n\n:   The angle between the $i^{th}$ coordinate axis and the segment $OP_{i+1}$ and the length of the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1010.5321v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1010.5321v3  [math.MG]  16 Nov 2010\nFormulas on hyperbolic volume∗\n´A.G.Horv´ath\nDepartment of Geometry,\nBudapest University of Technology and Economics,\nH-1521 Budapest,\nHungary\ne-mail: ghorvath@math.bme.hu\nOctober 15, 2010\nAbstract\nThis paper collects some important formulas on hyperbolic volume. To determine con-\ncrete values of volume function is a very hard question requiring the knowledge of various\nmethods. Our goal to give a non-elementary integral on the volume of the orthosceme (obtain\nit without using the Schl¨aﬂi diﬀerential formula), using edge-lengthes as the only parameter",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1010.5321v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "General formulas",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-002-2-general-formulas.md",
+      "narrative": null,
+      "content": "In hyperbolic geometry, we have a good chance to get a concrete value of the volume function if we can transform our problem into either a suitable coordinate system or a model of the space, respectively. In this section, we give volume-integrals with respect to some important system of coordinates. In our computation we also use the parameter $k$ (used by J.Bolyai for the express the curvature of the hyperbolic space).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1010.5321v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Coordinate system based on paracycles (horocycles)",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-003-21-coordinate-system-based-on-paracycles-horocyc.md",
+      "narrative": null,
+      "content": "![coordinate system based on paracycles.](vol1.eps)\n\nConsider a parasphere of dimension $n-1$ and its pencil of rays of parallel lines. The last coordinate axis let be one of these rays, the origin will be the intersection of this line by the parasphere. The further axes are pairwise orthogonal paracycles. The coordinates of $P$ are $\\left( \\xi _1 ,\\xi _2,\\cdots ,\\xi _n \\right)^T,$ where the last coordinate is the distance of $P$ and the parasphere, while the further coordinates are the coordinates of the orthogonal projection $T$ with respect to the Cartesian coordinate system giving by the m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1010.5321v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Volume in the Poincare half-space model",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-22-volume-in-the-poincare-half-space-model.md",
+      "narrative": null,
+      "content": "![Coordinate system in the half-space model.](vol2.eps)\n\nIn the Poincare half-space model we consider a Cartesian coordinate system via Fig. 2. The first $n-1$ axes lie in the bounding hyperplane the last one is perpendicular to it. If the hyperbolic coordinates of a point $P$ (with respect to a paracycle coordinate system) is $\\left( \\xi _1 ,\\xi _2 ,\\cdots ,\\xi _n \\right)^T,$ correspond to $P$ the point $P'$ with coordinates: $$\\left( x _1 , x _2 ,\\cdots ,x _n \\right)^T=\n\\left(\\xi _1 ,\\xi _2 ,\\cdots ,\\xi _{n-1},e^{\\frac{\\xi _n}{k}} \\right)^T.$$ The Jacobian of this substitution is $\\frac{k}{x",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1010.5321v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hyperbolic orthogonal coordinate system",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-005-23-hyperbolic-orthogonal-coordinate-system.md",
+      "narrative": null,
+      "content": "Put an orthogonal system of axes to paracycle coordinate system such that, the new half-axes let the tangent half-lines at the origin of the old one. (We can see it on Fig.3.) To determine the new coordinates of the point $P$ we project $P$ orthogonally to the hyperplane spanned by the axes $x_1,x_2,\\cdots, x_{n-2},x_n$. The getting point is $P_{n-1}$. Then we project orthogonally $P_{n-1}$ onto the $(n-2)$-space spanned by $x_1,x_2,\\cdots, x_{n-3},x_n$. The new point is $P_{n-2}$. Now the $(n-1)^{th}$ coordinate is the distance of $P$ and $P_{n-1}$, the $(n-2)^{th}$ is the distance of $P_{n-1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1010.5321v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Coordinate system based on spherical hyperbolic coordinates",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-006-24-coordinate-system-based-on-spherical-hyperbol.md",
+      "narrative": null,
+      "content": "![Spherical coordinates](vol4.eps)\n\nFrom the hyperbolic orthogonal coordinates $x_1,x_2,\\cdots, x_n$ we can get the spherical coordinates of a point $P$. Let the distance of $P=P_n$ from the origin is $r_n$ and denote by $\\phi_i$ the angle between the $i^{th}$ coordinate axis and the segment $OP_{i+1}$ for $i=n-1,n-2,\\cdots 1$. ( Here $P_{n-1}$ is the orthogonal projection of $P$ into the coordinate subspace of the axes $x_1, x_{n-2},x_n$, and so on\\...) We have $$\\sinh \\frac{ x_{n-1}}{k}=\\sinh \\frac{ r_n}{k} \\cos\\phi_{n-1}$$ by the hyperbolic theorem of Sin. For general $i$, we get that $$\\co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1010.5321v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Volume in the projective model",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-007-25-volume-in-the-projective-model.md",
+      "narrative": null,
+      "content": "At the origin of the projective (Kayley-Clein) model we consider a Cartesian system of coordinates. Regarding the factor $k$ we assume that the radius of the sphere is $k$. The considered system is an orthogonal coordinate system both of the embedding Euclidean and the modeled hyperbolic space.\n\n![Coordinates in the Cayley-Klein model](vol5.eps)\n\nWe connect the hyperbolic spherical coordinates and the euclidean spherical ones by the system of equations: $$r_n= k\\tanh^{-1}\\frac{R_n}{k}, \\hspace{0,5cm}\n\\phi_i=\\theta_i, \\hspace{0,5cm} i=1,\\cdots, n-1.$$ Since the Jacobian is $$\\frac{1}{1-\\left(\\f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1010.5321v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The three dimensional case",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-008-3-the-three-dimensional-case.md",
+      "narrative": null,
+      "content": "The three dimensional case",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1010.5321v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Formulas of J. Bolyai",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-009-31-formulas-of-j-bolyai.md",
+      "narrative": null,
+      "content": "In this section $k$ is a constant giving the curvature of the hyperbolic space and the value of our constant $v_n$ is $1$. The following formulas can be found in [@bolyai], [@bonola] and [@weszely]. Most of it can be easily determined using the results of the previous section. An important exception is the volume of the orthosceme, we will give a new formula for it in section 3.3.\n\nVolume of the body determined by a disk of area p and the segments orthogonal to it with edge lengthes $t$, respectively:\n\n$$v=\\frac{1}{8}pk\\left(e^{\\frac{2q}{k}}-e^{-\\frac{2q}{k}}\\right) + \\frac{1}{2}pq.$$\n\nVolume",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1010.5321v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Formulas of N.I.Lobachevsky",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-010-32-formulas-of-nilobachevsky.md",
+      "narrative": null,
+      "content": "The formulas of this subsection can be found in [@lobacsevszkij] or [@molnar].\n\nBarrel-wedge is a sector of a barrel intersected from it by two meridian-plane through its axis of rotation. Let $T$ be the area of a meridian-intersection and $p$ be the length of its parallel circular arcs. Then we have\n\n$$v=\\frac{1}{2}pT.$$\n\nLet the non-rectangular dihedral angles of an orthosceme be $\\alpha$, $\\beta$ and $\\gamma$, respectively. There admitted at the edges $a$, $z$ and $c$, respectively. (See in Fig.6 ). Introduce the parameter $\\delta$ by the equalities: $$\\tanh \\delta:=\\tanh a\\tan\\alpha =\\tanh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1010.5321v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Once more again on the volume of the orthosceme",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-011-33-once-more-again-on-the-volume-of-the-orthosce.md",
+      "narrative": null,
+      "content": "As an application of our general formulas we determine the volume of the orthosceme as the function of its edge-lengthes $a$, $b$ and $c$. We note that there are formulas to transform the dihedral angles into the edge-lengthes. By the notation of the previous section these are: $$a=\\frac{1}{2}\\ln\\frac{\\sin(\\alpha +\\delta)}{\\sin(\\alpha -\\delta)}, \\hspace{ 0,3cm}\nc=\\frac{1}{2}\\ln\\frac{\\sin(\\gamma +\\delta)}{\\sin(\\gamma -\\delta)},\n\\hspace{ 0,3cm}\nz=\\frac{1}{2}\\ln\\frac{\\sin(\\frac{\\pi}{2}-\\beta +\\delta)}{\\sin(\\frac{\\pi}{2}-\\beta -\\delta)}.$$ It is clear that there is no simple way to get a new volum",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1010.5321v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The 3-dimensional case",
+      "pageStart": 9,
+      "pageEnd": 13,
+      "target": "../sections/sec-012-331-the-3-dimensional-case.md",
+      "narrative": null,
+      "content": "We now follow another way for computation, we will determine the integral $$v(D)=\\int\\limits_{D}(\\cosh z)^2(\\cosh y)\\mathrm{d}y\\mathrm{d}z\\mathrm{d}y= \\int\\limits_{0}^{a}\\int\\limits_{0}^{\\phi(x)}\\int\\limits_{0}^{\\psi (x,y)}(\\cosh z)^2(\\cosh y)\\mathrm{d}y\\mathrm{d}z\\mathrm{d}x,$$ getting it from hyperbolic orthogonal coordinates using the parameter value $k=1$. The functions $\\phi (x)$ and $\\psi (x,y)$ can be determined as follows. Consider the orthosceme on Fig.7.\n\n![Orthosceme and orthogonal coordinates](vol7.eps)\n\nIn the rectangular triangle $\\triangle_{OP_2P_1}$ the tangent of the angle $P_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1010.5321v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The case of dimension two",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-013-332-the-case-of-dimension-two.md",
+      "narrative": null,
+      "content": "The following calculation shows that area of a rectangular triangle also can be get with our method. $$\\int\\limits_{0}^{a}\\int\\limits_{0}^{\\phi(x)}(\\cosh y)\\mathrm{d}y\\mathrm{d}x=\\int\\limits_{0}^{a}\\frac{\\frac{\\tanh b}{\\sinh a}\\sinh x}{\\sqrt{1-\\left(\\frac{\\tanh b}{\\sinh a}\\sinh x\\right)^2}}\\mathrm{d}x=$$ $$=\\frac{1}{2}\\frac{\\sinh a}{\\tanh b}\\int\\limits_{0}^{(\\tanh b)^2}\\frac{1}{\\sqrt{1+\\left(\\left(\\frac{\\sinh a}{\\tanh b}\\right)^2-1\\right)t-\\left(\\frac{\\sinh a}{\\tanh b}\\right)^2t^2}}\\mathrm{d}t$$\n\nAt this point we can use the following result on antiderivative: if $y=ax^2+bx+c$ and $a<0$ then $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1010.5321v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The case of dimension n",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-014-333-the-case-of-dimension-n.md",
+      "narrative": null,
+      "content": "The following lemma plays an important role in the $n$-dimensional case.\n\n::: lemma\nWe have two $k$-dimensional affine subspaces $H_k$ and $H'_k$, respectively for which they intersection have dimension $k-1$. Assume that the points $P\\in H_k$, $P'\\in H'_k$ and $P''\\in H_k\\cap H'_k$ hold the relations $PP'\\bot H'_k$ and $P'P''\\bot H_k\\cap H'_k$, respectively. Then the angle $$\\alpha =\\tan ^{-1}\\frac{\\tanh(PP')}{\\sinh P'P''},$$ is independent from the position of $P$ in $H_k$.\n:::\n\nLet $P$ and $Q$ be two arbitrary points of $H_k$. Then by the theorem of three perpendiculars we also have that $P",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1010.5321v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Further results on concrete volumes",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-015-34-further-results-on-concrete-volumes.md",
+      "narrative": null,
+      "content": "Here we mention some important results from the last few decades, which are calculate hyperbolic volumes. To investigate it we can see immediately that our formula on orthosceme has very simple building up. In this section the great latin letters mean the measures of the dihedral angles at the edges denoted by the corresponding small ones.\n\n::: theorem\nOpposite dihedral angles of ideal tetrahedron are equal to each other, $A+B+C=\\pi$ and its volume $v$ is $$v=\\Lambda (A)+\\Lambda (B)+\\Lambda (C),$$ where $\\Lambda (x)=-\\int \\limits_{0}^x\\ln|2\\sin \\zeta|{\\mathrm d\\zeta}$.\n:::\n\n::: theorem\nLet $R$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

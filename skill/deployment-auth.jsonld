@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/deployment-auth.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/deployment-auth",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "deployment-auth",
+      "title": "Migration Notice",
+      "instructionsPath": "skills/local/deployment-auth.md",
+      "instructionLines": 4,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

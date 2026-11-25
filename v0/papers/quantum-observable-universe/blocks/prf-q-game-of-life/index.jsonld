@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-q-game-of-life",
+  "@type": [
+    "folio-assistant-sci:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:q-game-of-life",
+  "kind": "proof",
+  "title": "Proof of q game of life",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-game-of-life"
+  ],
+  "cites": [
+    "references/squier1984",
+    "references/bennett1973",
+    "references/toffoli1980",
+    "references/fredkin1982",
+    "references/shi2002",
+    "references/aharonov2003"
+  ],
+  "text": "q-game-of-life-proof.md",
+  "provenance": "authored"
+}

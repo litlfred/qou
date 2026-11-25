@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-rho-prefactor-structural",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:rho-prefactor-structural",
+  "kind": "conjecture",
+  "title": "Structural prefactor rule: $\\rho(\\mathfrak{H}) = \\dim_q(\\lambda^*(T_w))$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-atom-knot-mass-derivation"
+  ],
+  "tags": [
+    "tier:E",
+    "sdp-multiplicity",
+    "wedderburn",
+    "prefactor",
+    "structural-rule",
+    "gap-a",
+    "audit"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.RhoPrefactorStructural",
+  "text": "conj-rho-prefactor-structural.md",
+  "leanSource": "conj-rho-prefactor-structural.lean",
+  "provenance": "authored"
+}

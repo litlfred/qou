@@ -1,0 +1,2500 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-th-9811173v1",
+  "title": "Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links",
+  "variant": "pdf",
+  "pages": 54,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Dedekind-zeta invariants of closed manifolds",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-dedekind-zeta-invariants-of-closed-manifolds"
+    },
+    {
+      "level": 2,
+      "title": "Examination of 1,200 single-complex-place fields",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-21-examination-of-1200-single-complex-place-fiel"
+    },
+    {
+      "level": 2,
+      "title": "Examination of 44 fields found by Snap",
+      "number": "2.2",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-22-examination-of-44-fields-found-by-snap"
+    },
+    {
+      "level": 2,
+      "title": "A special case: manifold ${\\rm v}3066(-1,2)$",
+      "number": "2.3",
+      "page": 5,
+      "pageLabel": "4",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-23-a-special-case-manifold-rm-v3066-12"
+    },
+    {
+      "level": 2,
+      "title": "How may one derive/ the rational invariant?",
+      "number": "2.4",
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-24-how-may-one-derive-the-rational-invariant"
+    },
+    {
+      "level": 1,
+      "title": "Cusped manifolds and join fields",
+      "number": "3",
+      "page": 7,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-3-cusped-manifolds-and-join-fields"
+    },
+    {
+      "level": 1,
+      "title": "Links whose volumes link Clausen values",
+      "number": "4",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-4-links-whose-volumes-link-clausen-values"
+    },
+    {
+      "level": 2,
+      "title": "Signpost: integer sequence A003657",
+      "number": "4.1",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-41-signpost-integer-sequence-a003657"
+    },
+    {
+      "level": 2,
+      "title": "Dirichlet character",
+      "number": "4.2",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-42-dirichlet-character"
+    },
+    {
+      "level": 2,
+      "title": "Figure-8 knot at $D=-3$",
+      "number": "4.3",
+      "page": 10,
+      "pageLabel": "9",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-43-figure-8-knot-at-d-3"
+    },
+    {
+      "level": 2,
+      "title": "Whitehead link at $D=-4$",
+      "number": "4.4",
+      "page": 10,
+      "pageLabel": "9",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-44-whitehead-link-at-d-4"
+    },
+    {
+      "level": 2,
+      "title": "Link $6^3_1$ at $D=-7$",
+      "number": "4.5",
+      "page": 10,
+      "pageLabel": "9",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": "sec-012-45-link-63-1-at-d-7"
+    },
+    {
+      "level": 2,
+      "title": "Link $9^2_{40}$ at $D=-8$",
+      "number": "4.6",
+      "page": 10,
+      "pageLabel": "9",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": "sec-013-46-link-92-40-at-d-8"
+    },
+    {
+      "level": 2,
+      "title": "A 12-crossing 4-component link at $D=-11$",
+      "number": "4.7",
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-014-47-a-12-crossing-4-component-link-at-d-11"
+    },
+    {
+      "level": 2,
+      "title": "A 12-crossing 3-component link at $D=-15$",
+      "number": "4.8",
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "A self-dual platonic link at $D=-20$",
+      "number": "4.9",
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-015-49-a-self-dual-platonic-link-at-d-20"
+    },
+    {
+      "level": 2,
+      "title": "A 48-crossing daisy-chain link at $D=-24$",
+      "number": "4.10",
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-016-410-a-48-crossing-daisy-chain-link-at-d-24"
+    },
+    {
+      "level": 2,
+      "title": "Quartic platonic links",
+      "number": "4.11",
+      "page": 13,
+      "pageLabel": "12",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-017-411-quartic-platonic-links"
+    },
+    {
+      "level": 1,
+      "title": "Knots and links from Feynman diagrams",
+      "number": "5",
+      "page": 15,
+      "pageLabel": "14",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-018-5-knots-and-links-from-feynman-diagrams"
+    },
+    {
+      "level": 2,
+      "title": "Hyperbolic Feynman links",
+      "number": "5.1",
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-019-51-hyperbolic-feynman-links"
+    },
+    {
+      "level": 2,
+      "title": "Dedekind-zeta invariants of Feynman orthoschemes",
+      "number": "5.2",
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-020-52-dedekind-zeta-invariants-of-feynman-orthosche"
+    },
+    {
+      "level": 2,
+      "title": "Two of Feynman's links are missing",
+      "number": "5.3",
+      "page": 18,
+      "pageLabel": "17",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-021-53-two-of-feynmans-links-are-missing"
+    },
+    {
+      "level": 2,
+      "title": "Dedekind zeta values from 10-crossing Feynman knots",
+      "number": "5.4",
+      "page": 19,
+      "pageLabel": "18",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-022-54-dedekind-zeta-values-from-10-crossing-feynman"
+    },
+    {
+      "level": 2,
+      "title": "Dedekind zeta values from 12-crossing Feynman knots",
+      "number": "5.5",
+      "page": 21,
+      "pageLabel": "20",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-023-55-dedekind-zeta-values-from-12-crossing-feynman"
+    },
+    {
+      "level": 2,
+      "title": "Dedekind zeta values from maximally symmetric knots",
+      "number": "5.6",
+      "page": 23,
+      "pageLabel": "22",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-024-56-dedekind-zeta-values-from-maximally-symmetric"
+    },
+    {
+      "level": 2,
+      "title": "Dedekind zeta value from an 18-crossing Feynman knot",
+      "number": "5.7",
+      "page": 25,
+      "pageLabel": "24",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-025-57-dedekind-zeta-value-from-an-18-crossing-feynm"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions and prospects",
+      "number": "6",
+      "page": 26,
+      "pageLabel": "25",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-026-6-conclusions-and-prospects"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 27,
+      "pageLabel": "26",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-027-acknowledgments"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "1",
+      "words": 323,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dedekind zeta",
+          "heading": false
+        },
+        {
+          "term": "cecm",
+          "heading": false
+        },
+        {
+          "term": "feynman diagrams",
+          "heading": false
+        },
+        {
+          "term": "dedekind-zeta invariants",
+          "heading": false
+        },
+        {
+          "term": "zeta values",
+          "heading": false
+        },
+        {
+          "term": "rational invariant",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifolds",
+          "heading": false
+        },
+        {
+          "term": "volumes",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-th/9811173v1 19 Nov 1998 OUT–4102–76 CECM–98–120 hep-th/9811173 19 November 1998 Determinations of rational Dedekind-zeta invariants of hyperbolic manifolds and Feynman knots and links J. M. Borweina) and D. J. Broadhurstb) Abstract We identify 998 closed hyperbolic 3-manifolds whose volumes are rationally related to Dedekind zeta values, with coprime integers a and b giving a b vol(M) = (−D)3/2 (2π)2n−4",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9811173v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 632,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dedekind zeta",
+          "heading": false
+        },
+        {
+          "term": "single-complex-place field",
+          "heading": false
+        },
+        {
+          "term": "rational dedekind-zeta",
+          "heading": false
+        },
+        {
+          "term": "zeta values",
+          "heading": false
+        },
+        {
+          "term": "dedekind-zeta invariant",
+          "heading": false
+        },
+        {
+          "term": "feynman diagrams",
+          "heading": false
+        },
+        {
+          "term": "corresponding rational",
+          "heading": false
+        },
+        {
+          "term": "bdk",
+          "heading": false
+        }
+      ],
+      "extract": "This paper began with a study of hyperbolic links whose complementary volumes result from evaluations of Feynman diagrams [@9806174]. For each of these volumes we found, by empirical means, a *closed--form* evaluation in terms of a few Clausen functions, evaluated at rational multiples of $\\pi$. Then, thanks to generous advice from Don Zagier, we came to appreciate that these results form part of a much larger",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-dedekind-zeta-invariants-of-closed-manifolds",
+      "number": "2",
+      "title": "Dedekind-zeta invariants of closed manifolds",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 147,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "distinct volumes",
+          "heading": false
+        },
+        {
+          "term": "dedekind-zeta",
+          "heading": true
+        },
+        {
+          "term": "census",
+          "heading": false
+        },
+        {
+          "term": "manifolds",
+          "heading": true
+        }
+      ],
+      "extract": "We have found rational Dedekind-zeta invariants for 998 manifolds in the Hodgson--Weeks census, which lists $11,031$ closed orientable manifolds, with 9,218 distinct volumes, all less than $6.5$, and with all their geodesics having lengths greater than $0.3$. These 998 manifolds have 224 distinct volumes, which are rationally related, via ([\\[ZK\\]](#ZK){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-examination-of-1200-single-complex-place-fiel",
+      "number": "2.1",
+      "title": "Examination of 1,200 single-complex-place fields",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 356,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fields",
+          "heading": true
+        },
+        {
+          "term": "dedekind zeta",
+          "heading": false
+        },
+        {
+          "term": "rational dedekind-zeta",
+          "heading": false
+        },
+        {
+          "term": "single-complex-place",
+          "heading": true
+        },
+        {
+          "term": "zeta values",
+          "heading": false
+        },
+        {
+          "term": "census",
+          "heading": false
+        },
+        {
+          "term": "ams",
+          "heading": false
+        },
+        {
+          "term": "digit",
+          "heading": false
+        }
+      ],
+      "extract": "It became clear, from studying [@AMS:JB; @AMS:SB; @AMS:RK; @AMS:DZ], that there are unspecified rational relations of the form ([\\[ab\\]](#ab){reference-type=\"ref\" reference=\"ab\"}) between Dedekind zeta values and volumes of some, but not all, of the manifolds in the Hodgson--Weeks census. We soon found that 30 of the first 32 census manifolds have rational Dedekind-zeta invariants, with $a\\le46$ and $b\\le3$. The 2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-examination-of-44-fields-found-by-snap",
+      "number": "2.2",
+      "title": "Examination of 44 fields found by Snap",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 620,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "digit precision",
+          "heading": false
+        },
+        {
+          "term": "single-complex-place fields",
+          "heading": false
+        },
+        {
+          "term": "single-complex-place invariant",
+          "heading": false
+        },
+        {
+          "term": "snap",
+          "heading": true
+        },
+        {
+          "term": "cghn",
+          "heading": false
+        },
+        {
+          "term": "hodgson--weeks manifolds",
+          "heading": false
+        },
+        {
+          "term": "file contains",
+          "heading": false
+        },
+        {
+          "term": "trace fields",
+          "heading": false
+        }
+      ],
+      "extract": "For the remaining $140-96=44$ results of Tables 2--12, we made reference to the impressive body of files[^1] at the University of Melbourne. These were obtained by Coulson, Goodman, Hodgson and Neumann [@CGHN] (hereafter referred to as CGHN) using 50-digit precision, in marked distinction to the 5 digits which suffice for the findings above. CGHN make no reference to Dedekind zeta values; they do, however, find",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-a-special-case-manifold-rm-v3066-12",
+      "number": "2.3",
+      "title": "A special case: manifold ${\\rm v}3066(-1,2)$",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 179,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dedekind-zeta invariant",
+          "heading": false
+        },
+        {
+          "term": "frac12z",
+          "heading": false
+        },
+        {
+          "term": "invariant trace",
+          "heading": false
+        },
+        {
+          "term": "trace field",
+          "heading": false
+        }
+      ],
+      "extract": "We note a peculiarity of manifold ${\\rm v}3066(-1,2)$, with the same volume as ${\\rm v}3066(+1,2)$. The latter has unit Dedekind-zeta invariant and hence a volume $$Z_{K_+}:=\\frac{59^{3/2}}{(2\\pi)^2}\\,\\frac{\\zeta_{K_+}(2)}{2\\zeta(2)} =5.137941201873417769841348339\\ldots \\label{v3066}$$ where the cubic invariant trace field of ${\\rm v}3066(+1,2)$ is $$K_+:=x^3+2x-1\\label{K3p}$$ with discriminant $-59$. Snap, working",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-how-may-one-derive-the-rational-invariant",
+      "number": "2.4",
+      "title": "How may one derive/ the rational invariant?",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 621,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "todo",
+          "heading": false
+        },
+        {
+          "term": "arctan sqrt",
+          "heading": false
+        },
+        {
+          "term": "theta right",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "frac left",
+          "heading": false
+        },
+        {
+          "term": "dirz",
+          "heading": false
+        },
+        {
+          "term": "clausen values",
+          "heading": false
+        },
+        {
+          "term": "dedekind-zeta invariant",
+          "heading": false
+        }
+      ],
+      "extract": "Some of our results contain non-trivial factors, with 4-digit and 3-digit primes in $3\\times1223=3669$ and $2^4\\times3\\times5\\times967=232,080$, from Table 10, and $2\\times3\\times7\\times11\\times149=68,838$, from Table 11. Their origins are obscure. The duodecadic example of Table 12 entails $a/b=2^4\\times23\\times37\\times691=9,408,656$. We note, though cannot explain, the circumstance that its largest prime factor",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-3-cusped-manifolds-and-join-fields",
+      "number": "3",
+      "title": "Cusped manifolds and join fields",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 415,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cusped manifolds",
+          "heading": true
+        },
+        {
+          "term": "single-complex-place fields",
+          "heading": false
+        },
+        {
+          "term": "join",
+          "heading": true
+        },
+        {
+          "term": "dedekind zeta",
+          "heading": false
+        },
+        {
+          "term": "census volumes",
+          "heading": false
+        },
+        {
+          "term": "zeta values",
+          "heading": false
+        },
+        {
+          "term": "pslq",
+          "heading": false
+        },
+        {
+          "term": "cghn",
+          "heading": false
+        }
+      ],
+      "extract": "Now we turn to the study of cusped manifolds, complementary to knots and links. Packaged with SnapPea [@SnapPea], there are the 4,815 orientable cusped manifolds of the Hildebrand--Weeks census [@HiW], triangulated by no more than 7 ideal tetrahedra, and 114 non-orientable manifolds, triangulated by no more than 5. Making $4929\\times1200$ comparisons with the Dedekind zeta values of Section 2.1, we found 7 new",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-4-links-whose-volumes-link-clausen-values",
+      "number": "4",
+      "title": "Links whose volumes link Clausen values",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 147,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "clausen values",
+          "heading": true
+        },
+        {
+          "term": "dedekind-zeta invariants",
+          "heading": false
+        },
+        {
+          "term": "viewer",
+          "heading": false
+        },
+        {
+          "term": "link",
+          "heading": true
+        },
+        {
+          "term": "non-alternating",
+          "heading": false
+        }
+      ],
+      "extract": "Our order of presentation is the reverse of the order in which we obtained results. Our primary motivation was to elucidate connections between Clausen values, revealed by studies of Feynman diagrams [@9806174], on which we comment in Section 5. This section concerns links whose rational Dedekind-zeta invariants link Clausen values. An example is provided by the attractive alternating[^1] link of Fig. 1, discovered",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-41-signpost-integer-sequence-a003657",
+      "number": "4.1",
+      "title": "Signpost: integer sequence A003657",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 298,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "underline",
+          "heading": false
+        },
+        {
+          "term": "rational dedekind-zeta",
+          "heading": false
+        },
+        {
+          "term": "underlined cases",
+          "heading": false
+        },
+        {
+          "term": "furnishes",
+          "heading": false
+        },
+        {
+          "term": "cusped",
+          "heading": false
+        },
+        {
+          "term": "links",
+          "heading": false
+        }
+      ],
+      "extract": "Mathematically speaking, the results of Section 2, while numerically striking, are of a rational character [@DZ:Invent; @DZ:JMPS; @DZ:Texel] that was expected by specialists of $K$-theory (which we are not). The challenge is not to understand why a rational Dedekind-zeta invariant exists, but to learn how to derive (as opposed to measure) it. The cusped results of Section 3 were of the same character as for closed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-42-dirichlet-character",
+      "number": "4.2",
+      "title": "Dirichlet character",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 507,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dirichlet character",
+          "heading": true
+        },
+        {
+          "term": "imaginary-quadratic field",
+          "heading": false
+        },
+        {
+          "term": "zkq",
+          "heading": false
+        },
+        {
+          "term": "frac chi",
+          "heading": false
+        },
+        {
+          "term": "clausen values",
+          "heading": false
+        },
+        {
+          "term": "frac zeta",
+          "heading": false
+        },
+        {
+          "term": "todo",
+          "heading": false
+        },
+        {
+          "term": "david bailey",
+          "heading": false
+        }
+      ],
+      "extract": "The simplest example of a number field with a single complex place is an imaginary-quadratic field ${\\bf Q}(\\sqrt{-d})$, where $d$ is a square-free positive integer. When $d\\equiv3$ (mod 4), the discriminant is $D=-d$; otherwise it is $D=-4d$. It is proven in [@Berndt] that $$\\frac{\\zeta_K(2)}{\\zeta(2)}=\\sum_{n>0}\\frac{\\chi_K(n)}{n^2}\\label{chi}$$ where $\\chi_K$ is the real Dirichlet character of the group of units",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-43-figure-8-knot-at-d-3",
+      "number": "4.3",
+      "title": "Figure-8 knot at $D=-3$",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 53,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "helaman",
+          "heading": false
+        },
+        {
+          "term": "sculpture",
+          "heading": false
+        },
+        {
+          "term": "knot",
+          "heading": true
+        }
+      ],
+      "extract": "The first case, at $D=-3$, is elementary. The unique[^1] arithmetic knot is the figure-8 knot of Fig. 3. Its volume is the first entry of Table 19. It links Clausen values at $2\\arctan\\sqrt3$ and $2\\pi/3$. This relation clearly poses no analytical puzzle, since the angles are identical. [^1]: See Helaman Ferguson's sculpture at ` http://www.mtholyoke.edu/acad/math/ma/sculpture.htm`",
+      "extractCut": false
+    },
+    {
+      "id": "sec-011-44-whitehead-link-at-d-4",
+      "number": "4.4",
+      "title": "Whitehead link at $D=-4$",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 84,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "simplest hyperbolic",
+          "heading": false
+        },
+        {
+          "term": "whitehead",
+          "heading": true
+        },
+        {
+          "term": "link",
+          "heading": true
+        }
+      ],
+      "extract": "Just as the simplest hyperbolic knot, $4_1$, gave the answer at $D=-3$, so the simplest hyperbolic 2-component link, namely the Whitehead link $5^2_1$ of Fig. 4, gives the answer at $D=-4$. Its volume is the second entry of Table 19. It links Clausen values at $2\\arctan\\sqrt1$ and $2\\pi/4$, which are again identical.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-012-45-link-63-1-at-d-7",
+      "number": "4.5",
+      "title": "Link $6^3_1$ at $D=-7$",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 137,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dedekind-zeta invariant",
+          "heading": false
+        },
+        {
+          "term": "clausen values",
+          "heading": false
+        },
+        {
+          "term": "right left",
+          "heading": false
+        },
+        {
+          "term": "arctan sqrt",
+          "heading": false
+        },
+        {
+          "term": "link",
+          "heading": true
+        },
+        {
+          "term": "theta",
+          "heading": false
+        }
+      ],
+      "extract": "The Dedekind-zeta invariant of the link $6^3_1$, illustrated in Fig. 5, is measured to be $2$, corresponding to $$2\\left\\{3{\\rm Cl}_2(\\theta_7) -3{\\rm Cl}_2(2\\theta_7)+{\\rm Cl}_2(3\\theta_7)\\right\\}=Z_7= 7\\left\\{{\\rm Cl}_2\\left(\\frac{2\\pi}{7}\\right) +{\\rm Cl}_2\\left(\\frac{4\\pi}{7}\\right) -{\\rm Cl}_2\\left(\\frac{6\\pi}{7}\\right)\\right\\}\\label{d7}$$ with $\\theta_7:=2\\arctan\\sqrt7$. At 1800-digit precision, PSLQ finds",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-46-link-92-40-at-d-8",
+      "number": "4.6",
+      "title": "Link $9^2_{40}$ at $D=-8$",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 91,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exemplar",
+          "heading": false
+        },
+        {
+          "term": "dedekind-zeta",
+          "heading": false
+        },
+        {
+          "term": "clausen",
+          "heading": false
+        }
+      ],
+      "extract": "40 at D = −8 As exemplar of the next non-trivial relation between Clausen values, we select the 9- crossing 2-component link 92 40 := (σ2 1σ−1 2 )3 of Fig. 6. Its Dedekind-zeta invariant is ob- served to be unity, which implies that its volume is equal to each side of 1 2 {27Cl2(θ2) −9Cl2(2θ2) + Cl2(3θ2)} = Z8 = 8 \u001a Cl2 \u00122π 8 \u0013 + Cl2 \u00126π 8 \u0013\u001b (27) with θ2 := 2 arctan √ 2. As in the case of (26), a proof is lacking.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-47-a-12-crossing-4-component-link-at-d-11",
+      "number": "4.7",
+      "title": "A 12-crossing 4-component link at $D=-11$",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 173,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "crossing component",
+          "heading": true
+        },
+        {
+          "term": "component link",
+          "heading": true
+        },
+        {
+          "term": "arctan sqrt",
+          "heading": false
+        },
+        {
+          "term": "dedekind-zeta invariant",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        }
+      ],
+      "extract": "In [@CGHN] it was noted that neither the closed nor the cusped census entails the field ${\\bf Q}(\\sqrt{-11})$. In [@9806174] it was observed that the 12-crossing 4-component link of Fig. 7, with braid word $(\\sigma_1^{}\\sigma_2^{-2}\\sigma_3^{}\\sigma_2^{-2})^2$, entails this field. Its Dedekind-zeta invariant is observed to be unity, corresponding to the relation $$15{\\rm Cl}_2(\\theta_{11})-10{\\rm Cl}_2(2\\theta_{11})",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-49-a-self-dual-platonic-link-at-d-20",
+      "number": "4.9",
+      "title": "A self-dual platonic link at $D=-20$",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 182,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bloch--wigner values",
+          "heading": false
+        },
+        {
+          "term": "clausen values",
+          "heading": false
+        },
+        {
+          "term": "platonic",
+          "heading": true
+        },
+        {
+          "term": "theta",
+          "heading": false
+        },
+        {
+          "term": "rewritings",
+          "heading": false
+        }
+      ],
+      "extract": "The reader might now expect us to consider the case $D=-19$. For reasons that will be given in Section 5, we skip to $D=-20$, where we were rewarded by the splendidly symmetric alternating platonic link drawn in Fig. 1. Its Dedekind-zeta invariant was measured to be unity. This innocent-sounding statement translates to our 5th unproven relation $$36{\\rm Cl}_2(\\theta_5)-30{\\rm Cl}_2(2\\theta_5) +4{\\rm",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-410-a-48-crossing-daisy-chain-link-at-d-24",
+      "number": "4.10",
+      "title": "A 48-crossing daisy-chain link at $D=-24$",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 518,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-alternating daisy-chain",
+          "heading": false
+        },
+        {
+          "term": "link",
+          "heading": true
+        },
+        {
+          "term": "snappea",
+          "heading": false
+        },
+        {
+          "term": "crossings",
+          "heading": false
+        },
+        {
+          "term": "platonic",
+          "heading": false
+        },
+        {
+          "term": "neighbour",
+          "heading": false
+        },
+        {
+          "term": "mimic",
+          "heading": false
+        },
+        {
+          "term": "theta",
+          "heading": false
+        }
+      ],
+      "extract": "The attentive reader will now expect us to skip the case $D=-23$ and jump to the 8th underlining in ([\\[iq\\]](#iq){reference-type=\"ref\" reference=\"iq\"}), at $D=-24$. This is precisely what we did, though the character of the result was not what we first supposed. It seemed to us that the hallmark of past success, in finding links that link Clausen values, was to achieve the largest possible symmetry group. What, we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-411-quartic-platonic-links",
+      "number": "4.11",
+      "title": "Quartic platonic links",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 1073,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "platonic links",
+          "heading": true
+        },
+        {
+          "term": "cubical octahedral",
+          "heading": false
+        },
+        {
+          "term": "dodecahedral icosahedral",
+          "heading": false
+        },
+        {
+          "term": "digit precision",
+          "heading": false
+        },
+        {
+          "term": "ideal volumes",
+          "heading": false
+        },
+        {
+          "term": "sqrt right",
+          "heading": false
+        },
+        {
+          "term": "cusp shapes",
+          "heading": false
+        },
+        {
+          "term": "ideal tetrahedra",
+          "heading": false
+        }
+      ],
+      "extract": "Our first guess, that the 4 non-self-dual platonic links might yield quadratic number fields, failed. Nonetheless, it is interesting to determine their number fields, and hence obtain accurate volumes. This is clearly a taxing job. To prepare for it, we first tackled a problem of similar complexity, where an accurate answer could be inferred. We found that by adding $n$ concentric components at each of the 4",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-5-knots-and-links-from-feynman-diagrams",
+      "number": "5",
+      "title": "Knots and links from Feynman diagrams",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 20,
+      "summary": null,
+      "keywords": [],
+      "extract": "Finally, we arrive at the motivating idea for this work: values of Feynman diagrams.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-019-51-hyperbolic-feynman-links",
+      "number": "5.1",
+      "title": "Hyperbolic Feynman links",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 451,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "light-by-light scattering",
+          "heading": false
+        },
+        {
+          "term": "mandelstam variables",
+          "heading": false
+        },
+        {
+          "term": "zkq",
+          "heading": false
+        },
+        {
+          "term": "frac12t",
+          "heading": false
+        },
+        {
+          "term": "physical quantities",
+          "heading": false
+        },
+        {
+          "term": "dihedral angles",
+          "heading": false
+        },
+        {
+          "term": "essential dihedral",
+          "heading": false
+        },
+        {
+          "term": "space-time dimensions",
+          "heading": false
+        }
+      ],
+      "extract": "In [@DD], Andrei Davydychev and Bob Delbourgo made a fine discovery: the dilogarithms of the box diagram for particle scattering are those which give the volume of a tetrahedron in hyperbolic 3-space (or its analytic continuation). In the 3-dimensional [@Nickel] studies of statistical physics, one-loop Feynman diagrams yield logarithms; in the 4 space-time dimensions of relativistic quantum field theory (QFT), they",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-52-dedekind-zeta-invariants-of-feynman-orthosche",
+      "number": "5.2",
+      "title": "Dedekind-zeta invariants of Feynman orthoschemes",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": "15",
+      "labelEnd": "17",
+      "words": 677,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schl",
+          "heading": false
+        },
+        {
+          "term": "delta psi",
+          "heading": false
+        },
+        {
+          "term": "angles psi",
+          "heading": false
+        },
+        {
+          "term": "psi tan",
+          "heading": false
+        },
+        {
+          "term": "cos psi",
+          "heading": false
+        },
+        {
+          "term": "orthoschemes",
+          "heading": true
+        },
+        {
+          "term": "feynman",
+          "heading": true
+        },
+        {
+          "term": "essential angles",
+          "heading": false
+        }
+      ],
+      "extract": "Let us try to disentangle this remarkable circumstance from its physical origin. What is the common characteristic of the Davydychev--Delbourgo (DD) hyperbolic tetrahedron at those values of the physical quantities which gave the volumes of links? In terms of ([\\[3cl\\]](#3cl){reference-type=\"ref\" reference=\"3cl\"}), we define the 3-argument dilogarithm $$\\begin{aligned} S(\\psi_1,\\psi_2,\\psi_3)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-53-two-of-feynmans-links-are-missing",
+      "number": "5.3",
+      "title": "Two of Feynman's links are missing",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 505,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "missing links",
+          "heading": true
+        },
+        {
+          "term": "feynman orthoschemes",
+          "heading": false
+        },
+        {
+          "term": "daisy-chain link",
+          "heading": false
+        },
+        {
+          "term": "platonic link",
+          "heading": false
+        },
+        {
+          "term": "entails crossings",
+          "heading": false
+        },
+        {
+          "term": "zkq",
+          "heading": false
+        },
+        {
+          "term": "gave links",
+          "heading": false
+        },
+        {
+          "term": "schl",
+          "heading": false
+        }
+      ],
+      "extract": "The rationale for the underlinings in ([\\[iq\\]](#iq){reference-type=\"ref\" reference=\"iq\"}) should now be clear: it was these 10 imaginary-quadratic fields that had been distinguished by the Feynman orthoschemes of Table 22, which initiated our studies. For 4 of these 10 fields, the census gave links; for 2 of the remaining 6, the work in [@9806174] gave links; for 2 of the remaining 4, the alternating platonic link",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-54-dedekind-zeta-values-from-10-crossing-feynman",
+      "number": "5.4",
+      "title": "Dedekind zeta values from 10-crossing Feynman knots",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 1206,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "feynman knots",
+          "heading": true
+        },
+        {
+          "term": "dedekind zeta",
+          "heading": true
+        },
+        {
+          "term": "crossing knots",
+          "heading": true
+        },
+        {
+          "term": "zeta values",
+          "heading": true
+        },
+        {
+          "term": "dirk kreimer",
+          "heading": false
+        },
+        {
+          "term": "pslq searches",
+          "heading": false
+        },
+        {
+          "term": "single-complex-place invariant",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic feynman",
+          "heading": false
+        }
+      ],
+      "extract": "We found that 7 of the 84 knots with less than 10 crossings have rational Dedekind-zeta invariants. The 6 distinct values of ([\\[ZK\\]](#ZK){reference-type=\"ref\" reference=\"ZK\"}) are $$\\begin{aligned} Z_3&=&1\\times{\\rm vol}(4_1)\\label{4_1}\\\\ Z_{23,3}&=&\\df13\\times{\\rm vol}(5_2) =\\df{1}{10}\\times{\\rm vol}(9_{49})\\label{5_2}\\\\ Z_{44,3}&=&\\df13\\times{\\rm vol}(9_{48})\\label{9_48}\\\\ Z_{59,3}&=&1\\times{\\rm",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-55-dedekind-zeta-values-from-12-crossing-feynman",
+      "number": "5.5",
+      "title": "Dedekind zeta values from 12-crossing Feynman knots",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 23,
+      "labelStart": "20",
+      "labelEnd": "22",
+      "words": 689,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "feynman knots",
+          "heading": true
+        },
+        {
+          "term": "zeta",
+          "heading": true
+        },
+        {
+          "term": "sigma",
+          "heading": false
+        },
+        {
+          "term": "manifolds complementary",
+          "heading": false
+        },
+        {
+          "term": "df12z",
+          "heading": false
+        },
+        {
+          "term": "torus knot",
+          "heading": false
+        },
+        {
+          "term": "bgk",
+          "heading": false
+        },
+        {
+          "term": "mzv",
+          "heading": false
+        }
+      ],
+      "extract": "At 12 crossings, corresponding to 8 loops in QFT, Broadhurst and Kreimer [@BK15] found that 7 of the 2,176 hyperbolic knots are positive. We found that 3 of these have rational Dedekind-zeta invariants, with $$\\begin{aligned} Z_{23,3}&=& \\df13\\times{\\rm vol}(\\sigma_1^{}\\sigma_2^{3}\\sigma_1^{}\\sigma_2^{7}) \\label{1317}\\\\ Z_{848,4}&=& 1\\times{\\rm vol}(\\sigma_1^{}\\sigma_2^{5}\\sigma_1^{}\\sigma_2^{5}) \\label{1515}\\\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-56-dedekind-zeta-values-from-maximally-symmetric",
+      "number": "5.6",
+      "title": "Dedekind zeta values from maximally symmetric knots",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 25,
+      "labelStart": "22",
+      "labelEnd": "24",
+      "words": 876,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dedekind zeta",
+          "heading": true
+        },
+        {
+          "term": "non-alternating knots",
+          "heading": false
+        },
+        {
+          "term": "htw",
+          "heading": false
+        },
+        {
+          "term": "dedekind-zeta invariant",
+          "heading": false
+        },
+        {
+          "term": "rational dedekind-zeta",
+          "heading": false
+        },
+        {
+          "term": "alternating knots",
+          "heading": false
+        },
+        {
+          "term": "morwen thistlethwaite",
+          "heading": false
+        },
+        {
+          "term": "jeff weeks",
+          "heading": false
+        }
+      ],
+      "extract": "Jim Hoste, Morwen Thistlethwaite and Jeff Weeks (hereafter HTW) have recently completed an impressive symmetry analysis [@HTW] of all 1,701,936 prime knots with up to 16 crossings. From the University of Tennessee at Knoxville, we obtained files[^1] that identify highly symmetric alternating and non-alternating knots at crossing numbers from 11 to 16. Before analyzing the most symmetric of these, we comment on the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-57-dedekind-zeta-value-from-an-18-crossing-feynm",
+      "number": "5.7",
+      "title": "Dedekind zeta value from an 18-crossing Feynman knot",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 469,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dedekind zeta",
+          "heading": true
+        },
+        {
+          "term": "zeta value",
+          "heading": true
+        },
+        {
+          "term": "depth mzv",
+          "heading": false
+        },
+        {
+          "term": "irreducible depth",
+          "heading": false
+        },
+        {
+          "term": "crossing",
+          "heading": true
+        },
+        {
+          "term": "knot",
+          "heading": true
+        },
+        {
+          "term": "qft",
+          "heading": false
+        },
+        {
+          "term": "crossing torus",
+          "heading": false
+        }
+      ],
+      "extract": "It was observed that the positivity criterion of [@BKP; @BGK; @BK15] was more fertile than maximal symmetry, at 10 and 12 crossings. We expect further sequences of positive knots whose first hyperbolic instances yield Dedekind zeta values at high crossing numbers. From QFT we inferred a source of such a sequence, namely the 3-parameter family of even-crossing positive 3-braids [@BK15] $$R_{k,m,n}:=",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-6-conclusions-and-prospects",
+      "number": "6",
+      "title": "Conclusions and prospects",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 554,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "finis",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "footnotes",
+          "heading": false
+        },
+        {
+          "term": "feynman diagrams",
+          "heading": false
+        },
+        {
+          "term": "modern",
+          "heading": false
+        },
+        {
+          "term": "high-precision",
+          "heading": false
+        },
+        {
+          "term": "enabled",
+          "heading": false
+        }
+      ],
+      "extract": "Perhaps more than in any other piece of research which either author has undertaken, this work has been vitally enabled by the internet. It provided us with the opportunity to blend number theory, topology, geometry, analysis, physics and computer science, in a global empirical mixing bowl, thanks to: - ready access to significant data at Bordeaux, Claremont CA, Florham Park NJ, Knoxville TN, Melbourne, Minneapolis",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 54,
+      "labelStart": "26",
+      "labelEnd": "53",
+      "words": 6466,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kreimer",
+          "heading": false
+        },
+        {
+          "term": "dedekind zeta",
+          "heading": false
+        },
+        {
+          "term": "broadhurst",
+          "heading": false
+        },
+        {
+          "term": "ﬁeld sig",
+          "heading": false
+        },
+        {
+          "term": "join manifolds",
+          "heading": false
+        },
+        {
+          "term": "htw sym",
+          "heading": false
+        },
+        {
+          "term": "feynman diagrams",
+          "heading": false
+        },
+        {
+          "term": "schl aﬂi",
+          "heading": false
+        }
+      ],
+      "extract": "We thank David Bailey, Oliver Goodman, and Al Manoharan, for adapting PSLQ, Snap, and SnapPea to our chosen platforms; without their personal help our work would not have been completed. Equally vital was the contribution of Andrei Davydychev and Bob Delbourgo, without whose ideas it would not have begun. Advice and encouragement from Petr Lisonek, during DJB’s visit to CECM, were much appreciated. JMB thanks Al",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [
+      "table 13"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "rational dedekind-zeta",
+      "heading": false
+    },
+    {
+      "term": "dedekind-zeta invariant",
+      "heading": false
+    },
+    {
+      "term": "non-alternating dedekind-zeta",
+      "heading": true
+    },
+    {
+      "term": "dedekind zeta",
+      "heading": true
+    },
+    {
+      "term": "dedekind-zeta knots",
+      "heading": true
+    },
+    {
+      "term": "link clausen",
+      "heading": true
+    },
+    {
+      "term": "zeta values",
+      "heading": true
+    },
+    {
+      "term": "frac zeta",
+      "heading": false
+    },
+    {
+      "term": "census volumes",
+      "heading": false
+    },
+    {
+      "term": "feynman links",
+      "heading": true
+    },
+    {
+      "term": "single-complex-place fields",
+      "heading": true
+    },
+    {
+      "term": "aligned zeta",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Dedekind zeta values hereby related to volumes of closed manifolds",
+      "page": 32,
+      "pageLabel": "31",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Quadratic ﬁelds",
+      "page": 32,
+      "pageLabel": "31",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "Cubic ﬁelds ﬁeld",
+      "page": 32,
+      "pageLabel": "31",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4",
+      "title": "Quartic ﬁelds",
+      "page": 33,
+      "pageLabel": "32",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "5",
+      "title": "Quintic ﬁelds",
+      "page": 34,
+      "pageLabel": "33",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "6",
+      "title": "Sextic ﬁelds ﬁeld",
+      "page": 35,
+      "pageLabel": "34",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "7",
+      "title": "Septic ﬁelds",
+      "page": 36,
+      "pageLabel": "35",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "8",
+      "title": "Octadic ﬁelds ﬁeld",
+      "page": 37,
+      "pageLabel": "36",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "9",
+      "title": "Nonadic ﬁelds ﬁeld",
+      "page": 37,
+      "pageLabel": "36",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "10",
+      "title": "Decadic ﬁelds ﬁeld",
+      "page": 37,
+      "pageLabel": "36",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "11",
+      "title": "Endecadic ﬁeld ﬁeld",
+      "page": 37,
+      "pageLabel": "36",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "12",
+      "title": "Duodecadic ﬁeld ﬁeld",
+      "page": 37,
+      "pageLabel": "36",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "13a",
+      "title": "Rational relations of Dedekind zeta values to volumes −D",
+      "page": 38,
+      "pageLabel": "37",
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "13b",
+      "title": "Rational relations of Dedekind zeta values to volumes −D",
+      "page": 39,
+      "pageLabel": "38",
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "13c",
+      "title": "Rational relations of Dedekind zeta values to volumes −D",
+      "page": 40,
+      "pageLabel": "39",
+      "confidence": 0.5,
+      "evidence": []
+    },
+    {
+      "kind": "table",
+      "number": "13d",
+      "title": "Rational relations of Dedekind zeta values to volumes −D",
+      "page": 41,
+      "pageLabel": "40",
+      "confidence": 0.5,
+      "evidence": []
+    },
+    {
+      "kind": "table",
+      "number": "13e",
+      "title": "Rational relations of Dedekind zeta values to volumes −D",
+      "page": 42,
+      "pageLabel": "41",
+      "confidence": 0.5,
+      "evidence": []
+    },
+    {
+      "kind": "table",
+      "number": "13f",
+      "title": "Rational relations of Dedekind zeta values to volumes −D",
+      "page": 43,
+      "pageLabel": "42",
+      "confidence": 0.5,
+      "evidence": []
+    },
+    {
+      "kind": "table",
+      "number": "14",
+      "title": "Further single-complex-place ﬁelds, from cusped manifolds",
+      "page": 43,
+      "pageLabel": "42",
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "15",
+      "title": "Joins of quadratics",
+      "page": 44,
+      "pageLabel": "43",
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "16",
+      "title": "Joins of a quadratic and cubic",
+      "page": 44,
+      "pageLabel": "43",
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "17",
+      "title": "Joins of cubics nonadic join",
+      "page": 44,
+      "pageLabel": "43",
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "18",
+      "title": "Joins of a quadratic and quartic",
+      "page": 45,
+      "pageLabel": "44",
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "19",
+      "title": "Numerical values of Z|D| := ZK for imaginary-quadratic ﬁelds −D",
+      "page": 46,
+      "pageLabel": "45",
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "20",
+      "title": "Volume of the cubical and octahedral links",
+      "page": 47,
+      "pageLabel": "46",
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "21",
+      "title": "Volume of the dodecahedral and icosahedral links",
+      "page": 48,
+      "pageLabel": "47",
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "22",
+      "title": "Empirical reductions of Feynman orthoschemes to the values of Table 19",
+      "page": 49,
+      "pageLabel": "48",
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "23",
+      "title": "Maximally symmetric knots to 10 crossings",
+      "page": 49,
+      "pageLabel": "48",
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "24",
+      "title": "Less symmetric non-alternating Dedekind-zeta knots",
+      "page": 49,
+      "pageLabel": "48",
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "25",
+      "title": "Maximally symmetric knots from 11 to 16 crossings",
+      "page": 50,
+      "pageLabel": "49",
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Alternating platonic link from light-by-light scattering",
+      "page": 51,
+      "pageLabel": "50",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Non-alternating daisy-chain link",
+      "page": 51,
+      "pageLabel": "50",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Alternating ﬁgure-8 knot at D = −3",
+      "page": 52,
+      "pageLabel": "51",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Alternating Whitehead link at D = −4",
+      "page": 52,
+      "pageLabel": "51",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Alternating link 63",
+      "page": 53,
+      "pageLabel": "52",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Alternating link 92",
+      "page": 53,
+      "pageLabel": "52",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Alternating link (σ1σ−2",
+      "page": 54,
+      "pageLabel": "53",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Alternating link (σ2",
+      "page": 54,
+      "pageLabel": "53",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 29,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 29,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "8 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "30 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p27); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 25
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 29 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-th-9811173v1"
+  }
+}

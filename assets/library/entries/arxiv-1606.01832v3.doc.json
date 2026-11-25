@@ -1,0 +1,754 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1606.01832v3",
+  "title": "arxiv-1606.01832v3",
+  "variant": "pdf",
+  "pages": 21,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "0",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-0-introduction"
+    },
+    {
+      "level": 1,
+      "title": "a-Adic Systems",
+      "number": "1",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-a-adic-systems"
+    },
+    {
+      "level": 1,
+      "title": "Free Resolutions of a-Adic Systems",
+      "number": "2",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-free-resolutions-of-a-adic-systems"
+    },
+    {
+      "level": 1,
+      "title": "a-Adic Flatness",
+      "number": "3",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-3-a-adic-flatness"
+    },
+    {
+      "level": 1,
+      "title": "Weakly Proregular Ideals",
+      "number": "4",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-4-weakly-proregular-ideals"
+    },
+    {
+      "level": 1,
+      "title": "Modules of Decaying Functions",
+      "number": "5",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-5-modules-of-decaying-functions"
+    },
+    {
+      "level": 1,
+      "title": "The Non-Noetherian Example",
+      "number": "6",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-6-the-non-noetherian-example"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 133,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ﬂatness",
+          "heading": false
+        },
+        {
+          "term": "proregular",
+          "heading": false
+        },
+        {
+          "term": "completion",
+          "heading": false
+        },
+        {
+          "term": "non-noetherian",
+          "heading": false
+        }
+      ],
+      "extract": "FLATNESS AND COMPLETION REVISITED AMNON YEKUTIELI Abstract. We continue investigating the interaction between ﬂatness and a- adic completion for inﬁnitely generated A-modules. Here A is a commutative ring and a is a ﬁnitely generated ideal in it. We introduce the concept of a-adic ﬂatness, which is weaker than ﬂatness. We prove that a-adic ﬂatness is preserved under completion when the ideal a is weakly proregular.",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1606.01832v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-0-introduction",
+      "number": "0",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1363,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adic flatness",
+          "heading": false
+        },
+        {
+          "term": "proregular ideal",
+          "heading": false
+        },
+        {
+          "term": "adic completion",
+          "heading": false
+        },
+        {
+          "term": "flat module",
+          "heading": false
+        },
+        {
+          "term": "adic system",
+          "heading": false
+        },
+        {
+          "term": "noetherian commutative",
+          "heading": false
+        },
+        {
+          "term": "module opn",
+          "heading": false
+        },
+        {
+          "term": "commutative ring",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper we continue investigating the interaction between flatness and adic completion for infinitely generated modules over a commutative ring, that we had started in \\cite{Ye1}. Let $A$ be a commutative ring, and let $\\a$ be an ideal in it. For each $k \\in \\N$ we define the quotient ring $A_k := A / \\a^{k + 1}$. The collection of rings $\\{ A_k \\}_{k \\in \\N}$ is an inverse system, and the $\\a$-adic completion",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-a-adic-systems",
+      "number": "1",
+      "title": "a-Adic Systems",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1332,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "system bsym",
+          "heading": false
+        },
+        {
+          "term": "adic system",
+          "heading": false
+        },
+        {
+          "term": "adic completion",
+          "heading": false
+        },
+        {
+          "term": "induced adic",
+          "heading": false
+        },
+        {
+          "term": "let bsym",
+          "heading": false
+        },
+        {
+          "term": "every adic",
+          "heading": false
+        },
+        {
+          "term": "begin dfn",
+          "heading": false
+        },
+        {
+          "term": "end dfn",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:adic-sys} Throughout the paper $A$ is a commutative ring, and $\\a$ is an ideal in it. Recall the inverse system of rings $\\{ A_k \\}_{k \\in \\N}$, where $A_k = A / \\a^{k + 1}$. \\begin{dfn} \\label{dfn:15} An {\\em $\\a$-adic system of $A$-modules} is data \\[ \\bsym{M} = \\bigl( \\{ M_k \\}_{k \\in \\N}, \\, \\{ \\nu_{k} \\}_{k \\in \\N} \\bigr) , \\] where $M_k$ is an $A_k$-module, and $\\nu_{k} : M_{k + 1} \\to M_k$ is an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-free-resolutions-of-a-adic-systems",
+      "number": "2",
+      "title": "Free Resolutions of a-Adic Systems",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1166,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bsym xar",
+          "heading": false
+        },
+        {
+          "term": "bar xar",
+          "heading": false
+        },
+        {
+          "term": "xar eta",
+          "heading": false
+        },
+        {
+          "term": "cdots xar",
+          "heading": false
+        },
+        {
+          "term": "mrm fin",
+          "heading": false
+        },
+        {
+          "term": "opn mrm",
+          "heading": false
+        },
+        {
+          "term": "opn tor",
+          "heading": false
+        },
+        {
+          "term": "module opn",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:res-adic-sys} As before, $A$ is a commutative ring and $\\a$ is an ideal in it. Let us recall some definitions from our paper \\cite{Ye1}. Let $Z$ be a set and let $N$ be an $A$-module. The set of all functions $f : Z \\to N$ is denoted by $\\opn{F}(Z, N)$. It is an $A$-module in the obvious way. The {\\em support} of a function $f : Z \\to N$ is the set $\\{ z \\in Z \\mid f(z) \\neq 0 \\}$. We denote by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-a-adic-flatness",
+      "number": "3",
+      "title": "a-Adic Flatness",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1516,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mrm cong",
+          "heading": false
+        },
+        {
+          "term": "opn tor",
+          "heading": false
+        },
+        {
+          "term": "flat contramodule",
+          "heading": false
+        },
+        {
+          "term": "module opn",
+          "heading": false
+        },
+        {
+          "term": "morphism mrm",
+          "heading": false
+        },
+        {
+          "term": "tup tor",
+          "heading": false
+        },
+        {
+          "term": "cat mod",
+          "heading": false
+        },
+        {
+          "term": "xar vartriangle",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:adic-flatness} In this section we prove Theorem \\ref{thm:168}, that characterizes adically flat modules. As before, $A$ is a commutative ring and $\\a$ is an ideal in it. We denote by $\\cat{D}(A) = \\cat{D}(\\cat{Mod} A)$ the unbounded derived category of $A$. Let us first recall the notion of $\\a$-torsion. An element $m$ in an $A$-module $M$ is called an {\\em $\\a$-torsion element} if $m$ is annihilated by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-weakly-proregular-ideals",
+      "number": "4",
+      "title": "Weakly Proregular Ideals",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1049,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proregular",
+          "heading": true
+        },
+        {
+          "term": "opn vee",
+          "heading": false
+        },
+        {
+          "term": "tau mrm",
+          "heading": false
+        },
+        {
+          "term": "bigl opn",
+          "heading": false
+        },
+        {
+          "term": "cong mrm",
+          "heading": false
+        },
+        {
+          "term": "morphism mrm",
+          "heading": false
+        },
+        {
+          "term": "opn infty",
+          "heading": false
+        },
+        {
+          "term": "complex opn",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:WPR} We begin this section by recalling some facts about {\\em weak proregularity}, copied from \\cite{PSY1}. (Partial results were obtained earlier in \\cite{LC}, \\cite{AJL} and \\cite{Scz}.) Suppose $\\bsym{a} = (a_1, \\ldots, a_n)$ is a finite sequence of elements in a commutative ring $A$. For each $k \\geq 1$ we have the sequence of elements $\\bsym{a}^k := (a_1^k, \\ldots, a_n^k)$, and the corresponding",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-modules-of-decaying-functions",
+      "number": "5",
+      "title": "Modules of Decaying Functions",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1789,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "opn mrm",
+          "heading": false
+        },
+        {
+          "term": "mrm dec",
+          "heading": false
+        },
+        {
+          "term": "xar opn",
+          "heading": false
+        },
+        {
+          "term": "mrm fin",
+          "heading": false
+        },
+        {
+          "term": "bsym xar",
+          "heading": false
+        },
+        {
+          "term": "cong opn",
+          "heading": false
+        },
+        {
+          "term": "bsym eta",
+          "heading": false
+        },
+        {
+          "term": "subseteq opn",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:decay} In this section we prove Theorems \\ref{thm:290} and \\ref{thm:295}, that together constitute Theorem \\ref{thm:262} from the Introduction. We assume that $A$ is a commutative ring, and $\\a$ is a finitely generated ideal in it. As before, for each $k$ we write $A_k := A / \\a^{k + 1}$. Let $M$ be an $\\a$-adically complete $A$-module. Following \\cite{Ye1}, a function $f : Z \\to M$ is called an {\\em",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-6-the-non-noetherian-example",
+      "number": "6",
+      "title": "The Non-Noetherian Example",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 767,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "noetherian ring",
+          "heading": false
+        },
+        {
+          "term": "ahler differentials",
+          "heading": false
+        },
+        {
+          "term": "ring homomorphism",
+          "heading": false
+        },
+        {
+          "term": "medskip noindent",
+          "heading": false
+        },
+        {
+          "term": "surjective ring",
+          "heading": false
+        },
+        {
+          "term": "proregular",
+          "heading": false
+        },
+        {
+          "term": "exact sequence",
+          "heading": false
+        },
+        {
+          "term": "transcendence degree",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:example} In this section we prove Theorem \\ref{thm:205}, that provides an example of an $\\a$-adically complete $\\a$-adically flat $A$-module which is not flat. The necessary facts on K\\\"ahler differentials can be found in \\cite[Section 26]{Ma}. \\begin{lem} \\label{lem:300} Let $\\K$ be a field of characteristic $0$, and let $B := \\K[[t]]$, the ring of power series in a variable $t$. Then the module of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 360,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "amnon yekutieli",
+          "heading": false
+        },
+        {
+          "term": "eprint arxiv",
+          "heading": false
+        },
+        {
+          "term": "notes math",
+          "heading": false
+        },
+        {
+          "term": "positselski",
+          "heading": false
+        },
+        {
+          "term": "local cohomology",
+          "heading": false
+        },
+        {
+          "term": "flatness",
+          "heading": false
+        },
+        {
+          "term": "commutative algebra",
+          "heading": false
+        },
+        {
+          "term": "porta",
+          "heading": false
+        }
+      ],
+      "extract": "[AJL] L. Alonso, A. Jeremias and J. Lipman, Local homology and cohomology on schemes, Ann. Sci. ENS 30 (1997), 1-39. Correction, availabe online at http://www.math.purdue.edu/ ˜lipman/papers/homologyfix.pdf [AM] M.F. Atiyah and I.G. Macdonald, “Introduction to Commutative Algebra”, Addison- Wesley, 1969. [BS] Jaap Bartijn and Jan R. Strooker, Modiﬁcations monomiales, in “S´emin. Dubreil- Malliavin 1982”, Lect. Notes",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "opn mrm",
+      "heading": false
+    },
+    {
+      "term": "xar opn",
+      "heading": false
+    },
+    {
+      "term": "bsym xar",
+      "heading": false
+    },
+    {
+      "term": "module opn",
+      "heading": false
+    },
+    {
+      "term": "opn tor",
+      "heading": false
+    },
+    {
+      "term": "flat adic",
+      "heading": false
+    },
+    {
+      "term": "cong mrm",
+      "heading": false
+    },
+    {
+      "term": "proregular ideal",
+      "heading": false
+    },
+    {
+      "term": "mrm fin",
+      "heading": false
+    },
+    {
+      "term": "adic completion",
+      "heading": false
+    },
+    {
+      "term": "sequence bsym",
+      "heading": false
+    },
+    {
+      "term": "tau mrm",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 8,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p20); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1606.01832v3"
+  }
+}

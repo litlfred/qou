@@ -1,0 +1,634 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1305.7175v4",
+  "blocks": [
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1305.7175v4  [math.AG]  5 Jun 2019\nNONLINEAR TRACES\nDAVID BEN-ZVI AND DAVID NADLER\nAbstract. We combine the theory of traces in homotopical algebra with sheaf theory in de-\nrived algebraic geometry to deduce general ﬁxed point and character formulas. The formalism\nof dimension (or Hochschild homology) of a dualizable object in the context of higher algebra\nprovides a unifying framework for classical notions such as Euler characteristics, Chern char-\nacters, and characters of group representations. Moreover, the simple functoriality properties\nof dimensions clarify celebrated identities a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "1. Introduction\nThis paper is devoted to traces and characters in homotopical algebra and their application to\nalgebraic geometry and representation theory. We observe that many geometric ﬁxed point and\ntrace formulas can be expressed as linearizations of fundamental nonlinear identities, describing\ndimensions and traces directly in the setting of correspondence categories of varieties or stacks.\nThis gives a simple uniform perspective on (and useful generalizations of) geometric character\nand ﬁxed point formulas of Grothendieck-Riemann-Roch and Atiyah-Bott-Lefschetz type. In\naddition, one can",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary",
+      "pageStart": 2,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-11-summary.md",
+      "narrative": null,
+      "content": "[]{#summary label=\"summary\"} We now describe the main theorem, extending classical trace and dimension formulas to a very general setting in derived algebraic geometry (including equivariance for arbitrary Lie algebroids or affine algebraic groups) without any smoothness or transversality assumptions, while emphasizing that the main contribution of the paper is the simple geometric formalism underlying these formulas. For our general and formal nonlinear results, we need not assume anything about what classes of derived stacks and morphisms we work with. For applications, we need to be in a se",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Inspirations and motivations",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-12-inspirations-and-motivations.md",
+      "narrative": null,
+      "content": "This work has many inspirations. It is heavily reliant on the $\\infty$-categorical foundations of higher algebra, derived algebraic geometry and sheaf theory due to Lurie [@HA; @SAG] and Gaitsgory-Rozenblyum [@GR]. It is also inspired by Lurie's cobordism hypothesis with singularities [@TFT], which provides a powerful unifying tool for higher algebra. Already in the setting of one-dimensional field theory, this result can be viewed as a vast generalization of the classical theory Hochschild and cyclic homology and characters therein [@Loday], (in particular the natural cyclic symmetry of Hochs",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-13-acknowledgements.md",
+      "narrative": null,
+      "content": "We would like to thank Dennis Gaitsgory and Jacob Lurie for providing both the foundations and the inspiration for this work, as well as helpful comments and specifically D.G. for discussions of [@GR]. We would also like to thank Toly Preygel for many discussions about derived algebraic geometry.\n\nWe gratefully acknowledge the support of NSF grants DMS-1103525 (D.BZ.) and DMS-1319287 (D.N.).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Overview",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-2-overview.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Traces in category theory",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-21-traces-in-category-theory.md",
+      "narrative": null,
+      "content": "We highlight structures arising in the general theory of dualizable objects in symmetric monoidal higher categories (see also [@doldpuppe; @may; @PS]). For legibility, we suppress all $\\oo$-categorical notations and complications from the introduction. We rely on [@GR] for the theory of symmetric monoidal $(\\oo,2)$-categories, though only the formal outline of the theory is in fact needed for this paper. See [@TV; @HSS] for thorough treatments of the theory of traces in higher category theory.\n\nThe basic notion in the theory is that of *dimension* of a dualizable object of a symmetric monoidal",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Traces in geometry",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-22-traces-in-geometry.md",
+      "narrative": null,
+      "content": "To apply the preceding formalism to geometry, it is useful to organize spaces and maps within a suitable categorical framework. We then arrive at loop spaces and fixed point loci as nonlinear expressions of dimensions and traces. This simple observation provides the core of the paper. Throughout the discussion, we continue to suppress all $\\oo$-categorical notations and complications. Our reference for the correspondence 2-category of stacks is Section V of [@GR] (see also [@haugsengspan]).\n\nTo begin, consider the general setup of the symmetric monoidal category $Corr(\\cC)$ of correspondences,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Trace formulas via sheaf theories",
+      "pageStart": 12,
+      "pageEnd": 16,
+      "target": "../sections/sec-007-23-trace-formulas-via-sheaf-theories.md",
+      "narrative": null,
+      "content": "[]{#sheaf intro label=\"sheaf intro\"}\n\nGiven any sufficiently functorial method of measuring derived stacks, the preceding calculations of geometric dimensions, traces and their functoriality immediately lead to trace and character formulas. To formalize the functoriality needed, we will use the language of sheaf theories. Broadly speaking, a sheaf theory is a representation (symmetric monoidal functor out) of a correspondence category in the way a topological field theory is a representation of a cobordism category.[^1] It provides an approach to encoding the standard operations on coherent sh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Traces in category theory",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-008-3-traces-in-category-theory.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-009-31-preliminaries.md",
+      "narrative": null,
+      "content": "Our working setting is the higher category theory and algebra developed by J. Lurie [@topos; @HA; @SAG], see Chapter I.1 of [@GR] for an excellent overview.\n\nThroughout what follows, we will fix once and for all a symmetric monoidal $(\\oo, 2)$-category $\\cA$ with unit object $1_\\cA$. By forgetting non-invertible 2-morphisms we obtain a symmetric monoidal $(\\oo,1)$-category $f(\\cA)$, which we will abusively refer to as $\\cA$ whenever only invertible higher morphisms are involved. Conversely, given a symmetric monoidal $(\\oo, 1)$-category $\\cC$, we can always regard it as a symmetric monoidal $(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dualizability",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-010-32-dualizability.md",
+      "narrative": null,
+      "content": "::: defn\nAn object $A$ of the symmetric monoidal $(\\oo, 2)$-category $\\cA$ is said to be *dualizable* (equivalently, $A$ is dualizable in the $(\\oo,1)$-category $f(\\cA)$) if it admits a monoidal dual: there is a dual object $A^\\vee \\in \\cA$ and evaluation and coevaluation morphisms $$\\xymatrix{\n\\epsilon_A:A^\\vee \\otimes A\\ar[r] & 1_\\cA\n&\n\\eta_A:1_\\cA \\ar[r] & A \\otimes A^\\vee\n}$$\n\nsuch that the usual compositions are naturally equivalent to the identity morphism $$\\xymatrix{\nA \\ar[rr]^-{\\eta_A \\otimes \\id_A} && A \\otimes A^\\vee \\otimes A\n\\ar[rr]^-{ \\id_A\\otimes \\epsilon_A} && A \n&\nA^\\vee \\ar[r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Traces and dimensions",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "../sections/sec-011-33-traces-and-dimensions.md",
+      "narrative": null,
+      "content": "(We continue to refer to [@TV; @HSS] for thorough treatments of the theory of traces in higher category theory.)\n\nLet $A\\in \\cA$ be a dualizable object with dual $A^{\\vee}$. Consider an endomorphism $$\\xymatrix{\n\\Phi:A \\ar[r] & A\n}$$ Since $A$ is dualizable, $\\Phi$ has a trace defined as follows.\n\n::: defn\n[]{#trace1 label=\"trace1\"}\n\n\\(1\\) The *trace* of $\\Phi: A\\to A$ is the object $\\Tr(\\Phi)\\in\n\\Omega\\cA$ defined by $$\\xymatrix{1_{\\cA}\\ar[r]^-{\\eta_A}\\ar@/_2pc/@{-}^-{\\Tr(\\Phi)}[rrrr]& A\\ot A^\\vee \\ar[rr]^-{\\Phi\\ot\\id_A}& &  A\\ot A^\\vee\n\\ar[r]^-{\\epsilon_A}& 1_\\cA}.$$\n\nGiven a natural transfo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/cor-sec-012-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "Abstract Grothendieck-Riemann-Roch",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "cor-sec-012-03.md",
+      "narrative": null,
+      "content": "Let A, B ∈Acont and V : 1A →A and π∗: A →B morphisms in Acont. Then the following diagram naturally commutes 1A dim(π∗V ) #● ● ● ● ● ● ● ● ● dim(V )/ dim(A) dim(π∗) \u000f dim(B)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/prop-sec-012-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "prop-sec-012-02.md",
+      "narrative": null,
+      "content": "For a diagram A Φ / B Ψ / C within Acont, there is a canonical equivalence dim(Ψ ◦Φ) ≃dim(Ψ) ◦dim(Φ) : dim(A) / dim(C)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Functoriality of dimension",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-012-34-functoriality-of-dimension.md",
+      "narrative": null,
+      "content": "objects and continuous or right dualizable morphisms (morphisms that are left duals).\nDeﬁnition 3.19. Let Ψ : A →B denote a morphism in Acont with right adjoint Ψr : B →A.\nWe deﬁne the induced morphism of dimensions\ndim(Ψ) : dim(A)\n/ dim(B)\nto be the composition\nTr(idA)\nηΨ / Tr(Ψr ◦Ψ)\nm(Ψr,Ψ)\n/ Tr(Ψ ◦Ψr)\nǫΨ / Tr(idB)\nRemark 3.20. In other words, the morphism dim(Ψ) is deﬁned by the following diagram\nA ⊗A∨\nΨ⊗idA∨\n\u000f\nǫA\n\"❊\n❊\n❊\n❊\n❊\n❊\n❊\n❊\n❊\n❊\n❊\n❊\n❊\n❊\n❊\n❊\n❊\n❊\n1A\nηA\n<②\n②\n②\n②\n②\n②\n②\n②\n②\n②\n②\n②\n②\n②\n②\n②\n②\n②\nuΨ\n/\nηB\n\"❊\n❊\n❊\n❊\n❊\n❊\n❊\n❊\n❊\n❊\n❊\n❊\n❊\n❊\n❊\n❊\n❊\nB ⊗A∨\nΨr⊗idA\nO\ncΨ\n/\nidB∨⊗Ψr∨\n\u000f\n1A\n1A\nTr(ΨrΨ)≃Tr(ΨΨr)\n/\nd",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/rem-sec-012-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "rem-sec-012-01.md",
+      "narrative": null,
+      "content": "In other words, the morphism dim(Ψ) is deﬁned by the following diagram A ⊗A∨ Ψ⊗idA∨ \u000f ǫA \"❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ 1A ηA <② ② ② ② ② ② ② ② ② ② ② ② ② ② ② ② ② ② uΨ / ηB \"❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ B ⊗A∨ Ψr⊗idA O cΨ / idB∨⊗Ψr∨ \u000f 1A 1A Tr(ΨrΨ)≃Tr(ΨΨr) / dim(B) dim(A) 1A B ⊗B∨ idB ⊗Ψ∨ O ǫB <② ② ② ② ② ② ② ② ② ② ② ② ② ② ② ② ② DAVID BEN-ZVI AND DAVID NADLER Following the top and bottom edge, we ﬁnd the respective deﬁnitions of dim(A) and dim(B). The unit ηΨ deﬁnes a morphism from the top edge to the top zig-zag. The counit ǫΨ deﬁnes a morphism from the bottom zig-zag to the bottom edg",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/rem-sec-012-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "rem-sec-012-04.md",
+      "narrative": null,
+      "content": "One can show along the same lines as the proposition that taking dimensions extends to a symmetric monoidal functor dim : Acont / ΩA.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/prop-sec-013-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "prop-sec-013-03.md",
+      "narrative": null,
+      "content": "Suppose given objects A, B, C ∈Acont, endomorphisms ΦA, ΦB, ΦC, a commutative diagram of continuous morphisms A ΨAC % ΨAB / B ΨBC / C and commuting structures sAB : ΨABΦA ∼ / ΦBΨAB sBC : ΨBCΦB ∼ / ΦCΨBC sAC : ΨACΦA ∼ / ΦCΨAC with an identiﬁcation sAC ≃sBCsAB. Then there is a canonical equivalence Tr(ΨAC, sAC) ≃Tr(ΨBC, sBC) ◦Tr(ΨAB, sAB) : Tr(ΦA) / Tr(ΦC)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/prop-sec-013-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "prop-sec-013-04.md",
+      "narrative": null,
+      "content": "The additional moves needed are commuting the commuting structures past the symmetry m of the trace and the unit and counits of the adjunctions. These all follow immediately from the 2-categorical interchange law for natural transformations. □",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Functoriality of traces",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-013-35-functoriality-of-traces.md",
+      "narrative": null,
+      "content": "endomorphisms of dualizable objects. For this purpose we deﬁne a morphism between pairs\nA ∈Acont\nΦA ∈EndA(A)\nof an object and an endomorphism to consist of a pair\nΨ ∈HomAcont(A, B)\nψ : Ψ ◦ΦA\n≃\n/ ΦB ◦Ψ\nof a morphism and a commuting structure.\nDeﬁnition 3.24. For a morphism\n(Ψ, ψ) : (A, ΦA) →(B, ΦB)\nas above, we deﬁne the induced morphism of traces\nTr(Ψ, ψ) : Tr(ΦA)\n/ Tr(ΦB)\nto be the composition\nTr(ΦA)\nηΨ / Tr(ΨrΨΦA)\nψ\n/ Tr(ΨrΦBΨ)\nm(Ψr,ΦBΨ) / Tr(ΦBΨΨr)\nǫΨ / Tr(ΦB)\nRemark 3.25. Note that we could alternatively deﬁne a morphism Tr(Ψ, ψ) by applying the\nunit ηΨ to the right of ΦA, rotating the tra",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/rem-sec-013-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "rem-sec-013-01.md",
+      "narrative": null,
+      "content": "Note that we could alternatively deﬁne a morphism Tr(Ψ, ψ) by applying the unit ηΨ to the right of ΦA, rotating the trace in the opposite direction, and again using the counit on the right. It is elementary to give a natural equivalence of the two constructions using nothing more than the dualizability of A.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/rem-sec-013-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "rem-sec-013-02.md",
+      "narrative": null,
+      "content": "In parallel with Remark 3.20 about the functoriality of dimensions, it is enlight- ening to realize the functoriality of traces as a chase through the following diagram A ⊗A∨ Ψ⊗idA∨ \u000f ΦA⊗idA∨ / A ⊗A∨ ǫA \"❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ Ψ⊗idA∨ \u000f 1A ηA <② ② ② ② ② ② ② ② ② ② ② ② ② ② ② ② ② ② uΨ / ηB \"❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ ❊ B ⊗A∨ Ψr⊗idA∨ O ΦB⊗idA∨ / idB∨⊗Ψr∨ \u000f B ⊗A∨ cΨ / idB∨⊗Ψr∨ \u000f Ψr⊗idA∨ O 1A 1A Tr(ΨrΨΦA)≃ Tr(ΨrΦBΨ)≃Tr(ΦBΨΨr) / Tr(ΦB) Tr(ΦA) 1A B ⊗B∨ idB ⊗Ψ∨ O ΦB⊗idB∨ / B ⊗B∨ idB ⊗Ψ∨ O ǫB <② ② ② ② ② ② ② ② ② ② ② ② ② ② ② ② ② DAVID BEN-ZVI AND DAVID NADLER",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/rem-sec-013-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "rem-sec-013-05.md",
+      "narrative": null,
+      "content": "The full functoriality of the trace Tr takes roughly the following form, see [HSS] for a detailed treatment. Deﬁne the loop category LcontA to be the symmetric monoidal ∞- category with objects consisting of pairs (A, ΦA) of a dualizable object A ∈A equipped with a (not necessarily continuous) endomorphism ΦA, and morphisms given by pairs (Ψ, ψ) as above with Ψ continuous. Taking traces to extend to a symmetric monoidal functor Tr : LcontA / ΩA extending the dimension functor dim : Acont / ΩA for constant loops ΦA = idA, and trivial commuting structures ψ = idΨ. In order to capture the full cy",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Traces in Geometry",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-014-4-traces-in-geometry.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Categories of correspondences",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-015-41-categories-of-correspondences.md",
+      "narrative": null,
+      "content": "For concreteness, we fix a base commutative ring, and work in the symmetric monoidal $(\\oo,1)$-category $Stacks_k$ of derived stacks over $\\Spec k$. It is worth pointing out that the constructions of this section apply in any presentable $\\oo$-category with the Cartesian symmetric monoidal structure.\n\nLet $Corr_k$ denote the symmetric monoidal $\\oo$-category of correspondences in $Stacks_k$. Thus morphisms are given by the classifying space of correspondences $$\\xymatrix{X&\\ar[l]\\ar[r] Z & Y}$$ so all higher morphisms are isomorphisms. Composition of correspondences is given by the derived fib",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Traces of correspondences",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "../sections/sec-016-42-traces-of-correspondences.md",
+      "narrative": null,
+      "content": "Given a map $Z\\to X$, it is convenient to introduce the symmetric presentation of the based loop space $$\\cL_Z X\n= Z\\times_{Z\\times X} Z$$ Note the two natural identification with the traditional based loop space $$\\xymatrix{\n  \\cL X \\times_X Z \\simeq X \\times_{X \\times X} Z & \\ar[l]_-\\sim  Z\\times_{Z\\times X} Z  \\ar[r]^-\\sim & Z \\times_{X \\times X} X \\simeq Z \\times_X \\cL X\n}$$ There is a natural rotational equivalence $\\cL X \\times_X Z \\simeq Z \\times_X \\cL X$ that makes the above two identifications coincide. (It does not preserve base points and is not given by swapping the factors). Thus",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometric functoriality of dimension",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "../sections/sec-017-43-geometric-functoriality-of-dimension.md",
+      "narrative": null,
+      "content": "::: prop\n[]{#geometric adjunction label=\"geometric adjunction\"} The graph $X\\leftarrow \\Gamma_f \\to Y$ of any proper morphism $f: X\\to Y$ gives a continuous morphism $F:X\\to Y$ in $\\ul{Corr}^{prop}_k$, with right adjoint $F^r:Y\\to X$ identified with the opposite correspondence $Y\\leftarrow \\Gamma_f \\to X$.\n:::\n\n::: proof\n*Proof.* We construct the unit and counit of the adjunction as follows. Consider the composition $F^r F:X\\to X$ of correspondences $$\\xymatrix{&&X \\times_Y X \\ar[ld]\\ar[rd]&&\\\\\n&\\Gamma_f\\ar[ld]\\ar[rd]&&\\Gamma_f\\ar[ld]\\ar[rd]& \\\\\nX&&Y &&X}$$ The unit $\\eta_f: \\id_X=X \\to F^rF\\s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometric functoriality of trace",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/sec-018-44-geometric-functoriality-of-trace.md",
+      "narrative": null,
+      "content": "Consider a proper morphism $f:X\\to Y$ and endomorphisms $F_Z:X\\to X$ and $F_W:Y\\to Y$ in $Corr_k$ given by respective self-correspondences $X\\leftarrow Z \\to X$ and $Y \\leftarrow W \\to Y$.\n\nBy an $f$-morphism from the pair $(X,F_Z)$ to the pair $(Y,F_W)$, we mean an identification $$\\xymatrix{\n  s:Z  \\ar[r]^-\\sim &  X\\times_Y W\n  }$$ of correspondences from $X$ to $Y$. This in turn induces an identification of what might be called relative traces $$\\xymatrix{\n  Z\\times_{Y\\times Y} Y\\ar[r]^-\\sim &  X\\times_{Y\\times Y} W\n  }$$ generalizing the relative loop space $\\cL_X Y$ from the case of the i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Traces for sheaves",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-019-5-traces-for-sheaves.md",
+      "narrative": null,
+      "content": "[]{#sect shvs label=\"sect shvs\"}\n\nIn this section, we spell out how to apply the abstract formalism of traces of Section [\\[sect cat\\]](#sect cat){reference-type=\"ref\" reference=\"sect cat\"} and its geometric incarnation of Section [\\[sect geom\\]](#sect geom){reference-type=\"ref\" reference=\"sect geom\"} to categories of sheaves. Recall Definition [\\[sheaf def intro\\]](#sheaf def intro){reference-type=\"ref\" reference=\"sheaf def intro\"}:\n\n::: defn\nA *sheaf theory* is a symmetric monoidal functor of $(\\infty,2)$-categories $$\\xymatrix{\n\\ul{\\cS}:\\ul{Corr}_k^{prop}\\ar[r] &  \\ul{dgCat}_k\n}$$ from corr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dimensions and traces of sheaf categories: 1-categorical consequences",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-020-51-dimensions-and-traces-of-sheaf-categories-1-c.md",
+      "narrative": null,
+      "content": "The graph of a map of derived stacks $f:X\\to Y$ provides a correspondence from $X$ to $Y$ and a correspondence from $Y$ to $X$. We denote the respective induced maps by $f_{*}:\\cS(X)\\to \\cS(Y)$ and $f^!:\\cS(Y)\\to \\cS(X)$. The functoriality of $\\cS$ concisely encodes base change for $f_{*}$ and $f^!$. For $\\pi:X\\to pt = \\Spec k$, we denote by $\\omega_{X}=\\pi^! k\\in \\cS(X)$ the $\\cS$-analogue of the dualizing sheaf, and by $\\omega(X)=\\pi_{*}\\omega_{X} \\in \\cS(pt) = dgVect_k$ the $\\cS$-analogue of \"global volume forms\\\".\n\nNext we will record formal consequences of our prior calculations deduced f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Integration formulas for traces: 2-categorical consequences",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "../sections/sec-021-52-integration-formulas-for-traces-2-categorical.md",
+      "narrative": null,
+      "content": "[]{#2-cat label=\"2-cat\"} Now we turn to the functoriality of dimensions and traces. For this we require the 2-categorical enhanced version $\\uS$ of a sheaf theory, so as to take advantage of the resulting functorial adjunction $$\\xymatrix{\\cS(X) \\ar@<+.5ex>[r]^{f_*} &\n  \\ar@<+.5ex>[l]^{f^!}\\cS(Y)}$$ for $f:X\\to Y$ proper. In particular, applying the functor $\\uS$ on two-morphisms we find that\n\n$\\bullet$ A proper map $f:Z\\to W$ of correspondences $$\\xymatrix{\n&\\ar[dl]_-{p_Z} Z \\ar[dd]^-f \\ar[dr]^-{q_Z} & \\\\\nX & & Y\\\\\n& \\ar[ul]^-{p_W} W\\ar[ur]_-{q_W} & \n}$$ induces a canonical integration morphi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ind-coherent sheaves and D-modules",
+      "pageStart": 33,
+      "pageEnd": 36,
+      "target": "../sections/sec-022-53-ind-coherent-sheaves-and-d-modules.md",
+      "narrative": null,
+      "content": "[]{#actual sheaf theory label=\"actual sheaf theory\"}\n\nWe now apply the results of Gaitsgory-Rozenblyum [@GR] and Drinfeld-Gaitsgory [@finiteness] establishing functoriality properties of categories of ind-coherent sheaves and $\\cD$-modules.\n\nWe first state a fundamental result of Gaitsgory-Rozenblyum [@GR]:\n\n::: thm\n [@GR Theorem III.3.5.4.3, III.3.6.3] []{#GR sheaf theory label=\"GR sheaf theory\"} There is a uniquely defined right-lax symmetric monoidal functor $\\cQ^!$ from the $(\\infty,2)$-category whose objects are *laft* (locally almost of finite type) prestacks, morphisms are correspondenc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1305.7175v4/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-023-references.md",
+      "narrative": null,
+      "content": "[Ba] C. Barwick, On the Q-construction for exact ∞-categories. e-print arXiv:1301.4725.\n[BFN] D. Ben-Zvi, J. Francis and D. Nadler, Integral transforms and Drinfeld centers in derived algebraic\ngeometry. Preprint arXiv:0805.0157. Jour. Amer. Math. Soc. 23 (2010), 909–966.\n[BN09] D. Ben-Zvi and D. Nadler, The character theory of a complex group. e-print arXiv:math/0904.1247\n[BN10b] D. Ben-Zvi and D. Nadler, Loop Spaces and Connections. arXiv:1002.3636. J. Topol. 5 (2012), no. 2,\n377–430.\n[BN10b] D. Ben-Zvi and D. Nadler, Loop Spaces and Representations. arXiv:1004.5120. Duke Math. J. 162\n(2013)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1606.01832v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "FLATNESS AND COMPLETION REVISITED",
+      "dcterms:creator": [
+        "YEKUTIELI, AMNON"
+      ],
+      "dcterms:issued": "D:20181105",
+      "dcterms:identifier": "https://arxiv.org/abs/1606.01832",
+      "dcterms:abstract": "We continue investigating the interaction between ﬂatness and a- adic completion for inﬁnitely generated A-modules. Here A is a commutative ring and a is a ﬁnitely generated ideal in it. We introduce the concept of a-adic ﬂatness, which is weaker than ﬂatness. We prove that a-adic ﬂatness is preserved under completion when the ideal a is weakly proregular. We also prove that when A is noetherian, a-adic ﬂatness coincides with ﬂatness (for complete modules). An example is worked out of a non-noetherian ring A, with a weakly proregular ideal a, for which the completion b A is not ﬂat. We also study a-adic systems, and prove that if the ideal a is ﬁnitely generated, then the limit of every a-adic system is a complete module.",
+      "dcterms:source": "library/arxiv-1606.01832v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1606.01832v3"
+    }
+  ]
+}

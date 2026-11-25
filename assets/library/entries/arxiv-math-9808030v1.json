@@ -1,0 +1,120 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-9808030v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-9808030v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/9808030v1  [math.QA]  6 Aug 1998\nPlanscherel Measure on Eq(2)\nH. Ahmedov1 and I. H. Duru2,1\n1. TUBITAK, Feza G¨ursey Institute, P.O. Box 6, 81220 Cengelkoy, Istanbul,\nTurkey 1.\n2. Trakya University, Mathematics Department, P.O. Box 126, Edirne, Turkey.\nAbstract\nFollowing the construction of the invariant integral and the scalar product\nfor the quantum Euclidean group Eq(2), we obtained the full matrix elements\nof its unitary irreducible representations from SUq(2) by contraction and then\nderived the Planscherel measure.\nJuly 1998\n1E–mail : hagi@fge1.gursey.gov.tr and duru@fge1.gurse",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9808030v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "If the space--time is not a differentiable manifold but a non--commutative geometry there may be interesting new physical effects. Because of the non existence of sufficiently developed differential calculus on the non--commutative geometry to study physical effects one needs new mathematical tools. Since on the other hand the quantum group spaces are natural examples for the non--commutative geometries it is of interest to develop an algorithm that can be employed in physical applications. In that direction we have recently investigated the Green function on $SU_q(2)$ [@1]. Purpose of the pre",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9808030v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariant Integral on $E_q(2)$",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-2-invariant-integral-on-e-q2.md",
+      "narrative": null,
+      "content": "Let us start by reviewing the construction of the invariant integral for $SU_q(2)$ which will guide in $E_q(2)$ case.\n\n::: flushleft\n**Rewiev of the invariant integral on $SU_q(2)$**\n:::\n\nThe coordinate functions $x$, $u$, $x^*$, $u^*$ generating the $*$--Hopf algebra $A(SU_q(2))$ satisfy the following relations [@2] $$\\begin{aligned}\n\\label{com}\nu(x)=qx u, \\ \\  x^*u=qux^*,  \\ \\  uu^*=u^*u, \\nonumber \\\\  \nxx^* + uu^*={\\bf 1}, \\ \\ x^*x+ q^2uu^*={\\bf 1}. \\ \\ \\ \n\\end{aligned}$$ In $q\\rightarrow 1$ limit the above relations define the three dimensional sphere $S^3$ which is the topological manifol",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9808030v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Scalar Product on $E_q(2)$",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-3-scalar-product-on-e-q2.md",
+      "narrative": null,
+      "content": "Let $\\Phi (E_q(2))$ be the set of analytic functions on $E_q(2)$ such that \n\\begin{equation}\n\\label{plan1}\\psi (f f^*)<\\infty , \n\\end{equation}\nwhere $\\psi$ is the invariant integral (\\ref{invine}) on $E_q(2)$.\n\nRecall that the homomorphism \n\\begin{equation}\n\\phi (z)=0, \\ \\ \\ \\phi (z^*)=0, \\ \\ \\ \\phi (\\delta)=t \n\\end{equation}\ndefines the quantum subgroup $U(1)\\subset E_q(2)$. We have then the\ndecomposition \n\\begin{equation}\n\\label{plan2}\\Phi(E_q(2))=\\sum_{ij\\in Z}\\oplus \\Phi[i,j] \n\\end{equation}\nwhere \n\\begin{equation}\n\\Phi[i,j]=\\{ f\\in \\Phi(E_q(2)) : L (f) = t^i\\otimes f ; \\ \\ R (f) = f\\otim",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9808030v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Matrix Elements of the Irreducible Representations of $E_q(2)$ from $SU_q(2)$ by Contraction",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-4-matrix-elements-of-the-irreducible-representat.md",
+      "narrative": null,
+      "content": "Unitary representations of $E_q(2)$ are previously studied [@5]. We now show that the matrix elements of the unitary irreducible representations of $E_q(2)$ can be obtained from the ones of $SU_q(2)$ by contraction. This example shows that there exists q--analog of contraction procedure of classical groups representations which was investigated in [@6].\n\nIn Appendix C we review the derivation of the matrix elements of the unitary irreducible representations of $E(2)$ from $SU(2)$ by the following contraction procedure $$t_{ij}^p (\\phi , \\rho , \\zeta )= \\lim _{l\\rightarrow \\infty }t_{ij}^l(\\phi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9808030v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Planscherel Measure on $E_q(2)$",
+      "pageStart": 10,
+      "pageEnd": 17,
+      "target": "../sections/sec-004-5-planscherel-measure-on-e-q2.md",
+      "narrative": null,
+      "content": "The comultiplication $$\\label{eq: plan11}\\Delta :\\Phi (E_q(2))\\rightarrow \\Phi (E_q(2))\\otimes \\Phi\n(E_q(2))$$ defines the regular representations of the quantum group $E_q(2)$ in $\\Phi\n(E_q(2))$. Since the scalar product in $\\Phi (E_q(2))$ is defined by means of the invariant integral this representation is unitary. The linear space $\\Phi (E_q(2))$ is common invariant dense domain for the set of linear operators ${\\cal R}(\\phi )$, ${\\cal L}(\\phi )$, $\\phi \\in U_q(e(2))$. Since the representation ([\\[eq: plan11\\]](#eq: plan11){reference-type=\"ref\" reference=\"eq: plan11\"}) of $E_q(2)$ is unitar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

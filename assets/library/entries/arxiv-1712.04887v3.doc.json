@@ -1,0 +1,2041 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1712.04887v3",
+  "title": "BLOCH GROUPS, ALGEBRAIC K -THEORY, UNITS, AND NAHM’S CONJECTURE",
+  "variant": "pdf",
+  "pages": 43,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Bloch groups and associated units",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-bloch-groups-and-associated-units"
+    },
+    {
+      "level": 2,
+      "title": "Algebraic K-groups and associated units",
+      "number": "1.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-algebraic-k-groups-and-associated-units"
+    },
+    {
+      "level": 2,
+      "title": "Nahm's Conjecture",
+      "number": "1.3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Motivation from quantum topology",
+      "number": "1.4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-14-motivation-from-quantum-topology"
+    },
+    {
+      "level": 2,
+      "title": "Plan of the paper",
+      "number": "1.5",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-15-plan-of-the-paper"
+    },
+    {
+      "level": 1,
+      "title": "The maps Pz and Rz",
+      "number": "2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-2-the-maps-pz-and-rz"
+    },
+    {
+      "level": 2,
+      "title": "Preliminaries on the Bloch group",
+      "number": "2.1",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The map Pz",
+      "number": "2.2",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The map Rz",
+      "number": "2.3",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Compatibilities",
+      "number": "2.4",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-24-compatibilities"
+    },
+    {
+      "level": 2,
+      "title": "The 5-term relation",
+      "number": "2.5",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-25-the-5-term-relation"
+    },
+    {
+      "level": 2,
+      "title": "An eigenspace computation",
+      "number": "2.6",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-26-an-eigenspace-computation"
+    },
+    {
+      "level": 1,
+      "title": "Chern Classes for algebraic K-theory",
+      "number": "3",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-3-chern-classes-for-algebraic-k-theory"
+    },
+    {
+      "level": 2,
+      "title": "Definitions",
+      "number": "3.1",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-31-definitions"
+    },
+    {
+      "level": 2,
+      "title": "The relation between étale cohomology and Galois cohomology",
+      "number": "3.2",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-32-the-relation-between-étale-cohomology-and-gal"
+    },
+    {
+      "level": 2,
+      "title": "Upgrading from Fntimes to OFtimes",
+      "number": "3.3",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Upgrading from S-units to units",
+      "number": "3.4",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-34-upgrading-from-s-units-to-units"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem 1.5",
+      "number": "3.5",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-35-proof-of-theorem-15"
+    },
+    {
+      "level": 1,
+      "title": "Reduction to finite fields",
+      "number": "4",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-4-reduction-to-finite-fields"
+    },
+    {
+      "level": 2,
+      "title": "Local Chern class maps",
+      "number": "4.1",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-41-local-chern-class-maps"
+    },
+    {
+      "level": 2,
+      "title": "The Bloch group of Fq",
+      "number": "4.2",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-42-the-bloch-group-of-fq"
+    },
+    {
+      "level": 2,
+      "title": "The local Chern class map cz",
+      "number": "4.3",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The local Rz map",
+      "number": "4.4",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Comparison between the maps cz and Rz",
+      "number": "5",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-5-comparison-between-the-maps-cz-and-rz"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem 1.6",
+      "number": "5.1",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-51-proof-of-theorem-16"
+    },
+    {
+      "level": 2,
+      "title": "Digression: the modpq dilogarithm",
+      "number": "5.2",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-52-digression-the-modpq-dilogarithm"
+    },
+    {
+      "level": 2,
+      "title": "The Chern class map on n-torsion in Qzeta",
+      "number": "5.3",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-53-the-chern-class-map-on-n-torsion-in-qzeta"
+    },
+    {
+      "level": 1,
+      "title": "The connecting homomorphism to K-theory",
+      "number": "6",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-6-the-connecting-homomorphism-to-k-theory"
+    },
+    {
+      "level": 1,
+      "title": "Nahm's conjecture and the asymptotics of Nahm sums at roots of unity",
+      "number": "7",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-7-nahms-conjecture-and-the-asymptotics-of-nahm-s"
+    },
+    {
+      "level": 2,
+      "title": "Nahm's conjecture and Nahm sums",
+      "number": "7.1",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Application to the calculation of Rz",
+      "number": "7.2",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-72-application-to-the-calculation-of-rz"
+    },
+    {
+      "level": 2,
+      "title": "Application to Nahm's conjecture",
+      "number": "7.3",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-73-application-to-nahms-conjecture"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 402,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nahm conjecture",
+          "heading": false
+        },
+        {
+          "term": "nahm sums",
+          "heading": false
+        },
+        {
+          "term": "bloch group",
+          "heading": false
+        },
+        {
+          "term": "frank calegari",
+          "heading": false
+        },
+        {
+          "term": "local chern",
+          "heading": false
+        },
+        {
+          "term": "chern class",
+          "heading": false
+        },
+        {
+          "term": "algebraic k-theory",
+          "heading": false
+        },
+        {
+          "term": "associated units",
+          "heading": false
+        }
+      ],
+      "extract": "BLOCH GROUPS, ALGEBRAIC K-THEORY, UNITS, AND NAHM’S CONJECTURE FRANK CALEGARI, STAVROS GAROUFALIDIS, AND DON ZAGIER Abstract. Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F(e2πi/n), well-deﬁned up to n-th powers of nonzero elements of Fn. The construction uses the cyclic quantum dilogarithm, and under the identiﬁcation of the Bloch",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1712.04887v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 208,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nahm",
+          "heading": false
+        },
+        {
+          "term": "intro",
+          "heading": false
+        },
+        {
+          "term": "bloch group",
+          "heading": false
+        },
+        {
+          "term": "zeta",
+          "heading": false
+        },
+        {
+          "term": "motivation",
+          "heading": false
+        },
+        {
+          "term": "modularity",
+          "heading": false
+        },
+        {
+          "term": "sub",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.intro label=\"sec.intro\"} The purpose of the paper is to associate to an element $\\xi$ of the Bloch group of a number field $F$ and a primitive $n$th root of unity $\\zeta$ an explicit $S$-unit (where $S$ is independent of $\\zeta$ and can often be taken to be trivial) $R_\\zeta(\\xi)$ in the cyclotomic extension $F_n=F(\\zeta)$, well-defined up to $n$-th powers of nonzero elements of $F_n$. Our construction uses",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-bloch-groups-and-associated-units",
+      "number": "1.1",
+      "title": "Bloch groups and associated units",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 771,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bloch",
+          "heading": true
+        },
+        {
+          "term": "map zeta",
+          "heading": false
+        },
+        {
+          "term": "unity zeta",
+          "heading": false
+        },
+        {
+          "term": "times bigr",
+          "heading": false
+        },
+        {
+          "term": "mathcal times",
+          "heading": false
+        },
+        {
+          "term": "number zeta",
+          "heading": false
+        },
+        {
+          "term": "bloch group",
+          "heading": false
+        },
+        {
+          "term": "frac biggr",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.intro.bloch label=\"sub.intro.bloch\"} We first recall the definition of the classical Bloch group, as introduced in [@Bloch]. Let $Z(F)$ denote the free abelian group on $\\mathbf P^1(F)=F\\cup\\{\\infty\\}$, i.e. the group of formal finite combinations $\\xi=\\sum_i n_i [X_i]$ with $n_i\\in\\mathbf Z$ and $X_i\\in\\mathbf P^1(F)$. ::: definition []{#def.BF label=\"def.BF\"} The *Bloch group* of a field $F$ is the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-algebraic-k-groups-and-associated-units",
+      "number": "1.2",
+      "title": "Algebraic K-groups and associated units",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 1251,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nahm sums",
+          "heading": false
+        },
+        {
+          "term": "nahm conjecture",
+          "heading": false
+        },
+        {
+          "term": "bloch group",
+          "heading": false
+        },
+        {
+          "term": "called nahm",
+          "heading": false
+        },
+        {
+          "term": "higher bloch",
+          "heading": false
+        },
+        {
+          "term": "bloch elements",
+          "heading": false
+        },
+        {
+          "term": "qbar",
+          "heading": false
+        },
+        {
+          "term": "cite weibel",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.intro.Ktheory} A second main theme of the paper concerns the relation to the algebraic $K$-theory of fields. The group $B(F)$ was introduced by Bloch as a concrete model for the abstract \\hbox{$K$-group} $K_3(F)$. It was proved by Suslin~\\cite{Suslintwo} that, if $F$ is a number field, then (up to \\hbox{2-torsion}) $K_3(F)$ is an extension of~$B(F)$ by the roots of unity in~$F$, and in this case one also",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-14-motivation-from-quantum-topology",
+      "number": "1.4",
+      "title": "Motivation from quantum topology",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 977,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum topology",
+          "heading": true
+        },
+        {
+          "term": "modular conjecture",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic knot",
+          "heading": false
+        },
+        {
+          "term": "series phi",
+          "heading": false
+        },
+        {
+          "term": "volume conjecture",
+          "heading": false
+        },
+        {
+          "term": "complexified volume",
+          "heading": false
+        },
+        {
+          "term": "phih",
+          "heading": false
+        },
+        {
+          "term": "qbar",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec.motivation} In this subsection --- which will not be used anywhere else in this paper --- we discuss the empirical discoveries that led us to conjecture the results presented here. A much more detailed discussion of these ideas and of the experimental results can be found in~\\cite{GZ:quantum} (Introduction, Sections~1, 5 and~9, and~Appendix). The story has its origin in Quantum Topology and one of its",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-15-plan-of-the-paper",
+      "number": "1.5",
+      "title": "Plan of the paper",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 288,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "map zeta",
+          "heading": false
+        },
+        {
+          "term": "plan",
+          "heading": true
+        },
+        {
+          "term": "nahm",
+          "heading": false
+        },
+        {
+          "term": "crcompare",
+          "heading": false
+        },
+        {
+          "term": "sahinj",
+          "heading": false
+        },
+        {
+          "term": "comprz",
+          "heading": false
+        },
+        {
+          "term": "k2f",
+          "heading": false
+        },
+        {
+          "term": "chern class",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.plan label=\"sub.plan\"} In Section [\\[sec.PR\\]](#sec.PR){reference-type=\"ref\" reference=\"sec.PR\"}, we begin with some preliminaries on the Bloch group. We then recall the cyclic quantum dilogarithm and use it, together with some basic facts about Kummer extensions, to define the map $R_\\zeta$. The fact that the map $R_\\zeta$ satisfies the 5-term relation follows from some state-sum identities of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-2-the-maps-pz-and-rz",
+      "number": "2",
+      "title": "The maps Pz and Rz",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 14,
+      "labelStart": "8",
+      "labelEnd": "14",
+      "words": 2448,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sigma zeta",
+          "heading": false
+        },
+        {
+          "term": "zeta phi",
+          "heading": false
+        },
+        {
+          "term": "zeta chi",
+          "heading": false
+        },
+        {
+          "term": "zeta prod",
+          "heading": false
+        },
+        {
+          "term": "zeta rangle",
+          "heading": false
+        },
+        {
+          "term": "langle zeta",
+          "heading": false
+        },
+        {
+          "term": "frac zeta",
+          "heading": false
+        },
+        {
+          "term": "lifting zeta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.PR label=\"sec.PR\"} ## Preliminaries on the Bloch group In this section, we compare our definition to that of Suslin [@Suslintwo §1], and give an alternate presentation of $B(F)$ as a subquotient of $\\mathbf Z[F^{\\times} \\setminus 1]$. ::: definition []{#def.BFsuslin label=\"def.BFsuslin\"} Suslin's *Bloch group* of a field $F$ is the quotient $$\\widetilde{B}(F)=\\widetilde{A}(F)/\\widetilde{C}(F)\\,,$$ where",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-24-compatibilities",
+      "number": "2.4",
+      "title": "Compatibilities",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 528,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "map zeta",
+          "heading": false
+        },
+        {
+          "term": "let zeta",
+          "heading": false
+        },
+        {
+          "term": "compatibility label",
+          "heading": false
+        },
+        {
+          "term": "crcompare",
+          "heading": false
+        },
+        {
+          "term": "pdef",
+          "heading": false
+        },
+        {
+          "term": "partb",
+          "heading": false
+        },
+        {
+          "term": "prod substack",
+          "heading": false
+        },
+        {
+          "term": "compatibilitytwo",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.primepowers label=\"sub.primepowers\"} In this section, we discuss the compatibility of the map $R_\\zeta$ with respect to $n$, and in particular we compare $R_{\\zeta}$ to $R_{\\zeta^q}$ for any divisor $q$ of $n$. This will be important in Section [\\[sec.cRcompare\\]](#sec.cRcompare){reference-type=\"ref\" reference=\"sec.cRcompare\"}, where we consider the relation of our map and the Chern class in $K$-theory. We",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-25-the-5-term-relation",
+      "number": "2.5",
+      "title": "The 5-term relation",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 333,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "map zeta",
+          "heading": false
+        },
+        {
+          "term": "term relation",
+          "heading": true
+        },
+        {
+          "term": "suslincomparison",
+          "heading": false
+        },
+        {
+          "term": "pdef",
+          "heading": false
+        },
+        {
+          "term": "mathbf",
+          "heading": false
+        },
+        {
+          "term": "group widetilde",
+          "heading": false
+        },
+        {
+          "term": "kms",
+          "heading": false
+        },
+        {
+          "term": "term label",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.5term label=\"sub.5term\"} In this section, we use a result of Kashaev, Mangazeev and Stroganov to show that the map $R_\\zeta$ satisfies the $5$-term relation, and consequently descends to a map of the group $B(F;\\mathbf Z/n\\mathbf Z)$. ::: theorem []{#thm.5term label=\"thm.5term\"} Let $F$ be a field and $F_n=F(\\zeta)$, where $\\zeta$ is a root of unity of order $n$ prime to $w_F$ and to the characteristic prime",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-26-an-eigenspace-computation",
+      "number": "2.6",
+      "title": "An eigenspace computation",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 556,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calom label",
+          "heading": false
+        },
+        {
+          "term": "widetilde mathbf",
+          "heading": false
+        },
+        {
+          "term": "mathbf bigr",
+          "heading": false
+        },
+        {
+          "term": "otimes mathbf",
+          "heading": false
+        },
+        {
+          "term": "chi eigenspace",
+          "heading": false
+        },
+        {
+          "term": "mathbf left",
+          "heading": false
+        },
+        {
+          "term": "mathbf right",
+          "heading": false
+        },
+        {
+          "term": "widetilde times",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.eigenspace label=\"sub.eigenspace\"} As in Section [\\[sub.intro.bloch\\]](#sub.intro.bloch){reference-type=\"ref\" reference=\"sub.intro.bloch\"}, we write $G=\\mathrm{Gal}(F_n/F)$, identified with a subgroup of $(\\mathbf Z/n\\mathbf Z)^\\times$ via the map $\\chi$ of Equation [\\[eq.chi\\]](#eq.chi){reference-type=\"eqref\" reference=\"eq.chi\"}. Since $F_n^\\times/F_n^{\\times n}$ is an $n$-torsion $G$-module, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-3-chern-classes-for-algebraic-k-theory",
+      "number": "3",
+      "title": "Chern Classes for algebraic K-theory",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 11,
+      "summary": null,
+      "keywords": [],
+      "extract": "[]{#sec.chern label=\"sec.chern\"} In this section, we will define the Chern class map [\\[eq.cmap\\]](#eq.cmap){reference-type=\"eqref\" reference=\"eq.cmap\"}.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-31-definitions",
+      "number": "3.1",
+      "title": "Definitions",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 601,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unity zeta",
+          "heading": false
+        },
+        {
+          "term": "mathbf",
+          "heading": false
+        },
+        {
+          "term": "w2f",
+          "heading": false
+        },
+        {
+          "term": "mathrm gal",
+          "heading": false
+        },
+        {
+          "term": "chern class",
+          "heading": false
+        },
+        {
+          "term": "galois group",
+          "heading": false
+        },
+        {
+          "term": "widetilde",
+          "heading": false
+        },
+        {
+          "term": "sahinj",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.definitions.chern label=\"sub.definitions.chern\"} In the following discussion, certain isomorphisms will depend on a choice of some primitive $n$th root of unity $\\zeta$. In order to make this clear, we shall write (in this section only) either $=_{\\zeta}$ or $=$ to denote isomorphisms which respectively do or do not depend on such a choice. Let $F$ be a number field, and let $\\mathcal{O}:=\\mathcal{O}_F$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-32-the-relation-between-étale-cohomology-and-gal",
+      "number": "3.2",
+      "title": "The relation between étale cohomology and Galois cohomology",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 546,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbf rightarrow",
+          "heading": false
+        },
+        {
+          "term": "mathbf simeq",
+          "heading": false
+        },
+        {
+          "term": "otimes mathbf",
+          "heading": false
+        },
+        {
+          "term": "rightarrow text",
+          "heading": false
+        },
+        {
+          "term": "mathrm pic",
+          "heading": false
+        },
+        {
+          "term": "mathrm gal",
+          "heading": false
+        },
+        {
+          "term": "primes",
+          "heading": false
+        },
+        {
+          "term": "chern class",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#section:relations label=\"section:relations\"} There are isomorphisms that can be found in Sections 5.2 and 5.4 of [@Weibel] $$\\label{useful} K_{2m-1}(F) \\otimes \\mathbf Z_p \\simeq K_{2m-1}(\\mathcal{O}_F[1/p]) \\simeq K_{2m-1}(\\mathcal{O}_F) \\otimes \\mathbf Z_p$$ for $m > 1$. These isomorphisms are also reflected in the following isomorphism between étale cohomology groups and Galois cohomology groups:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-34-upgrading-from-s-units-to-units",
+      "number": "3.4",
+      "title": "Upgrading from S-units to units",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 284,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zeta",
+          "heading": false
+        },
+        {
+          "term": "mathrm pic",
+          "heading": false
+        },
+        {
+          "term": "times rightarrow",
+          "heading": false
+        },
+        {
+          "term": "chi invariants",
+          "heading": false
+        },
+        {
+          "term": "mab",
+          "heading": false
+        },
+        {
+          "term": "avoids",
+          "heading": false
+        },
+        {
+          "term": "keune",
+          "heading": false
+        },
+        {
+          "term": "mathbf",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.updrading2 label=\"sub.updrading2\"} We give the following slight improvement on Lemma [\\[lemma:avoidS\\]](#lemma:avoidS){reference-type=\"ref\" reference=\"lemma:avoidS\"}. ::: lemma []{#lemma:avoidS2 label=\"lemma:avoidS2\"} Suppose that any prime divisor $p$ of $n$ is odd and divides neither the discriminant of $F$ nor the order of $K_2(\\mathcal{O}_F)$. Then the image of $c_\\zeta$ on $K_3(F)/nK_3(F)$ may be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-35-proof-of-theorem-15",
+      "number": "3.5",
+      "title": "Proof of Theorem 1.5",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 218,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calom",
+          "heading": false
+        },
+        {
+          "term": "cnv",
+          "heading": false
+        },
+        {
+          "term": "k3f",
+          "heading": false
+        },
+        {
+          "term": "quotableremark",
+          "heading": false
+        },
+        {
+          "term": "sahinj",
+          "heading": false
+        },
+        {
+          "term": "partb",
+          "heading": false
+        },
+        {
+          "term": "mathcal times",
+          "heading": false
+        },
+        {
+          "term": "map zeta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.thm.c label=\"sub.thm.c\"} We have all the ingredients to give a proof of Theorem [\\[thm.c\\]](#thm.c){reference-type=\"ref\" reference=\"thm.c\"}. Fix an odd natural number $n$ and a primitive $n$th root of unity $\\zeta$. Consider the Chern class map $$c_\\zeta: K_3(F)/nK_3(F) \\to \\left(F_n^{\\times}/F_n^{\\times n}\\right)^{\\chi^{-1}} \\,.$$ from [\\[eq.cnv1\\]](#eq.cnv1){reference-type=\"eqref\" reference=\"eq.cnv1\"}.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-4-reduction-to-finite-fields",
+      "number": "4",
+      "title": "Reduction to finite fields",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 85,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "finite fields",
+          "heading": true
+        },
+        {
+          "term": "crcompare",
+          "heading": false
+        },
+        {
+          "term": "maps zeta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.ff label=\"sec.ff\"} As we will see in Section [\\[sec.cRcompare\\]](#sec.cRcompare){reference-type=\"ref\" reference=\"sec.cRcompare\"}, the comparison of the maps $c_{\\zeta}$ and $R_{\\zeta}$ and the proof of Theorem [\\[thm.cR\\]](#thm.cR){reference-type=\"ref\" reference=\"thm.cR\"} require a reduction of both maps to the case of finite fields. In this section, we review the local Chern classes and the Bloch groups of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-41-local-chern-class-maps",
+      "number": "4.1",
+      "title": "Local Chern class maps",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 23,
+      "labelStart": "21",
+      "labelEnd": "23",
+      "words": 998,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "requals zeta",
+          "heading": false
+        },
+        {
+          "term": "requals mathbf",
+          "heading": false
+        },
+        {
+          "term": "widetilde mathbf",
+          "heading": false
+        },
+        {
+          "term": "rto zeta",
+          "heading": false
+        },
+        {
+          "term": "mathrm gal",
+          "heading": false
+        },
+        {
+          "term": "zeta notin",
+          "heading": false
+        },
+        {
+          "term": "mathbf times",
+          "heading": false
+        },
+        {
+          "term": "otimes mathbf",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.localchern label=\"sub.localchern\"} Let $\\mathfrak{q}$ be a prime of norm $q \\equiv -1 \\;\\text{\\rm mod}\\;n$ in $\\mathcal{O}_F$. We work with these primes for several (related) reasons. The first is that the groups $K_3(\\mathbf F_q)$ we consider below have order $q^2 - 1$, and so to see interesting classes in $K_3(F)/n K_3(F)$ we require that $q^2 -1$ be divisible by $n$, and this necessitates choosing $q",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-42-the-bloch-group-of-fq",
+      "number": "4.2",
+      "title": "The Bloch group of Fq",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 25,
+      "labelStart": "23",
+      "labelEnd": "25",
+      "words": 899,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rightarrow mathbf",
+          "heading": false
+        },
+        {
+          "term": "otimes mathbf",
+          "heading": false
+        },
+        {
+          "term": "mathbf times",
+          "heading": false
+        },
+        {
+          "term": "bloch group",
+          "heading": true
+        },
+        {
+          "term": "field mathbf",
+          "heading": false
+        },
+        {
+          "term": "unity zeta",
+          "heading": false
+        },
+        {
+          "term": "matrix zeta",
+          "heading": false
+        },
+        {
+          "term": "zeta end",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#section:hh label=\"section:hh\"} In order to make our maps explicit, we must relate the Chern class map to the Bloch group. Let $p > 2$ and $q > 2$ be odd primes such that $q \\equiv -1 \\;\\text{\\rm mod}\\;n$, where $n=p^m$. For a finite field $\\mathbf F_q$, the group $\\mathbf F^{\\times}_q$ is cyclic, so $\\bigwedge^2 \\mathbf F^{\\times}_q$ is a 2-torsion group. Hence the Bloch group $B(\\mathbf F_q)$ coincides with the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-5-comparison-between-the-maps-cz-and-rz",
+      "number": "5",
+      "title": "Comparison between the maps cz and Rz",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": "25",
+      "labelEnd": "25",
+      "words": 128,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mod-p-q",
+          "heading": false
+        },
+        {
+          "term": "digress",
+          "heading": false
+        },
+        {
+          "term": "prime",
+          "heading": false
+        }
+      ],
+      "extract": "The main goal of this section, carried out in the ﬁrst subsection, is to prove Theorem 1.6. The main result here is Theorem 5.2, which says that that our mod n local regulator map Rζ,q gives an isomorphism from B(Fq) ⊗Z/nZ to F× q2 ⊗Z/nZ for any prime power n and prime q ≡−1 (mod n). This implies in particular the existence of a curious “mod-p-q dilogarithm map” from Fq to Z/nZ, and in Section 5.2, we digress brieﬂy",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-51-proof-of-theorem-16",
+      "number": "5.1",
+      "title": "Proof of Theorem 1.6",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 28,
+      "labelStart": "25",
+      "labelEnd": "28",
+      "words": 1098,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "norm mod",
+          "heading": false
+        },
+        {
+          "term": "odd prime",
+          "heading": false
+        },
+        {
+          "term": "prime power",
+          "heading": false
+        },
+        {
+          "term": "perfect pth",
+          "heading": false
+        },
+        {
+          "term": "nth root",
+          "heading": false
+        },
+        {
+          "term": "prime above",
+          "heading": false
+        },
+        {
+          "term": "frank calegari",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        }
+      ],
+      "extract": "primitive nth root of unity. For a prime q ≡−1 mod n that splits completely in F, and for a corresponding prime q above q, let Rζ,q denote the map B(OF/q) = B(Fq) →F× q2/F×n q2 . We have two maps we wish to compare. One of them is cζ : B(F)/nB(F) → \u0000F × n /F ×n n \u0001χ−1 . Because B(F) is a ﬁnitely generated abelian group, we may represent the generators of the image by S-units for some ﬁxed S (at this point possibly",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-52-digression-the-modpq-dilogarithm",
+      "number": "5.2",
+      "title": "Digression: the modpq dilogarithm",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 28,
+      "labelStart": "28",
+      "labelEnd": "28",
+      "words": 221,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbf times",
+          "heading": false
+        },
+        {
+          "term": "log zeta",
+          "heading": false
+        },
+        {
+          "term": "otimes mathbf",
+          "heading": false
+        },
+        {
+          "term": "mathbf simeq",
+          "heading": false
+        },
+        {
+          "term": "order prime",
+          "heading": false
+        },
+        {
+          "term": "dilogarithm",
+          "heading": true
+        },
+        {
+          "term": "power",
+          "heading": false
+        },
+        {
+          "term": "rightarrow",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#modpqdilog label=\"modpqdilog\"} Let $q$ be prime, and $q + 1 \\equiv 0 \\;\\text{\\rm mod}\\;n$ with $n$ a power of $p$ as before. For convenience of exposition, assume that $p > 3$ so that $D_{\\zeta}(1)$ is a perfect $n$th power. Fix an $n$th root of unity $\\zeta$ in $\\mathbf F_{q^2}$. Then there is a trivialization $\\log_{\\zeta}: \\mathbf F^{\\times}_{q^2} \\otimes \\mathbf Z/n\\mathbf Z\\simeq \\mathbf Z/n\\mathbf Z$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-53-the-chern-class-map-on-n-torsion-in-qzeta",
+      "number": "5.3",
+      "title": "The Chern class map on n-torsion in Qzeta",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 31,
+      "labelStart": "28",
+      "labelEnd": "31",
+      "words": 1133,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chern class",
+          "heading": true
+        },
+        {
+          "term": "eta zeta",
+          "heading": false
+        },
+        {
+          "term": "class map",
+          "heading": true
+        },
+        {
+          "term": "otimes mathbf",
+          "heading": false
+        },
+        {
+          "term": "mathrm bgl",
+          "heading": false
+        },
+        {
+          "term": "let mathbf",
+          "heading": false
+        },
+        {
+          "term": "rightarrow mathrm",
+          "heading": false
+        },
+        {
+          "term": "matrix zeta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsection:speculative label=\"subsection:speculative\"} The following section contains a speculative digression and is not used elsewhere in the paper. We have proved that the maps $c_\\zeta$ and $R_\\zeta$ agree up to an invertible element of $\\mathbf Z^{\\times}_p$. To determine the value of this ratio, we need to compute the images of specific elements of the Bloch group. More specifically, as explained in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-6-the-connecting-homomorphism-to-k-theory",
+      "number": "6",
+      "title": "The connecting homomorphism to K-theory",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 33,
+      "labelStart": "31",
+      "labelEnd": "33",
+      "words": 859,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dequals rto",
+          "heading": false
+        },
+        {
+          "term": "diagram rto",
+          "heading": false
+        },
+        {
+          "term": "bigwedge times",
+          "heading": false
+        },
+        {
+          "term": "otimes mathbf",
+          "heading": false
+        },
+        {
+          "term": "rightarrow mbox",
+          "heading": false
+        },
+        {
+          "term": "zeta wedge",
+          "heading": false
+        },
+        {
+          "term": "circular units",
+          "heading": false
+        },
+        {
+          "term": "exact sequences",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.K2F label=\"sec.K2F\"} In this section, we give a proof of Theorem [\\[thm.K2\\]](#thm.K2){reference-type=\"ref\" reference=\"thm.K2\"}. Assume that $F$ is a field of characteristic prime to $p$ which does not contain a $p$th root of unity. Recall that $Z(F)$ is the free abelian group on $F \\smallsetminus\\{0,1\\}$ and $C(F)$ the subgroup generated by the $5$-term relation. ::: definition Let $A(F;\\mathbf Z/n\\mathbf",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-7-nahms-conjecture-and-the-asymptotics-of-nahm-s",
+      "number": "7",
+      "title": "Nahm's conjecture and the asymptotics of Nahm sums at roots of unity",
+      "level": 1,
+      "pageStart": 33,
+      "pageEnd": 37,
+      "labelStart": "33",
+      "labelEnd": "37",
+      "words": 2082,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nahm sums",
+          "heading": true
+        },
+        {
+          "term": "nahm conjecture",
+          "heading": true
+        },
+        {
+          "term": "nahmem",
+          "heading": false
+        },
+        {
+          "term": "phi zeta",
+          "heading": false
+        },
+        {
+          "term": "series phi",
+          "heading": false
+        },
+        {
+          "term": "effectiver",
+          "heading": false
+        },
+        {
+          "term": "rogers-ramanujan identities",
+          "heading": false
+        },
+        {
+          "term": "comprz",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.nahm label=\"sec.nahm\"} In Section [\\[sub.intro.nahm\\]](#sub.intro.nahm){reference-type=\"ref\" reference=\"sub.intro.nahm\"} of the introduction, we saw that the $S$-units constructed in this paper from elements of the Bloch group appear naturally (although in general only conjecturally) in connection with the asymptotic properties of the Kashaev invariant of knots and its Galois twists. A second place where",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-72-application-to-the-calculation-of-rz",
+      "number": "7.2",
+      "title": "Application to the calculation of Rz",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 40,
+      "labelStart": "37",
+      "labelEnd": "40",
+      "words": 1238,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eta zeta",
+          "heading": false
+        },
+        {
+          "term": "frac zeta",
+          "heading": false
+        },
+        {
+          "term": "eta bigl",
+          "heading": false
+        },
+        {
+          "term": "zeta right",
+          "heading": false
+        },
+        {
+          "term": "tau bigr",
+          "heading": false
+        },
+        {
+          "term": "mathbf left",
+          "heading": false
+        },
+        {
+          "term": "phi zeta",
+          "heading": false
+        },
+        {
+          "term": "theta bigl",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.ag label=\"sub.ag\"} In this subsection, we apply Theorem [\\[thm.nahmEM\\]](#thm.nahmEM){reference-type=\"ref\" reference=\"thm.nahmEM\"} and its corollary to a specific Nahm sum to prove equation [\\[CompRz\\]](#CompRz){reference-type=\"eqref\" reference=\"CompRz\"} in the introduction. ::: theorem []{#thm.eta label=\"thm.eta\"} Let $n$ be odd and $\\eta_\\zeta$ be the $n$-torsion element in $B(\\mathbf Q(\\zeta)^{+})$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-73-application-to-nahms-conjecture",
+      "number": "7.3",
+      "title": "Application to Nahm's conjecture",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 41,
+      "labelStart": "40",
+      "labelEnd": "41",
+      "words": 708,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nahm",
+          "heading": true
+        },
+        {
+          "term": "nahmem",
+          "heading": false
+        },
+        {
+          "term": "widetilde bigl",
+          "heading": false
+        },
+        {
+          "term": "smallmatrix bigr",
+          "heading": false
+        },
+        {
+          "term": "nahm sum",
+          "heading": false
+        },
+        {
+          "term": "phi zeta",
+          "heading": false
+        },
+        {
+          "term": "congruence subgroup",
+          "heading": false
+        },
+        {
+          "term": "modular function",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.nahmconj label=\"sub.nahmconj\"} In this final subsection, we give an application of the asymptotic Theorem [\\[thm.nahmEM\\]](#thm.nahmEM){reference-type=\"ref\" reference=\"thm.nahmEM\"} and Theorem [\\[thm.R\\]](#thm.R){reference-type=\"ref\" reference=\"thm.R\"} to proving one direction of Nahm's conjecture about the modularity of Nahm sums. The notations and assumptions are as before, but for convenience we repeat",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 41,
+      "labelStart": "41",
+      "labelEnd": "41",
+      "words": 122,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nahmem",
+          "heading": false
+        },
+        {
+          "term": "reexamination",
+          "heading": false
+        },
+        {
+          "term": "thm",
+          "heading": false
+        },
+        {
+          "term": "eta",
+          "heading": false
+        },
+        {
+          "term": "dms",
+          "heading": false
+        }
+      ],
+      "extract": "F.C. was supported in part by grants DMS-1701703 and DMS-2001097 of the US National Science Foundation. The authors would like to thank Kevin Hutchinson for pointing out that the original version of Theorem [\\[thm.eta\\]](#thm.eta){reference-type=\"ref\" reference=\"thm.eta\"} was numerically off by a factor of $8$. A careful reexamination of the argument ultimately chased this error to the original statement of Theorem",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 41,
+      "pageEnd": 43,
+      "labelStart": "41",
+      "labelEnd": "43",
+      "words": 847,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "don zagier",
+          "heading": false
+        },
+        {
+          "term": "andrei suslin",
+          "heading": false
+        },
+        {
+          "term": "tudor dimofte",
+          "heading": false
+        },
+        {
+          "term": "christophe soul",
+          "heading": false
+        },
+        {
+          "term": "algebraic k-theory",
+          "heading": false
+        },
+        {
+          "term": "serge lang",
+          "heading": false
+        },
+        {
+          "term": "sander zwegers",
+          "heading": false
+        }
+      ],
+      "extract": "[1] George Andrews. On the general Rogers-Ramanujan theorem. American Mathematical Society, Provi- dence, R.I., 1974. Memiors of the American Mathematical Society, No. 152. [2] Spencer Bloch. Higher regulators, algebraic K-theory, and zeta functions of elliptic curves, volume 11 of CRM Monograph Series. American Mathematical Society, Providence, RI, 2000. [3] Tudor Dimofte, Davide Gaiotto, and Sergei Gukov.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 3,
+        "items": [
+          "The map Pζ",
+          "The map Rζ",
+          "Deﬁnitions"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "zeta mathbf",
+      "heading": false
+    },
+    {
+      "term": "mathbf times",
+      "heading": false
+    },
+    {
+      "term": "map zeta",
+      "heading": false
+    },
+    {
+      "term": "zeta chi",
+      "heading": false
+    },
+    {
+      "term": "unity zeta",
+      "heading": false
+    },
+    {
+      "term": "zeta sub",
+      "heading": false
+    },
+    {
+      "term": "rto zeta",
+      "heading": false
+    },
+    {
+      "term": "widetilde mathbf",
+      "heading": false
+    },
+    {
+      "term": "frac zeta",
+      "heading": false
+    },
+    {
+      "term": "eta zeta",
+      "heading": false
+    },
+    {
+      "term": "element zeta",
+      "heading": false
+    },
+    {
+      "term": "mathbf bigl",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 35,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 28,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p41); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "not-extracted",
+      "note": "a glossary section is in the text (p17); its entries are not extracted"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 28 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1712.04887v3"
+  }
+}

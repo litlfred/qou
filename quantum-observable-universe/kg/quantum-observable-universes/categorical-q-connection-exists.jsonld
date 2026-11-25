@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-categorical-q-connection-exists",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:categorical-q-connection-exists",
+  "kind": "proposition",
+  "title": "Existence of the categorical $q$-connection",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-q-connection",
+    "papers/quantum-observable-universe/blocks/prop-categorical-connection-exists",
+    "papers/quantum-observable-universe/blocks/def-substrate-parameter"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-categorical-q-connection-exists"
+  ],
+  "tags": [
+    "existence",
+    "q-connection"
+  ],
+  "leanRef": "qou:QOU.CategoricalQConnection.exists",
+  "text": "categorical-q-connection-exists.md",
+  "leanSource": "categorical-q-connection-exists.lean",
+  "provenance": "authored"
+}

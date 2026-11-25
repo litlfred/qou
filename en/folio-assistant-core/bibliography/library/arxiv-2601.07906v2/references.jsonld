@@ -1,0 +1,38 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2601.07906v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "A universal sum over topologies in 3d gravity",
+      "dcterms:creator": [
+        "Belin1, Alexandre",
+        "2",
+        "Collier3, Scott",
+        "4",
+        "Eberhardt5, Lorenz",
+        "Liska6, Diego",
+        "7",
+        "Boris"
+      ],
+      "dcterms:identifier": "https://arxiv.org/abs/2601.07906",
+      "dcterms:abstract": "We explore the sum over topologies in AdS3 quantum gravity and its relationship with the statistical interpretation of the boundary theory. We formulate a statistical version of the conformal bootstrap that systematizes the universal sta- tistical properties of high-energy CFT2 data. We identify a series of surgery moves on bulk manifolds that precisely reflect the requirements of typicality and crossing symmetry of the boundary ensemble. These surgery moves generate a large num- ber of bulk manifolds that have to be included in any reasonable definition of the gravitational path integral. We show that this procedure generates only on-shell (hyperbolic) manifolds, although it does not produce all of them. These proofs rely on structure theorems of 3-manifolds, which non-trivially interact with the require- ments of the statistical boundary ensemble. We illustrate the application of this procedure with many examples, such as Euclidean wormholes, twisted I-bundles and handlebody-knots. Our findings reveal a large space of possible choices of which manifolds can be included in the gravitational path integral, reflecting a wide range of possible statistical ensembles consistent with crossing symmetry and typicality. arXiv:2601.07906v2 [hep-th] 25 Mar 2026",
+      "dcterms:source": "library/arxiv-2601.07906v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2601.07906v2"
+    }
+  ]
+}

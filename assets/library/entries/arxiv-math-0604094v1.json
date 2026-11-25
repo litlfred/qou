@@ -1,0 +1,177 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0604094v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0604094v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0604094v1  [math.QA]  5 Apr 2006\nGENERALIZED VOLUME CONJECTURE AND THE A-POLYNOMIALS:\nTHE NEUMANN–ZAGIER POTENTIAL FUNCTION AS A CLASSICAL LIMIT OF\nQUANTUM INVARIANT\nKAZUHIRO HIKAMI\nA. We study quantum invariant Zγ(M) for cusped hyperbolic3-manifold M. We construct\nthis invariant based on oriented ideal triangulation of M by assigning to each tetrahedron the\nquantum dilogarithm function, which is introduced by Faddeev in studies of the modular double of\nthe quantum group. Following Thurston and Neumann–Zagier, we deform a complete hyperbolic\nstructure of M, and correspondingl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0604094v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum Dilogarithm Function",
+      "pageStart": 3,
+      "pageEnd": 12,
+      "target": "../sections/sec-000-quantum-dilogarithm-function.md",
+      "narrative": null,
+      "content": "\\label{sec:dilog}\nWe define a function  $\\Phi_\\gamma(\\varphi)$ by an integral form\nfollowing Ref.~\\citen{LFadd99b}.\nWe set\n$\\gamma \\in \\mathbb{R}$, and for \n$ | \\Im \\varphi | < \\pi$, we define\n\\begin{equation}\n  \\label{Faddeev_integral}\n  \\Phi_\\gamma(\\varphi)\n  =\n  \\exp\n  \\left(\n    \\int\\limits_{\\mathbb{R}+\\I \\, 0}\n    \\frac{\\E^{- \\I \\, \\varphi \\, x}}\n    {\n      4 \\sinh ( \\gamma \\, x) \\, \\sinh(\\pi \\, x)\n      } \\,\n    \\frac{\\mathrm{d} x}{x}\n  \\right) \n\\end{equation}\nThe Faddeev integral~\\eqref{Faddeev_integral}, which we call the\nquantum dilogarithm function, is also related to the\ndouble sin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0604094v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-001-examples.md",
+      "narrative": null,
+      "content": "cusped hyperbolic 3-manifolds.\nGENERALIZED VOLUME CONJECTURE & THE A-POLYNOMIALS",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0604094v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Figure-Eight knot 41",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-002-figure-eight-knot-41.md",
+      "narrative": null,
+      "content": "\\label{sec:41}\n\nWe set $\\mathcal{K}$ as \nthe Figure-Eight knot $4_1$ which is depicted\nas\n\\begin{equation*}\n  \\includegraphics[scale=.16]{psm_41.eps}    \n\\end{equation*}\nIt is well known that the complement of the figure eight knot,\n$\\mathcal{M}=S^3 \\setminus \\mathcal{K}$,\nis given by two ideal tetrahedra,\nand the triangulation induces the quantum invariant as\n\\begin{equation}\n  Z_\\gamma(\\mathcal{M}_u)\n  =\n  \\int\\limits_{\\mathbb{R}} \\mathrm{d} \\boldsymbol{p} \\,\n  \\delta_C(\\boldsymbol{p}; u) \\,\n  \\left\\langle\n    p_1, p_2  \\middle| S \\middle| p_3, p_4\n  \\right\\rangle \\,\n  \\left\\langle\n    p_4,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0604094v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "52",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-003-52.md",
+      "narrative": null,
+      "content": "4.2 52\nWe set K as the knot 52 depicted as\nThe knot complement M = S 3 \\ K is constructed from three tetrahedra (see, e.g., Ref. 49) and\nwe obtain the invariant as\nZγ (Mu) =\nZ\nR\ndpδC(p; u)\nD\np1, p5|S −1|p4, p3\nE D\np2, p4|S −1|p6, p5\nE D\np3, p6|S −1|p1, p2\nE\n(4.9)\nModulus of three tetrahedra are respectively z1 = ep3−p5, z2 = ep5−p4, and z3 = ep2−p6. The\ndeveloping map is depicted in Fig. 4. The meridian is read to be z3\nz2, and the condition δC(p; u) is\np5 −p4 + p6 −p2 = 2 u\nWe then have\nZγ (Mu) =\n1\n(4 π γ)3/2\n\"\ndx dy e\n1\n2iγ\n\u0012\nπ2+γ2\n2\n+ 3\n2 πγ+(2u−y)(y−x)\n\u0013\n×\n1\nΦγ(−x + y −2 u −i π −i γ) Φγ(−y",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0604094v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pretzel knot (-2,3,7)",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-004-pretzel-knot--237.md",
+      "narrative": null,
+      "content": "Let K be the (−2, 3, 7) Pretzel knot depicted as\nand we set M as the complement of K. The Pretzel knot (−2, 3, 7) has the same hyperbolic vol-\nume with 52, Vol(M) = 2.82812 · · ·, but the triangulations of the complement give the following\npartition function;\nZγ (Mu) =\nZ\nR\ndpδC(p; u) ⟨p4, p7|S |p6, p1⟩⟨p5, p8|S |p7, p5⟩\n× ⟨p1, p6|S |p8, p2⟩⟨p3, p2|S |p4, p3⟩\n(4.15)\nNote that this triangulation diﬀers from the canonical triangulation in Ref. 52. The developing\nmap is given in Fig. 5. Here we set the modulus of four ideal tetrahedra as\nz1 = ep1−p7\nz2 = ep5−p8\nz3 = ep2−p6\nz4 = ep3−p2\nThen the mer",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0604094v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Once-Punctured Torus Bundles over the Circle",
+      "pageStart": 19,
+      "pageEnd": 26,
+      "target": "../sections/sec-005-once-punctured-torus-bundles-over-the-circle.md",
+      "narrative": null,
+      "content": "One of benefits of the quantum invariant $Z_\\gamma(\\mathcal{M})$ is\nthat we can compute it explicitly\nfor a once-punctured torus bundle over $S^1$.\nA once-punctured torus bundle\nover $S^1$, which we denote  $\\mathcal{M}(\\varphi)$,\n is\ndescribed by\n$F \\times [0,1]/(x,0) \\sim (\\varphi(x),1)$ where\na monodromy matrix \n$\\varphi \\in SL(2,\\mathbb{Z})$\nis a homeomorphism from the punctured torus\n$F=\\mathbb{T}^2 \\setminus \\{ 0 \\}$ to itself.\nThurston's hyperbolization theorem indicates that\n$\\mathcal{M}(\\varphi)$ admits\na complete hyperbolic metric with a finite volume when $\\varphi$ has 2\ndistinct re",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0604094v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Complement of Knots up to 7 Crossings",
+      "pageStart": 26,
+      "pageEnd": 40,
+      "target": "../sections/sec-006-complement-of-knots-up-to-7-crossings.md",
+      "narrative": null,
+      "content": "A.1.1 61\nVol(S 3 \\ K) = 3.16396 . . .\n• Quantum invariant\nZγ (Mu) =\nZ\nR\ndpδC(p; u) ⟨p3, p1|S −1|p2, p4⟩⟨p6, p4|S |p5, p8⟩\n× ⟨p7, p5|S −1|p6, p1⟩⟨p8, p2|S |p7, p3⟩\n• Developing map (Fig. 9)\nF9. Developing map of the knot complement of 61. Gray triangle is a horo-\nsphere of the top vertex of the tetrahedron with modulus z1, where we have set\nz1 = ep4−p1 , z2 = ep8−p4, z3 = ep1−p5, and z4 = ep3−p2.\nGENERALIZED VOLUME CONJECTURE & THE A-POLYNOMIALS\n27\n• Condition δC(p; u)\np4 −p1 −p3 + p2 = 2 u\n• Potential function\nVM(x, y, z; m) = Li2\n z m2\nx y\n!\n+ Li2(y) −Li2\n m2\ny\n!\n−Li2\n\u0012y z\nm2\n\u0013\n+ log\n\u0010\nm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0604094v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Complement of ``Simple'' Hyperbolic Knots",
+      "pageStart": 40,
+      "pageEnd": 58,
+      "target": "../sections/sec-007-complement-of-simple-hyperbolic-knots.md",
+      "narrative": null,
+      "content": "A.2.1 K4,\n\n2\n\n@ Vol(S? \\ K) = 3.608689...\n\ne Quantum invariant\n\nZ, (M,) = f dp 5c(p; u) (ps, PalS~'|P2, P1) (Piz; PslS |P10, P3) (Ps, PilS~'|Pur, Piz)\nR\nX (Pio, PolS|Ps, Ps) (Pa, P7lS|Po, Pa) (P11, PalS |P7, Ps)\n\ne Condition 6c (p; u)\nP12 — Pi + Ps — Ps — Po + Py = —2u\nGENERALIZED VOLUME CONJECTURE & THE A-POLYNOMIALS\n41\n• Potential function\nVM(v, w, x, y, z; m) = −Li2\n\u0012 x\nw\n\u0013\n+ Li2\n \n1\nv m2 y\n!\n−Li2\n\u0012 z\nv m2\n\u0013\n+ Li2\n\u0010\nm2 x y\n\u0011\n+ Li2\n m2\ny z\n!\n+ Li2\n\u0012w y\nz\n\u0013\n−π2\n3 + log\n\u0012v\nz\n\u0013\nlog\n\u0010\nm4 x y\n\u0011\n+ log(x) log\n m2 w2\nx\n!\n+ 2 log(w y) log(y) + log\n\u0010\nm2\u0011\nlog\n\u0010\nm4 w3\u0011\n• Hyperbolic volume\nIm VM(v, w, x,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

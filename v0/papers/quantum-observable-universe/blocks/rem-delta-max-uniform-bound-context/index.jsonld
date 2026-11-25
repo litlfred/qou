@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-delta-max-uniform-bound-context",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:delta-max-uniform-bound-context",
+  "kind": "remark",
+  "title": "Framework context for the uniform tail bound",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-delta-max-uniform-bound"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-delta-max-uniform-bound",
+  "tags": [
+    "jet-tower",
+    "phi-q",
+    "tail-bound",
+    "convergence"
+  ],
+  "text": "delta-max-uniform-bound-context.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,39 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2111.13842v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Signatures of linear Breit-Wheeler pair production in polarized γγ collisions",
+      "dcterms:creator": [
+        "Zhao, Qian",
+        "Tang, 1 Liang",
+        "Wan, 2 Feng",
+        "Liu, 1 Bo-Chao",
+        "Liu, 1 Ruo-Yu",
+        "Yang, 3 Rui-Zhi",
+        "Yu, 4 Jin-Qing",
+        "5",
+        "∗"
+      ],
+      "dcterms:issued": "D:20211130",
+      "dcterms:identifier": "https://arxiv.org/abs/2111.13842",
+      "dcterms:source": "library/arxiv-2111.13842v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2111.13842v1"
+    }
+  ]
+}

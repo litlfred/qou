@@ -1,0 +1,1127 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1010.5321v3",
+  "title": "Formulas on hyperbolic volume ∗",
+  "variant": "pdf",
+  "pages": 16,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Notation",
+      "number": "1.1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-notation"
+    },
+    {
+      "level": 1,
+      "title": "General formulas",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-general-formulas"
+    },
+    {
+      "level": 2,
+      "title": "Coordinate system based on paracycles (horocycles)",
+      "number": "2.1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-21-coordinate-system-based-on-paracycles-horocyc"
+    },
+    {
+      "level": 2,
+      "title": "Volume in the Poincare half-space model",
+      "number": "2.2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-22-volume-in-the-poincare-half-space-model"
+    },
+    {
+      "level": 2,
+      "title": "Hyperbolic orthogonal coordinate system",
+      "number": "2.3",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-23-hyperbolic-orthogonal-coordinate-system"
+    },
+    {
+      "level": 2,
+      "title": "Coordinate system based on spherical hyperbolic coordinates",
+      "number": "2.4",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-24-coordinate-system-based-on-spherical-hyperbol"
+    },
+    {
+      "level": 2,
+      "title": "Volume in the projective model",
+      "number": "2.5",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-25-volume-in-the-projective-model"
+    },
+    {
+      "level": 1,
+      "title": "The three dimensional case",
+      "number": "3",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-3-the-three-dimensional-case"
+    },
+    {
+      "level": 2,
+      "title": "Formulas of J. Bolyai",
+      "number": "3.1",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-31-formulas-of-j-bolyai"
+    },
+    {
+      "level": 2,
+      "title": "Formulas of N.I.Lobachevsky",
+      "number": "3.2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-32-formulas-of-nilobachevsky"
+    },
+    {
+      "level": 2,
+      "title": "Once more again on the volume of the orthosceme",
+      "number": "3.3",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-33-once-more-again-on-the-volume-of-the-orthosce"
+    },
+    {
+      "level": 3,
+      "title": "The 3-dimensional case",
+      "number": "3.3.1",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-331-the-3-dimensional-case"
+    },
+    {
+      "level": 3,
+      "title": "The case of dimension two",
+      "number": "3.3.2",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-332-the-case-of-dimension-two"
+    },
+    {
+      "level": 3,
+      "title": "The case of dimension n",
+      "number": "3.3.3",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-333-the-case-of-dimension-n"
+    },
+    {
+      "level": 2,
+      "title": "Further results on concrete volumes",
+      "number": "3.4",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-34-further-results-on-concrete-volumes"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 97,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyperbolic volume",
+          "heading": false
+        },
+        {
+          "term": "budapest",
+          "heading": false
+        },
+        {
+          "term": "bme",
+          "heading": false
+        },
+        {
+          "term": "edge-lengthes",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1010.5321v3 [math.MG] 16 Nov 2010 Formulas on hyperbolic volume∗ ´A.G.Horv´ath Department of Geometry, Budapest University of Technology and Economics, H-1521 Budapest, Hungary e-mail: ghorvath@math.bme.hu October 15, 2010 Abstract This paper collects some important formulas on hyperbolic volume. To determine con- crete values of volume function is a very hard question requiring the knowledge of various",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1010.5321v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 144,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dihedral angles",
+          "heading": false
+        },
+        {
+          "term": "bolyai",
+          "heading": false
+        },
+        {
+          "term": "lobachevsky",
+          "heading": false
+        },
+        {
+          "term": "edge-lengthes",
+          "heading": false
+        }
+      ],
+      "extract": "In the first section we give certain formulas with respect to some important coordinate systems and models, respectively. Then we collect the classical results on three-dimensional hyperbolic volume of J.Bolyai and N.I.Lobachevsky. The most famous volume-integral (dependent on the dihedral angles of the orthosceme) discovered by N.I.Lobachevsky known and investigated worldwide however it is not well-known that for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-notation",
+      "number": "1.1",
+      "title": "Notation",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 84,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coordinate axis",
+          "heading": false
+        },
+        {
+          "term": "coordinate system",
+          "heading": false
+        },
+        {
+          "term": "coordinate value",
+          "heading": false
+        }
+      ],
+      "extract": "$\\mathbb{R}^{n}$, $\\mathbb{E}^{n}$, $\\mathbb{H}^{n}$: : The space of the $n$-dimensional real vectors, the $n$-dimensional Euclidean space and the $n$-dimensional hyperbolic space, respectively. $x_i$: : The $i^{th}$ coordinate axis, and coordinate value with respect to an Cartesian coordinate system of $\\mathbb{E}^{n}$ or $\\mathbb{H}^{n}$. $\\xi_i$: : The $i^{th}$ coordinate axis, and coordinate value with respect",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-general-formulas",
+      "number": "2",
+      "title": "General formulas",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 71,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bolyai",
+          "heading": false
+        },
+        {
+          "term": "chance",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic",
+          "heading": false
+        }
+      ],
+      "extract": "In hyperbolic geometry, we have a good chance to get a concrete value of the volume function if we can transform our problem into either a suitable coordinate system or a model of the space, respectively. In this section, we give volume-integrals with respect to some important system of coordinates. In our computation we also use the parameter $k$ (used by J.Bolyai for the express the curvature of the hyperbolic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-21-coordinate-system-based-on-paracycles-horocyc",
+      "number": "2.1",
+      "title": "Coordinate system based on paracycles (horocycles)",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 557,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coordinate system",
+          "heading": true
+        },
+        {
+          "term": "cdots mathrm",
+          "heading": false
+        },
+        {
+          "term": "prod limits",
+          "heading": false
+        },
+        {
+          "term": "int limits",
+          "heading": false
+        },
+        {
+          "term": "limits rightarrow",
+          "heading": false
+        },
+        {
+          "term": "lim limits",
+          "heading": false
+        },
+        {
+          "term": "infty frac",
+          "heading": false
+        },
+        {
+          "term": "tends",
+          "heading": false
+        }
+      ],
+      "extract": "![coordinate system based on paracycles.](vol1.eps) Consider a parasphere of dimension $n-1$ and its pencil of rays of parallel lines. The last coordinate axis let be one of these rays, the origin will be the intersection of this line by the parasphere. The further axes are pairwise orthogonal paracycles. The coordinates of $P$ are $\\left( \\xi _1 ,\\xi _2,\\cdots ,\\xi _n \\right)^T,$ where the last coordinate is the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-22-volume-in-the-poincare-half-space-model",
+      "number": "2.2",
+      "title": "Volume in the Poincare half-space model",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 97,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "half-space",
+          "heading": true
+        },
+        {
+          "term": "poincare",
+          "heading": true
+        },
+        {
+          "term": "coordinate system",
+          "heading": false
+        }
+      ],
+      "extract": "![Coordinate system in the half-space model.](vol2.eps) In the Poincare half-space model we consider a Cartesian coordinate system via Fig. 2. The first $n-1$ axes lie in the bounding hyperplane the last one is perpendicular to it. If the hyperbolic coordinates of a point $P$ (with respect to a paracycle coordinate system) is $\\left( \\xi _1 ,\\xi _2 ,\\cdots ,\\xi _n \\right)^T,$ correspond to $P$ the point $P'$ with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-23-hyperbolic-orthogonal-coordinate-system",
+      "number": "2.3",
+      "title": "Hyperbolic orthogonal coordinate system",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 379,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cosh frac",
+          "heading": false
+        },
+        {
+          "term": "frac sinh",
+          "heading": false
+        },
+        {
+          "term": "frac cdots",
+          "heading": false
+        },
+        {
+          "term": "frac vdots",
+          "heading": false
+        },
+        {
+          "term": "cdots left",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "paracycle",
+          "heading": false
+        },
+        {
+          "term": "coordinate",
+          "heading": true
+        }
+      ],
+      "extract": "Put an orthogonal system of axes to paracycle coordinate system such that, the new half-axes let the tangent half-lines at the origin of the old one. (We can see it on Fig.3.) To determine the new coordinates of the point $P$ we project $P$ orthogonally to the hyperplane spanned by the axes $x_1,x_2,\\cdots, x_{n-2},x_n$. The getting point is $P_{n-1}$. Then we project orthogonally $P_{n-1}$ onto the $(n-2)$-space",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-24-coordinate-system-based-on-spherical-hyperbol",
+      "number": "2.4",
+      "title": "Coordinate system based on spherical hyperbolic coordinates",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 221,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n-i sinh",
+          "heading": false
+        },
+        {
+          "term": "phi n-i",
+          "heading": false
+        },
+        {
+          "term": "frac sinh",
+          "heading": false
+        },
+        {
+          "term": "sin phi",
+          "heading": false
+        },
+        {
+          "term": "cdots sin",
+          "heading": false
+        }
+      ],
+      "extract": "![Spherical coordinates](vol4.eps) From the hyperbolic orthogonal coordinates $x_1,x_2,\\cdots, x_n$ we can get the spherical coordinates of a point $P$. Let the distance of $P=P_n$ from the origin is $r_n$ and denote by $\\phi_i$ the angle between the $i^{th}$ coordinate axis and the segment $OP_{i+1}$ for $i=n-1,n-2,\\cdots 1$. ( Here $P_{n-1}$ is the orthogonal projection of $P$ into the coordinate subspace of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-25-volume-in-the-projective-model",
+      "number": "2.5",
+      "title": "Volume in the projective model",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 226,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm theta",
+          "heading": false
+        },
+        {
+          "term": "cdots mathrm",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "frac left",
+          "heading": false
+        },
+        {
+          "term": "limits frac",
+          "heading": false
+        },
+        {
+          "term": "sin theta",
+          "heading": false
+        }
+      ],
+      "extract": "At the origin of the projective (Kayley-Clein) model we consider a Cartesian system of coordinates. Regarding the factor $k$ we assume that the radius of the sphere is $k$. The considered system is an orthogonal coordinate system both of the embedding Euclidean and the modeled hyperbolic space. ![Coordinates in the Cayley-Klein model](vol5.eps) We connect the hyperbolic spherical coordinates and the euclidean",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-3-the-three-dimensional-case",
+      "number": "3",
+      "title": "The three dimensional case",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 4,
+      "summary": null,
+      "keywords": [],
+      "extract": "The three dimensional case",
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-31-formulas-of-j-bolyai",
+      "number": "3.1",
+      "title": "Formulas of J. Bolyai",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 442,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sinh cos",
+          "heading": false
+        },
+        {
+          "term": "tanh sinh",
+          "heading": false
+        },
+        {
+          "term": "cosh cos",
+          "heading": false
+        },
+        {
+          "term": "frac sinh",
+          "heading": false
+        },
+        {
+          "term": "cos phi",
+          "heading": false
+        },
+        {
+          "term": "sqrt tanh",
+          "heading": false
+        },
+        {
+          "term": "bolyai",
+          "heading": true
+        },
+        {
+          "term": "cos alpha",
+          "heading": false
+        }
+      ],
+      "extract": "In this section $k$ is a constant giving the curvature of the hyperbolic space and the value of our constant $v_n$ is $1$. The following formulas can be found in [@bolyai], [@bonola] and [@weszely]. Most of it can be easily determined using the results of the previous section. An important exception is the volume of the orthosceme, we will give a new formula for it in section 3.3. Volume of the body determined by a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-32-formulas-of-nilobachevsky",
+      "number": "3.2",
+      "title": "Formulas of N.I.Lobachevsky",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 172,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tanh tan",
+          "heading": false
+        },
+        {
+          "term": "alpha delta",
+          "heading": false
+        },
+        {
+          "term": "gamma delta",
+          "heading": false
+        },
+        {
+          "term": "beta delta",
+          "heading": false
+        },
+        {
+          "term": "delta right",
+          "heading": false
+        }
+      ],
+      "extract": "The formulas of this subsection can be found in [@lobacsevszkij] or [@molnar]. Barrel-wedge is a sector of a barrel intersected from it by two meridian-plane through its axis of rotation. Let $T$ be the area of a meridian-intersection and $p$ be the length of its parallel circular arcs. Then we have $$v=\\frac{1}{2}pT.$$ Let the non-rectangular dihedral angles of an orthosceme be $\\alpha$, $\\beta$ and $\\gamma$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-33-once-more-again-on-the-volume-of-the-orthosce",
+      "number": "3.3",
+      "title": "Once more again on the volume of the orthosceme",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 108,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac sin",
+          "heading": false
+        },
+        {
+          "term": "orthosceme",
+          "heading": true
+        },
+        {
+          "term": "beta delta",
+          "heading": false
+        }
+      ],
+      "extract": "As an application of our general formulas we determine the volume of the orthosceme as the function of its edge-lengthes $a$, $b$ and $c$. We note that there are formulas to transform the dihedral angles into the edge-lengthes. By the notation of the previous section these are: $$a=\\frac{1}{2}\\ln\\frac{\\sin(\\alpha +\\delta)}{\\sin(\\alpha -\\delta)}, \\hspace{ 0,3cm} c=\\frac{1}{2}\\ln\\frac{\\sin(\\gamma +\\delta)}{\\sin(\\gamma",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-331-the-3-dimensional-case",
+      "number": "3.3.1",
+      "title": "The 3-dimensional case",
+      "level": 3,
+      "pageStart": 9,
+      "pageEnd": 13,
+      "labelStart": "9",
+      "labelEnd": "13",
+      "words": 1439,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sinh tanh",
+          "heading": false
+        },
+        {
+          "term": "cosh tanh",
+          "heading": false
+        },
+        {
+          "term": "tanh lambda",
+          "heading": false
+        },
+        {
+          "term": "frac tanh",
+          "heading": false
+        },
+        {
+          "term": "sinh mathrm",
+          "heading": false
+        },
+        {
+          "term": "sqrt tanh",
+          "heading": false
+        },
+        {
+          "term": "tanh left",
+          "heading": false
+        },
+        {
+          "term": "sinh right",
+          "heading": false
+        }
+      ],
+      "extract": "We now follow another way for computation, we will determine the integral $$v(D)=\\int\\limits_{D}(\\cosh z)^2(\\cosh y)\\mathrm{d}y\\mathrm{d}z\\mathrm{d}y= \\int\\limits_{0}^{a}\\int\\limits_{0}^{\\phi(x)}\\int\\limits_{0}^{\\psi (x,y)}(\\cosh z)^2(\\cosh y)\\mathrm{d}y\\mathrm{d}z\\mathrm{d}x,$$ getting it from hyperbolic orthogonal coordinates using the parameter value $k=1$. The functions $\\phi (x)$ and $\\psi (x,y)$ can be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-332-the-case-of-dimension-two",
+      "number": "3.3.2",
+      "title": "The case of dimension two",
+      "level": 3,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 269,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sinh tanh",
+          "heading": false
+        },
+        {
+          "term": "beta sinh",
+          "heading": false
+        },
+        {
+          "term": "frac sinh",
+          "heading": false
+        },
+        {
+          "term": "tanh right",
+          "heading": false
+        },
+        {
+          "term": "sin beta",
+          "heading": false
+        },
+        {
+          "term": "cos beta",
+          "heading": false
+        },
+        {
+          "term": "mathrm frac",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        }
+      ],
+      "extract": "The following calculation shows that area of a rectangular triangle also can be get with our method. $$\\int\\limits_{0}^{a}\\int\\limits_{0}^{\\phi(x)}(\\cosh y)\\mathrm{d}y\\mathrm{d}x=\\int\\limits_{0}^{a}\\frac{\\frac{\\tanh b}{\\sinh a}\\sinh x}{\\sqrt{1-\\left(\\frac{\\tanh b}{\\sinh a}\\sinh x\\right)^2}}\\mathrm{d}x=$$ $$=\\frac{1}{2}\\frac{\\sinh a}{\\tanh b}\\int\\limits_{0}^{(\\tanh b)^2}\\frac{1}{\\sqrt{1+\\left(\\left(\\frac{\\sinh",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-333-the-case-of-dimension-n",
+      "number": "3.3.3",
+      "title": "The case of dimension n",
+      "level": 3,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 445,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tanh sinh",
+          "heading": false
+        },
+        {
+          "term": "frac tanh",
+          "heading": false
+        },
+        {
+          "term": "bot cap",
+          "heading": false
+        },
+        {
+          "term": "sinh right",
+          "heading": false
+        },
+        {
+          "term": "mbox conv",
+          "heading": false
+        },
+        {
+          "term": "limits tan",
+          "heading": false
+        },
+        {
+          "term": "p'p",
+          "heading": false
+        },
+        {
+          "term": "tan left",
+          "heading": false
+        }
+      ],
+      "extract": "The following lemma plays an important role in the $n$-dimensional case. ::: lemma We have two $k$-dimensional affine subspaces $H_k$ and $H'_k$, respectively for which they intersection have dimension $k-1$. Assume that the points $P\\in H_k$, $P'\\in H'_k$ and $P''\\in H_k\\cap H'_k$ hold the relations $PP'\\bot H'_k$ and $P'P''\\bot H_k\\cap H'_k$, respectively. Then the angle $$\\alpha =\\tan ^{-1}\\frac{\\tanh(PP')}{\\sinh",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-34-further-results-on-concrete-volumes",
+      "number": "3.4",
+      "title": "Further results on concrete volumes",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "16",
+      "words": 820,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac sin",
+          "heading": false
+        },
+        {
+          "term": "cos frac",
+          "heading": false
+        },
+        {
+          "term": "frac tan",
+          "heading": false
+        },
+        {
+          "term": "lambda left",
+          "heading": false
+        },
+        {
+          "term": "leq frac",
+          "heading": false
+        },
+        {
+          "term": "int limits",
+          "heading": false
+        },
+        {
+          "term": "dihedral angles",
+          "heading": false
+        },
+        {
+          "term": "pi-a",
+          "heading": false
+        }
+      ],
+      "extract": "Here we mention some important results from the last few decades, which are calculate hyperbolic volumes. To investigate it we can see immediately that our formula on orthosceme has very simple building up. In this section the great latin letters mean the measures of the dihedral angles at the edges denoted by the corresponding small ones. ::: theorem Opposite dihedral angles of ideal tetrahedron are equal to each",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "sinh tanh",
+      "heading": false
+    },
+    {
+      "term": "frac sinh",
+      "heading": false
+    },
+    {
+      "term": "sinh cosh",
+      "heading": false
+    },
+    {
+      "term": "sinh mathrm",
+      "heading": false
+    },
+    {
+      "term": "sinh right",
+      "heading": false
+    },
+    {
+      "term": "limits frac",
+      "heading": false
+    },
+    {
+      "term": "left sinh",
+      "heading": false
+    },
+    {
+      "term": "frac sin",
+      "heading": false
+    },
+    {
+      "term": "sinh cos",
+      "heading": false
+    },
+    {
+      "term": "frac int",
+      "heading": false
+    },
+    {
+      "term": "sinh sqrt",
+      "heading": false
+    },
+    {
+      "term": "lambda sinh",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "coordinate system based on paracycles. Consider a parasphere of dimension n −1 and its pencil of rays of parallel lines. The last",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Coordinate system in the half-space model. In the Poincare half-space model we consider a Cartesian coordinate system via Fig. 2. The ﬁrst n−1 axes lie in the bounding hyperplane the last one is perpendicular to it. If the hyperbolic",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Coordinate system based on orthogonal axes. arclength of the connecting paracycle arc 2s is s = k sinh d",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Spherical coordinates From the hyperbolic orthogonal coordinates x1, x2, · · · , xn we can get the spherical coordi-",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Coordinates in the Cayley-Klein model We connect the hyperbolic spherical coordinates and the euclidean spherical ones by the system of equations: rn = k tanh−1 Rn",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Orthosceme The dihedral angle at a is α, the angle opposite to b of the triangle with edges a and b is β and the angle opposite to the edge c in the triangle with edges c and z is γ, respectively (see Fig.6). J.Bolyai gave two formulas:",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Orthosceme and orthogonal coordinates rectangular triangle △OP2P1 the tangent of the angle P2OP1∠is: tan P2OP1∠= tanh b",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 16,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 17,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "7 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 17 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1010.5321v3"
+  }
+}

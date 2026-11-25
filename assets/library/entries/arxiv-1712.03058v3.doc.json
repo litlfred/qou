@@ -1,0 +1,1524 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1712.03058v3",
+  "title": "Iterated ﬁltering methods for Markov process epidemic models",
+  "variant": "pdf",
+  "pages": 29,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Iterated filtering methods for POMP",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-iterated-filtering-methods-for-pomp"
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-11-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Likelihood-based inference",
+      "number": "1.2",
+      "page": 3,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-likelihood-based-inference"
+    },
+    {
+      "level": 3,
+      "title": "The likelihood approach",
+      "number": "1.2.1",
+      "page": 3,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-121-the-likelihood-approach"
+    },
+    {
+      "level": 3,
+      "title": "Practical challenges",
+      "number": "1.2.2",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-122-practical-challenges"
+    },
+    {
+      "level": 2,
+      "title": "Inference for partially observed Markov processes (POMP)",
+      "number": "1.3",
+      "page": 5,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-13-inference-for-partially-observed-markov-proce"
+    },
+    {
+      "level": 3,
+      "title": "Likelihood of a POMP",
+      "number": "1.3.1",
+      "page": 5,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-131-likelihood-of-a-pomp"
+    },
+    {
+      "level": 3,
+      "title": "Evaluation of the likelihood",
+      "number": "1.3.2",
+      "page": 7,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-132-evaluation-of-the-likelihood"
+    },
+    {
+      "level": 3,
+      "title": "Particle filter",
+      "number": "1.3.3",
+      "page": 7,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-133-particle-filter"
+    },
+    {
+      "level": 2,
+      "title": "Iterated filtering methods",
+      "number": "1.4",
+      "page": 10,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-14-iterated-filtering-methods"
+    },
+    {
+      "level": 3,
+      "title": "Algorithm",
+      "number": "1.4.1",
+      "page": 10,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-141-algorithm"
+    },
+    {
+      "level": 2,
+      "title": "Iterated filtering for SIR model given incidence data",
+      "number": "1.5",
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-15-iterated-filtering-for-sir-model-given-incide"
+    },
+    {
+      "level": 3,
+      "title": "The problem of interest",
+      "number": "1.5.1",
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-151-the-problem-of-interest"
+    },
+    {
+      "level": 3,
+      "title": "Formulation of a POMP model",
+      "number": "1.5.2",
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-152-formulation-of-a-pomp-model"
+    },
+    {
+      "level": 3,
+      "title": "Inference",
+      "number": "1.5.3",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-153-inference"
+    },
+    {
+      "level": 3,
+      "title": "Practical advice",
+      "number": "1.5.4",
+      "page": 17,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-154-practical-advice"
+    },
+    {
+      "level": 2,
+      "title": "Extensions",
+      "number": "1.6",
+      "page": 18,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-16-extensions"
+    },
+    {
+      "level": 2,
+      "title": "Rotavirus example",
+      "number": "1.7",
+      "page": 21,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-17-rotavirus-example"
+    },
+    {
+      "level": 2,
+      "title": "Concluding comments",
+      "number": "1.8",
+      "page": 24,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-18-concluding-comments"
+    },
+    {
+      "level": 3,
+      "title": "Pros and cons of iterated filtering methods for outbreak data",
+      "number": "1.8.1",
+      "page": 24,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-181-pros-and-cons-of-iterated-filtering-methods"
+    },
+    {
+      "level": 3,
+      "title": "Further reading",
+      "number": "1.8.2",
+      "page": 25,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-182-further-reading"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 296,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "epidemic models",
+          "heading": false
+        },
+        {
+          "term": "iterated ﬁltering",
+          "heading": false
+        },
+        {
+          "term": "process epidemic",
+          "heading": false
+        },
+        {
+          "term": "ﬁltering methods",
+          "heading": false
+        },
+        {
+          "term": "observed markov",
+          "heading": false
+        },
+        {
+          "term": "disease",
+          "heading": false
+        },
+        {
+          "term": "pomp",
+          "heading": false
+        },
+        {
+          "term": "inference",
+          "heading": false
+        }
+      ],
+      "extract": "Iterated ﬁltering methods for Markov process epidemic models Theresa Stocks1 1Department of Mathematics, Stockholm University, Sweden This manuscript is a preprint of a Chapter to appear in the Handbook of Infectious Disease Data Analysis, Held, L., Hens, N., O’Neill, P.D. and Wallinga, J. (Eds.). Chapman & Hall/CRC, 2018. Please use the book for possible citations. Chapter Abstract Dynamic epidemic models have",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1712.03058v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-11-introduction",
+      "number": "1.1",
+      "title": "Introduction",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 260,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "iterated ﬁltering",
+          "heading": false
+        },
+        {
+          "term": "ﬁltering methods",
+          "heading": false
+        },
+        {
+          "term": "transmission process",
+          "heading": false
+        },
+        {
+          "term": "outbreak data",
+          "heading": false
+        },
+        {
+          "term": "markov process",
+          "heading": false
+        },
+        {
+          "term": "inference",
+          "heading": false
+        },
+        {
+          "term": "pomp",
+          "heading": false
+        },
+        {
+          "term": "ionides",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction In this chapter we describe how iterated ﬁltering methods (Ionides et al., 2006, 2015) can be used to analyze available infectious disease outbreak data in the form of time series. The centerpiece of these methods is the assump- tion that the outbreak data can be modeled as a noisy and only partially observed realization of a disease transmission process that is assumed to be a Markov process (King et",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-iterated-filtering-methods-for-pomp",
+      "number": "1",
+      "title": "Iterated filtering methods for POMP",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 59,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "outbreak",
+          "heading": false
+        },
+        {
+          "term": "aggregated",
+          "heading": false
+        },
+        {
+          "term": "methods",
+          "heading": true
+        }
+      ],
+      "extract": "2 and describe in some detail how to ﬁt this model to outbreak data consisting of the number of newly reported cases aggregated over time intervals, e.g. weeks. However, the methods can be easily extended to more complicated settings, several of which will be discussed here. The chapter is structured as follows: Section 1.2 gives a short overview about",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-12-likelihood-based-inference",
+      "number": "1.2",
+      "title": "Likelihood-based inference",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 174,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "likelihood-based inference",
+          "heading": true
+        },
+        {
+          "term": "outlining",
+          "heading": false
+        },
+        {
+          "term": "bové",
+          "heading": false
+        },
+        {
+          "term": "ﬁlters",
+          "heading": false
+        },
+        {
+          "term": "pawitan",
+          "heading": false
+        }
+      ],
+      "extract": "Section 1.3 we introduce the model class of partially observed Markov pro- cesses and explain how to formulate and evaluate the likelihood of such models with particle ﬁlters. In Section 1.4 we present the iterated ﬁlter- ing algorithm and demonstrate its use by a simple example in Section 1.5. In Section 1.6 we discuss possible extensions of this example and, in Sec- tion 1.7, illustrate how the method can be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-121-the-likelihood-approach",
+      "number": "1.2.1",
+      "title": "The likelihood approach",
+      "level": 3,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 276,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "likelihood",
+          "heading": true
+        },
+        {
+          "term": "mle",
+          "heading": false
+        },
+        {
+          "term": "theta",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        },
+        {
+          "term": "end aligned",
+          "heading": false
+        },
+        {
+          "term": "parameter vector",
+          "heading": false
+        },
+        {
+          "term": "function begin",
+          "heading": false
+        },
+        {
+          "term": "observations",
+          "heading": false
+        }
+      ],
+      "extract": "The idea behind likelihood-based inference is the following. Suppose we have data in the form of a sequence of $N$ observations $\\bm{y}^*_{1:N}$ at times $t_1,\\dots ,t_N$ and a model for the data $f(\\bm{y}_{1:N};\\bm{\\theta})$ where $f$ is typically a probability mass or density function parametrized by a vector of parameters denoted by $\\bm{\\theta}$. In our context $\\bm{y}^*_{1:N}$ might, for example, represent the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-122-practical-challenges",
+      "number": "1.2.2",
+      "title": "Practical challenges",
+      "level": 3,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 383,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "derivative-free optimizers",
+          "heading": false
+        },
+        {
+          "term": "challenges",
+          "heading": true
+        },
+        {
+          "term": "confidence intervals",
+          "heading": false
+        },
+        {
+          "term": "likelihood",
+          "heading": false
+        },
+        {
+          "term": "mle",
+          "heading": false
+        },
+        {
+          "term": "global maximum",
+          "heading": false
+        },
+        {
+          "term": "wilks",
+          "heading": false
+        },
+        {
+          "term": "problems mentioned",
+          "heading": false
+        }
+      ],
+      "extract": "In principle, the optimization problem in ([\\[mle\\]](#mle){reference-type=\"ref\" reference=\"mle\"}) looks rather straightforward, however, there are a number of challenges in practice. Firstly, the evaluation of $\\mathcal{L}$ can be difficult because the function might not be available in closed form. Secondly, even if evaluation is possible, it might be very hard to derive the first and higher order derivatives of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-13-inference-for-partially-observed-markov-proce",
+      "number": "1.3",
+      "title": "Inference for partially observed Markov processes (POMP)",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 52,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pomp",
+          "heading": true
+        },
+        {
+          "term": "markov",
+          "heading": true
+        },
+        {
+          "term": "processes",
+          "heading": true
+        }
+      ],
+      "extract": "processes (POMP) In the literature partially observed Markov processes are also known as hid- den state space models or stochastic dynamical systems. The main assump- tion is that at discrete points in time we observe some noisy aspect of the true underlying Markov process which is itself often continuous in time. In",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-131-likelihood-of-a-pomp",
+      "number": "1.3.1",
+      "title": "Likelihood of a POMP",
+      "level": 3,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 513,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pomp",
+          "heading": true
+        },
+        {
+          "term": "transmission process",
+          "heading": false
+        },
+        {
+          "term": "markov process",
+          "heading": false
+        },
+        {
+          "term": "lik",
+          "heading": false
+        },
+        {
+          "term": "theta",
+          "heading": false
+        },
+        {
+          "term": "likelihood",
+          "heading": true
+        },
+        {
+          "term": "disease",
+          "heading": false
+        },
+        {
+          "term": "complications",
+          "heading": false
+        }
+      ],
+      "extract": "A POMP consists of two model components, (i) an unobserved Markov process $\\{\\bm{X}(t;\\bm{\\theta}): t \\geq 0 \\}$, which can be discrete or continuous in time, and (ii) an observation model which describes how the data collected at discrete points in time $t_1,\\dots ,t_N$, is connected to the transmission model. For notational convenience, we write $\\bm{X}_n=\\bm{X}(t_n;\\bm{\\theta})$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-132-evaluation-of-the-likelihood",
+      "number": "1.3.2",
+      "title": "Evaluation of the likelihood",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 220,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "likelihood",
+          "heading": true
+        },
+        {
+          "term": "lik",
+          "heading": false
+        },
+        {
+          "term": "transmission model",
+          "heading": false
+        },
+        {
+          "term": "evaluation",
+          "heading": true
+        },
+        {
+          "term": "deterministic",
+          "heading": false
+        },
+        {
+          "term": "theta",
+          "heading": false
+        },
+        {
+          "term": "optimization",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#evaluation label=\"evaluation\"} Before addressing the question of how to maximize the likelihood in ([\\[lik\\]](#lik){reference-type=\"ref\" reference=\"lik\"}) in an efficient way, we have to first think about how we actually evaluate $\\mathcal{L}$ for a given parameter vector $\\bm{\\theta}$. In the special case that the underlying transmission model is deterministic and the initial values are given,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-133-particle-filter",
+      "number": "1.3.3",
+      "title": "Particle filter",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 10,
+      "labelStart": "6",
+      "labelEnd": "9",
+      "words": 754,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eval pfilter",
+          "heading": false
+        },
+        {
+          "term": "particle filter",
+          "heading": true
+        },
+        {
+          "term": "filtering failure",
+          "heading": false
+        },
+        {
+          "term": "conditional likelihood",
+          "heading": false
+        },
+        {
+          "term": "filtering distribution",
+          "heading": false
+        },
+        {
+          "term": "monte carlo",
+          "heading": false
+        },
+        {
+          "term": "lik",
+          "heading": false
+        },
+        {
+          "term": "prediction distribution",
+          "heading": false
+        }
+      ],
+      "extract": "One standard approach to solve a high dimensional integral as in Equation ([\\[lik\\]](#lik){reference-type=\"ref\" reference=\"lik\"}) is to approximate the integral by Monte Carlo methods. However, as it will turn out, for the model class at hand, this approach is highly inefficient in practice. Nevertheless, we will demonstrate this approach first, in order to introduce the reader to the problem. Readers unfamiliar",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-14-iterated-filtering-methods",
+      "number": "1.4",
+      "title": "Iterated filtering methods",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 231,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "iterated filtering",
+          "heading": true
+        },
+        {
+          "term": "ionides",
+          "heading": false
+        },
+        {
+          "term": "simulation-based",
+          "heading": false
+        },
+        {
+          "term": "mle",
+          "heading": false
+        },
+        {
+          "term": "methods",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#iterated_filtering label=\"iterated_filtering\"} Iterated filtering is a simulation-based method to find the MLE which takes advantage of the structure of POMP models and particle filters. It was first introduced by [@ionides06] and further improved in [@Ionides2015]. The iterated filtering method uses the property that it is easy to simulate from $f_{\\bm{X}_n|\\bm{X}_{n-1}}$ while the likelihood is not tractable",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-141-algorithm",
+      "number": "1.4.1",
+      "title": "Algorithm",
+      "level": 3,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 693,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boldsymbol theta",
+          "heading": false
+        },
+        {
+          "term": "parameter swarm",
+          "heading": false
+        },
+        {
+          "term": "gillespie algorithm",
+          "heading": false
+        },
+        {
+          "term": "mif algorithm",
+          "heading": false
+        },
+        {
+          "term": "iterated filtering",
+          "heading": false
+        },
+        {
+          "term": "stopping time",
+          "heading": false
+        },
+        {
+          "term": "quad end",
+          "heading": false
+        },
+        {
+          "term": "time interval",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#mif_algorithm label=\"mif_algorithm\"} In the following we present the pseudocode for iterated filtering as implemented in the `mif2` function in the `R` package `pomp` and explain how to draw samples from $f_{\\bm{X}_n|\\bm{X}_{n-1}}$.\\ **Pseudocode iterated filtering (`mif2`)** cf. [@Ionides2015]\\ **Input:** Simulators for $f_{\\bm{X}_0}(\\bm{x}_0;\\boldsymbol{\\theta})$ and $f_{\\bm{X}_n|\\bm{X}_{n-1}}(\\bm{x}_n|",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-15-iterated-filtering-for-sir-model-given-incide",
+      "number": "1.5",
+      "title": "Iterated filtering for SIR model given incidence data",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "dence data",
+      "extractCut": false
+    },
+    {
+      "id": "sec-012-151-the-problem-of-interest",
+      "number": "1.5.1",
+      "title": "The problem of interest",
+      "level": 3,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 227,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "iterated filtering",
+          "heading": false
+        },
+        {
+          "term": "reporting coincides",
+          "heading": false
+        },
+        {
+          "term": "disease",
+          "heading": false
+        },
+        {
+          "term": "method presented",
+          "heading": false
+        },
+        {
+          "term": "collected",
+          "heading": false
+        },
+        {
+          "term": "reported",
+          "heading": false
+        },
+        {
+          "term": "time",
+          "heading": false
+        }
+      ],
+      "extract": "Typical infectious disease data collected by public health authorities often consists of reported incidences in given time periods. Other important characteristics of an epidemic such as recovery times of the individual or contact network are not observed. The method presented is a useful tool to analyze routinely collected surveillance data because it gives insights into the mechanism of disease spread which is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-152-formulation-of-a-pomp-model",
+      "number": "1.5.2",
+      "title": "Formulation of a POMP model",
+      "level": 3,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "11",
+      "labelEnd": "13",
+      "words": 410,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transmission model",
+          "heading": false
+        },
+        {
+          "term": "individuals",
+          "heading": false
+        },
+        {
+          "term": "infectious",
+          "heading": false
+        },
+        {
+          "term": "observation model",
+          "heading": false
+        },
+        {
+          "term": "compartment",
+          "heading": false
+        },
+        {
+          "term": "time interval",
+          "heading": false
+        },
+        {
+          "term": "jump",
+          "heading": false
+        },
+        {
+          "term": "reported cases",
+          "heading": false
+        }
+      ],
+      "extract": "We will first formulate a Markov transmission model and in a second step relate the data to the transmission model via some observation model which then gives us $f_{\\bm{Y}_n|\\bm{X}_{n}}$.\\ **Transmission model** As transmission model we choose a stochastic SIR model among a closed population of $\\mathcal{N}$ individuals where $\\bm{X}(t)=(S(t), I(t), R(t))$ denotes the number of susceptible, infectious and recovered",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-153-inference",
+      "number": "1.5.3",
+      "title": "Inference",
+      "level": 3,
+      "pageStart": 14,
+      "pageEnd": 17,
+      "labelStart": "13",
+      "labelEnd": "16",
+      "words": 922,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "iterated filtering",
+          "heading": false
+        },
+        {
+          "term": "profile likelihood",
+          "heading": false
+        },
+        {
+          "term": "filtering failures",
+          "heading": false
+        },
+        {
+          "term": "filtering algorithm",
+          "heading": false
+        },
+        {
+          "term": "eval pfilter",
+          "heading": false
+        },
+        {
+          "term": "average log-likelihood",
+          "heading": false
+        },
+        {
+          "term": "confidence intervals",
+          "heading": false
+        },
+        {
+          "term": "inference",
+          "heading": true
+        }
+      ],
+      "extract": "In the following we perform inference for the two epidemiological parameters $\\beta$ and $\\gamma$ on a set of simulated data from the model where we apply the iterated filtering algorithm presented in Section [\\[iterated_filtering\\]](#iterated_filtering){reference-type=\"ref\" reference=\"iterated_filtering\"}.\\ **Data** We consider a closed population with $\\mathcal{N}=10\\ 000$ individuals of whom one is initially",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-154-practical-advice",
+      "number": "1.5.4",
+      "title": "Practical advice",
+      "level": 3,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 727,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "iterated filtering",
+          "heading": false
+        },
+        {
+          "term": "likelihood surface",
+          "heading": false
+        },
+        {
+          "term": "starting values",
+          "heading": false
+        },
+        {
+          "term": "searches",
+          "heading": false
+        },
+        {
+          "term": "tips",
+          "heading": false
+        },
+        {
+          "term": "deterministic",
+          "heading": false
+        },
+        {
+          "term": "algorithm",
+          "heading": false
+        },
+        {
+          "term": "simulation",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#tips label=\"tips\"} In the `R` package `pomp` a partially observed Markov process together with observations in the form of a uni- or multivariate time series can be represented via a so called `pomp` object. The whole package's functionality such as simulation and inference is centered around this object. Depending on which functions one would like to use, the model can be implemented by specifying some or all",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-16-extensions",
+      "number": "1.6",
+      "title": "Extensions",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 21,
+      "labelStart": "17",
+      "labelEnd": "20",
+      "words": 1247,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "seasonal forcing",
+          "heading": false
+        },
+        {
+          "term": "transmission rate",
+          "heading": false
+        },
+        {
+          "term": "forcing function",
+          "heading": false
+        },
+        {
+          "term": "examplesir",
+          "heading": false
+        },
+        {
+          "term": "overdispersion",
+          "heading": false
+        },
+        {
+          "term": "outbreak data",
+          "heading": false
+        },
+        {
+          "term": "text negbin",
+          "heading": false
+        },
+        {
+          "term": "disease",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#complications label=\"complications\"} In the previous section we used a simple model to explain the concept of iterated filtering in order to facilitate understanding. However, reality is often way more complicated than this toy example. In the following we discuss some important complications of infectious disease data and how they can be included in POMP models.\\ **Underreporting** Underreporting is a common",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-17-rotavirus-example",
+      "number": "1.7",
+      "title": "Rotavirus example",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 24,
+      "labelStart": "20",
+      "labelEnd": "23",
+      "words": 823,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "delta centerdot",
+          "heading": false
+        },
+        {
+          "term": "rotavirus",
+          "heading": true
+        },
+        {
+          "term": "jump rota",
+          "heading": false
+        },
+        {
+          "term": "iterated filtering",
+          "heading": false
+        },
+        {
+          "term": "transmission model",
+          "heading": false
+        },
+        {
+          "term": "nonumber delta",
+          "heading": false
+        },
+        {
+          "term": "nbin",
+          "heading": false
+        },
+        {
+          "term": "public health",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#rota_example label=\"rota_example\"} After presenting a simple toy example as a proof of concept, we now give a short illustration of a real-world problem which accommodates some of the complications presented in the previous section and was analyzed with iterated filtering. A detailed description of the model and inference results can be found in [@Stocks2017].\\ The data which were analyzed in that paper are the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-18-concluding-comments",
+      "number": "1.8",
+      "title": "Concluding comments",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "[]{#comments label=\"comments\"}",
+      "extractCut": false
+    },
+    {
+      "id": "sec-019-181-pros-and-cons-of-iterated-filtering-methods",
+      "number": "1.8.1",
+      "title": "Pros and cons of iterated filtering methods for outbreak data",
+      "level": 3,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 449,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transmission model",
+          "heading": false
+        },
+        {
+          "term": "pomp models",
+          "heading": false
+        },
+        {
+          "term": "tips",
+          "heading": false
+        },
+        {
+          "term": "noise",
+          "heading": false
+        },
+        {
+          "term": "simulation-based",
+          "heading": false
+        },
+        {
+          "term": "mitigate",
+          "heading": false
+        },
+        {
+          "term": "unobserved",
+          "heading": false
+        },
+        {
+          "term": "markov",
+          "heading": false
+        }
+      ],
+      "extract": "The method we have described has many positive aspects. First of all, as illustrated in this chapter, the method is highly flexible and can be easily adapted to many different situations of interest. The great strength of the method is that one only needs to simulate from the transmission model if the complete likelihood is not directly tractable. Facilitated by the `R` package `pomp` the method is very",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-182-further-reading",
+      "number": "1.8.2",
+      "title": "Further reading",
+      "level": 3,
+      "pageStart": 25,
+      "pageEnd": 29,
+      "labelStart": "24",
+      "labelEnd": "28",
+      "words": 1242,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "infectious disease",
+          "heading": false
+        },
+        {
+          "term": "statistical inference",
+          "heading": false
+        },
+        {
+          "term": "iterated ﬁltering",
+          "heading": false
+        },
+        {
+          "term": "ﬁltering methods",
+          "heading": false
+        },
+        {
+          "term": "ionides",
+          "heading": false
+        },
+        {
+          "term": "parameter inference",
+          "heading": false
+        },
+        {
+          "term": "disease dynamics",
+          "heading": false
+        },
+        {
+          "term": "package pomp",
+          "heading": false
+        }
+      ],
+      "extract": "Further reading For the reader interested in more details about the theoretical background of iterated ﬁltering methods we recommend Ionides et al. (2006) and Ionides et al. (2015) for further reading. For the reader interested in learning how to work with the R package pomp we recommend the study of King et al. (2016) and to follow some of the very comprehensive online tutorials available through King (2017). The",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "disease transmission",
+      "heading": false
+    },
+    {
+      "term": "transmission model",
+      "heading": true
+    },
+    {
+      "term": "markov transmission",
+      "heading": true
+    },
+    {
+      "term": "iterated filtering",
+      "heading": true
+    },
+    {
+      "term": "pomp model",
+      "heading": true
+    },
+    {
+      "term": "infectious disease",
+      "heading": false
+    },
+    {
+      "term": "transmission process",
+      "heading": true
+    },
+    {
+      "term": "filtering algorithm",
+      "heading": false
+    },
+    {
+      "term": "likelihood estimation",
+      "heading": false
+    },
+    {
+      "term": "likelihood estimate",
+      "heading": true
+    },
+    {
+      "term": "maximum likelihood",
+      "heading": true
+    },
+    {
+      "term": "disease data",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "21",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "22",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "23",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "24",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "25",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "26",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "27",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "28",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1.1",
+      "title": "A partially observed Markov process where Yn, n = 1, . . . , N, denotes the observations at time tn, which depend on the state of the transmission process Xn := X(tn; θ) at that time",
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1.2",
+      "title": "Weekly number of newly reported cases over time, for a simulated set from the POMP model with an underlying Markovian SIR transmission model as deﬁned in Equations (13) and (15)",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1.3",
+      "title": "Diagnostic plot of the iterated ﬁltering algorithm for 100 iterations for simulated incidence data",
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1.4",
+      "title": "The smoothed proﬁle likelihoods (solid curves) for both parameters of interest where the solid vertical lines show the true values and the dashed vertical lines contain the corresponding MCAP 95% conﬁdence interval. The quadratic approximation in a neighborhood of the maximum is shown as the dashed",
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1.5",
+      "title": "The 95% prediction interval (light shading) for 1000 realizations of the model for rotavirus evaluated at the maximum likelihood estimate for the simulated case report data (solid back line) and the median (solid white line). Furthermore, the 95 % prediction interval of these 1000 realizations for o",
+      "page": 23,
+      "pageLabel": "22",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p023-1",
+      "file": "images/img-p023-1.png",
+      "page": 23,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 21,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 22,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 1,
+      "note": "5 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p25); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 22 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1712.03058v3"
+  }
+}

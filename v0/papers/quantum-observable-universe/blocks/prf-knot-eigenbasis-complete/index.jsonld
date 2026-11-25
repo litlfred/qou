@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-knot-eigenbasis-complete",
+  "@type": [
+    "folio-assistant-sci:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:knot-eigenbasis-complete",
+  "kind": "proof",
+  "title": "Proof of Completeness of the knot-type eigenbasis",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-knot-eigenbasis-complete"
+  ],
+  "leanRef": "qou:QOU.StandardModel.PathIntegrals.KnotEigenbasisComplete",
+  "text": "knot-eigenbasis-complete-proof.md",
+  "leanSource": "knot-eigenbasis-complete-proof.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,154 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0401068v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0401068v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The colored Jones polynomial is a one variable polynomial invariant of a knot colored with irreducible finite dimensional representation of $sl(2,\\mathbb{C})$ [@Turaev:INVEM88]. The original Jones polynomial [@Jones:link_polynomials] corresponds to the colored Jones polynomial of a knot colored with the irreducible 2-dimensional representation. On the other hand, in [@Cooper/Culler/Gillet/Long/Shalen:INVEM94], D.Cooper, M.Culler, H.Gillet, D.D.Long, and P.R.Shalen introduced a two variable polynomial invariant $A_K(l,m)$ of a knot $K$, called the $A$-polynomial, by using the representations of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0401068v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0401068v1  [math.GT]  8 Jan 2004\nTHE COLORED JONES POLYNOMIAL AND THE A-POLYNOMIAL\nFOR TWIST KNOTS\nTOSHIE TAKATA\nAbstract. @We show that for a twist knot, the A-polynomial can be obtained from recur-\nrences for the summand in Masbaum’s formula of the colored Jones polynomial. Our result\nsupports the AJ conjecture due to S.Garoufalidis.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0401068v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main Theorem",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-main-theorem.md",
+      "narrative": null,
+      "content": "We start with the review of the definition of the $A$-polynomial of a knot $K$ in $S^3$ (see [@Cooper/Culler/Gillet/Long/Shalen:INVEM94] ). Let $M_K$ be the complement of $K$ and $R(M_K)$ the set of all representations of $\\pi_1(M_K)$ into $SL(2,\\mathbb{C})$. The set $R(M_K)$ is an affine algebraic variety. Noting that $SL(2,\\mathbb{C})$ acts on representations by conjugation, we restrict our attention to the subset $R_U$ of $R(M_K)$ consisting of a represetation $\\rho$ satisfying that $\\rho(\\mu)$ and $\\rho(\\lambda)$ are upper triangular matirices for the meridian $\\mu$ and the preferred longi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0401068v1/blocks/lem-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "lem-sec-002-02.md",
+      "narrative": null,
+      "content": "We have Hp(m, x, y) = yphp(m, x), where for p ≥2, hp(m, x) is given recursively by (10) hp(m, x) = a m2hp−1(m, x) −hp−2(m, x) with a = m4 −xm4 + x2m2 + m2 + 1 −x, h0(m, x) = 1, h1(m, x) = b m2, and b = m4 −xm2 + 1. Proof of lemma 3.2 We show by induction on p. When p = 1, it follows that H1(m, x, y) = y m2(m4 −xm2 + 1) = yh1(m, x). In the case p = 2, we obtain that H2(m, x, y) = H1(m, x, y) + yb m2y2 −y2 = yh1(m, x) + y3h1(m, x) −y2 = y(h1(m, x)(y2 + 1) −y) = y( ay m2h1(m, x) −y) = y2( a m2h1(m, x) −1) = y2( a m2h1(m, x) −h0(m, x)).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0401068v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem ??",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-3-proof-of-theorem.md",
+      "narrative": null,
+      "content": "Let Kp be the twist knot pictured in Figure 1. To prove Theorem 2.2, we use the following\nformula for the A-polynomial of the twist knot Kp due to Hoste and Shanahan in [5].\nTheorem 3.1. (Hoste-Shanahan [5]) For p̸ = −1, 0, 1, 2, AKp(l, m) is given recusively by\n(6)\nAKp(l, m) =\n\u001a\ncAKp−1(l, m) −dAKp−2(l, m),\np > 0,\ncAKp+1(l, m) −dAKp+2(l, m),\np < 0,\nwhere\nc\n=\n−l + l2 + 2lm2 + m4 + 2lm4 + l2m4 + 2lm6 + m8 −lm8,\nd\n=\nm4(l + m2)4,\n3\np full twists\nFigure 1\nand with initial conditions\nAK2(l, m)\n=\n−l2 + l3 + 2l2m2 + lm4 + 2l2m4 −lm6 −l2m8\n+2lm10 + l2m10 + 2lm12 + m14 −lm14,\nAK1(l, m)\n=\nl + m6,\nAK0(l,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0401068v1/blocks/thm-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "thm-sec-002-01.md",
+      "narrative": null,
+      "content": "(Hoste-Shanahan [5]) For p̸ = −1, 0, 1, 2, AKp(l, m) is given recusively by (6) AKp(l, m) = \u001a cAKp−1(l, m) −dAKp−2(l, m), p > 0, cAKp+1(l, m) −dAKp+2(l, m), p < 0, where c = −l + l2 + 2lm2 + m4 + 2lm4 + l2m4 + 2lm6 + m8 −lm8, d = m4(l + m2)4, p full twists Figure 1 and with initial conditions AK2(l, m) = −l2 + l3 + 2l2m2 + lm4 + 2l2m4 −lm6 −l2m8 +2lm10 + l2m10 + 2lm12 + m14 −lm14, AK1(l, m) = l + m6, AK0(l, m) = 1, AK−1(l, m) = −l + lm2 + m4 + 2lm4 + l2m4 + lm6 −lm8. Now, we give a proof of Theorem 2.2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0401068v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Observations",
+      "pageStart": 6,
+      "pageEnd": 11,
+      "target": "../sections/sec-003-4-observations.md",
+      "narrative": null,
+      "content": "We start with reviewing Wilf-Zeilberger's algorithm. For more details, we refer to [@Garoufalidis/Le:math.GT] and [@Garoufalidis:math.GT]. A disctrete function $F(n,{\\bf k})$ is called proper $q$-hypergeometric if it is one of the form $$F(n,{\\bf k})=\\frac {\\prod_{s}(A_s;q)_{a_s n+{\\bf b}_s\\cdot {\\bf k} +c_s}}\n                    {\\prod_{t}(B_t;q)_{u_t n+{\\bf v}_t\\cdot {\\bf k} +w_t}}\n                    q^{A(n,{\\bf k})}\\xi^{\\bf k},$$ where ${\\bf k}=(k_1,\\ldots,k_r)$, $A_s, B_t \\in \\mathbb{Q}(q)$, $a_s$, $u_t$ are integers, ${\\bf b}_s$, ${\\bf k}_s$ are vectors of $r$ integers, $A(n,{\\bf k})$ is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0401068v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-004-references.md",
+      "narrative": null,
+      "content": "[1] D. Cooper, M. Culler, H. Gillet, D.D. Long, and P. B. Shalen, Plane curves associated to character\nvarieties of 3-manifolds, Invent. Math. 118 (1994), no. 1, 47–84.\n[2] C. Frohman, R. Gelca, and W. Lofaro, The A-polynomial from the noncommutative viewpoint, Trans.\nAmer. Math. Soc. 354 (2001), no. 2, 735–747.\n[3] S. Garoufalidis, On the characteristic and deformation varieties of a knot, (math.GT/0306230).\n[4] S. Garoufalidis and T.T.Q. Le, The colored Jones function is q-holonomic, (math.GT/0309214).\n[5] J. Hoste and P.D. Shanahan, A formula for the A-polynomial of twist knots, to appear i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

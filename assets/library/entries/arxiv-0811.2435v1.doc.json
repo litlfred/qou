@@ -1,0 +1,3798 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0811.2435v1",
+  "title": "Stability structures, motivic Donaldson-Thomas invariants and cluster transformations",
+  "variant": "pdf",
+  "pages": 148,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Counting problems for 3-dimensional Calabi-Yau varieties",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-counting-problems-for-3-dimensional-calabi-yau-v"
+    },
+    {
+      "level": 2,
+      "title": "Non-commutative varieties with polarization",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-non-commutative-varieties-with-polarization"
+    },
+    {
+      "level": 2,
+      "title": "Donaldson-Thomas invariants for non-commutative 3d Calabi-Yau varieties",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-donaldson-thomas-invariants-for-non-commutative"
+    },
+    {
+      "level": 2,
+      "title": "Multiplicative wall-crossing formula",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-multiplicative-wall-crossing-formula"
+    },
+    {
+      "level": 2,
+      "title": "Some analogies and speculations",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-some-analogies-and-speculations"
+    },
+    {
+      "level": 2,
+      "title": "About the content of the paper",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-about-the-content-of-the-paper"
+    },
+    {
+      "level": 1,
+      "title": "Stability conditions for graded Lie algebras",
+      "number": null,
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-stability-conditions-for-graded-lie-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Stability data",
+      "number": null,
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-stability-data"
+    },
+    {
+      "level": 2,
+      "title": "Reformulation of the stability data",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-reformulation-of-the-stability-data"
+    },
+    {
+      "level": 2,
+      "title": "Topology and the wall-crossing formula",
+      "number": null,
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-topology-and-the-wall-crossing-formula"
+    },
+    {
+      "level": 2,
+      "title": "Crossing the wall of second kind",
+      "number": null,
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-crossing-the-wall-of-second-kind"
+    },
+    {
+      "level": 2,
+      "title": "Invariants () and the dilogarithm",
+      "number": null,
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-invariants-and-the-dilogarithm"
+    },
+    {
+      "level": 2,
+      "title": "Symplectic double torus",
+      "number": null,
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-symplectic-double-torus"
+    },
+    {
+      "level": 2,
+      "title": "Complex integrable systems and stability data",
+      "number": null,
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-complex-integrable-systems-and-stability-data"
+    },
+    {
+      "level": 2,
+      "title": "Relation with the works of Joyce, and of Bridgeland and Toledano-Laredo",
+      "number": null,
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-relation-with-the-works-of-joyce-and-of-bridgela"
+    },
+    {
+      "level": 2,
+      "title": "Stability data on gl(n)",
+      "number": null,
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-stability-data-on-gln"
+    },
+    {
+      "level": 1,
+      "title": "Ind-constructible categories and stability structures",
+      "number": null,
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-ind-constructible-categories-and-stability-struc"
+    },
+    {
+      "level": 2,
+      "title": "Ind-constructible categories",
+      "number": null,
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Stack of objects",
+      "number": null,
+      "page": 48,
+      "pageLabel": "48",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-stack-of-objects"
+    },
+    {
+      "level": 2,
+      "title": "Ind-constructible Calabi-Yau categories and potentials",
+      "number": null,
+      "page": 53,
+      "pageLabel": "53",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-ind-constructible-calabi-yau-categories-and-pote"
+    },
+    {
+      "level": 2,
+      "title": "Topology on the space of stability structures",
+      "number": null,
+      "page": 56,
+      "pageLabel": "56",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-topology-on-the-space-of-stability-structures"
+    },
+    {
+      "level": 1,
+      "title": "Motivic functions and motivic Milnor fiber",
+      "number": null,
+      "page": 60,
+      "pageLabel": "60",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-motivic-functions-and-motivic-milnor-fiber"
+    },
+    {
+      "level": 2,
+      "title": "Recollection on motivic functions",
+      "number": null,
+      "page": 60,
+      "pageLabel": "60",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-recollection-on-motivic-functions"
+    },
+    {
+      "level": 2,
+      "title": "Motivic functions in the equivariant setting",
+      "number": null,
+      "page": 62,
+      "pageLabel": "62",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-motivic-functions-in-the-equivariant-setting"
+    },
+    {
+      "level": 2,
+      "title": "Motivic Milnor fiber",
+      "number": null,
+      "page": 65,
+      "pageLabel": "65",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-motivic-milnor-fiber"
+    },
+    {
+      "level": 2,
+      "title": "An integral identity",
+      "number": null,
+      "page": 69,
+      "pageLabel": "69",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-an-integral-identity"
+    },
+    {
+      "level": 2,
+      "title": "Equivalence relation on motivic functions",
+      "number": null,
+      "page": 73,
+      "pageLabel": "73",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-equivalence-relation-on-motivic-functions"
+    },
+    {
+      "level": 2,
+      "title": "Numerical realization of motivic functions",
+      "number": null,
+      "page": 75,
+      "pageLabel": "75",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-numerical-realization-of-motivic-functions"
+    },
+    {
+      "level": 1,
+      "title": "Orientation data on odd Calabi-Yau categories",
+      "number": null,
+      "page": 77,
+      "pageLabel": "77",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-orientation-data-on-odd-calabi-yau-categories"
+    },
+    {
+      "level": 2,
+      "title": "Remarks on the motivic Milnor fiber of a quadratic form",
+      "number": null,
+      "page": 77,
+      "pageLabel": "77",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-remarks-on-the-motivic-milnor-fiber-of-a-quadrat"
+    },
+    {
+      "level": 2,
+      "title": "Orientation data",
+      "number": null,
+      "page": 80,
+      "pageLabel": "80",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-orientation-data"
+    },
+    {
+      "level": 2,
+      "title": "Orientation data from a splitting of bifunctors",
+      "number": null,
+      "page": 83,
+      "pageLabel": "83",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-orientation-data-from-a-splitting-of-bifunctors"
+    },
+    {
+      "level": 1,
+      "title": "Motivic Donaldson-Thomas invariants",
+      "number": null,
+      "page": 84,
+      "pageLabel": "84",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-motivic-donaldson-thomas-invariants"
+    },
+    {
+      "level": 2,
+      "title": "Motivic Hall algebra and stability data",
+      "number": null,
+      "page": 84,
+      "pageLabel": "84",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-motivic-hall-algebra-and-stability-data"
+    },
+    {
+      "level": 2,
+      "title": "Motivic weights and stability data on motivic quantum tori",
+      "number": null,
+      "page": 92,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-motivic-weights-and-stability-data-on-motivic-qu"
+    },
+    {
+      "level": 2,
+      "title": "From motivic Hall algebra to motivic quantum torus",
+      "number": null,
+      "page": 95,
+      "pageLabel": "95",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-from-motivic-hall-algebra-to-motivic-quantum-tor"
+    },
+    {
+      "level": 2,
+      "title": "Examples",
+      "number": null,
+      "page": 102,
+      "pageLabel": "102",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-examples"
+    },
+    {
+      "level": 2,
+      "title": "D0-D6 BPS bound states: an example related to the MacMahon function",
+      "number": null,
+      "page": 105,
+      "pageLabel": "105",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-d0-d6-bps-bound-states-an-example-related-to-the"
+    },
+    {
+      "level": 1,
+      "title": "Quasi-classical limit and integrality conjecture",
+      "number": null,
+      "page": 109,
+      "pageLabel": "109",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-quasi-classical-limit-and-integrality-conjecture"
+    },
+    {
+      "level": 2,
+      "title": "Quasi-classical limit, numerical DT-invariants",
+      "number": null,
+      "page": 109,
+      "pageLabel": "109",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-quasi-classical-limit-numerical-dt-invariants"
+    },
+    {
+      "level": 2,
+      "title": "Deformation invariance and intermediate Jacobian",
+      "number": null,
+      "page": 112,
+      "pageLabel": "112",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-deformation-invariance-and-intermediate-jacobian"
+    },
+    {
+      "level": 2,
+      "title": "Absence of poles in the series AVHall",
+      "number": null,
+      "page": 115,
+      "pageLabel": "115",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-absence-of-poles-in-the-series-avhall"
+    },
+    {
+      "level": 2,
+      "title": "Reduction to the case of category of modules",
+      "number": null,
+      "page": 120,
+      "pageLabel": "120",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-reduction-to-the-case-of-category-of-modules"
+    },
+    {
+      "level": 2,
+      "title": "Evidence for the integrality conjecture",
+      "number": null,
+      "page": 125,
+      "pageLabel": "125",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-043-evidence-for-the-integrality-conjecture"
+    },
+    {
+      "level": 1,
+      "title": "Donaldson-Thomas invariants and cluster transformations",
+      "number": null,
+      "page": 128,
+      "pageLabel": "128",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-044-donaldson-thomas-invariants-and-cluster-transfor"
+    },
+    {
+      "level": 2,
+      "title": "Spherical collections and mutations",
+      "number": null,
+      "page": 128,
+      "pageLabel": "128",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-045-spherical-collections-and-mutations"
+    },
+    {
+      "level": 2,
+      "title": "Orientation data for cluster collections",
+      "number": null,
+      "page": 136,
+      "pageLabel": "136",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-046-orientation-data-for-cluster-collections"
+    },
+    {
+      "level": 2,
+      "title": "Quantum DT-invariants for quivers",
+      "number": null,
+      "page": 137,
+      "pageLabel": "137",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-047-quantum-dt-invariants-for-quivers"
+    },
+    {
+      "level": 2,
+      "title": "Quivers and cluster transformations",
+      "number": null,
+      "page": 137,
+      "pageLabel": "137",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-048-quivers-and-cluster-transformations"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 142,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-049-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "3",
+      "words": 1028,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "motivic milnor",
+          "heading": false
+        },
+        {
+          "term": "motivic hall",
+          "heading": false
+        },
+        {
+          "term": "motivic functions",
+          "heading": false
+        },
+        {
+          "term": "motivic quantum",
+          "heading": false
+        },
+        {
+          "term": "stability data",
+          "heading": false
+        },
+        {
+          "term": "ind-constructible categories",
+          "heading": false
+        },
+        {
+          "term": "donaldson-thomas invariants",
+          "heading": false
+        },
+        {
+          "term": "stability structures",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0811.2435v1 [math.AG] 16 Nov 2008 Stability structures, motivic Donaldson-Thomas invariants and cluster transformations Maxim Kontsevich, Yan Soibelman November 26, 2024 Contents 1 Introduction 3 1.1 Counting problems for 3-dimensional Calabi-Yau varieties . . . 3 1.2 Non-commutative varieties with polarization . . . . . . . . . . 5 1.3 Donaldson-Thomas invariants for non-commutative 3d Calabi- Yau varieties .",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0811.2435v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "Introduction",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-counting-problems-for-3-dimensional-calabi-yau-v",
+      "number": null,
+      "title": "Counting problems for 3-dimensional Calabi-Yau varieties",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 728,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calabi-yau varieties",
+          "heading": true
+        },
+        {
+          "term": "omega slag",
+          "heading": false
+        },
+        {
+          "term": "virtual numbers",
+          "heading": false
+        },
+        {
+          "term": "virtual dimension",
+          "heading": false
+        },
+        {
+          "term": "gw-invariants",
+          "heading": false
+        },
+        {
+          "term": "compact calabi-yau",
+          "heading": false
+        },
+        {
+          "term": "corresponding virtual",
+          "heading": false
+        },
+        {
+          "term": "calabi-yau manifold",
+          "heading": false
+        }
+      ],
+      "extract": "Let $X$ be a compact complex $3$-dimensional Kähler manifold such that $c_1(T_X)=0\\in Pic(X)$ (hence by Yau theorem $X$ admits a Calabi-Yau metric). We can associate with $X$ several moduli spaces which have the virtual dimension zero: a\\) moduli of holomorphic curves in $X$ with fixed genus and degree; b\\) moduli of holomorphic vector bundles on $X$ (or, more generally, of coherent sheaves) with a fixed Chern",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-non-commutative-varieties-with-polarization",
+      "number": null,
+      "title": "Non-commutative varieties with polarization",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 9,
+      "labelStart": "5",
+      "labelEnd": "9",
+      "words": 1590,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "category perf",
+          "heading": false
+        },
+        {
+          "term": "ext bullet",
+          "heading": false
+        },
+        {
+          "term": "semistable objects",
+          "heading": false
+        },
+        {
+          "term": "perfect complexes",
+          "heading": false
+        },
+        {
+          "term": "triangulated category",
+          "heading": false
+        },
+        {
+          "term": "ind-constructible",
+          "heading": false
+        },
+        {
+          "term": "stab",
+          "heading": false
+        },
+        {
+          "term": "perfect modules",
+          "heading": false
+        }
+      ],
+      "extract": "All $\\A$-categories in this paper will be ind-constructible. This roughly means that their spaces of objects are countable inductive limits of constructible sets (for more details see Section 3). We define a *non-commutative proper algebraic variety over a base field $\\k$* as an $Ext$-finite ind-constructible $\\k$-linear triangulated $\\A$-category $\\CC$. For two objects $E$ and $F$ we denote by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-donaldson-thomas-invariants-for-non-commutative",
+      "number": null,
+      "title": "Donaldson-Thomas invariants for non-commutative 3d Calabi-Yau varieties",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 463,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-commutative calabi-yau",
+          "heading": true
+        },
+        {
+          "term": "hom bullet",
+          "heading": false
+        },
+        {
+          "term": "calabi-yau variety",
+          "heading": false
+        },
+        {
+          "term": "koso",
+          "heading": false
+        },
+        {
+          "term": "ext",
+          "heading": false
+        },
+        {
+          "term": "gamma setminus",
+          "heading": false
+        },
+        {
+          "term": "schur object",
+          "heading": false
+        },
+        {
+          "term": "dgla",
+          "heading": false
+        }
+      ],
+      "extract": "Recall that a non-commutative Calabi-Yau variety of dimension $d$ (a.k.a Calabi-Yau category of dimension $d$) is given by an $Ext$-finite triangulated $\\A$-category ${\\cal C}$ which carries a functorial non-degenerate pairing $$(\\bullet, \\bullet): \\op{Hom}^\\bullet_{\\CC}(E,F)\\otimes \\op{Hom}^\\bullet_{\\CC}(F,E)\\to \\k[-d]$$ (see e.g. [@KoSo3], [@So1], [@Laz]), such that the polylinear forms",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-multiplicative-wall-crossing-formula",
+      "number": null,
+      "title": "Multiplicative wall-crossing formula",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 15,
+      "labelStart": "10",
+      "labelEnd": "15",
+      "words": 1664,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wall-crossing formula",
+          "heading": true
+        },
+        {
+          "term": "cdot gamma",
+          "heading": false
+        },
+        {
+          "term": "omega gamma",
+          "heading": false
+        },
+        {
+          "term": "geqslant cdot",
+          "heading": false
+        },
+        {
+          "term": "gamma rangle",
+          "heading": false
+        },
+        {
+          "term": "langle gamma",
+          "heading": false
+        },
+        {
+          "term": "bullet rangle",
+          "heading": false
+        },
+        {
+          "term": "cap gamma",
+          "heading": false
+        }
+      ],
+      "extract": "The wall-crossing formulas for the numerical Donaldson-Thomas invariants do not depend on their origin and can be expressed in terms of graded Lie algebras. This is explained in Section 2. Our main application is the case of $3d$ Calabi-Yau categories. Let us recall that if ${\\cal C}$ is an $Ext$-finite Calabi-Yau category of the odd dimension $d$ (e.g. $d=3$) then the Euler form $$\\chi:K_0(\\CC)\\otimes K_0(\\CC)\\to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-some-analogies-and-speculations",
+      "number": null,
+      "title": "Some analogies and speculations",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 17,
+      "labelStart": "15",
+      "labelEnd": "17",
+      "words": 884,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "overline cal",
+          "heading": false
+        },
+        {
+          "term": "dim cal",
+          "heading": false
+        },
+        {
+          "term": "space cal",
+          "heading": false
+        },
+        {
+          "term": "manifold cal",
+          "heading": false
+        },
+        {
+          "term": "calabi-yau category",
+          "heading": false
+        },
+        {
+          "term": "fukaya category",
+          "heading": false
+        },
+        {
+          "term": "gromov-witten invariants",
+          "heading": false
+        },
+        {
+          "term": "moduli space",
+          "heading": false
+        }
+      ],
+      "extract": "The above formulas for symplectomorphisms are partially motivated by [@KoSo1], Section 10, where similar formulas appeared in a different problem. Both formulas involve Hamiltonian vector fields associated with the dilogarithm function. The problem discussed in [@KoSo1] was the reconstruction of the rigid analytic K3 surface from its skeleton, which is a sphere $S^2$ equipped with an integral affine structure,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-about-the-content-of-the-paper",
+      "number": null,
+      "title": "About the content of the paper",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 20,
+      "labelStart": "17",
+      "labelEnd": "20",
+      "words": 1319,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "motivic dt-invariants",
+          "heading": false
+        },
+        {
+          "term": "motivic hall",
+          "heading": false
+        },
+        {
+          "term": "motivic milnor",
+          "heading": false
+        },
+        {
+          "term": "motivic stack",
+          "heading": false
+        },
+        {
+          "term": "motivic version",
+          "heading": false
+        },
+        {
+          "term": "numerical dt-invariants",
+          "heading": false
+        },
+        {
+          "term": "motivic functions",
+          "heading": false
+        },
+        {
+          "term": "ind-constructible categories",
+          "heading": false
+        }
+      ],
+      "extract": "In Section 2 we work out in detail the approach to the invariants $\\Omega(\\gamma)$ and the wall-crossing formula sketched in the Introduction in the framework of graded Lie algebras. It is based on the notion of stability data which admits two equivalent descriptions: in terms of a collection of elements $a(\\gamma)$ of a graded Lie algebra $\\g=\\oplus_{\\gamma\\in \\Gamma}\\g_{\\gamma}$ and in terms of a collection of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-stability-conditions-for-graded-lie-algebras",
+      "number": null,
+      "title": "Stability conditions for graded Lie algebras",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 6,
+      "summary": null,
+      "keywords": [],
+      "extract": "Stability conditions for graded Lie algebras",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-stability-data",
+      "number": null,
+      "title": "Stability data",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": "20",
+      "labelEnd": "22",
+      "words": 567,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stability data",
+          "heading": true
+        },
+        {
+          "term": "support property",
+          "heading": false
+        },
+        {
+          "term": "gamma",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        },
+        {
+          "term": "parallel",
+          "heading": false
+        },
+        {
+          "term": "norm",
+          "heading": false
+        }
+      ],
+      "extract": "Let us fix a free abelian group $\\Gamma$ of finite rank, and a graded Lie algebra $\\g=\\oplus_{\\gamma\\in \\Gamma}\\g_{\\gamma}$ over $\\Q$.[^1] ::: defn Stability data on $\\g$ is a pair $\\sigma=(Z,a)$ such that: 1\\) $Z: \\Gamma\\to \\R^2\\simeq \\C$ is a homomorphism of abelian groups called the central charge; 2\\) $a=(a(\\gamma))_{\\gamma\\in \\Gamma\\setminus \\{0\\}}$ is a collection of elements $a(\\gamma)\\in \\g_{\\gamma}$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-reformulation-of-the-stability-data",
+      "number": null,
+      "title": "Reformulation of the stability data",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 25,
+      "labelStart": "22",
+      "labelEnd": "25",
+      "words": 1201,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stability data",
+          "heading": true
+        },
+        {
+          "term": "strict sectors",
+          "heading": false
+        },
+        {
+          "term": "motivic hall",
+          "heading": false
+        },
+        {
+          "term": "gamma",
+          "heading": false
+        },
+        {
+          "term": "stab",
+          "heading": false
+        },
+        {
+          "term": "subset longrightarrow",
+          "heading": false
+        },
+        {
+          "term": "factorization property",
+          "heading": false
+        },
+        {
+          "term": "clockwise order",
+          "heading": false
+        }
+      ],
+      "extract": "In what follows we will consider various cones in $\\Gamma_{\\R}$ and in $\\R^2$ i.e. subsets, which are closed under addition and multiplication by a positive real number. We assume that the vertex of the cone (i.e. the zero of the vector space) does not belong to the cone. We will call a cone *strict* if it is non-empty and does not contain a straight line. In particular, all strict cones on the plane (we will call",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-topology-and-the-wall-crossing-formula",
+      "number": null,
+      "title": "Topology and the wall-crossing formula",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 30,
+      "labelStart": "25",
+      "labelEnd": "30",
+      "words": 2038,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wall-crossing formula",
+          "heading": true
+        },
+        {
+          "term": "gamma prim",
+          "heading": false
+        },
+        {
+          "term": "gamma prime",
+          "heading": false
+        },
+        {
+          "term": "gamma parallel",
+          "heading": false
+        },
+        {
+          "term": "gamma setminus",
+          "heading": false
+        },
+        {
+          "term": "cal gamma",
+          "heading": false
+        },
+        {
+          "term": "prod gamma",
+          "heading": false
+        },
+        {
+          "term": "gamma subset",
+          "heading": false
+        }
+      ],
+      "extract": "Here we are going to introduce a Hausdorff topology on the set of stability data in such a way that the forgetting map $$Stab(\\g)\\to \\op{Hom}(\\Gamma,\\C)\\simeq \\C^n,\\,\\, (Z,a)\\mapsto Z$$ will be a local homeomorphism. In particular $Stab(\\g)$ carries a structure of a complex manifold (in general with an uncountable number of components, each of which is paracompact). In order to define the topology we define the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-crossing-the-wall-of-second-kind",
+      "number": null,
+      "title": "Crossing the wall of second kind",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 32,
+      "labelStart": "30",
+      "labelEnd": "32",
+      "words": 847,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cal gamma",
+          "heading": false
+        },
+        {
+          "term": "cap gamma",
+          "heading": false
+        },
+        {
+          "term": "subset gamma",
+          "heading": false
+        },
+        {
+          "term": "gamma setminus",
+          "heading": false
+        },
+        {
+          "term": "wall",
+          "heading": true
+        },
+        {
+          "term": "gamma times",
+          "heading": false
+        },
+        {
+          "term": "countable coordinate",
+          "heading": false
+        },
+        {
+          "term": "path sigma",
+          "heading": false
+        }
+      ],
+      "extract": "Here we will interpret the parallel transport in a different way, introducing a wall of another kind. We use the notation from the previous section. In particular, we fix the quadratic form $Q_0$ and the connected component $U$ of the set $\\{Z\\in \\op{Hom}(\\Gamma,\\C)|\\,\\, (Q_{0})_{|\\op{Ker} Z}<0\\}$. For a given primitive $\\gamma\\in \\Gamma\\setminus \\{0\\}$ we introduce the set ${\\cal W}_{\\gamma}^{Q_0}=\\{Z\\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-invariants-and-the-dilogarithm",
+      "number": null,
+      "title": "Invariants () and the dilogarithm",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 33,
+      "labelStart": "32",
+      "labelEnd": "33",
+      "words": 317,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gamma rangle",
+          "heading": false
+        },
+        {
+          "term": "langle gamma",
+          "heading": false
+        },
+        {
+          "term": "mathbb gamma",
+          "heading": false
+        },
+        {
+          "term": "bullet rangle",
+          "heading": false
+        },
+        {
+          "term": "gamma setminus",
+          "heading": false
+        },
+        {
+          "term": "geqslant omega",
+          "heading": false
+        },
+        {
+          "term": "algebra gamma",
+          "heading": false
+        },
+        {
+          "term": "gamma acts",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\Gamma$ be a free abelian group of finite rank $n$ as before, endowed with a skew-symmetric integer-valued bilinear form $\\langle \\bullet, \\bullet\\rangle : \\Gamma \\times \\Gamma\\to \\Z$. Recall the Lie algebra $\\g_{\\Gamma}=\\g_{\\Gamma,\\langle \\bullet,\\bullet \\rangle}=\\oplus_{\\gamma\\in \\Gamma}\\Q\\cdot e_{\\gamma}$ with the Lie bracket $$[e_{\\gamma_1},e_{\\gamma_2}]=(-1)^{\\langle \\gamma_1, \\gamma_2\\rangle}\\langle",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-symplectic-double-torus",
+      "number": null,
+      "title": "Symplectic double torus",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 35,
+      "labelStart": "33",
+      "labelEnd": "35",
+      "words": 541,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gamma vee",
+          "heading": false
+        },
+        {
+          "term": "mathbb gamma",
+          "heading": false
+        },
+        {
+          "term": "gamma oplus",
+          "heading": false
+        },
+        {
+          "term": "sum gamma",
+          "heading": false
+        },
+        {
+          "term": "double torus",
+          "heading": true
+        },
+        {
+          "term": "strict cone",
+          "heading": false
+        },
+        {
+          "term": "symplectic",
+          "heading": true
+        },
+        {
+          "term": "convex strict",
+          "heading": false
+        }
+      ],
+      "extract": "If the skew-symmetric bilinear form on $\\Gamma$ is degenerate, then the action of $\\g_{\\Gamma}$ on ${\\mathbb T}_{\\Gamma}$ is not exact. In order to remedy the problem we can embed $(\\Gamma, \\langle\\bullet,\\bullet\\rangle)$ into a larger symplectic lattice. A possible choice is $\\Gamma\\oplus \\Gamma^{\\vee}$, where $\\Gamma^{\\vee}=\\op{Hom}(\\Gamma,\\Z)$. The corresponding non-degenerate bilinear form is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-complex-integrable-systems-and-stability-data",
+      "number": null,
+      "title": "Complex integrable systems and stability data",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 38,
+      "labelStart": "35",
+      "labelEnd": "38",
+      "words": 1351,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "integrable systems",
+          "heading": true
+        },
+        {
+          "term": "complex integrable",
+          "heading": true
+        },
+        {
+          "term": "alpha gamma",
+          "heading": false
+        },
+        {
+          "term": "stability data",
+          "heading": true
+        },
+        {
+          "term": "gamma omega",
+          "heading": false
+        },
+        {
+          "term": "fields gamma",
+          "heading": false
+        },
+        {
+          "term": "mathfrak gamma",
+          "heading": false
+        },
+        {
+          "term": "oriented trees",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we explain how complex integrable systems (with some additional structures) give rise to stability data in the graded Lie algebra $\\mathfrak{g}_\\Gamma$ associated with a symplectic lattice. In particular, Seiberg-Witten differential can be interpreted as the central charge for a complex integrable system, while the BPS degeneracies are interpreted via our \"numerical\\\" Donaldson-Thomas invariants as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-relation-with-the-works-of-joyce-and-of-bridgela",
+      "number": null,
+      "title": "Relation with the works of Joyce, and of Bridgeland and Toledano-Laredo",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 43,
+      "labelStart": "38",
+      "labelEnd": "43",
+      "words": 1558,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alpha dots",
+          "heading": false
+        },
+        {
+          "term": "cal alpha",
+          "heading": false
+        },
+        {
+          "term": "joyce",
+          "heading": true
+        },
+        {
+          "term": "int dots",
+          "heading": false
+        },
+        {
+          "term": "alpha log",
+          "heading": false
+        },
+        {
+          "term": "cap gamma",
+          "heading": false
+        },
+        {
+          "term": "widehat omega",
+          "heading": false
+        },
+        {
+          "term": "sum alpha",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\g, \\Gamma$ be as in Section 2.1. We assume that the ground field is $\\C$. Suppose that $C\\subset \\Gamma_{\\R}$ is a strict convex cone. We are interested in such stability data $(Z,a)$ that $\\op{Supp}a\\subset C\\cup (-C)$. We define $D$ as an open subset of $\\op{Hom}(\\Gamma, \\C)$ which consists of additive maps such that $C\\cap \\Gamma$ is mapped into the upper-half plane ${\\cal{H}}_+=\\{ z\\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-stability-data-on-gln",
+      "number": null,
+      "title": "Stability data on gl(n)",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 45,
+      "labelStart": "43",
+      "labelEnd": "45",
+      "words": 515,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hom circ",
+          "heading": false
+        },
+        {
+          "term": "stability data",
+          "heading": true
+        },
+        {
+          "term": "ceva",
+          "heading": false
+        },
+        {
+          "term": "gamma",
+          "heading": false
+        },
+        {
+          "term": "wall-crossing",
+          "heading": false
+        },
+        {
+          "term": "irregular",
+          "heading": false
+        },
+        {
+          "term": "dots",
+          "heading": false
+        },
+        {
+          "term": "exp",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\g={\\mathfrak{gl}}(n,\\Q)$ be the Lie algebra of the general linear group. We consider it as a $\\Gamma$-graded Lie algebra $\\g=\\oplus_{\\gamma \\in \\Gamma}\\g_{\\gamma}$, where $$\\Gamma=\\{(k_1,\\dots,k_n)|\\,\\,k_i\\in \\Z, \\sum_{1\\le i\\le n}k_i=0\\}$$ is the root lattice. We endow $\\g$ with the Cartan involution $\\eta$. Algebra $\\g$ has the standard basis $E_{ij}\\in \\g_{\\gamma_{ij}}$ consisting of matrices with the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-ind-constructible-categories-and-stability-struc",
+      "number": null,
+      "title": "Ind-constructible categories and stability structures",
+      "level": 1,
+      "pageStart": 45,
+      "pageEnd": 48,
+      "labelStart": "45",
+      "labelEnd": "48",
+      "words": 1302,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ind-constructible categories",
+          "heading": true
+        },
+        {
+          "term": "ind-constructible category",
+          "heading": false
+        },
+        {
+          "term": "ind-constructible bundles",
+          "heading": false
+        },
+        {
+          "term": "cal hom",
+          "heading": false
+        },
+        {
+          "term": "ind-constructible version",
+          "heading": false
+        },
+        {
+          "term": "simeq cal",
+          "heading": false
+        },
+        {
+          "term": "ast cal",
+          "heading": false
+        },
+        {
+          "term": "subset cal",
+          "heading": false
+        }
+      ],
+      "extract": "## Ind-constructible categories Here we introduce an ind-constructible version of the notion of a (triangulated) $\\A$-category. Let $\\k$ be a field, $\\overline{\\k}$ be its algebraic closure. By a variety over $\\k$ (not necessarily irreducible) we mean a reduced separated scheme of finite type over $\\k$. Recall the following definition. ::: defn Let $S$ be a variety over $\\k$. A subset $X\\subset S(\\kk)$ is called",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-stack-of-objects",
+      "number": null,
+      "title": "Stack of objects",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 53,
+      "labelStart": "48",
+      "labelEnd": "53",
+      "words": 1934,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ind-constructible stack",
+          "heading": false
+        },
+        {
+          "term": "ind-constructible category",
+          "heading": false
+        },
+        {
+          "term": "ind-constructible sense",
+          "heading": false
+        },
+        {
+          "term": "ind-constructible categories",
+          "heading": false
+        },
+        {
+          "term": "higher constructible",
+          "heading": false
+        },
+        {
+          "term": "exists constructible",
+          "heading": false
+        },
+        {
+          "term": "cal sqcup",
+          "heading": false
+        },
+        {
+          "term": "objects",
+          "heading": true
+        }
+      ],
+      "extract": "In this section we assume that the ground field $\\k$ is perfect, i.e. the $\\kk$ is a Galois field over $\\k$. Our goal in this section is to explain how to associate with an ind-constructible $\\A$-category $\\CC$ over $\\k$ an ordinary $\\k$-linear $\\A$-category $\\CC(\\k)$, in such a way that ind-constructible equivalences will induce the usual equivalences. For any field extension $\\k'\\supset \\k$ (e.g. for $\\k'=\\k$) one",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-ind-constructible-calabi-yau-categories-and-pote",
+      "number": null,
+      "title": "Ind-constructible Calabi-Yau categories and potentials",
+      "level": 2,
+      "pageStart": 53,
+      "pageEnd": 56,
+      "labelStart": "53",
+      "labelEnd": "56",
+      "words": 1304,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hom bullet",
+          "heading": false
+        },
+        {
+          "term": "ext bullet",
+          "heading": false
+        },
+        {
+          "term": "calabi-yau",
+          "heading": true
+        },
+        {
+          "term": "omega prime",
+          "heading": false
+        },
+        {
+          "term": "calabi-yau category",
+          "heading": false
+        },
+        {
+          "term": "cal hom",
+          "heading": false
+        },
+        {
+          "term": "non-commutative formal",
+          "heading": false
+        },
+        {
+          "term": "calabi-yau algebra",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\k$ be a field of characteristic zero. Recall that a Calabi-Yau category of dimension $d$ is a weakly unital $\\k$-linear triangulated $\\A$-category ${\\CC}$ (see [@KoSo2], [@KoSo3], [@So1]), such that for any two objects $E,F$ the $\\Z$-graded vector space $\\op{Hom}^\\bullet(E,F)=\\oplus_{n\\in \\Z}\\op{Hom}^n(E,F)$ is finite-dimensional (hence the space $\\op{Ext}^\\bullet(E,F)$ is also finite-dimensional) and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-topology-on-the-space-of-stability-structures",
+      "number": null,
+      "title": "Topology on the space of stability structures",
+      "level": 2,
+      "pageStart": 56,
+      "pageEnd": 60,
+      "labelStart": "56",
+      "labelEnd": "60",
+      "words": 1328,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stability structures",
+          "heading": true
+        },
+        {
+          "term": "constructible stability",
+          "heading": false
+        },
+        {
+          "term": "ind-constructible subset",
+          "heading": false
+        },
+        {
+          "term": "overline prime",
+          "heading": false
+        },
+        {
+          "term": "gamma setminus",
+          "heading": false
+        },
+        {
+          "term": "bullet rangle",
+          "heading": false
+        },
+        {
+          "term": "langle bullet",
+          "heading": false
+        },
+        {
+          "term": "cal",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\CC$ be an ind-constructible weakly unital $\\A$-category over a field $\\k$ of arbitrary characteristic. Let $\\op{cl}: Ob(\\CC)\\to \\Gamma\\simeq \\Z^n$ be a map of ind-constructible sets (where $\\Gamma$ is considered as a countable set of points) such that the induced map $Ob(\\CC)(\\overline{\\k})\\to \\Gamma$ factorizes through a group homomorphism $\\op{cl}_{\\overline{\\k}}: K_0(\\CC(\\overline{\\k}))\\to \\Gamma$. It is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-motivic-functions-and-motivic-milnor-fiber",
+      "number": null,
+      "title": "Motivic functions and motivic Milnor fiber",
+      "level": 1,
+      "pageStart": 60,
+      "pageEnd": 60,
+      "labelStart": "60",
+      "labelEnd": "60",
+      "words": 6,
+      "summary": null,
+      "keywords": [],
+      "extract": "Motivic functions and motivic Milnor ﬁber",
+      "extractCut": false
+    },
+    {
+      "id": "sec-022-recollection-on-motivic-functions",
+      "number": null,
+      "title": "Recollection on motivic functions",
+      "level": 2,
+      "pageStart": 60,
+      "pageEnd": 62,
+      "labelStart": "60",
+      "labelEnd": "62",
+      "words": 640,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ring mot",
+          "heading": false
+        },
+        {
+          "term": "polynomial mot",
+          "heading": false
+        },
+        {
+          "term": "motivic functions",
+          "heading": true
+        },
+        {
+          "term": "case spec",
+          "heading": false
+        },
+        {
+          "term": "constr",
+          "heading": false
+        },
+        {
+          "term": "geqslant dim",
+          "heading": false
+        },
+        {
+          "term": "hodge polynomial",
+          "heading": false
+        },
+        {
+          "term": "constructible",
+          "heading": false
+        }
+      ],
+      "extract": "Recall (see [@DeLo1]) that for any constructible set $X$ over $\\k$ one can define an abelian group $Mot(X)$ of motivic functions as the group generated by symbols $[\\pi:S\\to X]:=[S\\to X]$ where $\\pi$ is a morphism of constructible sets, subject to the relations $$[(S_1\\sqcup S_2)\\to X]=[S_1\\to X]+[S_2\\to X]\\,\\,.$$ For any constructible morphism $f:X\\to Y$ we have two homomorphisms of groups: 1\\) $f_{!}: Mot(X)\\to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-motivic-functions-in-the-equivariant-setting",
+      "number": null,
+      "title": "Motivic functions in the equivariant setting",
+      "level": 2,
+      "pageStart": 62,
+      "pageEnd": 65,
+      "labelStart": "62",
+      "labelEnd": "65",
+      "words": 821,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "equivariant motivic",
+          "heading": true
+        },
+        {
+          "term": "motivic functions",
+          "heading": true
+        },
+        {
+          "term": "constructible stack",
+          "heading": false
+        },
+        {
+          "term": "stack cal",
+          "heading": false
+        },
+        {
+          "term": "constructible vector",
+          "heading": false
+        },
+        {
+          "term": "cal prime",
+          "heading": false
+        },
+        {
+          "term": "int cal",
+          "heading": false
+        },
+        {
+          "term": "ordinary counting",
+          "heading": false
+        }
+      ],
+      "extract": "Here we give a short exposition of the generalization of the theory of motivic functions in the equivariant setting (essentially due to Joyce [@Jo4], here we use slightly different terms). Let $X$ be a constructible set over a field $\\k$ and $G$ be an affine algebraic group acting on $X$, in the sense that $G(\\kk)$ acts on $X(\\kk)$ and there exists a $G$-variety $S$ over $\\k$ with a constructible equivariant",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-motivic-milnor-fiber",
+      "number": null,
+      "title": "Motivic Milnor fiber",
+      "level": 2,
+      "pageStart": 65,
+      "pageEnd": 69,
+      "labelStart": "65",
+      "labelEnd": "69",
+      "words": 1645,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "milnor fiber",
+          "heading": true
+        },
+        {
+          "term": "motivic milnor",
+          "heading": true
+        },
+        {
+          "term": "simeq mot",
+          "heading": false
+        },
+        {
+          "term": "groups mot",
+          "heading": false
+        },
+        {
+          "term": "ring mot",
+          "heading": false
+        },
+        {
+          "term": "delo",
+          "heading": false
+        },
+        {
+          "term": "constructible vector",
+          "heading": false
+        },
+        {
+          "term": "thom-sebastiani theorem",
+          "heading": false
+        }
+      ],
+      "extract": "Let $M$ be a complex manifold, $x_0\\in M$. Recall, that for a germ $f$ of an analytic function at $x_0$ such that $f(x_0)=0$ one can define its *Milnor fiber* $MF_{x_0}(f)$, which is a locally trivial $C^{\\infty}$-bundle over $S^1$ of manifolds with the boundary (defined only up to a diffeomorphism): $$\\{z\\in M|\\,\\,dist(z,x_0)\\le\\varepsilon_1, |f(z)|=\\varepsilon_2\\}\\to S^1=\\R/2\\pi\\Z\\,\\,,$$ where $z\\mapsto",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-an-integral-identity",
+      "number": null,
+      "title": "An integral identity",
+      "level": 2,
+      "pageStart": 69,
+      "pageEnd": 73,
+      "labelStart": "69",
+      "labelEnd": "73",
+      "words": 1209,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "widetilde prime",
+          "heading": false
+        },
+        {
+          "term": "adic constructible",
+          "heading": false
+        },
+        {
+          "term": "ast psi",
+          "heading": false
+        },
+        {
+          "term": "psi widehat",
+          "heading": false
+        },
+        {
+          "term": "times spec",
+          "heading": false
+        },
+        {
+          "term": "constructible sheaves",
+          "heading": false
+        },
+        {
+          "term": "varepsilon",
+          "heading": false
+        },
+        {
+          "term": "complex cone",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we are going to discuss the identity which will be crucial in the proof of the main theorem of Section 6. Let $\\k$ be a field of characteristic zero, and $V_1,V_2,V_3$ be finite-dimensional $\\k$-vector spaces. ::: conj Let $W$ be a formal series on the product $V_1\\times V_2\\times V_3$ of three vector spaces, depending in a constructible way on finitely many extra parameters, such that $W(0,0,0)=0$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-equivalence-relation-on-motivic-functions",
+      "number": null,
+      "title": "Equivalence relation on motivic functions",
+      "level": 2,
+      "pageStart": 73,
+      "pageEnd": 75,
+      "labelStart": "73",
+      "labelEnd": "75",
+      "words": 874,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mot coh",
+          "heading": false
+        },
+        {
+          "term": "overline mot",
+          "heading": false
+        },
+        {
+          "term": "mot times",
+          "heading": false
+        },
+        {
+          "term": "constr simeq",
+          "heading": false
+        },
+        {
+          "term": "mathrm constr",
+          "heading": false
+        },
+        {
+          "term": "constructible isomorphism",
+          "heading": false
+        },
+        {
+          "term": "cal eff",
+          "heading": false
+        },
+        {
+          "term": "projective varieties",
+          "heading": false
+        }
+      ],
+      "extract": "We start with a motivation for this section. There are many examples of pairs of constructible sets (or even varieties) $X_1,X_2$ over a field $\\k$ such that their classes $[X_1]$ and $[X_2]$ in $Mot(Spec(\\k))$ are different (or at least not obviously coincide), but $X_1$ and $X_2$ coincide in each realization described in Section 4.1 (i)-(vi) (e.g. when $X_1,X_2$ are isogeneous abelian varieties). In particular we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-numerical-realization-of-motivic-functions",
+      "number": null,
+      "title": "Numerical realization of motivic functions",
+      "level": 2,
+      "pageStart": 75,
+      "pageEnd": 77,
+      "labelStart": "75",
+      "labelEnd": "77",
+      "words": 725,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cal times",
+          "heading": false
+        },
+        {
+          "term": "scheme cal",
+          "heading": false
+        },
+        {
+          "term": "times spec",
+          "heading": false
+        },
+        {
+          "term": "eta",
+          "heading": false
+        },
+        {
+          "term": "finite field",
+          "heading": false
+        },
+        {
+          "term": "constructible",
+          "heading": false
+        },
+        {
+          "term": "character chi",
+          "heading": false
+        },
+        {
+          "term": "char",
+          "heading": false
+        }
+      ],
+      "extract": "This section is not used in further consideration, its goal is only to show that the abstractly defined ring $\\overline{{\\cal M}}^{G,\\mu}(X)$ can be realized as certain ring of functions with numerical values. Let $Z$ be a scheme of finite type over a finite field $\\k\\simeq{\\bf F}_q$ endowed with an action of the group $\\mu_n$ of roots of $1$ such that $n<p=char \\, {\\bf F}_q$. We choose a prime $l\\ne p$. Let us",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-orientation-data-on-odd-calabi-yau-categories",
+      "number": null,
+      "title": "Orientation data on odd Calabi-Yau categories",
+      "level": 1,
+      "pageStart": 77,
+      "pageEnd": 77,
+      "labelStart": "77",
+      "labelEnd": "77",
+      "words": 27,
+      "summary": null,
+      "keywords": [],
+      "extract": "Considerations of this section are reminiscent of those in Quantum Field Theory when one tries to define determinants for the Gaussian integral in a free theory.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-029-remarks-on-the-motivic-milnor-fiber-of-a-quadrat",
+      "number": null,
+      "title": "Remarks on the motivic Milnor fiber of a quadratic form",
+      "level": 2,
+      "pageStart": 77,
+      "pageEnd": 80,
+      "labelStart": "77",
+      "labelEnd": "80",
+      "words": 1006,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "motivic milnor",
+          "heading": true
+        },
+        {
+          "term": "constructible super",
+          "heading": false
+        },
+        {
+          "term": "milnor fiber",
+          "heading": true
+        },
+        {
+          "term": "sdet",
+          "heading": false
+        },
+        {
+          "term": "quadratic form",
+          "heading": true
+        },
+        {
+          "term": "constr",
+          "heading": false
+        },
+        {
+          "term": "homomorphism witt",
+          "heading": false
+        },
+        {
+          "term": "super line",
+          "heading": false
+        }
+      ],
+      "extract": "Although the theory of motivic Milnor fiber was defined over a field of characteristic zero, an essential part of considerations below has meaning over an arbitrary field $\\k, char\\,\\k\\ne 2$ if we replace the notion of motivic Milnor fiber by its $l$-adic version. Let now $V$ be a $\\k$-vector space endowed with a non-degenerate quadratic form $Q$. We define an element $${I}(Q)=(1-MF_0(Q)){\\mathbb",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-orientation-data",
+      "number": null,
+      "title": "Orientation data",
+      "level": 2,
+      "pageStart": 80,
+      "pageEnd": 83,
+      "labelStart": "80",
+      "labelEnd": "83",
+      "words": 670,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ext bullet",
+          "heading": false
+        },
+        {
+          "term": "ind-constructible super",
+          "heading": false
+        },
+        {
+          "term": "cal otimes",
+          "heading": false
+        },
+        {
+          "term": "cal simeq",
+          "heading": false
+        },
+        {
+          "term": "sqrt cal",
+          "heading": false
+        },
+        {
+          "term": "bundle cal",
+          "heading": false
+        },
+        {
+          "term": "sdet",
+          "heading": false
+        },
+        {
+          "term": "equivariant super",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\CC$ be an ind-constructible $\\k$-linear $3$-dimensional Calabi-Yau category.[^1] Then we have a natural ind-constructible super line bundle ${\\cal D}$ over $Ob(\\CC)$ with the fiber over $E$ given by ${\\cal D}_E=\\op{sdet}(\\op{Ext}^{\\bullet}(E,E))$. It follows that on the ind-constructible stack of exact triangles $E_1\\to E_2\\to E_3$ we have an isomorphism of the pull-backed line bundles which fiberwise reads as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-orientation-data-from-a-splitting-of-bifunctors",
+      "number": null,
+      "title": "Orientation data from a splitting of bifunctors",
+      "level": 2,
+      "pageStart": 83,
+      "pageEnd": 84,
+      "labelStart": "83",
+      "labelEnd": "84",
+      "words": 443,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bifunctors",
+          "heading": true
+        },
+        {
+          "term": "ind-constructible super",
+          "heading": false
+        },
+        {
+          "term": "perf",
+          "heading": false
+        },
+        {
+          "term": "sqrt cal",
+          "heading": false
+        },
+        {
+          "term": "self-duality structure",
+          "heading": false
+        },
+        {
+          "term": "oplus vee",
+          "heading": false
+        },
+        {
+          "term": "orientation data",
+          "heading": true
+        },
+        {
+          "term": "super line",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\cal C$ be a triangulated ind-constructive category over a field $\\k$. We will assume that all functors, bifunctors etc. respect this structure. In this section we are going to discuss a special framework in which orientation data is easy to construct. Let $F:\\CC\\times \\CC^{op}\\to Perf(Spec(\\k))$ be a biadditive bifunctor and $d$ be an integer. We define the *dual bifunctor of degree $d$* as a bifunctor",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-motivic-donaldson-thomas-invariants",
+      "number": null,
+      "title": "Motivic Donaldson-Thomas invariants",
+      "level": 1,
+      "pageStart": 84,
+      "pageEnd": 84,
+      "labelStart": "84",
+      "labelEnd": "84",
+      "words": 3,
+      "summary": null,
+      "keywords": [],
+      "extract": "Motivic Donaldson-Thomas invariants",
+      "extractCut": false
+    },
+    {
+      "id": "sec-033-motivic-hall-algebra-and-stability-data",
+      "number": null,
+      "title": "Motivic Hall algebra and stability data",
+      "level": 2,
+      "pageStart": 84,
+      "pageEnd": 92,
+      "labelStart": "84",
+      "labelEnd": null,
+      "words": 2411,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "constr alpha",
+          "heading": false
+        },
+        {
+          "term": "cap cal",
+          "heading": false
+        },
+        {
+          "term": "ind-constructible",
+          "heading": false
+        },
+        {
+          "term": "hall",
+          "heading": true
+        },
+        {
+          "term": "mot",
+          "heading": false
+        },
+        {
+          "term": "motivic",
+          "heading": true
+        },
+        {
+          "term": "gamma",
+          "heading": false
+        },
+        {
+          "term": "stab",
+          "heading": false
+        }
+      ],
+      "extract": "In this section the field $\\k$ can have arbitrary characteristic. Let $\\CC$ be an ind-constructible triangulated $\\A$-category over a field $\\k$. We are going to describe a motivic generalization of the derived Hall algebras from [@To]. As usual, we have a constructible countable decomposition $Ob(\\CC)=\\sqcup_{i\\in I}Y_i$ with group $GL(N_i)$ acting on $Y_i$. Let us consider a $Mot(Spec(\\k))$-module $\\oplus_i",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-motivic-weights-and-stability-data-on-motivic-qu",
+      "number": null,
+      "title": "Motivic weights and stability data on motivic quantum tori",
+      "level": 2,
+      "pageStart": 92,
+      "pageEnd": 95,
+      "labelStart": null,
+      "labelEnd": "95",
+      "words": 1052,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "motivic quantum",
+          "heading": true
+        },
+        {
+          "term": "cal gamma",
+          "heading": false
+        },
+        {
+          "term": "overline cal",
+          "heading": false
+        },
+        {
+          "term": "hat gamma",
+          "heading": false
+        },
+        {
+          "term": "define cal",
+          "heading": false
+        },
+        {
+          "term": "motivic donaldson-thomas",
+          "heading": false
+        },
+        {
+          "term": "element mot",
+          "heading": false
+        },
+        {
+          "term": "algebra cal",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\CC$ be a $3$-dimensional ind-constructible Calabi-Yau category over a field of characteristic zero (see Section 3.3). In this section we are going to define motivic Donaldson-Thomas invariants associated with a constructible stability condition and an orientation data on $\\CC$. *Step 1*. Let us define the ring $${D}^{\\mu}={\\cal M}^{\\mu}(Spec(\\k))[{\\mathbb L}^{-1}, {\\mathbb L}^{1/2}, ([GL(n)]^{-1})_{n\\geqslant",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-from-motivic-hall-algebra-to-motivic-quantum-tor",
+      "number": null,
+      "title": "From motivic Hall algebra to motivic quantum torus",
+      "level": 2,
+      "pageStart": 95,
+      "pageEnd": 102,
+      "labelStart": "95",
+      "labelEnd": "102",
+      "words": 1852,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ext bullet",
+          "heading": false
+        },
+        {
+          "term": "oplus alpha",
+          "heading": false
+        },
+        {
+          "term": "motivic quantum",
+          "heading": true
+        },
+        {
+          "term": "cal gamma",
+          "heading": false
+        },
+        {
+          "term": "min oplus",
+          "heading": false
+        },
+        {
+          "term": "simeq cal",
+          "heading": false
+        },
+        {
+          "term": "otimes cal",
+          "heading": false
+        },
+        {
+          "term": "int alpha",
+          "heading": false
+        }
+      ],
+      "extract": "Assume that $\\CC$ is an ind-constructible $3d$ Calabi-Yau category endowed with polarization and orientation data $\\sqrt{\\cal D}$. The Hall algebra of $\\CC$ is graded by the corresponding lattice $\\Gamma$: $H(\\CC)=\\oplus_{\\gamma\\in \\Gamma}H(\\CC)_{\\gamma}$. Main result of this section is the following theorem. ::: thm The map $\\Phi: H(\\CC)\\to {\\cal R}_{\\Gamma}$ given by the formula",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-examples",
+      "number": null,
+      "title": "Examples",
+      "level": 2,
+      "pageStart": 102,
+      "pageEnd": 105,
+      "labelStart": "102",
+      "labelEnd": "105",
+      "words": 809,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hat gamma",
+          "heading": false
+        },
+        {
+          "term": "geqslant frac",
+          "heading": false
+        },
+        {
+          "term": "sum geqslant",
+          "heading": false
+        },
+        {
+          "term": "arg",
+          "heading": false
+        },
+        {
+          "term": "semistable objects",
+          "heading": false
+        },
+        {
+          "term": "numerical donaldson-thomas",
+          "heading": false
+        },
+        {
+          "term": "ext",
+          "heading": false
+        },
+        {
+          "term": "donaldson-thomas invariants",
+          "heading": false
+        }
+      ],
+      "extract": "1\\) Assume that a $3$-dimensional Calabi-Yau category $\\CC$ is generated by one spherical object $E$ defined over $\\k$. Therefore $R:=\\op{Ext}^{\\bullet}(E,E)\\simeq H^{\\bullet}(S^3,\\k)$. In this case we take $\\Gamma=K_0(\\CC(\\kk))\\simeq \\Z\\cdot \\op{cl}_{\\kk}(E)$, and the skew-symmetric form on $\\Gamma$ is trivial. In order to choose an orientation data, let us fix a basis $r_0=1,r_3$ in the algebra $R$ (the subscript",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-d0-d6-bps-bound-states-an-example-related-to-the",
+      "number": null,
+      "title": "D0-D6 BPS bound states: an example related to the MacMahon function",
+      "level": 2,
+      "pageStart": 105,
+      "pageEnd": 109,
+      "labelStart": "105",
+      "labelEnd": "109",
+      "words": 1098,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "geqslant gamma",
+          "heading": false
+        },
+        {
+          "term": "sheaves cal",
+          "heading": false
+        },
+        {
+          "term": "sheaf cal",
+          "heading": false
+        },
+        {
+          "term": "omega tau",
+          "heading": false
+        },
+        {
+          "term": "prod geqslant",
+          "heading": false
+        },
+        {
+          "term": "macmahon function",
+          "heading": true
+        },
+        {
+          "term": "object cal",
+          "heading": false
+        },
+        {
+          "term": "semistable objects",
+          "heading": false
+        }
+      ],
+      "extract": "Let $X$ be a compact $3d$ Calabi-Yau manifold over $\\k$, such that $H^1(X,{\\cal O}_X)=0$. We denote by $\\CC^{(0,6)}$ the ind-constructible triangulated category generated by the structure sheaf ${\\cal O}_X$ and torsion sheaves ${\\cal O}_x, x\\in X$.[^1] This category has a $t$-structure with the heart consisting of coherent sheaves on $X$ which are trivial vector bundles outside of a finite set. Then ${\\cal O}_X$ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-quasi-classical-limit-and-integrality-conjecture",
+      "number": null,
+      "title": "Quasi-classical limit and integrality conjecture",
+      "level": 1,
+      "pageStart": 109,
+      "pageEnd": 109,
+      "labelStart": "109",
+      "labelEnd": "109",
+      "words": 6,
+      "summary": null,
+      "keywords": [],
+      "extract": "Quasi-classical limit and integrality conjec- ture",
+      "extractCut": false
+    },
+    {
+      "id": "sec-039-quasi-classical-limit-numerical-dt-invariants",
+      "number": null,
+      "title": "Quasi-classical limit, numerical DT-invariants",
+      "level": 2,
+      "pageStart": 109,
+      "pageEnd": 112,
+      "labelStart": "109",
+      "labelEnd": "112",
+      "words": 994,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quasi-classical limit",
+          "heading": true
+        },
+        {
+          "term": "gamma hat",
+          "heading": false
+        },
+        {
+          "term": "rangle gamma",
+          "heading": false
+        },
+        {
+          "term": "langle gamma",
+          "heading": false
+        },
+        {
+          "term": "cal gamma",
+          "heading": false
+        },
+        {
+          "term": "cap gamma",
+          "heading": false
+        },
+        {
+          "term": "prod gamma",
+          "heading": false
+        },
+        {
+          "term": "subring prod",
+          "heading": false
+        }
+      ],
+      "extract": "The elements $A_{V,q}\\in {\\cal R}_{V,q}$ corresponding to $A_V^{mot}$ are series in $\\hat{e}_{\\gamma},\\gamma\\in \\Gamma$ with coefficients which are rational functions in $q^{1/2}$. They can have poles as $q^n=1$ for some $n\\geqslant 1$. Hence it is not clear how to take the quasi-classical limit as $q^{1/2}\\to -1$ (this corresponds to the taking of Euler characteristic of the corresponding motives). Let us assume",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-deformation-invariance-and-intermediate-jacobian",
+      "number": null,
+      "title": "Deformation invariance and intermediate Jacobian",
+      "level": 2,
+      "pageStart": 112,
+      "pageEnd": 115,
+      "labelStart": "112",
+      "labelEnd": "115",
+      "words": 1008,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cal tot",
+          "heading": false
+        },
+        {
+          "term": "fibration cal",
+          "heading": false
+        },
+        {
+          "term": "odd supset",
+          "heading": false
+        },
+        {
+          "term": "dots supset",
+          "heading": false
+        },
+        {
+          "term": "even supset",
+          "heading": false
+        },
+        {
+          "term": "space cal",
+          "heading": false
+        },
+        {
+          "term": "top odd",
+          "heading": false
+        },
+        {
+          "term": "numerical dt-invariants",
+          "heading": false
+        }
+      ],
+      "extract": "We also expect the following (not very precise) conjecture to be true as well. ::: conj The collection $(\\Omega(\\gamma))_{\\gamma \\in \\Gamma}$ is invariant with respect to the \"polarization preserving\\\" deformations of $\\CC$, in the case when $\\CC$ is homologically smooth in the sense of [@KoSo3]. ::: The motivation for the last Conjecture is the deformation invariance of the virtual fundamental class in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-absence-of-poles-in-the-series-avhall",
+      "number": null,
+      "title": "Absence of poles in the series AVHall",
+      "level": 2,
+      "pageStart": 115,
+      "pageEnd": 120,
+      "labelStart": "115",
+      "labelEnd": "120",
+      "words": 1436,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hat gamma",
+          "heading": false
+        },
+        {
+          "term": "r-mod",
+          "heading": false
+        },
+        {
+          "term": "mot",
+          "heading": false
+        },
+        {
+          "term": "sum geqslant",
+          "heading": false
+        },
+        {
+          "term": "dim infty",
+          "heading": false
+        },
+        {
+          "term": "hall algebra",
+          "heading": false
+        },
+        {
+          "term": "widehat",
+          "heading": false
+        },
+        {
+          "term": "ind-constructible",
+          "heading": false
+        }
+      ],
+      "extract": "Here we are going to discuss a stronger version of the Conjecture 5. ::: conj Let $\\overline{D^+}:=\\overline{{\\cal M}^{\\mu}}(Spec(\\k))[{\\mathbb L}^{-1/2}]$ be the ring of equivalence classes of motivic functions. Then the automorphism of the motivic quantum torus given by $x\\mapsto A_V^{mot}x(A_V^{mot})^{-1}$ preserves the subring $\\prod_{\\gamma\\in C(V)\\cap \\Gamma}\\overline{D^+}\\hat{e}_{\\gamma}$ for all strict",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-reduction-to-the-case-of-category-of-modules",
+      "number": null,
+      "title": "Reduction to the case of category of modules",
+      "level": 2,
+      "pageStart": 120,
+      "pageEnd": 125,
+      "labelStart": "120",
+      "labelEnd": "125",
+      "words": 1777,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "simeq b-mod",
+          "heading": false
+        },
+        {
+          "term": "category b-mod",
+          "heading": false
+        },
+        {
+          "term": "oplus alpha",
+          "heading": false
+        },
+        {
+          "term": "prod geqslant",
+          "heading": false
+        },
+        {
+          "term": "category cal",
+          "heading": false
+        },
+        {
+          "term": "cyclic object",
+          "heading": false
+        },
+        {
+          "term": "sum geqslant",
+          "heading": false
+        },
+        {
+          "term": "cyclic iff",
+          "heading": false
+        }
+      ],
+      "extract": "Here we present two special cases when the conjecture holds. 1\\) Assume that the abelian category ${\\cal A}(\\kk)$ contains only one[^1] (up to an isomorphism) simple object $E\\ne 0$, and this object is defined over the field $\\k$. Hence $\\op{Ext}^0_{\\CC(\\k)}(E,E)\\simeq \\k$. We also assume that $\\A$-algebra $\\op{Hom}^\\bullet(E,E)$ is minimal, i.e. $m_1=0$, and hence $\\op{Hom}^\\bullet(E,E)=\\op {Ext}^\\bullet(E,E)$. :::",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-evidence-for-the-integrality-conjecture",
+      "number": null,
+      "title": "Evidence for the integrality conjecture",
+      "level": 2,
+      "pageStart": 125,
+      "pageEnd": 128,
+      "labelStart": "125",
+      "labelEnd": "128",
+      "words": 1243,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sum geqslant",
+          "heading": false
+        },
+        {
+          "term": "prod geqslant",
+          "heading": false
+        },
+        {
+          "term": "leqslant",
+          "heading": false
+        },
+        {
+          "term": "chi phi",
+          "heading": false
+        },
+        {
+          "term": "cycl",
+          "heading": false
+        },
+        {
+          "term": "euler characteristic",
+          "heading": false
+        },
+        {
+          "term": "cyclic modules",
+          "heading": false
+        },
+        {
+          "term": "cyclic objects",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we present arguments in favor of the integrality of the \"numerical\\\" DT-invariants $\\Omega(\\gamma)$. Recall that if $E$ is an object of a $\\k$-linear triangulated category, then we say that $E$ is a Schur object if $$\\op{Ext}^{<0}(E,E)=0,\\,\\,\\,\\op{Ext}^0(E,E)\\simeq \\k\\cdot id_E\\,\\,.$$ Let us assume now that $\\CC$ is an ind-constructible $3d$ Calabi-Yau category generated by a Schur object $E\\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-donaldson-thomas-invariants-and-cluster-transfor",
+      "number": null,
+      "title": "Donaldson-Thomas invariants and cluster transformations",
+      "level": 1,
+      "pageStart": 128,
+      "pageEnd": 128,
+      "labelStart": "128",
+      "labelEnd": "128",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "transformations",
+      "extractCut": false
+    },
+    {
+      "id": "sec-045-spherical-collections-and-mutations",
+      "number": null,
+      "title": "Spherical collections and mutations",
+      "level": 2,
+      "pageStart": 128,
+      "pageEnd": 136,
+      "labelStart": "128",
+      "labelEnd": "136",
+      "words": 2678,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ext cal",
+          "heading": false
+        },
+        {
+          "term": "cal prime",
+          "heading": false
+        },
+        {
+          "term": "collection cal",
+          "heading": false
+        },
+        {
+          "term": "category cal",
+          "heading": false
+        },
+        {
+          "term": "ext bullet",
+          "heading": false
+        },
+        {
+          "term": "cal admits",
+          "heading": false
+        },
+        {
+          "term": "cluster collection",
+          "heading": false
+        },
+        {
+          "term": "calabi-yau category",
+          "heading": false
+        }
+      ],
+      "extract": "Let ${\\cal C}$ be a $3$-dimensional ind-constructible Calabi-Yau category over a field $\\k$ of characteristic zero. Assume that it is endowed with a finite collection of spherical generators ${\\cal E}=\\{E_i\\}_{i\\in I}$ of ${\\cal C}$ defined over $\\k$. Then $\\op{Ext}_{\\cal C(\\k)}^\\bullet(E_i,E_i)$ is isomorphic to $H^{\\bullet}(S^3,\\k ), \\,\\,i\\in I$. The matrix of the Euler form (taken with the *minus* sign)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-orientation-data-for-cluster-collections",
+      "number": null,
+      "title": "Orientation data for cluster collections",
+      "level": 2,
+      "pageStart": 136,
+      "pageEnd": 137,
+      "labelStart": "136",
+      "labelEnd": "137",
+      "words": 263,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "leqslant cal",
+          "heading": false
+        },
+        {
+          "term": "tau leqslant",
+          "heading": false
+        },
+        {
+          "term": "tau geqslant",
+          "heading": false
+        },
+        {
+          "term": "cal prime",
+          "heading": false
+        },
+        {
+          "term": "orientation data",
+          "heading": true
+        },
+        {
+          "term": "ext bullet",
+          "heading": false
+        },
+        {
+          "term": "let cal",
+          "heading": false
+        },
+        {
+          "term": "cluster",
+          "heading": true
+        }
+      ],
+      "extract": "Let ${\\cal E}=(E_i)_{i\\in I}$ be a cluster collection. We set $R:=R_{\\cal E}= \\op{Ext}^\\bullet(E,E)$, where $E=\\oplus_{i\\in I}E_i$. Then $R$ is an $\\A$-algebra. We denote by $M:=M_{\\cal E}$ the algebra $R$ considered as $R$-bimodule. Using the truncation functors $\\tau_{\\leqslant i}$ and $\\tau_{\\geqslant i}$ we define a sub-bimodule $M_{\\geqslant 2}=\\tau_{\\geqslant 2}M$ as well as a quotient bimodule $M/M_{\\geqslant",
+      "extractCut": true
+    },
+    {
+      "id": "sec-047-quantum-dt-invariants-for-quivers",
+      "number": null,
+      "title": "Quantum DT-invariants for quivers",
+      "level": 2,
+      "pageStart": 137,
+      "pageEnd": 137,
+      "labelStart": "137",
+      "labelEnd": "137",
+      "words": 278,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hat vee",
+          "heading": false
+        },
+        {
+          "term": "torus cal",
+          "heading": false
+        },
+        {
+          "term": "generators hat",
+          "heading": false
+        },
+        {
+          "term": "quantum torus",
+          "heading": false
+        },
+        {
+          "term": "hall",
+          "heading": false
+        },
+        {
+          "term": "poles",
+          "heading": false
+        },
+        {
+          "term": "mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "For any $\\sigma\\in U_{{\\cal E}}$ (recall domain $U_{{\\cal E}}$ introduced at the end of Section 8.1) we have the corresponding element $A_V^{\\op{Hall}}$, where $V$ is any strict sector containing all $Z(E_i), i\\in I$. The element $A_V^{\\op{Hall}}$ does not depend on $\\sigma$. Moreover, this element depends only on the gauge equivalence class of the corresponding potential. The associated element $A_{V,q}:=A_{{\\cal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-quivers-and-cluster-transformations",
+      "number": null,
+      "title": "Quivers and cluster transformations",
+      "level": 2,
+      "pageStart": 137,
+      "pageEnd": 143,
+      "labelStart": "137",
+      "labelEnd": null,
+      "words": 1787,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hat prime",
+          "heading": false
+        },
+        {
+          "term": "hat vee",
+          "heading": false
+        },
+        {
+          "term": "cal prime",
+          "heading": false
+        },
+        {
+          "term": "array hat",
+          "heading": false
+        },
+        {
+          "term": "gamma vee",
+          "heading": false
+        },
+        {
+          "term": "hat mapsto",
+          "heading": false
+        },
+        {
+          "term": "prime cdot",
+          "heading": false
+        },
+        {
+          "term": "phi cal",
+          "heading": false
+        }
+      ],
+      "extract": "The formal power series ${\\bf E}_Q$ in $\\hat{e}_i,\\,\\,i\\in I$ defined in the previous section satisfy a number of remarkable properties. 1\\) If $|I|=1$ then $Q$ is a quiver with one vertex $i$. We have $${\\bf E}_Q={\\bf E}(\\hat{e}_i)\\,\\,,$$ where ${\\bf E}$ is the quantum dilogarithm function. 2\\) Let $I=I_1\\sqcup I_2$ , and we assume that $a_{i_1,i_2}<0$ for any $i_1\\in I_1, i_2\\in I_2$. Then we have two subquivers",
+      "extractCut": true
+    },
+    {
+      "id": "sec-049-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 143,
+      "pageEnd": 148,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1064,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calabi-yau folds",
+          "heading": false
+        },
+        {
+          "term": "a-inﬁnity algebras",
+          "heading": false
+        },
+        {
+          "term": "arxiv",
+          "heading": false
+        },
+        {
+          "term": "non-commutative geometry",
+          "heading": false
+        },
+        {
+          "term": "donaldson-thomas invariants",
+          "heading": false
+        },
+        {
+          "term": "triangulated categories",
+          "heading": false
+        },
+        {
+          "term": "mirror symmetry",
+          "heading": false
+        },
+        {
+          "term": "quiver moduli",
+          "heading": false
+        }
+      ],
+      "extract": "[1] A. Bayer, Polynomial Bridgeland stability conditions and the large vol- ume limit, arXiv:0712.1083. [2] K. Behrend, Donaldson-Thomas invariants via microlocal geometry, math/0507523. [3] K. Behrend, A. Dhillon, On the Motive of the Stack of Bundles, math/0512640. [4] K. Behrend, B. Fantechi, Symmetric obstruction theories and Hilbert schemes of points on threefolds, math/0512556. [5] E. Bierstone, P. Milman,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "November 26,"
+        ]
+      },
+      "found_not_listed": {
+        "count": 2,
+        "items": [
+          "6.2 Motivic weights and stability data on motivic quantum tori",
+          "8.4 Quivers and cluster transformations"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "cal gamma",
+      "heading": false
+    },
+    {
+      "term": "geqslant gamma",
+      "heading": false
+    },
+    {
+      "term": "ext cal",
+      "heading": false
+    },
+    {
+      "term": "category cal",
+      "heading": false
+    },
+    {
+      "term": "cal simeq",
+      "heading": false
+    },
+    {
+      "term": "cal prime",
+      "heading": false
+    },
+    {
+      "term": "overline cal",
+      "heading": false
+    },
+    {
+      "term": "cal hom",
+      "heading": false
+    },
+    {
+      "term": "cal subset",
+      "heading": false
+    },
+    {
+      "term": "ast cal",
+      "heading": false
+    },
+    {
+      "term": "cal alpha",
+      "heading": false
+    },
+    {
+      "term": "cal times",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 54,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 55,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 57,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 58,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 59,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 61,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 63,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 64,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 65,
+      "label": "65",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 66,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 67,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 68,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 69,
+      "label": "69",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 70,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 71,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 72,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 73,
+      "label": "73",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 74,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 75,
+      "label": "75",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 76,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 77,
+      "label": "77",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 78,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 79,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 80,
+      "label": "80",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 81,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 82,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 83,
+      "label": "83",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 84,
+      "label": "84",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 85,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 86,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 87,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 88,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 89,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 90,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 91,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 92,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 93,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 94,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 95,
+      "label": "95",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 96,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 97,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 98,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 99,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 100,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 101,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 102,
+      "label": "102",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 103,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 104,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 105,
+      "label": "105",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 106,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 107,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 108,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 109,
+      "label": "109",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 110,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 111,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 112,
+      "label": "112",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 113,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 114,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 115,
+      "label": "115",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 116,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 117,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 118,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 119,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 120,
+      "label": "120",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 121,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 122,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 123,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 124,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 125,
+      "label": "125",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 126,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 127,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 128,
+      "label": "128",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 129,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 130,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 131,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 132,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 133,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 134,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 135,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 136,
+      "label": "136",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 137,
+      "label": "137",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 138,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 139,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 140,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 141,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 142,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 143,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 144,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 145,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 146,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 147,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 148,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 51,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 51,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p143); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 28
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 51 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0811.2435v1"
+  }
+}

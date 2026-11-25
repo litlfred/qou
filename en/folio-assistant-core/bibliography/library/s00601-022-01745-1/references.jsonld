@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/s00601-022-01745-1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Celebrating 30 Years of Steven Weinberg's Paper Nuclear Forces from Chiral Lagrangians - an Introduction to the Special Issue",
+      "dcterms:creator": [
+        "Kievsky, Alejandro"
+      ],
+      "dcterms:issued": "D:20220525",
+      "bibo:doi": "10.1007/s00601-022-01745-1",
+      "dcterms:identifier": "https://doi.org/10.1007/s00601-022-01745-1",
+      "dcterms:source": "library/s00601-022-01745-1/manifest.jsonld",
+      "dcterms:hasVersion": "library/s00601-022-01745-1"
+    }
+  ]
+}

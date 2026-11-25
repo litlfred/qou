@@ -1,0 +1,54 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/bq28-r2r7/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Classical and Quantum Algorithms for Characters of the Symmetric Group",
+  "contains": [
+    "library/bq28-r2r7/sections/sec-front-matter",
+    "library/bq28-r2r7/sections/sec-000",
+    "library/bq28-r2r7/sections/sec-001",
+    "library/bq28-r2r7/sections/sec-002",
+    "library/bq28-r2r7/sections/sec-003",
+    "library/bq28-r2r7/sections/sec-004",
+    "library/bq28-r2r7/sections/sec-005",
+    "library/bq28-r2r7/sections/sec-006",
+    "library/bq28-r2r7/sections/sec-007",
+    "library/bq28-r2r7/sections/sec-008",
+    "library/bq28-r2r7/sections/sec-009",
+    "library/bq28-r2r7/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Classical and Quantum Algorithms for Characters of the Symmetric Group — 12 sections: Front matter; I.. INTRODUCTION; II.. GROUP THEORY REFRESHER\n\n**Classical and Quantum Algorithms for Characters of the Symmetric Group**\n\n*Classical and Quantum Algorithms for Characters of the Symmetric Group*\n\n15 pp, 12 sections.\n\n**Outline.** Front matter; I.. INTRODUCTION; II.. GROUP THEORY REFRESHER; III.. BUILDING THE CHARACTER; IV.. CLASSICAL MPS ALGORITHMS; V.. QUANTUM ALGORITHM; VI.. CLASSICAL COMPLEXITY OF SAMPLING; A.. Granularity and quantum advantage; B.. Row and column sampling; VII.. CLASSICAL MPS ALGORITHM FOR KOSTKA NUMBE; . ACKNOWLEDGMENTS; . DATA AVAILABILITY",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "bq28-r2r7",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "bq28-r2r7.pdf",
+    "source_sha256": "38419a88531ebce78cc3845ce7ae0fca2cc21ae026a719724865c9400bbd20fe",
+    "pages": 15,
+    "arxiv": null,
+    "doi": "10.1103/bq28-r2r7",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,1772 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "aif-2009-59-1-347-0",
+  "title": "On q-summation and confluence",
+  "variant": "pdf",
+  "pages": 47,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Part 1. Convergent q-Borel and q-Laplace transform and confluence: the case q<1",
+      "number": null,
+      "page": 7,
+      "pageLabel": "352",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-part-1-convergent-q-borel-and-q-laplace-transfor"
+    },
+    {
+      "level": 2,
+      "title": "Convergent q-Euler series",
+      "number": "1",
+      "page": 8,
+      "pageLabel": "353",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-1-convergent-q-euler-series"
+    },
+    {
+      "level": 3,
+      "title": "Integral representation",
+      "number": "1.1",
+      "page": 9,
+      "pageLabel": "354",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-11-integral-representation"
+    },
+    {
+      "level": 3,
+      "title": "Confluence",
+      "number": "1.2",
+      "page": 10,
+      "pageLabel": "355",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-12-confluence"
+    },
+    {
+      "level": 2,
+      "title": "Confluence of the convergent q-analogue of Borel-Laplace summation",
+      "number": "2",
+      "page": 14,
+      "pageLabel": "359",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-2-confluence-of-the-convergent-q-analogue-of-bor"
+    },
+    {
+      "level": 3,
+      "title": "Definition of the convergent q-Borel and q-Laplace transform",
+      "number": "2.1",
+      "page": 14,
+      "pageLabel": "359",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-21-definition-of-the-convergent-q-borel-and-q-la"
+    },
+    {
+      "level": 3,
+      "title": "Main result",
+      "number": "2.2",
+      "page": 16,
+      "pageLabel": "361",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-22-main-result"
+    },
+    {
+      "level": 3,
+      "title": "Applications",
+      "number": "2.3",
+      "page": 17,
+      "pageLabel": "362",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-23-applications"
+    },
+    {
+      "level": 3,
+      "title": "Proof of Theorem 2.6",
+      "number": "2.4",
+      "page": 19,
+      "pageLabel": "364",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-24-proof-of-theorem-26"
+    },
+    {
+      "level": 2,
+      "title": "Appendix A. Jackson's integral",
+      "number": null,
+      "page": 21,
+      "pageLabel": "366",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-appendix-a-jacksons-integral"
+    },
+    {
+      "level": 2,
+      "title": "Appendix B. Expansion of Eq(x) at",
+      "number": null,
+      "page": 22,
+      "pageLabel": "367",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-appendix-b-expansion-of-eqx-at"
+    },
+    {
+      "level": 3,
+      "title": "B.1. Degenerate cases of the Watson's formula",
+      "number": null,
+      "page": 23,
+      "pageLabel": "368",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-b1-degenerate-cases-of-the-watsons-formula"
+    },
+    {
+      "level": 3,
+      "title": "B.2. Proof of Proposition 1.5",
+      "number": null,
+      "page": 28,
+      "pageLabel": "373",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-b2-proof-of-proposition-15"
+    },
+    {
+      "level": 1,
+      "title": "Part 2. Summation of divergent q-series and confluence: the case q>1",
+      "number": null,
+      "page": 28,
+      "pageLabel": "373",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-part-2-summation-of-divergent-q-series-and-confl"
+    },
+    {
+      "level": 2,
+      "title": "The divergent q-Euler series",
+      "number": "3",
+      "page": 29,
+      "pageLabel": "374",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-3-the-divergent-q-euler-series"
+    },
+    {
+      "level": 3,
+      "title": "Definition of different sums of the q-Euler series",
+      "number": "3.1",
+      "page": 29,
+      "pageLabel": "374",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-31-definition-of-different-sums-of-the-q-euler-s"
+    },
+    {
+      "level": 3,
+      "title": "q-integral and continuous integral",
+      "number": "3.2",
+      "page": 31,
+      "pageLabel": "376",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-32-q-integral-and-continuous-integral"
+    },
+    {
+      "level": 3,
+      "title": "Comparing sums along different spirals",
+      "number": "3.3",
+      "page": 34,
+      "pageLabel": "379",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-33-comparing-sums-along-different-spirals"
+    },
+    {
+      "level": 3,
+      "title": "Confluence",
+      "number": "3.4",
+      "page": 35,
+      "pageLabel": "380",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-34-confluence"
+    },
+    {
+      "level": 2,
+      "title": "Generic q-Gevrey series",
+      "number": "4",
+      "page": 36,
+      "pageLabel": "381",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-4-generic-q-gevrey-series"
+    },
+    {
+      "level": 3,
+      "title": "Two formal q-Borel transforms",
+      "number": "4.1",
+      "page": 36,
+      "pageLabel": "381",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-41-two-formal-q-borel-transforms"
+    },
+    {
+      "level": 3,
+      "title": "Different kinds of q-exponential summation",
+      "number": "4.2",
+      "page": 38,
+      "pageLabel": "383",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-42-different-kinds-of-q-exponential-summation"
+    },
+    {
+      "level": 3,
+      "title": "The Tschakaloff series",
+      "number": "4.3",
+      "page": 41,
+      "pageLabel": "386",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-43-the-tschakaloff-series"
+    },
+    {
+      "level": 3,
+      "title": "The functional space H in the Borel plane",
+      "number": "4.4",
+      "page": 42,
+      "pageLabel": "387",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-44-the-functional-space-h-in-the-borel-plane"
+    },
+    {
+      "level": 3,
+      "title": "Proof of Theorem 4.14",
+      "number": "4.5",
+      "page": 45,
+      "pageLabel": "390",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-45-proof-of-theorem-414"
+    },
+    {
+      "level": 2,
+      "title": "Bibliography",
+      "number": null,
+      "page": 46,
+      "pageLabel": "391",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-bibliography"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 373,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "une équation",
+          "heading": false
+        },
+        {
+          "term": "vizio changgui",
+          "heading": false
+        },
+        {
+          "term": "institut fourier",
+          "heading": false
+        },
+        {
+          "term": "changgui zhang",
+          "heading": false
+        },
+        {
+          "term": "cet article",
+          "heading": false
+        },
+        {
+          "term": "dans",
+          "heading": false
+        },
+        {
+          "term": "nous",
+          "heading": false
+        },
+        {
+          "term": "partie",
+          "heading": false
+        }
+      ],
+      "extract": "A N N A L E S D E L ’ I N S T I T U T F O U R I E R ANNALES DE L’INSTITUT FOURIER Lucia DI VIZIO & Changgui ZHANG On q-summation and conﬂuence Tome 59, no 1 (2009), p. 347-392. <http://aif.cedram.org/item?id=AIF_2009__59_1_347_0> © Association des Annales de l’institut Fourier, 2009, tous droits réservés. L’accès aux articles de la revue « Annales de l’institut Fourier » (http://aif.cedram.org/), implique l’accord",
+      "extractCut": true,
+      "blocks": [
+        "library/aif-2009-59-1-347-0/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": "352",
+      "words": 2042,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "series ˆeq",
+          "heading": false
+        },
+        {
+          "term": "fuchsian diﬀerential",
+          "heading": false
+        },
+        {
+          "term": "vizio changgui",
+          "heading": false
+        },
+        {
+          "term": "q-diﬀerence equations",
+          "heading": false
+        },
+        {
+          "term": "summation procedures",
+          "heading": false
+        },
+        {
+          "term": "changgui zhang",
+          "heading": false
+        },
+        {
+          "term": "gevrey series",
+          "heading": false
+        },
+        {
+          "term": "converges coeﬃcientwise",
+          "heading": false
+        }
+      ],
+      "extract": "Let C[[x]] be the ring of formal power series with complex coeﬃcients and C{x} the ring of germs of analytic functions at zero. A divergent formal power series ˆf = P n⩾0 fnxn+1 ∈xC[[x]] ∖xC{x} is said to be a generic Gevrey series if it is solution of a diﬀerential equation of the form (0.1) an(x) \u0000x2∂ \u0001n y(x)+an−1(x) \u0000x2∂ \u0001n−1 y(x)+· · ·+a0(x)y(x) = g(x), where ∂= d dx and a0(x), . . . , an(x), g(x) ∈C{x}, with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-part-1-convergent-q-borel-and-q-laplace-transfor",
+      "number": null,
+      "title": "Part 1. Convergent q-Borel and q-Laplace transform and confluence: the case q<1",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "352",
+      "labelEnd": "353",
+      "words": 150,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "confluence",
+          "heading": true
+        },
+        {
+          "term": "coeﬃcientwise",
+          "heading": false
+        },
+        {
+          "term": "qxn",
+          "heading": false
+        },
+        {
+          "term": "venient",
+          "heading": false
+        }
+      ],
+      "extract": "conﬂuence: the case q < 1 We suppose that q ∈(0, 1) ⊂R and we set p = q−1. The ﬁrst part of the paper is organized as follows. First of all we study the properties of the q-deformation Eq(x) = P n⩾0(−1)n[n]! qxn of the Euler series: namely we give two integral representations for Eq(x), and use them for proving that Eq(x) converges uniformly to the Borel sum of ˆE(x) = ANNALES DE L’INSTITUT FOURIER ON q-SUMMATION",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-1-convergent-q-euler-series",
+      "number": "1",
+      "title": "Convergent q-Euler series",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "353",
+      "labelEnd": "354",
+      "words": 371,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qnx",
+          "heading": false
+        },
+        {
+          "term": "qxn",
+          "heading": false
+        },
+        {
+          "term": "analytic function",
+          "heading": false
+        },
+        {
+          "term": "spiral",
+          "heading": false
+        },
+        {
+          "term": "qia",
+          "heading": false
+        }
+      ],
+      "extract": "The series Eq(x) = X n⩾0 (−1)n[n]! qxn+1, where [0]q = 1, [n]q = qn−1 q−1 and [n]! q = [n]q[n −1]q · · · [1]q, represents a germ of analytic function at 0. If one considers the q-derivation: dqy = y(qx) −y(x) (q −1)x and observes that dqxn = [n]qxn−1 for any n ∈Z, n ⩾1, then one easily sees that Eq(x) veriﬁes the functional equation : x2dqy + y = x, that can be rewritten in the form: y(x) = x x + 1 −q y(qx) −(q −1)x",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-11-integral-representation",
+      "number": "1.1",
+      "title": "Integral representation",
+      "level": 3,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "354",
+      "labelEnd": "355",
+      "words": 136,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dqt",
+          "heading": false
+        },
+        {
+          "term": "integral",
+          "heading": true
+        },
+        {
+          "term": "veriﬁes",
+          "heading": false
+        }
+      ],
+      "extract": "Using the Jackson’s integral (cf. Appendix A for the deﬁnition) we obtain the following integral representation for Eq: Proposition 1.2. — For any x ∈C ∖{(q −1)qn : n ∈Z, n ⩽0}, we have: (1.4) Eq(x) = Z x 1−q 0 (q(1 −q) t x; q)∞ t + 1 dqt = Z qZ x 1−q (q(1 −q) t x; q)∞ t + 1 dqt. Proof. — Let us remark that (q−k; q)∞= 0 for any k ∈Z, k ⩾0. Then it follows from Remark A.5, that Formula (1.1) is equivalent to (1.4) □",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-12-confluence",
+      "number": "1.2",
+      "title": "Confluence",
+      "level": 3,
+      "pageStart": 10,
+      "pageEnd": 14,
+      "labelStart": "355",
+      "labelEnd": "359",
+      "words": 1226,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "confluence",
+          "heading": true
+        },
+        {
+          "term": "analytic continuation",
+          "heading": false
+        },
+        {
+          "term": "euler constant",
+          "heading": false
+        },
+        {
+          "term": "institut fourier",
+          "heading": false
+        },
+        {
+          "term": "logarithmic derivative",
+          "heading": false
+        },
+        {
+          "term": "analytic function",
+          "heading": false
+        },
+        {
+          "term": "q-summation",
+          "heading": false
+        },
+        {
+          "term": "annales",
+          "heading": false
+        }
+      ],
+      "extract": "355 In the present article, we will denote by ep(x) and eq(x) the functions obtained by replacing n! by [n]! p and [n]! q, respectively, in the Tarlor ex- pansion at zero of the exponential function ex. Since Euler, one knows that (q(1 −q)x; q)∞coincides with the analytic function at 0: ep(−qx) := X n⩾0 (−qx)n [n]!p , so that Equation (1.4) takes the more familiar shape: Eq(x) = Z x 1−q 0 ep(−qt/x) t + 1 dqt, that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-2-confluence-of-the-convergent-q-analogue-of-bor",
+      "number": "2",
+      "title": "Confluence of the convergent q-analogue of Borel-Laplace summation",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "359",
+      "labelEnd": "359",
+      "words": 29,
+      "summary": null,
+      "keywords": [],
+      "extract": "Borel-Laplace summation Let q be a real number in the open interval (0, 1). We want to general- ize, under convenient reasonable assumptions, the results of the previous section.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-21-definition-of-the-convergent-q-borel-and-q-la",
+      "number": "2.1",
+      "title": "Definition of the convergent q-Borel and q-Laplace transform",
+      "level": 3,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "359",
+      "labelEnd": "361",
+      "words": 526,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-borel transform",
+          "heading": true
+        },
+        {
+          "term": "q-laplace transform",
+          "heading": true
+        },
+        {
+          "term": "convergent",
+          "heading": true
+        },
+        {
+          "term": "bqf",
+          "heading": false
+        },
+        {
+          "term": "qnx",
+          "heading": false
+        },
+        {
+          "term": "residue theorem",
+          "heading": false
+        },
+        {
+          "term": "analytic",
+          "heading": false
+        },
+        {
+          "term": "series",
+          "heading": false
+        }
+      ],
+      "extract": "transform Definition 2.1. — Let C{x} be the ring of the germs of analytic func- tions in the neighborhood of x = 0. (1) We call (convergent) q-Borel transform the map Bq given by: Bq : xC {x} →C{ξ}, X n⩾0 anxn+1 7→ X n⩾0 an [n]!q ξn. (2) The (convergent) q-Laplace transform Lq is deﬁned by Lq = B−1 q : C{ξ} →xC {x} , X n⩾0 anξn 7→ X n⩾0 an[n]! qxn+1. Remark 2.2. — Notice that the q-Euler series Eq(x), considered in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-22-main-result",
+      "number": "2.2",
+      "title": "Main result",
+      "level": 3,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "361",
+      "labelEnd": "362",
+      "words": 515,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non resonant",
+          "heading": false
+        },
+        {
+          "term": "bqy",
+          "heading": false
+        },
+        {
+          "term": "eid",
+          "heading": false
+        },
+        {
+          "term": "fuchsian",
+          "heading": false
+        },
+        {
+          "term": "continuous functions",
+          "heading": false
+        },
+        {
+          "term": "jordan",
+          "heading": false
+        },
+        {
+          "term": "arg",
+          "heading": false
+        },
+        {
+          "term": "exponents",
+          "heading": false
+        }
+      ],
+      "extract": "The formulas above suggest the convergence of the q-Laplace transform Lqφ to the classical Laplace transform Ldφ (in the direction d ∈(0, 2π)): (2.2) Ld(φ)(x) = Z ∞eid 0 φ(ξ)e−ξ x dξ, where φ is supposed to be holomorphic in a neighborhood of ξ = 0 and to be analytically continued in an open sector {| arg ξ −d| < ϵ} with at most an exponential growth at inﬁnity. Theorem 2.6. — Let y(q, x) = P n⩾0 yn(q)xn+1 ∈xC[[x]]",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-23-applications",
+      "number": "2.3",
+      "title": "Applications",
+      "level": 3,
+      "pageStart": 17,
+      "pageEnd": 19,
+      "labelStart": "362",
+      "labelEnd": "364",
+      "words": 489,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hypergeometric conﬂuent",
+          "heading": false
+        },
+        {
+          "term": "conﬂuent series",
+          "heading": false
+        },
+        {
+          "term": "basic hypergeometric",
+          "heading": false
+        },
+        {
+          "term": "sector centered",
+          "heading": false
+        },
+        {
+          "term": "convenient sector",
+          "heading": false
+        },
+        {
+          "term": "compacts",
+          "heading": false
+        },
+        {
+          "term": "borel sum",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential equation",
+          "heading": false
+        }
+      ],
+      "extract": "Notice that the assumptions of Theorem 2.6 are veriﬁed in the following two natural situations. 2.8 (“Constant coeﬃcient deformation” of a diﬀerential equation). — For a linear diﬀerential equation Pµ i=0 Ai(x)δiy = 0, a possible trivial defor- mation is given by Pµ i=0 Ai(x)δi qy = 0. One veriﬁes that if Pµ i=0 Ai(ξ)δiy = 0 satisﬁes the ﬁrst point of Assumption 2.7, then Pµ i=0 Ai(ξ)δi qy = 0 veri- ﬁes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-24-proof-of-theorem-26",
+      "number": "2.4",
+      "title": "Proof of Theorem 2.6",
+      "level": 3,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": "364",
+      "labelEnd": "366",
+      "words": 936,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uniform convergence",
+          "heading": false
+        },
+        {
+          "term": "recursive relation",
+          "heading": false
+        },
+        {
+          "term": "whose coeﬃcients",
+          "heading": false
+        },
+        {
+          "term": "entries",
+          "heading": false
+        },
+        {
+          "term": "frobenius",
+          "heading": false
+        },
+        {
+          "term": "estimates",
+          "heading": false
+        },
+        {
+          "term": "analytic",
+          "heading": false
+        }
+      ],
+      "extract": "We know that our germs φ(q, ξ), q ∈(η, 1], of analytic functions at 0 admit an analytic continuation along d. Moreover, for q < 1, the functions φ(q, ξ) are actually meromorphic over C, which means that they are linear combination of a basis of solutions of Nqy = 0 at ∞. The main point of the proof is the careful choice of such a basis, which will allow us to prove that φ(q, x) converges uniformly to φ(1, ξ) on an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-appendix-a-jacksons-integral",
+      "number": null,
+      "title": "Appendix A. Jackson's integral",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "366",
+      "labelEnd": "367",
+      "words": 289,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dqt",
+          "heading": false
+        },
+        {
+          "term": "qnx",
+          "heading": false
+        },
+        {
+          "term": "analytic function",
+          "heading": false
+        },
+        {
+          "term": "side converges",
+          "heading": false
+        },
+        {
+          "term": "disk",
+          "heading": false
+        }
+      ],
+      "extract": "Definition A.1. — We set F(x) = Z x 0 f(t)dqt = (1 −q)x X n⩾0 f(qnx)qn, whenever the right hand side converges. Remark A.2. — 1. Notice that if F(x) is well-deﬁned then dqF(x) = f(x). 2. If f(x) is continuous on the closed disk D(0, r+), then F(x) is well deﬁned for any x ∈D(0, r+). In fact there exists M > 0 such that |f(qnx)qn| ⩽ M|q|n, which guarantees the convergence of the inﬁnite sum. Proposition A.3. — 1. If",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-appendix-b-expansion-of-eqx-at",
+      "number": null,
+      "title": "Appendix B. Expansion of Eq(x) at",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "367",
+      "labelEnd": "368",
+      "words": 327,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "watson formula",
+          "heading": false
+        },
+        {
+          "term": "abx",
+          "heading": false
+        },
+        {
+          "term": "barnes",
+          "heading": false
+        }
+      ],
+      "extract": "The purpose of this section is the proof of Proposition 1.5. We recall the notation (B.1) an+1 = n X k=0 1 qk+1 −1, n ⩾0, A(q) = X n⩾0 qn+1 qn+1 −1, and θ(x) = X n∈Z qn(n−1)/2xn, and the statement of the proposition: Proposition B.1. — For any x ∈C∗\\ q−N: (B.2) X n⩾0 (q; q)nxn+1 = − \u0012 −qxθ′(−qx) θ(−qx) + 1 + A(q) \u0013 \u0010 q x; q \u0011 ∞ + X n⩾1 an (q; q)n qn(n+1)/2 \u0012 −1 x \u0013n . The proof of the proposition above is based on a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-b1-degenerate-cases-of-the-watsons-formula",
+      "number": null,
+      "title": "B.1. Degenerate cases of the Watson's formula",
+      "level": 3,
+      "pageStart": 23,
+      "pageEnd": 28,
+      "labelStart": "368",
+      "labelEnd": "373",
+      "words": 1170,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aqm",
+          "heading": false
+        },
+        {
+          "term": "a2x",
+          "heading": false
+        },
+        {
+          "term": "vizio changgui",
+          "heading": false
+        },
+        {
+          "term": "changgui zhang",
+          "heading": false
+        },
+        {
+          "term": "institut fourier",
+          "heading": false
+        },
+        {
+          "term": "qmx",
+          "heading": false
+        },
+        {
+          "term": "nqn",
+          "heading": false
+        },
+        {
+          "term": "xqm",
+          "heading": false
+        }
+      ],
+      "extract": "Let us ﬁrst consider the case b →aqm, where m denotes a non-negative integer. For this purpose, we introduce the following notation Ωm+1(x) = m X k=0 qkx qkx −1 and Ω0(x) = 0, Ω(x) := Ω∞(x) = lim m→∞Ωm(x). Notice that Ωm(x) may be identiﬁed to a logarithmic derivative as follows: Ωm(x) = x d dx(x; q)m (x; q)m = x d dx log(x; q)m, m ∈N ∪{∞}. Since (x; q)m+n = (x; q)m(xqm; q)n for any m, n ∈N, it follows that (B.4)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-b2-proof-of-proposition-15",
+      "number": null,
+      "title": "B.2. Proof of Proposition 1.5",
+      "level": 3,
+      "pageStart": 28,
+      "pageEnd": 28,
+      "labelStart": "373",
+      "labelEnd": "373",
+      "words": 82,
+      "summary": null,
+      "keywords": [],
+      "extract": "B.2. Proof of Proposition 1.5 The equality 1φ1(q; q; q, X) = (X; q)∞, plus (B.13), where we have set a = q, implies the following formula: X n⩾0 (q; q)nxn = −1 x   [Ω(q) + 1 + ℓ(qx)] (q/x; q)∞+ X n⩾1 [n −Ωn(q)] qn(n−1)/2 (q; q)n \u0010 −q x \u0011n   . Thus, one may obtain Proposition 1.5 by taking into account the following equalities: ℓ(qx) = −qxθ′(−qx) θ(−qx) , an = Ωn(q) −n, Aq = Ω(q).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-014-part-2-summation-of-divergent-q-series-and-confl",
+      "number": null,
+      "title": "Part 2. Summation of divergent q-series and confluence: the case q>1",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": "373",
+      "labelEnd": "374",
+      "words": 150,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-convolution",
+          "heading": false
+        },
+        {
+          "term": "tschakaloﬀseries",
+          "heading": false
+        },
+        {
+          "term": "q-euler",
+          "heading": false
+        }
+      ],
+      "extract": "case q > 1 Important. From now on, we ﬁx q ∈(1, +∞) ⊂R, so that p = q−1 ∈ (0, 1). In this second part we consider four types of q-summation (cf. Deﬁni- tion 4.12 below): our purpose is studying the relations among them. First of all, we investigate the diﬀerent sums of the q-Euler series X n⩾0 (−1)n[n]! qxn+1 and their properties (cf. §3 below). Then we prove a general result for generic q-Gevrey series (cf. Theorem",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-3-the-divergent-q-euler-series",
+      "number": "3",
+      "title": "The divergent q-Euler series",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": "374",
+      "labelEnd": "374",
+      "words": 36,
+      "summary": null,
+      "keywords": [],
+      "extract": "Since q > 1, the q-Euler series ˆEq(x) = X n⩾0 (−1)n[n]! qxn+1 is obviously divergent for any x ∈C∗, as the Euler series P n⩾0(−1)nn!xn+1. The corresponding q-diﬀerence equation is x2dqy + y = x.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-016-31-definition-of-different-sums-of-the-q-euler-s",
+      "number": "3.1",
+      "title": "Definition of different sums of the q-Euler series",
+      "level": 3,
+      "pageStart": 29,
+      "pageEnd": 31,
+      "labelStart": "374",
+      "labelEnd": "376",
+      "words": 741,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xe2πi",
+          "heading": false
+        },
+        {
+          "term": "sector arg",
+          "heading": false
+        },
+        {
+          "term": "ˆeq",
+          "heading": false
+        },
+        {
+          "term": "λqz",
+          "heading": false
+        },
+        {
+          "term": "analytic continuation",
+          "heading": false
+        },
+        {
+          "term": "dpξ",
+          "heading": false
+        },
+        {
+          "term": "λpz",
+          "heading": false
+        },
+        {
+          "term": "eid",
+          "heading": false
+        }
+      ],
+      "extract": "Let us consider the q-Borel transforms of ˆEq(x) (for the general deﬁni- tion,cf. §4.1): ψ(ξ) := 1 1 + ξ and φ(ξ) := Ep(ξ). In the following, we will identify Ep(ξ) to its analytic continuation on C \\ ((p −1)qN). For any d ∈(−π, π) and λ /∈−pZ, we set: (3.1) Ed q (x) = q −1 ln q Z eid∞ 0 ψ(ξ) eq(q ξ x) dξ, arg x ∈(d −π, d + π); (3.2) E[λ] q (x) = q 1 −p Z λpZ ψ \u0010 ξ 1−p \u0011 eq \u0010 q ξ (1−p)x \u0011dpξ, x /∈(p −1)λqZ; (3.3) Ed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-32-q-integral-and-continuous-integral",
+      "number": "3.2",
+      "title": "q-integral and continuous integral",
+      "level": 3,
+      "pageStart": 31,
+      "pageEnd": 34,
+      "labelStart": "376",
+      "labelEnd": "379",
+      "words": 800,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mero morphic",
+          "heading": false
+        },
+        {
+          "term": "πiq",
+          "heading": false
+        },
+        {
+          "term": "morphic function",
+          "heading": false
+        },
+        {
+          "term": "aqz",
+          "heading": false
+        },
+        {
+          "term": "q-diﬀerence equation",
+          "heading": false
+        },
+        {
+          "term": "institut fourier",
+          "heading": false
+        },
+        {
+          "term": "pull back",
+          "heading": false
+        },
+        {
+          "term": "x2dqy",
+          "heading": false
+        }
+      ],
+      "extract": "Although both Eq(x) and E[λ] q are solutions of the q-diﬀerence equation x2dqy + y = x, they have a deeply diﬀerent nature. In fact, while Eq(x) is meromorphic on the whole Riemann surface eC∗of the logarithme, the function E[λ] q is a uniform function: more precisely, it is analytic on C∗ minus a spiral of simple poles. Let us consider the projection: π : ]0, +∞[×R ∼= eC∗ −→ C∗ (r, α) 7−→ re2iπα . Of course, we can",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-33-comparing-sums-along-different-spirals",
+      "number": "3.3",
+      "title": "Comparing sums along different spirals",
+      "level": 3,
+      "pageStart": 34,
+      "pageEnd": 35,
+      "labelStart": "379",
+      "labelEnd": "380",
+      "words": 449,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "λqz µqz",
+          "heading": false
+        },
+        {
+          "term": "spirals",
+          "heading": true
+        },
+        {
+          "term": "stokes phenomenon",
+          "heading": false
+        },
+        {
+          "term": "x2dqy",
+          "heading": false
+        },
+        {
+          "term": "q-invariant",
+          "heading": false
+        },
+        {
+          "term": "sums",
+          "heading": true
+        },
+        {
+          "term": "poles",
+          "heading": false
+        }
+      ],
+      "extract": "Notice that if λqZ = µqZ, i.e. if λ and µ are two complex numbers congruent modulo q, the two discrete sums E[λ] q and E[µ] q coincide. On the other side, if λqZ̸ = µqZ these sums are trivially distinct, since the sets of their poles are distinct. This simple remark underlines a fundamental diﬀerence between the continuous and the discrete summations. In fact, when we make the direction d vary we are actually",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-34-confluence",
+      "number": "3.4",
+      "title": "Confluence",
+      "level": 3,
+      "pageStart": 35,
+      "pageEnd": 36,
+      "labelStart": "380",
+      "labelEnd": "381",
+      "words": 159,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uniform convergence",
+          "heading": false
+        },
+        {
+          "term": "confluence",
+          "heading": true
+        },
+        {
+          "term": "compacts",
+          "heading": false
+        }
+      ],
+      "extract": "Theorem 3.15. — Let E(x) be the sum of the classical Euler series in the direction R+. Then Eq(x) →E(x) if q →1+ for any x ∈C such that arg x ∈(−π, π) and the convergence is uniform on the compacts of such a domain. Proof. — Notice that for any t ∈R+ we have eq(t) →et and eq(t) ⩽et. The dominated convergence theorem applied to the q-Laplace transform in a direction d ∈(−π, π) allows to conclude. Moreover, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-4-generic-q-gevrey-series",
+      "number": "4",
+      "title": "Generic q-Gevrey series",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 36,
+      "labelStart": "381",
+      "labelEnd": "381",
+      "words": 132,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "generic q-gevrey",
+          "heading": true
+        },
+        {
+          "term": "q-gevrey series",
+          "heading": true
+        },
+        {
+          "term": "q-diﬀerence operator",
+          "heading": false
+        }
+      ],
+      "extract": "4. Generic q-Gevrey series We call generic q-Gevrey series a power series ˆf ∈C[[x]] satisfying a q-diﬀerence equation ∆ˆf ∈C{x} for some analytic q-diﬀerence operator ∆ of the form: (4.1) ∆:= a0(x)(xσq)n + a1(x)(xσq)n−1 + ... + an(x), with aj ∈C{x}, a0(0)an(0)̸ = 0, and σq(f(x)) = f(qx). This means that the associated Newton polygon has only one ﬁnite slope equal to one (cf. [13] and [20]). An explicit calculation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-41-two-formal-q-borel-transforms",
+      "number": "4.1",
+      "title": "Two formal q-Borel transforms",
+      "level": 3,
+      "pageStart": 36,
+      "pageEnd": 38,
+      "labelStart": "381",
+      "labelEnd": "383",
+      "words": 535,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-borel summable",
+          "heading": false
+        },
+        {
+          "term": "q-exponential growth",
+          "heading": false
+        },
+        {
+          "term": "anxn",
+          "heading": false
+        },
+        {
+          "term": "q-gevrey",
+          "heading": false
+        },
+        {
+          "term": "power series",
+          "heading": false
+        },
+        {
+          "term": "transforms",
+          "heading": true
+        },
+        {
+          "term": "borel",
+          "heading": false
+        }
+      ],
+      "extract": "The classical Borel transform associates to each power series X n⩾0 anxn+1 the more convergent (or less divergent) power series P n⩾0 an n! ξn. For the solutions of a q-diﬀerence equations, the Gevrey “scaling factor” (n!)s is replaced by the q-Gevrey one: (qsn2/2) (cf. [4],[13],[20],[21]). Indeed, in the literature there are (at least) two q-analogs of the factorial n!, namely [n]! q and qn(n−1)/2. The reason for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-42-different-kinds-of-q-exponential-summation",
+      "number": "4.2",
+      "title": "Different kinds of q-exponential summation",
+      "level": 3,
+      "pageStart": 38,
+      "pageEnd": 41,
+      "labelStart": "383",
+      "labelEnd": "386",
+      "words": 888,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qeid eid",
+          "heading": false
+        },
+        {
+          "term": "λpz",
+          "heading": false
+        },
+        {
+          "term": "vizio changgui",
+          "heading": false
+        },
+        {
+          "term": "generic q-gevrey",
+          "heading": false
+        },
+        {
+          "term": "q-gevrey series",
+          "heading": false
+        },
+        {
+          "term": "changgui zhang",
+          "heading": false
+        },
+        {
+          "term": "summation procedures",
+          "heading": false
+        },
+        {
+          "term": "dpt",
+          "heading": false
+        }
+      ],
+      "extract": "The classical Borel-Laplace exponential summation is based on the Eu- ler’s integral representation of the Gamma function, namely (4.4) n! = Z ∞ 0 e−ttn+1 dt t . In the deﬁnition of a q-summation procedure one must be guided by the q-analogs of this last integral, question investigated since Jackson, Wigeret, Watson, etc... We recall the following q-analogs of the integral representation of the Euler Gamma function.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-43-the-tschakaloff-series",
+      "number": "4.3",
+      "title": "The Tschakaloff series",
+      "level": 3,
+      "pageStart": 41,
+      "pageEnd": 42,
+      "labelStart": "386",
+      "labelEnd": "387",
+      "words": 349,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dpξ",
+          "heading": false
+        },
+        {
+          "term": "pnλ",
+          "heading": false
+        },
+        {
+          "term": "λpz",
+          "heading": false
+        },
+        {
+          "term": "kpk",
+          "heading": false
+        }
+      ],
+      "extract": "Let us consider another q-analogue of the Euler series: Tq(x) = X n⩾0 qn(n−1)/2xn+1, called the Tschakaloﬀseries or the partial Theta function. It satisﬁes the q-diﬀerence equation xTq(qx) −qTq(x) = −qx, that can also be rewritten in the form x2(q −1)dqy + (x −q)y = −qx. The Borel transforms of Tq are: ψ(ξ) = Bq(Tq) = X n⩾0 ξn [n]!p = ep(ξ) = ((1 −p)ξ; p)−1 and φ(ξ) = Bq(Tq) = 1 1 −ξ . Proposition 4.16. — Let us ﬁx",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-44-the-functional-space-h-in-the-borel-plane",
+      "number": "4.4",
+      "title": "The functional space H in the Borel plane",
+      "level": 3,
+      "pageStart": 42,
+      "pageEnd": 45,
+      "labelStart": "387",
+      "labelEnd": "390",
+      "words": 973,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-borel transform",
+          "heading": false
+        },
+        {
+          "term": "functional space",
+          "heading": true
+        },
+        {
+          "term": "vizio changgui",
+          "heading": false
+        },
+        {
+          "term": "generic q-gevrey",
+          "heading": false
+        },
+        {
+          "term": "q-gevrey series",
+          "heading": false
+        },
+        {
+          "term": "modiﬁed tschakaloﬀseries",
+          "heading": false
+        },
+        {
+          "term": "q-exponential growth",
+          "heading": false
+        },
+        {
+          "term": "changgui zhang",
+          "heading": false
+        }
+      ],
+      "extract": "We recall that the q-Borel transform Bq associates to a power series ˆf = P n⩾0 anxn+1 ∈C[[x]] the power series φ = P n⩾0 anq−n(n−1)/2ξn ∈C[[ξ]]. As we have already pointed out, the q-Borel transform of a generic q-Gevrey series admits a positif radius of convergence and can be continued to an analytic function in the whole complex plane minus a ﬁnite number of sets of the form λqN (cf. [20] and [23]). In this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-45-proof-of-theorem-414",
+      "number": "4.5",
+      "title": "Proof of Theorem 4.14",
+      "level": 3,
+      "pageStart": 45,
+      "pageEnd": 46,
+      "labelStart": "390",
+      "labelEnd": "391",
+      "words": 356,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xσq",
+          "heading": false
+        },
+        {
+          "term": "tschakaloﬀ series",
+          "heading": false
+        },
+        {
+          "term": "theorem",
+          "heading": true
+        },
+        {
+          "term": "dominated",
+          "heading": false
+        },
+        {
+          "term": "prop",
+          "heading": false
+        },
+        {
+          "term": "analytic",
+          "heading": false
+        }
+      ],
+      "extract": "We start by proving the following preparatory result: Proposition 4.24. — If ˆf ∈xC[[x]] is a generic q-Gevrey series, then its q-Borel transform belongs to H. Proof. — Let ∆be a linear analytic q-diﬀerence operator such that ∆ˆf = g ∈xC{x}. We know that ∆admits an analytic factorization (cf. [20, Prop. 5.1.4], [18, Thm. 1.2.1]): (4.11) ∆=(xσq−λ1)h1(xσq−λ2)h2...(xσq−λn)hn, λj ∈C, hj ∈C{x}, hj(0)=1. We suppose that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-bibliography",
+      "number": null,
+      "title": "Bibliography",
+      "level": 2,
+      "pageStart": 46,
+      "pageEnd": 47,
+      "labelStart": "391",
+      "labelEnd": "392",
+      "words": 658,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aux q-diﬀérences",
+          "heading": false
+        },
+        {
+          "term": "des séries",
+          "heading": false
+        },
+        {
+          "term": "expositiones mathematicae",
+          "heading": false
+        },
+        {
+          "term": "changgui zhang",
+          "heading": false
+        },
+        {
+          "term": "fonction thêta",
+          "heading": false
+        },
+        {
+          "term": "institut fourier",
+          "heading": false
+        },
+        {
+          "term": "les pentes",
+          "heading": false
+        },
+        {
+          "term": "sur les",
+          "heading": false
+        }
+      ],
+      "extract": "[1] G. E. Andrew, R. Askey & R. Roy, Special functions, Encyclopedia of Mathe- matics and Its Applications, vol. 71, Cambridge University Press, Cambridge, 1999. [2] Y. André, “Séries Gevrey de type arithmétique. I. Théorèmes de pureté et de dualité”, Ann. of Math. 151 (2000), no. 2, p. 705-740. [3] E. W. Barnes, “A new development of the theory of the hypergeometric functions”, Proceedings of the London",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "vizio changgui",
+      "heading": false
+    },
+    {
+      "term": "changgui zhang",
+      "heading": false
+    },
+    {
+      "term": "institut fourier",
+      "heading": false
+    },
+    {
+      "term": "q-gevrey series",
+      "heading": true
+    },
+    {
+      "term": "analytic q-diﬀerence",
+      "heading": false
+    },
+    {
+      "term": "q-summation",
+      "heading": false
+    },
+    {
+      "term": "analytic function",
+      "heading": false
+    },
+    {
+      "term": "lucia",
+      "heading": false
+    },
+    {
+      "term": "generic q-gevrey",
+      "heading": true
+    },
+    {
+      "term": "series ˆeq",
+      "heading": false
+    },
+    {
+      "term": "gevrey series",
+      "heading": false
+    },
+    {
+      "term": "confluence",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": "348",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "349",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "350",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "351",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "352",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "353",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "354",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "355",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "356",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "357",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "358",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "359",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "360",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "361",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "362",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "363",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "364",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "365",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "366",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "367",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "368",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "369",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "370",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "371",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "372",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "373",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "374",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "375",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "376",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "377",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "378",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "379",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "380",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "381",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "382",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "383",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "384",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "385",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "386",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "387",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "388",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "389",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "390",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "391",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "392",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 27,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 28,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p46); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 28 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/aif-2009-59-1-347-0"
+  }
+}

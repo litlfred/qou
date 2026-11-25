@@ -1,0 +1,268 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-nucl-th-0103005v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-nucl-th-0103005v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:nucl-th/0103005v2  6 Mar 2001\n1\nQuantum Monte Carlo Calculations of Light\nNuclei\nSteven C. Pieper and R. B. Wiringa\nPhysics Division, Argonne National Laboratory, Argonne, IL 60439;\nemail: spieper@anl.gov, wiringa@anl.gov\nKEYWORDS:\nNuclear many-body theory, structure, reactions, potentials\nABSTRACT:\nAccurate quantum Monte Carlo calculations of ground and low-lying excited states of light p-shell\nnuclei are now possible for realistic nuclear Hamiltonians that ﬁt nucleon-nucleon scattering data.\nAt present, results for more than 30 diﬀerent (Jπ; T ) states, plus isobaric analogs, in A ≤8 n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0103005v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "INTRODUCTION",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "A major goal of nuclear physics is to understand the stability, structure, and reactions of nuclei as a consequence of the interactions between individual nucleons. This is an extremely challenging many-body problem, exacerbated by the fact that we do not know in detail what the interactions are. Quantum chromodynamics, the fundamental theory for strong interactions, is so difficult to solve in the nonperturbative regime of low-energy nuclear physics that no one is currently able to quantitatively describe the interactions between two nucleons from first principles. However, we do have a treme",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0103005v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "HAMILTONIAN AND CURRENTS",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-2-hamiltonian-and-currents.md",
+      "narrative": null,
+      "content": "The Hamiltonian used in this review use includes nonrelativistic kinetic energy, the AV18 $N\\!N$ potential [@WSS95] and either the Urbana IX [@PPCW95] or one of the new Illinois series of $N\\!N\\!$ potential [@PPWC01]: $$H = \\sum_{i} K_{i} + \\sum_{i<j} v_{ij} + \\sum_{i<j<k} V_{ijk} \\ .\n\\label{eq:H}$$ The kinetic energy operator has charge-independent (CI) and charge-symmetry-breaking (CSB) components, the latter due to the difference between proton and neutron masses, $$K_{i} = K^{CI}_{i} + K^{CSB}_{i} \\equiv -\\frac{\\hbar^2}{4}\n     (\\frac{1}{m_{p}} + \\frac{1}{m_{n}}) \\nabla^{2}_{i}\n    -\\frac{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0103005v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "VARIATIONAL MONTE CARLO",
+      "pageStart": 8,
+      "pageEnd": 15,
+      "target": "../sections/sec-002-3-variational-monte-carlo.md",
+      "narrative": null,
+      "content": "The variational method can be used to obtain approximate solutions to the\nmany-body Schr\\\"{o}dinger equation, $H\\Psi = E\\Psi$, for a wide range of\nnuclear systems, including few-body nuclei, light closed-shell nuclei,\nnuclear matter, and neutron stars~\\cite{W93}.\nA suitably parameterized wave function, $\\Psi_V$, is used to calculate an\nupper bound to the exact ground-state energy,\n\\begin{equation}\n   E_V = \\frac{\\langle \\Psi_V | H | \\Psi_V \\rangle}\n              {\\langle \\Psi_V   |   \\Psi_V \\rangle} \\geq E_0 \\ .\n\\label{eq:expect}\n\\end{equation}\nThe parameters in $\\Psi_V$ are varied to minimize",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0103005v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "GREEN'S FUNCTION MONTE CARLO",
+      "pageStart": 15,
+      "pageEnd": 20,
+      "target": "../sections/sec-003-4-greens-function-monte-carlo.md",
+      "narrative": null,
+      "content": "The GFMC method [@C87; @C88] projects out the exact lowest-energy state, $\\Psi_{0}$, for a given set of quantum numbers, using $\\Psi_0 = \\lim_{\\tau \\rightarrow \\infty} \\exp [ - ( H - E_0) \\tau ] \\Psi_T$, where $\\Psi_{T}$ is an initial trial function. If the maximum $\\tau$ actually used is large enough, the eigenvalue $E_{0}$ is calculated exactly while other expectation values are generally calculated neglecting terms of order $|\\Psi_{0}-\\Psi_{T}|^{2}$ and higher [@PPCPW97]. In contrast, the error in the variational energy, $E_{V}$, is of order $|\\Psi_{0}-\\Psi_{T}|^{2}$, and other expectation",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0103005v2/blocks/prop-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 27,
+      "target": "prop-sec-004-01.md",
+      "narrative": null,
+      "content": "The experimental value for $a_2(8,1)$ is extracted using 16.80 MeV as the excitation of the pure $T=1$ isobaric analog state in $^8$Be [@B66]. :::",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-nucl-th-0103005v2/blocks/prop-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 27,
+      "target": "prop-sec-004-02.md",
+      "narrative": null,
+      "content": "The $^3$H--$^3$He mass difference is 757 keV with the AV18/IL2 Hamiltonian, in excellent agreement with the experimental value of 764 keV.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-nucl-th-0103005v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "ENERGY RESULTS",
+      "pageStart": 20,
+      "pageEnd": 27,
+      "target": "../sections/sec-004-5-energy-results.md",
+      "narrative": null,
+      "content": "There are a number of accurate many-body methods for evaluating the binding energy of the s-shell nuclei, $^3$H, $^3$He, and $^4$He, using realistic nuclear forces. These include Faddeev in configuration space [@FPSS93] (FadR), Faddeev and Faddeev-Yakubovsky in momentum space [@NKG00] (FadQ), and hyperspherical harmonics [@HH] (HH), correlated hyperspherical harmonics [@VKR95] (CHH) and pair-correlated hyperspherical harmonics [@KVR93] (PHH). Some results of these methods for the AV18 and AV18/UIX Hamiltonians are shown in Table [1](#tab:s-shell){reference-type=\"ref\" reference=\"tab:s-shell\"}.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0103005v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "DENSITY AND MOMENTUM DISTRIBUTIONS",
+      "pageStart": 27,
+      "pageEnd": 35,
+      "target": "../sections/sec-005-6-density-and-momentum-distributions.md",
+      "narrative": null,
+      "content": "The one- and two-nucleon distributions of light $p$-shell nuclei are interesting in a variety of experimental settings. For example, the Borromean $^6$He and $^8$He nuclei are popular candidates for study as 'halo' nuclei whose last neutrons are weakly bound. In addition, the polarization densities of $^6$Li and $^7$Li are important because of possible applications in polarized targets.\n\n::: {#tab:radii}\n  -------- ------------------------------- ------- ----------- ---------\n           $\\langle r^2_p \\rangle^{1/2}$           $Q$         \n           GFMC                            Expt.   GFMC",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0103005v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "LOW-ENERGY NUCLEON-NUCLEUS SCATTERING",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "../sections/sec-006-7-low-energy-nucleon-nucleus-scattering.md",
+      "narrative": null,
+      "content": "[]{#sec:scat label=\"sec:scat\"}\n\nThe calculations presented so far have treated resonant nuclear states as if they were particle stable; that is the VMC trial wave functions decay exponentially at large distances and the GFMC propagation does not impose a scattering-state boundary condition. As was shown in Fig. [\\[fig:8be-e_of_tau\\]](#fig:8be-e_of_tau){reference-type=\"ref\" reference=\"fig:8be-e_of_tau\"}, this GFMC propagation converges for unstable states that are narrow, but for wide states, such as $^8$Be(4$^+$), the $E(\\tau)$ keeps decreasing for increasing $\\tau$. Such states should be comp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0103005v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "ASTROPHYSICAL ELECTROWEAK REACTIONS",
+      "pageStart": 36,
+      "pageEnd": 39,
+      "target": "../sections/sec-007-8-astrophysical-electroweak-reactions.md",
+      "narrative": null,
+      "content": "Most of the key nuclear reactions in primordial nucleosynthesis [@NB00] and solar neutrino production [@A+98] involve only the $A \\leq 8$ nuclei. Many of these are electroweak capture reactions that are difficult or impossible to measure in the laboratory. With the high-precision few-body methods, such as PHH and Faddeev, or new effective field theory treatments, the reactions to s-shell final states have been calculated with unprecedented accuracy in the last few years. These include the $^1$H$(p,e^+\\nu_e)^2$H [@SS+98] and $^3$He$(p,e^+\\nu_e)^4$He [@MSVKR00] weak capture reactions, and the $^",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0103005v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "NEUTRON DROPS",
+      "pageStart": 39,
+      "pageEnd": 39,
+      "target": "../sections/sec-008-9-neutron-drops.md",
+      "narrative": null,
+      "content": "Neutron-rich nuclei are interesting both because of their importance in various astrophysical contexts, such as the r-process or neutron-star crusts, and the current interest in experiments with radioactive beams. These nuclei are often studied within the framework of mean-field models using Skyrme or other potential models. The parameters of these models are fit to experimentally known binding energies, that is for situations with $N{\\sim}Z$. In particular the isospin dependence of the spin-orbit component of such potentials is considered to be not strongly constrained. Neutron drops offer th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0103005v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "CONCLUSIONS AND OUTLOOK",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "../sections/sec-009-10-conclusions-and-outlook.md",
+      "narrative": null,
+      "content": "Quantum Monte Carlo methods can now be used to obtain accurate (within 2%) energies for light p-shell nuclei up to $A$ = 8. Initial calculations of $A$=9,10 nuclei have been made by the authors, and studies of $A$=11,12 nuclei should be feasible in the next few years by variational and Green's function Monte Carlo methods. This progress in the nuclear many-body problem is due both to the rapid growth of computational power and the continuing evolution of algorithms. The new auxiliary-field diffusion Monte Carlo method, which samples spins and isospins by auxiliary fields, and space by standard",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-nucl-th-0103005v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "../sections/sec-010-acknowledgments.md",
+      "narrative": null,
+      "content": "The authors thank J. Carlson, A. Kievsky, V. R. Pandharipande, R. Schiavilla,\nJ. P. Schiﬀer and K. E. Schmidt for useful communications and discussions. This\nExact Calculations of Light Nuclei\n41\nwork was supported by the U.S. Department of Energy, Nuclear Physics Division,\nunder contract No. W-31-109-ENG-38.\nLiterature Cited\n1. Stoks VGJ, Klomp RAM, Rentmeester MCM, de Swart JJ. Phys. Rev. C 48:792 (1993)\n2. Chen CR, Payne GL, Friar JL, Gibson BF. Phys. Rev. C 31:2266 (1985)\n3. Carlson J. Phys. Rev. C 36:2026 (1987)\n4. Carlson J, Schiavilla R. Rev. Mod. Phys. 70:743 (1998)\n5. Cohen S, Kurath",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

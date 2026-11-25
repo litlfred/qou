@@ -1,0 +1,139 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-q-alg-9601025v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-q-alg-9601025v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:q-alg/9601025v2  25 Mar 1996\nThe hyperbolic volume of knots from quantum\ndilogarithm\nR.M. Kashaev∗\nLaboratoire de Physique Th´eorique enslapp†\nENSLyon, 46 All´ee d’Italie,\n69007 Lyon, FRANCE\nE-mail: rkashaev@enslapp.ens-lyon.fr\nJanuary, 1996\nAbstract\nThe invariant of a link in three-sphere, associated with the cyclic\nquantum dilogarithm, depends on a natural number N. By the analysis\nof particular examples it is argued that for a hyperbolic knot (link)\nthe absolute value of this invariant grows exponentially at large N,\nthe hyperbolic volume of the knot (link) complement being the growth",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9601025v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Many known knot and link invariants, including Alexander [@A] and Jones [@J] polynomials, can be obtained from $R$-matrices, solutions to the Yang-Baxter equation (YBE) [@Y; @B1]. Remarkably, many $R$-matrices in turn appear in quantum 3-dimensional Chern-Simons (CS) theory as partition functions of a 3-manifold with boundary, and with properly chosen Wilson lines [@W1]. The corresponding knot invariant acquires an interpretation in terms of a meanvalue of a Wilson loop. Note, that the quantum CS theory is an example of the topological quantum field theory (TQFT) defined axiomatically in [@At]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9601025v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The quantum invariant for three hyperbolic knots",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-the-quantum-invariant-for-three-hyperbolic-kno.md",
+      "narrative": null,
+      "content": "[]{#sec1 label=\"sec1\"}\n\nLet $\\omega$ be a primitive $N$-th root of unity. Throughout this paper we will work with the following choice for this root: =(2i/N). The result of calculation of the link invariant from papers [@K1; @K2] for three simplest hyperbolic knots reads: []{#4_1 label=\"4_1\"} \\_1=\\_k\\|()\\_k\\|\\^2,(\\\"figure-eight\\\" knot), []{#5_2 label=\"5_2\"} \\_2=\\_kl\\^-k(l+1), []{#6_1 label=\"6_1\"} \\_1=\\_k+lm \\^(m-k-l)(m-k+1), where the summation variables run over $\\{0,\\ldots,N-1\\}$; ()\\_k=\\_j=1\\^k(1-\\^j),k=0,...,N-1; and the asterisk means the complex conjugation. Strictly speaking only $N$-th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9601025v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The classical limit",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-3-the-classical-limit.md",
+      "narrative": null,
+      "content": "Here we calculate explicitly the leading asymptotics at $N\\to\\infty$ of the invariant for the hyperbolic knots from section [\\[sec1\\]](#sec1){reference-type=\"ref\" reference=\"sec1\"} and justify formula ([\\[main\\]](#main){reference-type=\"ref\" reference=\"main\"}).\n\nFirst, for a positive real $\\gamma$ and complex $p$ with \\|Re p\\|\\<+, define two functions []{#mainfun label=\"mainfun\"} f\\_(p)=S\\_(-)/S\\_(p), f\\_(p)=S\\_(-p)/S\\_(-), where []{#fad label=\"fad\"} S\\_(p)=\\_-\\^+ (x)(x), the singularity of the integrand at $x=0$ being put below the contour of integration. In [@F1] the function ([\\[fad\\]](#fad)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9601025v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Knot $4_1$ (figure-eight knot)",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-31-knot-4-1-figure-eight-knot.md",
+      "narrative": null,
+      "content": "The exact formula ([\\[4_1\\]](#4_1){reference-type=\"ref\" reference=\"4_1\"}) can be rewritten as a contour integral: []{#contour4_1 label=\"contour4_1\"} \\_1=\\_Cdp ()f\\_(p)f\\_(p), Where contour $C$ encircles $N$ points: -++2kk\\<N, in the counterclockwise direction. In the large $N$ (small $\\gamma$) limit integral ([\\[contour4_1\\]](#contour4_1){reference-type=\"ref\" reference=\"contour4_1\"}), by using ([\\[as\\]](#as){reference-type=\"ref\" reference=\"as\"}), asymptotically can be approximated by \\_1\\~dz \\[Li_2(z)-Li_2(1/z)\\]. The saddle point approximation of the last integral gives the result: []{#as41 l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9601025v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-4-summary.md",
+      "narrative": null,
+      "content": "We have demonstrated on three examples of hyperbolic knots, that the link invariant, defined in [@K1; @K2] via cyclic quantum dilogarithm, in the asymptotic limit $N\\to\\infty$ reproduces the hyperbolic volume of a knot, see formula ([\\[main\\]](#main){reference-type=\"ref\" reference=\"main\"}). This result implies a possible relation of the corresponding combinatorial TQFT to quantum 2+1-dimensional gravity.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9601025v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowlegements",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-5-acknowlegements.md",
+      "narrative": null,
+      "content": "Acknowlegements\nThe author is grateful to M. Blau, L. Freidel, J.M. Maillet, F. Smirnov\nfor valuable discussions, and L.D. Faddeev for his encouragement in\nthis work.\nThe work is supported by the Programme TEMPRA-\nEurope de l’Est from the R´egion Rhˆone-Alpes.\nReferences\n[1] J.W. Alexander, Topological invariants of knots and links, Trans.\nAmer. Math. Soc. 30 (1928) 275-306\n[2] V.F.R. Jones, A polynomial invariant for knots and links via Von\nNeumann algebras, Bull. Amer. Math. Soc. 12 (1985) 103-111\n[3] C.N. Yang, Some exact results for the many-body problem in one\ndimension with repulsive del",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

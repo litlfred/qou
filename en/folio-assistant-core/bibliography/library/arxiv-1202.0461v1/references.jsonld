@@ -1,0 +1,39 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1202.0461v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Draft version October 11, 2018 DOUBLE DEGENERATE MERGERS AS PROGENITORS OF HIGH-FIELD MAGNETIC WHITE DWARFS",
+      "dcterms:creator": [
+        "Garc´ıa–Berro1, Enrique",
+        "2",
+        "Lorén–Aguilar1, Pablo",
+        "2",
+        "Aznar–Siguán1, Gabriela",
+        "2",
+        "Torres1, Santiago",
+        "2"
+      ],
+      "dcterms:issued": "D:20181101",
+      "dcterms:identifier": "https://arxiv.org/abs/1202.0461",
+      "dcterms:abstract": "High-ﬁeld magnetic white dwarfs have been long suspected to be the result of stellar mergers. However, the nature of the coalescing stars and the precise mechanism that produces the magnetic ﬁeld are still unknown. Here we show that the hot, convective, diﬀerentially rotating corona present in the outer layers of the remnant of the merger of two degenerate cores is able to produce magnetic ﬁelds of the required strength that do not decay for long timescales. We also show, using an state-of-the-art Monte Carlo simulator, that the expected number of high-ﬁeld magnetic white dwarfs produced in this way is consistent with that found in the Solar neighborhood. Subject headings: stars: interiors — stars: evolution — stars: white dwarfs — stars: rotation — stars: magnetic ﬁeld — stars: binaries",
+      "dcterms:source": "library/arxiv-1202.0461v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1202.0461v1"
+    }
+  ]
+}

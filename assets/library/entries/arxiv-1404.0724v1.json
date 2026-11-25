@@ -1,0 +1,960 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1404.0724v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Introduction to representations of braid groups\nCamilo Arias Abad∗\nApril 4, 2014\nAbstract\nThese are lecture notes prepared for a minicourse given at the Cimpa Research School\nAlgebraic and geometric aspects of representation theory, held in Curitiba, Brazil in March\n2013. The purpose of the course is to provide an introduction to the study of representations\nof braid groups. Three general classes of representations of braid groups are considered:\nhomological representations via mapping class groups, monodromy representations via the\nKnizhnik-Zamolodchikov connection, and solutions of the Yang-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Braid groups",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-2-braid-groups.md",
+      "narrative": null,
+      "content": "anonymous referee for carefully reading a previous version and correcting several mistakes.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\nBraid groups were introduced by Emil Artin in 1925, and by now play a role in various parts\nof mathematics including knot theory, low dimensional topology, public key cryptography and\ndeformation quantization.\nThe braid group Bn admits diﬀerent equivalent deﬁnitions: the\nfundamental group of the conﬁguration space Cn(C) of n unordered points in the complex\nplane, the mapping class group of a disk with n marked points, and Artin’s presentation. Each\nof these descriptions provides a method for constructing representations of Bn: fundamental\ngroups act via monodromy, mapping class gr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Artin's presentation",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-21-artins-presentation.md",
+      "narrative": null,
+      "content": "We denote by D2 the unit disk in the complex plane and ﬁx n marked points\n−1 < p1 < p2 · · · < pn < 1 ∈D2 ∩R.\nDeﬁnition 2.1. A braid is a collection of n paths fi : I = [0, 1] 7→D2, called strands, such that:\n1. fi(0) = pi.\n2. fi(1) = pτ(i), for some permutation τ in the symmetric group Σn.\n3. For each t ∈I, fi(t)̸ = fj(t) provided that i̸ = j.\nBraids are pictured geometrically as a collection of n strands in three dimensional space. One\nis usually interested in braids only up to isotopies ﬁxing the endpoints of each strand. We will\nabuse the notation and take the word braid to mean an isotopy",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/ex-sec-004-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "ex-sec-004-02.md",
+      "narrative": null,
+      "content": "The notation Mod(S) for the mapping class group is motivated by the example of the torus T, where: Mod(T) ∼= SL2(Z). The isomorphism is deﬁned by the action of Mod(T) on homology. Deﬁnition 2.8. Let S be a surface and Q ⊂S a ﬁnite set of marked points. We denote by Homeo(S, Q) the group of homeomorphisms of S that ﬁx Q as a set and ﬁx the boundary pointwise. The mapping class group of S, seen as a surface with marked points is Mod(S, Q) := π0(Homeo+(S, ∂S) ∩Homeo(S, Q)).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/ex-sec-004-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "Alexander-Tietze Theorem",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "ex-sec-004-03.md",
+      "narrative": null,
+      "content": "The mapping class group of the disk is trivial: Mod(D) = {0}. In order to prove this fact we consider an automorphism f : D →D that ﬁxes the boundary. Then we deﬁne the isotopy: ht(z) = ( z if t ≤|z| ≤1, th(z t ) if |z| ≤t. ] Figure 2: Halftwist of a two pointed disk",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/ex-sec-004-04",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "ex-sec-004-04.md",
+      "narrative": null,
+      "content": "An example of a nontrivial mapping class is that of the half twist. Here S is the disk with two marked points, that we may take to be p = (−1 2, 0) and q = (1 2, 0). The half twist H is the class of the diﬀeormorphism described by the following picture:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Configuration spaces",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-22-configuration-spaces.md",
+      "narrative": null,
+      "content": "Conﬁguration spaces\nThe group Bn can also be described as the fundamental group of the conﬁguration space of\npoints in the plane. We will now brieﬂy recall some deﬁnitions regarding conﬁguration spaces.\nLet M be a smooth manifold. The conﬁguration space of n ordered points in M, denoted ˆCn(M)\nis the manifold:\nˆCn(M) := {(x1, . . . , xn) ∈Mn : xi̸ = xj if i̸ = j}.\nThere is a natural action of the symmetric group Σn on the space ˆCn(M), given by permuting\nthe coordinates. The conﬁguration space of n unordered points in M is the quotient space:\nCn(M) := ˆCn(M)/Σn.\nTheorem 2.4 (Fox-Neuwirth [13],",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mapping class groups",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-23-mapping-class-groups.md",
+      "narrative": null,
+      "content": "Mapping class groups\nThe braid groups Bn can also be realized as mapping class groups, which exposes the very\ninteresting relation with the topology of surfaces. Let M, N be compact manifolds, possibly\nwith boundary. We denote by C(M, N) the space of all continuous functions from M to N.\nThere is a natural topology on C(M, N), the compact open topology, deﬁned as follows: for any\nK ⊂M compact and U ⊂N open, set:\nV (K, U) := {f ∈C(M, N) : f(K) ⊂U}.\nThe compact open topology is the smallest topology for which all V (K, U) are open. We denote\nby Homeo(M) the group of homeomorphisms of M. This is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/rem-sec-004-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "rem-sec-004-01.md",
+      "narrative": null,
+      "content": "The mapping class group can alternatively be deﬁned by replacing homeomor- phisms by diﬀeomorphism and isotopies by homotopies. The following is a list of possible deﬁnitions of Mod(S): Mod(S) ∼= Homeo+(S, ∂S)/Homeo0(S, ∂S) ∼= Diﬀ+(S, ∂S)/Diﬀ0(S, ∂S) ∼= π0(Homeo+(S, ∂S)) ∼= π0(Diﬀ+(S, ∂S)).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pure braids",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-24-pure-braids.md",
+      "narrative": null,
+      "content": "Pure braids\nThere is a natural group homomorphism π : Bn →Σn which sends a braid to the corresponding\npermutation of the marked points. Alternatively, the homomorphism is characterized by the\nproperty that:\nσi 7→(i, i + 1).\nDeﬁnition 2.12. The pure braid group on n strands, denoted by Pn, is the kernel of the homo-\nmorphism π : Bn →Σn.\nThe group Pn consists of those braids such that each strand starts and ends at the same\npoint. These are closed paths in the conﬁguration space ˆCn(C), and in this way one obtains an\nidentiﬁcation:\nPn ∼= π1( ˆCn(C), p).\nRemark 2.13. Let G be an abelian group. An",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/rem-sec-005-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "rem-sec-005-01.md",
+      "narrative": null,
+      "content": "Let G be an abelian group. An Eilenberg-Maclane space K(G, n) is a topological space such that: • πn(K(G, n)) ∼= G. • πm(K(G, n)) ∼= {0} for m̸ = n. Given G and n, the spaces K(G, n) exist and are well deﬁned up to homotopy equivalence. The conﬁguration spaces of points in the plane are important examples of Eilenberg-Maclane spaces: Cn(C) ∼= K(Bn, 1). ˆCn(C) ∼= K(Pn, 1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/prop-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "prop-sec-007-01.md",
+      "narrative": null,
+      "content": "There is a unique group homomorphism ψn : Bn →Aut(Λn) characterized by the property that: σi 7→Ui. This homomorphism is called the Burau representation of Bn.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Homological representations",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-006-3-homological-representations.md",
+      "narrative": null,
+      "content": "Homological representations",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Burau representation",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "../sections/sec-007-31-the-burau-representation.md",
+      "narrative": null,
+      "content": "tion as action of mapping classes on homology, and their relation with the Alexander-Conway\npolynomial of links. We also introduce the Lawrence-Krammer-Bigelow representation, which\nhas the remarkable property of being faithful. Our exposition follows closely the book by Kassel\nand Turaev [18].\n3.1\nThe Burau representation\nLet us denote by Λ the ring of Laurent polynomials with integer coeﬃcients:\nΛ := Z[t, t−1].\nIn [7], W. Burau constructed representations of the braid group Bn on the space Aut(Λn) of\nn × n matrices with coeﬃcients in Λ. Let us deﬁne the n × n matrix Ui as follows:\nUi =\n\n\n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/rem-sec-007-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "rem-sec-007-02.md",
+      "narrative": null,
+      "content": "Setting t = 1, each of the matrices Ui becomes a permutation matrix, and one obtains representations of Bn that factor through the symmetric groups. For this reason, the Burau representations may be seen as deformation of the usual permutation representation. The Burau representation admits a one dimensional invariant subspace. By taking the quotient of Λn by this invariant subspace one obtains the reduced Burau representations.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/rem-sec-007-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "rem-sec-007-03.md",
+      "narrative": null,
+      "content": "The Burau representation is known to be faithful for n ≤3 and not faithful for n ≥5. It is not known whether it is faithful for n = 4. A theorem of Bigelow asserts that ψ4 is faithful if and only if the Jones polynomial detects the unknot.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Homological interpretation",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-008-32-homological-interpretation.md",
+      "narrative": null,
+      "content": "Homological interpretation\nLet us denote by D the closed disk in the plane with n distinguished interior points p1 < · · · <\npn ∈D ∩R and set Q := {p1, . . . , pn}. Observe that for any point p in the interior of D:\nH1(D −{p}, Z) ∼= Z,\nis generated by the homology class of a small circle around p oriented counterclockwise. Set\nΣ := D −Q and ﬁx a basepoint d ∈∂D. We deﬁne the group homomorphism φ : π1(Σ, d) →Z\nby\n[γ] 7→\nn\nX\ni=1\nwi(γ),\nwhere wi(γ) is the winding number of γ around pi. The kernel of φ determines a covering space\n˜Σ →Σ, whose group of covering transformation is the inﬁnite cyclic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Braids, knots and the Alexander Conway polynomial",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "../sections/sec-009-33-braids-knots-and-the-alexander-conway-polynom.md",
+      "narrative": null,
+      "content": "Braids, knots and the Alexander Conway polynomial\nA knot is an isotopy class of an embedding of a circle in three dimensional euclidian space. More\ngenerally, a link with k components is an isotopy class of an embedding of k circles in R3. The\nfundamental problem of knot theory is the classiﬁcation of knots and links. The following is a\ntypical example of a knot:\n......................................................................\n........................................................................\n........................................................................\n.................",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/thm-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "thm-sec-008-01.md",
+      "narrative": null,
+      "content": "There exists a an isomorphism of Λ-modules µ : Λn →˜H such that the following diagram commutes: Bn ∼ = / ψn \u000f Mod(D, Q) Ψn \u000f Aut(Λn) µ / Aut( ˜H), Here µ is the isomorphism induced by µ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/thm-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Alexander [1]",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "thm-sec-009-01.md",
+      "narrative": null,
+      "content": "Any oriented link can be obtained as the closure of a braid.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/thm-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Markov [24]",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "thm-sec-009-02.md",
+      "narrative": null,
+      "content": "Two braids are Markov equivalent if and only if their closures represent the same oriented link.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/thm-sec-009-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "thm-sec-009-03.md",
+      "narrative": null,
+      "content": "The sequence of functions fn deﬁned above is a Markov function with values in the set X = Z[s, s−1].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/thm-sec-009-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "thm-sec-009-04.md",
+      "narrative": null,
+      "content": "The Alexander-Conway polynomial is the unique invariant of oriented links ∇ with values in Z[s, s−1] which satisﬁes the following properties: • ∇(L) = 1 if L is the unknot. • For any Conway triple L+, L−, L0: ∇(L+) −∇(L−) = (s−1 −s)∇(L0).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/lem-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "lem-sec-010-01.md",
+      "narrative": null,
+      "content": "The group homomorphism p : 7(C, {di,d2}) > Z© Z is surjective.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/lem-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "lem-sec-010-02.md",
+      "narrative": null,
+      "content": "The homomorphism fe preserves the invariant p, i.e. po fe =p.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Lawrence-Krammer-Bigelow representation",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-010-34-the-lawrence-krammer-bigelow-representation.md",
+      "narrative": null,
+      "content": "The Lawrence-Krammer-Bigelow representation\nWe will now discuss another homological representation introduced by R. Lawrence [23] and\nstudied by D. Krammer [22] and S. Bigelow [4]. Let us ﬁx a natural number n ≥1 and denote\nby D the unit disk with n distinguished points Q = {p1, . . . , pn}. We also set\nΣ := D −Q, F := ˆC2(Σ), C := C2(Σ).\nHere we use the notation introduced above for conﬁguration spaces. That is, F is the con-\nﬁguration space of two ordered points in Σ, and C is the conﬁguration space of two unordered\npoints in Σ. There is a natural double sheeted covering F →C. A point in C i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/thm-sec-010-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Krammer [22], Bigelow [4]",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "thm-sec-010-03.md",
+      "narrative": null,
+      "content": "The following statements hold for all n ≥2:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Knizhnik-Zamolodchikov connection",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-011-4-the-knizhnik-zamolodchikov-connection.md",
+      "narrative": null,
+      "content": "The Knizhnik-Zamolodchikov connection\nWe will now describe representations of braid groups that arise by monodromy of certain ﬂat\nconnections, known as Knizhnik-Zamolodchivov connections, on conﬁguration spaces of points\nin the plane. More about this connections and the relationship with the Jones polynomial can\nbe found in Kohno’s book [19].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/lem-sec-012-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 20,
+      "target": "lem-sec-012-02.md",
+      "narrative": null,
+      "content": "The Knizhnik-Zamolodchikov connection θn is ﬂat, i.e. dθn + 1 2[θn, θn] = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/lem-sec-012-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 20,
+      "target": "lem-sec-012-03.md",
+      "narrative": null,
+      "content": "We regard g as a subspace of U(g) via the obvious inclusion. Then: Ω= 1 2(∆(C) −1 ⊗C −C ⊗1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/lem-sec-012-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 20,
+      "target": "lem-sec-012-04.md",
+      "narrative": null,
+      "content": "The following relation is satisﬁed: [Ω12, Ω23 + Ω13] = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/lem-sec-012-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 20,
+      "target": "lem-sec-012-05.md",
+      "narrative": null,
+      "content": "together with the ﬂatness of the KZ connection imply the following result:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cohomology of configuration spaces and the KZ connection",
+      "pageStart": 16,
+      "pageEnd": 20,
+      "target": "../sections/sec-012-41-cohomology-of-configuration-spaces-and-the-kz.md",
+      "narrative": null,
+      "content": "Cohomology of conﬁguration spaces and the KZ connection\nAs before, we denote by ˆCn(C) the conﬁguration space of n ordered points in the plane. The\ncohomology of ˆCn(C) has been computed explicitly by Arnold in [2]. Since the original article is\nin russian, some readers may prefer to read [25] for a detailed explanation of the computation.\nLet us now describe Arnold’s result.\nDeﬁnition 4.1. The algebra An is the graded commutative algebra over C generated by degree\none elements aij = aji for i̸ = j, 1 ≤i, j ≤n modulo the Arnold relation:\naijajk + akiaij + ajkaki = 0, for i < j < k.\nWe also deﬁ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/thm-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Arnold",
+      "pageStart": 16,
+      "pageEnd": 20,
+      "target": "thm-sec-012-01.md",
+      "narrative": null,
+      "content": "There is a homomorphism of diﬀerential graded algebras An →Ω( ˆCn(C)) given by: aij 7→wij. Moreover, this homomorphism induces an isomorphism in cohomology An ∼= H( ˆCn(C), C).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/thm-sec-012-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 20,
+      "target": "thm-sec-012-06.md",
+      "narrative": null,
+      "content": "Let g be a ﬁnite dimensional complex semisimple Lie algebra and ρ : g → End(V ) be representation of g. The vector space V ⊗n has the structure of a representation of the braid group Bn.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/lem-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "lem-sec-013-01.md",
+      "narrative": null,
+      "content": "The vector space W[|Λ| −2m] is ﬁnite dimensional, of dimension equal to the number of ordered partitions of length n of the number m.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/prop-sec-013-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "prop-sec-013-02.md",
+      "narrative": null,
+      "content": "The ﬂat connection Υnθn,τ commutes with the action ρ : sl2(C) →End(M⊗n λ ), i.e. for any vector ﬁeld Y on the conﬁguration space ˆCn(C): ρ(v)(Υnθn,τ(Y )(x)) = Υnθn,τ(Y )(ρ(v)(x)), for any v ∈sl2(C) and x ∈M⊗n λ . The vector space N[nλ −2m] is a representation µn,m,λ,τ : Bn →Aut(N[nλ −2m]) of the braid group Bn.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Representations of sl2(C) and Lawrence-Krammer-Bigelow",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-013-42-representations-of-sl2c-and-lawrence-krammer.md",
+      "narrative": null,
+      "content": "Representations of sl2(C) and Lawrence-Krammer-Bigelow\nWe will consider the KZ connection for the semisimple Lie algebras g = sl2(C) of 2 × 2 complex\nmatrices of trace zero. Let us ﬁx the following basis for sl2(C):\nH =\n\u0012 1\n0\n0\n−1\n\u0013\n, E =\n\u0012 0\n1\n0\n0\n\u0013\n, F =\n\u0012 0\n0\n1\n0\n\u0013\n.\nIn terms of the basis, the bracket is given by:\n[H, E] = 2E, [H, F] = −2F, [E, F] = H.\nDeﬁnition 4.11. Let λ ∈C be a complex number. The Verma module Mλ with highest weight\nλ is the representation of sl2(C) deﬁned as follows. As a vector space it is generated by the\nelements F j(vλ) for j ≥0. The action of sl2(C) on Mλ is given",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/thm-sec-013-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Kohno [20]",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "thm-sec-013-03.md",
+      "narrative": null,
+      "content": "There exists an open dense subset U ⊂C2, such that for (τ, λ) ∈U the representation µn,2,λ,τ : Bn →Aut(N[nλ −4]) is equvalent to the representation obtained from the Lawrence-Krammer-Bigelow representation Bn →AutR(H) ∼= Aut(R n(n−1) ), by setting: q = exp−2πi λ τ , t = exp 2πi τ . Here, as before, R is the ring R = Z[q, q−1, t, t−1].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/cor-sec-015-06",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "cor-sec-015-06.md",
+      "narrative": null,
+      "content": "Let A be a quasi-triangular bialgebra with universal r-matrix R, and V a module over A. Then τR,V,V ∈AutA(V ) is a solution of the Yang-Baxter equation. In particular, the vector space V ⊗n is a representation of the braid group Bn.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/ex-sec-015-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "ex-sec-015-02.md",
+      "narrative": null,
+      "content": "We have already encountered an important example of a bialgebra, the universal enveloping algebra U(g) of a Lie algebra g. Recall that the coproduct is the unique algebra homomorphism ∆: U(g) →U(g) ⊗U(g), with the property that ∆(x) = 1 ⊗x + x ⊗1, for any x ∈g. The bialgebra U(g) is cocommutative but in general it is not commutative. Given modules V, W of a bialgebra A, the vector space V ⊗W, is also a module of A with action given by: a(v ⊗w) := ∆(a)(v ⊗w). Thus, bialgebras are algebras for which the category of modules admits a tensor product. In general, the modules V ⊗W and W ⊗V need not b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/ex-sec-015-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "ex-sec-015-03.md",
+      "narrative": null,
+      "content": "The simplest example of a quasi-triangular bialgebra is a cocommutative bial- gebra, with r-matrix R = 1 ⊗1. Thus, the universal enveloping algebra U(g) of a Lie algebra g is a quasi-triangular bialgebra.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/lem-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "lem-sec-015-01.md",
+      "narrative": null,
+      "content": "Given an r-matrix R ∈Aut(V ⊗V ), there is a representation ρR : Bn →Aut(V ⊗n), deﬁned by: σi 7→idi−1 ⊗R ⊗idn−i−1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/prop-sec-015-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "prop-sec-015-05.md",
+      "narrative": null,
+      "content": "Let A be a quasi-triangular bialgebra with universal r-matrix R ∈A ⊗A. Given A-modules V, W, Z there are isomorphisms of A-modules: τR,V,W : V ⊗W →W ⊗V, deﬁned by: τR,V,W := τV,W ◦R, satisfying the equations: (τR,V ⊗W,Z) = (τR,V,Z ⊗id) ◦(id ⊗τR,W,Z), (3) (τR,V,W⊗Z) = (id ⊗τR,V,Z) ◦(τR,V,W ⊗id), (4) (τR,W,Z ⊗id) ◦(id ⊗τR,V,Z) ◦(τR,V,W ⊗id) = (id ⊗τR,V,W ). ◦(τR,V,Z ⊗id) ◦(id ⊗τR,W,Z). (5)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Yang-Baxter equation and the Drinfeld-Kohno theorem",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-014-5-the-yang-baxter-equation-and-the-drinfeld-kohn.md",
+      "narrative": null,
+      "content": "The Yang-Baxter equation and the Drinfeld-Kohno theorem",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Yang-Baxter equation and quasi-triangular bialgebras",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "../sections/sec-015-51-the-yang-baxter-equation-and-quasi-triangular.md",
+      "narrative": null,
+      "content": "The Yang-Baxter equation and quasi-triangular bialgebras\nThe Yang-Baxter equation was originally introduced in the ﬁeld of statistical mechanics. Solu-\ntions to this equation provide a systematic way to construct representations of the braid groups\nBn. We will introduce the notion of quasi-triangular bialgebra, and explain that these are alge-\nbraic structures with the property that their modules are naturally endowed with solutions to\nthe Yang-Baxter equation.\nDeﬁnition 5.1. Let V be a complex vector space. An automorphism R of V ⊗V is called an\nr-matrix if it satisﬁes the Yang-Baxter equatio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/rem-sec-015-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "rem-sec-015-04.md",
+      "narrative": null,
+      "content": "The deﬁnition of a quasi-triangular bialgebra is designed to guarantee that the category of modules has a well behaved tensor product. Namely, a tensor product with natural isomorphisms CV W : V ⊗W ∼= W ⊗V, for which the diagrams (1) and (2) commute. This kind of category is known as a braided monoidal category. Observe that in diagrams (1) and (2) expressions of the type V ⊗W ⊗Z appear. This notation is using implicitly that the natural isomorphisms of vector spaces: (V ⊗W) ⊗Z ∼= V ⊗(W ⊗Z) are isomorphism of representations. In more generality, one may consider the case where there are natura",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/lem-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 32,
+      "target": "lem-sec-016-01.md",
+      "narrative": null,
+      "content": "Let g be a ﬁnite dimensional complex semisimple Lie algebra and h ⊂g a Cartan subalgebra. For any α ∈h∗set gα := {x ∈g : [h, x] = α(h)x for all h ∈h}. Then: [gα, gβ] ⊂gα+β. If x ∈gα for α̸ = 0, ad(x) is nilpotent. If α + β̸ = 0 then gα is orthogonal to gβ with respect to the Killing form. In particular, the restriction of κ to h = g0 is nondegenerate.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/prop-sec-016-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 32,
+      "target": "prop-sec-016-02.md",
+      "narrative": null,
+      "content": "The set ∆spans a real vector space E ⊂h∗of dimension equal to the complex dimension of h∗. Moreover, the bilinear form κ is positive deﬁnite when restricted to E, and the set ∆is an abstract root system in E.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Drinfeld-Kohno theorem",
+      "pageStart": 26,
+      "pageEnd": 32,
+      "target": "../sections/sec-016-52-the-drinfeld-kohno-theorem.md",
+      "narrative": null,
+      "content": "The Drinfeld-Kohno theorem\nWe have seen that modules over quasi-triangular bialgebras produce representations of the braid\ngroups. However, so far we have not encountered nontrivial examples of quasi-triangular bialge-\nbras. A rich source of examples comes from Lie theory: the universal enveloping algebra U(g) of\na complex semisimple Lie algebra g can be deformed to obtain a quantum enveloping algebra.\nThese provide interesting examples of quasi-triangular bialgebras and of representations of the\nbraid groups.\nIn order to describe the Drinfeld-Jimbo bialgebras, it will be necessary to review s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/thm-sec-016-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Drinfeld [10]-Jimbo [15]",
+      "pageStart": 26,
+      "pageEnd": 32,
+      "target": "thm-sec-016-03.md",
+      "narrative": null,
+      "content": "The algebra Uh(g) is a topological bialgebra with structure maps characterized by the following properties: ∆h(Hi) = Hi ⊗1 + 1 ⊗Hi, ∆h(Ei) = Ei ⊗exp(hdiHi ) + exp(−hdiHi ) ⊗Ei, ∆h(Fi) = Ei ⊗exp(hdiHi ) + exp(−hdiHi ) ⊗Fi, ϵh(Hi) = ϵh(Ei) = ϵh(Fi) = 0. There exists a universal r-matrix Rh, which can be written explicitly, making Uh(g) a topological quasi-triangular bialgebra. Moreover, there is a canonical isomorphism of algebras: Uh(g) h(Uh(g)) ∼= U(g).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/thm-sec-016-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 32,
+      "target": "thm-sec-016-04.md",
+      "narrative": null,
+      "content": "Let g be a ﬁnite dimensional complex semisimple Lie algebra with Drinfeld- Jimbo algebra Uq(g). There exists an isomorphism of topological algebras: ϕ : Uh(g) →U(g)[[h]], which is the identity modulo h. Moreover, given any other such isomorphism ϕ′ there exists an invertible element F ∈U(g)[[h]], congruent to 1 modulo h, such that for any x ∈Uh(g): ϕ′(x) = Fϕ(x)F −1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1404.0724v1/blocks/thm-sec-016-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Drinfeld [9] - Kohno [21]",
+      "pageStart": 26,
+      "pageEnd": 32,
+      "target": "thm-sec-016-05.md",
+      "narrative": null,
+      "content": "Let g be a ﬁnite dimensional complex semisimple Lie algebra and V a ﬁnite dimensional complex representation. For each n ≥2, the Knizhnik- Zamolodchikov representation of of the braid group Bn: ρKZ : Bn →AutC[[h]](V ⊗n[[h]]), obtained by taking Taylor series on the monodromy of the Knizhnik-Zamolodchikov connection is equivalent to the Drinfeld-Jimbo representation: ρDJ : Bn →AutC[[h]](V ⊗n[[h]]), obtained via the universal r-matrix of the Drinfeld-Jimbo algebra Uh(g).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

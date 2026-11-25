@@ -1,0 +1,57 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1706.06494v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Sampling General N-Body Interactions with Auxiliary Fields",
+  "contains": [
+    "library/arxiv-1706.06494v2/sections/sec-front-matter",
+    "library/arxiv-1706.06494v2/sections/sec-000"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Sampling General N-Body Interactions with Auxiliary Fields — 2 sections: Front matter; Acknowledgements\n\n**Sampling General N-Body Interactions with Auxiliary Fields**\n\n*Christopher Körber,1, ∗Evan Berkowitz,1, † and Thomas Luu1, ‡*\n\n5 pp, 2 sections.\n\n**Outline.** Front matter; Acknowledgements",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1706.06494&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1706.06494v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1706.06494v2.pdf",
+    "source_sha256": "3745319210df19bd640f2b2b31ba7fb48375a6d92f3af876bd2b62d40bdd4517",
+    "pages": 5,
+    "arxiv": {
+      "id": "1706.06494",
+      "version": "2",
+      "primary_class": "nucl-th",
+      "stamp_date": "29 Jun 2017"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

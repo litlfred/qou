@@ -1,0 +1,80 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1301.4504v4/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Quantum Computation vs. Firewalls",
+  "contains": [
+    "library/arxiv-1301.4504v4/sections/sec-front-matter",
+    "library/arxiv-1301.4504v4/sections/sec-000",
+    "library/arxiv-1301.4504v4/sections/sec-001",
+    "library/arxiv-1301.4504v4/sections/sec-002",
+    "library/arxiv-1301.4504v4/sections/sec-003",
+    "library/arxiv-1301.4504v4/sections/sec-004",
+    "library/arxiv-1301.4504v4/sections/sec-005",
+    "library/arxiv-1301.4504v4/sections/sec-006",
+    "library/arxiv-1301.4504v4/sections/sec-007",
+    "library/arxiv-1301.4504v4/sections/sec-008",
+    "library/arxiv-1301.4504v4/sections/sec-009",
+    "library/arxiv-1301.4504v4/sections/sec-010",
+    "library/arxiv-1301.4504v4/sections/sec-011",
+    "library/arxiv-1301.4504v4/sections/sec-012",
+    "library/arxiv-1301.4504v4/sections/sec-013",
+    "library/arxiv-1301.4504v4/sections/sec-014",
+    "library/arxiv-1301.4504v4/sections/sec-015",
+    "library/arxiv-1301.4504v4/sections/sec-016",
+    "library/arxiv-1301.4504v4/sections/sec-017",
+    "library/arxiv-1301.4504v4/sections/sec-018",
+    "library/arxiv-1301.4504v4/sections/sec-019",
+    "library/arxiv-1301.4504v4/sections/sec-020",
+    "library/arxiv-1301.4504v4/sections/sec-021",
+    "library/arxiv-1301.4504v4/sections/sec-022",
+    "library/arxiv-1301.4504v4/sections/sec-023"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Quantum Computation vs. Firewalls — In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue\n\n**Quantum Computation vs. Firewalls**\n\n*Daniel Harlowa Patrick Haydenb*\n\n66 pp, 25 sections.\n\n**Abstract.** In this paper we discuss quantum computational restrictions on the types of thought experiments recently used by Almheiri, Marolf, Polchinski, and Sully to argue against the smoothness of black hole horizons. We argue that the quantum computations required to do these experiments would take a time which is exponential in the entropy of the black hole under study, and we show that for a wide variety of black holes this prevents the experiments from being done. We interpret our results as motivating a broader type of nonlocality than is usually considered in the context of black hole thought experiments, and claim that once this type of nonlocality is allowed there may be no need for ﬁrewalls. Our results do not threaten the unitarity of of black hole evaporation or the ability of advanced civilizations to test it. arXiv:1301.4504v4 [hep-th] 6 Apr 2013\n\n**Outline.** Front matter; 1 Introduction; 2 The Firewall Argument; 2.1 A Quantum Black Hole from the Outside; 2.2 A Quantum Black Hole from the Inside; 2.3 A Way Out?; 3 The AMPS Experiment as a Quantum Computation; 3.1 Quantum Computing is Hard; 3.2 Implementing a General Unitary Transformat; 3.3 Why is Alice's Computation Slower than the; 3.4 Two Counting Arguments; 4 Quantum Coding and Error Correction; 4.1 Review of Error Correcting Codes; 4.2 Computational Complexity, Stabilizer Codes; 4.3 Alice's Task as Error Correction; 4.4 Error Correction and Zero-Knowledge Proofs; 5 More General Black Holes; 5.1 Schwarzschild in a Box",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1301.4504&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1301.4504v4",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1301.4504v4.pdf",
+    "source_sha256": "201acc5bb1d4b6a0fdf39f7edffb36e11b0119366d1459d968d80b8278a969f3",
+    "pages": 66,
+    "arxiv": {
+      "id": "1301.4504",
+      "version": "4",
+      "primary_class": "hep-th",
+      "stamp_date": "6 Apr 2013"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

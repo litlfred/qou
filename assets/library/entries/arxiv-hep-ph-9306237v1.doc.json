@@ -1,0 +1,333 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-ph-9306237v1",
+  "title": "Chiral Perturbation to One Loop Including the rho Meson",
+  "variant": "pdf",
+  "pages": 14,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 11,
+      "labelStart": "1",
+      "labelEnd": "11",
+      "words": 3690,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gasser leutwyler",
+          "heading": false
+        },
+        {
+          "term": "m2ρ",
+          "heading": false
+        },
+        {
+          "term": "eﬀective lagrangian",
+          "heading": false
+        },
+        {
+          "term": "hls",
+          "heading": false
+        },
+        {
+          "term": "chiral lagrangian",
+          "heading": false
+        },
+        {
+          "term": "oﬀ-shell eﬀective",
+          "heading": false
+        },
+        {
+          "term": "conventional chpt",
+          "heading": false
+        },
+        {
+          "term": "eﬀective ﬁelds",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-ph/9306237v1 7 Jun 1993 KEK-TH-349 KEK preprint 92-169 April, 1993 Chiral Perturbation to One Loop Including the ρ Meson Masaharu Tanabashi∗ National Laboratory for High Energy Physics (KEK) Tsukuba, Ibaraki 305, Japan Abstract We formulate the chiral perturbation theory at the one loop level in the ef- fective lagrangian including the ρ meson as a dynamical gauge boson of a hidden local symmetry(HLS). The",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-ph-9306237v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 14,
+      "labelStart": "11",
+      "labelEnd": "14",
+      "words": 713,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "yamawaki",
+          "heading": false
+        },
+        {
+          "term": "nucl",
+          "heading": false
+        },
+        {
+          "term": "kugo",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "bando",
+          "heading": false
+        },
+        {
+          "term": "lett",
+          "heading": false
+        },
+        {
+          "term": "harada",
+          "heading": false
+        }
+      ],
+      "extract": "[1] S. Weinberg, Physica 96A (1979) 327. [2] J. Gasser and H. Leutwyler, Ann. Phys. (N.Y.) 158 (1984) 142; Nucl. Phys. B250 (1985) 465. [3] B. Holdom and J. Terning, Phys. Lett. B247 (1990) 88; M. Golden and L. Randall, Nucl. Phys. B361 (1991) 3; H. Georgi, Nucl. Phys. B363 (1991) 301; A.F. Falk, M. Luke, E.H. Simmons, Nucl. Phys. B365 (1991) 523. [4] M. Bando, T. Kugo, S. Uehara, K. Yamawaki and T. Yanagida, Phys.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "gasser leutwyler",
+      "heading": false
+    },
+    {
+      "term": "yamawaki",
+      "heading": false
+    },
+    {
+      "term": "leutwyler parameters",
+      "heading": false
+    },
+    {
+      "term": "m2ρ",
+      "heading": false
+    },
+    {
+      "term": "leutwyler estimates",
+      "heading": false
+    },
+    {
+      "term": "eﬀective lagrangian",
+      "heading": false
+    },
+    {
+      "term": "hls",
+      "heading": false
+    },
+    {
+      "term": "chiral lagrangian",
+      "heading": false
+    },
+    {
+      "term": "oﬀ-shell eﬀective",
+      "heading": false
+    },
+    {
+      "term": "conventional chpt",
+      "heading": false
+    },
+    {
+      "term": "eﬀective ﬁelds",
+      "heading": false
+    },
+    {
+      "term": "kugo",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Coeﬃcients of counter terms",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 1,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 2,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p11); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 2 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-ph-9306237v1"
+  }
+}

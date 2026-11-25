@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1806.09450v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Deducing the symmetry of the standard model from the automorphism and structure groups of the exceptional Jordan algebra ∗",
+  "contains": [
+    "library/arxiv-1806.09450v1/sections/sec-front-matter",
+    "library/arxiv-1806.09450v1/sections/sec-000",
+    "library/arxiv-1806.09450v1/sections/sec-001",
+    "library/arxiv-1806.09450v1/sections/sec-002",
+    "library/arxiv-1806.09450v1/sections/sec-003",
+    "library/arxiv-1806.09450v1/sections/sec-004",
+    "library/arxiv-1806.09450v1/sections/sec-005",
+    "library/arxiv-1806.09450v1/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Deducing the symmetry of the standard model from the automorphism and structure groups of the exceptional Jordan algebra ∗ — We continue the study undertaken in [DV] of the exceptional Jordan algebra\n\n**Deducing the symmetry of the standard model from the automorphism and structure groups of the exceptional Jordan algebra ∗**\n\n*Ivan Todorov1, Michel Dubois-Violette2*\n\n16 pp, 8 sections.\n\n**Abstract.** We continue the study undertaken in [DV] of the exceptional Jordan algebra J = J8 3 as (part of) the ﬁnite-dimensional quantum algebra in an almost classical space-time approach to particle physics. Along with reviewing known properties of J and of the associated exceptional Lie groups we argue that the symmetry of the model can be deduced from the Borel-de Siebenthal theory of maximal connected subgroups of simple compact Lie groups. ∗Updated version of IHES/P/17/03 with minor corrections. 1 arXiv:1806.09450v1 [hep-th] 17 Jun 2018\n\n**Outline.** Front matter; 1 Introduction; 2 Exceptional finite quantum geometry; 3 The Lie algebra of derivations of J and its ; 3.1 The automorphism group F4 of the exception; 3.2 The magic square; 3.3 The exceptional Lie groups E6 and E7; 4 Borel-de Siebenthal theory and intersections",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1806.09450&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1806.09450v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1806.09450v1.pdf",
+    "source_sha256": "8556b67d97856446c79d3dfc2e3a9601902b4b097312e31d2528b43976b4182a",
+    "pages": 16,
+    "arxiv": {
+      "id": "1806.09450",
+      "version": "1",
+      "primary_class": "hep-th",
+      "stamp_date": "17 Jun 2018"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

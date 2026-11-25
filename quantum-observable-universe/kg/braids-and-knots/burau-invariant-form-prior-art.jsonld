@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-burau-invariant-form-prior-art",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:burau-invariant-form-prior-art",
+  "kind": "remark",
+  "title": "Prior art: the Burau representation preserves a sesquilinear form",
+  "interprets": "papers/quantum-observable-universe/blocks/thm-borromean-character-fibre",
+  "cites": [
+    "references/squier1984"
+  ],
+  "tags": [
+    "burau",
+    "invariant-form",
+    "unitary",
+    "braid-group",
+    "prior-art"
+  ],
+  "text": "burau-invariant-form-prior-art.md",
+  "provenance": "authored"
+}

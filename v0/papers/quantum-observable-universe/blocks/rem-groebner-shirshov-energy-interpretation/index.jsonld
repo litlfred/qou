@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-groebner-shirshov-energy-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:groebner-shirshov-energy-interpretation",
+  "kind": "remark",
+  "title": "Role of Gröbner--Shirshov reduction: Markov-trace evaluation engine, flat coefficient shadow, and word-length norm",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-groebner-shirshov-energy",
+    "papers/quantum-observable-universe/blocks/def-categorical-hamiltonian"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-groebner-shirshov-energy",
+  "tags": [
+    "groebner-shirshov",
+    "hecke-algebra",
+    "energy",
+    "markov-trace",
+    "normal-form"
+  ],
+  "text": "groebner-shirshov-energy-interpretation.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,196 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2008.09788v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2008.09788v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:2008.09788v2  [math.RA]  23 Sep 2020\nNONSTANDARD ANALYSIS, DEFORMATION QUANTIZATION AND\nSOME LOGICAL ASPECTS OF (NON)COMMUTATIVE ALGEBRAIC\nGEOMETRY\nALEXEI KANEL-BELOV, ALEXEI CHILIKOV, ILYA IVANOV-POGODAEV, SERGEY MALEV,\nEUGENY PLOTKIN, JIE-TAI YU, AND WENCHAO ZHANG\nAbstract. This paper surveys results related to well-known works of B. Plotkin\nand V. Remeslennikov on the edge of algebra, logic and geometry. We start from\na brief review of the paper and motivations.\nThe ﬁrst sections deal with model\ntheory. In Section 2.1 we describe the geometric equivalence, the elementary equiv-\nalence",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2008.09788v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "\\label{intro}\nThe connections between algebraic geometry and mathematical logic are extremely important.\nFirst of all, notice a deep connection between algebra, category theory and model theory\n inspired by the results of Plotkin and his school\n(see\n\\cite{Plotkin_UA-AL-Datab, Plotkin_Haz, Plotkin_7_lec, Plotkin_VarAlg-AlgVar, Pl-Sib}.\nNote that this research is related to\n the one  of  most striking examples of interaction between model theory and geometry given by  solutions of the famous Tarskii's problem, see \\cite{KM, Se}.\n Another outstanding  achievement is the theory of Zariski geometri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2008.09788v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Model-theoretical aspects",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-2-model-theoretical-aspects.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2008.09788v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algebraic geometry over algebraic systems",
+      "pageStart": 5,
+      "pageEnd": 13,
+      "target": "../sections/sec-002-21-algebraic-geometry-over-algebraic-systems.md",
+      "narrative": null,
+      "content": "\\label{Pl}\n\n\n\\subsubsection{\\bf Three versions of logical rigidity}\\label{Equiv}\n\nQuestions we are going to illuminate in this section are concentrated around the interaction between algebra, logic, model theory and geometry.\n\nThe main question behind further considerations is as follows. Suppose we have two algebras equipped with a sort of logical description.\n\n\\begin{prm} When the coincidence of logical descriptions  provides an isomorphism between algebras in question?\n\\end{prm}\n\nWith this aim we consider different kinds of logical equivalences between algebras. Some of the notions we are d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2008.09788v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Plotkin's problem: automorphisms of endomorphism semigroups and groups of polynomial automorphisms",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-003-22-plotkins-problem-automorphisms-of-endomorphis.md",
+      "narrative": null,
+      "content": "\\label{plot-prm}\n\n\nIn the light of B.I. Plotkin's activity on  creation of algebraic geometry over algebraic systems, he drew a special attention to   studying the groups of their automorphisms, see \\cite{Pl}. Later on he emphasized that automorphisms of categories of free algebras of the varieties play here a role of exceptional importance. This role was underlined in Proposition \\ref{prop:eq} of Section \\ref{Pl}.\nThe meaning  of Reduction Theorem (see \\cite{Pl-St}, \\cite{KLP}, \\cite{MPP2}, \\cite{PZ1}) was explained just after this proposition.  Reduction Theorem  reduces investigation of aut",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2008.09788v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "On the independence of the B-KK isomorphism of infinite prime and Plotkin conjecture for symplectomorphisms",
+      "pageStart": 13,
+      "pageEnd": 23,
+      "target": "../sections/sec-004-23-on-the-independence-of-the-b-kk-isomorphism-o.md",
+      "narrative": null,
+      "content": "\\label{indep}\n\n\n\\subsubsection{\\bf Plotkin's problem for symplectomorphism and the Kontsevich conjecture}\\label{plk}\n\nObserve that the study of automorphisms of the group of polynomial symplectomorphisms, as well as automorphisms of the Weyl algebra (Plotkin's problem) is extremely important in course of the Kontsevich conjecture, as well as the Jacobian conjecture.\n\n\n\n\\subsubsection{\\bf Ultrafilters and infinite primes}\\label{uf}\nLet $\\mathcal{U}\\subset 2^{\\mathbb{N}}$ be an arbitrary non-principal ultrafilter on the set of all positive numbers (in this note $\\mathbb{N}$ will almost always be",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2008.09788v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algorithmic aspects of algebraic geometry",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/sec-005-3-algorithmic-aspects-of-algebraic-geometry.md",
+      "narrative": null,
+      "content": "\\label{aloritm}\nThe section contains two subsections: the first one is devoted to noncommutative Finite Gr\\\"obner basis issues and the second one is devoted to algorithmic inclusion undecidability.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2008.09788v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Finite Gröbner basis algebras with unsolvable nilpotency problem and zero divisors problem",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "../sections/sec-006-31-finite-gröbner-basis-algebras-with-unsolvable.md",
+      "narrative": null,
+      "content": "\\label{sec31}\n\n\\subsubsection{\\bf The sketch of construction}\\label{sk}\n\nLet $A$ be an algebra over a field $K$.\n\nThe set of all words in the alphabet $\\{a_1,\\dots , a_N\\}$ is a semigroup. The main idea of the construction is a\nrealization of a universal Turing machine in this semigroup. We use the universal Turing\nmachine constructed by Marvin Minsky in \\cite{Minsky}. This machine has $7$ states and $4$-color\ntape. The machine can be completely defined by $28$ instructions.\n\n\nNote that $27$ of them have a form\n$$(i,j) \\rightarrow (L,q(i,j),p(i,j)) \\text{ or } (i,j) \\rightarrow (R,q(i,j),p(i,j",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2008.09788v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "On the algorithmic undecidability of the embeddability problem for algebraic varieties over a field of characteristic zero",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "../sections/sec-007-32-on-the-algorithmic-undecidability-of-the-embe.md",
+      "narrative": null,
+      "content": "\\label{sec32}\n\n\n\\subsubsection{\\bf The Case of Real Numbers}\\label{sec-real}\nBy a \\textit{Matiyasevich family of polynomials} we mean a family of polynomials\n$$Q(\\sigma_1,\\dots,\\sigma_{\\tau},x_1,\\dots,x_s)$$\nfor which the existence of a solution for a given set of parameters of the polynomial is undecidable. As was established in \\cite{Mat93}, such a polynomial exists.\n\nConsider the affine space of dimension $5d+1$. We denote coordinates in this space by $X_i, Y_i, Z_i, U_i, W_i, 1\\leq i\\leq d$, and $T$. Consider the variety $B_{(d)}$ given by the following system of generators and relations:",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2008.09788v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 28,
+      "pageEnd": 31,
+      "target": "../sections/sec-008-references.md",
+      "narrative": null,
+      "content": "[1] N. Avni, A. Lubotzky and C. Meiri, First order rigidity of non-uniform higher-rank arithmetic\ngroups, Invent. Math. (2019), 219-240.\n[2] N. Avni and C. Meiri, On the model theory of higher rank arithmetic groups, arXiv 2008.01793v1,\n(2020), 59pp.\n[3] G. Bergman, The diamond lemma for ring theory. Adv. Math., (1978), 29, 2, 178–218.\n[4] A. Berzins, B. Plotkin and E. Plotkin, Algebraic geometry in varieties of algebras with the given\nalgebra of constants, Journal of Math. Sciences 102 (3) (2000) 4039-4070.\n[5] A. Berzins, The group of automorphisms of the category of free associative algebra",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

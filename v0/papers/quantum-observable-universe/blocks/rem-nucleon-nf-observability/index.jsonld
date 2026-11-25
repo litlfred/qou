@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-nucleon-nf-observability",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:nucleon-nf-observability",
+  "kind": "remark",
+  "title": "Observability structure of the nucleon normal form",
+  "interprets": "papers/quantum-observable-universe/blocks/prop-nuclear-groebner-reduction",
+  "tags": [
+    "normal-form",
+    "observable",
+    "virtual",
+    "color-tube",
+    "hecke-algebra",
+    "nucleon",
+    "neutron",
+    "proton",
+    "beta-decay",
+    "sign-pattern",
+    "computational-witness"
+  ],
+  "text": "nucleon-nf-observability.md",
+  "provenance": "authored"
+}

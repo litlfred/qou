@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-building-block-knots",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:building-block-knots",
+  "kind": "remark",
+  "title": "Building block knots: classification, polynomials, and volumes",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-antineutrino-knot"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-torus-knot-generators",
+  "tags": [
+    "knot",
+    "torus-knot",
+    "jones-polynomial",
+    "hyperbolic-volume",
+    "particle",
+    "classification",
+    "building-block",
+    "amphichiral",
+    "mirror",
+    "appendix"
+  ],
+  "text": "building-block-knots.md",
+  "leanSource": "building-block-knots.lean",
+  "provenance": "authored"
+}

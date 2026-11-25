@@ -1,0 +1,1163 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1707.00196v3",
+  "title": "Yang-Baxter representations of the inﬁnite symmetric group",
+  "variant": "pdf",
+  "pages": 36,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "R-matrices and characters of S",
+      "number": "2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-r-matrices-and-characters-of-s"
+    },
+    {
+      "level": 2,
+      "title": "Extremality and Thoma's parameterization",
+      "number": "2.1",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-extremality-and-thomas-parameterization"
+    },
+    {
+      "level": 2,
+      "title": "Faithfulness",
+      "number": "2.2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-faithfulness"
+    },
+    {
+      "level": 1,
+      "title": "Yang-Baxter subfactors",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-3-yang-baxter-subfactors"
+    },
+    {
+      "level": 1,
+      "title": "The structure of R0",
+      "number": "4",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-4-the-structure-of-r0"
+    },
+    {
+      "level": 2,
+      "title": "Normal forms of involutive R-matrices",
+      "number": "4.1",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-41-normal-forms-of-involutive-r-matrices"
+    },
+    {
+      "level": 2,
+      "title": "Parameterization by pairs of Young diagrams",
+      "number": "4.2",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-42-parameterization-by-pairs-of-young-diagrams"
+    },
+    {
+      "level": 1,
+      "title": "Yang-Baxter representations",
+      "number": "5",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-5-yang-baxter-representations"
+    },
+    {
+      "level": 2,
+      "title": "R-matrices and K-theory",
+      "number": "5.1",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-51-r-matrices-and-k-theory"
+    },
+    {
+      "level": 2,
+      "title": "R-matrices, K-theory and symmetric functions",
+      "number": "5.2",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-52-r-matrices-k-theory-and-symmetric-functions"
+    },
+    {
+      "level": 2,
+      "title": "R-matrices and product states",
+      "number": "5.3",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-53-r-matrices-and-product-states"
+    },
+    {
+      "level": 1,
+      "title": "Examples",
+      "number": "6",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-6-examples"
+    },
+    {
+      "level": 2,
+      "title": "R-matrices of diagonal type",
+      "number": "6.1",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-61-r-matrices-of-diagonal-type"
+    },
+    {
+      "level": 2,
+      "title": "Temperley-Lieb R-matrices",
+      "number": "6.2",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-62-temperley-lieb-r-matrices"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 28,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lechner",
+          "heading": false
+        },
+        {
+          "term": "cardiﬀuniversity",
+          "heading": false
+        },
+        {
+          "term": "gandalf",
+          "heading": false
+        }
+      ],
+      "extract": "Yang-Baxter representations of the inﬁnite symmetric group Gandalf Lechner, Ulrich Pennig, Simon Wood School of Mathematics, CardiﬀUniversity arXiv:1707.00196v3 [math.QA] 5 Aug 2019 Mathematics Subject Classiﬁcation: 16T25, 20C32, 46L37",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-1707.00196v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 5,
+      "labelStart": "1",
+      "labelEnd": "5",
+      "words": 2290,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "involutive r-matrices",
+          "heading": false
+        },
+        {
+          "term": "yang-baxter character",
+          "heading": false
+        },
+        {
+          "term": "yang-baxter representations",
+          "heading": false
+        },
+        {
+          "term": "yang-baxter equation",
+          "heading": false
+        },
+        {
+          "term": "thoma parameters",
+          "heading": false
+        },
+        {
+          "term": "unitary involutive",
+          "heading": false
+        },
+        {
+          "term": "subset tyb",
+          "heading": false
+        },
+        {
+          "term": "extremal character",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction March 22, 2018 Abstract Every unitary involutive solution of the quantum Yang-Baxter equation (R- matrix) deﬁnes an extremal character and a representation of the inﬁnite sym- metric group S∞. We give a complete classiﬁcation of all such Yang-Baxter characters and determine which extremal characters of S∞are of Yang-Baxter form. Calling two involutive R-matrices equivalent if they have the same",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-r-matrices-and-characters-of-s",
+      "number": "2",
+      "title": "R-matrices and characters of S",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 290,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "characters",
+          "heading": true
+        },
+        {
+          "term": "n-cycles",
+          "heading": false
+        },
+        {
+          "term": "extremal",
+          "heading": false
+        },
+        {
+          "term": "r-matrices",
+          "heading": true
+        },
+        {
+          "term": "thoma",
+          "heading": false
+        },
+        {
+          "term": "inﬁnite",
+          "heading": false
+        }
+      ],
+      "extract": "R-matrices and characters of S∞ The inﬁnite symmetric group S∞is the group of all bijections of N that move only ﬁnitely many points, a countable discrete group with inﬁnite (non-trivial) conjugacy classes. A character of S∞is deﬁned as a positive deﬁnite class function χ : S∞→C that is normalized at the identity, χ(e) = 1. For example, the trivial representation has the constant character 1. The characters of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-extremality-and-thomas-parameterization",
+      "number": "2.1",
+      "title": "Extremality and Thoma's parameterization",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 942,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "thoma",
+          "heading": true
+        },
+        {
+          "term": "extremal character",
+          "heading": false
+        },
+        {
+          "term": "thoma parameters",
+          "heading": false
+        },
+        {
+          "term": "trv",
+          "heading": false
+        },
+        {
+          "term": "yang-baxter characters",
+          "heading": false
+        },
+        {
+          "term": "r-matrices",
+          "heading": false
+        },
+        {
+          "term": "extremality",
+          "heading": true
+        },
+        {
+          "term": "n-cycle",
+          "heading": false
+        }
+      ],
+      "extract": "We now connect S∞to R-matrices by showing that any R-matrix deﬁnes an extremal character and corresponding factor representation of S∞. We will be working with the inﬁnite tensor product E0 := N n≥1 End V (deﬁned only algebraically at this point), with inclusions ﬁxed by tensoring with idV in the last factor. With the group inclusions Sn ⊂Sn+1 ⊂S∞deﬁned by letting σ ∈Sn act on N by keeping all j > n ﬁxed, the system",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-faithfulness",
+      "number": "2.2",
+      "title": "Faithfulness",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 426,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "thoma parameters",
+          "heading": false
+        },
+        {
+          "term": "yang-baxter characters",
+          "heading": false
+        },
+        {
+          "term": "d2n",
+          "heading": false
+        },
+        {
+          "term": "algebra homomorphism",
+          "heading": false
+        },
+        {
+          "term": "plancherel trace",
+          "heading": false
+        },
+        {
+          "term": "faithfulness",
+          "heading": true
+        },
+        {
+          "term": "injective",
+          "heading": false
+        },
+        {
+          "term": "extremal",
+          "heading": false
+        }
+      ],
+      "extract": "Faithfulness Given an R-matrix R ∈R0 of dimension d, the homomorphism ρR restricts to a representation ρ(n) R of Sn on V ⊗n, which has dimension dn. This observation expresses that Yang-Baxter representations are small in comparison to the group algebra C[Sn], and leads to restrictions on the Thoma parameters of Yang-Baxter characters. Proposition 2.4. Let R ∈R0. i) As a group homomorphism, ρR is injective if and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-yang-baxter-subfactors",
+      "number": "3",
+      "title": "Yang-Baxter subfactors",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 15,
+      "labelStart": "8",
+      "labelEnd": "15",
+      "words": 3232,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "yang-baxter",
+          "heading": true
+        },
+        {
+          "term": "yang-baxter character",
+          "heading": false
+        },
+        {
+          "term": "relative commutant",
+          "heading": false
+        },
+        {
+          "term": "dβi",
+          "heading": false
+        },
+        {
+          "term": "dαi",
+          "heading": false
+        },
+        {
+          "term": "xer",
+          "heading": false
+        },
+        {
+          "term": "thoma parameters",
+          "heading": false
+        },
+        {
+          "term": "yang-baxter equation",
+          "heading": false
+        }
+      ],
+      "extract": "Yang-Baxter subfactors The Thoma parameters of a Yang-Baxter character have further properties, in addition to the ones spelled out in Cor. 2.6. To extract these properties, and to derive a characterization of the equivalence relation ∼, we now switch to a setting involving von Neumann algebras. Speciﬁcally, we will consider subfactors [9, 37] arising from the subgroup S> ∞⊂S∞, S> ∞:= {σ ∈S∞: σ(1) = 1}. (3.1) 8",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-4-the-structure-of-r0",
+      "number": "4",
+      "title": "The structure of R0",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 4,
+      "summary": null,
+      "keywords": [],
+      "extract": "The structure of R0/∼",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-41-normal-forms-of-involutive-r-matrices",
+      "number": "4.1",
+      "title": "Normal forms of involutive R-matrices",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 20,
+      "labelStart": "15",
+      "labelEnd": "20",
+      "words": 2415,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "thoma parameters",
+          "heading": false
+        },
+        {
+          "term": "r-matrices",
+          "heading": true
+        },
+        {
+          "term": "tensor ﬂip",
+          "heading": false
+        },
+        {
+          "term": "factor ˆrn",
+          "heading": false
+        },
+        {
+          "term": "involutive",
+          "heading": true
+        },
+        {
+          "term": "yang-baxter characters",
+          "heading": false
+        },
+        {
+          "term": "tyb",
+          "heading": false
+        },
+        {
+          "term": "dimensions dαi",
+          "heading": false
+        }
+      ],
+      "extract": "Normal forms of involutive R-matrices Our next aim is to prove that TYB parameterizes the set of all Yang-Baxter characters, that is, that every (α, β) ∈TYB is realized as the Thoma parameters of some R-matrix. We will follow a procedure which has some analogy to building general group representations (of, say, a ﬁnite group) as direct sums of irreducibles. Yang-Baxter representations are reducible, but decomposing",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-42-parameterization-by-pairs-of-young-diagrams",
+      "number": "4.2",
+      "title": "Parameterization by pairs of Young diagrams",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": "20",
+      "labelEnd": "22",
+      "words": 1118,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rescaled thoma",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": true
+        },
+        {
+          "term": "thoma parameters",
+          "heading": false
+        },
+        {
+          "term": "ptr",
+          "heading": false
+        },
+        {
+          "term": "pairs",
+          "heading": true
+        },
+        {
+          "term": "abelian semigroup",
+          "heading": false
+        },
+        {
+          "term": "λ-operation",
+          "heading": false
+        },
+        {
+          "term": "yang-baxter equation",
+          "heading": false
+        }
+      ],
+      "extract": "Parameterization by pairs of Young diagrams The correspondence in Thm. 4.7 classiﬁes the family of Yang-Baxter characters, but it does not classify R0/∼because the dimension of the base space is not recorded in the Thoma parameters. However, it is now easy to incorporate the dimension as well: Given R ∈R0 with Thoma parameters (α, β) and dimension d, we switch to the rescaled Thoma parameters ai := dαi, bi := dβi.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-5-yang-baxter-representations",
+      "number": "5",
+      "title": "Yang-Baxter representations",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 51,
+      "summary": null,
+      "keywords": [],
+      "extract": "Yang-Baxter representations Our basic Def. 1.1 of equivalence of R-matrices refers only to the Sn-representations ρ(n) R . We have seen already that R ∼S implies unitary equivalence of the GNS representations πτ ◦ρR ∼= πτ ◦ρS (3.3). Now we investigate the implications of R ∼S for the homomorphisms ρR, ρS.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-51-r-matrices-and-k-theory",
+      "number": "5.1",
+      "title": "R-matrices and K-theory",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 25,
+      "labelStart": "22",
+      "labelEnd": "25",
+      "words": 1180,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "k-theory",
+          "heading": true
+        },
+        {
+          "term": "trn",
+          "heading": false
+        },
+        {
+          "term": "ring homomorphism",
+          "heading": false
+        },
+        {
+          "term": "normalized trace",
+          "heading": false
+        },
+        {
+          "term": "ring isomorphism",
+          "heading": false
+        },
+        {
+          "term": "unique trace",
+          "heading": false
+        },
+        {
+          "term": "isomorphism induced",
+          "heading": false
+        },
+        {
+          "term": "fact ring",
+          "heading": false
+        }
+      ],
+      "extract": "R-matrices and K-theory In this section we extend the previously deﬁned ρR to a ∗-homomorphism of C∗- algebras, ρR : C∗S∞→E∞, where E∞is the C∗-algebraic counterpart of the alge- bra E from Section 3. On K-theory the map ρR will induce a ring homomorphism ρR∗: K0(C∗S∞) →Z[1 d] with d = dim(V ). The equivalence relation introduced in Def. 1.1 will then translate into the approximate unitary equivalence of the corre-",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-52-r-matrices-k-theory-and-symmetric-functions",
+      "number": "5.2",
+      "title": "R-matrices, K-theory and symmetric functions",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 28,
+      "labelStart": "25",
+      "labelEnd": "28",
+      "words": 1593,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symmetric functions",
+          "heading": true
+        },
+        {
+          "term": "thoma parameters",
+          "heading": false
+        },
+        {
+          "term": "rescaled thoma",
+          "heading": false
+        },
+        {
+          "term": "r-matrices",
+          "heading": true
+        },
+        {
+          "term": "xi1xi xik",
+          "heading": false
+        },
+        {
+          "term": "k-theory",
+          "heading": true
+        },
+        {
+          "term": "hilbert-poincaré series",
+          "heading": false
+        },
+        {
+          "term": "free λ-ring",
+          "heading": false
+        }
+      ],
+      "extract": "R-matrices, K-theory and symmetric functions Before discussing the connections between R-matrices, K-theory and symmetric func- tions in greater detail, we ﬁrst collect some facts about symmetric functions to ﬁx notation. We refer readers unfamiliar with symmetric functions to Macdonald’s book [44]. The ring of symmetric functions, Λ, admits numerous free generators. Here, the most important are: i) Elementary",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-53-r-matrices-and-product-states",
+      "number": "5.3",
+      "title": "R-matrices and product states",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 30,
+      "labelStart": "28",
+      "labelEnd": "30",
+      "words": 792,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "extremal character",
+          "heading": false
+        },
+        {
+          "term": "thoma parameters",
+          "heading": false
+        },
+        {
+          "term": "r-matrices",
+          "heading": true
+        },
+        {
+          "term": "product states",
+          "heading": true
+        },
+        {
+          "term": "gns",
+          "heading": false
+        },
+        {
+          "term": "tracial",
+          "heading": false
+        },
+        {
+          "term": "diﬀerent product",
+          "heading": false
+        },
+        {
+          "term": "trv",
+          "heading": false
+        }
+      ],
+      "extract": "R-matrices and product states Our Yang-Baxter characters are deﬁned by composing the homomorphism ρR : C[S∞] → E0 with the unique tracial product state τ = N n≥1 TrV d of E0 (2.4). In this section, we 28 brieﬂy discuss how this construction extends to a much larger class of extremal char- acters when we change τ to a diﬀerent product state on E0: All extremal characters with Thoma parameters summing to 1 can,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-6-examples",
+      "number": "6",
+      "title": "Examples",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 30,
+      "labelStart": "30",
+      "labelEnd": "30",
+      "words": 12,
+      "summary": null,
+      "keywords": [],
+      "extract": "Examples In this section, we discuss two special classes of involutive R-matrices.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-013-61-r-matrices-of-diagonal-type",
+      "number": "6.1",
+      "title": "R-matrices of diagonal type",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 32,
+      "labelStart": "30",
+      "labelEnd": "32",
+      "words": 475,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diagonal r-matrices",
+          "heading": true
+        },
+        {
+          "term": "diagonal type",
+          "heading": true
+        },
+        {
+          "term": "involutive r-matrices",
+          "heading": false
+        },
+        {
+          "term": "λij",
+          "heading": false
+        },
+        {
+          "term": "ptr",
+          "heading": false
+        },
+        {
+          "term": "r-matrix",
+          "heading": false
+        },
+        {
+          "term": "rank",
+          "heading": false
+        },
+        {
+          "term": "yang-baxter",
+          "heading": false
+        }
+      ],
+      "extract": "R-matrices of diagonal type As a simple class of examples which exist in any dimension, we consider involutive R-matrices of diagonal type. An R-matrix R ∈R0 is said to be diagonal if it is of the form R = DF, with F the ﬂip, and for some orthonormal basis {ei}i of V , the matrix D ∈End(V ⊗V ) is diagonal in the corresponding tensor basis, i.e. D(ei ⊗ej) = λij ei ⊗ej , i, j = 1, . . . , d , (6.1) where λij ∈C. It is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-62-temperley-lieb-r-matrices",
+      "number": "6.2",
+      "title": "Temperley-Lieb R-matrices",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 36,
+      "labelStart": "32",
+      "labelEnd": "36",
+      "words": 1997,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "temperley-lieb r-matrices",
+          "heading": true
+        },
+        {
+          "term": "temperley-lieb algebra",
+          "heading": false
+        },
+        {
+          "term": "temperley-lieb type",
+          "heading": false
+        },
+        {
+          "term": "yang-baxter representations",
+          "heading": false
+        },
+        {
+          "term": "thoma parameters",
+          "heading": false
+        },
+        {
+          "term": "yang-baxter equation",
+          "heading": false
+        },
+        {
+          "term": "quantum yang-baxter",
+          "heading": false
+        },
+        {
+          "term": "involutive r-matrix",
+          "heading": false
+        }
+      ],
+      "extract": "Temperley-Lieb R-matrices As a second class of examples, we consider solutions coming from representations of the Temperley-Lieb algebra [35]. Given an involutive R-matrix R ∈R0, we denote its spectral projection onto eigenvalue +1 by P, i.e. P = 1 2(R + 1). One computes 1 8 (R1R2R1 −R2R1R2) = \u0012 P1P2P1 −1 4P1 \u0013 − \u0012 P2P1P2 −1 4P2 \u0013 , (6.8) and this vanishes by the Yang-Baxter equation. If both terms on the right hand",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "thoma parameters",
+      "heading": false
+    },
+    {
+      "term": "rescaled thoma",
+      "heading": false
+    },
+    {
+      "term": "non-vanishing thoma",
+      "heading": false
+    },
+    {
+      "term": "thoma simplex",
+      "heading": false
+    },
+    {
+      "term": "involutive r-matrices",
+      "heading": true
+    },
+    {
+      "term": "yang-baxter characters",
+      "heading": false
+    },
+    {
+      "term": "yang-baxter representations",
+      "heading": true
+    },
+    {
+      "term": "temperley-lieb r-matrices",
+      "heading": true
+    },
+    {
+      "term": "yang-baxter equation",
+      "heading": false
+    },
+    {
+      "term": "form r-matrices",
+      "heading": false
+    },
+    {
+      "term": "extremal characters",
+      "heading": false
+    },
+    {
+      "term": "yang-baxter setting",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The Young lattice for the class of R-matrices associated to the pair (∅,",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 15,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 16,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p32); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 5
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 16 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1707.00196v3"
+  }
+}

@@ -1,0 +1,234 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "9305356",
+  "blocks": [
+    {
+      "id": "library/9305356/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Abstract",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-abstract.md",
+      "narrative": null,
+      "content": "We motivate left-right symmetric models by the possibility of spontaneous parity breaking. \nTh,;n we describe the multiplets and the La.grangian of such models. Finally we discuss lower \nbounds on the right-handed scale. \n*) Lectc:re given at.the 4th Hellenic School on Elementary Particle Physics, Corfu, \n2- 20 September 1992. \n1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9305356/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "UWThPh-1993-10 \nMarch 31, 1993 \nIntroduction to Left-Right Symmetric Models* \nW. Grimus \nInstitute for Theoretical Physics \nBoltzmanngasse 5 \nA-1090 Vienna, Austria",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9305356/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motivation and Basic Ingredients",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-1-motivation-and-basic-ingredients.md",
+      "narrative": null,
+      "content": "Motivation and Basic Ingredients \n1.1 \nMotivation \nThe standard model (SM) [1] is up to now in excellent agreement with all experiments and \nits radiative corrections beyond QED are about to being tested in the uear future (see the \ncontribution of C. Verzegnassi to these proceedings). Thus at the moment there is no compelling \nreason to go beyond the SM. However, to be able to judge the meaning and importance of tests \nof the SM it is necessary to have a more general framework and to have in mind in which \ndirections the SM could be extended. Before motivating left-right (LR) symmetric models",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9305356/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motivation For LR-Symmetric Models:",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-motivation-for-lr-symmetric-models.md",
+      "narrative": null,
+      "content": "i) Their gauge group is a. very simple extension of the SM gauge group and therefore the \ndiscussion of LR-symmetric models is interesting in itself without needing further moti-\nvation. \nii) Spontaneous breaking of P (and also C P) is possible but it requires R-handed neutrino \ndegrees of freedom. \niii) These additional neutrino multiplets give rise to Majora.na masses and allow for scenarios \nsuch that the neutrino masses are naturally light, i.e. mv, < me ( £ = e, jl, r). \nOf course, the first point is the strongest argument for considering LR-symmetric models. \nHowever, in the following we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9305356/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basic Multiplets and Interactions",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-21-basic-multiplets-and-interactions.md",
+      "narrative": null,
+      "content": "Basic Multiplets and Interactions \nIn the last section we have established that LR-symmetric models are characterized by the \ngauge group \nG = SU(2)L X SU(2)R X U(1)B-L· \n(10) \nThus irreducible representations of G can be denoted by the triplet ( d£, dR, Y) where d£, dR \ndenote the dimensions ofrepresentations of SU(2)L and SU(2)R, respectively. The fermion \ndoublets are given by \nquarks: \nleptons: \nQ£(2, 1, 1/3), QR(1, 2, 1/3) \nh(2, 1, -1), \nLR(1, 2, -1) \n(11) \nas we have discussed before. Note that every doublet has a flavour index in addition. Further-\nmore we will assume in the following t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9305356/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "WfR(x)",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-wfrx.md",
+      "narrative": null,
+      "content": "~ E(fl )~v~ L(x), \nW(x) \n~ c(fl )B~(x), \n1/JL,R(x) \n~ v\" \n0' n \nRLI 'PR,L X. \n¢(x) _, q,t(xJ \n(18) \nwith c(fl) = 1 for f1 = 0 and -1 for f1 = 1, 2, 3. The unitary matrices vl,R act in flavour space. \nT!te parts of the Lagrangian density which we have already discussed are not automatically \ninv<triant under (18) but P requires \n(v'r)tr v\"' - r 1 \nR \n1/.J L-\n1/.!' \n(v\"lt... v\" _ .d \nR \n'-'¢ L -\n'-'¢· \n(19) \nThe condition on the gauge coupling constants comes from £1 and the other ones from £y(¢). \nIt is possible to get interesting models through special choices of vt,R [7] but the simplest case",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9305356/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spontaneous Symmetry Breaking",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-3-spontaneous-symmetry-breaking.md",
+      "narrative": null,
+      "content": "Spontaneous Symmetry Breaking \nAssuming that the Higgs potential has an electric charge conserving minimum we obtain the \nVEVs (see (17) and (26)) \n1 ( v \n0 ) \n(¢)o = vf2 \n0 w \n' \n1 ( \n0 \n0 )",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9305356/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(AL,R)o = yl2",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-006-alro-yl2.md",
+      "narrative": null,
+      "content": "U£,R O \n· \n(31) \nIn the following we will always assume the order of magnitude relations \n(32) \nTaking into account only the effects of uR one easily checks that uR breaks SU(2)R x U(l)s-L \nto U(l)y generated by the SM hypercharge \nY = 2T3R + B- L. \n(33) \nThus we obtain the breaking scheme \nSU(2)L X SU(2)R X U(l)L-B X P ':!; SU(2)L X U(l)y \"'.';' U(l)w,• \n(34) \nAt the intermediate stage one has an extended SM with the two Higgs doublets ¢, vR, b's and \neffects of the R-handed scale. It is interesting to note that through the VEVs of AL,R the lepton \nnumber is broken. However, this does not giv",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9305356/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quark Mixing",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-007-42-quark-mixing.md",
+      "narrative": null,
+      "content": "Quark Mixing \nThe quark mass matrices are determined by ly((¢) 0 ) and they are given by \nM. = Jz(vfq + w\"L\\q), \nDefining mass eigenstates uL,R, dL,R by \nwith \nQL,R = ( ~~) \nL,R \nand unitary matrices u~:~ the mass matrices are diagonalized by \nM. \ndiag (m.,mc,mt) = U~tM.U]i \nMd = diag ( md, m, mb) = utt MdU~. \n(38) \n(39) \n(40) \nSince in LR-symmetric models there are L and R sectors there are also two mixing (K M) \nmatrices \n}. \nu•t ,d \niL,R = L,RuL,R· \n( 41) \nI.n general KL and J(R are independent but it exists an interesting special case where the \nmixing angles (not the phases) are the same",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9305356/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lepton Sector",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-008-5-lepton-sector.md",
+      "narrative": null,
+      "content": "Lepton Sector \nNeutrino masses and mixing have special features in LR-symmetric models which warrant a \ndiscussion in a separate section. The charged lepton mass matrix \nis given in analogy to the down quarks but the corresponding neutrino matrix \n( 46) \nis only the 3 x 3 \"Dirac part\" of the 6 x 6 Major ana mass matrix in the three family case (for \nreviews on neutrino physics see e.g. [18)). The reason is that the triplet scalars t.L,R generate \nMajorana mass terms for V£ and VR, respectively, via Cy(D.) (Equ. (22)) because of \n. \n1 ( 1£L R \n0 ) \nZTz(6.L,R)o = y'2 \nQ \nO \n· \n( 47) \nPutting the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9305356/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgement",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-009-acknowledgement.md",
+      "narrative": null,
+      "content": "The author thanks the organizers for the hospitable and relaxed atmosphere at this meeting.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/9305356/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-010-references.md",
+      "narrative": null,
+      "content": "[1] S.L. Glashow, Nucl. Phys. 22 (1961) 579; \nS. Weinberg, Phys. Rev. Lett. 19 (1967) 1264; \nA. Salam, in proc. 8th Nobel Symposium, Aspeniisgarden, 1968, ed. N. Svartholm \n( Almqvist and Wiksell, Stockholm, 1968). \n[2] .J.C. Pati and A. Salam, Phys. Rev. D10 (1975) 275; \nR.N. Mohapatra and J.C. Pati, Phys. Rev. Dll (1975) 566 and 2558. \n[3] R.N. Mohapatra and G. Senjanovic, Phys. Rev. Lett. 44 (1980) 912; Phys. Rev. D23 (1981) \n165. \n[4] R. Slansky, Phys. Rep. 79 (1981) 1 \n[5] N.V. Smolyakov, Theor. and Math. Phys. 50 (1982) 225. \n[6] J. Maalampi and M. Roos, Phys. Rep. 186 ( 1990) 53. \n[7] G",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

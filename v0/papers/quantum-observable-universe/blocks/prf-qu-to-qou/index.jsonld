@@ -1,0 +1,22 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-qu-to-qou",
+  "@type": [
+    "folio-assistant-sci:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:qu-to-qou",
+  "kind": "proof",
+  "title": "Proof of QU with observability and categorical lifting is a QOU",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-qu-to-qou"
+  ],
+  "text": "qu-to-qou-proof.md",
+  "provenance": "authored"
+}

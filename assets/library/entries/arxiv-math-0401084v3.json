@@ -1,0 +1,139 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0401084v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0401084v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Let $K$ be a knot and $J_N(K;t)$ be the colored Jones polynomial of $K$ in the three-sphere $S^3$ corresponding to the $N$-dimensional representation of $sl_2(\\mathbb{C})$ (see for example [@Kirby/Melvin:INVEM91]). We normalize it so that $J_N(\\text{unknot};t)=1$.\n\nIn [@Kashaev:LETMP97], R. Kashaev introduced a series of numerical link invariants and proposed a conjecture that a limit of his invariants would determines the hyperbolic volume of the complement of a knot if it has a complete hyperbolic structure. On the other hand in [@Murakami/Murakami:ACTAM101] J. Murakami and the first author",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0401084v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0401084v3  [math.GT]  9 Mar 2006\nTHE COLORED JONES POLYNOMIALS OF THE\nFIGURE-EIGHT KNOT AND ITS DEHN SURGERY SPACES\nHITOSHI MURAKAMI AND YOSHIYUKI YOKOTA\nAbstract. We calculate limits of the colored Jones polynomials of the ﬁgure-\neight knot and conclude that in most cases they determine the volumes and\nthe Chern–Simons invariants of the three-manifolds obtained by Dehn surgeries\nalong it.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0401084v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main result",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-2-main-result.md",
+      "narrative": null,
+      "content": "To state our main result we recall some of the results in [@Neumann/Zagier:TOPOL85; @Yoshida:INVEM85].\n\nLet $K$ be a hyperbolic knot in the three-sphere $S^3$, that is, the complement $S^3\\setminus{K}$ has a complete hyperbolic structure. The complete hyperbolic structure can be deformed by a complex parameter $u$ that is the logarithm of the ratio of the eigenvalues of the image of the meridian $K$ by the holonomy representation $\\pi_1(S^3\\setminus{K})\\to\\mathrm{SL}_2(\\mathbb{C})$. We also denote by $v$ the logarithm of the eigenvalue of the image of the longitude. If the structure is complet",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0401084v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Limits of the colored Jones polynomials",
+      "pageStart": 4,
+      "pageEnd": 14,
+      "target": "../sections/sec-002-3-limits-of-the-colored-jones-polynomials.md",
+      "narrative": null,
+      "content": "K. Habiro [@Habiro:SURIK00] and T. Le showed that the colored Jones polynomial $J_N(E;t)$ of the figure-eight knot $E$ is given as follows (see also [@Masbaum:AGT03]). $$\\label{eq:Jones}\n  J_N(E;t)=\\sum_{n=0}^{N-1}\\prod_{k=1}^{n}\n           t^N\\left(1-t^{-N-k}\\right)\\left(1-t^{-N+k}\\right).$$ We will study the asymptotic behavior of $J_N(E;q_r)$ with $q_r:=\\exp(2\\pi{r}\\sqrt{-1}/N)$ for large $N$.\n\nWe approximate $\\prod_{k=1}^{n}\\left(1-q_r^{-N{\\pm}k}\\right)$ by an integral. Note that $$\\prod_{k=1}^{n}\\left(1-q_r^{-N{\\pm}k}\\right)\n  =\n  \\exp\n  \\left\\{\n    \\frac{N}{2\\pi}\n    \\sum_{k=1}^{n}\n    \\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0401084v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of the main theorem",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-003-4-proof-of-the-main-theorem.md",
+      "narrative": null,
+      "content": "In this section we will prove the main theorem.\n\nFirst we will calculate the derivative of $H(u):=H(y,m^2)$.\n\n::: lem\n$$\\frac{d\\,\\bigl(H(u)-\\pi\\sqrt{-1}u\\bigr)}{du}\n  =\n  \\frac{v}{2}.$$\n:::\n\n::: proof\n*Proof.* We first calculate the partial derivatives of $H(\\xi,\\eta)$. We have $$\\begin{split}\n  \\frac{\\partial\\,H(\\xi,\\eta)}{\\partial\\xi}\n  &=\n  \\\n  \\frac{1}{\\xi}\n  \\left\\{\n     \\log\\left(1-\\xi^{-1}\\eta^{-1}\\right)\n    +\\log\\left(1-\\xi\\eta^{-1}\\right)\n    +\\log\\eta\n  \\right\\}\n  \\\\\n  &=\n  \\frac{1}{\\xi}\\log\\left(\\eta+\\eta^{-1}-\\xi-\\xi^{-1}\\right)\n\\end{split}$$ and $$\\begin{split}\n  \\frac{\\partial\\,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0401084v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix. Optimistic limit",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-004-appendix-optimistic-limit.md",
+      "narrative": null,
+      "content": "In this appendix, we will consider integral surgeries along the figure-eight knot.\n\nLet $E_{p,1}$ be the $p$-surgery along the figure-eight knot with $p\\in\\mathbb{Z}$. Then our parameter $u$ and $v$ satisfies $pu+v=2\\pi\\sqrt{-1}$. From Corollary [\\[cor:Vol_CS\\]](#cor:Vol_CS){reference-type=\"ref\" reference=\"cor:Vol_CS\"} we have $$\\operatorname{Vol}(E_{p,1})+\\sqrt{-1}\\operatorname{CS}(E_{p,1})\n  \\equiv\n  \\frac{H(u)}{\\sqrt{-1}}-\\pi{u}-\\frac{uv}{4\\sqrt{-1}}\n  -\\frac{\\pi}{2}\\lambda(\\gamma)\n  \\mod{\\pi^2\\sqrt{-1}\\mathbb{Z}}.$$ By [@Meyerhoff/Neumann:COMMH92 (4.6)], we have $$\\lambda(\\gamma)\n  =\\frac{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0401084v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-005-references.md",
+      "narrative": null,
+      "content": "[1] S. Gukov, Three-dimensional quantum gravity, Chern-Simons theory, and the A-polynomial,\nComm. Math. Phys. 255 (2005), no. 3, 577–627.\n[2] K. Habiro, On the colored Jones polynomials of some simple links, S¯urikaisekikenky¯usho\nK¯oky¯uroku (2000), no. 1172, 34–43.\n[3] R. M. Kashaev, The hyperbolic volume of knots from the quantum dilogarithm, Lett. Math.\nPhys. 39 (1997), no. 3, 269–275.\n[4] R. Kirby and P. Melvin, The 3-manifold invariants of Witten and Reshetikhin-Turaev for\nsl(2, C), Invent. Math. 105 (1991), no. 3, 473–545.\n[5] J. E. Marsden and M. J. Hoﬀman, Basic complex analysis, W. H",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

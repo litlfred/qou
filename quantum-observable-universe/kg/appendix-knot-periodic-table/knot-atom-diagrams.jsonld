@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-knot-atom-diagrams",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:knot-atom-diagrams",
+  "kind": "remark",
+  "title": "Knot diagrams of light atoms ($Z \\leq 4$)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-shell-structure-eigenvalues"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-stable-nucleus",
+  "tags": [
+    "knot-diagram",
+    "trefoil",
+    "hopf-link",
+    "sub-link",
+    "atom",
+    "transfer-matrix",
+    "antineutrino",
+    "borromean"
+  ],
+  "text": "knot-atom-diagrams.md",
+  "provenance": "authored"
+}

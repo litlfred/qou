@@ -1,0 +1,939 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2607.29018v1",
+  "title": "The Aldous property for normal Cayley graphs on symmetric groups",
+  "variant": "pdf",
+  "pages": 23,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Aldous' spectral gap conjecture",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-11-aldous-spectral-gap-conjecture"
+    },
+    {
+      "level": 2,
+      "title": "Main results",
+      "number": "1.2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-12-main-results"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-2-preliminaries"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-3-proof-of-theorem"
+    },
+    {
+      "level": 1,
+      "title": "Proofs of Theorem and Corollary",
+      "number": "4",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-4-proofs-of-theorem-and-corollary"
+    },
+    {
+      "level": 1,
+      "title": "Normal Cayley graphs on symmetric groups with strictly second largest eigenvalue at most 1",
+      "number": "5",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-5-normal-cayley-graphs-on-symmetric-groups-with"
+    },
+    {
+      "level": 2,
+      "title": "Normal Cayley graphs on $S_n$ that are line graphs",
+      "number": "5.1",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-51-normal-cayley-graphs-on-s-n-that-are-line-gra"
+    },
+    {
+      "level": 2,
+      "title": "Normal Cayley graphs on $S_n$ with strictly second largest eigenvalue at most $1$",
+      "number": "5.2",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-52-normal-cayley-graphs-on-s-n-with-strictly-sec"
+    },
+    {
+      "level": 1,
+      "title": "Proofs of Theorem and Corollary",
+      "number": "6",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-6-proofs-of-theorem-and-corollary"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 353,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cayley graphs",
+          "heading": false
+        },
+        {
+          "term": "sanming zhou",
+          "heading": false
+        },
+        {
+          "term": "normal cayley",
+          "heading": false
+        },
+        {
+          "term": "aldous spectral",
+          "heading": false
+        },
+        {
+          "term": "aldous property",
+          "heading": false
+        },
+        {
+          "term": "support size",
+          "heading": false
+        },
+        {
+          "term": "largest eigenvalue",
+          "heading": false
+        },
+        {
+          "term": "spectral gap",
+          "heading": false
+        }
+      ],
+      "extract": "The Aldous property for normal Cayley graphs on symmetric groups Chenhui Lv∗1 and Sanming Zhou2 1School of Mathematical Sciences, University of Science and Technology of China, Hefei 230026, People’s Republic of China 2School of Mathematics and Statistics, The University of Melbourne, Parkville, VIC 3010, Australia August 3, 2026 Abstract Aldous’ spectral gap conjecture states that the random walk and the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2607.29018v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 290,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm cay",
+          "heading": false
+        },
+        {
+          "term": "largest eigenvalue",
+          "heading": false
+        },
+        {
+          "term": "geq lambda",
+          "heading": false
+        },
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "gamma",
+          "heading": false
+        },
+        {
+          "term": "spectral gap",
+          "heading": false
+        },
+        {
+          "term": "real symmetric",
+          "heading": false
+        },
+        {
+          "term": "symmetric matrix",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:intro label=\"sec:intro\"} All graphs considered in this paper are finite and undirected with no loops or parallel edges. The order of a graph is meant to be its number of vertices. Denote by $A(\\Gamma)$ the adjacency matrix of a graph $\\Gamma$, and call its eigenvalues the *eigenvalues* of $\\Gamma$. Since $A(\\Gamma)$ is a real symmetric matrix, the eigenvalues of $\\Gamma$ are real numbers, and we order them",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-aldous-spectral-gap-conjecture",
+      "number": "1.1",
+      "title": "Aldous' spectral gap conjecture",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 5,
+      "labelStart": "2",
+      "labelEnd": "5",
+      "words": 1462,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aldous spectral",
+          "heading": true
+        },
+        {
+          "term": "spectral gap",
+          "heading": true
+        },
+        {
+          "term": "mathrm cay",
+          "heading": false
+        },
+        {
+          "term": "gap conjecture",
+          "heading": true
+        },
+        {
+          "term": "aldous property",
+          "heading": false
+        },
+        {
+          "term": "mathrm supp",
+          "heading": false
+        },
+        {
+          "term": "graph mathrm",
+          "heading": false
+        },
+        {
+          "term": "cayley graph",
+          "heading": false
+        }
+      ],
+      "extract": "Given a graph $\\Gamma$ on $[n] = \\{1, 2, \\ldots, n\\}$, we may identify each edge $\\{i,j\\}$ of $\\Gamma$ with the transposition $(i\\ j)$ of the symmetric group $S_n$ on $[n]$. Let $T(\\Gamma)$ be the set of such transpositions of $S_n$. Then $\\mathrm{Cay}(S_n, T(\\Gamma))$ is a Cayley graph on $S_n$ associated with $\\Gamma$. It is readily seen that $\\mathrm{Cay}(S_n, T(\\Gamma))$ is connected whenever $\\Gamma$ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-main-results",
+      "number": "1.2",
+      "title": "Main results",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 944,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm cay",
+          "heading": false
+        },
+        {
+          "term": "mathrm supp",
+          "heading": false
+        },
+        {
+          "term": "aldous property",
+          "heading": false
+        },
+        {
+          "term": "normal cayley",
+          "heading": false
+        },
+        {
+          "term": "graphs mathrm",
+          "heading": false
+        },
+        {
+          "term": "nonempty normal",
+          "heading": false
+        },
+        {
+          "term": "cap mathrm",
+          "heading": false
+        },
+        {
+          "term": "overline mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "A subset $S$ of $S_n \\setminus \\{e\\}$ is called [@PP] a *normal set* in $S_n$ if it is the union of some conjugacy classes of $S_n$. Since in $S_n$ every element is conjugate to its inverse element, a Cayley graph $\\mathrm{Cay}(S_n,S)$ on $S_n$ is normal if and only if $S$ is a normal set in $S_n$. Clearly, for a normal set $S$ in $S_n$, the set $$S^c=(S_n\\setminus\\{e\\})\\setminus S$$ is also a normal set in $S_n$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 612,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cayley graphs",
+          "heading": false
+        },
+        {
+          "term": "normal cayley",
+          "heading": false
+        },
+        {
+          "term": "specht module",
+          "heading": false
+        },
+        {
+          "term": "largest eigenvalue",
+          "heading": false
+        },
+        {
+          "term": "conjugacy class",
+          "heading": false
+        },
+        {
+          "term": "cay",
+          "heading": false
+        },
+        {
+          "term": "sgn",
+          "heading": false
+        },
+        {
+          "term": "cycle type",
+          "heading": false
+        }
+      ],
+      "extract": "and Corollary 1.5 in Section 4. To prove Theorem 1.6, we first need to determine all normal Cayley graphs on Sn that are line graphs (see Theorem 5.1). Using this and the classifica- tion [31] of connected regular graphs with second largest eigenvalue at most 1, we obtain a classification of all normal Cayley graphs on Sn whose strictly second largest eigenvalue is at most 1 (see Theorem 5.5). With the help of this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-proof-of-theorem",
+      "number": "3",
+      "title": "Proof of Theorem",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 11,
+      "labelStart": "8",
+      "labelEnd": "11",
+      "words": 979,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "both cay",
+          "heading": false
+        },
+        {
+          "term": "hence cay",
+          "heading": false
+        },
+        {
+          "term": "largest eigenvalue",
+          "heading": false
+        },
+        {
+          "term": "aldous property",
+          "heading": false
+        },
+        {
+          "term": "smallest eigenvalue",
+          "heading": false
+        },
+        {
+          "term": "attained",
+          "heading": false
+        },
+        {
+          "term": "distinct eigenvalues",
+          "heading": false
+        },
+        {
+          "term": "nonempty normal",
+          "heading": false
+        }
+      ],
+      "extract": "Lemma 2.1 (cf. [27, Proposition 2.3]). There exists a positive integer N0 such that for every n ≥N0 and any γ ⊢n with |fix(γ)| ≥2, we have max ζ⊢n ζ /∈{(n),(1n)} ˜χζ(γ) = ˜χ(n−1,1)(γ). 3 Proof of Theorem 1.2 Proof of Theorem 1.2. Let n ≥5, and let S be a nonempty normal set in Sn with S̸ = Sn\\{e}. Assume first that either S or Sc is equal to An \\ {e}. Without loss of generality, we may assume that S = An \\ {e}. Then",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-4-proofs-of-theorem-and-corollary",
+      "number": "4",
+      "title": "Proofs of Theorem and Corollary",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 637,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cay",
+          "heading": false
+        },
+        {
+          "term": "largest eigenvalue",
+          "heading": false
+        },
+        {
+          "term": "aldous property",
+          "heading": false
+        },
+        {
+          "term": "nonempty normal",
+          "heading": false
+        },
+        {
+          "term": "attained",
+          "heading": false
+        },
+        {
+          "term": "nontrivial normal",
+          "heading": false
+        },
+        {
+          "term": "normal subgroup",
+          "heading": false
+        },
+        {
+          "term": "right-hand side",
+          "heading": false
+        }
+      ],
+      "extract": "Proof of Theorem 1.3. Let N0 be the positive integer in Lemma 2.1. Let N = max{N0, 5} and n ≥N. Let S be a nonempty normal set in Sn such that 2 ≤|supp(σ)| ≤n −2 for all σ ∈S. Since S is normal, ⟨S⟩is a nontrivial normal subgroup of Sn and hence is either Sn or An. Since Cay(Sn, S) is normal, by (6), its eigenvalue corresponding to a partition β ⊢n is λβ = X σ∈S ˜χβ(σ). (a) Assume first that O(S) = ∅. Then S ⊆An and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-5-normal-cayley-graphs-on-symmetric-groups-with",
+      "number": "5",
+      "title": "Normal Cayley graphs on symmetric groups with strictly second largest eigenvalue at most 1",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 52,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sn-cay-sec",
+          "heading": false
+        },
+        {
+          "term": "class-linegraph",
+          "heading": false
+        },
+        {
+          "term": "thm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#line-graph label=\"line-graph\"} This section is a preparation for our proof of Theorem [\\[thm:main2\\]](#thm:main2){reference-type=\"ref\" reference=\"thm:main2\"} to be given in the next section. However, the main results in this section, Theorems [\\[class-linegraph\\]](#class-linegraph){reference-type=\"ref\" reference=\"class-linegraph\"} and [\\[sn-cay-sec-1\\]](#sn-cay-sec-1){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-51-normal-cayley-graphs-on-s-n-that-are-line-gra",
+      "number": "5.1",
+      "title": "Normal Cayley graphs on $S_n$ that are line graphs",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 17,
+      "labelStart": "12",
+      "labelEnd": "17",
+      "words": 2635,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm cay",
+          "heading": false
+        },
+        {
+          "term": "line graphs",
+          "heading": true
+        },
+        {
+          "term": "tau sigma",
+          "heading": false
+        },
+        {
+          "term": "mathrm supp",
+          "heading": false
+        },
+        {
+          "term": "qquad tau",
+          "heading": false
+        },
+        {
+          "term": "sim tau",
+          "heading": false
+        },
+        {
+          "term": "tau omega",
+          "heading": false
+        },
+        {
+          "term": "permutation sigma",
+          "heading": false
+        }
+      ],
+      "extract": "The *line graph* of a graph $\\Gamma$ is the graph whose vertices correspond to the edges of $\\Gamma$, where two vertices are adjacent if and only if the corresponding edges in $\\Gamma$ share exactly one end-vertex. A graph is called a *line graph* if it is isomorphic to the line graph of some graph. The following result gives a classification of normal Cayley graphs on $S_n$ that are line graphs. ::: thm",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-52-normal-cayley-graphs-on-s-n-with-strictly-sec",
+      "number": "5.2",
+      "title": "Normal Cayley graphs on $S_n$ with strictly second largest eigenvalue at most $1$",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 19,
+      "labelStart": "17",
+      "labelEnd": "19",
+      "words": 832,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "largest eigenvalue",
+          "heading": true
+        },
+        {
+          "term": "mathrm cay",
+          "heading": false
+        },
+        {
+          "term": "mathrm supp",
+          "heading": false
+        },
+        {
+          "term": "sans-serif mathrm",
+          "heading": false
+        },
+        {
+          "term": "overline mathrm",
+          "heading": false
+        },
+        {
+          "term": "party graph",
+          "heading": false
+        },
+        {
+          "term": "mathrm fix",
+          "heading": false
+        },
+        {
+          "term": "notin setminus",
+          "heading": false
+        }
+      ],
+      "extract": "A *cocktail party graph* is a graph obtained from a complete graph with even order by deleting a perfect matching. In 2010, Stanić [@Stanic2010] obtained the following complete classification of connected regular graphs with the second largest eigenvalue at most $1$. ::: thm []{#second-ev-1 label=\"second-ev-1\"} Every connected regular graph with the second largest eigenvalue at most $1$ is the complement of a (not",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-6-proofs-of-theorem-and-corollary",
+      "number": "6",
+      "title": "Proofs of Theorem and Corollary",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 23,
+      "labelStart": "19",
+      "labelEnd": "23",
+      "words": 1530,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cayley graphs",
+          "heading": false
+        },
+        {
+          "term": "aldous spectral",
+          "heading": false
+        },
+        {
+          "term": "largest eigenvalue",
+          "heading": false
+        },
+        {
+          "term": "normal cayley",
+          "heading": false
+        },
+        {
+          "term": "aldous property",
+          "heading": false
+        },
+        {
+          "term": "spectral gap",
+          "heading": false
+        },
+        {
+          "term": "algebraic combin",
+          "heading": false
+        },
+        {
+          "term": "cay",
+          "heading": false
+        }
+      ],
+      "extract": "With the preparation in the previous section, we can finally prove Theorem 1.6 and Corollary 1.7. Proof of Theorem 1.6. Let n ≥5, and let S be a nonempty normal set in Sn. Let AS, BS and CS be as in (3). Then S = AS ∪BS ∪CS. Since Cay(Sn, S) is normal, by (6) and Table 1, its eigenvalue corresponding to the partition (n −1, 1) is λ(n−1,1) = X σ∈S ˜χ(n−1,1)(σ) = 1 n −1 X σ∈S (|fix(σ)| −1) = 1 n −1  X σ∈AS (|fix(σ)|",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mathrm cay",
+      "heading": false
+    },
+    {
+      "term": "graph cay",
+      "heading": false
+    },
+    {
+      "term": "hence cay",
+      "heading": false
+    },
+    {
+      "term": "both cay",
+      "heading": false
+    },
+    {
+      "term": "largest eigenvalue",
+      "heading": true
+    },
+    {
+      "term": "aldous property",
+      "heading": false
+    },
+    {
+      "term": "normal cayley",
+      "heading": true
+    },
+    {
+      "term": "aldous spectral",
+      "heading": true
+    },
+    {
+      "term": "mathrm supp",
+      "heading": false
+    },
+    {
+      "term": "nonempty normal",
+      "heading": false
+    },
+    {
+      "term": "mathrm fix",
+      "heading": false
+    },
+    {
+      "term": "smallest eigenvalue",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Dimensions and characters of some irreducible representations of Sn The following lemma will play a crucial role in our proof of Theorem 1.3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Two forbidden subgraphs for line graphs",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 10,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p19); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2607.29018v1"
+  }
+}

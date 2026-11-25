@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-vector-calculus-bridge",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:vector-calculus-bridge",
+  "kind": "remark",
+  "title": "Differential forms and the classical vector calculus operators",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-hodge-star"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-higher-forms",
+  "tags": [
+    "pedagogy",
+    "vector-calculus",
+    "differential-forms"
+  ],
+  "text": "vector-calculus-bridge.md",
+  "provenance": "authored"
+}

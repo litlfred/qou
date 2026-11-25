@@ -1,0 +1,1492 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-cond-mat-9811142v1",
+  "title": "arxiv-cond-mat-9811142v1",
+  "variant": "pdf",
+  "pages": 37,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Revision of the formalism",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-revision-of-the-formalism"
+    },
+    {
+      "level": 2,
+      "title": "Alternative formulas and inter-relationships",
+      "number": "2.1",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-21-alternative-formulas-and-inter-relationships"
+    },
+    {
+      "level": 1,
+      "title": "The Laguerre ensemble",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-3-the-laguerre-ensemble"
+    },
+    {
+      "level": 2,
+      "title": "$\\beta = 1$ initial conditions",
+      "number": "3.1",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "The thermodynamic limit",
+      "number": "3.1.1",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-311-the-thermodynamic-limit"
+    },
+    {
+      "level": 3,
+      "title": "Asymptotics of $S(x, y; \\tau_{x}, \\tau_{y})$",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Asymptotics of $\\tilde{I} (x, y; \\tau_{x}, \\tau_{y})$",
+      "number": null,
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Asymptotics of $g(x, y; \\tau)$",
+      "number": null,
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Asymptotics of $D(x, y; \\tau_{x}, \\tau_{y})$",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "$\\beta = 4$ initial conditions",
+      "number": "3.2",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "The thermodynamic limit",
+      "number": "3.2.1",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-321-the-thermodynamic-limit"
+    },
+    {
+      "level": 3,
+      "title": "Asymptotics of $S(x, y; \\tau_{x}, \\tau_{y})$",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Asymptotics of $\\tilde{S}(x, y; \\tau_{x}, \\tau_{y})$",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Asymptotics of $\\tilde{I}(x, y; \\tau_{x}, \\tau_{y})$",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Asymptotics of $D(x, y; \\tau_{x}, \\tau_{y})$",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Gaussian ensemble",
+      "number": "4",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-4-gaussian-ensemble"
+    },
+    {
+      "level": 2,
+      "title": "$\\beta = 1$ initial conditions",
+      "number": "4.1",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Asymptotics of $\\tilde{I}(x, y; \\tau_{x}, \\tau_{y})$",
+      "number": null,
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Asymptotics of $D(x, y; \\tau_{x}, \\tau_{y})$",
+      "number": null,
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Asymptotics of $g(x, y; \\tau_{y} - \\tau_{x})$",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "$\\beta = 4$ initial conditions",
+      "number": "4.2",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Asymptotics of $\\tilde{I}(x, y; \\tau_{x}, \\tau_{y})$",
+      "number": null,
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Asymptotics of $D(x, y; \\tau_{x}, \\tau_{y})$",
+      "number": null,
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Discussion",
+      "number": "5",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-5-discussion"
+    },
+    {
+      "level": 2,
+      "title": "Connection with $\\beta = 2$ initial conditions",
+      "number": "5.1",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Connection between the soft and hard edges",
+      "number": "5.2",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-52-connection-between-the-soft-and-hard-edges"
+    },
+    {
+      "level": 2,
+      "title": "Connection with the bulk",
+      "number": "5.3",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-53-connection-with-the-bulk"
+    },
+    {
+      "level": 2,
+      "title": "Asymptotic form of $\\rho_{(1+1)}^{T}(X, Y; t)$",
+      "number": "5.4",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Empirical density of eigenvalues at the soft edge",
+      "number": "5.5",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-55-empirical-density-of-eigenvalues-at-the-soft"
+    },
+    {
+      "level": 2,
+      "title": "Distribution functions in the initial state",
+      "number": "5.6",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-56-distribution-functions-in-the-initial-state"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgement",
+      "number": null,
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-acknowledgement"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A",
+      "number": null,
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-013-appendix-a"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 150,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "parameter dependent",
+          "heading": false
+        },
+        {
+          "term": "soft",
+          "heading": false
+        },
+        {
+          "term": "cond-mat",
+          "heading": false
+        },
+        {
+          "term": "osaka",
+          "heading": false
+        },
+        {
+          "term": "mes-hall",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:cond-mat/9811142v1 [cond-mat.mes-hall] 10 Nov 1998 Correlations for the orthogonal-unitary and symplectic-unitary transitions at the hard and soft edges P.J. Forrester†, T. Nagao∗and G. Honner† †Department of Mathematics, University of Melbourne, Parkville, Victoria 3052, Australia ∗Department of Physics, Faculty of Science, Osaka University, Toyonaka, Osaka 560, Japan Abstract For the orthogonal-unitary and",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-cond-mat-9811142v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "4",
+      "words": 1155,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "laguerre ensemble",
+          "heading": false
+        },
+        {
+          "term": "partial beta",
+          "heading": false
+        },
+        {
+          "term": "parameter tau",
+          "heading": false
+        },
+        {
+          "term": "limit tau",
+          "heading": false
+        },
+        {
+          "term": "gaussian ensemble",
+          "heading": false
+        },
+        {
+          "term": "skew orthogonal",
+          "heading": false
+        },
+        {
+          "term": "matrix ensembles",
+          "heading": false
+        },
+        {
+          "term": "soft edge",
+          "heading": false
+        }
+      ],
+      "extract": "Random matrix ensembles for quantum Hamiltonians are defined in terms of the constraint imposed on the general Hermitian matrix representing the Hamiltonian by time reversal symmetry and spin-rotation invariance (when relevant). This leads to ten distinct random matrix ensembles [@Zi97]. The corresponding eigenvalue probability density function (p.d.f.) can be computed exactly when the independent elements are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-revision-of-the-formalism",
+      "number": "2",
+      "title": "Revision of the formalism",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": "4",
+      "labelEnd": "7",
+      "words": 1319,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gamma tau",
+          "heading": false
+        },
+        {
+          "term": "tau sqrt",
+          "heading": false
+        },
+        {
+          "term": "tau end",
+          "heading": false
+        },
+        {
+          "term": "tau sum",
+          "heading": false
+        },
+        {
+          "term": "aligned begin",
+          "heading": false
+        },
+        {
+          "term": "aligned label",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "nonumber times",
+          "heading": false
+        }
+      ],
+      "extract": "At the special coupling $\\beta = 2$, the Fokker-Planck equation ([\\[1.4\\]](#1.4){reference-type=\"ref\" reference=\"1.4\"}) with $W$ given by ([\\[1.5\\]](#1.5){reference-type=\"ref\" reference=\"1.5\"}) or ([\\[1.7\\]](#1.7){reference-type=\"ref\" reference=\"1.7\"}) can be transformed into an imaginary-time Schrödinger equation for $N$ independent fermions (see e.g. [@Fo98]). As such the exact $N$-body Green function",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-alternative-formulas-and-inter-relationships",
+      "number": "2.1",
+      "title": "Alternative formulas and inter-relationships",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 286,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "begin aligned",
+          "heading": false
+        },
+        {
+          "term": "tau",
+          "heading": false
+        },
+        {
+          "term": "end aligned",
+          "heading": false
+        },
+        {
+          "term": "aligned label",
+          "heading": false
+        },
+        {
+          "term": "beta initial",
+          "heading": false
+        },
+        {
+          "term": "y-x",
+          "heading": false
+        },
+        {
+          "term": "conditions begin",
+          "heading": false
+        },
+        {
+          "term": "big",
+          "heading": false
+        }
+      ],
+      "extract": "As first noted in [@NF98], substitution of ([\\[2.m\\]](#2.m){reference-type=\"ref\" reference=\"2.m\"}) in ([\\[2.o\\]](#2.o){reference-type=\"ref\" reference=\"2.o\"}) and use of ([\\[2.l\\]](#2.l){reference-type=\"ref\" reference=\"2.l\"}) implies the decomposition $$\\begin{aligned} \\label{2.1c} S(x,y;\\tau_x,\\tau_y) = S_1(x,y;\\tau_x,\\tau_y) + S_2(x,y;\\tau_x,\\tau_y) \\end{aligned}$$ where $$\\begin{aligned} \\label{2.1d}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-the-laguerre-ensemble",
+      "number": "3",
+      "title": "The Laguerre ensemble",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 505,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tau big",
+          "heading": false
+        },
+        {
+          "term": "gamma tau",
+          "heading": false
+        },
+        {
+          "term": "nonumber times",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        },
+        {
+          "term": "end aligned",
+          "heading": false
+        },
+        {
+          "term": "aligned label",
+          "heading": false
+        },
+        {
+          "term": "skew orthogonal",
+          "heading": false
+        },
+        {
+          "term": "beta",
+          "heading": false
+        }
+      ],
+      "extract": "For the Laguerre ensemble the weight function $w(x)$ and constants $\\gamma_{k}$ are given by ([\\[2.5\\]](#2.5){reference-type=\"ref\" reference=\"2.5\"}), while the monic orthogonal polynomials and corresponding normalization have the explicit form $$\\begin{aligned} \\label{3.1} C_n(x) = n! (-1)^n L_n^a(x), \\quad h_n = \\Gamma(n+1) \\Gamma(n+a+1). \\end{aligned}$$ This applies independent of the particular initial condition",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-311-the-thermodynamic-limit",
+      "number": "3.1.1",
+      "title": "The thermodynamic limit",
+      "level": 3,
+      "pageStart": 10,
+      "pageEnd": 15,
+      "labelStart": "10",
+      "labelEnd": "15",
+      "words": 2045,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lefteqn sqrt",
+          "heading": false
+        },
+        {
+          "term": "aligned lefteqn",
+          "heading": false
+        },
+        {
+          "term": "tau nonumber",
+          "heading": false
+        },
+        {
+          "term": "lefteqn gamma",
+          "heading": false
+        },
+        {
+          "term": "lefteqn tilde",
+          "heading": false
+        },
+        {
+          "term": "atop tau",
+          "heading": false
+        },
+        {
+          "term": "lefteqn left",
+          "heading": false
+        },
+        {
+          "term": "lefteqn phi",
+          "heading": false
+        }
+      ],
+      "extract": "In the neighbourhood of the spectrum edge at the origin, we will show that after introducing the scaled coordinates and parameters $X$ and $t$ according to $$\\begin{aligned} x = \\frac{X}{4N} \\, \\quad \\quad \\tau = \\frac{t}{2N} \\label{3.9} \\end{aligned}$$ (the numerical factors $1/4$ and $1/2$ are chosen for convenience), the distribution functions have a well defined large $N$ limit. In particular, the scaled",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-321-the-thermodynamic-limit",
+      "number": "3.2.1",
+      "title": "The thermodynamic limit",
+      "level": 3,
+      "pageStart": 15,
+      "pageEnd": 18,
+      "labelStart": "15",
+      "labelEnd": "18",
+      "words": 927,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "φ2k",
+          "heading": false
+        },
+        {
+          "term": "r2j",
+          "heading": false
+        },
+        {
+          "term": "asymptotic form",
+          "heading": false
+        },
+        {
+          "term": "ety",
+          "heading": false
+        },
+        {
+          "term": "stirling formula",
+          "heading": false
+        },
+        {
+          "term": "multiplying",
+          "heading": false
+        },
+        {
+          "term": "right hand",
+          "heading": false
+        },
+        {
+          "term": "dividing",
+          "heading": false
+        }
+      ],
+      "extract": "Although the scaled distribution function is still given by (3.11), the required scaling of the elements of the quaternion determinant (2.24) diﬀers slightly from the formulas (3.12)–(3.15) appropriate with β = 1 initial conditions. In particular (3.14) and (3.15) should now read ˜Ihard 4 (X, Y ; tX, tY ) := lim N→∞ \u0010 1 4N \u00112 ˜I \u0010 X 4N , Y 4N ; tX 2N , tY 2N \u0011 (3.43) Dhard 4 (X, Y ; tX, tY ) := lim N→∞D \u0010 X 4N , Y",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-4-gaussian-ensemble",
+      "number": "4",
+      "title": "Gaussian ensemble",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 25,
+      "labelStart": "18",
+      "labelEnd": "25",
+      "words": 2048,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aligned lefteqn",
+          "heading": false
+        },
+        {
+          "term": "lefteqn big",
+          "heading": false
+        },
+        {
+          "term": "lefteqn sqrt",
+          "heading": false
+        },
+        {
+          "term": "tau nonumber",
+          "heading": false
+        },
+        {
+          "term": "scriptstyle tau",
+          "heading": false
+        },
+        {
+          "term": "lefteqn tilde",
+          "heading": false
+        },
+        {
+          "term": "gamma tau",
+          "heading": false
+        },
+        {
+          "term": "lefteqn phi",
+          "heading": false
+        }
+      ],
+      "extract": "For the Gaussian ensemble, we see from ([\\[2.4\\]](#2.4){reference-type=\"ref\" reference=\"2.4\"}) that the corresponding monic orthogonal polynomials and normalization are $$\\begin{aligned} C_{n}(x) = 2^{-n}\\, H_{n}(y), \\quad \\quad h_{n} = 2^{-n}\\, \\pi^{1/4}\\, n! \\, . \\label{4.1} \\end{aligned}$$ The skew orthogonal polynomials for both $\\beta = 1$ and $\\beta = 4$ initial conditions at $\\tau = 0$ are known in terms of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-5-discussion",
+      "number": "5",
+      "title": "Discussion",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 505,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hard left",
+          "heading": false
+        },
+        {
+          "term": "sim tilde",
+          "heading": false
+        },
+        {
+          "term": "nonumber sim",
+          "heading": false
+        },
+        {
+          "term": "soft edge",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        },
+        {
+          "term": "end aligned",
+          "heading": false
+        },
+        {
+          "term": "beta initial",
+          "heading": false
+        }
+      ],
+      "extract": "## Connection with $\\beta = 2$ initial conditions We have calculated exact formulas for the dynamical distribution function ([\\[2.c\\]](#2.c){reference-type=\"ref\" reference=\"2.c\"}) in the case of $\\beta = 1$ and $\\beta = 4$ initial conditions, with the final state corresponding to a $\\beta = 2$ equilibrium. If in these formulas we take the limit $t_{X}, t_{Y} \\rightarrow \\infty$ with $t_{X} - t_{Y}$ fixed, then we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-52-connection-between-the-soft-and-hard-edges",
+      "number": "5.2",
+      "title": "Connection between the soft and hard edges",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "26",
+      "labelEnd": "27",
+      "words": 517,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soft",
+          "heading": true
+        },
+        {
+          "term": "hard",
+          "heading": true
+        },
+        {
+          "term": "nonumber quad",
+          "heading": false
+        },
+        {
+          "term": "quad sim",
+          "heading": false
+        },
+        {
+          "term": "hard left",
+          "heading": false
+        },
+        {
+          "term": "aligned left",
+          "heading": false
+        },
+        {
+          "term": "nonumber qquad",
+          "heading": false
+        },
+        {
+          "term": "hard edge",
+          "heading": false
+        }
+      ],
+      "extract": "For the hard edge distribution function of the Laguerre ensemble at $\\beta = 2$ and $\\tau = 0$, it is known that by taking the limit $a \\rightarrow \\infty$ and introducing new scaled coordinates, the distribution function of the soft edge of the Gaussian ensemble results [@Fo93]. Specifically, the new scaled variable $x$ is related to the scaled variable $X$ of the hard edge by $$\\begin{aligned} X = a^{2} - 2\\, a\\,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-53-connection-with-the-bulk",
+      "number": "5.3",
+      "title": "Connection with the bulk",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 32,
+      "labelStart": "27",
+      "labelEnd": "32",
+      "words": 1698,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "beqa lefteqn",
+          "heading": false
+        },
+        {
+          "term": "beqa rho",
+          "heading": false
+        },
+        {
+          "term": "nonumber eeqa",
+          "heading": false
+        },
+        {
+          "term": "beqa mapsto",
+          "heading": false
+        },
+        {
+          "term": "expansion beqa",
+          "heading": false
+        },
+        {
+          "term": "lefteqn tilde",
+          "heading": false
+        },
+        {
+          "term": "rho alpha",
+          "heading": false
+        },
+        {
+          "term": "rho sqrt",
+          "heading": false
+        }
+      ],
+      "extract": "It is known \\cite{Fo93} that after appropriate scaling of the variables, the static distributions at the hard and soft edges tend to the bulk distributions at large distances from the edge of the system. The required scaling is \\beqa X \\mapsto \\alpha + 2\\pi \\sqrt{\\alpha}\\, \\rho x\\, , \\quad \\quad X \\mapsto -\\left(\\alpha + \\pi \\rho x /\\sqrt{\\alpha} \\right) \\, , \\label{5.15} \\eeqa with $\\alpha \\rightarrow \\infty$, for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-55-empirical-density-of-eigenvalues-at-the-soft",
+      "number": "5.5",
+      "title": "Empirical density of eigenvalues at the soft edge",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 33,
+      "labelStart": "32",
+      "labelEnd": "33",
+      "words": 551,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soft edge",
+          "heading": true
+        },
+        {
+          "term": "scaled density",
+          "heading": false
+        },
+        {
+          "term": "dependent random",
+          "heading": false
+        },
+        {
+          "term": "unitary transition",
+          "heading": false
+        },
+        {
+          "term": "random matrices",
+          "heading": false
+        },
+        {
+          "term": "parameter dependent",
+          "heading": false
+        },
+        {
+          "term": "theoretical prediction",
+          "heading": false
+        }
+      ],
+      "extract": "The dynamical distribution functions at the soft edge calculated in Section 4 can be realized by parameter dependent random matrices of the type ([\\[1.3\\]](#1.3){reference-type=\"ref\" reference=\"1.3\"}). Thus we can numerically construct random matrices and empirically compute eigenvalue distributions for comparison against the theoretical prediction. The simplest distribution to compute empirically is the density",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-56-distribution-functions-in-the-initial-state",
+      "number": "5.6",
+      "title": "Distribution functions in the initial state",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 34,
+      "labelStart": "33",
+      "labelEnd": "34",
+      "words": 614,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soft",
+          "heading": false
+        },
+        {
+          "term": "beta initial",
+          "heading": false
+        },
+        {
+          "term": "int infty",
+          "heading": false
+        },
+        {
+          "term": "tdet left",
+          "heading": false
+        },
+        {
+          "term": "hard",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "end array",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        }
+      ],
+      "extract": "With $m=0$ and $\\tau_1 \\to 0$ the dynamical distribution ([\\[1.7\\'\\]](#1.7'){reference-type=\"ref\" reference=\"1.7'\"}) reduces to the $n$-point distribution function in the initial state. At $\\beta = 1$ the formulas ([\\[2.s\\]](#2.s){reference-type=\"ref\" reference=\"2.s\"}), ([\\[2.1f\\]](#2.1f){reference-type=\"ref\" reference=\"2.1f\"}), ([\\[2.1g\\]](#2.1g){reference-type=\"ref\" reference=\"2.1g\"}) and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-acknowledgement",
+      "number": null,
+      "title": "Acknowledgement",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 34,
+      "labelStart": "34",
+      "labelEnd": "34",
+      "words": 8,
+      "summary": null,
+      "keywords": [],
+      "extract": "The financial support of the ARC is acknowledged.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-013-appendix-a",
+      "number": null,
+      "title": "Appendix A",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 37,
+      "labelStart": "34",
+      "labelEnd": "37",
+      "words": 783,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dyla",
+          "heading": false
+        },
+        {
+          "term": "forrester",
+          "heading": false
+        },
+        {
+          "term": "nagao",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "widom",
+          "heading": false
+        },
+        {
+          "term": "r2j",
+          "heading": false
+        },
+        {
+          "term": "laguerre polynomial",
+          "heading": false
+        },
+        {
+          "term": "sgn",
+          "heading": false
+        }
+      ],
+      "extract": "In the case τx = τy = 0, the formula (3.9) for S2 at β = 1 reads S2(x, y; 0, 0) = q w(y) \u0010ΦN−2(x; 0) rN/2−1(0) − q w(x)CN−1(x) hN−1 \u0011\u0010 CN−1(y)−(N−1)RN−2(y) \u0011 . (A.1) 34 Use of the explicit formulas (3.1) and (3.2) gives CN−1(y) −(N −1)RN−2(y) = −(N −1)! \u0010 La N−1(y) −d dyLa N−1(y) \u0011 = (N −1)! d dyLa N(y), (A.2) where the second equality follows from an appropriate Laguerre polynomial identity [13]. For the",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "tau nonumber",
+      "heading": false
+    },
+    {
+      "term": "aligned nonumber",
+      "heading": false
+    },
+    {
+      "term": "tau sqrt",
+      "heading": false
+    },
+    {
+      "term": "aligned beta",
+      "heading": false
+    },
+    {
+      "term": "tau big",
+      "heading": false
+    },
+    {
+      "term": "aligned lefteqn",
+      "heading": false
+    },
+    {
+      "term": "gamma tau",
+      "heading": false
+    },
+    {
+      "term": "quad tau",
+      "heading": false
+    },
+    {
+      "term": "tau right",
+      "heading": false
+    },
+    {
+      "term": "tau end",
+      "heading": false
+    },
+    {
+      "term": "tau sim",
+      "heading": false
+    },
+    {
+      "term": "aligned tilde",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Empirical histogram of the scaled soft edge density for 500 parameter dependent random matrices of the form (5.39) with τ = .05 and N = 100, compared against the inﬁnite dimension form (5.38)",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 33,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 15,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p34); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 15 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-cond-mat-9811142v1"
+  }
+}

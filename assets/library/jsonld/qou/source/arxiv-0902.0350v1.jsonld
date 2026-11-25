@@ -1,0 +1,67 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0902.0350v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-0902.0350v1",
+  "contains": [
+    "library/arxiv-0902.0350v1/sections/sec-front-matter",
+    "library/arxiv-0902.0350v1/sections/sec-000",
+    "library/arxiv-0902.0350v1/sections/sec-001",
+    "library/arxiv-0902.0350v1/sections/sec-002",
+    "library/arxiv-0902.0350v1/sections/sec-003",
+    "library/arxiv-0902.0350v1/sections/sec-004",
+    "library/arxiv-0902.0350v1/sections/sec-005",
+    "library/arxiv-0902.0350v1/sections/sec-006",
+    "library/arxiv-0902.0350v1/sections/sec-007",
+    "library/arxiv-0902.0350v1/sections/sec-008",
+    "library/arxiv-0902.0350v1/sections/sec-009",
+    "library/arxiv-0902.0350v1/sections/sec-010",
+    "library/arxiv-0902.0350v1/sections/sec-011",
+    "library/arxiv-0902.0350v1/sections/sec-012"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "A REVISION OF THE PROOF OF THE KEPLER CONJECTURE — The Kepler conjecture asserts that no packing of congruent balls in three-dimensional Euclidean space has density greater than that of the\n\n**A REVISION OF THE PROOF OF THE KEPLER CONJECTURE**\n\n*THOMAS C. HALES, JOHN HARRISON, SEAN MCLAUGHLIN, TOBIAS NIPKOW*\n\n41 pp, 14 sections.\n\n**Abstract.** The Kepler conjecture asserts that no packing of congruent balls in three-dimensional Euclidean space has density greater than that of the face-centered cubic packing. The original proof, announced in 1998 and published in 2006, is long and complex. The process of revision and review did not end with the publication of the proof. This article summarizes the current status of a long-term initiative to reorganize the original proof into a more transparent form and to provide a greater level of certification of the correctness of the computer code and other details of the proof. A final part of this article lists errata in the original proof of the Kepler conjecture.\n\n**Outline.** Front matter; Introduction; Part 1. Formal Proof Initiative; 1 The Flyspeck project; 2 Blueprint edition of the Kepler conjecture; 3 Formalizing the ordinary mathematics; 4 Standard ML reimplementation of code; 5 Proving nonlinear inequalities with Bernstei; 6 Tame graph enumeration; 7 Verifying linear programs; Part 2. Addendum to and Errata in the Original; 8 Biconnected graphs; 9 Errata listing; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0902.0350&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0902.0350v1",
+    "title_source": "slug",
+    "source_file": "0902.0350v1.pdf",
+    "source_sha256": "4591687132c93973fa7cef71802fea61da8375d3cc6545d0667a8bbeaf20e7bc",
+    "pages": 41,
+    "arxiv": {
+      "id": "0902.0350",
+      "version": "1",
+      "primary_class": "math.MG",
+      "stamp_date": "2 Feb 2009"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

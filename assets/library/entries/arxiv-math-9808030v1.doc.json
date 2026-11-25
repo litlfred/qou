@@ -1,0 +1,553 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-9808030v1",
+  "title": "Planscherel Measure on Eq(2)",
+  "variant": "pdf",
+  "pages": 17,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Invariant Integral on $E_q(2)$",
+      "number": "2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-invariant-integral-on-e-q2"
+    },
+    {
+      "level": 1,
+      "title": "Scalar Product on $E_q(2)$",
+      "number": "3",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-scalar-product-on-e-q2"
+    },
+    {
+      "level": 1,
+      "title": "Matrix Elements of the Irreducible Representations of $E_q(2)$ from $SU_q(2)$ by Contraction",
+      "number": "4",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-matrix-elements-of-the-irreducible-representat"
+    },
+    {
+      "level": 1,
+      "title": "Planscherel Measure on $E_q(2)$",
+      "number": "5",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-5-planscherel-measure-on-e-q2"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 85,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "planscherel measure",
+          "heading": false
+        },
+        {
+          "term": "gursey",
+          "heading": false
+        },
+        {
+          "term": "turkey",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/9808030v1 [math.QA] 6 Aug 1998 Planscherel Measure on Eq(2) H. Ahmedov1 and I. H. Duru2,1 1. TUBITAK, Feza G¨ursey Institute, P.O. Box 6, 81220 Cengelkoy, Istanbul, Turkey 1. 2. Trakya University, Mathematics Department, P.O. Box 126, Edirne, Turkey. Abstract Following the construction of the invariant integral and the scalar product for the quantum Euclidean group Eq(2), we obtained the full matrix",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-9808030v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 193,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non--commutative geometry",
+          "heading": false
+        },
+        {
+          "term": "physical effects",
+          "heading": false
+        },
+        {
+          "term": "planscherel",
+          "heading": false
+        },
+        {
+          "term": "tools",
+          "heading": false
+        },
+        {
+          "term": "differentiable",
+          "heading": false
+        }
+      ],
+      "extract": "If the space--time is not a differentiable manifold but a non--commutative geometry there may be interesting new physical effects. Because of the non existence of sufficiently developed differential calculus on the non--commutative geometry to study physical effects one needs new mathematical tools. Since on the other hand the quantum group spaces are natural examples for the non--commutative geometries it is of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-invariant-integral-on-e-q2",
+      "number": "2",
+      "title": "Invariant Integral on $E_q(2)$",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 907,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mid rangle",
+          "heading": false
+        },
+        {
+          "term": "langle mid",
+          "heading": false
+        },
+        {
+          "term": "invariant integral",
+          "heading": true
+        },
+        {
+          "term": "vectors mid",
+          "heading": false
+        },
+        {
+          "term": "basis mid",
+          "heading": false
+        },
+        {
+          "term": "subset cal",
+          "heading": false
+        },
+        {
+          "term": "infty langle",
+          "heading": false
+        },
+        {
+          "term": "space cal",
+          "heading": false
+        }
+      ],
+      "extract": "Let us start by reviewing the construction of the invariant integral for $SU_q(2)$ which will guide in $E_q(2)$ case. ::: flushleft **Rewiev of the invariant integral on $SU_q(2)$** ::: The coordinate functions $x$, $u$, $x^*$, $u^*$ generating the $*$--Hopf algebra $A(SU_q(2))$ satisfy the following relations [@2] $$\\begin{aligned} \\label{com} u(x)=qx u, \\ \\ x^*u=qux^*, \\ \\ uu^*=u^*u, \\nonumber \\\\ xx^* + uu^*={\\bf",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-scalar-product-on-e-q2",
+      "number": "3",
+      "title": "Scalar Product on $E_q(2)$",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 418,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "plan psi",
+          "heading": false
+        },
+        {
+          "term": "ref plan",
+          "heading": false
+        },
+        {
+          "term": "label plan",
+          "heading": false
+        },
+        {
+          "term": "prime rho",
+          "heading": false
+        },
+        {
+          "term": "ref invine",
+          "heading": false
+        },
+        {
+          "term": "equation phi",
+          "heading": false
+        },
+        {
+          "term": "scalar product",
+          "heading": true
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\Phi (E_q(2))$ be the set of analytic functions on $E_q(2)$ such that \\begin{equation} \\label{plan1}\\psi (f f^*)<\\infty , \\end{equation} where $\\psi$ is the invariant integral (\\ref{invine}) on $E_q(2)$. Recall that the homomorphism \\begin{equation} \\phi (z)=0, \\ \\ \\ \\phi (z^*)=0, \\ \\ \\ \\phi (\\delta)=t \\end{equation} defines the quantum subgroup $U(1)\\subset E_q(2)$. We have then the decomposition",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-matrix-elements-of-the-irreducible-representat",
+      "number": "4",
+      "title": "Matrix Elements of the Irreducible Representations of $E_q(2)$ from $SU_q(2)$ by Contraction",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 383,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "i-j delta",
+          "heading": false
+        },
+        {
+          "term": "irreducible representations",
+          "heading": true
+        },
+        {
+          "term": "contraction",
+          "heading": true
+        },
+        {
+          "term": "contraction procedure",
+          "heading": false
+        },
+        {
+          "term": "label irep",
+          "heading": false
+        },
+        {
+          "term": "infty frac",
+          "heading": false
+        },
+        {
+          "term": "matrix elements",
+          "heading": true
+        },
+        {
+          "term": "rightarrow infty",
+          "heading": false
+        }
+      ],
+      "extract": "Unitary representations of $E_q(2)$ are previously studied [@5]. We now show that the matrix elements of the unitary irreducible representations of $E_q(2)$ can be obtained from the ones of $SU_q(2)$ by contraction. This example shows that there exists q--analog of contraction procedure of classical groups representations which was investigated in [@6]. In Appendix C we review the derivation of the matrix elements",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-planscherel-measure-on-e-q2",
+      "number": "5",
+      "title": "Planscherel Measure on $E_q(2)$",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1390,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "contr delta",
+          "heading": false
+        },
+        {
+          "term": "p-p prime",
+          "heading": false
+        },
+        {
+          "term": "delta otimes",
+          "heading": false
+        },
+        {
+          "term": "irep",
+          "heading": false
+        },
+        {
+          "term": "operations delta",
+          "heading": false
+        },
+        {
+          "term": "plan",
+          "heading": false
+        },
+        {
+          "term": "rightarrow infty",
+          "heading": false
+        },
+        {
+          "term": "coalgebra operations",
+          "heading": false
+        }
+      ],
+      "extract": "The comultiplication $$\\label{eq: plan11}\\Delta :\\Phi (E_q(2))\\rightarrow \\Phi (E_q(2))\\otimes \\Phi (E_q(2))$$ defines the regular representations of the quantum group $E_q(2)$ in $\\Phi (E_q(2))$. Since the scalar product in $\\Phi (E_q(2))$ is defined by means of the invariant integral this representation is unitary. The linear space $\\Phi (E_q(2))$ is common invariant dense domain for the set of linear operators",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "prime rho",
+      "heading": false
+    },
+    {
+      "term": "prime delta",
+      "heading": false
+    },
+    {
+      "term": "plan psi",
+      "heading": false
+    },
+    {
+      "term": "label plan",
+      "heading": false
+    },
+    {
+      "term": "ref plan",
+      "heading": false
+    },
+    {
+      "term": "p-p prime",
+      "heading": false
+    },
+    {
+      "term": "i-j delta",
+      "heading": false
+    },
+    {
+      "term": "contr delta",
+      "heading": false
+    },
+    {
+      "term": "prime subset",
+      "heading": false
+    },
+    {
+      "term": "subset cal",
+      "heading": false
+    },
+    {
+      "term": "rightarrow infty",
+      "heading": false
+    },
+    {
+      "term": "label irep",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 5,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 6,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 6 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-9808030v1"
+  }
+}

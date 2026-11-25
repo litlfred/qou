@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/agt-v7-n2-p13-s/sections/sec-018",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Tunneling the (+)/(-) states",
+  "pageStart": 48,
+  "pageEnd": 50,
+  "contains": [
+    "library/agt-v7-n2-p13-s/blocks/prose-sec-018",
+    "library/agt-v7-n2-p13-s/blocks/prop-sec-018-01",
+    "library/agt-v7-n2-p13-s/blocks/lem-sec-018-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/agt-v7-n2-p13-s/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/agt-v7-n2-p13-s/manifest.jsonld",
+  "provenance": "ingested"
+}

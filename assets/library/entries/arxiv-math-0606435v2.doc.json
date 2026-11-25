@@ -1,0 +1,3092 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0606435v2",
+  "title": "arxiv-math-0606435v2",
+  "variant": "pdf",
+  "pages": 68,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries, basic definitions and conventions",
+      "number": "2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-preliminaries-basic-definitions-and-convention"
+    },
+    {
+      "level": 2,
+      "title": "Links and link diagrams",
+      "number": "2.1",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-21-links-and-link-diagrams"
+    },
+    {
+      "level": 2,
+      "title": "Polynomial link invariants",
+      "number": "2.2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-22-polynomial-link-invariants"
+    },
+    {
+      "level": 2,
+      "title": "Semiadequacy",
+      "number": "2.3",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-23-semiadequacy"
+    },
+    {
+      "level": 2,
+      "title": "Braids and braid words",
+      "number": "2.4",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-24-braids-and-braid-words"
+    },
+    {
+      "level": 2,
+      "title": "Braid representations of links",
+      "number": "2.5",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-25-braid-representations-of-links"
+    },
+    {
+      "level": 2,
+      "title": "Gau sum invariants",
+      "number": "2.6",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-26-gau-sum-invariants"
+    },
+    {
+      "level": 1,
+      "title": "Xu's form and Seifert surfaces",
+      "number": "3",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-3-xus-form-and-seifert-surfaces"
+    },
+    {
+      "level": 2,
+      "title": "Strongly quasi-positive links among links of braid index 3",
+      "number": "3.1",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-31-strongly-quasi-positive-links-among-links-of"
+    },
+    {
+      "level": 2,
+      "title": "Uniqueness of minimal genus Seifert surfaces",
+      "number": "3.2",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-32-uniqueness-of-minimal-genus-seifert-surfaces"
+    },
+    {
+      "level": 2,
+      "title": "Fiberedness",
+      "number": "3.3",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-33-fiberedness"
+    },
+    {
+      "level": 1,
+      "title": "Polynomial invariants",
+      "number": "4",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-4-polynomial-invariants"
+    },
+    {
+      "level": 2,
+      "title": "Alexander polynomial",
+      "number": "4.1",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-013-41-alexander-polynomial"
+    },
+    {
+      "level": 2,
+      "title": "Jones polynomial",
+      "number": "4.2",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-014-42-jones-polynomial"
+    },
+    {
+      "level": 2,
+      "title": "Q polynomial",
+      "number": "4.3",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-015-43-q-polynomial"
+    },
+    {
+      "level": 1,
+      "title": "Positivity of 3-braid links",
+      "number": "5",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-016-5-positivity-of-3-braid-links"
+    },
+    {
+      "level": 2,
+      "title": "Positive braid links",
+      "number": "5.1",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-017-51-positive-braid-links"
+    },
+    {
+      "level": 3,
+      "title": "The Morton-Williams-Franks bound",
+      "number": "5.1.1",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-018-511-the-morton-williams-franks-bound"
+    },
+    {
+      "level": 3,
+      "title": "Maximal subwords",
+      "number": "5.1.2",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-019-512-maximal-subwords"
+    },
+    {
+      "level": 3,
+      "title": "The proof of Theorem thmwf: Initial simplifications",
+      "number": "5.1.3",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-020-513-the-proof-of-theorem-thmwf-initial-simplific"
+    },
+    {
+      "level": 3,
+      "title": "Two mountains",
+      "number": "5.1.4",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-021-514-two-mountains"
+    },
+    {
+      "level": 3,
+      "title": "More than two mountains",
+      "number": "5.1.5",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-022-515-more-than-two-mountains"
+    },
+    {
+      "level": 3,
+      "title": "4-braids",
+      "number": "5.1.6",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-023-516-4-braids"
+    },
+    {
+      "level": 2,
+      "title": "Positive links",
+      "number": "5.2",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-024-52-positive-links"
+    },
+    {
+      "level": 1,
+      "title": "Studying alternating links by braid index",
+      "number": "6",
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-025-6-studying-alternating-links-by-braid-index"
+    },
+    {
+      "level": 1,
+      "title": "Applications of the representation theory",
+      "number": "7",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-026-7-applications-of-the-representation-theory"
+    },
+    {
+      "level": 2,
+      "title": "The Jones conjecture",
+      "number": "7.1",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-027-71-the-jones-conjecture"
+    },
+    {
+      "level": 2,
+      "title": "Unitarity of the Burau representation",
+      "number": "7.2",
+      "page": 48,
+      "pageLabel": "48",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-028-72-unitarity-of-the-burau-representation"
+    },
+    {
+      "level": 2,
+      "title": "Norm estimates",
+      "number": "7.3",
+      "page": 50,
+      "pageLabel": "50",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-029-73-norm-estimates"
+    },
+    {
+      "level": 2,
+      "title": "Skein polynomial",
+      "number": "7.4",
+      "page": 52,
+      "pageLabel": "52",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-030-74-skein-polynomial"
+    },
+    {
+      "level": 2,
+      "title": "Recovering the Burau trace",
+      "number": "7.5",
+      "page": 53,
+      "pageLabel": "53",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-031-75-recovering-the-burau-trace"
+    },
+    {
+      "level": 3,
+      "title": "Conditions on the eigenvalues",
+      "number": "7.5.1",
+      "page": 53,
+      "pageLabel": "53",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-032-751-conditions-on-the-eigenvalues"
+    },
+    {
+      "level": 3,
+      "title": "Applications and examples",
+      "number": "7.5.2",
+      "page": 55,
+      "pageLabel": "55",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-033-752-applications-and-examples"
+    },
+    {
+      "level": 2,
+      "title": "Mahler measures",
+      "number": "7.6",
+      "page": 56,
+      "pageLabel": "56",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-034-76-mahler-measures"
+    },
+    {
+      "level": 3,
+      "title": "3-braids",
+      "number": "7.6.1",
+      "page": 56,
+      "pageLabel": "56",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-035-761-3-braids"
+    },
+    {
+      "level": 3,
+      "title": "Skein polynomial and generalized twisting",
+      "number": "7.6.2",
+      "page": 58,
+      "pageLabel": "58",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-036-762-skein-polynomial-and-generalized-twisting"
+    },
+    {
+      "level": 2,
+      "title": "Knots with unsharp MWF inequality",
+      "number": "7.7",
+      "page": 60,
+      "pageLabel": "60",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-037-77-knots-with-unsharp-mwf-inequality"
+    },
+    {
+      "level": 1,
+      "title": "Postliminaries",
+      "number": "8",
+      "page": 61,
+      "pageLabel": "61",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-038-8-postliminaries"
+    },
+    {
+      "level": 2,
+      "title": "Fibered Dean knots (Hirasawa-Murasugi)",
+      "number": "8.1",
+      "page": 61,
+      "pageLabel": "61",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-039-81-fibered-dean-knots-hirasawa-murasugi"
+    },
+    {
+      "level": 2,
+      "title": "$A$-decomposition (joint with Hirasawa-Ishiwata)",
+      "number": "8.2",
+      "page": 63,
+      "pageLabel": "63",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-040-82-a-decomposition-joint-with-hirasawa-ishiwata"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "4",
+      "words": 2428,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quasi-positive braid",
+          "heading": false
+        },
+        {
+          "term": "quasi-positive link",
+          "heading": false
+        },
+        {
+          "term": "bennequin surface",
+          "heading": false
+        },
+        {
+          "term": "braid index",
+          "heading": false
+        },
+        {
+          "term": "alternating links",
+          "heading": false
+        },
+        {
+          "term": "braid representations",
+          "heading": false
+        },
+        {
+          "term": "seifert surface",
+          "heading": false
+        },
+        {
+          "term": "braid words",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0606435v2 [math.GT] 10 Oct 2007 PROPERTIES OF CLOSED 3-BRAIDS AND OTHER LINK BRAID REPRESENTATIONS A. Stoimenow∗ Research Institute for Mathematical Sciences, Kyoto University, Kyoto 606-8502, Japan e-mail: stoimeno@kurims.kyoto-u.ac.jp WWW: http://www.kurims.kyoto-u.ac.jp/˜stoimeno/ Current version: August 8, 2007 First version: September 22, 2004 Abstract. We show that 3-braid links with given",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0606435v2/blocks/prose-sec-front-matter",
+        "library/arxiv-math-0606435v2/blocks/thm-sec-front-matter-01",
+        "library/arxiv-math-0606435v2/blocks/figure-img-p003-1"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 935,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quasi-positive braid",
+          "heading": false
+        },
+        {
+          "term": "cite birmen",
+          "heading": false
+        },
+        {
+          "term": "cite bennequin",
+          "heading": false
+        },
+        {
+          "term": "cite rudolph",
+          "heading": false
+        },
+        {
+          "term": "braid links",
+          "heading": false
+        },
+        {
+          "term": "bennequin surface",
+          "heading": false
+        },
+        {
+          "term": "cite murasugi",
+          "heading": false
+        },
+        {
+          "term": "braid index",
+          "heading": false
+        }
+      ],
+      "extract": "Originating from the pioneering work of Alexander \\cite{Alexander2} and Artin \\cite{Artin,Artin2}, braid theory has become intrinsically interwoven with knot theory, and over the years, braid representations of different types have been studied, many of them with motivation coming from fields outside of knot theory, for example dynamical systems \\cite{Williams} or 4-dimensional QFTs \\cite{Kreimer}. The systematic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-preliminaries-basic-definitions-and-convention",
+      "number": "2",
+      "title": "Preliminaries, basic definitions and conventions",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 27,
+      "summary": null,
+      "keywords": [],
+      "extract": "Basic concepts that appear throughout the paper are summarized. `W.l.o.g.' will abbreviate `without loss of generality'; `r.h.s.' will stand for `right hand-side'.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-links-and-link-diagrams",
+      "number": "2.1",
+      "title": "Links and link diagrams",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 478,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "picfilledcircle",
+          "heading": false
+        },
+        {
+          "term": "reducible crossing",
+          "heading": false
+        },
+        {
+          "term": "seifert graph",
+          "heading": false
+        },
+        {
+          "term": "seifert circles",
+          "heading": false
+        },
+        {
+          "term": "seifert surface",
+          "heading": false
+        },
+        {
+          "term": "crossing number",
+          "heading": false
+        },
+        {
+          "term": "diagrams",
+          "heading": true
+        },
+        {
+          "term": "murprz",
+          "heading": false
+        }
+      ],
+      "extract": "Links are represented by diagrams; we assume diagrams are oriented (though sometimes orientation is not relevant). A crossing $p$ in a link diagram $D$ is called \\em{reducible} (or nugatory) if it looks like on the left of figure \\reference{figred}. $D$ is called reducible if it has a reducible crossing, else it is called \\em{reduced}. The reducing of the reducible crossing $p$ is the move depicted on figure",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-polynomial-link-invariants",
+      "number": "2.2",
+      "title": "Polynomial link invariants",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 452,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "skein polynomial",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomial",
+          "heading": false
+        },
+        {
+          "term": "link",
+          "heading": true
+        },
+        {
+          "term": "link diagram",
+          "heading": false
+        },
+        {
+          "term": "maximal degree",
+          "heading": false
+        },
+        {
+          "term": "coefﬁcient",
+          "heading": false
+        },
+        {
+          "term": "writhe",
+          "heading": false
+        },
+        {
+          "term": "crossing",
+          "heading": false
+        }
+      ],
+      "extract": "Polynomial link invariants Let X ∈Z[t,t−1]. The minimal or maximal degree mindegX or maxdegX is the minimal resp. maximal exponent of t with non-zero coefﬁcient in X. Let spant X = maxdegt X −mindegt X. The coefﬁcient in degree d of t in X is denoted [X]td or [X]d. The leading coefﬁcient maxcf X of X is its coefﬁcient in degree maxdegX. If X ∈Z[x±1 1 ,x±1 2 ], then maxdegx1 X denotes the maximal degree in x1.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-semiadequacy",
+      "number": "2.3",
+      "title": "Semiadequacy",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 608,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "semiadequacy",
+          "heading": true
+        },
+        {
+          "term": "semiadequate diagram",
+          "heading": false
+        },
+        {
+          "term": "adequate",
+          "heading": false
+        },
+        {
+          "term": "link diagram",
+          "heading": false
+        },
+        {
+          "term": "splitted",
+          "heading": false
+        },
+        {
+          "term": "b-adequate",
+          "heading": false
+        },
+        {
+          "term": "v0v",
+          "heading": false
+        },
+        {
+          "term": "a-adequate",
+          "heading": false
+        }
+      ],
+      "extract": "Semiadequacy 7 The Kauffman polynomial [Ka] F is usually deﬁned via a regular isotopy invariant Λ(a,z) of unoriented links. We use here a slightly different convention for the variables in F, differing from [Ka, Th2] by the interchange of a and a−1. Thus in particular we have for a link diagram D the relation F(D)(a,z) = aw(D)Λ(D)(a,z), where Λ(D) is the writhe-unnormalized version of the polynomial, given in our",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-braids-and-braid-words",
+      "number": "2.4",
+      "title": "Braids and braid words",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 620,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braid words",
+          "heading": true
+        },
+        {
+          "term": "syllable",
+          "heading": false
+        },
+        {
+          "term": "exponent sum",
+          "heading": false
+        },
+        {
+          "term": "letter",
+          "heading": false
+        },
+        {
+          "term": "index",
+          "heading": false
+        },
+        {
+          "term": "defi",
+          "heading": false
+        },
+        {
+          "term": "call",
+          "heading": false
+        },
+        {
+          "term": "artin",
+          "heading": false
+        }
+      ],
+      "extract": "The $n$-string \\em{braid group} $B_n$ is considered generated by the Artin \\em{standard generators} $\\sg_i$ for $i=1,\\dots,n-1$. These are subject to relations of the type $[\\sg_i,\\sg_j]=1$ for $|i-j|>1$, which we call \\em{commutativity relations} (the bracket denotes the commutator) and $\\sg_{i+1}\\sg_i\\sg_{i+1}= \\sg_i\\sg_{i+1}\\sg_i$, which we call \\em{Yang-Baxter} (or shortly YB) \\rm{relations}. We will make one",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-25-braid-representations-of-links",
+      "number": "2.5",
+      "title": "Braid representations of links",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 868,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braid",
+          "heading": true
+        },
+        {
+          "term": "braid word",
+          "heading": false
+        },
+        {
+          "term": "closure hat",
+          "heading": false
+        },
+        {
+          "term": "link hat",
+          "heading": false
+        },
+        {
+          "term": "seifert surface",
+          "heading": false
+        },
+        {
+          "term": "braided seifert",
+          "heading": false
+        },
+        {
+          "term": "cite birmen",
+          "heading": false
+        },
+        {
+          "term": "band representation",
+          "heading": false
+        }
+      ],
+      "extract": "By a theorem of Alexander \\cite{Alexander}, any link is the \\em{closure} $\\hat\\bt$ of a braid $\\bt$. The \\em{braid index} $b(L)$ of a link $L$ is the smallest number of strands of a braid $\\be$ whose closure $\\hat\\be$ is $L$. See \\cite{Morton,WilFr,Murasugi}. Such $\\bt$ are also called \\em{braid representations} of $L$. The closure operation gives for a particular braid word $\\bt$ a link diagram $D=\\hat\\bt$. Then we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-26-gau-sum-invariants",
+      "number": "2.6",
+      "title": "Gau sum invariants",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 246,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "picfilledcircle polar",
+          "heading": false
+        },
+        {
+          "term": "gau",
+          "heading": true
+        },
+        {
+          "term": "picputtext",
+          "heading": false
+        },
+        {
+          "term": "cite fied",
+          "heading": false
+        },
+        {
+          "term": "knot diagram",
+          "heading": false
+        },
+        {
+          "term": "begin eqn",
+          "heading": false
+        },
+        {
+          "term": "end eqn",
+          "heading": false
+        },
+        {
+          "term": "eqn label",
+          "heading": false
+        }
+      ],
+      "extract": "We recall briefly the definition of Gau\\ss{} sum invariants. They were introduced first in \\cite{Fied} for braids, and later \\cite{Fied2,VirPol} for knots. It is known that all they give formulas for Vassiliev invariants. \\begin{defi}(\\protect\\cite{Fied2})\\ A Gau\\ss{} diagram of a knot diagram is an oriented circle with arrows connecting points on it mapped to a crossing and oriented from the preimage of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-3-xus-form-and-seifert-surfaces",
+      "number": "3",
+      "title": "Xu's form and Seifert surfaces",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 31,
+      "summary": null,
+      "keywords": [],
+      "extract": "We studied the relation of Xu's algorithm and the skein polynomial in \\cite{3br}, and here we will go further to connect fiberedness, the and Alexander and Jones polynomial to Xu's form.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-31-strongly-quasi-positive-links-among-links-of",
+      "number": "3.1",
+      "title": "Strongly quasi-positive links among links of braid index 3",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 537,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quasi-positive",
+          "heading": true
+        },
+        {
+          "term": "mwf",
+          "heading": false
+        },
+        {
+          "term": "band representation",
+          "heading": false
+        },
+        {
+          "term": "reference thqp",
+          "heading": false
+        },
+        {
+          "term": "braid",
+          "heading": true
+        },
+        {
+          "term": "begin eqn",
+          "heading": false
+        },
+        {
+          "term": "end eqn",
+          "heading": false
+        },
+        {
+          "term": "eqn label",
+          "heading": false
+        }
+      ],
+      "extract": "Theorem \\reference{thqp} follows relatively easily from the work in \\cite{3br}, but it is a good starting point for the later more substantial arguments basing on Xu's form. \\proof[of theorem \\reference{thqp}] The inequalities of \\eqref{mq} for the $v$-degree of $P$ applied on a positive band representation show that, with $P=P(L)$ and $\\chi=\\chi(L)$, \\begin{eqn}\\label{x} \\md_vP\\ge 1-\\chi\\,. \\end{eqn} Because of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-32-uniqueness-of-minimal-genus-seifert-surfaces",
+      "number": "3.2",
+      "title": "Uniqueness of minimal genus Seifert surfaces",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 744,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "seifert surfaces",
+          "heading": true
+        },
+        {
+          "term": "genus seifert",
+          "heading": true
+        },
+        {
+          "term": "minimal genus",
+          "heading": true
+        },
+        {
+          "term": "bennequin surface",
+          "heading": false
+        },
+        {
+          "term": "ﬂype interchanges",
+          "heading": false
+        },
+        {
+          "term": "uniqueness",
+          "heading": true
+        },
+        {
+          "term": "ﬁber surface",
+          "heading": false
+        },
+        {
+          "term": "hopf band",
+          "heading": false
+        }
+      ],
+      "extract": "Uniqueness of minimal genus Seifert surfaces The discussion here came about from the desire to complete Xu’s uniqueness theorem for Seifert surfaces of 3-braid links. While our result will be further improved later using work to follow, we need to introduce some notation and basic tools. We will use the work of Kobayashi [Ko], implying that the property a surface to be a unique minimal genus surface is invariant",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-33-fiberedness",
+      "number": "3.3",
+      "title": "Fiberedness",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": "13",
+      "labelEnd": "15",
+      "words": 1345,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hopf band",
+          "heading": false
+        },
+        {
+          "term": "fiberedness",
+          "heading": true
+        },
+        {
+          "term": "braid link",
+          "heading": false
+        },
+        {
+          "term": "syllable length",
+          "heading": false
+        },
+        {
+          "term": "plumbing equivalent",
+          "heading": false
+        },
+        {
+          "term": "minimal genus",
+          "heading": false
+        },
+        {
+          "term": "pretzel link",
+          "heading": false
+        },
+        {
+          "term": "genus surface",
+          "heading": false
+        }
+      ],
+      "extract": "Fiberedness 13 Case 3. p,q,r < 0. We have a negative braid, which is ﬁbered. Case 4. −p,−r < 0, q > 0. We have a word of the form σq 2σ−r 1 σ−1 2 σ−p 1 . If one of p and r is 1, then we have a (2, .)-torus link. If q = 1, then we can go over to the mirror image, and land in case 1. Now, when p,q,r ≥2, the minimal word in Xu’s form is 2q−2(−3)(−2)r−1(−1)p−1. Since p −1 and r −1 are non-zero, its surface is plumbing",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-4-polynomial-invariants",
+      "number": "4",
+      "title": "Polynomial invariants",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "Polynomial invariants",
+      "extractCut": false
+    },
+    {
+      "id": "sec-013-41-alexander-polynomial",
+      "number": "4.1",
+      "title": "Alexander polynomial",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 17,
+      "labelStart": "15",
+      "labelEnd": "17",
+      "words": 1244,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alexander polynomial",
+          "heading": true
+        },
+        {
+          "term": "exponent syllable",
+          "heading": false
+        },
+        {
+          "term": "non-trivial syllable",
+          "heading": false
+        },
+        {
+          "term": "quasi-positive word",
+          "heading": false
+        },
+        {
+          "term": "syllable reduction",
+          "heading": false
+        },
+        {
+          "term": "begin corr",
+          "heading": false
+        },
+        {
+          "term": "braid links",
+          "heading": false
+        },
+        {
+          "term": "end corr",
+          "heading": false
+        }
+      ],
+      "extract": "In \\cite{Birman}, Birman proposed (but considered as very difficult) the problem to classify 3-braid links with given polynomials. In \\cite{3br} we dealt with the skein polynomial. Now we can extend our results to the Alexander polynomial (with the convention in the beginning of \\S\\reference{ppp}). The following discussion gives a fairly exact description how to find the 3-braid links, if such exist, for any",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-42-jones-polynomial",
+      "number": "4.2",
+      "title": "Jones polynomial",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 20,
+      "labelStart": "17",
+      "labelEnd": "20",
+      "words": 2055,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jones polynomial",
+          "heading": true
+        },
+        {
+          "term": "chi quad",
+          "heading": false
+        },
+        {
+          "term": "eqref vpsub",
+          "heading": false
+        },
+        {
+          "term": "middle-degree term",
+          "heading": false
+        },
+        {
+          "term": "frac chi",
+          "heading": false
+        },
+        {
+          "term": "reference lemg",
+          "heading": false
+        },
+        {
+          "term": "lemg applies",
+          "heading": false
+        },
+        {
+          "term": "v-e frac",
+          "heading": false
+        }
+      ],
+      "extract": "The control of the Jones polynomial on 3-braid links was the object of main attention in \\cite{Birman}. We can accomplish this with a similar argument to $\\Dl$. The result we obtain can be conveniently described in our setting and is as follows: \\begin{theorem}\\label{Hh} Let $L$ be a non-split 3-braid link, and $L=\\hat\\bt$ with $\\bt\\in B_3$. Then \\begin{eqn}\\label{g} \\spn V(L)\\,\\le\\,4-\\chi(L)\\,. \\end{eqn} Equality",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-43-q-polynomial",
+      "number": "4.3",
+      "title": "Q polynomial",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 26,
+      "labelStart": "20",
+      "labelEnd": "26",
+      "words": 3375,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quasi-positive braid",
+          "heading": false
+        },
+        {
+          "term": "cite kanenobu",
+          "heading": false
+        },
+        {
+          "term": "kanenobu formula",
+          "heading": false
+        },
+        {
+          "term": "case kanenobu",
+          "heading": false
+        },
+        {
+          "term": "ref thq",
+          "heading": false
+        },
+        {
+          "term": "label thq",
+          "heading": false
+        },
+        {
+          "term": "ffrac",
+          "heading": false
+        },
+        {
+          "term": "cite ntriv",
+          "heading": false
+        }
+      ],
+      "extract": "We extend the scope of the previous results to the Brandt-Lickorish-Millett-Ho polynomial. The main aim here is to prove \\begin{theo}\\label{thQ} Only finitely many non-trivial 3-braid links have given $Q$ polynomial, and none has trivial (i.e., unlink) polynomial. \\end{theo} Note that by Kanenobu's work \\cite{Kanenobu3}, again there are finite families of arbitrary large size, so we claim again a sort of contrary",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-5-positivity-of-3-braid-links",
+      "number": "5",
+      "title": "Positivity of 3-braid links",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "26",
+      "labelEnd": "26",
+      "words": 9,
+      "summary": null,
+      "keywords": [],
+      "extract": "Positivity of 3-braid links 5. Positivity of 3-braid links",
+      "extractCut": false
+    },
+    {
+      "id": "sec-017-51-positive-braid-links",
+      "number": "5.1",
+      "title": "Positive braid links",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "26",
+      "labelEnd": "26",
+      "words": 3,
+      "summary": null,
+      "keywords": [],
+      "extract": "Positive braid links",
+      "extractCut": false
+    },
+    {
+      "id": "sec-018-511-the-morton-williams-franks-bound",
+      "number": "5.1.1",
+      "title": "The Morton-Williams-Franks bound",
+      "level": 3,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "26",
+      "labelEnd": "27",
+      "words": 763,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adequate braid",
+          "heading": false
+        },
+        {
+          "term": "posex bcr",
+          "heading": false
+        },
+        {
+          "term": "reference thg",
+          "heading": false
+        },
+        {
+          "term": "case mwf",
+          "heading": false
+        },
+        {
+          "term": "reference thmwf",
+          "heading": false
+        },
+        {
+          "term": "adequate diagrams",
+          "heading": false
+        },
+        {
+          "term": "cite posex",
+          "heading": false
+        },
+        {
+          "term": "reference cort",
+          "heading": false
+        }
+      ],
+      "extract": "For the proof of theorem \\reference{thg} we will need to study the behaviour of the bound \\eqref{mwfb} in the Morton-Williams-Franks inequality (we abbreviate as MWF) on positive braids. This was begun by Nakamura \\cite{Nakamura}, who settled the case $MWF=2$ in the suggestive way: such braids represent only the $(2,n)$-torus links. (The case $MWF=1$ is trivial.) We will introduce a method that considerably",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-512-maximal-subwords",
+      "number": "5.1.2",
+      "title": "Maximal subwords",
+      "level": 3,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": "27",
+      "labelEnd": "28",
+      "words": 808,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "summit syllables",
+          "heading": false
+        },
+        {
+          "term": "summit reduced",
+          "heading": false
+        },
+        {
+          "term": "index syllable",
+          "heading": false
+        },
+        {
+          "term": "maximal subword",
+          "heading": false
+        },
+        {
+          "term": "cite nakamura",
+          "heading": false
+        },
+        {
+          "term": "resolution tree",
+          "heading": false
+        },
+        {
+          "term": "braid scheme",
+          "heading": false
+        },
+        {
+          "term": "begin defi",
+          "heading": false
+        }
+      ],
+      "extract": "Here we start the technical considerations needed to prove theorem \\reference{thmwf}. We consider the form \\eqref{wd}, now with all $l_i>0$. \\begin{defi} We define \\em{summit syllables} in \\eqref{wd}: \\def\\theenumi{\\alph{enumi}} \\def\\labelenumi{\\theenumi)} \\begin{enumerate} \\item All $\\sg_{n-1}^{l_i}$ are summit syllables, and \\item if $\\ap=\\sg_k^{l_i}$ and $\\ap'=\\sg_k^{l_j}$ are summit syllables, with no",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-513-the-proof-of-theorem-thmwf-initial-simplific",
+      "number": "5.1.3",
+      "title": "The proof of Theorem thmwf: Initial simplifications",
+      "level": 3,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": "28",
+      "labelEnd": "29",
+      "words": 482,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "index syllables",
+          "heading": false
+        },
+        {
+          "term": "valley resp",
+          "heading": false
+        },
+        {
+          "term": "rigid crossings",
+          "heading": false
+        },
+        {
+          "term": "mwf",
+          "heading": false
+        },
+        {
+          "term": "braid word",
+          "heading": false
+        },
+        {
+          "term": "reductions",
+          "heading": false
+        },
+        {
+          "term": "summit",
+          "heading": false
+        },
+        {
+          "term": "strands",
+          "heading": false
+        }
+      ],
+      "extract": "The following fact is well-known: Theorem 5.3 MWF(β) = 1 if an only if [β]i = 1 for i = 1,...,n −1. Now for MWF = 3 it sufﬁces to ensure that (either we can reduce the braids) or can ﬁnd words, whose non-maximal subwords do not give an unknot. For the rest of the section we assume that β′ gives the unknot. We will work by induction on the number of strands, and for ﬁxed number of strands on the index sum. So we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-514-two-mountains",
+      "number": "5.1.4",
+      "title": "Two mountains",
+      "level": 3,
+      "pageStart": 29,
+      "pageEnd": 31,
+      "labelStart": "29",
+      "labelEnd": "31",
+      "words": 1226,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "index syllables",
+          "heading": false
+        },
+        {
+          "term": "mountains",
+          "heading": true
+        },
+        {
+          "term": "maximal subword",
+          "heading": false
+        },
+        {
+          "term": "subwords separated",
+          "heading": false
+        },
+        {
+          "term": "valleys",
+          "heading": false
+        },
+        {
+          "term": "index sequence",
+          "heading": false
+        },
+        {
+          "term": "mwf",
+          "heading": false
+        },
+        {
+          "term": "reduced word",
+          "heading": false
+        }
+      ],
+      "extract": "(2,n)-torus connected component, or a reducible braid and can work by induction on the number of strands. Similarly at least one valley has depth 1, otherwise σ1 in β′ remains reducible in β. The following operation will be somewhat important, and we will call it “ﬁlling the valley”. Lemma 5.3 (“ﬁlling the valley”) Any valley can be removed from the maximal subword in the positive resolution tree. Proof. Same as for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-515-more-than-two-mountains",
+      "number": "5.1.5",
+      "title": "More than two mountains",
+      "level": 3,
+      "pageStart": 31,
+      "pageEnd": 33,
+      "labelStart": "31",
+      "labelEnd": "33",
+      "words": 758,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hatted syllables",
+          "heading": false
+        },
+        {
+          "term": "underlined syllables",
+          "heading": false
+        },
+        {
+          "term": "non-summit index",
+          "heading": false
+        },
+        {
+          "term": "mwf",
+          "heading": false
+        },
+        {
+          "term": "depth valley",
+          "heading": false
+        },
+        {
+          "term": "mountains",
+          "heading": true
+        },
+        {
+          "term": "extensions",
+          "heading": false
+        },
+        {
+          "term": "strands",
+          "heading": false
+        }
+      ],
+      "extract": "More than two mountains To deal with the general case, now we make the following modiﬁcations. We call a summit syllable sequence with indices n −2 and n −1 terminated on both sides by n −1’s a modiﬁed mountain or plateau. We have again by lemma 5.5 only two valleys of depth < n−2, or alternatively only two plateaus (now instead of mountains). The case of more than two mountains is thus mainly a adaptation of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-516-4-braids",
+      "number": "5.1.6",
+      "title": "4-braids",
+      "level": 3,
+      "pageStart": 33,
+      "pageEnd": 35,
+      "labelStart": "33",
+      "labelEnd": "35",
+      "words": 900,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mwf",
+          "heading": false
+        },
+        {
+          "term": "summit syllables",
+          "heading": false
+        },
+        {
+          "term": "left plateau",
+          "heading": false
+        },
+        {
+          "term": "index syllables",
+          "heading": false
+        },
+        {
+          "term": "right plateau",
+          "heading": false
+        },
+        {
+          "term": "right mountain",
+          "heading": false
+        },
+        {
+          "term": "braid word",
+          "heading": false
+        },
+        {
+          "term": "both non-triviality",
+          "heading": false
+        }
+      ],
+      "extract": "4-braids If some mountain is not of height 3, or > 2 valleys of depth 1 exist, then we are done as before (see §5.1.3). So the maximal subword is of the form 1,2,3,(2!,3)p,2,1,1,2,3,(2!,3)n,2,1, and the non-maximal subword is a single σ1 1. We separate the summit syllables and their letters by the summit syllables of index 1 into a left and right plateau. Assume w.l.o.g. the (non-summit) σ1 1 is in the left plateau.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-52-positive-links",
+      "number": "5.2",
+      "title": "Positive links",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 38,
+      "labelStart": "35",
+      "labelEnd": "38",
+      "words": 2088,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "doubled component",
+          "heading": false
+        },
+        {
+          "term": "links",
+          "heading": true
+        },
+        {
+          "term": "pretzel links",
+          "heading": false
+        },
+        {
+          "term": "braid representation",
+          "heading": false
+        },
+        {
+          "term": "mwf",
+          "heading": false
+        },
+        {
+          "term": "connected cable",
+          "heading": false
+        },
+        {
+          "term": "link diagram",
+          "heading": false
+        },
+        {
+          "term": "σ1σ2σ",
+          "heading": false
+        }
+      ],
+      "extract": "Positive links 35 The only common extension of the two MWF = 3 extensions is [122331221123321], which has MWF = 4. So it remains to verify that (the closures of) [22∗3∗122∗11∗23211∗]and [22∗3122∗11∗23∗211∗] have braid index 4. For this we use the two-cabled MWF inequality. Let for a braid β ∈Bn, the “two-cabled” braid (β)2 ∈B2n be obtained from β by replacing in (9) each σi by σ2iσ2i−1σ2i+1σ2i. Then (β)2 is a braid",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-6-studying-alternating-links-by-braid-index",
+      "number": "6",
+      "title": "Studying alternating links by braid index",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 42,
+      "labelStart": "38",
+      "labelEnd": "42",
+      "words": 2580,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alternating links",
+          "heading": true
+        },
+        {
+          "term": "braid index",
+          "heading": true
+        },
+        {
+          "term": "cite murprz",
+          "heading": false
+        },
+        {
+          "term": "non-split alternating",
+          "heading": false
+        },
+        {
+          "term": "mwf bound",
+          "heading": false
+        },
+        {
+          "term": "begin corr",
+          "heading": false
+        },
+        {
+          "term": "cite murasugi",
+          "heading": false
+        },
+        {
+          "term": "end corr",
+          "heading": false
+        }
+      ],
+      "extract": "The combination of the identity \\eqref{p21} and the skein-Jones substitution \\eqref{VPsub} was already used in \\S\\reference{Js} to translate the determination of the 3-braid link genus from $P$ to $V$. A similar line of thought will now enable us to extend the other main result in \\cite{3br}, the description of alternating links of braid index 3. This result was motivated by the work of Murasugi \\cite{Murasugi}, and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-7-applications-of-the-representation-theory",
+      "number": "7",
+      "title": "Applications of the representation theory",
+      "level": 1,
+      "pageStart": 42,
+      "pageEnd": 42,
+      "labelStart": "42",
+      "labelEnd": "42",
+      "words": 49,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jones",
+          "heading": false
+        },
+        {
+          "term": "theory",
+          "heading": true
+        },
+        {
+          "term": "applications",
+          "heading": true
+        }
+      ],
+      "extract": "So far the representation theory behind the skein, Jones, and Alexander polynomial was not used. We will give some applications of it now. The theory is well explained in \\cite{Jones}. We will use Jones's conventions, unless otherwise specified.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-027-71-the-jones-conjecture",
+      "number": "7.1",
+      "title": "The Jones conjecture",
+      "level": 2,
+      "pageStart": 42,
+      "pageEnd": 48,
+      "labelStart": "42",
+      "labelEnd": "48",
+      "words": 3468,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jones conjecture",
+          "heading": true
+        },
+        {
+          "term": "unsharp mwf",
+          "heading": false
+        },
+        {
+          "term": "array hline",
+          "heading": false
+        },
+        {
+          "term": "young tableaux",
+          "heading": false
+        },
+        {
+          "term": "eqref str",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "array hss",
+          "heading": false
+        },
+        {
+          "term": "hline end",
+          "heading": false
+        }
+      ],
+      "extract": "There is a conjecture, often attributed to Jones (who speculated on it at least for knots and in it its weaker form, as given below; see 357 l.-6 of his paper), stating that a minimal string braid representation has a unique exponent sum. \\begin{conj}(Jones's conjecture)\\label{jcc} \\def\\labelenumi{\\theenumi)} \\begin{enumerate} \\item (weaker version)\\label{weV} If $\\bt,\\bt'\\in B_n$ satisfy $\\hat\\bt=\\hat\\bt'=L$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-72-unitarity-of-the-burau-representation",
+      "number": "7.2",
+      "title": "Unitarity of the Burau representation",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 50,
+      "labelStart": "48",
+      "labelEnd": "50",
+      "words": 691,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "burau representation",
+          "heading": true
+        },
+        {
+          "term": "detj",
+          "heading": false
+        },
+        {
+          "term": "squier",
+          "heading": false
+        },
+        {
+          "term": "argt",
+          "heading": false
+        },
+        {
+          "term": "unitarity",
+          "heading": true
+        },
+        {
+          "term": "deﬁnite",
+          "heading": false
+        },
+        {
+          "term": "unit norm",
+          "heading": false
+        },
+        {
+          "term": "deﬁniteness",
+          "heading": false
+        }
+      ],
+      "extract": "Unitarity of the Burau representation In the following q and t are unit norm complex numbers. We deﬁne arg(eis) := s mod 2π for s ∈R. We continue using the formalism of Young tableaux, the representations πY and the notations X(q,λ) and WY of the proof of theorem 7.1. For the Alexander polynomial ∆(we resume the notational convention from before §7.1), as well as for 3- and 4- braids, the representations πY are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-73-norm-estimates",
+      "number": "7.3",
+      "title": "Norm estimates",
+      "level": 2,
+      "pageStart": 50,
+      "pageEnd": 52,
+      "labelStart": "50",
+      "labelEnd": "52",
+      "words": 1099,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mwf",
+          "heading": false
+        },
+        {
+          "term": "braid knots",
+          "heading": false
+        },
+        {
+          "term": "jones estimate",
+          "heading": false
+        },
+        {
+          "term": "e2πi",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst row",
+          "heading": false
+        },
+        {
+          "term": "norm",
+          "heading": true
+        },
+        {
+          "term": "bound",
+          "heading": false
+        },
+        {
+          "term": "table",
+          "heading": false
+        }
+      ],
+      "extract": "Norm estimates The Jones polynomial V can be speciﬁed, for our purposes, by V(t) = X(t,t). In the following, which root of complex numbers is taken is irrelevant, important is though that it be kept ﬁxed in subsequent calculations. By ℜwe denote the real part of a complex number. Theorem 7.3 If |t| = 1, ℜt > 0 and β is a 4-braid, then Vˆβ(t) ≤(2ℜ√t)3. If β is a 3-braid and ℜt > −1/2, then Vˆβ(t) ≤(2ℜ√t)2. Proof. We",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-74-skein-polynomial",
+      "number": "7.4",
+      "title": "Skein polynomial",
+      "level": 2,
+      "pageStart": 52,
+      "pageEnd": 53,
+      "labelStart": "52",
+      "labelEnd": "53",
+      "words": 394,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "skein polynomial",
+          "heading": true
+        },
+        {
+          "term": "braid test",
+          "heading": false
+        },
+        {
+          "term": "mwf",
+          "heading": false
+        },
+        {
+          "term": "exponent sum",
+          "heading": false
+        },
+        {
+          "term": "substitutions",
+          "heading": false
+        },
+        {
+          "term": "weights",
+          "heading": false
+        },
+        {
+          "term": "coefﬁcients",
+          "heading": false
+        },
+        {
+          "term": "parity",
+          "heading": false
+        }
+      ],
+      "extract": "table1 in [J].) For 4-braids several new 14 crossing knots can be ruled out, for example 1421199. Remark 7.3 The use of P to restrict the possible values of e is usually most effective, but not indispensable. There are other conditions on e, originating from Bennequin’s work [Be], that can be more applicable in certain cases where the calculation of P is tedious. Also, when t is a root of unity of order n, the tests",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-75-recovering-the-burau-trace",
+      "number": "7.5",
+      "title": "Recovering the Burau trace",
+      "level": 2,
+      "pageStart": 53,
+      "pageEnd": 53,
+      "labelStart": "53",
+      "labelEnd": "53",
+      "words": 507,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "burau trace",
+          "heading": true
+        },
+        {
+          "term": "mwf",
+          "heading": false
+        },
+        {
+          "term": "recovering",
+          "heading": true
+        },
+        {
+          "term": "braid test",
+          "heading": false
+        },
+        {
+          "term": "skein polynomial",
+          "heading": false
+        },
+        {
+          "term": "exponent sum",
+          "heading": false
+        },
+        {
+          "term": "calculation complexity",
+          "heading": false
+        },
+        {
+          "term": "efﬁcient",
+          "heading": false
+        }
+      ],
+      "extract": "Recovering the Burau trace 53 Proof. From e, V and ∆we know ˜Xa = 3 ∑ i=0 Xi(q)qa(i+(e−3)/2), for a ∈{−2,−1,0,1}. (For a = −2 and a = 0 we have the trivializing substitutions, a = −1 corresponds to ∆and a = 1 to V.) So one can recover Xi from ˜Xa and e. (One can write down an explicit formula easily.) ✷ This condition is thus equally unhelpful as a 4-braid test. For a similar reason, I expect (though I have not",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-751-conditions-on-the-eigenvalues",
+      "number": "7.5.1",
+      "title": "Conditions on the eigenvalues",
+      "level": 3,
+      "pageStart": 53,
+      "pageEnd": 55,
+      "labelStart": "53",
+      "labelEnd": "55",
+      "words": 644,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "sqrt right",
+          "heading": false
+        },
+        {
+          "term": "begin eqn",
+          "heading": false
+        },
+        {
+          "term": "end eqn",
+          "heading": false
+        },
+        {
+          "term": "psi",
+          "heading": false
+        },
+        {
+          "term": "eqn label",
+          "heading": false
+        },
+        {
+          "term": "eigenvalues",
+          "heading": true
+        },
+        {
+          "term": "rho",
+          "heading": false
+        }
+      ],
+      "extract": "Using just norms clearly weakens the conditions considerably, and so one would like to identify the Burau eigenvalues directly. However, the relations between the $X_i$ do not allow to recover by simple algebraic means the individual traces from $P$. Using Squier's unitarity, there is an analytic way to recover the Burau trace of 4-braids (at least for generic $t$ and up to finite indeterminacy). Since by the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-752-applications-and-examples",
+      "number": "7.5.2",
+      "title": "Applications and examples",
+      "level": 3,
+      "pageStart": 55,
+      "pageEnd": 56,
+      "labelStart": "55",
+      "labelEnd": "56",
+      "words": 567,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cable mwf",
+          "heading": false
+        },
+        {
+          "term": "posex bcr",
+          "heading": false
+        },
+        {
+          "term": "begin exam",
+          "heading": false
+        },
+        {
+          "term": "kawamuro",
+          "heading": false
+        },
+        {
+          "term": "end exam",
+          "heading": false
+        },
+        {
+          "term": "cite posex",
+          "heading": false
+        },
+        {
+          "term": "crossing knots",
+          "heading": false
+        },
+        {
+          "term": "prime crossing",
+          "heading": false
+        }
+      ],
+      "extract": "The image of the r.h.s. of \\eqref{qw0} under \\eqref{qw} will be some curve in $\\bC$ that generically intersects $S^1$ in a finite number of points. This parametric equality can be examined numerically and allows to recover $A=\\tr \\psi_3$ up to finite indeterminacy. In particular, we have \\begin{prop}\\label{4brt} Assume for some $t\\in S^1$ with $|\\arg t|\\le \\pi/2$ we cannot find $y$ as in \\eqref{qw0}, such that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-76-mahler-measures",
+      "number": "7.6",
+      "title": "Mahler measures",
+      "level": 2,
+      "pageStart": 56,
+      "pageEnd": 56,
+      "labelStart": "56",
+      "labelEnd": "56",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "Mahler measures",
+      "extractCut": false
+    },
+    {
+      "id": "sec-035-761-3-braids",
+      "number": "7.6.1",
+      "title": "3-braids",
+      "level": 3,
+      "pageStart": 56,
+      "pageEnd": 58,
+      "labelStart": "56",
+      "labelEnd": "58",
+      "words": 1176,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "log s-s",
+          "heading": false
+        },
+        {
+          "term": "cdot log",
+          "heading": false
+        },
+        {
+          "term": "begin eqn",
+          "heading": false
+        },
+        {
+          "term": "end eqn",
+          "heading": false
+        },
+        {
+          "term": "int log",
+          "heading": false
+        },
+        {
+          "term": "eqn label",
+          "heading": false
+        },
+        {
+          "term": "cdot left",
+          "heading": false
+        },
+        {
+          "term": "tsi",
+          "heading": false
+        }
+      ],
+      "extract": "The material in section \\reference{SBurau} originated from a question of S.~Kamada whether the Alexander polynomial Mahler measure $M(\\Dl)$ is bounded on closed 3-braids. \\begin{defi} For a Laurent polynomial $p\\in\\bZ[t^{\\pm 1}]$, and $n\\in\\bN_+$, we define the $n$-norm of $p$ by \\[ ||p||_n\\,:=\\,\\sqrt[n]{\\sum_{k=-\\infty}^{\\infty}\\bigl([p]_k\\bigr)^n}\\,, \\] and its Mahler measure by \\[ M(p)\\,:=\\,\\prod_{|t|\\ge",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-762-skein-polynomial-and-generalized-twisting",
+      "number": "7.6.2",
+      "title": "Skein polynomial and generalized twisting",
+      "level": 3,
+      "pageStart": 58,
+      "pageEnd": 60,
+      "labelStart": "58",
+      "labelEnd": "60",
+      "words": 838,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "skein polynomial",
+          "heading": true
+        },
+        {
+          "term": "cite ssw",
+          "heading": false
+        },
+        {
+          "term": "slots",
+          "heading": false
+        },
+        {
+          "term": "full twists",
+          "heading": false
+        },
+        {
+          "term": "cite jones",
+          "heading": false
+        },
+        {
+          "term": "mahler measure",
+          "heading": false
+        },
+        {
+          "term": "diagram associated",
+          "heading": false
+        },
+        {
+          "term": "dots",
+          "heading": false
+        }
+      ],
+      "extract": "By using the representation theory, one can extend the scope of the results in \\cite{SSW,CK} on bounded Mahler measure to (parallel) multi-strand twisting. We give a version for the skein polynomial, since its special case, the Jones polynomial, was discussed in \\cite{CK}. One can obtain this special case by setting $\\lm=q$ in the below theorem. (The reversal of component orientation is not a serious problem for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-77-knots-with-unsharp-mwf-inequality",
+      "number": "7.7",
+      "title": "Knots with unsharp MWF inequality",
+      "level": 2,
+      "pageStart": 60,
+      "pageEnd": 61,
+      "labelStart": "60",
+      "labelEnd": "61",
+      "words": 1030,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite kawamuro",
+          "heading": false
+        },
+        {
+          "term": "kawamuro theorem",
+          "heading": false
+        },
+        {
+          "term": "mwf",
+          "heading": true
+        },
+        {
+          "term": "ref sjs",
+          "heading": false
+        },
+        {
+          "term": "unsharp",
+          "heading": true
+        },
+        {
+          "term": "jones conjecture",
+          "heading": false
+        },
+        {
+          "term": "braid index",
+          "heading": false
+        },
+        {
+          "term": "begin prop",
+          "heading": false
+        }
+      ],
+      "extract": "This brief part was motivated by the paper of Kawamuro \\cite{Kawamuro}, which I came across during the continuous work on my paper. Kawamuro was interested in finding infinitely many knots for which the MWF inequality is strict, in particular such satisfying Jones' conjecture in \\S\\ref{SJS}. The point to make is that we have at least two ways allowing us to obtain her, and further such knots much more easily. (In",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-8-postliminaries",
+      "number": "8",
+      "title": "Postliminaries",
+      "level": 1,
+      "pageStart": 61,
+      "pageEnd": 61,
+      "labelStart": "61",
+      "labelEnd": "61",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-039-81-fibered-dean-knots-hirasawa-murasugi",
+      "number": "8.1",
+      "title": "Fibered Dean knots (Hirasawa-Murasugi)",
+      "level": 2,
+      "pageStart": 61,
+      "pageEnd": 63,
+      "labelStart": "61",
+      "labelEnd": "63",
+      "words": 435,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dean",
+          "heading": true
+        },
+        {
+          "term": "hirasawa-murasugi",
+          "heading": true
+        },
+        {
+          "term": "epsfs",
+          "heading": false
+        },
+        {
+          "term": "slide along",
+          "heading": false
+        },
+        {
+          "term": "vbox caption",
+          "heading": false
+        },
+        {
+          "term": "reference lki",
+          "heading": false
+        },
+        {
+          "term": "fibre surface",
+          "heading": false
+        },
+        {
+          "term": "dean knot",
+          "heading": false
+        }
+      ],
+      "extract": "Here we present some material due to Hirasawa and Murasugi, who studied fibering of generalized Dean knots. An overview is given in \\cite{Hirasawa}. As this is work in progress, a longer exposition may appear subsequently elsewhere. \\begin{defi} The Dean knot $K(p,q|r,rs)$ is given by the closed $p$-braid \\[ (\\sg_{p-1}\\sg_{p-2}\\cdots \\sg_1)^{q}(\\sg_1\\sg_2\\cdots \\sg_{r-1})^{rs}\\,, \\] with $p>r>1$ and $q,s$ non-zero",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-82-a-decomposition-joint-with-hirasawa-ishiwata",
+      "number": "8.2",
+      "title": "$A$-decomposition (joint with Hirasawa-Ishiwata)",
+      "level": 2,
+      "pageStart": 63,
+      "pageEnd": 68,
+      "labelStart": "63",
+      "labelEnd": "68",
+      "words": 2609,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sutured manifold",
+          "heading": false
+        },
+        {
+          "term": "canonical sutured",
+          "heading": false
+        },
+        {
+          "term": "preprint math",
+          "heading": false
+        },
+        {
+          "term": "alternating links",
+          "heading": false
+        },
+        {
+          "term": "incompressible surface",
+          "heading": false
+        },
+        {
+          "term": "closed braids",
+          "heading": false
+        },
+        {
+          "term": "seifert surfaces",
+          "heading": false
+        },
+        {
+          "term": "a-decomposition",
+          "heading": false
+        }
+      ],
+      "extract": "63 In ﬁgure 8, we perform the move (a) →(b), sliding B along N. The last surface F′, in ﬁgure 8 (b), is Murasugi sum of a ﬁbre surface spanning the (2,2,−2)-pretzel link and ˜F, where ˜F consists of k −1 copies of F′ 0 and the band N. By induction on k, we see that F′ is a ﬁbre surface, and hence ˆβ is a ﬁbred link. ✷ A.2. A-decomposition (joint with Hirasawa-Ishiwata) For the proof of theorem 1.2 we introduce the",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Current version: August 8, 2007 First version: September 22,"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 1,
+        "items": [
+          "Introduction: listed p2, found p4"
+        ]
+      }
+    },
+    "figureSequenceGaps": [
+      "figure 2",
+      "figure 3",
+      "figure 7",
+      "figure 8",
+      "figure 9",
+      "figure 10",
+      "table 1",
+      "table 2"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "braid link",
+      "heading": false
+    },
+    {
+      "term": "quasi-positive braid",
+      "heading": true
+    },
+    {
+      "term": "braid index",
+      "heading": true
+    },
+    {
+      "term": "braid word",
+      "heading": false
+    },
+    {
+      "term": "braid knots",
+      "heading": false
+    },
+    {
+      "term": "non-trivial braid",
+      "heading": false
+    },
+    {
+      "term": "case mwf",
+      "heading": false
+    },
+    {
+      "term": "mwf resp",
+      "heading": false
+    },
+    {
+      "term": "braid diagram",
+      "heading": false
+    },
+    {
+      "term": "cable mwf",
+      "heading": false
+    },
+    {
+      "term": "alternating braid",
+      "heading": true
+    },
+    {
+      "term": "adequate braid",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 61,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 64,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 67,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "A braided Seifert surface obtained from a band representation",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The Aand B-corners of a crossing, and its both splittings. The corner A (resp",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The standard diagram of the knot 62 and its Gauß diagram",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The reduced Seifert graphs of the alternating diagrams of special alternating",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "The weights of the traces contributing to the λ-coefﬁcients of X for a 4-braid",
+      "page": 52,
+      "pageLabel": "52",
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "This sequence of diagrams describes the A-decomposition along arc a1 of the",
+      "page": 65,
+      "pageLabel": "65",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p003-1",
+      "file": "images/img-p003-1.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p062-1",
+      "file": "images/img-p062-1.png",
+      "page": 62,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p062-2",
+      "file": "images/img-p062-2.png",
+      "page": 62,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p062-3",
+      "file": "images/img-p062-3.png",
+      "page": 62,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p062-4",
+      "file": "images/img-p062-4.png",
+      "page": 62,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p062-5",
+      "file": "images/img-p062-5.png",
+      "page": 62,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p062-6",
+      "file": "images/img-p062-6.png",
+      "page": 62,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p065-1",
+      "file": "images/img-p065-1.png",
+      "page": 65,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p065-2",
+      "file": "images/img-p065-2.png",
+      "page": 65,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p065-3",
+      "file": "images/img-p065-3.png",
+      "page": 65,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p065-4",
+      "file": "images/img-p065-4.png",
+      "page": 65,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p065-5",
+      "file": "images/img-p065-5.png",
+      "page": 65,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p065-6",
+      "file": "images/img-p065-6.png",
+      "page": 65,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p065-7",
+      "file": "images/img-p065-7.png",
+      "page": 65,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p065-8",
+      "file": "images/img-p065-8.png",
+      "page": 65,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p065-9",
+      "file": "images/img-p065-9.png",
+      "page": 65,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p065-10",
+      "file": "images/img-p065-10.png",
+      "page": 65,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 41,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 42,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 17
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p63); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 8
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 42 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0606435v2"
+  }
+}

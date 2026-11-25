@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-delta-pre-archimedean",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:delta-pre-archimedean",
+  "kind": "proposition",
+  "title": "Difference observables are formed pre-archimedean: fold commutes with the delta, the archimedean realisation does not",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-neutron-qvalue-symbolic",
+    "papers/quantum-observable-universe/blocks/def-archimedean-realization-functor"
+  ],
+  "cites": [
+    "references/kassel1995"
+  ],
+  "tags": [
+    "archimedean-functor",
+    "bar-involution",
+    "binding-energy",
+    "q-beta",
+    "order-of-operations",
+    "fibre-vs-observable"
+  ],
+  "leanRef": "qou:QOU.ParticleInteractions.fold_commutes_sub",
+  "text": "delta-pre-archimedean.md",
+  "leanSource": "delta-pre-archimedean.lean",
+  "provenance": "authored"
+}

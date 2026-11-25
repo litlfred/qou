@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/acsv231201/sections/sec-069",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Additional worked examples",
+  "pageStart": 422,
+  "pageEnd": 430,
+  "contains": [
+    "library/acsv231201/blocks/prose-sec-069",
+    "library/acsv231201/blocks/ex-sec-069-01",
+    "library/acsv231201/blocks/ex-sec-069-02",
+    "library/acsv231201/blocks/ex-sec-069-03",
+    "library/acsv231201/blocks/ex-sec-069-04",
+    "library/acsv231201/blocks/ex-sec-069-05",
+    "library/acsv231201/blocks/ex-sec-069-06",
+    "library/acsv231201/blocks/cor-sec-069-07",
+    "library/acsv231201/blocks/ex-sec-069-08",
+    "library/acsv231201/blocks/figure-img-p423-1",
+    "library/acsv231201/blocks/figure-img-p425-1"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/acsv231201/manifest.jsonld",
+  "provenance": "ingested"
+}

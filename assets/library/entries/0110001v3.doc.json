@@ -1,0 +1,483 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "0110001v3",
+  "title": "agt-3-18.dvi",
+  "variant": "pdf",
+  "pages": 12,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Proof of the theorem",
+      "number": "3",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-3-proof-of-the-theorem"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-002-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 91,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "triple linking",
+          "heading": false
+        },
+        {
+          "term": "milnor triple",
+          "heading": false
+        },
+        {
+          "term": "linking numbers",
+          "heading": false
+        }
+      ],
+      "extract": "ISSN 1472-2739 (on-line) 1472-2747 (printed) 557 Algebraic & Geometric Topology ATG Volume 3 (2003) 557–568 Published: 19 June 2003 A geometric interpretation of Milnor’s triple linking numbers Blake Mellor Paul Melvin Abstract Milnor’s triple linking numbers of a link in the 3-sphere are interpreted geometrically in terms of the pattern of intersections of the Seifert surfaces of the components of the link. This",
+      "extractCut": true,
+      "blocks": [
+        "library/0110001v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1775,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "µijk mijk",
+          "heading": false
+        },
+        {
+          "term": "µijk tijk",
+          "heading": false
+        },
+        {
+          "term": "εij",
+          "heading": false
+        },
+        {
+          "term": "pairwise linking",
+          "heading": false
+        },
+        {
+          "term": "blake mellor",
+          "heading": false
+        },
+        {
+          "term": "triple linking",
+          "heading": false
+        },
+        {
+          "term": "linking numbers",
+          "heading": false
+        },
+        {
+          "term": "seifert surfaces",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction Milnor’s higher order linking numbers (or mu-bar invariants) ¯µi of an oriented link L = L1 ∪· · · ∪Lℓin the 3-sphere are a measure of how deep the longitudes li of the components Li lie in the lower central series of the link group π = π1(S3 −L). They are deﬁned as follows [4]: Any diagram of L gives rise to a Wirtinger presentation of π whose generators are meridians of the link, one for each arc in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-3-proof-of-the-theorem",
+      "number": "3",
+      "title": "Proof of the theorem",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1948,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mijk tijk",
+          "heading": false
+        },
+        {
+          "term": "µijk mijk",
+          "heading": false
+        },
+        {
+          "term": "ejki ekij",
+          "heading": false
+        },
+        {
+          "term": "ﬁnger move",
+          "heading": false
+        },
+        {
+          "term": "diﬀerence mijk",
+          "heading": false
+        },
+        {
+          "term": "disjoint clasps",
+          "heading": false
+        },
+        {
+          "term": "finger move",
+          "heading": false
+        },
+        {
+          "term": "disentangled surfaces",
+          "heading": false
+        }
+      ],
+      "extract": "Proof of the theorem A generic family F = Fi ∪Fj ∪Fk of Seifert surfaces for the link Li ∪Lj ∪Lk will be called reduced if it is of one of the following types: Type 1 : (disjoint clasps) The only double curves are disjoint clasps. Type 2 : (boundary ordered) Around the boundary of any one of the three surfaces, all intersections with either of the other two are adjacent, except possibly for cancelling pairs (i.e.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 129,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bryn mawr",
+          "heading": false
+        },
+        {
+          "term": "massey products",
+          "heading": false
+        },
+        {
+          "term": "lmu",
+          "heading": false
+        },
+        {
+          "term": "university press",
+          "heading": false
+        },
+        {
+          "term": "geometric topology",
+          "heading": false
+        }
+      ],
+      "extract": "[1] T D Cochran, Derivatives of links: Milnor’s concordance invariants and Massey’s Products, Memoirs of the Amer. Math. Soc. 427 (1990) [2] R A Fenn, Techniques of Geometric Topology, London Math. Soc. Lecture Note Series 57, Cambridge University Press (1983) [3] W Magnus, A Karrass, D Solitar, Combinatorial Group Theory, Inter- science Publishers (1966) [4] J Milnor, Isotopy of links, in Algebraic Geometry and",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "µijk mijk",
+      "heading": false
+    },
+    {
+      "term": "mijk tijk",
+      "heading": false
+    },
+    {
+      "term": "µijk εij",
+      "heading": false
+    },
+    {
+      "term": "diﬀerence mijk",
+      "heading": false
+    },
+    {
+      "term": "invariants µijk",
+      "heading": false
+    },
+    {
+      "term": "milnor triple",
+      "heading": false
+    },
+    {
+      "term": "blake mellor",
+      "heading": false
+    },
+    {
+      "term": "ejki ekij",
+      "heading": false
+    },
+    {
+      "term": "triple linking",
+      "heading": false
+    },
+    {
+      "term": "now µijk",
+      "heading": false
+    },
+    {
+      "term": "fact µijk",
+      "heading": false
+    },
+    {
+      "term": "seifert surfaces",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Intersections of Seifert surfaces",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Computation of mijk",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Disentangled surfaces",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "First ﬁnger move",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Second ﬁnger move",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Third ﬁnger move",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 3,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 4,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "6 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p12); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 4 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/0110001v3"
+  }
+}

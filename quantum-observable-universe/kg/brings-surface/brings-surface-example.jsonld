@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-brings-surface-concrete",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:brings-surface-concrete",
+  "kind": "example",
+  "title": "Bring's surface as a concrete genus-4 curve",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-brings-surface",
+    "papers/quantum-observable-universe/blocks/def-archimedean-condition"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-brings-surface",
+  "tags": [
+    "brings-surface",
+    "genus-4",
+    "example"
+  ],
+  "text": "brings-surface-example.md",
+  "provenance": "authored"
+}

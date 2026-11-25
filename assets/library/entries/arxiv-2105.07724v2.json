@@ -1,0 +1,347 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2105.07724v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2105.07724v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\n1\n2.\nPreliminaries\n4\n3.\nAdditive structure\n11\n4.\nMonoidal structure\n22\nAppendix A.\nFusion rules for eves\n29\nAppendix B.\nApplications\n37\nAppendix C.\nSome additional comments and details\n42\nReferences\n51\n1. Introduction\nLet k be a field of characteristic p, fix a non-zero element q ∈k∗, and let K be an algebraically\nclosed field containing k. Tilting modules for SL2, the reductive group SL2(K) if q = ±1 or\nLusztig’s divided power quantum group for sl2 if q̸ = ±1, are among the most well-studied\nobjects in representation theory. In this paper, we use diagrammatic methods to study mon",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2105.07724v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "SL2 TILTING MODULES IN THE MIXED CASE\nLOUISE SUTTON, DANIEL TUBBENHAUER, PAUL WEDRICH, AND JIERU ZHU\nAbstract. Using the non-semisimple Temperley–Lieb calculus, we study the additive and\nmonoidal structure of the category of tilting modules for SL2 in the mixed case. This simultane-\nously generalizes the semisimple situation, the case of the complex quantum group at a root of\nunity, and the algebraic group case in positive characteristic. We describe character formulas\nand give a presentation of the category of tilting modules as an additive category via a quiver\nwith relations. Turning to the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2105.07724v2/blocks/def-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 11,
+      "target": "def-sec-001-01.md",
+      "narrative": null,
+      "content": "we presented a version of the light ladders strategy that favors left-aligned families of projectors and when discussing fusion rules for morphisms this will play an important role.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2105.07724v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 4,
+      "pageEnd": 11,
+      "target": "../sections/sec-001-2-preliminaries.md",
+      "narrative": null,
+      "content": "In this section we introduce necessary pℓ-adic notation, and recall how tilting modules of SL2\nand the Temperley–Lieb calculus are related.\n2A. Basics of pℓ-adic expansions. Let k denote a field, and fix an invertible element q ∈k\nthroughout. We also let v denote a formal variable. For x ∈k and a ∈N we consider the\nquantum numbers:\n[0]x = 0,\n[a]x = x−(a−1) + x−(a−3) + ... + xa−3 + xa−1,\n[−a]x = −[a]x.\n5\nDefinition 2.1\nThe mixed characteristic of the pair (k, q) is mchar(k, q) = (p, ℓ), where\np ∈N ∪{∞} denotes the additive order of 1 in k, and ℓ∈N ∪{∞} is minimal such that [ℓ]q = 0\nfor q̸ = ±1,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2105.07724v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Additive structure",
+      "pageStart": 11,
+      "pageEnd": 22,
+      "target": "../sections/sec-002-3-additive-structure.md",
+      "narrative": null,
+      "content": "In this section, we explain the additive structure of the category of tilting modules. Some of\nresults in this section are well-known, others generalize the results from [BLS19] and [TW21].\nWe also added a few new observations.\n3A. Character formulas. The Weyl and dual Weyl modules have classical Weyl characters, i.e.\nχ∆(v−1) = χ∇(v−1) = [v]v, which we view as elements of N0[v±1] where the coefficient of vk is\nthe dimensions of the weight space of weight k. Each T(v −1) has a (dual) Weyl filtration and\nwe denote the (dual) Weyl multiplicities by\n\u0000T(v −1) : ∆(w −1)\n\u0001\n=\n\u0000T(v −1) : ∇(w −1)\n\u0001\n.\nRe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2105.07724v2/blocks/def-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 29,
+      "target": "def-sec-003-02.md",
+      "narrative": null,
+      "content": "satisfy the absorption property and are indeed idempotents whenever they appear in (4-5). Finally, we also check that Ai v and (Ai v)′ are orthogonal. Absorption. Let us first check that all of the candidate idempotents appearing in Theorem 4.8 absorb Ev−1 ⊗id1. For Ev, B0 v, A0 v, and (A0 v)′, this follows immediately from the absorption properties of the pℓJW projectors – see Proposition 3.19.(a). For the cases with i > 0 we use the shortening property from Proposition 3.19.(b).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2105.07724v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Monoidal structure",
+      "pageStart": 22,
+      "pageEnd": 29,
+      "target": "../sections/sec-003-4-monoidal-structure.md",
+      "narrative": null,
+      "content": "In this section, we study Tiltk,q as a monoidal category. In the semisimple and complex\nquantum group cases, the results in this section appear throughout the literature, see for example\nthe remarks in this section for a small (and somewhat biased) collection of references.\n4A. Fusion rules. We start by recalling the well-known fusion rules for tilting modules lying in\nthe fundamental alcove, in which tilting modules are simple. Note that in the semisimple case,\ni.e. when ℓ= ∞, the fundamental alcove is the whole of N0.\nLemma 4.1\nFor 1 ⩽v, w ⩽ℓand v + w −2 < ℓwe have\nT(v −1) ⊗T(w −1) ∼= Lmin(v",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2105.07724v2/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 29,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "we will decompose the idempotent Ev−1 ⊗id1 into a sum of orthogonal, primitive idempotents factoring through Ev as well as the other Ev−2p(i) predicted by Proposition 4.4. Conversely, such a decomposition can also be read as a recursive description of the mixed JW projector Ev in terms of mixed JW projectors of lower order. For the following definition, we use scalars determined by evaluating the functions gq and fq on digits. On all digits, except for the zeroth one, we use (3-10). For the zeroth digit, we instead use: fx(a) = ( (−1)a+1 · −2 [a]x if 1 ⩽a ⩽ℓ−2, if a = 0 or a = ℓ−1, gx(a) = ( −",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2105.07724v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. Fusion rules for eves",
+      "pageStart": 29,
+      "pageEnd": 37,
+      "target": "../sections/sec-004-appendix-a-fusion-rules-for-eves.md",
+      "narrative": null,
+      "content": "Appendix A. Fusion rules for eves\nFor this section, we fix a, b ∈N with 1 ⩽a, b < p∨ℓand k, t ∈N0.\nA.1. On the level of objects. For any x ∈k we will also use quantum factorials and binomials:\n[0]x! = 1,\n[a]x! = [a]x[a −1]x...[1]x,\n\u0002b\n0\n\u0003\nx = 1,\n\u0002b\na\n\u0003\nx = [b]x[b−1]x...[b−a+1]x\n[a]x[a−1]x...[1]x\n.\nNote that (quantum) binomials are zero for 0 ⩽b < a. Here a ∈N and b ∈Z, and all of these\nare elements of k. Note that\n\u0002b\na\n\u0003\n1 =\n\u0000b\na\n\u0001\n. We recall the quantum Lucas’ theorem:\nProposition Appendix A.1\nFor v = [aj, ..., a0]p,ℓ, w = [bj, ..., b0]p,ℓand v −w = [cj, ..., c0]p,ℓ\nwe have\n\u0014v\nw\n\u0015\nq\n= ϵ\n\u0012aj",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2105.07724v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix B. Applications",
+      "pageStart": 37,
+      "pageEnd": 42,
+      "target": "../sections/sec-005-appendix-b-applications.md",
+      "narrative": null,
+      "content": "We now derive some consequences for the monoidal structure of Tiltk,q. These results are\ngeneralizations to mixed characteristic of well-known results.\nB.1. Tensor ideals, cells and Verlinde quotients. A (two-sided) ⊗-ideal I in a monoidal\ncategory is a collection of morphisms that is closed under composition and tensoring with arbitrary\nmorphisms. Recall also that a thick ⊗-ideal J in a monoidal category is a ⊗-ideal that is\ngenerated by the identity morphisms on a set of objects. In general, not every ⊗-ideal is thick, so\n38\nit is remarkable that these notations coincide for Tiltk,q, as we s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2105.07724v2/blocks/def-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 42,
+      "pageEnd": 51,
+      "target": "def-sec-006-01.md",
+      "narrative": null,
+      "content": "satisfy the absorption property and are indeed idempotents whenever they appear in (4-5). Finally, we also check that Ai v and (Ai v)′ are orthogonal. Absorption. Let us first check that all of the candidate idempotents appearing in Theorem 4.8 absorb Ev−1 ⊗id1. For Ev, B0 v, A0 v, and (A0 v)′, this follows immediately from the absorption properties of the pℓJW projectors – see Proposition 3.19.(a). For the cases with i > 0 we use the shortening property from Proposition 3.19.(b), e.g. for terms of the form Bi v it suffices to observe v−1 v−w w −1 v−2w+1 = v−1 w −1 v−2w+1 = v−w w −1 v−2w+1 = v",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2105.07724v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix C. Some additional comments and details",
+      "pageStart": 42,
+      "pageEnd": 51,
+      "target": "../sections/sec-006-appendix-c-some-additional-comments-and-details.md",
+      "narrative": null,
+      "content": "In this section we collect a bit more details than in the main text, for example, various\nfractal-like patterns arising from the characteristic p and the strictly mixed cases, which may be\ninteresting in their own right.\nThe following figures illustrate the formulas in Proposition 3.3. Precisely, see Figure C-1 for\nan illustration of\n\u0000T(v −1) : ∆(w −1)\n\u0001\n(compare to [JW17, Figure 1]), and Figure C-2 for an\nillustration of\n\u0002\n∆(v −1) : L(w −1)\n\u0003\n. Note that comparing these four illustrations shows why\nreciprocity only holds up to a certain point.\n43\n1\n100\n200\n302\n1\n100\n200\n302\n1\n100\n200\n302\n1\n10",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2105.07724v2/blocks/figure-img-p043-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 43,
+      "target": "../images/img-p043-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2105.07724v2/blocks/figure-img-p043-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 43,
+      "target": "../images/img-p043-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2105.07724v2/blocks/figure-img-p043-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 43,
+      "target": "../images/img-p043-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2105.07724v2/blocks/figure-img-p043-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 43,
+      "target": "../images/img-p043-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2105.07724v2/blocks/figure-img-p051-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 51,
+      "target": "../images/img-p051-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2105.07724v2/blocks/figure-img-p051-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 51,
+      "target": "../images/img-p051-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2105.07724v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 51,
+      "pageEnd": 54,
+      "target": "../sections/sec-007-references.md",
+      "narrative": null,
+      "content": "[Alp76]\nJ. Alperin. On modules for the linear fractional groups. In International Symposium on the Theory\nof Finite Groups, Finite Groups, Sapporo and Kyoto, 1974, pages 157–163. Japan Society for the\nPromotion of Science, 1976.\n[And19]\nH.H. Andersen. Simple modules for Temperley–Lieb algebras and related algebras. J. Algebra, 520:276–\n308, 2019. URL: https://arxiv.org/abs/1709.00248, doi:10.1016/j.jalgebra.2018.10.035.\n[And92]\nH.H. Andersen. Tensor products of quantized tilting modules. Comm. Math. Phys., 149(1):149–159,\n1992.\n[And20]\nH.H. Andersen. Tilting modules and cellular categories. J.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

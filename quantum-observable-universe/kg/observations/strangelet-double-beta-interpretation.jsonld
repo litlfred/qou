@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-strangelet-double-beta-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:strangelet-double-beta-interpretation",
+  "kind": "remark",
+  "title": "Skein/EM-strong ratio, intermediate $4_1$ state, and observable double-beta signature",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-strangelet-double-beta",
+    "papers/quantum-observable-universe/blocks/prop-crossing-energy-decomposition",
+    "papers/quantum-observable-universe/blocks/rem-building-block-knots"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-strangelet-double-beta",
+  "tags": [
+    "strangelet",
+    "double-beta-decay",
+    "skein-amplitude",
+    "electromagnetic-signature",
+    "falsifiability",
+    "interpretation"
+  ],
+  "text": "strangelet-double-beta-interpretation.md",
+  "provenance": "authored"
+}

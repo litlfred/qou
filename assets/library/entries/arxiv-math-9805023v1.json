@@ -1,0 +1,360 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-9805023v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-9805023v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction.",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "This paper answers two seemingly diﬀerent questions, which both originated from\nquantum groups. First, consider the system of Moak’s [21] q-Laguerre polynomials with\nrespect to their familiar discrete orthogonality measure, and extend this in an explicit\nway to a complete orthogonal system of eigenfunctions of a doubly inﬁnite Jacobi matrix\noriginating from analysis on SUq(1, 1), the quantum SU(1, 1) group. Second, obtain or-\nthogonality relations and dual orthogonality relations for certain (big) q-Bessel functions\noriginating (see [4]) on Eq(2), the quantum group of plane motions, and give r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9805023v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/9805023v1  [math.CA]  6 May 1998\nq-LAGUERRE POLYNOMIALS AND BIG q-BESSEL\nFUNCTIONS AND THEIR ORTHOGONALITY RELATIONS\nNicola Ciccoli, Erik Koelink and Tom H. Koornwinder\nApril 24, 1998\nAbstract. The q-Laguerre polynomials correspond to an indetermined moment problem.\nFor explicit discrete non-N-extremal measures corresponding to Ramanujan’s 1ψ1-summation\nwe complement the orthogonal q-Laguerre polynomials into an explicit orthogonal basis for\nthe corresponding L2-space. The dual orthogonal system consists of so-called big q-Bessel\nfunctions, which can be obtained as a rigorous limit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9805023v1/blocks/lem-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "lem-sec-001-02.md",
+      "narrative": null,
+      "content": "Let x ∈C\\{0}, then V t(x) = \u0000V t k(x) \u0001 k∈Z, V t−1(x) = \u0000V t−1 k (x) \u0001 k∈Z and U(x) = \u0000Uk(x) \u0001 k∈Z are solutions to Lu = x u. Furthermore, V t(x) is ℓ2 as k →∞if and only if |t| < q−1 2 or t = ±q−1 2 m, m ∈Z≥0, and V t−1(x) is ℓ2 as k →∞if and only if |t| > q 2 or t = ±q 2 m, m ∈Z≥0, and U(x) is ℓ2 as k →−∞for all t. If we moreover assume t ∈R\\{q 2 m | m ∈Z}, then U(x) is ℓ2 as k →∞if and only if q 2 < |t| < q−1 2 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9805023v1/blocks/lem-sec-001-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "lem-sec-001-04.md",
+      "narrative": null,
+      "content": "We have the following Wronskians: [V t(x), V t−1(x)] = √c t (t2, qt−2 −1/c, −cq; q)∞, [U(x), V t(x)] = ct−1(x) −t√c .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9805023v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Solutions to a symmetric operator.",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-2-solutions-to-a-symmetric-operator.md",
+      "narrative": null,
+      "content": "Consider the unbounded operator L acting on ℓ2(Z) by\n(2.1)\n\u0000Lu\n\u0001\nk = ak uk+1 + bk uk + ak−1 uk−1,\nu = (uk)k∈Z,\nak = q−1\n2 (k+1)p\n1 + c−1q−k,\nbk =\n√\nc−1(t + t−1)q−k,\nwhere c > 0 and t ∈R\\{0} are ﬁxed constants, so that ak > 0 and bk ∈R. The operator\nis densely deﬁned and symmetric. Split the operator L into two Jacobi matrices J+ and\nJ−, see [19]. The coeﬃcients ak are bounded as k →−∞, so that the moment problem\ncorresponding to J−is determined. So the deﬁciency indices for L are either (0, 0) or\n(1, 1). Take x ∈C\\R. From the theory of orthogonal polynomials we see that the space\nof solutions",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9805023v1/blocks/rem-sec-001-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "rem-sec-001-01.md",
+      "narrative": null,
+      "content": "The motivation to consider the operator L comes from an investigation in the Hopf ∗-algebra related to the quantum SU(1, 1) group. This is a ∗-algebra with two generators α and γ such that for 0 < q < 1 the following relations hold: αγ = qγα, αγ∗= qγ∗α, γγ∗= γ∗γ, αα∗−q2γγ∗= 1 = α∗α −γ∗γ. We can represent this ∗-algebra in terms of unbounded operators in ℓ2(Z) by π(γ) ek = λqk ek, π(α) ek = q 1 + |λ|2q2k ek−1, for the standard orthonormal basis {ek}k∈Z of ℓ2(Z) and where λ ∈C\\{0}. Study of the self-adjoint element ρ = α∗γ∗+ γα + (t + t−1)γγ∗in these representations leads to the operator in (2.1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9805023v1/blocks/rem-sec-001-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "rem-sec-001-03.md",
+      "narrative": null,
+      "content": "It follows from Lemma 2.2(i) that L has deﬁciency indices (1, 1) for q 2 < |t| < q−1 2 , t̸ = ±1, and that the deﬁciency space N±i = {u ∈ℓ2(Z) | Lu = ±i u} is spanned by U(±i). The Wronskian for two sequences (uk)k∈Z and (vk)k∈Z is given by (2.10) [u, v]k := ak \u0000uk+1vk −ukvk+1 \u0001 . It is independent of k if u and v are two solutions to Lu = x u, so that we may denote it by [u, v].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9805023v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spectral resolution.",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-3-spectral-resolution.md",
+      "narrative": null,
+      "content": "In case |t| > q\n1\n2 we see V t−1(x) is ℓ2 for k →∞by Lemma 2.2(ii). From now on\nwe assume that |t| > q\n1\n2 . In case |t| ≥q−1\n2 we moreover have that L is self-adjoint. The\ndomain of L is given by {u ∈ℓ2(Z) | Lu ∈ℓ2(Z)}. In case, q\n1\n2 < |t| < q−1\n2 , t̸ = ±1, the\ndeﬁciency indices of L are (1, 1), so that all extensions of L to a self-adjoint operator are\nparametrised by U(1) = T. In this case, we ﬁx the self-adjoint extension such that V t−1 is\ncontained in the domain, which is always possible since Ni = N−i because of ak, bk ∈R.\nSee Dunford and Schwartz [6, Ch. XII] for more information.\nDe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9805023v1/blocks/rem-sec-002-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "rem-sec-002-01.md",
+      "narrative": null,
+      "content": "The vector V t−1(ξp) belongs to ℓ2(Z) for p ∈Z. This can also be seen as follows. First apply to (2.3) the transformation formula (3.5) 1ϕ1 \u0010a c ; q, z \u0011 = (z; q)∞ (c; q)∞ 1ϕ1 \u0012az/c z ; q, c \u0013 (a limit case of Heine’s transformation formula [7, (1.4.5)]). Combination of (2.3), (3.5) and ( 2.5) yields that V t−1 k (ξp) = (−qp+1/c; q)∞(−t2c−1qp)p p (−q1−k/c; q)∞(qt−2; q)∞ q 4 k(k+1) (tc−1 2 qp)k(qt−2; q)∞ × (q1−p−k; q)∞1ϕ1 \u0012 −cq−p q1−p−k ; q, q1−p−kt−2 \u0013 , so that we obtain the ℓ2-behaviour as k →−∞of V t−1(x).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9805023v1/blocks/cor-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "cor-sec-003-03.md",
+      "narrative": null,
+      "content": "The following orthogonality relations hold; δk,lcq−k(−cqk; q)∞ (−cqα+1, −q−α/c; q)∞ (−c, −q/c; q)∞ = c 2 −α qk −ql \u0010 q 2 kJ(2) α+1(2√cq 2 k; q)J(2) α (2√cq 2 l; q) −q 2 lJ(2) α+1(2√cq 2 l; q)J(2) α (2√cq 2 k; q) \u0011 + qα( 1 2 (k+l)−1) ∞ X p=−∞ qp (−qp+1−α/c; q)∞ (−qp+1/c; q)∞ (qα+1; q)∞ (q; q)∞ 1ϕ1 \u0012−cqα−p qα+1 ; q, qk+p+1 \u0013 × (qα+1; q)∞ (q; q)∞ 1ϕ1 \u0012−cqα−p qα+1 ; q, ql+p+1 \u0013 , In this form Corollary 4.3 is reminiscent of the Hankel transform, whereas if we use the transformation for the 1ϕ1-series of (4.2), the orthogonality relations remind us of the Hansen-Lommel orthogonality relations, cf.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9805023v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basis for L2-space.",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-003-4-basis-for-l2-space.md",
+      "narrative": null,
+      "content": "By L2(µ(α;c)) we denote the space of square integrable functions on the set {cqk | k ∈\nZ}, c > 0, with positive weight qk(α+1)/(−cqk; q)∞at cqk, k ∈Z, i.e. f ∈L2(µ(α;c)) if\nL(|f|2) :=\n∞\nX\nk=−∞\nqk(α+1)\n(−cqk; q)∞\n|f(cqk)|2 < ∞.\nHere we take α > −1.\nRecall the q-Laguerre polynomials introduced by Moak [21], see also [7],\n(4.1)\nL(α)\nn (x; q) := (qα+1; q)n\n(q; q)n\n1ϕ1\n\u0012 q−n\nqα+1 ; q, −xqn+α+1\n\u0013\n.\nWe also deﬁne the functions\n(4.2)\nM (α;c)\np\n(x; q) :=\n(qα+1; q)∞\n(q, −cqα+1; q)∞\n1ϕ1\n\u0012−cqα−p\nqα+1 ; q, xqp+1\nc\n\u0013\n= (xqp+1/c; q)∞\n(q, −cqα+1; q)∞\n1ϕ1\n\u0012\n−x\nxqp+1/c; q, qα+1\n\u0013\nfor p ∈Z. (The second equality",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9805023v1/blocks/rem-sec-003-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "rem-sec-003-02.md",
+      "narrative": null,
+      "content": "The ﬁrst statement of Theorem 4.1 corresponds to Moak’s discrete orthogo- nality relations [21, Thm. 2] for the q-Laguerre polynomials. The second relation can be rewritten as (4.3) ∞ X k=−∞ qk(α+1)(qα+1; q)∞ (−cqk; q)∞(q; q)∞ 1ϕ1 \u0012−cqα−p qα+1 ; q, qp+k+1 \u0013 (qα+1; q)∞ (q; q)∞ 1ϕ1 \u0012−cqα−r qα+1 ; q, qr+k+1 \u0013 = δp,rcqαq−p (−qp+1/c; q)∞ (−qp+1−α/c; q)∞ (−cqα+1, −q−α/c; q)∞ (−c, −q/c; q)∞ = ∞ X k=−∞ qk(α+1)(qk+p+1; q)∞ (−cqk; q)∞(q; q)∞ 1ϕ1 \u0012 −cqk qk+p+1 ; q, qα+1 \u0013 (qk+r+1; q)∞ (q; q)∞ 1ϕ1 \u0012 −cqk qk+r+1 ; q, qα+1 \u0013 , for p, r ∈Z, which can be viewed as a q-analogue of the Hankel transform for the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9805023v1/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "The functions M (α;c) p (·; q), p ∈Z, together with the q-Laguerre polynomials L(α) n (·; q), n ∈Z≥0, form an orthogonal basis for L2(µ(α;c)), c > 0, α > −1. Explicitly, L \u0000L(α) n (·; q)L(α) p (·; q) \u0001 = δn,pq−p (qα+1; q)p (q; q)p (q, −cqα+1, −q−α/c; q)∞ (qα+1, −c, −q/c; q)∞ , L \u0000M (α;c) p (·; q)M (α;c) r (·; q) \u0001 = δp,rcqαq−p (−qp+1/c, −q−α/c; q)∞ (−qp+1−α/c, −cqα+1; q)∞ (−c, −q/c; q)∞ , L \u0000M (α;c) p (·; q)L(α) n (·; q) \u0001 = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9805023v1/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "We have the following generating functions: (i) For 0 < |z| < |b|−1 we have ∞ X p=−∞ zpbp (qp+1; q)∞ (aqp/b; q)∞ 1ϕ1 \u0012aqp/b qp+1 ; q, bx \u0013 = (q, az, x/z; q)∞ (a/b, bz; q)∞ , (ii) For |d| < |w| < 1 we have ∞ X r=−∞ wr(qr+1; q)∞1ϕ1 \u0012dqr+1/y qr+1 ; q, y \u0013 = (d, q, y/w; q)∞ (w, d/w; q)∞ .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9805023v1/blocks/lem-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "lem-sec-004-03.md",
+      "narrative": null,
+      "content": "(i) with x replaced by y/b. This then gives the following identity (az; q)∞(d, q, q; q)∞ (bzd/y; q)∞(a/b; q)∞ = ∞ X l=−∞ zl × ∞ X k=−∞ yk−lbl (aqk/b; q)∞ (qk+1; q)∞1ϕ1 \u0012aqk/b qk+1 ; q, y \u0013 (qk−l+1; q)∞1ϕ1 \u0012dqk−l+1/y qk−l+1 ; q, y \u0013 under the condition |y/b| < |z| < min(|b|−1, |y/(db)|). So we need |y| < 1, |d| < 1 to have a non-empty region of analyticity of the right hand side as function of z. The left hand side is an analytic function of z in |z| < |y/(db)| and it can be expanded in a power series in z using the q-binomial theorem [7, (1.3.2)]. Comparing coeﬃcients at both sides gives the r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9805023v1/blocks/prop-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "prop-sec-004-02.md",
+      "narrative": null,
+      "content": "For |y| < 1, l ∈Z, we have ∞ X k=−∞ yk (aqk/b; q)∞ (qk+1; q)∞1ϕ1 \u0012aqk/b qk+1 ; q, y \u0013 (qk−l+1; q)∞1ϕ1 \u0012dqk−l+1/y qk−l+1 ; q, y \u0013 =    0, for l < 0, dl (ay/(bd); q)l(d, q, q; q)∞ (q; q)l(a/b; q)∞ , for l ≥0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9805023v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Direct proof of the orthogonality relations of Theorem 4.1.",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-004-5-direct-proof-of-the-orthogonality-relations-of.md",
+      "narrative": null,
+      "content": "In this section we present a direct analytic proof using summation and transformation\nformulas of the orthogonality relations of Theorem 4.1, but not of the completeness. The\nﬁrst statement of the orthogonality relations is well known, see Moak [21], so we concentrate\non the last two. The method is based on manipulating generating functions, cf. [18], [13].\nWe start with the following lemma giving generating functions for the q-Bessel functions\nunder consideration.\nLemma 5.1. We have the following generating functions:\n(i) For 0 < |z| < |b|−1 we have\n∞\nX\np=−∞\nzpbp (qp+1; q)∞\n(aqp/b; q)∞\n1ϕ1\n\u0012a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9805023v1/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 20,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "Fix α > −1, c > 0, k ∈Z. Then, for each x ∈R we have the pointwise limit (6.11) lim r→∞ ePr−k(qα+1x; qα, 0, −cq−r−1; q) = J c α,k(x; q). Furthermore, if M > 0 then (6.12)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9805023v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of the dual orthogonality relations.",
+      "pageStart": 13,
+      "pageEnd": 20,
+      "target": "../sections/sec-005-6-proof-of-the-dual-orthogonality-relations.md",
+      "narrative": null,
+      "content": "In this section we prove the dual orthogonality relations of Corollary 4.3 by using a\nrigorous limit transition from the big q-Jacobi polynomials to the q-Bessel functions under\nconsideration, which we will call now big q-Bessel functions. The orthogonality relations\nfor the big q-Jacobi polynomials tend to the dual orthogonality relations given in Corollary\n4.3. This then gives, together with the analytic proofs of the previous section a complete\nalternative analytic proof of Theorem 4.1.\nFor α > −1, c > 0, k ∈Z, x ∈R put\nJ c\nα,k(x; q) := 1ϕ1\n\u0012 x−1\nqα+1 ; q, −c−1xqk+α+2\n\u0013\n(6.1)\n= (−c−1qk+1; q",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9805023v1/blocks/rem-sec-005-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 20,
+      "target": "rem-sec-005-02.md",
+      "narrative": null,
+      "content": "As we said in the Introduction the limit transition (6.7) from big q-Jacobi poly- nomials to big q-Bessel functions is inspired by what happens at a quantum group level. The regular representation of the quantum group SUq(2) on Podle´s’ quantum spheres naturally decomposes into irreducibles, generated by suitable spherical functions which turn out to depend on a single variable. Such functions can thus be identiﬁed with ordinary big q-Jacobi polynomials, see [22]. In the limit transition from SUq(2) to the Euclidean quantum group Eq(2), quantum spheres are replaced by quantum hyperboloids, i.e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

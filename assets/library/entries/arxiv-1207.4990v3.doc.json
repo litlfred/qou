@@ -1,0 +1,1240 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1207.4990v3",
+  "title": "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results",
+  "variant": "pdf",
+  "pages": 70,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Setting the problem",
+      "number": "1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-setting-the-problem"
+    },
+    {
+      "level": 1,
+      "title": "Toeplitz meets Ising",
+      "number": "2",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-toeplitz-meets-ising"
+    },
+    {
+      "level": 1,
+      "title": "Szego's Theorem",
+      "number": "3",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-szegos-theorem"
+    },
+    {
+      "level": 1,
+      "title": "Back to Ising",
+      "number": "4",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-back-to-ising"
+    },
+    {
+      "level": 1,
+      "title": "New questions for SSLT",
+      "number": "5",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-new-questions-for-sslt"
+    },
+    {
+      "level": 1,
+      "title": "Fisher-Hartwig singularities. Fisher-Hartwig conjecture",
+      "number": "6",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-6-fisher-hartwig-singularities-fisher-hartwig-co"
+    },
+    {
+      "level": 1,
+      "title": "Basor-Tracy conjecture",
+      "number": "7",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-7-basor-tracy-conjecture"
+    },
+    {
+      "level": 1,
+      "title": "Hankel and Toeplitz+Hankel determinants",
+      "number": "8",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-8-hankel-and-toeplitzhankel-determinants"
+    },
+    {
+      "level": 1,
+      "title": "Some applications",
+      "number": "9",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-9-some-applications"
+    },
+    {
+      "level": 1,
+      "title": "Block Toeplitz matrices",
+      "number": "10",
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-10-block-toeplitz-matrices"
+    },
+    {
+      "level": 1,
+      "title": "Double-scaling limits",
+      "number": "11",
+      "page": 49,
+      "pageLabel": "49",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-11-double-scaling-limits"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 115,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "toeplitz matrices",
+          "heading": false
+        },
+        {
+          "term": "sslt",
+          "heading": false
+        },
+        {
+          "term": "fisher-hartwig",
+          "heading": false
+        },
+        {
+          "term": "ising",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1207.4990v3 [math.FA] 1 Dec 2012 Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results Percy Deift Courant Institute, New York Alexander Its IUPUI, Indianapolis Igor Krasovsky Imperial College, London In memory of Bruria Kaufman, 1918–2010 Contents 1 Setting the problem 3 Toeplitz meets Ising 9 3 Szeg˝o’s Theorem 12 4 Back to Ising 23 5 New",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1207.4990v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-setting-the-problem",
+      "number": "1",
+      "title": "Setting the problem",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 9,
+      "labelStart": "3",
+      "labelEnd": "9",
+      "words": 3568,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lars onsager",
+          "heading": false
+        },
+        {
+          "term": "varphi j-k",
+          "heading": false
+        },
+        {
+          "term": "log varphi",
+          "heading": false
+        },
+        {
+          "term": "spins sigma",
+          "heading": false
+        },
+        {
+          "term": "ising model",
+          "heading": false
+        },
+        {
+          "term": "ising problem",
+          "heading": false
+        },
+        {
+          "term": "langle sigma",
+          "heading": false
+        },
+        {
+          "term": "rangle lambda",
+          "heading": false
+        }
+      ],
+      "extract": "An $n\\times n$ *Toeplitz matrix* $T_n$ is a matrix with coefficients of the form $(T_n)_{jk} = c_{j-k}, \\;0\\le j,\\; k \\le n-1$, for some given sequence $\\{c_\\ell\\}_{\\ell \\in \\mathbb{Z}}$. An $n\\times n$ *Toeplitz determinant* $D_n(T)$ is the determinant of some given Toeplitz matrix $T=T_n$. If $\\varphi = \\varphi\\!\\left(e^{i\\theta}\\right)$ is an integrable function on the unit circle $S^1=\\{z=e^{i\\theta}\\}$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-toeplitz-meets-ising",
+      "number": "2",
+      "title": "Toeplitz meets Ising",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 12,
+      "labelStart": "9",
+      "labelEnd": "12",
+      "words": 1483,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "toeplitz",
+          "heading": true
+        },
+        {
+          "term": "text ons",
+          "heading": false
+        },
+        {
+          "term": "onsager",
+          "heading": false
+        },
+        {
+          "term": "kaufman",
+          "heading": false
+        },
+        {
+          "term": "toeplitz determinants",
+          "heading": false
+        },
+        {
+          "term": "varphi text",
+          "heading": false
+        },
+        {
+          "term": "dots vdots",
+          "heading": false
+        },
+        {
+          "term": "text diag",
+          "heading": false
+        }
+      ],
+      "extract": "What precisely was this \"last problem\" that Kaufman and Onsager had to face in order to compute the limit in [\\[eq16\\]](#eq16){reference-type=\"eqref\" reference=\"eq16\"}? It is here that we make contact with the theory of Toeplitz matrices. In [@KauOns] Kaufman and Onsager expressed $\\langle \\sigma_{1,1} \\, \\sigma_{1,1+n}\\rangle$ as a sum of two Toeplitz determinants as follows (in the notation of [@MPW]):",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-szegos-theorem",
+      "number": "3",
+      "title": "Szego's Theorem",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 23,
+      "labelStart": "12",
+      "labelEnd": "23",
+      "words": 5333,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "log varphi",
+          "heading": false
+        },
+        {
+          "term": "widetilde varphi",
+          "heading": false
+        },
+        {
+          "term": "symbols varphi",
+          "heading": false
+        },
+        {
+          "term": "theta right",
+          "heading": false
+        },
+        {
+          "term": "varphi text",
+          "heading": false
+        },
+        {
+          "term": "szegő limit",
+          "heading": false
+        },
+        {
+          "term": "szegő theorem",
+          "heading": false
+        },
+        {
+          "term": "frac theta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#secSzego label=\"secSzego\"} Here is Szegő's result [@Sz3] [@GreSz]. ::: theorem []{#theorem3 label=\"theorem3\"} Let $\\varphi\\!\\left(e^{i\\theta}\\right)$ be a positive, $C^{1+\\varepsilon}$, $\\varepsilon>0$, function on $S^1$. Let $(\\log \\varphi)_k = \\frac{1}{2\\pi} \\int^\\pi_{-\\pi} e^{-ik\\theta} \\log \\varphi \\!\\left(e^{i\\theta}\\right) d\\theta$, $k\\in \\mathbb{Z}$, denote the Fourier coefficients of $\\log",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-back-to-ising",
+      "number": "4",
+      "title": "Back to Ising",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 27,
+      "labelStart": "23",
+      "labelEnd": "27",
+      "words": 1850,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sigma ell",
+          "heading": false
+        },
+        {
+          "term": "langle sigma",
+          "heading": false
+        },
+        {
+          "term": "ell right",
+          "heading": false
+        },
+        {
+          "term": "right rangle",
+          "heading": false
+        },
+        {
+          "term": "left langle",
+          "heading": false
+        },
+        {
+          "term": "ising",
+          "heading": true
+        },
+        {
+          "term": "rangle sim",
+          "heading": false
+        },
+        {
+          "term": "toeplitz determinant",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#section4 label=\"section4\"} After Onsager announced formula [\\[eq15\\]](#eq15){reference-type=\"eqref\" reference=\"eq15\"} for $M_0$ in 1948, and again in 1949, but did not provide a proof, three years went by until a derivation of the formula was found by Yang in a tour de force in 1952 [@Yan1]. Yang's method is based on results of Kaufman and Onsager, but his approach is different, and he does not explicitly use",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-new-questions-for-sslt",
+      "number": "5",
+      "title": "New questions for SSLT",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 29,
+      "labelStart": "27",
+      "labelEnd": "29",
+      "words": 1049,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ons right",
+          "heading": false
+        },
+        {
+          "term": "langle sigma",
+          "heading": false
+        },
+        {
+          "term": "gamma right",
+          "heading": false
+        },
+        {
+          "term": "text ons",
+          "heading": false
+        },
+        {
+          "term": "right rangle",
+          "heading": false
+        },
+        {
+          "term": "left langle",
+          "heading": false
+        },
+        {
+          "term": "frac left",
+          "heading": false
+        },
+        {
+          "term": "wmtb",
+          "heading": false
+        }
+      ],
+      "extract": "In view of the above calculations for $T\\ge T_c$, the Ising problem raised new questions and challenges in Toeplitz theory. From [\\[eq50\\]](#eq50){reference-type=\"eqref\" reference=\"eq50\"}, $\\left\\langle \\sigma_{1,1}\\, \\sigma_{1, 1+n}\\right\\rangle = D_n \\!\\left(\\varphi_{\\text{ons}}\\right)$ (similarly, from [\\[eq27\\]](#eq27){reference-type=\"eqref\" reference=\"eq27\"}, $\\langle \\sigma_{1,1}\\, \\sigma_{1+n,\\, 1+n}\\rangle =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-fisher-hartwig-singularities-fisher-hartwig-co",
+      "number": "6",
+      "title": "Fisher-Hartwig singularities. Fisher-Hartwig conjecture",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 36,
+      "labelStart": "29",
+      "labelEnd": "36",
+      "words": 3941,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lenard considered",
+          "heading": false
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "theta right",
+          "heading": false
+        },
+        {
+          "term": "left theta",
+          "heading": false
+        },
+        {
+          "term": "beta frac",
+          "heading": false
+        },
+        {
+          "term": "fisher-hartwig",
+          "heading": true
+        },
+        {
+          "term": "gamma right",
+          "heading": false
+        },
+        {
+          "term": "beta neq",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sectionFH label=\"sectionFH\"} In addition to the new questions and challenges raised in Toeplitz theory by the Ising model for $T\\ge T_c$, other kinds of singularities also began to appear. For example, in 1964, in his work on the ground state of the one-dimensional system of impenetrable bosons [@Len1] Lenard expressed the one-particle density matrix for the system as a Toeplitz matrix with a symbol",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-7-basor-tracy-conjecture",
+      "number": "7",
+      "title": "Basor-Tracy conjecture",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 40,
+      "labelStart": "36",
+      "labelEnd": "40",
+      "words": 1782,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "widehat beta",
+          "heading": false
+        },
+        {
+          "term": "beta right",
+          "heading": false
+        },
+        {
+          "term": "beta left",
+          "heading": false
+        },
+        {
+          "term": "beta frac",
+          "heading": false
+        },
+        {
+          "term": "theta right",
+          "heading": false
+        },
+        {
+          "term": "widetilde varphi",
+          "heading": false
+        },
+        {
+          "term": "conject",
+          "heading": false
+        },
+        {
+          "term": "mathcal beta",
+          "heading": false
+        }
+      ],
+      "extract": "As already observed in [@BottSilb5] [@BottSilb6], Ehrhardt's condition on the seminorm, $|||\\beta|||<1$, is not just a technical matter. In a critical calculation in 1991, Basor and Tracy [@BasTr] considered a particular symbol $f\\!\\left(e^{i\\theta}\\right)$ which has two FH singularities at $z_0=1$ and $z_1=e^{i\\,\\pi}=-1$ respectively $$\\label{eq94} f\\!\\left(e^{i\\theta}\\right) = g_{1, \\frac{1}{2}}(z) \\, g_{-1,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-8-hankel-and-toeplitzhankel-determinants",
+      "number": "8",
+      "title": "Hankel and Toeplitz+Hankel determinants",
+      "level": 1,
+      "pageStart": 40,
+      "pageEnd": 42,
+      "labelStart": "40",
+      "labelEnd": "42",
+      "words": 990,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "toeplitz hankel",
+          "heading": true
+        },
+        {
+          "term": "hankel determinants",
+          "heading": true
+        },
+        {
+          "term": "theta right",
+          "heading": false
+        },
+        {
+          "term": "dots theta",
+          "heading": false
+        },
+        {
+          "term": "frac theta",
+          "heading": false
+        },
+        {
+          "term": "beta right",
+          "heading": false
+        },
+        {
+          "term": "j-k right",
+          "heading": false
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        }
+      ],
+      "extract": "In [@DIK1] the authors also consider Hankel and Toeplitz + Hankel determinants with FH-type singularities. For a weight $w=w(x) \\ge 0$ on $[-1,1]$, the associated Hankel determinant is given by [@Sz5] $$\\label{eq108} D_n^{(H)}(w) = \\det \\left(\\int^1_{-1} x^{j+k}\\, w(x) \\, dx\\right)^{n-1}_{j, k=0} \\ .$$ The Hankel determinant $D_n^{(H)}(w)$ is related to the polynomials orthogonal with respect to the weight $w$ on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-9-some-applications",
+      "number": "9",
+      "title": "Some applications",
+      "level": 1,
+      "pageStart": 42,
+      "pageEnd": 45,
+      "labelStart": "42",
+      "labelEnd": "45",
+      "words": 1514,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theta right",
+          "heading": false
+        },
+        {
+          "term": "toeplitz hankel",
+          "heading": false
+        },
+        {
+          "term": "eigenvalues lambda",
+          "heading": false
+        },
+        {
+          "term": "frac theta",
+          "heading": false
+        },
+        {
+          "term": "widehat theta",
+          "heading": false
+        },
+        {
+          "term": "toeplitz determinant",
+          "heading": false
+        },
+        {
+          "term": "beta frac",
+          "heading": false
+        },
+        {
+          "term": "epsilon right",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec9 label=\"sec9\"} As advertised at the outset, the goal of this paper has been to show how SSLT developed and was generalized in response to questions arising in the analysis of the Ising model. Although the case $|||\\beta|||=1$ in [@DIK1] does not arise in the Ising model (the same is true for the Hankel and Toeplitz + Hankel determinants [\\[eq108\\]](#eq108){reference-type=\"eqref\" reference=\"eq108\"} and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-10-block-toeplitz-matrices",
+      "number": "10",
+      "title": "Block Toeplitz matrices",
+      "level": 1,
+      "pageStart": 45,
+      "pageEnd": 49,
+      "labelStart": "45",
+      "labelEnd": "49",
+      "words": 2319,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "block toeplitz",
+          "heading": true
+        },
+        {
+          "term": "toeplitz matrices",
+          "heading": true
+        },
+        {
+          "term": "toeplitz determinants",
+          "heading": false
+        },
+        {
+          "term": "symbol varphi",
+          "heading": false
+        },
+        {
+          "term": "scalar toeplitz",
+          "heading": false
+        },
+        {
+          "term": "log varphi",
+          "heading": false
+        },
+        {
+          "term": "varphi bigr",
+          "heading": false
+        },
+        {
+          "term": "function varphi",
+          "heading": false
+        }
+      ],
+      "extract": "We now consider block Toeplitz matrices $D_n(\\varphi)$ of the form $D_n(\\varphi) = \\det\\!\\left(\\varphi_{j-k}\\right)^{n-1}_{j, k=0}$ where $\\varphi_q \\in M(r,\\mathbb{C})$ are the Fourier coefficients of an $r\\times r$-matrix-valued integrable function $\\varphi\\!\\left(e^{i\\theta}\\right)$ on $S^1$. The earliest asymptotic result for such determinants is the analog of Szegő's Theorem 1 due to Gyires in 1956 [@Gy], who",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-11-double-scaling-limits",
+      "number": "11",
+      "title": "Double-scaling limits",
+      "level": 1,
+      "pageStart": 49,
+      "pageEnd": 70,
+      "labelStart": "49",
+      "labelEnd": "70",
+      "words": 9049,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "double-scaling",
+          "heading": true
+        },
+        {
+          "term": "toeplitz determinant",
+          "heading": false
+        },
+        {
+          "term": "andrew lenard",
+          "heading": false
+        },
+        {
+          "term": "symbol varphi",
+          "heading": false
+        },
+        {
+          "term": "double-scaling limit",
+          "heading": false
+        },
+        {
+          "term": "log varphi",
+          "heading": false
+        },
+        {
+          "term": "painlevé functions",
+          "heading": false
+        },
+        {
+          "term": "barry mccoy",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec-ds label=\"sec-ds\"} Of all the challenges in Toeplitz theory that arise from the Ising model, the deepest is the issue of the double-scaling limit (or in physicists' parlance, simply the scaling limit), $T\\to T_c$ and $n\\to\\infty$. We have already mentioned the importance of this problem in physics. At the purely mathematical level, the issue is the following: Suppose one has a Toeplitz determinant",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "toeplitz determinants",
+      "heading": true
+    },
+    {
+      "term": "theta right",
+      "heading": false
+    },
+    {
+      "term": "left theta",
+      "heading": false
+    },
+    {
+      "term": "frac theta",
+      "heading": false
+    },
+    {
+      "term": "toeplitz hankel",
+      "heading": true
+    },
+    {
+      "term": "dots theta",
+      "heading": false
+    },
+    {
+      "term": "times toeplitz",
+      "heading": false
+    },
+    {
+      "term": "toeplitz matrices",
+      "heading": true
+    },
+    {
+      "term": "toeplitz matrix",
+      "heading": false
+    },
+    {
+      "term": "toeplitz theory",
+      "heading": false
+    },
+    {
+      "term": "ell theta",
+      "heading": false
+    },
+    {
+      "term": "infty left",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 67,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 69,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 20
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1207.4990v3"
+  }
+}

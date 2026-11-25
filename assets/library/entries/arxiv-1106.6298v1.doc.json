@@ -1,0 +1,1522 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1106.6298v1",
+  "title": "arxiv-1106.6298v1",
+  "variant": "pdf",
+  "pages": 18,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Background",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-background"
+    },
+    {
+      "level": 2,
+      "title": "Unified invariants of integral homology 3–spheres",
+      "number": null,
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-unified-invariants-of-integral-homology-3spheres"
+    },
+    {
+      "level": 2,
+      "title": "Unified invariants of rational homology 3–spheres",
+      "number": null,
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-unified-invariants-of-rational-homology-3spheres"
+    },
+    {
+      "level": 1,
+      "title": "Quantum (WRT) invariants",
+      "number": "1",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-1-quantum-wrt-invariants"
+    },
+    {
+      "level": 2,
+      "title": "Notations and conventions",
+      "number": "1.1",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-11-notations-and-conventions"
+    },
+    {
+      "level": 2,
+      "title": "The colored Jones polynomial",
+      "number": "1.2",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-12-the-colored-jones-polynomial"
+    },
+    {
+      "level": 2,
+      "title": "Kirby moves",
+      "number": "1.3",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-13-kirby-moves"
+    },
+    {
+      "level": 2,
+      "title": "Evaluation and Gauss sums",
+      "number": "1.4",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-14-evaluation-and-gauss-sums"
+    },
+    {
+      "level": 2,
+      "title": "Definition of the WRT invariants",
+      "number": "1.5",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-15-definition-of-the-wrt-invariants"
+    },
+    {
+      "level": 2,
+      "title": "Habiro's cyclotomic expansion of the colored Jones polynomial",
+      "number": "1.6",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-16-habiros-cyclotomic-expansion-of-the-colored-j"
+    },
+    {
+      "level": 1,
+      "title": "Main Results",
+      "number": "2",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-2-main-results"
+    },
+    {
+      "level": 2,
+      "title": "Strategy of the proof",
+      "number": "2.1",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-21-strategy-of-the-proof"
+    },
+    {
+      "level": 2,
+      "title": "Laplace transform",
+      "number": "2.2",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-22-laplace-transform"
+    },
+    {
+      "level": 2,
+      "title": "Definition of the unified invariant: diagonal case",
+      "number": "2.3",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-23-definition-of-the-unified-invariant-diagonal"
+    },
+    {
+      "level": 2,
+      "title": "Diagonalization using lens spaces",
+      "number": "2.4",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-24-diagonalization-using-lens-spaces"
+    },
+    {
+      "level": 1,
+      "title": "Cyclotomic completions of polynomial rings",
+      "number": "3",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-3-cyclotomic-completions-of-polynomial-rings"
+    },
+    {
+      "level": 2,
+      "title": "On cyclotomic polynomials",
+      "number": "3.1",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-31-on-cyclotomic-polynomials"
+    },
+    {
+      "level": 2,
+      "title": "Habiro's results",
+      "number": "3.2",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Taylor expansion",
+      "number": "3.3",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-33-taylor-expansion"
+    },
+    {
+      "level": 2,
+      "title": "Splitting of Sp and evaluation",
+      "number": "3.4",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-34-splitting-of-sp-and-evaluation"
+    },
+    {
+      "level": 2,
+      "title": "On the Ohtsuki series at roots of unity",
+      "number": "3.5",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-35-on-the-ohtsuki-series-at-roots-of-unity"
+    },
+    {
+      "level": 1,
+      "title": "Laplace transform, Andrews identity and Frobenius maps",
+      "number": "4",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-4-laplace-transform-andrews-identity-and-frobeni"
+    },
+    {
+      "level": 2,
+      "title": "Laplace transform",
+      "number": "4.1",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-22-laplace-transform"
+    },
+    {
+      "level": 2,
+      "title": "Andrews identity",
+      "number": "4.2",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-42-andrews-identity"
+    },
+    {
+      "level": 2,
+      "title": "Frobenius isomorphism",
+      "number": "4.3",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-43-frobenius-isomorphism"
+    },
+    {
+      "level": 2,
+      "title": "Integrality",
+      "number": "4.4",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-44-integrality"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 111,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uniﬁed invariants",
+          "heading": false
+        },
+        {
+          "term": "wrt invariants",
+          "heading": false
+        },
+        {
+          "term": "irmgard",
+          "heading": false
+        },
+        {
+          "term": "uhler",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1106.6298v1 [math.GT] 30 Jun 2011 ON THE UNIFICATION OF QUANTUM 3–MANIFOLD INVARIANTS ANNA BELIAKOVA AND THANG LE Abstract. In 2006 Habiro initiated a construction of generating functions for Witten– Reshetikhin–Turaev (WRT) invariants known as uniﬁed WRT invariants. In a series of papers together with Irmgard B¨uhler and Christian Blanchet we extended his construc- tion to a larger class of 3–manifolds. The",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1106.6298v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-background",
+      "number": null,
+      "title": "Background",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 769,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ruto frak",
+          "heading": false
+        },
+        {
+          "term": "lmo invariant",
+          "heading": false
+        },
+        {
+          "term": "wrt invariants",
+          "heading": false
+        },
+        {
+          "term": "non--prime roots",
+          "heading": false
+        },
+        {
+          "term": "rdto text",
+          "heading": false
+        },
+        {
+          "term": "kontsevich integral",
+          "heading": false
+        },
+        {
+          "term": "link invariants",
+          "heading": false
+        },
+        {
+          "term": "kirby moves",
+          "heading": false
+        }
+      ],
+      "extract": "In the 60s and 70s Rochlin, Lickorish and Kirby established a remarkable connection between links and 3--manifolds. They showed that every 3--manifold can be obtained by surgery (on $S^3$) along framed links, and surgeries along two links give the same 3--manifold if and only if the links are related by a sequence of Kirby moves. This allows us to think of 3--manifolds as equivalence classes of framed links modulo",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-unified-invariants-of-integral-homology-3spheres",
+      "number": null,
+      "title": "Unified invariants of integral homology 3–spheres",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 420,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "habiro ring",
+          "heading": false
+        },
+        {
+          "term": "integral homology",
+          "heading": true
+        },
+        {
+          "term": "unified",
+          "heading": true
+        },
+        {
+          "term": "wrt invariants",
+          "heading": false
+        },
+        {
+          "term": "taylor series",
+          "heading": false
+        },
+        {
+          "term": "ohtsuki series",
+          "heading": false
+        },
+        {
+          "term": "homology sphere",
+          "heading": false
+        },
+        {
+          "term": "rto",
+          "heading": false
+        }
+      ],
+      "extract": "The unification of the WRT invariants was initiated in 2006 by Habiro. For any integral homology 3--sphere $M$, Habiro \\cite{Ha} constructed a {\\em unified invariant} $J_M$ whose evaluation at any root of unity coincides with the value of the WRT invariant at that root. Habiro's unified invariant $J_M$ is an element of the following ring (Habiro's ring) \\[ \\Habiro:=\\lim_{\\overleftarrow{\\hspace{2mm}k\\hspace{2mm}}}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-unified-invariants-of-rational-homology-3spheres",
+      "number": null,
+      "title": "Unified invariants of rational homology 3–spheres",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 632,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homology spheres",
+          "heading": true
+        },
+        {
+          "term": "rational homology",
+          "heading": true
+        },
+        {
+          "term": "wrt invariants",
+          "heading": false
+        },
+        {
+          "term": "lmo invariant",
+          "heading": false
+        },
+        {
+          "term": "q-e",
+          "heading": false
+        },
+        {
+          "term": "unified",
+          "heading": true
+        },
+        {
+          "term": "habiro ring",
+          "heading": false
+        },
+        {
+          "term": "ohtsuki series",
+          "heading": false
+        }
+      ],
+      "extract": "In \\cite{BBL}, we give a full generalization of the Habiro theory to rational homology 3--spheres. This requires completely new techniques coming from number theory, commutative algebra, quantum group and knot theory. Let us explain this in more details. Assume $M$ is a rational homology 3--sphere with $|H_1(M,\\Z)|=b$, where for a finite group $G$ we denote by $|G|$ the number of its elements. Then our unified",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-1-quantum-wrt-invariants",
+      "number": "1",
+      "title": "Quantum (WRT) invariants",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-11-notations-and-conventions",
+      "number": "1.1",
+      "title": "Notations and conventions",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 210,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "linking number",
+          "heading": false
+        },
+        {
+          "term": "framing",
+          "heading": false
+        },
+        {
+          "term": "framed",
+          "heading": false
+        },
+        {
+          "term": "meridian",
+          "heading": false
+        },
+        {
+          "term": "surgery",
+          "heading": false
+        }
+      ],
+      "extract": "We will consider $q^{1/4}$ as a free parameter. Let \\[ \\{n\\} = q^{n/2}-q^{-n/2}, \\quad \\{n\\}!= \\prod_{i=1}^n \\{i\\} ,\\quad [n] =\\frac{\\{n\\}}{\\{1\\}}. \\] We denote the set $\\{1,2,3,\\ldots\\}$ by $\\N$. We also use the following notation from $q$--calculus: $$ (x;q)_n := \\prod_{j=1}^n (1-x q^{j-1}).$$ Throughout this paper, $\\xi$ will be a primitive root of unity of {\\em odd} order $r$ and $e_n:=\\exp(2\\pi I/n)$. All",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-12-the-colored-jones-polynomial",
+      "number": "1.2",
+      "title": "The colored Jones polynomial",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 235,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored jones",
+          "heading": true
+        },
+        {
+          "term": "jones polynomial",
+          "heading": true
+        },
+        {
+          "term": "quantum link",
+          "heading": false
+        },
+        {
+          "term": "skein relation",
+          "heading": false
+        },
+        {
+          "term": "dots",
+          "heading": false
+        },
+        {
+          "term": "link invariant",
+          "heading": false
+        }
+      ],
+      "extract": "\\newcommand{\\RR} {\\mathbf R} Suppose L is a framed oriented link with $m$ ordered components and $V_1,\\dots,V_m$ are finite-dimensional modules over a ribbon Hopf algebra. Then one can define the quantum invariant $J_L(V_1,\\dots,V_m)$ through the machinery of quantum link invariant theory, see \\cite{Tu}. The quantized enveloping algebra $U_h(sl_2)$ of $sl_2$ is a ribbon algebra, and for each positive integer $n$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-13-kirby-moves",
+      "number": "1.3",
+      "title": "Kirby moves",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 183,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kirby moves",
+          "heading": true
+        },
+        {
+          "term": "vskip2mm noindent",
+          "heading": false
+        },
+        {
+          "term": "k2--move",
+          "heading": false
+        },
+        {
+          "term": "framing",
+          "heading": false
+        },
+        {
+          "term": "k1--move",
+          "heading": false
+        }
+      ],
+      "extract": "By Kirby theorem, any link invariant which does not change under Kirby moves is an invariant of a 3--manifold given by surgery on that link. Let us first recall what the Kirby moves are. \\newcommand{\\tL}{\\tilde L} \\vskip2mm {\\noindent \\bf K1--Move} (handle slide): For some $i\\neq j$, replace the $i$th component $L_i$ with $L'_i$, a band connected sum of $L_i$ with a push off of $L_j$ (defined by the framing), with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-14-evaluation-and-gauss-sums",
+      "number": "1.4",
+      "title": "Evaluation and Gauss sums",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 111,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gauss",
+          "heading": true
+        },
+        {
+          "term": "odd",
+          "heading": false
+        },
+        {
+          "term": "evaluation",
+          "heading": true
+        }
+      ],
+      "extract": "For each root of unity $\\xi$ of odd order $r$, we define the evaluation map $\\ev_\\xi$ by replacing $q$ with $\\xi$. Suppose $f(q;n_1,\\dots,n_m)$ is a function of variables $q^{\\pm 1}$ and integers $n_1,\\dots,n_m$. In quantum topology, the following sum plays an important role \\[ {\\sum_{n_i}}^\\xi f := \\sum_{\\substack{0< n_i< 2r\\\\ n_i \\text{ odd}}} \\ev_\\xi f(q; n_1,\\dots, n_m) \\] where in the sum all the $n_i$ run over",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-15-definition-of-the-wrt-invariants",
+      "number": "1.5",
+      "title": "Definition of the WRT invariants",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 449,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wrt invariants",
+          "heading": true
+        },
+        {
+          "term": "equation tau",
+          "heading": false
+        },
+        {
+          "term": "frac tau",
+          "heading": false
+        },
+        {
+          "term": "vskip2mm",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        },
+        {
+          "term": "lens space",
+          "heading": false
+        },
+        {
+          "term": "linking matrix",
+          "heading": false
+        }
+      ],
+      "extract": "Let \\[ F_{L}(\\xi):= {\\sum_{n_i}}^\\xi\\; \\prod_{i=1}^m [n_i]\\; J_{L}(n_1,\\dots,n_m).\\] \\begin{Thm} \\label{K1M}{\\rm [Reshetikhin--Turaev]} $F_L(\\xi)$ is invariant under K1--Move. \\end{Thm} An important special case is when $L=U^b$, the unknot with framing $b \\neq 0$. In that case $F_{U^{b}}(\\xi)$ can be calculated using the Gauss sum and is nonzero. Let $\\sigma_+ $ (respectively $\\sigma_-$) be the number of positive",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-16-habiros-cyclotomic-expansion-of-the-colored-j",
+      "number": "1.6",
+      "title": "Habiro's cyclotomic expansion of the colored Jones polynomial",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 228,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jones polynomial",
+          "heading": true
+        },
+        {
+          "term": "eqref jones",
+          "heading": false
+        },
+        {
+          "term": "non--negative",
+          "heading": false
+        },
+        {
+          "term": "label jones",
+          "heading": false
+        },
+        {
+          "term": "colored",
+          "heading": true
+        },
+        {
+          "term": "habiro",
+          "heading": true
+        }
+      ],
+      "extract": "For non--negative integers $n,k$ we define $$ A(n,k) := \\frac{\\prod^{k}_{i=0} \\left(q^{n}+q^{-n}-q^i -q^{-i}\\right)}{(1-q) \\, (q^{k+1};q)_{k+1}}.$$ For $\\bk=(k_1,\\dots,k_m)$ let $$ A(\\bn,\\bk):= \\prod_{j=1}^m \\; A(n_j,k_j).$$ Note that $A(\\bn,\\bk)=0$ if $k_j \\ge n_j$ for some index $j$. Also $ A(n,0)= q^{-1} J_U(n)^2.$ The colored Jones polynomial $J_{L} (\\n)$ can be repackaged into the invariant $C_{L} (\\bk)$ as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-2-main-results",
+      "number": "2",
+      "title": "Main Results",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 276,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uhler",
+          "heading": false
+        },
+        {
+          "term": "odd order",
+          "heading": false
+        },
+        {
+          "term": "beliakova",
+          "heading": false
+        },
+        {
+          "term": "habiro",
+          "heading": false
+        },
+        {
+          "term": "unity",
+          "heading": false
+        },
+        {
+          "term": "main",
+          "heading": true
+        }
+      ],
+      "extract": "Let us state our main results announced in the introduction. For any positive integer b, we deﬁne the cyclotomic completion ring Rb to be (9) Rb := lim ←−− k Z[1/b][q] ((q; q2)k), where (q; q2)k = (1 −q)(1 −q3) . . . (1 −q2k−1). For any f(q) ∈Rb and a root of unity ξ of odd order, the evaluation evξ(f(q)) := f(ξ) is well–deﬁned. Similarly, we put Sb := lim ←−− k Z[1/b][q] ((q; q)k) . Here the evaluation at any root",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-22-laplace-transform",
+      "number": "2.2",
+      "title": "Laplace transform",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 192,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "taylor expansions",
+          "heading": false
+        },
+        {
+          "term": "ohtsuki series",
+          "heading": false
+        },
+        {
+          "term": "pkb",
+          "heading": false
+        },
+        {
+          "term": "uhler",
+          "heading": false
+        },
+        {
+          "term": "habiro",
+          "heading": false
+        }
+      ],
+      "extract": "generalizing those of Roger–Ramanujan; 3) the Frobenius type isomorphism providing the existence of the b–th root of q in Rb. In addition, we had to generalize the deep integrality result of Habiro (Theorem 2), to a union of an algebraically split link with any odd colored one. The rings Rb and Sb have properties similar to those of the Habiro ring. An element f(q) ∈Rb is totally determined by the values at many",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-21-strategy-of-the-proof",
+      "number": "2.1",
+      "title": "Strategy of the proof",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 191,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "main-cor",
+          "heading": false
+        },
+        {
+          "term": "odd order",
+          "heading": false
+        },
+        {
+          "term": "tau",
+          "heading": false
+        }
+      ],
+      "extract": "Let us outline the proof of Theorem \\ref{main} and state the main technical results that will be explained later. We restrict to the case $L=\\emptyset$ for simplicity. We would like to define $I_{M}\\in \\cR_{b}$, such that \\begin{equation} \\tau'_{M}(\\xi)\\;=\\; \\ev_{\\xi}\\left(I_{M}\\right) \\label{0080} \\end{equation} for any root of unity $\\xi$ of odd order. This unified invariant is multiplicative with respect to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-23-definition-of-the-unified-invariant-diagonal",
+      "number": "2.3",
+      "title": "Definition of the unified invariant: diagonal case",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 221,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unified",
+          "heading": true
+        },
+        {
+          "term": "prod",
+          "heading": false
+        },
+        {
+          "term": "framings",
+          "heading": false
+        },
+        {
+          "term": "generalizedhabiro",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{2501} Suppose that the linking number between any two components of $L$ is 0, and the framing on components of $L$ are $b_i=\\pm p_i^{k_i}$ for $i=1,\\dots, m$, where each $p_i$ is prime or 1. Let us denote the link $L$ with all framings switched to zero by $L_0$. Using \\eqref{Jones}, taking into account the framings $b_i$'s, we have \\[ J_{L}(\\bn)\\prod_{i=1}^m [n_i] = \\sum_{\\bk\\ge 0} C_{L_0 } (\\bk) \\,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-24-diagonalization-using-lens-spaces",
+      "number": "2.4",
+      "title": "Diagonalization using lens spaces",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 213,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lens spaces",
+          "heading": true
+        },
+        {
+          "term": "diagonalization",
+          "heading": true
+        },
+        {
+          "term": "unified invariant",
+          "heading": false
+        },
+        {
+          "term": "homology sphere",
+          "heading": false
+        },
+        {
+          "term": "rational homology",
+          "heading": false
+        },
+        {
+          "term": "diagonal",
+          "heading": false
+        }
+      ],
+      "extract": "The general case reduces to the diagonal case by the well--known trick of diagonalization using lens spaces. We say that $M$ is {\\em diagonal} if it can be obtained from $S^3$ by surgery along a framed link $L$ with diagonal linking matrix, where the diagonal entries are of the form $\\pm p^k$ with $p=0,1$ or a prime. The following lemma was proved in \\cite[Proposition 3.2 (a)]{Le}. \\begin{lemma} For every rational",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-3-cyclotomic-completions-of-polynomial-rings",
+      "number": "3",
+      "title": "Cyclotomic completions of polynomial rings",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 39,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "completions",
+          "heading": true
+        },
+        {
+          "term": "cyclotomic",
+          "heading": true
+        },
+        {
+          "term": "rings",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{cyc} Since unified invariants belong to cyclotomic completions of polynomial rings, we outline their construction and the main properties. For simplicity, only the case $b$ is a power of a prime is considered, the general case is treated in \\cite{BBL}.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-017-31-on-cyclotomic-polynomials",
+      "number": "3.1",
+      "title": "On cyclotomic polynomials",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 595,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vskip2mm noindent",
+          "heading": false
+        },
+        {
+          "term": "cyclotomic",
+          "heading": true
+        },
+        {
+          "term": "phi",
+          "heading": false
+        },
+        {
+          "term": "habiro",
+          "heading": false
+        },
+        {
+          "term": "cofinal",
+          "heading": false
+        },
+        {
+          "term": "zeta",
+          "heading": false
+        },
+        {
+          "term": "integer neq",
+          "heading": false
+        },
+        {
+          "term": "integral homology",
+          "heading": false
+        }
+      ],
+      "extract": "Recall that $e_n := \\exp(2\\pi I/n)$ and denote by $\\Phi_n(q)$ the cyclotomic polynomial \\[ \\Phi_n(q) = \\prod_{\\substack{(j,n)=1\\\\0<j<n}} (q - e_n^j). \\] For example, $\\Phi_1(q)=q-1$ and $\\Phi_2(q)=q+1$. The degree of $\\Phi_n(q)\\in \\Z[q]$ is given by the Euler function $\\varphi(n)$. Suppose $p$ is a prime and $n$ an integer. Then (see e.g. \\cite{Na}) \\begin{equation} \\Phi_n(q^p)= \\begin{cases} \\Phi_{np}(q) & \\text{",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-33-taylor-expansion",
+      "number": "3.3",
+      "title": "Taylor expansion",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 90,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-e",
+          "heading": false
+        },
+        {
+          "term": "algebra homomorphism",
+          "heading": false
+        },
+        {
+          "term": "overleftarrow",
+          "heading": false
+        }
+      ],
+      "extract": "Fix a natural number $n$, then we have $$ R[q]^{\\{n\\}} = \\lim_{\\overleftarrow{\\hspace{2mm}k\\hspace{2mm}}} \\frac{R[q]}{(\\Phi^k_n(q))}\\; .$$ Suppose $ \\Z \\subset R \\subset \\Q$, then the natural algebra homomorphism $$ h: \\frac{R[q]}{(\\Phi^k_n(q))} \\to \\frac{R[e_n][q]}{((q-e_n)^k)}$$ can be proved to be injective. Taking the inverse limit, we see that there is a natural injective algebra homomorphism $$ h :",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-34-splitting-of-sp-and-evaluation",
+      "number": "3.4",
+      "title": "Splitting of Sp and evaluation",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 154,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cals simeq",
+          "heading": false
+        },
+        {
+          "term": "evaluation",
+          "heading": true
+        },
+        {
+          "term": "amalg",
+          "heading": false
+        },
+        {
+          "term": "cofinal",
+          "heading": false
+        }
+      ],
+      "extract": "For every integer $a$, we put $\\N_a := \\{ n \\in \\N \\mid (a,n)=1\\}$. Suppose $p$ is a prime. Analogously to \\eqref{cofinal}, we have $$\\calS_p \\simeq \\Z[1/p][q]^\\N\\,.$$ Observe that $\\N$ is not $\\Z[1/p]$--connected. In fact one has $\\N =\\amalg_{j=0}^\\infty \\; p^j \\N_p$, where each $p^j\\N_p$ is $\\Z[1/p]$--connected. Let us define \\[ \\calS_{p,j}:= \\Z[1/p][q]^{p^j \\N_p}. \\] Note that for every $f \\in \\calS_p$, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-35-on-the-ohtsuki-series-at-roots-of-unity",
+      "number": "3.5",
+      "title": "On the Ohtsuki series at roots of unity",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 154,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homology sphere",
+          "heading": false
+        },
+        {
+          "term": "rational homology",
+          "heading": false
+        },
+        {
+          "term": "beliakova--b",
+          "heading": false
+        },
+        {
+          "term": "main-cor",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{Oht} Suppose $M$ is a rational homology 3--sphere with $|H_1(M,\\Z)|=b$. By Theorem \\ref{main}, for any root of unity $\\xi$ of order $pr$ $$\\tau'_M(\\xi)\\in \\Z[1/b][e_{pr}] \\simeq \\frac{\\Z[1/b,e_r][x]}{(f_p(x+e_r))}\\; .$$ where \\[ f_p(t):= \\frac{t^p - e_r^p}{t-e_r}. \\] Hence we can write \\be\\label{Ohtsuki} \\tau'_M(e_{r}e_{p})= \\sum_{n=0}^{p-2} a_{p,n} x^n \\ee where $a_{p,n}\\in \\Z[1/b,e_r]$. The following",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-4-laplace-transform-andrews-identity-and-frobeni",
+      "number": "4",
+      "title": "Laplace transform, Andrews identity and Frobenius maps",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 309,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "laplace transform",
+          "heading": true
+        },
+        {
+          "term": "cases text",
+          "heading": false
+        },
+        {
+          "term": "andrews",
+          "heading": true
+        },
+        {
+          "term": "begin cases",
+          "heading": false
+        },
+        {
+          "term": "end cases",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "nmid",
+          "heading": false
+        },
+        {
+          "term": "begin lemma",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{map-frob} The aim of this section is to define the Laplace transform and to study its image. \\subsection{Laplace transform} To define the unified invariant we have to compute $${\\sum_n}^\\xi q^{b\\frac{n^2-1}{4}} A(n,k)$$ where terms depending on $n$ in $A(n,k)$ look as follows $$\\prod^k_{i=0} (q^n+q^{-n}-q^i-q^{-i})\\,=(-1)^{k+1}\\;(q^n;q)_{k+1}\\; (q^{-n};q)_{k+1}\\, .$$ Formally, the last expression can be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-42-andrews-identity",
+      "number": "4.2",
+      "title": "Andrews identity",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 285,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "prod frac",
+          "heading": false
+        },
+        {
+          "term": "geq frac",
+          "heading": false
+        },
+        {
+          "term": "identity",
+          "heading": true
+        },
+        {
+          "term": "andrews",
+          "heading": true
+        },
+        {
+          "term": "lambda",
+          "heading": false
+        },
+        {
+          "term": "multline",
+          "heading": false
+        }
+      ],
+      "extract": "To warm up we start with the identity from the Ramanujan ``Lost'' Notebook: $$\\prod_{k\\geq 1}\\frac{1}{(1-q^{5k-4})(1-q^{5k-1})}=\\sum_{n\\geq 0} \\frac{q^{n^2}}{(1-q)(1-q^2)\\dots (1-q^n)} $$ Only in the 60s, MacMahon gave a combinatorial interpretation of this identity as follows. Let $\\lambda=(\\lambda_1, \\lambda_2, \\dots, \\lambda_t)$ with $\\sum_i\\lambda_i=n$ be a partition of $n$ into non--increasing integers. Then",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-43-frobenius-isomorphism",
+      "number": "4.3",
+      "title": "Frobenius isomorphism",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 137,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cals",
+          "heading": false
+        },
+        {
+          "term": "frobenius",
+          "heading": true
+        },
+        {
+          "term": "beliakova--b",
+          "heading": false
+        }
+      ],
+      "extract": "It remains to show that the image of the Laplace transform belongs to $\\R_b$, i.e. that certain roots of $q$ exist in $\\R_b$. In \\cite{BBL} we proved the following. \\begin{Thm}\\label{frob}{\\rm [Beliakova--B\\\"uhler--Le]} The Frobenius endomorphism $F_b: \\Z[1/b][q]^{\\N_b} \\to \\Z[1/b][q]^{\\N_b}$, sending $q$ to $q^b$, is an isomorphism. \\end{Thm} This implies the existence of the $b$th root of $q$ in $\\calS_{b,0}$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-44-integrality",
+      "number": "4.4",
+      "title": "Integrality",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 293,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "integrality",
+          "heading": true
+        },
+        {
+          "term": "wrt invariants",
+          "heading": false
+        },
+        {
+          "term": "gamma",
+          "heading": false
+        },
+        {
+          "term": "widetilde",
+          "heading": false
+        },
+        {
+          "term": "subring",
+          "heading": false
+        },
+        {
+          "term": "odd order",
+          "heading": false
+        }
+      ],
+      "extract": "The proof of integrality of the SO(3) WRT invariants for all roots of unity and for all 3--manifolds is given in \\cite{BL}. Note that even restricted to rational homology 3--spheres, this fact requires a separate proof, since the existence of $I_M \\in \\R_b$ does not imply integrality of the WRT invariants, unless $b= 1$. In this subsection we define a subring $\\Gamma_b \\subset \\R_b$, such that for any $f\\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 423,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uniﬁed quantum",
+          "heading": false
+        },
+        {
+          "term": "homology spheres",
+          "heading": false
+        },
+        {
+          "term": "quantum invariants",
+          "heading": false
+        },
+        {
+          "term": "reshetikhin turaev",
+          "heading": false
+        },
+        {
+          "term": "beliakova",
+          "heading": false
+        },
+        {
+          "term": "manifold invariants",
+          "heading": false
+        },
+        {
+          "term": "rational homology",
+          "heading": false
+        },
+        {
+          "term": "uhler",
+          "heading": false
+        }
+      ],
+      "extract": "[1] G. Andrews, q–series: their development and applications in analysis, number theory, combina- torics, physics, and computer algebra, regional conference series in mathematics, Amer. Math. Soc. 66 (1985) [2] A. Beliakova, I. B¨uhler, T. T. Q. Le, A uniﬁed quantum SO(3) invariants for rational homology 3-spheres, arXiv: 0801.3893 [3] A. Beliakova, Q. Chen, T. T. Q. Le, On the integrality of",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "wrt invariants",
+      "heading": true
+    },
+    {
+      "term": "unified invariants",
+      "heading": true
+    },
+    {
+      "term": "prod frac",
+      "heading": false
+    },
+    {
+      "term": "frac tau",
+      "heading": false
+    },
+    {
+      "term": "habiro ring",
+      "heading": false
+    },
+    {
+      "term": "link invariants",
+      "heading": false
+    },
+    {
+      "term": "cite bbl",
+      "heading": false
+    },
+    {
+      "term": "prime roots",
+      "heading": false
+    },
+    {
+      "term": "lmo invariant",
+      "heading": false
+    },
+    {
+      "term": "habiro theory",
+      "heading": false
+    },
+    {
+      "term": "rational homology",
+      "heading": true
+    },
+    {
+      "term": "ruto tau",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 28,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 27,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p17); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 27 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1106.6298v1"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-hook-weight-derivation",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:hook-weight-derivation",
+  "kind": "conjecture",
+  "title": "Hook weight $\\beta_4 = -\\tfrac{1}{2} w_{[2,2]}(4)$ from baryon Wedderburn-Artin decomposition",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-degree-two-baryon-weight",
+    "papers/quantum-observable-universe/blocks/conj-shell-transition-knot"
+  ],
+  "leanRef": "qou:QOU.EightfoldWay.beta4_hook",
+  "text": "hook-weight-derivation.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1607.01632v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Charge speciﬁc baryon mass relations with deformed SU q (3) ﬂavor symmetry",
+      "dcterms:creator": [
+        "Gresnigt, Niels G."
+      ],
+      "dcterms:issued": "D:20220515",
+      "dcterms:identifier": "https://arxiv.org/abs/1607.01632",
+      "dcterms:abstract": "The quantum group SUq(3) = Uq(su(3)) is taken as a baryon ﬂa- vor symmetry. Accounting for electromagnetic contributions to baryons masses to zeroth order, new charge speciﬁc q-deformed octet and decuplet baryon mass formulas are obtained. These new mass relations have errors of only 0.02% and 0.08% respectively; a factor of 20 reduction compared to the standard Gell-Mann-Okubo mass formulas. A new relation between the octet and decuplet baryon masses that is accurate to 1.2% is derived. An explicit formula for the Cabibbo angle, taken to be π 14, in terms of the deformation parameter q and spin parity JP of the baryons is obtained.",
+      "dcterms:source": "library/arxiv-1607.01632v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1607.01632v2"
+    }
+  ]
+}

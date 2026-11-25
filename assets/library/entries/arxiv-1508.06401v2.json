@@ -1,0 +1,203 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1508.06401v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1508.06401v2/blocks/prop-sec-front-matter-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "prop-sec-front-matter-01.md",
+      "narrative": null,
+      "content": "arXiv:1508.06401v2 [hep-lat] 15 Jul 2016 Isospin splittings of meson and baryon masses from three-ﬂavor lattice QCD + QED R.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1508.06401v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1508.06401v2  [hep-lat]  15 Jul 2016\nIsospin splittings of meson and baryon masses from\nthree-ﬂavor lattice QCD + QED\nR. Horsleya, Y. Nakamurab, H. Perltc, D. Pleiterd, P. E. L. Rakowe,\nG. Schierholzf, A. Schillerc, R. Stokesg, H. St¨ubenh,\nR. D. Youngg and J. M. Zanottig\na School of Physics and Astronomy, University of Edinburgh,\nEdinburgh EH9 3FD, United Kingdom\nb RIKEN Advanced Institute for Computational Science,\nKobe, Hyogo 650-0047, Japan\nc Institut f¨ur Theoretische Physik, Universit¨at Leipzig,\n04103 Leipzig, Germany\nd J¨ulich Supercomputer Center, Forschungszentrum J¨ulich,\n5242",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.06401v2/blocks/prop-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "prop-sec-000-01.md",
+      "narrative": null,
+      "content": "In [4, 5] we have outlined a program to systematically investigate the pattern of ﬂavor sym- metry breaking in three-ﬂavor lattice QCD for Wilson-type fermions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1508.06401v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction and general strategy",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction-and-general-strategy.md",
+      "narrative": null,
+      "content": "Introduction and general strategy\nIsospin breaking eﬀects are crucial for the existence of our Universe. Our Universe would not\nexist in the present form if the n −p mass diﬀerence would only be slightly diﬀerent. If it would\nbe larger than the binding energy of the deuteron, no fusion would take place. If it would be a\nlittle smaller, all hydrogen would have been burned to helium. Isospin breaking in hadron masses\nhas two sources, the mass diﬀerence of up and down quarks, and electromagnetic interactions.\nBoth eﬀects are of the same order of magnitude and cannot be separated unambiguously due",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.06401v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lattice matters",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-2-lattice-matters.md",
+      "narrative": null,
+      "content": "Lattice matters\nThe action we are using is\nS = S G + S A + S u\nF + S d\nF + S s\nF .\n(5)\nHere S G is the tree-level Symanzik improved SU(3) gauge action with gauge coupling β = 6/g2,\nand S A is the noncompact U(1) gauge action [8, 9] of the photon,\nS A = 1\n2e2\nX\nx,µ<ν\n\u0010\nAµ(x) + Aν(x + µ) −Aµ(x + ν) −Aν(x)\n\u00112 .\n(6)\nWe employ the nonperturbatively O(a) improved SLiNC fermion action [10] for each quark\nﬂavor,\n˜S q\nF =\nX\nx\nn1\n2\nX\nµ\n\u0002¯q(x)(γµ −1)e−ieq Aµ(x) ˜Uµ(x)q(x + ˆµ) −¯q(x)(γµ + 1)eieq Aµ(x−ˆµ) ˜U†\nµ(x −ˆµ)q(x −ˆµ)\u0003\n+ 1\n2κq\n¯q(x)q(x) −1\n4cS W\nX\nµν\n¯q(x)σµνFµν(x)q(x)\no\n.\n(7)\nThis action features",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.06401v2/blocks/prop-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 13,
+      "target": "prop-sec-002-01.md",
+      "narrative": null,
+      "content": "The region of no fusion is to the left, the region where all hydrogen is converted to helium stars is to the right. the n −p mass splitting in the ‘Dashen’ and MS schemes turns out to be somewhat larger (in absolute terms) than the numbers derived from the Cottingham formula [20].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1508.06401v2/blocks/prop-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 13,
+      "target": "prop-sec-002-02.md",
+      "narrative": null,
+      "content": "To accommodate the lower numbers from the Cottingham formula, the result of pure QCD [16] (fourth column of Table 1) would have to be smaller by a factor up to two as well.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1508.06401v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Results",
+      "pageStart": 7,
+      "pageEnd": 13,
+      "target": "../sections/sec-002-3-results.md",
+      "narrative": null,
+      "content": "Results\nAfter the initial small volume tuning runs, it turns out that the chosen κ values do not quite\nsatisfy our constraint of equal neutral pseudoscalar meson masses. A more accurate estimate can\nbe determined from a ﬁt to the pseudoscalar meson masses. On the 483 × 96 lattice we obtain\n¯κu = 0.124382 ,\n¯κd = ¯κs = 0.121703,\n¯κn = 0.120814 ,\n(11)\nwhich is only a small displacement from the underlying simulation kappas. We shall expand\nabout these κ values in our subsequent ﬁts.\nIn contrast to QCD, equal meson masses at the symmetric point no longer mean equal bare\nquark masses. We renormali",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1508.06401v2/blocks/prop-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "prop-sec-003-01.md",
+      "narrative": null,
+      "content": "Conclusion and outlook We have outlined a program to systematically investigate the ﬂavor structure of hadrons in a full QCD + QED lattice simulation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1508.06401v2/blocks/prop-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "prop-sec-003-02.md",
+      "narrative": null,
+      "content": "Finally, future simulations will also naturally be required on lattices with diﬀerent lattice spacings to allow for a continuum extrapolation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1508.06401v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion and outlook",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-003-4-conclusion-and-outlook.md",
+      "narrative": null,
+      "content": "Conclusion and outlook\nWe have outlined a program to systematically investigate the ﬂavor structure of hadrons in a full\nQCD + QED lattice simulation. By treating the valence quark masses diﬀerently to those in\nthe sea allows for a range of valence quark masses and charges to be explored and signiﬁcantly\nenhances our ability to accurately constrain the ﬁt parameters in our ﬂavor-breaking expansions.\nAs a result, we have successfully computed the isospin splittings of pseudoscalar meson and octet\nbaryon masses. By using our recently introduced ‘Dashen’ scheme as an intermediate step [6],\nwe are",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

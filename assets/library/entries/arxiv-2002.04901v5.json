@@ -1,0 +1,196 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2002.04901v5",
+  "blocks": [
+    {
+      "id": "library/arxiv-2002.04901v5/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-0-introduction.md",
+      "narrative": null,
+      "content": "Let $A$ be a commutative ring. Various authors have previously considered two \nkinds of derived completions of complexes of $A$-modules, without a careful \ndistinction between them, leading to some confusion. We begin our paper by \nrecalling these two kinds of derived completions, and giving them names. \n\nThe first kind of derived completion is determined by a finitely \ngenerated ideal $\\a \\sub A$, and accordingly we call it {\\em idealistic derived \ncompletion}. The idealistic derived completion of a complex of $A$-modules $M$ \nis the complex $\\mrm{L} \\La_{\\a}(M)$, where $\\mrm{L} \\La_{\\a}$ is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2002.04901v5/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "WEAK PROREGULARITY, DERIVED COMPLETION, ADIC FLATNESS,\nAND PRISMS\nAMNON YEKUTIELI\nAbstract. We begin by recalling the role that weak proregularity of an ideal in a commu-\ntative ring has in derived completion and adic ﬂatness. We also introduce the new concepts\nof idealistic and sequential derived completion, and prove a few results about them, includ-\ning the fact that these two concepts agree iﬀthe ideal is weakly proregular. Next we study\nthe local nature of weak proregularity, and its behavior w.r.t. ring quotients. These results\nallow us to prove our main theorem, which states that weak p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2002.04901v5/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Idealistic Derived Completion and Torsion",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-1-idealistic-derived-completion-and-torsion.md",
+      "narrative": null,
+      "content": "\\label{sec:idealistic}\n\nThroughout the paper $A$ is a commutative ring.\nIt is {\\em not} assumed that $A$ is a noetherian ring.\nWe denote by $\\cat{M}(A)$ the category of $A$-modules, and by \n$\\cat{D}(A)$ its unbounded derived category. \nOur reference for derived categories is the book \\cite{Ye3}. \n\nIn this section, $\\a$ is a finitely generated ideal of the ring $A$. \n\nFor an $A$-module $M$, its $\\a$-adic completion is\n\\[ \\La_{\\a}(M) := \n\\lim_{\\leftarrow k} \\, (M \\lsp / \\lsp \\a^{k} \\cd M) . \\]\nCompletion is an $A$-linear functor \n\\begin{equation} \\label{eqn:180}\n\\La_{\\a} : \\cat{M}(A) \\to \\cat{M}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2002.04901v5/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sequential Derived Completion and Torsion",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "../sections/sec-002-2-sequential-derived-completion-and-torsion.md",
+      "narrative": null,
+      "content": "\\label{sec:sequential}\n\nHere again $A$ is a commutative ring. A finite sequence \n$\\aa = (a_1, \\ldots, a_n)$ of elements of $A$ gives rise to several complexes \nof $A$-modules. \n\nWe start with a single element $a \\in A$. For an $A$-module $M$\nwe denote by \n$\\opn{mult}_M(a) : M  \\to M$ the endomorphism\n$\\opn{mult}_M(a)(m) := a \\cd m$. \n\nRecall that the {\\em Koszul complex} associated to the element $a$ is \n\\begin{equation} \\label{eqn:101}\n\\opn{K}(A; a) := \\bigl( \\cdots \\to 0 \\to A \\xar{\\d} A \\to 0 \\to  \n\\cdots \\bigr) , \n\\end{equation}\nconcentrated in degrees $-1$ and $0$. \nThe differential is $\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2002.04901v5/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weak Proregularity: When Idealistic and Sequential Agree",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "../sections/sec-003-3-weak-proregularity-when-idealistic-and-sequent.md",
+      "narrative": null,
+      "content": "We continue with the commutative ring $A$.\nIn this section we recall the definition of {\\em weak\nproregularity}, and explain some of its useful properties. \n\nAn inverse system of modules $\\{ N_i \\}_{i \\in \\N}$ is called\n{\\em pro-zero} if for every $i$ there is some $j \\geq i$ such that the \nhomomorphism $N_j \\to N_i$ is zero. See Remark \\ref{rem:300} regarding this \nnotion. \n\nGiven a sequence $\\aa = (a_1, \\ldots, a_n)$ in $A$, and \na natural number $i$, we let \n$\\bsym{a}^i := (a^i_1, \\ldots, a^i_n)$.\nAs explained in Section \\ref{sec:sequential}, the collection of Koszul \ncomplexes \n$\\bigl\\{ \\o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2002.04901v5/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weak Proregularity and Adic Flatness",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-004-4-weak-proregularity-and-adic-flatness.md",
+      "narrative": null,
+      "content": "Again, $A$ is some commutative ring. \n\n\\begin{dfn} \\label{dfn:225}\nLet $\\a$ be a finitely generated ideal in $A$, and let $M$ be an $A$-module. We \nsay that $M$ is {\\em $\\a$-adically flat} if $\\opn{Tor}^{A}_q(N, M) = 0$\nfor every $\\a$-torsion $A$-module $N$ and every $q > 0$. \n\\end{dfn}\n\nThis definition is copied from \\cite{Ye2}. In \\cite{BS2}, \\cite{CS} \nthe term used is {\\em $\\a$-completely flat}.\nHere is a useful characterization of this property. \n\n\\begin{thm}[{\\cite[Theorem 1.3]{Ye2}}] \\label{thm:225}\nLet $\\a$ be a finitely generated ideal in $A$, and for every $k \\geq 0$ let \n$A_k := A /",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2002.04901v5/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weak Proregularity and Quotient Rings",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "../sections/sec-005-5-weak-proregularity-and-quotient-rings.md",
+      "narrative": null,
+      "content": "Again $A$ is some commutative ring. The purpose of this extremely technical \nsection is to prove Theorem \\ref{thm:105}. \n\n\\begin{dfn} \\label{dfn:106} \nAn element $a \\in A$ is called a {\\em weakly proregular element} \nif the length one sequence $\\aa := (a)$ is weakly proregular in $A$.\n\\end{dfn}\n\nGiven an element $a \\in A$ and an $A$-module $M$, the {\\em annihilator} of $a$ \nin $M$ is the submodule \n\\[ \\opn{Ann}_M(a) := \\opn{Ker} \\bigl( \\opn{mult}_M(a) \\bigr) = \n\\{ m \\in M \\mid a \\cd m = 0 \\} \\sub  M . \\]\nThe element $a$ is called {\\em $M$-regular} or a {\\em non-zero-divisor on $M$}\nif $\\opn{An",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2002.04901v5/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Local Nature of Weak Proregularity",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-006-6-the-local-nature-of-weak-proregularity.md",
+      "narrative": null,
+      "content": "As before, $A$ is a commutative ring. \nA sequence of elements $\\ss = (s_1, \\ldots, s_n)$ in $A$ is called a {\\em \ncovering sequence} if\n$\\opn{Spec}(A) = \\bigcup\\nolimits_{i} \\opn{Spec}(A_{s_i})$.\nHere $A_{s_i} = A[s_i^{-1}]$, the localized ring. \nClearly $\\ss$ is a covering sequence iff \n$\\sum_{i = 1, \\ldots, n} A \\cd s_i = A$.\n\n\\begin{thm} \\label{thm:306} \nLet $A$ be a ring and let $\\a \\sub A$ be an ideal.\nThe following two conditions are equivalent\\tup{:}\n\\begin{itemize}\n\\rmitem{i} The ideal $\\a$ is weakly proregular.  \n\n\\rmitem{ii} There is a covering sequence $\\ss = (s_1, \\ldots, s_n)$  of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2002.04901v5/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weak Proregularity and Prisms",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-007-7-weak-proregularity-and-prisms.md",
+      "narrative": null,
+      "content": "\\label{sec:prisms}\n\nFor a prime number $p$ let $\\Z_p \\sub \\Q$ denote the local ring of $\\Z$ at $p$; \ni.e.\\ $\\Z_p = \\Z_{\\p}$ where $\\p := (p) \\in \\opn{Spec}(\\Z)$. (This is not to be \nconfused with the complete local ring $\\what{\\Z}_p = \\what{\\Z}_{\\p}$.)\n\n\\begin{dfn}[\\cite{BS2}] \\label{dfn:135}\nA {\\em $p$-adic prism} is a pair $(A, I)$, where $A$ is a $\\Z_p$-ring, and \n$I \\sub A$ is an ideal.\nThe conditions are:\n\\begin{itemize}\n\\rmitem{i} The ideal $I$ defines an effective Cartier divisor on \n$\\opn{Spec}(A)$. \n\n\\rmitem{ii} The ring $A$ is sequentially derived $\\a$-adically complete, where \n$\\a :",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2002.04901v5/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-008-references.md",
+      "narrative": null,
+      "content": "[AJL] L. Alonso, A. Jeremias and J. Lipman, Local homology and cohomology on schemes, Ann. Sci. ENS 30\n(1997), 1-39. Correction: http://www.math.purdue.edu/~lipman.\n[BMS] B. Bhatt, M. Morrow and P. Scholze, Topological Hochschild Homology and Integral p-Adic Hodge\nTheory, Publ. Math. IHES 129 (2019), 199-310.\n[BS1] B. Bhatt and P. Scholze, The pro-étale topology for schemes, Astérisque 369 (2015), 99–201.\n[BS2] B. Bhatt and P. Scholze, Prisms and Prismatic Cohomology, https://arxiv.org/abs/1905.08229v2.\n[Ch]\nA. Chatzistamatiou, q-crystals and q-connections, https://arxiv.org/abs/2010.02504.\n[C",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

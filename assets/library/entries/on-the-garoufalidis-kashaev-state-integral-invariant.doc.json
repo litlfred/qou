@@ -1,0 +1,3195 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "on-the-garoufalidis-kashaev-state-integral-invariant",
+  "title": "on-the-garoufalidis-kashaev-state-integral-invariant",
+  "variant": "pdf",
+  "pages": 61,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "ACKNOWLEDGMENTS",
+      "number": null,
+      "page": 4,
+      "pageLabel": "iv",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "ABSTRACT",
+      "number": null,
+      "page": 5,
+      "pageLabel": "v",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-abstract"
+    },
+    {
+      "level": 1,
+      "title": "LIST OF TABLES",
+      "number": null,
+      "page": 10,
+      "pageLabel": "x",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-list-of-tables"
+    },
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 11,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Motivation and Background",
+      "number": null,
+      "page": 11,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-motivation-and-background"
+    },
+    {
+      "level": 2,
+      "title": "Overview of the Construction",
+      "number": null,
+      "page": 12,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-overview-of-the-construction"
+    },
+    {
+      "level": 2,
+      "title": "Main Results",
+      "number": null,
+      "page": 12,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-main-results"
+    },
+    {
+      "level": 2,
+      "title": "Structure of the Thesis",
+      "number": null,
+      "page": 13,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-structure-of-the-thesis"
+    },
+    {
+      "level": 2,
+      "title": "Connections and Outlook",
+      "number": null,
+      "page": 14,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-connections-and-outlook"
+    },
+    {
+      "level": 2,
+      "title": "Connections to Representation Theory",
+      "number": null,
+      "page": 15,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-connections-to-representation-theory"
+    },
+    {
+      "level": 1,
+      "title": "Locally Compact Abelian Groups, Pontryagin Duality, and Gaussian Structures HR",
+      "number": null,
+      "page": 16,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-locally-compact-abelian-groups-pontryagin-dualit"
+    },
+    {
+      "level": 2,
+      "title": "Locally Compact Abelian Groups",
+      "number": null,
+      "page": 16,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Foundational Definitions",
+      "number": null,
+      "page": 16,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-foundational-definitions"
+    },
+    {
+      "level": 3,
+      "title": "Examples",
+      "number": null,
+      "page": 16,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-examples"
+    },
+    {
+      "level": 3,
+      "title": "Structure Theorem (Informal)",
+      "number": null,
+      "page": 17,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-structure-theorem-informal"
+    },
+    {
+      "level": 2,
+      "title": "Pontryagin Duality",
+      "number": null,
+      "page": 17,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-pontryagin-duality"
+    },
+    {
+      "level": 3,
+      "title": "Character Groups and Duality",
+      "number": null,
+      "page": 17,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-character-groups-and-duality"
+    },
+    {
+      "level": 3,
+      "title": "Pontryagin Duality Theorem",
+      "number": null,
+      "page": 18,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-pontryagin-duality-theorem"
+    },
+    {
+      "level": 3,
+      "title": "Examples of Dual Pairs",
+      "number": null,
+      "page": 18,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-examples-of-dual-pairs"
+    },
+    {
+      "level": 2,
+      "title": "Gaussian Group",
+      "number": null,
+      "page": 19,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-gaussian-group"
+    },
+    {
+      "level": 3,
+      "title": "Pontryagin Characters and Gauss Characters",
+      "number": null,
+      "page": 20,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-pontryagin-characters-and-gauss-characters"
+    },
+    {
+      "level": 2,
+      "title": "Local Fields",
+      "number": null,
+      "page": 21,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-local-fields"
+    },
+    {
+      "level": 1,
+      "title": "Quantum Dilogarithm",
+      "number": null,
+      "page": 23,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-quantum-dilogarithm"
+    },
+    {
+      "level": 2,
+      "title": "A quantum dilogarithm over a Gaussian group",
+      "number": null,
+      "page": 23,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-a-quantum-dilogarithm-over-a-gaussian-group"
+    },
+    {
+      "level": 2,
+      "title": "A quantum dilogarithm over a Special Gaussian Group",
+      "number": null,
+      "page": 24,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-a-quantum-dilogarithm-over-a-special-gaussian-gr"
+    },
+    {
+      "level": 3,
+      "title": "Fourier transform of the Archimedean quantum dilogarithm",
+      "number": null,
+      "page": 24,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-fourier-transform-of-the-archimedean-quantum-dil"
+    },
+    {
+      "level": 3,
+      "title": "Pentagon identity in the Archimedean case",
+      "number": null,
+      "page": 26,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-pentagon-identity-in-the-archimedean-case"
+    },
+    {
+      "level": 2,
+      "title": "Angled Quantum Dilogarithm",
+      "number": null,
+      "page": 28,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-angled-quantum-dilogarithm"
+    },
+    {
+      "level": 3,
+      "title": "Angle Space and Structure",
+      "number": null,
+      "page": 28,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-angle-space-and-structure"
+    },
+    {
+      "level": 3,
+      "title": "Triangle Angle Condition",
+      "number": null,
+      "page": 29,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-triangle-angle-condition"
+    },
+    {
+      "level": 3,
+      "title": "Definition of the Angled Quantum Dilogarithm",
+      "number": null,
+      "page": 29,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-definition-of-the-angled-quantum-dilogarithm"
+    },
+    {
+      "level": 3,
+      "title": "Temperedness and Positivity",
+      "number": null,
+      "page": 31,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-temperedness-and-positivity"
+    },
+    {
+      "level": 3,
+      "title": "Symmetries of the Angled Quantum Dilogarithm",
+      "number": null,
+      "page": 34,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-symmetries-of-the-angled-quantum-dilogarithm"
+    },
+    {
+      "level": 3,
+      "title": "Angled Pentagon Identity",
+      "number": null,
+      "page": 36,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-angled-pentagon-identity"
+    },
+    {
+      "level": 1,
+      "title": "The State-Integral Invariant",
+      "number": null,
+      "page": 40,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-the-state-integral-invariant"
+    },
+    {
+      "level": 2,
+      "title": "Triangulations and State Variables",
+      "number": null,
+      "page": 40,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-triangulations-and-state-variables"
+    },
+    {
+      "level": 2,
+      "title": "The Kinematical Kernel",
+      "number": null,
+      "page": 41,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-the-kinematical-kernel"
+    },
+    {
+      "level": 2,
+      "title": "Angle Structures and Dynamical Weights",
+      "number": null,
+      "page": 42,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-angle-structures-and-dynamical-weights"
+    },
+    {
+      "level": 3,
+      "title": "Balanced Angle Structures",
+      "number": null,
+      "page": 42,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-balanced-angle-structures"
+    },
+    {
+      "level": 3,
+      "title": "Quantum Dilogarithmic Weights",
+      "number": null,
+      "page": 43,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-quantum-dilogarithmic-weights"
+    },
+    {
+      "level": 2,
+      "title": "The State-Integral Definition",
+      "number": null,
+      "page": 44,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-the-state-integral-definition"
+    },
+    {
+      "level": 2,
+      "title": "Summary of the Construction",
+      "number": null,
+      "page": 44,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-summary-of-the-construction"
+    },
+    {
+      "level": 1,
+      "title": "Target of the State-Integral",
+      "number": null,
+      "page": 46,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-target-of-the-state-integral"
+    },
+    {
+      "level": 2,
+      "title": "Target Statement for the Archimedean State-Integral",
+      "number": null,
+      "page": 46,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-target-statement-for-the-archimedean-state-integ"
+    },
+    {
+      "level": 2,
+      "title": "Manifolds with Boundary (M =)",
+      "number": null,
+      "page": 46,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-043-manifolds-with-boundary-m"
+    },
+    {
+      "level": 3,
+      "title": "Manifolds with Torus Boundary (M .5-.5.5-.5.5-.5.5-.5T2)",
+      "number": null,
+      "page": 47,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-044-manifolds-with-torus-boundary-m-5-55-55-55-5t2"
+    },
+    {
+      "level": 2,
+      "title": "Closed Manifolds (M = )",
+      "number": null,
+      "page": 48,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-045-closed-manifolds-m"
+    },
+    {
+      "level": 2,
+      "title": "Angle Structures and Parameter Dependence",
+      "number": null,
+      "page": 48,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-046-angle-structures-and-parameter-dependence"
+    },
+    {
+      "level": 2,
+      "title": "Algebraic Background",
+      "number": null,
+      "page": 49,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-047-algebraic-background"
+    },
+    {
+      "level": 3,
+      "title": "Summary Table",
+      "number": null,
+      "page": 51,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-048-summary-table"
+    },
+    {
+      "level": 3,
+      "title": "Remark",
+      "number": null,
+      "page": 51,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-049-remark"
+    },
+    {
+      "level": 1,
+      "title": "Topological Invariance of the State-Integral",
+      "number": null,
+      "page": 52,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-050-topological-invariance-of-the-state-integral"
+    },
+    {
+      "level": 2,
+      "title": "The Pentagon Identity and Pachner Moves",
+      "number": null,
+      "page": 53,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-051-the-pentagon-identity-and-pachner-moves"
+    },
+    {
+      "level": 3,
+      "title": "Combinatorics of the Pachner Move",
+      "number": null,
+      "page": 53,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-052-combinatorics-of-the-pachner-move"
+    },
+    {
+      "level": 3,
+      "title": "Analytic Expression via Pentagon Identity",
+      "number": null,
+      "page": 53,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-053-analytic-expression-via-pentagon-identity"
+    },
+    {
+      "level": 2,
+      "title": "(P1) Pachner Invariance",
+      "number": null,
+      "page": 54,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-054-p1-pachner-invariance"
+    },
+    {
+      "level": 3,
+      "title": "Triangulation Equivalence",
+      "number": null,
+      "page": 54,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-055-triangulation-equivalence"
+    },
+    {
+      "level": 3,
+      "title": "Invariance Theorem",
+      "number": null,
+      "page": 54,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-056-invariance-theorem"
+    },
+    {
+      "level": 2,
+      "title": "(P2) Analytic Control and Temperedness",
+      "number": null,
+      "page": 54,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-057-p2-analytic-control-and-temperedness"
+    },
+    {
+      "level": 3,
+      "title": "Tempered Distribution Framework",
+      "number": null,
+      "page": 54,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-058-tempered-distribution-framework"
+    },
+    {
+      "level": 3,
+      "title": "Conditions Ensuring Convergence",
+      "number": null,
+      "page": 55,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-059-conditions-ensuring-convergence"
+    },
+    {
+      "level": 2,
+      "title": "(P3) Angle Gauge Invariance",
+      "number": null,
+      "page": 55,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-060-p3-angle-gauge-invariance"
+    },
+    {
+      "level": 3,
+      "title": "Internal Angle Shifts",
+      "number": null,
+      "page": 55,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-061-internal-angle-shifts"
+    },
+    {
+      "level": 3,
+      "title": "Cancellation in the Integral",
+      "number": null,
+      "page": 56,
+      "pageLabel": "46",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-062-cancellation-in-the-integral"
+    },
+    {
+      "level": 2,
+      "title": "Topological Invariance Theorem",
+      "number": null,
+      "page": 56,
+      "pageLabel": "46",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-063-topological-invariance-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Conceptual Summary",
+      "number": null,
+      "page": 58,
+      "pageLabel": "48",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-064-conceptual-summary"
+    },
+    {
+      "level": 1,
+      "title": "REFERENCES",
+      "number": null,
+      "page": 59,
+      "pageLabel": "49",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-065-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": "Summer 2025",
+      "labelEnd": "iv",
+      "words": 156,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "supervisory committee",
+          "heading": false
+        },
+        {
+          "term": "uwe kaiser",
+          "heading": false
+        },
+        {
+          "term": "thesis submitted",
+          "heading": false
+        },
+        {
+          "term": "boise state",
+          "heading": false
+        },
+        {
+          "term": "palmer",
+          "heading": false
+        },
+        {
+          "term": "final reading",
+          "heading": false
+        }
+      ],
+      "extract": "ON THE GAROUFALIDIS-KASHAEV STATE-INTEGRAL INVARIANT by Amelia Palmer Dusenbury A thesis submitted in partial fulfillment of the requirements for the degree of Master of Science in Mathematics Boise State University August 2025 © 2025 Amelia Palmer Dusenbury ALL RIGHTS RESERVED BOISE STATE UNIVERSITY GRADUATE COLLEGE DEFENSE COMMITTEE AND FINAL READING APPROVALS of the thesis submitted by Amelia Palmer Dusenbury",
+      "extractCut": true,
+      "blocks": [
+        "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/prose-sec-front-matter",
+        "library/on-the-garoufalidis-kashaev-state-integral-invariant/blocks/figure-img-p001-1"
+      ]
+    },
+    {
+      "id": "sec-000-acknowledgments",
+      "number": null,
+      "title": "ACKNOWLEDGMENTS",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "iv",
+      "labelEnd": "v",
+      "words": 134,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "harlander",
+          "heading": false
+        },
+        {
+          "term": "teitler",
+          "heading": false
+        },
+        {
+          "term": "zachariah",
+          "heading": false
+        },
+        {
+          "term": "generosity",
+          "heading": false
+        }
+      ],
+      "extract": "This thesis is the product of guidance, encouragement, and quiet generosity from people whom I cannot adequately thank. First and foremost, I thank my advisor, Dr. Uwe Kaiser, whose insight, patience, and relentless curiosity have shaped both this work and my mathematical growth. I am grateful to the members of my thesis committee—Dr. Zachariah Teitler and Dr. Jens Harlander—for their careful reading, constructive",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-abstract",
+      "number": null,
+      "title": "ABSTRACT",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 10,
+      "labelStart": "v",
+      "labelEnd": "x",
+      "words": 2528,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pontryagin duality",
+          "heading": false
+        },
+        {
+          "term": "angled quantum",
+          "heading": false
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "angle structures",
+          "heading": false
+        },
+        {
+          "term": "pentagon identity",
+          "heading": false
+        },
+        {
+          "term": "state-integral",
+          "heading": false
+        },
+        {
+          "term": "topological invariance",
+          "heading": false
+        },
+        {
+          "term": "gaussian group",
+          "heading": false
+        }
+      ],
+      "extract": "This thesis explores a construction of the family of topological invariants for certain oriented 3-manifolds based on the state-integral approach developed by Andersen, Garoufalidis, and Kashaev in the Archimedean setting. Starting from an ideal triangulation of a 3-manifold equipped with angle data, variables are assigned to the faces and tetrahedra, taking values in a so-called ’Gaussian group’. The invariant is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-list-of-tables",
+      "number": null,
+      "title": "LIST OF TABLES",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "x",
+      "labelEnd": "1",
+      "words": 44,
+      "summary": null,
+      "keywords": [],
+      "extract": "5.1 Summary of targets of FF,X,θ . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 44 x 1 CHAPTER 1",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-004-motivation-and-background",
+      "number": null,
+      "title": "Motivation and Background",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 180,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "face-type",
+          "heading": false
+        },
+        {
+          "term": "state-integrals",
+          "heading": false
+        },
+        {
+          "term": "archimedean",
+          "heading": false
+        },
+        {
+          "term": "motivation",
+          "heading": true
+        },
+        {
+          "term": "background",
+          "heading": true
+        },
+        {
+          "term": "thesis",
+          "heading": false
+        },
+        {
+          "term": "topological",
+          "heading": false
+        }
+      ],
+      "extract": "Motivation and Background This thesis considers a class of analytic topological constructions known as face- type state-integrals, focusing on their formulation over Archimedean local fields. These integrals originate in a framework developed by Andersen, Garoufalidis, and Kashaev, which draws together tools from quantum topology, Teichm¨uller theory, and aspects of quantum group representation theory. Face-type",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-overview-of-the-construction",
+      "number": null,
+      "title": "Overview of the Construction",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 195,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dynamical variables",
+          "heading": false
+        },
+        {
+          "term": "overview",
+          "heading": true
+        },
+        {
+          "term": "construction",
+          "heading": true
+        },
+        {
+          "term": "enforces",
+          "heading": false
+        },
+        {
+          "term": "pontryagin",
+          "heading": false
+        }
+      ],
+      "extract": "Overview of the Construction The construction proceeds by associating combinatorial and algebraic data to a triangulated 3-manifold M: In the following F denotes a local field (see 2.4), F × = F \\ {0} and ˆ F × denotes the Pontryagin dual of F ×. • An ideal triangulation X is fixed (specifying the tetrahedra and their face pairings), equipped with an angle structure taking values in R×F × (see 3.3.1). • State",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-main-results",
+      "number": null,
+      "title": "Main Results",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 120,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "angle data",
+          "heading": false
+        },
+        {
+          "term": "state-integral",
+          "heading": false
+        },
+        {
+          "term": "definiton",
+          "heading": false
+        },
+        {
+          "term": "tagon",
+          "heading": false
+        }
+      ],
+      "extract": "Main Results The main results of this work include: 3 1. A construction of the state-integral FF,X,θ over an Archimedean local field F, depending on an ideal triangulation X and a balanced angle structure θ. 2. An exposition that, under positivity assumptions on the angle data and a homo- logical constraint on the complex, the integrand defines a tempered distribution and the state-integral converges 3. A",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-structure-of-the-thesis",
+      "number": null,
+      "title": "Structure of the Thesis",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 107,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "thesis",
+          "heading": true
+        },
+        {
+          "term": "chapter",
+          "heading": false
+        },
+        {
+          "term": "face-type",
+          "heading": false
+        },
+        {
+          "term": "detailing",
+          "heading": false
+        }
+      ],
+      "extract": "Structure of the Thesis The thesis is organized as follows: • Chapter 2 introduces locally compact abelian groups and Pontryagin duality, along with the Gaussian group structures used in the formulation of the integral. • Chapter 3 presents the quantum dilogarithm, its deformation by angle data, and its key functional identities, including inversion and the pentagon relation. • Chapter 4 defines the face-type",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-connections-and-outlook",
+      "number": null,
+      "title": "Connections and Outlook",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 248,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "teichm uller",
+          "heading": false
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "uller theory",
+          "heading": false
+        },
+        {
+          "term": "outlook",
+          "heading": true
+        },
+        {
+          "term": "local fields",
+          "heading": false
+        },
+        {
+          "term": "state-integral",
+          "heading": false
+        },
+        {
+          "term": "self-dual",
+          "heading": false
+        },
+        {
+          "term": "connections",
+          "heading": true
+        }
+      ],
+      "extract": "Connections and Outlook While the focus of this thesis is on a specific construction, the state-integral approach touches on several areas of broader mathematical interest: • Quantum topology: The construction provides different quantum invariants than those usually derived from modular categories and skein-theoretic methods (SL2(C) as opposed to compact gauge groups) [18]. • Teichm¨uller theory: The angle-deformed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-connections-to-representation-theory",
+      "number": null,
+      "title": "Connections to Representation Theory",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 105,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "representation theory",
+          "heading": true
+        },
+        {
+          "term": "connections",
+          "heading": true
+        },
+        {
+          "term": "echoing",
+          "heading": false
+        },
+        {
+          "term": "holonomy-type",
+          "heading": false
+        }
+      ],
+      "extract": "Connections to Representation Theory Although harmonic analysis appears only peripherally in this work, the representa- tion-theoretic context provides important background motivation. At a classical level, the moduli space of flat G-connections on a 3-manifold (character variety) and the boundary data in the state-integral may be interpreted as holonomy-type parameters in this setting. In the quantum case, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-locally-compact-abelian-groups-pontryagin-dualit",
+      "number": null,
+      "title": "Locally Compact Abelian Groups, Pontryagin Duality, and Gaussian Structures HR",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 11,
+      "summary": null,
+      "keywords": [],
+      "extract": "PONTRYAGIN DUALITY, AND GAUSSIAN STRUCTURES [10] 2.1 Locally Compact Abelian Groups",
+      "extractCut": false
+    },
+    {
+      "id": "sec-011-foundational-definitions",
+      "number": null,
+      "title": "Foundational Definitions",
+      "level": 3,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 70,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "local compactness",
+          "heading": false
+        },
+        {
+          "term": "foundational",
+          "heading": true
+        },
+        {
+          "term": "well-posed",
+          "heading": false
+        }
+      ],
+      "extract": "Foundational Definitions Definition 1. A locally compact abelian group (LCA group) is a topological group L satisfying: 1. Abelian structure: xy = yx for all x, y ∈L. 2. Local compactness: Every point x ∈L admits a neighborhood whose closure is compact. 3. Hausdorff separation: Distinct points are separable via disjoint open sets. The combination of commutativity and local compactness ensures the existence of Haar",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-examples",
+      "number": null,
+      "title": "Examples",
+      "level": 3,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 86,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lca groups",
+          "heading": false
+        },
+        {
+          "term": "direct sums",
+          "heading": false
+        },
+        {
+          "term": "encompasses",
+          "heading": false
+        }
+      ],
+      "extract": "Examples The class of LCA groups encompasses: 7 • Euclidean spaces Rn. • The circle group T (written multiplicatively), central to Fourier series. • Discrete groups such as Z, finite cyclic groups Z/nZ, and their countable direct sums. • Compact profinite groups, as inverse limits of finite abelian groups. • Non-Archimedean fields such as Qp. • Direct sums and products of LCA groups, which are also LCA groups. For",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-structure-theorem-informal",
+      "number": null,
+      "title": "Structure Theorem (Informal)",
+      "level": 3,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 44,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "informal",
+          "heading": true
+        },
+        {
+          "term": "lca group",
+          "heading": false
+        },
+        {
+          "term": "structure theorem",
+          "heading": true
+        }
+      ],
+      "extract": "Structure Theorem (Informal) Every LCA group decomposes (non-canonically) into: Theorem 1 (Structure Theorem (informal)). Any LCA group L admits an isomor- phism L ∼= Rn × D × K, where D is discrete, K is compact, and n ∈Z≥0 (the set on non-negative integers).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-014-pontryagin-duality",
+      "number": null,
+      "title": "Pontryagin Duality",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "Pontryagin Duality",
+      "extractCut": false
+    },
+    {
+      "id": "sec-015-character-groups-and-duality",
+      "number": null,
+      "title": "Character Groups and Duality",
+      "level": 3,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 159,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lca group",
+          "heading": false
+        },
+        {
+          "term": "continuous group",
+          "heading": false
+        },
+        {
+          "term": "pontryagin",
+          "heading": false
+        },
+        {
+          "term": "group homomorphism",
+          "heading": false
+        }
+      ],
+      "extract": "Character Groups and Duality Pontryagin duality equips every LCA group with a harmonic dual. Definition 2. A homomorphism of LCA groups is a continuous group homomorphism between locally compact abelian groups. 8 An isomorphism of LCA groups is a group isomorphism ϕ: L →H that is also a homeomorphism. In other words, it is a bijective continuous map whose inverse is also continuous. Definition 3. Let L be a locally",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-pontryagin-duality-theorem",
+      "number": null,
+      "title": "Pontryagin Duality Theorem",
+      "level": 3,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 29,
+      "summary": null,
+      "keywords": [],
+      "extract": "Pontryagin Duality Theorem Theorem 2 (Pontryagin Duality). For any LCA group L, the canonical evaluation map ι: L →bbL, x 7→(χ 7→χ(x)), is an isomorphism of topological abelian groups.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-017-examples-of-dual-pairs",
+      "number": null,
+      "title": "Examples of Dual Pairs",
+      "level": 3,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 21,
+      "summary": null,
+      "keywords": [],
+      "extract": "Examples of Dual Pairs Pontryagin duality inverts compactness and discreteness: bZ ∼= T, bT ∼= Z, c Rn ∼= Rn. 9",
+      "extractCut": false
+    },
+    {
+      "id": "sec-018-gaussian-group",
+      "number": null,
+      "title": "Gaussian Group",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 191,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gaussian group",
+          "heading": true
+        },
+        {
+          "term": "symmetric bicharacter",
+          "heading": false
+        },
+        {
+          "term": "quadratic exponential",
+          "heading": false
+        },
+        {
+          "term": "evenness",
+          "heading": false
+        }
+      ],
+      "extract": "Gaussian Group A Gaussian Group developed in previous works [2, 13] and denominated in [7]. Definition 4. Let G be a locally compact abelian (LCA) group. A Gaussian group is a pair (G, ⟨·⟩) where ⟨·⟩: G →T is a continuous function, called a quadratic exponential, satisfying: 1. Evenness: ⟨x⟩= ⟨−x⟩for all x ∈G. 2. Polarization: the function ⟨x; y⟩:= ⟨x + y⟩ ⟨x⟩⟨y⟩ defines a continuous, symmetric bicharacter ⟨·; ·⟩: G",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-pontryagin-characters-and-gauss-characters",
+      "number": null,
+      "title": "Pontryagin Characters and Gauss Characters",
+      "level": 3,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 186,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gauss characters",
+          "heading": true
+        },
+        {
+          "term": "pontryagin",
+          "heading": true
+        },
+        {
+          "term": "polarisation",
+          "heading": false
+        },
+        {
+          "term": "bicharacter",
+          "heading": false
+        }
+      ],
+      "extract": "Pontryagin Characters and Gauss Characters A Pontryagin character is a continuous homomorphism χ : L −→T, T := {z ∈C | |z| = 1}, so χ(x + y) = χ(x)χ(y). The set of all such characters forms the Pontryagin dual bL, an LCA group in its own right. Gauss characters (quadratic exponentials) on G A Gauss character on the Gaussian group G is a map ⟨·⟩: G −→T with Evenness ⟨−g⟩= ⟨g⟩; polarisation ⟨g + h⟩= ⟨g⟩⟨h⟩⟨g; h⟩, ⟨g;",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-local-fields",
+      "number": null,
+      "title": "Local Fields",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 23,
+      "labelStart": "11",
+      "labelEnd": "13",
+      "words": 247,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "local fields",
+          "heading": true
+        },
+        {
+          "term": "symmetric bicharacter",
+          "heading": false
+        },
+        {
+          "term": "evaluation pairing",
+          "heading": false
+        },
+        {
+          "term": "gaussian group",
+          "heading": false
+        },
+        {
+          "term": "special gaussian",
+          "heading": false
+        }
+      ],
+      "extract": "Local Fields Local fields give rise to special Gaussian groups [7]. Definition 5 (Special Gaussian group created from a local field). Let F be a local field [3]. Denote by F × its multiplicative group, endowed with the subspace topology, and by c F × := Homcont(F ×, T) its Pontryagin dual—the group of continuous T-valued characters. Canonical evaluation pairing. There is a natural evaluation map e : c F × × F × −→T,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-quantum-dilogarithm",
+      "number": null,
+      "title": "Quantum Dilogarithm",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 42,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum dilogarithm",
+          "heading": true
+        },
+        {
+          "term": "myriad",
+          "heading": false
+        },
+        {
+          "term": "five-term",
+          "heading": false
+        }
+      ],
+      "extract": "The quantum dilogarithm arose as a deformation of the classical dilogarithm. Its myriad of forms and versions are a mathematical epic [21]. Notable are [5] which quantized the Rogers five-term dilogarithm identity and relating a cyclic quantum dilogarithm to a 6j-symbol [15].",
+      "extractCut": false
+    },
+    {
+      "id": "sec-022-a-quantum-dilogarithm-over-a-gaussian-group",
+      "number": null,
+      "title": "A quantum dilogarithm over a Gaussian group",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 111,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum dilogarithm",
+          "heading": true
+        },
+        {
+          "term": "gaussian group",
+          "heading": true
+        },
+        {
+          "term": "dudvdw",
+          "heading": false
+        }
+      ],
+      "extract": "A quantum dilogarithm over a Gaussian group Definition 6. [7] A quantum dilogarithm over a Gaussian group G is a tempered distribution on G, represented by a locally integrable function φ: G →C defined almost everywhere, satisfying the following two conditions: 1. Inversion relation: There exists a nonzero constant c ∈C \\ {0} such that φ(x)φ(−x) = c · ⟨x⟩ (3.1) for almost all x ∈G. 14 2. Pentagon identity: For",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-a-quantum-dilogarithm-over-a-special-gaussian-gr",
+      "number": null,
+      "title": "A quantum dilogarithm over a Special Gaussian Group",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 69,
+      "summary": null,
+      "keywords": [],
+      "extract": "A quantum dilogarithm over a Special Gaussian Group Definition 7. [7] The quantum dilogarithm over A = ˆB × B for B = F × is the function φ : ˆB × (B \\ {−1}) →T, φ(α, x) := α(1 + x) We refer to φ as a tempered distribution on A, undefined at x = −1, but this is inconsequential since {−1} is a measure-zero subset of B.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-024-fourier-transform-of-the-archimedean-quantum-dil",
+      "number": null,
+      "title": "Fourier transform of the Archimedean quantum dilogarithm",
+      "level": 3,
+      "pageStart": 24,
+      "pageEnd": 26,
+      "labelStart": "14",
+      "labelEnd": "16",
+      "words": 380,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fourier transform",
+          "heading": true
+        },
+        {
+          "term": "archimedean",
+          "heading": true
+        },
+        {
+          "term": "archimedean local",
+          "heading": false
+        },
+        {
+          "term": "local field",
+          "heading": false
+        },
+        {
+          "term": "dilogarithm",
+          "heading": true
+        }
+      ],
+      "extract": "Fourier transform of the Archimedean quantum dilogarithm Lemma 1. Let F be an Archimedean local field (R or C), and set A := c F × × F ×. For φ(α, x) := α(1 + x), (α, x) ∈A, x̸ = −1, the inverse Fourier transform (with respect to the kernel recalled in 2.4) ˜φ(β, y) := Z A φ(α, x) ⟨(α, x); (β, y)⟩d(α, x) is, for y̸ = 1, 15 ˜φ(β, y) = 1 β(y −1) 1 ∥1 −y−1∥. Proof. Let F be an Archimedean local field, so that F × is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-pentagon-identity-in-the-archimedean-case",
+      "number": null,
+      "title": "Pentagon identity in the Archimedean case",
+      "level": 3,
+      "pageStart": 26,
+      "pageEnd": 28,
+      "labelStart": "16",
+      "labelEnd": "18",
+      "words": 316,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pentagon identity",
+          "heading": true
+        },
+        {
+          "term": "rhs",
+          "heading": false
+        },
+        {
+          "term": "lhs",
+          "heading": false
+        },
+        {
+          "term": "archimedean",
+          "heading": true
+        }
+      ],
+      "extract": "Pentagon identity in the Archimedean case Theorem 3. The function φ(α, x) = α(1 + x) satisfies the distributional pentagon identity: ˜φ(α, x) ˜φ(β, y)α(y)β(x) = Z A ˜φ(β −γ, y/z) ˜φ(γ, z) ˜φ(α −γ, x/z)γ(z) d(γ, z) (3.3) for all (α, x), (β, y) ∈A. Proof of Theorem 3. Recall from Lemma 1 that for (η, t) ∈bB × B =: A with t̸ = 1 ˜φ(η, t) = 1 η(t −1) 1 ∥1 −t−1∥= f(t) η(t −1), f(t) := 1 ∥1 −t−1∥. Compute LHS. ˜φ(α, x)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-angled-quantum-dilogarithm",
+      "number": null,
+      "title": "Angled Quantum Dilogarithm",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 28,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 54,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum dilogarithm",
+          "heading": true
+        },
+        {
+          "term": "angled",
+          "heading": true
+        },
+        {
+          "term": "state-integral",
+          "heading": false
+        }
+      ],
+      "extract": "Angled Quantum Dilogarithm To define the analytic weight functions that drive the state-integral invariant, we now introduce an angle-deformed quantum dilogarithm Ψa,c derived from the primitive function φ. This deformation encodes geometric data and satisfies a pentagon identity modified by angle parameters, crucial for proving the topological invariance of the state-integral under Pachner moves.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-027-angle-space-and-structure",
+      "number": null,
+      "title": "Angle Space and Structure",
+      "level": 3,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 134,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "angle space",
+          "heading": true
+        },
+        {
+          "term": "multiplicative component",
+          "heading": false
+        },
+        {
+          "term": "gation",
+          "heading": false
+        }
+      ],
+      "extract": "Angle Space and Structure Let us define the angle space as the product group: C := R × B, where B := F × is the multiplicative group of a local field F with the group law being addition for the first component and multiplication for the second; so the the product is a LCA group. An element a ∈C is called an angle and is written as a = (˙a, ¨a), where ˙a ∈R is the additive component and ¨a ∈B is the multiplicative",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-triangle-angle-condition",
+      "number": null,
+      "title": "Triangle Angle Condition",
+      "level": 3,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": "19",
+      "labelEnd": "19",
+      "words": 56,
+      "summary": null,
+      "keywords": [],
+      "extract": "Triangle Angle Condition When three angles a, b, c ∈C are assigned to a triangle, they are required to satisfy: a + b + c = (1, −1), ensuring a canonical normalization. In terms of a and c, the third angle b is given by: b = (1, −1) −a −c = (1 −˙a −˙c, −(¨a¨c)−1).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-029-definition-of-the-angled-quantum-dilogarithm",
+      "number": null,
+      "title": "Definition of the Angled Quantum Dilogarithm",
+      "level": 3,
+      "pageStart": 29,
+      "pageEnd": 31,
+      "labelStart": "19",
+      "labelEnd": "21",
+      "words": 345,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "angled quantum",
+          "heading": true
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": true
+        },
+        {
+          "term": "tempered distribution",
+          "heading": false
+        },
+        {
+          "term": "distribution ensures",
+          "heading": false
+        },
+        {
+          "term": "identities involving",
+          "heading": false
+        }
+      ],
+      "extract": "Definition of the Angled Quantum Dilogarithm Definition 8 (Angled Quantum Dilogarithm as a Distribution [7]). The angle-dependent quantum dilogarithm is defined as the tempered distribution Ψa,c ∈S′( bB × B), whose representative on test functions (α, x) ∈bB × (B \\ {¨a−1}) is given almost everywhere by the complex-valued formula: Ψa,c(α, x) = 1 α((1 −¨ax)¨c) · ∥¨ax∥˙c ∥1 −¨ax∥1−˙a. 20 Here, ∥·∥denotes the absolute",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-temperedness-and-positivity",
+      "number": null,
+      "title": "Temperedness and Positivity",
+      "level": 3,
+      "pageStart": 31,
+      "pageEnd": 34,
+      "labelStart": "21",
+      "labelEnd": "24",
+      "words": 489,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tempered distribution",
+          "heading": false
+        },
+        {
+          "term": "positivity",
+          "heading": true
+        },
+        {
+          "term": "worst polynomial",
+          "heading": false
+        },
+        {
+          "term": "schwartz space",
+          "heading": false
+        },
+        {
+          "term": "temperedness",
+          "heading": true
+        },
+        {
+          "term": "behavior near",
+          "heading": false
+        },
+        {
+          "term": "fourier analysis",
+          "heading": false
+        },
+        {
+          "term": "integrable",
+          "heading": false
+        }
+      ],
+      "extract": "Temperedness and Positivity While several known examples in [1, 14, 6] define versions of Ψ within the Schwartz space, our function is generally a tempered distribution under a positivity constraint on the angle parameters. The Schwartz space S(Rn) (see [12] chapter 5, [16] chapter 1, and [17] chapter 5) consists of smooth functions whose derivatives decay faster than any polynomial. These functions are ideal for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-symmetries-of-the-angled-quantum-dilogarithm",
+      "number": null,
+      "title": "Symmetries of the Angled Quantum Dilogarithm",
+      "level": 3,
+      "pageStart": 34,
+      "pageEnd": 36,
+      "labelStart": "24",
+      "labelEnd": "26",
+      "words": 306,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "angled",
+          "heading": true
+        },
+        {
+          "term": "localises",
+          "heading": false
+        },
+        {
+          "term": "insert",
+          "heading": false
+        },
+        {
+          "term": "dilogarithm",
+          "heading": true
+        },
+        {
+          "term": "acter",
+          "heading": false
+        }
+      ],
+      "extract": "Symmetries of the Angled Quantum Dilogarithm Throughout this section we adopt the shorthand (−α)(z) := α−1(z) = α(z)−1, i.e. the inverse character. Note in particular (−α)(z)̸ = −α(z). Theorem 4 (Symmetry relations). Let b := (1, −1) −a −c. Then Ψa,c(α−1, 1/x)α(x) = ¯Ψa,b(α, x), (3.4a) Z b B×B Ψa,c(β, y)α(x/y)β(y/x)d(β, y) = ¯Ψb,c(α, x). (3.4b) Proof of (3.4a). Insert (α−1, 1/x) into the definition of Ψa,c:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-angled-pentagon-identity",
+      "number": null,
+      "title": "Angled Pentagon Identity",
+      "level": 3,
+      "pageStart": 36,
+      "pageEnd": 40,
+      "labelStart": "26",
+      "labelEnd": "30",
+      "words": 657,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "angled pentagon",
+          "heading": true
+        },
+        {
+          "term": "pentagon identity",
+          "heading": true
+        },
+        {
+          "term": "pentagon identities",
+          "heading": false
+        },
+        {
+          "term": "classical pentagon",
+          "heading": false
+        },
+        {
+          "term": "angle deformation",
+          "heading": false
+        },
+        {
+          "term": "angle parameters",
+          "heading": false
+        },
+        {
+          "term": "field gaussian",
+          "heading": false
+        },
+        {
+          "term": "gaussian group",
+          "heading": false
+        }
+      ],
+      "extract": "Angled Pentagon Identity A central result is the angle-dependent pentagon identity: Theorem 5 (Angled Pentagon Identity). Let Ψi := Ψai,ci. Then: Ψ1(α, x)Ψ3(β, y) = Z b B×B Ψ0(α −γ, x/z)Ψ2(γ, z)Ψ4(β −γ, y/z) · α(y/z)β(x/z) γ(xy/z2) d(γ, z), (3.5) provided the angle parameters satisfy: a1 = a0 + a2, a3 = a2 + a4, c1 = c0 + a4, c3 = a0 + c4, c2 = c1 + c3. These relations correspond to a 2–3 Pachner move in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-the-state-integral-invariant",
+      "number": null,
+      "title": "The State-Integral Invariant",
+      "level": 1,
+      "pageStart": 40,
+      "pageEnd": 40,
+      "labelStart": "30",
+      "labelEnd": "30",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-034-triangulations-and-state-variables",
+      "number": null,
+      "title": "Triangulations and State Variables",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 41,
+      "labelStart": "30",
+      "labelEnd": "31",
+      "words": 215,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "state variables",
+          "heading": true
+        },
+        {
+          "term": "triangular faces",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulation",
+          "heading": false
+        },
+        {
+          "term": "geometric boundary",
+          "heading": false
+        },
+        {
+          "term": "skeleton",
+          "heading": false
+        },
+        {
+          "term": "tetrahedra",
+          "heading": false
+        }
+      ],
+      "extract": "Triangulations and State Variables Let X be a finite ∆–complex obtained by gluing the faces of a finite collection of oriented tetrahedra in pairs; see Hatcher [9] for background on ∆–complexes. We denote • X3 – the set of tetrahedra; • X2 – the set of triangular faces; • (∂X)2 ⊂X2 – those faces that are not glued to a partner face. (These are the genuine boundary faces of the 3–complex; note the round bracket:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-the-kinematical-kernel",
+      "number": null,
+      "title": "The Kinematical Kernel",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 42,
+      "labelStart": "31",
+      "labelEnd": "32",
+      "words": 130,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kinematical kernel",
+          "heading": true
+        },
+        {
+          "term": "local kernel",
+          "heading": false
+        },
+        {
+          "term": "sgn",
+          "heading": false
+        }
+      ],
+      "extract": "The Kinematical Kernel The combinatorial coherence of the triangulation is enforced via the kinematical kernel, which incorporates the gluing relations among face variables. Local Kernel For each tetrahedron T ∈X3, with vertices labeled 0 < 1 < 2 < 3, we define the local kernel: KT(x, z) := ⟨x0; zT⟩sgn(T) · δA(x0 −x1 + x2) · δA(x2 −x3 + zT), (4.1) where: • xi ∈A are the state variables assigned to the faces opposite",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-angle-structures-and-dynamical-weights",
+      "number": null,
+      "title": "Angle Structures and Dynamical Weights",
+      "level": 2,
+      "pageStart": 42,
+      "pageEnd": 42,
+      "labelStart": "32",
+      "labelEnd": "32",
+      "words": 5,
+      "summary": null,
+      "keywords": [],
+      "extract": "Angle Structures and Dynamical Weights",
+      "extractCut": false
+    },
+    {
+      "id": "sec-037-balanced-angle-structures",
+      "number": null,
+      "title": "Balanced Angle Structures",
+      "level": 3,
+      "pageStart": 42,
+      "pageEnd": 43,
+      "labelStart": "32",
+      "labelEnd": "33",
+      "words": 202,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "balanced angle",
+          "heading": true
+        },
+        {
+          "term": "dihedral angles",
+          "heading": false
+        },
+        {
+          "term": "angle structure",
+          "heading": false
+        },
+        {
+          "term": "edge",
+          "heading": false
+        }
+      ],
+      "extract": "Balanced Angle Structures A balanced angle structure assigns combinatorial dihedral angles to each pair (T, e), where T is an ideal tetrahedron in a triangulation X3, and e is an edge of T. Let θ: X3,1 −→C := R × F ×, where X3,1 = {(T, e) : T ∈X3, e is an edge of T}. Define the projection ϕ: X3,1 −→X1, ϕ(T, e) := e, which forgets the tetrahedron and retains only the edge. Definition 10 (Balanced Edge). Let X3,1 =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-quantum-dilogarithmic-weights",
+      "number": null,
+      "title": "Quantum Dilogarithmic Weights",
+      "level": 3,
+      "pageStart": 43,
+      "pageEnd": 44,
+      "labelStart": "33",
+      "labelEnd": "34",
+      "words": 124,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dilogarithmic",
+          "heading": true
+        },
+        {
+          "term": "angle parameters",
+          "heading": false
+        },
+        {
+          "term": "quantum",
+          "heading": true
+        }
+      ],
+      "extract": "Quantum Dilogarithmic Weights Given a balanced angle structure θ, each tetrahedron T ∈X3 contributes a quantum weight depending on its assigned angle parameters. If θ assigns (a, c) ∈C to T, and zT is the associated integration variable, define the local weight: DT,θ(zT) :=        Ψa,c(zT), if sgn(T) = +1, Ψa,c(zT), if sgn(T) = −1, where Ψa,c is the quantum dilogarithm function defined in Section 3.3. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-the-state-integral-definition",
+      "number": null,
+      "title": "The State-Integral Definition",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 44,
+      "labelStart": "34",
+      "labelEnd": "34",
+      "words": 68,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "state-integral",
+          "heading": true
+        },
+        {
+          "term": "wavefunction",
+          "heading": false
+        },
+        {
+          "term": "archimedean",
+          "heading": false
+        }
+      ],
+      "extract": "The State-Integral Definition The Archimedean state-integral is defined as: FR,X,θ(y) := Z AX3 KX(y, z) · DX,θ(z)dz. (4.3) • If (∂X)2 = ∅, this integral yields a scalar. • If (∂X)2̸ = ∅, it yields a tempered distribution in the boundary variables y ∈ A∂X2. Remark 7. In physical terms, FR,X,θ(y) may be viewed as a quantum wavefunction encoding boundary holonomy data within the Chern–Simons framework [19, 4].",
+      "extractCut": false
+    },
+    {
+      "id": "sec-040-summary-of-the-construction",
+      "number": null,
+      "title": "Summary of the Construction",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 46,
+      "labelStart": "34",
+      "labelEnd": "36",
+      "words": 76,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "summary",
+          "heading": true
+        },
+        {
+          "term": "elucidated",
+          "heading": false
+        },
+        {
+          "term": "construction",
+          "heading": true
+        }
+      ],
+      "extract": "Summary of the Construction To summarize, the construction consists of: • An ideal triangulation X of M; • A balanced angle structure θ: X3,1 →C; • State variables x ∈AX2, dynamical variables z ∈AX3; 35 • The kinematical kernel KX(y, z); • The dynamical weight DX,θ(z); • The final integral yielding FR,X,θ(y). The analytic convergence, Pachner invariance, and angle gauge invariance of this integral will be elucidated",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-target-of-the-state-integral",
+      "number": null,
+      "title": "Target of the State-Integral",
+      "level": 1,
+      "pageStart": 46,
+      "pageEnd": 46,
+      "labelStart": "36",
+      "labelEnd": "36",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-042-target-statement-for-the-archimedean-state-integ",
+      "number": null,
+      "title": "Target Statement for the Archimedean State-Integral",
+      "level": 2,
+      "pageStart": 46,
+      "pageEnd": 46,
+      "labelStart": "36",
+      "labelEnd": "36",
+      "words": 50,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "archimedean state-integral",
+          "heading": true
+        },
+        {
+          "term": "target",
+          "heading": true
+        },
+        {
+          "term": "angulation",
+          "heading": false
+        }
+      ],
+      "extract": "Target Statement for the Archimedean State-Integral Let M be a compact, oriented 3-manifold equipped with an ordered ideal tri- angulation X. The analytic target of the Archimedean state-integral depends on the topology and boundary structure of M, and reflects the deformation parameters introduced via the angle-dependent quantum dilogarithm Ψa,c. 5.2",
+      "extractCut": false
+    },
+    {
+      "id": "sec-043-manifolds-with-boundary-m",
+      "number": null,
+      "title": "Manifolds with Boundary (M =)",
+      "level": 2,
+      "pageStart": 46,
+      "pageEnd": 47,
+      "labelStart": "36",
+      "labelEnd": "37",
+      "words": 79,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boundary",
+          "heading": true
+        },
+        {
+          "term": "wavefunction",
+          "heading": false
+        },
+        {
+          "term": "archimedean",
+          "heading": false
+        }
+      ],
+      "extract": "Let (∂X)2 denote the set of boundary faces of the triangulation. • The analytic state space is the Archimedean Gaussian group: A := c F × × F ×, where F = R or C. • For a fixed balanced angle structure θ, the state-integral defines a tempered distribution: FF,X,θ ∈S′(A(∂X)2), acting on Schwartz test functions over the boundary face variables. 37 • Equivalently, FF,X,θ may be interpreted as a quantum boundary",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-manifolds-with-torus-boundary-m-5-55-55-55-5t2",
+      "number": null,
+      "title": "Manifolds with Torus Boundary (M .5-.5.5-.5.5-.5.5-.5T2)",
+      "level": 3,
+      "pageStart": 47,
+      "pageEnd": 48,
+      "labelStart": "37",
+      "labelEnd": "38",
+      "words": 179,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum state-integral",
+          "heading": false
+        },
+        {
+          "term": "boundary",
+          "heading": true
+        },
+        {
+          "term": "holonomy data",
+          "heading": false
+        },
+        {
+          "term": "meridional",
+          "heading": false
+        },
+        {
+          "term": "holonomies",
+          "heading": false
+        }
+      ],
+      "extract": "For manifolds with toroidal boundary components: • The quantum state-integral acquires dependence on longitudinal–meridional holonomy data via H1(∂M; C) ∼= C2, whereC = R × F ×. Here, C is the group parameterizing the angle structure—specifically, the addi- tive and multiplicative angle holonomies associated to each peripheral direction of the boundary torus. In this framework, holonomies are not generic complex",
+      "extractCut": true
+    },
+    {
+      "id": "sec-045-closed-manifolds-m",
+      "number": null,
+      "title": "Closed Manifolds (M = )",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 48,
+      "labelStart": "38",
+      "labelEnd": "38",
+      "words": 48,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "distributional",
+          "heading": false
+        },
+        {
+          "term": "state-integral",
+          "heading": false
+        },
+        {
+          "term": "balanced",
+          "heading": false
+        }
+      ],
+      "extract": "• If M is closed, the state-integral becomes a scalar: FF,M ∈C, computed as an absolutely convergent integral over internal dynamical variables z ∈AX3. • The value depends on the choice of balanced angle structure (if multiple such structures exist), but no distributional structure appears in this case.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-046-angle-structures-and-parameter-dependence",
+      "number": null,
+      "title": "Angle Structures and Parameter Dependence",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 49,
+      "labelStart": "38",
+      "labelEnd": "39",
+      "words": 90,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "angle",
+          "heading": true
+        },
+        {
+          "term": "angle structure",
+          "heading": false
+        },
+        {
+          "term": "state-integral",
+          "heading": false
+        }
+      ],
+      "extract": "Angle Structures and Parameter Dependence • The state-integral requires a choice of balanced angle structure: θ ∈Angle(X) ⊆CX3,1, with C := R × F ×, satisfying compatibility constraints (tetrahedra and edge balancing). • The angle structure θ determines the dilogarithmic deformation parameters (a, c) ∈C used in each quantum weight Ψa,c. • The target space S′(A(∂X)2) does not depend on θ itself; rather, θ determines",
+      "extractCut": true
+    },
+    {
+      "id": "sec-047-algebraic-background",
+      "number": null,
+      "title": "Algebraic Background",
+      "level": 2,
+      "pageStart": 49,
+      "pageEnd": 51,
+      "labelStart": "39",
+      "labelEnd": "41",
+      "words": 354,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "internal edges",
+          "heading": false
+        },
+        {
+          "term": "ordered ideal",
+          "heading": false
+        },
+        {
+          "term": "k-simplices",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulation",
+          "heading": false
+        },
+        {
+          "term": "gauge group",
+          "heading": false
+        },
+        {
+          "term": "cochains",
+          "heading": false
+        },
+        {
+          "term": "abelian group",
+          "heading": false
+        }
+      ],
+      "extract": "Algebraic Background Definition 11 (Cochains on an Ordered Ideal Triangulation). Let X be an ordered ideal triangulation of a compact 3-manifold M, and let G be an abelian group. A k-cochain on X with coefficients in G is a function defined on the set of combinatorial k-simplices of X, respecting orientation. We denote: Ck(X; G) := {ϕ: Xor k →G}, where Xor k is the set of oriented k-simplices in the triangulation X,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-summary-table",
+      "number": null,
+      "title": "Summary Table",
+      "level": 3,
+      "pageStart": 51,
+      "pageEnd": 51,
+      "labelStart": "41",
+      "labelEnd": "41",
+      "words": 33,
+      "summary": null,
+      "keywords": [],
+      "extract": "Summary Table Table 5.1: Summary of targets of FF,X,θ Geometric Setting Target of FF,X,θ General 3-manifold with boundary S′(A(∂X)2) Manifold with torus boundary C, labeled by (λ, µ) ∈H1(∂M; C) Closed 3-manifold C",
+      "extractCut": false
+    },
+    {
+      "id": "sec-049-remark",
+      "number": null,
+      "title": "Remark",
+      "level": 3,
+      "pageStart": 51,
+      "pageEnd": 52,
+      "labelStart": "41",
+      "labelEnd": "42",
+      "words": 82,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "elucidates",
+          "heading": false
+        },
+        {
+          "term": "state-integral",
+          "heading": false
+        },
+        {
+          "term": "aligns",
+          "heading": false
+        }
+      ],
+      "extract": "Remark The analytic nature of the state-integral reflects a synthesis of: • Combinatorial topology via ideal triangulations and face gluings; • Harmonic analysis on self-dual Gaussian groups; • Functional identities of the angled quantum dilogarithm Ψa,c, including the pentagon relation; • Quantum holonomy representation theory via angle structures and boundary data. This aligns with frameworks developed in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-050-topological-invariance-of-the-state-integral",
+      "number": null,
+      "title": "Topological Invariance of the State-Integral",
+      "level": 1,
+      "pageStart": 52,
+      "pageEnd": 53,
+      "labelStart": "42",
+      "labelEnd": "43",
+      "words": 109,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "state-integral",
+          "heading": true
+        },
+        {
+          "term": "invariance",
+          "heading": true
+        },
+        {
+          "term": "angle-dependent",
+          "heading": false
+        },
+        {
+          "term": "rests",
+          "heading": false
+        }
+      ],
+      "extract": "STATE-INTEGRAL We now show, the state-integral, constructed using the angle-dependent quantum dilogarithm Ψa,c over a self-dual Gaussian group, defines a topological invariant of 3-manifolds with torus boundary. This invariance rests on three core principles: (P1) Invariance under ordered Pachner 2 ↔3 moves — ensured by the angled pentagon identity of Ψa,c; (P2) Analytic convergence and tempered behavior —",
+      "extractCut": true
+    },
+    {
+      "id": "sec-051-the-pentagon-identity-and-pachner-moves",
+      "number": null,
+      "title": "The Pentagon Identity and Pachner Moves",
+      "level": 2,
+      "pageStart": 53,
+      "pageEnd": 53,
+      "labelStart": "43",
+      "labelEnd": "43",
+      "words": 6,
+      "summary": null,
+      "keywords": [],
+      "extract": "The Pentagon Identity and Pachner Moves",
+      "extractCut": false
+    },
+    {
+      "id": "sec-052-combinatorics-of-the-pachner-move",
+      "number": null,
+      "title": "Combinatorics of the Pachner Move",
+      "level": 3,
+      "pageStart": 53,
+      "pageEnd": 53,
+      "labelStart": "43",
+      "labelEnd": "43",
+      "words": 51,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pachner move",
+          "heading": true
+        },
+        {
+          "term": "tetrahedra sharing",
+          "heading": false
+        },
+        {
+          "term": "alters",
+          "heading": false
+        }
+      ],
+      "extract": "Combinatorics of the Pachner Move The 2 ↔3 Pachner move alters an ideal triangulation by replacing two tetrahedra sharing a face with three tetrahedra sharing an edge. At the analytic level, this local modification is governed by the angled pentagon identity satisfied by the function Ψa,c, as developed in Theorem 5.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-053-analytic-expression-via-pentagon-identity",
+      "number": null,
+      "title": "Analytic Expression via Pentagon Identity",
+      "level": 3,
+      "pageStart": 53,
+      "pageEnd": 54,
+      "labelStart": "43",
+      "labelEnd": "44",
+      "words": 92,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pentagon identity",
+          "heading": true
+        },
+        {
+          "term": "balancing",
+          "heading": false
+        },
+        {
+          "term": "analytic",
+          "heading": true
+        }
+      ],
+      "extract": "Analytic Expression via Pentagon Identity Let A := c F × × F × be the Gaussian group over a local field F. The pentagon identity ensures: Ψa1,c1(α, x) · Ψa3,c3(β, y) = Z A Ψa0,c0(α −γ, x/z)Ψa2,c2(γ, z)Ψa4,c4(β −γ, y/z) · α(y/z)β(x/z) γ(xy/z2) d(γ, z), provided the angle parameters satisfy the balancing relations: a1 = a0 + a2, a3 = a2 + a4, c1 = c0 + a4, c3 = a0 + c4, c2 = c1 + c3. This identity reflects exact",
+      "extractCut": true
+    },
+    {
+      "id": "sec-054-p1-pachner-invariance",
+      "number": null,
+      "title": "(P1) Pachner Invariance",
+      "level": 2,
+      "pageStart": 54,
+      "pageEnd": 54,
+      "labelStart": "44",
+      "labelEnd": "44",
+      "words": 3,
+      "summary": null,
+      "keywords": [],
+      "extract": "(P1) Pachner Invariance",
+      "extractCut": false
+    },
+    {
+      "id": "sec-055-triangulation-equivalence",
+      "number": null,
+      "title": "Triangulation Equivalence",
+      "level": 3,
+      "pageStart": 54,
+      "pageEnd": 54,
+      "labelStart": "44",
+      "labelEnd": "44",
+      "words": 33,
+      "summary": null,
+      "keywords": [],
+      "extract": "Triangulation Equivalence Definition 13. Two ordered triangulations X and X′ of a 3-manifold are Pachner- equivalent if they are related by a finite sequence of 2 ↔3 moves, preserving vertex ordering and orientation.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-056-invariance-theorem",
+      "number": null,
+      "title": "Invariance Theorem",
+      "level": 3,
+      "pageStart": 54,
+      "pageEnd": 54,
+      "labelStart": "44",
+      "labelEnd": "44",
+      "words": 82,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "invariance",
+          "heading": true
+        },
+        {
+          "term": "pachner",
+          "heading": false
+        },
+        {
+          "term": "move",
+          "heading": false
+        }
+      ],
+      "extract": "Invariance Theorem Theorem 6 (P1: Pachner Move Invariance). Let X ∼X′ via Pachner moves. Then for any compatible balanced angle structure θ, the state-integrals coincide: FF,X,θ = FF,X′,θ′. Sketch. Each local move is mediated by the angled pentagon identity of Ψa,c. The identity ensures that integrating over three tetrahedra is analytically equal to the product over two, provided angle parameters satisfy the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-057-p2-analytic-control-and-temperedness",
+      "number": null,
+      "title": "(P2) Analytic Control and Temperedness",
+      "level": 2,
+      "pageStart": 54,
+      "pageEnd": 54,
+      "labelStart": "44",
+      "labelEnd": "44",
+      "words": 5,
+      "summary": null,
+      "keywords": [],
+      "extract": "(P2) Analytic Control and Temperedness",
+      "extractCut": false
+    },
+    {
+      "id": "sec-058-tempered-distribution-framework",
+      "number": null,
+      "title": "Tempered Distribution Framework",
+      "level": 3,
+      "pageStart": 54,
+      "pageEnd": 55,
+      "labelStart": "44",
+      "labelEnd": "45",
+      "words": 36,
+      "summary": null,
+      "keywords": [],
+      "extract": "Tempered Distribution Framework The state-integral is: FF,X,θ(y) = Z AX3 KX(y, z) · DX,θ(z)dz, 45 where: • KX imposes gluing via delta constraints and pairings; • DX,θ = Q Ψa,c assigns weighted quantum amplitudes to tetrahedra.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-059-conditions-ensuring-convergence",
+      "number": null,
+      "title": "Conditions Ensuring Convergence",
+      "level": 3,
+      "pageStart": 55,
+      "pageEnd": 55,
+      "labelStart": "45",
+      "labelEnd": "45",
+      "words": 82,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ensuring",
+          "heading": true
+        },
+        {
+          "term": "tempered",
+          "heading": false
+        },
+        {
+          "term": "convergence",
+          "heading": true
+        }
+      ],
+      "extract": "Conditions Ensuring Convergence From Lemma 2, the function Ψa,c is a tempered distribution on A under: 0 < ˙a, ˙b, ˙c < 1, ˙a + ˙b + ˙c = 1. This ensures: • Local integrability of the integrand; • Polynomial boundedness at infinity; • Distributional action on test functions ϕ ∈S(A(∂X)2). Theorem 7 (P2: Analytic Control). Let θ be a balanced angle structure satisfying the positivity constraints above. Then FF,X,θ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-060-p3-angle-gauge-invariance",
+      "number": null,
+      "title": "(P3) Angle Gauge Invariance",
+      "level": 2,
+      "pageStart": 55,
+      "pageEnd": 55,
+      "labelStart": "45",
+      "labelEnd": "45",
+      "words": 4,
+      "summary": null,
+      "keywords": [],
+      "extract": "(P3) Angle Gauge Invariance",
+      "extractCut": false
+    },
+    {
+      "id": "sec-061-internal-angle-shifts",
+      "number": null,
+      "title": "Internal Angle Shifts",
+      "level": 3,
+      "pageStart": 55,
+      "pageEnd": 56,
+      "labelStart": "45",
+      "labelEnd": "46",
+      "words": 34,
+      "summary": null,
+      "keywords": [],
+      "extract": "Internal Angle Shifts A gauge transformation modifies internal angles without changing their sum around any edge: θ 7→θ + λ, 46 where λ: X3,1 →C is a closed 1-cochain supported away from boundary data.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-062-cancellation-in-the-integral",
+      "number": null,
+      "title": "Cancellation in the Integral",
+      "level": 3,
+      "pageStart": 56,
+      "pageEnd": 56,
+      "labelStart": "46",
+      "labelEnd": "46",
+      "words": 59,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cancellation",
+          "heading": true
+        },
+        {
+          "term": "integral",
+          "heading": true
+        },
+        {
+          "term": "internal",
+          "heading": false
+        }
+      ],
+      "extract": "Cancellation in the Integral Due to the symmetries of Ψa,c (see Theorem 4), these shifts propagate through the integral but cancel globally when: • The sum of internal angles at each edge remains unchanged; • The gluing equations are preserved. Theorem 8 (P3: Gauge Invariance). The state-integral FF,X,θ is invariant under gauge transformations (Definition 12)of the internal angle structure.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-063-topological-invariance-theorem",
+      "number": null,
+      "title": "Topological Invariance Theorem",
+      "level": 2,
+      "pageStart": 56,
+      "pageEnd": 58,
+      "labelStart": "46",
+      "labelEnd": "48",
+      "words": 465,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "topological invariance",
+          "heading": true
+        },
+        {
+          "term": "internal edge",
+          "heading": false
+        },
+        {
+          "term": "balanced angle",
+          "heading": false
+        },
+        {
+          "term": "boundary holonomies",
+          "heading": false
+        },
+        {
+          "term": "andersen kashaev",
+          "heading": false
+        },
+        {
+          "term": "angle structure",
+          "heading": false
+        },
+        {
+          "term": "gaussian group",
+          "heading": false
+        },
+        {
+          "term": "free abelian",
+          "heading": false
+        }
+      ],
+      "extract": "Topological Invariance Theorem Theorem 9 (Topological Invariance). Let M be a compact, oriented 3-manifold with torus boundary and H2(M, Z) = 0. Then the state-integral FF,M : H1(∂M; C) →C is independent of the choice of ideal triangulation X and balanced angle structure θ, and thus defines a topological invariant of M. Remark 8. C = c R× × R× denotes the coefficient system arising from the Gaussian group,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-064-conceptual-summary",
+      "number": null,
+      "title": "Conceptual Summary",
+      "level": 2,
+      "pageStart": 58,
+      "pageEnd": 59,
+      "labelStart": "48",
+      "labelEnd": "49",
+      "words": 76,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conceptual",
+          "heading": true
+        },
+        {
+          "term": "angle-deformed",
+          "heading": false
+        },
+        {
+          "term": "summary",
+          "heading": true
+        }
+      ],
+      "extract": "Conceptual Summary The angle-deformed state-integral formalism upholds a mathematically rigorous topological invariant by combining: • Triangulation combinatorics, captured via Pachner moves; • Angle structures, encoding geometric deformation parameters; • Quantum harmonic analysis over Gaussian groups; • Functional identities of the quantum dilogarithm Ψa,c; • Tempered distribution theory, ensuring analytic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-065-references",
+      "number": null,
+      "title": "REFERENCES",
+      "level": 1,
+      "pageStart": 59,
+      "pageEnd": 61,
+      "labelStart": "49",
+      "labelEnd": "51",
+      "words": 386,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rinat kashaev",
+          "heading": false
+        },
+        {
+          "term": "jørgen ellegaard",
+          "heading": false
+        },
+        {
+          "term": "ellegaard andersen",
+          "heading": false
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "modern physics",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "local fields",
+          "heading": false
+        },
+        {
+          "term": "logic",
+          "heading": false
+        }
+      ],
+      "extract": "REFERENCES [1] Jørgen Ellegaard Andersen and Rinat Kashaev. A TQFT from quantum Te- ichm¨uller theory, May 2012. [2] Jørgen Ellegaard Andersen and Rinat Kashaev. Complex Quantum Chern- Simons. 9 2014. [3] Qaiser Jahan Biswaranjan Behera. Wavelet Analysis on Local Fields of Positive Characteristic. Springer, 2021. [4] Tudor Dimofte. Quantum Riemann Surfaces in Chern-Simons Theory. Adv. Theor. Math. Phys.,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 1,
+        "items": [
+          "6.6 Conceptual Summary"
+        ]
+      },
+      "page_mismatch": {
+        "count": 17,
+        "items": [
+          "Introduction: listed p8, found p11",
+          "Motivation and Background: listed p8, found p11",
+          "Overview of the Construction: listed p9, found p12",
+          "Main Results: listed p9, found p12",
+          "Structure of the Thesis: listed p10, found p13",
+          "Connections and Outlook: listed p11, found p14",
+          "Connections to Representation Theory: listed p12, found p15",
+          "Structures [10]: listed p14, found p16",
+          "Locally Compact Abelian Groups: listed p14, found p16",
+          "Foundational Definitions: listed p14, found p16",
+          "Examples: listed p14, found p16",
+          "Structure Theorem (Informal): listed p15, found p17",
+          "Character Groups and Duality: listed p15, found p17",
+          "Examples of Dual Pairs: listed p16, found p18",
+          "Gaussian Group: listed p17, found p19",
+          "Pontryagin Characters and Gauss Characters: listed p18, found p20",
+          "Local Fields: listed p19, found p21"
+        ]
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 16,
+      "items": [
+        "p23: pdf-labels 13, printed 13, contents 16",
+        "p40: pdf-labels 30, printed 30, contents 33",
+        "p41: pdf-labels 31, printed 31, contents 34",
+        "p42: pdf-labels 32, printed 32, contents 35",
+        "p43: pdf-labels 33, printed 33, contents 36",
+        "p44: pdf-labels 34, printed 34, contents 37",
+        "p46: pdf-labels 36, printed 36, contents 39",
+        "p47: pdf-labels 37, printed 37, contents 40",
+        "p48: pdf-labels 38, printed 38, contents 41",
+        "p49: pdf-labels 39, printed 39, contents 42",
+        "p51: pdf-labels 41, printed 41, contents 44",
+        "p52: pdf-labels 42, printed 42, contents 45",
+        "p53: pdf-labels 43, printed 43, contents 46",
+        "p54: pdf-labels 44, printed 44, contents 47",
+        "p55: pdf-labels 45, printed 45, contents 48",
+        "p56: pdf-labels 46, printed 46, contents 49"
+      ]
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "quantum state-integral",
+      "heading": false
+    },
+    {
+      "term": "archimedean state-integral",
+      "heading": true
+    },
+    {
+      "term": "balanced angle",
+      "heading": true
+    },
+    {
+      "term": "angle structure",
+      "heading": true
+    },
+    {
+      "term": "internal angle",
+      "heading": true
+    },
+    {
+      "term": "state-integral definition",
+      "heading": true
+    },
+    {
+      "term": "face-type state-integral",
+      "heading": false
+    },
+    {
+      "term": "angle parameters",
+      "heading": false
+    },
+    {
+      "term": "angle data",
+      "heading": false
+    },
+    {
+      "term": "state-integral invariant",
+      "heading": true
+    },
+    {
+      "term": "angle gauge",
+      "heading": true
+    },
+    {
+      "term": "quantum dilogarithm",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "Summer 2025",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": "iii",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "iv",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 5,
+      "label": "v",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 6,
+      "label": "vi",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "vii",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "viii",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "ix",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "x",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 11,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 29,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 31,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 35,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 36,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 37,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 38,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 39,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 40,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 41,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 42,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 43,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 44,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 45,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 46,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 47,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 48,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 49,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 50,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 51,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 52,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 53,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 54,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 55,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 56,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 57,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 58,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 59,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 60,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 61,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "table",
+      "number": "5.1",
+      "title": "Summary of targets of FF,X,θ Geometric Setting",
+      "page": 51,
+      "pageLabel": "41",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 67,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 67,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p59); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 67 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/on-the-garoufalidis-kashaev-state-integral-invariant"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-hep-th-9712256v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "On structure constants and fusion rules in the SL(2,C)/SU(2) WZNW model",
+      "dcterms:creator": [
+        "SL(2, C)/SU(2) WZNW MODEL"
+      ],
+      "dcterms:issued": "D:20181107",
+      "dcterms:identifier": "https://arxiv.org/abs/hep-th/9712256",
+      "dcterms:abstract": "A closed formula for the structure constants in the SL(2,C)/SU(2) WZNW model is derived by a method previously used in Liouville theory. With the help of a reﬂection amplitude that follows from the structure constants one obtains a proposal for the fusion rules from canonical quantization. Taken together these pieces of information allow an unambigous deﬁnition of any genus zero n-point function.",
+      "dcterms:source": "library/arxiv-hep-th-9712256v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-hep-th-9712256v2"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-ohtsuki-tower-bar-parity",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:ohtsuki-tower-bar-parity",
+  "kind": "remark",
+  "title": "Bar-parity of the Ohtsuki tower at the imaginary substrate: even rungs are $\\mathrm{Re}\\,\\mathfrak{V}$ (mass), odd rungs are $\\mathrm{Im}\\,\\mathfrak{V}$ (the bar-odd $S$)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-im-q-physical-role",
+    "papers/quantum-observable-universe/blocks/rem-c3-s-imq-decay-projection"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-im-q-physical-role",
+  "cites": [
+    "references/andersen-mistegard2020"
+  ],
+  "tags": [
+    "im-q",
+    "ohtsuki-tower",
+    "complex-volume",
+    "bar-parity",
+    "c3-bar-odd",
+    "q-beta",
+    "candidate-iii",
+    "deuteron-binding",
+    "wedderburn-conjugation"
+  ],
+  "text": "rem-ohtsuki-tower-bar-parity.md",
+  "provenance": "authored"
+}

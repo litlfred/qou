@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-categorical-neutron-exists",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:categorical-neutron-exists",
+  "kind": "proposition",
+  "title": "Existence of the categorical neutron",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-neutron",
+    "papers/quantum-observable-universe/blocks/prop-categorical-proton-exists"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-categorical-neutron-exists"
+  ],
+  "tags": [
+    "existence",
+    "neutron",
+    "baryon"
+  ],
+  "leanRef": "qou:QOU.CategoricalNeutron.exists",
+  "text": "categorical-neutron-exists.md",
+  "leanSource": "categorical-neutron-exists.lean",
+  "provenance": "authored"
+}

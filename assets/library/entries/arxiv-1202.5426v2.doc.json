@@ -1,0 +1,722 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1202.5426v2",
+  "title": "Hard analysis meets critical knots",
+  "variant": "pdf",
+  "pages": 49,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Euler-Lagrange equation: Proof of Theorem I",
+      "number": "2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-euler-lagrange-equation-proof-of-theorem-i"
+    },
+    {
+      "level": 1,
+      "title": "Initial regularity: Proof of Theorem III",
+      "number": "3",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-initial-regularity-proof-of-theorem-iii"
+    },
+    {
+      "level": 1,
+      "title": "Bootstrapping: Proof of Theorem IV",
+      "number": "4",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-bootstrapping-proof-of-theorem-iv"
+    },
+    {
+      "level": 1,
+      "title": "A Appendix",
+      "number": null,
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 166,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "obius energy",
+          "heading": false
+        },
+        {
+          "term": "schikorra",
+          "heading": false
+        },
+        {
+          "term": "freiburg",
+          "heading": false
+        },
+        {
+          "term": "reiter",
+          "heading": false
+        },
+        {
+          "term": "armin",
+          "heading": false
+        },
+        {
+          "term": "blatt",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1202.5426v2 [math.AP] 23 Jul 2012 Hard analysis meets critical knots Stationary points of the M¨obius energy are smooth S. Blatt∗ Φ. Reiter∗∗ A. Schikorra∗∗∗ June 30, 2018 We prove that if a curve γ ∈H3/2(R/Z, Rn) parametrized by arc length is a sta- tionary point of the M¨obius energy introduced by Jun O’Hara in [O’H91], then γ is smooth. Our methods only rely on purely analytical arguments, entirely with-",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1202.5426v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 5,
+      "labelStart": "2",
+      "labelEnd": "5",
+      "words": 1476,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "local minimizers",
+          "heading": false
+        },
+        {
+          "term": "obius energy",
+          "heading": false
+        },
+        {
+          "term": "obius invariance",
+          "heading": false
+        },
+        {
+          "term": "knot energy",
+          "heading": false
+        },
+        {
+          "term": "knot class",
+          "heading": false
+        },
+        {
+          "term": "fhw",
+          "heading": false
+        },
+        {
+          "term": "energies",
+          "heading": false
+        },
+        {
+          "term": "smoothness",
+          "heading": false
+        }
+      ],
+      "extract": "To ﬁnd nice geometric representatives within a given knot class, several new energies have been invented in the last two decades. The earliest knot energy for smooth curves was the so-called M¨obius energy introduced by Jun O’Hara in [O’H91], E(2)(γ) := Z R/Z 1/2 Z −1/2 1 |γ(u + w) −γ(u)|2 − 1 dγ(u + w, u)2 ! γ′(u + w) γ′(u) dw du which was later on extended to the family of energies E(α,p)(γ) := Z R/Z 1/2 Z −1/2 1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-euler-lagrange-equation-proof-of-theorem-i",
+      "number": "2",
+      "title": "Euler-Lagrange equation: Proof of Theorem I",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 16,
+      "labelStart": "5",
+      "labelEnd": "16",
+      "words": 3089,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "θ2w",
+          "heading": false
+        },
+        {
+          "term": "lim sup",
+          "heading": false
+        },
+        {
+          "term": "directional derivatives",
+          "heading": false
+        },
+        {
+          "term": "pointwise derivative",
+          "heading": false
+        },
+        {
+          "term": "deﬁnes continuous",
+          "heading": false
+        },
+        {
+          "term": "continuous mapping",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst variation",
+          "heading": false
+        },
+        {
+          "term": "diﬀerentiable",
+          "heading": false
+        }
+      ],
+      "extract": "This section is devoted to the proof of Theorem I which especially involves the derivation of a formula for the ﬁrst variation. By H3/2 ir we will denote the set of injective and regular curves in H3/2. The set H1,∞ ir is deﬁned accordingly. First we will need the following lemma, to guarantee that E(2) is well deﬁned on a suﬃciently small H3/2 ∩H1,∞neighborhood of the curve γ: Lemma 2.1 (H3/2 ir ∩H1,∞is open in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-initial-regularity-proof-of-theorem-iii",
+      "number": "3",
+      "title": "Initial regularity: Proof of Theorem III",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 32,
+      "labelStart": "16",
+      "labelEnd": "32",
+      "words": 4830,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "s1w",
+          "heading": false
+        },
+        {
+          "term": "s2w",
+          "heading": false
+        },
+        {
+          "term": "iωi",
+          "heading": false
+        },
+        {
+          "term": "bλr",
+          "heading": false
+        },
+        {
+          "term": "feasible test-function",
+          "heading": false
+        },
+        {
+          "term": "fractional laplacian",
+          "heading": false
+        },
+        {
+          "term": "s4w",
+          "heading": false
+        },
+        {
+          "term": "ωji",
+          "heading": false
+        }
+      ],
+      "extract": "Note that if we consider the constant factors to be irrelevant with respect to the mathematical argument, for the sake of simplicity we will omit them in the calculations, writing ≲, ≳, ≈ instead of ≤, ≥and =. Most techniques for dealing with critical partial diﬀerential equations of fractional order have been developed for equations on the whole Euclidean space. For that reason, we prefer work- ing on the real line",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-bootstrapping-proof-of-theorem-iv",
+      "number": "4",
+      "title": "Bootstrapping: Proof of Theorem IV",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 49,
+      "labelStart": "32",
+      "labelEnd": null,
+      "words": 4552,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bλr",
+          "heading": false
+        },
+        {
+          "term": "sobolev inequality",
+          "heading": false
+        },
+        {
+          "term": "sobolev spaces",
+          "heading": false
+        },
+        {
+          "term": "older inequality",
+          "heading": false
+        },
+        {
+          "term": "obius energy",
+          "heading": false
+        },
+        {
+          "term": "iteration lemma",
+          "heading": false
+        },
+        {
+          "term": "rivi ere",
+          "heading": false
+        },
+        {
+          "term": "quasi-locality",
+          "heading": false
+        }
+      ],
+      "extract": "In Theorem III we have shown, that |D| 1 2 g′ ∈Lp for some p > 2. We now work with Bessel- potential / Sobolev spaces Hs,q, cf. [RS96, Tar07, Tri83], and the fact that |D| 1 2 g′ ∈Lp readily implies that g′ ∈H 3 2 , ˜p for some ˜p ∈(2, p). The proof of Theorem IV relies on the decomposi- tion of the ﬁrst variation δE(2)(γ, h) = 2 lim εց0 \" Uε ⟨γ′(u), h′(u)⟩ |γ(u + w) −γ(u)|2 −⟨γ(u + w) −γ(u), h(u + w) −h(u)⟩ |γ(u +",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Blatt∗ Φ. Reiter∗∗ A. Schikorra∗∗∗ June 30,"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "obius energy",
+      "heading": false
+    },
+    {
+      "term": "bλr",
+      "heading": false
+    },
+    {
+      "term": "obius invariance",
+      "heading": false
+    },
+    {
+      "term": "s1w",
+      "heading": false
+    },
+    {
+      "term": "s2w",
+      "heading": false
+    },
+    {
+      "term": "sobolev inequality",
+      "heading": false
+    },
+    {
+      "term": "knot energy",
+      "heading": false
+    },
+    {
+      "term": "iωi",
+      "heading": false
+    },
+    {
+      "term": "lim sup",
+      "heading": false
+    },
+    {
+      "term": "sobolev spaces",
+      "heading": false
+    },
+    {
+      "term": "applying lemma",
+      "heading": false
+    },
+    {
+      "term": "hara knot",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 5,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 5,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p32); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 5 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1202.5426v2"
+  }
+}

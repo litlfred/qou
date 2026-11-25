@@ -1,0 +1,61 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/kwiat-2024-jhepgc-elementary-fermions/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Elementary Fermions: Strings, Planck Constant, Preons and Hypergluons",
+  "contains": [
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-front-matter",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-000",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-001",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-002",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-003",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-004",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-005",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-006",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-007",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-008",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-009",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-010",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-011",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-012",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-013",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-014",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-015",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-016",
+    "library/kwiat-2024-jhepgc-elementary-fermions/sections/sec-017"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Elementary Fermions: Strings, Planck Constant, Preons and Hypergluons — Using real fields instead of complex ones, it is suggested here that the fer- mions are pairs of coupled strings with an\n\n**Elementary Fermions: Strings, Planck Constant, Preons and Hypergluons**\n\n*Elementary Fermions: Strings, Planck Constant*\n\n19 pp, 19 sections.\n\n**Abstract.** Using real fields instead of complex ones, it is suggested here that the fer- mions are pairs of coupled strings with an internal tension. The interaction between the two coupled strings is due to an exchange mechanism which is proportional to Planck’s constant. This may be the result of two massless bo- sons (hypergluons) coupled by a preon (prequark) exchange. It also gives a physical explanation to the origin of the Planck constant, and origin of spin.\n\n**Outline.** Front matter; Elementary Fermions: Strings, Planck Constant,; Abstract; Keywords; 1 Introduction; 2 Schrödinger Equation; 3 A 2-String Analog to the Schrödinger Equatio; 4 Interaction Model; 5 From Strings Back to Schrödinger; 6 Interference; 7 Dirac Equation with Real Wave Functions; 8 Transition to a Boosted System; 9 Eight Real Components; 10 Solution; 11 Spin up and Spin down; 12 Weyl and Majorana; 13 Conclusions; Conflicts of Interest",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "kwiat-2024-jhepgc-elementary-fermions",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "kwiat-2024-jhepgc-elementary-fermions.pdf",
+    "source_sha256": "5a2d73e878d7fa8f25f119e1ed71076550be449cd11decf5abd70993211de36b",
+    "pages": 19,
+    "arxiv": null,
+    "doi": "10.4236/jhepgc.2024.101008",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

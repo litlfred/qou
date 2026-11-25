@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/groebner-basis.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/groebner-basis",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "groebner-basis",
+      "title": "Gröbner Basis Skill",
+      "description": "Compute Gröbner bases for non-commutative algebras (Hecke, braid group, TL category) using Singular letterplace or Python hecke_division.py. Reduce nuclear braid words, compute Markov traces, extract Q-values.",
+      "instructionsPath": "skills/local/groebner-basis.md",
+      "instructionLines": 114,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

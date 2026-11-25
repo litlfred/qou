@@ -1,0 +1,484 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2208.13448v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2208.13448v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Diﬀerence Galois theory is the subject of many recent papers b ecause, for instance, of\nits application to (diﬀerential) transcendence of solution s of diﬀerence equations. More\nprecisely, consider a ﬁeld k equipped with an automorphism φ. Let C ⊂ C be an\nalgebraically closed ﬁeld of characteristic 0. Typical exa mples we are going to consider in\nthis paper are\n• (Case S, shift) k = C(z) and φY (z) = Y (z + h) with h ∈ C ∗;\n• (Case Q, q-diﬀerence) k = C\n(\nz1/∗)\n:= ∪∞\nℓ=1C(z1/ℓ) and φY (z) = Y (qz) with\nq ∈ C ∗ that is not a root of unity;\n• (Case M, Mahler) k = C\n(\nz1/∗)\nand φY (z) = Y (zp) wi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.13448v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Galois groups",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-21-galois-groups.md",
+      "narrative": null,
+      "content": "of the diﬀerence Galois groups of q-hypergeometric equations, see [ Roq11] and density\ntheorems [ RS06, Pou20] but the present introduction does not pretend to be exhaust ive.\nToward the proof of diﬀerential transcendence, we often need to prove that the diﬀerence\nGalois group is suﬃciently big, making it important to be abl e to compute the latter.\nHowever, the computation of diﬀerence Galois groups is in gen eral a diﬃcult task. In the\nliterature one can ﬁnd many algorithms for the computation o f Galois groups. The most\ndeveloped area is the one of diﬀerential equations: many algo rithms ar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.13448v2/blocks/thm-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Theorem 6.13",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "thm-sec-001-01.md",
+      "narrative": null,
+      "content": "For all t ∈ C∗, the diﬀerence Galois group of (1.1) is GL3(C). Using [DHR21, Corollary 3.1] and Theorem 6.13, we may prove that for all t ∈ C∗, there are no nontrivial algebraic diﬀerential relations between U (z, t), U (qz, t) and U (q2z, t) over C(z1/∗). Now, we describe more precisely the content of this paper. Af ter some reminders about the Galois theory of diﬀerence equations in Section 2.1, we recall a criterion in Section 2.2 to know if the Galois group G of a diﬀerence equation is reducible or not. In Section 2.3, we explain what we need, as a framework, in order to compute G in pract",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2208.13448v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Notations and conventions",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-notations-and-conventions.md",
+      "narrative": null,
+      "content": "In what follows,  all rings are commutative with identity and contain the field of rational numbers.  In particular, all fields are of characteristic zero. \n\nIf $G$ is an algebraic group, we denote by $G^0$ the connected component of the identity of $G$.\nLet $(\\k,\\phi)$ be a difference field, that is, a field equipped with an automorphism  and let $[A]_{\\phi}$ be the difference system $\\phi(Y)=AY$ where $A\\in\\GL_n\\left(\\k\\right)$. To lighten notations, we denote it $[A]$ when there is no ambiguity.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.13448v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Difference algebra",
+      "pageStart": 3,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-2-difference-algebra.md",
+      "narrative": null,
+      "content": "\\label{sec:diffceAlgebra}\n\\subsection{Galois groups}\n\\label{sec:GaloisGp}\n\n\nIn this section, we make a short overview of the Galois theory of linear difference equations.  \nFor more details on what follows, we refer to \\cite[Chapter~1]{van2006galois}.\nA difference ring is a commutative ring $\\Rb$ equipped with an automorphism $\\phi : \\Rb\\rightarrow \\Rb$. We denote by $C_{\\Rb}:= \\{c\\in \\Rb| \\phi(c)=c\\}$, the constants of the difference ring $(\\Rb,\\phi)$. A difference ideal $I$ of a difference ring $(\\Rb,\\phi)$ is an ideal such that $\\phi(I)\\subset I$.  If $\\Rb$ is a field, we call $(\\Rb,\\phi)$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.13448v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From theory to practice",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-23-from-theory-to-practice.md",
+      "narrative": null,
+      "content": "\\label{sec:theoryPractice}\nWe recall that the aim of this paper is to explain how one can compute theoretically the Galois group of a difference equation of order $3$.\nIn practice we may also need to make more assumptions on the difference field $(\\k,\\phi)$ in order to compute effectively the difference Galois groups:\n\\begin{itemize}\n\\item\nAssume that $\\mathbf{k}$ is an effective field,\ni.e. that one can compute representatives of the four operations $+,-,\\times,/$ and one can effectively test whether two elements of $\\mathbf{k}$ are equal.  \n\\item \nAssume that, given a homogeneous linear diff",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.13448v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Galois groups of difference systems",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-3-galois-groups-of-difference-systems.md",
+      "narrative": null,
+      "content": "\\label{sec:GaloisGpDiffceSystems}\n\nConsider the difference system \\eqref{eq:diffcesystembase} and let \n $G\\subset \\GL_{n}(C)$ be its Galois group.   In order to compute $G$, we follow the strategy of the seminal paper \\cite{hendriks1998algorithm}, that is,  computing a gauge transformation $T\\in \\mathrm{GL}_n (\\k)$ such that $[\\phi(T)AT^{-1}]$ is in reduced form.  We will study the following cases (definitions of reducible and imprimitive groups are given in the corresponding section): \n \\begin{itemize}\n \\item $G$ is reducible;\n \\item $G$ is irreducible and imprimitive;\n \\item $G$ is irreducib",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.13448v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The reducible case",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-006-31-the-reducible-case.md",
+      "narrative": null,
+      "content": "\\label{sec:reducible case}\n\nLet us treat the case where the Galois group $G$ is reducible.  By Lemma  \\ref{lem1},  $G$ is reducible if and only if there exist $T\\in \\mathrm{GL}_n(\\k)$,  $A_1\\in \\mathrm{GL}_m(\\k)$, $m<n$,  and $A_2,A_3$ matrices of convenient size,    such that \n$$\\phi(T)AT^{-1}=\\left(\\begin{array}{cc}\nA_1 &  A_2\\\\\n0 & A_3  \n\\end{array}\\right).\n$$\n\nThe strategy of reduction will follow the one given in the differential setting in \\cite[Section 5]{dreyfus2019computing}.   Let us assume that the bloc diagonal system $[D]$, where $D:=\\begin{pmatrix}\nA_1&0 \\\\ \n0 &A_3 \n\\end{pmatrix}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.13448v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The imprimitive case",
+      "pageStart": 11,
+      "pageEnd": 19,
+      "target": "../sections/sec-007-32-the-imprimitive-case.md",
+      "narrative": null,
+      "content": "\\label{sec:imprimitive case}\n\n Let $G$ be an algebraic subgroup of $\\GL_{n}(C)$.  We say that $G$ is imprimitive if there exists a nontrivial decomposition into $C$-vector spaces  $C^n =V_1 \\oplus \\dots \\oplus V_k$, such that any element of $G$ induces a permutation between the $V_i$.  We say that $G$ is primitive otherwise.  \n\nConsider $G$, an imprimitive group and let us write a decomposition   $C^n =V_1 \\oplus \\dots \\oplus V_k$.  The image of $V_1$ under  an element of $G$ is of the form $V_j$,  where $V_j$ and $V_1$ have the same dimension. If we further assume that $G$ is irreducible, for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.13448v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The primitive case",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-008-33-the-primitive-case.md",
+      "narrative": null,
+      "content": "In this section, we assume that $G$ is irreducible, primitive, and $n$ is prime. We want to prove that the same holds for $G^0$ and $D(G^0)$ where $D(G^0)$ denotes the derived group of $G^0$. Note that $G^0$ is a connected normal subgroup of $G$ and $D(G^0)$ is a connected normal subgroup of $G^0$. \n\nFirst, we recall the following result given in \\cite[Lemma 4.2]{adamczewski2021hypertranscendence}.\n\n\\begin{lem}\n\\label{lem:connected+irred}\n    If $K\\subset \\GL_n(C)$ is a connected and irreducible algebraic group, then $K$ is also primitive. \n\\end{lem}\n\n\n\\begin{lem}\n\\label{lem:irred_primitive_G^",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.13448v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Galois groups of equations of order one and diagonal systems",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-009-4-galois-groups-of-equations-of-order-one-and-di.md",
+      "narrative": null,
+      "content": "\\label{sec:GaloisGpsOrderOneEtDiag}\n\n\n\\subsection{Galois groups of equations of order one}\\label{secorder1}\n\nWe consider the equation of order one\n\\begin{equation}\n\\label{eq:orderone}\n\\phi(y)=\\alpha y \\, \\quad \\alpha\\in \\k^*.\n\\end{equation}\n\nLet us now see how to compute the Galois group $G$ of this difference equation. Recall that since $G\\subset \\mathrm{GL}_1 (C)$ is an algebraic group, either $G$ is $C^*$, or it is isomorphic to $\\Z/\\ell\\Z$ for some $\\ell \\in \\N^*$.\n\n\\begin{prop}\\label{propord1}\n We have $G\\sim \\Z/\\ell\\Z$ if and only if there exists $\\zeta$, a primitive $\\ell$th root of uni",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.13448v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Galois groups of diagonal systems",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/sec-010-42-galois-groups-of-diagonal-systems.md",
+      "narrative": null,
+      "content": "\\label{sec:diagonalCase}\n\nFor more details on what follows, we refer to \\cite[Section 2.2]{van2006galois}.\nLet us consider a diagonal system \n\\begin{equation}\n\\label{eq:diagsyst}\n\\phi(Y)=\\mathrm{Diag}\\left(\\alpha_1,\\ldots,\\alpha_n\\right) Y \n\\end{equation}\nwhere $\\mathrm{Diag}\\left(\\alpha_1,\\ldots,\\alpha_n\\right)\\in\\GL_n\\left(\\k\\right)$ is the diagonal matrix whose nonzero entry at the line $i$ is $\\alpha_i$.  \nBy Theorem~\\ref{theo:reduced form}, the Galois group is an algebraic subgroup of the $n$-dimensional torus $T$.  The matrices of $G$ are of the form $\\mathrm{Diag} (c_1, \\dots , c_n)$.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.13448v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Galois groups of equations of order two",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-011-5-galois-groups-of-equations-of-order-two.md",
+      "narrative": null,
+      "content": "\\label{secord2}\nConsider a difference equation of order $2$\n$$  \\phi^2 (y)+a_1 \\phi (y)+a_0 y=0, \\quad \\text{where}\\quad  a_i\\in \\k\\quad \\text{and}\\quad  a_0  \\neq 0.$$\n Let \n $$\n L :=   \\phi^2 +a_1 \\phi +a_0\\in \\k\\left< \\phi,\\phi^{-1}\\right>\n $$ \nbe the corresponding difference operator and let $G\\subset \\GL_{2}(C)$ be its Galois group.  We want to compute $G$.  An algorithm in the cases (Q), (S), (E), (M) is presented in \\cite{hendriks1997algorithm, hendriks1998algorithm,  dreyfus2015galois,roques2018algebraic} respectively.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.13448v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Reducible case",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-012-61-reducible-case.md",
+      "narrative": null,
+      "content": "We first decide whether $L$ has a right factor of order one.  This is the case if and only if $G$ is reducible.  Recall, see Lemma \\ref{lem:eq left factor},  that it is equivalent to the existence of  a solution $\\alpha$ of the Riccati equation $\\phi(y)y+a_1y+a_0=0$. \\par \nAssume first that $L$ is reducible and let us write $L=(\\phi-\\beta)(\\phi-\\alpha)$.  Then, $\\alpha$ is a solution of the Riccati equation  $\\phi(y)y+a_1y+a_0=0$, and $\\beta$ is determined by $\\alpha \\beta=a_0$.  The difference equation is equivalent to $\\phi(Y)=AY$ where $A=\\left(\\begin{array}{cc}\n\\alpha &  1\\\\\n0 & \\beta\n\\end",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.13448v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Galois groups of equations of order three",
+      "pageStart": 23,
+      "pageEnd": 30,
+      "target": "../sections/sec-013-6-galois-groups-of-equations-of-order-three.md",
+      "narrative": null,
+      "content": "\\label{secord3}\n\n\nConsider a linear  difference equation of order $3$ \n$$  \\phi^3 (y)+ a_2 \\phi^2 (y)+a_1 \\phi (y)+a_0 y=0, \\quad \\text{where}\\quad  a_i\\in \\k\\quad \\text{and}\\quad  a_0 \\neq 0.$$\n Let \n $$\n L :=  \\phi^3 + a_2 \\phi^2 +a_1 \\phi +a_0\\in \\k\\left< \\phi,\\phi^{-1}\\right>\n $$ \nbe the corresponding difference operator and let $G\\subset \\GL_{3}(C)$ be its Galois group.  We want to compute $G$. \n \n \n\\subsection{Reducible case}\n \n We follow the strategy explained in Section \\ref{sec:reducible case} to treat the case where $G$ is reducible.  By \\cite[Lemma~4.4]{adamczewski2021hypertranscend",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.13448v2/blocks/ex-sec-014-07",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 34,
+      "target": "ex-sec-014-07.md",
+      "narrative": null,
+      "content": "Consider G the diﬀerence Galois group of (1.1) over C(z1/∗). Assume that t ⁄= 0 . Assume by contradiction that D(G) = SO 3(C). The eigenvalues of matrices of SO3(C) are of the form (1, a±1), a ∈ C∗. Then, the eigenvalues of elements of G are for the form (c, ca±1), c, a ∈ C∗. By [RS09, Section 2.4] , combined with the computation of the Newton polygon in Example 3.15, G contains the so-called theta torus, elements of the form Diag(1, 1, d), d ∈ C∗. If the triple Diag(1, 1, d) is of the form (c, ca±1), then either a = 1 = c = d, or a = c = −1 and d = −1. Then, Diag(1, 1, 2) can never be of the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2208.13448v2/blocks/lem-sec-014-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 34,
+      "target": "lem-sec-014-03.md",
+      "narrative": null,
+      "content": "Assume that G is irreducible and primitive. Let k be the algebraic closure of k. We may extend φ on the latter. The following facts are equivalent. • D(G) = SO 3(C). • there exist T ∈ GL3(k), λ ∈ k∗ and B ∈ SO3(k) such that (6.6) φ(T )AT −1 = λB. • there exist T ∈ GL3(k), λ ∈ k ∗ and B ∈ SO3(k) such that (6.6) holds.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2208.13448v2/blocks/lem-sec-014-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 34,
+      "target": "lem-sec-014-04.md",
+      "narrative": null,
+      "content": "Let K be a ﬁeld of characteristic zero. Let X ∈ GLn(K) be a symmetric matrix. Then, there exist F, D ∈ GLn(K) with D diagonal such that X = F DF t.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2208.13448v2/blocks/lem-sec-014-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 34,
+      "target": "lem-sec-014-05.md",
+      "narrative": null,
+      "content": "The following facts are equivalent. • There exist T ∈ GL3(k), λ ∈ k ∗ and B ∈ SO3(k) such that (6.6) holds. • There exist λ ∈ k ∗ , X ∈ GL3(k) such that X = X t, and AXAt = λ2φ(X).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2208.13448v2/blocks/prop-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 34,
+      "target": "prop-sec-014-01.md",
+      "narrative": null,
+      "content": "Assume that G is irreducible and primitive. Then, G = Z(G).D(G), where Z(G) is included in the group of scalar matrices and D(G) is either SL3(C) or SO3(C).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2208.13448v2/blocks/prop-sec-014-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 34,
+      "target": "prop-sec-014-06.md",
+      "narrative": null,
+      "content": "Assume that G is irreducible and primitive. Then, D(G) = SO 3(C) if and only if there exists X ∈ SL3(k) such that X = X t and AXAt = det(A)2/3φ(X).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2208.13448v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Imprimitive case",
+      "pageStart": 30,
+      "pageEnd": 34,
+      "target": "../sections/sec-014-62-imprimitive-case.md",
+      "narrative": null,
+      "content": "imprimitive. This case is solved in Section 3.2. It is imprimitive if and only if the diﬀerence\nGalois group of φ3Y = A[3]Y is diagonal. We use the reducible case (with φ replaced by\nφ3) to check this property. In that case we are able to compute d ∈ k∗, solution of the\nRiccati equation corresponding to φ3Y = A[3]Y . We now follow Proposition 3.10. Let us\ncompute a reduced form of φ(y) = dy, that is compute f ∈ k∗ such that φ(y) = d φ(f )\nf y\nis reduced. Then, a reduced form is given by\n\n\n0 1 0\n0 0 f −1\nφ(f )d 0 0\n\n with reduction matrix\nDiag(1, 1, f).\n6.3. Primitive case. Assume now tha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.13448v2/blocks/rem-sec-014-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 34,
+      "target": "rem-sec-014-02.md",
+      "narrative": null,
+      "content": "If D(G) = SL 3(C), then Z(G) = {λId3 where λ3 ∈ det(G)} . Recall that det(G) is the Galois group of an equation of order one φ(y) = det( A)y. Assume now D(G) = SO 3(C). If det(G) = C ∗, then Z(G) = C ∗. If det(G) = Un with gcd(n, 3) ⁄= 1 , then Z(G) = U3n. In the case det(G) = Un with gcd(n, 3) = 1 , we have Z(G) = U3n or Un. We want to give a criterion to decide whether D(G) = SO 3(C) or not. Let us prove the following lemma.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2208.13448v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary",
+      "pageStart": 34,
+      "pageEnd": 34,
+      "target": "../sections/sec-015-64-summary.md",
+      "narrative": null,
+      "content": "Let \n $$\n L := \\phi^3 + a_2 \\phi^2 +a_1 \\phi +a_0\\in \\k\\left< \\phi,\\phi^{-1}\\right>\n $$  and let $G\\subset \\GL_{3}(C)$ be the Galois group of $Ly=0$.\n \nIf the Riccati  equation  attached to $L$ or the similar equation attached to $L^{\\vee}$  has a solution then $G$ is reducible. Otherwise, it is irreducible.\n\\medskip\n\nWhen it is the reducible case, $L$ or  $L^{\\vee}$ has a right factor of order $1$ denoted by $\\phi-\\alpha$. Consider the case where $L$  has a right factor of order $1$, the other situation is similar. Therefore, up to an isomorphism, the Galois group $G$ is the one of the system",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.13448v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Application to the differential transcendence",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "../sections/sec-016-7-application-to-the-differential-transcendence.md",
+      "narrative": null,
+      "content": "\\label{sec:appliDiffalTranscendence}\n\nLet $\\k$ be a field of characteristic zero and $(\\k,\\phi,\\partial)$ be a $\\mathcal{C}^1$-field with no proper finite difference field extension,   equipped with an automorphism $\\phi$, and a derivation $\\partial$, that is an additive morphism satisfying the Leibnitz rule $\\partial(fg)=\\partial(f)g+f\\partial(g)$. Let us assume that $\\phi$ and $\\partial$ commute.  In our examples, we may take $\\partial=\\partial_z$ (case S and E),  and $\\partial=z \\partial_z$ (case Q).  In the Mahler case,  we could adapt as in \\cite{dreyfus2018hypertranscendence} the framewo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.13448v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 35,
+      "pageEnd": 37,
+      "target": "../sections/sec-017-references.md",
+      "narrative": null,
+      "content": "[AB98] S. A. Abramov and M. A. Barkatou. Rational solutions o f ﬁrst order linear diﬀerence systems.\nIn Proceedings of the 1998 International Symposium on Symboli c and Algebraic Computation\n(Rostock), pages 124–131. ACM, New York, 1998.\n[AB01] Sergei A. Abramov and Manuel Bronstein. On solutions of linear functional systems. In\nProceedings of the 2001 International Symposium on Symboli c and Algebraic Computation ,\npages 1–6. ACM, New York, 2001.\n[ABPS21] Sergei A Abramov, Manuel Bronstein, Marko Petkovˇ sek, and Carsten Schneider. On rational\nand hypergeometric solutions of linear ordinary d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

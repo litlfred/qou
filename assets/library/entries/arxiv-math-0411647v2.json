@@ -1,0 +1,538 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0411647v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0411647v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "1\nASYMPTOTICS OF CHARACTERS OF SYMMETRIC GROUPS,\nABSTRACT. The convolution of indicators of two conjugacy classes on\nthe symmetric group Sq is usually a complicated linear combination of\nindicators of many conjugacy classes. Similarly, a product of the mo-\nments of the Jucys–Murphy element involves many conjugacy classes\nwith complicated coefﬁcients. In this article we consider a combinato-\nrial setup which allows us to manipulate such products easily: to each\nconjugacy class we associate a two-dimensional surface and the asymp-\ntotic properties of the conjugacy class depend only on the genus",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411647v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Irreducible representations of large symmetric groups",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-11-irreducible-representations-of-large-symmetri.md",
+      "narrative": null,
+      "content": "[]{#subsec:need label=\"subsec:need\"}\n\nIrreducible representations of symmetric groups are in the one-to-one correspondence with Young diagrams and due to algorithms such as Murnaghan--Nakayama rule or Robinson--Littlewood rule the essential questions concerning representations and characters of symmetric groups can be answered by a combinatorial study of the corresponding Young diagrams [@FultonYoungtableaux]. However, when one studies the asymptotic properties of large symmetric groups, the work with Young tableaux becomes cumbersome and one is in the need to find another object which would e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411647v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "GENUS EXPANSION AND FREE PROBABILITY\narXiv:math/0411647v2  [math.CO]  21 Oct 2005\nPIOTR ´SNIADY",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411647v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The main technical problem: convolution in Sq",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-12-the-main-technical-problem-convolution-in-sq.md",
+      "narrative": null,
+      "content": "[]{#subsec:convolutioninSq label=\"subsec:convolutioninSq\"}\n\nConvolution of central functions $f,g\\in{\\mathbb{C}}({{S}}_{q})$ has a very simple structure if we write them as linear combinations of characters: if $$f(\\pi)=\\sum_{\\lambda\\vdash q}\na_\\lambda \\frac{\\chi^{\\lambda}(e) \\chi^\\lambda(\\pi)}{q!}, \\qquad\ng(\\pi)=\\sum_{\\lambda\\vdash q} b_\\lambda \\frac{\\chi^{\\lambda}(e)\n\\chi^\\lambda(\\pi)}{q!}$$ then $$(f g)(\\pi)=\n\\sum_{\\lambda\\vdash q} a_\\lambda b_\\lambda \\frac{\\chi^{\\lambda}(e)\n\\chi^\\lambda(\\pi)}{ q!},$$ where the product $f g$ denotes a product of elements of the group algebra, i.e. the convo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411647v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Free probability and free cumulants",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-13-free-probability-and-free-cumulants.md",
+      "narrative": null,
+      "content": "[]{#subsec:freeproba label=\"subsec:freeproba\"}\n\nIn this paper we study free cumulants of the transition measure of a given Young diagram. The notion of free cumulants plays a fundamental role in the free probability, a theory which was initiated by Voiculescu in order to answer some old questions in the theory of operator algebras but it soon evolved into an exciting self--standing theory with many links to other fields, see [@HiaiPetz2000; @VoiculescuDykemaNica; @VoiculescuPlenar; @VoiculescuLectures].\n\nThis theory can be viewed as a highly non--commutative probability theory in which the not",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411647v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Applications: Fluctuations of random Young diagrams",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-14-applications-fluctuations-of-random-young-dia.md",
+      "narrative": null,
+      "content": "The methods presented in this article are very useful in the study of the asymptotic properties of symmetric groups. An example of such an application is presented in our subsequent work [@Sniady2005GaussuanFluctuationsofYoungdiagrams] where we study the distribution of a random Young diagram contributing to a given reducible representation of the symmetric group $S_q$ in the limit $q\\to\\infty$. We prove that for a large class of such representations the fluctuations of the Young diagram around the limit shape are asymptotically Gaussian. Our main tool in [@Sniady2005GaussuanFluctuationsofYoun",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411647v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Overview of the article",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-15-overview-of-the-article.md",
+      "narrative": null,
+      "content": "In Section [\\[sec:preliminaries\\]](#sec:preliminaries){reference-type=\"ref\" reference=\"sec:preliminaries\"} we introduce the main actors: the normalized indicators of conjugacy classes $\\Sigma_{k_1,\\dots,k_l}$ and the Jucys--Murphy element $J$. We also outline briefly how important properties of Young diagrams and representations of ${{S}}_{q}$ are encoded by the distribution of $J$. It will be convenient to use in this article the language of the probability theory ('distribution' and 'moments' of 'random variables') therefore we also introduce the necessary conventions, however a reader might",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411647v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-006-2-preliminaries.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411647v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetric group",
+      "pageStart": 7,
+      "pageEnd": 13,
+      "target": "../sections/sec-007-21-symmetric-group.md",
+      "narrative": null,
+      "content": "There are many equivalent definitions of the transition measure of a Young diagram [@VershikKerov1995asymptoticbehavior; @Kerov1993transition; @Kerov1999differential; @OkounkovVershik1996; @Biane1998; @Okounkov2000randompermutations] and for the sake of completeness we shall recall them in the following. Nevertheless, we shall use in this article only the description from Section [\\[subsec:transition1\\]](#subsec:transition1){reference-type=\"ref\" reference=\"subsec:transition1\"}.\n\n### Transition measure of a Young diagram---the eigenvalues approach\n\n[]{#subsec:biane label=\"subsec:biane\"} The fol",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411647v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Partitions",
+      "pageStart": 13,
+      "pageEnd": 17,
+      "target": "../sections/sec-008-22-partitions.md",
+      "narrative": null,
+      "content": "[]{#sec:combinatorial label=\"sec:combinatorial\"}\n\n### Partitions {#subsec:partitions}\n\nWe recall that $\\pi=\\{\\pi_1,\\dots,\\pi_r\\}$ is a partition of a finite ordered set $X$ if sets $\\pi_1,\\dots,\\pi_r$ are nonempty and disjoint and if $\\pi_1\\cup\\cdots\\cup\\pi_r=X$. We denote the set of all partitions of a set $X$ by $\\mathop{\\mathrm{P}}(X)$. We call sets $\\pi_1,\\dots,\\pi_r$ blocks of the partition $\\pi$. We say that elements $a,b\\in X$ are connected by the partition $\\pi$ if they are the elements of the same block.\n\nWe will call elements of the set $X$ the labels of the vertices of the partition",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411647v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The first main result: Calculus of partitions",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-009-3-the-first-main-result-calculus-of-partitions.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411647v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Partition--indexed conjugacy class indicator",
+      "pageStart": 17,
+      "pageEnd": 22,
+      "target": "../sections/sec-010-31-partition--indexed-conjugacy-class-indicator.md",
+      "narrative": null,
+      "content": "### Definition of $\\Sigma_\\pi$ {#subsec:pierwszawzmiankaofppsq}\n\nLet $\\pi$ be a partition of the set $\\{1,\\dots,n\\}$. Since the fat partition $\\pi_{\\mathop{\\mathrm{fat}}}$ connects every element of the set $\\{1',2',\\dots,n'\\}$ with exactly one element of the set $\\{1,2,\\dots,n\\}$, we can view $\\pi_{\\mathop{\\mathrm{fat}}}$ as a bijection $\\pi_{\\mathop{\\mathrm{fat}}}:\\{1',2',\\dots,n'\\}\\rightarrow\\{1,2,\\dots,n\\}$. We also consider a bijection $c:\\{1,2,\\dots,n\\}\\rightarrow\\{1',2',\\dots,n'\\}$ given by $\\dots,3\\mapsto 2', 2\\mapsto 1', 1\\mapsto n', n\\mapsto\n(n-1)',\\dots$. Finally, we consider a permu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411647v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Multiplication of partitions",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "../sections/sec-011-32-multiplication-of-partitions.md",
+      "narrative": null,
+      "content": "[]{#sec:mnozeniepartycji label=\"sec:mnozeniepartycji\"}\n\n### Definition of multiplication\n\nWe will introduce an algebraic structure on the partitions. For any finite ordered set $X$ one can consider a linear space spanned by all partitions of $X$. We will define a 'multiplicative' structure as follows: let $\\rho=\\{\\rho_1,\\dots,\\rho_r\\}$ be a non--crossing partition of a finite ordered set $X$ and for every $1\\leq s\\leq r$ let $\\pi^s$ be a partition of the set $\\rho_s$. We define the '$\\rho$--ordered product' of partitions $\\pi^s$ by $$\\label{eq:definicjamnozenia} \\prod_{s} \\pi^s :=\\sum_{\\sigma}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411647v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Free cumulants of partitions",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-012-4-free-cumulants-of-partitions.md",
+      "narrative": null,
+      "content": "4.1. Free cumulants. Let us ﬁx some ﬁnite ordered set X, a linear space\nV and a map M : NC(X) →V called the moment map. Usually, the space\nV carries some kind of multiplicative structure and there exists a sequence\nM1, M2, . . ., called moment sequence, such that for every non–crossing\npartition ρ = {ρ1, . . ., ρr} the moment map is given by a multiplicative\nextension\n(4.1)\nMρ =\nY\n1≤s≤r\nM|ρs|.\nFor every integer n ≥1 the Speicher’s free cumulant Rn [Spe94, Spe97,\nSpe98] is deﬁned by\n(4.2)\nRn =\nX\nρ∈NC(1,2,...,n)\nMoebρcomp Mρ,\nwhere the sum runs over all non–crossing partitions of the set {1, 2,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411647v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Free cumulants of partitions and of the Jucys--Murphy element",
+      "pageStart": 27,
+      "pageEnd": 31,
+      "target": "../sections/sec-013-42-free-cumulants-of-partitions-and-of-the-jucys.md",
+      "narrative": null,
+      "content": "### Moments and cumulants of partitions {#sec:momentypartycji}\n\nLet $X$ be an ordered set. We define the moment $M^{\\mathop{\\mathrm{P}}}_X$ (where the letter $\\mathop{\\mathrm{P}}$ stands for partition) by $$M^{\\mathop{\\mathrm{P}}}_X=\\sum_{\\sigma\\in\\mathop{\\mathrm{P}}(X)} \\sigma,$$ where the sum denotes a formal linear combination and it runs over all partitions of $X$.\n\nLet $\\rho=\\{\\rho_1,\\dots,\\rho_r\\}$ be a non--crossing partition. Motivated by [\\[eq:momentmap\\]](#eq:momentmap){reference-type=\"eqref\" reference=\"eq:momentmap\"} we define $$M^{\\mathop{\\mathrm{P}}}_\\rho=\\prod_{s}  M^{\\mathop{\\ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411647v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "First--order asymptotics of free cumulants",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "../sections/sec-014-43-first--order-asymptotics-of-free-cumulants.md",
+      "narrative": null,
+      "content": "::: theorem\n[]{#theo:pierwszystopien label=\"theo:pierwszystopien\"}\n\nLet integers $k_1,\\dots,k_t\\geq 2$ be given and let us express $R^{\\mathop{\\mathrm{JM}}}_{k_1} \\cdots R^{\\mathop{\\mathrm{JM}}}_{k_t}\\in\\mathfrak{P}$ as a linear combination of normalized conjugacy class indicators $\\Sigma$. Then $$\\begin{gathered}\n\\label{eq:highestorde} R^{\\mathop{\\mathrm{JM}}}_{k_1} \\cdots\nR^{\\mathop{\\mathrm{JM}}}_{k_t}=\\Sigma_{k_1-1,\\dots,k_t-1}+\\\\ \\text{(terms of degree at\nmost } k_1+\\cdots+k_t-2\\text{)},\n\\end{gathered}$$ where the degree is taken with respect to the filtration [\\[eq:filtration\\]](#eq:filtr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411647v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Higher order expansion for free cumulants",
+      "pageStart": 33,
+      "pageEnd": 37,
+      "target": "../sections/sec-015-44-higher-order-expansion-for-free-cumulants.md",
+      "narrative": null,
+      "content": "[]{#sec:evercrossing label=\"sec:evercrossing\"}\n\nIn this section we present a method of enumerating all evercrossing partitions with a given genus. The main concept is to simplify a given evercrossing partition by a number of steps. After these simplifications we obtain an evercrossing pair partition (with some extra properties) which can be enumerated easily. By reversing the process of simplifications we shall therefore obtain all evercrossing partitions with a given genus.\n\n### Simplification, step 1 {#subsec:simple1}\n\nLet an evercrossing partition be given. In the first step we remove all i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411647v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The second main result: the second--order expansion of free cumulants and characters",
+      "pageStart": 37,
+      "pageEnd": 42,
+      "target": "../sections/sec-016-45-the-second-main-result-the-second--order-expa.md",
+      "narrative": null,
+      "content": "[]{#sec:secondorderexp label=\"sec:secondorderexp\"}\n\n### Evercrossing partitions with genus $1$\n\nTheorem [\\[theo:gorneszacowanie\\]](#theo:gorneszacowanie){reference-type=\"ref\" reference=\"theo:gorneszacowanie\"} allows us to enumerate (in finite time) all possible outcomes of the simplifying algorithm for a fixed genus of the original evercrossing partition. By reversing all three steps of the simplifying algorithm we are able to write a number of \"templates\" which describe all evercrossing partitions with a prescribed genus. Let us have a look on an example.\n\n::: theorem\n[]{#theo:klasyfikacja la",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411647v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Higher order expansion of characters",
+      "pageStart": 42,
+      "pageEnd": 42,
+      "target": "../sections/sec-017-46-higher-order-expansion-of-characters.md",
+      "narrative": null,
+      "content": "In principle, there are no obstacles to repeat the reasoning from Section [\\[sec:secondorderexp\\]](#sec:secondorderexp){reference-type=\"ref\" reference=\"sec:secondorderexp\"} for partitions with genus $2$ and in this way obtain higher order asymptotic expansions.\n\nThe first step is to enumerate all possible outcomes of the simplification algorithm. Theorem [\\[theo:gorneszacowanie\\]](#theo:gorneszacowanie){reference-type=\"ref\" reference=\"theo:gorneszacowanie\"} shows that such outcome is a pair partition with at most $9$ lines. The patience of the most human beings is not sufficient enumerate all",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411647v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proofs of technical results",
+      "pageStart": 42,
+      "pageEnd": 42,
+      "target": "../sections/sec-018-5-proofs-of-technical-results.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411647v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Admissible and pushing sequences",
+      "pageStart": 42,
+      "pageEnd": 46,
+      "target": "../sections/sec-019-51-admissible-and-pushing-sequences.md",
+      "narrative": null,
+      "content": "In this article we manipulate with moments of the Jucys--Murphy element $J$ (or with products of such moments) and we need an efficient way to enumerate the summands in sums similar to [\\[eq:wielkasuma\\]](#eq:wielkasuma){reference-type=\"eqref\" reference=\"eq:wielkasuma\"}. Conceptually the simplest way is to enumerate the summands by sequences $a_1,\\dots,a_n\\in A$ and which will be called admissible. However, it turns out that manipulating admissible sequences is quite complicated. It turns out that the suitable objects to enumerate summands in [\\[eq:wielkasuma\\]](#eq:wielkasuma){reference-type=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411647v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pushing partitions",
+      "pageStart": 46,
+      "pageEnd": 53,
+      "target": "../sections/sec-020-52-pushing-partitions.md",
+      "narrative": null,
+      "content": "In this article we are concerned mostly with conjugacy classes of permutations and not permutations themselves. For this reason we need a method to enumerate in the sums similar to [\\[eq:wielkasuma\\]](#eq:wielkasuma){reference-type=\"eqref\" reference=\"eq:wielkasuma\"} not the individual summands, but whole classes of summands (summands within each class will be conjugate). Pushing partitions will turn out to be the suitable objects to enumerate such classes.\n\nWe say that a partition $\\pi$ of a finite ordered set $X$ (by changing the labels we can assume that $X=\\{1,\\dots,n\\}$) is a pushing parti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411647v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Final remarks",
+      "pageStart": 53,
+      "pageEnd": 53,
+      "target": "../sections/sec-021-6-final-remarks.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411647v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connection with the work of Biane",
+      "pageStart": 53,
+      "pageEnd": 53,
+      "target": "../sections/sec-022-61-connection-with-the-work-of-biane.md",
+      "narrative": null,
+      "content": "[]{#subsec:bianeconnection label=\"subsec:bianeconnection\"} The following connection with article [@Biane1998] was pointed out to me by Philippe Biane.\n\nBiane shows [@Biane1998] that the matrix $\\Gamma$ defined in [\\[eq:macierzjucysia\\]](#eq:macierzjucysia){reference-type=\"eqref\" reference=\"eq:macierzjucysia\"} fulfills $$\\begin{gathered}\n\nM^{\\mathop{\\mathrm{JM}}}_n=\\frac{1}{q+1} \\mathop{\\mathrm{Tr}}\\Gamma^n=\\\\\n\\frac{1}{q+1} \\sum_{p_1,\\dots,p_{n} \\in\\{1,\\dots,q+1\\}} \\Gamma_{p_1\np_2} \\Gamma_{p_2 p_3} \\cdots \\Gamma_{p_{n-1} p_n} \\Gamma_{p_n p_1},\n\\end{gathered}$$ where the sum runs only over tuple",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411647v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ramified coverings and pushing partitions",
+      "pageStart": 53,
+      "pageEnd": 57,
+      "target": "../sections/sec-023-62-ramified-coverings-and-pushing-partitions.md",
+      "narrative": null,
+      "content": "[]{#subsec:okounkov label=\"subsec:okounkov\"}\n\n### Ramified covering and an admissible sequence\n\nSuppose that an admissible sequence $a_1,\\dots,a_n\\in\\{1,2,\\dots,q\\}$ is given. Following the idea of Okounkov [@Okounkov2000randompermutations] we consider a two--dimensional sphere ${\\mathbb{S}}^2$ with distinguished points $0,1,2,\\dots,n,\\infty$. Figure [1](#fig:sfera){reference-type=\"ref\" reference=\"fig:sfera\"} depicts a small region on this sphere (unfortunately, some conventions used in the pictures in this article do not coincide with the ones of Okounkov).\n\n![Two homotopic loops on a sphere.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411647v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connection with orthogonal polynomials and Wick product",
+      "pageStart": 57,
+      "pageEnd": 57,
+      "target": "../sections/sec-024-63-connection-with-orthogonal-polynomials-and-wi.md",
+      "narrative": null,
+      "content": "Suppose that a probability measure $\\mu$ on the real line is given. We consider a sequence $P_0,P_1,\\dots$ of orthogonal polynomials with respect to the measure $\\mu$. Some questions concerning these polynomials are extremely simple, for example the mean value is given by a trivial equation $\\int_{\\mathbb{R}}P_k(x) d\\mu(x)= \\delta_{0k}$, but the price for working with orthogonal polynomials is that we need a formula for expressing a product $P_k P_l$ as a linear combination of polynomials $P$ (in the non--commutative probability theory such formulas are called Wick products). Also, a question",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411647v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 57,
+      "pageEnd": 58,
+      "target": "../sections/sec-025-7-acknowledgments.md",
+      "narrative": null,
+      "content": "I thank Philippe Biane for introducing me into the subject and many discussions. I also thank Roland Speicher, Ilona Królak and Akihito Hora for many discussions and encouragement.\n\nResearch supported by State Committee for Scientific Research (Komitet Badań Naukowych) grant No. 2P03A00723; by EU Network \"QP-applications\\\", contract HPRN-CT-2002-00729; by KBN-DAAD project 36/2003/2004. The research was conducted in École Normale Supérieure du Paris, Institute des Hautes Etudes Scientifiques (Bures--sur--Yvette, France), Syddansk Universitet (Odense, Denmark) and Banach Center (Warszawa, Poland",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0411647v2/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 58,
+      "pageEnd": 60,
+      "target": "../sections/sec-026-references.md",
+      "narrative": null,
+      "content": "[Bia97]\nPhilippe Biane. Some properties of crossings and partitions. Discrete Math.,\n175(1-3):41–53, 1997.\n[Bia98]\nPhilippe Biane. Representations of symmetric groups and free probability. Adv.\nMath., 138(1):126–181, 1998.\n[Bia01]\nPhilippe Biane. Approximate factorization and concentration for characters of\nsymmetric groups. Internat. Math. Res. Notices, (4):179–192, 2001.\n[Bia03]\nPhilippe Biane. Characters of symmetric groups and free cumulants. In Ana-\ntoly M. Vershik, editor, Asymptotic Combinatorics with Applications to Mathe-\nmatical Physics, volume 1815 of Lecture Notes in Mathematics, p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

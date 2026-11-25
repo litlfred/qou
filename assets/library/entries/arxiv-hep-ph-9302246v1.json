@@ -1,0 +1,366 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-ph-9302246v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-ph-9302246v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-ph/9302246v1  11 Feb 1993\nCPT-93/P.2871\nMassive Spin-1 Field Chiral Lagrangian from\nan Extended Nambu–Jona-Lasinio Model of QCD\nJoaquim Prades\nCentre de Physique Th´eorique, C.N.R.S. - Luminy, Case 907\nF-13288 Marseille Cedex 9, France\nAbstract\nWe present a calculation of the coupling constants in the massive spin-1 ﬁeld chiral\nLagrangian to chiral O(p3) in the context of the extended Nambu–Jona-Lasinio\nmodel described in Ref.\n[1].\nPhenomenological applications of this Lagrangian\nto anomalous and non-anomalous low-energy hadronic transitions involving spin-1\nparticles are also discus",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9302246v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "[]{#1 label=\"1\"}\n\nAt low-energies the strong, electromagnetic and weak interactions of the lightest pseudoscalar mesons can be described by an effective chiral Lagrangian [@sw; @gl]. This Lagrangian depends on a number of coupling constants which are not fixed by symmetry requirements alone but are, in principle, determined by the dynamics of the underlying QCD theory. Recently, there have been attempts to derive the low-energy effective chiral action of QCD [@bbr; @ert] with and without the inclusion of the low-lying resonances. The lightest vector, axial-vector and scalar resonances play an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9302246v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The low-energy chiral Lagrangians",
+      "pageStart": 2,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-2-the-low-energy-chiral-lagrangians.md",
+      "narrative": null,
+      "content": "[]{#2b label=\"2b\"}\n\nWe shall give a summary of what is known at present about low-energy mesonic Lagrangians, from the chiral invariance properties of ${\\cal L}_{\\rm QCD}$ alone. In the pseudoscalar sector, the terms in the effective Lagrangian ${\\cal L}_{\\rm eff}$ with the lowest chiral dimension, *i.e.* ${\\cal O} (p^2)$, are\n\n$$\\label{22}\n{\\cal L}_{\\rm eff}^{(2)} = {1\\over 4} \\, f^2_0 \\, \\Big\n\\{ \\hbox{tr}\\,\\left( D_\\mu U D^\\mu \\, U^\\dagger \\right)\\, + \\,\n\\hbox{tr}\\, (\\chi U^{\\dagger} + U \\chi^\\dagger) \\Big \\}$$\n\nwhere $D_{\\mu}$ denotes the covariant derivative\n\n$$\\label{23}\nD_{\\mu} U = \\part",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9302246v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The ENJL cut-off model of QCD",
+      "pageStart": 8,
+      "pageEnd": 12,
+      "target": "../sections/sec-002-3-the-enjl-cut-off-model-of-qcd.md",
+      "narrative": null,
+      "content": "[]{#2 label=\"2\"}\n\nReference [@bbr] gives a systematic study of the low-energy effective action of the extended Nambu--Jona-Lasinio model which, at intermediate energies below or of the order of a cut-off scale $\\Lambda_\\chi$, is expected to be a good effective realization of the standard QCD Lagrangian ${\\cal L}_{\\rm QCD}$. Here we give a brief summary of the results found there. The Lagrangian in question is\n\n$$\\label{qcd} \\begin{array}{c}\n{\\cal L}_{\\rm QCD} \\rightarrow\n{\\cal L}^{\\Lambda_\\chi}_{\\rm QCD} \\, + \\,\n{\\cal L}^{\\rm S,P}_{\\rm NJL}\n\\, + \\, {\\cal L}^{\\rm V,A}_{\\rm NJL} \\, + \\, {\\cal O}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9302246v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The anomalous sector",
+      "pageStart": 12,
+      "pageEnd": 16,
+      "target": "../sections/sec-003-4-the-anomalous-sector.md",
+      "narrative": null,
+      "content": "[]{#3 label=\"3\"}\n\nHere we are concerned with the imaginary part of the effective action. The lowest order Lagrangian in the abnormal intrinsic parity sector describing the interaction of pseudoscalar mesons and external $l_\\mu$ and $r_\\mu$ sources is the one given by the Wess-Zumino (WZ) effective action [@wz; @ew]. The ${\\cal O} (p^6)$ imaginary part of the effective action has been obtained in Ref. [@bij2] in the mean-field approximation of the model we consider here. Using the formal symmetry in the ENJL cut-off model described above in Section [\\[2\\]](#2){reference-type=\"ref\" reference=\"2\"",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9302246v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The non-anomalous sector",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "../sections/sec-004-5-the-non-anomalous-sector.md",
+      "narrative": null,
+      "content": "[]{#4 label=\"4\"}\n\nWe shall next study the real part of the effective action, *i.e.* the non-anomalous sector of the theory. This sector can be computed in the ENJL cut-off theory proposed in Ref. [@bbr], as was shown there, with the help of the heat kernel expansion [@ball]. We shall use the formal symmetry stated in Section [\\[2\\]](#2){reference-type=\"ref\" reference=\"2\"} as we did in the anomalous sector in Section [\\[3\\]](#3){reference-type=\"ref\" reference=\"3\"}. Therefore to obtain the effective action in terms of the spin-1 fields $W_\\mu^{(\\pm)}$ we only need to calculate the effective acti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9302246v1/blocks/prop-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 35,
+      "target": "prop-sec-006-01.md",
+      "narrative": null,
+      "content": "The worst results in this column, taking into account the experimental errors, are for the decays $\\phi \\to \\eta \\gamma$ and $K^{* +} \\to K^+ \\gamma$ which are between 4 and 6 standard deviations ($\\sigma$) from the experimental value.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-9302246v1/blocks/prop-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 35,
+      "target": "prop-sec-006-02.md",
+      "narrative": null,
+      "content": "Given the poor knowledge of the parameter $g_A$ and the rather good value for $f_V$ we are using ($f_V\\,=$ 0.17 compared to the experimental value $f_V {\\displaystyle|}_{\\rm exp} \\simeq 0.20$), we shall fix the value of $f_V$ to $f_V\\,=$ 0.17 and fix from the decay $\\rho^+ \\to \\pi^+ \\gamma$ the value of $g_A$.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-9302246v1/blocks/prop-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 35,
+      "target": "prop-sec-006-03.md",
+      "narrative": null,
+      "content": "We find that, in general, the results are improved, except for the decay $\\phi \\to \\eta \\gamma$ which is now 10 $\\sigma$ from the central experimental value.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-9302246v1/blocks/prop-sec-006-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 35,
+      "target": "prop-sec-006-04.md",
+      "narrative": null,
+      "content": "The prediction for the decay $\\omega \\to \\pi^0 \\gamma$ improves but is still 3.5 $\\sigma$ from the experimental value which probably means that the $\\omega_8-\\rho^0$ mixing is likely to be important.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-9302246v1/blocks/prop-sec-006-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 35,
+      "target": "prop-sec-006-05.md",
+      "narrative": null,
+      "content": "to be compared with the experimental result in Eq.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-9302246v1/blocks/prop-sec-006-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 35,
+      "target": "prop-sec-006-06.md",
+      "narrative": null,
+      "content": "Both predictions are less than 1 $\\sigma$ from the experimental result in Eq.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-9302246v1/blocks/prop-sec-006-07",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 35,
+      "target": "prop-sec-006-07.md",
+      "narrative": null,
+      "content": "to be compared with the experimental result [@dol],",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-9302246v1/blocks/prop-sec-006-08",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 35,
+      "target": "prop-sec-006-08.md",
+      "narrative": null,
+      "content": "The last result is better (3 $\\sigma$ from the experimental result).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-9302246v1/blocks/prop-sec-006-09",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 35,
+      "target": "prop-sec-006-09.md",
+      "narrative": null,
+      "content": "The result we obtain for the full width of the $a_1$ axial-vector from the results in the column Prediction 1 is $\\Gamma_{\\rm full}\\,=$ 261 MeV, to be compared with the experimental value quoted at the beginning of this Section (350 MeV $<$ $\\left(\\Gamma_{\\rm full} \\right)_{\\rm exp}$ $<$ 450 MeV).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-9302246v1/blocks/prop-sec-006-10",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 35,
+      "target": "prop-sec-006-10.md",
+      "narrative": null,
+      "content": "However, the full width for the $a_1$ axial-vector particle we obtain from the results in the column Prediction 2, $\\Gamma_{\\rm full}\\,=$ 359 MeV, is better when compared with the experimental result quoted above.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-9302246v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Phenomenological applications",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/sec-005-6-phenomenological-applications.md",
+      "narrative": null,
+      "content": "[]{#5 label=\"5\"}\n\nIn this Section we shall discuss some phenomenological applications from our calculations. In the whole following analysis we shall work in the chiral limit, *i.e.* ${\\cal M} \\to 0$. Therefore, we shall disregard possible $\\omega_8-\\rho^0$ and $\\eta_8-\\pi^0$ mixings, which are proportional to light-quark masses. In addition, the operators that generate these mixings are order ${\\cal O} (p^4)$ in the chiral expansion [@gl2]. Here we shall use the coupling constants we have calculated in the previous Sections in the ENJL cut-off model [@bbr] to make predictions on a large varie",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9302246v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Vector resonance decays",
+      "pageStart": 19,
+      "pageEnd": 35,
+      "target": "../sections/sec-006-61-vector-resonance-decays.md",
+      "narrative": null,
+      "content": "[]{#6.1 label=\"6.1\"}\n\nHere we shall discuss the predictions for vector particle decays. As was already mentioned in Section [\\[2\\]](#2){reference-type=\"ref\" reference=\"2\"}, in the ENJL model we are considering, all the couplings can be written in terms of three parameters, namely $g_A$, $M_Q$ and $\\Lambda_\\chi$. The coupling $g_A$ was defined in Eq. ([\\[ga\\]](#ga){reference-type=\"ref\" reference=\"ga\"}) and in this model takes the following value [@bbr]\n\n$$\\label{gad}\ng_A\\,=\\,1\\,-\\,\\frac{\\displaystyle f_\\pi^2}{\\displaystyle f_V^2 \\, M_V^2}\\, .$$\n\nWe shall choose for $g_A$, $M_Q$ and $\\Lambda_\\ch",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9302246v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "../sections/sec-007-7-conclusions.md",
+      "narrative": null,
+      "content": "[]{#6 label=\"6\"}\n\nIn this work we have studied in the context of the ENJL cut-off model considered in Ref. [@bbr] the anomalous and non-anomalous sectors of the chiral Lagrangian for spin-1 particles to ${\\cal O}(p^3)$, including terms with two spin-1 particles. In this model, spin-1 particles are introduced not as gauge fields, in contrast to models in Refs. [@ban]-[@meis], but as fields which transform homogeneously. This feature gives rise to a formal symmetry of the QCD effective action (see Section [\\[2\\]](#2){reference-type=\"ref\" reference=\"2\"}), first noticed in Ref. [@bbr], that we use",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9302246v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 36,
+      "pageEnd": 44,
+      "target": "../sections/sec-008-acknowledgements.md",
+      "narrative": null,
+      "content": "It is a pleasure to thank Eduardo de Rafael for continuous encouragement and\nvery helpful discussions.\nI also wish to thank Hans Bijnens and Toni Pich for\nuseful conversations and Lars H¨ornfeldt for his help with the algebraic manipulation\nprogram STENSOR. This work has been supported in part by CICYT, Spain, under\nGrant No. AEN90-0040. I am indebted to the Spanish Ministerio de Educaci´on y\nCiencia for a fellowship.\nReferences\n[1] J. Bijnens, C. Bruno and E. de Rafael, Nambu–Jona-Lasinio-Like Models and\nthe Low Energy Eﬀective Action of QCD, CERN and Marseille preprint CERN-\nTH.6521/92 , CPT",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

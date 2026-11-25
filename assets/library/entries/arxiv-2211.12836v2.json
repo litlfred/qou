@@ -1,0 +1,574 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2211.12836v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The present paper gives a probabilistic study of an integrable class of rooted graphs which describe movements of particles on a discrete circle conditioned to not intersect. The simplest example of this class is the graph $B_{k,n}$ encoding the transitions of $k$ particles moving clockwise with small steps on a discrete circle of $n$ sites without intersecting each other. This graph is rooted at a particular configuration where the $k$ particles are stacked next to each other after some chosen origin. We present such a graph for $k=2$ particles on a discrete circle of size $n=4$ in the figure",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY\nDYSON BROWNIAN MOTION\nJ´ER´EMIE GUILHOT, C´EDRIC LECOUVEY, AND PIERRE TARRAGO\nAbstract. We study a class of commuting Markov kernels whose simplest element describes the\nmovement of k particles on a discrete circle of size n conditioned to not intersect each other. Such\nMarkov kernels are related to the quantum cohomology ring of the Grassmannian, which is an\nalgebraic object counting analytic maps from P1(C) to the Grassmannian space of k-dimensional\nvector subspaces of Cn with prescribed constraints at some points of P1(C). We obtain a Berry",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Presentation of the model and main results",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-presentation-of-the-model-and-main-results.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "k-configuration on a circle and continuous counterpart",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-21-k-configuration-on-a-circle-and-continuous-co.md",
+      "narrative": null,
+      "content": "[]{#subsec:intro_model label=\"subsec:intro_model\"}\n\nFor $k,n\\in \\mathbb{N}^*$ with $k\\leq n$, let $B_{k,n}$ denote the set of positions of $k$ nonintersecting and indistinguishable particles on a discrete circle of size $n$. Formally, $B_{k,n}$ is the set of increasing sequences of $\\llbracket 0,n-1\\rrbracket$ of length $k$: such a sequence gives the position of the $k$ particles in the clockwise direction starting from the origin $0$ of the discrete circle, see Figure [\\[figPart\\]](#figPart){reference-type=\"ref\" reference=\"figPart\"} and the corresponding $k$-subsets on Figure [1](#figBkn){ref",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A complete family of commuting Markov kernels associated to Bk,n",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-22-a-complete-family-of-commuting-markov-kernels.md",
+      "narrative": null,
+      "content": "In order to state our main results, let us briefly explain how to associate to $B_{k,n}$ a family of Markov chains. By analogy with the space $L^2(T_k)$ of square integrable functions on $T_k$, denote by $L^2(B_{k,n})$ the Hermitian space of functions on $B_{k,n}$ with the distinguished orthonormal basis $\\mathcal{B}_0=\\left\\{ e_{I}, I\\in B_{k,n}\\right\\}$ given by $e_I(J)=\\delta_{I,J}$. The edge structure of $B_{k,n}$ can then be encoded by the operator $A:L^2(B_{k,n})\\rightarrow L^2(B_{k,n})$ given by $$A(e_I)=\\sum_{I\\nearrow J} e_{J}.$$ Since $B_{k,n}$ is strongly connected, the adjacency ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relation between Bk,n and the unitary group",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-23-relation-between-bkn-and-the-unitary-group.md",
+      "narrative": null,
+      "content": "Recall that we embedded $B_{k,n}$ into $T_k$ through the map $\\xi_n$. This map can be transformed into a map, still denoted by $\\xi_n$, from $\\mathcal{M}_{\\geq 0}(B_{k,n})$ to $\\mathcal{M}_f( T_{k})$, the space of finite Radon measures on $T_{k}$ with the formula $$\\xi_n(\\mu)=\\left(\\frac{2\\pi}{n}\\right)^k\\sum_{I\\in B_{k,n}}\\mu(I)\\delta_{\\xi_n(I)}.$$ As explained in the previous section, for $\\mu\\in\\mathcal{M}_{1}(B_{k,n})$ we have $\\sum_{I\\in B_{k,n}}\\mu^h(I)\\mu(I)=1$ with $\\mu^h(I)=\\frac{\\vert V(\\xi_n(I)\\vert^2}{n^k}$, so that $$\\label{eq:spherical_integral_xi(mu)}\n\\int_{ T_{k}}\\frac{\\left\\ve",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main probabilistic theorems",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "../sections/sec-005-24-main-probabilistic-theorems.md",
+      "narrative": null,
+      "content": "[]{#subsec:main_probabilistic_results label=\"subsec:main_probabilistic_results\"} Using the convolution product introduced in Proposition [\\[prop:result_1\\]](#prop:result_1){reference-type=\"ref\" reference=\"prop:result_1\"}, we can consider the convolution $\\mu=\\mu_1*\\mu_2*\\dots\\mu_m$ of an arbitrary number of $h$-probability measures and its image by the map $\\xi_n$. As already shown in [@De; @We] in the independent and identically distributed case, we expect that there exists $\\gamma>0$ depending on some second moments of $(\\mu_i)_{1\\leq i\\leq m}$ such that $\\mu$ is close to the eigenvalue dist",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A geometric corollary on quantum cohomology of the Grassmannian",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-006-25-a-geometric-corollary-on-quantum-cohomology-o.md",
+      "narrative": null,
+      "content": "The graph $B_{k,n}$ and its convolution algebra are related to various other fields, out of which we singled out two main ones: the Wess-Zumino-Witten models of type $A_{k-1}$ at level $n$, which is a particular model of conformal field theory, and the quantum cohomology of the Grassmannian $G_{k,n}$, which counts rational curves with target space the space of $k$-dimensional vector subspaces of $\\mathbb{C}^n$. Those two concepts are actually related [@G; @GK; @KS]. Let us first briefly sketch the second one (see Appendix [\\[sec:quantum_cohomology\\]](#sec:quantum_cohomology){reference-type=\"re",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Related results and perspectives",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-007-26-related-results-and-perspectives.md",
+      "narrative": null,
+      "content": "Let us give several comments on our results and their relation to previous works on the subject :\n\n-   An analogous problem has already been considered on the real line instead of the circle, see [@Bi; @BG]. In this case, one still has a positively multiplicative graph whose corresponding algebra is the fusion ring for the representation theory of $U(k)$. The continuous limit of this discrete model corresponds to convolution of co-adjoint orbits of $U(k)$ instead of adjoint orbits [@Gra; @BJ], and there is a central limit theorem towards a Dyson Brownian motion on the real line. Up to our know",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Positively multiplicative graphs, random walks and Fourier transform",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-008-3-positively-multiplicative-graphs-random-walks.md",
+      "narrative": null,
+      "content": "[]{#sec:pm_graph label=\"sec:pm_graph\"} In this section, we introduce the notion of integrable positively multiplicative graph which is the central property of the family of graph $\\{B_{k,n}; 1\\leq k\\leq n\\}$. We also introduce a general Fourier transform formalism to study a class of Markov chains naturally constructed from those graphs. Although some results of the present section are needed in the sequel of the paper, its content is quite general to enlighten a universal behavior.\n\nLet us recall the definition of a positively multiplicative graph from [@GLT]. In this paper, a (directed) grap",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Family of random walks and h-transform",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-009-31-family-of-random-walks-and-h-transform.md",
+      "narrative": null,
+      "content": "Given a PM-graph with distinguished vertex $v_0$, one can construct a family of commuting Markov kernels as follows. For sake of simplicity we assume here that $A$ is irreducible, although the same reasoning apply beyond irreducibility. Let $h^r$ (resp. $h^l$) be the right (resp. left) Perron-Frobenius vector of $A$, normalized so that $h^l(v_0)=1$ and $\\langle h^l,h^r\\rangle_{L^2(V)}=1$. By irreducibility of $A$, $h^l(v)>0$ and $h^r(v)>0$ for all $v\\in V$. In the case where we are considering an adjacency matrix $M$ which is not necessarily irreducible, we say that $v$ is a positive eigenvect",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Convolution product on L2h(V)",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-010-32-convolution-product-on-l2hv.md",
+      "narrative": null,
+      "content": "Similarly to [\\[eq:isomor_L2_CA\\]](#eq:isomor_L2_CA){reference-type=\"eqref\" reference=\"eq:isomor_L2_CA\"} there is an isomorphism from $L^2_h(V)$ to $\\mathcal{A}^h$ given by $$\\label{eq:isomor_L2h_CA}\nM^h:\\left\\lbrace \\begin{aligned} L^2(V)&\\rightarrow &\\mathcal{A}^h\\\\ e_v&\\mapsto &\\mu^h(v)P^v\\end{aligned}\\right..$$ We can then transpose the multiplicative structure on $\\mathcal{A}^h$ to a multiplication on $L^2_h(V)$. This motivates the following definition.\n\n::: definition\n[]{#def:convolution label=\"def:convolution\"} The convolution of $x,y\\in L^2_h(V)$ is the vector $x*y$ defined by $$x*y=\\s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Integrable PM-graph, Fourier transform and Verlinde formula",
+      "pageStart": 18,
+      "pageEnd": 21,
+      "target": "../sections/sec-011-33-integrable-pm-graph-fourier-transform-and-ver.md",
+      "narrative": null,
+      "content": "[]{#sec:integrable_graph label=\"sec:integrable_graph\"} In this section, we assume that $A$ is diagonalizable over $\\mathbb{C}$. As a direct consequence of commutativity, all $s_v, \\, v\\in V$ are diagonalizable. We denote by $\\{u^{(i)},i=0,\\ldots,|V|-1\\}$ a basis of right eigenvectors and $\\{w^{(i)},i=0,\\ldots,|V|-1\\}$ the dual basis of left eigenvectors normalized so that $w^{(i)}(v_0)=1$ (as we will see in the next lemma, any eigenvector has a nonzero coordinate along $e_{v_0}$). We suppose that $u^{(0)}=h^r$ (and thus $w^{(0)}=h^l$). Finally, we denote by $\\theta_v(i)$ the eigenvalue of $s_v",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Noncolliding particles on a circle and eigenvalues of unitary matrices",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-012-4-noncolliding-particles-on-a-circle-and-eigenva.md",
+      "narrative": null,
+      "content": "[]{#sec:formal_model_pm label=\"sec:formal_model_pm\"}\n\nRecall from Section [\\[sec:intro_model\\]](#sec:intro_model){reference-type=\"ref\" reference=\"sec:intro_model\"} the definition of $B_{k,n}$. Due to the relation between $B_{k,n}$ and the quantum cohomology of the Grassmannian whose ring structure is described by Schur functions, it is sometimes better to see $B_{k,n}$ as a graph of partitions (see Appendix [\\[sec:quantum_cohomology\\]](#sec:quantum_cohomology){reference-type=\"ref\" reference=\"sec:quantum_cohomology\"} for some reminders on partitions). We denote by $\\Lambda_{k}$ the set of gener",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The graph Bk,n as an integrable PM-graph",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "../sections/sec-013-41-the-graph-bkn-as-an-integrable-pm-graph.md",
+      "narrative": null,
+      "content": "Recall from Section [\\[sec:intro_model\\]](#sec:intro_model){reference-type=\"ref\" reference=\"sec:intro_model\"} that $L^2(B_{k,n})=\\bigoplus_{I\\in B_{k,n}}\\mathbb{C} e_{I}$ denotes the Hilbert space of functions on $B_{k,n}$ with the scalar product $\\langle e_{I},e_{J}\\rangle=\\delta_{I,J}$, where $\\mathcal{B}_0=(e_{I})_{I\\in B_{k,n}}$ is the canonical basis on $L^2(B_{k,n})$. Then, the graph structure on $B_{k,n}$ is encoded in the adjacency matrix $A\\in \\mathcal{B}(L^2(B_{k,n}))$ given by $$Ae_I=\\sum_{I\\nearrow J}e_J.$$\n\nIn the sequel, we will use a specialization of the quantum cohomology of t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "h-transform, convolution and Fourier transform on Bk,n",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "../sections/sec-014-42-h-transform-convolution-and-fourier-transform.md",
+      "narrative": null,
+      "content": "As a consequence of the fact that $B_{k,n}$ is an integrable PM-graph and the expression of its eigenbasis, we can deduce several results from Section [\\[sec:pm_graph\\]](#sec:pm_graph){reference-type=\"ref\" reference=\"sec:pm_graph\"}. In order to do so, we will need several times the following inversion formula for evaluating $S_{I}(\\xi_{n}(J))$ in terms of $S_{J}(\\xi_{n}(I))$.\n\n::: lemma\n[]{#lem:formula_inversion_Schur label=\"lem:formula_inversion_Schur\"} For $I,J\\in  B_{k,n}$, $$S_J(\\xi_{n}(I))=\\frac{S_J(\\xi_{n}(I_0))}{S_I(\\xi_{n}(I_0))}S_I(\\xi_{n}(J)).$$ Moreover, $$V(\\xi_{n}(I))=\\exp\\left(\\f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fourier transform on Tk",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "../sections/sec-015-43-fourier-transform-on-tk.md",
+      "narrative": null,
+      "content": "[]{#Sec:Fourier_continuous label=\"Sec:Fourier_continuous\"} Let us turn to $T_{k}$, the continuous limit object of the sequence $\\{B_{k,n}, n\\geq k\\}$. Recall that the set of continuous $k$-configurations on a circle $T_{k}$ is the subset of $\\mathbb{R}^k$ consisting of vectors $u=(u_1,\\ldots,u_k)$ such that $$0\\leq u_k\\leq u_{k-1}\\leq \\dots\\leq u_1<2\\pi.$$ Before describing the relation with $B_{k,n}$, let us describe the Fourier transform on $T_{k}$ coming from representations theory of $U(k)$, the Lie group of unitary matrices of rank $k$. Sending $U\\in U(k)$ to the sequence of arguments of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariant Brownian motion on Uk and unitary Dyson Brownian motion",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "../sections/sec-016-44-invariant-brownian-motion-on-uk-and-unitary-d.md",
+      "narrative": null,
+      "content": "[]{#Sec:Brownian_motion label=\"Sec:Brownian_motion\"} Let us conclude this section by recalling rigorously the definition of the *generalized* Dyson Brownian motion on $U_k$ and its eigenvalue process on $T_{k}$, see [@L] for a detailed background on this stochastic process and [@Far] for most of the content of this section. The Lie group $U(k)$ is a Riemannian sub-manifold of $M_{k}(\\mathbb{C})$ of real dimension $n^2$, and the tangent space of $U(k)$ at $Id$ is given by the Lie algebra $$\\mathfrak{u}_k=\\{M\\in M_k(\\mathbb{C}),\\, M^*+M=0\\}.$$ Remark that $\\mathfrak{u}_k$ is not semisimple, sinc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Fourier transform of a large sequence of convolution",
+      "pageStart": 32,
+      "pageEnd": 46,
+      "target": "../sections/sec-017-5-the-fourier-transform-of-a-large-sequence-of-c.md",
+      "narrative": null,
+      "content": "[]{#sec:Fourier_large_product label=\"sec:Fourier_large_product\"} The goal of this section is to estimate the discrete Fourier transform of the convolution of a sequence $(\\mu_i)_{1\\leq i\\leq m}$ of $h$-probability measures in $B_{k,n}$ when $m$ is large compared to $n$. Mimicking the previous definition for elements of $B_{k,n}$, for $x\\in \\mathbb{R}^k$ we set $\\langle x\\rangle=\\sum_{j=1}^kx_j$ and then define $$\\widetilde{x}=x-\\frac{\\langle x\\rangle}{k}\\mathbf{1}_k=\\left(x_1-\\frac{\\langle x\\rangle}{k},\\ldots,x_k-\\frac{\\langle x\\rangle}{k}\\right).$$ We then introduce for $x\\in \\mathbb{R}^k$ th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Berry-Esseen theorem on Bk,n",
+      "pageStart": 46,
+      "pageEnd": 47,
+      "target": "../sections/sec-018-6-berry-esseen-theorem-on-bkn.md",
+      "narrative": null,
+      "content": "[]{#sec:Berry-Esseen label=\"sec:Berry-Esseen\"}\n\nWe state and prove in this section the first main result of the manuscript, which consists in a Berry-Esseen type theorem for the measure $\\xi_n(*\\mathbf{m})$. The complete result is a bit more general than the simplified version written in Theorem [\\[thm:Berry-Esseen_simplified\\]](#thm:Berry-Esseen_simplified){reference-type=\"ref\" reference=\"thm:Berry-Esseen_simplified\"}, in order to give a more precise constant.\n\nRecall that the shift action of $\\mathbb{R}$ on $T_k$ is given for $\\vec{u}\\in [0,2\\pi[^k$ and $t\\in \\mathbb{R}$ by $$R_t( \\vec{u})=S",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Wasserstein distance on Tk",
+      "pageStart": 47,
+      "pageEnd": 50,
+      "target": "../sections/sec-019-61-wasserstein-distance-on-tk.md",
+      "narrative": null,
+      "content": "In [@BobLed], the authors related the Wassertein distance between two probability measures on $\\mathbb{R}/2\\pi\\mathbb{Z}$ to a weighted norm of the difference of their Fourier transform. We will use the same method on $T_k$, taking advantage of the Fourier transform which has been defined in Section [\\[Sec:Fourier_continuous\\]](#Sec:Fourier_continuous){reference-type=\"ref\" reference=\"Sec:Fourier_continuous\"} (the reader should refer to this section for the notation used in this paragraph). For $J\\in B_{k}$, set $\\kappa(J):=\\Vert J-\\frac{k-1}{2}\\mathbf{1}_k\\Vert^2-\\Vert \\tilde{I}_0\\Vert^2$. The",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/lem-sec-020-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 50,
+      "pageEnd": 56,
+      "target": "lem-sec-020-01.md",
+      "narrative": null,
+      "content": "Let Kt be the heat kernel either on SU(k) or U(k). Then, for all x ∈SU(k) (resp. U(k)) and 0 < t1 < t2 Kt(x, x) ≤ \u0012t2 t1 \u0013(k2−ϵ)/2 exp \u0012 kπ2 4(t2 −t1) \u0013 , where ϵ = 1 (resp. ϵ = 0).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 6.1",
+      "pageStart": 50,
+      "pageEnd": 56,
+      "target": "../sections/sec-020-62-proof-of-theorem-61.md",
+      "narrative": null,
+      "content": "folds U(k) and SU(k). In particular, we will need the following bound which is a straightforward\ndeduction of the parabolic Harnack estimates of Li and Yau [40, Thm 2.3].\nLemma 6.5. Let Kt be the heat kernel either on SU(k) or U(k). Then, for all x ∈SU(k) (resp.\nU(k)) and 0 < t1 < t2\nKt(x, x) ≤\n\u0012t2\nt1\n\u0013(k2−ϵ)/2\nexp\n\u0012\nkπ2\n4(t2 −t1)\n\u0013\n,\nwhere ϵ = 1 (resp. ϵ = 0).\nProof. Let G be a compact Lie group and Kt the heat kernel on G corresponding to a translation\ninvariant distance dG on G. Since G has positive curvature, taking the limit α →1 in [40, Theorem\n2.3] yields that for all y ∈G,\nKt(x, x) ≤Kt",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Local limit theorem and its geometric consequences",
+      "pageStart": 56,
+      "pageEnd": 60,
+      "target": "../sections/sec-021-7-local-limit-theorem-and-its-geometric-conseque.md",
+      "narrative": null,
+      "content": "[]{#sec:LLT label=\"sec:LLT\"} In this section, we prove a local limit theorem for the $h$-probability measure $(\\ast \\mathbf{m})*\\delta_I$ and deduce Corollary [\\[cor:cohomology\\]](#cor:cohomology){reference-type=\"ref\" reference=\"cor:cohomology\"}, which gives asymptotics of structure coefficients in the ring $QH(G_{k,n})$. For simplicity, we assume that $Var(\\mathbf{m})=0$ to avoid any lattice issue.\n\n::: theorem\nLet $M>0$ and suppose that $\\mathbf{m}=(\\mu_r)_{1\\leq r\\leq m}$ is a sequence of $h$-probability measures on $B_{k,n}$ such that $Var_{2}(\\mathbf{m})=0$ and $\\langle\\widehat{\\mathbf{m}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. Small quantum cohomology of the Grassmannian",
+      "pageStart": 60,
+      "pageEnd": 60,
+      "target": "../sections/sec-022-appendix-a-small-quantum-cohomology-of-the-grass.md",
+      "narrative": null,
+      "content": "We recall here some basic facts about the small quantum cohomology of the Grassmannian.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.1. Partitions and symmetric functions",
+      "pageStart": 60,
+      "pageEnd": 61,
+      "target": "../sections/sec-023-a1-partitions-and-symmetric-functions.md",
+      "narrative": null,
+      "content": "of integers (λ1 ≥λ2 ≥. . . ≥λk ≥0). We denote then by l(λ) the length of the partition λ. The\ninteger λi is called the i-th part of λ, and the size ⟨λ⟩of λ is the sum of its parts. A partition is\ndepicted by a Young diagram, consisting of the drawing of ⟨λ⟩left-aligned boxes with λi boxes in\nthe i-th row.\nWe denote by R the set of all partitions, Λk the set of partitions of length k ≥1 and Λk,n the\nset of partitions of length k such that the ﬁrst part is smaller that n −k. Alternatively, Λk,n can\nQUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY DYSON BROWNIAN MOTION\n61\nbe seen as the set of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.2. the Grassmannian, Schubert variety and intersection",
+      "pageStart": 61,
+      "pageEnd": 62,
+      "target": "../sections/sec-024-a2-the-grassmannian-schubert-variety-and-interse.md",
+      "narrative": null,
+      "content": "the cohomology of the Grassmannian without going into details of homology theory, see [23] for\nmore details. Denote by Gk,n the variety of k-dimensional subspaces of Cn and W = {(0 ⊂W1 ⊂\n. . . ⊂Wn = Cn)} the variety of ﬂags on Cn. By a generic element of W, we mean any element of\nW excepting elements of a submanifold of strictly smaller dimension. For a particular ﬂag W ∈W\nand a partition λ ⊂R, we deﬁne the Schubert variety Ωλ as\nΩW\nλ = {V ∈Gk,n, dim(V ∩Wn−k+i−λi) ≥i, 1 ≤i ≤k}.\nThen, ΩW\nλ is a sub-variety of Gk,n of dimension k(n−k)−⟨λ⟩. Moreover, if λ ⊂µ then ΩW\nµ ⊂ΩW\nλ .\nOne can then prove t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.3. Quantum cohomology ring of the Grassmannian",
+      "pageStart": 62,
+      "pageEnd": 64,
+      "target": "../sections/sec-025-a3-quantum-cohomology-ring-of-the-grassmannian.md",
+      "narrative": null,
+      "content": "of Gk,n is an enrichment of H∗(Gk,n) that counts more broadly maps from P1(C) to Gk,n with\nprescribed values at speciﬁc points rather than intersection of subvarieties of Gk,n. Refer to [5, 6]\nfor a general introduction to the small quantum cohomology. Note that one can generally deﬁne\ntwo quantum cohomologies for a given projective variety: the big quantum cohomology and the\nsmall one. In this paper we will only be interested in the small quantum cohomology which is much\neasier to handle, and we will simply drop the term small in the sequel (see [33] for an introduction\nto the big quantum coh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 64,
+      "pageEnd": 67,
+      "target": "../sections/sec-026-references.md",
+      "narrative": null,
+      "content": "[1] G. W. Anderson, A. Guionnet and O. Zeitouni. An introduction to random matrices, 118, Cambridge university\npress, 2018.\n[2] A. Beauville, Conformal blocks, Fusion rings and the Verlinde formula. Proc. of the Hirzebruch 65 Conf. on\nAlgebraic Geometry, Israel Math. Conf. Proc. 9, 75-96, 1996.\n[3] P. Belkale. Quantum generalization of the Horn conjecture. Journal of the American Mathematical Society, 21(2),\n365-408, 2008.\n[4] P. Belkale. Rigid local systems and the multiplicative eigenvalue problem. Annals of Mathematics, 195(3), 911-\n995, 2022.\n[5] A. Bertram. Quantum Schubert calculus. arXi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.12836v2/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Nomenclature",
+      "pageStart": 67,
+      "pageEnd": 68,
+      "target": "../sections/sec-027-nomenclature.md",
+      "narrative": null,
+      "content": "Nomenclature\n(Bα,γ(t))t≥0 Brownian motion with parameters (α, γ) on U(k), page 8\n∗m\nConvolution of a sequence m = (µi)1≤i≤m of h-probability measures, page 9\n⟨µ⟩\nEµ(⟨Iµ⟩), page 9\nB0\nBasis {eI, I ∈Bk,n} of L2(Bk,n), page 4\nMd,a0,...,am+1\nM0,...,Mm+1 {f ∈Hold(Gk,n), f(ai) ∈Mi, 0 ≤i ≤m + 1}, page 12\nM1(Bk,n) Set of h-probability measures on Bk,n, page 5\nµh\nInvariant measure of Ah, page 5\nΦ\nContinuous Fourier transform on L2(Tk, dp∗(µH)), page 28\nΦn\nDiscrete Fourier transform on Bk,n, page 27\nΦV\nFourier transform on L2\nh(V )., page 18\n˜I\nI −⟨I⟩\nk 1k, page 9\n˜u(i)\n1\nhr · u(i), page 18\n˜w(i)\n1\nhl ·",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0908.4305v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Higher Dimensional Algebra VII: Groupoidiﬁcation",
+  "contains": [
+    "library/arxiv-0908.4305v3/sections/sec-front-matter",
+    "library/arxiv-0908.4305v3/sections/sec-000",
+    "library/arxiv-0908.4305v3/sections/sec-001",
+    "library/arxiv-0908.4305v3/sections/sec-002",
+    "library/arxiv-0908.4305v3/sections/sec-003",
+    "library/arxiv-0908.4305v3/sections/sec-004",
+    "library/arxiv-0908.4305v3/sections/sec-005",
+    "library/arxiv-0908.4305v3/sections/sec-006",
+    "library/arxiv-0908.4305v3/sections/sec-007",
+    "library/arxiv-0908.4305v3/sections/sec-008",
+    "library/arxiv-0908.4305v3/sections/sec-009",
+    "library/arxiv-0908.4305v3/sections/sec-010",
+    "library/arxiv-0908.4305v3/sections/sec-011",
+    "library/arxiv-0908.4305v3/sections/sec-012",
+    "library/arxiv-0908.4305v3/sections/sec-013",
+    "library/arxiv-0908.4305v3/sections/sec-014"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Higher Dimensional Algebra VII: Groupoidiﬁcation — Groupoidiﬁcation is a form of categoriﬁcation in which vector spaces are replaced by groupoids and linear operators are replaced by spans of\n\n**Higher Dimensional Algebra VII: Groupoidiﬁcation**\n\n*John C. Baez, Alexander E. Hoffnung, and Christopher D. Walker*\n\n67 pp, 16 sections.\n\n**Abstract.** Groupoidiﬁcation is a form of categoriﬁcation in which vector spaces are replaced by groupoids and linear operators are replaced by spans of groupoids. We introduce this idea with a detailed exposition of ‘de- groupoidiﬁcation’: a systematic process that turns groupoids and spans into vector spaces and linear operators. Then we present three appli- cations of groupoidiﬁcation. The ﬁrst is to Feynman diagrams. The Hilbert space for the quantum harmonic oscillator arises naturally from degroupoidifying the groupoid of ﬁnite sets and bijections. This allows for a purely combinatorial interpretation of creation and annihilation oper- ators, their commutation relations, ﬁeld operators, their normal-ordered powers, and ﬁnally Feynman diagrams. The second application is to Hecke algebras.\n\n**Outline.** Front matter; 1 Introduction; 2 Degroupoidification; 3 Homology versus Cohomology; 4 Groupoidification; 4.1 Feynman Diagrams; 4.2 Hecke Algebras; 4.3 Hall Algebras; 5 Degroupoidifying a Tame Span; 5.1 Tame Spans Give Operators; 5.2 An Explicit Formula; 6 Properties of Degroupoidification; 6.1 Scalar Multiplication; 6.2 Functoriality of Degroupoidification; 6.3 Inner Products and Adjoints; A Review of Groupoids",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0908.4305&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0908.4305v3",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0908.4305v3.pdf",
+    "source_sha256": "ab8d2b335b026a36a5df2b3e50e063fcb7e03fe97eab5731deac6a787a95910d",
+    "pages": 67,
+    "arxiv": {
+      "id": "0908.4305",
+      "version": "3",
+      "primary_class": "math.QA",
+      "stamp_date": "21 Oct 2010"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,552 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "9-81",
+  "title": "Singular Euclidean Structures on a Simplicial Complex with Weighted Edges",
+  "variant": "pdf",
+  "pages": 7,
+  "tocSource": "undetermined",
+  "tocMethod": "regex",
+  "toc": [],
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 812,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "simplicial complex",
+          "heading": false
+        },
+        {
+          "term": "pure simplicial",
+          "heading": false
+        },
+        {
+          "term": "adjacent facets",
+          "heading": false
+        },
+        {
+          "term": "euclidean structures",
+          "heading": false
+        },
+        {
+          "term": "singular euclidean",
+          "heading": false
+        },
+        {
+          "term": "branched surface",
+          "heading": false
+        },
+        {
+          "term": "euclidean triangle",
+          "heading": false
+        },
+        {
+          "term": "orientable surface",
+          "heading": false
+        }
+      ],
+      "extract": "Singular Euclidean Structures on a Simplicial Complex with Weighted Edges KAMEI Satoshi Graduate School of Mathematical Sciences, The University of Tokyo, 3-8-1 Komaba Meguro-ku, Tokyo 153-8914, Japan E-mail: kamei@poisson.ms.u-tokyo.ac.jp Received July 1, 2002; ﬁnal version accepted January 31, 2003 In this paper, we consider geometric structures on a simplicial complex. Rivin considered geometric structures on a",
+      "extractCut": true,
+      "blocks": [
+        "library/9-81/blocks/prose-page-001",
+        "library/9-81/blocks/thm-page-001-01"
+      ]
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "82",
+      "labelEnd": "82",
+      "words": 461,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wðeþ jf0j",
+          "heading": false
+        },
+        {
+          "term": "e2e wðeþ",
+          "heading": false
+        },
+        {
+          "term": "branched surface",
+          "heading": false
+        },
+        {
+          "term": "fðsþ",
+          "heading": false
+        },
+        {
+          "term": "euclidean triangle",
+          "heading": false
+        },
+        {
+          "term": "singular euclidean",
+          "heading": false
+        },
+        {
+          "term": "euclidean structures",
+          "heading": false
+        },
+        {
+          "term": "suﬃcient condition",
+          "heading": false
+        }
+      ],
+      "extract": "X e2E0 wðeÞ \u0001jF0j with equality if and only if F0 ¼ FðSÞ or F0 ¼ \u0004. Then S admits a unique singular Euclidean structure coming from w. Furthermore we will prove the following theorem. Theorem 4.2. Let C be a compact connected pure 3-simplicial complex which is homeomorphic to a 3-manifold and w be a weight of C . Let S be the 2-skeleton of C . Let F0 be a subset of FðSÞ and E0 be the set of all edges contained in an",
+      "extractCut": true,
+      "blocks": [
+        "library/9-81/blocks/prose-page-002",
+        "library/9-81/blocks/thm-page-002-01",
+        "library/9-81/blocks/rem-page-002-02",
+        "library/9-81/blocks/lem-page-002-03"
+      ]
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "83",
+      "labelEnd": "83",
+      "words": 809,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "function fðu",
+          "heading": false
+        },
+        {
+          "term": "feasible region",
+          "heading": false
+        },
+        {
+          "term": "dual program",
+          "heading": false
+        },
+        {
+          "term": "linear program",
+          "heading": false
+        },
+        {
+          "term": "objective function",
+          "heading": false
+        },
+        {
+          "term": "uð1þ",
+          "heading": false
+        },
+        {
+          "term": "vð1þ",
+          "heading": false
+        },
+        {
+          "term": "vð1þþ",
+          "heading": false
+        }
+      ],
+      "extract": "Proof. The assertion follows immediately from the deﬁnition of a weight. \u0001 Next we will see that the necessary condition above turns out to be a suﬃcient condition, that is, if w satisﬁes the condition of Lemma 2.1, then S always admits locally Euclidean structures. To see that, we regard the set of the locally Euclidean structures on S coming from w as the feasible region of a linear program. Furthermore we use the",
+      "extractCut": true,
+      "blocks": [
+        "library/9-81/blocks/prose-page-003",
+        "library/9-81/blocks/thm-page-003-01",
+        "library/9-81/blocks/lem-page-003-02"
+      ]
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "84",
+      "labelEnd": "84",
+      "words": 763,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uð1þ",
+          "heading": false
+        },
+        {
+          "term": "fð1þ",
+          "heading": false
+        },
+        {
+          "term": "t2fðsþ",
+          "heading": false
+        },
+        {
+          "term": "e2eðsþ",
+          "heading": false
+        },
+        {
+          "term": "objective function",
+          "heading": false
+        },
+        {
+          "term": "dual program",
+          "heading": false
+        },
+        {
+          "term": "vð1þ",
+          "heading": false
+        },
+        {
+          "term": "vð1þþ",
+          "heading": false
+        }
+      ],
+      "extract": "uð1Þ t > 0 for each t 2 Fð1Þ and uð1Þ ¼ mint2Fð1Þðuð1Þ t Þ. Let lð1Þ ¼ jFð1Þj. Let uð2Þ t ¼ uð1Þ t ¼ 0 if t =2 Fð1Þ and otherwise uð2Þ t ¼ uð1Þ t \u0006 uð1Þ. Also let vð2Þ e ¼ vð1Þ e if e is not contained in some element of Fð1Þ and otherwise vð2Þ e ¼ vð1Þ e þ uð1Þ. The vector ðuð2Þ; vð2ÞÞ still satisﬁes the constraints of the dual program. Furthermore Fðuð2Þ; vð2ÞÞ \u0006 Fðuð1Þ; vð1ÞÞ ¼ \u0006u lð1Þ\u0001 \u0006 X e incident to Fð1Þ wðeÞ",
+      "extractCut": true,
+      "blocks": [
+        "library/9-81/blocks/prose-page-004",
+        "library/9-81/blocks/lem-page-004-01",
+        "library/9-81/blocks/lem-page-004-02"
+      ]
+    },
+    {
+      "id": "page-005",
+      "number": null,
+      "title": "Page 5",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "85",
+      "labelEnd": "85",
+      "words": 787,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "let aðs",
+          "heading": false
+        },
+        {
+          "term": "sin mðpþ",
+          "heading": false
+        },
+        {
+          "term": "logð sin",
+          "heading": false
+        },
+        {
+          "term": "i0þ log",
+          "heading": false
+        },
+        {
+          "term": "euclidean triangle",
+          "heading": false
+        },
+        {
+          "term": "dihedral angles",
+          "heading": false
+        },
+        {
+          "term": "singular euclidean",
+          "heading": false
+        },
+        {
+          "term": "ideal simplex",
+          "heading": false
+        }
+      ],
+      "extract": "3. Singular Euclidean Structures In this section, we consider when S admits a singular Euclidean structure. To discuss that, we will use some results of hyperbolic geometry. At ﬁrst, we prepare some elementary notations. Consider the upper half-space model of H3 and an ideal simplex in it. Let A, B, C, 1 be the vertices of the ideal simplex, and \u0007, \b, be the dihedral angles at the edges 1A, 1B, 1C respectively.",
+      "extractCut": true,
+      "blocks": [
+        "library/9-81/blocks/prose-page-005",
+        "library/9-81/blocks/rem-page-005-01",
+        "library/9-81/blocks/lem-page-005-02",
+        "library/9-81/blocks/lem-page-005-03"
+      ]
+    },
+    {
+      "id": "page-006",
+      "number": null,
+      "title": "Page 6",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "86",
+      "labelEnd": "86",
+      "words": 691,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "logð sin",
+          "heading": false
+        },
+        {
+          "term": "singular euclidean",
+          "heading": false
+        },
+        {
+          "term": "tiþ",
+          "heading": false
+        },
+        {
+          "term": "dual cycles",
+          "heading": false
+        },
+        {
+          "term": "euclidean structure",
+          "heading": false
+        },
+        {
+          "term": "aðs",
+          "heading": false
+        },
+        {
+          "term": "critical point",
+          "heading": false
+        },
+        {
+          "term": "holonomies",
+          "heading": false
+        }
+      ],
+      "extract": "The next lemma follows immediately. Lemma 3.4. Let \u0007, \b, be the angles of a triangle t ¼ ABC respectively. Then Dðt; AÞ ¼ log sin \b \u0006 log sin . Deﬁnition. Let vi ¼ ti\u00061 \\ ti \\ tiþ1. The value Hðc\u0010; A Þ ¼ Pk\u00061 i¼1 Dðti; viÞ is called the holonomy of c\u0010. Lemma 3.5. There exists a singular Euclidean structure on S if and only if the holonomies of all dual cycles of S are equal to 0. Proof. First we assume that the",
+      "extractCut": true,
+      "blocks": [
+        "library/9-81/blocks/prose-page-006",
+        "library/9-81/blocks/lem-page-006-01",
+        "library/9-81/blocks/lem-page-006-02",
+        "library/9-81/blocks/lem-page-006-03",
+        "library/9-81/blocks/lem-page-006-04",
+        "library/9-81/blocks/thm-page-006-05"
+      ]
+    },
+    {
+      "id": "page-007",
+      "number": null,
+      "title": "Page 7",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "87",
+      "labelEnd": "87",
+      "words": 455,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wðeþ jf0j",
+          "heading": false
+        },
+        {
+          "term": "e2e wðeþ",
+          "heading": false
+        },
+        {
+          "term": "fðsþ",
+          "heading": false
+        },
+        {
+          "term": "singular euclidean",
+          "heading": false
+        },
+        {
+          "term": "edges contained",
+          "heading": false
+        },
+        {
+          "term": "rivin",
+          "heading": false
+        },
+        {
+          "term": "euclidean structure",
+          "heading": false
+        },
+        {
+          "term": "prof",
+          "heading": false
+        }
+      ],
+      "extract": "Theorem 4.1. Let S be a branched surface and w be a weight of S. Let F0 be a subset of FðSÞ, and let E0 be the set of all edges contained in an element of F0. Suppose that each F0 satisﬁes X e2E0 wðeÞ \u0001jF0j with equality if and only if F0 ¼ FðSÞ or F0 ¼ \u0004. Then S admits a unique singular Euclidean structure coming from w. For 3-simplicial complexes, we can prove the following theorem. Theorem 4.2. Let C be a compact",
+      "extractCut": true,
+      "blocks": [
+        "library/9-81/blocks/prose-page-007",
+        "library/9-81/blocks/thm-page-007-01",
+        "library/9-81/blocks/thm-page-007-02"
+      ]
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "let fðsþ",
+      "heading": false
+    },
+    {
+      "term": "wðeþ jf0j",
+      "heading": false
+    },
+    {
+      "term": "singular euclidean",
+      "heading": false
+    },
+    {
+      "term": "e2e wðeþ",
+      "heading": false
+    },
+    {
+      "term": "euclidean structures",
+      "heading": false
+    },
+    {
+      "term": "euclidean triangle",
+      "heading": false
+    },
+    {
+      "term": "let aðs",
+      "heading": false
+    },
+    {
+      "term": "structures coming",
+      "heading": false
+    },
+    {
+      "term": "admits singular",
+      "heading": false
+    },
+    {
+      "term": "e2eðsþ wðeþve",
+      "heading": false
+    },
+    {
+      "term": "adjacent faces",
+      "heading": false
+    },
+    {
+      "term": "dihedral angles",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "82",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "83",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "84",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "85",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "86",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "87",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "",
+      "page": 2,
+      "pageLabel": "82",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "not-extracted",
+      "note": "split one section per page; no contents was trusted"
+    },
+    {
+      "kind": "sections",
+      "state": "partial",
+      "count": 7,
+      "note": "one per page, not by heading"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p7); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 7 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/9-81"
+  }
+}

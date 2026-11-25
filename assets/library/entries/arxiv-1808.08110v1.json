@@ -1,0 +1,177 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1808.08110v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1808.08110v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1808.08110v1  [hep-th]  24 Aug 2018\nEXCEPTIONAL QUANTUM GEOMETRY\nAND PARTICLE PHYSICS II\nMichel DUBOIS-VIOLETTE 1 and Ivan TODOROV 2\nAbstract\nWe continue the study undertaken in [13] of the relevance of the\nexceptional Jordan algebra J8\n3 of hermitian 3 × 3 octonionic matrices\nfor the description of the internal space of the fundamental fermions\nof the Standard Model with 3 generations. By using the suggestion of\n[30] (properly justiﬁed here) that the Jordan algebra J8\n2 of hermitian\n2× 2 octonionic matrices is relevant for the description of the internal\nspace of the fundamental fermion",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.08110v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "It is natural to associate the finite spectrum of fundamental particles to a finite quantum space endowed possibly with some additional structure. This point of view underlies, with some variations, most noncommutative geometric approaches to particle physics (see e.g. [@mdv-ker-mad:1989a], [@mdv-ker-mad:1988b], [@mdv:1991], [@ac-lot:1990], [@cha-ac:1997], [@cha-ac-mar:2007]). Such a finite quantum space is a virtual space associated to its algebra of observables that is a finite-dimensional real algebra which is a quantum analog of a finite-dimensional algebra of real functions.\\\nIn [@mdv:201",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.08110v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Unimodularity of SU(3)c and the quark-lepton symmetry",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-2-unimodularity-of-su3c-and-the-quark-lepton-sym.md",
+      "narrative": null,
+      "content": "The space of internal states of a quark is the 3-dimensional complex space $\\mathbb C^3$ acted by the color group $SU(3)$. Since $SU(3)$ is a subgroup of $U(3)$ this means that the above state's space is a 3-dimensional complex Hilbert space $\\mathbb C^3$ but the role of the unimodularity of $SU(3)$ that is of a corresponding normalized volume on $\\mathbb C^3$ is not transparent. As an element of comparison, one has not the same problem with $\\mathbb C^2$ acted by $SU(2)$ because since $SU(2)$ coincides with the group $U(1,\\mathbb H)$ of 1-dimensional quaternionic unitaries it means that one h",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.08110v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The 3 generations and the triality in J83",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-3-the-3-generations-and-the-triality-in-j83.md",
+      "narrative": null,
+      "content": "As recalled in Section 3.2 of [@mdv:2016b] and originally analyzed in [@jor-vn-wig:1934], the algebra of observables of a finite quantum space should be a finite-dimensional Euclidean Jordan algebra which is clearly not the case of the octonion algebra $\\mathbb O$.\\\nHowever, as pointed out in Section 3.1 of [@mdv:2016b], the existence of three generations of fundamental fermions reveals a sort of triality underlying the classification of these fundamental fermions. On the other hand, it is well known that the combination of $\\mathbb O$ with the usual triality (of $Spin_8$) leads naturally to t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.08110v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The factor J82=JSpin9 for one generation",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-003-4-the-factor-j82jspin9-for-one-generation.md",
+      "narrative": null,
+      "content": "2 = JSpin9 for one generation\nThe spin factor J8\n2 = JSpin9 of hermitian octonionic 2 × 2-matrices is a\n10-dimensional Euclidean Jordan algebra which is strongly special [24]. This\nmeans essentially that it is a special Jordan algebra which is such that its\nunital Jordan modules can be extracted from its universal unital associative\nenvelop. The universal unital associative envelop of J8\n2 = JSpin9 is the Clif-\nford algebra Cℓ(9, 0).\nThe automorphism group of J8\n2 = JSpin9 is the group Spin9 while the\nsubgroup which preserves the splitting C ⊕C3 of the octonion entering into\nthe matrix of an e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.08110v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "W2-triality and the 3 generations",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-004-5-w2-triality-and-the-3-generations.md",
+      "narrative": null,
+      "content": "We now consider the triality as corresponding to the 3 canonical Jordan subalgebras $J_{(1)}, J_{(2)}, J_{(3)}$ isomorphic to $J^8_2$ of $J^8_3$ where $J_{(1)}$ consists of the matrices of $J^8_3$ having vanishing elements in the first row and the first column, $J_{(2)}$ consists of the matrices having vanishing elements in the second row and the second column while $J_{(3)}$ consists of the matrices having vanishing elements in the third row and the third column. These 3 Jordan subalgebras $J_{(i)}$ correspond to the 3 diagonal primitive idempotent $E_{(i)}$ via $$\\label{JE}\nJ_{(i)}=(\\mbox{\\r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.08110v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The extended electroweak symmetry SU(3)ew",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-005-6-the-extended-electroweak-symmetry-su3ew.md",
+      "narrative": null,
+      "content": "The subgroup of $F_4$ which preserves the splitting $\\mathbb C\\oplus \\mathbb C^3$ of the octonions entering into the matrices of the elements of $J^8_3$ is $$\\label{Spl}\nSU(3) \\times SU(3)/\\mathbb Z_3=SU(3)_c\\times  SU(3)/\\mathbb Z_3$$ where the first factor is the color group $SU(3)_c$ as explained in [@mdv:2016b]. It is our aim in this section to give a similar interpretation for the second $SU(3)$ factor occurring in [\\[Spl\\]](#Spl){reference-type=\"ref\" reference=\"Spl\"}.\\\nThe automorphism groups of the Jordan algebras $J_{(i)}$ $(i\\in \\{1,2,3\\})$ are 3 subgroups of $F_4={\\mbox{Aut}}(J^8_3)$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.08110v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The internal symmetry SU(3)cSU(3)ew/Z3",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-006-7-the-internal-symmetry-su3csu3ewz3.md",
+      "narrative": null,
+      "content": "It is important to understand that in our approach here as well as in [13],\nthe exceptional Jordan algebra J8\n3 plays the same role for the internal struc-\nture of fundamental particles as the algebra C(M) of smooth functions on\nspacetime for the external structure.\nIn particular the automorphism group F4 of J8\n3 plays the same role for the\ninternal structure as the diﬀeomorphism group Diﬀ(M) of spacetime for the\nexternal structure while the subgroup SU(3)c × SU(3)ew/Z3 of F4 plays for\nthe internal structure the role of the Poincar´e group (i.e the inhomogeneous\nLorentz group) for the external",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1808.08110v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discussion",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "../sections/sec-007-8-discussion.md",
+      "narrative": null,
+      "content": "Discussion\nThe advantage of the approach of this paper to the correspondence triality-\ngenerations with respect to the one of [13] is that here one does not need\nthe introduction of new fundamental fermions and that the formulation of\nthe electroweak symmetry is straightforward. This new approach which is\nbased on the key observation that the Euclidean Jordan algebra J8\n2 can be\nassociated with a complete generation seems to be the most appealing one.\nNevertheless one should not forget that there is another possibility, namely\nthe one suggested in Section 4 of [13], which is based on the same",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/disssubmission/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Tannakian categories of perverse sheaves on abelian varieties",
+  "contains": [
+    "library/disssubmission/sections/sec-front-matter",
+    "library/disssubmission/sections/sec-000",
+    "library/disssubmission/sections/sec-001",
+    "library/disssubmission/sections/sec-002",
+    "library/disssubmission/sections/sec-003",
+    "library/disssubmission/sections/sec-004",
+    "library/disssubmission/sections/sec-005",
+    "library/disssubmission/sections/sec-006",
+    "library/disssubmission/sections/sec-007",
+    "library/disssubmission/sections/sec-008",
+    "library/disssubmission/sections/sec-009",
+    "library/disssubmission/sections/sec-010",
+    "library/disssubmission/sections/sec-011",
+    "library/disssubmission/sections/sec-012",
+    "library/disssubmission/sections/sec-013",
+    "library/disssubmission/sections/sec-014",
+    "library/disssubmission/sections/sec-015",
+    "library/disssubmission/sections/sec-016",
+    "library/disssubmission/sections/sec-017",
+    "library/disssubmission/sections/sec-018",
+    "library/disssubmission/sections/sec-019",
+    "library/disssubmission/sections/sec-020",
+    "library/disssubmission/sections/sec-021",
+    "library/disssubmission/sections/sec-022",
+    "library/disssubmission/sections/sec-023",
+    "library/disssubmission/sections/sec-024",
+    "library/disssubmission/sections/sec-025",
+    "library/disssubmission/sections/sec-026",
+    "library/disssubmission/sections/sec-027",
+    "library/disssubmission/sections/sec-028",
+    "library/disssubmission/sections/sec-029",
+    "library/disssubmission/sections/sec-030",
+    "library/disssubmission/sections/sec-031",
+    "library/disssubmission/sections/sec-032",
+    "library/disssubmission/sections/sec-033",
+    "library/disssubmission/sections/sec-034",
+    "library/disssubmission/sections/sec-035",
+    "library/disssubmission/sections/sec-036",
+    "library/disssubmission/sections/sec-037",
+    "library/disssubmission/sections/sec-038",
+    "library/disssubmission/sections/sec-039",
+    "library/disssubmission/sections/sec-040",
+    "library/disssubmission/sections/sec-041",
+    "library/disssubmission/sections/sec-042",
+    "library/disssubmission/sections/sec-043",
+    "library/disssubmission/sections/sec-044",
+    "library/disssubmission/sections/sec-045",
+    "library/disssubmission/sections/sec-046",
+    "library/disssubmission/sections/sec-047",
+    "library/disssubmission/sections/sec-048",
+    "library/disssubmission/sections/sec-049",
+    "library/disssubmission/sections/sec-050"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Tannakian categories of perverse sheaves on abelian varieties — 52 sections: Front matter; Introduction; Some commonly used notations\n\n**Tannakian categories of perverse sheaves on abelian varieties**\n\n*Erlangung der Doktorwürde*\n\n181 pp, 52 sections.\n\n**Outline.** Front matter; Introduction; Some commonly used notations; 1 Vanishing theorems on abelian varieties; 1.1 The main result; 1.2 A relative generic vanishing theorem; 1.3 Kodaira-Nakano-type vanishing theorems; 1.4 Negligible perverse sheaves; 1.5 The spectrum of a perverse sheaf; 2 Proof of the vanishing theorem(s); 2.1 The setting; 2.2 Character twists and convolution; 2.3 An axiomatic framework; 2.4 The Andr´e-Kahn quotient; 2.5 Super Tannakian categories; 2.6 Perverse multiplier; 2.7 The main argument; 3 Perverse sheaves on semiabelian varieties",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "disssubmission",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "DissSubmission.pdf",
+    "source_sha256": "207fd5e3dc0d278d80f3f5d84f56c2fbfb97b299338d5b5419d2369be75dd521",
+    "pages": 181,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

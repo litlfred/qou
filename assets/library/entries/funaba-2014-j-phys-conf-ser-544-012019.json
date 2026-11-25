@@ -1,0 +1,304 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "funaba-2014-j-phys-conf-ser-544-012019",
+  "blocks": [
+    {
+      "id": "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "Journal of Physics:\nConference Series\n     \nOPEN ACCESS\nMöbius invariant energy of tori of revolution\nTo cite this article: H Funaba and J O'Hara 2014 J. Phys.: Conf. Ser. 544 012019\n \nView the article online for updates and enhancements.\nYou may also like\nPhonon modes in a Möbius band\nNorihiko Nishiguchi and Martin N\nWybourne\n-\nElectronic states in quantum wires on a\nMöbius strip\nJ J L R Pinto, J E G Silva and C A S\nAlmeida\n-\nPhotonic states on Möbius band\nYing Han, Ai-Lei He, Hua-Jin Chen et al.\n-\nThis content was downloaded from IP address 85.5.100.194 on 13/09/2026 at 15:29",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "M¨obius invariant energy of tori of revolution\nH. Funaba & J. O’Hara\nDepartment of Mathematics and Information Sciences, Tokyo Metropolitan University,\n1-1 Minami-Ohsawa, Hachiouji-Shi, Tokyo 192-0397 Japan\nE-mail: ohara@tmu.ac.jp\nAbstract.\nWe show that among tori of revolution the Cliﬀord torus gives the minimum value\nof the M¨obius invariant surface energy deﬁned by Auckly and Sadun.\n1. Introduction and main result\nRecently Fernando C. Marques and Andr´e Neves (Marques & Neves) proved the Willmore\nconjecture, namely, they showed the following. Let Σ be an immersed torus in R3. Let κ1\nand κ2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/cor-page-003-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "cor-page-003-02.md",
+      "narrative": null,
+      "content": "Among tori of revolution, a stereographic projection of the Cliﬀord torus gives the minimum energy. Flux in QCS IOP Publishing Journal of Physics: Conference Series 544 (2014) 012019 doi:10.1088/1742-6596/544/1/012019",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "that minimizes the energy in the knot type. Let K be a knot and x be a point on it. Deﬁne\nV (x; K) = lim\nε→0\n Z\nK\\Bε(x)\ndy\n|x −y|2 −2\nε\n!\n,\nand E(K) =\nZ\nK\nV (x; K)dx,\n(1)\nwhere Bε(x) is a ball with center x and radius ε. Let us call a process as in the deﬁnition\nof V (x; K) in (1) the renormalization in this paper. In general, when we are interested in a\ndiverging integral, we ﬁrst restrict the integration to the complement of an ε-neighbourhood of\nthe set where the integrand blows up, then expand the result in a Laurent series in ε, and ﬁnally\ntake the constant term. In the case of a knot, th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/thm-page-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "thm-page-003-01.md",
+      "narrative": null,
+      "content": "Let TR be a torus of revolution whose generating circle has radius 1 and center at distance R (R > 1) from the axis of revolution. Then the renormalized potential energy is given by E(TR) = π3 √ R2 −1 \u0012 R2 (3 log 2 −1) + 2 −2 R2 \u0013 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "Proof of Corollary: Since\nd\ndRE(TR) = π3(R2 −2)\n\u0000(R2 −2)2 + 3 R4 log (4/e)\n\u0001\n4R3 (R2 −1)3/2\n,\nthe energy takes the minimum value π3(6 log 2 −1)/2 when R =\n√\n2.\n□\nProblem: (1) Does T√\n2 give the minimum energy among all the embedded tori in R3, hence\namong all the immersed tori in R3?\n(2) When we change the power of |x −y| in the denominator in (2) from 4 to any number\nλ, we obtain a new potential energy Er−λ after suitable renormalization. It is no longer scale\ninvariant when λ̸ = 4. What is R = R(λ) that makes TR give the minimum energy Er−λ after\nrescaling to have area 1?\n2. Computation of t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "Deﬁne b = b(θ) and c = c(t) by\nc(t) = 2(R + cos α)\nh\n2(R + cos α) −cos α · t2 −sin α · t\np\n4 −t2\ni\nb = c\n4 = (R + cos α) (R −cos(α −2θ)) .\n(3)\nThen\nDist2 = t2 + c(t) sin2 v\n2 = 4\n\u0010\ncos2 θ + b sin2 v\n2\n\u0011\n.\nPut\nV (ε, x) =\nZZ\nDist≥ε\nd2y\n|x −y|2 .\nSince the area element of T is given by d2y = (R + cos u) dudv, V (ε, x) is given by\nZZ\nDist≥ε\n(R + cos u)\n(2R2 + 2 + 2R (cos α + cos u) −2 sin α sin u −2 (R + cos α) (R + cos u) cos v)2 dudv\n=\nZZ\nDist≥ε\nR +\n\u0010\n2−t2\n2\ncos α −t\n√\n4−t2\n2\nsin α\n\u0011\n\u0000t2 + c(t) sin2 v\n2\n\u00012\n2dt\n√\n4 −t2 dv\n(4)\n= 1\n8\nZZ\nDist≥ε\n(R−cos(α −2θ))\n\u0000cos2 θ + b sin2 v\n2\n\u00012 dθdv.\n(5)\nThe in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "v\nu\nI1\n3I\nx\n4I\n2I\nFigure 1. Parts of the domains of integration of I1 (blue or light grey) and I4 (red or dark\ngrey) near the point x\nTherefore, I2 is given by\nI2 =\nZ ε\n0\nZ π\n2 sin−1\n\u0012r\nε2−t2\nc(t)\n\u0013 2R + cos α · (2 −t2) −sin α · t\n√\n4 −t2\n(t2 + c(t) sin2 v\n2)2\ndv\ndt\n√\n4 −t2 .\nBy the formula (6) we get\nI2 =\nZ ε\n0\n(\n2R + cos α · (2 −t2) −sin α · t\n√\n4 −t2\n√\n4 −t2\n×\n\"\n2t2 + c(t)\nt3(t2 + c(t))\n3\n2\ntan−1\n p\nt2 + c(t)\nt\ntan v\n2\n!\n+\nc(t) tan v\n2\nt2(t2 + c(t))\n\u0000(t2 + c(t)) tan2 v\n2 + t2\u0001\n#π\nv=2 sin−1\n\u0012r\nε2−t2\nc(t)\n\u0013\n\n\n\n\n\ndt\n=\nZ ε\n0\n2R + cos α · (2 −t2) −sin α · t\n√\n4 −t2\n√\n4 −t2\n×\n(\n2t2 + c(t)\nt3",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "Expanding the integrand in a series in ε with the help of Maple we obtain\nI2 = 1\n2ε2\nZ\nπ\n2\n0\n\u0012\nτ cos τ\nsin3 τ −cos2 τ\nsin2 τ\n\u0013\ndτ −\nsin α\n4(R + cos α)ε\nZ\nπ\n2\n0\n\u0012\nτ cos τ\nsin2 τ −cos2 τ\nsin τ\n\u0013\ndτ\n+\nR2\n16(R + cos α)2\nZ\nπ\n2\n0\n\u0010\nτ cos τ\nsin τ −cos2 τ\n\u0011\ndτ +\n1\n8(R + cos α)2\nZ\nπ\n2\n0\ncos2 τdτ + O(ε).\n(7)\nDirect integration shows\nZ\nπ\n2\n0\n\u0012\nτ cos τ\nsin3 τ −cos2 τ\nsin2 τ\n\u0013\ndτ = 1\n2\n\u0014τ + sin τ cos τ −2τ cos2 τ\nsin2 τ\n\u0015 π\n2\n0\n= π\n4 ,\nZ\nπ\n2\n0\n\u0012\nτ cos τ\nsin2 τ −cos2 τ\nsin τ\n\u0013\ndτ =\nh\n−cos τ −\nτ\nsin τ\ni π\n2\n0 = 4 −π\n2\n.\n(8)\nOn the other hand,\nR π\n2\n0\n\u0000τ cot τ −cos2 τ\n\u0001\ndτ can be computed as follows.\nPut\nI =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "The integral I4 can be obtained from I2 by changing α to −α:\nI4 =\nZ 0\n−ε\nZ π\n2 sin−1\n\u0012r\nε2−t2\nc(t)\n\u0013 2R + cos α · (2 −t2) −sin α · t\n√\n4 −t2\n(t2 + c(t) sin2 v\n2)2\ndt\n√\n4 −t2 dv\n= π\n8ε2 −(π −4) sin α\n8(R + cos α)ε +\nπR2\n64(R + cos α)2 (2 log 2 −1) +\nπ\n32(R + cos α)2 + O(ε).\nLet us next compute I1 and I3.\nSince u −α ∈[2 sin−1(ε/2), π] θ = π/2 −(u −α)/2 ∈\n[0, cos−1(ε/2)].\nThe integral I1 is given by\nI1 = 1\n8\nZ cos−1 ε\n2\n0\nZ π\n0\nR−cos(α −2θ)\n(cos2 θ + b sin2 v\n2)2 dvdθ,\nwhere b = (R + cos α) (R−cos(α −2θ)) as was given by (3).\nPut a = cos θ.\nThen (6) shows\nZ π\n0\ndv\n(a2 + b sin2 v\n2)2 =\n2a2 + b\na3(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "We have used Maple to expand them in series in ε (the last step of each computation of I1j).\nI15 =\nZ cos−1 ε\n2\n0\n1\ncos2 θ\n\u0010\nR2 + ((R + cos α) tan θ −sin α)2\u0011 3\n2\ndθ\n=\n\n\n(R + cos α) tan θ −sin α\nR2(R + cos α)\nq\nR2 + ((R + cos α) tan θ −sin α)2\n\n\ncos−1 ε\n2\n0\n=\n(R + cos α)\n√\n4 −ε2 −(sin α)ε\nR2(R + cos α)\nq\nR2ε2 + ((R + cos α)\n√\n4 −ε2 −(sin α)ε)2\n+\nsin α\nR2(R + cos α)\np\nR2 + sin2 α\n=\n1\nR2(R + cos α) +\nsin α\nR2(R + cos α)\np\nR2 + sin2 α\n+ O (ε) ,\nI16 =\nZ cos−1 ε\n2\n0\nsin θ\ncos3 θ\n\u0010\nR2 + ((R + cos α) tan θ −sin α)2\u0011 3\n2\ndθ\n=\n\n\nsin α ((R + cos α) tan θ −sin α) −R2\nR2(R + cos α)2\nq\nR2 + ((R + cos",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/prose-page-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 10",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/page-010.md",
+      "narrative": null,
+      "content": "I13 =\nZ cos−1 ε\n2\n0\nsin θ\ncos3 θ\nq\nR2 + ((R + cos α) tan θ −sin α)2 dθ\n=\nsin α\nR + cos αI12 +\n1\n(R + cos α)2\n\u0014q\nR2 + ((R + cos α) tan θ −sin α)2\n\u0015cos−1 ε\n2\n0\n=\nsin α\nR + cos αI12 +\nr\nR2ε2 +\n\u0010\n(R + cos α)\n√\n4 −ε2 −(sin α)ε\n\u00112\n(R + cos α)2ε\n−\np\nR2 + sin2 α\n(R + cos α)2\n=\nsin α\nR + cos αI12 +\n\u001a\n2\n(R + cos α)ε −\nsin α\n(R + cos α)2 + O (ε)\n\u001b\n−\np\nR2 + sin2 α\n(R + cos α)2 ,\nI14 =\nZ cos−1 ε\n2\n0\n1\ncos4 θ\n\u0010\nR2 + ((R + cos α) tan θ −sin α)2\u0011 3\n2\ndθ\n=\n1\n(R + cos α)2 I12 −(1 −2R cos α −2 cos2 α)\n(R + cos α)2\nI15 +\n2 sin α\nR + cos αI16\n=\n1\n(R + cos α)2 I12 +\n1 + 2R cos α\nR2(R + cos α)3 + (1 + 2R2) sin α + 2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/prose-page-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 11",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/page-011.md",
+      "narrative": null,
+      "content": "Therefore\nI1 = π(R + cos α)\n16\nI11 −π cos α\n8\nI12 −π sin α\n8\nI13 + π(R + cos α)\n16\nI14 −π cos α\n8\nI15 −π sin α\n8\nI16\n=\nπR2\n32(R + cos α)I12 + π\n8ε2 −\nsin α\n8(R + cos α)ε −π(R2 + 4R cos α + 2 cos2 α)\n64(R + cos α)2\n−\nπ\n16R2(R + cos α)2\n+\nπ sin2 α\n32(R + cos α)2 −\nπ sin α\n16R2(R + cos α)2p\nR2 + sin2 α\n+ π sin α\np\nR2 + sin2 α\n32(R + cos α)2\n+ O(ε)\n= −\nπR2\n64(R + cos α)2 log\n\u0012\nR2ε2\n16(R + cos α)2\n\u0013\n+\nπR2\n32(R + cos α)2 sinh−1\n\u0012sin α\nR\n\u0013\n+ π\n8ε2 −\nsin α\n8(R + cos α)ε −π(R2 + 4R cos α + 2 cos2 α)\n64(R + cos α)2\n−\nπ\n16R2(R + cos α)2 +\nπ sin2 α\n32(R + cos α)2\n−\nπ sin α\n16R2(R + cos α)2p\nR2 + sin2 α\n+",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/prose-page-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 12",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/page-012.md",
+      "narrative": null,
+      "content": "Finally, it implies that the renormalized r−4-potential energy of the torus T is given by\nE(T) =\nZ\nT\nV (x; T) d2x\n= 2π\nZ 2π\n0\n\u0012\nπR2\n8(R + cos α)2 3 log 2 −π\n8 −\nπ\n4R2(R + cos α)2 + π(1 + sin2 α)\n8(R + cos α)2\n+\nπ cos α\n4(R + cos α)\n\u0013\n(R + cos α) dα\n= π2\n2\nZ π\n0\n\u0012\u0012\nR2 (3 log 2 −1) + 2 −2\nR2\n\u0013\n1\nR + cos α\n\u0013\ndα\n= π2\n2\n\"\u0012\nR2 (3 log 2 −1) + 2 −2\nR2\n\u0013\n2\n√\nR2 −1\ntan−1\n r\nR −1\nR + 1 tan α\n2\n!#π\n0\n=\nπ3\n2\n√\nR2 −1\n\u0012\nR2 (3 log 2 −1) + 2 −2\nR2\n\u0013\n.\n□\n3. Application as another motivation\nFirst we state our framework ((O’Hara & Solanes)).\nLet M be an m-dimensional compact\norientable submanifold of Rn and λ be",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/prose-page-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 13",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/page-013.md",
+      "narrative": null,
+      "content": "Now we can deﬁne functionals for knots as follows. Let Nε(K) be an ε-tubular neighbourhood\nof K. Expand Erλ(∂Nε(K)) and Erλ′(Nε(K)) in series of ε. We conjecture that functionals that\ncan capture global properties of knots appear as a coeﬃcient of ε2-term of Erλ(∂Nε(K)) and as\na coeﬃcient of ε4-term of Erλ′(Nε(K)).\nWhen K◦is a round circle with radius 1, our main theorem implies\nEr−4(∂Nε(K◦)) =\nπ3ε\n2\n√\n1 −ε2\n\u00123 log 2 −1\nε2\n+ 2 −2ε2\n\u0013\n= π3(3 log 2 −1)\n2ε\n+ 3π3 (log 2 + 1)\n4\nε + π3 (9 log 2 −11)\n16\nε3 + O(ε5).\nTherefore, the functional thus obtained from the ε2-term of Er−4(∂Nε(K)) vanishes for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-9804005v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "RINGS WITH AUSLANDER DUALIZING COMPLEXES",
+      "dcterms:creator": [
+        "YEKUTIELI, AMNON",
+        "ZHANG, JAMES J."
+      ],
+      "dcterms:issued": "D:20180918",
+      "dcterms:identifier": "https://arxiv.org/abs/math/9804005",
+      "dcterms:abstract": "A ring with an Auslander dualizing complex is a generalizati on of an Auslander-Gorenstein ring. W e show that many results w hich hold for Auslander-Gorenstein rings also hold in the more general se tting. On the other hand we give criteria for existence of Auslander duali zing complexes which show these occur quite frequently. The most powerful tool we use is the Local Duality Theorem for connected graded algebras over a ﬁeld. Filtrations allow the transfer of results to non- graded algebras. W e also prove some results of a categorical nature, most nota bly the func- toriality of rigid dualizing complexes.",
+      "dcterms:source": "library/arxiv-math-9804005v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-9804005v3"
+    }
+  ]
+}

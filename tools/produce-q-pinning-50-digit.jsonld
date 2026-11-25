@@ -1,0 +1,1003 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "bootstrap": "https://litlfred.github.io/bootstrap/v0/ns/",
+    "cat-harness": "https://litlfred.github.io/cat-harness/v0/ns/",
+    "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "id": "@id",
+    "type": "@type",
+    "graph": "@graph",
+    "name": "rdfs:label",
+    "title": "http://purl.org/dc/terms/title",
+    "description": "http://purl.org/dc/terms/description",
+    "summary": "rdfs:comment",
+    "prefLabel": "http://www.w3.org/2004/02/skos/core#prefLabel",
+    "notation": "http://www.w3.org/2004/02/skos/core#notation",
+    "generatedAt": {
+      "@id": "http://www.w3.org/ns/prov#generatedAtTime",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "sourceCommit": {
+      "@id": "http://www.w3.org/ns/prov#wasDerivedFrom",
+      "@type": "@id"
+    },
+    "sourceCommitSha": "https://litlfred.github.io/cat-harness/v0/ns/sourceCommitSha",
+    "sourceCommitAt": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/sourceCommitAt",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "sourceTreeDirty": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/sourceTreeDirty",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "sourceTree": "https://litlfred.github.io/cat-harness/v0/ns/sourceTree",
+    "sourceCommitUnavailable": "https://litlfred.github.io/cat-harness/v0/ns/sourceCommitUnavailable",
+    "dependsOn": "https://litlfred.github.io/cat-harness/v0/ns/dependsOn",
+    "packageId": "https://litlfred.github.io/cat-harness/v0/ns/packageId",
+    "uri": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/uri",
+      "@type": "@id"
+    },
+    "dependsOnGaps": "https://litlfred.github.io/cat-harness/v0/ns/dependsOnGaps",
+    "dependsOnUnavailable": "https://litlfred.github.io/cat-harness/v0/ns/dependsOnUnavailable",
+    "partOf": {
+      "@id": "http://purl.org/dc/terms/isPartOf",
+      "@type": "@id"
+    },
+    "inSubgraph": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/inSubgraph",
+      "@type": "@id"
+    },
+    "requires": {
+      "@id": "http://purl.org/dc/terms/requires",
+      "@type": "@id"
+    },
+    "performedBy": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/performedBy",
+      "@type": "@id"
+    },
+    "declaresSkill": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/declaresSkill",
+      "@type": "@id"
+    },
+    "inPackage": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/inPackage",
+      "@type": "@id"
+    },
+    "providesCapability": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/providesCapability",
+      "@type": "@id"
+    },
+    "requiresCapability": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/requiresCapability",
+      "@type": "@id"
+    },
+    "fallbackToCapability": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/fallbackToCapability",
+      "@type": "@id"
+    },
+    "satisfies": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/satisfies",
+      "@type": "@id"
+    },
+    "hasSkill": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/hasSkill",
+      "@type": "@id"
+    },
+    "bindsRole": {
+      "@id": "http://www.omg.org/spec/BPMN/20100524/MODEL#partitionElementRef",
+      "@type": "@id"
+    },
+    "inLane": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/inLane",
+      "@type": "@id"
+    },
+    "maintains": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/maintains",
+      "@type": "@id"
+    },
+    "maintainsFrom": "https://litlfred.github.io/cat-harness/v0/ns/maintainsFrom",
+    "maintainedBy": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/maintainedBy",
+      "@type": "@id"
+    },
+    "jsonSchema": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/jsonSchema",
+      "@type": "@id"
+    },
+    "module": "https://litlfred.github.io/cat-harness/v0/ns/module",
+    "holdsGraph": {
+      "@id": "http://purl.org/dc/terms/type",
+      "@type": "@id"
+    },
+    "startNode": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/startNode",
+      "@type": "@id"
+    },
+    "incoming": {
+      "@id": "http://www.omg.org/spec/BPMN/20100524/MODEL#incoming",
+      "@type": "@id"
+    },
+    "outgoing": {
+      "@id": "http://www.omg.org/spec/BPMN/20100524/MODEL#outgoing",
+      "@type": "@id"
+    },
+    "from": {
+      "@id": "http://www.omg.org/spec/BPMN/20100524/MODEL#sourceRef",
+      "@type": "@id"
+    },
+    "to": {
+      "@id": "http://www.omg.org/spec/BPMN/20100524/MODEL#targetRef",
+      "@type": "@id"
+    },
+    "alternateOf": {
+      "@id": "http://www.w3.org/ns/prov#alternateOf",
+      "@type": "@id"
+    },
+    "canonicalDocument": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/canonicalDocument",
+      "@type": "@id"
+    },
+    "sameAs": {
+      "@id": "http://www.w3.org/2002/07/owl#sameAs",
+      "@type": "@id"
+    },
+    "conformsTo": {
+      "@id": "http://purl.org/dc/terms/conformsTo",
+      "@type": "@id"
+    },
+    "validator": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/validator",
+      "@type": "@id"
+    },
+    "validatorRef": "https://litlfred.github.io/cat-harness/v0/ns/validatorRef",
+    "validatorNotApplicable": "https://litlfred.github.io/cat-harness/v0/ns/validatorNotApplicable",
+    "authority": "https://litlfred.github.io/cat-harness/v0/ns/authority",
+    "specVersion": "https://litlfred.github.io/cat-harness/v0/ns/specVersion",
+    "specUse": "https://litlfred.github.io/cat-harness/v0/ns/specUse",
+    "specUrl": "https://litlfred.github.io/cat-harness/v0/ns/specUrl",
+    "namespace": "https://litlfred.github.io/cat-harness/v0/ns/namespace",
+    "inputSchema": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/inputSchema",
+      "@type": "@id"
+    },
+    "outputSchema": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/outputSchema",
+      "@type": "@id"
+    },
+    "localId": "https://litlfred.github.io/cat-harness/v0/ns/localId",
+    "actorKind": "https://litlfred.github.io/cat-harness/v0/ns/actorKind",
+    "actorKinds": "https://litlfred.github.io/cat-harness/v0/ns/actorKinds",
+    "reach": "https://litlfred.github.io/cat-harness/v0/ns/reach",
+    "judgementOnly": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/judgementOnly",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "bpmnType": "https://litlfred.github.io/cat-harness/v0/ns/bpmnType",
+    "statement": "https://litlfred.github.io/cat-harness/v0/ns/statement",
+    "rationale": "https://litlfred.github.io/cat-harness/v0/ns/rationale",
+    "applies": "https://litlfred.github.io/cat-harness/v0/ns/applies",
+    "nodeKind": "https://litlfred.github.io/cat-harness/v0/ns/nodeKind",
+    "enforcement": "https://litlfred.github.io/cat-harness/v0/ns/enforcement",
+    "workPlanOp": "https://litlfred.github.io/cat-harness/v0/ns/workPlanOp",
+    "touchesWorkPlan": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/touchesWorkPlan",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "relaxable": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/relaxable",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "nodeCount": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/nodeCount",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "flowCount": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/flowCount",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "decisionRef": "https://litlfred.github.io/cat-harness/v0/ns/decisionRef",
+    "decidedBy": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/decidedBy",
+      "@type": "@id"
+    },
+    "hitPolicy": "https://litlfred.github.io/cat-harness/v0/ns/hitPolicy",
+    "calledElement": {
+      "@id": "http://www.omg.org/spec/BPMN/20100524/MODEL#calledElement",
+      "@type": "@id"
+    },
+    "depiction": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/depiction",
+      "@type": "@id"
+    },
+    "sourceUrl": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/sourceUrl",
+      "@type": "@id"
+    },
+    "sourcePath": "https://litlfred.github.io/cat-harness/v0/ns/sourcePath",
+    "sourceKind": "https://litlfred.github.io/cat-harness/v0/ns/sourceKind",
+    "instructionsPath": "https://litlfred.github.io/cat-harness/v0/ns/instructionsPath",
+    "readmePath": "https://litlfred.github.io/cat-harness/v0/ns/readmePath",
+    "contentSource": {
+      "@id": "http://purl.org/dc/terms/source",
+      "@context": {
+        "kind": "https://litlfred.github.io/cat-harness/v0/ns/contentSourceKind",
+        "branch": "http://purl.org/dc/terms/identifier",
+        "keyedBy": "https://litlfred.github.io/cat-harness/v0/ns/keyedBy",
+        "keyFrom": "https://litlfred.github.io/cat-harness/v0/ns/keyFrom",
+        "familyRepository": "https://litlfred.github.io/cat-harness/v0/ns/familyRepository",
+        "declaredIn": "https://litlfred.github.io/cat-harness/v0/ns/sourceDeclaredIn"
+      }
+    },
+    "instructionLines": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/instructionLines",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "fileCount": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/fileCount",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "hasInstructions": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/hasInstructions",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "hasIOContract": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/hasIOContract",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "ambiguous": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/ambiguous",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "hasManifest": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/hasManifest",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "renderable": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/renderable",
+      "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "path": "https://litlfred.github.io/cat-harness/v0/ns/path",
+    "assetRole": "https://litlfred.github.io/cat-harness/v0/ns/assetRole",
+    "version": "https://schema.org/softwareVersion",
+    "hasCapability": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/hasCapability",
+      "@type": "@id"
+    },
+    "roleName": "https://litlfred.github.io/cat-harness/v0/ns/roleName",
+    "mayTakeRole": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/mayTakeRole",
+      "@type": "@id"
+    },
+    "satisfiesStatement": "https://litlfred.github.io/cat-harness/v0/ns/satisfiesStatement",
+    "permissionName": "https://litlfred.github.io/cat-harness/v0/ns/permissionName",
+    "io": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/io",
+      "@type": "@json"
+    },
+    "invoke": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/invoke",
+      "@type": "@json"
+    },
+    "install": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/install",
+      "@type": "@json"
+    },
+    "detection": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/detection",
+      "@type": "@json"
+    },
+    "meta": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/meta",
+      "@type": "@json"
+    },
+    "assignments": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/assignments",
+      "@type": "@json"
+    },
+    "systemUnderTest": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/systemUnderTest",
+      "@type": "@json"
+    },
+    "requirements": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/requirements",
+      "@type": "@json"
+    },
+    "staging": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/staging",
+      "@context": {
+        "branch": "https://litlfred.github.io/cat-harness/v0/ns/stagingBranch",
+        "sha": "https://litlfred.github.io/cat-harness/v0/ns/stagingSha",
+        "pr": "https://litlfred.github.io/cat-harness/v0/ns/stagingRef",
+        "run": "https://litlfred.github.io/cat-harness/v0/ns/stagingRun"
+      }
+    },
+    "changedAssets": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/changedAssets",
+      "@container": "@list",
+      "@context": {
+        "change": "https://litlfred.github.io/cat-harness/v0/ns/assetChange",
+        "kind": "https://litlfred.github.io/cat-harness/v0/ns/assetKind",
+        "source": "https://litlfred.github.io/cat-harness/v0/ns/assetSource",
+        "before": {
+          "@id": "https://litlfred.github.io/cat-harness/v0/ns/beforeVersion",
+          "@type": "@id"
+        },
+        "after": {
+          "@id": "https://litlfred.github.io/cat-harness/v0/ns/afterVersion",
+          "@type": "@id"
+        },
+        "pages": {
+          "@id": "https://litlfred.github.io/cat-harness/v0/ns/renderedPage",
+          "@container": "@list"
+        },
+        "pagesUnknown": "https://litlfred.github.io/cat-harness/v0/ns/renderedPagesUnknown"
+      }
+    },
+    "changedAssetsComparedWith": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/changedAssetsComparedWith",
+      "@type": "@id"
+    },
+    "changedAssetsUnavailable": "https://litlfred.github.io/cat-harness/v0/ns/changedAssetsUnavailable",
+    "repository": {
+      "@id": "https://schema.org/codeRepository",
+      "@type": "@id"
+    },
+    "counts": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/counts",
+      "@type": "@json"
+    },
+    "omitted": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/omitted",
+      "@container": "@set"
+    },
+    "sourceLanguage": {
+      "@id": "https://litlfred.github.io/cat-harness/v0/ns/sourceLanguage"
+    }
+  },
+  "@id": "https://litlfred.github.io/qou/tools/produce-q-pinning-50-digit.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/tools/produce-q-pinning-50-digit.jsonld",
+      "@type": "https://litlfred.github.io/cat-harness/v0/ns/Tool",
+      "name": "produce-q-pinning-50-digit",
+      "title": "Produce 122 witnesses",
+      "description": "Run the computation `computations/q_pinning_50_digit.py`, which writes `## Per-element coverage`, `computations/canonical-isotope-witness-Z00.witness.json`, `computations/canonical-isotope-witness-Z01.witness.json`, `computations/canonical-isotope-witness-Z02.witness.json`, `computations/canonical-isotope-witness-Z03.witness.json`, `computations/canonical-isotope-witness-Z04.witness.json`, `computations/canonical-isotope-witness-Z05.witness.json`, `computations/canonical-isotope-witness-Z06.witness.json`, `computations/canonical-isotope-witness-Z07.witness.json`, `computations/canonical-isotope-witness-Z08.witness.json`, `computations/canonical-isotope-witness-Z09.witness.json`, `computations/canonical-isotope-witness-Z10.witness.json`, `computations/canonical-isotope-witness-Z100.witness.json`, `computations/canonical-isotope-witness-Z101.witness.json`, `computations/canonical-isotope-witness-Z102.witness.json`, `computations/canonical-isotope-witness-Z103.witness.json`, `computations/canonical-isotope-witness-Z104.witness.json`, `computations/canonical-isotope-witness-Z105.witness.json`, `computations/canonical-isotope-witness-Z106.witness.json`, `computations/canonical-isotope-witness-Z107.witness.json`, `computations/canonical-isotope-witness-Z108.witness.json`, `computations/canonical-isotope-witness-Z109.witness.json`, `computations/canonical-isotope-witness-Z11.witness.json`, `computations/canonical-isotope-witness-Z110.witness.json`, `computations/canonical-isotope-witness-Z111.witness.json`, `computations/canonical-isotope-witness-Z112.witness.json`, `computations/canonical-isotope-witness-Z113.witness.json`, `computations/canonical-isotope-witness-Z114.witness.json`, `computations/canonical-isotope-witness-Z115.witness.json`, `computations/canonical-isotope-witness-Z116.witness.json`, `computations/canonical-isotope-witness-Z117.witness.json`, `computations/canonical-isotope-witness-Z118.witness.json`, `computations/canonical-isotope-witness-Z12.witness.json`, `computations/canonical-isotope-witness-Z13.witness.json`, `computations/canonical-isotope-witness-Z14.witness.json`, `computations/canonical-isotope-witness-Z15.witness.json`, `computations/canonical-isotope-witness-Z16.witness.json`, `computations/canonical-isotope-witness-Z17.witness.json`, `computations/canonical-isotope-witness-Z18.witness.json`, `computations/canonical-isotope-witness-Z19.witness.json`, `computations/canonical-isotope-witness-Z20.witness.json`, `computations/canonical-isotope-witness-Z21.witness.json`, `computations/canonical-isotope-witness-Z22.witness.json`, `computations/canonical-isotope-witness-Z23.witness.json`, `computations/canonical-isotope-witness-Z24.witness.json`, `computations/canonical-isotope-witness-Z25.witness.json`, `computations/canonical-isotope-witness-Z26.witness.json`, `computations/canonical-isotope-witness-Z27.witness.json`, `computations/canonical-isotope-witness-Z28.witness.json`, `computations/canonical-isotope-witness-Z29.witness.json`, `computations/canonical-isotope-witness-Z30.witness.json`, `computations/canonical-isotope-witness-Z31.witness.json`, `computations/canonical-isotope-witness-Z32.witness.json`, `computations/canonical-isotope-witness-Z33.witness.json`, `computations/canonical-isotope-witness-Z34.witness.json`, `computations/canonical-isotope-witness-Z35.witness.json`, `computations/canonical-isotope-witness-Z36.witness.json`, `computations/canonical-isotope-witness-Z37.witness.json`, `computations/canonical-isotope-witness-Z38.witness.json`, `computations/canonical-isotope-witness-Z39.witness.json`, `computations/canonical-isotope-witness-Z40.witness.json`, `computations/canonical-isotope-witness-Z41.witness.json`, `computations/canonical-isotope-witness-Z42.witness.json`, `computations/canonical-isotope-witness-Z43.witness.json`, `computations/canonical-isotope-witness-Z44.witness.json`, `computations/canonical-isotope-witness-Z45.witness.json`, `computations/canonical-isotope-witness-Z46.witness.json`, `computations/canonical-isotope-witness-Z47.witness.json`, `computations/canonical-isotope-witness-Z48.witness.json`, `computations/canonical-isotope-witness-Z49.witness.json`, `computations/canonical-isotope-witness-Z50.witness.json`, `computations/canonical-isotope-witness-Z51.witness.json`, `computations/canonical-isotope-witness-Z52.witness.json`, `computations/canonical-isotope-witness-Z53.witness.json`, `computations/canonical-isotope-witness-Z54.witness.json`, `computations/canonical-isotope-witness-Z55.witness.json`, `computations/canonical-isotope-witness-Z56.witness.json`, `computations/canonical-isotope-witness-Z57.witness.json`, `computations/canonical-isotope-witness-Z58.witness.json`, `computations/canonical-isotope-witness-Z59.witness.json`, `computations/canonical-isotope-witness-Z60.witness.json`, `computations/canonical-isotope-witness-Z61.witness.json`, `computations/canonical-isotope-witness-Z62.witness.json`, `computations/canonical-isotope-witness-Z63.witness.json`, `computations/canonical-isotope-witness-Z64.witness.json`, `computations/canonical-isotope-witness-Z65.witness.json`, `computations/canonical-isotope-witness-Z66.witness.json`, `computations/canonical-isotope-witness-Z67.witness.json`, `computations/canonical-isotope-witness-Z68.witness.json`, `computations/canonical-isotope-witness-Z69.witness.json`, `computations/canonical-isotope-witness-Z70.witness.json`, `computations/canonical-isotope-witness-Z71.witness.json`, `computations/canonical-isotope-witness-Z72.witness.json`, `computations/canonical-isotope-witness-Z73.witness.json`, `computations/canonical-isotope-witness-Z74.witness.json`, `computations/canonical-isotope-witness-Z75.witness.json`, `computations/canonical-isotope-witness-Z76.witness.json`, `computations/canonical-isotope-witness-Z77.witness.json`, `computations/canonical-isotope-witness-Z78.witness.json`, `computations/canonical-isotope-witness-Z79.witness.json`, `computations/canonical-isotope-witness-Z80.witness.json`, `computations/canonical-isotope-witness-Z81.witness.json`, `computations/canonical-isotope-witness-Z82.witness.json`, `computations/canonical-isotope-witness-Z83.witness.json`, `computations/canonical-isotope-witness-Z84.witness.json`, `computations/canonical-isotope-witness-Z85.witness.json`, `computations/canonical-isotope-witness-Z86.witness.json`, `computations/canonical-isotope-witness-Z87.witness.json`, `computations/canonical-isotope-witness-Z88.witness.json`, `computations/canonical-isotope-witness-Z89.witness.json`, `computations/canonical-isotope-witness-Z90.witness.json`, `computations/canonical-isotope-witness-Z91.witness.json`, `computations/canonical-isotope-witness-Z92.witness.json`, `computations/canonical-isotope-witness-Z93.witness.json`, `computations/canonical-isotope-witness-Z94.witness.json`, `computations/canonical-isotope-witness-Z95.witness.json`, `computations/canonical-isotope-witness-Z96.witness.json`, `computations/canonical-isotope-witness-Z97.witness.json`, `computations/canonical-isotope-witness-Z98.witness.json`, `computations/canonical-isotope-witness-Z99.witness.json`, `computations/codata-masses.witness.json`, `computations/q-pinning-50-digit.witness.json`. Wired from 17 content block(s): `folio/quantum-observable-universe/appendix-formalisation-notes/clausen-function-mathlib-filler.ts`, `folio/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas-registry.ts`, `folio/quantum-observable-universe/appendix-knot-periodic-table/recursive-atom-knot-atlas.ts`, `folio/quantum-observable-universe/braids-and-knots/feynman-eigenbasis.ts`, `folio/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness-context.ts`, `folio/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness.ts`, `folio/quantum-observable-universe/mass-theory/figure-8-archimedean-illustration.ts`, `folio/quantum-observable-universe/mass-theory/mass-from-generators.ts`, `folio/quantum-observable-universe/mass-theory/thurston-volume-additivity.ts`, `folio/quantum-observable-universe/mass-theory/topological-mass-trefoil.ts`, `folio/quantum-observable-universe/observations/local-substrate-q.ts`, `folio/quantum-observable-universe/observations/mass-comparison-table.ts`, `folio/quantum-observable-universe/observations/skein-mass-relation-proof.ts`, `folio/quantum-observable-universe/observations/skein-mass-relation.ts`, `folio/quantum-observable-universe/observations/tritium-qvalue-audit.ts`, `folio/quantum-observable-universe/predicted-spectra/bring-hyperbolic-knot-bloch-decomposition.ts`, `folio/quantum-observable-universe/predicted-spectra/em-coupling-bring-zero-mode.ts`. Declared from the block manifests by scripts/gen-producer-tools.ts; check that a run reproduces the committed witness with the platform's `witness-parity` Tool.",
+      "install": {
+        "none": true
+      },
+      "invoke": {
+        "shell": "python3 -u computations/q_pinning_50_digit.py"
+      },
+      "io": {
+        "inputs": [],
+        "outputs": [
+          {
+            "name": "## Per-element coverage",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`## Per-element coverage`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z00",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z00.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z01",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z01.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z02",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z02.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z03",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z03.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z04",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z04.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z05",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z05.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z06",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z06.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z07",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z07.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z08",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z08.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z09",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z09.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z10",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z10.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z100",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z100.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z101",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z101.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z102",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z102.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z103",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z103.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z104",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z104.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z105",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z105.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z106",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z106.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z107",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z107.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z108",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z108.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z109",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z109.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z11",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z11.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z110",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z110.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z111",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z111.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z112",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z112.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z113",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z113.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z114",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z114.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z115",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z115.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z116",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z116.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z117",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z117.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z118",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z118.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z12",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z12.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z13",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z13.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z14",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z14.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z15",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z15.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z16",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z16.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z17",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z17.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z18",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z18.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z19",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z19.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z20",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z20.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z21",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z21.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z22",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z22.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z23",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z23.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z24",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z24.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z25",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z25.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z26",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z26.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z27",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z27.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z28",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z28.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z29",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z29.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z30",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z30.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z31",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z31.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z32",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z32.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z33",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z33.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z34",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z34.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z35",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z35.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z36",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z36.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z37",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z37.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z38",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z38.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z39",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z39.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z40",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z40.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z41",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z41.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z42",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z42.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z43",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z43.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z44",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z44.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z45",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z45.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z46",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z46.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z47",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z47.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z48",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z48.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z49",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z49.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z50",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z50.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z51",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z51.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z52",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z52.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z53",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z53.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z54",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z54.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z55",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z55.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z56",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z56.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z57",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z57.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z58",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z58.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z59",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z59.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z60",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z60.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z61",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z61.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z62",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z62.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z63",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z63.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z64",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z64.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z65",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z65.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z66",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z66.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z67",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z67.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z68",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z68.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z69",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z69.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z70",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z70.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z71",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z71.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z72",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z72.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z73",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z73.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z74",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z74.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z75",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z75.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z76",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z76.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z77",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z77.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z78",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z78.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z79",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z79.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z80",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z80.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z81",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z81.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z82",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z82.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z83",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z83.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z84",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z84.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z85",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z85.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z86",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z86.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z87",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z87.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z88",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z88.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z89",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z89.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z90",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z90.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z91",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z91.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z92",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z92.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z93",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z93.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z94",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z94.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z95",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z95.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z96",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z96.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z97",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z97.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z98",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z98.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "canonical-isotope-witness-Z99",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/canonical-isotope-witness-Z99.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "codata-masses",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/codata-masses.witness.json`, a computation-witness node."
+          },
+          {
+            "name": "q-pinning-50-digit",
+            "schema": "https://litlfred.github.io/folio-assistant/cat-harness/tool-types.schema.json#/$defs/RepoPath",
+            "description": "`computations/q-pinning-50-digit.witness.json`, a computation-witness node."
+          }
+        ]
+      },
+      "requirements": {
+        "runtime": [
+          "python3"
+        ],
+        "network": false
+      },
+      "satisfies": [
+        "https://litlfred.github.io/qou/skill/compute-integration-watcher"
+      ]
+    }
+  ]
+}

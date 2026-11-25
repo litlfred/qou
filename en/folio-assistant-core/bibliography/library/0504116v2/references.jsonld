@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/0504116v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "On deformations of hyperbolic 3–manifolds with geodesic boundary",
+      "dcterms:creator": [
+        "FRIGERIO, ROBERTO"
+      ],
+      "dcterms:issued": "D:20211122",
+      "bibo:doi": "10.2140/agt.2006.6.435",
+      "dcterms:identifier": "https://doi.org/10.2140/agt.2006.6.435",
+      "dcterms:source": "library/0504116v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/0504116v2"
+    }
+  ]
+}

@@ -1,0 +1,405 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1409.0848v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1409.0848v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1409.0848v3  [math.AT]  1 Jan 2016\nFACTORIZATION HOMOLOGY OF STRATIFIED SPACES\nDAVID AYALA, JOHN FRANCIS, AND HIRO LEE TANAKA\nAbstract. This work forms a foundational study of factorization homology, or topological chiral\nhomology, at the generality of stratiﬁed spaces with tangential structures.\nExamples of such\nfactorization homology theories include intersection homology, compactly supported stratiﬁed\nmapping spaces, and Hochschild homology with coeﬃcients.\nOur main theorem characterizes\nfactorization homology theories by a generalization of the Eilenberg–Steenrod axioms; it can also",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0848v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 6,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "The present work forms an initial step in a formalism for topological quantum field theory using stratified spaces. This larger program proposes to understand locality in topological quantum field theory by a fusion of the algebra of factorization homology and the geometry of stratifications. Before delineating this step and, briefly, this future program, we first review the subject of factorization homology.\n\n\\medskip\n\nFactorization homology is, heuristically, a procedure which takes an $n$-manifold $M$ and an algebraic input $A$, such as an $\\cE_n$-algebra, and produces an object $\\int_MA$.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0848v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Recollections",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-1-recollections.md",
+      "narrative": null,
+      "content": "This entire work is founded on a predecessor, [AFT], which lays our foundation for structured",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0848v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stratified spaces",
+      "pageStart": 6,
+      "pageEnd": 14,
+      "target": "../sections/sec-002-11-stratified-spaces.md",
+      "narrative": null,
+      "content": "\\label{sec.stratified-spaces}\n\nBefore defining \\emph{conically smooth} stratified spaces which occupy this work, we first review the baseline topological notions.\nWe will regard a poset $P$ as a topological space with closed sets $P_{\\leq p}$, for each element $p\\in P$.\nA {\\it stratified topological space indexed by a poset $P$} is a paracompact Hausdorff topological space $X$ with a continuous map $X\\ra P$.\nFor many purposes, the indexing poset $P$ can be taken to be the totally ordered set $[n]=\\{0<1<\\ldots <n\\}$, where $n$ is the maximal dimension of a neighborhood of a point in $X$.\nA \\emp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0848v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Factorization",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-003-2-factorization.md",
+      "narrative": null,
+      "content": "In this section, we define the factorization homology of $\\cB$-manifolds with coefficients in $\\disk(\\cB)$-algebras, and we verify some of the essential properties of this construction. It is a symmetric monoidal functor from $\\cB$-manifolds and embeddings.\n\nFor this section we fix:\n\\begin{itemize}\n\\item a symmetric monoidal $\\infty$-category $\\cV$ that is $\\ot$-sifted cocomplete,\n\\item an $\\oo$-category of basics $\\cB = (\\cB \\to \\bsc)$.\n\\end{itemize}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0848v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Disk algebras",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "../sections/sec-004-21-disk-algebras.md",
+      "narrative": null,
+      "content": "Factorization homology will have a universal property with respect to monoidal and operadic structures on $\\mfld(\\cB)$ and $\\mfld(\\cB)_{/X}$, which we present below in Constructions \\ref{B-monoidals} and \\ref{B-operadics}.\n\n\\begin{construction}[The symmetric monoidal structures on $\\mfld(\\cB)$ and $\\disk(\\cB)$]\\label{B-monoidals}\nUsing disjoint union, we endow $\\snglrd$, $\\snglr$, $\\mfldd(\\cB)$, and $\\mfld(\\cB)$ with natural symmetric monoidal structures. The details are as follows: Disjoint union makes each of the $\\Kan$-enriched categories $\\snglrd$ and $\\snglr$ into a symmetric monoidal $\\K",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0848v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Factorization homology",
+      "pageStart": 17,
+      "pageEnd": 20,
+      "target": "../sections/sec-005-22-factorization-homology.md",
+      "narrative": null,
+      "content": "The following is the main definition and object of interest in the present paper, that of factorization homology with coefficients in a disk algebra.\n\nRecall Notation~\\ref{slice-convention} for the $\\infty$-category of $\\disk_n$-algebras.  \n\\begin{definition}[Factorization homology]\\label{def:fact-hmlgy}\nLet $\\cV$ be a symmetric monoidal $\\infty$-category, and let $\\cB$ be an $\\oo$-category of basics.\nThe \\emph{(absolute) factorization homology} functor is a left adjoint to the restriction\n\\\\\n\n\n\n\n\n\n\n\n\n\\[\n\\xymatrix{\n\\int_-\\colon \\Alg_{\\disk(\\cB)}(\\cV) \\ar@(-,u)@{-->}[rr] \n&&\n\\Fun^\\ot\\bigl(\\mfld",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0848v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Disks and finite subsets",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "../sections/sec-006-23-disks-and-finite-subsets.md",
+      "narrative": null,
+      "content": "We pause our development of factorization homology to relate the $\\infty$-category $\\disk(\\bsc)_{/X}$, which appears in the Definition~\\ref{def:fact-hmlgy} of factorization homology, with the enter-path $\\infty$-category of another stratified space associated to $X$: the Ran space of $X$.  \n\n\n\n\n\n\n\nLet $i$ be a finite cardinality.  \nFor $X$ a topological space, the \\emph{bounded Ran space} $\\Ran_{\\leq i}(X)$ is the topological space consisting of subsets $S\\subset X$ with bounded cardinality $|S|\\leq i$ for which the inclusion $S\\hookrightarrow X$ is surjective on connected components;\nthe topo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0848v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Localizing with respect to isotopy equivalences",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "../sections/sec-007-24-localizing-with-respect-to-isotopy-equivalenc.md",
+      "narrative": null,
+      "content": "Here we explain that the $\\infty$-category $\\disk(\\cB)_{/X}$, which appears in the Definition~\\ref{def:fact-hmlgy} of factorization homology, can be witnessed as a localization of its un-topologized version $\\diskd(\\cB)_{/X}$ on the collection of those inclusions of finite disjoint unions of disks $U\\subset V$ in $X$ for which this inclusion is isotopic to an isomorphism.  \nThis comparison plays a fundamental role in recognizing certain colimit expressions in this theory, for instance that support the pushforward formula of~\\S\\ref{sec.pushforward}.\n\nGiven a topological space $X$ and a finite s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0848v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pushforward",
+      "pageStart": 26,
+      "pageEnd": 30,
+      "target": "../sections/sec-008-25-pushforward.md",
+      "narrative": null,
+      "content": "\\label{sec.pushforward}\nFor this subsection, we fix a symmetric monoidal $\\infty$-category $\\cV$ that is $\\ot$-sifted cocomplete.  \n\n\\begin{lemma}\\label{f-inv-factr}\nLet $X$ be a $\\cB$-manifold and $Y$ a $\\cB'$-manifold, and let $f\\colon X\\to Y$ be a constructible bundle of the underlying stratified spaces. Taking inverse images defines a functor of $\\oo$-operads\n\\[f^{-1}: \\disk(\\cB')_{/Y}\\longrightarrow \\mfld(\\cB)_{/X}\\]\nwhich on objects sends $U\\hookrightarrow Y$ to $f^{-1}U\\hookrightarrow X$. As a consequence, there is a natural pushforward functor \\[f_\\ast: \\Alg_{X}(\\cV)\\longrightarrow \\Al",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0848v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algebras over a closed interval",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "../sections/sec-009-26-algebras-over-a-closed-interval.md",
+      "narrative": null,
+      "content": "\\begin{definition}[$\\Ass^{\\sf RL}$]\\label{Assoc}\nLet $\\Ass^{\\sf RL}$ denote an $\\infty$-operad corepresenting triples $(A;Q,P)$ consisting of an associative algebra together with a unital left and a unital right module.  \nSpecifically, it is a unital multi-category whose space of colors is the three-element set $\\{M, R, L\\}$, and with spaces of multi-morphisms given as follows.  Let $I\\xra{\\sigma}\\{M,R,L\\}$ be a map from a finite set.\n\\begin{itemize}\n\\item $\\Ass^{\\sf RL}(\\sigma, M)$ is the set of linear orders on $I$ for which no element is related to an element of $\\sigma^{-1}(\\{R,L\\})$.\nIn o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0848v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Homology theories",
+      "pageStart": 32,
+      "pageEnd": 35,
+      "target": "../sections/sec-010-27-homology-theories.md",
+      "narrative": null,
+      "content": "One an formulate an $\\oo$-categorical analogue of the Eilenberg--Steenrod axioms for a functor from spaces or manifolds to the $\\oo$-category of chain complexes or spectra: the functor should take certain gluing diagrams to pushout squares, and it should preserve sequential colimits. From these conditions, one recovers usual generalized homology theories. These axioms admit a generalization when one replaces chain complexes or spectra with a symmetric monoidal $\\oo$-category $\\cV$. \nThe formulation is complicated slightly by the fact that the monoidal structure on $\\cV$ is not required to be c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0848v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Homotopy invariant homology theories",
+      "pageStart": 35,
+      "pageEnd": 35,
+      "target": "../sections/sec-011-3-homotopy-invariant-homology-theories.md",
+      "narrative": null,
+      "content": "In this section we give two classes of examples of homology theories.  \nThe first class is quite formal, and depends only on the homotopy type of the tangent classifier, ${\\sf Entr}(X)\\xra{\\tau_X} \\cB$, of a $\\cB$-manifold.\nThe second class is not homotopy invariant in general, yet we identify an understood subclass for when these examples only depend on the \\emph{proper} homotopy type of the tangent classifier -- this is the statement of non-abelian Poincar\\'e duality for structured stratified spaces.\n\\\\\nFix an $\\oo$-category of basics $\\cB$.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0848v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classical homology theories",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "../sections/sec-012-31-classical-homology-theories.md",
+      "narrative": null,
+      "content": "Recall from~\\S\\ref{recollections} the tangent classifier functor\n$\n\\mfld(\\cB) \\xra{\\tau} \\Psh(\\cB),\n$\nwhich is symmetric monoidal with respect to coproduct of presheaves (see Construction~\\ref{B-monoidals}).  \n\nTo state the next result, for $\\cC$ an $\\infty$-category we denote the full $\\infty$-subcategory $\\cC\\subset\\Psh^{\\sf Ind\\text{-}fin}(\\cC)\\subset \\Psh(\\cC)$ which is the smallest that is closed under the formation of finite colimits and filtered colimits.  \n\\begin{prop}[\\S3.3 of~\\cite{aft1}]\\label{universal-excision}\nThe symmetric monoidal functor $\\mfld(\\cB) \\xra{\\tau} \\Psh(\\cB)$ is a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0848v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "1-point compactifications",
+      "pageStart": 36,
+      "pageEnd": 38,
+      "target": "../sections/sec-013-32-1-point-compactifications.md",
+      "narrative": null,
+      "content": "We will make use of the concept of a zero-pointed embedding from \\cite{ZP}. There is a $\\Kan$-enriched functor \n\\[\n{\\sf ZEmb}\\colon \\snglr^{\\op} \\times \\snglr^{\\op} \\longrightarrow \\Kan_\\ast\n\\]\nto pointed Kan complexes, given as follows.\nIts value on $(X,Y)$ is the simplicial set, written as ${\\sf ZEmb}(X_+,Y^+)$, for which a $p$-simplex is a diagram of conically smooth open embeddings among submersions over $\\Delta^p_e$\n\\[\nX \\times \\Delta^p_e\\xra{~f_X~} W  \\xla{~f_Y~} Y \\times \\Delta^p_e\n\\]\nwitnessing an open cover of $W$ -- the simplicial structure maps are evident, and the distinguished poi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0848v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Compactly supported cohomology",
+      "pageStart": 38,
+      "pageEnd": 40,
+      "target": "../sections/sec-014-33-compactly-supported-cohomology.md",
+      "narrative": null,
+      "content": "Let $\\cE$ be a spectrum object of $\\Psh_\\ast(\\cB)$, a model for which is as a functor $\\cB^{\\op} \\to \\spectra$.  \nNow, Corollary~1.4.4.5 of~\\cite{HA} grants that a finite limit preserving functor from a stable $\\infty$-category to $\\spaces$ canonically factors through $\\spectra \\xra{\\Omega^\\infty} \\spaces$.  \nIn particular, for $\\cS$ a stable $\\infty$-category, the Yoneda functor $\\cS^{\\op}\\times \\cS \\to \\spaces$ canonically factors through $\\spectra \\xra{\\Omega^\\infty}\\spaces$. \nIn particular, there is a factorization of the Yoneda functor\n\\[\n\\Map_{\\Psh_\\ast(\\cB)}(-,\\Omega^\\infty\\cE)\\colon \\P",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0848v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Non-abelian Poincaré duality",
+      "pageStart": 40,
+      "pageEnd": 42,
+      "target": "../sections/sec-015-34-non-abelian-poincaré-duality.md",
+      "narrative": null,
+      "content": "\\begin{definition}[Coefficient system]\\label{def.coef-sys}\nA \\emph{coefficient system (for $\\cB$-manifolds)} is a pointed presheaf on $\\cB$.  \nLet $E$ be a coefficient system.\nThe \\emph{compactly supported sections} functor is the composition of the symmetric monoidal functors\n\\[\n\\Gamma_{\\!\\sf c}^E\\colon \\mfld(\\cB)^{\\sf fin} \\xra{\\tau^+} \\Psh^{\\sf fin}_\\ast(\\cB)^{\\op} \\xra{\\Map_{\\Psh_\\ast(\\cB)}(-,E)} \\spaces_\\ast\n\\]\nwhere the target is equipped with the symmetric monoidal structure given by product.\nWe denote the resulting $\\disk(\\cB)$-algebra\n\\[\nA_E~:=~ \\bigl(\\Gamma_{\\!\\sf c}^E\\bigr)_{|\\disk(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0848v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples of factorization homology theories",
+      "pageStart": 42,
+      "pageEnd": 42,
+      "target": "../sections/sec-016-4-examples-of-factorization-homology-theories.md",
+      "narrative": null,
+      "content": "\\label{section:examples}\n\nIn this section we give examples of factorization homology over stratified spaces. To illustrate the relevance to low-dimensional topology, we show that the free $\\disk_{3,1}^{\\fr}$-algebra can distinguish the homotopy type of link complements, and in particular defines a non-trivial link invariant.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0848v3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Factorization homology of stratified 1-manifolds",
+      "pageStart": 42,
+      "pageEnd": 43,
+      "target": "../sections/sec-017-41-factorization-homology-of-stratified-1-manifo.md",
+      "narrative": null,
+      "content": "When the target symmetric monoidal $\\oo$-category $\\cV$ is $\\m_\\Bbbk^\\ot$, the category of $\\Bbbk$-modules for some commutative algebra $\\Bbbk$, then factorization homology of closed 1-manifolds gives variants of Hochschild homology.\n\nThe simplest and most fundamental example is factorization homology for framed 1-manifolds, $\\mfld_1^{\\fr}$. In this case, there is an equivalence between framed 1-disk algebras and associative algebras in $\\cV$, $\\Alg_{\\disk_1^{\\fr}}(\\cV)\\simeq \\Alg(\\cV)$, and we have the following immediate consequence of the excision property of factorization homology (Theorem",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0848v3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Intersection homology",
+      "pageStart": 43,
+      "pageEnd": 51,
+      "target": "../sections/sec-018-42-intersection-homology.md",
+      "narrative": null,
+      "content": "Recall from \\cite{aft1} that the underlying space of a $n$-dimensional stratified space $X\\in \\snglr_n$ has a canonical filtration by the union of its strata $X_0 \\subset X_1 \\subset \\ldots \\subset X_n= X$ where each $X_i\\smallsetminus X_{i-1}$ is a smooth $i$-dimensional manifold. As such, the definition of Goresky \\& MacPherson's intersection homology~\\cite{goreskymacpherson} applies verbatim. Namely, we restrict to stratified spaces $X$ have no codimension-1 strata, $X_{n-1}=X_{n-2}$ and for which the $n$-dimensional open stratum $X_n\\smallsetminus X_{n-1}$ is nonempty.\n\nFor the definition",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.0848v3/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 51,
+      "pageEnd": 52,
+      "target": "../sections/sec-019-references.md",
+      "narrative": null,
+      "content": "[At] Atiyah, Michael. Thom complexes, Proc. London Math. Soc. (3), no. 11 (1961), 291–310.\n[AF1] Ayala, David; Francis, John. Factorization homology of topological manifolds. J. Topol. 8 (2015), no. 4, 1045–\n1084.\n[AF2] Ayala, David; Francis, John. Zero-pointed manifolds. Preprint.\n[AFR] Ayala, David; Francis, John; Rozenblyum, Nick. A stratiﬁed homotopy hypothesis. Preprint.\n[AFT] Ayala, David; Francis, John; Tanaka, Hiro Lee. Local structures on stratiﬁed spaces. Preprint.\n[Ba] Barwick,\nClark.\nOn\nthe\nQ-construction\nfor\nexact\n∞-categories.\nAvailable\nat\nhttp://math.mit.edu/~clarkbar/papers.htm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

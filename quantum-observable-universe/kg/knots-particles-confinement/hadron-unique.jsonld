@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-hadron-unique",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:hadron-unique",
+  "kind": "proposition",
+  "title": "Uniqueness of hadrons up to braid isotopy",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-hadron-exists",
+    "papers/quantum-observable-universe/blocks/def-hecke-normal-form"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-hadron-unique"
+  ],
+  "tags": [
+    "uniqueness",
+    "hadron",
+    "isotopy"
+  ],
+  "leanRef": "qou:QOU.Hadron.unique_up_to_isotopy",
+  "text": "hadron-unique.md",
+  "leanSource": "hadron-unique.lean",
+  "provenance": "authored"
+}

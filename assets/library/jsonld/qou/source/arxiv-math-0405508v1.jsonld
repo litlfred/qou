@@ -1,0 +1,66 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0405508v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Markov traces and knot invariants related to Iwahori-Hecke algebras of type B",
+  "contains": [
+    "library/arxiv-math-0405508v1/sections/sec-front-matter",
+    "library/arxiv-math-0405508v1/sections/sec-000",
+    "library/arxiv-math-0405508v1/sections/sec-001",
+    "library/arxiv-math-0405508v1/sections/sec-002",
+    "library/arxiv-math-0405508v1/sections/sec-003",
+    "library/arxiv-math-0405508v1/sections/sec-004"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Markov traces and knot invariants related to Iwahori-Hecke algebras of type B — 6 sections: Front matter; Introductory remarks on knots, bra; Computations in the braid group of\n\n**Markov traces and knot invariants related to Iwahori-Hecke algebras of type B**\n\n*Meinolf Geck and Sofia Lambropoulou*\n\n27 pp, 6 sections.\n\n**Outline.** Front matter; 1 Introductory remarks on knots, braids and tr; 2 Computations in the braid group of type $B_n; 3 Trace functions on the Iwahori-Hecke algebra; 4 Markov traces for Iwahori-Hecke algebras of ; 5 The knot invariants related to the Hecke alg",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0405508&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0405508v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0405508v1.pdf",
+    "source_sha256": "ef2e41cf67f3a41140521748797696003e2cfa6c48c8b68efb8edd96b08d050a",
+    "pages": 27,
+    "arxiv": {
+      "id": "math/0405508",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "26 May 2004"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,2191 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0906.1500v4",
+  "title": "arxiv-0906.1500v4",
+  "variant": "pdf",
+  "pages": 29,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Organization",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-organization"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-2-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "The Reidemeister torsion",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-21-the-reidemeister-torsion"
+    },
+    {
+      "level": 3,
+      "title": "Torsion of a chain complex",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": "sec-005-torsion-of-a-chain-complex"
+    },
+    {
+      "level": 3,
+      "title": "Torsion of a CW-complex",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": "sec-006-torsion-of-a-cw-complex"
+    },
+    {
+      "level": 2,
+      "title": "The Multiplicativity Lemma for torsions",
+      "number": "2.2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-22-the-multiplicativity-lemma-for-torsions"
+    },
+    {
+      "level": 1,
+      "title": "Definition of the polynomial torsion",
+      "number": "3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-3-definition-of-the-polynomial-torsion"
+    },
+    {
+      "level": 2,
+      "title": "Technical assumptions",
+      "number": "3.1",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-31-technical-assumptions"
+    },
+    {
+      "level": 3,
+      "title": "Topological assumption for $M$",
+      "number": "3.1.1",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Assumption on $\\varphi$",
+      "number": "3.1.2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Assumption on $\\mathrm{SL}_2({\\mathbb C})$-representations",
+      "number": "3.1.3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Acyclicity",
+      "number": "3.2",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-32-acyclicity"
+    },
+    {
+      "level": 3,
+      "title": "The acyclicity of local system for manifolds with tori--boundary",
+      "number": "3.2.1",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-321-the-acyclicity-of-local-system-for-manifolds"
+    },
+    {
+      "level": 1,
+      "title": "Examples of computations",
+      "number": "4",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-4-examples-of-computations"
+    },
+    {
+      "level": 2,
+      "title": "The figure eight knot exterior",
+      "number": "4.1",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-013-41-the-figure-eight-knot-exterior"
+    },
+    {
+      "level": 2,
+      "title": "The Whitehead link exterior",
+      "number": "4.2",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-014-42-the-whitehead-link-exterior"
+    },
+    {
+      "level": 1,
+      "title": "Change of coefficients",
+      "number": "5",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-015-5-change-of-coefficients"
+    },
+    {
+      "level": 1,
+      "title": "A derivative formula",
+      "number": "6",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-016-6-a-derivative-formula"
+    },
+    {
+      "level": 2,
+      "title": "Bridge from the polynomial torsion to the non--abelian Reidemeister torsion",
+      "number": "6.1",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-017-61-bridge-from-the-polynomial-torsion-to-the-non"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem",
+      "number": "6.2",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-018-62-proof-of-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Example: the non-abelian Reidemeister torsion of the Whitehead link exterior",
+      "number": "6.3",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-019-63-example-the-non-abelian-reidemeister-torsion"
+    },
+    {
+      "level": 1,
+      "title": "$\\PolyTors{M}{\\otAd{\\varphi}{\\rho}}$ is a polynomial",
+      "number": "7",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Dual surfaces of $\\varphi$ with rank one",
+      "number": "7.1",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "A sufficient condition to be a polynomial",
+      "number": "7.2",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-020-72-a-sufficient-condition-to-be-a-polynomial"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem",
+      "number": "7.3",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-021-73-proof-of-theorem"
+    },
+    {
+      "level": 3,
+      "title": "Proof for one variable",
+      "number": "7.3.1",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-022-731-proof-for-one-variable"
+    },
+    {
+      "level": 3,
+      "title": "Proof from one variable to two variables",
+      "number": "7.3.2",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-023-732-proof-from-one-variable-to-two-variables"
+    },
+    {
+      "level": 1,
+      "title": "Reciprocality of the polynomial torsion (with sign)",
+      "number": "8",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-024-8-reciprocality-of-the-polynomial-torsion-with-s"
+    },
+    {
+      "level": 2,
+      "title": "Reciprocality properties",
+      "number": "8.1",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-025-81-reciprocality-properties"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem",
+      "number": "8.2",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-026-82-proof-of-theorem"
+    },
+    {
+      "level": 3,
+      "title": "Computation of the sign $\\nu$.",
+      "number": "8.2.1",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Computation of $\\PolyTors{\\partial M}{\\otAd{\\varphi}{\\rho}}(t)$.",
+      "number": "8.2.2",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Computation of $\\PolyTors{(M, \\partial M)}{\\otAd{\\varphi}{\\rho}}(t)$.",
+      "number": "8.2.3",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Conclusion",
+      "number": "8.2.4",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-027-824-conclusion"
+    },
+    {
+      "level": 1,
+      "title": "A natural homology orientation for link exterior",
+      "number": "A",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-028-a-a-natural-homology-orientation-for-link-exteri"
+    },
+    {
+      "level": 2,
+      "title": "Homology groups and homology orientations",
+      "number": "A.1",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-029-a1-homology-groups-and-homology-orientations"
+    },
+    {
+      "level": 2,
+      "title": "A sign term",
+      "number": "A.2",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-030-a2-a-sign-term"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 159,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted alexander",
+          "heading": false
+        },
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        },
+        {
+          "term": "alexander invariant",
+          "heading": false
+        },
+        {
+          "term": "derivative formula",
+          "heading": false
+        },
+        {
+          "term": "non abelian",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0906.1500v4 [math.GT] 16 Jan 2012 TWISTED ALEXANDER INVARIANT AND NON–ABELIAN REIDEMEISTER TORSION FOR HYPERBOLIC THREE–DIMENSIONAL MANIFOLDS WITH CUSPS J´ER ˆOME DUBOIS AND YOSHIKAZU YAMAGUCHI Abstract. We study a computational method of the hyperbolic Reidemeister torsion (also called in the literature the non–abelian Reidemeister torsion) considered by J. Porti for complete hyperbolic three–dimensional",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0906.1500v4/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 886,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non--abelian reidemeister",
+          "heading": false
+        },
+        {
+          "term": "polytors otad",
+          "heading": false
+        },
+        {
+          "term": "otad varphi",
+          "heading": false
+        },
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic three--dimensional",
+          "heading": false
+        },
+        {
+          "term": "torsion twisted",
+          "heading": false
+        },
+        {
+          "term": "twisted alexander",
+          "heading": false
+        },
+        {
+          "term": "invariant polytors",
+          "heading": false
+        }
+      ],
+      "extract": "Hyperbolic Reidemeister torsion, \\emph{i.e.} the Reidemeister torsion twisted by the adjoint representation associated to an irreducible representation into $\\SL$, was first introduced by D. Johnson in unpublished notes~\\cite{Johnson}. Later it was considered by E. Witten~\\cite{Witten:1991} as a symplectic volume form on the moduli space of $\\SU$-flat connections over two--dimensional surfaces and developed to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-organization",
+      "number": null,
+      "title": "Organization",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 224,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reidemeister torsions",
+          "heading": false
+        },
+        {
+          "term": "twisted alexander",
+          "heading": false
+        },
+        {
+          "term": "alexander invariant",
+          "heading": false
+        },
+        {
+          "term": "polynomial torsion",
+          "heading": false
+        },
+        {
+          "term": "ref section",
+          "heading": false
+        },
+        {
+          "term": "multiplicative property",
+          "heading": false
+        },
+        {
+          "term": "ref theorem",
+          "heading": false
+        },
+        {
+          "term": "exterior",
+          "heading": false
+        }
+      ],
+      "extract": "The outline of the paper is as follows. Section~\\ref{section:preliminaries} deals with some reviews on the sign--determined Reidemeister torsion for a manifold and on the multiplicative property of Reidemeister torsions (the Multiplicativity Lemma) which is the main tool for computing Reidemeister torsions by using a cut and past argument. In Section~\\ref{section:def_polynomial_torsion}, we set down technical",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 123,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "crm",
+          "heading": false
+        },
+        {
+          "term": "imj",
+          "heading": false
+        },
+        {
+          "term": "visited",
+          "heading": false
+        },
+        {
+          "term": "thanks",
+          "heading": false
+        }
+      ],
+      "extract": "The authors gratefully acknowledge the many helpful ideas and suggestions of Joan Porti during the preparation of the paper. They also wish to express their thanks to C.~Blanchet and V.~Maillot for several helpful comments. Our thanks also go to T.~Morifuji, K.~Murasugi and S.~Friedl for giving us helpful informations and comments regarding this work. The paper was conceived during J.D. visited the CRM. He thanks",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-004-21-the-reidemeister-torsion",
+      "number": "2.1",
+      "title": "The Reidemeister torsion",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 27,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reidemeister",
+          "heading": true
+        },
+        {
+          "term": "sign--determined",
+          "heading": false
+        },
+        {
+          "term": "turaev",
+          "heading": false
+        }
+      ],
+      "extract": "We review the basic notions and results about the sign--determined Reidemeister torsion introduced by V. Turaev which are needed in this paper. Details can be found in Milnor's survey~\\cite{Milnor:1966} and in Turaev's monograph~\\cite{Turaev:2002}.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-torsion-of-a-chain-complex",
+      "number": null,
+      "title": "Torsion of a chain complex",
+      "level": 3,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 219,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cbasis hbasis",
+          "heading": false
+        },
+        {
+          "term": "tor cbasis",
+          "heading": false
+        },
+        {
+          "term": "torsion",
+          "heading": true
+        },
+        {
+          "term": "tilde",
+          "heading": false
+        },
+        {
+          "term": "xrightarrow",
+          "heading": false
+        },
+        {
+          "term": "sum dim",
+          "heading": false
+        },
+        {
+          "term": "bases",
+          "heading": false
+        }
+      ],
+      "extract": "Let $C_* = ( 0 \\to C_n \\xrightarrow{d_n} C_{n-1} \\xrightarrow{d_{n-1}} \\cdots \\xrightarrow{d_1} C_0 \\to 0 )$ be a chain complex of finite dimensional vector spaces over a field $\\FF$. Choose a basis $\\cbasis{(i)}$ of $C_i$ and a basis $\\hbasis{i}$ of the $i$-th homology group $H_i(C_*)$. The torsion of $C_*$ with respect to these choices of bases is defined as follows. For each $i$, let $\\bbasis{i}$ be a set of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-torsion-of-a-cw-complex",
+      "number": null,
+      "title": "Torsion of a CW-complex",
+      "level": 3,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 595,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cbasis hbasis",
+          "heading": false
+        },
+        {
+          "term": "basis hbasis",
+          "heading": false
+        },
+        {
+          "term": "myleq right",
+          "heading": false
+        },
+        {
+          "term": "myleq dim",
+          "heading": false
+        },
+        {
+          "term": "rho otimes",
+          "heading": false
+        },
+        {
+          "term": "rho twisted",
+          "heading": false
+        },
+        {
+          "term": "otimes tilde",
+          "heading": false
+        },
+        {
+          "term": "cells left",
+          "heading": false
+        }
+      ],
+      "extract": "Let $W$ be a finite CW-complex and $(V, \\rho)$ be a pair of a vector space with an inner product over $\\FF$ and a homomorphism of $\\pi_1(W)$ into $Aut(V)$. The vector space $V$ turns into a right $\\ZZ[\\pi_1(W)]$-module denoted $V_{\\rho}$ by using the right action of $\\pi_1(W)$ on $V$ given by $v \\cdot \\gamma = \\rho(\\gamma)^{-1}(v)$, for $v \\in V$ and $\\gamma \\in \\pi_1(W)$. The complex of the universal cover with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-22-the-multiplicativity-lemma-for-torsions",
+      "number": "2.2",
+      "title": "The Multiplicativity Lemma for torsions",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 400,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tor cbasis",
+          "heading": false
+        },
+        {
+          "term": "bases mathbf",
+          "heading": false
+        },
+        {
+          "term": "cup mathbf",
+          "heading": false
+        },
+        {
+          "term": "hbasis",
+          "heading": false
+        },
+        {
+          "term": "mathbf left",
+          "heading": false
+        },
+        {
+          "term": "seq complexes",
+          "heading": false
+        },
+        {
+          "term": "torsions",
+          "heading": true
+        },
+        {
+          "term": "multiplicativity",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{subsection:multiplicativitylemma} In this section, we briefly review the Multiplicativity Lemma for Reidemeister torsions (with sign). First, we review the notion of \\emph{compatible bases}. Let $0 \\to E' \\xrightarrow{i} E \\xrightarrow{j} E'' \\to 0$ be a short exact sequence of finite dimensional vector spaces and let $s$ denotes a section of $j$. Thus, $i \\oplus s : E' \\oplus E'' \\to E$ is an isomorphism. We",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-3-definition-of-the-polynomial-torsion",
+      "number": "3",
+      "title": "Definition of the polynomial torsion",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 741,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sllmt rho",
+          "heading": false
+        },
+        {
+          "term": "sllrho twisted",
+          "heading": false
+        },
+        {
+          "term": "polynomial torsion",
+          "heading": true
+        },
+        {
+          "term": "varphi rho",
+          "heading": false
+        },
+        {
+          "term": "otad varphi",
+          "heading": false
+        },
+        {
+          "term": "polytors otad",
+          "heading": false
+        },
+        {
+          "term": "twisted chain",
+          "heading": false
+        },
+        {
+          "term": "sign--refined reidemeister",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:def_polynomial_torsion} In this section, we define the twisted Alexander invariant and called it for short the polynomial torsion. This invariant is the twisted Alexander invariant with coefficients in the adjoint representation associated to a character which lies in the geometric component of the character variety of the three--manifold. We define it following the presentation given by Friedl and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-31-technical-assumptions",
+      "number": "3.1",
+      "title": "Technical assumptions",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "9",
+      "words": 1577,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bbrack rho",
+          "heading": false
+        },
+        {
+          "term": "bbrack lambda",
+          "heading": false
+        },
+        {
+          "term": "ell rho",
+          "heading": false
+        },
+        {
+          "term": "varphi colon",
+          "heading": false
+        },
+        {
+          "term": "sllrho",
+          "heading": false
+        },
+        {
+          "term": "left bbrack",
+          "heading": false
+        },
+        {
+          "term": "component ell",
+          "heading": false
+        },
+        {
+          "term": "homomorphism varphi",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:hyp} In this subsection, we give some sufficient conditions on the compact hyperbolic three--manifold $M$ whose boundary consists of a disjoint union of tori and on the representations $\\varphi$ and $\\rho$ which assure the acyclicity of the twisted chain complex $C_*(M;\\sllmt_\\rho)$. We require assumptions on the topology of $M$, on the surjective homomorphism $\\varphi$ of $\\pi_1(M)$ onto $\\ZZ^n$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-32-acyclicity",
+      "number": "3.2",
+      "title": "Acyclicity",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 139,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sllmt rho",
+          "heading": false
+        },
+        {
+          "term": "acyclicity",
+          "heading": true
+        },
+        {
+          "term": "bigcup ell",
+          "heading": false
+        },
+        {
+          "term": "component ell",
+          "heading": false
+        },
+        {
+          "term": "partial bigcup",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:acyclicity_complex} This subsection is devoted to prove the acyclicity of $C_*(M;\\sllmt_\\rho)$, \\ie, $H_*(M;\\sllmt_\\rho) = 0$, from the assumptions referred to as $(A_M)$, $(A_\\varphi)$ and $(A_\\rho)$; \\begin{description} \\item[$(A_M)$] the canonical inclusion $i\\colon \\partial M \\hookrightarrow M$ of $\\partial M$ into $M$ induces an homomorphism $i_*\\colon H_1(\\partial M; \\ZZ) \\to H_1(M; \\ZZ)$ which",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-321-the-acyclicity-of-local-system-for-manifolds",
+      "number": "3.2.1",
+      "title": "The acyclicity of local system for manifolds with tori--boundary",
+      "level": 3,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "12",
+      "words": 1011,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bbrack ell",
+          "heading": false
+        },
+        {
+          "term": "msll rho",
+          "heading": false
+        },
+        {
+          "term": "ell myleq",
+          "heading": false
+        },
+        {
+          "term": "sllrho",
+          "heading": false
+        },
+        {
+          "term": "sllmt rho",
+          "heading": false
+        },
+        {
+          "term": "ell otimes",
+          "heading": false
+        },
+        {
+          "term": "vectors bbrack",
+          "heading": false
+        },
+        {
+          "term": "cdots ell",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:acyclicity_boundary} In this section we suppose that the representations $\\rho\\colon \\pi_1(M) \\to \\SL$ under consideration satisfy Assumption~$(A_\\rho)$. We prove that the twisted chain complex $C_*(M; \\sllmt_\\rho)$ is acyclic in that case. \\begin{proposition}\\label{prop:acyclic} We have $H_*(M; \\sllmt_\\rho) = 0$. \\end{proposition} The proof of Proposition~\\ref{prop:acyclic} is based on Milnor's",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-4-examples-of-computations",
+      "number": "4",
+      "title": "Examples of computations",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 230,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "square minor",
+          "heading": false
+        },
+        {
+          "term": "jacobian matrix",
+          "heading": false
+        },
+        {
+          "term": "otad varphi",
+          "heading": false
+        },
+        {
+          "term": "link exterior",
+          "heading": false
+        },
+        {
+          "term": "whitehead link",
+          "heading": false
+        },
+        {
+          "term": "varphi rho",
+          "heading": false
+        },
+        {
+          "term": "polynomial torsion",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:exemples} We compute the polynomial torsions for the figure knot exterior and the Whitehead link exterior by using Fox differential calculus as shown in~\\cite{Milnor:1968,Kitano, KL}. First, we consider the Jacobian matrix using Fox free differential calculus associated to a Wirtinger presentations of a link group. To express the polynomial torsion, we need a square minor in the Jacobian matrix. Since",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-41-the-figure-eight-knot-exterior",
+      "number": "4.1",
+      "title": "The figure eight knot exterior",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 309,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polytors otad",
+          "heading": false
+        },
+        {
+          "term": "figure knot",
+          "heading": true
+        },
+        {
+          "term": "figure eight",
+          "heading": true
+        },
+        {
+          "term": "pmatrix sqrt",
+          "heading": false
+        },
+        {
+          "term": "otad varphi",
+          "heading": false
+        },
+        {
+          "term": "rho sqrt",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        }
+      ],
+      "extract": "We consider the figure eight knot $K$ as in Figure~\\ref{fig:figure8_knot}. The knot group $\\pi_1(E_K)$ is expressed as $$ E_K = \\langle x, y \\,|\\, [x^{-1}, y]x = y[x^{-1}, y] \\rangle $$ where $E_K$ is the complement an open tubular neighbourhood $N(K)$ of $K$ in $S^3$. \\begin{figure}[!h] \\begin{center} \\includegraphics[scale=.6]{figure8_knot} \\end{center} \\caption{The figure eight knot} \\label{fig:figure8_knot}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-42-the-whitehead-link-exterior",
+      "number": "4.2",
+      "title": "The Whitehead link exterior",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 536,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "whitehead link",
+          "heading": true
+        },
+        {
+          "term": "polytors otad",
+          "heading": false
+        },
+        {
+          "term": "otad varphi",
+          "heading": false
+        },
+        {
+          "term": "varphi rho",
+          "heading": false
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "bab",
+          "heading": false
+        },
+        {
+          "term": "beta gamma",
+          "heading": false
+        },
+        {
+          "term": "awa right",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:polynomial_torion_Whiteheadlink} Let $L$ be the Whitehead link and choose the following Wirtinger presentation of the Whitehead link group: \\[ \\pi_1(E_{L}) = \\langle a, b \\,|\\, awa^{-1}w^{-1} \\rangle \\text{ where } w = bab^{-1}a^{-1}b^{-1}ab. \\] \\begin{figure}[h] \\centering \\includegraphics[scale=.5]{Whitehead_link_Wirtinger} \\caption{The Whitehead link with meridians}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-5-change-of-coefficients",
+      "number": "5",
+      "title": "Change of coefficients",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 252,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "otad varphi",
+          "heading": false
+        },
+        {
+          "term": "polytors otad",
+          "heading": false
+        },
+        {
+          "term": "varphi rho",
+          "heading": false
+        },
+        {
+          "term": "let varphi",
+          "heading": false
+        },
+        {
+          "term": "ldots",
+          "heading": false
+        },
+        {
+          "term": "surjective homomorphism",
+          "heading": false
+        },
+        {
+          "term": "cite milnor",
+          "heading": false
+        },
+        {
+          "term": "naturality",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:naturality} The aim of this section is to give some notation and explanation about the reduction of variables (for more details, see~\\cite{Milnor:1966}). Let $\\varphi$ be a surjective homomorphism of $\\pi_1(M)$ onto $\\ZZ^n=\\langle t_1, \\ldots, t_n \\,|\\, t_i t_j = t_j t_i \\rangle$. We let $h_{(a_1, \\ldots, a_n)}$ be the homomorphism of $\\ZZ^n$ into $\\ZZ=\\langle t \\rangle$, given by \\[ h_{(a_1, \\ldots,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-6-a-derivative-formula",
+      "number": "6",
+      "title": "A derivative formula",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 167,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rtors smallbm",
+          "heading": false
+        },
+        {
+          "term": "hbasis smallbm",
+          "heading": false
+        },
+        {
+          "term": "bbrack rho",
+          "heading": false
+        },
+        {
+          "term": "smallbm lambda",
+          "heading": false
+        },
+        {
+          "term": "non--abelian reidemeister",
+          "heading": false
+        },
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section:derform} We prove a relation between the polynomial torsion and the non--abelian Reidemeister torsion. More precisely, we prove that the non--abelian Reidemeister is a sort of ``differential coefficient'' associated to the polynomial torsion. We review the definition of the non--abelian Reidemeister torsion (for more details, we refer to~\\cite[Chap.~3]{Porti:1997}).",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-61-bridge-from-the-polynomial-torsion-to-the-non",
+      "number": "6.1",
+      "title": "Bridge from the polynomial torsion to the non--abelian Reidemeister torsion",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 243,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "taℓ",
+          "heading": false
+        },
+        {
+          "term": "satisﬁes assumption",
+          "heading": false
+        },
+        {
+          "term": "torsion",
+          "heading": true
+        },
+        {
+          "term": "reidemeister",
+          "heading": true
+        }
+      ],
+      "extract": "sion. The following theorem proves that the non–abelian Reidemeister torsion can be deduced from the polynomial torsion ∆ϕ⊗Ad◦ρ M (t) (see [Yam08] for the case of knots). In this section, we suppose that M is a compact hyperbolic three–dimensional manifold satisfying assumption (AM), ϕ: π1(M) →Z = ⟨t⟩is a surjective homomorphism which satisﬁes assumption (Aϕ) and that ρ satisﬁes assumption (Aρ). We equip the three–",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-62-proof-of-theorem",
+      "number": "6.2",
+      "title": "Proof of Theorem",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 19,
+      "labelStart": "16",
+      "labelEnd": "19",
+      "words": 1693,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lim tor",
+          "heading": false
+        },
+        {
+          "term": "write tor",
+          "heading": false
+        },
+        {
+          "term": "dim mod",
+          "heading": false
+        },
+        {
+          "term": "distinguished basis",
+          "heading": false
+        },
+        {
+          "term": "acyclic",
+          "heading": false
+        },
+        {
+          "term": "taℓ",
+          "heading": false
+        },
+        {
+          "term": "c1i",
+          "heading": false
+        },
+        {
+          "term": "c2i",
+          "heading": false
+        }
+      ],
+      "extract": "and some notation. Let C∗= C∗(M; sl2(C)ρ) and C∗(t) = C∗(M; sl2(C(t))ρ). We deﬁne a pair of com- plexes (C′ ∗, C′ ∗(t)) as follows. The complex C′ ∗is deﬁned as a subchain complex of C∗ which is a lift of the homology group Hρ ∗(M) = H∗(M; sl2(C)ρ). This is a “degener- ated complex” in the sense that the boundary operators are all zero. More precisely, C′ 3 = C′ 0 = 0 for conventions, C′ 2 is spanned (over C) by {P",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-63-example-the-non-abelian-reidemeister-torsion",
+      "number": "6.3",
+      "title": "Example: the non-abelian Reidemeister torsion of the Whitehead link exterior",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 517,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reidemeister torsion",
+          "heading": true
+        },
+        {
+          "term": "whitehead link",
+          "heading": true
+        },
+        {
+          "term": "polytors otad",
+          "heading": false
+        },
+        {
+          "term": "otad varphi",
+          "heading": false
+        },
+        {
+          "term": "rtors smallbm",
+          "heading": false
+        },
+        {
+          "term": "varphi rho",
+          "heading": false
+        },
+        {
+          "term": "varphi colon",
+          "heading": false
+        },
+        {
+          "term": "link exterior",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{ex:Whitehead} We apply Corollary~\\ref{cor:DerFormula_one _variable} to the polynomial torsion $\\PolyTors{E_L}{\\otAd{\\varphi}{\\rho}}(t_1, t_2)$ of the Whitehead link exterior $E_L$ (see Fig.~\\ref{fig:WhiteheadLinkMeridians}). First we substitute $t$ into both variables $t_1$ and $t_2$ in Equation~$(\\ref{eqn:PolyTorsion_WL})$. The resulting homomorphism $\\varphi_{(1,1)}$ corresponds to the induced homomorphism",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-72-a-sufficient-condition-to-be-a-polynomial",
+      "number": "7.2",
+      "title": "A sufficient condition to be a polynomial",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 371,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "otad varphi",
+          "heading": false
+        },
+        {
+          "term": "polytors otad",
+          "heading": false
+        },
+        {
+          "term": "varphi rho",
+          "heading": false
+        },
+        {
+          "term": "varphi colon",
+          "heading": false
+        },
+        {
+          "term": "surface varphi",
+          "heading": false
+        },
+        {
+          "term": "restriction rho",
+          "heading": false
+        },
+        {
+          "term": "varphi corresponding",
+          "heading": false
+        },
+        {
+          "term": "circ rho",
+          "heading": false
+        }
+      ],
+      "extract": "Under some additional assumptions for the $\\SL$-representation $\\rho$ and dual surfaces determined by $\\varphi$, we prove that the Reidemeister torsion $\\PolyTors{M}{\\otAd{\\varphi}{\\rho}}$ is a polynomial. \\begin{theorem}\\label{theorem:poly} Let $M$ be a hyperbolic three--manifold with tori boundary which satisfy $(A_M)$. Let $\\varphi$ be a surjective homomorphism $\\pi_1(M) \\to \\ZZ^n$ which satisfies $(A_\\varphi)$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-73-proof-of-theorem",
+      "number": "7.3",
+      "title": "Proof of Theorem",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 85,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        },
+        {
+          "term": "multivariable",
+          "heading": false
+        },
+        {
+          "term": "naturality",
+          "heading": false
+        }
+      ],
+      "extract": "the case of a single variable t and next use the naturality property of ∆ϕ⊗Ad◦ρ M (see Section 5) to deduce by an algebraic argument the multivariable case form the one variable case. Remark 14. In what follows the sign in the Reidemeister torsion will be not relevant; so, we will work up to sign. We let Tor(W, c∗ W , ∅) denote the (acyclic) Reidemeister torsion of the manifold W with coeﬃcients in sl2(C(t)) and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-731-proof-for-one-variable",
+      "number": "7.3.1",
+      "title": "Proof for one variable",
+      "level": 3,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 540,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cbasis hbasis",
+          "heading": false
+        },
+        {
+          "term": "hbasis tor",
+          "heading": false
+        },
+        {
+          "term": "hbasis emptyset",
+          "heading": false
+        },
+        {
+          "term": "hbasis cdot",
+          "heading": false
+        },
+        {
+          "term": "mathcal hbasis",
+          "heading": false
+        },
+        {
+          "term": "sllrhot",
+          "heading": false
+        },
+        {
+          "term": "polytors rho",
+          "heading": false
+        },
+        {
+          "term": "ell times",
+          "heading": false
+        }
+      ],
+      "extract": "We cut the manifold $M$ along $S = S_\\varphi$ and obtain the following splitting: $M = N \\cup (S \\times I)$, where $I= [0,1]$ is the closed unit interval. The boundaries of $N$ and $S \\times I$ are equal and consist in the disjoint union of two copies of $S$ denoted $S^- = S \\times \\{0\\}$ and $S^+ = S \\times \\{1\\}$. We apply the Multiplicativity Lemma to the Mayer--Vietoris sequence associated to this splitting to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-732-proof-from-one-variable-to-two-variables",
+      "number": "7.3.2",
+      "title": "Proof from one variable to two variables",
+      "level": 3,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 438,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polytors otad",
+          "heading": false
+        },
+        {
+          "term": "otad varphi",
+          "heading": false
+        },
+        {
+          "term": "varphi rho",
+          "heading": false
+        },
+        {
+          "term": "multivariable case",
+          "heading": false
+        },
+        {
+          "term": "variables",
+          "heading": true
+        },
+        {
+          "term": "rational function",
+          "heading": false
+        },
+        {
+          "term": "tilde",
+          "heading": false
+        },
+        {
+          "term": "coprime",
+          "heading": false
+        }
+      ],
+      "extract": "Suppose that $\\varphi\\colon \\pi_1(M) \\to \\ZZ \\oplus \\ZZ$. A priori, up to multiplications by $t_1^{r}t_2^{s}$, the torsion $\\PolyTors{M}{\\otAd{\\varphi}{\\rho}}(t_1, t_2)$ is a rational function $P(t_1, t_2) / Q(t_1, t_2)$, where $P(t_1, t_2)$ and $Q(t_1, t_2) \\ne 0$ are coprime in $\\CC[t_1, t_2]$. We will prove in fact, reducing the situation to one variable, that the polynomial $Q(t_1,t_2)$ is constant. To this end,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-8-reciprocality-of-the-polynomial-torsion-with-s",
+      "number": "8",
+      "title": "Reciprocality of the polynomial torsion (with sign)",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-025-81-reciprocality-properties",
+      "number": "8.1",
+      "title": "Reciprocality properties",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 421,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polytors otad",
+          "heading": false
+        },
+        {
+          "term": "bord otad",
+          "heading": false
+        },
+        {
+          "term": "otad varphi",
+          "heading": false
+        },
+        {
+          "term": "torsion polytors",
+          "heading": false
+        },
+        {
+          "term": "ell otad",
+          "heading": false
+        },
+        {
+          "term": "cdot polytors",
+          "heading": false
+        },
+        {
+          "term": "otad overline",
+          "heading": false
+        },
+        {
+          "term": "polytors cup",
+          "heading": false
+        }
+      ],
+      "extract": "The Alexander polynomial $\\Delta_K(t)$ of a knot $K \\subset S^3$ is known to be reciprocal in the sense that $\\Delta_K(t^{-1}) = \\pm t^s \\Delta_K(t)$ from a long time. This property was first observed by Seifert~\\cite{Seifert:1934} and is a consequence of Poincar\\'e duality. Milnor~\\cite{Milnor:1962} proved it again using the interpretation of the Alexander polynomial as an abelian Reidemeister torsion.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-82-proof-of-theorem",
+      "number": "8.2",
+      "title": "Proof of Theorem",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 25,
+      "labelStart": "23",
+      "labelEnd": "25",
+      "words": 620,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        },
+        {
+          "term": "dual chain",
+          "heading": false
+        },
+        {
+          "term": "multiplicativity lemma",
+          "heading": false
+        },
+        {
+          "term": "chain complex",
+          "heading": false
+        },
+        {
+          "term": "dimr",
+          "heading": false
+        },
+        {
+          "term": "sign term",
+          "heading": false
+        },
+        {
+          "term": "farber",
+          "heading": false
+        },
+        {
+          "term": "duality",
+          "heading": false
+        }
+      ],
+      "extract": "Lemma for torsions (with sign). We apply the Multiplicativity Lemma in Section 2.2 for short exact sequences with the coeﬃcient R and sl2(C(t)) to observe the relation between the signed torsion of the original chain complex and that of the dual chain com- plex. With the fact that α(C′, C′′) for the coeﬃcients in R are same as α(C′, C′′) for the coeﬃcients in sl2(C(t)) in mind, the Multiplicativity Lemma for the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-824-conclusion",
+      "number": "8.2.4",
+      "title": "Conclusion",
+      "level": 3,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": "25",
+      "labelEnd": "25",
+      "words": 46,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polytors otad",
+          "heading": false
+        },
+        {
+          "term": "otad varphi",
+          "heading": false
+        },
+        {
+          "term": "otad overline",
+          "heading": false
+        },
+        {
+          "term": "varphi rho",
+          "heading": false
+        }
+      ],
+      "extract": "Substituting $\\nu =1$, $s(H_*(M;\\IR)) = b+1$ and Equation~(\\ref{eqn:duality_torsion}) into Equation~$(\\ref{eqn:1st_step_duality})$ we obtain that \\begin{equation}\\label{eqn:2nd_step_duality} \\PolyTors{M}{\\otAd{\\varphi}{\\rho}}(t) =\\epsilon (-1)^{b} \\PolyTors{\\bord M}{\\otAd{\\varphi}{\\rho}}(t) \\PolyTors{M}{\\otAd{\\overline{\\varphi}}{\\rho}}(t). \\end{equation} Finally, using Equation~(\\ref{Eq:torsionbound}), we can see",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-a-a-natural-homology-orientation-for-link-exteri",
+      "number": "A",
+      "title": "A natural homology orientation for link exterior",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": "25",
+      "labelEnd": "25",
+      "words": 206,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homology orientation",
+          "heading": true
+        },
+        {
+          "term": "exterior",
+          "heading": true
+        },
+        {
+          "term": "link",
+          "heading": true
+        },
+        {
+          "term": "natural",
+          "heading": true
+        }
+      ],
+      "extract": "In this section, we exhibit a natural, and in a sense compatible, homology orientation in the case where M is the exterior EL = S3 \\ N(L) of a link L in S3. Here N(L) denotes a tubular neighborhood of L. Observe that the boundary ∂M of M consists in the disjoint union of b tori T 2 1 , . . . , T 2 b . For more details on homology orientations the reader is invited to refer to Turaev’s monograph [Tur02]. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-a1-homology-groups-and-homology-orientations",
+      "number": "A.1",
+      "title": "Homology groups and homology orientations",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 354,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homology groups",
+          "heading": true
+        },
+        {
+          "term": "orientations",
+          "heading": true
+        },
+        {
+          "term": "class induced",
+          "heading": false
+        },
+        {
+          "term": "fundamental class",
+          "heading": false
+        }
+      ],
+      "extract": "by describing in details the homology groups of the link exterior EL, of its boundary ∂EL = Sb ℓ=1 T 2 ℓand of the pair (EL, ∂EL). The homology groups of the torus T 2 ℓare given as follows: H2(T 2 ℓ; R) = R [[T 2 ℓ]], H1(T 2 ℓ; R) = R [[λℓ]] ⊕R [[µℓ]], H0(T 2 ℓ; R) = R [[pℓ]]. Here [[T 2 ℓ]] is the fundamental class induced by the orientation of T 2 ℓ, [[µℓ]] and [[λℓ]] are given by the oriented meridian and the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-a2-a-sign-term",
+      "number": "A.2",
+      "title": "A sign term",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 29,
+      "labelStart": "26",
+      "labelEnd": "29",
+      "words": 1460,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        },
+        {
+          "term": "twisted alexander",
+          "heading": false
+        },
+        {
+          "term": "math ematiques",
+          "heading": false
+        },
+        {
+          "term": "sign term",
+          "heading": true
+        },
+        {
+          "term": "alexander invariants",
+          "heading": false
+        },
+        {
+          "term": "short exact",
+          "heading": false
+        },
+        {
+          "term": "exact sequences",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomials",
+          "heading": false
+        }
+      ],
+      "extract": "the sense that they are given by Poincar´e duality. In the case of link exteriors, using such homology orientations we will ﬁx numbers of sign indeterminacy in our formulas. However, to be exhaustive it remains to us to explicitly compute the Reidemeister torsion of the long exact sequence in homology associated to the pair (EL, ∂EL). This torsion is a new sign term, given in the following proposition, which will",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "polytors otad",
+      "heading": true
+    },
+    {
+      "term": "polytors rho",
+      "heading": true
+    },
+    {
+      "term": "otad varphi",
+      "heading": true
+    },
+    {
+      "term": "torsion polytors",
+      "heading": false
+    },
+    {
+      "term": "reidemeister torsion",
+      "heading": true
+    },
+    {
+      "term": "ell otad",
+      "heading": false
+    },
+    {
+      "term": "bord otad",
+      "heading": false
+    },
+    {
+      "term": "torsion tor",
+      "heading": false
+    },
+    {
+      "term": "rho twisted",
+      "heading": false
+    },
+    {
+      "term": "rho colon",
+      "heading": false
+    },
+    {
+      "term": "bbrack rho",
+      "heading": false
+    },
+    {
+      "term": "sllmt rho",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The Whitehead link 3.1.2. Assumption on ϕ. We suppose that ϕ: π1(M) →Zn = ⟨t1, . . . , tn | titj = tjti, ∀i, j ⟩",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The ﬁgure eight knot",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The Whitehead link with meridians Hilden, Lozano and Montesionos has shown an explicit description of the character variety of the Whitehead link group in [HLMA92]. Trace functions play the role of local coordinates in this description. We set x, y and v as x = Ia, y = Ib and v = Iab, where Iγ : X(E",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 39,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 32,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "3 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p26); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 32 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0906.1500v4"
+  }
+}

@@ -1,0 +1,1457 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "13116841v1",
+  "title": "Observables in Loop Quantum Gravity with a cosmological constant",
+  "variant": "pdf",
+  "pages": 29,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Contents",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-contents"
+    },
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-introduction"
+    },
+    {
+      "level": 1,
+      "title": "I Uq(su(2)) in a nutshell",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-i-uqsu2-in-a-nutshell"
+    },
+    {
+      "level": 2,
+      "title": "A Definition of Uq(su(2))",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-a-definition-of-uqsu2"
+    },
+    {
+      "level": 2,
+      "title": "B q-harmonic oscillators and the Schwinger-Jordan trick",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-b-q-harmonic-oscillators-and-the-schwinger-jorda"
+    },
+    {
+      "level": 1,
+      "title": "II Tensor operators for Uq(su(2))",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-ii-tensor-operators-for-uqsu2"
+    },
+    {
+      "level": 2,
+      "title": "A Definition and Wigner-Eckart theorem",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-a-definition-and-wigner-eckart-theorem"
+    },
+    {
+      "level": 2,
+      "title": "B Product of tensor operators: scalar product, vector product and triple product",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-b-product-of-tensor-operators-scalar-product-vec"
+    },
+    {
+      "level": 3,
+      "title": "Scalar product",
+      "number": "1",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-1-scalar-product"
+    },
+    {
+      "level": 3,
+      "title": "Vector product",
+      "number": "2",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-2-vector-product"
+    },
+    {
+      "level": 2,
+      "title": "C Tensor products of tensor operators",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-c-tensor-products-of-tensor-operators"
+    },
+    {
+      "level": 1,
+      "title": "III Realization of tensor operators of rank 1/2 and 1 for Uq(su(2))",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-iii-realization-of-tensor-operators-of-rank-12-a"
+    },
+    {
+      "level": 2,
+      "title": "A Rank 1/2 tensor operators",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-a-rank-12-tensor-operators"
+    },
+    {
+      "level": 2,
+      "title": "B Rank 1 tensor operators",
+      "number": null,
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-b-rank-1-tensor-operators"
+    },
+    {
+      "level": 1,
+      "title": "IV Observables for the intertwiner space",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-iv-observables-for-the-intertwiner-space"
+    },
+    {
+      "level": 2,
+      "title": "A General construction and properties of intertwiner observables",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-a-general-construction-and-properties-of-intertw"
+    },
+    {
+      "level": 2,
+      "title": "B Uq(u(n)) formalism for LQG defined over Uq(su(2))",
+      "number": null,
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-b-uqun-formalism-for-lqg-defined-over-uqsu2"
+    },
+    {
+      "level": 1,
+      "title": "V Geometric interpretation of some observables in the LQG context",
+      "number": null,
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-v-geometric-interpretation-of-some-observables-i"
+    },
+    {
+      "level": 1,
+      "title": "Outlook",
+      "number": null,
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-outlook"
+    },
+    {
+      "level": 1,
+      "title": "A Hyperbolic cosine law",
+      "number": null,
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-a-hyperbolic-cosine-law"
+    },
+    {
+      "level": 1,
+      "title": "B Useful formulae",
+      "number": null,
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-b-useful-formulae"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 247,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lqg",
+          "heading": false
+        },
+        {
+          "term": "cosmological constant",
+          "heading": false
+        },
+        {
+          "term": "quantum gravity",
+          "heading": false
+        },
+        {
+          "term": "loop quantum",
+          "heading": false
+        },
+        {
+          "term": "quantum group",
+          "heading": false
+        },
+        {
+          "term": "waterloo",
+          "heading": false
+        },
+        {
+          "term": "observables",
+          "heading": false
+        }
+      ],
+      "extract": "Observables in Loop Quantum Gravity with a cosmological constant Ma¨ıt´e Dupuis1, ∗and Florian Girelli2, 1, † 1University Erlangen-Nuremberg, Institute for Theoretical Physics III, Erlangen, Germany 2Department of Applied Mathematics, University of Waterloo, Waterloo, Ontario, Canada An open issue in loop quantum gravity (LQG) is the introduction of a non-vanishing cosmological constant Λ. In 3d, Chern-Simons theory",
+      "extractCut": true,
+      "blocks": [
+        "library/13116841v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-contents",
+      "number": null,
+      "title": "Contents",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 141,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tensor operators",
+          "heading": false
+        },
+        {
+          "term": "rank tensor",
+          "heading": false
+        },
+        {
+          "term": "electronic address",
+          "heading": false
+        },
+        {
+          "term": "lqg",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction 2 I. Uq(su(2)) in a nutshell 4 A. Deﬁnition of Uq(su(2)) 4 B. q-harmonic oscillators and the Schwinger-Jordan trick 7 II. Tensor operators for Uq(su(2)) 7 A. Deﬁnition and Wigner-Eckart theorem 7 B. Product of tensor operators: scalar product, vector product and triple product 8 1. Scalar product 9 2. Vector product 10 C. Tensor products of tensor operators 10 III. Realization of tensor operators of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 2311,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "euclidian gravity",
+          "heading": false
+        },
+        {
+          "term": "spinfoam model",
+          "heading": false
+        },
+        {
+          "term": "lqg",
+          "heading": false
+        },
+        {
+          "term": "ponzano-regge model",
+          "heading": false
+        },
+        {
+          "term": "quantum gravity",
+          "heading": false
+        },
+        {
+          "term": "cosmological constant",
+          "heading": false
+        },
+        {
+          "term": "quantize gravity",
+          "heading": false
+        },
+        {
+          "term": "spinor operators",
+          "heading": false
+        }
+      ],
+      "extract": "Background: There are diﬀerent proposals to understand the nature of the cosmological constant Λ. It can be interpreted as encoding some type of vacuum energy (see [1–3] and references therein) or as a coupling constant just like the Newton’s constant G. The loop quantum gravity and spinfoam frameworks use the latter interpretation which is motivated by the seminal works of Witten [4], and later of Fock and Rosly",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-i-uqsu2-in-a-nutshell",
+      "number": null,
+      "title": "I Uq(su(2)) in a nutshell",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "A.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-a-definition-of-uqsu2",
+      "number": null,
+      "title": "A Definition of Uq(su(2))",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": "4",
+      "labelEnd": "7",
+      "words": 1123,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "j1m",
+          "heading": false
+        },
+        {
+          "term": "j2m",
+          "heading": false
+        },
+        {
+          "term": "m1m2m",
+          "heading": false
+        },
+        {
+          "term": "deformed permutation",
+          "heading": false
+        },
+        {
+          "term": "qjz",
+          "heading": false
+        },
+        {
+          "term": "angular momenta",
+          "heading": false
+        },
+        {
+          "term": "adjoint action",
+          "heading": false
+        },
+        {
+          "term": "angular momentum",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we review the salient features of Uq(su(2)), which we shall extensively use, to ﬁx the notations. We consider Uq(su(2)), the q-deformation of the universal algebra of SU(2), with q real, generated by Jz, J+, J−. We have the commutation relations [Jz, J±] = ±J±, [J+, J−] = [2Jz], with [Jz] = qJz/2 −q−Jz/2 q1/2 −q−1/2 . (1) For q →1 the right-hand side of the second equation of (1) approaches 2Jz and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-b-q-harmonic-oscillators-and-the-schwinger-jorda",
+      "number": null,
+      "title": "B q-harmonic oscillators and the Schwinger-Jordan trick",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 291,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-harmonic oscillators",
+          "heading": true
+        },
+        {
+          "term": "iαi",
+          "heading": false
+        },
+        {
+          "term": "fock space",
+          "heading": false
+        },
+        {
+          "term": "qnba",
+          "heading": false
+        },
+        {
+          "term": "αiα",
+          "heading": false
+        }
+      ],
+      "extract": "To account for the deformation, we consider a pair of q-harmonic oscillators, comprising annihilation operators αi = a, b, creation operators α† i = a†, b† and number operators Nαi = Na, Nb, to construct representations of Uq(su(2)). There are deﬁned as follows, [αi, αj] = [αi, α† j] = 0, with i̸ = j, [αi, α† i]q± 1 2 = q ∓Nαi 2 , [Nαi, α† j] = δijα† i, [Nαi, αj] = −δijαi, (16) where [A, B]qn ≡AB −qnBA. Let us point",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-ii-tensor-operators-for-uqsu2",
+      "number": null,
+      "title": "II Tensor operators for Uq(su(2))",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 88,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tensor operators",
+          "heading": true
+        },
+        {
+          "term": "quasitri",
+          "heading": false
+        },
+        {
+          "term": "lqg",
+          "heading": false
+        }
+      ],
+      "extract": "We now introduce the concept of tensor operators. The general deﬁnition of tensor operators for a general quasitri- angular Hopf algebra has been given in [34]. We use their formalism in the speciﬁc case of Uq(su(2)). These objects are the building blocks of our construction of observables for LQG deﬁned with Uq(su(2)) as gauge group. We show in section IV that the use of tensor operators allows us to build any",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-a-definition-and-wigner-eckart-theorem",
+      "number": null,
+      "title": "A Definition and Wigner-Eckart theorem",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 499,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tensor operator",
+          "heading": false
+        },
+        {
+          "term": "spinor operator",
+          "heading": false
+        },
+        {
+          "term": "wigner-eckart",
+          "heading": true
+        },
+        {
+          "term": "square matrix",
+          "heading": false
+        },
+        {
+          "term": "equivariance property",
+          "heading": false
+        },
+        {
+          "term": "scalar operator",
+          "heading": false
+        },
+        {
+          "term": "matrix elements",
+          "heading": false
+        },
+        {
+          "term": "j1j",
+          "heading": false
+        }
+      ],
+      "extract": "Deﬁnition II.1. Tensor operators [34]. Let V and W be two representations of Uq(su(2)), not necessarily irreducible, and L(W) the set of linear maps on W. A tensor operator t is deﬁned as the intertwinning linear map t : V →L(W) x →t(x) (22) If we take V ≡V j the irreducible representation of rank j spanned by vectors |j, m⟩, then we note t(|j, m⟩) ≡tj m. tj = \u0000tj m \u0001 m=−j..j is called a tensor operator of rank j. A",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-b-product-of-tensor-operators-scalar-product-vec",
+      "number": null,
+      "title": "B Product of tensor operators: scalar product, vector product and triple product",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 157,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tensor operators",
+          "heading": true
+        },
+        {
+          "term": "m1m2m",
+          "heading": false
+        },
+        {
+          "term": "inﬁnitesimal",
+          "heading": false
+        }
+      ],
+      "extract": "We would like now to consider the analogue of (11) and (12) in terms of tensor operators. Lemma II.3. Product of tensor operators [34]. Let t : V →L(W) and ˜t : V ′ →L(W) be two tensor operators then t˜t : V ⊗V ′ →L(W) (x, y) →t(x)˜t(y) (25) is still a tensor operator. 2 As always we can perform the limit q →1 to recover the tensor operators for su(2). In this case we have [Jz, tj m] = m tj m, [J±, tj m] = p (j",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-1-scalar-product",
+      "number": "1",
+      "title": "Scalar product",
+      "level": 3,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 458,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "scalar product",
+          "heading": true
+        },
+        {
+          "term": "tensor operators",
+          "heading": false
+        },
+        {
+          "term": "bilinear form",
+          "heading": false
+        },
+        {
+          "term": "gmn",
+          "heading": false
+        },
+        {
+          "term": "contravariant",
+          "heading": false
+        },
+        {
+          "term": "covariant",
+          "heading": false
+        },
+        {
+          "term": "deformed",
+          "heading": false
+        },
+        {
+          "term": "notion",
+          "heading": false
+        }
+      ],
+      "extract": "1. Scalar product We call “scalar product” of two tensor operators, the projection of these operators on the trivial representation. Indeed, considering two tensor operators tj1 and ˜tj2, we can combine them using the CG coeﬃcients to build a tensor operator of rank 0, i.e. a scalar operator. tj1 · ˜tj2 ≡ p [2j1 + 1] X m1+m2=0 qC j1 j2 0 m1m20 tj1 m1 ˜tj2 m2 = δj1,j2 X m (−1)j1−mq m 2 tj1 m ˜tj1 −m, (27) In this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-2-vector-product",
+      "number": "2",
+      "title": "Vector product",
+      "level": 3,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 269,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vector product",
+          "heading": true
+        },
+        {
+          "term": "m1m2m",
+          "heading": false
+        },
+        {
+          "term": "m3q",
+          "heading": false
+        },
+        {
+          "term": "vector operators",
+          "heading": false
+        }
+      ],
+      "extract": "Vector product The notion of “vector product” is deﬁned by associating a vector operator ˆt1 to two vector operators t1, ˜t1 using the CG coeﬃcients, ˆt1 m = (t1 ∧˜t1)m ≡ X m1,m2 qC 1 1 1 m1m2m t1 m1 ˜t1 m2. (32) Using their value (recalled in the appendix B), we obtain explicitly ˆt1 = s [2] [4] \u0010 q1/2t1 1˜t1 0 −q−1/2t1 0˜t1 1 \u0011 , ˆt−1 = s [2] [4] \u0010 q1/2t1 0˜t1 −1 −q−1/2t1 −1˜t1 0 \u0011 , ˆt0 = s [2] [4] \u0010 t1 1˜t1 −1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-c-tensor-products-of-tensor-operators",
+      "number": null,
+      "title": "C Tensor products of tensor operators",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 520,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tensor operators",
+          "heading": true
+        },
+        {
+          "term": "j1m",
+          "heading": false
+        },
+        {
+          "term": "j2m",
+          "heading": false
+        },
+        {
+          "term": "tensor product",
+          "heading": false
+        },
+        {
+          "term": "rii",
+          "heading": false
+        },
+        {
+          "term": "scalar product",
+          "heading": false
+        },
+        {
+          "term": "hilbert space",
+          "heading": false
+        }
+      ],
+      "extract": "The tensor product of tensor operators necessitates more attention. Indeed if t ∈L(W) and ˜t ∈L(W ′) are tensor operators for Uq(su(2)), then in general t ⊗˜t will not be a tensor operator for Uq(su(2)). To see this, ﬁrst we recall that we need the coproduct to deﬁne the action of the generators Jα on |j1m1, j2m2⟩. For example, ∆J+|j1m1, j2m2⟩= \u0000J+ ⊗K + K−1 ⊗J+ \u0001 |j1m1, j2m2⟩, K ≡q Jz 2 . (35) If t ⊗˜t is a (linear)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-iii-realization-of-tensor-operators-of-rank-12-a",
+      "number": null,
+      "title": "III Realization of tensor operators of rank 1/2 and 1 for Uq(su(2))",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 110,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tensor operators",
+          "heading": true
+        },
+        {
+          "term": "q-harmonic oscillators",
+          "heading": false
+        },
+        {
+          "term": "spinor operators",
+          "heading": false
+        }
+      ],
+      "extract": "The abstract theory of tensor operators has been summarized above. We want to illustrate the construction by giving some realization of these tensor operators. We know that any representation V j of Uq(su(2)) can be recovered from the fundamental spinor representation 1 2 and the CG coeﬃcients. In the same way, the most important operators to identify are the spinor operators. If we know them, we can concatenate",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-a-rank-12-tensor-operators",
+      "number": null,
+      "title": "A Rank 1/2 tensor operators",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "13",
+      "words": 1085,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nai nbi",
+          "heading": false
+        },
+        {
+          "term": "tensor operators",
+          "heading": true
+        },
+        {
+          "term": "spinor operators",
+          "heading": false
+        },
+        {
+          "term": "nak",
+          "heading": false
+        },
+        {
+          "term": "harmonic oscillators",
+          "heading": false
+        },
+        {
+          "term": "commutation relations",
+          "heading": false
+        },
+        {
+          "term": "jci",
+          "heading": false
+        },
+        {
+          "term": "explicit realization",
+          "heading": false
+        }
+      ],
+      "extract": "Rank 1 2 tensor operators (i.e. spinor operators) t 1 2m should be solution of the following constraints. J± ▷t 1 2 ∓= t 1 2 ±, J± ▷t 1 2 ± = 0, Jz ▷t 1 2 ± = ±1 2t 1 2 ±. (43) Using the Schwinger-Jordan realization of Uq(su(2)) generators given in (19), we can solve these equations and we get two solutions T 1 2 and ˜T 1 2 satisfying (43). T 1 2 = A† B† ! = a†qNa/4 b†q(2Na+Nb)/4 ! , ˜T 1 2 = ˜B ˜A ! =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-b-rank-1-tensor-operators",
+      "number": null,
+      "title": "B Rank 1 tensor operators",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 16,
+      "labelStart": "13",
+      "labelEnd": "16",
+      "words": 1671,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nai nbi",
+          "heading": false
+        },
+        {
+          "term": "eii",
+          "heading": false
+        },
+        {
+          "term": "spinor operators",
+          "heading": false
+        },
+        {
+          "term": "vector operators",
+          "heading": false
+        },
+        {
+          "term": "commutation relations",
+          "heading": false
+        },
+        {
+          "term": "vector product",
+          "heading": false
+        },
+        {
+          "term": "quadratic casimir",
+          "heading": false
+        },
+        {
+          "term": "scalar product",
+          "heading": false
+        }
+      ],
+      "extract": "Rank 1 tensor operators (i.e. vector operator) for Uq(su(2)) have been identiﬁed [34]. These operators are important as in the LQG context, they will encode the notion of ﬂux operator. We explicitly construct them and provide their commutation relations, when they act on diﬀerent legs, or not. We can construct them using the spinor operators T 1 2 , ˜T 1 2 and the CG coeﬃcients. t1 m = X m1,m2 qC 1 2 1 2 1 m1m2m T 1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-iv-observables-for-the-intertwiner-space",
+      "number": null,
+      "title": "IV Observables for the intertwiner space",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 39,
+      "summary": null,
+      "keywords": [],
+      "extract": "As emphasized in the introduction, we focus on the quantum group Uq(su(2)) with q real, which is relevant for 3d Euclidian gravity with Λ < 0 and the physical case, i.e. 4d Lorentzian gravity with Λ > 0. A.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-015-a-general-construction-and-properties-of-intertw",
+      "number": null,
+      "title": "A General construction and properties of intertwiner observables",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": "16",
+      "labelEnd": "18",
+      "words": 1121,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "intertwiner",
+          "heading": true
+        },
+        {
+          "term": "tjα",
+          "heading": false
+        },
+        {
+          "term": "m1m",
+          "heading": false
+        },
+        {
+          "term": "observables",
+          "heading": true
+        },
+        {
+          "term": "tjβ",
+          "heading": false
+        },
+        {
+          "term": "braided permutation",
+          "heading": false
+        },
+        {
+          "term": "tensor operator",
+          "heading": false
+        },
+        {
+          "term": "deformed permutation",
+          "heading": false
+        }
+      ],
+      "extract": "From now on, we consider the space of N-valent intertwiners with N legs ordered from 1 to N. Let’s consider n tensor operators (α)tJα of respective rank Jα, associated with the αth leg of the vertex, built from (41). To construct an observable, i.e. a scalar operator, we can use the same combination that would appear in the deﬁnition of an intertwiner built out from the vectors |Jα, mα⟩. Indeed, if |ιJ1..Jn⟩= P m",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-b-uqun-formalism-for-lqg-defined-over-uqsu2",
+      "number": null,
+      "title": "B Uq(u(n)) formalism for LQG defined over Uq(su(2))",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 1374,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nbi nai",
+          "heading": false
+        },
+        {
+          "term": "nbi kbi",
+          "heading": false
+        },
+        {
+          "term": "generators eij",
+          "heading": false
+        },
+        {
+          "term": "operators eij",
+          "heading": false
+        },
+        {
+          "term": "q-harmonic oscillators",
+          "heading": false
+        },
+        {
+          "term": "eii",
+          "heading": false
+        },
+        {
+          "term": "spinor operators",
+          "heading": false
+        },
+        {
+          "term": "harmonic oscillators",
+          "heading": false
+        }
+      ],
+      "extract": "We want to construct the ”smallest” observables. It is therefore natural to consider the observables built from the scalar product of spinor operators (47). Since we have two types of spinor operators, we have diﬀerent possible combinations. Eαβ ≡−(α)T 1 2 ·(β) ˜T 1 2 , G† αβ ≡−(α)T 1 2 ·(β) T 1 2 Fαβ ≡−(α) ˜T 1 2 ·(β) ˜T 1 2 . (82) Note that since the operators on diﬀerent legs do not commute, we could a priori",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-v-geometric-interpretation-of-some-observables-i",
+      "number": null,
+      "title": "V Geometric interpretation of some observables in the LQG context",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 24,
+      "labelStart": "20",
+      "labelEnd": "24",
+      "words": 1912,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sin sinh",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic cosine",
+          "heading": false
+        },
+        {
+          "term": "cosine law",
+          "heading": false
+        },
+        {
+          "term": "observables",
+          "heading": true
+        },
+        {
+          "term": "length operator",
+          "heading": false
+        },
+        {
+          "term": "lqg",
+          "heading": true
+        },
+        {
+          "term": "cosh",
+          "heading": false
+        },
+        {
+          "term": "vector operator",
+          "heading": false
+        }
+      ],
+      "extract": "In LQG with Λ = 0, the intertwiner is understood as the fundamental chunk of quantum space. For a 2d space, it is dual to a face, whereas in 3d it is dual to a polyhedron. The intertwiner is invariant under the action of su(2), hence the observables should be invariant under the adjoint action of su(2). We see that the use of tensor operators allows to construct in a direct manner such observables: we need to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-outlook",
+      "number": null,
+      "title": "Outlook",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 1074,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lqg",
+          "heading": false
+        },
+        {
+          "term": "tensor operators",
+          "heading": false
+        },
+        {
+          "term": "twisted geometries",
+          "heading": false
+        },
+        {
+          "term": "operators acting",
+          "heading": false
+        },
+        {
+          "term": "cosmological constant",
+          "heading": false
+        },
+        {
+          "term": "hamiltonian constraint",
+          "heading": false
+        },
+        {
+          "term": "geometric operators",
+          "heading": false
+        },
+        {
+          "term": "vector operators",
+          "heading": false
+        }
+      ],
+      "extract": "Summary: Let us summarize the main results of our paper. We have recalled the deﬁnition of tensor operators for Uq(su(2)), with q real, which is the relevant case to study Euclidian 3d LQG with Λ < 0 and Lorentzian 3+1 LQG with Λ > 0. We have shown how they are the natural objects to construct observables for a Uq(su(2)) intertwiner. These operators are the key to study LQG deﬁned in terms of a quantum group as they",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-a-hyperbolic-cosine-law",
+      "number": null,
+      "title": "A Hyperbolic cosine law",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": "25",
+      "labelEnd": "25",
+      "words": 351,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "geodesics joining",
+          "heading": false
+        },
+        {
+          "term": "tangent vectors",
+          "heading": false
+        },
+        {
+          "term": "cosine",
+          "heading": true
+        },
+        {
+          "term": "cosh",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic",
+          "heading": true
+        },
+        {
+          "term": "sinh",
+          "heading": false
+        }
+      ],
+      "extract": "Consider the upper 2d hyperboloid H2 +, embedded into R3, with curvature −R−2 = Λ, where R is the radius of curvature. H2 + = {⃗x ∈R3, x1 > 0, xiηijxj = x2 1 −x2 2 −x2 3 = |⃗x|2 = R2}. (A1) On H2 +, consider three points A, B, C and the geodesics joining them: we obtain an hyperbolic triangle. Without loss of generality, we can always assume that A sits at the origin of H2 +, that is as a point of R3, it is given by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-b-useful-formulae",
+      "number": null,
+      "title": "B Useful formulae",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 29,
+      "labelStart": "25",
+      "labelEnd": "29",
+      "words": 1871,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gr-qc",
+          "heading": false
+        },
+        {
+          "term": "spinfoam models",
+          "heading": false
+        },
+        {
+          "term": "quantum gravity",
+          "heading": false
+        },
+        {
+          "term": "livine",
+          "heading": false
+        },
+        {
+          "term": "noui",
+          "heading": false
+        },
+        {
+          "term": "freidel",
+          "heading": false
+        },
+        {
+          "term": "girelli",
+          "heading": false
+        },
+        {
+          "term": "bose-einstein condensates",
+          "heading": false
+        }
+      ],
+      "extract": "These formulae are taken from the book [37]. a. q-Clebsch-Gordan An explicit expression of the g-Clebsch-Gordan in the van der Waerden form is given as qc JL Jad mymem “= Smncmay ting {2 It He -Datd2tI+ 1) + 3 (Grm2—d2™1) A (44 j9) (B1) x (ja tra]! — ma)! j2 + mal! i2 — ma}! + mL — m]![25 +1)? (B2) (-1)\"qr 2 Gi tie+d+1) x —— : : — — . (B38 > [n}![i1 + J2 — 9 — me)! — my — n! [92 + mg — n![F — jo + m1 + n]![F — jr —",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "References"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "tensor operators",
+      "heading": true
+    },
+    {
+      "term": "spinor operators",
+      "heading": false
+    },
+    {
+      "term": "vector operators",
+      "heading": true
+    },
+    {
+      "term": "tensor product",
+      "heading": true
+    },
+    {
+      "term": "lqg deﬁned",
+      "heading": false
+    },
+    {
+      "term": "operators acting",
+      "heading": false
+    },
+    {
+      "term": "euclidian lqg",
+      "heading": false
+    },
+    {
+      "term": "lqg formalism",
+      "heading": true
+    },
+    {
+      "term": "operators eij",
+      "heading": false
+    },
+    {
+      "term": "lqg case",
+      "heading": false
+    },
+    {
+      "term": "rank tensor",
+      "heading": true
+    },
+    {
+      "term": "geometric operators",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The hyperbolic triangle is represented in the Poincar´e disc. The (outgoing) normals ˆni are deﬁned in the tangent plane at the vertex of the triangle, as the orthogonal vectors to the tangent vectors ˆui",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p021-1",
+      "file": "images/img-p021-1.png",
+      "page": 21,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p021-2",
+      "file": "images/img-p021-2.png",
+      "page": 21,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 22,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 22,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p1); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 12
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 22 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/13116841v1"
+  }
+}

@@ -1,0 +1,1373 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-ph-0003017v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prop-sec-front-matter-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 14,
+      "target": "prop-sec-front-matter-01.md",
+      "narrative": null,
+      "content": "The validity of the random matrix approach has been conﬁrmed by many lattice QCD simulations in a wide parameter range.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prop-sec-front-matter-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 14,
+      "target": "prop-sec-front-matter-02.md",
+      "narrative": null,
+      "content": "31 UNIVERSAL PROPERTIES OF THE LATTICE QCD DIRAC SPECTRUM . . .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prop-sec-front-matter-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 14,
+      "target": "prop-sec-front-matter-03.md",
+      "narrative": null,
+      "content": "50 One-Plaquette Models of Lattice QCD . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prop-sec-front-matter-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 14,
+      "target": "prop-sec-front-matter-04.md",
+      "narrative": null,
+      "content": "Mainly through lattice QCD simulations, it has become well established that chiral symmetry breaking by the vacuum state of QCD is a nonperturbative phenomenon that results from the interaction of many microscopic degrees of freedom.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prop-sec-front-matter-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 14,
+      "target": "prop-sec-front-matter-05.md",
+      "narrative": null,
+      "content": "This is conﬁrmed by lattice QCD simulations, which show a critical temperature of about 150 MeV [10].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prop-sec-front-matter-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 14,
+      "target": "prop-sec-front-matter-06.md",
+      "narrative": null,
+      "content": "Renormalization-group arguments and lattice QCD simulations indicate that for two massless ﬂavors, a second-order phase transition occurs at zero chemical po- tential along the temperature axis.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prop-sec-front-matter-07",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 14,
+      "target": "prop-sec-front-matter-07.md",
+      "narrative": null,
+      "content": "However, phenomenological arguments and lattice QCD simulations indi- cate that ⟨¯ψψ⟩≈−(240 MeV)3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 14,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-ph/0003017v2  26 Jun 2000\n1\nRandom Matrix Theory and Chiral\nSymmetry in QCD\nJ.J.M. Verbaarschot\nDepartment of Physics and Astronomy, SUNY, Stony Brook, NY 11794-3800\nT. Wettig\nDepartment of Physics, Yale University, New Haven, CT 06520-8120 and\nRIKEN BNL Research Center, Brookhaven National Laboratory, Upton, NY 11973-5000\nKEYWORDS: eﬀective low energy theories, ﬁnite volume partition function, lattice QCD\nABSTRACT:\nRandom matrix theory is a powerful way to describe universal correlations of\neigenvalues of complex systems. It also may serve as a schematic model for disorder in quantu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prop-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "prop-sec-000-01.md",
+      "narrative": null,
+      "content": "Further conﬁrmation of these ideas will come from results of lattice QCD simulations.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dirac Spectrum",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-000-23-dirac-spectrum.md",
+      "narrative": null,
+      "content": "Based on the arguments in the introduction, we expect it to be completely deter-\nmined by the global symmetries of the Dirac operator. As we demonstrate below,\nρs(z) can be computed both from the low-energy eﬀective theory and from chiral\nRMT; the results coincide. Further conﬁrmation of these ideas will come from\nresults of lattice QCD simulations.\nAt this point we would like to add some remarks on possible ultraviolet diver-\ngences. As an example, we consider the chiral condensate in the V →∞limit,\nbut before the limit m →0 is taken.\nConverting the sum in Eq. (22) to an\nintegral and dropping",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prop-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "prop-sec-001-01.md",
+      "narrative": null,
+      "content": "In lattice QCD simulations with lattice spacing a, the cutoﬀis Λ = 1/a.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Random Matrix Theory",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-001-12-random-matrix-theory.md",
+      "narrative": null,
+      "content": "15\nwhere we have introduced an ultraviolet cutoﬀΛ that must be removed at the end\nof the calculation. Asymptotically, the spectral density behaves as ρ(λ) ∼V λ3,\nwhich means that the integral is ultraviolet-divergent. However, this divergence\ndoes not contribute to ⟨¯ψψ⟩if the m →0 limit is taken ﬁrst to yield the usual\nBanks-Casher relation. Alternatively, we can ﬁrst subtract the divergent contri-\nbutions to the integral (26) and remove the cutoﬀbefore taking the chiral limit.\nA slightly diﬀerent situation arises if we consider the dependence of the chiral\ncondensate on a valence (or spectra",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "CHIRAL RANDOM MATRIX THEORY",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-002-3-chiral-random-matrix-theory.md",
+      "narrative": null,
+      "content": "CHIRAL RANDOM MATRIX THEORY",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "INTRODUCTION",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-003-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction of the Model\nIn this section we introduce a chiral random matrix theory (chRMT) with the",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Global Symmetries",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-004-22-global-symmetries.md",
+      "narrative": null,
+      "content": "In the spirit of the invariant\nrandom matrix ensembles, we construct a model with eigenfunctions distributed\nuniformly over the unitary unit sphere. This is achieved by choosing Gaussian-\ndistributed random matrix elements. We thus arrive at the following chRMT\n[20, 24]:\nZβ\nNf ,ν(m1, . . . , mNf ) =\nZ\nDW\nNf\nY\nf=1\ndet(D + mf)e−Nβ\n4 Tr v(W †W ) ,\n(28)\nwhere β is the Dyson index,\nD =\n\u0012\n0\niW\niW †\n0\n\u0013\n,\n(29)\nand W is an n × m matrix with ν = m −n and N = n + m. The interpretation\nof this model is that N low-lying modes interact via a random interaction. A\nnatural representation of this model is in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "ANTI-UNITARY SYMMETRIES",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-005-223-anti-unitary-symmetries.md",
+      "narrative": null,
+      "content": "elements of W to be real, complex, or quaternion real for β = 1, β = 2, and\nβ = 4, respectively.\nAlong with the invariant random matrix ensembles, the chiral ensembles are part\nof a larger classiﬁcation scheme that also includes ensembles for the description of\ndisordered superconductors [33]. In total, 10 diﬀerent families of random matrix\nensembles have been identiﬁed.\nThey correspond one-to-one with the Cartan\nclassiﬁcation of symmetric spaces [34].\nThe uniform distribution of the eigenfunctions over the unitary unit sphere is\nexpressed as the invariance\nW →U†WV ,\n(32)\nwhere the n × n matri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prop-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "prop-sec-006-01.md",
+      "narrative": null,
+      "content": "Our starting point is that the topological susceptibility of the quenched gauge fields is nonvanishing, i.e. $$\\frac { \\langle \\nu^2 \\rangle_q} V \\ne 0\\:.$$ Invoking the central limit theorem, we assume that $P(\\nu)$ is Gaussian, $$P(\\nu) = \\frac 1{\\sqrt{2 \\pi \\langle \\nu^2 \\rangle_q}}\\: e^{-\\frac{\\nu^2}{2 \\langle \\nu^2 \\rangle_q }}\\:,$$ which has been verified by quenched lattice QCD simulations.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sigma Model Representation of Chiral Random Matrix Models",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-006-32-sigma-model-representation-of-chiral-random-m.md",
+      "narrative": null,
+      "content": "The chiral random matrix partition function can be evaluated using standard random matrix methods. For simplicity, let us consider the case $\\beta=2$. The fermion determinant can be written as a Grassmann integral, and averaging over the Gaussian distribution function results in a four-fermion interaction. Because of the underlying unitary invariance ([\\[inv\\]](#inv){reference-type=\"ref\" reference=\"inv\"}) of the chRMT, the fermionic variables only appear in invariant combinations of the form $\\sigma^{fg} \\sim \\bar\\psi^f_i \\psi^g_i$, and the partition function can be rewritten identically in te",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spectral Correlation Functions",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-007-34-spectral-correlation-functions.md",
+      "narrative": null,
+      "content": "[]{#sec3.1 label=\"sec3.1\"}\n\nIn this section, we discuss the spectral correlation functions and the microscopic spectral density corresponding to the chRMT partition function. The global spectral density is a semicircle. It is not universal and we do not expect to find it in realistic physical systems. The universal quantities are local or microscopic spectral correlation functions. In general, a $k$-point spectral correlation function is defined by [@Dyso62] $$\\label{kpoint}\n  R_k(\\lambda_1,\\ldots,\\lambda_k)=\\left\\langle\\sum_{\\scriptsize\n      \\matrix{j_1\\cdots j_k=1\\cr j_p\\ne j_q}}^N\n    \\del",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "BULK CORRELATIONS",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-008-341-bulk-correlations.md",
+      "narrative": null,
+      "content": "Our conventions are such that if we have $N$ eigenvalues, the global spectral density is normalized to $N$ so that the mean level spacing is of order $1/N$. Local spectral correlation functions $R_k(\\lambda_1,\\ldots,\\lambda_k)$ in the bulk of the spectrum are thus characterized by $\\lambda_p\\sim{\\cal O}(1)$ and $|\\lambda_p-\\lambda_q|\\sim{\\cal O}(1/N)$. Universal correlation functions are obtained by rescaling the eigenvalues according to the average local level spacing. This procedure, known as unfolding, is discussed in more detail in Sec. [\\[unfolding\\]](#unfolding){reference-type=\"ref\" refe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MICROSCOPIC CORRELATIONS",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-009-342-microscopic-correlations.md",
+      "narrative": null,
+      "content": "In the context of QCD, the small eigenvalues are more interesting than those in the bulk because of their relation to spontaneous chiral symmetry breaking via the Banks-Casher relation. The local spectral correlation functions at the hard edge of the spectrum are characterized by $\\lambda_p\\sim{\\cal O}(1/N)$ and $|\\lambda_p-\\lambda_q|\\sim{\\cal O}(1/N)$. Unfolding in the microscopic region is easy; the eigenvalues are simply rescaled by the mean level spacing at $\\lambda=0$, which is given by Eq. ([\\[spacing\\]](#spacing){reference-type=\"ref\" reference=\"spacing\"}). By convention, we define the u",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Universality Proofs",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-010-35-universality-proofs.md",
+      "narrative": null,
+      "content": "[]{#UniversalityProofs label=\"UniversalityProofs\"}\n\nIn most random matrix calculations, the probability distribution of the random matrix elements is assumed to be Gaussian to simplify the calculation. Nonuniversal features such as the global spectral density depend on the choice of the probability distribution. On the other hand, universal results of RMT do not depend on this choice, nor on other deformations of the random matrix model. In addition to numerous empirical verifications of universal behavior in RMT, analytical proofs of universality have recently been constructed for two differe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prop-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "prop-sec-012-01.md",
+      "narrative": null,
+      "content": "The integrals were first calculated in the context of one-plaquette lattice QCD models [@brower] but later rederived by means of Itzykson-Zuber integrals [@Russian; @Guhr; @seneru].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "EFFECTIVE THEORIES AT LOW ENERGIES",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/sec-011-4-effective-theories-at-low-energies.md",
+      "narrative": null,
+      "content": "EFFECTIVE THEORIES AT LOW ENERGIES",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Finite-Volume Partition Function",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "../sections/sec-012-41-finite-volume-partition-function.md",
+      "narrative": null,
+      "content": "[]{#Finite-Volume label=\"Finite-Volume\"} As we have seen before, chiral symmetry is spontaneously broken by the QCD vacuum. According to Goldstone's theorem, this leads to the appearance of massless modes. The Lagrangian describing the dynamics of these modes can be obtained solely from the symmetries of the QCD partition function. Goldstone modes corresponding to the symmetry-breaking pattern ${\\rm SU}_R(N_f) \\times {\\rm SU}_L(N_f)\n\\rightarrow {\\rm SU}_V(N_f)$ can be parameterized as $$U =  U_R U_L^{-1}$$ with $U_R \\in {\\rm SU}_R(N_f)$ and $U_L \\in {\\rm SU}_L(N_f)$. The chiral Lagrangian is c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Leutwyler-Smilga Sum Rules",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-013-42-leutwyler-smilga-sum-rules.md",
+      "narrative": null,
+      "content": "For masses in the domain of Eq. ([\\[range\\]](#range){reference-type=\"ref\" reference=\"range\"}), we can equate the mass dependence of the QCD partition function and the mass dependence of the effective partition function. Equating the coefficients of the expansion in powers of the mass then gives us the so-called Leutwyler-Smilga sum rules [@Leut92]. The QCD partition function can be expanded as $$\\label{ZQCDnu}\n  {Z^{\\rm QCD}_\\nu(m)} = \\frac {\\langle \n    m^{|\\nu|} \\prod_k'(m+i\\lambda_k) \\rangle}\n  {\\langle\\prod_k' i\\lambda_k\\rangle}\n  = m^{|\\nu|}\\Bigl( 1 + m^2 \\Bigl\\langle\\sum_{\\lambda_k > 0 }",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prop-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "prop-sec-014-01.md",
+      "narrative": null,
+      "content": "It has been used to obtain a better understanding of quenched lattice QCD results [@Maarten; @Sharpe].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spectral Mass and Partially Quenched Partition Function",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-014-43-spectral-mass-and-partially-quenched-partitio.md",
+      "narrative": null,
+      "content": "[]{#SpectralMass label=\"SpectralMass\"}\n\nThe Dirac spectrum can be obtained from the resolvent $$\\Sigma(z) =\\left\\langle \\frac 1V\\: \\Tr \\frac 1{{\\cal D}+z} \\right\n  \\rangle\\:,$$ were the spectral mass $z$ is an independent complex variable that does not occur in the average. With purely imaginary eigenvalues the spectral density is given by the discontinuity of the resolvent across the imaginary axis, $$\\frac {\\rho(\\lambda)}V = \\lim_{\\epsilon\\to0}\\frac 1{2\\pi}\n  [ \\Sigma(i\\lambda +\\epsilon) - \\Sigma(i\\lambda -\\epsilon)]\\:.\n  \\label{discon}$$ This follows immediately upon writing the trace as a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prop-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 31,
+      "target": "prop-sec-015-01.md",
+      "narrative": null,
+      "content": "Another example, more closely related to disordered condensed matter systems, is the random-flux model [@simons-altland], which is in essence quenched lattice QCD with Kogut-Susskind fermions but without the phase factors due to the $\\gamma$-matrices.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Domains of the Partially Quenched Effective Theory",
+      "pageStart": 27,
+      "pageEnd": 31,
+      "target": "../sections/sec-015-44-domains-of-the-partially-quenched-effective-t.md",
+      "narrative": null,
+      "content": "[]{#sec:domains label=\"sec:domains\"}\n\nThe Goldstone fields can be written as $$\\label{Ufields}\n  U = e^{i\\sqrt 2\\Pi/F}\\:.$$ To second order in the fields, the effective Lagrangian in momentum space is given by $${\\cal L} = \\frac 1V \\sum_a\\sum_k  (k^2 + M_a^2) \\Pi_a^2(k)\\:,\n  \\label{L2}$$ where the sum is over the momenta in a box of length $L$ (including the zero-momentum state) and the masses of the Goldstone bosons are denoted by $M_a$. The sum over $a$ is over the different Goldstone modes. In addition to the usual Goldstone modes with mass $$\\label{Gmass1}\n  M_{mm}^2 = \\frac{2m\\Sigma}{F^2}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prop-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "prop-sec-016-01.md",
+      "narrative": null,
+      "content": "The microscopic spectral density and the Leutwyler-Smilga sum rules have been derived [@VZ3; @hilmoine], the low-energy effective theory has been identified [@VZ3; @magnea], the mass-dependent microscopic spectral density has been found [@massuni; @nagnish], universality has been studied [@Akem97; @christian], and lattice QCD studies have confirmed the theoretical analysis [@Damg98b].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prop-sec-017-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "prop-sec-017-01.md",
+      "narrative": null,
+      "content": "UNIVERSAL PROPERTIES OF THE LATTICE QCD DIRAC SPECTRUM",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "QCD in Three Euclidean Dimensions",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../sections/sec-016-45-qcd-in-three-euclidean-dimensions.md",
+      "narrative": null,
+      "content": "QCD in three Euclidean dimensions can be analyzed in much the same way as discussed above. The main difference is the absence of the ${\\rm\n  U_A}(1)$ symmetry and the absence of instantons. In terms of the Dirac spectrum, the eigenvalues do not occur in pairs $\\pm i\\lambda$, and strictly zero eigenvalues are absent. The Dirac spectrum of this theory on the microscopic scale can be analyzed along the same lines as the four-dimensional theory. The microscopic spectral density and the Leutwyler-Smilga sum rules have been derived [@VZ3; @hilmoine], the low-energy effective theory has been identifi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "UNIVERSAL PROPERTIES OF THE LATTICE QCD DIRAC SPECTRUM",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../sections/sec-017-5-universal-properties-of-the-lattice-qcd-dirac.md",
+      "narrative": null,
+      "content": "UNIVERSAL PROPERTIES OF THE LATTICE QCD DIRAC\nSPECTRUM",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Unfolding",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "../sections/sec-018-51-unfolding.md",
+      "narrative": null,
+      "content": "[]{#unfolding label=\"unfolding\"}\n\nIn order to compare eigenvalues of any physical system with RMT results, it is necessary first to \"unfold\" the empirical spectrum (see e.g. Ref. [@Bohi84a]). The spacing $\\Delta$ of the eigenvalues is related to the spectral density by $$\\Delta(E)=1/\\rho(E)\\:.$$ Unfolding is a local rescaling of the energy scale so that the mean level spacing of the unfolded eigenvalues is equal to unity throughout the spectrum. This is achieved by splitting the spectral density in an average density, $\\bar \\rho(E)$, and a fluctuating piece, $$\\rho(E) = \\bar \\rho(E) + \\rho_{\\r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prop-sec-020-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "prop-sec-020-01.md",
+      "narrative": null,
+      "content": "BRIEF INTRODUCTION TO LATTICE QCD QCD is a renormalizable quantum ﬁeld theory that must be regularized.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lattice Tests of Chiral Random Matrix Theory",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../sections/sec-019-52-lattice-tests-of-chiral-random-matrix-theory.md",
+      "narrative": null,
+      "content": "[]{#LatticeTests label=\"LatticeTests\"}\n\nWe have presented a wealth of analytical evidence supporting the statement that the local spectral correlations of the Dirac operator are described by universal functions. Although the Dirac spectrum is not directly observable in experiments, we can compare the predictions of chiral RMT to numerical data obtained by lattice gauge simulations. This is the subject of this section.\n\nThis review does not discuss the global spectral density of the QCD Dirac operator. Most lattice results have large finite-size artifacts. Instanton simulations suggest, contrar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "BRIEF INTRODUCTION TO LATTICE QCD",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "../sections/sec-020-521-brief-introduction-to-lattice-qcd.md",
+      "narrative": null,
+      "content": "BRIEF INTRODUCTION TO LATTICE QCD\nQCD is a renormalizable quantum ﬁeld theory that must be regularized. This\ncan be done by formulating the theory on a discrete lattice with lattice spacing a\n[139]. The largest momentum is then π/a. The quark ﬁelds live on the sites and\nthe gauge ﬁelds on the links of the lattice. If the lattice is ﬁnite, one can simulate\nthe theory on a computer. This can be done eﬃciently only in Euclidean space,\nwhere the gluonic weight function is exp(−SYM) with SYM real. The discretized\nform of the Yang-Mills action SYM is the Wilson action SW. The full weight\nfunction of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "BULK CORRELATIONS",
+      "pageStart": 33,
+      "pageEnd": 34,
+      "target": "../sections/sec-021-522-bulk-correlations.md",
+      "narrative": null,
+      "content": "BULK CORRELATIONS\nTo measure the bulk spectral correlations, one needs all eigenvalues of the Dirac\noperator, which is represented on the lattice by a ﬁnite sparse matrix whose\ndimension is proportional to the lattice volume and to Nc. The eigenvalues of\nsuch a matrix can be obtained using special algorithms, e.g. by the Cullum-\nWilloughby version of the Lanczos algorithm [146]. On the lattice, this was ﬁrst\ndone by Kalkreuter [147]. The numerical eﬀort of this method scales with the\nsquare of the matrix dimension.\nFor example, in SU(3) on a 104 lattice, the\nDirac matrix has 15,000 distinct po",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MICROSCOPIC CORRELATIONS",
+      "pageStart": 34,
+      "pageEnd": 36,
+      "target": "../sections/sec-022-523-microscopic-correlations.md",
+      "narrative": null,
+      "content": "MICROSCOPIC CORRELATIONS\nBecause only the lowest eigenvalues contribute to the microscopic spectral cor-\nrelations, a large number of statistically independent spectra are necessary. In\ncontrast to the bulk correlations, the microscopic correlations are sensitive to the\nnumber of ﬂavors and the topological charge.\nThe RMT predictions do not contain an energy scale. In order to make com-\nparisons with lattice data, one needs to determine the energy scale 1/V Σ to be\nused in the RMT expressions, see e.g. Eq. (25). This can be done by extracting\nRandom Matrix Theory and Chiral Symmetry in QCD\n35",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "TOPOLOGY",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-023-524-topology.md",
+      "narrative": null,
+      "content": "The random matrix predictions for the microscopic spectral correlations depend on the number of zero modes of the Dirac operator and, thus, on the topological charge $\\nu$ of the gauge field configurations. Thus, one should sort the configurations according to their values of $\\nu$ and make the comparison with RMT separately in sectors of fixed topological charge.\n\nThe results presented in the previous section were obtained for the staggered Dirac operator. If one is interested in topological properties, this operator has problems. The zero modes that one would obtain in the continuum limit ar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "CHIRAL PHASE TRANSITION",
+      "pageStart": 37,
+      "pageEnd": 37,
+      "target": "../sections/sec-024-525-chiral-phase-transition.md",
+      "narrative": null,
+      "content": "[]{#sec:chphtr label=\"sec:chphtr\"}\n\nAs mentioned in Sec. [\\[UniversalityProofs\\]](#UniversalityProofs){reference-type=\"ref\" reference=\"UniversalityProofs\"}, the microscopic correlations are given by chiral RMT only if $\\rho(0)/V>0$, i.e. if chiral symmetry is spontaneously broken. Chiral symmetry is restored above a critical temperature $T_c$. The way in which $\\rho(0)/V$ approaches zero determines the order of the chiral phase transition and, if it is second-order, the associated critical exponents. Lattice investigations of these questions are very difficult because at finite volume there ar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Thouless Energy and Beyond",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "../sections/sec-025-53-the-thouless-energy-and-beyond.md",
+      "narrative": null,
+      "content": "[]{#BeyondThouless label=\"BeyondThouless\"}\n\nAs discussed above, the Dirac spectrum is described by chRMT --- or, equivalently, by the zero-mode approximation of the low-energy effective theory, --- only below the so-called Thouless energy $E_c$. The theoretical prediction for this quantity [@Verb96; @Trento], $$E_c\\sim\\frac{F^2}{\\Sigma\\sqrt{V}}\\:,$$ has been confirmed quantitatively in the instanton liquid model [@Osbo98a; @Garc00] and on the lattice [@Berb98c; @Gock98; @Guhr99]. To compute the Dirac spectrum beyond the Thouless energy, the calculation must include the kinetic terms in the low",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "SCHEMATIC MODELS",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "../sections/sec-026-6-schematic-models.md",
+      "narrative": null,
+      "content": "[]{#models label=\"models\"}\n\nWe wish to emphasize again that there are two different types of applications of RMT to physical problems. RMT may be applied as an exact theory for correlations of eigenvalues, as discussed in the first part of this review, or it may serve as a schematic model for chaos and disorder in physical systems. Below, we introduce a random matrix model for the chiral phase transition at nonzero chemical potential and temperature. Random matrix theories as schematic models are mostly used for a description of nonuniversal phenomena. This does not exclude that they describe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chiral Random Matrix Models for the Chiral Phase Transition at Nonzero Temperature",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "../sections/sec-027-61-chiral-random-matrix-models-for-the-chiral-ph.md",
+      "narrative": null,
+      "content": "[]{#modelT label=\"modelT\"}\n\nThe original motivation for introducing chiral random matrix models was to obtain a better understanding of the QCD Dirac spectrum for temperatures around the critical temperature for the chiral phase transition [@JV; @tilot]. The idea is to split the Dirac operator into the time derivative and a remainder that will be replaced by a chRMT, $${\\cal D} = \\gamma_0 \\partial_0 + R\\:.$$ In a chiral basis with time dependence given by $\\exp [i(2n+1)\\pi\nT\\tau]$, where $\\tau$ is the Euclidean time, the first term in ${\\cal\n  D}$ is diagonal and is given by a direct sum of Ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prop-sec-029-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 41,
+      "target": "prop-sec-029-01.md",
+      "narrative": null,
+      "content": "Because of the success of the quenched approximation in lattice QCD simulations at $\\mu=0$, it is tempting to ignore the fermion determinant in this case.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prop-sec-030-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 42,
+      "target": "prop-sec-030-01.md",
+      "narrative": null,
+      "content": "In lattice QCD at finite density, the zeros of the QCD function in the complex $\\mu$ plane can be studied by means of the Glasgow method [@Barbourqed].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chiral Random Matrix Models at Nonzero Chemical Potential",
+      "pageStart": 41,
+      "pageEnd": 41,
+      "target": "../sections/sec-028-62-chiral-random-matrix-models-at-nonzero-chemic.md",
+      "narrative": null,
+      "content": "Chiral Random Matrix Models at Nonzero Chemical Potential",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "QCD PARTITION FUNCTION AT NONZERO CHEMICAL POTENTIAL",
+      "pageStart": 41,
+      "pageEnd": 41,
+      "target": "../sections/sec-029-621-qcd-partition-function-at-nonzero-chemical-p.md",
+      "narrative": null,
+      "content": "The QCD partition function at nonzero temperature $T$ and chemical potential $\\mu$ is given by [@phase] $$Z(m,\\mu,T) =\\Tr e^{-\\frac{H_{\\rm QCD} -\\mu N}T}\n  =\\sum_\\alpha e^{-\\frac{E_\\alpha-\\mu N_\\alpha}{T}}\\:,$$ where $H_{\\rm QCD}$ is the Hamiltonian of QCD with eigenvalues $E_\\alpha$ and $N$ is the quark number operator. At zero temperature, only the states with $E_\\alpha/N_{\\alpha} < \\mu$ contribute to the partition function. We thus expect that the partition function is independent of $\\mu$ below a critical chemical potential $\\mu_c$ given by the lightest baryon mass per unit quark number. T",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A RANDOM MATRIX MODEL FOR QCD AT FINITE DENSITY",
+      "pageStart": 41,
+      "pageEnd": 42,
+      "target": "../sections/sec-030-622-a-random-matrix-model-for-qcd-at-finite-dens.md",
+      "narrative": null,
+      "content": "[]{#RMMmu label=\"RMMmu\"}\n\nA random matrix model for QCD at nonzero chemical potential model is obtained by writing the Dirac operator as [@Misha] $${\\cal D}(\\mu) = \\mu \\gamma_0 + {\\cal R}$$ and replacing ${\\cal R}$ by a chiral random matrix ensemble. The partition function is thus given by $$Z_{N_f}(m) = \\int DW  {\\det}^{N_f}({\\cal D} +m)\n  e^{-\\frac12N\\Sigma^2 \\Tr(W^\\dagger W)}\n  \\label{zrandommu}$$ with a Dirac operator given by $${\\cal D} = \\left (\\begin{array}{cc} 0 & iW +\\mu\\\\\n      iW^\\dagger +\\mu& 0 \\end{array} \\right )\\:.\n  \\label{diracopmu}$$ For QCD with three or more colors (chUE) t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prop-sec-031-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 42,
+      "pageEnd": 44,
+      "target": "prop-sec-031-01.md",
+      "narrative": null,
+      "content": "We illustrate this with a one-dimensional lattice QCD model.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prop-sec-031-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 42,
+      "pageEnd": 44,
+      "target": "prop-sec-031-02.md",
+      "narrative": null,
+      "content": "This was first worked out in detail for lattice QCD models at nonzero chemical potential [@matstone].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prop-sec-031-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 42,
+      "pageEnd": 44,
+      "target": "prop-sec-031-03.md",
+      "narrative": null,
+      "content": "Let us discuss the strong coupling limit of a one-dimensional SU($N_c$) lattice QCD model with Kogut-Susskind fermions [@Bilic].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prop-sec-031-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 42,
+      "pageEnd": 44,
+      "target": "prop-sec-031-04.md",
+      "narrative": null,
+      "content": "For example, the chiral condensate is given by [@Bilic] $$\\lim_{N\\to\\infty}\\frac 1N \\partial_m \\log Z_N = \\left\\{ \\begin{array}{cl} N_c/\\sqrt{1+m^2} & \\hbox{for $\\sinh \\mu <m$}\\:,\\\\ 0 & \\hbox{for $\\sinh \\mu > m$}\\:. \\end{array}\\right.$$ Similar results have been derived for a large-$d$ strong coupling expansion of lattice QCD at finite density [@strong] (with $d$ the Euclidean dimensionality).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "ZERO TEMPERATURE LIMIT",
+      "pageStart": 42,
+      "pageEnd": 44,
+      "target": "../sections/sec-031-623-zero-temperature-limit.md",
+      "narrative": null,
+      "content": "The random matrix model discussed in the previous section has attracted a great deal of interest, and more sophisticated versions of this model have been proposed [@Feinnh; @Halaszyl; @Osbornmu; @Nowak; @glasgow]. One problem of the model ([\\[zrandommu\\]](#zrandommu){reference-type=\"ref\" reference=\"zrandommu\"}) is that the chiral condensate is $\\mu$-dependent below the critical value of the chemical potential. The correct zero temperature limit, with a chiral condensate that remains constant up to the critical value of the chemical potential, is obtained if all Matsubara frequencies are taken",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prop-sec-033-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 46,
+      "target": "prop-sec-033-01.md",
+      "narrative": null,
+      "content": "These results are in qualitative agreement with spectra of the quenched lattice QCD Dirac operator at $\\mu \\ne 0$ [@everybody].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prop-sec-033-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 46,
+      "target": "prop-sec-033-02.md",
+      "narrative": null,
+      "content": "The correlations of the complex eigenvalues are not so well understood, but the first lattice QCD calculations [@Tilomu] seem to confirm the theoretical expectations [@Ginibre; @fyodorov; @fyodorovpoly; @Forrestc].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "QUENCHING AT NONZERO CHEMICAL POTENTIAL",
+      "pageStart": 44,
+      "pageEnd": 44,
+      "target": "../sections/sec-032-624-quenching-at-nonzero-chemical-potential.md",
+      "narrative": null,
+      "content": "[]{#failure label=\"failure\"}\n\nThe failure of the quenched approximation at nonzero chemical potential was first understood analytically in terms of chRMT by Stephanov [@Misha]. He showed that the quenched limit is the limit $N_f \\to 0$ of a partition function with the absolute value of the fermion determinant, $$|\\det({\\cal D}(\\mu) +m)|^{N_f}\\:,\n  \\label{absdet}$$ rather than $$^{N_f}\\:.$$ The absolute value of the fermion determinant can be written as $$\\det({\\cal D}+m) \\det({\\cal D}^\\dagger+m^*)= \n  \\det \\left(\\matrix{iW+\\mu & m \\cr m & \\!\\!\\!iW^\\dagger+\\mu}\\right)\n  \\det\\left(\\matrix{iW^\\da",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "QUENCHED DIRAC SPECTRA",
+      "pageStart": 44,
+      "pageEnd": 46,
+      "target": "../sections/sec-033-625-quenched-dirac-spectra.md",
+      "narrative": null,
+      "content": "A chRMT for quenched QCD at nonzero chemical potential is obtained by replacing the determinant in Eq. ([\\[zrandommu\\]](#zrandommu){reference-type=\"ref\" reference=\"zrandommu\"}) by its absolute value. This model can be solved analytically in the large-$N$ limit [@Misha]. However, we will follow a different approach by analyzing the corresponding effective theory [@many1]. The advantage of this approach is that the effective theory is as valid for quenched QCD as it is for the quenched chiral random matrix model.\n\nFor non-Hermitian matrices, the eigenvalues are scattered in the complex plane. Us",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Phase Diagram for the QCD Partition Function",
+      "pageStart": 46,
+      "pageEnd": 48,
+      "target": "../sections/sec-034-63-phase-diagram-for-the-qcd-partition-function.md",
+      "narrative": null,
+      "content": "The random matrix models at nonzero temperature and nonzero chemical potential introduced in the previous sections can be merged into a single schematic chRMT model for the chiral phase transition [@phase], $$Z = \\int DW {\\det}^{N_f} \\left ( \\begin{array}{cc} m & iW + iC\\\\\n      iW^\\dagger +iC& im \\end{array}\\right )\n  e^{-\\frac12N\\Sigma^2\\Tr WW^\\dagger}\\:,\n  \\label{Zmut}$$ where $C$ is a diagonal matrix with $C_{kk}= t -i\\mu$ for one half of the diagonal elements and $C_{kk}=-t-i\\mu$ for the other half. In the following, we set $\\Sigma=1$ for simplicity.\n\nThis random matrix partition function",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prop-sec-035-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 48,
+      "pageEnd": 50,
+      "target": "prop-sec-035-01.md",
+      "narrative": null,
+      "content": "In lattice QCD simulations with staggered fermions for $N_c = 2$ [@baillie], a depletion of eigenvalues along the imaginary axis was observed, whereas for $N_c=3$ the eigenvalue distribution did not show any pronounced features [@everybody].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Random Matrix Triality at $\\mu \\ne 0$",
+      "pageStart": 48,
+      "pageEnd": 50,
+      "target": "../sections/sec-035-64-random-matrix-triality-at-mu-ne-0.md",
+      "narrative": null,
+      "content": "In previous sections, we have shown that the pattern of chiral symmetry breaking and the correlations of the Dirac eigenvalues are related to the anti-unitary symmetries of the Dirac operator. Since the chemical potential occurs only in the combination $\\partial_0 + \\mu$, the anti-unitary symmetries at $\\mu \\ne 0$ are the same as for zero chemical potential. Thus for QCD with two colors and fermions in the fundamental representation the Dirac operator is real ($\\beta =1$), whereas for QCD with adjoint fermions the Dirac operator is quaternion real ($\\beta =4$). In the first case, the Dirac ope",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prop-sec-037-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 50,
+      "pageEnd": 51,
+      "target": "prop-sec-037-01.md",
+      "narrative": null,
+      "content": "One class of matrix models for QCD are lattice QCD partition functions on a $2^d$ lattice.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "RELATED MODELS AND RELATIONS TO OTHER FIELDS",
+      "pageStart": 50,
+      "pageEnd": 50,
+      "target": "../sections/sec-036-7-related-models-and-relations-to-other-fields.md",
+      "narrative": null,
+      "content": "[]{#otherfields label=\"otherfields\"}\n\nRandom matrix theory has been used extensively in many different fields including nuclear physics, atomic and molecular physics, condensed matter physics, quantum chaos, quantum gravity, and mathematical physics. Before reviewing a few applications that might have some relation to QCD, we briefly discuss another class of matrix models for the QCD partition function. For a more comprehensive review of the material in this section, see Refs. [@Guhr98; @Beenreview; @Montambaux; @eeee; @mironov].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "One-Plaquette Models of Lattice QCD",
+      "pageStart": 50,
+      "pageEnd": 51,
+      "target": "../sections/sec-037-71-one-plaquette-models-of-lattice-qcd.md",
+      "narrative": null,
+      "content": "One class of matrix models for QCD are lattice QCD partition functions on a $2^d$ lattice. The simplest model in this class is the one-plaquette partition function for pure gauge theory in $d=2$. This model is known as the Brézin-Gross-Witten model [@GW] and is defined by $$Z(J,J^\\dagger) = \\int_{U \\in {\\rm U}(N)} DU e^{\\Tr (JU^\\dagger\n  +J^\\dagger U)}\\:,$$ where the integral is over the Haar measure of U($N$) and $J$ is an arbitrary complex source term. We have shown that this partition function can be expressed as a determinant of modified Bessel functions [@brower; @Leut92; @seneru]. For $J",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prop-sec-038-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 51,
+      "target": "prop-sec-038-01.md",
+      "narrative": null,
+      "content": "Low-temperature experiments have been performed in which the conductance of mesoscopic wires was measured as a function of an external magnetic field.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prop-sec-039-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 52,
+      "target": "prop-sec-039-01.md",
+      "narrative": null,
+      "content": "Indeed, this has been found for the wave functions of the Dirac operator for a gauge field ensemble given by a liquid of instantons [@Osbo98a] as well as in lattice QCD [@Berb00].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Universal Conductance Fluctuations in Disordered Mesoscopic Systems",
+      "pageStart": 51,
+      "pageEnd": 51,
+      "target": "../sections/sec-038-72-universal-conductance-fluctuations-in-disorde.md",
+      "narrative": null,
+      "content": "[]{#sec:ucf label=\"sec:ucf\"}\n\nIn condensed matter physics, a mesoscopic system is a system whose linear size is larger than the elastic mean free path of the electrons but smaller than the phase coherence length, which is essentially the inelastic mean free path. A typical size is about 1 $\\mu$m. The conductance $g$ of mesoscopic samples is closely related to their spectral properties. Using a scaling block picture, Thouless found that in the diffusive regime, the conductance is given by $g=E_C/\\Delta$, where $E_C/\\hbar$ is the inverse diffusion time of an electron through the sample and $\\Del",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Anderson Localization",
+      "pageStart": 51,
+      "pageEnd": 52,
+      "target": "../sections/sec-039-73-anderson-localization.md",
+      "narrative": null,
+      "content": "[]{#sec:anderson label=\"sec:anderson\"}\n\nIn more than two dimensions, a good conductor becomes an insulator when the disorder becomes sufficiently strong. This phenomenon is called Anderson localization. In the localized phase, the wave function of the electron is not described by Bloch waves, but by a localized form that decays exponentially, $$\\psi(r) \\sim e^{-  r/{L_c}}\\:.$$ The length scale $L_c$ is known as the localization length. This phenomenon was first described by the Anderson model [@Ande58], which is a hopping model with a random potential on each lattice point. The dimensionality",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Non-Hermitian Models with Disorder",
+      "pageStart": 52,
+      "pageEnd": 53,
+      "target": "../sections/sec-040-74-non-hermitian-models-with-disorder.md",
+      "narrative": null,
+      "content": "In the past few years, several non-Hermitian models with disorder have been introduced in the literature. We mention only the simplest model, which was motivated by the study of flux-line pinning in superconductors [@Miller; @Hata96]. Its Hamiltonian is given by $$\\label{HN}\n  H=\\frac{1}{2m}({\\bf p}+i{\\bf h})^2+V({\\bf r})\\:,$$ where $V({\\bf r})$ is a random disorder potential, **p** is the momentum operator, and $i{\\bf h}$ is a constant imaginary vector potential. The new feature of such models is that a localization-delocalization transition can occur even in one and two dimensions. Although",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Andreev Scattering",
+      "pageStart": 53,
+      "pageEnd": 53,
+      "target": "../sections/sec-041-75-andreev-scattering.md",
+      "narrative": null,
+      "content": "The term Andreev scattering (or Andreev reflection) refers to a process in which an electron hits the interface between a normal metal and a superconductor and is reflected as a hole with the opposite momentum (or vice versa) [@Andr64]. Stated differently, two electrons can tunnel through the interface so that a Cooper pair is added to the superconducting condensate (or removed from it). This process can be described in a microscopic mean field model by the Bogoliubov-deGennes Hamiltonian, which can be written in matrix form as $$H=\\left(\\matrix{A&B\\cr B^\\dagger&-A^T}\\right)\\:,$$ where $A$ ($-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mathematical Physics and Quantum Gravity",
+      "pageStart": 53,
+      "pageEnd": 54,
+      "target": "../sections/sec-042-76-mathematical-physics-and-quantum-gravity.md",
+      "narrative": null,
+      "content": "RMT has received a great deal of attention as a problem in mathematical physics. We mention the relation between universal behavior in RMT and the asymptotic behavior of orthogonal polynomials [@Fox64; @nagao; @Brez93; @Eynard; @Deo], the relation between the classification of random matrix ensembles and the Cartan classification of symmetric spaces [@class], and the theory of Riemannian superspaces [@class]. Various methods for the solution of random matrix problems have been proposed. We mention the mapping to a gas of noninteracting fermions, the Coulomb gas method [@Dyso62], the Brownian m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prop-sec-043-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 55,
+      "target": "prop-sec-043-01.md",
+      "narrative": null,
+      "content": "The statistical properties of the QCD Dirac eigenvalues have been investigated by numerous lattice QCD simulations, and the chRMT predictions have been verified in great detail.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "CONCLUSIONS",
+      "pageStart": 54,
+      "pageEnd": 55,
+      "target": "../sections/sec-043-8-conclusions.md",
+      "narrative": null,
+      "content": "Chiral random matrix theory is the archetypal model for the spontaneous breaking of chiral symmetry. In chRMT, chiral symmetry is spontaneously broken for any finite number of massless flavors, whereas in QCD, breaking is believed to occur only below a certain number of massless flavors, perhaps as few as four. In this review, we have studied chiral symmetry breaking from the perspective of the eigenvalues of the QCD Dirac operator, where broken chiral symmetry implies that the smallest eigenvalues are spaced as $1/V$. The robustness of chiral symmetry breaking in chRMT can then be understood",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0003017v2/blocks/prose-sec-044",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 55,
+      "pageEnd": 61,
+      "target": "../sections/sec-044-acknowledgments.md",
+      "narrative": null,
+      "content": "This work was supported in part by the US Department of Energy under contracts\nDE-FG-88ER40388, DE-FG02-91ER40608, and DE-AC02-98CH10886. We would\nlike to acknowledge discussions and collaborations on the subject of this review\nwith G. Akemann, I.L. Aleiner, Y. Alhassid, A. Altland, B.L. Altshuler, M.E.\nBerbenni-Bitsch, B.A. Berg, D. Dalmazi, P.H. Damgaard, Y.V. Fyodorov, A.M.\nGarcia-Garcia, M. G¨ockeler, T. Guhr, M.´A. Hal´asz, H. Hehl, A.D. Jackson, N.\nKaiser, B. Klein, J.-Z. Ma, H. Markum, S. Meyer, S.M. Nishigaki, J.C. Osborn,\nR. Pullirsch, P.E.L. Rakow, A. Sch¨afer, M. Schnabel, A. Schwen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

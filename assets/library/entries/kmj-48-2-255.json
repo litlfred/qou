@@ -1,0 +1,288 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "kmj-48-2-255",
+  "blocks": [
+    {
+      "id": "library/kmj-48-2-255/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "For a positive integer n, the n-colored Jones polynomial is a Laurent polyno-\nmial invariant in q of a knot colored with n-dimensional irreducible representation\nof Uq(sl2). We denote by JK(n) the n-colored Jones polynomial of a knot K, which\nis normalized so that the colored Jones polynomial of the trivial knot is 1. Then,\nJK(2) coincides with the original Jones polynomial of a knot K deﬁned by V. F.\nR. Jones [3]. K. Habiro [2] and T. T. Q. Le gave explicit formulas for the n-colored\nJones polynomials of the trefoil knot and the ﬁgure eight knot. Moreover, a formula\nfor the colored Jones poly",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kmj-48-2-255/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "KYUNGPOOK Math. J. 48(2008), 255-280\nA Formula for the Colored Jones Polynomial of 2-Bridge Knots\nToshie Takata\nDepartment of Mathematics, Faculty of Science, Niigata University, Niigata 950-\n2181, Japan\ne-mail : takata@math.sc.niigata-u.ac.jp\nAbstract. We derive a formula for the colored Jones polynomial of 2-bridge knots. For\na twist knot, a more explicit formula is given and it leads to a relation between the degree\nof the colored Jones polynomial and the crossing number.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kmj-48-2-255/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "A formula for the n-colored Jones polynomial of the 2-bridge knot A Formula for the Colored Jones Polynomial of 2-Bridge Knots S(p, t) is given by (1) JS(p,t)(n) = X 0≤mj−1≤mj≤n−1 qa(m)n+b1(m)+b2(m) X(m), where a(m) = −1 p′ X j=1   p′ X k=r′(j) (σik + σip′+1−k)  (mj −mj−1) −1 p′−1 X j=1 (σj+1 + σp′+1−j)mj −1 2(σp′ + 1)mp′ − p′ X j=1 σj, b1(m) = −a(m) + X 1≤k≤p−t 1 −σik mik−1 − X p−t 2 +1≤k≤p′ mik−1 + X p−t 2 +1≤k≤p′ 1 + σik mik −(1 + σp′)mp′ + 1 p′−1 X j=1 (σj+1 −σj)mj −1 X 1≤k≤p′−1 X k+1≤k′≤p′ 1 + sign(ik −ik′) (σik −σik′)(mik −mik−1)(mik′ −mik′−1) + p′ X j=1 σj( r′(j) X k=1 (mik −mik−1))",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kmj-48-2-255/blocks/lem-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 19,
+      "target": "lem-sec-001-02.md",
+      "narrative": null,
+      "content": "(1) σjc = σja = (−1)[(2j−1)t/p], and σjd = σjb = (−1)[2jt/p]. (2) σja = σ(p′+1−j)b and σik′b = σip′+1−ka.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kmj-48-2-255/blocks/lem-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 19,
+      "target": "lem-sec-001-03.md",
+      "narrative": null,
+      "content": "(1) If p < 2t, then X p−t 2 +1≤k≤t−1 σik = − p′ X j=1 σj. (2) If p > 2t, then X t+1 2 ≤k≤p−t σik = p′ X j=1 σj.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kmj-48-2-255/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 1",
+      "pageStart": 3,
+      "pageEnd": 19,
+      "target": "../sections/sec-001-2-proof-of-theorem-1.md",
+      "narrative": null,
+      "content": "Firstly, we review a result in [5]. Let L be a knot in S3. We consider a 1-tangle\nL′ whose closure is L. We assume that L′ is presented as a tangle diagram D in\n258\nToshie Takata\ngeneric position with respect to the height function with the end points at the top\nand at the bottom. We orient D from the top to the bottom. Let c denote the\nnumber of the crossings in a diagram D. There are eight crossing types given by\nthe orientations on the two strands and the sign of the crossing, two cap types,\nand two cup types by the orientations on the strand in a tangle diagram. The two\ncrossoing types (1)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kmj-48-2-255/blocks/thm-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[5]",
+      "pageStart": 3,
+      "pageEnd": 19,
+      "target": "thm-sec-001-01.md",
+      "narrative": null,
+      "content": "A formula for the n-colored Jones polynomial of a 0-framed knot L0 is given by JL0(n) (2) = ∞ X lj =0 j=0,...,c qCn(l) c Y j=1 ½ s(j) + lj lj ¾ σj (qσj(n−s(j)−1) −1) · · · (qσj(n−s(j)−lj) −1), where s(j) = −P i<j−εilj(i), and Cn(l) = d(l)n+C0(l). Here i < j−means i < i0 for i0 such that j = j(i0) and εi0 = −1. We apply this formula to the 2-bridge knot S(p, t). From Schubert’s normal form, we get a 1-tangle diagram as in Figure 4 and",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kmj-48-2-255/blocks/cor-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 26,
+      "target": "cor-sec-002-01.md",
+      "narrative": null,
+      "content": "JS(4p1+1,2p1+1)(n) (14) = X 0≤mj−1≤mj≤n−1 q−n P2p1−1 i=1 (−1)imi+Pp1−1 i=1 m2i(1+m2i+1) × (¯q)n−1(¯q)mp′ (¯q)n−mp′−1 (−1)mp′   p1−1 Y j=0 (¯q)m2j+1−m2j p1 Y j=1 (q)m2j−m2j−1   −1 , and JS(4p1−1,2p1−1)(n) (15) = X 0≤mj−1≤mj≤n−1 qn(−1+P2p1−2 i=1 (−1)imi−2m2p1−1)+1−Pp1−1 i=1 m2i−1(1+m2i) × (q)n−1(q)mp′ (q)n−mp′−1 (−1)mp′   p1−1 Y j=0 (¯q)m2j+1−m2j p1−1 Y j=1 (q)m2j−m2j−1   −1 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kmj-48-2-255/blocks/cor-sec-002-06",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 26,
+      "target": "cor-sec-002-06.md",
+      "narrative": null,
+      "content": "For K = S(4p1 + 1, 2p1 + 1), deg+(JK(n)) = 1 2n(n −1)(2p1), deg−(JK(n)) = −n(n −1), (29) br(JK(n)) = 1 2n(n −1)(2p1 + 2), and for K = S(4p1 −1, 2p1 −1), deg+(JK(n)) = −n + 1, deg−(JK(n)) = −n2 + 1 −1 2n(n −1)(2p1 −1), (30) br(JK(n)) = 1 2n(n −1)(2p1 + 1). Thus, it follows that for K = S(4p1 + 1, 2p1 + 1) or K = S(4p1 −1, 2p1 −1), (31) br(JK(n)) = 1 2n(n −1)C(K), where C(K) is the crossing number of K.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kmj-48-2-255/blocks/lem-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 26,
+      "target": "lem-sec-002-02.md",
+      "narrative": null,
+      "content": "(1) σj = (−1)j−1 (2) ik = ( 2p1 + 2 −2k if 1 ≤k ≤p1 2(k −p1) −1 if p1 + 1 ≤k ≤2p1, σik = ( −1 if 1 ≤k ≤p1 if p1 + 1 ≤k ≤2p1. Toshie Takata",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kmj-48-2-255/blocks/lem-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 26,
+      "target": "lem-sec-002-03.md",
+      "narrative": null,
+      "content": "(1) σik + σip′+1−k = 0. (2) σj+1 + σp′+1−j = (−2)j. From the above lemmas, we obtain (16) a(m) = − 2p1−1 X j=1 (−1)jmj. We compute b1(m) and b2(m). One calculate (17) X 1≤k≤p−t 1 −σik mik−1 = p1 X j=1 m2j−1, X p−t 2 +1≤k≤p′ mik−1 = p1−1 X j=1 m2j, X p−t 2 +1≤k≤p′ 1 + σik mik (18) = X p1+1≤k≤2p1 mik = X p1+1≤k≤2p1 m2k−2p1−1 = p1 X j=1 m2j−1 (1 + σp′)mp′ = 0, (19) p′−1 X j=1 (σj+1 −σj)mj = −2 p1 X j=1 m2j−1 + 2 p1−1 X j=1 m2j = 2 2p1−1 X j=1 (−1)jmj. (20) Moreover, it follows that k < k′ and σik̸ = σik′ if and only if 1 ≤k ≤p1 and p1 + 1 ≤k′ ≤2p1. We note that sign(ik −ik′) = 1 if and only if ik",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kmj-48-2-255/blocks/lem-sec-002-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 26,
+      "target": "lem-sec-002-04.md",
+      "narrative": null,
+      "content": "It follows that (1) σj = (−1)j−1, and (2) ik = ( 2p1 −2k + 1 if 1 ≤k ≤p1, 2(k −p1) if p1 + 1 ≤k ≤2p1 −1, σik = ( if 1 ≤k ≤p1, −1 if p1 + 1 ≤k ≤2p1 −1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kmj-48-2-255/blocks/lem-sec-002-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 26,
+      "target": "lem-sec-002-05.md",
+      "narrative": null,
+      "content": "(1) σik + σip′+1−k = ( if k = p1, if k̸ = p1. (2) σj+1 + σp′+1−j = 0. Toshie Takata From these lemmas, it follows that (22) a(m) = 2p1−2 X i=1 (−1)imi −2m2p1−1 −1, We compute X 1≤k≤p−t 1 −σik mik−1 = X 1≤k≤p1 1 −σik mik−1 = 0, (23) X p−t 2 +1≤k≤p′ mik−1 = X p1+1≤k≤2p1−1 mik−1 = X p1+1≤k≤2p1−1 m2k−2p1−1 (24) = p1−1 X j=1 m2j−1, X p−t 2 +1≤k≤p′ 1 + σik mik = X p1+1≤k≤2p1−1 1 + σik mik = 0, (25) (1 + σp′)mp′ = 2m2p1−1, (26) p′−1 X j=1 (σj+1 −σj)mj = 2p1−2 X j=1 (σj+1 −σj)mj = 2 2p1−2 X i=1 (−1)imi. (27) Moreover, it follows that k < k′ and σik̸ = σik′ if and only if 1 ≤k ≤p1 and p1 + 1 ≤k′ ≤2p1 −",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kmj-48-2-255/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Results for a twist knot",
+      "pageStart": 19,
+      "pageEnd": 26,
+      "target": "../sections/sec-002-3-results-for-a-twist-knot.md",
+      "narrative": null,
+      "content": "In this section, we will consider the twist knots S(4p1 + 1, 2p1 + 1) and S(4p1 −\n1, 2p1 −1).\nFrom Theorem 1, we get explicit formulas for the colored Jones polynomials of\nthese twist knots.\nCorollary 5.\nJS(4p1+1,2p1+1)(n)\n(14)\n=\nX\n0≤mj−1≤mj≤n−1\nq−n P2p1−1\ni=1\n(−1)imi+Pp1−1\ni=1\nm2i(1+m2i+1)\n×\n(¯q)n−1(¯q)mp′\n(¯q)n−mp′−1\n(−1)mp′\n\n\np1−1\nY\nj=0\n(¯q)m2j+1−m2j\np1\nY\nj=1\n(q)m2j−m2j−1\n\n\n−1\n,\nand\nJS(4p1−1,2p1−1)(n)\n(15)\n=\nX\n0≤mj−1≤mj≤n−1\nqn(−1+P2p1−2\ni=1\n(−1)imi−2m2p1−1)+1−Pp1−1\ni=1\nm2i−1(1+m2i)\n×\n(q)n−1(q)mp′\n(q)n−mp′−1\n(−1)mp′\n\n\np1−1\nY\nj=0\n(¯q)m2j+1−m2j\np1−1\nY\nj=1\n(q)m2j−m2j−1\n\n\n−1\n.\nProof. Fir",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kmj-48-2-255/blocks/rem-sec-002-07",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 26,
+      "target": "rem-sec-002-07.md",
+      "narrative": null,
+      "content": "Recently, Le proved that the equality (31) holds for any non-trivial alternating knot (see Proposition 2.1 of [6]). Acknowledgment. We would like to thank the referee for many helpful comments.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kmj-48-2-255/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-003-references.md",
+      "narrative": null,
+      "content": "[1] G. Burde and H. Zieschang, Knots, Walter de Gruyter & Co.,Berlin, 1985.\n[2] K. Habiro, On the quantum sl2 invariants of knots and integral homology spheres,\nGeometry and Topology Monographs, 4(5)(2000), 55-68.\n[3] V. F. R. Jones, A polynomial invariants for knots via von Neumann algebras, Bull.\nAmer. Math. Soc., N.S.(1985), 103-111.\n[4] A. Kawauchi, A survey of Knot Theory, Birkhauser Verlag, Switzerland, 1996\n[5] R. Lawrence and O. Ron, On Habiro’s cyclotomic expansions of Ohtsuki invariant,\n(math.GT/0501549).\n[6] T. T. Q. Le, The colored Jones polynomial and A-polynomial of two-bridge kn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

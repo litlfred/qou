@@ -1,0 +1,454 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0409593v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0409593v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Actions of braid groups on triangulated categories are quite widespread. They arise for instance in representation theory, for constructible sheaves on flag varieties and for coherent sheaves on Calabi-Yau varieties (cf [@RouZi] and [@SeiTho] for early occurrences). In this work, we suggest that not only the self-equivalences are important, but that the morphisms between them possess some interesting structure.\n\nLet $W$ be a Coxeter group and ${\\mathcal{C}}$ a triangulated category. We consider gradually stronger actions of $W$ or its braid group $B_W$ :\n\n1.  $W$ acting on $K_0({\\mathcal{C}})$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0409593v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0409593v1  [math.RT]  30 Sep 2004\nCATEGORIFICATION OF THE BRAID GROUPS\nRAPHA¨EL ROUQUIER",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0409593v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Self-equivalences",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-2-self-equivalences.md",
+      "narrative": null,
+      "content": "We describe a categorification of the notion of reflection with respect to a subspace. The ambient space is $K_0$ of a triangulated category, the subspace is another triangulated category and the embeddings and projections are given by functors. We actually allow an automorphism of the \"subspace\" category, which allows to categorify the $q$-analog of a reflection.\n\nWe present here how a functor from a given triangulated category gives rise to a self-equivalence of that category, when the functor satisfies some conditions. Then, we give three special \"classical\" cases. The first one concerns co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0409593v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A general construction",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-21-a-general-construction.md",
+      "narrative": null,
+      "content": "### \n\nThis section can probably be skipped in a first reading.\n\nWe will be working here with *algebraic* triangulated categories (following Keller), a simple setting that provides functorial cones.\n\nLet ${\\mathcal{E}}$ be a Frobenius category (an exact category with enough projective and injective objects and where injective and projective objects coincide). Let $\\operatorname{Comp}\\nolimits_{\\operatorname{acyc}\\nolimits}({\\mathcal{E}}\\operatorname{\\!-proj}\\nolimits)$ be the category of acyclic complexes of projective objects of ${\\mathcal{E}}$. Let $\\operatorname{Frob}\\nolimits$ be the $2$-ca",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0409593v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Applications",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-22-applications.md",
+      "narrative": null,
+      "content": "###  {#P1}\n\nWe consider schemes of finite type type over an algebraic closure of a finite field ${\\mathbf{F}}_q$ (the case of complex algebraic varieties is similar). Let $\\pi:X\\to Y$ be a smooth projective morphism already defined over ${\\mathbf{F}}_q$. Assume the geometric fibers are projective lines.\n\nLet $\\Lambda$ be a field of coefficients (=an extension of ${\\mathbf{Q}}_\\ell$ for $\\ell\\!\\not|\\ q$ a prime number). Put ${\\mathcal{C}}=D^b(Y)$ and ${\\mathcal{D}}=D^b(X)$ (bounded derived categories of constructible sheaves of $\\Lambda$-vector spaces). Take $F=\\pi^*$, $G=R\\pi_*$ and $\\Phi=?(1)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0409593v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The 2-braid group",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-3-the-2-braid-group.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0409593v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Coxeter group action",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-005-31-coxeter-group-action.md",
+      "narrative": null,
+      "content": "### \n\nLet $(W,S)$ be a Coxeter system (with $S$ finite) and $V=\\bigoplus_{s\\in S}k e_s$ be the reflection representation of $W$ over a field $k$. We assume the representation is faithful (this is always the case if the characteristic is $0$). Given $s,t\\in S$, we denote by $m_{st}$ the order of $st$. We assume that $2m_{st}$ is invertible in $k$, for all $s,t\\in S$ such that $m_{st}$ is finite. We denote by $\\{\\alpha_s\\}_{s\\in S}$ the dual basis of $\\{e_s\\}_{s\\in S}$ (so that $\\ker(s-\\operatorname{id}\\nolimits)=\\ker\\alpha_s$ for $s\\in S$). Let $B_W$ be the braid group of $W$. This is the group",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0409593v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Braid group action",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "../sections/sec-006-32-braid-group-action.md",
+      "narrative": null,
+      "content": "Let us now construct a non-obvious lift of the action of $W$ on $D^b(A\\operatorname{\\!-modgr}\\nolimits)$ to an action of $B_W$ on $K^b(A\\operatorname{\\!-modgr}\\nolimits)$.\n\n### \n\nFor $s\\in S$, we define the complex of $(A,A)$-bimodules $$F_s=F_{{\\mathbf{s}}}=0\\to A\\otimes_{A^s}A\\buildrel \\varepsilon'_s\\over \\longrightarrow A\\to 0$$ where $A$ is in degree $1$ and $\\varepsilon'_s$ is the multiplication.\n\nSince $A=A^s\\oplus A^s\\alpha_s$, the morphism of $A^{\\mathrm{en}}$-modules $$A_s\\to A\\otimes_{A^s}A(1),\\\n  a\\mapsto a\\otimes\\alpha_s- a\\alpha_s\\otimes 1$$ induces an isomorphism $$f_{{\\mathbf{s}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0409593v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rigidification",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-007-33-rigidification.md",
+      "narrative": null,
+      "content": "The key point here is that the rigidification of the braid relations at the homotopy category level is equivalent to the one at the derived category level, where the problem is trivial, since we have a genuine action of $W$.\n\n### \n\nConsider the morphism of $A^{\\mathrm{en}}$-modules $A\\otimes_{A^s}A\\to A_s$ that sends $1\\otimes 1$ to $1$. It induces a quasi-isomorphism $F_{{\\mathbf{s}}^{-1}}(-1)\\buildrel \\sim\\over\\to A_s$. We denote its inverse (a morphism in $D^b(A^{\\mathrm{en}}\\operatorname{\\!-modgr}\\nolimits)$) by $f_{{\\mathbf{s}}^{-1}}$.\n\nNow, let $v\\in B_W$ and $v=t_1\\cdots t_m=u_1\\cdots u",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0409593v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Principal block of a semi-simple complex Lie algebra",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-008-4-principal-block-of-a-semi-simple-complex-lie-a.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0409593v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Review of category O",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-009-41-review-of-category-o.md",
+      "narrative": null,
+      "content": "### \n\nLet ${\\mathfrak{g}}=\\operatorname{Lie}\\nolimits G$, ${\\mathfrak{h}}\\subseteq {\\mathfrak{b}}$ a Cartan and a Borel subalgebra. Let ${\\mathcal{O}}$ be the Bernstein-Gelfand-Gelfand category of finitely generated ${\\mathfrak{g}}$-modules which are diagonalizable for ${\\mathfrak{h}}$ and locally finite for ${\\mathfrak{b}}$. Denote by $Z$ the center of the enveloping algebra $U$ of ${\\mathfrak{g}}$. Let $P\\subset {\\mathfrak{h}}^*$ be the weight lattice, $Q\\subset {\\mathfrak{h}}^*$ be the root lattice, $R$ (resp. $R^+$) be the set of roots (resp. positive roots) and $\\Pi$ the set of simple roo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0409593v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Link with bimodules",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-010-42-link-with-bimodules.md",
+      "narrative": null,
+      "content": "[]{#appli label=\"appli\"}\n\n### \n\nWe start by recalling results of Soergel [@Soe1; @Soe2; @Soe3] relating the category ${\\mathcal{O}}$ to modules over the coinvariant algebra.\n\nLet $\\Lambda\\in{\\mathfrak{h}}^*/P$. We denote by $C_\\Lambda=A/(A\\cdot A_+^{W_\\Lambda})$ the coinvariant algebra of $(W_\\Lambda,S_\\Lambda)$ and $p_\\Lambda:A\\to C_\\Lambda$ the canonical surjection. Let $\\lambda\\in \\Lambda^+$. We denote by $t_\\lambda:A\\to A$ the translation by $\\lambda$, given by $f\\mapsto (z\\mapsto f(z+\\lambda))$ We have Soergel's Endomorphismensatz [@Soe1 Endomorphismensatz 7] :\n\n::: thm\nThe image of the c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0409593v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Flag varieties",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-011-5-flag-varieties.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0409593v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classical results",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-012-51-classical-results.md",
+      "narrative": null,
+      "content": "Let W = {w}w∈W.\nThe braid group BW of W is isomorphic to the group with set of\ngenerators W and relations ww′ = w′′ when ww′ = w′′ and l(w′′) = l(w) + l(w′).\nLet B be the ﬂag variety of G. We decompose\nB × B =\na\nw∈W\nO(w)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0409593v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Link with bimodules",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-013-53-link-with-bimodules.md",
+      "narrative": null,
+      "content": "O(w)\npw\n|zzzzzzzz\nqw\n\"D\nD\nD\nD\nD\nD\nD\nD\nB\nB\nThen, we have a functor\nFw = R(pw)!(qw)∗: Db(B) →Db(B)\nwhere Db(B) is the derived category of bounded complexes of constructible sheaves of C-vector\nspaces over B.\nFirst and last projections induce an isomorphism\nO(w) ×B O(w′)\n∼→O(ww′) when l(ww′) = l(w) + l(w′).\nThis induces an isomorphism (cf §6.2)\nγw,w′ : FwFw′\n∼→Fww′ when l(ww′) = l(w) + l(w′).\nFor s ∈S, then Fs is obtained as in §2.2.1 for the canonical morphism πs : B →Ps, where Ps is\nthe variety of parabolic subgroups of type s. So, Fs is invertible, with inverse Fs−1 = R(ps)∗(qs)!.\nIt follows t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0409593v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Genuine braid group action",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-014-52-genuine-braid-group-action.md",
+      "narrative": null,
+      "content": "FxFyFz\nγx,yFz /\nFxγy,z\n\u000f\nFxyFz\nγxy,z\n\u000f\nFxFyz\nγx,yz\n/ Fxyz\nfor x, y, z ∈W such that l(x) + l(y) + l(z) = l(xyz), by Theorem 6.2.\nLet b ∈BW and b = t1 · · · tm = u1 · · · un with ui ∈W ∪W−1. Applying braid relations and\nthe corresponding isomorphisms γ, we get various isomorphisms Ft1 · · · Ftm\n∼→Fu1 · · · Fun. By\nDeligne [De3], they are all equal. Let us denote by γt·,u· their common value.\nWe now deﬁne\n˜Fb =\nlim\n(t1,··· ,tn) Ft1 · · · Ftn\nwhere (t1, · · · , tn) runs over the set of sequences of elements of W ∪W−1 such that b = t1 · · · tn\nand where we are using the transitive system of isomorp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0409593v1/blocks/rem-sec-014-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "rem-sec-014-02.md",
+      "narrative": null,
+      "content": "Deligne [De3] deﬁnes a variety Ob with two morphisms pb, qb : Ob →B for any b ∈B+ W. Then, the action of b on Db(B) is given by pb!q∗ b. 5.3. Link with bimodules.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0409593v1/blocks/thm-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "thm-sec-014-01.md",
+      "narrative": null,
+      "content": "The assignment b 7→˜Fb deﬁnes an action of BW on Db(B).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0409593v1/blocks/prop-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "prop-sec-015-01.md",
+      "narrative": null,
+      "content": "Let s ∈S. There is a commutative diagram with fully faithful horizontal arrows Db σ(B) H / Fs \u000f K(C-dgmod) Fs \u000f Db σ(B) H / K(C-dgmod) In particular, we get a monoidal functor from BW to the category of self-equivalences of Db σ(B).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0409593v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classical isomorphisms",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-015-61-classical-isomorphisms.md",
+      "narrative": null,
+      "content": "Fix a Borel subgroup B of G. We consider the setting of §3 with k = C and V ∗the\ncomplexiﬁed character group of B. In this section, we will consider the algebra A with double\ngrading, i.e., V ∗is in degree 2.\nLet C\n∼→H∗(B, C) be the Borel isomorphism (send a character of B to the Chern class of\nthe corresponding line bundle) and denote by β its inverse.\nLet I be a subset of S, WI the subgroup of W generated by I, W I be the set of min-\nimal right coset representatives of W/WI and PI the parabolic subgroup of G of type I\ncontaining B.\nPut PI = G/PI.\nDenote by πI : B →PI the canonical morphism.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0409593v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix : associativity of kernel transforms",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-016-6-appendix-associativity-of-kernel-transforms.md",
+      "narrative": null,
+      "content": "6.1. Classical isomorphisms.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0409593v1/blocks/rem-sec-015-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "rem-sec-015-02.md",
+      "narrative": null,
+      "content": "We believe the monoidal functor above is the restriction of a functor with values in Db(B).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0409593v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Kernel transforms",
+      "pageStart": 16,
+      "pageEnd": 21,
+      "target": "../sections/sec-017-62-kernel-transforms.md",
+      "narrative": null,
+      "content": "[]{#noyaux label=\"noyaux\"}\n\n### \n\nLet us define a $2$-category ${\\mathcal{K}}$.\n\n-   The $0$-arrows are the varieties.\n\n-   $1$-arrows : $\\operatorname{Hom}\\nolimits(X,Y)$ is the family of $(K,U)$ where $U$ is a variety over $Y\\times X$ and $K\\in D^b(U)$.\n\n-   $2$-arrows : $\\operatorname{Hom}\\nolimits((K,U),(K',U'))$ is the set of $(\\phi,f)$ where $f:U\\buildrel \\sim\\over\\to U'$ is an isomorphism of $(Y\\times X)$-varieties and $\\phi:K\\buildrel \\sim\\over\\to f^*K'$.\n\nWe define the composition of $1$-arrows. Consider the following diagram where the square is cartesian $$\\label{diag3}\n\\xymatrix{\n&",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0409593v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-018-references.md",
+      "narrative": null,
+      "content": "[AnStr]\nH.H. Andersen and C. Stroppel, Twisting functors on O, Representation Theory 7 (2003),\n681–699.\n[Ar]\nS. Arkhipov, Algebraic construction of contragradient quasi-Verma modules in positive charac-\nteristic, preprint math.AG/0105042.\n[BeiBer]\nA. Beilinson and J. Bernstein, Localisation de g-modules, C. R. Acad. Sci. Paris Sr. I Math. 292\n(1981), 15–18.\n[BeiBezMi]\nA. Beilinson, R. Bezrukavnikov and I. Mirkovic, Tilting exercices, preprint math.RT/0301098.\n[BeiGi]\nA. Beilinson and V. Ginzburg, Wall-crossing functors and D-modules, Represent. Theory 3\n(1999), 1–31.\n[BerFreKhov]\nJ. Bernstein,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

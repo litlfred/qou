@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-canonical-knot-id-sdp",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:canonical-knot-id-sdp",
+  "kind": "conjecture",
+  "title": "Canonical knot identification for ${}^2$H, ${}^3$H, ${}^3$He from the confinement SDP",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-delta-max-uniform-bound",
+    "papers/quantum-observable-universe/blocks/conj-brane-tower-z-habiro"
+  ],
+  "tags": [
+    "tier:E",
+    "knot-identification",
+    "sdp",
+    "confinement",
+    "canonical",
+    "deuterium",
+    "tritium",
+    "helium-3",
+    "gap-a",
+    "audit"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.CanonicalKnotIdSDP",
+  "text": "conj-canonical-knot-id-sdp.md",
+  "leanSource": "conj-canonical-knot-id-sdp.lean",
+  "provenance": "authored"
+}

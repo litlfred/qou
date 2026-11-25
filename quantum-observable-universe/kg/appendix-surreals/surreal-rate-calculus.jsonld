@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-surreal-rate-calculus",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:surreal-rate-calculus",
+  "kind": "proposition",
+  "title": "Surreal rate calculus for the classical-limit scaling laws",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-surreal-squeeze"
+  ],
+  "tags": [
+    "surreal",
+    "error-bounds",
+    "rate-calculus",
+    "mass-gap",
+    "reeb-period",
+    "enstrophy",
+    "classical-limit",
+    "millennium-problem"
+  ],
+  "leanRef": "qou:QOU.BringsSurface.SurrealRateCalculus",
+  "text": "surreal-rate-calculus.md",
+  "provenance": "authored"
+}

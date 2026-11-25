@@ -1,0 +1,807 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/gram-matrix-spectral-connection.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../../../assets/navbar/rail-9zgfqd026k.js" defer></script><script src="../../../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../../../.." data-fa-to-root="../../../../../../../../../../..">{"data":"rail-9zgfqd026k","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/gram-matrix-spectral-connection.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/gram-matrix-spectral-connection.attestations</h1>
+<p class="m">A <a href="../../../../../../../../">qa-attestations</a> node held by <a href="../../../../../../../">qou</a>, at <code>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/gram-matrix-spectral-connection.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>block-qa</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;block&quot;,
+  &quot;id&quot;: &quot;folio/quantum-observable-universe/mass-theory/gram-matrix-spectral-connection&quot;,
+  &quot;path&quot;: &quot;folio/quantum-observable-universe/mass-theory/gram-matrix-spectral-connection&quot;
+}</pre></dd>
+<dt>criteria</dt><dd><pre>{
+  &quot;fit-section-chapter&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] The block successfully satisfies fit-section-chapter.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:30Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T19:01:22.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a8348368c268a6808b6f29e83c989d067c7369dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {},
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;da-false-claim&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-false-claim.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:30Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T19:01:22.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a8348368c268a6808b6f29e83c989d067c7369dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-vacuous&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-vacuous.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:30Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T19:01:22.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a8348368c268a6808b6f29e83c989d067c7369dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-circular&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-circular.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:30Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T19:01:22.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a8348368c268a6808b6f29e83c989d067c7369dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-overclaim&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-overclaim.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:30Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T19:01:22.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a8348368c268a6808b6f29e83c989d067c7369dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-hidden-dof&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-hidden-dof.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:30Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T19:01:22.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a8348368c268a6808b6f29e83c989d067c7369dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-non-sequitur&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-non-sequitur.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:30Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T19:01:22.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a8348368c268a6808b6f29e83c989d067c7369dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-lean-narrative-divergence&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-lean-narrative-divergence.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:30Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T19:01:22.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a8348368c268a6808b6f29e83c989d067c7369dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-citation-misuse&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-citation-misuse.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:30Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T19:01:22.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a8348368c268a6808b6f29e83c989d067c7369dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-definitional-ambiguity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-definitional-ambiguity.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:30Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T19:01:22.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a8348368c268a6808b6f29e83c989d067c7369dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-empirical-fragility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-empirical-fragility.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:30Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T19:01:22.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a8348368c268a6808b6f29e83c989d067c7369dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-physical-implausibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-physical-implausibility.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:30Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T19:01:22.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a8348368c268a6808b6f29e83c989d067c7369dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-reproducibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-reproducibility.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:30Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T19:01:22.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a8348368c268a6808b6f29e83c989d067c7369dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-referee-verdict&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] The block successfully satisfies da-referee-verdict.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:30Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T19:01:22.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a8348368c268a6808b6f29e83c989d067c7369dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;expo-milnor-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:16:30.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;715a9a708c210d840f41c621cb20b53301cf19b6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-19&quot;
+      },
+      &quot;evidence&quot;: &quot;Block is quite long, consider breaking it up for clarity.&quot;
+    }
+  ],
+  &quot;milnor-brevity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] The block successfully satisfies milnor-brevity.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:31:30Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;69257b35f0732d1d15e1288a5c38fde18f9dbcad&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T19:01:22.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a8348368c268a6808b6f29e83c989d067c7369dc&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;voice-scholarly-default&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;eb166d2fed71&quot;,
+        &quot;ts&quot;: &quot;2d34cd47e5ea&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;voice-ai-slop&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;eb166d2fed71&quot;,
+        &quot;ts&quot;: &quot;2d34cd47e5ea&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;voice-branch-jargon&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Fixed. The transcribed session turn \&quot;**Remark.** *User question: where does the Gram matrix fit in the spectral-sequence / Frobenius framework?*\&quot; -&gt; \&quot;**Remark (where the Gram matrix fits in the spectral-sequence / Frobenius framework).**\&quot;, keeping the subject and dropping the conversation; \&quot;are stale per the Markov-bug fix and should read $hz^2 + z$\&quot; -&gt; \&quot;are uncorrected: by the recursion just quoted they should read $hz^2 + z$\&quot;, which now points at the Ocneanu–Wenzl recursion stated immediately above. The correction itself survives.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-08-08T12:00:00Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/branch-jargon-rereview&quot;,
+        &quot;agent_skill&quot;: &quot;local/one-voice-audit&quot;
+      }
+    }
+  ],
+  &quot;trap-negation-contrast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6d9ef78b7925&quot;,
+        &quot;ts&quot;: &quot;2d34cd47e5ea&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:26:29.473Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;evidence&quot;: &quot;Six denials, and in a block whose subject is a retraction they are load-bearing: &#39;Not \&quot;numerically singular\&quot; - zero&#39;, &#39;the D one does not exist&#39;, &#39;which exists on that quotient, not on H_n&#39;, &#39;fails on H_n itself&#39;, &#39;H_3 is not a Frobenius algebra under tr_M&#39;, &#39;no three-row partition survives Schur-Weyl&#39;.&quot;,
+      &quot;notes&quot;: &quot;One is a verbatim repeat: &#39;Nothing structural is lost, only relocated&#39; here and &#39;The Frobenius structure itself is not lost, only relocated&#39; in rem:frobenius-gram-matrix-context. Same sentence, same correction, two blocks — worth consolidating into one place both can cite.&quot;
+    }
+  ],
+  &quot;trap-rhetorical-pivot&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6d9ef78b7925&quot;,
+        &quot;ts&quot;: &quot;2d34cd47e5ea&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:26:29.530Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;evidence&quot;: &quot;The corrective structure (write the old claim, then overturn it) is the block&#39;s subject rather than a device, and each overturning carries its mechanism.&quot;
+    }
+  ],
+  &quot;trap-em-dash&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6d9ef78b7925&quot;,
+        &quot;ts&quot;: &quot;2d34cd47e5ea&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:26:29.589Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Sixteen em-dashes in 1230 words (about one per 77), the highest density in the batch. Several append corrections to sentences that were already complete: &#39;which exists on that quotient, not on H_n (convention D) - enters the Frobenius co-Casimir&#39;, &#39;the co-Casimir sum must run over the two-row stratum only - which is precisely the sense in which...&#39;, &#39;what survives is sum dim^2 = C_n - the Catalan numbers 5, 14, 42&#39;.&quot;,
+      &quot;notes&quot;: &quot;PROPOSED (structural, not applied): the density is a symptom of layering corrections onto the original text in place. Moving the 2026-08-09 correction into authorNotes and rewriting the body under convention D would remove most of them at once.&quot;
+    }
+  ],
+  &quot;trap-triples&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6d9ef78b7925&quot;,
+        &quot;ts&quot;: &quot;2d34cd47e5ea&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:26:29.637Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;evidence&quot;: &quot;No reflex list; the numbered list of four Gram-matrix roles and the six-row term table are both content-driven.&quot;
+    }
+  ],
+  &quot;trap-closing-aphorism&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6d9ef78b7925&quot;,
+        &quot;ts&quot;: &quot;2d34cd47e5ea&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:26:29.710Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;&#39;So the Gram matrix is the **single algebraic object** whose block structure generates the entire spectral sequence and its mass-term identification.&#39; — a grand closing claim, bolded, immediately after a paragraph whose own content is hedged (&#39;generically&#39;) and which does not establish that the off-diagonal blocks encode the differentials.&quot;,
+      &quot;notes&quot;: &quot;PROPOSED (not applied - it is a claim, not just a flourish): scope it to what the block shows, e.g. &#39;The diagonal blocks of G are the pairings on E_0^{p,*}; identifying the differentials with its off-diagonal blocks is the remaining step.&#39;&quot;
+    }
+  ],
+  &quot;trap-meta-commentary&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6d9ef78b7925&quot;,
+        &quot;ts&quot;: &quot;2d34cd47e5ea&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:26:29.749Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;The block narrates its own text repeatedly rather than stating mathematics: &#39;**This remark already contains its own refutation.**&#39;, &#39;The very next line then writes down ... which for that block is a division by zero&#39;, &#39;is the sharpest statement in this remark&#39;, &#39;see the correction above&#39;. A struck-through sentence is also left in the published prose (&#39;~~At q = q_0, det G != 0 (generically), confirming the Frobenius property.~~ **Retracted 2026-08-09**&#39;).&quot;,
+      &quot;notes&quot;: &quot;AUTHORNOTES FLAG (AGENTS.md 4d, one-voice Cat. H): the whole opening blockquote plus the retraction are dated status content and belong in authorNotes (kinds &#39;caveat&#39; and &#39;refined-framing&#39;, date 2026-08-09), with the body rewritten under convention D. Struck-through text should be deleted from the prose, not displayed. This single change would also clear the trap-em-dash fail.&quot;
+    }
+  ],
+  &quot;trap-thesis-restatement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6d9ef78b7925&quot;,
+        &quot;ts&quot;: &quot;2d34cd47e5ea&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:26:29.794Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;evidence&quot;: &quot;The convention-D point is stated several times, but each occurrence is attached to a different downstream object (G^{-1}, the co-Casimir, the H_3 determinant, the Wedderburn block form), so it is application rather than restatement.&quot;
+    }
+  ],
+  &quot;trap-performed-warmth&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6d9ef78b7925&quot;,
+        &quot;ts&quot;: &quot;2d34cd47e5ea&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:26:29.832Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;evidence&quot;: &quot;No personal register.&quot;
+    }
+  ],
+  &quot;trap-superlative&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6d9ef78b7925&quot;,
+        &quot;ts&quot;: &quot;2d34cd47e5ea&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:26:29.876Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;&#39;the **single algebraic object** whose block structure generates the **entire** spectral sequence&#39;, &#39;is the sharpest statement in this remark&#39;, &#39;every statement above stands unchanged&#39;, and &#39;Computing G explicitly ... is equivalent to computing all pages E_r&#39; — four maximal claims, none of them demonstrated in the block.&quot;,
+      &quot;notes&quot;: &quot;The strongest of these, &#39;equivalent to computing all pages&#39;, would need the differentials to be recoverable from G; the block only says they are &#39;encoded in the off-diagonal blocks under filtered inversion&#39;.&quot;
+    }
+  ],
+  &quot;trap-nonspeakable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;6d9ef78b7925&quot;,
+        &quot;ts&quot;: &quot;2d34cd47e5ea&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:26:29.956Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;evidence&quot;: &quot;Long, but sentence-by-sentence it reads aloud; the corrective asides are what make it heavy, not the syntax.&quot;,
+      &quot;notes&quot;: &quot;CHECKED, WITH FIVE DEFECTS. VERIFIED CORRECT: the rank arithmetic is exactly right - dim H_n = n!, the surviving quotient is sum over at-most-2-row partitions of dim^2 = Catalan (5, 14, 42 for n = 3,4,5), giving corank 1, 10 = 3^2 + 1^2, 78 = 6^2 + 5^2 + 4^2 + 1^2, and the killed dimensions are exactly those of the 3-or-more-row partitions. tau(sigma_i^2) = hz + 1 and tau(sigma_0 sigma_1 sigma_0) = h z^2 + z both match rem:frobenius-gram-matrix-context. a_K = G_{beta, beta*}/G_{1,1} matches def:frobenius-self-pairing-chirality. DEFECTS: (1) THE CO-CASIMIR IDENTIFICATION DOES NOT COMPUTE. With G^{-1}_{ll} = [n]_q!/(dim_q(l) dim(l)) and D_{ll} = 1/dim_q(l), tr(G^{-1} D) = [n]_q! sum 1/(dim_q^2 dim), not sum 1/dim_q. The missing factor is tau(e_l): the co-Casimir trace is sum_l c_l tau(p_l) with c_l = 1/(dim_q tau(p_l)). Either D must be delta_{ll} tau(e_l)/dim_q, or the sentence &#39;Summing G^{-1} diagonal times 1/dim_q gives exactly sum 1/dim_q&#39; must go. (2) THE GRAM DEFINITION CONTRADICTS THE DISPLAYED MATRIX: the text says G_{ij} = tau(b_i b_j^{-1}), but the matrix shown has first row (1, z, z, z^2, z^2, z^3), which is tau(b_i b_j). With inverses the entries would involve tau(sigma^{-1}) = z - h = 0.4036, not z = 0.6127. Every sibling block (def:frobenius-dual-h3, prop:frobenius-gram-matrix, rem:frobenius-gram-matrix-context) defines it without the inverse. (3) THE CASIMIR IS NOT THE CO-CASIMIR: item 2 writes C_{dim_q} = sum_{ij} (G^{-1})_{ij} b_i b_j, which is the standard Casimir Omega; thm:frobenius-codim-universal defines C_{dim_q} = sum_l p_l/(dim_q(l) tau(p_l)), and the proof of that theorem explicitly distinguishes the two (&#39;the standard Casimir Omega = sum e_i e^i corresponds to the torus with puncture; C_{dim_q} to the torus with a dim_q-labelled puncture&#39;). (4) l(lambda) COLLISION: &#39;y_lambda = 0 for every lambda with l(lambda) &gt;= 3&#39; means three or more ROWS here, but this chapter defines l(lambda) = height(lambda) - 1 (proof of thm:frobenius-codim-universal), under which three rows is l = 2. As written the sentence keeps the three-row blocks alive, contradicting the corank numbers in the same block. (5) MALFORMED EXPONENT: &#39;det G = prod_l tau(e_l)^{\\,\\cdot}&#39; has a raised-dot placeholder where the multiplicity belongs (presumably dim(l)^2). Also kappa is used here for the root-of-unity order while prop:gram-determinant-plancherel-ratio uses it for the Gram-determinant ratio and rem:geom-bridge-status for 3/16.&quot;
+    }
+  ]
+}</pre></dd>
+</dl>
+</main>
+</body>
+</html>

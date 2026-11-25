@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/directory/trace-cache.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/directory/trace-cache",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Subgraph",
+      "name": "trace-cache",
+      "path": "trace-cache/",
+      "contentSource": {
+        "kind": "family",
+        "branch": "cat/qou/trace-cache/",
+        "keyFrom": "<function>-<engine-key>-q<q-key>-dps<dps>, e.g. tr-m-atomic-mpfr-suffixes-<12 hex>-q<12 hex>-dps40; function is tr-m-atomic-mpfr or tr-m-atomic-mpfr-suffixes, one member per route because two routes to one exact value may round its last digits differently; engine-key hashes the git trees of tools/hecke-engine and tools/pyhecke-native (the wheel-cache source key), q-key hashes the q0 decimal string",
+        "declaredIn": "storage"
+      },
+      "holdsGraph": [
+        "https://litlfred.github.io/cat-harness/v0/ns/graphTypology/trace-cache"
+      ],
+      "description": "Exact results of qou's native trace producers (`pyhecke_native.tr_m_atomic_mpfr` and `tr_m_atomic_mpfr_suffixes`), stored so a long probe run resumes and a re-run recomputes nothing. One orphan branch per producer function, engine source key, q0 string and dps; inside it, content-addressed JSONL shards of (n, signed word, suffix) -> the producer's exact decimal string, never a float. A dirty engine tree has no key, so a stale value is never served, and `computations/trace_cache.py` re-evaluates a sample of loaded entries against the live binary before using any. Read and written by scripts/trace-cache.sh, whose git objects live in a private bare repository; computations/trace_cache.py restores by default but seeds origin only when QOU_TRACE_CACHE_PUSH=1; a seed adds a shard on top of the tip and never forces. `trace-cache/` is where a member is mounted; nothing is tracked there. The kind is `typologies/trace-cache.json`.",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/trace-cache"
+    }
+  ]
+}

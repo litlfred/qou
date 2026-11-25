@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/s00526-018-1443-6/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "On the analyticity of critical points of the Möbius energy",
+  "contains": [
+    "library/s00526-018-1443-6/sections/sec-front-matter",
+    "library/s00526-018-1443-6/sections/sec-000",
+    "library/s00526-018-1443-6/sections/sec-001",
+    "library/s00526-018-1443-6/sections/sec-002",
+    "library/s00526-018-1443-6/sections/sec-003",
+    "library/s00526-018-1443-6/sections/sec-004",
+    "library/s00526-018-1443-6/sections/sec-005",
+    "library/s00526-018-1443-6/sections/sec-006",
+    "library/s00526-018-1443-6/sections/sec-007",
+    "library/s00526-018-1443-6/sections/sec-008",
+    "library/s00526-018-1443-6/sections/sec-009",
+    "library/s00526-018-1443-6/sections/sec-010",
+    "library/s00526-018-1443-6/sections/sec-011",
+    "library/s00526-018-1443-6/sections/sec-012",
+    "library/s00526-018-1443-6/sections/sec-013",
+    "library/s00526-018-1443-6/sections/sec-014"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On the analyticity of critical points of the Möbius energy — We prove that smooth critical points of the Möbius energy E parametrized by arc-length are analytic.\n\n**On the analyticity of critical points of the Möbius energy**\n\n28 pp, 16 sections.\n\n**Abstract.** We prove that smooth critical points of the Möbius energy E parametrized by arc-length are analytic. Together with the main result in Blatt et al. (Trans Am Math Soc 368(9):6391–6438, 2016) this implies that critical points of the Möbius energy with merely bounded energy are not only C∞but also analytic. Our proof is based on Cauchy’s method of majorants and a decomposition of the gradient which has already proved useful in the proof of the regularity results in Blatt and Reiter (Manuscr Math 140(1–2):29–50, 2013) and Blatt et al. (Trans Am Math Soc 368(9):6391–6438, 2016). To the best of the authors knowledge, this is the ﬁrst analyticity result in the context of non-local differential equations. Mathematics Subject Classiﬁcation 35B65 · 57M25\n\n**Outline.** Front matter; On the analyticity of critical points of the M; Abstract; 1 Introduction; Exposé of the present work; 2 Preliminaries; 2.1 Fractional Sobolev spaces; 2.2 Properties of analytic functions; 2.3 Faà di Bruno's formula; 3 Decomposition of the first variation of math; 4 Estimate of the main term Q; 5 Form of PT Qγ and the bilinear Hilbert trans; 6 Form of the remaining parts; 7 Proof of the main theorem by Cauchy's method; Acknowledgements; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "s00526-018-1443-6",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "s00526-018-1443-6.pdf",
+    "source_sha256": "34f3cd94e3b2d9d79f430ab44854c468d41505cf818139086968b6a50d317316",
+    "pages": 28,
+    "arxiv": null,
+    "doi": "10.1007/s00526-018-1443-6",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

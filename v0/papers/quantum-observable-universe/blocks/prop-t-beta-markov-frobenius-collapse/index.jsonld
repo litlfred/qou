@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-t-beta-markov-frobenius-collapse",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:t-beta-markov-frobenius-collapse",
+  "kind": "proposition",
+  "title": "Minimum-Frobenius-norm collapse $T_\\beta = S \\cdot 1$ on $H_n(R, q)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-markov-trace-frobenius-selection"
+  ],
+  "cites": [
+    "references/jones1987",
+    "references/wenzl1988"
+  ],
+  "tags": [
+    "markov-trace",
+    "frobenius",
+    "q-beta",
+    "min-norm",
+    "categorical-collapse"
+  ],
+  "leanRef": "qou:QOU.Nuclear.QBeta.MarkovFrobeniusCollapse.t_beta_collapse",
+  "text": "t-beta-markov-frobenius-collapse.md",
+  "leanSource": "t-beta-markov-frobenius-collapse.lean",
+  "provenance": "authored"
+}

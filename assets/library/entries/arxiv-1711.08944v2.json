@@ -1,0 +1,82 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1711.08944v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1711.08944v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "[]{#s-1 label=\"s-1\"} Let $G=(V(G),E(G))$ be a simple undirected graph of order $n$. The *adjacency matrix* of $G$, denoted by $A(G)$, is the $n\\times n$ matrix with entries $a_{uv}=1$ if $\\{u,v\\}\\in E(G)$ and $a_{uv}=0$ otherwise. The eigenvalues of $A(G)$ are denoted by $\\lambda_1(G)\\geq \\lambda_2(G)\\geq \\cdots\\geq \\lambda_n(G)$, which are also called the *eigenvalues* of $G$.\n\nFor $v\\in V(G)$, we denote by $N(v)=\\{u\\in V(G)\\mid \\{u,v\\}\\in E(G)\\}$ and $d(v)=|N(v)|$ the *neighborhood* and *degree* of $v$, respectively. Let $D(G)=\\mathrm{diag}(d(v)\\mid v\\in V(G))$ denote the diagonal degree mat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1711.08944v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1711.08944v2  [math.CO]  12 Dec 2018\nThe second largest eigenvalues of some Cayley\ngraphs on alternating groups∗\nXueyi Huang,\nQiongxiang Huang†\nCollege of Mathematics and Systems Science, Xinjiang University, Urumqi, Xinjiang 830046, P. R. China\nAbstract Let An denote the alternating group of degree n with n ≥3. The al-\nternating group graph AGn, extended alternating group graph EAGn and complete\nalternating group graph CAGn are the Cayley graphs Cay(An, T1), Cay(An, T2)\nand Cay(An, T3), respectively, where T1 = {(1, 2, i), (1, i, 2) | 3 ≤i ≤n}, T2 =\n{(1, i, j), (1, j, i) | 2 ≤i < j ≤n}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1711.08944v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The second largest eigenvalue of AGn",
+      "pageStart": 3,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-2-the-second-largest-eigenvalue-of-agn.md",
+      "narrative": null,
+      "content": "[]{#s-3 label=\"s-3\"} Recall that the complete alternating group graph is defined as $CAG_n=\\mathrm{Cay}(A_n,T_3)$, where $T_3=\\{(i,j,k),(i,k,j)\\mid 1\\leq i<j<k\\leq n\\}$ is the set of all $3$-cycles in $S_n$. In this section, we mainly focus on determining the second largest eigenvalue of $CAG_n$. The main idea is to find some suitable equitable partition so that we can decompose the edge set of $CAG_n$ into that of $n$ copies of $CAG_{n-1}$ and that of the extended alternating group graph $EAG_{n}=\\mathrm{Cay}(A_n,T_2)$, where $T_2=\\{(1,i,j),(1,j,i)\\mid 2\\leq i<j\\leq n\\}$ is the set of $3$-cyc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1711.08944v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The second largest eigenvalues of EAGn and CAGn",
+      "pageStart": 7,
+      "pageEnd": 12,
+      "target": "../sections/sec-002-3-the-second-largest-eigenvalues-of-eagn-and-cag.md",
+      "narrative": null,
+      "content": "[]{#s-3 label=\"s-3\"} Recall that the complete alternating group graph is defined as $CAG_n=\\mathrm{Cay}(A_n,T_3)$, where $T_3=\\{(i,j,k),(i,k,j)\\mid 1\\leq i<j<k\\leq n\\}$ is the set of all $3$-cycles in $S_n$. In this section, we mainly focus on determining the second largest eigenvalue of $CAG_n$. The main idea is to find some suitable equitable partition so that we can decompose the edge set of $CAG_n$ into that of $n$ copies of $CAG_{n-1}$ and that of the extended alternating group graph $EAG_{n}=\\mathrm{Cay}(A_n,T_2)$, where $T_2=\\{(1,i,j),(1,j,i)\\mid 2\\leq i<j\\leq n\\}$ is the set of $3$-cyc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

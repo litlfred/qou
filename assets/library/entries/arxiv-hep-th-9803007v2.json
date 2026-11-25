@@ -1,0 +1,44 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-th-9803007v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-th-9803007v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Smallest Dirac Eigenvalue Distribution from Random Matrix Theory",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-smallest-dirac-eigenvalue-distribution-from-rand.md",
+      "narrative": null,
+      "content": "Shinsuke M. Nishigaki1,∗, Poul H. Damgaard2,†, and Tilo Wettig3,‡\n1Institute for Theoretical Physics, University of California, Santa Barbara, CA 93106-4030, USA\n2The Niels Bohr Institute, Blegdamsvej 17, DK-2100 Copenhagen Ø, Denmark\n3Institut f¨ur Theoretische Physik, Technische Universit¨at M¨unchen, D-85747 Garching, Germany\n(March 2, 1998)\nWe derive the hole probability and the distribution of the smallest eigenvalue of chiral hermitian\nrandom matrices corresponding to Dirac operators coupled to massive quarks in QCD. They are\nexpressed in terms of the QCD partition function in the mesosc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9803007v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-th/9803007v2  17 Jun 1998",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

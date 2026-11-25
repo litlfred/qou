@@ -1,0 +1,245 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2201.05665v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2201.05665v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The distributions of random matrix theory govern the statistical properties of a wide variety of large systems which do not obey the usual laws of classical probability. Such systems appear in many different areas of applied science and technology, including heavy nuclei, polymer growth, high-dimensional data analysis, and certain percolation processes. The four distribution functions play a particularly important role in the mathematical apparatus of random matrices. The first one describes the \"emptiness formation probability\" in the bulk of the spectrum of a large random matrix, and it is e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2201.05665v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "HAROLD WIDOM’S WORK IN RANDOM MATRIX THEORY\nIVAN Z. CORWIN, PERCY A. DEIFT, AND ALEXANDER R. ITS\nAbstract. This is a survey of Harold Widom’s work in random matrices. We start with\nhis pioneering papers on the sine-kernel determinant, continue with his and Craig Tracy’s\ngroundbreaking results concerning the distribution functions of random matrix theory, touch\non the remarkable universality of the Tracy-Widom distributions in mathematics and physics,\nand close with Tracy and Widom’s remarkable work on the asymmetric simple exclusion pro-\ncess.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2201.05665v1/blocks/figure-img-p002-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../images/img-p002-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2201.05665v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The sine-kernel determinant",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-the-sine-kernel-determinant.md",
+      "narrative": null,
+      "content": "Let $J = \\cup_{k=0}^{n}J_k = \\cup_{k=0}^{n}(a_k, b_k)$ be a union of $n+1$ disjoint intervals in $\\mathbb{R}$. Consider the Fredholm determinant $$P_x= \\det \\left( 1 - K_{\\textrm{sine}}\\right),$$ where $K_{\\textrm{sine}}$ is the trace class operator in $L_2\\Bigl(J; dz\\Bigr)$ with kernel $$K_{\\textrm{sine}}(z,z') = \\frac{\\sin x(z-z')}{\\pi (z-z')}.$$ The determinant $P_x$ plays a central role in random matrix theory. Indeed, it is the probability of finding no eigenvalues in the union of intervals $\\frac{xJ}{\\pi} := \\cup_{k=0}^{n}\\left(\\frac{xa_k}{\\pi}, \\frac{xb_k}{\\pi}\\right)$ for a random Herm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2201.05665v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Tracy-Widom distribution functions",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-3-the-tracy-widom-distribution-functions.md",
+      "narrative": null,
+      "content": "The joint probability densities of the eigenvalues of random matrices from the GOE, GUE and GSE ensembles are given by $$\\label{eigenprob}\nP_{N\\beta}(\\lambda_1, ..., \\lambda_N) =\nZ^{-1}_{N\\beta}\\,e^{-\\frac{1}{2}\\beta\\sum_{j=1}^{N}\\lambda^{2}_j}\n\\prod_{j<k}|\\lambda_j - \\lambda_k|^{\\beta},$$ where $Z_{N\\beta}$ is a normalization constant (or partition function) and $$\\beta := \\begin{cases}\n1 & \\textrm{for GOE},\\cr\n2 & \\textrm{for GUE},\\cr\n4 & \\textrm{for GSE}.\n\\end{cases}$$ The famous Tracy-Widom distribution functions, commonly denoted as $F_{\\beta}(t)$, describe the edge fluctuation of the eig",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2201.05665v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Universality of the Tracy-Widom Distributions",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-4-universality-of-the-tracy-widom-distributions.md",
+      "narrative": null,
+      "content": "A remarkable fact is that the Tracy-Widom distribution functions Fβ(z) appear in a large\nand growing number of applications in random matrix theory as well as in areas beyond\nrandom matrices. In this section we will describe some of these applications.\nwith some functions fj(z) and hj(z) deﬁned on a contour C. This type of integral operators was singled\nout as a distinguished class in [IIKS] (see also [Dei2]; in a diﬀerent context, unrelated to integrable systems,\nthese operators were also studied in the earlier work [Sak]). A crucial property of a kernel (3.14) is that the\nassociated resolven",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2201.05665v1/blocks/figure-img-p007-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../images/img-p007-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2201.05665v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "General invariant ensembles and the Wigner ensembles",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-41-general-invariant-ensembles-and-the-wigner-en.md",
+      "narrative": null,
+      "content": "The GUE, GOE and GSE ensembles are respectively particular examples of unitary (UE), orthogonal (OE) and symplectic (SE) ensembles of random matrix theory. The joint probability density of the eigenvalues for these ensembles are given by (cf. ([\\[eigenprob\\]](#eigenprob){reference-type=\"ref\" reference=\"eigenprob\"})) $$\\label{eigenprob1}\nP_{N \\beta}(\\lambda_1, ..., \\lambda_N) =\nZ^{-1}_{N\\beta}\\,e^{-\\eta_{\\beta}\\sum_{j=1}^{N}V(\\lambda_j)}\n\\prod_{j<k}|\\lambda_j - \\lambda_k|^{\\beta},$$ where $\\eta_{1}=1$, $\\eta_{2} = 1$, $\\eta_4 = 2$ (this reflects the fact that the eigenvalues of self-dual Hermit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2201.05665v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Random permutations",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-005-42-random-permutations.md",
+      "narrative": null,
+      "content": "Let $\\pi = (\\pi(1), \\pi(2), ..., \\pi(N))$ be a permutation of the numbers $1, 2, ..., N$. If $1 \\leq i_1 <  i_2 < ... < i_k \\leq N$ and $\\pi( i_1) < \\pi( i_2) < ... < \\pi(i_k)$, we say that $\\pi( i_1), \\pi( i_2), ...,\\pi(i_k)$ is an *increasing subsequence* in $\\pi$ of length $k$. Denote by $l_{N}(\\pi)$ the maximal length of all of the increasing subsequences in $\\pi$. Suppose that the permutations are random and uniformly distributed. The principal interest is in the limiting statistics of the random variable $l_{N}(\\pi)$. This is a subject with a long history (see e.g. [@AD]) which started i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2201.05665v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The asymmetric simple exclusion process. Harold Widom's papers 133,134,135",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "../sections/sec-006-5-the-asymmetric-simple-exclusion-process-harold.md",
+      "narrative": null,
+      "content": "The asymmetric simple exclusion process (ASEP) was introduced (in the probability literature) in Spitzer's 1970 work [@Sp]. It is a continuous time Markov process of interacting particles on the integer lattice ${\\Bbb Z}$. A particle at a location $x$ waits an exponential time with parameter one (independently of all other particles). When that time has elapsed, the particle flips a coin and with probability $p$ attempts to jump one position to the right, and with probability $q=1-p$ attempts to jump one position to the left. These jumps are achieved only if the destination site is unoccupied",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2201.05665v1/blocks/figure-img-p011-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../images/img-p011-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2201.05665v1/blocks/figure-img-p012-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../images/img-p012-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2201.05665v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-007-references.md",
+      "narrative": null,
+      "content": "Cited Publications by Harold Widom\n[1] The strong Szeg˝o limit theorem for circular arcs. Indiana Univ. Math. J. 21, 277–283 (1971).\n[2] Toeplitz determinants with singular generating functions. Amer. J. Math. 95, 333–383 (1973).\n[3] The asymptotics of a continuous analogue of orthogonal polynomials. J. Approx. Th. 76, 51–64 (1994).\n[4] (with J. Gravner and C. A. Tracy) Limit theorems for height ﬂuctuations in a class of discrete space and\ntime growth models. J. Stat. Phys. 102, 1085–1132 (2001).\n[5] (with C. A. Tracy) Level-spacing distributions and the Airy kernel. Phys. Letts. B 305, 115–11",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

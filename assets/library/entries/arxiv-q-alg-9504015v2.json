@@ -1,0 +1,820 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-q-alg-9504015v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 1)",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-front-matter-page-1.md",
+      "narrative": null,
+      "content": "arXiv:q-alg/9504015v2  24 Apr 1995\nUMTG-183-95\nq-alg/9504015\nWitten’s Invariants of Rational Homology Spheres at Prime\nValues of K and Trivial Connection Contribution.\nL. Rozansky1\nPhysics Department, University of Miami\nP. O. Box 248046, Coral Gables, FL 33124, U.S.A.\nE-mail address: rozansky@phyvax.ir.miami.edu\nAbstract\nWe establish a relation between the coeﬃcients of asymptotic expansion of\nthe trivial connection contribution to Witten’s invariant of rational homology\nspheres and the invariants that T. Ohtsuki extracted from Witten’s invariant\nat prime values of K. We also rederive the pro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 2)",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-front-matter-page-2.md",
+      "narrative": null,
+      "content": "Introduction\nWitten’s invariant of 3d manifolds deﬁned in [1] by a path integral over the SU(2) connections\nAµ on a 3d manifold M\nZ(M; k) =\nZ\n[DAµ]e\nik\n2π SCS[Aµ],\n(1.1)\nSCS = 1\n2 Tr ǫµνρ\nZ\nM d3x\n\u0012\nAµ∂νAρ + 2\n3AµAνAρ\n\u0013\n(1.2)\n(k ∈ZZ, Tr is the trace taken in the fundamental representation of SU(2)) can also be\ncalculated combinatorially with the help of the surgery formula. Let M be a 3d manifold\nconstructed by (pj, 1) surgeries on the components Lj of an N-component link L in S3. A\n(p, 1) surgery means that the meridian of the tubular neighborhood is glued to the parallel\nplus p meridians on t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 3)",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-front-matter-page-3.md",
+      "narrative": null,
+      "content": "Z(M; 1):\nZ(M; k)\nZ(S3; k) = Z′(M; k) ×\n\n\n\n\n\nZ(M;1)\nZ(S3;1),\nif K = −1 (mod 4)\nZ(M;1)\nZ(S3;1),\nif K = 1 (mod 4),\n(1.5)\nIf M is a rational homology sphere (ZZHS ), then Z(M; 1) = Z(S3; 1) so that Z′(M; k) =\nZ(M;k)\nZ(S3;k).\nThe new invariant Z′(M; k) can be calculated by the following surgery formula\nZ′(M; k) = K−N\n2 exp\n\n−πi\n4\n\u0012\n3 + κ −6\nK\n\u0013 N\nX\nj=1\nsign (pj)\n\n\n(1.6)\n×\nX′\n−K≤αj ≤K\nαj∈2ZZ+1\n(1≤j≤N)\nJα1,...,αN(L; k) exp\n\niπ\n2K\nN\nX\nj=1\npj(α2\nj −1)\n\n\nN\nY\nj=1\nsin\n\u0012 π\nK αj\n\u0013\n,\nhere\nκ =\n\n\n\n\n\n1\nif K = −1 (mod 4)\n−1\nif K = 1 (mod 4),\n(1.7)\nwhile\nP′ means that we add an extra factor of 1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/thm-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "H. Murakami, [5], [6]",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "thm-sec-002-01.md",
+      "narrative": null,
+      "content": "For a RHS M and a prime K > 2 Z′(M; k) ∈ZZ[ˇq], ˇq = e 2πi K , (1.8) ZZ[ˇq] being a cyclotomic ring.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 4)",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-front-matter-page-4.md",
+      "narrative": null,
+      "content": "We need more notations in order to present the results of Ohtsuki’s papers [7], [8]. We\nintroduce a new variable\nx = q −1.\n(1.9)\nA polynomial from ZZ[ˇq] can be reexpressed as a polynomial in x with integer coeﬃcients. It\nis deﬁned modulo the polynomial\n(1 + x)K −1\nx\n=\nK−1\nX\nn=0\nK(K −1) · · ·(K −n)\n(n + 1)!\nxn,\n(1.10)\nwhich is identically equal to zero for x = e\n2πi\nK −1. All the coeﬃcients of this polynomial\nexcept the one at xK−1, are divisible by K. As a result, all the coeﬃcients at xn, n ≤K−2 for\na polynomial of x coming from ZZ[ˇq] are well deﬁned modulo K. We will limit our attention\nto",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 5)",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-front-matter-page-5.md",
+      "narrative": null,
+      "content": "Theorem 1.2 (T. Ohtsuki [7], [8]) For any RHS M there exists a sequence of rational\nnumbers λn(M) ∈ZZ\nh\n1\n2, 1\n3, . . . , 1\n2n,\n1\n|H1(M,ZZ)|\ni\n⊂Q, n ≥0 so that for any prime number K\nsuch that |H1(M, ZZ)|̸ = 0 (mod K)\n\"\n|H1(M, ZZ)|\n |H1(M, ZZ)|\nK\n!\nZ′(M; k)\n#⋄\n=\n\" ∞\nX\nn=0\nλn(M)xn\n#∨\n,\n(1.14)\nhere\n\u0010\n·\nK\n\u0011\nis the Legendre symbol.\nWe have slightly modiﬁed the theorem of\n[8]: Ohtsuki required that K > |H1(M, ZZ)|,\nhe estimated that λn(M) ∈ZZ\nh\n1\n2, 1\n3, . . . ,\n1\n2n+1,\n1\n|H1(M,ZZ)|\ni\n⊂Q, n > 0 and he used ZZ′\nK[x] =\nZZK[x]/x\nK−1\n2 ZZ[x] instead of (1.11) (in other words, he did not ﬁx the coeﬃcien",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "Ohtsuki’s invariants λn(M) of eq. (1.14) and loop corrections to the trivial connection contribution Sn(M) of eq. (1.18) can be expressed in terms of each other through the following relation ∞ X n=0 λn(M)xn = exp \" ∞ X n=1 (Sn(M) −Sn(S3)) \u0012iπ K \u0013n# ≡ \u0010 π K \u0011 sin \u0010 π K \u0011 exp \" ∞ X n=1 Sn(M) \u0012iπ K \u0013n# (1.20) by substituting either x = e 2πi K −1 = 2πi K ∞ X n=0 (n + 1)! \u00122πi K \u0013n , (1.21)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prop-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "prop-sec-005-02.md",
+      "narrative": null,
+      "content": "A complete agreement between the surgery formula and 1-loop predictions was observed.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 6)",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-005-front-matter-page-6.md",
+      "narrative": null,
+      "content": "the asymptotic properties of the surgery formula (1.3) for lens spaces and Seifert manifolds\nto the quantum ﬁeld theory predictions of eqs. (1.16), (1.17) was initiated by D. Freed and\nR. Gompf [9] and carried out further by L. Jeﬀrey [10], S. Garoufalidis [4] and also in the\npapers [11, 12]. A complete agreement between the surgery formula and 1-loop predictions\nwas observed.\nIf the manifold M is a RHS , then the trivial connection is a separate point in the moduli\nspace of ﬂat connections. According to quantum ﬁeld theory, its contribution is of the form\nZ(tr)(M; k) =\n√\n2π\nK\n3\n2|H1(M, ZZ)|\n3",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prop-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "prop-sec-006-01.md",
+      "narrative": null,
+      "content": "Let M be a rational homology sphere (RHS ) constructed by (pj, 1) surg- eries on the components of an N-component link L in S3. Then the loop corrections to the trivial connection contribution (1.18) to Witten’s invariant of M are given by the formula: exp \" ∞ X n=1 (Sn(M) −Sn(S3)) \u0012iπ K \u0013n# (1.27) = exp  3 4πi \u0012 2 K −1 \u0013 N X j=1 sign (pj)  exp  −iπ 2K N X j=1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 7)",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-006-front-matter-page-7.md",
+      "narrative": null,
+      "content": "or\niπ\nK = 1\n2 log(1 + x) = x\n2\n∞\nX\nn=0\n(−1)n xn\nn + 1.\n(1.22)\nIn other words, we will show that\n\"\n|H1(M, ZZ)|\n |H1(M, ZZ)|\nK\n!\nZ′(M; k)\n#⋄\n=\n\"\n|H1(M, ZZ)|\n3\n2 Z(tr)(M; k)\nZ(S3; k)\n#∨\n.\n(1.23)\nIn process of doing this we will rederive the results of [5]-[8] maybe in a somewhat more\nexplicit way.\nOur proof of the Proposition 1.1 will be based on the following two propositions derived\nin [19] and [18] by using some “physical” considerations:\nProposition 1.2 Let L be an algebraically split link (ASL ) in S3.\nThen its framing-\nindependent colored Jones polynomial has the following Taylor series exp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 8)",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-007-front-matter-page-8.md",
+      "narrative": null,
+      "content": "The symbol\n+∞\nR\n−∞\n[αj=0]\nmeans that the integral has to be calculated in the following way: ﬁrst, an\nexpansion (1.24) has to be substituted and then the gaussian integrals over αj have to be\ncalculated for each polynomial\n\u0010QN\nj=1\n\u0010\nαj + 1\npj\n\u0011\u0011\nDm,n\n\u0010\nα1 + 1\np1, . . . , αN +\n1\npN\n\u0011\nseparately (for\nmore details see [18]).\nThe Proposition 1.2 is essential for all our calculations. The Proposition 1.4 is needed only\nfor the derivation of eq. (1.23). In other words, we could use eq. (1.27) as a deﬁnition of\nSn(M) and then prove eq. (1.20) which amounts to proving the Theorem 1.2.\nIn Section 2 we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 9)",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-008-front-matter-page-9.md",
+      "narrative": null,
+      "content": "Also since 1\n2(αj ± sign (pj)) ∈ZZ,\nsin\n\u0012 π\nK αj\n\u0013\n= i\n2\nX\nµj=±1\nµje−iπ\nK µjαj = i\n2\nX\nµj=±1\nµjˇq−2∗µjαj ˇq(2∗−1\n2) sign(pj).\n(2.2)\nThe Jones polynomial Jα1,...,αN(L; k) is odd and e\niπ\n2K pjα2\nj is even as a function of αj.\nTherefore we can drop the factor 1\n2 and put µj = 1 in eq. (2.2) upon substituting it into\neq. (1.6):\nZ′(M; k) = K−N\n2 iNe−iπ\n4 (3+κ)PN\nj=1 sign(pj)ˇq( 1\n4+2∗)PN\nj=1 sign(pj)ˇq−4∗PN\nj=1 pj\n(2.3)\n×\nX′\n−K≤αj ≤K\nαj ∈2ZZ+1\n(1≤j≤N)\nˇq\nPN\nj=1(4∗pjα2\nj−2∗αj)Jα1,...,αN(L; k).\nAfter completing the square\n4∗pjα2\nj −2∗αj = 4∗pj(αj −p∗\nj)2 −4∗p∗\nj (mod K),\n(2.4)\nwe shift the summation",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 10)",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-009-front-matter-page-10.md",
+      "narrative": null,
+      "content": "Since the values of the Jones polynomial Jα1,...,αN(L; k) belong to the cyclotomic ring\nZZ[ˇq] when all the indices αj are odd, we can apply to it a combination of Proposition 1.2\nand Lemma 2.3 of [5]:\nProposition 2.1 For odd values of its indices αj, the unframed colored Jones polynomial\nof an N-component ASL L in S3 can be presented as the following sum:\nJα1,...,αN(L; k) =\n\n\nN\nY\nj=1\nαj\n\n\n(N+1) K−1\n2\nX\nn=0\nX\nm≤3\n4n\n˜Dm,n(α1, . . . , αN)xn\n(2.9)\n+x(N+1) K−1\n2\n+1J(res)\nα1,...,αN(L; k),\nJ(res)\nα1,...,αN(L; k) ∈ZZ[ˇq],\nhere ˜Dm,n(α1, . . . , αN) are homogeneous polynomials of degree 2m:\n˜Dm,n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prop-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "prop-sec-010-01.md",
+      "narrative": null,
+      "content": "There is an upper bound on the indices of the coeﬃcients C(n) m1,...,mN of eq. (2.12): \u0014mj \u0015 ≤n − N X i=1 \u0014mi \u0015 , (2.14) here h m i denotes the integer part of m 2 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 11)",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-010-front-matter-page-11.md",
+      "narrative": null,
+      "content": "Proposition 2.2 There is an upper bound on the indices of the coeﬃcients C(n)\nm1,...,mN of\neq. (2.12):\n\u0014mj\n2\n\u0015\n≤n −\nN\nX\ni=1\n\u0014mi\n2\n\u0015\n,\n(2.14)\nhere\nh\nm\n2\ni\ndenotes the integer part of m\n2 .\nThe proof is completely similar to that of the Proposition 3.4 of [18]. Suppose that there is\na coeﬃcient C(n)\nm1,...,mN for which (2.14) is not true, say, for m1. If all indices mj of C(n)\nm1,...,mN\nare odd, then the highest degree monomial of the corresponding polynomial\nC(n)\nm1,...,mNPm1\n\u0012α1 −1\n2\n\u0013\n· · · PmN\n\u0012αN −1\n2\n\u0013\n(2.15)\nviolates the inequality (2.11). Therefore it has to be canceled by monomials of o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/lem-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "lem-sec-011-01.md",
+      "narrative": null,
+      "content": "For p, m ∈ZZ, m ≥0 X′ −K≤α≤K α∈2ZZ+1 ˇqpα2α2m = xmax{0, K−1 −m}w, w ∈ZZ[ˇq]. (2.24) The lemma needs a proof only for m < K−1 2 . To prove that an element u ∈ZZ[ˇq] is divisible by xn, n ≤K −1 one may present it as an integer coeﬃcient polynomial of x and check that the coeﬃcients in front of all xn′, n′ < n are divisible by K. We substitute ˇq = x + 1 in eq. (2.24) and express the powers of ˇq in terms of “binomial” polynomials X′ −K≤α≤K α∈2ZZ+1 ˇqpα2α2m = X n≥0 X′ −K≤α≤K α∈2ZZ+1 Pn(pα2)α2mxn = X n≥0 X 0≤m′≤n X′ −K≤α≤K α∈2ZZ+1 Cn,m′ n! p2m′α2(m+m′)xn,(2.25)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 12)",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-011-front-matter-page-12.md",
+      "narrative": null,
+      "content": "Substituting this expression into eq. (2.8) we ﬁnd that\nZ′(M; k) = e\niπ\n4 (κ−1)PN\nj=1(sign(pj)−1)\n\n\nN\nY\nj=1\nsign (pj)\n\nˇq4∗PN\nj=1(3 sign(pj)−pj−p∗\nj)\n×\nuN\nxN K−1\n2\nX′\n−K≤αj ≤K\nαj∈2ZZ+1\n(1≤j≤N)\nˇq4∗PN\nj=1 pjα2\njJα1+p∗\n1,...,αN+p∗\nN(L; k).\n(2.21)\nSince 1\n4(κ −1)(sign (pj) −1) ∈ZZ, we conclude that to prove Theorem 1.1 it is enough to\nshow that\nX′\n−K≤αj ≤K\nαj ∈2ZZ+1\n(1≤j≤N)\nˇq4∗PN\nj=1 pjα2\njJα1+p∗\n1,...,αN+p∗\nN(L; k) = xN K−1\n2 w,\nw ∈ZZ[ˇq].\n(2.22)\nWe will substitute the expansion (2.9) and check the property (2.22) for every polynomial\n\u0010QN\nj=1 αj\n\u0011 P\nm≤3\n4n ˜Dm,n(α1, . . . , αN) separately.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/lem-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "lem-sec-012-01.md",
+      "narrative": null,
+      "content": "For p, p′, m ∈ZZ, p′ ∈2ZZ, m ≥0 X′ −K≤α≤K α∈2ZZ+1 ˇqpα2Pm α + p′ −1 ! = xmax{0, K−1 −[ m 2 ]} w, w ∈ZZ[ˇq]. (2.28) The proof is similar to that of the previous lemma. The choice of summation range for α obviates the fact that odd powers of α in Pm \u0010 α+p′−1 \u0011 can be ignored. The numerators of the contributions of even powers of α are divisible by K. The coeﬃcients of Pm have a denominator m!, but we may assume that m < K −1 (otherwise eq. (2.28) is obvious) so that the denominator does not cancel the factors of K. Let ¯m(n) be the maximum value of m appearing in the l.h.s. of eq. (2.12). Then f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 13)",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-012-front-matter-page-13.md",
+      "narrative": null,
+      "content": "here\nα(α −1) · · ·(α −n + 1) =\nX\nm′≤n\nCn,m′αm′,\nCn,m′ ∈ZZ.\n(2.26)\nIt is well known in number theory that\nX′\n−K≤α≤K\nα∈2ZZ+1\nα2m = 0 (mod K)\nfor\n0 ≤m < K −2.\n(2.27)\nTherefore the numerator of the contribution of a term\nCn,m′\nn! p2m′α2(m+m′)xn will be divisible\nby K for all m + m′ < K−1\n2\n≤K −2, that is, for all n < K−1\n2\n−m. The denominator n! is\nharmless, because since n < K, it is not divisible by K and can not cancel the factors of K\ncoming from the sum over α. This proves the lemma.\nThis lemma can be easily generalized to the “binomial” polynomials (2.13):\nLemma 2.2 For p, p′, m ∈ZZ, p′ ∈2ZZ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prop-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "prop-sec-013-01.md",
+      "narrative": null,
+      "content": "The sum of eq. (3.1) is related to the gaussian integral. For p, q ∈ZZ, p, q̸ = 0 (mod K), 0 ≤m ≤K−1 2 , [G(p, q; m)]⋄= \u0012pq∗ K \u0013  e−i π 4 sign( p q) \u0012 2 K \u0013 1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 14)",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-013-front-matter-page-14.md",
+      "narrative": null,
+      "content": "Since ¯m(n) ≤3\n4n ≤n, this estimate is enough to prove eq. (2.22) and also the Theorem 1.1.\nNote that the proof required only a weaker bound m ≤n for ˜Dm,n rather than a stronger\nbound m ≤3\n4n of [18]. However the bound m ≤3\n4n is necessary to prove that only a ﬁnite\nnumber of polynomials ˜Dm,n contribute to the coeﬃcients of xn′, n′ ≤K−1\n2\nin the expansion\nof [Z′(M; k)]⋄. Indeed, since ¯m(n) ≤3\n4n, then n −¯m(n) ≥1\n4n and eq. (2.30) suggests that\nwe may limit our attention to only those polynomials (2.15) for which\nn ≤2(K −1).\n(2.31)\n3\nGaussian Sums and Integrals\nWe are going to derive a surg",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/lem-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "lem-sec-014-01.md",
+      "narrative": null,
+      "content": "If a degree of a polynomial P(n) ∈ZZK[n] is less than K and P(n) = 0 for all n ∈ZZK, then all the coeﬃcients of P(n) are zero modulo K.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 15)",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-014-front-matter-page-15.md",
+      "narrative": null,
+      "content": "Since (for p∗∈ZZ)\nX′\n−K≤α≤K\nα∈2ZZ+1\nˇqpq∗(α+np∗q)2 =\nX′\n−K≤α≤K\nα∈2ZZ+1\nˇqpq∗α2 =\nX\n3−K\n2\n<˜α≤K−1\n2\nˇqpq∗(2˜α+1)2\n=\nX\n3−K\n2\n<˜α≤K−1\n2\nˇq4pq∗(˜α+2∗)2 =\n√\nKei π\n4 (1−κ)\n\u0012pq∗\nK\n\u0013\n,\n(3.4)\nwe ﬁnd that\nei π\n4 (κ−1)\n√\nK\nX′\n−K≤α≤K\nα∈2ZZ+1\nˇqpq∗α2 ˇq2nα =\n\u0012pq∗\nK\n\u0013\nˇq−p∗qn2.\n(3.5)\nWe substitute ˇq = 1 + x in ˇq2nα and ˇq−p∗qn2.\nAfter going from ZZ[ˇq] to the factor-ring\nZZ′\nK[x] = ZZK[x]/x\nK+1\n2 ZZK[x] and using the “checked binomial polynomial”\nP ∨\nm(α) = (m!)∗α(α −1) · · ·(α −m + 1) = (m!)∗\nm\nX\nl=0\nCm,lαl,\n(3.6)\nwe ﬁnd that\n\n\nK−1\nX\nm=0\n[ m\n2 ]\nX\nl=0\n(m!)∗Cm,2lG(p, q; l)4ln2lxm−l\n\n\n⋄\n=\n\u0012pq∗\nK\n\u0013\n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 16)",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-015-front-matter-page-16.md",
+      "narrative": null,
+      "content": "The proof follows from the fact that the K × K Van-der-Monde determinant in ZZK is\nnon-zero.\nEach gaussian sum G(p, q; l) appears in the l.h.s. of eq. (3.7) with its own power of n:\nn2l. Therefore the coeﬃcients Gm′(p, q; l) of eq. (3.8) can be calculated by “dividing” the\npolynomial (−1)l(p∗q)l P K−1\nm=l (m!)∗Cm,lxm appearing at n2l in the r.h.s. of eq. (3.7) by the\npolynomial\nPK−1\nm=2l Cm,2l4lxm−l appearing in the r.h.s. of that equation at the same power\non n. The division is not quite well-deﬁned, hence the indeterminacy in the elements w of\neq. (3.8).\nThis whole calculation of dividing th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prop-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "prop-sec-016-01.md",
+      "narrative": null,
+      "content": "For p̸ = 0 (mod K), 0 ≤m ≤K   ei π 4 (κ−1) √ K X′ −K≤α≤K α∈2ZZ+1 ˇq4∗pα2Pm \u0012α −1 + p∗ \u0013 x[ m 2 ]   ⋄ (3.16) = \u0012 p K \u0013  e−i π 4 sign(q) |p| 2K ! 1 2 Z +∞ −∞dα e iπ 2K pα2Pm  α −1 + 1 p  x[ m 2 ]   ⋄ + x K+1 −[ m 2 ]w, w ∈ZZ[ˇq]. To prove the proposition for m < K we substitute P ∨ m(2∗(α −1 + p∗)) for Pm \u0010 α−1+p∗ \u0011 in the l.h.s. of this equation and then take the sum for each monomial of P ∨ m(2∗(α −1 + p∗)) separately. If m is odd then the highest power αm does not contribute to the sum, therefore the factor x[ m 2 ] is enough to apply eq. (3.2). We also used the multiplicativi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 17)",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-016-front-matter-page-17.md",
+      "narrative": null,
+      "content": "After substituting eqs. (3.9), (3.10) we ﬁnd that\nZ +∞\n−∞dα ˇq\np\nq α2α2mxm = ei π\n4 sign( p\nq)\n\u0012K\n2\n\u0013 1\n2 \f\f\f\f\f\nq\np\n\f\f\f\f\f\n1\n2 (−1)m(2m)!\n4mm!\n \nx\nlog(1 + x)\n!m\n(3.15)\nEq. (3.2) follows from comparing eq. (3.15) to eq. (3.13).\nThe formula (3.2) can be generalized to the type of summands that appear in eq. (2.8)\nafter the substitutions (2.9) and (2.12).\nProposition 3.2 For p̸ = 0 (mod K), 0 ≤m ≤K\n\n\nei π\n4 (κ−1)\n√\nK\nX′\n−K≤α≤K\nα∈2ZZ+1\nˇq4∗pα2Pm\n\u0012α −1 + p∗\n2\n\u0013\nx[ m\n2 ]\n\n\n⋄\n(3.16)\n=\n\u0012 p\nK\n\u0013 \ne−i π\n4 sign(q)\n |p|\n2K\n! 1\n2 Z +∞\n−∞dα e\niπ\n2K pα2Pm\n\nα −1 + 1\np\n2\n\nx[ m\n2 ]\n\n\n⋄\n+ x\nK+1\n2\n−",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 18)",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-017-front-matter-page-18.md",
+      "narrative": null,
+      "content": "which is determined with the help of eq. (3.13). Consider now the r.h.s. of eq. (3.16). Again\nwe substitute the even polynomial\nP (ev)\nK\n(α) = 1\n2\n\nPK\n\nα −1 + 1\np\n2\n\n+ PK\n\n−α −1 + 1\np\n2\n\n\n\n.\n(3.19)\nSome of its denominators may have K as a divisor, but according to eq. (3.16) we are\ninterested only in the contribution of the highest power of α:\n1\np −K\n2K (K −1)!α\nK−1\n2 .\n(3.20)\nComparing it to monomial (3.18) and applying eq. (3.2) to their contributions we arrive at\neq. (3.16). This ends the proof of the Proposition 3.2.\nNext we move to the polynomials ˜Dm,n which participate in th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 19)",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/sec-018-front-matter-page-19.md",
+      "narrative": null,
+      "content": "starts at xn−PN\nj=1[\nmj\n2 ]. Hence we may assume that\nn −\nN\nX\nj=1\n\u0014mj\n2\n\u0015\n≤K −1\n2\n,\n(3.23)\notherwise the contribution of the polynomial\nxn−PN\nj=1[\nmj\n2 ]C(n)\nm1,...,mNx[\nm1\n2 ]Pm1\n\u0012α1 −1\n2\n\u0013\n· · ·x[\nmN\n2 ]PmN\n\u0012αN −1\n2\n\u0013\n.\n(3.24)\nis annihilated by the homomorphism ⋄.\nThe inequalities (2.14) and (3.23) mean that mj ≤K−1\n2 , so we can apply the Proposi-\ntion 3.2 to every polynomial x[\nmj\n2 ]Pmj\n\u0010 αj−1\n2\n\u0011\n. The terms x\nK+1\n2\n−[\nmj\n2 ]w of eq. (3.16) can be\nneglected because\n\u0014\nxn−PN\ni=1[\nmi\n2 ] x\nK+1\n2\n−[\nmj\n2 ] w\n\u0015⋄\n=\n\u0014\nx\nK+1\n2\n+(n−PN\ni=1[\nmi\n2 ]−[\nmj\n2 ]) w\n\u0015⋄\n= 0\n(3.25)\nin view of the inequalit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 20)",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-019-front-matter-page-20.md",
+      "narrative": null,
+      "content": "Here we used an identity\n\u0014\nˇq4∗PN\nj=1(3 sign(pj)−pj−p∗\nj)\n\u0015⋄\n=\n\u0014\nˇq\n1\n4\nPN\nj=1(3 sign(pj)−pj−p∗\nj)\n\u0015∨\n.\n(3.27)\nWe can extend the sum over n in the r.h.s. of eq. (3.27) to all n ≥0 because the\ncontribution of ˜Dm,nxn with n > 2(K −1) starts above x\nK−1\n2 . As a result, we obtain the full\nJones polynomial. Now using the identities\nei π\n4 (κ−1)(sign(p)−1)\n\u0012 p\nK\n\u0013\n=\n |p|\nK\n!\n,\n(3.28)\n\f\f\f\f\f\f\nN\nY\nj=1\npj\n\f\f\f\f\f\f = |H1(M, ZZ)|\n(3.29)\nsign (p) = ie−i π\n2 sign(p),\n(3.30)\nwe get the following formula\n[Z′(M; k)]⋄=\n |H1(M, ZZ)|\nK\n! \ne−3\n4iπ PN\nj=1 sign(pj)\niN\n(2K)\nN\n2 e\niπ\n2K\nPN\nj=1\n\u0010\nsign(pj)−pj−1\npj\n\u0011",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 21)",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/sec-020-front-matter-page-21.md",
+      "narrative": null,
+      "content": "Z′(M; k) of a manifold constructed by general rational surgeries (pj, qj) on the components\nof an N-component link L in S3.\nThe formula for Witten’s invariant Z(M; k) was derived by L. Jeﬀrey [10]\nZ(M; k) = Z(S3; k) exp\n\niπ\n4\nK −2\nK\n\n\nN\nX\nj=1\nΦ(U(pj,qj) −3 sign (L)\n\n\n\n\n(4.1)\n×\nX\n1≤α1,...,αN≤K−1\nJα1,...,αN(L; k)\nN\nY\nj=1\n˜U\n(pj,qj)\nαj1\n,\nhere L is the linking matrix of L, pj\nqj being the self-linking numbers. The matrices\nU(pj,qj) =\n\npj\nrj\nqj\nsj\n\n∈SL(2, ZZ)\n(4.2)\ndescribe the surgeries (a meridian on the tubular neighborhood is glued to pj(meridian) +\nqj(parallel) of the link complem",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prop-sec-021-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "prop-sec-021-01.md",
+      "narrative": null,
+      "content": "Let M be a manifold constructed by (pj, qj) surgeries on an N-component link L in S3. Then Z′(M; k) =  ",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 22)",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-021-front-matter-page-22.md",
+      "narrative": null,
+      "content": "We denote this chain (including Lj itself) as ˜Lj and all the chains of L as ˜L. For 1 ≤t ≤¯t(j)\nwe set\nU(p(j)\nt\n,q(j)\nt\n) = T m(j)\nt S · · · T m(j)\n1 S,\n(4.7)\nso that p(j)\n¯t(j) = pj, q(j)\n¯t(j) = qj. From now on we assume for simplicity that none of the numbers\nq(j)\nt\nis divisible by K. Then we are going to prove the following:\nProposition 4.1 Let M be a manifold constructed by (pj, qj) surgeries on an N-component\nlink L in S3. Then\nZ′(M; k) =\n\n\n\f\f\f\nQN\nj=1 qj\n\f\f\f\nK\n\n\nQN\nj=1 sign (qj)\nK\nN\n2\ne−i π\n4 κ sign(L)e−iπ 3\n4\nK−2\nK\nsign(L)\n×ˇq−4∗PN\nj=1 Φ(U(pj,qj ))ˇq(2∗−1\n2)PN\nj=1 sign\n\u0010\npj\nqj\n\u0011\n(4",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 23)",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/sec-022-front-matter-page-23.md",
+      "narrative": null,
+      "content": "The following lemma presents an explicit expression for ˇU(p,q)\nαβ , which is similar to that of\neq. (4.4):\nLemma 4.1\nˇU(p,p)\nαβ\n=\n |q|\nK\n! sign (q)\n√\nK\ne−i π\n4 Φ(U(p,q)) e\n−i π\n4 κP¯t−1\nt=0 sign\n\u0010\npt\nqt\n\u0011\n(4.12)\n×ˇq( 1\n4 −4∗)P¯t\nt=1 mt +(2∗−1\n2)P¯t\nt=1 sign\n\u0010\npt\nqt\n\u0011\nˇq4∗q∗(pα2+sβ2) i\n2\nX\nµ=±1\nµ ˇq−2∗q∗µαβ.\nTo prove the lemma we slightly change eq. (4.11):\nˇTαβ = e−i π\n4 ˇq\n1\n4 −4∗ˇq4∗α2 δαβ,\nˇSαβ =\n1\n√\nK\ni\n2 ˇq±(2∗−1\n2) X\nµ=±1\nµ ˇq−2∗µαβ,\n(4.13)\nthe choice of sign in ˇq±(2∗−1\n2) is arbitrary.\nWe prove eq. (4.12) by induction on ¯t. If ¯t = 1, that is, if U(p,q) = T mS, then the check\nis triv",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 24)",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-023-front-matter-page-24.md",
+      "narrative": null,
+      "content": "the latter relation follows from ps −qr = 1. To complete the veriﬁcation of eq. (4.12) we\nrecall the following identities:\nΦ(SU(p,q)) = Φ(U(p,q)) −3 sign\n p\nq\n!\n,\n(4.18)\ni sign (q) = ei π\n2 sign(\np\nq) sign (p) ,\n(4.19)\nei π\n4 (κ−1)\n |q|\nK\n! \u0012pq∗\nK\n\u0013\n= ei π\n4 (κ−1) sign( p\nq)\n |p|\nK\n!\n.\n(4.20)\nThis ends the proof of the lemma.\nTo ﬁnish the proof of Proposition 4.1 we rearrange some phase factors of eqs. (4.9) and\n(4.12). We substitute a relation\nsign\n\u0010˜L\n\u0011\n= sign (L) +\nN\nX\nj=1\nt(j)−1\nX\nt=1\nsign\n\np(j)\nt\nq(j)\nt\n\n\n(4.21)\ninto the factor e−i π\n4 κ sign(˜L) of eq. (4.9). Then we calculate the co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 25)",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-024-front-matter-page-25.md",
+      "narrative": null,
+      "content": "we can say that Lp,q is constructed by a chain surgery U(−q,−p) = SU(−p,q) applied to an\nempty knot, times a factor\n√\nK\nsin( π\nK). Then we can read the result directly from eq. (4.8) by\nsetting there N = 1, sign (L) = 0, α = 1 and\nU(−q,−p) =\n\n−q\ns\n−p\nr\n\n\n(4.25)\ninstead of U(p,q):\nZ′(Lp,q) =\n |p|\nK\n!\nsign (p) ˇq4∗(p∗(q−r)−Φ(U(−q,−p))) ˇq2∗ˇq2∗p∗−ˇq−2∗p∗\nˇq −1\n=\n |p|\nK\n!\nsign (p) ˇq3s∨(q,p) ˇq2∗ˇq2∗p∗−ˇq−2∗p∗\nˇq −1\n(4.26)\n=\n |p|\nK\n!\nsign (p) ˇq3s∨(q,p) (−1)p∗+1 ˇq\np∗\n2 −ˇq−p∗\n2\nˇq\n1\n2 −ˇq−1\n2 ,\nhere s∨(q, p) is the “checked” Dedekind sum, that is, its denominator is inverted modulo K\nas in e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 26)",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-025-front-matter-page-26.md",
+      "narrative": null,
+      "content": "here β is the color of L0 and αj are the colors of Lj. The signature of L is equal to\nsign (L) = −sign\n\u0012H\nP\n\u0013\n+\nN\nX\nj=1\nsign\n qj\npj\n!\n(4.29)\nHere we introduced notations\nP =\nN\nY\nj=1\npj,\nH = P\nN\nX\nj=1\nqj\npj\n,\n(4.30)\nso that\n\f\f\f\f\fH1\n \nX\n p1\nq1\n, . . . , pn\nqn\n!!\f\f\f\f\f = |H|.\n(4.31)\nThe Proposition 4.1 provides the following expression for the invariant of the Seifert\nmanifold X\n\u0010 p1\nq1 , . . . , pn\nqn\n\u0011\n:\nZ′(X; k) =\ni\n2\n√\nK ei π\n4 κ sign( H\nP )eiπ 3\n4\nK−2\nK\nsign( H\nP )ˇq( 1\n2 −2∗) sign( H\nP )\n×\nX′\n−K≤β≤K\nβ∈2ZZ+1\n(ˇq−2∗β −ˇq2∗β)Z′\nβ(L(con); k),\n(4.32)\nhere\nZ′\nβ(L(con); K) =\n\nsin\n\u0010\nπ\nK\n\u0011\nsin\n\u0010\nπ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 27)",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/sec-026-front-matter-page-27.md",
+      "narrative": null,
+      "content": "The calculation of invariants Z′\nβ(L−pj,qj; k) runs similar to that of Z′(Lp,q; k) of eq. (4.26).\nThe only diﬀerence is that by taking a sum over αj we go from ˜U\n(pj,qj)\nαj1\nto ˜U\n(−qj,pj)\nβ1\nrather\nthan to ˜U\n(−qj,pj)\n11\n. As a result,\nZ′\nβ(L−pj,qj; k) =\n |pj|\nK\n!\nsign (pj) ˇq4∗p∗\njqj−3s∨(qj,pj)ˇq−4∗p∗\njqjβ2 ˇq−2∗p∗\njβ −ˇq2∗p∗\nj β\nˇq−2∗−ˇq2∗\n(4.37)\nand\nZ′(X; k) =\ni\n2\n√\nK ei π\n4 κ sign( H\nP )eiπ 3\n4\nK−2\nK\nsign( H\nP )ˇq( 1\n2−2∗) sign( H\nP )\n(4.38)\n×\n |p|\nK\n!\nsign (P) ˇq4∗P ∗H−3PN\nj=1 s∨(qj,pj)\n×\n1\nˇq−2∗−ˇq2∗\nX′\n−K≤β≤K\nβ∈2ZZ+1\nˇq−4∗P ∗Hβ2\nQN\nj=1(ˇq−2∗p∗\nj β −ˇq2∗p∗\njβ)\nˇq−2∗−ˇq2∗\nThe preexponen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 28)",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "target": "../sections/sec-027-front-matter-page-28.md",
+      "narrative": null,
+      "content": "=\n2\nˇq−2∗−ˇq2∗\nX\nn∈Λ\nCn\nX′\n−K≤β≤K\nβ∈2ZZ+1\nˇq−4∗P ∗Hβ2(ˇq−2∗(n+1)β −ˇq−2∗(n−1)β)\n= 2\n√\nK\n\u0012P ∗H\nK\n\u0013\nei π\n4 (κ−1) X\nn∈Λ\nCn\nˇq4∗P H∗(n+1)2 −ˇq4∗P H∗(n−1)2\nˇq−2∗−ˇq2∗\n= 2\n√\nK\n\u0012P ∗H\nK\n\u0013\nei π\n4 (κ−1) X\nn∈Λ\nCnˇq4∗P H∗(n2+1) ˇq2∗P H∗n −ˇq−2∗P H∗n\nˇq−2∗−ˇq2∗\n.\nCombining eqs. (4.38) and (4.42) we ﬁnd the formula\nZ′(X; k) =\n |H|\nK\n!\nsign (H) ˇq4∗P ∗H−3·4∗sign( H\nP )−3PN\nj=1 s∨(qj,pj)\n(4.43)\n×\nX\nn∈Λ\nCnq4∗P H∗(n2+1) ˇq−2∗P H∗n −ˇq2∗P H∗n\nˇq−2∗−ˇq2∗\n,\nwhich demonstrates that Z′(X; k) ∈ZZ[ˇq].\nNow we come back to eqs. (4.41), (4.42) and use the fact that for n ∈ZZ,\nX′\n−K≤β≤K\nβ∈2ZZ+1\nˇq−4∗P ∗Hβ2−2∗nβ =\n√\nK\n\u0012P",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 29)",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/sec-028-front-matter-page-29.md",
+      "narrative": null,
+      "content": "gaussian exponential ˇq−\nβ2\n4P H∗. This procedure leads to the following relation:\n[I(ˇq)]⋄=\n\n\n1\nˇq2∗−ˇq−2∗\nei π\n4 sign( H\nP )\n2\n√\n2K\ns\f\f\f\f\nH\nP\n\f\f\f\f\n+∞\nZ\n−∞\n[β=0]\ndβ ˇq−1\n4\nH\nP β2\nQN\nj=1\n\u0012\nˇq\n−β\n2pj −ˇq\nβ\n2pj\n\u0013\n\u0010\nˇq−β\n2 −ˇq\nβ\n2\n\u0011N−2\n\n\n∨\n(4.49)\n=\n\n\n1\nq\n2\nK sin\n\u0010\nπ\nK\n\u0011\nsign\n\u0010\nH\nP\n\u0011\nK\nei 3\n4π sign( H\nP )\ns\f\f\f\f\nH\nP\n\f\f\f\f\n+∞\nZ\n−∞\n[β=0]\ndβ e−iπ\n2K\nH\nP β2\nQN\nj=1 sin\n\u0010\nπ\nK\nβ\npj\n\u0011\nsinN−2 \u0010\nπ\nKβ\n\u0011\n\n\n∨\n.\nSince\n\u0014\nˇq4∗P ∗H−3·4∗sign( H\nP )−3PN\nj=1 s∨(qj,pj)\n\u0015⋄\n=\n\u0014\nˇq\n1\n4\nH\nP −3\n4 sign( H\nP )−3PN\nj=1 s(qj,pj)\n\u0015∨\n(4.50)\nand according to [11], [12], [16] (see, e.g. eq.(4.9) of [16])\nZ(tr)(X;",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 30)",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "../sections/sec-029-front-matter-page-30.md",
+      "narrative": null,
+      "content": "tion 1.2 gives us enough information in order to derive eq. (1.23) in the form\n\"\n|H1(M, ZZ)|\n |H1(M, ZZ)|\nK\n!\nZ′(M; k)\n#⋄\n(5.1)\n=\n\u0014\n|H1(M, ZZ)|\n3\n2 exp\n\u0012\n(Sn(M) −Sn(S3))\n\u0012iπ\nK\n\u0013n\u0013\u0015∨\n.\nThis also proves Ohtsuki’s Theorem 1.2, since we can deﬁne the invariants λn(M) by\neq. (1.20). According to the comments of [7], [8], we may also conclude that Sn(M), as\ndeﬁned by the surgery formula (1.27), are indeed invariants of M.\nIn our previous paper [18] we studied the properties of Sn(M) as they follow from\neq. (1.27), Proposition 1.2 and some other properties of Reshetikhin’s formula [19]. Now\nwe use eq",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 31)",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../sections/sec-030-front-matter-page-31.md",
+      "narrative": null,
+      "content": "with only trivalent vertices. Then according to [18], for any Sn′(M), n′ < n the alternating\nsums are equal to zero\nX\nL′′⊂L′\n(−1)#L′′Sn′(χL′′(M)) = 0,\n(5.6)\nif L′ ⊂L and #L′ ≥n′. Therefore an invariant Sn′(M) is of Ohtsuki order less than n′\nwith respect to L and its subdiagrams (of course, there exist other links for which the l.h.s.\nof eq. (5.6) is non-zero if #L′ = n′). As a result, only the term C0,...,0,1Sn(M) in eq. (5.5)\nmatters for the calculation of the alternating sum (5.4). Since, according to [18], the sum\nX\nL′⊂L\n(−1)#L′Sn(χL′(S3))\n(5.7)\nis non-zero, we conclude that the sum (5.4)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter (page 32)",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../sections/sec-031-front-matter-page-32.md",
+      "narrative": null,
+      "content": "Acknowledgements\nI am very thankful to J. Roberts for many stimulating discussions and for attracting my\nattention to the results of [5] and [6]. I also appreciate the numerous conversations with\nD. Freed, P. Freund, C. Gordon, L. Kauﬀman, N. Reshetikhin, A. Vaintrob, O. Viro,\nK. Walker and their comments.\nI am especially thankful to O. Alvarez, L. Mezincescu\nand R. Nepomechie for their constant encouragement and friendly support.\nThis work was supported by the National Science Foundation under Grant No. PHY-92\n09978.\nReferences\n[1] E. Witten, Commun. Math. Phys. 121 (1989) 351.\n[2] N. Resheti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504015v2/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "../sections/sec-032-acknowledgements.md",
+      "narrative": null,
+      "content": "I am very thankful to J. Roberts for many stimulating discussions and for attracting my\nattention to the results of [5] and [6]. I also appreciate the numerous conversations with\nD. Freed, P. Freund, C. Gordon, L. Kauﬀman, N. Reshetikhin, A. Vaintrob, O. Viro,\nK. Walker and their comments.\nI am especially thankful to O. Alvarez, L. Mezincescu\nand R. Nepomechie for their constant encouragement and friendly support.\nThis work was supported by the National Science Foundation under Grant No. PHY-92\n09978.\nReferences\n[1] E. Witten, Commun. Math. Phys. 121 (1989) 351.\n[2] N. Reshetikhin, V. Turaev,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

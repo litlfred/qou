@@ -1,0 +1,982 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2605.22763v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Large language models (LLMs) have recently shown remarkable promise in solving complex\nmathematics problems [21, 65], but unreliability remains a primary barrier to their integra-\ntion into mathematics research. Because LLM-generated natural language proofs can contain\nsubtle logical errors, or “hallucinations,” they require expensive expert review. Mistakes in\nunreviewed intermediate steps can cascade through a proof, limiting the complexity of tasks\nthat can be delegated to AI.\nRecent efforts [29, 1] mitigate these issues by using AI to generate proofs in formal\nlanguages like Lean [43], in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "2026-5-22\nAdvancing Mathematics Research with\nAI-Driven Formal Proof Search\nGeorge Tsoukalas1†, Anton Kovsharov1†, Sergey Shirobokov1†, Anja Surina1, Moritz Firsching1, Gergely\nBérczi2, Francisco J. R. Ruiz1, Arun Suggala1, Adam Zsolt Wagner1, Eric Wieser1, Lei Yu1, Aja Huang1, Miklós\nZ. Horváth1, Andrew Ferrauiolo1, Henryk Michalewski1, Codrut Grosu3, Thomas Hubert1, Matej Balog1,\nPushmeet Kohli1 and Swarat Chaudhuri1†\n1Google DeepMind1, 2Aarhus University, 3Google\nLarge language models (LLMs) increasingly excel at mathematical reasoning, but their unreliability\nlimits their utility in mathem",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "AlphaProof Nexus",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-alphaproof-nexus.md",
+      "narrative": null,
+      "content": "Lean.\nLean [43] is a proof assistant in which definitions, theorems, and proofs are all\nmechanically verified code. Proofs are constructed via a sequence of applications of tactics,\nor elementary proof steps. Lean’s compiler “executes” a proof tactic-by-tactic, tracking the\nproof goals pending after every tactic. A proof is correct if it leads the compiler to a state\nwith no pending goals.\nLean includes a special sorry tactic, which immediately closes pending goals while\npassing the type checker. Proving a theorem thus amounts to the generation of type-safe\ncode without sorry tactics.\nInput an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/figure-img-p003-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/figure-img-p003-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/figure-img-p003-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Systematic Evaluation on Open Problems",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-systematic-evaluation-on-open-problems.md",
+      "narrative": null,
+      "content": "\\paragraph{{\\erdos} Problems.} \n\nBloom maintains an online catalog \\cite{erdosproblems} of over 1200 open problems posed by Paul {\\erdos} and his collaborators.\nThe open-source Formal Conjectures repository \\cite{deepmind2026formalconjectures} contains Lean formalizations of a subset of these problems.\nWe ran Agent (D) on all these formal statements (353 at the time of the run), terminating the search if no proof was found within 3000 episodes. The agent solved 9/353 problems (Table~\\ref{tab:major_results} and supplementary text); after each solve, experts on our team validated that the Lean s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/figure-img-p005-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/figure-img-p005-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/figure-img-p005-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/figure-img-p005-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/figure-img-p005-5",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-5.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/figure-img-p005-6",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-6.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/figure-img-p005-7",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-7.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/figure-img-p005-8",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-8.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/figure-img-p005-9",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-9.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Deployment in Mathematics Research",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-deployment-in-mathematics-research.md",
+      "narrative": null,
+      "content": "\\paragraph{Optimization Theory.} Agent (D) resolved an open question in optimization: proving an exact $\\mathcal{O}(1/t)$ convergence rate for the Anchored Gradient Descent-Ascent (GDA) algorithm for min-max convex-concave optimization, thereby tightening the slower bound established by \\cite{ryu2019ode}. \nThe proof departs from continuous-time ordinary differential equations (ODE) analysis used in previous work, instead using a discrete-time recurrence-based approach. The agent did not merely verify a fixed algorithm: we marked the learning schedule as a parameter within an \\texttt{EVOLVE-VAL",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Impact of Agent Architecture and Model",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-004-impact-of-agent-architecture-and-model.md",
+      "narrative": null,
+      "content": "Exploration of a large space of open problems is expensive, and we chose the full-featured agent (agent (D)) for this based on its strong performance on competition benchmarks. To understand which architectural components are necessary for its successes, we compared its performance against agents (A), (B), and (C) on the {\\erdos} problem set in Table~\\ref{tab:major_results}. \n\nWe compared the agents by analyzing the solve rate against the cost (in US dollars) per successfully proven problem. \nWe report computational cost in USD because it directly measures the barrier to reproducing this work",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discussion",
+      "pageStart": 10,
+      "pageEnd": 18,
+      "target": "../sections/sec-005-discussion.md",
+      "narrative": null,
+      "content": "We have provided a large-scale demonstration of the value of formal proof search agents on\nresearch-level mathematical problems. Recently, some natural-language reasoning systems\nhave been shown to succeed in research-level mathematical tasks, including Erdős problems\n[20, 4]. However, the use of AI-generated informal proofs, either as standalone products or\nas inputs to a subsequent formalization stage, requires careful validation by human experts.\nFormal verification can serve as a filter for determining which proofs merit human review.\nThe effectiveness of our basic agent in our post-hoc an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Materials and Methods",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-006-materials-and-methods.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Further Details on AlphaProof Nexus Agents",
+      "pageStart": 18,
+      "pageEnd": 22,
+      "target": "../sections/sec-007-further-details-on-alphaproof-nexus-agents.md",
+      "narrative": null,
+      "content": "1\n# Main Loop\n2\ninitial_sketch = lean_compiler.check(initial_file)\n3\nfinal_sketch = prover_subagent(initial_sketch)\n4\n5\n# Basic prover subagent\n6\ndef prover_step(sketch):\n7\nsession = LlmSketcher(sketch) # Start an LLM session\n8\nwhile tool_call := session.recv():\n9\nif tool_call.is_search_replace():\n10\nsketch, feedback = search_replace_then_compile(sketch, tool_call)\n11\nsession.send(feedback)\n12\n13\nif lean_compiler.verify_integrity(sketch): # Check for hacks\n14\nreturn sketch\n15\n16\ndef prover_subagent(initial_sketch):\n17\nsketch = initial_sketch\n18\nwhile within_budget() and sketch.contains_sorry()",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Prompts",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-008-prompts.md",
+      "narrative": null,
+      "content": "Figure 6 shows the main pieces of the prompt used for prover subagents in the full-featured\nagent (D). Figure 7 shows the prompt for the rating subagents in the full-featured agent (D).\nFigure 8 shows the full prompt for the basic agent (A).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Supplementary Text",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-009-supplementary-text.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Related Work",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "../sections/sec-010-related-work.md",
+      "narrative": null,
+      "content": "Formal Theorem Proving with LLMs.\nThere is a large literature on neural-network-guided\nsearch over machine-checkable formal proofs [66, 15, 16, 64, 40]. Early work such as\nGPT- 𝑓[48] established the viability of language models in this setting; subsequent systems\nimproved tactic generation, premise selection, and interaction with external provers [35, 67].\nThe Draft-Sketch-Prove system [34] introduced the hierarchical approach of generating\ninformal sketches before translating them into formal steps, and recent systems such as\nHilbert [63] and Aristotle [1] further separate high-level proof p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Selection of Erdős and OEIS Problems",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-011-selection-of-erdős-and-oeis-problems.md",
+      "narrative": null,
+      "content": "For the Erdős evaluation, we ran our agent on all Lean statements of Erdős problems available\nin the Formal Conjectures repository [23] as of early February 2026 – 353 problems in total.\nWe did not select which problems to attempt; the set was determined entirely by what\nthe open-source community had formalized from the 1200+ problems catalogued on the\nErdosProblems site. We recognize that this process has a bias toward problems amenable to\nformalization in Lean.\nFor the OEIS evaluation, we began with a corpus of 2649 open conjectures drawn from the\nOEIS [56]. We prompted Gemini to select 500",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Details on Comparisons across Agent Architectures and Models",
+      "pageStart": 27,
+      "pageEnd": 30,
+      "target": "../sections/sec-012-details-on-comparisons-across-agent-architecture.md",
+      "narrative": null,
+      "content": "Figure 9 reports, for each Erdős problem, the distribution of computational costs for successful\nruns, along with the solve rate for each agent. We note a large variance in the cost for most\nproblems and methods, which highlights the stochastic nature of the agent. This is especially\nnoticeable on problems such as Erdős 12(ii) and 152.\nerdos_12(i)\nerdos_12(ii)\nerdos_125\nerdos_138\nerdos_152\nerdos_26\nerdos_741(i)\nerdos_741(ii)\nerdos_846\nProblem\n0\n250\n500\n750\n1000\n1250\n1500\n1750\nCost, USD\n100%\n100%\n70%\n80%\n100%\n100%\n90%\n90%\n10%\n20%\n0%\n50%\n100%\n100%\n50%\n100%\n80%\n80%30%\n10%\n100%\n100%\n100%\n100%\n100%",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Deformalized Lean Proofs",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-013-deformalized-lean-proofs.md",
+      "narrative": null,
+      "content": "Advancing Mathematics Research with AI-Driven Formal Proof Search\nThe LLM cost for each agent was computed as follows:\n𝑡𝑜𝑡𝑎𝑙𝑐𝑜𝑚𝑝𝑜𝑛𝑒𝑛𝑡= 𝑖𝑛𝑝𝑢𝑡∗𝑝𝑖𝑛𝑝𝑢𝑡+ 𝑐𝑎𝑐ℎ𝑒𝑟𝑒𝑎𝑑∗𝑝𝑐𝑎𝑐ℎ𝑒+ 𝑜𝑢𝑡𝑝𝑢𝑡∗𝑝𝑜𝑢𝑡𝑝𝑢𝑡,\n𝑡𝑜𝑡𝑎𝑙= 𝑡𝑜𝑡𝑎𝑙𝑠𝑘𝑒𝑡𝑐ℎ𝑒𝑟+ 𝑡𝑜𝑡𝑎𝑙𝑟𝑎𝑡𝑒𝑟\nwhere 𝑖𝑛𝑝𝑢𝑡includes user prompt, agent session prefix, thoughts and tool calls outputs and\nexcludes cached tokens, 𝑐𝑎𝑐ℎ𝑒𝑟𝑒𝑎𝑑accounts for the input tokens read from cache and 𝑜𝑢𝑡𝑝𝑢𝑡\nincludes model output and thoughts. 𝑝is the corresponding standard price per token as per\nhttps://ai.goog",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Erdős #12-(ii)",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "../sections/sec-014-erdős-12-ii.md",
+      "narrative": null,
+      "content": "Next, we give a proof for the second question of the three listed in Erdős #12.\nTheorem (ii). There exists an infinite set 𝐴⊂ℤ+ with no distinct 𝑎, 𝑏, 𝑐∈𝐴with 𝑏, 𝑐> 𝑎,\n31\nAdvancing Mathematics Research with AI-Driven Formal Proof Search\nand 𝑎|𝑏+ 𝑐, yet for any 𝜀> 0 and all sufficiently large 𝑁:\n|𝐴∩{1, . . . , 𝑁}| ≥𝑁1−𝜀.\nConsequently, there is no absolute constant 𝑐> 0 such that every such set 𝐴satisfies\n|𝐴∩{1, . . . , 𝑁}| < 𝑁1−𝑐for infinitely many 𝑁.\nProof. The proof is similar to the previous one for Erdős #12(i), differing mainly in the use\nof a Behrend-style construc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Erdős #125",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "../sections/sec-015-erdős-125.md",
+      "narrative": null,
+      "content": "Question. Let 𝐴= {Í 𝜖𝑘3𝑘: 𝜖𝑘∈{0, 1}} be the set of integers which have only the digits 0,1\nwhen written base 3, and 𝐵= {Í 𝜖𝑘4𝑘: 𝜖𝑘∈{0, 1}} be the set of integers which have only\nthe digits 0, 1 when written base 4. Does 𝐴+ 𝐵have positive lower density?\nProof. We show that the answer is no: the lower density is zero. Let 𝐴and 𝐵be defined as\nthe sets of integers whose base 3 and base 4 representations, respectively, contain only the\ndigits 0 and 1. We will show that the lower density of 𝐴+ 𝐵is zero.\nFor any integer 𝑎∈𝐴, we can decompose it at the 𝑘-th digit into a top and bo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Erdős #138, Differences Variant",
+      "pageStart": 35,
+      "pageEnd": 35,
+      "target": "../sections/sec-016-erdős-138-differences-variant.md",
+      "narrative": null,
+      "content": "Question. Let the van der Waerden number 𝑊(𝑘) be such that whenever 𝑁≥𝑊(𝑘) and\n{1, . . . , 𝑁} is 2-coloured there must exist a monochromatic 𝑘-term arithmetic progression. Is\nit true that 𝑊(𝑘+ 1) −𝑊(𝑘) →∞?\nProof. We will show that 𝑊(𝑘+ 1) ≥𝑊(𝑘) + 𝑘, which establishes that 𝑊(𝑘+ 1) −𝑊(𝑘) →∞.\nGiven a 2-coloring of the first 𝑊(𝑘) −1 integers without a monochromatic 𝑘-AP, we can\nextend it by 𝑘further elements without creating a monochromatic (𝑘+ 1)-AP by proceeding\ngreedily. Adding new elements one by one, suppose we have validly colored up to 𝑀(where\n𝑀< 𝑊(𝑘) −1 + 𝑘);",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Erdős #741-(i)",
+      "pageStart": 35,
+      "pageEnd": 37,
+      "target": "../sections/sec-017-erdős-741-i.md",
+      "narrative": null,
+      "content": "Question. Let 𝐴⊆ℕbe such that 𝐴+ 𝐴has positive upper density. Can one always decompose\n𝐴= 𝐴1 ⊔𝐴2 such that 𝐴1 + 𝐴1 and 𝐴2 + 𝐴2 both have positive upper density?\nProof. We show that the answer is yes. We use an alternating block partition. Given a rapidly\n35\nAdvancing Mathematics Research with AI-Driven Formal Proof Search\ngrowing sequence 𝑀0 < 𝑀1 < 𝑀2 < · · · , we define\n𝐴1 = 𝐴∩\nØ\n𝑘\n(𝑀2𝑘, 𝑀2𝑘+1],\n𝐴2 = 𝐴\\ 𝐴1.\nIn odd-indexed intervals (𝑀2𝑘, 𝑀2𝑘+1], all elements of 𝐴belong to 𝐴1; in even-indexed inter-\nvals (𝑀2𝑘+1, 𝑀2𝑘+2], they all belong to 𝐴2. The sequence 𝑀is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Erdős #741-(ii)",
+      "pageStart": 37,
+      "pageEnd": 37,
+      "target": "../sections/sec-018-erdős-741-ii.md",
+      "narrative": null,
+      "content": "Question. Is there a basis 𝐴of order 2 such that if 𝐴= 𝐴1 ⊔𝐴2 then 𝐴1 + 𝐴1 and 𝐴2 + 𝐴2\ncannot both have bounded gaps?\nProof. We show that the answer is yes by constructing a pathological basis 𝐴with “forbidden\nzones” that force any partition to create arbitrarily large gaps in at least one component\nsumset.\nStep 1: The construction. Choose a sequence of rapidly growing scales 𝑃𝑘= 100𝑘. For each\n𝑘≥1, define a forbidden zone 𝑍𝑘, which is a broad interval of integers running roughly\nfrom 11\n2 𝑃𝑘to 11𝑃𝑘+ 𝑘. In the middle of this zone, we leave a single “oasis” — an isolated\nele",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "alphaproof-nexus-results/blob/main/APNOutputs/ErdosProblems/erdos_12",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "../sections/sec-019-alphaproof-nexus-resultsblobmainapnoutputserdosp.md",
+      "narrative": null,
+      "content": ".parts.ii.lean. Our original communication of both results can be found in the problem\nthread on the ErdosProblems site (https://www.erdosproblems.com/forum/thread\n/741).\n37\nAdvancing Mathematics Research with AI-Driven Formal Proof Search",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Erdős #26, More General Variant",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "../sections/sec-020-erdős-26-more-general-variant.md",
+      "narrative": null,
+      "content": "Theorem. Let M(𝑆) denote the set of multiples of a subset 𝑆⊆ℕ, and let 𝑑(𝑋) denote\nthe upper asymptotic density of a set 𝑋. There exists a sequence 𝐴: ℕ→ℕsatisfying\nÍ\n𝑖∈ℕ1/𝐴(𝑖) = ∞, such that for 𝜖= 1/4 and for all 𝑘≥1, we have 𝑑(M(𝐴+ 𝑘)) < 1 −𝜖.\nProof. We construct the sequence iteratively in finite blocks and show that for any arbitrary\nshift 𝑘, we can bound the upper density of the shifted sequence by analyzing three distinct\ncases, the third case relying on the construction being similar to the simple counterexample\nof Ruzsa which resolved the original question Erdős #26.\nL",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/thm-sec-020-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "thm-sec-020-01.md",
+      "narrative": null,
+      "content": "Let M(𝑆) denote the set of multiples of a subset 𝑆⊆ℕ, and let 𝑑(𝑋) denote the upper asymptotic density of a set 𝑋. There exists a sequence 𝐴: ℕ→ℕsatisfying Í 𝑖∈ℕ1/𝐴(𝑖) = ∞, such that for 𝜖= 1/4 and for all 𝑘≥1, we have 𝑑(M(𝐴+ 𝑘)) < 1 −𝜖.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/lem-sec-021-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "lem-sec-021-02.md",
+      "narrative": null,
+      "content": "Three points in 𝐴are collinear if and only if their corresponding edges form a triangle in 𝐾∞. Proof of Lemma. First, assume three edges form a triangle in 𝐾∞with vertices 𝑎, 𝑏, 𝑐∈𝑉. The corresponding points in 𝐴are: 𝑃𝑎𝑏= (𝑎+ 𝑏, 𝑎2 + 𝑎𝑏+ 𝑏2) 𝑃𝑏𝑐= (𝑏+ 𝑐, 𝑏2 + 𝑏𝑐+ 𝑐2) 𝑃𝑐𝑎= (𝑐+ 𝑎, 𝑐2 + 𝑐𝑎+ 𝑎2) The slope 𝑚of the line connecting 𝑃𝑎𝑏and 𝑃𝑏𝑐is given by: 𝑚= (𝑏2 + 𝑏𝑐+ 𝑐2) −(𝑎2 + 𝑎𝑏+ 𝑏2) (𝑏+ 𝑐) −(𝑎+ 𝑏) = 𝑐2 −𝑎2 + 𝑏𝑐−𝑎𝑏 𝑐−𝑎 Factoring the numerator yields: 𝑚= (𝑐−𝑎)(𝑐+ 𝑎) + 𝑏(𝑐−𝑎) 𝑐−𝑎 = 𝑎+ 𝑏+ 𝑐 By symmetry, the slope of the line co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/lem-sec-021-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "lem-sec-021-03.md",
+      "narrative": null,
+      "content": "Any 𝑛-element subset of 𝐴contains at least 𝑛/2 points with no three on a line. Proof of Lemma. Let 𝑆⊂𝐴be an arbitrary subset of size 𝑛. The elements of 𝑆correspond to a subgraph 𝐺𝑆⊂𝐾∞containing exactly 𝑛edges. Every graph with 𝑛edges contains a bipartite subgraph 𝐵𝑆with at least 𝑛/2 edges. Because 𝐵𝑆is bipartite, it contains no odd cycles and is therefore triangle-free. By the previous lemma, the corresponding points in 𝐴 Advancing Mathematics Research with AI-Driven Formal Proof Search contain no collinear triplets. This provides a subset of at least ⌈𝑛/2⌉points with no thr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Erdős #846",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "../sections/sec-021-erdős-846.md",
+      "narrative": null,
+      "content": "Theorem. Let 𝐴⊂ℝ2 be an infinite set for which there exists some 𝜖> 0 such that in any\nsubset of 𝐴of size 𝑛there are always at least 𝜖𝑛with no three on a line.\nIs it true that 𝐴is the union of a finite number of sets where no three are on a line?\nProof. We will show that there exists an infinite set 𝐴⊂ℝ2 for which any 𝑛-element subset\ncontains at least 𝑛/2 points with no three on a line, but 𝐴is not the union of a finite number\nof sets where no three are on a line.\nLet 𝐾∞be the countably infinite complete graph with vertex set 𝑉= {𝑥1, 𝑥2, . . . }. We\nchoose the sequence of real",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/thm-sec-021-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "thm-sec-021-01.md",
+      "narrative": null,
+      "content": "Let 𝐴⊂ℝ2 be an infinite set for which there exists some 𝜖> 0 such that in any subset of 𝐴of size 𝑛there are always at least 𝜖𝑛with no three on a line. Is it true that 𝐴is the union of a finite number of sets where no three are on a line?",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Erdős #152",
+      "pageStart": 41,
+      "pageEnd": 42,
+      "target": "../sections/sec-022-erdős-152.md",
+      "narrative": null,
+      "content": "Theorem. For a Sidon set 𝐴⊂ℕof size 𝑛, let 𝐼(𝐴+ 𝐴) count the isolated elements of the\nsumset — those 𝑠∈𝐴+ 𝐴with 𝑠± 1 ∉𝐴+ 𝐴. Define 𝑓(𝑛) as the minimum of 𝐼(𝐴+ 𝐴) over all\nSidon sets of size 𝑛. Then 𝑓(𝑛) ≥(𝑛2 −100𝑛−16)/16, so in particular 𝑓(𝑛) →∞.\nProof. The proof establishes, for every Sidon set 𝐴of size 𝑛:\n16 · 𝐼(𝐴+ 𝐴) + 100𝑛+ 16 ≥𝑛2.\n(★)\nLet 𝐷= {𝑎−𝑏: 𝑎, 𝑏∈𝐴} denote the difference set and 𝑆= 𝐴+ 𝐴the sumset. For\nany set 𝑋⊆ℤ, let 𝑁𝑘(𝑋) := |𝑥∈𝑋: 𝑥+ 𝑘∈𝑋| be the number of pairs at distance 𝑘,\n𝑉2(𝑋) := |𝑥∈𝑋: 𝑥± 1 ∈𝑋| be the number of interior",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/thm-sec-022-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 42,
+      "target": "thm-sec-022-01.md",
+      "narrative": null,
+      "content": "For a Sidon set 𝐴⊂ℕof size 𝑛, let 𝐼(𝐴+ 𝐴) count the isolated elements of the sumset — those 𝑠∈𝐴+ 𝐴with 𝑠± 1 ∉𝐴+ 𝐴. Define 𝑓(𝑛) as the minimum of 𝐼(𝐴+ 𝐴) over all Sidon sets of size 𝑛. Then 𝑓(𝑛) ≥(𝑛2 −100𝑛−16)/16, so in particular 𝑓(𝑛) →∞.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "OEIS Conjectures",
+      "pageStart": 42,
+      "pageEnd": 47,
+      "target": "../sections/sec-023-oeis-conjectures.md",
+      "narrative": null,
+      "content": "Theorem. (A conjecture of OEIS A051293, 2002) Let 𝑎𝑛denote the number of nonempty\nsubsets of {1, 2, 3, . . . , 𝑛} whose elements have an integer average. Then\n𝑎𝑛= 2𝑛+1\n𝑛\n\u0012\n1 + 1\n𝑛+ 3\n𝑛2 + 13\n𝑛3 + 75\n𝑛4 + 541\n𝑛5 + 𝑜\n\u0012 1\n𝑛5\n\u0013\u0013\n42\nAdvancing Mathematics Research with AI-Driven Formal Proof Search\nProof. A subset 𝑆⊆{1, 2, . . . , 𝑛} has an integer average if and only if the sum of its elements is\ndivisible by its cardinality |𝑆|. Let 𝑁(𝑛, 𝑘) denote the number of subsets of size 𝑘whose sum is\ndivisible by 𝑘. We can express the total number of such subsets as 𝑎𝑛= Í𝑛\n𝑘=1 𝑁(\ud835",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A variant of the Graph Reconstruction Conjecture",
+      "pageStart": 47,
+      "pageEnd": 51,
+      "target": "../sections/sec-024-a-variant-of-the-graph-reconstruction-conjecture.md",
+      "narrative": null,
+      "content": "The Kelly-Ulam graph reconstruction program aims to recover a graph from its deck of\none-vertex-deleted subgraphs [62, 36]. A standard bipartite version was formulated by\nBondy and Hemminger as the problem of showing that bipartite graphs are reconstructible\n[10]. The following theorem proves a structured incidence-deletion analogue under strong\ntype-distinguishability assumptions.\nTerminology Let Ω = 𝐿⊔𝑅be a finite vertex set with a partition into the disjoint parts\n𝐿, 𝑅⊆Ω. A graph 𝐾is bipartite with respect to (𝐿, 𝑅) if every edge of 𝐾has one endpoint in\n𝐿and one endpoint in 𝑅. We",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/thm-sec-024-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Weak bipartite graph reconstruction",
+      "pageStart": 47,
+      "pageEnd": 51,
+      "target": "thm-sec-024-01.md",
+      "narrative": null,
+      "content": "Let 𝐺and 𝐻be finite simple graphs on the same finite vertex set Ω, both bipartite with respect to the same parts Ω = 𝐿⊔𝑅and |Ω| ≥3. Assume that 𝐺is 2-connected and all vertex types of 𝐺are pairwise distinct, that is, 𝜏𝐺(𝑥) ≠𝜏𝐺(𝑦) if 𝑥≠𝑦. If D𝐵(𝐺) = D𝐵(𝐻), then 𝐺and 𝐻are bipartite-isomorphic.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Log-Concavity of Hilbert Sequences",
+      "pageStart": 51,
+      "pageEnd": 57,
+      "target": "../sections/sec-025-log-concavity-of-hilbert-sequences.md",
+      "narrative": null,
+      "content": "Pure 𝑂-sequences, introduced in the context of Stanley’s work on Hilbert functions of mono-\nmial level algebras in the late 1970s, have been studied intensively over the last fifteen years\n[57]. They exhibit surprisingly strong positivity phenomena, especially in small codimension\nand type. Although pure 𝑂-sequences are not log-concave in general, the case of codimension\n3 and type 2 remained open for over a decade [9, 68]. The following theorem establishes\nlog-concavity in precisely this remaining case.\nTheorem. Every pure 𝑂-sequence of codimension 3 and type 2 is log-concave.\nTerminology.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/thm-sec-025-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 57,
+      "target": "thm-sec-025-01.md",
+      "narrative": null,
+      "content": "Every pure 𝑂-sequence of codimension 3 and type 2 is log-concave. Terminology. A monomial 𝑥𝑚(0) 𝑥𝑚(1) 𝑥𝑚(2) in three variables is identified with its exponent vector 𝑚= (𝑚(0), 𝑚(1), 𝑚(2)) ∈ℕ3. We write 𝑚′ ≤𝑚for coordinate-wise inequality and |𝑚| = 𝑚(0) + 𝑚(1) + 𝑚(2) for total degree. A finite order ideal Γ ⊂ℕ3 is a finite set closed downward under this order: if 𝑛∈Γ and 𝑚≤𝑛, then 𝑚∈Γ. A monomial 𝑚∈Γ is maximal if every 𝑛∈Γ with 𝑚≤𝑛also satisfies 𝑛≤𝑚. The ideal is pure if all maximal monomials have the same total degree; this common degree is the socle degree. The typ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Convergence Proof of Modified Anchored Gradient Descent-Ascent",
+      "pageStart": 57,
+      "pageEnd": 58,
+      "target": "../sections/sec-026-a-convergence-proof-of-modified-anchored-gradien.md",
+      "narrative": null,
+      "content": "A natural-language version of the convergence proof we discovered can be found in Surina et\nal. [58]. The Lean proof is at https://github.com/google-deepmind/alphaproof-n\nexus-results/blob/main/APNOutputs/Optimization/LastIterateConvergence.\nlean.\n57\nAdvancing Mathematics Research with AI-Driven Formal Proof Search",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/lem-sec-027-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 59,
+      "target": "lem-sec-027-02.md",
+      "narrative": null,
+      "content": "For every edge 𝑢𝑣∈𝐸(𝐺) we have 𝑐(𝑢) + 𝑐(𝑣) ≤|𝑁(𝑢) ∪𝑁(𝑣)|.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/lem-sec-027-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 59,
+      "target": "lem-sec-027-03.md",
+      "narrative": null,
+      "content": "For every edge 𝑢𝑣∈𝐸(𝐺) we have |𝑁(𝑢) ∪𝑁(𝑣)| ≤𝐿𝑆(𝐺) + 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/lem-sec-027-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 59,
+      "target": "lem-sec-027-04.md",
+      "narrative": null,
+      "content": "If 𝑣is a light vertex, then |𝑁(𝑣) ∩𝑆| < 𝜇. Advancing Mathematics Research with AI-Driven Formal Proof Search",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prop-sec-027-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 59,
+      "target": "prop-sec-027-05.md",
+      "narrative": null,
+      "content": "Let 𝑐: 𝑉→ℝand 𝜇≥0 satisfy: 1. 𝑐(𝑣) ≤𝑑(𝑣) for all 𝑣, 2. 𝑐(𝑢) + 𝑐(𝑣) ≤2𝜇for every edge 𝑢𝑣, 3. 𝑆:= {𝑢: 𝑐(𝑢) > 𝜇} is an independent set, 4. |𝑁(𝑣) ∩𝑆| < 𝜇for every 𝑣∉𝑆. Then Í 𝑣𝑐(𝑣) ≤𝑛𝜇. Proof of Claim. We assume 𝑆is non-empty, otherwise the claim is trivially true. The proof uses a discharging argument: it sends the excess 𝑐(𝑢) −𝜇from a heavy vertex 𝑢∈𝑆to its neighbors. The redistribution keeps the total sum Í 𝑣𝑐(𝑣) constant. However, the amount sent to a light vertex 𝑣is less than the slack 𝜇−𝑐(𝑣), so the overall sum can’t exceed 𝑛𝜇. Precisely, define",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Written on the Wall, Conjecture 2",
+      "pageStart": 58,
+      "pageEnd": 59,
+      "target": "../sections/sec-027-written-on-the-wall-conjecture-2.md",
+      "narrative": null,
+      "content": "For a graph 𝐺, let 𝑉(𝐺) be the set of vertices and 𝐸(𝐺) the set of edges. For 𝑣∈𝑉(𝐺), write\n𝑑(𝑣) for the degree of 𝑣, and let 𝑁(𝑣) be the set of vertices adjacent to 𝑣in 𝐺. Let 𝛼(𝑣) be\nthe local independence number of 𝑣: the size of the largest independent set in 𝐺[𝑁(𝑣)]. Let\nℓ(𝐺) := 1\n𝑛\nÍ\n𝑣𝛼(𝑣) be the average of the local independence numbers, and let 𝐿𝑆(𝐺) be the\nmaximum number of leaves in a spanning tree of 𝐺, or 0 if 𝐺is not connected.\nTheorem. If 𝐺is a simple connected graph on 𝑛vertices, then\n𝐿𝑆(𝐺) ≥2(ℓ(𝐺) −1).\nProof. Let 𝑉:= 𝑉(𝐺). For every verte",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.22763v1/blocks/thm-sec-027-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 59,
+      "target": "thm-sec-027-01.md",
+      "narrative": null,
+      "content": "If 𝐺is a simple connected graph on 𝑛vertices, then 𝐿𝑆(𝐺) ≥2(ℓ(𝐺) −1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

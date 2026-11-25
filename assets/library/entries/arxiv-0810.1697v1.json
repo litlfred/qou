@@ -1,0 +1,296 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0810.1697v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-0810.1697v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "[]{#intro label=\"intro\"} In [@MO], Morton proved a formula relating the colored Jones polynomials of a cabling of a knot to the colored Jones polynomials of the original knot. Using this formula, Kashaev proved that the volume conjecture is true for the torus knots [@KT].\n\nThe original proof of Morton is written in the language of quantum groups. In this paper, an alternative way using skein theory is adopted. Although the method of quantum groups is essentially dual to the method of skein theory, the latter is more accessible to topologists. Unlike quantum groups, the skein theory starts from",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0810.1697v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basic definitions and notations",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-2-basic-definitions-and-notations.md",
+      "narrative": null,
+      "content": "[]{#def label=\"def\"}\n\nTo keep the prerequisite minimal, some basic definitions and notations are listed in this section. For details and proofs of certain results, see Lickorish's book [@LBook] and [@BHMV]. For a survey of the skein theory and some generalization, see [@LSurvey].\n\nGiven a compact oriented 3-manifold $M$, and a ring of coefficients $R=Z[A,A^{-1}]$, define a $R-module$ by $$SS(M)=the\\ free\\ module\\ generated\\ by\\ framed\\ links\\ in\\ M$$ where two framed links isotopic to each other are regarded as the same.\n\n::: definition\nThe skein module associated to $M$ is $$S(M)= SS(M)/the\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0810.1697v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0810.1697v1  [math.GT]  9 Oct 2008\nON THE CABLE EXPANSION FORMULA\nQIHOU LIU\nAbstract. In this paper, a generalized version of Morton’s formula [8] is\nproved. Using this formula, one can write down the colored Jones polynomials\nof cabling of an knot in terms of the colored Jones polynomials of the original\nknot.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0810.1697v1/blocks/figure-img-p002-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../images/img-p002-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0810.1697v1/blocks/figure-img-p002-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../images/img-p002-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0810.1697v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-21-examples.md",
+      "narrative": null,
+      "content": "[]{#examples label=\"examples\"}\n\n### The skein module of $S^3$ {#three sphere}\n\nThe skein module of $S^3$ is equal to $Z[A,A^{-1}]$. The reason is the following.\n\nGiven a planar diagram of a famed link $L$ in $S^3$, by applying the skein relation repeatedly to resolve the crossings and remove the unknots, $L$ can be reduced to the empty link multiplied by a Laurent polynomial of $A$. In this way, a polynomial is associated to each framed link in $S^3$.\n\nMultiplied by a normalization factor, the dependence of the polynomial on the framing can be removed. Up to change of variables, this is the Jo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0810.1697v1/blocks/figure-img-p003-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0810.1697v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The multilinear bracket",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-22-the-multilinear-bracket.md",
+      "narrative": null,
+      "content": "[]{#multilinear bracket label=\"multilinear bracket\"} Given an framed link $L$ in $M$ with components $K_1,K_2,...K_m$, denote the framing of $K_j$ by $\\sigma_j$. A multilinear bracket $\\langle *,*,...,*\\rangle_L$ in $S(M)$ can be constructed as following:\n\n \n\nThe framing $\\sigma_j$ of $K_j$ determines a diffeomorphism $$\\tau_j:D\\times S^1 \\to a\\ tubular\\ neighbourhood\\ of\\ K_j.$$ $\\tau_j$ gives a map $D\\times S^1 \\to M$. It induces a homomorphism $$(\\tau_j)_*:S(D\\times S^1) \\to S(M).$$ These $(\\tau_j)_*$ combine together to give a multi-linear map $$\\tau_*: S(D\\times\nS^1)\\times S(D\\times S^1)\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0810.1697v1/blocks/figure-img-p004-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0810.1697v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Expansion of cables in the skein module",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-3-expansion-of-cables-in-the-skein-module.md",
+      "narrative": null,
+      "content": "[]{#thm label=\"thm\"} []{#thm label=\"thm\"} In this section, the framing convention is assumed.\n\nLet $M$ be the standard solid torus $D \\times S^1$, the link $L$, which is to be considered, consists of two components: $K_1$ is given by $$( \\rho \\exp(iq\\theta), \\exp(ip\\theta))|_{0\\le \\theta \\le 2\\pi}$$ where $p,q$ are coprime integers, $0<\\rho<1$; $K_2$ is the core of the solid torus $$(0, \\exp(i\\theta))|_{0\\le \\theta \\le 2\\pi}$$ Here $D$ is identified with the unit disk in the complex plane and $S^1$ with the unit circle.\n\nFix the framing of $K_2$ to be 0. The framing $\\sigma$ of $K_1$ correspon",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0810.1697v1/blocks/figure-img-p006-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0810.1697v1/blocks/figure-img-p007-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../images/img-p007-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0810.1697v1/blocks/figure-img-p007-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../images/img-p007-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0810.1697v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 1",
+      "pageStart": 8,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-4-proof-of-theorem-1.md",
+      "narrative": null,
+      "content": "[]{#proof label=\"proof\"} []{#proof label=\"proof\"}\n\n::: proof\n*Proof.*  \n\nAssume it's true for (p,q), let's do the calculation in the case (q,p).\n\nBy explicit calculation, we got $$\\langle\\omega_r\\rangle_U(A^2-A^{-2})^2\\equiv -2(r+1)$$\n\nSo by lemma 2, $$\\begin{aligned}\n &(-1)^{l+s}g_\\sigma^l(q,p;s)(-2(r+1))\\notag\\\\\n&= 4\\sum_{t=0}^{r-1}\\sum_{k\\ge 0} (-1)^{k+t}g_{\\sigma}^k(p,q;t)\\sinh((t+1)(l+1)C)\\sinh((s+1)(k+1)C)\\notag\n\\end{aligned}$$ where we evaluate these polynomials at $A=\\exp(\\frac{\\pi i}{2(r+1)})$, and we denote the constant $\\frac{\\pi i}{r+1}$ by $C$.\n\nAnd then using the formula for $g(p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0810.1697v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-006-5-appendix.md",
+      "narrative": null,
+      "content": "[]{#apendix label=\"apendix\"} []{#appendix label=\"appendix\"} Now we will present a proof of lemma 3 and lemma 4.\n\n::: proof\n*Proof of lemma 3.* By change of variables, we have $$\\sum_{k\\ge 0}f(k+1)g(k+1)\\delta(k-t-pk')=\\sum_{k^{''}\\ge 1}f(k^{''})g(k^{''})\\delta(k^{''}-t-1-pk')$$ and $$\\begin{aligned}\n\\sum_{k\\ge 0}f(k+1)g(k+1)\\delta(k+t+2+pk')&=\\sum_{k^{''}\\ge 1}f(k^{''})g(k^{''})\\delta(k^{''}+t+1+pk')\\notag\\\\\n&=\\sum_{k^{''}\\le -1}f(-k^{''})g(-k^{''})\\delta(-k^{''}+t+1+pk')\\notag\\\\\n&=-\\sum_{k^{''}\\le -1}f(k^{''})g(k^{''})\\delta(k^{''}-t-1-pk')\\notag\n\\end{aligned}$$ So $$\\begin{aligned}\n&\\sum_{k\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0810.1697v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-007-references.md",
+      "narrative": null,
+      "content": "[1] Blanchet, C.; Habegger, N.; Masbaum, G.; and Vogel, P., Three-manifold invariants derived\nfrom the Kauﬀman bracket. Topology 1992 31, no. 4, 685–699.\n[2] Blanchet, C.; Habegger, N.; Masbaum, G.; and Vogel, P., Topological quantum ﬁeld theories\nderived from the Kauﬀman bracket. Topology 1995 34, no. 4, 883–927.\n[3] Kashaev, R.M.; Tirkonnen, O., Proof of the Volume Conjecture for Torus Knots. Journal of\nMathematical Sciences 2003 115, no.1, 2033-2036\n[4] Lickorish, W. B. R., An introduction to knot theory. Graduate Texts in Mathematics,175.\nSpringer-Verlag, New York, 1997.\n[5] Lickorish, W.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

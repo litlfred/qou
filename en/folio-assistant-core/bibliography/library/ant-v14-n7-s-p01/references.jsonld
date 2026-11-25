@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/ant-v14-n7-s-p01",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "p-adic Asai L-functions of Bianchi modular forms",
+      "dcterms:creator": [
+        "Loeffler, David",
+        "Williams, Chris"
+      ],
+      "bibo:doi": "10.2140/ant.2020.14.1669",
+      "dcterms:identifier": "https://doi.org/10.2140/ant.2020.14.1669",
+      "dcterms:source": "library/ant-v14-n7-s-p01/manifest.jsonld",
+      "dcterms:hasVersion": "library/ant-v14-n7-s-p01"
+    }
+  ]
+}

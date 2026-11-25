@@ -1,0 +1,1446 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1409.2799v2",
+  "title": "Diagram categories for Uq-tilting modules at roots of unity",
+  "variant": "pdf",
+  "pages": 50,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "The framework",
+      "number": "1.1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-the-framework"
+    },
+    {
+      "level": 2,
+      "title": "An outline of the paper",
+      "number": "1.2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-an-outline-of-the-paper"
+    },
+    {
+      "level": 1,
+      "title": "The tilting category T",
+      "number": "2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-2-the-tilting-category-t"
+    },
+    {
+      "level": 2,
+      "title": "Quantum groups at roots of unity",
+      "number": "2.1",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-21-quantum-groups-at-roots-of-unity"
+    },
+    {
+      "level": 2,
+      "title": "Weyl modules, dual Weyl modules and simple modules",
+      "number": "2.2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-22-weyl-modules-dual-weyl-modules-and-simple-mod"
+    },
+    {
+      "level": 2,
+      "title": "Tilting modules and the tilting category T",
+      "number": "2.3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-23-tilting-modules-and-the-tilting-category-t"
+    },
+    {
+      "level": 2,
+      "title": "The linkage principle and blocks",
+      "number": "2.4",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-24-the-linkage-principle-and-blocks"
+    },
+    {
+      "level": 2,
+      "title": "Translation functors",
+      "number": "2.5",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-25-translation-functors"
+    },
+    {
+      "level": 1,
+      "title": "The Khovanov-Seidel quiver algebra and gradings",
+      "number": "3",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-3-the-khovanov-seidel-quiver-algebra-and-grading"
+    },
+    {
+      "level": 2,
+      "title": "The quiver algebras Qm and Ain",
+      "number": "3.1",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Combinatorics of the graded, right Qm- and Ain-modules",
+      "number": "3.2",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-32-combinatorics-of-the-graded-right-qm--and-ain"
+    },
+    {
+      "level": 2,
+      "title": "Endofunctors on pMod-Qm and pMod-Qin",
+      "number": "3.3",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-33-endofunctors-on-pmod-qm-and-pmod-qin"
+    },
+    {
+      "level": 2,
+      "title": "Ain and the tilting category T",
+      "number": "3.4",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The tilting category T and its graded counterpart Tgr",
+      "number": "3.5",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-35-the-tilting-category-t-and-its-graded-counter"
+    },
+    {
+      "level": 1,
+      "title": "Diagrams for the graded tilting category Tgr",
+      "number": "4",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-4-diagrams-for-the-graded-tilting-category-tgr"
+    },
+    {
+      "level": 2,
+      "title": "The basics: diagrammatic categories, additive closures and Karoubi envelopes",
+      "number": "4.1",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-41-the-basics-diagrammatic-categories-additive-c"
+    },
+    {
+      "level": 2,
+      "title": "The dihedral cathedral Dinfty",
+      "number": "4.2",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The quotient QDinfty",
+      "number": "4.3",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "QDinfty and the tilting category Tgr",
+      "number": "4.4",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Diagram categories for Endo(Tgrl)",
+      "number": "4.5",
+      "page": 46,
+      "pageLabel": "46",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-45-diagram-categories-for-endotgrl"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 48,
+      "pageLabel": "48",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 99,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "haahr",
+          "heading": false
+        },
+        {
+          "term": "uq-tilting",
+          "heading": false
+        },
+        {
+          "term": "henning",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1409.2799v2 [math.QA] 31 Dec 2015 DIAGRAM CATEGORIES FOR Uq-TILTING MODULES AT ROOTS OF UNITY HENNING HAAHR ANDERSEN AND DANIEL TUBBENHAUER ABSTRACT. We give a diagrammatic presentation of the category of Uq(sl2)-tilting modules T for q being a root of unity and introduce a grading on T. This grading is a “root of unity phenomenon” and might lead to new insights about link and 3-manifold invariants deduced",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1409.2799v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "Introduction 1",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-the-framework",
+      "number": "1.1",
+      "title": "The framework",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 5,
+      "labelStart": "1",
+      "labelEnd": "5",
+      "words": 2099,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "figs diacath",
+          "heading": false
+        },
+        {
+          "term": "diacath frob",
+          "heading": false
+        },
+        {
+          "term": "diacath iso",
+          "heading": false
+        },
+        {
+          "term": "textit diagrammatic",
+          "heading": false
+        },
+        {
+          "term": "textit graded",
+          "heading": false
+        },
+        {
+          "term": "soergel categorification",
+          "heading": false
+        },
+        {
+          "term": "res figs",
+          "heading": false
+        },
+        {
+          "term": "textit affine",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub-intropart1} In this paper we study the quantum group $\\Uq=\\Uq(\\mathfrak{sl}_2)$, where $q$ is a root of unity, its category of tilting modules $\\T$ and the category of projective endofunctors $\\Endo(\\T)$ combinatorially and diagrammatically. Everything we do is completely explicit and ``down to earth'', but motivated and deduced from a general machinery that comes, from the side of representation theory,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-an-outline-of-the-paper",
+      "number": "1.2",
+      "title": "An outline of the paper",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 242,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "geordie williamson",
+          "heading": false
+        },
+        {
+          "term": "ref sec-dia",
+          "heading": false
+        },
+        {
+          "term": "ref sec-tilting",
+          "heading": false
+        },
+        {
+          "term": "diagram category",
+          "heading": false
+        },
+        {
+          "term": "elias",
+          "heading": false
+        },
+        {
+          "term": "endofunctors",
+          "heading": false
+        },
+        {
+          "term": "item section",
+          "heading": false
+        },
+        {
+          "term": "tilting",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub-intropart2} The paper is organized as follows. \\begin{itemize} \\item Section~\\ref{sec-tilting} contains the definition and some basic properties of the category of $\\Uq$-tilting modules $\\T$ as well as the category of projective endofunctors of it. Most of Section~\\ref{sec-tilting} is known, but we have included some new observations. \\item In Section~\\ref{sec-quiver} we recall Khovanov-Seidel's",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-2-the-tilting-category-t",
+      "number": "2",
+      "title": "The tilting category T",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 139,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tilting",
+          "heading": true
+        },
+        {
+          "term": "fixed root",
+          "heading": false
+        },
+        {
+          "term": "sec-tilting",
+          "heading": false
+        },
+        {
+          "term": "mathfrak",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec-tilting} In this section we describe the category $\\T$ of $\\Uq=\\Uq(\\mathfrak{sl}_2)$-tilting modules for the quantum enveloping algebra\\footnote{We like to work over the cyclotomic field $\\bC$, but any field of characteristic zero containing $q$ would work.} of $\\mathfrak{sl}_2$ at a fixed root of unity $q$. We give a hopefully self-contained summary of the results in the $\\mathfrak{sl}_2$ case since most",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-21-quantum-groups-at-roots-of-unity",
+      "number": "2.1",
+      "title": "Quantum groups at roots of unity",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 443,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "end gather",
+          "heading": false
+        },
+        {
+          "term": "begin gather",
+          "heading": false
+        },
+        {
+          "term": "end defn",
+          "heading": false
+        },
+        {
+          "term": "textit quantum",
+          "heading": false
+        },
+        {
+          "term": "quad delta",
+          "heading": false
+        },
+        {
+          "term": "defn label",
+          "heading": false
+        },
+        {
+          "term": "lusztig mathrm",
+          "heading": false
+        },
+        {
+          "term": "unity",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{sub-qroot} Before we start, let us fix some notions. Given $a\\in\\bZ$ and $b\\in\\bN$, let \\begin{gather*} [a]=\\frac{v^a-v^{-a}}{v-v^{-1}}=v^{a-1}+v^{a-3}+\\dots+v^{-a+1}+v^{-a+1},\\quad\\quad[b]!=[1][2]\\cdots [b-1][b],\\\\ \\qbin{a}{b}=\\frac{[a][a-1]\\cdots[a-b+2][a-b+1]}{[b]!}\\in\\bZ[v,v^{-1}]. \\end{gather*} be the \\textit{quantum integer}, the \\textit{quantum factorial} and the \\textit{quantum binomial}. By",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-22-weyl-modules-dual-weyl-modules-and-simple-mod",
+      "number": "2.2",
+      "title": "Weyl modules, dual Weyl modules and simple modules",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 699,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dual weyl",
+          "heading": true
+        },
+        {
+          "term": "makeqed end",
+          "heading": false
+        },
+        {
+          "term": "dvn",
+          "heading": false
+        },
+        {
+          "term": "apw",
+          "heading": false
+        },
+        {
+          "term": "textit unique",
+          "heading": false
+        },
+        {
+          "term": "color",
+          "heading": false
+        },
+        {
+          "term": "weyl module",
+          "heading": false
+        },
+        {
+          "term": "begin itemize",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub-wsmod} \\begin{defn}(\\textbf{Weyl, dual Weyl and simple modules})\\label{defn-weyl} Let $i\\in\\bN$ and denote by $\\Vn i$ the $i$\\textit{-th Weyl module}. This is the $\\bC$-vector space with basis $m_0,\\dots,m_i$ and an $\\Uq$-action defined by \\[ Km_k=q^{i-2k}m_k,\\quad\\quad E^{(j)}m_k=\\qbin{i-k+j}{j}m_{k-j},\\quad\\quad F^{(j)}m_k=\\qbin{k+j}{j}m_{k+j}, \\] with the convention that $m_{<0}=m_{>i}=0$. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-23-tilting-modules-and-the-tilting-category-t",
+      "number": "2.3",
+      "title": "Tilting modules and the tilting category T",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 1447,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dvn prime",
+          "heading": false
+        },
+        {
+          "term": "cong dvn",
+          "heading": false
+        },
+        {
+          "term": "prime otimes",
+          "heading": false
+        },
+        {
+          "term": "tilting",
+          "heading": true
+        },
+        {
+          "term": "textit tilting",
+          "heading": false
+        },
+        {
+          "term": "textit filtration",
+          "heading": false
+        },
+        {
+          "term": "nabla filtration",
+          "heading": false
+        },
+        {
+          "term": "tilting module",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub-tiltmod} \\begin{defn}(\\textbf{$\\Delta$- and $\\nabla$-filtration})\\label{defn-filt} We say that a $\\Uq$-module $M$ has a $\\Delta$\\textit{-filtration} if there exists a descending sequence of $\\Uq$-submodules \\[ M=F_{0}\\supset F_1\\supset\\cdots\\supset F_i\\supset\\dots,\\quad\\quad\\bigcap_{i=0}^{\\infty}F_i=0, \\] such that for all $i=0,1\\dots$ we have $F_{i}/F_{i+1}\\cong \\Vn{i^{\\prime}}$ for some",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-24-the-linkage-principle-and-blocks",
+      "number": "2.4",
+      "title": "The linkage principle and blocks",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 14,
+      "labelStart": "10",
+      "labelEnd": "14",
+      "words": 1786,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dvn lambda",
+          "heading": false
+        },
+        {
+          "term": "i-i prime",
+          "heading": false
+        },
+        {
+          "term": "lambda phantom",
+          "heading": false
+        },
+        {
+          "term": "varepsilon lambda",
+          "heading": false
+        },
+        {
+          "term": "circ lambda",
+          "heading": false
+        },
+        {
+          "term": "down lambda",
+          "heading": false
+        },
+        {
+          "term": "dll",
+          "heading": false
+        },
+        {
+          "term": "prime text",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub-blocks} Consider the alcove $\\mathcal A_0$ and its closure $\\bar{\\mathcal A}_0$ given by \\[ \\mathcal A_0=\\{k\\in\\bZ\\mid -1<k<l-1\\},\\quad\\quad\\bar{\\mathcal A}_0=\\{k\\in\\bZ\\mid -1\\leq k \\leq l-1\\}. \\] We call $\\mathcal A_0$ the \\textit{fundamental alcove}. Any other alcove in $\\bZ_{\\geq -1}$ is clearly of the form $\\mathcal A_0+il$ for some $i\\in\\bN$. Moreover, we call $-1,l-1\\in\\bar{\\mathcal A}_0-\\mathcal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-25-translation-functors",
+      "number": "2.5",
+      "title": "Translation functors",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 17,
+      "labelStart": "14",
+      "labelEnd": "17",
+      "words": 1550,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bbi oplus",
+          "heading": false
+        },
+        {
+          "term": "theta lambda",
+          "heading": false
+        },
+        {
+          "term": "endo theta",
+          "heading": false
+        },
+        {
+          "term": "lambda k-tst",
+          "heading": false
+        },
+        {
+          "term": "functors theta",
+          "heading": false
+        },
+        {
+          "term": "lambda mathcal",
+          "heading": false
+        },
+        {
+          "term": "circ theta",
+          "heading": false
+        },
+        {
+          "term": "lambda text",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub-translation} Fix $\\lambda\\in\\mathcal A_0$ and $\\mu\\in\\bar{\\mathcal{A}}_0-\\mathcal A_0$. Set $\\nu=|\\lambda-\\mu|$ (in fact, $\\nu=|\\lambda_i-\\mu_i|$ for all $i\\in\\bN$ and $\\nu$ will stay in $\\bar{\\mathcal{A}}_0$). Recall that there is a unique simple $\\Uq$-module $\\Ln{\\nu}\\cong\\Tn{\\nu}$. Denote by $p_{\\lambda}\\colon\\T\\to\\T_{\\lambda}$ the \\textit{projection onto the block} $\\T_{\\lambda}$ functor. Similarly",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-3-the-khovanov-seidel-quiver-algebra-and-grading",
+      "number": "3",
+      "title": "The Khovanov-Seidel quiver algebra and gradings",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 19,
+      "labelStart": "17",
+      "labelEnd": "19",
+      "words": 1349,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "scriptstyle bbi",
+          "heading": false
+        },
+        {
+          "term": "quiver algebra",
+          "heading": true
+        },
+        {
+          "term": "scriptstyle bbz",
+          "heading": false
+        },
+        {
+          "term": "endxy raisebox",
+          "heading": false
+        },
+        {
+          "term": "scriptstyle bbo",
+          "heading": false
+        },
+        {
+          "term": "idempotents bbi",
+          "heading": false
+        },
+        {
+          "term": "colon bbi",
+          "heading": false
+        },
+        {
+          "term": "scriptstyle bbm",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec-quiver} In the present section\\footnote{We use \\textit{right} modules in this section and read from right to left: we think of the paths in the quiver as applying morphisms/functors. The reason for this will become clear in Subsection~\\ref{sub-ainfty}.} we identify the quiver for the blocks $\\T_{\\lambda}$. We show how the quiver description can be used to define a grading on $\\T$. We obtain a grading on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-32-combinatorics-of-the-graded-right-qm--and-ain",
+      "number": "3.2",
+      "title": "Combinatorics of the graded, right Qm- and Ain-modules",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 595,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "blue color",
+          "heading": false
+        },
+        {
+          "term": "scriptstyle bbi",
+          "heading": false
+        },
+        {
+          "term": "color green",
+          "heading": false
+        },
+        {
+          "term": "blue raisebox",
+          "heading": false
+        },
+        {
+          "term": "blue varepsilon",
+          "heading": false
+        },
+        {
+          "term": "bbi oplus",
+          "heading": false
+        },
+        {
+          "term": "textit graded",
+          "heading": false
+        },
+        {
+          "term": "textit degree",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub-ammod} Recall that, if $A$ denotes some graded $\\bC$-algebra, then a (right) $A$-module $M$ is called \\textit{$\\bZ$-graded} (or simply \\textit{graded}), if \\[ M=\\bigoplus_{k\\in\\bZ}M^k\\quad\\text{and}\\quad M^k\\cdot A^{k^{\\prime}}\\subset M^{k+k^{\\prime}}. \\] An $A$-module homomorphism between graded modules $f\\colon M\\to N$ is called \\textit{degree preserving}, if $f(M^k)\\subset N^k$ for all $k\\in\\bZ$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-33-endofunctors-on-pmod-qm-and-pmod-qin",
+      "number": "3.3",
+      "title": "Endofunctors on pMod-Qm and pMod-Qin",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 27,
+      "labelStart": "20",
+      "labelEnd": "27",
+      "words": 2916,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bvi pmodai",
+          "heading": false
+        },
+        {
+          "term": "bbi prime",
+          "heading": false
+        },
+        {
+          "term": "scriptstyle bbi",
+          "heading": false
+        },
+        {
+          "term": "bbi oplus",
+          "heading": false
+        },
+        {
+          "term": "bbi langle",
+          "heading": false
+        },
+        {
+          "term": "bvi theta",
+          "heading": false
+        },
+        {
+          "term": "bbi circ",
+          "heading": false
+        },
+        {
+          "term": "leq bbm",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub-endo} Set\\footnote{Note that we use a different convention than Khovanov and Seidel for the gradings by shifting ${}_iP$ down by one.} $B_i=P_i\\otimes_{\\bC}{}_iP\\langle -1\\rangle$ for all indices $i=1,\\dots,m$. Note that the $B_i$'s are graded $\\Am$-bimodules with the tensor product $p\\otimes p^{\\prime}$ of degree $l(p\\otimes p^{\\prime})=l(p)+l(p^{\\prime})$ for $p$ of degree $l(p)$ and $p^{\\prime}$ of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-35-the-tilting-category-t-and-its-graded-counter",
+      "number": "3.5",
+      "title": "The tilting category T and its graded counterpart Tgr",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 31,
+      "labelStart": "27",
+      "labelEnd": "31",
+      "words": 2631,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dvn bbi",
+          "heading": false
+        },
+        {
+          "term": "graded category",
+          "heading": true
+        },
+        {
+          "term": "bbi prime",
+          "heading": false
+        },
+        {
+          "term": "bvi mathcal",
+          "heading": false
+        },
+        {
+          "term": "tgr",
+          "heading": true
+        },
+        {
+          "term": "twoheadlongrightarrow dvn",
+          "heading": false
+        },
+        {
+          "term": "prime hooklongrightarrow",
+          "heading": false
+        },
+        {
+          "term": "leq bbm",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub-grad} In this subsection we discuss the consequences of Theorems~\\ref{thm-struktursatz1} and~\\ref{thm-struktursatz2} with respect to the question how the path length grading $l(\\cdot)$ (see Definition~\\ref{def-ksquiver1}) of Khovanov-Seidel's $\\infty$-quiver algebra relates to the tilting category $\\T$. We point out that this is non-trivial since Theorems~\\ref{thm-struktursatz1}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-4-diagrams-for-the-graded-tilting-category-tgr",
+      "number": "4",
+      "title": "Diagrams for the graded tilting category Tgr",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 31,
+      "labelStart": "31",
+      "labelEnd": "31",
+      "words": 25,
+      "summary": null,
+      "keywords": [],
+      "extract": "\\label{sec-dia} In this section we give the diagrammatic presentation of the (graded) tilting category $\\Tgrl$ and the category of its projective endofunctors $\\Endo(\\Tgrl)$.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-014-41-the-basics-diagrammatic-categories-additive-c",
+      "number": "4.1",
+      "title": "The basics: diagrammatic categories, additive closures and Karoubi envelopes",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 46,
+      "labelStart": "31",
+      "labelEnd": "46",
+      "words": 6169,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "figs diacath",
+          "heading": false
+        },
+        {
+          "term": "diacath frob",
+          "heading": false
+        },
+        {
+          "term": "res figs",
+          "heading": false
+        },
+        {
+          "term": "diacath forcing",
+          "heading": false
+        },
+        {
+          "term": "diacath iso",
+          "heading": false
+        },
+        {
+          "term": "endxy circ",
+          "heading": false
+        },
+        {
+          "term": "endxy cdot",
+          "heading": false
+        },
+        {
+          "term": "textbf frob",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub-basiccats} We consider \\textit{diagrammatic} categories in the following. We encourage the reader to take a look in the rather extensive literature (in the authors opinion, a good start is~\\cite[Section 2]{lau1}). Although these categories have a natural $2$-categorical structure, we phrase everything in terms of $1$-categories. Furthermore, we note that we \\textit{only} use $\\bC$-linear categories.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-45-diagram-categories-for-endotgrl",
+      "number": "4.5",
+      "title": "Diagram categories for Endo(Tgrl)",
+      "level": 2,
+      "pageStart": 46,
+      "pageEnd": 48,
+      "labelStart": "46",
+      "labelEnd": "48",
+      "words": 951,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tgrl",
+          "heading": true
+        },
+        {
+          "term": "hom mati",
+          "heading": false
+        },
+        {
+          "term": "endo",
+          "heading": true
+        },
+        {
+          "term": "endo theta",
+          "heading": false
+        },
+        {
+          "term": "prime theta",
+          "heading": false
+        },
+        {
+          "term": "bbi mapsto",
+          "heading": false
+        },
+        {
+          "term": "qdk",
+          "heading": false
+        },
+        {
+          "term": "colon endo",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub-projdia} We denote by $\\overline{\\Mat}(\\mathcal C)$ literally the same category as $\\Mat(\\mathcal C)$, but we allow \\textit{countable} direct sums as objects and \\textit{finitely supported} matrices as morphisms. We carefully distinguish between red $r$ and green $g$ on one hand and $s,t\\in W_l$ on the other. We think of an \\textit{alternating} sequence (of length $i\\geq 0$) of the former $x_{i-grg}$ to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 48,
+      "pageEnd": 50,
+      "labelStart": "48",
+      "labelEnd": "50",
+      "words": 1264,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "url",
+          "heading": false
+        },
+        {
+          "term": "doi",
+          "heading": false
+        },
+        {
+          "term": "soergel categories",
+          "heading": false
+        },
+        {
+          "term": "soergel calculus",
+          "heading": false
+        },
+        {
+          "term": "soergel bimodules",
+          "heading": false
+        },
+        {
+          "term": "khovanov diagram",
+          "heading": false
+        },
+        {
+          "term": "duke math",
+          "heading": false
+        },
+        {
+          "term": "tilting modules",
+          "heading": false
+        }
+      ],
+      "extract": "[1] H.H. Andersen. Tensor products of quantized tilting modules. Comm. Math. Phys., 149(1):149–159, 1992. URL: http://projecteuclid.org/euclid.cmp/1104251142. [2] H.H. Andersen. The strong linkage principle for quantum groups at roots of 1. J. Algebra, 260(1):2–15, 2003. doi:10.1016/S0021-8693(02)00618-X. [3] H.H. Andersen, J.C. Jantzen, and W. Soergel. Representations of quantum groups at a pth root of unity and of",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 2,
+        "items": [
+          "Introduction",
+          "The framework"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "bbi prime",
+      "heading": false
+    },
+    {
+      "term": "scriptstyle bbi",
+      "heading": false
+    },
+    {
+      "term": "dvn bbi",
+      "heading": false
+    },
+    {
+      "term": "bbi oplus",
+      "heading": false
+    },
+    {
+      "term": "textit tilting",
+      "heading": false
+    },
+    {
+      "term": "textit graded",
+      "heading": false
+    },
+    {
+      "term": "colon bbi",
+      "heading": false
+    },
+    {
+      "term": "bbi circ",
+      "heading": false
+    },
+    {
+      "term": "endxy quad",
+      "heading": false
+    },
+    {
+      "term": "bbi langle",
+      "heading": false
+    },
+    {
+      "term": "textit soergel",
+      "heading": false
+    },
+    {
+      "term": "endxy raisebox",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 22,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 18,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p48); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 10
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 18 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1409.2799v2"
+  }
+}

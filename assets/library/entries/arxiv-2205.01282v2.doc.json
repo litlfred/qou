@@ -1,0 +1,1125 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2205.01282v2",
+  "title": "arxiv-2205.01282v2",
+  "variant": "pdf",
+  "pages": 18,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgement",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-acknowledgement"
+    },
+    {
+      "level": 1,
+      "title": "Basic notations for plumbing graphs",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-basic-notations-for-plumbing-graphs"
+    },
+    {
+      "level": 2,
+      "title": "Notations for graphs",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-21-notations-for-graphs"
+    },
+    {
+      "level": 2,
+      "title": "The inverse matrix of the linking matrix",
+      "number": "2.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-22-the-inverse-matrix-of-the-linking-matrix"
+    },
+    {
+      "level": 2,
+      "title": "Periodic maps determined by the linking matrix",
+      "number": "2.3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-23-periodic-maps-determined-by-the-linking-matri"
+    },
+    {
+      "level": 2,
+      "title": "Rational functions determined by the linking matrix",
+      "number": "2.4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-24-rational-functions-determined-by-the-linking"
+    },
+    {
+      "level": 1,
+      "title": "Calculations of WRT invariants",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-3-calculations-of-wrt-invariants"
+    },
+    {
+      "level": 1,
+      "title": "Expressions of homological blocks as false theta functions",
+      "number": "4",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-4-expressions-of-homological-blocks-as-false-the"
+    },
+    {
+      "level": 1,
+      "title": "An asymtotic formula",
+      "number": "5",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-5-an-asymtotic-formula"
+    },
+    {
+      "level": 2,
+      "title": "Asymtotic formulas obtained from Euler–Maclaurin summation formula",
+      "number": "5.1",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-51-asymtotic-formulas-obtained-from-eulermaclaur"
+    },
+    {
+      "level": 2,
+      "title": "Asymtotic expansion of infinite series with weighted Gauss sums",
+      "number": "5.2",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-52-asymtotic-expansion-of-infinite-series-with-w"
+    },
+    {
+      "level": 1,
+      "title": "A proof of the main theorem",
+      "number": "6",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-6-a-proof-of-the-main-theorem"
+    },
+    {
+      "level": 2,
+      "title": "The main result",
+      "number": "6.1",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-61-the-main-result"
+    },
+    {
+      "level": 2,
+      "title": "A proof of the main result",
+      "number": "6.2",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-62-a-proof-of-the-main-result"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 132,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homological blocks",
+          "heading": false
+        },
+        {
+          "term": "plumbed manifolds",
+          "heading": false
+        },
+        {
+          "term": "asymptotic expansions",
+          "heading": false
+        },
+        {
+          "term": "witten reshetikhin",
+          "heading": false
+        },
+        {
+          "term": "reshetikhin turaev",
+          "heading": false
+        }
+      ],
+      "extract": "WITTEN–RESHETIKHIN–TURAEV INVARIANTS AND HOMOLOGICAL BLOCKS FOR PLUMBED HOMOLOGY SPHERES YUYA MURAKAMI Abstract. In this paper, we prove a conjecture by Gukov–Pei–Putrov–Vafa for a wide class of plumbed 3-manifolds. Their conjecture states that Witten–Reshetikhin–Turaev (WRT) invariants are radial limits of homological blocks, which are q-series introduced by them for plumbed 3-manifolds with negative definite",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2205.01282v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 948,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wrt invariants",
+          "heading": false
+        },
+        {
+          "term": "homological blocks",
+          "heading": false
+        },
+        {
+          "term": "asymp gauss",
+          "heading": false
+        },
+        {
+          "term": "homology spheres",
+          "heading": false
+        },
+        {
+          "term": "non-seifert homology",
+          "heading": false
+        },
+        {
+          "term": "euler--maclaurin",
+          "heading": false
+        },
+        {
+          "term": "seifert homology",
+          "heading": false
+        },
+        {
+          "term": "radial limits",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:intro label=\"sec:intro\"} In this paper, we study Witten--Reshetikhin--Turaev (WRT) invariants. They are quantum invariants of $3$-manifolds constructed by Witten [@Witten] from a physical viewpoint and constructed by Reshetikhin--Turaev [@Reshetikhin-Turaev Theorem 3.3.2] from a mathematical viewpoint. The Witten's asymptotic expansion conjecture plays a central role in studying WRT invariants. It claims",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-acknowledgement",
+      "number": null,
+      "title": "Acknowledgement",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 79,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "takuya yamauchi",
+          "heading": false
+        },
+        {
+          "term": "acknowledgement",
+          "heading": true
+        },
+        {
+          "term": "matsusaka",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:acknowledgement label=\"sec:acknowledgement\"} The author would like to show the greatest appreciation to Takuya Yamauchi for giving many pieces of advice. The author would like to thank Takuya Yamauchi, Yuji Terashima, Kazuhiro Hikami, Toshiki Matsusaka for giving many comments. The author is deeply grateful to Akihito Mori for a lot of discussion. I thank the referees for their helpful suggestions and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-basic-notations-for-plumbing-graphs",
+      "number": "2",
+      "title": "Basic notations for plumbing graphs",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 20,
+      "summary": null,
+      "keywords": [],
+      "extract": "[]{#sec:fund_data label=\"sec:fund_data\"} In this section, we list some notations for plumbing graphs and their basic properties, which we use throughout this paper.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-21-notations-for-graphs",
+      "number": "2.1",
+      "title": "Notations for graphs",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 381,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mid deg",
+          "heading": false
+        },
+        {
+          "term": "coloneqq",
+          "heading": false
+        },
+        {
+          "term": "submatrices",
+          "heading": false
+        },
+        {
+          "term": "intro",
+          "heading": false
+        },
+        {
+          "term": "overline",
+          "heading": false
+        },
+        {
+          "term": "gcd",
+          "heading": false
+        },
+        {
+          "term": "det",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:graph label=\"subsec:graph\"} In this subsection, we prepare settings for graphs. As in [\\[sec:intro\\]](#sec:intro){reference-type=\"ref\" reference=\"sec:intro\"}, let $\\Gamma = (V, E, (w_v)_{v \\in V})$ be a plumbing graph and $W$ be its linking matrix such that it is negative definite and $\\det W = \\pm 1$. Here we consider the edge set $E$ as the subset of $\\{ \\{ v, v' \\} \\mid v, v' \\in V \\}$. We identify",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-22-the-inverse-matrix-of-the-linking-matrix",
+      "number": "2.2",
+      "title": "The inverse matrix of the linking matrix",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 509,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "matrix pmat",
+          "heading": false
+        },
+        {
+          "term": "block matrix",
+          "heading": false
+        },
+        {
+          "term": "block matrices",
+          "heading": false
+        },
+        {
+          "term": "bbc",
+          "heading": false
+        },
+        {
+          "term": "det frac",
+          "heading": false
+        },
+        {
+          "term": "symmetric block",
+          "heading": false
+        },
+        {
+          "term": "quad det",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:S label=\"subsec:S\"} In this subsection, we calculate the inverse matrix of the linking matrix. Let $S \\in \\Aut(\\Q^{V_{\\ge 2}}) \\cap \\End(\\Z^{V_{\\ge 2}})$ be the $V_{\\ge 2} \\times V_{\\ge 2}$ submatrix of $-W^{-1} \\in \\Aut(\\Q^V)$. Here we recall $V_{\\ge 2} = \\{ v \\in V \\mid \\deg v \\ge 2 \\}$. We also denote $T \\coloneqq -W_1^{-1} W_{1, \\ge 2}$. Here we remark that $S$ is positive definite since $W$ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-23-periodic-maps-determined-by-the-linking-matri",
+      "number": "2.3",
+      "title": "Periodic maps determined by the linking matrix",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 554,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bij cals",
+          "heading": false
+        },
+        {
+          "term": "cals veps",
+          "heading": false
+        },
+        {
+          "term": "cals coloneqq",
+          "heading": false
+        },
+        {
+          "term": "longrightarrow cals",
+          "heading": false
+        },
+        {
+          "term": "cals label",
+          "heading": false
+        },
+        {
+          "term": "projection cals",
+          "heading": false
+        },
+        {
+          "term": "let cals",
+          "heading": false
+        },
+        {
+          "term": "map veps",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:char label=\"subsec:char\"} In this subsection, we introduce periodic maps determined by the linking matrix and prove its basic properties. For each vertex $v \\in V_{\\ge 2}$, let $$\\calS_v \\coloneqq \\left\\{ \\frac{1}{2}\\deg(v) - 1 + \\sum_{i \\in \\overline{v}} \\frac{l_i}{2w_i} \\relmiddle{|} (l_i)_{i \\in \\overline{v}} \\in \\{ \\pm 1 \\}^{\\overline{v}} \\right\\}$$ Here we set $\\calS_v \\coloneqq \\left\\{ \\deg(v)/2 - 1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-24-rational-functions-determined-by-the-linking",
+      "number": "2.4",
+      "title": "Rational functions determined by the linking matrix",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 457,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cals veps",
+          "heading": false
+        },
+        {
+          "term": "rat func",
+          "heading": false
+        },
+        {
+          "term": "sum alpha",
+          "heading": false
+        },
+        {
+          "term": "laurent expansion",
+          "heading": false
+        },
+        {
+          "term": "rational",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#subsec:rat_func label=\"subsec:rat_func\"} In this subsection, we introduce rational functions determined by the linking matrix and prove its basic properties. For a vertex $v \\in V_{\\ge 2}$ and complex variable $q$, define a rational function $$G_v (q) \\coloneqq (q^{M_{v}} - q^{-M_{v}})^{2 - \\deg(v)} \\prod_{i \\in \\overline{v}} \\left( q^{M_{v} / w_{i}} - q^{-M_{v} / w_{i}} \\right).$$ It has the following Laurent",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-3-calculations-of-wrt-invariants",
+      "number": "3",
+      "title": "Calculations of WRT invariants",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 643,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wrt invariants",
+          "heading": true
+        },
+        {
+          "term": "wrt gauss",
+          "heading": false
+        },
+        {
+          "term": "abs sum",
+          "heading": false
+        },
+        {
+          "term": "sqrt abs",
+          "heading": false
+        },
+        {
+          "term": "zeta sum",
+          "heading": false
+        },
+        {
+          "term": "zeta left",
+          "heading": false
+        },
+        {
+          "term": "wrt expression",
+          "heading": false
+        },
+        {
+          "term": "mathrm wrt",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:WRT label=\"sec:WRT\"} In this section, we calculate WRT invariants of the plumbed homology sphere $M(\\Gamma)$. Our starting point is the following expression by [@GPPV]. ::: prop $$\\begin{aligned} \\mathop{\\mathrm{WRT}}_k(M(\\Gamma)) = \\frac{\\bm{e}(\\abs{V}/8) \\zeta_{4k}^{-\\sum_{v \\in V} (w_{v} + 3)}} {2 \\sqrt{2k}^{\\abs{V}} (\\zeta_{2k} - \\zeta_{2k}^{-1})} \\sum_{\\mu \\in (\\Z \\smallsetminus k\\Z)^V/2k\\Z^V}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-4-expressions-of-homological-blocks-as-false-the",
+      "number": "4",
+      "title": "Expressions of homological blocks as false theta functions",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 531,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "abs veps",
+          "heading": false
+        },
+        {
+          "term": "bij cals",
+          "heading": false
+        },
+        {
+          "term": "int abs",
+          "heading": false
+        },
+        {
+          "term": "abs sum",
+          "heading": false
+        },
+        {
+          "term": "abs frac",
+          "heading": false
+        },
+        {
+          "term": "false",
+          "heading": true
+        },
+        {
+          "term": "cauchy principal",
+          "heading": false
+        },
+        {
+          "term": "varepsilon right",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:HB_false label=\"sec:HB_false\"} In this section, we represent the homological block of $M(\\Gamma)$ as a false theta function. For the plumbed homology sphere $M(\\Gamma)$, the homological block $\\widehat{Z}_{\\Gamma} (q)$ is defined as follows. ::: dfn The homological block of the plumbed homology sphere $M(\\Gamma)$ is defined as $$\\widehat{Z}_{\\Gamma} (q) = 2^{-\\abs{V}} q^{-\\sum_{v \\in V} (w_{v} + 3)/4}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-5-an-asymtotic-formula",
+      "number": "5",
+      "title": "An asymtotic formula",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 18,
+      "summary": null,
+      "keywords": [],
+      "extract": "[]{#sec:asymp label=\"sec:asymp\"} In this section, we develop an asymptotic formula which we need to calculate radial limits of homological blocks.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-51-asymtotic-formulas-obtained-from-eulermaclaur",
+      "number": "5.1",
+      "title": "Asymtotic formulas obtained from Euler–Maclaurin summation formula",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "13",
+      "words": 1224,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "euler maclaurin",
+          "heading": true
+        },
+        {
+          "term": "pmat frac",
+          "heading": false
+        },
+        {
+          "term": "euler--maclaurin",
+          "heading": false
+        },
+        {
+          "term": "alpha lambda",
+          "heading": false
+        },
+        {
+          "term": "coloneqq frac",
+          "heading": false
+        },
+        {
+          "term": "bbb",
+          "heading": false
+        },
+        {
+          "term": "m-l",
+          "heading": false
+        },
+        {
+          "term": "zagier asymptotic",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:Euler--Maclaurin label=\"subsec:Euler--Maclaurin\"} Some useful methods have been developed to calculate radial limits of false theta functions. The method of Lawrence--Zagier [@LZ p. 98, Proposition] is the beginning of these. Lawrence--Zagier [@LZ] developed it by using $L$-functions for periodic maps. Zagier [@Zagier_asymptotic] collected many techniques to calculate asymptotic expansions of infinite",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-52-asymtotic-expansion-of-infinite-series-with-w",
+      "number": "5.2",
+      "title": "Asymtotic expansion of infinite series with weighted Gauss sums",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": "13",
+      "labelEnd": "15",
+      "words": 736,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cals veps",
+          "heading": false
+        },
+        {
+          "term": "weighted gauss",
+          "heading": true
+        },
+        {
+          "term": "abs sum",
+          "heading": false
+        },
+        {
+          "term": "sqrt abs",
+          "heading": false
+        },
+        {
+          "term": "gauss sums",
+          "heading": true
+        },
+        {
+          "term": "abs overline",
+          "heading": false
+        },
+        {
+          "term": "asymp gauss",
+          "heading": false
+        },
+        {
+          "term": "coloneqq sum",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:asymp_Gauss label=\"subsec:asymp_Gauss\"} In this subsection, we study a family of infinite series $F(f; t)$ with weighted Gauss sums, which involves both WRT invariants and homological blocks. We start with the following asymptotic formula following from [\\[prop:Euler\\--Maclaurin_poly\\]](#prop:Euler--Maclaurin_poly){reference-type=\"ref\" reference=\"prop:Euler--Maclaurin_poly\"}. In the following statement,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-6-a-proof-of-the-main-theorem",
+      "number": "6",
+      "title": "A proof of the main theorem",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 44,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proof main",
+          "heading": true
+        },
+        {
+          "term": "vanishings",
+          "heading": false
+        },
+        {
+          "term": "holomorphy",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:proof_main label=\"sec:proof_main\"} Let $$F(\\bm{t}) \\coloneqq \\sum_{ \\mu \\in \\Z^{V_{\\ge 2}} / 2kS \\left(\\Z^{V_{\\ge 2}} \\right) } \\bm{e} \\left( -\\frac{1}{4k} {}^t\\!\\mu S^{-1} \\mu \\right) \\prod_{v \\in V_{\\ge 2}} G_v \\left( \\zeta_{2kM_v}^{\\mu_v} e^{-t_v/2M_v} \\right).$$ In this section, we prove holomorphy of this meromorphic function at $\\bm{t} = 0$ (that is, vanishings of $c_n$) and our main result.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-013-61-the-main-result",
+      "number": "6.1",
+      "title": "The main result",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 254,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gauss vanish",
+          "heading": false
+        },
+        {
+          "term": "abs overline",
+          "heading": false
+        },
+        {
+          "term": "sqrt abs",
+          "heading": false
+        },
+        {
+          "term": "mathrm wrt",
+          "heading": false
+        },
+        {
+          "term": "wrt expression",
+          "heading": false
+        },
+        {
+          "term": "overline deg",
+          "heading": false
+        },
+        {
+          "term": "vanish label",
+          "heading": false
+        },
+        {
+          "term": "prop",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:proof_main label=\"subsec:proof_main\"} In this subsection, we state our main result without a proof. ::: prop []{#prop:Gauss_vanish label=\"prop:Gauss_vanish\"} 1. []{#item:prop:Gauss_vanish1 label=\"item:prop:Gauss_vanish1\"} For each vertex $v \\in V_{\\ge 3}$, the order of $F(\\bm{t})$ at $t_v=0$ satisfies $$\\ord_{t_v = 0} F(\\bm{t}) \\ge \\min \\{ 0, \\abs{\\overline{v}} + 2 - \\deg(v) \\}.$$ 2.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-62-a-proof-of-the-main-result",
+      "number": "6.2",
+      "title": "A proof of the main result",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 768,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gauss vanish",
+          "heading": false
+        },
+        {
+          "term": "gauss sum",
+          "heading": false
+        },
+        {
+          "term": "gcd",
+          "heading": false
+        },
+        {
+          "term": "sum indep",
+          "heading": false
+        },
+        {
+          "term": "frac left",
+          "heading": false
+        },
+        {
+          "term": "vanish proof",
+          "heading": false
+        },
+        {
+          "term": "smallsetminus",
+          "heading": false
+        },
+        {
+          "term": "alpha",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:Gauss_vanish_proof label=\"subsec:Gauss_vanish_proof\"} Finally, we prove [\\[prop:Gauss_vanish\\]](#prop:Gauss_vanish){reference-type=\"ref\" reference=\"prop:Gauss_vanish\"}. We need the following lemma. ::: lem []{#lem:Gauss_sum_indep label=\"lem:Gauss_sum_indep\"} Let $k, M \\in \\Z \\smallsetminus \\{ 0 \\}$ and $a, b \\in \\Z$ be integers such that $\\gcd(a, M) = 1$. For $\\alpha \\in \\frac{1}{2M}\\Z$ such that $\\gcd(2M",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 811,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "witten reshetikhin",
+          "heading": false
+        },
+        {
+          "term": "reshetikhin turaev",
+          "heading": false
+        },
+        {
+          "term": "seifert manifolds",
+          "heading": false
+        },
+        {
+          "term": "seifert fibered",
+          "heading": false
+        },
+        {
+          "term": "turaev invariants",
+          "heading": false
+        },
+        {
+          "term": "brieskorn homology",
+          "heading": false
+        },
+        {
+          "term": "modular forms",
+          "heading": false
+        },
+        {
+          "term": "quantum modular",
+          "heading": false
+        }
+      ],
+      "extract": "[AH12] J. E. Andersen and B. Himpel. The Witten–Reshetikhin–Turaev invariants of finite order mapping tori II. Quantum Topol., 3(3-4):377–421, 2012. [AM22] J. E. Andersen and W. Misteg˚ard. Resurgence analysis of quantum invariants of Seifert fibered homology spheres. Journal of the London Mathematical Society, 105(2):709–764, 2022. [And13] J. E. Andersen. The Witten–Reshetikhin–Turaev invariants of finite order",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 2,
+        "items": [
+          "Introduction",
+          "A proof of the main result"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [
+      "figure 1"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "abs veps",
+      "heading": false
+    },
+    {
+      "term": "abs overline",
+      "heading": false
+    },
+    {
+      "term": "abs prod",
+      "heading": false
+    },
+    {
+      "term": "abs frac",
+      "heading": false
+    },
+    {
+      "term": "cals coloneqq",
+      "heading": false
+    },
+    {
+      "term": "abs sum",
+      "heading": false
+    },
+    {
+      "term": "coloneqq left",
+      "heading": false
+    },
+    {
+      "term": "wrt gauss",
+      "heading": false
+    },
+    {
+      "term": "sqrt abs",
+      "heading": false
+    },
+    {
+      "term": "overline deg",
+      "heading": false
+    },
+    {
+      "term": "int abs",
+      "heading": false
+    },
+    {
+      "term": "coloneqq begin",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Neumann moves",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 16,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 17,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p17); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 8
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 17 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2205.01282v2"
+  }
+}

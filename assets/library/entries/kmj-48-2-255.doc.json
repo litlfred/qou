@@ -1,0 +1,631 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "kmj-48-2-255",
+  "title": "A Formula for the Colored Jones Polynomial of 2-Bridge Knots",
+  "variant": "pdf",
+  "pages": 26,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem 1",
+      "number": "2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-proof-of-theorem-1"
+    },
+    {
+      "level": 1,
+      "title": "Results for a twist knot",
+      "number": "3",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-results-for-a-twist-knot"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 26,
+      "pageLabel": null,
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-003-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 73,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "niigata",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "bridge knots",
+          "heading": false
+        }
+      ],
+      "extract": "KYUNGPOOK Math. J. 48(2008), 255-280 A Formula for the Colored Jones Polynomial of 2-Bridge Knots Toshie Takata Department of Mathematics, Faculty of Science, Niigata University, Niigata 950- 2181, Japan e-mail : takata@math.sc.niigata-u.ac.jp Abstract. We derive a formula for the colored Jones polynomial of 2-bridge knots. For a twist knot, a more explicit formula is given and it leads to a relation between the",
+      "extractCut": true,
+      "blocks": [
+        "library/kmj-48-2-255/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 838,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n-colored jones",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "bridge knot",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "qσp",
+          "heading": false
+        },
+        {
+          "term": "schubert normal",
+          "heading": false
+        },
+        {
+          "term": "eight knot",
+          "heading": false
+        },
+        {
+          "term": "meets",
+          "heading": false
+        }
+      ],
+      "extract": "For a positive integer n, the n-colored Jones polynomial is a Laurent polyno- mial invariant in q of a knot colored with n-dimensional irreducible representation of Uq(sl2). We denote by JK(n) the n-colored Jones polynomial of a knot K, which is normalized so that the colored Jones polynomial of the trivial knot is 1. Then, JK(2) coincides with the original Jones polynomial of a knot K deﬁned by V. F. R. Jones [3].",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-proof-of-theorem-1",
+      "number": "2",
+      "title": "Proof of Theorem 1",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4191,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "σik mik",
+          "heading": false
+        },
+        {
+          "term": "σik σip",
+          "heading": false
+        },
+        {
+          "term": "σik lik",
+          "heading": false
+        },
+        {
+          "term": "toshie takata",
+          "heading": false
+        },
+        {
+          "term": "m1m m2m",
+          "heading": false
+        },
+        {
+          "term": "qσp",
+          "heading": false
+        },
+        {
+          "term": "special blob",
+          "heading": false
+        },
+        {
+          "term": "crossing labeled",
+          "heading": false
+        }
+      ],
+      "extract": "Firstly, we review a result in [5]. Let L be a knot in S3. We consider a 1-tangle L′ whose closure is L. We assume that L′ is presented as a tangle diagram D in 258 Toshie Takata generic position with respect to the height function with the end points at the top and at the bottom. We orient D from the top to the bottom. Let c denote the number of the crossings in a diagram D. There are eight crossing types given by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-results-for-a-twist-knot",
+      "number": "3",
+      "title": "Results for a twist knot",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1628,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "σik mik",
+          "heading": false
+        },
+        {
+          "term": "imi m2p",
+          "heading": false
+        },
+        {
+          "term": "m2j",
+          "heading": false
+        },
+        {
+          "term": "σik σip",
+          "heading": false
+        },
+        {
+          "term": "toshie takata",
+          "heading": false
+        },
+        {
+          "term": "m2k",
+          "heading": false
+        },
+        {
+          "term": "p2p",
+          "heading": false
+        },
+        {
+          "term": "bridge knots",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we will consider the twist knots S(4p1 + 1, 2p1 + 1) and S(4p1 − 1, 2p1 −1). From Theorem 1, we get explicit formulas for the colored Jones polynomials of these twist knots. Corollary 5. JS(4p1+1,2p1+1)(n) (14) = X 0≤mj−1≤mj≤n−1 q−n P2p1−1 i=1 (−1)imi+Pp1−1 i=1 m2i(1+m2i+1) × (¯q)n−1(¯q)mp′ (¯q)n−mp′−1 (−1)mp′   p1−1 Y j=0 (¯q)m2j+1−m2j p1 Y j=1 (q)m2j−m2j−1   −1 , and JS(4p1−1,2p1−1)(n) (15) =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 110,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "habiro",
+          "heading": false
+        },
+        {
+          "term": "kawauchi",
+          "heading": false
+        },
+        {
+          "term": "knots",
+          "heading": false
+        }
+      ],
+      "extract": "[1] G. Burde and H. Zieschang, Knots, Walter de Gruyter & Co.,Berlin, 1985. [2] K. Habiro, On the quantum sl2 invariants of knots and integral homology spheres, Geometry and Topology Monographs, 4(5)(2000), 55-68. [3] V. F. R. Jones, A polynomial invariants for knots via von Neumann algebras, Bull. Amer. Math. Soc., N.S.(1985), 103-111. [4] A. Kawauchi, A survey of Knot Theory, Birkhauser Verlag, Switzerland, 1996",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [
+      "figure 4",
+      "figure 5"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "σik mik",
+      "heading": false
+    },
+    {
+      "term": "σik σip",
+      "heading": false
+    },
+    {
+      "term": "σik lik",
+      "heading": false
+    },
+    {
+      "term": "toshie takata",
+      "heading": false
+    },
+    {
+      "term": "colored jones",
+      "heading": false
+    },
+    {
+      "term": "bridge knots",
+      "heading": false
+    },
+    {
+      "term": "jones polynomial",
+      "heading": false
+    },
+    {
+      "term": "imi m2p",
+      "heading": false
+    },
+    {
+      "term": "m2j",
+      "heading": false
+    },
+    {
+      "term": "twist knots",
+      "heading": false
+    },
+    {
+      "term": "n-colored jones",
+      "heading": false
+    },
+    {
+      "term": "qσp",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 4,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 5,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "7 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p26); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 6
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 5 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/kmj-48-2-255"
+  }
+}

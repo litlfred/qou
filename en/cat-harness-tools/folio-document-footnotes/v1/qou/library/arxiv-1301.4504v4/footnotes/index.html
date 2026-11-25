@@ -1,0 +1,2450 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>library/arxiv-1301.4504v4/footnotes — folio-document-footnotes/v1</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../assets/navbar/rail-2f7k3e1ehi.js" defer></script><script src="../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../.." data-fa-to-root="../../../../../../../..">{"data":"rail-2f7k3e1ehi","here":"/en/cat-harness-tools/folio-document-footnotes/v1/qou/library/arxiv-1301.4504v4/footnotes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">library/arxiv-1301.4504v4/footnotes</h1>
+<p class="m">A <a href="../../../../">folio-document-footnotes/v1</a> node held by <a href="../../../">qou</a>, at <code>library/arxiv-1301.4504v4/footnotes.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>folio-document-footnotes/v1</dd>
+<dt>entry</dt><dd>arxiv-1301.4504v4</dd>
+<dt>status</dt><dd>determined</dd>
+<dt>pages_unread</dt><dd><pre>[
+  17
+]</pre></dd>
+<dt>body_size</dt><dd>12</dd>
+<dt>footnotes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p003-1&quot;,
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;We recently found out that a similar argument was made by Braunstein, later joined by Pirandola and ˙Zyczkowski, back in 2009 [2], who called the ﬁrewall an “energetic curtain”. Some details of their model do not seem consistent with standard assumptions about black hole physics, however, and restoring those assumptions seems to rule out their curtain-avoiding resolution.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 3,
+        &quot;context&quot;: &quot;horizonforanobserverfallingintoan“old”blackhole.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p003-2&quot;,
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;AsemphasizedbyAMPS,theobserverdoesnotactuallyneedtodotheexperimenttogetinto trouble. The possibility of the experiment being done is enough to argue against a smooth horizon. We will be more precise below about what is meant by “extract information”.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 3,
+        &quot;context&quot;: &quot;fromtheHawkingradiationofablackholepriortofallingin.&quot;
+      },
+      {
+        &quot;page&quot;: 3,
+        &quot;context&quot;: &quot;entropy is proportional to M&quot;
+      },
+      {
+        &quot;page&quot;: 3,
+        &quot;context&quot;: &quot;PS experimentalist thus has to extract information from n ∼M&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p003-3&quot;,
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;Inlinewithstandardparlancewewillsometimesrefertothisoperationas“decoding”;wewill see the precise connection to what is called decoding in quantum information theory in section 4.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 3,
+        &quot;context&quot;: &quot;to M&quot;
+      },
+      {
+        &quot;page&quot;: 3,
+        &quot;context&quot;: &quot;bits of Hawking radiation in a time T∼n&quot;
+      },
+      {
+        &quot;page&quot;: 3,
+        &quot;context&quot;: &quot;it into an easily accessible subfactor of the Hilbert space.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p004-1&quot;,
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;Itmayseemthatbeatingasmallpowerwithanexponentialisoverkill,butwewillshowthatfor more general types of black holes the exponential really is necessary to prevent the AMPS experiment from being done. In those cases it will be recurrence phenomena rather than evaporation which doom the experiment.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 4,
+        &quot;context&quot;: &quot;beexponentialintheentropyoftheremainingblackhole.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-000&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p004-2&quot;,
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;text&quot;: &quot;Theauthorsof[7]alsoattemptedtogivealessoperationalreasonforthebreakdownofEFT involving large integrated boosts, although aspects of this claim were later questioned [8]. It remains to be seen whether a similar argument might exist for the breakdown we advocate here.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 4,
+        &quot;context&quot;: &quot;accessibility.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-000&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p005-1&quot;,
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;text&quot;: &quot;In [9] these limits were used to conjecture that “precise” descriptions of spacetime require observers who have access to an inﬁnite amount of information. This conjecture is distinct from the idea proposed here, but they are clearly related.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 5,
+        &quot;context&quot;: &quot;energyobservationratherthanasingularity.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-000&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p005-2&quot;,
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;text&quot;: &quot;Therecouldbe“cosmological”restrictionsonwhatCharlieisabletodo,butitseemsthatthese should be decoupled from restrictions “intrinsic” to the black hole. From our discussion of Udyn in section 3.3 it seems that in a completely pristine environment Charlie should even be able to test unitarity in polynomial time; we won’t address whether or not Charlie would be able to do this in a “noisy” environment.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 5,
+        &quot;context&quot;: &quot;blackholebeforeitevaporates.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-000&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p006-1&quot;,
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;text&quot;: &quot;ThisgeneralpointofviewhasbeenadvocatedbyBanksandFischler,whohavetriedtorealize it more concretely in a formalism called “holographic spacetime” [10, 11]. In their setup quantum mechanics is precise for all observers, even those who encounter singularities or recurrences. They have recently argued that their formalism evades the ﬁrewall argument [12], but their claim requires a decoupling in Charlie’s description of the black hole dynamics between the near-horizon ﬁeld theory modes and the horizon degrees of freedom. Such a decopuling seems rather implausible, especially in the context of the mining operations of [1, 13].&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;ecise for some special observers and approximate in general.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-000&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p006-2&quot;,
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;text&quot;: &quot;In[15]oneofustriedtoargue,forareasonhavingnothingtodowithcomputation,thatthe experiment cannot be done. That argument proved unconvincing, and we regard the computational complexity arguments of this paper to be much stronger.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;cannotbedone,theﬁrewallargumentbreaksdown.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-000&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p006-3&quot;,
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;text&quot;: &quot;Includingbutprobablynotlimitedto[14,16,17].&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;wewillsoonsee.Ithasbeensuggestedbyseveralpeople&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-000&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p006-4&quot;,
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;text&quot;: &quot;Anotherinterestingproposal,raisedagainrecentlyintheﬁrewalldiscussionbyJohnPreskilland Alexei Kitaev, is the Maldacena/Horowitz “black hole ﬁnal state” scenario [19]. Our results could have interesting implications for that idea, but we won’t explore them here.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;FTmaybesuﬃcienttoavoidtheparadoxeswithoutanyneedforﬁrewalls.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-000&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-1&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;text&quot;: &quot;AdamBrownhaspointedoutthatsomebodywhobelievesthis“pausethesimulationargument” might also use it to support Hawking’s original nice-slice argument for non-unitarity by claiming that an external deity could reach inside of the black hole and teleport the collapsing matter that originally made the black hole out into the vicinity of the Hawking radiation, producing veriﬁable cloning unless unitarity is false. This clearly illustrates the danger of using a naive picture of the Hilbert space in “pause the simulation” arguments. Another example is the eternal two-sided AdS black hole [24], where even though the dual is two decoupled CFTs it seems reasonable to expect that doing arbitrary manipulations on one of the CFTs destroys the interior for somebody who jumps in from the other side.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 8,
+        &quot;context&quot;: &quot;ionbehindthehorizonmightactuallyhaveratherdrasticeﬀectsonit.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-000&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p010-1&quot;,
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;13&quot;,
+    &quot;text&quot;: &quot;Page’s theorem says that in a Hilbert space which can be factorized into HA ⊗HB, with |A| ≤|B|, \u0010 \u0011 a typical pure state has SA = log |A| −|A|&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 10,
+        &quot;context&quot;: &quot;isclosetobeingproportionaltotheidentityoperator:&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p010-3&quot;,
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;text&quot;: &quot;Itisimportantinwhatfollowsthatthese“low-energy”modescanhavequitehighproperenergy near the horizon, so they are relevant to the experience of an observer who is near the horizon even though the Schwarzschild temperature is typically very small compared to any scale relevant to that observer.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 10,
+        &quot;context&quot;: &quot;densitymatrixforHH⊗HBisquitecloseto(2.2).&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p010-4&quot;,
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;15&quot;,
+    &quot;text&quot;: &quot;ThisrepresentationofthestateiscalledtheSchmidtdecomposition.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 10,
+        &quot;context&quot;: &quot;toagoodapproximation,as&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p010-5&quot;,
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;text&quot;: &quot;RememberCharliestaysoutsidetheblackholeandhasanarbitrarilylargeamountoftimeand resources, so there seems to be no limit on his experimental ability. This will be diﬀerent for Alice, whom we discuss now.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 10,
+        &quot;context&quot;: &quot;structureofthemodel.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p014-1&quot;,
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;17&quot;,
+    &quot;text&quot;: &quot;WethankDonPageforseveralusefuldiscussionsofthispoint.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 14,
+        &quot;context&quot;: &quot;theinitialblackholeentropyaswewouldconcludefrom(3.2).&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-004&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p018-1&quot;,
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;19&quot;,
+    &quot;text&quot;: &quot;In this counting we can easily ignore the constraint that orthogonal states must be sent to orthog- onal states.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 18,
+        &quot;context&quot;: &quot;probabilitythatAlicecanﬁndoneforwhich(3.8)holdsisnomorethan&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-006&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-1&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;text&quot;: &quot;Thissubsectionisentirelypedagogicalandcontainsnooriginalmaterial,goodreferencesare [41–43].&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 19,
+        &quot;context&quot;: &quot;ence of Ucomp on time and computer size very special indeed.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-006&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p020-1&quot;,
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;text&quot;: &quot;Inthisequationweseetheunfortunatebutstandardconventioninquantumcomputationtheory that the Pauli-z operator, usually written as Z, acts as Z|0⟩= |0⟩and Z|1⟩= −|1⟩. The Hadamard operator can then be interpreted as switching from the Z eigenbasis to the X eigenbasis. As an example it is worth seeing to see how to build the Pauli operators X, Y , and Z out of H and Z1/4 gates.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 20,
+        &quot;context&quot;: &quot;theZ1/4gatewhichactsonasinglequbitas&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-007&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p024-1&quot;,
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;text&quot;: &quot;Technicallythisalsoassumesthatthemappingfromthe“microscopic”degreesoffreedomon which the quantum mechanics looks simple to the “macroscopic” basis (3.1) is relatively simple. For low energy ﬁelds outside the horizon this seems plausible to us, for example in AdS/CFT the well- known construction of [51] seems to accomplish this in a straightforward way for operators outside the horizon. We discuss this more in section (6) below.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 24,
+        &quot;context&quot;: &quot;Udyncanbegeneratedbyapolynomialnumberofgates.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-008&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p026-1&quot;,
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;23&quot;,
+    &quot;text&quot;: &quot;Of course even if she could just time reverse the black hole, the circuit would still take of order the evaporation time to run. In fact since the black hole is old it would probably take longer to run than the evaporation. We are not comfortable with this argument as a way out of ﬁrewalls however. Often when there is a general algorithm that gives a polynomial circuit to do something, special details of the problem and tricks like parallelization can be exploited to get polynomial increases in the running speed.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 26,
+        &quot;context&quot;: &quot;Rusingoforder2n+k+mgates.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-008&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p027-1&quot;,
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;24&quot;,
+    &quot;text&quot;: &quot;ThispossibilitywassuggestedtousbyRaphaelBousso.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 27,
+        &quot;context&quot;: &quot;dyn.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-009&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p027-2&quot;,
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;25&quot;,
+    &quot;text&quot;: &quot;Arecentpaper[52]alsodiscussedtheAMPSargumentinthelanguageoferrorcorrection;their use of error correction was quite diﬀerent from that we discuss here.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 27,
+        &quot;context&quot;: &quot;experiment,whichwediscussinthissection.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-009&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p029-1&quot;,
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;26&quot;,
+    &quot;text&quot;: &quot;ItisnothardtodescribethisprocedureintermsofunitaryinteractionUcorrectwithanancillary system. For example to measure Z1Z2 we introduce a single ancilla qubit in the state |0⟩anc and then use two CNOT gates with the ﬁrst and second qubits being the control bits in the gate. This accom- plishes |b1, b2⟩|0⟩anc →|b1, b2⟩|b1⟩anc →|b1, b2⟩|b1 +b2⟩anc, which writes the result of the measurement onto the ancillary qubit.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;ismanneritiseasytoseethatanysingle-Paulierrorcanbecorrected.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-011&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p032-1&quot;,
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;27&quot;,
+    &quot;text&quot;: &quot;DanielGottesmanhassuggestedasimple“somethingelse”tous,inthecasewherethematrix Cαβ is diagonal. In that case the errors Eα in E send the code space to a set of mutually orthogonal subspaces of the Hilbert space; this will typically be the case in the erasure channel if 2l &lt; n −k. To do the correction we can just measure the projection operators onto each of these subspaces in succession, stopping when the measurement returns one instead of zero. We can then just apply the correction appropriate for that subspace. This procedure clearly takes an amount of time equal to the number of possible errors, which in the erasure channel is 22l.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 32,
+        &quot;context&quot;: &quot;above.FormoregeneralUencweneedtodosomethingelse.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-011&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p034-1&quot;,
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;28&quot;,
+    &quot;text&quot;: &quot;Inmoredetail,theargumentof[59]splitstheerrorcorrectionintotwoparts,oneofwhichis proven to be NP-complete for large k, and thus likely to require time exponential in k. The other part appears to require exponential time in n, but they do not study its complexity in detail. We expect stabilizer decoding in general to be hard even at ﬁxed k and large n.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 34,
+        &quot;context&quot;: &quot;rcorrection evenwhen Unoiseand Uencare both polynomial size.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p034-2&quot;,
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;29&quot;,
+    &quot;text&quot;: &quot;ThatYisspecialisanundesirableasymmetrythatisnecessaryfortheproofof[59].Thisseems to be a technical problem, and we expect that correcting stabilizer codes is still NP-complete for the “depolarizing channel”, where the probability for a Y occuring is also p. It seems unlikely that making Y errors more likely would make the decoding easier but at the moment there is no proof.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 34,
+        &quot;context&quot;: &quot;βi’s in the parametrization (4.11) which are nonzero.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p039-1&quot;,
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;32&quot;,
+    &quot;text&quot;: &quot;Thechannelconstructedintheprevioussubsectionshowshowtorelatethisdeﬁnitiontomore conventional error correction.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 39,
+        &quot;context&quot;: &quot;problem.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-014&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p041-1&quot;,
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;33&quot;,
+    &quot;text&quot;: &quot;WethankJohnWatrousforsuggestingthisargument.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 41,
+        &quot;context&quot;: &quot;structureoftheproblemscontainedinQSZK.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-014&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p042-1&quot;,
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;34&quot;,
+    &quot;text&quot;: &quot;It is unclear to what extent this argument can be applied to the eternal two-sided AdS black hole, since the thermal bath will make it diﬃcult to extract energy. Indeed of all black holes this seems to be the least likely to have a ﬁrewall. Its gravity dual is two CFT’s which are entangled in just the way that seems necessary to produce a smooth horizon [24]. When we discuss AdS black holes we will always be imagining one-sided black holes made from some sort of collapse. Interesting previous work on the interior of AdS black holes includes [78, 79]; it would be illuminating to understand how to ask the ﬁrewall question in either of these frameworks.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 42,
+        &quot;context&quot;: &quot;nebyminingtheblackholedowntolessthanhalfofitsinitialentropy.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-016&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p047-1&quot;,
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;35&quot;,
+    &quot;text&quot;: &quot;Thereasonforthischoiceisthatcompactifyingwithperiodicboundaryconditionspreserves supersymmetry, which introduces an instability of the throat. Supersymmetry ensures there is no potential energy cost for separating the D3 branes that make up the throat. In CFT language the dual gauge theory is unable to pick a vacuum and its zero modes wander freely on its moduli space. Antiperiodic boundary conditions break supersymmetry and generate a potential that keeps the branes together. We thank Igor Klebanov and Juan Maldacena for discussions of this point.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 47,
+        &quot;context&quot;: &quot;cboundaryconditionsforthefermionsaroundthecompactdimensions.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-019&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p048-1&quot;,
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;36&quot;,
+    &quot;text&quot;: &quot;Foranasymptoticallyﬂatgeometry,incoordinateswherethemetricisηµν + hµνwithhµνsmall, dAni \u0010 \u0011 ∂jhij −∂ihj&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 48,
+        &quot;context&quot;: &quot;samelimittheADMenergy&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-019&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p048-3&quot;,
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;37&quot;,
+    &quot;text&quot;: &quot;More carefully this is the temperature below which the black hole no longer dominates the thermal ensemble. In the microcanonical ensemble the energy below which a single black hole is actually unstable is lower by some power of R/ℓp, but this distinction will not be important for us for reasons we explain below. We thank Juan Maldacena for explaining this distinction to us.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 48,
+        &quot;context&quot;: &quot;crossoverpointiswhenthetemperatureisoforderR−1.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-019&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p049-1&quot;,
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;38&quot;,
+    &quot;text&quot;: &quot;InthissectionwesettheAdSradiusRtoone.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 49,
+        &quot;context&quot;: &quot;olutioncalledablackAdSbrane.InAdSdthemetricforthissolutionis&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-020&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p049-2&quot;,
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;39&quot;,
+    &quot;text&quot;: &quot;Hadwechosensupersymmetricboundaryconditionsinthespatialdirectionsthissolutionwould not exist.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 49,
+        &quot;context&quot;: &quot;planarcoordinates:&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-020&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p049-3&quot;,
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;40&quot;,
+    &quot;text&quot;: &quot;ActuallyinEuclideansignaturetheyarereallyjustthesamesolutionwithdiﬀerentparameters, so the calculation only needs to be done once.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 49,
+        &quot;context&quot;: &quot;inthetwosolutions.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-020&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p050-1&quot;,
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;41&quot;,
+    &quot;text&quot;: &quot;Asinthesphericalcase,inthemicrocanonicalensembletheenergyatwhichtheblackholeis actually unstable is somewhat lower than this. This decrease depends only on the parameters of the AdS region of the geometry however, and is insensitive to the total length of the throat. Since we will need the total length of the throat to exponential in the entropy in the following section, which will lead to an exponentially long decay time, the additional time to get from T ∼L−1 to the actual instability will be negligible compared to the time to get down to T ∼L−1 in the ﬁrst place.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 50,
+        &quot;context&quot;: &quot;thesphericalcase,juststudiedwithdiﬀerentspatialtopology.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-020&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p051-1&quot;,
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;42&quot;,
+    &quot;text&quot;: &quot;Computingtheseabsorptionfactorsintheextremalbackgroundisanexcellentapproximationfor our purposes since r0 ≪R and the potential is very close to extremal.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 51,
+        &quot;context&quot;: &quot;(5.17)thisproblemwasstudiedbyKlebanovin[88].&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-021&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p052-1&quot;,
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;43&quot;,
+    &quot;text&quot;: &quot;WethankJoePolchinskiforsuggestingastringytelephone.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 52,
+        &quot;context&quot;: &quot;althoughwewillseeitisstillnotgoodenoughtobeofusetoAlice.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-021&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p053-2&quot;,
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;45&quot;,
+    &quot;text&quot;: &quot;Thereadershouldnotbeconfusedbyuswritinge2S0hereand22nthere.Previouslynwasthe entropy in base-2 logarithm while S0 here is the entropy in the natural logarithm. Also our general result there was tcomp ∼2n+k+m, but since we are here letting Alice start just after the Page time we have k + m ≈n.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 53,
+        &quot;context&quot;: &quot;e2S0.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-021&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p055-1&quot;,
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;46&quot;,
+    &quot;text&quot;: &quot;SteveShenkerhassuggestedthatanotherwaytobuyalittlemore“room”fordealingwithα &lt; 2 is to notice that the classical recurrence time decreases under coarse-graining. For example if one considers a system of N particles on a line with L lattice points, S = N log L and eS is the time one has to wait to ﬁnd all N particles on a single lattice point. To ﬁnd all of them on some particular √ L lattice points however we only need to wait a time of order eS/2. Also we have so far set of essentially treated Alice as a “probe observer”, but Borun Chowdhury has pointed out that Alice and her equipment will have their own recurrence time which is probably signiﬁcantly shorter than that of the black hole.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 55,
+        &quot;context&quot;: &quot;experiment.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-021&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p057-1&quot;,
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;47&quot;,
+    &quot;text&quot;: &quot;The point of view of that follows here is in some respects close to that of [16], although we disagree with their assertion that their construction by itself addresses the argument of AMPS.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 57,
+        &quot;context&quot;: &quot;observer.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-022&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p057-2&quot;,
+    &quot;page&quot;: 57,
+    &quot;mark&quot;: &quot;48&quot;,
+    &quot;text&quot;: &quot;ItisinterestingtoaskwhetherapproximatelycommutemeansuptopowersinN −1orupto exponentially small terms in N. We are agnostic about this here.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 57,
+        &quot;context&quot;: &quot;ofsomesetofoperatorsCn,whichapproximatelycommute.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-022&quot;
+  }
+]</pre></dd>
+<dt>uncalled_notes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p010-2&quot;,
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;|B|+ O . |A|&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-002&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p036-1&quot;,
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;30&quot;,
+    &quot;text&quot;: &quot;ByreshuﬄingfactorsbetweenUencandUnoisewecanturnerasuresforageneralcodeintoa more general channel for a stabilizer code, which for simplicity we can just take to be the trivial code. The NP-completeness results of [59] strongly suggest that no general polynomial time error correction algorithm exists for putting stabilizer codes through general channels, and essentially prove it when k is large provided that P̸ = NP.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-013&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p036-2&quot;,
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;31&quot;,
+    &quot;text&quot;: &quot;Itisinterestingtonotethatsinceweherehavel = k + m,thecorrectiontime22(k+m)isactually a bit faster than our estimate (3.22) which came from counting gates. This is because the correction procedure from the footnote just mentioned involves doing quantum operations on B′, which is ﬁc- titious and not available from the point of view of the original black hole problem. In other words, any circuit for UR can be used to correct the channel just constructed but the converse is not true; a generic correction procedure for this channel cannot be converted into a circuit for UR of comparable complexity.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-013&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p048-2&quot;,
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;text&quot;: &quot;πG j S5 × T3 at inﬁnity.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-019&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p053-1&quot;,
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;44&quot;,
+    &quot;text&quot;: &quot;Itisthesamebthatappearsinbothbecausewhicheverbissmallestwillcontrolthedecayrate and also give the highest probability of success for sending messages.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1301.4504v4/blocks/prose-sec-021&quot;
+  }
+]</pre></dd>
+<dt>unlinked_marks</dt><dd><pre>[
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;DanielHarlow&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;DanielHarlowaPatrickHayden&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;order 2&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;dimensional.It extends out to a distance L ∼M&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;energyisoforder1/M,soitsthermalentropyisn ≈LT∼M&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;theriqubitsarezero.ClearlythechallengeAlicefacesistoapplyU&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;HH.SofromhereonwewillmostlytakektobeO(n&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;element ofU(2&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;turnsouttobeirrelevantsincethedimensionalityofthecosetU(2&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;nsouttobeirrelevantsincethedimensionalityofthecosetU(2n)/U(2&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;scaleslike2&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;scaleslike22&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;reallybeendeﬁnedactingonthe2&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;thisreducesthetimeofAlice’scomputationfromanaive2&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;thisreducesthetimeofAlice’scomputationfromanaive22&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;thisreducesthetimeofAlice’scomputationfromanaive22ntoonly2&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;A&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1 −δ&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;\u0013−2|C|(|R|2&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;\u0013−2|C|(|R|2m(2&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Foranynontrivialkand|R|=2&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;astrophysicalblackholeinouruniverseitissomethinglike10&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;wehaveaclassicalbitstringoflengthn.Thereare2&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;interestedinsomesubsetofsize2&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;onthespaceof2&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;onthespaceof2nstrings,wecansendthese2&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;onthespaceof2nstrings,wecansendthese2kstringstoasetof2&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;thenactingwithagivenpermutationofthe2&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;\u00122&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;log 2)&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;log 2)2&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;possible sets of codewords there are 2(n+c−k)2&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;P≈e−2&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;whichforﬁxedkwecaneasilybeatbytryingthevarious2&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;computer.Itdoesrequireanc ∼2&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;theZ&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Z&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;≈(n&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;group.Theunitarygrouponnqubitsisacompactmanifoldofdimension2&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;roup.Theunitarygrouponnqubitsisacompactmanifoldofdimension22&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;U= e&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;context&quot;: &quot;U= ei P&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;U= ei P22&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;a=1&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;a=1c&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;a=1ca&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;a=1cat&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;Heret&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;HeretaaregeneratorsoftheLiealgebraofU(2&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;theca’sasparametrizingaunitcubeinR&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;theca’sasparametrizingaunitcubeinR2&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;theca’sasparametrizingaunitcubeinR22&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;I−U2U&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;δcat&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;If the sum of the squares of the δca’s is less than ϵ&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;someloworderpolynomialin2&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Aroundeachofour(n&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Aroundeachofour(n2f)TcircuitswecanimagineaballofradiusϵinR&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Aroundeachofour(n2f)TcircuitswecanimagineaballofradiusϵinR2&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Aroundeachofour(n2f)TcircuitswecanimagineaballofradiusϵinR22&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(n&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(n2f)Tϵ&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(n2f)Tϵ2&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(n2f)Tϵ22&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;see that in order to be able to make generic elements of U(2&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;T∼2&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;T∼22&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;onlysmallmodiﬁcationstotheanalysisanddon’tchangethemain2&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;onlysmallmodiﬁcationstotheanalysisanddon’tchangethemain22&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;cannotbeatthe2&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;cannotbeatthe22&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;it(oritsinverse)intimeshorterthan2&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;it(oritsinverse)intimeshorterthan22&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;URwasdeﬁnedonlybyitsactiononasubspaceofdimension2&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;complexityofURwearefreetoquotientU(2&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;oftheform|bh0⟩.Thedimensionalityofthisquotientis2&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;T∼2&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;liken&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;ableimplementU&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;spaces.The dimensionality of H is nf2&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;spaces.The dimensionality of H is nf2n&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;inoneofthe2&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;inoneofthe2n&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;smallerHilbertspaceofdimension2&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;smallerHilbertspaceofdimension2n&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;bigunitarymatrixUdynactingonour2&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;bigunitarymatrixUdynactingonour2n&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;simplicitychooseittojusthaveallthebitssettozero.Forn &gt;n&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;˜UR= UdynU&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;replacethoseinBandHandstillusethe˜U&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;b,h|b⟩B|h⟩H|bh&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Rusingoforder&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Rusingoforder2&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;ofU&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;contextofsimplecircuitswithO(n&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;itaries UR(i) must all be distinct elements of the coset U(2&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;s UR(i) must all be distinct elements of the coset U(2n)/U(2&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;R(i) must all be distinct elements of the coset U(2n)/U(2n−2&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(3.2)onlyapproximate,thenthereisabasisofsize2&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;\u00012&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;\u00012&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;taketimeoforder2&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;backwithU&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;small fraction of the coset U(2&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;small fraction of the coset U(2n)/U(2&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;small fraction of the coset U(2n)/U(2n−2&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;M&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;eM&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;operatorssuchasthe2&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;operatorssuchasthe22&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;⟨¯c′|E&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;abovewecantaketheEα’stobesomesubsetofthe2&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;abovewecantaketheEα’stobesomesubsetofthe22&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;1Zβ&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Xα&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;1. . . Xα&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;nZβ&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;itfurtherimpliesthatintheeventthatCα,β̸= 0thentheproductE&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;αEβisequalto&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;We may then pick any one of the remaining Eα’s and apply E&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;andconjugateitbyUenctodeﬁneE′=UencEU&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;tobeUencZiU&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;encforthelast&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;appearinginthechannelisthen2&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;appearinginthechannelisthen22&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;i basis we in general ﬁnd more.Moreover even if the set of 2&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot; basis we in general ﬁnd more.Moreover even if the set of 22&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;αtoapply.Ingeneralthereare&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;αtoapply.Ingeneralthereare2&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;αtoapply.Ingeneralthereare22&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;operatorsweneedtopickacorrectionE&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;errors,outofwhich2&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;2n+kcorrections to apply.Since there are 2&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;of 2&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;nameisthatthecheckoperatorsgeneratea2&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;fullgroupGof2&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;fullgroupGof22&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ofsizeO(n&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;requiresatime2&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;requiresatime22&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;searchwhicharisesinvolvesasearchthrough2&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;w&quot;,
+    &quot;context&quot;: &quot;Pr(Eα) = p&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Pr(Eα) = pwα(1 −p)&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;Pr(Eα) = pwα(1 −p)2&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;(−1)&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(−1)b&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;canbedecodedjustbyactingwithU&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;sothecodespaceappearsonedimensionalwhereaswe’dlikeittobe2&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;requiresbeingabletoimplementU&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;R.Moreconcretely,saythatwehave&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;rcuit for UR.We may use it to act on the state (4.20) with U&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;the end of section 4.1, which takes a time 2&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;the end of section 4.1, which takes a time 22&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;numberofbitswhicharelostmustbelessthan&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;2.For&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;intermsoftheparametersofourblackholemodel,sowecanloseatmost&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;lose&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;is parametrized by a list of m vectors Vover F&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;q.The MRV function&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;b,h|b⟩B|h⟩HUR|bh&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;f&quot;,
+    &quot;context&quot;: &quot;b,h|b⟩B|h⟩HUR|bh0⟩R.If&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;b,h|b⟩B|h⟩HUR|bh0⟩R.IffVishardtoinverton&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;†&quot;,
+    &quot;context&quot;: &quot;extremelysurprisingifimplementingU&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;contrastedwiththe“quantumrecurrencetime”e&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;ϵ-netofthetypediscussedinsection3.1ise&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ds&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ds2= −dt&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ds2= −dt2f(r) +dr&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;f(r)+ r&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;f(r)+ r2&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;f(r)+ r2dΩ&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+GQ&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;G(GM&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;G(GM2−Q&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;S=πr&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;≡πr&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ℓ&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4πr&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;E= 2π&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;E= 2π2Q&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;E= 2π2Q3T&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Q&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;oforderQ&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;oforderQ2,whilethetimetoreachtheinstabilityisoforderQ&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;0≈S&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Ptakes a time of order E&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;downtotheinstabilityisQ&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;downtotheinstabilityisQ7≪S&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ds&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ds2= −f(r)dt&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ds2= −f(r)dt2+dr&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;f(r)+ r&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;f(r)+ r2&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;f(r)+ r2dΩ&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;r&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Ψωℓ+ Veff(r)Ψωℓ= ω&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dr&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−αR&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;m&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;r&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4R&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+(d −2)&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;r&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(d −1)&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(d −1)2+ 4R&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(d −1)2+ 4R2m&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;tozeroprovidedwesetthescalarﬁeldmassm&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;isstartwiththeAdS3 × S&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;isstartwiththeAdS3 × S3× T&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;rhorizonlimitoftheD1 −D5system,andthenwrapsomeD3branesontheS&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ds&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−dt&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−dt2+ d⃗x&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dr&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dr2+ r&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dr2+ r2dΩ&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;+ Z(r)&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;R4= 4πgNℓ&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;s∼Nℓ&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;tforr≪RitbehaveslikeAdS5inPoincar´ecoordinates,timesanextraS&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;\u0012dr&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ds&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−f(r)dt&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−f(r)dt2+ d⃗x&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;+ Z(r)&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;f(r)+ r&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;f(r)+ r2&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;f(r)+ r2dΩ&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;\u0010r&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;\u0010r&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;\u0010r&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;To put the black hole far down the throat we clearly want&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;To put the black hole far down the throat we clearly wantr&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;S=Ω&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;S=Ω5L&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;S=Ω5L3&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;S=Ω5L3r&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;0R&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∼L&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;∼L3&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∼L3r&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;0R&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;ℓ&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;HereΩ5isthevolumeofaunitS&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;EADM=Ω&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;EADM=Ω5L&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;2r&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;E=3Ω&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;E=3Ω5L&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;E=3Ω5L3&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;E=3Ω5L3r&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∼L&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;∼L3&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;∼L3r&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;ℓ&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dr&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ds&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ds2= r&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−f(r)dt&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−f(r)dt2+ d⃗x&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;r&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;takethe“emblackeningfactor”f(r)andmoveitfrominfrontof−dt&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dr&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ds&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ds2= r&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−dt&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−dt2+ f(r)dx&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−dt2+ f(r)dx2+ (d⃗x⊥)&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;r&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;d&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;d&quot;
+  },
+  {
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;(LT)&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(TL)&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;showsthatforquantawithfrequencyω,angularquantumnumberℓontheS&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ω&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ω2−k&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;astringthreadingthethroatbymovingthestringalongtheS&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(ωR)&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;Pabs= (ωR)&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;T&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;to (2GMω)&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(ω&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(ω2−k&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(ω2−k2)&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;(ω2−k2)4R&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;d&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;ω&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;2πL&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;∼−L&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;∼−L3R&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;eβω−1∼−L&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;context&quot;: &quot;eβω−1∼−L3R&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;13&quot;,
+    &quot;context&quot;: &quot;eβω−1∼−L3R8T&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(2π)&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;(Lω)&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;(Lω)a(Rω)&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;∼−L&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;∼−LaR&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;∼−LaRbT&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;T&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;e&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;e2S&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;tcomp∼eαS&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;The recurrence time is basically eS&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;trec∼T−1eS&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;b+1S&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;bS&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;T&lt; e(1−α)S&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;exponentialfactors,oforder(LT)&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;d&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2πℓ&quot;
+  },
+  {
+    &quot;page&quot;: 59,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;gthestringinstaticgaugeandconsideringonlyoscillationsinthe S&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Z(σ) ˙θ&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;dσdτσ&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;4πℓ&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;σθ′ + Z(σ)ω&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;θ= A&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;iω&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;iω2R&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−iω&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−iω2R&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;WhenωR≪1wecanalsoﬁndanapproximatesolutionfor(ωR)&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;C= iω&quot;
+  },
+  {
+    &quot;page&quot;: 60,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;C= iω2R&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Pabs∼(ωR)&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;dingto[94]thesegiveanabsorptionprobabilityproportionalto(ωR)&quot;
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

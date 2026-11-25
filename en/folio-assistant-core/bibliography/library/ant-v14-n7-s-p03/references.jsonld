@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/ant-v14-n7-s-p03",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Nouvelles cohomologies de Weil en caractéristique positive",
+      "dcterms:creator": [
+        "Ayoub, Joseph"
+      ],
+      "bibo:doi": "10.2140/ant.2020.14.1747",
+      "dcterms:identifier": "https://doi.org/10.2140/ant.2020.14.1747",
+      "dcterms:abstract": "periods” admitting an explicit description by generators and relations. We establish comparison theorems relating this new Weil cohomology to the classical ones: Berthelot’s rigid cohomology and the ℓ-adic cohomologies, for ℓ̸ = p. We also state some conjectures on the ring AK. One of these conjectures implies the independence of ℓin cohomology.",
+      "dcterms:source": "library/ant-v14-n7-s-p03/manifest.jsonld",
+      "dcterms:hasVersion": "library/ant-v14-n7-s-p03"
+    }
+  ]
+}

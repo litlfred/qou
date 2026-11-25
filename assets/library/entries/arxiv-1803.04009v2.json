@@ -1,0 +1,452 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1803.04009v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1803.04009v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Prepared for submission to JHEP\nIPMU-18-0045\nSymmetry enhancement and closing of knots in\n3d/3d correspondence\nDongmin Ganga and Kazuya Yonekurab\naCenter for Theorectical Physics, Seoul National University, Seoul 08826, Korea\nbKavli Institute for the Physics and Mathematics of the Universe,\nUniversity of Tokyo, Kashiwa, Chiba 277-8583, Japan\nAbstract: We revisit Dimofte-Gaiotto-Gukov’s construction of 3d gauge theories asso-\nciated to 3-manifolds with a torus boundary. After clarifying their construction from a\nviewpoint of compactiﬁcation of a 6d N = (2, 0) theory of A1-type on a 3-manifold,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1803.04009v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction and Summary",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-1-introduction-and-summary.md",
+      "narrative": null,
+      "content": "[]{#sec:intro label=\"sec:intro\"}\n\n3-dimensional (3d) quantum field theory exhibits several interesting aspects. Unlike higher dimensional case, Abelian gauge interaction in 3d is strongly coupled at infrared (IR) and gives non-trivial IR physics. Different gauge theories at ultraviolet (UV) could end at the same IR fixed point along renormalization group (RG) and such phenomena is called \"duality\". Refer to [@Intriligator:1996ex; @deBoer:1996mp; @Aharony:1997bx] for examples of dualities among 3d gauge theories. There could be enhanced symmetries in the IR fixed point which is invisible in the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1803.04009v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "3d N=2 Superconformal field theories labelled by 3-manifolds",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-2-3d-n2-superconformal-field-theories-labelled-b.md",
+      "narrative": null,
+      "content": "3d N = 2 Superconformal ﬁeld theories labelled by 3-manifolds\nIn this section, we introduce two ways of associating a 3-manifold M with a knot K in it\nto a 3d N = 2 gauge theory T[M, K].\n(M, K) ⇝(a 3d N = 2 gauge theory T[M, K]) , where\nM is a closed 3-manifold ,\nK ⊂M is a knot in M .\n(2.1)\nOne way is through a twisted compactiﬁcation of a 6d N = (2, 0) theory of A1 type on a\nclosed 3-manifold M with a regular co-dimension two defect along a knot K on M. The\nother way is using the construction by Dimofte-Gaiotto-Gukov [19] (DGG) based on an\nideal triangulation of the knot complement M\\K. These",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1803.04009v2/blocks/figure-img-p006-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1803.04009v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "6d A1 (2,0) theory on 3-manifolds : T6d and T6dirred",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "../sections/sec-002-21-6d-a1-20-theory-on-3-manifolds-t6d-and-t6dirr.md",
+      "narrative": null,
+      "content": "irred\nWe deﬁne\nT 6d[M, K] = (Twisted compactiﬁcation of 6d (2,0) A1 theory on M\nwith a regular co-dimension two defect along K ⊂M) .\n(2.6)\nT 6d\nirred[M, K] = (The low energy limit of T 6d[M, K]\non a particular point PSCFT on the moduli space of vacua) .\n(2.7)\n– 5 –\nAs a simpler set-up, we can also consider the case when the defect is absent. In that case, the\nresulting 3d theory is denoted as T 6d[M] and T 6d\nirred[M], respectively. For the T 6d\nirred[M, K]\nto be deﬁned, we assume that N = M\\K is a hyperbolic knot complement.\nThe reason that we consider T 6d\nirred[M, K] is as follows. The modu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1803.04009v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dimofte-Gaiotto-Gukov's construction : TDGG",
+      "pageStart": 10,
+      "pageEnd": 21,
+      "target": "../sections/sec-003-22-dimofte-gaiotto-gukovs-construction-tdgg.md",
+      "narrative": null,
+      "content": "\\label{sec:DGG}\n\nIn \\cite{Dimofte:2011ju}, a combinatorial way of constructing a 3d SCFT, which we denote $T^{DGG}[N,X_A]$, for given choice of $(N,A)$ is proposed. Empirically, the theory associated to non-hyperbolic $N$ is a trivial theory only with topological degrees of freedom.  In this subsection we focus on the case when $N$ is hyperbolic. Here we give a  summary of the DGG's construction with a modification on superpotential deformation associated to  `hard' internal edges (see \\eqref{DGG : final}) which play a crucial role in the symmetry enhancement of the theory. \n\n\\paragraph{Mechan",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1803.04009v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relation between the two constructions",
+      "pageStart": 21,
+      "pageEnd": 27,
+      "target": "../sections/sec-004-23-relation-between-the-two-constructions.md",
+      "narrative": null,
+      "content": "[]{#sec:rel label=\"sec:rel\"}\n\nOne basic characteristic of the $T^{DGG}[N,X_A]$ theory is that [@Dimofte:2011ju]\n\n$$\\begin{aligned}\n\\begin{split}\n&\\mathcal{M}_{\\rm parameter}(\\textrm{$T^{DGG}[N,X_A]$ on $\\mathbb{R}^2\\times S^1$}) =\\mathcal{D}[N,\\mathcal{T}] \\supseteq  \\chi_0(N) \\;.\n\\end{split} \\label{eq:moduliID}\n\\end{aligned}$$\n\nRecall the definition of each term of this equation. For simplicity, we only discuss the case where our 3-manifold $N$ only has a torus boundary and hence of the form $N=M \\backslash K$. The deformation variety $\\mathcal{D}[N,\\mathcal{T}]$ defined in [\\[deformation var",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1803.04009v2/blocks/ex-sec-006-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 33,
+      "target": "ex-sec-006-01.md",
+      "narrative": null,
+      "content": "N = S3\\41 = m004 and A = µ In the case, the merdian cycle µ is non- closable and of SO(3)-type and we expect SO(3) symmetry enhancement of u(1)Xµ in T DGG[m004, Xµ] whose Lagrangian is give in eq. (2.69). In the next section, we argue that u(1)Xµ is actually enhanced to SU(3) which contain the SO(3) as a subgroup.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1803.04009v2/blocks/ex-sec-006-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 33,
+      "target": "ex-sec-006-02.md",
+      "narrative": null,
+      "content": "N = (S3\\52 1)3µ1−2λ1 = m007 and A = µ2 As another example, we consider a knot complement called m007 in SnapPy’s census. The knot complement can be obtained by performing Dehn ﬁlling on one component of Whitehead link complement. Whitehead link is denoted by 52 1, the 1st link with 2 components and 5 crossings, as shown in Fig. 4. The orientation of the link complement (S3\\52 1) is chosen as the one induced from an ideal – 29 – µ1 λ1 λ2 µ2 Figure 4. Whitehead link (52 1). It is one of the simplest (having smallest volume ≃3.664) two-component hyperbolic link. triangulation in (A.25). We always",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1803.04009v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetry enhancement",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/sec-005-3-symmetry-enhancement.md",
+      "narrative": null,
+      "content": "Symmetry enhancement\nUsing the proposed 6d interpretation of T DGG[N, XA] in (2.84), we will determine the\nsymmetry enhancement pattern of the U(1)XA symmetry associated to the knot based on\na topological type of the boundary cycle A. See the Table 1 for the summary whose details\nwill be explained in Sec. 3.1.\nA ∈H1\n\u0000∂N, Z\n\u0001\nSymmetry enhancement of U(1)XA in T DGG[N, XA]\nclosable\nU(1)XA →U(1)\nnon-closable, SO(3) type\nU(1)XA →SO(3)\nnon-closable, SU(2) type\nU(1)XA →SU(2)\nTable 1. Symmetry enhancement in T DGG[N, XA]. The deﬁnitions of “SU(2)/SO(3) types” are\nexplained in Sec. 2.2. The deﬁnitions",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1803.04009v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "SO(3)/SU(2) enhancement",
+      "pageStart": 27,
+      "pageEnd": 33,
+      "target": "../sections/sec-006-31-so3su2-enhancement.md",
+      "narrative": null,
+      "content": "SO(3)/SU(2) enhancement\nFrom the relation between T 6d\nirred and T DGG in (2.84), we understand the symmetry breaking\nmechanism of su(2)A to U(1)XA. For the symmetry breaking to happen, we need the su(2)\nmoment map operator µ in T 6d\nirred theory.\nOtherwise, the su(2)A is not broken by the\nmechanism and the resulting T DGG is expected to have an su(2) symmetry. Therefore, we\nneed to know when µ is absent.\nThis question can be answered by an inspection of the 5d picture discussed in Sec. 2.1.\nIn the description there, the moment map operator comes from the holomorphic su(2)C\nmoment map of T[SU(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1803.04009v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "SU(3) enhancement",
+      "pageStart": 33,
+      "pageEnd": 38,
+      "target": "../sections/sec-007-32-su3-enhancement.md",
+      "narrative": null,
+      "content": "SU(3) enhancement\nFrom the point of view of 6d N = (2, 0) theories, we only expect that the symmetry\nassociated to codimension-2 defects (which are knots in 3-manifolds) are su(2). However,\nwe will see that there are many theories which have larger symmetry enhancement.\nWe consider a pair of (N, A; B) and (N′, A′; B′) such that\n1) A is of SO(3) type while A′ is of SU(2) type ,\n2) I(A,B)\nN\n(m, e; x) = I(A′,B′)\nN′\n(m, e; x) ,\n3) Both of A and A′ are non-closable cycles .\n(3.19)\nwhich we call SU(3)-enhancement pair. The I(A,B)\nN\nin 2) denotes a topological invariant\ncalled 3d index, see Appendix",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1803.04009v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dehn filling in 3d/3d correspondence",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "../sections/sec-008-4-dehn-filling-in-3d3d-correspondence.md",
+      "narrative": null,
+      "content": "Dehn ﬁlling in 3d/3d correspondence\nIn this section, we generalize the DGG’s construction to obtain T 6d\nirred[M] for closed 3-\nmanifolds M by incorporating Dehn ﬁlling operation. Refer to [43–46] for previous discus-\nsions on Dehn ﬁlling operation in the context of 3d/3d correspondence and the construction\nof 3d theory, which we will denote T 6d\n(irred)c[M], labelled by Seifert manifolds M.13\n13Their theory T 6d\n(irred)c[M] is diﬀerent from our T 6d\nirred[M] theory. For example, when M is a Lens space,\ntheir T 6d\n(irred)c[M] is a non-trivial SCFT while supersymmetry is broken in our T 6d\nirre",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1803.04009v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dehn filling on T6dirred[N]",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "../sections/sec-009-41-dehn-filling-on-t6dirredn.md",
+      "narrative": null,
+      "content": "irred[N]\nFor a hyperbolic knot complement N and a primitive boundary cycle (pA+qB) ∈H1(∂N, Z),\nT 6d\nirred[NpA+qB] = (Giving a nilpotent vev to µ of T 6d\nirred[N, pA + qB]) .\n(4.1)\nThe fact that the closing of codimension-2 defects (i.e., knots) corresponds to giving the\nnilpotent vev to µ is standard in 4d class S theories. See e.g., [22] and references therein.\nThis is also in accord with our terminology ‘closable/non-closable’, because non-closable\ncycles have empty µ and hence it is not possible to do the above operation while preserving\nsupersymmetry. See Table 3 below.\npA + qB ∈H1\n\u0000∂N, Z",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1803.04009v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Small hyperbolic manifolds",
+      "pageStart": 41,
+      "pageEnd": 43,
+      "target": "../sections/sec-010-42-small-hyperbolic-manifolds.md",
+      "narrative": null,
+      "content": "[]{#sec : small-manifolds label=\"sec : small-manifolds\"}\n\nLet us discuss the case of closed 3-manifolds $M=$Weeks, a oriented hyperbolic closed 3-manifold with smallest hyperbolic volume. This was already discussed in [@Gang:2017lsr] and here we supply a little bit more details. The Weeks manifold is obtained by performing a Dehn filling operation on $m003$, = (m003)\\_-5_2 +2_2 = [Weeks]{.roman}. Corresponding 3d gauge theory is the theory in the second line of eq. [\\[Theory for m003/m004 Dehn-filled\\]](#Theory for m003/m004 Dehn-filled){reference-type=\"eqref\" reference=\"Theory for m003/m004 D",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1803.04009v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "3d N=2 Dualities from Surgery calculus",
+      "pageStart": 43,
+      "pageEnd": 44,
+      "target": "../sections/sec-011-5-3d-n2-dualities-from-surgery-calculus.md",
+      "narrative": null,
+      "content": "[]{#sec: Duality/Surgery label=\"sec: Duality/Surgery\"}\n\nThe DGG's construction is based on an ideal triangulation of a knot complement $N$. Different ideal triangulations give different field theory descriptions of $T^{DGG}[N]$ theory related by a duality. In our construction $T^{6d}_{\\rm irred}[M]$ for a closed 3-manifold $M$, we use a Dehn filling description of the closed 3-manifold, $M=N_A$, with a hyperbolic knot complement $N$ and a primitive boundary cycle $A$. The construction can be straightforwardly generalized to the case when $M$ can be given by Dehn fillings on a link complement.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1803.04009v2/blocks/conj-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 49,
+      "target": "conj-sec-012-01.md",
+      "narrative": null,
+      "content": "the 3d index is topological invariant (A.22) Diﬀerent Dehn surgery representation of a 3-manifold gives diﬀerent expressions for the 3d index and the conjecture says that they are all equivalent. Let us give some non-trivial evidence for the conjecture",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1803.04009v2/blocks/ex-sec-012-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 49,
+      "target": "ex-sec-012-02.md",
+      "narrative": null,
+      "content": "(S3\\52 1)µ1+kλ1 = (S3\\Kk) 1 denotes Whitehead link depicted in Figure 4. The corresponding link complement can be triangulation can be 4 tetrahedra. The gluing datum are (from SnapPy) C1 = Z1 + Z2 + Z3 + Z4 , C2 = 2Z′ 1 + Z′′ 1 + 2Z′ 2 + Z′′ 2 + Z′′ 3 + Z′′ 4 , C3 = Z′′ 1 + Z′′ 2 + 2Z′ 3 + Z′′ 3 + 2Z′ 4 + Z′′ 4 , C4 = C1 , aµ1 = Z′′ 3 + Z′ 1 −Z2 , bλ1 = 2(Z′ 2 + Z′′ 2 −Z3) , aµ2 = Z1 −Z′ 2 −Z′′ 3 , bλ2 = 2(Z1 −Z′ 3 −Z′′ 3 ) . (A.25) Note that only two internal edges are linearly independent and both of (aµ1, bλ1) and (aµ2, bλ2) are SO(3) type basis. Corresponding index is I(µ1,µ2;λ1,λ2) S3\\52",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1803.04009v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A 3d index IN(A,B)(m,e;x) and INpA+q B (x)",
+      "pageStart": 44,
+      "pageEnd": 49,
+      "target": "../sections/sec-012-a-3d-index-inabmex-and-inpaq-b-x.md",
+      "narrative": null,
+      "content": "N\n(m, e; x) and INpA+qB(x)\n3d index [40] is an invariant associated to an knot complement N and a choice of basis\n(A, B) of H1(∂N, Z). It is deﬁned with respect to a choice of an ideal triangulation T of N\nwith positive angle structure. But it is invariant under the local 2-3 move of triangulation\nand believed to be independent on the choice of T . After reviewing the deﬁnition based on\nan ideal triangulation, we generalized 3d index to be applicable to closed 3-manifolds by\n– 43 –\nincorporating Dehn ﬁlling. The 3d index for a 3-manifold M computes the superconformal\nindex of T 6d\nirred[M] the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1803.04009v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B T[SU(2)] and SU(2)/SO(3) types",
+      "pageStart": 49,
+      "pageEnd": 50,
+      "target": "../sections/sec-013-b-tsu2-and-su2so3-types.md",
+      "narrative": null,
+      "content": "T[SU(2)] and SU(2)/SO(3) types\nHere we discuss some properties of the Gaiotto-Witten T[SU(2)] theory. This theory plays\ntwo diﬀerent roles:\n1. In 3d SCFTs, the SL(2, Z) transformations of su(2) type uses duality wall theories,\nand T[SU(2)] corresponds to the operation of S ∈SL(2, Z).\n– 48 –\n2. In S1 compactiﬁcation of 6d N = (2, 0) theory, the codimension-2 defect becomes\nT[SU(2)] coupled to the 5d gauge ﬁeld, which gives properties of knots in complex\nChern-Simons theory on 3-manifolds.\nTherefore, the properties of this theory are important in both sides of 3d/3d correspondence.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1803.04009v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.1 Brief review of T[SU(2)]",
+      "pageStart": 50,
+      "pageEnd": 51,
+      "target": "../sections/sec-014-b1-brief-review-of-tsu2.md",
+      "narrative": null,
+      "content": "Brief review of T[SU(2)]\nLet us ﬁrst review the T[SU(2)] theory. It is a 3d N = 4 supersymmetric ﬁeld theory\nobtained by a U(1) gauge multiplet with two hypermultiplets of charge ±1. In terms of 3d\nN = 2 supersymmetry, there are one U(1) vector multiplet V , one neutral chiral multiplet\nφ, and two pairs of chiral multiplets (Ei, ˜Ei) (i = 1, 2) where Ei has U(1) charge +1 and\n˜Ei has charge −1. The superpotential is given by\nW = φ ˜EiEi.\n(B.1)\nAt the level of Lie algebra, this theory has global symmetry su(2)H × su(2)C. The su(2)H\nacts on the index i of (Ei, ˜Ei) (i = 1, 2). On the other hand,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1803.04009v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.2 The global structure of the symmetries and 't Hooft anomaly",
+      "pageStart": 51,
+      "pageEnd": 52,
+      "target": "../sections/sec-015-b2-the-global-structure-of-the-symmetries-and-t.md",
+      "narrative": null,
+      "content": "The global structure of the symmetries and ’t Hooft anomaly\nNow we study the global structure of the symmetries su(2)H and su(2)C. We claim that\nboth of them are SO(3) type in the sense that all gauge invariant operators (in the absence\nof background ﬁelds) are in representations of SO(3) (i.e, integer spin representations of\nsu(2)). We denote them as SO(3)H and SO(3)C, respectively. However, we will also show\nthat there is a mixed ’t Hooft anomaly between these groups SO(3)H and SO(3)C which\nforbid gauging both of them as SO(3) groups. In other words, this anomaly implies that if\nwe gauge one",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1803.04009v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.3 S-transformation of 3d SCFT",
+      "pageStart": 52,
+      "pageEnd": 53,
+      "target": "../sections/sec-016-b3-s-transformation-of-3d-scft.md",
+      "narrative": null,
+      "content": "S-transformation of 3d SCFT\nNow it is clear why the SU(2) and SO(3) types are exchanged under the Gaiotto-Witten’s\nS ∈SL(2, Z) transformation of 3d SCFT. We start from some 3d theory T . Then, the S\ntransformation is performed as follows.\nIf the T has symmetry SU(2), then we add T[SU(2)] and gauge the diagonal SU(2)\nsubgroup of the SU(2) of T and the SU(2)H of T[SU(2)]. Then, w2(SO(3)H) = 0, and\nhence the anomaly vanishes. The su(2)C symmetry is SO(3)C. On the other hand, if the\nT has the symmetry SO(3), then we can (and choose to do) gauge the diagonal SO(3)\nsubgroup of the SO(3) of T and the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1803.04009v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.4 SU(2)/SO(3) symmetry types of knots from six dimensions",
+      "pageStart": 53,
+      "pageEnd": 59,
+      "target": "../sections/sec-017-b4-su2so3-symmetry-types-of-knots-from-six-dimen.md",
+      "narrative": null,
+      "content": "SU(2)/SO(3) symmetry types of knots from six dimensions\nFrom the point of view of 6d N = (2, 0) theory, the symmetry type is determined as follows.\nFirst we have to recall some of the properties of this theory [65]. For simplicity we focus\non the case of the A1 theory corresponding to su(2).\nLet X6 be a six manifold.\nTo determine the partition function on X6, we have to\ngive some additional data. Let H3(X6, Z2) be the third homology with Z2 coeﬃcients. By\nPoincare duality, it is possible to split this homology as\nH3(X6, Z2) = A ⊕B.\n(B.13)\nThis is chosen such that any two elements a, a′ ∈A have",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

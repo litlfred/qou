@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>rem:three-euler-characteristics</title>
+<link rel="alternate" type="application/ld+json" href="index.jsonld">
+<script type="application/ld+json">
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-three-euler-characteristics",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:three-euler-characteristics",
+  "kind": "remark",
+  "title": "The three Euler characteristics, and the trace that is not one",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-brings-euler-characteristic",
+    "papers/quantum-observable-universe/blocks/rem-hkr-theorem",
+    "papers/quantum-observable-universe/blocks/conj-wigner-axiom",
+    "papers/quantum-observable-universe/blocks/def-hochschild-homology",
+    "papers/quantum-observable-universe/blocks/def-chern-character"
+  ],
+  "foreshadows": [
+    "papers/quantum-observable-universe/blocks/def-archimedean-condition",
+    "papers/quantum-observable-universe/blocks/rem-chern-character-and-riemann-roch",
+    "papers/quantum-observable-universe/blocks/rem-euler-characteristic-of-the-regular-representation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/lem-brings-euler-characteristic",
+  "cites": [
+    "references/hartshorne-1977",
+    "references/loday-1998"
+  ],
+  "tags": [
+    "euler-characteristic",
+    "hochschild-homology",
+    "quantum-dimension",
+    "notation",
+    "brings-surface"
+  ],
+  "text": "three-euler-characteristics.md",
+  "provenance": "authored"
+}
+</script>
+<link rel="stylesheet" href="../../../../../assets/css/navbar.css"><script src="../../../../../assets/navbar/rail-2dtsu7qepqi.js" defer></script><script src="../../../../../assets/js/navbar.js" defer></script><script src="../../../../../assets/navbar/row-2acuhncsmbg.js" defer></script><link rel="stylesheet" href="../../../../../assets/css/navbar-row.css"><script src="../../../../../assets/js/navbar-row.js" defer></script><meta name="fa-search-exclude" content="true"><script src="../../../../../assets/js/just-the-docs.js" defer></script><link rel="stylesheet" href="../../../../../assets/page-layout.css" data-fa-page-layout><script src="../../../../../assets/page-layout.js" defer data-fa-page-layout></script><script src="../../../../../assets/draft-banner.js" defer data-fa-page-layout></script><noscript data-fa-draft-noscript><link rel="stylesheet" href="../../../../../assets/draft-banner-noscript.css"></noscript><meta name="fa-platform-base" content="https://litlfred.github.io/folio-assistant" data-fa-platform-ui><link rel="stylesheet" href="../../../../../assets/css/docs-ui.css" data-fa-platform-ui><script src="../../../../../assets/js/docs-ui.js" defer data-fa-platform-ui></script><meta name="fa-pinned-data" content="../../../../.."></head>
+<body><script type="application/json" id="fa-navbar-row" data-fa-root="../../../../.." data-fa-row-src="row-2acuhncsmbg"></script><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../../../..">{"data":"rail-2dtsu7qepqi","here":"/v0/papers/quantum-observable-universe/blocks/rem-three-euler-characteristics/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../">Quantum Observable Universe</a></nav><div id="main-header" class="main-header fa-site-bar fa-page-bar"><a class="fa-page-bar-home" href="../../../../../">Quantum Observable Universe</a><div class="search" role="search"><div class="search-input-wrap"><input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search this site" autocomplete="off"><label for="search-input" class="search-label"><span class="sr-only">Search this site</span></label></div><div id="search-results" class="search-results"></div></div><span class="fa-page-bar-locale" data-fa-slot="locale"></span></div>
+<h1>rem:three-euler-characteristics</h1>
+<p><code>https://litlfred.github.io/qou/v0/papers/quantum-observable-universe/blocks/rem-three-euler-characteristics</code></p>
+<p>Read it in context: <a href="../../../../../en/quantum-observable-universe/#rem:three-euler-characteristics">en/quantum-observable-universe/#rem:three-euler-characteristics</a>.</p>
+<p class="type"><code>folio-assistant-core:Remark</code> <code>doco:Section</code></p>
+<dl>
+<dt>label</dt><dd>rem:three-euler-characteristics</dd>
+<dt>kind</dt><dd>remark</dd>
+<dt>title</dt><dd>The three Euler characteristics, and the trace that is not one</dd>
+<dt>uses</dt><dd><ul><li>papers/quantum-observable-universe/blocks/lem-brings-euler-characteristic</li><li>papers/quantum-observable-universe/blocks/rem-hkr-theorem</li><li>papers/quantum-observable-universe/blocks/conj-wigner-axiom</li><li>papers/quantum-observable-universe/blocks/def-hochschild-homology</li><li>papers/quantum-observable-universe/blocks/def-chern-character</li></ul></dd>
+<dt>foreshadows</dt><dd><ul><li>papers/quantum-observable-universe/blocks/def-archimedean-condition</li><li>papers/quantum-observable-universe/blocks/rem-chern-character-and-riemann-roch</li><li>papers/quantum-observable-universe/blocks/rem-euler-characteristic-of-the-regular-representation</li></ul></dd>
+<dt>interprets</dt><dd>papers/quantum-observable-universe/blocks/lem-brings-euler-characteristic</dd>
+<dt>cites</dt><dd><ul><li>references/hartshorne-1977</li><li>references/loday-1998</li></ul></dd>
+<dt>tags</dt><dd><ul><li>euler-characteristic</li><li>hochschild-homology</li><li>quantum-dimension</li><li>notation</li><li>brings-surface</li></ul></dd>
+<dt>text</dt><dd>three-euler-characteristics.md</dd>
+<dt>provenance</dt><dd>authored</dd>
+</dl>
+<p>Machine-readable: <a href="index.jsonld">index.jsonld</a>.</p>
+</body>
+</html>

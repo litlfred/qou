@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/sec-vanishing-explication",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:vanishing-explication",
+  "kind": "prose",
+  "title": "Vanishing conditions",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-c-quantum-observable-universe"
+  ],
+  "tags": [
+    "gauge-theory",
+    "vanishing"
+  ],
+  "text": "vanishing-explication.md",
+  "provenance": "authored"
+}

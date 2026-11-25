@@ -1,0 +1,4687 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "symmetry-04-00039-v3",
+  "title": "Knots on a Torus: A Model of the Elementary Particles",
+  "variant": "pdf",
+  "pages": 77,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The Basic Particle Model",
+      "number": "2",
+      "page": 8,
+      "pageLabel": "46",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-the-basic-particle-model"
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "number": "2.1",
+      "page": 8,
+      "pageLabel": "46",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-002-21-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Antiparticles and Some Aspects of Time",
+      "number": "2.2",
+      "page": 12,
+      "pageLabel": "50",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-22-antiparticles-and-some-aspects-of-time"
+    },
+    {
+      "level": 1,
+      "title": "Fusion",
+      "number": "3",
+      "page": 17,
+      "pageLabel": "55",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-3-fusion"
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "number": "3.1",
+      "page": 17,
+      "pageLabel": "55",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-005-31-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Hopf Algebra",
+      "number": "3.3",
+      "page": 18,
+      "pageLabel": "56",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-33-hopf-algebra"
+    },
+    {
+      "level": 2,
+      "title": "First-Order Fusion",
+      "number": "3.3",
+      "page": 19,
+      "pageLabel": "57",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-33-first-order-fusion"
+    },
+    {
+      "level": 2,
+      "title": "The Dirac Connection",
+      "number": "3.4",
+      "page": 20,
+      "pageLabel": "58",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-34-the-dirac-connection"
+    },
+    {
+      "level": 2,
+      "title": "Formalizing First-Order Fusion",
+      "number": "3.5",
+      "page": 22,
+      "pageLabel": "60",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-35-formalizing-first-order-fusion"
+    },
+    {
+      "level": 1,
+      "title": "Second Order Fusion",
+      "number": "4",
+      "page": 25,
+      "pageLabel": "63",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-010-4-second-order-fusion"
+    },
+    {
+      "level": 2,
+      "title": "MV",
+      "number": "P",
+      "page": 25,
+      "pageLabel": "63",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-011-p-mv"
+    },
+    {
+      "level": 1,
+      "title": "Fusion Summary",
+      "number": "5",
+      "page": 29,
+      "pageLabel": "67",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-012-5-fusion-summary"
+    },
+    {
+      "level": 1,
+      "title": "Detailed Composition and Contingency",
+      "number": "6",
+      "page": 30,
+      "pageLabel": "68",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-013-6-detailed-composition-and-contingency"
+    },
+    {
+      "level": 1,
+      "title": "The Standard Model Connection",
+      "number": "7",
+      "page": 34,
+      "pageLabel": "72",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-014-7-the-standard-model-connection"
+    },
+    {
+      "level": 2,
+      "title": "Ambiguities",
+      "number": "7.1",
+      "page": 34,
+      "pageLabel": "72",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-015-71-ambiguities"
+    },
+    {
+      "level": 2,
+      "title": "Delta Creation and Decay",
+      "number": "7.2",
+      "page": 35,
+      "pageLabel": "73",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-016-72-delta-creation-and-decay"
+    },
+    {
+      "level": 1,
+      "title": "CC* -BB*",
+      "number": "0",
+      "page": 37,
+      "pageLabel": "75",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-017-0-cc--bb"
+    },
+    {
+      "level": 2,
+      "title": "Beta Decay Examples",
+      "number": "7.3",
+      "page": 37,
+      "pageLabel": "75",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-018-73-beta-decay-examples"
+    },
+    {
+      "level": 2,
+      "title": "The Boson Matrix as per the SM",
+      "number": "7.4",
+      "page": 39,
+      "pageLabel": "77",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-019-74-the-boson-matrix-as-per-the-sm"
+    },
+    {
+      "level": 1,
+      "title": "Expansion to Three Generations",
+      "number": "8",
+      "page": 41,
+      "pageLabel": "79",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-020-8-expansion-to-three-generations"
+    },
+    {
+      "level": 2,
+      "title": "Scaffolds for the Family Tree",
+      "number": "8.1",
+      "page": 41,
+      "pageLabel": "79",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-021-81-scaffolds-for-the-family-tree"
+    },
+    {
+      "level": 2,
+      "title": "Triplication of Time",
+      "number": "8.2",
+      "page": 46,
+      "pageLabel": "84",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-022-82-triplication-of-time"
+    },
+    {
+      "level": 2,
+      "title": "Occupancy of the Three Generational Scaffold",
+      "number": "8.3",
+      "page": 47,
+      "pageLabel": "85",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-023-83-occupancy-of-the-three-generational-scaffold"
+    },
+    {
+      "level": 1,
+      "title": "Some Quantum Mechanical Connections",
+      "number": "9",
+      "page": 49,
+      "pageLabel": "87",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-024-9-some-quantum-mechanical-connections"
+    },
+    {
+      "level": 1,
+      "title": "Retrospective",
+      "number": "10",
+      "page": 52,
+      "pageLabel": "90",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-025-10-retrospective"
+    },
+    {
+      "level": 1,
+      "title": "Some Connections",
+      "number": "11",
+      "page": 53,
+      "pageLabel": "91",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-026-11-some-connections"
+    },
+    {
+      "level": 2,
+      "title": "String Theory",
+      "number": "11.1",
+      "page": 54,
+      "pageLabel": "92",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-027-111-string-theory"
+    },
+    {
+      "level": 2,
+      "title": "TQFT",
+      "number": "11.2",
+      "page": 54,
+      "pageLabel": "92",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-028-112-tqft"
+    },
+    {
+      "level": 2,
+      "title": "New Particles",
+      "number": "11.3",
+      "page": 56,
+      "pageLabel": "94",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-029-113-new-particles"
+    },
+    {
+      "level": 2,
+      "title": "Dark Matter",
+      "number": "11.4",
+      "page": 57,
+      "pageLabel": "95",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-030-114-dark-matter"
+    },
+    {
+      "level": 1,
+      "title": "Solitonic Behavior",
+      "number": "Appendix A",
+      "page": 58,
+      "pageLabel": "96",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-031-appendix-a-solitonic-behavior"
+    },
+    {
+      "level": 1,
+      "title": "Contingency in Second Order Fusion",
+      "number": "Appendix B",
+      "page": 61,
+      "pageLabel": "99",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-032-appendix-b-contingency-in-second-order-fusion"
+    },
+    {
+      "level": 1,
+      "title": "Available Junctions",
+      "number": null,
+      "page": 63,
+      "pageLabel": "101",
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-034-available-junctions"
+    },
+    {
+      "level": 1,
+      "title": "Available Antiquirks",
+      "number": null,
+      "page": 63,
+      "pageLabel": "101",
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-033-available-antiquirks"
+    },
+    {
+      "level": 1,
+      "title": "Hopf Algebra",
+      "number": "Appendix C",
+      "page": 64,
+      "pageLabel": "102",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-035-appendix-c-hopf-algebra"
+    },
+    {
+      "level": 1,
+      "title": "The Beta Switch",
+      "number": "Appendix D",
+      "page": 67,
+      "pageLabel": "105",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-036-appendix-d-the-beta-switch"
+    },
+    {
+      "level": 1,
+      "title": "Quaternions",
+      "number": "Appendix E",
+      "page": 68,
+      "pageLabel": "106",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-037-appendix-e-quaternions"
+    },
+    {
+      "level": 2,
+      "title": "Introductory",
+      "number": "E.1",
+      "page": 68,
+      "pageLabel": "106",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-038-e1-introductory"
+    },
+    {
+      "level": 2,
+      "title": "Time Triplication",
+      "number": "E.2",
+      "page": 70,
+      "pageLabel": "108",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-039-e2-time-triplication"
+    },
+    {
+      "level": 2,
+      "title": "Taxonomical Implications",
+      "number": "E.3",
+      "page": 71,
+      "pageLabel": "109",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-040-e3-taxonomical-implications"
+    },
+    {
+      "level": 1,
+      "title": "AB* AC*",
+      "number": "0",
+      "page": 73,
+      "pageLabel": "111",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-041-0-ab-ac"
+    },
+    {
+      "level": 1,
+      "title": "On the Kauffman Bracket Polynomial of (2, n) Torus Knots",
+      "number": "Appendix F",
+      "page": 74,
+      "pageLabel": "112",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-042-appendix-f-on-the-kauffman-bracket-polynomial-of"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 76,
+      "pageLabel": "114",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-043-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 274,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "attributes",
+          "heading": false
+        },
+        {
+          "term": "elementary particles",
+          "heading": false
+        },
+        {
+          "term": "taxonomy",
+          "heading": false
+        },
+        {
+          "term": "spacetime",
+          "heading": false
+        },
+        {
+          "term": "matter",
+          "heading": true
+        },
+        {
+          "term": "knots",
+          "heading": false
+        },
+        {
+          "term": "interactions",
+          "heading": false
+        },
+        {
+          "term": "charge",
+          "heading": false
+        }
+      ],
+      "extract": "Symmetry 2012, 4, 39-115; doi:10.3390/sym4010039 symmetry ISSN 2073-8994 www.mdpi.com/journal/symmetry Article Knots on a Torus: A Model of the Elementary Particles Jack S. Avrin 28715 Leacrest Drive, Rancho Palos Verdes, CA 90275, USA; E-Mail: javrin@aol.com Received: 16 November 2011; in revised form: 27 December 2011 / Accepted: 16 January 2012 / Published: 9 February 2012 Abstract: Two knots; just two",
+      "extractCut": true,
+      "blocks": [
+        "library/symmetry-04-00039-v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 8,
+      "labelStart": "1",
+      "labelEnd": "46",
+      "words": 2875,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nineteenth century",
+          "heading": false
+        },
+        {
+          "term": "elementary particles",
+          "heading": false
+        },
+        {
+          "term": "albert einstein",
+          "heading": false
+        },
+        {
+          "term": "moebius strip",
+          "heading": false
+        },
+        {
+          "term": "torus knot",
+          "heading": false
+        },
+        {
+          "term": "encircling torus",
+          "heading": false
+        },
+        {
+          "term": "toroidal core",
+          "heading": false
+        },
+        {
+          "term": "additional particle",
+          "heading": false
+        }
+      ],
+      "extract": "There are eleven sections in this paper. The first six sections—not quite half of the paper—develop the subject model. Section 7 relates and contrasts that model with the Standard Model in terms of the particles and interactions most commonly encountered and Section 8 extends the discussion to the triplication of particles and interactions observed in the high energy domain. Section 10 is a recapitulation and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-basic-particle-model",
+      "number": "2",
+      "title": "The Basic Particle Model",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "46",
+      "labelEnd": "46",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-introduction",
+      "number": "2.1",
+      "title": "Introduction",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 12,
+      "labelStart": "46",
+      "labelEnd": "50",
+      "words": 1780,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "down quirks",
+          "heading": false
+        },
+        {
+          "term": "flattened moebius",
+          "heading": false
+        },
+        {
+          "term": "triangular planform",
+          "heading": false
+        },
+        {
+          "term": "moebius strips",
+          "heading": false
+        },
+        {
+          "term": "nht",
+          "heading": false
+        },
+        {
+          "term": "basic fermions",
+          "heading": false
+        },
+        {
+          "term": "directed ribbon",
+          "heading": false
+        },
+        {
+          "term": "fms",
+          "heading": false
+        }
+      ],
+      "extract": "To anticipate what we have to look forward to in what follows, here’s another quotation [3]: “The topologically iconic Moebius strip (MS) is a closed ribbon that incorporates a single half-twist but it can be generalized to any (integral) number of half-twists (NHT). Flattened Moebius strips (FMS) are generalized MS with a prescribed direction of traverse and an essentially two-dimensional configuration that can",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-antiparticles-and-some-aspects-of-time",
+      "number": "2.2",
+      "title": "Antiparticles and Some Aspects of Time",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 17,
+      "labelStart": "50",
+      "labelEnd": "55",
+      "words": 1426,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quirk",
+          "heading": false
+        },
+        {
+          "term": "instanton characteristics",
+          "heading": false
+        },
+        {
+          "term": "wheeler-feynman notion",
+          "heading": false
+        },
+        {
+          "term": "cpt product",
+          "heading": false
+        },
+        {
+          "term": "rai",
+          "heading": false
+        },
+        {
+          "term": "sine gordon",
+          "heading": false
+        },
+        {
+          "term": "traverse",
+          "heading": false
+        },
+        {
+          "term": "reverse instantons",
+          "heading": false
+        }
+      ],
+      "extract": "To discuss composites we need one more definition: associated with each of the four fermions in Figure 6 is an antifermion, an example of which is the one associated with fermion C and labeled C* in Figure 10. As shown in the figure, antifermions are distinguished simply by a reversed direction of traverse. As per the discussion in the preceding section, we must also consider the corners of the antifermions to be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-fusion",
+      "number": "3",
+      "title": "Fusion",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "55",
+      "labelEnd": "55",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-31-introduction",
+      "number": "3.1",
+      "title": "Introduction",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "55",
+      "labelEnd": "56",
+      "words": 455,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "horizontal connections",
+          "heading": false
+        },
+        {
+          "term": "vertical connections",
+          "heading": false
+        },
+        {
+          "term": "mating",
+          "heading": false
+        },
+        {
+          "term": "junction",
+          "heading": false
+        },
+        {
+          "term": "planform",
+          "heading": false
+        },
+        {
+          "term": "fission",
+          "heading": false
+        },
+        {
+          "term": "fused",
+          "heading": false
+        },
+        {
+          "term": "antifermion",
+          "heading": false
+        }
+      ],
+      "extract": "First, we selectively recall that part of the quotation that introduced the previous section: “Flattened Moebius strips (FMS)—can take the form of an elementary, triangular planform or the contiguous composite of such configurations. The composites result from an operation called fusion in which elementary configurations are combined to produce configurations with various values of twist. All values of twist can be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-33-hopf-algebra",
+      "number": "3.3",
+      "title": "Hopf Algebra",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "56",
+      "labelEnd": "57",
+      "words": 349,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hopf algebra",
+          "heading": true
+        },
+        {
+          "term": "fission",
+          "heading": false
+        },
+        {
+          "term": "comultiplication",
+          "heading": false
+        },
+        {
+          "term": "tensor formalism",
+          "heading": false
+        },
+        {
+          "term": "operations",
+          "heading": false
+        },
+        {
+          "term": "members",
+          "heading": false
+        },
+        {
+          "term": "entity",
+          "heading": false
+        },
+        {
+          "term": "fusion",
+          "heading": false
+        }
+      ],
+      "extract": "These functions turn out to find expression as coefficients in a tensor formalism [2] that describes the operations of fusion and fission, which implicate this model’s identity as a Hopf algebra [14]. Appendix (C) discusses that connection in more detail but, briefly, we need to associate the process of fusion with the Hopf algebraic operation of multiplication and the process of fission with the operation of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-33-first-order-fusion",
+      "number": "3.3",
+      "title": "First-Order Fusion",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "57",
+      "labelEnd": "58",
+      "words": 533,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "composite particle",
+          "heading": false
+        },
+        {
+          "term": "fusion",
+          "heading": true
+        },
+        {
+          "term": "pions",
+          "heading": false
+        },
+        {
+          "term": "twist",
+          "heading": false
+        },
+        {
+          "term": "traverse",
+          "heading": false
+        },
+        {
+          "term": "mesons",
+          "heading": false
+        },
+        {
+          "term": "proton",
+          "heading": false
+        },
+        {
+          "term": "neutron",
+          "heading": false
+        }
+      ],
+      "extract": "As to those compositional products, two examples of what we shall designate as first order fusion are shown in Figure 20 (in this case it turns out that these are mesons, or more explicitly, pions). Figure 20. Two mutually conjugate pions. On the left we see fermion C fused with the conjugate of fermion B and we note that the continuity of traverse is automatically maintained; we see traverse circulating around the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-34-the-dirac-connection",
+      "number": "3.4",
+      "title": "The Dirac Connection",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": "58",
+      "labelEnd": "60",
+      "words": 726,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dirac",
+          "heading": true
+        },
+        {
+          "term": "dirac equation",
+          "heading": false
+        },
+        {
+          "term": "dirac theory",
+          "heading": false
+        },
+        {
+          "term": "antifermion",
+          "heading": false
+        },
+        {
+          "term": "circular nature",
+          "heading": false
+        },
+        {
+          "term": "traverse",
+          "heading": false
+        },
+        {
+          "term": "quantum mechanical",
+          "heading": false
+        },
+        {
+          "term": "spin matrix",
+          "heading": false
+        }
+      ],
+      "extract": "The fact that traverse in our model does, indeed proceed one way through the fermion component and the opposite way through the antifermion highlights how yet another historically iconic item, in this case the Dirac theory, has direct bearing on our model. According to all accounts, the theoretical concept that antiparticles exist emerges in the combination of Quantum Mechanics and Special Relativity via the Dirac",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-35-formalizing-first-order-fusion",
+      "number": "3.5",
+      "title": "Formalizing First-Order Fusion",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 25,
+      "labelStart": "60",
+      "labelEnd": "63",
+      "words": 1366,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twist loci",
+          "heading": false
+        },
+        {
+          "term": "fusion",
+          "heading": true
+        },
+        {
+          "term": "odd nht",
+          "heading": false
+        },
+        {
+          "term": "spin fermions",
+          "heading": false
+        },
+        {
+          "term": "basic spin",
+          "heading": false
+        },
+        {
+          "term": "triangular planforms",
+          "heading": false
+        },
+        {
+          "term": "vector spin",
+          "heading": false
+        },
+        {
+          "term": "spin spaces",
+          "heading": false
+        }
+      ],
+      "extract": "We are now in a position to discuss the fusion of the complete set of basic spin 1/2 fermions with the associated conjugate set. At this level of taxonomical organization, it is expedient to consider an abstract, group theoretic approach, which bypasses the detail but summarizes the general architecture of the taxonomy. In this approach (cited in [1] as per the treatment in [5]), a particle hierarchy is developed as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-4-second-order-fusion",
+      "number": "4",
+      "title": "Second Order Fusion",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": "63",
+      "labelEnd": "63",
+      "words": 116,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fusion",
+          "heading": true
+        },
+        {
+          "term": "operating",
+          "heading": false
+        },
+        {
+          "term": "second-order",
+          "heading": false
+        }
+      ],
+      "extract": "As per the comment made above in connection with Equation (3-16), we can view second-order fusion as Matrix M operating on basic fermion vector V, that is, in analogy with Equation (3-14), we can write 1 2 1 2 1 2 1 2 1 - - S S S S S S S S M V P P P         (4-1) which equals 1/2 3/2 P P  for s1 = 1 (or 0) and s2 = 1/2. The result can be viewed as a 4-vector, 1 2 3 4 ( , , , )T P P P P P  (4-2) whose",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-p-mv",
+      "number": "P",
+      "title": "MV",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 29,
+      "labelStart": "63",
+      "labelEnd": "67",
+      "words": 767,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twist loci",
+          "heading": false
+        },
+        {
+          "term": "inclined planes",
+          "heading": false
+        },
+        {
+          "term": "charge loci",
+          "heading": false
+        },
+        {
+          "term": "inclined planar",
+          "heading": false
+        },
+        {
+          "term": "second-order fusion",
+          "heading": false
+        },
+        {
+          "term": "charge gradients",
+          "heading": false
+        },
+        {
+          "term": "order fusion",
+          "heading": false
+        },
+        {
+          "term": "occupancy",
+          "heading": false
+        }
+      ],
+      "extract": "MV  , with k = A, B, C, or D (4-3) For example, 1P is a matrix whose elements are three letter words, formed by appending the letter A to each of the elements of matrix M. Geometrically, we can picture the vector P as a vertical stack of four horizontal planes, the kP . However, since we are preoccupied with the aggregation of elements in terms of twist, we note that the twist loci are a set of inclined planes [3]",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-5-fusion-summary",
+      "number": "5",
+      "title": "Fusion Summary",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": "67",
+      "labelEnd": "68",
+      "words": 731,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quaternary number",
+          "heading": false
+        },
+        {
+          "term": "basic letters",
+          "heading": false
+        },
+        {
+          "term": "fusion",
+          "heading": true
+        },
+        {
+          "term": "conjugate letter",
+          "heading": false
+        },
+        {
+          "term": "balanced sequence",
+          "heading": false
+        },
+        {
+          "term": "nht",
+          "heading": false
+        },
+        {
+          "term": "order fusion",
+          "heading": false
+        },
+        {
+          "term": "odd integers",
+          "heading": false
+        }
+      ],
+      "extract": "The results summarized in Figure 24 for first order and Figures 28 and 29 for second order fusion are readily predictable on a combinatorial basis and we finish this section with a short discussion to that effect. First, we note that the arithmetic of fusing two basic letters (the second a conjugate letter) taken independently from the basic letter list for which NHT = −3, −1, +1 and +3, a contiguous, balanced",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-6-detailed-composition-and-contingency",
+      "number": "6",
+      "title": "Detailed Composition and Contingency",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 34,
+      "labelStart": "68",
+      "labelEnd": "72",
+      "words": 1603,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "junction formed",
+          "heading": false
+        },
+        {
+          "term": "first-order fusion",
+          "heading": false
+        },
+        {
+          "term": "contingency",
+          "heading": true
+        },
+        {
+          "term": "second-order fusion",
+          "heading": false
+        },
+        {
+          "term": "detailed composition",
+          "heading": true
+        },
+        {
+          "term": "order fusion",
+          "heading": false
+        },
+        {
+          "term": "quirks",
+          "heading": false
+        },
+        {
+          "term": "potential exclusions",
+          "heading": false
+        }
+      ],
+      "extract": "To this point we have ignored a major mismatch, namely that between our direct product/convolution approach and what we might describe as a configurational approach to tabulating degeneracy [2,3]. Suppose we consider the taxonomy from the point of view of the availability of choices imposed by the basic topology of each order of fusion. Continuing with the lexicographic/geometric system we have been using, all words",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-7-the-standard-model-connection",
+      "number": "7",
+      "title": "The Standard Model Connection",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 34,
+      "labelStart": "72",
+      "labelEnd": "72",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-015-71-ambiguities",
+      "number": "7.1",
+      "title": "Ambiguities",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 35,
+      "labelStart": "72",
+      "labelEnd": "73",
+      "words": 299,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ambiguity associated",
+          "heading": false
+        },
+        {
+          "term": "ambiguities",
+          "heading": true
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "model elements",
+          "heading": false
+        },
+        {
+          "term": "conservation",
+          "heading": false
+        },
+        {
+          "term": "particle",
+          "heading": false
+        },
+        {
+          "term": "represent",
+          "heading": false
+        }
+      ],
+      "extract": "Full disclosure: our alternative model is inherently ambiguous in that a given label (one of the capital letters) may represent more than one fundamental particle of the Standard Model depending on the elementary particle interaction that is being modeled. The ambiguity is summarized in Figure 35. As indicated, the nucleons are represented in the first row and the leptons in the next three rows. The labels employed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-72-delta-creation-and-decay",
+      "number": "7.2",
+      "title": "Delta Creation and Decay",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 37,
+      "labelStart": "73",
+      "labelEnd": "75",
+      "words": 411,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nht triplet",
+          "heading": false
+        },
+        {
+          "term": "nht column",
+          "heading": false
+        },
+        {
+          "term": "neutral pion",
+          "heading": false
+        },
+        {
+          "term": "delta particles",
+          "heading": false
+        },
+        {
+          "term": "remaining member",
+          "heading": false
+        },
+        {
+          "term": "equated",
+          "heading": false
+        },
+        {
+          "term": "alternate model",
+          "heading": false
+        },
+        {
+          "term": "nucleons",
+          "heading": false
+        }
+      ],
+      "extract": "For example, consider the creation of delta particles by the excitation of nucleons operated upon by pions (or conversely, delta decay into nucleons) as summarized in Figure 36 (cf. [1]). This figure is essentially that presented in [16]) with the exception that there are two versions, 0R  and 0L  , shown here of the neutral pion rather than the one, 0  usually shown in the SM. Figure 36. Nucleons and excited",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-0-cc--bb",
+      "number": "0",
+      "title": "CC* -BB*",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 37,
+      "labelStart": "75",
+      "labelEnd": "75",
+      "words": 103,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "superposition",
+          "heading": false
+        },
+        {
+          "term": "quirks",
+          "heading": false
+        },
+        {
+          "term": "pion",
+          "heading": false
+        }
+      ],
+      "extract": "CC* -BB* uu*u*u-dd*u*u R L       (7-4) in terms of the quirks available after formation of the composites. Upon eliminating the common factor, u*u from each term we are left with 0 uu* dd*   (7-5) which “is the accepted SM composition (also viewed as a superposition) for the 0 .” In the same vein, we note that the two pion versions can also form the superposition for the  particle, viz: 0R 0L + uu* + dd*",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-73-beta-decay-examples",
+      "number": "7.3",
+      "title": "Beta Decay Examples",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 39,
+      "labelStart": "75",
+      "labelEnd": "77",
+      "words": 568,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "beta decay",
+          "heading": true
+        },
+        {
+          "term": "muon decay",
+          "heading": false
+        },
+        {
+          "term": "nht column",
+          "heading": false
+        },
+        {
+          "term": "neutron decay",
+          "heading": false
+        },
+        {
+          "term": "muon neutrino",
+          "heading": false
+        },
+        {
+          "term": "beta switch",
+          "heading": false
+        },
+        {
+          "term": "quirk",
+          "heading": false
+        },
+        {
+          "term": "excited state",
+          "heading": false
+        }
+      ],
+      "extract": "Modeling weak interactions is quite different: in the case of the beta decay of the neutron, we begin, again, with its excited states as shown in the NHT = −1 column of Figure 29, noting specifically the terms AC*C and CC*A (which are operationally identical for our purpose) in the uppermost triplet of the −1 column. Using AC*C, Figure 38 shows the first stage of an alternative model version of neutron Beta",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-74-the-boson-matrix-as-per-the-sm",
+      "number": "7.4",
+      "title": "The Boson Matrix as per the SM",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 41,
+      "labelStart": "77",
+      "labelEnd": "79",
+      "words": 549,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quadrant act",
+          "heading": false
+        },
+        {
+          "term": "strong isospin",
+          "heading": false
+        },
+        {
+          "term": "deuteron stability",
+          "heading": false
+        },
+        {
+          "term": "neutrino pair",
+          "heading": false
+        },
+        {
+          "term": "free proton",
+          "heading": false
+        },
+        {
+          "term": "boson",
+          "heading": true
+        },
+        {
+          "term": "fuses",
+          "heading": false
+        },
+        {
+          "term": "vector bosons",
+          "heading": false
+        }
+      ],
+      "extract": "For reference, here is the bosonic operator matrix one more time: and here (Figure 42) it is translated into Standard Model nomenclature mainly according to the interactions we have been reviewing: Symmetry 2012, 4 78 Figure 42. The bosonic operator matrix in SM nomenclature. The empty corners signify the previously mentioned impossible combinations, and in fact, the upper row and right hand column—six items in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-8-expansion-to-three-generations",
+      "number": "8",
+      "title": "Expansion to Three Generations",
+      "level": 1,
+      "pageStart": 41,
+      "pageEnd": 41,
+      "labelStart": "79",
+      "labelEnd": "79",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-021-81-scaffolds-for-the-family-tree",
+      "number": "8.1",
+      "title": "Scaffolds for the Family Tree",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 46,
+      "labelStart": "79",
+      "labelEnd": "84",
+      "words": 1685,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "duadic planes",
+          "heading": false
+        },
+        {
+          "term": "capital letter",
+          "heading": false
+        },
+        {
+          "term": "orthogonal duadic",
+          "heading": false
+        },
+        {
+          "term": "pentagonal outline",
+          "heading": false
+        },
+        {
+          "term": "twenty faces",
+          "heading": false
+        },
+        {
+          "term": "icosahedral vertices",
+          "heading": false
+        },
+        {
+          "term": "vertex labeled",
+          "heading": false
+        },
+        {
+          "term": "labeled clockwise",
+          "heading": false
+        }
+      ],
+      "extract": "So far, our model has been discussed in terms of a single generation of particles whereas the SM, as is well known, actually consists of a family of three generations. The object of this section is to display a corresponding triplication of our model, in fact a family structure consisting of three and only three generations, most of which is demonstrated in detail in [1]. Here, while omitting much of the detail, we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-82-triplication-of-time",
+      "number": "8.2",
+      "title": "Triplication of Time",
+      "level": 2,
+      "pageStart": 46,
+      "pageEnd": 47,
+      "labelStart": "84",
+      "labelEnd": "85",
+      "words": 540,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "time triplication",
+          "heading": true
+        },
+        {
+          "term": "duadic planes",
+          "heading": false
+        },
+        {
+          "term": "fms",
+          "heading": false
+        },
+        {
+          "term": "spacetime",
+          "heading": false
+        },
+        {
+          "term": "coordinate",
+          "heading": false
+        },
+        {
+          "term": "matters",
+          "heading": false
+        },
+        {
+          "term": "generations",
+          "heading": false
+        },
+        {
+          "term": "correspondence",
+          "heading": false
+        }
+      ],
+      "extract": "We are not yet done with the “speculative vein” adopted above: given the duadic planes, the role if any of the associated orthogonal coordinate system comes into question and, in that regard, we recall, once more, our identification of the out-of-plane coordinate for individual FMS with time as in the immediately preceding sections. Here we have three duadic planes, with, in the sense posited above, a given duadic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-83-occupancy-of-the-three-generational-scaffold",
+      "number": "8.3",
+      "title": "Occupancy of the Three Generational Scaffold",
+      "level": 2,
+      "pageStart": 47,
+      "pageEnd": 49,
+      "labelStart": "85",
+      "labelEnd": "87",
+      "words": 534,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "baryon octet",
+          "heading": false
+        },
+        {
+          "term": "quirks",
+          "heading": false
+        },
+        {
+          "term": "spin baryon",
+          "heading": false
+        },
+        {
+          "term": "replacement process",
+          "heading": false
+        },
+        {
+          "term": "decuplet",
+          "heading": false
+        },
+        {
+          "term": "occupancy",
+          "heading": true
+        },
+        {
+          "term": "antiquirks",
+          "heading": false
+        },
+        {
+          "term": "delta particles",
+          "heading": false
+        }
+      ],
+      "extract": "We now return to the detailed particle occupancy of the icoshedral surface. In particular, to round out this section, we need to illustrate what it is that is emplaced upon loci in the triangular faces of the scaffolds discussed above. As mentioned, a prototypical triangular face can accommodate up to a decuplet of detailed particle models but before we show an example of such a decuplet, suppose we ignore the three",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-9-some-quantum-mechanical-connections",
+      "number": "9",
+      "title": "Some Quantum Mechanical Connections",
+      "level": 1,
+      "pageStart": 49,
+      "pageEnd": 52,
+      "labelStart": "87",
+      "labelEnd": "90",
+      "words": 1290,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum mechanical",
+          "heading": true
+        },
+        {
+          "term": "charge degeneracies",
+          "heading": false
+        },
+        {
+          "term": "twist charge",
+          "heading": false
+        },
+        {
+          "term": "fixing twist",
+          "heading": false
+        },
+        {
+          "term": "associated charge",
+          "heading": false
+        },
+        {
+          "term": "complex twist",
+          "heading": false
+        },
+        {
+          "term": "salient feature",
+          "heading": false
+        },
+        {
+          "term": "fusion process",
+          "heading": false
+        }
+      ],
+      "extract": "Since this paper is not concerned with particle kinematics, position/momentum relationships are not an issue. However, there is clearly a statistical element in the way FMS are combined in the fusion operation and this should rightly be treated in a quantum mechanical manner. We begin by recalling Section 4 wherein matrix M is characterized as an operator that converts a vector representing the set of four basic,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-10-retrospective",
+      "number": "10",
+      "title": "Retrospective",
+      "level": 1,
+      "pageStart": 52,
+      "pageEnd": 53,
+      "labelStart": "90",
+      "labelEnd": "91",
+      "words": 754,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "traverse direction",
+          "heading": false
+        },
+        {
+          "term": "fms",
+          "heading": false
+        },
+        {
+          "term": "toroidal topology",
+          "heading": false
+        },
+        {
+          "term": "solitonic nature",
+          "heading": false
+        },
+        {
+          "term": "fractional charge",
+          "heading": false
+        },
+        {
+          "term": "algebraic geometrical",
+          "heading": false
+        },
+        {
+          "term": "antiparticles",
+          "heading": false
+        },
+        {
+          "term": "planform",
+          "heading": false
+        }
+      ],
+      "extract": "The model described herein is based on quite a small set of basic notions: 1. The particles of the model are localized distortions in and of an otherwise undistorted spacetime. 2. There is an underlying toroidal topology embodied in a basic set of four Moebius strips (MS), or equivalently, two rudimentary torus knots, each twisted both left and right. 3. To create a basic set of particles, each of the four MS is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-11-some-connections",
+      "number": "11",
+      "title": "Some Connections",
+      "level": 1,
+      "pageStart": 53,
+      "pageEnd": 54,
+      "labelStart": "91",
+      "labelEnd": "92",
+      "words": 304,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sakata",
+          "heading": false
+        },
+        {
+          "term": "efforts",
+          "heading": false
+        },
+        {
+          "term": "century",
+          "heading": false
+        },
+        {
+          "term": "model",
+          "heading": false
+        },
+        {
+          "term": "former",
+          "heading": false
+        },
+        {
+          "term": "connection",
+          "heading": false
+        },
+        {
+          "term": "quark",
+          "heading": false
+        },
+        {
+          "term": "paper",
+          "heading": false
+        }
+      ],
+      "extract": "While this paper has emphasized the role of Moebius strips as the basis of elementary particle ontology, clearly, the interdependence of MS and torus knots is fundamental, whether we describe the latter as the boundary of the former or, conversely, the former as the concatenation of the latter. All of which makes the knot connection to physics important to our model and this paper, a connection that, as we saw goes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-111-string-theory",
+      "number": "11.1",
+      "title": "String Theory",
+      "level": 2,
+      "pageStart": 54,
+      "pageEnd": 54,
+      "labelStart": "92",
+      "labelEnd": "92",
+      "words": 30,
+      "summary": null,
+      "keywords": [],
+      "extract": "Nowadays, there is a large and growing literature [8,21] on the connection between knots and physics, not the least of which involves the connection between knots and Topological Quantum field",
+      "extractCut": false
+    },
+    {
+      "id": "sec-028-112-tqft",
+      "number": "11.2",
+      "title": "TQFT",
+      "level": 2,
+      "pageStart": 54,
+      "pageEnd": 56,
+      "labelStart": "92",
+      "labelEnd": "94",
+      "words": 1006,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tqft",
+          "heading": true
+        },
+        {
+          "term": "composite cobordisms",
+          "heading": false
+        },
+        {
+          "term": "fms",
+          "heading": false
+        },
+        {
+          "term": "witten interpretation",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "string theory",
+          "heading": false
+        },
+        {
+          "term": "torus knots",
+          "heading": false
+        },
+        {
+          "term": "topological quantum",
+          "heading": false
+        }
+      ],
+      "extract": "reason than the connection between the words “knots” and “strings”! However, there is more to the string theory connection than that. For one thing, the coefficient of the kinematic term in the Lagrangian yielding the Sine-Gordon equation is identifiable as string tension. And, in terms of concatenating torus knots, we note that, by definition, each is explicitly wound around a torus, which amounts to “toroidal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-113-new-particles",
+      "number": "11.3",
+      "title": "New Particles",
+      "level": 2,
+      "pageStart": 56,
+      "pageEnd": 57,
+      "labelStart": "94",
+      "labelEnd": "95",
+      "words": 363,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "antiquirk",
+          "heading": false
+        },
+        {
+          "term": "portrayed",
+          "heading": false
+        },
+        {
+          "term": "particles",
+          "heading": true
+        },
+        {
+          "term": "meson",
+          "heading": false
+        },
+        {
+          "term": "experimentation",
+          "heading": false
+        },
+        {
+          "term": "neutron",
+          "heading": false
+        },
+        {
+          "term": "bosons",
+          "heading": false
+        },
+        {
+          "term": "decay",
+          "heading": false
+        }
+      ],
+      "extract": "The difference between how bosons and higher spin fermions are portrayed in our model and in the SM was discussed in Section 9. It evokes some experimentation that as mentioned in [1] “points to the existence of heretofore unobserved particles”. The particles of interest are a four-quark meson (http://xxx.lanl.gov/abs/hep.lat/0001023) and a “pentaquark”, a five-quark baryon which decayed into a neutron and a K ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-114-dark-matter",
+      "number": "11.4",
+      "title": "Dark Matter",
+      "level": 2,
+      "pageStart": 57,
+      "pageEnd": 58,
+      "labelStart": "95",
+      "labelEnd": "96",
+      "words": 356,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dark",
+          "heading": true
+        },
+        {
+          "term": "triplication",
+          "heading": false
+        },
+        {
+          "term": "matter",
+          "heading": true
+        },
+        {
+          "term": "virtue",
+          "heading": false
+        },
+        {
+          "term": "broken",
+          "heading": false
+        },
+        {
+          "term": "symmetry",
+          "heading": false
+        },
+        {
+          "term": "combinations",
+          "heading": false
+        },
+        {
+          "term": "kind",
+          "heading": false
+        }
+      ],
+      "extract": "As is well known, there are numerous candidates for the constituents of dark matter (and dark energy as well). Here is our model’s candidate: Always lurking at the perimeters of disquisition but never really contributing is the enigmatic fourth elementary fermion, the one labeled “D” with an NHT of +3 and a charge of +2e. Clearly, this FMS and its combinations have absolutely nothing to do with the alternative",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-appendix-a-solitonic-behavior",
+      "number": "Appendix A",
+      "title": "Solitonic Behavior",
+      "level": 1,
+      "pageStart": 58,
+      "pageEnd": 61,
+      "labelStart": "96",
+      "labelEnd": "99",
+      "words": 1691,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "solitonic behavior",
+          "heading": true
+        },
+        {
+          "term": "sine-gordon equation",
+          "heading": false
+        },
+        {
+          "term": "traverse",
+          "heading": false
+        },
+        {
+          "term": "dynamic equation",
+          "heading": false
+        },
+        {
+          "term": "eqation",
+          "heading": false
+        },
+        {
+          "term": "modified behavior",
+          "heading": false
+        },
+        {
+          "term": "meters sec",
+          "heading": false
+        },
+        {
+          "term": "mass associated",
+          "heading": false
+        }
+      ],
+      "extract": "This Appendix is essentially a summary of [4] insofar as it characterizes (m, n) torus knots as solitons in spacetime. Its purpose is not only to demonstrate the solitonic nature’ of a torus knot/MS type of disturbance in spacetime but the equal validity of particles and anti particles as so portrayed in the our model. In what follows we will mostly indicate only the basic assumptions and results of [4], omitting",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-appendix-b-contingency-in-second-order-fusion",
+      "number": "Appendix B",
+      "title": "Contingency in Second Order Fusion",
+      "level": 1,
+      "pageStart": 61,
+      "pageEnd": 63,
+      "labelStart": "99",
+      "labelEnd": "101",
+      "words": 332,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "order fusion",
+          "heading": true
+        },
+        {
+          "term": "available antiquirks",
+          "heading": false
+        },
+        {
+          "term": "junctions",
+          "heading": false
+        },
+        {
+          "term": "added column",
+          "heading": false
+        },
+        {
+          "term": "selection",
+          "heading": false
+        },
+        {
+          "term": "formed",
+          "heading": false
+        }
+      ],
+      "extract": "As mentioned in Section 3, the salient feature here is that the junctions available for the second order fusion depend on junction selection in the first fusion. The results of analysis of that selection process were summarized in Table 3-2, which lists half of the second order permutations with coefficients that embody contingencies and Figure 3-14, the resulting degeneracy table, both repeated here for reference.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-available-antiquirks",
+      "number": null,
+      "title": "Available Antiquirks",
+      "level": 1,
+      "pageStart": 63,
+      "pageEnd": 63,
+      "labelStart": "101",
+      "labelEnd": "101",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-034-available-junctions",
+      "number": null,
+      "title": "Available Junctions",
+      "level": 1,
+      "pageStart": 63,
+      "pageEnd": 64,
+      "labelStart": "101",
+      "labelEnd": "102",
+      "words": 551,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "available junctions",
+          "heading": true
+        },
+        {
+          "term": "available antiquirks",
+          "heading": false
+        },
+        {
+          "term": "type junctions",
+          "heading": false
+        },
+        {
+          "term": "single antiquirk",
+          "heading": false
+        },
+        {
+          "term": "fms",
+          "heading": false
+        },
+        {
+          "term": "order fusion",
+          "heading": false
+        },
+        {
+          "term": "portrayed",
+          "heading": false
+        },
+        {
+          "term": "availability",
+          "heading": false
+        }
+      ],
+      "extract": "Available Antiquirks Available Junctions Available Antiquirks AA*(x) 2d* CA*(x) 2d* AB* (2x) 2(d* + u*) CB*(2x + 2y) 4d* + 2(d* + u*) AC* (x) 2u* CC*(4y + x) 4(d* + u*) + 2u* AD* (0) 0 CD*(2y) 2u* BA* (2x) 2d* DA*(0) 0 BB* (4x +y) 4(d* +u*) + 2d* DB*(y) 2d* BC* (2x + 2y) 2(d* + u*) + 4u* DC*(2y) 2d* + 2u* BD* (y) 2u* DD*(y) 2u* As an example of the impact of the availability coefficients, recall the general",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-appendix-c-hopf-algebra",
+      "number": "Appendix C",
+      "title": "Hopf Algebra",
+      "level": 1,
+      "pageStart": 64,
+      "pageEnd": 67,
+      "labelStart": "102",
+      "labelEnd": "105",
+      "words": 1207,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hopf algebra",
+          "heading": true
+        },
+        {
+          "term": "fission operations",
+          "heading": false
+        },
+        {
+          "term": "fms",
+          "heading": false
+        },
+        {
+          "term": "hopf algebraic",
+          "heading": false
+        },
+        {
+          "term": "comultiplication",
+          "heading": false
+        },
+        {
+          "term": "antipode",
+          "heading": false
+        },
+        {
+          "term": "alternative model",
+          "heading": false
+        },
+        {
+          "term": "antifermion",
+          "heading": false
+        }
+      ],
+      "extract": "The objective here is to summarize a demonstration of the relationship between our model and a Hopf algebra. Briefly, if we can associate the process of fusion with the Hopf algebraic operation of multiplication and the process of fission with the operation of comultiplication we have two essential components of a bialgebra, and with the inclusion of an antipode, the essential elements of a Hopf algebra [8,14].",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-appendix-d-the-beta-switch",
+      "number": "Appendix D",
+      "title": "The Beta Switch",
+      "level": 1,
+      "pageStart": 67,
+      "pageEnd": 68,
+      "labelStart": "105",
+      "labelEnd": "106",
+      "words": 232,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "beta switch",
+          "heading": true
+        },
+        {
+          "term": "diagrammatic difference",
+          "heading": false
+        },
+        {
+          "term": "antiquirks",
+          "heading": false
+        },
+        {
+          "term": "edge views",
+          "heading": false
+        },
+        {
+          "term": "demonstration",
+          "heading": false
+        },
+        {
+          "term": "intersections",
+          "heading": false
+        }
+      ],
+      "extract": "The object here is to demonstrate a knot theoretic demonstration of how the switching of quirks in beta decay comes about. We begin with Figures D1 to D3 to show that the difference between the two intersection situations is equivalent to the unknot [8]. Figure D1. Two Different Intersections. Symmetry 2012, 4 106 Suppose we view an intersection as a short duration loop out of the plane, an overpass so to speak, as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-appendix-e-quaternions",
+      "number": "Appendix E",
+      "title": "Quaternions",
+      "level": 1,
+      "pageStart": 68,
+      "pageEnd": 68,
+      "labelStart": "106",
+      "labelEnd": "106",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-038-e1-introductory",
+      "number": "E.1",
+      "title": "Introductory",
+      "level": 2,
+      "pageStart": 68,
+      "pageEnd": 70,
+      "labelStart": "106",
+      "labelEnd": "108",
+      "words": 443,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "outer product",
+          "heading": false
+        },
+        {
+          "term": "cross product",
+          "heading": false
+        },
+        {
+          "term": "quaternionic matrix",
+          "heading": false
+        },
+        {
+          "term": "dimensional manifestation",
+          "heading": false
+        },
+        {
+          "term": "inner product",
+          "heading": false
+        },
+        {
+          "term": "direct product",
+          "heading": false
+        },
+        {
+          "term": "quaternions",
+          "heading": false
+        },
+        {
+          "term": "vectors",
+          "heading": false
+        }
+      ],
+      "extract": "Quaternions are useful for manipulating quantities in four dimensions as are complex variables in two. In this section we investigate first how they relate to the 1 + 3 dimensional spacetime introduced Symmetry 2012, 4 107 in Section 8 to help explain the triplication of generations on the particle family tree. There are also taxonomical implications which follow. A quaternion can be expressed as B= pa+p (1) - fghy",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-e2-time-triplication",
+      "number": "E.2",
+      "title": "Time Triplication",
+      "level": 2,
+      "pageStart": 70,
+      "pageEnd": 71,
+      "labelStart": "108",
+      "labelEnd": "109",
+      "words": 381,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "time triplication",
+          "heading": true
+        },
+        {
+          "term": "generations",
+          "heading": false
+        },
+        {
+          "term": "terms correspond",
+          "heading": false
+        },
+        {
+          "term": "spacetime",
+          "heading": false
+        },
+        {
+          "term": "conjugate",
+          "heading": false
+        },
+        {
+          "term": "angle",
+          "heading": false
+        },
+        {
+          "term": "matrix",
+          "heading": false
+        }
+      ],
+      "extract": "In Section 8 it was suggested that quaternions might prove useful in characterizing the 1 + 3 dimensional “personal spacetime” experienced in the traversal of an FMS in the case of time triplication. With that in mind, we consider the case of a 4-vector and its conjugate in such a spacetime, defining 0 * * * 0 S S T S S T         (E-4) where with s associated with space, the t's with time and with the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-e3-taxonomical-implications",
+      "number": "E.3",
+      "title": "Taxonomical Implications",
+      "level": 2,
+      "pageStart": 71,
+      "pageEnd": 73,
+      "labelStart": "109",
+      "labelEnd": "111",
+      "words": 647,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "taxonomical",
+          "heading": true
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "taxonomy",
+          "heading": false
+        },
+        {
+          "term": "cross product",
+          "heading": false
+        },
+        {
+          "term": "nomenclature",
+          "heading": false
+        },
+        {
+          "term": "order fusion",
+          "heading": false
+        },
+        {
+          "term": "fermion",
+          "heading": false
+        },
+        {
+          "term": "gauge group",
+          "heading": false
+        }
+      ],
+      "extract": "As discussed in the foregoing, the four basic FMS give rise to a “super(anti)symmetric” kind of duplicate taxonomy: there is a half that involves the fermion triplet A, B and C and their conjugates and combinations and which largely replicates the taxonomony of the Standard Model; and there is another half involving D, C and B, which has no such connection but which exists by reasons of symmetry. We recall, that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-0-ab-ac",
+      "number": "0",
+      "title": "AB* AC*",
+      "level": 1,
+      "pageStart": 73,
+      "pageEnd": 74,
+      "labelStart": "111",
+      "labelEnd": "112",
+      "words": 202,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "letter terms",
+          "heading": false
+        },
+        {
+          "term": "direct sum",
+          "heading": false
+        },
+        {
+          "term": "succinct",
+          "heading": false
+        }
+      ],
+      "extract": "BA* 0 BC* (A, B, C) CA* CB* 0  Symmetry 2012, 4 112 which evaluates as the direct sum of six matrices, listed below. Together these contain a total of 27 three letter terms, each of which coincides uniquely with one of the 27 three letter terms that remain in Figures 28 and 29 of Section 4 after all terms containing letters D or D* are deleted. 0 0 0 0 0 0 AA*A AA*B AA*C 0 0 0 , BB*A BB*B BB*C , 0 0 0 CC*A CC*B",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-appendix-f-on-the-kauffman-bracket-polynomial-of",
+      "number": "Appendix F",
+      "title": "On the Kauffman Bracket Polynomial of (2, n) Torus Knots",
+      "level": 1,
+      "pageStart": 74,
+      "pageEnd": 76,
+      "labelStart": "112",
+      "labelEnd": "114",
+      "words": 755,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kauffman bracket",
+          "heading": true
+        },
+        {
+          "term": "torus knots",
+          "heading": true
+        },
+        {
+          "term": "bracket polynomial",
+          "heading": true
+        },
+        {
+          "term": "feedback systems",
+          "heading": false
+        },
+        {
+          "term": "data feedback",
+          "heading": false
+        },
+        {
+          "term": "highest subscript",
+          "heading": false
+        },
+        {
+          "term": "sampled data",
+          "heading": false
+        },
+        {
+          "term": "subscript value",
+          "heading": false
+        }
+      ],
+      "extract": "Both the Kauffman bracket polynomial [8] and (2, n) torus knots have been studied at considerable length. The main interest here is a symmetric closed form reformulation of the KBP in the case of composite (2, n) torus knots, that is, knots where n is the sum of individual terms each of which is equal to the NHT of a constituent of a composite FMS. Also of interest as we shall see is the convolutional nature of this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 76,
+      "pageEnd": 77,
+      "labelStart": "114",
+      "labelEnd": "115",
+      "words": 492,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "world scientific",
+          "heading": false
+        },
+        {
+          "term": "avrin",
+          "heading": false
+        },
+        {
+          "term": "flattened moebius",
+          "heading": false
+        },
+        {
+          "term": "moebius strips",
+          "heading": false
+        },
+        {
+          "term": "theory ramif",
+          "heading": false
+        },
+        {
+          "term": "university press",
+          "heading": false
+        },
+        {
+          "term": "cambridge university",
+          "heading": false
+        },
+        {
+          "term": "wiley sons",
+          "heading": false
+        }
+      ],
+      "extract": "1. Avrin, J.S. A Visualizable Representation of the Elementary Particles. J. Knot Theory Ramif- 2005, 14, 131-176. 2. Avrin, J.S. Flattened Moebius strips; Their Physics,GeometryandTaxonomy. J. Knot Theory Ramif. 2008, 17, 835-876. 3. Avrin, JS. On the taxonomy of Flattened Moebius Strips; J. Knot Theory Ramif: 2012, 21, doi: 10.1142/S0218216511009571 4. Avrin, J.S. Torus Knots Embodying Curvature and Torsion in an",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [
+      "figure 57"
+    ],
+    "pageLabelConflicts": {
+      "count": 76,
+      "items": [
+        "p2: pdf-labels 2, printed 40",
+        "p3: pdf-labels 3, printed 41",
+        "p4: pdf-labels 4, printed 42",
+        "p5: pdf-labels 5, printed 43",
+        "p6: pdf-labels 6, printed 44",
+        "p7: pdf-labels 7, printed 45",
+        "p8: pdf-labels 8, printed 46",
+        "p9: pdf-labels 9, printed 47",
+        "p10: pdf-labels 10, printed 48",
+        "p11: pdf-labels 11, printed 49",
+        "p12: pdf-labels 12, printed 50",
+        "p13: pdf-labels 13, printed 51",
+        "p14: pdf-labels 14, printed 52",
+        "p15: pdf-labels 15, printed 53",
+        "p16: pdf-labels 16, printed 54",
+        "p17: pdf-labels 17, printed 55",
+        "p18: pdf-labels 18, printed 56",
+        "p19: pdf-labels 19, printed 57",
+        "p20: pdf-labels 20, printed 58",
+        "p21: pdf-labels 21, printed 59",
+        "p22: pdf-labels 22, printed 60",
+        "p23: pdf-labels 23, printed 61",
+        "p24: pdf-labels 24, printed 62",
+        "p25: pdf-labels 25, printed 63",
+        "p26: pdf-labels 26, printed 64",
+        "p27: pdf-labels 27, printed 65",
+        "p28: pdf-labels 28, printed 66",
+        "p29: pdf-labels 29, printed 67",
+        "p30: pdf-labels 30, printed 68",
+        "p31: pdf-labels 31, printed 69",
+        "p32: pdf-labels 32, printed 70",
+        "p33: pdf-labels 33, printed 71",
+        "p34: pdf-labels 34, printed 72",
+        "p35: pdf-labels 35, printed 73",
+        "p36: pdf-labels 36, printed 74",
+        "p37: pdf-labels 37, printed 75",
+        "p38: pdf-labels 38, printed 76",
+        "p39: pdf-labels 39, printed 77",
+        "p40: pdf-labels 40, printed 78",
+        "p41: pdf-labels 41, printed 79",
+        "p42: pdf-labels 42, printed 80",
+        "p43: pdf-labels 43, printed 81",
+        "p44: pdf-labels 44, printed 82",
+        "p45: pdf-labels 45, printed 83",
+        "p46: pdf-labels 46, printed 84",
+        "p47: pdf-labels 47, printed 85",
+        "p48: pdf-labels 48, printed 86",
+        "p49: pdf-labels 49, printed 87",
+        "p50: pdf-labels 50, printed 88",
+        "p51: pdf-labels 51, printed 89"
+      ]
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "basic fms",
+      "heading": true
+    },
+    {
+      "term": "conjugate fms",
+      "heading": false
+    },
+    {
+      "term": "composite fms",
+      "heading": false
+    },
+    {
+      "term": "model taxonomy",
+      "heading": false
+    },
+    {
+      "term": "particle model",
+      "heading": true
+    },
+    {
+      "term": "twist charge",
+      "heading": true
+    },
+    {
+      "term": "fusion process",
+      "heading": false
+    },
+    {
+      "term": "order fusion",
+      "heading": true
+    },
+    {
+      "term": "triangular symmetry",
+      "heading": false
+    },
+    {
+      "term": "second-order fusion",
+      "heading": true
+    },
+    {
+      "term": "quirk antiquirk",
+      "heading": true
+    },
+    {
+      "term": "nht column",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "72",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "73",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "74",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "75",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "76",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "77",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "78",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "79",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "80",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "81",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "82",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "83",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "84",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "85",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "86",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "87",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "88",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "89",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "90",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "91",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "92",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "93",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "94",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "95",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "96",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "97",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "98",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "99",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "100",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "101",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "102",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "103",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "104",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 67,
+      "label": "105",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "106",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 69,
+      "label": "107",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "108",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 71,
+      "label": "109",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 72,
+      "label": "110",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 73,
+      "label": "111",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 74,
+      "label": "112",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 75,
+      "label": "113",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 76,
+      "label": "114",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 77,
+      "label": "115",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "A knot encircling a torus",
+      "page": 4,
+      "pageLabel": "42",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "A Moebius strip (MS) and its boundary",
+      "page": 5,
+      "pageLabel": "43",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "An MS as a concatenation of torus knots",
+      "page": 5,
+      "pageLabel": "43",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Braids with closure and framing",
+      "page": 6,
+      "pageLabel": "44",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Trivial and nontrivial vector bundles",
+      "page": 7,
+      "pageLabel": "45",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The basic set of Flattened Moebius strips (FMS)",
+      "page": 8,
+      "pageLabel": "46",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Charge vs. Twist",
+      "page": 9,
+      "pageLabel": "47",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Synthetic approach to flattening",
+      "page": 11,
+      "pageLabel": "49",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Up and down quirks; two views",
+      "page": 12,
+      "pageLabel": "50",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "As shown in the figure, antifermions are distinguished simply by a reversed direction of traverse. As per the discussion in the preceding section, we must also consider the corners of the antifermions to be antiquirks, each conjugate to the charge of its corresponding quirk. Thus the charges of the",
+      "page": 12,
+      "pageLabel": "50",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Reference “d” quirk",
+      "page": 13,
+      "pageLabel": "51",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "Rotated around “y” axis",
+      "page": 13,
+      "pageLabel": "51",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "Rotation around ‘z” axis",
+      "page": 14,
+      "pageLabel": "52",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "",
+      "page": 14,
+      "pageLabel": "52",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "Figure 14 seen from the back",
+      "page": 14,
+      "pageLabel": "52",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "16",
+      "title": "Four Instanton characteristics",
+      "page": 15,
+      "pageLabel": "53",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "17",
+      "title": "Quirk/antiquirk correspondence to instantons and reverse instantons",
+      "page": 15,
+      "pageLabel": "53",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "18",
+      "title": "Fusion of x and y junctions; two views",
+      "page": 17,
+      "pageLabel": "55",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "19",
+      "title": "Hopf Multiplication and comultiplication",
+      "page": 18,
+      "pageLabel": "56",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "20",
+      "title": "Two mutually conjugate pions",
+      "page": 19,
+      "pageLabel": "57",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "21",
+      "title": "Dirac equation output; a fermion and antifermion bound pair",
+      "page": 21,
+      "pageLabel": "59",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "22",
+      "title": "Twist loci and gradient; first-order fusion",
+      "page": 23,
+      "pageLabel": "61",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "23",
+      "title": "Operational diagram for convolution",
+      "page": 24,
+      "pageLabel": "62",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "24",
+      "title": "Assembly of convolution products",
+      "page": 25,
+      "pageLabel": "63",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "25",
+      "title": "Twist loci; second-order fusion",
+      "page": 26,
+      "pageLabel": "64",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "26",
+      "title": "Orthogonal twist and charge gradients",
+      "page": 26,
+      "pageLabel": "64",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "27",
+      "title": "Operational diagram for second-order convolution",
+      "page": 27,
+      "pageLabel": "65",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "28",
+      "title": "Occupancy of the inclined planar twist loci of second-order fusion",
+      "page": 28,
+      "pageLabel": "66",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "29",
+      "title": "Convolution output twist assemblies; second-order fusion",
+      "page": 28,
+      "pageLabel": "66",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "30",
+      "title": "Twist-based quaternary number system; zeroth, first and second-order fusion",
+      "page": 30,
+      "pageLabel": "68",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "31",
+      "title": "Availability of 32 binary choices in first-order fusion",
+      "page": 31,
+      "pageLabel": "69",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "32",
+      "title": "Availability of 256 binary choices in second-order fusion",
+      "page": 31,
+      "pageLabel": "69",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3-1",
+      "title": "Additional degeneracy due to detailed composition; first-order fusion",
+      "page": 31,
+      "pageLabel": "69",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "33",
+      "title": "Composition-enhanced twist assemblies for first-order fusion",
+      "page": 32,
+      "pageLabel": "70",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3-2",
+      "title": "Half of contingency-enhanced permutaions; second-order fusion",
+      "page": 33,
+      "pageLabel": "71",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "34",
+      "title": "Half of contingency-enhanced twist assemblies; second-order fusion",
+      "page": 34,
+      "pageLabel": "72",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "35",
+      "title": "Ambiguities in the model-to-SM connection",
+      "page": 35,
+      "pageLabel": "73",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "36",
+      "title": "Nucleons and excited state interactions mediated by pions",
+      "page": 35,
+      "pageLabel": "73",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "37",
+      "title": "Delta particles with pion constituents",
+      "page": 37,
+      "pageLabel": "75",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "38",
+      "title": "First stage of neutron decay",
+      "page": 38,
+      "pageLabel": "76",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "39",
+      "title": "Second stage of neutron decay",
+      "page": 38,
+      "pageLabel": "76",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "40",
+      "title": "First stage of muon decay",
+      "page": 39,
+      "pageLabel": "77",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "41",
+      "title": "Second stage of muon decay",
+      "page": 39,
+      "pageLabel": "77",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "42",
+      "title": "The bosonic operator matrix in SM nomenclature",
+      "page": 40,
+      "pageLabel": "78",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "43",
+      "title": "Model of Deuteron stability mediated by pions",
+      "page": 40,
+      "pageLabel": "78",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "44",
+      "title": "The basic fermions in order of twist",
+      "page": 42,
+      "pageLabel": "80",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "45",
+      "title": "Basic fermions in “label space”",
+      "page": 42,
+      "pageLabel": "80",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "46",
+      "title": "Three-label scaffold (More to come)",
+      "page": 42,
+      "pageLabel": "80",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "47",
+      "title": "Four-label scaffold",
+      "page": 43,
+      "pageLabel": "81",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "48",
+      "title": "Six-label scaffold; that’s all!",
+      "page": 44,
+      "pageLabel": "82",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "49",
+      "title": "Sample “duad”",
+      "page": 44,
+      "pageLabel": "82",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "50",
+      "title": "The three orthogonal duads of the first syntheme",
+      "page": 45,
+      "pageLabel": "83",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "51",
+      "title": "And their normals",
+      "page": 45,
+      "pageLabel": "83",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "52",
+      "title": "The Spin ½ Baryon Octet",
+      "page": 47,
+      "pageLabel": "85",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "53",
+      "title": "The Spin 3/2 baryon decuplet",
+      "page": 48,
+      "pageLabel": "86",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "54",
+      "title": "The Spin 0 Octet",
+      "page": 48,
+      "pageLabel": "86",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "55",
+      "title": "Some bosonic twist-charge state vectors",
+      "page": 50,
+      "pageLabel": "88",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "56",
+      "title": "An approach to validating the model as a Topological Quantum field Theory (TQFT)",
+      "page": 55,
+      "pageLabel": "93",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "58",
+      "title": "Source of additional decay products",
+      "page": 57,
+      "pageLabel": "95",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "B1",
+      "title": "Second-order Convolution for n = −5",
+      "page": 63,
+      "pageLabel": "101",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "B1",
+      "title": "Junctions and Available antiquirks, First Order fusion Available Junctions",
+      "page": 63,
+      "pageLabel": "101",
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "C1",
+      "title": "Free and Fused FMS Junctions",
+      "page": 64,
+      "pageLabel": "102",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "C2",
+      "title": "Hopf Multiplication and Comultiplication",
+      "page": 64,
+      "pageLabel": "102",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "D1",
+      "title": "Two Different Intersections",
+      "page": 67,
+      "pageLabel": "105",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "D2",
+      "title": "Intersections as Overpasses",
+      "page": 68,
+      "pageLabel": "106",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "D3",
+      "title": "The Difference between the Two Intersections",
+      "page": 68,
+      "pageLabel": "106",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "D4",
+      "title": "Before and After Antiquirks in the Beta Switch",
+      "page": 68,
+      "pageLabel": "106",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "D5",
+      "title": "The Difference Between the Two Antiquirks",
+      "page": 68,
+      "pageLabel": "106",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "E1",
+      "title": "Quaternionic matrix subdivision",
+      "page": 69,
+      "pageLabel": "107",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "E2",
+      "title": "Cross product and scalar components of the reduced quaternionic matrix",
+      "page": 70,
+      "pageLabel": "108",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "E3",
+      "title": "“Pure” quaternionic matrix for the reduced basic fermion vector. AA* AB* AC* BA* BB* BC* CA* CB* CC*",
+      "page": 72,
+      "pageLabel": "110",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "E4",
+      "title": "Cross product and scalar components of Figure E3",
+      "page": 73,
+      "pageLabel": "111",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "F1",
+      "title": "Operational model of Eqation F-2",
+      "page": 75,
+      "pageLabel": "113",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p004-1",
+      "file": "images/img-p004-1.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-1",
+      "file": "images/img-p005-1.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-1",
+      "file": "images/img-p006-1.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-2",
+      "file": "images/img-p006-2.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-1",
+      "file": "images/img-p007-1.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p008-1",
+      "file": "images/img-p008-1.png",
+      "page": 8,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p009-1",
+      "file": "images/img-p009-1.png",
+      "page": 9,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-1",
+      "file": "images/img-p010-1.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-1",
+      "file": "images/img-p011-1.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-1",
+      "file": "images/img-p012-1.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-2",
+      "file": "images/img-p012-2.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-1",
+      "file": "images/img-p013-1.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-2",
+      "file": "images/img-p013-2.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-1",
+      "file": "images/img-p014-1.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-2",
+      "file": "images/img-p014-2.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-3",
+      "file": "images/img-p014-3.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-1",
+      "file": "images/img-p015-1.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-2",
+      "file": "images/img-p015-2.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p017-1",
+      "file": "images/img-p017-1.png",
+      "page": 17,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-1",
+      "file": "images/img-p018-1.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-2",
+      "file": "images/img-p018-2.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p019-1",
+      "file": "images/img-p019-1.png",
+      "page": 19,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p019-2",
+      "file": "images/img-p019-2.png",
+      "page": 19,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p021-1",
+      "file": "images/img-p021-1.png",
+      "page": 21,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-1",
+      "file": "images/img-p022-1.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p023-1",
+      "file": "images/img-p023-1.png",
+      "page": 23,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p024-1",
+      "file": "images/img-p024-1.png",
+      "page": 24,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p025-1",
+      "file": "images/img-p025-1.png",
+      "page": 25,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p026-1",
+      "file": "images/img-p026-1.png",
+      "page": 26,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p026-2",
+      "file": "images/img-p026-2.png",
+      "page": 26,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p027-1",
+      "file": "images/img-p027-1.png",
+      "page": 27,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p028-1",
+      "file": "images/img-p028-1.png",
+      "page": 28,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p028-2",
+      "file": "images/img-p028-2.png",
+      "page": 28,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p030-1",
+      "file": "images/img-p030-1.png",
+      "page": 30,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p031-1",
+      "file": "images/img-p031-1.png",
+      "page": 31,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p031-2",
+      "file": "images/img-p031-2.png",
+      "page": 31,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p032-1",
+      "file": "images/img-p032-1.png",
+      "page": 32,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p034-1",
+      "file": "images/img-p034-1.png",
+      "page": 34,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p035-1",
+      "file": "images/img-p035-1.png",
+      "page": 35,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p035-2",
+      "file": "images/img-p035-2.png",
+      "page": 35,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p036-1",
+      "file": "images/img-p036-1.png",
+      "page": 36,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p037-1",
+      "file": "images/img-p037-1.png",
+      "page": 37,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p037-2",
+      "file": "images/img-p037-2.png",
+      "page": 37,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p038-1",
+      "file": "images/img-p038-1.png",
+      "page": 38,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p038-2",
+      "file": "images/img-p038-2.png",
+      "page": 38,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p039-1",
+      "file": "images/img-p039-1.png",
+      "page": 39,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p039-2",
+      "file": "images/img-p039-2.png",
+      "page": 39,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p039-3",
+      "file": "images/img-p039-3.png",
+      "page": 39,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p040-1",
+      "file": "images/img-p040-1.png",
+      "page": 40,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p040-2",
+      "file": "images/img-p040-2.png",
+      "page": 40,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p042-1",
+      "file": "images/img-p042-1.png",
+      "page": 42,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p042-2",
+      "file": "images/img-p042-2.png",
+      "page": 42,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p042-3",
+      "file": "images/img-p042-3.png",
+      "page": 42,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p043-1",
+      "file": "images/img-p043-1.png",
+      "page": 43,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p044-1",
+      "file": "images/img-p044-1.png",
+      "page": 44,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p044-2",
+      "file": "images/img-p044-2.png",
+      "page": 44,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p045-1",
+      "file": "images/img-p045-1.png",
+      "page": 45,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p045-2",
+      "file": "images/img-p045-2.png",
+      "page": 45,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p045-3",
+      "file": "images/img-p045-3.png",
+      "page": 45,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p047-1",
+      "file": "images/img-p047-1.png",
+      "page": 47,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p048-1",
+      "file": "images/img-p048-1.png",
+      "page": 48,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p048-2",
+      "file": "images/img-p048-2.png",
+      "page": 48,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p048-3",
+      "file": "images/img-p048-3.png",
+      "page": 48,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p050-1",
+      "file": "images/img-p050-1.png",
+      "page": 50,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p055-1",
+      "file": "images/img-p055-1.png",
+      "page": 55,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p056-1",
+      "file": "images/img-p056-1.png",
+      "page": 56,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p057-1",
+      "file": "images/img-p057-1.png",
+      "page": 57,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p062-1",
+      "file": "images/img-p062-1.png",
+      "page": 62,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p063-1",
+      "file": "images/img-p063-1.png",
+      "page": 63,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p064-1",
+      "file": "images/img-p064-1.png",
+      "page": 64,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p064-2",
+      "file": "images/img-p064-2.png",
+      "page": 64,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p064-3",
+      "file": "images/img-p064-3.png",
+      "page": 64,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p066-1",
+      "file": "images/img-p066-1.png",
+      "page": 66,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p067-1",
+      "file": "images/img-p067-1.png",
+      "page": 67,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p067-2",
+      "file": "images/img-p067-2.png",
+      "page": 67,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p067-3",
+      "file": "images/img-p067-3.png",
+      "page": 67,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p068-1",
+      "file": "images/img-p068-1.png",
+      "page": 68,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p068-2",
+      "file": "images/img-p068-2.png",
+      "page": 68,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p068-3",
+      "file": "images/img-p068-3.png",
+      "page": 68,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p068-4",
+      "file": "images/img-p068-4.png",
+      "page": 68,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p069-1",
+      "file": "images/img-p069-1.png",
+      "page": 69,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p070-1",
+      "file": "images/img-p070-1.png",
+      "page": 70,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p070-2",
+      "file": "images/img-p070-2.png",
+      "page": 70,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p072-1",
+      "file": "images/img-p072-1.png",
+      "page": 72,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p073-1",
+      "file": "images/img-p073-1.png",
+      "page": 73,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p073-2",
+      "file": "images/img-p073-2.png",
+      "page": 73,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p075-1",
+      "file": "images/img-p075-1.png",
+      "page": 75,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 44,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 45,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 87
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "3 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p76); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 7
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 45 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/symmetry-04-00039-v3"
+  }
+}

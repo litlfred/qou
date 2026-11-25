@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/ant-v14-n7-s-p08",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Burgess bounds for short character sums evaluated at forms",
+      "dcterms:creator": [
+        "Pierce, Lillian B.",
+        "Xu, Junyan"
+      ],
+      "bibo:doi": "10.2140/ant.2020.14.1911",
+      "dcterms:identifier": "https://doi.org/10.2140/ant.2020.14.1911",
+      "dcterms:source": "library/ant-v14-n7-s-p08/manifest.jsonld",
+      "dcterms:hasVersion": "library/ant-v14-n7-s-p08"
+    }
+  ]
+}

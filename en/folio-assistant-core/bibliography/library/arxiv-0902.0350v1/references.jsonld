@@ -1,0 +1,35 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-0902.0350v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "A REVISION OF THE PROOF OF THE KEPLER CONJECTURE",
+      "dcterms:creator": [
+        "HALES, THOMAS C.",
+        "HARRISON, JOHN",
+        "MCLAUGHLIN, SEAN",
+        "NIPKOW, TOBIAS"
+      ],
+      "dcterms:issued": "D:20181028",
+      "dcterms:identifier": "https://arxiv.org/abs/0902.0350",
+      "dcterms:abstract": "The Kepler conjecture asserts that no packing of congruent balls in three-dimensional Euclidean space has density greater than that of the face-centered cubic packing. The original proof, announced in 1998 and published in 2006, is long and complex. The process of revision and review did not end with the publication of the proof. This article summarizes the current status of a long-term initiative to reorganize the original proof into a more transparent form and to provide a greater level of certification of the correctness of the computer code and other details of the proof. A final part of this article lists errata in the original proof of the Kepler conjecture.",
+      "dcterms:source": "library/arxiv-0902.0350v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-0902.0350v1"
+    }
+  ]
+}

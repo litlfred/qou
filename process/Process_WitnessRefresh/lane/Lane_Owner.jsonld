@@ -1,0 +1,14 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/process/Process_WitnessRefresh/lane/Lane_Owner.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_WitnessRefresh/lane/Lane_Owner",
+      "@type": "https://litlfred.github.io/cat-harness/v0/ns/Lane",
+      "name": "Owner (the paper's author)",
+      "partOf": "https://litlfred.github.io/qou/process/Process_WitnessRefresh",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    }
+  ]
+}

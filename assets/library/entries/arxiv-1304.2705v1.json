@@ -1,0 +1,306 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1304.2705v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1304.2705v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2705v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "State-integrals and their q-series",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-11-state-integrals-and-their-q-series.md",
+      "narrative": null,
+      "content": "\\lbl{sub.intro}\n\nMulti-dimensional state integrals of products of Faddeev's quantum \ndilogarithm appear in abundance in Quantum Topology, and were studied among \nothers by Hikami~\\cite{Hi}, Dimofte--Gukov--Lennels--Zagier~\\cite{DGLZ}, Andersen--Kashaev~\\cite{AK}, and \nKashaev--Luo--Vartanov \\cite{KLV}. It is well-known to the experts \nthat such state-integrals can be written as finite sums of products of pairs \nof $q$-series and $\\tq$-series. The reason for this is a factorized structure \nof Faddeev's quantum dilogarithm, the structure of the set of its poles, \nand the specific form of exponen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2705v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The case of the 41 knot",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-13-the-case-of-the-41-knot.md",
+      "narrative": null,
+      "content": "\\lbl{sub.41}\n\nWe now specialize Corollary \\ref{cor.1} to the invariant of the \n$4_1$ and $5_2$ knots is given by \\cite{KLV,AK} \n$$\n\\calI_{1,2}=\\calI_{4_1} \\qquad \\calI_{2,3}=\\calI_{5_2} \\,.\n$$\nIn this section, let \n\\begin{equation}\n\\lbl{eq.Fqx}\nF(q,x)=F_{1,2}(q,x)= \\sum_{n=0}^\\infty \n(-1)^n \\frac{q^{\\frac{1}{2} n(n+1)}}{(q)_n^2} x^n \\,.\n\\end{equation}\n\n\\begin{corollary}\n\\lbl{cor.41}\n\\rm{(a)} We have:\n\\begin{equation}\n\\lbl{eq.prop1}\n\\calI_{4_1}(b) = -\\frac{i}{2} \\left(\\frac{q}{\\tq}\\right)^{\\frac{1}{24}}\n\\left( b \\, G(q) g(\\tq) - b^{-1} G(\\tq) g(q) \\right)\n\\end{equation}\nwhere\n\\begin{subequation",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2705v1/blocks/cor-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "cor-sec-003-01.md",
+      "narrative": null,
+      "content": "(a) We have: I2,3(q) = −e 3πi ( q ˜q ) 1 8 ∞∑ m,n=0 Rm,n(q, ˜q)tm(q)Tn(˜q) (21) = −e 3πi ( q ˜q ) 1 ( −b2 2 g1(q)G1(˜q) − 1 2πi g3(q)G1(˜q) + 1 2g2(q)G2(˜q) + b−2 2 g3(q)G3(˜q) ) (b) F and ~F satisfy the linear q-diﬀerence equations F (q, q3x) − (3 − q2x)F (q, q2x) + 3F (q, qx) − F (q, x) = 0 ~F (q, q3x) − 3~F (q, q2x) + (3 − q2x)~F (q, qx) − ~F (q, x) = 0 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.2705v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The case of the 52 knot",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-14-the-case-of-the-52-knot.md",
+      "narrative": null,
+      "content": "F (q, x) = F2,3(q, x) =\n∞∑\nm=0\ntm(q)xm, ~F (q,~x) = F1,3(q,~x) =\n∞∑\nm=0\nTm(q)~xm\nwhere\ntm(q) = qm(m+1)\n(q)3\nm\n, T n(q) = ( −1)n q\n1\n2 n(n+1)\n(q)3\nn\n= tn(q−1) .\nLet\nRm,n(q, ˜q) = − b2\n2\n(\n1 + 4m + 4m2 − 6E(m)\n1 (q) − 12mE(m)\n1 (q) + 9E(m)2\n1 (q) − 3E(m)\n2 (q)\n)\n− 1\n2πi + 1\n2\n(\n1 + 2m − 3E(m)\n1 (q)\n)(\n1 + 2n − 6E(n)\n1 (˜q)\n)\n+ b−2\n2\n(\n−n − n2 − 6E(0)\n2 (˜q) + 3E(n)\n1 (˜q) + 6nE(n)\n1 (˜q) − 9E(n)2\n1 (˜q) + 3E(n)\n2 (˜q)\n)\n,\nwhere E(m)\nl (q) are deﬁned in Equation ( 29a). For k = 1, . . . ,4 let\n(18) gk(q) =\n∞∑\nm=0\npk(m)tm(q), G k(˜q) =\n∞∑\nn=0\nPk(n)Tn(˜q) ,\nwhere\np1,m(q) = 1 + 4 m + 4m2 − 6E(m)\n1 (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2705v1/blocks/rem-sec-003-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "rem-sec-003-02.md",
+      "narrative": null,
+      "content": "A computation gives that P (A, B) = P (B − A, B) for ( A, B) = (1 , 2) and (A, B) = (2 , 3) corresponding to the invariants of the 4 1 and 5 2 knots. In all other cases that we tried, we found that P (A, B) is not equal to P (B − A, B).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.2705v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proofs",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-2-proofs.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2705v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A residue computation",
+      "pageStart": 6,
+      "pageEnd": 10,
+      "target": "../sections/sec-005-21-a-residue-computation.md",
+      "narrative": null,
+      "content": "\\lbl{sub.residue}\n\nTo relate the state-integral $\\calI_{A,B}$ to a sum, we will apply the\nresidue theorem on a semicircle $\\gamma_R$ with center $0$ and radius $R$,\noriented counterclockwise in the upper half-plane:\n$$\n\\psdraw{gammaR}{1in}\n$$\nThen, we will take the limit $R \\to \\infty$. To compute the residue\nof the integrand, we need to expand $\\Phi_b(x)$ near the pole \n$$\nx_{m,n}=c_b + i b m + i b^{-1} n\n$$ for natural numbers $m$ and $n$. Let\n\\begin{align}\n\\lbl{eq.phi}\n\\phi_m(x) &= \\frac{(q^{m+1} e^{x};q)_\\infty}{(q^{m+1};q)_\\infty}\n\\\\\n\\lbl{eq.tphi}\n\\ti \\phi_n(x) &=\\frac{(\\tq;\\tq)_\\infty}{(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2705v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some auxiliary power series",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "../sections/sec-006-25-some-auxiliary-power-series.md",
+      "narrative": null,
+      "content": "\\lbl{sub.aux}\n\nConsider the auxiliary series \n\n\\begin{equation}\n\\lbl{eq.ax}\n\\frac{1}{a e^x-1}=\\sum_{n=0}^\\infty p_n(a) x^n\n\\end{equation}\nwhere \n$$\np_n(a)=- \\frac{a}{n! (1-a)^{n+1}} \\sum_{m=0}^{n-1} A_{n,m} a^m\n\\qquad p_0(a)=-\\frac{1}{1-a}\n$$\nand $A_{n,m}$ are {\\em Euler triangular numbers} (sequence\n{\\tt A008292} in the online encyclopedia of integer sequences\n\\cite{OEIS}) that satisfy the recursion\n$$\nA_{n,m}=(n-m)A_{n-1,m-1}+(m+1)A_{n-1,m}\n$$\nand also given by the sum\n$$\nA_{n,m}=\\sum_{k=0}^m (-1)^k \\binom{n+1}{k} (m+1-k)^n \\,.\n$$\nFor a detailed discussion on this subject, see \\cite{FS}.\nA t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2705v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Proposition 2.2",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-007-26-proof-of-proposition-22.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2705v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Lemma 1.5",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-008-27-proof-of-lemma-15.md",
+      "narrative": null,
+      "content": "~FA,B.\nPart (b) follows from an application of Zeilberger’s creative telescop ing [ Zei91]. To apply\nthe method, deﬁne\nt(m, x) = (−1)AmqA m(m+1)\n2\n(q)B\nm\nxm\nThen, observe that t satisﬁes the recursions with respect to m and x:\n(1 − qm+1)Bt(m + 1, x) = ( −1)AqA(m+1)t(m, x) t(m, qx) = qmt(m, x) .\nNow, we eliminate qm from the above equations as follows. The second equation implies tha t\nt(m + 1, qjx) = qj(m+1)t(m + 1, x). Expanding the ﬁrst equation, it follows that\nB∑\nj=0\n(−1)j\n( B\nj\n)\nt(m + 1, qjx) = ( −1)AqAxt(m, qAx)\nSumming for m ≥ 0 implies (b). □\nProof. (of Corollary\n1.6) The admissibilit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2705v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An application: state-integrals of the 41 and 52 knots",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-009-3-an-application-state-integrals-of-the-41-and-5.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2705v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Corollary 1.7",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-010-31-proof-of-corollary-17.md",
+      "narrative": null,
+      "content": "1\n(b(1 − eb−1w))2 = 1\nw2 − b−1\nw + O(1)\n(φm(bw))2 = 1 − 2E(m)\n1 (q)bw + O(w2)\n(~φn(b−1w))2 = 1 + 2~E(n)\n1 (˜q)b−1w + O(w2)\ne\n1\n4πi w2+w(b(m+1/2)+b−1(n+1/2)) = 1 +\n( 1\n2 + m\n)\nbw +\n( 1\n2 + n\n)\nb−1w + O(w2)\nCombined with ~E(n)\n1 (˜q) = −n + E(n)\n1 (˜q), it follows that the residue R = Res w=0(F1,2,m,n(w))\nis given by\nR =\n(\nb\n( 1\n2 + m − 2E(m)\n1 (q)\n)\n− b−1\n( 1\n2 + n − 2E(n)\n1 (˜q)\n))\nThe above, together with the fact that tn(q) = ( −1)n q\n1\n2 n(n+1)\n(q)2\nn\nsatisﬁes tn(q−1) = tn(q) implies\nEquation (\n14). Equation ( 17) follows from Equation ( 11) for ( A, B) = (1 , 2).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2705v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Corollary 1.8",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-011-32-proof-of-corollary-18.md",
+      "narrative": null,
+      "content": "\\lbl{sub.cor52}\n\nAssume now that $(A,B)=(2,3)$. Then,\n\\begin{align*}\n\\frac{1}{(b(1-e^{b^{-1}w}))^3} &= -\\frac{1}{w^3} +\\frac{3b^{-1}}{2w^2} \n-\\frac{b^{-2}}{w} \n+O(1)\n\\\\\n\\left( \\phi_m(b w) \\right)^3 &=\n1-3 E^{(m)}_1(q) \\, b w + \\frac{3}{2} \\left(3 E^{(m)2}_1(q) -\nE^{(m)}_2(q)\\right) \\, b^2 w^2 + O(w^3) \\\\\n(\\ti \\phi_n(b^{-1} w))^3 &= \n1+3 \\ti E^{(n)}_1(\\tq) \\, b^{-1} w\n+ \\frac{3}{2} \\left(3 \\ti E^{(n)2}_1(\\tq) +\n\\ti E^{(n)}_2(\\tq)\\right) \\, b^{-2} w^2 + O(w^3)\n\\\\\ne^{\\frac{2}{4 \\pi i} w^2 + 2 w (b (m+1/2) + b^{-1} (n+1/2))} &=\n1+\\left((1+2m)b  +(1 + 2 n) b^{-1}\\right) w + \\\\\n& \\left(1 + \\frac{b^2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2705v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-012-acknowledgments.md",
+      "narrative": null,
+      "content": "The paper was conceived during a visit of the first author in Geneva\nin the spring of 2013. The first author wishes to thank the University of\nGeneva for its hospitality, and Don Zagier for encouragement and \nstimulating conversations.\n\n\n\n\n\n\\bibliographystyle{hamsalpha}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2705v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-013-references.md",
+      "narrative": null,
+      "content": "[AK] Jørgen E. Andersen and Rinat M. Kashaev, A TQFT from quantum Teichm¨ uller theory , arXiv:\n1109.6295, Preprint 2011.\n[And76] George E. Andrews, The theory of partitions , Addison-Wesley Publishing Co., Reading, Mass.-\nLondon-Amsterdam, 1976, Encyclopedia of Mathematics and its Ap plications, Vol. 2.\n[DGGa] Tudor Dimofte, Davide Gaiotto, and Sergei Gukov, 3-manifolds and 3d indices , arXiv:1112.5179,\nPreprint 2011.\n[DGGb] , Gauge theories labelled by three-manifolds , arXiv:1108.4389, Preprint 2011.\n[DGLZ09] Tudor Dimofte, Sergei Gukov, Jonatan Lenells, and Don Z agier, Exact results for p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,739 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "yanagihara-1980-meromorphic-solutions-difference-equations",
+  "blocks": [
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "Funkcialaj Ekvacioj, 23 (1980) 309-326\n\nMeromorphic Solutions of Some Difference Equations\n\nBy\nNiro YANAGIHARA\n\n(Chiba University, Japan)\n\n§1. Introduction\nThe purpose of this note is to investigate meromorphic solutions of non-linear\ndifference equation\n(1.1) e+ ID=RO, yO),\nwhere\nRx, w)=P(x, w)/O%, w),\nP(x, w)=a,(x)w? +--+ +4,(x)w+a,(x),\n\nO(x, w)=b,(x)wt+ +--+ +b,Q)w+h),\na,(x) and 6,(x) are polynomials of x, a,(x)b,(x)#0,\n\n(1.2)\n\nand especially, to study in more detail the case of constant coefficients, i.e.,\n(1.3) YO+)= ROO),\n\nR(w)=P(w)/O(w),\n(1.4) PQw)=a,w? ++. bawtay,\n\nOw)=b,wi+---+b,w+h,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "310 NN. YANAGIHARA\n\n(ii) any of those solutions take every value w (|w|< oo) if 21, and takes every\nvalue other than —1 if 2=1,\n(ii) (1.6) has a meromorphic solution ¢(x) such that\n\no(a)~a(1+ 2X, bux 1Or log x),\n(1.7) in D(R, 2)={xi|x>R, larg x—al< me ot\n\nIm (xe-*)> R or Im (xe*)< —R},\n\nwhere ¢:=2, $i is arbitrarily prescribed, and ¢,, are constants determined as func-\ntions of ¢,. in a unique way, and e>0 is an arbitrary number, R is a sufficiently large\nnumber depending on ¢,, and «.\n\nK. Takano [12] showed that\n\n(iv) any nontrivial solution of (1.6) is hypertranscendental, i.e. it does not\ns",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "Meromorphic Solutions of Some Difference Equations 311\n\n2.1’) YX DY) = (Vx) +2x5 + x4)/x4\nhave the solution y(x)=x?. However, we have\n\nTheorem 1. A transcendental meromorphic solution y(x) of (1.1), if any, is of\norder oo, unless q.=1 (for the definition of q, see (1.5)). In fact, the Nevanlinna\ncharacteristic T(r, y(x)) satisfies\n\n(2.2) T(r, VYO)2 KC —2)40)’\n\nwhere e>0 is arbitrary, and K, is a constant, not depending one. (For the Nevanlinna\ncharacteristic T(r, f) of a meromorphic function f, see [3, p. 98], [4, p. 117], or [9].)\n\nProof. We obtain, by a theorem of Valiron [14, p. 34], [3, p.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/thm-page-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "thm-page-003-01.md",
+      "narrative": null,
+      "content": "A transcendental meromorphic solution y(x) of (1.1), if any, is of order oo, unless q.=1 (for the definition of q, see (1.5)). In fact, the Nevanlinna characteristic T(r, y(x)) satisfies",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/def-page-004-03",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "def-page-004-03.md",
+      "narrative": null,
+      "content": "Let R(w) be the function in (1.4). For a number a (|a|<oo), we put (we suppose that q,> 2)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/def-page-004-04",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "def-page-004-04.md",
+      "narrative": null,
+      "content": "Let A,(a) be the set in (2.13). (a) If there is a value » such that A,(u)={y}, then p is called a maximally fixed value for R(w); (b) if there are",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "312 N. YANAGIHARA\n\nwhich proves our theorem. Q.E.D.\nTheorem 1 can be stated as follows:\n\nTheorem 1’. [f (1.1) has a meromorphic solution y(x) of finite order, then either\ny(x) is a rational function or q=1.\n\nThus, theorem 1 can be considered as a difference equation version of the\ntheorem of Malmquist [3, p. 96].\n\nThe condition g,1 is essential in theorem 1, as easily seen.\n\nIn spite of the examples (2.1) and (2.1’), we have\n\nTheorem 2. Any nontrivial meromorphic solution y(x) of (1.3) is transcendental\nunless q,=1.\n\nProof. First we note that we can assume p>q. For, if not, we have only to\nput",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/thm-page-004-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "thm-page-004-01.md",
+      "narrative": null,
+      "content": "’. [f (1.1) has a meromorphic solution y(x) of finite order, then either y(x) is a rational function or q=1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/thm-page-004-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "thm-page-004-02.md",
+      "narrative": null,
+      "content": "Any nontrivial meromorphic solution y(x) of (1.3) is transcendental unless q,=1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "Meromorphic Solutions of Some Difference Equations 313\n\ntwo values , and », such that 4,(4,)={y,} and A,(y.)= {1}, then (y,, 4») is called a\nmaximally fixed pair for R(w).\n\nTheorem 3. Let y(x) be a meromorphic solution of (1.3). Then\n\n(i) if there are neither a maximally fixed value nor a maximally fixed pair, then\ny(x) takes every value w (|w|<oo) infinitely often;\n\n(ii) if there is only one maximally fixed value p, then y(x) does not take p, but\ntakes every other value w(|w|<co) infinitely often;\n\n(ii) if there are two maximally fixed values y, and p,, then y(x) takes none of p,\nand p,\n\n(iv)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/rem-page-005-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "rem-page-005-02.md",
+      "narrative": null,
+      "content": "When q=1 in the equation (2.17), ie., (2.18) yoe-+ 1)=1/y(2),",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/thm-page-005-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "thm-page-005-01.md",
+      "narrative": null,
+      "content": "Let y(x) be a meromorphic solution of (1.3). Then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/lem-page-006-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Julia",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "lem-page-006-01.md",
+      "narrative": null,
+      "content": "Let R(w) be such that p=q=>2. Then, either (a) there is a number 2 such that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "314 N. YANAGIHARA\n\n§3. Existence of meromorphic solutions\n\nIn the equation (1.3), we can suppose that pg, using a linear transformation\nif necessary.\n\nLemma 4 (Julia). Let R(w) be such that p=q=>2. Then, either\n(a) there is a number 2 such that\n\n(3.1) A=RQ), |R’@|>1,\nor (b) there is a number 2 such that\n(3.2) 4=R(Q), R”M=1.\n\nFor the proof, see [6, Ourves, p. 158 and p. 317].\nNow, let 2 be a number for which (3.2) holds. Putting\n\n(3.3) y(x)=2+ 1/w(x),\nwe obtain\n\n, _ _ Rm) —m i\n3.3\") w(r+ =w((1 me e+ ).\n\nwhere m=1 if R’(2)40; R™(2)=0 (lL<k<m) and R'™*(2)40 if R’(2)=0.\nFurther, put\n\nG4) w= 6)\" /",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/thm-page-006-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "thm-page-006-02.md",
+      "narrative": null,
+      "content": "(i) Let 2 be a number for which (3.1) holds. Then (1.3) has a meromorphic solution y=a,(x) such that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/cor-page-007-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "cor-page-007-01.md",
+      "narrative": null,
+      "content": "The equation (1.3) has a meromorphic solution for any rational func- tion R(w).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "Meromorphic Solutions of Some Difference Equations 315\n\nfunction of k,+0,(x) is a function of t=e**: 0(x)=f,(e**), where f(t) is meromorphic\nin |t|<00, and\n\n(3.7) A(O=AtD) «yt, |t| Se for a number o>0.\nrest\n\n(ii) Let 2 be a number for which (3.2) holds. Then (1.3) has a meromorphic\nsolution y=p,(x) such that\n\n(3.8) v(x) =A+ A/5,),\n\nwhere\n\n3.8’) va)~ \"(1+ x ayx-n( E*)') in DR, «) (see (1.7)),\n\ng+k21 x\n3.8”) A=[—mRMM/M+ DI\",\n\nin which\n\nB.9) v0) =6,(0)\"~a(1 +3, diy x to(28*)') in D(R,),\n\nis a solution of (3.5). (m is the integer shown in (3.3’).)\n\nSolution (3.7) is obtained by Shimomura [10] for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/lem-page-008-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "lem-page-008-01.md",
+      "narrative": null,
+      "content": "Suppose p—q=>2. There is a constant K such that, for any A>0, we can choose a number « with the property",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "316 N. YANAGIHARA\n\n43 L(y; a)={x; Im x=y, Re x<a},\n4.3) Ly) =L(y; 00) ={x; Im x=7}.\n\nIn the below, y(x) denotes a meromorphic solution of (1.3).\n\nLemma 7. Suppose p—q=>2. There is a constant K such that, for any A>0,\nwe can choose a number « with the property\n\n(4.4) (x) is holomorphic and|y(x)|<K for xe X(A, a).\nProof. Write G(w)=R(w)/w?-*. Then G(w)->G(co)40 as w—00:\nR(w)=G(co)w?-“(1+G,()), Gv)>0 as w-r00,\nLet K>max (4/|G(co)|, 1) be a number such that\n|G,w)|<1/2 for |w|>K.\n\nSuppose there is a sequence of poles {x,} of y(x), x, € 3(A), Rex,=&,>—oo. If\nwe set x, =x, +], |], then —1<Re x,<0, an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/thm-page-008-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "thm-page-008-02.md",
+      "narrative": null,
+      "content": "Suppose p —q=2. Then, for each compact set #, we have (4.5) WE+x)—a as > —0oo, uniformly for x ¢ &,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/lem-page-009-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "lem-page-009-01.md",
+      "narrative": null,
+      "content": "Suppose that (4.7) there is no maximally fixed value for R(w) (see Def. 2.2).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/lem-page-009-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "lem-page-009-02.md",
+      "narrative": null,
+      "content": "Suppose (4.7) and use the same notations as in lemma9. For any A>O0, there is a number a such that y(x)#p,; in X(A, a).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "Meromorphic Solutions of Some Difference Equations 317\n\nCluster set of y(x) as x->—©o on the real axis is a continuum. Hence }(x)\nmust tend to the same root 2 of z= R(z), as x» — 00 on the real axis. Similarly, the\ncluster set of y(x) as Re x->— oo in 3(A) is a continuum, hence y(€+i7)—A, as E>\n—oo, for any 7. Combining this with the above argument, we obtain (4.5) for any\ncompact set. ,\n\nBecause of the fact y(x)—2—0 and\n\nD@+)D—a/ly@)—’4}e RQ) as Re x-+—00,\nwe must have, obviously, | R’(4)|= 1. Q.E.D.\n\nLemma 9. Suppose that\n(4.7) there is no maximally fixed value for R(w) (see Def. 2.2).\n\nLet",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/thm-page-009-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "thm-page-009-03.md",
+      "narrative": null,
+      "content": "Suppose (4.7). Then, for any compact set #, we have (4.5) with (4.6).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/lem-page-010-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Kimura",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "lem-page-010-02.md",
+      "narrative": null,
+      "content": "Jf we set (4.10) Z,=F\"(z)=z+n+7,(Z)+6,(z), ze D/(T,«), where Pal) =12(2)+ +7),",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/lem-page-010-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "lem-page-010-03.md",
+      "narrative": null,
+      "content": "Let 4, be a number such that w(x) has no pole on L(y); a’) for a number a’. Then, there is a number a such that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/prose-page-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 10",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/page-010.md",
+      "narrative": null,
+      "content": "318 N. YANAGIHARA\n\nTheorem 12. As £—— oo, we have\n(4.8) WE+X)—A uniformly on each compact set in |x|< oo.\nIn the rest of this section, we are concerned with the case where 2 satisfies (3.2).\n\nLet F(z) be the function in (3.6). Put\n\nas MD9= {2sl2I>7. larg 2|< 2s or Im (e2)>T or Im (e“#z)<— r\\\n1 {z; Re z>0}.\nIf T>0 is sufficiently large, then z € D’(T, e) implies F(z) ¢ D’(T, «).\nLemma 13 (Kimura). Jf we set\n(4.10) Z,=F\"(z)=z+n+7,(Z)+6,(z), ze D/(T,«),\nwhere\nPal) =12(2)+ +7),\n\n(4.10’) ; a ;\n\n7P@)=Pjam >, ZH), j=l --+,m,\nv=0\n\nthen we obtain\n\n(4.11) IC @isxs V2, @I|+ +++ +l7A@I+1 ;\n. a) |z--yfitv™",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/thm-page-010-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "thm-page-010-01.md",
+      "narrative": null,
+      "content": "As £—— oo, we have (4.8) WE+X)—A uniformly on each compact set in |x|< oo. In the rest of this section, we are concerned with the case where 2 satisfies (3.2).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/lem-page-011-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "lem-page-011-01.md",
+      "narrative": null,
+      "content": "Let 7 be a number as stated in lemma 14. Then, there are numbers A>0 and & such that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/lem-page-011-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "lem-page-011-02.md",
+      "narrative": null,
+      "content": "Let 7 be a number as stated in lemma 14. Then, we have Re[o(E+in)I>—co as E+—o.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/prose-page-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 11",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/page-011.md",
+      "narrative": null,
+      "content": "Meromorphic Solutions of Some Difference Equations 319\n\n(4.13) o%, +) =F\"(o)=0,+04+ 72x) +En(Or),\nand, by (4.10’),\n\n4.14) [rao [SBS 5 2\" 4 Bl <mBn'-\" 4B,\nFA v1\n\nwhere B and B’ are constants. (We suppose m>1. The case m=1 is treated\nanalogously.) Also we have, by (4.11) and (4.14),\n\nn-1\n(4.15) C,(w,)|<mBK 57 y-/™-- B\" <mBKn-/™ 4 BY,\nv=1\n\nwhere B” is a constant.\n\nPut n,=[|€,|+a’]. Then oe’ —1<&,+n,<a’, and by (4.10), (4.14), and (4.15),\nwe have\n\n(4.16) o(%, +1) =o,.+n, + B,, |B. |S M(n,)'-/\" + MG,\n\nwhere M,and M, are constants independent of w, if Re[w,J=T7’.\nThus, u(+ in) is not bounded on ae’",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/prose-page-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 12",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/page-012.md",
+      "narrative": null,
+      "content": "320 N. YANAGIHARA\n\nn=0,1,---. Let G(w) be the one defined in (3.6), then G(w(&,-+n+in))-0 as k\n— oo, forn=0,1,---. Thus\n\nlim u,(€, +7) =lim u(€,+—1)+1+lim Re [G(o&,-+n—1+in))]\n\n=lim u(€,-+n—I)+1=---=limu,(€,)+2.\nPutting n=[M-+ 7’]+ 2, we have a contradiction to lemma 14. Q.E.D.\nPut\n(4.17) H,={y; there are 2-points of y(x) on L(y; «) for any a}\nand\n(4.18) G,=U {L@);7¢€ Hy}.\n\nH, is a discrete set, as seen in theorem 18 below.\n\nTheorem 17. Let 2 be a number for which (3.2) holds, and y(x) be a solution such\nthat W(E+in)—A as E->— 00. Let w(x) be defined by (3.4). Then\n\n(4.19) Re [a(E+x)]— — 00 as",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/thm-page-012-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "thm-page-012-01.md",
+      "narrative": null,
+      "content": "Let 2 be a number for which (3.2) holds, and y(x) be a solution such that W(E+in)—A as E->— 00. Let w(x) be defined by (3.4). Then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/thm-page-012-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "thm-page-012-02.md",
+      "narrative": null,
+      "content": "Let 2 be a number such that 2= R(A). For any y, there are numbers A and a such that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/thm-page-012-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "thm-page-012-03.md",
+      "narrative": null,
+      "content": "(i) Jf|R’(A)|>1, then there is an entire periodic function x(x) with the period | such that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/prose-page-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 13",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/page-013.md",
+      "narrative": null,
+      "content": "Meromorphic Solutions of Some Difference Equations 321\n1\n(5.3) y@)=0,(x+ log x(x) =flr(e\"*),\n\nwhere oa, and f, are defined in (3.7) and (3.7'), respectively, and e*= R'(A).\n(ii) Jf R’(A)=1, then there is an entire periodic function x(x) with the period 1\nsuch that\n\nG.4) Vox) =vilx+ 2),\n\nwhere yp, is the solution defined in theorem 5 (ii).\nGii) If R’()=e***, a=a rational number, then (5.1) does not hold for this 2.\n(iv) If R(AQ=e'™ and if\n\n(5.5) log |e\"* —1|=2 log\n\nsin ( a ) |= O(log n), n->0o,\n\nthen (5.1) does not hold for this 2.\n\nNote that almost all @ satisfy (5.5). For other a, we do not k",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/prose-page-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 14",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/page-014.md",
+      "narrative": null,
+      "content": "322 N. YANAGIHARA\n\nmxt Daf Ty@+ Dyle*** =f TRO@))/er\"**\n=f TRAMMe***=fr Theyle*\n=e fy D@lete* =f, Tye =a(x).\n\nHence\n(5.1.4) a(xt+ 1l)=x(x) ifxe # and Re x<6,.\n\nUsing (5.1.4), we continue x(x) analytically and a holomorphic function on 3(A).\nAlso, since\n\n(5.1.5) YX)=faoe*), xe B,\n\nand functions on the both sides are analytic on 3(A), we have (5.1.5) on the whole\n(A).\n\nSince A>0 is arbitrary, x(x) is entire and periodic, and (5.1.5) holds for |x|<\nco. This proves (5.3).\n\n5.2. Proof of the case (ii)\n\nLet v,(x) be a function in (3.9). It is not difficult to see that there are number\nB and C such t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/prose-page-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 15",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/page-015.md",
+      "narrative": null,
+      "content": "Meromorphic Solutions of Some Difference Equations 323\n\na9(x)=0; Lo(x+ II—@+ D=07'F@(@)]—x—1=07 [Fo,@)|—x—1\n=o; [v{z+ I]—x—1=z—x=0;[o(x)]—x=27,(2).\n\nThus\n(5.2.3) m(xt l=z,(x)\n\nfor xe #, Rex<&,. Using (5.2.3), we continue z,(x) analytically on S=23(y3 A).\nThe relation\n\n(5.2.4) o(X)=0,~+75(x))\n\nholds on the whole (7); A).\nFor any S=5(y); A) satisfying (5.2.2), a holomorphic function 2,(x) is defined\n\nas above. Take 7* € H, (see (4.17)). s(x) can be defined, by an obvious way, on\na set W(6)U W(6) for some 6>0, where\n\nW(6)={x; n* —d<Im x<7*},\nW(6)={x3 7*<Im x<7*4+ 5}.\n\nTake x* ¢ L(y*). Suppose the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/prose-page-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 16",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/page-016.md",
+      "narrative": null,
+      "content": "324 N. YANAGIHARA\n5.3. Proof of the case (iii)\nLet a=h/k. Suppose p(x). Put »(x)=2-+ 1/w(x), then we have\n(5.3.1) w(x+ D=e\"*w)[l—A,w(x)-\" +--+],\nby (1.3). Repeating 2k-times, we obtain\n\nw(x-+ 2k) ero (xI[L—A,w(x)™ $+]\n=w(x[l— Awa)\" ++}\n\nPut x=2kt and w(2kt)=z(t). Then (5.3.2) becomes\n2(t+ D=2(t)[f1l —A,z(t)-™ +--+].\n\n(5.3.2)\n\nThus, by the case (ii) above, we obtain\n2(t) = Ad {t+-a(t))~ Aft+2())/\"l+ +++],\n\nwhere 9, is the solution defined in (3.8’), z(t) is an entire periodic function, and A, is\naconstant. Therefore,\n\nand we would have\n\nC+D —1 as Re x>—0oo,\nw(x)\nwhile we must have, from (5.3.1)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/prose-page-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 17",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/page-017.md",
+      "narrative": null,
+      "content": "Meromorphic Solutions of Some Difference Equations 325\n\n(5.4.3) O)=t+at+-.-, — |t}<p.\nWe can choose numbers p>0 and c> 0 so that\n(5.4.4) W=0(t) is univalent in |t|<~ and takes every value W, | W|<c, there.\n\nLet 4, be a number such that w(x)40 for xe L(y). We can take a number a\nsuch that\n\n(5.4.5) 0<|w)|<r for x € L(y; a).\n\nThen, for any x ¢ L(y; «), there is a t, |t|<p, such that\nw(x)=0(), t=0~'[w(x)].\n\nPut\n\n(5.4.6) n(x) =O07 [w(x)]/e%***.\n\nThen, if x+1€ L(y; a),\n\na(x+ )=0\"'[wax+ IjfetrerY =0-[G(w(x))/et2 2*?\n=0-[G@(t))/e*\"*» =O- [O(e**2) eter th\n=07[w(X)]/e*? =2(x).\n\nThus\n\n(5.4.7) a(x)=a(x—1)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/yanagihara-1980-meromorphic-solutions-difference-equations/blocks/prose-page-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 18",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/page-018.md",
+      "narrative": null,
+      "content": "326\n\n[4]\n[5]\n\n[6]\n\n[7]\n[8]\n[9]\n[10]\n(11]\n[12]\n\n[13]\n[14]\n\n(15]\n\n[16]\n\nN. YANAGIHARA\n\nHille, E., Ordinary Differential Equations in the Complex Domain, John Wiley & Sons,\nNew York-London-Sydney-Toronto 1976.\n\nHirai, I, On a meromorphic solution of some difference equation, J. Coll. Arts & Sci.,\nChiba Univ., 12 (1979), 5-10.\n\nJulia, G., Memoire sur l’iteration des fonctions rationnelles, J. Math. Pures Appl., 8°\nser., 1 (1918), 47-245.\n\nOEUVRES de G. JULIA, vol. I, 121-319. Gauthier-Villars, Paris, 1968.\n\nKimura, T., On the iteration of analytic functions, Funkcial. Ekvac., 14 (1971), 197-\n238.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

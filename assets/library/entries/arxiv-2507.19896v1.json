@@ -1,0 +1,253 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2507.19896v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2507.19896v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction.",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "A two-variable link invariant -- the HOMFLY-PT polynomial -- can be recovered using a family of trace functions on Iwahori-Hecke algebras in type $A$ satisfying analogues of the conditions in Markov's theorem for the braid group (usually called ``Markov moves'') \\cite{jonesHeckeAlgebraRepresentations1987}. The analogues of Markov moves can be formulated for Iwahori-Hecke algebras of other Coxeter groups, leading to a general notion of the Markov trace, see, for example, \\cite{geckTraceFunctionsIwahoriHecke1998}, \\cite{geckMarkovTracesKnot2004}, \\cite{gomi2006markov},  \\cite{websterGeometryMark",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.19896v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Generalized Markov traces and Jucys-Murphy elements\nKostiantyn Tolmachov, Heorhii Zhylinskyi\nAbstract\nWe give a simple construction of Markov traces for Iwahori-Hecke algebras associated\nwith infinite series of crystallographic Coxeter groups. In types B and D it is new,\nand generalizes a known construction in type A employing symmetric polynomials in\nmultiplicative Jucys-Murphy elements.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.19896v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments.",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-acknowledgments.md",
+      "narrative": null,
+      "content": "The results of this paper were obtained while the authors participated in \\href{https://math.mit.edu/research/highschool/primes/YuliasDream/}{Yulia's Dream} program. We would like to thank the program's or\\-ga\\-ni\\-zers for this wonderful initiative. We would like to thank Mykhailo Barkulov, another participant of the program, for helpful discussions.\n\nWe have conducted numerical experiments using SageMath software \\cite{sagemath} throughout the work on this paper, and would like to thank its developers.\n\nK.T. was funded by the Deutsche Forschungsgemeinschaft SFB 1624 grant, Pro\\-jekt\\-nu\\-mme",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.19896v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Iwahori-Hecke algebras and multiplicative Jucys-Murphy elements.",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-002-iwahori-hecke-algebras-and-multiplicative-jucys.md",
+      "narrative": null,
+      "content": "Iwahori-Hecke algebras and multiplicative Jucys-Murphy elements.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.19896v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Coxeter groups.",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-003-coxeter-groups.md",
+      "narrative": null,
+      "content": "Let $(W, S), S = \\{s_1, \\dots, s_n\\},$ be a Coxeter system. Thus, $W$ is a group with a presentation $(s_0, \\dots, s_n | (s_is_j)^{m_{ij}} = e)$, where $m_{ij} \\in \\mathbb{Z}^+ \\cup \\{\\infty\\}$, with $m_{ii} = 1, m_{ji} = m_{ij} \\geq 2$ if $i \\neq j$, and $m_{ij} = \\infty$ means that there is no relation included for the pair $s_i, s_j$. Such a presentation is read off the Coxeter diagram of $(W,S)$ in a standard way: such a diagram is a non-oriented graph with $S$ as a set of vertices, and $m_{ij} - 2$ edges between the vertices $s_i$ and $s_j$. Let $l: W \\to \\mathbb{Z}_{\\geq 0}$ be the Bruha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.19896v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Iwahori-Hecke algebras.",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-004-iwahori-hecke-algebras.md",
+      "narrative": null,
+      "content": "Let $\\mathcal{A} = \\mathbb{Q}(v)$. The Iwahori-Hecke algebra $\\He_v(W,S) = \\He(W,S)$ associated to a Coxeter system $(W,S)$ is a unital $\\mathcal{A}$-algebra with generators $t_s, s \\in S,$ subject to the relations\n\\begin{enumerate}[label=(\\roman*).,ref=(\\roman*)]\n\\item $\\langle t_{s_i},t_{s_j}\\rangle_{m_{ij}} = \\langle t_{s_j},t_{s_i}\\rangle_{m_{ij}}$, where $\\langle x,y \\rangle_{m}$ is an alternating product $xyx\\dots$ of $x$ and $y$ with $m$ factors.\n\\item \\label{item:1} $(t_s - v)(t_s + v^{-1}) = 0.$\n\\end{enumerate}\nWhen $(W,S)$ is of type $B_n$ we will also be interested in the Iwahori-He",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.19896v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Trace functional and a pairing on H(W,S).",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-005-trace-functional-and-a-pairing-on-hws.md",
+      "narrative": null,
+      "content": "Let $x \\mapsto \\overline{x}$ be the Kazhdan-Lusztig involution on $\\He(W,S)$. It is a $\\mathbb{Q}$-algebra involution, defined by the assignments $\\overline{v} = v^{-1}, \\overline{t_w} = t_{w^{-1}}^{-1}.$ Let $i:\\He(W,S)$ stand for the $\\mathcal{A}$-linear algebra anti-involution defined by $i(t_w) = t_{w^{-1}}$. \n\nFor $h \\in \\He(W,S), x \\in W,$ let $h_x$ stand for the $t_x^{-1}$-coefficient of $h$ in the basis $t_w^{-1},$ where $w$ runs through $W$. Let $\\tau: \\He(W,S) \\to \\mathcal{A}$ be a functional defined by  $\\tau(h) = h_e,$ where $e \\in W$ is the unit.  For $h, h' \\in \\He(W,S)$, define",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.19896v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "``Full twist'' and Jucys-Murphy elements.",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-006-full-twist-and-jucys-murphy-elements.md",
+      "narrative": null,
+      "content": "\\label{sec:full-twist-jucys} Assume that $(W, S)$ is of finite type. Let $w_0$ stand for the longest element in $W$ with respect to the Bruhat length. Let $\\Se(W,S) = t_{w_0}^{-2} \\in \\He(W,S)$. In classical types, we will write $\\Se(X_n) \\in \\He(X_n)$, when $X$ is $A, B$ or $D$, or simply $\\Se$ when the type is clear from the context.  \n\nThe following proposition is also standard:\n\\begin{proposition}\n  \\label{sec:iwah-hecke-algebr}\n  The element $\\Se(W,S)$ is central in $\\He(W,S)$. \n\\end{proposition}\n\nWe will need the following ``Serre property'' of the operator of multiplication by $\\Se(W,S)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.19896v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some central elements in the classical Iwahori-Hecke algebras.",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-007-some-central-elements-in-the-classical-iwahori-h.md",
+      "narrative": null,
+      "content": "\\label{sec:some-centr-elem}\nIn this section we follow \\cite{Ram2003}.\nLet $\\He^{\\aff}(A_{n-1})$ be the affine Hecke algebra associated to the root datum of $\\mathrm{GL}_n$. It is a unital algebra over $\\mathcal{A}$ generated by the elements $t_1, \\dots, t_{n-1}$ and $\\Theta_1^{\\pm 1}$, where $t_1, \\dots, t_{n-1}$ satisfy the relations of the Iwahori-Hecke algebra of type $A_{n-1}$ and, additionally, the following relations hold:\n\\begin{enumerate}\n\\item[(iii).] $t_1\\Theta_1 t_1\\Theta_1 = \\Theta_1 t_1 \\Theta_1 t_1$,\n\\item[(iv).] $t_i\\Theta_1 = \\Theta_1 t_i$ for $i > 1$.\n\\end{enumerate}\nInductive",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.19896v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Markov traces.",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-008-markov-traces.md",
+      "narrative": null,
+      "content": "\\label{sec:markov-traces-1}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.19896v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Markov traces via Jucys-Murphy elements.",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-009-markov-traces-via-jucys-murphy-elements.md",
+      "narrative": null,
+      "content": "\\label{sec:markov-traces-via-1}\n\\begin{definition}\n\\label{sec:markov-traces}  \nLet $\\mathcal{R}$ be a commutative $\\mathcal{A}$-algebra. A family $(\\phi_n)$ of $\\mathcal{A}$-linear functionals $\\phi_n: \\He(X_n),$ where $X$ is $A_{-1}, B$ or $D$ and $n \\in \\mathbb{Z}_{\\geq 1}$ ($n \\in \\mathbb{Z}_{\\geq 2}$ in type $D$) is called a Markov trace if there are elements $\\mu, \\rho \\in \\mathcal{R}$ such that the following conditions are satisfied.\n\\begin{enumerate}\n\\myitem[.]{(M1)}\\label{item:4} $\\phi_n$ is a trace function, i.e. $\\phi_n(hh') = \\phi_n(h'h)$. This property is a generalization of the fi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.19896v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "General Markov traces in types B, D.",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-010-general-markov-traces-in-types-b-d.md",
+      "narrative": null,
+      "content": "\\label{sec:gener-mark-trac-3}\nIn type $A$, the classical result of Jones and Ocneanu \\cite{jonesHeckeAlgebraRepresentations1987} says that a Markov trace with given constants $\\rho, \\mu$ is defined uniquely up to an overall scaling. Thus, Theorem~\\ref{sec:markov-traces-via} gives a general description of a Markov trace in type $A$.\n\nIn types $B, D$, the general description of Markov traces was obtained by Geck and Lambropoulou \\cite{geckMarkovTracesKnot2004}, \\cite{geckTraceFunctionsIwahoriHecke1998}. We recall their results.\n\nFor $n \\geq 1$, define the elements\n\\[T_n = t_{n-1}\\dots t_1 t_0 t_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.19896v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometric Markov traces.",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-011-geometric-markov-traces.md",
+      "narrative": null,
+      "content": "\\label{sec:geom-mark-trac}\nMarkov traces $\\tr_n^B:\\He_{v,v}(B_n) \\to \\mathcal{A}(a), \\tr_n^D:\\He(D_n) \\to \\mathcal{A}(a)$ studied in \\cite{gomi2006markov}, \\cite{websterGeometryMarkovTraces2009} are specializations of traces $\\tr_{n,y}^X$ satisfying the extension of the properties \\ref{item:5}, \\ref{item:6} for the embeddings $B_0 \\to B_1$ and $D_1 \\to D_2, D_0 \\to D_1$. In particular, these traces satisfy\n\\[\n  \\tr_1^B(t_0) = v-v^{-1}, \\tr_1^D(t_1) = \\tr_1^D(t_{1'}) = v-v^{-1}, \\tr^D_2(t_1t_{1'}) = (v-v^{-1})^2.\n\\]\nThe condition on $\\tr_1^B$ forces $y = v - v^{-1}$ and $\\overline{y}-\\alpha_0 =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

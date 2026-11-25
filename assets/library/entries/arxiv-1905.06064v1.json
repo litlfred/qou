@@ -1,0 +1,226 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1905.06064v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1905.06064v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "For $\\alpha p \\geq 4$, $p \\geq 2$, the O'hara knot energies\\footnote{In this paper we divert from the usual notation of the literature by writing $\\frac{p}{2}$ instead of $p$ for the simple reason that the case $p=2$ (in the knot literature: $p=1$) corresponds to the Hilbert-space case of an $L^2$-energy.} $\\mathcal{O}^{\\alpha,p}$ named after their inventor J.~O'hara \\cite{OH91,OH92} are defined for closed Lipschitz curves $\\sol: \\R/\\Z \\to \\R^3$ from the circle $\\R/\\Z$ into the three-dimensional space $\\R^3$ by\n\\begin{equation}\\label{eq:oharaenergiesnew}\n \\mathcal{O}^{\\alpha,p}(\\sol)= \\int_{\\R",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.06064v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "ON O’HARA KNOT ENERGIES I: REGULARITY FOR CRITICAL KNOTS\nSIMON BLATT, PHILIPP REITER, AND ARMIN SCHIKORRA\nAbstract. We develop a regularity theory for extremal knots of scale invariant knot ener-\ngies deﬁned by J. O’hara in 1991. This class contains as a special case the M¨obius energy.\nFor the M¨obius energy, due to the celebrated work of Freedman, He, and Wang, we\nhave a relatively good understanding. Their approch is crucially based on the invariance of\nthe M¨obius energy under M¨obius transforms, which fails for all the other O’hara energies.\nWe overcome this diﬃculty by re-interpreting th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.06064v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A new energy E",
+      "pageStart": 4,
+      "pageEnd": 10,
+      "target": "../sections/sec-001-2-a-new-energy-e.md",
+      "narrative": null,
+      "content": "In this section we find a new energy $\\mathcal{E}^{\\alpha,p}(\\solu)$ applied to maps $\\solu: \\R/\\Z \\to \\S^2$ so that any critical knot (parametrized by arc-length) induces a critical $\\S^2$-valued map $\\solu$ and vice versa. \n\nThe main result in this section is the following equivalence between an energy $\\mathcal{E}^{\\alpha,p}$ which will be defined below and the O'hara energy $\\mathcal{O}^{\\alpha,p}$.\n\n\\begin{theorem}\\label{th:criticalpointchar}\nFor $\\alpha p = 4$, $p \\geq 2$. Let $\\sol: \\R/\\Z \\to \\R^3$ be a knot parametrized with constant speed with finite energy $\\mathcal{O}^{\\alpha,p}(\\so",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.06064v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Regularity theory for E-critical maps: Proof of Theorem I",
+      "pageStart": 10,
+      "pageEnd": 17,
+      "target": "../sections/sec-002-3-regularity-theory-for-e-critical-maps-proof-of.md",
+      "narrative": null,
+      "content": "In view of Theorem~\\ref{th:criticalpointchar} the claim of Theorem~\\ref{th:regularity} is a consequence of the following theorem.\n\\begin{theorem}\\label{th:eregularity}\nFor $\\alpha p = 4$, $p \\geq 2$ consider $\\mathcal{E}^{\\alpha,p}$ from \\eqref{eq:E}.\n\nLet $\\solu$ is a critical map for $\\mathcal{E}^{\\alpha,p}$ in the class of maps $\\solv: \\R/\\Z \\to \\S^2$ with finite energy $\\mathcal{E}^{\\alpha,p}$, that is for any $\\varphi \\in C^\\infty(\\R/\\Z,\\R^3)$ we have\n \\[\n  \\frac{d}{d\\eps} \\Big |_{\\eps = 0} \\mathcal{E}^{\\alpha,p}\\brac{\\frac{u+\\eps \\varphi}{|\\solu+\\eps \\varphi|}} = 0.\n \\]\nThen $\\solu \\in C",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.06064v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Extremal cases p=1 and p=infty, and no Möbius invariance for p=2",
+      "pageStart": 17,
+      "pageEnd": 22,
+      "target": "../sections/sec-003-4-extremal-cases-p1-and-pinfty-and-no-möbius-inv.md",
+      "narrative": null,
+      "content": "\\label{s:distortion}\nThe following definition goes back to Gromov~\\cite{G83}, see also\nO'hara~\\cite{OH92}.\n\n\\begin{definition}[distortion]\n For any curve $\\g\\in C^{0}\\rzd$ let\n \\[ \\distor\\g := \\sup_{\\substack{x,y\\in\\R/\\Z\\\\x\\ne y}}\n \\frac{\\mathcal{D}_{\\g}(x,y)}{\\abs{\\g(x)-\\g(y)}} \\]\n if $\\g$ is injective and $\\distor\\g :=\\infty$ else.\n\\end{definition}\n\n\\begin{lemma}\n Let $\\g\\in C^{0,1}\\rzd$ be parametrized by arc-length. Then\n \\[ \\liminf_{\\a\\searrow0}\\tfrac1\\a\\br{\\E(\\g)}^{\\a/4} \\ge\\log\\distor\\g. \\]\n\\end{lemma}\n\n\\begin{proof}\n We may assume that $\\g$ is injective since otherwise\n $\\E(\\g)$ would",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.06064v1/blocks/lem-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "lem-sec-004-02.md",
+      "narrative": null,
+      "content": "2. Let A(s, t) ⊂R2 be the set (A.4) (x, y) ∈A(s, t) ⇔min{x, y} < s, t < max{x, y}. Then for any µ > 0, and any s , t (A.5) Z A(s,t) ρ(x, y)−2−µd(x, y) = µ(1 + µ)|t −s|−µ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1905.06064v1/blocks/lem-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "lem-sec-004-03.md",
+      "narrative": null,
+      "content": "3. Let p > 0, β ∈(0, 1), q ∈(1, ∞) so that β > pq −1 q then for any u ∈C∞ c (R) and any interval B ⊆R, (A.6) Z B Z B \u0010 ρ(x, y)−2 R y x R y x |u(s) −u(t)|q ds dt \u0011p ρ(x, y)1+βpq dx dy ≾[u]pq Wβ,pq(S ). Also for I ⊆R an interval, (A.7) Z R Z R \u0010 ρ(x, y)−2 R y x R y x χS (s, t)|u(s) −u(t)|q ds dt \u0011p ρ(x, y)1+βpq dx dy ≾[u]pq Wβ,pq(S ). SIMON BLATT, PHILIPP REITER, AND ARMIN SCHIKORRA",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1905.06064v1/blocks/prop-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "prop-sec-004-01.md",
+      "narrative": null,
+      "content": "1. For p ∈(1, ∞), β ∈(0, 1) so that β > 1 p −1 2 we have for any u ∈C∞ c (R), for any interval B ⊆R, (A.1) ⟦u⟧Wβ,p(S ) ≾[u]Wβ,p(S ). The constant is independent of u and I. For p ∈(1, ∞), β ∈(0, 1) so that β > 1 p − 2(p−1) we have for any u ∈C∞ c (R), (A.2) [u]Wβ,p(R) ≾⟦u⟧Wβ,p(R). There is a ﬁxed number L ∈N so that for any compact interval Bρ ⊂R of sidelength ρ denoting with B2Lρ the concentric interval with sidelength 2Lρ, we have for a ﬁxed (A.3) [u]Wβ,p(Bρ) ≾⟦u⟧Wβ,p(B2Lρ). To see this we need the following two Lemmata.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1905.06064v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. A new norm for W(s,p)",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "../sections/sec-004-appendix-a-a-new-norm-for-wsp.md",
+      "narrative": null,
+      "content": "Let\n⟨δu, δv⟩(x, y) :=\n1\nZ\n0\n1\nZ\n0\n\u0000u(x + s(y −x)) −u(x + t(y −x))\u0001 · \u0000v(x + s(y −x)) −v(x + t(y −x))\u0001 ds dt\n=ρ(x, y)−2\ny\nZ\nx\ny\nZ\nx\n\u0000u(s) −u\u0001 · \u0000v(s) −v(t)\u0001 ds dt\nWe set\n⟦u⟧Wβ,p(S ) :=\n\nZ\nB\nZ\nB\n(⟨δu, δu⟩(x, y))\np\n2\nρ(x, y)1+βp\ndx dy\n\n1\np\n.\nThe semi-norm ⟦u⟧Wβ,p(S ) is equivalent to the usual Wβ,p-seminorm for β large enough –\nnote that in particular for our situation where p = 1\ns this equivalence holds. Here\n[u]Wβ,p(S ) :=\n\nZ\nB\nZ\nB\n|u(x) −u(y)|\np\n2\nρ(x, y)1+βp\ndx dy\n\n1\np\n.\nO’HARA KNOT ENERGIES I\n23\nProposition A.1. For p ∈(1, ∞), β ∈(0, 1) so that β > 1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.06064v1/blocks/lem-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "lem-sec-005-01.md",
+      "narrative": null,
+      "content": "1. For ϕ ∈C∞ c (Bρ), L ∈N, k ∈N, we have the estimate  Z B2Lρ Z B2L+kρ\\B2L+k−1 ρ(x, y)2 ρ(x, y)−2 y Z x y Z x |u(s) −u(t)||ϕ(s)v(s) −ϕ(t)v(t)| ds dt  p dx dy  p ≾2−s(L+k) ∥v∥∞[u]W 1p ,p(B2L+kρ) ∥|∇| p ϕ∥Lp .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1905.06064v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix B. Computations",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-005-appendix-b-computations.md",
+      "narrative": null,
+      "content": "Lemma B.1. For ϕ ∈C∞\nc (Bρ), L ∈N, k ∈N, we have the estimate\n\nZ\nB2Lρ\nZ\nB2L+kρ\\B2L+k−1\n1\nρ(x, y)2\nρ(x, y)−2\ny\nZ\nx\ny\nZ\nx\n|u(s) −u(t)||ϕ(s)v(s) −ϕ(t)v(t)| ds dt\n\np\n2\ndx dy\n\n2\np\n≾2−s(L+k) ∥v∥∞[u]W\n1p ,p(B2L+kρ) ∥|∇|\n1\np ϕ∥Lp\n.\nProof. W.l.o.g. Bρ is centered around 0.\nNote that the support of ϕ tells us that whenever x, y > ρ or x, y < −ρ,\n1\nρ(x, y)2\nρ(x, y)−2\ny\nZ\nx\ny\nZ\nx\n|u(s) −u(t)||ϕ(s)v(s) −ϕ(t)v(t)| ds dt\n\np\n2\n≡0.\nThus, it suﬃces to estimate\nρ\nZ\n−2Lρ\n2L+kρ\nZ\n2L+k−1ρ\n1\nρ(x, y)1+ 1\np\nρ(x, y)−2\ny\nZ\nx\ny\nZ\nx\n|u(s) −u(t)||ϕ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.06064v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "../sections/sec-006-references.md",
+      "narrative": null,
+      "content": "[1] A. Abrams, J. Cantarella, J. H. Fu, M. Ghomi, and R. Howard. Circles minimize most knot energies. Topol-\nogy, 42(2):381 – 394, 2003.\n[2] D. R. Adams. A note on Riesz potentials. Duke Math. J., 42(4):765–778, 1975.\nO’HARA KNOT ENERGIES I\n27\n[3] P. Auscher, S. Bortz, M. Egert, and O. Saari. Nonlocal self-improving properties: a functional analytic\napproach. Tunis. J. Math., 1(2):151–183, 2019.\n[4] J. R. Banavar, O. Gonzalez, J. H. Maddocks, and A. Maritan. Self-interactions of strands and sheets. Journal\nof statistical physics, 110(1-2):35–50, 2003.\n[5] S. Blatt. Boundedness and regularizing",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

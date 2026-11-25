@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-qns-shell-tail-collapse",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:qns-shell-tail-collapse",
+  "kind": "proposition",
+  "title": "Per-amplitude tail collapse in the discrete $q$-shell hierarchy",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-qns-unit-layers"
+  ],
+  "tags": [
+    "navier-stokes",
+    "fluid-dynamics",
+    "shell-model",
+    "tail-bounds",
+    "millennium-problem"
+  ],
+  "leanRef": "qou:QOU.FluidDynamics.physical_layer_leray.trajectory_tail_collapse",
+  "text": "qns-shell-tail-collapse.md",
+  "provenance": "authored"
+}

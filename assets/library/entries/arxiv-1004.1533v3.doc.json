@@ -1,0 +1,1570 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1004.1533v3",
+  "title": "arxiv-1004.1533v3",
+  "variant": "pdf",
+  "pages": 39,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries I: spherical categories",
+      "number": "1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-1-preliminaries-i-spherical-categories"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries II: Drinfeld Center",
+      "number": "2",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-2-preliminaries-ii-drinfeld-center"
+    },
+    {
+      "level": 1,
+      "title": "Polytope decompositions",
+      "number": "3",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-3-polytope-decompositions"
+    },
+    {
+      "level": 1,
+      "title": "TV invariants from polytope decompositions",
+      "number": "4",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-4-tv-invariants-from-polytope-decompositions"
+    },
+    {
+      "level": 1,
+      "title": "Proof of independence of polytope decomposition",
+      "number": "5",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-5-proof-of-independence-of-polytope-decompositio"
+    },
+    {
+      "level": 2,
+      "title": "Invariance under M1",
+      "number": null,
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-invariance-under-m1"
+    },
+    {
+      "level": 2,
+      "title": "Invariance under M2",
+      "number": null,
+      "page": 21,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-invariance-under-m2"
+    },
+    {
+      "level": 2,
+      "title": "Invariance under M3",
+      "number": null,
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-invariance-under-m3"
+    },
+    {
+      "level": 1,
+      "title": "Surfaces with boundary",
+      "number": "6",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-6-surfaces-with-boundary"
+    },
+    {
+      "level": 1,
+      "title": "Extended combinatorial surfaces",
+      "number": "7",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-7-extended-combinatorial-surfaces"
+    },
+    {
+      "level": 1,
+      "title": "Invariants of extended 3-manifolds",
+      "number": "8",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-8-invariants-of-extended-3-manifolds"
+    },
+    {
+      "level": 1,
+      "title": "Some computations",
+      "number": "9",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-9-some-computations"
+    },
+    {
+      "level": 2,
+      "title": "Cylinder over an annulus",
+      "number": "9.1",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-91-cylinder-over-an-annulus"
+    },
+    {
+      "level": 2,
+      "title": "Sphere with n holes",
+      "number": "9.2",
+      "page": 36,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-92-sphere-with-n-holes"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 38,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 75,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "extended tqft",
+          "heading": false
+        },
+        {
+          "term": "turaev-viro invariants",
+          "heading": false
+        },
+        {
+          "term": "ners",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1004.1533v3 [math.GT] 14 Jun 2010 TURAEV-VIRO INVARIANTS AS AN EXTENDED TQFT BENJAMIN BALSAM AND ALEXANDER KIRILLOV, JR. Abstract. In this paper we show how one can extend Turaev-Viro invariants, deﬁned for an arbitrary spherical fusion category C, to 3-manifolds with cor- ners. We demonstrate that this gives an extended TQFT which conjecturally coincides with the Reshetikhin-Turaev TQFT corresponding to the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1004.1533v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 474,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ocite turaev",
+          "heading": false
+        },
+        {
+          "term": "spherical category",
+          "heading": false
+        },
+        {
+          "term": "dimensional tqft",
+          "heading": false
+        },
+        {
+          "term": "current paper",
+          "heading": false
+        },
+        {
+          "term": "barrett",
+          "heading": false
+        },
+        {
+          "term": "modular",
+          "heading": false
+        },
+        {
+          "term": "invariants",
+          "heading": false
+        },
+        {
+          "term": "language",
+          "heading": false
+        }
+      ],
+      "extract": "Turaev--Viro (TV) invariants of 3-manifolds $Z_{TV}(M)$ were defined by Turaev and Viro in \\ocite{TV} using a quantum analog of 6j symbols for $sl_2$. In the same paper it was shown that these invariants can be extended to a 3-dimensional TQFT. Later, Barrett and Westbury \\ocite{barrett} showed that these invariants can be defined for any monoidal category $\\C$ possessing a suitable notion of duality (``spherical",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 10,
+      "summary": null,
+      "keywords": [],
+      "extract": "Kevin Costello and Owen Gwilliam for helpful suggestions and discussions.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-1-preliminaries-i-spherical-categories",
+      "number": "1",
+      "title": "Preliminaries I: spherical categories",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1388,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spherical categories",
+          "heading": true
+        },
+        {
+          "term": "ocite turaev",
+          "heading": false
+        },
+        {
+          "term": "otimes xxto",
+          "heading": false
+        },
+        {
+          "term": "circular coupons",
+          "heading": false
+        },
+        {
+          "term": "otimes psi",
+          "heading": false
+        },
+        {
+          "term": "compatibility textup",
+          "heading": false
+        },
+        {
+          "term": "round coupon",
+          "heading": false
+        },
+        {
+          "term": "ccc psi",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s:prelim} In this section we collect notation and some facts about spherical categories. We fix an algebraically closed field $\\kk$ of characteristic 0 and denote by $\\Vect$ the category of finite-dimensional vector spaces over $\\kk$. Throughout the paper, $\\C$ will denote a spherical fusion category over $\\kk$. We refer the reader to the paper \\ocite{drinfeld} for the definitions and properties of such",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-2-preliminaries-ii-drinfeld-center",
+      "number": "2",
+      "title": "Preliminaries II: Drinfeld Center",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1335,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ocite muger",
+          "heading": false
+        },
+        {
+          "term": "drinfeld center",
+          "heading": true
+        },
+        {
+          "term": "colon otimes",
+          "heading": false
+        },
+        {
+          "term": "align hom",
+          "heading": false
+        },
+        {
+          "term": "half-braiding",
+          "heading": false
+        },
+        {
+          "term": "bigoplus sqrt",
+          "heading": false
+        },
+        {
+          "term": "firef",
+          "heading": false
+        },
+        {
+          "term": "obj",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s:center} We will also need the notion of Drinfeld center of a spherical fusion category. Recall that the Drinfeld center $Z(\\C)$ of a fusion category $\\C$ is defined as the category whose objects are pairs $(Y,\\ph_Y)$, where $Y$ is an object of $\\C$ and $\\ph_Y$ -- a functorial isomorphism $Y\\otimes -\\to -\\otimes Y$ satisfying certain compatibility conditions (see \\ocite{muger1}). As before, we will",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-polytope-decompositions",
+      "number": "3",
+      "title": "Polytope decompositions",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1616,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polytope decompositions",
+          "heading": true
+        },
+        {
+          "term": "eps xxto",
+          "heading": false
+        },
+        {
+          "term": "align figscale",
+          "heading": false
+        },
+        {
+          "term": "vertex figscale",
+          "heading": false
+        },
+        {
+          "term": "xxto text",
+          "heading": false
+        },
+        {
+          "term": "figures rel",
+          "heading": false
+        },
+        {
+          "term": "moves rel",
+          "heading": false
+        },
+        {
+          "term": "moves m1--m",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s:polytope} It will be convenient to rewrite the definition of Turaev--Viro (TV) invariants using not just triangulations, but more general cellular decompositions. In this section we give precise definitions of these decompositions. In what follows, the word ``manifold'' denotes a compact, oriented, piecewise-linear (PL) manifold; unless otherwise specified, we assume that it has no boundary. Note that in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-4-tv-invariants-from-polytope-decompositions",
+      "number": "4",
+      "title": "TV invariants from polytope decompositions",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1792,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polytope decompositions",
+          "heading": true
+        },
+        {
+          "term": "del cup",
+          "heading": false
+        },
+        {
+          "term": "ocite barrett",
+          "heading": false
+        },
+        {
+          "term": "cell decomposition",
+          "heading": false
+        },
+        {
+          "term": "different polytope",
+          "heading": false
+        },
+        {
+          "term": "combinatorial manifold",
+          "heading": false
+        },
+        {
+          "term": "cell label",
+          "heading": false
+        },
+        {
+          "term": "eps caption",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s:TV} In this section, we recall the definition of Turaev--Viro (TV) invariants of 3-manifolds. Our exposition essentially follows the approach of Barrett and Westbury \\ocite{barrett}; however, instead of triangulations we use more general polytope decompositions as defined in the previous section. Let $\\C$ be a spherical fusion category as in \\seref{s:prelim}, and $\\M$ --- a combinatorial 3-manifold. We",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-5-proof-of-independence-of-polytope-decompositio",
+      "number": "5",
+      "title": "Proof of independence of polytope decomposition",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 110,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "thref",
+          "heading": false
+        },
+        {
+          "term": "m1--m",
+          "heading": false
+        },
+        {
+          "term": "polytope",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{s:proof} In this section, we give proofs of \\thref{t:main1}, \\thref{t:main2}, i.e. prove that TV invariants are independent of the choice of polytope decomposition. The proof is based on \\thref{t:moves}, \\thref{t:moves_rel}, which state that any two decompositions can be obtained from one another by a sequence of moves M1--M3 and their inverses. First, we fix some notation. Unless otherwise stated, we denote",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-invariance-under-m1",
+      "number": null,
+      "title": "Invariance under M1",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 286,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eps xxto",
+          "heading": false
+        },
+        {
+          "term": "figures book",
+          "heading": false
+        },
+        {
+          "term": "xxto text",
+          "heading": false
+        },
+        {
+          "term": "figscale",
+          "heading": false
+        },
+        {
+          "term": "open book",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "coev",
+          "heading": false
+        },
+        {
+          "term": "end align",
+          "heading": false
+        }
+      ],
+      "extract": "First we consider move M1. Note that by applying M2 and M3, we can transform an open book with any number of pages to one with only one page (see \\firef{f:book}). \\begin{figure}[ht] \\begin{align*}&\\figscale{0.7}{figures/book0.eps} \\xxto{\\text{add edge to each page}} \\figscale{0.7}{figures/book1.eps} \\\\ & \\xxto{\\text{add faces between new edges}} \\figscale{0.7}{figures/book2.eps} \\xxto{\\text{remove all pages but",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-invariance-under-m2",
+      "number": null,
+      "title": "Invariance under M2",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 137,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ccc",
+          "heading": false
+        },
+        {
+          "term": "psi",
+          "heading": false
+        },
+        {
+          "term": "firef",
+          "heading": false
+        }
+      ],
+      "extract": "The invariance under M2 is seen as follows. By definition, the edge being removed is incident to exactly two faces $c_1, c_2$. Each face bounds the same two 3-cells $F_1, F_2$. In \\firef{f:move2}, we draw the dual graphs. In each of the summands we have two graphs corresponding to cells $F_1, F_2$, separated by a dot. The equality follows immediately from the fact that if $\\ph_\\al,\\ph^\\al$ and $\\psi_\\be,\\psi^\\be$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-invariance-under-m3",
+      "number": null,
+      "title": "Invariance under M3",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 18,
+      "summary": null,
+      "keywords": [],
+      "extract": "diately follows from Lemma 1.3, whith two subgraphs corresponding to two 3-cells separated by the 2-cell being removed.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-6-surfaces-with-boundary",
+      "number": "6",
+      "title": "Surfaces with boundary",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 978,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "embedded disks",
+          "heading": false
+        },
+        {
+          "term": "embedded tube",
+          "heading": false
+        },
+        {
+          "term": "extended surface",
+          "heading": false
+        },
+        {
+          "term": "top disks",
+          "heading": false
+        },
+        {
+          "term": "cap del",
+          "heading": false
+        },
+        {
+          "term": "framed embedded",
+          "heading": false
+        },
+        {
+          "term": "tube subset",
+          "heading": false
+        },
+        {
+          "term": "colored extended",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s:boundary} In this section we extend the definition of TV TQFT to surfaces with boundary (and 3-manifolds with corners). Recall that according to general ideas of extended field theory (see \\ocite{lurie}), an extended 3d TQFT should assign to a closed 1-manifold a 2-vector space, or an abelian category, and to a 2-cobordism between two 1-manifolds, a functor between corresponding categories (which in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-7-extended-combinatorial-surfaces",
+      "number": "7",
+      "title": "Extended combinatorial surfaces",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 777,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "extended surfaces",
+          "heading": true
+        },
+        {
+          "term": "combinatorial extended",
+          "heading": true
+        },
+        {
+          "term": "embedded disks",
+          "heading": false
+        },
+        {
+          "term": "bigoplus hom",
+          "heading": false
+        },
+        {
+          "term": "align bigoplus",
+          "heading": false
+        },
+        {
+          "term": "otimes hom",
+          "heading": false
+        },
+        {
+          "term": "quad bigoplus",
+          "heading": false
+        },
+        {
+          "term": "dots otimes",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s:ext_surfaces} We begin by generalizing the definition of a polytope decomposition to extended surfaces. \\begin{definition}\\label{d:comb_ex_surface} A combinatorial extended surface $\\N$ is a an extended surface $N$ together with a polytope decomposition such that \\begin{enumerate} \\item The interior of each embedded disk is one of the 2-cells of the polytope decomposition. \\item Each marked point $P_\\al$ on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-8-invariants-of-extended-3-manifolds",
+      "number": "8",
+      "title": "Invariants of extended 3-manifolds",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2062,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tube cells",
+          "heading": false
+        },
+        {
+          "term": "del times",
+          "heading": false
+        },
+        {
+          "term": "boundary del",
+          "heading": false
+        },
+        {
+          "term": "del tilde",
+          "heading": false
+        },
+        {
+          "term": "del cup",
+          "heading": false
+        },
+        {
+          "term": "extended manifolds",
+          "heading": true
+        },
+        {
+          "term": "dual tube",
+          "heading": false
+        },
+        {
+          "term": "cell decomposition",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s:ext_mfds} We begin by generalizing the definition of a polytope decomposition to extended 3-manifolds as defined in \\deref{d:ex_manifold}. \\begin{definition}\\label{d:comb_ex_manifold} A combinatorial extended 3-manifold $\\M$ is an extended PL 3-manifold with a polytope decomposition such that \\begin{itemize} \\item For an open tube $T_\\al$, its interior is a single 3-cell of the decomposition. Moreover, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-9-some-computations",
+      "number": "9",
+      "title": "Some computations",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 12,
+      "summary": null,
+      "keywords": [],
+      "extract": "\\label{s:computations} In this section we give some explicit computations of the TV invariants.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-014-91-cylinder-over-an-annulus",
+      "number": "9.1",
+      "title": "Cylinder over an annulus",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 36,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 218,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "otimes psi",
+          "heading": false
+        },
+        {
+          "term": "qquad psi",
+          "heading": false
+        },
+        {
+          "term": "psi out",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "end align",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s:computations1} Let $F=S^1\\times I\\times I$ be the cylinder over an annulus, as shown below. \\tzCylinderI Then $$ \\del F=C_a\\cup C_b \\cup C_{in}\\cup C_{out} \\cup C\\cup \\ov{C} $$ where $C_a, C_b$ are the left and right annuli, $C_{in}$ and $C_{out}$ are the inner and outer cylinders, and $C$ is the internal cell: \\begin{align*} &C_a=\\tzCL \\qquad C_b=\\tzCR\\\\ &C_{in}=\\tzCin \\qquad C_{out}=\\tzCout \\qquad C=\\tzC",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-92-sphere-with-n-holes",
+      "number": "9.2",
+      "title": "Sphere with n holes",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 38,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 444,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dia dja",
+          "heading": false
+        },
+        {
+          "term": "cell decomposition",
+          "heading": false
+        },
+        {
+          "term": "irr",
+          "heading": false
+        },
+        {
+          "term": "dka",
+          "heading": false
+        }
+      ],
+      "extract": "by objects Y1, . . . , Yn ∈Obj Z(C) (see Example 7.2). Choose the cell decomposition of N as in Example 7.2; then H(N, Y1, . . . , Yn) = M X1,...,Xn,U1,...,Un∈Irr(C) ⟨X1, U1, X∗ 1, . . . , Xn, Un, X∗ n⟩⊗⟨U ∗ 1 , Y1⟩⊗· · · ⊗⟨U ∗ n, Yn⟩ ≃ M X1,...,Xn∈Irr(C) ⟨X1, Y1, X∗ 1, . . . , Xn, Yn, X∗ n⟩. Consider now the cylinder N ×I with the cell decomposition shown in Figure 27. l j1 jn i1 in k1 kn Y1 Yn Figure 27. Cylinder",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 39,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 426,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "victor ostrik",
+          "heading": false
+        },
+        {
+          "term": "stony brook",
+          "heading": false
+        },
+        {
+          "term": "dmitri nikshych",
+          "heading": false
+        },
+        {
+          "term": "jacob lurie",
+          "heading": false
+        },
+        {
+          "term": "doi",
+          "heading": false
+        },
+        {
+          "term": "fusion categories",
+          "heading": false
+        },
+        {
+          "term": "tensor categories",
+          "heading": false
+        },
+        {
+          "term": "quantum invariants",
+          "heading": false
+        }
+      ],
+      "extract": "[BK2001] Bojko Bakalov and Alexander Kirillov Jr., Lectures on tensor categories and mod- ular functors, University Lecture Series, vol. 21, American Mathematical Society, Providence, RI, 2001. MR1797619 (2002d:18003) [BW1996] John W. Barrett and Bruce W. Westbury, Invariants of piecewise-linear 3-manifolds, Trans. Amer. Math. Soc. 348 (1996), no. 10, 3997–4022, DOI 10.1090/S0002-9947- 96-01660-1. MR1357878",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "del end",
+      "heading": false
+    },
+    {
+      "term": "eps xxto",
+      "heading": false
+    },
+    {
+      "term": "otimes xxto",
+      "heading": false
+    },
+    {
+      "term": "ocite barrett",
+      "heading": false
+    },
+    {
+      "term": "moves ocite",
+      "heading": false
+    },
+    {
+      "term": "otimes psi",
+      "heading": false
+    },
+    {
+      "term": "dots otimes",
+      "heading": false
+    },
+    {
+      "term": "eps caption",
+      "heading": false
+    },
+    {
+      "term": "boundary del",
+      "heading": false
+    },
+    {
+      "term": "polytope decomposition",
+      "heading": true
+    },
+    {
+      "term": "ocite turaev",
+      "heading": false
+    },
+    {
+      "term": "otimes hom",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Round coupons We will also use the following convention: if a ﬁgure contains a pair of circular coupons, one with outgoing edges labeled V1, . . . , Vn and the other with edges la-",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Compatibility of pairing with composition",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Graph on a sphere and its “ﬂattening” to the plane",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Graphical presentation of the half-braiding ϕY : Y ⊗",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Half-braiding I(V ) ⊗W →W ⊗I(V ). Note that instead of normalizing factor √",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Diagram ˆΓ on the sphere and its ﬂattening to the plane. Arc γ is shown by a double line",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Invariance under homotopy",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Move M1 M2: removing an edge: Let e be a 1-cell which is regular and which is adjacent to exactly two distinct 2-cells c1, c2 as shown in the ﬁgure below",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Move M2 M3: removing a 2-cell: Let c be a 2-cell which is regular and which is adjacent to exactly two distinct 3-cells F1, F2 as shown in the ﬁgure below",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Move M3 If F is an oriented d-dimensional cell of a combinatorial manifold M (i.e., a",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Pachner 3-2 move as composition of elementary moves",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "Pachner 4-1 move as composition of elementary moves",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "Proof of Lemma 3.6 sequence of moves M1, M2 and their inverses which do not change decomposition of ∂M",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "Proof of Lemma 3.6 □ □ Finally, we will need a slight generalization of this result",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "Deﬁning the state space for a 2-cell Note that by (1.3), up to a canonical isomorphism, the state space only depends on the cyclic order of e1, . . . , en (which is deﬁned by C) and does not depend on the choice of the starting point",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "16",
+      "title": "The dual graph on the boundary of a 3-cell Note that a labeling l of M deﬁnes a labeling of edges of this dual graph as",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "17",
+      "title": "Coloring of the dual graph",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "18",
+      "title": "The polytope decomposition of S2 δijk, it is easy to see that H(S2) = L",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "19",
+      "title": "The cylinder over S2",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "20",
+      "title": "Decomposing an open book into a single page book",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "21",
+      "title": "",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "22",
+      "title": "Extended surface Next, we can deﬁne cobordisms between such surfaces. As usual, such a cobordism will be a 3-manifold with boundary together with some “tubes” inside which connect the embedded disks on the boundary of M. The following gives a precise deﬁnition in the PL category",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "23",
+      "title": "Extended 3-manifold",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "24",
+      "title": "n-punctured sphere",
+      "page": 25,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "25",
+      "title": "Gluing of extended surfaces. To help visualize the cylinder, it is colored light gray",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "26",
+      "title": "By Theorem 2.4 this deﬁnes a number ZRT (ˆΓ); as before, we let",
+      "page": 28,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "27",
+      "title": "Cylinder over sphere with n embedded disks",
+      "page": 36,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 17,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 18,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "27 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p38); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 18 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1004.1533v3"
+  }
+}

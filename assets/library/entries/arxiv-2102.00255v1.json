@@ -1,0 +1,158 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2102.00255v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2102.00255v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-0-introduction.md",
+      "narrative": null,
+      "content": "This article is about the {\\em rigid approach to Grothendieck Duality} (GD).\nWe survey the main features of this approach, discussing both results that were \nalready obtained, and future expected results. \n \nThroughout this article we work over a fixed base ring $\\K$, which is a finite \ndimensional regular noetherian commutative ring (e.g.\\ a field or the ring of \nintegers $\\Z$). All rings are commutative $\\K$-rings, and by default they are \nessentially finite type (EFT) over $\\K$.\n\nIn Section 1 we review the {\\em squaring operation}. Given a ring $A$, the \nsquaring operation is a functor $\\op",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2102.00255v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "RIGIDITY, RESIDUES AND DUALITY: OVERVIEW AND RECENT PROGRESS\nAMNON YEKUTIELI\nAbstract. In this article we explain the theory of rigid residue complexes in commutative\nalgebra and algebraic geometry, summarizing the background, recent results and antic-\nipated future results. Unlike all previous approaches to Grothendieck Duality, the rigid\napproach concentrates on the construction of rigid residue complexes over rings, and\ntheir intricate yet robust properties. The geometrization, i.e. the passage to rigid residue\ncomplexes on schemes and Deligne-Mumford (DM) stacks, by gluing, is fairly easy.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2102.00255v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Squaring Operation and Rigid Complexes over Rings",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-1-the-squaring-operation-and-rigid-complexes-ove.md",
+      "narrative": null,
+      "content": "We fix a base ring $\\K$, which is regular noetherian of finite Krull \ndimension (e.g.\\ a field or $\\Z$).\nRecall that a commutative $\\K$-ring $A$ is called {\\em essentially finite type} \n(EFT) if it is a localization of a finite type $\\K$-ring. \nNote that such a ring $A$ is noetherian and of finite Krull dimension.\nThe category of EFT commutative $\\K$-rings is denoted by \n$\\cat{Rng} \\eftover \\K$.\nAll rings in this paper belong to $\\cat{Rng} \\eftover \\K$.\n\nFor a ring $A$ we denote by $\\cat{M}(A)$ the abelian category of \n$A$-modules, and by $\\cat{C}(A)$ the DG category of complexes of \n$A$-modul",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2102.00255v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rigid Dualizing Complexes over Rings",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-2-rigid-dualizing-complexes-over-rings.md",
+      "narrative": null,
+      "content": "\\label{sec:RRD-rings}\n \nAgain $\\K$ is a regular base ring, and $A$ is an EFT $\\K$-ring. \nThe next definition is taken from \\cite{RD}, except that the derived Morita \nproperty (Definition \\ref{dfn:232}) had not yet been introduced when \n\\cite{RD} was written. \n\n\\begin{dfn} \\label{dfn:240}\nA complex $R \\in \\cat{D}^{\\mrm{b}}_{\\mrm{f}}(A)$\nis called {\\em dualizing} if it has finite injective dimension and \nthe derived Morita property.\n\\end{dfn}\n\n\\begin{dfn}[\\cite{VdB}, \\cite{YZ2}, \\cite{Ye7}, \\cite{OSY}] \\label{dfn:241}\nA {\\em rigid dualizing complex} over $A$ relative to $\\K$ is a rigid \ncomplex",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2102.00255v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rigid Residue Complexes over Rings",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-003-3-rigid-residue-complexes-over-rings.md",
+      "narrative": null,
+      "content": "\\label{sec:rrr-rings}\n\n\nNow we enter the zone of \"anticipated results\": many of the results still\nonly have sketchy proofs, and should therefore be regarded with caution. Such a \ntheorem will be labeled {\\bf Theorem$^{\\bsym{(*)}}$}.\n\nRecall that we are still working in $\\cat{Rng} \\eftover \\K$, where $\\K$ is a \nregular noetherian base ring.\nIf $L \\in \\cat{Rng} \\eftover \\K$ is a field, then its rigid dualizing \ncomplex $R_L$ must be isomorphic to $L[d]$ for some integer $d$. We define the \n{\\em rigid dimension} of $L$ to be\n$\\opn{rig{.}dim}_{\\K}(L) := d$.\n\n\\begin{exa}\nIf the base ring $\\K$ is a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2102.00255v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rigidity, Residues and Duality for Schemes",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "../sections/sec-004-4-rigidity-residues-and-duality-for-schemes.md",
+      "narrative": null,
+      "content": "Recall that $\\K$ is a regular finite dimensional noetherian base ring.\nWe use the notation $\\cat{Sch} \\ftover \\K$ for the category of finite type (FT) \n$\\K$-schemes. \n\nConsider a FT $\\K$-scheme $X$. If $U \\sub X$ is an affine open set, then \n$A := \\Gamma(U, \\mcal{O}_X)$ is a FT $\\K$-ring.\nGiven a quasi-coherent $\\mcal{O}_X$-module, for every affine open set $U$\nwe get an $A$-module $M := \\Gamma(U, \\mcal{M})$.\nThe resulting functor\n$\\Gamma(U, -) : \\cat{QCoh}(X) \\to \\cat{Mod}(A)$\nis exact. \n\n\\begin{rem} \\label{rem:261}\nThe theory discussed in this section extends easily to {\\em essentially finit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2102.00255v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rigidity, Residues and Duality for DM Stacks",
+      "pageStart": 14,
+      "pageEnd": 19,
+      "target": "../sections/sec-005-5-rigidity-residues-and-duality-for-dm-stacks.md",
+      "narrative": null,
+      "content": "Here is a brief recollection of facts about Deligne-Mumford (DM) stacks and \nquasi-coherent sheaves on them, extracted from \\cite{SP} and \\cite{Ol}, with \nsome additional  elaboration. This will help us state our results. \n\nAs a first approximation, it useful to think of a DM stack $\\XX$ as a \nscheme equipped with an extra structure: the points of $\\XX$ are bunched \ntogether as objects of a groupoid, in an intricate geometric way. \n(This can be understood, for instance, as the way $\\XX$ sits above its coarse \nmoduli space $X$; we will return to this idea later.)\n\nTo give a more precise descrip",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2102.00255v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-006-references.md",
+      "narrative": null,
+      "content": "[AILN] L.L. Avramov, S.B. Iyengar, J. Lipman and S. Nayak, Reduction of derived Hochschild functors over\ncommutative algebras and schemes, Advances in Mathematics 223 (2010) 735-772.\n[AOV] D. Abramovich, M. Olsson and A. Vistoli, Tame stacks in positive characteristic, Ann. Inst. Fourier 58, 4\n(2008), 1057-1091.\n[Co]\nB. Conrad, \"Grothendieck Duality and Base Change\", Lecture Notes in Math. 1750, Springer, 2000.\n[HR]\nJ. Hall and D. Rydh, Perfect complexes on algebraic stacks, Compositio Math. 153 (2017), 2318-2367.\n[LH]\nJ. Lipman and M. Hashimoto, “Foundations of Grothendieck duality for diagra",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

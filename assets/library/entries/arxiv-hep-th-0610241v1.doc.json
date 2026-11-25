@@ -1,0 +1,2223 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-th-0610241v1",
+  "title": "Gravity and the standard model with neutrino mixing",
+  "variant": "pdf",
+  "pages": 71,
+  "tocSource": "inferred",
+  "tocMethod": "contents",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The ﬁnite geometry",
+      "number": "2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-the-ﬁnite-geometry"
+    },
+    {
+      "level": 2,
+      "title": "The left-right symmetric algebra",
+      "number": "2.1",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-002-21-the-left-right-symmetric-algebra"
+    },
+    {
+      "level": 2,
+      "title": "Real spectral triples",
+      "number": "2.3",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-003-23-real-spectral-triples"
+    },
+    {
+      "level": 2,
+      "title": "The subalgebra and the order one condition",
+      "number": "2.4",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-004-24-the-subalgebra-and-the-order-one-condition"
+    },
+    {
+      "level": 2,
+      "title": "Unimodularity and hypercharges",
+      "number": "2.5",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-005-25-unimodularity-and-hypercharges"
+    },
+    {
+      "level": 2,
+      "title": "The classiﬁcation of Dirac operators",
+      "number": "2.6",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-006-26-the-classiﬁcation-of-dirac-operators"
+    },
+    {
+      "level": 2,
+      "title": "The moduli space of Dirac operators and the Yukawa parameters",
+      "number": "2.7",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-007-27-the-moduli-space-of-dirac-operators-and-the-y"
+    },
+    {
+      "level": 2,
+      "title": "Dimension, KO-theory, and Poincar´e duality",
+      "number": "2.8",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-008-28-dimension-ko-theory-and-poincare-duality"
+    },
+    {
+      "level": 1,
+      "title": "The spectral action and the standard model",
+      "number": "3",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-009-3-the-spectral-action-and-the-standard-model"
+    },
+    {
+      "level": 2,
+      "title": "Riemannian geometry and spectral triples",
+      "number": "3.1",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-010-31-riemannian-geometry-and-spectral-triples"
+    },
+    {
+      "level": 2,
+      "title": "The product geometry",
+      "number": "3.2",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-011-32-the-product-geometry"
+    },
+    {
+      "level": 2,
+      "title": "The real part of the product geometry",
+      "number": "3.3",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-012-33-the-real-part-of-the-product-geometry"
+    },
+    {
+      "level": 2,
+      "title": "The adjoint representation and the gauge symmetries",
+      "number": "3.4",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-013-34-the-adjoint-representation-and-the-gauge-symm"
+    },
+    {
+      "level": 2,
+      "title": "Inner ﬂuctuations and bosons",
+      "number": "3.5",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-014-35-inner-ﬂuctuations-and-bosons"
+    },
+    {
+      "level": 2,
+      "title": "The Dirac operator and its square",
+      "number": "3.6",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-015-36-the-dirac-operator-and-its-square"
+    },
+    {
+      "level": 2,
+      "title": "The spectral action and the asymptotic expansion",
+      "number": "3.7",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-016-37-the-spectral-action-and-the-asymptotic-expans"
+    },
+    {
+      "level": 1,
+      "title": "The Lagrangian",
+      "number": "4",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-017-4-the-lagrangian"
+    },
+    {
+      "level": 2,
+      "title": "Notation for the standard model",
+      "number": "4.1",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-018-41-notation-for-the-standard-model"
+    },
+    {
+      "level": 2,
+      "title": "The asymptotic formula for the spectral action",
+      "number": "4.2",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-019-42-the-asymptotic-formula-for-the-spectral-actio"
+    },
+    {
+      "level": 2,
+      "title": "The mass relation",
+      "number": "4.3",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-020-43-the-mass-relation"
+    },
+    {
+      "level": 2,
+      "title": "The coupling of fermions",
+      "number": "4.4",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-021-44-the-coupling-of-fermions"
+    },
+    {
+      "level": 2,
+      "title": "The self interaction of the gauge bosons",
+      "number": "4.5",
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-022-45-the-self-interaction-of-the-gauge-bosons"
+    },
+    {
+      "level": 2,
+      "title": "The minimal coupling of the Higgs ﬁeld",
+      "number": "4.6",
+      "page": 49,
+      "pageLabel": "49",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-023-46-the-minimal-coupling-of-the-higgs-ﬁeld"
+    },
+    {
+      "level": 2,
+      "title": "The Higgs ﬁeld self interaction",
+      "number": "4.7",
+      "page": 51,
+      "pageLabel": "51",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-024-47-the-higgs-ﬁeld-self-interaction"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 461,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "higgs mass",
+          "heading": false
+        },
+        {
+          "term": "higgs scattering",
+          "heading": false
+        },
+        {
+          "term": "neutrino mixing",
+          "heading": false
+        },
+        {
+          "term": "higgs ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "spectral triples",
+          "heading": false
+        },
+        {
+          "term": "spectral action",
+          "heading": false
+        },
+        {
+          "term": "noncommutative geometry",
+          "heading": false
+        },
+        {
+          "term": "self interaction",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-th/0610241v1 23 Oct 2006 GRAVITY AND THE STANDARD MODEL WITH NEUTRINO MIXING ALI H. CHAMSEDDINE, ALAIN CONNES, AND MATILDE MARCOLLI Abstract. We present an eﬀective uniﬁed theory based on noncommutative geometry for the standard model with neutrino mixing, minimally coupled to gravity. The uniﬁcation is based on the symplectic unitary group in Hilbert space and on the spectral action. It yields all the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-0610241v1/blocks/prose-sec-front-matter",
+        "library/arxiv-hep-th-0610241v1/blocks/prop-sec-front-matter-01"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 5,
+      "labelStart": "2",
+      "labelEnd": "5",
+      "words": 1674,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uniﬁcation scale",
+          "heading": false
+        },
+        {
+          "term": "higgs mass",
+          "heading": false
+        },
+        {
+          "term": "majorana mass",
+          "heading": false
+        },
+        {
+          "term": "big desert",
+          "heading": false
+        },
+        {
+          "term": "yukawa masses",
+          "heading": false
+        },
+        {
+          "term": "neutrino mixing",
+          "heading": false
+        },
+        {
+          "term": "spectral triple",
+          "heading": false
+        },
+        {
+          "term": "yukawa couplings",
+          "heading": false
+        }
+      ],
+      "extract": "1. Introduction In this paper we present a model based on noncommutative geometry for the standard model with massive neutrinos, minimally coupled to gravity. The model can be thought of as a form of uniﬁcation, based on the symplectic unitary group in Hilbert space, rather than on ﬁnite dimensional Lie groups. In particular, the parameters of the model are set at uniﬁcation scale and one obtains physical",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-ﬁnite-geometry",
+      "number": "2",
+      "title": "The ﬁnite geometry",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 254,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "noncommutative geometry",
+          "heading": false
+        },
+        {
+          "term": "author thanks",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "model contains",
+          "heading": false
+        },
+        {
+          "term": "modiﬁcation",
+          "heading": false
+        },
+        {
+          "term": "physicists",
+          "heading": false
+        },
+        {
+          "term": "mathematicians",
+          "heading": false
+        }
+      ],
+      "extract": "the above approach will be whether a ﬁne tuning of the ﬁnite geometry can incorporate addi- tional experimental data at higher energies. The present paper shows that the modiﬁcation of the standard model required by the phenomenon of neutrino mixing in fact resulted in sev- eral improvements on the previous descriptions of the standard model via noncommutative geometry. In summary we have shown that the intricate",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-the-left-right-symmetric-algebra",
+      "number": "2.1",
+      "title": "The left-right symmetric algebra",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 700,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "contragredient bimodule",
+          "heading": false
+        },
+        {
+          "term": "alr",
+          "heading": false
+        },
+        {
+          "term": "involutive algebra",
+          "heading": false
+        },
+        {
+          "term": "alr-bimodule",
+          "heading": false
+        },
+        {
+          "term": "opposite algebra",
+          "heading": false
+        },
+        {
+          "term": "irreducible representation",
+          "heading": false
+        },
+        {
+          "term": "direct sum",
+          "heading": false
+        },
+        {
+          "term": "left-right",
+          "heading": true
+        }
+      ],
+      "extract": "The main input for the model we are going to describe is the choice of a ﬁnite dimensional involutive algebra of the form ALR = C ⊕HL ⊕HR ⊕M3(C). (2.1) This is the direct sum of the matrix algebras MN(C) for N = 1, 3 with two copies of the algebra H of quaternions, where the indices L, R are just for book-keeping. We refer to (2.1) as the “left-right symmetric algebra” [10]. By construction ALR is an involutive",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-23-real-spectral-triples",
+      "number": "2.3",
+      "title": "Real spectral triples",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 478,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "real spectral",
+          "heading": true
+        },
+        {
+          "term": "spectral triple",
+          "heading": false
+        },
+        {
+          "term": "self-adjoint operator",
+          "heading": false
+        },
+        {
+          "term": "real structure",
+          "heading": false
+        },
+        {
+          "term": "hilbert space",
+          "heading": false
+        },
+        {
+          "term": "unitary group",
+          "heading": false
+        },
+        {
+          "term": "endowed",
+          "heading": false
+        }
+      ],
+      "extract": "2.3. Real spectral triples. A noncommutative geometry is given by a representation theoretic datum of spectral nature. More precisely, we have the following notion. Deﬁnition 2.6. A spectral triple (A, H, D) is given by an involutive unital algebra A repre- sented as operators in a Hilbert space H and a self-adjoint operator D with compact resolvent such that all commutators [D, a] are bounded for a ∈A. A spectral",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-24-the-subalgebra-and-the-order-one-condition",
+      "number": "2.4",
+      "title": "The subalgebra and the order one condition",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 954,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "let alr",
+          "heading": false
+        },
+        {
+          "term": "oﬀdiagonal dirac",
+          "heading": false
+        },
+        {
+          "term": "subalgebra",
+          "heading": true
+        },
+        {
+          "term": "unital subalgebra",
+          "heading": false
+        },
+        {
+          "term": "involutive unital",
+          "heading": false
+        },
+        {
+          "term": "dirac operators",
+          "heading": false
+        },
+        {
+          "term": "unique subalgebra",
+          "heading": false
+        },
+        {
+          "term": "minimal projections",
+          "heading": false
+        }
+      ],
+      "extract": "We let HF be the sum of N = 3 copies of the ALR-bimodule MF of Proposition 2.4, that is, HF = M⊕3 F . (2.17) Remark 2.10. The multiplicity N = 3 here is an input, and it corresponds to the number of particle generations in the standard model. The number of generations is not predicted by our model in its present form and has to be taken as an input datum. We deﬁne the Z/2-grading γF by γF = c −JF c JF , c = (0, 1,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-25-unimodularity-and-hypercharges",
+      "number": "2.5",
+      "title": "Unimodularity and hypercharges",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "12",
+      "words": 1118,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hypercharges",
+          "heading": true
+        },
+        {
+          "term": "ffs",
+          "heading": false
+        },
+        {
+          "term": "basis elements",
+          "heading": false
+        },
+        {
+          "term": "adjoint action",
+          "heading": false
+        },
+        {
+          "term": "unitary group",
+          "heading": false
+        },
+        {
+          "term": "flavor index",
+          "heading": false
+        },
+        {
+          "term": "left action",
+          "heading": false
+        },
+        {
+          "term": "linear basis",
+          "heading": false
+        }
+      ],
+      "extract": "The unitary group of an involutive algebra A is given by U(A) = {u ∈A | uu∗= u∗u = 1} In our context we deﬁne the special unitary group SU(A) ⊂U(A) as follows. Deﬁnition 2.13. We let SU(AF ) be the subgroup of U(AF ) deﬁned by SU(AF) = {u ∈U(AF ) : det(u) = 1} where det(u) is the determinant of the action of u in HF. We now describe the group SU(AF) and its adjoint action. As before, we denote by 2 the 2-dimensional",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-26-the-classiﬁcation-of-dirac-operators",
+      "number": "2.6",
+      "title": "The classiﬁcation of Dirac operators",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 15,
+      "labelStart": "12",
+      "labelEnd": "15",
+      "words": 1909,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dirac operators",
+          "heading": true
+        },
+        {
+          "term": "oﬀdiagonal elements",
+          "heading": false
+        },
+        {
+          "term": "block diagonal",
+          "heading": false
+        },
+        {
+          "term": "diagonal matrix",
+          "heading": false
+        },
+        {
+          "term": "unitary operator",
+          "heading": false
+        },
+        {
+          "term": "anticommutation",
+          "heading": false
+        },
+        {
+          "term": "classiﬁcation",
+          "heading": true
+        },
+        {
+          "term": "neutrino mixing",
+          "heading": false
+        }
+      ],
+      "extract": "We now characterize all operators DF which qualify as Dirac operators and moreover com- mute with the subalgebra CF ⊂AF , CF = {(λ, λ, 0) , λ ∈C} (2.30) Remark 2.19. The physical meaning of the commutation relation of the Dirac operator with the subalgebra of (2.30) is to ensure that the photon will remain massless. We have the following general notion of Dirac operator for the ﬁnite noncommutative geom- etry with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-27-the-moduli-space-of-dirac-operators-and-the-y",
+      "number": "2.7",
+      "title": "The moduli space of Dirac operators and the Yukawa parameters",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 18,
+      "labelStart": "15",
+      "labelEnd": "18",
+      "words": 893,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "moduli space",
+          "heading": true
+        },
+        {
+          "term": "diagonal matrices",
+          "heading": false
+        },
+        {
+          "term": "neutrino mixing",
+          "heading": false
+        },
+        {
+          "term": "double coset",
+          "heading": false
+        },
+        {
+          "term": "diagonal matrix",
+          "heading": false
+        },
+        {
+          "term": "unitary matrices",
+          "heading": false
+        },
+        {
+          "term": "generic ﬁber",
+          "heading": false
+        },
+        {
+          "term": "parameters",
+          "heading": true
+        }
+      ],
+      "extract": "Let us start by considering the moduli space C3 of pairs of invertible 3×3 matrices (Y(↓3), Y(↑3)) modulo the equivalence relation Y ′ (↓3) = W1 Y(↓3) W ∗ 3 , Y ′ (↑3) = W2 Y(↑3) W ∗ 3 , (2.39) where the Wj are unitary matrices. 16 CHAMSEDDINE, CONNES, AND MARCOLLI Proposition 2.24. The moduli space C3 is the double coset space C3 ∼= (U(3) × U(3))\\(GL3(C) × GL3(C))/U(3) (2.40) of real dimension 10. Proof. This",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-28-dimension-ko-theory-and-poincare-duality",
+      "number": "2.8",
+      "title": "Dimension, KO-theory, and Poincar´e duality",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 940,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "poincar duality",
+          "heading": true
+        },
+        {
+          "term": "ko-homology class",
+          "heading": false
+        },
+        {
+          "term": "block diagonal",
+          "heading": false
+        },
+        {
+          "term": "pairing",
+          "heading": false
+        },
+        {
+          "term": "noncommutative geometry",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite noncommutative",
+          "heading": false
+        },
+        {
+          "term": "jfj",
+          "heading": false
+        },
+        {
+          "term": "jej",
+          "heading": false
+        }
+      ],
+      "extract": "In [14] Chapter 6, §4, the notion of manifold in noncommutative geometry was discussed in terms of Poincar´e duality in KO-homology. In [16] this Poincar´e duality was shown to hold rationally for the ﬁnite noncommutative geometry used there. We now investigate how the new ﬁnite noncommutative geometry F considered here behaves with respect to this duality. We ﬁrst notice that now, the dimension being equal to 6",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-3-the-spectral-action-and-the-standard-model",
+      "number": "3",
+      "title": "The spectral action and the standard model",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 63,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spectral",
+          "heading": true
+        },
+        {
+          "term": "majorana",
+          "heading": false
+        },
+        {
+          "term": "model",
+          "heading": true
+        }
+      ],
+      "extract": "In this section and in the one that follows we show that the full Lagrangian of the standard model with neutrino mixing and Majorana mass terms, minimally coupled to gravity, is obtained as the asymptotic expansion of the spectral action for the product of the ﬁnite geometry (AF , HF , DF ) described above and a spectral triple associated to 4-dimensional spacetime.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-31-riemannian-geometry-and-spectral-triples",
+      "number": "3.1",
+      "title": "Riemannian geometry and spectral triples",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 142,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "riemannian",
+          "heading": true
+        },
+        {
+          "term": "vierbein",
+          "heading": false
+        },
+        {
+          "term": "hilbert space",
+          "heading": false
+        }
+      ],
+      "extract": "A spin Riemannian manifold M gives rise in a canonical manner to a spectral triple. The Hilbert space H is the Hilbert space L2(M, S) of square integrable spinors on M and the algebra A = C∞(M) of smooth functions on M acts in H by multiplication operators: (f ξ)(x) = f(x) ξ(x) , ∀x ∈M. (3.1) The operator D is the Dirac operator ∂/M = √ −1 γµ ∇s µ (3.2) where ∇s is the spin connection which we express in a vierbein",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-32-the-product-geometry",
+      "number": "3.2",
+      "title": "The product geometry",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 174,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fulﬁlled",
+          "heading": false
+        },
+        {
+          "term": "geometry",
+          "heading": true
+        },
+        {
+          "term": "ﬁnite geometry",
+          "heading": false
+        }
+      ],
+      "extract": "We now consider a 4-dimensional smooth compact Riemannian manifold M with a ﬁxed spin structure. We consider its product with the ﬁnite geometry (AF, HF , DF ) described above. With (Aj, Hj, γj) of KO-dimensions 4 for j = 1 and 6 for j = 2, the product geometry is given by the rules A = A1 ⊗A2 , H = H1 ⊗H2 , D = D1 ⊗1 + γ1 ⊗D2 , γ = γ1 ⊗γ2 , J = J1 ⊗J2. Notice that it matters here that J1 commutes with γ1, in order",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-33-the-real-part-of-the-product-geometry",
+      "number": "3.3",
+      "title": "The real part of the product geometry",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 461,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "real",
+          "heading": true
+        },
+        {
+          "term": "real spectral",
+          "heading": false
+        },
+        {
+          "term": "noncommutative geometry",
+          "heading": false
+        },
+        {
+          "term": "spectral triple",
+          "heading": false
+        },
+        {
+          "term": "center",
+          "heading": false
+        },
+        {
+          "term": "commutes",
+          "heading": false
+        },
+        {
+          "term": "looking",
+          "heading": false
+        },
+        {
+          "term": "action",
+          "heading": false
+        }
+      ],
+      "extract": "The next proposition shows that a noncommutative geometry automatically gives rise to a commutative one playing in essence the role of its center (cf. Remark 3.3 below). Proposition 3.1. Let (A, H, D) be a real spectral triple in the sense of Deﬁnition 2.7. Then the following holds. 1. The equality AJ = {x ∈A ; x J = J x} deﬁnes an involutive commutative real subalge- bra of the center of A. 2. (AJ, H, D) is a real",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-34-the-adjoint-representation-and-the-gauge-symm",
+      "number": "3.4",
+      "title": "The adjoint representation and the gauge symmetries",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 611,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "inner automorphism",
+          "heading": false
+        },
+        {
+          "term": "jaj",
+          "heading": false
+        },
+        {
+          "term": "determined modulo",
+          "heading": false
+        },
+        {
+          "term": "abelian cover",
+          "heading": false
+        },
+        {
+          "term": "reduced algebras",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite abelian",
+          "heading": false
+        },
+        {
+          "term": "commutant",
+          "heading": false
+        },
+        {
+          "term": "diﬀeomorphism",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we display the role of the gauge group C∞(M, SU(AF)) of smooth maps from the manifold M to the group SU(AF). Proposition 3.4. Let (A, H, D) be the real spectral triple associated to M × F. • Let U be a unitary in H commuting with γ and J and such that U A U∗= A. Then there exists a unique diﬀeomorphism ϕ ∈Diﬀ(M) such that U f U∗= f ◦ϕ , ∀f ∈AJ. (3.4) • Let U be as above and such that ϕ = id. Then,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-35-inner-ﬂuctuations-and-bosons",
+      "number": "3.5",
+      "title": "Inner ﬂuctuations and bosons",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 29,
+      "labelStart": "22",
+      "labelEnd": "29",
+      "words": 3205,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "inner ﬂuctuations",
+          "heading": true
+        },
+        {
+          "term": "unimodular gauge",
+          "heading": false
+        },
+        {
+          "term": "ryr",
+          "heading": false
+        },
+        {
+          "term": "yry",
+          "heading": false
+        },
+        {
+          "term": "g1bµ",
+          "heading": false
+        },
+        {
+          "term": "quaternion valued",
+          "heading": false
+        },
+        {
+          "term": "neutrino mixing",
+          "heading": false
+        },
+        {
+          "term": "gauge ﬁeld",
+          "heading": false
+        }
+      ],
+      "extract": "Let us show that the inner ﬂuctuations of the metric give rise to the gauge bosons of the standard model with their correct quantum numbers. We ﬁrst have to compute A = Σ ai[D, a′ i] ai, a′ i ∈A. Since D = ∂/M ⊗1 + γ5 ⊗DF decomposes as a sum of two terms, so does A and we ﬁrst consider the discrete part A(0,1) coming from commutators with γ5 ⊗DF . 3.5.1. The discrete part A(0,1) of the inner ﬂuctuations. Let x ∈M",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-36-the-dirac-operator-and-its-square",
+      "number": "3.6",
+      "title": "The Dirac operator and its square",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": "29",
+      "labelEnd": "30",
+      "words": 536,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "g1bµ",
+          "heading": false
+        },
+        {
+          "term": "g2w",
+          "heading": false
+        },
+        {
+          "term": "fµν",
+          "heading": false
+        },
+        {
+          "term": "square",
+          "heading": true
+        },
+        {
+          "term": "dµϕ",
+          "heading": false
+        }
+      ],
+      "extract": "The Dirac operator DA that takes the inner ﬂuctuations into account is given by the sum of two terms DA = D(1,0) + γ5 ⊗D(0,1), (3.28) where D(0,1) is given by (3.11) and D(1,0) is of the form D(1,0) = √ −1 γµ(∇s µ + Aµ), (3.29) where ∇s is the spin connection (cf. (3.2)). The gauge potential Aµ splits as a direct sum in the decomposition associated to HF = Hf ⊕H ¯f and its restriction to Hf is given by Proposition",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-37-the-spectral-action-and-the-asymptotic-expans",
+      "number": "3.7",
+      "title": "The spectral action and the asymptotic expansion",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 34,
+      "labelStart": "30",
+      "labelEnd": "34",
+      "words": 1154,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spectral action",
+          "heading": true
+        },
+        {
+          "term": "d4x",
+          "heading": false
+        },
+        {
+          "term": "bµν",
+          "heading": false
+        },
+        {
+          "term": "additional coeﬃcient",
+          "heading": false
+        },
+        {
+          "term": "ryr",
+          "heading": false
+        },
+        {
+          "term": "cµνρσ",
+          "heading": false
+        },
+        {
+          "term": "cosmological term",
+          "heading": false
+        },
+        {
+          "term": "fourth term",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we compute the spectral action for the inner ﬂuctuations of the product geometry M × F. GRAVITY AND THE STANDARD MODEL WITH NEUTRINO MIXING 31 Theorem 3.13. The spectral action is given by S = 1 π2 (48 f4 Λ4 −f2 Λ2 c + f0 4 d) Z √g d4x (3.41) + 96 f2 Λ2 −f0 c 24π2 Z R √g d4x + f0 10 π2 Z (11 6 R∗R∗−3 Cµνρσ Cµνρσ) √g d4x + (−2 a f2 Λ2 + e f0) π2 Z |ϕ|2 √g d4x + f0 2 π2 Z a |Dµϕ|2 √g d4x − f0 12 π2 Z a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-4-the-lagrangian",
+      "number": "4",
+      "title": "The Lagrangian",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 36,
+      "labelStart": "34",
+      "labelEnd": "36",
+      "words": 754,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "antisymmetric bilinear",
+          "heading": false
+        },
+        {
+          "term": "ko-dimension",
+          "heading": false
+        },
+        {
+          "term": "unimodular inner",
+          "heading": false
+        },
+        {
+          "term": "inner ﬂuctuations",
+          "heading": false
+        },
+        {
+          "term": "neutrino mixing",
+          "heading": false
+        },
+        {
+          "term": "bilinear form",
+          "heading": false
+        },
+        {
+          "term": "anticommuting",
+          "heading": false
+        },
+        {
+          "term": "self-coupling",
+          "heading": false
+        }
+      ],
+      "extract": "The KO-dimension of the ﬁnite space F is 6 ∈Z/8, hence the KO-dimension of the product geometry M × F (for M a spin 4-manifold) is now 2 ∈Z/8. In other words, according to Deﬁnition 2.7, the commutation rules are J2 = −1, JD = DJ, and Jγ = −γJ . (4.1) Let us now explain how these rules deﬁne a natural antisymmetric bilinear form on the even part H+ = {ξ ∈H , γ ξ = ξ} (4.2) of H. Proposition 4.1. On a real spectral",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-41-notation-for-the-standard-model",
+      "number": "4.1",
+      "title": "Notation for the standard model",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 37,
+      "labelStart": "36",
+      "labelEnd": "37",
+      "words": 1047,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "standard model",
+          "heading": true
+        },
+        {
+          "term": "neutrino mixing",
+          "heading": false
+        },
+        {
+          "term": "cλκ",
+          "heading": false
+        },
+        {
+          "term": "g2w",
+          "heading": false
+        },
+        {
+          "term": "mixing matrix",
+          "heading": false
+        },
+        {
+          "term": "model lagrangian",
+          "heading": false
+        },
+        {
+          "term": "majorana mass",
+          "heading": false
+        },
+        {
+          "term": "ˆνκ",
+          "heading": false
+        }
+      ],
+      "extract": "The spectral action naturally gives a Lagrangian for matter minimally coupled with gravity, so that we would obtain the standard model Lagrangian on a curved spacetime. By covariance, it is in fact suﬃcient to check that we obtain the standard model Lagrangian in ﬂat spacetime. This can only be done by a direct calculation, which occupies the remaining of this section. In ﬂat space and in Lorentzian signature the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-42-the-asymptotic-formula-for-the-spectral-actio",
+      "number": "4.2",
+      "title": "The asymptotic formula for the spectral action",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 39,
+      "labelStart": "37",
+      "labelEnd": "39",
+      "words": 549,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spectral action",
+          "heading": true
+        },
+        {
+          "term": "higgs ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "kinetic terms",
+          "heading": false
+        },
+        {
+          "term": "bµν",
+          "heading": false
+        },
+        {
+          "term": "ulep",
+          "heading": false
+        },
+        {
+          "term": "cµνρσ",
+          "heading": false
+        },
+        {
+          "term": "inner metric",
+          "heading": false
+        }
+      ],
+      "extract": "The change of variables from the standard model to the spectral model is summarized in Table 1. We ﬁrst perform a trivial rescaling of the Higgs ﬁeld ϕ so that kinetic terms are normalized. To normalize the Higgs ﬁelds kinetic energy we have to rescale ϕ to: H = √a f0 π ϕ , (4.9) so that the kinetic term becomes Z 1 2|DµH|2 √g d4x The normalization of the kinetic terms, as in Lemma 4.10 below, imposes a relation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-43-the-mass-relation",
+      "number": "4.3",
+      "title": "The mass relation",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 40,
+      "labelStart": "39",
+      "labelEnd": "40",
+      "words": 270,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mass matrices",
+          "heading": false
+        },
+        {
+          "term": "constraint",
+          "heading": false
+        },
+        {
+          "term": "overlooks",
+          "heading": false
+        },
+        {
+          "term": "µulep",
+          "heading": false
+        },
+        {
+          "term": "lhf",
+          "heading": false
+        }
+      ],
+      "extract": "The relation between the mass matrices comes from the equality of the Yukawa coupling terms LHf. For the standard model these terms are given by Lemma 4.7 below. For the spectral action they are given by γ5 M(ϕ) with the notations of (3.28) and (3.31). After Wick rotation to Euclidean and the chiral transformation U = ei π 4 γ5 ⊗1 they are the same (cf. Lemma 4.9 below) provided the following equalities hold",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-44-the-coupling-of-fermions",
+      "number": "4.4",
+      "title": "The coupling of fermions",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 47,
+      "labelStart": "40",
+      "labelEnd": "47",
+      "words": 3397,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "neutrino mixing",
+          "heading": false
+        },
+        {
+          "term": "qem",
+          "heading": false
+        },
+        {
+          "term": "fermions",
+          "heading": true
+        },
+        {
+          "term": "dirac yukawa",
+          "heading": false
+        },
+        {
+          "term": "left handed",
+          "heading": false
+        },
+        {
+          "term": "lepton sector",
+          "heading": false
+        },
+        {
+          "term": "right handed",
+          "heading": false
+        },
+        {
+          "term": "grassman variables",
+          "heading": false
+        }
+      ],
+      "extract": "Let us isolate the Yukawa coupling part of the standard model Lagrangian, ignoring first the right handed neutrinos (i.e. using the minimal standard model as in [4G]). We consider the additional terms later in Lemma 48. In the minimal case, one has (4.18) Luys = d— Bmdah + tet (9+ AL = Pe) +.6- (+299) - gma (H(ee%) + ip (7) ))+ ane (-my(a) Cy, (1 — 7) d*) + mi (a Crx(h + a\") + z 5 ‘ m> = m ane (my@cl. +7 >)ur) -",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-45-the-self-interaction-of-the-gauge-bosons",
+      "number": "4.5",
+      "title": "The self interaction of the gauge bosons",
+      "level": 2,
+      "pageStart": 47,
+      "pageEnd": 49,
+      "labelStart": "47",
+      "labelEnd": "49",
+      "words": 888,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "g2w g2c",
+          "heading": false
+        },
+        {
+          "term": "aµw aνw",
+          "heading": false
+        },
+        {
+          "term": "aνw aµaµw",
+          "heading": false
+        },
+        {
+          "term": "aµz",
+          "heading": false
+        },
+        {
+          "term": "gauge ﬁxing",
+          "heading": false
+        },
+        {
+          "term": "gauge ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "feynman gauge",
+          "heading": false
+        },
+        {
+          "term": "yang-mills action",
+          "heading": false
+        }
+      ],
+      "extract": "The self-interaction terms for the gauge ﬁelds have the form Lg = (4.53) −1 2∂νga µ∂νga µ −gsf abc∂µga νgb µgc ν −1 4g2 sf abcf adegb µgc νgd µge ν −∂νW + µ ∂νW − µ −M2W + µ W − µ − 1 2∂νZ0 µ∂νZ0 µ − 1 2c2w M2Z0 µZ0 µ −1 2∂µAν∂µAν −igcw(∂νZ0 µ(W + µ W − ν −W + ν W − µ ) − Z0 ν(W + µ ∂νW − µ −W − µ ∂νW + µ ) + Z0 µ(W + ν ∂νW − µ −W − ν ∂νW + µ )) −igsw(∂νAµ(W + µ W − ν − W + ν W − µ ) −Aν(W + µ ∂νW − µ −W − µ ∂νW + µ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-46-the-minimal-coupling-of-the-higgs-ﬁeld",
+      "number": "4.6",
+      "title": "The minimal coupling of the Higgs ﬁeld",
+      "level": 2,
+      "pageStart": 49,
+      "pageEnd": 51,
+      "labelStart": "49",
+      "labelEnd": "51",
+      "words": 1073,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gmw c2w",
+          "heading": false
+        },
+        {
+          "term": "c2w m2z",
+          "heading": false
+        },
+        {
+          "term": "m2w c2w",
+          "heading": false
+        },
+        {
+          "term": "g2s waµaµφ",
+          "heading": false
+        },
+        {
+          "term": "µaµφ g2s",
+          "heading": false
+        },
+        {
+          "term": "minimal coupling",
+          "heading": true
+        },
+        {
+          "term": "g2swaµφ",
+          "heading": false
+        },
+        {
+          "term": "ig2swaµh",
+          "heading": false
+        }
+      ],
+      "extract": "4.6. The minimal coupling of the Higgs ﬁeld. We add the mass terms (4.54) to the minimal coupling terms of the Higgs ﬁelds with the gauge ﬁelds which is of the form LHg = (4.57) −1 2∂µH∂µH −∂µφ+∂µφ−−1 2∂µφ0∂µφ0 −gMW + µ W − µ H −1 2g M c2w Z0 µZ0 µH − 1 2ig \u0000W + µ (φ0∂µφ−−φ−∂µφ0) −W − µ (φ0∂µφ+ −φ+∂µφ0) \u0001 + 1 2g \u0000W + µ (H∂µφ−−φ−∂µH) + W − µ (H∂µφ+ −φ+∂µH) \u0001 + 1 2g 1 cw (Z0 µ(H∂µφ0 −φ0∂µH) − ig s2 w cw MZ0 µ(W + µ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-47-the-higgs-ﬁeld-self-interaction",
+      "number": "4.7",
+      "title": "The Higgs ﬁeld self interaction",
+      "level": 2,
+      "pageStart": 51,
+      "pageEnd": 71,
+      "labelStart": "51",
+      "labelEnd": "71",
+      "words": 7627,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "higgs ﬁeld",
+          "heading": true
+        },
+        {
+          "term": "log10hμ gevl",
+          "heading": false
+        },
+        {
+          "term": "rkr",
+          "heading": false
+        },
+        {
+          "term": "cµνρσ d4x",
+          "heading": false
+        },
+        {
+          "term": "uniﬁcation scale",
+          "heading": false
+        },
+        {
+          "term": "yukawa couplings",
+          "heading": false
+        },
+        {
+          "term": "quark yukawa",
+          "heading": false
+        },
+        {
+          "term": "grand uniﬁcation",
+          "heading": false
+        }
+      ],
+      "extract": "4.7. The Higgs ﬁeld self interaction. The Higgs self coupling terms of the standard model are of the form LH = (4.60) −1 2m2 hH2 −βh \u0010 2M2 g2 + 2M g H + 1 2(H2 + φ0φ0 + 2φ+φ−) \u0011 + 2M4 g2 αh − gαhM \u0000H3 + Hφ0φ0 + 2Hφ+φ−\u0001 − 1 8g2αh \u0000H4 + (φ0)4 + 4(φ+φ−)2 + 4(φ0)2φ+φ−+ 4H2φ+φ−+ 2(φ0)2H2\u0001 . Lemma 4.12. Let ϕ be given by (4.34) and assume that αh = m2 h 4 M2 . (4.61) Then one has LH = −1 8g2αh |ϕ|4 + (αh M2 −βh 2 ) |ϕ|2.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 9,
+        "items": [
+          "4.8 The coupling with gravity.",
+          "5.1 Coupling constants at uniﬁcation.",
+          "5.2 The Higgs scattering parameter and the Higgs mass.",
+          "5.3 Neutrino mixing and the see-saw mechanism.",
+          "5.4 The fermion–boson mass relation.",
+          "5.7 The tadpole term and the naturalness problem.",
+          "0 H2 in the spectral action is given by",
+          "6.1 The generalized Lichnerowicz formula.",
+          "6.2 The asymptotic expansion and the residues."
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "neutrino mixing",
+      "heading": false
+    },
+    {
+      "term": "neutrino yukawa",
+      "heading": false
+    },
+    {
+      "term": "spectral action",
+      "heading": true
+    },
+    {
+      "term": "mixing matrix",
+      "heading": false
+    },
+    {
+      "term": "standard model",
+      "heading": true
+    },
+    {
+      "term": "neutrino masses",
+      "heading": false
+    },
+    {
+      "term": "dirac yukawa",
+      "heading": true
+    },
+    {
+      "term": "dirac mass",
+      "heading": false
+    },
+    {
+      "term": "dirac operator",
+      "heading": true
+    },
+    {
+      "term": "oﬀdiagonal dirac",
+      "heading": false
+    },
+    {
+      "term": "einstein gravity",
+      "heading": false
+    },
+    {
+      "term": "tau neutrino",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 67,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 69,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 71,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The running of the three couplings",
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The running of the quartic Higgs coupling",
+      "page": 55,
+      "pageLabel": "55",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The running of the top quark Yukawa coupling. Assuming that it holds at a uniﬁcation scale of 1017 GeV and neglecting all other Yukawa couplings with respect to the top quark yσ",
+      "page": 58,
+      "pageLabel": "58",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The running of the Weyl curvature term in (5.31)",
+      "page": 60,
+      "pageLabel": "60",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The running of the ratio of the coeﬃcients of the R2 term and the Weyl term in (5.31)",
+      "page": 61,
+      "pageLabel": "61",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The running of the ratio of the coeﬃcients of the topological term and the Weyl term in (5.31)",
+      "page": 62,
+      "pageLabel": "62",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "The running of the tadpole term",
+      "page": 65,
+      "pageLabel": "65",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 25,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 26,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "7 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p1); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 7
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 26 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-th-0610241v1"
+  }
+}

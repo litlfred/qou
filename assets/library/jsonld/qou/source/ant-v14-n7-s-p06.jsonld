@@ -1,0 +1,56 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p06/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "ant-v14-n7-s-p06",
+  "contains": [
+    "library/ant-v14-n7-s-p06/sections/sec-front-matter",
+    "library/ant-v14-n7-s-p06/sections/sec-000",
+    "library/ant-v14-n7-s-p06/sections/sec-001",
+    "library/ant-v14-n7-s-p06/sections/sec-002",
+    "library/ant-v14-n7-s-p06/sections/sec-003",
+    "library/ant-v14-n7-s-p06/sections/sec-004",
+    "library/ant-v14-n7-s-p06/sections/sec-005",
+    "library/ant-v14-n7-s-p06/sections/sec-006",
+    "library/ant-v14-n7-s-p06/sections/sec-007",
+    "library/ant-v14-n7-s-p06/sections/sec-008",
+    "library/ant-v14-n7-s-p06/sections/sec-009",
+    "library/ant-v14-n7-s-p06/sections/sec-010",
+    "library/ant-v14-n7-s-p06/sections/sec-011",
+    "library/ant-v14-n7-s-p06/sections/sec-012",
+    "library/ant-v14-n7-s-p06/sections/sec-013"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Moments of quadratic twists of elliptic curve L-functions over function fields — 15 sections: Front matter; Introduction and statement of resu; Some useful lemmas\n\n**Moments of quadratic twists of elliptic curve L-functions over function fields**\n\n*Hung M. Bui, Alexandra Florea, Jonathan P. Keating and Edva Roditty-Gershon*\n\n42 pp, 15 sections.\n\n**Outline.** Front matter; 1 Introduction and statement of results; 2 Some useful lemmas; 3 Main proposition; 2 , N AB f h); 4 Upper bounds for moments; 5 Proof of Theorem 1.1; 6 Proof of Theorem 1.2; 7 Proof of Theorem 1.3; 8 Proof of Theorem 1.4; 9 Proof of Theorem 1.5; 10 Proof of Theorem 1.6; 11 Proof of Corollary 1.7; Acknowledgements; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "ant-v14-n7-s-p06",
+    "title_source": "slug",
+    "source_file": "ant-v14-n7-s-p06.pdf",
+    "source_sha256": "4881141ef679dd5ab6248c3442f2b263858c24c2940f761ef48eca236cca905f",
+    "pages": 42,
+    "arxiv": null,
+    "doi": "10.2140/ant.2020.14.1853",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

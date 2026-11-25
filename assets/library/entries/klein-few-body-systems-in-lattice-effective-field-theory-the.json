@@ -1,0 +1,1575 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "klein-few-body-systems-in-lattice-effective-field-theory-the",
+  "blocks": [
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prop-sec-front-matter-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "prop-sec-front-matter-01.md",
+      "narrative": null,
+      "content": "1 1.2 Lattice QCD . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Few-Body Systems in\nLattice Eﬀective Field Theory\nDissertation\nzur\nErlangung des Doktorgrades (Dr. rer. nat.)\nder\nMathematisch-Naturwissenschaftlichen Fakultät\nder\nRheinischen Friedrich-Wilhelms-Universität Bonn\nvon\nNico Klein\naus\nBonn, November 2018\nDieser Forschungsbericht wurde als Dissertation von der Mathematisch-Naturwissenschaftlichen\nFakultät der Universität Bonn angenommen und ist auf dem Hochschulschriftenserver der ULB Bonn\nhttp://hss.ulb.uni-bonn.de/diss_online elektronisch publiziert.\n1. Gutachter:\nProf. Dr. Ulf-G. Meißner\n2. Gutachter:\nProf. Dr. Thomas Luu\nTag der Promotion:\n11.0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction and Motivation",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-000-introduction-and-motivation.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The standard model of particle physics and quantum chromodynamics",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-the-standard-model-of-particle-physics-and-quant.md",
+      "narrative": null,
+      "content": "chromodynamics\nThe standard model of particle physics consists of the fundamental particles and the fundamental forces.\nThe particles are quarks on the one hand and leptons on the other hand. The quarks consist of (u)p,\n(d)own, (s)trange, (c)harm, (b)ottom and (t)op quarks and they interact via gluons. Besides, the leptons\nconsist of electron, muon and tau as well as electron neutrino, muon neutrino and tau neutrino. Leptons\nand quarks interact via the photon (electromagnetic force), the W±-, Z-boson (weak force), or the Higgs\nboson. From a gauge theory perspective, the standard model can be d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prop-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "prop-sec-002-01.md",
+      "narrative": null,
+      "content": "While lattice QCD and eﬀective theory are highly successful in the two- and partly three- and four-body sector, one has to use diﬀerent methods for the description of many-body physics.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prop-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "prop-sec-002-02.md",
+      "narrative": null,
+      "content": "Moreover, the space is discretized, such that a natural cutoﬀΛ arises by the lattice spacing a, Λ = π/a and exact methods as well as statistical methods known from Lattice QCD are used for the evaluation of binding energies, phase shifts, etc. for two-, few- and many-body problems.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prop-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "prop-sec-002-03.md",
+      "narrative": null,
+      "content": "1.2 Lattice QCD Lattice QCD is a non-perturbative method for solving QCD in the low-energy region.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lattice QCD",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-lattice-qcd.md",
+      "narrative": null,
+      "content": "theory approach. Both methods are explained in the subsequent sections.\nWhile lattice QCD and eﬀective theory are highly successful in the two- and partly three- and four-body\nsector, one has to use diﬀerent methods for the description of many-body physics. The reason is that\nan extension of the corresponding Faddeev-Yakubovsky equations become impractical to solve. There\nare various many-body methods whereas we just name a few in the following. Firstly we have coupled\ncluster theory or shell/no-core shell models, which use phenomenological Lagrangians as input. Secondly,\nthere are Green’s fun",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prop-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "prop-sec-003-01.md",
+      "narrative": null,
+      "content": "In a very simple lattice QCD calculation the lattice spacing error is linear, but one can use a diﬀerent discretization scheme or include more operators in order to push this error to higher order.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prop-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "prop-sec-003-02.md",
+      "narrative": null,
+      "content": "Lattice QCD is mainly successful in the description of two-meson or two-baryon physics and in the near future, it may work in the three-body sector as well [5–8].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Effective Theory",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-003-effective-theory.md",
+      "narrative": null,
+      "content": "we give a very short introduction with a focus on the questions which will arise throughout this thesis. A\nthorough introduction can be found in [2].\nStarting point is the partition function,\nZ =\nZ\nDADΨD ¯Ψ exp\nn\n−S F\nh\nΨ, ¯Ψ, A\ni\n−S G[A]\no\n,\n(1.5)\nwhere A is the gauge ﬁeld, and Ψ the fermion ﬁeld. S F and S G are the fermion and gauge actions. Any\ncorrelation function of two operators ˆO1, ˆO2 can be calculated by taking its average,\nD ˆO2(t) ˆO1(0)\nE\n= 1\nZ\nZ\nDAµDΨD ¯Ψ ˆO2\nh\nΨ, ¯Ψ, A\ni ˆO1\nh\nΨ, ¯Ψ, A\ni\nexp\nn\n−S F\nh\nΨ, ¯Ψ, A\ni\n−S G [A]\no\n.\n(1.6)\nwhere the imaginary time t = iτ has been introdu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 15,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "Green’s function Monte Carlo was used to calculate light and medium-mass nuclei mainly up to oxygen-16 [29, 30] and for the calculation of the Hoyle state, where the theoretical prediction is 10.4(5) MeV, which is far oﬀfrom the experimental value of 7.65 MeV [31].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prop-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 15,
+      "target": "prop-sec-005-02.md",
+      "narrative": null,
+      "content": "Another process was the ﬁrst ab initio calculation of alpha-alpha scattering using the adiabatic projection method [36].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prop-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 15,
+      "target": "prop-sec-005-03.md",
+      "narrative": null,
+      "content": "Although such a discretization also exists in lattice QCD, the situation in NLEFT is diﬀerent as the lattice spacing is linked to a cutoﬀ, which should not exceed the physical breakdown scale of the theory.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prop-sec-005-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 15,
+      "target": "prop-sec-005-04.md",
+      "narrative": null,
+      "content": "From a lattice QCD and/ or continuum EFT point of view it would be interesting as well to see whether one could decouple the lattice spacing from the cutoﬀ, i.e. a ﬁxed cutoﬀregulator for the eﬀective potentials can be used thereby the lattice spacing can be sent to zero, such that its limit depends only on computational limits but not on physical ones [38].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From nucleons to nuclei",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-from-nucleons-to-nuclei.md",
+      "narrative": null,
+      "content": "for the regularization of nucleon-nucleon potentials. As the cutoﬀshould reﬂect the validity range of\nthe theory, one should use a more conservative approach and the breakdown scale is mainly chosen as\nΛ ∼500 MeV [21, 22].\nWhile the upper scale is set by Λ ∼500 MeV we could also look at the opposite limit. In the former\npicture of meson-mediated interaction the nucleon-nucleon interaction is mediated by pion exchange\nsimilar to the already mentioned Fermi’s beta decay with the W boson as exchange particle. If we\nremain below the pion scale of Mπ ∼140 MeV in momentum or do only consider objects",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum Monte Carlo methods - status and open challenges",
+      "pageStart": 11,
+      "pageEnd": 15,
+      "target": "../sections/sec-005-quantum-monte-carlo-methods---status-and-open-ch.md",
+      "narrative": null,
+      "content": "Generally, there are two approaches in Quantum Monte Carlo calculations, a continuum and a lattice\napproach, which are used for the estimation of physical properties of nuclei.\nIn continuum Monte Carlo theory, the ﬁrst approach is a variational method called variational Monte\nCarlo (VMC) for the calculation of ground states, E0. The basic idea is to minimize the energy EV of the\n5\nChapter 1 Introduction and Motivation\ntrial wave function |ΨT⟩,\nEV =\n\nΨT\n\n H\n\nΨT\n\nΨT\n\n ΨT\n\n≥E0.\n(1.8)\nH is the Hamiltonian of the systems. It is crucial to ﬁnd a trial wave function as close as possible to the\nexact",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Theory",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-006-theory.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The effective theory of few-nucleon systems",
+      "pageStart": 15,
+      "pageEnd": 19,
+      "target": "../sections/sec-007-the-effective-theory-of-few-nucleon-systems.md",
+      "narrative": null,
+      "content": "In this section we construct the most general Lagrangian of the same symmetry properties as the\nunderlying theory, QCD, focusing on the nucleon-nucleon interaction. We summarize the Lagrangian for\nnucleons and pions up to N2LO in the power counting framework. Afterward we will use this Lagrangian\nto construct all nucleon-nucleon interactions up to N2LO [39]. In the following we restrict ourselves\nto the SU(2) case, where only u- and d-quarks exist while all other quarks are integrated out. Then the\nsymmetry of QCD in the chiral limit is\nSU(2)L × SU(2)R × U(1)V,\n(2.1)\nwhere the subscript denote",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/figure-img-p018-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/figure-img-p018-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Scattering Theory",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/sec-008-scattering-theory.md",
+      "narrative": null,
+      "content": "conditions,\nV(1)\ncontact =C1⃗q 2 + C2⃗k 2 +\n\u0010\nC3⃗q 2 + C4⃗k 2\u0011⃗\nσ1 ·⃗σ2 +\n\u0010\nC5⃗q 2 + C6⃗k 2\u0011⃗\nτ1 ·⃗τ2\n+\n\u0010\nC7⃗q 2 + C8⃗k 2\u0011⃗\nσ1 ·⃗σ2⃗τ1 ·⃗τ2 + iC9\n1\n2\n\u0000⃗σ1 +⃗σ2\n\u0001 ·⃗q ×⃗k\n+ iC10\n1\n2\n\u0000⃗σ1 +⃗σ2\n\u0001 ·⃗q ×⃗k⃗τ1 ·⃗τ2 + C11⃗q ·⃗σ1⃗q ·⃗σ2 + C12⃗q ·⃗σ1⃗q ·⃗σ2⃗τ1 ·⃗τ2\n+ C13⃗k ·⃗σ1⃗k ·⃗σ2 + C14⃗k ·⃗σ1⃗k ·⃗σ2⃗τ1 ·⃗τ2.\n(2.20)\nEq. (2.20) consists of 14 terms with correspondingly 14 LECs and depend not only on the transfer\nmomentum⃗q but also on the average momentum⃗k = (⃗p ′ +⃗p )/2. However, one can use again antisym-\nmetrization arguments to reduce the number of terms. Finally there are only seven independe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basic concepts of scattering theory",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "../sections/sec-009-basic-concepts-of-scattering-theory.md",
+      "narrative": null,
+      "content": "First of all, we give a basic introduction into scattering theory which follows [55, 56]. Starting point of\nnon-relativistic quantum mechanics is the corresponding Schrödinger equation, which has the subsequent\n13\nChapter 2 Theory\nform in the center-of-mass frame,\n\"\n−1\n2µ∆+ V \u0000⃗r \u0001#\nΨ \u0000⃗r \u0001 = EΨ \u0000⃗r \u0001 .\n(2.24)\nµ is the reduced mass, V(⃗r ) is the interaction potential and E is the eigenenergy for the eigenfunction\nΨ(⃗r ). The dispersion relation between scattering energy and scattering momentum reads E =⃗q 2/(2µ).\nIn the standard approach, one assumes an incoming wave function Ψin in z-directi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Extension to systems with internal degrees of freedom and coupled channels",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-010-extension-to-systems-with-internal-degrees-of-fr.md",
+      "narrative": null,
+      "content": "As we use nucleons as degrees of freedom, the partial waves must be characterized by their spin and\nisospin content as well. This is why Eq. (2.36) does not hold generally for angular momentum larger than\nzero, and one has to sum over all magnetic quantum numbers as well. Consequently, the partial waves\nare described by orbital angular momentum, its magnetic quantum number and the internal degrees of\nfreedom spin and isospin, which are summarized in the spin-isospin vector χi,\nΨ \u0000⃗r \u0001 =\nX\ni\nΨi\n\u0000⃗r \u0001 =\nX\nl\nlX\nlz=−l\nX\ni\nui,l,lz(r)\nr\nYl,lz(θ, φ)χi.\n(2.48)\nNow the radial projected Schrödinger equa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Scattering theory for Coulomb forces",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-011-scattering-theory-for-coulomb-forces.md",
+      "narrative": null,
+      "content": "Beside the strong interaction between particles, we also have the electromagnetic interaction, which must\nbe treated separately. The beforementioned considerations concerning the solution of the free system\nonly hold for an eﬀective potential ∝1/r 2 due to angular momentum and all other interactions must fall\noﬀwith 1/r a with a ≥2. Including the Coulomb force results in a diﬀerent eﬀective potential and leads\nto a new radial Schrödinger equation,\n−∆ρ + l(l + 1)\nρ2\n+ 2η\nρ\nul(ρ) = ul(ρ).\n(2.56)\nwith ρ = qr and η = µαEM/q. For such a system, we have again two solutions, a regular one",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Correlations in Few-Body physics",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "../sections/sec-012-correlations-in-few-body-physics.md",
+      "narrative": null,
+      "content": "one for Bessel functions in the case of vanishing Coulomb interaction,\nFl(η, ρ)\nρ≫1\n−−−→sin\n\u0012\nρ −η log(2ρ) −lπ\n2 + σl\n\u0013 η→0\n−−−→sin\n\u0012\nρ −lπ\n2\n\u0013\n,\n(2.59)\nGl(η, ρ)\nρ≫1\n−−−→cos\n\u0012\nρ −η log(2ρ) −lπ\n2 + σl\n\u0013 η→0\n−−−→cos\n\u0012\nρ −lπ\n2\n\u0013\n.\n(2.60)\nHere, σl = arg[Γ(l + 1 + iη)] is the Coulomb phase. Now, we already see that the asymptotic solutions\nwith vanishing Coulomb interaction are the same as in Eqs. (2.38) and (2.39) (up to a sign). Hence, one\ncan use exactly the same strategies as already explained in the case without Coulomb interaction.\n2.3 Correlations in Few-Body physics\nCorrelations between few",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/figure-img-p026-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../images/img-p026-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prop-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "prop-sec-013-01.md",
+      "narrative": null,
+      "content": "In NLEFT, the degrees of freedom are nucleons and pions rather than quarks and gluons as in lattice QCD.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Nuclear Lattice Effective Field Theory",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/sec-013-nuclear-lattice-effective-field-theory.md",
+      "narrative": null,
+      "content": "In NLEFT, the degrees of freedom are nucleons and pions rather than quarks and gluons as in lattice\nQCD. Hence, we have to discretize the previous Hamiltonians in all spatial dimensions. If one uses\nMonte Carlo methods and the inﬁnite time extrapolation, then one also has to discretize it in its temporal\ndimension. In the following we explain how to put the system in a discrete box of ﬁnite volume and how\nwe could use ﬁnite volume eﬀects to extract physical information in the inﬁnite volume. Moreover, we\nexplain the Monte Carlo methods and discuss limits of this method like the sign problem.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Effective theory on the lattice",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "../sections/sec-014-effective-theory-on-the-lattice.md",
+      "narrative": null,
+      "content": "As already mentioned, we have to discretize all operators so that they are deﬁned on the lattice and the\nexplicit form of discretization for any operator will be given explicitly in the subsequent chapters. Here\nwe want to examine some speciﬁc problems, namely the smearing of nucleon-nucleon contact interactions\nand the discretization of the one-pion-exchange potential, which puts the link between lattice spacing,\ndiscretization and the validity of eﬀective ﬁeld theory in a focus. We start with the smearing of the contact\ninteractions. From an eﬀective ﬁeld theory point of view we can construc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The reduced symmetry of SO(3,Z)",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-015-the-reduced-symmetry-of-so3z.md",
+      "narrative": null,
+      "content": "respectively. As we see in Fig. 3.1 the continuum result and the continuum-regularized one are both\nattractive albeit the latter one vanishes for small lattice spacings. This is in line with eﬀective ﬁeld theory,\nwhere all short-range physics is absorbed in contact interaction terms. All lattice realizations show a very\ngood agreement for distances larger than 3.5 fm, while the trigonometric ones show a repulsive behavior\nbetween 0 fm and 3 fm. This is partially compensated by some contributions which are very negative, e.g.\nat a distance of 2 fm for a lattice spacing of 0.98 fm. The exact dis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prop-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "prop-sec-016-01.md",
+      "narrative": null,
+      "content": "The identiﬁcation of bound states in the energy spectrum of a lattice calculation is quite important for the determination of deuteron, triton and helium properties as well as any other description of nuclei in the framework of NLEFT.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bound states on the lattice",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "../sections/sec-016-bound-states-on-the-lattice.md",
+      "narrative": null,
+      "content": "The identiﬁcation of bound states in the energy spectrum of a lattice calculation is quite important for\nthe determination of deuteron, triton and helium properties as well as any other description of nuclei in\nthe framework of NLEFT. Instead of neglecting ﬁnite-volume eﬀects by using a box with large enough\nvolume, one could also use these eﬀects to extrapolate to the inﬁnite volume. Therefore, it is necessary to\nknow the ﬁnite-volume behaviour of the bound state.\nFirstly, we rederive Lüscher’s ﬁnite volume formula for non-relativistic two-body bound states [84].\nThe original approach takes i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prop-sec-019-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 36,
+      "target": "prop-sec-019-01.md",
+      "narrative": null,
+      "content": "The interaction region is close to the origin in region I, while we calculate the phase shift from the wave 28 3.4 Scattering on the lattice",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Scattering on the lattice",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../sections/sec-017-scattering-on-the-lattice.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lüscher's effective range expansion in the finite volume",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../sections/sec-018-lüschers-effective-range-expansion-in-the-finite.md",
+      "narrative": null,
+      "content": "Similar to the ﬁnite volume eﬀects of bound states, we can have a look on ﬁnite volume calculations of\nthe phase shift and the eﬀective range expansion. In [93, 94], a ﬁnite volume eﬀective range expansion\nwas derived,\nq cot δ (q) = 1\nπLS (η) ,\nη =\n\u0012Lq\n2π\n\u00132\n,\n(3.16)\nand is related to Eq. (2.44) in the inﬁnite volume. Here, q = |⃗q | is the relative momentum linked to the\nmeasured ﬁnite-volume eigenenergy via EL = q2/2µ and S (η) is the three-dimensional ζ-function,\nS (η) = lim\nΛ→∞\n\nX⃗\nn\nΘ\n\u0010\nΛ2 −⃗n 2\u0011⃗\nn 2 −η\n−4πΛ\n.\n(3.17)\nIt is approximated for small η by\nS (η) = −1\nη + S 0 +",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spherical wall and radial projection",
+      "pageStart": 32,
+      "pageEnd": 36,
+      "target": "../sections/sec-019-spherical-wall-and-radial-projection.md",
+      "narrative": null,
+      "content": "Lüscher’s eﬀective range expansion is the appropriate method for low energy and zero angular mo-\nmentum. Although nowadays there are extensions to higher partial waves and one could also improve\nthe predictability range by including higher terms in the eﬀective range expansion, we choose another\napproach to describe two-particle scattering in a box. By imposing a spherical wall as a boundary\ncondition at r ≈RW in the cubic box, one can almost enforce spherical symmetry on the system and the\nsolutions will be standing waves which also cover a large range of momenta. As we have a localized\n26\n3.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Exact methods",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-020-exact-methods.md",
+      "narrative": null,
+      "content": "As long as we consider only systems with a few particles, we can use the Lanczos/ Arnoldi algorithm [95,\n96] for sparse matrices to solve the eigenvalue problem. Afterward, we have the energy and the wave\nfunction of the system and use this information for the calculation of binding energies and phase shifts.\nThe Lanczos algorithm works as the following.\nA general eigenvalue problem reads\nA · v = λ · v,\n(3.38)\nwhere A is a n × n matrix, λ is the eigenvalue and v is the eigenvector which can be rewritten in the basis\nof the power-iterated subspace,\nn\nq, Aq, A2q, A3q, . . .\no\n,\n(3.39)\nwhere q is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The auxiliary field partition function",
+      "pageStart": 37,
+      "pageEnd": 39,
+      "target": "../sections/sec-021-the-auxiliary-field-partition-function.md",
+      "narrative": null,
+      "content": "3.6 The auxiliary ﬁeld partition function\nGenerally, we use three diﬀerent methods to extract physical observables. While we use the Hamiltonian\nformalism and the transfer matrix formalism for the exact calculations, we use a Grassmann path integral\nformalism with auxiliary ﬁelds in the case of Monte Carlo simulations. In the following we will show\nthat all formalisms are equivalent up to higher order lattice artifacts. In the current and the subsequent\nsection we follow [97, 98]. For the proof we consider a system of two fermions with spin ↑and ↓and a\nsimple contact interaction ∝C. On the one",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hybrid Monte Carlo algorithm for Nuclear Lattice Effective Field Theory",
+      "pageStart": 39,
+      "pageEnd": 42,
+      "target": "../sections/sec-022-hybrid-monte-carlo-algorithm-for-nuclear-lattice.md",
+      "narrative": null,
+      "content": "3.7 Hybrid Monte Carlo algorithm for Nuclear Lattice Effective Field\nTheory\nWhile there are a lot of diﬀerent algorithms to calculate Eq. (3.41), we choose the Hybrid Monte Carlo\n(HMC) algorithm in this thesis [102]. In this algorithm we update the whole ﬁeld and auxiliary ﬁeld\nconﬁguration at the same time making it very eﬃcient and exact. In the following we give a detailed\ndescription of the method. Starting point is the path integral with auxiliary ﬁelds according to Eq. (3.49),\nwhere the path integral over the Grassmann ﬁelds is substituted by the transfer matrix formulation,\nZ(t) =\nZ\nDπI",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prop-sec-023-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 42,
+      "pageEnd": 45,
+      "target": "prop-sec-023-01.md",
+      "narrative": null,
+      "content": "Such a new conﬁguration would cancel the old one making it very hard to extract any valuable information from a Monte Carlo simulation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The sign problem",
+      "pageStart": 42,
+      "pageEnd": 45,
+      "target": "../sections/sec-023-the-sign-problem.md",
+      "narrative": null,
+      "content": "As long as the system scales only proportional to the number of particles and L3 in the spatial size, we\ndo not have any storing problems for a large number of particles or a large box size. Sure enough, in\nfermionic Monte Carlo systems one has to deal with a sign problem. While we interpret the Boltzman\nfactor as a probability factor and as such allows us to calculate the average of any observable just by\nsumming over its value for any conﬁgurations weighted by its probability, this is not possible anymore if\nthe weight is oscillating between negative and positive, which occurs by the exchang",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Regularization Methods for Nuclear Lattice Effective Field Theory",
+      "pageStart": 45,
+      "pageEnd": 45,
+      "target": "../sections/sec-024-regularization-methods-for-nuclear-lattice-effec.md",
+      "narrative": null,
+      "content": "Effective Field Theory⋆",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 45,
+      "pageEnd": 46,
+      "target": "../sections/sec-025-introduction.md",
+      "narrative": null,
+      "content": "The Nuclear Lattice Eﬀective Field Theory (EFT) method [33] has led to impressive progress in the\nlast decade and it has been applied to few- and many-body-systems successfully, for reviews see e.g.\nRefs. [52, 107]. The lattice spacing serves as a natural UV regulator for the theory, as for a given value\nof a the maximal momentum is pmax = π/a. Although these calculations give a quite good description\nfor the phase shifts, energy levels, etc., almost all calculations have been done for a ﬁxed lattice spacing\na ≃2 fm, corresponding to a soft momentum cut-oﬀof about 300 MeV. This allows one to t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prop-sec-026-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 49,
+      "target": "prop-sec-026-01.md",
+      "narrative": null,
+      "content": "Without the same smearing function for the two channels, the Monte Carlo simulation would have a far bigger problem with sign oscillations.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The lattice Hamiltonian",
+      "pageStart": 46,
+      "pageEnd": 49,
+      "target": "../sections/sec-026-the-lattice-hamiltonian.md",
+      "narrative": null,
+      "content": "To set the stage and to introduce our notations, we ﬁrst discuss the free Hamiltonian. Its discretized form\nreads\nHfree =\n1\n2mN\nX⃗\nn,i,j\nX\nˆl\n2ω0a†\ni,j\n\u0000⃗n \u0001 ai,j\n\u0000⃗n \u0001 +\n3\nX\nk=1\n(−1)k\n× ωk\nh\na†\ni,j\n\u0000⃗n \u0001 ai,j\n\u0010⃗\nn + kˆl\n\u0011\n+ a†\ni,j\n\u0000⃗n \u0001 ai,j\n\u0010⃗\nn −kˆl\n\u0011io\n.\n(4.1)\nHere, ai,j, a†\ni,j are the fermionic annihilation and creation operators with spin and isospin indices i, j,\nrespectively, mN = (mp + mn)/2 denotes the nucleon mass and ˆl is a unit vector in spatial direction. The\nsummation is over all lattice points⃗n on the L3 lattice. We use a stretched O(am)-improved action and its\ncoeﬃci",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The pionless theory",
+      "pageStart": 49,
+      "pageEnd": 51,
+      "target": "../sections/sec-027-the-pionless-theory.md",
+      "narrative": null,
+      "content": "93]\nEB(L) −E∞\nB = −24|A|2 exp\n\u0010\n−\np\n−2µE∞\nB L\n\u0011\n2µL\n,\n(4.15)\np cot δ0(p) = 1\nπLS (η),\nη =\n\u0012Lp\n2π\n\u00132\n,\n(4.16)\nwith A the normalization constant of the wave function for large distances and µ = mpmn/(mp + mn) the\nreduced mass. The energy eigenvalues of the system are linked to the momentum squared by E = p2/(2µ)\nand S (η) is the zeta function. Its expansion for small η is given by\nS (η) = −1\nη + S 0 + S 1η1 + S 2η2 + S 3η3 + . . .\n(4.17)\nand the coeﬃcients S i can be found in Chapt. 3.4.1. We do calculations at volumes large enough that\nLüscher’s ﬁnite volume formulas are suﬃcient for inﬁnite vo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The pionful theory",
+      "pageStart": 51,
+      "pageEnd": 53,
+      "target": "../sections/sec-028-the-pionful-theory.md",
+      "narrative": null,
+      "content": "N = 0 case reﬂecting the improved dispersion relation approximation which is necessary as we receive\ndata points in diﬀerent regimes for diﬀerent lattice spacings. Therefore, we use N = 3.5 for the following\ncalculations.\nComparing the theoretical predictions with the experimental values gives the impression of a large\ndeviation particularly for r 3S 1. As we only work at lowest order, we cannot expect to get the physical\nvalue already. But we can perform a consistency check for our predictions as there exists a relation\nbetween the binding energy, the scattering length and the eﬀective range,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion and Outlook",
+      "pageStart": 53,
+      "pageEnd": 55,
+      "target": "../sections/sec-029-conclusion-and-outlook.md",
+      "narrative": null,
+      "content": "5\n6\n7\n8\n9\n-500\n-400\n-300\n-200\n-100\n0\n-36\n-33\n-30\n-27\n0\n500\n1000\n1500\n-2.50\n-2.45\n-2.40\n-2.35\n-2.30\n-2.25\n-2.20\n34\n36\n38\np cot(δ) [MeV]\np2 [MeV2]\na = 1.97 fm\na = 0.82 fm\na = 0.66 fm\na = 0.56 fm\na = 0.49 fm\np cot(δ) [MeV]\np2 [MeV2]\nEb [MeV]\nL\nFigure 4.2: Lattice space dependence of various parameters. Upper panel: The ﬁnite-volume deuteron bound\nstate energy. Central panel: The eﬀective range expansion for the 1S 0-channel. Lower panel: The eﬀective range\nexpansion for the 3S 1-channel.\nkeep the physical lattice size. The respective values are shown in Tab. 4.3 as well and there is a plateau\nsta",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prop-sec-031-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 57,
+      "target": "prop-sec-031-01.md",
+      "narrative": null,
+      "content": "In Ref. [115] an overbinding of the ground state of 4He was observed which was traced back to the appearance of implicit multi-particle interactions which have signiﬁcant eﬀect on few-body physics on coarse lattices.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prop-sec-031-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 57,
+      "target": "prop-sec-031-02.md",
+      "narrative": null,
+      "content": "Diﬀerent to lattice QCD, we do not consider the continuum limit a →0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Tjon band in Nuclear Lattice Effective Field Theory",
+      "pageStart": 55,
+      "pageEnd": 55,
+      "target": "../sections/sec-030-the-tjon-band-in-nuclear-lattice-effective-field.md",
+      "narrative": null,
+      "content": "Theory⋆",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 55,
+      "pageEnd": 57,
+      "target": "../sections/sec-031-introduction.md",
+      "narrative": null,
+      "content": "Nuclear Lattice Eﬀective Field Theory (NLEFT) has become a powerful tool in the last years to study the\nformation of nuclei from nucleons in an ab initio way. Using this method it was possible to calculate\nthe binding energies of medium mass nuclei with good accuracy [108, 115] and postdict the Hoyle\nstate [34, 35], which is an excited state in carbon-12 indispensable for nucleosynthesis in stars. Besides\nbinding energies, also scattering processes like nucleon-nucleon [61, 116] or alpha-alpha-scattering [36]\nwere investigated. NLEFT combines two powerful concepts. First, we have chiral nuclea",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two-body-sector",
+      "pageStart": 57,
+      "pageEnd": 57,
+      "target": "../sections/sec-032-two-body-sector.md",
+      "narrative": null,
+      "content": "5.2 Two-body-sector",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Theoretical framework",
+      "pageStart": 57,
+      "pageEnd": 63,
+      "target": "../sections/sec-033-theoretical-framework.md",
+      "narrative": null,
+      "content": "In the two-body sector we solve the LO non-pertubatively and we include the NLO and N2LO corrections\nperturbatively. For the free part of the Hamiltonian, we use an O(a4)-improved version\nHfree =\n1\n2mN\nX⃗\nn,i,j\n2ω0a†\ni,j\n\u0000⃗n \u0001 ai,j\n\u0000⃗n \u0001\n+\n3\nX\nl=1\nX\nˆs\n(−1)k ωl\nh\na†\ni,j\n\u0000⃗n \u0001 ai,j\n\u0000⃗n + lˆs \u0001 + a†\ni,j\n\u0000⃗n \u0001 ai,j\n\u0000⃗n −lˆs \u0001i.\n(5.1)\nThe coeﬃcients ωl represent the improved action including a stretching factor which connects the O(a4)\naction with the O(a3) action to correct the dispersion relation of the nucleon-nucleon system. Explicitly\nwe use\nω0 = 10\n 49\n36 −5\n4\n!\n+ 49\n36,\nω1 = 1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Results",
+      "pageStart": 63,
+      "pageEnd": 65,
+      "target": "../sections/sec-034-results.md",
+      "narrative": null,
+      "content": "analysis at a = 1.97 fm. All LECs are given in lattice units: C1S 0,C3S 1,∆C,∆CI2,Cnn,Cpp are multiplied with a2,\nwhile the rest is multiplied with a4.\na = 1.97 fm\na = 1.64 fm\na = 1.32 fm\nC1S 0\n−0.421(2)\n−0.370(4)\n−0.289(3)\nC3S 1\n−0.603(2)\n−0.549(3)\n−0.424(3)\n∆C\n−0.2(2)\n0.4(3)\n−0.5(2)\n∆CI2\n−0.0(1)\n−0.0(1)\n−0.08(9)\nCq2\n−0.05(6)\n0.10(8)\n0.45(6)\nCI2,q2\n−0.06(3)\n0.13(4)\n0.27(4)\nCS 2,q2\n−0.00(7)\n−0.0(1)\n0.00(5)\nCS 2,I2,q2\n−0.01(5)\n0.0(1)\n−0.10(3)\nC(q·S )2\n0.00(8)\n−0.0(0)\n0.05(3)\nCI2,(q·S )2\n0.02(8)\n0.2(1)\n0.20(3)\nCI=1\n(q×S )·k\n0.033(6)\n0.04(1)\n0.09(1)\nCS O(3)\n0.1(1)\n1(1)\n−0.5(1)\nCnn\n0.01(4)\n0.02(5)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Three-body sector",
+      "pageStart": 65,
+      "pageEnd": 65,
+      "target": "../sections/sec-035-three-body-sector.md",
+      "narrative": null,
+      "content": "0\n20\n40\n60\n80\n100\n0\n50\n100\n150\n200\n0\n20\n40\n60\n80\n100\n120\n140\n160\n180\n0\n50\n100\n150\n200\n-10\n-5\n0\n5\n10\n0\n50\n100\n150\n200\n-20\n-15\n-10\n-5\n0\n5\n10\n15\n20\n0\n50\n100\n150\n200\n-20\n-15\n-10\n-5\n0\n5\n10\n15\n20\n0\n50\n100\n150\n200\n-20\n-15\n-10\n-5\n0\n5\n10\n15\n20\n0\n50\n100\n150\n200\n-20\n-15\n-10\n-5\n0\n5\n10\n15\n20\n0\n50\n100\n150\n200\n-10\n-5\n0\n5\n10\n0\n50\n100\n150\n200\n-10\n-5\n0\n5\n10\n0\n50\n100\n150\n200\n-10\n-5\n0\n5\n10\n0\n50\n100\n150\n200\n-10\n-5\n0\n5\n10\n0\n50\n100\n150\n200\nδ(1S 0) [degrees]\npCM [MeV]\nδ(3S 1) [degrees]\npCM [MeV]\n/epsilon1 [degrees]\npCM [MeV]\nδ(1P1) [degrees]\npCM [MeV]\nδ(3P0) [degrees]\npCM [MeV]\nNijmegen PWA\nLattice LO\nLattice N2LO\nδ(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Theoretical framework",
+      "pageStart": 65,
+      "pageEnd": 68,
+      "target": "../sections/sec-036-theoretical-framework.md",
+      "narrative": null,
+      "content": "Although we work in the three-body sector, we are still able to do an exact calculation using the Lanczos\nmethod. Therefore we extend the former analysis of the 2N sector to the triton, which means that we\ncannot work in radial coordinates anymore but we calculate the spectrum in a cubic box. In addition\nto two-body forces we include three-body potentials, which were reviewed in [115]. They consist of a\n59\nChapter 5 The Tjon band in Nuclear Lattice Eﬀective Field Theory\n0\n20\n40\n60\n80\n100\n0\n50\n100\n150\n200\n0\n20\n40\n60\n80\n100\n120\n140\n160\n180\n0\n50\n100\n150\n200\n-10\n-5\n0\n5\n10\n0\n50\n100\n150\n200\n-20\n-15",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Results",
+      "pageStart": 68,
+      "pageEnd": 69,
+      "target": "../sections/sec-037-results.md",
+      "narrative": null,
+      "content": "-10.5\n-10\n-9.5\n-9\n-8.5\n-8\n-7.5\n8\n9\n10\n11\n12\n13\n14\nEB [MeV]\nL [l.u.]\nE3H\nLO\nN2LO 2N\nN2LO 2N+EM\nN2LO 2N+EM+ 3N\nFigure 5.5: Inﬁnite volume extrapolation for the triton and a lattice spacing of a = 1.32 fm. The triangles are\nincluded in the ﬁt while the circles are not due to higher order ﬁnite volume eﬀects.\nThe extrapolation is plotted in Fig. 5.5 where one can see excellent agreement with the data points.\nThe ﬁt quality also makes it unnecessary to include higher order corrections or use other methods like\ntwisted mass boundary conditions to further pin down the inﬁnite volume binding energy [1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Four-body sector",
+      "pageStart": 69,
+      "pageEnd": 69,
+      "target": "../sections/sec-038-four-body-sector.md",
+      "narrative": null,
+      "content": "Table 5.2: Triton binding energy predictions at LO, N2LO, N2LO+EM, N2LO+EM+3NF and the ﬁt parameter cD.\nThe energy errors in brackets are due to the uncertainties of the LECs. The ⋆denotes the triton binding energy as\nan input parameter.\na = 1.97 fm\na = 1.64 fm\na = 1.32 fm\nELO [MeV]\n−7.80\n−8.29\n−8.74\nEN2LO [MeV]\n−7.846(4)\n−8.11(2)\n−7.95(2)\nE+EM\nN2LO [MeV]\n−7.68(2)\n−7.91(3)\n−7.77(2)\nE+EM+3N⋆\nN2LO\n[MeV]\n−8.48(3)\n−8.48(3)\n−8.48(2)\ncE\n0.5309(2)\n0.3854(3)\n1.0386(5)\nbecomes less bound as a is decreased from a = 1.64 fm to a = 1.32 fm even though the 3P0 prediction is\nstronger. The reason is that the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Theoretical framework",
+      "pageStart": 69,
+      "pageEnd": 70,
+      "target": "../sections/sec-039-theoretical-framework.md",
+      "narrative": null,
+      "content": "In the four-body system, we do not have any new operator as our system should be describable by the\n2NFs and 3NFs only. As the four-body system scales with L9, an exact calculation at suﬃcient large\nlattices is not practical anymore, and hence we have to use Monte Carlo methods. More precisely, we\nuse auxiliary ﬁeld Monte Carlo with the hybrid Monte Carlo algorithm [33]. In the following we will\ndeﬁne the LO auxiliary ﬁeld transfer matrix which we will minimize afterwards. All other contributions\nare calculated perturbatively. For an increased convergence we prepare our trial states using a SU",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Results",
+      "pageStart": 70,
+      "pageEnd": 71,
+      "target": "../sections/sec-040-results.md",
+      "narrative": null,
+      "content": "First of all, we start with the benchmark calculation. The results are shown in Tab. 5.3. One can see very\ngood agreement particularly for the LO result which is around one per mille relative error. The diﬀerence\nfor the perturbative corrections is larger but still below 10 % which is ﬁnally within the error bars of the\ninﬁnite time LO extrapolation. Even though the accuracy will go down with larger volumes due to the\nsign problem, we do expect trustable results within our estimated errors. The inﬁnite time extrapolation\norder by order for the three lattice spacings are shown in Figs. 5.6, 5.7",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prop-sec-042-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 71,
+      "pageEnd": 73,
+      "target": "prop-sec-042-01.md",
+      "narrative": null,
+      "content": "3.7 for details. overbinding was observed [108, 115] in the case of a very coarse lattice of a = 1.97 fm.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Tjon band",
+      "pageStart": 71,
+      "pageEnd": 71,
+      "target": "../sections/sec-041-the-tjon-band.md",
+      "narrative": null,
+      "content": "Table 5.3: 4He benchmark calculation for a = 1.97 fm and L = 4. The ﬁrst bracket of Monte Carlo error are\nstatistical ones, while the latter ones and the Lanczos ones are errors due to uncertainties of the LECs.\nMonte Carlo\nLanczos\nELO [MeV]\n−30.32(2)(1)\n−30.34\n∆EN2LO [MeV]\n0.511(9)(10)\n0.52(2)\n∆EEM [MeV]\n0.86(4)(2)\n0.91(3)\n∆E3NNLO [MeV]\n−5.1223(1128)(5)\n−5.0278(5)\n-29\n-28\n-27\n-26\n-25\n-24\n-23\n0\n5\n10\n15\n20\n-0.5\n-0.4\n-0.3\n-0.2\n-0.1\n0\n0\n5\n10\n15\n20\n0\n0.2\n0.4\n0.6\n0.8\n1\n0\n5\n10\n15\n20\n-6\n-5\n-4\n-3\n-2\n-1\n0\n0\n5\n10\n15\n20\nEB [MeV]\nNt\n4He binding energy\nLO contribution\nELO = −28.8(1) MeV\nEB [MeV]\nNt\n2N N2LO",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Theoretical framework",
+      "pageStart": 71,
+      "pageEnd": 73,
+      "target": "../sections/sec-042-theoretical-framework.md",
+      "narrative": null,
+      "content": "The correlation between the 3H and 4He binding energies was ﬁrst observed by Tjon [24] for a large class\nof 2N potentials of diﬀerent accuracy. This was later dubbed the Tjon line. It was shown in Refs. [70, 71,\n136] that this correlation still holds in the case of modern, accurate semi-phenomenological potentials\nas well as nuclear eﬀectice ﬁeld theory. In Ref. [72] this correlation was studied in the framework of\npionless eﬀective ﬁeld theory, where the only input parameters are the singlet and triplet neutron-proton\nscattering lengths as well as the deuteron binding energy Ed. In this study",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Results",
+      "pageStart": 73,
+      "pageEnd": 74,
+      "target": "../sections/sec-043-results.md",
+      "narrative": null,
+      "content": "The results for the binding energy of triton and 4He in the previous sections are combined and shown\nin Fig. 5.9. For the standard coarse lattice spacing of a = 1.97 fm already the LO is above the Tjon\nline as 3H is approximately 1 MeV underbound or 4He is approximately 2.5 MeV overbound. The data\npoints for 2N N2LO are close the LO data point as there is not very much diﬀerence in the np phase\nshift shown in Fig. 5.1 as well. Including the 2N EM interaction results in a data point closer to the Tjon\nline but still around 2 MeV above. However, the inclusion of 3N N2LO contributions results in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prop-sec-044-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 74,
+      "pageEnd": 75,
+      "target": "prop-sec-044-01.md",
+      "narrative": null,
+      "content": "The inclusion of 3N forces gives a helium-4 binding energy prediction of EB = −28.37(28)(4) MeV which is consistent with the experimental value, Eexp 4He = −28.30 MeV.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-044",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion",
+      "pageStart": 74,
+      "pageEnd": 75,
+      "target": "../sections/sec-044-conclusion.md",
+      "narrative": null,
+      "content": "In this chapter we have analysed the Tjon band in the framework of NLEFT. We studied the two-, three-,\nand four-body sector for lattice spacings from a = 1.97 fm to a = 1.32 fm up to N2LO and including\nsubleading two-pion-exchange contributions as well as the electromagnetic interaction and the leading\n3NFs. There is a general convergence of the phase shifts in the two-body sector by including higher\norders as well as shifting to smaller lattice spacings. In the three-body sector we found almost similar\nresults at N2LO for all three-cases. The reason for this is that the three-body bound state",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-045",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lattice Improvement in Lattice Effective Field Theory",
+      "pageStart": 75,
+      "pageEnd": 75,
+      "target": "../sections/sec-045-lattice-improvement-in-lattice-effective-field-t.md",
+      "narrative": null,
+      "content": "Theory⋆",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-046",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 75,
+      "pageEnd": 76,
+      "target": "../sections/sec-046-introduction.md",
+      "narrative": null,
+      "content": "Lattice simulations based on the framework of eﬀective ﬁeld theory (EFT) have been used in the study\nof nuclear forces [116, 138], nuclear structure [34, 35, 108, 129, 139, 140], as well as scattering and\nreactions [36, 133, 141]. It has also been applied to few-body [142, 143] and many-body [144–150]\nproblems in ultracold atomic systems. One of the challenges common to all of these lattice calculations\nis the need to eliminate errors caused by the non-vanishing lattice spacing a. Lattice spacing errors or\nartifacts can grow in importance as the number of particles increases. This is especiall",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-047",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bosons in one dimension",
+      "pageStart": 76,
+      "pageEnd": 78,
+      "target": "../sections/sec-047-bosons-in-one-dimension.md",
+      "narrative": null,
+      "content": "We consider a one-dimensional system of bosons with attractive zero-range interactions [62]. The\nHamiltonian is given by\nH = −1\n2m\nN\nX\ni=1\nd2\ndx2\ni\n+ C0\nN\nX\ni>j=1\nδ(xi −xj),\n(6.2)\nwhere m is the boson mass, N is the number of particles and C0 < 0 is the two-boson contact interaction\ncoeﬃcient. From either the Bethe ansatz [155] or by direct inspection, the ground state of this Hamiltonian\nis a bound state with energy\nENb\nB = −m\n24C2\n0N(N2 −1),\n(6.3)\nand wave function\nΨN\n\u0000x1, x2, . . . , xN\n\u0001 = N exp\n\"mC0\n2\n\u0010\n\nx1 −x2\n\n +\n\nx1 −x3\n\n + . . .\n\u0011#\n,\n(6.4)\nwith normalization constant N [62]. We note t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-048",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lattice implementation",
+      "pageStart": 78,
+      "pageEnd": 79,
+      "target": "../sections/sec-048-lattice-implementation.md",
+      "narrative": null,
+      "content": "We now implement our one-dimensional theory of bosons on the lattice. We use lattice units where all\nquantities are multiplied by powers of the lattice spacing to form dimensionless combinations. Since\nwe are interested in methods that can be readily applied to many-body calculations, we work with\nenergy-independent interactions only. We use an O(a4)-improved free Hamiltonian lattice action,\nHfree = 1\n2m\nX\nn\n2ω0a†(n)a(n) + 1\n2m\n3\nX\nl=1\n(−1)lωl\nh\na†(n + l)a(n) + a†(n)a(n + l)\ni\n,\n(6.13)\n72",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-049",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Results",
+      "pageStart": 79,
+      "pageEnd": 81,
+      "target": "../sections/sec-049-results.md",
+      "narrative": null,
+      "content": "with coeﬃcients\nω0 = 49\n36,\nω1 = 3\n2,\nω2 = 3\n20,\nω3 = 1\n90 .\n(6.14)\nThe lattice artifacts due to the free Hamiltonian start at O(a6). At LO, we have a contact interaction in\nthe two-boson sector,\nVLO = C0\n2\nX\nn\n: ρ2(n): ,\n(6.15)\nwhere ρ(n) = a†(n)a(n) and the :: symbols indicate normal ordering where the annihilation operators\nstand to the right and the creation operators stand to the left. The lattice contact interaction is tuned to the\nsame value as the continuum-limit interaction, C0. At NLO we have a ﬁnite renormalization of the LO\ninteraction,\nVNLO = ∆C0\n2\nX\nn\n: ρ2(n): ,\n(6.16)\nwhich is s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-050",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary and outlook",
+      "pageStart": 81,
+      "pageEnd": 85,
+      "target": "../sections/sec-050-summary-and-outlook.md",
+      "narrative": null,
+      "content": "NLO\nN2LO\na [fm]\n∆C0\n[×10−3]\n∆C0\n[×10−3]\nC3b\n[×10−3]\nCq2\n[×10−4]\nCGIR\n[×10−3]\n1.973\n−8.79793\n−9.09089\n1.04056\n7.16271\n1.43521\n1.715\n−7.55226\n−7.72824\n1.11585\n4.55222\n1.23930\n1.315\n−5.67790\n−5.75996\n0.97610\n2.41371\n0.93898\n0.986\n−4.19286\n−4.23347\n0.64741\n1.41280\n0.69463\n0.789\n−3.32409\n−3.34855\n0.43540\n0.98669\n0.54967\n0.659\n−2.75375\n−2.77014\n0.30594\n0.75364\n0.45367\n0.563\n−2.35055\n−2.36231\n0.22429\n0.60773\n0.38527\n0.438\n−1.81824\n−1.82514\n0.13387\n0.43622\n0.29366\n0.373\n−1.53939\n−1.54429\n0.09575\n0.35513\n0.24475\n0.303\n−1.25151\n−1.25473\n0.06429\n0.27726\n0.19161\n0.282\n−1.16105\n−1.16381\n0.05604\n0.25397\n0.1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prop-sec-051-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 85,
+      "pageEnd": 89,
+      "target": "prop-sec-051-01.md",
+      "narrative": null,
+      "content": "We calculated the binding energy and S wave eﬀective range expansion parameters for diﬀerent lattice spacings in the range of a ≈2 fm, Λ ≈314 MeV to a ≈0.5 fm, Λ ≈1240 MeV.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-051",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions and Perspectives",
+      "pageStart": 85,
+      "pageEnd": 89,
+      "target": "../sections/sec-051-conclusions-and-perspectives.md",
+      "narrative": null,
+      "content": "Some limitations and challenges of nuclear lattice eﬀective ﬁeld theory have been studied in this thesis.\nFor a better understanding and a link to continuum nuclear eﬀective theory, we have done a detailed\ninvestigation into the connection between lattice spacing artifacts, cutoﬀeﬀects and physical observables\nof the eﬀective theory for few-body systems in nuclear physics. This analysis helps to bridge the gap\nbetween the lattice community and the continuum nuclear eﬀective theory community and as such\nenhances the acceptance of this rather new approach for challenging calculation in the analy",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-052",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Special functions and algebras",
+      "pageStart": 89,
+      "pageEnd": 89,
+      "target": "../sections/sec-052-special-functions-and-algebras.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-053",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Partial wave decomposition",
+      "pageStart": 89,
+      "pageEnd": 90,
+      "target": "../sections/sec-053-partial-wave-decomposition.md",
+      "narrative": null,
+      "content": "In the following we give the deﬁnition of special functions used throughout the thesis. A basis of spherical\nfunctions is given by the spherical harmonics Yl,lz(φ, θ), where l = 0, 1, 2, ∞and lz = −l, −l + 1, . . . , l.\nThey are deﬁned as\nYl,lz(φ, θ) = (−1)lz\n\"2l + 1\n4π\n(l −lz)!\n(l + lz)!\n# 1\n2\nPl,lz(cos θ) exp\n\u0010\nilzφ\n\u0011\n,\n(A.1)\nwith the Laguerre polynomials,\nPl,lz(x) = (1 −x2)\nlz\n2 dlz\ndxlz Pl(x).\n(A.2)\nPl(x) are the Legendre polynomials\nPl(x) =\n1\n2ll!\ndl\ndxl\n\u0010\nx2 −1\n\u0011l .\n(A.3)\nThe spherical harmonics have the following properties,\nYl,lz(θ, φ) = (−1)lz h\nYl,lz(θ, φ)\ni∗,\n(A.4)\nD\nYl,lz(φ, θ)\n\n Y",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-054",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pauli matrices and spin algebra",
+      "pageStart": 90,
+      "pageEnd": 91,
+      "target": "../sections/sec-054-pauli-matrices-and-spin-algebra.md",
+      "narrative": null,
+      "content": "The Pauli matrices are the generators of the SU(2) algebra. They are deﬁned as\nσ1 =\n 0\n1\n1\n0\n!\n,\nσ2 =\n 0\n−i\ni\n0\n!\n,\nσ3 =\n 1\n0\n0\n−1\n!\n,\n(A.17)\nand fulﬁll the following angular momentum algebra,\nh\nσi, σj\ni\n= 2iϵi jkσk,\n(A.18)\nwith ϵi jk the totally antisymmetric Levi-Civita tensor. The respective spin matrix is deﬁned as⃗\nS = 1\n2⃗σ,\n(A.19)\n84",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-055",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Anticommutator and Grassmann algebra",
+      "pageStart": 91,
+      "pageEnd": 93,
+      "target": "../sections/sec-055-anticommutator-and-grassmann-algebra.md",
+      "narrative": null,
+      "content": "whose eigenvalues are\nS 2 \n\nS, S z\nE\n= S (S + 1)\n\nS, S z\nE\n,\n(A.20)\nS z\n\nS, S z\nE\n= S z\n\nS, S z\nE\n.\n(A.21)\nIt can be used to evaluate the appearing operators σ1 · σ2 in the respective triplet and singlet channel,⃗\nσ1 ·⃗σ2 |S = 1⟩= 1 |S = 1⟩,\n(A.22)⃗\nσ1 ·⃗σ2 |S = 0⟩= −3 |S = 0⟩.\n(A.23)\nThe isospin case for⃗τ1 ·⃗τ2 is analogous.\nA.3 Anticommutator and Grassmann algebra\nAs nucleons are fermions, their respective creation and annihilation operators fulﬁll the following\nanticommutating relations,\nn\nai\n\u0000⃗n \u0001 , aj\n\u0010⃗\nn ′\u0011o\n= 0,\n(A.24)\nn\na†\ni\n\u0000⃗n \u0001 , a†\nj\n\u0010⃗\nn ′\u0011o\n= 0,\n(A.25)\nn\nai\n\u0000⃗n \u0001 , a†\nj\n\u0010⃗\nn ′\u0011",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-056",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Density and current operators",
+      "pageStart": 93,
+      "pageEnd": 95,
+      "target": "../sections/sec-056-density-and-current-operators.md",
+      "narrative": null,
+      "content": "Here, we deﬁne the various nucleon density, current and derivative operators that we are using. Following\nRefs. [32, 116, 164], we deﬁne the local density operators. The LO and NLO density operators include\ncontact, contact isospin, contact spin as well as contact spin-isopsin operators given by\nρ(⃗n) =\nX\ni,j=0,1\na†\ni,j(⃗n)ai,j(⃗n),\n(B.1)\nρI(⃗n) =\nX\ni,j,j′=0,1\na†\ni,j(⃗n)(τI)j,j′ai,j′(⃗n),\n(B.2)\nρS (⃗n) =\nX\ni,i′,j=0,1\na†\ni,j′(⃗n)(σS )i,i′ai′,j(⃗n),\n(B.3)\nρS,I(⃗n) =\nX\ni,i′,j,j′=0,1\na†\ni,j(⃗n)(σS )i,i′(τI)j,j′ai′,j′(⃗n),\n(B.4)\nwhile the current, isospin, spin and spin-isospin current density oper",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-057",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Uncertainty analysis",
+      "pageStart": 95,
+      "pageEnd": 97,
+      "target": "../sections/sec-057-uncertainty-analysis.md",
+      "narrative": null,
+      "content": "From the deﬁnition of χ2 given in Eq. (5.46), we note that χ2 is a function of the LO and NLO coupling\nconstants\nχ2\nLO = χ2 \u0012\nC1S 0,C3S 1,\n\u0013\n,\n(C.1)\nχ2\nN2LO = χ2 \u0000C1, . . . ,C10\n\u0001 ,\n(C.2)\n. . . .\nχ2 can be expanded around its minimum, giving\nχ2 = χ2\nmin + 1\n2\nX\ni,j\nhi j(Ci −Cmin\ni\n)(C j −Cmin\nj\n) + . . . ,\n(C.3)\nwhere the Hessian matrix is denoted by\nhi j ≡\n∂2χ2\n∂Ci∂C j\n,\n(C.4)\nand Cmin\ni\ndenotes the result of the χ2 ﬁt. Then the error (or variance-covariance) matrix is deﬁned as\nEi j ≡1\n2\n\u0002h−1\u0003\ni j,\n(C.5)\nwhile the error of any ﬁt parameter is given by its standard deviation,\nσi =\np\nEii.\n(C.6",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-058",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Loop integrals",
+      "pageStart": 97,
+      "pageEnd": 99,
+      "target": "../sections/sec-058-loop-integrals.md",
+      "narrative": null,
+      "content": "In the following we give more details about the terms appearing in Eq. (6.10) and Eq. (6.11). In our\nnotation, (Ei, pi) are the incoming energies/ momenta and (E′\ni, p′\ni) are the outgoing energies/ momenta.\nThe non-relativistic propagator for a single boson is deﬁned as\nS (E, p) =\n1\nE −p2\n2m + iϵ\n,\n(D.1)\nand the one-loop integral for the two-boson diagram in Fig. 6.1 reads\nI2\n\u0010\nE1, p1, E2, p2; E′\n1, p′\n1, E′\n2, p′\n2\n\u0011\n∼\nZ π/a\nπ/a\ndp\n2π\nZ dp0\n2π S \u0000E12 −p0, p + p12\n\u0001 S \u0000p0, p\u0001\n∼im\n2\ns\n1\n−mE12\n−\n1\n16 √m\n 1\nE12\n! 3\n2\np2\n12 −ima\nπ2 −iE12m2\n3π4\na3 + mp2\n12\n6π4 a3 + O(a5, p4),\n(D.2)\nwhere we use en",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-059",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Non-perturbative calculation of lattice artifacts in the two-boson sector",
+      "pageStart": 99,
+      "pageEnd": 103,
+      "target": "../sections/sec-059-non-perturbative-calculation-of-lattice-artifact.md",
+      "narrative": null,
+      "content": "in the two-boson sector\nIn Chap. 6 we argued that a non-perturbative treatment of cutoﬀ/ lattice spacing eﬀects in an eﬀective\nframework is preferable but not practical. However, in the two-body sector with only contact interaction\nit is possible. In the following we give explicit expressions for the coupling constants ∆C0 and Cq2 which\ncancel the cutoﬀartifacts at O(a) and O(a3) in the T-matrix of the two-body sector. In general, we follow\nthe arguments of [112, 167]. The potential is written as\nV\n\u0010\np, p′\u0011\n= C + C2\n\u0010\np2 + p′2\u0011\n,\n(E.1)\nwhere p, p′ are the momenta of incoming and outgoing state",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-060",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bibliography",
+      "pageStart": 103,
+      "pageEnd": 111,
+      "target": "../sections/sec-060-bibliography.md",
+      "narrative": null,
+      "content": "[1]\nA. Deur, S. J. Brodsky, and G. F. de Téramond, Prog. Part. Nucl. Phys. 90 (2016) 1,\narXiv: 1604.08082 [hep-ph] (cit. on p. 2).\n[2]\nC. Gattringer and C. B. Lang, Lect. Notes Phys. 788 (2010) 1 (cit. on pp. 3, 22).\n[3]\nK. Symanzik, Nucl. Phys. B226 (1983) 187 (cit. on pp. 3, 7, 69).\n[4]\nK. Symanzik, Nucl. Phys. B226 (1983) 205 (cit. on pp. 3, 7, 69).\n[5]\nS. Aoki et al., Eur. Phys. J. C77 (2017) 112, arXiv: 1607.00299 [hep-lat] (cit. on p. 3).\n[6]\nS. R. Beane et al., Phys. Rev. Lett. 97 (2006) 012001, arXiv: hep-lat/0602010 [hep-lat]\n(cit. on p. 3).\n[7]\nS. R. Beane et al., Prog. Part. Nucl. P",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

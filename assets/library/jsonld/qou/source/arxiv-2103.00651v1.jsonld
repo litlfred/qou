@@ -1,0 +1,60 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2103.00651v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "On Concentration Inequalities for Vector-Valued Lipschitz Functions",
+  "contains": [
+    "library/arxiv-2103.00651v1/sections/sec-front-matter",
+    "library/arxiv-2103.00651v1/sections/sec-000",
+    "library/arxiv-2103.00651v1/sections/sec-001",
+    "library/arxiv-2103.00651v1/sections/sec-002",
+    "library/arxiv-2103.00651v1/sections/sec-003"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On Concentration Inequalities for Vector-Valued Lipschitz Functions — We derive two upper bounds for the probability of deviation of a vector-valued Lipschitz function of a collection of random\n\n**On Concentration Inequalities for Vector-Valued Lipschitz Functions**\n\n*Dimitrios Katselis*\n\n9 pp, 5 sections.\n\n**Abstract.** We derive two upper bounds for the probability of deviation of a vector-valued Lipschitz function of a collection of random variables from its expected value. The resulting upper bounds can be tighter than bounds obtained by a direct application of a classical theorem due to Bobkov and G¨otze.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries and Main Result; 3 Proof of Theorem 1 and Additional Results; 4 Example",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2103.00651&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2103.00651v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "2103.00651v1.pdf",
+    "source_sha256": "c5505d3e4891168ebe4b1af35e678043473268ac95640eb4df131a6c2f13b40d",
+    "pages": 9,
+    "arxiv": {
+      "id": "2103.00651",
+      "version": "1",
+      "primary_class": "math.PR",
+      "stamp_date": "28 Feb 2021"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

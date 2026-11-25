@@ -1,0 +1,464 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1203.6531v1",
+  "title": "arxiv-1203.6531v1",
+  "variant": "pdf",
+  "pages": 11,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Gröbner-Shirshov Basis and Reduced Words",
+      "number": "2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-gröbner-shirshov-basis-and-reduced-words"
+    },
+    {
+      "level": 1,
+      "title": "Counting Reduced Words",
+      "number": "3",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-counting-reduced-words"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 62,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "obner-shirshov",
+          "heading": false
+        },
+        {
+          "term": "reduced words",
+          "heading": false
+        },
+        {
+          "term": "buchberger-shirshov",
+          "heading": false
+        }
+      ],
+      "extract": "TRANSACTIONS OF THE AMERICAN MATHEMATICAL SOCIETY Volume 00, Number 0, Pages 000–000 S 0002-9947(XX)0000-0 GR¨OBNER-SHIRSHOV BASIS AND REDUCED WORDS FOR AFFINE WEYL GROUP f An EROL YILMAZ, CENAP ¨OZEL AND U ˇGUR USTAO ˇGLU Abstract. Using Buchberger-Shirshov Algorithm and Composition-Diamond lemma we obtain the reduced Gr¨obner-Shirshov bases of f An and classify all reduced words of the aﬃne Weyl group f An.",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-1203.6531v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1012,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gröbner-shirshov bases",
+          "heading": false
+        },
+        {
+          "term": "gröbner-shirshov basis",
+          "heading": false
+        },
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "semigroup relations",
+          "heading": false
+        },
+        {
+          "term": "buchberger-shirshov algorithm",
+          "heading": false
+        },
+        {
+          "term": "bokut",
+          "heading": false
+        },
+        {
+          "term": "subset langle",
+          "heading": false
+        },
+        {
+          "term": "monomial ordering",
+          "heading": false
+        }
+      ],
+      "extract": "Gröbner-Shirshov bases and normal form of the elements were already found for the Coxeter groups of type $A_n,B_n$ and $D_n$ in [@bokut1]. They also proposed a conjecture for the general form of Gröbner-Shirshov bases for all Coxeter groups. In [@chen], an example was given an to show that the conjecture is not true in general. The Gröbner-Shirshov bases of the other finite Coxeter groups are given in [@E1] and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-gröbner-shirshov-basis-and-reduced-words",
+      "number": "2",
+      "title": "Gröbner-Shirshov Basis and Reduced Words",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1903,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reduced words",
+          "heading": true
+        },
+        {
+          "term": "arranged word",
+          "heading": false
+        },
+        {
+          "term": "word starting",
+          "heading": false
+        },
+        {
+          "term": "rir",
+          "heading": false
+        },
+        {
+          "term": "q-p",
+          "heading": false
+        },
+        {
+          "term": "marked component",
+          "heading": false
+        },
+        {
+          "term": "quad leq",
+          "heading": false
+        },
+        {
+          "term": "ldots",
+          "heading": false
+        }
+      ],
+      "extract": "::: defn The affine Weyl group $\\widetilde{A_n}$ has a presentation with generators $S=\\{r_0,r_1, \\ldots,r_n\\}$ and defining relations $r_ir_i=1 \\quad 0 \\leq i \\leq n$ $r_ir_j=r_jr_i \\quad 0\\leq i < j-1 < n \\; \\mathrm{and} \\; (i,j) \\neq (0,n)$ $r_ir_{i+1}r_i=r_{i+1}r_ir_{i+1} \\quad 0 \\leq i \\leq n-1$ $r_0r_nr_0=r_nr_0r_n$. ::: Identifying each relation $u=v$ by a polynomial $u-v$, we define $f_{1}^{(i)}=r_ir_i-1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-counting-reduced-words",
+      "number": "3",
+      "title": "Counting Reduced Words",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1583,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reduced words",
+          "heading": true
+        },
+        {
+          "term": "reduced gröbner-shirshov",
+          "heading": false
+        },
+        {
+          "term": "word widehat",
+          "heading": false
+        },
+        {
+          "term": "arranged word",
+          "heading": false
+        },
+        {
+          "term": "connected partitions",
+          "heading": false
+        },
+        {
+          "term": "basic partitions",
+          "heading": false
+        },
+        {
+          "term": "rir",
+          "heading": false
+        },
+        {
+          "term": "gröbner-shirshov basis",
+          "heading": false
+        }
+      ],
+      "extract": "::: thm []{#reduced label=\"reduced\"} Let $\\widehat{w}=a_{i_{s}}a_{i_{s-1}}\\ldots a_{i_{1}}v^{(b_t)}$ where $a_{i_{j}}=r_{0}r_{nk_{j}}r_{nl_{j}}$.Then $a_{i_{j}}$'s are marked components of an arranged word $w=uv^{(b_t)}$ where $b_t=r_0r_{np}r_{1q}$ if and only if $k_{s}<k_{s-1}<\\ldots<k_{1}<p$ and $q<l_{1}<l_{2}<\\ldots<l_{s}<n$ ::: ::: proof *Proof.* By construction of arranged words, the marked components satisfy",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 302,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "obner-shirshov bases",
+          "heading": false
+        },
+        {
+          "term": "baysal university",
+          "heading": false
+        },
+        {
+          "term": "coxeter groups",
+          "heading": false
+        },
+        {
+          "term": "abant",
+          "heading": false
+        },
+        {
+          "term": "ibu",
+          "heading": false
+        },
+        {
+          "term": "bokut",
+          "heading": false
+        },
+        {
+          "term": "buchberger",
+          "heading": false
+        },
+        {
+          "term": "lie algebras",
+          "heading": false
+        }
+      ],
+      "extract": "[1] L.A. Bokut and L.S. Shiao, Gr¨obner-Shirshov bases for Coxeter groups, Comm. Algebra 29 (2001), 4305–4319. [2] L. A. Bokut, Imbeddings into Simple Associative Algebras, Algebra Logika 15 (1976), 117- 142. [3] L.A. Bokut, Unsolvability of the word problem, and subalgebras of ﬁnitely presented Lie algebras, Izv. Akad. Nauk. SSSR Ser. Mat., 36 (1972), 1173-1219. [4] G. M. Bergman,The Diamond Lemma for Ring Theory,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "reduced word",
+      "heading": false
+    },
+    {
+      "term": "reduced gröbner-shirshov",
+      "heading": true
+    },
+    {
+      "term": "arranged word",
+      "heading": false
+    },
+    {
+      "term": "gröbner-shirshov bases",
+      "heading": false
+    },
+    {
+      "term": "obner-shirshov bases",
+      "heading": false
+    },
+    {
+      "term": "gröbner-shirshov basis",
+      "heading": true
+    },
+    {
+      "term": "affine weyl",
+      "heading": false
+    },
+    {
+      "term": "word widehat",
+      "heading": false
+    },
+    {
+      "term": "leading word",
+      "heading": false
+    },
+    {
+      "term": "word starting",
+      "heading": false
+    },
+    {
+      "term": "group widetilde",
+      "heading": false
+    },
+    {
+      "term": "composition-diamond lemma",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "images": [
+    {
+      "id": "img-p007-1",
+      "file": "images/img-p007-1.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 4,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 5,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p10); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 5 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1203.6531v1"
+  }
+}

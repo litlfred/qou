@@ -1,0 +1,365 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0203206v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0203206v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Pontryagin's duality theory for locally compact abelian groups and the Tannaka-Krein theory for compact groups are two major results in the theory of harmonic analysis on topological groups [@HR]. The Pontryagin duality theorem is a statement concerning characters, whereas the Tannaka-Krein theorem is a statement involving irreducible unitary representations. These two notions coincide whenever the group is both abelian and compact.\n\nPontryagin's theorem can be stated more generally for locally compact quantum groups [@KV1], a notion evolving out of Kac algebras [@ES] and compact matrix pseudo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203206v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0203206v1  [math.QA]  20 Mar 2002\nRepresentations of Algebraic Quantum Groups and\nReconstruction Theorems for Tensor Categories\nM. M¨uger, J. E. Roberts and L. Tuset\nOctober 24, 2018\nAbstract\nWe give a pedagogical survey of those aspects of the abstract representation theory of quantum groups\nwhich are related to the Tannaka-Krein reconstruction problem. We show that every concrete semisimple\ntensor ∗-category with conjugates is equivalent to the category of ﬁnite dimensional non-degenerate ∗-\nrepresentations of a discrete algebraic quantum group.\nWorking in the self-dual framework",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203206v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-preliminaries.md",
+      "narrative": null,
+      "content": "Concerning the former we are quite brief, since much of this material is almost universally known. Concerning\nthe latter we focus in particular on the discrete and compact cases and discuss the examples related to groups.\nIn Section 3 we treat the representation and corepresentation theory of discrete and compact aqg, respectively,\nfrom a tensor ∗-category point of view. To this end, we recall the universal corepresentation due to Kustermans,\nand we discuss conjugates in these categories. The special case of cocommutative discrete aqg is considered in\nSection 4. Section 5 is the heart of this",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203206v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tensor Categories",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-21-tensor-categories.md",
+      "narrative": null,
+      "content": "[]{#ss-categ label=\"ss-categ\"} For the definitions of categories, functors and natural transformations we refer, e.g., to [@cwm]. In this subsection we briefly recall some of the less standard notions of category theory which will be needed here, others will be introduced as we proceed. We may occasionally say 'arrows' instead of 'morphisms' in order to avoid confusion with algebra homomorphisms. All categories which we consider are essentially small, i.e. equivalent to a small category. We mostly speak of 'tensor categories' rather than 'monoidal categories' but cannot avoid the adjective 'mo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203206v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algebraic Quantum Groups",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-22-algebraic-quantum-groups.md",
+      "narrative": null,
+      "content": "In this subsection we briefly outline those aspects of the theory of aqg that will be needed in the sequel. For the details and proofs, see the original references [@VD2; @VD].\n\nEvery algebra will be a (not necessarily unital) associative algebra over the complex field ${\\mathbb C}$. The identity map on a set $V$ will be denoted by $\\iota$. If $V$ and $W$ are linear spaces, $V'$ denotes the linear space of linear functionals on $V$ and $V \\otimes W$ denotes the linear space tensor product of $V$ and $W$. The *flip map* $\\sigma$ from ${V \\otimes W}$ to ${W \\otimes V}$ is the linear map sending",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203206v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discrete and Compact Case",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-23-discrete-and-compact-case.md",
+      "narrative": null,
+      "content": "The following proposition is well known and easy to prove.\n\n::: prop\n[]{#Berkeley label=\"Berkeley\"} Let $I$ be a set and $H_i, i\\in I$ finite dimensional Hilbert spaces. Consider the algebraic direct sum $$A=\\bigoplus_{i\\in I} \\ B(H_i)$$\n\n1.  $A$ is a $*$-algebra with the usual $*$-operation on $B(H_i)$.\n\n2.  $A$ is unital iff $I$ is finite.\n\n3.  The canonical embedding maps $\\iota_i: B(H_i)\\hookrightarrow A$ and projections $p_i: A\\rightarrow B(H_i)$ are $*$-homomorphisms.\n\n4.  Let $M(A)$ be the multiplier algebra and $L: A\\rightarrow M(A)$ the canonical embedding map. There exists a unique i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203206v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-24-examples.md",
+      "narrative": null,
+      "content": "The examples discussed below are treated in depth in [@ES]. The translation into the framework of aqgis straightforward and is recommended as an exercise.\n\nThroughout this section let $\\Gamma$ denote a discrete group with unit $e$. Consider the group algebra ${\\mathbb C}\\Gamma$ and the algebra $C_c (\\Gamma )$ of finitely supported complex valued functions with the usual pointwise operations. They are both non-degenerate $*$-algebras. The group algebra has unit $\\delta_e$, whereas $C_c (\\Gamma )$ has a unit iff $\\Gamma$ is finite.\n\nIn the group algebra case $({\\mathbb C}\\Gamma, \\Delta)$ the com",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203206v1/blocks/prop-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "prop-sec-006-01.md",
+      "narrative": null,
+      "content": "Let (A, ∆) be an aqg with analytic extension (Ar, ∆r). Then 1. (A, ∆) is compact and commutative iﬀthere exists a compact group G such that (Ar, ∆r) ∼= (C(G), ∆r). 2. (A, ∆) is discrete and cocommutative iﬀthere exists a compact group G such that (Ar, ∆r) ∼= (C∗ r (G), ∆r). Again these two cases are dual to each other. Here C(G) denotes the C*-algebra of continuous functions on G with uniform norm, whereas C∗ r (G) denotes the reduced group C*-algebra of G. Since a compact group G is amenable, C∗ r (G) coincides with the universal group C*-algebra C∗(G), and therefore, as we shall see very exp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203206v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Representation Theory",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-3-representation-theory.md",
+      "narrative": null,
+      "content": "we mention that the commutative-compact case can be described in terms of the algebra of regular functions\non a compact group, and we make here an analytic statement concerning both cases.\nProposition 2.18 Let (A, ∆) be an aqg with analytic extension (Ar, ∆r). Then\n1. (A, ∆) is compact and commutative iﬀthere exists a compact group G such that (Ar, ∆r) ∼= (C(G), ∆r).\n2. (A, ∆) is discrete and cocommutative iﬀthere exists a compact group G such that (Ar, ∆r) ∼= (C∗\nr (G), ∆r).\nAgain these two cases are dual to each other. Here C(G) denotes the C*-algebra of continuous functions on\nG with unifor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203206v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Universal Corepresentation",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-007-31-the-universal-corepresentation.md",
+      "narrative": null,
+      "content": "Throughout this section $(A,\\Delta)$ stands for an arbitrary aqg and $B$ denotes a $*$-algebra. We recall the universal corepresentation $U$ of $(A,\\Delta)$ and discuss its various properties [@ku-e].\n\n::: defin\nA corepresentation of $(A,\\Delta)$ on $B$ is an element $V\\in M(A\\otimes B)$ such that $(\\Delta\\otimes \\iota )V=V_{13}V_{23}$.\n:::\n\n::: prop\nSuppose $V$ is a corepresentation of $(A,\\Delta)$ on $B$. Then the following are equivalent:\n\n1.  $V$ is invertible in $M(A\\otimes B)$ with $V^{-1}=(S\\otimes\\iota )V$.\n\n2.  $(\\varepsilon\\otimes\\iota )V=1$.\n\n3.  $V(A\\otimes B)=A\\otimes B =(A\\otimes",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203206v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Representations vs. Corepresentations as Tensor $*$-Categories",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "../sections/sec-008-32-representations-vs-corepresentations-as-tenso.md",
+      "narrative": null,
+      "content": "We now proceed to establish the correspondence between representations of an aqg $(A,\\Delta)$ and corepresentations of $(\\hat{A},\\hat{\\Delta})$, restricting ourselves to finite dimensional Hilbert spaces. For homomorphisms $\\pi: A\\rightarrow\\mathrm{End}K$ there are two different notions of non-degeneracy which, fortunately, are equivalent for $K$ finite dimensional.\n\n::: lem\n[]{#l-non-deg label=\"l-non-deg\"} Let $A$ be an algebra and $K$ a finite dimensional vector space. For a homomorphism $\\pi: A\\rightarrow\\mathrm{End}\\,K$ the conditions $\\pi(A)\\mathrm{End}\\,K=\\mathrm{End}\\,K$ and $\\pi(A)K=K$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203206v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conjugates for Representations and Corepresentations",
+      "pageStart": 17,
+      "pageEnd": 20,
+      "target": "../sections/sec-009-33-conjugates-for-representations-and-corepresen.md",
+      "narrative": null,
+      "content": "Suppose that $(A,\\Delta)$ is a discrete aqg with counit $\\varepsilon$ and coinverse $S$. We now show that the semisimple tensor $*$-categories $\\mathrm{Rep}_f (A,\\Delta)$ and $\\mathrm{Corep}_f (\\hat{A},\\hat{\\Delta} )$ have conjugates, and provide a conjugate object for every non-zero object.\n\nSuppose $\\pi$ is a non-zero non-degenerate $*$-representation on the finite dimensional Hilbert space $K$. Let $f\\in M(A)$ be as in Theorem [\\[t-disc2\\]](#t-disc2){reference-type=\"ref\" reference=\"t-disc2\"} and consider the positive operator $\\pi(f^{-1})\\in B(K)$. Pick any Hilbert space $\\overline{K}$ and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203206v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cocommutative Algebraic Quantum Groups vs. Compact Groups",
+      "pageStart": 20,
+      "pageEnd": 25,
+      "target": "../sections/sec-010-4-cocommutative-algebraic-quantum-groups-vs-comp.md",
+      "narrative": null,
+      "content": "::: defin\n[]{#d-intrins label=\"d-intrins\"} Let $(A,\\Delta)$ be an aqg. The intrinsic group $G$ of $(A,\\Delta)$ is the following subgroup of the unitaries in the multiplier algebra $M(A)$: $$G=\\{g\\in M(A)\\ |\\ \\Delta g=g\\otimes g,\\ g^* g =gg^* =1\\}.$$\n:::\n\nSince the extended comultiplication $\\Delta:M(A)\\rightarrow M(A\\otimes A)$ is a unital $*$-homomorphism and the algebra $M(A)$ is associative, the set $G$ is indeed a group. It is easy to see that $\\varepsilon(g)=1$ and $S(g)=g^{-1}=g^*$, for any $g\\in G$.\n\n::: rema\nIt can be shown that any bounded group-like element of $M(A)$ is automatically",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203206v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From Concrete Tensor Categories to Discrete Quantum Groups",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-011-5-from-concrete-tensor-categories-to-discrete-qu.md",
+      "narrative": null,
+      "content": "The strategy we adopt in this section was been pursued by J.E. Roberts [@ro] in the discrete Kac algebra case, and has then been adapted to the more algebraic setting of discrete aqg $(A, \\Delta)$ by the authors.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203206v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Natural Transformations of $*$-Preserving Functors",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "../sections/sec-012-51-natural-transformations-of--preserving-functo.md",
+      "narrative": null,
+      "content": "[]{#ss-nattrf label=\"ss-nattrf\"}\n\n::: prop\n[]{#p-defprod label=\"p-defprod\"} Let ${\\cal D}, {\\cal K}$ be $*$-categories and $F: {\\cal D}\\rightarrow{\\cal K}$ a $*$-preserving functor. Let $\\mathrm{Nat}\\,F$ be the set of all natural transformations from $F$ to itself, viz. $$\\mathrm{Nat}\\,F= \\{ b=(b_X \\in \\mathrm{End}\\,F(X), \\ X\\in{\\cal D} ) \\ \\ | \\ \\ \n   F(s)\\,\\circ\\,b_X=b_Y \\,\\circ\\,F(s) \\ \\ \\forall s: X\\rightarrow Y\\}.$$ Then with the following pointwise operations $\\mathrm{Nat}\\,F$ is a unital $*$-algebra: $$\\begin{aligned}\n   (\\lambda b +\\lambda' b')_X &=& \\lambda b_X + \\lambda' b'_X,  \\\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203206v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Concrete Tensor $*$-Categories and Discrete Quantum Semigroups",
+      "pageStart": 28,
+      "pageEnd": 32,
+      "target": "../sections/sec-013-52-concrete-tensor--categories-and-discrete-quan.md",
+      "narrative": null,
+      "content": "From now on, ${\\cal C}$ will be a semisimple strict tensor $*$-category. (As discussed in the Introduction, the strictness assumption does not entail a loss of generality.) We will introduce other requirements as we proceed. By Theorem [\\[t-equiv\\]](#t-equiv){reference-type=\"ref\" reference=\"t-equiv\"} we have associated a $*$-algebra $A$ to a $*$-preserving functor $E: {\\cal C}\\rightarrow{\\cal H}$. The aim of this subsection is to endow $A$ with the structure of a discrete aqg under suitable conditions on ${\\cal C}$ and $E$. To bring out the special rôle of the target category ${\\cal H}$, we wo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203206v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conjugates and Antipodes: Discrete Quantum Groups",
+      "pageStart": 32,
+      "pageEnd": 36,
+      "target": "../sections/sec-014-53-conjugates-and-antipodes-discrete-quantum-gro.md",
+      "narrative": null,
+      "content": "We have already seen that the concrete semisimple tensor $*$-categories $\\mathrm{Rep}_f (A,\\Delta)$ and $\\mathrm{Corep}_f (\\hat{A},\\hat{\\Delta})$ come with conjugates whenever $(A,\\Delta)$ is a discrete aqg. In this section we prove the converse. We start off with a couple of preparatory results.\n\n::: lem\n[]{#l-inclusions label=\"l-inclusions\"} Let ${\\cal C}$ be a semisimple tensor $*$-category with conjugates and let $E :{\\cal C}\\rightarrow{\\cal H}$ be an embedding functor. Then the coproduct $\\Delta:A\\rightarrow M(A\\otimes A)$ for the discrete quantum semigroup $(A,\\Delta)$ given by Propositi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203206v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Non-$*$ Case",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-015-54-the-non--case.md",
+      "narrative": null,
+      "content": "Our starting point in this paper is a tensor $*$-category with direct sums, subobjects, conjugates and irreducible unit. From it we (re)construct a multiplier Hopf $*$-algebra with positive left invariant functional. Such algebras were called algebraic quantum groups (aqg) by Van Daele, who now prefers to speak of 'multiplier Hopf $*$-algebras with integrals'. We stick to 'algebraic quantum groups' mainly for the sake of definiteness and brevity. When $A$ is no longer a $*$-algebra and the invariant functional is required to be faithful rather than positive ($\\varphi(ab)=0$ for all $a\\in A$ im",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203206v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Concrete Braided and Symmetric Categories",
+      "pageStart": 37,
+      "pageEnd": 43,
+      "target": "../sections/sec-016-6-concrete-braided-and-symmetric-categories.md",
+      "narrative": null,
+      "content": "[]{#s-braid label=\"s-braid\"} In this section we prove that a braiding for the concrete tensor $*$-category ${\\cal C}$ gives rise to an $R$-matrix for the associated aqg $(A,\\Delta)$. If ${\\cal C}$ is symmetric and the embedding functor $E$ is *symmetric* monoidal then we may conclude that $(A,\\Delta)$ is cocommutative.\n\nThe flip automorphism $\\sigma$ of $A\\otimes A$ defined by $\\sigma(a\\otimes b)=b\\otimes a$ is a non-degenerate $*$-homomorphism. Thus there exists a unique extension to an involutive $*$-automorphism of $M(A\\otimes A)$ which we denote by the same symbol.\n\n::: defin\n[]{#d-quasit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

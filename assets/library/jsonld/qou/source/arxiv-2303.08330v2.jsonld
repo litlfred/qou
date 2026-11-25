@@ -1,0 +1,64 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2303.08330v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2303.08330v2",
+  "contains": [
+    "library/arxiv-2303.08330v2/sections/sec-000",
+    "library/arxiv-2303.08330v2/sections/sec-001",
+    "library/arxiv-2303.08330v2/sections/sec-002",
+    "library/arxiv-2303.08330v2/sections/sec-003",
+    "library/arxiv-2303.08330v2/sections/sec-004",
+    "library/arxiv-2303.08330v2/sections/sec-005",
+    "library/arxiv-2303.08330v2/sections/sec-006",
+    "library/arxiv-2303.08330v2/sections/sec-007",
+    "library/arxiv-2303.08330v2/sections/sec-008",
+    "library/arxiv-2303.08330v2/sections/sec-009",
+    "library/arxiv-2303.08330v2/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "A Cable Knot and BPS-Series II John Chae — This is a companion paper to earlier work of the author, which genera lizes to an inﬁnite family of (2 , 2w + 1)-cabling of the ﬁgure eight knot ( |w| > 3)\n\n**A Cable Knot and BPS-Series II John Chae**\n\n*University of California Davis, 1 Shields Ave, Davis, CA, 95616, USA*\n\n17 pp, 11 sections.\n\n**Abstract.** This is a companion paper to earlier work of the author, which genera lizes to an inﬁnite family of (2 , 2w + 1)-cabling of the ﬁgure eight knot ( |w| > 3) and proposes general formulas for the two-variable series invariant of the family of the cable knots . The formulas provide an insight into the cabling operation. We verify the conjecture throug h explicit examples using the recursion method, which also provide a strong evidence for the q-holonomic property of the series invariant. This result paves a road for computation of the WR T invariant of a 3-manifold obtained from a Dehn surgery on the cable knots via a certain q-series. We also analyze and conjecture formulas for (3 , 3w + 1)-cabling (|w| > 3).\n\n**Outline.** Introduction; Examples; Example 1; Example 2; Dehn surgery and; Example 3; Examples; Example 1; Example 2; Appendix; The colored Jones polynomial of a cable knot",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2303.08330&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2303.08330v2",
+    "title_source": "slug",
+    "source_file": "2303.08330v2.pdf",
+    "source_sha256": "94981fa0a792b3fab2d0d5f6c2376a6de076a4198f4bff31c908e20e376d9db0",
+    "pages": 17,
+    "arxiv": {
+      "id": "2303.08330",
+      "version": "2",
+      "primary_class": "math.GT",
+      "stamp_date": "9 Jan 2024"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

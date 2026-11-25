@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1807.01453v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Standard Model Extension with Flipped Generations",
+      "dcterms:creator": [
+        "Alvaradoa, Carlos",
+        "b",
+        "Arandac, Alfredo"
+      ],
+      "dcterms:issued": "D:20181031",
+      "dcterms:identifier": "https://arxiv.org/abs/1807.01453",
+      "dcterms:abstract": "An extension of the Standard Model is presented that leads to the possible existence of new gauge bosons with masses in the range of a few TeV. Due to the fact that their couplings to Standard Model fermions are strongly suppressed, it is possible for them to be hidden from current searches. The model contains additional generations of fermions with quantum numbers resembling those of the Standard Model fermion generations but with a twist: their charge assignments are such that their electric charges and chiralities are ﬂipped with respect to those of their corresponding Standard Model counterparts. This feature provides a way to obtain potential dark matter candidates and the interesting possibility for a Lepton number conserving dimension-ﬁve operator for Dirac neutrino masses. The model implications associated to electroweak precision parameters, ﬂavor changing neutral currents, and diphoton rate contributions are brieﬂy discussed. The general assumptions of this set up are also used to sketch a couple of variants of the model with peculiar features that could motivate further study.",
+      "dcterms:source": "library/arxiv-1807.01453v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1807.01453v2"
+    }
+  ]
+}

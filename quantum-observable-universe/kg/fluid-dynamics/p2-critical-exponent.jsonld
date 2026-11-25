@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-critical-exponent",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:critical-exponent",
+  "kind": "conjecture",
+  "title": "Critical exponent of the enstrophy divergence at $q = 1$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-q-ns-nonlinear-uniqueness",
+    "papers/quantum-observable-universe/blocks/conj-regularity-breakdown"
+  ],
+  "tags": [
+    "critical-exponent",
+    "enstrophy",
+    "phase-transition",
+    "scaling"
+  ],
+  "leanRef": "qou:QOU.FluidDynamics.CriticalExponent",
+  "text": "p2-critical-exponent.md",
+  "leanSource": "p2-critical-exponent.lean",
+  "provenance": "authored"
+}

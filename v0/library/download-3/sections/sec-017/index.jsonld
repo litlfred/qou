@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/download-3/sections/sec-017",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Operations on the Cyclic Complex",
+  "pageStart": 34,
+  "pageEnd": 37,
+  "contains": [
+    "library/download-3/blocks/prose-sec-017"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/download-3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/download-3/manifest.jsonld",
+  "provenance": "ingested"
+}

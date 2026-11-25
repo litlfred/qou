@@ -1,0 +1,993 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0604057v2",
+  "title": "arxiv-math-0604057v2",
+  "variant": "pdf",
+  "pages": 19,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Terminology and Notation",
+      "number": "2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-terminology-and-notation"
+    },
+    {
+      "level": 2,
+      "title": "2.1.",
+      "number": null,
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21"
+    },
+    {
+      "level": 2,
+      "title": "2.2.",
+      "number": null,
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22"
+    },
+    {
+      "level": 2,
+      "title": "2.3.",
+      "number": null,
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23"
+    },
+    {
+      "level": 2,
+      "title": "2.4.",
+      "number": null,
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-24"
+    },
+    {
+      "level": 1,
+      "title": "A-polynomial, regulator and K2 of a curve",
+      "number": "3",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-3-a-polynomial-regulator-and-k2-of-a-curve"
+    },
+    {
+      "level": 2,
+      "title": "3.1.",
+      "number": null,
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-31"
+    },
+    {
+      "level": 2,
+      "title": "The regulator map of K2",
+      "number": "3.2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-32-the-regulator-map-of-k2"
+    },
+    {
+      "level": 2,
+      "title": "3.3.",
+      "number": null,
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-33"
+    },
+    {
+      "level": 1,
+      "title": "SL2(C) Character Variety and a New Knot Invariant",
+      "number": "4",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-4-sl2c-character-variety-and-a-new-knot-invarian"
+    },
+    {
+      "level": 2,
+      "title": "The curve of characters",
+      "number": "4.1",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-41-the-curve-of-characters"
+    },
+    {
+      "level": 2,
+      "title": "Invariant and Dehn Surgery of Hyperbolic Knots",
+      "number": "4.2",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-42-invariant-and-dehn-surgery-of-hyperbolic-knot"
+    },
+    {
+      "level": 1,
+      "title": "An Example: The Figure Eight Knot",
+      "number": "5",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-5-an-example-the-figure-eight-knot"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 157,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "character variety",
+          "heading": false
+        },
+        {
+          "term": "line bundle",
+          "heading": false
+        },
+        {
+          "term": "ﬂat line",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic knot",
+          "heading": false
+        },
+        {
+          "term": "qingxue",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0604057v2 [math.GT] 17 Apr 2006 VOLUME CONJECTURE, REGULATOR AND SL2(C)-CHARACTER VARIETY OF A KNOT WEIPING LI AND QINGXUE WANG Abstract. In this paper, by using the regulator map of Beilinson-Deligne, we show that the quan- tization condition posed by Gukov is true for the SL2(C) character variety of the hyperbolic knot in S3. Furthermore, we prove that the corresponding C∗-valued 1-form is a secondary",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0604057v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 673,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "culler-shalen norm",
+          "heading": false
+        },
+        {
+          "term": "flat line",
+          "heading": false
+        },
+        {
+          "term": "line bundle",
+          "heading": false
+        },
+        {
+          "term": "character variety",
+          "heading": false
+        },
+        {
+          "term": "chern-simons class",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic knot",
+          "heading": false
+        },
+        {
+          "term": "whole character",
+          "heading": false
+        },
+        {
+          "term": "algebro-geometric invariant",
+          "heading": false
+        }
+      ],
+      "extract": "It is a very important question in the knot theory to find the geometric and topological interpretation of the Jones polynomial of a knot. Observed by Kashaev [@Kas], H. Murakami and J. Murakami [@MM], the asymptotic rate of (N-colored) Jones polynomial is related to the volume of the hyperbolic knot complement. It is known as the Volume conjecture. Following Witten's $SU(2)$ topological quantum field theory, Gukov",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-terminology-and-notation",
+      "number": "2",
+      "title": "Terminology and Notation",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21",
+      "number": null,
+      "title": "2.1.",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 117,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hom",
+          "heading": false
+        },
+        {
+          "term": "tubular",
+          "heading": false
+        },
+        {
+          "term": "character",
+          "heading": false
+        }
+      ],
+      "extract": "Let K be a knot in S3 and MK its complement. That is, MK = S3−NK where NK is the open tubular neighborhood of K in S3. MK is a compact 3-manifold with boundary ∂MK = T 2 a torus. Denote by R(MK) = Hom(π1(MK), SL2(C)) and R(∂MK) = Hom(π1(∂MK), SL2(C)). By [CS], they are aﬃne algebraic sets over the complex numbers C and so are the corresponding character varieties X(MK) and X(∂MK). We also have the canonical",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22",
+      "number": null,
+      "title": "2.2.",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 14,
+      "summary": null,
+      "keywords": [],
+      "extract": "Throughout this paper, for a matrix A ∈SL2(C), we denote by σ(A) its trace.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-004-23",
+      "number": null,
+      "title": "2.3.",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 99,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "subvariety",
+          "heading": false
+        },
+        {
+          "term": "longitude",
+          "heading": false
+        },
+        {
+          "term": "assign",
+          "heading": false
+        }
+      ],
+      "extract": "Since π1(∂MK) = Z ⊕Z, we shall ﬁx two oriented simple curves µ and λ as its generators. They are called the meridian and longitude respectively. Let RD be the subvariety of R(∂MK) consisting of the diagonal representations. Then RD is isomorphic to C∗× C∗. Indeed, for ρ ∈RD, we obtain ρ(λ) = \u0014 l 0 0 l−1 \u0015 and ρ(µ) = \u0014 m 0 0 m−1 \u0015 , then we assign the pair (l, m) to ρ. Clearly this is an isomorphism. We shall denote",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24",
+      "number": null,
+      "title": "2.4.",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 170,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "a-polynomial",
+          "heading": false
+        },
+        {
+          "term": "ccgls",
+          "heading": false
+        },
+        {
+          "term": "closure",
+          "heading": false
+        }
+      ],
+      "extract": "Next we recall the deﬁnition of the A-polynomial of K which was introduced in [CCGLS]. Denote by X′(MK) the union of the irreducible components Y ′ of X(MK) such that the closure r(Y ′) in X(∂MK) is 1-dimensional. For each component Z′ of X′(MK), denote by Z the curve t−1 ∆(r(Y ′)) ⊂RD. We deﬁne DK to be the union of the curves Z as Z′ varies over all components of X′(MK). Via the above identiﬁcation of RD with C∗×",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-3-a-polynomial-regulator-and-k2-of-a-curve",
+      "number": "3",
+      "title": "A-polynomial, regulator and K2 of a curve",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 91,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "regulator",
+          "heading": true
+        },
+        {
+          "term": "a-polynomial",
+          "heading": true
+        },
+        {
+          "term": "curve",
+          "heading": true
+        }
+      ],
+      "extract": "3. A-polynomial, regulator and K2 of a curve In this section, we brieﬂy recall the generalized volume conjecture. Using the regulator map of a curve, we show that the form r(l, m) = ξ(l, m) + iη(l, m) over the 1-dimensional character variety Yh has exact imaginary part and the rationality of the real part. This provides an aﬃrmative answer to Gukov’s quantization over Yh. Moreover, dr(l, m) = dl l ∧dm m = 2πiC1(L) =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-31",
+      "number": null,
+      "title": "3.1.",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 615,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "secondary class",
+          "heading": false
+        },
+        {
+          "term": "guk",
+          "heading": false
+        },
+        {
+          "term": "chern class",
+          "heading": false
+        },
+        {
+          "term": "volume conjecture",
+          "heading": false
+        },
+        {
+          "term": "zero locus",
+          "heading": false
+        },
+        {
+          "term": "generalized volume",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst chern",
+          "heading": false
+        },
+        {
+          "term": "line bundle",
+          "heading": false
+        }
+      ],
+      "extract": "Let DK be the zero locus of the A-polynomial A(l, m) in C2. Let y0 ∈DK correspond to the character of the representation of the hyperbolic structure on MK and m(y0) = 1. For a path c in DK with the initial point y0 and endpoint (l, m), the following quantities are deﬁned in [Guk, (5.2)]: (3.1) V ol(l, m) = V ol(K) + 2 Z c [−log |l|d(arg m) + log |m|d(arg l)], (3.2) CS(l, m) = CS(K) −1 π2 Z c [log |m|d log |l| + (arg",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-32-the-regulator-map-of-k2",
+      "number": "3.2",
+      "title": "The regulator map of K2",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 481,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "line bundle",
+          "heading": false
+        },
+        {
+          "term": "tame symbol",
+          "heading": false
+        },
+        {
+          "term": "steinberg relation",
+          "heading": false
+        },
+        {
+          "term": "meromorphic functions",
+          "heading": false
+        },
+        {
+          "term": "regulator",
+          "heading": true
+        },
+        {
+          "term": "base point",
+          "heading": false
+        },
+        {
+          "term": "resp",
+          "heading": false
+        },
+        {
+          "term": "log",
+          "heading": false
+        }
+      ],
+      "extract": "surface. Let f, g be two meromorphic functions on X. Denote by S(f) (resp. S(g)) the set of zeros and poles of f (resp. g). Notice that S(f) ∪S(g) is a ﬁnite set. Put X′ = X \\ (S(f) ∪S(g)). Following Beilinson [Bei], see also [De], we deﬁne an element r(f, g) ∈H1(X′, C∗), equivalently, as an element of Hom(π1(X′), C∗): for a loop γ in X′ with a distinguished base point t0 ∈X′, (3.6) r(f, g)(γ) = exp ( 1 2πi( Z γ log",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-33",
+      "number": null,
+      "title": "3.3.",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 997,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "darg log",
+          "heading": false
+        },
+        {
+          "term": "ove darg",
+          "heading": false
+        },
+        {
+          "term": "log arg",
+          "heading": false
+        },
+        {
+          "term": "dlog",
+          "heading": false
+        },
+        {
+          "term": "volume conjecture",
+          "heading": false
+        },
+        {
+          "term": "eee",
+          "heading": false
+        },
+        {
+          "term": "dare",
+          "heading": false
+        },
+        {
+          "term": "iim",
+          "heading": false
+        }
+      ],
+      "extract": "Let Y be an irreducible component of DK, the zero locus of the A-polynomial A(l, m). Denote by eY a smooth projective model of Y . Then their ﬁelds of rational functions are isomorphic, C(Y ) ∼= C(eY ). We have the following. Proposition 3.2. The element {l, m} ∈K2(C(Y )) is a torsion element. Proof. By [CCGLS, Proposition 2.2, 4.1], there is a ﬁnite ﬁeld extension F of C(Y ) such that {l, m} ∈K2(F) is of order at",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-4-sl2c-character-variety-and-a-new-knot-invarian",
+      "number": "4",
+      "title": "SL2(C) Character Variety and a New Knot Invariant",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 73,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyperbolic",
+          "heading": false
+        },
+        {
+          "term": "variety",
+          "heading": true
+        },
+        {
+          "term": "rho",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, let $K$ be a hyperbolic knot in $S^3$ and $M_K$ its complement. Then $M_K$ is a hyperbolic $3$-manifold of finite volume with boundary $\\partial M_k$ a torus. Since $M_K$ is hyperbolic, there is a discrete faithful representation $\\rho_0\\in R(M_K)$ corresponding to its hyperbolic structure. We denote by $R_0$ an irreducible component of $R(M_K)$ containing $\\rho_0$. Let $X_0=t(R_0)$. By [@CS],",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-41-the-curve-of-characters",
+      "number": "4.1",
+      "title": "The curve of characters",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1032,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbb times",
+          "heading": false
+        },
+        {
+          "term": "mathbb rightarrow",
+          "heading": false
+        },
+        {
+          "term": "subset mathbb",
+          "heading": false
+        },
+        {
+          "term": "irreducible affine",
+          "heading": false
+        },
+        {
+          "term": "affine coordinate",
+          "heading": false
+        },
+        {
+          "term": "mathbb defined",
+          "heading": false
+        },
+        {
+          "term": "dimensional component",
+          "heading": false
+        },
+        {
+          "term": "affine curve",
+          "heading": false
+        }
+      ],
+      "extract": "In this subsection, we give some elementary properties about the character varieties and its component $D_0$. Since $\\partial M_K$ is a torus, we identify $R(\\partial M_K)$ with the set $\\{(A,B)|A,B\\in SL_2(\\mathbb{C}), AB=BA\\}$, where $A=\\rho(\\mu)$, $B=\\rho(\\lambda)$ for $\\rho$ a representation of $\\pi_1(\\partial M_K)$ in $SL_2(\\mathbb{C})$. As in Section $2.3$, $R_{D}\\subset R(\\partial M_K)$ is the subvariety",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-42-invariant-and-dehn-surgery-of-hyperbolic-knot",
+      "number": "4.2",
+      "title": "Invariant and Dehn Surgery of Hyperbolic Knots",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2159,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dehn surgery",
+          "heading": true
+        },
+        {
+          "term": "chi rho",
+          "heading": false
+        },
+        {
+          "term": "gamma prime",
+          "heading": false
+        },
+        {
+          "term": "deg gamma",
+          "heading": false
+        },
+        {
+          "term": "representation rho",
+          "heading": false
+        },
+        {
+          "term": "character chi",
+          "heading": false
+        },
+        {
+          "term": "widehat lambda",
+          "heading": false
+        },
+        {
+          "term": "intersection multiplicity",
+          "heading": false
+        }
+      ],
+      "extract": "In this subsection, we define an algebro-geometric invariant of the $3$-manifolds $K(p/q)$ resulting from the $(p,q)$ Dehn surgery along a hyperbolic knot complement in $S^3$. A Casson type $SL_2(\\mathbb{C})$ invariant for $K(p/q)$ is also established. Let $A_0(m,l)$ be the defining equation of the closure of the affine curve $D_0$ in $\\mathbb{C}\\times \\mathbb{C}$. We also require that it has no repeated factors. It",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-5-an-example-the-figure-eight-knot",
+      "number": "5",
+      "title": "An Example: The Figure Eight Knot",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3132,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alpha lambda",
+          "heading": false
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "rho sqrt",
+          "heading": false
+        },
+        {
+          "term": "gamma alpha",
+          "heading": false
+        },
+        {
+          "term": "split sigma",
+          "heading": false
+        },
+        {
+          "term": "cha label",
+          "heading": false
+        },
+        {
+          "term": "frac partial",
+          "heading": false
+        },
+        {
+          "term": "delta alpha",
+          "heading": false
+        }
+      ],
+      "extract": "Throughout this section, we shall denote by $M$ the complement of the figure-eight knot in $S^3$. we compute its character variety and give some applications. It is well-known that $\\pi_1(M)$ is given by two generators and one relation: $$\\label{8gp} \\pi_1(M)=<\\alpha,\\beta|R(\\alpha,\\beta)>,\\; R(\\alpha,\\beta)=\\beta^{-1}\\alpha^{-1}\\beta\\alpha\\beta^{-1}\\alpha\\beta\\alpha^{-1}\\beta^{-1}\\alpha,$$ where $\\alpha$, $\\beta$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 603,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "contemporary math",
+          "heading": false
+        },
+        {
+          "term": "boyer",
+          "heading": false
+        },
+        {
+          "term": "elsevier press",
+          "heading": false
+        },
+        {
+          "term": "oklahoma state",
+          "heading": false
+        },
+        {
+          "term": "dehn surgery",
+          "heading": false
+        },
+        {
+          "term": "character varieties",
+          "heading": false
+        },
+        {
+          "term": "lecture notes",
+          "heading": false
+        },
+        {
+          "term": "algebraic k-theory",
+          "heading": false
+        }
+      ],
+      "extract": "[BW] Brittenham, M., Wu, Y-Q., The classiﬁcation of exceptional Dehn surgeries on 2-bridge knots, Comm. Anal. Geom. 9 (2001), no. 1, 97–113. [Bei] Beilinson, A., Higher regulators and values of L-functions of curves, Funktsional. Anal. i Prilozhen. 14 (1980), no. 2, 46–47. [Bl] Bloch, S., The dilogarithm and extensions of Lie algebras, Algebraic K-theory, Evanston 1980, Lecture Notes in Math., 854, 1-23, Springer,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "character variety",
+      "heading": true
+    },
+    {
+      "term": "character chi",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic knot",
+      "heading": false
+    },
+    {
+      "term": "chi rho",
+      "heading": false
+    },
+    {
+      "term": "character varieties",
+      "heading": false
+    },
+    {
+      "term": "affine variety",
+      "heading": false
+    },
+    {
+      "term": "representation rho",
+      "heading": false
+    },
+    {
+      "term": "whole character",
+      "heading": false
+    },
+    {
+      "term": "volume conjecture",
+      "heading": false
+    },
+    {
+      "term": "let rho",
+      "heading": false
+    },
+    {
+      "term": "hence rho",
+      "heading": false
+    },
+    {
+      "term": "ccgls proposition",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 15,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 16,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p18); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 16 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0604057v2"
+  }
+}

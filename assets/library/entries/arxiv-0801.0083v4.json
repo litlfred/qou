@@ -1,0 +1,196 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0801.0083v4",
+  "blocks": [
+    {
+      "id": "library/arxiv-0801.0083v4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-0-introduction.md",
+      "narrative": null,
+      "content": "\\label{sec.Int}\n\nA {\\em gerbe} $\\gerbe{G}$ on a topological space $X$ is the geometric\nversion of a connected nonempty groupoid. Thus $\\gerbe{G}$\nassociates a groupoid $\\gerbe{G}(U)$ to any open set $U \\subset X$,\nand to any inclusion $V \\subset U$\nof open sets there is a restriction functor\n$\\gerbe{G}(U) \\to \\gerbe{G}(V)$.\nThese have to satisfy a lot of conditions (for the benefit of the reader we\nhave included a review in Section \\ref{sec:prest}).\nGerbes arise in various contexts; but\nfor us the are mainly important as ``bookkeeping devices'' for certain\ngeometric data. At the end of the int",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0801.0083v4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0801.0083v4  [math.AG]  18 Feb 2010\nCENTRAL EXTENSIONS OF GERBES\nAMNON YEKUTIELI\nAbstract. We introduce the notion of central extension of gerbes on a topo-\nlogical space X. We show that there are obstruction classes to lifting objects\nand isomorphisms in a central extension. We also discuss pronilpotent gerbes.\nThese results are used in the paper [Ye] to study twisted deformation quanti-\nzation on algebraic varieties.\nContents",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0801.0083v4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Recalling some Facts on 2-Categories",
+      "pageStart": 3,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-1-recalling-some-facts-on-2-categories.md",
+      "narrative": null,
+      "content": "\\label{sec.recall}\n\nThere are several sources in the literature on $2$-categories and prestacks,\ne.g.\\ \\cite{Be}, \\cite{Gi}, \\cite{Ma}, \\cite{Mo}, \\cite{Le}, \\cite{KS}\nand \\cite{Br}. Unfortunately\nthere is disagreement on terminology among the sources, and hence we\nfeel it is\nbetter to start with an exposition of the conventions we adopted, and a\nrecollection some facts. \n\nFirst we must establish some set-theoretical background, in order to\navoid paradoxical phenomena. Recall that in set theory all\nmathematical objects and operations are interpreted as sets, with\nsuitable additional properties",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0801.0083v4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Prestacks on a Topological Space",
+      "pageStart": 8,
+      "pageEnd": 12,
+      "target": "../sections/sec-002-2-prestacks-on-a-topological-space.md",
+      "narrative": null,
+      "content": "\\label{sec:prest}\n\nLet $X$ be a topological space. \nWe need some notation for open coverings. Let $U \\subset X$ be an open set, and\nlet $\\bsym{U} = \\{ U_k \\}_{k \\in K}$ be an open covering of $U$, i.e.\\ \n$U = \\bigcup_{k \\in K} U_k$. Given \n$k_0, \\ldots, k_m \\in K$ we write\n\\[ U_{k_0, \\ldots, k_m} := U_{i_0} \\cap \\cdots \\cap U_{k_m} . \\]\n\nLet $\\mcal{S}$ be a sheaf of sets on $X$. For an open set $U \\subset X$ we\ndenote by \n$\\mcal{S}(U) = \\Gamma(U, \\mcal{S})$\nthe set of sections of $\\mcal{S}$ on $U$.\n\nRecall that a {\\em prestack} $\\gerbe{G}$ on $X$\nis the geometrization of the notion of category",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0801.0083v4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Extensions of Gerbes",
+      "pageStart": 12,
+      "pageEnd": 19,
+      "target": "../sections/sec-003-3-extensions-of-gerbes.md",
+      "narrative": null,
+      "content": "\\label{sec.ext}\n\nWe begin by taking certain basic notions about groups (such as normal subgroup\nand center) and generalizing them to groupoids. \nAs a matter of convenience we often refer to a functor \n$F : \\cat{G} \\to \\cat{H}$ \nbetween groupoids as a morphism. (Indeed this is a $1$-morphism in the \n$2$-category $\\twocat{Groupoid}$ of groupoids.)\n\n\\begin{dfn} \\label{dfn:3}\nLet $\\cat{G}$ be a groupoid. A {\\em normal subgroupoid} of $\\cat{G}$ is a\nsubgroupoid $\\cat{N}$ satisfying the following three conditions. \n\\begin{enumerate}\n\\rmitem{i} $\\opn{Ob} \\cat{N} = \\opn{Ob} \\cat{G}$.\n\\rmitem{ii} For e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0801.0083v4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Obstruction Classes",
+      "pageStart": 19,
+      "pageEnd": 25,
+      "target": "../sections/sec-004-4-obstruction-classes.md",
+      "narrative": null,
+      "content": "We fix a topological space $X$. \nGiven a sheaf $\\mcal{N}$ of abelian groups on $X$, and an open covering\n$\\bsym{U} = \\{ U_k \\}_{k \\in K}$ of $X$, there are the \\v{C}ech\ncohomology groups $\\check{\\mrm{H}}^p(\\bsym{U}, \\mcal{N})$\nfor  $p \\geq 0$. Passing to the limit over all such open coverings \nwe obtain the \\v{C}ech cohomology groups $\\check{\\mrm{H}}^p(X, \\mcal{N})$.\n\n{} From here until the end of this section we consider a central\nextension of gerbes\n\\begin{equation} \\label{eqn:5}\n1 \\to  \\mcal{N} \\to \\gerbe{G} \\xar{F} \\gerbe{H} \\to 1 \n\\end{equation}\non $X$ (see Definition \\ref{dfn:2} and Prop",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0801.0083v4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sufficient Conditions for Existence of Obstruction Classes",
+      "pageStart": 25,
+      "pageEnd": 29,
+      "target": "../sections/sec-005-5-sufficient-conditions-for-existence-of-obstruc.md",
+      "narrative": null,
+      "content": "\\label{sec.suff}\n\nLet $\\mcal{N}$ be a sheaf of abelian groups on a topological space\n$X$. The operation in $\\mcal{N}$ is multiplication.\nWe denote by $\\mrm{H}^i (X, \\mcal{N})$ the derived functor sheaf\ncohomology. An open\nset $U \\subset X$ will be called {\\em $\\mcal{N}$-acyclic} if the sheaf\ncohomology satisfies\n$\\mrm{H}^i (U, \\mcal{N}) = 1$ for all $i > 0$. Now suppose \n$\\bsym{U} = \\{ U_k \\}_{k \\in K}$ is a collection of open sets in $X$. \nWe say that the collection $\\bsym{U}$ is $\\mcal{N}$-acyclic if all the open \nsets $U_{k_0, \\ldots, k_m}$ are $\\mcal{N}$-acyclic.\n\n\\begin{dfn}\nLet $\\mcal{N}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0801.0083v4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pronilpotent Gerbes",
+      "pageStart": 29,
+      "pageEnd": 33,
+      "target": "../sections/sec-006-6-pronilpotent-gerbes.md",
+      "narrative": null,
+      "content": "\\label{sec:pronilp}\n\nLet $X$ be a topological space. Recall that given an inverse system \n$\\{ \\mcal{G}_p \\}_{p \\in \\N}$ of sheaves of groups on $X$, its inverse limit is\nthe sheaf of groups \n$\\opn{lim}_{\\leftarrow p} \\, \\mcal{G}_p$\nwhose group of sections on an open set $U$ is\n\\[ \\Gamma(U, \\opn{lim}_{\\leftarrow p} \\, \\mcal{G}_p) = \n\\opn{lim}_{\\leftarrow p} \\, \\Gamma(U, \\mcal{G}_p) . \\]\n\n\\begin{dfn} \\label{dfn.10}\nLet $\\mcal{G}$ be a sheaf of groups on $X$. \n\\begin{enumerate}\n\\item A {\\em normal filtration} of $\\mcal{G}$ is a descending sequence \n$\\{ \\mcal{N}_p \\}_{p \\in \\N}$ of sheaves of norm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0801.0083v4/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fake Global Objects of Gerbes",
+      "pageStart": 33,
+      "pageEnd": 36,
+      "target": "../sections/sec-007-7-fake-global-objects-of-gerbes.md",
+      "narrative": null,
+      "content": "\\label{sec.fake}\n\nIn this section $X$ is some topological space. We will study a gerbe\n$\\gerbe{G}$ on $X$, with center $\\mrm{Z}(\\gerbe{G})$,\nand the central extension of gerbes\n\\begin{equation} \\label{eqn:11}\n1 \\to  \\mrm{Z}(\\gerbe{G}) \\to \\gerbe{G} \\xar{F} \n\\gerbe{G} / \\mrm{Z}(\\gerbe{G}) \\to 1 .\n\\end{equation}\n\n\\begin{dfn}\nAn object \n$i \\in \\opn{Ob}\\, \\bigl( \\gerbe{G} / \\mrm{Z}(\\gerbe{G}) \\bigr)(X)$ \nis called a {\\em fake global object of $\\gerbe{G}$}.\n\\end{dfn}\n\nWhen we need to emphasize that $i \\in \\opn{Ob} \\gerbe{G}(X)$,\nas opposed to being in \\linebreak\n$\\opn{Ob}\\, \\bigl( \\gerbe{G} / \\mrm{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0801.0083v4/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 36,
+      "pageEnd": 36,
+      "target": "../sections/sec-008-references.md",
+      "narrative": null,
+      "content": "[Be]\nJ. Benabou, Introduction to bicategories, in “Report of the Midwest Category Seminar I”,\nLNM 47, Springer, 1967, pp. 1-77.\n[BK]\nR. Bezrukavnikov and D. Kaledin, Fedosov quantization in algebraic context, Moscow\nMath. J. 4, no. 3 (2004), 559-592.\n[Br]\nL. Breen, Notes on 1- and 2-gerbes, arXiv:math/0611317v2 at http://arxiv.org.\n[CA]\nBourbaki, “Commutative Algebra”, Chapters 1-7, Springer, 1989.\n[Gi]\nJ. Giraud, “Cohomologie non abelienne”, Grundlehren der Math. Wiss. 179, Springer\n(1971).\n[Gr1]\nA. Grothendieck, A general theory of ﬁbre spaces with structure sheaf, University of Kansas\n1955.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

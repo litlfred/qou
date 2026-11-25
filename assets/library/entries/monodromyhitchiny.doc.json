@@ -1,0 +1,333 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "monodromyhitchiny",
+  "title": "On the monodromy of the Hitchin connection",
+  "variant": "pdf",
+  "pages": 14,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "ON THE MONODROMY OF THE HITCHIN CONNECTION",
+      "number": null,
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-on-the-monodromy-of-the-hitchin-connection"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "1",
+      "words": 133,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "christoph sorger",
+          "heading": false
+        },
+        {
+          "term": "yves laszlo",
+          "heading": false
+        },
+        {
+          "term": "hal",
+          "heading": false
+        },
+        {
+          "term": "hitchin connection",
+          "heading": false
+        },
+        {
+          "term": "documents",
+          "heading": false
+        }
+      ],
+      "extract": "HAL Id: hal-00465731 https://hal.science/hal-00465731v1 Submitted on 21 Mar 2010 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not. The documents may come from teaching and research institutions in France or abroad, or from public or pri- vate research centers. L’archive ouverte pluridisciplinaire HAL, est des-",
+      "extractCut": true,
+      "blocks": [
+        "library/monodromyhitchiny/blocks/prose-sec-front-matter",
+        "library/monodromyhitchiny/blocks/figure-img-p001-1",
+        "library/monodromyhitchiny/blocks/figure-img-p001-2",
+        "library/monodromyhitchiny/blocks/figure-img-p001-3"
+      ]
+    },
+    {
+      "id": "sec-000-on-the-monodromy-of-the-hitchin-connection",
+      "number": null,
+      "title": "ON THE MONODROMY OF THE HITCHIN CONNECTION",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 14,
+      "labelStart": "1",
+      "labelEnd": "13",
+      "words": 6627,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hitchin connection",
+          "heading": true
+        },
+        {
+          "term": "christoph sorger",
+          "heading": false
+        },
+        {
+          "term": "twists tγi",
+          "heading": false
+        },
+        {
+          "term": "yves laszlo",
+          "heading": false
+        },
+        {
+          "term": "projective wzw",
+          "heading": false
+        },
+        {
+          "term": "holed sphere",
+          "heading": false
+        },
+        {
+          "term": "dehn twists",
+          "heading": false
+        },
+        {
+          "term": "monodromy",
+          "heading": true
+        }
+      ],
+      "extract": "YVES LASZLO, CHRISTIAN PAULY, AND CHRISTOPH SORGER Abstract. We show that the image of the monodromy representation of the Hitchin con- nection on the sheaf of generalized SL(2)-theta functions over a family of complex smooth projective curves of genus g ≥3 contains an element of inﬁnite order. 1. Introduction Let π : C →B be a family of smooth connected complex projective curves of genus1 g ≥3. For any positive",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "christoph sorger",
+      "heading": false
+    },
+    {
+      "term": "yves laszlo",
+      "heading": false
+    },
+    {
+      "term": "hitchin connection",
+      "heading": true
+    },
+    {
+      "term": "wzw connection",
+      "heading": false
+    },
+    {
+      "term": "twists tγi",
+      "heading": false
+    },
+    {
+      "term": "projective wzw",
+      "heading": false
+    },
+    {
+      "term": "holed sphere",
+      "heading": false
+    },
+    {
+      "term": "monodromy representation",
+      "heading": false
+    },
+    {
+      "term": "dehn twists",
+      "heading": false
+    },
+    {
+      "term": "projective curves",
+      "heading": false
+    },
+    {
+      "term": "mapping class",
+      "heading": false
+    },
+    {
+      "term": "mcb",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-2",
+      "file": "images/img-p001-2.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-3",
+      "file": "images/img-p001-3.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 1,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 2,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p2); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 2 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/monodromyhitchiny"
+  }
+}

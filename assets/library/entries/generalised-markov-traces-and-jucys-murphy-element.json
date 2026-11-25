@@ -1,0 +1,574 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "generalised-markov-traces-and-jucys-murphy-element",
+  "blocks": [
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/figure-img-p001-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Iwahori-Hecke algebras",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-iwahori-hecke-algebras.md",
+      "narrative": null,
+      "content": "2020 Mathematics Subject Classiﬁcation: Primary - 20C08, 57K14, 57K18\nAbstract\nWe give a simple construction of Markov traces for Iwahori–Hecke algebras associated with the crystallographic\nCoxeter groups of types An, Bn and Dn. In types B and D, it is new and generalises a known construction in type A\nemploying symmetric polynomials in multiplicative Jucys–Murphy elements.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-introduction.md",
+      "narrative": null,
+      "content": "A two-variable link invariant – the HOMFLY-PT polynomial – can be recovered using a family of trace\nfunctions on Iwahori–Hecke algebras in type A satisfying analogues of the conditions in Markov’s the-\norem for the braid group (usually called ‘Markov moves’) [10]. The analogues of Markov moves can\nbe formulated for Iwahori–Hecke algebras of other Coxeter groups, leading to a general notion of the\nMarkov trace, see, for example, [3, 5, 7, 20]. The Markov traces were classiﬁed in type A, where there\nis, up to some change of scaling, a unique Markov trace, by Ocneanu and Jones [10], and in types",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Glasgow Mathematical Journal (2026), 1–10\ndoi:10.1017/S0017089526101050\nRESEARCH ARTICLE\nGeneralised Markov traces and Jucys–Murphy elements\nKostiantyn Tolmachov1\nand Heorhii Zhylinskyi2\n1University of Hamburg, Germany\n2Jagiellonian University, Poland\nCorresponding author: Kostiantyn Tolmachov; Email: tolmak@khtos.com\nReceived: 6 November 2025 UTC; Revised: 6 May 2026 UTC; Accepted: 14 June 2026 UTC",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Coxeter groups",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-002-coxeter-groups.md",
+      "narrative": null,
+      "content": "and Iwahori–Hecke algebras. In Section 2.5, we deﬁne a family of commuting elements in Iwahori–\nHecke algebras of type A, B, D coming from the extended aﬃne Hecke algebra in type A. See [16] for\nthe history and an alternative deﬁnition. We follow [17] in our treatment of these elements.\nIn Section 3, we ﬁrst deﬁne the Markov traces and give, as a warm-up, a construction of a Markov\ntrace deﬁned by a uniform formula in all types A, B, D. See Theorem 3.1.4. In Section 3.2, we recall\nthe results of Geck and Lambropoulou and give the formulas for the Markov traces in types B and D\ndepending on a f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Iwahori-Hecke algebras and multiplicative Jucys-Murphy elements",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-003-iwahori-hecke-algebras-and-multiplicative-jucys.md",
+      "narrative": null,
+      "content": "2.1. Coxeter groups\nLet (W, S), S = {s1, . . . , sn}, be a Coxeter system. Thus, W is a group with a presentation\n(s0, . . . , sn|(sisj)mij = e), where mij ∈Z+ ∪{∞}, with mii = 1, mji = mij ≥2 if i̸ = j, and mij = ∞means\nthat there is no relation included for the pair si, sj. Such a presentation is read oﬀthe Coxeter diagram of\n(W, S) in a standard way: such a diagram is a non-oriented graph with S as a set of vertices, and mij −2\nedges between the vertices si and sj. Let l : W →Z≥0 be the Bruhat length function with respect to S.\nWe will be primarily interested in Coxeter groups that are Weyl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/cor-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "cor-sec-004-02.md",
+      "narrative": null,
+      "content": "Let (W′, S′) be a parabolic subgroup of W. Assume that x, y ∈H(W′, S′) ⊂H(W, S), and assume that z ∈spanA⟨tw, w ∈W\\W′⟩(resp. z ∈spanA⟨t−1 w , w ∈W\\W′⟩). Then ⟨xz, y⟩= ⟨zx, y⟩= 0 (resp. ⟨x, yz⟩= ⟨x, zy⟩= 0).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/cor-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "cor-sec-005-03.md",
+      "narrative": null,
+      "content": "For X equal to A−1, B or D, elements JX k commute with each other when considered lying in the same Iwahori–Hecke algebra via the embedding described above. The element JX n lies in the centraliser of H(Xn−1) in H(Xn).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/prop-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "prop-sec-004-01.md",
+      "narrative": null,
+      "content": "The functional τ and the pairing ⟨, ⟩satisfy the following properties: (a) The functional τ is an A-linear trace on H(W, S), that is, τ(hh′) = τ(h′h). (b) The pairing ⟨, ⟩is A-antilinear in the ﬁrst argument and A-linear in the second argument and satisﬁes the orthogonality relation ⟨tw1, t−1 w2 ⟩= δw1,w−1 2 . (c) We have ⟨h1h2, h3⟩= ⟨h1, h3ω(h2)⟩= ⟨h2, ω(h1)h3⟩for any h1, h2, h3 ∈H(W, S).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "The element S(W, S) is central in H(W, S). We will need the following ‘Serre property’ of the operator of multiplication by S(W, S).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/prop-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "prop-sec-005-02.md",
+      "narrative": null,
+      "content": "For any h1, h2 ∈H(W, S), we have the identity ⟨h1, S(W, S)h2⟩= ⟨h2, h1⟩.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Trace functional and a pairing on H(W,S)",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-004-trace-functional-and-a-pairing-on-hws.md",
+      "narrative": null,
+      "content": "Let x \n→x be the Kazhdan–Lusztig involution on H(W, S). It is a Q-algebra involution, deﬁned by the\nassignments v = v−1, tw = t−1\nw−1. Let ω : H(W, S) stand for the A-linear algebra anti-involution deﬁned by\nω(tw) = tw−1.\nFor h ∈H(W, S), x ∈W, let hx stand for the t−1\nx -coeﬃcient of h in the basis t−1\nw , where w runs\nthrough W. Let τ : H(W, S) →A be a functional deﬁned by τ(h) = he, where e ∈W is the unit. For\nh, h′ ∈H(W, S), deﬁne a pairing ⟨h, h′⟩= τ(ω(h)h′). We have the following standard proposition, see,\nfor example, [8, Chapter 8].\nProposition 2.3.1. The functional τ and the pairing ⟨,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "`Full twist' and Jucys-Murphy elements",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-005-full-twist-and-jucys-murphy-elements.md",
+      "narrative": null,
+      "content": "Assume that (W, S) is of ﬁnite type. Let w0 stand for the longest element in W with respect to the Bruhat\nlength. Let S(W, S) = t−2\nw0 ∈H(W, S). In classical types, we will write S(Xn) ∈H(Xn), when X is A, B or\nD, or simply S when the type is clear from the context.\nThe following proposition is also standard:\nProposition 2.4.1. The element S(W, S) is central in H(W, S).\nWe will need the following ‘Serre property’ of the operator of multiplication by S(W, S).\nProposition 2.4.2. For any h1, h2 ∈H(W, S), we have the identity\n⟨h1, S(W, S)h2⟩= ⟨h2, h1⟩.\nProof. By Proposition 2.3.1 (b), it is enough",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/rem-sec-005-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "rem-sec-005-04.md",
+      "narrative": null,
+      "content": "The elements JA k are sometimes called multiplicative Jucys–Murphy elements in the Iwahori–Hecke algebra of type A. There seems to be no agreement in the literature on which elements to call the Jucys–Murphy elements in other types. We chose our convention because under it the deﬁnition of the Jucys–Murphy element is uniform in all types, but elements jX k for X = B, D deﬁned below arguably also deserve the name.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some central elements in the classical Iwahori-Hecke algebras",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-006-some-central-elements-in-the-classical-iwahori-h.md",
+      "narrative": null,
+      "content": "In this section, we follow [17]. Let Haff(An−1) be the aﬃne Hecke algebra associated with the root datum\nof GLn. It is a unital algebra over A generated by the elements t1, . . . , tn−1 and \u0006±1\n1 , where t1, . . . , tn−1\nsatisfy the relations of the Iwahori–Hecke algebra of type An−1 and, additionally, the following relations\nhold:\n(iii) t1\u00061t1\u00061 = \u00061t1\u00061t1,\n(iv) ti\u00061 = \u00061ti for i > 1.\nInductively deﬁne \u0006i = ti−1\u0006i−1ti−1 ∈Haff(An−1), i = 2, . . . , n. It is well known that \u0006±1\ni\ngenerate a\ncommutative subalgebra of Haff(An−1), called the Bernstein subalgebra. We have the following particular\nc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Markov traces",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-007-markov-traces.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Markov traces via Jucys-Murphy elements",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-008-markov-traces-via-jucys-murphy-elements.md",
+      "narrative": null,
+      "content": "Deﬁnition 3.1.1. Let R be a commutative A-algebra. A family (φn) of A-linear functionals φn : H(Xn) →\nR, where X is A−1, B or D and n ∈Z≥1 (n ∈Z≥2 in type D) is called a Markov trace if there are elements\nμ, ρ ∈R such that the following conditions are satisﬁed:\n(M1) φn is a trace function, that is, φn(hh′) = φn(h′h). This property is a generalisation of the ﬁrst\nMarkov move from the theory of link invariants.\nRecall the embedding ι = ιn−1 : H(Xn−1) →H(Xn) deﬁned in Section 2.4. The functionals φn−1\nand φn, n ≥2 must satisfy\n(U1) φn(ι(h)) = ρφn−1(h). This property is a generalisation of a rule",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/rem-sec-008-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "rem-sec-008-01.md",
+      "narrative": null,
+      "content": "We exclude small n in our deﬁnition of the Markov trace because some special treatment is needed for the embeddings B0 →B1, D0 →D1 →D2. For the geometric traces, these properties are extended to small n, see Section 3.3. Deﬁnition 3.1.3. Assume that the involution v →v−1 is extended to R. We say that an element z ∈ H(W, S) ⊗A R represents a functional φ : H(W, S) →R if φ(h) = ⟨z, h⟩for any h ∈H(W, S). It is easy to see that φ satisﬁes the property (M1) if and only if z is in the centre of H(W, S). In this case, we write φ = trz. Let R = A(a) and let a = a−1. Deﬁne ζn = n\u0002 i=1 (1 + a−1JX i ), ζ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/rem-sec-008-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "rem-sec-008-03.md",
+      "narrative": null,
+      "content": "Note that in type A the properties (M1), (U1) and (M2) deﬁne the Markov trace uniquely, and thus the preceding theorem recovers, up to a change of variable, the classical result: a-coeﬃcients of the Markov trace in type A are represented by the elementary symmetric polynomials in Jucys–Murphy elements.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/rem-sec-008-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "rem-sec-008-04.md",
+      "narrative": null,
+      "content": "We will show below that, in types A and B (but not in type D), the traces trζn coincide with the traces coming from geometry. See Section 3.3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/thm-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "thm-sec-008-02.md",
+      "narrative": null,
+      "content": "The family of functionals (trζn) is a Markov trace with constants ρ = 1 + a, μ = v −v−1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/cor-sec-009-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "cor-sec-009-04.md",
+      "narrative": null,
+      "content": "For the ﬁrst summand, we have, by Lemma 3.2.3 (a), (b), ⟨βn−1(y), ι(h)Tn⟩= ⟨βn−1(y), ι(h)T−1 n ⟩+ α0⟨βn−1(y), ι(h)⟩= α0⟨βn−1(y), ι(h)⟩. For the second summand, ﬁrst note that jB n is in the centraliser of H(Bn−1) in H(Bn). It follows that y′⟨βn−1(y)jB n, ι(h)Tn⟩= y′⟨βn−1(y), ι(h)(jB n)−1Tn⟩. Thus, we have, by Lemma 3.2.3 (c), y′⟨βn−1(y), ι(h)(jB n)−1Tn⟩= y′⟨βn−1(y), ι(h)⟩. For the third summand, by Proposition 2.4.2 and Lemma 3.2.3 (b), we have a⟨βn−1(y)JB n , ι(h)Tn⟩= ⟨ι(h)Tn, βn−1(y)S(Bn−1)⟩= 0. Collecting all three summands together, we get ⟨βn(y), ι(h)Tn⟩= (α0 + y′)⟨βn−1(y), ι(h)⟩= y⟨βn−1(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/cor-sec-009-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "cor-sec-009-05.md",
+      "narrative": null,
+      "content": "We have the following analogue of Proposition 3.2.4 in type D.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/lem-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "lem-sec-009-02.md",
+      "narrative": null,
+      "content": "(a) We have T−1 n = Tn −α0. (b) The elements Tn, T−1 n satisfy Tn ∈spanA⟨tw, w ∈W(Bn)\\W(Bn−1)⟩ and T−1 n ∈spanA⟨t−1 w , w ∈W(Bn)\\W(Bn−1)⟩. (c) The element (jB n)−1Tn satisﬁes (jB n)−1Tn −1 ∈spanA⟨t−1 w , w ∈W(Bn)\\W(Bn−1)⟩. The property in Theorem 3.2.1 (B) follows from the more general property (compare [5, Proposition 4.5]).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/prop-sec-009-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "prop-sec-009-03.md",
+      "narrative": null,
+      "content": "For any h ∈H(Bn−1), we have trβn(y)(ι(h)Tn) = ytrβn−1(y)(h).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/prop-sec-009-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "prop-sec-009-06.md",
+      "narrative": null,
+      "content": "For n ≥1 and any h ∈H(D2n−2), we have trD 2n,y(ι ◦ι(h)U2n−1U2n) = y2trD 2n−2,y(h).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "General Markov traces in types B, D",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-009-general-markov-traces-in-types-b-d.md",
+      "narrative": null,
+      "content": "In type A, the classical result of Jones and Ocneanu [10] says that a Markov trace with given constants\nρ, μ is deﬁned uniquely up to an overall scaling. Thus, Theorem 3.1.4 gives a general description of a\nMarkov trace in type A.\nIn types B, D, the general description of Markov traces was obtained by Geck and Lambropoulou\n[3, 5]. We recall their results.\nFor n ≥1, deﬁne the elements\nTn = tn−1 . . . t1t0t−1\n1 . . . t−1\nn−1 ∈H(Bn), n ≥2, T1 = t0,\nand\nUn = tn−1 . . . t1′t−1\n1 . . . t−1\nn−1 ∈H(Dn), n ≥2, U1 = 1.\nTheorem 3.2.1 ([3, 5]). Let R = A(a, y1, . . . , yn, . . . ), with inﬁnite number of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/thm-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "thm-sec-009-01.md",
+      "narrative": null,
+      "content": "The equality trB n,y = trβn(y) holds. We will use the following lemma, veriﬁed by a direct computation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometric Markov traces",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-010-geometric-markov-traces.md",
+      "narrative": null,
+      "content": "Markov traces trB\nn : Hv,v(Bn) →A(a), trD\nn : H(Dn) →A(a) studied in [7, 20] are specialisations of traces\ntrX\nn,y satisfying the extension of the properties (U1) and (M2) for the embeddings B0 →B1 and D1 →\nD2, D0 →D1. Since these traces are of geometric origin, we call them ‘geometric Markov traces’. In\nparticular, these traces satisfy\ntrB\n1(t0) = v −v−1, trD\n1 (t1) = v −v−1, trD\n2 (t1t1′) = (v −v−1)2.\nThe condition on trB\n1 forces y = v −v−1 and y + α0 = 0. Thus, we get that trB\nn = trζn, the trace from\nTheorem 3.1.4.\nThe conditions on trD\n1 , trD\n2 imply that\ny2 = trD\n2 (U1U2) = trD\n2 (t1′t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/rem-sec-010-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "rem-sec-010-02.md",
+      "narrative": null,
+      "content": "The statement analogous to Theorem 3.3.1 was lifted to the level of Khovanov–Rozansky homology in [2]. Namely, there it is shown that the object representing the kth degree of the invariant has a ﬁltration by the objects representing products of Jucys–Murphy elements. For an arbitrary Weyl group, the object representing the kth degree was constructed in [2] in terms of some explicit charac- ter sheaves on a reductive group G with the Weyl group W. It was also explained how these character sheaves correspond to exterior powers of the reﬂection representation of W. We expect that, if the anal- o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/generalised-markov-traces-and-jucys-murphy-element/blocks/thm-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "thm-sec-010-01.md",
+      "narrative": null,
+      "content": "The conditions on trD 1 , trD 2 imply that y2 = trD 2 (U1U2) = trD 2 (t1′t−1 1 ) = trD 2 (t1t1′) −αtrD 2 (t1′) = α2 −α2(1 + a) = −α2a. It is easy to see that geometric Markov traces trB n, trD n take values in A[a]. Let trX,k n : H(Xn) →A be the coeﬃcient of trX n at ak. We summarise the above discussion in the following",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

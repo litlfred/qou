@@ -1,0 +1,67 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2111.12409v4/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "On the generalisation of Roth’s theorem",
+  "contains": [
+    "library/arxiv-2111.12409v4/sections/sec-front-matter",
+    "library/arxiv-2111.12409v4/sections/sec-000",
+    "library/arxiv-2111.12409v4/sections/sec-001",
+    "library/arxiv-2111.12409v4/sections/sec-002",
+    "library/arxiv-2111.12409v4/sections/sec-003",
+    "library/arxiv-2111.12409v4/sections/sec-004",
+    "library/arxiv-2111.12409v4/sections/sec-005",
+    "library/arxiv-2111.12409v4/sections/sec-006",
+    "library/arxiv-2111.12409v4/sections/sec-007",
+    "library/arxiv-2111.12409v4/sections/sec-008",
+    "library/arxiv-2111.12409v4/sections/sec-009",
+    "library/arxiv-2111.12409v4/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On the generalisation of Roth’s theorem — We present two generalisations of Roth’s approximation theorem on proper adelic curves, assuming some technical conditions on the behavior of the logarithmic\n\n**On the generalisation of Roth’s theorem**\n\n*Paolo Dolce*\n\n21 pp, 12 sections.\n\n**Abstract.** We present two generalisations of Roth’s approximation theorem on proper adelic curves, assuming some technical conditions on the behavior of the logarithmic absolute values. We illustrate how tightening such assumptions makes our inequalities stronger. As special cases we recover Corvaja’s results [Cor97] for ﬁelds admitting a product formula, and Vojta’s ones [Voj21] for arithmetic function ﬁelds. 0\n\n**Outline.** Front matter; 0 Introduction; 0.1 History; 0.2 Results in this paper; 1 Adelic curves; 2 The interpolating polynomial; 3 Integral estimates; 4 Roth's theorem for adelic curves (A); 5 Roth's theorem for adelic curves (B); Appendices; A Construction of the interpolating polynomial; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2111.12409&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2111.12409v4",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "2111.12409v4.pdf",
+    "source_sha256": "3f0b94ee06fe79bf50355d5643695b1bbdd7d50ef3cda3001c1f54d5e8136033",
+    "pages": 21,
+    "arxiv": {
+      "id": "2111.12409",
+      "version": "4",
+      "primary_class": "math.NT",
+      "stamp_date": "13 May 2023"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

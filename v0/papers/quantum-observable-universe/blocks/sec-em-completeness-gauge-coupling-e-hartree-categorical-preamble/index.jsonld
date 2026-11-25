@@ -1,0 +1,18 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/sec-em-completeness-gauge-coupling-e-hartree-categorical-preamble",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:em-completeness-gauge-coupling-e-hartree-categorical-preamble",
+  "kind": "prose",
+  "text": "em-completeness-gauge-coupling-e-hartree-categorical-intro.md",
+  "provenance": "authored"
+}

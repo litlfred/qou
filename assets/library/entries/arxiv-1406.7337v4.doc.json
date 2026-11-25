@@ -1,0 +1,940 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1406.7337v4",
+  "title": "Semi-Adequate Closed Braids and Volume",
+  "variant": "pdf",
+  "pages": 20,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Volume bounds for A-adequate closed braids",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-volume-bounds-for-a-adequate-closed-braids"
+    },
+    {
+      "level": 2,
+      "title": "Preliminaries",
+      "number": "2.1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "Braids and A-adequacy",
+      "number": "2.2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-braids-and-a-adequacy"
+    },
+    {
+      "level": 2,
+      "title": "A lemma for closed braids",
+      "number": "2.3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-a-lemma-for-closed-braids"
+    },
+    {
+      "level": 2,
+      "title": "Diagrammatic volume bounds",
+      "number": "2.4",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-24-diagrammatic-volume-bounds"
+    },
+    {
+      "level": 2,
+      "title": "Volume bounds in terms of the colored Jones polynomial",
+      "number": "2.5",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-25-volume-bounds-in-terms-of-the-colored-jones-p"
+    },
+    {
+      "level": 1,
+      "title": "Volume bounds for A-adequate closed 3-braids in terms of the Schreier normal form",
+      "number": "3",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-3-volume-bounds-for-a-adequate-closed-3-braids-i"
+    },
+    {
+      "level": 2,
+      "title": "The Schreier normal form for 3-braids and volume",
+      "number": "3.1",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-31-the-schreier-normal-form-for-3-braids-and-vol"
+    },
+    {
+      "level": 2,
+      "title": "Volume bounds in terms of the Schreier normal form",
+      "number": "3.2",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-32-volume-bounds-in-terms-of-the-schreier-normal"
+    },
+    {
+      "level": 2,
+      "title": "The proof of Theorem 3.1",
+      "number": "3.3",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-33-the-proof-of-theorem-31"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 191,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "a-adequate closed",
+          "heading": false
+        },
+        {
+          "term": "closed braids",
+          "heading": false
+        },
+        {
+          "term": "schreier normal",
+          "heading": false
+        },
+        {
+          "term": "braid diagram",
+          "heading": false
+        },
+        {
+          "term": "normal form",
+          "heading": false
+        },
+        {
+          "term": "volumes",
+          "heading": false
+        }
+      ],
+      "extract": "Semi-Adequate Closed Braids and Volume Adam Giambrone Alma College giambroneaj@alma.edu Abstract In this paper, we show that the volumes for a family of A-adequate closed braids can be bounded above and below in terms of the twist number, the number of braid strings, and a quantity that can be read from the combinatorics of a given closed braid diagram. We also show that the volumes for many of these closed braids",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1406.7337v4/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 774,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "a-adequate link",
+          "heading": false
+        },
+        {
+          "term": "a-adequate closed",
+          "heading": false
+        },
+        {
+          "term": "certain a-adequate",
+          "heading": false
+        },
+        {
+          "term": "introthm",
+          "heading": false
+        },
+        {
+          "term": "bounds cdot",
+          "heading": false
+        },
+        {
+          "term": "closed braid",
+          "heading": false
+        },
+        {
+          "term": "braid diagram",
+          "heading": false
+        },
+        {
+          "term": "volume bounds",
+          "heading": false
+        }
+      ],
+      "extract": "One of the current aims of knot theory is to strengthen the relationships among the hyperbolic volume of the link complement, the colored Jones polynomial, and data extracted from link diagrams. In a recent monograph, Futer, Kalfagianni, and Purcell ([@Guts], or see [@Survey] for a survey of results) showed that, for sufficiently twisted negative braid closures and for certain Montesinos links, the volume of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-volume-bounds-for-a-adequate-closed-braids",
+      "number": "2",
+      "title": "Volume bounds for A-adequate closed braids",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 6,
+      "summary": null,
+      "keywords": [],
+      "extract": "Volume bounds for A-adequate closed braids",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-preliminaries",
+      "number": "2.1",
+      "title": "Preliminaries",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 560,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "emph all-a",
+          "heading": false
+        },
+        {
+          "term": "all-a graph",
+          "heading": false
+        },
+        {
+          "term": "all-a resolution",
+          "heading": false
+        },
+        {
+          "term": "all-a circles",
+          "heading": false
+        },
+        {
+          "term": "reduced all-a",
+          "heading": false
+        },
+        {
+          "term": "emph a-adequate",
+          "heading": false
+        },
+        {
+          "term": "emph twist",
+          "heading": false
+        },
+        {
+          "term": "twist region",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{figure} \\centering \\def\\svgwidth{2.5in} \\caption{A crossing neighborhood of a link diagram, along with its A-resolution and B-resolution.} \\label{resolutions} \\end{figure} Let $D(K) \\subseteq S^2$ denote a diagram of a link $K \\subseteq S^3$. To smooth a crossing of the link diagram $D(K)$, we may either \\emph{A-resolve} or \\emph{B-resolve} this crossing according to Figure~\\ref{resolutions}. By A-resolving",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-braids-and-a-adequacy",
+      "number": "2.2",
+      "title": "Braids and A-adequacy",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 464,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite stoimenow",
+          "heading": false
+        },
+        {
+          "term": "sigma",
+          "heading": false
+        },
+        {
+          "term": "syllables",
+          "heading": false
+        },
+        {
+          "term": "a-adequate",
+          "heading": false
+        },
+        {
+          "term": "beta",
+          "heading": false
+        },
+        {
+          "term": "braid",
+          "heading": false
+        }
+      ],
+      "extract": "Recall that the \\emph{n-braid group} has Artin presentation $$\\displaystyle B_{n} = \\left\\langle \\sigma_{1}, \\cdots, \\sigma_{n-1}\\ |\\ \\sigma_{i}\\sigma_{j}=\\sigma_{j}\\sigma_{i}\\ \\mathrm{and}\\ \\sigma_{i}\\sigma_{i+1}\\sigma_{i} = \\sigma_{i+1}\\sigma_{i}\\sigma_{i+1}\\right\\rangle,$$ \\noindent where the generators $\\sigma_{i}$ are depicted in Figure~\\ref{braidgen}, where $\\left|i-j\\right|\\geq2$ and $1 \\leq i < j \\leq n-1$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-a-lemma-for-closed-braids",
+      "number": "2.3",
+      "title": "A lemma for closed braids",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 9,
+      "labelStart": "5",
+      "labelEnd": "9",
+      "words": 2477,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wandering circles",
+          "heading": false
+        },
+        {
+          "term": "non-essential wandering",
+          "heading": false
+        },
+        {
+          "term": "all-a circles",
+          "heading": false
+        },
+        {
+          "term": "nonwandering circles",
+          "heading": false
+        },
+        {
+          "term": "essential wandering",
+          "heading": false
+        },
+        {
+          "term": "vertical a-segments",
+          "heading": false
+        },
+        {
+          "term": "horizontal a-segments",
+          "heading": false
+        },
+        {
+          "term": "medium inner",
+          "heading": false
+        }
+      ],
+      "extract": "The main goal of this section is to produce a family of closed $n$-braids that satisfies the hypotheses of Theorem~\\ref{Cor}. We will work within this family of braids throughout the rest of this paper. We begin with necessary definitions. \\begin{definition} Call two induced subwords $\\gamma_{1}$ and $\\gamma_{2}$ of a braid word $\\beta \\in B_{n}$ \\emph{disjoint} if the subwords share no common letters when they are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-diagrammatic-volume-bounds",
+      "number": "2.4",
+      "title": "Diagrammatic volume bounds",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 1211,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wandering circles",
+          "heading": false
+        },
+        {
+          "term": "nonwandering circles",
+          "heading": false
+        },
+        {
+          "term": "non-essential wandering",
+          "heading": false
+        },
+        {
+          "term": "essential wandering",
+          "heading": false
+        },
+        {
+          "term": "text nonwandering",
+          "heading": false
+        },
+        {
+          "term": "inner circles",
+          "heading": false
+        },
+        {
+          "term": "text ocs",
+          "heading": false
+        },
+        {
+          "term": "medium inner",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we apply Lemma~\\ref{setup} and Theorem~\\ref{Cor} to produce diagrammatic volume bounds for the complements of the closed $n$-braids considered in this paper. We now begin with a lemma for the case of 3-braids. \\begin{lemma} Let $D(K)=\\widehat{\\beta}$ denote the closure of a nice 3-braid $\\beta \\in B_{3}$. Furthermore, assume that the positive syllables of $\\beta$ are cyclically neighbored on both",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-25-volume-bounds-in-terms-of-the-colored-jones-p",
+      "number": "2.5",
+      "title": "Volume bounds in terms of the colored Jones polynomial",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 238,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "volume bounds",
+          "heading": true
+        },
+        {
+          "term": "mytheorem",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": true
+        },
+        {
+          "term": "beta right",
+          "heading": false
+        },
+        {
+          "term": "left beta",
+          "heading": false
+        },
+        {
+          "term": "newcor",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": true
+        },
+        {
+          "term": "a-adequate",
+          "heading": false
+        }
+      ],
+      "extract": "We now continue our study of volume bounds for hyperbolic A-adequate closed braids by translating our diagrammatic volume bounds from earlier to volume bounds in terms of the stable penultimate coefficient $\\beta_{K}'$ of the colored Jones polynomial. Recall from the introduction that we denote the *$j^{th}$ colored Jones polynomial* of a link $K$ by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-3-volume-bounds-for-a-adequate-closed-3-braids-i",
+      "number": "3",
+      "title": "Volume bounds for A-adequate closed 3-braids in terms of the Schreier normal form",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 13,
+      "summary": null,
+      "keywords": [],
+      "extract": "Volume bounds for A-adequate closed 3-braids in terms of the Schreier normal form",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-31-the-schreier-normal-form-for-3-braids-and-vol",
+      "number": "3.1",
+      "title": "The Schreier normal form for 3-braids and volume",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 542,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schreier normal",
+          "heading": true
+        },
+        {
+          "term": "normal form",
+          "heading": true
+        },
+        {
+          "term": "braid beta",
+          "heading": false
+        },
+        {
+          "term": "emph schreier",
+          "heading": false
+        },
+        {
+          "term": "sigma mathrm",
+          "heading": false
+        },
+        {
+          "term": "word beta",
+          "heading": false
+        },
+        {
+          "term": "beta eta",
+          "heading": false
+        },
+        {
+          "term": "cdots sigma",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{normformsec} A useful development in the history of 3-braids was the solution to the Conjugacy Problem (\\cite{Schreier}). During this time, an algorithm was developed that produces from an arbitrary 3-braid word $\\beta$ a conjugate 3-braid word $\\beta'$, called the \\emph{Schreier normal form}, which is the unique representative of the conjugacy class of $\\beta$. A version of this algorithm is presented below.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-32-volume-bounds-in-terms-of-the-schreier-normal",
+      "number": "3.2",
+      "title": "Volume bounds in terms of the Schreier normal form",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 689,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schreier normal",
+          "heading": true
+        },
+        {
+          "term": "normal form",
+          "heading": true
+        },
+        {
+          "term": "volume bounds",
+          "heading": true
+        },
+        {
+          "term": "braid string",
+          "heading": false
+        },
+        {
+          "term": "wandering circle",
+          "heading": false
+        },
+        {
+          "term": "times wandering",
+          "heading": false
+        },
+        {
+          "term": "braid word",
+          "heading": false
+        },
+        {
+          "term": "original braid",
+          "heading": false
+        }
+      ],
+      "extract": "Volume bounds in terms of the Schreier normal form We begin this section by presenting a result that, for the family of closed 3-braids that satisfy Lemma 2.1, states that the parameters k and s from the Schreier normal form of the 3-braid can actually be read oﬀ of the original 3-braid word. We then use this result to obtain volume bounds in terms of the parameter s from the Schreier normal form. Theorem 3.1. Let",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-33-the-proof-of-theorem-31",
+      "number": "3.3",
+      "title": "The proof of Theorem 3.1",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 20,
+      "labelStart": "14",
+      "labelEnd": "20",
+      "words": 2966,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "subwords pini",
+          "heading": false
+        },
+        {
+          "term": "juxtaposing pini",
+          "heading": false
+        },
+        {
+          "term": "pini normal",
+          "heading": false
+        },
+        {
+          "term": "pini preceding",
+          "heading": false
+        },
+        {
+          "term": "schreier normal",
+          "heading": false
+        },
+        {
+          "term": "induced subwords",
+          "heading": false
+        },
+        {
+          "term": "unbroken syllables",
+          "heading": false
+        },
+        {
+          "term": "efstratia kalfagianni",
+          "heading": false
+        }
+      ],
+      "extract": "The proof of Theorem 3.1 We will now prove Theorem 3.1 using a series of lemmas, beginning by ﬁrst considering the simpler case that β ∈B3 is a negative braid. Lemma 3.1. Let D(K) = bβ, where β ∈B3 is a negative braid that satisﬁes the assumptions of Lemma 2.1. Then β is generic and, furthermore, we are able to express the parameters k and s of the Schreier normal form β′ in terms of the original 3-braid β as",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "braid beta",
+      "heading": false
+    },
+    {
+      "term": "braid word",
+      "heading": false
+    },
+    {
+      "term": "emph a-adequate",
+      "heading": false
+    },
+    {
+      "term": "a-adequate link",
+      "heading": false
+    },
+    {
+      "term": "wandering circles",
+      "heading": false
+    },
+    {
+      "term": "a-adequate closed",
+      "heading": true
+    },
+    {
+      "term": "beta sigma",
+      "heading": false
+    },
+    {
+      "term": "unbroken syllables",
+      "heading": false
+    },
+    {
+      "term": "schreier normal",
+      "heading": true
+    },
+    {
+      "term": "non-essential wandering",
+      "heading": false
+    },
+    {
+      "term": "braid string",
+      "heading": true
+    },
+    {
+      "term": "all-a circles",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "A crossing neighborhood of a link diagram, along with its A-resolution and B-resolution",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "A link diagram D(K), its all-A resolution HA, its all-A graph GA, and its reduced all-A graph G′",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The long and short resolutions of a twist region of D(K)",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The braid group generators σi and σ−1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "An example of an isolated positive syllable σri",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Since C only intersects D(K) twice and must start and end at p, then C must intersect D(K) twice in braid string position i or twice in braid string position i + 1. Suppose, as in Figure 6, that C intersects D(K) twice in braid string position i. The case for braid string position i + 1 is very simi",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "6 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p14); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1406.7337v4"
+  }
+}

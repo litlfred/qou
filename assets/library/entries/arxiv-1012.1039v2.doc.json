@@ -1,0 +1,813 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1012.1039v2",
+  "title": "arxiv-1012.1039v2",
+  "variant": "pdf",
+  "pages": 22,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Outline",
+      "number": "1.1",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-outline"
+    },
+    {
+      "level": 1,
+      "title": "Simplicial volume and duality",
+      "number": "2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-simplicial-volume-and-duality"
+    },
+    {
+      "level": 2,
+      "title": "Gromov norms",
+      "number": "2.1",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-21-gromov-norms"
+    },
+    {
+      "level": 2,
+      "title": "Symmetrization",
+      "number": "2.2",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-22-symmetrization"
+    },
+    {
+      "level": 1,
+      "title": "Main result",
+      "number": "3",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-3-main-result"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. A proportionality theorem",
+      "number": null,
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-appendix-a-a-proportionality-theorem"
+    },
+    {
+      "level": 1,
+      "title": "Appendix B. (Anti)Symmetrization of chains",
+      "number": null,
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-appendix-b-antisymmetrization-of-chains"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 157,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "simplicial volume",
+          "heading": false
+        },
+        {
+          "term": "homology spheres",
+          "heading": false
+        },
+        {
+          "term": "ﬁllings",
+          "heading": false
+        },
+        {
+          "term": "dimensional homology",
+          "heading": false
+        },
+        {
+          "term": "alizes",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1012.1039v2 [math.GT] 19 Jul 2011 SIMPLICIAL VOLUME AND FILLINGS OF HYPERBOLIC MANIFOLDS KOJI FUJIWARA AND JASON FOX MANNING Abstract. Let M be a hyperbolic n–manifold whose cusps have torus cross- sections. In [FM10], the authors constructed a variety of nonpositively and negatively curved spaces as “2π–ﬁllings” of M by replacing the cusps of M with compact “partial cones” of their boundaries. These",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1012.1039v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1670,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sectional curvatures",
+          "heading": false
+        },
+        {
+          "term": "simplicial volume",
+          "heading": false
+        },
+        {
+          "term": "mathrm vol",
+          "heading": false
+        },
+        {
+          "term": "whose simplicial",
+          "heading": false
+        },
+        {
+          "term": "vbc",
+          "heading": false
+        },
+        {
+          "term": "ramified covers",
+          "heading": false
+        },
+        {
+          "term": "mathrm int",
+          "heading": false
+        },
+        {
+          "term": "filling",
+          "heading": false
+        }
+      ],
+      "extract": "Simplicial volume was defined for manifolds by Gromov in [@gromov:vbc]. For an $n$-dimensional closed manifold $M$ of constant sectional curvature $K=-1$, the simplicial volume $\\|M\\|$ is proportional to the (Riemannian) volume $\\mathrm{Vol}(M)$, and the ratio is the volume of a regular ideal hyperbolic $n$--simplex; in particular, it depends only on the dimension [@gromov:vbc 0.4]. More generally, [@gromov:vbc",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-outline",
+      "number": "1.1",
+      "title": "Outline",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 66,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symm",
+          "heading": false
+        },
+        {
+          "term": "singular chains",
+          "heading": false
+        },
+        {
+          "term": "simplicial volume",
+          "heading": false
+        },
+        {
+          "term": "norms",
+          "heading": false
+        }
+      ],
+      "extract": "In Subsection [\\[ss:norms\\]](#ss:norms){reference-type=\"ref\" reference=\"ss:norms\"} we recall the definition of simplicial volume for manifolds and pseudomanifolds, and apply work of Mineyev--Yaman to obtain the lower bound in the main theorem. Subsection [\\[ss:symm\\]](#ss:symm){reference-type=\"ref\" reference=\"ss:symm\"} and Appendix [\\[a:symm\\]](#a:symm){reference-type=\"ref\" reference=\"a:symm\"} are technical sections",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-simplicial-volume-and-duality",
+      "number": "2",
+      "title": "Simplicial volume and duality",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 18,
+      "summary": null,
+      "keywords": [],
+      "extract": "[]{#s:defs label=\"s:defs\"} In this section we recall the definition of *simplicial volume* for pseudomanifolds and set up some computational tools.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-21-gromov-norms",
+      "number": "2.1",
+      "title": "Gromov norms",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 979,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gromov",
+          "heading": true
+        },
+        {
+          "term": "gromov norm",
+          "heading": false
+        },
+        {
+          "term": "volumedecreases",
+          "heading": false
+        },
+        {
+          "term": "oriented pseudomanifold",
+          "heading": false
+        },
+        {
+          "term": "simplicial volume",
+          "heading": false
+        },
+        {
+          "term": "aspherical",
+          "heading": false
+        },
+        {
+          "term": "orientable manifold",
+          "heading": false
+        },
+        {
+          "term": "bounded cocycle",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#ss:norms label=\"ss:norms\"} Let $X$ be any space, and let $\\omega \\in H_*(X;\\mathbb{R})$ or $\\omega \\in H_*(X,Y;\\mathbb{R})$ for some $Y\\subset X$. The *Gromov norm of $\\omega$* is the smallest $l^1$--norm of a real singular chain representing $\\omega$, $$\\|\\omega\\| = \\inf\\left\\{\\sum_{i=1}^k |\\alpha_i|\\ \\right|\\ \\left. \\left[\\sum_{i=1}^k\\alpha_i\\sigma_i \\right] = \\omega \\right\\}.$$ (Since this infimum may be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-22-symmetrization",
+      "number": "2.2",
+      "title": "Symmetrization",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 560,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sigma circ",
+          "heading": false
+        },
+        {
+          "term": "simplex sigma",
+          "heading": false
+        },
+        {
+          "term": "affine simplices",
+          "heading": false
+        },
+        {
+          "term": "singular simplex",
+          "heading": false
+        },
+        {
+          "term": "circ tau",
+          "heading": false
+        },
+        {
+          "term": "colon thinspace",
+          "heading": false
+        },
+        {
+          "term": "thinspace delta",
+          "heading": false
+        },
+        {
+          "term": "symmetrization",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#ss:symm label=\"ss:symm\"} It will be convenient in the arguments of Section [\\[s:main\\]](#s:main){reference-type=\"ref\" reference=\"s:main\"} to assume that all chains considered are *symmetric*. Here we say what this means and justify the assumption. Consider the abstract $n$--simplex $\\Delta^n$. The symmetric group $S_{n+1}$ acts in an obvious way on the vertices, and any permutation $p\\in S_{n+1}$ extends to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-main-result",
+      "number": "3",
+      "title": "Main result",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3361,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "partial tilde",
+          "heading": false
+        },
+        {
+          "term": "partial epsilon",
+          "heading": false
+        },
+        {
+          "term": "mathrm trans",
+          "heading": false
+        },
+        {
+          "term": "partial leq",
+          "heading": false
+        },
+        {
+          "term": "colon thinspace",
+          "heading": false
+        },
+        {
+          "term": "sharp c-c",
+          "heading": false
+        },
+        {
+          "term": "cover tilde",
+          "heading": false
+        },
+        {
+          "term": "singular simplices",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s:main label=\"s:main\"} In this section we prove the main result, Theorem [\\[t:volumedecreases\\]](#t:volumedecreases){reference-type=\"ref\" reference=\"t:volumedecreases\"}. The strategy is to modify an efficient relative fundamental cycle for $(M,\\partial M)$ to a fundamental cycle on the filling, without increasing norm by too much. ::: lemma []{#l:rational label=\"l:rational\"} Let $X$ be a topological space. Let",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-appendix-a-a-proportionality-theorem",
+      "number": null,
+      "title": "Appendix A. A proportionality theorem",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2203,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "singular simplex",
+          "heading": false
+        },
+        {
+          "term": "singular chain",
+          "heading": false
+        },
+        {
+          "term": "chain homotopy",
+          "heading": false
+        },
+        {
+          "term": "simplicial volume",
+          "heading": false
+        },
+        {
+          "term": "chain representing",
+          "heading": false
+        },
+        {
+          "term": "map str",
+          "heading": false
+        },
+        {
+          "term": "ˆγk",
+          "heading": false
+        },
+        {
+          "term": "same piece",
+          "heading": false
+        }
+      ],
+      "extract": "The purpose of this appendix is to establish the following proportionality theo- rem. Theorem A.1. Let M be a manifold with boundary, so that the interior V of M admits a complete hyperbolic metric of volume Vol(V ) < ∞. Then ∥M, ∂M∥= Vol(V ) vn . Thurston gives a proof in dimension 3 of a version of theorem A.1 in his lecture notes [Thu80, 6.5.4], where the norm ∥M, ∂M∥is replaced by one coming from measure",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-appendix-b-antisymmetrization-of-chains",
+      "number": null,
+      "title": "Appendix B. (Anti)Symmetrization of chains",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 641,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "singular simplex",
+          "heading": false
+        },
+        {
+          "term": "chain map",
+          "heading": false
+        },
+        {
+          "term": "aﬃne map",
+          "heading": false
+        },
+        {
+          "term": "barycenter",
+          "heading": false
+        },
+        {
+          "term": "coning",
+          "heading": false
+        },
+        {
+          "term": "symmetrization",
+          "heading": true
+        },
+        {
+          "term": "sign",
+          "heading": false
+        },
+        {
+          "term": "suﬃces",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we prove that the chain map S deﬁned in Section 2.2 is chain homotopic to the identity. We let ∆n denote the standard n–simplex, and begin by deﬁning a “coning” operator for all n and k cn : Ck(∆n; R) →Ck+1(∆n; R). We deﬁne cn on a singular k–simplex ψ: ∆k →∆n and then extend by linearity. Let ι: ∆k →∆k+1 be the aﬃne map taking each vertex ei of ∆k to the vertex ei+1 of ∆k+1; the vertex e0 is the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 65,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "caltech",
+          "heading": false
+        },
+        {
+          "term": "cornell",
+          "heading": false
+        },
+        {
+          "term": "mathematics department",
+          "heading": false
+        }
+      ],
+      "extract": "We thank Danny Calegari, Mike Davis, Bill Thurston, Clara L¨oh, and Shmuel Weinberger for useful conversations. We also thank Alexander Nabutovsky for pointing out to us that our work applies to the homology spheres of Ratcliﬀe and Tschantz. Jason Manning did part of this work during visits to the Caltech mathematics department and the Cornell mathematics department, and thanks Caltech and Cornell for their",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 604,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dehn ﬁlling",
+          "heading": false
+        },
+        {
+          "term": "lov asz",
+          "heading": false
+        },
+        {
+          "term": "aspherical manifolds",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential geom",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifolds",
+          "heading": false
+        },
+        {
+          "term": "simplicial volume",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic groups",
+          "heading": false
+        },
+        {
+          "term": "hautes etudes",
+          "heading": false
+        }
+      ],
+      "extract": "[And06] M. T. Anderson. Dehn ﬁlling and Einstein metrics in higher dimensions. J. Diﬀerential Geom., 73(2):219–261, 2006. [Bab86] L. Babai. On Lov´asz’ lattice reduction and the nearest lattice point problem. Combina- torica, 6(1):1–13, 1986. [Bel06] I. Belegradek. Aspherical manifolds, relative hyperbolicity, simplicial volume and assem- bly maps. Algebr. Geom. Topol., 6:1341–1354, 2006. [BH96] S. A. Bleiler and C.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "simplicial volume",
+      "heading": true
+    },
+    {
+      "term": "singular simplex",
+      "heading": false
+    },
+    {
+      "term": "simplicial chains",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic simplex",
+      "heading": false
+    },
+    {
+      "term": "singular simplices",
+      "heading": false
+    },
+    {
+      "term": "singular homology",
+      "heading": false
+    },
+    {
+      "term": "volume mathrm",
+      "heading": false
+    },
+    {
+      "term": "whose simplicial",
+      "heading": false
+    },
+    {
+      "term": "singular relative",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic manifolds",
+      "heading": false
+    },
+    {
+      "term": "affine singular",
+      "heading": false
+    },
+    {
+      "term": "gromov norm",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 10,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p20); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1012.1039v2"
+  }
+}

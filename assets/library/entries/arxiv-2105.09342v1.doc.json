@@ -1,0 +1,1251 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2105.09342v1",
+  "title": "A Unitary Matrix Model for q-deformed Plancherel Growth",
+  "variant": "pdf",
+  "pages": 31,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "q-deformed Plancherel growth",
+      "number": "2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-q-deformed-plancherel-growth"
+    },
+    {
+      "level": 1,
+      "title": "A unitary matrix model for q-deformed Plancherel growth",
+      "number": "3",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-a-unitary-matrix-model-for-q-deformed-plancher"
+    },
+    {
+      "level": 2,
+      "title": "Solution class 1: No-gap solution",
+      "number": "3.1",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-31-solution-class-1-no-gap-solution"
+    },
+    {
+      "level": 2,
+      "title": "q-deformed automodel class",
+      "number": "3.2",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-32-q-deformed-automodel-class"
+    },
+    {
+      "level": 2,
+      "title": "The unitary matrix model from the droplet picture",
+      "number": "3.3",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-33-the-unitary-matrix-model-from-the-droplet-pic"
+    },
+    {
+      "level": 1,
+      "title": "Asymptotic analysis of q-deformed Plancherel growth of second kind",
+      "number": "4",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-4-asymptotic-analysis-of-q-deformed-plancherel-g"
+    },
+    {
+      "level": 1,
+      "title": "The Hilbert space",
+      "number": "5",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-5-the-hilbert-space"
+    },
+    {
+      "level": 2,
+      "title": "Moments of Young diagrams and conserved charges",
+      "number": "5.1",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-51-moments-of-young-diagrams-and-conserved-charg"
+    },
+    {
+      "level": 1,
+      "title": "Conclusion",
+      "number": "6",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-6-conclusion"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A q analog of GWW phase transition",
+      "number": null,
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-appendix-a-q-analog-of-gww-phase-transition"
+    },
+    {
+      "level": 1,
+      "title": "Appendix B Explicit computation of the partition function",
+      "number": null,
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-appendix-b-explicit-computation-of-the-partition"
+    },
+    {
+      "level": 1,
+      "title": "Appendix C Calculation of automodel density for the second class à la Strahov",
+      "number": null,
+      "page": 23,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-appendix-c-calculation-of-automodel-density-for"
+    },
+    {
+      "level": 2,
+      "title": "Appendix C.1 Computing Hconst(h), H(h) and Hseries(h)",
+      "number": null,
+      "page": 25,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-appendix-c1-computing-hconsth-hh-and-hseriesh"
+    },
+    {
+      "level": 1,
+      "title": "Appendix D Droplet quantisation",
+      "number": null,
+      "page": 26,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-appendix-d-droplet-quantisation"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 435,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-deformed plancherel",
+          "heading": false
+        },
+        {
+          "term": "plancherel growth",
+          "heading": false
+        },
+        {
+          "term": "gww phase",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "asymptotic growth",
+          "heading": false
+        },
+        {
+          "term": "plancherel measure",
+          "heading": false
+        },
+        {
+          "term": "iiserb",
+          "heading": false
+        },
+        {
+          "term": "bhopal",
+          "heading": false
+        }
+      ],
+      "extract": "A Unitary Matrix Model for q-deformed Plancherel Growth Suvankar Duttaa, Debangshu Mukherjeeb, Neetua, Sanhita Parihara aDepartment of Physics Indian Institute of Science Education and Research Bhopal, Bhopal bypass, Bhopal 462066, India bIndian Institute of Science Education and Research Thiruvananthapuram, Maruthamala PO, Vithura, Thiruvananthapuram - 695551, Kerala, India. Abstract In this paper we construct a",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2105.09342v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1267,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "plancherel growth",
+          "heading": false
+        },
+        {
+          "term": "gww phase",
+          "heading": false
+        },
+        {
+          "term": "gww transition",
+          "heading": false
+        },
+        {
+          "term": "cite chattopadhyay",
+          "heading": false
+        },
+        {
+          "term": "gww model",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "cite strahov",
+          "heading": false
+        },
+        {
+          "term": "growth process",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:intro} The powerful techniques of random matrix models have been applied to numerous fields in physics and mathematics. Quantum gravity in 2D, knot theory, integrable systems, number theory, topological string theory, algebraic geometry are a few from the list of many. In this paper, we study the asymptotic growth of Young diagrams, equipped with \\qq analog of Plancherel measure and show that one can",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-q-deformed-plancherel-growth",
+      "number": "2",
+      "title": "q-deformed Plancherel growth",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 816,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "plancherel growth",
+          "heading": true
+        },
+        {
+          "term": "cite strahov",
+          "heading": false
+        },
+        {
+          "term": "lambda frac",
+          "heading": false
+        },
+        {
+          "term": "dim lambda",
+          "heading": false
+        },
+        {
+          "term": "diagram lambda",
+          "heading": false
+        },
+        {
+          "term": "automodel equation",
+          "heading": false
+        },
+        {
+          "term": "deformed plancherel",
+          "heading": false
+        },
+        {
+          "term": "plancherel measure",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:qplancherel} The Plancherel growth of Young diagrams has been a topic of intense study over many years. In order to explain the growth process, let $\\lambda_k$ denote a Young diagram with $k$ boxes. Consider two Young diagrams $\\lambda_k$ and $\\lambda_{k+1}$ such that $\\lambda_{k+1}$ is obtained from $\\lambda_k$ by adding one box. One can associate a transition probability \\begin{equation}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-a-unitary-matrix-model-for-q-deformed-plancher",
+      "number": "3",
+      "title": "A unitary matrix model for q-deformed Plancherel growth",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 942,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "saddle eynard",
+          "heading": false
+        },
+        {
+          "term": "growth",
+          "heading": true
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "frac lambda",
+          "heading": false
+        },
+        {
+          "term": "gww model",
+          "heading": false
+        },
+        {
+          "term": "lambda mathcal",
+          "heading": false
+        },
+        {
+          "term": "sum lambda",
+          "heading": false
+        },
+        {
+          "term": "no-gap phase",
+          "heading": false
+        }
+      ],
+      "extract": "The growth of Young diagrams can be compared with the growth of a two-dimensional crystal as shown in figure \\ref{rotated_YD}. We consider every box as a unit falling from sky under gravity. There is a boundary given by the two lines passing through the origin with slope $\\pm1$. Since the gravity is working downward it is easy to understand that the boxes will arrange themselves following the rules of a rotated",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-31-solution-class-1-no-gap-solution",
+      "number": "3.1",
+      "title": "Solution class 1: No-gap solution",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 403,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "branch cut",
+          "heading": false
+        },
+        {
+          "term": "resolvent",
+          "heading": false
+        },
+        {
+          "term": "tanh",
+          "heading": false
+        },
+        {
+          "term": "log",
+          "heading": false
+        },
+        {
+          "term": "discontinuity",
+          "heading": false
+        }
+      ],
+      "extract": "Taking the ansatz u(h) = 1 for 0 ≤h ≤a and u(h) = ˜u(h) for a ≤h ≤b in h-plane, we have u(w) = ( 1 1−λw for 0 ≤w ≤wa ˜u(w) for wa ≤w ≤wb (3.18) where wa = 1−e−λa λ and wb = 1−e−λb λ . Putting this ansatz in the saddle point equation (3.17), we get − Z wb wa dw′ ˜u(w′) w −w′ = 1 1 −λw log \u0014 w −wa ξ(1 −λwa) \u0015 . (3.19) We deﬁne a resolvent function H(w) = Z dw′ u(w′) w −w′, (3.20) to solve the integral equation. H(w)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-32-q-deformed-automodel-class",
+      "number": "3.2",
+      "title": "q-deformed automodel class",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 205,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "automodel",
+          "heading": true
+        },
+        {
+          "term": "plancherel growth",
+          "heading": false
+        },
+        {
+          "term": "automodel equation",
+          "heading": false
+        },
+        {
+          "term": "limit shape",
+          "heading": false
+        }
+      ],
+      "extract": "For 0 < ξ ≤1 λ(eλ/2 −1), the density (3.25) corresponds to q-automodel diagrams which satisfy the following dynamical equation ∂ξ˜u(h, ξ, λ) + \u0002 (1 −λ2ξ2)eλ(h−1) −1 \u0003 λξ ∂h˜u(h, ξ, λ) = 0. (3.28) This is a q-analogue of the automodel equation. One can translate this equation in terms of variables v and u through an appropriate change of variables deﬁned in [1]. In λ →0 limit (3.28) reduces to the automodel equation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-33-the-unitary-matrix-model-from-the-droplet-pic",
+      "number": "3.3",
+      "title": "The unitary matrix model from the droplet picture",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 873,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "droplet picture",
+          "heading": true
+        },
+        {
+          "term": "theta lambda",
+          "heading": false
+        },
+        {
+          "term": "cos theta",
+          "heading": false
+        },
+        {
+          "term": "cite chattopadhyay",
+          "heading": false
+        },
+        {
+          "term": "theta omega",
+          "heading": false
+        },
+        {
+          "term": "umm",
+          "heading": false
+        },
+        {
+          "term": "ben label",
+          "heading": false
+        },
+        {
+          "term": "een",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:umm-droplet} In order to give a Hilbert space description of the \\qd growth process we need to find a UMM whose large $N$ phase can capture the growth of Young diagrams. For ordinary Plancherel growth it was shown in \\cite{Chattopadhyay:2019pkl} that using the Frobenius formula one can write the partition function as GWW model. In case of \\qd Plancherel growth (\\ref{eq:qdeformedgrowthpf2}), it is tricky",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-4-asymptotic-analysis-of-q-deformed-plancherel-g",
+      "number": "4",
+      "title": "Asymptotic analysis of q-deformed Plancherel growth of second kind",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 871,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lambda sqrt",
+          "heading": false
+        },
+        {
+          "term": "h-b",
+          "heading": false
+        },
+        {
+          "term": "coth frac",
+          "heading": false
+        },
+        {
+          "term": "a-b a-h",
+          "heading": false
+        },
+        {
+          "term": "ref q-automodel-d",
+          "heading": false
+        },
+        {
+          "term": "order lambda",
+          "heading": false
+        },
+        {
+          "term": "neq frac",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:qdkind1} In this section, we discuss the growth process controlled by the \\qd probability measure considered in \\cite{Strahov07}, given by \\eqref{eq:Strahov-qPlancherel}. The partition function \\eqref{q-partition} can be written as \\begin{equation}\\label{eq:PF_Strahov} Z_q=\\sum_{k=1}^{\\infty}\\sum_{\\lambda_k} \\exp[S_{eff}(h_i)]e^{-\\frac{\\ln q}{6}N(N-1)(N-2)} \\end{equation} where the effective action is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-5-the-hilbert-space",
+      "number": "5",
+      "title": "The Hilbert space",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 523,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ben ket",
+          "heading": false
+        },
+        {
+          "term": "ket vec",
+          "heading": false
+        },
+        {
+          "term": "ket tau",
+          "heading": false
+        },
+        {
+          "term": "state ket",
+          "heading": false
+        },
+        {
+          "term": "ket psi",
+          "heading": false
+        },
+        {
+          "term": "hilbert space",
+          "heading": true
+        },
+        {
+          "term": "automodel diagrams",
+          "heading": false
+        },
+        {
+          "term": "dagger hbar",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:hilbertspace} Following \\cite{ Chattopadhyay:2020rle,Chattopadhyay:2019pkl} we give a Hilbert space description of the \\qd growth process. Using the connection between unitary matrix model and free Fermi droplet description, we map the Young diagrams in automodel class to different shapes of two dimensional phase space droplets. Quantising these droplets, we further set up a correspondence between",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-51-moments-of-young-diagrams-and-conserved-charg",
+      "number": "5.1",
+      "title": "Moments of Young diagrams and conserved charges",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 239,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conserved charges",
+          "heading": true
+        },
+        {
+          "term": "moments",
+          "heading": true
+        },
+        {
+          "term": "een",
+          "heading": false
+        },
+        {
+          "term": "automodel diagrams",
+          "heading": false
+        },
+        {
+          "term": "ben",
+          "heading": false
+        },
+        {
+          "term": "infty frac",
+          "heading": false
+        },
+        {
+          "term": "sum infty",
+          "heading": false
+        }
+      ],
+      "extract": "Following \\cite{Jevicki:1993qn} one can define an infinite sequence of conserved commuting quantities \\ben H_n = \\frac{1}{2\\pi} \\int dh\\ d\\theta\\ \\omega(h,\\theta) \\ h^n. \\een Using the Poisson bracket (\\ref{eq:poisson}) one can show that \\ben \\{H_m,H_n\\} = 0. \\een Also, using the equations of motion (\\ref{eq:boundeq}) one can show that \\ben \\frac{d H_n}{dt} =0. \\een Existence of infinite number of conserved charges",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-6-conclusion",
+      "number": "6",
+      "title": "Conclusion",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 410,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "automodel diagrams",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "plancherel measure",
+          "heading": false
+        },
+        {
+          "term": "cite strahov",
+          "heading": false
+        },
+        {
+          "term": "matrix model",
+          "heading": false
+        },
+        {
+          "term": "unitary matrix",
+          "heading": false
+        },
+        {
+          "term": "droplets",
+          "heading": false
+        },
+        {
+          "term": "gww",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper, we discuss about \\qd Plancherel growth of Young diagrams. We construct a unitary matrix model that captures the growth of Young diagrams with the coupling constant playing the role of time \\cite{Strahov07}. The matrix model is a \\qq analog of GWW model and the growth of Young diagrams equipped with a \\qd Plancherel measure is captured by the no-gap phase of this model. The \\qd limit shape is the \\qd",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-appendix-a-q-analog-of-gww-phase-transition",
+      "number": null,
+      "title": "Appendix A q analog of GWW phase transition",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 373,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cos",
+          "heading": false
+        },
+        {
+          "term": "λ2ξ",
+          "heading": false
+        },
+        {
+          "term": "branch cut",
+          "heading": false
+        },
+        {
+          "term": "resolvent",
+          "heading": false
+        },
+        {
+          "term": "saddle point",
+          "heading": false
+        },
+        {
+          "term": "log",
+          "heading": false
+        }
+      ],
+      "extract": "The no-gap phase of the q-deformed Plancherel growth process captured by the partition function (3.3) has been discussed in section 3.1. There exist another class of solution for the saddle point equation (3.13), namely the one-gap solution for which 0 ≤u(h) < 1 for h ∈[a, b] . (A.1) To solve the saddle point equation for this case, we deﬁne new variables z = 1 −e−λh λ (A.2) 20 in terms of which the equation becomes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-appendix-b-explicit-computation-of-the-partition",
+      "number": null,
+      "title": "Appendix B Explicit computation of the partition function",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 397,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "partition function",
+          "heading": true
+        },
+        {
+          "term": "qhi",
+          "heading": false
+        },
+        {
+          "term": "exp",
+          "heading": false
+        },
+        {
+          "term": "strahov",
+          "heading": false
+        }
+      ],
+      "extract": "Here, we provide some details of the computation for the partition function (4.1) that follows if one takes the q-deformed Plancherel measure following Strahov [9]. The partition function can be written as Zq = ∞ X k=1 X {hi} exp [k ln t + k ln(1 −q) + b(λk) ln q + ln k!] exp \" ln Y 1≤i<j≤N (hi −hj) −ln N Y i=1 hi! + ln Y 1≤i<j≤N [hi −hj] −ln N Y i=1 [hi]! # . (B.1) The total number of boxes in a Young diagram can",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-appendix-c-calculation-of-automodel-density-for",
+      "number": null,
+      "title": "Appendix C Calculation of automodel density for the second class à la Strahov",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 947,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "b2kλ2k",
+          "heading": false
+        },
+        {
+          "term": "h2k",
+          "heading": false
+        },
+        {
+          "term": "hconst",
+          "heading": false
+        },
+        {
+          "term": "hseries",
+          "heading": false
+        },
+        {
+          "term": "resolvent",
+          "heading": false
+        },
+        {
+          "term": "coth",
+          "heading": false
+        },
+        {
+          "term": "λkbk",
+          "heading": false
+        },
+        {
+          "term": "branch cut",
+          "heading": false
+        }
+      ],
+      "extract": "Here, we give details of derivation for the solution of (4.6). The ﬁrst term in the kernel, namely coth λ(h−h′) 2 has a series representation of the form coth λ(h −h′) 2 = 2 λ(h −h′) + 2 ∞ X k=1 B2kλ2k−1 (2k)! (h −h′)2k−1, (C.1) clearly demonstrating that there is a singularity in the ﬁrst term above as h′ →h. However, the second term is well behaved for any real h′. Motivated by this observation, we deﬁne the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-appendix-c1-computing-hconsth-hh-and-hseriesh",
+      "number": null,
+      "title": "Appendix C.1 Computing Hconst(h), H(h) and Hseries(h)",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 388,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hseries",
+          "heading": true
+        },
+        {
+          "term": "b2kλ2k",
+          "heading": false
+        },
+        {
+          "term": "h2k",
+          "heading": false
+        },
+        {
+          "term": "hconst",
+          "heading": true
+        }
+      ],
+      "extract": "In order to perform the contour integrals in (C.8), one needs to reparametrize the inte- gration variable s as s = a + xeiϵ along γ+ and s = a + xei(2π−ϵ) along γ−. It can be further demonstrated that the contribution to this integral coming from the parts Ca and Cb i.e. two inﬁnitesimal circles centered around a and b vanishes in the limit when the radii of the circles are taken to zero. Carrying out the above",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-appendix-d-droplet-quantisation",
+      "number": null,
+      "title": "Appendix D Droplet quantisation",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1818,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "droplet",
+          "heading": true
+        },
+        {
+          "term": "circular droplet",
+          "heading": false
+        },
+        {
+          "term": "dutta",
+          "heading": false
+        },
+        {
+          "term": "thomas-fermi distribution",
+          "heading": false
+        },
+        {
+          "term": "particle hamiltonian",
+          "heading": false
+        },
+        {
+          "term": "bubbling ads",
+          "heading": false
+        },
+        {
+          "term": "coherent state",
+          "heading": false
+        },
+        {
+          "term": "excited state",
+          "heading": false
+        }
+      ],
+      "extract": "The droplet picture, discussed in section 3.3, has no dynamics. Diﬀerent large N phases, obtained by solving the saddle point equation, are possible minimum free energy conﬁgura- tions of the model. Hence the corresponding droplets are static - the shapes are not changing 26 with time. To incorporate dynamics into the picture, we follow an ad-hoc way : identify the large N droplets with Thomas-Fermi distribution at",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "plancherel growth",
+      "heading": true
+    },
+    {
+      "term": "automodel diagrams",
+      "heading": false
+    },
+    {
+      "term": "automodel equation",
+      "heading": false
+    },
+    {
+      "term": "young diagrams",
+      "heading": true
+    },
+    {
+      "term": "automodel density",
+      "heading": true
+    },
+    {
+      "term": "cite chattopadhyay",
+      "heading": false
+    },
+    {
+      "term": "growth process",
+      "heading": true
+    },
+    {
+      "term": "plancherel measure",
+      "heading": false
+    },
+    {
+      "term": "automodel class",
+      "heading": true
+    },
+    {
+      "term": "asymptotic growth",
+      "heading": true
+    },
+    {
+      "term": "q-deformed plancherel",
+      "heading": true
+    },
+    {
+      "term": "rotated young",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "2D Crystal growth and growth of rotated Young diagrams. A crystal unit is compared with a single box in the Young diagram. Single crystals are falling from sky under gravity and being deployed at possible stable positions",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "A typical Young diagrams written in the Russian convention",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The deformed contour of integration for (3.21) has a logarithmic branch cut extending from wa",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The limit shape for a q-deformed (λ = 0.8) Plancherel growth process (green curve) and its q →1 (λ →0) limit (orange curve) for comparison",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The limit shape for a q-deformed (λ = 0.97) Plancherel growth process (green curve) and its q →1 (λ →0) limit (orange curve) for comparison",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p006-1",
+      "file": "images/img-p006-1.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p024-1",
+      "file": "images/img-p024-1.png",
+      "page": 24,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 15,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 16,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 2,
+      "note": "5 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p26); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 6
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 16 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2105.09342v1"
+  }
+}

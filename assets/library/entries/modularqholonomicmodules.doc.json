@@ -1,0 +1,2316 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "modularqholonomicmodules",
+  "title": "modularqholonomicmodules",
+  "variant": "pdf",
+  "pages": 66,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Summary",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-summary"
+    },
+    {
+      "level": 2,
+      "title": "Motivation",
+      "number": "1.2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-motivation"
+    },
+    {
+      "level": 2,
+      "title": "Definition and properties",
+      "number": "1.3",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-definition-and-properties"
+    },
+    {
+      "level": 2,
+      "title": "The generalised q-hypergeometric equation is modular",
+      "number": "1.4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-the-generalised-q-hypergeometric-equation-is"
+    },
+    {
+      "level": 2,
+      "title": "Modular q-holonomic modules in Chern–Simons theory",
+      "number": "1.5",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-15-modular-q-holonomic-modules-in-chernsimons-th"
+    },
+    {
+      "level": 1,
+      "title": "A review of linear q-difference equations",
+      "number": "2",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-2-a-review-of-linear-q-difference-equations"
+    },
+    {
+      "level": 2,
+      "title": "Preliminaries",
+      "number": "2.1",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-21-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "An algorithm for a fundamental matrix",
+      "number": "2.2",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-22-an-algorithm-for-a-fundamental-matrix"
+    },
+    {
+      "level": 2,
+      "title": "The q-Borel and the q-Laplace transforms",
+      "number": "2.3",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-23-the-q-borel-and-the-q-laplace-transforms"
+    },
+    {
+      "level": 2,
+      "title": "The slash operator and proof of Theorem 1.2",
+      "number": "2.4",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-24-the-slash-operator-and-proof-of-theorem-12"
+    },
+    {
+      "level": 2,
+      "title": "Duality",
+      "number": "2.5",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-25-duality"
+    },
+    {
+      "level": 2,
+      "title": "Categorical aspects",
+      "number": "2.6",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-26-categorical-aspects"
+    },
+    {
+      "level": 1,
+      "title": "Heine's q-hypergeometric functions",
+      "number": "3",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-3-heines-q-hypergeometric-functions"
+    },
+    {
+      "level": 2,
+      "title": "Solutions",
+      "number": "3.1",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-31-solutions"
+    },
+    {
+      "level": 2,
+      "title": "Self duality",
+      "number": "3.2",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-32-self-duality"
+    },
+    {
+      "level": 2,
+      "title": "State integral",
+      "number": "3.3",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-33-state-integral"
+    },
+    {
+      "level": 2,
+      "title": "Resonance",
+      "number": "3.4",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-34-resonance"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorems 1.5 and 1.6",
+      "number": "4",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-4-proof-of-theorems-15-and-16"
+    },
+    {
+      "level": 2,
+      "title": "The q-Pochhammer symbol",
+      "number": "4.1",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-41-the-q-pochhammer-symbol"
+    },
+    {
+      "level": 2,
+      "title": "The Appell-Lerch sums",
+      "number": "4.2",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-42-the-appell-lerch-sums"
+    },
+    {
+      "level": 1,
+      "title": "A q-difference equation of the 41 knot",
+      "number": "5",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-5-a-q-difference-equation-of-the-41-knot"
+    },
+    {
+      "level": 2,
+      "title": "Solutions",
+      "number": "5.1",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-51-solutions"
+    },
+    {
+      "level": 2,
+      "title": "Monodromy",
+      "number": "5.2",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-52-monodromy"
+    },
+    {
+      "level": 2,
+      "title": "Residues",
+      "number": "5.3",
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-53-residues"
+    },
+    {
+      "level": 2,
+      "title": "Determinants",
+      "number": "5.4",
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-54-determinants"
+    },
+    {
+      "level": 2,
+      "title": "State integral",
+      "number": "5.5",
+      "page": 46,
+      "pageLabel": "46",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-55-state-integral"
+    },
+    {
+      "level": 2,
+      "title": "The inhomogeneous equation",
+      "number": "5.6",
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-56-the-inhomogeneous-equation"
+    },
+    {
+      "level": 2,
+      "title": "The x-deformation",
+      "number": "5.7",
+      "page": 52,
+      "pageLabel": "52",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-57-the-x-deformation"
+    },
+    {
+      "level": 2,
+      "title": "An analytic lift of the colored Jones polynomial",
+      "number": "5.8",
+      "page": 62,
+      "pageLabel": "62",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-58-an-analytic-lift-of-the-colored-jones-polynom"
+    },
+    {
+      "level": 2,
+      "title": "Specialisation t=qm",
+      "number": "5.9",
+      "page": 62,
+      "pageLabel": "62",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-59-specialisation-tqm"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 63,
+      "pageLabel": "63",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 63,
+      "pageLabel": "63",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 340,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "modular q-holonomic",
+          "heading": false
+        },
+        {
+          "term": "q-holonomic modules",
+          "heading": false
+        },
+        {
+          "term": "generalised q-hypergeometric",
+          "heading": false
+        },
+        {
+          "term": "q-diﬀerence equations",
+          "heading": false
+        },
+        {
+          "term": "linear q-diﬀerence",
+          "heading": false
+        },
+        {
+          "term": "campbell wheeler",
+          "heading": false
+        },
+        {
+          "term": "appell-lerch sums",
+          "heading": false
+        },
+        {
+          "term": "simons theory",
+          "heading": false
+        }
+      ],
+      "extract": "MODULAR q-HOLONOMIC MODULES STAVROS GAROUFALIDIS AND CAMPBELL WHEELER Abstract. We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and show that the generalised q-hypergeometric equation, as well as three key q-holonomic modules of complex Chern– Simons theory are modular. This notion explains conceptually recent structural",
+      "extractCut": true,
+      "blocks": [
+        "library/modularqholonomicmodules/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "1. Introduction",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-summary",
+      "number": "1.1",
+      "title": "Summary",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 296,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "modular q-holonomic",
+          "heading": false
+        },
+        {
+          "term": "q-holonomic modules",
+          "heading": false
+        },
+        {
+          "term": "q-hypergeometric equation",
+          "heading": false
+        },
+        {
+          "term": "qac",
+          "heading": false
+        },
+        {
+          "term": "q2c",
+          "heading": false
+        },
+        {
+          "term": "qbc",
+          "heading": false
+        },
+        {
+          "term": "linear q-diﬀerence",
+          "heading": false
+        }
+      ],
+      "extract": "ing q-holonomic modules) which we call modular, with several key features. • Their fundamental solutions at 0 and inﬁnity have explicitly computable monodromy. • A natural SL2(Z)-cocycle constructed from a fundamental solution extends from C\\R to the complex plane minus a ray in the real numbers. • Their fundamental solutions are meromorphic and their residues are expressed in terms of the solutions themselves (kind",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-motivation",
+      "number": "1.2",
+      "title": "Motivation",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 258,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chern simons",
+          "heading": false
+        },
+        {
+          "term": "linear q-diﬀerence",
+          "heading": false
+        },
+        {
+          "term": "q-diﬀerence equation",
+          "heading": false
+        },
+        {
+          "term": "simons theory",
+          "heading": false
+        },
+        {
+          "term": "talks",
+          "heading": false
+        },
+        {
+          "term": "resurgence",
+          "heading": false
+        },
+        {
+          "term": "modularity",
+          "heading": false
+        }
+      ],
+      "extract": "What does it take to solve a q-diﬀerence equation? Solving a linear equation usually means giving a basis of solutions, say at t = 0 and t = ∞(the only two canonical points, ﬁxed under the shift transformation t 7→qt), and to compute the monodromy (i.e., the connection) between t = 0 and t = ∞in terms of “known” functions. This problem has a rich history with an interesting balance between concrete special functions",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-definition-and-properties",
+      "number": "1.3",
+      "title": "Definition and properties",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": "3",
+      "labelEnd": "6",
+      "words": 1273,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "modular q-holonomic",
+          "heading": false
+        },
+        {
+          "term": "q-holonomic modules",
+          "heading": false
+        },
+        {
+          "term": "ωis cocycle",
+          "heading": false
+        },
+        {
+          "term": "linear q-diﬀerence",
+          "heading": false
+        },
+        {
+          "term": "q-diﬀerence equation",
+          "heading": false
+        },
+        {
+          "term": "κuγ",
+          "heading": false
+        },
+        {
+          "term": "campbell wheeler",
+          "heading": false
+        },
+        {
+          "term": "linear diﬀerential",
+          "heading": false
+        }
+      ],
+      "extract": "equation σX = AX (3) for a vector-valued function X = X(t, q), where (σX)(t, q) = X(qt, q) denotes the shift operator, A(t, q) ∈GLr(Q(t, q)) and q is a nonzero complex number with |q|̸ = 1. Fix a fundamental matrix solution U to (3) at t = 0, which we assume is ﬁltration-preserving and of weight κU = diag(τ κU,1, . . . , τ κU,r) and deﬁne ΩU,γ = (U|κUγ)U −1, γ = \u0000 a b c d \u0001 ∈SL2(Z) (4) where the slash operator |κUγ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-the-generalised-q-hypergeometric-equation-is",
+      "number": "1.4",
+      "title": "The generalised q-hypergeometric equation is modular",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 796,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "generalised q-hypergeometric",
+          "heading": true
+        },
+        {
+          "term": "q-hypergeometric equation",
+          "heading": true
+        },
+        {
+          "term": "modular q-holonomic",
+          "heading": false
+        },
+        {
+          "term": "q-hypergeometric series",
+          "heading": false
+        },
+        {
+          "term": "hypergeometric equation",
+          "heading": false
+        },
+        {
+          "term": "q-holonomic modules",
+          "heading": false
+        },
+        {
+          "term": "qai",
+          "heading": false
+        },
+        {
+          "term": "a2t",
+          "heading": false
+        }
+      ],
+      "extract": "might expect, modular q-holonomic modules are abundant. This section concerns the gen- eralised q-hypergeometric equation r−1 Y j=0 (1 −q−1bjσ) −t rY j=1 (1 −ajσ) ! f = 0 (11) for a function f = f(t, a, b, q) where a = (a1, . . . , ar) and b = (b0, . . . , br−1) with b0 = q, where σ is the operator that shifts t to qt. This equation is a q-deformation of the hypergeometric equation (a regular singular linear",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-15-modular-q-holonomic-modules-in-chernsimons-th",
+      "number": "1.5",
+      "title": "Modular q-holonomic modules in Chern–Simons theory",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 12,
+      "labelStart": "7",
+      "labelEnd": "12",
+      "words": 2405,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "modular q-holonomic",
+          "heading": true
+        },
+        {
+          "term": "q-holonomic modules",
+          "heading": true
+        },
+        {
+          "term": "chern simons",
+          "heading": true
+        },
+        {
+          "term": "simons theory",
+          "heading": true
+        },
+        {
+          "term": "appell-lerch sums",
+          "heading": false
+        },
+        {
+          "term": "q-diﬀerence equation",
+          "heading": false
+        },
+        {
+          "term": "tλq",
+          "heading": false
+        },
+        {
+          "term": "monodromy matrix",
+          "heading": false
+        }
+      ],
+      "extract": "present three q-holonomic modules whose cocycles play a key role in complex Chern–Simons theory and prove their modularity. We will not need a detailed knowledge of Chern–Simons theory, but focus on the fact that it is a gauge theory with gauge group a complex Lie group, whose partition function can be identiﬁed by a ﬁnite dimensional integrals of products of the Faddeev quantum dilogarithm. A detailed exposition of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-2-a-review-of-linear-q-difference-equations",
+      "number": "2",
+      "title": "A review of linear q-difference equations",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-21-preliminaries",
+      "number": "2.1",
+      "title": "Preliminaries",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 315,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qℓt",
+          "heading": false
+        },
+        {
+          "term": "q-diﬀerence equations",
+          "heading": false
+        },
+        {
+          "term": "linear q-diﬀerence",
+          "heading": false
+        },
+        {
+          "term": "q-holonomic module",
+          "heading": false
+        },
+        {
+          "term": "jacobi theta",
+          "heading": false
+        },
+        {
+          "term": "ﬁltrations",
+          "heading": false
+        }
+      ],
+      "extract": "equations with a small parameter are typically factorially divergent series, which lead to MODULAR q-HOLONOMIC MODULES 13 analytic solutions to the diﬀerence equation after applying the process of a Borel transfor- mation, followed by a Laplace transformation. This subject is classical and well-studied, see for example [6, 15, 52, 53]. A corresponding theory for linear q-diﬀerence equations was developed recently by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-22-an-algorithm-for-a-fundamental-matrix",
+      "number": "2.2",
+      "title": "An algorithm for a fundamental matrix",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 461,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "newton polygon",
+          "heading": false
+        },
+        {
+          "term": "q-laplace transform",
+          "heading": false
+        },
+        {
+          "term": "fundamental matrix",
+          "heading": true
+        },
+        {
+          "term": "lower newton",
+          "heading": false
+        },
+        {
+          "term": "indicial polynomial",
+          "heading": false
+        },
+        {
+          "term": "linear q-diﬀerence",
+          "heading": false
+        },
+        {
+          "term": "convex hull",
+          "heading": false
+        },
+        {
+          "term": "q-holonomic module",
+          "heading": false
+        }
+      ],
+      "extract": "obtain a fundamental matrix solution to a q-holonomic module given by Dreyfus [20] using the q-Borel and the q-Laplace transform. Let us describe the main steps here. • Choose a cyclic vector to present a q-holonomic module in the form of a linear q-diﬀerence equation r X j=0 ajσjf = 0 (53) 14 STAVROS GAROUFALIDIS AND CAMPBELL WHEELER where f = f(t, q), (σf)(t, q) = f(qt, q) and aj(t, q) ∈Q(q)[t±1], with ar̸ = 0.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-23-the-q-borel-and-the-q-laplace-transforms",
+      "number": "2.3",
+      "title": "The q-Borel and the q-Laplace transforms",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 17,
+      "labelStart": "14",
+      "labelEnd": "17",
+      "words": 856,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "πiξ",
+          "heading": false
+        },
+        {
+          "term": "resξ",
+          "heading": false
+        },
+        {
+          "term": "laplace transform",
+          "heading": false
+        },
+        {
+          "term": "modular q-holonomic",
+          "heading": false
+        },
+        {
+          "term": "q-holonomic modules",
+          "heading": false
+        },
+        {
+          "term": "q-laplace",
+          "heading": true
+        },
+        {
+          "term": "q-borel",
+          "heading": true
+        },
+        {
+          "term": "kqk",
+          "heading": false
+        }
+      ],
+      "extract": "Bκ (for a rational number κ) deﬁned by Bκ ∞ X ℓ=0 aℓtℓ ! (ξ, q) = ∞ X ℓ=0 (−1)ℓqκℓ(ℓ+1)/2aℓξℓ. (55) Its role is to convert divergent series, e.g., of the form P∞ ℓ=0 q−κℓ(ℓ+1)/2aℓtℓ(where aℓis bounded and κ > 0) to convergent ones at ξ = 0. An inverse of the q-Borel transform is the q-Laplace transform, whose role is to construct analytic solutions to the linear q-diﬀerence equation with prescribed asymptotics. It",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-24-the-slash-operator-and-proof-of-theorem-12",
+      "number": "2.4",
+      "title": "The slash operator and proof of Theorem 1.2",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 20,
+      "labelStart": "17",
+      "labelEnd": "20",
+      "words": 1606,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "slash operator",
+          "heading": true
+        },
+        {
+          "term": "cocycle property",
+          "heading": false
+        },
+        {
+          "term": "arst",
+          "heading": false
+        },
+        {
+          "term": "εγε",
+          "heading": false
+        },
+        {
+          "term": "κuγ",
+          "heading": false
+        },
+        {
+          "term": "campbell wheeler",
+          "heading": false
+        },
+        {
+          "term": "side extends",
+          "heading": false
+        },
+        {
+          "term": "satisﬁes equation",
+          "heading": false
+        }
+      ],
+      "extract": "operator, an important ingredient to express modularity. We will use the usual conventions for the modular q = e(τ) and the Jacobi t = e(z), λi = e(ui), µi = e(vi), x = e(w) variables, i.e., eq = e(−1/τ), et = e(z/τ) and e(x) = e2πix. Now recall the slash operator f|κγ (see, eg. [12, p.13] and [21]) for γ = \u0000 a b c d \u0001 ∈SL2(Z) acting on a function f(z, τ) by (f|κγ)(z, τ) = (cτ + d)−κf(γ(z, τ)), γ(z, τ) = \u0012 z cτ + d,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-25-duality",
+      "number": "2.5",
+      "title": "Duality",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 23,
+      "labelStart": "20",
+      "labelEnd": "23",
+      "words": 1412,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-diﬀerence module",
+          "heading": false
+        },
+        {
+          "term": "companion matrices",
+          "heading": false
+        },
+        {
+          "term": "q-holonomic modules",
+          "heading": false
+        },
+        {
+          "term": "companion matrix",
+          "heading": false
+        },
+        {
+          "term": "modular q-holonomic",
+          "heading": false
+        },
+        {
+          "term": "linear q-diﬀerence",
+          "heading": false
+        },
+        {
+          "term": "comp",
+          "heading": false
+        },
+        {
+          "term": "dual module",
+          "heading": false
+        }
+      ],
+      "extract": "modules. Recall that we can write the linear q-diﬀerence equation ar(t, q)f(qrt, q) + ar−1(t, q)f(qr−1t, q) + · · · + a0(t, q)f(t, q) = 0 (84) for a function f(t, q) in matrix form σX = AX where X = Xf = (f, σf, . . . , σr−1f)t is a column vector and A = comp(−a0/ar, . . . , −ar−1/ar) is the companion matrix where comp(c0, c1, . . . , cr−1) =       0 1 0 . . . 0 0 0 1 . . . 0 : : : . . . : 0 0 0 . . . 1 c0 c1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-26-categorical-aspects",
+      "number": "2.6",
+      "title": "Categorical aspects",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 419,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sol",
+          "heading": false
+        },
+        {
+          "term": "q-weyl algebra",
+          "heading": false
+        },
+        {
+          "term": "cyclic vector",
+          "heading": false
+        },
+        {
+          "term": "fundamental matrices",
+          "heading": false
+        },
+        {
+          "term": "q-holonomic",
+          "heading": false
+        },
+        {
+          "term": "short exact",
+          "heading": false
+        },
+        {
+          "term": "exact sequence",
+          "heading": false
+        },
+        {
+          "term": "ﬁltration",
+          "heading": false
+        }
+      ],
+      "extract": "ules over the q-Weyl algebra and give a proof of Lemma 1.3. To begin with, a gauge transformation X = P −1Y changes (3) to σY = BY where B = σPAP −1, changes a fundamental solution U of (3) to P −1U, and consequently changes Ωγ to (P|κγ)−1ΩP. Hence, if P ∈GLr(Q(t, q)), then modularity is a property of the gauge equivalence class of a linear q-diﬀerence equation, i.e., a property of a q-holonomic module, independent",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-3-heines-q-hypergeometric-functions",
+      "number": "3",
+      "title": "Heine's q-hypergeometric functions",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": "24",
+      "labelEnd": "24",
+      "words": 10,
+      "summary": null,
+      "keywords": [],
+      "extract": "This section is devoted to the proof of Theorem 1.4.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-014-31-solutions",
+      "number": "3.1",
+      "title": "Solutions",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 336,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "newton polygon",
+          "heading": false
+        },
+        {
+          "term": "indicial polynomial",
+          "heading": false
+        },
+        {
+          "term": "solutions",
+          "heading": true
+        },
+        {
+          "term": "ter",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst equation",
+          "heading": false
+        }
+      ],
+      "extract": "equation (11). Since that equation depends on parameters, it will be convenient to consider the following system of equations r−1 Y j=0 (1 −q−1bjσt) −t rY j=1 (1 −ajσt) ! f = 0 \u0000σ−1 ai −q−1aiσtσ−1 ai −(1 −q−1ai) \u0001 f = 0 \u00001 −q−1biσt −(1 −q−1bi)σ−1 bi \u0001 f = 0 . (111) The ﬁrst equation describes the q-diﬀerence equation in t, namely Equation (11) whose Newton polygon shown in Figure 1. g(a−1 1 ) g(a−1 r ) f (1) f (qb−1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-32-self-duality",
+      "number": "3.2",
+      "title": "Self duality",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 28,
+      "labelStart": "25",
+      "labelEnd": "28",
+      "words": 1229,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jej",
+          "heading": false
+        },
+        {
+          "term": "campbell wheeler",
+          "heading": false
+        },
+        {
+          "term": "tbi",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "gauge equivalences",
+          "heading": false
+        },
+        {
+          "term": "ter",
+          "heading": false
+        },
+        {
+          "term": "module associated",
+          "heading": false
+        },
+        {
+          "term": "diag",
+          "heading": false
+        }
+      ],
+      "extract": "ﬁnite sum of products of solutions of the module M associated to Equations (111) and its dual M ∧(see Section 2.5 for the deﬁnitions of the two duals). To prove modularity we must factorise the state integral as a ﬁnite sum of products of solutions of M and M ∨. To do so, we need to give an explicit isomorphism between M ∨and M ∧. This is the content of the following proposition, which after some change of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-33-state-integral",
+      "number": "3.3",
+      "title": "State integral",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": "28",
+      "labelEnd": "29",
+      "words": 569,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "state integral",
+          "heading": true
+        },
+        {
+          "term": "meromorphic function",
+          "heading": false
+        },
+        {
+          "term": "upwards",
+          "heading": false
+        },
+        {
+          "term": "contour",
+          "heading": false
+        },
+        {
+          "term": "integrand",
+          "heading": false
+        },
+        {
+          "term": "constant times",
+          "heading": false
+        },
+        {
+          "term": "cocycle",
+          "heading": false
+        }
+      ],
+      "extract": "I(z, α, β, τ) = Z C Φb(x) Qr−1 j=1 Φb(x + ib−1βj + ib−1 −ib) Qr j=1 Φb(x + ib−1αj + ib−1 −ib) exp \u0010 −2πzx b \u0011 dx . (137) where C is a contour in the complex plane asymptotic to R + iε that separates the poles of the numerator from the zeros of the denominator of the integrand, ai = e(αi), ˜ai = e(αi/τ), bi = e(βi) and ˜bi = e(βi/τ), and Φb is the Faddeev quantum dilogarithm function [23, 24] and b = √τ. We ﬁrst",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-34-resonance",
+      "number": "3.4",
+      "title": "Resonance",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 31,
+      "labelStart": "29",
+      "labelEnd": "31",
+      "words": 659,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q2b",
+          "heading": false
+        },
+        {
+          "term": "modular q-holonomic",
+          "heading": false
+        },
+        {
+          "term": "qab",
+          "heading": false
+        },
+        {
+          "term": "qeε",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst equation",
+          "heading": false
+        },
+        {
+          "term": "q2t",
+          "heading": false
+        },
+        {
+          "term": "state integral",
+          "heading": false
+        },
+        {
+          "term": "special points",
+          "heading": false
+        }
+      ],
+      "extract": "equation (11), i.e., the case where at least one of the ratios ai/aj (for i̸ = j), bi/bj (for i̸ = j) or ai/bj (for some i and j) is an integer power of q. For simplicity, we will consider only the case of r = 2, although our arguments remain valid for all r. When r = 2, the system of equations (111) is given by (1 −t)f(t, a, b, c, q) −(q−1c + 1 −t(a + b))f(qt, a, b, c, q) + (q−1c −tab)f(q2t, a, b, c, q) = 0 f(t,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-4-proof-of-theorems-15-and-16",
+      "number": "4",
+      "title": "Proof of Theorems 1.5 and 1.6",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 31,
+      "labelStart": "31",
+      "labelEnd": "31",
+      "words": 7,
+      "summary": null,
+      "keywords": [],
+      "extract": "4. Proof of Theorems 1.5 and 1.6",
+      "extractCut": false
+    },
+    {
+      "id": "sec-019-41-the-q-pochhammer-symbol",
+      "number": "4.1",
+      "title": "The q-Pochhammer symbol",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 33,
+      "labelStart": "31",
+      "labelEnd": "33",
+      "words": 449,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "newton polygon",
+          "heading": false
+        },
+        {
+          "term": "modular q-holonomic",
+          "heading": false
+        },
+        {
+          "term": "indicial polynomial",
+          "heading": false
+        },
+        {
+          "term": "qkραk",
+          "heading": false
+        },
+        {
+          "term": "slope zero",
+          "heading": false
+        },
+        {
+          "term": "normalising",
+          "heading": false
+        }
+      ],
+      "extract": "The q-diﬀerence equation (19) can be written in operator form as ((1 −qt)σ −1)f = 0, with the Newton polygon shown in Figure 2. g(1) f (0) Figure 2. The Newton polygon of Equation (19). The lower Newton polygon has one edge of slope zero. Applying the Frobenius method, we seek a formal power series solution of the form f (0)(t, q) = ∞ X k=0 αk(q)tk θ(ρ−1t; q) θ(t; q) where qkραk(q) −qkραk−1(q) −αk(q) = 0. (153)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-42-the-appell-lerch-sums",
+      "number": "4.2",
+      "title": "The Appell-Lerch sums",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 37,
+      "labelStart": "33",
+      "labelEnd": "37",
+      "words": 1387,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "appell-lerch sums",
+          "heading": true
+        },
+        {
+          "term": "newton polygon",
+          "heading": false
+        },
+        {
+          "term": "πit",
+          "heading": false
+        },
+        {
+          "term": "ℓqℓ",
+          "heading": false
+        },
+        {
+          "term": "slope zero",
+          "heading": false
+        },
+        {
+          "term": "qmλ",
+          "heading": false
+        },
+        {
+          "term": "campbell wheeler",
+          "heading": false
+        },
+        {
+          "term": "modular q-holonomic",
+          "heading": false
+        }
+      ],
+      "extract": "4.2. The Appell-Lerch sums. This section is devoted to the proof of Theorem 1.6. The q-diﬀerence equation (22) has Newton polygon shown in Figure 3. f (0) f (−1) g(0) g(−1) Figure 3. The Newton polygon of Equation (22). To begin with, the boundary of the lower Newton polygon consists of one edge of slope zero and one edge of slope 1. The edge of slope zero has a solution of the form f (0)(t, q) = ∞ X k=0 αk(q)tk",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-51-solutions",
+      "number": "5.1",
+      "title": "Solutions",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 37,
+      "labelStart": "37",
+      "labelEnd": "37",
+      "words": 59,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mordell integral",
+          "heading": false
+        },
+        {
+          "term": "cocycle",
+          "heading": false
+        },
+        {
+          "term": "concludes",
+          "heading": false
+        }
+      ],
+      "extract": "the functional equations of h the Mordell integral [74, Proposition 1.2] these functions give an analytic extension of h the Mordell integral to the cut plane C′. Therefore, the cocycle ΩU,S(t, q) extends to a holomorphic function for z ∈C and τ ∈C′. Since ΩU,T = I, part (c) of Theorem 1.2 concludes that the cocycle ΩU is modular.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-022-5-a-q-difference-equation-of-the-41-knot",
+      "number": "5",
+      "title": "A q-difference equation of the 41 knot",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 40,
+      "labelStart": "37",
+      "labelEnd": "40",
+      "words": 705,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "newton polygon",
+          "heading": false
+        },
+        {
+          "term": "campbell wheeler",
+          "heading": false
+        },
+        {
+          "term": "q-diﬀerence equation",
+          "heading": false
+        },
+        {
+          "term": "bottom edge",
+          "heading": false
+        },
+        {
+          "term": "indicial polynomial",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "θ-function",
+          "heading": false
+        },
+        {
+          "term": "slope",
+          "heading": false
+        }
+      ],
+      "extract": "This section is devoted to the proof of Theorem 1.7, Theorem 1.8 and Theorem 1.9. 5.1. Solutions. The q-diﬀerence equation (28) has Newton polygon shown in Figure 4. The boundary of the lower Newton polygon has edges of slope −1 and 1. The edge with slope −1 must be divided by a θ-function to get a power series solution. The eﬀect on the Newton polygon is as follows. 38 STAVROS GAROUFALIDIS AND CAMPBELL WHEELER",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-52-monodromy",
+      "number": "5.2",
+      "title": "Monodromy",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 43,
+      "labelStart": "40",
+      "labelEnd": "43",
+      "words": 870,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qrt",
+          "heading": false
+        },
+        {
+          "term": "tλq",
+          "heading": false
+        },
+        {
+          "term": "πit",
+          "heading": false
+        },
+        {
+          "term": "monodromy",
+          "heading": true
+        },
+        {
+          "term": "qeε",
+          "heading": false
+        },
+        {
+          "term": "resε",
+          "heading": false
+        },
+        {
+          "term": "modular q-holonomic",
+          "heading": false
+        },
+        {
+          "term": "kqk",
+          "heading": false
+        }
+      ],
+      "extract": "and the associated monodromy. Using the modular transformation properties of the Jacobi θ-function Equation (49) and the Dedekind η-function, it is easy to see that Equation (31) implies (32). Note that each of the functions −→ M2,1, −→ M2,1|−1T, −→ M2,1|−1S has SL2(Z)-stabiliser ⟨T 2, TST⟩, ⟨T 2, S⟩and ⟨ST 2S, T⟩, respectively, and that the second group is the θ-subgroup and the last group is Γ0(2). The appearance",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-53-residues",
+      "number": "5.3",
+      "title": "Residues",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 45,
+      "labelStart": "43",
+      "labelEnd": "45",
+      "words": 529,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "πiξ resξ",
+          "heading": false
+        },
+        {
+          "term": "πit rest",
+          "heading": false
+        },
+        {
+          "term": "residues",
+          "heading": true
+        },
+        {
+          "term": "rqr",
+          "heading": false
+        },
+        {
+          "term": "simple poles",
+          "heading": false
+        }
+      ],
+      "extract": "the residues of the meromorphic functions f (−1) = g(0,1) and f (1). Lemma 5.2. The functions f (−1)(t, q) = g(0,1)(t, q) have simple poles at t = qZ with residues Rest=qnf (−1)(t, q) dt 2πit = Rest=qng(0,1)(t, q) dt 2πit = g(0,0)(qn, q) . (222) Proof. We have Rest=qk θ′(t−1; q) θ(t−1; q) dt 2πit = −1 . (223) To ﬁnish we note that the proof of the equality f (−1) = g(0,1) is independent of this Lemma and follows",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-54-determinants",
+      "number": "5.4",
+      "title": "Determinants",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 46,
+      "labelStart": "45",
+      "labelEnd": "46",
+      "words": 612,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lim det",
+          "heading": false
+        },
+        {
+          "term": "elliptic functions",
+          "heading": false
+        },
+        {
+          "term": "simple poles",
+          "heading": false
+        },
+        {
+          "term": "functional equation",
+          "heading": false
+        },
+        {
+          "term": "determinants",
+          "heading": true
+        },
+        {
+          "term": "holomorphic",
+          "heading": false
+        },
+        {
+          "term": "notice",
+          "heading": false
+        },
+        {
+          "term": "expansions",
+          "heading": false
+        }
+      ],
+      "extract": "5.4. Determinants. The functional equation (28) for U, V deﬁned in (29) can be written in the form U(qt, λ, q) = A(t; q)U(t, λ, q) and V (qt, q) = A(t; q)V (t, q) (237) where A(t, q) = \u0012 0 1 −q−2 2q−1 −q−2t−1 \u0013 . (238) Therefore, we see that det(U(qt, λ, q)) = det(U(t, λ, q))q−2 and det(V (qt, q)) = det(V (t, q))q−2. (239) Lemma 5.4. We have −det(U(t, λ, q)) = det(V (t, q)) = q−1t−2 . (240) Proof. Firstly notice",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-55-state-integral",
+      "number": "5.5",
+      "title": "State integral",
+      "level": 2,
+      "pageStart": 46,
+      "pageEnd": 47,
+      "labelStart": "46",
+      "labelEnd": "47",
+      "words": 289,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "holomorphic function",
+          "heading": false
+        },
+        {
+          "term": "ωav",
+          "heading": false
+        },
+        {
+          "term": "aπix",
+          "heading": false
+        },
+        {
+          "term": "πzx",
+          "heading": false
+        }
+      ],
+      "extract": "the extension of the cocycle to the cut plane. The main idea is to use descendant state integrals, following [27, Eqn.(41)], deﬁned by IA,B(z, τ) = Z R+iε Φb(x)B exp \u0010 −Aπix2 −2πzx b \u0011 dx. (249) Using the holomorphic extension of the quantum dilogarithm Φ from Theorem 1.5, this integral can be shown to extend to a holomorphic function in for (z, τ) ∈C × C′. We are interested in the integrals I1,2(z, τ) which, using",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-56-the-inhomogeneous-equation",
+      "number": "5.6",
+      "title": "The inhomogeneous equation",
+      "level": 2,
+      "pageStart": 47,
+      "pageEnd": 52,
+      "labelStart": "47",
+      "labelEnd": "52",
+      "words": 1821,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "πit rest",
+          "heading": false
+        },
+        {
+          "term": "qrt",
+          "heading": false
+        },
+        {
+          "term": "campbell wheeler",
+          "heading": false
+        },
+        {
+          "term": "simple poles",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "kqk",
+          "heading": false
+        },
+        {
+          "term": "equation",
+          "heading": true
+        },
+        {
+          "term": "newton polygon",
+          "heading": false
+        }
+      ],
+      "extract": "this into a homogeneous equation of one degree higher tf(t; q) + (1 −3qt)f(qt; q) + (3tq2 −1)f(q2t; q) −tq3f(q3t; q) = 0 (253) with Newton polygon shown in Figure 5. g(0,0) g(0,1) g(0,2) f (−1) f (1) f (0) Figure 5. The Newton polygon of Equation (35). Now from the general theory the solutions f (±1) and g(0,0) and g(0,1) are the same as the solutions in Section 5.1. We do ﬁnd two additional solutions which are in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-57-the-x-deformation",
+      "number": "5.7",
+      "title": "The x-deformation",
+      "level": 2,
+      "pageStart": 52,
+      "pageEnd": 62,
+      "labelStart": "52",
+      "labelEnd": "62",
+      "words": 3509,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "πit rest",
+          "heading": false
+        },
+        {
+          "term": "rest qmx",
+          "heading": false
+        },
+        {
+          "term": "campbell wheeler",
+          "heading": false
+        },
+        {
+          "term": "lim det",
+          "heading": false
+        },
+        {
+          "term": "πiξ",
+          "heading": false
+        },
+        {
+          "term": "modular q-holonomic",
+          "heading": false
+        },
+        {
+          "term": "q2t lim",
+          "heading": false
+        },
+        {
+          "term": "q-holonomic modules",
+          "heading": false
+        }
+      ],
+      "extract": "the homogeneous equations tq−1f(q−1t, x, q) + (1 −(x−1 + x)t)f(t, x, q) + tqf(qt, x, q) = 0 , (282a) (1 −qx)(1 −q−1x2)f(t, qx, q) −(x −1)2(x + 1)(x2t −x −(q−1 + q)t −x−1 + x−2t)f(t, x, q) +(1 −qx2)(1 −q−1x)f(t, q−1x, q) = 0 , (282b) (1 −xq)(f(t, qx, q) −x−1f(qt, qx, q)) = (1 −x−1)(f(t, x, q) −qxf(qt, x, q)) . (282c) This is not a random system of equations, instead they are the deﬁning equations of the t-",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-58-an-analytic-lift-of-the-colored-jones-polynom",
+      "number": "5.8",
+      "title": "An analytic lift of the colored Jones polynomial",
+      "level": 2,
+      "pageStart": 62,
+      "pageEnd": 62,
+      "labelStart": "62",
+      "labelEnd": "62",
+      "words": 78,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transfrom",
+          "heading": false
+        },
+        {
+          "term": "ktk",
+          "heading": false
+        },
+        {
+          "term": "q-laplace",
+          "heading": false
+        }
+      ],
+      "extract": "a proof of Theorem 1.10. The main observation is that when x = qN, the series ˆf (0)(t, qN, q) terminates to a polynomial of t, in which case the q-Borel transfrom, followed by a q-Laplace transfrom is the identity. Explicitly, when x = qN for N ∈Z≥1 we have ˆf (0)(t, qN, q) = ∞ X k=0 (−1)kq−k(k+1)/2(q1+N; q)k(q1−N; q)ktk = N−1 X k=0 (−1)kq−k(k+1)/2(qN+1; q)k(q1−N; q)ktk . (333) The theorem then follows from",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-59-specialisation-tqm",
+      "number": "5.9",
+      "title": "Specialisation t=qm",
+      "level": 2,
+      "pageStart": 62,
+      "pageEnd": 63,
+      "labelStart": "62",
+      "labelEnd": "63",
+      "words": 245,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qme",
+          "heading": false
+        },
+        {
+          "term": "resz",
+          "heading": false
+        },
+        {
+          "term": "q-holonomic modules",
+          "heading": false
+        },
+        {
+          "term": "q-diﬀerence equation",
+          "heading": false
+        }
+      ],
+      "extract": "comment how our analytic functions of t, specialised to t = qm, become the known sequences of q-series and (x, q)-series that have appeared in the literature. In [36] and [26, 27, 28] the q-holonomic modules are discrete versions of what we have considered in Section 5. Here we describe how the solutions can be constructed from the ones presented here. Consider a solution f(t, q) of a q-diﬀerence equation ar(t,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 2,
+      "pageStart": 63,
+      "pageEnd": 63,
+      "labelStart": "63",
+      "labelEnd": "63",
+      "words": 23,
+      "summary": null,
+      "keywords": [],
+      "extract": "Marcos Mari˜no, Mikhail Kapranov, Matthias Storzer and Don Zagier for enlightening con- versations. The work of C.W. has been supported by the Max-Planck-Gesellschaft.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-032-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 63,
+      "pageEnd": 66,
+      "labelStart": "63",
+      "labelEnd": "66",
+      "words": 1635,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "don zagier",
+          "heading": false
+        },
+        {
+          "term": "vladimir retakh",
+          "heading": false
+        },
+        {
+          "term": "kiyokazu nagatomo",
+          "heading": false
+        },
+        {
+          "term": "frits beukers",
+          "heading": false
+        },
+        {
+          "term": "marcos mari",
+          "heading": false
+        },
+        {
+          "term": "rinat kashaev",
+          "heading": false
+        },
+        {
+          "term": "masanobu kaneko",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Lars Ahlfors. Complex analysis. McGraw-Hill Book Co., New York, third edition, 1978. An introduction to the theory of analytic functions of one complex variable, International Series in Pure and Applied Mathematics. [2] Naum Akhiezer. Elements of the theory of elliptic functions, volume 79 of Translations of Mathematical Monographs. American Mathematical Society, Providence, RI, 1990. Translated from the second",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 4,
+        "items": [
+          "Summary",
+          "Motivation",
+          "Duality",
+          "Resonance"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 1,
+        "items": [
+          "Solutions: listed p24, found p2"
+        ]
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "modular q-holonomic",
+      "heading": true
+    },
+    {
+      "term": "q-holonomic modules",
+      "heading": true
+    },
+    {
+      "term": "q-diﬀerence equation",
+      "heading": false
+    },
+    {
+      "term": "campbell wheeler",
+      "heading": false
+    },
+    {
+      "term": "corresponding q-holonomic",
+      "heading": false
+    },
+    {
+      "term": "stavros garoufalidis",
+      "heading": false
+    },
+    {
+      "term": "modular linear",
+      "heading": false
+    },
+    {
+      "term": "satisﬁes equation",
+      "heading": false
+    },
+    {
+      "term": "quantum modular",
+      "heading": false
+    },
+    {
+      "term": "q-hypergeometric equation",
+      "heading": true
+    },
+    {
+      "term": "q-diﬀerence equa",
+      "heading": false
+    },
+    {
+      "term": "modular transformation",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The Newton polygon of the ﬁrst Equation (111)",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The Newton polygon of Equation (19)",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The Newton polygon of Equation (22)",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The Newton polygon of Equation (28)",
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The Newton polygon of Equation (35). Now from the general theory the solutions f (±1) and g(0,0) and g(0,1) are the same as the solutions in Section 5.1. We do ﬁnd two additional solutions which are in fact solutions to the inhomogeneous equation, namely ˆf (0)(t, q) =",
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 33,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 34,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "5 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p63); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 15
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 34 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/modularqholonomicmodules"
+  }
+}

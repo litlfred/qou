@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-toric-diophantine-stoichiometry",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:toric-diophantine-stoichiometry",
+  "kind": "theorem",
+  "title": "Diophantine reaction kernel, Hess's law, toric binomials, and canonical stoichiometric circuits",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-iterated-confinement-layer",
+    "papers/quantum-observable-universe/blocks/thm-adiabatic-confinement-gap-stability"
+  ],
+  "cites": [
+    "references/deloera-hemmecke-koeppe2013",
+    "references/sturmfels-thomas1997",
+    "references/craciun-dickenstein-shiu-sturmfels2009"
+  ],
+  "tags": [
+    "stoichiometry",
+    "diophantine-kernel",
+    "toric-ideal",
+    "groebner-basis",
+    "hess-law"
+  ],
+  "leanRef": "qou:QOU.Molecular.ToricStoichiometry.ker_cho_iff_zspan",
+  "text": "toric-diophantine-stoichiometry.md",
+  "leanSource": "toric-diophantine-stoichiometry.lean",
+  "provenance": "authored"
+}

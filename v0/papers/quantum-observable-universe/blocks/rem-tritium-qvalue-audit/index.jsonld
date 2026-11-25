@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-tritium-qvalue-audit",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:tritium-qvalue-audit",
+  "kind": "remark",
+  "title": "Audit of tritium Q-value derivation",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-branching-qvalue-factorization"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-tritium-qvalue-symbolic",
+  "tags": [
+    "tritium",
+    "q-value",
+    "audit",
+    "verification",
+    "channel-sums"
+  ],
+  "text": "tritium-qvalue-audit.md",
+  "provenance": "authored"
+}

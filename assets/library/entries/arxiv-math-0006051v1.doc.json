@@ -1,0 +1,373 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0006051v1",
+  "title": "Finite and p-adic polylogarithms",
+  "variant": "pdf",
+  "pages": 8,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The proof",
+      "number": "2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-the-proof"
+    },
+    {
+      "level": 1,
+      "title": "Another proof of the main result",
+      "number": "3",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-another-proof-of-the-main-result"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 11,
+      "summary": null,
+      "keywords": [],
+      "extract": "arXiv:math/0006051v1 [math.NT] 7 Jun 2000 FINITE AND p-ADIC POLYLOGARITHMS AMNON BESSER",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-math-0006051v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 531,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adic polylogarithms",
+          "heading": false
+        },
+        {
+          "term": "finite polylogarithms",
+          "heading": false
+        },
+        {
+          "term": "bar mathbb",
+          "heading": false
+        },
+        {
+          "term": "finite logarithm",
+          "heading": false
+        },
+        {
+          "term": "functional equations",
+          "heading": false
+        },
+        {
+          "term": "infinitesimal",
+          "heading": false
+        },
+        {
+          "term": "kontsevich",
+          "heading": false
+        },
+        {
+          "term": "polylog",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:intro label=\"sec:intro\"} The finite logarithm was introduced by Kontsevich (under the name \"The $1\\frac{1}{2}$ logarithm\") in [@Kon99]. The finite logarithm is the case $n=1$ of the $n$-th polylogarithm $\\operatorname{li}_n\\in \\mathbb{Z}/p[z]$ defined by $\\operatorname{li}_n(z)= \\sum_{k=1}^{p-1} z^k/k^n$. In loc. cit. Kontsevich proved that the finite logarithm satisfies a 4-term functional equation, known",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-proof",
+      "number": "2",
+      "title": "The proof",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1232,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "equiv operatorname",
+          "heading": false
+        },
+        {
+          "term": "widetilde operatorname",
+          "heading": false
+        },
+        {
+          "term": "aligned operatorname",
+          "heading": false
+        },
+        {
+          "term": "equiv pmod",
+          "heading": false
+        },
+        {
+          "term": "conds",
+          "heading": false
+        },
+        {
+          "term": "function operatorname",
+          "heading": false
+        },
+        {
+          "term": "frac alpha",
+          "heading": false
+        },
+        {
+          "term": "reducing modulo",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:proof label=\"sec:proof\"} The connection between $p$-adic and finite polylogarithms is made by the following ::: proposition Let $\\operatorname{Li}^{(p)}_n(z):= \\operatorname{Li}_n(z)- \\operatorname{Li}_n(z^p)/p^n$. Then $\\operatorname{Li}^{(p)}_n(X) \\subset W$ and the function $\\operatorname{Li}^{(p)}_n$ reduces modulo $p$ to $(1-z^p)^{-1} \\operatorname{li}_n(z)$. ::: ::: proof *Proof.* According to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-another-proof-of-the-main-result",
+      "number": "3",
+      "title": "Another proof of the main result",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 915,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "log n-m",
+          "heading": false
+        },
+        {
+          "term": "equiv pmod",
+          "heading": false
+        },
+        {
+          "term": "frac pmod",
+          "heading": false
+        },
+        {
+          "term": "log n-k",
+          "heading": false
+        },
+        {
+          "term": "binom frac",
+          "heading": false
+        },
+        {
+          "term": "phantom sum",
+          "heading": false
+        },
+        {
+          "term": "sum big",
+          "heading": false
+        },
+        {
+          "term": "maincong",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:another label=\"sec:another\"} In this section we sketch another proof of the main result. This proof has two interesting features: First of all, it proves directly the formula for $F_n$ in terms of the functions $L_n(z)$ defined at the end of the last section. This formula is of course simpler than the original formula. The other feature is that the key ingredient in the proof is a formula, discovered by Rob",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "equiv operatorname",
+      "heading": false
+    },
+    {
+      "term": "polylogarithm operatorname",
+      "heading": false
+    },
+    {
+      "term": "equiv pmod",
+      "heading": false
+    },
+    {
+      "term": "frac pmod",
+      "heading": false
+    },
+    {
+      "term": "aligned operatorname",
+      "heading": false
+    },
+    {
+      "term": "widetilde operatorname",
+      "heading": false
+    },
+    {
+      "term": "function operatorname",
+      "heading": false
+    },
+    {
+      "term": "log n-k",
+      "heading": false
+    },
+    {
+      "term": "log n-m",
+      "heading": false
+    },
+    {
+      "term": "adic polylogarithms",
+      "heading": false
+    },
+    {
+      "term": "equiv sum",
+      "heading": false
+    },
+    {
+      "term": "frac alpha",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 3,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 4,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 4 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0006051v1"
+  }
+}

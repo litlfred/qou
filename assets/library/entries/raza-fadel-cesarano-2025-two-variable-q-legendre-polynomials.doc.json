@@ -1,0 +1,806 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials",
+  "title": "Two-variable q-Legendre polynomials",
+  "variant": "pdf",
+  "pages": 13,
+  "tocSource": "undetermined",
+  "tocMethod": "font",
+  "toc": [],
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 355,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-legendre polynomials",
+          "heading": false
+        },
+        {
+          "term": "variable q-legendre",
+          "heading": false
+        },
+        {
+          "term": "cesarano",
+          "heading": false
+        },
+        {
+          "term": "raza",
+          "heading": false
+        },
+        {
+          "term": "fadel",
+          "heading": false
+        },
+        {
+          "term": "operational",
+          "heading": false
+        },
+        {
+          "term": "quantum calculus",
+          "heading": false
+        },
+        {
+          "term": "special polynomials",
+          "heading": false
+        }
+      ],
+      "extract": "ISSN 2075-9827 e-ISSN 2313-0210 https://journals.pnu.edu.ua/index.php/cmp Carpathian Math. Publ. 2025, 17 (1), 14–26 Карпатськi матем. публ. 2025, Т.17, №1, С.14–26 doi:10.15330/cmp.17.1.14-26 On 2-variable q-Legendre polynomials: the view point of the q-operational technique Raza N.1, Fadel M.1,2, C. Cesarano3, In this work, we exploit the methods of an operational formality and extension of quasi- monomials to",
+      "extractCut": true,
+      "blocks": [
+        "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/blocks/prose-page-001"
+      ]
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 338,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-bessel functions",
+          "heading": false
+        },
+        {
+          "term": "ˆdq",
+          "heading": false
+        },
+        {
+          "term": "q-special functions",
+          "heading": false
+        },
+        {
+          "term": "kxk",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst kind",
+          "heading": false
+        },
+        {
+          "term": "series deﬁnition",
+          "heading": false
+        },
+        {
+          "term": "studied",
+          "heading": false
+        }
+      ],
+      "extract": "of the sciences, mathematics, statistics, quantum mechanics and quantum physics. Recently, several researchers, working in the ﬁeld of q-special functions, introduced and studied several q-special functions and their characteristics (see, for example, [2,12,19,25,29,30]). In this quick recap, we take a look at a few deﬁnitions and notations associated with the quantum calculus [7]. The q-factorial is deﬁned as [n]q!",
+      "extractCut": true,
+      "blocks": [
+        "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/blocks/prose-page-002"
+      ]
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 299,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-bessel tricomi",
+          "heading": false
+        },
+        {
+          "term": "q-special polynomials",
+          "heading": false
+        },
+        {
+          "term": "q-special functions",
+          "heading": false
+        },
+        {
+          "term": "ˆpq",
+          "heading": false
+        },
+        {
+          "term": "ˆmq",
+          "heading": false
+        },
+        {
+          "term": "order q-bessel",
+          "heading": false
+        },
+        {
+          "term": "ˆdq",
+          "heading": false
+        }
+      ],
+      "extract": "In view of equations (8) and (9), it is clear that the nth order q-Bessel Tricomi functions of ﬁrst kind C1 n,q(x) := Cn,q(x) is related with qBF J1 n(x; q) in the following manner Cn,q(x) = x−x/2J(1) n (2√ x; q). (10) Also, for n = 0, equation (10) gives the 0th order q-Bessel Tricomi function C0,q(x), namely C0,q(x) = ∞ ∑ k=0 (−1)kxk ([k]q!)2 , (11) which converges absolutely for all values of x. The relation",
+      "extractCut": true,
+      "blocks": [
+        "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/blocks/prose-page-003"
+      ]
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 411,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-legendre polynomials",
+          "heading": false
+        },
+        {
+          "term": "q-hermite polynomials",
+          "heading": false
+        },
+        {
+          "term": "q-laguerre polynomials",
+          "heading": false
+        },
+        {
+          "term": "ˆpq",
+          "heading": false
+        },
+        {
+          "term": "ˆmq",
+          "heading": false
+        },
+        {
+          "term": "qyt",
+          "heading": false
+        },
+        {
+          "term": "q-differential",
+          "heading": false
+        },
+        {
+          "term": "generating function",
+          "heading": false
+        }
+      ],
+      "extract": "If ˆMq and ˆPq have q-differential realization, then the q-differential equation satisﬁed by pn,q(x) is ˆMq ˆPq {pn,q(x)} = [n]q pn,q(x). (19) In view of equations (18) and (19), we have [ ˆPq, ˆMq] = [n + 1]q −[n]q. The q-Hermite polynomials have multiple deﬁnitions (see, for example, [1, 16, 23]). Such polynomials are used in combinatorics, quantum physics, non-commutative probability and other areas of",
+      "extractCut": true,
+      "blocks": [
+        "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/blocks/prose-page-004"
+      ]
+    },
+    {
+      "id": "page-005",
+      "number": null,
+      "title": "Page 5",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 289,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-bessel tricomi",
+          "heading": false
+        },
+        {
+          "term": "q-legendre polynomials",
+          "heading": false
+        },
+        {
+          "term": "variable q-legendre",
+          "heading": false
+        },
+        {
+          "term": "polynomials vqlp",
+          "heading": false
+        },
+        {
+          "term": "tricomi functions",
+          "heading": false
+        }
+      ],
+      "extract": "1 2-variable q-Legendre polynomials In this section, we introduce the 2-variable q-Legendre polynomials 2VqLP Sn,q(x, y) and Rn,q(x, y)/[n]q! by means of generating function involving 0th order q-Bessel Tricomi functions and obtain their series deﬁnitions, q-differential equations and operational identities. In view of equations (1), (2) and (11), we deﬁne the 2-variable q-Legendre polynomials 2VqLP Sn,q(x, y) and",
+      "extractCut": true,
+      "blocks": [
+        "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/blocks/prose-page-005"
+      ]
+    },
+    {
+      "id": "page-006",
+      "number": null,
+      "title": "Page 6",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "19",
+      "labelEnd": "19",
+      "words": 301,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "operating ˆdq",
+          "heading": false
+        },
+        {
+          "term": "q-partial differential",
+          "heading": false
+        },
+        {
+          "term": "ysn",
+          "heading": false
+        },
+        {
+          "term": "xsn",
+          "heading": false
+        },
+        {
+          "term": "differential equations",
+          "heading": false
+        },
+        {
+          "term": "operational identity",
+          "heading": false
+        },
+        {
+          "term": "qsn",
+          "heading": false
+        }
+      ],
+      "extract": "The operational identity allows the representation of Sn,q(x, y) as q-Laguerre and q-Hermite polynomials of two variables by using equations (20) and (24), equation (23), for m = 2, as follows Sn,q(x, y) = [2]Ln,q(x, y) = Hn,q(y, D−1 q,x){1}. Similarly, the polynomials Rn,q(x, y)/[n]q! can be represented as 2-variable q-Laguerre poly- nomials by using the operational identity and equations (12) and (25) as follows",
+      "extractCut": true,
+      "blocks": [
+        "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/blocks/prose-page-006",
+        "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/blocks/thm-page-006-01"
+      ]
+    },
+    {
+      "id": "page-007",
+      "number": null,
+      "title": "Page 7",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 275,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ˆdq",
+          "heading": false
+        },
+        {
+          "term": "q-partial differential",
+          "heading": false
+        },
+        {
+          "term": "resultant equations",
+          "heading": false
+        },
+        {
+          "term": "xrn",
+          "heading": false
+        },
+        {
+          "term": "yrn",
+          "heading": false
+        }
+      ],
+      "extract": "Equations (35) and (36), give assertion (28). In view of equations (5) and (7), for any function fq(t), we have the following equivalent form L ˆDq,t fq(t) = (qt ˆD2 q,t + ˆDq,t)fq(t). (37) In view of equation (37), the q-partial differential equation (28) gives assertion (29). Similarly, operating L ˆDq,x and L ˆDq,y one by one on both sides of equation (25) and using equations (15) and (25) in the left hand side",
+      "extractCut": true,
+      "blocks": [
+        "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/blocks/prose-page-007",
+        "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/blocks/rem-page-007-01"
+      ]
+    },
+    {
+      "id": "page-008",
+      "number": null,
+      "title": "Page 8",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 384,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ˆdq",
+          "heading": false
+        },
+        {
+          "term": "q-derivative operators",
+          "heading": false
+        },
+        {
+          "term": "qyt",
+          "heading": false
+        },
+        {
+          "term": "ˆmq",
+          "heading": false
+        },
+        {
+          "term": "q-legendre polynomials",
+          "heading": false
+        },
+        {
+          "term": "quasi monomials",
+          "heading": false
+        },
+        {
+          "term": "q-special functions",
+          "heading": false
+        },
+        {
+          "term": "q-multiplicative",
+          "heading": false
+        }
+      ],
+      "extract": "2 Quasi-monomiality characteristics The extension of quasi-monomials treatment to q-special functions has provided a tool for investigating the characteristics of q-special functions and q-polynomial families, such as q-multiplication and q-derivative operators, integro-differential equations and other important identities. In this section, we establish that the 2-variable q-Legendre polynomials are quasi- monomials",
+      "extractCut": true,
+      "blocks": [
+        "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/blocks/prose-page-008",
+        "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/blocks/thm-page-008-01"
+      ]
+    },
+    {
+      "id": "page-009",
+      "number": null,
+      "title": "Page 9",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 339,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ˆdq",
+          "heading": false
+        },
+        {
+          "term": "following q-multiplicative",
+          "heading": false
+        },
+        {
+          "term": "ˆpq",
+          "heading": false
+        },
+        {
+          "term": "ˆmq",
+          "heading": false
+        },
+        {
+          "term": "q-legendre polynomials",
+          "heading": false
+        },
+        {
+          "term": "operational identities",
+          "heading": false
+        }
+      ],
+      "extract": "Moreover, we obtain the following q-multiplicative ˆMq,R and q-derivative ˆPq,R operators of 2VqLP Rn,q(x, y)/[n]q!. Theorem 3. The 2VqLP Rn,q(x, y)/[n]q! are quasi-monomials with respect to the following q-multiplicative and q-derivative operators: ˆMq,R = −D−1 q,xTy + D−1 q,y, (48) or, alternatively, ˆMq,R := −D−1 q,x + D−1 q,yTx (49) and ˆPq,R = −ˆDq,xx ˆDq,x = ∂q ∂qD−1 q,x , (50) or, alternatively, ˆPq,R =",
+      "extractCut": true,
+      "blocks": [
+        "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/blocks/prose-page-009",
+        "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/blocks/thm-page-009-01",
+        "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/blocks/thm-page-009-02"
+      ]
+    },
+    {
+      "id": "page-010",
+      "number": null,
+      "title": "Page 10",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 263,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "operational identities",
+          "heading": false
+        },
+        {
+          "term": "resultant equation",
+          "heading": false
+        },
+        {
+          "term": "variable q-legendre",
+          "heading": false
+        },
+        {
+          "term": "get assertion",
+          "heading": false
+        },
+        {
+          "term": "q-legendre polynomials",
+          "heading": false
+        }
+      ],
+      "extract": "Proof. In view of equation (5), we have ˆD2k q,y yn = [n]q! [n −2k]q!yn−2k. Using aforementioned equation in the right hand side of equation (26), we get Sn,q(x, y) = ∞ ∑ k=0 xk ˆD2k q,yyn ([k]q!)2 . Using equations (3) and (14) in the right hand side of the above equation, we obtain assertion (52). In view of equations (12) and (52), assertion (53) follows. Operating Eq(−ˆD−1 q,x ˆD2 q,y) on both sides of equation",
+      "extractCut": true,
+      "blocks": [
+        "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/blocks/prose-page-010",
+        "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/blocks/thm-page-010-01"
+      ]
+    },
+    {
+      "id": "page-011",
+      "number": null,
+      "title": "Page 11",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "24",
+      "labelEnd": "24",
+      "words": 323,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ytx ˆdq",
+          "heading": false
+        },
+        {
+          "term": "q-integro-differential equations",
+          "heading": false
+        },
+        {
+          "term": "qrn",
+          "heading": false
+        },
+        {
+          "term": "ysn",
+          "heading": false
+        },
+        {
+          "term": "q-legendre polynomials",
+          "heading": false
+        },
+        {
+          "term": "qsn",
+          "heading": false
+        }
+      ],
+      "extract": "Theorem 6. The 2-variable q-Legendre polynomials Rn,q(x, y) satisfy the following equivalent operational identities: Rn,q(x, y) = C0,q \u0010 y ∂q ∂qD−1 q,x \u0011 {(−x)n}, or, equivalently, Rn,q(x, y) = eq \u0010 −D−1 q,y ∂q ∂qD−1 q,x \u0011 {(−x)n} and Eq \u0010 D−1 q,y ∂q ∂qD−1 q,x \u0011 Rn,q(x, y) = (−x)n, respectively. Now, we obtain q-integro-differential equations of q-Legendre polynomials Sn,q(x, y) and Rn,q(x, y)/[n]q! by utilizing the",
+      "extractCut": true,
+      "blocks": [
+        "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/blocks/prose-page-011",
+        "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/blocks/thm-page-011-01",
+        "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/blocks/thm-page-011-02",
+        "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/blocks/rem-page-011-03"
+      ]
+    },
+    {
+      "id": "page-012",
+      "number": null,
+      "title": "Page 12",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "25",
+      "labelEnd": "25",
+      "words": 496,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-hermite polynomials",
+          "heading": false
+        },
+        {
+          "term": "two-variable q-laguerre",
+          "heading": false
+        },
+        {
+          "term": "appell polynomials",
+          "heading": false
+        },
+        {
+          "term": "doi",
+          "heading": false
+        },
+        {
+          "term": "quasi-monomiality properties",
+          "heading": false
+        },
+        {
+          "term": "q-special functions",
+          "heading": false
+        },
+        {
+          "term": "fadel",
+          "heading": false
+        },
+        {
+          "term": "legendre polynomials",
+          "heading": false
+        }
+      ],
+      "extract": "3 Conclusions The approach of monomiality for q-polynomials paved the way for the development of an original notion while working within the constraints of the theory of q-special functions. This approach can be utilized in order to investigate certain characteristics for some q-special polynomials. It is astonishing that this was the spark for the discovery the monomiality prop- erties for certain q-polynomials",
+      "extractCut": true,
+      "blocks": [
+        "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/blocks/prose-page-012"
+      ]
+    },
+    {
+      "id": "page-013",
+      "number": null,
+      "title": "Page 13",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "26",
+      "labelEnd": "26",
+      "words": 479,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-legendre polynomials",
+          "heading": false
+        },
+        {
+          "term": "doi",
+          "heading": false
+        },
+        {
+          "term": "little q-legendre",
+          "heading": false
+        },
+        {
+          "term": "khan",
+          "heading": false
+        },
+        {
+          "term": "raza",
+          "heading": false
+        },
+        {
+          "term": "koornwinder",
+          "heading": false
+        },
+        {
+          "term": "srivastava",
+          "heading": false
+        },
+        {
+          "term": "arjika",
+          "heading": false
+        }
+      ],
+      "extract": "[17] Jackson F.H. I. – On Generalized Functions of Legendre and Bessel. Trans. Roy. Soc. Edinburgh 1906, 41 (1), 1–28. doi:10.1017/S0080456800080017 [18] Khan S., Raza N. Families of Legendre-Sheffer polynomials. Math. Comput. Modelling 2012, 55 (3–4), 969–982. doi:10.1016/j.mcm.2011.09.023 [19] Khan S., Haneef M., Riyasat M. Construction of certain new families related to q-Fubini polynomials. Georgian Math. J.",
+      "extractCut": true,
+      "blocks": [
+        "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/blocks/prose-page-013"
+      ]
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "ytx ˆdq",
+      "heading": false
+    },
+    {
+      "term": "operating ˆdq",
+      "heading": false
+    },
+    {
+      "term": "q-legendre polynomials",
+      "heading": false
+    },
+    {
+      "term": "variable q-legendre",
+      "heading": false
+    },
+    {
+      "term": "ˆmq ˆpq",
+      "heading": false
+    },
+    {
+      "term": "polynomials vqlp",
+      "heading": false
+    },
+    {
+      "term": "q-special polynomials",
+      "heading": false
+    },
+    {
+      "term": "operational identities",
+      "heading": false
+    },
+    {
+      "term": "little q-legendre",
+      "heading": false
+    },
+    {
+      "term": "q-bessel tricomi",
+      "heading": false
+    },
+    {
+      "term": "q-hermite polynomials",
+      "heading": false
+    },
+    {
+      "term": "q-multiplicative ˆmq",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "not-extracted",
+      "note": "split one section per page; no contents was trusted"
+    },
+    {
+      "kind": "sections",
+      "state": "partial",
+      "count": 13,
+      "note": "one per page, not by heading"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p12); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 6
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 13 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-lepton-continuant-recurrence",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:lepton-continuant-recurrence",
+  "kind": "proposition",
+  "title": "Continuant recurrence for the lepton tower $T_{2,n}$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-beta-decay-skein",
+    "papers/quantum-observable-universe/blocks/rem-archimedean-leptons"
+  ],
+  "tags": [
+    "lepton",
+    "torus-knot",
+    "hecke-algebra",
+    "normal-form",
+    "continuant",
+    "morgan-voyce",
+    "electron",
+    "muon",
+    "tau"
+  ],
+  "leanRef": "qou:QOU.MassTheory.lepton_continuant_recurrence",
+  "text": "lepton-continuant-recurrence.md",
+  "leanSource": "lepton-continuant-recurrence.lean",
+  "provenance": "authored"
+}

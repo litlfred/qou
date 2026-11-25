@@ -1,0 +1,3230 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1309.0865v1",
+  "title": "arxiv-1309.0865v1",
+  "variant": "pdf",
+  "pages": 83,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "The Hecke algebra by generators and relations",
+      "number": "1.1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-11-the-hecke-algebra-by-generators-and-relations"
+    },
+    {
+      "level": 2,
+      "title": "The Hecke category",
+      "number": "1.2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-12-the-hecke-category"
+    },
+    {
+      "level": 2,
+      "title": "Soergel bimodules",
+      "number": "1.3",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-13-soergel-bimodules"
+    },
+    {
+      "level": 2,
+      "title": "Soergel bimodules by generators and relations",
+      "number": "1.4",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-14-soergel-bimodules-by-generators-and-relations"
+    },
+    {
+      "level": 3,
+      "title": "One color relations:",
+      "number": "1.4.1",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-141-one-color-relations"
+    },
+    {
+      "level": 3,
+      "title": "Two color relations:",
+      "number": "1.4.2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-142-two-color-relations"
+    },
+    {
+      "level": 3,
+      "title": "Three color or ``Zamolodchikov'' relations:",
+      "number": "1.4.3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-143-three-color-or-zamolodchikov-relations"
+    },
+    {
+      "level": 2,
+      "title": "Consequences for the structure of Soergel bimodules",
+      "number": "1.5",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-15-consequences-for-the-structure-of-soergel-bim"
+    },
+    {
+      "level": 2,
+      "title": "Organization of the paper",
+      "number": "1.6",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-16-organization-of-the-paper"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgements",
+      "number": "1.7",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-17-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "The Hecke Algebra",
+      "number": "2",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-2-the-hecke-algebra"
+    },
+    {
+      "level": 2,
+      "title": "Basic definitions",
+      "number": "2.1",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-21-basic-definitions"
+    },
+    {
+      "level": 2,
+      "title": "The Kazhdan-Lusztig basis",
+      "number": "2.2",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-013-22-the-kazhdan-lusztig-basis"
+    },
+    {
+      "level": 2,
+      "title": "The presentation in the Kazhdan-Lusztig generators",
+      "number": "2.3",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-014-23-the-presentation-in-the-kazhdan-lusztig-gener"
+    },
+    {
+      "level": 2,
+      "title": "The standard trace and the defect formula",
+      "number": "2.4",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-015-24-the-standard-trace-and-the-defect-formula"
+    },
+    {
+      "level": 1,
+      "title": "Soergel Bimodules",
+      "number": "3",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-016-3-soergel-bimodules"
+    },
+    {
+      "level": 2,
+      "title": "Realizations of Coxeter systems",
+      "number": "3.1",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-017-31-realizations-of-coxeter-systems"
+    },
+    {
+      "level": 2,
+      "title": "Technicalities",
+      "number": "3.2",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-018-32-technicalities"
+    },
+    {
+      "level": 2,
+      "title": "Demazure operators",
+      "number": "3.3",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-019-33-demazure-operators"
+    },
+    {
+      "level": 2,
+      "title": "Soergel bimodules and standard bimodules",
+      "number": "3.4",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-020-34-soergel-bimodules-and-standard-bimodules"
+    },
+    {
+      "level": 2,
+      "title": "Categorification",
+      "number": "3.5",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-021-35-categorification"
+    },
+    {
+      "level": 2,
+      "title": "Localization",
+      "number": "3.6",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-022-36-localization"
+    },
+    {
+      "level": 1,
+      "title": "Diagrammatics for Standard Bimodules",
+      "number": "4",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-023-4-diagrammatics-for-standard-bimodules"
+    },
+    {
+      "level": 2,
+      "title": "Diagrammatic definition",
+      "number": "4.1",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-024-41-diagrammatic-definition"
+    },
+    {
+      "level": 2,
+      "title": "Rex moves and rex graphs",
+      "number": "4.2",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-025-42-rex-moves-and-rex-graphs"
+    },
+    {
+      "level": 1,
+      "title": "Diagrammatics for Soergel Bimodules",
+      "number": "5",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-026-5-diagrammatics-for-soergel-bimodules"
+    },
+    {
+      "level": 2,
+      "title": "Generators and relations",
+      "number": "5.1",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-027-51-generators-and-relations"
+    },
+    {
+      "level": 2,
+      "title": "Jones-Wenzl morphisms",
+      "number": "5.2",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-028-52-jones-wenzl-morphisms"
+    },
+    {
+      "level": 2,
+      "title": "The functor to bimodules",
+      "number": "5.3",
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-029-53-the-functor-to-bimodules"
+    },
+    {
+      "level": 2,
+      "title": "Localization",
+      "number": "5.4",
+      "page": 46,
+      "pageLabel": "46",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-030-54-localization"
+    },
+    {
+      "level": 2,
+      "title": "Computation using localization",
+      "number": "5.5",
+      "page": 53,
+      "pageLabel": "53",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-031-55-computation-using-localization"
+    },
+    {
+      "level": 2,
+      "title": "Unbalanced realizations",
+      "number": "5.6",
+      "page": 55,
+      "pageLabel": "55",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-032-56-unbalanced-realizations"
+    },
+    {
+      "level": 1,
+      "title": "Libedinsky's Light Leaves",
+      "number": "6",
+      "page": 57,
+      "pageLabel": "57",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-033-6-libedinskys-light-leaves"
+    },
+    {
+      "level": 2,
+      "title": "Diagrammatics for light leaves",
+      "number": "6.1",
+      "page": 57,
+      "pageLabel": "57",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-034-61-diagrammatics-for-light-leaves"
+    },
+    {
+      "level": 2,
+      "title": "Localizing light leaves",
+      "number": "6.2",
+      "page": 60,
+      "pageLabel": "60",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-035-62-localizing-light-leaves"
+    },
+    {
+      "level": 2,
+      "title": "Double leaves",
+      "number": "6.3",
+      "page": 62,
+      "pageLabel": "62",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-036-63-double-leaves"
+    },
+    {
+      "level": 2,
+      "title": "Cellularity",
+      "number": "6.4",
+      "page": 64,
+      "pageLabel": "64",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-037-64-cellularity"
+    },
+    {
+      "level": 2,
+      "title": "The diagrammatic character",
+      "number": "6.5",
+      "page": 65,
+      "pageLabel": "65",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-038-65-the-diagrammatic-character"
+    },
+    {
+      "level": 2,
+      "title": "Soergel's theorem",
+      "number": "6.6",
+      "page": 66,
+      "pageLabel": "66",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The equivalence to bimodules",
+      "number": "6.7",
+      "page": 69,
+      "pageLabel": "69",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-039-67-the-equivalence-to-bimodules"
+    },
+    {
+      "level": 1,
+      "title": "Double Leaves Span",
+      "number": "7",
+      "page": 69,
+      "pageLabel": "69",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-040-7-double-leaves-span"
+    },
+    {
+      "level": 2,
+      "title": "Negative-positive decompositions",
+      "number": "7.1",
+      "page": 70,
+      "pageLabel": "70",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-041-71-negative-positive-decompositions"
+    },
+    {
+      "level": 2,
+      "title": "Modulo lower terms",
+      "number": "7.2",
+      "page": 72,
+      "pageLabel": "72",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-042-72-modulo-lower-terms"
+    },
+    {
+      "level": 2,
+      "title": "Reduction to working modulo lower terms",
+      "number": "7.3",
+      "page": 73,
+      "pageLabel": "73",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-043-73-reduction-to-working-modulo-lower-terms"
+    },
+    {
+      "level": 2,
+      "title": "The grand induction",
+      "number": "7.4",
+      "page": 73,
+      "pageLabel": "73",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-044-74-the-grand-induction"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 84,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soergel bimodules",
+          "heading": false
+        },
+        {
+          "term": "rapha",
+          "heading": false
+        },
+        {
+          "term": "taught",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1309.0865v1 [math.QA] 3 Sep 2013 SOERGEL CALCULUS BEN ELIAS AND GEORDIE WILLIAMSON To Mikhail Khovanov and Rapha¨el Rouquier, who taught us generators and relations. ABSTRACT. The monoidal category of Soergel bimodules is an incarnation of the Hecke category, a fundamental object in representation theory. We present this cat- egory by generators and relations, using the language of planar diagrammatics. We",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1309.0865v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 17,
+      "summary": null,
+      "keywords": [],
+      "extract": "\\label{sec-intro} Let us recall the history of the Hecke algebra from the perspectives of algebraization and categorification.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-the-hecke-algebra-by-generators-and-relations",
+      "number": "1.1",
+      "title": "The Hecke algebra by generators and relations",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 378,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hecke algebra",
+          "heading": true
+        },
+        {
+          "term": "bwb subset",
+          "heading": false
+        },
+        {
+          "term": "mathrm fun",
+          "heading": false
+        },
+        {
+          "term": "fun times",
+          "heading": false
+        },
+        {
+          "term": "ubr",
+          "heading": false
+        },
+        {
+          "term": "weyl group",
+          "heading": false
+        },
+        {
+          "term": "iwahori",
+          "heading": false
+        },
+        {
+          "term": "indicator",
+          "heading": false
+        }
+      ],
+      "extract": "Let $G$ be a split finite reductive group over a finite field $\\mathbb{F}_q$, and let $B \\subset G$ be a Borel subgroup. A fundamental object in representation theory is the Hecke algebra \\[ \\mathrm{Fun}_{B \\times B}(G, \\mathbb{C}) \\] of $B$-biinvariant complex valued functions on $G$, with multiplication given by convolution. This algebra first emerged when studying the irreducible complex characters of $G$, but",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-the-hecke-category",
+      "number": "1.2",
+      "title": "The Hecke category",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 224,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hecke category",
+          "heading": true
+        },
+        {
+          "term": "biequivariant sheaves",
+          "heading": false
+        },
+        {
+          "term": "kazhdan-lusztig basis",
+          "heading": false
+        },
+        {
+          "term": "zvv",
+          "heading": false
+        },
+        {
+          "term": "intersection cohomology",
+          "heading": false
+        },
+        {
+          "term": "realised",
+          "heading": false
+        }
+      ],
+      "extract": "Beginning with the seminal work \\cite{KaL1} of Kazhdan and Lusztig it was realised that the Hecke algebra admits a categorification, which has come to be known as the Hecke category. According to Grothendieck's function-sheaf dictionary, the algebra of $B$-biinvariant functions on $G$ should be categorified by some version of $B$-biequivariant sheaves on $G$. For concreteness, we now suppose that $G$ is a complex",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-soergel-bimodules",
+      "number": "1.3",
+      "title": "Soergel bimodules",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 649,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soergel",
+          "heading": true
+        },
+        {
+          "term": "soergel categorification",
+          "heading": false
+        },
+        {
+          "term": "soergel proves",
+          "heading": false
+        },
+        {
+          "term": "bullet times",
+          "heading": false
+        },
+        {
+          "term": "sbim",
+          "heading": false
+        },
+        {
+          "term": "bott-samelson description",
+          "heading": false
+        },
+        {
+          "term": "hecke category",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        }
+      ],
+      "extract": "Just as Iwahori gave an intrinsic construction of the Hecke algebra so too would Soergel give one of the Hecke category. Let $\\hg$ denote the Lie algebra of $T$ and $R$ the regular functions on $\\hg$, graded so that $\\hg^*$ is in degree two. We have a canonical identification of equivariant cohomology groups (the ``Borel isomorphism'') \\[ R = H^{\\bullet}_T(\\pt) = H^{\\bullet}_B(\\pt). \\] In particular, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-soergel-bimodules-by-generators-and-relations",
+      "number": "1.4",
+      "title": "Soergel bimodules by generators and relations",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 839,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soergel bimodules",
+          "heading": true
+        },
+        {
+          "term": "blue color",
+          "heading": false
+        },
+        {
+          "term": "color red",
+          "heading": false
+        },
+        {
+          "term": "deg color",
+          "heading": false
+        },
+        {
+          "term": "ubr color",
+          "heading": false
+        },
+        {
+          "term": "array tikz",
+          "heading": false
+        },
+        {
+          "term": "blue otimes",
+          "heading": false
+        },
+        {
+          "term": "blue dots",
+          "heading": false
+        }
+      ],
+      "extract": "A \\emph{Bott-Samelson bimodule} is a bimodule of the form $B_{\\un{w}} \\define B_s \\ot_R B_t \\ot_R \\cdots \\ot_R B_u$ for an expression $\\un{w}=st\\dots u$. They form a full monoidal subcategory of $R-\\Bim$, which we denote $\\BSBim$. By definition, any Soergel bimodule is a direct sum of shifts of summands of bimodules in $\\BSBim$. Said another way, the category of Soergel bimodules $\\SBim$ is the Karoubi envelope of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-141-one-color-relations",
+      "number": "1.4.1",
+      "title": "One color relations:",
+      "level": 3,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 116,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "color",
+          "heading": true
+        },
+        {
+          "term": "color red",
+          "heading": false
+        },
+        {
+          "term": "array tikz",
+          "heading": false
+        },
+        {
+          "term": "inner sep",
+          "heading": false
+        },
+        {
+          "term": "draw",
+          "heading": false
+        },
+        {
+          "term": "array begin",
+          "heading": false
+        },
+        {
+          "term": "end array",
+          "heading": false
+        },
+        {
+          "term": "begin gather",
+          "heading": false
+        }
+      ],
+      "extract": "It was pointed out in \\cite{EKh} that most of the one color relations can be concisely encoded in the statement that $B_s$ is a Frobenius object in the category of $R$-bimodules. The trivalent vertices give the multiplication and comultiplication, whilst the dots provide the unit and counit. The Frobenius biadjunction of $B_s$ with itself arises from certain cups and caps, which are constructed from trivalent",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-142-two-color-relations",
+      "number": "1.4.2",
+      "title": "Two color relations:",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 314,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "color",
+          "heading": true
+        },
+        {
+          "term": "valent vertex",
+          "heading": false
+        },
+        {
+          "term": "cite edihedral",
+          "heading": false
+        },
+        {
+          "term": "cartan matrix",
+          "heading": false
+        },
+        {
+          "term": "width",
+          "heading": false
+        },
+        {
+          "term": "bott-samelson",
+          "heading": false
+        },
+        {
+          "term": "includegraphics",
+          "heading": false
+        },
+        {
+          "term": "bimodules",
+          "heading": false
+        }
+      ],
+      "extract": "Two color graphs and Soergel bimodules for the dihedral group are explored in detail in \\cite{EDihedral}. Essentially, morphisms between Bott-Samelson bimodules in rank 2 are governed by the Temperley-Lieb algebra at a root of unity, a fact related to the (quantum) geometric Satake equivalence for $\\mathfrak{sl}_2$. The first important two color relation is the cyclicity of the $2m_{st}$-valent vertex. (There is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-143-three-color-or-zamolodchikov-relations",
+      "number": "1.4.3",
+      "title": "Three color or ``Zamolodchikov'' relations:",
+      "level": 3,
+      "pageStart": 8,
+      "pageEnd": 11,
+      "labelStart": "8",
+      "labelEnd": "11",
+      "words": 1045,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zamolodchikov relations",
+          "heading": true
+        },
+        {
+          "term": "zamolodchikov tetrahedron",
+          "heading": false
+        },
+        {
+          "term": "bott-samelson bimodules",
+          "heading": false
+        },
+        {
+          "term": "expression graph",
+          "heading": false
+        },
+        {
+          "term": "braided monoidal",
+          "heading": false
+        },
+        {
+          "term": "reduced expression",
+          "heading": false
+        },
+        {
+          "term": "soergel bimodules",
+          "heading": false
+        },
+        {
+          "term": "longest element",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{threecolorintro} There is one relation for each finite parabolic subgroup of rank 3, generalizing the so-called Zamolodchikov tetrahedron equation. We feel this interesting topic deserves some introduction of its own. In braided monoidal categories a fundamental role is played by the Yang-Baxter equation or braid relation, which guarantees that one obtains an action of the braid group on the tensor powers of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-15-consequences-for-the-structure-of-soergel-bim",
+      "number": "1.5",
+      "title": "Consequences for the structure of Soergel bimodules",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "13",
+      "words": 553,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soergel bimodules",
+          "heading": true
+        },
+        {
+          "term": "bott-samelson bimodules",
+          "heading": false
+        },
+        {
+          "term": "diagrammatic category",
+          "heading": false
+        },
+        {
+          "term": "soergel categorification",
+          "heading": false
+        },
+        {
+          "term": "begin tikzpicture",
+          "heading": false
+        },
+        {
+          "term": "libedinsky",
+          "heading": false
+        },
+        {
+          "term": "end tikzpicture",
+          "heading": false
+        },
+        {
+          "term": "leaf morphism",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\DC$ denote the diagrammatic category defined by generators and relations in the previous section. In order to prove that this category is equivalent to $\\BSBim$, we construct a basis for morphisms in $\\DC$, which is sent to a basis for morphisms in $\\BSBim$. In \\cite{Lib}, Libedinsky constructed a combinatorial basis for the morphism space between two Bott-Samelson bimodules, which he called the \\emph{light",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-16-organization-of-the-paper",
+      "number": "1.6",
+      "title": "Organization of the paper",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-2-the-hecke-algebra",
+      "number": "2",
+      "title": "The Hecke Algebra",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 128,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soergel bimodules",
+          "heading": false
+        },
+        {
+          "term": "diagrammatic categories",
+          "heading": false
+        },
+        {
+          "term": "leaves span",
+          "heading": false
+        },
+        {
+          "term": "double leaves",
+          "heading": false
+        }
+      ],
+      "extract": "bimodules. Section 2: We recall the Hecke algebra, Kazhdan-Lusztig basis and Deod- har’s defect formula. Section 3: We deﬁne standard and Soergel bimodules, state Soergel’s cate- goriﬁcation theorem and discuss realizations and localization. Part 2: In the next two sections, we deﬁne the diagrammatic categories. Section 4: We deﬁne the diagrammatic presentation of standard modules. Section 5: We recall results of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-17-acknowledgements",
+      "number": "1.7",
+      "title": "Acknowledgements",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 57,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "speeding",
+          "heading": false
+        },
+        {
+          "term": "emphasising",
+          "heading": false
+        },
+        {
+          "term": "rapha",
+          "heading": false
+        }
+      ],
+      "extract": "Both authors would like to thank Mikhail Khovanov for encouraging and supporting their collaboration. The second author would like to thank Nicolas Libedinsky and Rapha\\\"el Rouquier for emphasising the importance of generators and relations, and Jean Michel for help speeding up his programs. \\part{Background on the Hecke algebra and Soergel bimodules} \\label{pt:background}",
+      "extractCut": false
+    },
+    {
+      "id": "sec-012-21-basic-definitions",
+      "number": "2.1",
+      "title": "Basic definitions",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 551,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "equation ubr",
+          "heading": false
+        },
+        {
+          "term": "rank1heckestd qquad",
+          "heading": false
+        },
+        {
+          "term": "label rank1heckestd",
+          "heading": false
+        },
+        {
+          "term": "qquad text",
+          "heading": false
+        },
+        {
+          "term": "parabolic subgroup",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "braidreln",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec-basicdefinition} Let $(W,S)$ be a Coxeter system and let $e \\in W$ denote the identity. That is, $W$ is the group generated by $S$ subject to the relations: \\begin{equation} s^2=e \\qquad \\text{for all $s \\in S$,}\\end{equation} \\begin{equation} \\ubr{sts\\ldots}{m_{st}} = \\ubr{tst\\ldots}{m_{st}} \\label{braidreln} \\qquad \\text{for all $s \\ne t \\in S$.} \\end{equation} The numbers $m_{st} = m_{ts}$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-22-the-kazhdan-lusztig-basis",
+      "number": "2.2",
+      "title": "The Kazhdan-Lusztig basis",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 352,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kazhdan-lusztig basis",
+          "heading": true
+        },
+        {
+          "term": "emph kazhdan-lusztig",
+          "heading": false
+        },
+        {
+          "term": "kazhdan-lusztig polynomials",
+          "heading": false
+        },
+        {
+          "term": "kazhdan-lusztig conjecture",
+          "heading": false
+        },
+        {
+          "term": "cite kal",
+          "heading": false
+        },
+        {
+          "term": "begin conj",
+          "heading": false
+        },
+        {
+          "term": "end conj",
+          "heading": false
+        },
+        {
+          "term": "parabolic subgroup",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec-KLbasis} The Hecke algebra is equipped with a $\\Z$-linear \\emph{bar involution}, denoted $h \\mapsto \\overline{h}$ and uniquely specified as an algebra homomorphism by $v \\mapsto v^{-1}$ and $H_s \\mapsto H_s^{-1}$. A simple calculation shows that $H_s + v = H_s^{-1}+v^{-1}$, so that the element $\\un{H}_s = H_s+v$ is bar-invariant. \\begin{thm}(Kazhdan-Lusztig \\cite{KaL1}) There exists a unique basis",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-23-the-presentation-in-the-kazhdan-lusztig-gener",
+      "number": "2.3",
+      "title": "The presentation in the Kazhdan-Lusztig generators",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 272,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ubr sts",
+          "heading": false
+        },
+        {
+          "term": "sts ldots",
+          "heading": false
+        },
+        {
+          "term": "rank2hecke",
+          "heading": false
+        },
+        {
+          "term": "kazhdan-lusztig",
+          "heading": true
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec-KLpresentation} As the elements $H_s$ generate $\\HB$, so too do the elements $\\un{H}_s$. The corresponding relations are slightly more complicated: \\begin{equation} \\un{H}_s^2 = \\un{H}_s (v+v^{-1}), \\label{rank1hecke} \\end{equation} \\begin{equation} \\ubr{\\un{H}_s\\un{H}_t\\un{H}_s\\ldots}{k+1} = \\sum_d c_{k,d} \\un{H}_{\\ubr{sts\\ldots}{d+1}} \\ \\mathrm{ for }\\ 1 \\le k+1 \\le m_{st}. \\label{rank2hecke}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-24-the-standard-trace-and-the-defect-formula",
+      "number": "2.4",
+      "title": "The standard trace and the defect formula",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": "16",
+      "labelEnd": "18",
+      "words": 928,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bruhat stroll",
+          "heading": false
+        },
+        {
+          "term": "standard trace",
+          "heading": true
+        },
+        {
+          "term": "defect formula",
+          "heading": true
+        },
+        {
+          "term": "zvv linear",
+          "heading": false
+        },
+        {
+          "term": "emph standard",
+          "heading": false
+        },
+        {
+          "term": "end-point",
+          "heading": false
+        },
+        {
+          "term": "path dominance",
+          "heading": false
+        },
+        {
+          "term": "dominance order",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec-defectformula} A \\emph{trace} on $\\HB$ is a $\\Zvv$-linear map $\\e \\co \\HB \\to \\Zvv$ satisfying $\\e(hh') = \\e(h'h)$ for all $h,h' \\in \\HB$. A straightforward calculation shows that the map $\\e(\\sum c_w H_w) = c_e$ is a trace, called the \\emph{standard trace}. There is a nice combinatorial formula for the standard trace of a product $\\un{H}_{\\un{w}}$, known as the \\emph{defect formula}, which we now",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-3-soergel-bimodules",
+      "number": "3",
+      "title": "Soergel Bimodules",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-017-31-realizations-of-coxeter-systems",
+      "number": "3.1",
+      "title": "Realizations of Coxeter systems",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 22,
+      "labelStart": "18",
+      "labelEnd": "22",
+      "words": 1803,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bbbk alpha",
+          "heading": false
+        },
+        {
+          "term": "graded bbbk",
+          "heading": false
+        },
+        {
+          "term": "alpha vee",
+          "heading": false
+        },
+        {
+          "term": "coxeter systems",
+          "heading": true
+        },
+        {
+          "term": "realization emph",
+          "heading": false
+        },
+        {
+          "term": "bbbk module",
+          "heading": false
+        },
+        {
+          "term": "let bbbk",
+          "heading": false
+        },
+        {
+          "term": "vee subset",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec-realization} For both Soergel's construction of Soergel bimodules, and for our construction of a diagrammatic category by generators and relations, the starting point will be the data of a realization of a Coxeter system. \\begin{defn} \\label{defn:realization} Let $\\Bbbk$ be a commutative ring. A \\emph{realization} of $(W,S)$ over $\\Bbbk$ is a free, finite rank $\\Bbbk$-module $\\hg$, together with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-32-technicalities",
+      "number": "3.2",
+      "title": "Technicalities",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 896,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "demazure surjectivity",
+          "heading": false
+        },
+        {
+          "term": "soergel bimodules",
+          "heading": false
+        },
+        {
+          "term": "soergel categorification",
+          "heading": false
+        },
+        {
+          "term": "soergel techniques",
+          "heading": false
+        },
+        {
+          "term": "field bbbk",
+          "heading": false
+        },
+        {
+          "term": "reflection faithful",
+          "heading": false
+        },
+        {
+          "term": "surjectivity holds",
+          "heading": false
+        },
+        {
+          "term": "geometric realization",
+          "heading": false
+        }
+      ],
+      "extract": "It is important to remember the key dichotomy in this paper: we will discuss two separate categories ``at once.\" Fix a realization of $(W,S)$, and consider the ring $R$ defined above. In this chapter we will introduce Soergel's monoidal category $\\SBim$, which is a full subcategory of $R-\\Bim$. In chapter \\ref{sec-diagsbim} we will define a diagrammatic category $\\DC$ by generators and relations, whose morphism",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-33-demazure-operators",
+      "number": "3.3",
+      "title": "Demazure operators",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 575,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "demazure",
+          "heading": true
+        },
+        {
+          "term": "demazure surjectivity",
+          "heading": false
+        },
+        {
+          "term": "demazure operator",
+          "heading": false
+        },
+        {
+          "term": "langle vee",
+          "heading": false
+        },
+        {
+          "term": "cdot rangle",
+          "heading": false
+        },
+        {
+          "term": "bbbk",
+          "heading": false
+        },
+        {
+          "term": "frobenius extension",
+          "heading": false
+        },
+        {
+          "term": "begin remark",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec-polys} Fix $s \\in S$. We will extend the map $\\langle \\a_s^\\vee, \\cdot \\rangle \\co \\hg^* \\to \\Bbbk$ to the \\emph{Demazure operator} $\\pa_s \\co R \\to R^s(-2)$, by the formula \\[ \\pa_s(f) = \\frac{f - s(f)}{\\a_s}. \\] The numerator and denominator are both $s$-antiinvariant, so that the fraction, assuming it is well-defined, should lie in the subring $R^s$ of $s$-invariants. Clearly this map makes sense",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-34-soergel-bimodules-and-standard-bimodules",
+      "number": "3.4",
+      "title": "Soergel bimodules and standard bimodules",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 27,
+      "labelStart": "24",
+      "labelEnd": "27",
+      "words": 1541,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soergel bimodules",
+          "heading": true
+        },
+        {
+          "term": "standard bimodules",
+          "heading": true
+        },
+        {
+          "term": "bott-samelson bimodules",
+          "heading": false
+        },
+        {
+          "term": "indecomposable soergel",
+          "heading": false
+        },
+        {
+          "term": "soergel realization",
+          "heading": false
+        },
+        {
+          "term": "standard filtration",
+          "heading": false
+        },
+        {
+          "term": "bbbk module",
+          "heading": false
+        },
+        {
+          "term": "grading shifts",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec-soergelandstandard} In this section we give an introduction to Soergel bimodules and standard bimodules, following Soergel's ``classical'' treatment of the subject \\cite{Soe3}. For $s \\in S$, let $B_s$ denote the $R$-bimodule $R \\ot_{R^s} R (1)$, given by restriction followed by induction and a grading shift. Henceforth, $\\ot$ will denote the tensor product over $R$, while $\\ot_s$ will denote the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-35-categorification",
+      "number": "3.5",
+      "title": "Categorification",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 29,
+      "labelStart": "27",
+      "labelEnd": "29",
+      "words": 927,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soergel categorification",
+          "heading": false
+        },
+        {
+          "term": "soergel bimodules",
+          "heading": false
+        },
+        {
+          "term": "soergel conjecture",
+          "heading": false
+        },
+        {
+          "term": "emph soergel",
+          "heading": false
+        },
+        {
+          "term": "eqref rank2hecke",
+          "heading": false
+        },
+        {
+          "term": "eqref rank1hecke",
+          "heading": false
+        },
+        {
+          "term": "zvv algebras",
+          "heading": false
+        },
+        {
+          "term": "categorification theorem",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec-SoergelCatfn} We denote the split Grothendieck group of an additive category by $[\\CC]$. That is, $[\\CC]$ is the abelian group generated by symbols $[M]$ for all objects $M \\in \\CC$ subject to the relations $[M] = [M'] + [M'']$ whenever $M \\cong M' \\oplus M''$ in $\\CC$. When $\\CC$ is monoidal, $[\\CC]$ has the structure of a ring via $[M][M'] = [M\\otimes M']$. If in addition $\\CC$ is graded with grading",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-36-localization",
+      "number": "3.6",
+      "title": "Localization",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 31,
+      "labelStart": "29",
+      "labelEnd": "31",
+      "words": 646,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "localization",
+          "heading": true
+        },
+        {
+          "term": "sbim",
+          "heading": false
+        },
+        {
+          "term": "standard bimodules",
+          "heading": false
+        },
+        {
+          "term": "fraction field",
+          "heading": false
+        },
+        {
+          "term": "homogeneous fraction",
+          "heading": false
+        },
+        {
+          "term": "bsbim",
+          "heading": false
+        },
+        {
+          "term": "eqref ses",
+          "heading": false
+        },
+        {
+          "term": "otimes",
+          "heading": false
+        }
+      ],
+      "extract": "As $\\Bbbk$ is a domain, so is $R$. Let $Q$ denote the fraction field of $R$, which is an (ungraded) field living over $\\Bbbk$. One can extend any $R$-module to a $Q$-module in the usual way. We have already shown in general that any tensor product of standard and Soergel bimodules is free as a left (or right) $R$-module, and that morphism spaces are torsion-free. Therefore, extension of scalars from $R$ to $Q$ on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-4-diagrammatics-for-standard-bimodules",
+      "number": "4",
+      "title": "Diagrammatics for Standard Bimodules",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 31,
+      "labelStart": "31",
+      "labelEnd": "31",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-024-41-diagrammatic-definition",
+      "number": "4.1",
+      "title": "Diagrammatic definition",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 34,
+      "labelStart": "31",
+      "labelEnd": "34",
+      "words": 1242,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "functors fstd",
+          "heading": false
+        },
+        {
+          "term": "cong stdbim",
+          "heading": false
+        },
+        {
+          "term": "dstd cong",
+          "heading": false
+        },
+        {
+          "term": "begin defn",
+          "heading": false
+        },
+        {
+          "term": "end defn",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "valent vertices",
+          "heading": false
+        },
+        {
+          "term": "empty boundary",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec-StdDiagDef} We assume that the reader is familiar with diagrammatics for monoidal categories with biadjunctions. An introductions to the topic may be found in \\cite{Lauda}. Fix $(W,S)$. In the paper \\cite{EWFenn}, we give a diagrammatic monoidal presentation for the 2-groupoid of $W$ over $\\Bbbk$. As we have seen, this is equivalent to the category $\\StdBim_0$. We recall that definition, beefing it up",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-42-rex-moves-and-rex-graphs",
+      "number": "4.2",
+      "title": "Rex moves and rex graphs",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 37,
+      "labelStart": "34",
+      "labelEnd": "37",
+      "words": 981,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rex moves",
+          "heading": true
+        },
+        {
+          "term": "rex graph",
+          "heading": false
+        },
+        {
+          "term": "emph rex",
+          "heading": false
+        },
+        {
+          "term": "eqref misomstd",
+          "heading": false
+        },
+        {
+          "term": "igc graph",
+          "heading": false
+        },
+        {
+          "term": "boring loop",
+          "heading": false
+        },
+        {
+          "term": "finitary rank",
+          "heading": false
+        },
+        {
+          "term": "misomstd through",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec-RexMoves} The terminology of this section is ad hoc, and non-standard. This is due to ignorance, not malice. For each $w \\in W$, let $\\G_w$ denote the set of all reduced expressions for $w$. This can be given the structure of a connected graph, the \\emph{rex graph}, where two reduced expressions are connected by an edge if they differ by a single application of a braid relation \\eqref{braidreln}. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-5-diagrammatics-for-soergel-bimodules",
+      "number": "5",
+      "title": "Diagrammatics for Soergel Bimodules",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 37,
+      "labelStart": "37",
+      "labelEnd": "37",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-027-51-generators-and-relations",
+      "number": "5.1",
+      "title": "Generators and relations",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 42,
+      "labelStart": "37",
+      "labelEnd": "42",
+      "words": 1550,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "color red",
+          "heading": false
+        },
+        {
+          "term": "array tikz",
+          "heading": false
+        },
+        {
+          "term": "color relations",
+          "heading": false
+        },
+        {
+          "term": "soergel graph",
+          "heading": false
+        },
+        {
+          "term": "eqref dotforcegeneral",
+          "heading": false
+        },
+        {
+          "term": "demazure surjectivity",
+          "heading": false
+        },
+        {
+          "term": "extraneous colors",
+          "heading": false
+        },
+        {
+          "term": "assoc end",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{defn} A \\emph{Soergel graph} is a type of graph with boundary (see Definition \\ref{defn: graph}). The only decorations are boxes labelled by homogeneous $f \\in R$. The vertices in this graph are of 3 types (see Figure \\ref{thegenerators}): \\begin{itemize} \\item Univalent vertices (dots). These have degree $+1$. \\item Trivalent vertices, where all three adjoining edges have the same color. These have degree",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-52-jones-wenzl-morphisms",
+      "number": "5.2",
+      "title": "Jones-Wenzl morphisms",
+      "level": 2,
+      "pageStart": 42,
+      "pageEnd": 45,
+      "labelStart": "42",
+      "labelEnd": "45",
+      "words": 1392,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jones-wenzl",
+          "heading": true
+        },
+        {
+          "term": "two-colored temperley-lieb",
+          "heading": false
+        },
+        {
+          "term": "jones-wenzl projectors",
+          "heading": false
+        },
+        {
+          "term": "emph jones-wenzl",
+          "heading": false
+        },
+        {
+          "term": "crossingless matching",
+          "heading": false
+        },
+        {
+          "term": "jones-wenzl morphism",
+          "heading": false
+        },
+        {
+          "term": "eqref twocoloridemp",
+          "heading": false
+        },
+        {
+          "term": "soergel graph",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec-JW} Presenting the Bott-Samelson category in rank $2$ is the topic of \\cite{EDihedral}. The calculations and proofs are too long to duplicate or fully discuss in this paper. If the reader is willing to accept the Jones-Wenzl morphisms as black boxes\\footnote{no pun intended!}, satisfying the properties stated in this section and the next, then the reader need not consult \\cite{EDihedral}. We assume the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-53-the-functor-to-bimodules",
+      "number": "5.3",
+      "title": "The functor to bimodules",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 46,
+      "labelStart": "45",
+      "labelEnd": "46",
+      "words": 267,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "elib",
+          "heading": false
+        },
+        {
+          "term": "functor",
+          "heading": true
+        },
+        {
+          "term": "checked",
+          "heading": false
+        },
+        {
+          "term": "colors",
+          "heading": false
+        },
+        {
+          "term": "sent",
+          "heading": false
+        },
+        {
+          "term": "well-deﬁned",
+          "heading": false
+        }
+      ],
+      "extract": "tivity holds. This ensures that ∆s ∈R ⊗Rs R is well-deﬁned (see section 3.3). Deﬁnition 5.12. Let F be the k-linear monoidal functor from D to BSBim deﬁned as follows. The object x is sent to Bx. The images of the dots and trivalent vertices were given in the introduction, and correspond to the four structure maps of a Frobenius extension. In the introduction, one of the dots was sent to 1 7→1 2(αs ⊗1 + 1 ⊗αs), but",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-54-localization",
+      "number": "5.4",
+      "title": "Localization",
+      "level": 2,
+      "pageStart": 46,
+      "pageEnd": 53,
+      "labelStart": "46",
+      "labelEnd": "53",
+      "words": 2854,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dashed m-valent",
+          "heading": false
+        },
+        {
+          "term": "bivalent vertex",
+          "heading": false
+        },
+        {
+          "term": "bivalent vertices",
+          "heading": false
+        },
+        {
+          "term": "solid m-valent",
+          "heading": false
+        },
+        {
+          "term": "consecutive bivalent",
+          "heading": false
+        },
+        {
+          "term": "place bivalent",
+          "heading": false
+        },
+        {
+          "term": "dashed cups",
+          "heading": false
+        },
+        {
+          "term": "dashed ver",
+          "heading": false
+        }
+      ],
+      "extract": "technique, which we will discuss in the section after next. □ 5.4. Localization. Deﬁnition 5.14. Let DQ denote the localization of D at Q, which is to say that we allow boxes labelled by f ∈Q in the leftmost region, and require that they multiply as in Q. Let FQ denote the functor DQ →BSBimQ which extends F under base change. Because of arguments akin to Lemma 3.20, this is the same as the category which allows",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-55-computation-using-localization",
+      "number": "5.5",
+      "title": "Computation using localization",
+      "level": 2,
+      "pageStart": 53,
+      "pageEnd": 55,
+      "labelStart": "53",
+      "labelEnd": "55",
+      "words": 875,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "valent vertex",
+          "heading": false
+        },
+        {
+          "term": "mixed graph",
+          "heading": false
+        },
+        {
+          "term": "kar",
+          "heading": false
+        },
+        {
+          "term": "reflection sequences",
+          "heading": false
+        },
+        {
+          "term": "trivalent vertex",
+          "heading": false
+        },
+        {
+          "term": "vertex times",
+          "heading": false
+        },
+        {
+          "term": "dstd",
+          "heading": false
+        },
+        {
+          "term": "times matrix",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec-compute} Each object $B_{\\un{x}}$ in $\\DC$ splits in $\\Kar(\\DC_Q)$ as the sum of $Q_\\eb$ over all subsequences $\\eb$ of ${\\un{x}}$. Here, $Q_\\eb$ denotes the object which is the tensor product of $Q_{{\\un{x}}_k}$ when $\\eb_k=1$ and $\\1$ when $\\eb_k=0$. Given a graph expressing a morphism from a sequence $B_{\\un{x}}$ of length $d$ to a sequence $B_{{\\un{x}}'}$ of length $d'$, we can localize to obtain a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-56-unbalanced-realizations",
+      "number": "5.6",
+      "title": "Unbalanced realizations",
+      "level": 2,
+      "pageStart": 55,
+      "pageEnd": 57,
+      "labelStart": "55",
+      "labelEnd": "57",
+      "words": 800,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jones-wenzl projector",
+          "heading": false
+        },
+        {
+          "term": "valent vertex",
+          "heading": false
+        },
+        {
+          "term": "valent vertices",
+          "heading": false
+        },
+        {
+          "term": "eqref dot2m",
+          "heading": false
+        },
+        {
+          "term": "upper-right strand",
+          "heading": false
+        },
+        {
+          "term": "pinlabel",
+          "heading": false
+        },
+        {
+          "term": "eqref twocoloridemp",
+          "heading": false
+        },
+        {
+          "term": "endlabellist centering",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{nonbalanced} Now we discuss the diagrammatic alterations which must be made to accommodate the case of non-balanced realizations. This was discussed for dihedral groups in the appendix to \\cite{EDihedral}, where two separate diagrammatic conventions are proposed to deal with the new bookkeeping required. We follow the second suggested convention from that appendix. Fix a dihedral parabolic subgroup with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-6-libedinskys-light-leaves",
+      "number": "6",
+      "title": "Libedinsky's Light Leaves",
+      "level": 1,
+      "pageStart": 57,
+      "pageEnd": 57,
+      "labelStart": "57",
+      "labelEnd": "57",
+      "words": 32,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "libedinsky",
+          "heading": true
+        },
+        {
+          "term": "leaves",
+          "heading": true
+        },
+        {
+          "term": "sec-lll",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec-LLL} In this section, we investigate Libedinsky's ``light leaves'' maps \\cite{Lib} from a diagrammatic perspective, and prove (modulo the arguments in the next chapter) that ``double leaves\" form a cellular basis for $\\DC$.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-034-61-diagrammatics-for-light-leaves",
+      "number": "6.1",
+      "title": "Diagrammatics for light leaves",
+      "level": 2,
+      "pageStart": 57,
+      "pageEnd": 60,
+      "labelStart": "57",
+      "labelEnd": "60",
+      "words": 1279,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rex move",
+          "heading": false
+        },
+        {
+          "term": "some rex",
+          "heading": false
+        },
+        {
+          "term": "light leaves",
+          "heading": true
+        },
+        {
+          "term": "map phi",
+          "heading": false
+        },
+        {
+          "term": "igc",
+          "heading": false
+        },
+        {
+          "term": "circ phi",
+          "heading": false
+        },
+        {
+          "term": "final target",
+          "heading": false
+        },
+        {
+          "term": "phi ell",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec-LibedDiag} Fix a rex ${\\un{w}}$. We want to find a basis of diagrams for the space of morphisms $B_{\\un{x}} \\to B_{\\un{w}}$ modulo ``lower terms.\" Here, lower terms are morphisms which induce the zero map to the unique standard summand $Q_w \\sumset B_{\\un{w}}$ after localization. This basis will be parametrized by subsequences $\\eb$ of $\\un{x}$ which express $w$. Libedinsky associates a morphism",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-62-localizing-light-leaves",
+      "number": "6.2",
+      "title": "Localizing light leaves",
+      "level": 2,
+      "pageStart": 60,
+      "pageEnd": 62,
+      "labelStart": "60",
+      "labelEnd": "62",
+      "words": 900,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bivalent vertex",
+          "heading": false
+        },
+        {
+          "term": "rex moves",
+          "heading": false
+        },
+        {
+          "term": "light leaves",
+          "heading": true
+        },
+        {
+          "term": "path dominance",
+          "heading": false
+        },
+        {
+          "term": "upper-triangularity",
+          "heading": false
+        },
+        {
+          "term": "trivalent vertex",
+          "heading": false
+        },
+        {
+          "term": "leaves map",
+          "heading": false
+        },
+        {
+          "term": "dominance order",
+          "heading": false
+        }
+      ],
+      "extract": "Let us fix a light leaves map $\\LL_{{\\un{x}},\\eb}$, with $\\eb$ expressing $w$. Let ${\\un{w}}$ be the target of the map. Now consider what happens after the passage $\\DC \\to \\Kar(\\DC_Q)$. The target $B_{\\un{w}}$ splits up into standard summands, with a unique summand isomorphic to $Q_w$. For each subsequence $\\fb$ of ${\\un{x}}$ which also expresses $w$ we have a summand $Q_\\fb \\sumset B_{\\un{w}}$ isomorphic to $Q_w$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-63-double-leaves",
+      "number": "6.3",
+      "title": "Double leaves",
+      "level": 2,
+      "pageStart": 62,
+      "pageEnd": 64,
+      "labelStart": "62",
+      "labelEnd": "64",
+      "words": 814,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "double leaves",
+          "heading": true
+        },
+        {
+          "term": "define oll",
+          "heading": false
+        },
+        {
+          "term": "lll",
+          "heading": false
+        },
+        {
+          "term": "ref homspacetheorem",
+          "heading": false
+        },
+        {
+          "term": "upper-triangularity",
+          "heading": false
+        },
+        {
+          "term": "leaves map",
+          "heading": false
+        },
+        {
+          "term": "final chapter",
+          "heading": false
+        },
+        {
+          "term": "homspaceprop",
+          "heading": false
+        }
+      ],
+      "extract": "The previous section was essentially a discussion of maps $B_{\\un{w}} \\to Q_w$ for some $w$. Let us use this to discuss maps $B_{\\un{w}} \\to B_{\\un{y}}$ for arbitrary expressions ${\\un{w}}$ and ${\\un{y}}$. Consider a light leaves map $\\LL_{{\\un{x}},\\eb} \\co B_{\\un{x}} \\to B_{\\un{w}}$ where ${\\un{w}}$ is a rex for $w$. Flipping this diagram upside-down, we get a map $\\oLL_{{\\un{x}},\\eb} \\co B_{\\un{w}} \\to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-64-cellularity",
+      "number": "6.4",
+      "title": "Cellularity",
+      "level": 2,
+      "pageStart": 64,
+      "pageEnd": 65,
+      "labelStart": "64",
+      "labelEnd": "65",
+      "words": 766,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "modulo lll",
+          "heading": false
+        },
+        {
+          "term": "lll maps",
+          "heading": false
+        },
+        {
+          "term": "oll",
+          "heading": false
+        },
+        {
+          "term": "rex moves",
+          "heading": false
+        },
+        {
+          "term": "begin claim",
+          "heading": false
+        },
+        {
+          "term": "sided ideal",
+          "heading": false
+        },
+        {
+          "term": "end claim",
+          "heading": false
+        },
+        {
+          "term": "light leaves",
+          "heading": false
+        }
+      ],
+      "extract": "We assume Theorem \\ref{homspacetheorem}, so that Hom spaces are free left $R$-modules and localization is injective on Hom spaces. \\begin{claim} For any $w \\in W$, let $\\XC_w$ be the set of maps in $\\DC$ which, after localization, induce the zero map on every $Q_w$ summand of their source object. Then $\\XC_w$ is a 2-sided ideal in $\\DC$. \\end{claim} \\begin{proof} Left to the reader. \\end{proof} \\begin{claim} The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-65-the-diagrammatic-character",
+      "number": "6.5",
+      "title": "The diagrammatic character",
+      "level": 2,
+      "pageStart": 65,
+      "pageEnd": 69,
+      "labelStart": "65",
+      "labelEnd": "69",
+      "words": 1366,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diagrammatic character",
+          "heading": true
+        },
+        {
+          "term": "bbbk end",
+          "heading": false
+        },
+        {
+          "term": "circ oll",
+          "heading": false
+        },
+        {
+          "term": "grk hom",
+          "heading": false
+        },
+        {
+          "term": "kar",
+          "heading": false
+        },
+        {
+          "term": "subset bbbk",
+          "heading": false
+        },
+        {
+          "term": "indecomposable object",
+          "heading": false
+        },
+        {
+          "term": "soergel bimodules",
+          "heading": false
+        }
+      ],
+      "extract": "Recall that for any ideal $I \\subset W$ in the Bruhat order we have a (cellular) ideal $\\LLL_I$ in $\\DC$. For any coideal $J$ (i.e. $W \\setminus J$ is an ideal) we consider the quotient category \\[ \\DC^J \\define \\DC/\\LLL_{W \\setminus J}. \\] A basis for morphisms in $\\DC^J$ is given by double leaves maps which do not factor through $W \\setminus J$. If $w$ is a minimal element in $J$ then the images of $B_{\\un{w}}$ in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-67-the-equivalence-to-bimodules",
+      "number": "6.7",
+      "title": "The equivalence to bimodules",
+      "level": 2,
+      "pageStart": 69,
+      "pageEnd": 69,
+      "labelStart": "69",
+      "labelEnd": "69",
+      "words": 474,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soergel bimodules",
+          "heading": false
+        },
+        {
+          "term": "soergel realization",
+          "heading": false
+        },
+        {
+          "term": "valent vertices",
+          "heading": false
+        },
+        {
+          "term": "hom spaces",
+          "heading": false
+        },
+        {
+          "term": "trivalent vertices",
+          "heading": false
+        },
+        {
+          "term": "bsbim",
+          "heading": false
+        },
+        {
+          "term": "vertices generate",
+          "heading": false
+        },
+        {
+          "term": "monoidal functor",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we assume that $\\hg$ is a Soergel realization over a field $\\Bbbk$. In this section we prove that our diagrammatic category is equivalent to Soergel bimodules. By Corollary \\ref{cor:homto[B]} the map $\\HB \\to [\\DC] : \\un{H}_s \\mapsto [B_s]$ is a homomorphism. By taking the graded ranks of Hom spaces in $\\DC$ we obtain a pairing on $[\\DC]$ which induces a semi-linear pairing $( - , - )_{\\DC}$ on $\\HB$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-7-double-leaves-span",
+      "number": "7",
+      "title": "Double Leaves Span",
+      "level": 1,
+      "pageStart": 69,
+      "pageEnd": 70,
+      "labelStart": "69",
+      "labelEnd": "70",
+      "words": 41,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "leaves",
+          "heading": true
+        },
+        {
+          "term": "light leaves",
+          "heading": false
+        },
+        {
+          "term": "sec-lllproof",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec-LLLproof} This chapter contains a diagrammatic proof that light leaves form a spanning set for Hom spaces. It is somewhat involved, and a key role is played by the recursive combinatorial structure of light leaves maps.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-041-71-negative-positive-decompositions",
+      "number": "7.1",
+      "title": "Negative-positive decompositions",
+      "level": 2,
+      "pageStart": 70,
+      "pageEnd": 72,
+      "labelStart": "70",
+      "labelEnd": "72",
+      "words": 1081,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "negative-positive decompositions",
+          "heading": true
+        },
+        {
+          "term": "emph negative-positive",
+          "heading": false
+        },
+        {
+          "term": "eqref twocoloridemp",
+          "heading": false
+        },
+        {
+          "term": "rex moves",
+          "heading": false
+        },
+        {
+          "term": "doubled valent",
+          "heading": false
+        },
+        {
+          "term": "valent vertex",
+          "heading": false
+        },
+        {
+          "term": "boundary dot",
+          "heading": false
+        },
+        {
+          "term": "merging trivalent",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec-negpos} For the rest of this chapter we will be interested in embedded graphs, not isotopy classes thereof. We will abusively use the term \\emph{Soergel graph} to refer to a graph embedded without horizontal tangent lines, so that no two vertices share the same $y$-coordinate. This kind of graph can be written as the product of the generators in the introduction, tensored with identity maps. Recall",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-72-modulo-lower-terms",
+      "number": "7.2",
+      "title": "Modulo lower terms",
+      "level": 2,
+      "pageStart": 72,
+      "pageEnd": 73,
+      "labelStart": "72",
+      "labelEnd": "73",
+      "words": 554,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "modulo lower",
+          "heading": true
+        },
+        {
+          "term": "rex move",
+          "heading": false
+        },
+        {
+          "term": "lower terms",
+          "heading": true
+        },
+        {
+          "term": "valent vertex",
+          "heading": false
+        },
+        {
+          "term": "rexes",
+          "heading": false
+        },
+        {
+          "term": "boundary dots",
+          "heading": false
+        },
+        {
+          "term": "top boundary",
+          "heading": false
+        },
+        {
+          "term": "hom",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec-modulolower} Let us fix an element $w \\in W$ with a reduced expression ${\\un{w}}$. Let $I_{\\un{w}}$ denote the right ideal (bottom ideal, if you think diagrammatically) consisting of linear cominations of diagrams with arbitrary source $\\un{x}$, fixed target $\\un{w}$ and which are strictly positive on top. We have already shown that this is the same as the ideal generated by all the top boundary dots.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-73-reduction-to-working-modulo-lower-terms",
+      "number": "7.3",
+      "title": "Reduction to working modulo lower terms",
+      "level": 2,
+      "pageStart": 73,
+      "pageEnd": 73,
+      "labelStart": "73",
+      "labelEnd": "73",
+      "words": 357,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ref llabasismlt",
+          "heading": false
+        },
+        {
+          "term": "lll",
+          "heading": false
+        },
+        {
+          "term": "subsequences",
+          "heading": false
+        },
+        {
+          "term": "morphism phi",
+          "heading": false
+        },
+        {
+          "term": "factors through",
+          "heading": false
+        },
+        {
+          "term": "oll",
+          "heading": false
+        },
+        {
+          "term": "through reduced",
+          "heading": false
+        },
+        {
+          "term": "span",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec-reduction1} \\begin{proof}[Proof of Theorem \\ref{homspacetheorem} assuming Proposition \\ref{LLabasismlt}] Fix sequences ${\\un{x}}$ and ${\\un{y}}$ and a morphism $\\phi \\co {\\un{x}} \\to {\\un{y}}$. We want to write $\\phi$ as an $R$-linear combination of diagrams of the form $\\oLL_{{\\un{y}},\\fb} \\LL_{{\\un{x}},\\eb}$ where the subsequences express a common element $w \\in W$. The identity map of ${\\un{x}}$ has",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-74-the-grand-induction",
+      "number": "7.4",
+      "title": "The grand induction",
+      "level": 2,
+      "pageStart": 73,
+      "pageEnd": 83,
+      "labelStart": "73",
+      "labelEnd": "83",
+      "words": 4277,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rex move",
+          "heading": false
+        },
+        {
+          "term": "maxwidth",
+          "heading": false
+        },
+        {
+          "term": "pinlabel",
+          "heading": false
+        },
+        {
+          "term": "asterisk box",
+          "heading": false
+        },
+        {
+          "term": "eqref assoc",
+          "heading": false
+        },
+        {
+          "term": "dot",
+          "heading": false
+        },
+        {
+          "term": "trivalent vertex",
+          "heading": false
+        },
+        {
+          "term": "eqref needle",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec-hereitis} Now comes the crux of the argument, a giant induction on maxwidth to prove Proposition \\ref{LLabasismlt}. This entire section represents the proof. Fix a rex ${\\un{w}}$ for $w$. Let $X_{{\\un{x}}}$ denote the set of all possible maps which are valid constructions of $\\LL_{{\\un{x}},\\eb}$ with target ${\\un{w}}$, but which also have polynomials in any region. We omit ${\\un{w}}$ from the notation",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "soergel bimodules",
+      "heading": true
+    },
+    {
+      "term": "emph soergel",
+      "heading": false
+    },
+    {
+      "term": "emph rex",
+      "heading": false
+    },
+    {
+      "term": "soergel realization",
+      "heading": false
+    },
+    {
+      "term": "soergel graph",
+      "heading": true
+    },
+    {
+      "term": "soergel cite",
+      "heading": false
+    },
+    {
+      "term": "indecomposable soergel",
+      "heading": false
+    },
+    {
+      "term": "bott-samelson bimodules",
+      "heading": false
+    },
+    {
+      "term": "soe soergel",
+      "heading": false
+    },
+    {
+      "term": "soergel categorification",
+      "heading": false
+    },
+    {
+      "term": "bbbk end",
+      "heading": false
+    },
+    {
+      "term": "soergel theorem",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 67,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 69,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 71,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 72,
+      "label": "72",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 73,
+      "label": "73",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 74,
+      "label": "74",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 75,
+      "label": "75",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 76,
+      "label": "76",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 77,
+      "label": "77",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 78,
+      "label": "78",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 79,
+      "label": "79",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 80,
+      "label": "80",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 81,
+      "label": "81",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 82,
+      "label": "82",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 83,
+      "label": "83",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The vertices in a Soergel graph",
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The Four Maps",
+      "page": 58,
+      "pageLabel": "58",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Calculating pe",
+      "page": 61,
+      "pageLabel": "61",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 46,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 46,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "3 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 46 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1309.0865v1"
+  }
+}

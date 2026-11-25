@@ -1,0 +1,57 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/di-cairano-2022-j-phys-commun-6-015002/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "On the derivation of a Nonlinear Generalized Langevin Equation",
+  "contains": [
+    "library/di-cairano-2022-j-phys-commun-6-015002/sections/sec-front-matter",
+    "library/di-cairano-2022-j-phys-commun-6-015002/sections/sec-000",
+    "library/di-cairano-2022-j-phys-commun-6-015002/sections/sec-001",
+    "library/di-cairano-2022-j-phys-commun-6-015002/sections/sec-002",
+    "library/di-cairano-2022-j-phys-commun-6-015002/sections/sec-003",
+    "library/di-cairano-2022-j-phys-commun-6-015002/sections/sec-004",
+    "library/di-cairano-2022-j-phys-commun-6-015002/sections/sec-005",
+    "library/di-cairano-2022-j-phys-commun-6-015002/sections/sec-006",
+    "library/di-cairano-2022-j-phys-commun-6-015002/sections/sec-007",
+    "library/di-cairano-2022-j-phys-commun-6-015002/sections/sec-008",
+    "library/di-cairano-2022-j-phys-commun-6-015002/sections/sec-009",
+    "library/di-cairano-2022-j-phys-commun-6-015002/sections/sec-010",
+    "library/di-cairano-2022-j-phys-commun-6-015002/sections/sec-011",
+    "library/di-cairano-2022-j-phys-commun-6-015002/sections/sec-012",
+    "library/di-cairano-2022-j-phys-commun-6-015002/sections/sec-013"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On the derivation of a Nonlinear Generalized Langevin Equation — 15 sections: Front matter; Introduction; State-of-art\n\n**On the derivation of a Nonlinear Generalized Langevin Equation**\n\n*Langevin Equation*\n\n12 pp, 15 sections.\n\n**Outline.** Front matter; 1 Introduction; 1.1 State-of-art; 1.2 Introduction to the problem; 1.2.1 Criticism; 1.3 Notation; 2 Formal derivation of a nonlinear GLE; 2.1 General setting: study of the equilibrium ; 2.1.1 Examples of a possible equilibrium map.; 2.2 Generalization of the equilibrium map; 2.3 Alternative derivation; 3 Conclusion; Acknowledgments; Data availability statement; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "di-cairano-2022-j-phys-commun-6-015002",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "Di_Cairano_2022_J._Phys._Commun._6_015002.pdf",
+    "source_sha256": "f75313b507f971721997956a33bae9227281f588db750c74f9d429406b88c80c",
+    "pages": 12,
+    "arxiv": null,
+    "doi": "10.1088/2399-6528/ac438d",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

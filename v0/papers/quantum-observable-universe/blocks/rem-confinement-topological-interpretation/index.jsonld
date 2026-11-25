@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-confinement-topological-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:confinement-topological-interpretation",
+  "kind": "remark",
+  "title": "Confinement = topology + action minimization",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-confinement-topological"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-confinement-topological",
+  "tags": [
+    "confinement",
+    "topological",
+    "borromean",
+    "linear-programming",
+    "physical-interpretation"
+  ],
+  "text": "confinement-topological-interpretation.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,664 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0111205v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0111205v1  [math.CT]  19 Nov 2001\nFrom Subfactors to Categories and Topology II.\nThe Quantum Double of Tensor Categories and Subfactors\nMichael M¨uger∗\nKorteweg-de Vries Institute, Amsterdam, Netherlands\nemail: mmueger@science.uva.nl\nOctober 30, 2018\nAbstract\nFor every tensor category C there is a braided tensor category Z(C), the ‘center’ of\nC. It is well known to be related to Drinfel’d’s notion of the quantum double of a ﬁnite\ndimensional Hopf algebra H by an equivalence Z(H −mod)\n⊗≃br D(H) −mod of braided\ntensor categories. In the Hopf algebra situation, whenever D(H) −mod is se",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Define the `center' $Z_0(X)$ of a set $X$ to be the monoid of all functions \n$f\\colon X\\rightarrow X$ (with composition as product and the identity map as unit.)\nThen the usual center $Z_1\\equiv Z$ of the monoid $Z_0(X)$\nis trivial: $Z_1(Z_0(X))=\\{\\id_X\\}$. The cardinality of $Z_0(X)$ is \ngiven by $\\#Z_0(X)=\\#X^{\\#X}$. The aim of the present work is to prove 1-categorical\nanalogues of these trivial set theoretic (= 0-categorical) observations.\n(I owe the above definition of $Z_0(X)$ to J.\\ Baez.)\n\nGiven an arbitrary monoidal category (or tensor category) $\\2C$ its center $\\2Z(\\2C)$\nis a braide",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-2-preliminaries.md",
+      "narrative": null,
+      "content": "Preliminaries",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some definitions and notations",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-21-some-definitions-and-notations.md",
+      "narrative": null,
+      "content": "We refer to \\cite[Section 2]{mue09} for our general conventions and recall only a few less\nstandard notations. A retract $Y\\prec X$ is also called a subobject. A category has\nsubobjects if all idempotents split, and every category $\\2A$ has a canonical completion \n$\\ol{\\2A}^p$ for which this is the case. A $\\7F$-linear category is semisimple if it has\ndirect sums and subobjects and every object is a finite direct sum of simple objects, $X$\nbeing simple iff $\\End(X)\\cong\\7F$. For monoidal categories we require in addition that\n$\\11$ is simple. A subcategory of a semisimple category is called se",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Frobenius algebras and 2-categories",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-22-frobenius-algebras-and-2-categories.md",
+      "narrative": null,
+      "content": "\\bdefin \\label{d-Frob}\nLet $\\2A$ be a (strict) monoidal category. A Frobenius algebra in $\\2A$ is a\nquintuple $\\5Q=(Q,v,v',w,w')$, where $Q$ is an object in $\\2A$ and \n$v:\\11\\rightarrow Q, v': Q\\rightarrow\\11, w: Q\\rightarrow Q^2, w':Q^2\\rightarrow Q$ \nare morphisms satisfying the following conditions:\n\\begin{equation} \\label{W1}\n   w\\otimes\\id_Q\\mcirc w=\\id_Q\\otimes w\\mcirc w, \n\\end{equation}\n\\begin{equation} \\label{W1'}\n   w' \\mcirc w'\\otimes\\id_Q=w' \\mcirc \\id_Q\\otimes w', \n\\end{equation}\n\\begin{equation} \\label{W2}\n   v'\\otimes\\id_Q\\mcirc w = \\id_Q = \\id_Q\\otimes v'\\mcirc w,\n\\end{equation}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Quantum Double of a Tensor Category",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-3-the-quantum-double-of-a-tensor-category.md",
+      "narrative": null,
+      "content": "The Quantum Double of a Tensor Category",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "On half braidings",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-31-on-half-braidings.md",
+      "narrative": null,
+      "content": "We begin with the definition of the quantum double $\\2Z_1(\\2C)$ of a (strict) monoidal\ncategory $\\2C$. \n\\bdefin Let $\\2C$ be a strict monoidal category and let $X\\in\\2C$. A half braiding\n$e_X$ for $X$ is a family $\\{e_X(Y)\\in\\Hom_\\2C(XY,YX),\\ Y\\in\\2C\\}$ of morphisms satisfying \n\\begin{itemize}\n\\item[(i)] Naturality w.r.t.\\ the argument in brackets, i.e.\n\\begin{equation}t\\otimes\\id_X\\mcirc e_X (Y)= e_X(Z)\\mcirc\\id_X\n  \\otimes t \\quad\\forall t: Y\\rarr Z.\n\\label{hb-i}\\end{equation}\n\\item[(ii)] The braid relation\n\\begin{equation} e_X(Y\\otimes Z)=\\id_{Y}\\otimes e_X(Z) \\mcirc\n    e_X(Y)\\otimes\\id_{Z",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Elementary properties of the quantum double",
+      "pageStart": 9,
+      "pageEnd": 13,
+      "target": "../sections/sec-006-32-elementary-properties-of-the-quantum-double.md",
+      "narrative": null,
+      "content": "\\bdefin The center $\\2Z_1(\\2C)$ of a strict monoidal category $\\2C$ has as objects pairs\n$(X,  e_X)$, where $X\\in\\2C$ and $ e_X$ is a half braiding. The morphisms are given by \n\\bea \\lefteqn{ \\Hom_{\\2Z_1(\\2C)}((X, e_X),(Y, e_Y)= \\{ t\\in\\Hom_\\2C(X,Y) \\ | } \\nn \\\\\n && \\quad\\quad \\id_X\\otimes t \\mcirc e_X(Z)= e_Y(Z)\\mcirc t\\otimes\\id_X \\quad \n\\forall Z\\in\\2C \\}. \\label{dmor}\\eea\nThe tensor product of objects is given by \n$(X, e_X)\\otimes(Y, e_Y)=(XY, e_{XY})$, where\n\\begin{equation} e_{XY}(Z)= e_X(Z)\\otimes\\id_Y\\mcirc\\id_X\\otimes e_Y(Z).\n\\label{dprod}\\end{equation}\nThe tensor unit is $(\\11,e_\\11)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Semisimplicity of $\\2Z_1(\\2C)$",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "../sections/sec-007-33-semisimplicity-of-2z-12c.md",
+      "narrative": null,
+      "content": "\\blemma Let $\\2C$ be semisimple spherical with simple unit. We assume that there are\nonly finitely many simple objects and that $\\dim\\2C\\ne 0$. Let\n$(X,e_X),(Y,e_Y)\\in\\2Z_1(\\2C)$. Then the map\n$E_{X,Y}: \\Hom_\\2C(X,Y)\\rightarrow\\Hom_\\2C(X,Y)$ defined by \n\\[ E_{X,Y}(t)=(\\dim\\2C)^{-1}\\sum_{i\\in \\Gamma} d_i \\ \\ \n\\begin{tangle}\n\\step\\object{\\ol{\\ve}(X_i)}\\Step\\object{Y} \\\\\n\\step\\hh\\hcoev\\step\\id\\\\\n\\step\\id\\step\\hxx\\mobj{e_Y(\\ol{X_i})}\\\\\n\\obj{X_i}\\step\\id\\step\\O t\\step\\id\\hstep\\obj{\\ol{X_i}} \\\\\n\\step[-1.2]\\mobj{e_X(X_i)}\\step[2.2]\\hxx\\step\\id \\\\\n\\step\\hh\\id\\step\\hev\\\\\n\\step\\object{X}\\step{\\ve(X_i)}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weak Morita equivalence of $\\2Z_1(\\2C)$ and $\\2C\\boxtimes\\2C^{\\mbox{\\scriptsize op}}$",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-008-4-weak-morita-equivalence-of-2z-12c-and-2cboxtim.md",
+      "narrative": null,
+      "content": "\\label{sec-morita}\n\n\\subsection{A Frobenius Algebra in $\\2C\\boxtimes\\2C^\\op$}\\label{ss-mcata}\nThroughout this section $\\2C$ will be a strict spherical tensor category with simple unit\nover an algebraically closed field $\\7F$. We require that $\\2C$ is semisimple with\nfinite set $\\Gamma$ of isomorphism classes of simple objects and $\\dim\\2C\\ne 0$. The set\n$\\Gamma$ has a distinguished element $0$ representing the tensor unit and an involution\n$i\\mapsto\\ol{\\imath}$ which associates with every class the class of dual objects. We\nchoose representers $\\{X_i,\\ i\\in \\Gamma\\}$ of these classes, which ar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A fully faithful tensor functor $F: \\2Z_1(\\2C)\\rightarrow\\2B$",
+      "pageStart": 18,
+      "pageEnd": 25,
+      "target": "../sections/sec-009-42-a-fully-faithful-tensor-functor-f-2z-12cright.md",
+      "narrative": null,
+      "content": "\\label{fff}\nIn this subsection we will construct a functor $F: \\2Z_1(\\2C)\\rightarrow\\2B$ and prove\nthat it is fully faithful and monoidal. This already implies that $\\2Z_1(\\2C)$ has finitely \nmany isomorphism classes of simple objects, which is not at all obvious from\nDefinition \\ref{defdouble}.\n\n\\blemma \\label{11mor}\nLet $X,Y\\in\\2C$. There is a one-to-one correspondence between morphisms \n$u\\in \\Hom_\\2A((X\\boxtimes\\11)Q,Q(Y\\boxtimes\\11))\\equiv\\Hom_\\2E(\\oj (X\\boxtimes\\11)J,\\oj (Y\\boxtimes\\11)J)$\nand families $\\{ u[i]\\in\\Hom_\\2C(XX_i,X_iY),\\ i\\in \\Gamma\\}$. With $Z\\in\\2C$ and \n$v\\in \\Hom_\\2A((Y",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "$F$ is essentially surjective",
+      "pageStart": 25,
+      "pageEnd": 29,
+      "target": "../sections/sec-010-43-f-is-essentially-surjective.md",
+      "narrative": null,
+      "content": "\\label{esssurj}\nIn order to conclude that $F$ establishes an equivalence \n$\\2B\\stackrel{\\otimes}{\\cong}\\2Z_1(\\2C)$ of tensor categories it remains to prove that $F$\nis essentially surjective, viz. that for every object $Y$ of $\\2B$ there is\n$(X,e_X)\\in\\2Z_1(\\2C)$ such that $F(X,e_X)\\cong Y$. We begin with a result due to Izumi\n\\cite{iz2}. \n\n\\blemma Let $Y\\in\\2C$ be simple. Then the 1-morphisms \n$(Y\\boxtimes\\11)J,\\, (\\11\\boxtimes Y^\\op)J: \\ \\6B\\rarr\\6A$ and \n$\\oj(Y\\boxtimes\\11),\\, \\oj(\\11\\boxtimes Y^\\op): \\6A\\rarr\\6B$ are\nsimple. Furthermore, \n\\bean \n  (Y\\boxtimes\\11)J &\\cong & (\\11\\boxtimes\\ol",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Modularity of the Quantum Double",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-011-5-modularity-of-the-quantum-double.md",
+      "narrative": null,
+      "content": "Modularity of the Quantum Double\n29\n5.1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The `Tube algebra'",
+      "pageStart": 30,
+      "pageEnd": 34,
+      "target": "../sections/sec-012-51-the-tube-algebra.md",
+      "narrative": null,
+      "content": "\\label{ss-tube}\nBy definition \\cite{mue09} of $\\2E$, every simple $\\6B-\\6B$ morphism is contained in\n$\\oj(X\\boxtimes Y^\\op)J$ for some simple $X, Y$. In view of Lemma \\ref{iz1} every simple\n$\\6B-\\6B$-morphism is  in fact contained in  $\\oj (X\\boxtimes\\11)J$ for some simple\n$X\\in\\2C$ (as well as in $\\oj (\\11\\boxtimes \\ol{X}^\\op) J$). Defining\n\\[ \\hat{Y}_L = \\bigoplus_{i\\in \\Gamma} X_i\\boxtimes \\11, \\quad\\quad\n   \\hat{Y}_R = \\bigoplus_{i\\in \\Gamma} \\11\\boxtimes X_i^\\op, \\]\nwe conclude that either of $\\oj \\hat{Y}_LJ,\\ \\oj \\hat{Y}_RJ$ \ncontains all simple $\\6B-\\6B$-morphisms. With\n\\[ \\Xi_L = \\End_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invertibility of the $S$-matrix",
+      "pageStart": 34,
+      "pageEnd": 39,
+      "target": "../sections/sec-013-52-invertibility-of-the-s-matrix.md",
+      "narrative": null,
+      "content": "\\label{modular}\nIn this subsection we will prove that the $S$-matrix \n\\[ S((X,e_X),(Y,e_Y))=\\quad\n\\begin{tangle}\n\\coev\\step\\coev\\\\\n\\id\\Step\\hxx\\Step\\id\\\\\n\\id\\step[.2]{\\scriptsize \\mobj{(X,e_X)}}\\step[1.8]\\hxx\\step[-.2]{\\scriptsize \\mobj{(Y,e_Y)}}\\step[2.2]\\id\\\\\n\\step[-3]\\mobj{\\ve(\\ol{(X,e_X)})}\\step[3]\\ev\\step\\ev\\mobj{\\ve((Y,e_Y))}\n\\end{tangle}\n\\]\nof $\\2Z_1(\\2C)$ is invertible, thus $\\2Z_1(\\2C)$ is modular in the sense of Turaev\n\\cite{t}. The strategy will be to define a vector space isomorphism $\\6S$ of the\nsubspace \n\\[ \\Xi_0=\\bigoplus_{i,j\\in \\Gamma}\\Hom_\\2C(X_iX_j,X_jX_i) \\]\nof $\\Xi_L$ whic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Computation of the Gauss sums",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "../sections/sec-014-53-computation-of-the-gauss-sums.md",
+      "narrative": null,
+      "content": "\\label{gss}\nIf $\\2C$ is a braided spherical tensor category a theorem of Deligne, cf.\\ \\cite[Proposition\n2.11]{y}, implies that $\\2Z_1(\\2C)$ is a ribbon category (or balanced). Namely, \n\\[\n\\theta_X=\\quad\\quad\n\\begin{tangle}\n\\object{\\ol{\\ve}(\\ol{X})}\\Step\\object{X}\\\\\n\\hh\\hcoev\\step\\id\\\\\n\\step[-.8]\\mobj{\\ol{X}}\\step[.8]\\id\\step\\hxx\\\\\n\\hh\\hev\\step\\id\\\\\n\\object{\\ve(\\ol{X})}\\Step\\object{X}\n\\end{tangle}\n\\quad\\quad \\mbox{for } X\\in\\2C\n\\]\ndefines a natural automorphism $\\{ \\theta_X, X\\in\\obj\\,\\2C \\}$ of the identity functor\nwhich satisfies \n\\[ \\theta_{XY}=\\theta_X\\otimes\\theta_Y\\mcirc c(Y,X)\\mcirc c(X",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The quantum double of a $*$-category",
+      "pageStart": 41,
+      "pageEnd": 44,
+      "target": "../sections/sec-015-6-the-quantum-double-of-a--category.md",
+      "narrative": null,
+      "content": "Consider the quantum double $\\2Z_1(\\2C)$ of a $*$-category $\\2C$. If \n$s\\in\\Hom_{\\2Z_1(\\2C)}((X,e_X),(Y,e_Y))\\subset\\Hom_\\2C(X,Y)$ then clearly\n$s^*\\in\\Hom_\\2C(Y,X)$. It does, not, however, follow that\n$s^*\\in\\Hom_{\\2Z_1(\\2C)}((Y,e_Y),(X,e_X))$. But there is a suitable full subcategory of\n$\\2Z_1(\\2C)$ which is a $*$-category. \n\n\\bdefin Let $\\2C$ be a tensor $*$-category. Then the unitary quantum double \n$\\2Z_1^*(\\2C)$ is defined as $\\2Z_1(\\2C)$ except that the half braidings $e_X(Y)$ are \nrequired to be unitary, not just invertible. \\edefin\n\\blemma Let $\\2C$ be a tensor $*$-category. Then $\\2Z",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The quantum double of a braided category",
+      "pageStart": 44,
+      "pageEnd": 49,
+      "target": "../sections/sec-016-7-the-quantum-double-of-a-braided-category.md",
+      "narrative": null,
+      "content": "\\label{moddoub}\nFor the moment, let $\\2C$ be any (strict) braided monoidal category. Given such a category\n$\\2C$ we denote by $\\tilde{\\2C}$ the braided monoidal category which coincides with $\\2C$\nas a monoidal category, but has the braiding \n\\[ \\tilde{c}(X,Y)= c(Y,X)^{-1}. \\]\n\nIt is well known (e.g., \\cite[Proposition XIII.4.3]{ka}) that for a braided monoidal category \n$\\2C$ there is a strict braided monoidal functor $I: \\2C\\rightarrow \\2Z_1(\\2C)$ given by \n\\[ I(X)= (X, e_X) \\quad \\mbox{with}\\quad e_X(\\cdot)=c(X,\\cdot), \\]\n\\[ I(f)= f \\]\non the objects and morphisms, respectively. $I$ is full",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Applications",
+      "pageStart": 49,
+      "pageEnd": 49,
+      "target": "../sections/sec-017-8-applications.md",
+      "narrative": null,
+      "content": "Applications\n8.1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An adjoint for the forgetful functor $\\2Z_1(\\2C)\\rightarrow\\2C$",
+      "pageStart": 49,
+      "pageEnd": 50,
+      "target": "../sections/sec-018-81-an-adjoint-for-the-forgetful-functor-2z-12cri.md",
+      "narrative": null,
+      "content": "\\label{ss-adj}\nIn Section \\ref{sec-morita} we proved that the functor $F: \\2Z_1(\\2C)\\rarr\\2B$ is fully \nfaithful and essentially surjective. By \\cite[Theorem IV.4.1]{cwm} this implies that $F$\nhas a two-sided adjoint $G: \\2B\\rarr\\2Z_1(\\2C)$. Together with Lemma\\ \\ref{adj} this implies\n\\[ \\Hom_\\2C(X,Y)\\cong\\Hom_\\2B(F(X,e_X),\\oj (Y\\boxtimes\\11)J)\\cong\n   \\Hom_{\\2Z_1(\\2C)}((X,e_X),G(\\oj (Y\\boxtimes\\11)J)), \\]\nwhere $(X,e_X)\\in\\2Z_1(\\2C), Y\\in\\2C$. With the forgetful functor \n$H: \\2Z_1(\\2C)\\rarr\\2C, (X,e_X)\\mapsto X$ this becomes\n\\begin{equation}\\Hom_\\2C(H(X,e_X),Y)\\cong \\Hom_{\\2Z_1(\\2C)}((X,e_X),",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariants of 3-manifolds",
+      "pageStart": 50,
+      "pageEnd": 52,
+      "target": "../sections/sec-019-82-invariants-of-3-manifolds.md",
+      "narrative": null,
+      "content": "\\label{TQFT}\nThere are two classes of invariants of 3-manifolds associated with a modular tensor\ncategory $\\2C$, cf.\\ \\cite{t}. On the one hand we have the surgery invariants $RT(M,\\2C)$\nof Reshetikhin and Turaev \\cite{rt2} which are based on the fact that every connected\noriented closed 3-manifold can be obtained from $S^3$ by surgery along a framed link. It\nturned out \\cite{brug1} that modularity of the category $\\2C$ is not really necessary,\nsince it suffices that $\\2C$ be `modularizable'. Yet, the invariant of the manifold being\ndefined in terms of a link invariant, the existence of a (non",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Subfactor theory: The Longo-Rehren subfactor",
+      "pageStart": 52,
+      "pageEnd": 54,
+      "target": "../sections/sec-020-83-subfactor-theory-the-longo-rehren-subfactor.md",
+      "narrative": null,
+      "content": "\\label{ss-subf}\nAs stated in the introduction, the present project originated in the author's observation \nthat the quantum double of monoidal categories appears implicitly in Izumi's preprint\n\\cite{iz1}. Therefore it seems reasonable to briefly comment on the subfactor setting.\n\nLet $M$ be a type III factor with separable predual. Then the tensor category $\\End_f(M)$\nof (normal unital $*$-) endomorphisms $\\rho$ of $M$ such that $[M:\\rho(M))]<\\infty$ is a\n$*$-category with duals, direct sums and subobjects. (Here one uses that every orthogonal\nprojection $p=p^2=p^*$ in $M$ is equivalent to $\\1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/cor-sec-021-13",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 62,
+      "target": "cor-sec-021-13.md",
+      "narrative": null,
+      "content": "12 Let H be semisimple and cosemisimple. Then Rep D(H) is modular. We close the appendix with a remark which is meant to aid the reader in appreciating the ‘self-duality’ of a quantum double D(H), in particular since in general it is not self- dual in the sense of Hopf algebras: D(H)∗̸ ≃D(H). (For a ﬁnite abelian group G we in fact have D(G) ≃D(G)∗≃CG ⊗C(G).) For any ﬁnite dimensional Hopf algebra one can use the integrals to deﬁne ‘Fourier transforms’ H →ˆH. In [42] Fourier transforms Fσ,σ′, σ, σ′ = ±, deﬁned as linear maps H →ˆH which intertwine certain actions of H on H and ˆH by multiplica",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/def-sec-021-06",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 62,
+      "target": "def-sec-021-06.md",
+      "narrative": null,
+      "content": "6 ([34]) For a quasitriangular Hopf algebra the selfdual Fourier trans- forms S+, S−are deﬁned by the linear endomorphisms of H: S+(b) = (id ⊗µ)(R21(1 ⊗b)R12), S−(b) = (id ⊗µ)(R−1 12 (1 ⊗b)R−1 21 ), where µ is a left integral in ˆH. If H is ribbon the map T : H →H is deﬁned by T (b) = θb.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/lem-sec-021-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 62,
+      "target": "lem-sec-021-01.md",
+      "narrative": null,
+      "content": "1 Let H be a ﬁnite dimensional Hopf algebra H over the ﬁeld k and let D(H) be the quantum double. The following are equivalent: (i) H is semisimple and cosemisimple. (ii) The antipode of H is involutive and char k ∤dim H. (iii) D(H) is semisimple. (iv) D(H) is cosemisimple.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/lem-sec-021-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 62,
+      "target": "lem-sec-021-03.md",
+      "narrative": null,
+      "content": "3 Let H satisfy the (equivalent) conditions of Lemma A.1. Then there are two-sided integrals Λ ∈H, µ ∈ˆH which are traces in the sense that ⟨µ, ab⟩= ⟨µ, ba⟩, ⟨αβ, Λ⟩= ⟨βα, Λ⟩ for all a, b ∈H, αβ ∈ˆH. The category Rep D(H) is a spherical category.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/lem-sec-021-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 62,
+      "target": "lem-sec-021-08.md",
+      "narrative": null,
+      "content": "8 The following decompositions hold in every ﬁnite dimensional Hopf algebra. a ⊗1 = X i (1 ⊗xi)∆(yi) = X i ∆(yi)(1 ⊗S2(xi)) where X i yi ⊗xi = (id ⊗S−1)∆(a).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/lem-sec-021-12",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 62,
+      "target": "lem-sec-021-12.md",
+      "narrative": null,
+      "content": "4 the quantum traces on H-modules V , in terms of which the S-matrix is de- ﬁned, coincide with the usual traces on EndV . In terms of the basis for Z(H) given by the minimal idempotents Pi we obtain S+(Pj) = X i Sij Pi, where the matrix S = (Sij) is invertible. But S is nothing but the modular matrix (A.7) as we have Sij = di µ(Pi S+(Pj)) = di (µ ⊗µ)(R21R12 (Pi ⊗Pj)) = dj (Trq i ⊗Trq j)(R21R12) We have used µ(Pi) = 1/di and µ(x Pi) = 1/di Tri(x) [55]. ■ Note that the proof is conceptually quite similar to our proof of modularity for general semisimple spherical categories. In view of Lemma A.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/prop-sec-021-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 62,
+      "target": "prop-sec-021-04.md",
+      "narrative": null,
+      "content": "4 Let H be a quasitriangular semisimple and cosemisimple Hopf algebra. Then H is a ribbon Hopf algebra with θ = u.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/prop-sec-021-09",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 62,
+      "target": "prop-sec-021-09.md",
+      "narrative": null,
+      "content": "9 Let H be a quasitriangular semisimple, cosemisimple Hopf algebra and µ ∈ˆH a left integral. Then the selfdual Fourier transforms S± map the center of H into itself: S±(Z(H)) ⊂Z(H). (A.4)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "On Quantum Doubles of Finite Dimensional Hopf Algebras",
+      "pageStart": 54,
+      "pageEnd": 62,
+      "target": "../sections/sec-021-a-on-quantum-doubles-of-finite-dimensional-hopf.md",
+      "narrative": null,
+      "content": "Hopf Algebras\nThe core of this paper was the proof that the quantum doubles of certain tensor categories\nare modular. That Rep D(H) is modular has been proven for H = CG [2], where G is a\nﬁnite group, and for semisimple H over an algebraically closed ﬁeld k of characteristic zero\n[13]. A proof which covers also weak Hopf algebras (or ﬁnite quantum groupoids) is given\nin [41]. Our aim in this appendix is to give a proof which uses the ideas of Lyubashenko\n[32, 33] and Majid [34] and therefore is more in the spirit of our proof in the categorical\n54\nsituation. In the sequel H will always be a ﬁn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/rem-sec-021-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 62,
+      "target": "rem-sec-021-02.md",
+      "narrative": null,
+      "content": "2 If the characteristic of k is zero then H is semisimple iﬀit is cosemisimple, and the second condition in (ii) is vacuous. ✷",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/rem-sec-021-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 62,
+      "target": "rem-sec-021-05.md",
+      "narrative": null,
+      "content": "5 For a ribbon Hopf algebra H with θ = u the quantum trace, which for a representation π on a vector space V is deﬁned by Trq π(X) := Tr ◦π(uθ−1 X), coincides with the usual trace Tr on End V . In particular, all quantum dimensions d(π) coincide with the classical dimensions dim Vπ.Therefore, dim Rep H = X i d(πi)2 = X i (dim Vπi)2 = dimk H. ✷ In order to conclude that Rep H is modular it remains to prove that the S-matrix of the ribbon category Rep H is invertible. A related notion of non-degeneracy was introduced in [49], where a quasitriangular Hopf algebra was called factorizable if the ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/rem-sec-021-10",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 62,
+      "target": "rem-sec-021-10.md",
+      "narrative": null,
+      "content": "10 1. In restriction to the center, the braided antipode S appearing in (A.2) equals the antipode S. 2. For a ribbon algebra H it is trivial that T maps Z(H) into itself, since θ ∈Z(H). ✷ The modularity condition requires invertibility of the matrix Si,j = (Trq πi ⊗Trq πj)(R21R12), (A.7) where i, j range over the equivalence classes of irreducible representations of H. Now, in the semisimple case the representations are in one-to-one correspondence with the minimal projections in Z(H), which leads to the following result.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/thm-sec-021-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 62,
+      "target": "thm-sec-021-07.md",
+      "narrative": null,
+      "content": "7 ([34]) For a factorizable ribbon Hopf algebra the following modular rela- tions hold: S+ ◦S−= id = S−◦S+, (S+ ◦T )3 = λS2 +, S2 + = S, (A.2) where S(x) = R(2)S(Ad R(1)(x)) with Ad Y (x) = Y(1)xS(Y(2)) is the braided antipode, and λ̸ = 0 is deﬁned by S+(θ) = λθ−1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0111205v1/blocks/thm-sec-021-11",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 62,
+      "target": "thm-sec-021-11.md",
+      "narrative": null,
+      "content": "11 Let H be a factorizable quasitriangular semisimple and cosemisimple Hopf algebra. Then the category Rep H is modular.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

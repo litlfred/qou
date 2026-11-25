@@ -1,0 +1,744 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2512.18642v1",
+  "title": "A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain",
+  "variant": "pdf",
+  "pages": 20,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "Hidden Quantum Markov Models",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-hidden-quantum-markov-models"
+    },
+    {
+      "level": 2,
+      "title": "The AKLT State and its SPT Order",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-the-aklt-state-and-its-spt-order"
+    },
+    {
+      "level": 1,
+      "title": "HQMM Structure of the AKLT State",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-hqmm-structure-of-the-aklt-state"
+    },
+    {
+      "level": 1,
+      "title": "Entanglement Dynamics in Hidden Markov Channel",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-entanglement-dynamics-in-hidden-markov-channel"
+    },
+    {
+      "level": 1,
+      "title": "SPT order on the AKLT,s HQMMs",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-spt-order-on-the-aklts-hqmms"
+    },
+    {
+      "level": 1,
+      "title": "Conclusion",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-conclusion"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 168,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hidden quantum",
+          "heading": false
+        },
+        {
+          "term": "aklt",
+          "heading": false
+        },
+        {
+          "term": "tunis",
+          "heading": false
+        },
+        {
+          "term": "spt order",
+          "heading": false
+        },
+        {
+          "term": "quantum markov",
+          "heading": false
+        },
+        {
+          "term": "markov model",
+          "heading": false
+        },
+        {
+          "term": "andolsi",
+          "heading": false
+        }
+      ],
+      "extract": "A Hidden Quantum Markov model framework for Entanglement and Topological Order in the AKLT Chain Abdessatar Souissi Department of Management Information Systems, College of Business and Economics, Qassim University, Buraydah 51452, Saudi Arabia a.souaissi@qu.edu.sa Amenallah Andolsi Nuclear Physics and High Energy Research Unit, Faculty of Sciences of Tunis, Tunis El Manar University, Tunis, Tunisia",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2512.18642v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 1013,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hqmm aklt",
+          "heading": false
+        },
+        {
+          "term": "spt hqmm",
+          "heading": false
+        },
+        {
+          "term": "sect hqmm",
+          "heading": false
+        },
+        {
+          "term": "aklt chain",
+          "heading": false
+        },
+        {
+          "term": "hqmm framework",
+          "heading": false
+        },
+        {
+          "term": "aklt state",
+          "heading": false
+        },
+        {
+          "term": "sect hiddenentang",
+          "heading": false
+        },
+        {
+          "term": "sect prel",
+          "heading": false
+        }
+      ],
+      "extract": "Hidden Markov models [@Rab2002] are recognized as powerful stochastic processes due to their ability to capture complex correlations, with broad applications across various domains [@Mor2021]---especially in machine learning tasks [@Li17], where algorithmic implementations [@V03; @FV05] have achieved significant success. Several proposals have been made to generalize hidden Markov models into the quantum setting",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-preliminaries",
+      "number": null,
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "Preliminaries",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-hidden-quantum-markov-models",
+      "number": null,
+      "title": "Hidden Quantum Markov Models",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 416,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hidden",
+          "heading": true
+        },
+        {
+          "term": "mathcal otimes",
+          "heading": false
+        },
+        {
+          "term": "observable evolution",
+          "heading": false
+        },
+        {
+          "term": "hidden state",
+          "heading": false
+        },
+        {
+          "term": "cpip map",
+          "heading": false
+        },
+        {
+          "term": "hidden system",
+          "heading": false
+        },
+        {
+          "term": "let mathcal",
+          "heading": false
+        },
+        {
+          "term": "otimes mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\mathcal{H}$ and $\\mathcal{K}$ be two finite-dimensional Hilbert spaces and let $\\mathcal{B}(\\mathcal{H})$ and $\\mathcal{B}(\\mathcal{K})$ be the algebras of bounded operators over the Hilbert spaces $\\mathcal{H}$ and $\\mathcal{K}$, respectively. A map is $\\mathcal{E}$ from $\\mathcal{B}(\\mathcal{H})$ to $\\mathcal{B}(\\mathcal{K})$ is said to be *completely positive* if all its matrix amplifications $$\\mathcal{E}:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-the-aklt-state-and-its-spt-order",
+      "number": null,
+      "title": "The AKLT State and its SPT Order",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 1140,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aklt state",
+          "heading": true
+        },
+        {
+          "term": "mathrm aklt",
+          "heading": false
+        },
+        {
+          "term": "aklt hamiltonian",
+          "heading": false
+        },
+        {
+          "term": "uparrow rangle",
+          "heading": false
+        },
+        {
+          "term": "downarrow rangle",
+          "heading": false
+        },
+        {
+          "term": "spt",
+          "heading": true
+        },
+        {
+          "term": "langle uparrow",
+          "heading": false
+        },
+        {
+          "term": "physical spin",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#SbSect_AKLT label=\"SbSect_AKLT\"} The seminal work of Affleck, Kennedy, Lieb, and Tasaki [@Affleck1988] marked a watershed moment in quantum magnetism by furnishing an exactly solvable model that provided rigorous foundation for Haldane's conjecture regarding the existence of a spectral gap in antiferromagnetic spin-1 chains. The AKLT Hamiltonian, defined on a one-dimensional lattice with spin-1 degrees of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-hqmm-structure-of-the-aklt-state",
+      "number": null,
+      "title": "HQMM Structure of the AKLT State",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 12,
+      "labelStart": "6",
+      "labelEnd": "12",
+      "words": 2587,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hqmm aklt",
+          "heading": true
+        },
+        {
+          "term": "aklt state",
+          "heading": true
+        },
+        {
+          "term": "downarrow uparrow",
+          "heading": false
+        },
+        {
+          "term": "uparrow rangle",
+          "heading": false
+        },
+        {
+          "term": "langle uparrow",
+          "heading": false
+        },
+        {
+          "term": "dagger otimes",
+          "heading": false
+        },
+        {
+          "term": "ell dagger",
+          "heading": false
+        },
+        {
+          "term": "mathrm aklt",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Sect_HQMM_AKLT label=\"Sect_HQMM_AKLT\"} The AKLT state's unique structure can be naturally formulated as a HQMM, revealing a profound connection between topological quantum matter and quantum stochastic processes. This framework cleanly separates the system into hidden virtual degrees of freedom that encode topological information and observable physical degrees accessible to measurement. The *Hidden Quantum",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-entanglement-dynamics-in-hidden-markov-channel",
+      "number": null,
+      "title": "Entanglement Dynamics in Hidden Markov Channel",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 15,
+      "labelStart": "12",
+      "labelEnd": "15",
+      "words": 914,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "downarrow uparrow",
+          "heading": false
+        },
+        {
+          "term": "rangle uparrow",
+          "heading": false
+        },
+        {
+          "term": "langle uparrow",
+          "heading": false
+        },
+        {
+          "term": "psi downarrow",
+          "heading": false
+        },
+        {
+          "term": "uparrow bigr",
+          "heading": false
+        },
+        {
+          "term": "uparrow otimes",
+          "heading": false
+        },
+        {
+          "term": "frac uparrow",
+          "heading": false
+        },
+        {
+          "term": "choi rangle",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Sect_HiddenEntang label=\"Sect_HiddenEntang\"} To analyze the entanglement properties of a quantum channel $\\Lambda: \\mathcal{B}(\\mathcal{H}_{\\text{in}}) \\to \\mathcal{B}(\\mathcal{H}_{\\text{out}})$, we employ the Choi--Jamiołkowski isomorphism: $$J(\\Lambda) = (\\mathrm{id}_{\\text{in}} \\otimes \\Lambda)\\bigl(|\\Omega\\rangle\\langle\\Omega|\\bigr),$$ where $|\\Omega\\rangle =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-spt-order-on-the-aklts-hqmms",
+      "number": null,
+      "title": "SPT order on the AKLT,s HQMMs",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 645,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aklt",
+          "heading": true
+        },
+        {
+          "term": "dagger rangle",
+          "heading": false
+        },
+        {
+          "term": "dagger otimes",
+          "heading": false
+        },
+        {
+          "term": "dagger right",
+          "heading": false
+        },
+        {
+          "term": "dagger left",
+          "heading": false
+        },
+        {
+          "term": "spt hqmm",
+          "heading": false
+        },
+        {
+          "term": "equivariance correct",
+          "heading": false
+        },
+        {
+          "term": "otimes rho",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Sect_SPT_HQMM label=\"Sect_SPT_HQMM\"} The AKLT state's remarkable robustness stems from its symmetry-protected topological (SPT) order, which manifests elegantly within its Hidden Quantum Markov Model (HQMM) description. To understand this protection mechanism, clarify how symmetries operate in the HQMM framework. Let $G$ be a symmetry group with unitary representations $\\pi: G \\to \\mathcal{U}(\\mathcal{H}_{1/2})$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-conclusion",
+      "number": null,
+      "title": "Conclusion",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 20,
+      "labelStart": "16",
+      "labelEnd": "20",
+      "words": 1529,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hidden markov",
+          "heading": false
+        },
+        {
+          "term": "entangled hidden",
+          "heading": false
+        },
+        {
+          "term": "machine learning",
+          "heading": false
+        },
+        {
+          "term": "hidden quantum",
+          "heading": false
+        },
+        {
+          "term": "markov chains",
+          "heading": false
+        },
+        {
+          "term": "aklt state",
+          "heading": false
+        },
+        {
+          "term": "spt phases",
+          "heading": false
+        },
+        {
+          "term": "measurement-based quantum",
+          "heading": false
+        }
+      ],
+      "extract": "Conclusion This work establishes a HQMMs structure on the AKLT spin chain. By identifying the virtual spin-½ chain as the hidden quantum system, and the physical spin-1 sites as the observable output. The results transforms the algebraic-probabilistic HQMMs into a model grounded in many-body quantum physics, revealing connections between quantum memory, topological order, and correlation structures. The analysis of",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "hqmm aklt",
+      "heading": true
+    },
+    {
+      "term": "aklt spin",
+      "heading": false
+    },
+    {
+      "term": "aklt channel",
+      "heading": false
+    },
+    {
+      "term": "aklt state",
+      "heading": true
+    },
+    {
+      "term": "aklt quantum",
+      "heading": false
+    },
+    {
+      "term": "mathrm aklt",
+      "heading": false
+    },
+    {
+      "term": "aklt chain",
+      "heading": false
+    },
+    {
+      "term": "spt hqmm",
+      "heading": false
+    },
+    {
+      "term": "aklt model",
+      "heading": false
+    },
+    {
+      "term": "aklt mps",
+      "heading": false
+    },
+    {
+      "term": "aklt label",
+      "heading": false
+    },
+    {
+      "term": "hidden spin",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Schematic diagram with eight qubits on the top row, grouped pairwise into singlet states (dashed ellipses), and projected downward into three spin-1 triplet nodes on the lower row",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 8,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p16); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2512.18642v1"
+  }
+}

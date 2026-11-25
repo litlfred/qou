@@ -1,0 +1,1264 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "modularqholonomicmodules",
+  "blocks": [
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "MODULAR q-HOLONOMIC MODULES\nSTAVROS GAROUFALIDIS AND CAMPBELL WHEELER\nAbstract. We introduce the notion of modular q-holonomic modules whose fundamental\nmatrices deﬁne a cocycle with improved analyticity properties and show that the generalised\nq-hypergeometric equation, as well as three key q-holonomic modules of complex Chern–\nSimons theory are modular. This notion explains conceptually recent structural properties\nof quantum invariants of knots and 3-manifolds, and of exact and perturbative Chern–\nSimons theory [26, 27, 28, 37], and in addition provides an eﬀective method to solve the\ncorre",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "1. Introduction",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-11-summary.md",
+      "narrative": null,
+      "content": "ing q-holonomic modules) which we call modular, with several key features.\n• Their fundamental solutions at 0 and inﬁnity have explicitly computable monodromy.\n• A natural SL2(Z)-cocycle constructed from a fundamental solution extends from C\\R\nto the complex plane minus a ray in the real numbers.\n• Their fundamental solutions are meromorphic and their residues are expressed in\nterms of the solutions themselves (kind of ’resurgence’).\nModular q-holonomic modules are abundant. We show that the generalised q-hypergeometric\nequation (11) (and in particular the q-hypergeometric equation) is modular",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/lem-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "lem-sec-003-02.md",
+      "narrative": null,
+      "content": "(a) Modularity of a q-holonomic module is independent of the choice of a cyclic vector. (b) If 0 →M ′ →M →M ′′ →0 is a short exact sequence of q-holonomic modules and M is modular, then M and M ′ are also modular. (c) M is a modular, then M ∧and M ∨are modular with cocycles given by Ω∧(z, τ) := Ω(z, −τ), and Ω∨= (Ω−1)t (10) where Ωis a cocycle of M. STAVROS GAROUFALIDIS AND CAMPBELL WHEELER",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prop-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "prop-sec-002-01.md",
+      "narrative": null,
+      "content": "Recently, it was observed that the solutions of some linear q-diﬀerence equations con- cerning quantum knot invariants [36, 37] or resurgence and Borel resummation of pertur- bative Chern–Simons theory [26, 27, 28], have an improved analyticity property.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motivation",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-12-motivation.md",
+      "narrative": null,
+      "content": "What does it take to solve a q-diﬀerence equation?\nSolving a linear equation usually means giving a basis of solutions, say at t = 0 and\nt = ∞(the only two canonical points, ﬁxed under the shift transformation t 7→qt), and\nto compute the monodromy (i.e., the connection) between t = 0 and t = ∞in terms of\n“known” functions. This problem has a rich history with an interesting balance between\nconcrete special functions and the abstract, which the reader may consult in Okounkov’s\ntalks and their references.\nA key to the solution is to choose linear q-diﬀerence equations of natural origin, for inst",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definition and properties",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-13-definition-and-properties.md",
+      "narrative": null,
+      "content": "equation\nσX = AX\n(3)\nfor a vector-valued function X = X(t, q), where (σX)(t, q) = X(qt, q) denotes the shift\noperator, A(t, q) ∈GLr(Q(t, q)) and q is a nonzero complex number with |q|̸ = 1. Fix a\nfundamental matrix solution U to (3) at t = 0, which we assume is ﬁltration-preserving and\nof weight κU = diag(τ κU,1, . . . , τ κU,r) and deﬁne\nΩU,γ = (U|κUγ)U −1,\nγ =\n\u0000 a b\nc d\n\u0001\n∈SL2(Z)\n(4)\nwhere the slash operator |κUγ is deﬁned in Section 2.4 below. The map γ 7→ΩU,γ is a cocycle\nof SL2(Z), i.e., it satisﬁes\nΩU,γγ′(z, τ) = ΩU,γ(γ′(z, τ))ΩU,γ′(z, τ)\n(5)\nfor all γ, γ′ ∈SL2(Z). Likewise, let V denote",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "(a) If Equation (6) for the monodromy holds for γ = S and γ = T, then it holds for all γ ∈SL2(Z). (b) If Ωis an SL2(Z)-cocycle with ΩT = I, then ΩS satisﬁes the 4-term and the 3-term functional equations 1 = ΩS \u0012 −z τ , −1 τ \u0013 ΩS (−z, τ) ΩS \u0012z τ , −1 τ \u0013 ΩS(z, τ) (8a) ΩS(z, τ) = ΩS \u0012 z τ + 1, τ τ + 1 \u0013 ΩS(z, τ + 1) . (8b) Conversely, given ΩT = I and ΩS that satisﬁes the above functional equations, there is a SL2(Z)-cocycle with those values. (c) If Ωis a cocycle such that ΩT = I and ΩS extends as a meromorphic function of (z, τ) ∈ C × C′, then Ωγ extends as a meromorphic function of (z, τ) ∈C",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The generalised q-hypergeometric equation is modular",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-14-the-generalised-q-hypergeometric-equation-is.md",
+      "narrative": null,
+      "content": "might expect, modular q-holonomic modules are abundant. This section concerns the gen-\neralised q-hypergeometric equation\n r−1\nY\nj=0\n(1 −q−1bjσ) −t\nrY\nj=1\n(1 −ajσ)\n!\nf = 0\n(11)\nfor a function f = f(t, a, b, q) where a = (a1, . . . , ar) and b = (b0, . . . , br−1) with b0 = q, where\nσ is the operator that shifts t to qt. This equation is a q-deformation of the hypergeometric\nequation (a regular singular linear diﬀerential equations with singularities at 0, 1, ∞), itself\na generalisation of the Gauss hypergeometric equation. The hypergeometric equation has a\nrich history related to, among other",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/thm-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "thm-sec-004-01.md",
+      "narrative": null,
+      "content": "The two cocycles (4) ΩU and ΩV are equal and modular. The proof of the above theorem is given in Section 3 and uses an integral representation of the solutions of Equation (11) in terms of a special function, the Faddeev quantum diloga- rithm [23, 24], the factorisation of the corresponding integrals (so-called state integrals) as a bilinear combination functions of z, τ and (z/τ, −1/τ) along the lines of [30], combined with an explicit description of the self-duality of the corresponding q-holonomic module. What is more, the U and the V cocycles are obtained by moving the contour of integrati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/conj-sec-005-08",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 12,
+      "target": "conj-sec-005-08.md",
+      "narrative": null,
+      "content": "Every q-holonomic module associated to a proper q-hypergeometric multi-dimensional sum is modular.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Modular q-holonomic modules in Chern–Simons theory",
+      "pageStart": 7,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-15-modular-q-holonomic-modules-in-chernsimons-th.md",
+      "narrative": null,
+      "content": "present three q-holonomic modules whose cocycles play a key role in complex Chern–Simons\ntheory and prove their modularity. We will not need a detailed knowledge of Chern–Simons\ntheory, but focus on the fact that it is a gauge theory with gauge group a complex Lie group,\nwhose partition function can be identiﬁed by a ﬁnite dimensional integrals of products of\nthe Faddeev quantum dilogarithm. A detailed exposition of Chern–Simons theory is given\nin the work of Andersen–Kashaev and Beem, Dimofte and Pasquetti [3, 18, 5, 62]. The\nquasi-periodicity of the Faddeev quantum dilogarithm implies that t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/thm-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 12,
+      "target": "thm-sec-005-01.md",
+      "narrative": null,
+      "content": "The monodromy matrix is −→ M(t, q) = (1). The two cocycles (4) ΩU and ΩV are equal, modular and when γ = S, they are given explicitly by ΩS(z, τ) = Φb \u0012iz b + ib 2 + 1 2ib \u0013−1 (21) where Φ is the Faddeev quantum dilogarithm function [23, 24]. In forthcoming work [31], the cocycle Ωγ will be identiﬁed with an SL2(Z)-extension of the Faddeev quantum dilogarithm, and its modularity will be deduced independently, using properties of the odd Eisenstein series. Our second module is the q-diﬀerence equation of the Appell-Lerch sums studied in [9, 74] and given by f(q2t, q) + (qt −1)f(qt, q) −tf(t, q)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/thm-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 12,
+      "target": "thm-sec-005-02.md",
+      "narrative": null,
+      "content": "(a) The monodromy matrix −→ M(t, λ, µ, q) = V (t, µ, q)−1U(t, λ, q) is given by −→ M(t, λ, µ, q) = \u0012 ∗ \u0013 (24) where −→ M2,1(t, λ, µ, q) = −(q; q)3 ∞θ(q−1t; q)θ(λ−1µ; q)θ(λ−1µ−1t−1; q) θ(λ−1; q)θ(µ; q)θ(λ−1t−1; q)θ(µ−1t−1; q) . (25) The matrix −→ M satisﬁes the modular transformation (6). (b) The two cocycles (4) ΩU and ΩV are equal, modular, independent of λ and µ and when γ = S, are given explicitly by ΩS(z, τ) = \u00120 −˜t \u0013 τ −1 e( 1 8) √τ ˜t−1 2 ˜q 8e \u0010 z2 2τ \u0011 h(z, τ) e( 1 8) √τ e \u0010 −(z+1/2−τ/2)2 2τ \u0011 ! \u0012 −t \u0013−1 (26) where h(z, τ) = Z R eπi(τx2+2izx) 2 cosh(πx) dx. (27) is the Mordell integra",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/thm-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 12,
+      "target": "thm-sec-005-03.md",
+      "narrative": null,
+      "content": "(a) The monodromy matrix −→ M(t, λ, q) = V −1(t, q)U(t, λ, q) is given by −→ M(t, λ, q) = \u0012 −1 −→ M2,1(t, λ, q) \u0013 (30) where −→ M2,1(t, λ, q) = θ(qt; q)θ(tλ; q)θ(tλq−1/2; q)θ(tλ2q−1/2; q) θ(tλq1/4; q)θ(−tλq1/4; q)θ(tλq−1/4; q)θ(−tλq−1/4; q)θ(q−1λ; q)θ(q−3/2λ; q) . (31) The matrix M satisﬁes the modular transformations ∆T 2,κ −→ M|κT 2 = −→ M, ∆STS,κ −→ M|κSTS = −→ M, ∆TST,κ −→ M|κTST = −→ M . (32) It follows that the SL2(Z)-orbit of M consists of three functions M, ∆T,κ −→ M|κT, ∆S,κ −→ M|κS. (b) The two cocycles (4) ΩAv(U) and ΩV , deﬁned by the averaging Av(U) = V Av( −→ M), Av( −→ M) = 1 \u0010",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/thm-sec-005-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 12,
+      "target": "thm-sec-005-04.md",
+      "narrative": null,
+      "content": "The equation (28) has two important extensions, each containing important information about the knot. The ﬁrst extension is an inhomogeneous version, which for the 41 knot, takes the form (see [37, Eqn.(98)] and [28, Sec.2.2]) tqf(qt; q) + (1 −2t)f(t; q) + tq−1f(q−1t; q) = 1 . (35) The solution f (0) at t = 0 given in Equation (255) below is a resummation of the Kashaev invariant of the 41 knot, whereas the solution g(0,2) given in Equation (258) below is a q- series that appeared recently in [28] in relation to the asymptotic expansion of the Kashaev invariant at the trivial representation. W",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/thm-sec-005-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 12,
+      "target": "thm-sec-005-05.md",
+      "narrative": null,
+      "content": "(a) The monodromy matrix −→ M(t, λ1, λ2, q) = V (t, q)−1U(t, λ1, λ2, q) is given by −→ M(t, λ1, λ2, q) =   −1 ℘(t, q) −→ M2,1(t, λ1, q) ℘′(t,q)−℘′(λ2,q) ℘(t,q)−℘(λ2,q)   (37) where −→ M2,1 is given by (31). The matrix M satisﬁes the modular transformations (32) with weight κ = (2, 1, 0). (b) The two cocycles (4) ΩAv(U) and ΩV are equal, modular, independent of λ1, λ2 and when γ = S, they are given by combinations of elementary functions times the state integrals Z R+iε Φb(x)2exp (−πix2 −2πb−1zx) 1 + ˜q1/2 exp (−2πb−1x) dx . (38) The second and last extension of equation (35) is the additio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/thm-sec-005-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 12,
+      "target": "thm-sec-005-06.md",
+      "narrative": null,
+      "content": "(a) The monodromy matrix is given by −→ M(t, x, λ1, λ2, q) =   −1 −1 −1  ×    θ(x−2;q)θ(t;q)2(q;q)3 ∞ 2θ(q−1x;q)2θ(tx;q)θ(tx−1;q) θ(x−2;q)θ(t;q)2(q;q)3 ∞ 2θ(q−1x;q)2θ(tx;q)θ(tx−1;q) m2,1(t, x, λ1, q) \u0010 θ′(tλ2) θ(tλ2) −θ′(tx) 2θ(tx) −θ′(tx−1) 2θ(tx−1) −θ′(λ2) θ(λ2) −1 \u0011    (41) where m2,1(t, x, λ1, q) is the unique elliptic function in t satisfying m2,1(1, x, λ1, q) = 0 with simple poles at t0 ∈{x±qZ, ±λ−1q 2 Z} and residues ρt0 := Rest=t0m2,1(t, x, λ1, q) dt 2πit given by ρx±qZ = −1 ρ±λ−1 1 q−1/4−Z = θ(±q3/4λ−1 1 ; q)θ(±q−1/4x; q)θ(±q−3/4x; q)θ(±q−3/4λ1; q) 2θ(x; q)θ(x−1; q)θ(q−1λ1;",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/thm-sec-005-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 12,
+      "target": "thm-sec-005-07.md",
+      "narrative": null,
+      "content": "The N-th colored Jones polynomial JN(q) of 41 for |q| < 1 is given by JN(q) = f (0)(1, qN, λ2, q) . (45) Note that there is no λ2 dependence on the left hand side of (45) and that λ2 parametrises a family of analytic continuations of the colored Jones polynomial as we vary x away from qN. The cocycles given in the previous theorems reveal the relation of the following three special functions (all being entries of a matrix-valued S-cocycle of a modular q-diﬀerence equation) (a) the Fadeev quantum dilogarithm (b) the Mordell integral (c) the Andersen-Kashaev state integral. We end this section w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A review of linear q-difference equations",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-2-a-review-of-linear-q-difference-equations.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-007-21-preliminaries.md",
+      "narrative": null,
+      "content": "equations with a small parameter are typically factorially divergent series, which lead to\nMODULAR q-HOLONOMIC MODULES\n13\nanalytic solutions to the diﬀerence equation after applying the process of a Borel transfor-\nmation, followed by a Laplace transformation. This subject is classical and well-studied, see\nfor example [6, 15, 52, 53].\nA corresponding theory for linear q-diﬀerence equations was developed recently by di Vizio,\nSauloy, Ramis and others [20, 42, 64], with particular emphasis given on the arithmetic\nand the Galois theoretic aspects of the theory. A q-holonomic module has two canon",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An algorithm for a fundamental matrix",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-008-22-an-algorithm-for-a-fundamental-matrix.md",
+      "narrative": null,
+      "content": "obtain a fundamental matrix solution to a q-holonomic module given by Dreyfus [20] using\nthe q-Borel and the q-Laplace transform. Let us describe the main steps here.\n• Choose a cyclic vector to present a q-holonomic module in the form of a linear q-diﬀerence\nequation\nr\nX\nj=0\najσjf = 0\n(53)\n14\nSTAVROS GAROUFALIDIS AND CAMPBELL WHEELER\nwhere f = f(t, q), (σf)(t, q) = f(qt, q) and aj(t, q) ∈Q(q)[t±1], with ar̸ = 0. The rest of the\nalgorithm depends on (53) alone.\n• The lower Newton polygon of (53) is the lower convex hull of the points (j, v0(aj)) for\nj = 0, . . . , r, where v0(p) denotes the mi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/cor-sec-009-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "cor-sec-009-04.md",
+      "narrative": null,
+      "content": "f (1)(t, λ, q) = −θ(t; q) ∞ X k=0 \u0000L(q1/4+k/2t, λ, q1/2)R+(k, q) + L(−q1/4+k/2t, λ, q1/2)R−(k, q) \u0001 (68) where f (1) is given in Equation (205) and R± is given in Equation (235).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/lem-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "lem-sec-009-01.md",
+      "narrative": null,
+      "content": "Assuming that lim ε→0 I |ξ|=ε± f(ξt, q)θ(µ−1λ−1ξ; q) θ(ξµ−1; q)θ(ξλ−1; q) dξ 2πiξ = 0 (61) where ε avoids the poles of the integrand we have L1(f)(t, λ, q) −L1(f)(t, µ, q) = θ(λ−1µ; q)(q; q)3 ∞ θ(λ−1; q)θ(µ; q) X x∈poles of f Resξ=x f(ξ, q)θ(λ−1µ−1t−1ξ; q) θ(ξλ−1t−1; q)θ(ξµ−1t−1; q) . (62) Note that the assumption on f is mild since as t approaches 0 or ∞bounded away from the poles, the quotient of θ’s approaches 0. Note also that the lemma can be extended to the case of Lκ for κ > 0 by substituting q 7→qκ except in the argument of f. STAVROS GAROUFALIDIS AND CAMPBELL WHEELER",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/lem-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "lem-sec-009-02.md",
+      "narrative": null,
+      "content": "For κ > 0, we have (Lκf)(t, λ, q) = X k∈Z Resξ=qκkL(ξ−1λ−1, λ, qκ)f(ξλt, q) dξ 2πiξ . (65) Deforming the contour and the residue theorem give the following lemma.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/lem-sec-009-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "lem-sec-009-03.md",
+      "narrative": null,
+      "content": "Assuming that lim ε→0 I |ξ|=ε± L(ξ−1λ−1, λ, qκ)f(ξλt, q) dξ 2πiξ = 0 (66) where ε avoids the poles of the integrand we have (Lκf)(t, λ, q) = − X x∈poles of f L(x−1t, λ, q)Resξ=xf(ξ, q) dξ 2πiξ (67) MODULAR q-HOLONOMIC MODULES Notice that all the dependence on t and λ is now in the arguments of the Appell-Lerch sums. This illustrates the important role the residues of the Borel transform play in the resummation. An application of this lemma leads to the following remarkable formula.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The q-Borel and the q-Laplace transforms",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "../sections/sec-009-23-the-q-borel-and-the-q-laplace-transforms.md",
+      "narrative": null,
+      "content": "Bκ (for a rational number κ) deﬁned by\nBκ\n ∞\nX\nℓ=0\naℓtℓ\n!\n(ξ, q) =\n∞\nX\nℓ=0\n(−1)ℓqκℓ(ℓ+1)/2aℓξℓ.\n(55)\nIts role is to convert divergent series, e.g., of the form P∞\nℓ=0 q−κℓ(ℓ+1)/2aℓtℓ(where aℓis\nbounded and κ > 0) to convergent ones at ξ = 0.\nAn inverse of the q-Borel transform is the q-Laplace transform, whose role is to construct\nanalytic solutions to the linear q-diﬀerence equation with prescribed asymptotics.\nIt is\ndeﬁned for κ > 0 by\nLκ(f)(t, λ, q) =\n1\nθ(λ; qκ)\nX\nℓ∈Z\n(−1)ℓqκℓ(ℓ+1)/2λℓf(qκℓλt, q) =\nX\nℓ∈Z\nf(qκℓλt, q)\nθ(qκℓλ; qκ) ,\n(56)\nMODULAR q-HOLONOMIC MODULES\n15\nand for κ < 0, by\nLκ(f)(t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The slash operator and proof of Theorem 1.2",
+      "pageStart": 17,
+      "pageEnd": 20,
+      "target": "../sections/sec-010-24-the-slash-operator-and-proof-of-theorem-12.md",
+      "narrative": null,
+      "content": "operator, an important ingredient to express modularity. We will use the usual conventions\nfor the modular q = e(τ) and the Jacobi t = e(z), λi = e(ui), µi = e(vi), x = e(w) variables,\ni.e., eq = e(−1/τ), et = e(z/τ) and e(x) = e2πix. Now recall the slash operator f|κγ (see,\neg. [12, p.13] and [21]) for γ =\n\u0000 a b\nc d\n\u0001\n∈SL2(Z) acting on a function f(z, τ) by\n(f|κγ)(z, τ) = (cτ + d)−κf(γ(z, τ)),\nγ(z, τ) =\n\u0012\nz\ncτ + d, aτ + b\ncτ + d\n\u0013\n.\n(69)\nThis action can be extended to a matrix-valued function F(z, τ) of weight κ = diag(κ1, . . . , κr)\nby\n(F|κγ)(z, τ) = F(γ(z, τ))diag((cτ + d)−κ) .\n(70)\nThis e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prop-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "prop-sec-011-01.md",
+      "narrative": null,
+      "content": "The q-diﬀerence module M associated to Equation (28) satisﬁes M ∼= M ∧∼= M ∨. (96) The fundamental matrices satisfy U(t, λ, q) = P ∧(t, q)U ∧(t, λ, q) \u0012 \u0013 = P ∨(t, q)U ∨(t, λ, q) \u0012 −1 \u0013 , V (t, q) = P ∧(t, q)V ∧(t, q) = P ∨(t, q)V ∨(t, q) \u0012 −1 \u0013 (97) with P ∧(t, q) = \u0012 2q−1 −t−1q−1 −q−2 \u0013 , P ∨(t, q) = \u0012 −q−1t−2 q−1t−2 \u0013 (98) and cocycle Ωof M satisﬁes Ω= (P ∧|κγ)Ω∧(P ∧)−1 = (P ∨|κγ)Ω∨(P ∨)−1 . (99) Equation (99) was called “quadratic relations” in Section 3.3 and equations (68)-(70) of [37]. An example of a self-dual module is the generalised q-hypergeometric equation (see Equation (119) belo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prop-sec-011-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "prop-sec-011-02.md",
+      "narrative": null,
+      "content": "The q-diﬀerence module M ∨associated to Equation (35) is not isomorphic to M ∧.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Duality",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "../sections/sec-011-25-duality.md",
+      "narrative": null,
+      "content": "modules. Recall that we can write the linear q-diﬀerence equation\nar(t, q)f(qrt, q) + ar−1(t, q)f(qr−1t, q) + · · · + a0(t, q)f(t, q) = 0\n(84)\nfor a function f(t, q) in matrix form σX = AX where X = Xf = (f, σf, . . . , σr−1f)t is a\ncolumn vector and A = comp(−a0/ar, . . . , −ar−1/ar) is the companion matrix where\ncomp(c0, c1, . . . , cr−1) =\n\n\n\n\n\n\n0\n1\n0\n. . .\n0\n0\n0\n1\n. . .\n0\n:\n:\n:\n. . .\n:\n0\n0\n0\n. . .\n1\nc0\nc1\nc2\n. . .\ncr−1\n\n\n\n\n\n\n.\n(85)\nWe will also write (84) in operator form Lf = 0 where L = Pr\nj=0 ajσr−j ∈W and denote\nby Mf = Wf the corresponding module over the q-Weyl algebra W.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Categorical aspects",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-012-26-categorical-aspects.md",
+      "narrative": null,
+      "content": "ules over the q-Weyl algebra and give a proof of Lemma 1.3.\nTo begin with, a gauge transformation X = P −1Y changes (3) to σY = BY where\nB = σPAP −1, changes a fundamental solution U of (3) to P −1U, and consequently changes\nΩγ to (P|κγ)−1ΩP. Hence, if P ∈GLr(Q(t, q)), then modularity is a property of the gauge\nequivalence class of a linear q-diﬀerence equation, i.e., a property of a q-holonomic module,\nindependent of a choice of a cyclic vector. This concludes part (a) of Lemma 1.3.\nFor part (b), we use the convariant function M 7→Sol(M) := Ker(σ, F ⊗Q(t,q) M) where\nF denotes a universal q-di",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Heine's q-hypergeometric functions",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-013-3-heines-q-hypergeometric-functions.md",
+      "narrative": null,
+      "content": "This section is devoted to the proof of Theorem 1.4.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Solutions",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-014-31-solutions.md",
+      "narrative": null,
+      "content": "equation (11). Since that equation depends on parameters, it will be convenient to consider\nthe following system of equations\n r−1\nY\nj=0\n(1 −q−1bjσt) −t\nrY\nj=1\n(1 −ajσt)\n!\nf = 0\n\u0000σ−1\nai −q−1aiσtσ−1\nai −(1 −q−1ai)\n\u0001\nf = 0\n\u00001 −q−1biσt −(1 −q−1bi)σ−1\nbi\n\u0001\nf = 0 .\n(111)\nThe ﬁrst equation describes the q-diﬀerence equation in t, namely Equation (11) whose\nNewton polygon shown in Figure 1.\ng(a−1\n1 )\ng(a−1\nr\n)\nf (1)\nf (qb−1\nr−1)\nFigure 1. The Newton polygon of the ﬁrst Equation (111).\nWe see that there are no slopes of the Newton polygon and therefore all solutions are\ndetermined by the top and botto",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Self duality",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "../sections/sec-015-32-self-duality.md",
+      "narrative": null,
+      "content": "ﬁnite sum of products of solutions of the module M associated to Equations (111) and its\ndual M ∧(see Section 2.5 for the deﬁnitions of the two duals). To prove modularity we must\nfactorise the state integral as a ﬁnite sum of products of solutions of M and M ∨. To do\nso, we need to give an explicit isomorphism between M ∨and M ∧. This is the content of\nthe following proposition, which after some change of variables, is equivalent to Beukers–\nJouhet [8, Thm.1.3]. For completeness, we will give an independent proof using the methods\nof our paper.\nProposition 3.1. [8, Thm.1.3] If M is the module",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/rem-sec-015-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "rem-sec-015-01.md",
+      "narrative": null,
+      "content": "The q →1 limit of Proposition 3.1 is discussed in full generality in [8, Thm.1.1], where it is shown that the dual of the module associated to rFr−1(a; b; t) is the module associated to rFr−1(1 −a; 2 −b; t).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "State integral",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-016-33-state-integral.md",
+      "narrative": null,
+      "content": "I(z, α, β, τ) =\nZ\nC\nΦb(x) Qr−1\nj=1 Φb(x + ib−1βj + ib−1 −ib)\nQr\nj=1 Φb(x + ib−1αj + ib−1 −ib)\nexp\n\u0010\n−2πzx\nb\n\u0011\ndx .\n(137)\nwhere C is a contour in the complex plane asymptotic to R + iε that separates the poles of\nthe numerator from the zeros of the denominator of the integrand, ai = e(αi), ˜ai = e(αi/τ),\nbi = e(βi) and ˜bi = e(βi/τ), and Φb is the Faddeev quantum dilogarithm function [23, 24]\nand b = √τ.\nWe ﬁrst discuss convergence of the above integral for τ = b2 in the upper half-plane. Using\nthe asymptotic behavior Φb(x) ∼e2πix2 (resp., 1) when Re(x) ≫0 (resp., Re(x) ≪0) (see\nfor example, [3",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/rem-sec-016-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "rem-sec-016-01.md",
+      "narrative": null,
+      "content": "Note that the state integral (137) is absolutely convergent and its contour of integration can be pushed either upwards or downwards. Doing so, the integral factorises in two diﬀerent ways, one giving the U-cocycle and another giving the V -cocycle. This explains the equality of the two cocycles from ﬁrst principles.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Resonance",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "../sections/sec-017-34-resonance.md",
+      "narrative": null,
+      "content": "equation (11), i.e., the case where at least one of the ratios ai/aj (for i̸ = j), bi/bj (for i̸ = j)\nor ai/bj (for some i and j) is an integer power of q. For simplicity, we will consider only the\ncase of r = 2, although our arguments remain valid for all r. When r = 2, the system of\nequations (111) is given by\n(1 −t)f(t, a, b, c, q) −(q−1c + 1 −t(a + b))f(qt, a, b, c, q) + (q−1c −tab)f(q2t, a, b, c, q) = 0\nf(t, q−1a, b, c, q) −q−1af(qt, q−1a, b, c, q) −(1 −q−1a)f(t, a, b, c, q) = 0\nf(t, a, q−1b, c, q) −q−1bf(qt, a, q−1b, c, q) −(1 −q−1b)f(t, a, b, c, q) = 0\nf(t, a, b, c, q) −q−1cf(qt, a, b,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorems 1.5 and 1.6",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../sections/sec-018-4-proof-of-theorems-15-and-16.md",
+      "narrative": null,
+      "content": "4. Proof of Theorems 1.5 and 1.6",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The q-Pochhammer symbol",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "../sections/sec-019-41-the-q-pochhammer-symbol.md",
+      "narrative": null,
+      "content": "The q-diﬀerence equation (19) can be written in operator form as ((1 −qt)σ −1)f = 0, with\nthe Newton polygon shown in Figure 2.\ng(1)\nf (0)\nFigure 2. The Newton polygon of Equation (19).\nThe lower Newton polygon has one edge of slope zero. Applying the Frobenius method, we\nseek a formal power series solution of the form\nf (0)(t, q) =\n∞\nX\nk=0\nαk(q)tk θ(ρ−1t; q)\nθ(t; q)\nwhere\nqkραk(q) −qkραk−1(q) −αk(q) = 0.\n(153)\nSince αk(q) = 0 for k < 0, setting k = 0 in the above equation implies the vanishing of the\nindicial polynomial\n(ρ −1)α0(q) = 0,\n(154)\ngiving ρ = 1. Then we have\nαk(q)\nαk−1(q) = −\nqk\n1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/lem-sec-020-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 37,
+      "target": "lem-sec-020-01.md",
+      "narrative": null,
+      "content": "If h(t, q) is a solution to the equation h(qt, q) + th(t, q) = 0 (184) that is holomorphic for t ∈C× then h(t, q) = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/lem-sec-020-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 37,
+      "target": "lem-sec-020-02.md",
+      "narrative": null,
+      "content": "(a) The function f (0)(t, λ, q) has simple poles at t ∈λ−1qZ with residue Rest=q−mλ−1f (0)(t, λ, q) dt 2πit = −1 θ(qmλ; q) Rest=q−mµ−1g(0)(t, µ, q) dt 2πit = −1 θ(qmµ; q) . (185) STAVROS GAROUFALIDIS AND CAMPBELL WHEELER (b) The function θ(q−1t; q)−1m2,1(t, λ, µ, q) has simple poles at t ∈qZλ−1, qZµ−1 with residues Rest=q−mλ−1θ(q−1t; q)−1m2,1(t, λ, µ, q) dt 2πit = −1 θ(qmλ; q) Rest=q−mµ−1θ(q−1t; q)−1m2,1(t, λ, µ, q) dt 2πit = θ(qmµ; q) . (186)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Appell-Lerch sums",
+      "pageStart": 33,
+      "pageEnd": 37,
+      "target": "../sections/sec-020-42-the-appell-lerch-sums.md",
+      "narrative": null,
+      "content": "4.2. The Appell-Lerch sums. This section is devoted to the proof of Theorem 1.6. The\nq-diﬀerence equation (22) has Newton polygon shown in Figure 3.\nf (0)\nf (−1)\ng(0)\ng(−1)\nFigure 3. The Newton polygon of Equation (22).\nTo begin with, the boundary of the lower Newton polygon consists of one edge of slope zero\nand one edge of slope 1. The edge of slope zero has a solution of the form\nf (0)(t, q) =\n∞\nX\nk=0\nαk(q)tk θ(ρ−1t; q)\nθ(t; q)\nwhere αk(q)q2kρ2 + qkραk−1(q) −qkραk(q) −αk−1(q) = 0.\n(165)\nTherefore, as αk(q) = 0 for k < 0, we get the indicial polynomial\nα0(q)(ρ2 −ρ) = 0\n(166)\nand so ρ = 1. Th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Solutions",
+      "pageStart": 37,
+      "pageEnd": 37,
+      "target": "../sections/sec-021-51-solutions.md",
+      "narrative": null,
+      "content": "the functional equations of h the Mordell integral [74, Proposition 1.2] these functions give\nan analytic extension of h the Mordell integral to the cut plane C′. Therefore, the cocycle\nΩU,S(t, q) extends to a holomorphic function for z ∈C and τ ∈C′. Since ΩU,T = I, part (c)\nof Theorem 1.2 concludes that the cocycle ΩU is modular.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A q-difference equation of the 41 knot",
+      "pageStart": 37,
+      "pageEnd": 40,
+      "target": "../sections/sec-022-5-a-q-difference-equation-of-the-41-knot.md",
+      "narrative": null,
+      "content": "This section is devoted to the proof of Theorem 1.7, Theorem 1.8 and Theorem 1.9.\n5.1. Solutions. The q-diﬀerence equation (28) has Newton polygon shown in Figure 4.\nThe boundary of the lower Newton polygon has edges of slope −1 and 1. The edge with\nslope −1 must be divided by a θ-function to get a power series solution. The eﬀect on the\nNewton polygon is as follows.\n38\nSTAVROS GAROUFALIDIS AND CAMPBELL WHEELER\ng(0,0)\ng(0,1)\nf (−1)\nf (1)\nFigure 4. The Newton polygon of Equation (28).\nf(−1)\nθ(t; q)−1\nˆf(−1)\nTherefore, the bottom edge of the Newton polygon with slope −1 has a solution of the for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/cor-sec-023-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "cor-sec-023-01.md",
+      "narrative": null,
+      "content": "we see that E2(t, λ, q) = C(q)g(0,0)(t, q). Finally, we note that −C(q) (q; q)2 ∞ = lim r→∞ E2(qrt, λ, q) θ(qrt; q) = 0 (218) which follows from Lemma 5.1. Thus, Equation (31) follows from the residue equation (214) and from a computation of the determinants of U and V . We discuss these in the next sections.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/lem-sec-023-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "lem-sec-023-02.md",
+      "narrative": null,
+      "content": "For t in some compact set where the functions are holomorphic, we have lim r→∞ g(0,0)(qrt, q) θ(qrt; q) = −1 (q; q)2 ∞ lim r→∞ f (−1)(qrt, q) θ(qrt; q) = 0 lim r→∞ g(0,1)(qrt, q) θ(qrt; q) = 0 lim r→∞ f (1)(qrt, q) θ(qrt; q) = (q; q)2 ∞ . (219)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Monodromy",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "../sections/sec-023-52-monodromy.md",
+      "narrative": null,
+      "content": "and the associated monodromy. Using the modular transformation properties of the Jacobi\nθ-function Equation (49) and the Dedekind η-function, it is easy to see that Equation (31)\nimplies (32).\nNote that each of the functions\n−→\nM2,1,\n−→\nM2,1|−1T,\n−→\nM2,1|−1S has SL2(Z)-stabiliser ⟨T 2, TST⟩,\n⟨T 2, S⟩and ⟨ST 2S, T⟩, respectively, and that the second group is the θ-subgroup and the\nlast group is Γ0(2). The appearance of Γ0(2) is a consequence of the (1/2)-q-Borel transform\nbelow.\nThe rest of this section is devoted to the proof that the monodromy is given by Equa-\ntion (31). To achieve this, we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/lem-sec-024-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 45,
+      "target": "lem-sec-024-01.md",
+      "narrative": null,
+      "content": "The functions f (−1)(t, q) = g(0,1)(t, q) have simple poles at t = qZ with residues Rest=qnf (−1)(t, q) dt 2πit = Rest=qng(0,1)(t, q) dt 2πit = g(0,0)(qn, q) . (222)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/lem-sec-024-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 45,
+      "target": "lem-sec-024-02.md",
+      "narrative": null,
+      "content": "(a) The function B1/2 ˆf (1)(ξ, q) has simple poles at ξ = ±q−1/4−Z/2 with residue Resξ=±q−1/4−n/2B1/2 ˆf (1)(ξ, q) dξ 2πiξ = −θ(±q−1/4; q1/2) 2(q; q)2 ∞ k X ℓ=0 (±1)k q k(k+2) (q; q)ℓ(q; q)k−ℓ . (224) (b) The function f (1)(t, λ, q) has simple poles at t = ±q−1/4+Zλ−1 with residue Rest=±q−1/4−nλ−1f (1)(t, λ, q) dt 2πit = θ(±q3/4λ−1; q)θ(±q−1/4; q)θ(±q−3/4; q)θ(±q−3/4λ; q) 2(q; q)6 ∞θ(q−1λ; q)θ(q−3/2λ; q) f (−1)(±q−1/4−nλ−1, q) . (225)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Residues",
+      "pageStart": 43,
+      "pageEnd": 45,
+      "target": "../sections/sec-024-53-residues.md",
+      "narrative": null,
+      "content": "the residues of the meromorphic functions f (−1) = g(0,1) and f (1).\nLemma 5.2. The functions f (−1)(t, q) = g(0,1)(t, q) have simple poles at t = qZ with residues\nRest=qnf (−1)(t, q) dt\n2πit = Rest=qng(0,1)(t, q) dt\n2πit = g(0,0)(qn, q) .\n(222)\nProof. We have\nRest=qk θ′(t−1; q)\nθ(t−1; q)\ndt\n2πit = −1 .\n(223)\nTo ﬁnish we note that the proof of the equality f (−1) = g(0,1) is independent of this Lemma\nand follows from Equation (210).\n□\nLemma 5.3. (a) The function B1/2 ˆf (1)(ξ, q) has simple poles at ξ = ±q−1/4−Z/2 with residue\nResξ=±q−1/4−n/2B1/2 ˆf (1)(ξ, q) dξ\n2πiξ = −θ(±q−1/4; q1/2)\n2(q; q)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/cor-sec-025-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 46,
+      "target": "cor-sec-025-02.md",
+      "narrative": null,
+      "content": "If h(t, q) is holomorphic for t ∈C× and satisﬁes the q-diﬀerence equa- tion (28) then h(t, q) = C0(q)g(0,0)(t, q) . (245)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/lem-sec-025-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 46,
+      "target": "lem-sec-025-01.md",
+      "narrative": null,
+      "content": "We have −det(U(t, λ, q)) = det(V (t, q)) = q−1t−2 . (240)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Determinants",
+      "pageStart": 45,
+      "pageEnd": 46,
+      "target": "../sections/sec-025-54-determinants.md",
+      "narrative": null,
+      "content": "5.4. Determinants. The functional equation (28) for U, V deﬁned in (29) can be written\nin the form\nU(qt, λ, q) = A(t; q)U(t, λ, q)\nand\nV (qt, q) = A(t; q)V (t, q)\n(237)\nwhere\nA(t, q) =\n\u0012\n0\n1\n−q−2\n2q−1 −q−2t−1\n\u0013\n.\n(238)\nTherefore, we see that\ndet(U(qt, λ, q)) = det(U(t, λ, q))q−2\nand\ndet(V (qt, q)) = det(V (t, q))q−2.\n(239)\nLemma 5.4. We have\n−det(U(t, λ, q)) = det(V (t, q)) = q−1t−2 .\n(240)\nProof. Firstly notice that both det(U(t, λ, q))t2 and det(V (t, q))t2 are elliptic functions in t.\nFurthermore,\ndet(U(t, λ, q)) = f (1)(t, λ, q)f (−1)(qt, q) −f (1)(qt, λ, q)f (−1)(t, q)\n(241)\nhas potential",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "State integral",
+      "pageStart": 46,
+      "pageEnd": 47,
+      "target": "../sections/sec-026-55-state-integral.md",
+      "narrative": null,
+      "content": "the extension of the cocycle to the cut plane. The main idea is to use descendant state\nintegrals, following [27, Eqn.(41)], deﬁned by\nIA,B(z, τ) =\nZ\nR+iε\nΦb(x)B exp\n\u0010\n−Aπix2 −2πzx\nb\n\u0011\ndx.\n(249)\nUsing the holomorphic extension of the quantum dilogarithm Φ from Theorem 1.5, this\nintegral can be shown to extend to a holomorphic function in for (z, τ) ∈C × C′.\nWe\nare interested in the integrals I1,2(z, τ) which, using the residue theorem, factorise as an\nelementary function holomorphic for τ ∈C′ times the following bilinear combination, see [27,\nThm.3],\nI(z, τ) = τ 1/2g(0,0)(˜t, ˜q)g(0,1)(t, q) −",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/lem-sec-027-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 47,
+      "pageEnd": 52,
+      "target": "lem-sec-027-01.md",
+      "narrative": null,
+      "content": "imply that −det(U(t, λ1, λ2, q)) = det(V (t, q)) = q−3t−3 . (261) Hence, det( −→ M(t, λ1, λ2, q)) = −1 which in turn implies that −→ M3,3(t, λ2, q) = 1. Now, Equation (37), written in the form U(t, λ1, λ2, q) = V (t, q) −→ M(t, λ1, λ2, q), together with Equations (259) and (260) and the fact that −→ M3,3 = 1 imply that f (0) = −→ M1,3g(0,0) + −→ M2,3g(0,1) + g(0,2) . (262) MODULAR q-HOLONOMIC MODULES Thus, to determine the two remaining entries of the monodromy matrix, we need to show that the function E3 := f (0) −(m1,3g(0,0) + m2,3g(0,1) + g(0,2)) (263) vanishes identically, where m1,3(t, q)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/lem-sec-027-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 47,
+      "pageEnd": 52,
+      "target": "lem-sec-027-02.md",
+      "narrative": null,
+      "content": "(a) The function B1 ˆf (0)(ξ, q) has simple poles at ξ ∈qZ with residue R(m, q) := Resξ=q−mB1 ˆf (0)(ξ, q) dξ 2πiξ = −(q; q)2 ∞ m X ℓ=0 qm (q; q)ℓ(q; q)m−ℓ . (270) (b) The function f (0)(t, q) has simple poles at t ∈λ−1 2 qZ with residue Rest=q−mλ−1 2 f (0)(t, λ2, q) dt 2πit = f (−1)(q−mλ−1 2 , q) . (271)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/lem-sec-027-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 47,
+      "pageEnd": 52,
+      "target": "lem-sec-027-03.md",
+      "narrative": null,
+      "content": "For t in some compact set where the functions are holomorphic, we have lim r→∞ g(0,2)(qrt, q) θ(qrt; q) = (q; q)2 ∞ m1,3(t−1, q) lim r→∞ f (0)(qrt, q) θ(qrt; q) = 0 . (275)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The inhomogeneous equation",
+      "pageStart": 47,
+      "pageEnd": 52,
+      "target": "../sections/sec-027-56-the-inhomogeneous-equation.md",
+      "narrative": null,
+      "content": "this into a homogeneous equation of one degree higher\ntf(t; q) + (1 −3qt)f(qt; q) + (3tq2 −1)f(q2t; q) −tq3f(q3t; q) = 0\n(253)\nwith Newton polygon shown in Figure 5.\ng(0,0)\ng(0,1)\ng(0,2)\nf (−1)\nf (1)\nf (0)\nFigure 5. The Newton polygon of Equation (35).\nNow from the general theory the solutions f (±1) and g(0,0) and g(0,1) are the same as the\nsolutions in Section 5.1. We do ﬁnd two additional solutions which are in fact solutions to\nthe inhomogeneous equation, namely\nˆf (0)(t, q) =\n∞\nX\nk=0\n(−1)kq−k(k+1)/2(q; q)2\nktk ,\n(254)\na divergent formal power series solution at t = 0 and\ng(0,2)(t; q) =\n∞",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/lem-sec-028-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "lem-sec-028-01.md",
+      "narrative": null,
+      "content": "If h(t, x, q) is holomorphic for t ∈C× and satisﬁes Equation (282a) then it vanishes. MODULAR q-HOLONOMIC MODULES",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/lem-sec-028-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "lem-sec-028-02.md",
+      "narrative": null,
+      "content": "We have Rest=qmx θ(t; q)2 θ(tx; q)θ(tx−1; q)g(0,x−1)(t, x, q) dt 2πit = −θ(x; q)2f (−1)(qmx, x, q) θ(x2; q)(q; q)3 ∞ Rest=qmx−1 θ(t; q)2 θ(tx; q)θ(tx−1; q)g(0,x)(t, x, q) dt 2πit = −θ(x−1; q)2f (−1)(qmx−1, x, q) θ(x−2; q)(q; q)3 ∞ (304) while g(0,1)(t, x, q) is holomorphic for t ∈C× ∪{∞}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/lem-sec-028-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "lem-sec-028-03.md",
+      "narrative": null,
+      "content": "(a) The function B1/2 ˆf (1)(ξ, x, q) has simple poles at ξ = ±q−1/4−Z≥0/2 with residue Resξ=±q−1/4−n/2B1/2 ˆf (1)(ξ, x, q) dξ 2πiξ = −θ(±q−1/4x; q1/2) 2(q; q)2 ∞ n X ℓ=0 (±1)n q n(n+2) x2ℓ−n (q; q)ℓ(q; q)n−ℓ . (306) (b) The function f (1)(t, x, λ1, q) has simple poles at t = ±q−1/4+Zλ−1 with residue Rest=±q−1/4−nλ−1 1 f (1)(t, x, λ1, q) dt 2πit = θ(±q3/4λ−1 1 ; q)θ(±q−1/4x; q)θ(±q−3/4x; q)θ(±q−3/4λ1; q) 2θ(x; q)θ(x−1; q)θ(q−1λ1; q)θ(q−3/2λ1; q) f (−1)(±q−1/4−nλ−1 1 , x, q) . (307)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/lem-sec-028-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "lem-sec-028-04.md",
+      "narrative": null,
+      "content": "(a) The function B1 ˆf (0)(ξ, x, q) has simple poles at ξ ∈qZ with residue R(m, x, q) := Resξ=q−mB1 ˆf (0)(ξ, x, q) dξ 2πiξ = −(qx; q)∞(qx−1; q)∞ m X ℓ=0 qmx2ℓ−m (q; q)ℓ(q; q)m−ℓ . (314) MODULAR q-HOLONOMIC MODULES (b) The function f (0)(t, x, λ2, q) has simple poles at t ∈λ−1 2 qZ with residue Rest=q−mλ−1 2 f (0)(t, x, λ2, q) dt 2πit = f (−1)(q−mλ−1 2 , x, q) . (315)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/lem-sec-028-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "lem-sec-028-05.md",
+      "narrative": null,
+      "content": "We have: det(U(t, x, λ1, λ2, q)) = − q−3x (1 −x)2t−3 det(V (t, x, q)) = θ(q−1x; q)2θ(tx; q)θ(tx−1; q) θ(x−2; q)θ(t; q)2(q; q)3 ∞ q−3x (1 −x)2t−3 . (320)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The x-deformation",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "../sections/sec-028-57-the-x-deformation.md",
+      "narrative": null,
+      "content": "the homogeneous equations\ntq−1f(q−1t, x, q) + (1 −(x−1 + x)t)f(t, x, q) + tqf(qt, x, q) = 0 ,\n(282a)\n(1 −qx)(1 −q−1x2)f(t, qx, q)\n−(x −1)2(x + 1)(x2t −x −(q−1 + q)t −x−1 + x−2t)f(t, x, q)\n+(1 −qx2)(1 −q−1x)f(t, q−1x, q) = 0 ,\n(282b)\n(1 −xq)(f(t, qx, q) −x−1f(qt, qx, q)) = (1 −x−1)(f(t, x, q) −qxf(qt, x, q)) .\n(282c)\nThis is not a random system of equations, instead they are the deﬁning equations of the t-\ndeformation of the homogeneous ˆA-polynomial of the 41 knot. This system appeared in [29,\nEqn.(10)] and [26, Eqn.(134)], and it is q-holonomic of rank 2 in the variables (t, x). The\nsystem is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An analytic lift of the colored Jones polynomial",
+      "pageStart": 62,
+      "pageEnd": 62,
+      "target": "../sections/sec-029-58-an-analytic-lift-of-the-colored-jones-polynom.md",
+      "narrative": null,
+      "content": "a proof of Theorem 1.10. The main observation is that when x = qN, the series ˆf (0)(t, qN, q)\nterminates to a polynomial of t, in which case the q-Borel transfrom, followed by a q-Laplace\ntransfrom is the identity. Explicitly, when x = qN for N ∈Z≥1 we have\nˆf (0)(t, qN, q) =\n∞\nX\nk=0\n(−1)kq−k(k+1)/2(q1+N; q)k(q1−N; q)ktk\n=\nN−1\nX\nk=0\n(−1)kq−k(k+1)/2(qN+1; q)k(q1−N; q)ktk .\n(333)\nThe theorem then follows from Equation (58).\n□",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Specialisation t=qm",
+      "pageStart": 62,
+      "pageEnd": 63,
+      "target": "../sections/sec-030-59-specialisation-tqm.md",
+      "narrative": null,
+      "content": "comment how our analytic functions of t, specialised to t = qm, become the known sequences\nof q-series and (x, q)-series that have appeared in the literature. In [36] and [26, 27, 28] the\nq-holonomic modules are discrete versions of what we have considered in Section 5. Here\nwe describe how the solutions can be constructed from the ones presented here. Consider a\nsolution f(t, q) of a q-diﬀerence equation\nar(t, q)f(qrt, q) + ar−1(t, q)f(qr−1t, q) + · · · + a0(t, q)f(t, q) = 0\ncorresponding to an edge of slope κ on the Newton polygon, and let\nfm(q) = (−1)κmq−κm(m+1)/2Resz=0θ(qme(z), q)−κf(qme(z",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 63,
+      "pageEnd": 63,
+      "target": "../sections/sec-031-acknowledgements.md",
+      "narrative": null,
+      "content": "Marcos Mari˜no, Mikhail Kapranov, Matthias Storzer and Don Zagier for enlightening con-\nversations. The work of C.W. has been supported by the Max-Planck-Gesellschaft.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/modularqholonomicmodules/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 63,
+      "pageEnd": 66,
+      "target": "../sections/sec-032-references.md",
+      "narrative": null,
+      "content": "[1] Lars Ahlfors. Complex analysis. McGraw-Hill Book Co., New York, third edition, 1978. An introduction\nto the theory of analytic functions of one complex variable, International Series in Pure and Applied\nMathematics.\n[2] Naum Akhiezer. Elements of the theory of elliptic functions, volume 79 of Translations of Mathematical\nMonographs. American Mathematical Society, Providence, RI, 1990. Translated from the second Russian\nedition by H. H. McFaden.\n[3] Jørgen Ellegaard Andersen and Rinat Kashaev. A TQFT from Quantum Teichm¨uller theory. Comm.\nMath. Phys., 330(3):887–934, 2014.\n[4] Yusuke Arike",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

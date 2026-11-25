@@ -1,0 +1,46 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/lee-vanderveen-colored-jones-polynomials-without-tails/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "lee-vanderveen-colored-jones-polynomials-without-tails",
+  "contains": [
+    "library/lee-vanderveen-colored-jones-polynomials-without-tails/sections/page-001",
+    "library/lee-vanderveen-colored-jones-polynomials-without-tails/sections/page-002",
+    "library/lee-vanderveen-colored-jones-polynomials-without-tails/sections/page-003",
+    "library/lee-vanderveen-colored-jones-polynomials-without-tails/sections/page-004",
+    "library/lee-vanderveen-colored-jones-polynomials-without-tails/sections/page-005"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "COLORED JONES POLYNOMIALS WITHOUT TAILS — We exhibit an inﬁnite family of knots with the property that the ﬁrst coeﬃcient of the n-colored Jones polynomial grows linearly with n.\n\n**COLORED JONES POLYNOMIALS WITHOUT TAILS**\n\n*CHRISTINE RUEY SHAN LEE AND ROLAND VAN DER VEEN*\n\n5 pp, 5 sections.\n\n**Abstract.** We exhibit an inﬁnite family of knots with the property that the ﬁrst coeﬃcient of the n-colored Jones polynomial grows linearly with n. This shows that the concept of stability and tail seen in the colored Jones polynomials of alternating knots does not generalize naively.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "lee-vanderveen-colored-jones-polynomials-without-tails",
+    "title_source": "slug",
+    "source_file": "lee-vanderveen-colored-jones-polynomials-without-tails.pdf",
+    "source_sha256": "fcc45aebd34e25dca6e89084c6609f3715e13ab3dc689eb942bddd8595a352e6",
+    "pages": 5,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

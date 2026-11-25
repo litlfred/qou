@@ -1,0 +1,506 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0502543v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0502543v2/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "arXiv:math/0502543v2  [math.GT]  22 Mar 2005\nCONTINUITY OF VOLUMES – ON A GENERALIZATION OF\nA CONJECTURE OF J.W.MILNOR\nIGOR RIVIN\nA. In his paper [6] J. Milnor conjectured that the volume\nof n-dimensional hyperbolic and spherical simplices, as a function\nof the dihedral angles, extends continuously to the closure of the\nspace of allowable angles. A prove of this conjecture was recently\ngiven by F. Luo ([5]1). In this paper we give a simple proof of this\nconjecture, prove much sharper regularity results, and then extend\nthe method to apply to a large class of convex polytopes. The\nsimple",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0502543v2/blocks/cor-page-002-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "cor-page-002-02.md",
+      "narrative": null,
+      "content": "To the above, we can add: The space of dihedral angles of a ﬁxed combinatorial type of ideal polyhedra in H3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0502543v2/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "2\nIGOR RIVIN\nIn this paper we begin by answering Milnor’s question in the\nsharp form (our method gives sharp regularity estimates, though\nwe don’t dwell too much on this). In dimension greater than 3 the\nargument goes through verbatim to give the same result for general\nconvex polytopes, as long as they are of a combinatorial class where\nthe dihedral angles determine the volume (this includes, eg, all simple\npolytopes, that is, those with simplicial vertex links). In dimension 3,\nthings are more subtle yet, but we get the result for various classes of\nconvex polyhedra (those with non-obtuse di",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0502543v2/blocks/thm-page-002-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "thm-page-002-01.md",
+      "narrative": null,
+      "content": "Let Ωbe one of the following parameter spaces: (1) The space of dihedral angles of polytopes of a ﬁxed combinatorial type in Sn, such that the volume is determined by the dihedral angles. (2) The space of dihedral angles of polytopes of a ﬁxed combinatorial type in Hn, n > 3, such that the volume is determined by the dihedral angles. (3) The space of dihedral angles of tetrahedra (possibly with some hy- perideal vertices) in H3. (4) The space of dihedral angles of a ﬁxed combinatorial type of hyper- ideal polyhedra in H3. (5) The space of non-obtuse dihedral angles of a ﬁxed combinatorial type",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0502543v2/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "CONTINUITY OF VOLUMES\n3\nspace) in terms of its diameter. The results (which are of independent\ninterest) can be loosely summarized as follows:\nTheorem 2. Let P be a polyhedron with N vertices in H3 of diameter\nρ ≫1. Let M∗be the polar metric of P (as in [10, 8]). The M∗lies within\nc1(N) exp(−c2(N)ρ) of the boundary of the space of admissible polar metrics,\nwhere c1, c2 are strictly positive functions of N.\nThe constants in the statement of the Theorem above are com-\npletely explicit, and can be sharpened by taking into consideration\nﬁner invariants of the combinatorics of P then the number of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0502543v2/blocks/thm-page-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "thm-page-003-01.md",
+      "narrative": null,
+      "content": "Let P be a polyhedron with N vertices in H3 of diameter ρ ≫1. Let M∗be the polar metric of P (as in [10, 8]). The M∗lies within c1(N) exp(−c2(N)ρ) of the boundary of the space of admissible polar metrics, where c1, c2 are strictly positive functions of N. The constants in the statement of the Theorem above are com- pletely explicit, and can be sharpened by taking into consideration ﬁner invariants of the combinatorics of P then the number of vertices. 2. A () In dimension 2, the result follows immediately from Gauss’ for- mula, which states that area is a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0502543v2/blocks/thm-page-003-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "thm-page-003-02.md",
+      "narrative": null,
+      "content": "Let Ωbe a C0,1 domain in Rn. Then,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0502543v2/blocks/cor-page-004-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "cor-page-004-01.md",
+      "narrative": null,
+      "content": "Volume is in C0,α(Ω) for any α < 1. The logarithmic growth of diameter of the simplex as a function of the distance to ∂Ωcan be shown in a completely elementary way using Eq. (2) and elementary reasoning about Gram matrices, as follows: Let G be “angle Gram matrix” of a simplex ∆, that is, Gij = −cos θij, where θij is the angle between the i-th and the j-th face. Let S be the matrix whose columns are the normals to the faces of ∆(all the computations take place in Minkowski space, and we use the hyperboloid model of Hn. It is immediate that G = StS. Let now W be the matrix whose columns are th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0502543v2/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "4\nIGOR RIVIN\n• (i) If kp < n, the space Wk,p(Ω) is continuously imbedded in Lp∗(Ω),\nwhere p∗= np/(n −kp), and compactly imbedded in Lq(Ω) for any\nq < p∗.\n• (ii) If 0 ≤m < k−n\np < m+1, the space Wk,p is continously embedded\nin Cm,α(Ω), α = k −n/p −m, and compactly embedded in Cm,β(Ω)\nfor any β < α.\nHere, the Sobolev space Wk,p is the space of functions whose ﬁrst k\n(distributional) derivatives are in Lp.\nIn our case, we know that the domain Ωis bounded, convex “curvi-\nlinear polyhedral” (hence C0,1) domain, volume is a bounded func-\ntion, and we assume that the gradient grows logarithmically as",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0502543v2/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "CONTINUITY OF VOLUMES\n5\nIt should be noted that this argument works mutatis mutandis for\nhyperideal simplices, or simplices with some ﬁnite and some hyper-\ninﬁnite vertices..\n3. C\nFor arbitrary convex polytopes in dimension n > 3, (and convex\nspherical polytopes in all dimensions) the proof given in Section 2\ngoes through without change, with the one proviso that it is not\ncurrently known whether the volume of a polytope is determined\nup to congruence by its dihedral angles. Such a uniqueness result is\nconjectured (indeed, itisconjectured thata polytope isdetermined up\nto congrue",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0502543v2/blocks/thm-page-005-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[10, 8]",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "thm-page-005-01.md",
+      "narrative": null,
+      "content": "A metric space (M, g) homeomorphic to S2 can arise as the Gaussian image G(P) of a compact convex polyhedron P in H3 if and only if the following conditions hold: • (a) The metric g has constant curvature 1 away from a ﬁnite collec- tion of cone points. • (b) The cone angle at each ci is greater than 2π. • (c) The lengths of closed geodesics of (M, g) are all strictly greater than 2π. Assume now, for simplicity, that the polyhedron P is simple (as pointed out above, this also allows us to assume that the geometry is determined by the dihedral angles). In that case, the space of admissible metr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0502543v2/blocks/thm-page-005-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "thm-page-005-02.md",
+      "narrative": null,
+      "content": "There exists a constant L0, such that the maximal length ℓP of an edge of P is bounded as follows: ℓP ≤max(L0, −2N log(d(P, ∂ΩP)/12N)), where N is the number of vertices of P.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0502543v2/blocks/cor-page-006-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "cor-page-006-01.md",
+      "narrative": null,
+      "content": "The volume is in W1,p(Ωp) for all p > 0. We now have almost enough to show that volume extends to Ωp, except for the slight matter of not having the required (by Theorem 3) regularity result for ∂ΩP. Such a result seems quite non-trivial, since the length of the shortest closed geodesic is a rather badly behaved quantity. However, there are two very important special cases where ΩP is actually a convex polytope, so this problem is ﬁnessed. The ﬁrst is when we restrict the dihedral angles to be non-obtuse. This case is covered by",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0502543v2/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "6\nIGOR RIVIN\nProof. Assume the contrary. Then, there exists a sequence of polyhe-\ndra P1, . . . , Pn, . . . with diameter ρ(Pi) ≥ℓ)Pi going to infnity, which\nare farther than 12N exp(−ρ/2N). By choosing a subsequence, we\nmay assume that there is a ﬁxed cycle of faces F1, . . . , Fk of P, such that\nthe sum of dihedral angles along the edges ei = Fi∩Fi+1 is smaller than\n2π + 12N exp(−ρ/2N), (by Theorem 9) and which are a 4N exp(−2ρ)\nquasigeodesic (by Theorem 10). Since the limit point of the Pi is not\nin ΩP (by Theorem 4), the result follow.\n□\nThe following corollary is immediate (by Schl¨aﬂi, s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0502543v2/blocks/thm-page-006-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Bao-Bonahon, [2]",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "thm-page-006-02.md",
+      "narrative": null,
+      "content": "Let σ be a cell decomposition of S2, and let w : σ1 →(0, π) be a map on the set of edges of σ. Then there exists a",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0502543v2/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "CONTINUITY OF VOLUMES\n7\nhyperideal polyhedron with combinatorics given by σ and exterior dihedral\nangles given by w if and only if:\n(1) The sum of the values of w on each circuit in σ1 is not smaller than\n2π, and is strictly greater if the circuit is non-elementary.\n(2) The sum of values of w on each simple path in σ1 is strictly larger\nthan π.\nThe hyperideal polyhedron is then unique.\n4. D\nThe results of this section are a quantitative version of the results\nof the compactness results of [10, 8]. First, some key lemmas. The\ngeneral setup will be as follows: L is a geodesic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0502543v2/blocks/lem-page-008-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "lem-page-008-01.md",
+      "narrative": null,
+      "content": "Let Q be a plane in H3 which intersects both P−and P+. Then, there exists t0, such that Q intersects P, and the cosine of the angle α of intersection satisﬁes | cos(α)| < 3e−t, as long as t > t0. The number t0 can be picked independently of Q.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0502543v2/blocks/lem-page-008-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "lem-page-008-03.md",
+      "narrative": null,
+      "content": "There exists a t0, such that if M is a line in H3 which intersects both P−and P+, then M intersects P, and cosh(d(P ∩M, x0)) < 4e−2t + 1, as long as t > t0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0502543v2/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "8\nIGOR RIVIN\nwhile\nP−⊥= φ(t)P⊥=\n\n\ncosh(t)\n−sinh(t)\n0\n0\n\n\n,\nLemma 1. Let Q be a plane in H3 which intersects both P−and P+. Then,\nthere exists t0, such that Q intersects P, and the cosine of the angle α of\nintersection satisﬁes | cos(α)| < 3e−t, as long as t > t0. The number t0 can\nbe picked independently of Q.\nProof. Let the unit normal Q⊥to Q be Q⊥=\n\n\na\nb\nc\nd\n\n\n. Since two planes\nintersect if and only if the scalar product of their unit normals is less\nthan 1 in absolute value, we have, from the hypotheses of the lemma\nand the description of the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0502543v2/blocks/rem-page-008-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "rem-page-008-02.md",
+      "narrative": null,
+      "content": "The constant 3 is far from sharp (especially for larger t).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0502543v2/blocks/lem-page-009-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "lem-page-009-01.md",
+      "narrative": null,
+      "content": "Let T be a spherical triangle with sides A, B, C and (opposite) angles α, β, γ. Suppose that | cos(β)| < ǫ ≪1, | cos(γ)| < ǫ ≪1. Then |α −A| < 2ǫ|.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0502543v2/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "CONTINUITY OF VOLUMES\n9\nLet us now compute. Set (for i = 1, 2)\npi =\n\n\nai\n0\nci\ndi\n\n\n.\nIt follows that\nM ∩P+ =\n\n\na1 cosh(t)\na1 sinh(t)\nc1\nd1\n\n\n.\nwhile\nM ∩P−=\n\n\na2 cosh(t)\n−a2 sinh(t)\nc2\nd2\n\n\n.\nIt follows that we can choose x = 1/(2a1), y = 1/(2a2), so that\nm = xM ∩P+ + yM ∩P−=\n\n\ncosh(t)\n0\n1\n2(c1/a1 + c2/a2)\n1\n2(d1/a1 + d2/a2)\n\n\n.\nIt follows that\n(7)\n−cosh(d(M ∩P, x0)) =\n\u001c m\n∥m∥, x0\n\u001d\n=\n−\ncosh(t)\nq\ncosh2(t) −1/4 ((c1/a1 + c2/a2)2 + (d1/a1 + d2/a2)2)\n.\nSince c2\ni + d2\ni + 1 = a2\ni , for i = 1, 2 it foll",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0502543v2/blocks/cor-page-010-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "cor-page-010-01.md",
+      "narrative": null,
+      "content": "Let F1 and F2 be two planes intersecting at a dihedral angle α, with both F1 and F2 intersecting a third plane P, at angles whose cosines are smaller than ǫ. Let A be the angle between F1 ∩P and F2 ∩P. Then |α −A| < 2ǫ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0502543v2/blocks/lem-page-010-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "lem-page-010-02.md",
+      "narrative": null,
+      "content": "Let V be a convex polygon in the hyperbolic plane H2, such that all the vertices of V lie within a distance r of a certain point O. Then, the sum of the exterior angles of V is smaller than 2π cosh(r).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0502543v2/blocks/prose-page-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 10",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/page-010.md",
+      "narrative": null,
+      "content": "10\nIGOR RIVIN\nProof. The spherical Law of Cosines states that:\ncos(A) = cos(α) + cos(β) cos(γ)\nsin(β) sin(γ)\n.\nIt follows that\ncos(A) −2ǫ2 ≤cos(A)(1 −ǫ2) −ǫ2 ≤cos(α) ≤cos(A) + ǫ2.\nThe assertion of the lemma follows immediately.\n□\nCorollary 4. Let F1 and F2 be two planes intersecting at a dihedral angle\nα, with both F1 and F2 intersecting a third plane P, at angles whose cosines\nare smaller than ǫ. Let A be the angle between F1 ∩P and F2 ∩P. Then\n|α −A| < 2ǫ.\nProof. Apply Lemma 3 to the link of the point F1 ∩F2 ∩P.\n□\nLemma 4. Let V be a convex polygon in the hyperbolic plane H2, such that\nall t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0502543v2/blocks/prose-page-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 11",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/page-011.md",
+      "narrative": null,
+      "content": "CONTINUITY OF VOLUMES\n11\nTheorem 10. With notation as in Theorem 9, the faces F1, . . . , Fk form a\ncurve in the Gaussian image of X with geodesic curvature not exceeding\n3k exp(−ρ/N)).\nRemark 11. The reader is referred to [8, 10] for a more thorough\ndiscussion of geodesics on spherical cone manifold, but suﬃce it\nto say that the contribution of the face Fi to the geodesic curvature\nis 0 if the two edges are (hyper)parallel, and equal to the angle of\nintersection if they intersect.\nProof. Let e1 and e2 be the two edges of F. If e1 and e2 do not intersect,\nthere is nothing to prove (by the rema",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0502543v2/blocks/rem-page-011-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "rem-page-011-01.md",
+      "narrative": null,
+      "content": "The reader is referred to [8, 10] for a more thorough discussion of geodesics on spherical cone manifold, but suﬃce it to say that the contribution of the face Fi to the geodesic curvature is 0 if the two edges are (hyper)parallel, and equal to the angle of intersection if they intersect.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0502543v2/blocks/prose-page-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 12",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/page-012.md",
+      "narrative": null,
+      "content": "12\nIGOR RIVIN\n[7] Jun Murakami and Akira Ushijima. A volume formula for hyperbolic sim-\nplices in terms of edge lengths. Technical Report math.MG/0402087, arxiv.org,\n2004.\n[8] Igor Rivin. On the Geometry of Convex Polyhedra in Hyperbolic 3-Space. PhD\nthesis, Princeton University, July 1986.\n[9] Igor Rivin. Euclidean structures on simplicial surfaces and hyperbolic volume.\nAnnals of Mathematics (ser. 2), 139(3):553–580, May 1994.\n[10] Igor Rivin and C.D.Hodgson. A characterization of compact convex polyhedra\nin hyperbolic 3-space. Inventiones Mathematicae, pages 77–111, January 1993.\nCorrigendu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,385 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "ant-v14-n7-s-p08",
+  "blocks": [
+    {
+      "id": "library/ant-v14-n7-s-p08/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 8,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The celebrated Burgess bound [1957] proves that for χ a nonprincipal multiplicative Dirichlet character\nmodulo a prime q, the character sum\nS(N, H) =\nX\nx∈Z\nN<x≤N+H\nχ(x)\nis bounded for every integer r ≥1 by\n|S(N, H)| ≪r H1−1/rq(r+1)/4r2 log q.\n(1-1)\nFrom this it can be deduced that S(N, H) admits a nontrivial bound o(H) for H as small as H = q1/4+κ,\nfor any κ > 0. Bounds for S(N, H) have many applications, and as we survey in Section 1C, Burgess’s\ninﬂuential work set records that remain the best known today.\nThis paper proves the ﬁrst n-dimensional Burgess bound for short multiplicative charact",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p08/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "msp\nALGEBRA AND NUMBER THEORY 14:7 (2020)\nhttps://doi.org/10.2140/ant.2020.14.1911\nBurgess bounds for\nshort character sums evaluated at forms\nLillian B. Pierce and Junyan Xu\nWe establish a Burgess bound for short multiplicative character sums in arbitrary dimensions, in which\nthe character is evaluated at a homogeneous form that belongs to a very general class of “admissible”\nforms. This n-dimensional Burgess bound is nontrivial for sums over boxes of sidelength at least qβ, with\nβ > 1/2 −1/(2(n + 1)). This is the ﬁrst Burgess bound that applies in all dimensions to generic forms\nof arbitrary",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p08/blocks/rem-sec-000-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 8,
+      "target": "rem-sec-000-01.md",
+      "narrative": null,
+      "content": "In the approximate value of the savings δn stated above (and similarly in Corollary 1.4 below), the symbol ≈is used to denote that certain approximations were used in the derivation, such as (i) letting the value θ1 = ⌊(r −1)/(n −1)⌋be approximated by r/(n −1), which is reasonable, for ﬁxed n, for the very large values of r = r(κ) that are chosen when κ →0; and (ii) considering the limiting case κ →0 in order to isolate the main term in computations. More details are given in Section 7A. The threshold βn deﬁned in (1-7) has appeared in n-dimensional Burgess bounds that were previously proved i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p08/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Method of proof: an overview",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-001-2-method-of-proof-an-overview.md",
+      "narrative": null,
+      "content": "In this section we recall the main points of the Burgess method in dimension 1, outline the difﬁculties that\narise in n ≥2 dimensions, and then sketch how we overcome these difﬁculties to obtain our main theorem.\nAt its heart, the Burgess method in the classical 1-dimensional setting builds from a character sum\nS(N; H) of length H < q, a character sum over a complete set of residues modulo q. Doing so by a\nFourier expansion only works efﬁciently if the sum is not too short, that is, if the character sum is of\nlength at least H ≫q1/2+ε (see Section A.3). When H ≪q1/2+ε, Burgess’s method instead",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p08/blocks/lem-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 15,
+      "target": "lem-sec-002-01.md",
+      "narrative": null,
+      "content": "Let A > 1 be fixed. Let F € Z[x,,...,%n] and suppose F factors as F = GH with G, H EZ[x,..., Xn] and H being A-th power-free over Z. Furthermore, assume that H is nondegenerate over Z, in the sense that there isno A € GL,(Z) such that H (x A) € Z[x2, ..., Xn]. Then for all but finitely many primes q, the reduction of F modulo q is (A, q)-admissible.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p08/blocks/lem-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 15,
+      "target": "lem-sec-002-02.md",
+      "narrative": null,
+      "content": "Let A > | and a prime q be fixed. If a form F € [x1,..., Xn] has the property that its reduction modulo q is (A, q)-admissible, then for every permutation m on a set of n elements, the",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p08/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 11,
+      "pageEnd": 15,
+      "target": "../sections/sec-002-3-preliminaries.md",
+      "narrative": null,
+      "content": "3A. Power-free conditions. We say that F ∈Z[x1, . . . , xn] is d-th power-free if each nonconstant irre-\nducible factor of F over Z (or equivalently over Q, by Gauss’s lemma) appears with multiplicity strictly\nless than d. In general, given a ﬁeld k, we say that F ∈k[x1, . . . , xn] is d-th power-free over k when\nF = cFa1\n1 Fa2\n2 · · · Faℓ\nℓwith c ∈k×, all ai < d and all Fi ∈k[x1, . . . , xn] are irreducible and pairwise non-\nassociate. (We say G, G′ ∈k[x1, . . . , xn] are nonassociate if there is no c ∈k× such that G = cG′.) (Note\nthat a constant may be regarded as a d-th power-free polynomia",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p08/blocks/cor-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 21,
+      "target": "cor-sec-003-03.md",
+      "narrative": null,
+      "content": "Let κ = Fq, q prime. The result of Corollary B holds if we replace the hypothesis that for each 1 ≤i ≤2r, the form Fi is di-th power-free and TFi is ﬁnite, by the weaker hypothesis that for each 1 ≤i ≤2r, the reduction modulo q of the form Fi is (di, q)-admissible. In the above corollary, we are able to omit the condition deg Fi < q seen in Theorem 4.1 by possibly enlarging C′; see (4-9). Through similar considerations, we can remove consideration of the set S, as we record here:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p08/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The stratiﬁcation of complete character sums",
+      "pageStart": 15,
+      "pageEnd": 21,
+      "target": "../sections/sec-003-4-the-stratiﬁcation-of-complete-character-sums.md",
+      "narrative": null,
+      "content": "In this section we recall the stratiﬁcation of complete character sums proved in [Xu 2018] and show how\nto deduce a slightly stronger formulation that we believe will be of independent interest, as well as being\nuseful in this paper. In our presentation, we will replace the dimension r in the original work by the\ndimension 2r in each instance, but the content of this section would apply in an analogous way for any\ndimension r (odd or even).\n4A. The stratiﬁcation obtained by Xu. We ﬁrst recall the statement of [Xu 2018, Theorem 1.1 and\nCorollary 1.8] in our setting of dimension 2r. For each ﬁxe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p08/blocks/rem-sec-003-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 21,
+      "target": "rem-sec-003-01.md",
+      "narrative": null,
+      "content": "Note that while the subschemes X j may depend on the Fi, the parameters C, C′, θ j depend only on the maximum degree D of the Fi. The constant C = C(n,r, D) noted above is bounded above by (4r(D +1)+1)n as computed in [Katz 2001, Theorem 11] (see the remarks following Theorem 1.1 in [Xu 2018], again recalling that we have 2r in place of r). The constant C′ (and later C′′ in Corollary 4.3) only depends on n,r, D, 1 but is not explicitly determined. For further details on the dependence of C′ and C′′ see [Xu 2018, Section 2.1, and the remark following Theorem 1.1] and Corollary 4.3. Next, we mus",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p08/blocks/rem-sec-003-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 21,
+      "target": "rem-sec-003-04.md",
+      "narrative": null,
+      "content": "Note that the trivial upper bound in (4-7) is ∥k∥2r. The fundamental consequence of Theorem 4.4 is that it shows that generically among {x} ∈(0, k]2r, square-root cancellation holds, as soon as r is sufﬁciently large relative to n. Precisely, as soon as r ≥n, so that the exponent ⌊(r −1)/(n−1)⌋appearing in Bn,r(1; k) is strictly positive, the number of {x} ∈(0, k]2r such that square-root cancellation is violated is O(∥k∥2rk−1 1 ), which sufﬁces for our claim, as long as k1 is at least a positive power of ∥k∥. Also, to aid in understanding the role of the function Bn,r( j; k) in this result, we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p08/blocks/thm-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 21,
+      "target": "thm-sec-003-02.md",
+      "narrative": null,
+      "content": "Let κ = Fq, q prime. The result of Theorem A holds if we replace the hypothesis that for each 1 ≤i ≤2r, the form Fi is di-th power-free and TFi is ﬁnite, by the weaker hypothesis that for each 1 ≤i ≤2r, the reduction modulo q of the form Fi is (di, q)-admissible, and for each 1 ≤i ≤2r, deg Fi < q.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p08/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 25,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "Fix M ∈Rn and L ∈Rn ≥1. For any K ≤L, |S(F; M, K)| ≤22n∥L∥−1 X m∈(M−L,M] max k≤2L |S(F; m, k)|.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p08/blocks/lem-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 25,
+      "target": "lem-sec-004-02.md",
+      "narrative": null,
+      "content": "The quantity A(m) vanishes unless m satisﬁes |mi| ≤2q for each i. Moreover, if Hi P < q, 1 ≤i ≤n, (5-8) then X m A(m) ≪P∥H∥, X m A(m)2 ≪P∥H∥. Applying Hölder’s inequality twice to (5-7), we obtain |S(F; N, H)| ≪|P|−1∥H∥−1Pn \u0012 X m A(m) \u00131−1/r\u0012 X m A(m)2 \u00131/(2r)\u0012 X m |mi|≤2q max k≤2H/P |S(F; m, k)|2r \u00131/(2r) . Thus applying the results of Lemma 5.2 shows that |S(F; N, H)| ≪(log P)Pn−1/2r∥H∥−1/2r \u0012 X m |mi|≤2q max k≤2H/P |S(F; m, k)|2r \u00131/(2r) . (5-9) It is sufﬁcient to look at the internal sum over m modulo q; in fact obtaining this complete character sum is the main accomplishment of the manipu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p08/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Initiation of the Burgess argument",
+      "pageStart": 21,
+      "pageEnd": 25,
+      "target": "../sections/sec-004-5-initiation-of-the-burgess-argument.md",
+      "narrative": null,
+      "content": "We now derive the ﬁrst steps of the Burgess method, generalizing the approach of [Gallagher and Mont-\ngomery 2010; Heath-Brown 2013] from the one-variable case and [Pierce 2016] in the multi-variable case.\nThe central complications that are distinctive to our new stratiﬁed setting are mainly addressed in Section 6.\nWe make the observation that given a character sum S(F; N, H) with data F, N, H, we may reorder\nthe variables x1, . . . , xn so that the lengths H1, . . . , Hn satisfy\nH1 ≤H2 ≤· · · ≤Hn.\n(5-1)\n1932\nLillian B. Pierce and Junyan Xu\nIn particular, if the reduction of F modulo q is (1,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p08/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stratiﬁcation and a Menshov–Rademacher argument",
+      "pageStart": 25,
+      "pageEnd": 31,
+      "target": "../sections/sec-005-6-stratiﬁcation-and-a-menshovrademacher-argument.md",
+      "narrative": null,
+      "content": "6A. Application of the stratiﬁcation for character sums. We now come to a critical novel step, which\nis to estimate how often we obtain a certain quality of upper bound for the complete character sum\nX\nm (mod q)\nχ(F{x}(m)).\nFor this, we call upon the stratiﬁcation of complete character sums stated in Theorem 4.4. Let us suppose\nthat k1 ≤. . . ≤kn ≤q. For each 1 ≤j ≤n, deﬁne\nY j :=\n\u001a\n{x} ∈(0, k]2r :\n\nX\nm (mod q)\nχ(F{x}(m))\n\n > Cq(n+ j−1)/2\n\u001b\n,\nin which C = C(n,r, D) is the constant provided by Theorem 4.4. Then by Theorem 4.4, we have\n(0, k]2r =: Y0 ⊃Y1 ⊃Y2 ⊃· · · ⊃Yn ⊃Yn+1 := ∅, and #Y j ≤C′′∥",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p08/blocks/lem-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 36,
+      "target": "lem-sec-006-01.md",
+      "narrative": null,
+      "content": "For 1 ≤K1 ≤K2 ≤· · · ≤Kn, n X j=0 q j/2eBn,r( j; K)−1 ≪n,r 1 precisely when q1/2K −θ1 ≤1. (7-3) Under this assumption, the sum over j is dominated by the terms with j = 0, 1. In particular, this lemma (whose proof we defer to Section 7B) shows that the sum is ≫1 if the relation (7-3) does not hold; hence it is advantageous to assume (7-3). Under this assumption, we can dominate the sum by the terms with j = 0, 1 and hence we conclude from (7-1) that |S(F; N, H)|2r ≪n,r,1,D (log q)2r(n+1)∥H∥2r−1P−1qn/2(1 + q1/2(H1/P)−θ1). To balance the last two terms within parentheses, we choose P to be an in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p08/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion of the Burgess argument",
+      "pageStart": 31,
+      "pageEnd": 36,
+      "target": "../sections/sec-006-7-conclusion-of-the-burgess-argument.md",
+      "narrative": null,
+      "content": "We now apply Proposition 6.2 to (5-9) with K = 2H/P, recalling that we are working under the\nassumption (5-1) that H1 ≤H2 ≤· · · ≤Hn. (Also recall that Kn ≤Hn < q.) We conclude that\n|S(F; N, H)|2r ≪n,r,1,D (log q)2r(n+1)P2nr−1∥H∥−1\n\u0012∥H∥\nPn\n\u00132r\nn\nX\nj=0\nq(n+ j)/2eBn,r( j; H/P)−1\n= (log q)2r(n+1)∥H∥2r−1P−1qn/2\nn\nX\nj=0\nq j/2eBn,r( j; H/P)−1,\n(7-1)\nin which we recall the deﬁnition of the function eBn,r( · , · ) from (6-4).\nAt this stage of the Burgess argument in the one-dimensional setting n = 1, one knows that θ0 = 0 and\nθ1 = r, so that the sum over j ∈{0, 1} contributes (1 + q1/2(H1/P)−r). To ba",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p08/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix",
+      "pageStart": 36,
+      "pageEnd": 39,
+      "target": "../sections/sec-007-appendix.md",
+      "narrative": null,
+      "content": "A.1. The role of the stratiﬁcation. It is useful to remark on the crucial role that the stratiﬁcation plays\nin obtaining our main theorem. Suppose that instead of Theorem A we only gained information about X1,\nwithout any further stratiﬁcation into X2, . . . , Xn. Then for those (x(1), . . . , x(2r)) ∈A2nr\nFq \\ X1(Fq), we\nwould have\n|S(x(1), . . . , x(2r))| ≤Cqn/2,\nbut for those (x(1), . . . , x(2r)) ∈X1(Fq) we could have an upper bound as bad as the trivial (#Fq)n. We\nwould then have only the instance j = 1 of Theorem 4.4, namely\n#\n\u001a\n{x} ∈(0, k]2r :\n\nX\nm (mod q)\nχ(F{x}(m))\n\n > Cqn/2\n\u001b\n≤C′′∥k∥",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p08/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 39,
+      "pageEnd": 39,
+      "target": "../sections/sec-008-acknowledgements.md",
+      "narrative": null,
+      "content": "The authors thank D. R. Heath-Brown and M. Larsen for helpful advice on this project; the authors\nalso thank the referee for helpful suggestions. Pierce is partially supported by NSF CAREER grant\nDMS-1652173, a Sloan Research Fellowship and the AMS Joan and Joseph Birman Fellowship. Xu has\nbeen partially supported by NSF DMS-1702152.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p08/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 39,
+      "pageEnd": 42,
+      "target": "../sections/sec-009-references.md",
+      "narrative": null,
+      "content": "[Aggarwal et al. 2018] K. Aggarwal, R. Holowinsky, Y. Lin, and Q. Sun, “The Burgess bound via a trivial delta method”, 2018.\nTo appear in Ramanujan J. arXiv\n[Banks and Guo 2017] W. D. Banks and V. Z. Guo, “Quadratic nonresidues below the Burgess bound”, Int. J. Number Theory\n13:3 (2017), 751–759. MR Zbl\n[Barban et al. 1964] M. B. Barban, Y. V. Linnik, and N. G. Tshudakov, “On prime numbers in an arithmetic progression with a\nprime-power difference”, Acta Arith. 9 (1964), 375–390. MR Zbl\n[Blomer and Harcos 2008] V. Blomer and G. Harcos, “Hybrid bounds for twisted L-functions”, J. Reine Angew. M",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-categorical-lagrangian-exists",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:categorical-lagrangian-exists",
+  "kind": "proposition",
+  "title": "Existence of the categorical Lagrangian",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-lagrangian",
+    "papers/quantum-observable-universe/blocks/prop-categorical-dirac-operator-exists"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-categorical-lagrangian-exists"
+  ],
+  "tags": [
+    "existence",
+    "lagrangian"
+  ],
+  "leanRef": "qou:QOU.CategoricalLagrangian.exists",
+  "text": "categorical-lagrangian-exists.md",
+  "leanSource": "categorical-lagrangian-exists.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-discrete-vortex-spectrum",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:discrete-vortex-spectrum",
+  "kind": "proposition",
+  "title": "Discrete vortex mode spectrum",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-vortex-intensity-modes"
+  ],
+  "tags": [
+    "vortex",
+    "quantization",
+    "spectral"
+  ],
+  "leanRef": "qou:QOU.FluidDynamics.discrete_vortex_spectrum",
+  "text": "discrete-vortex-spectrum.md",
+  "leanSource": "discrete-vortex-spectrum.lean",
+  "provenance": "authored"
+}

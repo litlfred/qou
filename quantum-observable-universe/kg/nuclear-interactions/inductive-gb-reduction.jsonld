@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-inductive-gb-reduction",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:inductive-gb-reduction",
+  "kind": "proposition",
+  "title": "Inductive Gröbner--Shirshov reduction",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-derived-atom"
+  ],
+  "tags": [
+    "groebner-shirshov",
+    "inductive",
+    "normal-form",
+    "hecke-algebra"
+  ],
+  "leanRef": "qou:QOU.Confinement.inductiveGBReduction",
+  "text": "inductive-gb-reduction.md",
+  "provenance": "authored"
+}

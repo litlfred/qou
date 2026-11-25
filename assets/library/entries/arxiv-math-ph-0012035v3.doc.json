@@ -1,0 +1,1764 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-ph-0012035v3",
+  "title": "Non-Abelian Stokes theorem in action",
+  "variant": "pdf",
+  "pages": 46,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Abelian Stokes theorem",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-11-abelian-stokes-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Historical remarks",
+      "number": "1.2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-12-historical-remarks"
+    },
+    {
+      "level": 2,
+      "title": "Contents",
+      "number": "1.3",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-13-contents"
+    },
+    {
+      "level": 1,
+      "title": "Non-Abelian Stokes theorem",
+      "number": "2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-2-non-abelian-stokes-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Operator formalism",
+      "number": "2.1",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-21-operator-formalism"
+    },
+    {
+      "level": 3,
+      "title": "Calculus of paths",
+      "number": "2.1.1",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-211-calculus-of-paths"
+    },
+    {
+      "level": 3,
+      "title": "Ordering",
+      "number": "2.1.2",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-212-ordering"
+    },
+    {
+      "level": 3,
+      "title": "Theorem",
+      "number": "2.1.3",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-213-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Path-integral formalism",
+      "number": "2.2",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-22-path-integral-formalism"
+    },
+    {
+      "level": 3,
+      "title": "Coherent-state approach",
+      "number": "2.2.1",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-221-coherent-state-approach"
+    },
+    {
+      "level": 3,
+      "title": "Holomorphic approach",
+      "number": "2.2.2",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-222-holomorphic-approach"
+    },
+    {
+      "level": 3,
+      "title": "Measure",
+      "number": "2.2.3",
+      "page": 28,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-223-measure"
+    },
+    {
+      "level": 2,
+      "title": "Generalizations",
+      "number": "2.3",
+      "page": 30,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-013-23-generalizations"
+    },
+    {
+      "level": 3,
+      "title": "Topology",
+      "number": "2.3.1",
+      "page": 30,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-014-231-topology"
+    },
+    {
+      "level": 3,
+      "title": "Higher-dimensional forms",
+      "number": "2.3.2",
+      "page": 33,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-015-232-higher-dimensional-forms"
+    },
+    {
+      "level": 1,
+      "title": "Applications",
+      "number": "3",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-016-3-applications"
+    },
+    {
+      "level": 2,
+      "title": "Two-dimensional Yang-Mills theory",
+      "number": "3.1",
+      "page": 35,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-017-31-two-dimensional-yang-mills-theory"
+    },
+    {
+      "level": 2,
+      "title": "Three-dimensional topological quantum field theory",
+      "number": "3.2",
+      "page": 38,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-018-32-three-dimensional-topological-quantum-field-t"
+    },
+    {
+      "level": 2,
+      "title": "Other applications",
+      "number": "3.3",
+      "page": 41,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-019-33-other-applications"
+    },
+    {
+      "level": 1,
+      "title": "Summary",
+      "number": "4",
+      "page": 42,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-020-4-summary"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 106,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-abelian stokes",
+          "heading": false
+        },
+        {
+          "term": "stokes theorem",
+          "heading": false
+        },
+        {
+          "term": "broda",
+          "heading": false
+        },
+        {
+          "term": "pological",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math-ph/0012035v3 16 Jan 2002 Non-Abelian Stokes theorem in action Bogus law Broda1 Department of Theoretical Physics University of L´od´z Pomorska 149/153 PL 90–236 L´od´z Poland Abstract In this short review main issues related to the non-Abelian Stokes theorem have been addressed. The two principal approaches to the non- Abelian Stokes theorem, operator and two variants (coherent-state and holomorphic) of",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-ph-0012035v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 217,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-abelian stokes",
+          "heading": false
+        },
+        {
+          "term": "abelian stokes",
+          "heading": false
+        },
+        {
+          "term": "stokes theorem",
+          "heading": false
+        },
+        {
+          "term": "classical electrodynamics",
+          "heading": false
+        },
+        {
+          "term": "differential forms",
+          "heading": false
+        },
+        {
+          "term": "gauge",
+          "heading": false
+        },
+        {
+          "term": "dimensions",
+          "heading": false
+        }
+      ],
+      "extract": "For tens years the (standard, i.e. Abelian) *Stokes* theorem is one of the central points of (multivariable) analysis on manifolds. Lower-dimensional versions of this theorem, known as the (proper) Stokes theorem, in dimensions 1 and 2, and the, so-called *Gauss* theorem, in dimensions 2 and 3, respectively, are well-known and extremally useful in practice, e.g. in classical electrodynamics (Maxwell equations). In",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-abelian-stokes-theorem",
+      "number": "1.1",
+      "title": "Abelian Stokes theorem",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 389,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stok",
+          "heading": false
+        },
+        {
+          "term": "abelian stokes",
+          "heading": true
+        },
+        {
+          "term": "stokes theorem",
+          "heading": true
+        },
+        {
+          "term": "oint partial",
+          "heading": false
+        },
+        {
+          "term": "cdot vec",
+          "heading": false
+        },
+        {
+          "term": "non-abelian stokes",
+          "heading": false
+        },
+        {
+          "term": "glob",
+          "heading": false
+        },
+        {
+          "term": "varepsilon ijk",
+          "heading": false
+        }
+      ],
+      "extract": "Before we engage in the non-Abelian Stokes theorem it seems reasonable to recall its Abelian version. The (Abelian) Stokes theorem says (see, e.g. \\[Spi65\\], for an excellent introduction to the subject) that we can convert an integral around a closed curve $C$ bounding some surface $S$ into an integral defined on this surface. Namely, in e.g. three dimensions $$\\oint_C \\vec{A} \\cdot d\\vec{s} =\\int_S {\\rm",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-historical-remarks",
+      "number": "1.2",
+      "title": "Historical remarks",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 59,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "abelian stokes",
+          "heading": false
+        },
+        {
+          "term": "stokes theorem",
+          "heading": false
+        },
+        {
+          "term": "historical",
+          "heading": true
+        }
+      ],
+      "extract": "Historical remarks The birth of the ideas related to the (non-)Abelian Stokes theorem dates back to the ninetenth century and is connected with the emergence of the Abelian Stokes theorem. The Abelian Stokes theorem can be treated as a prototype of the non-Abelian Stokes theorem or a version of thereof when we conﬁne ourselves to an Abelian group. 3",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-2-non-abelian-stokes-theorem",
+      "number": "2",
+      "title": "Non-Abelian Stokes theorem",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 98,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-abelian stokes",
+          "heading": true
+        },
+        {
+          "term": "stokes theorem",
+          "heading": true
+        },
+        {
+          "term": "eighties",
+          "heading": false
+        }
+      ],
+      "extract": "[Sch27], where generally non-commuting matrix-values functions have been con- sidered appeared in 1927. In fact no work on the genuine non-Abelian Stokes theorem could appear before the birth of very idea of non-Abelian gauge ﬁelds in the beginning of ﬁfthies. And really, ﬁrst papers on the non-Abelian Stokes the- orem appeared in the very end of seventhies. At ﬁrst, the non-Abelian Stokes theorem emerged in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-13-contents",
+      "number": "1.3",
+      "title": "Contents",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1057,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-abelian stokes",
+          "heading": false
+        },
+        {
+          "term": "abelian stokes",
+          "heading": false
+        },
+        {
+          "term": "stokes theorem",
+          "heading": false
+        },
+        {
+          "term": "wilson loop",
+          "heading": false
+        },
+        {
+          "term": "evolution operator",
+          "heading": false
+        },
+        {
+          "term": "dxi",
+          "heading": false
+        },
+        {
+          "term": "connection one-form",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst subsection",
+          "heading": false
+        }
+      ],
+      "extract": "Contents The propert part of the paper consists of two sections. The ﬁrst section is de- voted to the non-Abelian Stokes theorem itself. In the beginning, we introduce necessary notions and conventions. The operator version of the non-Abelian Stokes theorem is formulated in the ﬁrst subsection. The second subsection con- cerns the path-integral versions of the non-Abelian Stokes theorem: coherent- state approach and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-21-operator-formalism",
+      "number": "2.1",
+      "title": "Operator formalism",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 281,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stok",
+          "heading": false
+        },
+        {
+          "term": "glob",
+          "heading": false
+        },
+        {
+          "term": "pexp",
+          "heading": false
+        },
+        {
+          "term": "parallel-transport operator",
+          "heading": false
+        },
+        {
+          "term": "oval",
+          "heading": false
+        },
+        {
+          "term": "exp left",
+          "heading": false
+        },
+        {
+          "term": "non-abelian",
+          "heading": false
+        },
+        {
+          "term": "cal",
+          "heading": false
+        }
+      ],
+      "extract": "Unfortunately, it is not possible to automatically generalize the Abelian Stokes theorem (e.g. Eq.[\\[ab.prop.Stok.2\\]](#ab.prop.Stok.2){reference-type=\"ref\" reference=\"ab.prop.Stok.2\"}) to the non-Abelian one. In the non-Abelian case one faces a qualitatively different situation because the integrand on the LHS assumes values in a Lie algebra $\\bf g$ rather than in the field of real or complex numbers. The picture",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-211-calculus-of-paths",
+      "number": "2.1.1",
+      "title": "Calculus of paths",
+      "level": 3,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 283,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "parallel-transport operators",
+          "heading": false
+        },
+        {
+          "term": "comp",
+          "heading": false
+        },
+        {
+          "term": "calculusofpaths",
+          "heading": false
+        },
+        {
+          "term": "superpose",
+          "heading": false
+        },
+        {
+          "term": "inverse element",
+          "heading": false
+        },
+        {
+          "term": "inv",
+          "heading": false
+        },
+        {
+          "term": "fig",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#SECTION:calculusofPaths label=\"SECTION:calculusofPaths\"} As a kind of a short introduction for properly manipulating parallel-transport operators along oriented curves we recall a number of standard facts. It is obvious that we can perform some operations on the parallel transport operators. We can superpose them, we can introduce an identity element, and finally we can find an inverse element for each element.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-212-ordering",
+      "number": "2.1.2",
+      "title": "Ordering",
+      "level": 3,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 276,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ldots hat",
+          "heading": false
+        },
+        {
+          "term": "hat sigma",
+          "heading": false
+        },
+        {
+          "term": "ldots int",
+          "heading": false
+        },
+        {
+          "term": "nonumber sum",
+          "heading": false
+        },
+        {
+          "term": "aligned lefteqn",
+          "heading": false
+        },
+        {
+          "term": "nonumber end",
+          "heading": false
+        },
+        {
+          "term": "theta left",
+          "heading": false
+        },
+        {
+          "term": "dyson series",
+          "heading": false
+        }
+      ],
+      "extract": "There are a lot of different ordering operators in our formulas which have been collected in this section. #### Dyson series We know from quantum theory that the path-ordered exponent of an operator $\\hat{A}$ can be expressed by the power series called the Dyson series, $$\\begin{aligned} \\lefteqn{{\\rm P}\\,\\exp\\left[i\\int_{t'}^{t''}\\!\\hat{A}(t)\\;dt\\right]} \\nonumber \\\\ &=& {\\rm",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-213-theorem",
+      "number": "2.1.3",
+      "title": "Theorem",
+      "level": 3,
+      "pageStart": 11,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1042,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nonumber frac",
+          "heading": false
+        },
+        {
+          "term": "frac cal",
+          "heading": false
+        },
+        {
+          "term": "cal right",
+          "heading": false
+        },
+        {
+          "term": "frac left",
+          "heading": false
+        },
+        {
+          "term": "cal exp",
+          "heading": false
+        },
+        {
+          "term": "oint right",
+          "heading": false
+        },
+        {
+          "term": "int cal",
+          "heading": false
+        },
+        {
+          "term": "nonumber quad",
+          "heading": false
+        }
+      ],
+      "extract": "The non-Abelian Stokes theorem in its original operator form roughly claims that the holonomy round a closed curve $C=\\partial S$ equals a surface-ordered exponent of the *twisted* curvature, namely $${\\rm P}\\exp\\left(i\\oint_C A \\right) ={\\cal P}\\exp\\left(i\\int_S {\\cal F}\\right), \\label{op.NAST}$$ where $\\cal F$ is the twisted curvature $${\\cal F}\\equiv U^{-1} F U.$$ A more precise form of the non-Abelian Stokes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-22-path-integral-formalism",
+      "number": "2.2",
+      "title": "Path-integral formalism",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 336,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "path-integral formalism",
+          "heading": true
+        },
+        {
+          "term": "non-abelian stokes",
+          "heading": false
+        },
+        {
+          "term": "parallel-transport operator",
+          "heading": false
+        },
+        {
+          "term": "nast",
+          "heading": false
+        },
+        {
+          "term": "stokes theorem",
+          "heading": false
+        },
+        {
+          "term": "qquad epsilon",
+          "heading": false
+        },
+        {
+          "term": "coherent-state",
+          "heading": false
+        },
+        {
+          "term": "transition amplitude",
+          "heading": false
+        }
+      ],
+      "extract": "There are two main approaches to the non-Abelian Stokes theorem in the framework of the path-integral formalism: coherent-state approach and holomorphic approach. In the literature, the both approaches occur in few, a bit different, incarnations. Also, the both have found applications in different areas of mathematical and/or theoretical physics, and therefore the both are usefull. The first one is formulated more",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-221-coherent-state-approach",
+      "number": "2.2.1",
+      "title": "Coherent-state approach",
+      "level": 3,
+      "pageStart": 17,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 867,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nonumber left",
+          "heading": false
+        },
+        {
+          "term": "right rangle",
+          "heading": false
+        },
+        {
+          "term": "alpha right",
+          "heading": false
+        },
+        {
+          "term": "group-theoretic coherent",
+          "heading": false
+        },
+        {
+          "term": "cdot underline",
+          "heading": false
+        },
+        {
+          "term": "state left",
+          "heading": false
+        },
+        {
+          "term": "frac kappa",
+          "heading": false
+        },
+        {
+          "term": "lambda left",
+          "heading": false
+        }
+      ],
+      "extract": "#### Group-theoretic coherent states According to \\[ZFG90\\] (see, also \\[Per86\\]) the group-theoretic coherent states emerge in the following construction: 1. For $\\bf g$, a semisimple Lie algebra of a Lie group $G$, we introduce the standard Cartan basis $\\{H_i,E_\\alpha,E_{-\\alpha}\\}$: $$\\begin{aligned} \\left[H_i,H_j\\right]&=&0, \\nonumber\\\\ \\left[H_i,E_\\alpha\\right]&=& \\alpha_iE_\\alpha, \\nonumber\\\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-222-holomorphic-approach",
+      "number": "2.2.2",
+      "title": "Holomorphic approach",
+      "level": 3,
+      "pageStart": 21,
+      "pageEnd": 28,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1753,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nast int",
+          "heading": false
+        },
+        {
+          "term": "nonumber bar",
+          "heading": false
+        },
+        {
+          "term": "bar epsilon",
+          "heading": false
+        },
+        {
+          "term": "bar left",
+          "heading": false
+        },
+        {
+          "term": "bar right",
+          "heading": false
+        },
+        {
+          "term": "label hol",
+          "heading": false
+        },
+        {
+          "term": "bar frac",
+          "heading": false
+        },
+        {
+          "term": "bar exp",
+          "heading": false
+        }
+      ],
+      "extract": "#### Quantum-mechanics background For our further convenience let us formulate an auxiliary \"Schrödinger problem\" governing the parallel-transport operator [\\[par.trans.\\]](#par.trans.){reference-type=\"ref\" reference=\"par.trans.\"} for the Abelian gauge potential $A$, $$i\\frac {d z}{dt }=-\\dot{x}^i A_i z, \\label{ab.Schr.eq.}$$ which expresses the fact that the \"wave function\" $z$ should be covariantly constant along",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-223-measure",
+      "number": "2.2.3",
+      "title": "Measure",
+      "level": 3,
+      "pageStart": 28,
+      "pageEnd": 30,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 411,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bar beta",
+          "heading": false
+        },
+        {
+          "term": "bar triangle",
+          "heading": false
+        },
+        {
+          "term": "bar chi",
+          "heading": false
+        },
+        {
+          "term": "bar theta",
+          "heading": false
+        },
+        {
+          "term": "bar phi",
+          "heading": false
+        },
+        {
+          "term": "qquad bar",
+          "heading": false
+        },
+        {
+          "term": "fields bar",
+          "heading": false
+        },
+        {
+          "term": "partial bar",
+          "heading": false
+        }
+      ],
+      "extract": "The described theory possesses the following \"topological\" gauge symmetry: $$\\delta z(x)=\\theta(x), \\qquad \\delta\\bar{z} (x)=\\bar{\\theta}(x), \\label{top.sym.}$$ where $\\theta (x)$ and $\\bar{\\theta}(x)$ are arbitrary except at the boundary $\\partial S$ where they vanish. The origin of the symmetry [\\[top.sym.\\]](#top.sym.){reference-type=\"ref\" reference=\"top.sym.\"} will become clear when we convert the action",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-23-generalizations",
+      "number": "2.3",
+      "title": "Generalizations",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 30,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "Generalizations",
+      "extractCut": false
+    },
+    {
+      "id": "sec-014-231-topology",
+      "number": "2.3.1",
+      "title": "Topology",
+      "level": 3,
+      "pageStart": 30,
+      "pageEnd": 33,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 615,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "underbrace big",
+          "heading": false
+        },
+        {
+          "term": "non-abelian stokes",
+          "heading": false
+        },
+        {
+          "term": "nonumber quad",
+          "heading": false
+        },
+        {
+          "term": "nonumber prod",
+          "heading": false
+        },
+        {
+          "term": "stokes theorem",
+          "heading": false
+        },
+        {
+          "term": "seifert surface",
+          "heading": false
+        },
+        {
+          "term": "hkuy",
+          "heading": false
+        },
+        {
+          "term": "rol",
+          "heading": false
+        }
+      ],
+      "extract": "Up to now we have investigated the non-Abelian Stokes theorem for topologically trivial situation. The term *topologically trivial situation* means, in this context, that the loop we are integrating along in the non-Abelian Stokes theorem is unknotted in the sense of theory of knots \\[Rol76\\]. It appears that in contradistinction to the Abelian case, the non-Abelian one is qualitatively different. If the loop $C$ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-232-higher-dimensional-forms",
+      "number": "2.3.2",
+      "title": "Higher-dimensional forms",
+      "level": 3,
+      "pageStart": 33,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 362,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-abelian stokes",
+          "heading": false
+        },
+        {
+          "term": "bar zeta",
+          "heading": false
+        },
+        {
+          "term": "zeta equiv",
+          "heading": false
+        },
+        {
+          "term": "abelian stokes",
+          "heading": false
+        },
+        {
+          "term": "stokes theorem",
+          "heading": false
+        },
+        {
+          "term": "sbf",
+          "heading": false
+        },
+        {
+          "term": "forms",
+          "heading": true
+        },
+        {
+          "term": "auxiliary topological",
+          "heading": false
+        }
+      ],
+      "extract": "The theorem being considered up to now is a very particular, though seemingly the most important, non-Abelian version of the Stokes theorem. It connects a non-Abelian differential one-form in dimension $1$ and a two-form in dimension $2$. The forms are of a very particular shape, namely, the connection $1$-form and the curvature $2$-form. Now, we would like to discuss possible generalizations to arbitrary,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-3-applications",
+      "number": "3",
+      "title": "Applications",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 35,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 402,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-abelian stokes",
+          "heading": false
+        },
+        {
+          "term": "non-abelian gauge",
+          "heading": false
+        },
+        {
+          "term": "stokes theorem",
+          "heading": false
+        },
+        {
+          "term": "abelian stokes",
+          "heading": false
+        },
+        {
+          "term": "applications",
+          "heading": true
+        },
+        {
+          "term": "exact applications",
+          "heading": false
+        },
+        {
+          "term": "path-integral",
+          "heading": false
+        },
+        {
+          "term": "gauge theories",
+          "heading": false
+        }
+      ],
+      "extract": "The number of applications of the non-Abelian Stokes theorem is not so large as in the case of the Abelian Stokes theorem but neverthelles it is the main motivation to formulate the non-Abelian Stokes theorem at all. It is interesting to note that in contradistinction to the Abelian Stokes theorem, which formulation is \"homogenous\" (unique), different formulations of the non-Abelian Stokes theorem are usefull for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-31-two-dimensional-yang-mills-theory",
+      "number": "3.1",
+      "title": "Two-dimensional Yang-Mills theory",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 38,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1058,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "two-dimensional yang-mills",
+          "heading": true
+        },
+        {
+          "term": "yang-mills theory",
+          "heading": true
+        },
+        {
+          "term": "region alpha",
+          "heading": false
+        },
+        {
+          "term": "wilson loops",
+          "heading": false
+        },
+        {
+          "term": "alpha right",
+          "heading": false
+        },
+        {
+          "term": "cal exp",
+          "heading": false
+        },
+        {
+          "term": "infinitesimal area",
+          "heading": false
+        },
+        {
+          "term": "int sqrt",
+          "heading": false
+        }
+      ],
+      "extract": "There is a huge literature on the subject of the two-dimensional Yang-Mills theory approaching it from different points of view. One of the latest papers is \\[AK00\\], where a list of references to earlier papers is given. Two-dimensional Yang-Mills theory is a specific theory. From the dynamical point of view it is almost trivial---there are no local degrees of freedom, as a standard canonical analysis indicates. In",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-32-three-dimensional-topological-quantum-field-t",
+      "number": "3.2",
+      "title": "Three-dimensional topological quantum field theory",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 41,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 812,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "topological field",
+          "heading": true
+        },
+        {
+          "term": "topological quantum",
+          "heading": true
+        },
+        {
+          "term": "field theory",
+          "heading": true
+        },
+        {
+          "term": "cso",
+          "heading": false
+        },
+        {
+          "term": "csm",
+          "heading": false
+        },
+        {
+          "term": "varepsilon ijk",
+          "heading": false
+        },
+        {
+          "term": "non-abelian stokes",
+          "heading": false
+        },
+        {
+          "term": "three-dimensional",
+          "heading": true
+        }
+      ],
+      "extract": "Topological quantum field theory has recently become a fascinating and fashionable subject in mathematical physics. At present, main applications of topological field theory are in mathematics (topology of low-dimensional manifolds) rather than in physics. Its application to the issue of classification of knots and links is one of the most interesting. To approach this problem one usually tries to somehow encode the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-33-other-applications",
+      "number": "3.3",
+      "title": "Other applications",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 42,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 130,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-abelian stokes",
+          "heading": false
+        },
+        {
+          "term": "stop",
+          "heading": false
+        },
+        {
+          "term": "stokes theorem",
+          "heading": false
+        },
+        {
+          "term": "coordinate-gauge",
+          "heading": false
+        }
+      ],
+      "extract": "We could continue the idea of the previous section and try to generalize it to higher-dimensional (topological) theories. To this end we should use a generalization of the non-Abelian Stokes theorem to non-Abelian forms of higher degree, e.g. following the approach proposed in Eq.[\\[STop\\]](#STop){reference-type=\"ref\" reference=\"STop\"}, and yielding the resluts obtained in \\[Bro94\\]. Quite a different story is the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-4-summary",
+      "number": "4",
+      "title": "Summary",
+      "level": 1,
+      "pageStart": 42,
+      "pageEnd": 46,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1092,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-abelian stokes",
+          "heading": false
+        },
+        {
+          "term": "nonabelian stokes",
+          "heading": false
+        },
+        {
+          "term": "broda",
+          "heading": false
+        },
+        {
+          "term": "stokes theorems",
+          "heading": false
+        },
+        {
+          "term": "wilson loops",
+          "heading": false
+        },
+        {
+          "term": "stokes formula",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "halpern",
+          "heading": false
+        }
+      ],
+      "extract": "Summary In this short review we have addressed main issues related to the non-Abelian Stokes theorem. The two principal approaches (operator and path-integral) to the non-Abelian Stokes theorem have been formulated in their simplest possible forms. A generalization for a knotted loop as well as a suggestion concerning higher-degree forms have been also presented. Only non-perturbative applica- tions of the",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "non-abelian stokes",
+      "heading": true
+    },
+    {
+      "term": "abelian stokes",
+      "heading": true
+    },
+    {
+      "term": "stokes theorem",
+      "heading": true
+    },
+    {
+      "term": "non-abelian gauge",
+      "heading": false
+    },
+    {
+      "term": "non-abelian version",
+      "heading": false
+    },
+    {
+      "term": "non-abelian differential",
+      "heading": false
+    },
+    {
+      "term": "nonabelian stokes",
+      "heading": false
+    },
+    {
+      "term": "stokes formula",
+      "heading": false
+    },
+    {
+      "term": "non-abelian case",
+      "heading": false
+    },
+    {
+      "term": "left nonumber",
+      "heading": false
+    },
+    {
+      "term": "nonumber int",
+      "heading": false
+    },
+    {
+      "term": "left right",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Integration areas for the lowest-dimensional (non-trivial) version of the Abelian Stokes theorem",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Parallel-transport operator along the path L in the surface S",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Allowable composition of elements",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Inverse element",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Deformation of a path",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The parametrized loop C as a boundary of the “big” square S with the coordinates {(0, 0), (1, 0), (1, 1), (0, 1)}",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Approaching the “small” plaquette inside the “big” square",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "The small plaquette",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Decomposition of the knotted loop C",
+      "page": 32,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "C1 and C2, where a part of C1, forming a small loop ℓ(ℓ= ∂N), is wrapped round C2",
+      "page": 41,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 21,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 22,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "10 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p42); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 22 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-ph-0012035v3"
+  }
+}

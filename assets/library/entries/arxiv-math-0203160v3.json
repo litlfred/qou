@@ -1,0 +1,101 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0203160v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0203160v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Differential geometry of noncommutative spaces, in particular, of noncommutative tori was developed by A. Connes [@Co1], [@Co2]. More detailed analysis of differential geometry of noncommutative tori was performed in\n\n[@Co3], [@Co4],[@Ri1], [@Ri2], [@Sc1], [@Sc2],[@Ko2].\n\nPartly, the interest to this subject was motivated by the applications to string/M-theory found in [@Co4] (see [@Ko3] for review). Complex geometry of noncommutative tori and of projective modules over them was studied in [@Sc3] in connection with noncommutative generalization of theta-functions.\n\nThe goal of present paper is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203160v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0203160v3  [math.QA]  28 Oct 2002\nDiﬀerential and complex geometry of\ntwo-dimensional noncommutative tori\nMomar Dieng\nAlbert Schwarz∗\nDepartment of Mathematics\nUniversity of California\nDavis, CA 95616\nAbstract\nWe analyze in detail projective modules over two-dimensional noncom-\nmutative tori and complex structures on these modules.We concentrate\nour attention on properties of holomorphic vectors in these modules; the\ntheory of these vectors generalizes the theory of theta-functions. The pa-",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203160v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Projective modules and their tensor products.",
+      "pageStart": 2,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-2-projective-modules-and-their-tensor-products.md",
+      "narrative": null,
+      "content": "One can define the algebra $T_{\\theta }^{d}$ of smooth functions on $d$ -dimensional noncommutative torus as an algebra of formal linear combinations $f=\\sum C_{\\overrightarrow{n}}U_{\\overrightarrow{n}}$ where $\\overrightarrow{n}\\in \\mathbb Z^{d}$ and $C_{\\overrightarrow{n}}$ are complex numbers tending to zero at infinity faster then any power and the multiplication is governed by the rule\n\n$$U_{\\overrightarrow{n}}U_{\\overrightarrow{m}}=e^{\\pi i\\overrightarrow{n}\n\\theta \\overrightarrow{m}}U_{\\overrightarrow{n}+\\overrightarrow{m}}$$\n\nwhere $\\theta =\\theta ^{\\alpha \\beta }$ is a real antisymmet",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203160v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connections and complex structures.",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-3-connections-and-complex-structures.md",
+      "narrative": null,
+      "content": "One can define a connection on a right $T_{\\theta }^{d}$-module $E$ as a set of ${\\mathbb C}$-linear operators $\\nabla\n_{1},...,\\nabla _{d}$ obeying Leibniz rule: $$\\nabla _{\\alpha }(ea)=\\nabla _{\\alpha }e\\cdot a+e\\cdot \\delta _{\\alpha }a\\label{con}$$\n\nwhere $e\\in E,a\\in T_{\\theta }^{d}$ and the derivatives $\\delta _{\\alpha }a$ are specified by the formula $\\delta _{\\alpha }U_{\\overrightarrow{n}}=2\\pi\nniU_{\\overrightarrow{n}}$ (see\\[1\\]). It will be convenient for us to generalize the notion of connection replacing $\\delta _{\\alpha }$ in ([\\[con\\]](#con){reference-type=\"ref\" reference=\"con\"})",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203160v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "../sections/sec-003-acknowledgments.md",
+      "narrative": null,
+      "content": "We would like to thank Yu. Manin for his interest in our work, and for informa-\ntion that our results could be useful in number theory (Yu. Manin has explained\nthe relation of our results to number theory in his recent preprint [11]). One of\nauthors (A. Sch.) appreciates the hospitality of IHES and ESI where a part of\nthis work was done.\nReferences\n[1] A. Connes. C∗–alg`ebres et g´eom´etrie diﬀ´erentielle. C. R. Acad. Sci. Paris,\n290:599–604, 1980.\n[2] A. Connes. Noncommutative Geometry. Academic Press, 1994.\n[3] A. Connes and M. Rieﬀel. Yang–Mills for noncommutative two–tori. Con-\ntemporary M",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

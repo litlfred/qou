@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-math-0703096v1",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0703096v1",
+  "contains": [
+    "library/arxiv-math-0703096v1/sections/sec-front-matter",
+    "library/arxiv-math-0703096v1/sections/sec-000",
+    "library/arxiv-math-0703096v1/sections/sec-001",
+    "library/arxiv-math-0703096v1/sections/sec-002",
+    "library/arxiv-math-0703096v1/sections/sec-003",
+    "library/arxiv-math-0703096v1/sections/sec-004"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "History of knot theory (Przytycki, arXiv:math/0703096, chapter of KNOTS) — from Gauss and Listing through Kelvin, Tait, Kirkman and Little to the twentieth century\n\n**KNOTS: From combinatorics of knot diagrams to combinatorial topology based on knots**, Chapter II *History of Knot Theory* — Józef H. Przytycki. arXiv:math/0703096v1 [math.GT] (2007).\n\nA survey chapter of the author's book project: early knot drawings, Gauss's linking integral, Listing, the vortex-atom programme of Thomson and Tait, the knot tables of Tait, Kirkman and Little, and the development into combinatorial topology and the Jones-polynomial era. Rich in primary quotations and a long bibliography (209 references extracted).\n\n**Why it may bear here.** Registered as `przytycki2007knothistory`; cited in the knotted-particles history for the abandonment of the vortex atom and the birth of knot tables. Six images are not yet described (ingested with the image-description step deferred).",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "agent",
+        "id": "claude-code",
+        "model": "not-disclosed",
+        "session": "https://claude.ai/code/session_01Qmmkt4f9V7M6GLoG8XeAZz",
+        "date": "2026-11-22"
+      },
+      "drafted_at": "2026-11-22"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-math-0703096v1",
+    "title_source": "slug",
+    "source_file": "arxiv-math-0703096v1.pdf",
+    "source_sha256": "337c26b7164ff942d1d12242abcc0b7a27c2624b3daaf17eb3b7e4fb83d8ce61",
+    "pages": 53,
+    "arxiv": {
+      "id": "math/0703096",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "3 Mar 2007"
+    },
+    "doi": null,
+    "document_class": null,
+    "extractor_validated": null,
+    "disposition": "ingested source material — attributed to its document, not folio content"
+  }
+}

@@ -1,0 +1,2229 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "mod-phi-convergence-approximation-of-discrete-measures-and-2",
+  "title": "Mod-$\\phi $ convergence: Approximation of discrete measures and harmonic analysis on the torus",
+  "variant": "pdf",
+  "pages": 84,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 3,
+      "pageLabel": "1116",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Poisson approximation of lattice-valued random variables",
+      "number": "1.1",
+      "page": 3,
+      "pageLabel": "1116",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-poisson-approximation-of-lattice-valued-rando"
+    },
+    {
+      "level": 2,
+      "title": "Infinitely divisible distributions and distances between probability measures",
+      "number": "1.2",
+      "page": 5,
+      "pageLabel": "1118",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-infinitely-divisible-distributions-and-distan"
+    },
+    {
+      "level": 2,
+      "title": "Mod-phi convergent sequences of random variables",
+      "number": "1.3",
+      "page": 8,
+      "pageLabel": "1121",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-mod-phi-convergent-sequences-of-random-variab"
+    },
+    {
+      "level": 2,
+      "title": "The Wiener algebra and the general scheme of approximation",
+      "number": "1.4",
+      "page": 10,
+      "pageLabel": "1123",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-the-wiener-algebra-and-the-general-scheme-of"
+    },
+    {
+      "level": 2,
+      "title": "Outline of the paper",
+      "number": "1.5",
+      "page": 14,
+      "pageLabel": "1127",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-15-outline-of-the-paper"
+    },
+    {
+      "level": 1,
+      "title": "Concentration inequalities in the Wiener algebra",
+      "number": "2",
+      "page": 15,
+      "pageLabel": "1128",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-2-concentration-inequalities-in-the-wiener-algeb"
+    },
+    {
+      "level": 2,
+      "title": "Deconvolution residues in the Wiener algebra",
+      "number": "2.1",
+      "page": 16,
+      "pageLabel": "1129",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-21-deconvolution-residues-in-the-wiener-algebra"
+    },
+    {
+      "level": 2,
+      "title": "Estimates of norms in the Wiener algebra",
+      "number": "2.2",
+      "page": 18,
+      "pageLabel": "1131",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-22-estimates-of-norms-in-the-wiener-algebra"
+    },
+    {
+      "level": 1,
+      "title": "Asymptotics of distances for a general scheme of approximation",
+      "number": "3",
+      "page": 23,
+      "pageLabel": "1136",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-3-asymptotics-of-distances-for-a-general-scheme"
+    },
+    {
+      "level": 2,
+      "title": "The local distance",
+      "number": "3.1",
+      "page": 24,
+      "pageLabel": "1137",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-31-the-local-distance"
+    },
+    {
+      "level": 2,
+      "title": "The Kolmogorov distance",
+      "number": "3.2",
+      "page": 27,
+      "pageLabel": "1140",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-32-the-kolmogorov-distance"
+    },
+    {
+      "level": 2,
+      "title": "The total variation distance",
+      "number": "3.3",
+      "page": 29,
+      "pageLabel": "1142",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-33-the-total-variation-distance"
+    },
+    {
+      "level": 2,
+      "title": "Derived scheme of approximation with constant residue",
+      "number": "3.4",
+      "page": 35,
+      "pageLabel": "1148",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-34-derived-scheme-of-approximation-with-constant"
+    },
+    {
+      "level": 1,
+      "title": "One-dimensional applications",
+      "number": "4",
+      "page": 38,
+      "pageLabel": "1151",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-4-one-dimensional-applications"
+    },
+    {
+      "level": 2,
+      "title": "Poisson approximation of a sum of independent Bernoulli variables",
+      "number": "4.1",
+      "page": 38,
+      "pageLabel": "1151",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-41-poisson-approximation-of-a-sum-of-independent"
+    },
+    {
+      "level": 2,
+      "title": "Poisson approximation schemes and formal alphabets",
+      "number": "4.2",
+      "page": 41,
+      "pageLabel": "1154",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-42-poisson-approximation-schemes-and-formal-alph"
+    },
+    {
+      "level": 2,
+      "title": "Number of disjoint cycles of a random permutation",
+      "number": "4.3",
+      "page": 45,
+      "pageLabel": "1158",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-43-number-of-disjoint-cycles-of-a-random-permuta"
+    },
+    {
+      "level": 2,
+      "title": "Mod-Poisson convergence and algebraico-logarithmic singularities",
+      "number": "4.4",
+      "page": 48,
+      "pageLabel": "1161",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-44-mod-poisson-convergence-and-algebraico-logari"
+    },
+    {
+      "level": 2,
+      "title": "Number of distinct prime divisors of a random integer",
+      "number": "4.5",
+      "page": 56,
+      "pageLabel": "1169",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-45-number-of-distinct-prime-divisors-of-a-random"
+    },
+    {
+      "level": 1,
+      "title": "The multi-dimensional case",
+      "number": "5",
+      "page": 58,
+      "pageLabel": "1171",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-5-the-multi-dimensional-case"
+    },
+    {
+      "level": 2,
+      "title": "The multi-dimensional Wiener algebra",
+      "number": "5.1",
+      "page": 60,
+      "pageLabel": "1173",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-51-the-multi-dimensional-wiener-algebra"
+    },
+    {
+      "level": 2,
+      "title": "Asymptotics of distances in the multi-dimensional setting",
+      "number": "5.2",
+      "page": 69,
+      "pageLabel": "1182",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-52-asymptotics-of-distances-in-the-multi-dimensi"
+    },
+    {
+      "level": 2,
+      "title": "Cycle-type of random coloured permutations",
+      "number": "5.3",
+      "page": 72,
+      "pageLabel": "1185",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-53-cycle-type-of-random-coloured-permutations"
+    },
+    {
+      "level": 2,
+      "title": "Distinct prime divisors counted according to their residue classes",
+      "number": "5.4",
+      "page": 78,
+      "pageLabel": "1191",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-54-distinct-prime-divisors-counted-according-to"
+    },
+    {
+      "level": 1,
+      "title": "Bibliography",
+      "number": null,
+      "page": 82,
+      "pageLabel": "1195",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-bibliography"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "1116",
+      "words": 441,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dans des",
+          "heading": false
+        },
+        {
+          "term": "asymptotiques des",
+          "heading": false
+        },
+        {
+          "term": "des approximations",
+          "heading": false
+        },
+        {
+          "term": "freddy delbaen",
+          "heading": false
+        },
+        {
+          "term": "reda chhaibi",
+          "heading": false
+        },
+        {
+          "term": "ashkan nikeghbali",
+          "heading": false
+        },
+        {
+          "term": "méliot ashkan",
+          "heading": false
+        },
+        {
+          "term": "mod-φ convergence",
+          "heading": false
+        }
+      ],
+      "extract": "ANNALES DE L’INSTITUT FOURIER Université Grenoble Alpes Les Annales de l’institut Fourier sont membres du Centre Mersenne pour l’édition scientiﬁque ouverte www.centre-mersenne.org Reda Chhaibi, Freddy Delbaen, Pierre-Loïc Méliot & Ashkan Nikeghbali Mod-φ convergence: Approximation of discrete measures and harmonic analysis on the torus Tome 70, no 3 (2020), p. 1115-1197.",
+      "extractCut": true,
+      "blocks": [
+        "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/prose-sec-front-matter",
+        "library/mod-phi-convergence-approximation-of-discrete-measures-and-2/blocks/figure-img-p001-1"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "1116",
+      "labelEnd": "1116",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-poisson-approximation-of-lattice-valued-rando",
+      "number": "1.1",
+      "title": "Poisson approximation of lattice-valued random variables",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "1116",
+      "labelEnd": "1118",
+      "words": 991,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "poisson approximation",
+          "heading": true
+        },
+        {
+          "term": "random variables",
+          "heading": true
+        },
+        {
+          "term": "divisible law",
+          "heading": false
+        },
+        {
+          "term": "signed measures",
+          "heading": false
+        },
+        {
+          "term": "mod-φ convergence",
+          "heading": false
+        },
+        {
+          "term": "dtv",
+          "heading": false
+        },
+        {
+          "term": "bernoulli random",
+          "heading": false
+        },
+        {
+          "term": "probability measures",
+          "heading": false
+        }
+      ],
+      "extract": "Consider a sequence (Bi)i⩾1 of independent Bernoulli random variables, with P[Bi = 1] = pi and P[Bi = 0] = 1 −pi. We set Xn = n X i=1 Bi. The Poisson approximation ensures that if the pi’s are small but their sum λn = Pn i=1 pi is large, then the distribution of Xn is close to the distribution of a Poisson random variable with parameter λn = Pn i=1 pi. To make this result quantitative, one can introduce the total",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-infinitely-divisible-distributions-and-distan",
+      "number": "1.2",
+      "title": "Infinitely divisible distributions and distances between probability measures",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 8,
+      "labelStart": "1118",
+      "labelEnd": "1121",
+      "words": 1045,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "probability measures",
+          "heading": true
+        },
+        {
+          "term": "lévy khintchine",
+          "heading": false
+        },
+        {
+          "term": "khintchine exponent",
+          "heading": false
+        },
+        {
+          "term": "divisible",
+          "heading": true
+        },
+        {
+          "term": "divisible law",
+          "heading": false
+        },
+        {
+          "term": "compound poisson",
+          "heading": false
+        },
+        {
+          "term": "divisible random",
+          "heading": false
+        },
+        {
+          "term": "poisson variable",
+          "heading": false
+        }
+      ],
+      "extract": "probability measures Let us start by presenting the reference inﬁnitely divisible laws and the distances between probability distributions that we shall work with. Fix a dimension d ⩾1. If X is a random variable with values in Zd, we denote µX its probability law µX(k1, k2, . . . , kd) = P[X = (k1, k2, . . . , kd)], and bµX its Fourier transform, which is deﬁned on the torus Td = (R/2πZ)d: bµX(ξ) = E[ei⟨ξ | X⟩] = X",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-mod-phi-convergent-sequences-of-random-variab",
+      "number": "1.3",
+      "title": "Mod-phi convergent sequences of random variables",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "1121",
+      "labelEnd": "1123",
+      "words": 748,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "random variables",
+          "heading": true
+        },
+        {
+          "term": "eiξ",
+          "heading": false
+        },
+        {
+          "term": "converges mod-poisson",
+          "heading": false
+        },
+        {
+          "term": "mod-poisson convergence",
+          "heading": false
+        },
+        {
+          "term": "mod-φ convergence",
+          "heading": false
+        },
+        {
+          "term": "divisible law",
+          "heading": false
+        },
+        {
+          "term": "limiting function",
+          "heading": false
+        },
+        {
+          "term": "prime divisors",
+          "heading": false
+        }
+      ],
+      "extract": "We consider an inﬁnitely divisible law ν of exponent φ on Zd, and a sequence of random variables (Xn)n∈N on Zd. Following [23, 26, 35], we say that (Xn)n∈N converges mod-φ with parameters λn →+∞and limiting function ψ if E h ei⟨ξ | Xn⟩i = eλnφ(ξ) ψn(ξ) with lim n→∞ψn(ξ) = ψ(ξ). The precise hypotheses on the convergence ψn →ψ will be made explicit when needed; typically, we shall assume it to occur in some space C",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-the-wiener-algebra-and-the-general-scheme-of",
+      "number": "1.4",
+      "title": "The Wiener algebra and the general scheme of approximation",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 14,
+      "labelStart": "1123",
+      "labelEnd": "1127",
+      "words": 1239,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "approximation scheme",
+          "heading": true
+        },
+        {
+          "term": "wiener algebra",
+          "heading": true
+        },
+        {
+          "term": "signed measures",
+          "heading": false
+        },
+        {
+          "term": "convergent fourier",
+          "heading": false
+        },
+        {
+          "term": "proximation scheme",
+          "heading": false
+        },
+        {
+          "term": "discrete measures",
+          "heading": false
+        },
+        {
+          "term": "wiener theorem",
+          "heading": false
+        },
+        {
+          "term": "mod-φ convergent",
+          "heading": false
+        }
+      ],
+      "extract": "approximation As explained before, we shall be interested in more general approximation schemes, with signed measures νn that are closer to µn than the basic scheme. When d = 1, the appearance of signed measures is natural in the setting of the Wiener algebra of absolutely convergent Fourier series (see [37, 39]): TOME 70 (2020), FASCICULE 3 1124 R. CHHAIBI, F. DELBAEN, P.-L. MÉLIOT & A. NIKEGHBALI Definition 1.8. —",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-15-outline-of-the-paper",
+      "number": "1.5",
+      "title": "Outline of the paper",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "1127",
+      "labelEnd": "1128",
+      "words": 580,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "approximation schemes",
+          "heading": false
+        },
+        {
+          "term": "mod-poisson convergence",
+          "heading": false
+        },
+        {
+          "term": "random variables",
+          "heading": false
+        },
+        {
+          "term": "formal alphabets",
+          "heading": false
+        },
+        {
+          "term": "general approximation",
+          "heading": false
+        },
+        {
+          "term": "one-dimensional setting",
+          "heading": false
+        },
+        {
+          "term": "toy-model",
+          "heading": false
+        },
+        {
+          "term": "independent bernoulli",
+          "heading": false
+        }
+      ],
+      "extract": "Placing ourselves in the setting of a general approximation scheme, one basic idea in order to evaluate the distances between the distributions µn and νn is to relate them to the distances between the two residues ψn(ξ) and χn(ξ) in the Wiener algebra A (Td). In Section 2, we prove various concentration inequalities in this algebra, and we explain how to use them in order to compute distances between distributions.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-2-concentration-inequalities-in-the-wiener-algeb",
+      "number": "2",
+      "title": "Concentration inequalities in the Wiener algebra",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "1128",
+      "labelEnd": "1129",
+      "words": 151,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eiξ",
+          "heading": false
+        },
+        {
+          "term": "banach space",
+          "heading": false
+        },
+        {
+          "term": "norm",
+          "heading": false
+        }
+      ],
+      "extract": "For convenience, until Section 5, we shall focus on the one-dimensional case (d = 1) and the corresponding torus T = R/2πZ, which we view as the ANNALES DE L’INSTITUT FOURIER APPROXIMATION OF DISCRETE MEASURES 1129 set of complex numbers of modulus 1. Thus, a function on T will be a func- tion of eiξ with ξ ∈[0, 2π). For p ∈[1, +∞), the space of complex-valued functions on T whose p-powers are Lebesgue integrable",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-21-deconvolution-residues-in-the-wiener-algebra",
+      "number": "2.1",
+      "title": "Deconvolution residues in the Wiener algebra",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": "1129",
+      "labelEnd": "1131",
+      "words": 533,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deconvolution residues",
+          "heading": true
+        },
+        {
+          "term": "wiener algebra",
+          "heading": true
+        },
+        {
+          "term": "signed measure",
+          "heading": false
+        },
+        {
+          "term": "fourier transform",
+          "heading": false
+        },
+        {
+          "term": "fundamental inequality",
+          "heading": false
+        },
+        {
+          "term": "dtv",
+          "heading": false
+        },
+        {
+          "term": "norm",
+          "heading": false
+        },
+        {
+          "term": "sobolev",
+          "heading": false
+        }
+      ],
+      "extract": "Recall that the Wiener algebra A (T) is the complex algebra of absolutely convergent Fourier series, endowed with the norm ∥f∥A = P n∈Z |cn(f)|. We shall use the following property of A (T), which is akin to Poincaré’s inequality for Sobolev spaces (see [39, Section 6.2]): Proposition 2.1. — There is a constant CH = π √ 3 = 1.814 . . . such that ∥f∥A ⩽|c0(f)| + CH∥f ′∥L 2 for all f ∈A . Proof. — Combining the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-22-estimates-of-norms-in-the-wiener-algebra",
+      "number": "2.2",
+      "title": "Estimates of norms in the Wiener algebra",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 23,
+      "labelStart": "1131",
+      "labelEnd": "1136",
+      "words": 1569,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eλφ",
+          "heading": false
+        },
+        {
+          "term": "λmε",
+          "heading": false
+        },
+        {
+          "term": "σ2ξ",
+          "heading": false
+        },
+        {
+          "term": "discrete measures",
+          "heading": false
+        },
+        {
+          "term": "vanishes outside",
+          "heading": false
+        },
+        {
+          "term": "institut fourier",
+          "heading": false
+        },
+        {
+          "term": "delbaen",
+          "heading": false
+        },
+        {
+          "term": "chhaibi",
+          "heading": false
+        }
+      ],
+      "extract": "In this paragraph, we ﬁx two discrete measures µ and ν on Z, both being convolutions of an inﬁnitely divisible law with exponent λφ by residues ψ and χ: bµ(ξ) = eλφ(ξ) ψ(ξ); bν(ξ) = eλφ(ξ) χ(ξ). In Section 3, we shall recover the setting of a general approximation scheme by adding indices n to this situation. We denote m and σ2 the ﬁrst two coeﬃcients of the Taylor expansion of φ around 0: φ(ξ) = miξ −σ2ξ2 2 +",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-3-asymptotics-of-distances-for-a-general-scheme",
+      "number": "3",
+      "title": "Asymptotics of distances for a general scheme of approximation",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "1136",
+      "labelEnd": "1137",
+      "words": 423,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "general scheme",
+          "heading": true
+        },
+        {
+          "term": "approximation",
+          "heading": true
+        },
+        {
+          "term": "dtv",
+          "heading": false
+        },
+        {
+          "term": "distances",
+          "heading": true
+        },
+        {
+          "term": "limn",
+          "heading": false
+        },
+        {
+          "term": "eλnφ",
+          "heading": false
+        },
+        {
+          "term": "convergences",
+          "heading": false
+        },
+        {
+          "term": "residues",
+          "heading": false
+        }
+      ],
+      "extract": "approximation We now consider a general scheme of approximation of a sequence of Z-valued random variables (Xn)n∈N by a sequence of laws (νn)n∈N, with c µn(ξ) = E[eiξXn] = eλnφ(ξ) ψn(ξ) , c νn(ξ) = eλnφ(ξ) χn(ξ) , limn→∞ψn(ξ) = ψ(ξ) and limn→∞χn(ξ) = χ(ξ) as in Deﬁnition 1.10. We can immediately deduce from Theorem 2.3: Proposition 3.1. — Consider a general scheme of approximation such that the convergences ψn →ψ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-31-the-local-distance",
+      "number": "3.1",
+      "title": "The local distance",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 27,
+      "labelStart": "1137",
+      "labelEnd": "1140",
+      "words": 898,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "σ2λn",
+          "heading": false
+        },
+        {
+          "term": "λnm",
+          "heading": false
+        },
+        {
+          "term": "local distance",
+          "heading": true
+        },
+        {
+          "term": "ikξ",
+          "heading": false
+        },
+        {
+          "term": "eλnφ",
+          "heading": false
+        },
+        {
+          "term": "delbaen",
+          "heading": false
+        },
+        {
+          "term": "chhaibi",
+          "heading": false
+        },
+        {
+          "term": "nikeghbali",
+          "heading": false
+        }
+      ],
+      "extract": "Until the end of this section, (Xn)n∈N denotes a sequence that is mod-φ convergent with parameters (λn)n∈N, and (νn)n∈N is a scheme of approx- imation of it, which satisﬁes the hypothesis (H1). The main tool in the computation of the local distance dL(µn, νn) is: Proposition 3.2. — The error term being uniform in k ∈Z, one has µn({k}) −νn({k}) = (−1)r+1 β √ 2π (σ2λn) r 2 +1 ∂r+1 ∂αr+1 \u0010 e−α2 2 \u0011 α= k−λnm σ√ λn + o \u0012",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-32-the-kolmogorov-distance",
+      "number": "3.2",
+      "title": "The Kolmogorov distance",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 29,
+      "labelStart": "1140",
+      "labelEnd": "1142",
+      "words": 533,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eλnφ",
+          "heading": false
+        },
+        {
+          "term": "σ2λn",
+          "heading": false
+        },
+        {
+          "term": "exponent λnφ",
+          "heading": false
+        },
+        {
+          "term": "divisible random",
+          "heading": false
+        },
+        {
+          "term": "random variable",
+          "heading": false
+        },
+        {
+          "term": "λnm",
+          "heading": false
+        },
+        {
+          "term": "ikξ",
+          "heading": false
+        },
+        {
+          "term": "kolmogorov",
+          "heading": true
+        }
+      ],
+      "extract": "To evaluate the Kolmogorov distance between µn and νn, we use the classical integral formula µn([[k, +∞]]) −νn([[k, +∞]]) = Z T (ψn(ξ) −χn(ξ)) eλnφ(ξ) e−ikξ 1 −e−iξ dξ 2π . Indeed, for any l ⩾k, one has µn([[k, l]]) −νn([[k, l]]) = l X j=k Z T (ψn(ξ) −χn(ξ)) eλnφ(ξ) e−ijξ dξ 2π = Z T (ψn(ξ) −χn(ξ)) eλnφ(ξ) e−ikξ −e−i(l+1)ξ 1 −e−iξ dξ 2π . ANNALES DE L’INSTITUT FOURIER APPROXIMATION OF DISCRETE MEASURES 1141 Since",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-33-the-total-variation-distance",
+      "number": "3.3",
+      "title": "The total variation distance",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 35,
+      "labelStart": "1142",
+      "labelEnd": "1148",
+      "words": 1876,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eiξ",
+          "heading": false
+        },
+        {
+          "term": "λnm",
+          "heading": false
+        },
+        {
+          "term": "variation distance",
+          "heading": true
+        },
+        {
+          "term": "exponent λnφ",
+          "heading": false
+        },
+        {
+          "term": "eλnφ",
+          "heading": false
+        },
+        {
+          "term": "dtv",
+          "heading": false
+        },
+        {
+          "term": "σ2λn",
+          "heading": false
+        },
+        {
+          "term": "hypothe sis",
+          "heading": false
+        }
+      ],
+      "extract": "Before we estimate the total variation distance between the laws µn and νn, let us make some observations with Proposition 3.2. Assume again that one has a general scheme of approximation which satisﬁes the hypothe- sis (H1). For any ﬁxed interval I = [a, b], one can write dTV(µn, νn) = X k∈Z |µn({k}) −νn({k})| ⩾ ⌊λnm+b σ√λn⌋ X k=⌊λnm+a σ√λn⌋ |µn({k}) −νn({k})| ⩾ |βn| √ 2π (σ2λn) r 2 +1   ⌊λnm+b σ √λn⌋ X k= ⌊λnm+a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-34-derived-scheme-of-approximation-with-constant",
+      "number": "3.4",
+      "title": "Derived scheme of approximation with constant residue",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 38,
+      "labelStart": "1148",
+      "labelEnd": "1151",
+      "words": 795,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "derived scheme",
+          "heading": true
+        },
+        {
+          "term": "constant residue",
+          "heading": true
+        },
+        {
+          "term": "eλnφ",
+          "heading": false
+        },
+        {
+          "term": "approximation",
+          "heading": true
+        },
+        {
+          "term": "dtv",
+          "heading": false
+        },
+        {
+          "term": "σ2λn",
+          "heading": false
+        },
+        {
+          "term": "institut fourier",
+          "heading": false
+        },
+        {
+          "term": "discrete measures",
+          "heading": false
+        }
+      ],
+      "extract": "To conclude this section, let us simplify a bit the general setting of ap- proximation of discrete measures presented in Deﬁnition 1.10. Until now, we have worked with measures νn such that c νn(ξ) = eλnφ(ξ) χn(ξ), where the residues χn(ξ) converge to a residue χ(ξ), and on the other hand approximate the residues ψn(ξ) associated to the random variables Xn. For instance, χn(ξ) can be the Laurent polynomial of degree",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-4-one-dimensional-applications",
+      "number": "4",
+      "title": "One-dimensional applications",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 38,
+      "labelStart": "1151",
+      "labelEnd": "1151",
+      "words": 60,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "one-dimensional",
+          "heading": true
+        },
+        {
+          "term": "imation",
+          "heading": false
+        },
+        {
+          "term": "ous",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we apply our main Theorems 3.3, 3.6 and 3.11 to vari- ous one-dimensional examples, most of them coming from number theory or combinatorics. In each case, we compute the exact asymptotics of the distances for the basic approximation scheme, and for some better approx- imation schemes, which are derived from the approximation schemes of order r ⩾1.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-015-41-poisson-approximation-of-a-sum-of-independent",
+      "number": "4.1",
+      "title": "Poisson approximation of a sum of independent Bernoulli variables",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 41,
+      "labelStart": "1151",
+      "labelEnd": "1154",
+      "words": 1065,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eiξ",
+          "heading": false
+        },
+        {
+          "term": "poisson",
+          "heading": true
+        },
+        {
+          "term": "approximation",
+          "heading": true
+        },
+        {
+          "term": "approximation scheme",
+          "heading": false
+        },
+        {
+          "term": "dtv",
+          "heading": false
+        },
+        {
+          "term": "eλn",
+          "heading": false
+        },
+        {
+          "term": "random variables",
+          "heading": false
+        },
+        {
+          "term": "bernoulli",
+          "heading": true
+        }
+      ],
+      "extract": "variables As in Example 1.5, we consider a sum Xn = Pn j=1 B(pj) of independent Bernoulli random variables, with P∞ j=1 pj = +∞and P∞ j=1(pj)2 < +∞. The corresponding Fourier transforms are: c µn(ξ) = eλn(eiξ−1) ψn(ξ) with ψn(ξ) = n Y j=1 (1 + pj(eiξ −1)) e−pj(eiξ−1). It is convenient to have an exact formula for the expansion in Laurent series of the deconvolution residues ψn. Denote p1,n = 0 and pk⩾2,n = n X j=1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-42-poisson-approximation-schemes-and-formal-alph",
+      "number": "4.2",
+      "title": "Poisson approximation schemes and formal alphabets",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 45,
+      "labelStart": "1154",
+      "labelEnd": "1158",
+      "words": 1031,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "formal alphabets",
+          "heading": true
+        },
+        {
+          "term": "approximation schemes",
+          "heading": true
+        },
+        {
+          "term": "true alphabet",
+          "heading": false
+        },
+        {
+          "term": "qdeg",
+          "heading": false
+        },
+        {
+          "term": "algebras sym",
+          "heading": false
+        },
+        {
+          "term": "random monic",
+          "heading": false
+        },
+        {
+          "term": "eiξ",
+          "heading": false
+        },
+        {
+          "term": "factorial cumulants",
+          "heading": false
+        }
+      ],
+      "extract": "The description of the approximation schemes and of the asymptotic es- timates for the distances by means of the parameters pk and ek is actually possible for many other examples of discrete random variables. Thus, the ANNALES DE L’INSTITUT FOURIER APPROXIMATION OF DISCRETE MEASURES 1155 combinatorics of approximation schemes can be encoded in the algebra of symmetric functions Sym. From an algebraic point of view,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-43-number-of-disjoint-cycles-of-a-random-permuta",
+      "number": "4.3",
+      "title": "Number of disjoint cycles of a random permutation",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 48,
+      "labelStart": "1158",
+      "labelEnd": "1161",
+      "words": 1062,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "random permutation",
+          "heading": true
+        },
+        {
+          "term": "disjoint cycles",
+          "heading": true
+        },
+        {
+          "term": "eiξ",
+          "heading": false
+        },
+        {
+          "term": "weighted measures",
+          "heading": false
+        },
+        {
+          "term": "generalized weighted",
+          "heading": false
+        },
+        {
+          "term": "generating series",
+          "heading": false
+        },
+        {
+          "term": "limiting residue",
+          "heading": false
+        },
+        {
+          "term": "institut fourier",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we study the number ℓn of disjoint cycles of a random permutation σn ∈Sn. If the permutation σn is chosen according to the uni- form probability measure (Example 1.6), then the discussion of Section 4.1 applies, with the parameters pj taken equal to 1 j , and λn = n X j=1 1 j = Hn ≃log n; +∞ X j=n+1 (pj)2 ≃1 n = o \u0012 1 (λn)r \u0013 for every r ⩾0. Therefore, if one looks for instance at the derived scheme",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-44-mod-poisson-convergence-and-algebraico-logari",
+      "number": "4.4",
+      "title": "Mod-Poisson convergence and algebraico-logarithmic singularities",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 56,
+      "labelStart": "1161",
+      "labelEnd": "1169",
+      "words": 2490,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mod-poisson convergence",
+          "heading": true
+        },
+        {
+          "term": "zdeg exp",
+          "heading": false
+        },
+        {
+          "term": "log qzk",
+          "heading": false
+        },
+        {
+          "term": "random monic",
+          "heading": false
+        },
+        {
+          "term": "algebraico-logarithmic",
+          "heading": true
+        },
+        {
+          "term": "monic irreducible",
+          "heading": false
+        },
+        {
+          "term": "algebraico-logarithmic singularity",
+          "heading": false
+        },
+        {
+          "term": "monic polynomials",
+          "heading": false
+        }
+      ],
+      "extract": "singularities The discussion of Section 4.3 can be extended to any statistic of a random combinatorial object, whose double generating series admits a certain form of singularity. Suppose given a combinatorial class, that is to say a sequence C = (Cn)n∈N of ﬁnite sets. We write card Cn = |Cn|. In this paragraph, we shall in particular study the following two examples, cf. [32, Section 5, Example 2] and [30, p. 449",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-45-number-of-distinct-prime-divisors-of-a-random",
+      "number": "4.5",
+      "title": "Number of distinct prime divisors of a random integer",
+      "level": 2,
+      "pageStart": 56,
+      "pageEnd": 58,
+      "labelStart": "1169",
+      "labelEnd": "1171",
+      "words": 670,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "erdős kac",
+          "heading": false
+        },
+        {
+          "term": "eiξ",
+          "heading": false
+        },
+        {
+          "term": "gaussian approximation",
+          "heading": false
+        },
+        {
+          "term": "kolmogorov distance",
+          "heading": false
+        },
+        {
+          "term": "mod-poisson convergence",
+          "heading": false
+        },
+        {
+          "term": "log",
+          "heading": false
+        },
+        {
+          "term": "random",
+          "heading": true
+        },
+        {
+          "term": "kac central",
+          "heading": false
+        }
+      ],
+      "extract": "As pointed out in the introduction, number theory provides another area where the phenomenon of mod-Poisson convergence is prominent; see in particular the discussion of [26, Section 7.2]. Consider as in Example 1.7 the number ω(Nn) of distinct prime divisors of a random integer chosen TOME 70 (2020), FASCICULE 3 1170 R. CHHAIBI, F. DELBAEN, P.-L. MÉLIOT & A. NIKEGHBALI uniformly in [[1, n]]. This quantity satisﬁes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-5-the-multi-dimensional-case",
+      "number": "5",
+      "title": "The multi-dimensional case",
+      "level": 1,
+      "pageStart": 58,
+      "pageEnd": 60,
+      "labelStart": "1171",
+      "labelEnd": "1173",
+      "words": 553,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multi-dimensional",
+          "heading": true
+        },
+        {
+          "term": "random variables",
+          "heading": false
+        },
+        {
+          "term": "discrete measures",
+          "heading": false
+        },
+        {
+          "term": "factorization property",
+          "heading": false
+        },
+        {
+          "term": "limn",
+          "heading": false
+        },
+        {
+          "term": "order asymptotics",
+          "heading": false
+        },
+        {
+          "term": "captured",
+          "heading": false
+        },
+        {
+          "term": "divisible",
+          "heading": false
+        }
+      ],
+      "extract": "In this last section, we extend the theoretical results of Sections 2 and 3 to the multi-dimensional case, that is to say that we are going to approximate TOME 70 (2020), FASCICULE 3 1172 R. CHHAIBI, F. DELBAEN, P.-L. MÉLIOT & A. NIKEGHBALI the laws of random variables with values in Zd⩾2. Thus, we consider a sequence of random variables (Xn)n∈N in Zd that converges mod-φ with parameters λn, where φ is an inﬁnitely",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-51-the-multi-dimensional-wiener-algebra",
+      "number": "5.1",
+      "title": "The multi-dimensional Wiener algebra",
+      "level": 2,
+      "pageStart": 60,
+      "pageEnd": 69,
+      "labelStart": "1173",
+      "labelEnd": "1182",
+      "words": 2572,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eλφ",
+          "heading": false
+        },
+        {
+          "term": "λmi",
+          "heading": false
+        },
+        {
+          "term": "institut fourier",
+          "heading": false
+        },
+        {
+          "term": "incomplete bell",
+          "heading": false
+        },
+        {
+          "term": "discrete measures",
+          "heading": false
+        },
+        {
+          "term": "constant hidden",
+          "heading": false
+        },
+        {
+          "term": "bell polynomial",
+          "heading": false
+        },
+        {
+          "term": "eiξd",
+          "heading": false
+        }
+      ],
+      "extract": "Definition 5.1. — The multi-dimensional Wiener algebra A = A (Td) is the algebra of continuous functions on the d-torus whose Fourier series converges absolutely. It is a Banach algebra for the norm ∥f∥A := X n∈Zd |cn(f)|, where cn(f) denotes the Fourier coeﬃcient cn(f) = Z 2π θ1=0 · · · Z 2π θd=0 f(eiθ1, . . . , eiθd) e−iPd i=1 niθi dθ (2π)d , where n = (n1, . . . , nd). As in the case d = 1, if µ is a (signed)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-52-asymptotics-of-distances-in-the-multi-dimensi",
+      "number": "5.2",
+      "title": "Asymptotics of distances in the multi-dimensional setting",
+      "level": 2,
+      "pageStart": 69,
+      "pageEnd": 72,
+      "labelStart": "1182",
+      "labelEnd": "1185",
+      "words": 1055,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multi-dimensional",
+          "heading": true
+        },
+        {
+          "term": "λnm",
+          "heading": false
+        },
+        {
+          "term": "mod-φ convergent",
+          "heading": false
+        },
+        {
+          "term": "h2d",
+          "heading": false
+        },
+        {
+          "term": "h1d",
+          "heading": false
+        },
+        {
+          "term": "iξi",
+          "heading": false
+        },
+        {
+          "term": "dtv",
+          "heading": false
+        },
+        {
+          "term": "institut fourier",
+          "heading": false
+        }
+      ],
+      "extract": "As in the one-dimensional case, a combination of the Laplace method and of the norm estimates given by Corollary 5.6 yields under appropri- ate hypotheses the asymptotics of dL(µn, νn) and of dTV(µn, νn), where (νn)n∈N is a general scheme of approximation of the laws µn of the mod-φ convergent random variables Xn in Zd. The only diﬀerence is that, for the computation of the total variation distance, we shall need to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-53-cycle-type-of-random-coloured-permutations",
+      "number": "5.3",
+      "title": "Cycle-type of random coloured permutations",
+      "level": 2,
+      "pageStart": 72,
+      "pageEnd": 78,
+      "labelStart": "1185",
+      "labelEnd": "1191",
+      "words": 2122,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "random coloured",
+          "heading": true
+        },
+        {
+          "term": "coloured permutations",
+          "heading": true
+        },
+        {
+          "term": "cycle-type",
+          "heading": true
+        },
+        {
+          "term": "coloured transposition",
+          "heading": false
+        },
+        {
+          "term": "same cycle-type",
+          "heading": false
+        },
+        {
+          "term": "eiξi",
+          "heading": false
+        },
+        {
+          "term": "institut fourier",
+          "heading": false
+        },
+        {
+          "term": "random independent",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we study random elements of the group of d-coloured permutations: Gn = Sn ≀(Z/dZ) = Sn ⋉(Z/dZ)n . It can be viewed as the group of complex matrices of size n times n, with one non-zero coeﬃcient on each row and each column, and these non- zero coeﬃcients belonging to the group of d-th roots of unity Z/dZ = {1, ω, ω2, . . . , ωd−1}, with ω = e 2iπ d . Another alternative deﬁnition is the following:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-54-distinct-prime-divisors-counted-according-to",
+      "number": "5.4",
+      "title": "Distinct prime divisors counted according to their residue classes",
+      "level": 2,
+      "pageStart": 78,
+      "pageEnd": 82,
+      "labelStart": "1191",
+      "labelEnd": "1195",
+      "words": 1296,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "prime divisors",
+          "heading": true
+        },
+        {
+          "term": "distinct prime",
+          "heading": true
+        },
+        {
+          "term": "dirichlet characters",
+          "heading": false
+        },
+        {
+          "term": "dirichlet series",
+          "heading": false
+        },
+        {
+          "term": "selberg delange",
+          "heading": false
+        },
+        {
+          "term": "residue",
+          "heading": true
+        },
+        {
+          "term": "eiξd",
+          "heading": false
+        },
+        {
+          "term": "delange method",
+          "heading": false
+        }
+      ],
+      "extract": "classes Similar to the generalisation of Section 4.3 by the study of random coloured permutations, there is a natural generalisation of the discussion of Section 4.5 on distinct prime divisors of a random integer, which involves residue classes of prime numbers. Fix an integer a ⩾2, and denote d = ϕ(a) the cardinality of the multi- plicative group (Z/aZ)∗. This quantity is the usual Euler ϕ-function, and it is equal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-bibliography",
+      "number": null,
+      "title": "Bibliography",
+      "level": 1,
+      "pageStart": 82,
+      "pageEnd": 84,
+      "labelStart": "1195",
+      "labelEnd": "1197",
+      "words": 1350,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "poisson approximations",
+          "heading": false
+        },
+        {
+          "term": "eth zürich",
+          "heading": false
+        },
+        {
+          "term": "poisson binomial",
+          "heading": false
+        },
+        {
+          "term": "universität zürich",
+          "heading": false
+        },
+        {
+          "term": "probab",
+          "heading": false
+        },
+        {
+          "term": "mod-φ convergence",
+          "heading": false
+        },
+        {
+          "term": "erdős kac",
+          "heading": false
+        },
+        {
+          "term": "ihrer grenzgebiete",
+          "heading": false
+        }
+      ],
+      "extract": "[1] R. Arratia, A. D. Barbour & S. Tavaré, Logarithmic Combinatorial Structures: a Probabilistic Approach, EMS Monographs in Mathematics, European Mathemat- ical Society, 2003. [2] R. Arratia, L. Goldstein & L. Gordon, “Two moments suﬃce for Poisson ap- proximations: the Chen-–Stein method”, Ann. Probab. 17 (1989), no. 1, p. 9-25. [3] E. Artin, The gamma function, Athena Series. Selected Topics in Mathematics, Holt,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "approximation scheme",
+      "heading": true
+    },
+    {
+      "term": "institut fourier",
+      "heading": false
+    },
+    {
+      "term": "poisson approximation",
+      "heading": true
+    },
+    {
+      "term": "discrete measures",
+      "heading": false
+    },
+    {
+      "term": "poisson random",
+      "heading": true
+    },
+    {
+      "term": "eiξ",
+      "heading": false
+    },
+    {
+      "term": "general approximation",
+      "heading": true
+    },
+    {
+      "term": "signed measures",
+      "heading": false
+    },
+    {
+      "term": "random variables",
+      "heading": true
+    },
+    {
+      "term": "divisible random",
+      "heading": false
+    },
+    {
+      "term": "gaussian approximation",
+      "heading": false
+    },
+    {
+      "term": "poissonian approximation",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": "1116",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "1117",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "1118",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "1119",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "1120",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "1121",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "1122",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "1123",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "1124",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "1125",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "1126",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "1127",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "1128",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "1129",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "1130",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "1131",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "1132",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "1133",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "1134",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "1135",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "1136",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "1137",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "1138",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "1139",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "1140",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "1141",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "1142",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "1143",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "1144",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "1145",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "1146",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "1147",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "1148",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "1149",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "1150",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "1151",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "1152",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "1153",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "1154",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "1155",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "1156",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "1157",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "1158",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "1159",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "1160",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "1161",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "1162",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "1163",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "1164",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "1165",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "1166",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "1167",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "1168",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "1169",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "1170",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "1171",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "1172",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "1173",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "1174",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "1175",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "1176",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "1177",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "1178",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "1179",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 67,
+      "label": "1180",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "1181",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 69,
+      "label": "1182",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "1183",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 71,
+      "label": "1184",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 72,
+      "label": "1185",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 73,
+      "label": "1186",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 74,
+      "label": "1187",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 75,
+      "label": "1188",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 76,
+      "label": "1189",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 77,
+      "label": "1190",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 78,
+      "label": "1191",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 79,
+      "label": "1192",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 80,
+      "label": "1193",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 81,
+      "label": "1194",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 82,
+      "label": "1195",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 83,
+      "label": "1196",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 84,
+      "label": "1197",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "2.1",
+      "title": "The cut-function c(ξ)",
+      "page": 19,
+      "pageLabel": "1132",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.1",
+      "title": "The Hermite function G9; it attains its global extremas at the smallest zeroes of H10",
+      "page": 26,
+      "pageLabel": "1139",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4.1",
+      "title": "Formal alphabets associated to the mod-Poisson convergent sequences",
+      "page": 44,
+      "pageLabel": "1157",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.1",
+      "title": "Domain of analyticity of the generating series gΘ(z)",
+      "page": 47,
+      "pageLabel": "1160",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.2",
+      "title": "The functional graph associated to the function f",
+      "page": 50,
+      "pageLabel": "1163",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5.1",
+      "title": "The function e−x2+y2",
+      "page": 77,
+      "pageLabel": "1190",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 26,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 27,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 1,
+      "note": "5 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p82); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 14
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 27 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/mod-phi-convergence-approximation-of-discrete-measures-and-2"
+  }
+}

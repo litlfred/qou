@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9901120v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-9901120v3",
+  "contains": [
+    "library/arxiv-math-9901120v3/sections/sec-front-matter",
+    "library/arxiv-math-9901120v3/sections/sec-000",
+    "library/arxiv-math-9901120v3/sections/sec-001",
+    "library/arxiv-math-9901120v3/sections/sec-002",
+    "library/arxiv-math-9901120v3/sections/sec-003"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "A table of boundary slopes of Montesinos knots — This note corrects errors in Hatcher and Oertel’s table of boundary slopes of Montesinos knots which have projec- tions with 10 or fewer crossings.\n\n**A table of boundary slopes of Montesinos knots**\n\n*Nathan M. Dunfield1*\n\n4 pp, 5 sections.\n\n**Abstract.** This note corrects errors in Hatcher and Oertel’s table of boundary slopes of Montesinos knots which have projec- tions with 10 or fewer crossings.\n\n**Outline.** Front matter; 1 Introduction; 2 Revised table; 3 Preparing the table; 4 Getting the program",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/9901120&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-9901120v3",
+    "title_source": "slug",
+    "source_file": "9901120v3.pdf",
+    "source_sha256": "782034b674f958af57632cf8cab5c42015ed7cd01702930740b8d541141c0051",
+    "pages": 4,
+    "arxiv": {
+      "id": "math/9901120",
+      "version": "3",
+      "primary_class": null,
+      "stamp_date": "18 Jun 2010"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

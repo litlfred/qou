@@ -1,0 +1,52 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/hyperbolicandneumann/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "hyperbolicandneumann",
+  "contains": [
+    "library/hyperbolicandneumann/sections/sec-front-matter",
+    "library/hyperbolicandneumann/sections/sec-000",
+    "library/hyperbolicandneumann/sections/sec-001",
+    "library/hyperbolicandneumann/sections/sec-002",
+    "library/hyperbolicandneumann/sections/sec-003",
+    "library/hyperbolicandneumann/sections/sec-004",
+    "library/hyperbolicandneumann/sections/sec-005",
+    "library/hyperbolicandneumann/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Second copy of Garoufalidis & Zagier, Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann — see library/arxiv-2304.12545v1/, which is the same document.\n\n**Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann** — Stavros Garoufalidis and Don Zagier.\n\n**This is a duplicate copy.** The same document is held at `library/arxiv-2304.12545v1/`, which carries the arXiv identifier and should be preferred. Both were ingested because the doc-id derivation is per-file and the two files have different names; nothing detects that their *contents* are the same.\n\nKept rather than deleted so nothing that already cites this path breaks. See the arXiv copy for the summary.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "agent",
+        "id": "claude-code",
+        "model": "not-disclosed",
+        "session": "https://claude.ai/code/session_01AWgkrPkXGZ1Hb2UmMmFMcP",
+        "date": "2026-08-15"
+      },
+      "drafted_at": "2026-08-15"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "hyperbolicandneumann",
+    "title_source": "slug",
+    "source_file": "HyperbolicAndNeumann.pdf",
+    "source_sha256": "3d66fe4c64bdc62b68748987311a0a57ea3f68cb257ba9c9e7b57866287bb7b1",
+    "pages": 19,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

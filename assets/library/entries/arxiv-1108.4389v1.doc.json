@@ -1,0 +1,2527 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1108.4389v1",
+  "title": "Gauge Theories Labelled by Three-Manifolds",
+  "variant": "pdf",
+  "pages": 58,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 3,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Geometry of 3-manifolds",
+      "number": "2",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-geometry-of-3-manifolds"
+    },
+    {
+      "level": 2,
+      "title": "Building blocks",
+      "number": "2.1",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-21-building-blocks"
+    },
+    {
+      "level": 2,
+      "title": "Gluing",
+      "number": "2.2",
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-22-gluing"
+    },
+    {
+      "level": 2,
+      "title": "Geodesic boundaries",
+      "number": "2.3",
+      "page": 13,
+      "pageLabel": "12",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-23-geodesic-boundaries"
+    },
+    {
+      "level": 2,
+      "title": "Torus cusps",
+      "number": "2.4",
+      "page": 17,
+      "pageLabel": "16",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-24-torus-cusps"
+    },
+    {
+      "level": 2,
+      "title": "Changing the triangulation",
+      "number": "2.5",
+      "page": 19,
+      "pageLabel": "18",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-25-changing-the-triangulation"
+    },
+    {
+      "level": 1,
+      "title": "Operations on 3d abelian theories",
+      "number": "3",
+      "page": 20,
+      "pageLabel": "19",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-3-operations-on-3d-abelian-theories"
+    },
+    {
+      "level": 2,
+      "title": "An $Sp(2N,{\\mathbb Z})$ action on 3d CFTs with $U(1)^N$ flavor symmetry",
+      "number": "3.1",
+      "page": 21,
+      "pageLabel": "20",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-31-an-sp2nmathbb-z-action-on-3d-cfts-with-u1n-fl"
+    },
+    {
+      "level": 3,
+      "title": "Generalities",
+      "number": "3.1.1",
+      "page": 21,
+      "pageLabel": "20",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-311-generalities"
+    },
+    {
+      "level": 3,
+      "title": "Adding supersymmetry",
+      "number": "3.1.2",
+      "page": 23,
+      "pageLabel": "22",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-312-adding-supersymmetry"
+    },
+    {
+      "level": 2,
+      "title": "A ${\\mathbb Z}_2$ action on 3d $\\mathcal{N}=2$ theories with a chiral operator",
+      "number": "3.2",
+      "page": 24,
+      "pageLabel": "23",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-32-a-mathbb-z-2-action-on-3d-mathcaln2-theories"
+    },
+    {
+      "level": 2,
+      "title": "Useful $\\mathcal{N}=2$ mirror symmetries",
+      "number": "3.3",
+      "page": 25,
+      "pageLabel": "24",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-33-useful-mathcaln2-mirror-symmetries"
+    },
+    {
+      "level": 1,
+      "title": "Construction of $T_M$",
+      "number": "4",
+      "page": 30,
+      "pageLabel": "29",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-013-4-construction-of-t-m"
+    },
+    {
+      "level": 2,
+      "title": "Definition",
+      "number": "4.1",
+      "page": 30,
+      "pageLabel": "29",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-014-41-definition"
+    },
+    {
+      "level": 2,
+      "title": "The bipyramid and the 2--3 move",
+      "number": "4.2",
+      "page": 33,
+      "pageLabel": "32",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-015-42-the-bipyramid-and-the-2--3-move"
+    },
+    {
+      "level": 2,
+      "title": "The flip",
+      "number": "4.3",
+      "page": 36,
+      "pageLabel": "35",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-016-43-the-flip"
+    },
+    {
+      "level": 2,
+      "title": "$T_M$ as a boundary condition",
+      "number": "4.4",
+      "page": 37,
+      "pageLabel": "36",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-017-44-t-m-as-a-boundary-condition"
+    },
+    {
+      "level": 2,
+      "title": "The octahedron",
+      "number": "4.5",
+      "page": 37,
+      "pageLabel": "36",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-018-45-the-octahedron"
+    },
+    {
+      "level": 2,
+      "title": "Figure-eight knot",
+      "number": "4.6",
+      "page": 39,
+      "pageLabel": "38",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-019-46-figure-eight-knot"
+    },
+    {
+      "level": 1,
+      "title": "Moduli space on ${\\mathbb R}^2\\times S^1$",
+      "number": "5",
+      "page": 41,
+      "pageLabel": "40",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The tetrahedron",
+      "number": "5.1",
+      "page": 42,
+      "pageLabel": "41",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-020-51-the-tetrahedron"
+    },
+    {
+      "level": 2,
+      "title": "The bipyramid",
+      "number": "5.2",
+      "page": 44,
+      "pageLabel": "43",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-021-52-the-bipyramid"
+    },
+    {
+      "level": 1,
+      "title": "$S^3_b$ partition functions",
+      "number": "6",
+      "page": 45,
+      "pageLabel": "44",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-022-6-s3-b-partition-functions"
+    },
+    {
+      "level": 2,
+      "title": "Chirals and tetrahedra",
+      "number": "6.1",
+      "page": 47,
+      "pageLabel": "46",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-023-61-chirals-and-tetrahedra"
+    },
+    {
+      "level": 2,
+      "title": "Gluing and bipyramids",
+      "number": "6.2",
+      "page": 48,
+      "pageLabel": "47",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-024-62-gluing-and-bipyramids"
+    },
+    {
+      "level": 2,
+      "title": "Figure-eight knot",
+      "number": "6.3",
+      "page": 50,
+      "pageLabel": "49",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-025-63-figure-eight-knot"
+    },
+    {
+      "level": 2,
+      "title": "Relation to moduli spaces on ${\\mathbb R}^2\\times S^1$",
+      "number": "6.4",
+      "page": 51,
+      "pageLabel": "50",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Line operators and $q$--difference equations",
+      "number": "7",
+      "page": 52,
+      "pageLabel": "51",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-026-7-line-operators-and-q--difference-equations"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 343,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gauge theories",
+          "heading": false
+        },
+        {
+          "term": "triangulated manifolds",
+          "heading": false
+        },
+        {
+          "term": "figure-eight knot",
+          "heading": false
+        },
+        {
+          "term": "bipyramid",
+          "heading": false
+        },
+        {
+          "term": "partition functions",
+          "heading": false
+        },
+        {
+          "term": "gluing",
+          "heading": false
+        },
+        {
+          "term": "usa",
+          "heading": false
+        },
+        {
+          "term": "mirror",
+          "heading": false
+        }
+      ],
+      "extract": "Preprint typeset in JHEP style - HYPER VERSION Gauge Theories Labelled by Three-Manifolds Tudor Dimofte1 and Davide Gaiotto1 and Sergei Gukov2,3 1 Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA 2 California Institute of Technology, Pasadena, CA 91125, USA 3 Max-Planck-Institut f¨ur Mathematik, Vivatsgasse 7, D-53111 Bonn, Germany Abstract: We propose a dictionary between geometry of",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1108.4389v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 8,
+      "labelStart": "2",
+      "labelEnd": "7",
+      "words": 2326,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "four-dimensional cal",
+          "heading": false
+        },
+        {
+          "term": "cal scft",
+          "heading": false
+        },
+        {
+          "term": "cal theories",
+          "heading": false
+        },
+        {
+          "term": "six-dimensional theory",
+          "heading": false
+        },
+        {
+          "term": "three-dimensional cal",
+          "heading": false
+        },
+        {
+          "term": "four-dimensional gauge",
+          "heading": false
+        },
+        {
+          "term": "cobordism width",
+          "heading": false
+        },
+        {
+          "term": "semi-infinite tubular",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:intro label=\"sec:intro\"} One of the predictions of String Theory/M-Theory is the existence of a discrete family of maximally symmetric six-dimensional conformal field theories, labeled by a simply-laced Lie algebra $\\mathfrak{g}$. These theories lack a Lagrangian definition, but some of their properties are known. The existence of such six-dimensional SCFT's has a simple, but perhaps surprising, consequence:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-geometry-of-3-manifolds",
+      "number": "2",
+      "title": "Geometry of 3-manifolds",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 592,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "geodesic boundaries",
+          "heading": false
+        },
+        {
+          "term": "flat connections",
+          "heading": false
+        },
+        {
+          "term": "cusp boundaries",
+          "heading": false
+        },
+        {
+          "term": "mathcal partial",
+          "heading": false
+        },
+        {
+          "term": "geodesic boundary",
+          "heading": false
+        },
+        {
+          "term": "text flat",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic metrics",
+          "heading": false
+        },
+        {
+          "term": "omega partial",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:geom label=\"sec:geom\"} In this section, we discuss the geometric construction of oriented 3-manifolds $M$ from basic building blocks: ideal tetrahedra. Such \"ideal triangulations\" in three dimensions were initiated by Thurston [@thurston-1980]. More precisely, we wish to build 3-manifolds that support irreducible flat $SL(2,{\\mathbb C})$ connections $\\mathcal{A}$. For this purpose, it is often convenient to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-building-blocks",
+      "number": "2.1",
+      "title": "Building blocks",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 961,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "pdelta",
+          "heading": false
+        },
+        {
+          "term": "mathbb backslash",
+          "heading": false
+        },
+        {
+          "term": "partial delta",
+          "heading": false
+        },
+        {
+          "term": "begin smallmatrix",
+          "heading": false
+        },
+        {
+          "term": "tetpols",
+          "heading": false
+        },
+        {
+          "term": "mathcal delta",
+          "heading": false
+        }
+      ],
+      "extract": "The fundamental building block used in building our 3-manifolds $M$ is an ideal hyperbolic tetrahedron (Figure [\\[fig:tet\\]](#fig:tet){reference-type=\"ref\" reference=\"fig:tet\"}). Geometrically, an ideal tetrahedron $\\Delta$ has faces that are geodesic surfaces and vertices that lie right on the boundary of hyperbolic 3-space ${\\mathbb H}^3$. As shown in Figure [\\[fig:tet\\]](#fig:tet){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-gluing",
+      "number": "2.2",
+      "title": "Gluing",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "10",
+      "labelEnd": "12",
+      "words": 602,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathcal delta",
+          "heading": false
+        },
+        {
+          "term": "partial delta",
+          "heading": false
+        },
+        {
+          "term": "defcj",
+          "heading": false
+        },
+        {
+          "term": "internal edge",
+          "heading": false
+        },
+        {
+          "term": "gluing",
+          "heading": true
+        },
+        {
+          "term": "delta prod",
+          "heading": false
+        },
+        {
+          "term": "tetrahedron delta",
+          "heading": false
+        },
+        {
+          "term": "geodesic boundary",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:geomglue label=\"sec:geomglue\"} Any 3-manifold $M$ with a combination of geodesic and cusp boundaries can be constructed from a collection of ideal tetrahedra $\\{\\Delta_i\\}_{i=1}^N$, by gluing together their faces one pair at a time. Topologically, the geodesic boundary of $M$ comes from faces of tetrahedra that remain unglued. The torus or annular cusps of $M$, however, arise from assembling collections of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-geodesic-boundaries",
+      "number": "2.3",
+      "title": "Geodesic boundaries",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 17,
+      "labelStart": "12",
+      "labelEnd": "16",
+      "words": 1775,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "geodesic boundaries",
+          "heading": true
+        },
+        {
+          "term": "mathcal partial",
+          "heading": false
+        },
+        {
+          "term": "shear coordinates",
+          "heading": false
+        },
+        {
+          "term": "shear edge",
+          "heading": false
+        },
+        {
+          "term": "equatorial edges",
+          "heading": false
+        },
+        {
+          "term": "unipotent holonomy",
+          "heading": false
+        },
+        {
+          "term": "space mathcal",
+          "heading": false
+        },
+        {
+          "term": "longitudinal edges",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:geobdy label=\"sec:geobdy\"} We proceed to provide some details of the phase spaces $\\mathcal{P}_{\\partial M}$ associated to the various types of boundary for $M$, and to give explicit examples of their construction. A more complete, mathematical analysis of boundaries and phase spaces will appear in [@DGGV-hybrid]. It is perhaps simplest to begin with geodesic boundaries. As discussed above, these arise when",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-torus-cusps",
+      "number": "2.4",
+      "title": "Torus cusps",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 19,
+      "labelStart": "16",
+      "labelEnd": "18",
+      "words": 907,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathcal big",
+          "heading": false
+        },
+        {
+          "term": "figure-eight knot",
+          "heading": false
+        },
+        {
+          "term": "big mathbb",
+          "heading": false
+        },
+        {
+          "term": "fig8cusp",
+          "heading": false
+        },
+        {
+          "term": "mathcal partial",
+          "heading": false
+        },
+        {
+          "term": "delta big",
+          "heading": false
+        },
+        {
+          "term": "log ell",
+          "heading": false
+        },
+        {
+          "term": "geomglue",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:cuspbdy label=\"sec:cuspbdy\"} The cusp boundaries of a 3-manifold $M$ arise from the resolution of line defects, and have the topology of annuli or tori, depending on whether the defects are open or closed. For simplicity, we will only consider the closed, toroidal case in the present paper, though we note that annular cusps share many of the the same properties, and can be analyzed in a similar way. Suppose,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-25-changing-the-triangulation",
+      "number": "2.5",
+      "title": "Changing the triangulation",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 736,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bipcoord",
+          "heading": false
+        },
+        {
+          "term": "mathcal delta",
+          "heading": false
+        },
+        {
+          "term": "mathcal partial",
+          "heading": false
+        },
+        {
+          "term": "delta big",
+          "heading": false
+        },
+        {
+          "term": "times mathcal",
+          "heading": false
+        },
+        {
+          "term": "flip",
+          "heading": false
+        },
+        {
+          "term": "text bipyramid",
+          "heading": false
+        },
+        {
+          "term": "geodesic boundaries",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:geom23 label=\"sec:geom23\"} We have explained, in principle, how to construct 3-manifolds $M$, phase spaces $\\mathcal{P}_{\\partial M}$, and Lagrangians $\\mathcal{L}_M$ by gluing together ideal tetrahedra $\\Delta_i$. It would be useful to verify that such constructions do not depend on a precise choice of triangulation $\\{\\Delta_i\\}$. Geometrically, once we fix the triangulation of geodesic boundaries, any two",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-3-operations-on-3d-abelian-theories",
+      "number": "3",
+      "title": "Operations on 3d abelian theories",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 68,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ops",
+          "heading": false
+        },
+        {
+          "term": "glue",
+          "heading": false
+        },
+        {
+          "term": "geom",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:ops label=\"sec:ops\"} Our next goal is introduce the basic ingredients and building blocks necessary to understand the field theory side of the correspondence $(M,\\Pi)\\leftrightarrow T_{M,\\Pi}$. We will see a clear parallel with the construction of 3-manifolds in Section [\\[sec:geom\\]](#sec:geom){reference-type=\"ref\" reference=\"sec:geom\"}, which will lead us to the definition of the theory $T_{M,\\Pi}$ in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-31-an-sp2nmathbb-z-action-on-3d-cfts-with-u1n-fl",
+      "number": "3.1",
+      "title": "An $Sp(2N,{\\mathbb Z})$ action on 3d CFTs with $U(1)^N$ flavor symmetry",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-311-generalities",
+      "number": "3.1.1",
+      "title": "Generalities",
+      "level": 3,
+      "pageStart": 21,
+      "pageEnd": 23,
+      "labelStart": "20",
+      "labelEnd": "22",
+      "words": 1026,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "background gauge",
+          "heading": false
+        },
+        {
+          "term": "flavor symmetry",
+          "heading": false
+        },
+        {
+          "term": "four-dimensional gauge",
+          "heading": false
+        },
+        {
+          "term": "electric-magnetic duality",
+          "heading": false
+        },
+        {
+          "term": "gauge field",
+          "heading": false
+        },
+        {
+          "term": "quad mathcal",
+          "heading": false
+        },
+        {
+          "term": "circ mathcal",
+          "heading": false
+        },
+        {
+          "term": "qquad mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "There is a beautiful $SL(2,{\\mathbb Z})$ action on the space of 3-dimensional conformal field theories with $U(1)$ flavor symmetry. This action was first described in [@Witten-SL2] as a way to understand the meaning of different choices of boundary conditions for an abelian gauge field in $AdS_4$ in the context of $AdS_4/CFT_3$. To be precise, $SL(2,{\\mathbb Z})$ acts on the space of 3d theories equipped with a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-312-adding-supersymmetry",
+      "number": "3.1.2",
+      "title": "Adding supersymmetry",
+      "level": 3,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 535,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multiplets vec",
+          "heading": false
+        },
+        {
+          "term": "vec sigma",
+          "heading": false
+        },
+        {
+          "term": "mathcal background",
+          "heading": false
+        },
+        {
+          "term": "mathcal gauge",
+          "heading": false
+        },
+        {
+          "term": "chiral multiplets",
+          "heading": false
+        },
+        {
+          "term": "mathcal theories",
+          "heading": false
+        },
+        {
+          "term": "qquad mathcal",
+          "heading": false
+        },
+        {
+          "term": "mathcal statement",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:susySp label=\"sec:susySp\"} The $Sp(2N,{\\mathbb Z})$ action can be supersymmetrized to give an $Sp(2N,{\\mathbb Z})$ action on supersymmetric 3d theories equipped with a supersymmetric coupling to a background abelian gauge supermultiplet. This can be done for any amount of supersymmetry, but it is important to make a specific choice, as different choices give different group actions. In the reference",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-32-a-mathbb-z-2-action-on-3d-mathcaln2-theories",
+      "number": "3.2",
+      "title": "A ${\\mathbb Z}_2$ action on 3d $\\mathcal{N}=2$ theories with a chiral operator",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 596,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "operator mathcal",
+          "heading": true
+        },
+        {
+          "term": "chiral operator",
+          "heading": true
+        },
+        {
+          "term": "superpotential mathcal",
+          "heading": false
+        },
+        {
+          "term": "mathcal phi",
+          "heading": false
+        },
+        {
+          "term": "dirichlet boundary",
+          "heading": false
+        },
+        {
+          "term": "superpotential coupling",
+          "heading": false
+        },
+        {
+          "term": "multiplet phi",
+          "heading": false
+        },
+        {
+          "term": "circ mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:F label=\"sec:F\"} The basic \"matter\" action on 3d $\\mathcal{N}=2$ theories begins with a theory that has a coupling to a background 3d chiral multiplet $\\phi$. In practice, what we mean is a choice of chiral operator $\\mathcal{O}$ that can be inserted in a superpotential $$\\mathcal{W}= \\phi\\,\\mathcal{O}\\,.$$ Here and elsewhere, we will not keep track of the normalization of superpotential terms. In",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-33-useful-mathcaln2-mirror-symmetries",
+      "number": "3.3",
+      "title": "Useful $\\mathcal{N}=2$ mirror symmetries",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 30,
+      "labelStart": "24",
+      "labelEnd": "29",
+      "words": 2198,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathcal mirror",
+          "heading": true
+        },
+        {
+          "term": "mathcal sqed",
+          "heading": false
+        },
+        {
+          "term": "chiral multiplet",
+          "heading": false
+        },
+        {
+          "term": "gauge multiplet",
+          "heading": false
+        },
+        {
+          "term": "xyz model",
+          "heading": false
+        },
+        {
+          "term": "superpotential mathcal",
+          "heading": false
+        },
+        {
+          "term": "multiplet phi",
+          "heading": false
+        },
+        {
+          "term": "circ mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:MS label=\"sec:MS\"} From the above, it should be clear that the $\\mathcal{N}=4$ $S$ operation consists of a combination of $\\mathcal{N}=2$ $S$ and $F$ operations. Indeed, the $\\mathcal{N}=4$ conserved current supermultiplet contains a complex moment map operator $\\mu$, which is a chiral operator for an $\\mathcal{N}=2$ subalgebra. The $\\mathcal{N}=4$ gauge multiplet contains an $\\mathcal{N}=2$ chiral multiplet",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-4-construction-of-t-m",
+      "number": "4",
+      "title": "Construction of $T_M$",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 30,
+      "labelStart": "29",
+      "labelEnd": "29",
+      "words": 93,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ops",
+          "heading": false
+        },
+        {
+          "term": "scft",
+          "heading": false
+        },
+        {
+          "term": "geom",
+          "heading": false
+        },
+        {
+          "term": "three-manifold",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:glue label=\"sec:glue\"} In this section, we will now combine the ingredients of Sections [\\[sec:geom\\]](#sec:geom){reference-type=\"ref\" reference=\"sec:geom\"} and [\\[sec:ops\\]](#sec:ops){reference-type=\"ref\" reference=\"sec:ops\"} to provide the map from a pair $(M,\\Pi)$, where $M$ is a 3-manifold and $\\Pi$ a polarization of its boundary phase space $\\mathcal{P}_{\\partial M}$, to a 3d SCFT $T_{M,\\Pi}$, with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-41-definition",
+      "number": "4.1",
+      "title": "Definition",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 33,
+      "labelStart": "29",
+      "labelEnd": "32",
+      "words": 1457,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polarization tilde",
+          "heading": false
+        },
+        {
+          "term": "mathcal delta",
+          "heading": false
+        },
+        {
+          "term": "circ mathcal",
+          "heading": false
+        },
+        {
+          "term": "operators mathcal",
+          "heading": false
+        },
+        {
+          "term": "internal edges",
+          "heading": false
+        },
+        {
+          "term": "boxed phantom",
+          "heading": false
+        },
+        {
+          "term": "text internal",
+          "heading": false
+        },
+        {
+          "term": "product polarization",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:defTM label=\"sec:defTM\"} In order to implement the first step, we begin by defining a theory $T_{\\Delta, \\Pi_Z}$ that we associate to a single tetrahedron $\\Delta$ in polarization $\\Pi_Z$ (as in [\\[tetpols\\]](#tetpols){reference-type=\"eqref\" reference=\"tetpols\"}): $$\\boxed{\\phantom{\\int} T_{\\Delta, \\Pi_Z} = \\mathcal{T}_1\\,. \\phantom{\\int}} \\label{TDelta}$$ Recall from Section",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-42-the-bipyramid-and-the-2--3-move",
+      "number": "4.2",
+      "title": "The bipyramid and the 2--3 move",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 36,
+      "labelStart": "32",
+      "labelEnd": "35",
+      "words": 1438,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bipyramid",
+          "heading": true
+        },
+        {
+          "term": "equatorial polarization",
+          "heading": false
+        },
+        {
+          "term": "sqedbip",
+          "heading": false
+        },
+        {
+          "term": "dagger phi",
+          "heading": false
+        },
+        {
+          "term": "equatorial edges",
+          "heading": false
+        },
+        {
+          "term": "phi big",
+          "heading": false
+        },
+        {
+          "term": "theta big",
+          "heading": false
+        },
+        {
+          "term": "pach",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:gauge23 label=\"sec:gauge23\"} Let's consider the theory of the bipyramid, as constructed from two different triangulations. To keep things simple, we will focus on the \"equatorial\" polarization $\\Pi=\\Pi_{\\rm eq}$ for the bipyramid, as defined in [\\[bipcoord3\\]](#bipcoord3){reference-type=\"eqref\" reference=\"bipcoord3\"} or [\\[bipcoord2\\]](#bipcoord2){reference-type=\"eqref\" reference=\"bipcoord2\"}. In particular,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-43-the-flip",
+      "number": "4.3",
+      "title": "The flip",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 37,
+      "labelStart": "35",
+      "labelEnd": "36",
+      "words": 214,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "flip",
+          "heading": true
+        },
+        {
+          "term": "trivial operation",
+          "heading": false
+        },
+        {
+          "term": "geom",
+          "heading": false
+        },
+        {
+          "term": "sec",
+          "heading": false
+        },
+        {
+          "term": "add",
+          "heading": false
+        },
+        {
+          "term": "mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:flip label=\"sec:flip\"} Just as $2-3$ moves change the internal triangulation of a 3-manifold, the flips described in Section [\\[sec:geom23\\]](#sec:geom23){reference-type=\"ref\" reference=\"sec:geom23\"} can change the triangulation of its (geodesic) boundary. This has a very simple effect on a theory $T_{M,\\Pi}$. For example, suppose that $T_{M,\\Pi}$ has an operator $\\mathcal{O}_X$, charged under a global",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-44-t-m-as-a-boundary-condition",
+      "number": "4.4",
+      "title": "$T_M$ as a boundary condition",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 37,
+      "labelStart": "36",
+      "labelEnd": "36",
+      "words": 450,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boundary condition",
+          "heading": true
+        },
+        {
+          "term": "four-dimensional gauge",
+          "heading": false
+        },
+        {
+          "term": "four-dimensional theory",
+          "heading": false
+        },
+        {
+          "term": "electric-magnetic charges",
+          "heading": false
+        },
+        {
+          "term": "geodesic boundary",
+          "heading": false
+        },
+        {
+          "term": "abelian gauge",
+          "heading": false
+        },
+        {
+          "term": "ops",
+          "heading": false
+        },
+        {
+          "term": "symplectic lattice",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:gauge4d label=\"sec:gauge4d\"} In section [\\[sec:ops\\]](#sec:ops){reference-type=\"ref\" reference=\"sec:ops\"} we learned some useful facts about the relation between three dimensional theories and boundary conditions for four-dimensional theories. We saw that all the 3d theories in an orbit of the $Sp(N,Z)$ action can be thought of as representing the same boundary condition in different electric-magnetic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-45-the-octahedron",
+      "number": "4.5",
+      "title": "The octahedron",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 39,
+      "labelStart": "36",
+      "labelEnd": "38",
+      "words": 729,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chirals phi",
+          "heading": false
+        },
+        {
+          "term": "oct width",
+          "heading": false
+        },
+        {
+          "term": "phi tilde",
+          "heading": false
+        },
+        {
+          "term": "octahedron",
+          "heading": true
+        },
+        {
+          "term": "five chirals",
+          "heading": false
+        },
+        {
+          "term": "times phi",
+          "heading": false
+        },
+        {
+          "term": "mirrorr",
+          "heading": false
+        },
+        {
+          "term": "superpotential mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:oct label=\"sec:oct\"} We include two more brief examples of three-manifold theories. The first, the octahedron, demonstrates how $2-3$ moves can be used in the interior of a manifold, resulting in interesting chains of $\\mathcal{N}=2$ SCFT dualities. The second, the figure-eight knot complement, will illustrate how potential difficulties with \"hard\" edges can be resolved. ![The octahedron from four",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-46-figure-eight-knot",
+      "number": "4.6",
+      "title": "Figure-eight knot",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 42,
+      "labelStart": "38",
+      "labelEnd": "41",
+      "words": 1333,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uidef",
+          "heading": false
+        },
+        {
+          "term": "widetilde mathcal",
+          "heading": false
+        },
+        {
+          "term": "figure-eight knot",
+          "heading": true
+        },
+        {
+          "term": "superpotential widetilde",
+          "heading": false
+        },
+        {
+          "term": "mathcal partial",
+          "heading": false
+        },
+        {
+          "term": "submanifold mathcal",
+          "heading": false
+        },
+        {
+          "term": "twisted superpotential",
+          "heading": false
+        },
+        {
+          "term": "space mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:gauge41 label=\"sec:gauge41\"} As our final example, we consider the theory associated to a manifold with a torus cusp boundary: the complement of the figure-eight knot $M=S^3\\backslash\\mathbf{4_1}$. The minimal triangulation of $M$ into two tetrahedra, discussed in Section [\\[sec:cuspbdy\\]](#sec:cuspbdy){reference-type=\"ref\" reference=\"sec:cuspbdy\"}, has two internal edges and both of them are hard: $$C_1 =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-51-the-tetrahedron",
+      "number": "5.1",
+      "title": "The tetrahedron",
+      "level": 2,
+      "pageStart": 42,
+      "pageEnd": 44,
+      "labelStart": "41",
+      "labelEnd": "43",
+      "words": 739,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "widetilde mathcal",
+          "heading": false
+        },
+        {
+          "term": "partial widetilde",
+          "heading": false
+        },
+        {
+          "term": "aone",
+          "heading": false
+        },
+        {
+          "term": "quad widetilde",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "eff",
+          "heading": false
+        },
+        {
+          "term": "tetrahedron",
+          "heading": true
+        }
+      ],
+      "extract": "Now, let us illustrate this in a few concrete examples, starting with the theory $T_{\\Delta,\\Pi_Z}$ that we associate to a single tetrahedron. The theory $T_{\\Delta,\\Pi_Z}$ is a single chiral multiplet $\\phi_Z$ coupled to a $U(1)$ background gauge field that also has a (supersymmetric) Chern-Simons interaction at level $-\\tfrac{1}{2}$. On a circle of finite radius $\\beta$, this theory has the effective twisted",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-52-the-bipyramid",
+      "number": "5.2",
+      "title": "The bipyramid",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 45,
+      "labelStart": "43",
+      "labelEnd": "44",
+      "words": 468,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "partial widetilde",
+          "heading": false
+        },
+        {
+          "term": "widetilde mathcal",
+          "heading": false
+        },
+        {
+          "term": "bipyramid",
+          "heading": true
+        },
+        {
+          "term": "twisted superpotential",
+          "heading": false
+        },
+        {
+          "term": "sqedbip",
+          "heading": false
+        },
+        {
+          "term": "gbip",
+          "heading": false
+        },
+        {
+          "term": "lbipeq",
+          "heading": false
+        },
+        {
+          "term": "spbip",
+          "heading": false
+        }
+      ],
+      "extract": "To find the moduli space for the bipyramid theory, let us work in the equatorial polarization $\\Pi_{\\rm eq}$, as discussed in Section [\\[sec:geom\\]](#sec:geom){reference-type=\"ref\" reference=\"sec:geom\"} and Section [\\[sec:gauge23\\]](#sec:gauge23){reference-type=\"ref\" reference=\"sec:gauge23\"}. We closely follow the notation in those sections. We can start with the decomposition into two tetrahedra, and use the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-6-s3-b-partition-functions",
+      "number": "6",
+      "title": "$S^3_b$ partition functions",
+      "level": 1,
+      "pageStart": 45,
+      "pageEnd": 47,
+      "labelStart": "44",
+      "labelEnd": "46",
+      "words": 657,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "partition functions",
+          "heading": true
+        },
+        {
+          "term": "ellipsoid partition",
+          "heading": false
+        },
+        {
+          "term": "mathcal partial",
+          "heading": false
+        },
+        {
+          "term": "agt correspondence",
+          "heading": false
+        },
+        {
+          "term": "tilde mathcal",
+          "heading": false
+        },
+        {
+          "term": "xmo",
+          "heading": false
+        },
+        {
+          "term": "mathcal theory",
+          "heading": false
+        },
+        {
+          "term": "frac hbar",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:S3b label=\"sec:S3b\"} In the previous section, the correspondence $(M,\\Pi) \\; \\leftrightarrow \\; T_{M,\\Pi}$ was tested by comparing moduli spaces attached to each side of the correspondence. A more refined test could be obtained by associating certain functions to each side. For example, on the gauge theory side one can associate either an equivariant partition function or an index (an analog of the elliptic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-61-chirals-and-tetrahedra",
+      "number": "6.1",
+      "title": "Chirals and tetrahedra",
+      "level": 2,
+      "pageStart": 47,
+      "pageEnd": 48,
+      "labelStart": "46",
+      "labelEnd": "47",
+      "words": 734,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tilde big",
+          "heading": false
+        },
+        {
+          "term": "level tfrac",
+          "heading": false
+        },
+        {
+          "term": "r-charge assignment",
+          "heading": false
+        },
+        {
+          "term": "chiral multiplet",
+          "heading": false
+        },
+        {
+          "term": "z3dcsk",
+          "heading": false
+        },
+        {
+          "term": "chern-simons coupling",
+          "heading": false
+        },
+        {
+          "term": "xmo",
+          "heading": false
+        },
+        {
+          "term": "background gauge",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:S3tet label=\"sec:S3tet\"} Consider a free chiral multiplet $\\phi_Z$ with twisted mass $m_Z$ for a $U(1)$ flavor symmetry, and R-charge $R_Z$. This R-charge assignment enters in a fundamental way when putting the chiral on an ellipsoid. We set $\\tilde m_Z = m_Z+\\frac{iQ}{2}R_Z$, and find a partition function [^1] [@HHL] $$Z_{S^3_b}(\\text{chiral multiplet}) = s_b\\big(\\tfrac{iQ}{2}-\\tilde m_Z\\big)\\,,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-62-gluing-and-bipyramids",
+      "number": "6.2",
+      "title": "Gluing and bipyramids",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 50,
+      "labelStart": "47",
+      "labelEnd": "49",
+      "words": 913,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tilde big",
+          "heading": false
+        },
+        {
+          "term": "superpotential mathcal",
+          "heading": false
+        },
+        {
+          "term": "sigma tilde",
+          "heading": false
+        },
+        {
+          "term": "axial twisted",
+          "heading": false
+        },
+        {
+          "term": "mathcal gauge",
+          "heading": false
+        },
+        {
+          "term": "masses tilde",
+          "heading": false
+        },
+        {
+          "term": "ellipsoid partition",
+          "heading": false
+        },
+        {
+          "term": "twothree",
+          "heading": false
+        }
+      ],
+      "extract": "In Section [\\[sec:MS\\]](#sec:MS){reference-type=\"ref\" reference=\"sec:MS\"}, we derived $ST$-invariance of the tetrahedron theory $\\mathcal{T}_1\\simeq \\mathcal{T}_{\\Delta,\\Pi_Z}$ by starting with $\\mathcal{N}=4$ mirror symmetry, translating to $\\mathcal{N}=2$ mirror symmetry for the XYZ model and SQED with $N_f=1$, and and then reducing further to the theories $\\mathcal{T}_1$ and $ST\\circ \\mathcal{T}_1$ via a mass",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-63-figure-eight-knot",
+      "number": "6.3",
+      "title": "Figure-eight knot",
+      "level": 2,
+      "pageStart": 50,
+      "pageEnd": 52,
+      "labelStart": "49",
+      "labelEnd": "51",
+      "words": 463,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "moduli spaces",
+          "heading": false
+        },
+        {
+          "term": "chern-simons theory",
+          "heading": false
+        },
+        {
+          "term": "mﬂat",
+          "heading": false
+        },
+        {
+          "term": "line operators",
+          "heading": false
+        },
+        {
+          "term": "bai",
+          "heading": false
+        },
+        {
+          "term": "partition function",
+          "heading": false
+        },
+        {
+          "term": "gauge theory",
+          "heading": false
+        },
+        {
+          "term": "knot complement",
+          "heading": false
+        }
+      ],
+      "extract": "We should be able to reproduce the well known Chern-Simons wavefunction for the ﬁgure-eight knot complement from the theory T41,Π described in Section 4.6. The deﬁnition of the actual theory, including internal edge operators, required a decomposition of the knot complement into six tetrahedra. However, since ellipsoid partition functions do not depend in a crucial way on superpotential terms, we might hope to get",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-7-line-operators-and-q--difference-equations",
+      "number": "7",
+      "title": "Line operators and $q$--difference equations",
+      "level": 1,
+      "pageStart": 52,
+      "pageEnd": 58,
+      "labelStart": "51",
+      "labelEnd": "57",
+      "words": 2779,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "line operators",
+          "heading": true
+        },
+        {
+          "term": "azclaim",
+          "heading": false
+        },
+        {
+          "term": "wilson-'t hooft",
+          "heading": false
+        },
+        {
+          "term": "boundary mathcal",
+          "heading": false
+        },
+        {
+          "term": "hat text",
+          "heading": false
+        },
+        {
+          "term": "zdelta",
+          "heading": false
+        },
+        {
+          "term": "mathcal partial",
+          "heading": false
+        },
+        {
+          "term": "mathcal theory",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:lines label=\"sec:lines\"} In order to understand the meaning of operator identities [\\[AZclaim\\]](#AZclaim){reference-type=\"eqref\" reference=\"AZclaim\"} in 3d $\\mathcal{N}=2$ theory, we need to incorporate line operators in our correspondence [\\[MvsTM\\]](#MvsTM){reference-type=\"eqref\" reference=\"MvsTM\"}. Given a triangulated 3-manifold $M$ with nonempty boundary $\\partial M$, each equation in",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 2,
+        "items": [
+          "3.2 A Z2 action on 3d N = 2 theories with a chiral operator",
+          "3.3 Useful N = 2 mirror symmetries"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mathcal gauge",
+      "heading": false
+    },
+    {
+      "term": "superpotential mathcal",
+      "heading": false
+    },
+    {
+      "term": "mathcal big",
+      "heading": false
+    },
+    {
+      "term": "mathcal partial",
+      "heading": false
+    },
+    {
+      "term": "delta mathcal",
+      "heading": false
+    },
+    {
+      "term": "tilde mathcal",
+      "heading": false
+    },
+    {
+      "term": "mathcal theory",
+      "heading": false
+    },
+    {
+      "term": "boundary mathcal",
+      "heading": false
+    },
+    {
+      "term": "mathcal theories",
+      "heading": true
+    },
+    {
+      "term": "mathcal background",
+      "heading": false
+    },
+    {
+      "term": "mathcal mirror",
+      "heading": true
+    },
+    {
+      "term": "lagrangian mathcal",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 31,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 37,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 38,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 40,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 43,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 45,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 46,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 48,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 49,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 51,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 53,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "(a) A cobordism M between C and C′ gives rise to a domain wall (b) between 4d N = 2",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "(a) A 3-manifold M stretched along a ‘neck’ R × C becomes a 4d N = 2 superconformal",
+      "page": 5,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "The dictionary between geometry and physics",
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Types of boundaries for M",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "An ideal hyperbolic tetrahedron in H3, with vertices",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "A truncated ideal tetrahedron",
+      "page": 10,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Natural polarizations for a tetrahedron, with the thickened pairs of opposite edges corresponding to the “position” coordinate",
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Triangulations by Euclidean vertex triangles of (a) an annular cusp attached to a geodesic boundary, and (b) a torus cusp",
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Illustration of gluing at an internal edge, with CI = Z1 + Z′",
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Poisson bracket for external edges. Here {XE, XE′}",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "∂∆as a fourpunctured sphere",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Forming a bipyramid from three tetrahedra",
+      "page": 15,
+      "pageLabel": "14",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "Two polarizations for the bipyramid",
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "Holonomy eigenvalues on a torus boundary",
+      "page": 17,
+      "pageLabel": "16",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "Gluing two tetrahedra, as indicated by calligraphic letters on the faces, to form the ﬁgureeight knot complement. On the right is a map of the resulting torus cusp boundary, triangulated by Euclidean vertex triangles",
+      "page": 18,
+      "pageLabel": "17",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "The 2–3 Pachner move",
+      "page": 19,
+      "pageLabel": "18",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "16",
+      "title": "Flipping an external edge by attaching a tetrahedron",
+      "page": 20,
+      "pageLabel": "19",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "17",
+      "title": "The action of duality domain walls on boundary conditions. A duality transformation g ∈Sp(2N, Z) maps a generalized Neumann boundary condition deﬁned by coupling to a 3d theory",
+      "page": 22,
+      "pageLabel": "21",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Correspondence of symmetries in Nf = 1 SQED and the XYZ model. The designations “axial” and “topological” in the XYZ model are only introduced for comparison to SQED",
+      "page": 26,
+      "pageLabel": "25",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "18",
+      "title": "The quantum moduli space of N = 2 SQED is identical to the moduli space of vacua in",
+      "page": 27,
+      "pageLabel": "26",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "19",
+      "title": "Decompositions of the bipyramid, with labelled edge coordinates (Figure 15)",
+      "page": 34,
+      "pageLabel": "33",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "20",
+      "title": "The octahedron from four tetrahedra",
+      "page": 38,
+      "pageLabel": "37",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "21",
+      "title": "The octahedron from ﬁve tetrahedra, two ways. Positions of the polarization Π× are",
+      "page": 39,
+      "pageLabel": "38",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "22",
+      "title": "The torus cusp for the ﬁgure-eight knot complement, triangulated into six tetrahedra. The cyclic order of edge parameters (z, z′, z′′), etc., is always the same, so we only indicate one parameter per vertex triangle",
+      "page": 40,
+      "pageLabel": "39",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "23",
+      "title": "Line operators in 4d becoming identiﬁed in the boundary theory TM",
+      "page": 53,
+      "pageLabel": "52",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "24",
+      "title": "Line operators in both M and TM",
+      "page": 54,
+      "pageLabel": "53",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p009-1",
+      "file": "images/img-p009-1.png",
+      "page": 9,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-1",
+      "file": "images/img-p012-1.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p017-1",
+      "file": "images/img-p017-1.png",
+      "page": 17,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p017-2",
+      "file": "images/img-p017-2.png",
+      "page": 17,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 29,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 28,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 4,
+      "note": "24 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "2 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 24
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 28 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1108.4389v1"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2304.12545v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2304.12545v1",
+  "contains": [
+    "library/arxiv-2304.12545v1/sections/sec-front-matter",
+    "library/arxiv-2304.12545v1/sections/sec-000",
+    "library/arxiv-2304.12545v1/sections/sec-001",
+    "library/arxiv-2304.12545v1/sections/sec-002",
+    "library/arxiv-2304.12545v1/sections/sec-003",
+    "library/arxiv-2304.12545v1/sections/sec-004",
+    "library/arxiv-2304.12545v1/sections/sec-005",
+    "library/arxiv-2304.12545v1/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Garoufalidis & Zagier, Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann — survey of gluing equations, volumes, the extended Bloch group, symplectic properties and quantization.\n\n**Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann** — Stavros Garoufalidis and Don Zagier.\n\nA survey of Neumann's contributions, organised as: ideal triangulations and the gluing equations; volumes and Dehn surgeries; the Bloch group and the extended Bloch group; symplectic properties; quantization; connections to number theory.\n\n**Why it may bear here.** Every one of those six headings names machinery this corpus uses — gluing equations, hyperbolic volume, the (extended) Bloch group, and the quantization step. As a survey it is the orientation text rather than a source of results.\n\n**Duplicate.** `library/hyperbolicandneumann/` is a second copy of this same document, byte-different but identical in content.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "agent",
+        "id": "claude-code",
+        "model": "not-disclosed",
+        "session": "https://claude.ai/code/session_01AWgkrPkXGZ1Hb2UmMmFMcP",
+        "date": "2026-08-15"
+      },
+      "drafted_at": "2026-08-15"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2304.12545&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2304.12545v1",
+    "title_source": "slug",
+    "source_file": "2304.12545v1.pdf",
+    "source_sha256": "bfc3c2be395b1b2da852c3ddefaf66b3daac043347f1fc9dcc7d19529dfe01ba",
+    "pages": 19,
+    "arxiv": {
+      "id": "2304.12545",
+      "version": "1",
+      "primary_class": "math.GT",
+      "stamp_date": "25 Apr 2023"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

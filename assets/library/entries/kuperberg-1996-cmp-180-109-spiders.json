@@ -1,0 +1,477 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "kuperberg-1996-cmp-180-109-spiders",
+  "blocks": [
+    {
+      "id": "library/kuperberg-1996-cmp-180-109-spiders/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 13,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "One of the problems of classical invariant theory is to characterize, for all ^-tuples\nV\\,...,Vn of finite-dimensional, irreducible representations over C of a compact\ngroup G or simple Lie algebra g, the vector space of multilinear functions\n/ : Vι x V2 x \nx Vn -> <C\nwhich are invariant under the action of G or cj. In more modern terminology, the\nproblem is to characterize the dual vector space of invariant tensors\nor just Inv(F) if V is a tensor product of irreducibles. (Also, instead of working over\nC, one might work over some other field F of characteristic 0.) Of course, for a\nsimple Lie",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kuperberg-1996-cmp-180-109-spiders/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Commun Math Phys 180, 109-151 (1996) \nCommunications IΠ\nMathematical\nPhysics\n© Springer-Verlag 1996\nSpiders for Rank 2 Lie Algebras\nGreg Kuperberg\nDepartment of Mathematics, University of California, Davis, CA95616, USA\nE-mail: greg@math ucdavis.edu\nReceived: 19 December 1995/Accepted: 26 January 1996\nAbstract: A spider is an axiomatization of the representation theory of a group,\nquantum group, Lie algebra, or other group or group-like object. It is also known as\na spherical category, or a strict, monoidal category with a few extra properties, or\nby several other names. A recently useful poin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kuperberg-1996-cmp-180-109-spiders/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 13,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "There exist isomorphisms φn : Wn —> \\mr{V® n).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kuperberg-1996-cmp-180-109-spiders/blocks/thm-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Rumer, Teller, Weyl",
+      "pageStart": 1,
+      "pageEnd": 13,
+      "target": "thm-sec-000-02.md",
+      "narrative": null,
+      "content": "If a = —2, then the isomorphisms φn : Wn —» Inv(Ύ® n) can be uniquely chosen to send the operations of join to tensor product, stitch to contraction, and rotation to cyclic permutation of tensor factors composed with negation. Spiders for Rank 2 Lie Algebras (The difference in sign between rotation and cyclic permutation of tensor factors is explained in Sect. 3.) The conversion of join to tensor product requires some explanation. Tensor prod- ucts depend on a linear ordering of tensor factors, but the vertices in a web are only cyclically ordered. To realize an explicit association between we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kuperberg-1996-cmp-180-109-spiders/blocks/thm-sec-000-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 13,
+      "target": "thm-sec-000-03.md",
+      "narrative": null,
+      "content": "Let N = (n\\,...,nk) be a multi-index, with When q—\\, there is a family of vector space isomorphisms φN: W(N)-+Ίnv(VN) that send join to tensor product, stitch to contraction, and rotation to cyclic per- mutation of tensor factors up to sign. Rotation and join of clasped webs are defined in the same way as for unclasped webs, but stitch is more complicated. Given a clasped web with two adjacent external clasps of the same size, the stitch of the web is obtained by identifying the two clasps and introducing an internal clasp, usually depicted as a box: Spiders for Rank 2 Lie Algebras An internal",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kuperberg-1996-cmp-180-109-spiders/blocks/thm-sec-000-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 13,
+      "target": "thm-sec-000-04.md",
+      "narrative": null,
+      "content": "If N is a multi-index, then dim W(N) = άimlrw(VN).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kuperberg-1996-cmp-180-109-spiders/blocks/lem-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 27,
+      "target": "lem-sec-001-01.md",
+      "narrative": null,
+      "content": "Suppose that s and t are strand types and w € W(st) is zero in the clasped web space W([s]t). Then w is annihilated by an internal clasp of type [s].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kuperberg-1996-cmp-180-109-spiders/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pa,a<βa) = βa*",
+      "pageStart": 13,
+      "pageEnd": 27,
+      "target": "../sections/sec-001-3-paaβa-βa.md",
+      "narrative": null,
+      "content": "• Join only:\n4. (u ixi v) tx w) = u cxi (v txi w)\n5. u xi 1 = u\n• Join and rotation:\n6. pa,b(u \nDXU?0 V) = pa,b(\nu) \n^ba,0 V\n7 \nβab = Pa*,abb*(βa* ^ \nβb)\n8. Pa,bO* >^a,b V) = V DX^β U\n• Rotation and stitch:\n9. Ga,bd\nσaa*b,c,d = ^b,c,d^a,bcc*d\n10. σ αj = σα*,0Pα,«*\n122 \nG Kuperberg\n• Join, rotation, and stitch:\n12. Ob^c(u \n\\X*ba,a*c V) = pb,c(Pa*,c(\nV) ^ca\\ab Pb,a(\nu))\nThe formal spider axioms are embarrassingly complicated, but they can be\nphrased in more natural (if less formal) terms. In particular, the following com-\npound web principle is equivalent to axioms 1-7 and 10-12. To state the pr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kuperberg-1996-cmp-180-109-spiders/blocks/thm-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 27,
+      "target": "thm-sec-001-02.md",
+      "narrative": null,
+      "content": "The morphism © from the combinatorial to algebraic rank two spi- ders extends to clasped spiders. Spiders for Rank 2 Lie Algebras",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kuperberg-1996-cmp-180-109-spiders/blocks/lem-sec-002-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 40,
+      "target": "lem-sec-002-05.md",
+      "narrative": null,
+      "content": "If « is a minimal cut path of w € B(ST) separating S from T, it divides w into two parts w; € B(Sc) and wz € B(c*T) with non-convex clasps c and c*.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kuperberg-1996-cmp-180-109-spiders/blocks/lem-sec-002-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 40,
+      "target": "lem-sec-002-06.md",
+      "narrative": null,
+      "content": "If « and B are cut paths from p to q of a basis web w and « is minimal, then the weight of « is less than or equal to (and not incomparable to) Spiders for Rank 2 Lie Algebras 137",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kuperberg-1996-cmp-180-109-spiders/blocks/lem-sec-002-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 40,
+      "target": "lem-sec-002-07.md",
+      "narrative": null,
+      "content": "Let C be a sequence of clasps, let c be an arbitrary clasp, and let w € B(Cc) be a basis web. There is a cut path y that separates c such that any other such cut path lies between y and c.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kuperberg-1996-cmp-180-109-spiders/blocks/lem-sec-002-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 40,
+      "target": "lem-sec-002-08.md",
+      "narrative": null,
+      "content": "Let C be a sequence of clasps and let c be a clasp of weight 2. If w € B(C[c]), let f(w) be its core. Then the map f : B(C[c]) — B(C;4) is a bijection.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kuperberg-1996-cmp-180-109-spiders/blocks/lem-sec-002-09",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 40,
+      "target": "lem-sec-002-09.md",
+      "narrative": null,
+      "content": "Let c and d be segregated clasps of weight 4 and yu. Then the web basis set B([+]ed) has one element if and only if #* =m+A,, wh =A+A, or A* = p+, —A/1, and is empty otherwise.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kuperberg-1996-cmp-180-109-spiders/blocks/lem-sec-002-12",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 40,
+      "target": "lem-sec-002-12.md",
+      "narrative": null,
+      "content": "The spaces I([s\\][s2]' in W(sιs2- sn). [sn]) and W([s\\][s2]\" [sn]) are transverse",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kuperberg-1996-cmp-180-109-spiders/blocks/lem-sec-002-13",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 40,
+      "target": "lem-sec-002-13.md",
+      "narrative": null,
+      "content": "[fs is a segregated sign string and t* is another sign string of lower or incomparable weight, then a basis web w € B(st) has either a “U” or a “Y” attached to s.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kuperberg-1996-cmp-180-109-spiders/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Equinumeration",
+      "pageStart": 27,
+      "pageEnd": 40,
+      "target": "../sections/sec-002-6-equinumeration.md",
+      "narrative": null,
+      "content": "6. Equinumeration\n6.1. The A2 case\nTheorem 6.1. Let C be an A2 clasp sequence and let wt C be the corresponding\nsequence of weights. Then the vector spaces W(C) and Inv(F(wt C)) have the\nsame dimension.\nOne of the main steps of the proof of Theorem 6.1 is the same as that of the\nproof of Theorem 2.3: Given two clasp sequences C and D, there is a decomposition\nof vector spaces\nInv(F(wt C) 0 V(wtD)) ^ 0 Inv(Ύ(wtS) 0 V(μ)) 0 Inv(Ύ(μ)* 0 V(wtD)) .\nμ\nWe wish to prove the corresponding decomposition of sets of basis webs:\nTheorem 6.2. Given two clasp sequences C and D,\nB(CD)^{J(B(Ccλ)xB(ctD)),\nλ\nwhe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kuperberg-1996-cmp-180-109-spiders/blocks/thm-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 40,
+      "target": "thm-sec-002-01.md",
+      "narrative": null,
+      "content": "Let C be an A2 clasp sequence and let wt C be the corresponding sequence of weights. Then the vector spaces W(C) and Inv(F(wt C)) have the same dimension. One of the main steps of the proof of Theorem 6.1 is the same as that of the proof of Theorem 2.3: Given two clasp sequences C and D, there is a decomposition of vector spaces Inv(F(wt C) 0 V(wtD)) ^ 0 Inv(Ύ(wtS) 0 V(μ)) 0 Inv(Ύ(μ)* 0 V(wtD)) . μ We wish to prove the corresponding decomposition of sets of basis webs:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kuperberg-1996-cmp-180-109-spiders/blocks/thm-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 40,
+      "target": "thm-sec-002-02.md",
+      "narrative": null,
+      "content": "Given two clasp sequences C and D, B(CD)^{J(B(Ccλ)xB(ctD)), λ where for each weight λ, cχ is some clasp with weight λ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kuperberg-1996-cmp-180-109-spiders/blocks/thm-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 40,
+      "target": "thm-sec-002-03.md",
+      "narrative": null,
+      "content": "For example, it implies the following result, which has an independent proof that is another warm-up to the proof of Theorem 6.1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kuperberg-1996-cmp-180-109-spiders/blocks/thm-sec-002-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 40,
+      "target": "thm-sec-002-04.md",
+      "narrative": null,
+      "content": "If two sign strings s\\ and s2 of the unclasped A2 spider differ only in order, then B(s\\) and B(s2) are equinumerous.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kuperberg-1996-cmp-180-109-spiders/blocks/thm-sec-002-10",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 40,
+      "target": "thm-sec-002-10.md",
+      "narrative": null,
+      "content": "Let C be a B2 clasp sequence and let wt C be the corresponding sequence of weights. Then the vector spaces W{C) and Inv(F(wt C)) have the same dimension.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kuperberg-1996-cmp-180-109-spiders/blocks/thm-sec-002-11",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 40,
+      "target": "thm-sec-002-11.md",
+      "narrative": null,
+      "content": "Let C be an G2 clasp sequence and let wt C be the corresponding sequence of weights. Then the vector spaces W(C) and Inv(F(wt C)) have the same dimension. To establish these two results we mainly need to alter various technical defini- tions given for the A2 case; most of the lemmas leading up to Theorem 6.2 and the proof of the theorem then carry over word-for-word. An H-web in the B2 or G2 spider is the web: x In both the B2 and G2 spiders, one can define an H-move on a basis web w with two adjacent endpoints labelled 1 and 2. An H-move at two such endpoints consists of attaching an H-web to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kuperberg-1996-cmp-180-109-spiders/blocks/conj-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "conj-sec-003-02.md",
+      "narrative": null,
+      "content": "If an and bn are defined as in Theorem 8.1, then lim ψa~n= co =6.811... . Our equinumeration theorems count all basis webs with a fixed boundary. How- ever, for each n and k, one can also consider the set of Gι basis webs, for example, with n endpoints of type 1 and k internal vertices. The role of these sets and their cardinality in representation theory is not known. Given an A^ basis-web set B(s) for some sign string s, there are various H-maps corresponding to different adjacent pairs of signs. But if s' is another sign string of the same weight as s, then any two sequences of H-maps permu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kuperberg-1996-cmp-180-109-spiders/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "XX-«'\")c<-r",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "../sections/sec-003-xx-c-r.md",
+      "narrative": null,
+      "content": "which leads to an expansion of tangle c:\nVA—X\n+ q~\nm 6\nwhich leads to the evaluation of the entire knot projection:\n\\A/\n-q-\nm){q\nι-q+\\-q-\nλ+ \nq~\n2)\nSpiders for Rank 2 Lie Algebras\n149\nGiven a knot K and a clasp c in one of the combinatorial spiders presented here,\nconsider the clasped cabling of K. I.e., replace the strand of K by several strands\ntied together with c, for example:\n(9)\nThe value of a web such as the one in Fig. (9) is also a regular isotopy invari-\nant of K; it is the Reshetikhin-Turaev ribbon graph invariant of K colored by an\nirreducible representation whose weight is the hig",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kuperberg-1996-cmp-180-109-spiders/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "For n ^ 3, let an be the number of triangulations of a fixed convex n-gon such that at least six triangles meet at each internal vertex, and let A(x)= 1 +x 2 + Σanx n n be a generating function. For n ^ 0, let for n ^ 0, and let G Kuperberg be a generating function. Then B(x)=A(xB(x)). (8)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kuperberg-1996-cmp-180-109-spiders/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 43,
+      "pageEnd": 44,
+      "target": "../sections/sec-004-references.md",
+      "narrative": null,
+      "content": "1 Barrett, J.W , Westbury, B W.: Spherical categories hep-th preprint #9310164\n2 Frenkel, I., Khovanov, M : Canonical bases in tensor products and graphical calculus for\nUq(ύ2). \nPreprint, 1995\n3. Goulden, I.P. Jackson, D.M.: Combinatorial Enumeration. New York: Wiley, 1983\n4 Jaeger, F.: Confluent reductions of cubic plane maps In: Graph Theory and Combinatorics\nInternational Conference Marseille, 1990\n5 Jones, V.FR.: Index of subfactors. Invent Math. 72, 1-25 (1987)\n6. Kauffman, L.H : State models and the Jones polynomial Topology 26, 395-407 (1987)\n7 Kauffman, L H., Lins, S L : Temperley-Lie",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

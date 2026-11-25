@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-0707.2340v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS",
+      "dcterms:creator": [
+        "JULIUS BORCEA, PETTER BRÄNDÉN",
+        "LIGGETT, THOMAS M."
+      ],
+      "dcterms:issued": "D:20181023",
+      "dcterms:identifier": "https://arxiv.org/abs/0707.2340",
+      "dcterms:abstract": "We introduce the class of strongly Rayleigh probability measures by means of geometric properties of their generating polynomials that amount to the stability of the latter. This class covers important models such as de- terminantal measures (e.g. product measures, uniform random spanning tree measures) and distributions for symmetric exclusion processes. We show that strongly Rayleigh measures enjoy all virtues of negative dependence and we also prove a series of conjectures due to Liggett, Pemantle, and Wagner, re- spectively. Moreover, we extend Lyons’ recent results on determinantal mea- sures and we construct counterexamples to several conjectures of Pemantle and Wagner on negative dependence and ultra log-concave rank sequences.",
+      "dcterms:source": "library/arxiv-0707.2340v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-0707.2340v2"
+    }
+  ]
+}

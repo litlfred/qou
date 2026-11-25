@@ -1,0 +1,424 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2108.09349v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2108.09349v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "\\label{sec:intro}\n\nA knot or link in $S^3$ is \\emph{hyperbolic} if its complement admits a complete hyperbolic structure.  A braid on $n$ strands, which is represented by a word in the braid group, $w\\in B_n$, is hyperbolic if its braid closure, $L_w$, is.  Hyperbolic braids formed from three strands have been characterized by Futer, Kalfagianni, and Purcell \\cite{FareyManifolds}, a characterization that depends on their representation in the braid group.  $B_3$ has two generators, $\\sigma_1$ and $\\sigma_2$ shown in Figure~\\ref{fig:B3gen}, and one relation $\\sigma_1\\sigma_2\\sigma_1 = \\sigma_2\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.09349v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "GEOMETRIC TRIANGULATIONS OF A FAMILY OF HYPERBOLIC 3-BRAIDS\nBARBARA NIMERSHIEM\nAbstract. We construct topological triangulations for complements of (−2, 3, n)-pretzel knots\nand links with n ≥7. Following a procedure outlined by Futer and Gu´eritaud, we use a theorem\nof Casson and Rivin to prove the constructed triangulations are geometric. Futer, Kalfagianni,\nand Purcell have shown (indirectly) that such braids are hyperbolic. The new result here is a\ndirect proof.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.09349v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Organization",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-organization.md",
+      "narrative": null,
+      "content": "After constructing the topological triangulations in Section~\\ref{sec:idealtriangulationsq=1}, we offer definitions and a basic outline of the Casson-Rivin program in Section~\\ref{sec:anglestructures}. \nThe first step of the program is carried out in Section~\\ref{sec:anglestructuresnonempty}, where we show that the space of positive angle structures for our triangulations (Definition~\\ref{def:anglestructure}) is nonempty. The final step --- arguing that the critical point of the volume functional (Definition~\\ref{def:volume}) is a positive angle structure --- is presented in Section~\\ref{sec:p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.09349v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-002-acknowledgments.md",
+      "narrative": null,
+      "content": "The explicit triangulations appearing here, as well as several more in the infinite family, were confirmed using the software packages Regina~\\cite{Regina} and SnapPy \\cite{SnapPy} and checked against the census of veering triangulations created by Giannopolous, Schleimer, and Segerman \\cite{VeeringCensus}.  See the Regina data file at \\href{https://tinyurl.com/ReginaFileC2sigma1psigma2inv}{https://tinyurl.com/ReginaFileC2sigma1psigma2inv} for the triangulations constructed in Section~\\ref{sec:idealtriangulationsq=1}.\n\nTo make the graphics more accessible to those with color vision deficiencie",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.09349v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ideal triangulations",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-003-2-ideal-triangulations.md",
+      "narrative": null,
+      "content": "\\label{sec:idealtriangulationsq=1}\n\nLet $X_{p}=S^3-L_p$, the complement of the closure of the braid $C^2\\sigma_1^p\\sigma_2^{-1}$.  In this section, we construct a triangulation of $X_{p}$.  In other words, we decompose the space into tetrahedra with face pairings. The decomposition will be developed using ideas from Appendix~\\ref{app:seeing2-bridge}, which contains a slight re-visualization of the geometric triangulations of 2-bridge link complements presented by Futer in~\\cite[Appendix]{GwithF2Bridge}.  There he uses the fact that a 2-bridge link can be described as a 4-braid \\lq\\lq closed up",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.09349v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Forming a three-stranded full twist",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-21-forming-a-three-stranded-full-twist.md",
+      "narrative": null,
+      "content": "\\label{sec:fulltwist}  \n\nLet $S_0$ be the top 6-punctured sphere.  Label the punctures 0 through 5 and divide $S_0$ into eight triangles as shown in Figure~\\ref{fig:fulltwist}(a).  Think of the punctures --- and the strands descending from them --- as living in the plane of the page, so $\\triangle 025$ is in front of the page and $\\triangle 035$ is behind the page.  Their shared edge, 05, passes through the point at infinity.  The colors indicate the identifications on $S_0$ that will yield a full twist:\n\\begin{description}\n\\item[gray] $\\triangle 025$ is identified to $\\triangle 035$ \n\\item[wh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.09349v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A foundational ideal triangulation",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-22-a-foundational-ideal-triangulation.md",
+      "narrative": null,
+      "content": "\\label{sec:p=1}\n\nTo specify the triangulation of $X_{1}$, we will place tetrahedra in a product region from which the 6-braid, $\\sigma_1\\sigma_4^{-1}$, has been removed.   The left diagram in Figure~\\ref{fig:p=1} shows this region with the braid in the plane of the page, except near the crossings.  \n\nThe method of Appendix~\\ref{app:seeing2-bridge} suggests using three layers of tetrahedra (one on either side of the two crossings).  Label the top, middle, and bottom layers $\\Delta_t$, $\\Delta_m$, and $\\Delta_b$ (with $\\Delta_t$ split into $\\Delta_{tt}$ and $\\Delta_{tb}$).  The six ideal tetrahe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.09349v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Adding layers to extend to p=2 and 3",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "../sections/sec-006-23-adding-layers-to-extend-to-p2-and-3.md",
+      "narrative": null,
+      "content": "\\label{sec:p=3}\n\nIt will be more instructive to first extend the construction of the previous section to $p=3$.  To triangulate the complement of the closure of $C^2\\sigma_1^3\\sigma_2^{-1}$, where there are four half-twists in the braid, begin with five layers:  $\\Delta_t$, $\\Delta_m$, and $\\Delta_b$ and two layers inserted between $\\Delta_t$ and $\\Delta_m$, labelled $\\Delta_{w1}$ and $\\Delta_{w2}$.  Place two tetrahedra in each layer as indicated in Figure~\\ref{fig:p=3}.  Though $\\Delta_t$ is depicted slightly differently (as one layer with the shared face of $t_1^\\prime$ and $t_2^\\prime$, 02",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.09349v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An ideal triangulation for any p",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-007-24-an-ideal-triangulation-for-any-p.md",
+      "narrative": null,
+      "content": "\\label{sec:anyp}\n\nGuided by the previous examples along with Figure~\\ref{fig:p=3},  form an initial triangulation, $\\hat{\\tau}_p$,  of $X_{p}$, the complement of the closure of $C^2\\sigma_1^p\\sigma_2^{-1}$, that consists of $2p+4$ tetrahedra:  $t_1^\\prime$ and $w_0^\\prime$ (n\\'ee~$t_2^\\prime$) in $\\Delta_t$; $w_p$ (n\\'ee~$m_1$) and $m_2$ in $\\Delta_m$; $b_1$ and $b_2^\\prime$ in $\\Delta_b$; and $w_i$ and $w_i^\\prime$ in $\\Delta_{wi}$ where $i=1,\\dots, p-1$.  The face pairings of $\\hat{\\tau}_p$ are determined by sliding faces along the braid and using the full-twist identifications at the top an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.09349v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Equivalence classes of edges in the triangulation",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-008-25-equivalence-classes-of-edges-in-the-triangula.md",
+      "narrative": null,
+      "content": "\\label{sec:edges}\n\nKnowing the relationships between the edges of $\\tau_{p}$ will prove helpful because their equivalence classes form the edges of $X_{p}$ and the (internal) dihedral angles along these edges will dictate its geometry.  In determining equivalence classes, we can use Figure~\\ref{fig:anyp} or Table~\\ref{table:anyp}, whichever is easier.\n\nAs an example, we will determine all edges identified to the 01 edge of $w_0^\\prime$.  In the braid picture, $w_0^\\prime(01)$ slides down through the first $\\sigma_1$ half-twist to be identified with $w_1(10)$ and $w_1^\\prime(10)$, so the equiva",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.09349v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Angle structures and the Casson-Rivin program",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-009-3-angle-structures-and-the-casson-rivin-program.md",
+      "narrative": null,
+      "content": "\\label{sec:anglestructures}  \n\nWe will prove that the triangulation~$\\tau_{p}$ of $X_{p}$ defined in~\\ref{sec:anyp} is geometric by applying the Casson-Rivin program.  This section provides some definitions,  useful results, and a basic outline of the program.  For more details and a beautiful exposition, including an elementary proof of the Casson-Rivin Theorem, the reader is encouraged to read Futer and Gu\\'eritaud's paper~\\cite{AngledtoHyperbolic}.\n\n\n\n\\subsection{Angle structures} \\label{sec:definitions}  \n\nTo move from a topological triangulation to a geometric one, we need a way to impose",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.09349v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Volumes of angle structures",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-010-32-volumes-of-angle-structures.md",
+      "narrative": null,
+      "content": "\\label{sec:volume}\n\nRecall (\\cite{MilnorHypGeom}, for example) that the volume of an ideal hyperbolic tetrahedron, $T$, with dihedral angles $\\theta_1$, $\\theta_2$, and $\\theta_3$ is given by\n$$\nV(T)=\\lob(\\theta_1)+\\lob(\\theta_2)+\\lob(\\theta_3),\n$$\nwhere the Lobachevsky function, $\\lob$, is defined as\n$$\n\\lob(x)=-\\int_0^x\\log|2\\sin t|\\,dt.\n$$  \n\\begin{defn}\\label{def:volume}\nFor a point $\\theta\\in\\mathcal A(\\tau)$, which specifies angles for the $n$ tetrahedra $T_i\\in\\tau$ and has all $\\theta_i\\in(0,\\pi)$, define the \\emph{volume associated to $\\theta$}, $\\mathcal{V}(\\theta)$, by\n$$\n\\mathcal V",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.09349v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Casson-Rivin program",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-011-33-the-casson-rivin-program.md",
+      "narrative": null,
+      "content": "\\label{sec:CR}\n\nIn their proof of Casson and Rivin's theorem, Futer and Gu\\'eritaud  relate  the critical point of the volume (if it exists) and the complete hyperbolic structure (if it exists).  More specifically, they show that the derivative of the volume vanishes in every direction exactly when Thurston's system of gluing equations guaranteeing completeness (given in \\cite{Thurston1}) is satisfied.  In doing so, they prove their main result, a theorem based on independent work of Rivin and Casson usually cited as~\\cite{Rivin}.\n\n\\begin{CRtheorem}[{\\cite[Theorem 1.2]{AngledtoHyperbolic}}]  L",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.09349v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetries of angle structures",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-012-34-symmetries-of-angle-structures.md",
+      "narrative": null,
+      "content": "\\label{sec:symmetries}\n\nWhen arguing that the maximum of the volume cannot appear on the boundary of $\\mathcal{A}(\\tau_{p})$, a certain symmetry of the space of positive angle structures will be helpful.\n\n\\begin{defn}\\label{def:anglespacesymmetry}\nAny symmetry, $\\rho$, of a triangulation, $\\tau$, induces a map on the space of positive angle structures by assigning the angles of $T$ to $\\rho(T)$ for all $T\\in\\tau$.  When such an assignment results in a positive angle structure for all points in $\\mathcal A(\\tau)$, we say \\emph{$\\rho$ induces a symmetry of the space of positive angle structures}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.09349v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The space of positive angle structures is nonempty",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-013-4-the-space-of-positive-angle-structures-is-none.md",
+      "narrative": null,
+      "content": "\\label{sec:anglestructuresnonempty}\n\nWe now return to the triangulations, $\\tau_{p}$, defined in~\\ref{sec:anyp}.  Our immediate goal is to complete the first step of the Casson-Rivin program by showing that $\\mathcal A(\\tau_{p})$ is nonempty, i.e., that $\\tau_{p}$ admits a positive angle structure.  We will do so by showing that  $\\tau_{p}$ has a veering angle structure, which can be deformed to a positive angle structure~\\cite{HodgsonEtal}~\\cite{veering}.  We then use the veering structure to describe an explicit coordinate system for $\\mathcal A(\\tau_{p})$ and conclude the section by writing",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.09349v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The triangulations are veering",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-014-41-the-triangulations-are-veering.md",
+      "narrative": null,
+      "content": "\\label{sec:veering}\n\nWhile the initial triangulations $\\hat{\\tau}_p$ were not veering, the Pachner moves eliminated the obstructions and \n\\begin{prop}\\label{prop:veering}\nEach triangulation $\\tau_{p}$ is veering.\n\\end{prop}\n\\begin{proof}\nWith the exception of $s$, the tetrahedra in $\\tau_{p}$ have an upward orientation induced by the product region containing the 6-braid, which is how the non-$s$ tetrahedra of $\\tau_{p}$ are flattened in Figure~\\ref{fig:anyp}.   Flatten $s$ as indicated in the same figure.  In each tetrahedron, assign an angle of~$\\pi$ to the diagonal edges and an angle of~0 t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.09349v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Coordinates for the space of positive angle structures",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-015-42-coordinates-for-the-space-of-positive-angle-s.md",
+      "narrative": null,
+      "content": "\\label{sec:coordinates}\n\nThe veering structure on~$\\tau_{p}$ allows us to introduce convenient coordinates for a point $\\theta$ in $\\mathcal A(\\tau_{p})$.  For $T$ in~$\\tau_{p}$, let~$\\theta_D T$ denote the angle assigned to the diagonals of~$T$, $\\theta_R T$ the angle assigned to the red edges, and $\\theta_B T$ to the blue edges.  Thus, we can write $\\theta\\in\\mathcal{A}(\\tau_{p})\\subset(0,\\pi)^{3(2p+1)}$ as\n\\begin{multline*}\n(\\theta_R w_0^\\prime,\n\\theta_B w_0^\\prime,\n\\theta_D w_0^\\prime,\\dots,\n\\theta_R w_{p-1}^\\prime,\n\\theta_B w_{p-1}^\\prime,\n\\theta_D w_{p-i}^\\prime,\\\\\n\\theta_R w_1,\n\\theta_B",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.09349v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A symmetry of the space of angle structures",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-016-43-a-symmetry-of-the-space-of-angle-structures.md",
+      "narrative": null,
+      "content": "\\label{sec:symmetry}\n\nConsider the closure of $C^2\\sigma_1^p\\sigma_2^{-1}$ as shown on the right of Figure~\\ref{fig:6braid}.  Moving the lone half-twist up so that it occurs halfway along the $\\sigma_1$ half-twists reveals an order 2 symmetry of $X_p$ --- rotate about a horizontal line through the lone half-twist.  This involution induces a symmetry on the triangulation $\\tau_p$ --- rotate the tetrahedra in Figure~\\ref{fig:anyp} about a horizontal line and take $s$ to itself.  This symmetry will respect  angle structures:\n\n\\begin{prop} \\label{prop:symmetry}\nAn involution $\\iota:\\tau_{p}\\righta",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.09349v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The maximal volume occurs at a positive angle structure",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "../sections/sec-017-5-the-maximal-volume-occurs-at-a-positive-angle.md",
+      "narrative": null,
+      "content": "\\label{sec:proofq=1}\n\nCorollary~\\ref{cor:positiveanglestructure} shows that the space of positive angle structures on each triangulation~$\\tau_{p}$ is nonempty, so we have accomplished the first step of the Casson-Rivin program described by  Futer and Gu\\'eritaud in~\\cite{AngledtoHyperbolic} and summarized in~\\ref{sec:CR}.  In this section, we complete the program, proving the main result.\n\n\\begin{thm}\\label{thm:q=1}\nLet $L_p$ be the closure of the 3-braid $C^2\\sigma_1^p\\sigma_2^{-1}$ and $X_{p}$ be its complement in the 3-sphere.  Then there is an ideal triangulation of $X_{p}$ that is geomet",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.09349v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Extending the construction",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/sec-018-6-extending-the-construction.md",
+      "narrative": null,
+      "content": "\\label{sec:extendingconstruction}\n\nHaving constructed geometric triangulations for the braid closure of $C^2\\sigma_1^p\\sigma_2^{-1}$, it is natural to ask whether this construction \ncan be extended to cover more cases.  For example, hyperbolic T-links on three strands must be equivalent to closures of braids of the form $C^k\\sigma_1^p\\sigma_2^{-1}$ with $p>0$ and $k\\ge2$, so adding more full twists to the construction would provide triangulations of all possible hyperbolic T-links on three strands.  However, a useful combinatorial triangulation is not obvious.\n\nAnother possible extension would",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.09349v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. Visualizing triangulations of 2-bridge link complements",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "../sections/sec-019-appendix-a-visualizing-triangulations-of-2-bridg.md",
+      "narrative": null,
+      "content": "Sakuma and Weeks constructed topological triangulations of 2-bridge link complements [18],\nwhich Futer showed were geometric [9, Appendix]. Futer’s approach follows that of Gu´eritaud, whose\ndevelopment of geometric triangulations of once-punctured torus bundles and 4-punctured sphere\nbundles forms the bulk of [9]. This appendix presents another way to visualize the triangulations of\n2-bridge link complements.\nFuter’s description of these triangulations is based on the fact that, with the exception of the\nunknot and the trivial link with two components, 2-bridge links can be constructed from c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.09349v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-020-references.md",
+      "narrative": null,
+      "content": "1. Ian Agol, Ideal triangulations of pseudo-Anosov mapping tori, Topology and geometry in dimension three, Con-\ntemp. Math., vol. 560, Amer. Math. Soc., Providence, RI, 2011, pp. 1–17. MR 2866919\n2. Joan Birman and Ilya Kofman, A new twist on Lorenz links, J. Topol. 2 (2009), no. 2, 227–248. MR 2529294\n3. Benjamin A. Burton, Ryan Budney, William Pettersson, et al., Regina: Software for low-dimensional topology,\nhttp://regina-normal.github.io, 1999–2021.\n4. Marc Culler, Nathan M. Dunﬁeld, Matthias Goerner, and Jeﬀrey R. Weeks, SnapPy, a computer program for\nstudying the geometry and topology of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

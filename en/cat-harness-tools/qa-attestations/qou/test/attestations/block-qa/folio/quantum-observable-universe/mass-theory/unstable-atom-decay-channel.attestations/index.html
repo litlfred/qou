@@ -1,0 +1,1557 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/unstable-atom-decay-channel.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../../../assets/navbar/rail-1bwvso4bndd.js" defer></script><script src="../../../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../../../.." data-fa-to-root="../../../../../../../../../../..">{"data":"rail-1bwvso4bndd","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/unstable-atom-decay-channel.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/unstable-atom-decay-channel.attestations</h1>
+<p class="m">A <a href="../../../../../../../../">qa-attestations</a> node held by <a href="../../../../../../../">qou</a>, at <code>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/unstable-atom-decay-channel.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>block-qa</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;block&quot;,
+  &quot;id&quot;: &quot;folio/quantum-observable-universe/mass-theory/unstable-atom-decay-channel&quot;,
+  &quot;path&quot;: &quot;folio/quantum-observable-universe/mass-theory/unstable-atom-decay-channel&quot;
+}</pre></dd>
+<dt>criteria</dt><dd><pre>{
+  &quot;voice-branch-jargon&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No branch/audit jargon found. Body prose and .ts title carry no branch decision labels, bean/PR/branch identifiers, AGENTS.md section tags, internal audit-document references, or agentic work narration. Knot-theoretic and algebraic symbols in this region (Reidemeister moves R1/R2/R3, Hecke relations, $C^1$/$C_n$, $H_3$, $q_0$, knot names such as $4_1$) were checked and are legitimate mathematics.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-08-08T08:22:35.606Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/branch-jargon-sweep&quot;,
+        &quot;agent_skill&quot;: &quot;local/one-voice-audit&quot;
+      }
+    }
+  ],
+  &quot;voice-scholarly-default&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;75f48595dd4d&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;,
+        &quot;lean&quot;: &quot;8b45d05c5219&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;d11f66d4db37&quot;,
+        &quot;ts&quot;: &quot;ec413af1fc5e&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:45:51.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a5b6a61db09f7c8c21533bc71258f15761f886db&quot;,
+      &quot;evidence&quot;: &quot;Full read of the proposition as restated in #8888 (head a5b6a61d) against decay_channel in the sibling .lean. Declarative, definition-first scholarly register; hypotheses stated before the conclusion.&quot;
+    }
+  ],
+  &quot;voice-ai-slop&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;75f48595dd4d&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;,
+        &quot;lean&quot;: &quot;8b45d05c5219&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;d11f66d4db37&quot;,
+        &quot;ts&quot;: &quot;ec413af1fc5e&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:45:51.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a5b6a61db09f7c8c21533bc71258f15761f886db&quot;,
+      &quot;evidence&quot;: &quot;Full read of the proposition as restated in #8888 (head a5b6a61d) against decay_channel in the sibling .lean. No filler, hype, hedging stacks or stock AI phrasing in the new text.&quot;
+    }
+  ],
+  &quot;voice-statement-no-interpretation&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;83ff213bd4cf&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;,
+        &quot;lean&quot;: &quot;8b45d05c5219&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b4ea040723a1332bd55c196ec3957bef43bc0abd&quot;,
+      &quot;notes&quot;: &quot;Statement is a bare mathematical claim.&quot;
+    }
+  ],
+  &quot;fit-section-chapter&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;83ff213bd4cf&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;,
+        &quot;lean&quot;: &quot;8b45d05c5219&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b4ea040723a1332bd55c196ec3957bef43bc0abd&quot;,
+      &quot;notes&quot;: &quot;The block content is well-aligned with the chapter scope.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:44:16.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;39fa146175ae7dfb601e0bb49d064c2ea32a024b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;83ff213bd4cf&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;,
+        &quot;lean&quot;: &quot;8b45d05c5219&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;wall-side-statement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;83ff213bd4cf&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;,
+        &quot;lean&quot;: &quot;8b45d05c5219&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b4ea040723a1332bd55c196ec3957bef43bc0abd&quot;,
+      &quot;notes&quot;: &quot;Statement respects the chapter&#39;s base-ring regime.&quot;
+    }
+  ],
+  &quot;wall-side-proof&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;83ff213bd4cf&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;,
+        &quot;lean&quot;: &quot;8b45d05c5219&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b4ea040723a1332bd55c196ec3957bef43bc0abd&quot;,
+      &quot;notes&quot;: &quot;Proof machinery matches the statement regime.&quot;
+    }
+  ],
+  &quot;proof-narrative-lean-equiv&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;75f48595dd4d&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;,
+        &quot;lean&quot;: &quot;82458b96ae28&quot;,
+        &quot;lean_statement&quot;: &quot;51981c205027&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:sidecar-review-2026-11-15&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-15T21:56:01.070Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b2b349f3607b14633db66340b2e643563a868ddf&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;evidence&quot;: &quot;Lean takes `hsel` (every minimiser equals λ*) as a hypothesis and concludes uniqueness: a tautology over the hypothesised selection. The sibling docstring says so honestly. The statement says λ* is well-defined for every unstable K, but the proof only gets \&quot;generically, off the boundary variety\&quot;, so the q-range or genericity is missing. False steps: \&quot;the relaxation is the convex hull of integer solutions\&quot;; \&quot;the unique optimal vertex\&quot; of a cone {x ≥ 0 : Gx ≥ 0} with no objective. Root defect: `def:stable-atom` asks for ∃x ∈ ℤ≥0^N with Gx ≥ 0, and x = 0 always works (the proof says so in its own line 4). So every atom is stable and \&quot;unstable\&quot; is empty as written&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;d11f66d4db37&quot;,
+        &quot;ts&quot;: &quot;ec413af1fc5e&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:45:51.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a5b6a61db09f7c8c21533bc71258f15761f886db&quot;,
+      &quot;evidence&quot;: &quot;Full read of the proposition as restated in #8888 (head a5b6a61d) against decay_channel in the sibling .lean. The STATEMENT now matches the Lean. The PROOF block (unstable-atom-decay-channel-proof.md, untouched by this PR) still argues the old, stronger claim: it derives lambda* from an LP relaxation (\&quot;the relaxation is the convex hull of integer solutions\&quot;, \&quot;the unique optimal vertex\&quot; of a cone with no objective) and asserts generic uniqueness, none of which is the Lean argument (selection is a hypothesis). Narrative and Lean still prove different things; pre-existing fail on main, not introduced by this PR, but not resolved by the restatement.&quot;,
+      &quot;severity&quot;: &quot;major&quot;
+    }
+  ],
+  &quot;proof-rater-strategy-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;proof-rater-goal-plausibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;proof-rater-novelty&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;proof-statement-integrity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;75f48595dd4d&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;,
+        &quot;lean&quot;: &quot;ee82a4c479e5&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qou-z9ws-vacuity-drain&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-31T11:55:02.722Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;52844595f8db28fbd291aba42e8c85ff9f0b3297&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Two of the three manuscript sub-claims are now derived; the first is not encoded at all. (i) Well-definedness of lambda* -- the manuscript derives it by running the LP relaxation, taking the optimal vertex and rounding. Nothing in the Lean constructs the LP, its vertex, or the arg min. The old library encoding had it as the bare field &#39;E_lambda != 0&#39;, which is neither that argument nor a consequence of it; it is dropped rather than restated. Also unencoded: the boundary variety is an opaque predicate OnBoundary, so its definition as {q : exists lam1 != lam2, |y_lam1(q)| = |y_lam2(q)|} and its measure-zero property are absent and the manuscript&#39;s &#39;generically&#39; is not formalised; and continuity of E(lambda*, .) is a hypothesis of the crossing result, which the manuscript does not establish either.&quot;,
+      &quot;notes&quot;: &quot;Two defects fixed. FIRST, the lean.ref did not resolve to the declaration it names. Per AGENTS.md 0a resolution checks the sibling first, and this sibling exists -- so qou:QOU.BraidKnot.UnstableAtom.decay_channel resolved HERE, to a file declaring decay_channel_unique and no decay_channel. The sibling&#39;s own docstring meanwhile declared the library path canonical (&#39;The substantive Lean encoding ... lives at the canonical library path&#39;), which resolution makes unreachable. The sibling now declares decay_channel. SECOND, the library DecayChannelContext carried Z, N, q, PartitionIdx, lam_star, E_lambda, on_boundary, lam_alt, q_1, q_2 AND all three sub-claims as its own fields, with decay_channel returning the three claim fields as a triple; on_boundary := fun _ =&gt; True makes (ii) vacuous, q_1 := 1, q_2 := 0 makes (iii) vacuous, E_lambda := 1 discharges (i), so the binder assumed nothing. The library file is gutted (0 importers). GAINED: sub-claim (iii) is now PROVED rather than assumed -- &#39;stable at q1, unstable at q2 implies exists q* in [q1,q2] with E(lambda*,q*) = 0&#39; is the intermediate value theorem, which is what the manuscript&#39;s own Connection-to-phase-boundary paragraph argues; phase_boundary_crossing derives it from ContinuousOn and a sign change. Sub-claim (ii) is derived from the LP-duality selection input by composing it with itself through lam_star. .md untouched, so all 42 needs-agent criteria on this block are pre-existing. Bean qou-z9ws.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;d11f66d4db37&quot;,
+        &quot;ts&quot;: &quot;ec413af1fc5e&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:45:51.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a5b6a61db09f7c8c21533bc71258f15761f886db&quot;,
+      &quot;evidence&quot;: &quot;Full read of the proposition as restated in #8888 (head a5b6a61d) against decay_channel in the sibling .lean. The statement now encodes exactly the Lean: hypotheses hsel (LP-duality selection off the boundary variety) and hoff, conclusion (1) any two minimisers coincide, (2) IVT crossing for E continuous on [q1,q2] with E(q1) &lt;= 0 &lt;= E(q2). Existence of lambda* is explicitly disclaimed. OnBoundary is opaque in Lean and the .md only names it, so nothing is claimed that the Lean lacks.&quot;
+    }
+  ],
+  &quot;proof-no-self-assuming-projection&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-trivial-true&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Lean file checked on branch. No &#39;proof-no-trivial-true&#39; issue detected. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:37:37.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-false-premise&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-unused-hypotheses&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-decide-masking&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-false-claim&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;83ff213bd4cf&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;,
+        &quot;lean&quot;: &quot;8b45d05c5219&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;The mathematical claims in &#39;Unstable atom has a uniquely-determined decay channel&#39; are unverified due to compile errors in the Lean sibling file: folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean:25:13: error: Function expected at.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;unstable-atom-decay-channel.lean:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:44:16.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;39fa146175ae7dfb601e0bb49d064c2ea32a024b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-vacuous&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;83ff213bd4cf&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;,
+        &quot;lean&quot;: &quot;8b45d05c5219&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;The Lean sibling folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean contains &#39;sorry&#39; placeholders, rendering the formal proof vacuous.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;unstable-atom-decay-channel.lean:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:44:16.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;39fa146175ae7dfb601e0bb49d064c2ea32a024b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-circular&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;83ff213bd4cf&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;,
+        &quot;lean&quot;: &quot;8b45d05c5219&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;No circular reasoning or self-assuming definitions detected in &#39;Unstable atom has a uniquely-determined decay channel&#39;.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;unstable-atom-decay-channel.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:44:16.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;39fa146175ae7dfb601e0bb49d064c2ea32a024b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-overclaim&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;83ff213bd4cf&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;,
+        &quot;lean&quot;: &quot;8b45d05c5219&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;The remarks and narrative scope in &#39;Unstable atom has a uniquely-determined decay channel&#39; are appropriately qualified.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:44:16.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;39fa146175ae7dfb601e0bb49d064c2ea32a024b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-hidden-dof&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;83ff213bd4cf&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;,
+        &quot;lean&quot;: &quot;8b45d05c5219&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;No hidden degrees of freedom or unstated parameters are introduced in &#39;Unstable atom has a uniquely-determined decay channel&#39;.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;unstable-atom-decay-channel.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:44:16.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;39fa146175ae7dfb601e0bb49d064c2ea32a024b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-non-sequitur&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;83ff213bd4cf&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;,
+        &quot;lean&quot;: &quot;8b45d05c5219&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;Logical gaps exist due to compilation failure in folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;unstable-atom-decay-channel.lean:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:44:16.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;39fa146175ae7dfb601e0bb49d064c2ea32a024b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-lean-narrative-divergence&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;83ff213bd4cf&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;,
+        &quot;lean&quot;: &quot;8b45d05c5219&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;The Lean sibling folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean fails compilation, causing divergence from the narrative.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;The Lean sibling folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean fails compilation, causing divergence from the narrative.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:44:16.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;39fa146175ae7dfb601e0bb49d064c2ea32a024b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-citation-misuse&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;83ff213bd4cf&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;,
+        &quot;lean&quot;: &quot;8b45d05c5219&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;No citations are present in &#39;Unstable atom has a uniquely-determined decay channel&#39;, hence no citation misuse is possible.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;unstable-atom-decay-channel.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:44:16.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;39fa146175ae7dfb601e0bb49d064c2ea32a024b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-definitional-ambiguity&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;83ff213bd4cf&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;,
+        &quot;lean&quot;: &quot;8b45d05c5219&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;Key terms and symbols in &#39;Unstable atom has a uniquely-determined decay channel&#39; are mathematically defined and unambiguous.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;unstable-atom-decay-channel.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:44:16.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;39fa146175ae7dfb601e0bb49d064c2ea32a024b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-empirical-fragility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;83ff213bd4cf&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;,
+        &quot;lean&quot;: &quot;8b45d05c5219&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;The algebraic and logical relations in &#39;Unstable atom has a uniquely-determined decay channel&#39; are independent of empirical tuning parameters.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;unstable-atom-decay-channel.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:44:16.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;39fa146175ae7dfb601e0bb49d064c2ea32a024b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-physical-implausibility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;83ff213bd4cf&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;,
+        &quot;lean&quot;: &quot;8b45d05c5219&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;The physical concepts described in &#39;Unstable atom has a uniquely-determined decay channel&#39; are consistent with quantum observable mechanics.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;unstable-atom-decay-channel.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:44:16.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;39fa146175ae7dfb601e0bb49d064c2ea32a024b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-reproducibility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;83ff213bd4cf&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;,
+        &quot;lean&quot;: &quot;8b45d05c5219&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;The Lean sibling folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean fails compilation, indicating a reproducibility failure.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;unstable-atom-decay-channel.lean:1 — folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean:25:13: error: Function expected at&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:44:16.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;39fa146175ae7dfb601e0bb49d064c2ea32a024b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;da-referee-verdict&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;83ff213bd4cf&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;,
+        &quot;lean&quot;: &quot;8b45d05c5219&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:57.368629Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;8eafea2450fb8c6902b6ab97bca65ee79eae6d73&quot;,
+      &quot;notes&quot;: &quot;Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean fails compilation.&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;verdict&quot;: &quot;open-objection&quot;,
+      &quot;referee_argument&quot;: &quot;The Lean sibling folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean fails compilation, indicating that the claims cannot be formally verified in Lean.&quot;,
+      &quot;evidence&quot;: &quot;Referee verdict: open-objection. Lean sibling folio/quantum-observable-universe/particle-interactions/unstable-atom-decay-channel.lean fails compilation.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:44:16.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;39fa146175ae7dfb601e0bb49d064c2ea32a024b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;expo-milnor-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:16:30.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;715a9a708c210d840f41c621cb20b53301cf19b6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-19&quot;
+      }
+    }
+  ],
+  &quot;milnor-brevity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Content is sound.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-13T01:44:16.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;39fa146175ae7dfb601e0bb49d064c2ea32a024b&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-13&quot;
+      }
+    }
+  ],
+  &quot;trap-negation-contrast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;75f48595dd4d&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:q13&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T21:31:08.435Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;d2f71737eb00163e064480f0ba1a82d4a2cf9191&quot;,
+      &quot;evidence&quot;: &quot;Full-context read; no assert-by-denial construction; contrasts present (if any) are substantive mathematical distinctions.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;75f48595dd4d&quot;,
+        &quot;ts&quot;: &quot;ecc6f305de48&quot;,
+        &quot;lean&quot;: &quot;82458b96ae28&quot;,
+        &quot;lean_statement&quot;: &quot;51981c205027&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T12:59:24.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;be175f8606c264ebd5a8f26736dd51db949a2a16&quot;,
+      &quot;evidence&quot;: &quot;Re-read after this PR&#39;s only change to the block: a new .ts authorNotes caveat (&#39;Lean scope (disclosure, not a change of claim)&#39;); the .md is unchanged from the previous all-pass review. Scanned the caveat for every trap: no em-dashes, no pivot, no aphorism or thesis-restatement closer, no announced emphasis, no warmth, no superlatives; sentences read aloud. The numbered (1)(2)(3) gaps are a substantive enumeration of what the Lean does not prove.&quot;,
+      &quot;notes&quot;: &quot;Label &#39;disclosure, not a change of claim&#39; is a scope contrast that is the claim; passes with a note.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;d11f66d4db37&quot;,
+        &quot;ts&quot;: &quot;ec413af1fc5e&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:45:51.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a5b6a61db09f7c8c21533bc71258f15761f886db&quot;,
+      &quot;evidence&quot;: &quot;Full read of the proposition as restated in #8888 (head a5b6a61d) against decay_channel in the sibling .lean. No instance of this pattern in the restated text.&quot;
+    }
+  ],
+  &quot;trap-rhetorical-pivot&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;75f48595dd4d&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:q13&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T21:31:08.477Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;d2f71737eb00163e064480f0ba1a82d4a2cf9191&quot;,
+      &quot;evidence&quot;: &quot;Full-context read; no setup-then-reframe pivot.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;75f48595dd4d&quot;,
+        &quot;ts&quot;: &quot;ecc6f305de48&quot;,
+        &quot;lean&quot;: &quot;82458b96ae28&quot;,
+        &quot;lean_statement&quot;: &quot;51981c205027&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T12:59:24.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;be175f8606c264ebd5a8f26736dd51db949a2a16&quot;,
+      &quot;evidence&quot;: &quot;Re-read after this PR&#39;s only change to the block: a new .ts authorNotes caveat (&#39;Lean scope (disclosure, not a change of claim)&#39;); the .md is unchanged from the previous all-pass review. Scanned the caveat for every trap: no em-dashes, no pivot, no aphorism or thesis-restatement closer, no announced emphasis, no warmth, no superlatives; sentences read aloud. The numbered (1)(2)(3) gaps are a substantive enumeration of what the Lean does not prove.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;d11f66d4db37&quot;,
+        &quot;ts&quot;: &quot;ec413af1fc5e&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:45:51.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a5b6a61db09f7c8c21533bc71258f15761f886db&quot;,
+      &quot;evidence&quot;: &quot;Full read of the proposition as restated in #8888 (head a5b6a61d) against decay_channel in the sibling .lean. No instance of this pattern in the restated text.&quot;
+    }
+  ],
+  &quot;trap-em-dash&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;75f48595dd4d&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:q13&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T21:31:08.521Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;d2f71737eb00163e064480f0ba1a82d4a2cf9191&quot;,
+      &quot;evidence&quot;: &quot;Full-context read; em-dash usage absent or true parenthetical/gloss; density low.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;75f48595dd4d&quot;,
+        &quot;ts&quot;: &quot;ecc6f305de48&quot;,
+        &quot;lean&quot;: &quot;82458b96ae28&quot;,
+        &quot;lean_statement&quot;: &quot;51981c205027&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T12:59:24.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;be175f8606c264ebd5a8f26736dd51db949a2a16&quot;,
+      &quot;evidence&quot;: &quot;Re-read after this PR&#39;s only change to the block: a new .ts authorNotes caveat (&#39;Lean scope (disclosure, not a change of claim)&#39;); the .md is unchanged from the previous all-pass review. Scanned the caveat for every trap: no em-dashes, no pivot, no aphorism or thesis-restatement closer, no announced emphasis, no warmth, no superlatives; sentences read aloud. The numbered (1)(2)(3) gaps are a substantive enumeration of what the Lean does not prove.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;d11f66d4db37&quot;,
+        &quot;ts&quot;: &quot;ec413af1fc5e&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:45:51.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a5b6a61db09f7c8c21533bc71258f15761f886db&quot;,
+      &quot;evidence&quot;: &quot;Full read of the proposition as restated in #8888 (head a5b6a61d) against decay_channel in the sibling .lean. No instance of this pattern in the restated text.&quot;
+    }
+  ],
+  &quot;trap-triples&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;75f48595dd4d&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:q13&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T21:31:08.562Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;d2f71737eb00163e064480f0ba1a82d4a2cf9191&quot;,
+      &quot;evidence&quot;: &quot;Full-context read; no reflex three-item lists; enumerations are substantive.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;75f48595dd4d&quot;,
+        &quot;ts&quot;: &quot;ecc6f305de48&quot;,
+        &quot;lean&quot;: &quot;82458b96ae28&quot;,
+        &quot;lean_statement&quot;: &quot;51981c205027&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T12:59:24.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;be175f8606c264ebd5a8f26736dd51db949a2a16&quot;,
+      &quot;evidence&quot;: &quot;Re-read after this PR&#39;s only change to the block: a new .ts authorNotes caveat (&#39;Lean scope (disclosure, not a change of claim)&#39;); the .md is unchanged from the previous all-pass review. Scanned the caveat for every trap: no em-dashes, no pivot, no aphorism or thesis-restatement closer, no announced emphasis, no warmth, no superlatives; sentences read aloud. The numbered (1)(2)(3) gaps are a substantive enumeration of what the Lean does not prove.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;d11f66d4db37&quot;,
+        &quot;ts&quot;: &quot;ec413af1fc5e&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:45:51.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a5b6a61db09f7c8c21533bc71258f15761f886db&quot;,
+      &quot;evidence&quot;: &quot;Full read of the proposition as restated in #8888 (head a5b6a61d) against decay_channel in the sibling .lean. No instance of this pattern in the restated text.&quot;
+    }
+  ],
+  &quot;trap-closing-aphorism&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;75f48595dd4d&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:q13&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T21:31:08.624Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;d2f71737eb00163e064480f0ba1a82d4a2cf9191&quot;,
+      &quot;evidence&quot;: &quot;Full-context read; final line is content/cross-reference, not a quotable closer.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;75f48595dd4d&quot;,
+        &quot;ts&quot;: &quot;ecc6f305de48&quot;,
+        &quot;lean&quot;: &quot;82458b96ae28&quot;,
+        &quot;lean_statement&quot;: &quot;51981c205027&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T12:59:24.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;be175f8606c264ebd5a8f26736dd51db949a2a16&quot;,
+      &quot;evidence&quot;: &quot;Re-read after this PR&#39;s only change to the block: a new .ts authorNotes caveat (&#39;Lean scope (disclosure, not a change of claim)&#39;); the .md is unchanged from the previous all-pass review. Scanned the caveat for every trap: no em-dashes, no pivot, no aphorism or thesis-restatement closer, no announced emphasis, no warmth, no superlatives; sentences read aloud. The numbered (1)(2)(3) gaps are a substantive enumeration of what the Lean does not prove.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;d11f66d4db37&quot;,
+        &quot;ts&quot;: &quot;ec413af1fc5e&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:45:51.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a5b6a61db09f7c8c21533bc71258f15761f886db&quot;,
+      &quot;evidence&quot;: &quot;Full read of the proposition as restated in #8888 (head a5b6a61d) against decay_channel in the sibling .lean. No instance of this pattern in the restated text.&quot;
+    }
+  ],
+  &quot;trap-meta-commentary&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;75f48595dd4d&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:q13&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T21:31:08.670Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;d2f71737eb00163e064480f0ba1a82d4a2cf9191&quot;,
+      &quot;evidence&quot;: &quot;Full-context read; no narration of emphasis (&#39;we emphasize&#39;, &#39;note the framing&#39;).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;75f48595dd4d&quot;,
+        &quot;ts&quot;: &quot;ecc6f305de48&quot;,
+        &quot;lean&quot;: &quot;82458b96ae28&quot;,
+        &quot;lean_statement&quot;: &quot;51981c205027&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T12:59:24.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;be175f8606c264ebd5a8f26736dd51db949a2a16&quot;,
+      &quot;evidence&quot;: &quot;Re-read after this PR&#39;s only change to the block: a new .ts authorNotes caveat (&#39;Lean scope (disclosure, not a change of claim)&#39;); the .md is unchanged from the previous all-pass review. Scanned the caveat for every trap: no em-dashes, no pivot, no aphorism or thesis-restatement closer, no announced emphasis, no warmth, no superlatives; sentences read aloud. The numbered (1)(2)(3) gaps are a substantive enumeration of what the Lean does not prove.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;d11f66d4db37&quot;,
+        &quot;ts&quot;: &quot;ec413af1fc5e&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:45:51.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a5b6a61db09f7c8c21533bc71258f15761f886db&quot;,
+      &quot;evidence&quot;: &quot;Full read of the proposition as restated in #8888 (head a5b6a61d) against decay_channel in the sibling .lean. \&quot;The existence of lambda* is not part of this statement.\&quot; refers to the statement itself. This is an honest scope disclaimer and does not mislead; flagged only because a statement block should carry the claim alone (clarity-stmt-pure); the disclaimer could move to a follow-on remark or the existing authorNotes caveat.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    }
+  ],
+  &quot;trap-thesis-restatement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;75f48595dd4d&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:q13&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T21:31:08.714Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;d2f71737eb00163e064480f0ba1a82d4a2cf9191&quot;,
+      &quot;evidence&quot;: &quot;Full-context read; no block-final restatement of established content.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;75f48595dd4d&quot;,
+        &quot;ts&quot;: &quot;ecc6f305de48&quot;,
+        &quot;lean&quot;: &quot;82458b96ae28&quot;,
+        &quot;lean_statement&quot;: &quot;51981c205027&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T12:59:24.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;be175f8606c264ebd5a8f26736dd51db949a2a16&quot;,
+      &quot;evidence&quot;: &quot;Re-read after this PR&#39;s only change to the block: a new .ts authorNotes caveat (&#39;Lean scope (disclosure, not a change of claim)&#39;); the .md is unchanged from the previous all-pass review. Scanned the caveat for every trap: no em-dashes, no pivot, no aphorism or thesis-restatement closer, no announced emphasis, no warmth, no superlatives; sentences read aloud. The numbered (1)(2)(3) gaps are a substantive enumeration of what the Lean does not prove.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;d11f66d4db37&quot;,
+        &quot;ts&quot;: &quot;ec413af1fc5e&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:45:51.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a5b6a61db09f7c8c21533bc71258f15761f886db&quot;,
+      &quot;evidence&quot;: &quot;Full read of the proposition as restated in #8888 (head a5b6a61d) against decay_channel in the sibling .lean. No instance of this pattern in the restated text.&quot;
+    }
+  ],
+  &quot;trap-performed-warmth&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;75f48595dd4d&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:q13&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T21:31:08.760Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;d2f71737eb00163e064480f0ba1a82d4a2cf9191&quot;,
+      &quot;evidence&quot;: &quot;Full-context read; institutional scholarly register throughout.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;75f48595dd4d&quot;,
+        &quot;ts&quot;: &quot;ecc6f305de48&quot;,
+        &quot;lean&quot;: &quot;82458b96ae28&quot;,
+        &quot;lean_statement&quot;: &quot;51981c205027&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T12:59:24.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;be175f8606c264ebd5a8f26736dd51db949a2a16&quot;,
+      &quot;evidence&quot;: &quot;Re-read after this PR&#39;s only change to the block: a new .ts authorNotes caveat (&#39;Lean scope (disclosure, not a change of claim)&#39;); the .md is unchanged from the previous all-pass review. Scanned the caveat for every trap: no em-dashes, no pivot, no aphorism or thesis-restatement closer, no announced emphasis, no warmth, no superlatives; sentences read aloud. The numbered (1)(2)(3) gaps are a substantive enumeration of what the Lean does not prove.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;d11f66d4db37&quot;,
+        &quot;ts&quot;: &quot;ec413af1fc5e&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:45:51.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a5b6a61db09f7c8c21533bc71258f15761f886db&quot;,
+      &quot;evidence&quot;: &quot;Full read of the proposition as restated in #8888 (head a5b6a61d) against decay_channel in the sibling .lean. No instance of this pattern in the restated text.&quot;
+    }
+  ],
+  &quot;trap-superlative&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;75f48595dd4d&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:q13&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T21:31:08.808Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;d2f71737eb00163e064480f0ba1a82d4a2cf9191&quot;,
+      &quot;evidence&quot;: &quot;Full-context read; no unqualified maximum-strength claims.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;75f48595dd4d&quot;,
+        &quot;ts&quot;: &quot;ecc6f305de48&quot;,
+        &quot;lean&quot;: &quot;82458b96ae28&quot;,
+        &quot;lean_statement&quot;: &quot;51981c205027&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T12:59:24.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;be175f8606c264ebd5a8f26736dd51db949a2a16&quot;,
+      &quot;evidence&quot;: &quot;Re-read after this PR&#39;s only change to the block: a new .ts authorNotes caveat (&#39;Lean scope (disclosure, not a change of claim)&#39;); the .md is unchanged from the previous all-pass review. Scanned the caveat for every trap: no em-dashes, no pivot, no aphorism or thesis-restatement closer, no announced emphasis, no warmth, no superlatives; sentences read aloud. The numbered (1)(2)(3) gaps are a substantive enumeration of what the Lean does not prove.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;d11f66d4db37&quot;,
+        &quot;ts&quot;: &quot;ec413af1fc5e&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:45:51.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a5b6a61db09f7c8c21533bc71258f15761f886db&quot;,
+      &quot;evidence&quot;: &quot;Full read of the proposition as restated in #8888 (head a5b6a61d) against decay_channel in the sibling .lean. No instance of this pattern in the restated text.&quot;
+    }
+  ],
+  &quot;trap-nonspeakable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;75f48595dd4d&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:q13&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-15T21:31:08.852Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;d2f71737eb00163e064480f0ba1a82d4a2cf9191&quot;,
+      &quot;evidence&quot;: &quot;Full-context read; prose parses aloud; noun chains within normal mathematical register.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;75f48595dd4d&quot;,
+        &quot;ts&quot;: &quot;ecc6f305de48&quot;,
+        &quot;lean&quot;: &quot;82458b96ae28&quot;,
+        &quot;lean_statement&quot;: &quot;51981c205027&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T12:59:24.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;be175f8606c264ebd5a8f26736dd51db949a2a16&quot;,
+      &quot;evidence&quot;: &quot;Re-read after this PR&#39;s only change to the block: a new .ts authorNotes caveat (&#39;Lean scope (disclosure, not a change of claim)&#39;); the .md is unchanged from the previous all-pass review. Scanned the caveat for every trap: no em-dashes, no pivot, no aphorism or thesis-restatement closer, no announced emphasis, no warmth, no superlatives; sentences read aloud. The numbered (1)(2)(3) gaps are a substantive enumeration of what the Lean does not prove.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;d11f66d4db37&quot;,
+        &quot;ts&quot;: &quot;ec413af1fc5e&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:45:51.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a5b6a61db09f7c8c21533bc71258f15761f886db&quot;,
+      &quot;evidence&quot;: &quot;Full read of the proposition as restated in #8888 (head a5b6a61d) against decay_channel in the sibling .lean. No instance of this pattern in the restated text.&quot;
+    }
+  ],
+  &quot;proof-no-placeholder-stub&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;75f48595dd4d&quot;,
+        &quot;ts&quot;: &quot;6e21abfe8217&quot;,
+        &quot;lean&quot;: &quot;ee82a4c479e5&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qou-z9ws-vacuity-drain&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-31T11:55:02.773Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;52844595f8db28fbd291aba42e8c85ff9f0b3297&quot;,
+      &quot;notes&quot;: &quot;The library file this block&#39;s ref used to name called itself a &#39;Placeholder canonical ... The full Lean statement is pending; this stub exists so the lean.ref URI resolves to a real declaration&#39;. It is gutted and the sibling now declares decay_channel with two derived conjuncts. Bean qou-z9ws.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;d11f66d4db37&quot;,
+        &quot;ts&quot;: &quot;ec413af1fc5e&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T15:45:51.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a5b6a61db09f7c8c21533bc71258f15761f886db&quot;,
+      &quot;evidence&quot;: &quot;Full read of the proposition as restated in #8888 (head a5b6a61d) against decay_channel in the sibling .lean. The Lean body composes two genuine lemmas (decay_channel_unique, phase_boundary_crossing); no stub.&quot;
+    }
+  ]
+}</pre></dd>
+</dl>
+</main>
+</body>
+</html>

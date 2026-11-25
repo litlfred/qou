@@ -1,0 +1,1090 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "nrarith",
+  "title": "Arithmetic of Hyperbolic Manifolds",
+  "variant": "pdf",
+  "pages": 38,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Trace-ﬁelds",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "276",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-trace-ﬁelds"
+    },
+    {
+      "level": 1,
+      "title": "Quaternion algebras",
+      "number": "3",
+      "page": 7,
+      "pageLabel": "279",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-quaternion-algebras"
+    },
+    {
+      "level": 1,
+      "title": "Short geodesics in arithmetic orbifolds",
+      "number": "4",
+      "page": 9,
+      "pageLabel": "281",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-short-geodesics-in-arithmetic-orbifolds"
+    },
+    {
+      "level": 1,
+      "title": "Commensurators of chain links",
+      "number": "5",
+      "page": 15,
+      "pageLabel": "287",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-5-commensurators-of-chain-links"
+    },
+    {
+      "level": 1,
+      "title": "Surgery on one component of the Whitehead link complement",
+      "number": "6",
+      "page": 19,
+      "pageLabel": "291",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-6-surgery-on-one-component-of-the-whitehead-link"
+    },
+    {
+      "level": 1,
+      "title": "Arithmeticity of chain links",
+      "number": "7",
+      "page": 29,
+      "pageLabel": "301",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-7-arithmeticity-of-chain-links"
+    },
+    {
+      "level": 1,
+      "title": "Commensurators of chain links: proofs",
+      "number": "8",
+      "page": 30,
+      "pageLabel": "302",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-8-commensurators-of-chain-links-proofs"
+    },
+    {
+      "level": 1,
+      "title": "The dodecahedral knots of Aitchison and Rubinstein",
+      "number": "9",
+      "page": 34,
+      "pageLabel": "306",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-9-the-dodecahedral-knots-of-aitchison-and-rubins"
+    },
+    {
+      "level": 1,
+      "title": "Further comments",
+      "number": "10",
+      "page": 35,
+      "pageLabel": "307",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-10-further-comments"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 37,
+      "pageLabel": "309",
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-010-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 11,
+      "summary": null,
+      "keywords": [],
+      "extract": "Arithmetic of Hyperbolic Manifolds Walter D. Neumann and Alan W. Reid",
+      "extractCut": false,
+      "blocks": [
+        "library/nrarith/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": "276",
+      "words": 1493,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "commensurability invariant",
+          "heading": false
+        },
+        {
+          "term": "trace ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifolds",
+          "heading": false
+        },
+        {
+          "term": "ﬁeld generated",
+          "heading": false
+        },
+        {
+          "term": "kleinian group",
+          "heading": false
+        },
+        {
+          "term": "number ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "tractability",
+          "heading": false
+        },
+        {
+          "term": "parabolic ﬁxed",
+          "heading": false
+        }
+      ],
+      "extract": "By a hyperbolic 3-manifold we mean a complete orientable hyperbolic 3-manifold of ﬁnite volume, that is a quotient H3/Γ with Γ ⊂PSL2C a discrete subgroup of ﬁnite covolume (here brieﬂy “a Kleinian group”). Among hyperbolic 3-manifolds, the arithmetic ones form an interesting, and in many ways more tractable, subclass. The tractability comes from the availability of arithmetic tools and invariants. For example, an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-trace-ﬁelds",
+      "number": "2",
+      "title": "Trace-ﬁelds",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": "276",
+      "labelEnd": "279",
+      "words": 1624,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cusp ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "trace ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "cusp parameters",
+          "heading": false
+        },
+        {
+          "term": "ﬁeld generated",
+          "heading": false
+        },
+        {
+          "term": "commensurability class",
+          "heading": false
+        },
+        {
+          "term": "invariant trace",
+          "heading": false
+        },
+        {
+          "term": "tetrahedral parameter",
+          "heading": false
+        },
+        {
+          "term": "parabolic element",
+          "heading": false
+        }
+      ],
+      "extract": "2.1. Let Γ be a Kleinian group of ﬁnite covolume. It is well known, and follows from rigidity, that the trace ﬁeld Q(tr Γ) has ﬁnite degree over Q. However, Q(tr Γ) is not an invariant of the commensurability class of Γ (see [Bo], [R3], and Sect. 6 of this paper for examples), although it is not far removed. For if we denote Γ(2) = gp{γ2 : γ ∈Γ}, then Γ(2) is normal in Γ with Γ/Γ(2) ﬁnite abelian of exponent 2, and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-quaternion-algebras",
+      "number": "3",
+      "title": "Quaternion algebras",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "279",
+      "labelEnd": "281",
+      "words": 996,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quaternion",
+          "heading": true
+        },
+        {
+          "term": "commensurable amphicheirality",
+          "heading": false
+        },
+        {
+          "term": "non-abelian p-group",
+          "heading": false
+        },
+        {
+          "term": "quaternion algebra",
+          "heading": false
+        },
+        {
+          "term": "invariant quaternion",
+          "heading": false
+        },
+        {
+          "term": "commensurability invariant",
+          "heading": false
+        },
+        {
+          "term": "trace ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite index",
+          "heading": false
+        }
+      ],
+      "extract": "3.1. In this section we associate to a Kleinian group Γ a quaternion algebra over the trace ﬁeld Q(tr Γ). Namely, let Γ be the inverse image of Γ ⊂PSL2C in SL2C and denote by QΓ the algebra of all Q-linear combinations of elements of Γ. It follows from the characteristic equation A2 −(tr A)A + I = 0 that QΓ contains τI for any τ in the trace ﬁeld Q(tr Γ). Hence QΓ is an algebra over Q(tr Γ) (and equals kΓ for any",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-short-geodesics-in-arithmetic-orbifolds",
+      "number": "4",
+      "title": "Short geodesics in arithmetic orbifolds",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 15,
+      "labelStart": "281",
+      "labelEnd": "287",
+      "words": 2887,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arithmetic orbifolds",
+          "heading": true
+        },
+        {
+          "term": "arithmetic kleinian",
+          "heading": false
+        },
+        {
+          "term": "non-cocompact kleinian",
+          "heading": false
+        },
+        {
+          "term": "quaternion algebra",
+          "heading": false
+        },
+        {
+          "term": "kleinian group",
+          "heading": false
+        },
+        {
+          "term": "short geodesics",
+          "heading": true
+        },
+        {
+          "term": "ﬁnite covolume",
+          "heading": false
+        },
+        {
+          "term": "group commensurable",
+          "heading": false
+        }
+      ],
+      "extract": "The main results of this section are Theorem 4.6 and its Corollary, which set strong limits on the possible lengths of short geodesics in arithmetic cusped hyperbolic orbifolds, thus giving a necessary condition for arithmeticity. We also describe a conjectural statement of the same type for closed arithmetic orbifolds, dependent on the “Lehmer Conjecture” of number theory. We ﬁrst recall some basic relevant facts",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-commensurators-of-chain-links",
+      "number": "5",
+      "title": "Commensurators of chain links",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 19,
+      "labelStart": "287",
+      "labelEnd": "291",
+      "words": 1430,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dehn ﬁlling",
+          "heading": false
+        },
+        {
+          "term": "dehn surgery",
+          "heading": false
+        },
+        {
+          "term": "link pictured",
+          "heading": false
+        },
+        {
+          "term": "order orbifold",
+          "heading": false
+        },
+        {
+          "term": "orbifold points",
+          "heading": false
+        },
+        {
+          "term": "whitehead link",
+          "heading": false
+        },
+        {
+          "term": "cable link",
+          "heading": false
+        },
+        {
+          "term": "orientation preserving",
+          "heading": false
+        }
+      ],
+      "extract": "Let C(p, s) denote the complement of the link in S3 consisting of a p-link chain with s left half-twists (if s is negative we mean −s right half-twists, cf. Fig. 1 for (p, s) = (6, −3) or in Fig. 2 for (p, s) = (7, 0)). C(p, s) has several symmetries: α the symmetry that rotates the chain clockwise, taking each link into the next; β the rotation by 180◦about the circular axis of Fig. 2; and γ the 180◦rotation about",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-surgery-on-one-component-of-the-whitehead-link",
+      "number": "6",
+      "title": "Surgery on one component of the Whitehead link complement",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 29,
+      "labelStart": "291",
+      "labelEnd": "301",
+      "words": 3362,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "log logy",
+          "heading": false
+        },
+        {
+          "term": "π1w",
+          "heading": false
+        },
+        {
+          "term": "whitehead link",
+          "heading": true
+        },
+        {
+          "term": "dehn surgery",
+          "heading": false
+        },
+        {
+          "term": "dehn surgeries",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic dehn",
+          "heading": false
+        },
+        {
+          "term": "ideal octahedron",
+          "heading": false
+        },
+        {
+          "term": "cusp parameter",
+          "heading": false
+        }
+      ],
+      "extract": "6.1. In [T] Thurston describes how to obtain the complement W of the Whitehead link (Fig. 5) by identifying faces of an ideal octahedron in pairs. The identiﬁcation matches face A with A′, B with B′, etc., in Fig. 10, so as to respect the labeling of the edges. If the octahedron is taken to be a regular ideal octahedron in hyperbolic space, then one obtains the complete ﬁnite volume hyperbolic structure on W . As",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-7-arithmeticity-of-chain-links",
+      "number": "7",
+      "title": "Arithmeticity of chain links",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": "301",
+      "labelEnd": "302",
+      "words": 787,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arithmetic orbifolds",
+          "heading": false
+        },
+        {
+          "term": "arithmetic cases",
+          "heading": false
+        },
+        {
+          "term": "cusped arithmetic",
+          "heading": false
+        },
+        {
+          "term": "π1w",
+          "heading": false
+        },
+        {
+          "term": "arithmeticity",
+          "heading": true
+        },
+        {
+          "term": "imaginary quadratic",
+          "heading": false
+        },
+        {
+          "term": "integral traces",
+          "heading": false
+        },
+        {
+          "term": "geodesic",
+          "heading": false
+        }
+      ],
+      "extract": "Proof of part (iii) of Theorem 5.1. Recall that C(p, s) is a cover of W ′(p, s) and if W ′(p, s) is hyperbolic, then it is double branched covered by W(p, q) with s = 2q. We claim that the geodesic γ(p, s) added by hyperbolic Dehn ﬁlling W ′ to form W ′(p, s) has length ℓ0(γ(p, s)) = −d s Re(u) = d 2p Re(v), d = gcd(p, s), (7.1) where u and v are as in equations (6.4) and (6.5). Indeed, if ℓ(γ(p, s)) is the complex",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-8-commensurators-of-chain-links-proofs",
+      "number": "8",
+      "title": "Commensurators of chain links: proofs",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 34,
+      "labelStart": "302",
+      "labelEnd": "306",
+      "words": 1259,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "orientable commensurator",
+          "heading": false
+        },
+        {
+          "term": "commensurator quotient",
+          "heading": false
+        },
+        {
+          "term": "orientation reversing",
+          "heading": false
+        },
+        {
+          "term": "cusp parameter",
+          "heading": false
+        },
+        {
+          "term": "reversing isometry",
+          "heading": false
+        },
+        {
+          "term": "reversing symmetry",
+          "heading": false
+        },
+        {
+          "term": "fold cover",
+          "heading": false
+        },
+        {
+          "term": "cannot cover",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we prove parts (iv) and (v) of Theorem 5.1. Lemma 8.1. Let (p, s) be such that C(p, s) is non-arithmetic. The cusp parameter τ is not in Q(√−1) or Q(√−3), unless (|p + s|, |s|) = (6, 6). Proof. Since τ +2 = −4/z we must just show that z is not in Q(√−1) or Q√−3). If p = 0 then equations (6.4) and (6.5) give x = exp((s+2)πi/2s), and since z = x−x −1, it is easy to see that z is in Q(√−1) or Q(√−3) if",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-9-the-dodecahedral-knots-of-aitchison-and-rubins",
+      "number": "9",
+      "title": "The dodecahedral knots of Aitchison and Rubinstein",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 35,
+      "labelStart": "306",
+      "labelEnd": "307",
+      "words": 574,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "orientable commensurator",
+          "heading": false
+        },
+        {
+          "term": "commensurator quotient",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure-eight knot",
+          "heading": false
+        },
+        {
+          "term": "dodecahedral",
+          "heading": true
+        },
+        {
+          "term": "hidden symmetries",
+          "heading": false
+        },
+        {
+          "term": "rigid cusp",
+          "heading": false
+        },
+        {
+          "term": "knot complement",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic knot",
+          "heading": false
+        }
+      ],
+      "extract": "9.1. One of the original motivating questions for this work was the question: does there exist a hyperbolic knot other than the ﬁgure-eight knot whose complement has hidden symmetries (i.e., the commensurator of its fundamental group is larger than its normalizer)? Of course an arithmetic knot complement would have hidden symmetries, but by [R2], the ﬁgure-eight knot complement is the only such. Proposition 9.1. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-10-further-comments",
+      "number": "10",
+      "title": "Further comments",
+      "level": 1,
+      "pageStart": 35,
+      "pageEnd": 37,
+      "labelStart": "307",
+      "labelEnd": "309",
+      "words": 527,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cusp ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "trace ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "knot complements",
+          "heading": false
+        },
+        {
+          "term": "same cusp",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic knot",
+          "heading": false
+        },
+        {
+          "term": "ﬁeld equal",
+          "heading": false
+        },
+        {
+          "term": "integral traces",
+          "heading": false
+        },
+        {
+          "term": "non-commensurable",
+          "heading": false
+        }
+      ],
+      "extract": "10.1. We ﬁrst discuss hyperbolic knot complements. Question 2. When is the trace ﬁeld equal to the cusp ﬁeld for hyperbolic knot comple- ments? The only known examples where this fails are the two dodecahedral knots. They have cusp ﬁeld Q(√−3) and trace ﬁeld Q(√−3, √ 5). Indeed, the cusp ﬁeld is obvious. The trace ﬁeld certainly contains √ 5 because of the element of order 5 in (Γ+)(2) and is no bigger than Q(√−3, √",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-references",
+      "number": null,
+      "title": "References",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 38,
+      "labelStart": "309",
+      "labelEnd": "310",
+      "words": 622,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fuchsian subgroups",
+          "heading": false
+        },
+        {
+          "term": "arithmetic kleinian",
+          "heading": false
+        },
+        {
+          "term": "duke math",
+          "heading": false
+        },
+        {
+          "term": "reid",
+          "heading": false
+        },
+        {
+          "term": "kleinian groups",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic orbifolds",
+          "heading": false
+        },
+        {
+          "term": "london math",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifolds",
+          "heading": false
+        }
+      ],
+      "extract": "[A1] Adams, C., Limit volumes of hyperbolic 3-orbifold. Preprint. [A2] Adams, C., Non-compact hyperbolic 3-orbifolds of small volume. These Proceedings. [AR] Aitchison, I.R. and Rubinstein, J.H., Combinatorial cubings, cusps and the dodecahedral knots. These Proceedings. [B1] Bass, H., Groups of integral representation type. Paciﬁc J. Math. 86 (1980), 15–51. [B2] Bass, H., Finitely generated subgroups of GL2. In:",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [
+      "table 1"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "arithmetic orbifold",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic orbifold",
+      "heading": false
+    },
+    {
+      "term": "arithmetic kleinian",
+      "heading": false
+    },
+    {
+      "term": "cusp ﬁeld",
+      "heading": false
+    },
+    {
+      "term": "trace ﬁeld",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic dehn",
+      "heading": false
+    },
+    {
+      "term": "orbifold points",
+      "heading": false
+    },
+    {
+      "term": "commensurability invariant",
+      "heading": false
+    },
+    {
+      "term": "some orbifold",
+      "heading": false
+    },
+    {
+      "term": "order orbifold",
+      "heading": false
+    },
+    {
+      "term": "reversing commensurability",
+      "heading": false
+    },
+    {
+      "term": "volume hyperbolic",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "274",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "275",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "276",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "277",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "278",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "279",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "280",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "281",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "282",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "283",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "284",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "285",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "286",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "287",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "288",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "289",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "290",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "291",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "292",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "293",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "294",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "295",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "296",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "297",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "298",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "299",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "300",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "301",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "302",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "303",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "304",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "305",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "306",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "307",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "308",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "309",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "310",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "C(p, s) for p = 6, s = −3",
+      "page": 3,
+      "pageLabel": "275",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "z and 4/z {|p + s|, |s|}",
+      "page": 30,
+      "pageLabel": "302",
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p37); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/nrarith"
+  }
+}

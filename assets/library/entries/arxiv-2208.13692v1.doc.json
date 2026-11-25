@@ -1,0 +1,1728 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2208.13692v1",
+  "title": "arxiv-2208.13692v1",
+  "variant": "pdf",
+  "pages": 38,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Defining Equations and Elementary Properties",
+      "number": "2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-defining-equations-and-elementary-properties"
+    },
+    {
+      "level": 2,
+      "title": "Basic Properties",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-basic-properties"
+    },
+    {
+      "level": 2,
+      "title": "The Period Matrix",
+      "number": "2.2",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-the-period-matrix"
+    },
+    {
+      "level": 2,
+      "title": "The Automorphism Group",
+      "number": "2.3",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-the-automorphism-group"
+    },
+    {
+      "level": 1,
+      "title": "Geometric Points",
+      "number": "3",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-3-geometric-points"
+    },
+    {
+      "level": 2,
+      "title": "Weierstrass Points",
+      "number": "3.1",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-31-weierstrass-points"
+    },
+    {
+      "level": 2,
+      "title": "Vertices and Face-Centres",
+      "number": "3.2",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-32-vertices-and-face-centres"
+    },
+    {
+      "level": 1,
+      "title": "Quotients by Subgroups",
+      "number": "4",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-4-quotients-by-subgroups"
+    },
+    {
+      "level": 2,
+      "title": "Genera of Quotients",
+      "number": "4.1",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-41-genera-of-quotients"
+    },
+    {
+      "level": 2,
+      "title": "Relations between Quotients",
+      "number": "4.2",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-42-relations-between-quotients"
+    },
+    {
+      "level": 2,
+      "title": "Quotients by a 4- and 2,2-cycle",
+      "number": "4.3",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-43-quotients-by-a-4--and-22-cycle"
+    },
+    {
+      "level": 2,
+      "title": "Quotients by a 3-cycle",
+      "number": "4.4",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-44-quotients-by-a-3-cycle"
+    },
+    {
+      "level": 2,
+      "title": "Quotients by a transposition",
+      "number": "4.5",
+      "page": 25,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-45-quotients-by-a-transposition"
+    },
+    {
+      "level": 2,
+      "title": "Summarising",
+      "number": "4.6",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-46-summarising"
+    },
+    {
+      "level": 1,
+      "title": "Theta Characteristics",
+      "number": "5",
+      "page": 30,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-5-theta-characteristics"
+    },
+    {
+      "level": 2,
+      "title": "Abel-Jacobi and the Riemann Constant Vector",
+      "number": "5.1",
+      "page": 31,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-51-abel-jacobi-and-the-riemann-constant-vector"
+    },
+    {
+      "level": 2,
+      "title": "Tritangent Planes and Odd Characteristics",
+      "number": "5.2",
+      "page": 31,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-52-tritangent-planes-and-odd-characteristics"
+    },
+    {
+      "level": 2,
+      "title": "Even Characteristics",
+      "number": "5.3",
+      "page": 32,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-53-even-characteristics"
+    },
+    {
+      "level": 1,
+      "title": "Conclusion",
+      "number": "6",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-6-conclusion"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 35,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 113,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bring curve",
+          "heading": false
+        },
+        {
+          "term": "linden",
+          "heading": false
+        },
+        {
+          "term": "automorphism group",
+          "heading": false
+        },
+        {
+          "term": "ego",
+          "heading": false
+        }
+      ],
+      "extract": "BRING’S CURVE: OLD AND NEW H. W. BRADEN AND LINDEN DISNEY-HOGG Abstract. Bring’s curve, the unique Riemann surface of genus-4 with automorphism group S5, has many exceptional properties. We review, give new proofs of, and extend a number of these including giving the complete realisation of the automorphism group for a plane curve model, identifying a new elliptic quotient of the curve and the modular curve X0(50),",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2208.13692v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 670,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bring curve",
+          "heading": false
+        },
+        {
+          "term": "theta characteristics",
+          "heading": false
+        },
+        {
+          "term": "weierstrass points",
+          "heading": false
+        },
+        {
+          "term": "genus curve",
+          "heading": false
+        },
+        {
+          "term": "plane-curve model",
+          "heading": false
+        },
+        {
+          "term": "automorphism group",
+          "heading": false
+        },
+        {
+          "term": "birational map",
+          "heading": false
+        },
+        {
+          "term": "geometric points",
+          "heading": false
+        }
+      ],
+      "extract": "Bring's curve, a genus-4 Riemann surface first introduced by Erland Bring in 1786 in relation to solutions of the quintic equation, is the unique genus-4 curve with automorphism group $S_5$, the largest possible group for curves of this genus. This automorphism group acts transitively on the Weierstrass points of the curve, which are all weight one, a very rare property of curves. The curve can moreover be seen to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-defining-equations-and-elementary-properties",
+      "number": "2",
+      "title": "Defining Equations and Elementary Properties",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 624,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bring curve",
+          "heading": false
+        },
+        {
+          "term": "plane curve",
+          "heading": false
+        },
+        {
+          "term": "equiv pmod",
+          "heading": false
+        },
+        {
+          "term": "plane model",
+          "heading": false
+        },
+        {
+          "term": "defining equations",
+          "heading": true
+        },
+        {
+          "term": "pmod phantom",
+          "heading": false
+        },
+        {
+          "term": "hulek",
+          "heading": false
+        },
+        {
+          "term": "quotients",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: defining equations label=\"sec: defining equations\"} In this section we shall introduce Bring's curve describing its basic properties, its period matrix and its automorphisms. We begin with two descriptions: one as a model in $\\mathbb{P}^4$ and the second as a plane curve. In particular we shall construct the birational map between these models, which we believe new. Such a map enables us to concretely",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-basic-properties",
+      "number": "2.1",
+      "title": "Basic Properties",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2703,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "clebsch hexagon",
+          "heading": false
+        },
+        {
+          "term": "eckardt points",
+          "heading": false
+        },
+        {
+          "term": "bring curve",
+          "heading": false
+        },
+        {
+          "term": "clebsch surface",
+          "heading": false
+        },
+        {
+          "term": "brianchon points",
+          "heading": false
+        },
+        {
+          "term": "birational map",
+          "heading": false
+        },
+        {
+          "term": "cubic surface",
+          "heading": false
+        },
+        {
+          "term": "mathrm div",
+          "heading": false
+        }
+      ],
+      "extract": "Towards proving the birational equivalence of the two models given for Bring's curve we begin with some basic properties of the curve. We introduce affine coordinates $(x,y)=(X/Z,Y/Z)$ such that the HC-model is $0=f(x,y)=F(x,y,1)$. Then $\\mathop{\\mathrm{Res}}_y(f(x,y),\\partial_y f(x,y))=x^4(x^5-1)^2(256x^{10}-837 x^5+3456)$. Investigation of the vanishing of this resultant leads to the following. ::: lemma",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-the-period-matrix",
+      "number": "2.2",
+      "title": "The Period Matrix",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 979,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pmatrix zeta",
+          "heading": false
+        },
+        {
+          "term": "period matrix",
+          "heading": true
+        },
+        {
+          "term": "mathcal tau",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "tau right",
+          "heading": false
+        },
+        {
+          "term": "zeta exp",
+          "heading": false
+        },
+        {
+          "term": "elliptic curves",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec: period matrix label=\"subsec: period matrix\"} We record now a result from the literature. ::: theorem Define the matrices $M$, $M_S$ by $$M = \\begin{pmatrix} 4 & 1 & -1 & 1 \\\\ 1 & 4 & 1 & -1 \\\\ -1 & 1 & 4 & 1 \\\\ 1 & -1 & 1 & 4 \\end{pmatrix}, \\quad M_S = \\begin{pmatrix} 4 & -1 & -1 & -1 \\\\ -1 & 4 & -1 & -1 \\\\ -1 & -1 & 4 & -1 \\\\ -1 & -1 & -1 & 4 \\end{pmatrix}.$$ A Riemann matrix for Bring's curve is given",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-the-automorphism-group",
+      "number": "2.3",
+      "title": "The Automorphism Group",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1589,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pmatrix zeta",
+          "heading": false
+        },
+        {
+          "term": "automorphism group",
+          "heading": true
+        },
+        {
+          "term": "pmatrix mapsto",
+          "heading": false
+        },
+        {
+          "term": "bring curve",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "frac zeta",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec: automorphism group label=\"subsec: automorphism group\"} As previously noted, the $\\mathbb{P}^4$-model of Bring's curve shows that the automorphism group $\\mathop{\\mathrm{Aut}}(\\mathcal{B})$ contains $S_5$. Hurwitz's theorem on the automorphism group $G=\\mathop{\\mathrm{Aut}}(\\mathcal{C})$ of a curve of genus $g\\ge2$ yields that $|G|\\in\\{84(g-1), 48(g-1), 40(g-1),\\ldots \\}$ and that if $p$ is a prime where",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-geometric-points",
+      "number": "3",
+      "title": "Geometric Points",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 527,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stellated dodecahedron",
+          "heading": false
+        },
+        {
+          "term": "geometric points",
+          "heading": true
+        },
+        {
+          "term": "right tessellation",
+          "heading": false
+        },
+        {
+          "term": "bring curve",
+          "heading": false
+        },
+        {
+          "term": "dodecadodecahedron",
+          "heading": false
+        },
+        {
+          "term": "theta characteristics",
+          "heading": false
+        },
+        {
+          "term": "orbits",
+          "heading": false
+        },
+        {
+          "term": "wiman",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: geometric points label=\"sec: geometric points\"} We now have a good understanding of how the automorphism group acts on the curve, and so before looking at quotient Riemann surfaces in §[\\[sec: quotients by subgroups\\]](#sec: quotients by subgroups){reference-type=\"ref\" reference=\"sec: quotients by subgroups\"} we want to first consider orbits of points that have geometric significance on the curve. These",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-31-weierstrass-points",
+      "number": "3.1",
+      "title": "Weierstrass Points",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1695,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "weierstrass points",
+          "heading": true
+        },
+        {
+          "term": "divisor prime",
+          "heading": false
+        },
+        {
+          "term": "beta phantom",
+          "heading": false
+        },
+        {
+          "term": "tritangent planes",
+          "heading": false
+        },
+        {
+          "term": "bring curve",
+          "heading": false
+        },
+        {
+          "term": "osculating plane",
+          "heading": false
+        },
+        {
+          "term": "stellated dodecahedron",
+          "heading": false
+        },
+        {
+          "term": "delta prime",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec: Weierstrass points label=\"subsec: Weierstrass points\"} We recall the definition of an important class of points. ::: definition []{#def: Weierstrass points label=\"def: Weierstrass points\"} A **Weierstrass Point** on a curve $X$ of genus $g$ with canonical embedding $X_{c} \\subseteq \\mathbb{P}^{g-1}$ is a point $P$ satisfying one of the following equivalent conditions: 1. there exists a hyperplane $H",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-32-vertices-and-face-centres",
+      "number": "3.2",
+      "title": "Vertices and Face-Centres",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 519,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "face-centres",
+          "heading": true
+        },
+        {
+          "term": "zeta",
+          "heading": false
+        },
+        {
+          "term": "vertices",
+          "heading": true
+        },
+        {
+          "term": "fcprop",
+          "heading": false
+        },
+        {
+          "term": "vprop",
+          "heading": false
+        },
+        {
+          "term": "automorphism group",
+          "heading": false
+        },
+        {
+          "term": "order automorphism",
+          "heading": false
+        },
+        {
+          "term": "points fixed",
+          "heading": false
+        }
+      ],
+      "extract": "Using Figure 2 of [@Braden2012] we are able to link the Petrie polygon to the R&R model of the curve, and this gives us a concrete expression for the remaining geometric points. ::: prop []{#FCprop label=\"FCprop\"} The face-centres are exactly the points fixed by an order-5 automorphism of the curve. They are given in the $\\mathbb{P}^4$-model by the permutations of $[1:\\zeta:\\zeta^2:\\zeta^3:\\zeta^4]$. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-4-quotients-by-subgroups",
+      "number": "4",
+      "title": "Quotients by Subgroups",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 165,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quotients",
+          "heading": true
+        },
+        {
+          "term": "summarising quotients",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathrm aut",
+          "heading": false
+        },
+        {
+          "term": "tracking fixed",
+          "heading": false
+        },
+        {
+          "term": "subgroups",
+          "heading": true
+        },
+        {
+          "term": "subsec",
+          "heading": false
+        },
+        {
+          "term": "quotient curves",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: quotients by subgroups label=\"sec: quotients by subgroups\"} Both [@Riera1992] and [@Weber2005] consider the quotient of $\\mathcal{B}$ by the action of subgroups of $S_5$. In this section we shall study the various quotients of Bring's curve of nonzero genus and the relations between them, both clarifying and extending previous work. In §[\\[subsec: genera of quotients\\]](#subsec: genera of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-41-genera-of-quotients",
+      "number": "4.1",
+      "title": "Genera of Quotients",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 644,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quotients",
+          "heading": true
+        },
+        {
+          "term": "langle sigma",
+          "heading": false
+        },
+        {
+          "term": "sigma right",
+          "heading": false
+        },
+        {
+          "term": "bring curve",
+          "heading": false
+        },
+        {
+          "term": "operatorname fix",
+          "heading": false
+        },
+        {
+          "term": "right rvert",
+          "heading": false
+        },
+        {
+          "term": "genera",
+          "heading": true
+        },
+        {
+          "term": "left lvert",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec: genera of quotients label=\"subsec: genera of quotients\"} Our first step is to know the topology of the quotients we are going to find. To this end, we give the following result. ::: prop The data of the quotients of $\\mathcal{B}$ by subgroups $\\left\\langle \\sigma \\right\\rangle \\leq S_5$ is summarised by the following table: ::: center $\\sigma$ Example $\\left\\lvert{cl(\\sigma)}\\right\\rvert$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-42-relations-between-quotients",
+      "number": "4.2",
+      "title": "Relations between Quotients",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 442,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rangle cong",
+          "heading": false
+        },
+        {
+          "term": "quotients",
+          "heading": true
+        },
+        {
+          "term": "summarising quotients",
+          "heading": false
+        },
+        {
+          "term": "right rangle",
+          "heading": false
+        },
+        {
+          "term": "left langle",
+          "heading": false
+        },
+        {
+          "term": "same normaliser",
+          "heading": false
+        },
+        {
+          "term": "riemann-hurwitz",
+          "heading": false
+        },
+        {
+          "term": "subsec",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec: relations between quotients label=\"subsec: relations between quotients\"} We now consider the various relationships we might expect between the quotient curves of Bring's curve. Recall (again from Riemann-Hurwitz) that if $\\mathcal{C}$ is a curve of genus $g\\ge2$ and $H\\le \\mathop{\\mathrm{Aut}}(\\mathcal{C})$ is such that $|H|>4(g-1)$, a so called 'large automorphism group', then the genus of the quotient",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-43-quotients-by-a-4--and-22-cycle",
+      "number": "4.3",
+      "title": "Quotients by a 4- and 2,2-cycle",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1699,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "prime right",
+          "heading": false
+        },
+        {
+          "term": "introducing prime",
+          "heading": false
+        },
+        {
+          "term": "recognise mathcal",
+          "heading": false
+        },
+        {
+          "term": "hyperelliptic involution",
+          "heading": false
+        },
+        {
+          "term": "curve mathcal",
+          "heading": false
+        },
+        {
+          "term": "quotient mathcal",
+          "heading": false
+        },
+        {
+          "term": "elliptic curve",
+          "heading": false
+        },
+        {
+          "term": "bring curve",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec: quotients by 4 and 2-2 cycle label=\"subsec: quotients by 4 and 2-2 cycle\"} Armed with the knowledge of the genus of the quotients we expect we shall now write them explicitly. We will begin with the 2,2-cycle corresponding to $U^2$ with the 4-cycle $U$ arising in the discussion. Recall that we have $$U^2:[X,Y,Z]\\rightarrow [X,Z,Y], \\quad \\psi(U^2)=(12)(34) .$$ The normaliser of $\\left\\langle (12)(34)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-44-quotients-by-a-3-cycle",
+      "number": "4.4",
+      "title": "Quotients by a 3-cycle",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 750,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathcal arrow",
+          "heading": false
+        },
+        {
+          "term": "right rangle",
+          "heading": false
+        },
+        {
+          "term": "mathcal left",
+          "heading": false
+        },
+        {
+          "term": "rangle cong",
+          "heading": false
+        },
+        {
+          "term": "left langle",
+          "heading": false
+        },
+        {
+          "term": "elliptic curve",
+          "heading": false
+        },
+        {
+          "term": "prime",
+          "heading": false
+        },
+        {
+          "term": "mathcal frac",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec: quotient by 3-cycle label=\"subsec: quotient by 3-cycle\"} We may utilise the same methods illustrated above for the 2,2-cycles to calculate the quotient of Bring's curve by a 3-cycle. We will work with the 3-cycle $(345)$ for purely aesthetic resaons. Now the normaliser of $\\left\\langle (345) \\right\\rangle$ in $S_5$ is $N_{S_5}(\\left\\langle 345 \\right\\rangle))=\\left\\langle (12), (34), (345)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-45-quotients-by-a-transposition",
+      "number": "4.5",
+      "title": "Quotients by a transposition",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1049,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "overline eta",
+          "heading": false
+        },
+        {
+          "term": "int overline",
+          "heading": false
+        },
+        {
+          "term": "elliptic curve",
+          "heading": false
+        },
+        {
+          "term": "transposition",
+          "heading": true
+        },
+        {
+          "term": "curve mathcal",
+          "heading": false
+        },
+        {
+          "term": "weierstrass points",
+          "heading": false
+        },
+        {
+          "term": "right rangle",
+          "heading": false
+        },
+        {
+          "term": "left langle",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec: quotients by transposition label=\"subsec: quotients by transposition\"} The strategy of quotienting from the $\\mathbb{P}^4$-model using semi-invariants from the previous sections can also be used to calculate the quotient of Bring's curve by a transposition. We take semi-invariants $$(s_1, s_2, s_3, s_4)^T = \\begin{pmatrix} 1 & 1 & 0 & 0 \\\\ 1 & -1 & 0 & 0 \\\\ 0 & 0 & 1 & 1 \\\\ 0 & 0 & 1 & -1 \\end{pmatrix}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-46-summarising",
+      "number": "4.6",
+      "title": "Summarising",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 30,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1261,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bring jacobian",
+          "heading": false
+        },
+        {
+          "term": "mathbb isogeny",
+          "heading": false
+        },
+        {
+          "term": "isogeny class",
+          "heading": false
+        },
+        {
+          "term": "bring curve",
+          "heading": false
+        },
+        {
+          "term": "q-isogeny class",
+          "heading": false
+        },
+        {
+          "term": "pmatrix tau",
+          "heading": false
+        },
+        {
+          "term": "isogeny classes",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec: summarising quotients label=\"subsec: summarising quotients\"} We can collect the information of the quotients we have seen into the following diagram. Solid arrows represent a covering map coming from a quotient, whereas 'squiggly' arrows indicate isomorphisms that are unexplained by group theory alone. ::: center <figure id=\"eq: structure of quotient curves\"> <figcaption>Quotient structure of Bring’s",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-5-theta-characteristics",
+      "number": "5",
+      "title": "Theta Characteristics",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 262,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theta characteristics",
+          "heading": true
+        },
+        {
+          "term": "bring curve",
+          "heading": false
+        },
+        {
+          "term": "divisor class",
+          "heading": false
+        },
+        {
+          "term": "b-c",
+          "heading": false
+        },
+        {
+          "term": "parity",
+          "heading": false
+        },
+        {
+          "term": "mathcal",
+          "heading": false
+        },
+        {
+          "term": "spin",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: theta characteristics label=\"sec: theta characteristics\"} We now investigate the theta characteristics of Bring's curve, which in [@Atiyah1971] were shown to be equivalent to spin structures, and as such we will use the terms interchangeably. These are objects which have been studied greatly in a variety of contexts in algebraic geometry, number theory, and even string theory, though in this paper we will",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-51-abel-jacobi-and-the-riemann-constant-vector",
+      "number": "5.1",
+      "title": "Abel-Jacobi and the Riemann Constant Vector",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 186,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rcv label",
+          "heading": false
+        },
+        {
+          "term": "szëgo kernel",
+          "heading": false
+        },
+        {
+          "term": "oint omega",
+          "heading": false
+        },
+        {
+          "term": "riemann",
+          "heading": true
+        },
+        {
+          "term": "abel-jacobi",
+          "heading": true
+        },
+        {
+          "term": "mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec: AJ and RCV label=\"subsec: AJ and RCV\"} We will now take a detour to lay out some notation and definitions in preparation for later. ::: definition []{#def: AJ map and RCV label=\"def: AJ map and RCV\"} The **Abel-Jacobi map** on a Riemann surface $\\mathcal{C}$ with basis of differentials $\\left\\{ \\omega_j \\right\\}$, based at $Q \\in \\mathcal{C}$, is given by $$(\\mathcal{A}_Q(P))_j = \\int_Q^P \\omega_j .$$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-52-tritangent-planes-and-odd-characteristics",
+      "number": "5.2",
+      "title": "Tritangent Planes and Odd Characteristics",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 32,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 474,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tritangent planes",
+          "heading": true
+        },
+        {
+          "term": "characteristics",
+          "heading": true
+        },
+        {
+          "term": "points ijk",
+          "heading": false
+        },
+        {
+          "term": "theta characteristics",
+          "heading": false
+        },
+        {
+          "term": "weierstrass points",
+          "heading": false
+        },
+        {
+          "term": "bring curve",
+          "heading": false
+        },
+        {
+          "term": "odd theta",
+          "heading": false
+        },
+        {
+          "term": "orbit decomposition",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec: tritangent planes label=\"subsec: tritangent planes\"} Recall that when we consider the canonical embedding of a curve in $\\mathbb{P}^{g-1}$, the intersection with a hyperplane gives an effective element of the canonical divisor class of the curve, as it corresponds to the zero-locus of a differential on the curve. A tritangent plane is a plane that intersects the curve tangentially in three points. If a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-53-even-characteristics",
+      "number": "5.3",
+      "title": "Even Characteristics",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1221,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "even characteristics",
+          "heading": true
+        },
+        {
+          "term": "theta characteristics",
+          "heading": false
+        },
+        {
+          "term": "bring curve",
+          "heading": false
+        },
+        {
+          "term": "invariant theta",
+          "heading": false
+        },
+        {
+          "term": "unique theta",
+          "heading": false
+        },
+        {
+          "term": "odd theta",
+          "heading": false
+        },
+        {
+          "term": "delta b-c",
+          "heading": false
+        },
+        {
+          "term": "klein curve",
+          "heading": false
+        }
+      ],
+      "extract": "In the previous subsection, we were able to fully characterise the odd theta characteristics on Bring's curve without too much difficulty through the use of existing work giving the stalls of the canonical embedding. The story for even characteristics is different, as the line bundle corresponding to a generic even theta characteristic has no sections, which is an obstacle to their study [@Takagi2009]. In",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-6-conclusion",
+      "number": "6",
+      "title": "Conclusion",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 35,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 555,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bring curve",
+          "heading": false
+        },
+        {
+          "term": "quotient curves",
+          "heading": false
+        },
+        {
+          "term": "q-isogeny class",
+          "heading": false
+        },
+        {
+          "term": "theta characteristics",
+          "heading": false
+        },
+        {
+          "term": "evencharacteristics",
+          "heading": false
+        },
+        {
+          "term": "oddcharacteristics",
+          "heading": false
+        },
+        {
+          "term": "transrrw",
+          "heading": false
+        },
+        {
+          "term": "wpprop",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: conclusion label=\"sec: conclusion\"} We have now seen that Bring's curve has many interesting properties and appears in a number of quite different settings; with this background now established we can summarise the main new results of the paper. We have: 1. Constructed an explicit birational map between the HC- and $\\mathbb{P}^4$-model of the curve, Proposition [\\[prop: HC valid model for Bring\\]](#prop: HC",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 35,
+      "pageEnd": 38,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1471,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "linden disney-hogg",
+          "heading": false
+        },
+        {
+          "term": "org abs",
+          "heading": false
+        },
+        {
+          "term": "winger pencil",
+          "heading": false
+        },
+        {
+          "term": "nils bruin",
+          "heading": false
+        },
+        {
+          "term": "bring curve",
+          "heading": false
+        },
+        {
+          "term": "riemann surfaces",
+          "heading": false
+        },
+        {
+          "term": "london math",
+          "heading": false
+        },
+        {
+          "term": "david singerman",
+          "heading": false
+        }
+      ],
+      "extract": "[ACGH85] E. Arbarello, M. Cornalba, P. A. Griﬃths, and J. Harris, Geometry of algebraic curves. Volume I, Grundlehren der mathematischen Wissenschaften, vol. 267, Springer-Verlag, New York, 1985. [Ati71] Michael F. Atiyah, Riemann surfaces and spin structures, Annales scientiﬁques de l’´Ecole Nor- male Sup´erieure, Series 4. 4 (1971), no. 1, 47–62. [Bel04] Andrea Moreira Bell, Hilbert modular surfaces and",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "bring curve",
+      "heading": true
+    },
+    {
+      "term": "curve mathcal",
+      "heading": false
+    },
+    {
+      "term": "genus curve",
+      "heading": false
+    },
+    {
+      "term": "elliptic curve",
+      "heading": false
+    },
+    {
+      "term": "quotient curve",
+      "heading": true
+    },
+    {
+      "term": "bring jacobian",
+      "heading": false
+    },
+    {
+      "term": "curve label",
+      "heading": false
+    },
+    {
+      "term": "klein curve",
+      "heading": false
+    },
+    {
+      "term": "modular curve",
+      "heading": false
+    },
+    {
+      "term": "plane curve",
+      "heading": false
+    },
+    {
+      "term": "mathcal left",
+      "heading": false
+    },
+    {
+      "term": "mathcal prime",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Geometric realisations",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Hyperbolic tilings",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Quotient structure of Bring’s curve",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Subgroup structre of S5 corresponding to the quotients of Bring’s curve",
+      "page": 28,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Quotient structure including marked points",
+      "page": 28,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p014-1",
+      "file": "images/img-p014-1.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-2",
+      "file": "images/img-p014-2.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-3",
+      "file": "images/img-p014-3.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-4",
+      "file": "images/img-p014-4.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p028-1",
+      "file": "images/img-p028-1.png",
+      "page": 28,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p028-2",
+      "file": "images/img-p028-2.png",
+      "page": 28,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p028-8",
+      "file": "images/img-p028-8.png",
+      "page": 28,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 21,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 22,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 7
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p35); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 26
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 22 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2208.13692v1"
+  }
+}

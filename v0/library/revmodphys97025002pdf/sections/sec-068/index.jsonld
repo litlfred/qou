@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/revmodphys97025002pdf/sections/sec-068",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "B. Tables of recommended values",
+  "pageStart": 52,
+  "pageEnd": 53,
+  "contains": [
+    "library/revmodphys97025002pdf/blocks/prose-sec-068"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/revmodphys97025002pdf/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/revmodphys97025002pdf/manifest.jsonld",
+  "provenance": "ingested"
+}

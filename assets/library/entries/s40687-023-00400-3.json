@@ -1,0 +1,499 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "s40687-023-00400-3",
+  "blocks": [
+    {
+      "id": "library/s40687-023-00400-3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted Neumann–Zagier matrices",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-twisted-neumannzagier-matrices.md",
+      "narrative": null,
+      "content": "Stavros Garoufalidis1,2*\nand Seokbeom Yoon1\n*Correspondence:\nstavros@mpim-bonn.mpg.de;\nhttp://people.mpim-\nbonn.mpg.de/stavros\n2Max Planck Institute for\nMathematics, Bonn, Germany\nFull list of author information is\navailable at the end of the article\nDedicated to Walter Neumann\nand Don Zagier, with admiration",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40687-023-00400-3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Abstract",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-001-abstract.md",
+      "narrative": null,
+      "content": "The Neumann–Zagier matrices of an ideal triangulation are integer matrices with\nsymplectic properties whose entries encode the number of tetrahedra that wind\naround each edge of the triangulation. They can be used as input data for the\nconstruction of a number of quantum invariants that include the loop invariants, the\n3D-index and state-integrals. We deﬁne a twisted version of Neumann–Zagier matrices,\ndescribe their symplectic properties, and show how to compute them from the\ncombinatorics of an ideal triangulation. As a sample application, we use them to deﬁne\na twisted version of the 1-loop",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40687-023-00400-3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-002-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40687-023-00400-3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motivation",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-003-11-motivation.md",
+      "narrative": null,
+      "content": "Motivation\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n1\n1.2\nTorsion and its twisted version . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n3\n1.3\nNeumann–Zagier matrices and their twisted version . . . . . . . . . . . . . . . .\n4\n1.4\nThe 1-loop invariant and its twisted version . . . . . . . . . . . . . . . . . . . . .\n7\n2\nProofs: twisted NZ matrices . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n9\n3\nExamples . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n12\n3.1\nThe knot 41 . . . . . . . . . .",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40687-023-00400-3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "https://doi.org/10.1007/s40687-023-00400-3\nRESEARCH",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40687-023-00400-3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Torsion and its twisted version",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-12-torsion-and-its-twisted-version.md",
+      "narrative": null,
+      "content": "Before discussing twisting matters further, let us recall a key motivating example. A basic\ninvariant of a compact 3-manifold is the order of the torsion of its ﬁrst homology. The\nbehavior of this invariant for all cyclic covers of a knot complement is determined by a\nsingle Laurent polynomial, the Alexander polynomial. Explicitly, we have\n\u0002\u0002\u0002tor(H1(M(n); Z))\n\u0002\u0002\u0002 =\n\u0003\nωn=1\n\u0003K(ω)\n(1)\nwhere \u0003K(t) ∈Z[t±1] is the Alexander polynomial of a knot K ⊂S3, M(n) is the n-\nfold cyclic cover of M = S3 \\ K, and the left-hand side is the order of the torsion\npart of H1(M(n); Z). This classical result connecti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40687-023-00400-3/blocks/conj-sec-005-04",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "conj-sec-005-04.md",
+      "narrative": null,
+      "content": "The Laurent polynomials det(A(t)) and det(B(t)) are palindromic, i.e., satisfy p(t) = εtrp(1/t) for some ε = ±1 and an integer r. We next discuss the behavior of the twisted NZ matrices under a 2–3 Pachner move relating an ideal triangulation T with N tetrahedra to another one T with N +1 tetrahedra. Recall that such a move is determined by two tetrahedra with a common face in T , which become three tetrahedra with a common edge in T as shown in Fig. 2 below. Let us write the twisted NZ matrices A(t) and B(t) of the triangulation T schematically in columns as A(t) = (a1, a2, ai), B(t) = (b1, b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40687-023-00400-3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Neumann–Zagier matrices and their twisted version",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-13-neumannzagier-matrices-and-their-twisted-vers.md",
+      "narrative": null,
+      "content": "Having already discussed the torsion and twisted torsion, we now recall some basic facts\nfrom ideal triangulations of 3-manifolds and their gluing equations, following [22,26].\nLet M be an oriented hyperbolic 3-manifold with a torus boundary component (often\ncalled a one-cusped hyperbolic 3-manifold) equipped with an ideal triangulation T . An\nEuler characteristic argument shows that the number N of tetrahedra in T is equal to the\nnumber of edges. We order the edges ei and the tetrahedra \u0003j of T for 1 ≤i, j ≤N. A\nquad type of a tetrahedron is a pair of opposite edges; hence each tetrahedron ha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40687-023-00400-3/blocks/rem-sec-005-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "rem-sec-005-03.md",
+      "narrative": null,
+      "content": "One can check that Equation (17) (or equivalently, its restriction to n-th roots of unity t) is equivalent to that A(n)(B(n))T = B(n)(A(n))T for all n ≥1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40687-023-00400-3/blocks/thm-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "thm-sec-005-01.md",
+      "narrative": null,
+      "content": "We have X(n) = ⎛ ⎜⎜⎜⎜⎝ r≡0 Xr",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40687-023-00400-3/blocks/thm-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "thm-sec-005-02.md",
+      "narrative": null,
+      "content": "We have A(t)B(1/t)T = B(t)A(1/t)T. (17) In other words, A(t)B(1/t)T is symmetric under tranposition followed by t →1/t. In particular, A(ω)B(ω)∗is Hermitian for ω ∈C with |ω| = 1 and so is B(ω)−1A(ω) if B(ω) is non-singular. Here X∗is the complex conjugate of the transpose of a matrix X. Note that given any ideal triangulation, we can choose quads so that B (hence also B(t), since B(1) = B) is invertible; see [6, App.A].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40687-023-00400-3/blocks/thm-sec-005-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "thm-sec-005-05.md",
+      "narrative": null,
+      "content": "With the above notation, there exists a lower triangular matrix P with 1’s on the diagonal such that P A(t) = \u000f −1 −1 −1 0 b1 + b2 a1 a2 ai \u0010 , P B(t) = \u000f −1 −1 −1 0 a2 + b1 a1 + b2 bi \u0010 . (19) This corrects the omission of P in [6, Eqn.(3.27)], which does not aﬀect the validity of the proofs in [6].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40687-023-00400-3/blocks/cor-sec-006-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "assuming Conjecture 1.4",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "cor-sec-006-04.md",
+      "narrative": null,
+      "content": "We have τ CS(T , t) = τ CS(T , 1/t) ∈F[t±1]/(±tZ). (27) We end our discussion on the twisted 1-loop invariant with a remark which suggests that the t-deformation variable is independent from the variable m which is an eigenvalue of the meridian of an SL2(C)-representation of π1(M).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40687-023-00400-3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The 1-loop invariant and its twisted version",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-006-14-the-1-loop-invariant-and-its-twisted-version.md",
+      "narrative": null,
+      "content": "The adjoint Reidemeister torsion has a conjectural description in terms of the 1-loop\ninvariant of [6]. The latter depends on the NZ matrices of an ideal triangulation, its\nshapes, their ﬂattenings and a peripheral curve γ . With the notation of Sect. 1.3, the\n1-loop invariant is deﬁned by\nτ CS\nγ (T ) := det\n\u0011\nAγ diag(ζ) + Bγ diag(ζ ′′)\n\u0012\n2 \u0013N\nj=1 ζ\nfj\nj ζ\n′f ′\nj\nj ζ\n′′f ′′\nj\nj\n=\ndet\n\u0005\nGγ diag(ζ) + G′\nγ diag(ζ ′) + G′′\nγ diag(ζ ′′)\n\u0006\n2 \u0013N\nj=1 ζ\nfj\nj ζ\n′f ′\nj\nj ζ\n′′f ′′\nj\nj\n∈F/(±1)\n(20)\nwhere the last equality follows from Equation (8). In [6], it is conjectured that the 1-loop\ninvariant τ CS\nγ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40687-023-00400-3/blocks/rem-sec-006-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "rem-sec-006-05.md",
+      "narrative": null,
+      "content": "By varying the representation, the adjoint Reidemeister torsion can be extended to a rational function on the geometric component XM of the SL2(C)-character variety of a knot complement M [7], and consequently to a rational function of the geo- metric component of the A-polynomial curve. The same holds for the 1-loop invariant; see [6, Sec.4]. Likewise, we can extend the twisted 1-loop invariant to a twisted ratio- nal function on the geometric component of the character variety, i.e., to an element of the ring C(XM)[t±1]/(±tZ), where C(XM) is the ﬁeld of rational functions on XM. Then, m ∈C(X",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40687-023-00400-3/blocks/thm-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "thm-sec-006-01.md",
+      "narrative": null,
+      "content": "τ CS(T , t) is invariant under Pachner 2–3 moves between ideal triangula- tions that support the geometric representation. Combining the above theorem with Proposition 1.7 of [6], we conclude that the twisted 1-loop invariant deﬁnes a topological invariant of one-cusped hyperbolic 3-manifolds. The next two theorems concern the properties (3) and (4) of the adjoint twisted Alexan- der polynomial.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40687-023-00400-3/blocks/thm-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "thm-sec-006-02.md",
+      "narrative": null,
+      "content": "For all n ≥1, we have τ CS(T (n), tn) = \u0003 ωn=1 τ CS(T , ω t). (25)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40687-023-00400-3/blocks/thm-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "thm-sec-006-03.md",
+      "narrative": null,
+      "content": "We have τ CS(T , 1) = 0 and d dt \u0002\u0002\u0002 t=1 τ CS(T , t) = τ CS λ (T ) where λ is the peripheral curve satisfying α(λ) = 0. A corollary of the above theorems is a relation between the twisted 1-loop invariant and the 1-loop invariant of [6] for cyclic covers, namely τ CS μ (T (n)) τ CS μ (T ) = \u0003 ωn=1 ω̸=1 τ CS(T , ω). (26) The next result concerns the symmetries of the twisted 1-loop invariant. Conjecture 1.4 implies a symmetry of the twisted 1-loop invariant which is known to hold for the adjoint twisted Alexander polynomial [18,19], namely τ(M, t) = τ(M, 1/t).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40687-023-00400-3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proofs: twisted NZ matrices",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-007-2-proofs-twisted-nz-matrices.md",
+      "narrative": null,
+      "content": "In this section, we give proofs of the properties of the twisted NZ matrices, namely the\nrelation to the NZ matrices of cyclic covers (Theorem 1.1), the symplectic properties\n(Theorem 1.2), and the behavior under 2–3 Pachner moves (Theorem 1.5).\nProof of Theorem 1.1 It is clear that T (n) has nN tetrahedra, as T has N tetrahedra \u0003j,\nj = 1, . . . , N. Fixing a lift \u0007\u0003j of each \u0003j to the inﬁnite cyclic cover, we choose lifts of the\ntetrahedra of T (n) by μk · \u0007\u0003j for k = 0, . . . , n −1. Similarly, we choose lifts of the edges of\nT (n). Then it is clear from the construction of the n-fold cyclic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40687-023-00400-3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-008-3-examples.md",
+      "narrative": null,
+      "content": "In this section, we explain how to compute the twisted NZ matrices of an ideal triangu-\nlation using the methods of SnapPy. As is customary, we do so by the example of the\nsimplest hyperbolic 41 knot, and later by the 63 knot.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40687-023-00400-3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The knot 41",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-009-31-the-knot-41.md",
+      "narrative": null,
+      "content": "The knot complement M of the knot 41 decomposes into two ideal tetrahedra \u00031\nand \u00032. Using the default triangulation of SnapPy for 41 with isometry signature\ncPcbbbiht_BaCB, the gluing equations are\ne1 : z2\n1z′\n1z2\n2z′\n2 = 1,\ne2 : z′\n1(z′′\n1)2z′\n2(z′′\n2)2 = 1 ,\nthe corresponding gluing equation matrices are\nG =\n\u000f\n2 2\n0 0\n\u0010\n,\nG′ =\n\u000f\n1 1\n1 1\n\u0010\n,\nG′′ =\n\u000f\n0 0\n2 2\n\u0010\n,\nand the NZ matrices are\nA =\n\u000f\n1\n1\n−1 −1\n\u0010\n,\nB =\n\u000f\n−1 −1\n1\n1\n\u0010\nwith\nABT =\n\u000f\n−2 2\n2 −2\n\u0010\nsymmetric. We can read the above information by looking at the triangulated cusp shown\nin Fig. 3.\nTo describe the ideal triangulation \u0007T of the inﬁ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40687-023-00400-3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The knot 63",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-010-32-the-knot-63.md",
+      "narrative": null,
+      "content": "The\ndefault\nSnapPy\ntriangulation\nof\nthe\nknot\n63\nwith\nisometry\nsignature\ngLLPQccdefffhggaacv_aBBb has six tetrahedra \u00031, . . . , \u00036 with the peripheral torus\nshown in Fig. 6.\nThe gluing equations of the six edges are\ne1 : z1z2z3z4z6 = 1,\ne2 : z′\n1z′\n2(z′′\n2)2z′\n4(z′′\n4)2z′\n6 = 1,\ne3 : z′′\n1z′\n2z′\n3z′\n5z′′\n6 = 1,\ne4 : z′′\n1z′\n3z′\n4z′\n5z′′\n6 = 1,\ne5 : z′\n1z3(z′′\n3)2z5(z′′\n5)2z′\n6 = 1,\ne6 : z1z2z4z5z6 = 1\nand the corresponding gluing equation matrices are\nG =\n⎛\n⎜⎜⎜⎜⎜⎜⎜⎜⎝\n1 1 1 1 0 1\n0 0 0 0 0 0\n0 0 0 0 0 0\n0 0 0 0 0 0\n0 0 1 0 1 0\n1 1 0 1 1 1\n⎞\n⎟⎟⎟⎟⎟⎟⎟⎟⎠\n,\nG′ =\n⎛\n⎜⎜⎜⎜⎜⎜⎜⎜⎝\n0 0 0 0 0 0\n1 1 0 1 0 1\n0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40687-023-00400-3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proofs: twisted 1-loop invariant",
+      "pageStart": 16,
+      "pageEnd": 21,
+      "target": "../sections/sec-011-4-proofs-twisted-1-loop-invariant.md",
+      "narrative": null,
+      "content": "In this section, we give proofs of the properties of the twisted 1-loop invariant.\nProof Theorem 1.6 We will use the notation of Theorem 1.5 which relates the NZ matrices\nof two triangulations T and T obtained by a 2–3 Pachner move shown in Fig. 2. Recall that\na 2–3 Pachner move on T is determined by two tetrahedra \u0003α and \u0003β with a common\nface in T . Dividing the bipyramid \u0003α ∪\u0003β into three tetrahedra \u0003a, \u0003b, and \u0003c as in\nFig. 2, we obtain a new ideal triangulation T with one additional edge e0. Note that one\ncan read oﬀrelations of shape parameters between T and T directly from Fig. 2:\nz′\na =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40687-023-00400-3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples, continued",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/sec-012-5-examples-continued.md",
+      "narrative": null,
+      "content": "In this section, which is a continuation of Sect. 3, we compute the twisted 1-loop invariant\nof an ideal triangulation using the methods of SnapPy.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40687-023-00400-3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The knot 41",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/sec-013-51-the-knot-41.md",
+      "narrative": null,
+      "content": "In Sect. 3.1, we already gave the twisted NZ matrices of the 41 knot. Using the same\nnotation, we now give the remaining data, namely the shapes of the complete hyperbolic\nstructure and ﬂattenings, which are needed to compute the twisted 1-loop invariant.\nThe solution for the complete structure is z1 = z2 = 1+√−3\n2\n. Equations (41) and (42)\ngive\nG(t) diag(ζ) + G′(t) diag(ζ ′) + G′′(t) diag(ζ ′′) =\n\u000f\n2ζ1t + ζ ′\n1t2\nζ ′\n2 + 2ζ2t\nζ ′\n1t + 2ζ ′′\n1 t2 2ζ ′′\n2 t + ζ ′\n2t2\n\u0010\n.\n(68)\nOne easily checks that (f1, f2) = (0, 0), (f ′\n1, f ′\n2) = (1, 1), and (f ′′\n1 , f ′′\n2 ) = (0, 0) are a combina-\ntorial",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40687-023-00400-3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The knot 63",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-014-52-the-knot-63.md",
+      "narrative": null,
+      "content": "In this section, we give the geometric solution and the ﬂattenings of the triangulation of\nthe 63 knot to compute its twisted 1-loop invariant, following the notation of Sect. 3.2.\nThe trace ﬁeld of the 63 knot is the number ﬁeld of type [0, 3] and discriminant −11·312\ngiven by F = Q[ξ] where ξ ≈1.073 −0.558√−1 satisﬁes ξ6 −ξ5 −ξ4 + 2ξ3 −ξ + 1 = 0.\nThe solution for the complete structure is given exactly\n(z1, z2, z3, z4, z5, z6) = (−ξ2 + ξ, −ξ2 + 1, −ξ3 + ξ, −ξ2 + 1, −ξ3 + ξ, −ξ2 + ξ)\n(71)\nand approximately by\nz1 ≈0.23279 + 0.64139 i, z2 ≈0.15884 + 1.20014 i, z3 ≈0.84116 + 1.20014 i,\n37\nPage 2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40687-023-00400-3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-015-references.md",
+      "narrative": null,
+      "content": "1.\nAndersen, J.E., Garoufalidis, S., Kashaev, R.: The volume conjecture for the klv state-integral, Preprint (2021)\n2.\nCuller, M., Dunﬁeld, N., Weeks, J.: SnapPy, a computer program for studying the topology of 3-manifolds, Available at\nhttp://snappy.computop.org\n3.\nChoi, Y.-E.: Neumann and Zagier’s symplectic relations. Expo. Math. 24(1), 39–51 (2006)\n4.\nDavis, P.: Circulant Matrices. A Wiley-Interscience Publication, Wiley, New York (1979)\n5.\nDunﬁeld, N., Friedl, S., Jackson, N.: Twisted Alexander polynomials of hyperbolic knots. Exp. Math. 21(4), 329–352\n(2012)\n6.\nDimofte, T., Garoufalidis,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,317 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "gt-v10-n3-p07-p",
+  "blocks": [
+    {
+      "id": "library/gt-v10-n3-p07-p/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction and description of results",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction-and-description-of-results.md",
+      "narrative": null,
+      "content": "This paper is about knots which are transverse to the standard tight contact structure in\nR3, and about the ways in which topological information about braids can be used to\nlearn new things about these ‘transversal knots’. Our approach to contact topology had\nits origins in the foundational paper of D Bennequin [2]. The results in this paper are\ndirect outgrowths of our work on the Markov Theorem without Stabilization (MTWS)\n[6].\nA knot in oriented R3 is the image X of an oriented circle S1 under a smooth\nembedding eW S1 ! R3. Viewing S3 as R3 [ 1, we also can think of X as being a\nknot in S3",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gt-v10-n3-p07-p/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Geometry & Topology 10 (2006) 1425–1452\n1425\nStabilization in the braid groups II:\nTransversal simplicity of knots\nJOAN S BIRMAN\nWILLIAM W MENASCO\nThe main result of this paper is a negative answer to the question: are all transversal\nknot types transversally simple? An explicit inﬁnite family of examples is given of\nclosed 3–braids that deﬁne transversal knot types that are not transversally simple.\nThe method of proof is topological and indirect.\n57M25; 57M50, 53C15",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gt-v10-n3-p07-p/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The MTWS and transversal isotopies",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-2-the-mtws-and-transversal-isotopies.md",
+      "narrative": null,
+      "content": "The goal of this section is to prove Theorem 2, a special and limited version of Theorem\n1, the main result in [6]. Theorem 1 is valid in the topological setting, whereas Theorem\n2 is valid in the transversal setting.\nIn Section 2.1 our goal is to review enough of the background so that we can state\nTheorem 1. Its proof is in [6]. After that, we will redo some parts of the proof which\nwere given in [6] in a transversal setting, with the goal of proving a version of the\nsame theorem which applies to transversal knots. That work begins in Section 2.2, by\nredoing the ‘basic construction’ of Secti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gt-v10-n3-p07-p/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Block-strand diagrams, templates and the MTWS",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-21-block-strand-diagrams-templates-and-the-mtws.md",
+      "narrative": null,
+      "content": "Let B be the collection of all braid isotopy classes of closed braid representatives of\noriented knot types in oriented R3. Among these, consider the sub-collection B.X/ of\nrepresentatives of a ﬁxed knot type X . Among these, let Bmin.X/ be the sub-collection\nof representatives whose braid index is equal to the braid index of X . Choose any\nGeometry & Topology, Volume 10 (2006)\nStabilization in the braid groups II\n1429\nXC 2 B.X/ and any X\u0000 2 Bmin.X/. The classical Markov Theorem (see [5] for a\nproof which is in the spirit of the work in this paper) asserts that there exists a sequence\nof close",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gt-v10-n3-p07-p/blocks/thm-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "thm-sec-001-01.md",
+      "narrative": null,
+      "content": "Its proof is in [6]. After that, we will redo some parts of the proof which were given in [6] in a transversal setting, with the goal of proving a version of the same theorem which applies to transversal knots. That work begins in Section 2.2, by redoing the ‘basic construction’ of Section 2.1 of [6] in the transversal setting. This construction gives us an immersed annulus which we call a ‘transversal clasp annulus’. In Section 2.3 we review the basic ideas about the braid foliations which were the principle tool in [6], and use them to superimpose a braid foliation on the characteristic foli",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/gt-v10-n3-p07-p/blocks/lem-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "The Bennequin Trick",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "lem-sec-003-01.md",
+      "narrative": null,
+      "content": "Let  \u001a R3 be an oriented differentiable graph that is transversal to the standard contact structure \u0018 of R3. Let e \u001a  be an edge having a local parameterization function f .t/W Œ0; 1 ! R3 where f .t/ D .\u001a.t/; \u0012.t/; z.t//. If d\u0012 dt is not positive for all t then there exists a transversal isotopy of  which is the identity everywhere except on a small neighborhood of e such that for a resulting parameterization y f .t/ D .y\u001a.t/; y\u0012.t/; yz.t// we have d y\u0012 dt being everywhere positive. The Bennequin trick is analogous to the Alexander trick, which was used in Section 2.1 of [6]. It essentiall",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/gt-v10-n3-p07-p/blocks/lem-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Eliashberg’s isotopy extension lemma [8]",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "lem-sec-003-02.md",
+      "narrative": null,
+      "content": "Let 'tW X ! R3, t 2 Œ0; 1 be an transversal isotopy of a transversal link in the standard contact structure \u0018. Then there exists a contact isotopy ˛tW .R3; \u0018/ ! .R3; \u0018/, t 2 Œ0; 1, with ˛0 D id such that ˛t ı '0 D 't for t 2 Œ0; 1. With the help of these two lemmas we will now develop the construction of Section 2.1 of [6] in the contact structure setting. Figure 5 may be helpful. Given a pair .TXC; TX\u0000/ with TXC; TX\u0000 2 T X and ŒTXCtop; ŒTX\u0000top 2 B.X/, TA is an associated transversal clasp annulus if for PA Š S1 \u0002 Œ0; 1, there exists an immersion eW PA\u0000! TA\u001aR3, with the oriented boundary",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/gt-v10-n3-p07-p/blocks/prop-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "prop-sec-003-03.md",
+      "narrative": null,
+      "content": "Given any pair of transversal closed braids .TXC; TX\u0000/ of the same transversal knot type, there exists an associated transversal clasp annulus TA with @ TA D TXC \u0000 TX\u0000. Proof We start by partitioning R3 along the plane z D 0, and denote the upper-half space by R3 C and the lower-half space by R3 \u0000. We position TX\u0000 so that it is a transverse braid in R3 \u0000. Let TX 0 2 T X be an oriented closed braid that is a preferred longitude of TX\u0000. We can visualize TX 0 being in R3 \u0000, in braid position, and close to TX\u0000with TX 0 \u0000 TX\u0000 the boundary of an embedded annulus A0 in the lower half-space R3 \u0000 whose",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/gt-v10-n3-p07-p/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The construction of transversal clasp annuli",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "../sections/sec-003-22-the-construction-of-transversal-clasp-annuli.md",
+      "narrative": null,
+      "content": "The goal in this subsection and the two that follow it is to state and prove a modiﬁed\nversion of Theorem 1 which holds in the transversal setting. The proof of the MTWS\nin [6] began with the construction of a ‘clasp annulus’. We were given closed braids\nXC and X\u0000 which represent the same topological knot type X . The goal was to ﬁnd\nan isotopy from XC ! X\u0000 through closed braids, which would give us moves that\nchange the closed braid, but were non-increasing on braid index. It was proved in\nSection 2.1 of [6], that the trace of the isotopy from XC to X\u0000 could be assumed to\nbe a clasp annulus,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gt-v10-n3-p07-p/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 20,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "Let T be a transversal disc between the braids X and X 0. Then, when X and X 0 are viewed as transversal knots in the standard contact structure, the isotopy across T is a transversal isotopy. In particular, if C \u001a GC;C (resp. G\u0000;\u0000) is a component of the graph in T then C is a tree having a single endpoint on a1 (resp. a2). Geometry & Topology, Volume 10 (2006) Stabilization in the braid groups II Proof From [7] we know that a positive stabilization or destabilization corresponds to a transversal isotopy. From Section 3.4 of [6] we know if ı \u001a T is a regular neighborhood of a single edge o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/gt-v10-n3-p07-p/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Braid foliations on transversal clasp annuli",
+      "pageStart": 13,
+      "pageEnd": 20,
+      "target": "../sections/sec-004-23-braid-foliations-on-transversal-clasp-annuli.md",
+      "narrative": null,
+      "content": "The principle tool in the proof of the MTWS is the study of the braid foliation of CA,\nthe singular foliation which is determined by the intersections of CA with the disc\nﬁbers H\u0012 of H. Braid foliations have been reviewed in several places. We refer readers\nwho are unfamiliar with them to the review in Sections 3 and 4 of [6], and if necessary\nthence to [3] for additional details. However, there are aspects of these foliations which\nwill be needed here and may not be so familiar, so we recall them next. After that, we\nwill prove Proposition 2, which describes the braid foliation on the transve",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gt-v10-n3-p07-p/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A weak transversal MTWS",
+      "pageStart": 20,
+      "pageEnd": 24,
+      "target": "../sections/sec-005-24-a-weak-transversal-mtws.md",
+      "narrative": null,
+      "content": "We are now ready to state and prove our transverse version of the MTWS.\nGeometry & Topology, Volume 10 (2006)\nStabilization in the braid groups II\n1445\nBy Proposition 1 we know that there is a transversal clasp annulus TA associated to\nany pair .TXC; TX\u0000/. The characteristic foliation on TA, which is trivial, illustrates\nthat the isotopy of TXC to TX\u0000 through TA is in fact a transversal isotopy. We\nalso have a second foliation on TA, the singular braid foliation that is induced by\nthe intersection of TA with the half-planes of the standard braid ﬁbration H of R3.\nIn [6] this braid foliation wa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gt-v10-n3-p07-p/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Transversal simplicity and its failure",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-006-3-transversal-simplicity-and-its-failure.md",
+      "narrative": null,
+      "content": "In this section we develop our examples illustrating the failure of transversal simplicity.\nIn particular, we will produce examples of pairs of closed braids, .XC; X\u0000/ such\nthat: XC; X\u0000 2 Bmin.X/; their associated transversal knots TXC and TX\u0000 will have\nˇ.TXC/ D ˇ.TX\u0000/; but, TXC is not transversally isotopic to TX\u0000. Our over-riding\nstrategy will be to employ Theorem 1 and Theorem 2 through the following line of\nreasoning.\nSuppose that TXC and TX\u0000 were transversally isotopic. Then by Theorem 2, there\nmust be a transversal template .DC; D\u0000/ that carries the pair .XC; X\u0000/. By Theorem\n1 we know th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gt-v10-n3-p07-p/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The failure of transversal simplicity for certain closed 3–braids",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "../sections/sec-007-31-the-failure-of-transversal-simplicity-for-cer.md",
+      "narrative": null,
+      "content": "Theorem 3 There exist inﬁnitely many transversal knot types of braid index 3 which\nare not transversally simple. In particular, consider the collection of inﬁnitely many\npairs of transversal knots .TXC; TX\u0000/ deﬁned by the pairs of transversal closed\n3–braids\nTXC D \u001b2pC1\n1\n\u001b2r\n2 \u001b2q\n1 \u001b\u00001\n2 ;\nTX\u0000 D \u001b2pC1\n1\n\u001b\u00001\n2 \u001b2q\n1 \u001b2r\n2 ;\nGeometry & Topology, Volume 10 (2006)\nStabilization in the braid groups II\n1449\nwhere p C1 6D q 6D r and p; q; r > 1 Then, the transversal knot types T X C and T X \u0000associated to each pair belong to the same topological knot type and have the same\nˇ–invariant, but they do",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gt-v10-n3-p07-p/blocks/thm-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "thm-sec-007-01.md",
+      "narrative": null,
+      "content": "There exist inﬁnitely many transversal knot types of braid index 3 which are not transversally simple. In particular, consider the collection of inﬁnitely many pairs of transversal knots .TXC; TX\u0000/ deﬁned by the pairs of transversal closed 3–braids TXC D \u001b2pC1 \u001b2r 2 \u001b2q 1 \u001b\u00001 2 ; TX\u0000 D \u001b2pC1 \u001b\u00001 2 \u001b2q 1 \u001b2r 2 ; Geometry & Topology, Volume 10 (2006) Stabilization in the braid groups II where p C1 6D q 6D r and p; q; r > 1 Then, the transversal knot types T X C and T X \u0000associated to each pair belong to the same topological knot type and have the same ˇ–invariant, but they do not represent the s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/gt-v10-n3-p07-p/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Future work and some open problems",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-008-32-future-work-and-some-open-problems.md",
+      "narrative": null,
+      "content": "Here are some of the ideas and questions that occurred to us in the course of the work\nin this paper.\nGeometry & Topology, Volume 10 (2006)\nStabilization in the braid groups II\n1451\n(1) With the help of techniques that use only the machinery of contact structures and\ncharacteristic foliations, Etnyre and Honda have proved, in [9], the existence of\nexamples of pairs of transversal cable knots that are of the same knot type, have\nthe same Bennequin number, but are not transversally simple. The type (2,3)\ncable on a type (2,3) torus knot appears to be an example of this type, although\ntheir metho",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/gt-v10-n3-p07-p/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-009-references.md",
+      "narrative": null,
+      "content": "[1]\nV I Arnol’d, Topological invariants of plane curves and caustics, University Lecture\nSeries 5, American Mathematical Society, Providence, RI (1994) MR1286249\nGeometry & Topology, Volume 10 (2006)\n1452\nJoan S Birman and William W Menasco\n[2]\nD Bennequin, Entrelacements et ´equations de Pfaff, from: “Third Schnepfenried\ngeometry conference, Vol. 1 (Schnepfenried, 1982)”, Ast´erisque 107, Soc. Math. France,\nParis (1983) 87–161 MR753131\n[3]\nJ S Birman, E Finkelstein, Studying surfaces via closed braids, J. Knot Theory Rami-\nﬁcations 7 (1998) 267–334 MR1625362\n[4]\nJ S Birman, W W Menasco, Study",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

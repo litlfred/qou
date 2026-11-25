@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/bean-coordination.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/bean-coordination",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "bean-coordination",
+      "title": "Bean Coordination",
+      "description": "Pointer to the bean-based session work-plan system (the `beans` CLI flat-file issue tracker, data under `.beans/`). Operational usage lives in todo-manager.md / session-intent.md; the generic coordinator/orchestrator logic is owned upstream by the folio-assistant repository.",
+      "instructionsPath": "skills/local/bean-coordination.md",
+      "instructionLines": 67,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

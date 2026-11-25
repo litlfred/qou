@@ -1,0 +1,361 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0908.4305v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-0908.4305v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 8,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "[]{#intro label=\"intro\"}\n\n'Groupoidification' is an attempt to expose the combinatorial underpinnings of linear algebra---the hard bones of set theory underlying the flexibility of the continuum. One of the main lessons of modern algebra is to avoid choosing bases for vector spaces until you need them. As Hermann Weyl wrote, \"The introduction of a coordinate system to geometry is an act of violence\\\". But vector spaces often come equipped with a natural basis---and when this happens, there is no harm in taking advantage of it. The most obvious example is when our vector space has been defined",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0908.4305v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0908.4305v3  [math.QA]  21 Oct 2010\nHigher Dimensional Algebra VII:\nGroupoidiﬁcation\nJohn C. Baez, Alexander E. Hoﬀnung, and Christopher D. Walker\nDepartment of Mathematics, University of California\nRiverside, CA 92521 USA\nAugust 29, 2009\nAbstract\nGroupoidiﬁcation is a form of categoriﬁcation in which vector spaces\nare replaced by groupoids and linear operators are replaced by spans\nof groupoids. We introduce this idea with a detailed exposition of ‘de-\ngroupoidiﬁcation’: a systematic process that turns groupoids and spans\ninto vector spaces and linear operators.\nThen we present three ap",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0908.4305v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Degroupoidification",
+      "pageStart": 8,
+      "pageEnd": 25,
+      "target": "../sections/sec-001-2-degroupoidification.md",
+      "narrative": null,
+      "content": "[]{#degroupoidification label=\"degroupoidification\"}\n\nIn this section we describe a systematic process for turning groupoids into vector spaces and tame spans into linear operators. This process, 'degroupoidification', is in fact a kind of functor. 'Groupoidification' is the attempt to *undo* this functor. To 'groupoidify' a piece of linear algebra means to take some structure built from vector spaces and linear operators and try to find interesting groupoids and spans that degroupoidify to give this structure. So, to understand groupoidification, we need to master degroupoidification.\n\nWe beg",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0908.4305v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Homology versus Cohomology",
+      "pageStart": 25,
+      "pageEnd": 29,
+      "target": "../sections/sec-002-3-homology-versus-cohomology.md",
+      "narrative": null,
+      "content": "[]{#homology label=\"homology\"}\n\nThe work we have described so far has its roots in the cohomology of groupoids. Any groupoid $X$ can be turned into a topological space, namely the geometric realization of its nerve [@GJ], and we can define the cohomology of $X$ to be the cohomology of this space. The set of connected components of this space is just the set of isomorphism classes of $X$, which we have denoted $\\underline{X}$. So, the **zeroth cohomology** of the groupoid $X$, with real coefficients, is precisely the vector space ${\\mathbb R}^{\\underline{X}}$ that we have been calling the degro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0908.4305v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Groupoidification",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/sec-003-4-groupoidification.md",
+      "narrative": null,
+      "content": "a matter of convenience, but there is a real diﬀerence between homology and\ncohomology, at least for groupoids with inﬁnitely many nonisomorphic objects.\nThe process described in Section 2 is the combination of choosing to work with\ncohomology and the convention α = 0 for degroupoidifying spans. This will\nsuﬃce for the majority of this paper. However, we will use a diﬀerent choice in\nour study of Hall algebras.\n4\nGroupoidiﬁcation\nDegroupoidiﬁcation is a systematic process; groupoidiﬁcation is the attempt\nto undo this process. The previous section explains degroupoidiﬁcation—but\nnot why groupoi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0908.4305v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Feynman Diagrams",
+      "pageStart": 29,
+      "pageEnd": 36,
+      "target": "../sections/sec-004-41-feynman-diagrams.md",
+      "narrative": null,
+      "content": "[]{#feynman label=\"feynman\"}\n\nOne of the first steps in developing quantum theory was Planck's new treatment of electromagnetic radiation. Classically, electromagnetic radiation in a box can be described as a collection of harmonic oscillators, one for each vibrational mode of the field in the box. Planck 'quantized' the electromagnetic field by assuming that the energy of each oscillator could only take discrete, evenly spaced values: if by fiat we say the lowest possible energy is $0$, the allowed energies take the form $n \\hbar \\omega$, where $n$ is any natural number, $\\omega$ is the frequ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0908.4305v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hecke Algebras",
+      "pageStart": 36,
+      "pageEnd": 41,
+      "target": "../sections/sec-005-42-hecke-algebras.md",
+      "narrative": null,
+      "content": "[]{#hecke label=\"hecke\"}\n\nHere we sketch how to groupoidify a Hecke algebra when the parameter $q$ is a power of a prime number and the finite reflection group comes from a Dynkin diagram in this way. More details will appear in future work [@Baez].\n\nLet $D$ be a Dynkin diagram. We write $d \\in D$ to mean that $d$ is a dot in this diagram. Associated to each unordered pair of dots $d,d'\n\\in D$ is a number $m_{dd'} \\in \\{2,3,4,6\\}$. In the usual Dynkin diagram conventions:\n\n-   $m_{dd'} = 2$ is drawn as no edge at all,\n\n-   $m_{dd'} = 3$ is drawn as a single edge,\n\n-   $m_{dd'} = 4$ is drawn as",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0908.4305v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hall Algebras",
+      "pageStart": 41,
+      "pageEnd": 45,
+      "target": "../sections/sec-006-43-hall-algebras.md",
+      "narrative": null,
+      "content": "[]{#hall label=\"hall\"}\n\nThe Hall algebra of a quiver is a very natural example of groupoidification, and a very important one, since it lets us groupoidify 'half of a quantum group'. However, to obtain the usual formula for the Hall algebra product, we need to exploit one of the alternative conventions explained in Section [\\[homology\\]](#homology){reference-type=\"ref\" reference=\"homology\"}. In this section we begin by quickly reviewing the usual theory of Hall algebras and their relation to quantum groups [@Hubery; @Schiffman]. Then we explain how to groupoidify a Hall algebra.\n\nWe start by f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0908.4305v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Degroupoidifying a Tame Span",
+      "pageStart": 45,
+      "pageEnd": 45,
+      "target": "../sections/sec-007-5-degroupoidifying-a-tame-span.md",
+      "narrative": null,
+      "content": "[]{#processes label=\"processes\"}\n\nIn Section [\\[degroupoidification\\]](#degroupoidification){reference-type=\"ref\" reference=\"degroupoidification\"} we described a process for turning a tame span of groupoids into a linear operator. In this section we show this process is well-defined. The calculations in the proof yield an explicit criterion for when a span is tame. They also give an explicit formula for the the operator coming from a tame span. As part of our work, we also show that equivalent spans give the same operator.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0908.4305v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tame Spans Give Operators",
+      "pageStart": 45,
+      "pageEnd": 50,
+      "target": "../sections/sec-008-51-tame-spans-give-operators.md",
+      "narrative": null,
+      "content": "To prove that a tame span gives a well-defined operator, we begin with three lemmas that are of some interest in themselves. We postpone to Appendix [\\[appendix\\]](#appendix){reference-type=\"ref\" reference=\"appendix\"} some well-known facts about groupoids that do not involve the concept of degroupoidification. This Appendix also recalls the familiar concept of 'equivalence' of groupoids, which serves as a basis for this:\n\n::: definition\nTwo groupoids over a fixed groupoid $X$, say $v \\colon\\Psi \\rightarrow X$ and $w \\colon\\Phi \\rightarrow X$, are **equivalent** as groupoids over $X$ if there i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0908.4305v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An Explicit Formula",
+      "pageStart": 50,
+      "pageEnd": 52,
+      "target": "../sections/sec-009-52-an-explicit-formula.md",
+      "narrative": null,
+      "content": "[]{#explicit label=\"explicit\"}\n\nOur calculations in the proof of Theorem [\\[PROCESS1\\]](#PROCESS1){reference-type=\"ref\" reference=\"PROCESS1\"} yield an explicit formula for the operator coming from a tame span, and a criterion for when a span is tame:\n\n::: thm\n[]{#matrix1 label=\"matrix1\"} A span of groupoids $$\\xymatrix{\n& S\\ar[dl]_{q} \\ar[dr]^{p} & \\\\\nY & & X\n}$$ is tame if and only if:\n\n1.  For any object $y\\in Y$, the groupoid $p^{-1}(x)\\cap q^{-1}(y)$ is nonempty for objects $x$ in only a finite number of isomorphism classes of $X$.\n\n2.  For every $x \\in X$ and $y \\in Y$, the groupoid $p^{-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0908.4305v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Properties of Degroupoidification",
+      "pageStart": 52,
+      "pageEnd": 52,
+      "target": "../sections/sec-010-6-properties-of-degroupoidification.md",
+      "narrative": null,
+      "content": "Properties of Degroupoidiﬁcation\nIn this section we prove all the remaining results stated in Section 2. We start",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0908.4305v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Scalar Multiplication",
+      "pageStart": 52,
+      "pageEnd": 53,
+      "target": "../sections/sec-011-61-scalar-multiplication.md",
+      "narrative": null,
+      "content": "[]{#scalar_mult label=\"scalar_mult\"}\n\nTo prove facts about scalar multiplication, we use the following lemma:\n\n::: lemma\n[]{#essinverseproduct label=\"essinverseproduct\"} Given a groupoid $\\Lambda$ and a functor between groupoids $p\\colon X\\rightarrow Y$, then the functor $c\\times p \\colon\\Lambda\\times Y\\rightarrow 1\\times X$ (where $c\\colon\\Lambda\\rightarrow 1$ is the unique morphism from $\\Lambda$ to the terminal groupoid $1$) satisfies: $$|(c\\times p)^{-1}(1, x)|=|\\Lambda| \\, |p^{-1}(x)|$$ for all $x \\in X$.\n:::\n\n::: proof\n*Proof.* By the definition of full inverse image we have $$(c\\times p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0908.4305v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Functoriality of Degroupoidification",
+      "pageStart": 53,
+      "pageEnd": 56,
+      "target": "../sections/sec-012-62-functoriality-of-degroupoidification.md",
+      "narrative": null,
+      "content": "In this section we prove that our process of turning groupoids into vector spaces and spans of groupoids into linear operators is indeed a functor. We first show that the process preserves identities, then show associativity of composition, from which many other things follow, including the preservation of composition. The lemmas in this section add up to a proof of the following theorem:\n\n::: thm\n[]{#functor label=\"functor\"} Degroupoidification is a functor from the category of groupoids and equivalence classes of tame spans to the category of real vector spaces and linear operators.\n:::\n\n:::",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0908.4305v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Inner Products and Adjoints",
+      "pageStart": 56,
+      "pageEnd": 58,
+      "target": "../sections/sec-013-63-inner-products-and-adjoints.md",
+      "narrative": null,
+      "content": "[]{#innerprodandadjoint label=\"innerprodandadjoint\"}\n\nNow we prove our results about the inner product of groupoids over a fixed groupoid, and the adjoint of a span:\n\n::: thm\n[]{#innerprod_theorem label=\"innerprod_theorem\"} Given a groupoid $X$, there is a unique inner product $\\langle \\cdot,\\cdot \\rangle$ on the vector space $L^2(X)$ such that $$\\langle \\utilde{\\Phi},\\utilde{\\Psi} \\rangle = |\\langle \\Phi,\\Psi \\rangle|$$ whenever $\\Phi$ and $\\Psi$ are square-integrable groupoids over $X$. With this inner product $L^2(X)$ is a real Hilbert space.\n:::\n\n::: proof\n*Proof.* Uniqueness of the inner",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0908.4305v3/blocks/lem-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 67,
+      "target": "lem-sec-014-01.md",
+      "narrative": null,
+      "content": "Given equivalent groupoids X and Y , |X| = |Y |.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0908.4305v3/blocks/lem-sec-014-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 67,
+      "target": "lem-sec-014-02.md",
+      "narrative": null,
+      "content": "Given a diagram of groupoids S B T p ? ? ? ? ? ? ? ? ? ? ? ? ? ? q   F / α ;C      where F is an equivalence of groupoids, the restriction of F to the full inverse image p−1(b) F|p−1(b) : p−1(b) →q−1(b) is an equivalence of groupoids, for any object b ∈B.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0908.4305v3/blocks/lem-sec-014-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 67,
+      "target": "lem-sec-014-03.md",
+      "narrative": null,
+      "content": "Given equivalent cospans of groupoids as described above, the weak pullback of the cospan Y g @ @ @ @ @ @ @ X f ~ ~~~~~~ Z is equivalent to the weak pullback of the cospan ˆY ˆg",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0908.4305v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Review of Groupoids",
+      "pageStart": 58,
+      "pageEnd": 67,
+      "target": "../sections/sec-014-a-review-of-groupoids.md",
+      "narrative": null,
+      "content": "Review of Groupoids\nDeﬁnition 50. A groupoid is a category in which all morphisms are invertible.\nDeﬁnition 51. We denote the set of objects in a groupoid X by Ob(X) and\nthe set of morphisms by Mor(X).\nDeﬁnition 52. A functor F : X →Y between categories is a pair of functions\nF : Ob(X) →Ob(Y ) and F : Mor(X) →Mor(Y ) such that F(1x) = 1F (x) for\nx ∈Ob(X) and F(gh) = F(g)F(h) for g, h ∈Mor(X).\n58\nDeﬁnition 53. A natural transformation α: F ⇒G between functors F, G: X →\nY consists of a morphism αx : F(x) →G(x) in Mor(Y ) for each x ∈Ob(X)\nsuch that for each morphism h: x →x′ in Mor(X) the follow",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

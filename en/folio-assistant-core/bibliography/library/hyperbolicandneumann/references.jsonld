@@ -1,0 +1,30 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/hyperbolicandneumann",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP",
+      "dcterms:creator": [
+        "NEUMANN, AND THE WORK OF WALTER"
+      ],
+      "dcterms:issued": "D:20230323",
+      "dcterms:source": "library/hyperbolicandneumann/manifest.jsonld",
+      "dcterms:hasVersion": "library/hyperbolicandneumann"
+    }
+  ]
+}

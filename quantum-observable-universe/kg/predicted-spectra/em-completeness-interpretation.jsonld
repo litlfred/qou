@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-em-completeness-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:em-completeness-interpretation",
+  "kind": "remark",
+  "title": "Spectral completeness interpretation: nothing is missing from $\\alpha_{\\mathrm{EM}}$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/cor-gauge-coupling-uniqueness",
+    "papers/quantum-observable-universe/blocks/prop-confinement-categorical"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-em-spectral-completeness",
+  "tags": [
+    "interpretation",
+    "completeness",
+    "scalar-channel",
+    "specialisation"
+  ],
+  "text": "em-completeness-interpretation.md",
+  "provenance": "authored"
+}

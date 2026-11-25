@@ -1,0 +1,1953 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "1-s20-s009731651830061x-main",
+  "title": "Constant term formulas for refined enumerations of Gog and Magog trapezoids",
+  "variant": "pdf",
+  "pages": 45,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Constant term formulas for reﬁned enumerations of Gog and Magog trapezoids",
+      "number": null,
+      "page": 1,
+      "pageLabel": "560",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-constant-term-formulas-for-reﬁned-enumerations-o"
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "561",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-introduction"
+    },
+    {
+      "level": 3,
+      "title": "Gog trapezoids, Magog trapezoids and Krattenthaler's conjecture",
+      "number": "1.1",
+      "page": 3,
+      "pageLabel": "562",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-11-gog-trapezoids-magog-trapezoids-and-krattenth"
+    },
+    {
+      "level": 4,
+      "title": "Gog trapezoids",
+      "number": "1.1.1",
+      "page": 3,
+      "pageLabel": "562",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-111-gog-trapezoids"
+    },
+    {
+      "level": 4,
+      "title": "Magog trapezoids",
+      "number": "1.1.2",
+      "page": 4,
+      "pageLabel": "563",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-112-magog-trapezoids"
+    },
+    {
+      "level": 2,
+      "title": "Preliminaries: monotone triangles and truncated monotone triangles",
+      "number": "2",
+      "page": 5,
+      "pageLabel": "564",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-2-preliminaries-monotone-triangles-and-truncated"
+    },
+    {
+      "level": 3,
+      "title": "Inversion numbers",
+      "number": "2.1",
+      "page": 5,
+      "pageLabel": "564",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-21-inversion-numbers"
+    },
+    {
+      "level": 3,
+      "title": "Reﬁned enumeration with respect to the top entry",
+      "number": "2.2",
+      "page": 10,
+      "pageLabel": "569",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-22-reﬁned-enumeration-with-respect-to-the-top-en"
+    },
+    {
+      "level": 3,
+      "title": "Truncated monotone triangles: (s,t)-trees",
+      "number": "2.3",
+      "page": 11,
+      "pageLabel": "570",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-23-truncated-monotone-triangles-st-trees"
+    },
+    {
+      "level": 2,
+      "title": "Application: constant term formula for the generating function of (m,n,k)-Gog trapezoids",
+      "number": "3",
+      "page": 14,
+      "pageLabel": "573",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-3-application-constant-term-formula-for-the-gene"
+    },
+    {
+      "level": 3,
+      "title": "Inversion numbers",
+      "number": "3.1",
+      "page": 15,
+      "pageLabel": "574",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-31-inversion-numbers"
+    },
+    {
+      "level": 3,
+      "title": "Minima and maxima",
+      "number": "3.2",
+      "page": 16,
+      "pageLabel": "575",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-32-minima-and-maxima"
+    },
+    {
+      "level": 3,
+      "title": "Gog pentagons",
+      "number": "3.3",
+      "page": 18,
+      "pageLabel": "577",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-33-gog-pentagons"
+    },
+    {
+      "level": 3,
+      "title": "Inversion numbers",
+      "number": "3.4",
+      "page": 19,
+      "pageLabel": "578",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-34-inversion-numbers"
+    },
+    {
+      "level": 3,
+      "title": "Minima and maxima",
+      "number": "3.5",
+      "page": 19,
+      "pageLabel": "578",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-35-minima-and-maxima"
+    },
+    {
+      "level": 2,
+      "title": "Constant term formula for the number of (m,n,k)-Magog trapezoids with prescribed numbers of minima and maxima",
+      "number": "4",
+      "page": 20,
+      "pageLabel": "579",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-4-constant-term-formula-for-the-number-of-mnk-ma"
+    },
+    {
+      "level": 3,
+      "title": "First version",
+      "number": "4.1",
+      "page": 21,
+      "pageLabel": "580",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-41-first-version"
+    },
+    {
+      "level": 3,
+      "title": "Second version",
+      "number": "4.2",
+      "page": 27,
+      "pageLabel": "586",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-42-second-version"
+    },
+    {
+      "level": 2,
+      "title": "Connecting Gogs and Magogs",
+      "number": "5",
+      "page": 31,
+      "pageLabel": "590",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-5-connecting-gogs-and-magogs"
+    },
+    {
+      "level": 3,
+      "title": "A variant of Theorem 16 and its application to (2.3) and to (2.6) when bi=i",
+      "number": "5.1",
+      "page": 34,
+      "pageLabel": "593",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-51-a-variant-of-theorem-16-and-its-application-t"
+    },
+    {
+      "level": 3,
+      "title": "The application of Theorem 17 to (2.8) when bi=i",
+      "number": "5.2",
+      "page": 38,
+      "pageLabel": "597",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-52-the-application-of-theorem-17-to-28-when-bii"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgment",
+      "number": null,
+      "page": 41,
+      "pageLabel": "600",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-acknowledgment"
+    },
+    {
+      "level": 2,
+      "title": "Appendix A The case v=1-u",
+      "number": null,
+      "page": 41,
+      "pageLabel": "600",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-appendix-a-the-case-v1-u"
+    },
+    {
+      "level": 3,
+      "title": "A.1 The cases (u,v)=(0,1) and (u,v)=(1,0)",
+      "number": null,
+      "page": 41,
+      "pageLabel": "600",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-a1-the-cases-uv01-and-uv10"
+    },
+    {
+      "level": 3,
+      "title": "A.2 The case (u,v)=(1/2,1/2)",
+      "number": null,
+      "page": 41,
+      "pageLabel": "600",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-a2-the-case-uv1212"
+    },
+    {
+      "level": 3,
+      "title": "A.3 The general case",
+      "number": null,
+      "page": 42,
+      "pageLabel": "601",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-a3-the-general-case"
+    },
+    {
+      "level": 4,
+      "title": "A.3.1 Perfect matchings",
+      "number": null,
+      "page": 42,
+      "pageLabel": "601",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-a31-perfect-matchings"
+    },
+    {
+      "level": 4,
+      "title": "A.3.2 Independence of u",
+      "number": null,
+      "page": 44,
+      "pageLabel": "603",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-a32-independence-of-u"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 44,
+      "pageLabel": "603",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "560",
+      "labelEnd": "560",
+      "words": 21,
+      "summary": null,
+      "keywords": [],
+      "extract": "Journal of Combinatorial Theory, Series A 158 (2018) 560-604 Contents lists available at ScienceDirect Journal of Combinatorial Theory, Series A www.elsevier.com/locate/jcta",
+      "extractCut": false,
+      "blocks": [
+        "library/1-s20-s009731651830061x-main/blocks/prose-sec-front-matter",
+        "library/1-s20-s009731651830061x-main/blocks/figure-img-p001-1",
+        "library/1-s20-s009731651830061x-main/blocks/figure-img-p001-2"
+      ]
+    },
+    {
+      "id": "sec-000-constant-term-formulas-for-reﬁned-enumerations-o",
+      "number": null,
+      "title": "Constant term formulas for reﬁned enumerations of Gog and Magog trapezoids",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "560",
+      "labelEnd": "561",
+      "words": 348,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magog trapezoids",
+          "heading": true
+        },
+        {
+          "term": "gog",
+          "heading": true
+        },
+        {
+          "term": "term formulas",
+          "heading": true
+        },
+        {
+          "term": "constant term",
+          "heading": true
+        },
+        {
+          "term": "generalized gog",
+          "heading": false
+        },
+        {
+          "term": "rights reserved",
+          "heading": false
+        },
+        {
+          "term": "monotone triangles",
+          "heading": false
+        },
+        {
+          "term": "elsevier inc",
+          "heading": false
+        }
+      ],
+      "extract": "of Gog and Magog trapezoids oe Ilse Fischer ! Fakultat fiir Mathematik, Universitét Wien, Oskar-Morgenstern-Platz 1, 1090 Wien, Austria ARTICLE INFO ABSTRACT Article history: xog and Magog trapezoids are certain arrays of positive Received 29 September 2017 integers that generalize alternating sign matrices (ASMs) and totally symmetric self-complementary plane partitions (TSSCPPs) respectively. Zeilberger used",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "561",
+      "labelEnd": "562",
+      "words": 517,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gog trapezoids",
+          "heading": false
+        },
+        {
+          "term": "magog trapezoids",
+          "heading": false
+        },
+        {
+          "term": "reﬁned enumerations",
+          "heading": false
+        },
+        {
+          "term": "robbins",
+          "heading": false
+        },
+        {
+          "term": "rumsey",
+          "heading": false
+        },
+        {
+          "term": "asms",
+          "heading": false
+        },
+        {
+          "term": "monotone triangles",
+          "heading": false
+        },
+        {
+          "term": "mills",
+          "heading": false
+        }
+      ],
+      "extract": "When Robbins and Rumsey [29] introduced alternating sign matrices in the 1980s, this was exciting for several reasons. On the one hand, they formulated a conjecture together with Mills [26] which states that the number of n × n ASMs is given by the compelling simple product formula n−1 \u0002 i=0 (3i+1)! (n+i)! . This conjecture turned out to be diﬃcult to prove [32,23] and still deserves to be better understood. On the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-111-gog-trapezoids",
+      "number": "1.1.1",
+      "title": "Gog trapezoids",
+      "level": 4,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "562",
+      "labelEnd": "562",
+      "words": 161,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "trapezoids",
+          "heading": true
+        },
+        {
+          "term": "gogs",
+          "heading": false
+        },
+        {
+          "term": "gog",
+          "heading": true
+        },
+        {
+          "term": "magogs",
+          "heading": false
+        }
+      ],
+      "extract": "known tools that may be helpful to relate constant term formulas for Gogs to those for Magogs. In general, the purpose of our results is twofold: On the one hand, they provide a framework for computational proofs of the conjectures of Krattenthaler, and of Biane and Cheballah, but, on the other hand, they can also be useful in the (experimental) search for statistics on the two classes of objects that have the same",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-11-gog-trapezoids-magog-trapezoids-and-krattenth",
+      "number": "1.1",
+      "title": "Gog trapezoids, Magog trapezoids and Krattenthaler's conjecture",
+      "level": 3,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "562",
+      "labelEnd": "563",
+      "words": 313,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gog trapezoids",
+          "heading": true
+        },
+        {
+          "term": "krattenthaler",
+          "heading": true
+        },
+        {
+          "term": "along rows",
+          "heading": false
+        },
+        {
+          "term": "se-diagonal",
+          "heading": false
+        },
+        {
+          "term": "ne-diagonal",
+          "heading": false
+        },
+        {
+          "term": "minima",
+          "heading": false
+        }
+      ],
+      "extract": "1.1.1. Gog trapezoids In [21,22], Krattenthaler generalizes Zeilberger’s Gog trapezoids [32] (which appeared unnamed for the ﬁrst time in [28, Conjecture 7]) as follows: For m, n, k non-negative integers with k ≤n, an (m, n, k)-Gog trapezoid is deﬁned as an arrangement of positive integers of the following form (the bullets correspond to the integers) • • • • • • • • • • • • • • • • • • • • • • • • • , where n is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-112-magog-trapezoids",
+      "number": "1.1.2",
+      "title": "Magog trapezoids",
+      "level": 4,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "563",
+      "labelEnd": "564",
+      "words": 364,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magog trapezoids",
+          "heading": true
+        },
+        {
+          "term": "gog trapezoids",
+          "heading": false
+        },
+        {
+          "term": "maxima",
+          "heading": false
+        },
+        {
+          "term": "minima",
+          "heading": false
+        },
+        {
+          "term": "se-diagonals",
+          "heading": false
+        },
+        {
+          "term": "ne-diagonal",
+          "heading": false
+        },
+        {
+          "term": "krattenthaler",
+          "heading": false
+        }
+      ],
+      "extract": "In [21,22], Krattenthaler generalized also Zeilberger’s Magog trapezoids [32] (the latter also appeared essentially for the ﬁrst time in [28, Conjecture 7]): For m, n, k non-negative integers with k ≤n, an (m, n, k)-Magog trapezoid is deﬁned as an arrangement of positive integers of the following form • • • • • • • • • • • • • • • • • • • • • • • • • , where n is the number of rows (n = 7 in the example), k is the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-2-preliminaries-monotone-triangles-and-truncated",
+      "number": "2",
+      "title": "Preliminaries: monotone triangles and truncated monotone triangles",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "564",
+      "labelEnd": "564",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-21-inversion-numbers",
+      "number": "2.1",
+      "title": "Inversion numbers",
+      "level": 3,
+      "pageStart": 5,
+      "pageEnd": 10,
+      "labelStart": "564",
+      "labelEnd": "569",
+      "words": 1755,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "inversion numbers",
+          "heading": true
+        },
+        {
+          "term": "monotone triangles",
+          "heading": false
+        },
+        {
+          "term": "bottom row",
+          "heading": false
+        },
+        {
+          "term": "fischer journal",
+          "heading": false
+        },
+        {
+          "term": "gelfand tsetlin",
+          "heading": false
+        },
+        {
+          "term": "tsetlin pattern",
+          "heading": false
+        },
+        {
+          "term": "strictb",
+          "heading": false
+        },
+        {
+          "term": "complementary inversion",
+          "heading": false
+        }
+      ],
+      "extract": "The inversion number of an ASM A = (ai,j)1≤i,j≤n, as deﬁned in [29, Eq. (18)], is given by inv(A) = \u0003 1≤i′<i≤n,1≤j′≤j≤n ai′,jai,j′. It generalizes the inversion number of permutations, that is, for a permutation matrix A, inv(A) is the number of inversions of the permutation π = (π1, . . . , πn), where πi is the column of the unique 1 in row i. Deﬁne the complementary inversion number inv′(A) as follows. inv′(A) = \u0003",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-22-reﬁned-enumeration-with-respect-to-the-top-en",
+      "number": "2.2",
+      "title": "Reﬁned enumeration with respect to the top entry",
+      "level": 3,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "569",
+      "labelEnd": "570",
+      "words": 376,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "max min",
+          "heading": false
+        },
+        {
+          "term": "bottom row",
+          "heading": false
+        },
+        {
+          "term": "gtn",
+          "heading": false
+        },
+        {
+          "term": "top row",
+          "heading": false
+        },
+        {
+          "term": "reﬁned",
+          "heading": true
+        },
+        {
+          "term": "generating function",
+          "heading": false
+        },
+        {
+          "term": "monotone",
+          "heading": false
+        }
+      ],
+      "extract": "For a positive integer n, non-negative integers min ≤a ≤max and x = (x1, . . . , xn), we deﬁne GTn,a,min,max(x) = max −min \u0003 b=0 (−1)a+min +b \u0006 b a −min \u0007 det 1≤i,j≤n \u0006\u0006xi + i −min −1 j −1 + b[j = n] \u0007\u0007 . Suppose min ≤b1 ≤b2 ≤. . . ≤bn ≤max is a sequence of integers, then GTn,a,min,max(b1, . . . , bn) is the number of Gelfand–Tsetlin patterns with bottom row b1, . . . , bn and top row a. This follows, for instance,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-23-truncated-monotone-triangles-st-trees",
+      "number": "2.3",
+      "title": "Truncated monotone triangles: (s,t)-trees",
+      "level": 3,
+      "pageStart": 11,
+      "pageEnd": 14,
+      "labelStart": "570",
+      "labelEnd": "573",
+      "words": 1339,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monotone triangles",
+          "heading": true
+        },
+        {
+          "term": "trees",
+          "heading": true
+        },
+        {
+          "term": "strictb",
+          "heading": false
+        },
+        {
+          "term": "i-th se-diagonal",
+          "heading": false
+        },
+        {
+          "term": "min max",
+          "heading": false
+        },
+        {
+          "term": "fischer journal",
+          "heading": false
+        },
+        {
+          "term": "bottom entry",
+          "heading": false
+        },
+        {
+          "term": "inv",
+          "heading": false
+        }
+      ],
+      "extract": "Next we turn to certain partial monotone triangles. Let l, r, n be non-negative integers with l + r ≤n. Suppose s = (s1, s2, . . . , sl), t = (tn−r+1, tn−r+2, . . . , tn) are sequences of non-negative integers, where s is weakly decreasing, while t is weakly increasing. An (s, t)-tree of order n is an integer array whose shape is obtained from the shape of a monotone triangle with n rows when deleting the bottom si",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-3-application-constant-term-formula-for-the-gene",
+      "number": "3",
+      "title": "Application: constant term formula for the generating function of (m,n,k)-Gog trapezoids",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "573",
+      "labelEnd": "574",
+      "words": 243,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gog trapezoids",
+          "heading": true
+        },
+        {
+          "term": "bottom row",
+          "heading": false
+        },
+        {
+          "term": "bottom entries",
+          "heading": false
+        },
+        {
+          "term": "constant term",
+          "heading": true
+        }
+      ],
+      "extract": "trapezoids Using the terminology of the previous section, (m, n, k)-Gog trapezoids with bottom row b1, . . . , bk correspond to (s, t)-trees of order n, where s = ∅, t = (0, 1, . . . , n −k −1), such that (1) the bottom entries of the ﬁrst k NE-diagonals are b1, . . . , bk, (2) the bottom entries of the last n −k SE-diagonals are m + k + 1, . . . , m + n. In order to obtain the Gog trapezoid from the (s, t)-tree,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-31-inversion-numbers",
+      "number": "3.1",
+      "title": "Inversion numbers",
+      "level": 3,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "574",
+      "labelEnd": "575",
+      "words": 195,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gog trapezoid",
+          "heading": false
+        },
+        {
+          "term": "inversion",
+          "heading": true
+        },
+        {
+          "term": "inv",
+          "heading": false
+        },
+        {
+          "term": "uxi",
+          "heading": false
+        }
+      ],
+      "extract": "The two inversion numbers are deﬁned in the obvious way: Suppose M = (mi,j) is an (m, n, k)-Gog trapezoid, then inv(M) = #{mi,j : mi,j = mi+1,j+1}, inv′(M) = #{mi,j : mi,j = mi+1,j}. So, in order for the entry mi,j to contribute to inv(A), it must have a SE neighbor in the (m, n, k)-Gog trapezoid and this neighbor must be equal to mi,j; however, mi,j need not to have a SW neighbor. Similar for the complementary",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-32-minima-and-maxima",
+      "number": "3.2",
+      "title": "Minima and maxima",
+      "level": 3,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": "575",
+      "labelEnd": "577",
+      "words": 689,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gog trapezoids",
+          "heading": false
+        },
+        {
+          "term": "minima",
+          "heading": true
+        },
+        {
+          "term": "maxima",
+          "heading": true
+        },
+        {
+          "term": "bottom row",
+          "heading": false
+        },
+        {
+          "term": "qxi",
+          "heading": false
+        },
+        {
+          "term": "fischer journal",
+          "heading": false
+        },
+        {
+          "term": "bix",
+          "heading": false
+        },
+        {
+          "term": "xixj",
+          "heading": false
+        }
+      ],
+      "extract": "3.2. Minima and maxima In order to involve the number of minima and the number of maxima in the Gog- trapezoids, we have to apply the version of Corollary 6 where the requirement on b1, b2, . . . , bn is only that it is weakly increasing, and thus we cannot involve the inversion numbers at the same time. An (m, n, k)-Gog trapezoids with p minima can be identiﬁed with (s, t)-trees of or- der n, where s = (p −1), t =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-33-gog-pentagons",
+      "number": "3.3",
+      "title": "Gog pentagons",
+      "level": 3,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "577",
+      "labelEnd": "578",
+      "words": 429,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gog pentagons",
+          "heading": true
+        },
+        {
+          "term": "gogam pentagons",
+          "heading": false
+        },
+        {
+          "term": "gog trapezoids",
+          "heading": false
+        },
+        {
+          "term": "i-th se-diagonal",
+          "heading": false
+        },
+        {
+          "term": "bottom entry",
+          "heading": false
+        },
+        {
+          "term": "along rows",
+          "heading": false
+        },
+        {
+          "term": "cheballah",
+          "heading": false
+        },
+        {
+          "term": "increasing along",
+          "heading": false
+        }
+      ],
+      "extract": "3.3. Gog pentagons In this section, we consider generalizations of Gog trapezoids (so-called Gog pen- tagons) that were recently introduced by Biane and Cheballah [4]. In that paper also certain Magog-type objects were introduced (so-called GOGAm pentagons) along with the conjecture that there is the same number of Gog pentagons of a given type as there is of GOGAm pentagons of the same type and that this is still",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-34-inversion-numbers",
+      "number": "3.4",
+      "title": "Inversion numbers",
+      "level": 3,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": "578",
+      "labelEnd": "578",
+      "words": 211,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gog pentagons",
+          "heading": false
+        },
+        {
+          "term": "inversion numbers",
+          "heading": true
+        },
+        {
+          "term": "bottom row",
+          "heading": false
+        }
+      ],
+      "extract": "We observe that (m, n, kL, kR)-Gog pentagons with bottom row bn−kR+1, bn−kR+2, . . . , bkL correspond to (s, t)-trees of order n, where s = (n −kR −1, n −kR −2, . . . , 0) and t = (0, 1, . . . , n −kL −1). This implies that the number of (m, n, kL, kR)-Gog pentagons with bottom row bn−kR+1, . . . , bkL is equal to (−1) \u0004n−kR 2 \u0005 n−kR \b i=1 (1+xi)ix1−kR−i i kL \b i=n−kR+1 (1+xi)bix−n+1 i n \b i=kL+1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-35-minima-and-maxima",
+      "number": "3.5",
+      "title": "Minima and maxima",
+      "level": 3,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "578",
+      "labelEnd": "579",
+      "words": 420,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gog pentagons",
+          "heading": false
+        },
+        {
+          "term": "maxima",
+          "heading": true
+        },
+        {
+          "term": "minima",
+          "heading": true
+        },
+        {
+          "term": "gog trapezoids",
+          "heading": false
+        },
+        {
+          "term": "bottom maxima",
+          "heading": false
+        },
+        {
+          "term": "bottom row",
+          "heading": false
+        },
+        {
+          "term": "bkl",
+          "heading": false
+        },
+        {
+          "term": "se-diagonal",
+          "heading": false
+        }
+      ],
+      "extract": "A bottom-minimum is an entry in the leftmost SE-diagonal that is equal to the lower bound of its SE-diagonal, while a bottom-maximum is an entry in the rightmost NE- diagonal that is equal to the upper bound of its NE-diagonal. A top-minimum is an entry equal to 1 and such entries can only be in the leftmost NE-diagonal. A top-maximum is an entry equal to m + n and such entries can only be in the rightmost",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-4-constant-term-formula-for-the-number-of-mnk-ma",
+      "number": "4",
+      "title": "Constant term formula for the number of (m,n,k)-Magog trapezoids with prescribed numbers of minima and maxima",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "579",
+      "labelEnd": "580",
+      "words": 149,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magog trapezoids",
+          "heading": true
+        },
+        {
+          "term": "maxima",
+          "heading": true
+        },
+        {
+          "term": "constant term",
+          "heading": true
+        },
+        {
+          "term": "minima",
+          "heading": true
+        }
+      ],
+      "extract": "prescribed numbers of minima and maxima In this section we derive constant term formulas for the number of (m, n, k)-Magog trapezoids with p maxima and q minima. Together with Theorem 9, where a constant term formula for the number of (m, n, k)-Gog trapezoids with p minima and q maxima is provided, this could serve as a framework to give a computational proof of Conjecture 1. In special cases such constant term",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-41-first-version",
+      "number": "4.1",
+      "title": "First version",
+      "level": 3,
+      "pageStart": 21,
+      "pageEnd": 27,
+      "labelStart": "580",
+      "labelEnd": "586",
+      "words": 1947,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magog trapezoids",
+          "heading": false
+        },
+        {
+          "term": "fischer journal",
+          "heading": false
+        },
+        {
+          "term": "yiyj",
+          "heading": false
+        },
+        {
+          "term": "i-th ne-diagonal",
+          "heading": false
+        },
+        {
+          "term": "non-intersecting lattice",
+          "heading": false
+        },
+        {
+          "term": "lattice paths",
+          "heading": false
+        },
+        {
+          "term": "x2j",
+          "heading": false
+        },
+        {
+          "term": "east direction",
+          "heading": false
+        }
+      ],
+      "extract": "Using a standard technique, we can transform (m, n, k)-Magog trapezoids with pre- scribed bottom row (bn−k+1, bn−k+2, . . . , bn) into families of non-intersecting lattice paths as follows: We start by adding a new leftmost SE-diagonal consisting entirely of 1’s and a new rightmost SE-diagonal consisting of (m +1, m +2, . . . , m +n) as indicated in green in our running Example 1.1: 3 3 4 2 3 5 2 3 4 6 1 3 4 5 7 1 2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-42-second-version",
+      "number": "4.2",
+      "title": "Second version",
+      "level": 3,
+      "pageStart": 27,
+      "pageEnd": 31,
+      "labelStart": "586",
+      "labelEnd": "590",
+      "words": 1524,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magog trapezoids",
+          "heading": false
+        },
+        {
+          "term": "fischer journal",
+          "heading": false
+        },
+        {
+          "term": "lattice paths",
+          "heading": false
+        },
+        {
+          "term": "xixj",
+          "heading": false
+        },
+        {
+          "term": "intersecting lattice",
+          "heading": false
+        },
+        {
+          "term": "pull out",
+          "heading": false
+        },
+        {
+          "term": "non intersecting",
+          "heading": false
+        },
+        {
+          "term": "constant term",
+          "heading": false
+        }
+      ],
+      "extract": "There are other options to encode (m, n, k)-Magog trapezoids as families of non- intersecting lattice paths, see for instance [21]. We derive the constant term expression for a second possibility in this subsection, following an encoding that was used for in- stance in [17]. Instead of interpreting NE-diagonals as lattice paths, we now consider the lattice paths that separate the entries that are less than or equal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-5-connecting-gogs-and-magogs",
+      "number": "5",
+      "title": "Connecting Gogs and Magogs",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 34,
+      "labelStart": "590",
+      "labelEnd": "593",
+      "words": 1097,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xixj",
+          "heading": false
+        },
+        {
+          "term": "gog trapezoids",
+          "heading": false
+        },
+        {
+          "term": "antisymmetrizer",
+          "heading": false
+        },
+        {
+          "term": "magog-type",
+          "heading": false
+        },
+        {
+          "term": "fischer journal",
+          "heading": false
+        },
+        {
+          "term": "term expressions",
+          "heading": false
+        },
+        {
+          "term": "constant term",
+          "heading": false
+        },
+        {
+          "term": "zinn-justin",
+          "heading": false
+        }
+      ],
+      "extract": "In summary, we have seen that the constant term expressions for the number of Gog-type objects are all of the following form s · n \b i=1 fi(xi) \b 1≤i<j≤n (xi −xj)(1 + xj + xixj), where fi(x) are certain (simple) rational function—often of the form fi(x) = xai(1 + x)bi, ai, bi integers—and s is a sign. These functions usually have (somewhat) homogeneous deﬁnitions for certain ranges of i: for instance, when",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-51-a-variant-of-theorem-16-and-its-application-t",
+      "number": "5.1",
+      "title": "A variant of Theorem 16 and its application to (2.3) and to (2.6) when bi=i",
+      "level": 3,
+      "pageStart": 34,
+      "pageEnd": 38,
+      "labelStart": "593",
+      "labelEnd": "597",
+      "words": 1384,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xiq",
+          "heading": false
+        },
+        {
+          "term": "fischer journal",
+          "heading": false
+        },
+        {
+          "term": "xixj",
+          "heading": false
+        },
+        {
+          "term": "cauchy determinant",
+          "heading": false
+        },
+        {
+          "term": "sisj",
+          "heading": false
+        },
+        {
+          "term": "right-hand side",
+          "heading": false
+        },
+        {
+          "term": "det",
+          "heading": false
+        },
+        {
+          "term": "asx",
+          "heading": false
+        }
+      ],
+      "extract": "Next we state a theorem that is similar to Theorem 16 and that can be proven analogously. Theorem 17. Let hq(w, y) = qw −q−1y. Then the antisymmetrizer of \u0002 1≤i<j≤n hq(wi, wj) \u0002 1≤i≤j≤n h1(wj, yi) \u0002 1≤j≤i≤n hq(wj, yi) (5.6) w.r.t. w1, . . . , wn is det1≤i,j≤n \u0019 1 h1(wi,yj)hq(wi,yj) \u001a \u0002 1≤i<j≤n h1(yj, yi) . Proof. The proof is by induction w.r.t. n. The case n = 1 is easy to check. Let A(w1, . . . , wn; y1, . . . ,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-52-the-application-of-theorem-17-to-28-when-bii",
+      "number": "5.2",
+      "title": "The application of Theorem 17 to (2.8) when bi=i",
+      "level": 3,
+      "pageStart": 38,
+      "pageEnd": 41,
+      "labelStart": "597",
+      "labelEnd": "600",
+      "words": 769,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "determinant det",
+          "heading": false
+        },
+        {
+          "term": "fischer journal",
+          "heading": false
+        },
+        {
+          "term": "asms",
+          "heading": false
+        },
+        {
+          "term": "jqj",
+          "heading": false
+        },
+        {
+          "term": "sixth roots",
+          "heading": false
+        },
+        {
+          "term": "antisymmetrizer",
+          "heading": false
+        },
+        {
+          "term": "sisj",
+          "heading": false
+        },
+        {
+          "term": "combinatorial theory",
+          "heading": false
+        }
+      ],
+      "extract": "The expression in (2.8) is more complicated at ﬁrst glance as it already involves the antisymmetrizer operator. However, as our approach involves the computation of the antisymmetrizer anyway, this is no disadvantage. 598 I. Fischer / Journal of Combinatorial Theory, Series A 158 (2018) 560–604 By (5.11), (2.8) is equal to (−1) \u0004n+1 2 \u0005 qn(q −q−1)(n+3)n/2 n \b i=1 (1 + xi)n+1(1 + q + xi)−2 × lim (y1,...,yn)→1 det",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-acknowledgment",
+      "number": null,
+      "title": "Acknowledgment",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 41,
+      "labelStart": "600",
+      "labelEnd": "600",
+      "words": 17,
+      "summary": null,
+      "keywords": [],
+      "extract": "The author thanks an anonymous referee for the careful reading of the paper and several interesting comments.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-022-appendix-a-the-case-v1-u",
+      "number": null,
+      "title": "Appendix A The case v=1-u",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 41,
+      "labelStart": "600",
+      "labelEnd": "600",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-023-a1-the-cases-uv01-and-uv10",
+      "number": null,
+      "title": "A.1 The cases (u,v)=(0,1) and (u,v)=(1,0)",
+      "level": 3,
+      "pageStart": 41,
+      "pageEnd": 41,
+      "labelStart": "600",
+      "labelEnd": "600",
+      "words": 165,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gelfand tsetlin",
+          "heading": false
+        },
+        {
+          "term": "tsetlin patterns",
+          "heading": false
+        },
+        {
+          "term": "monotone triangles",
+          "heading": false
+        }
+      ],
+      "extract": "The generating function of monotone triangles with bottom row b1, . . . , bn evaluated at (u, v) = (0, 1) is equal to the number of monotone triangles with that bottom row, where SE-diagonals are strictly increasing, while the evaluation at (u, v) = (1, 0) is the number of monotone triangles that are strictly increasing along NE-diagonals. The number is in both cases \u0002 1≤i<j≤n bj−bi j−i as both sets are in bijective",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-a2-the-case-uv1212",
+      "number": null,
+      "title": "A.2 The case (u,v)=(1/2,1/2)",
+      "level": 3,
+      "pageStart": 41,
+      "pageEnd": 42,
+      "labelStart": "600",
+      "labelEnd": "601",
+      "words": 166,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monotone triangles",
+          "heading": false
+        },
+        {
+          "term": "enumeration",
+          "heading": false
+        },
+        {
+          "term": "asms",
+          "heading": false
+        }
+      ],
+      "extract": "2, 1 2) On the other hand, the generating function of monotone triangles with bottom row b1, . . . , bn evaluated at (u, v) = ( 1 2, 1 2) is—up to the factor 2 \u0004n 2 \u0005 —equal to the 2-enumeration of monotone triangles with respect to the number of entries that lie strictly between their SW-neighbors and their SE-neighbors. By [27, Theorem 2], this number is 2 \u0004n 2 \u0005 \u0002 1≤i<j≤n bj−bi j−i . If (b1, . . . , bn) = (1, . .",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-a3-the-general-case",
+      "number": null,
+      "title": "A.3 The general case",
+      "level": 3,
+      "pageStart": 42,
+      "pageEnd": 42,
+      "labelStart": "601",
+      "labelEnd": "601",
+      "words": 151,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "enumeration",
+          "heading": false
+        },
+        {
+          "term": "exq",
+          "heading": false
+        },
+        {
+          "term": "δxn",
+          "heading": false
+        }
+      ],
+      "extract": "The results mentioned in the previous two paragraphs can also be deduced from Theorem 2 as follows. In all cases, \u0002 1≤p<q≤n Exq Strictxq,xp is a symmetric polyno- mial in Δx1, . . . , Δxn with constant term 1, and the enumeration formulas follow from the fact that the application of an “operator” polynomial with these properties to \u0002 1≤i<j≤n xj−xi j−i leaves the polynomial invariant as was shown, e.g., in [15, Lemma",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-a31-perfect-matchings",
+      "number": null,
+      "title": "A.3.1 Perfect matchings",
+      "level": 4,
+      "pageStart": 42,
+      "pageEnd": 44,
+      "labelStart": "601",
+      "labelEnd": "603",
+      "words": 723,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "perfect matchings",
+          "heading": true
+        },
+        {
+          "term": "monotone triangles",
+          "heading": false
+        },
+        {
+          "term": "let arn",
+          "heading": false
+        },
+        {
+          "term": "rectangular alternating",
+          "heading": false
+        },
+        {
+          "term": "matching edges",
+          "heading": false
+        },
+        {
+          "term": "bottom row",
+          "heading": false
+        },
+        {
+          "term": "weighted enumeration",
+          "heading": false
+        },
+        {
+          "term": "asms",
+          "heading": false
+        }
+      ],
+      "extract": "The specialization v = 1 −u of the generating function is also the weighted enumeration of perfect matchings of a certain portion of the square grid: First observe that, by extending the bijection between monotone triangles with bottom row 1, 2, . . . , n and n × n ASMs to monotone triangles with arbitrary increasing bottom row of positive4 integers, say, b1, . . . , bn, we see that the latter are in bijection to n",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-a32-independence-of-u",
+      "number": null,
+      "title": "A.3.2 Independence of u",
+      "level": 4,
+      "pageStart": 44,
+      "pageEnd": 44,
+      "labelStart": "603",
+      "labelEnd": "603",
+      "words": 321,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "perfect matchings",
+          "heading": false
+        },
+        {
+          "term": "weighted enumeration",
+          "heading": false
+        },
+        {
+          "term": "generating function",
+          "heading": false
+        },
+        {
+          "term": "incident",
+          "heading": false
+        },
+        {
+          "term": "graph",
+          "heading": false
+        },
+        {
+          "term": "cell",
+          "heading": false
+        }
+      ],
+      "extract": "We sketch an argument that shows that the weighted enumeration of our perfect matchings is independent of u, and thus the generating function of monotone triangles (after setting v = 1 −u): This is done with the help of the local graph operation urban renewal which was introduced by Kuperberg and Propp, see Fig. 6. If we replace a cell with edge weights a, b, c, d by the conﬁguration indicated in Fig. 6 (right), the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-references",
+      "number": null,
+      "title": "References",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 45,
+      "labelStart": "603",
+      "labelEnd": "604",
+      "words": 807,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "algebraic combin",
+          "heading": false
+        },
+        {
+          "term": "self-complementary plane",
+          "heading": false
+        },
+        {
+          "term": "symmetric self-complementary",
+          "heading": false
+        },
+        {
+          "term": "alternating sign",
+          "heading": false
+        },
+        {
+          "term": "robbins",
+          "heading": false
+        },
+        {
+          "term": "richard stanley",
+          "heading": false
+        },
+        {
+          "term": "reﬁned enumerations",
+          "heading": false
+        },
+        {
+          "term": "monotone triangles",
+          "heading": false
+        }
+      ],
+      "extract": "[1] R.E. Behrend, P. Di Francesco, P. Zinn-Justin, On the weighted enumeration of alternating sign matrices and descending plane partitions, J. Combin. Theory Ser. A 119 (2012) 331–363. [2] J. Bettinelli, A simple explicit bijection between (n, 2)-Gog and Magog-trapezoids, Sém. Lothar. Combin. 75 (2016) B75e. [3] P. Biane, H. Cheballah, Gog, Magog and Schützenberger II: left trapezoids, in: 25th International",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "gog trapezoids",
+      "heading": true
+    },
+    {
+      "term": "magog trapezoids",
+      "heading": true
+    },
+    {
+      "term": "fischer journal",
+      "heading": false
+    },
+    {
+      "term": "gog pentagons",
+      "heading": true
+    },
+    {
+      "term": "generalized gog",
+      "heading": false
+    },
+    {
+      "term": "bottom row",
+      "heading": false
+    },
+    {
+      "term": "bottom minima",
+      "heading": false
+    },
+    {
+      "term": "bottom maxima",
+      "heading": false
+    },
+    {
+      "term": "monotone triangles",
+      "heading": true
+    },
+    {
+      "term": "bottom entry",
+      "heading": false
+    },
+    {
+      "term": "bottom entries",
+      "heading": false
+    },
+    {
+      "term": "constant term",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "560",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "561",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "562",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "563",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "564",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "565",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "566",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "567",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "568",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "569",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "570",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "571",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "572",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "573",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "574",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "575",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "576",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "577",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "578",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "579",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "580",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "581",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "582",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "583",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "584",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "585",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "586",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "587",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 29,
+      "label": "588",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "589",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 31,
+      "label": "590",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "591",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "592",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "593",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 35,
+      "label": "594",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 36,
+      "label": "595",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 37,
+      "label": "596",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 38,
+      "label": "597",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 39,
+      "label": "598",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 40,
+      "label": "599",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 41,
+      "label": "600",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 42,
+      "label": "601",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 43,
+      "label": "602",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 44,
+      "label": "603",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 45,
+      "label": "604",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Shape of an (s, t)-tree",
+      "page": 11,
+      "pageLabel": "570",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Non-intersecting lattice paths",
+      "page": 22,
+      "pageLabel": "581",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "An (2, 7, 5)-Magog trapezoids and its separating lattice paths",
+      "page": 27,
+      "pageLabel": "586",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Non-intersecting lattice paths for the second version",
+      "page": 28,
+      "pageLabel": "587",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "AR4,7 (left) and an example (right)",
+      "page": 42,
+      "pageLabel": "601",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Urban renewal",
+      "page": 43,
+      "pageLabel": "602",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-2",
+      "file": "images/img-p001-2.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 29,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 30,
+      "note": "4 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 2,
+      "note": "6 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p44); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 30 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/1-s20-s009731651830061x-main"
+  }
+}

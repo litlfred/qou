@@ -1,0 +1,116 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "0110001v3",
+  "blocks": [
+    {
+      "id": "library/0110001v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\nMilnor’s higher order linking numbers (or mu-bar invariants) ¯µi of an oriented\nlink L = L1 ∪· · · ∪Lℓin the 3-sphere are a measure of how deep the longitudes\nli of the components Li lie in the lower central series of the link group π =\nπ1(S3 −L). They are deﬁned as follows [4]:\nAny diagram of L gives rise to a Wirtinger presentation of π whose generators\nare meridians of the link, one for each arc in the diagram. If one works modulo\nany term πn in the lower central series of π (where π1 = π and πn = [π, πn−1])\nthen only one meridian mi is needed from each component Li. In particu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0110001v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "ISSN 1472-2739 (on-line) 1472-2747 (printed)\n557\nAlgebraic & Geometric Topology\nATG\nVolume 3 (2003) 557–568\nPublished: 19 June 2003\nA geometric interpretation of\nMilnor’s triple linking numbers\nBlake Mellor\nPaul Melvin\nAbstract\nMilnor’s triple linking numbers of a link in the 3-sphere are\ninterpreted geometrically in terms of the pattern of intersections of the\nSeifert surfaces of the components of the link. This generalizes the well\nknown formula as an algebraic count of triple points when the pairwise\nlinking numbers vanish.\nAMS Classiﬁcation 57M25; 57M27\nKeywords\n¯µ-invariants, Seifert surf",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0110001v3/blocks/lem-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 12,
+      "target": "lem-sec-001-01.md",
+      "narrative": null,
+      "content": "If F is of type 1, then mijk(F) ≡¯µijk. Proof By the classiﬁcation of surfaces, each component of F can be viewed as a 2-dimensional handlebody, i.e. a disk (0-handle) with bands (1-handles) attached, while the clasps between any two components can be viewed as pairs of feelers, i.e. bands attached at one end to their respective disks and clasped with each other at the other end. Algebraic & Geometric Topology, Volume 3 (2003) A geometric interpretation of Milnor’s triple linking numbers Of course the bands and feelers may be highly linked and twisted, so consider the eﬀect of a band pass (mov",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0110001v3/blocks/lem-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 12,
+      "target": "lem-sec-001-02.md",
+      "narrative": null,
+      "content": "The diﬀerence mijk −tijk is invariant under all three ﬁnger moves. Proof Each move is, to be exact, six possible moves, since the roles of the three surfaces can be permuted. We will consider only one of the six cases, the ones depicted in the ﬁgures, since the others can be proved similarly. The ﬁrst ﬁnger move (Figure 4) clearly does not change the number of triple points, so tijk remains the same. Also, since the words wj and wk (around the boundaries of Fj and Fk) are unchanged, so are eijk and ekij . The word wi is only changed by adding a cancelling pair, so ejki is unchanged. Therefore",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0110001v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of the theorem",
+      "pageStart": 6,
+      "pageEnd": 12,
+      "target": "../sections/sec-001-3-proof-of-the-theorem.md",
+      "narrative": null,
+      "content": "Proof of the theorem\nA generic family F = Fi ∪Fj ∪Fk of Seifert surfaces for the link Li ∪Lj ∪Lk\nwill be called reduced if it is of one of the following types:\nType 1 : (disjoint clasps) The only double curves are disjoint clasps.\nType 2 : (boundary ordered) Around the boundary of any one of the\nthree surfaces, all intersections with either of the other two are adjacent,\nexcept possibly for cancelling pairs (i.e. adjacent intersections of opposite\nsign with the second surface that may occur between intersections with\nthe third).\nIf F is a family of type 1, then tijk(F) = 0 (since there are no",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0110001v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-002-references.md",
+      "narrative": null,
+      "content": "[1]\nT D Cochran, Derivatives of links:\nMilnor’s concordance invariants and\nMassey’s Products, Memoirs of the Amer. Math. Soc. 427 (1990)\n[2]\nR A Fenn, Techniques of Geometric Topology, London Math. Soc. Lecture Note\nSeries 57, Cambridge University Press (1983)\n[3]\nW Magnus, A Karrass, D Solitar, Combinatorial Group Theory, Inter-\nscience Publishers (1966)\n[4]\nJ Milnor, Isotopy of links, in Algebraic Geometry and Topology (edited by R.\nFox), Princeton University Press (1957) 280–306\n[5]\nV Turaev, The Milnor invariants and Massey products, Zap. Nanc. Sem. LOMI\nSteklov 66 (1976) 189–210\nLoyola Ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

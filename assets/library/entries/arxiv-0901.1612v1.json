@@ -1,0 +1,268 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0901.1612v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-0901.1612v1/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0901.1612v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INVARIANTS\nAND INTEGRAL FORMULAS FOR THREE-COMPONENT LINKS\nDENNIS DETURCK, HERMAN GLUCK, RAFAL KOMENDARCZYK,\nPAUL MELVIN, CLAYTON SHONKWILER, AND DAVID SHEA VELA-VICK\nTo Manfredo do Carmo\nin friendship and admiration, on his 80th birthday\nAbstract. Three-component links in the 3-dimensional sphere were classiﬁed up to\nlink homotopy by John Milnor in his senior thesis, published in 1954. A complete set\nof invariants is given by the pairwise linking numbers p, q and r of the components,\nand by the residue class of one further integer µ, the “triple linking",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0901.1612v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Statement of results",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-statement-of-results.md",
+      "narrative": null,
+      "content": "[]{#sec:results label=\"sec:results\"}\n\nConsider the configuration space $$\\mathrm{Conf}_3S^3\\subset S^3 \\times S^3 \\times S^3$$ of ordered triples $(x,y,z)$ of distinct points in the unit $3$-sphere $S^3$ in $\\mathbb R^4$. Since $x$, $y$ and $z$ are distinct, they span a $2$-plane in $\\mathbb R^4$. Orient this plane so that the vectors from $x$ to $y$ and from $x$ to $z$ form a positive basis, and then move it parallel to itself until it passes through the origin. The result is an element $G(x,y,z)$ of the Grassmann manifold $\\mathrm{G}_2\\mathbb R^4$ of all oriented 2-planes through the origin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0901.1612v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Background and motivation",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-2-background-and-motivation.md",
+      "narrative": null,
+      "content": "[]{#sec:background label=\"sec:background\"}\n\nLet $L$ be an ordered oriented link in $\\mathbb R^3$ with two parametrized components $$X = \\{x(s) \\ | \\ s \\in S^1\\} \\ \\  \\text{and} \\ \\ Y = \\{y(t) \\ | \\ t \\in S^1 \\}.$$ The classical linking number $\\text{Lk}(X, Y)$ is the degree of the Gauss map $S^1\\times S^1\\to S^2$ sending $(s,t)$ to $(y(t)-x(s))/\\|y(t)-x(s)\\|$, and can be expressed by the famous integral formula of Gauss [@Gauss], $$\\begin{aligned}\n    \\text{Lk}(X, & Y) = \n    \\frac{1}{4\\pi} \\int_{S^1 \\times S^1} x'(s)  \\times  y'(t)  \\,\\,\\raisebox{.2ex}{\\text{\\tiny\\textbullet}}\\,\\,\\frac{x(s)-y",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0901.1612v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-acknowledgements.md",
+      "narrative": null,
+      "content": "We are grateful to Fred Cohen and Jim Stasheff for their substantial input and help during the preparation of this paper, and to Toshitake Kohno, whose 2002 paper provided the original inspiration for this work. Komendarczyk and Shonkwiler also acknowledge support from DARPA grant #FA9550-08-1-0386.\n\nThe Borromean rings shown on the first page of this paper are from a panel in the carved walnut doors of the Church of San Sigismondo in Cremona, Italy. The photograph is courtesy of Peter Cromwell.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0901.1612v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Explicit formula for the characteristic map gL",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-3-explicit-formula-for-the-characteristic-map-gl.md",
+      "narrative": null,
+      "content": "View R4 as the space of quaternions, with 1, i, j, k as basis, and consider the vector\nﬁeld F : Conf3S3 →R3 −{0} deﬁned by\nF(x, y, z) =\n\n\nx • iy + y • iz + z • ix\nx • jy + y • jz + z • jx\nx • ky + y • kz + z • kx\n\n.\nHere\n• denotes the dot product in R4. The components of F(x, y, z) are quadratic\npolynomials in the components of x, y and z in R4, and the norm ∥F(x, y, z)∥is twice\nthe area of the triangle in R4 with vertices at x, y and z.\nNow let L be a three-component link in S3 with parametrized components\nX = {x(s) | s ∈S1} , Y = {y(t) | t ∈S1} and Z = {z(u) | u ∈S1}.\nThis deﬁnes an embe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0901.1612v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An asymmetric version of the characteristic map",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-31-an-asymmetric-version-of-the-characteristic-m.md",
+      "narrative": null,
+      "content": "S3 ⊂R4, let ℘x denote stereographic projection of S3 −{x} onto the 3-space R3\nx\nthrough the origin in R4 that is orthogonal to the vector x, as shown in Figure 2.\nx\n−x\ny\nz\n℘xy\n℘xz\nR3\nx\nS3\n(℘xy −℘xz)/∥℘xy −℘xz∥\nFigure 2. Stereographic projection\n6\nTriple linking numbers, ambiguous Hopf invariants and integral formulas\nFor any (x, y, z) ∈Conf3S3, consider the points ℘xy and ℘xz in R3\nx. Translation in\nR3\nx moves ℘xz to the origin, and then dilation in R3\nx makes the translated ℘xy into a\nunit vector. Composing with ℘−1\nx , we see that x has been kept ﬁxed, y has moved to\nthe point (℘xy −℘xz)/∥℘x",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0901.1612v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sketch of the topological proof of Theorem ??",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "../sections/sec-005-4-sketch-of-the-topological-proof-of-theorem.md",
+      "narrative": null,
+      "content": "[]{#sec:top_proof label=\"sec:top_proof\"}\n\nStarting with a link in the $3$-sphere, consider the ***delta move*** shown in Figure [1](#fig:delta){reference-type=\"ref\" reference=\"fig:delta\"}, which may be thought of as a higher order variant of a crossing change. It takes place within a $3$-ball, outside of which the link is left fixed.\n\n<figure id=\"fig:delta\">\n<p><embed src=\"FigD.pdf\" style=\"height:1.38889in\" /> (-228,95)<span><span class=\"math inline\"><em>X</em></span></span> (-28,99)<span><span class=\"math inline\"><em>X</em>′</span></span> (-230,-5)<span><span class=\"math inline\"><em>Y</em></s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0901.1612v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sketch of the algebraic proof of Theorem ??",
+      "pageStart": 13,
+      "pageEnd": 17,
+      "target": "../sections/sec-006-5-sketch-of-the-algebraic-proof-of-theorem.md",
+      "narrative": null,
+      "content": "[]{#sec:alg_proof label=\"sec:alg_proof\"}\n\nThis proof is organized around the following key diagram: $$\\label{eqn:keydiagram}\n    \\begin{diagram}[size=2em]\n        [[S^1 \\cup S^1 \\cup S^1, S^3]]  & \\lTo & \\mathcal H(3)  \\\\\n        \\dTo^g & & \\dTo_{\\mathcal G} \\\\\n        [S^1 \\times S^1 \\times S^1, S^2] & \\lTo & \\pi_1\\text{Maps}(S^1\\times S^1,S^2)\\\\\n    \\end{diagram}\n    \\tag{$*$}$$ The left half represents the geometric-topological problem we are trying to solve, and is devoid of algebraic structure. The right half represents the algebraic structures that we impose on the left half via the two",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0901.1612v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sketch of the proof of Theorem ??",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-007-6-sketch-of-the-proof-of-theorem.md",
+      "narrative": null,
+      "content": "[]{#sec:thmB label=\"sec:thmB\"} Let $L$ be a 3-component link in $S^3$ with pairwise linking numbers $p$, $q$ and $r$ all zero. We saw in Theorem [\\[thm:A\\]](#thm:A){reference-type=\"ref\" reference=\"thm:A\"} that these numbers are the degrees of the characteristic map $g_L: T^3 \\to S^2$ on the 2-dimensional coordinate subtori. Thus $g_L$ is homotopic to a map which collapses the 2-skeleton of $T^3$, and so is in effect a map of $S^3 \\to S^2$. The Hopf invariant of this map, which we will regard as the Hopf invariant of $g_L$, is equal to Pontryagin's $\\nu$-invariant comparing $g_L$ to the constan",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0901.1612v1/blocks/prop-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "prop-sec-008-01.md",
+      "narrative": null,
+      "content": "The fundamental solution of the scalar Laplacian on the 3-torus T 3 is given by the formula ϕ(x, y, z) = −1 8π3 X ei(ℓx+my+nz) ℓ2 + m2 + n2 where the sum is over all integers ℓ, m and n (positive and negative) with the exception of ℓ= m = n = 0. Even though we have expressed ϕ in terms of complex exponentials, the value of ϕ is real for real values of x, y and z because of the symmetry of the coeﬃcients, and can therefore also be expressed as a Fourier cosine series. Figure 12 shows the graph of the corresponding fundamental solution of the scalar Laplacian on the 2-torus T 2, displayed over t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0901.1612v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The fundamental solution of the Laplacian",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-008-61-the-fundamental-solution-of-the-laplacian.md",
+      "narrative": null,
+      "content": "Proposition. The fundamental solution of the scalar Laplacian on the 3-torus T 3 is\ngiven by the formula\nϕ(x, y, z) = −1\n8π3\nX ei(ℓx+my+nz)\nℓ2 + m2 + n2\nwhere the sum is over all integers ℓ, m and n (positive and negative) with the exception\nof ℓ= m = n = 0.\nEven though we have expressed ϕ in terms of complex exponentials, the value of ϕ\nis real for real values of x, y and z because of the symmetry of the coeﬃcients, and\ncan therefore also be expressed as a Fourier cosine series.\nFigure 12 shows the graph of the corresponding fundamental solution of the scalar\nLaplacian on the 2-torus T 2, dis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0901.1612v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Completing the proof of Theorem ??",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-009-62-completing-the-proof-of-theorem.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-0901.1612v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "../sections/sec-010-references.md",
+      "narrative": null,
+      "content": "[1820]\nJean-Baptiste Biot and Felix Savart, Note sur le magnetisme de la pile de Volta, Annales\nde Chimie et de Physique, 2nd ser. 15, 222–223.\n[1824]\nJean-Baptiste Biot, Precise Elementaire de Physique Experimentale, 3 ed., vol. II, Chez\nDeterville, Paris.\n[1833]\nCarl Friedrich Gauss, Integral formula for linking number, Zur Mathematischen Theorie\nder Electrodynamische Wirkungen (Collected Works, Vol. 5), Koniglichen Gesellschaft des\nWissenschaften, G¨ottingen, 2 ed., p. 605.\n[1938]\nLev Pontryagin, A classiﬁcation of continuous transformations of a complex into a sphere,\nDokl. Akad. Nauk SSSR",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

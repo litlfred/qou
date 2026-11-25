@@ -1,0 +1,849 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "cuspshapes",
+  "title": "cuspshapes",
+  "variant": "pdf",
+  "pages": 15,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgements",
+      "number": "1.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-11-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "Hyperbolic structures on compression bodies",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-hyperbolic-structures-on-compression-bodies"
+    },
+    {
+      "level": 2,
+      "title": "Hyperbolic structures",
+      "number": "2.1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-21-hyperbolic-structures"
+    },
+    {
+      "level": 1,
+      "title": "Spaces of hyperbolic structures",
+      "number": "3",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-3-spaces-of-hyperbolic-structures"
+    },
+    {
+      "level": 1,
+      "title": "Pinched handlebodies",
+      "number": "4",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-4-pinched-handlebodies"
+    },
+    {
+      "level": 1,
+      "title": "Cusp shapes of tunnel number n manifolds",
+      "number": "5",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-5-cusp-shapes-of-tunnel-number-n-manifolds"
+    },
+    {
+      "level": 1,
+      "title": "Exceptional fillings",
+      "number": "6",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-6-exceptional-fillings"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 93,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyperbolic tunnel",
+          "heading": false
+        },
+        {
+          "term": "tunnel number",
+          "heading": false
+        },
+        {
+          "term": "teichm uller",
+          "heading": false
+        }
+      ],
+      "extract": "CUSP SHAPE AND TUNNEL NUMBER VINH DANG AND JESSICA S. PURCELL Abstract. We show that the set of cusp shapes of hyperbolic tunnel number one manifolds is dense in the Teichm¨uller space of the torus. A similar result holds for tunnel number n manifolds. As a consequence, for ﬁxed n, there are inﬁnitely many hyperbolic tunnel number n manifolds with at most one exceptional Dehn ﬁlling. This is in contrast to large",
+      "extractCut": true,
+      "blocks": [
+        "library/cuspshapes/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 1154,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyperbolic tunnel",
+          "heading": false
+        },
+        {
+          "term": "dehn ﬁllings",
+          "heading": false
+        },
+        {
+          "term": "tunnel number",
+          "heading": false
+        },
+        {
+          "term": "cusp shapes",
+          "heading": false
+        },
+        {
+          "term": "tunnel system",
+          "heading": false
+        },
+        {
+          "term": "exceptional dehn",
+          "heading": false
+        },
+        {
+          "term": "cusp area",
+          "heading": false
+        },
+        {
+          "term": "compression bodies",
+          "heading": false
+        }
+      ],
+      "extract": "This paper is concerned with two invariants for a 3-manifold with torus boundary. The ﬁrst is geometric. If the interior of the 3-manifold admits a hyperbolic structure, then a tubular neighborhood of the torus boundary inherits a Euclidean structure, and this Euclidean structure is unique up to similarity of the torus. The similarity class of such a Euclidean structure is called the cusp shape of the 3-manifold.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-hyperbolic-structures-on-compression-bodies",
+      "number": "2",
+      "title": "Hyperbolic structures on compression bodies",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 33,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pinched",
+          "heading": false
+        },
+        {
+          "term": "compression",
+          "heading": true
+        },
+        {
+          "term": "bodies",
+          "heading": true
+        }
+      ],
+      "extract": "shape [T], then show these lead to maximally pinched structures with cusp shape approaching [T]. By gluing maximally pinched compression bodies to maximally pinched handlebodies and Dehn ﬁlling, we obtain our main results.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-11-acknowledgements",
+      "number": "1.1",
+      "title": "Acknowledgements",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 342,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "compression bodies",
+          "heading": false
+        },
+        {
+          "term": "compression body",
+          "heading": false
+        },
+        {
+          "term": "attaching handles",
+          "heading": false
+        },
+        {
+          "term": "handlebody",
+          "heading": false
+        },
+        {
+          "term": "core",
+          "heading": false
+        },
+        {
+          "term": "arc",
+          "heading": false
+        }
+      ],
+      "extract": "and the referee for suggestions to improve the paper. 2. Hyperbolic structures on compression bodies Let S be a closed, orientable (possibly disconnected) surface with genus at least 1, and let I denote the interval [0, 1]. Deﬁnition 2.1. A compression body C is either a handlebody, or the result of attaching 1-handles to S × I along S × {1} such that the result is connected. The negative boundary is S ×{0} and is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-21-hyperbolic-structures",
+      "number": "2.1",
+      "title": "Hyperbolic structures",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 1003,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "isometric spheres",
+          "heading": false
+        },
+        {
+          "term": "vertical planes",
+          "heading": false
+        },
+        {
+          "term": "vertical fundamental",
+          "heading": false
+        },
+        {
+          "term": "horosphere centered",
+          "heading": false
+        },
+        {
+          "term": "fundamental domain",
+          "heading": false
+        },
+        {
+          "term": "poincar polyhedron",
+          "heading": false
+        },
+        {
+          "term": "cut out",
+          "heading": false
+        },
+        {
+          "term": "horizontal translation",
+          "heading": false
+        }
+      ],
+      "extract": "compression bodies with desired geometric properties. Let ρ: π1(C) →PSL(2, C) be a discrete, faithful representation. Let Γ = ρ(π1(C)) denote the image of such a representation. Note Γ acts on H3. The representation ρ gives a hyperbolic structure on C if H3/Γ is homeomorphic to the interior of C. Note Γ = ρ(π1(C)) has a subgroup Γ∞:= ⟨ρ(α), ρ(β)⟩∼= Z × Z, generated by parabolics ﬁxing a point at inﬁnity. By",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-spaces-of-hyperbolic-structures",
+      "number": "3",
+      "title": "Spaces of hyperbolic structures",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 1390,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pinched structures",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic structures",
+          "heading": true
+        },
+        {
+          "term": "cusp shape",
+          "heading": false
+        },
+        {
+          "term": "isometric spheres",
+          "heading": false
+        },
+        {
+          "term": "rank cusp",
+          "heading": false
+        },
+        {
+          "term": "convex core",
+          "heading": false
+        },
+        {
+          "term": "punctured spheres",
+          "heading": false
+        },
+        {
+          "term": "teichm uller",
+          "heading": false
+        }
+      ],
+      "extract": "Deﬁne the representation space of C with parabolic locus T to be the space R(C, T) = {representations ρ: π1(C) →PSL(2, C) | g ∈π1(T) ⇒ρ(g) is parabolic}. The space AH(C, T) of hyperbolic structures on C is the set AH(C, T) = {ρ ∈R(C, T) | ρ is discrete and faithful}/ ∼ where the equivalence ∼is given by ρ ∼ρ′ if they are conjugate representations. The topology on AH(C, T) is given by algebraic convergence, as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-4-pinched-handlebodies",
+      "number": "4",
+      "title": "Pinched handlebodies",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 1160,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pinched",
+          "heading": true
+        },
+        {
+          "term": "pinched curves",
+          "heading": false
+        },
+        {
+          "term": "hempel distance",
+          "heading": false
+        },
+        {
+          "term": "heegaard splitting",
+          "heading": false
+        },
+        {
+          "term": "pinched structure",
+          "heading": false
+        },
+        {
+          "term": "compression body",
+          "heading": false
+        },
+        {
+          "term": "handlebody graph",
+          "heading": false
+        },
+        {
+          "term": "handlebodies",
+          "heading": true
+        }
+      ],
+      "extract": "We will glue the compression bodies of the previous section to carefully constructed handlebodies, obtaining manifolds with a Heegaard splitting of genus n + 1. To ensure there is not a Heegaard splitting of lower genus, we will use techniques of [8] to bound the Hempel distance of the splitting. In this section we review the CUSP SHAPE AND TUNNEL NUMBER 9 necessary background, particularly Hempel distance, and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-5-cusp-shapes-of-tunnel-number-n-manifolds",
+      "number": "5",
+      "title": "Cusp shapes of tunnel number n manifolds",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "12",
+      "words": 847,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tunnel number",
+          "heading": true
+        },
+        {
+          "term": "genus heegaard",
+          "heading": false
+        },
+        {
+          "term": "cusp",
+          "heading": true
+        },
+        {
+          "term": "genus handlebody",
+          "heading": false
+        },
+        {
+          "term": "heegaard splitting",
+          "heading": false
+        },
+        {
+          "term": "convex cores",
+          "heading": false
+        },
+        {
+          "term": "dehn ﬁlling",
+          "heading": false
+        },
+        {
+          "term": "shape ϵ-close",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we prove the main theorems. Proof of Theorem 1.2. Let C0 be the compression body with the maximally pinched structure of Lemma 3.9. Let H0 be a maximally pinched structure on a genus n + 1 handlebody from Lemma 4.2. The convex cores of C0 and H0 have boundary consisting of embedded, totally geodesic 3-punctured spheres. There is a unique CUSP SHAPE AND TUNNEL NUMBER 11 hyperbolic structure on such a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-6-exceptional-fillings",
+      "number": "6",
+      "title": "Exceptional fillings",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 1026,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "link l2n",
+          "heading": false
+        },
+        {
+          "term": "berge knots",
+          "heading": false
+        },
+        {
+          "term": "cusp shape",
+          "heading": false
+        },
+        {
+          "term": "belted sums",
+          "heading": false
+        },
+        {
+          "term": "belted sum",
+          "heading": false
+        },
+        {
+          "term": "dehn ﬁlling",
+          "heading": false
+        },
+        {
+          "term": "maximal cusp",
+          "heading": false
+        },
+        {
+          "term": "twisted chain",
+          "heading": false
+        }
+      ],
+      "extract": "Recall that Berge knots have tunnel number one. Corollary 5.1 contrasts with the following proposition concerning Berge knots, which follows from work of Baker [3]. Proposition 6.1. Let [T0] denote the Euclidean similarity structure on the torus that includes the 1 × 2 rectangle. Let U denote a neighborhood of [T0]. Then there exists a sequence of hyperbolic Berge knots, all with cusp shape lying in the neighborhood",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 872,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "marc lackenby",
+          "heading": false
+        },
+        {
+          "term": "linda keen",
+          "heading": false
+        },
+        {
+          "term": "compression bodies",
+          "heading": false
+        },
+        {
+          "term": "marc culler",
+          "heading": false
+        },
+        {
+          "term": "dehn ﬁlling",
+          "heading": false
+        },
+        {
+          "term": "caroline series",
+          "heading": false
+        },
+        {
+          "term": "london math",
+          "heading": false
+        },
+        {
+          "term": "dehn surgery",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Colin C. Adams, Thrice-punctured spheres in hyperbolic 3-manifolds, Trans. Amer. Math. Soc. 287 (1985), no. 2, 645–656. [11, 12] [2] Ian Agol, Bounds on exceptional Dehn ﬁlling, Geom. Topol. 4 (2000), 431–449. [1, 2, 12] [3] Kenneth L. Baker, Surgery descriptions and volumes of Berge knots. II. Descriptions on the minimally twisted ﬁve chain link, J. Knot Theory Ramiﬁcations 17 (2008), no. 9, 1099–1120. [1, 12]",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "hyperbolic tunnel",
+      "heading": false
+    },
+    {
+      "term": "cusp shape",
+      "heading": false
+    },
+    {
+      "term": "tunnel number",
+      "heading": true
+    },
+    {
+      "term": "compression bodies",
+      "heading": true
+    },
+    {
+      "term": "compression body",
+      "heading": true
+    },
+    {
+      "term": "single tunnel",
+      "heading": false
+    },
+    {
+      "term": "dehn ﬁlling",
+      "heading": false
+    },
+    {
+      "term": "tunnel system",
+      "heading": false
+    },
+    {
+      "term": "maximal cusp",
+      "heading": false
+    },
+    {
+      "term": "vinh dang",
+      "heading": false
+    },
+    {
+      "term": "rank cusp",
+      "heading": false
+    },
+    {
+      "term": "pinched structure",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The (1; 2)-compression body",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Isometric spheres for some powers of ρ(γ1) and ρ(γ−1",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Left: A fundamental region for a maximally pinched structure on C(1; 2). Right: A fundamental region for its convex core",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The augmented minimally twisted 3-chain link La",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The augmented minimally twisted 2-chain link La",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The cusp of a chain component of the minimally twisted 5-chain link is obtained by taking half of that of La",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p012-1",
+      "file": "images/img-p012-1.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-1",
+      "file": "images/img-p013-1.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-2",
+      "file": "images/img-p013-2.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 10,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 3,
+      "note": "6 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p14); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 10 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/cuspshapes"
+  }
+}

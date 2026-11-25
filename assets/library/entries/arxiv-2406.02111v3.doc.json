@@ -1,0 +1,1252 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2406.02111v3",
+  "title": "Categorical Quantum Volume Operator",
+  "variant": "pdf",
+  "pages": 19,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Categorical Quantum Volume Operator",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-categorical-quantum-volume-operator"
+    },
+    {
+      "level": 2,
+      "title": "Abstract",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-introduction"
+    },
+    {
+      "level": 2,
+      "title": "The Volume Operator in Loop Quantum Gravity",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-the-volume-operator-in-loop-quantum-gravity"
+    },
+    {
+      "level": 3,
+      "title": "Spin networks and graph states",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-spin-networks-and-graph-states"
+    },
+    {
+      "level": 3,
+      "title": "Quantum tetrahedron",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-quantum-tetrahedron"
+    },
+    {
+      "level": 3,
+      "title": "Volume operator",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-volume-operator"
+    },
+    {
+      "level": 3,
+      "title": "Chakrabarti's derivation of the volume operator",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-chakrabartis-derivation-of-the-volume-operator"
+    },
+    {
+      "level": 2,
+      "title": "Categorification of the Volume Operator",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-categorification-of-the-volume-operator"
+    },
+    {
+      "level": 3,
+      "title": "String diagrams",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-string-diagrams"
+    },
+    {
+      "level": 3,
+      "title": "Derivation of the categorical volume operator",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-derivation-of-the-categorical-volume-operator"
+    },
+    {
+      "level": 3,
+      "title": "Beyond ribbon fusion categories",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-beyond-ribbon-fusion-categories"
+    },
+    {
+      "level": 3,
+      "title": "Hermiticity of the categorical volume operator",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-hermiticity-of-the-categorical-volume-operator"
+    },
+    {
+      "level": 2,
+      "title": "Recovering the Standard SU(2) Volume Operator",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-recovering-the-standard-su2-volume-operator"
+    },
+    {
+      "level": 2,
+      "title": "Spectrum of the SU(2)k Volume Operator",
+      "number": null,
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-spectrum-of-the-su2k-volume-operator"
+    },
+    {
+      "level": 2,
+      "title": "Discussion and Conclusions",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-discussion-and-conclusions"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-references"
+    },
+    {
+      "level": 2,
+      "title": "Appendix: Basic Concepts in Category Theory",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-appendix-basic-concepts-in-category-theory"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-categorical-quantum-volume-operator",
+      "number": null,
+      "title": "Categorical Quantum Volume Operator",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 211,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "volume operator",
+          "heading": true
+        },
+        {
+          "term": "quantum volume",
+          "heading": true
+        },
+        {
+          "term": "fusion categories",
+          "heading": false
+        },
+        {
+          "term": "okinawa",
+          "heading": false
+        },
+        {
+          "term": "categorical",
+          "heading": true
+        },
+        {
+          "term": "standard",
+          "heading": false
+        }
+      ],
+      "extract": "Alexander Hahn ,1, ∗Sebastian Murk ,2, † Sukhbinder Singh,3, ‡ and Gavin K. Brennen 1, § 1School of Mathematical and Physical Sciences, Macquarie University, Sydney, New South Wales 2109, Australia 2Quantum Gravity Unit, Okinawa Institute of Science and Technology, 1919-1 Tancha, Onna-son, Okinawa 904-0495, Japan 3Multiverse Computing, Spadina Ave., Toronto, ON M5T 2C2, Canada We present a generalization of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 1781,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite smolinqdeformed",
+          "heading": false
+        },
+        {
+          "term": "cite dittrich",
+          "heading": false
+        },
+        {
+          "term": "anyonic spin",
+          "heading": false
+        },
+        {
+          "term": "categorical volume",
+          "heading": false
+        },
+        {
+          "term": "rme rmi",
+          "heading": false
+        },
+        {
+          "term": "cite rovelli",
+          "heading": false
+        },
+        {
+          "term": "lqg",
+          "heading": false
+        },
+        {
+          "term": "volume operator",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:introduction} In the search for an all-encompassing theory of quantum gravity that successfully reconciles general relativity and quantum field theory, background-independent theories such as loop quantum gravity (LQG)~\\cite{Thiemann2007,Rovelli2014,Bilson-Thompson2024} and causal dynamical triangulations~\\cite{Ambjorn2012,Loll2020} are widely regarded as the main contenders to string theory/M-theory.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-the-volume-operator-in-loop-quantum-gravity",
+      "number": null,
+      "title": "The Volume Operator in Loop Quantum Gravity",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "GRAVITY",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-spin-networks-and-graph-states",
+      "number": null,
+      "title": "Spin networks and graph states",
+      "level": 3,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 239,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "node kappa",
+          "heading": false
+        },
+        {
+          "term": "ket iota",
+          "heading": false
+        },
+        {
+          "term": "intertwiner ket",
+          "heading": false
+        },
+        {
+          "term": "mathcal varv",
+          "heading": false
+        },
+        {
+          "term": "ket gamma",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "begin tikzpicture",
+          "heading": false
+        }
+      ],
+      "extract": "In LQG, a spin network state is defined on an oriented graph $\\Gamma$. Each link $\\ell$ has a direction and is labeled by a half-integer $j_\\ell \\in \\mathbb{N} \\frac{1}{2}$ spanning a $2 j_\\ell + 1$ dimensional $\\SU(2)$ irreducible representation space $\\mathcal{H}_{j_\\ell}$. Each node $\\kappa$ of the graph carries a so-called intertwiner $\\ket{\\iota_\\kappa}$. The intertwiner $\\ket{\\iota_\\kappa}$ is a vector in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-quantum-tetrahedron",
+      "number": null,
+      "title": "Quantum tetrahedron",
+      "level": 3,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 269,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vec ell",
+          "heading": false
+        },
+        {
+          "term": "ell ket",
+          "heading": false
+        },
+        {
+          "term": "tetrahedron",
+          "heading": true
+        },
+        {
+          "term": "ket iota",
+          "heading": false
+        },
+        {
+          "term": "tetrahedron faces",
+          "heading": false
+        },
+        {
+          "term": "iota kappa",
+          "heading": false
+        },
+        {
+          "term": "varv",
+          "heading": false
+        },
+        {
+          "term": "closure constraint",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:quantumtetrahedron} \\begin{figure} \\centering \\includegraphics{Fig_1_Tetrahedron.pdf} \\caption{Schematic illustration of a quantum tetrahedron as the dual of a graph state. The node $\\kappa$ is located in the center of the tetrahedron and carries a four-valent intertwiner $\\ket{\\iota_\\kappa}$. A link $\\ell$ in the graph state connected to this vertex pierces one of the tetrahedron's faces. It carries a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-volume-operator",
+      "number": null,
+      "title": "Volume operator",
+      "level": 3,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 660,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kappa vec",
+          "heading": false
+        },
+        {
+          "term": "kappa ket",
+          "heading": false
+        },
+        {
+          "term": "iota kappa",
+          "heading": false
+        },
+        {
+          "term": "bmatrix kappa",
+          "heading": false
+        },
+        {
+          "term": "alpha kappa",
+          "heading": false
+        },
+        {
+          "term": "cdot vec",
+          "heading": false
+        },
+        {
+          "term": "bra iota",
+          "heading": false
+        },
+        {
+          "term": "kappa big",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:volumeoperator} The action of the volume operator is given by~\\cite{Rovelli2014} \\begin{equation} \\hat{V} \\ket{\\iota_\\kappa} = \\frac{\\sqrt{2}}{3} \\left( 8 \\pi G \\hbar \\gamma \\right)^{3/2} \\sqrt{\\vert \\hat{Q} \\vert} \\ket{\\iota_\\kappa} , \\label{eq:def:vol_op} \\end{equation} where $\\gamma$ denotes the Barbero--Immirzi parameter, and $G$ and $\\hbar$ the gravitational and reduced Planck constant,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-chakrabartis-derivation-of-the-volume-operator",
+      "number": null,
+      "title": "Chakrabarti's derivation of the volume operator",
+      "level": 3,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 264,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bmatrix kappa",
+          "heading": false
+        },
+        {
+          "term": "iota kappa",
+          "heading": false
+        },
+        {
+          "term": "kappa ell",
+          "heading": false
+        },
+        {
+          "term": "momentum vec",
+          "heading": false
+        },
+        {
+          "term": "chakrabarti",
+          "heading": true
+        },
+        {
+          "term": "ket iota",
+          "heading": false
+        },
+        {
+          "term": "rule kappa",
+          "heading": false
+        },
+        {
+          "term": "basis ket",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:chaktabarti} Interestingly, the derivation of the matrix elements of $\\hat{Q}$ was provided some sixty years ago by Chakrabarti~\\cite{Chakrabarti1964}, who referred to it as an operator ``whose classical analog is a volume generated by the three angular momentum vectors\". Chakrabarti was interested in constructing eigenstates, which reflect the permutation symmetry of three particles with angular momentum",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-categorification-of-the-volume-operator",
+      "number": null,
+      "title": "Categorification of the Volume Operator",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 154,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite beer",
+          "heading": false
+        },
+        {
+          "term": "ribbon fusion",
+          "heading": false
+        },
+        {
+          "term": "fusion category",
+          "heading": false
+        },
+        {
+          "term": "category theory",
+          "heading": false
+        },
+        {
+          "term": "modular tensor",
+          "heading": false
+        },
+        {
+          "term": "hopf algebras",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Qvol} In this section, we outline the framework for generalizing the quantum volume operator introduced in the previous section to a general class of categories. We briefly introduce the category theoretical concepts needed for our construction in the \\hyperref[sec:category_theory]{Appendix}\\@. For a more comprehensive introduction to category theory, we refer the reader to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-string-diagrams",
+      "number": null,
+      "title": "String diagrams",
+      "level": 3,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 601,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "postaction decorate",
+          "heading": false
+        },
+        {
+          "term": "decoration markings",
+          "heading": false
+        },
+        {
+          "term": "bounding box",
+          "heading": false
+        },
+        {
+          "term": "midway",
+          "heading": false
+        },
+        {
+          "term": "current bounding",
+          "heading": false
+        },
+        {
+          "term": "begin tikzpicture",
+          "heading": false
+        },
+        {
+          "term": "end tikzpicture",
+          "heading": false
+        },
+        {
+          "term": "draw",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:string_diagrams} A fusion category is uniquely specified by its skeletal data, see e.g.\\ Refs.~\\cite{Bridgeman2020,Barter2022}\\@. That is \\begin{enumerate}[(i)] \\item a finite set $I=\\{0,a,b,\\dots\\}$ of simple objects as well as their duals $0,a^*,b^*,\\dots$, where $0$ labels the unit object; \\item the fusion rules for all $a,b\\in I$, \\begin{equation*} a\\otimes b = \\sum_{c\\in I} N_{ab}^{c} c,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-derivation-of-the-categorical-volume-operator",
+      "number": null,
+      "title": "Derivation of the categorical volume operator",
+      "level": 3,
+      "pageStart": 6,
+      "pageEnd": 9,
+      "labelStart": "6",
+      "labelEnd": "9",
+      "words": 1357,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "postaction decorate",
+          "heading": false
+        },
+        {
+          "term": "kappa'j big",
+          "heading": false
+        },
+        {
+          "term": "kappa'm big",
+          "heading": false
+        },
+        {
+          "term": "decoration markings",
+          "heading": false
+        },
+        {
+          "term": "kappa big",
+          "heading": false
+        },
+        {
+          "term": "tikzpicture big",
+          "heading": false
+        },
+        {
+          "term": "ell big",
+          "heading": false
+        },
+        {
+          "term": "alpha kappa",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:Qvol.derivation} To compute the matrix elements of the generalized volume operator, we follow the same steps as for the standard $\\SU(2)$ volume operator in LQG~\\cite{Rovelli2014}\\@. That is, we consider a tetrahedron, but the corresponding four-valent intertwiners are not necessarily irreducible representations of $\\SU(2)$. Instead, we treat them as morphisms in a premodular category $\\C$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-beyond-ribbon-fusion-categories",
+      "number": null,
+      "title": "Beyond ribbon fusion categories",
+      "level": 3,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 691,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "postaction decorate",
+          "heading": false
+        },
+        {
+          "term": "volume j2j",
+          "heading": false
+        },
+        {
+          "term": "j2j unitary",
+          "heading": false
+        },
+        {
+          "term": "kappa big",
+          "heading": false
+        },
+        {
+          "term": "ell kappa",
+          "heading": false
+        },
+        {
+          "term": "kappa'j big",
+          "heading": false
+        },
+        {
+          "term": "tikzpicture big",
+          "heading": false
+        },
+        {
+          "term": "alpha kappa",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:spherical.C} In the derivation of the standard volume operator for $\\SU(2)$, the closure constraint~\\eqref{eq:closure_constraint} guarantees that any oriented triplet $\\vec{L}_j,\\vec{L}_k,\\vec{L}_\\ell$ in the definition of the volume operator~\\eqref{eq:def_volume_operator} gives the same result. As mentioned previously, the category-theoretic analog of the closure constraint is the tetrahedral symmetry",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-hermiticity-of-the-categorical-volume-operator",
+      "number": null,
+      "title": "Hermiticity of the categorical volume operator",
+      "level": 3,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 609,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "postaction decorate",
+          "heading": false
+        },
+        {
+          "term": "phi rmi",
+          "heading": false
+        },
+        {
+          "term": "rmi sqrt",
+          "heading": false
+        },
+        {
+          "term": "kappa overline",
+          "heading": false
+        },
+        {
+          "term": "volume operator",
+          "heading": true
+        },
+        {
+          "term": "tensor kappa",
+          "heading": false
+        },
+        {
+          "term": "rme frac",
+          "heading": false
+        },
+        {
+          "term": "alpha kappa",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:Hermicity} For the volume operator to be a physical observable, it must be Hermitian. By looking at a specific example, we will see that for non-unitary $\\C$ the volume operator is \\emph{not} Hermitian in general. This is not surprising, but rather the expected behavior of generic non-unitary models. The same observation has been made, for instance, in anyon chains~\\cite{Ardonne2011} and Levin--Wen",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-recovering-the-standard-su2-volume-operator",
+      "number": null,
+      "title": "Recovering the Standard SU(2) Volume Operator",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 619,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kappa sixj",
+          "heading": false
+        },
+        {
+          "term": "ell sixj",
+          "heading": false
+        },
+        {
+          "term": "nonumber sixj",
+          "heading": false
+        },
+        {
+          "term": "kappa rightarrow",
+          "heading": false
+        },
+        {
+          "term": "tensor kappa",
+          "heading": false
+        },
+        {
+          "term": "kappa sum",
+          "heading": false
+        },
+        {
+          "term": "volume operator",
+          "heading": true
+        },
+        {
+          "term": "mathcal ell",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:recovery} In this section, we show that our construction recovers the standard volume operator for $\\SU(2)$, see Eq.~\\eqref{eq:QRS} and Eq.~\\eqref{eq:QCh}\\@. For this, we consider the input category $\\SU(2)_k$, which is the $q$-deformed version of $\\SU(2)$ with deformation parameter $q=\\rme^{\\frac{2\\pi\\rmi}{k+2}}$. In the limit $k\\rightarrow\\infty$, we have $q \\rightarrow 1$ and recover $\\SU(2)$. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-spectrum-of-the-su2k-volume-operator",
+      "number": null,
+      "title": "Spectrum of the SU(2)k Volume Operator",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 465,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "volume operator",
+          "heading": true
+        },
+        {
+          "term": "fig eigenvalues",
+          "heading": false
+        },
+        {
+          "term": "operator hat",
+          "heading": false
+        },
+        {
+          "term": "text max",
+          "heading": false
+        },
+        {
+          "term": "input labels",
+          "heading": false
+        },
+        {
+          "term": "mathrm max",
+          "heading": false
+        },
+        {
+          "term": "caption eigenvalues",
+          "heading": false
+        },
+        {
+          "term": "max frac",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:spectrum} The volume operator is a physical observable quantifying the volume of the three-dimensional spatial component of discrete spacetime. Therefore, the main interest is its spectral properties. The spectral analysis of the $\\SU(2)$ volume operator has been carried out in Refs.~\\cite{Loll1996,BrunnemannThiemann2006,Meissner2006,BrunnemannRideout2008a,BrunnemannRideout2008a}\\@. By restricting the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-discussion-and-conclusions",
+      "number": null,
+      "title": "Discussion and Conclusions",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 725,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cosmological constant",
+          "heading": false
+        },
+        {
+          "term": "deformed volume",
+          "heading": false
+        },
+        {
+          "term": "categorified volume",
+          "heading": false
+        },
+        {
+          "term": "volume operator",
+          "heading": false
+        },
+        {
+          "term": "quantum gravity",
+          "heading": false
+        },
+        {
+          "term": "ref subsec",
+          "heading": false
+        },
+        {
+          "term": "lqg",
+          "heading": false
+        },
+        {
+          "term": "fusion categories",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:discussion_conclusions} In condensed matter physics, the categorification of spin models such as the Heisenberg model and certain lattice gauge theories has given rise to several physically rich anyonic lattice models that realize both conventional and exotic quantum phases of matter. Motivated by these developments, here we have introduced a categorification of the quantum volume operator",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-references",
+      "number": null,
+      "title": "References",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 1424,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum grav",
+          "heading": false
+        },
+        {
+          "term": "quantum gravity",
+          "heading": false
+        },
+        {
+          "term": "loop quantum",
+          "heading": false
+        },
+        {
+          "term": "generalized string-net",
+          "heading": false
+        },
+        {
+          "term": "fusion categories",
+          "heading": false
+        },
+        {
+          "term": "non-abelian anyons",
+          "heading": false
+        },
+        {
+          "term": "string-net model",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        }
+      ],
+      "extract": "man and Ramona Wolf for an interesting exchange. SM and GKB thank Sundance Bilson-Thompson for illuminating dis- cussions. AH acknowledges partial funding from the Sydney Quan- tum Academy. SM is supported by the Quantum Gravity Unit of the Okinawa Institute of Science and Technology (OIST). G.K.B. acknowledges support from the Australian Research Council Centre of Excellence for Engineered Quantum Sys- tems (Grant",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-appendix-basic-concepts-in-category-theory",
+      "number": null,
+      "title": "Appendix: Basic Concepts in Category Theory",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 19,
+      "labelStart": "16",
+      "labelEnd": "19",
+      "words": 1795,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fusion category",
+          "heading": false
+        },
+        {
+          "term": "fusion categories",
+          "heading": false
+        },
+        {
+          "term": "braided monoidal",
+          "heading": false
+        },
+        {
+          "term": "unitary fusion",
+          "heading": false
+        },
+        {
+          "term": "ribbon fusion",
+          "heading": false
+        },
+        {
+          "term": "monoidal cat",
+          "heading": false
+        },
+        {
+          "term": "rigid braided",
+          "heading": false
+        },
+        {
+          "term": "called pivotal",
+          "heading": false
+        }
+      ],
+      "extract": "THEORY In this appendix, we introduce the basic category theoret- ical concepts that appear in the main text of this article. We will often not provide the full technical definitions, but in- stead focus on the implications of a categorical property to the graphical calculus of string diagrams. For an elementary physics-friendly introduction to category theory, we refer the reader to Refs. [41, 42]. A thorough and",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "postaction decorate",
+      "heading": false
+    },
+    {
+      "term": "node kappa",
+      "heading": false
+    },
+    {
+      "term": "ell kappa",
+      "heading": false
+    },
+    {
+      "term": "kappa ket",
+      "heading": false
+    },
+    {
+      "term": "kappa vec",
+      "heading": false
+    },
+    {
+      "term": "kappa big",
+      "heading": false
+    },
+    {
+      "term": "iota kappa",
+      "heading": false
+    },
+    {
+      "term": "ell rmi",
+      "heading": false
+    },
+    {
+      "term": "kappa frac",
+      "heading": false
+    },
+    {
+      "term": "kappa begin",
+      "heading": false
+    },
+    {
+      "term": "tensor kappa",
+      "heading": false
+    },
+    {
+      "term": "kappa end",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Schematic illustration of a quantum tetrahedron as the dual of a graph state. The node κ is located in the center of the tetrahedron and carries a four-valent intertwiner |ικ⟩. A link ℓin the graph state connected to this vertex pierces one of the tetrahedron’s faces",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Eigenvalues of the quantum volume operator ˆQ for SU(2)k for different k. We fix the input labels to j1 = j2 =",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Eigenvalues of the quantum volume operator ˆQ for SU(2)k for different k. We fix the input labels to j1 = j2 = 1 and show",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p003-1",
+      "file": "images/img-p003-1.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 18,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 17,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 1,
+      "note": "3 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p15); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 12
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 17 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2406.02111v3"
+  }
+}

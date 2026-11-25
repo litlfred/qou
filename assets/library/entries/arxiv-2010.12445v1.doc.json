@@ -1,0 +1,1097 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2010.12445v1",
+  "title": "arxiv-2010.12445v1",
+  "variant": "pdf",
+  "pages": 28,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Notation",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-notation"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-1-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "Monoidal functors and their sheafification",
+      "number": "1.1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-11-monoidal-functors-and-their-sheafification"
+    },
+    {
+      "level": 2,
+      "title": "Generalized frame bundles",
+      "number": "1.2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-12-generalized-frame-bundles"
+    },
+    {
+      "level": 1,
+      "title": "Pseudo-affine stacks",
+      "number": "2",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-2-pseudo-affine-stacks"
+    },
+    {
+      "level": 1,
+      "title": "Tannaka Reconstruction",
+      "number": "3",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-3-tannaka-reconstruction"
+    },
+    {
+      "level": 1,
+      "title": "Pseudo-Affine sheaves revisited",
+      "number": "4",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-4-pseudo-affine-sheaves-revisited"
+    },
+    {
+      "level": 1,
+      "title": "The stack of fiber functors",
+      "number": "5",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-5-the-stack-of-fiber-functors"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem 5.1",
+      "number": "5.1",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-51-proof-of-theorem-51"
+    },
+    {
+      "level": 2,
+      "title": "Comparing vector bundles",
+      "number": "5.2",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-52-comparing-vector-bundles"
+    },
+    {
+      "level": 2,
+      "title": "The case C={OX}",
+      "number": "5.3",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-53-the-case-cox"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 136,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fibx",
+          "heading": false
+        },
+        {
+          "term": "fpqc stack",
+          "heading": false
+        },
+        {
+          "term": "tannaka reconstruction",
+          "heading": false
+        },
+        {
+          "term": "generates qcoh",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:2010.12445v1 [math.AG] 22 Oct 2020 STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION FABIO TONINI Abstract. Given a quasi-compact category ﬁbered in groupoids X and a monoidal subcat- egory C of its category of locally free sheaves Vect(X), we are going to introduce the stack of ﬁber functors FibX,C with source C, which comes equipped with a map PC : X →FibX,C and a functor G : C →Vect(FibX,C). If C",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2010.12445v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "3",
+      "words": 1479,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fib stx",
+          "heading": false
+        },
+        {
+          "term": "shp shc",
+          "heading": false
+        },
+        {
+          "term": "odi stx",
+          "heading": false
+        },
+        {
+          "term": "textup vect",
+          "heading": false
+        },
+        {
+          "term": "ensuremath shc",
+          "heading": false
+        },
+        {
+          "term": "loc stx",
+          "heading": false
+        },
+        {
+          "term": "shc arr",
+          "heading": false
+        },
+        {
+          "term": "colon shc",
+          "heading": false
+        }
+      ],
+      "extract": "Classical (non-neutral) Tannaka's duality over a field $k$ establishes a correspondence between $k$-Tannakian categories and affine gerbes over $k$. More precisely given a $k$-Tannakian category $\\shC$ we can define a fibered category $\\Pi_{\\shC}\\colon\\mathop{\\mathrm{\\textup{Aff}}}/k\\to(\\text{groupoids)}$ by $$\\Pi_{\\shC}(A)=\\{k\\text{-linear, strong monoidal and exact functors",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-notation",
+      "number": null,
+      "title": "Notation",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 419,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arr stx",
+          "heading": false
+        },
+        {
+          "term": "mathrm textup",
+          "heading": false
+        },
+        {
+          "term": "textup spec",
+          "heading": false
+        },
+        {
+          "term": "fpqc stack",
+          "heading": false
+        },
+        {
+          "term": "category fibered",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "fibered categories",
+          "heading": false
+        },
+        {
+          "term": "zariski stack",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper we work over a base commutative, associative ring $R$ with unity. If not stated otherwise a fiber category will be a category fibered in groupoids over $\\mathop{\\mathrm{\\textup{Aff}}}/R$, the category of affine schemes over $\\mathop{\\mathrm{\\textup{Spec}}}R$, or, equivalently, the opposite of the category of $R$-algebras. An fpqc stack will be a stack for the fpqc topology. A map $f\\colon\\stX'\\arr\\stX$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 64,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "preliminaries",
+          "heading": false
+        },
+        {
+          "term": "tannaka",
+          "heading": false
+        },
+        {
+          "term": "alper",
+          "heading": false
+        }
+      ],
+      "extract": "I would like to thank Jarod Alper, Daniel Sch�ppi, Mattia Talpo and Angelo Vistoli for the useful conversations I had with them and all the suggestions they gave me. Moreover I would like to thank David Rydh for sharing many useful references and explaining me how the non-neutral form of Tannaka's reconstruction proved in this paper fits in the vast literature about Tannaka's duality. # []{#sec:Preliminaries",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-1-preliminaries",
+      "number": "1",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 16,
+      "summary": null,
+      "keywords": [],
+      "extract": "We recall some basic deﬁnitions and set up some notations. We ﬁx a base ring R.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-004-11-monoidal-functors-and-their-sheafification",
+      "number": "1.1",
+      "title": "Monoidal functors and their sheafification",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 1134,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monoidal functors",
+          "heading": true
+        },
+        {
+          "term": "generates qcoh",
+          "heading": false
+        },
+        {
+          "term": "quasi-compact ﬁbered",
+          "heading": false
+        },
+        {
+          "term": "r-linear functor",
+          "heading": false
+        },
+        {
+          "term": "monoidal subcategory",
+          "heading": false
+        },
+        {
+          "term": "pseudo-monoidal functor",
+          "heading": false
+        },
+        {
+          "term": "ﬁbered category",
+          "heading": false
+        },
+        {
+          "term": "full subcategory",
+          "heading": false
+        }
+      ],
+      "extract": "Deﬁnition 1.1. Let C and D be R-linear symmetric monoidal categories. A (contravariant) pseudo-monoidal functor Ω: C →D is an R-linear (and contravariant) functor together with a natural transformation ιΩ V,W : ΩV ⊗ΩW →ΩV ⊗W for V, W ∈C A (contravariant) pseudo-monoidal functor Ω: C →D is 1) symmetric or commutative if for all V, W ∈C the following diagram is commutative ΩV ⊗ΩW ΩV ⊗W ΩW ⊗ΩV ΩW⊗V ιΩ V,W ιΩ W,V where",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-12-generalized-frame-bundles",
+      "number": "1.2",
+      "title": "Generalized frame bundles",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 10,
+      "labelStart": "6",
+      "labelEnd": "10",
+      "words": 1856,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "det symn",
+          "heading": false
+        },
+        {
+          "term": "frame bundles",
+          "heading": true
+        },
+        {
+          "term": "symq",
+          "heading": false
+        },
+        {
+          "term": "free sheaf",
+          "heading": false
+        },
+        {
+          "term": "tannaka reconstruction",
+          "heading": false
+        },
+        {
+          "term": "free r-module",
+          "heading": false
+        },
+        {
+          "term": "spec",
+          "heading": false
+        },
+        {
+          "term": "let vect",
+          "heading": false
+        }
+      ],
+      "extract": "Generalized frame bundles. In this section we study frame bundles of general vector bundles. We ﬁx a category X ﬁbered in groupoids over R. Deﬁnition 1.8. Given a subset K ⊆N we set D(K) = G n∈K Spec R and denote by Q(K) the vector bundle on D(K) which is free of rank n over the copy of Spec R corresponding to n ∈K. More generally given a collection K∗: I →P(N), where P(N) is the set of subsets of N, we set D(K∗) =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-2-pseudo-affine-stacks",
+      "number": "2",
+      "title": "Pseudo-affine stacks",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 14,
+      "labelStart": "10",
+      "labelEnd": "14",
+      "words": 2075,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pseudo-affine stacks",
+          "heading": true
+        },
+        {
+          "term": "arr stx",
+          "heading": false
+        },
+        {
+          "term": "odi stx",
+          "heading": false
+        },
+        {
+          "term": "stx mathop",
+          "heading": false
+        },
+        {
+          "term": "qcoh stx",
+          "heading": false
+        },
+        {
+          "term": "arr shf",
+          "heading": false
+        },
+        {
+          "term": "arr sty",
+          "heading": false
+        },
+        {
+          "term": "textup qcoh",
+          "heading": false
+        }
+      ],
+      "extract": "One of the key points in the proof of Theorem [\\[thma\\]](#thma){reference-type=\"ref\" reference=\"thma\"} is a characterization of the following stacks. ::: defn A *pseudo-affine* stack is a quasi-compact fpqc stack with quasi-affine diagonal such that all quasi-coherent sheaves on it are generated by global sections. In other words a pseudo-affine stack is a quasi-compact fpqc stack $\\stX$ such that $\\{\\odi{\\stX}\\}$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-3-tannaka-reconstruction",
+      "number": "3",
+      "title": "Tannaka Reconstruction",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 17,
+      "labelStart": "14",
+      "labelEnd": "17",
+      "words": 1596,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textup smex",
+          "heading": false
+        },
+        {
+          "term": "arr stx",
+          "heading": false
+        },
+        {
+          "term": "shc arr",
+          "heading": false
+        },
+        {
+          "term": "odi stx",
+          "heading": false
+        },
+        {
+          "term": "fib stx",
+          "heading": false
+        },
+        {
+          "term": "tannaka reconstruction",
+          "heading": true
+        },
+        {
+          "term": "shc mathop",
+          "heading": false
+        },
+        {
+          "term": "sty arr",
+          "heading": false
+        }
+      ],
+      "extract": "The goal of this section is to introduce the stack of fiber functors and prove Theorem [\\[thma\\]](#thma){reference-type=\"ref\" reference=\"thma\"}. We will work over a base ring $R$ and denote by $A$ a general $R$-algebra. ::: defn []{#def:definition of Fib stacks label=\"def:definition of Fib stacks\"} Let $\\stX$ be a quasi-compact fiber category over $R$, $\\shC\\subseteq\\mathop{\\mathrm{\\textup{Loc}}}\\stX$ a monoidal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-4-pseudo-affine-sheaves-revisited",
+      "number": "4",
+      "title": "Pseudo-Affine sheaves revisited",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 1152,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textup spec",
+          "heading": false
+        },
+        {
+          "term": "pseudo-affine",
+          "heading": true
+        },
+        {
+          "term": "shc odi",
+          "heading": false
+        },
+        {
+          "term": "arr odi",
+          "heading": false
+        },
+        {
+          "term": "mathrm textup",
+          "heading": false
+        },
+        {
+          "term": "odi mathop",
+          "heading": false
+        },
+        {
+          "term": "sht colon",
+          "heading": false
+        },
+        {
+          "term": "textup aff",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we give an alternative characterization of pseudo-affine sheaves, which will be used when studying the fiber category $\\Fib_{\\stX,\\shC}$. ::: lem []{#lem:locus of exactness label=\"lem:locus of exactness\"} Let $\\pi\\colon\\stX\\to\\mathop{\\mathrm{\\textup{Aff}}}/R$ be a fibered category over $R$, $\\shT_{*}$ be a bounded above complex of locally free sheaves on $\\stX$ and denote by $\\stU_{l}$, for $l\\in\\Z$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-5-the-stack-of-fiber-functors",
+      "number": "5",
+      "title": "The stack of fiber functors",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 683,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fibx",
+          "heading": false
+        },
+        {
+          "term": "fibf",
+          "heading": false
+        },
+        {
+          "term": "fiber functors",
+          "heading": true
+        },
+        {
+          "term": "stack",
+          "heading": true
+        },
+        {
+          "term": "fpqc stack",
+          "heading": false
+        },
+        {
+          "term": "quasi-compact fpqc",
+          "heading": false
+        },
+        {
+          "term": "glf",
+          "heading": false
+        },
+        {
+          "term": "vect",
+          "heading": false
+        }
+      ],
+      "extract": "The last statement of Theorem 3.2 admits an almost converse. Let X be a ﬁbered category over R and C ⊆Vect X be a full monoidal subcategory. We deﬁne G∗: C →Hom(FibX ,C, VectR) where VectR is the stack of locally free sheaves over R, mapping a sheaf E ∈C to GE(Γ ∈FibX ,C(A)) = ΓE ∈Vect(A) for all R-algebras A STACKS OF FIBER FUNCTORS AND TANNAKA’S RECONSTRUCTION 19 In particular the composition X →FibX ,C GE",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-51-proof-of-theorem-51",
+      "number": "5.1",
+      "title": "Proof of Theorem 5.1",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 23,
+      "labelStart": "20",
+      "labelEnd": "23",
+      "words": 2372,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quasi-aﬃne scheme",
+          "heading": false
+        },
+        {
+          "term": "fibx",
+          "heading": false
+        },
+        {
+          "term": "some quasi-aﬃne",
+          "heading": false
+        },
+        {
+          "term": "generates qcoh",
+          "heading": false
+        },
+        {
+          "term": "map spec",
+          "heading": false
+        },
+        {
+          "term": "fibf",
+          "heading": false
+        },
+        {
+          "term": "glf",
+          "heading": false
+        },
+        {
+          "term": "vect",
+          "heading": false
+        }
+      ],
+      "extract": "5.1. Proof of Theorem 5.1. The entire section is dedicated to the proof of Theorem 5.1. In particular we assume the hypothesis and notation in its statement. It is easy to see that FibX ,C is a stack (not necessarily in groupoids) for the fpqc topology on Aﬀ/R. To avoid problems with disjoint unions we can assume that X is a Zariski stack. Given a ﬁnite subset J of C denote by IJ the set of f : J →N extending to a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-52-comparing-vector-bundles",
+      "number": "5.2",
+      "title": "Comparing vector bundles",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 25,
+      "labelStart": "23",
+      "labelEnd": "25",
+      "words": 949,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "map fibx",
+          "heading": false
+        },
+        {
+          "term": "vect",
+          "heading": false
+        },
+        {
+          "term": "quasi-compact fpqc",
+          "heading": false
+        },
+        {
+          "term": "quasi-compact ﬁbered",
+          "heading": false
+        },
+        {
+          "term": "quasi-aﬃne diagonal",
+          "heading": false
+        },
+        {
+          "term": "generates qcoh",
+          "heading": false
+        },
+        {
+          "term": "ofibx",
+          "heading": false
+        },
+        {
+          "term": "vector bundles",
+          "heading": true
+        }
+      ],
+      "extract": "the vector bundles on X and on FibX ,C. Proposition 5.14. Let X and C be as in 5.1. The following conditions are equivalent: 1) (if X is quasi-separated (see [Ton20, Def 1.4])) the morphism OFibX,C →PC∗OX is an isomorphism; 2) the functor Vect(FibX ,C) →Vect(X) is fully faithful; 3) the functor G∗: C →Vect(FibX ,C) is fully faithful. 4) the functor G∗(C) →Vect(X) is faithful Proof. 1. ⇐⇒ 2. We assume X quasi-compact",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-53-the-case-cox",
+      "number": "5.3",
+      "title": "The case C={OX}",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 27,
+      "labelStart": "25",
+      "labelEnd": "27",
+      "words": 874,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stack fibx",
+          "heading": false
+        },
+        {
+          "term": "spec containing",
+          "heading": false
+        },
+        {
+          "term": "quasi-compact open",
+          "heading": false
+        },
+        {
+          "term": "quasi-compact ﬁbered",
+          "heading": false
+        },
+        {
+          "term": "open image",
+          "heading": false
+        },
+        {
+          "term": "tannaka reconstruction",
+          "heading": false
+        },
+        {
+          "term": "algebraic stack",
+          "heading": false
+        },
+        {
+          "term": "ofibx",
+          "heading": false
+        }
+      ],
+      "extract": "Symn OX ≃OX so the hypothesis of 5.1 are satisﬁed. Proposition 5.20. Let X be a quasi-compact ﬁbered category over R. Then FibX ,{OX} is the intersection of all quasi-compact open subsets of Spec H0(OX ) containing the image of X → Spec H0(OX ). If X is quasi-compact and quasi-separated then Vect(FibX ,{OX }) →Vect(X) is fully faithful, or, equivalently, OFibX,{OX } →P{OX }∗OX is an isomorphism. Moreover X →FibX",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": "27",
+      "labelEnd": "28",
+      "words": 306,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tannaka duality",
+          "heading": false
+        },
+        {
+          "term": "stacks project",
+          "heading": false
+        },
+        {
+          "term": "martin brandenburg",
+          "heading": false
+        },
+        {
+          "term": "firenze",
+          "heading": false
+        },
+        {
+          "term": "fabio",
+          "heading": false
+        },
+        {
+          "term": "tonini",
+          "heading": false
+        },
+        {
+          "term": "arxiv",
+          "heading": false
+        },
+        {
+          "term": "gro",
+          "heading": false
+        }
+      ],
+      "extract": "[Aut19] The Stacks Project Authors, The stacks project. [BC14] Martin Brandenburg and Alexandru Chirvasitu, Tensor functors between categories of quasi-coherent sheaves, Journal of Algebra 399 (2014), 675–692. [Bha16] Bhargav Bhatt, Algebraization and Tannaka duality, Cambridge Journal of Mathematics 4 (2016), no. 4, 403–461. [Bra14] Martin Brandenburg, Tensor categorical foundations of algebraic geometry, Ph.D.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "qcoh stx",
+      "heading": false
+    },
+    {
+      "term": "textup spec",
+      "heading": false
+    },
+    {
+      "term": "textup vect",
+      "heading": false
+    },
+    {
+      "term": "quasi-compact stack",
+      "heading": false
+    },
+    {
+      "term": "quasi-compact fpqc",
+      "heading": false
+    },
+    {
+      "term": "arr stx",
+      "heading": false
+    },
+    {
+      "term": "stx mathop",
+      "heading": false
+    },
+    {
+      "term": "stack fibx",
+      "heading": false
+    },
+    {
+      "term": "odi stx",
+      "heading": false
+    },
+    {
+      "term": "qcoh sty",
+      "heading": false
+    },
+    {
+      "term": "fib stx",
+      "heading": false
+    },
+    {
+      "term": "mathrm textup",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 14,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 15,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p27); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 15 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2010.12445v1"
+  }
+}

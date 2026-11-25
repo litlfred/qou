@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-two-vortex-channel-algebra",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:two-vortex-channel-algebra",
+  "kind": "proposition",
+  "title": "Channel algebra of the two-vortex interaction",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-r-matrix-braiding-structure"
+  ],
+  "examples": [
+    "papers/quantum-observable-universe/blocks/rem-two-vortex-scattering-channels"
+  ],
+  "tags": [
+    "vortex",
+    "channel",
+    "hecke",
+    "spectral",
+    "hopf"
+  ],
+  "leanRef": "qou:QOU.FluidDynamics.TwoVortexChannelAlgebra.channel_algebra",
+  "text": "two-vortex-channel-algebra.md",
+  "provenance": "authored"
+}

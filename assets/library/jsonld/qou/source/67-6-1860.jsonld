@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/67-6-1860/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "67-6-1860",
+  "contains": [
+    "library/67-6-1860/sections/page-001",
+    "library/67-6-1860/sections/page-002",
+    "library/67-6-1860/sections/page-003",
+    "library/67-6-1860/sections/page-004",
+    "library/67-6-1860/sections/page-005",
+    "library/67-6-1860/sections/page-006",
+    "library/67-6-1860/sections/page-007",
+    "library/67-6-1860/sections/page-008",
+    "library/67-6-1860/sections/page-009",
+    "library/67-6-1860/sections/page-010",
+    "library/67-6-1860/sections/page-011",
+    "library/67-6-1860/sections/page-012",
+    "library/67-6-1860/sections/page-013",
+    "library/67-6-1860/sections/page-014",
+    "library/67-6-1860/sections/page-015",
+    "library/67-6-1860/sections/page-016",
+    "library/67-6-1860/sections/page-017"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Quaternionic Weinberg-Salam Theory — 17 sections: Page 1; Page 2; Page 3\n\n**Quaternionic Weinberg-Salam Theory**\n\n17 pp, 17 sections.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12; Page 13; Page 14; Page 15; Page 16; Page 17",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "67-6-1860",
+    "title_source": "slug",
+    "source_file": "67-6-1860.pdf",
+    "source_sha256": "e2e5d45edd36976203b7d43853ad9729af749b786e958283fa76fb51ff18e068",
+    "pages": 17,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

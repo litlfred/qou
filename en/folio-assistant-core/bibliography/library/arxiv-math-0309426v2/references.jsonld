@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-0309426v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "ELEMENTARY DIVISORS OF SPECHT MODULES",
+      "dcterms:creator": [
+        "KÜNZER, MATTHIAS",
+        "MATHAS, ANDREW"
+      ],
+      "dcterms:issued": "D:20220524",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0309426",
+      "dcterms:source": "library/arxiv-math-0309426v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-0309426v2"
+    }
+  ]
+}

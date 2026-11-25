@@ -1,0 +1,4126 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "2018sorus020",
+  "title": "Reidemeister torsion on character varieties",
+  "variant": "pdf",
+  "pages": 110,
+  "tocSource": "inferred",
+  "tocMethod": "contents",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "0",
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-000-0-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Character varieties and Reidemeister torsion",
+      "number": "1",
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-001-1-character-varieties-and-reidemeister-torsion"
+    },
+    {
+      "level": 2,
+      "title": "Character varieties",
+      "number": "1.1",
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Representation variety",
+      "number": "1.1.1",
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-002-111-representation-variety"
+    },
+    {
+      "level": 3,
+      "title": "Algebro-geometric quotient",
+      "number": "1.1.2",
+      "page": 17,
+      "pageLabel": "16",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-003-112-algebro-geometric-quotient"
+    },
+    {
+      "level": 3,
+      "title": "Traces and skein algebra",
+      "number": "1.1.3",
+      "page": 19,
+      "pageLabel": "18",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-004-113-traces-and-skein-algebra"
+    },
+    {
+      "level": 3,
+      "title": "Characters, reducibility and irreducibility",
+      "number": "1.1.4",
+      "page": 21,
+      "pageLabel": "20",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-005-114-characters-reducibility-and-irreducibility"
+    },
+    {
+      "level": 3,
+      "title": "Saito’s Theorem and some consequences",
+      "number": "1.1.5",
+      "page": 23,
+      "pageLabel": "22",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-006-115-saitos-theorem-and-some-consequences"
+    },
+    {
+      "level": 3,
+      "title": "The augmented variety",
+      "number": "1.1.6",
+      "page": 24,
+      "pageLabel": "23",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-007-116-the-augmented-variety"
+    },
+    {
+      "level": 3,
+      "title": "The tautological representation",
+      "number": "1.1.7",
+      "page": 25,
+      "pageLabel": "24",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-008-117-the-tautological-representation"
+    },
+    {
+      "level": 3,
+      "title": "Examples",
+      "number": "1.1.8",
+      "page": 25,
+      "pageLabel": "24",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-009-118-examples"
+    },
+    {
+      "level": 2,
+      "title": "Twisted cohomology",
+      "number": "1.2",
+      "page": 27,
+      "pageLabel": "26",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-010-12-twisted-cohomology"
+    },
+    {
+      "level": 2,
+      "title": "Culler-Shalen theory, group acting on trees and incompressible surfaces",
+      "number": "1.3",
+      "page": 30,
+      "pageLabel": "29",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-011-13-culler-shalen-theory-group-acting-on-trees-an"
+    },
+    {
+      "level": 3,
+      "title": "The tree",
+      "number": "1.3.1",
+      "page": 30,
+      "pageLabel": "29",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-012-131-the-tree"
+    },
+    {
+      "level": 3,
+      "title": "Link of a vertex and ends of the tree",
+      "number": "1.3.2",
+      "page": 31,
+      "pageLabel": "30",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-013-132-link-of-a-vertex-and-ends-of-the-tree"
+    },
+    {
+      "level": 3,
+      "title": "The SL2 action : stabilizers of vertices, ﬁxed points and trans- lation length",
+      "number": "1.3.3",
+      "page": 31,
+      "pageLabel": "30",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-014-133-the-sl2-action-stabilizers-of-vertices-ﬁxed"
+    },
+    {
+      "level": 3,
+      "title": "Curves and valuations",
+      "number": "1.3.4",
+      "page": 33,
+      "pageLabel": "32",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-015-134-curves-and-valuations"
+    },
+    {
+      "level": 3,
+      "title": "Group acting on a tree and splitting",
+      "number": "1.3.5",
+      "page": 34,
+      "pageLabel": "33",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-016-135-group-acting-on-a-tree-and-splitting"
+    },
+    {
+      "level": 3,
+      "title": "The split case",
+      "number": "1.3.6",
+      "page": 36,
+      "pageLabel": "35",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-017-136-the-split-case"
+    },
+    {
+      "level": 3,
+      "title": "The non-split case",
+      "number": "1.3.7",
+      "page": 37,
+      "pageLabel": "36",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-018-137-the-non-split-case"
+    },
+    {
+      "level": 2,
+      "title": "Alexander module and character varieties",
+      "number": "1.4",
+      "page": 39,
+      "pageLabel": "38",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-019-14-alexander-module-and-character-varieties"
+    },
+    {
+      "level": 3,
+      "title": "Reducible character in components of irreducible type of the character variety",
+      "number": "1.4.1",
+      "page": 39,
+      "pageLabel": "38",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-020-141-reducible-character-in-components-of-irreduc"
+    },
+    {
+      "level": 3,
+      "title": "Alexander module",
+      "number": "1.4.2",
+      "page": 40,
+      "pageLabel": "39",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-021-142-alexander-module"
+    },
+    {
+      "level": 2,
+      "title": "The Reidemeister torsion",
+      "number": "1.5",
+      "page": 43,
+      "pageLabel": "42",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-022-15-the-reidemeister-torsion"
+    },
+    {
+      "level": 3,
+      "title": "First deﬁnition",
+      "number": "1.5.1",
+      "page": 43,
+      "pageLabel": "42",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-023-151-first-deﬁnition"
+    },
+    {
+      "level": 3,
+      "title": "Second deﬁnition : the Euler isomorphism",
+      "number": "1.5.2",
+      "page": 44,
+      "pageLabel": "43",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-024-152-second-deﬁnition-the-euler-isomorphism"
+    },
+    {
+      "level": 3,
+      "title": "Third deﬁnition : torsion of an exact complex (Cayley formula)",
+      "number": "1.5.3",
+      "page": 45,
+      "pageLabel": "44",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-025-153-third-deﬁnition-torsion-of-an-exact-complex"
+    },
+    {
+      "level": 1,
+      "title": "The adjoint torsion",
+      "number": "2",
+      "page": 46,
+      "pageLabel": "45",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-026-2-the-adjoint-torsion"
+    },
+    {
+      "level": 2,
+      "title": "The twisted complex with adjoint action",
+      "number": "2.1",
+      "page": 48,
+      "pageLabel": "47",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-027-21-the-twisted-complex-with-adjoint-action"
+    },
+    {
+      "level": 3,
+      "title": "Tangent space, diﬀerential forms and twisted cohomology",
+      "number": "2.1.1",
+      "page": 48,
+      "pageLabel": "47",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-028-211-tangent-space-diﬀerential-forms-and-twisted"
+    },
+    {
+      "level": 3,
+      "title": "Computation of the twisted cohomology",
+      "number": "2.1.2",
+      "page": 50,
+      "pageLabel": "49",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-029-212-computation-of-the-twisted-cohomology"
+    },
+    {
+      "level": 2,
+      "title": "The adjoint torsion as a diﬀerential form",
+      "number": "2.2",
+      "page": 50,
+      "pageLabel": "49",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-030-22-the-adjoint-torsion-as-a-diﬀerential-form"
+    },
+    {
+      "level": 3,
+      "title": "The torsion of an Ad ◦ρ-twisted cellular complex",
+      "number": "2.2.1",
+      "page": 50,
+      "pageLabel": "49",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-031-221-the-torsion-of-an-ad-ρ-twisted-cellular-comp"
+    },
+    {
+      "level": 3,
+      "title": "The Reidemeister torsion form",
+      "number": "2.2.2",
+      "page": 51,
+      "pageLabel": "50",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-032-222-the-reidemeister-torsion-form"
+    },
+    {
+      "level": 3,
+      "title": "Examples and computations",
+      "number": "2.2.3",
+      "page": 51,
+      "pageLabel": "50",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-033-223-examples-and-computations"
+    },
+    {
+      "level": 2,
+      "title": "The torsion at a ﬁnite point",
+      "number": "2.3",
+      "page": 54,
+      "pageLabel": "53",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-034-23-the-torsion-at-a-ﬁnite-point"
+    },
+    {
+      "level": 3,
+      "title": "Proof of Main Theorem 1",
+      "number": "2.3.1",
+      "page": 55,
+      "pageLabel": "54",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-035-231-proof-of-main-theorem-1"
+    },
+    {
+      "level": 3,
+      "title": "Interpretation of the Theorem : singularities and Alexander module",
+      "number": "2.3.2",
+      "page": 58,
+      "pageLabel": "57",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-036-232-interpretation-of-the-theorem-singularities"
+    },
+    {
+      "level": 2,
+      "title": "The torsion at an ideal point",
+      "number": "2.4",
+      "page": 65,
+      "pageLabel": "64",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-037-24-the-torsion-at-an-ideal-point"
+    },
+    {
+      "level": 3,
+      "title": "An example : a direct computation of the torsion of the trefoil knot using its incompressible non-Seifert surface",
+      "number": "2.4.1",
+      "page": 66,
+      "pageLabel": "65",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-038-241-an-example-a-direct-computation-of-the-torsi"
+    },
+    {
+      "level": 3,
+      "title": "Proof of theorem 2.0.2, the case when ρΣ is not residually abelian",
+      "number": "2.4.2",
+      "page": 73,
+      "pageLabel": "72",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-039-242-proof-of-theorem-202-the-case-when-ρς-is-not"
+    },
+    {
+      "level": 3,
+      "title": "The case when ρΣ is residually abelian",
+      "number": "2.4.3",
+      "page": 79,
+      "pageLabel": "78",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-040-243-the-case-when-ρς-is-residually-abelian"
+    },
+    {
+      "level": 3,
+      "title": "Back to Examples",
+      "number": "2.4.4",
+      "page": 82,
+      "pageLabel": "81",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-041-244-back-to-examples"
+    },
+    {
+      "level": 1,
+      "title": "The standard torsion",
+      "number": "3",
+      "page": 84,
+      "pageLabel": "83",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-042-3-the-standard-torsion"
+    },
+    {
+      "level": 2,
+      "title": "The torsion function",
+      "number": "3.1",
+      "page": 86,
+      "pageLabel": "85",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-043-31-the-torsion-function"
+    },
+    {
+      "level": 2,
+      "title": "The case of a ﬁnite character",
+      "number": "3.2",
+      "page": 87,
+      "pageLabel": "86",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-044-32-the-case-of-a-ﬁnite-character"
+    },
+    {
+      "level": 3,
+      "title": "Proof of Theorem 3.0.1",
+      "number": "3.2.1",
+      "page": 87,
+      "pageLabel": "86",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-045-321-proof-of-theorem-301"
+    },
+    {
+      "level": 3,
+      "title": "Some computations and examples",
+      "number": "3.2.2",
+      "page": 88,
+      "pageLabel": "87",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-046-322-some-computations-and-examples"
+    },
+    {
+      "level": 2,
+      "title": "The torsion at ideal points",
+      "number": "3.3",
+      "page": 91,
+      "pageLabel": "90",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-047-33-the-torsion-at-ideal-points"
+    },
+    {
+      "level": 3,
+      "title": "The split case",
+      "number": "3.3.1",
+      "page": 91,
+      "pageLabel": "90",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-048-331-the-split-case"
+    },
+    {
+      "level": 3,
+      "title": "The non-split case",
+      "number": "3.3.2",
+      "page": 96,
+      "pageLabel": "95",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-049-332-the-non-split-case"
+    },
+    {
+      "level": 1,
+      "title": "A Proof of Saito’s theorem",
+      "number": null,
+      "page": 100,
+      "pageLabel": "99",
+      "confidence": 0.9,
+      "evidence": [
+        "contents",
+        "body",
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-050-a-proof-of-saitos-theorem"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": "5",
+      "words": 1471,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        },
+        {
+          "term": "adjoint torsion",
+          "heading": false
+        },
+        {
+          "term": "marie curie",
+          "heading": false
+        },
+        {
+          "term": "université pierre",
+          "heading": false
+        },
+        {
+          "term": "character varieties",
+          "heading": false
+        },
+        {
+          "term": "sciences mathématiques",
+          "heading": false
+        },
+        {
+          "term": "jussieu paris",
+          "heading": false
+        },
+        {
+          "term": "paris cedex",
+          "heading": false
+        }
+      ],
+      "extract": "HAL Id: tel-02108892 https://theses.hal.science/tel-02108892v1 Submitted on 24 Apr 2019 HAL is a multi-disciplinary open access archive for the deposit and dissemination of scientific re- search documents, whether they are published or not. The documents may come from teaching and research institutions in France or abroad, or from public or pri- vate research centers. L’archive ouverte pluridisciplinaire HAL, est",
+      "extractCut": true,
+      "blocks": [
+        "library/2018sorus020/blocks/prose-sec-front-matter",
+        "library/2018sorus020/blocks/figure-img-p001-1",
+        "library/2018sorus020/blocks/figure-img-p001-2",
+        "library/2018sorus020/blocks/figure-img-p001-3",
+        "library/2018sorus020/blocks/figure-img-p002-1"
+      ]
+    },
+    {
+      "id": "sec-000-0-introduction",
+      "number": "0",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 16,
+      "labelStart": "5",
+      "labelEnd": "15",
+      "words": 3984,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "torsion tor",
+          "heading": false
+        },
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        },
+        {
+          "term": "incompressible surface",
+          "heading": false
+        },
+        {
+          "term": "incompressible non",
+          "heading": false
+        },
+        {
+          "term": "adjoint torsion",
+          "heading": false
+        },
+        {
+          "term": "character variety",
+          "heading": false
+        },
+        {
+          "term": "standard torsion",
+          "heading": false
+        },
+        {
+          "term": "torsion function",
+          "heading": false
+        }
+      ],
+      "extract": "The Reidemeister torsion has been introduced as a topological invariant of homo- logical complexes in 1935 by both Reidemeister (in [Rei35]) and Franz (in [Fra35]) independently. It also appears in a more algebraic context in the seminal work of Cayley (see [GKZ94, Appendix B]) in 1848. The Reidemeister torsion is a generalization of the notion of determinant : consider an endomorphism d of a ﬁnite dimensional",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-character-varieties-and-reidemeister-torsion",
+      "number": "1",
+      "title": "Character varieties and Reidemeister torsion",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 148,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "character varieties",
+          "heading": true
+        },
+        {
+          "term": "torsion",
+          "heading": true
+        },
+        {
+          "term": "reidemeister",
+          "heading": true
+        },
+        {
+          "term": "kyoji",
+          "heading": false
+        }
+      ],
+      "extract": "torsion In this ﬁrst chapter we introduce the main objects that will be studied in this thesis. The ﬁrst section deals with the theory of character varieties, the second section is a review about twisted cohomology, the third section is a short overview of the so- called Culler-Shalen theory, and provides the tools that will be used in the upcoming chapters, the fourth section gives an insight on the Alexander",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-111-representation-variety",
+      "number": "1.1.1",
+      "title": "Representation variety",
+      "level": 3,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 381,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "representation variety",
+          "heading": true
+        },
+        {
+          "term": "algebraic variety",
+          "heading": false
+        },
+        {
+          "term": "k4n",
+          "heading": false
+        },
+        {
+          "term": "topological quotient",
+          "heading": false
+        },
+        {
+          "term": "generators",
+          "heading": false
+        },
+        {
+          "term": "conjugation",
+          "heading": false
+        }
+      ],
+      "extract": "Representation variety Let Γ be a ﬁnitely generated group, with S = {γ1, . . . , γn} a system of generators of Γ, and k be an algebraically closed ﬁeld of characteristic zero. Deﬁnition 1.1.1. A representation is a group homomorphism ρ : Γ →SL2(k). We deﬁne the representation variety R(Γ) = Hom(Γ, SL2(k)) = {ρ : Γ →SL2(k)}. It 15 is an aﬃne algebraic variety deﬁned over k (and even over Q). For any choice of S there",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-112-algebro-geometric-quotient",
+      "number": "1.1.2",
+      "title": "Algebro-geometric quotient",
+      "level": 3,
+      "pageStart": 17,
+      "pageEnd": 19,
+      "labelStart": "16",
+      "labelEnd": "18",
+      "words": 692,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "algebro-geometric quotient",
+          "heading": true
+        },
+        {
+          "term": "algebraic variety",
+          "heading": false
+        },
+        {
+          "term": "character variety",
+          "heading": false
+        },
+        {
+          "term": "irreducible component",
+          "heading": false
+        },
+        {
+          "term": "sub-algebra",
+          "heading": false
+        },
+        {
+          "term": "diagonalizable",
+          "heading": false
+        },
+        {
+          "term": "spec",
+          "heading": false
+        },
+        {
+          "term": "reduced",
+          "heading": false
+        }
+      ],
+      "extract": "Algebro-geometric quotient The action of the group SL2(k) on R(Γ) induces a natural action on its algebra of functions k[R(Γ)] by pre-composition. The sub-algebra of invariant functions k[R(Γ)]SL2 is known to be ﬁnitely generated, although this is a delicate problem ﬁrst answered by Hilbert in the late nineteenth century. There is an amount of good references on the topic, let us just mention [MFK93] and [KP96]. 16",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-113-traces-and-skein-algebra",
+      "number": "1.1.3",
+      "title": "Traces and skein algebra",
+      "level": 3,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 702,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "skein algebra",
+          "heading": true
+        },
+        {
+          "term": "kauﬀman skein",
+          "heading": false
+        },
+        {
+          "term": "kauﬀman relations",
+          "heading": false
+        },
+        {
+          "term": "yγδ",
+          "heading": false
+        },
+        {
+          "term": "framed links",
+          "heading": false
+        },
+        {
+          "term": "traces",
+          "heading": true
+        },
+        {
+          "term": "distincts",
+          "heading": false
+        },
+        {
+          "term": "algebra structure",
+          "heading": false
+        }
+      ],
+      "extract": "Traces and skein algebra Deﬁnition 1.1.6. For any γ ∈Γ, we deﬁne the trace function tγ : R(Γ) →k by tγ(ρ) = Tr(ρ(γ)). Those functions are invariant under the action of SL2, thus they deﬁne functions on the quotient X(Γ), that we still denote by tγ. The following lemma is straightforward, but crucial : Lemma 1.1.7. For any γ, δ ∈Γ, the identity tγtδ = tγδ + tγδ−1 holds on R(Γ). Proof. For any A ∈SL2(k), the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-114-characters-reducibility-and-irreducibility",
+      "number": "1.1.4",
+      "title": "Characters, reducibility and irreducibility",
+      "level": 3,
+      "pageStart": 21,
+      "pageEnd": 23,
+      "labelStart": "20",
+      "labelEnd": "22",
+      "words": 518,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "yγδ",
+          "heading": false
+        },
+        {
+          "term": "characters",
+          "heading": true
+        },
+        {
+          "term": "character variety",
+          "heading": false
+        },
+        {
+          "term": "yγyδ",
+          "heading": false
+        },
+        {
+          "term": "αβα",
+          "heading": false
+        },
+        {
+          "term": "reducibility",
+          "heading": true
+        },
+        {
+          "term": "reducible",
+          "heading": false
+        },
+        {
+          "term": "commutator",
+          "heading": false
+        }
+      ],
+      "extract": "Characters, reducibility and irreducibility From the previous deﬁnition of the character variety through trace functions, we have the following deﬁnition of points of the character variety, which enlightens on the terminology. Deﬁnition 1.1.12. A k-character is a k-point of the character variety in the sense of algebraic geometry, that means a morphism χ : B[Γ] →k. Any representation ρ : Γ →SL2(k) induces a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-115-saitos-theorem-and-some-consequences",
+      "number": "1.1.5",
+      "title": "Saito’s Theorem and some consequences",
+      "level": 3,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 412,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "saito theorem",
+          "heading": true
+        },
+        {
+          "term": "character variety",
+          "heading": false
+        },
+        {
+          "term": "whose character",
+          "heading": false
+        },
+        {
+          "term": "yαβ",
+          "heading": false
+        },
+        {
+          "term": "ﬁber",
+          "heading": false
+        },
+        {
+          "term": "closed ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "psl",
+          "heading": false
+        },
+        {
+          "term": "consequences",
+          "heading": true
+        }
+      ],
+      "extract": "Saito’s Theorem and some consequences From the equivalence of the two deﬁnitions of the character variety, we know that any character χ ∈X(Γ) is the character of a representation ρ : Γ →SL2(k). The following theorem of Kyoji Saito [Sai94] generalizes this fact and has crucial applications for us. We detail the proof in Appendix A, because it is not available in the literature. Theorem 1.1.17. Let R be a k-algebra,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-116-the-augmented-variety",
+      "number": "1.1.6",
+      "title": "The augmented variety",
+      "level": 3,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 400,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "augmented variety",
+          "heading": true
+        },
+        {
+          "term": "character variety",
+          "heading": false
+        },
+        {
+          "term": "two-fold",
+          "heading": false
+        },
+        {
+          "term": "eigenvalue",
+          "heading": false
+        },
+        {
+          "term": "deﬁne",
+          "heading": false
+        },
+        {
+          "term": "deﬁnition",
+          "heading": false
+        },
+        {
+          "term": "sends",
+          "heading": false
+        }
+      ],
+      "extract": "The augmented variety In this subsection we deﬁne a two-fold cover of the character variety when Γ is the fundamental group of a 3-manifold with boundary a single torus, which has been previously considered by several authors, see for instance [DG16]. Both the deﬁnition and the motivation arise from the following example. This augmented variety will be used in Chapter 2. Example 1.1.20 (The character variety X(∂M) =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-117-the-tautological-representation",
+      "number": "1.1.7",
+      "title": "The tautological representation",
+      "level": 3,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "24",
+      "words": 202,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tautological representation",
+          "heading": true
+        },
+        {
+          "term": "one-dimensional component",
+          "heading": false
+        },
+        {
+          "term": "irreducible type",
+          "heading": false
+        },
+        {
+          "term": "transcendance",
+          "heading": false
+        }
+      ],
+      "extract": "The tautological representation Let X be an irreducible component of X(M) of irreducible type (in the sense of Deﬁnition 1.1.16). The component X corresponds to a minimal prime ideal p of B[Γ] such that k[X] = B[Γ]/p is the function algebra of X. Denote by k(X) the fraction ﬁeld of k[X], and by χX the composition B[Γ] →k[X] →k(X), it is irreducible as a k(X)-character. The following is an immediate consequence of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-118-examples",
+      "number": "1.1.8",
+      "title": "Examples",
+      "level": 3,
+      "pageStart": 25,
+      "pageEnd": 27,
+      "labelStart": "24",
+      "labelEnd": "26",
+      "words": 663,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "augmented variety",
+          "heading": false
+        },
+        {
+          "term": "tautological representation",
+          "heading": false
+        },
+        {
+          "term": "character variety",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure-eight knot",
+          "heading": false
+        },
+        {
+          "term": "trefoil knot",
+          "heading": false
+        },
+        {
+          "term": "yαβ",
+          "heading": false
+        },
+        {
+          "term": "ramiﬁes",
+          "heading": false
+        },
+        {
+          "term": "compactiﬁcation",
+          "heading": false
+        }
+      ],
+      "extract": "Examples The character variety of Γ = Z We already computed the character variety X(Z) ≃k with parameter t = Tr ρ(1), it has a double cover similar to the augmented variety which is k∗with parameter u, where u + u−1 = t. The tautological representation is ρ : Z →SL2(k(u)) deﬁned by ρ(1) = \u0000 u 0 0 u−1 \u0001 . Remark that, as predicted by Proposition 1.1.18, the tautolo- gical exists in SL2(k(t)) too, one can see it by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-12-twisted-cohomology",
+      "number": "1.2",
+      "title": "Twisted cohomology",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 30,
+      "labelStart": "26",
+      "labelEnd": "29",
+      "words": 960,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted cohomology",
+          "heading": true
+        },
+        {
+          "term": "twisted homology",
+          "heading": false
+        },
+        {
+          "term": "group homology",
+          "heading": false
+        },
+        {
+          "term": "z-modules",
+          "heading": false
+        },
+        {
+          "term": "left-action",
+          "heading": false
+        },
+        {
+          "term": "γ1γ",
+          "heading": false
+        },
+        {
+          "term": "boundary maps",
+          "heading": false
+        },
+        {
+          "term": "abelian group",
+          "heading": false
+        }
+      ],
+      "extract": "Twisted cohomology In this section we recall the basics of twisted cohomology that we will use in the sequel of the manuscript. Given a group Γ, we will denote by Z[Γ] the group ring of Γ, whose elements are formal sums P γ∈Γ nγeγ, nγ ∈Z with multiplication eγeδ = eγδ extended by linearity. We ﬁx an abelian group A together with a left-action Γ × A →A, (γ, a) 7→γ · a. It induces a right-action by a · γ = γ−1 · a. It",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-13-culler-shalen-theory-group-acting-on-trees-an",
+      "number": "1.3",
+      "title": "Culler-Shalen theory, group acting on trees and incompressible surfaces",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 30,
+      "labelStart": "29",
+      "labelEnd": "29",
+      "words": 84,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "culler-shalen theory",
+          "heading": true
+        },
+        {
+          "term": "incompressible",
+          "heading": true
+        },
+        {
+          "term": "character varieties",
+          "heading": false
+        }
+      ],
+      "extract": "Culler-Shalen theory, group acting on trees and incompressible surfaces In this section we partially describe the so-called Culler-Shalen theory. In seminal articles [CS83, CS84], Marc Culler and Peter Shalen managed to use both tree- theoretical techniques introduced by Hyman Bass and Jean-Pierre Serre in [SB77] and character varieties to study the topology of 3-manifolds. In Subsections 1,2,3 we describe the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-131-the-tree",
+      "number": "1.3.1",
+      "title": "The tree",
+      "level": 3,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": "29",
+      "labelEnd": "30",
+      "words": 465,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "valuation ring",
+          "heading": false
+        },
+        {
+          "term": "tree",
+          "heading": true
+        },
+        {
+          "term": "residual ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "uniformizing",
+          "heading": false
+        },
+        {
+          "term": "homothety",
+          "heading": false
+        },
+        {
+          "term": "distance",
+          "heading": false
+        },
+        {
+          "term": "lattices",
+          "heading": false
+        }
+      ],
+      "extract": "The tree Let K be an extension of k, we deﬁne a k-discrete valuation as a surjective map v : K →Z ∪{∞} such that — v(0) = +∞ — v(x + y) ≥min(v(x), v(y)) — v(xy) = v(x) + v(y) — ∀z ∈k, v(z) = 0 and k is maximal for this property. We call Ov = {x ∈K : v(x) ≥0} the valuation ring, and we pick t ∈Ov an element of valuation 1, that we call a uniformizing parameter. The group of invertible elements O∗ v is the group of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-132-link-of-a-vertex-and-ends-of-the-tree",
+      "number": "1.3.2",
+      "title": "Link of a vertex and ends of the tree",
+      "level": 3,
+      "pageStart": 31,
+      "pageEnd": 31,
+      "labelStart": "30",
+      "labelEnd": "30",
+      "words": 159,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ˆov",
+          "heading": false
+        },
+        {
+          "term": "vertex",
+          "heading": true
+        },
+        {
+          "term": "tree",
+          "heading": true
+        }
+      ],
+      "extract": "Link of a vertex and ends of the tree Given a vertex [L] ∈T, one can describe the set of vertices at distance 1 of [L] as follows : for each such [L′] there is a basis of V such that O2 v is a representative of [L] and that there is an unique representative L′ of [L′] isomorphic to Ov ⊕tOv in this basis. Since tL ⊂L′ ⊂L, it deﬁnes a map {[L′] : d([L], [L′]) = 1} →kP1 that sends L′ to the line L′/tL in L/tL ≃k2,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-133-the-sl2-action-stabilizers-of-vertices-ﬁxed",
+      "number": "1.3.3",
+      "title": "The SL2 action : stabilizers of vertices, ﬁxed points and trans- lation length",
+      "level": 3,
+      "pageStart": 31,
+      "pageEnd": 33,
+      "labelStart": "30",
+      "labelEnd": "32",
+      "words": 797,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ﬁxed points",
+          "heading": true
+        },
+        {
+          "term": "g1g",
+          "heading": false
+        },
+        {
+          "term": "stabilizes vertex",
+          "heading": false
+        },
+        {
+          "term": "common ﬁxed",
+          "heading": false
+        },
+        {
+          "term": "action",
+          "heading": true
+        },
+        {
+          "term": "stabilizers",
+          "heading": true
+        },
+        {
+          "term": "ﬁxes",
+          "heading": false
+        },
+        {
+          "term": "vertices",
+          "heading": true
+        }
+      ],
+      "extract": "The SL2 action : stabilizers of vertices, ﬁxed points and translation length There is a natural isometric and transitive action of GL(V ) on T, induced by the action of GL(V ) on V . Deﬁnition 1.3.1. The action of a subgroup G ⊂GL(V ) on T will be said trivial if a vertex is ﬁxed by the whole group. Lemma 1.3.2. For any g ∈GL2(K), [L] ∈T, ﬁx a basis {e, f} of L ∈[L], and n, m ∈Z such that {tne, tmf} is a basis of g",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-134-curves-and-valuations",
+      "number": "1.3.4",
+      "title": "Curves and valuations",
+      "level": 3,
+      "pageStart": 33,
+      "pageEnd": 34,
+      "labelStart": "32",
+      "labelEnd": "33",
+      "words": 362,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "valuations",
+          "heading": true
+        },
+        {
+          "term": "smooth projective",
+          "heading": false
+        },
+        {
+          "term": "projective model",
+          "heading": false
+        },
+        {
+          "term": "birational map",
+          "heading": false
+        },
+        {
+          "term": "function ring",
+          "heading": false
+        },
+        {
+          "term": "ideal point",
+          "heading": false
+        },
+        {
+          "term": "ﬁeld",
+          "heading": false
+        }
+      ],
+      "extract": "Curves and valuations Examples of ﬁeld extensions of k together with k-valuations are given by algebraic varieties deﬁned over k. In particular, pick X ⊂X(Γ) an irreducible component of the character variety, its function ring k[X] is a domain, and we denote by k(X) = Frac(k[X]) its quotient ﬁeld, called the function ﬁeld of X. It is a general fact that this ﬁeld is a k-valuated ﬁeld, with valuations corresponding",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-135-group-acting-on-a-tree-and-splitting",
+      "number": "1.3.5",
+      "title": "Group acting on a tree and splitting",
+      "level": 3,
+      "pageStart": 34,
+      "pageEnd": 36,
+      "labelStart": "33",
+      "labelEnd": "35",
+      "words": 1114,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tree",
+          "heading": true
+        },
+        {
+          "term": "bass-serre tree",
+          "heading": false
+        },
+        {
+          "term": "compression disk",
+          "heading": false
+        },
+        {
+          "term": "equivariant map",
+          "heading": false
+        },
+        {
+          "term": "tautological representation",
+          "heading": false
+        },
+        {
+          "term": "stabilizers",
+          "heading": false
+        },
+        {
+          "term": "connected components",
+          "heading": false
+        },
+        {
+          "term": "orbit representatives",
+          "heading": false
+        }
+      ],
+      "extract": "Group acting on a tree and splitting Let X be an irreducible component of irreducible type of X(Γ), which is reduced and one dimensional, and let ρ : Γ →SL2(k(X)) be the tautological representation. Let v ∈ˆX a point in the smooth projective model of X, the pair (k(X), v) is a k-valuated ﬁeld, and we denote by Tv the Bass-Serre tree described above. The group Γ acts simplicially on Tv as a subgroup of SL2(k(X))",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-136-the-split-case",
+      "number": "1.3.6",
+      "title": "The split case",
+      "level": 3,
+      "pageStart": 36,
+      "pageEnd": 37,
+      "labelStart": "35",
+      "labelEnd": "36",
+      "words": 368,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "seifert-van",
+          "heading": false
+        },
+        {
+          "term": "tnov",
+          "heading": false
+        },
+        {
+          "term": "tov",
+          "heading": false
+        },
+        {
+          "term": "unρ",
+          "heading": false
+        },
+        {
+          "term": "ﬁxes",
+          "heading": false
+        }
+      ],
+      "extract": "The split case. Let Σ be an incompressible surface associated to an ideal point v ∈ˆX. In this section we suppose that Σ is a union of n parallel copies Σi, i = 1, . . . , n and that each copy 35 splits M into two handlebodies M = M1 ∪Σi M2. Consider V (Σ) a neighborhood of Σ homeomorphic to Σ1 × [0, 1], and we consider the splitting M = M1 ∪V (Σ) M2. We ﬁx a basepoint p ∈Σ1, and we will denote by π1(Σ) the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-137-the-non-split-case",
+      "number": "1.3.7",
+      "title": "The non-split case",
+      "level": 3,
+      "pageStart": 37,
+      "pageEnd": 39,
+      "labelStart": "36",
+      "labelEnd": "38",
+      "words": 560,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "seifert surface",
+          "heading": false
+        },
+        {
+          "term": "oza",
+          "heading": false
+        },
+        {
+          "term": "non-split",
+          "heading": true
+        },
+        {
+          "term": "parallel copies",
+          "heading": false
+        },
+        {
+          "term": "handlebody",
+          "heading": false
+        },
+        {
+          "term": "incompressible",
+          "heading": false
+        },
+        {
+          "term": "tree",
+          "heading": false
+        },
+        {
+          "term": "incident",
+          "heading": false
+        }
+      ],
+      "extract": "The non-split case Let S be an incompressible surface associated to an ideal point v ∈ˆX which is, again, union of n parallel copies S = S1 ∪. . . ∪Sn, and we assume now that M \\ Si is connected. Hence [Si] = 0 ∈H2(M; ∂M), and in particular ∂Si is a homological longitude. We say that Si is a Seifert surface in M. Let V (Si) be a neighborhood of 36 Si in M, and E(Si) = M \\ V (Si). It is a classical fact (see [Oza01,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-14-alexander-module-and-character-varieties",
+      "number": "1.4",
+      "title": "Alexander module and character varieties",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 39,
+      "labelStart": "38",
+      "labelEnd": "38",
+      "words": 48,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alexander module",
+          "heading": true
+        },
+        {
+          "term": "character varieties",
+          "heading": true
+        },
+        {
+          "term": "cular",
+          "heading": false
+        }
+      ],
+      "extract": "Alexander module and character varieties In this section we prove a theorem due independently to Burde and DeRham ([Bur67, deR67]), that relies the so-called Alexander module of a 3-manifold M, and in parti- cular roots of its Alexander polynomial, with some particular point in the character varieties X(M).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-020-141-reducible-character-in-components-of-irreduc",
+      "number": "1.4.1",
+      "title": "Reducible character in components of irreducible type of the character variety",
+      "level": 3,
+      "pageStart": 39,
+      "pageEnd": 40,
+      "labelStart": "38",
+      "labelEnd": "39",
+      "words": 507,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reducible character",
+          "heading": true
+        },
+        {
+          "term": "character variety",
+          "heading": true
+        },
+        {
+          "term": "irreducible type",
+          "heading": true
+        },
+        {
+          "term": "tautological representation",
+          "heading": false
+        },
+        {
+          "term": "abelian representation",
+          "heading": false
+        },
+        {
+          "term": "residual representation",
+          "heading": false
+        },
+        {
+          "term": "non abelian",
+          "heading": false
+        },
+        {
+          "term": "tree",
+          "heading": false
+        }
+      ],
+      "extract": "Reducible character in components of irreducible type of the character variety Deﬁnition 1.4.1. Let X be a one dimensional component of irreducible type of the character variety X(M), v ∈ˆX a ﬁnite point in the smooth projective model of X, and ρ : π1(M) →SL2(Ov) a convergent representative of the tautological re- presentation. We will say the representation ρ is residually reducible (resp. residualy abelian,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-142-alexander-module",
+      "number": "1.4.2",
+      "title": "Alexander module",
+      "level": 3,
+      "pageStart": 40,
+      "pageEnd": 43,
+      "labelStart": "39",
+      "labelEnd": "42",
+      "words": 1179,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alexander module",
+          "heading": true
+        },
+        {
+          "term": "alexander polynomial",
+          "heading": false
+        },
+        {
+          "term": "bzh",
+          "heading": false
+        },
+        {
+          "term": "cell decomposition",
+          "heading": false
+        },
+        {
+          "term": "cell complex",
+          "heading": false
+        },
+        {
+          "term": "presentation matrix",
+          "heading": false
+        },
+        {
+          "term": "λ-module",
+          "heading": false
+        },
+        {
+          "term": "abelianization",
+          "heading": false
+        }
+      ],
+      "extract": "Alexander module Here we recall the basic theory of Alexander module. We assume for simplicity that M’s ﬁrst Betti number b1(M) is equal to 1, despite the theory can be extended to higher cases. We refer to [Rol76, BZH14] for proofs and details on this theory. We call abelianization an epimorphism ϕ : π1(M) →Z. As b1(M) = 1, there are two possible choices for the homomorphism ϕ, but nothing we will state here will",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-15-the-reidemeister-torsion",
+      "number": "1.5",
+      "title": "The Reidemeister torsion",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 43,
+      "labelStart": "42",
+      "labelEnd": "42",
+      "words": 59,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "torsion",
+          "heading": true
+        },
+        {
+          "term": "gkz",
+          "heading": false
+        },
+        {
+          "term": "mil",
+          "heading": false
+        }
+      ],
+      "extract": "The Reidemeister torsion In this section we give various deﬁnitions used for the Redemeister torsion. Refe- rences are [Mil66], [GKZ94, Appendix A], [Por97, Chapitre 0]. We stress out the fact that we use a convention (namely, how we take the alternating sum in the deﬁnition of the determinant of a complex) that corresponds to [GKZ94], but not to [Mil66].",
+      "extractCut": false
+    },
+    {
+      "id": "sec-023-151-first-deﬁnition",
+      "number": "1.5.1",
+      "title": "First deﬁnition",
+      "level": 3,
+      "pageStart": 43,
+      "pageEnd": 44,
+      "labelStart": "42",
+      "labelEnd": "43",
+      "words": 192,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alternating product",
+          "heading": false
+        },
+        {
+          "term": "cii",
+          "heading": false
+        },
+        {
+          "term": "tor",
+          "heading": false
+        },
+        {
+          "term": "determinants",
+          "heading": false
+        }
+      ],
+      "extract": "First deﬁnition Given a ﬁnite complex C∗of k-vector spaces C0 d0 −→C1 d1 −→... dn−1 −−−→Cn ﬁx {ci}i=0...n and {hi}i=0...n families of basis of the Ci’s and the Hi’s, one can deﬁne the torsion of the based complex tor(C∗, {ci}, {hi}) to be the alternating product of the determinants of the base change induced by this choices. More precisely, we have the exact sequences 0 →Zi →Ci →Bi+1 →0 0 →Bi →Zi →Hi →0 42 that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-152-second-deﬁnition-the-euler-isomorphism",
+      "number": "1.5.2",
+      "title": "Second deﬁnition : the Euler isomorphism",
+      "level": 3,
+      "pageStart": 44,
+      "pageEnd": 45,
+      "labelStart": "43",
+      "labelEnd": "44",
+      "words": 237,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "det",
+          "heading": false
+        },
+        {
+          "term": "isomorphism",
+          "heading": true
+        },
+        {
+          "term": "exact sequence",
+          "heading": false
+        },
+        {
+          "term": "tor",
+          "heading": false
+        }
+      ],
+      "extract": "Second deﬁnition : the Euler isomorphism Recall that the determinant of a n-dimensional vector space V is det(V ) = ΛnV . One deﬁne the determinant of a complex det(C∗) = N i det(Ci)⊗(−1)i. The cohomology of this complex is naturally graded by the degree, and we have the following theorem. Theorem 1.5.1. There is a natural isomorphism Eu : det(C∗) ∼−→det(H∗(C∗)) Proof. Again, we write the two exact sequences 0 →Zi",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-153-third-deﬁnition-torsion-of-an-exact-complex",
+      "number": "1.5.3",
+      "title": "Third deﬁnition : torsion of an exact complex (Cayley formula)",
+      "level": 3,
+      "pageStart": 45,
+      "pageEnd": 46,
+      "labelStart": "44",
+      "labelEnd": "45",
+      "words": 92,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cayley",
+          "heading": true
+        },
+        {
+          "term": "exact",
+          "heading": true
+        },
+        {
+          "term": "ker",
+          "heading": false
+        }
+      ],
+      "extract": "Third deﬁnition : torsion of an exact complex (Cayley formula) If the complex is exact, one has the following alternative description : pick a system of basis {ci} of the Ci’s that induces, for each i, a splitting Ci = ker di ⊕Ki, where Ki is a supplementary of ker di in Ci. Then each di restricts to an isomorphism d|Ki : Ki →ker di+1, and we deﬁne tor(C∗, {ci}) = Y i det(d|Ki)(−1)i+1 Again, it’s deﬁned up to sign",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-2-the-adjoint-torsion",
+      "number": "2",
+      "title": "The adjoint torsion",
+      "level": 1,
+      "pageStart": 46,
+      "pageEnd": 48,
+      "labelStart": "45",
+      "labelEnd": "47",
+      "words": 888,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adjoint torsion",
+          "heading": true
+        },
+        {
+          "term": "augmented character",
+          "heading": false
+        },
+        {
+          "term": "torsion form",
+          "heading": false
+        },
+        {
+          "term": "character variety",
+          "heading": false
+        },
+        {
+          "term": "incompressible surface",
+          "heading": false
+        },
+        {
+          "term": "irreducible type",
+          "heading": false
+        },
+        {
+          "term": "smooth projective",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential form",
+          "heading": false
+        }
+      ],
+      "extract": "Let ¯X be a component of irreducible type of the augmented character variety ¯X(M) and k( ¯X) its function ﬁeld. In this chapter we will study the action of the funda- mental group π1(M) on the Lie algebra sl2(k( ¯X)), and the Reidemeister torsion of the twisted complex C∗(M, Ad ◦ρ) for this action. It is what we will call the adjoint torsion. First we will deﬁne it as a rational diﬀerential form over Y , the smooth",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-21-the-twisted-complex-with-adjoint-action",
+      "number": "2.1",
+      "title": "The twisted complex with adjoint action",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 48,
+      "labelStart": "47",
+      "labelEnd": "47",
+      "words": 22,
+      "summary": null,
+      "keywords": [],
+      "extract": "The twisted complex with adjoint action In this section we study the complex of twisted cohomology of M in the adjoint representation.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-028-211-tangent-space-diﬀerential-forms-and-twisted",
+      "number": "2.1.1",
+      "title": "Tangent space, diﬀerential forms and twisted cohomology",
+      "level": 3,
+      "pageStart": 48,
+      "pageEnd": 50,
+      "labelStart": "47",
+      "labelEnd": "49",
+      "words": 526,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted cohomology",
+          "heading": true
+        },
+        {
+          "term": "tangent space",
+          "heading": true
+        },
+        {
+          "term": "diﬀerential forms",
+          "heading": true
+        },
+        {
+          "term": "character variety",
+          "heading": false
+        },
+        {
+          "term": "saito theorem",
+          "heading": false
+        },
+        {
+          "term": "adjoint action",
+          "heading": false
+        },
+        {
+          "term": "irreducible character",
+          "heading": false
+        },
+        {
+          "term": "b-module",
+          "heading": false
+        }
+      ],
+      "extract": "Tangent space, diﬀerential forms and twisted cohomo- logy The results of this section can be found in [Mar15]. It’s a well-known result [LM85, Wei64] that the tangent space of the character variety at an irreducible character is isomorphic to the ﬁrst group of twisted cohomology with the adjoint action. Saito’s Theorem allows us to prove it in the skein context. This results can serve as a motivation to study the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-212-computation-of-the-twisted-cohomology",
+      "number": "2.1.2",
+      "title": "Computation of the twisted cohomology",
+      "level": 3,
+      "pageStart": 50,
+      "pageEnd": 50,
+      "labelStart": "49",
+      "labelEnd": "49",
+      "words": 312,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dim",
+          "heading": false
+        },
+        {
+          "term": "twisted",
+          "heading": true
+        },
+        {
+          "term": "chapitre",
+          "heading": false
+        },
+        {
+          "term": "por",
+          "heading": false
+        },
+        {
+          "term": "cohomology",
+          "heading": true
+        }
+      ],
+      "extract": "Computation of the twisted cohomology In this section we assume that ¯X is a one dimensional component of ¯X(M), of irreducible type. We denote by H the matrix ( 1 0 0 −1 ), and by r∗: Hi(M, Ad ◦ρ) → Hi(∂M, Ad ◦ρ) the morphism induced by the inclusion ∂M ⊂M. Proposition 2.1.5. Let ρ : π1(M) →SL2(k( ¯X)) be the tautological representation, then H0(M, Ad ◦ρ) = Hi(M, Ad ◦ρ) = 0 for i ≥3 ; H1(M, Ad ◦ρ) is one",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-22-the-adjoint-torsion-as-a-diﬀerential-form",
+      "number": "2.2",
+      "title": "The adjoint torsion as a diﬀerential form",
+      "level": 2,
+      "pageStart": 50,
+      "pageEnd": 50,
+      "labelStart": "49",
+      "labelEnd": "49",
+      "words": 43,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diﬀerential form",
+          "heading": true
+        },
+        {
+          "term": "torsion",
+          "heading": true
+        },
+        {
+          "term": "adjoint",
+          "heading": true
+        }
+      ],
+      "extract": "The adjoint torsion as a diﬀerential form In this section we deﬁne the torsion of the adjoint complex as a rational diﬀerential form on the augmented character variety. We give an explicit relation with previous work of Joan Porti, Jerome Dubois and others.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-031-221-the-torsion-of-an-ad-ρ-twisted-cellular-comp",
+      "number": "2.2.1",
+      "title": "The torsion of an Ad ◦ρ-twisted cellular complex",
+      "level": 3,
+      "pageStart": 50,
+      "pageEnd": 51,
+      "labelStart": "49",
+      "labelEnd": "50",
+      "words": 235,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cellular complex",
+          "heading": true
+        },
+        {
+          "term": "ρ-twisted",
+          "heading": true
+        },
+        {
+          "term": "torsion",
+          "heading": true
+        },
+        {
+          "term": "eni",
+          "heading": false
+        }
+      ],
+      "extract": "The torsion of an Ad ◦ρ-twisted cellular complex Here we consider the case of the torsion of the cellular complex C∗(M, Ad ◦ρ) with coeﬃcients in sl2(k( ¯X)) twisted by a representation ρ : π1(M) →SL2(k( ¯X)). We 49 pick the basis of sl2(k( ¯X)) given by the vectors E = 0 1 0 0 ! , F = 0 0 1 0 ! , H = 1 0 0 −1 ! Any cellular decomposition of M provides a Z[π1(M)]-basis of Ci( ˜ M) for any i, denoted by {˜e1 i ,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-222-the-reidemeister-torsion-form",
+      "number": "2.2.2",
+      "title": "The Reidemeister torsion form",
+      "level": 3,
+      "pageStart": 51,
+      "pageEnd": 51,
+      "labelStart": "50",
+      "labelEnd": "50",
+      "words": 120,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reidemeister torsion",
+          "heading": true
+        },
+        {
+          "term": "torsion form",
+          "heading": true
+        },
+        {
+          "term": "racter",
+          "heading": false
+        }
+      ],
+      "extract": "The Reidemeister torsion form Again we pick ¯X to be a component of irreducible type of the augmented cha- racter variety ¯X(M), and we ﬁx ρ : π1(M) →SL2(k( ¯X)) a tautological repre- sentation. Since H0(M, Ad ◦ρ) is trivial and H2(M, Ad ◦ρ) is canonically isomor- phic to k( ¯X) from Proposition 2.1.5, the torsion of the adjoint complex is an element of det(H∗(M, Ad ◦ρ)) ≃det(H1(M, Ad ◦ρ))∗. But det(H1(M, Ad ◦ρ))∗≃",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-223-examples-and-computations",
+      "number": "2.2.3",
+      "title": "Examples and computations",
+      "level": 3,
+      "pageStart": 51,
+      "pageEnd": 54,
+      "labelStart": "50",
+      "labelEnd": "53",
+      "words": 1282,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tor tdt",
+          "heading": false
+        },
+        {
+          "term": "dhy",
+          "heading": false
+        },
+        {
+          "term": "divisor degree",
+          "heading": false
+        },
+        {
+          "term": "character variety",
+          "heading": false
+        },
+        {
+          "term": "ideal points",
+          "heading": false
+        },
+        {
+          "term": "por",
+          "heading": false
+        },
+        {
+          "term": "δ-invariant",
+          "heading": false
+        },
+        {
+          "term": "double point",
+          "heading": false
+        }
+      ],
+      "extract": "Examples and computations We give a relation between the torsion form as we deﬁned it above and the previous work of J.Porti and then J.Dubois in [Por97, Dub06, DHY09]. As Dubois computed 50 explicit formulae in many cases, this will permit us to perform direct computations in several examples. Proposition 2.2.4 (see also Corollary 4.2 of [Por97]). Given a ﬁnite point x in a component of irreducible type ¯X of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-23-the-torsion-at-a-ﬁnite-point",
+      "number": "2.3",
+      "title": "The torsion at a ﬁnite point",
+      "level": 2,
+      "pageStart": 54,
+      "pageEnd": 55,
+      "labelStart": "53",
+      "labelEnd": "54",
+      "words": 156,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ﬁnite point",
+          "heading": true
+        },
+        {
+          "term": "torsion",
+          "heading": true
+        },
+        {
+          "term": "ov-module",
+          "heading": false
+        },
+        {
+          "term": "character variety",
+          "heading": false
+        }
+      ],
+      "extract": "The torsion at a ﬁnite point Recall that X is a one-dimensional component of the character variety X(M) of a 3-manifold M with boundary a torus, and the same homology as a circle. The curve Y is the smooth projective model of a double covering of X, namely the augmented character variety. Throughout this section v ∈Y is a ﬁnite point, and ρ : Γ →SL2(Ov) is a convergent tautological representation (see Proposition",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-231-proof-of-main-theorem-1",
+      "number": "2.3.1",
+      "title": "Proof of Main Theorem 1",
+      "level": 3,
+      "pageStart": 55,
+      "pageEnd": 58,
+      "labelStart": "54",
+      "labelEnd": "57",
+      "words": 1060,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ov-module ωov",
+          "heading": false
+        },
+        {
+          "term": "complex cone",
+          "heading": false
+        },
+        {
+          "term": "main theorem",
+          "heading": true
+        },
+        {
+          "term": "tor",
+          "heading": false
+        },
+        {
+          "term": "universal coeﬃcient",
+          "heading": false
+        },
+        {
+          "term": "fdt",
+          "heading": false
+        },
+        {
+          "term": "exact sequence",
+          "heading": false
+        },
+        {
+          "term": "exact based",
+          "heading": false
+        }
+      ],
+      "extract": "Proof of Main Theorem 1 Deﬁnition 2.3.2. We will say that a complex of Ov-modules C∗is rationally exact if C∗⊗k(Y ) is an exact sequence. The following theorem is the key argument in the proof of Main Theorem 1. We explain the statement in the simple case of a rationally acyclic complex On v A−→ Om v . Since the complex is generically acyclic, we deduce that n = m and that the morphism A in injective. Now the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-232-interpretation-of-the-theorem-singularities",
+      "number": "2.3.2",
+      "title": "Interpretation of the Theorem : singularities and Alexander module",
+      "level": 3,
+      "pageStart": 58,
+      "pageEnd": 65,
+      "labelStart": "57",
+      "labelEnd": "64",
+      "words": 2297,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tautological repre",
+          "heading": false
+        },
+        {
+          "term": "reducible character",
+          "heading": false
+        },
+        {
+          "term": "reducible component",
+          "heading": false
+        },
+        {
+          "term": "exact sequence",
+          "heading": false
+        },
+        {
+          "term": "tautological representation",
+          "heading": false
+        },
+        {
+          "term": "alexander",
+          "heading": true
+        },
+        {
+          "term": "alexan der",
+          "heading": false
+        },
+        {
+          "term": "singularities",
+          "heading": true
+        }
+      ],
+      "extract": "Interpretation of the Theorem : singularities and Alexan- der module The aim of this section is to provide a geometric signiﬁcation to the length of the module H1(M, Ad ◦ρ)v that appears in the statement of the Main Theorem 1. Notice that if v corresponds to an irreducible character, H1(M, Ad ◦ρ)v ≃Ω¯B[Γ]/k ⊗ Ov. If ν(v) is a smooth point, the latter is isomorphic to the localization of the module of diﬀerentials at",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-24-the-torsion-at-an-ideal-point",
+      "number": "2.4",
+      "title": "The torsion at an ideal point",
+      "level": 2,
+      "pageStart": 65,
+      "pageEnd": 66,
+      "labelStart": "64",
+      "labelEnd": "65",
+      "words": 446,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "incompressible surface",
+          "heading": false
+        },
+        {
+          "term": "ideal point",
+          "heading": true
+        },
+        {
+          "term": "seifert surface",
+          "heading": false
+        },
+        {
+          "term": "tautological representation",
+          "heading": false
+        },
+        {
+          "term": "torsion",
+          "heading": true
+        },
+        {
+          "term": "shalen",
+          "heading": false
+        },
+        {
+          "term": "abelian",
+          "heading": false
+        },
+        {
+          "term": "character",
+          "heading": false
+        }
+      ],
+      "extract": "The torsion at an ideal point In this section we consider v ∈Y an ideal point. We denote by t an uniforming parameter of the valuation ring Ov. We mentioned in Section 1.3 the construction of Marc Culler and Peter Shalen : such an ideal point induces an action of π1(M) on a simplicial tree Tv. In [Sha02], Shalen explains how one can produce a so-called dual surface Σ to the action of π1(M) on Tv. Moreover, this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-241-an-example-a-direct-computation-of-the-torsi",
+      "number": "2.4.1",
+      "title": "An example : a direct computation of the torsion of the trefoil knot using its incompressible non-Seifert surface",
+      "level": 3,
+      "pageStart": 66,
+      "pageEnd": 73,
+      "labelStart": "65",
+      "labelEnd": "72",
+      "words": 1920,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adρ",
+          "heading": false
+        },
+        {
+          "term": "trefoil knot",
+          "heading": true
+        },
+        {
+          "term": "torsion tor",
+          "heading": false
+        },
+        {
+          "term": "incompressible",
+          "heading": true
+        },
+        {
+          "term": "incompressible annulus",
+          "heading": false
+        },
+        {
+          "term": "cellular decomposition",
+          "heading": false
+        },
+        {
+          "term": "direct computation",
+          "heading": true
+        },
+        {
+          "term": "trace-free matrix",
+          "heading": false
+        }
+      ],
+      "extract": "An example : a direct computation of the torsion of the trefoil knot using its incompressible non-Seifert surface The trefoil complement M carries an unique incompressible, non Seifert surface, which is an annulus. It is depicted on Figure 2.1. The complement of this incompressible annulus A is the disjoint union of two solid torii, M1 is the \"interior\" of T, and M2 its \"exterior\". Recall the following presentation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-242-proof-of-theorem-202-the-case-when-ρς-is-not",
+      "number": "2.4.2",
+      "title": "Proof of theorem 2.0.2, the case when ρΣ is not residually abelian",
+      "level": 3,
+      "pageStart": 73,
+      "pageEnd": 79,
+      "labelStart": "72",
+      "labelEnd": "78",
+      "words": 2072,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dim ker",
+          "heading": false
+        },
+        {
+          "term": "ov-modules",
+          "heading": false
+        },
+        {
+          "term": "unρ",
+          "heading": false
+        },
+        {
+          "term": "tor",
+          "heading": false
+        },
+        {
+          "term": "abelian",
+          "heading": true
+        },
+        {
+          "term": "non abelian",
+          "heading": false
+        },
+        {
+          "term": "exact sequence",
+          "heading": false
+        },
+        {
+          "term": "k-vector spaces",
+          "heading": false
+        }
+      ],
+      "extract": "Proof of theorem 2.0.2, the case when ρΣ is not resi- dually abelian In this section we prove Theorem 2.0.2 in the case where ρΣ is not residually abelian. This case is the generic case, nevertheless computational evidences suggest that there are many examples where it is not the case, hence we will treat the residually abelian case in the next section. Recall from Section 1.3.6 that there the splitting M = M1 ∪Σ M2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-243-the-case-when-ρς-is-residually-abelian",
+      "number": "2.4.3",
+      "title": "The case when ρΣ is residually abelian",
+      "level": 3,
+      "pageStart": 79,
+      "pageEnd": 82,
+      "labelStart": "78",
+      "labelEnd": "81",
+      "words": 784,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tor",
+          "heading": false
+        },
+        {
+          "term": "dti",
+          "heading": false
+        },
+        {
+          "term": "abelian",
+          "heading": true
+        },
+        {
+          "term": "least dim",
+          "heading": false
+        },
+        {
+          "term": "lemma follows",
+          "heading": false
+        },
+        {
+          "term": "valuation",
+          "heading": false
+        },
+        {
+          "term": "ker",
+          "heading": false
+        },
+        {
+          "term": "residual",
+          "heading": false
+        }
+      ],
+      "extract": "The case when ρΣ is residually abelian In this section we treat the case when the residual reducible representation ¯ρΣ is abelian. This case is motivated by the example of the ﬁgure-eight knot complement, see Remark 3.3.1. In fact, if Σ is two holed torus, as soon as the boundary curve will be mapped to ± Id by ¯ρΣ, then the representation ¯ρΣ will be residually abelian. Computational evidences suggest that it is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-244-back-to-examples",
+      "number": "2.4.4",
+      "title": "Back to Examples",
+      "level": 3,
+      "pageStart": 82,
+      "pageEnd": 84,
+      "labelStart": "81",
+      "labelEnd": "83",
+      "words": 203,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "incompressible surface",
+          "heading": false
+        },
+        {
+          "term": "two-holed",
+          "heading": false
+        },
+        {
+          "term": "torsion vanishes",
+          "heading": false
+        },
+        {
+          "term": "ideal points",
+          "heading": false
+        },
+        {
+          "term": "euler characteristic",
+          "heading": false
+        }
+      ],
+      "extract": "Back to Examples 1. The trefoil knot. The incompressible surface Σ is an annulus, hence ρΣ : Z →SL2(k(t)) is abelian, and the theorem cannot apply. Nevertheless the torsion has a pole of order one at ideal points corresponding to Σ, hence the equality of theorem remains true. 2. The ﬁgure-eight knot. There are two incompressible surfaces Σ1 and Σ2 that are two-holed tori, and the torsion vanishes at order 1 at each",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-3-the-standard-torsion",
+      "number": "3",
+      "title": "The standard torsion",
+      "level": 1,
+      "pageStart": 84,
+      "pageEnd": 86,
+      "labelStart": "83",
+      "labelEnd": "85",
+      "words": 807,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "torsion",
+          "heading": true
+        },
+        {
+          "term": "incompressible surface",
+          "heading": false
+        },
+        {
+          "term": "character variety",
+          "heading": false
+        },
+        {
+          "term": "torsion function",
+          "heading": false
+        },
+        {
+          "term": "geometric component",
+          "heading": false
+        },
+        {
+          "term": "tautological representation",
+          "heading": false
+        },
+        {
+          "term": "trivial eigenvalues",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifold",
+          "heading": false
+        }
+      ],
+      "extract": "Here M is a compact connected orientable 3-manifold, whose boundary is a torus. In this chapter we pick X a one-dimensional component of irreducible type of the character variety X(M), and denote by k(X) its function ﬁeld. Here we consider the action of the fundamental group π1(M) on the 2-dimensional vector space k(X)2 through the tautological representation ρ : π1(M) →SL2(k(X)), and the correspon- ding",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-31-the-torsion-function",
+      "number": "3.1",
+      "title": "The torsion function",
+      "level": 2,
+      "pageStart": 86,
+      "pageEnd": 87,
+      "labelStart": "85",
+      "labelEnd": "86",
+      "words": 752,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "torsion function",
+          "heading": true
+        },
+        {
+          "term": "non semi-simple",
+          "heading": false
+        },
+        {
+          "term": "semi-simple representation",
+          "heading": false
+        },
+        {
+          "term": "tautological representation",
+          "heading": false
+        },
+        {
+          "term": "character variety",
+          "heading": false
+        },
+        {
+          "term": "twisted alexander",
+          "heading": false
+        },
+        {
+          "term": "non trivial",
+          "heading": false
+        },
+        {
+          "term": "irreducible representation",
+          "heading": false
+        }
+      ],
+      "extract": "on the component X. The relation with twisted Alexander polynomial suggests an other interpretation of the vanishing locus of the torsion : given an irreducible representation ρ : π1(M) → SL2(k), one can construct a semi-simple representation ˜ρ : π1(M) →SL3(k) by deﬁning ˜ρ = \u0000 ρ 0 0 1 \u0001 . A classical dimensional argument (see [HP15, Section 5] for instance), shows that if ˜ρ is deformable into irreducible",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-32-the-case-of-a-ﬁnite-character",
+      "number": "3.2",
+      "title": "The case of a ﬁnite character",
+      "level": 2,
+      "pageStart": 87,
+      "pageEnd": 87,
+      "labelStart": "86",
+      "labelEnd": "86",
+      "words": 6,
+      "summary": null,
+      "keywords": [],
+      "extract": "The case of a ﬁnite character",
+      "extractCut": false
+    },
+    {
+      "id": "sec-045-321-proof-of-theorem-301",
+      "number": "3.2.1",
+      "title": "Proof of Theorem 3.0.1",
+      "level": 3,
+      "pageStart": 87,
+      "pageEnd": 88,
+      "labelStart": "86",
+      "labelEnd": "87",
+      "words": 352,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "torsion module",
+          "heading": false
+        },
+        {
+          "term": "ov-modules",
+          "heading": false
+        },
+        {
+          "term": "theorem",
+          "heading": true
+        },
+        {
+          "term": "tor",
+          "heading": false
+        },
+        {
+          "term": "acyclic",
+          "heading": false
+        },
+        {
+          "term": "valuation",
+          "heading": false
+        },
+        {
+          "term": "ext",
+          "heading": false
+        }
+      ],
+      "extract": "Proof of Theorem 3.0.1 In this section we give a proof of the following theorem : Theorem (Theorem 3.0.1). Let X be a one dimensional component of the character variety X(M) and ρ : π1(M) →SL2(k(X)) the tautological representation. Assume 86 that the complex C∗(M, ρ) is acyclic. Then tor(M, ρ) is a regular function on X. Moreover its vanishing order at a point χ ∈X is given by the length of the torsion module H2(M,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-322-some-computations-and-examples",
+      "number": "3.2.2",
+      "title": "Some computations and examples",
+      "level": 3,
+      "pageStart": 88,
+      "pageEnd": 91,
+      "labelStart": "87",
+      "labelEnd": "90",
+      "words": 568,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "obtain tor",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure-eight knot",
+          "heading": false
+        },
+        {
+          "term": "whitehead link",
+          "heading": false
+        },
+        {
+          "term": "twist knots",
+          "heading": false
+        },
+        {
+          "term": "trefoil knot",
+          "heading": false
+        },
+        {
+          "term": "character variety",
+          "heading": false
+        },
+        {
+          "term": "double zeros",
+          "heading": false
+        },
+        {
+          "term": "circle component",
+          "heading": false
+        }
+      ],
+      "extract": "Some computations and examples We compute the torsion function on a series of examples of twist knots, and deter- mine its zeros on the character variety. A presentation of the fundamental group of 87 a b λ µ Figure 3.1 – A diagram of the Whitehead link. a, b and λ are depicted generators of the fundamental group, and µ is a counter-clockwise oriented longitude of the circle component. the Whitehead link can be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-047-33-the-torsion-at-ideal-points",
+      "number": "3.3",
+      "title": "The torsion at ideal points",
+      "level": 2,
+      "pageStart": 91,
+      "pageEnd": 91,
+      "labelStart": "90",
+      "labelEnd": "90",
+      "words": 5,
+      "summary": null,
+      "keywords": [],
+      "extract": "The torsion at ideal points",
+      "extractCut": false
+    },
+    {
+      "id": "sec-048-331-the-split-case",
+      "number": "3.3.1",
+      "title": "The split case",
+      "level": 3,
+      "pageStart": 91,
+      "pageEnd": 96,
+      "labelStart": "90",
+      "labelEnd": "95",
+      "words": 1554,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mayer-vietoris sequence",
+          "heading": false
+        },
+        {
+          "term": "split case",
+          "heading": true
+        },
+        {
+          "term": "tor",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure-eight knot",
+          "heading": false
+        },
+        {
+          "term": "boundary curve",
+          "heading": false
+        },
+        {
+          "term": "torsion function",
+          "heading": false
+        },
+        {
+          "term": "unz",
+          "heading": false
+        },
+        {
+          "term": "exact sequence",
+          "heading": false
+        }
+      ],
+      "extract": "The split case In this section we give a proof of the following theorem : 90 Theorem (Theorem 3.0.2, the split case). Let x ∈ˆX be an ideal point in the smooth projective model of X, and assume that an associated incompressible surface Σ is a union of n parallel copies Σ1 ∪. . . ∪Σn and that each copy splits M into two handlebodies. If the curve γ = ∂Σ ∈π1(M) has trivial eigenvalues at x, then the torsion function",
+      "extractCut": true
+    },
+    {
+      "id": "sec-049-332-the-non-split-case",
+      "number": "3.3.2",
+      "title": "The non-split case",
+      "level": 3,
+      "pageStart": 96,
+      "pageEnd": 100,
+      "labelStart": "95",
+      "labelEnd": "99",
+      "words": 760,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-split case",
+          "heading": true
+        },
+        {
+          "term": "residual map",
+          "heading": false
+        },
+        {
+          "term": "incompressible surface",
+          "heading": false
+        },
+        {
+          "term": "exact sequence",
+          "heading": false
+        },
+        {
+          "term": "surjective",
+          "heading": false
+        },
+        {
+          "term": "seifert",
+          "heading": false
+        },
+        {
+          "term": "ideal point",
+          "heading": false
+        },
+        {
+          "term": "splitting",
+          "heading": false
+        }
+      ],
+      "extract": "The non-split case In this section we prove the following theorem : 95 Theorem (Theorem 3.0.2, the non-split case). Let x ∈ˆX be an ideal point in the smooth projective model of a component X of the character variety, that produces an incompressible surface S in M which is a union of parallel copies S1 ∪. . . ∪Sn of a Seifert surface. Then the torsion function tor(M, ρ) has a pole at x, in particular it is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-050-a-proof-of-saitos-theorem",
+      "number": null,
+      "title": "A Proof of Saito’s theorem",
+      "level": 1,
+      "pageStart": 100,
+      "pageEnd": 110,
+      "labelStart": "99",
+      "labelEnd": "109",
+      "words": 2579,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "saito theorem",
+          "heading": true
+        },
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        },
+        {
+          "term": "joan porti",
+          "heading": false
+        },
+        {
+          "term": "jérôme dubois",
+          "heading": false
+        },
+        {
+          "term": "claudio procesi",
+          "heading": false
+        },
+        {
+          "term": "michael heusener",
+          "heading": false
+        },
+        {
+          "term": "leo benard",
+          "heading": false
+        },
+        {
+          "term": "peter shalen",
+          "heading": false
+        }
+      ],
+      "extract": "Proof of Saito’s theorem Let us recall the statement of the theorem. The proof we present here is adapted from an unpublished version of [Sai94]. Theorem A.0.1. Let R be a k-algebra, and χ : B[Γ] →R an R-character. Assume that χ is irreducible, that is χ(∆α,β) ∈R× for some α, β ∈Γ, and let A, B ∈SL2(R) such that Tr A = χ(Yα), Tr B = χ(Yβ), Tr AB = χ(Yαβ). Then there exists a unique representation ρ : Γ →SL2(R) whose",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 3,
+        "items": [
+          "1 Elliptic elements",
+          "2 Hyperbolic elements",
+          "2.4.7 Then"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "torsion tor",
+      "heading": false
+    },
+    {
+      "term": "character variety",
+      "heading": true
+    },
+    {
+      "term": "irreducible character",
+      "heading": true
+    },
+    {
+      "term": "deﬁne tor",
+      "heading": false
+    },
+    {
+      "term": "reidemeister torsion",
+      "heading": true
+    },
+    {
+      "term": "torsion ov-module",
+      "heading": false
+    },
+    {
+      "term": "torsion module",
+      "heading": false
+    },
+    {
+      "term": "reducible character",
+      "heading": true
+    },
+    {
+      "term": "adjoint torsion",
+      "heading": true
+    },
+    {
+      "term": "torsion function",
+      "heading": true
+    },
+    {
+      "term": "torsion form",
+      "heading": true
+    },
+    {
+      "term": "augmented character",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 31,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 35,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 37,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 38,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 40,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 41,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 44,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 45,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 46,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 47,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 49,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 51,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 52,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 55,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 56,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 59,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 66,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 67,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 69,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 71,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 72,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 73,
+      "label": "72",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 74,
+      "label": "73",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 75,
+      "label": "74",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 76,
+      "label": "75",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 77,
+      "label": "76",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 78,
+      "label": "77",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 79,
+      "label": "78",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 80,
+      "label": "79",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 81,
+      "label": "80",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 82,
+      "label": "81",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 83,
+      "label": "82",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 84,
+      "label": "83",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 85,
+      "label": "84",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 86,
+      "label": "85",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 87,
+      "label": "86",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 88,
+      "label": "87",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 89,
+      "label": "88",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 90,
+      "label": "89",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 91,
+      "label": "90",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 92,
+      "label": "91",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 93,
+      "label": "92",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 94,
+      "label": "93",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 95,
+      "label": "94",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 96,
+      "label": "95",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 97,
+      "label": "96",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 98,
+      "label": "97",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 99,
+      "label": "98",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 100,
+      "label": "99",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 101,
+      "label": "100",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 102,
+      "label": "101",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 103,
+      "label": "102",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 104,
+      "label": "103",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 105,
+      "label": "104",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 106,
+      "label": "105",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 107,
+      "label": "106",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 108,
+      "label": "107",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 109,
+      "label": "108",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 110,
+      "label": "109",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Incompressible surfaces in the complement of the knot 5.2. The surface Σ1 is the orientation covering of the non oriented surface here colored on the left, that can be thought as the boundary of a tubular neighborhood of this non orientable surface. The surface Σ2 is again the orientation covering o",
+      "page": 13,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1.1",
+      "title": "Kauﬀman skein relations. The indicated moves are performed locally, the rest of the link remains unchanged. The strands are supposed to depict bands of the framed links",
+      "page": 21,
+      "pageLabel": "20",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1.2",
+      "title": "",
+      "page": 22,
+      "pageLabel": "21",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1.3",
+      "title": "The splitting M = M1 ∪V (Σ) M2",
+      "page": 37,
+      "pageLabel": "36",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.1",
+      "title": "On the left, the classical diagram of a trefoil knot, with an incompressible Möbius band in its complement. On the right, the red curve is an embedding of the trefoil knot in a torus T. The complement of a tubular neighborhood of this curve in this torus is an incompressible annulus, which is the or",
+      "page": 67,
+      "pageLabel": "66",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.2",
+      "title": "This represents a cellular decompositon of M with one 0-cell e, three 1cells a, b and u corresponding to generators of π1(M1), π1(M2) and π1(A) respectively",
+      "page": 69,
+      "pageLabel": "68",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.3",
+      "title": "Here is depicted a cellular decomposition of the boundary of M. The e’s denote 0-cells, a’s,b’s and u’s are 1-cells and 2-cells are denoted using capital letters. Cells denoted identically are identiﬁed",
+      "page": 71,
+      "pageLabel": "70",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.4",
+      "title": "An other picture of the trefoil in a 2-torus",
+      "page": 71,
+      "pageLabel": "70",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.5",
+      "title": "The complement M of the knot K retracts on the union of the red radial segments. The boundary ∂M, in green on the ﬁgure, can be seen as foliating the disks A, B, C and D of ﬁgure 2.3 by half-segments from ai or bi to u or u′",
+      "page": 72,
+      "pageLabel": "71",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.1",
+      "title": "A diagram of the Whitehead link. a, b and λ are depicted generators of the fundamental group, and µ is a counter-clockwise oriented longitude of the circle component",
+      "page": 89,
+      "pageLabel": "88",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.2",
+      "title": "The diagram above if J(2, 2), the trefoil knot. The one below is J(2, −2), the ﬁgure-eight knot",
+      "page": 90,
+      "pageLabel": "89",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.3",
+      "title": "The ﬁgure-eight knot, with a non orientable checkerboard surface ˇΣ, and generating loops u, v of its fundamental group",
+      "page": 93,
+      "pageLabel": "92",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-2",
+      "file": "images/img-p001-2.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-3",
+      "file": "images/img-p001-3.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p002-1",
+      "file": "images/img-p002-1.png",
+      "page": 2,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-1",
+      "file": "images/img-p022-1.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-3",
+      "file": "images/img-p022-3.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p071-1",
+      "file": "images/img-p071-1.png",
+      "page": 71,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p071-10",
+      "file": "images/img-p071-10.png",
+      "page": 71,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p071-19",
+      "file": "images/img-p071-19.png",
+      "page": 71,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p071-28",
+      "file": "images/img-p071-28.png",
+      "page": 71,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p071-29",
+      "file": "images/img-p071-29.png",
+      "page": 71,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p071-38",
+      "file": "images/img-p071-38.png",
+      "page": 71,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p071-47",
+      "file": "images/img-p071-47.png",
+      "page": 71,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p071-56",
+      "file": "images/img-p071-56.png",
+      "page": 71,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p071-65",
+      "file": "images/img-p071-65.png",
+      "page": 71,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p071-74",
+      "file": "images/img-p071-74.png",
+      "page": 71,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p072-1",
+      "file": "images/img-p072-1.png",
+      "page": 72,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p072-5",
+      "file": "images/img-p072-5.png",
+      "page": 72,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p072-9",
+      "file": "images/img-p072-9.png",
+      "page": 72,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p072-13",
+      "file": "images/img-p072-13.png",
+      "page": 72,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p072-14",
+      "file": "images/img-p072-14.png",
+      "page": 72,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p072-18",
+      "file": "images/img-p072-18.png",
+      "page": 72,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p072-22",
+      "file": "images/img-p072-22.png",
+      "page": 72,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p072-26",
+      "file": "images/img-p072-26.png",
+      "page": 72,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p072-30",
+      "file": "images/img-p072-30.png",
+      "page": 72,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p072-34",
+      "file": "images/img-p072-34.png",
+      "page": 72,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p072-38",
+      "file": "images/img-p072-38.png",
+      "page": 72,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p072-42",
+      "file": "images/img-p072-42.png",
+      "page": 72,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p072-46",
+      "file": "images/img-p072-46.png",
+      "page": 72,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p072-50",
+      "file": "images/img-p072-50.png",
+      "page": 72,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p072-54",
+      "file": "images/img-p072-54.png",
+      "page": 72,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p072-58",
+      "file": "images/img-p072-58.png",
+      "page": 72,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p072-62",
+      "file": "images/img-p072-62.png",
+      "page": 72,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 52,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 52,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 33
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p100); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 52 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/2018sorus020"
+  }
+}

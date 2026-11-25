@@ -1,0 +1,524 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2502.06229v5",
+  "blocks": [
+    {
+      "id": "library/arxiv-2502.06229v5/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2502.06229v5/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Historical Background: Conformal Field Theories and Quantum Groups",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-11-historical-background-conformal-field-theorie.md",
+      "narrative": null,
+      "content": "Primary fields, introduced under a different name by Mack and Salam in the context\nof higher-dimensional conformal field theories [68], were investigated in 2D by Belavin,\nPolyakov, and Zamolodchikov. They recognized that the local symmetry algebra is given\nby the infinite-dimensional Virasoro algebra [5], building upon previous work by Feigin\nand Fuchs [29] and Kac [62] on its representation theory.\nWitten introduced an interacting 2D conformal field theory, now known as the Wess-\nZumino-Witten (WZW) model [103]. He showed that this model possesses a symmetry\n1\narXiv:2502.06229v5  [math.OA]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2502.06229v5/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "CONSTRUCTING EQUIVALENCES BETWEEN FUSION CATEGORIES\nOF QUANTUM GROUPS AND OF VERTEX OPERATOR ALGEBRAS\nVIA QUANTUM GAUGE GROUPS\nCLAUDIA PINZARI\nDedicated to Sergio Doplicher, with gratitude\nAbstract. This paper establishes connections between a problem posed by Doplicher\nand Roberts in the 1990s regarding construction of quantum gauge groups associated to\nthe category of localized endomorphisms of conformal nets, and a problem by Huang con-\ncerning a direct proof of the Finkelberg equivalence theorem. We also unify the treatment\nof high dimensional algebraic QFT with the low dimensional case, r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2502.06229v5/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Inspiration from Algebraic Quantum Field Theory",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-13-inspiration-from-algebraic-quantum-field-theo.md",
+      "narrative": null,
+      "content": "proach this problem arose from a related problem posed by Doplicher and Roberts in the\naxiomatic setting of the operator algebraic approach to quantum field theory (AQFT).\nProblem posed in Section 7 in [21]. Can we extend the duality theory for compact\ngroups [61] Theorem 6.1 to more general objects, by replacing strict symmetric monoidal\nC*-categories by strict braided monoidal C*-categories? What is the full class of compact\ngroup-like objects which arise in this way?\nWe next explain this problem and connect it to Huang’s problem. Algebraic quantum\nfield theory was initiated by Haag and Kast",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2502.06229v5/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum symmetries and primary field reconstruction in low-dimensional AQFT",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-14-quantum-symmetries-and-primary-field-reconstr.md",
+      "narrative": null,
+      "content": "AQFT. In low-dimensional quantum field theories (specifically in two and three space-\ntime dimensions), the categories of superselection sectors naturally admit a braided tensor\nstructure rather than a symmetric one. Consequently, the standard DHR Bose-Fermi alter-\nnative does not hold any longer, allowing for the existence of non-integer statistics. Early\nmodels exhibiting such behavior were first constructed by Streater and Wilde. The DHR\ntheory of superselection sectors was subsequently generalized to accommodate braid group\nstatistics by Fredenhagen, Rehren, and Schroer [32, 33], who showe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2502.06229v5/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Our Approach to the two Problems: Quantum Gauge Groups and Drinfeld Twists",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-15-our-approach-to-the-two-problems-quantum-gaug.md",
+      "narrative": null,
+      "content": "Twists. Our approach to Huang’s problem and to Doplicher-Roberts problems is derived\nfrom synthesizing the developments in affine Lie algebras by Wassermann and Toledano-\nLaredo on the loop group conformal net [94] with the unitary properties of quantum group\nfusion categories previously highlighted by Wenzl [99], from the view point of quantum\nsymmetries in algebraic conformal field theory.\nIn our approach primary fields play a\nprominent role to establish the equivalence, as originally envisaged by Mack and Schome-\nrus. In our approach, a weak quasi-Hopf algebra is naturally associated to the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2502.06229v5/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main theorem",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-005-16-main-theorem.md",
+      "narrative": null,
+      "content": "Theorem 1.1. Let g be a complex simple Lie algebra and k a positive integer, the level. Let\nq = e\niπ\nd(k+h∨), with h∨the dual Coxeter number and d the ratio of the square lengths of the\nlong to the short root. Then the unitary coboundary weak Hopf algebra AW(g, q) induces a\nrigid braided tensor category structure on the module category of the affine vertex operator\nalgebra Vgk.\nFurthermore we construct, via the Drinfeld twist method, a braided tensor equivalence\nbetween this category and the modular quantum group fusion category C(g, q) for all Lie\ntypes.\nRegarding the comparison with the Huan",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2502.06229v5/blocks/thm-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "thm-sec-005-01.md",
+      "narrative": null,
+      "content": "Let g be a complex simple Lie algebra and k a positive integer, the level. Let q = e iπ d(k+h∨), with h∨the dual Coxeter number and d the ratio of the square lengths of the long to the short root. Then the unitary coboundary weak Hopf algebra AW(g, q) induces a rigid braided tensor category structure on the module category of the affine vertex operator algebra Vgk. Furthermore we construct, via the Drinfeld twist method, a braided tensor equivalence between this category and the modular quantum group fusion category C(g, q) for all Lie types. Regarding the comparison with the Huang-Lepowsky ri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2502.06229v5/blocks/def-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "def-sec-006-01.md",
+      "narrative": null,
+      "content": "Let A be a semisimple unital complex algebra endowed with a coproduct ∆: A →A⊗A given by a not necessarily unital homomorphism and a counit satisfying the usual counit axioms for bialgebras. The tensor product ρ⊗σ of two f.d. representations of A is the representation defined by ∆restricted to the range of ∆(I) in the tensor product space. We call A a weak bialgebra if the category Rep(A) of representations of A becomes a tensor category with associativity morphisms αρ,σ,τ : (ρ ⊗σ) ⊗τ →ρ ⊗(σ ⊗τ), ρ, σ, τ ∈Rep(A) defined by the action of 1 ⊗∆(∆(I))∆⊗1(∆(I)) between the representation spaces, wi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2502.06229v5/blocks/def-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "def-sec-006-03.md",
+      "narrative": null,
+      "content": "A (compatible) unitary coboundary weak quasi-Hopf algebra A is defined by the following data: a) A unital weak quasi-Hopf algebra A endowed with a C∗-algebra involution with an antipode (S, α, β) b) a ribbon structure (R, v) for A associated to (S, α, β) such that the ribbon element v ∈A is unitary, c) a unitary central square root w ∈A of v such that ε(w) = 1, S(w) = w, d) ˜A = Aop as quasitriangular weak quasi-bialgebras, e) R = Rw−1 ⊗w−1∆(w) is positive. The element R is the R-matrix; v ∈A is a central element defining the ribbon structure; the operator R is Drinfeld coboundary matrix and g",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2502.06229v5/blocks/prop-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "prop-sec-006-02.md",
+      "narrative": null,
+      "content": "A semisimple weak quasi-bialgebra A is a weak bialgebra if and only if the fibre functor F : Rep(A) →Vec is a weak tensor functor. By this we mean that the associated natural transformations given by projection and inclusion, respectively: Fρ,σ : F(ρ) ⊗F(σ) →F(ρ ⊗σ) and Gρ,σ : F(ρ ⊗σ) →F(ρ) ⊗F(σ) satisfy for all objects ρ, σ, τ, Fρ,σ ◦Gρ,σ = 1F(ρ⊗σ) (2.1) Fρ′,σ′ ◦F(S) ⊗F(T) = F(S ⊗T) ◦Fρ,σ, F(S) ⊗F(T) ◦Gρ,σ = Gρ′,σ′ ◦F(S ⊗T) (2.2) for objects ρ, σ, ρ′, σ′ ∈C and morphisms S : ρ →ρ′, T : σ →σ′. F(αρ,σ,τ) = Fρ,σ⊗τ ◦1F(ρ) ⊗Fσ,τ ◦α′ F(ρ),F(σ),F(τ) ◦Gρ,σ ⊗1F(τ) ◦Gρ⊗σ,τ (2.3) F(α−1 ρ,σ,τ) = Fρ⊗σ,τ ◦",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2502.06229v5/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Unitary coboundary weak Hopf algebras AW(g, q)",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-2-unitary-coboundary-weak-hopf-algebras-awg-q.md",
+      "narrative": null,
+      "content": "The notion of weak quasi-Hopf algebra was first introduced by Mack and Schomerus\nmotivated by the work of Drinfeld on quasi-Hopf algebras, specifically the Drinfeld-Kohno\ntheorem [70].\nThe weakness refers to a non-unital coproduct, and is needed to construct a coalgebra\nstructure on the quotient A of Uq(g) with q a root of unity by the ideal of elements\nannihilated by representations with zero quantum dimension.\nSince the ideal is not a\ncoideal, the quotient algebra A is not a bialgebra in the natural way. For sl2, Mack and\nSchomerus defined a weak coproduct on A and an associator derived from",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2502.06229v5/blocks/thm-sec-006-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "thm-sec-006-04.md",
+      "narrative": null,
+      "content": "The semisimple ∗-algebra AW(g, q) := Nat(W) of natural transformations of W admits a natural structure of unitary compatible coboundary weak Hopf algebra derived from C(g, q) and W. Thanks to Theorem 29.4 in [10]–our version of Drinfeld-Kohno theorem–the Zhu algebras A(Vgk) become unitary coboundary weak quasi-Hopf algebras with a Drinfeld twist from AW(g, q), by our version of Drinfeld-Kohno theorem. This is summarized in the following section, and detailed in Sect. 33 of [10].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2502.06229v5/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The main result",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-007-3-the-main-result.md",
+      "narrative": null,
+      "content": "Let g be a complex simple Lie algebra and let Rep(Vgk) be the module category of the\ncorresponding affine vertex operator algebra Vgk at level k ∈N, endowed with the ribbon\n13\nbraided tensor structure introduced by Huang and Lepowsky.\nLet A(Vgk) be the Zhu\nalgebra.\nLet V denote the fundamental representation of g for each Lie type, defined in [99], (see\nalso Sect. 11 for the classical types and G2). We also denote by V the corresponding\nquantized representation of Uq(g), q = eiπ/ℓd, the associated object of the quantum group\nfusion category C(g, q), with ℓ= k + ˇh, ˇh the dual Coxeter number o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2502.06229v5/blocks/thm-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "thm-sec-007-01.md",
+      "narrative": null,
+      "content": "We have that: (a) The linear representation category Rep(A(Vgk)) admits a natural structure of rib- bon braided tensor category RepHL(A(Vgk)) obtained as a transport from Huang- Lepowsky structure on RepHL(Vgk) to Rep(A(Vgk)). In this way, Zhu’s linear equiv- alence Z : RepHL(Vgk) →RepHL(A(Vgk)) admits a natural structure of ribbon braided tensor equivalence. (b) The Zhu algebra A(Vgk) becomes a twisted unitary compatible coboundary weak quasi-Hopf algebra with structure induced by the weak Hopf algebra AW(g, q) via Wenzl path and the construction of the Drinfeld twist. Let RepQG(A(Vgk)) be en",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2502.06229v5/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The general plan of our proof",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-008-4-the-general-plan-of-our-proof.md",
+      "narrative": null,
+      "content": "Part (a) of Theorem 3.1 follows from the application to Zhu’s functor of the general con-\nstruction. Let us consider a (ribbon, braided) semsimple tensor category C together with\na discrete complex algebra A (a direct sum of full matrix algebras), a linear equivalence\nC →Rep(A) and an inverse linear equivalence Rep(A) →C. We wish to use these equiv-\nalences to transfer all the structure of C to Rep(A), and make it into a (ribbon, braided)\ntensor category in such a way that the given equivalences become (ribbon, braided) tensor\nequivalences. The definition of the structure on Rep(A) is very nat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2502.06229v5/blocks/thm-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "thm-sec-008-01.md",
+      "narrative": null,
+      "content": "These are the main new abstract results to obtain the complete braided tensor equivalence, and rely on key aspects of the discovery of quantum groups. In Sect. 11 we apply these theorems to complete to proof of part (d) of Theorem 3.1. In this case we work on the comparison between the two structures transported to the side of the quantum groups, AW(g, q), and we need knowledge on the generating property by the braid group between tensor powers of the fundamental representation, to apply our uniqueness theorem. C. PINZARI",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2502.06229v5/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outline of the construction of a weak quasi-tensor structure on the Zhu algebra A(Vgk) via Wenzl quantisation isomorphism and Drinfeld twist method.",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-009-5-outline-of-the-construction-of-a-weak-quasi-te.md",
+      "narrative": null,
+      "content": "Outline of the construction of a weak quasi-tensor structure on the\nZhu algebra A(Vgk) via Wenzl quantisation isomorphism and Drinfeld\ntwist method.\nLet (C, ⊗, ι, α) be a semisimple complex tensor category (possibly braided, rigid, ribbon)\nand let\nF : C →Vec\nbe a faithful linear functor. There are two natural ways to make the representation category\nRep(A) of A = Nat0(F) into a tensor category (or a category with the same type of\nstructure as C) equivalent to C with all the structure.\nThe first way is traditionally referred to as Tannaka-Krein duality. One needs a (weak,\nquasi-) tensor structu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2502.06229v5/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main tools to prove (a): How to make Rep(A(Vgk)) into a braided tensor category with Huang-Lepowsky structure.",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-010-6-main-tools-to-prove-a-how-to-make-repavgk-into.md",
+      "narrative": null,
+      "content": "tensor category with Huang-Lepowsky structure.\nA second way to construct a braided tensor category structure on Rep(A) from a braided\ntensor category C is useful when C has a natural faithful linear functor\nF : C →Vec\ngiven from the start and a braided tensor category structure (C, ⊗, ι, α, d) is constructed\nas a second step. Then in this case it may be more natural to first consider the discrete\n18\nC. PINZARI\nalgebra A = Nat0(F) and then transfer of all the structure of C to the representation\ncategory of A.\nWe discuss this transfer in Sect. 15 in [10] without the need of a weak quasi-tensor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2502.06229v5/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A central method in the quantum group and VOA setting: the fundamental generating representation V for all Lie types, following H.Wenzl.",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-011-7-a-central-method-in-the-quantum-group-and-voa.md",
+      "narrative": null,
+      "content": "fundamental generating representation V for all Lie types, following\nH.Wenzl.\nA central method of proof for parts (b), (c), and (d) is the use of the fundamental\ngenerating representation V and its properties, following primarily the work of Wenzl.\nThe paper [99] plays a main role especially for the proof of (b), (c). For part (d) we shall\nlater describe results and related works in the literature on which our proof is based.\nParts (b), (c) of Theorem 3.1 gives coincidence of the two braided tensor structures for\nall Lie types (two pairs of associativity morphisms together with their braiding",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2502.06229v5/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main tools to prove (b), (c): Analogies and differences between Drinfeld-Kohno Theorem and Theorem 29.4 in CGP",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-012-8-main-tools-to-prove-b-c-analogies-and-differen.md",
+      "narrative": null,
+      "content": "Drinfeld-Kohno Theorem and Theorem 29.4 in [10]\nWe next outline general ideas that make our strategy possible, useful to prove part (b),\n(c) of Theorem 3.1.\nAs already explained, the starting point of our work is the paper [99]. In that paper, a\nfundamental generating representation V is described for each simple Lie algebra g, and\nit is used for the construction of the unitary structure in the associated quantum group\nfusion category. In our approach we follow the work of Wenzl on the use of the generating\nrepresentation V .\n21\nSecondly, in our approach the notion of coboundary matrix first i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2502.06229v5/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Differences between the original Drinfeld-Kohno theorem and our analogue Theorem 29.4 in the treatment of the associativity morphisms, to prove (d).",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-013-9-differences-between-the-original-drinfeld-kohn.md",
+      "narrative": null,
+      "content": "analogue Theorem 29.4 in the treatment of the associativity\nmorphisms, to prove (d).\nDifferences regard mainly the treatment of the associativity morphisms, that in our\ncase as before explained resorts to determining the braiding morphisms via an analogue of\n22\nC. PINZARI\nDrinfeld square root construction of the coboundary matrix, and to braid group duality for\nV and to cohomology of a braided tensor structure of a generating representation. Thus\nin our case the method of proof for coincidence of the associativity morphisms depends on\nthe braid group action primarily and categorical cohomologi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2502.06229v5/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main tools to prove (d): cohomological reduction of a braided tensor structure of a category with a generating object V to braid group duality of V",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-014-10-main-tools-to-prove-d-cohomological-reduction.md",
+      "narrative": null,
+      "content": "Main tools to prove (d): cohomological reduction of a braided\ntensor structure of a category with a generating object V to braid\ngroup duality of V\nTheorem 8.13 and Theorem 8.19 show uniqueness of the associativity morphisms (and also\nbraiding morphisms in the latter case) under some assumptions. These assumptions all\naim to determine the associativity morphisms uniquely via data from the braiding, but\nlead to analysis of a different nature in the application.\nThe first assumption requires knowledge that in our application, via the methods pre-\nviously alluded to (i.e. Wenzl isomorphism given",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2502.06229v5/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The role of braid group duality for the generating object in determining the full braided tensor structure for the proof of (d).",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "../sections/sec-015-11-the-role-of-braid-group-duality-for-the-gener.md",
+      "narrative": null,
+      "content": "The role of braid group duality for the generating object in\ndetermining the full braided tensor structure for the proof of (d).\nThe uniqueness Theorems 8.13 and 8.19 both apply under a central duality property of\nthe fundamental representation V with respect to the braid group representation in the\nquantum group tensor category, which is at the core of quantum group representation\ntheory. The first instance of this property is Schur-Weyl duality for the general linear\ngroup. This duality says that the algebra of intertwining operators, from a tensor power\nof the vector representation V of the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2502.06229v5/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "More remarks from the viewpoint of Doplicher-Roberts reconstruction in AQFT on the relevance of duality for the fundamental representation in the construction of quantum gauge group",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-016-12-more-remarks-from-the-viewpoint-of-doplicher.md",
+      "narrative": null,
+      "content": "reconstruction in AQFT on the relevance of duality for the\nfundamental representation in the construction of quantum gauge\ngroup\nWe also remark that Schur-Weyl duality plays an important role in the abstract duality\ntheory for compact groups by Doplicher and Roberts. It is thanks to the fact that the usual\npermutation symmetry of the category of Hilbert spaces represents all the the intertwining\noperators between tensor powers of the defining representation of the unitary groups SU(d),\nthat their construction of the compact gauge group associated to the category of localized\nendomorphisms of t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2502.06229v5/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outlook",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "../sections/sec-017-13-outlook.md",
+      "narrative": null,
+      "content": "In Doplicher-Roberts theory, a unique gauge compact subgroup of SU(d) is in particular\nconstructed in the case of a rigid symmetric tensor C∗-category with simple unit and a\nsingle generating object, to describe the category when the generating property of the per-\nmutation group is not satisfied. Their theory has applications to the category of localized\nendomorphisms arising from the local observable algebras in high dimensional AQFT, and\nleads to the construction of the field algebra [20], [21].\nFor the class of the compact quantum groups of Woronowicz there is a construction of\ntheir quant",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2502.06229v5/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. Historical remarks on rigidity in affine Lie algebra and vertex operator algebra categories",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "../sections/sec-018-appendix-a-historical-remarks-on-rigidity-in-aff.md",
+      "narrative": null,
+      "content": "Appendix A. Historical remarks on rigidity in affine Lie algebra and\nvertex operator algebra categories\nThe original work by Finkelberg refers to the cited work in physics by Moore and Seiberg\nand in algebraic geometry by Beilinson, Feigin, and Mazur [4] for the rigid braided tensor\nstructure on ˜Oℓ. As I learned from discussions with Huang, rigidity was not proved in [4],\nand there was no proof of rigidity using this approach.\nRemarkably, Huang and Lepowsky introduced and developed a rigorous direct construc-\ntion of a modular (vertex) tensor category structure in a very general setting for v",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2502.06229v5/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 31,
+      "pageEnd": 35,
+      "target": "../sections/sec-019-references.md",
+      "narrative": null,
+      "content": "[1] B. Bakalov, A.A. Kirillov: Lectures on tensor categories and modular functors; Vol. 21. Providence,\nAMS, 2001.\n[2] T. Banica: Th´eorie des repr´esentations du groupe quantique compact libre O(n), C. R. Acad. Sci.\nParis S´er. I Math., 322 (1996), 241–244.\n[3] T. Banica, Le groupe quantique compact libre U(n), Commun. Math. Phys., 190 (1997), 143–172.\n[4] A. Beilinson, B. Feigin and B. Mazur, Introduction to algebraic field theory on curves, preprint\n(1991).\n[5] A. A. Belavin, A. N. Polyakov, and A. B. Zamolodchikov, Infinite conformal symmetries in two-\ndimensional quantum field theory, Nuc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

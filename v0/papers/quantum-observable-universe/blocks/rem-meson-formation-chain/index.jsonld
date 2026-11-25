@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-meson-formation-chain",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:meson-formation-chain",
+  "kind": "remark",
+  "title": "The meson formation chain",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-meson"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-categorical-meson",
+  "tags": [
+    "meson",
+    "pair-production",
+    "quark-antiquark",
+    "hopf-link",
+    "formation-chain",
+    "hecke-algebra"
+  ],
+  "text": "meson-formation-chain.md",
+  "provenance": "authored"
+}

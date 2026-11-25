@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2508.03145v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Θ -Categories and Tannakian duality",
+      "dcterms:creator": [
+        "Joost NUITEN, Bertrand TOEN"
+      ],
+      "dcterms:identifier": "https://arxiv.org/abs/2508.03145",
+      "dcterms:abstract": "We introduce a notion of Θ-categories, which is a refinement of the notion of symmetric monoidal ∞-categories. We use this notion to prove a Tannakian duality statement, relating Θ-categories with fpqc- stacks by means of a certain stack of fiber functors in the context of Θ-categories. This provides, over a base ring of arbitrary characteris- tic, a strong link between Tannakian Θ-categories and the schematic homotopy types of [Toe06].",
+      "dcterms:source": "library/arxiv-2508.03145v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2508.03145v1"
+    }
+  ]
+}

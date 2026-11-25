@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0706.3688v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-0706.3688v1",
+  "contains": [
+    "library/arxiv-0706.3688v1/sections/sec-front-matter",
+    "library/arxiv-0706.3688v1/sections/sec-000",
+    "library/arxiv-0706.3688v1/sections/sec-001",
+    "library/arxiv-0706.3688v1/sections/sec-002",
+    "library/arxiv-0706.3688v1/sections/sec-003",
+    "library/arxiv-0706.3688v1/sections/sec-004",
+    "library/arxiv-0706.3688v1/sections/sec-005",
+    "library/arxiv-0706.3688v1/sections/sec-006",
+    "library/arxiv-0706.3688v1/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "WHY THE STANDARD MODEL — The Standard Model is based on the gauge invariance principle with gauge group U(1) × SU(2) × SU(3) and suitable representations for fermions and bosons, which are begging\n\n**WHY THE STANDARD MODEL**\n\n*ALI H. CHAMSEDDINE AND ALAIN CONNES*\n\n13 pp, 9 sections.\n\n**Abstract.** The Standard Model is based on the gauge invariance principle with gauge group U(1) × SU(2) × SU(3) and suitable representations for fermions and bosons, which are begging for a conceptual understanding. We propose a purely gravitational explanation: space-time has a ﬁne structure given as a product of a four dimensional continuum by a ﬁnite noncommutative geometry F. The raison d’ˆetre for F is to correct the K-theoretic dimension from four to ten (modulo eight). We classify the irreducible ﬁnite noncommutative geometries of K-theoretic dimension six and show that the dimension (per generation) is a square of an integer k. Under an additional hypothesis of quaternion linearity, the geometry which reproduces the Standard Model is singled out (and one gets k = 4) with the correct quantum numbers for all ﬁelds.\n\n**Outline.** Front matter; 1 Introduction; 2 The order zero condition and irreducible pai; 2.1 The case Z(AC)=C; 2.2 The case Z(AC)=CC; 3 Z/2-grading; 4 The subalgebra and the order one condition; 5 Conclusion; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-0706.3688v1",
+    "title_source": "slug",
+    "source_file": "0706.3688.pdf",
+    "source_sha256": "f2a18b0defebff6613024fe7b454849667caf8065c8e0ef33b7c1d857b8e492f",
+    "pages": 13,
+    "arxiv": {
+      "id": "0706.3688",
+      "version": "1",
+      "primary_class": "hep-th",
+      "stamp_date": "25 Jun 2007"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

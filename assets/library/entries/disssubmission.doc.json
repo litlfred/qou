@@ -1,0 +1,4466 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "disssubmission",
+  "title": "Tannakian categories of perverse sheaves on abelian varieties",
+  "variant": "pdf",
+  "pages": 181,
+  "tocSource": "inferred",
+  "tocMethod": "contents",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 9,
+      "pageLabel": "1",
+      "confidence": 0.9,
+      "evidence": [
+        "contents",
+        "body",
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Some commonly used notations",
+      "number": null,
+      "page": 15,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "contents",
+        "body",
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-some-commonly-used-notations"
+    },
+    {
+      "level": 1,
+      "title": "Vanishing theorems on abelian varieties",
+      "number": "1",
+      "page": 17,
+      "pageLabel": "9",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-002-1-vanishing-theorems-on-abelian-varieties"
+    },
+    {
+      "level": 2,
+      "title": "The main result",
+      "number": "1.1",
+      "page": 17,
+      "pageLabel": "9",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-003-11-the-main-result"
+    },
+    {
+      "level": 2,
+      "title": "A relative generic vanishing theorem",
+      "number": "1.2",
+      "page": 19,
+      "pageLabel": "11",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-004-12-a-relative-generic-vanishing-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Kodaira-Nakano-type vanishing theorems",
+      "number": "1.3",
+      "page": 20,
+      "pageLabel": "12",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-005-13-kodaira-nakano-type-vanishing-theorems"
+    },
+    {
+      "level": 2,
+      "title": "Negligible perverse sheaves",
+      "number": "1.4",
+      "page": 23,
+      "pageLabel": "15",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-006-14-negligible-perverse-sheaves"
+    },
+    {
+      "level": 2,
+      "title": "The spectrum of a perverse sheaf",
+      "number": "1.5",
+      "page": 25,
+      "pageLabel": "17",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-007-15-the-spectrum-of-a-perverse-sheaf"
+    },
+    {
+      "level": 1,
+      "title": "Proof of the vanishing theorem(s)",
+      "number": "2",
+      "page": 31,
+      "pageLabel": "23",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-008-2-proof-of-the-vanishing-theorems"
+    },
+    {
+      "level": 2,
+      "title": "The setting",
+      "number": "2.1",
+      "page": 31,
+      "pageLabel": "23",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-009-21-the-setting"
+    },
+    {
+      "level": 2,
+      "title": "Character twists and convolution",
+      "number": "2.2",
+      "page": 34,
+      "pageLabel": "26",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-010-22-character-twists-and-convolution"
+    },
+    {
+      "level": 2,
+      "title": "An axiomatic framework",
+      "number": "2.3",
+      "page": 38,
+      "pageLabel": "30",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-011-23-an-axiomatic-framework"
+    },
+    {
+      "level": 2,
+      "title": "The Andr´e-Kahn quotient",
+      "number": "2.4",
+      "page": 40,
+      "pageLabel": "32",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-012-24-the-andre-kahn-quotient"
+    },
+    {
+      "level": 2,
+      "title": "Super Tannakian categories",
+      "number": "2.5",
+      "page": 43,
+      "pageLabel": "35",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-013-25-super-tannakian-categories"
+    },
+    {
+      "level": 2,
+      "title": "Perverse multiplier",
+      "number": "2.6",
+      "page": 44,
+      "pageLabel": "36",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-014-26-perverse-multiplier"
+    },
+    {
+      "level": 2,
+      "title": "The main argument",
+      "number": "2.7",
+      "page": 46,
+      "pageLabel": "38",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-015-27-the-main-argument"
+    },
+    {
+      "level": 1,
+      "title": "Perverse sheaves on semiabelian varieties",
+      "number": "3",
+      "page": 49,
+      "pageLabel": "41",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-016-3-perverse-sheaves-on-semiabelian-varieties"
+    },
+    {
+      "level": 2,
+      "title": "Vanishing theorems revisited",
+      "number": "3.1",
+      "page": 50,
+      "pageLabel": "42",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-017-31-vanishing-theorems-revisited"
+    },
+    {
+      "level": 2,
+      "title": "Some properties of convolution",
+      "number": "3.2",
+      "page": 54,
+      "pageLabel": "46",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-018-32-some-properties-of-convolution"
+    },
+    {
+      "level": 2,
+      "title": "The thick subcategory of negligible objects",
+      "number": "3.3",
+      "page": 55,
+      "pageLabel": "47",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-019-33-the-thick-subcategory-of-negligible-objects"
+    },
+    {
+      "level": 2,
+      "title": "Tannakian categories",
+      "number": "3.4",
+      "page": 59,
+      "pageLabel": "51",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-020-34-tannakian-categories"
+    },
+    {
+      "level": 2,
+      "title": "Nearby cycles",
+      "number": "3.5",
+      "page": 62,
+      "pageLabel": "54",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-021-35-nearby-cycles"
+    },
+    {
+      "level": 2,
+      "title": "Specialization of characters",
+      "number": "3.6",
+      "page": 66,
+      "pageLabel": "58",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-022-36-specialization-of-characters"
+    },
+    {
+      "level": 2,
+      "title": "Variation of Tannaka groups in families",
+      "number": "3.7",
+      "page": 69,
+      "pageLabel": "61",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-023-37-variation-of-tannaka-groups-in-families"
+    },
+    {
+      "level": 1,
+      "title": "The Tannaka group of the theta divisor",
+      "number": "4",
+      "page": 77,
+      "pageLabel": "69",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-024-4-the-tannaka-group-of-the-theta-divisor"
+    },
+    {
+      "level": 2,
+      "title": "Nondegenerate bilinear forms",
+      "number": "4.2",
+      "page": 81,
+      "pageLabel": "73",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-025-42-nondegenerate-bilinear-forms"
+    },
+    {
+      "level": 2,
+      "title": "Local monodromy",
+      "number": "4.3",
+      "page": 82,
+      "pageLabel": "74",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-026-43-local-monodromy"
+    },
+    {
+      "level": 2,
+      "title": "Degenerations of abelian varieties",
+      "number": "4.4",
+      "page": 87,
+      "pageLabel": "79",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-027-44-degenerations-of-abelian-varieties"
+    },
+    {
+      "level": 2,
+      "title": "Proof of the main theorem",
+      "number": "4.5",
+      "page": 93,
+      "pageLabel": "85",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-028-45-proof-of-the-main-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Singularities of type Ak",
+      "number": "4.6",
+      "page": 96,
+      "pageLabel": "88",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-029-46-singularities-of-type-ak"
+    },
+    {
+      "level": 1,
+      "title": "A family of surfaces with monodromy W(E6)",
+      "number": "5",
+      "page": 101,
+      "pageLabel": "93",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-030-5-a-family-of-surfaces-with-monodromy-we6"
+    },
+    {
+      "level": 2,
+      "title": "Intersections of theta divisors",
+      "number": "5.1",
+      "page": 103,
+      "pageLabel": "95",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-031-51-intersections-of-theta-divisors"
+    },
+    {
+      "level": 2,
+      "title": "Variations of Hodge structures",
+      "number": "5.2",
+      "page": 110,
+      "pageLabel": "102",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-032-52-variations-of-hodge-structures"
+    },
+    {
+      "level": 2,
+      "title": "Integral cohomology",
+      "number": "5.3",
+      "page": 114,
+      "pageLabel": "106",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-033-53-integral-cohomology"
+    },
+    {
+      "level": 2,
+      "title": "N´eron-Severi lattices",
+      "number": "5.4",
+      "page": 117,
+      "pageLabel": "109",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-034-54-neron-severi-lattices"
+    },
+    {
+      "level": 2,
+      "title": "The upper bound W(E6)",
+      "number": "5.5",
+      "page": 123,
+      "pageLabel": "115",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-035-55-the-upper-bound-we6"
+    },
+    {
+      "level": 2,
+      "title": "Negligible constituents",
+      "number": "5.6",
+      "page": 127,
+      "pageLabel": "119",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-036-56-negligible-constituents"
+    },
+    {
+      "level": 2,
+      "title": "Jacobian varieties",
+      "number": "5.7",
+      "page": 131,
+      "pageLabel": "123",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-037-57-jacobian-varieties"
+    },
+    {
+      "level": 2,
+      "title": "The difference morphism",
+      "number": "5.8",
+      "page": 135,
+      "pageLabel": "127",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-038-58-the-difference-morphism"
+    },
+    {
+      "level": 2,
+      "title": "A smooth global family",
+      "number": "5.9",
+      "page": 139,
+      "pageLabel": "131",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-039-59-a-smooth-global-family"
+    },
+    {
+      "level": 1,
+      "title": "The generic rank of Brill-Noether sheaves",
+      "number": "6",
+      "page": 143,
+      "pageLabel": "135",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-040-6-the-generic-rank-of-brill-noether-sheaves"
+    },
+    {
+      "level": 2,
+      "title": "Brill-Noether sheaves",
+      "number": "6.1",
+      "page": 143,
+      "pageLabel": "135",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "A formula for the generic rank",
+      "number": "6.2",
+      "page": 145,
+      "pageLabel": "137",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-041-62-a-formula-for-the-generic-rank"
+    },
+    {
+      "level": 2,
+      "title": "Computations in the symmetric product",
+      "number": "6.3",
+      "page": 147,
+      "pageLabel": "139",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-042-63-computations-in-the-symmetric-product"
+    },
+    {
+      "level": 2,
+      "title": "The ﬁbres of multiple Abel-Jacobi maps",
+      "number": "6.4",
+      "page": 150,
+      "pageLabel": "142",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-043-64-the-ﬁbres-of-multiple-abel-jacobi-maps"
+    },
+    {
+      "level": 2,
+      "title": "Betti polynomials",
+      "number": "6.5",
+      "page": 152,
+      "pageLabel": "144",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-044-65-betti-polynomials"
+    },
+    {
+      "level": 2,
+      "title": "Some numerical values",
+      "number": "6.6",
+      "page": 154,
+      "pageLabel": "146",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-045-66-some-numerical-values"
+    },
+    {
+      "level": 1,
+      "title": "Reductive super groups",
+      "number": "Appendix A",
+      "page": 159,
+      "pageLabel": "151",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-046-appendix-a-reductive-super-groups"
+    },
+    {
+      "level": 1,
+      "title": "Irreducible subgroups with bounded determinant",
+      "number": "Appendix B",
+      "page": 165,
+      "pageLabel": "157",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-047-appendix-b-irreducible-subgroups-with-bounded-de"
+    },
+    {
+      "level": 1,
+      "title": "An irreducible subgroup of W(E6)",
+      "number": "Appendix C",
+      "page": 171,
+      "pageLabel": "163",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-048-appendix-c-an-irreducible-subgroup-of-we6"
+    },
+    {
+      "level": 1,
+      "title": "Doubly transitive permutation groups",
+      "number": "Appendix D",
+      "page": 173,
+      "pageLabel": "165",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-049-appendix-d-doubly-transitive-permutation-groups"
+    },
+    {
+      "level": 1,
+      "title": "Bibliography",
+      "number": null,
+      "page": 177,
+      "pageLabel": "169",
+      "confidence": 0.9,
+      "evidence": [
+        "contents",
+        "body",
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-050-bibliography"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": "1",
+      "words": 918,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "perverse sheaves",
+          "heading": false
+        },
+        {
+          "term": "brill-noether sheaves",
+          "heading": false
+        },
+        {
+          "term": "mit einer",
+          "heading": false
+        },
+        {
+          "term": "tannakian categories",
+          "heading": false
+        },
+        {
+          "term": "generic vanishing",
+          "heading": false
+        },
+        {
+          "term": "abelian varieties",
+          "heading": false
+        },
+        {
+          "term": "tannaka groups",
+          "heading": false
+        },
+        {
+          "term": "jacobian varieties",
+          "heading": false
+        }
+      ],
+      "extract": "INAUGURAL-DISSERTATION zur Erlangung der Doktorw¨urde an der Naturwissenschaftlich-Mathematischen Gesamtfakult¨at der Ruprecht-Karls-Universit¨at Heidelberg TANNAKIAN CATEGORIES OF PERVERSE SHEAVES ON ABELIAN VARIETIES vorgelegt von Dipl.-Math. Thomas Kr¨amer aus Frankenberg (Eder) Tag der m¨undlichen Pr¨ufung: Betreuer: Prof. Dr. Rainer Weissauer Zusammenfassung. Die vorliegende Dissertation besch¨aftigt sich mit",
+      "extractCut": true,
+      "blocks": [
+        "library/disssubmission/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 15,
+      "labelStart": "1",
+      "labelEnd": "7",
+      "words": 2437,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "perverse sheaf",
+          "heading": false
+        },
+        {
+          "term": "perverse sheaves",
+          "heading": false
+        },
+        {
+          "term": "sheaf perv",
+          "heading": false
+        },
+        {
+          "term": "brill-noether sheaves",
+          "heading": false
+        },
+        {
+          "term": "semisimple perverse",
+          "heading": false
+        },
+        {
+          "term": "constructible sheaves",
+          "heading": false
+        },
+        {
+          "term": "perverse intersection",
+          "heading": false
+        },
+        {
+          "term": "cohomology sheaf",
+          "heading": false
+        }
+      ],
+      "extract": "The geometry of a smooth complex projective curve C with Jacobian variety Jac(C) is governed, after the choice of a base point on the curve, by the Abel-Jacobi morphism. In particular, the latter deﬁnes for each n ∈N a morphism Cn = C ×···×C −→Jac(C) whose ﬁbres correspond to linear series of divisors on the curve, and the loci where the ﬁbre dimension jumps are the subvarieties W r n ⊆Jac(C) of special divisors",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-some-commonly-used-notations",
+      "number": null,
+      "title": "Some commonly used notations",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 17,
+      "labelStart": "7",
+      "labelEnd": "9",
+      "words": 246,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cohomology sheaf",
+          "heading": false
+        },
+        {
+          "term": "hypercohomology group",
+          "heading": false
+        },
+        {
+          "term": "perv",
+          "heading": false
+        },
+        {
+          "term": "closed subvariety",
+          "heading": false
+        },
+        {
+          "term": "ith",
+          "heading": false
+        },
+        {
+          "term": "l-adic",
+          "heading": false
+        }
+      ],
+      "extract": "Db c (X,Λ) derived category of bounded constructible sheaf complexes on X as deﬁned in [10], in the analytic sense if Λ = C and in the l-adic sense if Λ is an extension of Ql Perv(X,Λ) the abelian subcategory of perverse sheaves in Db c (X,Λ) Hi(X,K) ith hypercohomology group of K ∈Db c (X,Λ) Hi c(X,K) ith compactly supported hypercohomology group of K H i(K) ith cohomology sheaf of K pHi(K) ith perverse cohomology",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-1-vanishing-theorems-on-abelian-varieties",
+      "number": "1",
+      "title": "Vanishing theorems on abelian varieties",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 63,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vanishing",
+          "heading": true
+        },
+        {
+          "term": "tannakian",
+          "heading": false
+        },
+        {
+          "term": "vanishing theorem",
+          "heading": false
+        }
+      ],
+      "extract": "As we mentioned in the introduction, our construction of Tannakian categories will be closely intertwined with a vanishing theorem for perverse sheaves on abelian varieties. In the ﬁrst two chapters of this dissertation which are based on joint work with R. Weissauer [68], we discuss various incarnations of this vanishing theorem and explain how it may be proved in an abstract Tannakian framework.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-11-the-main-result",
+      "number": "1.1",
+      "title": "The main result",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 19,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 728,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "perverse sheaf",
+          "heading": false
+        },
+        {
+          "term": "constructible sheaf",
+          "heading": false
+        },
+        {
+          "term": "perverse sheaves",
+          "heading": false
+        },
+        {
+          "term": "abelian subvarieties",
+          "heading": false
+        },
+        {
+          "term": "sheaf complex",
+          "heading": false
+        },
+        {
+          "term": "abelian varieties",
+          "heading": false
+        },
+        {
+          "term": "vanishing theorem",
+          "heading": false
+        },
+        {
+          "term": "characters",
+          "heading": false
+        }
+      ],
+      "extract": "Let X be a complex abelian variety. For characters χ : π1(X,0) −→C∗ of the fundamental group we denote by Lχ the corresponding local system of complex vector spaces on X of rank one, and for a bounded constructible sheaf complex K ∈Db c (X,C) we consider the twist Kχ = K ⊗C Lχ. With these notations, our vanishing theorem can be formulated as THEOREM 1.1. Let P ∈Perv(X,C) be a perverse sheaf. Then for most characters",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-12-a-relative-generic-vanishing-theorem",
+      "number": "1.2",
+      "title": "A relative generic vanishing theorem",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 737,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "generic vanishing",
+          "heading": true
+        },
+        {
+          "term": "vanishing theorem",
+          "heading": true
+        },
+        {
+          "term": "dim supp",
+          "heading": false
+        },
+        {
+          "term": "relative generic",
+          "heading": true
+        },
+        {
+          "term": "perverse sheaf",
+          "heading": false
+        },
+        {
+          "term": "abelian varieties",
+          "heading": false
+        },
+        {
+          "term": "cohomology sheaves",
+          "heading": false
+        },
+        {
+          "term": "semi-perverse",
+          "heading": false
+        }
+      ],
+      "extract": "11 how to recover a stronger version of the Green-Lazarsfeld theorem as a special case of our result. In the remaining sections of this chapter we then discuss perverse sheaves with Euler characteristic zero and, as a ﬁrst application, deduce from the obtained classiﬁcation the statement about the spectrum of a perverse sheaf mentioned above. 1.2. A relative generic vanishing theorem Let A ⊆X be an abelian",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-13-kodaira-nakano-type-vanishing-theorems",
+      "number": "1.3",
+      "title": "Kodaira-Nakano-type vanishing theorems",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 23,
+      "labelStart": "12",
+      "labelEnd": "15",
+      "words": 931,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vanishing theorems",
+          "heading": true
+        },
+        {
+          "term": "bundle pic",
+          "heading": false
+        },
+        {
+          "term": "hodge module",
+          "heading": false
+        },
+        {
+          "term": "real hodge",
+          "heading": false
+        },
+        {
+          "term": "unitary characters",
+          "heading": false
+        },
+        {
+          "term": "kodaira-nakano-type",
+          "heading": true
+        },
+        {
+          "term": "line bundle",
+          "heading": false
+        },
+        {
+          "term": "constructible sheaves",
+          "heading": false
+        }
+      ],
+      "extract": "From theorem 1.1 one easily recovers stronger versions of the generic vanishing theorems of Green and Lazarsfeld as follows. Let Y be a compact connected K¨ahler manifold of dimension d whose Albanese variety Alb(Y) is algebraic, and denote by f : Y −→X = Alb(Y) the Albanese morphism. To pass from coherent to constructible sheaves, recall that every line bundle L ∈Pic0(X) admits a ﬂat connection; the horizontal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-14-negligible-perverse-sheaves",
+      "number": "1.4",
+      "title": "Negligible perverse sheaves",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 25,
+      "labelStart": "15",
+      "labelEnd": "17",
+      "words": 903,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "perverse",
+          "heading": true
+        },
+        {
+          "term": "direct summand",
+          "heading": false
+        },
+        {
+          "term": "euler characteristic",
+          "heading": false
+        },
+        {
+          "term": "perverse sheaf",
+          "heading": false
+        },
+        {
+          "term": "abelian varieties",
+          "heading": false
+        },
+        {
+          "term": "simple abelian",
+          "heading": false
+        },
+        {
+          "term": "hodge",
+          "heading": false
+        },
+        {
+          "term": "base change",
+          "heading": false
+        }
+      ],
+      "extract": "15 One easily checks that Supp(Mn) ⊆Xn, so Mn[−n] is a direct summand of Rf∗C ¯Yn[d] by base change. To control the Hodge structure on twists of the cohomology of this direct image, let π : ˜Y →Y be a composition of blow-ups in smooth centers that gives rise to an embedded resolution of singularities ˜Yn = π−1(Y n) →Y n, see [56] or [11, th. 10.7]. Then CY[d] occurs as a direct summand of the complex Rπ∗C ˜Y[d] by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-15-the-spectrum-of-a-perverse-sheaf",
+      "number": "1.5",
+      "title": "The spectrum of a perverse sheaf",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 31,
+      "labelStart": "17",
+      "labelEnd": "23",
+      "words": 1940,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "perverse sheaf",
+          "heading": true
+        },
+        {
+          "term": "sheaf perv",
+          "heading": false
+        },
+        {
+          "term": "semisimple perverse",
+          "heading": false
+        },
+        {
+          "term": "perverse sheaves",
+          "heading": false
+        },
+        {
+          "term": "sheaf complexes",
+          "heading": false
+        },
+        {
+          "term": "abelian subvariety",
+          "heading": false
+        },
+        {
+          "term": "torsion character",
+          "heading": false
+        },
+        {
+          "term": "origin iff",
+          "heading": false
+        }
+      ],
+      "extract": "17 LEMMA 1.8. With notations as above, dZ ≥0 for all Z. One has dZ = 1 iff Z is reduced to a single point. If X is simple, then dZ = 0 iff Z = X. Proof. Put g = dim(X). The cotangent bundle T ∗X = X ×Cg is trivial, and projecting from ΛZ ⊆T ∗X onto the second factor Cg induces the Gauß mapping p : ΛZ →Cg. By [37, prop. 2.2] the intersection number dZ is the generic degree of p. In particular dZ ≥0 for all Z. If dZ =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-2-proof-of-the-vanishing-theorems",
+      "number": "2",
+      "title": "Proof of the vanishing theorem(s)",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 31,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 109,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "perverse sheaves",
+          "heading": false
+        },
+        {
+          "term": "varietes",
+          "heading": false
+        },
+        {
+          "term": "weissauer",
+          "heading": false
+        }
+      ],
+      "extract": "In this chapter we give an abstract Tannakian proof of theorem 1.1 based on joint work with R. Weissauer [68]. As a geometric input we only require the classiﬁcation of perverse sheaves with Euler characteristic zero from section 1.4. For this classiﬁcation we have used the theory of D-modules, and at present we do not know whether it also holds over a ground ﬁeld of positive characteristic. However, since this is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-21-the-setting",
+      "number": "2.1",
+      "title": "The setting",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 34,
+      "labelStart": "23",
+      "labelEnd": "26",
+      "words": 1182,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "perverse sheaf",
+          "heading": false
+        },
+        {
+          "term": "λ-linear abelian",
+          "heading": false
+        },
+        {
+          "term": "perverse sheaves",
+          "heading": false
+        },
+        {
+          "term": "semisimple perverse",
+          "heading": false
+        },
+        {
+          "term": "rigid symmetric",
+          "heading": false
+        },
+        {
+          "term": "skyscraper sheaf",
+          "heading": false
+        },
+        {
+          "term": "monoidal category",
+          "heading": false
+        },
+        {
+          "term": "functor acu",
+          "heading": false
+        }
+      ],
+      "extract": "Let X be an abelian variety over an algebraically closed ﬁeld k which has characteristic zero or is the algebraic closure of a ﬁnite ﬁeld. As in [10] we consider the derived category Db c (X,Λ) of complexes of Λ-sheaves with bounded constructible cohomology sheaves, where Λ is either a subﬁeld of Ql for some ﬁxed prime number l̸ = char(k) or a subﬁeld of C if we are working over the base ﬁeld k = C. We denote by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-22-character-twists-and-convolution",
+      "number": "2.2",
+      "title": "Character twists and convolution",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 38,
+      "labelStart": "26",
+      "labelEnd": "30",
+      "words": 1376,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "character twists",
+          "heading": true
+        },
+        {
+          "term": "functor acu",
+          "heading": false
+        },
+        {
+          "term": "tensor functor",
+          "heading": false
+        },
+        {
+          "term": "tensor functoriality",
+          "heading": false
+        },
+        {
+          "term": "convolution",
+          "heading": true
+        },
+        {
+          "term": "deﬁnes tensor",
+          "heading": false
+        },
+        {
+          "term": "monoidal category",
+          "heading": false
+        },
+        {
+          "term": "symmetry constraint",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we show that twisting by a character χ deﬁnes a tensor functor ACU in the sense of [86, chapt. I, sect. 4.2.4] on the symmetric monoidal category Db c (X,Λ) with respect to convolution. Recall that this means that we have natural isomorphisms (K ∗L)χ ∼= Kχ ∗Lχ for all K,L in Db c (X,Λ), compatible with the associativity, commutativity and unity constraints. This observation will be crucial for lemma",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-23-an-axiomatic-framework",
+      "number": "2.3",
+      "title": "An axiomatic framework",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 40,
+      "labelStart": "30",
+      "labelEnd": "32",
+      "words": 785,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "perverse truncations",
+          "heading": false
+        },
+        {
+          "term": "rat",
+          "heading": false
+        },
+        {
+          "term": "axiomatic",
+          "heading": true
+        },
+        {
+          "term": "full subcategory",
+          "heading": false
+        },
+        {
+          "term": "degree shifts",
+          "heading": false
+        },
+        {
+          "term": "mhm",
+          "heading": false
+        },
+        {
+          "term": "following axioms",
+          "heading": false
+        },
+        {
+          "term": "tate twist",
+          "heading": false
+        }
+      ],
+      "extract": "Since the Tannakian constructions to be given below are of independent interest also in more general situations than in the proof of theorem 1.1, for the rest of this chapter we work in the following axiomatic setting. Consider a Λ-linear rigid symmetric monoidal category (D,∗) whose unit object 1 satisﬁes EndD(1) ∼= Λ, and let rat : (D,∗) −→(Db c (X,Λ),∗) be a faithful Λ-linear tensor functor ACU. The notation rat",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-24-the-andre-kahn-quotient",
+      "number": "2.4",
+      "title": "The Andr´e-Kahn quotient",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 43,
+      "labelStart": "32",
+      "labelEnd": "35",
+      "words": 1050,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "andr e-kahn",
+          "heading": true
+        },
+        {
+          "term": "e-kahn radical",
+          "heading": false
+        },
+        {
+          "term": "λ-linear rigid",
+          "heading": false
+        },
+        {
+          "term": "f-linear rigid",
+          "heading": false
+        },
+        {
+          "term": "endp",
+          "heading": false
+        },
+        {
+          "term": "homd",
+          "heading": false
+        },
+        {
+          "term": "semisimple abelian",
+          "heading": false
+        },
+        {
+          "term": "monoidal category",
+          "heading": false
+        }
+      ],
+      "extract": "For the Tannakian arguments to be given below, we want to work with rigid symmetric monoidal categories which are at the same time semisimple abelian categories. To obtain such a category D that is as close as possible to the triangulated category D, we will apply a general quotient construction introduced by Andr´e and Kahn in [1]. In what follows we always assume that axioms (D1) – (D4) from the previous section,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-25-super-tannakian-categories",
+      "number": "2.5",
+      "title": "Super Tannakian categories",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 44,
+      "labelStart": "35",
+      "labelEnd": "36",
+      "words": 637,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "super tannakian",
+          "heading": true
+        },
+        {
+          "term": "tannakian categories",
+          "heading": true
+        },
+        {
+          "term": "tannaka super",
+          "heading": false
+        },
+        {
+          "term": "super group",
+          "heading": false
+        },
+        {
+          "term": "super representations",
+          "heading": false
+        },
+        {
+          "term": "cat egorie",
+          "heading": false
+        },
+        {
+          "term": "full subcategory",
+          "heading": false
+        },
+        {
+          "term": "endp",
+          "heading": false
+        }
+      ],
+      "extract": "35 hence EndP(P) is a skew ﬁeld or zero, and P is simple or zero in P. Over an algebraically closed ﬁeld Λ there exist no skew ﬁelds other than Λ itself, hence in this case we have EndP(P) = Λ, and it follows that idP ∈ND(P,P) iff tr(idP) = 0, which is the case iff χ(P) = 0. □ COROLLARY 2.9. Let N ⊆D be the full subcategory of all objects which become isomorphic to zero in the quotient category D. If Λ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-26-perverse-multiplier",
+      "number": "2.6",
+      "title": "Perverse multiplier",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 46,
+      "labelStart": "36",
+      "labelEnd": "38",
+      "words": 640,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lefschetz axiom",
+          "heading": false
+        },
+        {
+          "term": "n-multiplier",
+          "heading": false
+        },
+        {
+          "term": "twisting axiom",
+          "heading": false
+        },
+        {
+          "term": "stability axiom",
+          "heading": false
+        },
+        {
+          "term": "perverse",
+          "heading": true
+        },
+        {
+          "term": "multiplier",
+          "heading": true
+        },
+        {
+          "term": "direct summand",
+          "heading": false
+        },
+        {
+          "term": "hard lefschetz",
+          "heading": false
+        }
+      ],
+      "extract": "We now introduce the notion of a multiplier. This will play an important role in our proof of theorem 1.1, indeed the theorem essentially amounts to the statement that any perverse sheaf on a complex abelian variety is a multiplier. In this section Λ need not be algebraically closed, but we assume as always that axioms (D1) – (D4) from section 2.3 hold. Let N be a full subcategory of D satisfying the stability axiom",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-27-the-main-argument",
+      "number": "2.7",
+      "title": "The main argument",
+      "level": 2,
+      "pageStart": 46,
+      "pageEnd": 49,
+      "labelStart": "38",
+      "labelEnd": "41",
+      "words": 633,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reductive super",
+          "heading": false
+        },
+        {
+          "term": "twisting axiom",
+          "heading": false
+        },
+        {
+          "term": "stability axiom",
+          "heading": false
+        },
+        {
+          "term": "euler axiom",
+          "heading": false
+        },
+        {
+          "term": "super group",
+          "heading": false
+        },
+        {
+          "term": "monoidal subcategory",
+          "heading": false
+        },
+        {
+          "term": "perverse sheaves",
+          "heading": false
+        },
+        {
+          "term": "full subcategory",
+          "heading": false
+        }
+      ],
+      "extract": "To ﬁnish the proof of theorem 1.1 we will control the non-perversity of convolution products such as in lemma 2.12 via central characters of the Tannaka super group introduced in theorem 2.10. By d´evissage we can restrict ourselves to semisimple perverse sheaves as in example 2.3. So suppose that Λ = C or Λ = Ql and that D satisﬁes all axioms (D1) – (D5) of section 2.3. Consider the semisimple abelian rigid",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-3-perverse-sheaves-on-semiabelian-varieties",
+      "number": "3",
+      "title": "Perverse sheaves on semiabelian varieties",
+      "level": 1,
+      "pageStart": 49,
+      "pageEnd": 50,
+      "labelStart": "41",
+      "labelEnd": "42",
+      "words": 707,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "semiabelian varieties",
+          "heading": true
+        },
+        {
+          "term": "perverse sheaves",
+          "heading": true
+        },
+        {
+          "term": "abelian varieties",
+          "heading": false
+        },
+        {
+          "term": "tannaka groups",
+          "heading": false
+        },
+        {
+          "term": "neutral tannakian",
+          "heading": false
+        },
+        {
+          "term": "abelian subcategory",
+          "heading": false
+        },
+        {
+          "term": "abelian variety",
+          "heading": false
+        },
+        {
+          "term": "vanishing theorem",
+          "heading": false
+        }
+      ],
+      "extract": "The Tannaka groups in corollary 2.14 provide a new tool for the study of smooth projective varieties with non-trivial Albanese morphism. Their representation theory can be considered as a substitute for Brill-Noether theory in higher dimensions, and they are also closely related to the moduli of abelian varieties as we will discuss in chapter 4. However, in general these Tannaka groups are hard to compute. At",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-31-vanishing-theorems-revisited",
+      "number": "3.1",
+      "title": "Vanishing theorems revisited",
+      "level": 2,
+      "pageStart": 50,
+      "pageEnd": 54,
+      "labelStart": "42",
+      "labelEnd": "46",
+      "words": 1534,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vanishing theorems",
+          "heading": true
+        },
+        {
+          "term": "semiabelian variety",
+          "heading": false
+        },
+        {
+          "term": "forget support",
+          "heading": false
+        },
+        {
+          "term": "semiabelian varieties",
+          "heading": false
+        },
+        {
+          "term": "perverse sheaf",
+          "heading": false
+        },
+        {
+          "term": "theorems revisited",
+          "heading": true
+        },
+        {
+          "term": "trivial torsor",
+          "heading": false
+        },
+        {
+          "term": "perverse sheaves",
+          "heading": false
+        }
+      ],
+      "extract": "To formulate the generic vanishing axiom that generalizes theorem 1.1 to the non-proper case over a ﬁeld k of arbitrary characteristic, we consider characters of the tame fundamental group. As a base point we will always take the neutral element 0 ∈X(k). Recall from [97, sect. 1.3] that every semiabelian variety X has a smooth compactiﬁcation with a normal crossing boundary divisor. The tame fundamental group π t",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-32-some-properties-of-convolution",
+      "number": "3.2",
+      "title": "Some properties of convolution",
+      "level": 2,
+      "pageStart": 54,
+      "pageEnd": 55,
+      "labelStart": "46",
+      "labelEnd": "47",
+      "words": 102,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "convolution",
+          "heading": true
+        },
+        {
+          "term": "skyscraper",
+          "heading": false
+        },
+        {
+          "term": "verdier",
+          "heading": false
+        }
+      ],
+      "extract": "Before proceeding further, it will be convenient to collect some basic properties of convolution for later reference. As in [106, sect. 2.1] one sees that the derived category D = D(X) is a symmetric monoidal category with respect to the convolution product ∗! and also with respect to ∗∗. In both cases the unit object 1 is the rank one skyscraper sheaf supported in the neutral element of the group variety X. For K",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-33-the-thick-subcategory-of-negligible-objects",
+      "number": "3.3",
+      "title": "The thick subcategory of negligible objects",
+      "level": 2,
+      "pageStart": 55,
+      "pageEnd": 59,
+      "labelStart": "47",
+      "labelEnd": "51",
+      "words": 1413,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "thick subcategory",
+          "heading": true
+        },
+        {
+          "term": "serre subcategory",
+          "heading": false
+        },
+        {
+          "term": "negligible objects",
+          "heading": true
+        },
+        {
+          "term": "perverse sheaves",
+          "heading": false
+        },
+        {
+          "term": "full subcategory",
+          "heading": false
+        },
+        {
+          "term": "supported hypercohomology",
+          "heading": false
+        },
+        {
+          "term": "chapter perverse",
+          "heading": false
+        },
+        {
+          "term": "triangulated category",
+          "heading": false
+        }
+      ],
+      "extract": "47 LEMMA 3.4. For all K,M ∈D and χ ∈Π(X) one has the following natural isomorphisms. (a) Adjoint duality: HomD(1,K∨∗∗M) ∼= HomD(K,M) ∼= HomD(K ∗! M∨,1). (b) Character twists: (Kχ)∨∼= (K∨)χ, (K ∗! M)χ ∼= Kχ ∗! Mχ and (K ∗∗M)χ ∼= Kχ ∗∗Mχ. (c) Verdier duality: D(K ∗! M) ∼= D(K)∗∗D(M), D(K ∗∗M) ∼= D(K)∗! D(M). (d) K¨unneth formulae: H• c (X,K)⊗Λ H• c (X,M) ∼ −→ H• c (X,K ∗! M), H•(X,K ∗∗M) ∼ −→ H•(X,K)⊗Λ H•(X,M). Proof.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-34-tannakian-categories",
+      "number": "3.4",
+      "title": "Tannakian categories",
+      "level": 2,
+      "pageStart": 59,
+      "pageEnd": 62,
+      "labelStart": "51",
+      "labelEnd": "54",
+      "words": 1324,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tannakian categories",
+          "heading": true
+        },
+        {
+          "term": "pint",
+          "heading": false
+        },
+        {
+          "term": "monoidal λ-linear",
+          "heading": false
+        },
+        {
+          "term": "perverse sheaf",
+          "heading": false
+        },
+        {
+          "term": "coev int",
+          "heading": false
+        },
+        {
+          "term": "perverse sheaves",
+          "heading": false
+        },
+        {
+          "term": "λ-linear abelian",
+          "heading": false
+        },
+        {
+          "term": "chapter perverse",
+          "heading": false
+        }
+      ],
+      "extract": "51 the diagram is commutative because by adjunction there exists only one morphism j!(K)⊠j!(L) −→R(j, j)∗(K ⊠L) which restricts over U to the identity. By the same argument, the diagram Rj∗(K)⊠Rj∗(L) ad∗ / R(j, j)∗(K ⊠L) D(j!(D(K))⊠j!(D(L))) D(ad!) / D((j, j)!(D(K)⊠D(L))) commutes. Since the lower row is an isomorphism (being the Verdier dual of an isomorphism), it follows that ad∗is an isomorphism as well, and this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-35-nearby-cycles",
+      "number": "3.5",
+      "title": "Nearby cycles",
+      "level": 2,
+      "pageStart": 62,
+      "pageEnd": 66,
+      "labelStart": "54",
+      "labelEnd": "58",
+      "words": 1435,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nearby cycles",
+          "heading": true
+        },
+        {
+          "term": "semiabelian varieties",
+          "heading": false
+        },
+        {
+          "term": "cycles functor",
+          "heading": false
+        },
+        {
+          "term": "perverse sheaf",
+          "heading": false
+        },
+        {
+          "term": "perverse sheaves",
+          "heading": false
+        },
+        {
+          "term": "admissible objects",
+          "heading": false
+        },
+        {
+          "term": "chapter perverse",
+          "heading": false
+        },
+        {
+          "term": "tensor functor",
+          "heading": false
+        }
+      ],
+      "extract": "To describe the behaviour of the above Tannaka groups with respect to degenerations, we work over the spectrum S of a strictly Henselian discrete valuation ring with closed point s and generic point η. We assume that the prime l is invertible on S. Fix a geometric point η over η, and denote by S the normalization of S in the residue ﬁeld of η. Let X →S be a semiabelian scheme, i.e. a smooth commutative group scheme",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-36-specialization-of-characters",
+      "number": "3.6",
+      "title": "Specialization of characters",
+      "level": 2,
+      "pageStart": 66,
+      "pageEnd": 69,
+      "labelStart": "58",
+      "labelEnd": "61",
+      "words": 883,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "etale cover",
+          "heading": false
+        },
+        {
+          "term": "semiabelian scheme",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite etale",
+          "heading": false
+        },
+        {
+          "term": "generic ﬁbre",
+          "heading": false
+        },
+        {
+          "term": "special ﬁbre",
+          "heading": false
+        },
+        {
+          "term": "eron model",
+          "heading": false
+        },
+        {
+          "term": "characters",
+          "heading": true
+        },
+        {
+          "term": "base change",
+          "heading": false
+        }
+      ],
+      "extract": "Let X −→S be a semiabelian scheme as above. Since we assumed the prime number l to be invertible on S, we know from [17] that the (tame) pro-l fundamental groups π1(Xη,0)l = π t 1(Xη,0)l and π1(Xs,0)l = π t 1(Xs,0)l are free Zl-modules of ﬁnite rank. However, the basic example of abelian varieties with semiabelian reduction illustrates that in general π1(Xs,0)l will have strictly smaller rank than π1(Xη,0). To",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-37-variation-of-tannaka-groups-in-families",
+      "number": "3.7",
+      "title": "Variation of Tannaka groups in families",
+      "level": 2,
+      "pageStart": 69,
+      "pageEnd": 77,
+      "labelStart": "61",
+      "labelEnd": "69",
+      "words": 2526,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tannaka groups",
+          "heading": true
+        },
+        {
+          "term": "perverse sheaf",
+          "heading": false
+        },
+        {
+          "term": "constructible stratiﬁcation",
+          "heading": false
+        },
+        {
+          "term": "perverse sheaves",
+          "heading": false
+        },
+        {
+          "term": "constructible subsheaf",
+          "heading": false
+        },
+        {
+          "term": "zariski-open dense",
+          "heading": false
+        },
+        {
+          "term": "chapter perverse",
+          "heading": false
+        },
+        {
+          "term": "semiabelian varieties",
+          "heading": false
+        }
+      ],
+      "extract": "61 are an epi- resp. an isomorphism. The ﬁnal statement then follows from the observation that these homomorphisms come from morphisms between the underlying schemes and that the intersection of any two Zariski-open dense subsets of the irreducible scheme Π(X)l ∼= Π(Xη)l is non-empty. □ 3.7. Variation of Tannaka groups in families In this section we turn the local result from theorem 3.15 into a more global",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-4-the-tannaka-group-of-the-theta-divisor",
+      "number": "4",
+      "title": "The Tannaka group of the theta divisor",
+      "level": 1,
+      "pageStart": 77,
+      "pageEnd": 81,
+      "labelStart": "69",
+      "labelEnd": "73",
+      "words": 1715,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theta divisor",
+          "heading": true
+        },
+        {
+          "term": "tannaka group",
+          "heading": true
+        },
+        {
+          "term": "complex ppav",
+          "heading": false
+        },
+        {
+          "term": "general ppav",
+          "heading": false
+        },
+        {
+          "term": "every ppav",
+          "heading": false
+        },
+        {
+          "term": "jacobian locus",
+          "heading": false
+        },
+        {
+          "term": "jacobian varieties",
+          "heading": false
+        },
+        {
+          "term": "jacobian variety",
+          "heading": false
+        }
+      ],
+      "extract": "The geometric relevance of the constructions in the previous chapters is illustrated by the following example. Let X be a principally polarized abelian variety (ppav) of dimension g over the complex numbers. The given polarization determines an ample theta divisor Θ ⊂X up to a translation by a point in X(C). For us it will be most convenient to choose a translation such that the theta divisor is symmetric, i.e.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-42-nondegenerate-bilinear-forms",
+      "number": "4.2",
+      "title": "Nondegenerate bilinear forms",
+      "level": 2,
+      "pageStart": 81,
+      "pageEnd": 82,
+      "labelStart": "73",
+      "labelEnd": "74",
+      "words": 541,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theta divisor",
+          "heading": false
+        },
+        {
+          "term": "icθ",
+          "heading": false
+        },
+        {
+          "term": "tannaka group",
+          "heading": false
+        },
+        {
+          "term": "stalk cohomology",
+          "heading": false
+        },
+        {
+          "term": "alternating square",
+          "heading": false
+        },
+        {
+          "term": "ppav",
+          "heading": false
+        },
+        {
+          "term": "orthogonal group",
+          "heading": false
+        },
+        {
+          "term": "symmetric square",
+          "heading": false
+        }
+      ],
+      "extract": "73 4.2. Nondegenerate bilinear forms In the introduction to this chapter we have remarked that conjecture 4.1 essentially says that for a smooth theta divisor the associated Tannaka group is as large as possible. To justify this interpretation, let X be a complex ppav of dimension g ≥2 and Θ ⊂X a symmetric theta divisor. For simplicity we assume that the ppav X is indecomposable, in which case Θ is irreducible and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-43-local-monodromy",
+      "number": "4.3",
+      "title": "Local monodromy",
+      "level": 2,
+      "pageStart": 82,
+      "pageEnd": 87,
+      "labelStart": "74",
+      "labelEnd": "79",
+      "words": 1615,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "local monodromy",
+          "heading": true
+        },
+        {
+          "term": "perverse sheaf",
+          "heading": false
+        },
+        {
+          "term": "perverse sheaves",
+          "heading": false
+        },
+        {
+          "term": "nearby cycles",
+          "heading": false
+        },
+        {
+          "term": "perverse t-structure",
+          "heading": false
+        },
+        {
+          "term": "δyη",
+          "heading": false
+        },
+        {
+          "term": "henselian base",
+          "heading": false
+        },
+        {
+          "term": "monodromy ﬁltration",
+          "heading": false
+        }
+      ],
+      "extract": "To ﬁnd sufﬁciently large lower bounds on the Tannaka group of the theta divisor on a general ppav, we will study degenerations of ppav’s in terms of the nearby cycles functor. For this purpose we gather in the present section some general facts about the monodromy ﬁltration that allow to get hold on the nearby cycles in concrete geometric situations. Throughout we work in the following algebraic setting. Let S be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-44-degenerations-of-abelian-varieties",
+      "number": "4.4",
+      "title": "Degenerations of abelian varieties",
+      "level": 2,
+      "pageStart": 87,
+      "pageEnd": 93,
+      "labelStart": "79",
+      "labelEnd": "85",
+      "words": 2302,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "perverse sheaf",
+          "heading": false
+        },
+        {
+          "term": "theta divisor",
+          "heading": false
+        },
+        {
+          "term": "perverse sheaves",
+          "heading": false
+        },
+        {
+          "term": "abelian varieties",
+          "heading": true
+        },
+        {
+          "term": "complex ppav",
+          "heading": false
+        },
+        {
+          "term": "perverse intersection",
+          "heading": false
+        },
+        {
+          "term": "smooth quasi-projective",
+          "heading": false
+        },
+        {
+          "term": "ppav whose",
+          "heading": false
+        }
+      ],
+      "extract": "79 where Yη and Ys denote the generic resp. special ﬁbres of ˜f. Note that Ys can be naturally identiﬁed with the ﬁbre f −1(s) ⊂Y. In the case of the perverse intersection cohomology sheaf the passage between the global and the local picture is provided by the following observation, where we now denote by i : Ys = f −1(s) ,→Y the global embedding. COROLLARY 4.10. In the above situation, sp(δYη) = i∗(δY[−1]). Proof.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-45-proof-of-the-main-theorem",
+      "number": "4.5",
+      "title": "Proof of the main theorem",
+      "level": 2,
+      "pageStart": 93,
+      "pageEnd": 96,
+      "labelStart": "85",
+      "labelEnd": "88",
+      "words": 1541,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tannaka group",
+          "heading": false
+        },
+        {
+          "term": "sheaf δθs",
+          "heading": false
+        },
+        {
+          "term": "general ppav",
+          "heading": false
+        },
+        {
+          "term": "theta divisor",
+          "heading": false
+        },
+        {
+          "term": "perverse sheaf",
+          "heading": false
+        },
+        {
+          "term": "dimension dim",
+          "heading": false
+        },
+        {
+          "term": "connected subgroup",
+          "heading": false
+        },
+        {
+          "term": "irreducible representation",
+          "heading": false
+        }
+      ],
+      "extract": "85 of a smooth non-hyperelliptic curve. As in lemma 4.11 the singular loci of the relative theta divisor ΘS and of the ﬁbre Θs satisfy Sing(ΘS) ⊆Sing(Θs), so it follows from corollary 4.10 that the specialization sp(δΘη) admits the simple perverse sheaf δΘs as a subquotient. Then the same holds for the nearby cycles Ψ(δΘη) as well, and this proves our claim since by the result for Jacobian varieties in [106], the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-46-singularities-of-type-ak",
+      "number": "4.6",
+      "title": "Singularities of type Ak",
+      "level": 2,
+      "pageStart": 96,
+      "pageEnd": 101,
+      "labelStart": "88",
+      "labelEnd": "93",
+      "words": 940,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "singular quadric",
+          "heading": false
+        },
+        {
+          "term": "smooth quadric",
+          "heading": false
+        },
+        {
+          "term": "blowup",
+          "heading": false
+        },
+        {
+          "term": "analytic hypersurface",
+          "heading": false
+        },
+        {
+          "term": "exceptional divisor",
+          "heading": false
+        },
+        {
+          "term": "singular point",
+          "heading": false
+        },
+        {
+          "term": "type",
+          "heading": true
+        },
+        {
+          "term": "ordinary double",
+          "heading": false
+        }
+      ],
+      "extract": "For completeness we include in this section some remarks about double points that have been used in the proof of part (2) of proposition 4.12. In that proof we have only dealt with ordinary double points, but since this is hardly more work, in what follows we place ourselves in a slightly more general setting. Let Y ⊂Cn+1 be a complex analytic hypersurface. For k ≥1, we 4.6. Singularities of type Ak 89 say that a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-5-a-family-of-surfaces-with-monodromy-we6",
+      "number": "5",
+      "title": "A family of surfaces with monodromy W(E6)",
+      "level": 1,
+      "pageStart": 101,
+      "pageEnd": 103,
+      "labelStart": "93",
+      "labelEnd": "95",
+      "words": 875,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monodromy",
+          "heading": true
+        },
+        {
+          "term": "theta divisor",
+          "heading": false
+        },
+        {
+          "term": "monodromy group",
+          "heading": false
+        },
+        {
+          "term": "zariski-open dense",
+          "heading": false
+        },
+        {
+          "term": "jacobian variety",
+          "heading": false
+        },
+        {
+          "term": "smooth surfaces",
+          "heading": false
+        },
+        {
+          "term": "ppav",
+          "heading": false
+        },
+        {
+          "term": "hodge structures",
+          "heading": false
+        }
+      ],
+      "extract": "Let X be a complex principally polarized abelian variety (ppav for short) of dimension g ≥2, and ﬁx a theta divisor Θ ⊂X which deﬁnes the given polarization and which is symmetric in the sense that it is stable under the inversion morphism −idX : X −→X. For points x ∈X(C) let Θx = Θ + x denote the corresponding translate of the theta divisor. The geometry of the intersections Yx = Θ∩Θx is closely connected with the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-51-intersections-of-theta-divisors",
+      "number": "5.1",
+      "title": "Intersections of theta divisors",
+      "level": 2,
+      "pageStart": 103,
+      "pageEnd": 110,
+      "labelStart": "95",
+      "labelEnd": "102",
+      "words": 2896,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theta divisors",
+          "heading": true
+        },
+        {
+          "term": "prym variety",
+          "heading": false
+        },
+        {
+          "term": "prym morphism",
+          "heading": false
+        },
+        {
+          "term": "prym varieties",
+          "heading": false
+        },
+        {
+          "term": "zariski-open dense",
+          "heading": false
+        },
+        {
+          "term": "etale double",
+          "heading": false
+        },
+        {
+          "term": "complex ppav",
+          "heading": false
+        },
+        {
+          "term": "hodge numbers",
+          "heading": false
+        }
+      ],
+      "extract": "95 THEOREM 5.2. If C is a general curve of genus g = 2n, then G(dn) is either the alternating group AN or the full symmetric group SN. The proof of this in section 5.8 again uses a degeneration, this time from a general curve into a hyperelliptic one. We also remark that if the Galois group G(dn) in the above theorem is the full symmetric group SN, then also the monodromy group G in the previous theorem has to be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-52-variations-of-hodge-structures",
+      "number": "5.2",
+      "title": "Variations of Hodge structures",
+      "level": 2,
+      "pageStart": 110,
+      "pageEnd": 114,
+      "labelStart": "102",
+      "labelEnd": "106",
+      "words": 1433,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hodge structures",
+          "heading": true
+        },
+        {
+          "term": "variations",
+          "heading": true
+        },
+        {
+          "term": "zariski-open dense",
+          "heading": false
+        },
+        {
+          "term": "general ppav",
+          "heading": false
+        },
+        {
+          "term": "whose stalks",
+          "heading": false
+        },
+        {
+          "term": "pure hodge",
+          "heading": false
+        },
+        {
+          "term": "polarized variation",
+          "heading": false
+        },
+        {
+          "term": "some zariski-open",
+          "heading": false
+        }
+      ],
+      "extract": "So far we have mostly ﬁxed a general point x ∈X(C). Now let us see what happens when this point varies. For the moment the dimension g can be arbitrary, but as before we always assume that the theta divisor Θ ⊂X is smooth or has only isolated singularities. To begin with, we put the Hodge structures V± from section 5.1 into a family as follows. LEMMA 5.10. Over some Zariski-open dense subset U ⊂X there exists for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-53-integral-cohomology",
+      "number": "5.3",
+      "title": "Integral cohomology",
+      "level": 2,
+      "pageStart": 114,
+      "pageEnd": 117,
+      "labelStart": "106",
+      "labelEnd": "109",
+      "words": 940,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "integral cohomology",
+          "heading": true
+        },
+        {
+          "term": "weak lefschetz",
+          "heading": false
+        },
+        {
+          "term": "epimorphism onto",
+          "heading": false
+        },
+        {
+          "term": "lefschetz theorem",
+          "heading": false
+        },
+        {
+          "term": "torsion subgroup",
+          "heading": false
+        },
+        {
+          "term": "cohomology groups",
+          "heading": false
+        },
+        {
+          "term": "universal coefﬁcient",
+          "heading": false
+        },
+        {
+          "term": "involution acts",
+          "heading": false
+        }
+      ],
+      "extract": "Let X be a complex ppav of dimension g = 4 with a smooth symmetric theta divisor Θ ⊂X. We ﬁx a general point x ∈X(C) and consider the ´etale double covering of smooth surfaces Y = Θ∩Θx −→Y + = Y/σ for the involution σ = σx as in corollary 5.4. In this section we determine the cohomology of these surfaces with integral coefﬁcients, reﬁning the computations that we did with rational coefﬁcients in section 5.1. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-54-neron-severi-lattices",
+      "number": "5.4",
+      "title": "N´eron-Severi lattices",
+      "level": 2,
+      "pageStart": 117,
+      "pageEnd": 123,
+      "labelStart": "109",
+      "labelEnd": "115",
+      "words": 2109,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eron-severi lattices",
+          "heading": true
+        },
+        {
+          "term": "unimodular lattice",
+          "heading": false
+        },
+        {
+          "term": "even lattices",
+          "heading": false
+        },
+        {
+          "term": "bilinear form",
+          "heading": false
+        },
+        {
+          "term": "torsion class",
+          "heading": false
+        },
+        {
+          "term": "intersection pairing",
+          "heading": false
+        },
+        {
+          "term": "symmetric bilinear",
+          "heading": false
+        },
+        {
+          "term": "degy",
+          "heading": false
+        }
+      ],
+      "extract": "109 and the top quotient deﬁnes a surjection H2(Y +,Z) = E2 ∞↠E02 ∞= E02 2 = H2(Y,Z)+. By construction of the spectral sequence this surjection coincides with the map q∗induced by the quotient morphism q : Y −→Y +. The spectral sequence also shows that the kernel K of this surjection is an extension of (Z/2Z)8 by Z/2Z. In fact K = (Z/2Z)9 because K must be a 2-torsion group: If we denote by q! : H2(Y,Z) −→H2(Y +,Z)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-55-the-upper-bound-we6",
+      "number": "5.5",
+      "title": "The upper bound W(E6)",
+      "level": 2,
+      "pageStart": 123,
+      "pageEnd": 127,
+      "labelStart": "115",
+      "labelEnd": "119",
+      "words": 1479,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "prym-embedded curves",
+          "heading": false
+        },
+        {
+          "term": "prym morphism",
+          "heading": false
+        },
+        {
+          "term": "monodromy operation",
+          "heading": false
+        },
+        {
+          "term": "glue vector",
+          "heading": false
+        },
+        {
+          "term": "monodromy group",
+          "heading": false
+        },
+        {
+          "term": "discriminant group",
+          "heading": false
+        },
+        {
+          "term": "upper bound",
+          "heading": true
+        },
+        {
+          "term": "e6-lattice",
+          "heading": false
+        }
+      ],
+      "extract": "115 In particular, it follows that v ∧[Y] = 0 for all vectors v ∈H4(X,Z) of the form v = xk ∧xl ∧xm ∧xn or v = xk ∧xl ∧xm ∧yn or v = xk ∧yl ∧ym ∧yn or v = yk∧yl ∧ym∧yn with arbitrary indices k,l,m,n, and also for all vectors of the form v = xk ∧xl ∧ym ∧yn with {k,l}̸ = {m,n}. However, for k̸ = l one easily checks that xk ∧xl ∧yk ∧yl ∧[Y] = −2·ω for the cohomology class ω = x1 ∧y1 ∧···∧x4 ∧y4 = 1 4! ·[Θ]4 mapped to 1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-56-negligible-constituents",
+      "number": "5.6",
+      "title": "Negligible constituents",
+      "level": 2,
+      "pageStart": 127,
+      "pageEnd": 131,
+      "labelStart": "119",
+      "labelEnd": "123",
+      "words": 1494,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "negligible constituents",
+          "heading": true
+        },
+        {
+          "term": "perverse sheaf",
+          "heading": false
+        },
+        {
+          "term": "clean perverse",
+          "heading": false
+        },
+        {
+          "term": "perverse sheaves",
+          "heading": false
+        },
+        {
+          "term": "perverse subquotients",
+          "heading": false
+        },
+        {
+          "term": "semisimple perverse",
+          "heading": false
+        },
+        {
+          "term": "perverse cohomology",
+          "heading": false
+        },
+        {
+          "term": "sheaves phn",
+          "heading": false
+        }
+      ],
+      "extract": "119 any such curve has genus g ˜C = 2g+1 = 9. Hence the adjunction formula for the genus of a smooth curve on a smooth projective surface [55, prop. V.1.5] gives the intersection number degY(λ 2) = 2g ˜C −2−degY(KY| ˜C) = 16−16 = 0, indeed for the canonical class KY we have deg ˜C(KY| ˜C) = degY(λ ∪KY) = degX(2·[Θ]4/3) = 16 by the formula i!(λ) = [Θ]3/3 from above and by lemma 5.5. We then also obtain the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-57-jacobian-varieties",
+      "number": "5.7",
+      "title": "Jacobian varieties",
+      "level": 2,
+      "pageStart": 131,
+      "pageEnd": 135,
+      "labelStart": "123",
+      "labelEnd": "127",
+      "words": 1420,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jacobian varieties",
+          "heading": true
+        },
+        {
+          "term": "brill-noether sheaves",
+          "heading": false
+        },
+        {
+          "term": "perverse sheaf",
+          "heading": false
+        },
+        {
+          "term": "perverse intersection",
+          "heading": false
+        },
+        {
+          "term": "smooth non-hyperelliptic",
+          "heading": false
+        },
+        {
+          "term": "cohomology sheaf",
+          "heading": false
+        },
+        {
+          "term": "jacobian variety",
+          "heading": false
+        },
+        {
+          "term": "simple perverse",
+          "heading": false
+        }
+      ],
+      "extract": "123 Proof. For a general ppav we know from theorem 4.2 that the Tannaka group G(δΘ) is either a symplectic or a special orthogonal group and that the perverse intersection cohomology sheaf δΘ corresponds to the standard representation of this group. Now the symmetric and alternating square of the standard representation are irreducible up to a trivial one-dimensional representation, and this trivial representation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-58-the-difference-morphism",
+      "number": "5.8",
+      "title": "The difference morphism",
+      "level": 2,
+      "pageStart": 135,
+      "pageEnd": 139,
+      "labelStart": "127",
+      "labelEnd": "131",
+      "words": 1655,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "difference morphism",
+          "heading": true
+        },
+        {
+          "term": "zariski-open dense",
+          "heading": false
+        },
+        {
+          "term": "hyperelliptic curve",
+          "heading": false
+        },
+        {
+          "term": "group s2n",
+          "heading": false
+        },
+        {
+          "term": "autc",
+          "heading": false
+        },
+        {
+          "term": "c2n",
+          "heading": false
+        },
+        {
+          "term": "n-element subsets",
+          "heading": false
+        },
+        {
+          "term": "monodromy group",
+          "heading": false
+        }
+      ],
+      "extract": "127 where τ ∈Perv(X,C) is some negligible perverse sheaf. In fact τ = δX by part (a) of the proposition. Furthermore pδ 6 = δ0 is a skyscraper sheaf, hence for U ⊂X sufﬁciently small we have V+ ∼= H −4(δ−)|U ∼= H −4(pδ 4,2 ⊕δX)|U ∼= d2∗(CC2×C2) where the ﬁrst isomorphism is due to lemma 5.21 and where the last one comes from the proof of lemma 5.25 for n = 2. □ 5.8. The difference morphism Motivated by the previous",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-59-a-smooth-global-family",
+      "number": "5.9",
+      "title": "A smooth global family",
+      "level": 2,
+      "pageStart": 139,
+      "pageEnd": 143,
+      "labelStart": "131",
+      "labelEnd": "135",
+      "words": 1028,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "smooth global",
+          "heading": true
+        },
+        {
+          "term": "zariski-open dense",
+          "heading": false
+        },
+        {
+          "term": "zariski-open subset",
+          "heading": false
+        },
+        {
+          "term": "smooth quasi-projective",
+          "heading": false
+        },
+        {
+          "term": "ﬂat locus",
+          "heading": false
+        },
+        {
+          "term": "ﬂat morphism",
+          "heading": false
+        },
+        {
+          "term": "theta divisor",
+          "heading": false
+        },
+        {
+          "term": "some zariski-open",
+          "heading": false
+        }
+      ],
+      "extract": "131 by its pull-back under this base change. In particular, since ´etale-locally any smooth morphism admits a section, we can assume that there exists a section σ : S −→U of our family f : U −→S. Since by assumption L has ﬁnite monodromy, we can after passing to a further branched cover assume that the local system σ∗(L) is trivial. Now recall from [102, cor. 5.1] that for any (not necessarily proper) morphism f :U",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-6-the-generic-rank-of-brill-noether-sheaves",
+      "number": "6",
+      "title": "The generic rank of Brill-Noether sheaves",
+      "level": 1,
+      "pageStart": 143,
+      "pageEnd": 145,
+      "labelStart": "135",
+      "labelEnd": "137",
+      "words": 708,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "brill-noether sheaves",
+          "heading": true
+        },
+        {
+          "term": "perverse sheaves",
+          "heading": false
+        },
+        {
+          "term": "perverse sheaf",
+          "heading": false
+        },
+        {
+          "term": "generic rank",
+          "heading": true
+        },
+        {
+          "term": "constant perverse",
+          "heading": false
+        },
+        {
+          "term": "sl2g",
+          "heading": false
+        },
+        {
+          "term": "tannakian category",
+          "heading": false
+        },
+        {
+          "term": "δcd",
+          "heading": false
+        }
+      ],
+      "extract": "As the example in the previous chapter illustrates, one can consider the Tannakian formalism as a device to construct interesting perverse sheaves on abelian varieties. However, so far the connection between the Tannaka group and the geometric properties of the arising perverse sheaves remains rather mysterious even for Brill-Noether sheaves on Jacobian varieties. As a ﬁrst step towards a better understanding of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-62-a-formula-for-the-generic-rank",
+      "number": "6.2",
+      "title": "A formula for the generic rank",
+      "level": 2,
+      "pageStart": 145,
+      "pageEnd": 147,
+      "labelStart": "137",
+      "labelEnd": "139",
+      "words": 760,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "generic rank",
+          "heading": true
+        },
+        {
+          "term": "kβα",
+          "heading": false
+        },
+        {
+          "term": "perverse sheaf",
+          "heading": false
+        },
+        {
+          "term": "kostka numbers",
+          "heading": false
+        },
+        {
+          "term": "young tableau",
+          "heading": false
+        },
+        {
+          "term": "semistandard",
+          "heading": false
+        },
+        {
+          "term": "proper closed",
+          "heading": false
+        },
+        {
+          "term": "closed subset",
+          "heading": false
+        }
+      ],
+      "extract": "137 6.2. A formula for the generic rank The main goal of the present chapter is to obtain a recursive formula for the generic rank rα of the perverse sheaves pδ α, by which we more precisely mean the rank rα = dimC \u0000H −g(pδ α)η \u0001 of the lowest degree cohomology sheaf at the generic point η ∈X. Note that rα = 0 if and only if the perverse sheaf pδ α is supported on a proper closed subset of X (indeed any simple",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-63-computations-in-the-symmetric-product",
+      "number": "6.3",
+      "title": "Computations in the symmetric product",
+      "level": 2,
+      "pageStart": 147,
+      "pageEnd": 150,
+      "labelStart": "139",
+      "labelEnd": "142",
+      "words": 1059,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stalk cohomology",
+          "heading": false
+        },
+        {
+          "term": "symmetric product",
+          "heading": true
+        },
+        {
+          "term": "brill-noether sheaves",
+          "heading": false
+        },
+        {
+          "term": "λ2g",
+          "heading": false
+        },
+        {
+          "term": "let h2c",
+          "heading": false
+        },
+        {
+          "term": "kβα",
+          "heading": false
+        },
+        {
+          "term": "abel-jacobi morphism",
+          "heading": false
+        },
+        {
+          "term": "degx",
+          "heading": false
+        }
+      ],
+      "extract": "139 In this case the vanishing r6 = r5,1 = 0 can again be checked directly, using the observation that pδ 6 ⊕pδ 5,1 = pδ 1 ∗pδ 5 = δW1 ∗δ−W1 must be supported on the two-dimensional closed subset W1 −W1 ⊂X. The values r4,2 = 5 and r3,3 = 51 are less obvious from a geometric point of view, but notice that they are one less than the generic ranks of the local systems V± in chapter 5, in accordance with part (b) of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-64-the-ﬁbres-of-multiple-abel-jacobi-maps",
+      "number": "6.4",
+      "title": "The ﬁbres of multiple Abel-Jacobi maps",
+      "level": 2,
+      "pageStart": 150,
+      "pageEnd": 152,
+      "labelStart": "142",
+      "labelEnd": "144",
+      "words": 635,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "abel-jacobi",
+          "heading": true
+        },
+        {
+          "term": "zariski-open dense",
+          "heading": false
+        },
+        {
+          "term": "cdk",
+          "heading": false
+        },
+        {
+          "term": "ﬁbre",
+          "heading": false
+        },
+        {
+          "term": "dense subset",
+          "heading": false
+        },
+        {
+          "term": "euler characteristic",
+          "heading": false
+        },
+        {
+          "term": "cup product",
+          "heading": false
+        },
+        {
+          "term": "commutative diagram",
+          "heading": false
+        }
+      ],
+      "extract": "For a partition @ = (d\\,...,d,) of degree d consider now the partially symmetrized product Cg = Cy, x ++: x Cy,, and denote by ga : Ca — Cy the quotient morphism. We have a commutative diagram fa Ca given by the Abel-Jacobi morphism, and our goal is to compute the Euler characteristic of the fibre F = fy!(x) for general x € X(C). Fork=1,...,n let pg: Ca = Cg, X +++ X Cg, —> Cg, denote the projection onto the k-th",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-65-betti-polynomials",
+      "number": "6.5",
+      "title": "Betti polynomials",
+      "level": 2,
+      "pageStart": 152,
+      "pageEnd": 154,
+      "labelStart": "144",
+      "labelEnd": "146",
+      "words": 791,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "betti",
+          "heading": true
+        },
+        {
+          "term": "perverse sheaf",
+          "heading": false
+        },
+        {
+          "term": "betti polynomial",
+          "heading": false
+        },
+        {
+          "term": "coefﬁcient",
+          "heading": false
+        },
+        {
+          "term": "constant perverse",
+          "heading": false
+        },
+        {
+          "term": "degree shifts",
+          "heading": false
+        },
+        {
+          "term": "direct sum",
+          "heading": false
+        },
+        {
+          "term": "rhd",
+          "heading": false
+        }
+      ],
+      "extract": "To ﬁnish the proof of theorem 6.1 it remains to compute the contribution of the negligible complex cδ α from the end of section 6.2. Recall that this complex is a direct sum of degree shifts of δX, which will allow to control it in terms of hypercohomology. More speciﬁcally, for any K ∈Db c (X,C) we have the Betti polynomial h(K,t) = ∑ i∈Z dimC(Hi(X,K))·ti ∈C[t, t−1]. If K ∼= D(K) is isomorphic to its Verdier dual,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-045-66-some-numerical-values",
+      "number": "6.6",
+      "title": "Some numerical values",
+      "level": 2,
+      "pageStart": 154,
+      "pageEnd": 159,
+      "labelStart": "146",
+      "labelEnd": "151",
+      "words": 1345,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "generic ranks",
+          "heading": false
+        },
+        {
+          "term": "numerical values",
+          "heading": true
+        },
+        {
+          "term": "print",
+          "heading": false
+        },
+        {
+          "term": "recursion formula",
+          "heading": false
+        },
+        {
+          "term": "some numerical",
+          "heading": true
+        },
+        {
+          "term": "degree deg",
+          "heading": false
+        },
+        {
+          "term": "alpha",
+          "heading": false
+        },
+        {
+          "term": "len",
+          "heading": false
+        }
+      ],
+      "extract": "The recursion formula in theorem 6.1 determines the generic rank rα for any partition α. For future reference we include below a list of these generic ranks for all partitions with 3 ≤deg(α) ≤9. For each degree d = deg(α) the values of rα are listed in a table whose rows are labeled by the partition α and whose columns are labeled by the genus g. For the sake of brevity we denote multiplicities in a partition by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-appendix-a-reductive-super-groups",
+      "number": "Appendix A",
+      "title": "Reductive super groups",
+      "level": 1,
+      "pageStart": 159,
+      "pageEnd": 165,
+      "labelStart": "151",
+      "labelEnd": "157",
+      "words": 1725,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reductive super",
+          "heading": true
+        },
+        {
+          "term": "super groups",
+          "heading": true
+        },
+        {
+          "term": "afﬁne super",
+          "heading": false
+        },
+        {
+          "term": "algebraic super",
+          "heading": false
+        },
+        {
+          "term": "super hopf",
+          "heading": false
+        },
+        {
+          "term": "super lie",
+          "heading": false
+        },
+        {
+          "term": "super center",
+          "heading": false
+        },
+        {
+          "term": "super vector",
+          "heading": false
+        }
+      ],
+      "extract": "In this appendix we recall the deﬁnition of an algebraic super group and collect some basic facts about these in the reductive case. Working over an algebraically closed ﬁeld Λ of characteristic zero, algebraic super groups are built from algebraic groups by a “super commutative thickening” of their Lie algebra: Let G = (G,g1,Q) be a triple consisting of • a classical algebraic group G over Λ, for which we consider",
+      "extractCut": true
+    },
+    {
+      "id": "sec-047-appendix-b-irreducible-subgroups-with-bounded-de",
+      "number": "Appendix B",
+      "title": "Irreducible subgroups with bounded determinant",
+      "level": 1,
+      "pageStart": 165,
+      "pageEnd": 171,
+      "labelStart": "157",
+      "labelEnd": "163",
+      "words": 2013,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "irreducible subgroups",
+          "heading": true
+        },
+        {
+          "term": "bounded determinant",
+          "heading": true
+        },
+        {
+          "term": "isotypic component",
+          "heading": false
+        },
+        {
+          "term": "repc",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite abelian",
+          "heading": false
+        },
+        {
+          "term": "connected reductive",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite group",
+          "heading": false
+        },
+        {
+          "term": "irreducible representation",
+          "heading": false
+        }
+      ],
+      "extract": "In this appendix we discuss the facts from representation theory that have been used to obtain the ﬁniteness result in lemma 3.19. The basis for this is the following extended version of the fundamental result of [109], where by P(X) = Perv(X,C) we denote as before the category of perverse sheaves on a complex abelian variety X. LEMMA B.1. Let P ∈P(X) be a semisimple perverse sheaf, G = G(P) the associated Tannaka",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-appendix-c-an-irreducible-subgroup-of-we6",
+      "number": "Appendix C",
+      "title": "An irreducible subgroup of W(E6)",
+      "level": 1,
+      "pageStart": 171,
+      "pageEnd": 173,
+      "labelStart": "163",
+      "labelEnd": "165",
+      "words": 262,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "root system",
+          "heading": false
+        },
+        {
+          "term": "hand side",
+          "heading": false
+        },
+        {
+          "term": "left hand",
+          "heading": false
+        },
+        {
+          "term": "subgroup",
+          "heading": true
+        }
+      ],
+      "extract": "In the computation of the monodromy group in section 5.2, we have remarked that the Weyl group W(E6) has subgroups M < W(E6) of index greater than two which act irreducibly on E6 ⊗Z C. An example of such a subgroup can be obtained as follows. Take a system α1,...,α6 of simple roots for E6 such that as in [16, ch. VI, no. 4.12] we have the extended Dynkin diagram u u u u u u e α1 α3 α4 α5 α6 α2 −ϖ2 where ϖ2 = α1 +2α2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-049-appendix-d-doubly-transitive-permutation-groups",
+      "number": "Appendix D",
+      "title": "Doubly transitive permutation groups",
+      "level": 1,
+      "pageStart": 173,
+      "pageEnd": 177,
+      "labelStart": "165",
+      "labelEnd": "169",
+      "words": 972,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transitive permutation",
+          "heading": true
+        },
+        {
+          "term": "permutation groups",
+          "heading": true
+        },
+        {
+          "term": "sylow subgroup",
+          "heading": false
+        },
+        {
+          "term": "binomial coefﬁcient",
+          "heading": false
+        },
+        {
+          "term": "n-element subsets",
+          "heading": false
+        },
+        {
+          "term": "commutator subgroup",
+          "heading": false
+        },
+        {
+          "term": "ﬁxes",
+          "heading": false
+        },
+        {
+          "term": "distinct points",
+          "heading": false
+        }
+      ],
+      "extract": "In this appendix we verify the fact about 2-transitive permutation groups that has been used in the proof of theorem 5.2. For n ∈N consider the set of all n-element subsets of {1,2,...,2n}. The symmetric group S2n permutes these N = \u00002n n \u0001 subsets transitively, so we have an embedding ϕ : S2n ,→SN as a transitive subgroup. Consider the stabilizer of {1,2,...,n}, i.e. the subgroup Sn × Sn ⊂S2n. This stabilizer ﬁxes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-050-bibliography",
+      "number": null,
+      "title": "Bibliography",
+      "level": 1,
+      "pageStart": 177,
+      "pageEnd": 181,
+      "labelStart": "169",
+      "labelEnd": "173",
+      "words": 2084,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "springer verlag",
+          "heading": false
+        },
+        {
+          "term": "eom etrie",
+          "heading": false
+        },
+        {
+          "term": "sch emas",
+          "heading": false
+        },
+        {
+          "term": "etrie alg",
+          "heading": false
+        },
+        {
+          "term": "alg ebrique",
+          "heading": false
+        },
+        {
+          "term": "grundlehren math",
+          "heading": false
+        },
+        {
+          "term": "bois marie",
+          "heading": false
+        },
+        {
+          "term": "des sch",
+          "heading": false
+        }
+      ],
+      "extract": "1. Andr´e, Y. and Kahn, B., Nilpotence, radicaux et structures monoidales, Rend. Sem. Mat. Univ. Padova 108 (2002), 107–209. 2. , Erratum: Nilpotence, radicaux et structures monoidales, Rend. Sem. Mat. Univ. Padova 113 (2005), 125–128. 3. Andreev, E. M., Vinberg, E. B. and Elashvili, A. G., Orbits of greatest dimension in semi-simple linear Lie groups, Funct. Anal. Appl. 1 (1967), 257–261. 4. Andreotti, A. and",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 1,
+        "items": [
+          "4.1 The Schottky problem in genus 4"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "perverse sheaf",
+      "heading": true
+    },
+    {
+      "term": "perverse sheaves",
+      "heading": true
+    },
+    {
+      "term": "chapter perverse",
+      "heading": false
+    },
+    {
+      "term": "perverse cohomology",
+      "heading": false
+    },
+    {
+      "term": "perverse skyscraper",
+      "heading": false
+    },
+    {
+      "term": "perverse intersection",
+      "heading": false
+    },
+    {
+      "term": "semisimple perverse",
+      "heading": false
+    },
+    {
+      "term": "some perverse",
+      "heading": false
+    },
+    {
+      "term": "consider perverse",
+      "heading": false
+    },
+    {
+      "term": "simple perverse",
+      "heading": false
+    },
+    {
+      "term": "negligible perverse",
+      "heading": true
+    },
+    {
+      "term": "every perverse",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "8",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 17,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "22",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 31,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 35,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 39,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 41,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 44,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 45,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 47,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "40",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 49,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 50,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 51,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 55,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 56,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 60,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 63,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 67,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 69,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 70,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 71,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 72,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 73,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 74,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 75,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 76,
+      "label": "68",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 77,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 78,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 79,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 80,
+      "label": "72",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 81,
+      "label": "73",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 82,
+      "label": "74",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 83,
+      "label": "75",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 84,
+      "label": "76",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 85,
+      "label": "77",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 86,
+      "label": "78",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 87,
+      "label": "79",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 88,
+      "label": "80",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 89,
+      "label": "81",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 90,
+      "label": "82",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 91,
+      "label": "83",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 92,
+      "label": "84",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 93,
+      "label": "85",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 94,
+      "label": "86",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 95,
+      "label": "87",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 96,
+      "label": "88",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 97,
+      "label": "89",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 98,
+      "label": "90",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 99,
+      "label": "91",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 100,
+      "label": "92",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 101,
+      "label": "93",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 102,
+      "label": "94",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 103,
+      "label": "95",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 104,
+      "label": "96",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 105,
+      "label": "97",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 106,
+      "label": "98",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 107,
+      "label": "99",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 108,
+      "label": "100",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 109,
+      "label": "101",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 110,
+      "label": "102",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 111,
+      "label": "103",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 112,
+      "label": "104",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 113,
+      "label": "105",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 114,
+      "label": "106",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 115,
+      "label": "107",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 116,
+      "label": "108",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 117,
+      "label": "109",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 118,
+      "label": "110",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 119,
+      "label": "111",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 120,
+      "label": "112",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 121,
+      "label": "113",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 122,
+      "label": "114",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 123,
+      "label": "115",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 124,
+      "label": "116",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 125,
+      "label": "117",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 126,
+      "label": "118",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 127,
+      "label": "119",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 128,
+      "label": "120",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 129,
+      "label": "121",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 130,
+      "label": "122",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 131,
+      "label": "123",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 132,
+      "label": "124",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 133,
+      "label": "125",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 134,
+      "label": "126",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 135,
+      "label": "127",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 136,
+      "label": "128",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 137,
+      "label": "129",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 138,
+      "label": "130",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 139,
+      "label": "131",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 140,
+      "label": "132",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 141,
+      "label": "133",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 142,
+      "label": "134",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 143,
+      "label": "135",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 144,
+      "label": "136",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 145,
+      "label": "137",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 146,
+      "label": "138",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 147,
+      "label": "139",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 148,
+      "label": "140",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 149,
+      "label": "141",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 150,
+      "label": "142",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 151,
+      "label": "143",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 152,
+      "label": "144",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 153,
+      "label": "145",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 154,
+      "label": "146",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 155,
+      "label": "147",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 156,
+      "label": "148",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 157,
+      "label": "149",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 158,
+      "label": "150",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 159,
+      "label": "151",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 160,
+      "label": "152",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 161,
+      "label": "153",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 162,
+      "label": "154",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 163,
+      "label": "155",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 164,
+      "label": "156",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 165,
+      "label": "157",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 166,
+      "label": "158",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 167,
+      "label": "159",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 168,
+      "label": "160",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 169,
+      "label": "161",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 170,
+      "label": "162",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 171,
+      "label": "163",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 172,
+      "label": "164",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 173,
+      "label": "165",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 174,
+      "label": "166",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 175,
+      "label": "167",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 176,
+      "label": "168",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 177,
+      "label": "169",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 178,
+      "label": "170",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 179,
+      "label": "171",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 180,
+      "label": "172",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 181,
+      "label": "173",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 52,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 52,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p177); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 52 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/disssubmission"
+  }
+}

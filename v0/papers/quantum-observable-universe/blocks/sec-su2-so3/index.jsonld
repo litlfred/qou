@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/sec-su2-so3",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:su2-so3",
+  "kind": "prose",
+  "text": "su2-so3-intro.md",
+  "meta": {
+    "position": "opening"
+  },
+  "provenance": "authored"
+}

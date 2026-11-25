@@ -1,0 +1,412 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0604057v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0604057v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "It is a very important question in the knot theory to find the geometric and topological interpretation of the Jones polynomial of a knot. Observed by Kashaev [@Kas], H. Murakami and J. Murakami [@MM], the asymptotic rate of (N-colored) Jones polynomial is related to the volume of the hyperbolic knot complement. It is known as the Volume conjecture. Following Witten's $SU(2)$ topological quantum field theory, Gukov [@Guk] proposed a complex version of Chern-Simons theory and generalized the volume conjecture to a $\\mathbb{C}^{*}$- parametrized version with parameter lying on the zero locus of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0604057v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0604057v2  [math.GT]  17 Apr 2006\nVOLUME CONJECTURE, REGULATOR AND SL2(C)-CHARACTER VARIETY\nOF A KNOT\nWEIPING LI AND QINGXUE WANG\nAbstract. In this paper, by using the regulator map of Beilinson-Deligne, we show that the quan-\ntization condition posed by Gukov is true for the SL2(C) character variety of the hyperbolic knot\nin S3. Furthermore, we prove that the corresponding C∗-valued 1-form is a secondary characteristic\nclass (Chern-Simons) arising from the vanishing ﬁrst Chern class of the ﬂat line bundle over the\nsmooth part of the character variety, where the ﬂat line bundle is t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0604057v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Terminology and Notation",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-2-terminology-and-notation.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0604057v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "2.1.",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-002-21.md",
+      "narrative": null,
+      "content": "Let K be a knot in S3 and MK its complement. That is, MK = S3−NK where NK is the open\ntubular neighborhood of K in S3. MK is a compact 3-manifold with boundary ∂MK = T 2 a torus.\nDenote by R(MK) = Hom(π1(MK), SL2(C)) and R(∂MK) = Hom(π1(∂MK), SL2(C)). By [CS],\nthey are aﬃne algebraic sets over the complex numbers C and so are the corresponding character\nvarieties X(MK) and X(∂MK). We also have the canonical surjective morphisms t : R(MK) −→\nX(MK) and t : R(∂MK) −→X(∂MK) which map a representation to its character. The natural\nhomomorphism i : π1(∂MK) −→π1(MK) induces the restriction maps r : X",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0604057v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "2.2.",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-003-22.md",
+      "narrative": null,
+      "content": "Throughout this paper, for a matrix A ∈SL2(C), we denote by σ(A) its trace.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0604057v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "2.3.",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-004-23.md",
+      "narrative": null,
+      "content": "Since π1(∂MK) = Z ⊕Z, we shall ﬁx two oriented simple curves µ and λ as its generators.\nThey are called the meridian and longitude respectively. Let RD be the subvariety of R(∂MK)\nconsisting of the diagonal representations. Then RD is isomorphic to C∗× C∗. Indeed, for ρ ∈RD,\nwe obtain\nρ(λ) =\n\u0014\nl\n0\n0\nl−1\n\u0015\nand ρ(µ) =\n\u0014\nm\n0\n0\nm−1\n\u0015\n,\nthen we assign the pair (l, m) to ρ. Clearly this is an isomorphism. We shall denote by tD the\nrestriction of the morphism t : R(∂MK) −→X(∂MK) on RD.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0604057v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "2.4.",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-005-24.md",
+      "narrative": null,
+      "content": "Next we recall the deﬁnition of the A-polynomial of K which was introduced in [CCGLS].\nDenote by X′(MK) the union of the irreducible components Y ′ of X(MK) such that the closure\nr(Y ′) in X(∂MK) is 1-dimensional. For each component Z′ of X′(MK), denote by Z the curve\nt−1\n∆(r(Y ′)) ⊂RD. We deﬁne DK to be the union of the curves Z as Z′ varies over all components\nof X′(MK). Via the above identiﬁcation of RD with C∗× C∗, DK is a curve in C∗× C∗. Now by\ndeﬁnition the A-polynomial A(l, m) of K is the deﬁning polynomial of the closure of DK in C × C.\nFrom now on, we shall assume that K is a hyperbo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0604057v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A-polynomial, regulator and K2 of a curve",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-006-3-a-polynomial-regulator-and-k2-of-a-curve.md",
+      "narrative": null,
+      "content": "3. A-polynomial, regulator and K2 of a curve\nIn this section, we brieﬂy recall the generalized volume conjecture. Using the regulator map of a\ncurve, we show that the form r(l, m) = ξ(l, m) + iη(l, m) over the 1-dimensional character variety\nYh has exact imaginary part and the rationality of the real part.\nThis provides an aﬃrmative\nanswer to Gukov’s quantization over Yh. Moreover, dr(l, m) = dl\nl ∧dm\nm = 2πiC1(L) = 0 justiﬁes\nthat r(l, m) is the Chern-Simons class from the ﬁrst Chern class C1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0604057v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "3.1.",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-007-31.md",
+      "narrative": null,
+      "content": "Let DK be the zero locus of the A-polynomial A(l, m) in C2. Let y0 ∈DK correspond to the\ncharacter of the representation of the hyperbolic structure on MK and m(y0) = 1. For a path c in\nDK with the initial point y0 and endpoint (l, m), the following quantities are deﬁned in [Guk, (5.2)]:\n(3.1)\nV ol(l, m) = V ol(K) + 2\nZ\nc\n[−log |l|d(arg m) + log |m|d(arg l)],\n(3.2)\nCS(l, m) = CS(K) −1\nπ2\nZ\nc\n[log |m|d log |l| + (arg l)d(arg m)],\nwhere V ol(K) and CS(K) are the volume and the Chern-Simons invariant of the complete hyper-\nbolic metric on MK.\nIn [Guk, (5.12)], Gukov proposes the Generalized Volum",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0604057v2/blocks/prop-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "prop-sec-008-01.md",
+      "narrative": null,
+      "content": "(1) The curvature of the line bundle associated to the class r(f, g) is df f ∧dg g ; (2) r(f1f2, g) = r(f1, g) ⊗r(f2, g), r(f, g) = r(g, f)−1, and the Steinberg relation r(f, 1 −f) = 1 holds if f̸ = 0, f̸ = 1; (3) For x ∈S(f) ∪S(g), let γx be a small simple loop around x in X′. Then r(f, g)(γx) is equal to the tame symbol Tx(f, g) of f and g at x.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0604057v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The regulator map of K2",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-008-32-the-regulator-map-of-k2.md",
+      "narrative": null,
+      "content": "surface. Let f, g be two meromorphic functions on X. Denote by S(f) (resp. S(g)) the set of zeros\nand poles of f (resp. g). Notice that S(f) ∪S(g) is a ﬁnite set. Put X′ = X \\ (S(f) ∪S(g)).\nFollowing Beilinson [Bei], see also [De], we deﬁne an element r(f, g) ∈H1(X′, C∗), equivalently,\nas an element of Hom(π1(X′), C∗): for a loop γ in X′ with a distinguished base point t0 ∈X′,\n(3.6)\nr(f, g)(γ) = exp ( 1\n2πi(\nZ\nγ\nlog f dg\ng −log g(t0)\nZ\nγ\ndf\nf )),\nwhere the integrals are taken over γ beginning at t0.\nIt is well-known that this deﬁnition is independent of the choices of the base point t0 and the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0604057v2/blocks/lem-sec-009-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "lem-sec-009-03.md",
+      "narrative": null,
+      "content": "Denote th logl dm. — log m(to) 4 @ = Re+ilIm as above. Then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0604057v2/blocks/prop-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "prop-sec-009-01.md",
+      "narrative": null,
+      "content": "The element {l, m} ∈K2(C(Y )) is a torsion element.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0604057v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "3.3.",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-009-33.md",
+      "narrative": null,
+      "content": "Let Y be an irreducible component of DK, the zero locus of the A-polynomial A(l, m). Denote\nby eY a smooth projective model of Y .\nThen their ﬁelds of rational functions are isomorphic,\nC(Y ) ∼= C(eY ). We have the following.\nProposition 3.2. The element {l, m} ∈K2(C(Y )) is a torsion element.\nProof. By [CCGLS, Proposition 2.2, 4.1], there is a ﬁnite ﬁeld extension F of C(Y ) such that\n{l, m} ∈K2(F) is of order at most 2. We have a homomorphism i : K2(C(Y )) →K2(F) induced\nby the inclusion of C(Y ) into F. We also have the transfer map t : K2(F) →K2(C(Y )). It is\nwell-known that the compositio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0604057v2/blocks/rem-sec-009-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "rem-sec-009-04.md",
+      "narrative": null,
+      "content": "(i) The first part of the theorem was proved in [CCGLS) Sect. 4.2].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0604057v2/blocks/rem-sec-009-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "rem-sec-009-05.md",
+      "narrative": null,
+      "content": "By Theorem 3.3 (ii), (2π)2 U(l, m) is well-deﬁned in R/ 1 N Z. The classical Chern-Simons invariant is well-deﬁned in R/Z. (3.9) gives a C∗-paramatrized version of the volume conjecture. Using Fuglede-Kadison determi- nant, W. Zhang and the ﬁrst author [LZ] deﬁned an L2-version twisted Alexander polynomial which can be identiﬁed with an L2-Reidemeister torsion. By Luck and Schick’s result, this L2-Alexander polynomial provides a C∗-parametrization of the hyperbolic volumes. For other discussions on the volume conjecture, see [Oh, Sections 1.3, 7.3] and the related refer- ences within.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0604057v2/blocks/thm-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "thm-sec-009-02.md",
+      "narrative": null,
+      "content": "(i) The closed real 1-form η(l, m) = log |l| d arg m −log |m| d arg l is exact on Yh; (ii) For any loop γ with initial point t0 = χ0 in Yh 4π2 Z γ (log |m|d log |l| + arg ld arg m) = k N , where k is some integer and N is the order of the symbol {l, m} in K2(C(Y )).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0604057v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "SL2(C) Character Variety and a New Knot Invariant",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-010-4-sl2c-character-variety-and-a-new-knot-invarian.md",
+      "narrative": null,
+      "content": "In this section, let $K$ be a hyperbolic knot in $S^3$ and $M_K$ its complement. Then $M_K$ is a hyperbolic $3$-manifold of finite volume with boundary $\\partial M_k$ a torus. Since $M_K$ is hyperbolic, there is a discrete faithful representation $\\rho_0\\in R(M_K)$ corresponding to its hyperbolic structure. We denote by $R_0$ an irreducible component of $R(M_K)$ containing $\\rho_0$. Let $X_0=t(R_0)$. By [@CS], $X_0\\subset X(M_K)$ is an irreducible affine variety of dimension $1$.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0604057v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The curve of characters",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-011-41-the-curve-of-characters.md",
+      "narrative": null,
+      "content": "In this subsection, we give some elementary properties about the character varieties and its component $D_0$.\n\nSince $\\partial M_K$ is a torus, we identify $R(\\partial M_K)$ with the set $\\{(A,B)|A,B\\in SL_2(\\mathbb{C}), AB=BA\\}$, where $A=\\rho(\\mu)$, $B=\\rho(\\lambda)$ for $\\rho$ a representation of $\\pi_1(\\partial M_K)$ in $SL_2(\\mathbb{C})$. As in Section $2.3$, $R_{D}\\subset R(\\partial M_K)$ is the subvariety consisting of the representations of diagonal matrices. We have the isomorphism $p:R_{D}\\rightarrow \\mathbb{C}^{*}\\times \\mathbb{C}^{*}$ defined by $p(\\rho)=(m,l)$ if $$\\rho(\\mu)=\n  \\l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0604057v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariant and Dehn Surgery of Hyperbolic Knots",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-012-42-invariant-and-dehn-surgery-of-hyperbolic-knot.md",
+      "narrative": null,
+      "content": "In this subsection, we define an algebro-geometric invariant of the $3$-manifolds $K(p/q)$ resulting from the $(p,q)$ Dehn surgery along a hyperbolic knot complement in $S^3$. A Casson type $SL_2(\\mathbb{C})$ invariant for $K(p/q)$ is also established.\n\nLet $A_0(m,l)$ be the defining equation of the closure of the affine curve $D_0$ in $\\mathbb{C}\\times \\mathbb{C}$. We also require that it has no repeated factors. It is a factor of the $A$-polynomial of the knot $K$ defined in [@CCGLS], and $A_0(m,l)^d$ is the $A$-polynomial of $X_0$ defined in [@BZ Page 109], where $d$ is the degree of regula",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0604057v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An Example: The Figure Eight Knot",
+      "pageStart": 12,
+      "pageEnd": 18,
+      "target": "../sections/sec-013-5-an-example-the-figure-eight-knot.md",
+      "narrative": null,
+      "content": "Throughout this section, we shall denote by $M$ the complement of the figure-eight knot in $S^3$. we compute its character variety and give some applications.\n\nIt is well-known that $\\pi_1(M)$ is given by two generators and one relation: $$\\label{8gp}\n  \\pi_1(M)=<\\alpha,\\beta|R(\\alpha,\\beta)>,\\;\n  R(\\alpha,\\beta)=\\beta^{-1}\\alpha^{-1}\\beta\\alpha\\beta^{-1}\\alpha\\beta\\alpha^{-1}\\beta^{-1}\\alpha,$$\n\nwhere $\\alpha$, $\\beta$ are meridians, and they are conjugate to each other $\\beta=\\delta\\alpha\\delta^{-1}$ with $\\delta=\\alpha^{-1}\\beta\\alpha\\beta^{-1}$.\n\nSet $\\tau=\\alpha\\beta^{-1}\\alpha^{-1}\\beta$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0604057v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-014-references.md",
+      "narrative": null,
+      "content": "[BW] Brittenham, M., Wu, Y-Q., The classiﬁcation of exceptional Dehn surgeries on 2-bridge knots, Comm. Anal.\nGeom. 9 (2001), no. 1, 97–113.\n[Bei] Beilinson, A., Higher regulators and values of L-functions of curves, Funktsional. Anal. i Prilozhen. 14 (1980),\nno. 2, 46–47.\n[Bl] Bloch, S., The dilogarithm and extensions of Lie algebras, Algebraic K-theory, Evanston 1980, Lecture Notes in\nMath., 854, 1-23, Springer, Berlin-New York, 1981.\n[Boy] Boyer, S., Dehn surgery on knots, In: Handbook of geometric topology, Elsevier Press.\n[BZ] Boyer, S., Zhang, X., A proof of the ﬁnite ﬁlling conjecture,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-categorical-fourier-brings-dft",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:categorical-fourier-brings-dft",
+  "kind": "remark",
+  "title": "Abelian instance: the Bring's-surface DFT and Briggs--Klein smoothness",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-fourier",
+    "papers/quantum-observable-universe/blocks/def-briggs-klein-chart",
+    "papers/quantum-observable-universe/blocks/rem-lagrange-resolvents",
+    "papers/quantum-observable-universe/blocks/rem-brings-smoothness"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-categorical-fourier",
+  "tags": [
+    "fourier",
+    "dft",
+    "bring-surface",
+    "briggs-klein",
+    "lagrange-resolvent"
+  ],
+  "text": "categorical-fourier-brings-dft.md",
+  "provenance": "authored"
+}

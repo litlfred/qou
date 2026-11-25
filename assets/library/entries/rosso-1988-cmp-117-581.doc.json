@@ -1,0 +1,610 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "rosso-1988-cmp-117-581",
+  "title": "Finite dimensional representations of the quantum analog of the enveloping algebra of a complex simple Lie algebra",
+  "variant": "pdf",
+  "pages": 14,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "I",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-i-introduction"
+    },
+    {
+      "level": 1,
+      "title": "M Wm [4 (e' )] .....^.^..(^-^(ίf)\"",
+      "number": "1",
+      "page": 3,
+      "pageLabel": "583",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "and ί is not a root of 1, the if 1' 00 determine the integers (α£|α) which",
+      "number": "583",
+      "page": 3,
+      "pageLabel": "583",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-583-and-ί-is-not-a-root-of-1-the-if-1-00-determi"
+    },
+    {
+      "level": 4,
+      "title": "Let V be a C-vector space with basis (v0,..., ι;OT), on which fc, e, / act by the same formulas i), ii), iii) with λ = ωt m. Then p(k\\p(e\\p(f)",
+      "number": "2",
+      "page": 8,
+      "pageLabel": "588",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-2-let-v-be-a-c-vector-space-with-basis-v0-ιot-on"
+    },
+    {
+      "level": 1,
+      "title": "Any character of T of this form is the highest weight of a finite dimensional irreducible representation.",
+      "number": "2",
+      "page": 10,
+      "pageLabel": "590",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-2-any-character-of-t-of-this-form-is-the-highest"
+    },
+    {
+      "level": 1,
+      "title": "The Weyl group W acts on the set P of weights. Each weight subspace Vμ is finite dimensional and dim Vσμ = dim Vμ V σeW.",
+      "number": "4",
+      "page": 10,
+      "pageLabel": "590",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-4-the-weyl-group-w-acts-on-the-set-p-of-weights"
+    },
+    {
+      "level": 1,
+      "title": "The set of weights P is finite.",
+      "number": "5",
+      "page": 10,
+      "pageLabel": "590",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-5-the-set-of-weights-p-is-finite"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 13,
+      "pageLabel": "593",
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-006-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 99,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dimensional representations",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        },
+        {
+          "term": "mathematiques",
+          "heading": false
+        }
+      ],
+      "extract": "Communications in Commun. Math. Phys. 117, 581^593 (1988) © Springer- Verlag 1988 Finite Dimensional Representations of the Quantum Analog of the Enveloping Algebra of a Complex Simple Lie Algebra Marc Rosso Centre de Mathematiques, Ecole Polytechnique, F-91 128, Palaiseau Cedex, France Abstract. Let ^ be a complex simple Lie algebra. We show that when t is not a root of 1 all finite dimensional representations of",
+      "extractCut": true,
+      "blocks": [
+        "library/rosso-1988-cmp-117-581/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-i-introduction",
+      "number": "I",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "583",
+      "words": 532,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lie algebra",
+          "heading": false
+        },
+        {
+          "term": "simple lie",
+          "heading": false
+        },
+        {
+          "term": "jimbo",
+          "heading": false
+        },
+        {
+          "term": "complex simple",
+          "heading": false
+        }
+      ],
+      "extract": "To each complex simple Lie algebra ^, Jimbo associates the quantum analog of its enveloping algebra, let Ut&, where ί is a non-zero parameter, as follows (see also Drinfeid [2,3]): Let (aij)i^j^N be the Cartan matrix of ^ and (α^,^ a basis of simple roots; Uf8 is the Oalgebra generated by (kf\\ehfi)l^i^N with relations: fc. /cΓ ! = k~ i ./c. = 1; ktkj = kjkh MA\" 1 = *?''*/; kjjk^^tr^fp /c? — k~ 2 ' eΓ αίj~ vejeJ = 0",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-583-and-ί-is-not-a-root-of-1-the-if-1-00-determi",
+      "number": "583",
+      "title": "and ί is not a root of 1, the if 1' 00 determine the integers (α£|α) which",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 8,
+      "labelStart": "583",
+      "labelEnd": "588",
+      "words": 2320,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "highest weight",
+          "heading": false
+        },
+        {
+          "term": "weight vector",
+          "heading": false
+        },
+        {
+          "term": "representation fsl",
+          "heading": false
+        },
+        {
+          "term": "ejp",
+          "heading": false
+        },
+        {
+          "term": "finite dimensional",
+          "heading": false
+        },
+        {
+          "term": "diagonalisable",
+          "heading": false
+        },
+        {
+          "term": "utn",
+          "heading": false
+        },
+        {
+          "term": "common eigenvector",
+          "heading": false
+        }
+      ],
+      "extract": "1' 00 determine the integers (α£|α) which in turn determine α as ( | ) is non-degenerate. As each polynomial ξ where et appears nt times and ft mί times is clearly of N degree α = ]Γ (nf — m^, we see that ί/^, ί/tb±, 17^+ are sums of their subspaces i of degree. Remark. Uf$ ® UfS is then Q x Q-graded, and also g-graded via the total gradation. Δ : Uf§ -> U^ (x) U<§ is a morphism of g-graded algebras. Lemma 1.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-let-v-be-a-c-vector-space-with-basis-v0-ιot-on",
+      "number": "2",
+      "title": "Let V be a C-vector space with basis (v0,..., ι;OT), on which fc, e, / act by the same formulas i), ii), iii) with λ = ωt m. Then p(k\\p(e\\p(f)",
+      "level": 4,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "588",
+      "labelEnd": "590",
+      "words": 966,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "highest weight",
+          "heading": false
+        },
+        {
+          "term": "dominant weight",
+          "heading": false
+        },
+        {
+          "term": "dimensional irreducible",
+          "heading": false
+        },
+        {
+          "term": "irreducible representation",
+          "heading": false
+        },
+        {
+          "term": "kerφ",
+          "heading": false
+        },
+        {
+          "term": "finite dimensional",
+          "heading": false
+        },
+        {
+          "term": "invariant subspace",
+          "heading": false
+        },
+        {
+          "term": "ker",
+          "heading": false
+        }
+      ],
+      "extract": "same formulas i), ii), iii) with λ = ωt m. Then p(k\\p(e\\p(f) verify the defining relations of L Γ ίsl(2): so (p, t;) is a representation of C/tsl(2) and it is irreducible since the ϋp's are the only weight vectors possible (up to scalar). 3. We have to check that if V is a finite dimensional L Γ ίsl(2)-module and V an invariant subspace of V, then there is an invariant subspace V\" such that V=V'®V. a) Case where V",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-2-any-character-of-t-of-this-form-is-the-highest",
+      "number": "2",
+      "title": "Any character of T of this form is the highest weight of a finite dimensional irreducible representation.",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "590",
+      "labelEnd": "590",
+      "words": 232,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "highest weight",
+          "heading": true
+        },
+        {
+          "term": "finite dimensional",
+          "heading": true
+        },
+        {
+          "term": "irreducible module",
+          "heading": false
+        },
+        {
+          "term": "dominant",
+          "heading": false
+        },
+        {
+          "term": "representation",
+          "heading": true
+        }
+      ],
+      "extract": "irreducible representation. 3. Any finite dimensional representation ofUt& is completely reducible. Proof. 2. According to the remarks in 1., we only have to consider the case where λ = t λ. But, for each Ae(C*) N, one can construct the universal standard cyclic module with highest weight λ, call it Z(λ\\ by an induced module construction: consider the 1 -dimensional space Dλ9 with basis v+, on which Utb + acts as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-the-weyl-group-w-acts-on-the-set-p-of-weights",
+      "number": "4",
+      "title": "The Weyl group W acts on the set P of weights. Each weight subspace Vμ is finite dimensional and dim Vσμ = dim Vμ V σeW.",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "590",
+      "labelEnd": "590",
+      "words": 10,
+      "summary": null,
+      "keywords": [],
+      "extract": "finite dimensional and dim Vσμ = dim Vμ V σeW.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-5-the-set-of-weights-p-is-finite",
+      "number": "5",
+      "title": "The set of weights P is finite.",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 13,
+      "labelStart": "590",
+      "labelEnd": "593",
+      "words": 1731,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "highest weight",
+          "heading": false
+        },
+        {
+          "term": "utn",
+          "heading": false
+        },
+        {
+          "term": "weight vector",
+          "heading": false
+        },
+        {
+          "term": "complete reducibility",
+          "heading": false
+        },
+        {
+          "term": "reducibility theorem",
+          "heading": false
+        },
+        {
+          "term": "thank professor",
+          "heading": false
+        },
+        {
+          "term": "finite dimensional",
+          "heading": false
+        },
+        {
+          "term": "killed",
+          "heading": false
+        }
+      ],
+      "extract": "Then, V(t λ) being irreducible, it equals the sum of its weight subspaces and 4. and 5. show that it is finite dimensional Proof of proposition (Compare Humphreys [4]). 1. Let w = f™ l + 1-v+ and let us show that, if w Φ 0, it is a highest weight vector, with highest weight different from ί' (such a vector cannot exist as V(t λ) is irreducible). First, fc/w = ί/ β^ mι + 1)/? tl + 1fej^+ =t^ a^ + lh} HJ ]w. So, if",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-references",
+      "number": null,
+      "title": "References",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "593",
+      "labelEnd": null,
+      "words": 140,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "yang-baxter equation",
+          "heading": false
+        },
+        {
+          "term": "algebre",
+          "heading": false
+        },
+        {
+          "term": "lie algebras",
+          "heading": false
+        },
+        {
+          "term": "irreductibles",
+          "heading": false
+        }
+      ],
+      "extract": "1. Borel, A.: On the complete reducibility of linear complex semi-simple Lie algebras. Private communication 2. Drinfeld, V. G.: Hopf algebras and the quantum Yang-Baxter equation. Sov. Math. Dokl. 32, 254-258 (1985) 3. Drinfeld, V. G.: Quantum groups. Proc. I.C.M. Berkeley, 1986 4. Humphereys, J. E.: Introduction to Lie algebras and Representation Theory. Graduate Texts in Mathematics Vol. 9. Berlin, Heidelberg,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "highest weight",
+      "heading": true
+    },
+    {
+      "term": "finite dimensional",
+      "heading": true
+    },
+    {
+      "term": "dimensional irreducible",
+      "heading": true
+    },
+    {
+      "term": "dominant weight",
+      "heading": false
+    },
+    {
+      "term": "weight vector",
+      "heading": false
+    },
+    {
+      "term": "dimensional representation",
+      "heading": true
+    },
+    {
+      "term": "irreducible module",
+      "heading": false
+    },
+    {
+      "term": "simple lie",
+      "heading": false
+    },
+    {
+      "term": "rosso",
+      "heading": false
+    },
+    {
+      "term": "lie algebra",
+      "heading": false
+    },
+    {
+      "term": "utn",
+      "heading": false
+    },
+    {
+      "term": "semi-simple lie",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "582",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "583",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "584",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "585",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "586",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "587",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "588",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "589",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "590",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "591",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "592",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "593",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 8,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p13); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/rosso-1988-cmp-117-581"
+  }
+}

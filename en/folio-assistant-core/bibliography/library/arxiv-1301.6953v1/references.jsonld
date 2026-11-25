@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1301.6953v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Chiral Perturbation Theory and Mesons",
+      "dcterms:creator": [
+        "Theory, Chiral Perturbation",
+        "Mesons"
+      ],
+      "dcterms:issued": "Fri Nov 26",
+      "dcterms:identifier": "https://arxiv.org/abs/1301.6953",
+      "dcterms:source": "library/arxiv-1301.6953v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1301.6953v1"
+    }
+  ]
+}

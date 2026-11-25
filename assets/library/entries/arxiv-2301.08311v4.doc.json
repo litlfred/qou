@@ -1,0 +1,1235 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2301.08311v4",
+  "title": "arxiv-2301.08311v4",
+  "variant": "pdf",
+  "pages": 73,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Local Mutation",
+      "number": "2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-local-mutation"
+    },
+    {
+      "level": 1,
+      "title": "SFT Compactness",
+      "number": "3",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-sft-compactness"
+    },
+    {
+      "level": 1,
+      "title": "Constructing Moduli Space of Broken Maps",
+      "number": "4",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-constructing-moduli-space-of-broken-maps"
+    },
+    {
+      "level": 1,
+      "title": "Regularity",
+      "number": "5",
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-regularity"
+    },
+    {
+      "level": 1,
+      "title": "Classifying Rigid Broken Maps",
+      "number": "6",
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-6-classifying-rigid-broken-maps"
+    },
+    {
+      "level": 1,
+      "title": "Floer Cohomology and Mutations",
+      "number": "7",
+      "page": 65,
+      "pageLabel": "65",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-7-floer-cohomology-and-mutations"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 72,
+      "pageLabel": "72",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 103,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "higher mutation",
+          "heading": false
+        },
+        {
+          "term": "floer cohomology",
+          "heading": false
+        },
+        {
+          "term": "local higher",
+          "heading": false
+        }
+      ],
+      "extract": "FLOER COHOMOLOGY AND HIGHER MUTATIONS SOHAM CHANDA Abstract. We extend the construction of higher mutation as introduced in [PT20] to local higher mutation, which is applicable to a larger class of monotone Lagrangians. In two-dimensional Lagrangians, local higher mutation is the same as performing a Lagrangian anti-surgery in the sense of [Hau20] followed by a Lagrangian surgery. We prove that up to a change of",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2301.08311v4/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 7,
+      "labelStart": "1",
+      "labelEnd": "7",
+      "words": 3224,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sft neck-stretching",
+          "heading": false
+        },
+        {
+          "term": "lagrangian floer",
+          "heading": false
+        },
+        {
+          "term": "sft compactness",
+          "heading": false
+        },
+        {
+          "term": "monotone lagrangian",
+          "heading": false
+        },
+        {
+          "term": "mutation neighborhood",
+          "heading": false
+        },
+        {
+          "term": "higher mutations",
+          "heading": false
+        },
+        {
+          "term": "stretched mutation",
+          "heading": false
+        },
+        {
+          "term": "floer cohomology",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction 1 2. Local Mutation 7 3. SFT Compactness 14 4. Constructing Moduli Space of Broken Maps 30 5. Regularity 44 6. Classifying Rigid Broken Maps 54 7. Floer Cohomology and Mutations 65 References 72 1. Introduction A natural question about Lagrangian submanifolds is how their invariants change if one locally modifies a Lagrangian. We describe a local modification for Lagrangians that contain a torus segment",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-local-mutation",
+      "number": "2",
+      "title": "Local Mutation",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 14,
+      "labelStart": "7",
+      "labelEnd": "14",
+      "words": 3587,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mutation",
+          "heading": true
+        },
+        {
+          "term": "cylindrical path",
+          "heading": false
+        },
+        {
+          "term": "mutation neighborhood",
+          "heading": false
+        },
+        {
+          "term": "higher mutation",
+          "heading": false
+        },
+        {
+          "term": "lagrangian isotopy",
+          "heading": false
+        },
+        {
+          "term": "lagrangian fibration",
+          "heading": false
+        },
+        {
+          "term": "admissible path",
+          "heading": false
+        },
+        {
+          "term": "mutated admissible",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we begin by constructing local higher mutations. Subsequently, we gather some symplectic properties of the objects involved in the construction and prove that local mutations preserve monotonicity of Lagrangians. 2.1. Construction of Local Higher Mutation. Similar to defining a Lagrangian torus over a closed loop in C∗as in (1.2.2) we can define a Lagrangian over a simple open path in C∗. Definition",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-sft-compactness",
+      "number": "3",
+      "title": "SFT Compactness",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 30,
+      "labelStart": "14",
+      "labelEnd": "30",
+      "words": 8167,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sft compactness",
+          "heading": true
+        },
+        {
+          "term": "reeb strip",
+          "heading": false
+        },
+        {
+          "term": "reeb chord",
+          "heading": false
+        },
+        {
+          "term": "neck stretching",
+          "heading": false
+        },
+        {
+          "term": "reeb dynamics",
+          "heading": false
+        },
+        {
+          "term": "hofer energy",
+          "heading": false
+        },
+        {
+          "term": "holomorphic strips",
+          "heading": false
+        },
+        {
+          "term": "broken strip",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we will explain a version of the neck-stretching procedure where the Lagrangian passes through the neck region and prove a compactness result with assumptions on the Legendrian that models the Lagrangian in the neck region. Bourgeois, Eliashberg, Hofer, Wysocki and Zehnder [BEH+03] proves compactness result for closed holomorphic curves under neck-stretching for Morse-Bott Reeb dynamics. Abbas",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-constructing-moduli-space-of-broken-maps",
+      "number": "4",
+      "title": "Constructing Moduli Space of Broken Maps",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 44,
+      "labelStart": "30",
+      "labelEnd": "44",
+      "words": 8341,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "broken maps",
+          "heading": true
+        },
+        {
+          "term": "reeb strip",
+          "heading": false
+        },
+        {
+          "term": "reeb chords",
+          "heading": false
+        },
+        {
+          "term": "moduli space",
+          "heading": true
+        },
+        {
+          "term": "broken discs",
+          "heading": false
+        },
+        {
+          "term": "unbroken strips",
+          "heading": false
+        },
+        {
+          "term": "rigid strips",
+          "heading": false
+        },
+        {
+          "term": "holomorphic strips",
+          "heading": false
+        }
+      ],
+      "extract": "4. Constructing Moduli Space of Broken Maps In this section, we describe the construction of moduli space of broken strips and broken discs as zero sets of a Fredholm map between Banach manifolds. From this section on wards, we will focus on the broken manifold obtained from performing a neck-stretching along the boundary of a mutation neighborhood of a manifold M. We recall the notation from Subsection 3.1 and the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-regularity",
+      "number": "5",
+      "title": "Regularity",
+      "level": 1,
+      "pageStart": 44,
+      "pageEnd": 54,
+      "labelStart": "44",
+      "labelEnd": "54",
+      "words": 6370,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "neck piece",
+          "heading": false
+        },
+        {
+          "term": "broken strip",
+          "heading": false
+        },
+        {
+          "term": "broken discs",
+          "heading": false
+        },
+        {
+          "term": "discs touch",
+          "heading": false
+        },
+        {
+          "term": "constrained discs",
+          "heading": false
+        },
+        {
+          "term": "reeb chord",
+          "heading": false
+        },
+        {
+          "term": "punctured discs",
+          "heading": false
+        },
+        {
+          "term": "nodal strip",
+          "heading": false
+        }
+      ],
+      "extract": "We prove that under a generic perturbation of complex structure, every broken disc or strip with only puncture nodes (the nodes between two levels) are either regular or high-index. As a consequence of this regularity, we will see in Section 6 that the only rigid broken strip or rigid broken disc with point constraint has two levels, and the inner level consists of simple discs. From the construction of moduli space",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-classifying-rigid-broken-maps",
+      "number": "6",
+      "title": "Classifying Rigid Broken Maps",
+      "level": 1,
+      "pageStart": 54,
+      "pageEnd": 65,
+      "labelStart": "54",
+      "labelEnd": "65",
+      "words": 6138,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rigid broken",
+          "heading": true
+        },
+        {
+          "term": "reeb chord",
+          "heading": false
+        },
+        {
+          "term": "broken maps",
+          "heading": true
+        },
+        {
+          "term": "reeb asymptote",
+          "heading": false
+        },
+        {
+          "term": "broken discs",
+          "heading": false
+        },
+        {
+          "term": "divisor cpn",
+          "heading": false
+        },
+        {
+          "term": "reeb orbits",
+          "heading": false
+        },
+        {
+          "term": "broken strip",
+          "heading": false
+        }
+      ],
+      "extract": "The aim of this section is to classify combinatorial types of rigid broken strips or rigid broken discs with the choice of perturbation scheme as done in Section 5. We will show that any rigid broken strip has only two levels and all the inside pieces are either punctured spheres or discs with one boundary puncture that is asymptotic to a Reeb chord of length π/n. Lemma 6.1. If (u, D) is a regular vertically",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-7-floer-cohomology-and-mutations",
+      "number": "7",
+      "title": "Floer Cohomology and Mutations",
+      "level": 1,
+      "pageStart": 65,
+      "pageEnd": 72,
+      "labelStart": "65",
+      "labelEnd": "72",
+      "words": 3834,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "floer cohomology",
+          "heading": true
+        },
+        {
+          "term": "rigid strips",
+          "heading": false
+        },
+        {
+          "term": "broken strips",
+          "heading": false
+        },
+        {
+          "term": "parameterized strips",
+          "heading": false
+        },
+        {
+          "term": "holomorphic strips",
+          "heading": false
+        },
+        {
+          "term": "index strips",
+          "heading": false
+        },
+        {
+          "term": "counting strips",
+          "heading": false
+        },
+        {
+          "term": "floer coboundary",
+          "heading": false
+        }
+      ],
+      "extract": "We begin this section with recalling the notion of Lagrangian Intersection Floer cohomology with local systems. After setting up the conventions and the review of the Floer cohomology, we prove the invariance of Floer cohomology under mutation. This review follows the exposition in Section 2 of [PT20] and the local system version follows the exposition in [Aur14]. 7.1. Floer Cohomology with local system. We explain",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 72,
+      "pageEnd": 73,
+      "labelStart": "72",
+      "labelEnd": "73",
+      "words": 992,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lagrangian floer",
+          "heading": false
+        },
+        {
+          "term": "andreas floer",
+          "heading": false
+        },
+        {
+          "term": "chris woodward",
+          "heading": false
+        },
+        {
+          "term": "floer homology",
+          "heading": false
+        },
+        {
+          "term": "dietmar salamon",
+          "heading": false
+        },
+        {
+          "term": "arxiv preprint",
+          "heading": false
+        },
+        {
+          "term": "floer cohomology",
+          "heading": false
+        },
+        {
+          "term": "floer theory",
+          "heading": false
+        }
+      ],
+      "extract": "[Abb14] Casim Abbas, An Introduction to Compactness results in Symplectic Field Theory, 2014th ed., Springer, Berlin, Germany, 2014 (en). [Abo12] Mohammed Abouzaid, Framed bordism and Lagrangian embeddings of exotic spheres, Annals of Mathematics (2012), 71–185. [ADE14] Michele Audin, Mihai Damian, and Reinie Ern´e, Morse theory and Floer homology, Springer, 2014. [Als11] Garrett Alston, Lagrangian floer homology of",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "reeb strip",
+      "heading": false
+    },
+    {
+      "term": "reeb chord",
+      "heading": false
+    },
+    {
+      "term": "lagrangian floer",
+      "heading": false
+    },
+    {
+      "term": "broken strips",
+      "heading": false
+    },
+    {
+      "term": "broken discs",
+      "heading": false
+    },
+    {
+      "term": "floer cohomology",
+      "heading": true
+    },
+    {
+      "term": "monotone floer",
+      "heading": false
+    },
+    {
+      "term": "cylindrical lagrangian",
+      "heading": false
+    },
+    {
+      "term": "maslov discs",
+      "heading": false
+    },
+    {
+      "term": "holomorphic strips",
+      "heading": false
+    },
+    {
+      "term": "higher mutations",
+      "heading": false
+    },
+    {
+      "term": "rigid strips",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 67,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 69,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 71,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 72,
+      "label": "72",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 73,
+      "label": "73",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The Lagrangian torus Tγ",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Torus segment Tγ over a path γ",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Admissible path γ Definition 2.3 (Locally mutable). We call a Lagrangian L ,→(M, ω) locally mutable if the following hold: (1) There is an open set B in M that is symplectomorphic via ϕ to an open ball B(0) around",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Locally mutable L in M (1) there is an ϵ > 0 such that c(x) = c′(x) for x ∈(−r, −r + ϵ) ∪(r −ϵ, r),",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Mutation of paths We will show that the monodromy of the fiber torus around the origin is trivial in the mapping",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Disc used in creating homotopy from uprepre to upre",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Symplectic manifold W and Lagrangian submanifold L with neck pieces of length 2ϵ",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Breaking of W",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Broken disc in W[1]",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "R × Z as a C∗fibration Proof. Step 1 : Compactification of target We will compactify our target manifold by adding two copies of the symplectic manifold Y . Since",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Compactification of R × Z to N This directly shows adding two copies of the Lagrangian LY to the cylinder R × Z produces the closure L. Since the Legendrian Λ is closed under the action of −1, we see that L cleanly self intersects at LY in the 0 and infinity divisor. Call the intersection loci LY0,",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "Angles between the Lagrangians L0,L1 at q∞",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "Creating eu by replacing the disc A with A′ and removing the outside",
+      "page": 65,
+      "pageLabel": "65",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "Clifford and Chekanov type tori",
+      "page": 71,
+      "pageLabel": "71",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 8,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "14 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p72); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2301.08311v4"
+  }
+}

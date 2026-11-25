@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-upstream-mathlib-additions",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:upstream-mathlib-additions",
+  "kind": "proposition",
+  "title": "Upstream Mathlib additions: complex dilogarithm via tsum + BW formula + $\\mathrm{Cl}_2$ oddness",
+  "cites": [
+    "references/zagier1986",
+    "references/bloch2000"
+  ],
+  "tags": [
+    "mathlib-filler",
+    "complex-dilogarithm",
+    "bloch-wigner-dilogarithm",
+    "clausen-oddness",
+    "lean-construction",
+    "upstream-contribution"
+  ],
+  "leanRef": "qou:QOU.MassTheory.Archimedean.UpstreamAdditions.complexLiTwo",
+  "text": "upstream-mathlib-additions.md",
+  "leanSource": "upstream-mathlib-additions.lean",
+  "provenance": "authored"
+}

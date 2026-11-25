@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-pion-mass-hyperbolic-threshold",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:pion-mass-hyperbolic-threshold",
+  "kind": "remark",
+  "title": "Why $m_\\pi$ is a calibration: the pion sits below the hyperbolic threshold",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-meson-scale-independence",
+    "papers/quantum-observable-universe/blocks/prop-pion-half-figure-eight",
+    "papers/quantum-observable-universe/blocks/fundamental-knots-operator-basis"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-meson-scale-independence",
+  "tags": [
+    "pion",
+    "meson",
+    "hyperbolic-volume",
+    "calibration",
+    "mass"
+  ],
+  "text": "pion-mass-hyperbolic-threshold.md",
+  "provenance": "authored"
+}

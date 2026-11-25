@@ -1,0 +1,506 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "0603022v2",
+  "blocks": [
+    {
+      "id": "library/0603022v2/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "Quantum Gravity and the Standard Model\nSundance O. Bilson-Thompson∗\nCSSM, School of Chemistry and Physics, University of Adelaide,\nAdelaide SA 5005, Australia\nFotini Markopoulou† and Lee Smolin‡\nPerimeter Institute for Theoretical Physics,\nWaterloo, Ontario N2J 2W9, Canada,\nand\nDepartment of Physics, University of Waterloo,\nWaterloo, Ontario N2L 3G1, Canada\n(Dated: February 28, 2006)\nWe show that a class of background independent models of quantum spacetime have local excita-\ntions that can be mapped to the ﬁrst generation fermions of the standard model of particle physics.\nThese states propag",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0603022v2/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "2\nwhether it has any such NSs. We show that in a large\nclass of theories, it does. These are theories in which\nthe microscopic quantum states are deﬁned in terms of\nthe embedding, up to diffeomorphisms, of a framed, or\nribbon, graph in a three manifold and in which the al-\nlowed evolution moves are the standard local exchange\nand expansion moves[6, 7]. Such ribbon graphs occur\nin the representation theory of quantum groups[8], and\narise in topological ﬁeld theories and in quantum grav-\nity models with non-zero cosmological constant [9, 10].\nThe procedure described in [3] reveals emergent degre",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0603022v2/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "3\nFIG. 1: A trinion and a trinion decomposition of a 2-surface S.\nA map from a ribbon graph to a quantum system can\nbe made by associating a ﬁnite-dimensional state space\nHt to each trinion t and the tensor product operation to\ntrinion gluings. The speciﬁc map from a trinion t to its\nHilbert space may depend on the choice of a quantum\ngroup Gq. In this case one labels each open edge of a\ntrinion with a representation of Gq and t with the asso-\nciated intertwiner. For the present work, we just need a\nfunctor that assigns a ﬁnite-dimensional vector space to\neach trinion. Thus, the state space as",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0603022v2/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "4\nbraid becomes “spread out”.\nNevertheless there is a\nconserved quantity associated with the braiding. This\nis to be expected and is discussed in detail in the penul-\ntimate section.\nLet us ﬁrst state the precise sense in which the braid-\ning is conserved. It is easiest to do so using the notion\nof a noiseless subsystem from quantum information the-\nory [4]. Given a ﬁnite-dimensional state space\nH = HA ⊗HB ⊕K,\n(6)\nwhere K is the orthogonal complement of HA⊗HB in H,\nand a completely positive map E on H, the subsystem\nB is noiseless under E if, for all ρA ∈HA, ρB ∈HB, there\nexists σA ∈HA such th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0603022v2/blocks/figure-img-p005-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0603022v2/blocks/figure-img-p005-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0603022v2/blocks/figure-img-p005-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0603022v2/blocks/figure-img-p005-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0603022v2/blocks/figure-img-p005-5",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-5.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0603022v2/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "5\nFIG. 5: A simple braid inside a ribbon graph\nFIG. 6: The reduced link of the braid in Figure 5.\nshown in Figure 2. This is the task of the present sec-\ntion. We will need the reduced link invariant of a ribbon\ngraph embedding and the discrete symmetries on the\nbraids which we deﬁne next.\nA.\nThe reduced link invariant\nLet L[Γ] denote the the link of a ribbon graph embed-\nding. This is the set of curves in Σ obtained by consid-\nering each edge of the ribbon graph as a curve in Σ. We\ndeﬁne the reduced link of a ribbon graph embedding, de-\nnoted RL[Γ], to be L[Γ] minus any unlinked unknotted\nclo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0603022v2/blocks/figure-img-p006-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0603022v2/blocks/figure-img-p006-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0603022v2/blocks/figure-img-p006-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0603022v2/blocks/figure-img-p006-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0603022v2/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "6\nFIG. 10: Constructing the link of a ribbon graph. The blue line\nis a boundary which separates the region of interest from the\nrest of the ribbon graph.\nFIG. 11: The reduced link, taken by excluding unlinked, un-\nknotted curves from the link obtained previously.\nbJS|Γ⟩=\nX\nS\nRLS(Γ)|Γ⟩.\n(12)\nwhere the sum is over disconnected pieces of the re-\nduced link of the graph. The operator applies the link\ninvariant to each of the disconnected pieces and sums\nthem. In the case there is a boundary we can distin-\nguish the components connected to the boundary, which\nwould not be included in the sum.\nThis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0603022v2/blocks/figure-img-p007-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../images/img-p007-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0603022v2/blocks/figure-img-p007-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../images/img-p007-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0603022v2/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "7\nFIG. 14: The basic braiding moves on three strands, and the\nbasic twisting moves.\nstrands.\nLet us ﬁx n and the sets of nodes at the two ends. Then\nthe possible braids that can come in the box deﬁne a\nHilbert space, Hnbraids within which the possible braids\nB give a basis |B⟩. The generators bi and ti are repre-\nsented by unitary operators in this space [22]. There is a\nnatural vacuum |0⟩= |1n⟩which is n unbraided strands.\nAny braid is then deﬁned by a sequence of braid moves\nacting on |0⟩,\n|B⟩= mp....m2m1|0⟩.\n(13)\nFor each choice of n and end nodes, Hnbraids deﬁnes\na possible system’s Hilber",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0603022v2/blocks/figure-img-p008-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0603022v2/blocks/figure-img-p008-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0603022v2/blocks/figure-img-p008-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0603022v2/blocks/figure-img-p008-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0603022v2/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "8\nFIG. 16: The electron neutrino and anti-neutrino – two un-\ncharged states.\nFIG. 17: The electron and positron — four maximally charged\nstates.\nsectors:\nV3 = VL\n3 ⊕VR\n3\n(16)\nWe note that\nP : VL\n3 →VR\n3\n(17)\nand vice versa.\nHowever, the rules given above tell us to ignore those\nbraids that contain both plus and minus charges (or\ntwists).\nWe then deﬁne the reduced subsector Vred\n3\nwhich do not mix positive and negative twists, and\nwhich only have single twists. Using the results of [1]\nwe now see that the states in the reduced subsector cor-\nrespond to the 15 fermions of the ﬁrst generation of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0603022v2/blocks/figure-img-p009-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../images/img-p009-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/0603022v2/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "9\nFIG. 20: A possible identiﬁcation of the muon neutrino as a\nthree crossing state.\ncomplicated states, which have three crossings. These\nare three stranded braids such as shown in Figure 20.\nIt is straightforward to see that by adding twists to this\nstate one gets a repeat of the pattern for the ﬁrst genera-\ntion.\nThe structure of the higher crossing states is under in-\nvestigation and will be reported elsewhere.\nIn [1] it is also proposed that the gauge vector bosons\nof the standard model are composite, and are repre-\nsented by triplets of ribbons with no crossings. Braids\nwith three ribbons",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0603022v2/blocks/prose-page-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 10",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/page-010.md",
+      "narrative": null,
+      "content": "10\nmicro-locality of A evol ought to coincide with that of the\neffective spacetime up to Planck scale corrections.\nIn summary, there are distinct ways for a spacetime\ngeometry to emerge from a quantum theory. At one end\nof the spectrum lies the expectation that classical space-\ntime geometry will emerge as the classical/low energy\nlimit of quantum general relativity (as in Loop Quan-\ntum Gravity) or a discrete and quantum version of Ein-\nstein’s theory (as in Causal Dynamical Triangulations\n[19]). Matter ﬁelds are to be added and coupled to the\nquantum geometry. At the other end, one may expec",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0603022v2/blocks/prose-page-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 11",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/page-011.md",
+      "narrative": null,
+      "content": "11\n• How does the usual quantum statistics arise? This\nis an important open problem, whose solution\nmay require a further speciﬁcation of the dynam-\nics so as to satisfy conditions of the topological\nspin statistics theorems.\n• How bound are the quarks and leptons? Does the\ntheory predict the existence of exotic states such as\nstable fractionally charged particles?\n• Is there a composite Higgs or some other mech-\nanism for dynamical symmetry breaking?\nThe\nstates described here naturally are CP invariant.\nHow may CP violation enter the theory? Is there a\nderivation of the mass matrix in terms o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/0603022v2/blocks/prose-page-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 12",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/page-012.md",
+      "narrative": null,
+      "content": "12\nJ. Jurkiewicz and R. Loll, Phys. Rev. D64 (2001) 044011\n[hep-th/0011276]; Emergence of a 4D World from Causal\nQuantum Gravity, hep-th/0404156.\n[20] S. Lloyd, quant-ph/0501135.\n[21] F. Markopoulou and O. Dreyer, in preparation.\n[22] Note that the subscript i on mi refers to the ith move in a\nsequence, while the subscripts on bi and ti refer to which\nstrand in the braid is being acted upon.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

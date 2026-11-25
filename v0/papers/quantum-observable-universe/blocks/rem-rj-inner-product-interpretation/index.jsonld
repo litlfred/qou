@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-rj-inner-product-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:rj-inner-product-interpretation",
+  "kind": "remark",
+  "title": "The Rosso--Jones inner product as archimedean descent of the categorical trace",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/cor-spectral-decomposition-qvalue"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-rj-canonical-inner-product",
+  "tags": [
+    "rosso-jones",
+    "categorical-trace",
+    "markov-trace",
+    "inner-product",
+    "action",
+    "shell-correction"
+  ],
+  "text": "rj-inner-product-interpretation.md",
+  "provenance": "authored"
+}

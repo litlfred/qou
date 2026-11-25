@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-habiro-tail-archimedean-action",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:habiro-tail-archimedean-action",
+  "kind": "proposition",
+  "title": "Archimedean $\\rho_\\infty$ Habiro-tail action of $4_1$ is $\\pi^2/5$ (golden-ratio dilogarithm), distinct from the geometric $\\mathrm{Vol}$ face",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-ecalle-borel-resummation"
+  ],
+  "cites": [
+    "references/hakimoglu-brown2025",
+    "references/zagier-dilogarithm",
+    "references/crew2023",
+    "references/garoufalidis-wheeler-modular",
+    "references/lovejoy-osburn"
+  ],
+  "tags": [
+    "archimedean-bridge",
+    "resurgence",
+    "habiro-tail",
+    "quantum-dilogarithm",
+    "golden-ratio",
+    "archimedean",
+    "hbar-N-wall"
+  ],
+  "leanRef": "qou:QCalculus.HabiroTailAction.habiroAction_eq_pi_sq_div_five",
+  "text": "habiro-tail-archimedean-action.md",
+  "provenance": "authored"
+}

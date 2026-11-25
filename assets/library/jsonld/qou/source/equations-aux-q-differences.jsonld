@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/equations-aux-q-differences/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "equations-aux-q-differences",
+  "contains": [
+    "library/equations-aux-q-differences/sections/sec-front-matter",
+    "library/equations-aux-q-differences/sections/sec-000",
+    "library/equations-aux-q-differences/sections/sec-001",
+    "library/equations-aux-q-differences/sections/sec-002",
+    "library/equations-aux-q-differences/sections/sec-003",
+    "library/equations-aux-q-differences/sections/sec-004",
+    "library/equations-aux-q-differences/sections/sec-005",
+    "library/equations-aux-q-differences/sections/sec-006",
+    "library/equations-aux-q-differences/sections/sec-007",
+    "library/equations-aux-q-differences/sections/sec-008",
+    "library/equations-aux-q-differences/sections/sec-009",
+    "library/equations-aux-q-differences/sections/sec-010",
+    "library/equations-aux-q-differences/sections/sec-011",
+    "library/equations-aux-q-differences/sections/sec-012"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Équations aux q-différences — 14 sections: Front matter; Introduction; Br´eviaire\n\n**Équations aux q-différences**\n\n*L. Di Vizio, J-P. Ramis, J. Sauloy∗, C. Zhang†*\n\n30 pp, 14 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Br´eviaire; 3 Classiﬁcation et conﬂuence des syst`emes fuc; 3.1 R´esolution et classiﬁcation locale; 3.2 Conﬂuence des solutions locales; 3.3 Classiﬁcation globale; 3.4 Conﬂuence de la matrice de connexion; 3.5 Classiﬁcation locale des ´equations irr´eg; 4 Sommabilit´e des solutions formelles d’´equa; 4.1 Quelques g´en´eralit´es; 4.3 Sommations de Borel-Laplace q-analogues; 5 ´Equations aux q-diﬀ´erences arithm´etiques; 6 R´ef´erences",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "equations-aux-q-differences",
+    "title_source": "slug",
+    "source_file": "Equations_aux_q-differences.pdf",
+    "source_sha256": "357d4e0b546b27e6a316a7177e9240d5d8ea3b6d8a06bd57a3b2679a31eeb094",
+    "pages": 30,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

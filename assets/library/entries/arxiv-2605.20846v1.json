@@ -1,0 +1,1017 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2605.20846v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Topological Field Theories and the Algebraic Structures\nof the Two-Sphere\nChris Li\nMay 21, 2026\nAbstract\nWe give two presentations for bordisms of S2 in the 3-dimensional oriented bor-\ndism category Cob(3), encoding the algebraic structures on S2. After passing through\ntopological field theories, we define two kinds of monoids which we call P-monoids and\nL-monoids. In addition to both being commutative Frobenius monoids, P-monoids are\nequipped with a class of endomorphisms while L-monoids are equipped with a class\nof unit morphisms, all of which are labelled by closed oriented irreducible prim",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/def-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 13,
+      "target": "def-sec-000-01.md",
+      "narrative": null,
+      "content": "An n-dimensional topological field theory is a symmetric monoidal functor: Z : Cob(n) →Vectk . where Cob(n) is the category of closed oriented n-manifolds and cobordisms modulo orientation and boundary preserving diffeomorphisms, Vectk is the category of (insert your favorite adjectives here such as topological) k-vector spaces. Historically, this definition was given by [Ati88], possibly inspired by [Seg88]’s at- tempt to define a conformal field theory and [Wit82] on the relation between Morse theory and supersymmetry. Unpacking the definition, a topological field theory is a nice assignment",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/def-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 13,
+      "target": "def-sec-000-02.md",
+      "narrative": null,
+      "content": "A fully-extended n-dimensional topological field theory is a sym- metric monoidal functor of (∞, n)-categories Z : Bordn →C. The (∞, n) category Bordn has objects 0-dimensional manifolds, 1-morphisms are cobordisms between 0-dimensional manifolds, 2-morphisms are cobordisms between cobordisms, etc. The n-morphisms can be interpreted as an n-dimensional manifold with corners. The (n + 1)-morphisms are diffeomorphisms between two n-manifold with corners, and the (n + 2)-morphisms are isotopies between diffeomorphisms, etc. This construction was proposed by [Lur08] and later corrected by [CS19] a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/def-sec-000-04",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 13,
+      "target": "def-sec-000-04.md",
+      "narrative": null,
+      "content": "Consider the symmetric monoidal category Cob(3). It has a sub- category whose objects are disjoint unions of S2. Call this category Cob(3)S2 and note that it inherits the symmetric monoidal structure. In particular, the morphisms in Cob(3)S2 all have spherical boundaries. For exam- ple, here’s a list of morphisms that will play a central role in defining the presentations of Cob(3)S2: idS2 = \u0002 S2 × I \u0003 m = \u0002 S3 \\ int(⊔3D3) \u0003 : S2 ⊔S2 →S2 1 = \u0002 D3\u0003 : ∅→S2 m∨= \u0002 S3 \\ int(⊔3D3) \u0003 : S2 →S2 ⊔S2 tr = \u0002 D3\u0003 : S2 →∅ p×× = [p \\ int(D3 ⊔D3)] : S2 →S2 p× = [p \\ int(D3)] : ∅→S2 where p is any diffeomorphi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/def-sec-000-08",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 13,
+      "target": "def-sec-000-08.md",
+      "narrative": null,
+      "content": "Let A be a commutative Frobenius algebra over k. Then A is an L-algebra (equiv. P-algebra) if there are elements 1p ∈A (equiv. endomorphisms ep : A →A that acts by multiplication by 1p) for every diffeomorphism class of connected oriented irreducible 3-manifold p. The remarkable feature of L and P algebras is their simplicity. We are supposed to think of such an algebra as Z(S2) for some 3d TFT Z : Cob(3) →Vectk. Even though the bordisms of S2 are very complicated, geometry forces G1 and G2 presentations to be extremely simple, which in turn forces the prime structures of L and P algebras to b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 3,
+      "pageEnd": 13,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Motivations\nOne of the greatest scientific achievements in the 20th century is the development\nof quantum field theories, which model the interaction of elementary particles with\ngreat precision through quantum fields. Quantum fields are , roughly speaking, classes\nof functions ϕ : M →C where M is a manifold representing the underlying space-\ntime. Unfortunately, developing a mathematically rigorous definition of quantum field\ntheories has proven extremely challenging, leaving one of the most foundational subjects\nof modern physics on unstable soil.\nTopological field theories are toy models of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/thm-sec-000-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 13,
+      "target": "thm-sec-000-03.md",
+      "narrative": null,
+      "content": "The 2-dimensional oriented bordism category Cob(2) is the free sym- metric monoidal category with a single commutative Frobenius algebra object. In par- ticular the category of oriented 2-dimensional topological field theories is equivalent to the category of commutative Frobenius algebras. This theorem was widely known and formal proofs appeared in numerous papers such as [Dij89], [Abr96], and J. [Koc03]. The category Cob(2) has objects closed oriented 1-dimensional manifolds (namely, a disjoint union of oriented circles), and morphisms are cobordisms between the disjoint unions of circles mo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/thm-sec-000-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 13,
+      "target": "thm-sec-000-05.md",
+      "narrative": null,
+      "content": "Cob(3)S2 has a presentation with G2 generators under commutative Frobenius relations and legs relations. These relations are necessary. The G1 presentation is given by the usual commutative Frobenius relations only. We prove in theorem 4.3.2 that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/thm-sec-000-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 13,
+      "target": "thm-sec-000-06.md",
+      "narrative": null,
+      "content": "Cob(3)S2 has a presentation with G1 generators and commutative Frobenius relations. What is perhaps surprising about the theorems is that the relations are extremely simple, even though the topology of 3-manifolds are significantly more complicated than the topology of 2-manifolds. In Cob(2) , a morphism is a 2-manifold with bound- aries. The classification of 2-manifolds shows that up to diffeomorphisms the manifold is classified by its genus. The classification of 3-manifolds is more complicated but standard– the theorem of Kneser-Milnor prime decomposition will play a repeated central role",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/thm-sec-000-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 13,
+      "target": "thm-sec-000-07.md",
+      "narrative": null,
+      "content": "There is a canonical isomorphism S : Cob(2) ∼ →Cob(3)S2,CF The isomorphism S sends n-copies of S1 to n-copies of S2, and sends the multi- plication map of S1 to the multiplication map of S2. Same goes for unit, trace, and co-multiplication. On more complicated bordisms, S sends a genus g bordism to a bor- dism with g-many S2 × S1 connect sum factors. This theorem essentially shows that the commutative Frobenius part of Cob(S2) is completely determined by Cob(2). In particular, the commutative Frobenius relations of G1 and G2 generators are necessary. The Cerf theory we build through geometry c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/def-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 22,
+      "target": "def-sec-001-01.md",
+      "narrative": null,
+      "content": "(Cob(3)S2) Consider the symmetric monoidal category Cob(3). It has a subcategory whose objects are disjoint unions of S2. Call this category Cob(3)S2 and note that it inherits the symmetric monoidal structure.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/prop-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 22,
+      "target": "prop-sec-001-02.md",
+      "narrative": null,
+      "content": "Let X, Y be diffeomorphic objects of Cob(n) and f : X →Y a diffeomorphism. Then Z(X) ∼= Z(Y ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/prop-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 22,
+      "target": "prop-sec-001-03.md",
+      "narrative": null,
+      "content": "The homs of Cob(3)S2 have two generating sets: G′ 1 = C ∪F ∪L′ ∪L∨′ ∪orientation reversal G′ 2 = C ∪F ∪P ′ ∪orientation reversal More precisely, let F(Gra1) and F(Gra2) be the free categories of the graphs Gra1 and Gra2, which have \b ⊔iS2 | i ∈Z≥0 ∼= Z≥0 as vertices and directed edges generated by G′ 1 and G′ 2 and all tensor products. Then the tautological functors F(Gra1) →Cob(3)S2 and F(Gra2) →Cob(3)S2 are full and bijective on objects.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/prop-sec-001-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 22,
+      "target": "prop-sec-001-05.md",
+      "narrative": null,
+      "content": "The following sets generate morphisms of Cob(3)S2 and are both minimal: G1 = C ∪F ∪L ∪orientation reversal G2 = C ∪F ∪P ∪orientation reversal This proposition will be revisited as 3.3.7 and the proof will be presented there.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generators",
+      "pageStart": 13,
+      "pageEnd": 22,
+      "target": "../sections/sec-001-generators.md",
+      "narrative": null,
+      "content": "There are two approaches to presenting the content.\nOne could either employ the\nfull power of abstraction, in terms of presentations of categories outlined in Appendix\nA.1, or appeal to intuition carried over from presentations of groups. We will try to\naccomplish both. The readers are encouraged to refresh their memories on the rigorous\nsetup of quotient categories, generators and relations, and presentations of categories,\nfound in the form of an expository note in the appendix.\nThe category we wish to find a presentation for is the subcategory of Cob(3) spanned\nby spherical objects.\nDefinit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/rem-sec-001-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 22,
+      "target": "rem-sec-001-04.md",
+      "narrative": null,
+      "content": "Neither G′ 1 nor G′ 2 is minimal– S2 × S1 is prime, but it has a standard Morse function which factors through the projection onto the S1 factor: S2 × S1 proj −→S1 height −→R whose critical points are of index 0, 2, 1, 3 in increasing critical values, and whose regular surfaces are either empty or a disjoint union of S2. This is depicted (in a slightly wonky manner) in figure 3.5-(a). Therefore there is a Morse gluing resembling the toric pants decomposition one dimension down, inducing the equality h S2 × S1i ∼= tr ◦m ◦m∨◦1. In particular, the element [S2×S1\\int(D3⊔D3)] ∈P ⊂G′ 2 is equal to t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Commutative Frobenius Relations",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-002-commutative-frobenius-relations.md",
+      "narrative": null,
+      "content": "Relations",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outline of Strategy",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "../sections/sec-003-outline-of-strategy.md",
+      "narrative": null,
+      "content": "\\label{sec:outlineofstrat}\n\\begin{defn} \\label{defn:3d Morse Datum}\nLet $M$ be a compact oriented connected 3 manifold with boundary $X_-$ and $X_+$ of codimension $1$. A \\textit{prime Morse datum} is a pair $f:M\\to \\mathbb{R}$ and an ordered tuple $b=(b_0<b_1<\\dots <b_m) \\in \\mathbb{R}^{m+1}$ such that \n\\begin{enumerate}\n\\item $X_- = f^{-1}(b_0)$ and $X_+ = f^{-1}(b_m)$ are the sets of minimum resp maximum of $f$.\n\n\\item $b_i$ are regular values of $f$ such that any connected component $C \\subset f^{-1}(b_{i-1}, b_i)$ is diffeomorphic to $D^3$, $S^2 \\times I$, $S^3 \\setminus \\operatorname{int",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Existence and Spherical Morse Functions",
+      "pageStart": 26,
+      "pageEnd": 32,
+      "target": "../sections/sec-004-existence-and-spherical-morse-functions.md",
+      "narrative": null,
+      "content": "\\label{sec:existenceandsphericalMorse}\n\\begin{defn} \\label{defn:good}\nLet $M$ be a compact oriented manifold possibly with boundary $\\partial M$ and $f:M\\to \\mathbb{R}$ a Morse function. We say that $f$ is \n\\begin{itemize}\n\\item ``admissible'' if $f : M \\to \\left[ a,b \\right]  $ such that $a$ and $b$ are regular values and $\\partial M = f^{-1}(a) \\cup f^{-1}(b)$;\n\\item ``excellent'' if all critical values are distinct;\n\\item ``spherical'' if all regular level sets are disjoint unions of spheres.\n\n\\end{itemize}\n\\end{defn}\n\nStandard Cerf theory, introduced in \\cite{cerf_stratification_1970}, sho",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spherical Morse Functions",
+      "pageStart": 32,
+      "pageEnd": 38,
+      "target": "../sections/sec-005-spherical-morse-functions.md",
+      "narrative": null,
+      "content": "\\label{sec:Cob2Cob3Iso}\nBefore we proceed to show that the commutative Frobenius relations are sufficient among CF generators, it is necessary to examine their Morse theory. We will prove in this section that there is an isomorphism between the categories $\\operatorname{Cob}( 3)_{S^2,CF} $ and $\\operatorname{Cob}( 2)$ in theorem \\ref{thm:Cob2Cob3CFIso}. Furthermore we show that $G_1 $ and $G_2 $ are both minimal in proposition \\ref{prop:G1G2minimal}.\n\n\\begin{prop} \\label{prop:sphericalnoirreducible}\nLet $M$ be a closed oriented 3-manifold, and $f:M\\to \\mathbb{R}$ a Morse function such that for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Local Models of Excellent Morse Failures",
+      "pageStart": 38,
+      "pageEnd": 41,
+      "target": "../sections/sec-006-local-models-of-excellent-morse-failures.md",
+      "narrative": null,
+      "content": "\\label{sec:localmodels}\nProposition \\ref{prop:CFcommFrob} gives the existence of commutative Frobenius relations among CF generators. We would like to know if they are sufficient-- namely, are there other necessary relations if one wants to give a presentation of the category $\\operatorname{Cob}( 3)_{S^2,CF} $? This section introduces a tool which we call \\textit{local models of failures}, which the next section uses alongside theorem \\ref{thm:Cob2Cob3CFIso} to prove sufficiency.\n\n\\begin{defn} \\label{defn:Local Model}\n(Local Model) Let $f:M\\to \\mathbb{R}$ be a Morse function. A local model of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sufficiency of Commutative Frobenius Relations Among CF Generators",
+      "pageStart": 41,
+      "pageEnd": 46,
+      "target": "../sections/sec-007-sufficiency-of-commutative-frobenius-relations-a.md",
+      "narrative": null,
+      "content": "\\label{sec:sufficient}\nRecall that there is a \\textit{silly functor} defined in \\ref{defn:Sillyfunctor}, \\[\nS: \\operatorname{Cob}( 2) \\to \\operatorname{Cob}( 3)_{S^2, CF}\n\\]\nsending disjoint unions of $n$-copies of $S^1$ to disjoint unions of $n$-copies of $S^2$, and the genus $g$ bordism \\[\n\t[\\Sigma_g \\setminus int( \\sqcup^{n_{inc}+n_{out}}D^2)]: \\sqcup^{n_{inc}}S^1 \\to \\sqcup^{n_{out}}S^1\n\\]\nto the bordism \\[\n\t[\\#^g(S^2 \\times S^1) \\setminus int( \\sqcup^{n_{inc}+n_{out}}D^3)]: \\sqcup^{n_{inc}}S^2 \\to \\sqcup^{n_{out}}S^2.\n\\]\n\nLet's examine what this functor does to local failure models. Unsur",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Prime Relations",
+      "pageStart": 46,
+      "pageEnd": 46,
+      "target": "../sections/sec-008-prime-relations.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "No Internal Relations",
+      "pageStart": 46,
+      "pageEnd": 49,
+      "target": "../sections/sec-009-no-internal-relations.md",
+      "narrative": null,
+      "content": "\\label{sec:no internal relations}\n\n\n\n\n\n\nLet $p^{\\times \\times} =\\left[ p \\setminus \\operatorname{int}(D^3 \\sqcup D^3) \\right]  \\in P$ be a prime endomorphism. We say a relation is \\textit{internal }to $p^{\\times \\times} $ if there exists a composition of CF generators and $P$ generators such that the composition is again  $p^{\\times \\times} $, other than the trivial composition $p^{\\times \\times}  = id_{S^2} \\circ p^{\\times \\times}  = p^{\\times \\times}  \\circ id_{S^2}$. One might reasonably suspect that internal relations could arise: two Morse data on a representative $p$ could induce very di",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "External Prime Relations",
+      "pageStart": 49,
+      "pageEnd": 54,
+      "target": "../sections/sec-010-external-prime-relations.md",
+      "narrative": null,
+      "content": "\\label{sec: external prime relations}\n\n\\begin{prop} \\label{primecommutativity}\n(Prime Commutativity) Let $p^{\\times \\times}_1 , p^{\\times \\times}_2  \\in P$ be prime endomorphisms. Then \\[\np^{\\times \\times}_1 \\circ p^{\\times \\times}_2 = p^{\\times \\times}_2 \\circ p^{\\times \\times}_1 \n.\\]\n\\end{prop}\n\n\\begin{figure}[ht]\n    \\centering\n    \\incfig{primecommutativity}\n    \\caption[Prime endomorphism commutativity]{Prime endomorphism commutativity. Geometrically turning the left hand side upside down. Equivalently one can post-compose the Morse function by $x\\mapsto -x$.}\n    \\label{fig:primecommutat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sufficiency of External Relations",
+      "pageStart": 54,
+      "pageEnd": 60,
+      "target": "../sections/sec-011-sufficiency-of-external-relations.md",
+      "narrative": null,
+      "content": "\\label{sec:external sufficient}\nEquipped with prime commutativity, legs and waist relations, co-legs and co-waist relations, we are ready to state a sufficiency theorem among $G_2 $ generators.\n\n\n\\begin{thm} \\label{mainthmG2}\n$\\operatorname{Cob}( 3)_{S^2} $ has a presentation with $G_2$ generators under commutative Frobenius relations, prime commutativity, legs and waist relations, and co-legs and co-waist relations.\n\\end{thm}\n\n\\begin{proof}\nProposition \\ref{generate} shows that $G_2 $ is generating. We need to show that the relations listed above are sufficient. Let $[M]$ be a bordism, and $f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Necessity of Legs Relations",
+      "pageStart": 60,
+      "pageEnd": 70,
+      "target": "../sections/sec-012-necessity-of-legs-relations.md",
+      "narrative": null,
+      "content": "\\label{sec:legsnecessary}\nThis section exhibits all coherence data. See notation \\ref{coherencenotations}. The reader is urged to reference the graphical summary of the proofs whenever possible.\n\n\\begin{mycom}\n\\textbf{(Important comment)} Before we prove that some of the prime relations of $P$ are redundant, we need to make an important observation.\n\nThere is an important geometric relation which shall play a role in the proofs. It is the relation we introduced earlier in comment \\ref{criticalrelations}: \\[\n[p \\setminus \\operatorname{int}(D^3 \\sqcup D^3)] = m \\circ ([p \\setminus \\operatorname{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Passing through TFTs",
+      "pageStart": 70,
+      "pageEnd": 70,
+      "target": "../sections/sec-013-passing-through-tfts.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "P and L Monoids",
+      "pageStart": 70,
+      "pageEnd": 74,
+      "target": "../sections/sec-014-p-and-l-monoids.md",
+      "narrative": null,
+      "content": "\\label{sec:PLmonoids}\nInspired by the list of relations which define the $G_1$ and $G_2$ presentations of $\\operatorname{Cob}(3)_{S^2}$, we define the following monoids in symmetric monoidal categories, in anticipation that they will come from a 3d TFT.\n\n\\begin{defn} \\label{defn:Sketch, P/L monoids}\n(Sketch, P/L monoids) Let $(A, 1, m, tr, m^\\vee)$ be a commutative Frobenius monoid in a symmetric monoidal category $(\\mathcal{C}, \\otimes , 1_{\\otimes })$. We say that $A$ is a P-monoid if there exist endomorphisms $e_p \\in \\operatorname{End}_{\\mathcal{C}}(A)   $ where $p$ is a diffeomorphism cla",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relations to J-Algebras",
+      "pageStart": 74,
+      "pageEnd": 78,
+      "target": "../sections/sec-015-relations-to-j-algebras.md",
+      "narrative": null,
+      "content": "\\label{sec:Jalg}\n\n\\begin{defn} \\label{defn:Trace of Surgery}\n(Trace of Surgery) Let $M$ be an oriented $n$-manifold and $0\\leq k\\leq n$. Let $\\phi : S^{k-1} \\times D^{n-k} \\hookrightarrow M$ be an embedding along which a $k$-handle is attached. The resulting manifold is \\[\nM' = M \\cup_{\\phi } (D^k \\times D^{n-k})\n.\\]\nThe \\textit{trace} of this handle attachment is the $(n+1)$-dimensional cobordism $W$ from $M$ to $M'$ obtained by attaching a $k$-handle to $M \\times [0,1]$ along $M\\times \\left\\{ 1 \\right\\} $: \\[\nW = (M \\times [0,1]) \\cup_{\\phi } (D^k \\times D^{n-k+1})\n.\\]\nIts incoming boundary",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The -operad L",
+      "pageStart": 78,
+      "pageEnd": 90,
+      "target": "../sections/sec-016-the--operad-l.md",
+      "narrative": null,
+      "content": "\\label{sec:infoperad}\nWe now shift gears to the $(\\infty,1)$-categorical setting. In this exploratory section, we aim to define an $\\infty$-operad $\\mathbb{L}^\\otimes $ and conjecture it as equivalent to the connected part of the $\\infty$-endomorphism operad $\\operatorname{End}_{\\Omega^2 \\text{Bord}_3^{fr}}^\\otimes (S^2) $. There is also an oriented version of the proposal. \n\nWe will do this in steps: first we will briefly review the constructions of the $\\infty$-little $n$-cube operad $\\mathbb{E}_n^\\otimes $, then we will define the $\\infty$-operad $\\mathbb{L}^\\otimes $ and $\\operatorname{End",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/def-sec-018-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 90,
+      "pageEnd": 92,
+      "target": "def-sec-018-01.md",
+      "narrative": null,
+      "content": "1.1. (Free Category) Let G be a directed graph. The free category F(G) has objects the vertices of G and morphisms all composable arrows. The empty path is the identity of a vertex.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/def-sec-018-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 90,
+      "pageEnd": 92,
+      "target": "def-sec-018-02.md",
+      "narrative": null,
+      "content": "1.2. (Binary Relation) Let C be a category and a, b ∈obj(C). A bi- nary relation Ra,b on HomC(a, b) is a subset Ra,b ⊂HomC(a, b) × HomC(a, b). We write fRa,bg if (f, g) ∈Ra,b. We say R is a binary relation on homs of C if R = {Ra,b | a, b ∈obj(C)} is a collection of binary relations on all pairs of objects of C. If a pair of morphisms (f, f′) is in Ra,b, we write fRa,bf′, or f = f′ if the context is clear.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/def-sec-018-03",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 90,
+      "pageEnd": 92,
+      "target": "def-sec-018-03.md",
+      "narrative": null,
+      "content": "1.3. (Congruence) A congruence R on a category C is an assignment to each pair of objects a, b ∈obj(C) an equivalence relation Ra,b on HomC(a, b) that is compatible with compositions: if fRa,bf′, meaning if (f, f′) are equivalent, then for all g : a′ →a and all h : b →b′ one has (hfg)Ra′,b′(hf′g); if eRb,ce′, then (ef)Ra,c(e′f′). We sometimes write f ∼R f′ instead to denote the fact that R is a congruence rather than a binary relation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/def-sec-018-06",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 90,
+      "pageEnd": 92,
+      "target": "def-sec-018-06.md",
+      "narrative": null,
+      "content": "1.6. (Quotient Category) Let C be a category and R a congruence on C. Then the quotient category C/R has the same objects as C and the morphisms HomC/R(a, b) = HomC(a, b)/Ra,b are those of C modulo the equivalence relation Ra,b. If R is a binary relation, the quotient category C/R is defined as C/R′ where R′ is the least congruence containing R.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/def-sec-018-08",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 90,
+      "pageEnd": 92,
+      "target": "def-sec-018-08.md",
+      "narrative": null,
+      "content": "1.8. (Generators and Relations) Let G be a directed graph and R a binary relation on F(G), the free category of G. Then we say F(G)/R has generators G and relations R. An isomorphism F(G)/R →C and ⟨G | R⟩form a presentation of C. We say the morphisms of C are generated by the edges of G and the objects by the vertices, and that the binary relation R is sufficient.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/def-sec-018-10",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 90,
+      "pageEnd": 92,
+      "target": "def-sec-018-10.md",
+      "narrative": null,
+      "content": "1.10. (Smaller Relations) Let R, R′ be binary relations on homs of F(G). We say R′ is smaller than R, denoted R′ ⊊R, if R′ a,b ⊆Ra,b for all pairs of objects a, b and there exists at least one pair of objects X, Y such that R′ X,Y ⊊RX,Y . In English, R′ is smaller than R if it can be obtained from R by removing some binary relations.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/def-sec-018-11",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 90,
+      "pageEnd": 92,
+      "target": "def-sec-018-11.md",
+      "narrative": null,
+      "content": "1.11. (Necessary Relations) Let H, G, R be a presentation of C. Let H : F(G) →C be the composition H ◦QR. We say R is necessary if for any R′ smaller than R, the unique functor H ′ : F(G)/ ∼R′→C, through which H factors as H = H ′ ◦QR′ is no longer an isomorphism.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/lem-sec-018-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 90,
+      "pageEnd": 92,
+      "target": "lem-sec-018-05.md",
+      "narrative": null,
+      "content": "1.5. (Least Congruence) Given any binary relations R on homs of C, there is a least congruence R′ on C with R ⊂R′.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/prop-sec-018-07",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 90,
+      "pageEnd": 92,
+      "target": "prop-sec-018-07.md",
+      "narrative": null,
+      "content": "1.7. (Universal Property of Quotient Category) [Mac94] Let C be a category with R a binary relation on the homs. Let C/R be the quotient category. Then the quotient functor Q = QR : C →C/R, which is identity on objects and sends a morphism to its equivalence class,1 satisfy the following universal property: If H : C →D is any functor such that fRa,bf′ implies Hf = Hf′ for all f and f′, then there exists a unique functor H′ : C/R →D with H′ ◦QR = H.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix: Definitions and Common Results",
+      "pageStart": 90,
+      "pageEnd": 90,
+      "target": "../sections/sec-017-appendix-definitions-and-common-results.md",
+      "narrative": null,
+      "content": "Common Results",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Presentations of a Category",
+      "pageStart": 90,
+      "pageEnd": 92,
+      "target": "../sections/sec-018-presentations-of-a-category.md",
+      "narrative": null,
+      "content": "Presentations of a Category\nDefinition A.1.1. (Free Category) Let G be a directed graph. The free category\nF(G) has objects the vertices of G and morphisms all composable arrows. The empty\npath is the identity of a vertex.\nDefinition A.1.2. (Binary Relation) Let C be a category and a, b ∈obj(C). A bi-\nnary relation Ra,b on HomC(a, b) is a subset Ra,b ⊂HomC(a, b) × HomC(a, b). We\nwrite fRa,bg if (f, g) ∈Ra,b.\nWe say R is a binary relation on homs of C if\nR = {Ra,b | a, b ∈obj(C)} is a collection of binary relations on all pairs of objects of C.\nIf a pair of morphisms (f, f′) is in Ra,b, we writ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/rem-sec-018-09",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 90,
+      "pageEnd": 92,
+      "target": "rem-sec-018-09.md",
+      "narrative": null,
+      "content": "1.9. Sufficiency of relations is equivalent to the following more convenient description: Let G be a directed graph and R a binary relation on F(G). Let H : F(G)/R →C be a functor, where F(G)/R denotes the quotient category F(G)/ ∼R for ∼R the least congruence containing R. Consider the functor H : F(G) →C which is the composition H = H ◦Q. Then R being sufficient (equivalently H being an isomorphism) is the same as H being bijective on objects and on homs. But since Q is bijective on objects, the former is equivalent to H being bijective on objects. The injectivity part of the later says H([f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/rem-sec-018-12",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 90,
+      "pageEnd": 92,
+      "target": "rem-sec-018-12.md",
+      "narrative": null,
+      "content": "1.12. In this case, H ′ will fail faithfulness while still remaining full and bijective on objects. A pair of morphisms (f, f′) ∈RX,Y will be mapped to two 1Hence Q is surjective on hom sets, and is therefore a full functor. distinct equivalence classes in F(G)/ ∼R′, but sent to the same morphism in C under H. Hence the two distinct equivalence classes will be sent to the same morphism by H ′. Heuristically, the least congruence containing R′ will be too small, resulting in a quotient F(G)/ ∼R′ being too big. This paper is concerned with constructing presentations of Cob(3)S2. There are two pr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/thm-sec-018-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 90,
+      "pageEnd": 92,
+      "target": "thm-sec-018-04.md",
+      "narrative": null,
+      "content": "1.4. (First isomorphism theorem of category theory) Let H : C →D be a functor. Then H defines a congruence ≡H on C by f ≡H f′ if and only if H(f) = H(f′). Moreover, H factors uniquely through the quotient: H = H ◦Q where Q : C →C/ ≡H and H : C/ ≡H→D where H(a) = H(a) and H([f]) = H(f).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/def-sec-019-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 92,
+      "pageEnd": 99,
+      "target": "def-sec-019-01.md",
+      "narrative": null,
+      "content": "2.1. ((∞, 1)-category) An (∞, 1)-category is a complete Segal space X•. That is, a simplicial object in topological spaces satisfying completeness and the Segal condition. See [Lur08] for details about completeness and Segal condition. See [Zha13, section 2] for a comparison between the different settings of complete Segal spaces. Here we specialize to the setting of topological spaces and retreat to compactly generated Hausdorff spaces or CW spaces if pathologies arise.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/def-sec-019-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 92,
+      "pageEnd": 99,
+      "target": "def-sec-019-02.md",
+      "narrative": null,
+      "content": "2.2. (Quasi-Category) A quasi-category is a simplicial set C such that every map of simplicial sets f0 : Λn i →C can be extended to an n-simplex f : ∆n →C for 0 < i < n. We also call it an ∞-category.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/def-sec-019-09",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 92,
+      "pageEnd": 99,
+      "target": "def-sec-019-09.md",
+      "narrative": null,
+      "content": "2.13. (∞-operad) [Lur17a] An ∞-operad is a functor p : O⊗→N(Fin∗) between ∞-categories satisfying 1. for every inert morphism f : ⟨m⟩→⟨n⟩in N(Fin∗) and every object C ∈O⊗ ⟨m⟩= p−1(⟨m⟩), there exists a p-coCartesian morphism f : C →C′ in O⊗lifting f. In particular, f induces a functor f!O⊗ ⟨m⟩→O⊗ ⟨n⟩. 2. Let C ∈O⊗ ⟨m⟩, C′ ∈O⊗ ⟨n⟩, and f : ⟨m⟩→⟨n⟩a morphism in Fin∗. Let Mapf O⊗(C, C′) be the union of the connected components of MapO⊗(C, C′) over f. Choose p-coCartesian morphisms C′ →C′ i over the inert morphisms ρi : ⟨n⟩→⟨1⟩ for 1 ≤i ≤n. Then the induced map Mapf O⊗(C, C′) → Y 1≤i≤n Mapρi◦f O⊗(C",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/def-sec-019-11",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 92,
+      "pageEnd": 99,
+      "target": "def-sec-019-11.md",
+      "narrative": null,
+      "content": "2.15. (Algebra Object) Let O⊗, O′⊗be ∞-operads. An ∞-operad map from O⊗to O′⊗is a map of simplicial sets f : O⊗→O′⊗such that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/ex-sec-019-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 92,
+      "pageEnd": 99,
+      "target": "ex-sec-019-03.md",
+      "narrative": null,
+      "content": "Recall that the simplicial nerve N(C) of a simplicial category C is a simplicial set N(C) ∈sSet, whose n-simplices are given by N(C)n = HomCat∆(C[∆n], C).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/prop-sec-019-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 92,
+      "pageEnd": 99,
+      "target": "prop-sec-019-04.md",
+      "narrative": null,
+      "content": "2.7. [Lur09] Let C be a simplicial category such that MapC(X, Y ) is a Kan complex for any X, Y ∈C. Then its simplicial nerve N(C) is an ∞-category. Notations A.2.8. Let C be a topological category. Then there is an associated sim- plicial category Sing(C) whose objects are those of C and whose homs are simplicial spaces given by MapSing(C)(x, y) = Sing(MapC(x, y)).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/prop-sec-019-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 92,
+      "pageEnd": 99,
+      "target": "prop-sec-019-06.md",
+      "narrative": null,
+      "content": "2.10. The topological nerve N(C) of any topological category C is defined as the simplicial nerve of Sing(C). It is an ∞-category.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Towards",
+      "pageStart": 92,
+      "pageEnd": 99,
+      "target": "../sections/sec-019-towards.md",
+      "narrative": null,
+      "content": "Towards ∞\nDefinition A.2.1. ((∞, 1)-category) An (∞, 1)-category is a complete Segal space X•.\nThat is, a simplicial object in topological spaces satisfying completeness and the Segal\ncondition.\nSee [Lur08] for details about completeness and Segal condition. See [Zha13, section\n2] for a comparison between the different settings of complete Segal spaces.\nHere\nwe specialize to the setting of topological spaces and retreat to compactly generated\nHausdorff spaces or CW spaces if pathologies arise.\nDefinition A.2.2. (Quasi-Category) A quasi-category is a simplicial set C such that\nevery map of simp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/rem-sec-019-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 92,
+      "pageEnd": 99,
+      "target": "rem-sec-019-05.md",
+      "narrative": null,
+      "content": "2.9. A standard result is that Sing : tCat →Cat∆is the adjoint of the geometric realization functor |.| : Cat∆→tCat, which sends a simplicial category C to the topological category |C| whose objects are the same as those of C and whose mapping spaces are given by Map|C|(x, y) = | MapC(x, y)|.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/rem-sec-019-07",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 92,
+      "pageEnd": 99,
+      "target": "rem-sec-019-07.md",
+      "narrative": null,
+      "content": "2.11. The First few levels contain the following data:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/rem-sec-019-08",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 92,
+      "pageEnd": 99,
+      "target": "rem-sec-019-08.md",
+      "narrative": null,
+      "content": "2.12. Note that if C were an ordinary category, one may define a simplicial category Cs and a topological category Ct. Their simplicial nerve and topological nerve agrees with the ordinary nerve.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.20846v1/blocks/rem-sec-019-10",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 92,
+      "pageEnd": 99,
+      "target": "rem-sec-019-10.md",
+      "narrative": null,
+      "content": "2.14. If condition (1) and (2) are satisfied, then condition (3) is equivalent to 3. There is an equivalence of ∞-categories ϕ : O⊗ ⟨n⟩→O. for all n ≥0 determined by the functors ρi ! : O⊗ ⟨n⟩→O.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

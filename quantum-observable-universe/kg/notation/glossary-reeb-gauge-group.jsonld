@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-glossary-reeb-gauge-group",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:glossary-reeb-gauge-group",
+  "kind": "remark",
+  "title": "The Reeb gauge group $U_1(R)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-contact-affine-chart"
+  ],
+  "tags": [
+    "glossary",
+    "gauge-group",
+    "reeb",
+    "U1",
+    "maximal-torus",
+    "connection",
+    "adjoint",
+    "commutative"
+  ],
+  "defines": [
+    "reeb-gauge-group"
+  ],
+  "leanRef": "qou:QOU.ReebGaugeGroup",
+  "text": "glossary-reeb-gauge-group.md",
+  "leanSource": "glossary-reeb-gauge-group.lean",
+  "provenance": "authored"
+}

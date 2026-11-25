@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-kronheimer-mrowka",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:kronheimer-mrowka",
+  "kind": "remark",
+  "title": "Non-trivial representations of knot groups (Kronheimer--Mrowka)",
+  "interprets": "papers/quantum-observable-universe/blocks/def-localized-knot",
+  "tags": [
+    "knot-group",
+    "su2",
+    "gauge-theory"
+  ],
+  "text": "kronheimer-mrowka.md",
+  "provenance": "authored"
+}

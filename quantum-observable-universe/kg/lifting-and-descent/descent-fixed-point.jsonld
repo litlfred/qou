@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-descent-fixed-point",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:descent-fixed-point",
+  "kind": "remark",
+  "title": "Fixed-point mechanism: ascent and descent",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-brane-boundary",
+    "papers/quantum-observable-universe/blocks/prop-descent-eigenspaces",
+    "papers/quantum-observable-universe/blocks/rem-descent-reduction",
+    "papers/quantum-observable-universe/blocks/rem-descent-reduction-two",
+    "papers/quantum-observable-universe/blocks/rem-descent-reduction-three"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-jet-prolongation",
+  "tags": [
+    "descent",
+    "ascent",
+    "fixed-point",
+    "involution"
+  ],
+  "text": "descent-fixed-point.md",
+  "provenance": "authored"
+}

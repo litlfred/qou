@@ -1,0 +1,1330 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "invariant-eigendistributions-2",
+  "title": "Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups",
+  "variant": "pdf",
+  "pages": 33,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Contents",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-contents"
+    },
+    {
+      "level": 1,
+      "title": "Introduction.",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Construction of Weyl group representations",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-2-construction-of-weyl-group-representations"
+    },
+    {
+      "level": 1,
+      "title": "Specialization",
+      "number": "3",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-3-specialization"
+    },
+    {
+      "level": 2,
+      "title": "Lemma.",
+      "number": "3.1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-31-lemma"
+    },
+    {
+      "level": 1,
+      "title": "Springer Theory",
+      "number": "4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-4-springer-theory"
+    },
+    {
+      "level": 1,
+      "title": "Coherent families of eigendistributions.",
+      "number": "5",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-5-coherent-families-of-eigendistributions"
+    },
+    {
+      "level": 2,
+      "title": "Corollary.",
+      "number": "5.2",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-52-corollary"
+    },
+    {
+      "level": 1,
+      "title": "Characters and characteristic cycles.",
+      "number": "6",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-6-characters-and-characteristic-cycles"
+    },
+    {
+      "level": 1,
+      "title": "Asymptotics at zero",
+      "number": "7",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-7-asymptotics-at-zero"
+    },
+    {
+      "level": 1,
+      "title": "Harmonic polynomials",
+      "number": "8",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-010-8-harmonic-polynomials"
+    },
+    {
+      "level": 1,
+      "title": "Univalence",
+      "number": "9",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-011-9-univalence"
+    },
+    {
+      "level": 2,
+      "title": "Lemma.",
+      "number": "9.2",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-012-92-lemma"
+    },
+    {
+      "level": 1,
+      "title": "Nilpotent orbital integrals",
+      "number": "10",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-013-10-nilpotent-orbital-integrals"
+    },
+    {
+      "level": 1,
+      "title": "A conjecture of Joseph",
+      "number": "11",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-014-11-a-conjecture-of-joseph"
+    },
+    {
+      "level": 1,
+      "title": "Appendix. Comparison with the Kazhdan-Lusztig construction",
+      "number": "12",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-015-12-appendix-comparison-with-the-kazhdan-lusztig"
+    },
+    {
+      "level": 1,
+      "title": "REFERENCES",
+      "number": null,
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-016-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 26,
+      "summary": null,
+      "keywords": [],
+      "extract": "REPRESENTATIONS OF WEYL GROUPS 1 Invariant eigendistributions on a semisimple Lie algebra and homology classes on the conormal variety II: representations of Weyl groups W. ROSSMANN1",
+      "extractCut": false,
+      "blocks": [
+        "library/invariant-eigendistributions-2/blocks/prose-sec-front-matter",
+        "library/invariant-eigendistributions-2/blocks/figure-img-p001-1"
+      ]
+    },
+    {
+      "id": "sec-000-contents",
+      "number": null,
+      "title": "Contents",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 49,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "univalence",
+          "heading": false
+        },
+        {
+          "term": "eigendistributions",
+          "heading": false
+        },
+        {
+          "term": "orbital",
+          "heading": false
+        }
+      ],
+      "extract": "1. Introduction 2. Construction of Weyl group representations 3. Specialization 4. Springer theory 5. Coherent families of eigendistributions 6. Character contours and characteristic cycles 7. Asymptotics at zero 8. Harmonic polynomials 9. Univalence 10. Nilpotent orbital integrals 11. A conjecture of Joseph 12 Appendix: comparison with the Kazhdan-Lusztig construction",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-1-introduction",
+      "number": "1",
+      "title": "Introduction.",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 459,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hotta",
+          "heading": false
+        },
+        {
+          "term": "vogan",
+          "heading": false
+        },
+        {
+          "term": "vergne",
+          "heading": false
+        },
+        {
+          "term": "integral formula",
+          "heading": false
+        },
+        {
+          "term": "joseph",
+          "heading": false
+        },
+        {
+          "term": "conormal",
+          "heading": false
+        },
+        {
+          "term": "basic facts",
+          "heading": false
+        },
+        {
+          "term": "indebted",
+          "heading": false
+        }
+      ],
+      "extract": "This second part contains applications of the Integral Formula, as promised in the introduction to the ﬁrst part. The main results I consider to be Theorems (5.1) and (7.1) , even though neither is hard to prove. Apart of being of some interest in themselves, they imply a number of results which are generally considered hard, if I am not mistaken, and certainly occupy considerable space in the literature. Among the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-construction-of-weyl-group-representations",
+      "number": "2",
+      "title": "Construction of Weyl group representations",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 1123,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ﬁnite subpolyhedron",
+          "heading": false
+        },
+        {
+          "term": "h2m",
+          "heading": false
+        },
+        {
+          "term": "proper homotopy",
+          "heading": false
+        },
+        {
+          "term": "homotopy action",
+          "heading": false
+        },
+        {
+          "term": "springer map",
+          "heading": false
+        },
+        {
+          "term": "scalar multiplications",
+          "heading": false
+        },
+        {
+          "term": "kazhdan-lusztig",
+          "heading": false
+        },
+        {
+          "term": "weyl",
+          "heading": true
+        }
+      ],
+      "extract": "We keep the notation introduced in part I, except that (until further notice) g can be any complex, semisimple Lie algebra (not necessarily ≈go × go), b1 any Borel subalgebra of g containing the Cartan subalgebra h. For any (not necessarily regular) λ ∈h∗we set Ωλ = {ξ ∈g∗: p(ξ) = p(λ) for all G-invariant polynomials p on g∗}. The map pλ = pb1,λ : B∗→Ωλ, u · (b1, ν) →u · (λ + ν). with u ∈U (compact form of G), ν ∈b1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-specialization",
+      "number": "3",
+      "title": "Specialization",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 150,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "specialization",
+          "heading": true
+        },
+        {
+          "term": "ﬂag-manifold",
+          "heading": false
+        },
+        {
+          "term": "pwλ",
+          "heading": false
+        }
+      ],
+      "extract": "In the above construction, choose V = {ν}, a single point. Then B∗(ν) = {(b, ν)|ν ∈b⊥}, which may be identiﬁed with Bν = {b ∈B|ν ∈b⊥}. This is the ﬁxed point set of (the one parameter group generated by) ν, when g∗is identiﬁed with g. We thus have a representation of W in H∗(Bν). The component group A(ν) of the stabilizer of ν in G acts on H∗(Bν). This action commutes with the action of W, because the elements of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-31-lemma",
+      "number": "3.1",
+      "title": "Lemma.",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 529,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "h2e",
+          "heading": false
+        },
+        {
+          "term": "homotopy",
+          "heading": false
+        },
+        {
+          "term": "weyl groups",
+          "heading": false
+        },
+        {
+          "term": "lemma",
+          "heading": true
+        },
+        {
+          "term": "neighbourhood",
+          "heading": false
+        },
+        {
+          "term": "going",
+          "heading": false
+        },
+        {
+          "term": "inclusion",
+          "heading": false
+        }
+      ],
+      "extract": "Lemma. The inclusion Bν →B induces a W-map H∗(Bν) →H∗(B). This map factors through the projection H∗(Bν) →H∗(Bν)A(ν) onto the A(ν)-invariants. REPRESENTATIONS OF WEYL GROUPS 5 Proof. It suﬃces to show that the homotopy equivalence of Bν constuct above has a representative Bν →Bν, denoted aν(w), so that the inclusion i : Bν →B satisﬁes i ◦aν(w) ∼a(w) ◦i. Choose a neighbourhood V of Bν for which the inclusion k : Bν",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-4-springer-theory",
+      "number": "4",
+      "title": "Springer Theory",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 712,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "h2n",
+          "heading": false
+        },
+        {
+          "term": "h2eo",
+          "heading": false
+        },
+        {
+          "term": "boν",
+          "heading": false
+        },
+        {
+          "term": "h2e",
+          "heading": false
+        },
+        {
+          "term": "k-orbits",
+          "heading": false
+        },
+        {
+          "term": "fundamental cycles",
+          "heading": false
+        },
+        {
+          "term": "go-orbits",
+          "heading": false
+        },
+        {
+          "term": "springer",
+          "heading": true
+        }
+      ],
+      "extract": "We shall now apply the above construction with Go replaced by G ≈Go × Go. B will again denote the ﬂag manifold of g, Bo that of Go, so that B = Bo × Bo. N = No × No is the nilpotent cone in g∗, No that in g∗ o. We again set z1 = bo × bo and zw = w−1z1. For V we now take N ∩k⊥= {(ν, −ν)|ν ∈No} ≈No. Then B∗(V ) becomes Z = {(b, b′; ν, −ν)|ν ∈b⊥∩b′⊥} the conormal variety of the K-orbits on B. Our construction therefore",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-5-coherent-families-of-eigendistributions",
+      "number": "5",
+      "title": "Coherent families of eigendistributions.",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 10,
+      "labelStart": "7",
+      "labelEnd": "10",
+      "words": 870,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pλγ exλ",
+          "heading": false
+        },
+        {
+          "term": "eigendistributions",
+          "heading": true
+        },
+        {
+          "term": "ibo",
+          "heading": false
+        },
+        {
+          "term": "conormal bundle",
+          "heading": false
+        },
+        {
+          "term": "conormal variety",
+          "heading": false
+        },
+        {
+          "term": "coherent",
+          "heading": true
+        },
+        {
+          "term": "h2n",
+          "heading": false
+        },
+        {
+          "term": "invariant eigendistributions",
+          "heading": false
+        }
+      ],
+      "extract": "To bring in the Integral Formula we need to pass from the conormal variety Z of the K-action to the conormal variety S of the Go-action by means of the involution ι : (x, y) →(x, ¯y) of g = go × go which interchanges go = {(x, ¯x)} and k = {(x, x)}. Use this automorphism ι to transfer the represention of W on H∗(Z) constructed above from Z to S. It is still induced by the transformations aλ(w) = pwλ(w)−1 ◦pλ with pλ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-52-corollary",
+      "number": "5.2",
+      "title": "Corollary.",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 18,
+      "summary": null,
+      "keywords": [],
+      "extract": "5.2 Corollary. Sw = \u0001 y∈W/Wo (−1)l(w)−l(y)Euy(Sw)y · S1. or equivalently Zw = \u0001 y∈W/Wo (−1)l(w)−l(y)Euy(Zw)y · Z1.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-6-characters-and-characteristic-cycles",
+      "number": "6",
+      "title": "Characters and characteristic cycles.",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "12",
+      "words": 791,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "beilinson-bernstein correspondence",
+          "heading": false
+        },
+        {
+          "term": "inﬁnitesimal character",
+          "heading": false
+        },
+        {
+          "term": "character contour",
+          "heading": false
+        },
+        {
+          "term": "conormal variety",
+          "heading": false
+        },
+        {
+          "term": "global character",
+          "heading": false
+        },
+        {
+          "term": "induced d-module",
+          "heading": false
+        },
+        {
+          "term": "invariant eigendistribution",
+          "heading": false
+        },
+        {
+          "term": "characteristic cycle",
+          "heading": false
+        }
+      ],
+      "extract": "As a ﬁrst and immediate application of Theorem 5.1 we derive a formula for the global character of a (g, K)-module as a contour integral over the characteristic cycle of the corresponding (D, K)-module. We start with some general remarks about global characters. A (g, K)-module M with inﬁnitesimal character λ ∈h is the Harish-Chandra module of an admissible representation of Go, whose global character is an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-7-asymptotics-at-zero",
+      "number": "7",
+      "title": "Asymptotics at zero",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 16,
+      "labelStart": "12",
+      "labelEnd": "16",
+      "words": 1445,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pλγ exλ",
+          "heading": false
+        },
+        {
+          "term": "ﬁbre bνw",
+          "heading": false
+        },
+        {
+          "term": "h2e",
+          "heading": false
+        },
+        {
+          "term": "h2n",
+          "heading": false
+        },
+        {
+          "term": "tangent vectors",
+          "heading": false
+        },
+        {
+          "term": "igo",
+          "heading": false
+        },
+        {
+          "term": "go-orbit",
+          "heading": false
+        },
+        {
+          "term": "weyl groups",
+          "heading": false
+        }
+      ],
+      "extract": "Recall the W-ﬁltration of Z by the inverse images Z(O) of nilpotent K-orbits O on N ∩k⊥, which gave rise to the decomposition (4.1) of grH∗(Z). Passing from Z to S, the analogous ﬁltration of S by the inverse images S(O) of Go-orbits on N ∩igo∗gives a ﬁltration of H2n(S) by the subgroups H2n(S( ¯O)) according to the closure relation among the O’s leading to the decomposition grH2n(S) ≈ \u0001 O H2n(S(O)). (1) As in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-8-harmonic-polynomials",
+      "number": "8",
+      "title": "Harmonic polynomials",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 21,
+      "labelStart": "16",
+      "labelEnd": "21",
+      "words": 1493,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wo-invariant polynomial",
+          "heading": false
+        },
+        {
+          "term": "myy",
+          "heading": false
+        },
+        {
+          "term": "h2n",
+          "heading": false
+        },
+        {
+          "term": "h2e",
+          "heading": false
+        },
+        {
+          "term": "pvλ",
+          "heading": false
+        },
+        {
+          "term": "harmonic",
+          "heading": true
+        },
+        {
+          "term": "euy",
+          "heading": false
+        },
+        {
+          "term": "eωλ",
+          "heading": false
+        }
+      ],
+      "extract": "We study in some more detail the harmonic polynomials cΓ ∈He(h∗) associated to a 2n-cycle Γ ∈ H2n(S( ¯O)) over ¯O by the relation θΓ (λ) = cΓ (λ)θO + o(|λ|e). (1) These polynomials, or variants thereof, have a history. When θΓ represents a coherent family of virtual characters of Harish-Chandra modules, then cΓ is the character polynomial studied by King [1979] using results of Joseph [1980], except that in King’s",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-9-univalence",
+      "number": "9",
+      "title": "Univalence",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 487,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "univalence",
+          "heading": true
+        },
+        {
+          "term": "wo-invariant",
+          "heading": false
+        },
+        {
+          "term": "univalent",
+          "heading": false
+        },
+        {
+          "term": "transforming",
+          "heading": false
+        },
+        {
+          "term": "deﬁne functions",
+          "heading": false
+        },
+        {
+          "term": "homogeneous",
+          "heading": false
+        },
+        {
+          "term": "degree",
+          "heading": false
+        }
+      ],
+      "extract": "If one uses explicitly the identiﬁcation h = ho × ho and ho ∗= ho one can get a formula for cΓ (λ) which does not involve the arbitrary regular x ∈h and an analogous formula for pO. To see this we can place ourselves momentarily in the following general situation envisaged by Lusztig and Spaltenstein [1979]. Until further notice, let ho denote any ﬁnite dimensional complex vector space, Wo any ﬁnite group of linear",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-92-lemma",
+      "number": "9.2",
+      "title": "Lemma.",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 24,
+      "labelStart": "22",
+      "labelEnd": "24",
+      "words": 558,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "h2n",
+          "heading": false
+        },
+        {
+          "term": "weyl groups",
+          "heading": false
+        },
+        {
+          "term": "lemma",
+          "heading": true
+        },
+        {
+          "term": "identiﬁcation",
+          "heading": false
+        },
+        {
+          "term": "pairing",
+          "heading": false
+        },
+        {
+          "term": "transforms",
+          "heading": false
+        }
+      ],
+      "extract": "Φa(λ, x) = Fa(λ, x) + o(|λ|e, |x|e). Furthermore, Fa(λ, x) = fa(λ1, λ2)fσ(x1, x2) where λ = (λ1, λ2), x = (x1, x2) and ho ∗is identiﬁed with ho; fa is deﬁned as in (2) : fa(λ1, λ2) = 1 eo! \u0001 y∈Wo a(y)⟨λ1, y · λ2⟩eo and fσ is deﬁned by fσ(x1, x2) = 1 eo! \u0001 y∈Wo χσ(y)⟨x1, y · x2⟩eo (5) Proof. A typical term in the expansion of Φa(λ, x) looks like 1 k1!k2! \u0001 y∈W a(y)⟨λ1, y1 · x1⟩k1⟨λ2, y2 · x2⟩k2 where y = (y1, y2). By",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-10-nilpotent-orbital-integrals",
+      "number": "10",
+      "title": "Nilpotent orbital integrals",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 26,
+      "labelStart": "24",
+      "labelEnd": "26",
+      "words": 536,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nilpotent go-orbit",
+          "heading": false
+        },
+        {
+          "term": "igo",
+          "heading": false
+        },
+        {
+          "term": "tempered distribution",
+          "heading": false
+        },
+        {
+          "term": "const",
+          "heading": false
+        },
+        {
+          "term": "inﬁnitesimal character",
+          "heading": false
+        },
+        {
+          "term": "fourier transform",
+          "heading": false
+        },
+        {
+          "term": "eigendistributions",
+          "heading": false
+        },
+        {
+          "term": "weyl groups",
+          "heading": false
+        }
+      ],
+      "extract": "For each Go-orbit O in igo∗let µO be the distribution on go∗deﬁned by ⟨µO, f⟩= 1 (2πi)d \u0002 O fe−σO (1) with d = dimCO. µO is a tempered distribution on igo∗. (Of course, we use igo∗rather than go∗or go only to conform with the deﬁnition of the distributions θΓ , which will simplify the notation.) We denote by \bµO the Fourier transform of µO, a tempered distribution on go, given by a locally integrable function. In",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-11-a-conjecture-of-joseph",
+      "number": "11",
+      "title": "A conjecture of Joseph",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 28,
+      "labelStart": "26",
+      "labelEnd": "28",
+      "words": 956,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "joseph conjecture",
+          "heading": true
+        },
+        {
+          "term": "boν",
+          "heading": false
+        },
+        {
+          "term": "h2eo",
+          "heading": false
+        },
+        {
+          "term": "conormal variety",
+          "heading": false
+        },
+        {
+          "term": "fundamental cycle",
+          "heading": false
+        },
+        {
+          "term": "dimboν",
+          "heading": false
+        },
+        {
+          "term": "dimo",
+          "heading": false
+        },
+        {
+          "term": "euy",
+          "heading": false
+        }
+      ],
+      "extract": "The asymptotic relation θΓ (λ) = cΓ (λ)θO + o(|λ|e) (1) may be used to prove a conjecture of Joseph [1984, Conjecture 9.8]. The conjecture may be explained as follows. Let T = {(b, ν)|b ∈Bo, ν ∈b⊥∩bo ⊥}. (2) This is the conormal variety of the action of the ﬁxed Borel subgroup Bo of Go on the ﬂag manifold Bo of Go. (The complexiﬁcation of Go does not enter into the picture here.) T is also the inverse image Bo ∗(bo",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-12-appendix-comparison-with-the-kazhdan-lusztig",
+      "number": "12",
+      "title": "Appendix. Comparison with the Kazhdan-Lusztig construction",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 31,
+      "labelStart": "28",
+      "labelEnd": "31",
+      "words": 1167,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proper homotopy",
+          "heading": false
+        },
+        {
+          "term": "dist",
+          "heading": false
+        },
+        {
+          "term": "homotopy equivalence",
+          "heading": false
+        },
+        {
+          "term": "const",
+          "heading": false
+        },
+        {
+          "term": "exp",
+          "heading": false
+        },
+        {
+          "term": "construction",
+          "heading": true
+        },
+        {
+          "term": "kazhdan",
+          "heading": false
+        },
+        {
+          "term": "neighbourhood",
+          "heading": false
+        }
+      ],
+      "extract": "For every simple reﬂection s of go, ho (“simple” with respect to the ﬁxed Borel bo of go) Kazhdan and Lusztig [1980] deﬁne a proper homotopy equivalence αs of the conormal variety Z of the K-action on B = Bo × Bo: Z = {(b, b′, ν, ν′)|b, b′ ∈Bo, ν′ = −ν ∈b⊥∩b′⊥}. Their procedure is equivalent to the following. Choose a neighbourhood U of Z in Bo × Bo × No × No so that the inclusion i : Z →U has a proper homotopy",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-references",
+      "number": null,
+      "title": "REFERENCES",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 33,
+      "labelStart": "31",
+      "labelEnd": "33",
+      "words": 616,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "inventiones math",
+          "heading": false
+        },
+        {
+          "term": "weyl groups",
+          "heading": false
+        },
+        {
+          "term": "des espaces",
+          "heading": false
+        },
+        {
+          "term": "des groupes",
+          "heading": false
+        },
+        {
+          "term": "vogan",
+          "heading": false
+        },
+        {
+          "term": "springer representations",
+          "heading": false
+        },
+        {
+          "term": "harish-chandra modules",
+          "heading": false
+        },
+        {
+          "term": "unipotent classes",
+          "heading": false
+        }
+      ],
+      "extract": "P. Alexandroﬀand H. Hopf, Topologie. Chelsea, New York 1965. Original edition: Berlin 1935. D. Barbasch and D. Vogan, Jr., The local structure of characters. J. Functional Analysis 37, 27–55 (1980). D. Barbasch and D. Vogan, Jr., Primitive ideals and orbital integrals in complex classical groups. Math. Ann. 259, 153–199 (1982). D. Barbaschand D. Vogan, Jr., Primitive ideals and orbital integrals in complex",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "weyl groups",
+      "heading": false
+    },
+    {
+      "term": "h2n",
+      "heading": false
+    },
+    {
+      "term": "conormal variety",
+      "heading": false
+    },
+    {
+      "term": "nilpotent go-orbit",
+      "heading": false
+    },
+    {
+      "term": "springer representations",
+      "heading": false
+    },
+    {
+      "term": "h2e",
+      "heading": false
+    },
+    {
+      "term": "conormal varieties",
+      "heading": false
+    },
+    {
+      "term": "regular integral",
+      "heading": false
+    },
+    {
+      "term": "conormal bundle",
+      "heading": false
+    },
+    {
+      "term": "wo-invariant polynomial",
+      "heading": false
+    },
+    {
+      "term": "ﬂag variety",
+      "heading": false
+    },
+    {
+      "term": "joseph conjecture",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 17,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 18,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p31); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 18 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/invariant-eigendistributions-2"
+  }
+}

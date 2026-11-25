@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/arxiv-q-alg-9709040v1/sections/sec-057",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Property P5",
+  "pageStart": 34,
+  "pageEnd": 35,
+  "contains": [
+    "library/arxiv-q-alg-9709040v1/blocks/prose-sec-057",
+    "library/arxiv-q-alg-9709040v1/blocks/lem-sec-057-01",
+    "library/arxiv-q-alg-9709040v1/blocks/lem-sec-057-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-q-alg-9709040v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-q-alg-9709040v1/manifest.jsonld",
+  "provenance": "ingested"
+}

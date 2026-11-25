@@ -1,0 +1,1501 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1003.4485v2",
+  "title": "An Invitation to Higher Gauge Theory",
+  "variant": "pdf",
+  "pages": 60,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Categories and Connections",
+      "number": "2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-categories-and-connections"
+    },
+    {
+      "level": 1,
+      "title": "2-Categories and 2-Connections",
+      "number": "3",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-2-categories-and-2-connections"
+    },
+    {
+      "level": 2,
+      "title": "2-Categories",
+      "number": "3.1",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-31-2-categories"
+    },
+    {
+      "level": 2,
+      "title": "Path 2-Groupoids",
+      "number": "3.2",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-32-path-2-groupoids"
+    },
+    {
+      "level": 2,
+      "title": "2-Groups",
+      "number": "3.3",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-33-2-groups"
+    },
+    {
+      "level": 2,
+      "title": "2-Connections",
+      "number": "3.4",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-34-2-connections"
+    },
+    {
+      "level": 1,
+      "title": "Examples and Applications",
+      "number": "4",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-4-examples-and-applications"
+    },
+    {
+      "level": 2,
+      "title": "Shifted Abelian Groups",
+      "number": "4.1",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-41-shifted-abelian-groups"
+    },
+    {
+      "level": 2,
+      "title": "The Poincaré 2-Group",
+      "number": "4.2",
+      "page": 32,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-42-the-poincaré-2-group"
+    },
+    {
+      "level": 2,
+      "title": "Tangent 2-Groups",
+      "number": "4.3",
+      "page": 33,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-43-tangent-2-groups"
+    },
+    {
+      "level": 2,
+      "title": "Inner Automorphism 2-Groups",
+      "number": "4.4",
+      "page": 37,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-44-inner-automorphism-2-groups"
+    },
+    {
+      "level": 2,
+      "title": "Automorphism 2-Groups",
+      "number": "4.5",
+      "page": 38,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-45-automorphism-2-groups"
+    },
+    {
+      "level": 2,
+      "title": "String 2-Groups",
+      "number": "4.6",
+      "page": 40,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-46-string-2-groups"
+    },
+    {
+      "level": 1,
+      "title": "Further Topics",
+      "number": "5",
+      "page": 44,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-5-further-topics"
+    },
+    {
+      "level": 2,
+      "title": "Gauge Transformations",
+      "number": "5.1",
+      "page": 44,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-51-gauge-transformations"
+    },
+    {
+      "level": 2,
+      "title": "Curvature",
+      "number": "5.2",
+      "page": 46,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-52-curvature"
+    },
+    {
+      "level": 2,
+      "title": "Nontrivial 2-Bundles",
+      "number": "5.3",
+      "page": 47,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-53-nontrivial-2-bundles"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 34,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "huerta",
+          "heading": false
+        },
+        {
+          "term": "ucr",
+          "heading": false
+        },
+        {
+          "term": "baez",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1003.4485v2 [hep-th] 18 Feb 2015 An Invitation to Higher Gauge Theory John C. Baez and John Huerta Department of Mathematics, University of California Riverside, California 92521 USA email: baez@math.ucr.edu huerta@math.ucr.edu March 24, 2010 Abstract",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-1003.4485v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 724,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "parallel transport",
+          "heading": false
+        },
+        {
+          "term": "string theory",
+          "heading": false
+        },
+        {
+          "term": "spin foam",
+          "heading": false
+        },
+        {
+          "term": "higher gauge",
+          "heading": false
+        },
+        {
+          "term": "lie groups",
+          "heading": false
+        },
+        {
+          "term": "automorphism groups",
+          "heading": false
+        },
+        {
+          "term": "lie algebras",
+          "heading": false
+        },
+        {
+          "term": "ref connections",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{introduction} Higher gauge theory is a generalization of gauge theory that describes parallel transport, not just for point particles, but also for higher-dimensional extended objects. It is a beautiful new branch of mathematics, with a lot of room left for exploration. It has already been applied to string theory and loop quantum gravity---or more specifically, spin foam models. This should not be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-categories-and-connections",
+      "number": "2",
+      "title": "Categories and Connections",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3010,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lazy paths",
+          "heading": false
+        },
+        {
+          "term": "hol maps",
+          "heading": false
+        },
+        {
+          "term": "path groupoid",
+          "heading": false
+        },
+        {
+          "term": "path gamma",
+          "heading": false
+        },
+        {
+          "term": "functor hol",
+          "heading": false
+        },
+        {
+          "term": "smooth path",
+          "heading": false
+        },
+        {
+          "term": "xymatrix bullet",
+          "heading": false
+        },
+        {
+          "term": "one-object groupoid",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{connections} A category consists of objects, which we draw as dots: \\[ \\bullet \\,\\, x \\] and morphisms between objects, which we draw as arrows between dots: \\[ \\xymatrix{ x \\bullet \\ar@/^1pc/[rr]^{f} && \\bullet y } \\] You should think of objects as `things' and morphisms as `processes'. The main thing you can do in a category is take a morphism from $x$ to $y$ and a morphism from $y$ to $z$: \\[ \\xymatrix{ x",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-2-categories-and-2-connections",
+      "number": "3",
+      "title": "2-Categories and 2-Connections",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 292,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "categories",
+          "heading": true
+        },
+        {
+          "term": "climb",
+          "heading": false
+        },
+        {
+          "term": "connections",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{2-connections} Now we want to climb up one dimension, and talk about `2-connections'. A connection tells us how particles transform as they move along paths. A 2-connection will also tell us how \\emph{strings} transform as they sweep out \\emph{surfaces}. To make this idea precise, we need to take everything we said in the previous section and boost the dimension by one. Instead of categories, we need",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-31-2-categories",
+      "number": "3.1",
+      "title": "2-Categories",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 441,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xymatrix bullet",
+          "heading": false
+        },
+        {
+          "term": "quad xymatrix",
+          "heading": false
+        },
+        {
+          "term": "alpha circ",
+          "heading": false
+        },
+        {
+          "term": "alpha cdot",
+          "heading": false
+        },
+        {
+          "term": "interchange law",
+          "heading": false
+        },
+        {
+          "term": "itemize item",
+          "heading": false
+        },
+        {
+          "term": "horizontal composition",
+          "heading": false
+        },
+        {
+          "term": "vertical composition",
+          "heading": false
+        }
+      ],
+      "extract": "Sets have elements. Categories have elements, usually called `objects', but also morphisms between these. In an `$n$-category', we go further and include 2-morphisms between morphisms, 3-morphisms between 2-morphisms,... and so on up to the $n$th level. We are beginning to see $n$-categories provide an algebraic language for $n$-dimensional structures in physics \\cite{BaezLauda:prehistory}. Higher gauge theory is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-32-path-2-groupoids",
+      "number": "3.2",
+      "title": "Path 2-Groupoids",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 612,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lazy paths",
+          "heading": false
+        },
+        {
+          "term": "lazy homotopies",
+          "heading": false
+        },
+        {
+          "term": "lazy surface",
+          "heading": false
+        },
+        {
+          "term": "alpha textrm",
+          "heading": false
+        },
+        {
+          "term": "thin homotopy",
+          "heading": false
+        },
+        {
+          "term": "path groupoid",
+          "heading": false
+        },
+        {
+          "term": "quad textrm",
+          "heading": false
+        },
+        {
+          "term": "paths gamma",
+          "heading": false
+        }
+      ],
+      "extract": "Path groupoids play a big though often neglected role in physics: the path groupoid of a spacetime manifold describes all the possible motions of a point particle in that spacetime. The path 2-groupoid does the same thing for particles \\textit{and strings}. First of all, a {\\bf 2-groupoid} is a 2-category where: \\begin{itemize} \\item Every morphism $f \\maps x \\to y$ has an \\define{inverse}, $f^{-1} \\maps y \\to x$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-33-2-groups",
+      "number": "3.3",
+      "title": "2-Groups",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1701,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xymatrix bullet",
+          "heading": false
+        },
+        {
+          "term": "hh'h quad",
+          "heading": false
+        },
+        {
+          "term": "crossed module",
+          "heading": false
+        },
+        {
+          "term": "itemize item",
+          "heading": false
+        },
+        {
+          "term": "alpha maps",
+          "heading": false
+        },
+        {
+          "term": "peiffer identity",
+          "heading": false
+        },
+        {
+          "term": "begin itemize",
+          "heading": false
+        },
+        {
+          "term": "lll",
+          "heading": false
+        }
+      ],
+      "extract": "Just as a group was a groupoid with one object, we define a \\define{2-group} to be a 2-groupoid with one object. This definition is so elegant that it may be hard to understand at first! So, it will be useful to take a 2-group $\\G$ and chop it into four bite-sized pieces of data, giving a `crossed module' $(G,H,t,\\alpha)$. Indeed, 2-groups were originally introduced in the guise of crossed modules by the famous",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-34-2-connections",
+      "number": "3.4",
+      "title": "2-Connections",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1865,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xymatrix bullet",
+          "heading": false
+        },
+        {
+          "term": "ell bullet",
+          "heading": false
+        },
+        {
+          "term": "poexp left",
+          "heading": false
+        },
+        {
+          "term": "hol maps",
+          "heading": false
+        },
+        {
+          "term": "scriptstyle gamma",
+          "heading": false
+        },
+        {
+          "term": "alpha circ",
+          "heading": false
+        },
+        {
+          "term": "int gamma",
+          "heading": false
+        },
+        {
+          "term": "int sigma",
+          "heading": false
+        }
+      ],
+      "extract": "A 2-connection is a recipe for parallel transporting both 0-dimensional and 1-dimensional objects---say, particles and strings. Just as we can describe a connection on a trivial bundle using a Lie-algebra valued differential form, we can describe a 2-connection using a \\emph{pair} of differential forms. But there is a deeper way of understanding 2-connections. Just as a connection was revealed to be a smooth functor",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-4-examples-and-applications",
+      "number": "4",
+      "title": "Examples and Applications",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 48,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "crossed",
+          "heading": false
+        },
+        {
+          "term": "build",
+          "heading": false
+        },
+        {
+          "term": "lie",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{examples} Now let us give some examples of Lie 2-groups, and see what higher gauge theory can do with these examples. We will build these examples using crossed modules. Throughout what follows, $\\G$ is a Lie 2-group whose corresponding crossed module is $(G,H,t,\\alpha)$.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-41-shifted-abelian-groups",
+      "number": "4.1",
+      "title": "Shifted Abelian Groups",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 32,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1696,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "string worldsheet",
+          "heading": false
+        },
+        {
+          "term": "multisymplectic geometry",
+          "heading": false
+        },
+        {
+          "term": "gamma alpha",
+          "heading": false
+        },
+        {
+          "term": "omega alpha",
+          "heading": false
+        },
+        {
+          "term": "sigma alpha",
+          "heading": false
+        },
+        {
+          "term": "int gamma",
+          "heading": false
+        },
+        {
+          "term": "string coupled",
+          "heading": false
+        },
+        {
+          "term": "symplectic geometry",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{abelian} Any group $G$ automatically gives a 2-group where $H$ is trivial. Then higher gauge theory reduces to ordinary gauge theory. But to see what is \\emph{new} about higher gauge theory, let us instead suppose that $G$ is the trivial group. Then $t$ and $\\alpha$ are forced to be trivial, and $t$ is automatically $G$-equivariant. On the other hand, the Peiffer identity \\[ \\alpha(t(h))h' = hh'h^{-1} \\] is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-42-the-poincaré-2-group",
+      "number": "4.2",
+      "title": "The Poincaré 2-Group",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 33,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 618,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spin foam",
+          "heading": false
+        },
+        {
+          "term": "foam model",
+          "heading": false
+        },
+        {
+          "term": "poincar group",
+          "heading": false
+        },
+        {
+          "term": "minkowski spacetime",
+          "heading": false
+        },
+        {
+          "term": "gravity cite",
+          "heading": false
+        },
+        {
+          "term": "baratin",
+          "heading": false
+        },
+        {
+          "term": "quantum gravity",
+          "heading": false
+        },
+        {
+          "term": "lorentz group",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{poincare} Suppose we have a representation $\\alpha$ of a Lie group $G$ on a finite-dimensional vector space $H$. We can regard $H$ as an abelian Lie group with addition as the group operation. This lets us regard $\\alpha$ as an action of $G$ on this abelian Lie group. So, we can build a 2-group $\\G$ where: \\begin{itemize} \\item $G$ is any Lie group, \\item $H$ is any vector space, \\item $\\alpha$ is the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-43-tangent-2-groups",
+      "number": "4.3",
+      "title": "Tangent 2-Groups",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 37,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1614,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tangent bundle",
+          "heading": false
+        },
+        {
+          "term": "general relativity",
+          "heading": false
+        },
+        {
+          "term": "textrm tiny",
+          "heading": false
+        },
+        {
+          "term": "tiny newton",
+          "heading": false
+        },
+        {
+          "term": "worldline",
+          "heading": false
+        },
+        {
+          "term": "semidirect product",
+          "heading": false
+        },
+        {
+          "term": "lie group",
+          "heading": false
+        },
+        {
+          "term": "exotic statistics",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{tangent} We have seen that any group representation gives a 2-group. But any Lie group $G$ has a representation on its own Lie algebra: the adjoint representation. This lets us build a 2-group from the crossed module where: \\begin{itemize} \\item $G$ is any Lie group, \\item $H$ is $\\g$ regarded as a vector space and thus an abelian Lie group, \\item $\\alpha$ is the adjoint representation, and \\item $t$ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-44-inner-automorphism-2-groups",
+      "number": "4.4",
+      "title": "Inner Automorphism 2-Groups",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 38,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 670,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lambda wedge",
+          "heading": false
+        },
+        {
+          "term": "wedge frac",
+          "heading": false
+        },
+        {
+          "term": "inn",
+          "heading": false
+        },
+        {
+          "term": "field equations",
+          "heading": false
+        },
+        {
+          "term": "inner",
+          "heading": true
+        },
+        {
+          "term": "cosmological constant",
+          "heading": false
+        },
+        {
+          "term": "general relativity",
+          "heading": false
+        },
+        {
+          "term": "lie group",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{inner} There is also a Lie 2-group where: \\begin{itemize} \\item $G$ is any Lie group, \\item $H = G$, \\item $t$ is the identity map, \\item $\\alpha$ is conjugation: \\[ \\alpha(g) h = ghg^{-1}. \\] \\end{itemize} Following Roberts and Schreiber \\cite{RobertsSchreiber} we call this the \\define{inner automorphism 2-group} of $G$, and denote it by $\\INN(G)$. We explain this terminology in the next section. A",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-45-automorphism-2-groups",
+      "number": "4.5",
+      "title": "Automorphism 2-Groups",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 40,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 628,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "flat connection",
+          "heading": false
+        },
+        {
+          "term": "principal bundle",
+          "heading": false
+        },
+        {
+          "term": "inn",
+          "heading": false
+        },
+        {
+          "term": "automorphism",
+          "heading": true
+        },
+        {
+          "term": "gravity group",
+          "heading": false
+        },
+        {
+          "term": "inner automorphism",
+          "heading": false
+        },
+        {
+          "term": "valued form",
+          "heading": false
+        },
+        {
+          "term": "aut",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{automorphism} The inner automorphism group of the previous section is closely related to the \\define{automorphism 2-group} $\\AUT(H)$, defined using the crossed module where: \\begin{itemize} \\item $G = \\Aut(H)$, \\item $H$ is any Lie group, \\item $t \\maps H \\to \\Aut(H)$ sends any group element to the operation of conjugating by that element, \\item $\\alpha \\maps \\Aut(H) \\to \\Aut(H)$ is the identity.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-46-string-2-groups",
+      "number": "4.6",
+      "title": "String 2-Groups",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 44,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1863,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "string",
+          "heading": true
+        },
+        {
+          "term": "infinite-dimensional lie",
+          "heading": false
+        },
+        {
+          "term": "lie superalgebras",
+          "heading": false
+        },
+        {
+          "term": "cite bcss",
+          "heading": false
+        },
+        {
+          "term": "weak lie",
+          "heading": false
+        },
+        {
+          "term": "strict lie",
+          "heading": false
+        },
+        {
+          "term": "string group",
+          "heading": false
+        },
+        {
+          "term": "lie algebras",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{string} The Lie 2-groups discussed so far are easy to construct. The string 2-group is considerably more subtle. Ultimately it forces upon us a deeper conception of what a Lie 2-group really is, and a more sophisticated approach to higher gauge theory. Treated in proper detail, these topics would carry us far beyond the limits of this quick introduction. But it would be a shame not to mention them at all.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-5-further-topics",
+      "number": "5",
+      "title": "Further Topics",
+      "level": 1,
+      "pageStart": 44,
+      "pageEnd": 44,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 15,
+      "summary": null,
+      "keywords": [],
+      "extract": "Further Topics So far our introduction to higher gauge theory has neglected the most important",
+      "extractCut": false
+    },
+    {
+      "id": "sec-015-51-gauge-transformations",
+      "number": "5.1",
+      "title": "Gauge Transformations",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 46,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 721,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gauge transformations",
+          "heading": true
+        },
+        {
+          "term": "array ccl",
+          "heading": false
+        },
+        {
+          "term": "infinitesimal crossed",
+          "heading": false
+        },
+        {
+          "term": "dalpha",
+          "heading": false
+        },
+        {
+          "term": "crossed module",
+          "heading": false
+        },
+        {
+          "term": "itemize item",
+          "heading": false
+        },
+        {
+          "term": "alpha maps",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{gauge} First consider ordinary gauge theory. Suppose that $M$ is a manifold and $G$ is a Lie group. Then a \\define{gauge transformation} on the trivial principal $G$-bundle over $M$ simply amounts to a smooth function \\[ g \\maps M \\to G , \\] while a connection on this bundle can be seen as a $\\g$-valued 1-form. A gauge transformation $g$ acts on a connection $A$ to give a new connection $A'$ as follows: \\[ A'",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-52-curvature",
+      "number": "5.2",
+      "title": "Curvature",
+      "level": 2,
+      "pageStart": 46,
+      "pageEnd": 47,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 467,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "curvature",
+          "heading": true
+        },
+        {
+          "term": "fake curvature",
+          "heading": false
+        },
+        {
+          "term": "define curvature",
+          "heading": false
+        },
+        {
+          "term": "dalpha",
+          "heading": false
+        },
+        {
+          "term": "valued form",
+          "heading": false
+        },
+        {
+          "term": "flat connections",
+          "heading": false
+        },
+        {
+          "term": "crossed module",
+          "heading": false
+        },
+        {
+          "term": "wedge",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{curvature} Suppose $\\G$ is a Lie 2-group whose crossed module is $(G,H,t, \\alpha)$, and let $(\\g,\\h,\\dt,\\dalpha)$ be the corresponding differential crossed module. Suppose we have a \\define{connection} on the trivial $\\G$-2-bundle over $M$: that is, a $\\g$-valued 1-form $A$ and an $\\h$-valued 2-form $B$. As in ordinary gauge theory, we may define the \\define{curvature} of this connection to be the $\\g$-valued",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-53-nontrivial-2-bundles",
+      "number": "5.3",
+      "title": "Nontrivial 2-Bundles",
+      "level": 2,
+      "pageStart": 47,
+      "pageEnd": 60,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4457,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gamma ijk",
+          "heading": false
+        },
+        {
+          "term": "array ccl",
+          "heading": false
+        },
+        {
+          "term": "dalpha",
+          "heading": false
+        },
+        {
+          "term": "intersection cap",
+          "heading": false
+        },
+        {
+          "term": "build principal",
+          "heading": false
+        },
+        {
+          "term": "corfu summer",
+          "heading": false
+        },
+        {
+          "term": "bundles",
+          "heading": true
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{nontrivial} So far we have implicitly been looking at 2-connections on trivial 2-bundles. This is fine locally. But there are also interesting issues involving nontrivial 2-bundles, which become crucial when we work globally. A careful treatment of 2-bundles would require some work, and the reader interested in this topic would do well to start with Moerdijk's introductory paper on `stacks' and `gerbes'",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "item alpha",
+      "heading": false
+    },
+    {
+      "term": "alpha maps",
+      "heading": false
+    },
+    {
+      "term": "gamma alpha",
+      "heading": false
+    },
+    {
+      "term": "alpha define",
+      "heading": false
+    },
+    {
+      "term": "xymatrix bullet",
+      "heading": false
+    },
+    {
+      "term": "itemize item",
+      "heading": false
+    },
+    {
+      "term": "morphism alpha",
+      "heading": false
+    },
+    {
+      "term": "form alpha",
+      "heading": false
+    },
+    {
+      "term": "alpha quad",
+      "heading": false
+    },
+    {
+      "term": "sigma alpha",
+      "heading": false
+    },
+    {
+      "term": "alpha circ",
+      "heading": false
+    },
+    {
+      "term": "lie group",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 53,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 54,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 55,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 56,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 57,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 58,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 59,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 60,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 18,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 19,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 19 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1003.4485v2"
+  }
+}

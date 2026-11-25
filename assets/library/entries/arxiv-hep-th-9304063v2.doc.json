@@ -1,0 +1,954 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-th-9304063v2",
+  "title": "arxiv-hep-th-9304063v2",
+  "variant": "pdf",
+  "pages": 18,
+  "tocSource": "undetermined",
+  "tocMethod": "latex",
+  "toc": [],
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 487,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fredholm determinants",
+          "heading": false
+        },
+        {
+          "term": "sine kernel",
+          "heading": false
+        },
+        {
+          "term": "whose fredholm",
+          "heading": false
+        },
+        {
+          "term": "scaling models",
+          "heading": false
+        },
+        {
+          "term": "hermitian matrices",
+          "heading": false
+        },
+        {
+          "term": "random hermitian",
+          "heading": false
+        },
+        {
+          "term": "gaussian unitary",
+          "heading": false
+        },
+        {
+          "term": "integral operators",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-th/9304063v2 29 Jan 1999 Level Spacing Distributions and the Bessel Kernel Craig A. Tracy∗ Department of Mathematics and Institute of Theoretical Dynamics, University of California, Davis, CA 95616, USA Harold Widom† Department of Mathematics, University of California, Santa Cruz, CA 95064, USA Scaling models of random N × N hermitian matrices and passing to the limit N →∞leads to integral operators whose",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9304063v2/blocks/prose-page-001"
+      ]
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 662,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sine kernel",
+          "heading": false
+        },
+        {
+          "term": "laguerre ensemble",
+          "heading": false
+        },
+        {
+          "term": "airy kernel",
+          "heading": false
+        },
+        {
+          "term": "jacobi ensemble",
+          "heading": false
+        },
+        {
+          "term": "fredholm determinant",
+          "heading": false
+        },
+        {
+          "term": "scaling limit",
+          "heading": false
+        },
+        {
+          "term": "gue",
+          "heading": false
+        },
+        {
+          "term": "edge",
+          "heading": false
+        }
+      ],
+      "extract": "then in the GUE the probability density that n of the eigenvalues (irrespective of order) lie in inﬁnitesimal intervals about x1, . . . , xn is equal to Rn(x1, . . . , xn) = det (KN(xi, xj)) i,j=1,...,n. The density of eigenvalues at a ﬁxed point z is R1(z), and this is ∼ √ 2N/π as N →∞. Rescaling at z leads to the sine kernel because of the relation lim N→∞ π √ 2N KN(z + πx √ 2N , z + πy √ 2N ) = sin π(x −y) π(x",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9304063v2/blocks/prose-page-002"
+      ]
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 338,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diﬀerential equations",
+          "heading": false
+        },
+        {
+          "term": "a2j",
+          "heading": false
+        },
+        {
+          "term": "daj",
+          "heading": false
+        },
+        {
+          "term": "a2m",
+          "heading": false
+        }
+      ],
+      "extract": "B. The System of Partial Diﬀerential Equations We set J := m [ j=1 (a2j−1, a2j) (aj ≥0) (1.4) and write D(J; λ) for the Fredholm determinant of K (the operator with kernel K(x, y)) acting on J. If we think of this as a function of a = (a1, . . . , a2m) then d log D(J; λ) = − 2m X j=1 (−1)j R(aj, aj) daj (1.5) where R(x, y) is the kernel of K(I −K)−1. We introduce the notations φ(x) := √ λ Jα(√x), ψ(x) := x φ′(x)",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9304063v2/blocks/prose-page-003"
+      ]
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 450,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "painlev",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential equation",
+          "heading": false
+        },
+        {
+          "term": "cos",
+          "heading": false
+        },
+        {
+          "term": "d2y",
+          "heading": false
+        },
+        {
+          "term": "mention",
+          "heading": false
+        }
+      ],
+      "extract": "q(s; λ) ∼ √ λ 2αΓ(1 + α) sα/2 , s →0. (1.17) This equation is reducible to a special case of the PV diﬀerential equation;3 explicitly, if q(s) = (1 + y(x))/(1 −y(x)) with s = x2, then y(x) satisﬁes PV with α′ = −β′ = α2/8, γ′ = 0 and δ′ = −2. (We have primed the usual PV parameters to avoid confusion with the α in our kernel. We mention that this special PV can be expressed algebraically in terms of a third",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9304063v2/blocks/prose-page-004"
+      ]
+    },
+    {
+      "id": "page-005",
+      "number": null,
+      "title": "Page 5",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 524,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "asymptotics",
+          "heading": false
+        },
+        {
+          "term": "eigenvalues",
+          "heading": false
+        },
+        {
+          "term": "ﬁnd",
+          "heading": false
+        },
+        {
+          "term": "expansions",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential",
+          "heading": false
+        },
+        {
+          "term": "quantities",
+          "heading": false
+        },
+        {
+          "term": "conjecture",
+          "heading": false
+        },
+        {
+          "term": "approach",
+          "heading": false
+        }
+      ],
+      "extract": "D. Asymptotics Again we take J = (0, s) and consider asymptotics as s →∞. From the random matrix point of view the interesting quantities are E(n; s) := (−1)n n! ∂n ∂λn D(J; λ) λ=1. (1.23) This is the probability that exactly n eigenvalues lie in J. The asymptotics of E(0, s) = D(J; 1) are obtained from (1.19) using the asymptotics of q(s; 1) or equivalently σ(s; 1) obtained from (1.16) or (1.21), respectively. (Our",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9304063v2/blocks/prose-page-005"
+      ]
+    },
+    {
+      "id": "page-006",
+      "number": null,
+      "title": "Page 6",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 341,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diﬀerentiation formula",
+          "heading": false
+        },
+        {
+          "term": "christoﬀel-darboux",
+          "heading": false
+        },
+        {
+          "term": "e2n",
+          "heading": false
+        },
+        {
+          "term": "kernel",
+          "heading": false
+        },
+        {
+          "term": "resolvent",
+          "heading": false
+        }
+      ],
+      "extract": "From this and (1.26) we deduce r(n; s) ∼ (n−1 Y k=0 Γ(α + k + 1) k! ) π−n 2−n(2n+2α+1) s−n2 2 −α 2 n e2n√s. (1.28) For the special case α = 0, the quantity r(1; s) can be expressed exactly in terms of Bessel functions (see (2.30) below). II. DIFFERENTIAL EQUATIONS A. Derivation of the system of equations We shall use two representations for our kernel. The ﬁrst is just our deﬁnition (1.2a) using the notation (1.6),",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9304063v2/blocks/prose-page-006"
+      ]
+    },
+    {
+      "id": "page-007",
+      "number": null,
+      "title": "Page 7",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 360,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transpose",
+          "heading": false
+        },
+        {
+          "term": "kakr",
+          "heading": false
+        },
+        {
+          "term": "φχj",
+          "heading": false
+        },
+        {
+          "term": "smooth functions",
+          "heading": false
+        }
+      ],
+      "extract": "where now the inner products are taken over (0, ∞). Notice that since (I −K)−1ξ = (I −K)−1ξχJ in J for any function ξ, this agrees with the original deﬁnitions (1.8) of u and v. We have, by (2.2), ((MD)x + (MD)y)K(x, y) = 1 4 Z 1 0 t ∂ ∂t (φ(xt)φ(yt)) dt = 1 4φ(x)φ(y) −K(x, y). But it is easy to see that [MD, L] .= ((MD)x + (MD)y + I) L(x, y) (2.6) for any operator L with kernel L(x, y), where “ .=” means “has",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9304063v2/blocks/prose-page-007"
+      ]
+    },
+    {
+      "id": "page-008",
+      "number": null,
+      "title": "Page 8",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 367,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kakr",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential",
+          "heading": false
+        },
+        {
+          "term": "remind",
+          "heading": false
+        }
+      ],
+      "extract": "Using (2.7), and recalling (1.6) and (2.5), we ﬁnd that xQ′(x) = P(x) + 1 4 Q(x) u − X (−1)kakR(x, ak) qk. (2.12) Similarly, replacing φ by ψ in this derivation gives xP ′(x) = (I −K)−1MD ψ (x) + 1 4 Q(x) v − X (−1)kakR(x, ak) pk. (2.13) To evaluate the ﬁrst term on the right side we use the fact that φ satisﬁes the diﬀerential equation x2 φ′′(x) + x φ′(x) + 1 4 (x −α2) φ(x) = 0, (2.14) which may be rewritten MD ψ",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9304063v2/blocks/prose-page-008"
+      ]
+    },
+    {
+      "id": "page-009",
+      "number": null,
+      "title": "Page 9",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 381,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "φχj",
+          "heading": false
+        },
+        {
+          "term": "both sides",
+          "heading": false
+        },
+        {
+          "term": "a2m",
+          "heading": false
+        },
+        {
+          "term": "wished",
+          "heading": false
+        }
+      ],
+      "extract": "Equations (1.11) and (1.12) follow from this, (2.18), (2.12), (2.16) and (2.10). Finally, using the deﬁnition of u in (2.5), the fact ∂ ∂aj χJ(y) = (−1)jδ(y −aj), and (2.17) we ﬁnd that ∂u ∂aj = (−1)jφ(aj) qj + (−1)j(φχJ, R(·, aj)) qj. But (φχJ, R(·, aj)) = Z J R(x, aj)φ(x) dx = Z J R(aj, x)φ(x) dx since R(x, y) = R(y, x) for x, y ∈J. Since R(y, x) = 0 for x̸ ∈J the last integral equals Z ∞ 0 R(aj, x)φ(x) dx = qj",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9304063v2/blocks/prose-page-009"
+      ]
+    },
+    {
+      "id": "page-010",
+      "number": null,
+      "title": "Page 10",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 324,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ajr",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential equation",
+          "heading": false
+        },
+        {
+          "term": "both sides",
+          "heading": false
+        },
+        {
+          "term": "ajq",
+          "heading": false
+        }
+      ],
+      "extract": "for x, y ∈J. This gives \u0012X ak ∂ ∂ak \u0013 ajR(aj, aj) = 1 4ajq2 j = 1 4aj(−1)j ∂u ∂aj . If we multiply both sides of this by (−1)j and sum over j we deduce, by an argument similar to one just used, that X j (−1)jajR(aj, aj) = 1 4u. (2.21) Substituting for ajR(aj, aj) here the right side of (1.15) we see that the resulting double sum vanishes, and (2.20) results. B. The ordinary diﬀerential equation In this section we",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9304063v2/blocks/prose-page-010"
+      ]
+    },
+    {
+      "id": "page-011",
+      "number": null,
+      "title": "Page 11",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 685,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diﬀerential equation",
+          "heading": false
+        },
+        {
+          "term": "neumann expansion",
+          "heading": false
+        },
+        {
+          "term": "painlev",
+          "heading": false
+        },
+        {
+          "term": "singular integral",
+          "heading": false
+        },
+        {
+          "term": "resolvent",
+          "heading": false
+        },
+        {
+          "term": "branch point",
+          "heading": false
+        },
+        {
+          "term": "bessel",
+          "heading": false
+        },
+        {
+          "term": "solutions",
+          "heading": false
+        }
+      ],
+      "extract": "Combining this with (2.27) gives s q (s q′)′ = (s q′)2 −1 4u + 1 4s q4, and combining this with (2.28) gives the desired equation (1.16). The boundary condition (1.17) follows from the Neumann expansion of the deﬁning expression (1.7) for q. Using (1.18) one easily veriﬁes that R(s) = 1 4 cos2 ψ + s \u0012dψ ds \u00132 −α2 4s csc2 ψ + c s = 1 4 cos2 ψ + s \u0012dψ ds \u00132 −α2 4s cot2 ψ + (c −α2 4 )1 s satisﬁes (2.26) where c is a",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9304063v2/blocks/prose-page-011"
+      ]
+    },
+    {
+      "id": "page-012",
+      "number": null,
+      "title": "Page 12",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 373,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diﬀerential equation",
+          "heading": false
+        },
+        {
+          "term": "square root",
+          "heading": false
+        },
+        {
+          "term": "asymptotic expansion",
+          "heading": false
+        },
+        {
+          "term": "c2s",
+          "heading": false
+        },
+        {
+          "term": "syt",
+          "heading": false
+        }
+      ],
+      "extract": "Thus (recall (1.23) and (1.25)) r(1; s) = − Z s 0 R1(t) dt = −2 Z √s 0 xR1(x2) dx where R1(t) = ∂ ∂λR(t) λ=1 . Therefore r(1; s) = 1 2 Z √s 0 x \u0000ψ2 1(x) −(ψ′ 1(x))2\u0001 dx = 1 2 Z √s 0 x \u0000I0(x)2 −I2 1(x) \u0001 dx = s 2 \u0012 I2 0(√s) −1 √s I0(√s)I1(√s) −I2 1(√s) \u0013 . (2.30) The last equality follows from (5.542) of [12]. We point out the curious fact that (after letting ψ →iψ) the same diﬀerential equation (2.29) and closely",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9304063v2/blocks/prose-page-012"
+      ]
+    },
+    {
+      "id": "page-013",
+      "number": null,
+      "title": "Page 13",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 332,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sxy",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential equation",
+          "heading": false
+        },
+        {
+          "term": "eigenfunctions",
+          "heading": false
+        },
+        {
+          "term": "satisﬁed",
+          "heading": false
+        }
+      ],
+      "extract": "and so K (rescaled, as it will be throughout this section), is the square of the operator on (0, 1) with kernel J(x, y) = √s 2 φ(sxy) = √s 2 Jα(√sxy). This function satisﬁes the diﬀerential equation x2Jxx + xJx + (sxy 4 −α2 4 )J = 0. (3.2) The operator J will commute with a diﬀerential operator L = d dxα(x) d dx + β(x) if α(0) = α(1) = 0 and if α(y)Jyy + α′(y)Jy + β(y)J = α(x)Jxx + α′(x)Jx + β(x)J. If we use (3.2)",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9304063v2/blocks/prose-page-013"
+      ]
+    },
+    {
+      "id": "page-014",
+      "number": null,
+      "title": "Page 14",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 352,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conﬂuent",
+          "heading": false
+        },
+        {
+          "term": "heading",
+          "heading": false
+        },
+        {
+          "term": "region",
+          "heading": false
+        }
+      ],
+      "extract": "1. The region x ≪1 The approximating equation is f ′′(x) + 1 xf ′(x) + (µ√s x −α2 4x2 −s 4)f(x) = 0. The solution of this equation which satisﬁes (3.4) is xα/2e−√sx/2Φ(1 + α 2 −µ, 1 + α, √sx) where Φ is the conﬂuent hypergeometric function [9]. We deduce that when x ≪1, f(x) ∼xα/2 e−√sx/2 Φ(1 + α 2 −µ, 1 + α, √sx). (3.5) 2. The region x ≪1, √sx ≫1 Case 1. µ̸ = i + 1+α 2 (i = 0, 1, . . .). Then from the known",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9304063v2/blocks/prose-page-014"
+      ]
+    },
+    {
+      "id": "page-015",
+      "number": null,
+      "title": "Page 15",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 317,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "asymptotics",
+          "heading": false
+        },
+        {
+          "term": "overlapping",
+          "heading": false
+        },
+        {
+          "term": "comparing",
+          "heading": false
+        }
+      ],
+      "extract": "4. The region x →1 Letting y = 1 −x, f(x) = g(y) gives the approximating equation (y g(y)′)′ −s 4 g(y) = 0. The general solution of this is a constant times I0(√y) where I0 is the modiﬁed Bessel function. Thus we deduce that as x →1 f(x) ∼c(s) I0 \u0010p s(1 −x) \u0011 (3.10) for some c(s). 5. Determination of a(s), b(s) and c(s) From the asymptotics of I0 at inﬁnity and (3.10) we deduce that f(x) ∼ c(s) √ 2π s 1 4 e √s√1−x",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9304063v2/blocks/prose-page-015"
+      ]
+    },
+    {
+      "id": "page-016",
+      "number": null,
+      "title": "Page 16",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 472,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sxy",
+          "heading": false
+        },
+        {
+          "term": "eigenfunctions",
+          "heading": false
+        },
+        {
+          "term": "both sides",
+          "heading": false
+        },
+        {
+          "term": "eigenvalues",
+          "heading": false
+        },
+        {
+          "term": "integrate",
+          "heading": false
+        },
+        {
+          "term": "integrating",
+          "heading": false
+        }
+      ],
+      "extract": "6. The asymptotics of λi Since L commutes with our integral operator K, rescaled to act on (0, 1), the set {fi} of eigenfunctions corresponding to the eigenvalues µ0 < µ1 < . . . of L is the set of eigenfunctions of K corresponding to its eigenvalues, in some order. Lemma 1. The eigenvalues of K are simple. Proof. Since the eigenvalues of K are the squares of the eigenvalues of J what we have to show is that if",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9304063v2/blocks/prose-page-016",
+        "library/arxiv-hep-th-9304063v2/blocks/lem-page-016-01"
+      ]
+    },
+    {
+      "id": "page-017",
+      "number": null,
+      "title": "Page 17",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 570,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dms",
+          "heading": false
+        },
+        {
+          "term": "kernel",
+          "heading": false
+        },
+        {
+          "term": "equals",
+          "heading": false
+        },
+        {
+          "term": "eigenvalue",
+          "heading": false
+        },
+        {
+          "term": "permutation",
+          "heading": false
+        }
+      ],
+      "extract": "contradicting ν̸ = 0. Now that we know the eigenvalues λi of K are simple we can order them so that λ0 > λ1 > . . . . There is a permutation σ of N such that the eigenvalue corresponding to fi is λσ(i). This permutation is independent of s since the eigenvalues µi and λi both vary continuously with s. The next lemma allows us to compute dλi/ds for each i. Lemma 2. Let λ be a simple eigenvalue of an integral operator",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9304063v2/blocks/prose-page-017",
+        "library/arxiv-hep-th-9304063v2/blocks/lem-page-017-01",
+        "library/arxiv-hep-th-9304063v2/blocks/rem-page-017-02",
+        "library/arxiv-hep-th-9304063v2/blocks/lem-page-017-03"
+      ]
+    },
+    {
+      "id": "page-018",
+      "number": null,
+      "title": "Page 18",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 622,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "painlev transcendent",
+          "heading": false
+        },
+        {
+          "term": "ﬁfth painlev",
+          "heading": false
+        },
+        {
+          "term": "painlev equations",
+          "heading": false
+        },
+        {
+          "term": "letts",
+          "heading": false
+        },
+        {
+          "term": "random matrices",
+          "heading": false
+        },
+        {
+          "term": "san diego",
+          "heading": false
+        },
+        {
+          "term": "random matrix",
+          "heading": false
+        },
+        {
+          "term": "spacing distributions",
+          "heading": false
+        }
+      ],
+      "extract": "[1] E. W. Barnes, The theory of the G-function, Quart. J. Pure and Appl. Math. 31 (1900) 264–314. [2] E. L. Basor, C. A. Tracy, and H. Widom, Asymptotics of level spacing distributions for random matrices, Phys. Rev. Letts. 69 (1992) 5–8. [3] M. J. Bowick and E. Br´ezin, Universal scaling of the tail of the density of eigenvalues in random matrix models, Phys. Letts. B268 (1991) 21–28. [4] B. V. Bronk, Exponential",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9304063v2/blocks/prose-page-018"
+      ]
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "diﬀerential equation",
+      "heading": false
+    },
+    {
+      "term": "diﬀerential operator",
+      "heading": false
+    },
+    {
+      "term": "bessel kernel",
+      "heading": false
+    },
+    {
+      "term": "painlev equations",
+      "heading": false
+    },
+    {
+      "term": "logarithmic diﬀerential",
+      "heading": false
+    },
+    {
+      "term": "painlev transcendent",
+      "heading": false
+    },
+    {
+      "term": "airy kernel",
+      "heading": false
+    },
+    {
+      "term": "partial diﬀerential",
+      "heading": false
+    },
+    {
+      "term": "sine kernel",
+      "heading": false
+    },
+    {
+      "term": "non-linear diﬀerential",
+      "heading": false
+    },
+    {
+      "term": "ordinary diﬀerential",
+      "heading": false
+    },
+    {
+      "term": "resolvent kernel",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "not-extracted",
+      "note": "split one section per page; no contents was trusted"
+    },
+    {
+      "kind": "sections",
+      "state": "partial",
+      "count": 18,
+      "note": "one per page, not by heading"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 18 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-th-9304063v2"
+  }
+}

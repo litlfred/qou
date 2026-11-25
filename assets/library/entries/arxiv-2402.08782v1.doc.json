@@ -1,0 +1,921 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2402.08782v1",
+  "title": "Hecke–Farey coordinates for Bring’s surface",
+  "variant": "pdf",
+  "pages": 12,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Bring's surface",
+      "number": "2",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-brings-surface"
+    },
+    {
+      "level": 1,
+      "title": "The congruence subgroups of the Hecke groups",
+      "number": "3",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-the-congruence-subgroups-of-the-hecke-groups"
+    },
+    {
+      "level": 1,
+      "title": "Universal q-gonal maps",
+      "number": "4",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-universal-q-gonal-maps"
+    },
+    {
+      "level": 1,
+      "title": "Farey fractions modulo n",
+      "number": "5",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-farey-fractions-modulo-n"
+    },
+    {
+      "level": 1,
+      "title": "Hecke-Farey fractions for the cube",
+      "number": "6",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-6-hecke-farey-fractions-for-the-cube"
+    },
+    {
+      "level": 1,
+      "title": "The Bring curve M4(5)",
+      "number": "7",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-7-the-bring-curve-m45"
+    },
+    {
+      "level": 1,
+      "title": "Poles",
+      "number": "8",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-8-poles"
+    },
+    {
+      "level": 1,
+      "title": "Hecke–Farey coordinates for Bring's surface",
+      "number": "9",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-9-heckefarey-coordinates-for-brings-surface"
+    },
+    {
+      "level": 1,
+      "title": "Equivalence classes of vertices",
+      "number": "10",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-10-equivalence-classes-of-vertices"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 63,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bring surface",
+          "heading": false
+        },
+        {
+          "term": "hecke group",
+          "heading": false
+        },
+        {
+          "term": "kattan",
+          "heading": false
+        }
+      ],
+      "extract": "Hecke–Farey coordinates for Bring’s surface Doha Kattan1 and David Singerman2 Abstract. The modular group Γ (which is the Hecke group H3) can be used to study triangular maps, Here we use the Hecke group H4 to study the reg- ular map that underlies Bring’s surface of genus 4. Our main result is the determination of the 20-sided hyperbnolic polygon that gives Bring’s surface.",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-2402.08782v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 203,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "klein surface",
+          "heading": false
+        },
+        {
+          "term": "bring surface",
+          "heading": false
+        },
+        {
+          "term": "gonal map",
+          "heading": false
+        },
+        {
+          "term": "farey map",
+          "heading": false
+        },
+        {
+          "term": "triangular map",
+          "heading": false
+        },
+        {
+          "term": "riemann surfaces",
+          "heading": false
+        }
+      ],
+      "extract": "The Farey map $\\mathbb{F}$, defined in section 2, is the universal triangular map, in that every triangular map on an orientable surface is a quotient of $\\mathbb{F}$ by a subgroup of the modular group, $\\Gamma$ and every regular triangular map is a quotient of $\\mathbb{F}$ by a normal subgroup of $\\Gamma.$ This gives rise to many important Riemann surfaces such as the Klein surface. In \\cite{ISS} we used the Farey",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-brings-surface",
+      "number": "2",
+      "title": "Bring's surface",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 576,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bring surface",
+          "heading": true
+        },
+        {
+          "term": "pmatrix sqrt",
+          "heading": false
+        },
+        {
+          "term": "riemann surface",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "mapsto frac",
+          "heading": false
+        },
+        {
+          "term": "triangle group",
+          "heading": false
+        },
+        {
+          "term": "automorphism group",
+          "heading": false
+        }
+      ],
+      "extract": "We start with the following result which comes from Conder and Dobcsanyi's classifications of regular maps of small genus~\\cite{CD01}. \\begin{theorem} \\label{th1}There is a unique regular map of type $\\{5,4\\}$ of genus 4 with 120 automorphisms. The automorphism group of this map here is the symmetric group $S_5$. \\end{theorem} Underlying this map is a unique Riemann surface of genus 4 with automorphism group $S_5$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-the-congruence-subgroups-of-the-hecke-groups",
+      "number": "3",
+      "title": "The congruence subgroups of the Hecke groups",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 425,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "overline mathbb",
+          "heading": false
+        },
+        {
+          "term": "region lambda",
+          "heading": false
+        },
+        {
+          "term": "congruence",
+          "heading": true
+        },
+        {
+          "term": "vspace",
+          "heading": false
+        },
+        {
+          "term": "normal subgroup",
+          "heading": false
+        },
+        {
+          "term": "fundamental region",
+          "heading": false
+        },
+        {
+          "term": "riemann surface",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        }
+      ],
+      "extract": "Let $I$ be an ideal of $\\mathbb Z[\\lambda_{q}]$.\\\\We define \\begin{equation*} PSL(2,\\mathbb Z[\\lambda_{q}],I) = \\left\\{ \\left( \\begin{matrix} a & b \\\\ c & d \\end{matrix} \\right) \\in PSL(2,\\mathbb Z[\\lambda_{q}]) \\; |\\; a-1,b,c,d-1\\;\\in I \\right\\}. \\end{equation*} Now for any ideal $I$ of $\\mathbb Z[\\lambda_{q}]$ we define the $\\mathit{ principal\\; congruence \\;subgroup}$ of the Hecke group $H_{q}$ as,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-universal-q-gonal-maps",
+      "number": "4",
+      "title": "Universal q-gonal maps",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 397,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hat mathscr",
+          "heading": false
+        },
+        {
+          "term": "universal gonal",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "farey map",
+          "heading": false
+        },
+        {
+          "term": "extended rationals",
+          "heading": false
+        },
+        {
+          "term": "principal face",
+          "heading": false
+        },
+        {
+          "term": "whose vertices",
+          "heading": false
+        },
+        {
+          "term": "imaginary axis",
+          "heading": false
+        }
+      ],
+      "extract": "In \\cite{Sin88, KS22} it was shown that the Farey map $\\hat{\\mathscr{M}}_{3}$ is the universal triangular map. The Farey map is a map on the upper-half plane whose vertices are the extended rationals $\\mathbb{Q}\\cup \\{\\infty\\}$ and where two rationals $\\frac{a}{c}$ and $\\frac{b}{d}$ are joined by an edge if and only if $ad-bc=\\pm 1.$ We sometimes refer to the rational $\\frac{a}{c}$ as a {\\it Farey coordinate.} The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-farey-fractions-modulo-n",
+      "number": "5",
+      "title": "Farey fractions modulo n",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 151,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "farey fractions",
+          "heading": true
+        },
+        {
+          "term": "fractions mod",
+          "heading": false
+        },
+        {
+          "term": "ad-bc equiv",
+          "heading": false
+        },
+        {
+          "term": "frac",
+          "heading": false
+        }
+      ],
+      "extract": "Farey fractions were first introduced in \\cite{SS19} for the case $q=3$. A Farey fraction modulo $n$ is a pair $(a,c)$ where $(a,c,n)=1$ and where we identify $\\frac{a}{c}$ with $\\frac{-a}{-c}.$ We think of these fractions as being points on $\\mathbb{H}/\\Gamma(n)$. Two Farey fractions mod $n$, $(a,c)$ and $ (b,d)$ are adjacent when $ad-bc\\equiv \\pm 1 \\; \\text{mod}\\;n$. \\begin{example} {$n=5.$} The Farey fractions",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-hecke-farey-fractions-for-the-cube",
+      "number": "6",
+      "title": "Hecke-Farey fractions for the cube",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 285,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hecke-farey fractions",
+          "heading": true
+        },
+        {
+          "term": "cube",
+          "heading": true
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "fractions modulo",
+          "heading": false
+        },
+        {
+          "term": "mathscr",
+          "heading": false
+        },
+        {
+          "term": "vertices",
+          "heading": false
+        },
+        {
+          "term": "mapsto",
+          "heading": false
+        }
+      ],
+      "extract": "The main aim of this paper is to find Hecke-Farey fractions for Bring's curve, $\\mathscr{M}_4(5).$ In general, for a positive integer $n$ the map $\\mathcal{M}_4(n)$ has vertices of the form $\\frac{a}{\\sqrt 2 c}$ or $\\frac{b\\sqrt 2}{d}$. where $a,b,c,d\\in \\mathbb{Z}_n.$ These numbers are called {\\it Hecke-Farey coordinates.}These two vertices are joined by an edge If and only if $ad-2bc\\equiv \\pm 1$ mod$\\ n.$ Before",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-7-the-bring-curve-m45",
+      "number": "7",
+      "title": "The Bring curve M4(5)",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 236,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sqrt midrule",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "tab",
+          "heading": false
+        },
+        {
+          "term": "mathscr",
+          "heading": false
+        },
+        {
+          "term": "tabular",
+          "heading": false
+        },
+        {
+          "term": "table",
+          "heading": false
+        }
+      ],
+      "extract": "We want want to give each vertex of $\\mathscr{M}_4(5)$ a Hecke-Farey coordinate. These will have the form $\\frac{a}{c\\sqrt 2}$ or $\\frac{b\\sqrt 2}{d}$ where $a,b,c,d$ lie in the set $\\{0,1,2,3,4\\}$. Now $\\frac{a}{c\\sqrt 2} = \\frac{x}{y\\sqrt 2}$ if and only if $a=\\pm x$ and $c=\\pm y$, etc. so we can easily work out all the 24 Hecke- Farey fractions representing the points of $\\mathscr{M}_{4}(5)$. These are presented",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-9-heckefarey-coordinates-for-brings-surface",
+      "number": "9",
+      "title": "Hecke–Farey coordinates for Bring's surface",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-8-poles",
+      "number": "8",
+      "title": "Poles",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1025,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hecke-farey coordinates",
+          "heading": false
+        },
+        {
+          "term": "poles",
+          "heading": true
+        },
+        {
+          "term": "farey circuit",
+          "heading": false
+        },
+        {
+          "term": "hecke farey",
+          "heading": false
+        },
+        {
+          "term": "sided polygon",
+          "heading": false
+        },
+        {
+          "term": "poles labelled",
+          "heading": false
+        },
+        {
+          "term": "poles lie",
+          "heading": false
+        },
+        {
+          "term": "bring surface",
+          "heading": false
+        }
+      ],
+      "extract": "8. Poles In a Farey map (the case q = 3) a pole is a vertex with a Farey coordinate of the form a 0, where a̸ = 0. For example, in the icosahedron M3(5) the poles are 1 0 and 2 0. which from Figure 4 are the north and south poles of the icosahedron. Also, in [4] Farey fractions were used to construct the fundamental region for the Klein quartic. We found that 1 0 was at the centre whilst 2 0 and 3 0 lie on the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-10-equivalence-classes-of-vertices",
+      "number": "10",
+      "title": "Equivalence classes of vertices",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 235,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "paired",
+          "heading": false
+        },
+        {
+          "term": "vertices",
+          "heading": true
+        },
+        {
+          "term": "having vertices",
+          "heading": false
+        }
+      ],
+      "extract": ". With these side identifications we can easily find the equivalence classes of vertices. \\\\Label the vertices $a_1, a_2,\\cdots a_{20}$ with edge 1 having vertices $a_1, a_2$ (going anti-clockwise), side 2 having vertices $a_2, a_3$ etc. As 2 is paired to 5, we get $a_2=a_6$,\\;$a_3=a_5$. As 6 ia paired to 9, we get $a_6=a_{10}$, $a_7=a_9.$ As 7 is paired with 16, we get $a_7=a_{17},\\; a_8=a_{16}$. As 10 is paired to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 278,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "singerman",
+          "heading": false
+        },
+        {
+          "term": "farey maps",
+          "heading": false
+        },
+        {
+          "term": "kattan",
+          "heading": false
+        },
+        {
+          "term": "bring curve",
+          "heading": false
+        },
+        {
+          "term": "petrie",
+          "heading": false
+        },
+        {
+          "term": "tessellations",
+          "heading": false
+        },
+        {
+          "term": "ars",
+          "heading": false
+        },
+        {
+          "term": "period matrix",
+          "heading": false
+        }
+      ],
+      "extract": "[1] H. Braden and T. Northover, Bring’s curve: its period matrix and the vector of Riemann constants, SIGMA 8 065 (2012). [2] M. Conder and P. Dobcsányi, Determination of all regular maps of small genus, Journal of Combinatorial Theory 81 (2001), no. 1, 224–242. 12 DOHA KATTAN1 AND DAVID SINGERMAN2 [3] H. S. M. Coxeter and W. O. J. Moser, Generators and Relations for Discrete Groups, Springer-Verlag,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [
+      "figure 3"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "farey fractions",
+      "heading": true
+    },
+    {
+      "term": "hecke farey",
+      "heading": true
+    },
+    {
+      "term": "farey map",
+      "heading": false
+    },
+    {
+      "term": "bring surface",
+      "heading": true
+    },
+    {
+      "term": "farey coordinates",
+      "heading": true
+    },
+    {
+      "term": "frac sqrt",
+      "heading": false
+    },
+    {
+      "term": "farey maps",
+      "heading": false
+    },
+    {
+      "term": "hecke-farey fractions",
+      "heading": true
+    },
+    {
+      "term": "farey circuit",
+      "heading": false
+    },
+    {
+      "term": "bring curve",
+      "heading": true
+    },
+    {
+      "term": "sqrt end",
+      "heading": false
+    },
+    {
+      "term": "sqrt midrule",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The fundamental region Fλ4 for H4",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Principal face when q = 4",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Drawing of M3(5) with Farey coordinates [4]",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "M4(3); Cube embedded in a sphere",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p004-1",
+      "file": "images/img-p004-1.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-1",
+      "file": "images/img-p005-1.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-1",
+      "file": "images/img-p007-1.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p008-1",
+      "file": "images/img-p008-1.png",
+      "page": 8,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p009-1",
+      "file": "images/img-p009-1.png",
+      "page": 9,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 5
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "3 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p11); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2402.08782v1"
+  }
+}

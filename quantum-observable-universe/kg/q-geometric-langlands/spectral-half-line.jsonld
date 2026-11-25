@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/cor-spectral-half-line",
+  "@type": [
+    "folio-assistant-sci:Corollary",
+    "doco:Section"
+  ],
+  "label": "cor:spectral-half-line",
+  "kind": "corollary",
+  "title": "All fundamental Reeb modes lie on the critical line",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-hasse-weil-bound",
+    "papers/quantum-observable-universe/blocks/def-categorical-reeb-derivation"
+  ],
+  "tags": [
+    "critical-line",
+    "spectral",
+    "half-line",
+    "reeb-spectrum"
+  ],
+  "leanRef": "qou:QOU.Core.AlgebraicSubstrate.spectral_half_line",
+  "text": "spectral-half-line.md",
+  "leanSource": "spectral-half-line.lean",
+  "provenance": "authored"
+}

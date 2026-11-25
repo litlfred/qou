@@ -1,0 +1,213 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1912.10638v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1912.10638v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1912.10638v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Overview of volume conjectures",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-11-overview-of-volume-conjectures.md",
+      "narrative": null,
+      "content": "The volume conjecture of the colored Jones polynomials, discovered by R. Kashaev, H. Murakami and J. Murakami, suggests that the $N$-th colored Jones polynomials of a hyperbolic knot evaluated at the $N$-th root of unity $t=e^{\\frac{2\\pi i}{N}}$ grow exponentially with exponential growth rate equal to the hyperbolic volume of the knot complement.\n\n::: conjecture\n[]{#cvc label=\"cvc\"}[@K97; @MM01] Let $K$ be a hyperbolic knot and $J'_{N}(K;t)$ be the normalized $N$-th colored Jones polynomials of $K$ evaluated at $t$ such that $J'_N(unknot,t)=1$ for all $N\\in {\\mathbb N}$. We have $$\\begin{align",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1912.10638v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Strategy to prove the volume conjecture",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-12-strategy-to-prove-the-volume-conjecture.md",
+      "narrative": null,
+      "content": "[]{#strate label=\"strate\"} In this subsection, we briefly discuss our approach to study the volume conjecture. A standard way to prove volume conjecture involves three steps. Roughly speaking, first of all, given the explicit formula of the colored Jones polynomials of a link $L$ evaluated at the $(N+1/2)$-th root of unity, we convert it into an integral of the form $$\\int_D f(z_1,z_2,\\dots,z_n)\\exp\\left( \\left(N+\\frac{1}{2}\\right) \\Phi_L(z_1,z_2,\\dots,z_n) \\right) dz_1dz_2 \\dots dz_n,$$ where $(z_1,z_2,\\dots,z_n)\\in {\\mathbb C}^n$ for some $n$, $f(z_1,z_2,\\dots,z_n)$ is a holomorphic function",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1912.10638v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main results",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-13-main-results.md",
+      "narrative": null,
+      "content": "The main goal of this paper is to study the asymptotics of the colored Jones polynomials of the Whitehead chains defined by R. van der Veen in [@V08].\n\nFor any $a\\in {\\mathbb Z}$, $b\\in {\\mathbb N}$, $c,d\\in{\\mathbb N}\\cup\\{0\\}$ with $c+d\\geq 1$, the Whitehead chain $W_{a,b,c,d}$ is obtained by stacking $a$ full twists, $b$ belts, $c$ clasps and $d$ mirror clasps and then taking the closure (Figure [1](#fullpicture){reference-type=\"ref\" reference=\"fullpicture\"}). All the Whitehead chains $W_{a,1,c,d}$ are hyperbolic with $$\\operatorname{Vol}({\\mathbb S}^3\\backslash W_{a,1,c,d}) = (c+d) v_8 ,$$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1912.10638v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotics of the quantum invariants of the Whitehead link",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-131-asymptotics-of-the-quantum-invariants-of-the.md",
+      "narrative": null,
+      "content": "Let $M_1$ and $M_2$ be sequences of integers in $N$ with limiting ratios $$s_i = \\lim_{N \\to \\infty}\\frac{M_i}{N+\\frac{1}{2}}$$ We use $WL$ to denote the Whitehead link and $J_{M_1,M_2}(WL,t)$ to denote the colored Jones polynomials of the Whitehead link with the belt colored by $M_1$ and the clasp colored by $M_2$. In the first part of this paper, we study the asymptotic expansion formula for $J_{M_1,M_2}(WL,e^{\\frac{2\\pi i}{N+\\frac{1}{2}}})$. Our result can be stated as follows\n\n::: theorem\n[]{#mainthmWL label=\"mainthmWL\"} For the $(M_1,M_2)$-th colored Jones polynomials of the Whitehead lin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1912.10638v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotic of the quantum invariants of the Whitehead chains",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-132-asymptotic-of-the-quantum-invariants-of-the.md",
+      "narrative": null,
+      "content": "In the second part of this paper, we generalize the previous results on the Whitehead link to the Whitehead chains.\n\n::: theorem\n[]{#CJWNN label=\"CJWNN\"} We have $$\\begin{aligned}\n\\lim_{N\\to \\infty} \\frac{2\\pi}{N+\\frac{1}{2}} \\log| J_{\\vec{N}} (W_{a,1,c,d}, e^{\\frac{2\\pi i}{N+\\frac{1}{2}}})| \n= \\operatorname{Vol}({\\mathbb S}^3 \\backslash W_{a,1,c,d})\n\\end{aligned}$$\n:::\n\nAs a consequence, we can show that\n\n::: corollary\n[]{#TVW label=\"TVW\"}For any $a\\in {\\mathbb Z}$, $b\\geq 1$, $c,d \\in {\\mathbb N}$ with $c+d\\geq 1$, Conjectures [\\[tvGM\\]](#tvGM){reference-type=\"ref\" reference=\"tvGM\"} is true",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1912.10638v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outline",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-006-14-outline.md",
+      "narrative": null,
+      "content": "In Section [\\[formula\\]](#formula){reference-type=\"ref\" reference=\"formula\"}, we first compute the potential functions of $J_{M_1,M_2}(WL,e^{\\frac{2\\pi i}{N+\\frac{1}{2}}})$. By using the Poisson summation formula and the saddle point approximation, we compute its asymptotic expansion formula. Then we study how the critical point equations and the critical values are related to the geometry of the Whitehead link complement. Besides, we prove the differential formula for the potential function. Altogether, we can prove Theorem [\\[mainthmWL\\]](#mainthmWL){reference-type=\"ref\" reference=\"mainthmWL",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1912.10638v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 7,
+      "pageEnd": 13,
+      "target": "../sections/sec-007-15-acknowledgements.md",
+      "narrative": null,
+      "content": "The author would like to thank Tian Yang for the valuable comments and suggestions to this work.\n\n# Asymptotics of $J_{M_1,M_2}(WL,e^{\\frac{2\\pi i}{N+\\frac{1}{2}}})$ {#formula}\n\n## Potential functions of $J_{M_1,M_2}(WL,e^{\\frac{2\\pi i}{N+\\frac{1}{2}}})$\n\nIn this section, we compute the potential function of the $(M_1,M_2)$-th unnormalized colored Jones polynomials for the Whitehead link $WL$, where $M_1,M_2$ are sequences of positive integers in $N$. First of all, the formula of the $(M_1,M_2)$-th unnormalized colored Jones polynomials of the Whitehead link is given by [@HZ07] $$J_{M_1,M_2} (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1912.10638v2/blocks/lem-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "lem-sec-008-01.md",
+      "narrative": null,
+      "content": "There exists a neighborhood U ⊂ C2 of (1, 1)∈ C2 and two holomorphic families of non- degenerate critical points{z±(s1,s2)}(s1,s2)∈U for the families of potential functions Φ±(s1,s2)(z1,z 2) such that z±(1,1) = ( 1 2, 1 ) .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1912.10638v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The asymptotics expansion formula for JM1,M2(WL,e2iN+12)",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "../sections/sec-008-23-the-asymptotics-expansion-formula-for-jm1m2wl.md",
+      "narrative": null,
+      "content": "2πi\nN + 1\n2 )\nIn this section, we generalize the previous argument to study the asymptotics expansion formula for\nJM1,M2(WL,e\n2πi\nN + 1\n2 ). Recall that the potential functions Φ ±(s1,s2)(z1,z 2) are given by\nΦ±(s1,s2)(z1,z 2) = 1\n2πi\n[\n± (2πi (s1− 1))\n(\n2πi\n(\nz1− 1\n2\n))\n− (2πi(s2− 1))(2πiz1 + 2πiz2)\n+ Li2\n(\ne2πi(s2−1)−2πiz1−2πiz2\n)\n− Li2\n(\ne2πi(s2−1)−2πiz2\n)\n+ Li2\n(\ne2πiz2\n)\n− Li2\n(\ne2πiz1+2πiz2\n)\n+ Li2\n(\ne2πiz1\n)]\n13\nFrom now on, for simiplicity we consider the potential function Φ+(s1,s2)(z1,z 2). The same arguement\nworks for the potential function Φ −(s1,s2)(z1,z 2). The following lemma ga",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1912.10638v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometry of the potential function",
+      "pageStart": 16,
+      "pageEnd": 32,
+      "target": "../sections/sec-009-24-geometry-of-the-potential-function.md",
+      "narrative": null,
+      "content": "[]{#geoWL label=\"geoWL\"}\n\nTo understand the critical values of the potential functions, we need to find a concrete triangulation of the link complement associated to the potential function. The triangulation is the one appeared in [@T79]. First of all, we prepare an ideal octahedra (Figure [1](#f1){reference-type=\"ref\" reference=\"f1\"}). The idea is to glue the two blue faces together and the two red faces together (Figure [2](#f2){reference-type=\"ref\" reference=\"f2\"}) to form a cylinder.\\\n\n![ideal octahedron](f1){#f1 width=\"0.7\\\\linewidth\"}\n\n![glue the faces with the same color together](f2){#",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

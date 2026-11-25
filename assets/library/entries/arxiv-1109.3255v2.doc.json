@@ -1,0 +1,2563 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1109.3255v2",
+  "title": "arxiv-1109.3255v2",
+  "variant": "pdf",
+  "pages": 72,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Summary of results",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-summary-of-results"
+    },
+    {
+      "level": 2,
+      "title": "Context and related work",
+      "number": "1.2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-context-and-related-work"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgments",
+      "number": "1.3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "The fiber of W and its tropicalization",
+      "number": "2",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-2-the-fiber-of-w-and-its-tropicalization"
+    },
+    {
+      "level": 2,
+      "title": "Torus fibrations on CP2 D and its mirror",
+      "number": "2.1",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-21-torus-fibrations-on-cp2-d-and-its-mirror"
+    },
+    {
+      "level": 2,
+      "title": "The topology of the map W",
+      "number": "2.2",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-22-the-topology-of-the-map-w"
+    },
+    {
+      "level": 2,
+      "title": "Tropicalization in a singular affine structure",
+      "number": "2.3",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-23-tropicalization-in-a-singular-affine-structur"
+    },
+    {
+      "level": 1,
+      "title": "Symplectic constructions",
+      "number": "3",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-3-symplectic-constructions"
+    },
+    {
+      "level": 2,
+      "title": "Symplectic monodromy associated to a Hessian metric",
+      "number": "3.1",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-31-symplectic-monodromy-associated-to-a-hessian"
+    },
+    {
+      "level": 2,
+      "title": "Focus-focus singularities and Lefschetz singularities",
+      "number": "3.2",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-32-focus-focus-singularities-and-lefschetz-singu"
+    },
+    {
+      "level": 2,
+      "title": "Lagrangians fibered over paths",
+      "number": "3.3",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-33-lagrangians-fibered-over-paths"
+    },
+    {
+      "level": 1,
+      "title": "A degeneration of holomorphic triangles",
+      "number": "4",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-4-a-degeneration-of-holomorphic-triangles"
+    },
+    {
+      "level": 2,
+      "title": "Triangles as sections",
+      "number": "4.1",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-41-triangles-as-sections"
+    },
+    {
+      "level": 2,
+      "title": "Extending the fiber",
+      "number": "4.2",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-42-extending-the-fiber"
+    },
+    {
+      "level": 2,
+      "title": "Degenerating the fibration",
+      "number": "4.3",
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-43-degenerating-the-fibration"
+    },
+    {
+      "level": 2,
+      "title": "Horizontal sections over a disk with one critical value",
+      "number": "4.4",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-44-horizontal-sections-over-a-disk-with-one-crit"
+    },
+    {
+      "level": 2,
+      "title": "Polygons with fixed conformal structure",
+      "number": "4.5",
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-45-polygons-with-fixed-conformal-structure"
+    },
+    {
+      "level": 2,
+      "title": "Signs",
+      "number": "4.6",
+      "page": 52,
+      "pageLabel": "52",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-46-signs"
+    },
+    {
+      "level": 1,
+      "title": "A tropical count of triangles",
+      "number": "5",
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-5-a-tropical-count-of-triangles"
+    },
+    {
+      "level": 2,
+      "title": "Tropical polygons",
+      "number": "5.1",
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-51-tropical-polygons"
+    },
+    {
+      "level": 2,
+      "title": "Tropical triangles for (CP2, D)",
+      "number": "5.2",
+      "page": 58,
+      "pageLabel": "58",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-52-tropical-triangles-for-cp2-d"
+    },
+    {
+      "level": 1,
+      "title": "Parallel monodromy–invariant directions",
+      "number": "6",
+      "page": 60,
+      "pageLabel": "60",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-6-parallel-monodromyinvariant-directions"
+    },
+    {
+      "level": 2,
+      "title": "Symplectic forms",
+      "number": "6.1",
+      "page": 60,
+      "pageLabel": "60",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-61-symplectic-forms"
+    },
+    {
+      "level": 2,
+      "title": "Lagrangian submanifolds",
+      "number": "6.2",
+      "page": 61,
+      "pageLabel": "61",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-62-lagrangian-submanifolds"
+    },
+    {
+      "level": 2,
+      "title": "Holomorphic and tropical triangles",
+      "number": "6.3",
+      "page": 62,
+      "pageLabel": "62",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-63-holomorphic-and-tropical-triangles"
+    },
+    {
+      "level": 1,
+      "title": "Mirrors to divisor complements",
+      "number": "7",
+      "page": 63,
+      "pageLabel": "63",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-7-mirrors-to-divisor-complements"
+    },
+    {
+      "level": 2,
+      "title": "Algebraic motivation",
+      "number": "7.1",
+      "page": 64,
+      "pageLabel": "64",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-71-algebraic-motivation"
+    },
+    {
+      "level": 2,
+      "title": "Wrapping",
+      "number": "7.2",
+      "page": 64,
+      "pageLabel": "64",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-72-wrapping"
+    },
+    {
+      "level": 2,
+      "title": "Continuation maps and products",
+      "number": "7.3",
+      "page": 68,
+      "pageLabel": "68",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-73-continuation-maps-and-products"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 70,
+      "pageLabel": "70",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 377,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tropical triangles",
+          "heading": false
+        },
+        {
+          "term": "james pascaleff",
+          "heading": false
+        },
+        {
+          "term": "anticanonical divisor",
+          "heading": false
+        },
+        {
+          "term": "binodal cubic",
+          "heading": false
+        },
+        {
+          "term": "floer cohomology",
+          "heading": false
+        },
+        {
+          "term": "singular aﬃne",
+          "heading": false
+        },
+        {
+          "term": "torus ﬁbration",
+          "heading": false
+        },
+        {
+          "term": "lagrangian submanifolds",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1109.3255v2 [math.SG] 13 Feb 2014 FLOER COHOMOLOGY IN THE MIRROR OF THE PROJECTIVE PLANE AND A BINODAL CUBIC CURVE JAMES PASCALEFF Abstract. We construct a family of Lagrangian submanifolds in the Landau– Ginzburg mirror to the projective plane equipped with a binodal cubic curve as anticanonical divisor. These objects correspond under mirror symmetry to the powers of the twisting sheaf O(1), and hence their",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1109.3255v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 192,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "landau--ginzburg model",
+          "heading": false
+        },
+        {
+          "term": "other-manifolds",
+          "heading": false
+        },
+        {
+          "term": "torus fibrations",
+          "heading": false
+        },
+        {
+          "term": "mirror symmetry",
+          "heading": false
+        },
+        {
+          "term": "fano manifold",
+          "heading": false
+        },
+        {
+          "term": "auroux",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:intro label=\"sec:intro\"} This article is concerned with a case of mirror symmetry relating the algebraic geometry of a Fano manifold to the symplectic geometry of a Landau--Ginzburg model. The Fano manifold is the projective plane $\\CP^2$ with homogeneous coordinates $x, y, z$, and additionally we choose as anticanonical divisor $D = C \\cup L$, the union of a conic $C = \\{xz-y^2\\}$ and a line $L = \\{y=0\\}$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-summary-of-results",
+      "number": "1.1",
+      "title": "Summary of results",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 5,
+      "labelStart": "2",
+      "labelEnd": "5",
+      "words": 1295,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wrapped floer",
+          "heading": false
+        },
+        {
+          "term": "lefschetz fibration",
+          "heading": false
+        },
+        {
+          "term": "floer triangle",
+          "heading": false
+        },
+        {
+          "term": "floer cohomology",
+          "heading": false
+        },
+        {
+          "term": "torus fibration",
+          "heading": false
+        },
+        {
+          "term": "triangle-products",
+          "heading": false
+        },
+        {
+          "term": "tropical curves",
+          "heading": false
+        },
+        {
+          "term": "lagrangian submanifolds",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:outline label=\"sec:outline\"} The piece of symplectic geometry in the Landau--Ginzburg model $(X^\\vee,W)$ we study is the Floer cohomology of Lagrangian submanifolds, while on the mirror side $\\CP^2$ we consider the cohomology of the coherent sheaves $\\cO_{\\CP^2}(d)$. We construct a symplectic manifold $X(B)$, that serves as our symplectic model for $X^\\vee$, and a collection of Lagrangian submanifolds",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-context-and-related-work",
+      "number": "1.2",
+      "title": "Context and related work",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 10,
+      "labelStart": "5",
+      "labelEnd": "10",
+      "words": 3264,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mirror vee",
+          "heading": false
+        },
+        {
+          "term": "tropical affine",
+          "heading": false
+        },
+        {
+          "term": "omega vee",
+          "heading": false
+        },
+        {
+          "term": "toric fano",
+          "heading": false
+        },
+        {
+          "term": "anticanonical divisor",
+          "heading": false
+        },
+        {
+          "term": "manifold vee",
+          "heading": false
+        },
+        {
+          "term": "torus fibration",
+          "heading": false
+        },
+        {
+          "term": "lagrangian submanifolds",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:context label=\"sec:context\"} ### Manifolds with effective anticanonical divisor and Landau--Ginzburg models {#sec:intro-fano} The class of spaces originally considered in mirror symmetry were Calabi--Yau manifolds. Roughly speaking, the mirror to a compact Calabi--Yau manifold $X$ is another compact Calabi--Yau manifold $X^\\vee$ of the same dimension. For example, it is in this context that we have the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-acknowledgments",
+      "number": "1.3",
+      "title": "Acknowledgments",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 114,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dms",
+          "heading": false
+        },
+        {
+          "term": "thank",
+          "heading": false
+        },
+        {
+          "term": "generosity",
+          "heading": false
+        },
+        {
+          "term": "mohammed",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:acknowledgements label=\"sec:acknowledgements\"} This paper is a version of my doctoral thesis. It represents research done at MIT under the supervision of Denis Auroux, whose support and generosity contributed greatly to the completion of this work. I thank him, Paul Seidel, and Mohammed Abouzaid for suggestions that proved to be invaluable in its development. I thank Tom Mrowka for his interest in this work",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-2-the-fiber-of-w-and-its-tropicalization",
+      "number": "2",
+      "title": "The fiber of W and its tropicalization",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-21-torus-fibrations-on-cp2-d-and-its-mirror",
+      "number": "2.1",
+      "title": "Torus fibrations on CP2 D and its mirror",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 16,
+      "labelStart": "11",
+      "labelEnd": "16",
+      "words": 2265,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "torus fibrations",
+          "heading": true
+        },
+        {
+          "term": "symplectic affine",
+          "heading": false
+        },
+        {
+          "term": "affine coordinates",
+          "heading": false
+        },
+        {
+          "term": "lefschetz fibration",
+          "heading": false
+        },
+        {
+          "term": "affine structure",
+          "heading": false
+        },
+        {
+          "term": "integral affine",
+          "heading": false
+        },
+        {
+          "term": "torus fibers",
+          "heading": false
+        },
+        {
+          "term": "lambda cap",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:torus-fibrations label=\"sec:torus-fibrations\"} Let $$D = \\{xyz-y^3 = 0\\} \\subset \\CP^2$$ be a binodal cubic curve. We equip $\\CP^2$ and $\\CP^2 \\setminus D$ with standard Fubini-Study symplectic forms. Both $\\CP^2 \\setminus D$ and its mirror $X^\\vee = \\{(u,v)\\in \\C^2\\mid uv \\neq 1\\}$ admit special Lagrangian torus fibrations. In fact, these spaces are diffeomorphic, each being $\\C^2$ minus a conic. The torus",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-22-the-topology-of-the-map-w",
+      "number": "2.2",
+      "title": "The topology of the map W",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 326,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "anticanonical divisor",
+          "heading": false
+        },
+        {
+          "term": "main-lg-model",
+          "heading": false
+        },
+        {
+          "term": "frac lambda",
+          "heading": false
+        },
+        {
+          "term": "plane curve",
+          "heading": false
+        },
+        {
+          "term": "cubic plane",
+          "heading": false
+        },
+        {
+          "term": "critical values",
+          "heading": false
+        },
+        {
+          "term": "conic",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:topology-W label=\"sec:topology-W\"} A direct computation shows that the superpotential $W$ given by [\\[eq:main-lg-model\\]](#eq:main-lg-model){reference-type=\"eqref\" reference=\"eq:main-lg-model\"} has three critical points $$\\label{eq:W-crit-pts} \\Crit(W) = \\{(v = e^{\\Lambda/3}e^{2\\pi i (n/3)}, w = 1) \\mid n = 0, 1, 2\\},$$ and corresponding critical values $$\\label{eq:W-crit-vals} \\Critv(W) =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-23-tropicalization-in-a-singular-affine-structur",
+      "number": "2.3",
+      "title": "Tropicalization in a singular affine structure",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 19,
+      "labelStart": "17",
+      "labelEnd": "19",
+      "words": 1284,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tropicalization",
+          "heading": true
+        },
+        {
+          "term": "singular affine",
+          "heading": true
+        },
+        {
+          "term": "affine structure",
+          "heading": true
+        },
+        {
+          "term": "tropical curve",
+          "heading": false
+        },
+        {
+          "term": "affine coordinate",
+          "heading": false
+        },
+        {
+          "term": "curve epsilon",
+          "heading": false
+        },
+        {
+          "term": "approx log",
+          "heading": false
+        },
+        {
+          "term": "epsilon lambda",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:tropicalization label=\"sec:tropicalization\"} Our goal is to find the same affine manifold $B$ (that comes from symplectic structure of $\\CP^2\\setminus D$) embedded in the base of the torus fibration on $X^\\vee$, equipped with the *complex* affine structure. We shall see that it is obtained as a bounded chamber inside a particular tropical curve, the tropicalization of the fiber of $W$. For some real number",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-3-symplectic-constructions",
+      "number": "3",
+      "title": "Symplectic constructions",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 248,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lefschetz fibration",
+          "heading": false
+        },
+        {
+          "term": "torus fibration",
+          "heading": false
+        },
+        {
+          "term": "fiber-superpotential",
+          "heading": false
+        },
+        {
+          "term": "lagrangian submanifolds",
+          "heading": false
+        },
+        {
+          "term": "main-construction",
+          "heading": false
+        },
+        {
+          "term": "symplectic",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sec:main-construction label=\"sec:main-construction\"} Let $B$ the affine manifold which is the bounded chamber of the tropicalization of the fiber of $W$, constructed in the previous section. In this section we construct a symplectic manifold $X(B)$, which is a torus fibration over $B$, together with a Lefschetz fibration $w: X(B) \\to X(I)$, where $X(I)$ is an annulus. We also construct a collection",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-31-symplectic-monodromy-associated-to-a-hessian",
+      "number": "3.1",
+      "title": "Symplectic monodromy associated to a Hessian metric",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": "20",
+      "labelEnd": "22",
+      "words": 1159,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hessian metric",
+          "heading": true
+        },
+        {
+          "term": "bar frac",
+          "heading": false
+        },
+        {
+          "term": "symplectic",
+          "heading": true
+        },
+        {
+          "term": "map eta",
+          "heading": false
+        },
+        {
+          "term": "frac partial",
+          "heading": false
+        },
+        {
+          "term": "wedge frac",
+          "heading": false
+        },
+        {
+          "term": "parallel transport",
+          "heading": false
+        },
+        {
+          "term": "monodromy-hessian label",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:monodromy-hessian label=\"sec:monodromy-hessian\"} Let $B$ be a two-dimensional affine manifold with affine coordinates $(\\eta,\\xi)$ that embed $B$ as a subset of $\\R^2$. In this subsection $B$ does not have any singularities. Suppose that $\\eta: B \\to \\R$ is a submersion over some interval $I \\subset \\R$, and that the fibers of this map are connected intervals. For our purposes, we consider the case where $B$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-32-focus-focus-singularities-and-lefschetz-singu",
+      "number": "3.2",
+      "title": "Focus-focus singularities and Lefschetz singularities",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 25,
+      "labelStart": "22",
+      "labelEnd": "25",
+      "words": 1630,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "focus-focus",
+          "heading": true
+        },
+        {
+          "term": "lefschetz fibration",
+          "heading": false
+        },
+        {
+          "term": "monodromy-hessian",
+          "heading": false
+        },
+        {
+          "term": "focus-focus singularity",
+          "heading": false
+        },
+        {
+          "term": "coprod epsilon",
+          "heading": false
+        },
+        {
+          "term": "focus-focus-lefschetz label",
+          "heading": false
+        },
+        {
+          "term": "epsilon eta",
+          "heading": false
+        },
+        {
+          "term": "torus fibration",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:focus-focus-lefschetz label=\"sec:focus-focus-lefschetz\"} Now we consider the case where the affine structure on $B$ contains a focus-focus singularity, that is, a singularity with monodromy conjugate to $\\begin{pmatrix}1& 0\\\\ 1 &1\\end{pmatrix}$, and the monodromy invariant direction of this singularity is parallel to the fibers of the map $\\eta: B \\to I$. The goal is to construct a symplectic manifold",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-33-lagrangians-fibered-over-paths",
+      "number": "3.3",
+      "title": "Lagrangians fibered over paths",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 32,
+      "labelStart": "25",
+      "labelEnd": "32",
+      "words": 3319,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lagrangians",
+          "heading": true
+        },
+        {
+          "term": "lefschetz fibration",
+          "heading": false
+        },
+        {
+          "term": "path ell",
+          "heading": false
+        },
+        {
+          "term": "tilde alpha",
+          "heading": false
+        },
+        {
+          "term": "torus fibration",
+          "heading": false
+        },
+        {
+          "term": "leaves sigma",
+          "heading": false
+        },
+        {
+          "term": "boundary intersection",
+          "heading": false
+        },
+        {
+          "term": "along ell",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:lags-construction label=\"sec:lags-construction\"} The base of the Lefschetz fibration is the annulus $X(I) = \\{R^{-1} \\leq |w| \\leq R\\}$ with a critical value at $w = -1$. The symplectic structures constructed in [\\[sec:focus-focus-lefschetz\\]](#sec:focus-focus-lefschetz){reference-type=\"ref\" reference=\"sec:focus-focus-lefschetz\"} have the property that the symplectic connection is flat throughout the annuli",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-4-a-degeneration-of-holomorphic-triangles",
+      "number": "4",
+      "title": "A degeneration of holomorphic triangles",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 32,
+      "labelStart": "32",
+      "labelEnd": "32",
+      "words": 81,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "triangles",
+          "heading": true
+        },
+        {
+          "term": "holomorphic triangle",
+          "heading": false
+        },
+        {
+          "term": "annulus",
+          "heading": false
+        }
+      ],
+      "extract": "Since we have set up our Lagrangians as ﬁbered over paths, a holomorphic triangle with boundary on the Lagrangians composed with the projection is a holomorphic triangle in the base, which is an annulus, with boundary along the corresponding paths. The triangles that are most interesting are those that pass over the critical value w = −1 (possibly several times). In general, such triangles are immersed in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-41-triangles-as-sections",
+      "number": "4.1",
+      "title": "Triangles as sections",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 37,
+      "labelStart": "32",
+      "labelEnd": "37",
+      "words": 2177,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "triangles-sections label",
+          "heading": false
+        },
+        {
+          "term": "horiz-sections",
+          "heading": false
+        },
+        {
+          "term": "circ tilde",
+          "heading": false
+        },
+        {
+          "term": "extend-fiber",
+          "heading": false
+        },
+        {
+          "term": "lefschetz fibration",
+          "heading": false
+        },
+        {
+          "term": "paths ell",
+          "heading": false
+        },
+        {
+          "term": "fiber indexed",
+          "heading": false
+        },
+        {
+          "term": "tqft-gluing",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:triangles-sections label=\"sec:triangles-sections\"} Let $q_1 \\in HF^0(L(0),L(n))$ and $q_2 \\in HF^0(L(n),L(n+m))$ be two degree zero morphisms whose Floer product $\\mu^2(q_2,q_1)$ we wish to compute. Suppose that $p \\in HF^0(L(0),L(n+m))$ contributes to this product. Let $S$ denote a disk with three boundary punctures, and a complex structure that is allowed to vary. To find the coefficient of $p$ in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-42-extending-the-fiber",
+      "number": "4.2",
+      "title": "Extending the fiber",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 38,
+      "labelStart": "37",
+      "labelEnd": "38",
+      "words": 746,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fiber",
+          "heading": true
+        },
+        {
+          "term": "extended-sections",
+          "heading": false
+        },
+        {
+          "term": "lagrangian boundary",
+          "heading": false
+        },
+        {
+          "term": "hat setminus",
+          "heading": false
+        },
+        {
+          "term": "horizontal boundary",
+          "heading": false
+        },
+        {
+          "term": "focus-focus-lefschetz",
+          "heading": false
+        },
+        {
+          "term": "pseudo-holomorphic section",
+          "heading": false
+        },
+        {
+          "term": "setminus image",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:extend-fiber label=\"sec:extend-fiber\"} One problem with our Lagrangian boundary conditions $L(d)$ is that they intersect the horizontal boundary $\\partial^h X(B)$. This raises the possibility that as we degenerate the fibration, part of a pseudo-holomorphic section can escape through $\\partial^h X(B)$. We now describe a technical trick that, by attaching bands to the fiber, allows us to close up the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-43-degenerating-the-fibration",
+      "number": "4.3",
+      "title": "Degenerating the fibration",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 40,
+      "labelStart": "38",
+      "labelEnd": "40",
+      "words": 955,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fibration hat",
+          "heading": false
+        },
+        {
+          "term": "lefschetz fibration",
+          "heading": false
+        },
+        {
+          "term": "hat epsilon",
+          "heading": false
+        },
+        {
+          "term": "lefschetz critical",
+          "heading": false
+        },
+        {
+          "term": "original hat",
+          "heading": false
+        },
+        {
+          "term": "conditions hat",
+          "heading": false
+        },
+        {
+          "term": "lagrangian boundary",
+          "heading": false
+        },
+        {
+          "term": "pseudo-holomorphic sections",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:degenerated-spaces label=\"sec:degenerated-spaces\"} By propositions [\\[prop:triangles-sections\\]](#prop:triangles-sections){reference-type=\"ref\" reference=\"prop:triangles-sections\"} and [\\[prop:extended-sections\\]](#prop:extended-sections){reference-type=\"ref\" reference=\"prop:extended-sections\"}, in order to compute the Floer product between two morphisms $q_1 \\in HF^0(L(0),L(n))$ and $q_2 \\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-44-horizontal-sections-over-a-disk-with-one-crit",
+      "number": "4.4",
+      "title": "Horizontal sections over a disk with one critical value",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 44,
+      "labelStart": "40",
+      "labelEnd": "44",
+      "words": 2014,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "horizontal sections",
+          "heading": true
+        },
+        {
+          "term": "supp beta",
+          "heading": false
+        },
+        {
+          "term": "beta partial",
+          "heading": false
+        },
+        {
+          "term": "twist fibration",
+          "heading": false
+        },
+        {
+          "term": "beta omega",
+          "heading": false
+        },
+        {
+          "term": "int supp",
+          "heading": false
+        },
+        {
+          "term": "non-negative curvature",
+          "heading": false
+        },
+        {
+          "term": "omega theta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:horiz-sections label=\"sec:horiz-sections\"} We now determine the counts of pseudo-holomorphic sections of the Lefschetz fibrations $E_i \\to D_i$ using the theory of horizontal sections developed by Seidel in [@seidel-les]. In particular we will apply results from section 2.5 of that paper, so we adopt its notation. This theory involves analysis of the symplectic connection, whose horizontal subspaces are the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-45-polygons-with-fixed-conformal-structure",
+      "number": "4.5",
+      "title": "Polygons with fixed conformal structure",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 52,
+      "labelStart": "44",
+      "labelEnd": "52",
+      "words": 4457,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conformal structure",
+          "heading": true
+        },
+        {
+          "term": "fixed conformal",
+          "heading": true
+        },
+        {
+          "term": "gamma winds",
+          "heading": false
+        },
+        {
+          "term": "tilde gamma",
+          "heading": false
+        },
+        {
+          "term": "alpha j-h",
+          "heading": false
+        },
+        {
+          "term": "winds around",
+          "heading": false
+        },
+        {
+          "term": "winding around",
+          "heading": false
+        },
+        {
+          "term": "loop gamma",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:sections-polygon label=\"sec:sections-polygon\"} Recall from section [\\[sec:degenerated-spaces\\]](#sec:degenerated-spaces){reference-type=\"ref\" reference=\"sec:degenerated-spaces\"} the trivial fibration $\\pi: \\hat{X}^0 \\to T^0$, with fiber $M$, where $T^0$ is a a disk with $(k+3)$ boundary punctures. We have $\\hat{X}^0 = M \\times T^0$ symplectically. We equip $\\hat{X}^0$ with a product almost complex structure",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-46-signs",
+      "number": "4.6",
+      "title": "Signs",
+      "level": 2,
+      "pageStart": 52,
+      "pageEnd": 54,
+      "labelStart": "52",
+      "labelEnd": "54",
+      "words": 851,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "signs",
+          "heading": true
+        },
+        {
+          "term": "cong det",
+          "heading": false
+        },
+        {
+          "term": "preferred isomorphisms",
+          "heading": false
+        },
+        {
+          "term": "tangent bundle",
+          "heading": false
+        },
+        {
+          "term": "linearized operator",
+          "heading": false
+        },
+        {
+          "term": "vertical subspaces",
+          "heading": false
+        },
+        {
+          "term": "orientation operator",
+          "heading": false
+        },
+        {
+          "term": "preferred choice",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:signs label=\"sec:signs\"} In order to determine the signs appearing in the counts of triangles, we need to specify the brane structures on the Lagrangians $L(d)$. Since $L(d)$ fibers over a curve in the base, and its intersection with each fiber is a curve, the tangent bundle of $L(d)$ is trivial, and we can define a framing of $TL(d)$ using the vertical and horizontal tangent vectors at each point. Using",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-5-a-tropical-count-of-triangles",
+      "number": "5",
+      "title": "A tropical count of triangles",
+      "level": 1,
+      "pageStart": 54,
+      "pageEnd": 54,
+      "labelStart": "54",
+      "labelEnd": "54",
+      "words": 190,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tropical",
+          "heading": true
+        },
+        {
+          "term": "trop-fuk",
+          "heading": false
+        },
+        {
+          "term": "triangles",
+          "heading": true
+        },
+        {
+          "term": "affine manifold",
+          "heading": false
+        },
+        {
+          "term": "degeneration",
+          "heading": false
+        },
+        {
+          "term": "non-negative integers",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:trop-fuk label=\"sec:trop-fuk\"} Abouzaid, Gross and Siebert have proposed a definition of a category defined from the tropical geometry of an integral affine manifold, which is meant to describe some part of the Fukaya category of the corresponding symplectic manifold. The starting point for this definition is an integral affine manifold $B$. The objects are then the non-negative integers, with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-51-tropical-polygons",
+      "number": "5.1",
+      "title": "Tropical polygons",
+      "level": 2,
+      "pageStart": 54,
+      "pageEnd": 58,
+      "labelStart": "54",
+      "labelEnd": "58",
+      "words": 1963,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tropical",
+          "heading": true
+        },
+        {
+          "term": "tropical disks",
+          "heading": false
+        },
+        {
+          "term": "nabla dot",
+          "heading": false
+        },
+        {
+          "term": "tropical polygon",
+          "heading": false
+        },
+        {
+          "term": "dot gamma",
+          "heading": false
+        },
+        {
+          "term": "tropical curve",
+          "heading": false
+        },
+        {
+          "term": "considering tropical",
+          "heading": false
+        },
+        {
+          "term": "vectors dot",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:tropical-polygons label=\"sec:tropical-polygons\"} Let $\\nabla$ denote the canonical torsion-free flat connection on $B$ associated to the affine structure. The following definitions are due to Abouzaid [@abouzaid-msri-dec09]. ::: definition []{#def:tropical-disk label=\"def:tropical-disk\"} Let $B$ be a two-dimensional singular affine manifold with focus-focus singularities, and let $x \\in B$ be a non-singular",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-52-tropical-triangles-for-cp2-d",
+      "number": "5.2",
+      "title": "Tropical triangles for (CP2, D)",
+      "level": 2,
+      "pageStart": 58,
+      "pageEnd": 60,
+      "labelStart": "58",
+      "labelEnd": "60",
+      "words": 1050,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tropical",
+          "heading": true
+        },
+        {
+          "term": "tropical disks",
+          "heading": false
+        },
+        {
+          "term": "tropical triangle",
+          "heading": false
+        },
+        {
+          "term": "tropical curve",
+          "heading": false
+        },
+        {
+          "term": "binom k-s",
+          "heading": false
+        },
+        {
+          "term": "vector dot",
+          "heading": false
+        },
+        {
+          "term": "disks attached",
+          "heading": false
+        },
+        {
+          "term": "simple disks",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:tropical-our-case label=\"sec:tropical-our-case\"} We now write out explicitly the tropical curves contributing to the triangle products in the case of $(\\CP^2, D)$. Let us use coordinates $(\\eta,\\xi)$ where the point $q_{a,i} \\in B(\\frac{1}{n}\\Z)$ has coordinates $(a/n,-i/n)$ There is one family of simple tropical disks that emanate from the singularity on the $\\eta = 0$ line in the vertical direction. Their",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-6-parallel-monodromyinvariant-directions",
+      "number": "6",
+      "title": "Parallel monodromy–invariant directions",
+      "level": 1,
+      "pageStart": 60,
+      "pageEnd": 60,
+      "labelStart": "60",
+      "labelEnd": "60",
+      "words": 159,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "parallel",
+          "heading": true
+        },
+        {
+          "term": "other-manifolds",
+          "heading": false
+        },
+        {
+          "term": "monodromy",
+          "heading": true
+        },
+        {
+          "term": "directions",
+          "heading": true
+        },
+        {
+          "term": "focus-focus",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:other-manifolds label=\"sec:other-manifolds\"} In this section we describe a class of affine manifolds to which the results obtained for $(\\CP^2,D)$ naturally generalize. Consider an integral affine manifold $B$, compact with boundary. We require that $B$ has the following properties. Recall that a focus-focus singularity has a monodromy invariant direction, corresponding to the tangent vector field that is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-61-symplectic-forms",
+      "number": "6.1",
+      "title": "Symplectic forms",
+      "level": 2,
+      "pageStart": 60,
+      "pageEnd": 61,
+      "labelStart": "60",
+      "labelEnd": "61",
+      "words": 259,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boundary facets",
+          "heading": false
+        },
+        {
+          "term": "monodromy-hessian",
+          "heading": false
+        },
+        {
+          "term": "symplectic",
+          "heading": true
+        },
+        {
+          "term": "focus-focus-lefschetz",
+          "heading": false
+        },
+        {
+          "term": "horizontal boundary",
+          "heading": false
+        },
+        {
+          "term": "symplectic connection",
+          "heading": false
+        },
+        {
+          "term": "corners",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:other-symplectic label=\"sec:other-symplectic\"} Let $x_1,\\dots,x_n$ denote the singularities of $B$. Let $[a_0,a_{n+1}]$ be the image of $B$ under $\\eta$, and let $a_i = \\eta(x_i)$. We split up $B$ along the monodromy invariant lines of each singularity, and obtain intervals $I_i = [a_{i}+\\epsilon,a_{i+1}-\\epsilon]$, with fibrations $X(B_i) \\to X(I_i)$. Choosing an affine function $\\xi$ on $B_i$ such that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-62-lagrangian-submanifolds",
+      "number": "6.2",
+      "title": "Lagrangian submanifolds",
+      "level": 2,
+      "pageStart": 61,
+      "pageEnd": 62,
+      "labelStart": "61",
+      "labelEnd": "62",
+      "words": 733,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ell winds",
+          "heading": false
+        },
+        {
+          "term": "toric blowups",
+          "heading": false
+        },
+        {
+          "term": "lagrangian",
+          "heading": true
+        },
+        {
+          "term": "times ell",
+          "heading": false
+        },
+        {
+          "term": "winds around",
+          "heading": false
+        },
+        {
+          "term": "del pezzo",
+          "heading": false
+        },
+        {
+          "term": "choose ell",
+          "heading": false
+        },
+        {
+          "term": "vertical boundary",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:other-lagrangian label=\"sec:other-lagrangian\"} As before, the construction of Lagrangian sections proceeds by taking paths in the base and a Lagrangian in the fiber, and sweeping out a Lagrangian in the total space by symplectic parallel transport. Potentially, we have more freedom than in the mirror to $\\CP^2$. The admissible Lagrangian submanifolds we consider have boundary conditions given by a complex",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-63-holomorphic-and-tropical-triangles",
+      "number": "6.3",
+      "title": "Holomorphic and tropical triangles",
+      "level": 2,
+      "pageStart": 62,
+      "pageEnd": 63,
+      "labelStart": "62",
+      "labelEnd": "63",
+      "words": 325,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tropical triangles",
+          "heading": true
+        },
+        {
+          "term": "triangles contributing",
+          "heading": false
+        },
+        {
+          "term": "binom",
+          "heading": false
+        },
+        {
+          "term": "degeneration",
+          "heading": false
+        },
+        {
+          "term": "dots",
+          "heading": false
+        },
+        {
+          "term": "gon",
+          "heading": false
+        },
+        {
+          "term": "fibration",
+          "heading": false
+        },
+        {
+          "term": "lagrangians",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:other-triangles label=\"sec:other-triangles\"} Having chosen a family of Lagrangians $\\{L(d)\\}_{d\\in\\Z}$ corresponding to the powers of an ample line bundle, we find that after positively perturbation, $HF^*(L(d_1),L(d_2))$ is concentrated in degree $0$ when $d_1 \\leq d_2$. The techniques of section [\\[sec:degeneration\\]](#sec:degeneration){reference-type=\"ref\" reference=\"sec:degeneration\"} allow us to compute",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-7-mirrors-to-divisor-complements",
+      "number": "7",
+      "title": "Mirrors to divisor complements",
+      "level": 1,
+      "pageStart": 63,
+      "pageEnd": 64,
+      "labelStart": "63",
+      "labelEnd": "64",
+      "words": 421,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "divisor complements",
+          "heading": true
+        },
+        {
+          "term": "anticanonical divisor",
+          "heading": false
+        },
+        {
+          "term": "wrapped floer",
+          "heading": false
+        },
+        {
+          "term": "floer cohomology",
+          "heading": false
+        },
+        {
+          "term": "coherent sheaves",
+          "heading": false
+        },
+        {
+          "term": "lagrangian submanifolds",
+          "heading": false
+        },
+        {
+          "term": "setminus",
+          "heading": false
+        },
+        {
+          "term": "vee",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:complements label=\"sec:complements\"} In this section we examine the relationship between the wrapped Floer cohomology of our Lagrangians $L(d)$ and the cohomology of coherent sheaves on complements of components of the anticanonical divisor in $\\CP^2$. Let $D = C \\cup L$ denote the anticanonical divisor which is the union of a conic $C$ and a line $L$. We can consider the divisor complements $U_D =\\CP^2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-71-algebraic-motivation",
+      "number": "7.1",
+      "title": "Algebraic motivation",
+      "level": 2,
+      "pageStart": 64,
+      "pageEnd": 64,
+      "labelStart": "64",
+      "labelEnd": "64",
+      "words": 417,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cong lim",
+          "heading": false
+        },
+        {
+          "term": "line bundles",
+          "heading": false
+        },
+        {
+          "term": "xz-y",
+          "heading": false
+        },
+        {
+          "term": "algebraic-motivation",
+          "heading": false
+        },
+        {
+          "term": "homogeneous polynomial",
+          "heading": false
+        },
+        {
+          "term": "conic",
+          "heading": false
+        },
+        {
+          "term": "rational function",
+          "heading": false
+        },
+        {
+          "term": "formed",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:algebraic-motivation label=\"sec:algebraic-motivation\"} In order to motivate the symplectic constructions of wrapped Floer cohomology, it is useful to understand the algebraic side first. The starting point is the following proposition ([@seidel-a-infinity-subalgebras], statement (1.10)). ::: proposition Let $X$ be a smooth quasiprojective variety over $\\C$, $Y \\subset X$ a hypersurface, and $U = X \\setminus",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-72-wrapping",
+      "number": "7.2",
+      "title": "Wrapping",
+      "level": 2,
+      "pageStart": 64,
+      "pageEnd": 68,
+      "labelStart": "64",
+      "labelEnd": "68",
+      "words": 1847,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cylinder hat",
+          "heading": false
+        },
+        {
+          "term": "lefschetz fibration",
+          "heading": false
+        },
+        {
+          "term": "torus fibration",
+          "heading": false
+        },
+        {
+          "term": "hat retains",
+          "heading": false
+        },
+        {
+          "term": "admissible hamiltonians",
+          "heading": false
+        },
+        {
+          "term": "wrapping",
+          "heading": true
+        },
+        {
+          "term": "wrapped floer",
+          "heading": false
+        },
+        {
+          "term": "minimum corresponds",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:wrapping label=\"sec:wrapping\"} In this subsection we describe the geometric setup for wrapped Floer cohomology in the mirrors of $U_L,U_C$, and $U_D$. ### Completions {#sec:completions} Wrapped Floer cohomology is formulated in terms of noncompact manifolds containing noncompact Lagrangian submanifolds. These can be defined as (partial) completions of compact manifolds with boundary. The starting point for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-73-continuation-maps-and-products",
+      "number": "7.3",
+      "title": "Continuation maps and products",
+      "level": 2,
+      "pageStart": 68,
+      "pageEnd": 70,
+      "labelStart": "68",
+      "labelEnd": "70",
+      "words": 1302,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "continuation maps",
+          "heading": true
+        },
+        {
+          "term": "wrapped floer",
+          "heading": false
+        },
+        {
+          "term": "continuation map",
+          "heading": false
+        },
+        {
+          "term": "domain-dependent almost",
+          "heading": false
+        },
+        {
+          "term": "strip-like ends",
+          "heading": false
+        },
+        {
+          "term": "phi tau",
+          "heading": false
+        },
+        {
+          "term": "topological strips",
+          "heading": false
+        },
+        {
+          "term": "pseudo-holomorphic triangles",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:continuation-product label=\"sec:continuation-product\"} We saw above that for $r > d_1-d_2$, the generators of $CF^*(L(d_1),L(d_2);rH)$ all have degree $0$, so there are no differentials, and we can identify these complexes with their homologies. In order to obtain the wrapped Floer cohomology, we must determine the continuation maps. Let it be understood that we require $r \\in \\Z$ in case $L$, $r \\in 2\\Z$ in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 70,
+      "pageEnd": 72,
+      "labelStart": "70",
+      "labelEnd": "72",
+      "words": 1080,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mohammed abouzaid",
+          "heading": false
+        },
+        {
+          "term": "mirror symmetry",
+          "heading": false
+        },
+        {
+          "term": "homological mirror",
+          "heading": false
+        },
+        {
+          "term": "eric zaslow",
+          "heading": false
+        },
+        {
+          "term": "mark gross",
+          "heading": false
+        },
+        {
+          "term": "shing-tung yau",
+          "heading": false
+        },
+        {
+          "term": "kentaro hori",
+          "heading": false
+        },
+        {
+          "term": "ludmil katzarkov",
+          "heading": false
+        }
+      ],
+      "extract": "1. Mohammed Abouzaid, Homogeneous coordinate rings and mirror symmetry for toric varieties, Geom. Topol. 10 (2006), 1097–1157 (electronic). MR 2240909 (2007h:14052) 2. Mohammed Abouzaid, 2009, Private communication. 3. Mohammed Abouzaid, Morse homology, tropical geometry, and homological mirror symmetry for toric varieties, Selecta Math. (N.S.) 15 (2009), no. 2, 189–270. MR 2529936 4. , Toward a tropical Fukaya",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Signs"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "lagrangian fibration",
+      "heading": false
+    },
+    {
+      "term": "lefschetz fibration",
+      "heading": false
+    },
+    {
+      "term": "torus fibration",
+      "heading": false
+    },
+    {
+      "term": "tropical affine",
+      "heading": false
+    },
+    {
+      "term": "fibration hat",
+      "heading": false
+    },
+    {
+      "term": "fibration tilde",
+      "heading": false
+    },
+    {
+      "term": "symplectic affine",
+      "heading": false
+    },
+    {
+      "term": "fibration whose",
+      "heading": false
+    },
+    {
+      "term": "lagrangian boundary",
+      "heading": false
+    },
+    {
+      "term": "lagrangian fibers",
+      "heading": false
+    },
+    {
+      "term": "trivial fibration",
+      "heading": false
+    },
+    {
+      "term": "affine base",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 67,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 69,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 71,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 72,
+      "label": "72",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The Lefschetz ﬁbration with a torus that maps to a circle",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The aﬃne manifold B",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The tropical ﬁber of W for ǫ > 0. (a) (w, u) coordinates. (b) (w, v) coordinates. (c) The tropical ﬁber Tǫ",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The ﬁbration B →I. Examples of the Hessian metrics such that ∂hB is g-orthogonal to the ﬁbers of η may be constructed by starting with the function (53)",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The Lagrangians L(0), L(1), and L(2). Parts of the ﬁgure corresponding to L(i) are labeled by i",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "(a) The local picture of positive perturbation. (b) The end result when K = L(0) and L = L(2)",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "The 1/4–integral points of B. 3.3.7. Hamiltonian isotopies. There is an alternative way to express the relationship between L(d) and L(0), which is by a Hamiltonian isotopy. There is a Hamiltonian function H on X(B) such that the time-d ﬂow of H takes L(0) to L(d). During the intermediate times of t",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "The universal cover of X(I). where q1 and q2 lie in the same ﬁber, the preceding proposition says that the output p must also lie in the same ﬁber. This means that we can compute the contribution of p to µ2(q2, q1) by counting triangles that lie entirely in this ﬁber, since the projection of such a",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Attaching a band to close up one of the Lagrangians in the ﬁber. coordinates (s, t) ∈[0, a] × [−1, 1] on the band such that the part of the Lagrangian",
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Degenerating the ﬁbration",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "The base of the ﬁbration with the region of perturbation shaded. If we denote by Z again the horizontal lift with respect to the trivial connection,",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "(a) Negatively winding triangles with positive slopes have two slope increases (m denotes slope). (b) Removing the side S2",
+      "page": 51,
+      "pageLabel": "51",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "A tropical triangle. The dotted line extending up from the singular point is a tropical disk",
+      "page": 58,
+      "pageLabel": "58",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Mirrors to divisor complements",
+      "page": 63,
+      "pageLabel": "63",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p012-1",
+      "file": "images/img-p012-1.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p027-1",
+      "file": "images/img-p027-1.png",
+      "page": 27,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p028-1",
+      "file": "images/img-p028-1.png",
+      "page": 28,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p032-1",
+      "file": "images/img-p032-1.png",
+      "page": 32,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p034-1",
+      "file": "images/img-p034-1.png",
+      "page": 34,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p058-1",
+      "file": "images/img-p058-1.png",
+      "page": 58,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 31,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 32,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 6,
+      "note": "13 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p70); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 32 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1109.3255v2"
+  }
+}

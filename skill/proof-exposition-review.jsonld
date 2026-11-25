@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/proof-exposition-review.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/proof-exposition-review",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "proof-exposition-review",
+      "title": "Proof Exposition Review",
+      "description": "Paper-wide retrospective review of a single proof block. Given the current state of the paper — including all blocks added since the proof was written — suggest simplifications to the statement, proof, or surrounding exposition. Complements proof-simplifier (which operates on 2-4 block local clusters) by considering the full dependency graph and all recently-added content.",
+      "instructionsPath": "skills/local/proof-exposition-review.md",
+      "instructionLines": 198,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

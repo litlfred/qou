@@ -1,0 +1,853 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "aif-2000-50-4-1021-0",
+  "blocks": [
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "ANNALES DE L’INSTITUT FOURIER\nJACQUES SAULOY\nSystèmes aux q-différences singuliers réguliers :\nclassiﬁcation, matrice de connexion et monodromie\nAnnales de l’institut Fourier, tome 50, no 4 (2000), p. 1021-1071\n<http://www.numdam.org/item?id=AIF_2000__50_4_1021_0>\n© Annales de l’institut Fourier, 2000, tous droits réservés.\nL’accès aux archives de la revue « Annales de l’institut Fourier »\n(http://annalif.ujf-grenoble.fr/) implique l’accord avec les conditions gé-\nnérales d’utilisation (http://www.numdam.org/conditions). Toute utilisa-\ntion commerciale ou impression systématique est constituti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comportement de la matrice de connexion lorsque q •—>",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-4-comportement-de-la-matrice-de-connexion-lorsqu.md",
+      "narrative": null,
+      "content": "et monodromie \n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1052\n5. Trois exemples . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1055\n5.1. Déformation de la fonction hypergéométrique . . . . . . . . . . . . . . . 1055\n5.2. Déformation de log(l — z / z o ) . . . . . . . . . . . . . . . . . . . . . . . . . . 1058\n5.3. Un exemple irrégulier . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 1059\n5.3.1. Calculs explicites en dimension 1 . . . . . . . . . . . . . . . . . . . 1060\n5.3.2. Amélioration des estimations de ô . . . . . . . . .",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction et notations",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-0-introduction-et-notations.md",
+      "narrative": null,
+      "content": "Dans tout cet article, q désigne un nombre complexe tel que \\q\\ > 1.\nSi p = q~1 et n e N, on notera :\n{x'^p)n= n (\n1-^)\net (^;p)oc=n(\n1-^)-\n0<k<,n-l \nQ<k\nLa série hypergéométrique classique a été généralisée par Heine, puis\nRamanujan (voir [12], [20]) en la série hypergéométrique basique\n^•^S^^-\nSi a,6,c G C*, celle-ci est solution de l'équation aux ç-différences à\ncoefficients rationnels :\na^ - Xcïq^ + ^ = 0\navec\n(a+b)z-(l+c/q) \nz - 1\nÀ —— \n—————————,-————————.————————— 5 \nfJi = ———————————— -,\nabz — c/q \nabz — c/q\noù l'on note\n^/(^ = /(^)\npour toute fonction / sur la sphère de Riemann\n§ = P^",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Résolution locale",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-01-résolution-locale.md",
+      "narrative": null,
+      "content": "Les deux seuls points fixes de Pautomorphisme z ^ qz de S sont 0\net oo, et l'on est conduit à étudier l'existence de solutions au voisinage de 0,\nle cas de oo s'en déduisant par changement de coordonnée.\nLe cas où A(0) est singulière est illustré par l'équation Oqf = zf dont\ndes solutions typiques s'obtiennent à l'aide de la fonction 9 : ce cas se\ncaractérise par l'apparition de solutions à croissance sauvage (voir [21]).\nÀ l'opposé, si A(0) = In, le produit fl^i A(ç-^) définit une solution\nholomorphe en 0 et méromorphe sur C.\nSupposons A(0) e GL^(C) : un tel système est dit fuchsien en 0.\nEn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classification",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-02-classification.md",
+      "narrative": null,
+      "content": "A un système fuchsien en 0 et en oo, et à des solutions fondamentales\nX^ et X^ en 0 et en oo, G.D. Birkhoff associe la matrice de connexion :\nP=(X(^))-IX(O)\ndont les coefficients sont o-g-invariants, multivalués et peuvent être vus\ncomme des fonctions méromorphes sur C, automorphes pour le réseau\n(Z + Zr) (où ZT agit trivialement et Z par monodromie). Il code le\nsystème (1) à l'aide de P et des exposants en 0 et en oo et montre que\nl'on peut résoudre le problème inverse dans le cas où A(0) et A(oo) sont\nsemi-simples.\nNous montrons au paragraphe 2 que nos solutions uniformes\nconduisent à une ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Confluence des solutions",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-03-confluence-des-solutions.md",
+      "narrative": null,
+      "content": "Pour donner un sens géométrique à ces constructions, suivant une idée\nde Jean-Pierre Ramis, nous étudions ici la classique confluence d'équations\naux ç-différences vers des équations différentielles lorsque q tend vers 1.\nLa formule heuristique\na^-Id \nd\n————————~\\—— \n———————^ \n''—— ^ ~~T——\nq — 1 \nq—^i \ndz\nconduit à étudier une famille de systèmes (1), avec A dépendant de q de\ntelle sorte que A = In + (q - 1)B, où B ——> B.\nq^l\nANNALES DE L'INSTITUT FOURIER\nSYSTÈMES AUX Ç-DIFFÉRENCES SINGULIERS RÉGULIERS \n1027\nNous nous restreignons pour cela au cas fuchsien non résonnant. Le\nsystème (1) admet a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Confluence et monodromie",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-04-confluence-et-monodromie.md",
+      "narrative": null,
+      "content": "Supposons maintenant les mêmes conditions satisfaites en oo, et\nnotons Xi , Xi°° et Pc les solutions canoniques et la matrice de connexion\nassociées. On montre alors, au paragraphe 4, que la matrice Pg tend vers\nune matrice localement constante P; celle-ci est définie sur § privé de\ntoutes les coupures des solutions en 0 et oo, c'est-à-dire sur une union finie\nd'ouverts connexes : P prend donc un nombre fini de valeurs Pô,... ,Pr.\nEn prolongeant les déterminations des solutions en 0 et en oo le long de\nchemins qui évitent les diverses coupures, on conclut alors que les P^P,-!\n(1 < j < r) sont",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Solutions fondamentales en 0",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-006-11-solutions-fondamentales-en-0.md",
+      "narrative": null,
+      "content": "Supposons donné un système (1) singulier régulier en 0 (cf. 0.1).\nPar définition, à une transformation de jauge rationnelle près, on peut le\nsupposer fuchsien en 0, ce que nous ferons donc.\nOn obtient des solutions fondamentales en 0 à coefficients dans le\ncorps de fonctions Ko introduit au 0.1 par un dévissage analogue à celui du\ncas différentiel. Nous allons construire une telle solution X^ e GLyi(Ko)\net expliciter sa forme.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "On se ramène au cas fuchsien non résonnant",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-007-111-on-se-ramène-au-cas-fuchsien-non-résonnant.md",
+      "narrative": null,
+      "content": "Nous dirons qu'un système de matrice A fuchsien en 0 est non\nrésonnant (en 0) si deux valeurs propres distinctes de Ao == A(0) ne sont\npas congrues modulo ç^ autrement dit si\n^^(A^r^A^)) =0.\nNous allons montrer que tout système fuchsien est rationnellement\néquivalent à un système non résonnant. Pour être précis, on a le\nTHÉORÈME. — En alternant des transformations de jauge à matrices\nconstantes Çi,...,Qr ^ GL^(C) et à matrices de «shearing)} (voir ci-\ndessous) S\\,..., Sr, on ramène le système en X à un système non résonnant\nà Porigine en Y, où X = Çi6i • • • QrSrY.\nSupposons que Sp(Ao) contien",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prop-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "prop-sec-008-01.md",
+      "narrative": null,
+      "content": "— Le système (TqM = UM admet une unique solution à coefficients dans C[£q\\ = Z^x)0^ soit M = 40;^o + ^M^ 4- • • -, ANNALES DE L'INSTITUT FOURIER SYSTÈMES AUX ^-DIFFÉRENCES SINGULIERS RÉGULIERS telle que Mo = In- Cette solution est définie par Mjç = N1^ pour tout k >_ 0. Elle commute avec N etU. On le prouve par identification; les iq sont en effet linéairement indépendants sur C, autrement dit, tq est transcendant (voir annexe A). L'exponentielle d'une matrice niipotente et le logarithme d'une matrice unipotente étant définies sur un corps commutatif de caractéristique 0 quelconque, cette solu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cas d'un système à coefficients constants",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "../sections/sec-008-112-cas-dun-système-à-coefficients-constants.md",
+      "narrative": null,
+      "content": "On suppose maintenant A € GL^(C)) et l'on construit une matrice\nfondamentale canonique e<^A ^ GL^(Ko) telle que\n(TqCq^A = ACg,A = Cq^A.\nLes ingrédients de base sont les fonctions £q et e^c qui ont été définies\nau 0.1. Grâce à la décomposition de Dunford multiplicative, la construction\nse fera en trois étapes.\n1.1.2.1 Cas d'une matrice unipotente. — Soit U = In 4- N où\nN ç Mn(C) est niipotente. Nous aurons besoin, pour ce cas, d'introduire la\nnotation\new-^ n (^-^(l\n9)-\n fceN-\n0<i<k-l\nPar convention, iq = 0 pour k < 0. La formule de Pascal pour les\ncoefficients binomiaux montre que, quelque soit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cas d'un système fuchsien non résonnant",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-009-113-cas-dun-système-fuchsien-non-résonnant.md",
+      "narrative": null,
+      "content": "Nous aurons besoin du\nLEMME. — Soit Mo un élément de Mn{C). L'endomorphisme\n^Mo,A '' M i—> XMMo - MoM\nde Myi(C) a pour spectre le multi-ensemble X Sp(Mo) — Sp(Mo).\nAutrement dit, si l'on note\nSp(Mo)= { A i , . . . , An},\nle spectre de ^MO,A ^t {XXi — Aj ; 1 <, î , j < : n} en comptant les\nmultiplicités.\nL'assertion du lemme revient à dire que le polynôme caractéristique\nde ^MO,A est rii<î j<n^~^i~^^)' ^<e^a éq111^111' à un système d'identités\npolynomiales en les coefficients de MQ et il suffit donc de le vérifier pour\nles éléments d'une partie Zariski-dense de Myi(C), par exemple pour les\nmatr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Synthèse",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-010-114-synthèse.md",
+      "narrative": null,
+      "content": "On peut résumer les résultats qui précèdent en un\nANNALES DE L'INSTITUT FOURIER\nSYSTÈMES AUX ^-DIFFÉRENCES SINGULIERS RÉGULIERS \n1035\nTHÉORÈME. — Le système (1) admet une solution fondamentale\nX^ e GLyi(Ko). Dans Je cas fuchsien non résonnant, il y a un choix\ncanonique Meq^ço) °ù M est méromorphe sur C et M(0) = In.\nDans le cas singulier régulier général, il y a une solution de la forme\nMN où M e GLn(M(C)) et où N est formée de blocs de la forme\neg,c($i,p)^9 == eq^Lp (notations de 1.1.2.1).\nCette dernière forme s'obtient simplement par réduction de Jordan\nde la valeur en 0 de la matrice non ré",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Non-unicité des solutions canoniques",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-011-12-non-unicité-des-solutions-canoniques.md",
+      "narrative": null,
+      "content": "Ecrivant N = LC la matrice obtenue ci-dessus (partie log-car de\nla solution), en vertu de la congruence eq^qc = zeq^c \n(mod C*), on peut\nimposer à la matrice C (diagonale de caractères) de ne contenir que des\ncaractères d'exposants c tels que 1 :< |c| < \\q\\ et de commuter tout de\nmême avec L. De même, on peut introduire un ordre arbitraire sur C* /q^\net ranger les caractères en ordre croissant d'exposants; et, pour chaque\ncaractère, les blocs unipotents associés par ordre croissant de tailles : ces\ndeux conditions s'obtiennent en effet à l'aide de matrices de permutations.\nOn dira, si toutes c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Caractérisation des systèmes singuliers réguliers par la forme des solutions",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-012-13-caractérisation-des-systèmes-singuliers-régul.md",
+      "narrative": null,
+      "content": "forme des solutions.\nIl s'agit plus ou moins d'une réciproque aux résultats de 1.1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Un algorithme de réduction",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-013-131-un-algorithme-de-réduction.md",
+      "narrative": null,
+      "content": "Appelons uniformisante un élément u e M.(C) dont 0 est zéro simple,\nautrement dit dont la valuation voÇu) en 0 vaut 1. Nous établirons d'abord\nun lemme très utile. Il s'agit en fait d'un algorithme de réduction analogue\nà l'algorithme du pivot de Gauss, valable dans tout anneau de valuation\ndiscrète.\nLEMME. — Toute matrice M e GLn(M(C)) peut s'écrire sous la\nforme M = CR^ avec des matrices (7, R ç GL^A^C)) telles que :\n(i) R est régulière en 0 (i.e. R(0) e GLn(C)) ;\n(ii) C est produit :\n1) d'une puissance u^, —k e N d'une uniformisante u arbitraire'^\n2) de matrices Ti^a d'opérations élémentair",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Caractérisation des systèmes singuliers réguliers",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-014-132-caractérisation-des-systèmes-singuliers-régu.md",
+      "narrative": null,
+      "content": "THÉORÈME. — Si 2e système aux q-différences à coefficients rationnels\n(TqX == AX admet une solution fondamentale de la forme MN, où M est\nméromorphe sur C et où N est une matrice log-car, alors c'est un système\nsingulier régulier en 0.\nAppliquons le corollaire 1 du lemme de 1.3.1 à M, que l'on écrit\ndonc M == CR. Alors Y = RN est solution du système OqY \n-=- BY,\navec B == (o•qC)~lAC. La matrice B est rationnellement équivalente à A,\npuisque C e GLn(C(z)). Mais\nB = ((Tq(RN))(RN)~1 = OqR^NN-^R-1\nest le produit de trois matrices régulières en 0, donc l'est elle-même; le\nsystème correspondant est",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Matrice de connexion et classification",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-015-2-matrice-de-connexion-et-classification.md",
+      "narrative": null,
+      "content": "Le changement de coordonnées w == 1/z permet d'appliquer ces\nconsidérations au cas où le système (1) est singulier régulier sur S,\nc'est-à-dire singulier régulier en 0 et en oo. Soient X^ == M^N^ et\nX^ == M^N^ des solutions canoniques en forme normale : cette\ndernière s'obtient par le changement de variable w == 1/z, donc comme\nsolution du système de matrice (A(l/gw))~1.\nTOME 50 (2000), FASCICULE 4\n1040 \nJACQUES SAULOY",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Caractérisation globale des systèmes singuliers réguliers",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/sec-016-21-caractérisation-globale-des-systèmes-singulie.md",
+      "narrative": null,
+      "content": "THÉORÈME. — Un système singulier régulier est rationnellement\néquivalent à un système fuchsien en 0 et oo à la fois.\nSoient X^ = M^N^ et X^ = M^N^ des solutions\ncanoniques en formes normales en 0 et en oo respectivement. Appliquant le\nlemme, on écrit\nMW = (7(0)^(0) ^ M^ = C^R^.\nIl suffit maintenant de trouver U e GLn{C(z)) telle que UC^ et ^7(7(oc)\nsoient régulières en 0 et en oo respectivement : on pourra alors conclure\ncomme dans le théorème précédent. On applique pour cela le corollaire 2\ndu lemme de 1.3.1 avec C' = C^ et C\" = C^°°\\",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classification des systèmes singuliers réguliers sur §",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-017-22-classification-des-systèmes-singuliers-réguli.md",
+      "narrative": null,
+      "content": "2.2. Classification des systèmes singuliers réguliers sur §.\nSous les hypothèses de ce paragraphe, il est clair que la matrice de\nconnexion de Birkhoff\np = (X^)-1^\nest à coefficients elliptiques, autrement dit\nPçGLn(M(E)).\nComme indiqué dans l'introduction, on associe à un système\nsingulier régulier o-qX = AX, la matrice de connexion P assortie des\nstructures de Jordan en 0 et en oo, ou, de façon équivalente, le triple!\n(A^°°\\ P, N^). Celui-ci n'est cependant pas défini de manière univoque : P\npeut être remplacé par (R^^PR^ si R^°\\R^ ç GL^(C) commutent\nrespectivement avec N^ et N^. Ceci justif",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Précisions diverses",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/sec-018-23-précisions-diverses.md",
+      "narrative": null,
+      "content": "2.3. Précisions diverses.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Polarité",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-019-231-polarité.md",
+      "narrative": null,
+      "content": "Le théorème 2.1 affirme que notre système est rationnellement\néquivalent à un système fuchsien en 0 et oo; cela revient à dire que\nl'on peut obtenir M^ et M^ respectivement régulières en 0 et en oo.\nEn vue des applications à la théorie de Galois (voir [24], [25]), il\nest utile de pouvoir préciser la position des singularités. Celles de N^ et\nde N^ sont totalement déterminées par la structure de Jordan de A(0)\net de A(oo). En ce qui concerne M, on déduit facilement ce qui suit de\nla preuve du théorème. Soit une partie finie S C C* ; pour simplifier la\nformulation, nous supposerons que deux élém",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Interprétation catégorique",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-020-232-interprétation-catégorique.md",
+      "narrative": null,
+      "content": "La normalisation un peu artificielle de la forme des matrices log-car\na pour but d'obtenir un énoncé pas trop compliqué. Si on relaxe cette\ncondition, la relation d'équivalence qui sert à définir F^ se traduit, pour les\nparties log-car, par les conditions R\\N\\ = N[R^ et R^N^ = N^R^.\nLes couples (R-^.R^) correspondent, dans la version catégorique du\nthéorème d'équivalence (voir [24], [25]) à des isomorphismes. Ce théorème\nest donc le premier indice de la possibilité d'obtenir par cette voie (c'est-à-\ndire, en travaillant avec de «vraies fonctions ») un groupe de Galois qui soit\nun groupe algébr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comportement des solutions lorsque q —» 1",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-021-3-comportement-des-solutions-lorsque-q-1.md",
+      "narrative": null,
+      "content": "Nous supposons maintenant donnés 7-0 tel que Im(ïo) > 0 et\nqo = e\"2271^0. Nous posons q = çg, c'est-à-dire r = 7-oe, e étant un réel\nstrictement positif que l'on va faire tendre vers 0. Les spirales et demi-\nspirales logarithmiques discrètes ^z, q^ se condensent alors en des coupures\nspirales ç^, q^ de S.\n(3) Nous notons ici M,M<°),M(00) les matrices A,£/o,î7oo de Birkhoff.\nTOME 50 (2000), FASCICULE 4\n1044 \nJACQUES SAULOY\nAfin d'alléger les notations, toutes les dépendances en e ne seront pas\ndénotées explicitement.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prop-sec-022-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "prop-sec-022-01.md",
+      "narrative": null,
+      "content": "(i) lim^o+(ç - 1)W = log(-^). (ii) Si (c - 1)/(<7 - 1) -^ 7, alors lim^o+ <°g,c(^) = (-^)7- II s'agit des déterminations principales sur l'ouvert simplement connexe ^ = S - q^ = C* - q^ (resp. -1 i-^ 0, -1 »-^ 1). Pour prouver cette proposition, on introduit la fonction ë(r,;r)=9,(e2—), qui vérifie l'équation fonctionnelle (voir [15], [17]) ©(^) = ^^^i^ ©( - ^ ^)- Soit a G C; on cherche un équivalent de Qq(qoiz) = 6(r,.r — ra) lorsque e = T/TO ^ O^ L'équation fonctionnelle se réécrit Q(r,x-ra) = . , ., v i, .n^Qf- -'-^ +û-). v ç(î7r/T)(a;-ra-^(r+l))2 \\ T T / Le « facteur d'automorphie » vaut /",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Estimation asymptotique de eq^c et de iq",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "../sections/sec-022-31-estimation-asymptotique-de-eqc-et-de-iq.md",
+      "narrative": null,
+      "content": "PROPOSITION.\n(i) lim^o+(ç - 1)W = log(-^).\n(ii) Si (c - 1)/(<7 - 1) -^ 7, alors lim^o+ <°g,c(^) = (-^)7-\nII s'agit des déterminations principales sur l'ouvert simplement\nconnexe ^ = S - q^ = C* - q^ (resp. -1 i-^ 0, -1 »-^ 1).\nPour prouver cette proposition, on introduit la fonction\në(r,;r)=9,(e2—),\nqui vérifie l'équation fonctionnelle (voir [15], [17])\n©(^) = ^^^i^ ©( - ^ ^)-\nSoit a G C; on cherche un équivalent de Qq(qoiz) = 6(r,.r — ra)\nlorsque e = T/TO ^ O^ L'équation fonctionnelle se réécrit\nQ(r,x-ra) = \n. \n, ., v \ni, .n^Qf- -'-^ +û-).\nv \n7 \nç(î7r/T)(a;-ra-^(r+l))2 \n\\ \nT \nT \n/\nLe « facteu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comportement des solutions canoniques",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-023-32-comportement-des-solutions-canoniques.md",
+      "narrative": null,
+      "content": "Supposons maintenant le système différentiel (2) (défini au § 0.3)\nfuchsien sur § et non résonnant en 0 (deux valeurs propres de B(0) ne\npeuvent différer d'un entier non nul). On notera X^ la solution canonique\nde (2) obtenue en appliquant la méthode de Frobenius en 0, avec, pour\nfonctions de base, (-2:)7 comme solution^ de 6f = ^f et logÇ—z) comme\nsolution de 6f = 1 (mêmes déterminations que ci-dessus). Notons enfin\ni?i,..., Zr les pôles de B (ils sont simples et dans C*).\nNous allons déployer (2) en une famille de systèmes aux g-diffé-\nrences (1) soumis aux contraintes suivantes :\n1) A = Aç",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comportement des solutions à valeur initiale fixe",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "../sections/sec-024-33-comportement-des-solutions-à-valeur-initiale.md",
+      "narrative": null,
+      "content": "3.3. Comportement des solutions à valeur initiale fixe.\nOn considère le système aux g-différences à coefficients rationnels\nfuchsien en 0, « avec conditions initiales » :\n(7qX = AX, \nX(0) = XQ.\nANNALES DE L'INSTITUT FOURIER\nSYSTÈMES AUX Ç-DIFFÉRENCES SINGULIERS RÉGULIERS \n1049\nIci, XQ est un vecteur fixé non nul de C71 et A est fonction de ç. On veut\nfaire confluer ce système vers le système différentiel à coefficients rationnels\navec conditions initiales\n6X = BX, \nX(fi} = XQ.\nSelon les conventions précédentes, q tend vers 1 le long d'une spirale\nlogarithmique, autrement dit, q = QQ et e —> O\"",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prop-sec-025-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "prop-sec-025-01.md",
+      "narrative": null,
+      "content": "— X converge uniformément vers X sur un disque ouvert non vide D{0, r) C f^o-",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Étude locale",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../sections/sec-025-331-étude-locale.md",
+      "narrative": null,
+      "content": "Il découle des hypothèses précédentes, que B est holomorphe en 0,\nainsi que B pour e assez petit : on écrit donc\nB = Bo+Bi^+— \net B = B o + B i ^ + —\n(les Bi dépendent donc de q). On suppose en outre que la convergence de B\n^ \n0 \n^\nvers B est normale dans un disque ouvert non vide D(0^ p) C f^o-\nLa résolution formelle des deux systèmes se mène en parallèle : leurs\nsolutions respectives sont\nX = Xo + zX^ + • • • \net \nX = Xo + zX^ + • • •,\noù Xo = XQ est une donnée et où les autres termes se calculent par\nrécurrence :\nXm = {q^In - Ao)-\\A^Xm-i + ... + A^Xo),\nXm = (min - Bo)-\\B^Xm-i + ... + B^Xo).",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Étude globale",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "../sections/sec-026-332-étude-globale.md",
+      "narrative": null,
+      "content": "3.3.2. Étude globale.\n0\nOn va maintenant sortir du disque -D(0,r) le long de segments de\nspirales de la forme % ' qui ne rencontrent pas les pôles zi. On suppose\ndorénavant que B converge vers B uniformément sur tout tel segment (c'est\npar exemple le cas si la convergence est uniforme sur tout compact de ^o).\nANNALES DE L'INSTITUT FOURIER\nSYSTÈMES AUX ^-DIFFÉRENCES SINGULIERS RÉGULIERS \n1051\nFixons un point z\\ ç SÎQ où l'on veut démontrer que X —> X.\n—\\ \n°\nPour un certain A > 0, et un certain a > 0, ZQ = q^ z\\ € D(0,r) et\nr— \n• i \n°\nq^°° \nZQ C D(0,r) (c'en est un compact). On passe aux variabl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comportement de la matrice de connexion lorsque q —> 1, et monodromie.",
+      "pageStart": 33,
+      "pageEnd": 36,
+      "target": "../sections/sec-027-4-comportement-de-la-matrice-de-connexion-lorsqu.md",
+      "narrative": null,
+      "content": "lorsque q —> 1, et monodromie.\nOn ajoute maintenant les conditions analogues en oo. Le système (2)\ny est supposé non-résonnant ; de plus :\n(i') Bç converge vers B uniformément sur tout compact de\n^oc =§-{0}- IJ Z^~.\nKj<r\n(ii') Une trigonalisation de B(oo) se déploie en une trigonalisation\nde Be(oo). Ces hypothèses sont par exemple réalisées si l'on prend\nB,=B,A,=I^^(q-l)B.\nNotant X^ et X^ les solutions canoniques de (1) et de (2) en oo, ou\ndéduit du théorème 1 que Pc = (X^)-1^ tend vers P = (X^)-^0)\nsur\nf2=^n^=C*- U z^\n0<j<r\nANNALES DE L'INSTITUT FOURIER\nSYSTÈMES AUX ^-DIFFÉRENCES SINGULIERS R",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Trois exemples",
+      "pageStart": 36,
+      "pageEnd": 36,
+      "target": "../sections/sec-028-5-trois-exemples.md",
+      "narrative": null,
+      "content": "Nous combinerons, pour simplifier, équations et systèmes associés.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Déformation de la fonction hypergéométrique",
+      "pageStart": 36,
+      "pageEnd": 39,
+      "target": "../sections/sec-029-51-déformation-de-la-fonction-hypergéométrique.md",
+      "narrative": null,
+      "content": "La série hypergéométrique (voir [29], [14])\nF(aB^'z)-^w^zn \n(x} - T[(x I fc)-^\"^\nF(a,/3,,,.)-^^^., (^-J^^)- r(.)\nest solution de l'équation différentielle à coefficients rationnels :\n^F - X6F + JiF = 0\navec\n~ \n(a 4- ff}z 4- (1 - 7) \n- \noi^3z\nA = ————,———————? \n[t = -———'\n1 — z \n1 — z\nLes singularités de cette équation sont 0,1 et oo et elles sont\nfuchsiennes. La méthode de Frobenius en fournit des système fondamentaux\nde solutions en 0 et en oo :\nfF(a,/3,7;^,\n\\ z^FÇa -7+1,/3-7+1,2-7;^);\nTOME 50 (2000), FASCICULE 4\n1056 \nJACQUES SAULOY\nf (l/z)aF^ a - 7 + l , a - / ? + l ; l/^),\n\\ (1A)^F(A /î-^+",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Déformation de log(l — z / z o )",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "../sections/sec-030-52-déformation-de-logl-z-z-o.md",
+      "narrative": null,
+      "content": "On va à présent traiter un système où la monodromie est unipotente,\nmais qui rentre tout de même dans le cas non-résonnant. L'équation diffé-\nrentielle de départ est\n~d^=^~z^z ^ ^l——^^\nLes singularités de cette équation sont ZQ et oo et elles sont fuchsiennes.\nLa méthode de Frobenius en fournit des systèmes fondamentaux de solutions\nen 0 et en oo :\nri, \nn,\nl ZQ log(l - z / z o ) ; \nt - log(l - w/wo) + log(-w).\nOn a posé w = 1/z et WQ = l/^o.\nOn les déformera à l'aide de la fonction £^(z) = ^(Q^)'(^)/6+(z), où\nl'on a posé\nQt^)={z•.P^=Y[(l-zq-k).\n0<k\nLa fonction £^(z) vérifie l'équation aux ç-di",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Un exemple irrégulier",
+      "pageStart": 40,
+      "pageEnd": 41,
+      "target": "../sections/sec-031-53-un-exemple-irrégulier.md",
+      "narrative": null,
+      "content": "L'exemple qui suit m'a été suggéré par Marius van der Put, avec\nd'autres, qui sont étudiés dans [24]. Il s'agit en fait d'une équation\naux ^-différences singulière régulière, qui conflue selon les contraintes des\nparagraphes 3 et 4 vers une équation différentielle; mais celle-ci présente\nTOME 50 (2000), FASCICULE 4\n1060 \nJACQUES SAULOY\nune singularité irrégulière. Bien que ce cas ait été exclu du champ du\nthéorème, on ne s'est pas servi de ce fait dans la démonstration et la\nmatrice de connexion doit encore converger vers une matrice localement\nconstante qui permet de calculer la monodromie de",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Calculs explicites en dimension 1",
+      "pageStart": 41,
+      "pageEnd": 42,
+      "target": "../sections/sec-032-531-calculs-explicites-en-dimension-1.md",
+      "narrative": null,
+      "content": "Soit l'équation Oqy = ay. De façon générale, le calcul se conduit\ncomme suit. On écrit :\n1-r 1 - u^ z \nTT 1 - ^w\na[z) = ao [ 1 -——^— = ûoo 1 | -,————\n^1 l-V^Z \n^1 1 - ViW\nd'où le nombre de connexion :\n^\\ ^ ^o^) TT UiQq^/Ui)\nq,ao\\\n^ûoo1^7 î=l\ns^^)11^^^)'\nANNALES DE L'INSTITUT FOURIER\nSYSTÈMES AUX ^-DIFFÉRENCES SINGULIERS RÉGULIERS \n1061\nPar exemple, dans un cas régulier à deux zéros et deux pôles, on a\n^-a)(z-f3)\na(z)- ( z - ^ ( z - ë )\noù a, /3,7, ^ sont non nuls et vérifient af3 = ^6.\nOn peut alors écrire la solution locale en 0 :\n(1 - g-^/a)(l - q-^/IS)\nn^^-n\n4l \n^(l-q-^W-q-^/ô)\nDe même, la",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prop-sec-033-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 42,
+      "pageEnd": 43,
+      "target": "prop-sec-033-01.md",
+      "narrative": null,
+      "content": "— Dans ces conditions, on a une équivalence : TT ^(T? x(t ) ^ ç-(^/To)B^-(27r/To)A/e ^ 11 Q(^o) En particulier, si A = 0, il y a une limite finie non nulle.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Amélioration des estimations de ô",
+      "pageStart": 42,
+      "pageEnd": 43,
+      "target": "../sections/sec-033-532-amélioration-des-estimations-de-ô.md",
+      "narrative": null,
+      "content": "Le point de départ est encore l'équation fonctionnelle :\n©(^)= ^^T^-w © ( - ^' - ^ ) •\nOn suppose encore r = TO€, Im(ïo) > 0 et e —> O\"^. Supposons que x = x^\nsoit doté d'un « développement limité ramifié » :\nx^ = XQ + e^rri + e27^ + • • • + ex^ 4- o(e).\nLe facteur Q(—l/r, — x / r ) vérifie la même analyse qu'au § 3 et tend\ndonc (rapidement) vers 1.\nLe facteur d'automorphie de l'équation fonctionnelle est équivalent à :\nr-^.^-{i'K/T){x- ^ )2 ç2i7T{x- ^ )\nSi l'on note [—] la troncature à 0(6), il est donc équivalent à :\n^pr^^- è ) e-(^/r)[(o:- ^ )2]\nCe facteur seul n'a pas d'équivalent très sim",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Application à l'exemple",
+      "pageStart": 43,
+      "pageEnd": 45,
+      "target": "../sections/sec-034-533-application-à-lexemple.md",
+      "narrative": null,
+      "content": "Le numérateur de a{z) est ici\nP^z)=(z2+l)2+rîz.\nII tend vers le dénominateur (qui, lui, ne bouge pas) :\nQ(z)=(z2+l)2.\nLes racines qui convergent vers i ont pour développements limités ramifiés :\n, \n. \njt/n \n, . \n„ \nI in \n, .\ne = l + V 4 + o(rî)'\n \n€ \nV 4 + o(rî)'\nANNALES DE L'INSTITUT FOURIER\nSYSTÈMES AUX Ç-DIFFÉRENCES SINGULIERS RÉGULIERS \n1063\nEn vue des développements analogues des relèvements dans le plan des x,\non réécrit :\nz[ = e2-^ + 2^^- i^ m +°W\\\n^ ^ ^{\\ - ^V^- 4^ m +°(^)).\nOn en tire les arguments de 9 :\n, \n1 \n1 \nI in \n1 \n, .\n^S-^VT^^0^'\n,\n,\n1\n1\nI in \n1 \n. .\n< = 4 + 2 . V 4 + Î 6 . 7",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Annexe A. Relations algébriques dans les corps de solutions",
+      "pageStart": 45,
+      "pageEnd": 48,
+      "target": "../sections/sec-035-annexe-a-relations-algébriques-dans-les-corps-de.md",
+      "narrative": null,
+      "content": "solutions.\nNotons Ko = M(C)(£q,(eq^c)cçc-) et Ko = ko(£q, (eg,c)cec*), où\nk^ = C({z}) est le corps des séries de Laurent (corps des fractions de\nl'anneau des séries convergentes C{z}). Ce sont des extensions de notre\ncorps de base ko = C(^). Nous résumons ici quelques propriétés algébriques\ndes corps Ko et KQ.\n1) Qq est transcendant surK.o (et donc sur^o).\nItérant l'équation fonctionnelle, on trouve\ne,(ç-^) = (-lA)71^71-1^2^).\nPar ailleurs, pour un élément / e KQ et un ZQ 6 C* convenable fixé,\nla suite des f(q~nzo) a une croissance au pire simplement exponentielle,\ncomme on le voit en considér",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Annexe B. Equations et sytèmes",
+      "pageStart": 48,
+      "pageEnd": 48,
+      "target": "../sections/sec-036-annexe-b-equations-et-sytèmes.md",
+      "narrative": null,
+      "content": "L'étude analytique des solutions d'équations aux ç-différences (voir [l],\n[2], [27], [5] [2l], [16]) porte en général sur les équations scalaires d'ordre n :\n(Ea) \na^f + a^a^f + ... + a,nf = 0\nplutôt que sur les sytèmes (1). Nous précisons dans cet annexe la relation\nentre les deux points de vue.\nEn accord avec le cadre de l'article, nous supposerons que a\\,..., dn\nappartiennent à C(^), a^ 7^ 0. Nous poserons par commodité ao = 1.\nComme nous nous intéressons à la résolution locale en 0, ce qui suit serait\nessentiellement généralisable au cas où ai,..., a^ G C({^}). En fait, le point\ncrucial es",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.l. Passage des équations aux systèmes",
+      "pageStart": 48,
+      "pageEnd": 49,
+      "target": "../sections/sec-037-bl-passage-des-équations-aux-systèmes.md",
+      "narrative": null,
+      "content": "À l'équation (£0)5 on associe le système :\n/ 0 \n1 \n0 \n... \n0 \n0 \\\n( \n0 \n0 \n1 \n... \n0 \n0\n(Ea) \naq^ = AaX, \nAa = \nQ \nQ \n0 \n... \n1 \n0\n0\n0 \n0 \n... \n0 \n1\n\\—an \n—O'n-1 \n—Ûn-2 \n• • • \n—^2 \n—Ûl/\nobtenu en vectorisant les solutions, c'est-à-dire en posant\n/ /\nx= \naqï\nV<-\n1/.\nComme detAo = (—l)nay^, le système (E^) est fuchsien en 0 si et\nseulement si ^o(ûi),..., ^o(ûn-i) > 0 et ^o(ûn) = 0.\nDans [l], [2], [2l], [16], intervient le polygone de Newton de l'équa-\ntion (Ea) ; notons-le PNa- C'est l'enveloppe convexe dans R2 de\n{(ïj) I 0 < i < n, ai -^ 0, j > VoÇâi)}.\nLe cas classiquement considéré comme à s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Passage des systèmes aux équations",
+      "pageStart": 49,
+      "pageEnd": 49,
+      "target": "../sections/sec-038-b2-passage-des-systèmes-aux-équations.md",
+      "narrative": null,
+      "content": "Nous allons prouver que tout système aux g-différences (linéaire, à\ncoefficients rationnels) est rationnellement équivalent à un système de la\nforme (£^). Ceci peut être fait dans le formalisme plus intrinsèque et\nalgébrique des modules aux ç-différences (voir [19] ainsi que [24], 11.1.1) et\nl'on peut y démontrer un analogue du lemme du vecteur cyclique tel qu'on\nle trouve par exemple dans [10], [4], [8]. Nous adapterons plutôt la jolie\ndémonstration de Birkhoff dans [7].\nDire que (aqF)AF-1 est de la forme Aa, c'est dire que les lignes\nf^\\ • • • 5 /(7^ de F sont linéairement indépendantes et q",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/aif-2000-50-4-1021-0/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Equations singulières régulières",
+      "pageStart": 49,
+      "pageEnd": 52,
+      "target": "../sections/sec-039-b3-equations-singulières-régulières.md",
+      "narrative": null,
+      "content": "Nous montrons ici que le système (E^) est singulier régulier en 0 (au\nsens de notre article) si et seulement si l'équation (Eo) est fuchsienne en 0\n(au sens de C.l). Nous utilisons pour cela un résultat de Adams (voir [l],\n[2]) sur l'existence de «solutions convergentes » associées à la première pente\ndu polygone de Newton, même pour une équation non fuchsienne.\nANNALES DE L'INSTITUT FOURIER\nSYSTÈMES AUX ^-DIFFÉRENCES SINGULIERS RÉGULIERS \n1069\nSoit /2 e Q cette première pente. Adams fait intervenir la fonction\n^ /^ ^ ç^ logq(2;)(logq(2;)-l)\nqui vérifie o'q^p, = z^^ ^. La transformation de jau",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

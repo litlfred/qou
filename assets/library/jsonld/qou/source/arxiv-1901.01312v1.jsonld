@@ -1,0 +1,74 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1901.01312v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Braided fermions from Hurwitz algebras",
+  "contains": [
+    "library/arxiv-1901.01312v1/sections/sec-front-matter",
+    "library/arxiv-1901.01312v1/sections/sec-000",
+    "library/arxiv-1901.01312v1/sections/sec-001",
+    "library/arxiv-1901.01312v1/sections/sec-002",
+    "library/arxiv-1901.01312v1/sections/sec-003",
+    "library/arxiv-1901.01312v1/sections/sec-004",
+    "library/arxiv-1901.01312v1/sections/sec-005",
+    "library/arxiv-1901.01312v1/sections/sec-006",
+    "library/arxiv-1901.01312v1/sections/sec-007",
+    "library/arxiv-1901.01312v1/sections/sec-008",
+    "library/arxiv-1901.01312v1/sections/sec-009",
+    "library/arxiv-1901.01312v1/sections/sec-010",
+    "library/arxiv-1901.01312v1/sections/sec-011",
+    "library/arxiv-1901.01312v1/sections/sec-012",
+    "library/arxiv-1901.01312v1/sections/sec-013",
+    "library/arxiv-1901.01312v1/sections/sec-014",
+    "library/arxiv-1901.01312v1/sections/sec-015",
+    "library/arxiv-1901.01312v1/sections/sec-016",
+    "library/arxiv-1901.01312v1/sections/sec-017"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Braided fermions from Hurwitz algebras — Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a single generations of\n\n**Braided fermions from Hurwitz algebras**\n\n*Niels G Gresnigt*\n\n10 pp, 19 sections.\n\n**Abstract.** Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a single generations of Standard Model fermions were recently identiﬁed. The non-trivial braid groups that can be represented using the four normed division algebras are B2 and Bc 3, exactly those required to represent a single generation of fermions in terms of simple three strand ribbon braids. These braided fermion states can be identiﬁed with the basis states of the minimal left ideals of the Cliﬀord algebra Cℓ(6), generated from the nested left actions of the complex octonions C ⊗O on itself. That is, the ribbon spectrum can be related to octonion algebras. Some speculative ideas relating to ongoing research that attempts to construct a uniﬁed theory based on braid groups and Hurwitz algebras are discussed.\n\n**Outline.** Front matter; 1 Introduction; 2 Hurwitz algebras; 2.1 Clifford and Lie algebras from Hurwitz alg; 3 Unbroken fermion symmetries from Hurwitz alg; 3.1 Primitive idempotents and orthogonal subsp; 3.2 Minimal left ideals of $C\\ell(6)$; 4 Representation of fermions as three strand r; 4.1 The Helon model; 4.2 Braid group representations from Clifford ; 4.3 Braid group representations from Hurwitz a; 5 Relating Hurwitz algebras to the Helon model; 5.1 Helon braids as the basis states of minima; 6 Extending the connections between the braid ; 6.1 Electric charge structure of fermions from; 6.2 Equivalence classes of braids from $\\mathb; 6.3 From one generation to exactly three; 7 Discussion",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1901.01312&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1901.01312v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1901.01312v1.pdf",
+    "source_sha256": "a480da38283622d6e9e89a10085df082351fe3e7687c88b86e0da444742cb0c6",
+    "pages": 10,
+    "arxiv": {
+      "id": "1901.01312",
+      "version": "1",
+      "primary_class": "physics.gen-ph",
+      "stamp_date": "21 Dec 2018"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

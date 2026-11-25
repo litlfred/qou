@@ -1,0 +1,234 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0806.2317v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-0806.2317v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "In this paper, we introduce the concept of complex Grassmannian codes and designs: codes and designs in the collection of fixed-rank subspaces of a complex vector space.\n\nIn the 1970's, Delsarte \\cite{del1} developed a series of excellent bounds for certain error-correcting codes by treating codewords as points in an association scheme and then applying linear programming. Shortly thereafter, Delsarte, Goethals and Seidel \\cite{dgs} showed that the same technique could also be used on systems of points on the real or complex unit sphere, which they called spherical codes and spherical designs;",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0806.2317v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0806.2317v1  [math.CO]  13 Jun 2008\nBounds for codes and designs in complex subspaces\nAidan Roy∗\nInstitute for Quantum Information Science, University of Calgary\nCalgary, Alberta T2N 1N4, Canada\nOctober 27, 2018\nAbstract\nWe introduce the concepts of complex Grassmannian codes and designs. Let\nGm,n denote the set of m-dimensional subspaces of Cn: then a code is a ﬁnite\nsubset of Gm,n in which few distances occur, while a design is a ﬁnite subset\nof Gm,n that polynomially approximates the entire set. Using Delsarte’s linear\nprogramming techniques, we ﬁnd upper bounds for the size of a code",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0806.2317v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Orbitals",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-orbitals.md",
+      "narrative": null,
+      "content": "\\label{sec:orbitals}\n\nIn this section we describe the orbits of pairs of elements of $\\gras{m}{n}$ under the action of $U(n)$. \n\nFirst, we claim that $\\gras{m}{n}$ can be identified with a factor group of the unitary group, $\\nobreak{U(n)/(U(m) \\times U(n-m))}$. For, consider the first $m$ columns of a matrix of $U(n)$ as the basis for a subspace $a$ of dimension $m$ in $\\cx^n$, letting the last $n-m$ columns be a basis for $a^{\\perp}$. Then $a$ is invariant under the action of $U(m)$ on the first $m$ columns, while $a^{\\perp}$ is invariant under $U(n-m)$. \n\nAs a result of this factor group, $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0806.2317v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Representations",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-representations.md",
+      "narrative": null,
+      "content": "\\label{sec:representations}\n\nIn this section and the next, we develop the representation theory needed for Grassmannian LP bounds.\n\nAs is standard for compact Lie groups, we work with functions on $\\gras{m}{n}$ to find irreducible representations. Define an inner product for functions on $\\gras{m}{n}$ as follows:\n\\[\n\\ip{f}{g} := \\int_{\\gras{m}{n}} \\conj{f(a)}g(a) \\; da.\n\\]\nHere $da$ is the unique measure invariant on $\\gras{m}{n}$, normalized so that $\\nobreak{\\int da = 1}$. That such a measure exists an is unique (the Haar measure) follows from the fact that $\\gras{m}{n}$ is a compact Lie gro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0806.2317v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetric spaces",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-symmetric-spaces.md",
+      "narrative": null,
+      "content": "\\label{sec:symmetric}\n\nThe group $U(n)/U(m) \\times U(n-m)$ is an example of a \\defn{symmetric space}: a factor group $G/K$ such that $G$ is a connected semisimple Lie group and $K$ is the fixed point set of an involutive automorphism of $G$. In this section, we use results from Goodman and Wallach \\cite{gw1} to explain how the decomposition of representations of $\\gras{m}{n}$ follows from this structure.\n\nLet $s_m$ denote the $m \\times m$ matrix with backwards diagonal entries of $1$ and $0$ elsewhere:\n\\[\ns_m := \\left(\\begin{matrix} \n0 & & 1 \\\\\n& \\iddots & \\\\\n1 & & 0\n                 \\end{matr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0806.2317v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Zonal polynomials",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "../sections/sec-004-zonal-polynomials.md",
+      "narrative": null,
+      "content": "\\label{sec:zonal}\n\nA \\defn{zonal polynomial} at a point $a \\in \\gras{m}{n}$ is a function on points $b \\in \\gras{m}{n}$ which depends only on the the principle angles between $a$ and $b$. Given any univariate polynomial $f(x)$ of degree $k$, we define the \\defn{zonal polynomial of $f$ at $b$} as follows: if $f(x) = \\sum_{i=0}^k f_i x^i$, then\n\\[\nf_a(b) = \\sum_{i=0}^k f_i \\tr(P_aP_b)^i.\n\\]\nHere $P_a$ and $P_b$ are the projection matrices for $a$ and $b$. As written, the zonal polynomial is not homogeneous, but by embedding the constant $1$ into $\\Hom_1(n)$ in the form $\\tr(P_b)/m$, the exponent",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0806.2317v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bounds",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "../sections/sec-005-bounds.md",
+      "narrative": null,
+      "content": "\\label{sec:bounds}\n\nRecall that an $\\scr{A}$-code is a collection $S$ of subspaces in $\\gras{m}{n}$ such that $\\tr(P_aP_b) \\in \\scr{A}$ for every $a \\neq b$ in $S$. In this section, we find upper bounds on the size of an $\\scr{A}$-code in terms of either the cardinality of $\\scr{A}$ or its elements. A summary of the results for $\\abs{\\scr{A}} \\leq 2$ is given in Table \\ref{tab:codebounds}.\n\n\\begin{table}\n\\renewcommand{\\arraystretch}{2.2}\n\\setlength{\\tabcolsep}{10pt}\n\\begin{center}\n\\begin{tabular}{|c||c|c|}\n\\hline\n$\\scr{A}$ & $\\{\\al\\}$ & $\\{\\al,\\be\\}$ \\\\\n\\hline\n\\rule{0pt}{37pt} \\parbox{0.7in}{A",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0806.2317v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Other bounds",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-006-other-bounds.md",
+      "narrative": null,
+      "content": "\\label{sec:otherbounds}\n\nCertain cases of equality in Corollaries \\ref{cor:onebound} and \\ref{cor:twobound} also achieve equality for bounds on the size of the largest angle in a set of subspaces. For real Grassmannians, Conway, Hardin and Sloane \\cite{chs} call these bounds the \\defn{simplex} and \\defn{orthoplex} bounds. Here we give their complex analogues. \n\nRecall that if $P_a$ be the $n \\times n$ projection matrix for $a \\in \\gras{m}{n}$, then $P_a$ is Hermitian with trace $m$, so $P'_a = P_a - mI/n$ lies in a real space of dimension $n^2-1$. Moreover $||P'_a||^2 := \\tr(P'_aP'_a) = m(1-m/",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0806.2317v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "../sections/sec-007-examples.md",
+      "narrative": null,
+      "content": "\\label{sec:examples}\n\nIn this section we give examples demonstrating the tightness of the bounds in the previous sections.\n\nWhen the rank $m$ of the Grassmannian subspaces is $1$, we recover all the classical results of Delsarte, Goethals and Seidel \\cite{dgs} for lines in complex projective space: their paper gives several examples of bounds with equality. In particular, the upper bound for $\\{\\al\\}$-codes in $\\cx P^{n-1}$ is $n^2$, and equality can only hold with a trace inner product value of $\\al = 1/(n+1)$. Examples of tightness have been found for several small values of $n$ and are conj",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0806.2317v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Designs",
+      "pageStart": 23,
+      "pageEnd": 27,
+      "target": "../sections/sec-008-designs.md",
+      "narrative": null,
+      "content": "\\label{sec:designs}\n\nIn this section, we introduce the concept of a \\defn{complex Grassmannian $2$-design}. We give lower bounds for the size of a $t$-design and indicate the relationship between designs and codes.\n\nRecall that $H_t(m,n)$ is the direct sum of the irreducible representations $H_\\mu$ of $U(n)$ containing the zonal polynomials $Z_{\\mu,a}$, where $\\mu$ is an integer partition of size at most $t$ and length at most $m$. $H_t(m,n)$ may also be thought of as the symmetric polynomials of degree at most $t$ in the principle angles of pairs of subspaces in $\\gras{m}{n}$. Since the zonal",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0806.2317v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Association schemes",
+      "pageStart": 27,
+      "pageEnd": 32,
+      "target": "../sections/sec-009-association-schemes.md",
+      "narrative": null,
+      "content": "\\label{sec:assoc}\n\nAs Theorem \\ref{thm:twothree} indicates, sets of Grassmannian subspaces which reach equality in the Delsarte bounds have a great deal of structure. In this section, we show that---much like spherical codes and spherical designs---these sets are often endowed with the structure of an association scheme. \n\nLet $S$ be an $f$-code with a finite number of distinct sets of principal angles $y = (y_1,\\ldots,y_m)$. Denote the set of $y$'s that occur by $\\scr{Y}$. For each $y \\in \\scr{Y}$, define a $|S| \\times |S|$ matrix as follows:\n\\[\nA_y(a,b) := \\begin{cases}\n1, & a,b \\mbox{ have",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0806.2317v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "../sections/sec-010-acknowledgements.md",
+      "narrative": null,
+      "content": "Acknowledgements\nThe author would like to thank Martin R¨otteler, Chris Godsil, Bill Martin, and\nBarry Sanders for their helpful discussions. This work was funded by NSERC\nand MITACS.\nReferences\n[1] D. Agrawal, T. J. Richardson, and R. L. Urbanke, Multiple-\nantenna signal constellations for fading channels, IEEE Trans. Inform.\nTheory, 47 (2001), 2618–2626.\n[2] C. Bachoc, Linear programming bounds for codes in Grassmannian\nspaces, IEEE Trans. Inform. Theory, 52 (2006), 2111–2125.\n[3] C. Bachoc, R. Coulangeon, and G. Nebe, Designs in Grassmannian\nspaces and lattices, J. Algebraic Combin., 16 (20",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

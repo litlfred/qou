@@ -1,0 +1,64 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0607416v6/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0607416v6",
+  "contains": [
+    "library/arxiv-math-0607416v6/sections/sec-front-matter",
+    "library/arxiv-math-0607416v6/sections/sec-000",
+    "library/arxiv-math-0607416v6/sections/sec-001",
+    "library/arxiv-math-0607416v6/sections/sec-002",
+    "library/arxiv-math-0607416v6/sections/sec-003",
+    "library/arxiv-math-0607416v6/sections/sec-004",
+    "library/arxiv-math-0607416v6/sections/sec-005",
+    "library/arxiv-math-0607416v6/sections/sec-006",
+    "library/arxiv-math-0607416v6/sections/sec-007",
+    "library/arxiv-math-0607416v6/sections/sec-008",
+    "library/arxiv-math-0607416v6/sections/sec-009"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "PÓLYA-SCHUR MASTER THEOREMS FOR CIRCULAR DOMAINS AND THEIR BOUNDARIES — We characterize all linear operators on ﬁnite or inﬁnite-dimensio- nal polynomial spaces that preserve the property of having\n\n**PÓLYA-SCHUR MASTER THEOREMS FOR CIRCULAR DOMAINS AND THEIR BOUNDARIES**\n\n*JULIUS BORCEA AND PETTER BRÄNDÉN*\n\n23 pp, 11 sections.\n\n**Abstract.** We characterize all linear operators on ﬁnite or inﬁnite-dimensio- nal polynomial spaces that preserve the property of having the zero set inside a prescribed region Ω⊆C for arbitrary closed circular domains Ω(i.e., images of the closed unit disk under a M¨obius transformation) and their boundaries. This provides a natural framework for dealing with several long-standing fun- damental problems, which we solve in a uniﬁed way. In particular, for Ω= R our results settle open questions that go back to Laguerre and P´olya-Schur.\n\n**Outline.** Front matter; 1 Introduction; 2 Main Results; 2.1 Hyperbolicity and Stability Preservers; 2.2 Preservers of Polynomials with Zeros in a ; 3 Proofs of the Main Results; 3.1 Hyperbolic and Stable Polynomials; 3.2 The Transcendental Characterization; 3.3 Closed Circular Domains and Their Boundari; 4 Open Problems; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0607416&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0607416v6",
+    "title_source": "slug",
+    "source_file": "0607416v6.pdf",
+    "source_sha256": "0705075947ce4a3d33138b0eec4cc4654ab937324801b4c67f8a2bc5b4dfaa07",
+    "pages": 23,
+    "arxiv": {
+      "id": "math/0607416",
+      "version": "6",
+      "primary_class": null,
+      "stamp_date": "27 Jul 2008"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

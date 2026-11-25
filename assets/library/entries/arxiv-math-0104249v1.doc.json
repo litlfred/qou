@@ -1,0 +1,338 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0104249v1",
+  "title": "Irrationality of values of the zeta-function",
+  "variant": "pdf",
+  "pages": 16,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Ob irracionalьnosti znaqeni\u001a dzeta-funkcii",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-ob-irracionalьnosti-znaqeni-dzeta-funkcii"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 9,
+      "labelStart": "1",
+      "labelEnd": "9",
+      "words": 3606,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "entiers impairs",
+          "heading": false
+        },
+        {
+          "term": "irrationality measure",
+          "heading": false
+        },
+        {
+          "term": "moscow univ",
+          "heading": false
+        },
+        {
+          "term": "fonction zˆeta",
+          "heading": false
+        },
+        {
+          "term": "vestnik moskov",
+          "heading": false
+        },
+        {
+          "term": "rivoal",
+          "heading": false
+        },
+        {
+          "term": "aux entiers",
+          "heading": false
+        },
+        {
+          "term": "e-print math",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0104249v1 [math.NT] 26 Apr 2001 IRRATIONALITY OF VALUES OF ZETA-FUNCTION W. Zudilin 1. Introduction. The irrationality of values of the zeta-function ζ(s) at odd integers s ≥3 is one of the most attractive problems in number theory. Inspite of a deceptive simplicity and more than two-hundred-year history of the problem, all done in this direction can easily be counted. It was only 1978, when Ap´ery [A]",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0104249v1/blocks/prose-sec-front-matter",
+        "library/arxiv-math-0104249v1/blocks/thm-sec-front-matter-01",
+        "library/arxiv-math-0104249v1/blocks/thm-sec-front-matter-02",
+        "library/arxiv-math-0104249v1/blocks/thm-sec-front-matter-03",
+        "library/arxiv-math-0104249v1/blocks/lem-sec-front-matter-04",
+        "library/arxiv-math-0104249v1/blocks/lem-sec-front-matter-05",
+        "library/arxiv-math-0104249v1/blocks/lem-sec-front-matter-06",
+        "library/arxiv-math-0104249v1/blocks/lem-sec-front-matter-07",
+        "library/arxiv-math-0104249v1/blocks/lem-sec-front-matter-08"
+      ]
+    },
+    {
+      "id": "sec-000-ob-irracionalьnosti-znaqeni-dzeta-funkcii",
+      "number": null,
+      "title": "Ob irracionalьnosti znaqeni\u001a dzeta-funkcii",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 16,
+      "labelStart": "9",
+      "labelEnd": "16",
+      "words": 3236,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qto",
+          "heading": false
+        },
+        {
+          "term": "entiers impairs",
+          "heading": false
+        },
+        {
+          "term": "fonction zˆeta",
+          "heading": false
+        },
+        {
+          "term": "teorema",
+          "heading": false
+        },
+        {
+          "term": "aux entiers",
+          "heading": false
+        },
+        {
+          "term": "pri",
+          "heading": false
+        },
+        {
+          "term": "rivoal",
+          "heading": false
+        },
+        {
+          "term": "une inﬁnit",
+          "heading": false
+        }
+      ],
+      "extract": "V. V. Zudilin 1. Vvedenie. Problema irracionalьnosti znaqeni\u001a dzeta-funkcii ζ(s) v neqetnyh toqkah s ⩾3 \u001fvl\u001fets\u001f odno\u001a iz samyh prit\u001fgatelьnyh v teorii qisel. Nesmotr\u001f na obmanqivu\u0018 prostotu i bolee qem dvuhvekovu\u0018 isto- ri\u0018, poluqennye v зtom napravlenii rezulьtaty moжno peresqitatь na palьcah. Lixь v 1978 g. Aperi [A] udalosь ustanovitь irracionalьnostь ζ(3), predъ\u001fviv posledovatelьnostь “horoxih” racionalьnyh",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "entiers impairs",
+      "heading": false
+    },
+    {
+      "term": "fonction zˆeta",
+      "heading": false
+    },
+    {
+      "term": "zˆeta aux",
+      "heading": false
+    },
+    {
+      "term": "irrationality measure",
+      "heading": false
+    },
+    {
+      "term": "rivoal",
+      "heading": false
+    },
+    {
+      "term": "e-print math",
+      "heading": false
+    },
+    {
+      "term": "valeurs irrationnelles",
+      "heading": false
+    },
+    {
+      "term": "une inﬁnit",
+      "heading": false
+    },
+    {
+      "term": "lim log",
+      "heading": false
+    },
+    {
+      "term": "vestnik moskov",
+      "heading": false
+    },
+    {
+      "term": "eiθp",
+      "heading": false
+    },
+    {
+      "term": "moscow univ",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 1,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 2,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p1); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 2 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0104249v1"
+  }
+}

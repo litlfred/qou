@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/0110001v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "A geometric interpretation of Milnor's triple linking numbers",
+      "dcterms:creator": [
+        "Mellor, Blake"
+      ],
+      "dcterms:issued": "D:20180803",
+      "dcterms:abstract": "Milnor’s triple linking numbers of a link in the 3-sphere are interpreted geometrically in terms of the pattern of intersections of the Seifert surfaces of the components of the link. This generalizes the well known formula as an algebraic count of triple points when the pairwise linking numbers vanish.",
+      "dcterms:source": "library/0110001v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/0110001v3"
+    }
+  ]
+}

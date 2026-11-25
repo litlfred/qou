@@ -1,0 +1,475 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0808.1923v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-0808.1923v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0808.1923v3  [math.DG]  24 Sep 2013\nConnections on Non-Abelian Gerbes and their Holonomy\nUrs Schreiber and Konrad Waldorf\nAbstract\nWe introduce an axiomatic framework for the parallel transport of connections on gerbes. It\nincorporates parallel transport along curves and along surfaces, and is formulated in terms of\ngluing axioms and smoothness conditions. The smoothness conditions are imposed with respect\nto a strict Lie 2-group, which plays the role of a band, or structure 2-group.\nUpon choosing\ncertain examples of Lie 2-groups, our axiomatic framework reproduces in a systematical way",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1923v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 6,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Giraud introduced gerbes  in order to achieve a geometrical understanding of \\emph{non-abelian} cohomology \\cite{giraud}. However, already \\emph{abelian} gerbes turned out to be interesting: Brylinski introduced the notion of a \\emph{connection} on an abelian gerbe, and showed that these represent classes in a certain \\emph{differential} cohomology theory, namely Deligne cohomology \\cite{brylinski1}. Deligne cohomology in degree two  has before been related to two-dimensional conformal field theory  by Gaw\\c edzki \\cite{gawedzki3}. This relation is   established by means of the \\emph{surface h",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1923v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Foundations of the Transport Functor Formalism",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-2-foundations-of-the-transport-functor-formalism.md",
+      "narrative": null,
+      "content": "\\label{sec1}\n\n\nThe present paper is the last part of a project carried out in a sequence of papers \\cite{schreiber3,schreiber5,schreiber6}. In these papers, we have prepared the foundations for transport 2-functors -- our axiomatic formulation of connection on non-abelian gerbes. The purpose of this section is to make the present paper self-contained; we collect and review the most important definitions and results from the previous papers.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1923v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Path 2-Groupoid of a Smooth Manifold",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-21-the-path-2-groupoid-of-a-smooth-manifold.md",
+      "narrative": null,
+      "content": "\\label{sec:path2groupoid}\n\nThe basic idea of the path 2-groupoid is very simple: for a smooth manifold $X$, it is a strict 2-category whose objects are the points of $X$, whose 1-morphisms are smooth  paths in~$X$, and whose 2-morphisms are smooth homotopies between these paths. We recall some definitions from \\cite{schreiber3,schreiber5}.\n\nFor points $x,y\\in X$, a \\emph{path} $\\gamma:x \\to y$ is a smooth map $\\gamma:[0,1] \\to X$ with $\\gamma(0)=x$ and $\\gamma(1)=y$. Since the composition $\\gamma_2 \\circ \\gamma_1$ of two  paths $\\gamma_1:x \\to y$ and $\\gamma_2:y \\to z$  should again be a smoot",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1923v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Local Trivializations and Descent Data",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-22-local-trivializations-and-descent-data.md",
+      "narrative": null,
+      "content": "\\label{sec1_2}\n\\label{sec:loctriv}\n\nLet $T$ be a 2-category. \nA key feature of a transport 2-functor is that it is locally trivializable. Local trivializations\nof a   2-functor $F: \\mathcal{P}_2(M)\n\\to T$ are defined with respect to three attributes:\n\\begin{enumerate}\n\\item\nA  strict \n2-groupoid $\\mathrm{Gr}$, the \\emph{structure 2-groupoid}. In Section \\ref{sec3} we will require that $\\mathrm{Gr}$ is a \\emph{Lie} 2-groupoid, and formulate smoothness conditions with respect to its smooth structure. \n\n\\item\nA   2-functor $i:\\mathrm{Gr} \\to T$ that indicates how the structure 2-groupoid is reali",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1923v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Smooth 2-Functors",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-004-23-smooth-2-functors.md",
+      "narrative": null,
+      "content": "\\label{sec3}\n\\label{sec3_1}\n\nThis section and the forthcoming Section \\ref{sec:smoothnessconditions} prepare two tools we need in Section \\ref{sec:smoothdescent}  in order to specify the sub-2-category of smooth descend data. The first tool is the concept  of \\emph{smooth 2-functors}. \n\n\nThe general idea behind \\quot{smooth functors} is to consider them internal to smooth manifolds. That is, the sets of objects and morphisms of the involved categories are smooth manifolds, and a smooth functor consists of a smooth map between the objects and a smooth map between the morphisms. Categories inter",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1923v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Transport Functors",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-24-transport-functors.md",
+      "narrative": null,
+      "content": "\\label{sec3_5}\n\\label{sec:smoothnessconditions}\n\n\nThe second tool we need for Section \\ref{sec6_3} is the concept of a transport functor. \nTransport functors are an axiomatic formulation of  connections in fibre bundles -- they are the one-dimensional analogue of transport 2-functors, the axiomatic formulation of connections on non-abelian gerbes we are aiming at in the present article. We have introduced and discussed transport functors in \\cite{schreiber3}.\n\n\nFrom a general perspective, the definition of a \\quot{transport $n$-functor} is supposed to rely on a recursive principle in the sense",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1923v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Transport 2-Functors",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-3-transport-2-functors.md",
+      "narrative": null,
+      "content": "Transport 2-Functors\nIn this section we introduce the central deﬁnition of this paper: transport 2-functors. For this purpose,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1923v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Smooth Descent Data",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "../sections/sec-007-31-smooth-descent-data.md",
+      "narrative": null,
+      "content": "\\label{sec:smoothdescent}\n\nIn this section we select a sub-2-category $\\transsmooth{i}{2}{\\mathrm{Gr}}$ of \\emph{smooth descent data} in the 2-category $\\trans{i}{\\mathrm{Gr}}{2}$ of descent data described in Section \\ref{sec:loctriv}.  If $(\\mathrm{triv},g,\\psi,f)$ is a descent object, we demand that the strict 2-functor $\\mathrm{triv}: \\mathcal{P}_2(Y) \\to \\mathrm{Gr}$ has to be smooth in the sense of Section \\ref{sec3_1}, i.e. internal to diffeological spaces. Imposing smoothness conditions for the \\pt\\ $g$ and the modifications $\\psi$ and $f$ is more subtle since they do not take  values",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1923v3/blocks/lem-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "lem-sec-008-02.md",
+      "narrative": null,
+      "content": "The 2-functor Exπ restricts to an equivalence of 2-categories Triv2 π(i)∞∼= Des2 π(i)∞.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0808.1923v3/blocks/lem-sec-008-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "lem-sec-008-03.md",
+      "narrative": null,
+      "content": "Under the assumption that the 2-functor i is full and faithful, the 2-functor v∞is an equivalence of 2-categories.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0808.1923v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Transport 2-Functors",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "../sections/sec-008-32-transport-2-functors.md",
+      "narrative": null,
+      "content": "Transport 2-Functors\nNow we come to the central deﬁnition of this paper.\nDeﬁnition 3.2.1. Let M be a smooth manifold, Gr be a strict Lie 2-groupoid, T be a 2-category and\ni : Gr\n/ T be a 2-functor. A transport 2-functor on M with values in T and with Gr-structure is a\n2-functor\ntra : P2(M)\n/ T\nsuch that there exists a surjective submersion π : Y\n/ M and a π-local i-trivialization (triv, t) whose\ndescent object Exπ(tra, triv, t) is smooth.\nA 1-morphism between transport 2-functors tra and tra′ is a pseudonatural transformation\nA : tra\n/ tra′ such that there exists a surjective submersion π toge",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1923v3/blocks/thm-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "thm-sec-008-01.md",
+      "narrative": null,
+      "content": "Let M be a smooth manifold, and let i : Gr / T be a full and faithful 2-functor. Then, the equivalence of Theorem 2.2.3 restricts to an equivalence Trans2 Gr(M, T ) ∼= Des2(i)∞ M between transport 2-functors and their smooth descent data.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0808.1923v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some Features of Transport 2-Functors",
+      "pageStart": 18,
+      "pageEnd": 22,
+      "target": "../sections/sec-009-33-some-features-of-transport-2-functors.md",
+      "narrative": null,
+      "content": "\\label{sec:features}\n\nIn this section we provide several features of transport 2-functors.\n\n\n\\subsubsection{Operations on Transport 2-Functors}\n\n\\label{operations}\n\nIt is straightforward to see that transport 2-functors allow a list of natural operations.\n\\begin{enumerate}[(i)]\n\\item \n\\emph{Pullbacks}: Let $f:M \\to N$ be a smooth map. The pullback $f^{*}\\mathrm{tra}$ of any transport 2-functor on $N$ is a transport 2-functor on $M$.\n\n\\item\n\\emph{Tensor products}:\nLet $\\otimes: T \\times T \\to T$ be a monoidal structure on a 2-category $T$. For transport 2-functors $\\mathrm{tra}_1,\\mathrm{tra}_2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1923v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Curvature 2-Functors",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "../sections/sec-010-34-curvature-2-functors.md",
+      "narrative": null,
+      "content": "\\label{sec5_1}\n\\label{sec3_4}\n\nIn this section we provide a class of examples of transport 2-functors coming from transport functors, i.e. fibre bundle with connections. If $P$ is a principal $G$-bundle with connection $\\omega$ over $M$, one can compare the parallel transport maps along two paths $\\gamma_1,\\gamma_2:x \\to y$ by an automorphism of $P_y$, namely the holonomy around the loop $\\gamma_2 \\circ \\gamma_1^{-1}$,\n\\begin{equation*}\n\\tau_{\\gamma_2} = \\mathrm{Hol}_{\\omega}(\\gamma_2 \\circ \\gamma_1^{-1}) \\circ \\tau_{\\gamma_1}\\text{.}\n\\end{equation*}\nIf the paths $\\gamma_1$ and $\\gamma_2$ are",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1923v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Transport 2-Functors are Non-Abelian Gerbes",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-011-4-transport-2-functors-are-non-abelian-gerbes.md",
+      "narrative": null,
+      "content": "\\label{sec4}\n\nIn this section we show that transport 2-functors reproduce -- systematically, by choosing appropriate target 2-categories and  structure 2-groups -- four known concepts of gerbes with connections: Deligne cocycles and Breen-Messing cocycles (Section \\ref{sec4_1}),  abelian bundle gerbes (Section \\ref{sec3_2}), and  non-abelian bundle gerbes  (Section \\ref{sec3_3}). In Section \\ref{sec4_4} we establish a further relation between transport 2-functors and 2-vector bundles with connection. Conversely, all these structures are examples of transport 2-functors.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1923v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Differential Non-Abelian Cohomology",
+      "pageStart": 25,
+      "pageEnd": 33,
+      "target": "../sections/sec-012-41-differential-non-abelian-cohomology.md",
+      "narrative": null,
+      "content": "\\label{sec4_1}\n\nIn this section we  set up a classifying theory for transport 2-functors $\\mathcal{P}_2(M) \\to T$ with structure Lie 2-groupoid $i: \\mathcal{B}\\mathfrak{G} \\to T$, for $\\mathfrak{G}$ a Lie 2-group coming from a smooth crossed module $(G,H,t,\\alpha)$, $T$ an arbitrary 2-category, and $i$ an equivalence of categories. The latter condition together with Theorem \\ref{th4} implies that we have equivalences  \n\\begin{equation}\n\\label{mainseq}\n\\transport{}{2}{\\mathcal{B}\\mathfrak{G}}{T}\\cong \\transsmoothpi{i}{2}{\\mathrm{Gr}}{}_M \\cong \\transsmoothpi{\\id_{\\mathcal{B}\\mathfrak{G}}}{2}{\\m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1923v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Abelian Bundle Gerbes with Connection",
+      "pageStart": 33,
+      "pageEnd": 36,
+      "target": "../sections/sec-013-42-abelian-bundle-gerbes-with-connection.md",
+      "narrative": null,
+      "content": "\\label{sec3_2}\n\n\nIn this section we consider the target 2-category $T=\\mathcal{B}(S^1\\text{-}\\mathrm{Tor})$,  the monoidal category of $S^1$-torsors viewed as a 2-category with a single object \\cite[Example A.2]{schreiber6}. Associated to this 2-category is the 2-functor \n\\begin{equation*}\ni_{S^1}: \\mathcal{BB}S^1 \\to \\mathcal{B}(S^1\\text{-}\\mathrm{Tor})\n\\end{equation*}\nthat sends the single 1-morphism of $\\mathcal{BB}S^1$ to the circle, viewed as an $S^1$-torsor over itself. The main result of this section is:\n\\begin{theorem}\n\\label{th:bgrb}\nThere is an equivalence\n\\begin{equation*}\n\\mathrm{T",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1923v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Non-Abelian Bundle Gerbes with Connection",
+      "pageStart": 36,
+      "pageEnd": 41,
+      "target": "../sections/sec-014-43-non-abelian-bundle-gerbes-with-connection.md",
+      "narrative": null,
+      "content": "\\label{sec3_3}\n\n\nIn this section we generalize the equivalence of the previous section to so-called non-abelian bundle gerbes, as defined in \\cite{aschieri}. The difference between abelian and non-abelian bundle gerbes can roughly be summarized as follows:\n\\begin{enumerate}\n\n\\item \nThe Lie group $S^1$ is replaced by some connected Lie group $H$.\n\n\\item\nPrincipal $S^1$-bundles are replaced by \\emph{principal $H$-bibundles}, bundles with commuting left and right principal $H$-action. Morphisms between $H$-bibundles are bi-equivariant bundle morphisms.\n\n\n\\item\nConnections on $S^1$-bundles are rep",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1923v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "2-Bundles with Connections",
+      "pageStart": 41,
+      "pageEnd": 46,
+      "target": "../sections/sec-015-44-2-bundles-with-connections.md",
+      "narrative": null,
+      "content": "\\label{sec4_4}\n\nApart from the equivalence between transport functors and principal $G$-bundles with connection (Theorem \\ref{th2}), our paper \\cite{schreiber3} also contains an analogous equivalence for vector bundles with connection. It has\n an immediate generalization to 2-vector bundles with many applications, on which we shall give a brief outlook. \n\nSuppose $2\\mathrm{Vect}$ is  some 2-category of 2-vector spaces. Given a 2-group $\\mathfrak{G}$, a\nrepresentation of $\\mathfrak{G}$ on such a 2-vector space is a 2-functor\n\\begin{equation*}\n  \\rho : \\mathcal{B}\\mathfrak{G} \\to 2\\mathrm{Vect}\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1923v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Surface Holonomy",
+      "pageStart": 46,
+      "pageEnd": 46,
+      "target": "../sections/sec-016-5-surface-holonomy.md",
+      "narrative": null,
+      "content": "Surface Holonomy\nFrom the viewpoint of a transport 2-functor, parallel transport and holonomy are basically evaluation\non paths or bigons. Let tra : P2(M)\n/ T be a transport 2-functor with BG-structure on M. Its\nﬁbres over points x, y ∈M are objects tra(x) and tra(y) in T , and we say that its parallel transport\nalong a path γ : x\n/ y is given by the 1-morphism\ntra(γ) : tra(x)\n/ tra(y)\nin T , and its parallel transport along a bigon Σ : γ\n+3 γ′ is given by the 2-morphism\ntra(Σ) : tra(γ)\n+3 tra(γ′)\nin T . The rules how parallel transport behaves under the composition of paths and bigons are pre",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1923v3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Markings and Fundamental Bigons",
+      "pageStart": 46,
+      "pageEnd": 49,
+      "target": "../sections/sec-017-51-markings-and-fundamental-bigons.md",
+      "narrative": null,
+      "content": "\\label{sec:holonomy}\n\n\n\n\nSurface holonomy of gerbes has so far only be studied in the abelian case, i.e. for gerbes with structure 2-group $\\mathfrak{G}=\\mathcal{B}S^1$; see e.g. \\cite{murray}. It is understood  that an abelian gerbe with connection over $M$  provides an $S^1$-valued surface holonomy for smooth maps $\\phi:S \\to M$ defined on \\emph{closed oriented surfaces} $S$. Various extensions have been studied for oriented surfaces with boundary \\cite{carey2,gawedzki1}, closed unoriented (in particular unorientable) surfaces \\cite{schreiber1}, and unoriented surfaces with boundary \\cite{ga",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1923v3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Reduced Surface Holonomy",
+      "pageStart": 49,
+      "pageEnd": 52,
+      "target": "../sections/sec-018-52-reduced-surface-holonomy.md",
+      "narrative": null,
+      "content": "We consider a Lie 2-group $\\mathfrak{G}$  defined from a smooth crossed module $(G,H,t,\\alpha)$, and restrict our attention to  transport 2-functors\n\\begin{equation*}\n\\mathrm{tra}: \\mathcal{P}_2(M) \\to T\n\\end{equation*}\nwith ${\\mathcal{B}\\mathfrak{G}}$-structure. Our goal is to replace the 2-functor $\\mathrm{tra}$ by another 2-functor which takes values in a certain quotient of $\\mathfrak{G}$ where surface holonomy becomes more rigid. In order to construct this quotient, we write $[G,H] \\subset H$ for the  subgroup of $H$ that is generated by all elements of the form $h^{-1}\\alpha(g,h)$, for $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1923v3/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Properties of Reduced Surface Holonomy",
+      "pageStart": 52,
+      "pageEnd": 56,
+      "target": "../sections/sec-019-53-properties-of-reduced-surface-holonomy.md",
+      "narrative": null,
+      "content": "The reduced surface holonomy has nice properties that we will reveal in the following.\nFirst we treat  the dependence of the reduced surface holonomy on the marking. \n\nWe arrange the  set of markings of $S$ into equivalence classes, as it is common in the theory of Riemann surfaces. \nTwo markings $(x,\\EuScript{M})$ and $(x',\\EuScript{M}')$, with $\\EuScript{M}=\\left \\lbrace \\alpha_i,\\beta_i \\right \\rbrace$ and $\\EuScript{M}' = \\left \\lbrace \\alpha_i',\\beta_i' \\right \\rbrace$, are called \\emph{equivalent}, if there exists a path $\\gamma: x \\to x'$ and bigons $\\Delta_i: \\alpha_i \\Rightarrow   \\ga",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1923v3/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 56,
+      "pageEnd": 57,
+      "target": "../sections/sec-020-references.md",
+      "narrative": null,
+      "content": "[ACJ05]\nP. Aschieri, L. Cantini, and B. Jurco, “Nonabelian bundle gerbes, their diﬀerential geometry and\ngauge theory”. Commun. Math. Phys., 254:367–400, 2005. [arxiv:hep-th/0312154]\n[Bar04]\nT. Bartels, 2-bundles and higher gauge theory. PhD thesis, University of California, Riverside,\n2004. [arxiv:math/0410328]\n[BBK12]\nN. A. Baas, M. B¨okstedt, and T. A. Kro, “Two-categorical bundles and their classifying spaces”.\nJ. K-Theory, 10(2):299–369, 2012. [arxiv:math/0612549]\n[BC04]\nJ. C. Baez and A. S. Crans, “Higher-dimensional algebra VI: Lie 2-algebras”. Theory Appl.\nCateg., 12:492–528, 2004. [ar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

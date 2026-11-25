@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-0911.3569v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS",
+      "dcterms:creator": [
+        "WAGNER, DAVID G."
+      ],
+      "dcterms:issued": "D:20181022",
+      "dcterms:identifier": "https://arxiv.org/abs/0911.3569",
+      "dcterms:abstract": "Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting conclusions in diverse areas. Due mainly to the recent work of two young mathematicians, Julius Borcea and Petter Br¨and´en, a very successful multivariate generaliza- tion of this method has been developed. The ﬁrst part of this paper surveys some of the main results of this theory of “multivariate stable” polynomials – the most central of these results is the characterization of linear transfor- mations preserving stability of polynomials. The second part presents various applications of this theory in complex analysis, matrix theory, probability and statistical mechanics, and combinatorics.",
+      "dcterms:source": "library/arxiv-0911.3569v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-0911.3569v1"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1210.6243v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Controlled double-slit electron diﬀraction",
+  "contains": [
+    "library/arxiv-1210.6243v1/sections/sec-front-matter",
+    "library/arxiv-1210.6243v1/sections/sec-000",
+    "library/arxiv-1210.6243v1/sections/sec-001",
+    "library/arxiv-1210.6243v1/sections/sec-002",
+    "library/arxiv-1210.6243v1/sections/sec-003"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Controlled double-slit electron diﬀraction — Double-slit diﬀraction is a corner stone of quantum mechanics.\n\n**Controlled double-slit electron diﬀraction**\n\n*Roger Bach1, Damian Pope2, Sy-Hwang Liou1 and*\n\n8 pp, 5 sections.\n\n**Abstract.** Double-slit diﬀraction is a corner stone of quantum mechanics. It illustrates key features of quantum mechanics: interference and the particle-wave duality of matter. In 1965, Richard Feynman presented a thought experiment to show these features. Here we demonstrate the full realization of his famous thought experiment. By placing a movable mask in front of a double-slit to control the transmission through the individual slits, probability distributions for single- and double-slit arrangements were observed. Also, by recording single electron detection events diﬀracting through a double-slit, a diﬀraction pattern was built up from individual events. PACS numbers: 03.65.-w, 03.75.-b, 41.75.Fr, 41.85.-p, 42.25.Fx\n\n**Outline.** Front matter; 1 Introduction; 2 Experimental Setup; 3 Results; 4 Conclusion",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1210.6243&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1210.6243v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1210.6243v1.pdf",
+    "source_sha256": "3ff2f5358b25586e10469081d9b0a6e07671cced9d3f3a5074e55f5f6c749c74",
+    "pages": 8,
+    "arxiv": {
+      "id": "1210.6243",
+      "version": "1",
+      "primary_class": "quant-ph",
+      "stamp_date": "22 Oct 2012"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2205.01282v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "WITTEN–RESHETIKHIN–TURAEV INVARIANTS AND HOMOLOGICAL BLOCKS FOR PLUMBED HOMOLOGY SPHERES",
+      "dcterms:creator": [
+        "MURAKAMI, YUYA"
+      ],
+      "dcterms:issued": "D:20240405",
+      "dcterms:identifier": "https://arxiv.org/abs/2205.01282",
+      "dcterms:abstract": "In this paper, we prove a conjecture by Gukov–Pei–Putrov–Vafa for a wide class of plumbed 3-manifolds. Their conjecture states that Witten–Reshetikhin–Turaev (WRT) invariants are radial limits of homological blocks, which are q-series introduced by them for plumbed 3-manifolds with negative definite linking matrices. The most difficult point in our proof is to prove the vanishing of weighted Gauss sums that appear in coefficients of negative degree in asymptotic expansions of homological blocks. To deal with it, we develop a new technique for asymptotic expansions, which enables us to compare asymptotic expansions of rational functions and false theta functions related to WRT invariants and homological blocks, respectively. In our technique, our vanishing results follow from holomorphy of such rational functions.",
+      "dcterms:source": "library/arxiv-2205.01282v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2205.01282v2"
+    }
+  ]
+}

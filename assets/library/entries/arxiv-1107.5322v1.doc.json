@@ -1,0 +1,758 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1107.5322v1",
+  "title": "Probing the Origin of Neutrino Mass: from GUT to LHC",
+  "variant": "pdf",
+  "pages": 10,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction: from Majorana to see-saw",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction-from-majorana-to-see-saw"
+    },
+    {
+      "level": 1,
+      "title": "Large scale see-saw: GUT",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-large-scale-see-saw-gut"
+    },
+    {
+      "level": 2,
+      "title": "SO(10)",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-so10"
+    },
+    {
+      "level": 2,
+      "title": "SU(5)",
+      "number": "2.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-su5"
+    },
+    {
+      "level": 1,
+      "title": "Low scale seesaw: LHC",
+      "number": "3",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-3-low-scale-seesaw-lhc"
+    },
+    {
+      "level": 2,
+      "title": "Left-Right Symmetry",
+      "number": "3.1",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-31-left-right-symmetry"
+    },
+    {
+      "level": 2,
+      "title": "More SU(5)",
+      "number": "3.2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-32-more-su5"
+    },
+    {
+      "level": 1,
+      "title": "Summary and Outlook",
+      "number": "4",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-4-summary-and-outlook"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": "5",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-5-acknowledgements"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 193,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lhc",
+          "heading": false
+        },
+        {
+          "term": "neutrino",
+          "heading": false
+        },
+        {
+          "term": "majorana",
+          "heading": false
+        },
+        {
+          "term": "probing",
+          "heading": false
+        },
+        {
+          "term": "predicts",
+          "heading": false
+        },
+        {
+          "term": "matter",
+          "heading": true
+        }
+      ],
+      "extract": "Probing the Origin of Neutrino Mass: from GUT to LHC Goran Senjanovi´c ICTP, Trieste, Italy Abstract Ever since the Majorana classic work, the nature of neutrino has been one of the central questions of the weak interaction physics. If neutrino is its own antiparticle, the immediate consequence is lepton number violation through the neutrinoless double beta decay. However, colliders such as the LHC oﬀer a hope of",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1107.5322v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction-from-majorana-to-see-saw",
+      "number": "1",
+      "title": "Introduction: from Majorana to see-saw",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 534,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "see-saw",
+          "heading": true
+        },
+        {
+          "term": "neutrino majorana",
+          "heading": false
+        },
+        {
+          "term": "neutrino mass",
+          "heading": false
+        },
+        {
+          "term": "seesaw",
+          "heading": false
+        },
+        {
+          "term": "neutrinoless double",
+          "heading": false
+        },
+        {
+          "term": "weak triplet",
+          "heading": false
+        },
+        {
+          "term": "eﬀective operator",
+          "heading": false
+        },
+        {
+          "term": "lepton number",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction: from Majorana to see-saw 1 2 Large scale see-saw: GUT 2 2.1 SO(10) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3 2.2 SU(5) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4 3 Low scale seesaw: LHC 4 3.1 Left-Right Symmetry . . . . . . . . . . . . . . . . . . . . . . . . . . . 5 3.2 More SU(5) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-large-scale-see-saw-gut",
+      "number": "2",
+      "title": "Large scale see-saw: GUT",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 113,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gut",
+          "heading": true
+        },
+        {
+          "term": "neutrino mass",
+          "heading": false
+        },
+        {
+          "term": "see-saw",
+          "heading": true
+        }
+      ],
+      "extract": "Large scale see-saw: GUT Large scale seesaw allows for Yukawas of order one. This happens naturally in grand uniﬁed theories (GUT). Let us see the situation in the most popular candidates, SO(10) and SU(5) GUTs. 2 p p m x e e n n W W lightest neutrino mass in eV normal inverted |mee ν | in eV 10−4 0.001 0.01 0.1 1 10−4 10−3 0.01 0.1 1.0 Figure 1: Neutrinoless double beta decay through the neutrino Majorana mass",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-so10",
+      "number": "2.1",
+      "title": "SO(10)",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 283,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "right-handed neutrino",
+          "heading": false
+        },
+        {
+          "term": "supersymmetric version",
+          "heading": false
+        },
+        {
+          "term": "see-saw",
+          "heading": false
+        },
+        {
+          "term": "seesaw",
+          "heading": false
+        },
+        {
+          "term": "higgs",
+          "heading": false
+        },
+        {
+          "term": "mechanism",
+          "heading": false
+        },
+        {
+          "term": "heavy",
+          "heading": false
+        }
+      ],
+      "extract": "SO(10) There are some features that make SO(10) special [9]. 1. A family of fermions is uniﬁed in a 16-dimensional spinorial representation (16F), together with a right-handed neutrino. The seesaw mechanism emerges naturally. 2. In the supersymmetric version, R-parity is exact [10]. The LSP is then stable, a natural candidate for the dark matter. 3. The uniﬁcation of gauge couplings can be achieved even without",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-su5",
+      "number": "2.2",
+      "title": "SU(5)",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 191,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uniﬁcation",
+          "heading": false
+        },
+        {
+          "term": "non-supersymmmetric",
+          "heading": false
+        },
+        {
+          "term": "supersymmmetric",
+          "heading": false
+        },
+        {
+          "term": "tyj",
+          "heading": false
+        },
+        {
+          "term": "type-iii",
+          "heading": false
+        }
+      ],
+      "extract": "SU(5) Minimal non-supersymmmetric version. The minimal SU(5) theory fails for two reasons: • gauge couplings do not unify • neutrinos as massless as in the SM. A simple extension cures both problems: add an extra fermionic 24F [18]. Under SU(3)C ×SU(2)W ×U(1)Y : 24F = (1, 1)0 +(1, 3)0 +(8, 1)0 +(3, 2)−5/6 +(¯3, 2)5/6. The uniﬁcation forces the triplet fermion to lie below TeV, with the color octet around 107 GeV.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-low-scale-seesaw-lhc",
+      "number": "3",
+      "title": "Low scale seesaw: LHC",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 114,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "scale seesaw",
+          "heading": true
+        },
+        {
+          "term": "collider signatures",
+          "heading": false
+        },
+        {
+          "term": "neutrino mass",
+          "heading": false
+        },
+        {
+          "term": "lhc",
+          "heading": true
+        }
+      ],
+      "extract": "Low scale seesaw: LHC In the case of low scale seesaw, one can look for collider signatures. However, this is not motivated very strongly since it requires taking ad-hoc some states that can serve as a source of neutrino mass, and keeping them light. Instead, it is preferable to study theories of neutrino masses and mixings. A natural candidate is provided by the left-right symmetric theories. These theories were",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-31-left-right-symmetry",
+      "number": "3.1",
+      "title": "Left-Right Symmetry",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 806,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "right-handed neutrino",
+          "heading": false
+        },
+        {
+          "term": "type-ii seesaw",
+          "heading": false
+        },
+        {
+          "term": "neutrino mass",
+          "heading": false
+        },
+        {
+          "term": "neutrino masses",
+          "heading": false
+        },
+        {
+          "term": "tev region",
+          "heading": false
+        },
+        {
+          "term": "neutrinoless double",
+          "heading": false
+        },
+        {
+          "term": "right-handed gauge",
+          "heading": false
+        },
+        {
+          "term": "beta decay",
+          "heading": false
+        }
+      ],
+      "extract": "Left-Right Symmetry L −R symmetric theories [9] are based on the SU(2)L × SU(2)R × U(1)B−L gauge group augmented by parity or charge conjugation. Then: • WL implies WR, • νL implies νR, with mνR of order MR through the breaking of L −R symmetry, • Type-I seesaw: connects neutrino mass to the scale of parity restoration. These facts lead immediately to the new contribution [22] to the neutrino-less double beta decay",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-32-more-su5",
+      "number": "3.2",
+      "title": "More SU(5)",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 137,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jets",
+          "heading": false
+        },
+        {
+          "term": "tev",
+          "heading": false
+        },
+        {
+          "term": "lhc",
+          "heading": false
+        }
+      ],
+      "extract": "More SU(5) We saw that uniﬁcation predicts the mass of the fermion triplet below TeV, and thus it becomes accessible to the colliders such as Tevatron and LHC. It can be produced through gauge interactions (Drell-Yan) pp →W ± + X →T ±T 0 + X pp →(Z or γ) + X →T +T −+ X . The best channel is like-sign dileptons + jets BR(T ±T 0 →l± i l± j + 4jets) ≈1 20 × |yi T|2|yj T|2 (P k |yk T|2)2 Same couplings yi T contribute",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-4-summary-and-outlook",
+      "number": "4",
+      "title": "Summary and Outlook",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 323,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "neutrino masses",
+          "heading": false
+        },
+        {
+          "term": "grand uniﬁed",
+          "heading": false
+        },
+        {
+          "term": "neutrinoless double",
+          "heading": false
+        },
+        {
+          "term": "mixing angles",
+          "heading": false
+        },
+        {
+          "term": "quark-lepton symmetry",
+          "heading": false
+        },
+        {
+          "term": "uniﬁed theory",
+          "heading": false
+        },
+        {
+          "term": "tev",
+          "heading": false
+        },
+        {
+          "term": "beta decay",
+          "heading": false
+        }
+      ],
+      "extract": "Summary and Outlook I discussed here an experimental probe of Majorana neutrino mass origin, both at colliders and through the neutrinoless double beta decay. It is shown that a TeV scale L−R symmetry would have spectacular signatures at LHC, with a possible discovery of WR and νR. Moreover, if neutrinoless double beta decay were to be established, and neutrino masses were to be pushed down by cosmology, the TeV L-R",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-5-acknowledgements",
+      "number": "5",
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 844,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "senjanovi",
+          "heading": false
+        },
+        {
+          "term": "bajc",
+          "heading": false
+        },
+        {
+          "term": "hep-ph",
+          "heading": false
+        },
+        {
+          "term": "fileviez perez",
+          "heading": false
+        },
+        {
+          "term": "nemevˇsek",
+          "heading": false
+        },
+        {
+          "term": "vissani",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        }
+      ],
+      "extract": "Acknowledgements I am grateful to Alejandra Melfo and Fabrizio Nesti for their help in preparing this report, and Miha Nemevˇsek for a careful reading of the manuscript. I wish to thank Silvia Pascoli, Vittorio Paladino and other organizers of the Neutrino Roadmap 2012 for the invitation to present an overview of the origin of neutrino mass. References [1] For a review and references on neutrino masses and mixings,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Introduction: from Majorana to see-saw"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "neutrino majorana",
+      "heading": true
+    },
+    {
+      "term": "neutrino mass",
+      "heading": true
+    },
+    {
+      "term": "neutrino masses",
+      "heading": false
+    },
+    {
+      "term": "right-handed neutrino",
+      "heading": true
+    },
+    {
+      "term": "lightest neutrino",
+      "heading": false
+    },
+    {
+      "term": "neutrino roadmap",
+      "heading": false
+    },
+    {
+      "term": "scale seesaw",
+      "heading": true
+    },
+    {
+      "term": "type-ii seesaw",
+      "heading": false
+    },
+    {
+      "term": "seesaw mechanism",
+      "heading": false
+    },
+    {
+      "term": "neutrinoless double",
+      "heading": true
+    },
+    {
+      "term": "lepton mixing",
+      "heading": false
+    },
+    {
+      "term": "beta decay",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Neutrinoless double beta decay through the neutrino Majorana mass (left), and canonical contribution from light neutrino mass (right). The mixing angles are ﬁxed at {θ12, θ23, θ13} = {35◦, 45◦, 7◦}, while the Dirac and Majorana phases vary in",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Neutrinoless double beta decay induced by the right-handed gauge boson and right-handed neutrino (left) and new physics contribution, taken from [23] (right)",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The production of WR and the subsequent decay into same sign leptons and two jets through the Majorana character of the right-handed neutrino (left) and",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p003-1",
+      "file": "images/img-p003-1.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-1",
+      "file": "images/img-p005-1.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 10,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 2,
+      "note": "3 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p8); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 10 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1107.5322v1"
+  }
+}

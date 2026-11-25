@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1905.02045v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM INVARIANTS OF HYPERBOLIC KNOTS",
+      "dcterms:creator": [
+        "BETTIN, S.",
+        "DRAPPEAU, S."
+      ],
+      "dcterms:issued": "D:20200305",
+      "dcterms:identifier": "https://arxiv.org/abs/1905.02045",
+      "dcterms:abstract": "We obtain an exact modularity relation for the q-Pochhammer symbol. Using this formula, we show that Zagier’s modularity conjecture for a knot K essentially reduces to the arithmeticity conjecture for K. In particular, we show that Zagier’s conjecture holds for hyperbolic knots K̸ = 72 with at most seven crossings. For K = 41, we also prove a complementary reciprocity formula which allows us to prove a law of large numbers for the values of the colored Jones polynomials at roots of unity. We conjecture a similar formula holds for all knots and we show that this is the case if one assumes a suitable version of Zagier’s conjecture.",
+      "dcterms:source": "library/arxiv-1905.02045v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1905.02045v3"
+    }
+  ]
+}

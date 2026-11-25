@@ -1,0 +1,646 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1111.2828v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1111.2828v2  [math.GT]  11 Dec 2013\nTHE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS\nSTAVROS GAROUFALIDIS, DYLAN P. THURSTON, AND CHRISTIAN K. ZICKERT\nAbstract. For a compact 3-manifold M with arbitrary (possibly empty) boundary, we give a\nparametrization of the set of conjugacy classes of boundary-unipotent representations of π1(M)\ninto SL(n, C). Our parametrization uses Ptolemy coordinates, which are inspired by coordinates\non higher Teichmüller spaces due to Fock and Goncharov. We show that a boundary-unipotent\nrepresentation determines an element in Neumann’s extended Bl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "\\lbl{sec.intro}\n\nFor a closed 3-manifold $M$, the Cheeger-Chern-Simons \ninvariant~\\cite{CheegerSimons,ChernSimons} of a representation \n$\\rho$ of $\\pi_1(M)$ in $\\SL(n,\\C)$ is given by the Chern-Simons integral\n\\begin{equation}\n\\lbl{ChernSimonsintegral}\n\\widehat c(\\rho)=\\frac{1}{2}\\int_Ms^*\n\\big(\\Tr(A\\wedge dA+\\frac{2}{3}A\\wedge A\\wedge A)\\big)\\in \\C/4\\pi^2\\Z,\n\\end{equation}\nwhere $A$ is the flat connection in the flat $\\SL(n,\\C)$-bundle $E_\\rho$ \nwith holonomy $\\rho$, and $s\\colon M\\to E_\\rho$ is a section of $E_\\rho$. \nSince $\\SL(n,\\C)$ is $2$-connected a section always exists, and a differen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Statement of our results",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-11-statement-of-our-results.md",
+      "narrative": null,
+      "content": "\\lbl{sub.results}\n\nThis section gives a brief summary of our main results. More details can be \nfound in the paper.\n\nLet $M$ be a compact, oriented $3$-manifold with (possibly empty) boundary, \nand let $K$ be a closed $3$-cycle (triangulated complex; see \nDefinition~\\ref{cycledefn}) homeomorphic to the space obtained from $M$ by \ncollapsing each boundary component to a point. We identify each of the \nsimplices of $K$ with a standard simplex\n\\begin{equation}\n\\Delta^3_n=\\left\\{(x_0,x_1,x_2,x_3)\\in\\R^4\\bigm \\vert 0\\leq x_i\\leq n,\n\\quad x_0+x_1+x_2+x_3=n\\right\\}.\n\\end{equation}\n\nLet $\\Delta^3_n(\\Z",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Overview of the paper",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-13-overview-of-the-paper.md",
+      "narrative": null,
+      "content": "\\lbl{sub.plan}\n\nSection~\\ref{sec.CCS} gives a detailed review of the Cheeger-Chern-Simons \nclasses for flat bundles. Many details are included in order to give a \nself-contained proof of~\\eqref{CCSeqVolC}. Section~\\ref{sec.bloch} gives a \nbrief review of the two variants of the extended Bloch group, and \nSection~\\ref{sec.decorations} reviews the theory, introduced in \nZickert~\\cite{ZickertDuke}, of decorated representations and relative \nfundamental classes. In Section~\\ref{sec.genericdecorations}, we introduce \nthe notion of \\emph{generic} decorations and define the Ptolemy variety $P_n(K)$.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgment",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-14-acknowledgment.md",
+      "narrative": null,
+      "content": "The authors wish to thank Ian Agol, Johan Dupont, Matthias Goerner and \nWalter Neumann for stimulating conversations. We are particularly grateful \nto Matthias Goerner for a computer implementation of our formulas, and for\nsupplying our theory with computational data for more than 20000 manifolds.\nThe software has been incorporated into SnapPy~\\cite{SnapPy}, and computational data can be found at \\url{http://unhyperbolic.org/ptolemy.html}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Cheeger-Chern-Simons classes",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-2-the-cheeger-chern-simons-classes.md",
+      "narrative": null,
+      "content": "\\lbl{sec.CCS}\n\n\n\n\n\nThe Cheeger-Chern-Simons classes~\\cite{CheegerSimons,ChernSimons} are \ncharacteristic classes of principal bundles with connection. For general \nbundles, the characteristic classes are differential \ncharacters~\\cite{CheegerSimons}, but for flat bundles they reduce to \nordinary (singular) cohomology classes. In this paper we will focus \nexclusively on flat bundles. \nLet $\\F$ denote either $\\R$ or $\\C$, and let $\\Lambda$ be a proper subring \nof $\\F$. Let $G$ be a Lie group over $\\F$ with finitely many components. \nThere is a characteristic class $S_{P,u}$ for each pair $(P,u)$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Simply connected, simple Lie groups",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-21-simply-connected-simple-lie-groups.md",
+      "narrative": null,
+      "content": "\\lbl{sub.simplelie}\n\nIf $G$ is simply connected and simple, $H^1(G;\\Z)$ and $H^2(G;\\Z)$ are \ntrivial, and $H^3(G;\\Z)\\cong\\Z$. Hence, by the Serre spectral sequence \nfor the universal bundle, we have an isomorphism\n\\begin{equation}\nS\\colon H^{4}(BG;\\Z)\\cong H^{3}(G;\\Z)\\cong\\Z\n\\end{equation}\ncalled the \\emph{suspension}.\nThe Killing form on $G$ defines an invariant polynomial $B\\in I^2(G;\\F)$, \nand since $B$ is real on the maximal compact subgroup $K$ of $G$, $W(B)$ \nis a real class. Hence, there exists a unique positive real number $\\alpha$ \nsuch that $W(\\alpha B)$ is a generator of $H^4(BG;4\\p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Complex groups and volume",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-006-22-complex-groups-and-volume.md",
+      "narrative": null,
+      "content": "\\lbl{sub.cvolume}\n\nRecall that there is a $1$-$1$ correspondence between flat $G$-bundles over \n$M$ and representations $\\pi_1(M)\\to G$ up to conjugation. This correspondence \ntakes a flat bundle to its holonomy representation. If \n$\\rho\\colon\\pi_1(M)\\to G$ is a representation, we let $E_\\rho$ denote the \ncorresponding flat bundle.\nIn the following $G$ denotes a simply connected, simple, complex Lie group, \nand $M$ a closed, oriented $3$-manifold. \nThe following definition is motivated by Theorem~\\ref{SL2complexvolume} \nbelow.\n\n\\begin{definition}\n\\lbl{compvoldefn} \nThe \\emph{complex volume} $\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The universal classes and group cohomology",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-007-23-the-universal-classes-and-group-cohomology.md",
+      "narrative": null,
+      "content": "\\lbl{sub.universal}\n\nThe Cheeger-Chern-Simons classes are also defined for the universal flat bundle $EG^\\delta\\to BG^\\delta$. For an explicit construction, we refer to Dupont-Kamber~\\cite{DupontKamber} or Dupont-Hain-Zucker~\\cite{DupontHainZucker}.\nIn particular, we have a class $\\widehat c\\in H^3(BG^\\delta;\\C/4\\pi^2\\Z)$. \nIf $\\rho\\colon \\pi_1(M)\\to G$ is a representation, with classifying map $B\\rho\\colon M\\to BG^\\delta$, we thus have\n\n\\begin{equation}\n\\widehat c(B\\rho_*([M]))=i\\Vol_\\C(\\rho).\n\\end{equation}\n\nIt is well known that the homology of $BG^\\delta$ is the homology of the chain compl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Compact manifolds with boundary",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-008-24-compact-manifolds-with-boundary.md",
+      "narrative": null,
+      "content": "\\lbl{sub.compactMb}\n\nIn Section~\\ref{sub.map2ebloch} below, we construct a natural extension of $\\widehat c\\colon H_3(\\SL(n,\\C))\\to\\C/4\\pi^2\\Z$ to a homomorphism\n\\begin{equation}\n\\widehat c\\colon H_3(\\SL(n,\\C),N)\\to \\C/4\\pi^2\\Z,\n\\end{equation}\nwhere $N$ is the subgroup of upper triangular matrices with $1$'s on the diagonal.\n\\begin{definition}\n\\lbl{complexvolumedefn} \nLet $\\rho\\colon\\pi_1(M)\\to \\SL(n,\\C)$ be a boundary-unipotent representation. The \\emph{complex volume} of $\\rho$ is defined by\n\\begin{equation}\n\\widehat c(B\\rho_*([M,\\partial M]))=i\\Vol_\\C(\\rho),\n\\end{equation}\nwhere $B\\rho\\colo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Central elements of order 2",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-009-25-central-elements-of-order-2.md",
+      "narrative": null,
+      "content": "\\lbl{sub.central}\n\nFor any simple complex Lie group $G$, there is a canonical homomorphism (defined up to conjugation) \n\\begin{equation}\n\\phi_G\\colon \\SL(2,\\C)\\to G.\n\\end{equation}\nThe element $s_G=\\phi_G(-I)$ is a central element of $G$ of order dividing $2$, and equals $(-I)^{n+1}$ if $G=\\SL(n,\\C)$ (see e.g.~Fock-Goncharov~\\cite[Corollary~2.1]{FockGoncharov}). Let  \n\\begin{equation}\npG=G/\\langle s_G\\rangle.\n\\end{equation} \nNote that $\\phi_G$ descends to a homomorphism $\\PSL(2,\\C)\\to pG$. The following follows easily from the Serre spectral sequence.\n\n\\begin{proposition}\n\\lbl{orderfourkernel}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The extended Bloch group",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-010-3-the-extended-bloch-group.md",
+      "narrative": null,
+      "content": "\\lbl{sec.bloch}\n\nWe use the conventions of Zickert~\\cite{ZickertAlgK}; the original \nreference is Neumann~\\cite{Neumann}.\n\n\\begin{definition} \n\\lbl{def.bloch}\nThe \\emph{pre-Bloch group} $\\Pre(\\C)$ is the free abelian group on $\\C\\setminus\\{0,1\\}$ modulo the \\emph{five term relation}\n\\begin{equation}\nx-y+\\frac{y}{x}-\\frac{1-x^{-1}}{1-y^{-1}}+\\frac{1-x}{1-y}=0,\\quad \\text{for }x\\neq y\\in\\C\\setminus\\{0,1\\}.\n\\end{equation}\nThe \\emph{Bloch group} is the kernel of the map $\\nu\\colon \\Pre(\\C)\\to\\wedge^2(\\C^*)$ taking $z$ to $z\\wedge(1-z)$.\n\\end{definition}\n\n\\begin{definition} \n\\lbl{def.ebloch}\nThe \\e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The regulator",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-011-31-the-regulator.md",
+      "narrative": null,
+      "content": "\\lbl{sub.regulator}\n\nBy fixing a branch of logarithm, we may write a flattening with cross-ratio $z$ as $[z;p,q]=\\big(\\log(z)+p\\pi i,\\log(1-z)+q\\pi i\\big)$, where $p,q\\in\\Z$ are \\emph{even} integers. There is a well defined \\emph{regulator map}\n\\begin{equation}\n\\lbl{regulator}\n\\begin{gathered}\nR\\colon\\widehat\\Pre(\\C)\\to\\C/4\\pi^2\\Z,\\\\\n{[z;p,q]}\\mapsto \\Li_2(z)+\\frac{1}{2}(\\log(z)+p\\pi i)(\\log(1-z)-q\\pi i)-\\pi^2/6.\n\\end{gathered}\n\\end{equation}\n\n\n\n\\subsection{The $\\PSL(2,\\C)$-variant of the extended Bloch group}\n\\lbl{sub.vbloch}\n\nThere is another variant of the extended Bloch group using flatten",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Arbitrary fields",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-012-33-arbitrary-fields.md",
+      "narrative": null,
+      "content": "\\lbl{sub.allfields}\n\nIn Zickert~\\cite{ZickertAlgK}, extended Bloch groups $\\widehat\\B_E(F)$ and \n$\\widehat\\B_E(F)_{\\PSL}$ are defined for an arbitrary field $F$ and a primitive extension $E$ of $F^*$ by $\\Z$. The definitions \nare as above using the sets\n\\begin{equation}\n\\widehat E_F=\\left\\{(e,f)\\in E^2\\bigm\\vert \\pi(e)+\\pi(f)=1\\right\\},\n\\quad (\\widehat E_F)_{\\odd}=\\left\\{(e,f)\\in E^2\\bigm\\vert \n\\pm\\pi(e)\\pm\\pi(f)=1\\right\\}.\n\\end{equation}\nIf $F$ is a number field, the extended Bloch groups are up to canonical isomorphism \nindependent of the choice of extension, so we may omit the subscript $E$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Decorations of representations",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-013-4-decorations-of-representations.md",
+      "narrative": null,
+      "content": "\\lbl{sec.decorations}\n\nIn this section we review the notion of decorated representations \nintroduced in Zickert~\\cite{ZickertDuke}. Throughout the section, $G$ \ndenotes an arbitrary group, not necessarily a Lie group. Let $H$ be subgroup \nof $G$. An \\emph{ordered simplex} is a simplex with a fixed vertex ordering.\n\n\\begin{definition}\n\\lbl{cycledefn} \nA \\emph{closed $3$-cycle} is a cell complex $K$ obtained from a finite \ncollection of ordered $3$-simplices $\\Delta_i$ by gluing together pairs \nof faces using order preserving simplicial attaching maps. We assume that \nall faces have been glued,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The fundamental class of a decorated representation",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-014-41-the-fundamental-class-of-a-decorated-represen.md",
+      "narrative": null,
+      "content": "\\lbl{sub.fundamental}\n\nA flat $G$-bundle over $M$ determines a classifying map $M\\to BG^\\delta$, \nwhere the $\\delta$ indicates that $G$ is regarded as a discrete group. It \nthus follows from Proposition~\\ref{decorationeqreduction} that a decorated \nrepresentation $\\rho\\colon\\pi_1(M)\\to G$ determines a map\n\\begin{equation}\nB\\rho\\colon(M,\\partial M)\\to (BG^\\delta,BH^\\delta).\n\\end{equation}\nIn particular, $\\rho$ gives rise to a fundamental class \n\\begin{equation}\n[\\rho]=B\\rho_*([M,\\partial M])\\in H_3(G,H),\n\\end{equation}\nwhere, by definition, $H_*(G,H)=H_*(BG^\\delta,BH^\\delta)$. Note that the \nfu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generic decorations and Ptolemy coordinates",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-015-5-generic-decorations-and-ptolemy-coordinates.md",
+      "narrative": null,
+      "content": "\\lbl{sec.genericdecorations}\n\n\n\n\n\nIn all of the following, $G=\\SL(n,\\C)$, and $N$ is the subgroup of upper \ntriangular matrices with $1$'s on the diagonal. A $(G,N)$-representation \n$\\rho\\colon\\pi_1(M)\\to G$ is called \\emph{boundary-unipotent}. For a matrix \n$g\\in G$ and a positive integer $i\\leq n\\in \\N$, let $\\{g\\}_i$ be the ordered \nset consisting of the first $i$ column vectors of $g$. \n\n\\begin{definition} \nA tuple $(g_0N,\\dots,g_kN)$ of $N$-cosets is \\emph{generic} if for each tuple \n$t=(t_0,\\dots,t_k)$ of non-negative integers with sum $n$, we have\n\\begin{equation}\\lbl{ctformula}\nc_t:=\\d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The geometry of the Ptolemy coordinates",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-016-51-the-geometry-of-the-ptolemy-coordinates.md",
+      "narrative": null,
+      "content": "\\lbl{sub.geometry}\nWe canonically identify each ordered $k$-simplex with a standard simplex\n\\begin{equation}\n\\Delta^k_n=\\big\\{(x_0,\\dots,x_k)\\in\\R^{k+1}\\bigm\\vert 0\\leq x_i\\leq n,\\,\\sum_{i=0}^k x_i=n\\big\\}.\n\\end{equation}\n\nRecall that a tuple $(g_0N,\\dots,g_kN)$ has a Ptolemy coordinate for each tuple of $k+1$ non-negative integers summing to $n$. In other words, there is a Ptolemy coordinate for each integral point of $\\Delta^k_n$. We denote the set of integral points in $\\Delta^k_n$ by $\\Delta^k_n(\\Z)$.\n\n\\begin{definition}\n\\lbl{Ptolemyassignmentdefn}\nA \\emph{Ptolemy assignment} on $\\Delta^k_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cross-ratios and flattenings",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-017-53-cross-ratios-and-flattenings.md",
+      "narrative": null,
+      "content": "\\lbl{sub.ptolemyB}\nFor $x\\in\\C\\backslash\\{0\\}$, let $\\widetilde x=\\log(x)$, where $\\log$ is \nsome fixed (set theoretic) section of the exponential map. \n\nGiven a Ptolemy assignment $c$ on $\\Delta^3_{n=2}$, we endow $\\Delta^3_{n=2}$ with the shape of an ideal simplex with cross-ratio $z=\\frac{c_{03}c_{12}}{c_{02}c_{13}}$ and a flattening \n\\begin{equation}\\lambda(c)=(\\widetilde c_{03}+\\widetilde c_{12}\n-\\widetilde c_{02}-\\widetilde c_{13},\\widetilde \nc_{01}+\\widetilde c_{23}-\\widetilde c_{02}-\\widetilde c_{13})\\in\\widehat\\Pre(\\C).\n\\end{equation}\n\n\nBy Propositions~\\ref{PtolemyProposition} and \\re",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A chain complex of Ptolemy assignments",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-018-6-a-chain-complex-of-ptolemy-assignments.md",
+      "narrative": null,
+      "content": "\\lbl{sec.ptolemy}\n\nLet $Pt_k^n$ be the free abelian group on Ptolemy assignments on $\\Delta^k_n$. \nThe usual boundary map induces a boundary map $Pt_k^n\\to Pt_{k-1}^n$ and the \nnatural map $C_*^{\\gen}(G/N)\\to Pt_*^n$ taking a tuple $(g_0N,\\dots,g_kN)$ to \nits Ptolemy assignment is a chain map. The result below is proved in \nSection~\\ref{proofsection}.\n\n\\begin{proposition}\n\\lbl{tupleuniqueuptoGaction}\nA generic tuple is determined up to the diagonal $G$-action by its \nPtolemy coordinates.\\qed\n\\end{proposition} \n\n\\begin{corollary}\n\\lbl{Ptolemycomputeshomology} \nThe natural map induces an isomorp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The map to the extended Bloch group",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-019-61-the-map-to-the-extended-bloch-group.md",
+      "narrative": null,
+      "content": "\\lbl{sub.map2ebloch}\n\nWe wish to define a map \n\\begin{equation}\n\\lambda\\colon H_3(\\SL(n,\\C),N)\\to\\widehat\\B(\\C).\n\\end{equation}\n\n\n\n\n\n\n\n\n\n\nLetting $\\widetilde x$ denote a logarithm of $x$, we consider the maps \n\\begin{gather}\n\\lambda\\colon Pt_3^2\\to\\Z[\\widehat\\C],\\quad c\\mapsto (\\widetilde c_{03}+\\widetilde c_{12}-\\widetilde c_{02}-\\widetilde c_{13},\\widetilde c_{01}+\\widetilde c_{23}-\\widetilde c_{02}-\\widetilde c_{13})\\\\\n\\mu\\colon Pt_2^2\\to\\wedge^2(\\C),\\quad c\\mapsto -\\widetilde c_{01}\\wedge\\widetilde c_{02}+\\widetilde c_{01}\\wedge\\widetilde c_{12}-\\widetilde c_{02}\\wedge\\widetilde c_{12\n}+\\w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stabilization",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-020-62-stabilization.md",
+      "narrative": null,
+      "content": "\\lbl{stabilizationsection}\n\nWe now prove that the map $\\lambda\\colon H_3(\\SL(n,\\C),N)\\to\\widehat\\B(\\C)$ \nrespects stabilization. We regard $\\SL(n-1,\\C)$ as a subgroup of $\\SL(n,\\C)$ \nvia the standard inclusion adding a $1$ as the upper left entry. \n\nLet $\\pi\\colon M(n,\\C)\\to M(n-1,\\C)$ be the map sending a matrix to the \nsubmatrix obtained by removing the first row and last column. The subgroup \n$D_k(\\SL(n,\\C)/N)$ of $C^{\\gen}_k(\\SL(n,\\C)/N)$ generated by tuples \n$(g_0N,\\dots,g_kN)$ such that the upper left entry of each $g_i$ is $1$ and such that\n\\begin{equation}\n(\\pi(g_0)N,\\dots,\\pi(g_k)N)\\i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Independence of the decoration",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "../sections/sec-021-7-independence-of-the-decoration.md",
+      "narrative": null,
+      "content": "\\lbl{decorationsection}\n\nWe now show that the extended Bloch group element of a decorated \nrepresentation is independent of the decoration. We first prove that \nwe can choose logarithms of the Ptolemy coordinates independently, \nwithout affecting the extended Bloch group element.\n\n\\begin{definition} \nLet $c\\colon\\dot\\Delta^k_n(\\Z)\\to \\C^*$ be a Ptolemy assignment. A \\emph{lift} \nof $c$ is an assignment $\\widetilde c\\colon\\dot\\Delta^k_n(\\Z)\\to\\C$ such \nthat $\\exp(\\widetilde c)=c$.\n\\end{definition}\n\nFor any lift $\\widetilde c$ of a Ptolemy assignment $c$ on $\\Delta^3_2$, we have a flattening\n\\be",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Recovering a representation from its Ptolemy coordinates",
+      "pageStart": 26,
+      "pageEnd": 34,
+      "target": "../sections/sec-022-9-recovering-a-representation-from-its-ptolemy-c.md",
+      "narrative": null,
+      "content": "\\lbl{proofsection}\n\n\nWe now show that a Ptolemy assignment on $K$ determines a\ngenerically decorated\nboundary-unipotent representation, which is given explicitly in terms of the Ptolemy coordinates. \nThe idea is that a Ptolemy assignment \ncanonically determines a $(G,N)$-cocycle on $M$. \n\n\n\\begin{definition} \nAn $n\\times n$ matrix $A$ is \\emph{counter diagonal} if the only non-zero \nentries of $A$ are on the lower left to upper right diagonal, i.e.~$A_{ij}=0$ \nunless $j=n-i+1$. If $A_{ij}=0$ for $j>n-i+1$ (resp.~$j<n-i+1$), $A$ is \n\\emph{upper} (resp.~\\emph{lower}) \\emph{counter triangular}.\n\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 1.3 and Theorem 1.8",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "../sections/sec-023-92-proof-of-theorem-13-and-theorem-18.md",
+      "narrative": null,
+      "content": "\u000e\nConj be the com-\nposition of the map in (9.26) with the forgetful map ignoring the decoration. Let c ∈Pn(K). By\nProposition 6.12, λ(c) is in bB(C) and by Proposition 7.8, λ(c) only depends on ρ(c). Commutativity\nof diagram (1.10) follows from Remark 8.4, and the fact that ρ is surjective if K is suﬃciently ﬁne\nfollows from Proposition 5.4. This concludes the proof of Theorem 1.3. The ﬁrst part of Theorem 1.8\nis proved similarly, and the last part follows from Theorem 11.7 below.\nTHE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 35,
+      "pageEnd": 39,
+      "target": "../sections/sec-024-10-examples.md",
+      "narrative": null,
+      "content": "\\lbl{sec.examples}\n\nIn the examples below, all computations of Ptolemy varieties are exact, whereas the computations of complex volume are numerical with at least $50$ digits precision.\n\n\\begin{example}\n[The $5_2$ knot complement]\n\\lbl{ex.52}\nConsider the $3$-cycle $K$ obtained from the simplices in \nFigure~\\ref{52triangulation} by identifying the faces via the unique \nsimplicial attaching maps preserving the arrows. The space obtained \nfrom $K$ by removing the $0$-cell is homeomorphic to the complement of \nthe $5_2$ knot, as can be verified by SnapPy~\\cite{SnapPy}.\n\n\\begin{figure}[ht]\n$$\n\\psd",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/cor-sec-025-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "cor-sec-025-02.md",
+      "narrative": null,
+      "content": "If a representation ρ: π1(M) →PSL(2, C) is detected by P σ 2 (K) then φ2k+1 ◦ρ is detected by P2k+1(K) and φ2k ◦ρ is detected by P σ 2k(K). □",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prop-sec-025-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "prop-sec-025-01.md",
+      "narrative": null,
+      "content": "Let c be a Ptolemy assignment on ∆3 2, and let τ denote the corresponding cocycle. The assignment (11.4) φn(c): ˙∆3 n(Z) →C∗, t 7→φn(c)t = Y i<j ctitj ij is a Ptolemy assignment on ∆3 n. If c is a PSL(2, C)-Ptolemy assignment with obstruction cocycle σ, φn(c) is a p SL(n, C)-Ptolemy assignment with obstruction cocycle σ. Moreover, φn(c) is the Ptolemy assignment corresponding to φn(τ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The irreducible representations of `39`42`\"613A``45`47`\"603ASL(2,C)",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "../sections/sec-025-11-the-irreducible-representations-of-3942613a45.md",
+      "narrative": null,
+      "content": "Let φn : SL(2, C) →SL(n, C) denote the canonical irreducible representation. It is induced by\nthe Lie algebra homomorphism sl(2, C) →sl(n, C) given by\n(11.1)\n[ 0 1\n0 0 ] 7→diag+(n−1, . . . , 1),\n[ 0 0\n1 0 ] 7→diag−(1, . . . , n−1),\n\u0002 1 0\n0 −1\n\u0003\n7→diag(n−1, n−3, . . . , −n+1),\nwhere diag+(v) and diag−(v) denote matrices whose ﬁrst upper (resp. lower) diagonal is v and all\nother entries are zero. One has\nφn\n\u0000\u0002 0 −a−1\na\n0\n\u0003\u0001\n= q(an−1, −an−3, . . . , (−1)n−1a−(n−1))\n(11.2)\nφn ([ 1 x\n0 1 ]) = πn−1(x, . . . , x)πn−2(x, . . . , x) · · · π1(x).\n(11.3)\nProposition 11.1. Let c be a Ptolemy assignment on",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/thm-sec-025-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "thm-sec-025-03.md",
+      "narrative": null,
+      "content": "Let ρ be a boundary-unipotent representation in SL(2, C) or PSL(2, C). The ex- tended Bloch group element of φn ◦ρ is \u0000n+1 \u0001 times that of ρ. In fact, the shapes of all subsimplices are equal. STAVROS GAROUFALIDIS, DYLAN P. THURSTON, AND CHRISTIAN K. ZICKERT",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Essential edges",
+      "pageStart": 40,
+      "pageEnd": 41,
+      "target": "../sections/sec-026-111-essential-edges.md",
+      "narrative": null,
+      "content": "\\lbl{sub.essential}\n\n\\begin{definition}\n\\lbl{def.essential}\nAn edge of $K$ is \\emph{essential} if the lifts to $L$ have distinct end \npoints.\n\\end{definition}\n\nNote that an edge may be essential even though it is homotopically trivial \nin $K$. Let $L^{(0)}$ denote the zero skeleton of $L$.\n\n\\begin{lemma}\n\\lbl{developingdecoration}\nLet $\\rho$ be a representation in $\\SL(2,\\C)$ or $\\PSL(2,\\C)$. A decoration \nof $\\rho$ determines a $\\rho$-equivariant map\n\\begin{equation}\n\\lbl{developingCinfty}\nD\\colon L^{(0)}\\to \\partial\\overline\\H^3=\\C\\cup\\{\\infty\\},\n\\quad e_i\\mapsto g_i\\infty.\n\\end{equation} \nE",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gluing equations and Ptolemy assignments",
+      "pageStart": 41,
+      "pageEnd": 42,
+      "target": "../sections/sec-027-12-gluing-equations-and-ptolemy-assignments.md",
+      "narrative": null,
+      "content": "\\lbl{sec.gluingequations}\n\nIn this section we discuss the relation between Ptolemy assignments and \nsolutions to the gluing equations. The latter were invented by \nThurston~\\cite{ThurstonNotes} to explicitly compute the hyperbolic \nstructure (and its deformations) of a triangulated hyperbolic manifold,\nand used effectively in \\cite{NeumannZagier, snapprogram, SnapPy}.  \nThe gluing equations make sense for any $3$-cycle. \nThey are defined by assigning a \\emph{cross-ratio} $z_i\\in\\Cremove$ to each simplex \n$\\Delta_i$ of $K$. Given these, we assign cross-ratio parameters to \nthe edges of $\\Delta_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Other fields",
+      "pageStart": 42,
+      "pageEnd": 42,
+      "target": "../sections/sec-028-13-other-fields.md",
+      "narrative": null,
+      "content": "\\lbl{otherfields}\nThe Ptolemy varieties $P_n(K)$ and $P_n^\\sigma(K)$ may be defined over an arbitrary field $F$, and as in Section~\\ref{proofsection}, a Ptolemy assignment determines a boundary-unipotent representation in $\\SL(n,F)$, respectively, $p\\SL(n,F)$. If $E$ is a primitive extension of $F^*$ by $\\Z$, there are maps\n\\begin{equation}\nV_n(K)_F\\to\\widehat\\B_E(F),\\qquad V_n^\\sigma(K)_F\\to\\widehat\\B_E(F)_{\\PSL}\n\\end{equation}\ndefined as in~\\eqref{defoflambda} using a set theoretic section of $E\\to F^*$ instead of a logarithm. If $F$ is infinite, the chain complex of Ptolemy assignments comp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1111.2828v2/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 42,
+      "pageEnd": 44,
+      "target": "../sections/sec-029-references.md",
+      "narrative": null,
+      "content": "[1] A.C. Aitken. Determinants and Matrices. Oliver and Boyd, Edinburgh, 1939.\n[2] Nicolas Bergeron, Elisha Falbel, and Antonin Guilloux. Tetrahedra of ﬂags, volume and homology of SL(3), 2011.\narXiv:1101.2742 [math.KT].\n[3] Wieb Bosma, John Cannon, and Catherine Playoust. The Magma algebra system. I. The user language. J.\nSymbolic Comput., 24(3-4):235–265, 1997. Computational algebra and number theory (London, 1993).\n[4] Benjamin Burton. Census of closed prime minimal triangulations. http://regina.sourceforge.net/data.html.\nTHE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS\n43\n[5] D",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

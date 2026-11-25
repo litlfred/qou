@@ -1,0 +1,2435 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-th-0306165v1",
+  "title": "Three-Dimensional Quantum Gravity, Chern-Simons Theory, and the A-Polynomial",
+  "variant": "pdf",
+  "pages": 67,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Abstract",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-abstract"
+    },
+    {
+      "level": 1,
+      "title": "Introduction and Motivation",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-1-introduction-and-motivation"
+    },
+    {
+      "level": 2,
+      "title": "Chern-Simons Theory",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-11-chern-simons-theory"
+    },
+    {
+      "level": 2,
+      "title": "Three-Dimensional Quantum Gravity",
+      "number": "1.2",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-12-three-dimensional-quantum-gravity"
+    },
+    {
+      "level": 2,
+      "title": "The Hartle-Hawking Wave Function in 2 + 1 Dimensions",
+      "number": "1.3",
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-13-the-hartle-hawking-wave-function-in-2-1-dimen"
+    },
+    {
+      "level": 2,
+      "title": "Quantum Geometry of Hyperbolic Three-Manifolds",
+      "number": "1.4",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-14-quantum-geometry-of-hyperbolic-three-manifold"
+    },
+    {
+      "level": 1,
+      "title": "Classical Theory",
+      "number": "2",
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-2-classical-theory"
+    },
+    {
+      "level": 2,
+      "title": "The Moduli Space of Classical Solutions",
+      "number": "2.1",
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-21-the-moduli-space-of-classical-solutions"
+    },
+    {
+      "level": 2,
+      "title": "Chern-Simons Theory and the A-polynomial",
+      "number": "C",
+      "page": 13,
+      "pageLabel": "12",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-c-chern-simons-theory-and-the-a-polynomial"
+    },
+    {
+      "level": 2,
+      "title": "Properties of the A-polynomial",
+      "number": "2.3",
+      "page": 19,
+      "pageLabel": "18",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-23-properties-of-the-a-polynomial"
+    },
+    {
+      "level": 1,
+      "title": "Quantization",
+      "number": "3",
+      "page": 20,
+      "pageLabel": "19",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-010-3-quantization"
+    },
+    {
+      "level": 2,
+      "title": "A-polynomial as a Lagrangian Submanifold",
+      "number": "3.1",
+      "page": 20,
+      "pageLabel": "19",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-011-31-a-polynomial-as-a-lagrangian-submanifold"
+    },
+    {
+      "level": 2,
+      "title": "Semi-Classical Approximation",
+      "number": "3.2",
+      "page": 25,
+      "pageLabel": "24",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-012-32-semi-classical-approximation"
+    },
+    {
+      "level": 2,
+      "title": "Perturbation Theory",
+      "number": "3.3",
+      "page": 30,
+      "pageLabel": "29",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-013-33-perturbation-theory"
+    },
+    {
+      "level": 2,
+      "title": "Non-perturbative Aspects",
+      "number": "3.4",
+      "page": 31,
+      "pageLabel": "30",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-014-34-non-perturbative-aspects"
+    },
+    {
+      "level": 1,
+      "title": "Topological Quantum Field Theory and Invariants of Three-Manifolds",
+      "number": "4",
+      "page": 34,
+      "pageLabel": "33",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-015-4-topological-quantum-field-theory-and-invariant"
+    },
+    {
+      "level": 1,
+      "title": "A Generalization of the Volume Conjecture",
+      "number": "5",
+      "page": 37,
+      "pageLabel": "36",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-016-5-a-generalization-of-the-volume-conjecture"
+    },
+    {
+      "level": 2,
+      "title": "A Brief Review of the Volume Conjecture",
+      "number": "5.1",
+      "page": 37,
+      "pageLabel": "36",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-017-51-a-brief-review-of-the-volume-conjecture"
+    },
+    {
+      "level": 2,
+      "title": "The A-Polynomial and the Generalized Volume Conjecture",
+      "number": "5.2",
+      "page": 38,
+      "pageLabel": "37",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-018-52-the-a-polynomial-and-the-generalized-volume-c"
+    },
+    {
+      "level": 2,
+      "title": "Proof of the Generalized Volume Conjecture for the Figure-Eight Knot 41",
+      "number": "5.3",
+      "page": 41,
+      "pageLabel": "40",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-019-53-proof-of-the-generalized-volume-conjecture-fo"
+    },
+    {
+      "level": 2,
+      "title": "A Relation Between The Colored Jones Polynomial And The A-Polynomial",
+      "number": "5.4",
+      "page": 44,
+      "pageLabel": "43",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-020-54-a-relation-between-the-colored-jones-polynomi"
+    },
+    {
+      "level": 1,
+      "title": "Non-Trivial Flat Connections and the Melvin-Morton-Rozansky Conjecture",
+      "number": "6",
+      "page": 45,
+      "pageLabel": "44",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-021-6-non-trivial-flat-connections-and-the-melvin-mo"
+    },
+    {
+      "level": 2,
+      "title": "A Brief Review of the Melvin-Morton-Rozansky Conjecture",
+      "number": "6.1",
+      "page": 45,
+      "pageLabel": "44",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-022-61-a-brief-review-of-the-melvin-morton-rozansky"
+    },
+    {
+      "level": 2,
+      "title": "Path Integral Interpretation",
+      "number": "6.2",
+      "page": 47,
+      "pageLabel": "46",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-023-62-path-integral-interpretation"
+    },
+    {
+      "level": 2,
+      "title": "A Contribution of the Trivial Connection",
+      "number": "6.3",
+      "page": 49,
+      "pageLabel": "48",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-024-63-a-contribution-of-the-trivial-connection"
+    },
+    {
+      "level": 2,
+      "title": "A Contribution of the “Hyperbolic” Flat Connection",
+      "number": "6.4",
+      "page": 50,
+      "pageLabel": "49",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-025-64-a-contribution-of-the-hyperbolic-flat-connect"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 53,
+      "pageLabel": "52",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-026-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "The BTZ Black Hole",
+      "number": "Appendix A",
+      "page": 53,
+      "pageLabel": "52",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-027-appendix-a-the-btz-black-hole"
+    },
+    {
+      "level": 1,
+      "title": "Quantization for Torus Knots",
+      "number": "Appendix B",
+      "page": 59,
+      "pageLabel": "58",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-028-appendix-b-quantization-for-torus-knots"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 62,
+      "pageLabel": "61",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-029-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 26,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hep-th",
+          "heading": false
+        },
+        {
+          "term": "hutp",
+          "heading": false
+        },
+        {
+          "term": "itep-th",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-th/0306165v1 17 Jun 2003 hep-th/0306165 HUTP-03/A003 ITEP-TH-50/02 Three-Dimensional Quantum Gravity, Chern-Simons Theory, And The A-Polynomial Sergei Gukov Jeﬀerson Physical Laboratory, Harvard University, Cambridge, MA 02138, USA",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-hep-th-0306165v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-abstract",
+      "number": null,
+      "title": "Abstract",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "1",
+      "words": 119,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifolds",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "a-polynomial",
+          "heading": false
+        }
+      ],
+      "extract": "We study three-dimensional Chern-Simons theory with complex gauge group SL(2,C), which has many interesting connections with three-dimensional quantum gravity and ge- ometry of hyperbolic 3-manifolds. We show that, in the presence of a single knotted Wilson loop in an inﬁnite-dimensional representation of the gauge group, the classical and quan- tum properties of such theory are described by an algebraic curve",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-introduction-and-motivation",
+      "number": "1",
+      "title": "Introduction and Motivation",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-11-chern-simons-theory",
+      "number": "1.1",
+      "title": "Chern-Simons Theory",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 716,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chern-simons theory",
+          "heading": true
+        },
+        {
+          "term": "wilson loop",
+          "heading": false
+        },
+        {
+          "term": "gauge connection",
+          "heading": false
+        },
+        {
+          "term": "wilson lines",
+          "heading": false
+        },
+        {
+          "term": "gauge group",
+          "heading": false
+        },
+        {
+          "term": "quantum gravity",
+          "heading": false
+        },
+        {
+          "term": "feynman path",
+          "heading": false
+        },
+        {
+          "term": "reversal",
+          "heading": false
+        }
+      ],
+      "extract": "group. Of particular interest is a Chern-Simons theory with gauge group GC = SL(2,C) (viewed as a complexiﬁcation of G = SU(2)), which has many interesting connections with three-dimensional quantum gravity and geometry of hyperbolic three-manifolds. In this introductory section we review some aspects of these relations, formulate the problem, and describe various applications. 1.1. Chern-Simons Theory Consider an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-12-three-dimensional-quantum-gravity",
+      "number": "1.2",
+      "title": "Three-Dimensional Quantum Gravity",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 919,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "three-dimensional gravity",
+          "heading": true
+        },
+        {
+          "term": "quantum gravity",
+          "heading": true
+        },
+        {
+          "term": "dxa",
+          "heading": false
+        },
+        {
+          "term": "chern-simons action",
+          "heading": false
+        },
+        {
+          "term": "cosmological constant",
+          "heading": false
+        },
+        {
+          "term": "spinless particle",
+          "heading": false
+        },
+        {
+          "term": "einstein-hilbert action",
+          "heading": false
+        },
+        {
+          "term": "chern-simons theory",
+          "heading": false
+        }
+      ],
+      "extract": "1.2. Three-Dimensional Quantum Gravity As we already mentioned earlier, there are several intriguing connections between three-dimensional gravity and Chern-Simons theory with complex gauge group GC = SL(2,C) and imaginary values of the parameter s (for convenience, in what follows we shall use a real parameter σ = is). Thus, SL(2,C) appears as the Poincare group in three-dimensional Euclidean gravity with negative",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-13-the-hartle-hawking-wave-function-in-2-1-dimen",
+      "number": "1.3",
+      "title": "The Hartle-Hawking Wave Function in 2 + 1 Dimensions",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 681,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wave function",
+          "heading": true
+        },
+        {
+          "term": "hartle-hawking",
+          "heading": true
+        },
+        {
+          "term": "no-boundary proposal",
+          "heading": false
+        },
+        {
+          "term": "wilson line",
+          "heading": false
+        },
+        {
+          "term": "chern-simons path",
+          "heading": false
+        },
+        {
+          "term": "path integral",
+          "heading": false
+        },
+        {
+          "term": "torus boundary",
+          "heading": false
+        },
+        {
+          "term": "boundary conditions",
+          "heading": false
+        }
+      ],
+      "extract": "There is yet another relation between SL(2,C) Chern-Simons theory with t = −t = σ and three dimensions gravity with negative cosmological constant. Namely, in the Hartle- Hawking no-boundary proposal [20], the ground state wave function of the 2+1 dimensional Lorentzian universe is obtained from the Euclidean path integral over metrics on a 3- manifold M with boundary Σ = ∂M, ΨΣ(h) = X M Z Dg exp (−σIgrav) (1.10)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-14-quantum-geometry-of-hyperbolic-three-manifold",
+      "number": "1.4",
+      "title": "Quantum Geometry of Hyperbolic Three-Manifolds",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 11,
+      "labelStart": "7",
+      "labelEnd": "10",
+      "words": 961,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chern-simons theory",
+          "heading": false
+        },
+        {
+          "term": "chern-simons invariant",
+          "heading": false
+        },
+        {
+          "term": "topological string",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic",
+          "heading": true
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifold",
+          "heading": false
+        },
+        {
+          "term": "knot complement",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        }
+      ],
+      "extract": "Note, that the deﬁnition of the path integral (1.4) does not involve a choice of metric on M. Therefore, Z(M; γi, Ri) is expected to be a topological invariant of the three-manifold M with a link, whose components γi are colored by (inﬁnite-dimensional) representations, Ri, of the complex gauge group GC. From the physical point of view, this is not very 7 surprising since we start with a Chern-Simons theory, which",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-2-classical-theory",
+      "number": "2",
+      "title": "Classical Theory",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 105,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "classical",
+          "heading": true
+        },
+        {
+          "term": "theory",
+          "heading": true
+        },
+        {
+          "term": "quantizing",
+          "heading": false
+        }
+      ],
+      "extract": "We wish to study quantum Chern-Simons theory (1.1) with Wilson lines in the inﬁnite dimensional representations of the complex gauge group GC. Like in any constrained system, there are two ways of quantizing the theory: one can either quantize the classical phase space (that is the space of solutions of the classical equations of motion); or one can impose the constraints after quantization. See e.g. [43] for a nice",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-21-the-moduli-space-of-classical-solutions",
+      "number": "2.1",
+      "title": "The Moduli Space of Classical Solutions",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "10",
+      "labelEnd": "12",
+      "words": 408,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "classical solutions",
+          "heading": true
+        },
+        {
+          "term": "moduli space",
+          "heading": true
+        },
+        {
+          "term": "ﬂat connections",
+          "heading": false
+        },
+        {
+          "term": "compact manifold",
+          "heading": false
+        },
+        {
+          "term": "simple knots",
+          "heading": false
+        },
+        {
+          "term": "wilson",
+          "heading": false
+        },
+        {
+          "term": "exterior",
+          "heading": false
+        },
+        {
+          "term": "conjugation",
+          "heading": false
+        }
+      ],
+      "extract": "Away from the location of Wilson loops, the classical Euler-Lagrange equations derived from the Chern-Simons action (1.1) look like F = F = 0 (2.1) where F = dA + A ∧A is the ﬁeld strength, and F is its complex conjugate. Therefore, the classical solutions in Chern-Simons theory are the so-called ﬂat connections, i.e. the gauge ﬁelds with zero curvature. A ﬂat connection on M is determined by its holonomies, that is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-c-chern-simons-theory-and-the-a-polynomial",
+      "number": "C",
+      "title": "Chern-Simons Theory and the A-polynomial",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 19,
+      "labelStart": "12",
+      "labelEnd": "18",
+      "words": 2015,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chern-simons theory",
+          "heading": true
+        },
+        {
+          "term": "a-polynomial",
+          "heading": true
+        },
+        {
+          "term": "btz black",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure-eight knot",
+          "heading": false
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic metric",
+          "heading": false
+        },
+        {
+          "term": "knot complement",
+          "heading": false
+        },
+        {
+          "term": "peripheral subgroup",
+          "heading": false
+        }
+      ],
+      "extract": "Of particular interest is a Chern-Simons theory with complex gauge group GC = SL(2,C) due to its relation to three-dimensional Euclidean gravity. Indeed, as we already mentioned in the previous section, the SL(2,C) Chern-Simons action (1.1) with t = −t = σ is equivalent to the Einstein-Hilbert action, Igrav, written in the ﬁrst order formalism. Correspondingly, the classical ﬁeld equations (2.1) in the Chern-Simons",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-23-properties-of-the-a-polynomial",
+      "number": "2.3",
+      "title": "Properties of the A-polynomial",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 447,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "a-polynomial",
+          "heading": true
+        },
+        {
+          "term": "same a-polynomial",
+          "heading": false
+        },
+        {
+          "term": "newton polygon",
+          "heading": false
+        },
+        {
+          "term": "knot complement",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomial",
+          "heading": false
+        },
+        {
+          "term": "properties",
+          "heading": true
+        },
+        {
+          "term": "reversing",
+          "heading": false
+        },
+        {
+          "term": "slopes",
+          "heading": false
+        }
+      ],
+      "extract": "The A-polynomial of a knot has a number of interesting properties. For example, as we already mentioned earlier, one can choose a normalization such that A(l, m) has integer coeﬃcients. For completeness, here we list some other basic properties of the A-polynomial that will be useful to us in the discussion below (however, one may skip this section in the ﬁrst reading): a) If K is a hyperbolic knot, then A(l, m)̸ =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-3-quantization",
+      "number": "3",
+      "title": "Quantization",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "19",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-011-31-a-polynomial-as-a-lagrangian-submanifold",
+      "number": "3.1",
+      "title": "A-polynomial as a Lagrangian Submanifold",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 25,
+      "labelStart": "19",
+      "labelEnd": "24",
+      "words": 1761,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lagrangian submanifold",
+          "heading": true
+        },
+        {
+          "term": "poisson brackets",
+          "heading": false
+        },
+        {
+          "term": "classical poisson",
+          "heading": false
+        },
+        {
+          "term": "dre",
+          "heading": false
+        },
+        {
+          "term": "poisson structure",
+          "heading": false
+        },
+        {
+          "term": "chern-simons theory",
+          "heading": false
+        },
+        {
+          "term": "quantum mechanics",
+          "heading": false
+        },
+        {
+          "term": "classical phase",
+          "heading": false
+        }
+      ],
+      "extract": "In the previous section we described the classical solutions in a SL(2,C) Chern-Simons theory with a single Wilson loop W(l,m)(K) or, equivalently, the classical solutions in a theory without the Wilson loop, deﬁned on its complement, M = S3 \\ K. In particular, we found that the classical solutions are parametrized by points on an algebraic curve L, which is a zero locus of the A-polynomial, A(l, m). Since the knot",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-32-semi-classical-approximation",
+      "number": "3.2",
+      "title": "Semi-Classical Approximation",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 30,
+      "labelStart": "24",
+      "labelEnd": "29",
+      "words": 1530,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "semi-classical",
+          "heading": true
+        },
+        {
+          "term": "semi-classical wave",
+          "heading": false
+        },
+        {
+          "term": "det hess",
+          "heading": false
+        },
+        {
+          "term": "semi-classical expression",
+          "heading": false
+        },
+        {
+          "term": "semi-classical behavior",
+          "heading": false
+        },
+        {
+          "term": "lagrangian submanifold",
+          "heading": false
+        },
+        {
+          "term": "lagrangian immersions",
+          "heading": false
+        },
+        {
+          "term": "ﬂat connections",
+          "heading": false
+        }
+      ],
+      "extract": "Following the general prescription formulated in the end of the previous subsection, here we study the semi-classical behavior of the partition function Z(M) by quantizing the Hamiltonian system associated with (P, ω) and a Lagrangian submanifold L. As in the standard classical mechanics, we introduce a canonical 1-form (also known as a Liouville form), which in the canonical variables (pi, qj) can be written as θ =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-33-perturbation-theory",
+      "number": "3.3",
+      "title": "Perturbation Theory",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": "29",
+      "labelEnd": "30",
+      "words": 220,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "inﬁnite-dimensional representation",
+          "heading": false
+        },
+        {
+          "term": "chern-simons theory",
+          "heading": false
+        },
+        {
+          "term": "perturbative",
+          "heading": false
+        },
+        {
+          "term": "eii",
+          "heading": false
+        },
+        {
+          "term": "partition function",
+          "heading": false
+        }
+      ],
+      "extract": "Using eﬀective quantum mechanics, we studied the semi-classical limit of the partition function, Z(M), in the SL(2,C) Chern-Simons theory on a knot complement, M = S3 \\K. Equivalently, we may also think of Z(M) as the (unnormalized) expectation value of a Wilson line, W(l,m)(K), in an inﬁnite-dimensional representation R of SL(2,C). In either interpretation, it would be interesting to extend this analysis beyond the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-34-non-perturbative-aspects",
+      "number": "3.4",
+      "title": "Non-perturbative Aspects",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 34,
+      "labelStart": "30",
+      "labelEnd": "33",
+      "words": 847,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-perturbative partition",
+          "heading": false
+        },
+        {
+          "term": "casson invariant",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "unlinked components",
+          "heading": false
+        },
+        {
+          "term": "joined along",
+          "heading": false
+        },
+        {
+          "term": "partition function",
+          "heading": false
+        },
+        {
+          "term": "common torus",
+          "heading": false
+        },
+        {
+          "term": "torus boundary",
+          "heading": false
+        }
+      ],
+      "extract": "We found the semi-classical expression for the partition function Z(M) and brieﬂy discussed higher-order perturbative corrections. However, using the eﬀective quantum mechanics one might hope to compute the entire series Z(M), say, using the technique of the geometric quantization [59,60,61,62,63]. The semi-classical result (3.34) is simply the leading order approximation to the exact expression for Z(M), which",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-4-topological-quantum-field-theory-and-invariant",
+      "number": "4",
+      "title": "Topological Quantum Field Theory and Invariants of Three-Manifolds",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 37,
+      "labelStart": "33",
+      "labelEnd": "36",
+      "words": 1300,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "topological quantum",
+          "heading": true
+        },
+        {
+          "term": "lagrangian submanifold",
+          "heading": false
+        },
+        {
+          "term": "chern-simons theory",
+          "heading": false
+        },
+        {
+          "term": "a-polynomial",
+          "heading": false
+        },
+        {
+          "term": "cotangent bundle",
+          "heading": false
+        },
+        {
+          "term": "compact oriented",
+          "heading": false
+        },
+        {
+          "term": "hilbert space",
+          "heading": false
+        },
+        {
+          "term": "symplectic geometry",
+          "heading": false
+        }
+      ],
+      "extract": "As was already pointed out earlier, the deﬁnition of the Chern-Simons path integral (1.4) is independent on the choice of metric on M, even in the quantum theory. Hence, the Chern-Simons partition function Z(M; γi, Ri) must be a topological invariant. This is not so obvious from the mathematical point of view because Chern-Simons theory with complex gauge group operates on an inﬁnite-dimensional Hilbert space and,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-5-a-generalization-of-the-volume-conjecture",
+      "number": "5",
+      "title": "A Generalization of the Volume Conjecture",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 37,
+      "labelStart": "36",
+      "labelEnd": "36",
+      "words": 62,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "volume conjecture",
+          "heading": true
+        },
+        {
+          "term": "melvin-morton-rozansky",
+          "heading": false
+        },
+        {
+          "term": "generalization",
+          "heading": true
+        }
+      ],
+      "extract": "In this section15 we show how the above approach can be used to extend the volume conjecture to incomplete hyperbolic structures on knot complements16. The generalized volume conjecture, then, can be interpreted as a relation between the A-polynomial and the the colored Jones polynomial. Furthermore, in the next section we discuss a similar generalization of the Melvin-Morton-Rozansky conjecture, also inspired by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-51-a-brief-review-of-the-volume-conjecture",
+      "number": "5.1",
+      "title": "A Brief Review of the Volume Conjecture",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 38,
+      "labelStart": "36",
+      "labelEnd": "37",
+      "words": 417,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "volume conjecture",
+          "heading": true
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "kashaev invariant",
+          "heading": false
+        },
+        {
+          "term": "knot complement",
+          "heading": false
+        },
+        {
+          "term": "e2πi",
+          "heading": false
+        },
+        {
+          "term": "asymptotic behavior",
+          "heading": false
+        },
+        {
+          "term": "lim",
+          "heading": false
+        }
+      ],
+      "extract": "A well-known invariant of knots is the Jones polynomial J(K, q) [78]. Here we consider a more general invariant, the so-called N-colored Jones polynomial JN(K, q), associated with an N-dimensional irreducible representation of SU(2). Thus, the usual Jones poly- nomial appears as a special case, J(K, q) = J2(K, q). Like the ordinary Jones polynomial, JN(K, q) can be deﬁned by skein relations and is a Laurent",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-52-the-a-polynomial-and-the-generalized-volume-c",
+      "number": "5.2",
+      "title": "The A-Polynomial and the Generalized Volume Conjecture",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 41,
+      "labelStart": "37",
+      "labelEnd": "40",
+      "words": 1051,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "volume conjecture",
+          "heading": true
+        },
+        {
+          "term": "generalized volume",
+          "heading": true
+        },
+        {
+          "term": "conical singularity",
+          "heading": false
+        },
+        {
+          "term": "incomplete hyperbolic",
+          "heading": false
+        },
+        {
+          "term": "a-polynomial",
+          "heading": true
+        },
+        {
+          "term": "hyperbolic knot",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic metrics",
+          "heading": false
+        }
+      ],
+      "extract": "Incomplete hyperbolic structures on knot complements come in continuous families. For example, if K is a hyperbolic knot in the 3-sphere, then the moduli space of hyperbolic metrics on M = S3 \\K has at least one component of complex dimension one. Apart from a special point representing the cusped 3-manifold, a generic point in this moduli space corresponds to an incomplete hyperbolic structure on M with a conical",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-53-proof-of-the-generalized-volume-conjecture-fo",
+      "number": "5.3",
+      "title": "Proof of the Generalized Volume Conjecture for the Figure-Eight Knot 41",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 44,
+      "labelStart": "40",
+      "labelEnd": "43",
+      "words": 872,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sin arccos",
+          "heading": false
+        },
+        {
+          "term": "volume conjecture",
+          "heading": true
+        },
+        {
+          "term": "log sin",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure-eight knot",
+          "heading": false
+        },
+        {
+          "term": "y-dependent terms",
+          "heading": false
+        },
+        {
+          "term": "cos",
+          "heading": false
+        },
+        {
+          "term": "lobachevsky function",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        }
+      ],
+      "extract": "The N-colored Jones polynomial of the ﬁgure-eight knot has the following form, see e.g. [84]: JN(41, q) = N−1 X i=0 iY j=1 \u0010 q(N+j)/2 −q−(N+j)/2\u0011 \u0010 q(N−j)/2 −q−(N−j)/2\u0011 (5.14) Notice, that at the N-th root of unity, q = exp(2πi/N), it is indeed equal to the Kashaev’s invariant of the ﬁgure-eight knot [34]: ⟨41⟩N = N−1 X i=0 iY j=1 \u00001 −qj\u0001 \u00001 −qj\u0001 In the limit (5.11), the asymptotic behavior of the colored Jones",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-54-a-relation-between-the-colored-jones-polynomi",
+      "number": "5.4",
+      "title": "A Relation Between The Colored Jones Polynomial And The A-Polynomial",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 45,
+      "labelStart": "43",
+      "labelEnd": "44",
+      "words": 265,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored jones",
+          "heading": true
+        },
+        {
+          "term": "jones polynomial",
+          "heading": true
+        },
+        {
+          "term": "a-polynomial",
+          "heading": true
+        },
+        {
+          "term": "volume conjecture",
+          "heading": false
+        },
+        {
+          "term": "understand relation",
+          "heading": false
+        },
+        {
+          "term": "generalized volume",
+          "heading": false
+        }
+      ],
+      "extract": "A generalization of the volume conjecture discussed above could be interpreted as a purely algebraic relation between the A-polynomial and the colored Jones polynomial. Speciﬁcally, given a colored Jones polynomial JN(K, q) of a knot K one can consider the limit (5.11), k →∞ , N →∞ , a ≡N k a ∈C \\Q and deﬁne a function l(a), such that l(1) = −1 and log l = −d da lim N,k→∞ N/k=a log JN(K, e2πi/k) k (5.29) From the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-6-non-trivial-flat-connections-and-the-melvin-mo",
+      "number": "6",
+      "title": "Non-Trivial Flat Connections and the Melvin-Morton-Rozansky Conjecture",
+      "level": 1,
+      "pageStart": 45,
+      "pageEnd": 45,
+      "labelStart": "44",
+      "labelEnd": "44",
+      "words": 98,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "melvin-morton-rozansky conjecture",
+          "heading": true
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "asymptotic behavior",
+          "heading": false
+        }
+      ],
+      "extract": "The volume conjecture and its generalization discussed in the previous section imply that, for generic values of a, the asymptotic behavior of the colored Jones polynomial is dominated by a ﬂat SL(2,C) connection. This observation forms a very nice and complete picture once considered along with the Melvin-Morton-Rozansky conjecture regarding the asymptotic behavior of the colored Jones polynomial for integer values",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-61-a-brief-review-of-the-melvin-morton-rozansky",
+      "number": "6.1",
+      "title": "A Brief Review of the Melvin-Morton-Rozansky Conjecture",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 47,
+      "labelStart": "44",
+      "labelEnd": "46",
+      "words": 513,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "melvin-morton expansion",
+          "heading": false
+        },
+        {
+          "term": "n-colored jones",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomial",
+          "heading": false
+        },
+        {
+          "term": "melvin-morton-rozansky",
+          "heading": true
+        },
+        {
+          "term": "skein relation",
+          "heading": false
+        },
+        {
+          "term": "integer numbers",
+          "heading": false
+        }
+      ],
+      "extract": "Let JN(K, q) be the N-colored Jones polynomial of a knot K. We deﬁne a reduced Jones polynomial as VN(K, q) = JN(K, q) JN(unknot, q), VN ∈ZZ[q, q−1] (6.1) 44 where q = exp(2πi/k) and JN(unknot, q) = [N] = qN/2 −q−N/2 q1/2 −q−1/2 (6.2) is the N-colored Jones polynomial for the trivial knot. Following [87], let us denote by J(tr) N (K, q) (resp. V (tr) N (K, q)) the trivial connection contribution to the colored Jones",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-62-path-integral-interpretation",
+      "number": "6.2",
+      "title": "Path Integral Interpretation",
+      "level": 2,
+      "pageStart": 47,
+      "pageEnd": 49,
+      "labelStart": "46",
+      "labelEnd": "48",
+      "words": 421,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "path integral",
+          "heading": true
+        },
+        {
+          "term": "wrj",
+          "heading": false
+        },
+        {
+          "term": "ﬂat connection",
+          "heading": false
+        },
+        {
+          "term": "scs",
+          "heading": false
+        },
+        {
+          "term": "zsu",
+          "heading": false
+        },
+        {
+          "term": "chern-simons functional",
+          "heading": false
+        },
+        {
+          "term": "wilson loop",
+          "heading": false
+        },
+        {
+          "term": "expectation value",
+          "heading": false
+        }
+      ],
+      "extract": "6.2. Path Integral Interpretation As we already pointed out earlier, the colored Jones polynomial can be viewed as the expectation value of the Wilson loop observable (1.3) in the SU(2) Chern-Simons theory [3], JN(K, e 2πi k0+2 ) = ⟨WRj(K)⟩= 1 ZSU(2)(S3) Z DA WRj(K) e ik0 4π SCS(A) (6.11) 46 where k0 is the tree-level value of the coupling constant, Rj is an irreducible N = (2j + 1) dimensional representation of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-63-a-contribution-of-the-trivial-connection",
+      "number": "6.3",
+      "title": "A Contribution of the Trivial Connection",
+      "level": 2,
+      "pageStart": 49,
+      "pageEnd": 50,
+      "labelStart": "48",
+      "labelEnd": "49",
+      "words": 213,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "trivial connection",
+          "heading": true
+        },
+        {
+          "term": "e2πia",
+          "heading": false
+        },
+        {
+          "term": "wrj",
+          "heading": false
+        },
+        {
+          "term": "contribution",
+          "heading": true
+        }
+      ],
+      "extract": "For the trivial connection we have S(tr) CS = 0. Therefore, the leading contribution to the colored Jones polynomial comes from the 1-loop term. Since a reducible trivial connection with ﬁxed boundary conditions on M has no moduli, we have h0 = 1 , h1 = 0 (6.19) The isotropy group is Hα = U(1), and Vol(Hα) = √ 8π. Moreover, from the results of Milnor [94] and Turaev [95] it follows that in the present case the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-64-a-contribution-of-the-hyperbolic-flat-connect",
+      "number": "6.4",
+      "title": "A Contribution of the “Hyperbolic” Flat Connection",
+      "level": 2,
+      "pageStart": 50,
+      "pageEnd": 53,
+      "labelStart": "49",
+      "labelEnd": "52",
+      "words": 1021,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyperb",
+          "heading": false
+        },
+        {
+          "term": "coeﬃcients edm",
+          "heading": false
+        },
+        {
+          "term": "evn",
+          "heading": false
+        },
+        {
+          "term": "melvin-morton conjecture",
+          "heading": false
+        },
+        {
+          "term": "ﬂat connection",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "i2π2cs",
+          "heading": false
+        },
+        {
+          "term": "exponential growth",
+          "heading": false
+        }
+      ],
+      "extract": "Now let us explain the relation to the volume conjecture and its generalization (5.12) discussed in the previous section. In the path integral interpretation, the exponential growth of the colored Jones polynomial means that its asymptotic behavior is dominated by the non-trivial SL(2,C) ﬂat connection, associated with the hyperbolic structure on the knot complement, M. We shall denote this connection by A(hyperb).",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 53,
+      "pageEnd": 53,
+      "labelStart": "52",
+      "labelEnd": "52",
+      "words": 119,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rfbr grant",
+          "heading": false
+        },
+        {
+          "term": "minwalla",
+          "heading": false
+        },
+        {
+          "term": "california",
+          "heading": false
+        },
+        {
+          "term": "villegas",
+          "heading": false
+        }
+      ],
+      "extract": "It is a pleasure to thank D. Bar-Natan, R. Dijkgraaf, N. Dunﬁeld, S. Garoufalidis, R. Gopakumar, G. Horowitz, D. Long, M. Mari˜no, S. Minwalla, H. Ooguri, F. Rodriguez- Villegas, L. Rozansky, C. Vafa, E. Witten, S.-T. Yau, and especially K. Krasnov, G. Moore, A. Strominger, and D. Thurston for valuable and stimulating discussions. This research was conducted during the period S.G. served as a Clay Mathematics",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-appendix-a-the-btz-black-hole",
+      "number": "Appendix A",
+      "title": "The BTZ Black Hole",
+      "level": 1,
+      "pageStart": 53,
+      "pageEnd": 59,
+      "labelStart": "52",
+      "labelEnd": "58",
+      "words": 1751,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "btz black",
+          "heading": true
+        },
+        {
+          "term": "black hole",
+          "heading": true
+        },
+        {
+          "term": "euclidean btz",
+          "heading": false
+        },
+        {
+          "term": "hole metric",
+          "heading": false
+        },
+        {
+          "term": "cos sin",
+          "heading": false
+        },
+        {
+          "term": "hole geometry",
+          "heading": false
+        },
+        {
+          "term": "gauge connection",
+          "heading": false
+        },
+        {
+          "term": "solid torus",
+          "heading": false
+        }
+      ],
+      "extract": "The metric of the Lorentzian BTZ black hole is described by the line element21 [96]: ds2 = − \u0010 r2 −M \u0011 dt2 + \u0010 r2 −M \u0011−1 dr2 + r2dφ2 (A.1) Analytic continuation leads to the Euclidean metric ds2 = \u0010 r2 −M \u0011 dt2 + \u0010 r2 −M \u0011−1 dr2 + r2dφ2 (A.2) This is a special case of a more general metric corresponding to a rotating BTZ black hole. Namely, a solution corresponding to a black hole with mass M and angular momentum J",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-appendix-b-quantization-for-torus-knots",
+      "number": "Appendix B",
+      "title": "Quantization for Torus Knots",
+      "level": 1,
+      "pageStart": 59,
+      "pageEnd": 62,
+      "labelStart": "58",
+      "labelEnd": "61",
+      "words": 949,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "torus knots",
+          "heading": true
+        },
+        {
+          "term": "trefoil knot",
+          "heading": false
+        },
+        {
+          "term": "chern-simons theory",
+          "heading": false
+        },
+        {
+          "term": "hamiltonian system",
+          "heading": false
+        },
+        {
+          "term": "every knot",
+          "heading": false
+        },
+        {
+          "term": "phase space",
+          "heading": false
+        },
+        {
+          "term": "zsu",
+          "heading": false
+        },
+        {
+          "term": "partition function",
+          "heading": false
+        }
+      ],
+      "extract": "One simple way of classifying knots (in IR3) is to associate to every knot K a non- negative number, g(K), called the genus of the knot. Indeed, every knot can be embedded in some Riemann surface of genus g, and, as the name suggests, g(K) is the minimal value of genus for which this can be done (without self-crossing or breaking the knot). For example, the only knot with g = 0 is the unknotted circle. The next",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 62,
+      "pageEnd": 67,
+      "labelStart": "61",
+      "labelEnd": "66",
+      "words": 1977,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "annals phys",
+          "heading": false
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "einstein gravity",
+          "heading": false
+        },
+        {
+          "term": "anti-de sitter",
+          "heading": false
+        },
+        {
+          "term": "quantum gravity",
+          "heading": false
+        },
+        {
+          "term": "chern-simons gauge",
+          "heading": false
+        },
+        {
+          "term": "chern-simons invariants",
+          "heading": false
+        },
+        {
+          "term": "carlip",
+          "heading": false
+        }
+      ],
+      "extract": "[1] E. Witten, “Quantization Of Chern-Simons Gauge Theory With Complex Gauge Group,” Commun. Math. Phys. 137, 29 (1991). [2] C. Rovelli and L. Smolin, “Loop Space Representation Of Quantum General Relativ- ity,” Nucl. Phys. B 331, 80 (1990). [3] E. Witten, “Quantum Field Theory And The Jones Polynomial,” Commun. Math. Phys. 121, 351 (1989). [4] D. Bar-Natan, “On the Vassiliev Knot Invariants,” Topology 34 (1995)",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "chern-simons gauge",
+      "heading": false
+    },
+    {
+      "term": "chern-simons theory",
+      "heading": true
+    },
+    {
+      "term": "chern-simons path",
+      "heading": false
+    },
+    {
+      "term": "three-dimensional chern-simons",
+      "heading": false
+    },
+    {
+      "term": "chern-simons invariant",
+      "heading": false
+    },
+    {
+      "term": "chern-simons partition",
+      "heading": false
+    },
+    {
+      "term": "chern-simons action",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic knot",
+      "heading": true
+    },
+    {
+      "term": "colored jones",
+      "heading": true
+    },
+    {
+      "term": "chern-simons functional",
+      "heading": false
+    },
+    {
+      "term": "knot complement",
+      "heading": false
+    },
+    {
+      "term": "torus knot",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 67,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "A knotted Wilson loop in the IR3",
+      "page": 3,
+      "pageLabel": "2",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "In the Hartle-Hawking no-boundary proposal, the “analytic continuation” across a surface Σ describes a real tunneling from “nothing” to a universe with “space” Σ",
+      "page": 7,
+      "pageLabel": "6",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "A compact 3-manifold M with a single torus boundary can be constructed by removing a small neighborhood of a knotted Wilson loop from the 3-sphere",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Asymptotic behavior of the colored Jones polynomial for hyperbolic knots",
+      "page": 10,
+      "pageLabel": "9",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Some simple knots in three-dimensional space",
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The longitude γl and the meridian γm furnish a basis of the peripheral",
+      "page": 15,
+      "pageLabel": "14",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "A-polynomials of some knots and the hyperbolic volumes of their complements",
+      "page": 17,
+      "pageLabel": "16",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The volumes of the hyperbolic 3-manifolds M(p, q) obtained by Dehn surgery on the ﬁgure-eight knot converge to the volume of the cusped manifold",
+      "page": 18,
+      "pageLabel": "17",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "The moduli space of the SL(2,",
+      "page": 27,
+      "pageLabel": "26",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "The manifold M is a connected sum of the 3-manifolds M+ and M−, joined",
+      "page": 31,
+      "pageLabel": "30",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "The graph of the volume function V (a) near a = 1",
+      "page": 42,
+      "pageLabel": "41",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "The graph of the function dV/dy",
+      "page": 43,
+      "pageLabel": "42",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Link diagrams connected by the skein relation",
+      "page": 46,
+      "pageLabel": "45",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "The Euclidean BTZ black hole has a geometry of the solid torus, M ∼=",
+      "page": 54,
+      "pageLabel": "53",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "Trefoil knot on a torus",
+      "page": 59,
+      "pageLabel": "58",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 30,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 31,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "13 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "2 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p62); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 25
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 31 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-th-0306165v1"
+  }
+}

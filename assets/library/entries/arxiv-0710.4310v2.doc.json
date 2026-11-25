@@ -1,0 +1,2256 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0710.4310v2",
+  "title": "On Two-Dimensional Holonomy",
+  "variant": "pdf",
+  "pages": 46,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "Resumé of results and notation from the theory of principal fibre bundles",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-resumé-of-results-and-notation-from-the-theory-o"
+    },
+    {
+      "level": 3,
+      "title": "Connections on principal fibre bundles",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-connections-on-principal-fibre-bundles"
+    },
+    {
+      "level": 3,
+      "title": "Curvature",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-curvature"
+    },
+    {
+      "level": 3,
+      "title": "Parallel transport",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-parallel-transport"
+    },
+    {
+      "level": 3,
+      "title": "The dependence of the parallel transport on a smooth family of curves - the Ambrose-Singer theorem",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-the-dependence-of-the-parallel-transport-on-a-sm"
+    },
+    {
+      "level": 2,
+      "title": "Crossed modules",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-crossed-modules"
+    },
+    {
+      "level": 3,
+      "title": "Crossed modules and categorical groups",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-crossed-modules-and-categorical-groups"
+    },
+    {
+      "level": 2,
+      "title": "The thin fundamental categorical group of a manifold",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-the-thin-fundamental-categorical-group-of-a-mani"
+    },
+    {
+      "level": 3,
+      "title": "1-Tracks",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-1-tracks"
+    },
+    {
+      "level": 3,
+      "title": "2-Tracks",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-2-tracks"
+    },
+    {
+      "level": 3,
+      "title": "Horizontal and vertical compositions of 2-tracks",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-horizontal-and-vertical-compositions-of-2-tracks"
+    },
+    {
+      "level": 3,
+      "title": "Definition of the thin fundamental categorical group of a smooth manifold",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-definition-of-the-thin-fundamental-categorical-g"
+    },
+    {
+      "level": 3,
+      "title": "The thin fundamental crossed module of a smooth manifold",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-the-thin-fundamental-crossed-module-of-a-smooth"
+    },
+    {
+      "level": 3,
+      "title": "Two exact sequences",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-two-exact-sequences"
+    },
+    {
+      "level": 1,
+      "title": "Two-dimensional holonomies",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-two-dimensional-holonomies"
+    },
+    {
+      "level": 2,
+      "title": "Categorical connections",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-categorical-connections"
+    },
+    {
+      "level": 2,
+      "title": "The 2-curvature 3-form of a G-categorical connection",
+      "number": null,
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-the-2-curvature-3-form-of-a-g-categorical-connec"
+    },
+    {
+      "level": 3,
+      "title": "Algebraic preliminaries",
+      "number": null,
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-algebraic-preliminaries"
+    },
+    {
+      "level": 3,
+      "title": "The 2-structure equation",
+      "number": null,
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-the-2-structure-equation"
+    },
+    {
+      "level": 3,
+      "title": "The 2-Bianchi identity",
+      "number": null,
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-the-2-bianchi-identity"
+    },
+    {
+      "level": 3,
+      "title": "Local form of a categorical connection",
+      "number": null,
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-local-form-of-a-categorical-connection"
+    },
+    {
+      "level": 2,
+      "title": "Categorical holonomy",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-categorical-holonomy"
+    },
+    {
+      "level": 3,
+      "title": "Definition of a holonomy.",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-definition-of-a-holonomy"
+    },
+    {
+      "level": 3,
+      "title": "Definition of a categorical holonomy",
+      "number": null,
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-definition-of-a-categorical-holonomy"
+    },
+    {
+      "level": 2,
+      "title": "Categorical connections and categorical connection holonomies",
+      "number": null,
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-categorical-connections-and-categorical-connecti"
+    },
+    {
+      "level": 3,
+      "title": "Defining a categorical holonomy from a categorical connection",
+      "number": null,
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-defining-a-categorical-holonomy-from-a-categoric"
+    },
+    {
+      "level": 3,
+      "title": "A well-known lemma",
+      "number": null,
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-a-well-known-lemma"
+    },
+    {
+      "level": 3,
+      "title": "The dependence of the surface holonomy on a smooth family of surfaces",
+      "number": null,
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-the-dependence-of-the-surface-holonomy-on-a-smoo"
+    },
+    {
+      "level": 3,
+      "title": "Re-scaling",
+      "number": null,
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-re-scaling"
+    },
+    {
+      "level": 3,
+      "title": "Verification of the axioms for a categorical holonomy",
+      "number": null,
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-verification-of-the-axioms-for-a-categorical-hol"
+    },
+    {
+      "level": 3,
+      "title": "2-Bundles",
+      "number": null,
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-2-bundles"
+    },
+    {
+      "level": 2,
+      "title": "Wilson Spheres",
+      "number": null,
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-wilson-spheres"
+    },
+    {
+      "level": 3,
+      "title": "The dependence of a categorical connection holonomy on the elements of the fibre",
+      "number": null,
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-the-dependence-of-a-categorical-connection-holon"
+    },
+    {
+      "level": 3,
+      "title": "The dependence of a categorical connection holonomy on the point in the principal bundle",
+      "number": null,
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-the-dependence-of-a-categorical-connection-holon"
+    },
+    {
+      "level": 3,
+      "title": "Associating 2-holonomies to embedded spheres",
+      "number": null,
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-associating-2-holonomies-to-embedded-spheres"
+    },
+    {
+      "level": 1,
+      "title": "Appendix: Technical Lemmas",
+      "number": null,
+      "page": 43,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-appendix-technical-lemmas"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": "4",
+      "words": 1953,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "categorical holonomy",
+          "heading": false
+        },
+        {
+          "term": "categorical holonomies",
+          "heading": false
+        },
+        {
+          "term": "categorical connection",
+          "heading": false
+        },
+        {
+          "term": "principal g-bundle",
+          "heading": false
+        },
+        {
+          "term": "fundamental categorical",
+          "heading": false
+        },
+        {
+          "term": "categorical group",
+          "heading": false
+        },
+        {
+          "term": "holon omy",
+          "heading": false
+        },
+        {
+          "term": "lie crossed",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0710.4310v2 [math.DG] 20 Jul 2008 On Two-Dimensional Holonomy Jo˜ao Faria Martins Centro de Matem´atica da Universidade do Porto Rua do Campo Alegre, 687, 4169-007 Porto, Portugal jmartins@math.ist.utl.pt Roger Picken Departamento de Matem´atica, Instituto Superior T´ecnico, TU Lisbon Av. Rovisco Pais, 1049-001 Lisboa, Portugal rpicken@math.ist.utl.pt November 8, 2018 Abstract We deﬁne the thin fundamental",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0710.4310v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-preliminaries",
+      "number": null,
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "Preliminaries",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-resumé-of-results-and-notation-from-the-theory-o",
+      "number": null,
+      "title": "Resumé of results and notation from the theory of principal fibre bundles",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 12,
+      "summary": null,
+      "keywords": [],
+      "extract": "Resum´e of results and notation from the theory of principal ﬁbre bundles",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-connections-on-principal-fibre-bundles",
+      "number": null,
+      "title": "Connections on principal fibre bundles",
+      "level": 3,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 438,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fibre",
+          "heading": true
+        },
+        {
+          "term": "horizontal lift",
+          "heading": false
+        },
+        {
+          "term": "smooth vector",
+          "heading": false
+        },
+        {
+          "term": "principal",
+          "heading": true
+        },
+        {
+          "term": "forall",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        },
+        {
+          "term": "vector fields",
+          "heading": false
+        },
+        {
+          "term": "diff",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#CCC label=\"CCC\"} For full details on connections on principal fibre bundles see [@KN; @P]. Let $M$ be a paracompact smooth manifold. Let $G$ be a Lie group with Lie algebra $\\lg$. Consider a principal $G$-bundle $P$ over $M$, with canonical projection $\\pi\\colon P \\to M$. For each $x \\in M$, let $P_x=\\pi^{-1}(x)$ be the fibre at $x$. Let also $\\X(P)$ denote the Lie algebra of smooth vector fields on $P$. Recall",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-curvature",
+      "number": null,
+      "title": "Curvature",
+      "level": 3,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 196,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exterior covariant",
+          "heading": false
+        },
+        {
+          "term": "curvature",
+          "heading": true
+        },
+        {
+          "term": "covariant derivative",
+          "heading": false
+        },
+        {
+          "term": "bianchi identity",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#curv label=\"curv\"} Let $P$ be a principal $G$-bundle over $M$. Let $\\w \\in \\A^1(P,\\lg)$ be a connection 1-form on $P$. Given an $n$-form $a$ on $P$, the exterior covariant derivative of $a$ is given by $$Da=d a \\circ (\\underbrace{H \\times H \\ldots \\times H}_{(n+1)\\textrm{-times }} ).$$ Let $\\W\\in \\A^2(P,\\lg)$ be the curvature 2-form of the connection $\\w$. It can be defined as the exterior covariant derivative",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-parallel-transport",
+      "number": null,
+      "title": "Parallel transport",
+      "level": 3,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 139,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "parallel transport",
+          "heading": true
+        },
+        {
+          "term": "mapsto mathcal",
+          "heading": false
+        },
+        {
+          "term": "forall",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Hol label=\"Hol\"} Let $P$ be a principal $G$-bundle over the manifold $M$. Let $\\w \\in \\A^1(P,\\lg)$ be a connection on $P$. Recall that $\\w$ determines a parallel transport along smooth curves. Specifically, given $x \\in M$ and a smooth curve $\\gamma\\colon [0,1] \\to M$, with $\\gamma(0)=x$, then there exists a smooth map: $$(t,u) \\in [0,1] \\times P_x \\mapsto {\\mathcal{H}}_\\w(\\ga,t,u) \\in P,$$ uniquely defined by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-the-dependence-of-the-parallel-transport-on-a-sm",
+      "number": null,
+      "title": "The dependence of the parallel transport on a smooth family of curves - the Ambrose-Singer theorem",
+      "level": 3,
+      "pageStart": 6,
+      "pageEnd": 9,
+      "labelStart": "6",
+      "labelEnd": "9",
+      "words": 890,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "parallel transport",
+          "heading": true
+        },
+        {
+          "term": "frac mathcal",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "frac left",
+          "heading": false
+        },
+        {
+          "term": "quad frac",
+          "heading": false
+        },
+        {
+          "term": "aligned frac",
+          "heading": false
+        },
+        {
+          "term": "smooth",
+          "heading": true
+        },
+        {
+          "term": "int left",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#BBB label=\"BBB\"} Let $M$ be a smooth manifold. Let ${{\\rm D}}^n\\doteq [0,1]^n$ be the $n$-cube, where $n \\in \\N$. A map $f\\colon {{\\rm D}}^n \\to M$ is said to be smooth if its partial derivatives of any order exist and are continuous as maps ${{\\rm D}}^n \\to M$. Let $G$ be a Lie group with Lie algebra $\\lg$. Consider a smooth principal $G$-bundle $\\pi \\colon P \\to M$ with a connection 1-form $\\w \\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-crossed-modules",
+      "number": null,
+      "title": "Crossed modules",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 940,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "crossed modules",
+          "heading": true
+        },
+        {
+          "term": "lie crossed",
+          "heading": false
+        },
+        {
+          "term": "differential crossed",
+          "heading": false
+        },
+        {
+          "term": "morphism colon",
+          "heading": false
+        },
+        {
+          "term": "map colon",
+          "heading": false
+        },
+        {
+          "term": "heis",
+          "heading": false
+        },
+        {
+          "term": "lie group",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        }
+      ],
+      "extract": "All Lie groups and Lie algebras are taken to be finite-dimensional. ::: Definition []{#LCM label=\"LCM\"} A crossed module ${\\Gc= ( \\d\\colon E \\to G,\\tr)}$ is given by a group morphism $\\d\\colon E \\to G$ together with a left action $\\tr$ of $G$ on $E$ by automorphisms, such that: 1. $\\d(X \\tr e)=X \\d(e)X^{-1}; \\forall X \\in G, \\forall e \\in E,$ 2. $\\d(e) \\tr f=efe^{-1};\\forall e,f \\in E.$ If both $G$ and $E$ are Lie",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-crossed-modules-and-categorical-groups",
+      "number": null,
+      "title": "Crossed modules and categorical groups",
+      "level": 3,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 378,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "categorical groups",
+          "heading": true
+        },
+        {
+          "term": "crossed",
+          "heading": true
+        },
+        {
+          "term": "crossed module",
+          "heading": false
+        },
+        {
+          "term": "strict monoidal",
+          "heading": false
+        },
+        {
+          "term": "group morphisms",
+          "heading": false
+        },
+        {
+          "term": "tcm",
+          "heading": false
+        },
+        {
+          "term": "ccg",
+          "heading": false
+        },
+        {
+          "term": "tensor product",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#CCG label=\"CCG\"} ::: Definition A categorical group $\\mathcal{C}$ is a groupoid provided with a strict monoidal structure $\\C \\times \\C \\ra{\\tn} \\C$, as well as a \"group inversion\" functor ${^{-1}}\\colon C \\to C$ such that both the set of objects $C_0$ of $\\C$ and the set of morphisms $C_1$ of $\\C$ are groups under the tensor product, and both the source and target maps $\\sigma,\\tau \\colon C_1 \\to C_0$ are group",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-the-thin-fundamental-categorical-group-of-a-mani",
+      "number": null,
+      "title": "The thin fundamental categorical group of a manifold",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 14,
+      "summary": null,
+      "keywords": [],
+      "extract": "[]{#thinfund label=\"thinfund\"} Let $M$ be a smooth manifold.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-1-tracks",
+      "number": null,
+      "title": "1-Tracks",
+      "level": 3,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 719,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tracks",
+          "heading": true
+        },
+        {
+          "term": "concatenation circ",
+          "heading": false
+        },
+        {
+          "term": "vertical concatenation",
+          "heading": false
+        },
+        {
+          "term": "epsilon leq",
+          "heading": false
+        },
+        {
+          "term": "circ big",
+          "heading": false
+        },
+        {
+          "term": "textrm",
+          "heading": false
+        },
+        {
+          "term": "paths",
+          "heading": false
+        },
+        {
+          "term": "rank homotopic",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#1-Tracks label=\"1-Tracks\"} ::: Definition A 1-path is given by a smooth map $\\gamma\\colon [0,1] \\to M$ such that there exists an $\\epsilon >0$ such that $\\g$ is constant in $[0,\\e] \\cup [1-\\e,1]$; in the terminology of [@CP], this can be abbreviated by saying that each end point of $\\g$ has a sitting instant. Given a 1-path $\\g$, define the source and target of $\\g$ as $\\sigma(\\g)=\\g(0)$ and $\\tau(\\g)=\\g(1)$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-2-tracks",
+      "number": null,
+      "title": "2-Tracks",
+      "level": 3,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 238,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tracks",
+          "heading": true
+        },
+        {
+          "term": "rank homotopy",
+          "heading": false
+        },
+        {
+          "term": "map colon",
+          "heading": false
+        },
+        {
+          "term": "thin",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#2-Tracks label=\"2-Tracks\"} ::: Definition []{#thin2 label=\"thin2\"} Two 2-paths $\\G$ and $\\G'$ are said to be rank-2 homotopic (and we write $\\G\\cong_2 \\G'$) if there exists a smooth map ${J}\\colon [0,1]^2 \\times [0,1] \\to M$ such that: 1. $J(t,s,0)=\\G(t,s),\\, J(t,s,1)=\\G'(t,s)$ for $s,t\\in [0,1]$. 2. ${J}$ is constant over $\\{0\\} \\times [0,1]^2$ and $\\{1\\} \\times [0,1]^2$. 3. Over $[0,1] \\times \\{0\\} \\times",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-horizontal-and-vertical-compositions-of-2-tracks",
+      "number": null,
+      "title": "Horizontal and vertical compositions of 2-tracks",
+      "level": 3,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 253,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tracks",
+          "heading": true
+        },
+        {
+          "term": "compositions",
+          "heading": true
+        },
+        {
+          "term": "horizontal",
+          "heading": true
+        },
+        {
+          "term": "hkk",
+          "heading": false
+        },
+        {
+          "term": "vertical",
+          "heading": true
+        },
+        {
+          "term": "groupoid",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#HVC label=\"HVC\"} Note that the horizontal composition of 2-paths descends immediately to a horizontal composition in $\\S_2(M)$. Suppose that $\\G$ and $\\G'$ are 2-paths with $\\d_u(\\G)\\cong_1 \\d_d(\\G')$. Choose a rank-1 homotopy ${J}$ connecting $\\d_u(\\G)$ and $\\d_d(\\G')$. Then $[\\G]\\circ_v[\\G']$ is defined as $[(\\G \\circ_v J) \\circ_v \\G'].$ The fact that this composition is well defined in $\\S_2(M)$ follows",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-definition-of-the-thin-fundamental-categorical-g",
+      "number": null,
+      "title": "Definition of the thin fundamental categorical group of a smooth manifold",
+      "level": 3,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 185,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "categorical group",
+          "heading": true
+        },
+        {
+          "term": "tracks",
+          "heading": false
+        },
+        {
+          "term": "monoidal category",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#TCM label=\"TCM\"} Since $\\Sc_2(M)$ is a 2-category, given a base point $*$ of $M$ (in other words an object of $\\Sc_2(M)$) we can define a monoidal category $\\Pc_2(M,*)$. The objects of $\\Pc_2(M,*)$ are given by all 1-tracks of $M$ starting and ending at $*$, and therefore by all elements of $\\pi_1^1(M,*)$. On the other hand, the set $\\P_2(M,*)$ of morphisms of $\\Pc_2(M,*)$ is given by the set of all 2-tracks",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-the-thin-fundamental-crossed-module-of-a-smooth",
+      "number": null,
+      "title": "The thin fundamental crossed module of a smooth manifold",
+      "level": 3,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 266,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "crossed module",
+          "heading": true
+        },
+        {
+          "term": "ccg",
+          "heading": false
+        },
+        {
+          "term": "defines crossed",
+          "heading": false
+        },
+        {
+          "term": "categorical group",
+          "heading": false
+        },
+        {
+          "term": "fcm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#fcm label=\"fcm\"} Since $\\Pc_2(M,*)$ is a categorical group, it defines a crossed module $\\Pi_2^{2,1}(M,*)$, which we call the *thin fundamental crossed module of $M$.* Let us explain how to construct $\\Pi_2^{2,1}(M,*)$ directly. Define a group $\\pi_2^{2,1}(M,*)$ as being given by $$\\pi_2^{2,1}(M,*)=\\left \\{[\\G] \\in \\P_2(M,*) \\colon \\d_d({[\\G]})=[*]\\right \\}$$ with the product law being the horizontal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-two-exact-sequences",
+      "number": null,
+      "title": "Two exact sequences",
+      "level": 3,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 470,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homotopic paths",
+          "heading": false
+        },
+        {
+          "term": "crossed module",
+          "heading": false
+        },
+        {
+          "term": "eml",
+          "heading": false
+        },
+        {
+          "term": "exact",
+          "heading": true
+        },
+        {
+          "term": "thin",
+          "heading": false
+        },
+        {
+          "term": "exact sequence",
+          "heading": false
+        },
+        {
+          "term": "horizontal composition",
+          "heading": false
+        },
+        {
+          "term": "cohomology class",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#2es label=\"2es\"} This subsection is not necessary to understand the rest of the article. ::: Definition Let $M$ be a smooth manifold. Let $* \\in M$. The group $\\pi_2^2(M,*)$ is given by all 2-paths $\\G \\in S_2(M)$ such that $\\G(\\d([0,1]^2))=\\{*\\}$, up to the equivalence relation given by $\\G \\cong \\G'$ if there exists a rank-2 homotopy ${J\\colon [0,1]^2\\times [0,1] \\to M}$, connecting $\\G$ and $\\G'$, such that,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-two-dimensional-holonomies",
+      "number": null,
+      "title": "Two-dimensional holonomies",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "Two-dimensional holonomies",
+      "extractCut": false
+    },
+    {
+      "id": "sec-016-categorical-connections",
+      "number": null,
+      "title": "Categorical connections",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 333,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lform",
+          "heading": false
+        },
+        {
+          "term": "categorical connection",
+          "heading": false
+        },
+        {
+          "term": "curvature form",
+          "heading": false
+        },
+        {
+          "term": "crossed module",
+          "heading": false
+        },
+        {
+          "term": "principal bundle",
+          "heading": false
+        },
+        {
+          "term": "lie group",
+          "heading": false
+        }
+      ],
+      "extract": "::: Definition Let $G$ be a Lie group. Let $M$ be a smooth manifold. Let $P \\to M$ be a smooth principal bundle with structure group $G$. Denote the right action of $G$ on $P$ as $g \\in G\\mapsto {R_g} \\in \\diff(M)$. Let also ${\\Gc=(\\d\\colon E \\to G,\\tr)}$ be a Lie crossed module, where $\\tr$ is a Lie group left action of $G$ on $E$ by automorphisms. Let also ${\\mathfrak{G}=(\\d \\colon \\le \\to \\lg,\\tr )}$ be the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-the-2-curvature-3-form-of-a-g-categorical-connec",
+      "number": null,
+      "title": "The 2-curvature 3-form of a G-categorical connection",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 96,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "curvature form",
+          "heading": true
+        },
+        {
+          "term": "connection",
+          "heading": true
+        },
+        {
+          "term": "crossed",
+          "heading": false
+        }
+      ],
+      "extract": "Recall the definition of the curvature 2-form $\\W$ of a connection 1-form $\\w$ as the covariant exterior derivative of the 1-form $\\w$. ::: Definition Let ${\\Gc=(\\d\\colon E \\to G,\\tr)}$ be a Lie crossed module, and let $P \\to M$ be a smooth principal $G$-bundle. The 2-curvature 3-form of a $\\Gc$-categorical connection $(\\w,m)$ on $P$ is defined as $$\\M=d m\\circ(H \\times H \\times H).$$ In other words:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-algebraic-preliminaries",
+      "number": null,
+      "title": "Algebraic preliminaries",
+      "level": 3,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 279,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "valued covariant",
+          "heading": false
+        },
+        {
+          "term": "wedge",
+          "heading": false
+        },
+        {
+          "term": "curv",
+          "heading": false
+        },
+        {
+          "term": "covariant tensor",
+          "heading": false
+        },
+        {
+          "term": "differential forms",
+          "heading": false
+        }
+      ],
+      "extract": "Let $M$ be a smooth manifold. Consider a differential crossed module ${\\mathfrak{G}=(\\d\\colon \\le \\to \\lg,\\tr)}$. In particular the map $(X,e) \\in \\lg \\times \\le \\mapsto X \\tr e \\in \\le$ is bilinear. Let $a \\in \\A^n(M,\\lg )$ and $b \\in \\A^m(M,\\le)$ be $\\lg$- and $\\le$-valued (respectively) differential forms on $M$. We define $a \\tn^\\tr b$ as being the $\\le$-valued covariant tensor field on $M$ such that $$(a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-the-2-structure-equation",
+      "number": null,
+      "title": "The 2-structure equation",
+      "level": 3,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 283,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "structure equation",
+          "heading": true
+        },
+        {
+          "term": "wedge",
+          "heading": false
+        },
+        {
+          "term": "ldots",
+          "heading": false
+        },
+        {
+          "term": "curvature form",
+          "heading": false
+        },
+        {
+          "term": "horizontal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#se label=\"se\"} The following equation is an analogue of Cartan's structure equation. It will be of prime importance later. ::: Proposition Let ${\\Gc= ( \\d\\colon E \\to G,\\tr)}$ be a Lie crossed module. Let $P$ be a principal $G$-bundle over the manifold $M$. Let also $(\\w,m)$ be a categorical $\\Gc$-connection on $P$. We have: $\\M=dm {+}\\w\\wedge^\\tr m,$ where $\\M=D m$ is the 2-curvature $3$-form of $(\\w,m)$. In",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-the-2-bianchi-identity",
+      "number": null,
+      "title": "The 2-Bianchi identity",
+      "level": 3,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 242,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wedge",
+          "heading": false
+        },
+        {
+          "term": "alt",
+          "heading": false
+        },
+        {
+          "term": "crossed module",
+          "heading": false
+        },
+        {
+          "term": "bianchi",
+          "heading": true
+        },
+        {
+          "term": "ext",
+          "heading": false
+        }
+      ],
+      "extract": "Fix a Lie crossed module ${\\Gc= ( \\d\\colon E \\to G,\\tr)}$. Let $P$ be a smooth principal $G$-bundle over $M$ with a connection $\\w$. Choose a $\\Gc$-categorical connection $(\\w,m)$ on $P$. ::: Proposition Let $\\M\\in \\A^3(P,\\le)$ be the 2-curvature 3-form of $(\\w,m)$. Then the exterior covariant derivative $D \\M$ of $M$ vanishes. In other words: $$d \\M \\circ (H \\times H \\times H \\times H)=0,$$ which by lemma",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-local-form-of-a-categorical-connection",
+      "number": null,
+      "title": "Local form of a categorical connection",
+      "level": 3,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": "20",
+      "labelEnd": "22",
+      "words": 963,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "categorical connection",
+          "heading": true
+        },
+        {
+          "term": "local form",
+          "heading": true
+        },
+        {
+          "term": "colon cap",
+          "heading": false
+        },
+        {
+          "term": "crossed module",
+          "heading": false
+        },
+        {
+          "term": "lie crossed",
+          "heading": false
+        },
+        {
+          "term": "differential crossed",
+          "heading": false
+        },
+        {
+          "term": "exists categorical",
+          "heading": false
+        },
+        {
+          "term": "frac wedge",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#lform label=\"lform\"} Let ${\\Gc=(\\d\\colon E \\to G,\\tr)}$ be some Lie crossed module, and let ${\\mathfrak{G}=(\\d \\colon \\le \\to \\lg,\\tr )}$ be the associated differential crossed module. Fix a smooth manifold $M$ and a smooth principal $G$-bundle $P \\to M$, with a categorical $\\Gc$-connection $(\\w,m)$, where, as usual, $\\w \\in \\A^1(P,\\lg)$ and $m \\in \\A^2(P,\\le)$. The local form of the categorical $\\Gc$-connection",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-categorical-holonomy",
+      "number": null,
+      "title": "Categorical holonomy",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "Categorical holonomy",
+      "extractCut": false
+    },
+    {
+      "id": "sec-023-definition-of-a-holonomy",
+      "number": null,
+      "title": "Definition of a holonomy.",
+      "level": 3,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 371,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "path colon",
+          "heading": false
+        },
+        {
+          "term": "holonomy",
+          "heading": true
+        },
+        {
+          "term": "mathcal big",
+          "heading": false
+        },
+        {
+          "term": "eee",
+          "heading": false
+        },
+        {
+          "term": "hol",
+          "heading": false
+        },
+        {
+          "term": "smooth",
+          "heading": false
+        },
+        {
+          "term": "group morphism",
+          "heading": false
+        }
+      ],
+      "extract": "The following definition appears in [@CP]. ::: Definition Let $M$ and $N$ be smooth manifolds. Suppose that $M$ has a chosen base point $*$. A map $F \\colon \\pi_1^1(M,*) \\to N$ is said to be smooth if, for any $2$-path $\\G\\colon [0,1]^2 \\to M,$ with $\\d_l(\\G)=\\d_r(\\G)=*$, the map $$s \\in [0,1] \\mapsto F([\\g_s])\\in N$$ is smooth. Here $\\G(t,s)=\\g_s(t)$, where $s,t \\in [0,1]$. Let $G$ be a Lie group. A holonomy is, by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-definition-of-a-categorical-holonomy",
+      "number": null,
+      "title": "Definition of a categorical holonomy",
+      "level": 3,
+      "pageStart": 23,
+      "pageEnd": 25,
+      "labelStart": "23",
+      "labelEnd": "25",
+      "words": 577,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "categorical holonomy",
+          "heading": true
+        },
+        {
+          "term": "smooth crossed",
+          "heading": false
+        },
+        {
+          "term": "crossed module",
+          "heading": false
+        },
+        {
+          "term": "ccg",
+          "heading": false
+        },
+        {
+          "term": "quad begin",
+          "heading": false
+        },
+        {
+          "term": "thin fundamental",
+          "heading": false
+        },
+        {
+          "term": "map colon",
+          "heading": false
+        },
+        {
+          "term": "fcm",
+          "heading": false
+        }
+      ],
+      "extract": "::: Definition []{#K label=\"K\"} Let $M$ be a manifold. A smooth map $J \\colon[0,1]^3\\to M$, say $J(t,s,x)=\\G^x(t,s)=\\g^x_s(t),$ where $t,s,x \\in [0,1]$, is said to be a 3-path if: 1. $J$ is constant over $\\{0\\} \\times [0,1]^2$ and over $\\{1\\} \\times [0,1]^2$. 2. $J$ restricts to a rank-1 homotopy (connecting $\\g^0_0$ with $\\g^1_0$) over $[0,1] \\times \\{0\\} \\times [0,1]$ and over $[0,1] \\times \\{1\\} \\times [0,1]$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-categorical-connections-and-categorical-connecti",
+      "number": null,
+      "title": "Categorical connections and categorical connection holonomies",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": "25",
+      "labelEnd": "25",
+      "words": 156,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "categorical connection",
+          "heading": true
+        },
+        {
+          "term": "crossed module",
+          "heading": false
+        },
+        {
+          "term": "lie crossed",
+          "heading": false
+        },
+        {
+          "term": "fff",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#ccch label=\"ccch\"} The aim of this subsection is to prove the following main theorem. ::: Theorem []{#FFF label=\"FFF\"} Let $G$ be a Lie group. Let $M$ be a smooth manifold. Let also $P \\to M$ be a smooth principal fibre bundle with structure group $G$. Let ${\\Gc= ( \\d\\colon E \\to G,\\tr)}$ be a Lie crossed module. A $\\Gc$-categorical connection $(\\w,m)$ on $P$ together with an element $u\\in P_*$, the fibre of $P$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-defining-a-categorical-holonomy-from-a-categoric",
+      "number": null,
+      "title": "Defining a categorical holonomy from a categorical connection",
+      "level": 3,
+      "pageStart": 25,
+      "pageEnd": 27,
+      "labelStart": "25",
+      "labelEnd": "27",
+      "words": 675,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "categorical holonomy",
+          "heading": true
+        },
+        {
+          "term": "frac big",
+          "heading": false
+        },
+        {
+          "term": "cormain",
+          "heading": false
+        },
+        {
+          "term": "aligned frac",
+          "heading": false
+        },
+        {
+          "term": "int left",
+          "heading": false
+        },
+        {
+          "term": "rank homotopy",
+          "heading": false
+        },
+        {
+          "term": "dchcc",
+          "heading": false
+        },
+        {
+          "term": "bbb",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#dchcc label=\"dchcc\"} Consider a base point $*\\in M$. Choose also $u \\in P_*$, the fibre of $P$ at $*$. To describe $F_{(\\w,m,u)}$ on the set $\\pi_1^1(M,*)$ of objects of $\\Pc_2(M,*)$, we use theorem [\\[E\\]](#E){reference-type=\"ref\" reference=\"E\"}. Therefore we define: $$F_{(\\w,m,u)}^1([\\g])=F_{(\\w,u)}^{{1}}([\\g]), \\textrm{ where } [\\g] \\in \\pi_1^1(M,*).$$ Let now $\\G$ be a 2-path in $M$ with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-a-well-known-lemma",
+      "number": null,
+      "title": "A well-known lemma",
+      "level": 3,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": "27",
+      "labelEnd": "27",
+      "words": 252,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac theta",
+          "heading": false
+        },
+        {
+          "term": "theta left",
+          "heading": false
+        },
+        {
+          "term": "wkl label",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "int left",
+          "heading": false
+        },
+        {
+          "term": "forall",
+          "heading": false
+        },
+        {
+          "term": "gathered",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#wkl label=\"wkl\"} Let $G$ be a Lie group. Consider a $\\lg$-valued smooth function $V(s,x)$ defined on $[0,1]^2$. Consider the following differential equation in $G$: $$\\frac{\\d}{\\d s} a(s,x)=a(s,x)V(s,x),$$ with initial condition $a(0,x)=1_G, \\forall x \\in [0,1]$. We want to know $\\frac{\\d}{\\d x} a(s,x)$. Let $\\theta$ be the canonical $\\lg$-valued $1$-form on $G$. Thus $\\theta$ is left invariant and satisfies",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-the-dependence-of-the-surface-holonomy-on-a-smoo",
+      "number": null,
+      "title": "The dependence of the surface holonomy on a smooth family of surfaces",
+      "level": 3,
+      "pageStart": 27,
+      "pageEnd": 33,
+      "labelStart": "27",
+      "labelEnd": "33",
+      "words": 2244,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dtds int",
+          "heading": false
+        },
+        {
+          "term": "dtds quad",
+          "heading": false
+        },
+        {
+          "term": "frac int",
+          "heading": false
+        },
+        {
+          "term": "int left",
+          "heading": false
+        },
+        {
+          "term": "aligned int",
+          "heading": false
+        },
+        {
+          "term": "int theta",
+          "heading": false
+        },
+        {
+          "term": "eee",
+          "heading": false
+        },
+        {
+          "term": "theta big",
+          "heading": false
+        }
+      ],
+      "extract": "The discussion in this subsection will be very similar to that of [\\[BBB\\]](#BBB){reference-type=\"ref\" reference=\"BBB\"}. We want to prove an analogue of lemma [\\[EEE\\]](#EEE){reference-type=\"ref\" reference=\"EEE\"} for the surface holonomy of a family of 2-paths $\\G^x$. Consider a smooth map $J\\colon [0,1]^3 \\to M$, where $J(t,s,x)=\\G^x(t,s); \\forall t,s,x \\in [0,1]$. Given $x,s \\in [0,1]$, a smooth curve",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-re-scaling",
+      "number": null,
+      "title": "Re-scaling",
+      "level": 3,
+      "pageStart": 33,
+      "pageEnd": 34,
+      "labelStart": "33",
+      "labelEnd": "34",
+      "words": 237,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dchcc",
+          "heading": false
+        },
+        {
+          "term": "int left",
+          "heading": false
+        },
+        {
+          "term": "frac",
+          "heading": false
+        },
+        {
+          "term": "rescaling",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\G$ be a 2-path in $M$ such that $\\d_l(\\G)=\\d_r(\\G)=*$. As usual put $\\G(t,s)=\\g_s(t); s,t \\in [0,1]$. Consider a smooth map $f \\colon [a,b] \\to [0,1]$, where $-\\infty < a <b <+\\infty$. We suppose that $f(a)=0$ and $f(b)=1$. Let $\\G'(s,t)=\\g'_s(t)$ be such that $\\g'_s(t)=\\g_{f(s)}(t)$, where $s \\in [a,b]$ and $t \\in [0,1]$. Even though $\\G'$ is not a 2-path, for its domain is $[0,1]\\times [a,b]$, the elements",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-verification-of-the-axioms-for-a-categorical-hol",
+      "number": null,
+      "title": "Verification of the axioms for a categorical holonomy",
+      "level": 3,
+      "pageStart": 34,
+      "pageEnd": 37,
+      "labelStart": "34",
+      "labelEnd": "37",
+      "words": 1133,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac left",
+          "heading": false
+        },
+        {
+          "term": "int left",
+          "heading": false
+        },
+        {
+          "term": "tau left",
+          "heading": false
+        },
+        {
+          "term": "quad begin",
+          "heading": false
+        },
+        {
+          "term": "ccg",
+          "heading": false
+        },
+        {
+          "term": "categorical",
+          "heading": true
+        },
+        {
+          "term": "sigma left",
+          "heading": false
+        },
+        {
+          "term": "big",
+          "heading": false
+        }
+      ],
+      "extract": "Let ${\\Gc=(\\d\\colon E \\to G,\\tr)}$ be a Lie crossed module and let ${\\mathfrak{G}=(\\d \\colon \\le \\to \\lg,\\tr )}$ be the associated differential crossed module. Fix a smooth manifold $M$ with a base point $*$, a principal $G$-bundle $P$ over $M$ and an element $u\\in P_*$, the fibre of $P$ over $*$. Consider a categorical connection $(\\w,m)$ on $P$. Let us prove that the assignments $$[\\g] \\in \\pi_1^1(M,*) \\mapsto",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-2-bundles",
+      "number": null,
+      "title": "2-Bundles",
+      "level": 3,
+      "pageStart": 37,
+      "pageEnd": 39,
+      "labelStart": "37",
+      "labelEnd": "39",
+      "words": 862,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ijk eta",
+          "heading": false
+        },
+        {
+          "term": "colon ijk",
+          "heading": false
+        },
+        {
+          "term": "ijk ikl",
+          "heading": false
+        },
+        {
+          "term": "i-m eta",
+          "heading": false
+        },
+        {
+          "term": "ijk right",
+          "heading": false
+        },
+        {
+          "term": "bundles",
+          "heading": true
+        },
+        {
+          "term": "eta left",
+          "heading": false
+        },
+        {
+          "term": "categorical holonomies",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#2bundles label=\"2bundles\"} Let ${\\Gc=(\\d\\colon E \\to G,\\tr)}$ be a Lie crossed module. Let the associated differential crossed module be ${\\mathfrak{G}=(\\d \\colon \\le \\to \\lg,\\tr )}$. Fix a smooth manifold $M$ and a smooth principal $G$-bundle $\\pi\\colon P \\to M$. A natural weakening of the notion of a categorical connection $(\\w,m)$ in $P$ is to consider $m$ to be only locally defined on $P$, but so that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-wilson-spheres",
+      "number": null,
+      "title": "Wilson Spheres",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 39,
+      "labelStart": "39",
+      "labelEnd": "39",
+      "words": 72,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "crossed module",
+          "heading": false
+        },
+        {
+          "term": "categorical",
+          "heading": false
+        },
+        {
+          "term": "colon",
+          "heading": false
+        }
+      ],
+      "extract": "Let ${\\Gc=(\\d\\colon E \\to G,\\tr)}$ be a Lie crossed module, and let ${\\mathfrak{G}=(\\d \\colon \\le \\to \\lg,\\tr )}$ be the associated differential crossed module. Fix a smooth manifold $M$ and a smooth principal $G$-bundle $P \\to M$, with a connection $\\w \\in \\A^1(P,\\lg)$, as well as a $\\Gc$-categorical connection $(\\w,m)$. The aim of this subsection is to define the categorical holonomy of a 2-sphere $\\Sigma$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-the-dependence-of-a-categorical-connection-holon",
+      "number": null,
+      "title": "The dependence of a categorical connection holonomy on the elements of the fibre",
+      "level": 3,
+      "pageStart": 39,
+      "pageEnd": 40,
+      "labelStart": "39",
+      "labelEnd": "40",
+      "words": 414,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fibre",
+          "heading": true
+        },
+        {
+          "term": "int left",
+          "heading": false
+        },
+        {
+          "term": "mathcal",
+          "heading": false
+        },
+        {
+          "term": "frac",
+          "heading": false
+        },
+        {
+          "term": "ending",
+          "heading": false
+        },
+        {
+          "term": "big",
+          "heading": false
+        },
+        {
+          "term": "right",
+          "heading": false
+        }
+      ],
+      "extract": "Choose $u,v \\in P$. We want to relate $F_{(\\w,m,u)}$ with $F_{(\\w,m,v)}$. Suppose first that $u,v$ each belong to the fibre $P_x$ of $P$ at a certain point $x\\in M$. Let $g\\in G$ be the unique element such that $u=vg$. Let $\\g$ be a 1-path of $M$ starting and ending at $x$. Then ${\\mathcal{H}}_\\w(\\g,1,u)={\\mathcal{H}}_\\w(\\g,1,vg)={\\mathcal{H}}_\\w(\\g,1,v)g$. Therefore since $\\mathcal{H}_\\w(\\g,1,u)F_{(\\w,u)}^1(\\g)=u$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-the-dependence-of-a-categorical-connection-holon",
+      "number": null,
+      "title": "The dependence of a categorical connection holonomy on the point in the principal bundle",
+      "level": 3,
+      "pageStart": 40,
+      "pageEnd": 41,
+      "labelStart": "40",
+      "labelEnd": "41",
+      "words": 342,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circ",
+          "heading": false
+        },
+        {
+          "term": "categorical",
+          "heading": true
+        },
+        {
+          "term": "int left",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        },
+        {
+          "term": "end aligned",
+          "heading": false
+        },
+        {
+          "term": "forall",
+          "heading": false
+        }
+      ],
+      "extract": "Let ${\\Gc=(\\d\\colon E \\to G,\\tr)}$ be a Lie crossed module. Fix a smooth manifold $M$, and a smooth principal $G$-bundle $P \\to M$ with a connection $\\w \\in \\A^1(P,\\lg)$. Let $(\\w,m)$ be a $\\Gc$-categorical connection on $P$. Let $x,y\\in M$. Choose $v \\in P_y$. Let $\\n$ be a 1-path connecting $y$ with $x$. This curve $\\n$ defines a categorical group isomorphism $T_\\n\\colon \\Pc_2(M,y) \\to \\Pc_2(M,x)$ in the obvious",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-associating-2-holonomies-to-embedded-spheres",
+      "number": null,
+      "title": "Associating 2-holonomies to embedded spheres",
+      "level": 3,
+      "pageStart": 41,
+      "pageEnd": 43,
+      "labelStart": "41",
+      "labelEnd": null,
+      "words": 750,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "categorical holonomy",
+          "heading": false
+        },
+        {
+          "term": "preserving parametrisation",
+          "heading": false
+        },
+        {
+          "term": "sigma subset",
+          "heading": false
+        },
+        {
+          "term": "asd",
+          "heading": false
+        },
+        {
+          "term": "orientation preserving",
+          "heading": false
+        },
+        {
+          "term": "embedded",
+          "heading": true
+        },
+        {
+          "term": "aligned frac",
+          "heading": false
+        },
+        {
+          "term": "wilson sphere",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#WS label=\"WS\"} Let ${\\Gc=(\\d\\colon E \\to G,\\tr)}$ be a Lie crossed module. Let $M$ be a smooth manifold. Consider a principal $G$-bundle $P$ over $M$ with a $\\Gc$-categorical connection $(\\w,m)$. Consider an embedded oriented 2-sphere $\\Sigma\\subset M$. We want to define the categorical holonomy of $\\Sigma$, which we call a *Wilson Sphere*, by analogy with Wilson loops, familiar in gauge theory. ::: Definition",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-appendix-technical-lemmas",
+      "number": null,
+      "title": "Appendix: Technical Lemmas",
+      "level": 1,
+      "pageStart": 43,
+      "pageEnd": 46,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1744,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "handle decomposition",
+          "heading": false
+        },
+        {
+          "term": "ambient isotopy",
+          "heading": false
+        },
+        {
+          "term": "dual handle",
+          "heading": false
+        },
+        {
+          "term": "exists handle",
+          "heading": false
+        },
+        {
+          "term": "diﬀ erentielle",
+          "heading": false
+        },
+        {
+          "term": "categ",
+          "heading": false
+        },
+        {
+          "term": "graduate texts",
+          "heading": false
+        },
+        {
+          "term": "smooth map",
+          "heading": false
+        }
+      ],
+      "extract": "Appendix: Technical Lemmas The following lemmas provide the foundation for the construction of the 2- category S2(M), deﬁned for any smooth manifold M. Speciﬁcally, lemma 52 is used to prove that the vertical composition of 2-tracks is well deﬁned; see 1.3.3. Lemma 51 Let M be a smooth manifold. Let f : S2 →M be a smooth map. Consider a handle decomposition H of M. Let Hi be the i-skeleton of H; in other words Hi is",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 2,
+        "items": [
+          "1 The 2-form m is G-equivariant. In other words we have R∗",
+          "2.4 Categorical connections and categorical connection holonomies"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "smooth crossed",
+      "heading": true
+    },
+    {
+      "term": "let colon",
+      "heading": false
+    },
+    {
+      "term": "crossed module",
+      "heading": true
+    },
+    {
+      "term": "lie crossed",
+      "heading": false
+    },
+    {
+      "term": "map colon",
+      "heading": false
+    },
+    {
+      "term": "categorical connection",
+      "heading": true
+    },
+    {
+      "term": "path colon",
+      "heading": false
+    },
+    {
+      "term": "smooth principal",
+      "heading": false
+    },
+    {
+      "term": "differential crossed",
+      "heading": false
+    },
+    {
+      "term": "doteq colon",
+      "heading": false
+    },
+    {
+      "term": "categorical holonomy",
+      "heading": true
+    },
+    {
+      "term": "maps colon",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 37,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 38,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p43); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 38 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0710.4310v2"
+  }
+}

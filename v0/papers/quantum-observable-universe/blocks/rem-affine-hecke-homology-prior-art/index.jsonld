@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-affine-hecke-homology-prior-art",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:affine-hecke-homology-prior-art",
+  "kind": "remark",
+  "title": "Prior art: Hochschild homology of affine Hecke algebras is independent of $q$",
+  "interprets": "papers/quantum-observable-universe/blocks/rem-markov-trace-inductive-limit",
+  "cites": [
+    "references/solleveld2022",
+    "references/solleveld2013"
+  ],
+  "tags": [
+    "affine-hecke-algebra",
+    "hochschild-homology",
+    "trace",
+    "inductive-limit",
+    "prior-art"
+  ],
+  "text": "affine-hecke-homology-prior-art.md",
+  "provenance": "authored"
+}

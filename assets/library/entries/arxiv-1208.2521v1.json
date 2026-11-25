@@ -1,0 +1,556 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1208.2521v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "arXiv:1208.2521v1  [math.CA]  13 Aug 2012\nON q-ANALOGUES OF THE FOURIER\nAND HANKEL TRANSFORMS\nTOM H. KOORNWINDER and REN´E F. SWARTTOUW\nAbstract. For the third q-Bessel function (ﬁrst introduced by F. H. Jackson, later\nrediscovered by W. Hahn in a special case and by H. Exton) we derive Hansen-\nLommel type orthogonality relations, which, by a symmetry, turn out to be equivalent\nto orthogonality relations which are q-analogues of the Hankel integral transform pair.\nThese results are implicit, in the context of quantum groups, in a paper by Vaksman\nand Korogodski˘ı. As a specialization we get q-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "2\nTOM H. KOORNWINDER AND REN´E F. SWARTTOUW\nwhere the q-shifted factorials are deﬁned by\n(1.3)\n(a; q)k :=\nk−1\nY\nj=0\n(1 −aqj),\nk = 1, 2, . . .;\n(a; q)0 := 1;\n(a; q)∞:= lim\nk→∞(a; q)k,\n|q| < 1.\nHahn [8] considered the case α = 0 of (1.2). They obtained these functions as\nthe solutions of a special basic Sturm-Liouville equation, by which they could also\nderive the following q-analogue of the Fourier-Bessel orthogonality relations:\nZ 1\n0\nxα Cα(q; µiqx) Cα(q; µjqx) dqx = 0,\ni̸ = j,\nα > −1,\nwhere µ1, µ2, . . . are the roots of the equation Cα(q; µ) = 0, and where the q-integral\nis deﬁned by\nZ 1\n0\nf",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "ON q-ANALOGUES OF THE FOURIER AND HANKEL TRANSFORMS\n3\nare q-analogues of the exponential function (cf. Gasper and Rahman [6, (1.3.15),\n(1.3.16)]).\nRecently, Vaksman and Korogodski˘ı [14] gave an interpretation of the q-Bessel\nfunctions (1.2) as matrix elements of irreducible representations of the quantum\ngroup of plane motions. Their paper, which does not contain proofs, implicitly\ncontains some new orthogonality relations for the functions (1.2). In particular,\nthe unitariness of the representations implies a q-analogue of the Hansen-Lommel\northogonality relations\n(1.8)\nδnm =\n∞\nX\nk=−∞\nJk+n(x",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "4\nTOM H. KOORNWINDER AND REN´E F. SWARTTOUW\nOur motivation is that (i) the rφs notation is fairly well known nowadays and clari-\nﬁes the position of these q-Bessel functions among other q-hypergeometric functions;\n(ii) q-analysis should not depend too much on the q = 1 case, so scaling factors\nmaking the limit transition q ↑1 easy should not be hidden in the deﬁnitions of\nq-special functions; and (iii) the classical deﬁnition (1.1) of Bessel functions is very\nnatural in the context of the generating function (1.4) and for analysis concentrat-\ning on J0, but it is less fortunate when the focus",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/prop-page-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "prop-page-005-01.md",
+      "narrative": null,
+      "content": "The series in (2.2) deﬁnes an entire analytic function in z, w, which is also symmetric in z, w: (2.3) (w; q)∞1φ1(0; w; q, z) = (z; q)∞1φ1(0; z; q, w). Both sides can be majorized by (2.4) (−|z|; q)∞(−|w|; q)∞.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "ON q-ANALOGUES OF THE FOURIER AND HANKEL TRANSFORMS\n5\nand the q-exponential functions (1.6), (1.7) can be written as 1φ0(0; −; q, z) and\n0φ0(−; −; q, −z), respectively.\nOur object will be the Hahn-Exton q-Bessel function written as the q-hypergeometric\nseries (1.10). It is well-deﬁned for z, w ∈C with w outside {1, q−1, q−2, . . .}. These\nsingularities can be removed by multiplication by (w; q)∞:\n(2.2)\n(w; q)∞1φ1(0; w; q, z) =\n∞\nX\nk=0\n(−1)k qk(k−1)/2 (qkw; q)∞zk\n(q; q)k\n.\nProposition 2.1. The series in (2.2) deﬁnes an entire analytic function in z, w,\nwhich is also symmetric in z, w:\n(2.3)\n(w;",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/rem-page-005-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "rem-page-005-02.md",
+      "narrative": null,
+      "content": "Formula (2.3) is a limit case of Heine’s transformation formula (2.5) 2φ1 \u0014a, b c ; q, z \u0015 = (b, az; q)∞ (c, z; q)∞ 2φ1 \u0014c/b, z az ; q, b \u0015 (cf. [6, (1.4.1)]). Indeed, ﬁrst let b →0, then replace z by z/a and let a →∞. At least formally, by termwise limits, we obtain (2.3).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/prop-page-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "prop-page-006-01.md",
+      "narrative": null,
+      "content": "For z, t ∈C such that 0 < |t| < |z|−1 there is the absolutely convergent expansion eq(tz) Eq(−t−1z) = (t−1z; q)∞ (tz; q)∞ = ∞ X n=−∞ tn zn (qn+1; q)∞ (q; q)∞ 1φ1(0; qn+1; q, z2) (2.7) = ∞ X n=−∞ tn zn (z2; q)∞ (q; q)∞ 1φ1(0; z2; q, qn+1). (2.8)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "6\nTOM H. KOORNWINDER AND REN´E F. SWARTTOUW\nRemark 2.4. Because of (2.6), the behaviour of the two equal sides of (2.3) as\n|w| →∞(cf. (2.4)) drastically improves when w runs over the values q1−n, n =\n1, 2, . . .. For such w we can majorize these expressions by\nqn(n−1)/2 |z|n (−|z|; q)∞(−q; q)∞.\nWe will now restate Exton’s generating function (1.5) in terms of the notation\n(2.2), and also give the short proof, for reasons of completeness.\nProposition 2.5. For z, t ∈C such that 0 < |t| < |z|−1 there is the absolutely\nconvergent expansion\neq(tz) Eq(−t−1z) = (t−1z; q)∞\n(tz; q)∞\n=\n∞\nX\nn=−∞\ntn zn (q",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/prop-page-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "prop-page-007-01.md",
+      "narrative": null,
+      "content": "For |z| < 1 and n, m ∈Z we have (2.10) ∞ X k=−∞ zk+n (qn+k+1; q)∞ (q; q)∞ 1φ1(0; qn+k+1; q, z2) × zk+m (qm+k+1; q)∞ (q; q)∞ 1φ1(0; qm+k+1; q, z2) = δnm and (2.11) ∞ X k=−∞ zk+n (z2; q)∞ (q; q)∞ 1φ1(0; z2; q, qn+k+1) × zk+m (z2; q)∞ (q; q)∞ 1φ1(0; z2; q, qm+k+1) = δnm, where the sums at the left-hand sides are absolutely convergent, uniformly on com- pact subsets of the open unit disk. Formula (2.11) follows from (2.10) by the symmetry (2.3). In §3 we will show that (2.11) is a q-version of Hankel’s Fourier-Bessel integral (1.9).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "ON q-ANALOGUES OF THE FOURIER AND HANKEL TRANSFORMS\n7\nProposition 2.6. For |z| < 1 and n, m ∈Z we have\n(2.10)\n∞\nX\nk=−∞\nzk+n (qn+k+1; q)∞\n(q; q)∞\n1φ1(0; qn+k+1; q, z2)\n× zk+m (qm+k+1; q)∞\n(q; q)∞\n1φ1(0; qm+k+1; q, z2) = δnm\nand\n(2.11)\n∞\nX\nk=−∞\nzk+n (z2; q)∞\n(q; q)∞\n1φ1(0; z2; q, qn+k+1)\n× zk+m (z2; q)∞\n(q; q)∞\n1φ1(0; z2; q, qm+k+1) = δnm,\nwhere the sums at the left-hand sides are absolutely convergent, uniformly on com-\npact subsets of the open unit disk.\nFormula (2.11) follows from (2.10) by the symmetry (2.3). In §3 we will show\nthat (2.11) is a q-version of Hankel’s Fourier-Bessel integral (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/rem-page-007-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "rem-page-007-02.md",
+      "narrative": null,
+      "content": "Analogous to Proposition 2.5 there are the two generating functions for the q-Bessel functions J(1) α (x; q) and J(2) α (x; q) of Jackson and Ismail [10]: (2.12) eq(tz) eq(−t−1z) = (tz; q)∞(−t−1z; q)∞ = ∞ X n=−∞ tn zn (qn+1; q)∞ (q; q)∞ 2φ1(0, 0; qn+1; q, −z2), |z| < |t| < |z|−1, and (2.13) Eq(tz) Eq(−t−1z) = (−tz; q)∞(t−1z; q)∞ = ∞ X n=−∞ tn zn qn(n−1)/2 (qn+1; q)∞ (q; q)∞ 0φ1(−; qn+1; q, −qn z2). In a way similar to (2.10) we can now derive the biorthogonality relations (2.14) ∞ X k=−∞ zk+n (qn+k+1; q)∞ (q; q)∞ 2φ1(0, 0; qn+k+1; q, −z2) × zk+m q(m+k)(m+k−1)/2 (qm+k+1; q)∞ (q; q)∞ 0φ1(−; qm+k",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "8\nTOM H. KOORNWINDER AND REN´E F. SWARTTOUW\n3. Some limit transitions\nJacobi polynomials tend to Bessel functions:\nP (α,β)\nnN\n(1 −x2/(2N 2))\nP (α,β)\nnN\n(1)\n= 2F1(−nN, nN + α + β + 1; α + 1; x2/(4N 2))\nN→∞\n−−−−→0F1(−; α + 1; −(λx/2)2) = (λx/2)−α Γ(α + 1) Jα(λx),\nwhere nN/N tends to λ for N →∞. When this limit transition is applied to the\nformula which recovers a function from its Fourier-Jacobi coeﬃcients, we obtain,\nat least formally, Hankel’s Fourier-Bessel integral (1.9).\nThe q-analogue of this limit transition starts with the little q-Jacobi polynomials\npn(x; a, b; q) := 2φ1(q−n, abqn+1; aq",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "ON q-ANALOGUES OF THE FOURIER AND HANKEL TRANSFORMS\n9\n(diﬀerent from Rahman’s proposal in [13, (1.13)]) and with the replacement of\nf(qk), g(qn) by qkf(qk), qng(qn) this becomes\n(3.4)\n\n\n\n\n\n\n\n\n\n\n\ng(qn) =\n∞\nX\nk=−∞\nq2k Jα(qk+n; q2) f(qk),\nf(qk) =\n∞\nX\nn=−∞\nq2n Jα(qk+n; q2) g(qn).\nNow observe that\nJα((1 −q)z; q2) = (1 + q)−α zα\nΓq2(α + 1)\n1φ1(0; q2α+2; q2, (1 −q2)2 (qz/(1 + q))2)\nconverges, for q ↑1, to the Bessel function\nJα(z) =\n2−α zα\nΓ(α + 1) 0F1(−; α + 1; −z2/4),\nwhere we used Proposition A.2 and the fact that\n(1 −q2)α (q2α+2; q2)∞\n(q2; q2)∞\n=\n1\nΓq2(α + 1) −→\n1\nΓ(α + 1)\nas q ↑1, cf.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/prose-page-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 10",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/page-010.md",
+      "narrative": null,
+      "content": "10\nTOM H. KOORNWINDER AND REN´E F. SWARTTOUW\nwhich is equivalent to (1.9).\nIn order to ﬁnd the classical formula corresponding to (2.8), we rewrite (2.8) ﬁrst\nin terms of the notation (3.3):\n(qα+1−t; q2)∞\n(qα+1+t; q2)∞\n=\n∞\nX\nn=−∞\nqn qnt Jα(qn; q2),\nℜt > −ℜα −1.\nFor log(1 −q)/ log q ∈Z this can be rewritten as\n(1 + q)t Γq2((α + 1 + t)/2)\nΓq2((α + 1 −t)/2)\n=\nZ ∞\n0\nxt Jα((1 −q)x; q2) dqx.\nFormally, as q ↑1, this yields\n2t Γ((α + 1 + t)/2)\nΓ((α + 1 −t)/2)\n=\nZ ∞\n0\nxt Jα(x) dx,\nwhich formula, valid for −1/2 > ℜt > −ℜα −1, goes back to Weber and Sonine\n(cf. [15, 13.24 (1)]).\n4. A q-analogue of Graf’s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/prop-page-011-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "prop-page-011-01.md",
+      "narrative": null,
+      "content": "For |sxy| < 1 we have (4.5) ∞ X k=−∞ sk yn+k (qn+k+1; q)∞ (q; q)∞ 1φ1(0; qn+k+1; q, y2) xk (qk+1; q)∞ (q; q)∞ 1φ1(0; qk+1; q, x2) =        yn (s−1xy−1; q)n (q; q)n 2φ1 \u0014s−1yx−1, qns−1xy−1 qn+1 ; q, sxy \u0015 if n ≥0, s−nx−n (s−1yx−1; q)−n (q; q)−n 2φ1 \u0014s−1xy−1, q−ns−1yx−1 q−n+1 ; q, sxy \u0015 if n < 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/prose-page-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 11",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/page-011.md",
+      "narrative": null,
+      "content": "ON q-ANALOGUES OF THE FOURIER AND HANKEL TRANSFORMS\n11\nwhere we substituted l = k+n. Since the inner sum in the last part can be expressed\nin terms of a 2φ1 series (depending on the sign of n), we obtain for |sx| < |t| < |y|−1\nthe identity\n(4.2)\n(xs−1t, yt−1; q)∞\n(yt, xst−1; q)∞\n=\n∞\nX\nn=0\ntn yn (s−1xy−1; q)n\n(q; q)n\n2φ1\n\u0014s−1yx−1, qns−1xy−1\nqn+1\n; q, sxy\n\u0015\n+\n−1\nX\nn=−∞\ntns−nx−n (s−1yx−1; q)−n\n(q; q)−n\n2φ1\n\u0014s−1xy−1, q−ns−1yx−1\nq−n+1\n; q, sxy\n\u0015\n.\nWe might have written (4.2) as a sum over n running from −∞to ∞with summand\ngiven for all integer n by the left-hand side of (4.3) below, where, for n <",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/prose-page-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 12",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/page-012.md",
+      "narrative": null,
+      "content": "12\nTOM H. KOORNWINDER AND REN´E F. SWARTTOUW\nFormula (4.5) is a q-analogue of the addition formula\n(4.6)\n∞\nX\nk=−∞\nsk Jn+k(y) Jk(x) =\n\u0012y −s−1x\ny −sx\n\u0013n/2\nJn\n\u0010p\n(y −s−1x)(y −sx)\n\u0011\n,\ndue to Graf (cf. [15, §11.3 (1)]). The special case n = 0 of (4.5) is a q-analogue\nof Neumann’s addition formula for Bessel functions J0 (cf. [15, §11.2 (1)]). In the\nspecial case x = y, s = 1 the right-hand side of (4.5) becomes yn δn,0, so then (4.5)\nreduces to the orthogonality relations (2.10).\nWhen we apply the symmetries (2.5) and (4.3) to the left-hand side of (4.5) and\nalso apply (2.3) to the right-hand side",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/prose-page-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 13",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/page-013.md",
+      "narrative": null,
+      "content": "ON q-ANALOGUES OF THE FOURIER AND HANKEL TRANSFORMS\n13\nrelations (2.11). Inspection of the right-hand side of (4.8) shows that this kernel is\npositive if 0 < z < 1 and 1 < s < min{q−1, z−2}.\nLet us look for the classical analogue of formula (4.7). In (4.7) ﬁrst replace q by\nq2, then x, y, s by qα+1, qβ+1, q−γ−1, respectively. Then, with the notation (3.3),\nformula (4.7) can be rewritten as\n∞\nX\nk=−∞\nqk(−γ+1) Jα(qm+k; q2) Jβ(qn+k; q2)\n=\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nqnβ qm(γ−β−1) (qα−β+γ+1, q2β+2; q2)∞\n(qα+β−γ+1, q2; q2)∞\n× 2φ1(qβ−α−γ+1, qα+β−γ+1; q2β+2; q2, q2n−2m+α−β+γ+1),\nqmα qn(γ−α−1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/prose-page-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 14",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/page-014.md",
+      "narrative": null,
+      "content": "14\nTOM H. KOORNWINDER AND REN´E F. SWARTTOUW\nRemark 4.3. Analogous to (4.2) we have\n(4.9)\n(xs−1t; q)∞(−xst−1; q)∞\n(yt; q)∞(−yt−1; q)∞\n=\n∞\nX\nn=−∞\ntn yn (s−1xy−1, qn+1; q)∞\n(qns−1xy−1, q; q)∞\n× 2φ1\n\u0014qns−1xy−1, sxy−1\nqn+1\n; q, −y2\n\u0015\n,\n|y| < |t| < |y|−1.\nThe case s = 1 of (4.9) goes back to Heine [9, p.121] (see also Hahn [7, §8]). Its\nspecial cases (x, y, s) = (0, z, 1) and (−z, 0, 1) are the formulas (2.12) and (2.13).\nLike (4.2), formula (4.9) is a q-analogue of (1.4) with z and t replaced by 2(y −\ns−1x)1/2(y −sx)1/2 and t(y −s−1x)1/2(y −sx)−1/2, respectively. Similarly to (4.5)\nwe obtain from",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/rem-page-014-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "rem-page-014-01.md",
+      "narrative": null,
+      "content": "Analogous to (4.2) we have (4.9) (xs−1t; q)∞(−xst−1; q)∞ (yt; q)∞(−yt−1; q)∞ = ∞ X n=−∞ tn yn (s−1xy−1, qn+1; q)∞ (qns−1xy−1, q; q)∞ × 2φ1 \u0014qns−1xy−1, sxy−1 qn+1 ; q, −y2 \u0015 , |y| < |t| < |y|−1. The case s = 1 of (4.9) goes back to Heine [9, p.121] (see also Hahn [7, §8]). Its special cases (x, y, s) = (0, z, 1) and (−z, 0, 1) are the formulas (2.12) and (2.13). Like (4.2), formula (4.9) is a q-analogue of (1.4) with z and t replaced by 2(y − s−1x)1/2(y −sx)1/2 and t(y −s−1x)1/2(y −sx)−1/2, respectively. Similarly to (4.5) we obtain from (2.12), (2.13) and (4.9) that, for |y| < 1: (4.10) yn (s−",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/prose-page-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 15",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/page-015.md",
+      "narrative": null,
+      "content": "ON q-ANALOGUES OF THE FOURIER AND HANKEL TRANSFORMS\n15\nHere we have used the notation (3.3).\n(The functions introduced above should\nnot be confused with the functions cosq and sinq considered in [6, Exercise 1.14].)\nClearly we have the formal (termwise) limits\ncos((1 −q)z; q2) −→cos z\nand\nsin((1 −q)z; q2) −→sin z\nas q ↑1. By Proposition A.2 these limit transitions hold pointwise, uniformly on\ncompacta. When we substitute (5.2) or (5.4) in (3.4) and replace f(qk), g(qn) by\nq−k/2f(qk), q−n/2g(qn), we obtain the transform pairs\n(5.5)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ng(qn) = (q; q2)∞\n(q2; q2)∞\n∞\nX\nk=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/prose-page-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 16",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/page-016.md",
+      "narrative": null,
+      "content": "16\nTOM H. KOORNWINDER AND REN´E F. SWARTTOUW\nfor the q-derivative, we obtain from (5.1) and (5.3) that\n(1 −q) Dq,z cos(z; q2) = −q sin(qz; q2),\n(1 −q) Dq,z sin(z; q2) = cos(z; q2).\nHence\n(1 −q)2 (D2\nqf)(q−1z) =\n\u001a −q2 λ2 f(z)\nif f(z) = cos(λz; q2),\n−q λ2 f(z)\nif f(z) = sin(λz; q2).\nSo the two systems of functions z 7→cos(qnz) (n ∈Z) and z 7→sin(qnz) (n ∈Z)\nhave disjoint eigenvalues with respect to the operator which sends f to the function\nz 7→(1 −q)2 (D2\nqf)(q−1z) = q z−2\u0000q f(q−1z) −(1 + q) f(z) + f(qz)\n\u0001\n.\nThis operator has also the selfadjointness property\n∞\nX\nk=−∞\nqk (D2\nqf)(qk−1) g(qk) =\n∞",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/prop-page-017-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "prop-page-017-01.md",
+      "narrative": null,
+      "content": "1. For 0 < a < q−1, 0 ≤b < q−1 we have lim n→∞2φ1(q−n, qn+1ab; qa; q, qnx) = 1φ1(0; qa; q, x), uniformly for x in compact subsets of C.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/prop-page-017-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "prop-page-017-02.md",
+      "narrative": null,
+      "content": "2. For α > −1 we have lim q↑1 1φ1(0; qα+1; q, (1 −q)2z) = 0F1(−; α + 1; −z), uniformly for z in compact subsets of C.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/prose-page-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 17",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/page-017.md",
+      "narrative": null,
+      "content": "ON q-ANALOGUES OF THE FOURIER AND HANKEL TRANSFORMS\n17\nProposition A.1. For 0 < a < q−1, 0 ≤b < q−1 we have\nlim\nn→∞2φ1(q−n, qn+1ab; qa; q, qnx) = 1φ1(0; qa; q, x),\nuniformly for x in compact subsets of C.\nProof. Put\nRn(x) := 2φ1(q−n, qn+1ab; qa; q, qnx) −1φ1(0; qa; q, x)\n=\n∞\nX\nk=1\n(−1)k qk(k−1)/2 xk\n(qa; q)k (q; q)k\n\u0012\n−1 +\nk\nY\nj=1\n(1 −qn−j+1) (1 −qn+jab)\n\u0013\n.\nSince\nk\nY\nj=1\n(1 −xj) ≥1 −\nk\nX\nj=1\nxj\nif\n0 ≤xj ≤1, j = 1, . . ., k,\nwe have\n\f\f\f\f−1 +\nk\nY\nj=1\n(1 −qn−j+1) (1 −qn+jab)\n\f\f\f\f ≤\nk\nX\nj=1\nqn−j+1 +\nk\nX\nj=1\nqn+jab\n≤qn−k+1(1 + ab)\n1 −q\nif k ≤n, while the left-hand side is equal to 1 otherwise. Thu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/prose-page-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 18",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/page-018.md",
+      "narrative": null,
+      "content": "18\nTOM H. KOORNWINDER AND REN´E F. SWARTTOUW\nNow, by [11, Lemma A.1] (read −1 ≤µ −λ instead of 0 ≤µ −λ in the formulation\nof that lemma), we see that\nq(α+j)/2 −q1+(α+j)/2\n1 −q1+α+j\nincreases to (1 + α + j)−1 as q ↑1 if α + j ≥0. So, the expression in (A.1), for\n1/2 < q < 1, is dominated by\n(2α/2|z|)k\n(α + 1)k k!\nif α ≥0\nand by\nconst.\n|z|k\n(α + 1)k k!\nif −1 < α < 0.\nSo the proposition follows by dominated convergence.\n□\nAppendix B. Proof of Propostion 4.2\nFirst observe that u(z) := 2φ1(a, b; c; q, z) (c not a non-positive integer power of\nq) is analytic in z on C outside the set {q−l | l = 0, 1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/lem-page-019-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "lem-page-019-01.md",
+      "narrative": null,
+      "content": "1. Formula (B.3) is valid for integer n if c, qb/a, q/a, qn+1/a, q−nc/b, c/b are not a non-positive integer power of q and a, b, c̸ = 0. Now consider (2.5). Initially this is proved (see [6, (1.4.1)]) for |z|, |b| < 1 and c, az not a non-positive integer power of q. By analytic continuation (2.5) is more generally valid for z, b, c, az not a non-positive integer power of q. Let us turn to the proof of Proposition 4.2. Proceed with (4.5) as written just before Proposition 4.2 and take into account the constraints for (2.5) as just men- tioned. Then we initially obtain, under the assumptions tha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/prose-page-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 19",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/page-019.md",
+      "narrative": null,
+      "content": "ON q-ANALOGUES OF THE FOURIER AND HANKEL TRANSFORMS\n19\nLemma B.1. Formula (B.3) is valid for integer n if c, qb/a, q/a, qn+1/a, q−nc/b, c/b\nare not a non-positive integer power of q and a, b, c̸ = 0.\nNow consider (2.5). Initially this is proved (see [6, (1.4.1)]) for |z|, |b| < 1 and\nc, az not a non-positive integer power of q. By analytic continuation (2.5) is more\ngenerally valid for z, b, c, az not a non-positive integer power of q.\nLet us turn to the proof of Proposition 4.2. Proceed with (4.5) as written just\nbefore Proposition 4.2 and take into account the constraints for (2.5) as just m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.2521v1/blocks/prose-page-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 20",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/page-020.md",
+      "narrative": null,
+      "content": "20\nTOM H. KOORNWINDER AND REN´E F. SWARTTOUW\n13.\n, A note on the orthogonality of Jackson’s q-Bessel functions, Canad. Math. Bull. 32\n(1989), 369–376.\n14. L. L. Vaksman and L. I. Korogodski˘ı, An algebra of bounded functions on the quantum group\nof the motions of the plane and q-analogues of Bessel functions, Soviet Math. Dokl. 39 (1989),\n173–177.\n15. G. N. Watson, Theory of Bessel functions, Cambridge Univ. Press, 1944.\n16. M. E. H. Ismail, D. R. Masson and S. K. Suslov, The q-Bessel function on a q-quadratic grid,\nAlgebraic methods and q-special functions, CRM Proc. Lecture Notes, 22, Amer.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

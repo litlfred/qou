@@ -1,0 +1,1247 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0506456v1",
+  "title": "Asymptotics of the quantum invariants for surgeries on the figure 8 knot",
+  "variant": "pdf",
+  "pages": 70,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The RT-invariant for surgeries on the figure $8$ knot",
+      "number": "2",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-the-rt-invariant-for-surgeries-on-the-figure-8"
+    },
+    {
+      "level": 1,
+      "title": "A complex double contour integral formula for $\\tau_{r}(M_{p/q})$",
+      "number": "3",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-a-complex-double-contour-integral-formula-for"
+    },
+    {
+      "level": 1,
+      "title": "The large $r$ asymptotics of $J'_K(r)$ and $\\tau_{r}(M_{p/q})$",
+      "number": "4",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-the-large-r-asymptotics-of-j-kr-and-tau-rm-pq"
+    },
+    {
+      "level": 2,
+      "title": "Semiclassical asymptotics of the quantum dilogarithm",
+      "number": "4.1",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-41-semiclassical-asymptotics-of-the-quantum-dilo"
+    },
+    {
+      "level": 2,
+      "title": "The large $r$ asymptotics of $J_{K}'(r)$",
+      "number": "4.2",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-42-the-large-r-asymptotics-of-j-kr"
+    },
+    {
+      "level": 2,
+      "title": "The large $r$ asymptotics of $\\tau_{r}(M_{p/q})$",
+      "number": "4.3",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-43-the-large-r-asymptotics-of-tau-rm-pq"
+    },
+    {
+      "level": 1,
+      "title": "Classical Chern--Simons theory on $M_{p/q}$",
+      "number": "5",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-5-classical-chern--simons-theory-on-m-pq"
+    },
+    {
+      "level": 2,
+      "title": "The moduli space of flat $\\mbox{\\rm SU}(2)$--connections on $M_{p/q}$",
+      "number": "5.1",
+      "page": 30,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-51-the-moduli-space-of-flat-mboxrm-su2--connecti"
+    },
+    {
+      "level": 2,
+      "title": "Chern--Simons invariants",
+      "number": "5.2",
+      "page": 35,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-52-chern--simons-invariants"
+    },
+    {
+      "level": 2,
+      "title": "A comparison between Chern--Simons invariants and critical values of the phase functions $\\Phi_{n}^{a,b}$",
+      "number": "5.3",
+      "page": 39,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-53-a-comparison-between-chern--simons-invariants"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 263,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ﬁgure knot",
+          "heading": false
+        },
+        {
+          "term": "chern simons",
+          "heading": false
+        },
+        {
+          "term": "quantum invariants",
+          "heading": false
+        },
+        {
+          "term": "stationary points",
+          "heading": false
+        },
+        {
+          "term": "classical chern",
+          "heading": false
+        },
+        {
+          "term": "aarhus",
+          "heading": false
+        },
+        {
+          "term": "hansen",
+          "heading": false
+        },
+        {
+          "term": "phase functions",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0506456v1 [math.QA] 22 Jun 2005 Journal of Knot Theory and Its Ramiﬁcations c⃝World Scientiﬁc Publishing Company ASYMPTOTICS OF THE QUANTUM INVARIANTS FOR SURGERIES ON THE FIGURE 8 KNOT JØRGEN ELLEGAARD ANDERSEN ∗† Department of Mathematical Sciences University of Aarhus, Building 530, Ny Munkegade, 8000 Aarhus, Denmark andersen@imf.au.dk SØREN KOLD HANSEN Department of Mathematics, Kansas State",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0506456v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3905,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "refconj conj",
+          "heading": false
+        },
+        {
+          "term": "bar rho",
+          "heading": false
+        },
+        {
+          "term": "bar tau",
+          "heading": false
+        },
+        {
+          "term": "aec",
+          "heading": false
+        },
+        {
+          "term": "sigma bar",
+          "heading": false
+        },
+        {
+          "term": "non-degenerate critical",
+          "heading": false
+        },
+        {
+          "term": "refthm thm",
+          "heading": false
+        },
+        {
+          "term": "flat irreducible",
+          "heading": false
+        }
+      ],
+      "extract": "\\noindent In this paper we investigate the large level asymptotics of the Reshetikhin--Turaev invariants of the $3$--manifolds obtained by doing surgery on the figure $8$ knot with an arbitrary rational surgery coefficient. Let $X$ be a closed oriented $3$--manifold and let $\\tau_r(X)$ be the RT--invariant of $X$ associated to $\\frsl_{2}(\\C)$ at level $r$, some integer $\\geq 2$. The investigations of this paper are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-rt-invariant-for-surgeries-on-the-figure-8",
+      "number": "2",
+      "title": "The RT-invariant for surgeries on the figure $8$ knot",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 848,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac sin",
+          "heading": false
+        },
+        {
+          "term": "qsum exp",
+          "heading": false
+        },
+        {
+          "term": "figure knot",
+          "heading": true
+        },
+        {
+          "term": "sin left",
+          "heading": false
+        },
+        {
+          "term": "lambda prod",
+          "heading": false
+        },
+        {
+          "term": "lambda-l",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        }
+      ],
+      "extract": "\\noindent This section is primarily intended to introduce notation. Moreover, we present some preliminary formulas for the colored Jones polynomial of the figure $8$ knot and for the RT--invariants of the $3$--manifolds $M_{p/q}$. Let $t=\\exp(2\\pi \\I /(4r))$, $r$ an integer $\\geq 2$, and let $U_{t}$ be the modular Hopf algebra considered in \\cite[Sec.~8]{[27]}, i.e.\\ $U_{t}$ is a finite-dimensional factor of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-a-complex-double-contour-integral-formula-for",
+      "number": "3",
+      "title": "A complex double contour integral formula for $\\tau_{r}(M_{p/q})$",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 936,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "contour integral",
+          "heading": true
+        },
+        {
+          "term": "reflem lem",
+          "heading": false
+        },
+        {
+          "term": "frac gamma",
+          "heading": false
+        },
+        {
+          "term": "dte right",
+          "heading": false
+        },
+        {
+          "term": "frac x-xy",
+          "heading": false
+        },
+        {
+          "term": "prod frac",
+          "heading": false
+        },
+        {
+          "term": "prod left",
+          "heading": false
+        },
+        {
+          "term": "frac int",
+          "heading": false
+        }
+      ],
+      "extract": "\\noindent In this section we derive a complex double contour integral formula for the RT--invariants $\\tau_{r}(M_{p/q})$ by using methods similar to Kashaev \\cite{[14]}. When we consider the expression for the summand in the multi sum (\\ref{eq:inv2}), we see that the expression as it stands only makes sense for non-negative integers $m$. In order to make sense of this expression for arbitrary complex values for $m$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-the-large-r-asymptotics-of-j-kr-and-tau-rm-pq",
+      "number": "4",
+      "title": "The large $r$ asymptotics of $J'_K(r)$ and $\\tau_{r}(M_{p/q})$",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 78,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "asymptotics",
+          "heading": true
+        },
+        {
+          "term": "tau",
+          "heading": true
+        },
+        {
+          "term": "saddle point",
+          "heading": false
+        }
+      ],
+      "extract": "\\noindent In this section we investigate the large $r$ asymptotics of $\\tau_{r}(M_{p/q})$ or more precisely the leading term of this asymptotics, using the saddle point method. We begin by calculating the large $r$ asymptotics of $J_{K}'(r)$ using the expression (\\ref{eq:contourfigure8}). This calculation will demonstrate the use of the saddle point method and will serve as a warm up for the more difficult",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-41-semiclassical-asymptotics-of-the-quantum-dilo",
+      "number": "4.1",
+      "title": "Semiclassical asymptotics of the quantum dilogarithm",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 312,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zeta sinh",
+          "heading": false
+        },
+        {
+          "term": "frac zeta",
+          "heading": false
+        },
+        {
+          "term": "dte end",
+          "heading": false
+        },
+        {
+          "term": "frac gamma",
+          "heading": false
+        },
+        {
+          "term": "rea",
+          "heading": false
+        },
+        {
+          "term": "frac int",
+          "heading": false
+        },
+        {
+          "term": "ima",
+          "heading": false
+        },
+        {
+          "term": "dilogarithm",
+          "heading": true
+        }
+      ],
+      "extract": "\\noindent It is well-known that the semiclassical asymptotics, i.e.\\ the small $\\gamma$ asymptotics of the quantum dilogarithm $S_\\gamma$, is given by Euler's dilogarithm \\begin{equation}\\label{eq:dilog} \\Li_{2}(z) = -\\int_{0}^{z} \\frac{\\Log (1-w)}{w} \\dte w \\end{equation} for $z \\in \\C \\sm ]1,\\infty[$. Here and elsewhere $\\Log$ denotes the principal logarithm. For $\\zeta \\in \\C$ satisfying either $\\rea(\\zeta) = \\pm",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-42-the-large-r-asymptotics-of-j-kr",
+      "number": "4.2",
+      "title": "The large $r$ asymptotics of $J_{K}'(r)$",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1196,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "erφ",
+          "heading": false
+        },
+        {
+          "term": "πrx",
+          "heading": false
+        },
+        {
+          "term": "e2π",
+          "heading": false
+        },
+        {
+          "term": "asymptotics",
+          "heading": true
+        },
+        {
+          "term": "πvol",
+          "heading": false
+        },
+        {
+          "term": "real axis",
+          "heading": false
+        },
+        {
+          "term": "real axes",
+          "heading": false
+        },
+        {
+          "term": "tan",
+          "heading": false
+        }
+      ],
+      "extract": "K(r) We calculate the leading term of the large r asymptotics of J′ K(r), using the saddle point method like Kashaev [14]. Our calculation supplements the calculation of Kashaev with the required analytic error estimates. Let C2 r = C(ε) = [ √ −1 + ε, − √ −1 + ε] + [− √ −1 + ε, 1 −ε − √ −1] +[1 −ε − √ −1, 1 −ε + √ −1] + [1 −ε + √ −1, ε + √ −1], where ε ∈]0, 1 4r[. We let C+(ε) be the part of the contour C(ε) above",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-43-the-large-r-asymptotics-of-tau-rm-pq",
+      "number": "4.3",
+      "title": "The large $r$ asymptotics of $\\tau_{r}(M_{p/q})$",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4594,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dte int",
+          "heading": false
+        },
+        {
+          "term": "dte right",
+          "heading": false
+        },
+        {
+          "term": "ima left",
+          "heading": false
+        },
+        {
+          "term": "vep",
+          "heading": false
+        },
+        {
+          "term": "vee ima",
+          "heading": false
+        },
+        {
+          "term": "eqnarray bar",
+          "heading": false
+        },
+        {
+          "term": "stationary points",
+          "heading": false
+        },
+        {
+          "term": "rea",
+          "heading": false
+        }
+      ],
+      "extract": "\\noindent We calculate the leading term of the large $r$ asymptotics of $J_{K}'(r)$, using the saddle point method like Kashaev \\cite{[14]}. Our calculation supplements the calculation of Kashaev with the required analytic error estimates. Let \\begin{eqnarray*} C_{r}^{2} = C(\\vep) &=& [\\I+\\vep,-\\I+\\vep] + [-\\I+\\vep,1-\\vep-\\I] \\\\ && + [1-\\vep-\\I,1-\\vep+\\I] + [1-\\vep+\\I,\\vep+\\I], \\end{eqnarray*} where $\\vep \\in ]0,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-5-classical-chern--simons-theory-on-m-pq",
+      "number": "5",
+      "title": "Classical Chern--Simons theory on $M_{p/q}$",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 237,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chern--simons theory",
+          "heading": true
+        },
+        {
+          "term": "chern--simons functional",
+          "heading": false
+        },
+        {
+          "term": "refthm thm",
+          "heading": false
+        },
+        {
+          "term": "classical",
+          "heading": true
+        },
+        {
+          "term": "connections",
+          "heading": false
+        },
+        {
+          "term": "representations correspond",
+          "heading": false
+        }
+      ],
+      "extract": "\\noindent In this section we will describe the classical theory, that is the classical Chern--Simons theory on the manifolds $M_{p/q}$. The $\\SU(2)$ Chern--Simons functional is a map with values in $\\R/\\Z$ defined on the set $\\mA$ of gauge equivalence classes of connections in a principal $\\SU(2)$ bundle on $M_{p/q}$ (all such bundles being trivializable). Inside $\\mA$ sits the moduli space $\\mM_{p/q}$ of flat",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-51-the-moduli-space-of-flat-mboxrm-su2--connecti",
+      "number": "5.1",
+      "title": "The moduli space of flat $\\mbox{\\rm SU}(2)$--connections on $M_{p/q}$",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 35,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2261,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rho theta",
+          "heading": false
+        },
+        {
+          "term": "vep",
+          "heading": false
+        },
+        {
+          "term": "tilde rho",
+          "heading": false
+        },
+        {
+          "term": "theta right",
+          "heading": false
+        },
+        {
+          "term": "bar rho",
+          "heading": false
+        },
+        {
+          "term": "assignment rho",
+          "heading": false
+        },
+        {
+          "term": "phi psi",
+          "heading": false
+        },
+        {
+          "term": "representation rho",
+          "heading": false
+        }
+      ],
+      "extract": "\\noindent In the following $\\pi=\\pi_{1}\\left( S^{3} \\sm \\nbd (K) \\right)$ denotes the knot group of the figure $8$ knot. We have a presentation \\begin{equation}\\label{eq:pi} \\pi = \\la \\, x,y\\, | wx=yw \\,\\ra, \\end{equation} where $w=[x^{-1},y]$, and where $\\mu=x$ and $\\lambda=yx^{-1}y^{-1}x^{2}y^{-1}x^{-1}y$ are the elements of $\\pi$ corresponding to the meridian and the preferred longitude of $K$. The $\\SL(2,\\C)$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-52-chern--simons-invariants",
+      "number": "5.2",
+      "title": "Chern--Simons invariants",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 39,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1690,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "beta vep",
+          "heading": false
+        },
+        {
+          "term": "chern--simons invariants",
+          "heading": true
+        },
+        {
+          "term": "dte pmod",
+          "heading": false
+        },
+        {
+          "term": "vep extends",
+          "heading": false
+        },
+        {
+          "term": "theta beta",
+          "heading": false
+        },
+        {
+          "term": "dte frac",
+          "heading": false
+        },
+        {
+          "term": "rho theta",
+          "heading": false
+        },
+        {
+          "term": "refprop prop",
+          "heading": false
+        }
+      ],
+      "extract": "\\noindent We begin by recalling formulas from \\cite{[18]} for the Chern--Simons invariants of the flat $\\SU(2)$--connections on $M_{p/q}$. The basic tool will be \\refthm{thm:KK} below due to P.\\ A.\\ Kirk and E.\\ P.\\ Klassen. Let $M$ be a closed oriented $3$--manifold with a knot $K$ in its interior and let $X$ be the complement of a tubular neighborhood of $K$ in $M$. Moreover, let $\\mu$ be a meridian of $K$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-53-a-comparison-between-chern--simons-invariants",
+      "number": "5.3",
+      "title": "A comparison between Chern--Simons invariants and critical values of the phase functions $\\Phi_{n}^{a,b}$",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 70,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 11240,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "πrt erφ",
+          "heading": false
+        },
+        {
+          "term": "log e2πi",
+          "heading": false
+        },
+        {
+          "term": "phase functions",
+          "heading": true
+        },
+        {
+          "term": "critical",
+          "heading": true
+        },
+        {
+          "term": "chern simons",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure knot",
+          "heading": false
+        },
+        {
+          "term": "simons invariants",
+          "heading": false
+        },
+        {
+          "term": "e4πiθ",
+          "heading": false
+        }
+      ],
+      "extract": "of the phase functions Φa,b n The purpose of this section is to combine the Chern–Simons theory described in the previous two sections with the asymptotic analysis in Sec. 4.3. First we will describe a correspondence between the critical points of the phase functions Φa,b n in (4.36) and the nonabelian SL(2, C)–representations of π1(Mp/q). Thereafter we will show that the set of Chern–Simons invariants of ﬂat",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "dte frac",
+      "heading": false
+    },
+    {
+      "term": "dte right",
+      "heading": false
+    },
+    {
+      "term": "beta vep",
+      "heading": false
+    },
+    {
+      "term": "dte end",
+      "heading": false
+    },
+    {
+      "term": "rea left",
+      "heading": false
+    },
+    {
+      "term": "dte int",
+      "heading": false
+    },
+    {
+      "term": "ima left",
+      "heading": false
+    },
+    {
+      "term": "frac gamma",
+      "heading": false
+    },
+    {
+      "term": "vep extends",
+      "heading": false
+    },
+    {
+      "term": "rho frac",
+      "heading": false
+    },
+    {
+      "term": "eqnarray bar",
+      "heading": false
+    },
+    {
+      "term": "frac sin",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 53,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 54,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 55,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 56,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 57,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 58,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 59,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 60,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 61,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 62,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 63,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 64,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 65,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 66,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 67,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 68,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 69,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 70,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0506456v1"
+  }
+}

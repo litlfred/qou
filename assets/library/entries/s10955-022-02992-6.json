@@ -1,0 +1,811 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "s10955-022-02992-6",
+  "blocks": [
+    {
+      "id": "library/s10955-022-02992-6/blocks/lem-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "lem-sec-002-01.md",
+      "narrative": null,
+      "content": "better sufﬁcient conditions can provide reﬁnements of the latter (see, e.g., [2]). In 2008, Fernández and Procacci proved a new sufﬁcient criterion in the setup of abstract polymers improving on the result by Kotecký and Preiss. The initial proof [8] relies on combinatorial arguments, an alternative proof via an induction à la Dobrushin [10] appeared recently (ﬁnally, in this paper we provide an analytical proof in the spirit of Gruber–Kunz). Overall, in the last two decades, a notable effort was made to generalize classical suf- ﬁcient conditions in the abstract polymer setup (including the c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cluster Expansions: Necessary and Sufficient Convergence Conditions",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-cluster-expansions-necessary-and-sufficient-conv.md",
+      "narrative": null,
+      "content": "Conditions\nSabine Jansen1,2 · Leonid Kolesnikov1\nReceived: 16 January 2022 / Accepted: 12 September 2022 / Published online: 24 September 2022\n© The Author(s) 2022",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Abstract",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-001-abstract.md",
+      "narrative": null,
+      "content": "We prove a new convergence condition for the activity expansion of correlation functions\nin equilibrium statistical mechanics with possibly negative pair potentials. For non-negative\npair potentials, the criterion is an if and only if condition. The condition is formulated with a\nsign-ﬂipped Kirkwood–Salsburg operator and known conditions such as Kotecký–Preiss and\nFernández–Procacci are easily recovered. In addition, we deduce new sufﬁcient convergence\nconditions for hard-core systems in Rd and Zd as well as for abstract polymer systems. The\nlatter improves on the Fernández–Procacci criterion",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-1-introduction.md",
+      "narrative": null,
+      "content": "Since its introduction by Mayer in the early 40s, the method of cluster expansions was—and\nremains—a very important tool in equilibrium statistical mechanics. A classical application\nyields the analyticity of the logarithm of the partition function for a physical system at\nequilibrium by deriving a Taylor expansion in the activity or density parameter around zero.\nSuch results can be quite useful, for example, in the study of phase transitions or the decay\nof correlations, for a vast class of models.\nIn 1971, Gruber and Kunz introduced in their seminal paper [12] systems of non-\noverlapping ge",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Journal of Statistical Physics (2022) 189:33\nhttps://doi.org/10.1007/s10955-022-02992-6",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main Results",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-2-main-results.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(Locally) Stable Pair Potentials",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-21-locally-stable-pair-potentials.md",
+      "narrative": null,
+      "content": "Let (X, X) be a measurable space, λ a σ-ﬁnite reference measure, and v a pair potential, i.e.,\nv : X × X →R ∪{∞} is measurable and symmetric—in the sense that v(x, y) = v(y, x)\nfor any x, y ∈X. Corresponding to the potential v, Mayer’s f function is given by\nf (x, y) = e−v(x,y) −1.\nWe call the pair potential v stable if there exists a measurable map B : X →R+ such\nthat for any n ∈N and x1, . . . , xn ∈X\n\u0002\n1≤i< j≤n\n(1 + f (xi, x j)) ≤e\n\u0003n\nk=1 B(xk)\n(2.1)\nholds; we call v locally stable or Penrose stable (due to O. Penrose, see [23]) if there exists\na measurable map C : X →R+ such that for any x",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/rem-sec-004-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "rem-sec-004-01.md",
+      "narrative": null,
+      "content": "We formulate this theorem—as well as the following results—for non-negative activities, mainly for the purpose of notational convenience. Naturally, such conditions for absolute convergence can be formulated in the usual framework of complex analysis by exchanging complex activities z with |z| in the convergence criteria. We prove the theorem in Subsect. 3.2. The known sufﬁcient convergence conditions of Kotecký–Preiss and Fernández–Procacci types are easily recovered from Theorem 2.1. We start with the Kotecký–Preiss type criterion [18], as extended to soft-core and continuum systems by Uelts",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/rem-sec-004-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "rem-sec-004-02.md",
+      "narrative": null,
+      "content": "We see that Theorem 2.1 provides a mechanism to prove sufﬁcient conditions for absolute convergence—by constructing a sequence of ansatz functions ξ tailored to satisfy the Kirkwood–Salsburg inequalities under the given condition. Conversely, given an appropriate sequence of ansatz functions ξ, obtained, for example, as an approximation of ρ, one can try to determine the corresponding sufﬁcient condition for convergence.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/ex-sec-005-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "ex-sec-005-02.md",
+      "narrative": null,
+      "content": "Consider non-overlapping (hard-core interactions) cubes on Z2 of side-length 2 with translationally invariant activity z. The sufﬁcient condition on z for the absolute convergence of ρ(z) given by the Fernández–Procacci criterion provides the bound z ≤max μ≥0 μ 1 + 9μ + 16μ2 + 8μ3 + μ4 ≈0.057271, while our condition from Proposition 2.4 provides z ≤max μ≥0 μe9μ 1 + 9e9μμ + (6e15μ + 8e16μ + 2e17μ)μ2 + 8e21μμ3 + e25μμ4 ≈0.060833. Cluster Expansions: Necessary... Page 11 of 47 This corresponds to an improvement of approximately 6%.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Abstract Polymer Models",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-005-22-abstract-polymer-models.md",
+      "narrative": null,
+      "content": "In the following we want to consider the setup of abstract polymers [1, 8], in which the\ntwo classical conditions above—Kotecký–Preiss and Fernández–Procacci—were ﬁrst intro-\nduced.\nLet X be a countable set (the set of polymers), let X be the powerset of X and let λ\nsimply be given by the counting measure. Moreover, let R ⊂X × X be a symmetric and\nreﬂexive relation. We write x ≁y for (x, y) ∈R (and say that x and y are incompatible)\nand x ∼y for (x, y) /∈R (and say that x and y are compatible). Moreover, we call a subset\nX ⊂X compatible if x ∼y for all x̸ = y ∈X and write X ∼z for z ∈X if z ∼x",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/rem-sec-005-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "rem-sec-005-01.md",
+      "narrative": null,
+      "content": "The general idea behind the proof of Proposition 2.4 is to argue as in the proofs of the classical conditions presented in the previous section (Corollaries 2.2 and 2.3)—but to choose a sequence of ansatz functions ξ which, heuristically speaking, encode more of the structure of the exact solution to the Kirkwood–Salsburg equations (i.e., of the activity expansions ρ) than the ansatz functions chosen in the proof of those corollaries. The intuition thereby is that “less multiplicative” ansatz functions ξ provide better convergence criteria.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hard-Core Systems in the Continuum",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-23-hard-core-systems-in-the-continuum.md",
+      "narrative": null,
+      "content": "Let K ′ be the collection of non-empty compact subsets of Rd, equipped with the Hausdorff\ndistance and Borel σ-algebra [19, Chapter I-4], and X ⊂K ′ a non-empty measurable subset.\nHere we want to additionally assume that X consists of bounded convex sets that are non-\nempty and regular closed, i.e., that are equal to the closure of its non-empty interior. Notice\nthat such sets are compact and have ﬁnite positive Lebesgue measure that is equal to the\nLebesgue measure of their interior. In practice X will consist of easily described subsets. For\nexample, when dealing with closed balls Br(x) ⊂Rd",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/cor-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "cor-sec-007-02.md",
+      "narrative": null,
+      "content": "Let (z(X))X∈X be a non-negative activity. Suppose there exists some α ≥0 such that for all x ∈Zd, \u0006 Y∋x z(Y) eα|Y| ≤eα −1. (2.20) Then T (D; z) is absolutely convergent, for all ﬁnite subsets D ⊂Zd. Proof Set a(D) := α|D|, where α > 0 satisﬁes the inequality from (2.20). Because of the additivity of a(·), we have a(D∪Y) = a(D)+a(Y) for all ﬁnite, disjoint subsets D, Y ⊂Zd. Therefore condition (2.18) becomes \u0006 Y∋x: Y∩D=∅ z(Y) ea(Y) ≤ea({x}) −1, which depends on D only through the constraint Y ∩D̸ = ∅on the left-hand side. By the non-negativity of the activity z, it is clearly sufﬁcient that \u0006 Y",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Subset Polymers",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-007-24-subset-polymers.md",
+      "narrative": null,
+      "content": "and assume that there is a designated collection Eε of bounded Borel sets in Rd, each of\nwhich is contained in some open ball of radius ε, and a chopping map\nC : X →P(Eε),\nX \u0012→C(X)\nsuch that for every X ∈X, C(X) = {E1, . . . , Em} with m ∈N and E1, . . . , Em a set partition\nof X. We additionally want to assume that the topological boundary of every snippet is a\nλ-null set, i.e., λ(E\\E◦) = 0 for all E ∈Eε (where E denotes the topological closure and\nE◦the interior of E).\nLet Dε be the set of bounded domains D ⊂Rd that can be written as the union of ﬁnitely\nmany disjoint snippets. The empty set",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/thm-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "thm-sec-007-01.md",
+      "narrative": null,
+      "content": "Let (z(X))X∈X be a non-negative activity. The following two conditions are equivalent: Cluster Expansions: Necessary... Page 13 of 47 (i) There exists a function a(·) from the ﬁnite subsets of Zd to [0, ∞) such that a(∅) = 0 and the following system of inequalities is satisﬁed: For all ﬁnite, non-empty subsets D ⊂Zd there exists an x ∈D such that—setting D′ := D\\{x}—we have \u0006 Y∈X: Y∋x, Y∩D′=∅ z(Y)ea(D′∪Y)−a(D′) ≤ea(D′∪{x})−a(D′) −1. (2.18) (ii) T (D; z) is absolutely convergent for all ﬁnite subsets D ⊂Zd. Moreover, if one of the equivalent conditions (hence, both) holds true, then, for all ﬁn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/thm-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "thm-sec-007-03.md",
+      "narrative": null,
+      "content": "If z(·) is a non-negative activity and T (D; z) is absolutely convergent for all ﬁnite subsets D ⊂Zd, then necessarily \u0006 Y∋x z(Y)eV (Y) < ∞ for all x ∈Zd. Proof By condition (i) in Theorem 2.7, evaluated at D′ = ∅, there exists a non-negative function a(·) such that \u0006 Y∋x z(Y)ea(Y) ≤ea({x}) −1 < ∞. For any polymer Y ∈X, the value a(Y) is necessarily larger than V (Y) by (2.19) and the claim follows. ⊓⊔ For translationally invariant systems, Theorem 2.9 says that if the activity expansions are absolutely convergent, then necessarily the activities are exponentially small in the size of the obje",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/ex-sec-009-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "ex-sec-009-01.md",
+      "narrative": null,
+      "content": "A particular forest partition scheme can be deﬁned as follows: For a given multi- rooted graph, construct a connected graph from it by adding a ghost-vertex and connecting it to every root directly by an edge. Then apply the Penrose partition scheme to the resulting connected graph to obtain a spanning tree of this connected graph. Finally, by removing the ghost vertex as well as every edge incident to it, one gets a spanning forest of the initial multi-rooted graph. For the map given by this construction, the characterizing properties of a forest partition scheme follow from the corresponding",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Combinatorial Lemmas: Proof of Theorems 2.1, 2.6, and 2.7",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-008-3-combinatorial-lemmas-proof-of-theorems-21-26-a.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Forest Partition Schemes: Alternating Sign Property",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "../sections/sec-009-31-forest-partition-schemes-alternating-sign-pro.md",
+      "narrative": null,
+      "content": "To obtain a better understanding of the series ρn given by the generating functions of multi-\nrootedgraphs,wenowconsideraparticularwaytoconstructthelatter—bytakingadesignated\nspanning forest and successively adding edges to it. This perspective onto multi-rooted graphs\nleads to a forest-graph equality analogous to the familiar tree-graph identity for connected\ngraphs [8, Proposition 5] and allows for a direct proof of an alternating sign property for\nthe coefﬁcients ψn,n+k of ρn in the case of repulsive interactions (i.e., for non-negative\npotentials).\nThe forest-graph equality builds on the n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/rem-sec-009-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "rem-sec-009-02.md",
+      "narrative": null,
+      "content": "The lemma allows for an alternative proof of the alternating sign property from",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Kirkwood–Salsburg Equations: Proof of Theorem 2.1",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-010-32-kirkwoodsalsburg-equations-proof-of-theorem-2.md",
+      "narrative": null,
+      "content": "To prove our main result, Theorem 2.1, we will show that the activity expansions ρ satisfy the\nKirkwood–Salsburg inequalities and, moreover, that equality holds for non-negative interac-\ntions. To do so, we will need to establish a recursive formula for the coefﬁcients ψn,n+k of\nρn given in terms of multi-rooted graphs.\nLemma 3.5 Let n ∈N, k ∈N0 and (x1, . . . , xn) ∈Xn. Abbreviate s = s(x). For L ⊂[k],\nlet ℓdenote the cardinality of L. Then for all (y1, . . . , yk) ∈Xk,\nψn,n+k(x1, . . . , xn, y1, . . . , yk) = \u0004\n1≤i≤n:\ni̸=s\n\u000e\n1 + f (xs, xi)\n\u000f \u0003\nL⊂[k]\n\u0007\u0004\ni∈L f (xs, yi)\n\t\n×ψn−1+ℓ,n−1+k\n\u000e\nx′\n2,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/prop-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 22,
+      "target": "prop-sec-011-01.md",
+      "narrative": null,
+      "content": "We have ˜T \u000e ·; z \u000f = e(·) + ˜κs z ˜T (·; z). Moreover ˜T1(·; z) = e(·) and for N ≥1 ˜TN+1 \u000e ·; z \u000f = e(·) + (˜κs z ˜TN) \u000e ·; z \u000f . The proposition follows from Lemma 3.9 by arguments similar to the proof of Proposition 3.6, therefore the proof is omitted.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Integral Equations for Hard-Core Models: Proof of Theorem 2.6",
+      "pageStart": 19,
+      "pageEnd": 22,
+      "target": "../sections/sec-011-33-integral-equations-for-hard-core-models-proof.md",
+      "narrative": null,
+      "content": "In this section we specialize to hard-core systems in the continuum as in Sect. 2.3 and\nuse capital letters for objects X ∈X. Let Dred\nn,n+k ⊂Dn,n+k be the collection of graphs\nG ∈Dn,n+k that have no edges linking any two root vertices i, j ∈{1, . . . , n}. Deﬁne\nψred\nn,n+k in a similar way as ψn,n+k but with summation over graphs in Dred\nn,n+k. It is not\ndifﬁcult to check that\nψn,n+k(X1, . . . , Xn+k) =\n\u0002\n1≤i< j≤n\n\u000e\n1 + f (Xi, X j)\n\u000f\nψred\nn,n+k(X1, . . . , Xn+k).\nThe reduced functions ψred\nn,n+k satisfy recurrence relations similar to Lemma 3.5. Deﬁne\ng(X1; X2, . . . , Xn; Y1, . . . , Yk) :=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/prop-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "prop-sec-012-01.md",
+      "narrative": null,
+      "content": "Under the assumptions of Lemma 3.11, the identities ˜T (D′ ∪{x}; z) = ˜T (D′; z) + \u0006 Y∋x: Y∩D′=∅ z(Y) ˜T (D′ ∪Y; z) and for N ∈N, ˜TN+1(D′ ∪{x}; z) = ˜TN(D′; z) + \u0006 Y∋x: Y∩D′=∅ z(Y) ˜TN(D′ ∪Y; z), hold for any non-negative activity z.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Recurrence Relations for Subset Polymers: Proof of Theorem 2.7",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "../sections/sec-012-34-recurrence-relations-for-subset-polymers-proo.md",
+      "narrative": null,
+      "content": "Just as in the continuous case, we will show that the expansions ˜T solve a system of integral\nequations in the discrete setup. We do so by providing a recursive formula for the corre-\nsponding coefﬁcients ϕT\n1+k.\nLemma 3.11 For all ﬁnite subsets D′ ⊂Zd, all x ∈Zd \\ D′, and all k ∈N,\nϕT\n1+k(D′ ∪{x}, Y1, . . . , Yk)\n= ϕT\n1+k(D′, Y1, . . . , Yk) +\nk\n\u0006\ni=1\n\u000e\n−1l{Yi∋x,Yi∩D=∅}\n\u000f\nϕT\nk\n\u000e\nD′ ∪Yi, (Y j) j̸=i\n\u000f\nwith ϕT\n1 ≡1.\nProof Notice that the analogue of Lemma 3.9 holds in the discrete setup of subset poly-\nmers as well, in particular for the choice D0 := {x} and D1 := D′. However, since two\ndisjoin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Application to Concrete Hard-Core Models",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-013-4-application-to-concrete-hard-core-models.md",
+      "narrative": null,
+      "content": "4 Application to Concrete Hard-Core Models\nOur main results (Theorems 2.1, 2.6 and 2.7) provide characterizations of the domain of\nabsolute convergence for the activity expansions ρn(x1, . . . , xn; z) from which well-known\nclassical criteria are easily recovered (Corollaries 2.2, 2.3 and 2.8). In this section, we illus-\ntrate how our convergence conditions provide new, “practitioner-type” sufﬁcient conditions\nin concrete hard-core models, both discrete and continuous. Our goal here is not to improve\non the best available conditions, but to provide upper bounds on the convergence radii that\nar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Single-Type Subset Polymers in mathbbZd",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "../sections/sec-014-41-single-type-subset-polymers-in-mathbbzd.md",
+      "narrative": null,
+      "content": "Consider the setup of subset polymers from Chapter 2.4. Suppose there is some ﬁnite non-\nempty set S ⊂Zd and a scalar z > 0 such that\nz(X) =\n\u0019\nz,\nX is a translate of S,\n0,\notherwise.\n(4.1)\nWe call polymers with non-zero activity active polymers. Deﬁne\nV (D) :=\n\b\b{X ∈X | z(X) > 0, X ∩D̸ = ∅}\n\b\b,\nthe number of active polymers intersecting a ﬁnite domain D ⊂Zd. Notice V ({x}) = |S|,\nfor all x ∈Zd.\nTheorem 4.1 Let z(·) be the activity function from (4.1). Suppose there exists α > 0 such\nthat\n|S| eαV (S)z ≤eα|S| −1.\n(4.2)\nThen T (D; z) is absolutely convergent for all ﬁnite subsets D ⊂Zd, thus the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/rem-sec-014-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "rem-sec-014-01.md",
+      "narrative": null,
+      "content": "Notice that Theorem 4.1 improves on the upper bounds for the convergence radii given by Kotecký–Preiss and by Gruber–Kunz. The improvement over the Gruber– Kunz condition is achieved by a more sophisticated choice of the ansatz function a in the proof of the theorem. However, although we do not have a general proof that the result by Fernández–Procacci is stronger, notice that for all non-pathological examples we considered (e.g., non-overlapping dimers or cubes) Fernández–Procacci provides better bounds than",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/ex-sec-015-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "Hard spheres",
+      "pageStart": 27,
+      "pageEnd": 30,
+      "target": "ex-sec-015-02.md",
+      "narrative": null,
+      "content": "If S = BR(0) is the closed ball of radius R > 0 around the origin, condition (4.7) becomes z ≤sup α>0 exp(α|BR(0)|) −1 |BR(0)| exp(α|B2R(0)|). Carrying out the optimization over α yields the condition |B2R(0)| z ≤ \u0007 1 −1 2d 2d−1 . Page 28 of 47 S. Jansen, L. Kolesnikov In the limit d →∞at ﬁxed R > 0, the right-hand side converges from above to the familiar bound 1/e. Proof Let α > 0 satisfy condition (4.7). Set a(\u0018D) := αV (\u0018D) for \u0018D ∈Dε, choose some chopping map C and let D ∈Dε (the snippet-size ε > 0 will be speciﬁed later in the proof). For the simplest selection rule s choosing always the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Single-Type Hard-Core System in mathbbRd",
+      "pageStart": 27,
+      "pageEnd": 30,
+      "target": "../sections/sec-015-42-single-type-hard-core-system-in-mathbbrd.md",
+      "narrative": null,
+      "content": "Consider a bounded convex shape S ⊂Rd which is non-empty, regular closed and balanced\n(recall: A set S ⊂Rd is called regular closed if and only if it equals the closure of its interior,\ni.e., S◦= S, and it is called balanced if and only if αS ⊂S for all |α| ≤1). We investigate\nthe special case of the hard-core setup in the continuum from Sect. 2.3 where X consists of\nall translates x + S = {x + y | y ∈S}. Let us further assume that both the activity and\nthe reference measure λ are translationally invariant. Then we may identify X with Rd, the\nreference measure λ with the Lebesgue measure, and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/rem-sec-015-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 30,
+      "target": "rem-sec-015-01.md",
+      "narrative": null,
+      "content": "Again, notice that while Theorem 4.2—just as its discrete analogue Theo- rem 4.1)—improves on the Kotecký–Preiss condition, it is in all the cases we considered as examples weaker than Fernández–Procacci (e.g., for systems of hard spheres the bounds on the radius of convergence obtained in [9, 22] are slightly better). However, the advantage of our criterion is that an explicit bound is provided directly, with no need for numerical computation regardless of the dimension.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/lem-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 41,
+      "target": "lem-sec-016-01.md",
+      "narrative": null,
+      "content": "Let D1 beaﬁniteunionofboundedconvexregularclosedsubsetsofRd andlet D2 be a d-dimensional ball in Rd. The map (0, ∞) ∋r \u0012→Vr(D1∪D2)−Vr (D1) Vr(D2) is monotonically decreasing in r. Proof First of all, observe that for sets D given by a ﬁnite union of convex, regular closed subsets of Rd the volume Vr(D) can be written as Vr(D) = |D| + S(D)r + o(r), (4.12) where S(D) denotes the surface area of D. This follows from a generalized version of the classical Steiner’s formula (see [27, Sect. 4.4]). In particular, we see that the map r \u0012→ Vr(D1∪D2)−Vr(D1) Vr(D2) is differentiable in r = 0. Next, we no",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/prop-sec-016-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 41,
+      "target": "prop-sec-016-05.md",
+      "narrative": null,
+      "content": "Suppose there exists a non-negative function a(·) from the ﬁnite intervals of Z to [0, ∞) with a(∅) = 0 and for every ﬁnite interval D of Z with x = min D such that \u0006 Y∋x, Y∩D′=∅ z(Y) ea(D′∪Y)−a(D′) ≤ea(D′∪{x})−a(D′) −1, (4.20) where we set D′ = D\\{x}. Then T (D, z) is absolutely convergent, for all ﬁnite D ⊂Z (interval or not). Proof We revisit the proof of the implication (i) ⇒(ii) of Theorem 2.7 given on p. 24 and prove ﬁrst by induction over N that ˜TN(D; z) ≤exp(a(D)), for all ﬁnite discrete intervals D ⊂Z. For N = 1, the inequality is trivial because ˜T1(D; z) = 1{|D|≤1} ≤1 ≤exp(a(\u0018D)).",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Multi-Type Hard Spheres in mathbbRd",
+      "pageStart": 30,
+      "pageEnd": 41,
+      "target": "../sections/sec-016-43-multi-type-hard-spheres-in-mathbbrd.md",
+      "narrative": null,
+      "content": "Let (rn)n∈N be an increasing sequence of positive real numbers and let Brn(0) ⊂Rd, n ∈N,\nbe the family of d-dimensional closed balls around 0 with the corresponding radii. To the\nsequence (rn)n∈N of radii is associated the sequence of non-negative activities (zn)n∈N such\nthat the ball Bri has the activity zi. In the setup of hard-core systems in the continuum from\nSect. 2.3, let X be given by all possible translates of these objects. Notice that the closed\nballs are compact convex sets that are non-empty and regular closed. We refer to this special\ncase of a hard-core system as a system of mul",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/rem-sec-016-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 41,
+      "target": "rem-sec-016-02.md",
+      "narrative": null,
+      "content": "Activity expansions for systems with inﬁnitely many types of objects are not particularly well-studied in statistical mechanics. In the case of ﬁnitely many types, we expect our result to exceed Kotecký–Preiss but to be weaker then Fernández–Procacci—as in the special case of a single type treated above (see Remark 4.2). The general case, for rn →∞in particular, remains to be investigated. Proof Again, our strategy is to show that condition (i) from Theorem 2.6 is satisﬁed for an appropriate ansatz function a. By assumption, r1 is the radius of the smallest ball present in the system. Set a(\u0018D",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/rem-sec-016-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 41,
+      "target": "rem-sec-016-04.md",
+      "narrative": null,
+      "content": "The condition (4.19) is exactly the necessary and sufﬁcient criterion for absolute convergence of the activity expansion of the pressure in the system derived in [13]. While the result itself is not novel, we consider the proof to be instructive since it demonstrates how our approach can provide conditions improving on the Fernández–Procacci criterion. In this concrete setup even the optimal result—recovering the whole domain of convergence—can be achieved.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/rem-sec-016-07",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 41,
+      "target": "rem-sec-016-07.md",
+      "narrative": null,
+      "content": "The theorem essentially recovers the necessary and sufﬁcient convergence cri- terion from [13] (derived there for the activity expansion of the pressure in the system). The sufﬁcient condition in [13] is (4.28) with “≤” instead of “<”. Again, while the result itself is not novel, its proof demonstrates the potential of our approach to go beyond the Fernández-Procacci criterion—also in continuous setups. First we prove an auxiliary result, the analogue of Proposition 4.6 for the continuous setup, which is not quite as trivial. We introduce the following notion: Deﬁne the ε-gap-ﬁlling operation",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/thm-sec-016-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 41,
+      "target": "thm-sec-016-03.md",
+      "narrative": null,
+      "content": "Let d = 1 and let (zℓ)ℓ∈N be a sequence of non-negative activities. (a) Suppose there exists α > 0 such that ∞ \u0006 ℓ=1 eαℓzℓ≤eα −1. (4.19) Then T (D; z) is absolutely convergent for all ﬁnite subsets D ⊂Z. (b) Conversely, if T (D; z) is absolutely convergent for all ﬁnite subsets D ⊂Z, then there exists α > 0 such that (4.19) holds true.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/thm-sec-016-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 41,
+      "target": "thm-sec-016-06.md",
+      "narrative": null,
+      "content": "In the setup of multi-type Tonks gas on R, under the assumption (4.27): (a) Suppose there exists α > 0 such that ∞ \u0006 ℓ=1 eαLℓzℓ< α. (4.28) Then the expansion for T (D; z) is absolutely convergent, for all bounded sets D ⊂R. (b) Conversely, if T (D; z) is absolutely convergent for all bounded subsets D ⊂R, then there exists α > 0 such that (4.28) holds true with “≤” instead of “<”.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/prop-sec-017-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 46,
+      "target": "prop-sec-017-01.md",
+      "narrative": null,
+      "content": "1 The right-hand side of (A.1) is bounded from above by 1 + \u0006 U⊂Q AU.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/prop-sec-017-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 46,
+      "target": "prop-sec-017-02.md",
+      "narrative": null,
+      "content": "2 The left-hand side of (A.1) is bounded from below by β∅+ \u0006 U⊂Q βU AU. (A.2)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/prop-sec-017-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 46,
+      "target": "prop-sec-017-03.md",
+      "narrative": null,
+      "content": "3 The lower bounds βU ≥1 hold for every U ⊂Q and thus β∅+ \u0006 U⊂Q βU AU ≥1 + \u0006 U⊂Q AU. All the sums in the three claims above run over subsets of Q = (x1) ∩ (X) including the empty set (so that the coefﬁcient β∅appears in (A.2) twice). The inequalities (A.1) follow directly from the three claims. Proving the claims is thus sufﬁcient to conclude the proof of the lemma: Proof of Claim A.1 Reorder the sum in the right-hand side of (A.1) by putting the summand together which belong to the same U := (Y)∩Q. Notice that the constraint Y ∼X implies Y ∩Q = ∅since Y ⊂ (x1). The claim now follows directly",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Proof of Lemma 2.5",
+      "pageStart": 41,
+      "pageEnd": 46,
+      "target": "../sections/sec-017-a-proof-of-lemma-25.md",
+      "narrative": null,
+      "content": "Proof of Lemma 2.5 We show that the system of inequalities\n1 + \u0003\nk≥1\n\u0003\nY={y1,...,yk}\nyi≁x1, yi∼y j\nk\u0004\ni=1\nμ(yi)\n\u0004\nw∈\t(Y)\neμ(w)\n\u0004\nq∈\t(x1)∩\t(X)\neμ(q)\n≥1 +\n\u0006\nk≥1\n\u0006\nY={y1,...,yk}\nyi≁x1, yi∼y j\nyi∼X\nk\u0002\ni=1\nμ(yi)\n\u0002\nw∈\t(Y)∩\t(X)C\neμ(w),\n(A.1)\nwhich is equivalent to (2.12), holds under the assumptions of the lemma. We do so by proving\nthe following three claims. However, ﬁrst we would like to introduce some additional notation\nto complement the notation from Sect. 2.2.\nFor given x1 ∈X and X = {x2, ..., x p} ⊂X let Q denote the set \t(x1) ∩\t(X) and let C\ndenote the set of (non-empty) compatible subsets o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s10955-022-02992-6/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 46,
+      "pageEnd": 47,
+      "target": "../sections/sec-018-references.md",
+      "narrative": null,
+      "content": "1. Bissacot, R., Fernández, R., Procacci, A.: On the convergence of cluster expansions for polymer gases.\nJ. Stat. Phys. 139(4), 598–617 (2010)\n2. Bissacot, R., Fernández, R., Procacci, A., Scoppola, B.: An improvement of the Lovász local lemma via\ncluster expansion. Comb. Probab. Comput. 20(5), 709–719 (2011)\n3. Brydges, D.C.: A short course on cluster expansions. In: Phénomènes critiques, systèmes aléatoires,\nthéories de jauge, Part I, II (Les Houches, 1984), pp. 129–183. North-Holland, Amsterdam (1986)\n4. Dobrushin, R.L.: Estimates of semi-invariants for the Ising model at low temperatures",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-th-9212088v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-th-9212088v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Abstract",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-abstract.md",
+      "narrative": null,
+      "content": "We construct a random matrix model that, in the large N limit, reduces to the low\nenergy limit of the QCD partition function put forward by Leutwyler and Smilga. This\nequivalence holds for an arbitrary number of ﬂavors and any value of the QCD vacuum\nangle.\nIn this model, moments of the inverse squares of the eigenvalues of the Dirac\noperator obey sum rules, which we conjecture to be universal. In other words, the validity\nof the sum rules depends only on the symmetries of the theory but not on its details. To\nillustrate this point we show that the sum rules hold for an interacting liquid of i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9212088v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-th/9212088v1  14 Dec 1992\nSUNY-NTG-92/45\nRandom matrix theory and spectral sum rules for the Dirac operator in QCD1\nE.V. Shuryak and J.J.M. Verbaarschot\nDepartment of Physics\nSUNY, Stony Brook, New York 11794",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9212088v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-1-introduction.md",
+      "narrative": null,
+      "content": "Since our main understanding of nonperturbative phenomena in QCD comes from\nnumerical simulations analytical results in this direction are most welcome [1, 2].\nIn\nparticular the issue of quark conﬁnement has not been resolved. What is better known\n[3] is the mechanism of chiral symmetry breaking. In the chiral limit the QCD partition\nfunction is invariant under SU(Nf)×SU(Nf)×U(1), whereas the axial U(1) symmetry is\nbroken explicitly by quantum ﬂuctuations. For more than one ﬂavor (Nf > 1) the chiral\nsymmetry is spontaneously broken down to SU(Nf) × U(1) by the formation of quark\ncondensates. A",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9212088v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Random matrix model",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-2-random-matrix-model.md",
+      "narrative": null,
+      "content": "was inspired by the semiclassical approximation to the QCD partition function where\ninstantons are the main degrees of freedom [10, 11, 12]. Therefore, it is natural to check\nthe validity of these sum rules for an instanton liquid model [13] of the QCD vacuum, a\ntask which is carried out in section 5. Concluding remarks are made in section 6. Finally,\nin appendix A sum rules for a ﬁnite number of degrees of freedom are derived.\n2. Random matrix model\nThe Euclidean QCD partition function for Nf ﬂavors and nonzero vacuum angle θ can\nbe written as\nZQCD =\nX\nν\neiθν <\nNf\nY\nf=1\nY\nn\n′(λ2\nn + m2\nf)mν\nf",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9212088v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Calculation of the partition function",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-3-calculation-of-the-partition-function.md",
+      "narrative": null,
+      "content": "In order to evaluate the partition function (2.2) the determinant is written as an\nintegral over Grassmann variables\nY\nf\ndet\n \nmf\niT\niT †\nmf\n!\n=\nZ Y\nf\nDψfDφf exp\nX\nf\n \nψf∗\nφf∗\n! \nmf\niT\niT †\nmf\n! \nψf\nφf\n!\n,\n(3.1)\nwhere the measure of the Grassmann integration is as usual\nDψf =\nY\ni\ndψf\ni dψf∗\ni ,\n(3.2)\nand the conjugation ∗is the conjugation of the second kind (i.e., ψ∗∗= −ψ) [9]. The\nintegral over T is gaussian and can be performed easily. In the partition function this\nresults in the factor\nexp 2λ2\nN ψf∗\ni ψg\ni φg∗\nj φf\nj ,\n(3.3)\nwhich represents a 4-fermion interaction.\nThe quartic term can b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9212088v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sum rules for one and two ﬂavors",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-004-4-sum-rules-for-one-and-two-ﬂavors.md",
+      "narrative": null,
+      "content": "Sum rules for moments of the inverse squares of the eigenvalues of the Dirac operator\ncan be derived for an arbitrary number of ﬂavors and for any value of the total topological\ncharge [2]. In this section we only present a derivation for the simplest two cases of one\nﬂavor and of two ﬂavors with equal masses. Proofs of the general results can be found in\n[2].\nFor Nf = 1 there is no integration and the result for the ratio of the massive and\nmassless partition function is particularly simple\nZNf =1 = exp(NmΣ cos θ),\n(4.1)\nwhich was ﬁrst obtained in [2].\nIn the case of two ﬂavors the integral o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9212088v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sum rules in the instanton liquid",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-005-5-sum-rules-in-the-instanton-liquid.md",
+      "narrative": null,
+      "content": "The partition function (2.1) can be approximated semiclassically by a liquid of in-\nstantons. Instead of averaging over all gauge ﬁeld conﬁgurations, we average over the\ncollective coordinates of the instantons only, whereas 1-loop quantum ﬂuctuations about\nthe instantons are included in the measure. The action in (2.1) is the instanton action,\nwhich also includes the interaction between instantons. We use the so called streamline\n[20, 21] interaction supplemented by a core in order to stabilize the instanton liquid. The\nfermion determinant is calculated in the space spanned by the fermionic z",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9212088v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discussion and conclusions",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-006-6-discussion-and-conclusions.md",
+      "narrative": null,
+      "content": "The main conclusion of this work is that the low energy chiral limit of the QCD\npartition function as derived by Leutwyler and Smilga coincides with a large N limit of a\nrandom matrix theory. Therefore all conclusions of [2] also pertain to the chiral random\nmatrix theory proposed in section 2. The random matrix theory resembles the partition\nfunction of a gas of instantons. The main diﬀerence is that instead of inheriting its disorder\nfrom the distribution of the collective coordinates, the overlap matrix elements are taken\nto be independently distributed according to a gaussian random matrix",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9212088v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-007-acknowledgements.md",
+      "narrative": null,
+      "content": "The reported work was partially supported by the US DOE grant DE-FG-88ER40388.\nWe acknowledge the NERSC at Lawrence Livermore where most of the computations\npresented in this paper were performed. We would like to thank A. Smilga, M.A. Nowak\nand I. Zahed for useful discussions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9212088v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-008-appendix-a.md",
+      "narrative": null,
+      "content": "In this appendix we derive the sum rules (4.12) and (4.13) for one ﬂavor without\nrelying on a saddle point approximation. For N+ = N−= N/2 and Nf = 1 the partition\nfunction simpliﬁes to\nZ =\nZ\ndσd¯σ(σ + i¯σ −m)\nN\n2 (σ −i¯σ −m)\nN\n2 exp(−N\n2λ2(σ + i¯σ)(σ −i¯σ)),\n(A.1)\nwhere an irrelevant overall constant has been suppressed. At ﬁnite N the pre-exponential\nfactors can be expanded as a binomial series which provides us with an expansion in\npowers of m. The coeﬃcients are elementary integrals, and for the m−dependent part of\nthe partition function we ﬁnd\nZ(m)\nZ(0) = 1 + m2N2Σ2\n4\n+ m4N4Σ4\n64\n(1 −2\nN",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9212088v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-009-references.md",
+      "narrative": null,
+      "content": "[1] P. van Baal, Nucl. Phys. B351 (1991) 183.\n[2] H. Leutwyler and A. Smilga, Phys. Rev. D (1992) (in press).\n[3] G. ’t Hooft, Phys. Rep. 142, 357 (1986).\n[4] P. D. Vecchia and G. Veneziano, Nucl. Phys. B171 (1980) 253.\n[5] J. Gasser and H. Leutwyler, Phys. Lett. B188 (1987) 477.\n[6] T. Banks and A. Casher, Nucl. Phys. B169 (1980) 103.\n[7] R. Balian, Nuov. Cim. 57 (1968) 183.\n[8] K. Efetov, Adv. in Phys. 32 (1983) 53.\n[9] J. Verbaarschot, H. Weidenm¨uller, and M. Zirnbauer, Phys. Rep. 129 (1985) 367.\n[10] D. Diakonov and V. Petrov, Nucl. Phys. B272 (1986) 457.\n[11] E. Shuryak, Nucl. Phys. B302",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

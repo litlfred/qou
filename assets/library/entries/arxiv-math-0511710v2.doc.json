@@ -1,0 +1,653 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0511710v2",
+  "title": "Higher gauge theory",
+  "variant": "pdf",
+  "pages": 29,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Internalization",
+      "number": "2",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-internalization"
+    },
+    {
+      "level": 1,
+      "title": "2-Bundles",
+      "number": "3",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-2-bundles"
+    },
+    {
+      "level": 1,
+      "title": "2-Connections",
+      "number": "4",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-2-connections"
+    },
+    {
+      "level": 3,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 27,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-acknowledgements"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 194,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "parallel transport",
+          "heading": false
+        },
+        {
+          "term": "gauge theory",
+          "heading": false
+        },
+        {
+          "term": "higher gauge",
+          "heading": false
+        },
+        {
+          "term": "hamburg",
+          "heading": false
+        },
+        {
+          "term": "urs",
+          "heading": false
+        },
+        {
+          "term": "messing",
+          "heading": false
+        },
+        {
+          "term": "lie algebras",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0511710v2 [math.DG] 28 Jun 2006 Higher Gauge Theory John Baez Department of Mathematics University of California Riverside, CA 92521, USA Urs Schreiber Fachbereich Mathematik Universit¨at Hamburg Hamburg, 20146, Germany email: baez@math.ucr.edu, urs.schreiber@math.uni-hamburg.de Hamburg Preprint ZMP-HH/05-25 November 28, 2005 Abstract Just as gauge theory describes the parallel transport of point",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0511710v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2362,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xymatrix bullet",
+          "heading": false
+        },
+        {
+          "term": "bartels cite",
+          "heading": false
+        },
+        {
+          "term": "group twogroup",
+          "heading": false
+        },
+        {
+          "term": "messing fake",
+          "heading": false
+        },
+        {
+          "term": "fake curvature",
+          "heading": false
+        },
+        {
+          "term": "cite baezschreiber",
+          "heading": false
+        },
+        {
+          "term": "principal bundle",
+          "heading": false
+        },
+        {
+          "term": "cite schreiber",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section: Introduction} Ordinary gauge theory describes how 0-dimensional particles transform as we move them along 1-dimensional paths. It is natural to assign a group element to each path: \\[ \\xymatrix{ \\bullet \\ar@/^1pc/[rr]^{g} && \\bullet } \\] The reason is that composition of paths then corresponds to multiplication in the group: \\[ \\xymatrix{ \\bullet \\ar@/^1pc/[rr]^{g} && \\bullet \\ar@/^1pc/[rr]^{g'} &&",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-internalization",
+      "number": "2",
+      "title": "Internalization",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2323,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lie grp",
+          "heading": false
+        },
+        {
+          "term": "lie crossed",
+          "heading": false
+        },
+        {
+          "term": "maps mor",
+          "heading": false
+        },
+        {
+          "term": "lie alg",
+          "heading": false
+        },
+        {
+          "term": "times mor",
+          "heading": false
+        },
+        {
+          "term": "smooth groups",
+          "heading": false
+        },
+        {
+          "term": "smooth space",
+          "heading": false
+        },
+        {
+          "term": "becomes smooth",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section: Internalization} The idea of internalization is simple: given a mathematical concept $X$ defined solely in terms of sets, functions and commutative diagrams involving these, and given some category $K$, one obtains the concept of an `$X$ in $K$' by replacing all these sets, functions and commutative diagrams by corresponding objects, morphisms, and commutative diagrams in $K$. The case we need here",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-2-bundles",
+      "number": "3",
+      "title": "2-Bundles",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1652,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twogroup bundle",
+          "heading": false
+        },
+        {
+          "term": "principal twogroup",
+          "heading": false
+        },
+        {
+          "term": "group twogroup",
+          "heading": false
+        },
+        {
+          "term": "bundle stackto",
+          "heading": false
+        },
+        {
+          "term": "trivial bundle",
+          "heading": false
+        },
+        {
+          "term": "smooth space",
+          "heading": false
+        },
+        {
+          "term": "bundle consists",
+          "heading": false
+        },
+        {
+          "term": "item smooth",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section: 2-Bundles} In differential geometry an ordinary bundle consists of two smooth spaces, the {\\bf total space} $E$ and the {\\bf base space} $B$, together with a {\\bf projection map} \\[ E \\stackto{p} B \\,. \\] To categorify the theory of bundles, we start by replacing smooth spaces by smooth 2-spaces: \\begin{definition} \\et \\label{2-bundle} A {\\bf 2-bundle} consists of \\begin{itemize} \\item a smooth",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-2-connections",
+      "number": "4",
+      "title": "2-Connections",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1776,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hol put",
+          "heading": false
+        },
+        {
+          "term": "hol maps",
+          "heading": false
+        },
+        {
+          "term": "twogroup bundle",
+          "heading": false
+        },
+        {
+          "term": "gamma put",
+          "heading": false
+        },
+        {
+          "term": "eps put",
+          "heading": false
+        },
+        {
+          "term": "principal twogroup",
+          "heading": false
+        },
+        {
+          "term": "picture vskip",
+          "heading": false
+        },
+        {
+          "term": "bigon sigma",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{section: 2-Connections} For a trivial bundle, the holonomy of a connection assigns elements of the structure group to paths in space. Similarly, a 2-connection assigns objects and morphisms of the structure 2-group to paths and surfaces in space. To make this precise we need the notion of a `path 2-groupoid'. We described the path groupoid of a smooth space $M$ in Example \\ref{2space.3}. This has points of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 3,
+      "pageStart": 27,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 892,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "danny stevenson",
+          "heading": false
+        },
+        {
+          "term": "available online",
+          "heading": false
+        },
+        {
+          "term": "bundle gerbes",
+          "heading": false
+        },
+        {
+          "term": "rhode island",
+          "heading": false
+        },
+        {
+          "term": "cat egories",
+          "heading": false
+        },
+        {
+          "term": "hep-th",
+          "heading": false
+        },
+        {
+          "term": "higher gauge",
+          "heading": false
+        },
+        {
+          "term": "energy phys",
+          "heading": false
+        }
+      ],
+      "extract": "We are grateful to Orlando Alvarez, Paolo Aschieri, Toby Bartels, Larry Breen, Dan Christensen, James Dolan, Jens Fjelstad, Ezra Getzler, Branislav Jurˇco, Mikhail Kapranov, Anders Kock, Amitabha Lahiri, Thomas Larsson, Hendryk Pfeiﬀer, and Danny Stevenson for comments and helpful discussion. The ﬁrst author thanks the Streetfest organizers for inviting him to speak on higher gauge theory along with Alissa Crans and",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "twogroup bundle",
+      "heading": false
+    },
+    {
+      "term": "principal twogroup",
+      "heading": false
+    },
+    {
+      "term": "group twogroup",
+      "heading": false
+    },
+    {
+      "term": "bundle gerbes",
+      "heading": false
+    },
+    {
+      "term": "bundle stackto",
+      "heading": false
+    },
+    {
+      "term": "smooth category",
+      "heading": false
+    },
+    {
+      "term": "smooth crossed",
+      "heading": false
+    },
+    {
+      "term": "nonabelian gerbes",
+      "heading": false
+    },
+    {
+      "term": "smooth paths",
+      "heading": false
+    },
+    {
+      "term": "smooth maps",
+      "heading": false
+    },
+    {
+      "term": "item smooth",
+      "heading": false
+    },
+    {
+      "term": "smooth space",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 5,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 6,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p27); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "not-extracted",
+      "note": "a glossary section is in the text (p8); its entries are not extracted"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 6 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0511710v2"
+  }
+}

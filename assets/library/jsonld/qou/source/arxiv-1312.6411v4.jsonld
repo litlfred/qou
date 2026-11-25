@@ -1,0 +1,65 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1312.6411v4/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1312.6411v4",
+  "contains": [
+    "library/arxiv-1312.6411v4/sections/sec-front-matter",
+    "library/arxiv-1312.6411v4/sections/sec-000",
+    "library/arxiv-1312.6411v4/sections/sec-001",
+    "library/arxiv-1312.6411v4/sections/sec-002",
+    "library/arxiv-1312.6411v4/sections/sec-003",
+    "library/arxiv-1312.6411v4/sections/sec-004",
+    "library/arxiv-1312.6411v4/sections/sec-005",
+    "library/arxiv-1312.6411v4/sections/sec-006",
+    "library/arxiv-1312.6411v4/sections/sec-007",
+    "library/arxiv-1312.6411v4/sections/sec-008",
+    "library/arxiv-1312.6411v4/sections/sec-009",
+    "library/arxiv-1312.6411v4/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "DUALITY AND TILTING FOR COMMUTATIVE DG RINGS — We consider commutative DG rings (better known as nonpositive strongly commutative associative unital DG algebras).\n\n**DUALITY AND TILTING FOR COMMUTATIVE DG RINGS**\n\n*AMNON YEKUTIELI*\n\n52 pp, 12 sections.\n\n**Abstract.** We consider commutative DG rings (better known as nonpositive strongly commutative associative unital DG algebras). For such a DG ring A we de- ﬁne the notions of perfect, tilting, dualizing, Cohen-Macaulay and rigid DG A-modules. Geometrically perfect DG modules are deﬁned by a local condition on Spec ¯A, where ¯A is the commutative ring H0(A). Algebraically perfect DG modules are those that can be obtained from A by ﬁnitely many shifts, direct summands and cones. Tilt- ing DG modules are those that have inverses w.r.t. the derived tensor product; their isomorphism classes form the derived Picard group DPic(A). Dualizing DG mod- ules are a generalization of Grothendieck’s original deﬁnition (and here A has to be cohomologically pseudo-noetherian). Cohen-Macaulay DG modules are the duals (w.r.t. a given dualizing DG module) of ﬁnite ¯A-modules.\n\n**Outline.** Front matter; 0 Introduction; 1 DG Modules and their Resolutions; 2 Cohomological Dimension; 3 Reduction and Lifting; 4 Localization of Commutative DG Rings; 5 Perfect DG Modules; 6 Tilting DG Modules; 7 Dualizing DG Modules; 8 Cohen-Macaulay DG Modules; 9 Rigid DG Modules; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1312.6411&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1312.6411v4",
+    "title_source": "slug",
+    "source_file": "1312.6411v4.pdf",
+    "source_sha256": "ceac22eb8ffe87e688b5a8fceeefa109974e8f2b434c263efabde4221d9b58e5",
+    "pages": 52,
+    "arxiv": {
+      "id": "1312.6411",
+      "version": "4",
+      "primary_class": "math.AG",
+      "stamp_date": "22 Mar 2016"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

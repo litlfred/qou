@@ -1,0 +1,2828 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-nucl-th-0006014v1",
+  "title": "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn)",
+  "variant": "pdf",
+  "pages": 69,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The model",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-the-model"
+    },
+    {
+      "level": 1,
+      "title": "Charge dependence",
+      "number": "3",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-charge-dependence"
+    },
+    {
+      "level": 2,
+      "title": "Charge symmetry breaking",
+      "number": "3.1",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-31-charge-symmetry-breaking"
+    },
+    {
+      "level": 2,
+      "title": "Charge independence breaking",
+      "number": "3.2",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-32-charge-independence-breaking"
+    },
+    {
+      "level": 1,
+      "title": "Nucleon-nucleon scattering",
+      "number": "4",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-4-nucleon-nucleon-scattering"
+    },
+    {
+      "level": 1,
+      "title": "The deuteron",
+      "number": "5",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-5-the-deuteron"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions",
+      "number": "6",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-6-conclusions"
+    },
+    {
+      "level": 1,
+      "title": "Two-nucleon scattering in momentum space",
+      "number": "A",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-a-two-nucleon-scattering-in-momentum-space"
+    },
+    {
+      "level": 2,
+      "title": "Scattering equation",
+      "number": "A.1",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-a1-scattering-equation"
+    },
+    {
+      "level": 2,
+      "title": "R-matrix and partial wave decomposition",
+      "number": "A.2",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-a2-r-matrix-and-partial-wave-decomposition"
+    },
+    {
+      "level": 2,
+      "title": "Phase shifts",
+      "number": "A.3",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-a3-phase-shifts"
+    },
+    {
+      "level": 2,
+      "title": "Effective range expansion",
+      "number": "A.4",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-a4-effective-range-expansion"
+    },
+    {
+      "level": 1,
+      "title": "One-boson exchange potential",
+      "number": "B",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-013-b-one-boson-exchange-potential"
+    },
+    {
+      "level": 2,
+      "title": "OBE amplitudes",
+      "number": "B.1",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-014-b1-obe-amplitudes"
+    },
+    {
+      "level": 2,
+      "title": "Partial wave decomposition",
+      "number": "B.2",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-015-b2-partial-wave-decomposition"
+    },
+    {
+      "level": 2,
+      "title": "Final potential expressions",
+      "number": "B.3",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-016-b3-final-potential-expressions"
+    },
+    {
+      "level": 1,
+      "title": "Potential parameters",
+      "number": "C",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-017-c-potential-parameters"
+    },
+    {
+      "level": 1,
+      "title": "Deuteron calculations",
+      "number": "D",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 527,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "one-boson exchange",
+          "heading": false
+        },
+        {
+          "term": "cd-bonn",
+          "heading": false
+        },
+        {
+          "term": "partial wave",
+          "heading": false
+        },
+        {
+          "term": "idaho",
+          "heading": false
+        },
+        {
+          "term": "charge-dependent",
+          "heading": false
+        },
+        {
+          "term": "nucleon-nucleon",
+          "heading": false
+        },
+        {
+          "term": "potential",
+          "heading": false
+        },
+        {
+          "term": "wave decomposition",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:nucl-th/0006014v1 9 Jun 2000 The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn) R. Machleidt ∗ Department of Physics, University of Idaho, Moscow, Idaho 83844, U. S. A. (November 26, 2024) Contents I Introduction 3 II The model 4 III Charge dependence 7 A Charge symmetry breaking . . . . . . . . . . . . . . . . . . . . . . . . . . 8 B Charge independence breaking . . . . . . . . . .",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-nucl-th-0006014v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 668,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nuclear many-body",
+          "heading": false
+        },
+        {
+          "term": "bonn model",
+          "heading": false
+        },
+        {
+          "term": "nuclear forces",
+          "heading": false
+        },
+        {
+          "term": "cd-bonn potential",
+          "heading": false
+        },
+        {
+          "term": "bonn full",
+          "heading": false
+        },
+        {
+          "term": "medium effects",
+          "heading": false
+        },
+        {
+          "term": "rho exchanges",
+          "heading": false
+        },
+        {
+          "term": "exchange diagrams",
+          "heading": false
+        }
+      ],
+      "extract": "In the 1970's and 80's, a comprehensive fieldtheoretic meson-exchange model for the nucleon-nucleon ($NN$) interaction was developed at the University of Bonn. The final version, published in 1987, has become known as the Bonn Full Model [@MHE87]. For a pedagogical review see Ref. [@Mac89]. In the language of fieldtheoretic perturbation theory, the lowest order contributions to the $NN$ interaction generated by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-model",
+      "number": "2",
+      "title": "The model",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": "4",
+      "labelEnd": "7",
+      "words": 1589,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mbox boldmath",
+          "heading": false
+        },
+        {
+          "term": "boldmath varphi",
+          "heading": false
+        },
+        {
+          "term": "boldmath sigma",
+          "heading": false
+        },
+        {
+          "term": "boldmath tau",
+          "heading": false
+        },
+        {
+          "term": "obe feynman",
+          "heading": false
+        },
+        {
+          "term": "fig obe",
+          "heading": false
+        },
+        {
+          "term": "bar psi",
+          "heading": false
+        },
+        {
+          "term": "rho bar",
+          "heading": false
+        }
+      ],
+      "extract": "As discussed in the Introduction, the CD-Bonn potential is based upon meson exchange. We include all mesons with masses below the nucleon mass, i. e., $\\pi$, $\\eta$, $\\rho(770)$, and $\\omega(782)$. Besides this, we introduce two scalar-isoscalar $\\sigma$ bosons. For the $\\eta$ (with a mass of 547.3 MeV), we assume a vanishing coupling to the nucleon, which implies that---*de facto*---we drop the $\\eta$. This",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-charge-dependence",
+      "number": "3",
+      "title": "Charge dependence",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 393,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "charge dependence",
+          "heading": true
+        },
+        {
+          "term": "cib equiv",
+          "heading": false
+        },
+        {
+          "term": "delta cib",
+          "heading": false
+        },
+        {
+          "term": "csb equiv",
+          "heading": false
+        },
+        {
+          "term": "cite mns",
+          "heading": false
+        },
+        {
+          "term": "charge independence",
+          "heading": false
+        },
+        {
+          "term": "cite kms",
+          "heading": false
+        },
+        {
+          "term": "singlet scattering",
+          "heading": false
+        }
+      ],
+      "extract": "By definition, *charge independence* is invariance under any rotation in isospin space. A violation of this symmetry is referred to as charge dependence or charge independence breaking (CIB). *Charge symmetry* is invariance under a rotation by 180$^0$ about the $y$-axis in isospin space if the positive $z$-direction is associated with the positive charge. The violation of this symmetry is known as charge symmetry",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-31-charge-symmetry-breaking",
+      "number": "3.1",
+      "title": "Charge symmetry breaking",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 840,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tab csb",
+          "heading": false
+        },
+        {
+          "term": "csb effects",
+          "heading": false
+        },
+        {
+          "term": "empirical csb",
+          "heading": false
+        },
+        {
+          "term": "fig csb",
+          "heading": false
+        },
+        {
+          "term": "delta csb",
+          "heading": false
+        },
+        {
+          "term": "csb contributions",
+          "heading": false
+        },
+        {
+          "term": "tab csblep",
+          "heading": false
+        },
+        {
+          "term": "fig obe",
+          "heading": false
+        }
+      ],
+      "extract": "The difference between the masses of neutron and proton represents the most basic cause for CSB of the nuclear force. Therefore, it is important to have a very thorough accounting of this effect. The most trivial consequence of nucleon mass splitting is a difference in the kinetic energies: for the heavier neutrons, the kinetic energy is smaller than for protons. This raises the magnitude of the $nn$ scattering",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-32-charge-independence-breaking",
+      "number": "3.2",
+      "title": "Charge independence breaking",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 581,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tab cib",
+          "heading": false
+        },
+        {
+          "term": "tab ciblep",
+          "heading": false
+        },
+        {
+          "term": "cib effect",
+          "heading": false
+        },
+        {
+          "term": "fig cib",
+          "heading": false
+        },
+        {
+          "term": "delta cib",
+          "heading": false
+        },
+        {
+          "term": "pion mass",
+          "heading": false
+        },
+        {
+          "term": "phase shifts",
+          "heading": false
+        },
+        {
+          "term": "mass splitting",
+          "heading": false
+        }
+      ],
+      "extract": "The major cause of CIB in the $NN$ interaction is pion mass splitting. Based upon the Bonn Full Model for the $NN$ interaction, the CIB due to pion mass splitting has been calculated carefully and systematically in Ref. [@LM98b]. The largest CIB effect comes from the OPE diagram which accounts for about 50% of the empirical $\\Delta a_{CIB}$, Eq. ([\\[eq_CIBlep1\\]](#eq_CIBlep1){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-4-nucleon-nucleon-scattering",
+      "number": "4",
+      "title": "Nucleon-nucleon scattering",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 13,
+      "labelStart": "10",
+      "labelEnd": "13",
+      "words": 1580,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tab cib",
+          "heading": false
+        },
+        {
+          "term": "tab lep",
+          "heading": false
+        },
+        {
+          "term": "tab csb",
+          "heading": false
+        },
+        {
+          "term": "tab chi",
+          "heading": false
+        },
+        {
+          "term": "tab csblep",
+          "heading": false
+        },
+        {
+          "term": "iucf data",
+          "heading": false
+        },
+        {
+          "term": "nijmegen phase",
+          "heading": false
+        },
+        {
+          "term": "nijmegen rejection",
+          "heading": false
+        }
+      ],
+      "extract": "We construct three $NN$ interactions: a proton-proton ($pp$), a neutron-neutron ($nn$), and a neutron-proton ($np$) potential. The three potentials are not independent. They are all based upon the model described in Sec. II and the differences between them are determined by CSB and CIB as discussed in Sec. III. Thus, when one of the three potentials is fixed, then the $T=1$ parts of the other two potentials are also",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-5-the-deuteron",
+      "number": "5",
+      "title": "The deuteron",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 447,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fig dwaves",
+          "heading": false
+        },
+        {
+          "term": "tab deu",
+          "heading": false
+        },
+        {
+          "term": "deuteron",
+          "heading": true
+        },
+        {
+          "term": "deuteron quadrupole",
+          "heading": false
+        },
+        {
+          "term": "deuteron waves",
+          "heading": false
+        },
+        {
+          "term": "fig pot3sd",
+          "heading": false
+        },
+        {
+          "term": "empirical value",
+          "heading": false
+        },
+        {
+          "term": "quadrupole moment",
+          "heading": false
+        }
+      ],
+      "extract": "The CD-Bonn potential has been fitted to the empirical value for the deuteron binding energy $B_d = 2.224575$ MeV [@LA82] using relativistic kinematics. Once this adjustment has been made, the other deuteron properties listed in in Table [\\[tab_deu\\]](#tab_deu){reference-type=\"ref\" reference=\"tab_deu\"} are predictions. For the asymptotic $D/S$ state ratio, we find $\\eta = 0.0256$---in accurate agreement with the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-6-conclusions",
+      "number": "6",
+      "title": "Conclusions",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 827,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cd-bonn potential",
+          "heading": false
+        },
+        {
+          "term": "fig dwaves",
+          "heading": false
+        },
+        {
+          "term": "deuteron wave",
+          "heading": false
+        },
+        {
+          "term": "off-shell behavior",
+          "heading": false
+        },
+        {
+          "term": "additional nonlocalities",
+          "heading": false
+        },
+        {
+          "term": "local potentials",
+          "heading": false
+        },
+        {
+          "term": "chi datum",
+          "heading": false
+        },
+        {
+          "term": "binding energies",
+          "heading": false
+        }
+      ],
+      "extract": "We have constructed charge-dependent $NN$ potentials, that fit the world proton-proton data below 350 MeV (2932 data) with a $\\chi^2$/datum of 1.01 and the corresponding neutron-proton data (3058 data) with $\\chi^2$/datum $= 1.02$. This reproduction of the $NN$ data is more accurate than by any other known $NN$ potential or phase-shift analysis. A particular challenge are the $pp$ spin correlation parameters that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-a-two-nucleon-scattering-in-momentum-space",
+      "number": "A",
+      "title": "Two-nucleon scattering in momentum space",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-a1-scattering-equation",
+      "number": "A.1",
+      "title": "Scattering equation",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 18,
+      "labelStart": "15",
+      "labelEnd": "18",
+      "words": 1011,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "three-dimensional reductions",
+          "heading": false
+        },
+        {
+          "term": "d3k",
+          "heading": false
+        },
+        {
+          "term": "two-nucleon scattering",
+          "heading": false
+        },
+        {
+          "term": "elastic unitarity",
+          "heading": false
+        },
+        {
+          "term": "lippmann-schwinger equation",
+          "heading": false
+        },
+        {
+          "term": "positive-energy",
+          "heading": false
+        },
+        {
+          "term": "arbitrary frame",
+          "heading": false
+        },
+        {
+          "term": "four-momenta",
+          "heading": false
+        }
+      ],
+      "extract": "Two-nucleon scattering is described covariantly by the Bethe-Salpeter (BS) equation [21] which reads in operator notation T = V + VGT (A1) with T the invariant amplitude for the two-nucleon scattering process, V the sum of all connected two-particle irreducible diagrams, and G the relativistic two-nucleon propaga- tor. Since this four-dimensional integral equation is very diﬃcult to solve, so-called three-",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-a2-r-matrix-and-partial-wave-decomposition",
+      "number": "A.2",
+      "title": "R-matrix and partial wave decomposition",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 21,
+      "labelStart": "18",
+      "labelEnd": "21",
+      "words": 1080,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "helicity amplitudes",
+          "heading": false
+        },
+        {
+          "term": "coupled triplet",
+          "heading": false
+        },
+        {
+          "term": "spin triplet",
+          "heading": false
+        },
+        {
+          "term": "uncoupled spin",
+          "heading": false
+        },
+        {
+          "term": "helicity state",
+          "heading": false
+        },
+        {
+          "term": "r-matrix",
+          "heading": true
+        },
+        {
+          "term": "spin singlet",
+          "heading": false
+        },
+        {
+          "term": "six amplitudes",
+          "heading": false
+        }
+      ],
+      "extract": "In solving the scattering equation, it is more convenient to deal with real quantities. We shall therefore introduce the real R-matrix (better known as ‘K-matrix’) deﬁned by T = R −iπRδ(E −H0)T (A19) The equation for the real R-matrix corresponding to the complex T-matrix of Eq. (A18) is R(q′, q) = V (q′, q) + P Z d3k V (q′, k) M q2 −k2 R(k, q) (A20) where P denotes the principal value. Now, we need to also include",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-a3-phase-shifts",
+      "number": "A.3",
+      "title": "Phase shifts",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 24,
+      "labelStart": "21",
+      "labelEnd": "24",
+      "words": 1009,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phase shifts",
+          "heading": true
+        },
+        {
+          "term": "coulomb phase",
+          "heading": false
+        },
+        {
+          "term": "coulomb potential",
+          "heading": false
+        },
+        {
+          "term": "nuclear potential",
+          "heading": false
+        },
+        {
+          "term": "short-range nuclear",
+          "heading": false
+        },
+        {
+          "term": "tlab",
+          "heading": false
+        },
+        {
+          "term": "asymptotic wave",
+          "heading": false
+        },
+        {
+          "term": "tan",
+          "heading": false
+        }
+      ],
+      "extract": "Phase shifts are determined from the on-energy-shell R-matrix through: Spin singlet tan 0δJ(Tlab) = −π 2 qM 0RJ(q, q) (A33) Uncoupled spin triplet tan 1δJ(Tlab) = −π 2 qM 1RJ(q, q) (A34) For the coupled states, a unitary transformation is needed to diagonalize the two-by-two coupled R-matrix. This requires an additional parameter, known as the ‘mixing parameter’ ǫJ. Using the convention introduced by Blatt and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-a4-effective-range-expansion",
+      "number": "A.4",
+      "title": "Effective range expansion",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 303,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "range expansion",
+          "heading": true
+        },
+        {
+          "term": "eﬀective range",
+          "heading": false
+        },
+        {
+          "term": "electromagnetic interaction",
+          "heading": false
+        },
+        {
+          "term": "full electromagnetic",
+          "heading": false
+        },
+        {
+          "term": "empirical values",
+          "heading": false
+        },
+        {
+          "term": "coulomb",
+          "heading": false
+        }
+      ],
+      "extract": "For low-energy S-wave scattering, q cot δ can be expanded as a function of q q tan δ = q cot δ ≈−1 a + 1 2rq2 + O(q4) (A55) where a is called the scattering length and r the eﬀective range (for which, in some parts of this paper, we also use the notation aN and rN). This is appropriate for nn and np. In the case of pp scattering, where the Coulomb potential is involved, a more sophisticated eﬀective range expansion",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-b-one-boson-exchange-potential",
+      "number": "B",
+      "title": "One-boson exchange potential",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": "25",
+      "labelEnd": "25",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-014-b1-obe-amplitudes",
+      "number": "B.1",
+      "title": "OBE amplitudes",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 446,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "obe",
+          "heading": true
+        },
+        {
+          "term": "γµu",
+          "heading": false
+        },
+        {
+          "term": "qλ1λ",
+          "heading": false
+        },
+        {
+          "term": "amplitudes",
+          "heading": true
+        },
+        {
+          "term": "γµγ",
+          "heading": false
+        },
+        {
+          "term": "nucleons",
+          "heading": false
+        }
+      ],
+      "extract": "The Lagrangians Eqs. (2.1)-(2.5) imply the following OBE amplitudes which we state here in terms of i times the Feynman amplitude: ⟨q′λ′ 1λ′ 2| ¯Vπ|qλ1λ2⟩ = −g2 π (2π)3 ¯u(q′, λ′ 1)iγ5u(q, λ1)¯u(−q′, λ′ 2)iγ5u(−q, λ2)/[(q′ −q)2 + m2 π] , (B1) ⟨q′λ′ 1λ′ 2| ¯Vσ|qλ1λ2⟩ = −g2 σ (2π)3 ¯u(q′, λ′ 1)u(q, λ1)¯u(−q′, λ′ 2)u(−q, λ2)/[(q′ −q)2 + m2 σ] , (B2) ⟨q′λ′ 1λ′ 2| ¯Vω|qλ1λ2⟩ = g2 ω (2π)3{¯u(q′, λ′ 1)γµu(q, λ1)}{¯u(−q′,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-b2-partial-wave-decomposition",
+      "number": "B.2",
+      "title": "Partial wave decomposition",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 28,
+      "labelStart": "26",
+      "labelEnd": "28",
+      "words": 582,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tpj",
+          "heading": false
+        },
+        {
+          "term": "legendre functions",
+          "heading": false
+        },
+        {
+          "term": "zqj",
+          "heading": false
+        },
+        {
+          "term": "cos",
+          "heading": false
+        },
+        {
+          "term": "kind",
+          "heading": false
+        },
+        {
+          "term": "decomposed",
+          "heading": false
+        }
+      ],
+      "extract": "The potential is decomposed into partial waves according to ⟨λ′ 1λ′ 2|V J(q′, q)|λ1λ2⟩= 2π Z +1 −1 d(cos θ) dJ λ1−λ2,λ′ 1−λ′ 2(θ)⟨q′λ′ 1λ′ 2|V |qλ1λ2⟩ (B10) where θ is the angle between q and q′ and dJ m,m′(θ) are the conventional reduced rotation matrices which can be expressed in terms of Legendre polynominals PJ(cos θ). The following types of integrals occur: I(0) J ≡ Z +1 −1 dt PJ(t) (q′ −q)2 + m2 α = QJ(zα) q′q",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-b3-final-potential-expressions",
+      "number": "B.3",
+      "title": "Final potential expressions",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 32,
+      "labelStart": "28",
+      "labelEnd": "32",
+      "words": 1340,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cvv",
+          "heading": false
+        },
+        {
+          "term": "πnn coupling",
+          "heading": false
+        },
+        {
+          "term": "n1n",
+          "heading": false
+        },
+        {
+          "term": "potential",
+          "heading": true
+        },
+        {
+          "term": "coupling constant",
+          "heading": false
+        },
+        {
+          "term": "lsjm",
+          "heading": false
+        },
+        {
+          "term": "angular momentum",
+          "heading": false
+        },
+        {
+          "term": "scaling mass",
+          "heading": false
+        }
+      ],
+      "extract": "Here, we will present the ﬁnal potential expressions in partial wave decomposition. More details concerning their derivation can be found in Appendix E of Ref. [1]. First, we state the potentials in terms of the combinations of helicity states deﬁned in Eq. (A24). One-pion-exchange: 0V J π = Cπ (F (0) π I(0) J + F (1) π I(1) J ) 1V J π = Cπ (−F (0) π I(0) J −F (1) π I(2) J ) 12V J π = Cπ (F (1) π I(0) J + F (0) π",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-c-potential-parameters",
+      "number": "C",
+      "title": "Potential parameters",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 33,
+      "labelStart": "32",
+      "labelEnd": "33",
+      "words": 475,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "potential",
+          "heading": true
+        },
+        {
+          "term": "parameters",
+          "heading": true
+        },
+        {
+          "term": "partial waves",
+          "heading": false
+        },
+        {
+          "term": "table xvi",
+          "heading": false
+        },
+        {
+          "term": "cutoﬀmasses",
+          "heading": false
+        },
+        {
+          "term": "free parameters",
+          "heading": false
+        },
+        {
+          "term": "diﬀerences listed",
+          "heading": false
+        },
+        {
+          "term": "coupling constants",
+          "heading": false
+        }
+      ],
+      "extract": "For the ‘basic’ mesons, π, ω, and ρ, we use, in general, the parameters shown in Table I. Note that (except for the cutoﬀmasses) these parameters are determined from empirical or semi-empirical sources and, therefore, they are not free parameters of our model. The intermediate range attraction is described by two scalar isoscalar bosons, σ1 and σ2, that are also used for the ﬁne-tuning of individual partial waves.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-deuteron-calculations-page-33",
+      "number": null,
+      "title": "Deuteron calculations (page 33)",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 33,
+      "labelStart": "33",
+      "labelEnd": "33",
+      "words": 328,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deuteron",
+          "heading": true
+        },
+        {
+          "term": "relativistic kinematics",
+          "heading": false
+        },
+        {
+          "term": "mev",
+          "heading": false
+        },
+        {
+          "term": "angular",
+          "heading": false
+        },
+        {
+          "term": "wave",
+          "heading": false
+        },
+        {
+          "term": "calculations",
+          "heading": true
+        }
+      ],
+      "extract": "The free (‘ﬁt’) parameters of our model are the ones given in Table XVI and XVII plus two parameters for 1S0 np and the cutoﬀmasses which adds up to a total of 43 free parameters. APPENDIX D: DEUTERON CALCULATIONS In momentum space, the deuteron wave function is given by ΨM d (k) = h ψ0(k)Y1M 01 (ˆk) + ψ2(k)Y1M 21 (ˆk) i ζ0 0, (D1) where YJM LS (ˆk) are the normalized eigenfunctions of the two-nucleon orbital",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-deuteron-calculations-page-34",
+      "number": null,
+      "title": "Deuteron calculations (page 34)",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 34,
+      "labelStart": "34",
+      "labelEnd": "34",
+      "words": 333,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mbd",
+          "heading": false
+        },
+        {
+          "term": "wave functions",
+          "heading": false
+        },
+        {
+          "term": "nucleon mass",
+          "heading": false
+        },
+        {
+          "term": "mpmn",
+          "heading": false
+        },
+        {
+          "term": "ase",
+          "heading": false
+        }
+      ],
+      "extract": "and the nucleon mass diﬀerence δM ≡Mn −Mp = 1.29332 MeV, and used Md = 2M −Bd. From this we get γ2 = MBd \u0012 1 −Bd 4M \u0013 1 −δM2 M2 d ! , (D9) and, in terms of twice the reduced nucleon mass, c M, which is deﬁned by c M ≡2MpMn Mp + Mn = M 1 −δM2 4M 2 ! = 938.91852 MeV , (D10) we ﬁnally obtain γ2 = c MBd \u0012 1 −Bd 4M \u0013 1 −δM2 M2 d 1 −δM2 4M 2 ≈c MBd \u0012 1 −Bd 4M \u0013 . (D11) The approximation involved in Eq. (D11) is good to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-deuteron-calculations-page-35",
+      "number": null,
+      "title": "Deuteron calculations (page 35)",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 35,
+      "labelStart": "35",
+      "labelEnd": "35",
+      "words": 292,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deuteron",
+          "heading": true
+        },
+        {
+          "term": "mjr",
+          "heading": false
+        },
+        {
+          "term": "wave functions",
+          "heading": false
+        },
+        {
+          "term": "d-state",
+          "heading": false
+        },
+        {
+          "term": "s-state",
+          "heading": false
+        }
+      ],
+      "extract": "where AS and AD are known as the asymptotic S- and D-state normalizations, respectively. In addition, one deﬁnes the “D/S-state ratio” η ≡AD/AS. Other deuteron parameters of interest are the quadrupole moment Qd = 1 20 Z ∞ 0 drr2w(r) h√ 8u(r) −w(r) i , (D16) the root-mean-square or matter radius rd = 1 2 \u001aZ ∞ 0 drr2 h u2(r) + w2(r) i\u001b1/2 , (D17) and the D-state probability PD = Z ∞ 0 drw2(r). (D18) The predictions",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-deuteron-calculations-page-36",
+      "number": null,
+      "title": "Deuteron calculations (page 36)",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 36,
+      "labelStart": "36",
+      "labelEnd": "36",
+      "words": 137,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deuteron",
+          "heading": true
+        },
+        {
+          "term": "wave",
+          "heading": false
+        },
+        {
+          "term": "r-space",
+          "heading": false
+        }
+      ],
+      "extract": "and two other relations obtained by circular permutation of n −2, n −1, n. The masses are mj = γ + (j −1)m0 (D25) with m0 = 0.9 fm−1 and γ given in Eq. (D6). The parameters are given in Table XX. The constraints Eqs. (D23) and (D24) must be enforced by double precision (i. e., to about 15 decimal digits), otherwise the wave function is not reproduced correctly for r ≤0.5 fm. This applies, particularly, to the D",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-deuteron-calculations-page-37",
+      "number": null,
+      "title": "Deuteron calculations (page 37)",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 37,
+      "labelStart": "37",
+      "labelEnd": "37",
+      "words": 518,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "machleidt",
+          "heading": false
+        },
+        {
+          "term": "physica scripta",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "nucl-th",
+          "heading": false
+        },
+        {
+          "term": "nucl",
+          "heading": false
+        },
+        {
+          "term": "few-body systems",
+          "heading": false
+        },
+        {
+          "term": "arndt",
+          "heading": false
+        }
+      ],
+      "extract": "REFERENCES [1] R. Machleidt, K. Holinde, and Ch. Elster, Phys. Rep. 149, 1 (1987). [2] R. Machleidt, Adv. Nucl. Phys. 19, 189 (1989). [3] G. Q. Li and R. Machleidt, Phys. Rev. C 58, 1393 (1998). [4] J. A. Nolen and J. P. Schiﬀer, Annu. Rev. Nucl. Sci. 19, 471 (1969). [5] H. M¨uther, A. Polls, and R. Machleidt, Phys. Lett. B445, 259 (1999). [6] G. Q. Li and R. Machleidt, Phys. Rev. C 58, 3153 (1998). [7] R.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-deuteron-calculations-page-38",
+      "number": null,
+      "title": "Deuteron calculations (page 38)",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 38,
+      "labelStart": "38",
+      "labelEnd": "38",
+      "words": 558,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "scattering lengths",
+          "heading": false
+        },
+        {
+          "term": "eﬀective ranges",
+          "heading": false
+        },
+        {
+          "term": "swart",
+          "heading": false
+        },
+        {
+          "term": "nucleon mass",
+          "heading": false
+        },
+        {
+          "term": "stoks",
+          "heading": false
+        },
+        {
+          "term": "pearce",
+          "heading": false
+        },
+        {
+          "term": "both eﬀects",
+          "heading": false
+        },
+        {
+          "term": "klarsfeld",
+          "heading": false
+        }
+      ],
+      "extract": "ρ(−Bd, −Bd), we use the values recommended by Klarsfeld et al. based upon their own analysis of the experimental results given in the ﬁrst three references. For 1S0 anp, we use the value that is implied by the Klarsfeld analysis. Based upon Refs. [28,29], we assume rt = ρ(−Bd, 0) −0.001 fm. ‘Empirical’ values for the 1S0 rnp are given by Dilg (from which we quote rnp = 2.77 ± 0.05); however, note that these values",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-deuteron-calculations-page-39",
+      "number": null,
+      "title": "Deuteron calculations (page 39)",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 39,
+      "labelStart": "39",
+      "labelEnd": "39",
+      "words": 553,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "van campen",
+          "heading": false
+        },
+        {
+          "term": "der sanden",
+          "heading": false
+        },
+        {
+          "term": "swart",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "stoks",
+          "heading": false
+        },
+        {
+          "term": "haase",
+          "heading": false
+        },
+        {
+          "term": "tornow",
+          "heading": false
+        }
+      ],
+      "extract": "on Nuclear Physics, Oaxtepec, Mexico, January 2000, Revista Mexicana de Fisica, to be published. [40] U. van Kolck, M. C. M. Rentmeester, J. L. Friar, T. Goldman, and J. J. de Swart, Phys. Rev. Lett. 80, 4386 (1998). [41] Naively one would expect that the ∆M contribution to the diﬀerence δnp−δpp is exactly 1/2 of the total CSB phase shift diﬀerence δnn −δpp due to nucleon mass splitting as listed in Table III.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-deuteron-calculations-page-40",
+      "number": null,
+      "title": "Deuteron calculations (page 40)",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 40,
+      "labelStart": "40",
+      "labelEnd": "40",
+      "words": 558,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "physica scripta",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "machleidt",
+          "heading": false
+        },
+        {
+          "term": "covello",
+          "heading": false
+        },
+        {
+          "term": "hjorth-jensen",
+          "heading": false
+        },
+        {
+          "term": "coraggio",
+          "heading": false
+        },
+        {
+          "term": "gargano",
+          "heading": false
+        }
+      ],
+      "extract": "[65] J. Ball et al., Nucl. Phys. A559, 489 (1993). [66] J. Ball et al., Nucl. Phys. A574, 697 (1994). [67] J. Goetz et al., Nucl. Phys. A574, 467 (1994). [68] S. Benck, I. Slypen, V. Corcalciuc, and J.-P. Meulders, Nucl. Phys. A615, 220 (1997). [69] J. Rahm et al., Phys. Rev. C 57, 1077 (1998). [70] J. Franz, E. R¨ossle, H. Schmitt, and L. Schmitt, Physica Scripta, in press. [71] Proc. Int. Workshop on Critical",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-deuteron-calculations-page-41",
+      "number": null,
+      "title": "Deuteron calculations (page 41)",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 41,
+      "labelStart": "41",
+      "labelEnd": "41",
+      "words": 216,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "nucl",
+          "heading": false
+        },
+        {
+          "term": "holinde",
+          "heading": false
+        },
+        {
+          "term": "machleidt",
+          "heading": false
+        }
+      ],
+      "extract": "[96] F. Gross, Phys. Rev. C 26, 2203 (1982). [97] R. Woloshyn and A. D. Jackson, Nucl. Phys. B64, 269 (1973). [98] G. E. Brown, A. D. Jackson, and T. T. S. Kuo, Nucl. Phys. A133, 481 (1969). [99] M. Jacob and G. C. Wick, Ann. Phys. (N.Y.) 7, 404 (1959). [100] K. Erkelenz, R. Alzetta, and K. Holinde, Nucl. Phys. A176, 413 (1971). [101] M. Haftel and F. Tabakin, Nucl. Phys. A158, 1 (1970). [102] R. Machleidt, in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-deuteron-calculations-page-42",
+      "number": null,
+      "title": "Deuteron calculations (page 42)",
+      "level": 2,
+      "pageStart": 42,
+      "pageEnd": 42,
+      "labelStart": "42",
+      "labelEnd": "42",
+      "words": 128,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kin",
+          "heading": false
+        },
+        {
+          "term": "obe",
+          "heading": false
+        },
+        {
+          "term": "tbe",
+          "heading": false
+        }
+      ],
+      "extract": "TABLES TABLE I. Basic constants and parameters adopted for the CD-Bonn potential. Particle Mass (MeV) g2/4π f/g Λ (GeV) π± 139.56995 13.6 – 1.72 π0 134.9764 13.6 – 1.72 ρ±, ρ0 769.9 0.84 6.1 1.31 ω 781.94 20.0 0.0 1.5 Proton (p) 938.27231 Neutron (n) 939.56563 TABLE II. Diﬀerences between the pp and nn 1S0 eﬀective range parameters [as deﬁned in Eqs. (3.4) and (3.5)] due to the impact of nucleon mass splitting on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-deuteron-calculations-page-43",
+      "number": null,
+      "title": "Deuteron calculations (page 43)",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 43,
+      "labelStart": "43",
+      "labelEnd": "43",
+      "words": 202,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "obe",
+          "heading": false
+        },
+        {
+          "term": "tbe",
+          "heading": false
+        },
+        {
+          "term": "kinematics",
+          "heading": false
+        }
+      ],
+      "extract": "TABLE III. Diﬀerence δnn −δpp (in degrees) due to the impact of nucleon mass splitting on kinematics [30], one-boson exchange diagrams (OBE), and two-boson exchanges (TBE). Total is the sum of all. Tlab (MeV) Kinematics OBE TBE Total 1S0 0.38254 0.404 –0.045 1.795 2.154 1 0.324 –0.036 1.440 1.728 5 0.165 –0.018 0.785 0.932 10 0.114 –0.013 0.591 0.692 25 0.062 –0.006 0.408 0.464 50 0.031 –0.001 0.310 0.340 100 0.003",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-deuteron-calculations-page-44",
+      "number": null,
+      "title": "Deuteron calculations (page 44)",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 44,
+      "labelStart": "44",
+      "labelEnd": "44",
+      "words": 46,
+      "summary": null,
+      "keywords": [],
+      "extract": "300 0.022 0.022 0.068 0.112 3P2 5 0.001 0.000 0.001 0.002 10 0.003 0.000 0.004 0.007 25 0.010 0.001 0.013 0.024 50 0.021 0.002 0.031 0.054 100 0.032 0.006 0.062 0.100 150 0.036 0.010 0.081 0.127 200 0.035 0.015 0.093 0.143 300 0.032 0.023 0.105 0.160",
+      "extractCut": false
+    },
+    {
+      "id": "sec-030-deuteron-calculations-page-45",
+      "number": null,
+      "title": "Deuteron calculations (page 45)",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 45,
+      "labelStart": "45",
+      "labelEnd": "45",
+      "words": 242,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cib mechanisms",
+          "heading": false
+        },
+        {
+          "term": "eﬀects caused",
+          "heading": false
+        },
+        {
+          "term": "column total",
+          "heading": false
+        },
+        {
+          "term": "δpp",
+          "heading": false
+        }
+      ],
+      "extract": "TABLE IV. Diﬀerences between the pp and np 1S0 eﬀective range parameters [as deﬁned in Eqs. (3.6) and (3.7)] produced by various CIB mechanisms and phenomenology. Total is the sum of all contributions listed left of column ‘Total’. ∆M denotes all eﬀects caused by nucleon mass splitting. Empirical information is given in the last column. ∆M OPE TBE πγ phenom. Total Empirical ∆aCIB (fm) 0.754 3.035 1.339 –0.405 1.555",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-deuteron-calculations-page-46",
+      "number": null,
+      "title": "Deuteron calculations (page 46)",
+      "level": 2,
+      "pageStart": 46,
+      "pageEnd": 46,
+      "labelStart": "46",
+      "labelEnd": "46",
+      "words": 302,
+      "summary": null,
+      "keywords": [],
+      "extract": "TABLE VI. Diﬀerence δnp −δpp (in degrees) for partial waves with L > 0 as produced by various CIB mechanisms. Notation as in Table V. Tlab (MeV) ∆M OPE TBE πγ Total Coulomb All 3P0 1 0.000 -0.030 0.000 0.000 -0.030 0.073 0.043 5 0.000 -0.230 -0.003 0.000 -0.233 0.262 0.029 10 0.000 -0.448 -0.009 0.000 -0.457 0.353 -0.104 25 0.012 -0.770 -0.027 -0.017 -0.802 0.320 -0.481 50 0.032 -0.846 -0.050 -0.050 -0.914 0.111",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-deuteron-calculations-page-47",
+      "number": null,
+      "title": "Deuteron calculations (page 47)",
+      "level": 2,
+      "pageStart": 47,
+      "pageEnd": 47,
+      "labelStart": "47",
+      "labelEnd": "47",
+      "words": 130,
+      "summary": null,
+      "keywords": [],
+      "extract": "300 0.072 -0.169 -0.034 -0.044 -0.175 0.130 -0.044 3F2 10 0.000 -0.004 0.000 0.000 -0.004 0.001 -0.002 25 0.000 -0.019 0.000 0.000 -0.019 0.004 -0.015 50 0.000 -0.043 0.000 0.001 -0.042 0.007 -0.036 100 0.000 -0.068 0.000 0.002 -0.066 0.008 -0.058 150 0.003 -0.081 -0.001 0.002 -0.077 0.007 -0.070 200 0.007 -0.090 -0.001 0.002 -0.082 0.003 -0.079 300 0.008 -0.099 -0.001 0.002 -0.090 -0.009 -0.098 ǫ2 5 0.000 0.011",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-deuteron-calculations-page-48",
+      "number": null,
+      "title": "Deuteron calculations (page 48)",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 48,
+      "labelStart": "48",
+      "labelEnd": "48",
+      "words": 280,
+      "summary": null,
+      "keywords": [],
+      "extract": "TABLE VII. pp phase shifts in degrees. Tlab (MeV) 1S0 3P0 3P1 1D2 3P2 3F2 ǫ2 3F3 1G4 3F4 1 32.79 0.13 -0.08 0.00 0.01 0.00 0.00 0.00 0.00 0.00 5 54.85 1.58 -0.90 0.04 0.22 0.00 -0.05 0.00 0.00 0.00 10 55.20 3.72 -2.05 0.17 0.66 0.01 -0.20 -0.03 0.00 0.00 25 48.63 8.58 -4.90 0.70 2.50 0.10 -0.81 -0.23 0.04 0.02 50 38.86 11.54 -8.31 1.71 5.84 0.33 -1.73 -0.70 0.15 0.12 100 24.91 9.57 -13.37 3.77 10.97 0.78 -2.72 -1.53",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-deuteron-calculations-page-49",
+      "number": null,
+      "title": "Deuteron calculations (page 49)",
+      "level": 2,
+      "pageStart": 49,
+      "pageEnd": 49,
+      "labelStart": "49",
+      "labelEnd": "49",
+      "words": 286,
+      "summary": null,
+      "keywords": [],
+      "extract": "TABLE IX. T = 1 np phase shifts in degrees. Tlab (MeV) 1S0 3P0 3P1 1D2 3P2 3F2 ǫ2 3F3 1G4 3F4 1 62.09 0.18 -0.11 0.00 0.02 0.00 0.00 0.00 0.00 0.00 5 63.67 1.61 -0.93 0.04 0.26 0.00 -0.05 0.00 0.00 0.00 10 60.01 3.62 -2.04 0.16 0.72 0.01 -0.18 -0.03 0.00 0.00 25 50.93 8.10 -4.81 0.69 2.60 0.09 -0.76 -0.20 0.03 0.02 50 40.45 10.74 -8.18 1.73 5.93 0.30 -1.64 -0.62 0.13 0.11 100 26.38 8.57 -13.23 3.86 11.01 0.72 -2.63",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-deuteron-calculations-page-50",
+      "number": null,
+      "title": "Deuteron calculations (page 50)",
+      "level": 2,
+      "pageStart": 50,
+      "pageEnd": 50,
+      "labelStart": "50",
+      "labelEnd": "50",
+      "words": 78,
+      "summary": null,
+      "keywords": [],
+      "extract": "TABLE XI. Scattering lengths (a) and eﬀective ranges (r) in units of fm. CD-Bonn Experiment Reference(s) 1S0 aC pp –7.8154 –7.8149 ± 0.0029 [48] rC pp 2.773 2.769 ± 0.014 [48] aN pp –17.4602 rN pp 2.845 aN nn –18.9680 –18.9 ± 0.4 [25,26] rN nn 2.819 2.75 ± 0.11 [24] anp –23.7380 –23.740 ± 0.020 [27] rnp 2.671 ( 2.77 ± 0.05 ) [27] 3S1 at 5.4196 5.419 ± 0.007 [27] rt 1.751 1.753 ± 0.008 [27]",
+      "extractCut": false
+    },
+    {
+      "id": "sec-036-deuteron-calculations-page-51",
+      "number": null,
+      "title": "Deuteron calculations (page 51)",
+      "level": 2,
+      "pageStart": 51,
+      "pageEnd": 51,
+      "labelStart": "51",
+      "labelEnd": "51",
+      "words": 300,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "iucf",
+          "heading": false
+        },
+        {
+          "term": "wisconsin",
+          "heading": false
+        },
+        {
+          "term": "axz",
+          "heading": false
+        },
+        {
+          "term": "ayy",
+          "heading": false
+        },
+        {
+          "term": "erlangen",
+          "heading": false
+        },
+        {
+          "term": "none",
+          "heading": false
+        },
+        {
+          "term": "urich",
+          "heading": false
+        }
+      ],
+      "extract": "TABLE XII. After-1992 pp data below 350 MeV included in the 1999 pp database. Error refers to the normalization error. This table contains 1113 observables and 32 normalizations resulting in a total of 1145 data. Tlab (MeV) # observable Error (%) Institution(s) Reference 25.68 8 D 1.3 Erlangen, Z¨urich, PSI [50] 25.68 6 R 1.3 Erlangen, Z¨urich, PSI [50] 25.68 2 A 1.3 Erlangen, Z¨urich, PSI [50] 197.4 41 P 1.3",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-deuteron-calculations-page-52",
+      "number": null,
+      "title": "Deuteron calculations (page 52)",
+      "level": 2,
+      "pageStart": 52,
+      "pageEnd": 52,
+      "labelStart": "52",
+      "labelEnd": "52",
+      "words": 235,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "triumf",
+          "heading": false
+        },
+        {
+          "term": "tunl",
+          "heading": false
+        },
+        {
+          "term": "psi",
+          "heading": false
+        },
+        {
+          "term": "normalization error",
+          "heading": false
+        }
+      ],
+      "extract": "TABLE XIII. After-1992 np data below 350 MeV included in the 1999 np database. Error refers to the normalization error. This table contains 524 observables and 20 normalizations resulting in a total of 544 data. Tlab (MeV) # observable Error (%) Institution(s) Reference 3.65–11.6 9 ∆σT None TUNL [57] 4.98–19.7 6 ∆σL None TUNL [58] 4.98–17.1 5 ∆σT None TUNL [58] 14.11 6 σ 0.7 T¨ubingen [59] 15.8 1 Dt None Bonn [60]",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-deuteron-calculations-page-53",
+      "number": null,
+      "title": "Deuteron calculations (page 53)",
+      "level": 2,
+      "pageStart": 53,
+      "pageEnd": 53,
+      "labelStart": "53",
+      "labelEnd": "53",
+      "words": 109,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "database",
+          "heading": false
+        },
+        {
+          "term": "argonne potential",
+          "heading": false
+        },
+        {
+          "term": "phase shift",
+          "heading": false
+        }
+      ],
+      "extract": "TABLE XIV. χ2/datum for the CD-Bonn potential, the Nijmegen phase shift analysis [42], and the Argonne V18 potential [32] in regard to various databases discussed in the text. CD-Bonn Nijmegen Argonne potential phase shift analysis V18 potential proton-proton data 1992 pp database (1787 data) 1.00 1.00 1.10 After-1992 pp data (1145 data) 1.03 1.24 1.74 1999 pp database (2932 data) 1.01 1.09 1.35 neutron-proton data",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-deuteron-calculations-page-54",
+      "number": null,
+      "title": "Deuteron calculations (page 54)",
+      "level": 2,
+      "pageStart": 54,
+      "pageEnd": 54,
+      "labelStart": "54",
+      "labelEnd": "54",
+      "words": 67,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deuteron",
+          "heading": true
+        },
+        {
+          "term": "asymptotic state",
+          "heading": false
+        },
+        {
+          "term": "d-state",
+          "heading": false
+        }
+      ],
+      "extract": "TABLE XV. Deuteron properties. CD-Bonn Empirical Reference(s) Binding energy Bd (MeV) 2.224575 2.224575(9) [72] Deuteron eﬀective range ρd = ρ(−Bd, −Bd) (fm) 1.765 1.765(9) [27,29,73] Asymptotic S state AS (fm−1/2) 0.8846 0.8846(9) [29,73] Asymptotic D/S state η 0.0256 0.0256(4) [74] Matter radius rd (fm) 1.966 1.971(6) [75] Quadrupole moment Qd (fm2) 0.270a 0.2859(3) [76,73] D-state probability PD (%) 4.85 a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-deuteron-calculations-page-55",
+      "number": null,
+      "title": "Deuteron calculations (page 55)",
+      "level": 2,
+      "pageStart": 55,
+      "pageEnd": 55,
+      "labelStart": "55",
+      "labelEnd": "55",
+      "words": 172,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "asterix denotes",
+          "heading": false
+        },
+        {
+          "term": "isoscalar bosons",
+          "heading": false
+        },
+        {
+          "term": "scalar isoscalar",
+          "heading": false
+        }
+      ],
+      "extract": "TABLE XVI. Parameters of the scalar isoscalar bosons, σ1 and σ2, for the pp T = 1 potential. An asterix denotes the default which are the 1S0 parameters. The boson masses mσ1 and mσ2 are in units of MeV. g2 σ1/4π (mσ1) g2 σ2/4π (mσ2) 1S0 4.24591 (452) 17.61 (1225) 3P0 7.866 (560) ∗(∗) 3P1 2.303 (424) ∗(∗) 3P2 4.166 (470) 24.80 (∗) 1D2 2.225 (400) 190.7 (∗) 3F2, 3F3 1.5 (∗) 56.21, 74.44 (793) 3F4, 3H4 3.8 (∗) ∗(∗)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-deuteron-calculations-page-56",
+      "number": null,
+      "title": "Deuteron calculations (page 56)",
+      "level": 2,
+      "pageStart": 56,
+      "pageEnd": 56,
+      "labelStart": "56",
+      "labelEnd": "56",
+      "words": 115,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xviii",
+          "heading": false
+        },
+        {
+          "term": "neutron-neutron",
+          "heading": false
+        },
+        {
+          "term": "xvi",
+          "heading": false
+        }
+      ],
+      "extract": "TABLE XVIII. Coupling constants of the scalar isoscalar bosons, σ1 and σ2, for the T = 1 np and nn potentials. Note that these are not free parameters (except for 1S0 np). The boson masses are the same as for the pp T = 1 potential (Table XVI). — neutron-proton — — neutron-neutron — g2 σ1/4π g2 σ2/4π g2 σ1/4π g2 σ2/4π 1S0 3.96451 22.50007 4.26338 17.54 3P0 7.866 5.8 7.892 16.747 3P1 2.346 19.22 2.326 17.61 3P2 4.194",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-deuteron-calculations-page-57",
+      "number": null,
+      "title": "Deuteron calculations (page 57)",
+      "level": 2,
+      "pageStart": 57,
+      "pageEnd": 57,
+      "labelStart": "57",
+      "labelEnd": "57",
+      "words": 566,
+      "summary": null,
+      "keywords": [],
+      "extract": "TABLE XIX. Deuteron wave functions. r (fm) u(r) (fm−1/2) w(r) (fm−1/2) r (fm) u(r) (fm−1/2) w(r) (fm−1/2) 0.100E −01 0.304061E −02 −0.137276E −05 0.270E + 01 0.457550E + 00 0.107219E + 00 0.200E −01 0.607313E −02 −0.895215E −05 0.280E + 01 0.448837E + 00 0.102572E + 00 0.300E −01 0.909444E −02 −0.249495E −04 0.290E + 01 0.440064E + 00 0.980768E −01 0.400E −01 0.121048E −01 −0.492312E −04 0.300E + 01 0.431275E + 00",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-deuteron-calculations-page-58",
+      "number": null,
+      "title": "Deuteron calculations (page 58)",
+      "level": 2,
+      "pageStart": 58,
+      "pageEnd": 58,
+      "labelStart": "58",
+      "labelEnd": "58",
+      "words": 88,
+      "summary": null,
+      "keywords": [],
+      "extract": "TABLE XX. Coeﬃcients for the parametrized deuteron wave functions (n = 11). j Cj (fm−1/2) Dj (fm−1/2) 1 0.88472985D + 00 0.22623762D −01 2 −0.26408759D + 00 −0.50471056D + 00 3 −0.44114404D −01 0.56278897D + 00 4 −0.14397512D + 02 −0.16079764D + 02 5 0.85591256D + 02 0.11126803D + 03 6 −0.31876761D + 03 −0.44667490D + 03 7 0.70336701D + 03 0.10985907D + 04 8 −0.90049586D + 03 −0.16114995D + 04 9 0.66145441D + 03 Eq.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-deuteron-calculations-page-59",
+      "number": null,
+      "title": "Deuteron calculations (page 59)",
+      "level": 2,
+      "pageStart": 59,
+      "pageEnd": 59,
+      "labelStart": "59",
+      "labelEnd": "59",
+      "words": 132,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "oﬀ-shell",
+          "heading": false
+        },
+        {
+          "term": "mev",
+          "heading": false
+        },
+        {
+          "term": "on-shell",
+          "heading": false
+        }
+      ],
+      "extract": "FIGURES \u0000\u0000\u0000\u0000\u0000\u0012 I \u0019 \u001a ! \u001b 1 \u001b 2 \u0000\u0000\u0000\u0000\u0000\u0012 I FIG. 1. One-boson exchange Feynman diagrams that deﬁne the CD-Bonn NN potential. -3 -2 -1 0 V(q′,q) (GeV-2) 0 0.5 1 1.5 2 q (GeV) 3S1-3D1 FIG. 2. Half oﬀ-shell 3S1−3D1 potential. The on-shell momentum q′ is held ﬁxed at 265 MeV (equivalent to 150 MeV lab. energy), while the oﬀ-shell momentum q runs from zero to 2000 MeV. The on-shell point (q = 265 MeV) is marked by a solid",
+      "extractCut": true
+    },
+    {
+      "id": "sec-045-deuteron-calculations-page-60",
+      "number": null,
+      "title": "Deuteron calculations (page 60)",
+      "level": 2,
+      "pageStart": 60,
+      "pageEnd": 60,
+      "labelStart": "60",
+      "labelEnd": "60",
+      "words": 166,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kin",
+          "heading": false
+        },
+        {
+          "term": "obe",
+          "heading": false
+        },
+        {
+          "term": "tbe",
+          "heading": false
+        },
+        {
+          "term": "phase shift",
+          "heading": false
+        },
+        {
+          "term": "shift difference",
+          "heading": false
+        }
+      ],
+      "extract": "0 1 2 Phase Shift Difference (deg) 0 100 200 300 Lab. Energy (MeV) Kin OBE TBE Tot 1S0 -0.04 0 0.04 0.08 Phase Shift Difference (deg) 0 100 200 300 Lab. Energy (MeV) Kin OBE TBE Tot 3P0 -0.04 0 0.04 0.08 Phase Shift Difference (deg) 0 100 200 300 Lab. Energy (MeV) Kin OBE TBE Tot 3P1 0 0.04 0.08 0.12 Phase Shift Difference (deg) 0 100 200 300 Lab. Energy (MeV) Kin OBE TBE Tot 1D2 0 0.04 0.08 0.12 0.16 0.2 Phase",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-deuteron-calculations-page-61",
+      "number": null,
+      "title": "Deuteron calculations (page 61)",
+      "level": 2,
+      "pageStart": 61,
+      "pageEnd": 61,
+      "labelStart": "61",
+      "labelEnd": "61",
+      "words": 139,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tbe",
+          "heading": false
+        },
+        {
+          "term": "phase shift",
+          "heading": false
+        },
+        {
+          "term": "shift difference",
+          "heading": false
+        },
+        {
+          "term": "ope",
+          "heading": false
+        }
+      ],
+      "extract": "0 2 4 Phase Shift Difference (deg) 0 100 200 300 Lab. Energy (MeV) OPE TBE πγ 1S0 -1 -0.5 0 Phase Shift Difference (deg) 0 100 200 300 Lab. Energy (MeV) OPE TBE πγ 3P0 0 0.1 0.2 0.3 0.4 Phase Shift Difference (deg) 0 100 200 300 Lab. Energy (MeV) OPE TBE πγ 3P1 -0.05 0 0.05 0.1 Phase Shift Difference (deg) 0 100 200 300 Lab. Energy (MeV) OPE TBE πγ 1D2 -0.2 -0.1 0 Phase Shift Difference (deg) 0 100 200 300 Lab.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-047-deuteron-calculations-page-62",
+      "number": null,
+      "title": "Deuteron calculations (page 62)",
+      "level": 2,
+      "pageStart": 62,
+      "pageEnd": 62,
+      "labelStart": "62",
+      "labelEnd": "62",
+      "words": 156,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phase shift",
+          "heading": false
+        },
+        {
+          "term": "shift difference",
+          "heading": false
+        },
+        {
+          "term": "tot",
+          "heading": false
+        },
+        {
+          "term": "deg",
+          "heading": false
+        }
+      ],
+      "extract": "0 20 40 Phase Shift Difference (deg) 0 100 200 300 Lab. Energy (MeV) Tot Cb All 1S0 -1 -0.5 0 0.5 Phase Shift Difference (deg) 0 100 200 300 Lab. Energy (MeV) Tot Cb All 3P0 -0.4 -0.2 0 0.2 0.4 0.6 Phase Shift Difference (deg) 0 100 200 300 Lab. Energy (MeV) Tot Cb All 3P1 0 0.1 0.2 0.3 Phase Shift Difference (deg) 0 100 200 300 Lab. Energy (MeV) Tot Cb All 1D2 -0.2 0 0.2 0.4 Phase Shift Difference (deg) 0 100 200",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-deuteron-calculations-page-63",
+      "number": null,
+      "title": "Deuteron calculations (page 63)",
+      "level": 2,
+      "pageStart": 63,
+      "pageEnd": 63,
+      "labelStart": "63",
+      "labelEnd": "63",
+      "words": 140,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phase shift",
+          "heading": false
+        },
+        {
+          "term": "deg",
+          "heading": false
+        },
+        {
+          "term": "mev",
+          "heading": false
+        },
+        {
+          "term": "lab",
+          "heading": false
+        }
+      ],
+      "extract": "-20 0 20 40 60 Phase Shift (deg) 0 100 200 300 Lab. Energy (MeV) 1S0 -20 -10 0 10 Phase Shift (deg) 0 100 200 300 Lab. Energy (MeV) 3P0 -30 -20 -10 0 Phase Shift (deg) 0 100 200 300 Lab. Energy (MeV) 3P1 0 4 8 12 Phase Shift (deg) 0 100 200 300 Lab. Energy (MeV) 1D2 0 5 10 15 20 Phase Shift (deg) 0 100 200 300 Lab. Energy (MeV) 3P2 0 0.5 1 1.5 Phase Shift (deg) 0 100 200 300 Lab. Energy (MeV) 3F2 FIG. 6. pp phase",
+      "extractCut": true
+    },
+    {
+      "id": "sec-049-deuteron-calculations-page-64",
+      "number": null,
+      "title": "Deuteron calculations (page 64)",
+      "level": 2,
+      "pageStart": 64,
+      "pageEnd": 64,
+      "labelStart": "64",
+      "labelEnd": "64",
+      "words": 97,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phase shift",
+          "heading": false
+        },
+        {
+          "term": "deg",
+          "heading": false
+        },
+        {
+          "term": "mev",
+          "heading": false
+        }
+      ],
+      "extract": "-3 -2 -1 0 Mixing Parameter (deg) 0 100 200 300 Lab. Energy (MeV) ε2 -3 -2 -1 0 Phase Shift (deg) 0 100 200 300 Lab. Energy (MeV) 3F3 0 0.5 1 1.5 2 Phase Shift (deg) 0 100 200 300 Lab. Energy (MeV) 1G4 0 1 2 3 4 Phase Shift (deg) 0 100 200 300 Lab. Energy (MeV) 3F4 0 0.2 0.4 0.6 0.8 Phase Shift (deg) 0 100 200 300 Lab. Energy (MeV) 3H4 -1.6 -1.2 -0.8 -0.4 0 Mixing Parameter (deg) 0 100 200 300 Lab. Energy (MeV) ε4",
+      "extractCut": true
+    },
+    {
+      "id": "sec-050-deuteron-calculations-page-65",
+      "number": null,
+      "title": "Deuteron calculations (page 65)",
+      "level": 2,
+      "pageStart": 65,
+      "pageEnd": 65,
+      "labelStart": "65",
+      "labelEnd": "65",
+      "words": 139,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phase shift",
+          "heading": false
+        },
+        {
+          "term": "deg",
+          "heading": false
+        },
+        {
+          "term": "mev",
+          "heading": false
+        },
+        {
+          "term": "lab",
+          "heading": false
+        }
+      ],
+      "extract": "0 25 50 75 Phase Shift (deg) 0 100 200 300 Lab. Energy (MeV) 1S0 -20 -10 0 10 Phase Shift (deg) 0 100 200 300 Lab. Energy (MeV) 3P0 -30 -20 -10 0 Phase Shift (deg) 0 100 200 300 Lab. Energy (MeV) 1P1 -30 -20 -10 0 Phase Shift (deg) 0 100 200 300 Lab. Energy (MeV) 3P1 0 50 100 150 200 Phase Shift (deg) 0 100 200 300 Lab. Energy (MeV) 3S1 -30 -20 -10 0 Phase Shift (deg) 0 100 200 300 Lab. Energy (MeV) 3D1 FIG. 7. np",
+      "extractCut": true
+    },
+    {
+      "id": "sec-051-deuteron-calculations-page-66",
+      "number": null,
+      "title": "Deuteron calculations (page 66)",
+      "level": 2,
+      "pageStart": 66,
+      "pageEnd": 66,
+      "labelStart": "66",
+      "labelEnd": "66",
+      "words": 95,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phase shift",
+          "heading": false
+        },
+        {
+          "term": "deg",
+          "heading": false
+        },
+        {
+          "term": "mev",
+          "heading": false
+        }
+      ],
+      "extract": "0 2 4 6 Mixing Parameter (deg) 0 100 200 300 Lab. Energy (MeV) ε1 0 4 8 12 Phase Shift (deg) 0 100 200 300 Lab. Energy (MeV) 1D2 0 10 20 30 Phase Shift (deg) 0 100 200 300 Lab. Energy (MeV) 3D2 0 5 10 15 20 Phase Shift (deg) 0 100 200 300 Lab. Energy (MeV) 3P2 0 0.4 0.8 1.2 1.6 Phase Shift (deg) 0 100 200 300 Lab. Energy (MeV) 3F2 -3 -2 -1 0 Mixing Parameter (deg) 0 100 200 300 Lab. Energy (MeV) ε2 Fig. 7 continued.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-052-deuteron-calculations-page-67",
+      "number": null,
+      "title": "Deuteron calculations (page 67)",
+      "level": 2,
+      "pageStart": 67,
+      "pageEnd": 67,
+      "labelStart": "67",
+      "labelEnd": "67",
+      "words": 94,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phase shift",
+          "heading": false
+        },
+        {
+          "term": "deg",
+          "heading": false
+        },
+        {
+          "term": "mev",
+          "heading": false
+        }
+      ],
+      "extract": "-6 -4 -2 0 Phase Shift (deg) 0 100 200 300 Lab. Energy (MeV) 1F3 -3 -2 -1 0 Phase Shift (deg) 0 100 200 300 Lab. Energy (MeV) 3F3 0 2 4 6 Phase Shift (deg) 0 100 200 300 Lab. Energy (MeV) 3D3 -4 -2 0 Phase Shift (deg) 0 100 200 300 Lab. Energy (MeV) 3G3 0 2 4 6 8 Mixing Parameter (deg) 0 100 200 300 Lab. Energy (MeV) ε3 0 0.5 1 1.5 2 Phase Shift (deg) 0 100 200 300 Lab. Energy (MeV) 1G4 Fig. 7 continued.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-053-deuteron-calculations-page-68",
+      "number": null,
+      "title": "Deuteron calculations (page 68)",
+      "level": 2,
+      "pageStart": 68,
+      "pageEnd": 68,
+      "labelStart": "68",
+      "labelEnd": "68",
+      "words": 63,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phase shift",
+          "heading": false
+        },
+        {
+          "term": "deg",
+          "heading": false
+        },
+        {
+          "term": "mev",
+          "heading": false
+        }
+      ],
+      "extract": "0 4 8 Phase Shift (deg) 0 100 200 300 Lab. Energy (MeV) 3G4 0 1 2 3 4 Phase Shift (deg) 0 100 200 300 Lab. Energy (MeV) 3F4 0 0.25 0.5 0.75 Phase Shift (deg) 0 100 200 300 Lab. Energy (MeV) 3H4 -1.5 -1 -0.5 0 Mixing Parameter (deg) 0 100 200 300 Lab. Energy (MeV) ε4 Fig. 7 continued.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-054-deuteron-calculations-page-69",
+      "number": null,
+      "title": "Deuteron calculations (page 69)",
+      "level": 2,
+      "pageStart": 69,
+      "pageEnd": 69,
+      "labelStart": "69",
+      "labelEnd": "69",
+      "words": 106,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deuteron wave",
+          "heading": false
+        },
+        {
+          "term": "wave functions",
+          "heading": false
+        },
+        {
+          "term": "nijmegen-i",
+          "heading": false
+        }
+      ],
+      "extract": "0 0.2 0.4 0.6 u(r), w(r) (fm-1/2) 0 1 2 3 4 r (fm) FIG. 8. Deuteron wave functions. The family of large curves are u(r) and the family of small curves are w(r). The solid lines represent the wave functions generated from the CD-Bonn potential, while the dashed and dotted lines are from the Nijmegen-I [31] and Argonne V18 [32] potentials, respectively. 0 0.1 0.2 0.3 0.4 u(r)/r, w(r)/r (fm-3/2) 0 1 2 3 4 r (fm) FIG.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "APPENDIXES"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [
+      "figure 1",
+      "figure 2"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mev lab",
+      "heading": false
+    },
+    {
+      "term": "cd-bonn potential",
+      "heading": true
+    },
+    {
+      "term": "phase shift",
+      "heading": false
+    },
+    {
+      "term": "cib phase",
+      "heading": false
+    },
+    {
+      "term": "csb phase",
+      "heading": false
+    },
+    {
+      "term": "nuclear potential",
+      "heading": false
+    },
+    {
+      "term": "ope potential",
+      "heading": false
+    },
+    {
+      "term": "below mev",
+      "heading": false
+    },
+    {
+      "term": "mev available",
+      "heading": false
+    },
+    {
+      "term": "nijmegen phase",
+      "heading": false
+    },
+    {
+      "term": "fig obe",
+      "heading": false
+    },
+    {
+      "term": "phase parameters",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 67,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 69,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Numerical values of our deuteron waves and a convenient parametrization are given in Appendix D which also contains an account of how to conduct deuteron calculations in momentum space",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Diﬀerences δnn−δpp due to the impact of nucleon mass splitting on kinematics (dotted",
+      "page": 60,
+      "pageLabel": "60",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Diﬀerences δnp −δpp as produced by various CIB mechanisms. Shown are the contri-",
+      "page": 61,
+      "pageLabel": "61",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The diﬀerence δnp −δpp due to the charge-dependence of the strong force (dashed",
+      "page": 62,
+      "pageLabel": "62",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "pp phase parameters in partial waves with J ≤4",
+      "page": 63,
+      "pageLabel": "63",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "np phase parameters in partial waves with J ≤4",
+      "page": 65,
+      "pageLabel": "65",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Deuteron wave functions. The family of large curves are u(r) and the family of small curves are w(r). The solid lines represent the wave functions generated from the CD-Bonn potential, while the dashed and dotted lines are from the Nijmegen-I [31] and Argonne V18 [32] potentials, respectively",
+      "page": 69,
+      "pageLabel": "69",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 19,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 56,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "7 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p37); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 10
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 56 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-nucl-th-0006014v1"
+  }
+}

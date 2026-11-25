@@ -1,0 +1,751 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "1-s20-s000187089891800x-main",
+  "blocks": [
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "INTRODUCTION",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "In this paper we introduce the notion of a spherical category. The moti-\nvation for this and the main application is to generalise the Turaev\u0015Viro\nstate sum model invariant of a closed piecewise-linear 3-manifold. This\napplication is discussed separately in [13].\nA spherical category is defined to be a pivotal category which satisfies an\nextra condition, which states that two trace maps are equal. The universal\nstrict pivotal category has an interpretation in terms of planar graphs.\nA number of authors have introduced categories whose morphisms are\ndefined in terms of diagrams and which have a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Advances in Mathematics 143, 357\u0015375 (1999)\nSpherical Categories\nJohn W. Barrett\nSchool of Mathematical Sciences, University of Nottingham, University Park,\nNottingham NG7 2RD, United Kingdom\nE-mail: jwb\u0014maths.nott.ac.uk\nand\nBruce W. Westbury\nMathematics Institute, University of Warwick, Coventry CV4 7AL, United Kingdom\nE-mail: bww\u0014maths.warwick.ac.uk\nThis paper is a study of monoidal categories with duals where the tensor product\nneed not be commutative. The motivating examples are categories of representa-\ntions of Hopf algebras. We introduce the new notion of a spherical category. In the\nfi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/def-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 9,
+      "target": "def-sec-001-01.md",
+      "narrative": null,
+      "content": "A monoidal category is a category, C, together with a functor \u0017 : C_C\u0014 C, an object e, and natural transformations :: ( \u0017_1)\u0017 \u0014 (1_\u0017 )\u0017 *: e\u00171 \u0014 1 \\: 1\u0017e \u0014 1 Each component of each of the natural transformations :, * and \\ is required to be an isomorphism. These data are also required to be coherent which is equivalent to requiring that : satisfy the pentagon identity and that \\ and * satisfy a triangular identity. Also, \\(e)=*(e) : e\u0017e \u0014 e. These conditions are given in [8]. If each component of the natural transformations :, *, and \\ is the iden- tity map then the category is called strict m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/def-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 9,
+      "target": "def-sec-001-02.md",
+      "narrative": null,
+      "content": "Let (C, \u0017, e, :, *, \\) be a monoidal category. Then the data needed to make this a category with duals is a functor, V: C& \u0014 C, and natural transformations (1) {: 1 \u0014 VV, (2) #: (V_V) b \u0017 \u0014 \u0017 op b V and an isomorphism &: e \u0014 eV. Each component of the natural transformations { and # is required to be an isomorphism. A category with data satisfying these conditions is called a category with dual data.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/def-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 9,
+      "target": "def-sec-001-03.md",
+      "narrative": null,
+      "content": "A category with dual data is strict if each component of the natural transformations # and { is the identity map and the map & is the identity map. In this case the category is called a category with strict dual data. In the following definition, if :=(\\, \\, ..., \\) is an n-tuple of signs, then C: denotes the category C\\_C\\_ } } } _C\\, with C+#C. Also, if 0 is the 0-tuple, then C0 is the category with one morphism, so that e: C0 \u0014 C. It is convenient to regard & as a natural transformation from the functor e to the functor e& b V.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/def-sec-001-04",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 9,
+      "target": "def-sec-001-04.md",
+      "narrative": null,
+      "content": "The set of iterates of the functors \u0017, V, and e is the smallest set of functors F: C:\u0014 C which satisfies the following conditions: (1) The functor e: C0 \u0014 C is an iterate. (2) The identity functor 1: C \u0014 C is an iterate. (3) If F and G are iterates then the functor F\u0017G=F_Gb \u0017 is an iterate. (4) If F is an iterate then F*=F & b V is an iterate. The length of : is called the multiplicity of the iterated functor. There is a category with objects the set of all iterates of \u0017, V, and e and morphisms all natural transformations.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/def-sec-001-05",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 9,
+      "target": "def-sec-001-05.md",
+      "narrative": null,
+      "content": "Let F, G, and H be any three iterated functors. Then we have natural transformations :: (F\u0017G)\u0017H \u0014 F\u0017 (G\u0017H) *: e\u0017F \u0014 F \\: F\u0017e \u0014 F #: (F*)\u0017 (G*) \u0014 (G\u0017F)* {: F \u0014 F** &: e \u0014 e* Each of these is an isomorphism. Each of these and their inverses are called instances. More particularly, the first one, for example, is called an instance of :, and its inverse an instance of the inverse of :.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/def-sec-001-06",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 9,
+      "target": "def-sec-001-06.md",
+      "narrative": null,
+      "content": "The set of expansions is the smallest subset of the set of natural transformations which satisfies the following: (1) The identity functor, 1, is an expansion. (2) Any instance is an expansion. (3) If ; is an expansion then ;\u00171 and 1\u0017; are expansions. (4) If ; is an expansion then ;* is an expansion. The smallest set which satisfies all but the last condition is the set of reduced expansions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/def-sec-001-07",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 9,
+      "target": "def-sec-001-07.md",
+      "narrative": null,
+      "content": "The smallest subcategory which contains instances and which is closed under \u0017 and V is equal to the smallest subcategory which contains expansions. This is called the category of iterates and any morphism in this category is called an iterated natural transformation. The smallest subcategory of the category of iterates which contains instances and which is closed under \u0017 is equal to the smallest subcategory of the category of iterates which contains reduced expansions. Any mor- phism in this category is called a reduced iterated natural transformation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/def-sec-001-08",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 9,
+      "target": "def-sec-001-08.md",
+      "narrative": null,
+      "content": "Since every expansion is an isomorphism and the inverse of any expansion is an expansion it follows that every iterated natural transformation is an isomorphism and that every inverse of an iterated natural transformation is an iterated natural transformation. The category C with dual data is coherent if any two iterated natural transfor- mations between the same two iterated functors are equal. Equivalently, the dual data is coherent if any diagram with vertices iterated functors and arrows expansions commutes. A category with dual data which is coherent is called a category with duals. The f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/def-sec-001-12",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 9,
+      "target": "def-sec-001-12.md",
+      "narrative": null,
+      "content": "The set of standard iterated functors is the smallest set of iterated functors which satisfies: (1) The iterates e, 1, and V are standard. (2) If F {e is standard then F \u00171 and F \u0017V are standard.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/def-sec-001-13",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 9,
+      "target": "def-sec-001-13.md",
+      "narrative": null,
+      "content": "The set of reduced iterated functors is the smallest set of iterated functors which satisfies: (1) The iterates e, 1, and V are reduced. (2) If F and G are reduced then F \u0017G is reduced. Define two iterated functors, F and G, to be equivalent if there is an iterated natural transformation from F to G. This is obviously an equiv- alence relation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/def-sec-001-14",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 9,
+      "target": "def-sec-001-14.md",
+      "narrative": null,
+      "content": "The rank r and luminosity, l, of an iterated functor are defined recursively as follows: (1) r(e)=1 and r(1)=1 (2) r(F\u0017G)=r(F)+r(G)+1 (3) r(F*)=r(F ). (1) l(e)=0 and l(1)=0 (2) l(F\u0017G)=l(F)+l(G) (3) l(F*)=l(F )+r(F ). The rank is a modified multiplicity, and the luminosity is a measure of the number of stars. The luminosity is unaffected by central iterated natural transformations, but is increased by instances of #, {, and &.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/def-sec-001-16",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 9,
+      "target": "def-sec-001-16.md",
+      "narrative": null,
+      "content": "If C is a category with duals then define the category PC to have objects of the form (F, [a1, ..., an]) where F is a standard iterated functor of multiplicity n and each ai is an object of C. The set of morphisms from (F,[a1, ..., an]) to (G, [a1, ..., am]) is the set of morphisms in C from F(a1, ..., an) to G(a1, ..., am). There is a functor i: C \u0014 PC defined on objects by a [ (1, a). There is also a functor ?: PC\u0014 C defined on objects by (F,[a1, ..., an]) [ F(a1, ..., an). It is trivial that the composite i b ? is the identity functor of C. It is also clear that there is a canonical natural",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/lem-sec-001-10",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 9,
+      "target": "lem-sec-001-10.md",
+      "narrative": null,
+      "content": "Any iterated natural transformation is equal to a reduced iterated natural transformation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/lem-sec-001-11",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 9,
+      "target": "lem-sec-001-11.md",
+      "narrative": null,
+      "content": "Any expansion of an instance of #, {, or & (but not their inverses) composed with a central iterate is equal to a central iterate com- posed with an expansion of an instance of #, {, or &.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/lem-sec-001-15",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 9,
+      "target": "lem-sec-001-15.md",
+      "narrative": null,
+      "content": "For any iterated functor F, there is a unique reduced iterated functor R and a unique natural transformation R \u0014 F which is an iterate of instances of #, {, and &.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MONOIDAL CATEGORIES WITH DUALS",
+      "pageStart": 2,
+      "pageEnd": 9,
+      "target": "../sections/sec-001-1-monoidal-categories-with-duals.md",
+      "narrative": null,
+      "content": "In this section we study monoidal categories with duals. Examples are\nfinitely generated free modules over a commutative ring. In these examples\nthe tensor product is commutative, but we do not require this. The\nmotivating examples of monoidal categories with duals are the categories\nof representations of Hopf algebras. These categories have a contravariant\nfunctor given by the contragradient dual but are not categories with duals,\nin general, as we require that each object be reflexive.\nThe only result in this section is a coherence theorem. The proof follows\nthe coherence theorem for monoida",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/thm-sec-001-09",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 9,
+      "target": "thm-sec-001-09.md",
+      "narrative": null,
+      "content": "A category C with dual data is coherent if, and only if, the following conditions are satisfied: (1) {(e) is the composite e w\u0014 & e* ww\u0014 &*&1 e**. (2) For each object c, {(c*) and {(c)* are inverse isomorphisms. (3) For any object a, the following diagram commutes \\(a*) #(a, e) a*\u0017e ww\u0014 1\u0017 & a*\u0017e* a* ww\u0014 **(a) (e\u0017a)* (4) For any object a, the following diagram commutes *(a*) #(e, a) e}a* ww\u0014 v\u0017 1 e*\u0017a* a* ww\u0014 \\*(a) (a\u0017e)* (5) For all objects a, b, and c, the following diagram commutes :(c*, b*, a*) :*(a, b, c) (c*\u0017b*)\u0017a* www\u0014 #(c, b)\u00171 (b\u0017c)*\u0017a* www\u0014 #(b\u0017c, a) (a\u0017 (b\u0017c))* c*\u0017(b*\u0017a*) wwww\u0014 1\u0017#(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/figure-img-p006-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "SPHERICAL CATEGORIES",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-002-2-spherical-categories.md",
+      "narrative": null,
+      "content": "In this section we introduce spherical categories. A pivotal category is a\ncategory with duals and with some additional structure and a spherical\ncategory is a pivotal category in which the additional structure satisfies an\nextra condition.\nStrict pivotal categories are discussed in [3], where it is shown that the\ncategory of oriented planar graphs up to isotopy with labelled edges and\nwith a distinguished edge at each vertex is a strict pivotal category.\nIf the sphere S 2 is regarded as the plane with the point at infinity\nattached, then a closed graph in the plane can be regarded as a closed",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/def-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "def-sec-003-01.md",
+      "narrative": null,
+      "content": "A pivotal category is a category with duals together with a morphism =(c): e \u0014 c\u0017c* for each object c # C. The conditions on the components of = are the following: (1) For all morphisms, f : a \u0014 b, the following diagram commutes =(b) f\u00171 e ww\u0014 =(a) a\u0017a* b\u0017b* ww\u0014 1\u0017f * b\u0017a* (2) For all objects a, the following composite is the identity map of a*: a* ww\u0014 *&1(a*) e\u0017a* www\u0014 =(a*)\u00171 (a*\u0017a**)\u0017a* wwww\u0014 :(a*, a**, a*) a*\u0017 (a**\u0017a*) wwww\u0014 1\u0017#(a*, a) a*\u0017 (a\u0017a*)* www\u0014 1\u0017=(a)* a*\u0017e* ww\u0014 1\u0017 &&1 a*\u0017e ww\u0014 \\(a*) a* (3) For all objects a and b the following composite is required to be =(a\u0017b): e ww\u0014 =(a) a\u0017a* ww",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/def-sec-003-04",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "def-sec-003-04.md",
+      "narrative": null,
+      "content": "Let a be any object in a pivotal category. Then the monoid End(a) has two trace maps, trL, trR: End(a) \u0014 End(e). In a pivotal category trL( f ) is defined to be the composite e ww\u0014 =(a*) a*\u0017a** wwww\u0014 1\u0017 {&1(a) a*\u0017a ww\u0014 1\u0017f a*\u0017a wwww\u0014 {(a*)\u0017 {(a) a***\u0017a** wwww\u0014 #(a**, a*) (a*\u0017a**)* www\u0014 =*(a*) e* w\u0014 & e and trR( f ) is defined to be the composite e ww\u0014 =(a) a\u0017a* ww\u0014 f\u00171 a\u0017a* www\u0014 {(a)\u00171 a**\u0017a* www\u0014 #(a*, a) (a\u0017a*)* ww\u0014 =*(a) e* w\u0014 & e. In a strict pivotal category these definitions simplify to trL( f )==(a*)(1\u0017f ) =(a*)* trR( f )==(a)( f\u00171) =(a)* These are called trace maps because they satisfy",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/def-sec-003-05",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "def-sec-003-05.md",
+      "narrative": null,
+      "content": "A pivotal category is spherical if, for all objects a and all morphisms f: a \u0014 a, trL( f )=trR( f ). An equivalent condition is that trL( f )=trL( f *), for all f : a \u0014 a. Also, in a spherical category, trL( f\u0017g)=trL( f ) } trL(g) (where the product is in End(e)) for all f : a \u0014 a and all g: b\u0014 b. In the rest of this paper we study additive spherical categories. This means that each Hom set is a finitely generated abelian group; and that the data defining the spherical structure is compatible with the additive structure. This means that \u0017 is Z-bilinear, that V is Z-linear, and all com- ponents",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/def-sec-003-07",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "def-sec-003-07.md",
+      "narrative": null,
+      "content": "For any two objects a and b there is a bilinear pairing 3: Hom(a, b)_Hom(b, a) \u0014 F defined by 3( f, g)=trL( fg)=trL(g f ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/def-sec-003-08",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "def-sec-003-08.md",
+      "narrative": null,
+      "content": "A spherical category is non-degenerate if, for all objects a and b, the pairing 3 is non-degenerate. The next theorem shows that every additive spherical category has a natural quotient which is a non-degenerate spherical category. This con- struction is mentioned in [12].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/ex-sec-003-06",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "ex-sec-003-06.md",
+      "narrative": null,
+      "content": "An example of an additive spherical category which can- not be regarded as a category whose objects are finitely generated free modules is given by taking the free Z[q, q&1, z]-linear category on the category of oriented tangles and then taking the quotient by the well-known skein relation for the HOMFLY polynomial. This is an additive spherical category and for each pair of objects a and b, Hom(a, b) is a finitely generated free Z[q, q&1, z]-module. However, the objects can- not be taken to be finitely generated modules unless z is a quantum integer.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/lem-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "lem-sec-003-02.md",
+      "narrative": null,
+      "content": "In any pivotal category, for any morphism f: a \u0014 b the following composite is f*: b* www\u0014 \\&1(b*) b*\u0017e www\u0014 1\u0017=(a) b*\u0017 (a\u0017a*) wwww\u0014 1\u0017 ( f\u00171) b*\u0017 (b\u0017a*) wwwww\u0014 :&1(b*, b, a*) (b*\u0017b)\u0017a* wwwww\u0014 ({(b*)\u0017 {(b))\u00171 (b***\u0017b**)\u0017a wwww\u0014 #(b**, b*)\u00171 (b*\u0017b**)*\u0017a*wwww\u0014 =*(b*)\u00171 e*\u0017a* ww\u0014 &&1\u00171 e\u0017a* ww\u0014 *(a*) a*",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FIG. 1",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "../sections/sec-003-fig-1.md",
+      "narrative": null,
+      "content": "to the left. This isotopy moves the loop in Fig. 1 past the point at infinity.\nTaken together with planar isotopies, such an operation on planar graphs\ngenerates all the isotopies on the sphere. It follows that the evaluation in\na spherical category of a closed graph with labelled edges and with a dis-\ntinguished edge at each vertex is invariant under isotopies of the sphere S 2.\nDefinition 2.1.\nA pivotal category is a category with duals together\nwith a morphism =(c): e \u0014 c\u0017c* for each object c # C.\nThe conditions on the components of = are the following:\n(1)\nFor all morphisms, f : a \u0014 b, the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/rem-sec-003-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "rem-sec-003-03.md",
+      "narrative": null,
+      "content": "Note also that a pivotal category is closed, in the sense that there are natural isomorphisms, for all a, b, and c; Hom(a\u0017b, c)$Hom(b, a*\u0017c), Hom(a, b\u0017c)$Hom(a\u0017c*, b) Hom(a\u0017b, c)$Hom(a, c\u0017b*), Hom(a, b\u0017c)$Hom(b*\u0017a, c).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/thm-sec-003-09",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "thm-sec-003-09.md",
+      "narrative": null,
+      "content": "Let C be an additive spherical category. Define the sub- category J to have the same set of objects and morphisms defined by HomJ(c1, c2)=[ f # HomC(c1, c2) : trL( fg)=0 for all g # HomC(c2, c1)]. Then C\u0012J is a non-degenerate additive spherical category.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/figure-img-p011-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../images/img-p011-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/def-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "def-sec-004-01.md",
+      "narrative": null,
+      "content": "A spherical Hopf algebra over F consists of F-module A together with the following data (1) a multiplication + (2) a unit ': F \u0014 A (3) a comultiplication 2: A \u0014A\u0017A (4) a counit =: A \u0014 F (5) an antipodal map #: A \u0014 A (6) an element w # A. The data (A, +, ', 2, =, #) are required to define a Hopf algebra. The conditions on the element w are the following: (1) #2(a)=waw&1 for all a # A. (2) 2(w)=w\u0017w. (3) #(w)=w&1. (4) =(w)=1. (5) tr(%w)=tr(%w&1) for any left A-module, V, which is finitely generated and projective as an F-module and for all % # EndA(V). It follows from the condition 2(w)=w\u0017w that",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/ex-sec-004-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "ex-sec-004-02.md",
+      "narrative": null,
+      "content": "Examples of Hopf algebras which are spherical are: (1) Any involutory Hopf algebra is spherical. The element w can be taken to be 1. (2) Any ribbon Hopf algebra, as defined in [10], is spherical. The element w can be taken to be uv&1 where the element u is determined by the quasi-triangular structure and the element v is the ribbon element.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/ex-sec-004-05",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "ex-sec-004-05.md",
+      "narrative": null,
+      "content": "This is an example of a finite dimensional Hopf algebra over C which satisfies all the conditions for a spherical Hopf algebra except that the left and right traces are distinct. This example is the quantized enveloping algebra of the Borel subalgebra of SL2(C). Let s be a primitive 2rth root of unity with r>1. Let B be the unital algebra generated by elements X and K subject to the defining relations KX=sXK K4r=1 Xr=0. Then B is a finite dimensional algebra and also has a Hopf algebra struc- ture defined by: (1) The coproduct, 2, is defined by 2(K)=K\u0017K and 2(X)= X\u0017K+K&1\u0017X (2) The augmentation",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/prop-sec-004-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "prop-sec-004-06.md",
+      "narrative": null,
+      "content": "If A is a spherical Hopf algebra over F then the category of left A-modules is a spherical category.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/prop-sec-004-07",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "prop-sec-004-07.md",
+      "narrative": null,
+      "content": "Let A be a spherical Hopf algebra. Let x be a left A-module. Then End(x), the endomorphism algebra in the non-degenerate quotient, is semisimple.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "SPHERICAL HOPF ALGEBRAS",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "../sections/sec-004-3-spherical-hopf-algebras.md",
+      "narrative": null,
+      "content": "In this section we introduce spherical Hopf algebras. These are defined\nto be Hopf algebras with some additional structure which implies that the\ncategory of finitely generated modules is a spherical category.\nDefinition 3.1.\nA spherical Hopf algebra over F consists of F-module\nA together with the following data\n(1)\na multiplication +\n(2)\na unit ': F \u0014 A\n(3)\na comultiplication 2: A \u0014A\u0017A\n(4)\na counit =: A \u0014 F\n(5)\nan antipodal map #: A \u0014 A\n(6)\nan element w # A.\nThe data (A, +, ', 2, =, #) are required to define a Hopf algebra. The\nconditions on the element w are the following:\n(1)\n#2(a)=waw&1 fo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/rem-sec-004-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "rem-sec-004-03.md",
+      "narrative": null,
+      "content": "3.3. A Hopf algebra with an element w that satisfies the first two conditions of Definition 3.1 is spherical if either w2=1, or all modules are self-dual.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/rem-sec-004-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "rem-sec-004-04.md",
+      "narrative": null,
+      "content": "3.4. If A is a Hopf algebra there may exist more than one ele- ment w such that (A, w) is a spherical Hopf algebra. However, if w1 is one such element then w2= gw1 is another such element if and only if g satisfies the conditions: (1) g is central (2) g is group-like (3) g is an involution. In particular, if A is finite dimensional over a field, the set of g satisfying these conditions forms a group of the form Zk 2 for some integer k.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/rem-sec-004-08",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "rem-sec-004-08.md",
+      "narrative": null,
+      "content": "Let A be a finite dimensional spherical Hopf algebra. Then the category of projective left A-modules is a spherical category. This constructs a spherical subcategory with J finite but we know of no applica- tions. If A is semisimple this result is superfluous and in the example of the quantised enveloping algebra of SL(2) given in [9] every indecomposable projective has quantum dimension 0 so that J is empty. The category of projective left A-modules is a subcategory of the spheri- cal category of left A-modules. Hence to show it is spherical it is sufficient to show it is closed under the ope",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s000187089891800x-main/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "REFERENCES",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-005-references.md",
+      "narrative": null,
+      "content": "1. H. H. Andersen, Tensor products of quantized tilting modules, Comm. Math. Phys. 149\n(1992), 149\u0015159.\n2. H. H. Andersen and J. Paradowski, Fusion categories arising from semisimple Lie\nalgebras, Comm. Math. Phys. 169 (1995), 563\u0015588.\n3. P. J. Freyd and D. N. Yetter, Braided compact closed categories with applications to low\ndimensional topology, Adv. Math. 77 (1989), 156\u0015182.\n4. A. Joyal and R. Street, The geometry of tensor calculus, I, Adv. Math. 88 (1991), 55\u0015112.\n5. G. M. Kelly and M. I. Laplaza, Coherence for compact closed categories, J. Pure Appl.\nAlgebra 19 (1980), 193\u0015213.\n6. R. G.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

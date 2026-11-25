@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-vertex-operator-affine-coordinate",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:vertex-operator-affine-coordinate",
+  "kind": "remark",
+  "title": "The vertex-operator variable as the affine coordinate on $\\mathcal{S}_p$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-vertex-operator",
+    "papers/quantum-observable-universe/blocks/def-contact-affine-chart"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-vertex-operator",
+  "tags": [
+    "vertex-operator",
+    "exceptional-divisor",
+    "contact-affine-chart"
+  ],
+  "text": "vertex-operator-affine-coordinate.md",
+  "provenance": "authored"
+}

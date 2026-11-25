@@ -1,0 +1,270 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1704.00850v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1704.00850v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Markov chain Monte Carlo (MCMC) is widely used to estimate intractable integrals that represent expectations with respect to complicated probability distributions. Let $\\pi: S \\to\n        [0,\\infty)$ be a probability density function (pdf) with respect to a $\\sigma$-finite measure $\\mu$, where $(S,\\mathcal{U},\\mu)$ is some measure space. Suppose we want to approximate the integral $$J := \\int_S f(u) \\pi(u) \\mu(du)$$ for some function $f: S \\to \\mathbb{R}$. Then $J$ can be estimated by $\\hat{J}_m := m^{-1} \\sum_{k=0}^{m-1} f(\\Phi_k),$ where $\\{\\Phi_k\\}_{k=0}^{m-1}$ are the first $m$ elements of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.00850v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Estimating the spectral gap of a trace-class Markov operator\nQian Qin, James P. Hobert and Kshitij Khare\nDepartment of Statistics\nUniversity of Florida\nApril 2019\nAbstract\nThe utility of a Markov chain Monte Carlo algorithm is, in large part, determined by the size of\nthe spectral gap of the corresponding Markov operator. However, calculating (and even approximating)\nthe spectral gaps of practical Monte Carlo Markov chains in statistics has proven to be an extremely\ndifﬁcult and often insurmountable task, especially when these chains move on continuous state spaces.\nIn this paper, a method for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.00850v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Markov operators",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-2-markov-operators.md",
+      "narrative": null,
+      "content": "[]{#MarkovOperators label=\"MarkovOperators\"}\n\nAssume that the Markov chain $\\Phi$ has a Markov transition density, $p(u, \\cdot),\\,u \\in S$, such that, for any measurable $A \\subset S$ and $u \\in S$, $$\\mathbb{P}(\\Phi_k \\in A|\\Phi_0 = u) = \\int_A p^{(k)}(u,u') \\,\n        \\mu(du') \\,,$$ where $$p^{(k)}(u,\\cdot) := \\left\\{\n    \\begin{array}{@{}ll@{}}\n    p(u,\\cdot)  & k=1 \\\\\n    \\int_S p^{(k-1)}(u,u') p(u',\\cdot) \\, \\mu(du') & k > 1 \\,\n    \\end{array} \\right.$$ is the $k$-step Mtd corresponding to $p(u,\\cdot)$. We will assume throughout that $\\Phi$ is Harris ergodic, i.e. irreducible, aperiodic a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.00850v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Power sums of eigenvalues",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-3-power-sums-of-eigenvalues.md",
+      "narrative": null,
+      "content": "[]{#powersum label=\"powersum\"}\n\nWe now develop some results relating $\\lambda_1$ to the power sum of $P$'s eigenvalues. We assume throughout this section that $P$ is non-negative and trace-class (compact with summable eigenvalues). For any positive integer $k$, let $$s_k = \\sum_{i=0}^{\\kappa} \\lambda_i^k \\,,$$ and define $s_0$ to be infinity. The first power sum, $s_1$, is the trace norm of $P$ [see e.g. @conway1990course; @conway2000course], while $\\sqrt{s_2}$ is the Hilbert-Schmidt norm of $P.$ That $P$ is trace-class implies $s_1 < \\infty,$ and it's clear that $s_k$ is decreasing in $k.$\n\nT",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.00850v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Data augmentation operators and an integral representation of sk",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-4-data-augmentation-operators-and-an-integral-re.md",
+      "narrative": null,
+      "content": "[]{#daint label=\"daint\"}\n\nIn order to formally define DA, we require a second measure space. Let $(S_V, \\mathcal{V}, \\nu)$ be a $\\sigma$-finite measure space such that $\\mathcal{V}$ is countably generated. Also, rename $S$ and $\\pi$, $S_U$ and $\\pi_U$, respectively. Consider the random element $(U,V)$ taking values in $S_U\n        \\times S_V$ with joint pdf $\\pi_{U,V}(\\cdot,\\cdot).$ Suppose the marginal pdf of $U$ is the target, $\\pi_U(\\cdot)$, and denote the marginal pdf of $V$ by $\\pi_V(\\cdot).$ We further assume that the conditional densities $\\pi_{U|V}(u|v) :=\n        \\pi_{U,V}(u,v)/\\pi_V(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.00850v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classical Monte Carlo",
+      "pageStart": 9,
+      "pageEnd": 15,
+      "target": "../sections/sec-004-5-classical-monte-carlo.md",
+      "narrative": null,
+      "content": "[]{#MC label=\"MC\"} Consider the Mtd given by $$\\label{a} a(u, \\cdot) = \\int_{S_V}\\int_{S_V}\n          \\pi_{U|V}(\\cdot|v') r(v,dv') \\pi_{V|U}(v|u) \\, \\nu(dv) \\,, \\; u \\in S_U \\,,$$ where $r(v,\\cdot), \\, v \\in S_V$ is an Mtf on $S_V$ with invariant pdf $\\pi_V(\\cdot).$ We will show in this section that this form has utility beyond constructing sandwich algorithms. Indeed, the $k$-step Mtd of a DA algorithm (or a sandwich algorithm) can be re-expressed in the form [\\[a\\]](#a){reference-type=\"eqref\" reference=\"a\"}. This motivates the development of a general method for estimating the integral $\\int",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.00850v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Efficiency of the algorithm",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-005-6-efficiency-of-the-algorithm.md",
+      "narrative": null,
+      "content": "[]{#efficiency label=\"efficiency\"}\n\nTo obtain an interval estimate of $\\lambda_1$ based on [\\[estimator\\]](#estimator){reference-type=\"eqref\" reference=\"estimator\"} or [\\[estimator2\\]](#estimator2){reference-type=\"eqref\" reference=\"estimator2\"}, one needs to run $N$ iterations of Algorithm 1 or 2. If the time needed to simulate one step of the DA chain is $\\tau$, then the time needed to run $N$ iterations of Algorithm 1 or 2 is approximately $kN\\tau$. Note that significant speedup can be achieved through parallel computing, since the $N$ iterations are carried out independently. Given $k$ and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.00850v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-006-7-examples.md",
+      "narrative": null,
+      "content": "[]{#illustration label=\"illustration\"} In this section, we apply our Monte Carlo technique to several common Markov operators. In particular, we examine one toy Markov chain, and two practically relevant Monte Carlo Markov chains. In the two real examples, we are able to take advantage of existing trace-class proofs to establish that [\\[momentcond\\]](#momentcond){reference-type=\"eqref\" reference=\"momentcond\"} (or [\\[momentconddual\\]](#momentconddual){reference-type=\"eqref\" reference=\"momentconddual\"}) hold for suitable $\\omega(\\cdot)$ (or $\\psi(\\cdot)$).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.00850v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gaussian chain",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-007-71-gaussian-chain.md",
+      "narrative": null,
+      "content": "We begin with a toy example. Let $S_U=S_V=\\mathbb{R},$ $\\pi_U(u) \\propto \\exp(-u^2),$ and $$\\pi_{V|U}(v|u) \\propto \\exp \\Big\\{ -4\\Big(v-\\frac{u}{2}\\Big)^2\n        \\Big\\} \\,.$$ Then $$\\pi_{U|V} (u|v) \\propto \\exp \\{ -2(u-v)^2 \\} \\,.$$ This leads to one of the simplest DA chains known. Indeed, the Mtd, $$p(u,\\cdot) = \\int_{\\mathbb{R}} \\pi_{U|V}(\\cdot|v)\n        \\pi_{V|U}(v|u) \\, dv \\,, \\; u \\in S_U \\,,$$ can be evaluated in closed form, and turns out to be a normal pdf. The spectrum of the corresponding Markov operator, $P$, has been studied thoroughly [see e.g. @diaconis2008gibbs]. It is easy t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.00850v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bayesian probit regression",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "../sections/sec-008-72-bayesian-probit-regression.md",
+      "narrative": null,
+      "content": "Let $Y_1,Y_2,\\dots, Y_n$ be independent Bernoulli random variables with $\\mathbb{P}(Y_1=1|\\beta) = \\Phi(x_i^T\\beta),$ where $x_i,\\beta\n        \\in \\mathbb{R}^p$, and $\\Phi(\\cdot)$ is the cumulative distribution function of the standard normal distribution. Take the prior on $\\beta$ to be $\\mbox{N}_p(Q^{-1}w, Q^{-1}),$ where $w \\in \\mathbb{R}^p$ and $Q$ is positive definite. The resulting posterior distribution is intractable, but [@albert1993bayesian] devised a DA algorithm to sample from it. Let $z=(z_1,z_2,\\dots,z_n)^T$ be a vector of latent variables, and let $X$ be the design matrix whose",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.00850v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bayesian linear regression model with non-Gaussian errors",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "../sections/sec-009-73-bayesian-linear-regression-model-with-non-gau.md",
+      "narrative": null,
+      "content": "Let $Y_1,Y_2,\\dots,Y_n$ be independent $d$-dimensional random vectors from the linear regression model $$Y_i = \\beta^T x_i + \\Sigma^{1/2}\\varepsilon_i \\,,$$ where $x_i \\in \\mathbb{R}^{p}$ is known, while $\\beta \\in\n    \\mathbb{R}^{p \\times d}$ and the $d\\times d$ positive definite matrix $\\Sigma$ are to be estimated. The iid errors, $\\varepsilon_1,\\varepsilon_2,\\dots,\\varepsilon_n$, are assumed to have a pdf that is a scale mixture of Gaussian densities: $$f_h(\\varepsilon) = \\int_{\\mathbb{R}_+} \\frac{u^{d/2}}{(2\\pi)^{d/2}} \\exp \\Big( -\\frac{u}{2} \\varepsilon^T\\varepsilon \\Big) h(u) \\, du,$$ wh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.00850v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Proof of Theorem 2",
+      "pageStart": 26,
+      "pageEnd": 30,
+      "target": "../sections/sec-010-a-proof-of-theorem-2.md",
+      "narrative": null,
+      "content": "Proof of Theorem 2\nTheorem 2. The DA operator P is trace-class if and only if\nZ\nSU\np(u, u) µ(du) < ∞.\n(4)\nIf (4) holds, then for any positive integer k,\nsk :=\nκ\nX\ni=0\nλk\ni =\nZ\nSU\np(k)(u, u) µ(du) < ∞.\n(5)\nProof. Note that P is self-adjoint and non-negative. Let {gi}∞\ni=0 be an orthonormal basis of L2(πU). The\noperator P is deﬁned to be trace-class if (see e.g. Conway, 2000)\n∞\nX\ni=0\n⟨Pgi, gi⟩πU < ∞.\n(24)\nThis condition is equivalent to P being compact with summable eigenvalues. To show that P being trace-\nclass is equivalent to (4), we will prove a stronger result, namely\n∞\nX\ni=0\n⟨Pgi, gi⟩πU =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1704.00850v3/blocks/thm-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 30,
+      "target": "thm-sec-010-01.md",
+      "narrative": null,
+      "content": "The DA operator P is trace-class if and only if Z SU p(u, u) µ(du) < ∞. (4) If (4) holds, then for any positive integer k, sk := κ X i=0 λk i = Z SU p(k)(u, u) µ(du) < ∞. (5)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1704.00850v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B Proof of Proposition 9",
+      "pageStart": 30,
+      "pageEnd": 34,
+      "target": "../sections/sec-011-b-proof-of-proposition-9.md",
+      "narrative": null,
+      "content": "Proof of Proposition 9\nProposition 9.\nSuppose that h(·) is strictly positive in a neighborhood of the origin. If ω(z) can be written\nas Qn\ni=1 ωi(zi), and there exists ξ ∈(1, 4/3) such that for all i ∈{1, 2, . . . , n},\nZ\nR+\nu3d/2h3(u)\n(\nR ξu\n0\nvd/2h(v) dv)3ω2\ni (u)\ndu < ∞,\nthen (15) holds, and thus by Theorem 4, second moment exists for the estimator (13).\nProof. Let Sd be the set of d × d positive deﬁnite matrices. For any β ∈Rp, Σ ∈Sd, z ∈Rn, and\nξ ∈(1, 4/3),\nπU|V (β, Σ|z)π3\nV |U(z|β, Σ)\n=\n|Σ|−(n+d+1)/2 Qn\ni=1 exp{−zi(yi −βT xi)T Σ−1(yi −βT xi)/2}\nR\nRp\nR\nSd |˜Σ|−(n+d+1)/2 Qn\ni=1 exp{−zi(yi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

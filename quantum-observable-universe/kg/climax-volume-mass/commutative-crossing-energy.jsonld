@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-commutative-crossing-energy",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:commutative-crossing-energy",
+  "kind": "remark",
+  "title": "Categorical coordinate of the commutative limit: $i$ as $\\sqrt{\\lambda_-}$ and the $\\mathbb{Z}_2 \\hookrightarrow \\mathrm{U}(1) \\hookrightarrow \\mathrm{U}_q(1)$ hierarchy",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-sqrt-q-ribbon-structure",
+    "papers/quantum-observable-universe/blocks/rem-archimedean-realisations",
+    "papers/quantum-observable-universe/blocks/prop-categorical-coordinate-ring"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-crossing-energy",
+  "tags": [
+    "categorical-coordinate",
+    "crossing-energy",
+    "commutative-limit",
+    "complex-structure",
+    "u1"
+  ],
+  "text": "commutative-crossing-energy.md",
+  "leanSource": "commutative-crossing-energy.lean",
+  "provenance": "authored"
+}

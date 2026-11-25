@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/download-1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Central and L p -concentration of 1-Lipschitz maps into R -trees",
+      "dcterms:creator": [
+        "FUNANO, By Kei"
+      ],
+      "dcterms:issued": "D:20090420",
+      "bibo:doi": "10.2969/jmsj/06120483",
+      "dcterms:identifier": "https://doi.org/10.2969/jmsj/06120483",
+      "dcterms:abstract": "In this paper, we study the Le´vy-Milman concentration phenomenon of 1-Lipschitz maps from mm-spaces to R-trees. Our main theorems assert that the concentration to R-trees is equivalent to the concentration to the real line.",
+      "dcterms:source": "library/download-1/manifest.jsonld",
+      "dcterms:hasVersion": "library/download-1"
+    }
+  ]
+}

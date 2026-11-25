@@ -1,0 +1,479 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-th-0206161v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-th-0206161v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-th/0206161v1  18 Jun 2002\nITEP-TH-22/02\nIHES/P/04/22\nhep-th/0206161\nSEIBERG-WITTEN PREPOTENTIAL\nFROM INSTANTON COUNTING\nNikita A. Nekrasov1\nInstitut des Hautes Etudes Scientiﬁques, Le Bois-Marie, Bures-sur-Yvette, F-91440 France\ne-mail:\nnikita@ihes.fr\nDirect evaluation of the Seiberg-Witten prepotential is accomplished following the localiza-\ntion programme suggested in [1]. Our results agree with all low-instanton calculations avail-\nable in the literature. We present a two-parameter generalization of the Seiberg-Witten\nprepotential, which is rather natural from the M-theory/ﬁve dim",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0206161v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Jourdain:",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-m-jourdain.md",
+      "narrative": null,
+      "content": "Par ma foi!\nil y a plus de quarante ans\nque je dis de la prose\nsans que j’en suisse rien ;\net je vous suis le plus oblig´e du monde\nde m’avoir appris cela....\nLe Bourgeois gentilhomme.\nJ. -B. Moli`ere",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0206161v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-1-introduction.md",
+      "narrative": null,
+      "content": "The dynamics of gauge theories is a long and fascinating subject. The dynamics of\nsupersymmetric gauge theories is a subject with shorter history. However, more facts are\nknown about susy theories, and with better precision [2] yet with rich enough applications\nboth in physics and mathematics. In particular, the solution of Seiberg and Witten [3]\nof N = 2 gauge theory using the constraints of special geometry of the moduli space of\nvacua led to numerous achievements in understanding of the strong coupling dynamics\nof gauge theory and as well as string theory backgrounds of which the gauge theo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0206161v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Field theory expectations",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-2-field-theory-expectations.md",
+      "narrative": null,
+      "content": "In this section we explain our approach in the ﬁeld theory language. We exploit the\nfact that the supersymmetric gauge theory on ﬂat space has a large collection of observables\nwhose correlation functions are saturated by instanton contribution in the limit of weak\ncoupling.\nIn addition, in the presence of the adjoint scalar vev these instantons tend\nto shrink to zero size. Moreover, the observables we choose have the property that the\ninstantons which contribute to their expectation values are localized in space. This solves\nthe problem of the runaway of point-like instantons, pointed out in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0206161v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Supersymmetries and twisted supersymmetries",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-21-supersymmetries-and-twisted-supersymmetries.md",
+      "narrative": null,
+      "content": "The N = 2 theory has eight conserved supercharges, Qi\nα, Qi\n˙a, which transform under\nthe global symmetry group SU(2)L×SU(2)R×SU(2)I of which the ﬁrst two factors belong\nto the group of spatial rotations and the last one is the R-symmetry group. The indices\nα, ˙α, i are the doublets of these respective SU(2) factors. The basic multiplet of the gauge\ntheory is the vector multiplet. Here is the spin content of its members:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0206161v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Field",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-field.md",
+      "narrative": null,
+      "content": "SU(2)L\nSU(2)R\nSU(2)I\nAµ\n1\n2\n1\n2\n0\nψi\nα\n1\n2\n0\n1\n2\nψi\n˙α\n0\n1\n2\n1\n2\nφ, ¯φ\n0\n0\n0\nIt is useful to work in the notations which make only SU(2)L × SU(2)d part of the global\nsymmetry group manifest. Here SU(2)d is the diagonal subgroup of SU(2)R × SU(2)I.\nIf we call this subgroup a “Lorentz group”, then the supercharges, superspace, and the\nfermionic ﬁelds of the theory split as follows:\nFermions: ψµ, χ+\nµν, η;\nSuperspace: θµ, ¯θ+\nµν, ¯θ;\nSuperﬁeld: Φ = φ + θµψµ + 1\n2θµθνFµν + . . .;\nSupercharges: Q, Q+\nµν, Gµ.\nThe supercharge Q is a scalar with respect to the “Lorentz group” and is usually considered",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0206161v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Good observables: UV",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-22-good-observables-uv.md",
+      "narrative": null,
+      "content": "In the applications of the susy gauge theory to Donaldson theory, where one works with\nthe standard topological supercharge Q, the observables one is usually interested in are the\ngauge invariant polynomials O(0)\nP,x = P(φ(x)) in the adjoint scalar φ, evaluated at space-\ntime point x, and its descendants: O(k)\nP,Σ =\nR\nΣ P(Φ), where Σ is a k-cycle. Unfortunately\nfor k > 0 all such cycles are homologically trivial on IR4 and no non-trivial observables\nare constructed in such a way. One construct an equivalent set of dual observables by\nintegration over IR4 of a product of a closed k-form ω =\n1\n(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0206161v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Good observables: IR",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-006-23-good-observables-ir.md",
+      "narrative": null,
+      "content": "The nice feature of the correlator (2.10) is it simple relation to the prepotential of the\nlow-energy eﬀective theory. In order to derive it let us think of the observable (2.10) as\nof a slow varying changing of the microscopic coupling constant. If we could completely\nneglect the fact that H is not constant, then its addition would simply renormalize the\neﬀective low-energy scale Λ →Λe−H.\nHowever, we should remember that H is not constant, and regard this renormalization\nas valid up to terms in the eﬀective action containing derivatives of H.\nMoreover, H\nis really a bosonic part of the functi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0206161v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Instanton measure and its localization",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-007-3-instanton-measure-and-its-localization.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0206161v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "ADHM data",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-008-31-adhm-data.md",
+      "narrative": null,
+      "content": "The moduli space Mk,N of instantons with ﬁxed framing at inﬁnity has dimension\n4kN. It has the following convenient description. Take two complex vector spaces V and\nW of the complex dimensions k and N respectively. These spaces should be viewed as\nChan-Paton spaces for D(p−4) and Dp branes in the brane realization of the gauge theory\nwith instantons.\nLet us also denote by L the two dimensional complex vector space, which we shall\nidentify with the Euclidean space IR4 ≈C2 where our gauge theory lives.\nThen the ADHM [22] data consists of the following maps between the vector spaces:\nV −→\nτ\nV ⊗L",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0206161v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Instanton measure",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-009-32-instanton-measure.md",
+      "narrative": null,
+      "content": "The supersymmetric gauge theory measure can be regarded as an inﬁnite-dimensional\nversion of the equivariant Matthai-Quillen representative of the Thom class of the bundle\nΓ\n\u0000Ω2,+ ⊗gP\n\u0001\nover the inﬁnite-dimensional space of all gauge ﬁelds AP in the principal G-\nbundle P (summed over the topological types of P). In physical terms, in the weak coupling\nlimit we are calculating the supersymmetric delta-function supported on the instanton\ngauge ﬁeld conﬁgurations. In the background of the adjoint Higgs vev, this supersymmetric\ndelta-function is actually an equivariant diﬀerential form on the modu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0206161v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Curing non-compactness",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-010-33-curing-non-compactness.md",
+      "narrative": null,
+      "content": "The UV problem can be solved by relaxing the condition on the stabilizer, thus adding\nthe so-called point-like instantons. A point of the hyperk¨ahler space ˜\nMk,N with orbifold\nsingularities which one obtains in this way (Uhlenbeck compactiﬁcation) is an instanton\nof charge p ≤k and a set of k −p points on IR4:\n˜\nMk,N = Mk,N ∪Mk−1,N × IR4 ∪Mk−2,N × Sym2(IR4) ∪. . . ∪Symk(IR4)\n(3.8)\nThe resulting space ˜\nMk,N is a geodesically complete hyperk¨ahler orbifold. Its draw-\nback is the non-existence of the universal bundle with the universal instanton connection\nover ˜\nMk,N × IR4. We actually think",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0206161v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Reduction to contour integrals",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "../sections/sec-011-34-reduction-to-contour-integrals.md",
+      "narrative": null,
+      "content": "After the manipulations as in [7][6] we end up with the following integral[28]:\nZk(a, ǫ1, ǫ2) = 1\nk!\nǫk\n(2πiǫ1ǫ2)k\nI\nk\nY\nI=1\ndφI Q(φI)\nP(φI)P(φI + ǫ)\nY\n1≤I<J≤k\nφ2\nIJ(φ2\nIJ −ǫ2)\n(φ2\nIJ −ǫ2\n1)(φ2\nIJ −ǫ2\n2)\n(3.10)\n15\nwhere:\nQ(x) =\nNf\nY\nf=1\n(x + mf)\nP(x) =\nN\nY\nl=1\n(x −al),\n(3.11)\nφIJ denotes φI −φJ, and ǫ = ǫ1 + ǫ2.\nWe went slightly ahead of time and presented the formula which covers the case of\nthe gauge theory with Nf fundamental multiplets. In fact, its derivation is rather simple\nif one keeps in mind the relation to the Euler class of the Dirac zeromodes bundle over the\nmoduli space of instan",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0206161v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classiﬁcation of the residues",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/sec-012-35-classiﬁcation-of-the-residues.md",
+      "narrative": null,
+      "content": "The poles which with non-vanishing contributions to the integral must have φIJ̸ = 0,\nfor I̸ = J, otherwise the numerator vanishes. This observation simpliﬁes the classiﬁcation\nof the poles. They are labelled as follows. Let k = k1 + k2 + . . . + kN be a partition of the\ninstanton charge in N summands which have to be non-negative (but may vanish), kl ≥0.\nIn turn, for all l such that kl > 0 let Yl denote a partition of kl:\nkl = kl,1 + . . . kl,νl,1,\nkl,1 ≥kl,2 ≥. . . ≥kl,νl,1 > 0\nLet νl,1 ≥νl,2 ≥. . . νl,kl,1 > 0 denote the dual partition.\nPictorially one represents\nthese partitions by the Youn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0206161v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Residues and ﬁxed points",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "../sections/sec-013-36-residues-and-ﬁxed-points.md",
+      "narrative": null,
+      "content": "The poles in the integral (3.10) correspond to the ﬁxed points of the action of the\ngroups G × T2 on the resolved moduli space\n˜\nMk,N. Physically they correspond to the\nU(N) (noncommutative) instantons which split as a sum of U(1) noncommutative instan-\ntons corresponding to N commuting U(1) subgroups of U(N). The instanton charge kl is\nthe charge of the U(1) instanton in the l’th subgroup. Moreover, these abelian instantons\nare of special nature – they are ﬁxed by the group of space rotations. If they were com-\nmutative (and therefore point-like) they had to sit on top of each other, and the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0206161v1/blocks/rem-sec-013-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "rem-sec-013-01.md",
+      "narrative": null,
+      "content": "The expressions (3.20)(1.6)(1.8) are the typical localization formulae for the instanton integrals. They commonly appear in the two dimensional sigma model instanton calculations, on the so-called A side. The Seiberg-Witten prepotential [3] is the typical type B expression. In is not easy to recognize in the type A expression the mirror manifold, and its periods. To illustrate this point, we suggest to look at the generating function of the number of holomorphic curves of genus zero in the Calabi-Yau quintic, computed using localization [17]. It requires some extra work to map it to the mirror",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-0206161v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The ﬁrst three nonabelian instantons",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-014-37-the-ﬁrst-three-nonabelian-instantons.md",
+      "narrative": null,
+      "content": "We shall now give the formulae for the ﬁrst three instanton contributions to the\nprepotential for the general SU(N) case, with Nf < 2N.\nWe shall work with ǫ1 = ¯h = −ǫ2. It will be suﬃcient to derive the gauge theory\nprepotential.\nDirectly applying the rules (3.10)(3.20) we arrive at the following expressions for the\nmoduli integrals:\nZ1 =\n1\nǫ1ǫ2\nX\nl\nSl\nZ2 =\n1\n(ǫ1ǫ2)2\n\n\n1\n4\nX\nl\nSl (Sl(+¯h) + Sl(−¯h)) + 1\n2\nX\nl̸=m\nSlSm\n\u0010\n1 −\n¯h2\na2\nlm\n\u00112\n\n\n\nZ3 =\n1\n(ǫ1ǫ2)3\n X\nl\nSl (Sl(+¯h)Sl(+2¯h) + Sl(−¯h)Sl(−2¯h) + 4Sl(+¯h)Sl(−¯h))\n36\n+\nX\nl̸=m\nSlSm\n4\n\u0010\n1 −4¯h2\na2\nlm\n\u0011\n \nSl(+¯h)\n\u0012\n1 −\n2(¯h/alm)2\n(1 −(¯h/a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0206161v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Four and ﬁve instantons",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-015-38-four-and-ﬁve-instantons.md",
+      "narrative": null,
+      "content": "To collect more “experimental data-points” we have considered in more details the\ncases of the gauge groups SU(2) and SU(3) with fundamental matter. We have computed\nexplicitly the prepotential for four and ﬁve instantons and found a perfect agreement (yet\na few typos) with the results of [13]. We should stress that this is a non-trivial check. Just\nas an example, we quote here the expression for F5 for SU(2) gauge theory with Nf = 3:\nF5(a, m) =\nµ3\n8a18 (35a12 −210a10µ2 + a8 \u0000207µ2\n2 + 846µ4\n\u0001\n−1210a6µ2µ4 + a4 \u00001131µ2\n4 + 3698µ2\n3µ2\n\u0001\n−5250a2µ2\n3µ4 + 4471µ4\n3),\nwhere 2a = a1 −a2, µ2 = m2\n1 + m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0206161v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Adjoint matter and other matters",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-016-39-adjoint-matter-and-other-matters.md",
+      "narrative": null,
+      "content": "So far we were discussing N = 2 gauge theories with matter in the fundamental\nrepresentations. Now we shall pass to other representations. It is simpler to start with\nthe adjoint representation. The ǫ-integrals (3.10) reﬂect both the topology of the moduli\nspace of instantons and also of the matter bundle.\nThe latter is the bundle of the Dirac zero modes in the representation of interest.\nFor the adjoint representation, and on IR4, this bundle can be identiﬁed with the tangent\nbundle to the moduli space of instantons. Turning on a mass term for the adjoint hyper-\nmultiplet corresponds to worki",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0206161v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Perturbative part",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-017-310-perturbative-part.md",
+      "narrative": null,
+      "content": "So far we were calculating the nonperturbative part of the prepotential. It would\nbe nice to see the perturbative part somewhere in our setup, so as to combine the whole\nexpression into something nice.\nOne way is to calculate carefully the equivariant Chern character of the tangent bundle\nto f\nMk along the lines sketched in the end of the previous section[10]. The faster way in\nthe ǫ1 + ǫ2 = 0 case is to note that the expression (1.6) is a sum over partition with\nthe universal denominator, which is not well-deﬁned without the non-universal numerator.\nNevertheless, let us try to pull it out of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0206161v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "M- and K-theory inspired conjectures",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-018-4-m--and-k-theory-inspired-conjectures.md",
+      "narrative": null,
+      "content": "In this section we suggest a physical interpretation to the ǫ-deformed prepotential\nF(a, ǫ1, ǫ2; q). We also conjecture a relation of Z(a, ¯h, −¯h; q) to a tau-function of Toda\nhierarchy.\nPhilosophy. So far we studied the equivariant cohomology of the instanton moduli space,\npushforwards, and localization. The equivariant cohomology is a quasiclassical limit of\nthe equivariant K-theory (in the same sense in which the DH formula is the quasiclassical\nlimit of the (super)character formula for Tr(−)F e−ˆµ[ξ]. Conversely, by studying the S1-\nequivariant cohomology of the loop space of the original",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0206161v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Five dimensional viewpoint",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "../sections/sec-019-41-five-dimensional-viewpoint.md",
+      "narrative": null,
+      "content": "It was understood long time ago that the instanton corrections to the prepotential\nof N = 2 gauge theory can be interpreted as one-loop corrections in the ﬁve dimensional\ntheory compactiﬁed on a circle, in the limit of vanishing circle radius [32].\nConsider ﬁve dimensional N = 2 gauge theory with the gauge group G, and possibly\nsome matter. Consider a path integral in this theory on the space-time manifold which\nis a product S1 × IR4. We shall impose periodic boundary conditions on the fermions in\nthe theory (up to a twist described momentarily). We shall also consider the vacuum in\nwhich the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0206161v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "K-theory viewpoint",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/sec-020-42-k-theory-viewpoint.md",
+      "narrative": null,
+      "content": "If we don’t take the limit β →0 we can still give a ﬁnite dimensional expression for\n(1.6). The collective coordinate quantization leads [32] to the minimal supersymmetric\nquantum mechanics on g\nMk, whose ground states correspond to the harmonic spinors on\ng\nMk. The index (4.1) calculates the equivariant index of Dirac operator on g\nMk. The latter\nhas the following Atiyah-Singer expression:\nZ (a, ǫ1, ǫ2, β; q) =\n∞\nX\nk=0\nqk\nI\nf\nMk\nc\nAβ\n\u0010\ng\nMk\n\u0011\n(4.4)\nwhere ˆA(M) is the A-roof genus of the manifold M:\nch(TM) =\nX\ni\nexi\n=⇒\nˆAβ(M) =\nY\ni\nβxi\ne\nβxi\n2 −e−βxi\n2\n(4.5)\nThe localization technique (this ti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0206161v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chiral fermions and M5 brane",
+      "pageStart": 27,
+      "pageEnd": 30,
+      "target": "../sections/sec-021-43-chiral-fermions-and-m5-brane.md",
+      "narrative": null,
+      "content": "Another conjecture relates the expansion (1.6) to the dynamics of the Seiberg-Witten\ncurve9. Denote, as before q = Λ2N.\nConsider the theory of a free complex chiral fermion ψ, ψ∗,\nS =\nZ\nΣ\nψ∗¯∂ψ\n(4.7)\nliving on the curve Σ:\nw + Λ2N\nw\n= P(λ),\nP(λ) =\nN\nY\nl=1\n(λ −αl)\n(4.8)\n9 For simplicity we consider the case Nf = 0. The conjecture for Nf > 0 case is easy to guess.\n26\nembedded into the space C × C∗with the coordinates (λ, w). This curve has two distin-\nguished points w = 0 and w = ∞which play a prominent role in the Toda integrable\nhierarchy [39]. Let us cut out small disks D0 and D∞around these",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0206161v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-022-references.md",
+      "narrative": null,
+      "content": "[1]\nA. Losev, N. Nekrasov, S. Shatashvili, hep-th/9711108, hep-th/9801061\n[2]\nV. Novikov, M. Shifman, A. Vainshtein, V. Zakharov, Phys. Lett. 217B (1989) 103\n[3]\nN. Seiberg, E. Witten, hep-th/9407087, hep-th/9408099\n[4]\nN. Seiberg, Phys. Lett. 206B (1988) 75\n[5]\nN. Dorey, V.V. Khoze, M.P. Mattis, hep-th/9607066\n[6]\nG. Moore, N. Nekrasov, S. Shatashvili, hep-th/9803265\n[7]\nG. Moore, N. Nekrasov, S. Shatashvili, hep-th/9712241\n[8]\nM. Atiyah, R. Bott, Phil. Trans. Roy. Soc. London A 308 (1982), 524-615;\nE. Witten, hep-th/9204083;\nS. Cordes, G. Moore, S. Rangoolam, hep-th/9411210\n[9]\nN. Dorey, T.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

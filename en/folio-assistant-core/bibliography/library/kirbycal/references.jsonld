@@ -1,0 +1,30 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/kirbycal",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "A Calculus for Framed Links in S^3",
+      "dcterms:creator": [
+        "Kirby*, Robion"
+      ],
+      "dcterms:issued": "Tue Feb 22",
+      "dcterms:source": "library/kirbycal/manifest.jsonld",
+      "dcterms:hasVersion": "library/kirbycal"
+    }
+  ]
+}

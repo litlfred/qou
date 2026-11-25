@@ -1,0 +1,669 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2203.17029v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:2203.17029v1  [math.GT]  31 Mar 2022\nMODULAR q-HOLONOMIC MODULES\nSTAVROS GAROUFALIDIS AND CAMPBELL WHEELER\nAbstract. We introduce the notion of modular q-holonomic modules whose fundamental\nmatrices deﬁne a cocycle with improved analyticity properties and show that the generalised\nq-hypergeometric equation, as well as three key q-holonomic modules of complex Chern–\nSimons theory are modular. This notion explains conceptually recent structural properties\nof quantum invariants of knots and 3-manifolds, and of exact and perturbative Chern–\nSimons theory [22, 23, 24, 33], and in addition pro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "1. Introduction",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-11-summary.md",
+      "narrative": null,
+      "content": "We introduce a new class of linear $q$-difference equations and (corresponding\n$q$-holonomic modules) which we call \\emph{modular}, with several key features.\n\n\\begin{itemize}\n  \\item\n Their fundamental solutions at 0 and infinity have explicitly\n  computable monodromy.\n\\item\n  A natural $\\SL_2(\\BZ)$-cocycle constructed from a fundamental\n  solution extends from $\\BC\\setminus\\BR$ to the complex plane minus a ray in\n  the real numbers.\n\\item\n  Their fundamental solutions are meromorphic and their residues are\n  expressed in terms of the solutions themselves (kind of 'resurgence').\n\\end{itemize}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prop-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "prop-sec-002-01.md",
+      "narrative": null,
+      "content": "Recently, it was observed that the solutions of some linear $q$-difference equations concerning quantum knot invariants ~\\cite{GZ:qseries,GZ:kashaev} or resurgence and Borel resummation of perturbative Chern--Simons theory~\\cite{GGM:peacock,GGM,GGMW:trivial}, have an improved analyticity property.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motivation",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-12-motivation.md",
+      "narrative": null,
+      "content": "In a recent talk~\\cite{Okounkov:talk,Okounkov:notes}, Okounkov asked the\nquestion:\n\n\\begin{center}\n\\emph{What does it take to solve a $q$-difference equation?}\n\\end{center}\n\nSolving a linear equation usually means giving a basis of solutions,\nsay at $t=0$ and $t=\\infty$ (the only two canonical points, fixed under the\nshift transformation\n$t \\mapsto q t$), and to compute the monodromy (i.e., the connection)\nbetween $t=0$ and $t=\\infty$ in\nterms of ``known'' functions. This problem has a rich history\nwith an interesting balance between concrete special functions and the abstract,\nwhich the reade",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definition and properties",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-13-definition-and-properties.md",
+      "narrative": null,
+      "content": "\\label{sub.def}\n\nTo explain the new concept, consider the linear $q$-difference equation\n\\be\n\\label{qdiff}\n\\s X = A X\n\\ee\nfor a vector-valued function $X=X(t,q)$, where $(\\s X)(t,q)=X(qt,q)$ denotes the\nshift operator, $A(t,q) \\in \\GL_r(\\BQ(t,q))$ and $q$ is a nonzero complex number\nwith $|q|\\neq1$. \nFix a fundamental matrix solution $U$ to~\\eqref{qdiff} at $t=0$, which we assume\nis filtration-preserving and of weight $\\kappa_{U}=\\diag(\\tau^{\\kappa_{U,1}},\\dots,\n\\tau^{\\kappa_{U,r}})$ and define \n\\be\n\\label{Om}\n\\Om_{U,\\gamma} =(U|_{\\kappa_{U}}\\gamma)U^{-1},\n\\qquad \\gamma=\\sma abcd \\in \\SL_2(\\BZ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The generalised q-hypergeometric equation is modular",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-14-the-generalised-q-hypergeometric-equation-is.md",
+      "narrative": null,
+      "content": "\\label{sub.qhyper}\n\nContrary to what one might expect, modular $q$-holonomic modules are abundant.\nThis section concerns the generalised $q$-hypergeometric equation\n\n\\be\n\\label{gener.qhyper}\n\\left(\\prod_{j=0}^{r-1}(1-q^{-1}b_{j}\\sigma)-t\\prod_{j=1}^{r}(1-a_{j}\\sigma)\\right)f\n=0\n\\ee\nfor a function $f=f(t,a,b,q)$ where $a=(a_1,\\dots,a_r)$ and $b=(b_0,\\dots,b_{r-1})$\nwith $b_0=q$, where $\\s$ is the operator that shifts $t$ to $qt$. This equation\nis a $q$-deformation of the hypergeometric equation (a regular singular linear\ndifferential equations with singularities at $0,1,\\infty$), itself a gener",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Modular q-holonomic modules in Chern–Simons theory",
+      "pageStart": 7,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-15-modular-q-holonomic-modules-in-chernsimons-th.md",
+      "narrative": null,
+      "content": "In this section we present three $q$-holonomic modules whose cocycles play a key\nrole in complex Chern--Simons theory and prove their modularity. We will not need\na detailed knowledge of Chern--Simons theory, but focus on the fact that it is a\ngauge theory with gauge group a complex Lie group, whose partition function\ncan be identified by a finite dimensional integrals of products of the Faddeev\nquantum dilogarithm. A detailed exposition of Chern--Simons theory is given in the\nwork of Andersen--Kashaev and Beem, Dimofte and Pasquetti~\\cite{AK,Dimofte:complex,\n  Beem,Pasquetti}. The quasi-perio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A review of linear q-difference equations",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-2-a-review-of-linear-q-difference-equations.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-007-21-preliminaries.md",
+      "narrative": null,
+      "content": "\\label{sub.prelim}\n\nIt is well-known that formal power series solutions to linear difference equations\nwith a small parameter are typically factorially divergent series,\nwhich lead to analytic solutions to the difference equation after applying the\nprocess of a Borel transformation, followed by a Laplace transformation. This\nsubject is classical and well-studied, see for example~\\cite{Bender,\n  Costin:asymptotics,Miller:applied,Sauzin:divergent}.\n\nA corresponding theory for linear $q$-difference equations was developed recently\nby di Vizio, Sauloy, Ramis and others~\\cite{Dreyfus:building,Hardo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An algorithm for a fundamental matrix",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-008-22-an-algorithm-for-a-fundamental-matrix.md",
+      "narrative": null,
+      "content": "\\label{sub.algorithm}\n\nIn this section we review an algorithm to obtain a fundamental matrix solution\nto a $q$-holonomic module given by Dreyfus~\\cite{Dreyfus:building} using the\n$q$-Borel and the $q$-Laplace transform. Let us describe the main steps here.\n\n\\noindent $\\bullet$\nChoose a cyclic vector to present a $q$-holonomic module in the form of a linear\n$q$-difference equation\n\n\\be\n\\label{qdiffeqn}\n\\sum_{j=0}^r a_j \\s^j f =0\n\\ee\nwhere $f=f(t,q)$, $(\\s f)(t,q)=f(qt,q)$ and $a_j(t,q) \\in \\BQ(q)[t^{\\pm 1}]$,\nwith $a_r \\neq 0$. The rest of the algorithm depends on~\\eqref{qdiffeqn} alone.\n\n\\noin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The q-Borel and the q-Laplace transforms",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "../sections/sec-009-23-the-q-borel-and-the-q-laplace-transforms.md",
+      "narrative": null,
+      "content": "\\label{sub.qborel}\n\nWe now recall the $q$-Borel transform $\\Bor_\\kappa$ (for a rational number $\\kappa$)\ndefined by\n\\be\n\\label{qborel}\n\\Bor_{\\kappa}\\left(\\sum_{\\ell=0}^{\\infty}a_{\\ell}t^{\\ell}\\right)(\\xi,q)\n=\n\\sum_{\\ell=0}^{\\infty}(-1)^{\\ell}q^{\\kappa \\ell(\\ell+1)/2}a_{\\ell}\\xi^{\\ell}\\,.\n\\ee\nIts role is to convert divergent series, e.g., of the form\n$\\sum_{\\ell=0}^\\infty q^{-\\kappa \\ell(\\ell+1)/2}a_{\\ell}t^{\\ell}$ (where $a_\\ell$\nis bounded and $\\kappa>0$) to convergent ones at $\\xi=0$. \n\n\nAn inverse of the $q$-Borel transform is the $q$-Laplace transform, whose role\nis to construct analytic s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The slash operator and proof of Theorem 1.2",
+      "pageStart": 17,
+      "pageEnd": 20,
+      "target": "../sections/sec-010-24-the-slash-operator-and-proof-of-theorem-12.md",
+      "narrative": null,
+      "content": "\\label{sub.slash}\n\nIn this section we recall the slash operator, an important ingredient to\nexpress modularity. We will use the usual conventions for the modular\n$q=\\e(\\tau)$ and the Jacobi $t=\\e(z)$, $\\lambda_{i}=\\e(u_{i})$, $\\mu_{i}=\\e(v_{i})$,\n$x=\\e(w)$ variables, i.e., $\\ti q=\\e(-1/\\tau)$, $\\ti t=\\e(z/\\tau)$ and\n$\\e(x)=e^{2\\pi i x}$.\nNow recall the slash operator $f|_\\kappa \\gamma$ (see, eg.~\\cite[p.13]{123}\nand~\\cite{EZ}) for $\\gamma=\\sma abcd \\in\\SL_{2}(\\BZ)$ acting on a function\n$f(z,\\tau)$ by \n\\be\n\\label{fslash}\n(f|_\\kappa \\gamma)(z,\\tau) = (c \\tau+d)^{-\\kappa} f(\\gamma(z,\\tau)),\n\\qqua",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Duality",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "../sections/sec-011-25-duality.md",
+      "narrative": null,
+      "content": "\\label{sub.duality}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIn this section we review some elementary facts about duality of $q$-holonomic modules.\nRecall that we can write the linear $q$-difference equation\n\\be\n\\label{af}\na_r(t,q) f(q^r t, q) + a_{r-1}(t,q) f(q^{r-1}t,q) + \\dots + a_0(t,q) f(t,q) =0 \n\\ee\nfor a function $f(t,q)$ in matrix form $\\s X = A X$ where\n$X=X_f=(f, \\s f, \\dots, \\s^{r-1} f)^t$ is a column vector and\n$A=\\comp(-a_0/a_r, \\dots, -a_{r-1}/a_r)$ is the companion matrix where\n{\\small\n\\be\n\\label{comp}\n\n\n\\comp(c_0,c_1,\\dots,c_{r-1}) =\n\\begin{pmatrix}\n0 & 1 & 0 & \\dots & 0\\\\\n0 & 0 & 1 & \\dots & 0\\\\\n: & :",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Categorical aspects",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-012-26-categorical-aspects.md",
+      "narrative": null,
+      "content": "\\label{sub.cat}\n\nIn this section we briefly recall some categorical aspects of modules over\nthe $q$-Weyl algebra and give a proof of Lemma~\\ref{lem.cat}.\n\nTo begin with, a gauge transformation $X=P^{-1}Y$ changes~\\eqref{qdiff} to\n$\\s Y = B Y$ where $B=\\s P A P^{-1}$, changes a fundamental solution $U$ of\n~\\eqref{qdiff} to $P^{-1}U$, and consequently changes $\\Om_\\gamma$ to\n$(P|_{\\kappa}\\gamma)^{-1} \\Om P$. Hence, if $P \\in \\GL_r(\\BQ(t,q))$, then modularity\nis a property of the gauge equivalence class of a linear $q$-difference equation,\ni.e., a property of a $q$-holonomic module, independent o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Heine's q-hypergeometric functions",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-013-3-heines-q-hypergeometric-functions.md",
+      "narrative": null,
+      "content": "\\label{sec.heine}\n\nThis section is devoted to the proof of Theorem~\\ref{thm.heine}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Solutions",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-014-31-solutions.md",
+      "narrative": null,
+      "content": "In this section we describe the solutions of the generalised $q$-hypergeometric\nequation~\\eqref{gener.qhyper}. Since that equation depends on parameters, it will\nbe convenient to consider the following system of equations\n\\be\n\\label{heine.equs}\n\\begin{aligned}\n  \\left(\\prod_{j=0}^{r-1}(1-q^{-1}b_{j}\\sigma_{t})-t\\prod_{j=1}^{r}(1-a_{j}\\sigma_{t})\n  \\right)f\n  &=0\\\\\n  \\left(\\sigma_{a_{i}}^{-1}-q^{-1}a_{i}\\sigma_{t}\\sigma_{a_{i}}^{-1}-(1-q^{-1}a_{i})\n  \\right)f\n  &=0\\\\\n  \\left(1-q^{-1}b_{i}\\sigma_{t}-(1-q^{-1}b_{i})\\sigma_{b_{i}}^{-1}\\right)f\n  &=0\\,.\n\\end{aligned}\n\\ee\nThe first equation describe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Self duality",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "../sections/sec-015-32-self-duality.md",
+      "narrative": null,
+      "content": "We will introduce a state integral in Section~\\ref{subsec.heine.stateint} which\nfactorises as a finite sum of products of solutions of the module $M$ associated\nto Equations~\\eqref{heine.equs} and its dual $M^{\\wedge}$ (see Section~\\ref{sub.duality}\nfor the definitions of the two duals). To prove modularity we must factorise the state\nintegral as a finite sum of products of solutions of $M$ and $M^{\\vee}$. To do\nso, we need to give an explicit isomorphism between $M^{\\vee}$ and $M^{\\wedge}$.\nThis is the content of the following proposition, which after some change of\nvariables, is equivalent t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "State integral",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-016-33-state-integral.md",
+      "narrative": null,
+      "content": "\\label{subsec.heine.stateint}\n\nConsider the following state integral\n\n\\be\n\\label{heine.stateint}\nI(z,\\alpha,\\beta,\\tau) = \n\\int_{\\calC} \\frac{\\Phi_{\\sfb}(x)\n  \\prod_{j=1}^{r-1} \\Phi_{\\sfb}(x+i\\sfb^{-1}\\beta_{j}+i\\sfb^{-1}-i\\sfb)}{\n\\prod_{j=1}^{r} \\Phi_{\\sfb}(x+i\\sfb^{-1}\\alpha_{j}+i\\sfb^{-1}-i\\sfb)}\n\n\n\n\n\\exp\\left(-2\\pi\\frac{zx}{\\sfb}\\right)\ndx \\,.\n\n\n\n\n\n\n\n\\ee\nwhere $\\calC$ is a contour in the complex plane asymptotic to\n$\\BR+i\\ve$ that separates the poles of the numerator from the zeros of the\ndenominator of the integrand, $a_{i}=\\e(\\alpha_{i})$,\n$\\tilde{a}_{i}=\\e(\\alpha_{i}/\\tau)$, $b_{i}=\\e(\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Resonance",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-017-34-resonance.md",
+      "narrative": null,
+      "content": "In this section we discuss in detail the resonant generalised $q$-hypergeometric\nequation~\\eqref{gener.qhyper}, i.e., the case where at least one of the ratios\n$a_i/a_j$ (for $i \\neq j$), $b_i/b_j$ (for $i \\neq j$) or $a_i/b_j$ (for some $i$\nand $j$) is an integer power of $q$. For simplicity, we will \nconsider only the case of $r=2$, although our arguments remain valid for all\n$r$. When $r=2$, the system of equations ~\\eqref{heine.equs} is given by\n{\\small\n\\be\n\\label{2phi1equs}\n\\begin{aligned}\n  (1-t)f(t,a,b,c,q)-(q^{-1}c+1-t(a+b))f(qt,a,b,c,q)+(q^{-1}c-tab)f(q^2t,a,b,c,q)\n  &=0\\\\\n  f(t,q^{-1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorems 1.5 and 1.6",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "../sections/sec-018-4-proof-of-theorems-15-and-16.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The q-Pochhammer symbol",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "../sections/sec-019-41-the-q-pochhammer-symbol.md",
+      "narrative": null,
+      "content": "\\label{sub.ex1}\n\nThis section is devoted to the proof of Theorem~\\ref{thm.ex1}. \nThe $q$-difference equation~\\eqref{ex1} can be written in operator form\nas $((1-qt)\\sigma-1)f=0$, with the Newton polygon shown in Figure~\\ref{f.ex1}.\n\n\\begin{figure}[!htpb]\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8,baseline=-3]\n\\draw[thick,<->] (0,-1.5) -- (0,3);\n\\draw[thick,<->] (-1.5,0) -- (3,0);\n\\foreach \\y in {2}\n\\draw[thick] (2pt,\\y) -- (-2pt,\\y);\n\\filldraw (0,0) circle (2pt);\n\\filldraw (2,2) circle (2pt);\n\\filldraw (2,0) circle (2pt);\n\\draw (0,0) -- (2,2);\n\\draw (2,2) -- (2,0);\n\\fill[blue,opacity=0.2] (0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Appell-Lerch sums",
+      "pageStart": 32,
+      "pageEnd": 37,
+      "target": "../sections/sec-020-42-the-appell-lerch-sums.md",
+      "narrative": null,
+      "content": "\\label{sub.ex2}\n\nThis section is devoted to the proof of Theorem~\\ref{thm.ex2}.\nThe $q$-difference equation~\\eqref{ex2} has Newton polygon shown in\nFigure~\\ref{f.ex2}.\n\n\\begin{figure}[!htpb]\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8,baseline=-3]\n\\draw[<->,thick] (-1.5,0) -- (5.5,0);\n\\draw[<->,thick] (0,-1.5) -- (0,3.5);\n\\filldraw (2,0) circle (2pt);\n\\filldraw (2,2) circle (2pt);\n\\filldraw (0,2) circle (2pt);\n\\filldraw (4,0) circle (2pt);\n\\draw (0,2) -- (2,0) -- (4,0) -- (2,2) -- cycle;\n\\fill[blue,opacity=0.2] (0,2) -- (2,0) -- (4,0) -- (2,2) -- cycle;\n\\node at (3,-0.3) {$f^{(0)}$};\n\\node at",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Solutions",
+      "pageStart": 37,
+      "pageEnd": 37,
+      "target": "../sections/sec-021-51-solutions.md",
+      "narrative": null,
+      "content": "the functional equations of h the Mordell integral [67, Proposition 1.2] these functions give\nan analytic extension of h the Mordell integral to the cut plane\nC′. Therefore, the cocycle\nΩU,S(t, q) extends to a holomorphic function for z ∈\nC and τ ∈\nC′. Since ΩU,T = I, part (c)\nof Theorem 1.2 concludes that the cocycle ΩU is modular.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A q-difference equation of the 41 knot",
+      "pageStart": 37,
+      "pageEnd": 40,
+      "target": "../sections/sec-022-5-a-q-difference-equation-of-the-41-knot.md",
+      "narrative": null,
+      "content": "\\label{sec.41}\n\nThis section is devoted to the proof of Theorem~\\ref{thm.41},\nTheorem~\\ref{thm.41b} and Theorem~\\ref{thm.41c}.\n\n\n\\subsection{Solutions}\n\\label{subsec.41sols}\n\nThe $q$-difference equation~\\eqref{41x1} has Newton polygon shown in Figure\n~\\ref{f.41x1}.\n\n\\begin{figure}[!htpb]\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8,baseline=-3]\n\\draw[<->,thick] (-3.5,0) -- (3.5,0);\n\\draw[<->,thick] (0,-1.5) -- (0,3.5);\n\\foreach \\x in {-2,2}\n\\draw[thick] (\\x,-2pt) -- (\\x,2pt);\n\\filldraw (0,0) circle (2pt);\n\\filldraw (0,2) circle (2pt);\n\\filldraw (-2,2) circle (2pt);\n\\filldraw (2,2) circle (2pt)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Monodromy",
+      "pageStart": 40,
+      "pageEnd": 42,
+      "target": "../sections/sec-023-52-monodromy.md",
+      "narrative": null,
+      "content": "Consider the fundamental matrices $U$ and $V$ given by Equations~\\eqref{UVex41}\nand the associated monodromy. Using the modular transformation properties of\nthe Jacobi $\\theta$-function Equation~\\eqref{thetaS} and the Dedekind $\\eta$-function,\nit is easy to see that Equation~\\eqref{M412} implies~\\eqref{M41c}.\n\nNote that each of the functions $\\vM_{2,1},\\vM_{2,1}|_{-1}T,\\vM_{2,1}|_{-1}S$ has\n$\\SL_2(\\BZ)$-stabiliser $\\langle T^2,TST\\rangle$, $\\langle T^2,S\\rangle$ and\n$\\langle ST^2S,T\\rangle$, respectively, and that the second group is the\n$\\theta$-subgroup and the last group is $\\Gamma_{0}(2)$.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Residues",
+      "pageStart": 42,
+      "pageEnd": 44,
+      "target": "../sections/sec-024-53-residues.md",
+      "narrative": null,
+      "content": "Note that $g^{(0,0)}$ is holomorphic on $\\BC^{\\times}\\cup\\{\\infty\\}$. In this\nsubsection we compute the residues of the meromorphic functions $f^{(-1)}=g^{(0,1)}$\nand $f^{(1)}$.\n\n\\begin{lemma}\n  \\label{lem.resg01}\n  The functions $f^{(-1)}(t,q)=g^{(0,1)}(t,q)$ have simple poles at $t = q^\\BZ$ with\n  residues\n\\be\n\\Res_{t=q^{n}}f^{(-1)}(t,q)\\frac{dt}{2\\pi i t}\n=\n\\Res_{t=q^{n}}g^{(0,1)}(t,q)\\frac{dt}{2\\pi i t}\n=\ng^{(0,0)}(q^{n},q)\\,.\n\\ee\n\\end{lemma}\n\n\\begin{proof}\nWe have\n\\be\n\\Res_{t=q^{k}}\\frac{\\theta'(t^{-1};q)}{\\theta(t^{-1};q)}\\frac{dt}{2\\pi it}\n=\n-1 \\,.\n\\ee\nTo finish we note that the proof o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Determinants",
+      "pageStart": 44,
+      "pageEnd": 46,
+      "target": "../sections/sec-025-54-determinants.md",
+      "narrative": null,
+      "content": "The functional equation \\eqref{41x1} for $U,V$ defined in~\\eqref{UVex41}\ncan be written in the form \n\\be\nU(qt,\\lambda,q)\n=\nA(t;q)U(t,\\lambda,q)\n\\quad\\text{and}\\quad\nV(qt,q)\n=\nA(t;q)V(t,q)\n\\ee\nwhere\n\\be\\label{comp.mat.41.x1}\nA(t,q)\n=\n\\begin{pmatrix}\n0 & 1\\\\\n-q^{-2} & 2q^{-1}-q^{-2}t^{-1}\n\\end{pmatrix} \\,.\n\\ee\nTherefore, we see that\n\\be\n\\det(U(qt,\\lambda,q))=\\det(U(t,\\lambda,q))q^{-2}\n\\quad\\text{and}\\quad\n\\det(V(qt,q))=\\det(V(t,q))q^{-2}.\n\\ee\n\n\\begin{lemma}\n\\label{lem.41det}\n  We have\n\\be\n-\\det(U(t,\\lambda,q)) = \\det(V(t,q)) = q^{-1}t^{-2} \\,.\n\\ee\n  \\end{lemma}\n  \n\\begin{proof}\nFirstly notice th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "State integral",
+      "pageStart": 46,
+      "pageEnd": 47,
+      "target": "../sections/sec-026-55-state-integral.md",
+      "narrative": null,
+      "content": "the extension of the cocycle to the cut plane. The main idea is to use descendant state\nintegrals, following [23, Eqn.(41)], deﬁned by\nIA,B(z, τ) =\nZ\nR+iε\nΦb(x)B exp\n\u0010\n−Aπix2 −2πzx\nb\n\u0011\ndx.\n(246)\nUsing the holomorphic extension of the quantum dilogarithm Φ from Theorem 1.5, this\nintegral can be shown to extend to a holomorphic function in for (z, τ) ∈\nC ×\nC′.\nWe\nare interested in the integrals I1,2(z, τ) which, using the residue theorem, factorise as an\nelementary function holomorphic for τ ∈\nC′ times the following bilinear combination, see [23,\nThm.3],\nI(z, τ) = τ 1/2g(0,0)(˜t, ˜q)g(0,1)(t, q)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The inhomogeneous equation",
+      "pageStart": 47,
+      "pageEnd": 52,
+      "target": "../sections/sec-027-56-the-inhomogeneous-equation.md",
+      "narrative": null,
+      "content": "\\label{sec.4.inhom.x1}\n\nWe now consider Equation~\\eqref{41x1inhom}.\nWe can convert this into a homogeneous equation of one degree higher\n\\be\ntf(t;q)+(1-3qt)f(qt;q)+(3tq^2-1)f(q^2t;q)-tq^3f(q^3t;q)=0\n\\ee\nwith Newton polygon shown in Figure~\\ref{f.413}.\n\n\\begin{figure}[!htpb]\n\\begin{center}\n\\begin{tikzpicture}[scale=0.8,baseline=-3]\n\\draw[<->,thick] (-1.5,0) -- (7.5,0);\n\\draw[<->,thick] (0,-1.5) -- (0,3.5);\n\\foreach \\x in {2,4,6}\n\\draw[thick] (\\x,-2pt) -- (\\x,2pt);\n\\filldraw (0,2) circle (2pt);\n\\filldraw (2,0) circle (2pt);\n\\filldraw (2,2) circle (2pt);\n\\filldraw (4,0) circle (2pt);\n\\filldraw (4",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The x-deformation",
+      "pageStart": 52,
+      "pageEnd": 62,
+      "target": "../sections/sec-028-57-the-x-deformation.md",
+      "narrative": null,
+      "content": "We will first discuss the two variable holonomic system given by\nthe homogeneous equations\n\\begin{subequations}\n\\be\n\\label{41x}\n\\begin{aligned}\ntq^{-1}f(q^{-1}t,x,q)+(1-(x^{-1}+x)t)f(t,x,q)+tqf(qt,x,q)\n=\n0\\,,\n\\end{aligned}\n\\ee\n\\be\n\\label{41x2}\n\\begin{aligned}\n(1-qx)(1-q^{-1}x^{2})f(t,qx,q)&\\\\\n-(x-1)^2(x+1)&(x^2t-x-(q^{-1}+q)t-x^{-1}+x^{-2}t)f(t,x,q)\\\\\n+&(1-qx^2)(1-q^{-1}x)f(t,q^{-1}x,q)\n=\n0 \\,,\n  \\end{aligned}\n  \\ee\n\\be\n\\label{41x3}\n(1-xq)(f(t,qx,q)-x^{-1}f(qt,qx,q))=(1-x^{-1})(f(t,x,q)-qxf(qt,x,q)) \\,.\n\\ee\n\\end{subequations}\nThis is not a random system of equations, instead they are the defin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An analytic lift of the colored Jones polynomial",
+      "pageStart": 62,
+      "pageEnd": 62,
+      "target": "../sections/sec-029-58-an-analytic-lift-of-the-colored-jones-polynom.md",
+      "narrative": null,
+      "content": "a proof of Theorem 1.10. The main observation is that when x = qN, the series ˆf (0)(t, qN, q)\nterminates to a polynomial of t, in which case the q-Borel transfrom, followed by a q-Laplace\ntransfrom is the identity. Explicitly, when x = qN for N ∈\nZ≥1 we have\nˆf (0)(t, qN, q) =\n∞\nX\nk=0\n(−1)kq−k(k+1)/2(q1+N; q)k(q1−N; q)ktk\n=\nN−1\nX\nk=0\n(−1)kq−k(k+1)/2(qN+1; q)k(q1−N; q)ktk .\n(330)\nThe theorem then follows from Equation (58).\n□",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Specialisation t=qm",
+      "pageStart": 62,
+      "pageEnd": 62,
+      "target": "../sections/sec-030-59-specialisation-tqm.md",
+      "narrative": null,
+      "content": "comment how our analytic functions of t, specialised to t = qm, become the known sequences\nof q-series and (x, q)-series that have appeared in the literature. In [32] and [22, 23, 24] the\nq-holonomic modules are discrete versions of what we have considered in Section 5. Here\nwe describe how the solutions can be constructed from the ones presented here. Consider a\nsolution f(t, q) of a q-diﬀerence equation\nar(t, q)f(qrt, q) + ar−1(t, q)f(qr−1t, q) + · · · + a0(t, q)f(t, q) = 0\ncorresponding to an edge of slope κ on the Newton polygon, and let\nfm(q) = (−1)κmq−κm(m+1)/2Resz=0θ(qme(z), q)−κf(qme(z",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 62,
+      "pageEnd": 63,
+      "target": "../sections/sec-031-acknowledgements.md",
+      "narrative": null,
+      "content": "The authors wish to thank Thomas Dreyfus, Jie Gu, Rinat Kashaev, Marcos\nMari\\~{n}o, Mikhail Kapranov, Matthias Storzer and Don Zagier for enlightening\nconversations. The work of C.W. has been supported by the Max-Planck-Gesellschaft.\n\n\n\n\n\n\\bibliographystyle{plain}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2203.17029v1/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 63,
+      "pageEnd": 65,
+      "target": "../sections/sec-032-references.md",
+      "narrative": null,
+      "content": "References\n[1] Lars Ahlfors. Complex analysis. McGraw-Hill Book Co., New York, third edition, 1978. An introduction\nto the theory of analytic functions of one complex variable, International Series in Pure and Applied\nMathematics.\n[2] Naum Akhiezer. Elements of the theory of elliptic functions, volume 79 of Translations of Mathematical\nMonographs. American Mathematical Society, Providence, RI, 1990. Translated from the second Russian\nedition by H. H. McFaden.\n[3] Jørgen Ellegaard Andersen and Rinat Kashaev. A TQFT from Quantum Teichm¨uller theory. Comm.\nMath. Phys., 330(3):887–934, 2014.\n[4] Y",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

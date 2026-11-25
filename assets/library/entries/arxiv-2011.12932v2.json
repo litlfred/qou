@@ -1,0 +1,325 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2011.12932v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2011.12932v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "After the work of Vaughan Jones \\cite{J85} and Edward Witten \\cite{W88,W89}, Vladimir Turaev played a key role in the foundation of quantum topology. Together with Nikolai Reshetikhin \\cite{RT91}, they were the first to obtain a mathematically rigorous construction of Witten's invariants of 3-dimensional manifolds. Turaev showed that the relevant algebraic structure underlying their approach was that of a \\textit{modular category}, a notion he himself identified and introduced for this purpose \\cite{T94}. Starting from a modular category, one can build a Topological Quantum Field Theory (TQFT",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2011.12932v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "MODULAR CATEGORIES AND TQFTS BEYOND\nSEMISIMPLICITY\nCHRISTIAN BLANCHET AND MARCO DE RENZI\nAbstract. Vladimir Turaev discovered in the early years of quantum topol-\nogy that the notion of modular category was an appropriate structure for build-\ning 3-dimensional Topological Quantum Field Theories (TQFTs for short) con-\ntaining invariants of links in 3-manifolds such as Witten–Reshetikhin–Turaev\nones. In recent years, generalized notions of modular categories, which relax\nthe semisimplicity requirement, have been successfully used to extend Turaev’s\nconstruction to various non-semisimple settings",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2011.12932v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Historical overview",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-2-historical-overview.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2011.12932v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definition of TQFT",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-002-definition-of-tqft.md",
+      "narrative": null,
+      "content": "A popular axiomatization of the notion of TQFT was proposed by Micheal Atiyah \\cite{A88}, who was inspired by a similar definition of Graeme Segal \\cite{S88} for the concept of a Conformal Field Theory (CFT for short). Paraphrasing Atiyah, a TQFT in dimension 3 can be defined as a symmetric monoidal functor from a category of 3-dimensional cobordisms to the category of vector spaces. In this definition, cobordism categories are naturally equipped with the symmetric monoidal structure induced by disjoint union. In other words, a TQFT $V$ associates with every closed oriented surface $\\Sigma$ a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2011.12932v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Semisimple constructions",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-003-semisimple-constructions.md",
+      "narrative": null,
+      "content": "In his seminal work \\cite{W88}, Witten defined topological invariants of closed oriented 3-manifolds in terms of Chern--Simons gauge theory, and he predicted that these invariants could be understood as part of a TQFT. Furthermore, he explained in \\cite{W89} that his construction actually provides a quantum field theoretical interpretation for the mysterious Jones polynomial \\cite{J85}, a topological invariant of knots whose geometric content remains to this day quite elusive. Witten's approach uses tools, such as Feynman's path integral, which have not been formalized on a mathematical level",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2011.12932v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Early non-semisimple constructions",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-early-non-semisimple-constructions.md",
+      "narrative": null,
+      "content": "Reshetikhin and Turaev's work immediately sparked a wide interest in the newly born field of quantum topology, and some natural questions quickly emerged. First of all, is it possible to figure out the relevant combinatorics for elements of ribbon Hopf algebras arising from the construction of \\cite{RT90} without relying on their representation theory? Answering this question required learning how to deal with Hopf algebras themselves, which, in the relevant family of concrete examples, are not semisimple, and thus are not completely determined by their simple modules. Therefore, another natur",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2011.12932v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Renormalized non-semisimple constructions",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-005-renormalized-non-semisimple-constructions.md",
+      "narrative": null,
+      "content": "\\label{SS:renormalized_non-semisimple}\n\nA key ingredient that was missing from these early attempts at non-semisimple constructions was the theory of \\textit{modified traces} developed by Geer and Patureau together with many collaborators, among which Turaev \\cite{GPT07}, Kujawa \\cite{GKP10}, and Virelizier \\cite{GPV11}. Indeed, one way to explain the problems we face when trying to generalize Turaev's TQFT construction is that the categorical trace operation, which associates scalars to endomorphisms in a ribbon category $\\calC$, becomes highly degenerate as soon as $\\calC$ is non-semisimple.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2011.12932v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Turaev's notion of modular category",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-006-3-turaevs-notion-of-modular-category.md",
+      "narrative": null,
+      "content": "\\label{S:T-mod_cat}\n\nUsing the language of \\cite{EGNO15}, a \\textit{T-modular category} (T for Turaev) is a ribbon fusion category whose S-matrix is invertible. The definition originally appeared in \\cite[Sec.~II.1.2]{T94} in a slightly more general form, but the version reported here has since become rather standard (compare with \\cite{BK01,TV17}). In order to better grasp this notion, let us proceed to unpack the terminology. \n\nFirst of all, a \\textit{ribbon} category $\\calC$ is a braided rigid monoidal category with a twist. This means a ribbon category comes equipped with:\n\\begin{enumerate",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2011.12932v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Semisimple quantum invariants and TQFTs",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-007-4-semisimple-quantum-invariants-and-tqfts.md",
+      "narrative": null,
+      "content": "\\label{S:TQFT_sem-sim}\n\nThe diagrammatic interpretation for morphisms of ribbon categories which was discussed earlier highlights the fundamental interplay between algebra and topology arising in this context. In fact, it is a result of Turaev that certain topological gadgets called \\textit{ribbon graphs} provide the relevant topological structure underlying Penrose graphical notation \\cite[Thm.~I.2.5]{T94}. Indeed, isotopy classes of ribbon graphs can be organised as morphisms of a category $\\calR_\\calC$, and the graphical calculus introduced above can be implemented by a functor\n\\[\n F_\\calC",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2011.12932v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "T-modular categories from small quantum sl(2)",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-008-5-t-modular-categories-from-small-quantum-sl2.md",
+      "narrative": null,
+      "content": "\\label{S:sl_2_sem-sim}\n\nThe Witten--Reshetikhin--Turaev TQFT was first constructed from the restricted quantum group of $\\fsl_2$ at even roots of unity. A careful exposition can be found in \\cite{T94}, while a popular alternative construction, based on Jones--Kauffman skein theory, can be found in \\cite{BHMV95}. This skein construction also produces TQFTs when the quantum parameter is an odd root of unity. Referring to Witten's gauge picture, these are called $\\SO(3)$-TQFTs. We choose this family as a demonstrative example, and develop in this section the construction of the underlying modular",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2011.12932v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lyubashenko's notion of modular category",
+      "pageStart": 12,
+      "pageEnd": 16,
+      "target": "../sections/sec-009-6-lyubashenkos-notion-of-modular-category.md",
+      "narrative": null,
+      "content": "\\label{S:L-mod_cat}\n\nAn \\textit{L-modular category} (L for Lyubashenko) can be defined as a finite ribbon category whose Müger center is trivial. Remark that this is not the original definition of Lyubashenko, but it is equivalent to it. This is a consequence of a result of Shimizu \\cite{S16}, who compared several notions of non-degeneracy for the braiding of a finite ribbon category, proving the equivalence of four different conditions. Among these, we can find Lyubashenko's original one, as well as the short property used above. This formulation makes it clear that T-modular categories are j",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2011.12932v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Non-semisimple quantum invariants and TQFTs",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-010-7-non-semisimple-quantum-invariants-and-tqfts.md",
+      "narrative": null,
+      "content": "\\label{S:TQFT_non-sem-sim}\n\nUsing the coend $\\calL$ and the integral $\\Lambda$, it is possible to develop a diagrammatic calculus which steps outside of the framework provided by the Reshetikhin--Turaev functor. This time, the topological gadgets underlying this graphical notation are called \\textit{bichrome graphs}. Very roughly speaking, bichrome graphs are ribbon graphs whose edges can be of two kinds, either \\textit{red} (and unlabeled) or \\textit{blue} (and labeled as usual by objects of $\\calC$). Similarly, coupons (which, for standard ribbon graphs, correspond to boxes like the one repr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2011.12932v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "L-modular categories from small quantum sl(2)",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-011-8-l-modular-categories-from-small-quantum-sl2.md",
+      "narrative": null,
+      "content": "\\label{S:sl_2_non-sem-sim}\n\nThe small quantum group $\\bar{U}_q \\fsl_2$ introduced in Section \\ref{S:sl_2_sem-sim} is factorizable. This is proved in \\cite[Ex.~3.4.3]{M95} by looking directly at the M-matrix $M \\in \\bar{U}_q \\fsl_2 \\otimes \\bar{U}_q \\fsl_2$, which is given by\n\\[\n M := \\frac{1}{r} \\sum_{a,b,c,d=0}^{r-1} \\frac{\\{ 1 \\}^{a+b}}{[a]![b]!} q^{\\frac{a(a-1)+b(b-1)}{2} - 2 cd - (b+c)(b-d)} F^b K^c E^a \\otimes E^b K^d F^a.\n\\]\nThis means the category $\\calC = \\mods{\\bar{U}_q \\fsl_2}$ of finite-dimensional left $\\bar{U}_q \\fsl_2$-modules is L-modular, see \\cite[Rem.~3.6.1]{L95}.\n\nAn \\textit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2011.12932v2/blocks/prop-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 24,
+      "target": "prop-sec-012-01.md",
+      "narrative": null,
+      "content": "1. If C is a rigid fusion category and Γ(C) = {Vi | i ∈I} is a set of representatives of isomorphism classes of simple objects of C, then E ∼= M i∈I Vi ⊗V ∗ i , and for every X ∈C the structure morphism jX : E →X ⊗X∗is given by jX =   n(X,i) X a=1 ιa ⊗(πa)∗   i∈I where {ιa ∈C(Vi, X) | 1 ⩽a ⩽n(X, i)} and {πa ∈C(X, Vi) | 1 ⩽a ⩽n(X, i)} are dual bases with respect to composition. Furthermore, if U ∈C is a dinatural transformation of target K with structure morphisms dX : U →X ⊗X∗, then the unique morphism eU : U →E making (8) into a commutative diagram is given by eU := (dVi)i∈I . MODULAR CAT",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2011.12932v2/blocks/prop-sec-012-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 24,
+      "target": "prop-sec-012-02.md",
+      "narrative": null,
+      "content": "2. If C = H-mod is the category of ﬁnite-dimensional represen- tations of a ﬁnite-dimensional Hopf algebra H, then E ∼= ad, and for every X ∈C the structure morphism jX : ad →X ⊗X∗is given by jX(x) = n X a=1 (x · va) ⊗ϕa, where {va ∈X|1 ⩽a ⩽n} and {ϕa ∈X∗|1 ⩽a ⩽n} are dual bases. Furthermore, if U ∈C is a dinatural transformation of target K with structure morphisms dX : U →X ⊗X∗, then the unique H-module morphism eU : U →E making (8) into a commutative diagram is given by eU := (idH ⊗η∗) ◦dH, where H denotes the regular representation and η : k →H denotes the unit of H.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2011.12932v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. Ends",
+      "pageStart": 20,
+      "pageEnd": 24,
+      "target": "../sections/sec-012-appendix-a-ends.md",
+      "narrative": null,
+      "content": "Let us consider the functor K : C × Cop →C determined by (X, Y ) 7→X ⊗Y ∗.\nA dinatural transformation of target K is given by an object U ∈C equipped with\na family {dX : U →X ⊗X∗}X∈C of morphisms of C satisfying\n(f ⊗idX∗) ◦dX = (idY ⊗f ∗) ◦dY\nfor every morphism f : X →Y of C, see [47, Sec. IX.4]. The end of K is the\nuniversal dinatural transformation of target K, which means it is an object E ∈C\nwith a dinatural family of structure morphisms jX : E →X ⊗X∗satisfying the\nfollowing condition: for every dinatural transformation U of target K there exists\na unique morphism eU : U →E such that the d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2011.12932v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "../sections/sec-013-references.md",
+      "narrative": null,
+      "content": "[1] H. Andersen, Tensor products of quantized tilting modules, Comm. Math. Phys. 149 (1992),\nNo. 1, 149–159.\n[2] J. Andersen, Asymptotic Faithfulness of the Quantum SU(n) Representations of the Mapping\nClass Groups, Ann. of Math. (2) 163 (2006), No. 1, 347–368; arXiv:math/0204084 [math.QA].\n[3] M. Atiyah, Topological Quantum Field Theories, Publ. Math. Inst. Hautes Études Sci. 68\n(1988), 175–186.\n[4] A. Beliakova, C. Blanchet, Modular Categories of Types B, C and D Comment. Math. Helv.\n76 (2001), No. 3, 467–500; arXiv:math/0006227 [math.QA].\n[5] A. Beliakova, C. Blanchet, A. Gainutdinov, Modiﬁ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

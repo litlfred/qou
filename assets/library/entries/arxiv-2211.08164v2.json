@@ -1,0 +1,268 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2211.08164v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2211.08164v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction and statement of the result",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction-and-statement-of-the-result.md",
+      "narrative": null,
+      "content": "Weierstrass point theory is one of the main tools in the study of the geometry of compact Riemann surfaces. Since its inception in Hurwitz's foundational paper \\cite{Hu}, this theory has tremendously evolved due to tools from different areas, such as projective geometry, complex analysis and numerical semigroup theory.\n\n\n\n\n\\s\n\nIn this note, we address the general problem of deciding whether the automorphism group of a given Riemann surface acts transitively on the set of its \\we points. \n\n\\s\n\nAlthough this problem is not new, the literature shows very few examples of Riemann surfaces with this",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.08164v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:2211.08164v2  [math.AG]  16 Apr 2024\nINFINITELY MANY RIEMANN SURFACES WITH A\nTRANSITIVE ACTION ON THE WEIERSTRASS POINTS\nSEBASTI´AN REYES-CAROCCA AND PIETRO SPEZIALI\nAbstract. In this short note, we prove the existence of inﬁnitely many pairwise\nnon-isomorphic, non-hyperelliptic Riemann surfaces with automorphism group act-\ning transitively on the Weierstrass points. We also ﬁnd all compact Riemann sur-\nfaces with automorphism group acting transitively on the Weierstrass points, under\nthe assumption that they are simple.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.08164v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A family of Riemann surfaces",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-a-family-of-riemann-surfaces.md",
+      "narrative": null,
+      "content": "We recall that the moduli space   $\\mathscr{M}_3$ of compact Riemann surfaces of genus $g=3$ is a complex analytic space of dimension six and that its singular locus agrees with the points representing surfaces admitting non-trivial automorphisms, with the exception of the hyperelliptic surfaces having automorphism group of order two; see \\cite{Oort13}. Let  $$\\mathscr{K}_3 \\subset \\mbox{Sing}(\\mathscr{M}_3)$$be the locus formed by points represented by the smooth  projective algebraic curves $$\\mathscr{C}_t : x^4 +y^4 +z^4+ t(x^2y^2 +y^2z^2 +z^2x^2) = 0$$ where $t$ is a complex number differe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.08164v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of the main theorem",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-3-proof-of-the-main-theorem.md",
+      "narrative": null,
+      "content": "The proof of the main theorem will be a consequence of the following four facts.\n\n\\s\n\n\\begin{customfact}{1} Let $\\cX$ be a non-hyperelliptic compact Riemann surface of genus $g=3$. If the  automorphism group of $\\cX$ acts transitively on the Weierstrass points then $\\cX \\in \\mathscr{K}_3.$\n\\end{customfact}\n\n\\begin{proof}\nAssume that the automorphism group $G$ of $X$ acts transitively on the Weierstrass points. By \\cite[Theorem 1]{kato}, the weight of each of these points is either equal to 1 or 2. Since the sum of the weights of all the points of $X$ is equal to 24, the Riemann surface $X$ has",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.08164v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Simple Weierstrass points",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-4-simple-weierstrass-points.md",
+      "narrative": null,
+      "content": "Laing and Singerman in [24] searched for all Riemann surfaces of genus g > 2\nadmitting a transitive action on the Weierstrass points, but under the additional\nassumption that such points are simple (namely, of weight 1). They succeeded in\ngiving a partial answer to this problem by taking advantage of the geometric richness\nin the case of platonic Riemann surfaces, leaving the case of S4 acting on genus g = 3\nwith signature (0; 2, 2, 2, 3) as an open problem. In fact, referring to that situation,\nthey pointed out that “it is unclear whether there could be any [Riemann surface in\nthe family K3]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.08164v2/blocks/rem-sec-003-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "rem-sec-003-02.md",
+      "narrative": null,
+      "content": "The Weierstrass points of Fermat’s quartic were obtained by Hasse in [13]. Besides, the Weierstrass points of C3 can be easily computed, since they are the ﬁxed points of the involutions conjugate to [x : y : z] 7→[−x : y : z]. Explicitly, the Weierstrass points of C3 are [0 : 1 : ζ], [1 : ζ : 0], [ζ : 0 : 1] where ζ = ± q −3± √ . As simple Weierstrass points are precisely ordinary ﬂexes, the Weierstrass points of Ct for t̸ = 0, −1, ±2, 3, t0 are the points of Ct at which the Hessian determinant vanishes.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2211.08164v2/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "There is a transitive action on the Weierstrass points on a compact Riemann surface X of genus g > 2 and the Weierstrass points are simple if and only if one of the following statements holds. (1) g = 4 and X is isomorphic to Bring’s curve. (2) g = 3 and X ∈K3 is isomorphic Ct for some t diﬀerent from 0 and 3. RIEMANN SURFACES WITH TRANSITIVE ACTION ON WEIERSTRASS POINTS The theorem above answers a question posed by Laing and Singerman and com- pletes [24, Theorem 15]. For the sake of completeness, we recall that the Weierstrass points of Bring’s curve were found by Edge in [9]; see also [2, S",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2211.08164v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Future directions and final comments",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-5-future-directions-and-final-comments.md",
+      "narrative": null,
+      "content": "We end this note with some remarks.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.08164v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The action on C3",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-the-action-on-c3.md",
+      "narrative": null,
+      "content": "It is worth recalling that the family $\\mathscr{K}_3$ is equisymmetric, namely, it is a closed irreducible algebraic subvariety of $\\mathscr{M}_3$ and the action of $\\mathbf{S}_4$ on its members is the same, in the sense of topological actions (see \\cite{b22} for a precise definition of topological action). Then it naturally arises the problem of understanding the dichotomy between $\\mathscr{C}_3$ (with double \\we points) and $\\mathscr{C}_t$ with $t \\neq 0,3$ (with simple \\we points), and if such a dichotomy can be read off from the geometry of the action.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.08164v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Jacobian variety",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-006-the-jacobian-variety.md",
+      "narrative": null,
+      "content": "Let $j: X \\hookrightarrow JX$ denote the Abel-Jacobi map of $X$ and let $\\mathscr{W}_X$ be the group generated by the images under $j$ of Weierstrass points of $X$. If $X$ is hyperelliptic then it is well-known that $\\mathscr{W}_X$ agrees with the $2$-torsion points of $JX$. By contrast, for non-hyperelliptic surfaces of genus 3 the structure of $\\mathscr{W}_X$ have been determined only for some special cases: for instance, Klein's quartic in \\cite{ref6}, Fermat's quartic in \\cite{ref7} and the Picard curve  \nin \\cite{ref2}. It would be interesting to understand the extent to which the transit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.08164v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "New examples",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-007-new-examples.md",
+      "narrative": null,
+      "content": "Since all the known examples of non-hyperelliptic Riemann surfaces with transitive action on the \\we points turn out to have  genus at most seven, it would be interesting to search for new examples (and infinite collection of examples) in higher genera, if they exist. If such Riemann surfaces do not exist for arbitrary genus, it would be interesting to find an upper bound for their genera.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.08164v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The case of positive characteristic",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-008-the-case-of-positive-characteristic.md",
+      "narrative": null,
+      "content": "Transitive actions on \\we points can be also studied for (projective, non-singular, absolutely irreducible) algebraic curves  defined over algebraically closed fields of positive characteristic. However, in this context the relationship between \\we point and automorphisms becomes much more involved than in the complex case. In fact, the following two problems may arise:\n\\begin{enumerate}\n\\item the curve might be non-classical, that is, the gap sequence at a generic point can   be different from $\\{1,\\ldots,g\\}$, where $g$ is the genus of the curve, and\n\\item the order of the automorphism group",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.08164v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgement",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-009-acknowledgement.md",
+      "narrative": null,
+      "content": "ments and suggestions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2211.08164v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-010-references.md",
+      "narrative": null,
+      "content": "[1] F.\nBars,\nAutomorphisms\ngroups\nof\ngenus\n3\ncurves,\nNumber\nThe-\nory\nSeminar\nUAB-UB-UPC\non\nGenus\n3\ncurves,\navailable\nat:\nhttps://mat.uab.cat/{$\\sim$}francesc/mates/autgen3.pdf\n[2] H. W. Braden and L. Disney-Hogg, Bring’s curve: old and new, arXiv:2208.13692 (2022).\n[3] S. A. Broughton, Classifying ﬁnite groups actions on surfaces of low genus, J. Pure Appl.\nAlgebra 69 (1990), no. 3, 233–270.\n[4] S. A. Broughton, The equisymmetric stratiﬁcation of the moduli space and the Krull di-\nmension of mapping class groups, Topology Appl. 37 (1990), no. 2, 101–113.\n[5] P. J. Cameron, Permutation Groups,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

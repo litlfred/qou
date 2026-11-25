@@ -1,0 +1,1064 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1909.06744v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§1. Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The Springer correspondence is the canonical correspondence between the unipo-\ntent classes of a connected reductive group G and irreducible representations of the\nWeyl group W of G, established by Springer [Sp] in 1976. In 1981, Lusztig [L2]\nfound a way to reformulate the Springer’s theory by means of the theory of per-\nverse sheaves.\nIn the same paper, he gave a geometric interpretation of Koskta\npolynomials in terms of the intersection cohomology associated to unipotent classes\nof GLn. The theory of Springer correspondence was generalized by Lusztig [L3] in\n1984 to the theory of generalized",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Contents",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-contents.md",
+      "narrative": null,
+      "content": "§1. Introduction\n§2. Springer correspondene for GLn\n§3. Springer correspondence for reductive groups\n§4. The interpretation via perverse sheaves\n2\n§5. The generalized Springer correspondence\n§6. Geometric realization of Kostka polynomials\n§7. The enhanced variety GL(V ) × V\n§8. Springer correspondence for the enhanced variety\n§9. Double Kostka polynomials\n§10. Symmetric spaces in algebraic setting\n§11. Symmetric spaces associated to classical groups\n§12. Unipotent orbits in H and in Gιθ\nuni\n§13. Exotic symmetric space associated to symplectic groups\n§14. Springer correspondence for Gιθ\nuni, th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1909.06744v1  [math.RT]  15 Sep 2019\nSpringer correspondence for symmetric spaces\nToshiaki Shoji\nAbstract. This is a survey on the Springer correspondence for symmetric spaces.\nWe discuss various generalization of the theory of the Springer correspondence for\nreductive groups to symmetric spaces and exotic symmetric spaces associated to\nclassical groups.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§2. Springer correspondence for GLn",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-2-springer-correspondence-for-gln.md",
+      "narrative": null,
+      "content": "Throughout the paper, we assume that k is an algebraically closed ﬁeld of char-\nacteristic p ≥0, and we consider ¯Ql-sheaves, where ¯Ql is an algebraic closure of the\nl-adic number ﬁeld Ql with l̸ = p. Note that if p = 0, one can replace k by the com-\nplex number ﬁeld C, and ¯Ql-sheaves by ordinary C-sheaves. All the representations\nof ﬁnite groups are considered over ¯Ql ≃C. For a ﬁnite group Γ, we denote by Γ ∧\nthe set of isomorphism classes of irreducible representations of Γ.\nWe will start from the simplest example. Let G = GLn(k), B a Borel subgroup\nof G containing a maximal torus T. Let",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/thm-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Springer",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "thm-sec-002-01.md",
+      "narrative": null,
+      "content": "Let x ∈Guni. (i) Hi(Bx, ¯Ql) has a structure of Sn-module, called the Springer representa- tion of Sn. (ii) H2dx(Bx, ¯Ql) is an irreducible Sn-module. (iii) The map x 7→H2dx(Bx, ¯Ql) induces a “canonical” bijection Guni/∼G ∼ −→S∧ n. (iv) For x ∈Oλ, H2dx(Bx, ¯Ql) ≃Vλ as Sn-modules. Hence we obtain the corre- spondence Oλ ↔Vλ. The bijective correspondence in (iii) is called the Springer correspondence.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§3. Springer correspondence for reductive groups",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-3-springer-correspondence-for-reductive-groups.md",
+      "narrative": null,
+      "content": "The Springer correspondence for G = GLn gives a bijective correspondence\nbetween unipotent classes of G and irreducible representations of the Weyl group\nW of G. But this does not hold for reductive groups in general, and needs some\nmodiﬁcation. Let G be a connected reductive group. B, T, W, Guni, etc. are deﬁned\nsimilarly as in Section 2. The Springer resolution π : eGuni →Guni is deﬁned similarly.\n(Note in the case where p > 0, we need to assume that G is simply connected for\nobtaining the resolution of singularities.\nBut we ignore this point, and use the\n“Springer resolution” for reductive",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/rem-sec-003-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "rem-sec-003-01.md",
+      "narrative": null,
+      "content": "In the case where G = GLn, ZG(x) is connected, hence AG(x) = {1}. For G = SpN, SON, AG(x) ≃(Z/2Z)c for some c. In turn, for G of type G2, F4, E8, there exist a unique class O in G such that AG(x) ≃S3, S4 and S5 for x ∈O, respectively. The following theorem is the original form of the Springer correspondence due to Springer.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/thm-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Springer [Sp]",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "thm-sec-003-02.md",
+      "narrative": null,
+      "content": "Let G be reductive, and x ∈Guni. (i) Consider the decomposition of H2dx(Bx, ¯Ql) by AG(x) × W-modules, H2dx(Bx, ¯Ql) ≃ M τ∈AG(x)∧ τ ⊗V(x,τ). Then V(x,τ) is an irreducible W-module if it is non-zero. (ii) All the irreducible W-modules are realized in this way uniquely. In particular, we have an injective map W ∧֒ →NG := {(x, τ) | x ∈Guni/∼G, τ ∈AG(x)∧}. Remarks 3.3. (i) Except the case where G = GLn, the above map in (ii) is not surjective. In fact, the diﬀerence δ = |NG| −|W ∧| = 1 if G is of type G2, F4 or E8, while δ = 0 if G is of type E6 or E7. In the former case, the missing one is the pa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§4. The interpretation via perverse sheaves",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-4-the-interpretation-via-perverse-sheaves.md",
+      "narrative": null,
+      "content": "In [L2] Lusztig reconstructed Springer representations of W on Hi(Bx, ¯Ql) in\nterms of the intersection cohomology.\nBased on Lusztig’s construction, Borho-\nMacPherson [BM] reformulated Springer’s theorem (Theorem 3.2) in the framework\nof the theory of perverse sheaves, which I will explain below.\nLet NG be the set of pairs (O, E ), where O is a unipotent class in Guni and\nE is a G-equivariant simple local system on O.\nIf we choose x ∈O, the stalk\nEx of E at x has a structure of a simple AG(x)-module, say τ ∈AG(x)∧, and τ\ncharacterizes a G-equivariant simple local system E , which we denote by",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/thm-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Borho-MacPherson [BM]",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "thm-sec-004-01.md",
+      "narrative": null,
+      "content": "Let π : eGuni →Guni be as in Section 3, and consider the constant sheaf ¯Ql on eGuni. Then π∗¯Ql[dim Guni] is a semisimple perverse sheaf on Guni, equipped with W-action, and is decomposed as π∗¯Ql[dim Guni] ≃ M (O,E )∈NG V(O,E ) ⊗IC(O, E )[dim O], where V(O,E ) is an irreducible W-module if it is non-zero.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§5. The generalized Springer correspondence",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-5-the-generalized-springer-correspondence.md",
+      "narrative": null,
+      "content": "The map W ∧֒ →NG is not necessarily surjective. It is an interesting problem to\nunderstand the pair (O, E ) which is not contained in the image of W ∧(for example,\nthe unique missing pair (O, E ) in the case of type G2, F4 or E8 in Remarks 3.3).\nAs an analogue of the Harish-Chandra theory of the representations of reductive\ngroups, Lusztig extended this map to a bijection to NG. His ingredients are as\nfollows;\n• The notion of a cuspidal pair for (O, E ) ∈NG,\n• The notion of an induction indG\nP for a parabolic subgroup P of G and its\nLevi subgroup L,\nindG\nP : { L-equiv. perverse sheaves on L }",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/thm-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Lusztig [L3]",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "thm-sec-005-01.md",
+      "narrative": null,
+      "content": "(i) For ξ = (L, O1, E1) ∈SG, Kξ is a semisimple perverse sheaf on G, equipped with WL-action, and is decomposed as indG P Kξ ≃ M (O,E )∈NG V ξ (O,E ) ⊗IC(O, E )[dim O], where V ξ (O,E ) is an irreducible WL-module if it is non-zero. (ii) For any ξ ∈SG, we have a bijection N (ξ) G := {(O, E ) ∈NG | V ξ (O,E )̸ = 0} ∼ −→W ∧ L . (iii) We have a partition NG = ` ξ∈SG N (ξ) G . In particular, there exists a natural bijection NG ∼ −→ a ξ∈SG W ∧ L , which is called the generalized Springer correspondence. Remarks 5.2. (i) In general, cuspidal pairs occur very rarely. Let G = SpN or SON, and δN the nu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/cor-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "cor-sec-006-02.md",
+      "narrative": null,
+      "content": "For x ∈Oµ, we have eKλ,µ(t) = tn(λ) X i≥0 ⟨H2i(Bx, ¯Ql), Vλ⟩Sn ti, where ⟨, ⟩Sn is the inner product of characters of Sn.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/lem-sec-006-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "lem-sec-006-04.md",
+      "narrative": null,
+      "content": "For each λ ∈Pn,2, we have Oλ = ` µ≤λ Oµ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§6. Geometric realization of Kostka polynomials",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-006-6-geometric-realization-of-kostka-polynomials.md",
+      "narrative": null,
+      "content": "§6. Geometric realization of Kostka polynomials\nIn this section, we will discuss the relationship between Kostka polynomials and\nthe theory of the Springer correspondence in the case of GLn. In [L2], Lusztig gave a\ngeometric realization of Kostka polynomials in terms of the intersection cohomology\nassociated to unipotent classes in GLn. First we review the deﬁnition of Kostka\npolynomials.\nConsider x = (x1, x2, . . . , ) inﬁnitely many variables, and t another parameter.\nLet Λ(x) = Λ = L\nn≥0 Λn be the ring of symmetric functions, where Λn is the n-th\nhomogeneous part, and consider Λ[t] = Λ ⊗Z Z",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/rem-sec-006-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "rem-sec-006-03.md",
+      "narrative": null,
+      "content": "In the case of the Springer correspondence, only Springer represen- tations of the top cohomology H2dx(Bx, ¯Ql) are involved. While, for the description of the Kostka polynomials, all the Springer representations H2i(Bx, ¯Ql) are used. §7. The enhanced variety GL(V ) × V Later we discuss the theory of the Springer correspondence for the exotic sym- metric space associated to symplectic groups. The enhanced variety is an extension of GLn, and is also regarded as a degenerate form of the exotic symmetric space, and was studied extensively by Achar-Henderson [AH] and Finkelberg-Ginzburg-Travkin [",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/rem-sec-006-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "rem-sec-006-05.md",
+      "narrative": null,
+      "content": "For z = (x, v) ∈Guni × V , the stabilizer ZG(z) in G is connected. Hence the G-equivariant simple local system on a G-orbit O in Xuni is a constant sheaf ¯Ql, and we are in a quite similar situation as in the case of GLn.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/thm-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Lusztig [L2]",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "thm-sec-006-01.md",
+      "narrative": null,
+      "content": "For λ ∈Pn, put Aλ = IC(Oλ, ¯Ql). Then (i) H iAλ = 0 for odd i. (ii) For x ∈Oµ ⊂Oλ, we have (6.6) eKλ,µ(t) = tn(λ) X i≥0 (dim H 2i x Aλ)ti. In particular, Kλ,µ(t) ∈Z≥0[t]. In the case of GLn, Borho-MacPherson’s theorem gives a decomposition (6.7) π∗¯Ql[dim Guni] ≃ M λ∈Pn Vλ ⊗Aλ[dim Oλ]. By taking the stalk of the i-th cohomology on both sides of (6.7), and by comparing them with Theorem 6.1 (ii), we obtain the interpretation of Ksotka polynomials in terms of the Springer representations of Sn.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§8. Springer correspondence for the enhanced variety",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-007-8-springer-correspondence-for-the-enhanced-varie.md",
+      "narrative": null,
+      "content": "We ﬁx a B-stable ﬂag M1 ⊂M2 ⊂· · · ⊂Mn = V , with dim Mi = i. For an\ninteger 0 ≤m ≤n, we deﬁne varieties\neXm = {(x, v, gB) ∈Guni × V × B | g−1xg ∈B, g−1v ∈Mm},\n(8.1)\nXm =\n[\ng∈G\ng(U × Mm),\nwhere U is the unipotent radical of B, and deﬁne a map πm : e\nXm →Xm by\n(x, v, gB) 7→(x, v). Then eXm is smooth, irreducible, and π is proper.\nFor 0 ≤m ≤n, put m = (m, n −m) and Sm = Sm × Sn−m. Then Sm is a Weyl\nsubgroup of Sn. Put\n(8.2)\nP(m) = {λ = (λ′, λ′′) ∈Pn,2 | |λ′| = m, |λ′′| = n −m}.\nThen it is known that\n(8.3)\nS∧\nm ≃P(m),\nVλ = Vλ′ ⊠Vλ′′ ↔λ = (λ′, λ′′).\nThe following result is an analogue of Borho-Mac",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/thm-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[SS]",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "thm-sec-007-01.md",
+      "narrative": null,
+      "content": "Put dm = dim Xm. (i) (πm)∗¯Ql[dm] is a semisimple perverse sheaf on Xm, equipped with Sm-action, and is decomposed as (πm)∗¯Ql[dm] ≃ M λ∈P(m) Vλ ⊗IC(Oλ, ¯Ql)[dim Oλ]. (ii) The Springer correspondence is given by a 0≤m≤n (Sm × Sn−m)∧≃ a 0≤m≤n {Oλ | λ ∈P(m)} = Xuni/∼G .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§9. Double Kostka polynomials",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-008-9-double-kostka-polynomials.md",
+      "narrative": null,
+      "content": "Kostka polynomials Kλ,µ(t) (λ, µ ∈Pn) was generalized to double Kostka poly-\nnomials Kλ,µ(t) (λ, µ ∈Pn,2). (See [S1, S2], where they are deﬁned for any r-\npartitions. Here we only consider the special case where r = 2). Recall the dis-\ncussion in Section 6.\nHere we prepare two types of variables x′ = (x′\n1, x′\n2, . . . ),\nx′′ = (x′′\n1, x′′\n2, . . . ) and consider Ξ = L\nn≥0 Λ(x′)⊗Λ(x′′), the ring of symmetric func-\ntions with respect to x = (x′, x′′). Put Ξ[t] = Ξ ⊗Z Z[t]. For λ = (λ′, λ′′) ∈Pn,2,\none can deﬁne the Schur function sλ(x) = sλ′(x′)sλ′′(x′′) and Hall-Littlewood func-\ntions Pλ(x; t)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/rem-sec-008-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "rem-sec-008-02.md",
+      "narrative": null,
+      "content": "If we compare the formula (9.4) with the formula (6.6) in Theorem 6.1, we notice the discrepancy of the relations between ti and cohomology sheaves. In fact, in (6.6) ti corresponds to H 2i x Aλ, while in (9.4) t2i corresponds to H 2i z Aλ. Later, we also consider the geometric realization of double Kostka polynomials by means of exotic symmetric space. In that case, this discrepancy is removed (see",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/thm-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[AH]",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "thm-sec-008-01.md",
+      "narrative": null,
+      "content": "For λ ∈Pn,2, put Aλ = IC(Oλ, ¯Ql). Then we have (i) H iAλ = 0 for odd i. (ii) Take λ, µ ∈Pn,2 such that µ ≤λ. For z ∈Oµ ⊂Oλ, we have (9.4) eKλ,µ(t) = ta(λ) X i≥0 (dim H 2i z Aλ)t2i.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/prop-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "prop-sec-009-02.md",
+      "narrative": null,
+      "content": "Assume that p̸ = 2. Then the number of H-orbits in Gιθ 0 is ﬁnite.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§10. Symmetric spaces in algebraic setting",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-009-10-symmetric-spaces-in-algebraic-setting.md",
+      "narrative": null,
+      "content": "Historically, the symmetric space G/K, where G is a connected Lie group and K\nis a compact subgroup such that (Gθ)0 ⊂K ⊂Gθ for an involutive automorphism θ\nof G, has been studied extensively from a point of view of the Riemannian geometry.\nHowever, here we are interested in its algebraic structure, namely, we consider G, K\nas algebraic groups and G/K as an algebraic variety over k of any characteristic.\nThe basis of the algebraic study of symmetric spaces was achieved by Vust [V] and\nRichardson [R], which will be summarized below.\nLet G be a connected reductive group over k with ch k ≥0, and θ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/rem-sec-009-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "rem-sec-009-01.md",
+      "narrative": null,
+      "content": "Assume that p̸ = 2. Let θ : G →G be as above. Let g be the Lie algebra of G. Then θ induces an involutive automorphism on g, which we denote by the same symbol as θ : g →g. We have the decomposition g ≃gθ ⊕g−θ, where g±θ are ±1 eigenspaces of θ. We note that gθ ≃Lie Gθ and g−θ is a Gθ-stable subspace of g such that g−θ ≃Te(Gιθ). g−θ is usually referred as the symmetric space with respect to Gθ. Thus Gιθ is regarded as a global analogue of g−θ. Let Gιθ uni = Gιθ 0 ∩Guni be the set of unipotent elements in Gιθ 0 . Then Gιθ uni is an H- stable closed subset of Gιθ, which has a role of the unipote",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/rem-sec-009-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "rem-sec-009-03.md",
+      "narrative": null,
+      "content": "In the Lie algebra case, put g−θ nil = g−θ ∩gnil, where gnil is the set of nilpotent elements in g. Then g−θ nil is an H-stable closed subset of g−θ. The ﬁniteness property also holds in the Lie algebra case. But this does not hold for Gιθ uni if p = 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/cor-sec-010-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "group case",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "cor-sec-010-05.md",
+      "narrative": null,
+      "content": "Assume x ∈Oλ ⊂Huni. Put AH(x) = ZH(x)/Z0 H(x). Then AH(x) ≃(Z/2Z)a(λ), where a(λ) = ( ♯{i | i : even, mi̸ = 0} if H = SpN, ♯{i | i : odd, mi̸ = 0} −1 ( or 0) if H = SON.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/cor-sec-010-06",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "symmetric space case",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "cor-sec-010-06.md",
+      "narrative": null,
+      "content": "Assume x ∈Oλ ⊂Gιθ uni. Put AH(x) = ZH(x)/Z0 H(x). Then AH(x) ≃(Z/2Z)b(λ), where b(λ) = ( if H = SpN, ♯{i | mi̸ = 0} −1 ( or 0) if H = SON.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/prop-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "group case",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "prop-sec-010-01.md",
+      "narrative": null,
+      "content": "Under the notation above, we have (i) Oλ ∩H̸ = ∅⇐⇒mi is even for odd i ( resp. for even i ) if H = SpN ( resp. H = SON ). (ii) If Oλ ∩H̸ = ∅, then Oλ = Oλ ∩H is a single class in H. (iii) For x ∈Oλ, ZGθ(x) ≃ (\u0000Q i:odd Spmi × Q i:even Omi \u0001 ⋉U1 ( SpN-case ), \u0000Q i:even Spmi × Q i:odd Omi \u0001 ⋉U1 ( SON-case ), where U1 : connected unipotent normal group of ZGθ(x). The case of H-orbits in Gιθ uni is given as follows.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/prop-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "symmetric space case",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "prop-sec-010-02.md",
+      "narrative": null,
+      "content": "Let H = SpN. (i) Oλ ∩Gιθ̸ = ∅⇐⇒mi is even for all i. (ii) If Oλ ∩Gιθ̸ = ∅, then Oλ = Oλ ∩Gιθ is a single H-orbit. (iii) For x ∈Oλ, ZGθ(x) ≃ Y i Spmi ⋉U1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/prop-sec-010-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "symmetric space case",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "prop-sec-010-03.md",
+      "narrative": null,
+      "content": "Let H = SON ( N : odd ). (i) Oλ ∩Gιθ is always non-empty. (ii) Oλ = Oλ ∩Gιθ is a single H-orbit. (iii) For x ∈Oλ, ZGθ(x) ≃ Y i Omi ⋉U1,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§11. Symmetric spaces associated to classical groups",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-010-11-symmetric-spaces-associated-to-classical-grou.md",
+      "narrative": null,
+      "content": "From now on, we concentrate ourselves to the special type of symmetric spaces,\nnamely the symmetric spaces associated to classical groups.\nLet V be an N-dimensional vector space over k with ch k̸ = 2, and put G =\nGLN ≃GL(V ).\nWe deﬁne an involutive automorphism θ : G →G by θ(g) =\nJ−1(tg−1)J, where J = J1 or J2,\nJ1 =\n\n\n1\n0\n0\n0\n0\n1n\n0\n1n\n0\n\n\nif N = 2n + 1,\nJ1 =\n\u0012\n0\n1n\n1n\n0\n\u0013\nif N = 2n,\nJ2 =\n\u0012\n0\n1n\n−1n\n0\n\u0013\nfor N = 2n.\nIf J = J1, then Gθ = ON and H = SON. While if J = J2, then Gθ = H = SpN. In\nboth cases, the following identity holds.\n(11.1)\nGιθ\n0 = Gιθ.\nFor later applications, we consider a g",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/rem-sec-010-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "rem-sec-010-04.md",
+      "narrative": null,
+      "content": "By comparing Proposition 12.2 and Propositions 12.3, 12.4, we ﬁnd very interesting phenomena. In the group case, ZGθ(x) involves the subgroups of type Sp and SO. Hence in the study of unipotent classes in H, the case of Sp and of SO cannot be separated. While in the case of symmetric spaces, the structure of ZGθ(x) is completely separated, namely in the case of H = SpN, ZGθ(x) involves only subgroups of type Sp, and similarly for H = SON. All the properties of ZGθ(x) in the case of symmetric spaces are inherited from similar properties in the group case, but they produce two extreme phenomena",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/cor-sec-011-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "cor-sec-011-05.md",
+      "narrative": null,
+      "content": "Assume that z ∈Oµ. Then Hi(BH z , ¯Ql) = 0 unless i ≡0 (mod 4), and we have eKλ,µ(t) = ta(λ) X i≥0 ⟨H4i(BH z , ¯Ql), eVλ⟩Wn t2i.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/lem-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "[K1], [AH]",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "lem-sec-011-01.md",
+      "narrative": null,
+      "content": "Let λ ∈Pn,2, and λ ∪λ ∈P2n,2. Let OL λ be the GL(Mn)-orbit corresponding to λ, and Oλ∪λ the G-orbit corresponding to λ ∪λ. Then Oλ is the unique H-orbit in X such that OL λ ⊂Oλ ⊂Oλ∪λ. The analogue of Lemma 7.2 and Remark 7.3 also hold for Gιθ uni × V .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/prop-sec-011-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "prop-sec-011-02.md",
+      "narrative": null,
+      "content": "Let Oλ be an H-orbit in Gιθ uni × V corresponding to λ ∈Pn,2. (i) For z = (x, v) ∈Gιθ uni × V , ZH(z) is connected. (ii) Oλ = ` µ≤λ Oµ, namely the closure relations are described by the dominance order on Pn,2. In this case, the map π : f X →X in Section 11 is given as follows; f X = {(x, v, gBH) ∈Gιθ uni × V × BH | g−1xg ∈Bιθ, g−1v ∈Mn}, X = [ g∈H g(Uιθ × V ) = Gιθ uni × V, and π : (x, v, gBH) 7→(x, v). Let Wn be the Weyl group of H = SpN, namely the Weyl group of type Cn. It is known that W ∧ n ≃Pn,2, we denote by eVλ irreducible representation of Wn cor- responding to λ ∈Pn,2. (Note the diﬀ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§13. Exotic symmetric space associated to symplectic groups",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-011-13-exotic-symmetric-space-associated-to-symplect.md",
+      "narrative": null,
+      "content": "We now consider the case of exotic symmetric space associated to symplectic\ngroups. So assume that H = SpN and X = Gιθ\nuni × V . The fact that the set of\nH-orbits in X is parametrized by Pn,2 was ﬁrst proved by Kato [K1]. The following\nis a reformulation of Kato’s result due to [AH].\nLet Mn be the maximal isotropic subspace in V , stable by BH. There exists a\nθ-stable Levi subgroup L ⊂G such that Lθ ≃GL(Mn). Then we have embeddings\n(13.1)\nLιθ\nuni × Mn ⊂Gιθ\nuni × V ⊂Guni × V.\nNote that the left hand side and the right hand side of (13.1) are enhanced varieties\ndiscussed in Section 7; GL(Mn) act",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/thm-sec-011-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "thm-sec-011-03.md",
+      "narrative": null,
+      "content": "π∗¯Ql[dim X ] is a semisimple perverse sheaf on X , equipped with Wn-action, and is decomposed as π∗¯Ql[dim X ] ≃ M λ∈Pn,2 eVλ ⊗IC(Oλ, ¯Ql)[dim Oλ]. The geometric realization of double Kostka polynomials in terms of Gιθ uni × V was conjectured in [AH], and was proved by [K3], [SS, II], independently. In [SS,II], it is proved by making use of the discussion on character sheaves due to Lusztig [L4].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/thm-sec-011-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "thm-sec-011-04.md",
+      "narrative": null,
+      "content": "For λ ∈Pn,2, put Aλ = IC(Oλ, ¯Ql). Then we have (i) H iAλ = 0 unless i ≡0 (mod 4). (ii) For z ∈Oµ ⊂Oλ, (13.2) eKλ,µ(t) = ta(λ) X i≥0 (dim H 4i z Aλ)t2i. Compare the formula (13.2) with the formula (9.4) in the enhanced case. The correspondence H 4i ↔t2i in (13.2) is more natural than the correspondence H 2i ↔ t2i in (9.4). Note that the modulo 4 vanishing of the cohomology of Aλ was ﬁrst noticed by Grojnowski [Gr]. For z = (x, v) ∈Gιθ uni × V , consider the Springer ﬁbre π−1(z) ≃BH z = {gBH ∈BH | g−1xg ∈Bιθ, g−1v ∈Mn}. Then Hi(BH z , ¯Ql) has a structure of Wn-module, which is an analogue of t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§14. Springer correspondence for Gιθ",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-012-14-springer-correspondence-for-gιθ.md",
+      "narrative": null,
+      "content": "uni, the case H = SpN\nAs pointed out in Section 11, Gιθ\nuni for H = SpN does not satisfy the condition\nexplained there, so the Springer correspondence does not hold in the strict sense.\nHowever some modiﬁed theory of the Springer correspondence still holds for Gιθ\nuni,\nas discussed in Henderson [H], which I will explain below.\nFirst we prepare some notation which is common for H = SpN and SON.\nAssume that H = SpN or SON (N : odd), and consider Gιθ\nuni. Let NGιθ be the set\nof pairs (O, E ), where O is an H-orbit in Gιθ\nuni, and E is an H-equivariant simple\nlocal system on O. Thus as in Section",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/rem-sec-012-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "rem-sec-012-02.md",
+      "narrative": null,
+      "content": "If we consider the symmetric space Gιθ uni of general type, one can expect that a similar phenomenon as in the case of H = SpN occurs. The case where H = SON seems to be rather special, and we could not ﬁnd other examples such that the Springer correspondence holds in the strict sense. Thus in order to discuss the (generalized) Springer correspondence for the general case, we nned to consider a correction factor such as H•(Pn 1) in the case of SpN. In the Lie algebra case, Lusztig-Yun [LY] discusses a related problem.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/thm-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "thm-sec-012-01.md",
+      "narrative": null,
+      "content": "Let H = SpN. Then π∗¯Ql[dim Gιθ uni] is a semisimple complex, equipped with Sn-action, and is decomposed as π∗¯Ql[dim Gιθ uni] ≃H•(Pn 1) ⊗ M λ∈Pn Vλ ⊗IC(O2λ, ¯Ql)[dim O2λ], where H•(Pn 1) = L i≥0 H2i(Pn 1, ¯Ql) is a complex of vector spaces, and Vλ is the irreducible Sn-module corresponding to λ ∈Pn.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§15. Springer correspondence for Gιθ",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-013-15-springer-correspondence-for-gιθ.md",
+      "narrative": null,
+      "content": "uni, the case H = SO2n+1\nWe now assume that H = SO2n+1. Then by Proposition 12.3, the set of H-orbits\nin Gιθ\nuni is parametrized by P2n+1;\n(15.1)\nOλ = Oλ ∩Gιθ\nuni ↔λ ∈P2n+1.\nWe deﬁne a map Γ : Pn →P2n+1 by\n(15.2)\nΓ : µ = (µ1, . . . , µk) 7→(2µ1 + 1, 2µ2, . . . , 2µk).\nThe following result gives the Springer correspondence for Gιθ\nuni. It was ﬁrst proved\nby Chen-Vilonen-Xue [CVX] for g−θ\nnil with k = C. The group case Gιθ\nuni is due to\n[SY].\nTheorem 15.2. Assume that H = SO2n+1. Then π∗¯Ql[dim Gιθ\nuni] is a semisimple\nperverse sheaf on Gιθ\nuni, equipped with Sn-action, and is decomposed as\n(15.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/thm-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "thm-sec-013-01.md",
+      "narrative": null,
+      "content": "Assume that H = SO2n+1. Then π∗¯Ql[dim Gιθ uni] is a semisimple perverse sheaf on Gιθ uni, equipped with Sn-action, and is decomposed as (15.3) π∗¯Ql[dim Gιθ uni] ≃ M µ∈Pn Vµ ⊗IC(OΓ (µ), ¯Ql)[dim OΓ (µ)], where Vµ is the irreducible Sn-module corresponding to µ ∈Pn. Remarks 15.2. (i) The formula (15.3) looks very similar to the formula in the case of GLn. But the pattern of the Springer correspondence is quite diﬀerent from that of GLn (see Remarks 5.2 (ii)). In fact, the Springer correspondence for Gιθ uni is given as follows; • 1Sn = Vµ with µ = (n) ↔IC(OΓ (µ), ¯Ql), where Γ(µ) = (2n + 1) ∈P",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/lem-sec-014-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "lem-sec-014-03.md",
+      "narrative": null,
+      "content": "We deﬁne a function q1(n) for n ≥0 by ∞ Y i=1 (1 + ti)2 = X n≥0 q1(n)tn Then we have |Ψ(0) 2n+1| = 1 2q1(2n + 1). 16.7. We prepare some notations for formulating the generalized Springer cor- respondence. We deﬁne SGιθ as the set of triples, (L, O1, E1), up to the conjugation action of H, where L is a θ-stable Levi subgroup of a θ-stable parabolic subgroup P, and (O1, E1) is a cuspidal pair in Lιθ uni. Since LH ≃(GL1)a×SON0 with N0 = N −2a (Remark 16.4), we have (16.2) SGιθ ≃CN := {(N0, ν, σ) | N ≥N0 : odd, (ν, σ) ∈Ψ(0) N0} Take ξ = (N0, ν, σ) ∈CN corresponding to (L, O1, E1) ∈SGιθ, and put Kξ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/prop-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "prop-sec-014-01.md",
+      "narrative": null,
+      "content": "Under the identiﬁcation NGιθ ≃ΨN, the pair (O, E ) is cuspidal if and only if the corresponding symbol (λ, τ) ∈ΨN is cuspidal.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§16. Generalized Springer correspondence for Gιθ",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-014-16-generalized-springer-correspondence-for-gιθ.md",
+      "narrative": null,
+      "content": "uni, the case H = SO2n+1\nIn this section, we consider the generalized Springer correspondence for Gιθ\nuni\nwith H = SON (N = 2n + 1).\n16.1.\nFirst we will give a combinatorial description of NGιθ.\nLet λ =\n(λ1, . . . , λN) ∈PN be a partition with λN ≥0. We deﬁne a symbol τ = (τ1, . . . , τN)\nof type λ as follows;\n(i) τi = ±1, and τi = 1 if λi = 0.\n(ii) τi = τj if λi = λj.\n(iii) τk = 1 if λk is the largest odd number among λ1, . . . , λN.\nThen by Proposition 12.3, the set of symbols of type λ is in bijection with the\nset AH(x)∧for x ∈Oλ. Note that the condition (iii) is related to the diﬀerence\nbe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/rem-sec-014-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "rem-sec-014-02.md",
+      "narrative": null,
+      "content": "In general, θ-stable Levi subgroup L has the form LH ≃GLa1 × Ga2 × · · · × GLar × SON0, where N0 = N −2 P i ai. Among them, Lιθ uni has a cuspidal pair (O1, E1) only when LH ≃(GL1)a × SON0 for some 0 ≤a ≤n. 16.5. We give here some example of cuspidal pairs. It would be interesting to compare this with the case of reductive groups (Remark 5.2). (i) For λ = (2a, 1N−2a), the pair (Oλ, E ) is always cuspidal, for any local system E . (ii) In particular, for Oλ = {1} with λ = (1N), the pair (Oλ, ¯Ql) is cuspidal (iii) The number |Ψ(0) N | is always large. For example, for N = 3, 5, 7, we have |Ψ(0)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/thm-sec-014-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[SY]",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "thm-sec-014-04.md",
+      "narrative": null,
+      "content": "(i) For ξ ∈CN ≃SGιθ, indG",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/prop-sec-016-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "prop-sec-016-02.md",
+      "narrative": null,
+      "content": "There exists an open dense subset X0 λ of Xλ satisfying the fol- lowing. For z ∈X0 λ, dim BH z = dλ, and H2dλ(BH z , ¯Ql) ≃eVλ. In particular, the map Xλ 7→H2dλ(BH z , ¯Ql) gives a bijective correspondence {Xλ | λ ∈Pn,r} = a m∈Q0n,r {Xλ | λ ∈P(m)0} ≃ a m∈Q0n,r {eVλ | λ ∈P(m)0} = W ∧ n,r. §18. Exotic symmetric spaces, the case H = SO2n+1 In this section, assume that H = SO2n+1. Consider the variety Gιθ uni × V r−1 and the isotropic ﬂag (Mi)i similarly as in Section 17. We ﬁx ξ = (N0, ν, σ) ↔ (L, O1, E1) ∈CGιθ, hence LH ≃(GL1)a × SON0 with N0 = N −2a. Consider the diagram (18.1) Lιθ α ←−−− X ψ −",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/prop-sec-016-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "prop-sec-016-03.md",
+      "narrative": null,
+      "content": "Let m ∈Qa,r. For each λ ∈P(m), one can deﬁne a subvariety Xλ of Xm and an H-orbit O[λ] in Gιθ uni satisfying the following; (i) Xλ is a locally closed, smooth, irreducible, H-stable subset of Xm. (ii) The map (x, v) 7→x gives a locally trivial ﬁbration fλ : Xλ →O[λ], whose ﬁbre is isomorphic to an open dense subset of Q 1≤i<r Mpi. (iii) If r = 1, Xλ coincides with O[λ] = O2λ(1)+ν. For O = O[λ], there exists a unique pair (O, E ) ∈N (ξ) G appearing in indG P Kξ. We deﬁne a local sytem Eλ on Xλ by Eλ = f ∗ λE .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Kξ is a semisimple perverse sheaf on Gιθ",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-015-p-kξ-is-a-semisimple-perverse-sheaf-on-gιθ.md",
+      "narrative": null,
+      "content": "verse sheaf on Gιθ\nuni, equipped with Sa-action, and is decomposed as\nindG\nP Kξ =\nM\nµ∈Pa\nVµ ⊗IC(O, E )[dim O],\nwhere Γξ(µ) ↔(O, E ) under the identiﬁcation ΨN ≃NGιθ\n(ii) For ξ ∈SGιθ, let N (ξ)\nGιθ be the subset of NGιθ corresponding to {Γξ(µ) | µ ∈\nPa} ⊂ΨN. Then we have\nNGιθ =\na\nξ∈SGιθ\nN (ξ)\nGιθ .\n(iii) The correspondence (O, E ) ↔Γξ(µ) ↔Vµ gives a bijection\nNGιθ ≃\na\nξ∈SGιθ\nS∧\na\n(generalized Springer correspondence)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§17. Exotic symmetric spaces of higher level, the case H = SpN",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "../sections/sec-016-17-exotic-symmetric-spaces-of-higher-level-the-c.md",
+      "narrative": null,
+      "content": "In this section, we consider the Springer correspondence for the exotic symmetric\nspaces of higher level associated to symplectic groups. As was remarked in Section\n11, the crucial diﬃculty in this case is that the number of H-orbits is not necessarily\nﬁnite if r ≥3.\nAssume H = SpN ≃Sp(V ), and consider Gιθ\nuni × V r−1 (r ≥1), with diagonal\naction of H. Let M1 ⊂· · · ⊂Mn ⊂V be the total isotropic ﬂag whose stabilizer in\nH is equal to BH. Consider the variety\nf\nX = {(x, v, gBH) ∈Gιθ\nuni × V r−1 × BH | g−1xg ∈Bιθ, g−1v ∈Mr−1\nn\n}\nand deﬁne a map π : f\nX →Gιθ\nuni × V r−1 by (x, v, gBH) 7→(x, v).\nL",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/rem-sec-016-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "rem-sec-016-05.md",
+      "narrative": null,
+      "content": "The construction of (πm)∗eK(m) ξ is essentially the same as the construction of the induction indG P Kξ in Section 16, which is a variant of the induc- tion functor of Lusztig. But in contrast to the cases of reductive groups or of Gιθ uni for H = SO2n+1, (πm)∗eK(m) ξ is not a priori a semisimple complex. So the previous discussion can not be applied directly, and we need a special care.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/thm-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[S3]",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "thm-sec-016-01.md",
+      "narrative": null,
+      "content": "Assume m ∈Q0 n,r, and put dm = dim Xm. Then (πm)∗¯Ql[dm] is a semisimple perverse sheaf on Xm, equipped with Wn,r-action, and is decomposed as (πm)∗¯Ql[dm] ≃ M λ∈P(m)0 eVλ ⊗IC(Xλ, ¯Ql)[dim Xλ], where Xλ is an H-stable, smooth, irreducible, locally closed sub-variety of Gιθ uni × V r−1. If r ≥3, Xλ is an inﬁnite union of H-orbits. Assume m ∈Q0 n,r, and take λ ∈P(m)0. Then Xλ ⊂Xm. Put (17.2) dλ = (dim Xm −dim Xλ)/2. For z = (x, v) ∈Xm, deﬁne the Springer ﬁbre BH z ≃π−1(z) by (17.3) BH z = {gBH ∈BH | g−1xg ∈Bιθ, g−1v ∈Mr−1 n } Then Hi(BH z , ¯Ql) has a structure of Wn,r-module, which is called th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/thm-sec-016-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[S4]",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "thm-sec-016-04.md",
+      "narrative": null,
+      "content": "For each m ∈Qa,r, (πm)∗eK(m) ξ is a semisimple perverse sheaf on Xm, equipped with Wa,r-action, and is decomposed as (πm)∗eK(m) ξ ≃ M λ∈P(m) eVλ ⊗IC(Xλ, Eλ)[dim Xλ]. In particular, for each ξ ∈SGιθ, we have a bijection {Xλ | λ ∈Pa,r} = a m∈Qa,r {Xλ | λ ∈P(m)} ≃ a m∈Qa,r {eVλ | λ ∈P(m)} = W ∧ a,r",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/prop-sec-017-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "prop-sec-017-01.md",
+      "narrative": null,
+      "content": "Assume that N = 2n. Then (i) gθ ≃Lie H = sp(V ): the symplectic Lie algebra over k. (ii) Gιθ uni ≃gθ nil, compatible with the action of H. By the above result, considering the Springer correspondence for Gιθ uni is equiv- alent to considering it for sp(V )nil. The Springer correspondence for the nilpotent cone of the Lie algebras in characteristic 2 was established by T. Xue [X]. Thus the Springer correspondence for Gιθ uni follows from her result. In particular, Gιθ uni/∼H is in bijection with Pn,2, via Oλ ↔λ, and the following formula holds. (19.1) π∗¯Ql[dim Gιθ uni] ≃ M λ∈Pn,2 eVλ ⊗IC(Oλ, ¯",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/prop-sec-017-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "prop-sec-017-02.md",
+      "narrative": null,
+      "content": "Assume that N = 2n + 1. Then (i) Gιθ uni ≃gθ nil, compatible with the action of H ≃Gθ. (ii) gθ ≃h × V × k, where H acts on h × V diagonally, and acts on k trivially. Remarks 19.3. (i) Lie Gθ̸ = gθ. (ii) The number of H-orbits in gθ nil is inﬁnite, hence the number of Gθ-orbits in Gιθ uni is inﬁnite. (This gives a counter example for Proposition 10.2 in the case p = 2.) (iii) The situation is similar to the exotic case, namely the action of H on Gιθ corresponds to the diagonal action of H on h × V . But the nilpotent part gθ nil is not exactly the same as hnil × V . In our case, we have gθ nil",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1909.06744v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§19. Symmetric spaces in characteristic 2",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "../sections/sec-017-19-symmetric-spaces-in-characteristic-2.md",
+      "narrative": null,
+      "content": "The discussion in Section 11 makes sense even if p = 2, and one can deﬁne a\nsymmetric space Gιθ\nuni associated to classical groups in characteristic 2. In this case,\na diﬀerent phenomenon appears since the fundamental properties given in Section\n10 do not hold. However, an analogue of the Springer correspondence still holds for\nthem. The Springer correspondence for Gιθ\nuni was studied in [DSY], which we brieﬂy\nexplain below.\nLet V ′ be an N-dimensional vector space over k with p = 2, and consider\nG = GL(V ′). The involution θ : G →G is deﬁned as in Section 11, and we consider\nGθ and Gιθ. Here",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

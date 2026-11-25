@@ -1,0 +1,825 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "ant-v14-n7-s-p02",
+  "blocks": [
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "../sections/sec-000-0-introduction.md",
+      "narrative": null,
+      "content": "Introduction\n1.\nPreliminaries\n1716\n2.\nIteration of the harmonic Frobenius of integrals at (1, 0)\n1724\n3.\nIteration of the harmonic Frobenius of series\n1731\n4.\nComparison between equations on integrals and equations on series\n1739\n5.\nIteration of the Frobenius on P1 \\ S\nξ B(ξ, 1)\n1741\nAppendix: A Poisson bracket corresponding to pro-unipotent harmonic action\n1744\nAcknowledgments\n1745\nReferences\n1746\n0. Introduction\n0A. p-adic cyclotomic multiple zeta values, computation and iteration of the Frobenius. Cyclotomic\nmultiple zeta values are the following iterated integrals: for any positive integer",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "msp\nALGEBRA AND NUMBER THEORY 14:7 (2020)\nhttps://doi.org/10.2140/ant.2020.14.1711\nPro-unipotent harmonic actions and\ndynamical properties of\np-adic cyclotomic multiple zeta values\nDavid Jarossay\np-adic cyclotomic multiple zeta values depend on the choice of a number of iterations of the crystalline\nFrobenius of the pro-unipotent fundamental groupoid of P1 \\ {0, µN, ∞}. In this paper we study how\nthe iterated Frobenius depends on the number of iterations, in relation with the computation of p-adic\ncyclotomic multiple zeta values in terms of cyclotomic multiple harmonic sums. This provides new",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "Let ˜α0, ˜α ∈N∗such that ˜α0 | ˜α: (i) (integrals) The pro-unipotent harmonic action of integrals at (1, 0), denoted by ◦ ∫1,0 har , is a continuous group action, and we have harq,˜α = τ(q ˜α)(8−1 q,−∞e18q,−∞) ◦ ∫1,0 har harq,−∞. (0-3) Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values 1715 The map of iteration of the Frobenius of integrals at (1, 0), denoted by iter ∫1,0 har , satisﬁes, at words w = ((ni)d; (ξi)d+1) such that ˜α/˜α0 > d, harq,˜α(w) = iter ∫1,0 har \u0012 ˜α ˜α0 , q ˜α0 \u0013 (8−1 q,˜α0e18q,˜α0)(w). (0-4) (ii) (series) The map of iteration",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/lem-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 14,
+      "target": "lem-sec-001-01.md",
+      "narrative": null,
+      "content": "B.1. (i) For all n ∈N∗, for all f ∈K⟨⟨e0∪µN ⟩⟩, we have N3,D(τn( f )) ⩽N3,D( f ), and in particular τn is a continuous linear map for the N3,D-topology. (ii) K⟨⟨e0∪µN ⟩⟩<∞and K⟨⟨e0∪µN ⟩⟩o(1) are stable by τn. (iii) For all f, g ∈51,0(K) and n ∈N we have N3,D(Ad(g◦∫1,0τn( f ))(e1)) ⩽3DN3,D(g)N3,D( f ). (1-13)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/lem-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 14,
+      "target": "lem-sec-001-03.md",
+      "narrative": null,
+      "content": "B.7. The map φ−log(q)/log(p) : 51,0(K) →51,0(K) is a (1/q)-contraction. If 5(p) 1,0(K) is identiﬁed to 51,0(K) by the isomorphism deﬁned by e0 7→e0 and eξ(pα) 7→eξ for all ξ ∈µN(K), the map φ−1 : 51,0(K) →5(p) 1,0(K) is a (1/p)-contraction.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/prop-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 14,
+      "target": "prop-sec-001-02.md",
+      "narrative": null,
+      "content": "B.4. (i) Let (λ, g) ∈Gm(K) × 51,0(K) such that |λ|p < 1. The map (λ, g)◦∫1,0 is a λ-contraction. More precisely, the inequality (1-14) is an equality if κ = λ. (ii) For all (λ, g) ∈Gm(K) × 51,0(K), the Ihara action of g weighted by λ is an automorphism of the scheme 51,0 ×Spec Q Spec K, whose inverse is f 7→τ(λ−1)(g−1∫1,0 ◦∫1,0 f ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/prop-sec-001-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 14,
+      "target": "prop-sec-001-04.md",
+      "narrative": null,
+      "content": "Deﬁnition 4.3.1] is a counterpart of ◦∫ har found in terms of series. It is a map ◦6 har : K⟨⟨e0∪µN ⟩⟩6 har,o(1) × (K⟨⟨e0∪µN ⟩⟩6 har)N →(K⟨⟨e0∪µN ⟩⟩6 har)N where K⟨⟨e0∪µN ⟩⟩6 har,o(1) is deﬁned in [Jarossay 2015, Deﬁnition 4.1.3]. The harmonic Frobenius of series is f 7→harpα ◦6 harσ α( f ). We proved in [Jarossay 2015] that the harmonic Frobenius of integrals and the harmonic Frobenius of series are equal [loc. cit., (0.3.3) and (0.3.5)]. Thus, we see that the harmonic Frobenius is characterized by 8−1 p,αe18p,α or, equivalently, by harpα. This is why studying harpα is equivalent to studying",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 6,
+      "pageEnd": 14,
+      "target": "../sections/sec-001-1-preliminaries.md",
+      "narrative": null,
+      "content": "In this section we establish the framework of this paper. We review some deﬁnitions and properties about\nthe pro-unipotent fundamental groupoid of P1 \\ {0, µN, ∞}, some results from [Jarossay 2015] and we\nadd to them a few new deﬁnitions and notations. Throughout this paper, N and N∗will denote the set of\nnonnegative and positive integers, respectively.\n1A. The pro-unipotent fundamental groupoid of P1 \\ {0, µN, ∞}.\n1A1. The de Rham realization. Let X be P1 \\ {0, µN, ∞} over the p-adic ﬁeld K, with the notations\nof Section 0A. The de Rham pro-unipotent fundamental groupoid πun,dR\n1\n(X), in the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/rem-sec-001-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 14,
+      "target": "rem-sec-001-05.md",
+      "narrative": null,
+      "content": "D.1. We can deﬁne natural analogues of all the structures which are at base-points (1, 0) and which are mentioned in this Section 1, at base-points (0, ξ) for any ξ ∈µN(K), which are compatible with the morphism (x 7→ξx)∗. All the results of this Section 1 have natural analogues at base-points (0, ξ) for any ξ ∈µN(K). This will be used implicitly in the proofs of the next section.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/cor-sec-002-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 21,
+      "target": "cor-sec-002-04.md",
+      "narrative": null,
+      "content": "A.7. The isomorphism K⟨⟨e0∪µN ⟩⟩ ∫1,0 har ∼ −→K⟨⟨e0∪µN ⟩⟩∫ har, f 7→ X w∈Wdhar(e0∪µN ) f [w] 1 −e0 w induces, for all m ∈N, an isomorphism of continuous maps between (τ(pα)φα) ∫1,0 har and the m = 1 term of (τ(pα)φα)har.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/cor-sec-002-08",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 21,
+      "target": "cor-sec-002-08.md",
+      "narrative": null,
+      "content": "B.2. Let α ∈Z ∪{±∞} \\ {0}. For any n ∈N∗, let Zp,α,n be the Q-vector space generated by the numbers ζp,α(w) with w a word of weight n: (1) For α ∈N∗, Zp,α,n = σ −α(Zp,1,n), and Zp,−α,n = σ α(Zp,−1,n). If α ∈Z \\ {0} is such that p|α| is a power of q then Zp,α,n = Zq,∞,n = Zq,−∞,n. In particular, the dimension of Zp,α,n is independent of α ∈Z ∪{±∞} \\ {0}. (2) N3,D(8p,α) is independent of α ∈Z ∪{±∞} \\ {0}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/def-sec-002-10",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 21,
+      "target": "def-sec-002-10.md",
+      "narrative": null,
+      "content": "B.4. For any d € N*, let t,,.<a : K (@oupy)) > K(eoupy) be the map which sends f =",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/def-sec-002-12",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 21,
+      "target": "def-sec-002-12.md",
+      "narrative": null,
+      "content": "B.4) ij ij \\.m’ m Ty, <a (Ad, ayi;-1(€)) = » (in Gin EE ‘eges\"!",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/def-sec-002-13",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 21,
+      "target": "def-sec-002-13.md",
+      "narrative": null,
+      "content": "B.6. Let iter,\" (a, 4) = So iter/.9(A, A“,a): Adar, y¢x) (€1) > K (eouny ht?",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/ex-sec-002-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 21,
+      "target": "ex-sec-002-03.md",
+      "narrative": null,
+      "content": "A.5. If N = 1, the terms of depth one and two of g ◦ ∫1,0 har h are given as follows: (g ◦ ∫1,0 har h)(n1) = h(n1) + g \u0014 1 −e0 e1en1−1 e1 \u0015 , (g ◦ ∫1,0 har h)(n1, n2) = h(n1, n2) + g \u0014 1 −e0 e1en2−1 e1en1−1 e1 \u0015 + n1−1 X r=0 g \u0014 1 −e0 e1en2−1 e1er \u0015 h(n1 −r) + n2−1 X r=0 g[er 0e1en1−1 e1]h(n2 −r).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/ex-sec-002-05",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 21,
+      "target": "ex-sec-002-05.md",
+      "narrative": null,
+      "content": "A.9. In depth one and two and for P1 \\ {0, 1, ∞}, we have harq ˜α(n1) = harq∞(n1) + ∞ X n=n1 (q ˜α)n Ad8q,−∞(e1)[en−n1 e1en1−1 e1], harq ˜α(n1, n2) = harq∞(n1, n2) + ∞ X n=n1+n2 (q ˜α)n Ad8q,−∞(e1)[en−n1−n2 e1en2−1 e1en1−1 e1] + n1−1 X r1=0 ∞ X n=n2+r1 (q ˜α)n Ad8q,−∞(e1)[en−n2−r1 e1en2−1 e1er1 0 ] harq∞(n1 −r1) + n2−1 X r2=0 (q ˜α)n1+r2 Ad8q,−∞(e1)[er 0e1en1−1 e1] harq∞(n2 −r2). 2B. Iteration equation of the harmonic Frobenius of integrals at (1, 0). We are now going to reexpress the iterated harmonic Frobenius of integrals at (1, 0) as a function of the number of iterations, in a different w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/prop-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 21,
+      "target": "prop-sec-002-01.md",
+      "narrative": null,
+      "content": "A.1. (a) For all ˜α ∈N∗, we have 8q,−∞= ﬁxq ˜α0,8q,−˜α i.e., 8q,−˜α ◦∫1,0 τ(q ˜α)8q,−∞= 8q,−∞, i.e., τ(q ˜α)8q,∞◦∫1,0 8q,˜α = 8q,∞. (b) For the topology deﬁned by ND on 51,0(K) we have 8q,−˜α ˜α→∞ −−−→8q,−∞, and 8q,˜α ˜α→∞ −−−→8q,∞. Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values 1725 (c) For any ˜α ∈N∗, f ∈51,0(K), g ∈5(pα) 1,0 (K), φ−˜α log(q) log(p) ( f ) = ∞ X n=0 8q,∞◦∫1,0 (τn(8q,−∞◦∫1,0 f )).(q ˜α)n, φ ˜α log(q) log(p) (g) = ∞ X n=0 8q,∞◦∫1,0 (τn(8q,−∞◦∫1,0 g)).(q ˜α)n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/prop-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 21,
+      "target": "prop-sec-002-02.md",
+      "narrative": null,
+      "content": "A.4. (i) ◦ ∫1,0 har is a well-deﬁned group action of (Ad ˜51,0(K)o(1), ◦ ∫1,0 Ad ) on K⟨⟨e0∪µN ⟩⟩ ∫1,0 har , con- tinuous for the topology deﬁned by ND. (ii) The isomorphism K⟨⟨e0∪µN ⟩⟩ ∫1,0 har ∼ −→K⟨⟨e0∪µN ⟩⟩∫ har, f 7→P w∈Wdhar(e0∪µN ) f [w]1/(1−e0)·w induces, for all m ∈N∗, a natural isomorphism of continuous group actions between the m-th term of ◦∫ har, namely (g, hm) 7→lim(τ(m)(g) ◦ ∫0,0 Ad hm), and the action (g, h) 7→τ(m)g ◦ ∫1,0 har h.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/prop-sec-002-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 21,
+      "target": "prop-sec-002-06.md",
+      "narrative": null,
+      "content": "B.1. For all ˜α0, ˜α ∈N∗such that ˜α0 | ˜α, we have 8q,α = iter ∫1,0 ˜α/ ˜α0,q ˜α0(8q, ˜α0) and 8q,˜α = 8q,−˜α −1∫1,0. More generally, for all α ∈N∗, we have 8p,−α = 8p,−1 ◦∫1,0 τ(λ)σ(8p,−1) · · ·◦∫1,0 τ(λα−1)σ α−1(8p,−1) and 8p,−α = 8 −1∫1,0 p,α .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/prop-sec-002-07",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 21,
+      "target": "prop-sec-002-07.md",
+      "narrative": null,
+      "content": "B.1 considering the coefﬁcients of these noncommutative formal power series series, one has equations relating the p-adic cyclotomic multiple zeta values ζp,α(w) and ζp,α′(w′), for any α, α′ ∈Z ∪{±∞} \\ {0}, as follows:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/prop-sec-002-11",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 21,
+      "target": "prop-sec-002-11.md",
+      "narrative": null,
+      "content": "B.5. Let A, A, a be three formal variables. There exists a map iter!9(A, A,a): Ady, jc (€1) > K (eoupyLA, al(A), (2-2)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Iteration of the harmonic Frobenius of integrals at (1, 0)",
+      "pageStart": 14,
+      "pageEnd": 21,
+      "target": "../sections/sec-002-2-iteration-of-the-harmonic-frobenius-of-integra.md",
+      "narrative": null,
+      "content": "We prove (0-3) in Section 2A, and we prove (0-4) in Section 2B.\n2A. The ﬁxed point equation of the harmonic Frobenius of integrals at (1, 0).\n2A1. The ﬁxed point equation for the Frobenius of integrals. We express the iterated Frobenius at\nbase-points of (1, 0) as a function of the number of iterations.\nProposition 2A.1.\n(a) For all ˜α ∈N∗, we have 8q,−∞= ﬁxq ˜α0,8q,−˜α i.e.,\n8q,−˜α ◦∫1,0 τ(q ˜α)8q,−∞= 8q,−∞,\ni.e.,\nτ(q ˜α)8q,∞◦∫1,0 8q,˜α = 8q,∞.\n(b) For the topology deﬁned by ND on 51,0(K) we have\n8q,−˜α\n˜α→∞\n−−−→8q,−∞,\nand\n8q,˜α\n˜α→∞\n−−−→8q,∞.\nPro-unipotent harmonic actions and dynamical prop",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/rem-sec-002-09",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 21,
+      "target": "rem-sec-002-09.md",
+      "narrative": null,
+      "content": "B.3. The proof of Corollary 2B.2 indicates that the equations of Corollary 2B.2 are compatible with the depth ﬁltration and the bounds on valuations of pMZVµN’s, which are two parameters in our computation. This can be viewed as a prerequisite for the next paragraphs in which we show a kind of compatibility between the iteration of the Frobenius and our computation of pMZVµN’s.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/ex-sec-003-06",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 29,
+      "target": "ex-sec-003-06.md",
+      "narrative": null,
+      "content": "B.5. Let us consider the case of P1 \\ {0, 1, ∞} (N = 1), for which we have q = p, ˜α = α, ˜α0 = α0, and depth one and two. Equation (0-5) is, for all n ∈N∗, harpα(n) = − X l⩾0 \u0010−n l \u0011 harpα0(l +n) l+1 X u=1 Bl u 1 −pα0(u+n) − X u⩾n+1 pαu 1 −pα0u X l⩾u−n−1 \u0010−n l \u0011 harpα0(l +n)Bl u−n. For all n1, n2 ∈N∗, harpα(n1, n2) is the sum of the following terms, where the variables v1, v2 are those deﬁned in Lemma 3A.1 and where, for a set E, 1E means the characteristic function of E: Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values 1737 • The term “v1 = v2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/ex-sec-003-07",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 29,
+      "target": "ex-sec-003-07.md",
+      "narrative": null,
+      "content": "C.2 (N = 1 and d = 1). For all n ∈N∗, we have hm(n) = hayd′ +1(n) (pyd′)n + d′−1 X i=1 X l⩾0 hayi +1(n +l) (pyi)n+l \u0012−n l \u0013 (ayd′ pyd′ + · · · + ayi+1 pyi+1)l + X 1⩽j⩽d′ 0⩽a′ y j ⩽ay j −1 X l⩾0 \u0010−n l \u0011 hy j(n +l) \u0012 d′ X m= j+1 aym pym + a′ j py j \u0013l . (3-8) Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values 1739 In the formulas of the proposition, there are terms which are analytic functions of a power of q by the main theorem, and certain factors which are “polar” in function of the q-adic expansion of m. This sheds light on the dependence of hm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/lem-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 29,
+      "target": "lem-sec-003-01.md",
+      "narrative": null,
+      "content": "A.1. We have, for any d € N*, positive integers nj (1 <i < d), and N-th roots of unity &; (d<i<d+)),",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/prop-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 29,
+      "target": "prop-sec-003-02.md",
+      "narrative": null,
+      "content": "A.4. Let a harmonic word w = ((ni)d; (ξi)d+1). Let us ﬁx (li)d ∈Nd. Let R be the ring of Lemma 3A.2. For every word w′ over e0∪µN , there exists a polynomial Pw,w′,(li)d ∈ R[ ˜Q, A, (Bm,l,ξ)1⩽l⩽l1+···+ld+d, 1⩽m⩽l+1, ξ∈µN(K)] with degree at most Pd i=1 li + d in ˜Q, and with total Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values 1735 degree at most d in the variables Bm,l,ξ, such that we have X (vi)d∈{1,...,q ˜α0−1} Pw,w′,(li)d,(vi)d((q ˜α0(|v j+1−v j|−1))1⩽j⩽d, (Bl m(ξ))0⩽m⩽Pd i=1 li+d+1, ξ∈µN(K)) = Pw,w′,(li)d \u0012 q ˜α, ˜α ˜α0 , (Bl m(ξ))0⩽m⩽Pd i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Iteration of the harmonic Frobenius of series",
+      "pageStart": 21,
+      "pageEnd": 29,
+      "target": "../sections/sec-003-3-iteration-of-the-harmonic-frobenius-of-series.md",
+      "narrative": null,
+      "content": "In this section, we prove (0-5) and we discuss its meaning.\n\n3A. Prime weighted multiple harmonic sums as functions of the number of iterations of the Frobenius.\nIn this section we study how harga ((n;)a3 (&;))a41) depends on @.\n\nThe first step is to write a p-adic expression of harga ((n;)a; (&;)a4+1), obtained by considering the g®°\nadic expansion of the indices m1, ..., mq of the domain of summation of harga ((ni)a3 (&:)a41) as in (0-2).\n\nLemma 3A.1. We have, for any d € N*, positive integers nj (1 <i < d), and N-th roots of unity &;\n(d<i<d+)),\n\nharya((ni)as i )d+1) =\n\nSY ean (<.) (CG) “nye",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/rem-sec-003-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 29,
+      "target": "rem-sec-003-03.md",
+      "narrative": null,
+      "content": "B.2. Equation (0-5) is related to the formula harpαN = harpα ◦6 har har(pα) N proved in [Jarossay 2015], where ◦6 har is the pro-unipotent harmonic action of series introduced in [loc. cit., Section 4.3]: restricting that equation to harm with m a power of p gives a functional equation satisﬁed by the map α 7→harpα, which expresses harpα+β in terms of harpα and har(pα) pβ .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/rem-sec-003-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 29,
+      "target": "rem-sec-003-04.md",
+      "narrative": null,
+      "content": "B.3. As in [Jarossay 2015], the computation which leads to the above result remains true for the generalization of cyclotomic multiple harmonic sums obtained by replacing the factors 1/mni i , 1 ⩽i ⩽d in (0-2) by, more generally, factors χi(mi) where χi are locally analytic group endomorphisms of the multiplicative group K ∗, which are analytic on disks of radius p−α.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/rem-sec-003-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 29,
+      "target": "rem-sec-003-05.md",
+      "narrative": null,
+      "content": "B.4. The main theorem gives formulas for p-adic cyclotomic multiple zeta values which depend on an additional parameter, a number of iterations of the Frobenius different from the one under consideration. Here is another way to obtain formulas with parameters. The computation of regularized iterated integrals in [Jarossay 2019, Section 3] can be done by replacing the Euclidean division by pα in N by the Euclidean division by pβ with β ≥α. This gives, for example, ζp,α(n) = pαn/(n −1) lim|m|p→0 1/(pβm) P 0<m1<pβm, pα ∤m 1/mn 1, and this gives formulas in which the prime weighted multiple harmon",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/cor-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "cor-sec-004-01.md",
+      "narrative": null,
+      "content": "B.2, this implies that |8|q = P w word on e0∪µN sup˜α∈Z∪{±∞}\\{0}|8q,˜α[w]|pw is a well-deﬁned element of K⟨⟨e0∪µN ⟩⟩o(1). We have a similar bound for the coefﬁcients of the expansion of each harq,˜α[w] obtained in Section 3C. Thus we can apply Proposition 4A.1 to the power series expansion of each harq,˜α[w] in (0-3), (0-4), (0-5) to deduce that they are the same.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/ex-sec-004-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "ex-sec-004-02.md",
+      "narrative": null,
+      "content": "A.2. The term of depth one (d = 1), in the case of P1 \\ {0, 1, ∞} (i.e., in the case N = 1) for which p = q, ˜α = α and ˜α0 = α0, of the equations of the theorem is the following, respectively (with BL+b b = 1/(L + b + 1) \u0000L+b+1 L \u0001 BL+1 for 1 ⩽b ⩽L + 1): David Jarossay • The ﬁxed point equation of the harmonic Frobenius of integrals at (1, 0) (equation (0-3)): harpα(n) = ∞ X b=1 (pα)b+n Ad8p,−∞(e1)[eb 0e1en−1 e1] + Ad8p,∞(e1) \u0014 1 −e0 e1en−1 e1 \u0015 . (4-1) • The relation of iteration of the harmonic Frobenius of integrals at (1, 0) (equation (0-4)): harpα(n) = ∞ X b=1 (pα)n(pα0)b pα0 −1 Ad8p,α0(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/prop-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "prop-sec-004-03.md",
+      "narrative": null,
+      "content": "B.2. comp6 ∫ iter is injective. Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values 1741",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparison between equations on integrals and equations on series",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "../sections/sec-004-4-comparison-between-equations-on-integrals-and.md",
+      "narrative": null,
+      "content": "We prove (0-6) and we discuss more generally the comparison between integrals and series.\n4A. Uniqueness of the expansion of harq ˜α as a function of ˜α and q ˜α.\nProposition 4A.1. Let δ ∈N∗, and a map S : N∗∩[δ, +∞[ →K such that we have, for all a ∈\nN∗∩[δ, +∞[, S(a) = P\nn∈N\nPM\nm=0 cn,m(qa)nam, where M ∈N∗, and (cl,m)0⩽n, 0⩽m⩽M ∈K N×{0,...,M}\nsuch that P\nn∈N\nPM\nm=0|cn,mqn|p < ∞. If S(a) = 0 for all a ∈N∗∩[δ, +∞[, then we have cn,m = 0 for\nall (n, m) ∈N × {0, . . . , M}.\nProof. Let a0 ∈N∗∩[δ,+∞[ and u ∈N. By taking a =a0+pu in the equation P\nn∈N\nPM\nm=0cn,m(qa)nam =0\nand by taking the limit u →∞",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "A.2. For all z ∈K such that |z|p < 1, we have, for the N3,D-topology, τ(q−˜α) Li† q,˜α(z) ˜α→∞ −−−→LiKZ q (z)(e0, (eξ)ξ), τ(q−˜α) Li† q,−˜α(z) ˜α→∞ −−−→LiKZ q (z)(e0, (Ad8(ξ) q,−∞(eξ))ξ). Moreover, these convergences are uniform on all the closed disks of center 0 and radius ρ < 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/prop-sec-005-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "prop-sec-005-04.md",
+      "narrative": null,
+      "content": "B.1. For any, α0, α ∈N∗with α0 dividing α, we have Li† p,α(e0, (eξ)ξ) = Li† p,α0(e0, (eξ)ξ)Li† p,α0 (pα0)(e0, (Ad8(ξ) p,α0(eξ)ξ) · · · Li† p,α0 (pα/α0−1)(e0, (Ad8α−1 p,α0 (ξ)(eξ)ξ)).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/prop-sec-005-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "prop-sec-005-05.md",
+      "narrative": null,
+      "content": "C.1. For any word w on e0∪µN and any m0 ∈N, there exists a sequence (c(l,ξ,n)[w](m0)) l∈N ξ∈µN(K) n∈N of elements of K such that, for any ˜α ∈N such that q ˜α > m0 and m ∈N∗satisfying |m −m0|p ⩽q−˜α, we have Li† q,˜α[w][zm] = ∞ X n=0 (q ˜α)n \u0012X l∈N X ξ c(l,ξ,n)[w](m0)ξ −m(m −m0)l \u0013 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Iteration of the Frobenius on P1 \\ S",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "../sections/sec-005-5-iteration-of-the-frobenius-on-p1-s.md",
+      "narrative": null,
+      "content": "ξ B(ξ, 1)\nIn the previous sections, we considered the Frobenius of πun,crys\n1\n(P1 \\ {0, µN, ∞}) at base-points (1, 0)\nand the harmonic Frobenius. We now consider the Frobenius of πun,crys\n1\n(P1 \\ {0, µN, ∞}) on the afﬁnoid\nsubspace U an = P1,an \\ S\nξ N=1 B(ξ, 1) of P1,an over K, where B(ξ, 1) is the open ball of center ξ and\nof radius 1. As in Section 2, we will have a ﬁxed-point equation (Section 5A) and an iteration equation\n(Section 5B). Additionally, we will have a third equation coming from the study of regularized iterated\nintegrals in [Jarossay 2019, Section 5.3].\n5A. Fixed point equati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/rem-sec-005-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "rem-sec-005-02.md",
+      "narrative": null,
+      "content": "A.3. The convergence in Proposition 5A.2 does not a priori extend to a uniform convergence on U an. Indeed, otherwise, in fact, the map LiKZ q would be rigid analytic on U an. By the main result of Appendix A of [Jarossay 2019], this would imply that, for any word w, the multiple harmonic sums functions m 7→harm(w) restricted to classes of congruences modulo N should be continuous as a function m ∈N ⊂lim ←−−Z/NplZ. This seems to contradict the results of Section 3C. More generally, we expect that the lack of regularity of the maps m 7→harm(w) can be at least partially reﬂected in the mode of c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/rem-sec-005-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "rem-sec-005-03.md",
+      "narrative": null,
+      "content": "A.4. One can deduce a result similar to Proposition 5A.2 on the ball B(∞, 1) by applying the automorphism z 7→1/z of P1 \\ {0, µN, ∞} and the functoriality of πun,crys . Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values 1743 5B. Iteration equation. We now write an equation for the iteration of the Frobenius on the subspace P1,an \\ S ξ∈µN(K) B(ξ, 1). We restrict the statement to positive numbers of iterations for simplicity, but a similar result holds for negative numbers of iterations. If f (z) = P∞ m=0 cmzm is a power series with coefﬁcients in K",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/prop-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "prop-sec-006-01.md",
+      "narrative": null,
+      "content": "1.1. The Lie bracket of Lie(Ad ˜V ω(e1)) is { f, g}Ad = d f (g) −dg( f ) where d f is the derivation sending e0 7→0, eξ 7→f (ξ) for all ξ ∈µN(K). Let the product . ∫1,0 Ad on Ad ˜51,0(K)(e1) be deﬁned by (g−1e1g). ∫1,0 Ad ( f −1e1 f ) = (g f )−1e1(g f ), and its Lie version be [g, e1]. ∫1,0 Ad [ f, e1] = [g f, e1]. Then, { · , · }Ad is a Poisson bracket, namely, it satisﬁes {a. ∫1,0 Ad b, c} = {a, c}. ∫1,0 Ad b + a. ∫1,0 Ad {b, c}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/prop-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "prop-sec-006-02.md",
+      "narrative": null,
+      "content": "2.2. Lhar(K) has a canonical Lie bracket { · , · }har deﬁned by {S3 f, S3g}har = S3({ f, g}Ad). It is a Poisson bracket, i.e., we have {a. ∫1,0 har b, c} = {a, c}. ∫1,0 har b + a. ∫1,0 har {b, c}, where the product . ∫1,0 har is deﬁned by S3g. ∫1,0 har S3 f = S3(g. ∫1,0 Ad f ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix: A Poisson bracket corresponding to the pro-unipotent harmonic action of integrals at (1, 0)",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "../sections/sec-006-appendix-a-poisson-bracket-corresponding-to-the.md",
+      "narrative": null,
+      "content": "of integrals at (1, 0)\nWe have seen that, by their deﬁnitions, the pro-unipotent harmonic actions (Section 1D and Deﬁnition 2A.3)\nare connected to the Ihara product (1-1). However, often in the literature, what is used is not the Ihara\nproduct but the corresponding Lie bracket, called the Ihara bracket, which is a Poisson bracket. In\nthis section we explain that the pro-unipotent harmonic action of integrals at (1, 0) (Deﬁnition 2A.3)\ncorresponds naturally to a Poisson Lie bracket.\nA.1. The Ihara bracket and the adjoint analogue. Let V ω be the group of automorphisms deﬁned in\n[Deligne and Gon",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/rem-sec-006-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "rem-sec-006-03.md",
+      "narrative": null,
+      "content": "2.4. (i) The harmonic Ihara bracket { · , · }har corresponds to the group law ˜◦ ∫1,0 har deﬁned by S3g˜◦ ∫1,0 har S3 f = S3(g ◦ ∫1,0 Ad f ). Because of the injectivity of S3g, the group law ˜◦ ∫1,0 har can be thought of as another version of the pro-unipotent harmonic action of integrals ◦ ∫1,0 har of Deﬁnition 2A.3. (ii) Another way to deﬁne a harmonic variant of the Ihara bracket would be to restrict to summable points Ad ˜51,0(K)o(1)(e1) ⊂Ad ˜51,0(K)o(1)(e1) and to use comp6 ∫ iter , which is injective by Proposition 4B.2, instead of comp6 ∫ 3 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "../sections/sec-007-acknowledgments.md",
+      "narrative": null,
+      "content": "This work was done at Université Paris Diderot and Université de Strasbourg, with, respectively, the\nsupport of ERC grant 257638 and Labex IRMIA. It has been revised at Université de Genève and Ben\nGurion University of the Negev with, respectively, the support of NCCR SwissMAP and Ishai Dan-\nCohen’s ISF grant. I thank the two anonymous referees whose feedback helped me improve the writing\nof this paper. I also thank Stephanie Blumenstock for linguistic corrections.\n1746\nDavid Jarossay",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p02/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 36,
+      "pageEnd": 36,
+      "target": "../sections/sec-008-references.md",
+      "narrative": null,
+      "content": "[Besser 2002] A. Besser, “Coleman integration using the Tannakian formalism”, Math. Ann. 322:1 (2002), 19–48. MR Zbl\n[Coleman 1982] R. F. Coleman, “Dilogarithms, regulators and p-adic L-functions”, Invent. Math. 69:2 (1982), 171–208. MR\nZbl\n[Deligne 1989] P. Deligne, “Le groupe fondamental de la droite projective moins trois points”, pp. 79–297 in Galois groups over\nQ (Berkeley, 1987), edited by Y. Ihara et al., Math. Sci. Res. Inst. Publ. 16, Springer, 1989. MR Zbl\n[Deligne and Goncharov 2005] P. Deligne and A. B. Goncharov, “Groupes fondamentaux motiviques de Tate mixte”, Ann. Sci.\nÉcole Nor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

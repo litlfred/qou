@@ -1,0 +1,1280 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2601.07042v1",
+  "title": "A Tannakian description of the local Kaletha gerbe",
+  "variant": "pdf",
+  "pages": 26,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Motivation and overview",
+      "number": "1.1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-motivation-and-overview"
+    },
+    {
+      "level": 2,
+      "title": "Preliminary notation",
+      "number": "1.2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-preliminary-notation"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgments",
+      "number": "1.3",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "Construction of Tannakian Categories",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-2-construction-of-tannakian-categories"
+    },
+    {
+      "level": 2,
+      "title": "Products of gerbes",
+      "number": "2.1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-21-products-of-gerbes"
+    },
+    {
+      "level": 2,
+      "title": "Limits of gerbes",
+      "number": "2.2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-22-limits-of-gerbes"
+    },
+    {
+      "level": 2,
+      "title": "Modules",
+      "number": "2.3",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-23-modules"
+    },
+    {
+      "level": 2,
+      "title": "Descent",
+      "number": "2.4",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-24-descent"
+    },
+    {
+      "level": 2,
+      "title": "Concrete Tannakian categories",
+      "number": "2.5",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-25-concrete-tannakian-categories"
+    },
+    {
+      "level": 2,
+      "title": "Transition maps",
+      "number": "2.6",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-26-transition-maps"
+    },
+    {
+      "level": 2,
+      "title": "The category RigIsocF",
+      "number": "2.7",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-27-the-category-rigisocf"
+    },
+    {
+      "level": 1,
+      "title": "The structure of RigIsocF",
+      "number": "3",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-3-the-structure-of-rigisocf"
+    },
+    {
+      "level": 2,
+      "title": "The Newton map",
+      "number": "3.1",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-31-the-newton-map"
+    },
+    {
+      "level": 2,
+      "title": "Comparison with isocrystals",
+      "number": "3.2",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-32-comparison-with-isocrystals"
+    },
+    {
+      "level": 2,
+      "title": "Comparison with Fargues' extended isocrystals",
+      "number": "3.3",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Reduction to Newton centralizers",
+      "number": "3.4",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-34-reduction-to-newton-centralizers"
+    },
+    {
+      "level": 2,
+      "title": "Classification of simple objects",
+      "number": "3.5",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-35-classification-of-simple-objects"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 61,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rigisocf",
+          "heading": false
+        },
+        {
+          "term": "kaletha",
+          "heading": false
+        },
+        {
+          "term": "gerbe",
+          "heading": false
+        }
+      ],
+      "extract": "A TANNAKIAN DESCRIPTION OF THE LOCAL KALETHA GERBE ALEXANDER BERTOLONI MELI AND PETER DILLERY ABSTRACT. We construct, for a p-adic field F, an explicit semisimple Tannakian category RigIsocF whose category of fiber functors recovers Kaletha’s Galois gerbe EKal. We then classify and write down the simple objects in RigIsocF , all of which come from elliptic twisted Levi subgroups of GLn.",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-2601.07042v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-motivation-and-overview",
+      "number": "1.1",
+      "title": "Motivation and overview",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 1442,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm kal",
+          "heading": false
+        },
+        {
+          "term": "mathrm isoc",
+          "heading": false
+        },
+        {
+          "term": "mathrm rigisoc",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "isocrystal gerbe",
+          "heading": false
+        },
+        {
+          "term": "gerbe mathcal",
+          "heading": false
+        },
+        {
+          "term": "galois gerbe",
+          "heading": false
+        },
+        {
+          "term": "category mathop",
+          "heading": false
+        }
+      ],
+      "extract": "The refined local Langlands correspondence for a $p$-adic field $F$ posits an injection from irreducible smooth representations of $G(F)$, for $G$ reductive and quasi-split, to enhanced $L$-parameters $(\\phi, \\rho)$ where $\\phi: \\mathop{\\mathrm{WD}}_{F} \\rightarrow \\prescript{L}{}{G}$ (here $\\mathop{\\mathrm{WD}}_{F} = W_{F} \\times \\mathrm{SL}_{2}(\\mathbb{C})$ is the $\\mathop{\\mathrm{SL}}_2$ form of the Weil--Deligne",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-preliminary-notation",
+      "number": "1.2",
+      "title": "Preliminary notation",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 134,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "maximal unramified",
+          "heading": false
+        },
+        {
+          "term": "unramified extension",
+          "heading": false
+        },
+        {
+          "term": "varpi",
+          "heading": false
+        },
+        {
+          "term": "algebraic closure",
+          "heading": false
+        }
+      ],
+      "extract": "We fix the following notation - We fix $F$ a $p$-adic local field. - Let $L$ be the completion of the maximal unramified extension of $F$ and fix an algebraic closure $\\overline{L}$. - Let $\\overline{F}$ be the algebraic closure of $F$ in $\\overline{L}$. - We will consider finite Galois extensions $E/F$ and denote by $L_E \\subset \\overline{L}$ the completion of the maximal unramified extension of $E$. - Denote by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-acknowledgments",
+      "number": "1.3",
+      "title": "Acknowledgments",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 120,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "grant dms",
+          "heading": false
+        },
+        {
+          "term": "nsf grant",
+          "heading": false
+        },
+        {
+          "term": "rigisocf",
+          "heading": false
+        }
+      ],
+      "extract": "sations. This work was started while both authors were supported by NSF grant DMS-1840234 at the University of Michigan. The first named author is partially supported by NSF grant DMS-2502131. CONTENTS 1. Introduction 1 1.1. Motivation and overview 1 1.2. Preliminary notation 3 1.3. Acknowledgments 3 2. Construction of Tannakian Categories 4 2.1. Products of gerbes 4 2.2. Limits of gerbes 6 2.3. Modules 7 2.4.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-2-construction-of-tannakian-categories",
+      "number": "2",
+      "title": "Construction of Tannakian Categories",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 80,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tannakian",
+          "heading": true
+        },
+        {
+          "term": "semilinear",
+          "heading": false
+        },
+        {
+          "term": "phi",
+          "heading": false
+        }
+      ],
+      "extract": "All Tannakian categories constructed in this section are built from the category of isocrystals, whose objects are pairs $(V,\\Phi)$, where $V$ is a finite-dimensional $L$-vector space and $\\Phi$ is a $\\mathfrak{f}_{F}$-semilinear automorphism and whose morphisms are $\\Phi$-equivariant linear maps. For a fixed $s \\in \\mathbb{N}$, one can also consider the full subcategory of all $(V,\\Phi)$ which have a basis on which",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-21-products-of-gerbes",
+      "number": "2.1",
+      "title": "Products of gerbes",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 1117,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gamma sigma",
+          "heading": false
+        },
+        {
+          "term": "prod sigma",
+          "heading": false
+        },
+        {
+          "term": "mathcal sigma",
+          "heading": false
+        },
+        {
+          "term": "mathfrak semilinear",
+          "heading": false
+        },
+        {
+          "term": "gamma mathbb",
+          "heading": false
+        },
+        {
+          "term": "phi otimes",
+          "heading": false
+        },
+        {
+          "term": "limits gamma",
+          "heading": false
+        },
+        {
+          "term": "gamma times",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:prod label=\"sec:prod\"} ::: defn Fix $s \\in \\mathbb{N}$. Then we define the category $P_{E/F, s}$ as follows. - Objects are triples $(V, \\Phi, \\mathcal{D})$, where $V$ is a finite-dimensional $L_{E}$-vector space, $\\Phi \\colon V \\to V$ is an $\\mathfrak{f}_{E}$-semilinear automorphism, and $\\mathcal{D}$ is a $\\prod\\limits_{\\Gamma_{E/F}} \\frac{1}{s}\\mathbb{Z}$-grading on $V$ such that the subspace",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-22-limits-of-gerbes",
+      "number": "2.2",
+      "title": "Limits of gerbes",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 674,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sigma arrow",
+          "heading": false
+        },
+        {
+          "term": "overline arrow",
+          "heading": false
+        },
+        {
+          "term": "gamma sigma",
+          "heading": false
+        },
+        {
+          "term": "prod sigma",
+          "heading": false
+        },
+        {
+          "term": "rep overline",
+          "heading": false
+        },
+        {
+          "term": "gamma mathbb",
+          "heading": false
+        },
+        {
+          "term": "arrow text",
+          "heading": false
+        },
+        {
+          "term": "tannakian categories",
+          "heading": false
+        }
+      ],
+      "extract": "For $s \\mid s'$, we have a fully faithful embedding of categories from $\\iota_{s,s'} \\colon P_{E/F,s}$ to $P_{E/F,s'}$, which sends the triple $(V, \\Phi, \\mathcal{D})$ to the triple $(V, \\Phi, \\mathcal{D}_{s'/s})$, where $\\mathcal{D}_{s'/s}$ is the ${\\prod_{\\Gamma_{E/F}}\\frac{1}{s'}\\mathbb{Z}}$-grading of $V$ given by $V_{(b_{\\sigma}/s')} = V_{([b_{\\sigma}/(s'/s)]/s)}$ if $s'/s$ divides $b_{\\sigma}$ for all",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-23-modules",
+      "number": "2.3",
+      "title": "Modules",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "9",
+      "words": 1204,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "prod sigma",
+          "heading": false
+        },
+        {
+          "term": "fiber functor",
+          "heading": false
+        },
+        {
+          "term": "mathfrak semilinear",
+          "heading": false
+        },
+        {
+          "term": "prod gamma",
+          "heading": false
+        },
+        {
+          "term": "cdot ell",
+          "heading": false
+        },
+        {
+          "term": "tensor functor",
+          "heading": false
+        },
+        {
+          "term": "quotient functor",
+          "heading": false
+        },
+        {
+          "term": "phi acts",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:mod label=\"sec:mod\"} Now, let $R_{E/F}$ denote the $\\prod_{\\Gamma_{E/F}}\\mathbb{Z}$-graded $L_{E}$-algebra $$\\bigoplus_{(b_{\\tau})_{\\tau} \\in \\prod_{\\Gamma_{E/F}}\\mathbb{Z}} (L_{E})_{(b_{\\tau})_{\\tau}},$$ with addition defined component-wise and multiplication determined by $\\ell_{(b_{\\tau})_{\\tau}} \\cdot \\ell'_{(c_{\\tau})_{\\tau}} = (\\ell \\cdot \\ell')_{(b_{\\tau} + c_{\\tau})_{\\tau}}$ for all $\\ell, \\ell' \\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-24-descent",
+      "number": "2.4",
+      "title": "Descent",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 12,
+      "labelStart": "9",
+      "labelEnd": "12",
+      "words": 1669,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gamma mathfrak",
+          "heading": false
+        },
+        {
+          "term": "gamma sigma",
+          "heading": false
+        },
+        {
+          "term": "beta gamma",
+          "heading": false
+        },
+        {
+          "term": "otimes gamma",
+          "heading": false
+        },
+        {
+          "term": "overline gamma",
+          "heading": false
+        },
+        {
+          "term": "prod gamma",
+          "heading": false
+        },
+        {
+          "term": "gamma semilinear",
+          "heading": false
+        },
+        {
+          "term": "circ gamma",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:Descent label=\"sec:Descent\"} We want to descend the Tannakian category $RP_{E/F,s}$ to a Tannakian category over $F$. The first step is to define a canonical $\\Gamma_{L_E/F}$-action on the ring $R_{E/F}$. Note that $L_E/L$ is a totally ramified extension and that the sequence: $$1 \\to \\Gamma_{L_E/L} \\to W_{L_E/F} \\to W_{L/F} \\to 1,$$ is split by any lift of the Frobenius element in $W_{L/F}$. Fix such a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-25-concrete-tannakian-categories",
+      "number": "2.5",
+      "title": "Concrete Tannakian categories",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 1039,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tilde phi",
+          "heading": false
+        },
+        {
+          "term": "otimes tilde",
+          "heading": false
+        },
+        {
+          "term": "gamma sigma",
+          "heading": false
+        },
+        {
+          "term": "circ tilde",
+          "heading": false
+        },
+        {
+          "term": "sigma mathfrak",
+          "heading": false
+        },
+        {
+          "term": "grading mathcal",
+          "heading": false
+        },
+        {
+          "term": "beta gamma",
+          "heading": false
+        },
+        {
+          "term": "limits gamma",
+          "heading": false
+        }
+      ],
+      "extract": "We will now describe the Galois descent constructed in the previous subsection in terms of a more concrete Tannakian category over $F$. First we define the category $\\mathcal{I}_{E/F,s}$ for a fixed $s \\in \\mathbb{N}$; its objects are triples $(V, \\tilde{\\Phi},\\mathcal{D})$ where $V$ is a finite dimensional $L_E$ vector space, $\\tilde{\\Phi}$ is a $\\Gamma_{L_E/F}$-semilinear action of $W_{L_E/F}$ on $V$, and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-26-transition-maps",
+      "number": "2.6",
+      "title": "Transition maps",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "16",
+      "words": 1190,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm rigisoc",
+          "heading": false
+        },
+        {
+          "term": "anti-uniformizer varpi",
+          "heading": false
+        },
+        {
+          "term": "sigma tau",
+          "heading": false
+        },
+        {
+          "term": "gamma tau",
+          "heading": false
+        },
+        {
+          "term": "prod tau",
+          "heading": false
+        },
+        {
+          "term": "overline tau",
+          "heading": false
+        },
+        {
+          "term": "transition maps",
+          "heading": true
+        },
+        {
+          "term": "otimes mathfrak",
+          "heading": false
+        }
+      ],
+      "extract": "Consider a tower of finite Galois extensions $K/E/F$. Fix an anti-uniformizer $\\varpi_E$ of $E$. Let $K' \\subset K$ be the maximal unramified extension of $E$. Then $K/K'$ is totally ramified and we have our fixed anti-uniformizer $\\varpi_K$ such that $N_{K/K'}(\\varpi_K)=\\varpi_E$. We define a transition functor $p_{K/E}: R\\mathcal{I}_{E/F, s} \\to R\\mathcal{I}_{K/F, s}$ defined according to our choices of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-27-the-category-rigisocf",
+      "number": "2.7",
+      "title": "The category RigIsocF",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 807,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "category rigisocf",
+          "heading": true
+        },
+        {
+          "term": "fiber functor",
+          "heading": false
+        },
+        {
+          "term": "rese",
+          "heading": false
+        },
+        {
+          "term": "tannakian category",
+          "heading": false
+        },
+        {
+          "term": "rik",
+          "heading": false
+        },
+        {
+          "term": "above fiber",
+          "heading": false
+        },
+        {
+          "term": "shapiro lemma",
+          "heading": false
+        },
+        {
+          "term": "cohomology class",
+          "heading": false
+        }
+      ],
+      "extract": "rigid inner forms. We define the category RigIsocF to be the direct limit of the categories RIE{F,s over the inductive system of tuples pE, sq, where E{F is a finite Galois extension and s P N, which is ordered by the relation that pK, s1q ą pE, sq if and only if K contains E and s | s1, with respect to the transition maps pK{E,s,s1 defined in the previous subsection. It will frequently be convenient to fix a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-3-the-structure-of-rigisocf",
+      "number": "3",
+      "title": "The structure of RigIsocF",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 20,
+      "summary": null,
+      "keywords": [],
+      "extract": "In this section we study the structure of RigIsocF as an abelian tensor category and construct examples of its objects.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-013-31-the-newton-map",
+      "number": "3.1",
+      "title": "The Newton map",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 532,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm rigisoc",
+          "heading": false
+        },
+        {
+          "term": "text kal",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathrm obj",
+          "heading": false
+        },
+        {
+          "term": "gerbeequiv",
+          "heading": false
+        },
+        {
+          "term": "mathrm res",
+          "heading": false
+        },
+        {
+          "term": "keyfiberfunctor",
+          "heading": false
+        },
+        {
+          "term": "hom overline",
+          "heading": false
+        }
+      ],
+      "extract": "Given an object $X = (V,\\tilde{\\Phi},\\mathcal{D})$ in $R\\mathcal{I}_{k}$, one can attach a homomorphism $f_{X} \\in \\text{Hom}_{\\overline{F}}(u_{\\overline{F}}, \\mathrm{GL}(\\omega_{k}(X))$ as follows: The group $\\mathrm{Res}_{E_{k}/F}(\\mu_{n_{k}})(\\overline{F})$ is canonically identified with the group of automorphisms of the $\\overline{F}$-fiber functor described in the previous subsection, which we will denote by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-32-comparison-with-isocrystals",
+      "number": "3.2",
+      "title": "Comparison with isocrystals",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 1227,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm isoc",
+          "heading": false
+        },
+        {
+          "term": "mathrm kal",
+          "heading": false
+        },
+        {
+          "term": "text isoc",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "varinjlim prod",
+          "heading": false
+        },
+        {
+          "term": "kal times",
+          "heading": false
+        },
+        {
+          "term": "mathrm rigisoc",
+          "heading": false
+        },
+        {
+          "term": "mathcal mathop",
+          "heading": false
+        }
+      ],
+      "extract": "We now construct a morphism of Tannakian categories over $F$ from $\\mathop{\\mathrm{Isoc}}_{F}$ to $\\mathrm{RigIsoc}_{F}$. The category $\\mathop{\\mathrm{Isoc}}_{F,s}$ of isocrystals whose slopes are a multiple of $\\frac{1}{s}$ is equivalent to the category $\\mathcal{I}_{F/F, s}$. Indeed, we can define the equivalence by mapping the isocrystal $(V, \\Phi)$ to the space $(V, \\tilde{\\Phi}, \\mathcal{D})$ where the grading",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-34-reduction-to-newton-centralizers",
+      "number": "3.4",
+      "title": "Reduction to Newton centralizers",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": "20",
+      "labelEnd": "22",
+      "words": 1062,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm kal",
+          "heading": false
+        },
+        {
+          "term": "twisted levi",
+          "heading": false
+        },
+        {
+          "term": "levi subgroup",
+          "heading": false
+        },
+        {
+          "term": "mathrm rigisoc",
+          "heading": false
+        },
+        {
+          "term": "proper levi",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "text kal",
+          "heading": false
+        },
+        {
+          "term": "non-elliptic twisted",
+          "heading": false
+        }
+      ],
+      "extract": "We start with a basic structural result about $\\mathrm{RigIsoc}_{F}$: ::: lem The category $\\mathrm{RigIsoc}_{F}$ is semisimple. ::: ::: proof *Proof.* We work with the category $\\text{Rep}(\\mathcal{E}_{\\text{Kal}})$ instead, which we showed in §[\\[sec:RigIsocdef\\]](#sec:RigIsocdef){reference-type=\"ref\" reference=\"sec:RigIsocdef\"} can be identified with $\\mathrm{RigIsoc}_{F}$. By [@DM82 Proposition 2.23], it",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-35-classification-of-simple-objects",
+      "number": "3.5",
+      "title": "Classification of simple objects",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 25,
+      "labelStart": "22",
+      "labelEnd": "25",
+      "words": 2152,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "widehat mathop",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathrm rigisoc",
+          "heading": false
+        },
+        {
+          "term": "mathrm kal",
+          "heading": false
+        },
+        {
+          "term": "mathbb ast",
+          "heading": false
+        },
+        {
+          "term": "widehat bar",
+          "heading": false
+        },
+        {
+          "term": "mathrm res",
+          "heading": false
+        },
+        {
+          "term": "cong mathop",
+          "heading": false
+        }
+      ],
+      "extract": "By Lemma [\\[lem:simple\\]](#lem:simple){reference-type=\"ref\" reference=\"lem:simple\"} it suffices to understand the $X \\in \\mathop{\\mathrm{obj}}(\\mathrm{RigIsoc}_{F})$ corresponding to basic classes in the elliptic twisted Levi subgroups $M \\xrightarrow{\\sim} \\mathrm{Res}_{E/F}(\\mathrm{GL}_{s})$ of $\\mathrm{GL}_n$ which are not isomorphic to an object of the form $Y^{\\oplus c}$ for a basic object $Y$ corresponding to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 353,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "url",
+          "heading": false
+        },
+        {
+          "term": "local langlands",
+          "heading": false
+        },
+        {
+          "term": "langlands conjecture",
+          "heading": false
+        },
+        {
+          "term": "kaletha",
+          "heading": false
+        },
+        {
+          "term": "issn",
+          "heading": false
+        },
+        {
+          "term": "doi",
+          "heading": false
+        },
+        {
+          "term": "jems",
+          "heading": false
+        },
+        {
+          "term": "rigid inner",
+          "heading": false
+        }
+      ],
+      "extract": "[BMO25] Alexander Bertoloni Meli and Masao Oi. The B(G)-parametrization of the local Langlands correspondence. 2025. arXiv: 2211.13864 [math.NT]. URL: https://arxiv.org/ abs/2211.13864. [DM82] P. Deligne and J. S. Milne. “Tannakian Categories”. In: Hodge Cycles, Motives, and Shimura Varieties. Berlin, Heidelberg: Springer Berlin Heidelberg, 1982, pp. 101–228. ISBN: 978-3-540- 38955-2. DOI:",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 3,
+        "items": [
+          "Preliminary notation",
+          "Acknowledgments",
+          "Descent"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 1,
+        "items": [
+          "Modules: listed p7, found p2"
+        ]
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "gamma sigma",
+      "heading": false
+    },
+    {
+      "term": "gamma overline",
+      "heading": false
+    },
+    {
+      "term": "mathcal sigma",
+      "heading": false
+    },
+    {
+      "term": "mathfrak sigma",
+      "heading": false
+    },
+    {
+      "term": "prod sigma",
+      "heading": false
+    },
+    {
+      "term": "gamma mathbb",
+      "heading": false
+    },
+    {
+      "term": "gerbe mathcal",
+      "heading": false
+    },
+    {
+      "term": "mathrm rigisoc",
+      "heading": false
+    },
+    {
+      "term": "mathrm kal",
+      "heading": false
+    },
+    {
+      "term": "gamma semilinear",
+      "heading": false
+    },
+    {
+      "term": "limits sigma",
+      "heading": false
+    },
+    {
+      "term": "sigma otimes",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 19,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 19,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p25); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 19 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2601.07042v1"
+  }
+}

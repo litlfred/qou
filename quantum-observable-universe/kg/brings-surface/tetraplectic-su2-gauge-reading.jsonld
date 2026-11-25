@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-tetraplectic-su2-gauge-reading",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:tetraplectic-su2-gauge-reading",
+  "kind": "remark",
+  "title": "The Reeb triad as an internal $\\mathrm{SU}(2)$, and what it is not",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/lem-bring-cone-reeb-quaternionic-twist",
+    "papers/quantum-observable-universe/blocks/def-quaternionic-spectral-resolvents"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/lem-bring-cone-reeb-quaternionic-twist",
+  "cites": [
+    "references/morita1982",
+    "references/fothleitner2003"
+  ],
+  "tags": [
+    "tetraplectic",
+    "su2",
+    "left-right-symmetric",
+    "electroweak",
+    "gauge-structure",
+    "scope-limit",
+    "reeb-triad"
+  ],
+  "leanRef": "qou:QOU.StandardModel.QuaternionicElectroweak.su2L_su2R_commute",
+  "sorryFree": true,
+  "text": "tetraplectic-su2-gauge-reading.md",
+  "provenance": "authored"
+}

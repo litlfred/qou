@@ -1,0 +1,565 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "bm-markov-j",
+  "blocks": [
+    {
+      "id": "library/bm-markov-j/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bm-markov-j/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "Journal of Knot Theory and Its Ramifications, Vol. 11, No. 3 (2002) 295-310\n© World Scientific Publishing Company\n\nON MARKOV’S THEOREM\n\nJOAN S. BIRMAN\nDepartment of Mathematics, Barnard College, Columbia University,\n2990 Broadway, New York, NY 10027, USA\njob@math. columbia. edu\nWILLIAM W. MENASCO\n\nDepartment of Mathematics, College of Arts and Sciences,\nUniversity at Buffalo, The State University of New York,\nBuffalo, NY 14260-2900, USA\nmenasco@math. buffalo.edu\n\n1 Introduction\n\nLet ¥ be an oriented link type in the oriented 3-sphere S? or IR? = S3—{oo}.\nA representative X € ¥ is said to be a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bm-markov-j/blocks/figure-img-p002-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../images/img-p002-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bm-markov-j/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "296 J. S. Birman & W. W. Menasco\n\ndestabilize\n—\n\n[\n\nstabilize\n\nFigure 1: Stabilization and destabilization of closed braids.\n\nTheorem 1 (Markov’s Theorem:) Let X),X2 be closed braid represen-\ntatives of the same oriented link type X in oriented 3-space, with the same\nbraid axis A. Then X2 may be obtained from X, by braid isotopy and a\nfinite number of stabilizations and destabilizations.\n\nWe know of 4 published proofs of Theorem 1, see [3, 8, 10, 11], and each\ngives a new way of looking at the result. The main result in this paper is\nto give yet another proof! We hope that our new proof will b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bm-markov-j/blocks/thm-page-002-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Markov’s Theorem:",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "thm-page-002-01.md",
+      "narrative": null,
+      "content": "Let X),X2 be closed braid represen- tatives of the same oriented link type X in oriented 3-space, with the same braid axis A. Then X2 may be obtained from X, by braid isotopy and a finite number of stabilizations and destabilizations.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bm-markov-j/blocks/figure-img-p003-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bm-markov-j/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "On Markov’s Theorem 297\n\nproved. In that paper we will describe a set of moves which suffice to take\nany closed braid representative of a knot or link to one of minimum braid\nindex for the link type 4’, with each move preserving or reducing the braid\nindex. The proof which is given here of Theorem 1 will also be used by Nancy\nWrinkle in her PhD thesis, which concerns knots which are transverse to the\nstandard contact structure in IR?. It is our hope that the geometry revealed\nin the new proof of Theorem 1 will have other applications too.\n\n2 Braid foliations\n\nThe main result in this paper (The",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bm-markov-j/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "298 J. S. Birman & W. W. Menasco\n\n+ side\nof S\n\n- side\n\n+ vertex - vertex of S\n\nviewed on F viewed in 3-space (b)\n\n(a)\n\n(c) (d)\n\nFigure 2: (a)Foliation of F near a vertex; (b) Foliation of F near X = OF;\n\n(c) a-arcs and b-arcs, viewed on F; (d) a-arcs and b-arcs, viewed on a fiber\nAg.\n\nof Hg with the surface F. We may assume that each leaf is an arc. For\ndetails on this assertion and others like it see [4]. Leaves are singular if they\ncontain a singularity of the foliation, otherwise they are non-singular. The\nsingularities may be assumed to be finite in number and to occur on distinct\nfibers o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bm-markov-j/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "On Markov’s Theorem 299\n\n(resp. clockwise) when the vertex is positive (resp. negative). The valence\nof a vertex is the number of singular leaves which have endpoints at that\nvertex.\n\nThe foliation may be used to decompose the surface F into a union of\nfoliated 2-cells, each of which contains exactly one singularity of the foliation.\nWe refer to these 2-cells as tiles and the resulting decomposition of F as a\ntiling. Each tile is a regular neighborhood on F of its singular leaves. See\nFigure 3.\n\nType aa Type ab\n\nFigure 3: The three tile types.\n\nThe vertices of the tiles are the points where th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bm-markov-j/blocks/lem-page-006-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "lem-page-006-01.md",
+      "narrative": null,
+      "content": "All b-arcs may be assumed to be essential.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bm-markov-j/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "300 J. S. Birman & W. W. Menasco\n\ndirection of increasing 6. Otherwise s is negative.\n\nA b-arc, when viewed on a fiber of H, divides the fiber into two discs.\nWe say that it is essential if both discs are pierced by X. This condition\ncan be seen in the ordering along A of the vertices in the tiling of F. If the\ntwo vertex endpoints of the b-arc have adjacent numbers in the cyclic order\non A, then the b-arc is inessential, otherwise it is essential. See Figure 4 (a)\n\nand (b).\n\nA\nA A\n—_ H\nXH] °\n~ .\nro essential\n~ .\ninessential\n\nFigure 4: Essential and inessential b-arcs. The bottom two sketches",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bm-markov-j/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "On Markov’s Theorem 301\n\npair (X,F). As a move on the pair (X,F) our stabilization move is not the\ninverse of our destabilization move, even though they are mutually inverse\nin terms of their effect on X.\n\n(a)\n\nstabilize\n\nx fy new X\n\n(b) negative singularity\n\nposjtive stabilization\n\nstabilize\n—_—_ >\n\nx new X\nFigure 5: Stabilization along an ab-tile.\n\nStabilizing along ab tiles: Figure 5 shows a modification in the tiling on\nF, which we call stabilizing along an ab tile. It is realized by pushing X\nalong a disc neighborhood of the singular leaf in an ab tile. The boundary\nof the neighborhood ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bm-markov-j/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "302 J. S. Birman & W. W. Menasco\n\nnew closed braid, with braid index one less than that of the original one. We\ncall this process destabilizing along an end tile. This move is the inverse of\nstabilization along an ab tile, as far as its effect on the closed braid, but the\ntwo moves are not mutually inverse as regards their effect on the foliation.\n\nX — new X «G5\n\nve w __ v¢\n\nViewed on the foliated surface\n\nViewed in 3-space\n\nFigure 6: Destabilization along an end tile.\n\n3 A new proof of Markov’s Theorem\n\nIn our proof the closed braid X will be assumed to be the boundary of a\nMarkov surface F.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bm-markov-j/blocks/lem-page-009-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "lem-page-009-01.md",
+      "narrative": null,
+      "content": "Let U be an arbitrary closed braid representative of the unknot and let Up be the standard 1-braid representative. Then U = Up.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bm-markov-j/blocks/lem-page-009-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "lem-page-009-02.md",
+      "narrative": null,
+      "content": "Let X and U be links which are presented as closed braids. As- sume that U represents the unknot. Then X is Markov-equivalent to the braid-connected sum of X and U.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bm-markov-j/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "On Markov’s Theorem 303\n\nIf X and X’ are closed braids which represent the same link type 4’, we\nsay that X and X' are Markov-equivalent (written X = X') if X can be\nchanged to X' by braid isotopies together with a finite number of stabiliza-\ntions and destabilizations, i.e. the allowed moves in the MT.\n\nLemma 2 Let U be an arbitrary closed braid representative of the unknot\nand let Up be the standard 1-braid representative. Then U = Up.\n\nProof: We are given a closed braid representative U of the unknot. It is\nthe boundary of a disc D, and by the methods which are described in §1 we\nmay assume",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bm-markov-j/blocks/figure-img-p010-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../images/img-p010-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bm-markov-j/blocks/lem-page-010-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "lem-page-010-01.md",
+      "narrative": null,
+      "content": "Let X and X' be closed braids, in general having distinct braid indices. Assume that X' is a preferred longitude for X. Then X = X'.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bm-markov-j/blocks/prose-page-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 10",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/page-010.md",
+      "narrative": null,
+      "content": "304 J. S. Birman & W. W. Menasco\n\nis the braid connected sum of X and U. We may simplify the tiling on D\nby stabilizing along ab-tiles and then deleting valence one vertices, as in the\nproof of Lemma 2. This produces a Markov equivalence between X#U and\nx. |l\n\nLemma 4 Let X and X' be closed braids, in general having distinct braid\nindices. Assume that X' is a preferred longitude for X. Then X = X'.\n\nProof: Since X’ is a preferred longitude for X there is a Seifert surface F\nwith OF = X and an annulus AC F, with 0A = X — X'. (Here the minus\nsign denotes a reversal of the order of X'.) Using the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bm-markov-j/blocks/figure-img-p011-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../images/img-p011-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bm-markov-j/blocks/prose-page-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 11",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/page-011.md",
+      "narrative": null,
+      "content": "On Markov’s Theorem 305\n\nA on its left. A check of the possibilities then shows that if X'/NT has\nmore than one component, then the components can only be arcs of type 1\nand 2 or type 3 and 4. In the case of tiles of type aa there is an additional\nconstraint which implies that we cannot have components of type 3 and 4\nsimultaneously. For, if this occurred, then one of the two singular arcs in\nthe tile would begin and end on X and the other would begin and end on\nX' and both arcs would be in A. However this is impossible because these\narcs intersect once in the tile, however A is an annulus and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bm-markov-j/blocks/figure-img-p012-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../images/img-p012-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bm-markov-j/blocks/lem-page-012-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "lem-page-012-01.md",
+      "narrative": null,
+      "content": "The unlinking lemma [2]. Let X and X' be links in 3-space RR? which are not separated by any topological plane IR? C IR?. Then we may modify the link X' by isotoping it to a link X\" which is separated from X by a plane P in IR?. The isotopy from X' to X\" may be realized by choosing disjoint embedded discs D,,...,D, whose interiors are disjoint from X' and X\", with int(D;)NX a point. Each D; intersects X in an arc a; C OD; and X\" in the closure B; of the complement of a; in OD;. The isotopy is a push of 04,.-.,0% CX’ across Dy,...,Dx to B1,..-;Be CX\".",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bm-markov-j/blocks/prose-page-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 12",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/page-012.md",
+      "narrative": null,
+      "content": "306 J. S. Birman & W. W. Menasco\n\nThe only remaining cases are cases (i),(ii),(iii). If case (i) occurs we\nmay stabilize X’ by pushing it across the singular leaf in A. (Equivalently,\nwe could destabilize X by repeatedly deleting vertices of valence 1). This\npushes a positive vertex from A to F’. But then, after some number of such\nstabilizations, we will have reduced to the situation where only cases (ii)\nand (iii) occur. That is, there are no singularities whatsoever in A, so the\nmodified braid representatives of X and X’ have identical braid structures.\nThe proof of Lemma 4 is complete. ||",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bm-markov-j/blocks/prose-page-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 13",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/page-013.md",
+      "narrative": null,
+      "content": "On Markov’s Theorem 307\n\n(b)\n\naa\n\nyes\n\nx\n\nFigure 9: Steps in the construction of X3\n\nTo begin the construction choose a Seifert surface F2 for X2 and a pre-\nferred longitude X, C F2 for X2. We will assume that X4 lies in a collar\nneighborhood of X2, chosen to be small enough so that X} is also a closed\nbraid. We will also assume that X4 lies below X» everywhere except for\nlittle hooks where it is forced to travel over a strand of X9, as in Figure\n9(a), because in general X2U X4 is not a split link. Applying Lemma 5 we\nconstruct a link X¥ which is isotopic to X} and geometrically unlinked from",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bm-markov-j/blocks/figure-img-p014-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../images/img-p014-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bm-markov-j/blocks/prose-page-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 14",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/page-014.md",
+      "narrative": null,
+      "content": "308 J. S. Birman & W. W. Menasco\n\nG: R? + BR. Let rj = G(D;-) and let R; = G(D;) = 7; U Diy. See\nFigures 9(c) and (d). The facts that (1) G is a homeomorphism which is the\nidentity in RR. and (ii) if i A j then Dj_N Dj ~ = D;N D; =O tell us that\nthe ris and the Ris are pairwise disjoint embedded discs. By construction\n7,4 X2 =, whereas R;M XQ is a single point in the disc D;,4. Each r; joins\nXY to Xi, meeting XY in the arc 8; and Xj in the arc 6! = G(f;). Each R;\njoins X4 to Xj, meeting X} in a; and X, in fj.\n\nLet X3 be the link which is obtained from X, by replacing each 6} C X1\nby OR;—f'. Th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bm-markov-j/blocks/prose-page-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 15",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/page-015.md",
+      "narrative": null,
+      "content": "On Markov’s Theorem 309\n\nA\nA\n\nor\n\nFigure 10: Alexander’s trick\n\nlink type as XU X43. By the argument for case (1), it then follows that the\nproof of Theorem 1 is complete. ||\n\nRemark 1: If V and W are closed braid representatives of knots V and W,\nand if X = V#W represents V#W, we say that X is the braid connected\nsum of V and W if there is a 2-sphere in 3-space which intersects X twice and\nintersects the axis twice, separating the closed braids V and W. We stated\nin §1 that our proof of Theorem 1 would show that X3 is obtained from\nX 1 by taking the braid connected sum of X, with some number",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/bm-markov-j/blocks/rem-page-015-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "rem-page-015-01.md",
+      "narrative": null,
+      "content": "If V and W are closed braid representatives of knots V and W, and if X = V#W represents V#W, we say that X is the braid connected sum of V and W if there is a 2-sphere in 3-space which intersects X twice and intersects the axis twice, separating the closed braids V and W. We stated in §1 that our proof of Theorem 1 would show that X3 is obtained from X 1 by taking the braid connected sum of X, with some number of closed braid representatives of the unknot UW, say Uj,...,Ux. We have, indeed, shown that there are closed representatives U;,...,U, of the unknot and that X3 = X1#Ui#---#U,, but brai",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bm-markov-j/blocks/rem-page-015-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "rem-page-015-02.md",
+      "narrative": null,
+      "content": "In our proof of Theorem 1 we only treated the case of knots, but the proof works equally well for links. A detailed discussion of the case of links (and of many other aspects of the construction given here) will appear in the forthcoming manuscript [7].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/bm-markov-j/blocks/prose-page-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 16",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/page-016.md",
+      "narrative": null,
+      "content": "310 J. S. Birman & W. W. Menasco\n\nReferences\n\n[1] J. W. Alexander, A lemma on systems of knotted curves, Proc.. Nat.\nAcad. Sci. USA. 9 (1923), 93-95.\n\n[2] D. Bennequin, Entrelacements et equations de Pfaff, Asterisque 107-\n108 (1983), 87-161.\n\n[3] J. S. Birman, Braids, Links and Mapping Class Groups, Annals of\nMath. Studies 82 (1974).\n\n[4] J. S. Birman and E. Finkelstein, Studying surfaces va closed braids,\nJ. of Knot Theory and its Ramifications, 7, No. 3 (1998),267-334.\n\n[5] J. S. Birman & W. W. Menaso, Studying Links Via Closed Braids\nIV:Closed Braid Representatives of Split and Composite L",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

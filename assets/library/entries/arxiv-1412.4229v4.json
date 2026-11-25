@@ -1,0 +1,366 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1412.4229v4",
+  "blocks": [
+    {
+      "id": "library/arxiv-1412.4229v4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "../sections/sec-000-0-introduction.md",
+      "narrative": null,
+      "content": "\\numberwithin{equation}{subsection}\n\n\n\\subsection{Background: Rigid Dualizing Complexes}\nThe concept of {\\em rigid dualizing complex} was introduced by M. Van den Bergh \nin his influential paper \\cite{VdB} from 1997. This was done for a \nnoncommutative ring $A$ \nover a base field $\\K$. Let us recall the definition; but to simplify matters \n(and because here we are interested in the commutative situation), we \nshall state it for a commutative ring $A$.\n\nSo let $\\K$ be a field and $A$ a commutative $\\K$-ring. We denote by \n$\\cat{D}(A)$ the derived category of $A$-modules. Given a complex \n$M \\in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1412.4229v4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "THE SQUARING OPERATION FOR COMMUTATIVE DG RINGS\nAMNON YEKUTIELI\nAbstract. Let A →B be a homomorphism of commutative rings. The squar-\ning operation is a functor SqB/A from the derived category D(B) of complexes\nof B-modules into itself. This operation is needed for the deﬁnition of rigid\ncomplexes (in the sense of Van den Bergh), that in turn leads to a new approach\nto Grothendieck duality for rings, schemes and even DM stacks.\nIn our paper with J.J. Zhang from 2008 we introduced the squaring oper-\nation, and explored some of its properties. Unfortunately some of the proofs\nin that paper had s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1412.4229v4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some Facts on DG Rings and Modules",
+      "pageStart": 7,
+      "pageEnd": 12,
+      "target": "../sections/sec-001-1-some-facts-on-dg-rings-and-modules.md",
+      "narrative": null,
+      "content": "\\label{sec:facts-DG-mods}\n\\numberwithin{equation}{section}\n\nIn this section we review some known facts about DG rings and modules. \nWe talk about central homomorphisms of DG rings. Finally, we introduce \nthe cylinder construction for DG rings and modules.  \n\nA {\\em differential graded ring}, or {\\em DG ring} for short, is a \ngraded ring $A = \\bigoplus_{i \\in \\Z} A^i$, together with an additive \nendomorphism $\\d_A$ of degree $1$ called the {\\em differential}. \nThe differential $\\d_A$ satisfies $\\d_A \\circ \\d_A = 0$, and it is a graded \nderivation of $A$, namely it satisfies the graded Leibniz r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1412.4229v4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Resolutions of DG Modules",
+      "pageStart": 12,
+      "pageEnd": 16,
+      "target": "../sections/sec-002-2-resolutions-of-dg-modules.md",
+      "narrative": null,
+      "content": "\\label{sec:resolutions-modules}\n\nLet $A$ be a DG ring. \nWe already mentioned that $\\cat{M}(A) = \\cat{DGMod} A$ is a DG category, \nequipped with a translation automorphism $\\opn{T}$. The homotopy category of \n$\\cat{DGMod} A$ is \n$\\til{\\cat{K}}(\\cat{DGMod} A)$, where by definition \n\\begin{equation} \\label{eqn:1016}\n\\opn{Hom}_{\\til{\\cat{K}}(\\cat{DGMod} A)}(M, N) := \n\\mrm{H}^0 \\bigl( \\opn{Hom}_A(M, N) \\bigr) .\n\\end{equation}\nThis is a triangulated category. \nThe derived category $\\til{\\cat{D}}(\\cat{DGMod} A)$ is  gotten\nfrom $\\til{\\cat{K}}(\\cat{DGMod} A)$ by inverting the \nquasi-isomorphisms. The",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1412.4229v4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Central Pairs of DG Rings and their Resolutions",
+      "pageStart": 16,
+      "pageEnd": 23,
+      "target": "../sections/sec-003-3-central-pairs-of-dg-rings-and-their-resolution.md",
+      "narrative": null,
+      "content": "\\label{sec:resolutions-rings}\n\nIn this section we introduce several special kinds of DG rings and \nhomomorphisms. Recall that $\\cat{DGR}$ is the category of DG rings. \n\n\\begin{dfn}\nA DG ring $A = \\bigoplus_{i \\in \\Z} A^i$ is called {\\em nonpositive} if \n$A^i = 0$ for all $i > 0$. \nThe full subcategory of $\\cat{DGR}$ consisting of nonpositive DG rings is \ndenoted by $\\cat{DGR}^{\\leq 0}$.\n\\end{dfn}\n\n\\begin{dfn} \\label{dfn:330}\nA DG ring $A = \\bigoplus_{i \\in \\Z} A^i$ is called {\\em strongly commutative} \nif it satisfies these two conditions:\n\\begin{enumerate}\n\\rmitem{i} $A$ is weakly commutative",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1412.4229v4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "DG Ring Homotopies",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "../sections/sec-004-4-dg-ring-homotopies.md",
+      "narrative": null,
+      "content": "\\label{sec:homotopies-rings}\n\nIn this section we introduce the concept of homotopy between DG ring \nhomomorphisms. Many of the ideas in this section were  communicated to us \nprivately by B. Keller (but of course the responsibility for correctness is \nours). \n\n\\begin{dfn} \\label{dfn:70}\nSuppose $u_0, u_1 : A \\to B$ are homomorphisms of DG rings.  \n\\begin{enumerate}\n\\item An additive homomorphism $\\ga : A \\to B$ of degree $-1$ is called a {\\em \n$u_0$-$u_1$-derivation} if it satisfies this twisted graded Leibniz formula\n\\[ \\ga(a_0 \\cd a_1) = \\ga(a_0) \\cd u_1(a_1) \n+ (-1)^{k_0} \\cd u_0(a_0) \\cd \\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1412.4229v4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pairs of DG Modules, Compound Resolutions, and Rectangles",
+      "pageStart": 26,
+      "pageEnd": 32,
+      "target": "../sections/sec-005-5-pairs-of-dg-modules-compound-resolutions-and-r.md",
+      "narrative": null,
+      "content": "\\label{sec:pairs-DG-modules}\n\nRecall that $\\cat{PDGR}$ is the category of central pairs DG rings.\nSee Definition \\ref{dfn:910}. \nResolutions in $\\cat{PDGR}$ were defined in Definition \\ref{dfn:912} and \n\\ref{dfn:52}. The category of central DG $A$-rings  \n$\\cat{DGR} \\centover A$\nwas defined in Definition \\ref{dfn:750}(4). \n\n\\begin{dfn} \\label{dfn:914}\nLet $\\til{B} / \\til{A}$ be an object of $\\cat{PDGR}$. \nThe {\\em enveloping DG ring} of $\\til{B}$ over $\\til{A}$ is the DG ring \n\\[ \\til{B}^{\\mrm{en}} := \n\\til{B}^{} \\ot_{\\til{A}^{}} \\til{B}^{\\mrm{op}}\n\\in \\cat{DGR} \\centover \\til{A} . \\]\n\nLet \n$\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1412.4229v4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Rectangle Operation",
+      "pageStart": 32,
+      "pageEnd": 38,
+      "target": "../sections/sec-006-6-the-rectangle-operation.md",
+      "narrative": null,
+      "content": "\\label{sec:rect-oper}\n\nIn this section we continue with the material of Section \n\\ref{sec:pairs-DG-modules}, but with slightly different notation.\nRecall that $\\cat{PDGR}$ is the category of central pairs of DG rings, and \n$\\cat{PDGR}^{\\leq 0}$ is the full subcategory of nonpositive central pairs. \nSee Definitions \\ref{dfn:910} and \\ref{dfn:911}.\n\nThe main result here is Theorem \\ref{thm:840}. \nThroughout this section we work in the following setup.\n\n\\begin{setup} \\label{set:930}\nWe are given:\n\\begin{enumerate}\n\\item A central morphism \n$w / v : B' / A' \\to B / A$ in $\\cat{PDGR}^{\\leq 0}$\n(nam",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1412.4229v4/blocks/cor-sec-007-07",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 43,
+      "target": "cor-sec-007-07.md",
+      "narrative": null,
+      "content": "Let B/A be a pair of commutative DG rings. The assignments M 7→SqB/A(M) and θ 7→SqidB/idA(θ) are a functor SqB/A : D(B) →D(B). AMNON YEKUTIELI",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1412.4229v4/blocks/prop-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 43,
+      "target": "prop-sec-007-01.md",
+      "narrative": null,
+      "content": "Any object and any morphism in PDGR≤0 sc admits a K-ﬂat res- olution.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1412.4229v4/blocks/prop-sec-007-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 43,
+      "target": "prop-sec-007-05.md",
+      "narrative": null,
+      "content": "Commutative K-ﬂat resolutions of triples exist.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1412.4229v4/blocks/prop-sec-007-08",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 43,
+      "target": "prop-sec-007-08.md",
+      "narrative": null,
+      "content": "We are given homomorphisms of commutative DG rings A → B2 v2 −→B1 v1 −→B0, DG modules Mk ∈D(Bk), and morphisms θk : Mk−1 →Mk in D(Bk). Then Sqv2/idA(θ2) ◦Sqv1/idA(θ1) = Sq(v1◦v2)/idA(θ2 ◦θ1), as morphisms SqB0/A(M0) →SqB2/A(M2) in D(B2).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1412.4229v4/blocks/prop-sec-007-09",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 43,
+      "target": "prop-sec-007-09.md",
+      "narrative": null,
+      "content": "Let A be a commutative DG ring. The action from Proposition 2.5(1) makes D(A) into an H0(A)-linear category.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1412.4229v4/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Squaring Operation",
+      "pageStart": 38,
+      "pageEnd": 43,
+      "target": "../sections/sec-007-7-the-squaring-operation.md",
+      "narrative": null,
+      "content": "In this section all DG rings are commutative; namely, we work inside the category\nDGR≤0\nsc . See Deﬁnition 3.3. The category PDGR≤0\nsc of commutative pairs of DG rings\nwas introduced in Deﬁnition 3.7(2); it is a full subcategory of the category PDGR\nof central pairs of DG rings.\nDeﬁnition 7.1.\n(1) Let B/A be an object of PDGR≤0\nsc . A K-ﬂat resolution of\nB/A in PDGR≤0\nsc is a resolution s/r : ˜B/ ˜A →B/A in the sense of Deﬁnition\n3.8, such that the pair ˜B/ ˜A is commutative and K-ﬂat (Deﬁnition 3.11(3)).\n(2) Morphisms of resolutions in PDGR≤0\nsc , and resolutions of morphisms in\nPDGR≤0\nsc , a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1412.4229v4/blocks/rem-sec-007-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 43,
+      "target": "rem-sec-007-02.md",
+      "narrative": null,
+      "content": "As explained in Remark 5.18, we can write Sq ˜ B/ ˜ A B/A(M) = RHom ˜ Ben(B, M ⊗L ˜ A M). However, the morphism Sq ˜ w/˜v w/v(θ) in Deﬁnition 7.4 is not standard, so we have to use the more explicit approach with compound resolutions, as was done in Section 5. Still, here we can simplify matters by using symmetric compound resolutions. A symmetric compound resolution of a DG B-module M is data P = ( ˜P, ˜I; α, β), consisting of a K-ﬂat resolution α : ˜P →M in M( ˜B), and a K-injective resolution β : ˜P en = ˜P ⊗˜ A ˜P →˜I in M( ˜Ben). Likewise, a morphism θ : M →M ′ can be resolved by a symmet",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1412.4229v4/blocks/thm-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Homotopy Invariance",
+      "pageStart": 38,
+      "pageEnd": 43,
+      "target": "thm-sec-007-03.md",
+      "narrative": null,
+      "content": "Let w/v : B′/A′ →B/A be a morphism in PDGR≤0 sc , let M ∈D(B), let M ′ ∈D(B′), and let θ : M →M ′ be a mor- phism in D(B′). Suppose ˜B/ ˜A and ˜B′/ ˜A′ are K-ﬂat resolutions of B/A and B′/A′ respectively in PDGR≤0 sc , and ˜w0/˜v0, ˜w1/˜v1 : ˜B′/ ˜A′ →˜B/ ˜A are morphisms of resolutions above w/v. Then the morphisms Sq ˜ w0/˜v0 w/v (θ), Sq ˜ w1/˜v1 w/v (θ) : Sq ˜ B/ ˜ A B/A(M) →Sq ˜ B′/ ˜ A′ B′/A′(M ′) in D(B′) are equal.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1412.4229v4/blocks/thm-sec-007-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Existence of Squares",
+      "pageStart": 38,
+      "pageEnd": 43,
+      "target": "thm-sec-007-04.md",
+      "narrative": null,
+      "content": "Let A →B be a homomorphism of commu- tative DG rings, and let M be a DG B-module. There is a DG module SqB/A(M), unique up to a unique isomorphism in D(B), together with an isomorphism sq ˜ B/ ˜ A : SqB/A(M) ≃ −→Sq ˜ B/ ˜ A B/A(M) in D(B) for each K-ﬂat resolution ˜B/ ˜A of B/A in PDGR≤0 sc , satisfying the following condition. AMNON YEKUTIELI (∗) Let ˜w/˜v : ˜B′/ ˜A′ →˜B/ ˜A be a morphism of K-ﬂat resolutions of B/A in PDGR≤0 sc . Then there is equality Sq ˜ w/˜v id/id(idM) = sq ˜ B′/ ˜ A′ ◦(sq ˜ B/ ˜ A)−1 of isomorphisms Sq ˜ B/ ˜ A B/A(M) ≃ −→Sq ˜ B′/ ˜ A′ B/A (M) in D(B).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1412.4229v4/blocks/thm-sec-007-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Trace Functoriality",
+      "pageStart": 38,
+      "pageEnd": 43,
+      "target": "thm-sec-007-06.md",
+      "narrative": null,
+      "content": "Let A −→B v−→C be homomorphisms of commutative DG rings, let M ∈D(B), let N ∈D(C), and let θ : N →M be a morphism in D(B). There is a unique morphism Sqv/idA(θ) : SqC/A(N) →SqB/A(M) in D(B), satisfying the condition: THE SQUARING OPERATION (∗∗) For any commutative K-ﬂat resolution ˜A →˜B ˜v−→˜C of the triple A →B v−→ C, there is equality Sq˜v/id ˜ A v/idA(θ) = sq ˜ B/ ˜ A ◦Sqv/idA(θ) ◦(sq ˜ C/ ˜ A)−1 of morphisms Sq ˜ C/ ˜ A C/A(N) →Sq ˜ B/ ˜ A B/A(M) in D(B).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1412.4229v4/blocks/thm-sec-007-10",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 43,
+      "target": "thm-sec-007-10.md",
+      "narrative": null,
+      "content": "In the situation of Theorem 7.10, let c ∈H0(C). Then Sqv/id(c · θ) = c2 · Sqv/id(θ), as morphisms SqC/A(N) →SqB/A(M) in D(B).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1412.4229v4/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 43,
+      "pageEnd": 44,
+      "target": "../sections/sec-008-references.md",
+      "narrative": null,
+      "content": "[AFH]\nL.L. Avramov, H.-B. Foxby and S. Halperin, Diﬀerential Graded Homological Algebra,\npreprint dated 21 June 2006, available from the authors.\n[AILN]\nL.L. Avramov, S.B. Iyengar, J. Lipman and S. Nayak, Reduction of derived Hochschild\nfunctors over commutative algebras and schemes, Advances in Mathematics 223 (2010)\n735-772.\n[AIL]\nL.L. Avramov, S.B. Iyengar and J. Lipman, Reﬂexivity and rigidity for complexes, I.\nCommutative rings, Algebra and Number Theory 4:1 (2010).\n[BL]\nJ. Bernstein and V. Lunts, Equivariant Sheaves and Functors, Lecture Notes in Mathe-\nmatics 1578, Springer, 1994.\n[BN]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

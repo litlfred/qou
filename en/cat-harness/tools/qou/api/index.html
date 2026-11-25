@@ -1,0 +1,2010 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="../../../../../assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="../../../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  
+
+  
+
+  <script src="../../../../../assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+
+
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>API — qou | Quantum Observable Universe</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="API — qou" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The Tools of qou as an OpenAPI document and an MCP tool list." />
+<meta name="twitter:description" property="og:description" content="The Tools of qou as an OpenAPI document and an MCP tool list." />
+<link rel="canonical" href="https://litlfred.github.io/qou/en/cat-harness/tools/qou/api/" />
+<meta property="og:url" content="https://litlfred.github.io/qou/en/cat-harness/tools/qou/api/" />
+<meta property="og:site_name" content="Quantum Observable Universe" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="API — qou" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"The Tools of qou as an OpenAPI document and an MCP tool list.","headline":"API — qou","url":"https://litlfred.github.io/qou/en/cat-harness/tools/qou/api/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <script type="application/json" id="fa-site-scheme">{"scheme": "dark"}</script><!-- fa-first-paint:begin -->
+<script>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+<style>html{background-color:#27262b}html[data-fa-scheme="light"]{background-color:#ffffff}</style>
+<!-- fa-first-paint:end --><meta name="fa-render-regions" content="1">
+<script>document.documentElement.setAttribute("data-fa-render","pending");</script><style>
+  .bpmn-figure {
+    overflow-x: auto;
+    background: #fff;
+    border: 1px solid rgba(128, 128, 128, 0.35);
+    border-radius: 6px;
+    margin: 1em 0 0.4em;
+  }
+  .bpmn-figure img {
+    display: block;
+    width: 100%;
+    min-width: 1200px;
+    max-width: none;
+  }
+  .bpmn-source {
+    margin-top: 0;
+    font-size: 0.75rem;
+  }
+</style><script type="application/json" id="fa-translation-meta">{
+  "lang": "en",
+  "translationStatus": "",
+  "translationSource": "",
+  "supportedLocales": ["ar","zh","en","fr","ru","es"],
+  "availableLocales": null,
+  "translationQa":{
+    "key": "page.translation",
+    "slug": "en-cat-harness-tools-qou-api-index",
+    "src": "../../../../../assets/qa/en-cat-harness-tools-qou-api-index/page.translation.json",
+    "index": "../../../../../assets/qa/en-cat-harness-tools-qou-api-index/qa-index.json",
+    "list": "../../../../../assets/qa/translation-qa-pages.json"
+  },
+  "sweep":{
+    "absent": "qou publishes no translation QA sweep on this site",
+    "run": false,
+    "sweptAt": "",
+    "totalPages": 0,
+    "pagesWithTranslations": 0,
+    "complete": false
+  },
+  "statusSrc":"../../../../../assets/translation-status/index.json",
+  "reviewSrc":"../../../../../assets/translation-status/review.json"
+}</script><script type="application/json" id="fa-navbar-row" data-fa-row-src="harness-data"></script><script type="application/json" id="fa-site-links">{"kg":"https://litlfred.github.io/folio-assistant/qou/","jsonld":"https://litlfred.github.io/folio-assistant/qou/qou.jsonld","source":"https://github.com/litlfred/qou"}</script><meta name="fa-site-index-src" content="../../../../../assets/harness/site.json">
+<meta name="fa-todo-src" content="../../../../../assets/todos/index.json"><meta name="fa-todo-graph" content="../../../../../todos.jsonld"><meta name="fa-zoom-src" content="../../../../../assets/semantic-zoom.json"><meta name="fa-tiles" content="" data-fa-src="harness-data">
+<meta name="fa-glass-strip" content="[&quot;glass-todos&quot;,&quot;glass-settings&quot;]"><meta name="fa-baseurl" content="../../../../.."><meta name="fa-staging" content=""><meta name="fa-search-index" content="">
+
+<meta name="fa-beans-src" content="../../../../../assets/beans/index.json"><meta name="fa-processes-src" content="../../../../../subgraph/index.jsonld"><meta name="fa-build-src" content="../../../../../build.json"><link rel="stylesheet" href="../../../../../assets/css/navbar-row.css?v=263225e79ed9">
+<link rel="stylesheet" href="../../../../../assets/css/docs-ui.css?v=4c7265cca407"><link rel="stylesheet" href="../../../../../assets/css/narrow-viewport.css?v=173ef819dbf2"><link rel="stylesheet" href="../../../../../assets/css/themes.css?v=5c199f8420d3"><link rel="stylesheet" href="../../../../../assets/css/uml.css?v=e677f91cbf66"><link rel="stylesheet" href="../../../../../assets/css/avatars.css?v=996b3ffe2ab3"><script type="application/json" id="fa-declared-kinds">["attestations","beans","code","computation-witness","folio","fsh-guts","lake-cache","lean","library","mn-chi-cache","processes","qa","references","tools","trace-cache","typologies","wheel-cache","xbot-relaxation-ckpt"]</script><script src="../../../../../assets/js/harness-data.js" defer></script><script src="../../../../../assets/js/kg-render.js" defer></script><script src="../../../../../assets/js/navbar-row.js?v=fb3cd5c0d28c" defer></script>
+<script src="../../../../../assets/js/docs-ui.js?v=cae1ad7ba8e7" defer></script><script src="../../../../../assets/js/edit-links.js?v=7b072444cbb5" defer></script><script src="../../../../../assets/js/translation-review.js?v=3ab638979d22" defer></script><script src="../../../../../assets/js/code-highlight.js?v=0f94772226c3" defer></script><style>
+  .folio-landing { position: relative; margin: 0 0 2rem; }
+
+  /* WHAT IS LEFT HERE, AND WHY IT IS SO LITTLE.
+     `landing.html` emits exactly one folio-landing class —
+     `folio-landing folio-landing--plain` — the no-stickies fallback, which
+     renders the description and no art. The art path moved to the sticky
+     board (`fa-sticky--backdrop` in docs-ui.css), which composites text into
+     the picture through a declared `textRegion` and a scrim.
+
+     So this block used to carry fourteen selectors of which ELEVEN matched
+     nothing: every rule reaching for `folio-landing__art`,
+     `folio-landing__text` or `folio-landing--no-region`. Measured before they
+     were cut — those three classes appear in no markup in this repository and
+     on none of the 331 published pages that were inlining the CSS for them.
+     CSS has no error for a selector that matches nothing, which is the same
+     silence that let `.fa-sticky--backdrop > .fa-sticky-art` ship wrong.
+
+     The reasoning did not go with them. The blend-direction argument for the
+     fade is now at `.fa-sticky--backdrop::before`, where a scrim replaces it;
+     the region, overflow and breakpoint-parity lessons were already
+     re-derived and better stated on `.fa-landing-sticky--fixed`. What is NOT
+     carried over is the `cqw` container-query sizing: the successor scales
+     through `--fa-text-scale` rather than container queries, so a note about
+     `container-type` not being its own query container would be advice about
+     a mechanism nothing here uses. Bean `alox`, issue #873. */
+  .folio-landing--plain {
+    position: static; width: auto; height: auto; color: inherit;
+  }
+  .folio-landing--plain p { font-size: inherit; font-weight: inherit; }
+</style>
+
+<link rel="stylesheet" href="../../../../../assets/css/navbar.css"><script src="../../../../../assets/navbar/rail-2dtsu7qepqi.js" defer></script><script src="../../../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../../../assets/page-layout.css" data-fa-page-layout><script src="../../../../../assets/page-layout.js" defer data-fa-page-layout></script><script src="../../../../../assets/draft-banner.js" defer data-fa-page-layout></script><noscript data-fa-draft-noscript><link rel="stylesheet" href="../../../../../assets/draft-banner-noscript.css"></noscript><meta name="fa-pinned-data" content="../../../../.."></head>
+
+<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../../../..">{"data":"rail-2dtsu7qepqi","here":"/en/cat-harness/tools/qou/api/","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#operations-245","label":"Operations (245)"},{"href":"#mcp-tools-0","label":"MCP tools (0)"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../">Quantum Observable Universe</a></nav>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  
+    
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header fa-site-bar fa-page-bar"><a class="fa-page-bar-home" href="../../../../../">Quantum Observable Universe</a>
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search Quantum Observable Universe" autocomplete="off">
+    <label for="search-input" class="search-label">
+      <span class="sr-only">Search Quantum Observable Universe</span>
+      <svg viewBox="0 0 24 24" class="search-icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+<span class="fa-page-bar-locale" data-fa-slot="locale"></span></div>
+
+    <div class="main-content-wrap">
+      
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <p>The <a href="../">Tools</a> of <strong>qou</strong>, in the two forms other tools read:</p>
+
+<ul>
+  <li><a href="../openapi.json"><code class="language-plaintext highlighter-rouge">openapi.json</code></a> — OpenAPI 3.1.0, one operation per Tool. Open it in Swagger UI or Redoc, or generate a client from it. The paths are the Tools’ call contracts, not HTTP endpoints: each operation’s <code class="language-plaintext highlighter-rouge">x-invoke</code> says how the Tool is really reached.</li>
+  <li><a href="../mcp-tools.json"><code class="language-plaintext highlighter-rouge">mcp-tools.json</code></a> — the answer an MCP server gives to <code class="language-plaintext highlighter-rouge">tools/list</code>: each tool’s name, description and input schema, read from the registrar that serves it.</li>
+</ul>
+<h2 id="operations-245">
+  
+  
+    <a href="#operations-245" class="anchor-heading" aria-labelledby="operations-245"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Operations (245)
+  
+  
+</h2>
+    
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>operation</th>
+      <th>summary</th>
+      <th>request</th>
+      <th>response</th>
+      <th>reached as</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a id="compute-qa-accuracy-scorecard"></a><a href="../compute-qa-accuracy-scorecard/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/compute-qa-accuracy-scorecard</code></a></td>
+      <td>compute-QA: Observational accuracy scorecard drift &amp; witness gate</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="compute-qa-authors-note-coverage"></a><a href="../compute-qa-authors-note-coverage/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/compute-qa-authors-note-coverage</code></a></td>
+      <td>compute-QA: Author-note Lean-coverage drift gate</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="compute-qa-float64-padding"></a><a href="../compute-qa-float64-padding/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/compute-qa-float64-padding</code></a></td>
+      <td>compute-QA: float64-padding ratchet</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="compute-qa-import-time-dps"></a><a href="../compute-qa-import-time-dps/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/compute-qa-import-time-dps</code></a></td>
+      <td>compute-QA: import-time dps ratchet</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="compute-qa-lp-dual-backend"></a><a href="../compute-qa-lp-dual-backend/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/compute-qa-lp-dual-backend</code></a></td>
+      <td>compute-QA: Confirm CI solves at 50 dps, not float64</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="compute-qa-lp-dual-survey"></a><a href="../compute-qa-lp-dual-survey/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/compute-qa-lp-dual-survey</code></a></td>
+      <td>compute-QA: LP-dual survey (informational)</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="compute-qa-lp-dual-wired"></a><a href="../compute-qa-lp-dual-wired/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/compute-qa-lp-dual-wired</code></a></td>
+      <td>compute-QA: Content-wired LP/SDP witnesses must report their duals</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="compute-qa-module-const"></a><a href="../compute-qa-module-const/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/compute-qa-module-const</code></a></td>
+      <td>compute-QA: module-const precision gate</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="compute-qa-mpf-context-dps"></a><a href="../compute-qa-mpf-context-dps/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/compute-qa-mpf-context-dps</code></a></td>
+      <td>compute-QA: mp.dps no-op gate</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="compute-qa-mpf-float-source"></a><a href="../compute-qa-mpf-float-source/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/compute-qa-mpf-float-source</code></a></td>
+      <td>compute-QA: mpf(<float>) source audit (strict)</float></td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="compute-qa-never-raises-dps"></a><a href="../compute-qa-never-raises-dps/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/compute-qa-never-raises-dps</code></a></td>
+      <td>compute-QA: never-raises-dps ratchet</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="compute-qa-no-free-parameter"></a><a href="../compute-qa-no-free-parameter/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/compute-qa-no-free-parameter</code></a></td>
+      <td>compute-QA: No-free-parameter certificate</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="compute-qa-probe-float64-diff"></a><a href="../compute-qa-probe-float64-diff/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/compute-qa-probe-float64-diff</code></a></td>
+      <td>compute-QA: Fail on new float64 entry points</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="compute-qa-probe-float64-survey"></a><a href="../compute-qa-probe-float64-survey/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/compute-qa-probe-float64-survey</code></a></td>
+      <td>compute-QA: probe-float64 survey (informational)</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="compute-qa-pyhecke-tests"></a><a href="../compute-qa-pyhecke-tests/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/compute-qa-pyhecke-tests</code></a></td>
+      <td>compute-QA: Unit tests — provenance, the rescue, and every backend site</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="compute-qa-q0-anchor-flip"></a><a href="../compute-qa-q0-anchor-flip/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/compute-qa-q0-anchor-flip</code></a></td>
+      <td>compute-QA: q0-anchor flip detector (strict)</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="compute-qa-q0-value-drift"></a><a href="../compute-qa-q0-value-drift/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/compute-qa-q0-value-drift</code></a></td>
+      <td>compute-QA: q0-value drift ratchet</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="compute-qa-qou-mass-vendor-drift"></a><a href="../compute-qa-qou-mass-vendor-drift/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/compute-qa-qou-mass-vendor-drift</code></a></td>
+      <td>compute-QA: qou-mass vendored _internal/ vs computations/ (warn)</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="compute-qa-raw-float64"></a><a href="../compute-qa-raw-float64/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/compute-qa-raw-float64</code></a></td>
+      <td>compute-QA: raw-float64 ratchet</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="compute-qa-staleness-report"></a><a href="../compute-qa-staleness-report/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/compute-qa-staleness-report</code></a></td>
+      <td>compute-QA: Witness staleness (warn-mode)</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="compute-qa-word-provenance-diff"></a><a href="../compute-qa-word-provenance-diff/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/compute-qa-word-provenance-diff</code></a></td>
+      <td>compute-QA: Fail on new hardcoded word literals</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="compute-qa-word-provenance-selftest"></a><a href="../compute-qa-word-provenance-selftest/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/compute-qa-word-provenance-selftest</code></a></td>
+      <td>compute-QA: Detector self-test (known positive)</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="compute-qa-word-provenance-survey"></a><a href="../compute-qa-word-provenance-survey/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/compute-qa-word-provenance-survey</code></a></td>
+      <td>compute-QA: word-provenance survey (informational)</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="lean-regenerate-check"></a><a href="../lean-regenerate-check/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/lean-regenerate-check</code></a></td>
+      <td>Check the generated Lean is in sync</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-a-operator-a-operator-extract-at-level"></a><a href="../produce-a-operator-a-operator-extract-at-level/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-a-operator-a-operator-extract-at-level</code></a></td>
+      <td>Produce A-operator-extract-h9-pn.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">A-operator-extract-h9-pn</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-active-set-lr-profile"></a><a href="../produce-active-set-lr-profile/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-active-set-lr-profile</code></a></td>
+      <td>Produce active-set-lr-scaling-profile.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">active-set-lr-scaling-profile</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-all-nuclides-sdp-admissibility-mp"></a><a href="../produce-all-nuclides-sdp-admissibility-mp/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-all-nuclides-sdp-admissibility-mp</code></a></td>
+      <td>Produce all-nuclides-sdp-admissibility-mp.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">all-nuclides-sdp-admissibility-mp</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-alpha-alpha-em-q-difference-fourier"></a><a href="../produce-alpha-alpha-em-q-difference-fourier/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-alpha-alpha-em-q-difference-fourier</code></a></td>
+      <td>Produce alpha-em-q-difference-fourier.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">alpha-em-q-difference-fourier</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-alpha-alpha-em-shift-chain"></a><a href="../produce-alpha-alpha-em-shift-chain/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-alpha-alpha-em-shift-chain</code></a></td>
+      <td>Produce 2 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">alpha-em-shift-multiplicative-chain</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">alpha-shift-torus</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-alpha-alpha-shift-torus"></a><a href="../produce-alpha-alpha-shift-torus/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-alpha-alpha-shift-torus</code></a></td>
+      <td>Produce alpha-shift-torus.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">alpha-shift-torus</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-alpha-em-4pi-fixed-point-solve"></a><a href="../produce-alpha-em-4pi-fixed-point-solve/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-alpha-em-4pi-fixed-point-solve</code></a></td>
+      <td>Produce alpha-em-4pi-fixed-point-solve.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">alpha-em-4pi-fixed-point-solve</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-alpha-em-schwinger-ladder-probe"></a><a href="../produce-alpha-em-schwinger-ladder-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-alpha-em-schwinger-ladder-probe</code></a></td>
+      <td>Produce alpha-em-schwinger-ladder.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">alpha-em-schwinger-ladder</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-atom-level-wedderburn-tower"></a><a href="../produce-atom-level-wedderburn-tower/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-atom-level-wedderburn-tower</code></a></td>
+      <td>Produce atom-level-wedderburn-tower.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">atom-level-wedderburn-tower</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-atomic-chirality-residue"></a><a href="../produce-atomic-chirality-residue/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-atomic-chirality-residue</code></a></td>
+      <td>Produce atomic-chirality-residue.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">atomic-chirality-residue</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-atomic-tr-m-mpfr-50dps"></a><a href="../produce-atomic-tr-m-mpfr-50dps/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-atomic-tr-m-mpfr-50dps</code></a></td>
+      <td>Produce atomic-tr-m-mpfr-50dps-proton.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">atomic-tr-m-mpfr-50dps-proton</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-audits-brundan-kleshchev-audit"></a><a href="../produce-audits-brundan-kleshchev-audit/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-audits-brundan-kleshchev-audit</code></a></td>
+      <td>Produce brundan-kleshchev-audit.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">brundan-kleshchev-audit</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-audits-dimq-regularisation-schemes-probe"></a><a href="../produce-audits-dimq-regularisation-schemes-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-audits-dimq-regularisation-schemes-probe</code></a></td>
+      <td>Produce dimq-regularisation-schemes.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">dimq-regularisation-schemes</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-b-over-a-evaluator"></a><a href="../produce-b-over-a-evaluator/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-b-over-a-evaluator</code></a></td>
+      <td>Produce b-over-a.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">b-over-a</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-basis-knot-tables"></a><a href="../produce-basis-knot-tables/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-basis-knot-tables</code></a></td>
+      <td>Produce basis-knot-tables.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">basis-knot-tables</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-benzene-assembly-spine"></a><a href="../produce-benzene-assembly-spine/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-benzene-assembly-spine</code></a></td>
+      <td>Produce benzene-assembly-spine.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">benzene-assembly-spine</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-binding-block-multiplicative"></a><a href="../produce-binding-block-multiplicative/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-binding-block-multiplicative</code></a></td>
+      <td>Produce binding-block-multiplicative.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">binding-block-multiplicative</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-binding-depth-stratified-knot-weighted"></a><a href="../produce-binding-depth-stratified-knot-weighted/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-binding-depth-stratified-knot-weighted</code></a></td>
+      <td>Produce binding-depth-stratified-knot-weighted.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">binding-depth-stratified-knot-weighted</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-borromean-axial-coupling"></a><a href="../produce-borromean-axial-coupling/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-borromean-axial-coupling</code></a></td>
+      <td>Produce borromean-axial-coupling.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">borromean-axial-coupling</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-borromean-markov-trace-h-expansion-50dps"></a><a href="../produce-borromean-markov-trace-h-expansion-50dps/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-borromean-markov-trace-h-expansion-50dps</code></a></td>
+      <td>Produce borromean-markov-trace-h-expansion-50dps.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">borromean-markov-trace-h-expansion-50dps</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-bring-chiral-fibre-figure"></a><a href="../produce-bring-chiral-fibre-figure/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-bring-chiral-fibre-figure</code></a></td>
+      <td>Produce bring-chiral-fibre-figure.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">bring-chiral-fibre-figure</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-bring-trefoil-cinquefoil-channel"></a><a href="../produce-bring-trefoil-cinquefoil-channel/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-bring-trefoil-cinquefoil-channel</code></a></td>
+      <td>Produce bring-trefoil-cinquefoil-channel.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">bring-trefoil-cinquefoil-channel</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-bring-trilog-zeta5-depth-3"></a><a href="../produce-bring-trilog-zeta5-depth-3/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-bring-trilog-zeta5-depth-3</code></a></td>
+      <td>Produce bring-trilog-zeta5-depth-3.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">bring-trilog-zeta5-depth-3</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-c-k-beta-decay-witness"></a><a href="../produce-c-k-beta-decay-witness/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-c-k-beta-decay-witness</code></a></td>
+      <td>Produce c-k-beta-decay-bound.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">c-k-beta-decay-bound</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-canonical-isospin-pyhecke"></a><a href="../produce-canonical-isospin-pyhecke/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-canonical-isospin-pyhecke</code></a></td>
+      <td>Produce canonical-isospin-pyhecke.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">canonical-isospin-pyhecke</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-canonical-mass"></a><a href="../produce-canonical-mass/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-canonical-mass</code></a></td>
+      <td>Produce m-p-substrate-identity-50dps.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">m-p-substrate-identity-50dps</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-canonical-mass-table-extended"></a><a href="../produce-canonical-mass-table-extended/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-canonical-mass-table-extended</code></a></td>
+      <td>Produce canonical-mass-table-extended.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">canonical-mass-table-extended</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-canonical-tr-m-via-branching"></a><a href="../produce-canonical-tr-m-via-branching/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-canonical-tr-m-via-branching</code></a></td>
+      <td>Produce canonical-mass-table-extended.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">canonical-mass-table-extended</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-casimir-d6-qcorrection-structure"></a><a href="../produce-casimir-d6-qcorrection-structure/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-casimir-d6-qcorrection-structure</code></a></td>
+      <td>Produce casimir-d6-qcorrection-structure.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">casimir-d6-qcorrection-structure</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-catalan-binding"></a><a href="../produce-catalan-binding/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-catalan-binding</code></a></td>
+      <td>Produce catalan-binding.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">catalan-binding</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-ch-bond-writhe-lp"></a><a href="../produce-ch-bond-writhe-lp/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-ch-bond-writhe-lp</code></a></td>
+      <td>Produce 4 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">ch-bond-writhe-lp</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">molecular-frobenius-lp</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">molecular-trefoil-scan</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">unified-mass-molecular</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-charm-mass-tower-probe"></a><a href="../produce-charm-mass-tower-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-charm-mass-tower-probe</code></a></td>
+      <td>Produce charm-mass-tower.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">charm-mass-tower</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-chi-convention-audit"></a><a href="../produce-chi-convention-audit/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-chi-convention-audit</code></a></td>
+      <td>Produce codata-masses.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">codata-masses</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-chi-sym-alt-closed-form"></a><a href="../produce-chi-sym-alt-closed-form/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-chi-sym-alt-closed-form</code></a></td>
+      <td>Produce chi-sym-alt-closed-form.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">chi-sym-alt-closed-form</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-chirality-avg-content"></a><a href="../produce-chirality-avg-content/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-chirality-avg-content</code></a></td>
+      <td>Produce chirality-avg-content.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">chirality-avg-content</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-cl-n-l-value-decomposition"></a><a href="../produce-cl-n-l-value-decomposition/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-cl-n-l-value-decomposition</code></a></td>
+      <td>Produce cl-n-l-value-decomposition.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">cl-n-l-value-decomposition</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-cl3-zeta5-orbit-sum"></a><a href="../produce-cl3-zeta5-orbit-sum/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-cl3-zeta5-orbit-sum</code></a></td>
+      <td>Produce cl3-zeta5-orbit-sum.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">cl3-zeta5-orbit-sum</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-cl3-zeta5-pslq-search"></a><a href="../produce-cl3-zeta5-pslq-search/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-cl3-zeta5-pslq-search</code></a></td>
+      <td>Produce cl3-zeta5-pslq-search.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">cl3-zeta5-pslq-search</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-co-bond-order-active-set"></a><a href="../produce-co-bond-order-active-set/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-co-bond-order-active-set</code></a></td>
+      <td>Produce 2 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">co-bond-order-active-set</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">molecular-experimental-refs</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-codata-masses"></a><a href="../produce-codata-masses/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-codata-masses</code></a></td>
+      <td>Produce 2 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">cal-3-q-beta</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">codata-masses</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-confinement-operator-selection"></a><a href="../produce-confinement-operator-selection/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-confinement-operator-selection</code></a></td>
+      <td>Produce confinement-operator-selection.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">confinement-operator-selection</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-crystal-pole-order"></a><a href="../produce-crystal-pole-order/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-crystal-pole-order</code></a></td>
+      <td>Produce crystal-pole-order.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">crystal-pole-order</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-cyclotomic-depth3-dimension-pslq"></a><a href="../produce-cyclotomic-depth3-dimension-pslq/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-cyclotomic-depth3-dimension-pslq</code></a></td>
+      <td>Produce cyclotomic-depth3-dimension-pslq.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">cyclotomic-depth3-dimension-pslq</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-cyclotomic-trilog-imaginary"></a><a href="../produce-cyclotomic-trilog-imaginary/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-cyclotomic-trilog-imaginary</code></a></td>
+      <td>Produce cyclotomic-trilog-imaginary.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">cyclotomic-trilog-imaginary</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-d-density-derivation"></a><a href="../produce-d-density-derivation/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-d-density-derivation</code></a></td>
+      <td>Produce d-density-derivation.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">d-density-derivation</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-d-from-scratch"></a><a href="../produce-d-from-scratch/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-d-from-scratch</code></a></td>
+      <td>Produce 2 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">d-from-scratch</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">unified-low-isotope-predictor</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-delta-lambda-fr-identity-phase5c"></a><a href="../produce-delta-lambda-fr-identity-phase5c/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-delta-lambda-fr-identity-phase5c</code></a></td>
+      <td>Produce delta-lambda-fr-identity-phase5c.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">delta-lambda-fr-identity-phase5c</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-delta-lambda-value-witness"></a><a href="../produce-delta-lambda-value-witness/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-delta-lambda-value-witness</code></a></td>
+      <td>Produce delta-lambda-witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">delta-lambda-witness.json</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-delta-lambda-z-coefficient-and-slope"></a><a href="../produce-delta-lambda-z-coefficient-and-slope/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-delta-lambda-z-coefficient-and-slope</code></a></td>
+      <td>Produce delta-lambda-z-coefficient-and-slope.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">delta-lambda-z-coefficient-and-slope</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-delta-q-decoration"></a><a href="../produce-delta-q-decoration/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-delta-q-decoration</code></a></td>
+      <td>Produce delta-q-decoration.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">delta-q-decoration</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-delta-q-h-bracket-identity"></a><a href="../produce-delta-q-h-bracket-identity/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-delta-q-h-bracket-identity</code></a></td>
+      <td>Produce delta-q-h-bracket-identity.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">delta-q-h-bracket-identity</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-demazure-markov-trace"></a><a href="../produce-demazure-markov-trace/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-demazure-markov-trace</code></a></td>
+      <td>Produce demazure-markov-trace.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">demazure-markov-trace</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-derive-m-baryon-volume-form"></a><a href="../produce-derive-m-baryon-volume-form/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-derive-m-baryon-volume-form</code></a></td>
+      <td>Produce 2 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">codata-masses</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">m-baryon-volume-form</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-embeddable-knot-operator"></a><a href="../produce-embeddable-knot-operator/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-embeddable-knot-operator</code></a></td>
+      <td>Produce embeddable-knot-operator.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">embeddable-knot-operator</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-gb-depth-period-bring-fig8"></a><a href="../produce-gb-depth-period-bring-fig8/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-gb-depth-period-bring-fig8</code></a></td>
+      <td>Produce gb-depth-period-bring-fig8.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">gb-depth-period-bring-fig8</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-gb-filtration-jet-order-reader"></a><a href="../produce-gb-filtration-jet-order-reader/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-gb-filtration-jet-order-reader</code></a></td>
+      <td>Produce gb-filtration-jet-order-reader.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">gb-filtration-jet-order-reader</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-gb-filtration-jet-tracker"></a><a href="../produce-gb-filtration-jet-tracker/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-gb-filtration-jet-tracker</code></a></td>
+      <td>Produce gb-filtration-jet-order.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">gb-filtration-jet-order</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-gram-matrix-dual"></a><a href="../produce-gram-matrix-dual/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-gram-matrix-dual</code></a></td>
+      <td>Produce 3 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">gram-h3-symbolic-regression</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">gram-matrix-dual</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">gram-h3-convention-frame-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-h2-integer-lp"></a><a href="../produce-h2-integer-lp/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-h2-integer-lp</code></a></td>
+      <td>Produce 2 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">h2-integer-lp</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">h2-molecular-binding</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-h2s-chirality-residue-s3-holonomy"></a><a href="../produce-h2s-chirality-residue-s3-holonomy/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-h2s-chirality-residue-s3-holonomy</code></a></td>
+      <td>Produce 3 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">h2s-bring-residual-mixing</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">h2s-chiral-residue-bar-antisymmetric</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">h2s-chirality-residue-s3-holonomy</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-habiro-habiro-exact-mass-endomorphism"></a><a href="../produce-habiro-habiro-exact-mass-endomorphism/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-habiro-habiro-exact-mass-endomorphism</code></a></td>
+      <td>Produce habiro-exact-mass-endomorphism.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">habiro-exact-mass-endomorphism</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-hadron-knot-table"></a><a href="../produce-hadron-knot-table/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-hadron-knot-table</code></a></td>
+      <td>Produce hadron-knot-table.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">hadron-knot-table</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-hbond-categorical-action"></a><a href="../produce-hbond-categorical-action/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-hbond-categorical-action</code></a></td>
+      <td>Produce hbond-categorical-action.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">hbond-categorical-action</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-hbond-vdw-sdp"></a><a href="../produce-hbond-vdw-sdp/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-hbond-vdw-sdp</code></a></td>
+      <td>Produce hbond-vdw-sdp.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">hbond-vdw-sdp</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-hecke-hecke-crossed-module-q8"></a><a href="../produce-hecke-hecke-crossed-module-q8/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-hecke-hecke-crossed-module-q8</code></a></td>
+      <td>Produce hecke-crossed-module-q8.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">hecke-crossed-module-q8</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-hh-vertex-volume"></a><a href="../produce-hh-vertex-volume/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-hh-vertex-volume</code></a></td>
+      <td>Produce 2 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">hh-trefoil-corrected</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">hh-vertex-volume</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-hoefsmit-b-squared-reconciliation"></a><a href="../produce-hoefsmit-b-squared-reconciliation/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-hoefsmit-b-squared-reconciliation</code></a></td>
+      <td>Produce hoefsmit-b-squared-reconciliation.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">hoefsmit-b-squared-reconciliation</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-hyperbolic-volumes"></a><a href="../produce-hyperbolic-volumes/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-hyperbolic-volumes</code></a></td>
+      <td>Produce hyperbolic-volumes.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">hyperbolic-volumes</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-interface-composition"></a><a href="../produce-interface-composition/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-interface-composition</code></a></td>
+      <td>Produce canonical-braid-interface-composition.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">canonical-braid-interface-composition</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-isospin-mass-tower-collapse"></a><a href="../produce-isospin-mass-tower-collapse/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-isospin-mass-tower-collapse</code></a></td>
+      <td>Produce 2 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">branch-phase-fit-to-mass-tower</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">isospin-mass-tower-collapse</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-jet-knot-invariants"></a><a href="../produce-jet-knot-invariants/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-jet-knot-invariants</code></a></td>
+      <td>Produce 3 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">confined-knot-binding</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">intermediate-knot-detection</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">jet-knot-invariants</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-jet-tower-delta-max"></a><a href="../produce-jet-tower-delta-max/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-jet-tower-delta-max</code></a></td>
+      <td>Produce jet-tower-delta-max.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">jet-tower-delta-max</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-jonquiere-cyclotomic-general"></a><a href="../produce-jonquiere-cyclotomic-general/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-jonquiere-cyclotomic-general</code></a></td>
+      <td>Produce jonquiere-cyclotomic-general.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">jonquiere-cyclotomic-general</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-knot-operator-lp-selection"></a><a href="../produce-knot-operator-lp-selection/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-knot-operator-lp-selection</code></a></td>
+      <td>Produce knot-operator-lp-selection.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">knot-operator-lp-selection</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-knot-volumes"></a><a href="../produce-knot-volumes/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-knot-volumes</code></a></td>
+      <td>Produce 2 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">q-pinning-50-digit</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">knot-volumes</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-kummer-reflection-zeta5"></a><a href="../produce-kummer-reflection-zeta5/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-kummer-reflection-zeta5</code></a></td>
+      <td>Produce kummer-reflection-zeta5.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">kummer-reflection-zeta5</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-lambda-scale-rd-h4-half-symmetric"></a><a href="../produce-lambda-scale-rd-h4-half-symmetric/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-lambda-scale-rd-h4-half-symmetric</code></a></td>
+      <td>Produce lambda-scale-rd-h4-half-symmetric.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">lambda-scale-rd-h4-half-symmetric</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-lever1-cyclotomic-boundary-keystone-conjecture"></a><a href="../produce-lever1-cyclotomic-boundary-keystone-conjecture/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-lever1-cyclotomic-boundary-keystone-conjecture</code></a></td>
+      <td>Produce lever1-cyclotomic-boundary-keystone-conjecture.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">lever1-cyclotomic-boundary-keystone-conjecture</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-li-2-q-util"></a><a href="../produce-li-2-q-util/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-li-2-q-util</code></a></td>
+      <td>Produce m-p-borromean-verification-50dps.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">m-p-borromean-verification-50dps</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-lp-confinement-nf-forcing"></a><a href="../produce-lp-confinement-nf-forcing/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-lp-confinement-nf-forcing</code></a></td>
+      <td>Produce 2 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">lp-confinement-nf-forcing</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">nh-basis-shift</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-lr-fusion-self-conj-test"></a><a href="../produce-lr-fusion-self-conj-test/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-lr-fusion-self-conj-test</code></a></td>
+      <td>Produce lr-fusion-self-conj-test.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">lr-fusion-self-conj-test</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-m-p-substrate-identity-50dps"></a><a href="../produce-m-p-substrate-identity-50dps/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-m-p-substrate-identity-50dps</code></a></td>
+      <td>Produce m-p-substrate-identity-50dps.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">m-p-substrate-identity-50dps</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-markov-markov-peel"></a><a href="../produce-markov-markov-peel/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-markov-markov-peel</code></a></td>
+      <td>Produce markov-peel-atomic-tr-m.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">markov-peel-atomic-tr-m</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-markov-markov-peel-atomic-witness"></a><a href="../produce-markov-markov-peel-atomic-witness/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-markov-markov-peel-atomic-witness</code></a></td>
+      <td>Produce markov-peel-atomic-tr-m.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">markov-peel-atomic-tr-m</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-markov-markov-pipeline-cross-validator"></a><a href="../produce-markov-markov-pipeline-cross-validator/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-markov-markov-pipeline-cross-validator</code></a></td>
+      <td>Produce markov-pipeline-cross-validation.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">markov-pipeline-cross-validation</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-markov-markov-substrate-realizer"></a><a href="../produce-markov-markov-substrate-realizer/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-markov-markov-substrate-realizer</code></a></td>
+      <td>Produce 4 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">d-from-scratch</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">habiro-interpolate-cross-validation</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">markov-substrate-realization</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">proton-mass-codata-50dps</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-markov-markov-trace-atomic-proton-full"></a><a href="../produce-markov-markov-trace-atomic-proton-full/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-markov-markov-trace-atomic-proton-full</code></a></td>
+      <td>Produce 2 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">markov-trace-atomic-proton-full</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">markov-trace-axiomatic-proton</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-markov-markov-trace-canonical"></a><a href="../produce-markov-markov-trace-canonical/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-markov-markov-trace-canonical</code></a></td>
+      <td>Produce markov-trace-canonical.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">markov-trace-canonical</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-markov-markov-trace-recursive"></a><a href="../produce-markov-markov-trace-recursive/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-markov-markov-trace-recursive</code></a></td>
+      <td>Produce markov-trace-recursive.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">markov-trace-recursive</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-mass-formula-6term-mpfr-50dps"></a><a href="../produce-mass-formula-6term-mpfr-50dps/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-mass-formula-6term-mpfr-50dps</code></a></td>
+      <td>Produce mass-formula-6term-mpfr-50dps.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">mass-formula-6term-mpfr-50dps</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-mass-from-q-symbolic"></a><a href="../produce-mass-from-q-symbolic/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-mass-from-q-symbolic</code></a></td>
+      <td>Produce mass-from-q-symbolic.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">mass-from-q-symbolic</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-mass-table-ppb"></a><a href="../produce-mass-table-ppb/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-mass-table-ppb</code></a></td>
+      <td>Produce mass-table-ppb.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">mass-table-ppb</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-meson-em-sinh-closed-form"></a><a href="../produce-meson-em-sinh-closed-form/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-meson-em-sinh-closed-form</code></a></td>
+      <td>Produce meson-em-sinh-closed-form.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">meson-em-sinh-closed-form</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-mn-flavor-split-h4-plancherel"></a><a href="../produce-mn-flavor-split-h4-plancherel/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-mn-flavor-split-h4-plancherel</code></a></td>
+      <td>Produce mn-flavor-split-h4-plancherel.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">mn-flavor-split-h4-plancherel</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-molecular-angle-symmetric-block-general"></a><a href="../produce-molecular-angle-symmetric-block-general/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-molecular-angle-symmetric-block-general</code></a></td>
+      <td>Produce 7 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">h2o-angle-q2-symmetric-block</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">h2s-lone-pair-asymmetry</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">hybridization-sp-gap-braid</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">molecular-angle-derive-related</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">molecular-angle-master-table</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">molecular-angle-symmetric-block-general</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">molecular-braid-angle-table</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-molecular-experimental-refs"></a><a href="../produce-molecular-experimental-refs/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-molecular-experimental-refs</code></a></td>
+      <td>Produce molecular-experimental-refs.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">molecular-experimental-refs</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-mu-substrate-tension-audit-100dps"></a><a href="../produce-mu-substrate-tension-audit-100dps/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-mu-substrate-tension-audit-100dps</code></a></td>
+      <td>Produce 5 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">deuteron-from-scratch-ledger</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">mu-substrate-tension-audit-100dps</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">per-observable-100x-status</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">keystone-wlambda-vs-ylambda-projected-shift</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">q-pinning-50-digit</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-n-sym-numerical-anchor"></a><a href="../produce-n-sym-numerical-anchor/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-n-sym-numerical-anchor</code></a></td>
+      <td>Produce n-sym-numerical-anchor.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">n-sym-numerical-anchor</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-nf-transition-lifting"></a><a href="../produce-nf-transition-lifting/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-nf-transition-lifting</code></a></td>
+      <td>Produce nf-transition-lifting.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">nf-transition-lifting</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-observations-neutron-prediction-comparison-probe"></a><a href="../produce-observations-neutron-prediction-comparison-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-observations-neutron-prediction-comparison-probe</code></a></td>
+      <td>Produce neutron_prediction_comparison_probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">neutron_prediction_comparison_probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-observations-stability-cubic-table-from-probe"></a><a href="../produce-observations-stability-cubic-table-from-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-observations-stability-cubic-table-from-probe</code></a></td>
+      <td>Produce neutron_prediction_comparison_probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">neutron_prediction_comparison_probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-operator-selection-lp-symbolic-qq"></a><a href="../produce-operator-selection-lp-symbolic-qq/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-operator-selection-lp-symbolic-qq</code></a></td>
+      <td>Produce operator-selection-lp-symbolic-qq.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">operator-selection-lp-symbolic-qq</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-optimised-magic-verifier"></a><a href="../produce-optimised-magic-verifier/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-optimised-magic-verifier</code></a></td>
+      <td>Produce optimised-magic-verifier.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">optimised-magic-verifier</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-option-e-phase1-h3-cross-check"></a><a href="../produce-option-e-phase1-h3-cross-check/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-option-e-phase1-h3-cross-check</code></a></td>
+      <td>Produce option-e-phase1-h3-cross-check.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">option-e-phase1-h3-cross-check</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-pentagon-reduction-li2q"></a><a href="../produce-pentagon-reduction-li2q/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-pentagon-reduction-li2q</code></a></td>
+      <td>Produce pentagon-reduction-li2q.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">pentagon-reduction-li2q</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-per-braid-tower"></a><a href="../produce-per-braid-tower/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-per-braid-tower</code></a></td>
+      <td>Produce 2026-05-01-per-braid-tower.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">2026-05-01-per-braid-tower</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-per-nucleon-shift-derivation"></a><a href="../produce-per-nucleon-shift-derivation/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-per-nucleon-shift-derivation</code></a></td>
+      <td>Produce per-nucleon-shift-derivation.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">per-nucleon-shift-derivation</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-per-observable-100x-status"></a><a href="../produce-per-observable-100x-status/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-per-observable-100x-status</code></a></td>
+      <td>Produce per-observable-100x-status.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">per-observable-100x-status</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-photon-ir-zero-mode-bring"></a><a href="../produce-photon-ir-zero-mode-bring/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-photon-ir-zero-mode-bring</code></a></td>
+      <td>Produce photon-ir-zero-mode-bring.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">photon-ir-zero-mode-bring</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-photon-operator-table"></a><a href="../produce-photon-operator-table/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-photon-operator-table</code></a></td>
+      <td>Produce photon-operator-table.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">photon-operator-table</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probe-flavor-dressed-mass-from-substrate-split"></a><a href="../produce-probe-flavor-dressed-mass-from-substrate-split/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probe-flavor-dressed-mass-from-substrate-split</code></a></td>
+      <td>Produce flavor-dressed-mass-from-substrate-split.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">flavor-dressed-mass-from-substrate-split</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probe-he4-canonical-tr-m-fingerprint"></a><a href="../produce-probe-he4-canonical-tr-m-fingerprint/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probe-he4-canonical-tr-m-fingerprint</code></a></td>
+      <td>Produce he4-canonical-tr-m-block-fingerprint.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">he4-canonical-tr-m-block-fingerprint</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probe-inter-knot-decoupling"></a><a href="../produce-probe-inter-knot-decoupling/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probe-inter-knot-decoupling</code></a></td>
+      <td>Produce 2 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">c-k-beta-decay-bound</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">inter-knot-decoupling</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probe-operator-valued-ansatze-from-mass-endo"></a><a href="../produce-probe-operator-valued-ansatze-from-mass-endo/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probe-operator-valued-ansatze-from-mass-endo</code></a></td>
+      <td>Produce operator-valued-ansatze-from-mass-endo.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">operator-valued-ansatze-from-mass-endo</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probe-q-beta-operator-valued-n3"></a><a href="../produce-probe-q-beta-operator-valued-n3/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probe-q-beta-operator-valued-n3</code></a></td>
+      <td>Produce q-beta-operator-valued-N3.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">q-beta-operator-valued-N3</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-aomega-bps-sector-nondegeneracy"></a><a href="../produce-probes-aomega-bps-sector-nondegeneracy/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-aomega-bps-sector-nondegeneracy</code></a></td>
+      <td>Produce aomega-bps-sector-nondegeneracy.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">aomega-bps-sector-nondegeneracy</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-archimedean-knot-eigenbasis-probe"></a><a href="../produce-probes-archimedean-knot-eigenbasis-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-archimedean-knot-eigenbasis-probe</code></a></td>
+      <td>Produce archimedean-knot-eigenbasis-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">archimedean-knot-eigenbasis-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-body-number-expansion-classical-floor-probe"></a><a href="../produce-probes-body-number-expansion-classical-floor-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-body-number-expansion-classical-floor-probe</code></a></td>
+      <td>Produce body-number-expansion-classical-floor.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">body-number-expansion-classical-floor</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-casimir-hoefsmit-additivity-probe"></a><a href="../produce-probes-casimir-hoefsmit-additivity-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-casimir-hoefsmit-additivity-probe</code></a></td>
+      <td>Produce 3 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">casimir-epsilon-vacuum-probe</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">casimir-hoefsmit-additivity-probe</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">casimir-q-zeta-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-colour-cubic-branch-monodromy-probe"></a><a href="../produce-probes-colour-cubic-branch-monodromy-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-colour-cubic-branch-monodromy-probe</code></a></td>
+      <td>Produce colour-cubic-branch-monodromy.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">colour-cubic-branch-monodromy</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-colour-mu-bar-monodromy-probe"></a><a href="../produce-probes-colour-mu-bar-monodromy-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-colour-mu-bar-monodromy-probe</code></a></td>
+      <td>Produce colour-mu-bar-monodromy-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">colour-mu-bar-monodromy-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-commutative-chirality-vanishes-probe"></a><a href="../produce-probes-commutative-chirality-vanishes-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-commutative-chirality-vanishes-probe</code></a></td>
+      <td>Produce commutative-chirality-vanishes-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">commutative-chirality-vanishes-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-em-coupling-projection-probe"></a><a href="../produce-probes-em-coupling-projection-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-em-coupling-projection-probe</code></a></td>
+      <td>Produce em-coupling-projection-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">em-coupling-projection-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-ew-higgs-sdp-probe"></a><a href="../produce-probes-ew-higgs-sdp-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-ew-higgs-sdp-probe</code></a></td>
+      <td>Produce ew-higgs-sdp-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">ew-higgs-sdp-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-explicit-central-idempotent-probe"></a><a href="../produce-probes-explicit-central-idempotent-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-explicit-central-idempotent-probe</code></a></td>
+      <td>Produce explicit-central-idempotent-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">explicit-central-idempotent-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-flavor-split-substrate-probe"></a><a href="../produce-probes-flavor-split-substrate-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-flavor-split-substrate-probe</code></a></td>
+      <td>Produce flavor-split-substrate-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">flavor-split-substrate-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-frobenius-gram-matrix-probe"></a><a href="../produce-probes-frobenius-gram-matrix-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-frobenius-gram-matrix-probe</code></a></td>
+      <td>Produce frobenius-gram-matrix-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">frobenius-gram-matrix-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-full-twist-root-of-unity-probe"></a><a href="../produce-probes-full-twist-root-of-unity-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-full-twist-root-of-unity-probe</code></a></td>
+      <td>Produce 2 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">full-twist-delta-n2-verification</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">full-twist-root-of-unity-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-gap-a4-t15-character-polynomial-probe"></a><a href="../produce-probes-gap-a4-t15-character-polynomial-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-gap-a4-t15-character-polynomial-probe</code></a></td>
+      <td>Produce gap-a4-T15-character-polynomial-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">gap-a4-T15-character-polynomial-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-gauge-coupling-uniqueness-probe"></a><a href="../produce-probes-gauge-coupling-uniqueness-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-gauge-coupling-uniqueness-probe</code></a></td>
+      <td>Produce gauge-coupling-uniqueness-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">gauge-coupling-uniqueness-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-h2-gg-electron-h2-gg-electron-probe"></a><a href="../produce-probes-h2-gg-electron-h2-gg-electron-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-h2-gg-electron-h2-gg-electron-probe</code></a></td>
+      <td>Produce 2 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">h2-gg-electron</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">h2-ruled-electron</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-habiro-expansion-atomic-probe"></a><a href="../produce-probes-habiro-expansion-atomic-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-habiro-expansion-atomic-probe</code></a></td>
+      <td>Produce habiro-expansion-atomic-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">habiro-expansion-atomic-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-habiro-frobenius-probe"></a><a href="../produce-probes-habiro-frobenius-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-habiro-frobenius-probe</code></a></td>
+      <td>Produce habiro-frobenius-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">habiro-frobenius-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-he4-sdp-compositional-probe"></a><a href="../produce-probes-he4-sdp-compositional-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-he4-sdp-compositional-probe</code></a></td>
+      <td>Produce he4-sdp-compositional-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">he4-sdp-compositional-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-hecke-1d-irrep-closed-form-character-probe"></a><a href="../produce-probes-hecke-1d-irrep-closed-form-character-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-hecke-1d-irrep-closed-form-character-probe</code></a></td>
+      <td>Produce hecke-1d-irrep-closed-form-character-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">hecke-1d-irrep-closed-form-character-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-hecke-markov-transition-probe"></a><a href="../produce-probes-hecke-markov-transition-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-hecke-markov-transition-probe</code></a></td>
+      <td>Produce hecke-markov-transition-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">hecke-markov-transition-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-hoefsmit-seminormal-form-probe"></a><a href="../produce-probes-hoefsmit-seminormal-form-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-hoefsmit-seminormal-form-probe</code></a></td>
+      <td>Produce hoefsmit-seminormal-form-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">hoefsmit-seminormal-form-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-jucys-murphy-central-elements-qou-probe"></a><a href="../produce-probes-jucys-murphy-central-elements-qou-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-jucys-murphy-central-elements-qou-probe</code></a></td>
+      <td>Produce jucys-murphy-central-elements-qou-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">jucys-murphy-central-elements-qou-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-knot-factor-amphicheiral-bd-probe"></a><a href="../produce-probes-knot-factor-amphicheiral-bd-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-knot-factor-amphicheiral-bd-probe</code></a></td>
+      <td>Produce knot-factor-amphicheiral-BD-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">knot-factor-amphicheiral-BD-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-knot-factor-borromean-composite-probe"></a><a href="../produce-probes-knot-factor-borromean-composite-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-knot-factor-borromean-composite-probe</code></a></td>
+      <td>Produce knot-factor-borromean-composite-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">knot-factor-borromean-composite-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-pauli-factor-wedderburn-probe"></a><a href="../produce-probes-pauli-factor-wedderburn-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-pauli-factor-wedderburn-probe</code></a></td>
+      <td>Produce pauli-factor-wedderburn-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">pauli-factor-wedderburn-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-piece-a-corner-removal-probe"></a><a href="../produce-probes-piece-a-corner-removal-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-piece-a-corner-removal-probe</code></a></td>
+      <td>Produce piece-a-corner-removal.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">piece-a-corner-removal</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-plancherel-weight-boundedness-probe"></a><a href="../produce-probes-plancherel-weight-boundedness-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-plancherel-weight-boundedness-probe</code></a></td>
+      <td>Produce plancherel-weight-boundedness-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">plancherel-weight-boundedness-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-poly-q-proof-probe"></a><a href="../produce-probes-poly-q-proof-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-poly-q-proof-probe</code></a></td>
+      <td>Produce poly-q-proof.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">poly-q-proof</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-probe-d-dressing-is-proton-net"></a><a href="../produce-probes-probe-d-dressing-is-proton-net/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-probe-d-dressing-is-proton-net</code></a></td>
+      <td>Produce probe-d-dressing-is-proton-net.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">probe-d-dressing-is-proton-net</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-qbeta-route75-multiknot-gluing-symbolic-probe"></a><a href="../produce-probes-qbeta-route75-multiknot-gluing-symbolic-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-qbeta-route75-multiknot-gluing-symbolic-probe</code></a></td>
+      <td>Produce qbeta-route75-multiknot-gluing-symbolic.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">qbeta-route75-multiknot-gluing-symbolic</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-r2core-schwinger-measure-explore-probe"></a><a href="../produce-probes-r2core-schwinger-measure-explore-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-r2core-schwinger-measure-explore-probe</code></a></td>
+      <td>Produce r2core-schwinger-measure-explore.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">r2core-schwinger-measure-explore</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-reeb-5g-unit-anchor-scan"></a><a href="../produce-probes-reeb-5g-unit-anchor-scan/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-reeb-5g-unit-anchor-scan</code></a></td>
+      <td>Produce reeb-5g-unit-anchor-scan.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">reeb-5g-unit-anchor-scan</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-reeb-g-structural-identity-probe"></a><a href="../produce-probes-reeb-g-structural-identity-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-reeb-g-structural-identity-probe</code></a></td>
+      <td>Produce reeb-g-structural-identity.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">reeb-g-structural-identity</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-spectrahedral-phase-collapse-frame-probe"></a><a href="../produce-probes-spectrahedral-phase-collapse-frame-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-spectrahedral-phase-collapse-frame-probe</code></a></td>
+      <td>Produce spectrahedral-phase-collapse-frame-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">spectrahedral-phase-collapse-frame-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-symbolic-character-table-probe"></a><a href="../produce-probes-symbolic-character-table-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-symbolic-character-table-probe</code></a></td>
+      <td>Produce symbolic-character-table-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">symbolic-character-table-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-three-parameters-wedderburn-probe"></a><a href="../produce-probes-three-parameters-wedderburn-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-three-parameters-wedderburn-probe</code></a></td>
+      <td>Produce three-parameters-wedderburn-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">three-parameters-wedderburn-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-probes-y-lambda-cyclotomic-factorization-probe"></a><a href="../produce-probes-y-lambda-cyclotomic-factorization-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-probes-y-lambda-cyclotomic-factorization-probe</code></a></td>
+      <td>Produce y-lambda-cyclotomic-factorization-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">y-lambda-cyclotomic-factorization-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-proton-residual-rootcause"></a><a href="../produce-proton-residual-rootcause/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-proton-residual-rootcause</code></a></td>
+      <td>Produce 2 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">codata-masses</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">proton-residual-rootcause</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-q-beta-form-a-n1-extension"></a><a href="../produce-q-beta-form-a-n1-extension/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-q-beta-form-a-n1-extension</code></a></td>
+      <td>Produce 2 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">confinement-operator-selection</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">q-beta-form-a-n1-extension</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-q-beta-predicted"></a><a href="../produce-q-beta-predicted/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-q-beta-predicted</code></a></td>
+      <td>Produce cal-3-q-beta.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">cal-3-q-beta</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-q-pinning-50-digit"></a><a href="../produce-q-pinning-50-digit/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-q-pinning-50-digit</code></a></td>
+      <td>Produce 122 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">## Per-element coverage</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z00</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z01</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z02</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z03</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z04</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z05</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z06</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z07</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z08</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z09</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z10</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z100</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z101</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z102</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z103</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z104</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z105</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z106</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z107</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z108</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z109</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z11</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z110</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z111</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z112</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z113</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z114</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z115</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z116</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z117</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z118</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z12</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z13</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z14</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z15</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z16</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z17</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z18</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z19</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z20</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z21</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z22</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z23</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z24</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z25</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z26</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z27</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z28</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z29</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z30</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z31</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z32</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z33</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z34</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z35</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z36</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z37</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z38</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z39</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z40</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z41</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z42</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z43</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z44</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z45</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z46</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z47</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z48</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z49</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z50</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z51</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z52</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z53</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z54</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z55</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z56</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z57</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z58</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z59</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z60</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z61</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z62</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z63</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z64</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z65</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z66</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z67</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z68</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z69</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z70</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z71</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z72</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z73</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z74</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z75</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z76</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z77</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z78</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z79</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z80</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z81</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z82</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z83</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z84</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z85</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z86</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z87</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z88</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z89</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z90</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z91</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z92</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z93</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z94</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z95</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z96</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z97</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z98</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">canonical-isotope-witness-Z99</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">codata-masses</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">q-pinning-50-digit</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-q-pochhammer-seed"></a><a href="../produce-q-pochhammer-seed/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-q-pochhammer-seed</code></a></td>
+      <td>Produce 2 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">q-pochhammer-seed</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">snappy-cusp-seeding</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-q-spectral-truncation-tower"></a><a href="../produce-q-spectral-truncation-tower/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-q-spectral-truncation-tower</code></a></td>
+      <td>Produce q-spectral-truncation-tower.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">q-spectral-truncation-tower</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-qbeta-kashaev-remainder-omega-grade-probe"></a><a href="../produce-qbeta-kashaev-remainder-omega-grade-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-qbeta-kashaev-remainder-omega-grade-probe</code></a></td>
+      <td>Produce kashaev-remainder-omega-grade.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">kashaev-remainder-omega-grade</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-qbeta-qbessel-jackson-contiguity"></a><a href="../produce-qbeta-qbessel-jackson-contiguity/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-qbeta-qbessel-jackson-contiguity</code></a></td>
+      <td>Produce qbessel-jackson-contiguity.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">qbessel-jackson-contiguity</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-qbeta-qbessel-second-order-qdifference-equation"></a><a href="../produce-qbeta-qbessel-second-order-qdifference-equation/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-qbeta-qbessel-second-order-qdifference-equation</code></a></td>
+      <td>Produce qbessel-second-order-qdifference-equation.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">qbessel-second-order-qdifference-equation</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-qbeta-qbeta-bar-even-kernel-invariant-probe"></a><a href="../produce-qbeta-qbeta-bar-even-kernel-invariant-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-qbeta-qbeta-bar-even-kernel-invariant-probe</code></a></td>
+      <td>Produce qbeta-bar-even-kernel-invariant-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">qbeta-bar-even-kernel-invariant-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-qbeta-qbeta-c-k-recursion-scaffold"></a><a href="../produce-qbeta-qbeta-c-k-recursion-scaffold/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-qbeta-qbeta-c-k-recursion-scaffold</code></a></td>
+      <td>Produce qbeta-c-k-recursion-scaffold.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">qbeta-c-k-recursion-scaffold</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-qbeta-qbeta-ck-cache"></a><a href="../produce-qbeta-qbeta-ck-cache/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-qbeta-qbeta-ck-cache</code></a></td>
+      <td>Produce qbeta-ck-cache.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">qbeta-ck-cache</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-qbeta-qbeta-ck-sseries-operator-match-probe"></a><a href="../produce-qbeta-qbeta-ck-sseries-operator-match-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-qbeta-qbeta-ck-sseries-operator-match-probe</code></a></td>
+      <td>Produce qbeta-ck-sseries-operator-match.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">qbeta-ck-sseries-operator-match</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-qbeta-qbeta-ck-truncation-bias-correction-probe"></a><a href="../produce-qbeta-qbeta-ck-truncation-bias-correction-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-qbeta-qbeta-ck-truncation-bias-correction-probe</code></a></td>
+      <td>Produce qbeta-ck-truncation-bias-correction-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">qbeta-ck-truncation-bias-correction-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-qbeta-qbeta-ck-truncation-order-analysis"></a><a href="../produce-qbeta-qbeta-ck-truncation-order-analysis/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-qbeta-qbeta-ck-truncation-order-analysis</code></a></td>
+      <td>Produce qbeta-ck-truncation-order-analysis.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">qbeta-ck-truncation-order-analysis</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-qbeta-qbeta-cos-resummation-d-probe"></a><a href="../produce-qbeta-qbeta-cos-resummation-d-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-qbeta-qbeta-cos-resummation-d-probe</code></a></td>
+      <td>Produce qbeta-cos-resummation-d.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">qbeta-cos-resummation-d</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-qbeta-qbeta-decay-sdp-full-ck"></a><a href="../produce-qbeta-qbeta-decay-sdp-full-ck/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-qbeta-qbeta-decay-sdp-full-ck</code></a></td>
+      <td>Produce qbeta-decay-sdp-full-ck-derivation.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">qbeta-decay-sdp-full-ck-derivation</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-qbeta-qbeta-direction-sanity-gate-probe"></a><a href="../produce-qbeta-qbeta-direction-sanity-gate-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-qbeta-qbeta-direction-sanity-gate-probe</code></a></td>
+      <td>Produce qbeta-direction-sanity-gate-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">qbeta-direction-sanity-gate-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-qbeta-qbeta-habiro-f-from-shape-collapse"></a><a href="../produce-qbeta-qbeta-habiro-f-from-shape-collapse/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-qbeta-qbeta-habiro-f-from-shape-collapse</code></a></td>
+      <td>Produce qbeta-habiro-f-from-shape-collapse.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">qbeta-habiro-f-from-shape-collapse</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-qbeta-qbeta-markov-trace-norm-probe"></a><a href="../produce-qbeta-qbeta-markov-trace-norm-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-qbeta-qbeta-markov-trace-norm-probe</code></a></td>
+      <td>Produce qbeta-markov-trace-norm-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">qbeta-markov-trace-norm-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-qbeta-qbeta-odd-carrier-sector-decomposition"></a><a href="../produce-qbeta-qbeta-odd-carrier-sector-decomposition/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-qbeta-qbeta-odd-carrier-sector-decomposition</code></a></td>
+      <td>Produce qbeta-odd-carrier-sector-decomposition.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">qbeta-odd-carrier-sector-decomposition</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-qbeta-qbeta-per-block-paper-closed-forms"></a><a href="../produce-qbeta-qbeta-per-block-paper-closed-forms/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-qbeta-qbeta-per-block-paper-closed-forms</code></a></td>
+      <td>Produce qbeta-per-block-paper-closed-forms.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">qbeta-per-block-paper-closed-forms</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-qbeta-qbeta-precision-ladder-n5"></a><a href="../produce-qbeta-qbeta-precision-ladder-n5/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-qbeta-qbeta-precision-ladder-n5</code></a></td>
+      <td>Produce 3 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">delta-S-chain-audit</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">q-beta-operator-valued-N3</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">qbeta-precision-ladder-n5</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-qbeta-qbeta-q-eq-one-shadow-gate-probe"></a><a href="../produce-qbeta-qbeta-q-eq-one-shadow-gate-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-qbeta-qbeta-q-eq-one-shadow-gate-probe</code></a></td>
+      <td>Produce qbeta-q-eq-one-shadow-gate-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">qbeta-q-eq-one-shadow-gate-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-qbeta-qbeta-qbessel-contiguity-cfinite"></a><a href="../produce-qbeta-qbeta-qbessel-contiguity-cfinite/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-qbeta-qbeta-qbessel-contiguity-cfinite</code></a></td>
+      <td>Produce qbeta-qbessel-contiguity-cfinite.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">qbeta-qbessel-contiguity-cfinite</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-qbeta-qbeta-radius-of-convergence-gate-probe"></a><a href="../produce-qbeta-qbeta-radius-of-convergence-gate-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-qbeta-qbeta-radius-of-convergence-gate-probe</code></a></td>
+      <td>Produce qbeta-radius-of-convergence-gate-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">qbeta-radius-of-convergence-gate-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-qbeta-qbeta-silver-ratio-pell-lucas-ck"></a><a href="../produce-qbeta-qbeta-silver-ratio-pell-lucas-ck/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-qbeta-qbeta-silver-ratio-pell-lucas-ck</code></a></td>
+      <td>Produce qbeta-silver-ratio-pell-lucas-ck.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">qbeta-silver-ratio-pell-lucas-ck</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-qbeta-qbeta-silver-rationals"></a><a href="../produce-qbeta-qbeta-silver-rationals/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-qbeta-qbeta-silver-rationals</code></a></td>
+      <td>Produce qbeta-silver-rationals.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">qbeta-silver-rationals</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-qbeta-qbeta-symbolic-chain-alpha-b"></a><a href="../produce-qbeta-qbeta-symbolic-chain-alpha-b/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-qbeta-qbeta-symbolic-chain-alpha-b</code></a></td>
+      <td>Produce qbeta-symbolic-chain-alpha-b.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">qbeta-symbolic-chain-alpha-b</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-qou-mass-src-qou-mass-api"></a><a href="../produce-qou-mass-src-qou-mass-api/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-qou-mass-src-qou-mass-api</code></a></td>
+      <td>Produce 2 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">canonical-mass-table-242ppb</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">markov-free-energy-qvalues</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-reeb-flow-garside-closed-form-verification"></a><a href="../produce-reeb-flow-garside-closed-form-verification/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-reeb-flow-garside-closed-form-verification</code></a></td>
+      <td>Produce reeb-flow-garside-closed-form-verification.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">reeb-flow-garside-closed-form-verification</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-rho-k-graded-atomic-mass"></a><a href="../produce-rho-k-graded-atomic-mass/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-rho-k-graded-atomic-mass</code></a></td>
+      <td>Produce 2 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">rho-k-markov-multiplicativity</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">rho-k-graded-atomic-mass</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-rho-k-h3a-co-casimir"></a><a href="../produce-rho-k-h3a-co-casimir/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-rho-k-h3a-co-casimir</code></a></td>
+      <td>Produce rho-k-h3a-co-casimir.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">rho-k-h3a-co-casimir</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-rho-k-h3a-refinement"></a><a href="../produce-rho-k-h3a-refinement/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-rho-k-h3a-refinement</code></a></td>
+      <td>Produce rho-k-h3a-refinement.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">rho-k-h3a-refinement</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-rigid-monoidal-gap-invariance-check"></a><a href="../produce-rigid-monoidal-gap-invariance-check/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-rigid-monoidal-gap-invariance-check</code></a></td>
+      <td>Produce rigid-monoidal-gap-invariance.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">rigid-monoidal-gap-invariance</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-rosso-jones-three-strand-delta-q"></a><a href="../produce-rosso-jones-three-strand-delta-q/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-rosso-jones-three-strand-delta-q</code></a></td>
+      <td>Produce rosso-jones-three-strand-delta-q.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">rosso-jones-three-strand-delta-q</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-rt-c23-singlet-sign-core"></a><a href="../produce-rt-c23-singlet-sign-core/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-rt-c23-singlet-sign-core</code></a></td>
+      <td>Produce rt-c23-singlet-sign-core.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">rt-c23-singlet-sign-core</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-sdp-gamma-gamma-to-qqbar"></a><a href="../produce-sdp-gamma-gamma-to-qqbar/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-sdp-gamma-gamma-to-qqbar</code></a></td>
+      <td>Produce sdp-gamma-gamma-to-qqbar.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">sdp-gamma-gamma-to-qqbar</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-shift-from-nf-basis"></a><a href="../produce-shift-from-nf-basis/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-shift-from-nf-basis</code></a></td>
+      <td>Produce shift-from-nf-basis.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">shift-from-nf-basis</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-sigma-f-electron-shell-chain"></a><a href="../produce-sigma-f-electron-shell-chain/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-sigma-f-electron-shell-chain</code></a></td>
+      <td>Produce sigma-f-electron-shell-chain.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">sigma-f-electron-shell-chain</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-sigma-shell-from-beta-chain"></a><a href="../produce-sigma-shell-from-beta-chain/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-sigma-shell-from-beta-chain</code></a></td>
+      <td>Produce sigma-shell-from-beta-chain.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">sigma-shell-from-beta-chain</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-spectral-decomposition-qvalue-d"></a><a href="../produce-spectral-decomposition-qvalue-d/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-spectral-decomposition-qvalue-d</code></a></td>
+      <td>Produce spectral-decomposition-qvalue-d.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">spectral-decomposition-qvalue-d</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-staircase-ew-residual-conjecture"></a><a href="../produce-staircase-ew-residual-conjecture/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-staircase-ew-residual-conjecture</code></a></td>
+      <td>Produce 2 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">close-321-weinberg-gap</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">staircase-ew-residual-conjecture</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-substrate-deuteron-tower-fusion-frame-probe"></a><a href="../produce-substrate-deuteron-tower-fusion-frame-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-substrate-deuteron-tower-fusion-frame-probe</code></a></td>
+      <td>Produce deuteron-tower-fusion-frame-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">deuteron-tower-fusion-frame-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-substrate-hecke-core"></a><a href="../produce-substrate-hecke-core/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-substrate-hecke-core</code></a></td>
+      <td>Produce hecke-core-symbolic-migration.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">hecke-core-symbolic-migration</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-substrate-toroidal-level-selection-three-strand-probe"></a><a href="../produce-substrate-toroidal-level-selection-three-strand-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-substrate-toroidal-level-selection-three-strand-probe</code></a></td>
+      <td>Produce toroidal-level-selection-three-strand-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">toroidal-level-selection-three-strand-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-substrate-whipple-rotation-involution-probe"></a><a href="../produce-substrate-whipple-rotation-involution-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-substrate-whipple-rotation-involution-probe</code></a></td>
+      <td>Produce whipple-rotation-involution-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">whipple-rotation-involution-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-sweeps-paper-six-term-isotope-sweep"></a><a href="../produce-sweeps-paper-six-term-isotope-sweep/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-sweeps-paper-six-term-isotope-sweep</code></a></td>
+      <td>Produce 2 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">codata-masses</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">paper-six-term-isotope-sweep</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-term6-full-pole-sum"></a><a href="../produce-term6-full-pole-sum/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-term6-full-pole-sum</code></a></td>
+      <td>Produce 2 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">q-pinning-50-digit</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">term6-full-pole-sum</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-term6-residues-at-roots"></a><a href="../produce-term6-residues-at-roots/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-term6-residues-at-roots</code></a></td>
+      <td>Produce term6-residues-at-roots.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">term6-residues-at-roots</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-term7-alpha5-crystal-derivation"></a><a href="../produce-term7-alpha5-crystal-derivation/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-term7-alpha5-crystal-derivation</code></a></td>
+      <td>Produce term7-alpha5-crystal-derivation.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">term7-alpha5-crystal-derivation</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-toffoli-lp-stability"></a><a href="../produce-toffoli-lp-stability/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-toffoli-lp-stability</code></a></td>
+      <td>Produce toffoli-lp-stability.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">toffoli-lp-stability</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-tools-hecke-engine-src-gb-nf-reducer-rs"></a><a href="../produce-tools-hecke-engine-src-gb-nf-reducer-rs/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-tools-hecke-engine-src-gb-nf-reducer-rs</code></a></td>
+      <td>Produce hecke-core-symbolic-migration.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">hecke-core-symbolic-migration</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-tools-pyhecke-python-pyhecke-wedderburn"></a><a href="../produce-tools-pyhecke-python-pyhecke-wedderburn/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-tools-pyhecke-python-pyhecke-wedderburn</code></a></td>
+      <td>Produce wedderburn-lp-ew-wiring.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">wedderburn-lp-ew-wiring</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-tr-m-q-hecke-seminormal"></a><a href="../produce-tr-m-q-hecke-seminormal/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-tr-m-q-hecke-seminormal</code></a></td>
+      <td>Produce 7 witnesses</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">atomic-tr-m-mpfr-50dps-proton</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">atomic-tr-m-mpfr-50dps</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">binding-k-solver</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">proton-mass-codata-50dps</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">rho-k-h3a-gg-trajectory</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">rho-k-h3a-lp-dual</code>?: RepoPath, <code class="language-plaintext highlighter-rouge">tr-m-q-hecke-seminormal</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-two-filtration-bridge-small-cases"></a><a href="../produce-two-filtration-bridge-small-cases/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-two-filtration-bridge-small-cases</code></a></td>
+      <td>Produce two-filtration-bridge-small-cases.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">two-filtration-bridge-small-cases</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-universal-ilp"></a><a href="../produce-universal-ilp/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-universal-ilp</code></a></td>
+      <td>Produce universal-ilp.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">universal-ilp</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-vdw-pskew-sinh-probe"></a><a href="../produce-vdw-pskew-sinh-probe/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-vdw-pskew-sinh-probe</code></a></td>
+      <td>Produce vdw-pskew-sinh-probe.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">vdw-pskew-sinh-probe</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-weak-symmetric-normalization-value"></a><a href="../produce-weak-symmetric-normalization-value/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-weak-symmetric-normalization-value</code></a></td>
+      <td>Produce weak-symmetric-normalization-value.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">weak-symmetric-normalization-value</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-wedderburn-mass-table-convention-d"></a><a href="../produce-wedderburn-mass-table-convention-d/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-wedderburn-mass-table-convention-d</code></a></td>
+      <td>Produce wedderburn-mass-table-convention-d.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">wedderburn-mass-table-convention-d</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="produce-y-lambda-macdonald-telescope"></a><a href="../produce-y-lambda-macdonald-telescope/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/produce-y-lambda-macdonald-telescope</code></a></td>
+      <td>Produce y-lambda-macdonald-telescope.witness.json</td>
+      <td>—</td>
+      <td><code class="language-plaintext highlighter-rouge">y-lambda-macdonald-telescope</code>?: RepoPath</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="qou-mass-vendor-sync"></a><a href="../qou-mass-vendor-sync/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/qou-mass-vendor-sync</code></a></td>
+      <td>Regenerate qou-mass’s vendored modules</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="reference-literals-dry-run"></a><a href="../reference-literals-dry-run/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/reference-literals-dry-run</code></a></td>
+      <td>Preview replacing hand-typed constants with CODATA symbols</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="references-bib-check"></a><a href="../references-bib-check/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/references-bib-check</code></a></td>
+      <td>Check references.bib against the bibliography</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="references-library-sync-check"></a><a href="../references-library-sync-check/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/references-library-sync-check</code></a></td>
+      <td>Check the bibliography is in sync with the library</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="references-pdf-check"></a><a href="../references-pdf-check/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/references-pdf-check</code></a></td>
+      <td>Check every reference’s PDF path resolves</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="references-propose-from-library"></a><a href="../references-propose-from-library/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/references-propose-from-library</code></a></td>
+      <td>Propose bibliography entries for uncited library documents</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+    <tr>
+      <td><a id="witness-refresh-plan"></a><a href="../witness-refresh-plan/"><code class="language-plaintext highlighter-rouge">POST</code> <code class="language-plaintext highlighter-rouge">/tools/witness-refresh-plan</code></a></td>
+      <td>Plan a witness refresh</td>
+      <td>—</td>
+      <td>—</td>
+      <td>shell</td>
+    </tr>
+  </tbody>
+</table></div>
+<h2 id="mcp-tools-0">
+  
+  
+    <a href="#mcp-tools-0" class="anchor-heading" aria-labelledby="mcp-tools-0"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> MCP tools (0)
+  
+  
+</h2>
+    
+
+<p>None of these Tools is reached over MCP.</p>
+
+          
+
+          
+            
+          
+        </main>
+        
+<hr>
+<footer>
+  
+
+  <p class="text-small mb-0">Quantum Observable Universe — built with <a href="https://litlfred.github.io/folio-assistant/">folio-assistant</a>.</p><p class="text-small mb-0 fa-build-stamp">
+  deployed
+  <a href="https://github.com/litlfred/folio-assistant/actions"><code>dev</code></a></p>
+
+
+  
+</footer>
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+    
+  
+</body>
+</html>

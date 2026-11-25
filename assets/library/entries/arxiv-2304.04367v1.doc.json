@@ -1,0 +1,926 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2304.04367v1",
+  "title": "Angle-dependent pair production in the polarized two-photon Breit-Wheeler process",
+  "variant": "pdf",
+  "pages": 12,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Angle-dependent pair production in the polarized two-photon Breit-Wheeler process",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-angle-dependent-pair-production-in-the-polarized"
+    },
+    {
+      "level": 2,
+      "title": "Abstract",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "I Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-i-introduction"
+    },
+    {
+      "level": 2,
+      "title": "II Methods of theory and numerical simulation",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-ii-methods-of-theory-and-numerical-simulation"
+    },
+    {
+      "level": 3,
+      "title": "A Calculation of completely spin-dependent LBW cross section",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-a-calculation-of-completely-spin-dependent-lbw-c"
+    },
+    {
+      "level": 3,
+      "title": "B Constructing polarized LBW process with MC sampling",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-b-constructing-polarized-lbw-process-with-mc-sam"
+    },
+    {
+      "level": 2,
+      "title": "III Theoretical and numerical analysis of polarization effects in LBW process",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-iii-theoretical-and-numerical-analysis-of-polari"
+    },
+    {
+      "level": 3,
+      "title": "A Analytical calculation of pair polarization from angle-dependent cross section",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-a-analytical-calculation-of-pair-polarization-fr"
+    },
+    {
+      "level": 3,
+      "title": "B Angle dependence of LBW pairs induced by linear polarization of photon from numerical simulation",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-b-angle-dependence-of-lbw-pairs-induced-by-linea"
+    },
+    {
+      "level": 2,
+      "title": "IV Discussion",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "V CONCLUSION",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "VI ACKNOWLEDGEMENT",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-vi-acknowledgement"
+    },
+    {
+      "level": 2,
+      "title": "A The expressions of the total cross section and spin-summarized differential cross section",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-a-the-expressions-of-the-total-cross-section-and"
+    },
+    {
+      "level": 2,
+      "title": "B The expressions of the coefficients in Eq. (10)",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-b-the-expressions-of-the-coefficients-in-eq-10"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-angle-dependent-pair-production-in-the-polarized",
+      "number": null,
+      "title": "Angle-dependent pair production in the polarized two-photon Breit-Wheeler process",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 267,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polarized lbw",
+          "heading": false
+        },
+        {
+          "term": "lbw process",
+          "heading": false
+        },
+        {
+          "term": "key laboratory",
+          "heading": false
+        },
+        {
+          "term": "angle-dependent",
+          "heading": true
+        },
+        {
+          "term": "hebei",
+          "heading": false
+        },
+        {
+          "term": "laser-driven",
+          "heading": false
+        },
+        {
+          "term": "polarization",
+          "heading": false
+        },
+        {
+          "term": "γ-photon",
+          "heading": false
+        }
+      ],
+      "extract": "Qian Zhao,1 Yan-Xi Wu,1, 2 Mamutjan Ababekri,1 Zhong-Peng Li,1 Liang Tang,3, ∗and Jian-Xing Li1, † 1Ministry of Education Key Laboratory for Nonequilibrium Synthesis and Modulation of Condensed Matter, Shaanxi Province Key Laboratory of Quantum Information and Quantum Optoelectronic Devices, School of Physics, Xi’an Jiaotong University, Xi’an 710049, China 2Department of Physics, Northwest University, Xi’an 710069,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-i-introduction",
+      "number": null,
+      "title": "I Introduction",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 727,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polarized lbw",
+          "heading": false
+        },
+        {
+          "term": "lbw cross",
+          "heading": false
+        },
+        {
+          "term": "lbw process",
+          "heading": false
+        },
+        {
+          "term": "lbw pairs",
+          "heading": false
+        },
+        {
+          "term": "colliding photons",
+          "heading": false
+        },
+        {
+          "term": "photon polarization",
+          "heading": false
+        },
+        {
+          "term": "circular polarization",
+          "heading": false
+        },
+        {
+          "term": "real photons",
+          "heading": false
+        }
+      ],
+      "extract": "The quantum electrodynamics (QED) theory predicts the interaction between photons, wherein the collision of two real γ photons can produce the e+e−pair, known as the linear Breit- Wheeler (LBW) process. The LBW process is the second-order process in QED [1], and its validation in terrestrial laborato- ries requires an ultrahigh-brilliance γ-ray beam with a peak cross-section of ∼1.6 × 10−29 m2 [2]. To date, the only",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-ii-methods-of-theory-and-numerical-simulation",
+      "number": null,
+      "title": "II Methods of theory and numerical simulation",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 131,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "numerical simulation",
+          "heading": true
+        },
+        {
+          "term": "photon",
+          "heading": false
+        },
+        {
+          "term": "matrixes",
+          "heading": false
+        },
+        {
+          "term": "beam-beam",
+          "heading": false
+        },
+        {
+          "term": "polarization",
+          "heading": false
+        }
+      ],
+      "extract": "SIMULATION The LBW process’s polarized scattering amplitude, with arbitrary initial photon polarization and ﬁnal positron (elec- tron) spins, can generally be described through the photon and lepton density matrixes. Stokes parameters and mean spin vectors can be utilized to describe the arbitrary polarization states of the photon and e± in the cross section. To establish a connection between theoretical predictions",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-a-calculation-of-completely-spin-dependent-lbw-c",
+      "number": null,
+      "title": "A Calculation of completely spin-dependent LBW cross section",
+      "level": 3,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 925,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lbw",
+          "heading": true
+        },
+        {
+          "term": "cross section",
+          "heading": true
+        },
+        {
+          "term": "lbw process",
+          "heading": false
+        },
+        {
+          "term": "circular polarization",
+          "heading": false
+        },
+        {
+          "term": "transverse polarization",
+          "heading": false
+        },
+        {
+          "term": "scattering amplitude",
+          "heading": false
+        },
+        {
+          "term": "spin vectors",
+          "heading": false
+        },
+        {
+          "term": "arbitrary frame",
+          "heading": false
+        }
+      ],
+      "extract": "section In the calculation of the completely spin-dependent cross section of the LBW process, we use the Lorentz invariant density matrix to describe the arbitrary polarization. The Man- delstam invariants in the LBW process are deﬁned as s = (k1 + k2)2/m2 e = (p+ + p−)2/m2 e, (1a) t = (k1 −p+)2/m2 e = (p−−k2)2/m2 e, (1b) u = (k1 −p−)2/m2 e = (p+ −k2)2/m2 e, (1c) where me is the mass of electron, k1,2 the 4-momenta",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-b-constructing-polarized-lbw-process-with-mc-sam",
+      "number": null,
+      "title": "B Constructing polarized LBW process with MC sampling",
+      "level": 3,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 1210,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lbw process",
+          "heading": true
+        },
+        {
+          "term": "σγγ dtdϕ",
+          "heading": false
+        },
+        {
+          "term": "azimuthal angle",
+          "heading": false
+        },
+        {
+          "term": "transverse polarization",
+          "heading": false
+        },
+        {
+          "term": "transformed stokes",
+          "heading": false
+        },
+        {
+          "term": "scattering angle",
+          "heading": false
+        },
+        {
+          "term": "linear polarization",
+          "heading": false
+        },
+        {
+          "term": "observed spin",
+          "heading": false
+        }
+      ],
+      "extract": "Firstly, a clariﬁcation of the coordinate system of the LBW process in the c.m. frame is presented in Fig. 1. In this frame, the polar and azimuthal directions of a pair are deﬁned with respect to the photon momentum k. Speciﬁcally, the polar direction is given by the scattering angle θs in the scattering plane, while the azimuthal angle ϕ is determined by p⊥in the azimuthal plane ˆθ −ˆφ. The scattering process is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-iii-theoretical-and-numerical-analysis-of-polari",
+      "number": null,
+      "title": "III Theoretical and numerical analysis of polarization effects in LBW process",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 6,
+      "summary": null,
+      "keywords": [],
+      "extract": "POLARIZATION EFFECTS IN LBW PROCESS A.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-a-analytical-calculation-of-pair-polarization-fr",
+      "number": null,
+      "title": "A Analytical calculation of pair polarization from angle-dependent cross section",
+      "level": 3,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 909,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "σγγ dtdϕ",
+          "heading": false
+        },
+        {
+          "term": "polarization",
+          "heading": true
+        },
+        {
+          "term": "transverse polarization",
+          "heading": false
+        },
+        {
+          "term": "section σγγ",
+          "heading": false
+        },
+        {
+          "term": "helicity channels",
+          "heading": false
+        },
+        {
+          "term": "helicity ﬂip",
+          "heading": false
+        },
+        {
+          "term": "cross section",
+          "heading": true
+        },
+        {
+          "term": "colliding axis",
+          "heading": false
+        }
+      ],
+      "extract": "angle-dependent cross section The dependence of the spin-summarized cross section d ¯σγγ/dtdϕ on energy and angle is resolved by diﬀerent con- ﬁgurations of photon polarization, as illustrated in Figure 2. The expression of d ¯σγγ/dtdϕ, given by Eq. (A2), re- veals that d ¯σγγ/dtdϕ is independent of ϕ for the CP photons FIG 2. (a) and (b) Distributions of d ¯σγγ/dtdϕ with γ(1) R γ(2) R and γ(1) R γ(2) L collisions,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-b-angle-dependence-of-lbw-pairs-induced-by-linea",
+      "number": null,
+      "title": "B Angle dependence of LBW pairs induced by linear polarization of photon from numerical simulation",
+      "level": 3,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 1217,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lbw pairs",
+          "heading": true
+        },
+        {
+          "term": "linear polarization",
+          "heading": true
+        },
+        {
+          "term": "polarization ptot",
+          "heading": false
+        },
+        {
+          "term": "numerical simulation",
+          "heading": true
+        },
+        {
+          "term": "collision scenario",
+          "heading": false
+        },
+        {
+          "term": "azimuthal angle",
+          "heading": false
+        },
+        {
+          "term": "γ-photon beams",
+          "heading": false
+        },
+        {
+          "term": "photon",
+          "heading": true
+        }
+      ],
+      "extract": "polarization of photon from numerical simulation To retrieve the azimuthal and polar dependence of e+e− pairs independently, we perform a MC numerical simulation. We initialize approximately 1011 photons into a bi-gaussian beam with uniform energy distribution between 0.1 MeV-2 FIG 5. (a) and (b) Distributions of produced number density Npair of LBW pairs for collision scenarios with relatively parallel (ξ(1) 3 ξ(2)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-vi-acknowledgement",
+      "number": null,
+      "title": "VI ACKNOWLEDGEMENT",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 53,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dation",
+          "heading": false
+        },
+        {
+          "term": "laboratory",
+          "heading": false
+        },
+        {
+          "term": "foun",
+          "heading": false
+        }
+      ],
+      "extract": "The work is supported by the National Natural Science Foun- dation of China (Grants Nos. 11874295, 12022506, U2267204, 12105217), the Open Fund of the State Key Laboratory of High Field Laser Physics (Shanghai Institute of Optics and Fine Me- chanics), and the foundation of science and technology on plasma physics laboratory (no. JCKYS2021212008).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-a-the-expressions-of-the-total-cross-section-and",
+      "number": null,
+      "title": "A The expressions of the total cross section and spin-summarized differential cross section",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 404,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spin-summarized",
+          "heading": true
+        },
+        {
+          "term": "cross section",
+          "heading": true
+        },
+        {
+          "term": "spin-summarized diﬀerential",
+          "heading": false
+        }
+      ],
+      "extract": "spin-summarized diﬀerential cross section The coeﬃcients f1, f2, f3 and f4 in Eq. (8) are f1 = −x −y + 2 p (x + y −4)(x + y) , (A1a) f2 = 2 p (x + y −4)(x + y) , (A1b) f3 = − 2 √xy −x −y p x + y −4(x + y) , (A1c) f4 = y −x 2 p x + y −4 √xy −x −y . (A1d) with the normalized variants x = 1 −t and y = 1 −u. The expressions of the spin-summarized diﬀerential cross section is d2 ¯σγγ dtdϕ = r2 em2 e 64ε4 (F0 + F1) (A2)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-b-the-expressions-of-the-coefficients-in-eq-10",
+      "number": null,
+      "title": "B The expressions of the coefficients in Eq. (10)",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 12,
+      "labelStart": "8",
+      "labelEnd": "12",
+      "words": 3210,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "x3y x2y",
+          "heading": false
+        },
+        {
+          "term": "polarized photon",
+          "heading": false
+        },
+        {
+          "term": "γ-ray beams",
+          "heading": false
+        },
+        {
+          "term": "plasma phys",
+          "heading": false
+        },
+        {
+          "term": "breit-wheeler pair",
+          "heading": false
+        },
+        {
+          "term": "pair production",
+          "heading": false
+        },
+        {
+          "term": "linear breit-wheeler",
+          "heading": false
+        },
+        {
+          "term": "ultrahigh brilliance",
+          "heading": false
+        }
+      ],
+      "extract": "The ﬁnal-state-spin irrelevant term of Eq. (10) is F = −8(x(−y)+2x+2y) xy ξ(1) 1 ξ(2) 1 − 4(x(−y)+2x+2y)(x2+y2) x2y2 ξ(1) 2 ξ(2) 2 − 8(x2y2−2x2y+2x2−2xy2+4xy+2y2) x2y2 ξ(1) 3 ξ(2) 3 + 16(x+y)(x(−y)+x+y) x2y2 (ξ(1) 3 + ξ(2) 3 ) (B1) The coeﬃcients of electron spin ζ−,i in Eq. (10) are G− 1 = −8(x + y) p x2y −x2 + xy2 −2xy −y2 x2y2 \u0010 ξ(1) 1 ξ(2) 2 x −ξ(2) 1 ξ(1) 2 y \u0011 , (B2a) G− 2 = 4(x + y) p x2 + 2xy −4x + y2 −4y",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "photon polarization",
+      "heading": true
+    },
+    {
+      "term": "polarized lbw",
+      "heading": true
+    },
+    {
+      "term": "lbw cross",
+      "heading": true
+    },
+    {
+      "term": "longitudinal polarization",
+      "heading": true
+    },
+    {
+      "term": "transverse polarization",
+      "heading": true
+    },
+    {
+      "term": "lbw process",
+      "heading": true
+    },
+    {
+      "term": "σγγ dtdϕ",
+      "heading": true
+    },
+    {
+      "term": "polarization eﬀects",
+      "heading": false
+    },
+    {
+      "term": "pair polarization",
+      "heading": true
+    },
+    {
+      "term": "polarization vectors",
+      "heading": false
+    },
+    {
+      "term": "photon beams",
+      "heading": false
+    },
+    {
+      "term": "polarization ptot",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Coordinate system of the LBW process in the c.m. frame. pe",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "(a) and (b) Distributions of d ¯σγγ/dtdϕ with γ(1)",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "In the scenario of γ(1)",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Distributions of the total polarization |ζ|, longitudinal polarization ζ∥, and transverse polarization ζ⊥, calculated from Eq. (20) with",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "(a) and (b) Distributions of produced number density Npair of",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "MC simulation for collision scenario with a LP photon beam and a CP photon beam: (a) and (b) Distributions of statistical polarization Ptot in ε −ϕ plane and ε −θs plane, respectively. (c) and (d) Statistical variations of total polarization Ptot of LBW pairs, with longitudinal component P∥and trans",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p004-1",
+      "file": "images/img-p004-1.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-1",
+      "file": "images/img-p005-1.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-2",
+      "file": "images/img-p005-2.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-1",
+      "file": "images/img-p006-1.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-2",
+      "file": "images/img-p006-2.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-3",
+      "file": "images/img-p006-3.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 15,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 6
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2304.04367v1"
+  }
+}

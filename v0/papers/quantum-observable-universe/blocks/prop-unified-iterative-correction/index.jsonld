@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-unified-iterative-correction",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:unified-iterative-correction",
+  "kind": "proposition",
+  "title": "Unified iterative LP-dual correction: per-step Wedderburn projection over all partitions $\\lambda \\vdash k$ for $k = 2, \\ldots, K$, starting at $A = 1$ (no special cases)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-wigner-np-pairing",
+    "papers/quantum-observable-universe/blocks/prop-mass-coefficient-shadow-price",
+    "papers/quantum-observable-universe/blocks/def-q-resolvent"
+  ],
+  "cites": [
+    "references/kerov1996",
+    "references/feray-meliot2012",
+    "references/satula1997"
+  ],
+  "tags": [
+    "wigner-energy",
+    "iterative-correction",
+    "partition-22",
+    "q-hook-walk",
+    "binding",
+    "restartable-witness"
+  ],
+  "leanRef": "qou:QOU.MassTheory.ConfinedKnotBinding.Unified.unified_iterative_correction",
+  "text": "unified-iterative-correction.md",
+  "leanSource": "unified-iterative-correction.lean",
+  "provenance": "authored"
+}

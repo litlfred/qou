@@ -1,0 +1,1157 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0408078v2",
+  "title": "A basis for the full Homfly skein of the annulus",
+  "variant": "pdf",
+  "pages": 27,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "The skein models",
+      "number": null,
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-the-skein-models"
+    },
+    {
+      "level": 2,
+      "title": "The plane",
+      "number": null,
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-the-plane"
+    },
+    {
+      "level": 2,
+      "title": "The Hecke algebras and extended variants",
+      "number": null,
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-the-hecke-algebras-and-extended-variants"
+    },
+    {
+      "level": 2,
+      "title": "The annulus",
+      "number": null,
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-the-annulus"
+    },
+    {
+      "level": 2,
+      "title": "The annulus with two boundary points",
+      "number": null,
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-the-annulus-with-two-boundary-points"
+    },
+    {
+      "level": 2,
+      "title": "Skein involutions",
+      "number": null,
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-skein-involutions"
+    },
+    {
+      "level": 2,
+      "title": "Some basic elements in the annulus",
+      "number": null,
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-some-basic-elements-in-the-annulus"
+    },
+    {
+      "level": 2,
+      "title": "The meridian maps of the skein C",
+      "number": null,
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-the-meridian-maps-of-the-skein-c"
+    },
+    {
+      "level": 2,
+      "title": "Relations between C and A",
+      "number": null,
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-relations-between-c-and-a"
+    },
+    {
+      "level": 1,
+      "title": "Matrix-based calculations",
+      "number": null,
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-matrix-based-calculations"
+    },
+    {
+      "level": 2,
+      "title": "Notation",
+      "number": null,
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-notation"
+    },
+    {
+      "level": 2,
+      "title": "Calculations",
+      "number": null,
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-calculations"
+    },
+    {
+      "level": 1,
+      "title": "Eigenvectors of the meridian maps",
+      "number": null,
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-eigenvectors-of-the-meridian-maps"
+    },
+    {
+      "level": 2,
+      "title": "Construction of Q,",
+      "number": null,
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-construction-of-q"
+    },
+    {
+      "level": 2,
+      "title": "Properties of the basis elements Q,",
+      "number": null,
+      "page": 23,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-properties-of-the-basis-elements-q"
+    },
+    {
+      "level": 2,
+      "title": "(1,1)-tangle invariants",
+      "number": null,
+      "page": 25,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-11-tangle-invariants"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 819,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homﬂy skein",
+          "heading": false
+        },
+        {
+          "term": "full homﬂy",
+          "heading": false
+        },
+        {
+          "term": "skein relations",
+          "heading": false
+        },
+        {
+          "term": "jacobi-trudy formula",
+          "heading": false
+        },
+        {
+          "term": "meridian maps",
+          "heading": false
+        },
+        {
+          "term": "annulus",
+          "heading": false
+        },
+        {
+          "term": "eigenvectors",
+          "heading": false
+        },
+        {
+          "term": "closed braids",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0408078v2 [math.GT] 3 Apr 2009 A basis for the full Homﬂy skein of the annulus RICHARD J. HADJI 1 and HUGH R. MORTON Department of Mathematical Sciences, University of Liverpool, Peach St, Liverpool, L69 7ZL, England. rjhadji@o2.co.uk, morton@liv.ac.uk Abstract A basis, denoted {Qλ,µ}, for the full Homﬂy skein of the annulus C was introduced in [18], where λ and µ are partitions of integers n and p into k",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0408078v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-the-skein-models",
+      "number": null,
+      "title": "The skein models",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 202,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "output points",
+          "heading": false
+        },
+        {
+          "term": "skein",
+          "heading": true
+        },
+        {
+          "term": "admitted",
+          "heading": false
+        },
+        {
+          "term": "empty diagram",
+          "heading": false
+        },
+        {
+          "term": "boundary points",
+          "heading": false
+        }
+      ],
+      "extract": "The skein models The account here largely follows those of [16], [10] and [14]. A tangle in a planar surface F, with some designated input and output boundary points, consists of oriented arcs in F joining input points to output points and possibly some further oriented closed curves, up to Reidemeister moves II and III. The term diagram is often used for a tangle when there are no input or output points. The framed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-the-plane",
+      "number": null,
+      "title": "The plane",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 91,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "framed homﬂy",
+          "heading": false
+        },
+        {
+          "term": "homﬂy polynomial",
+          "heading": false
+        },
+        {
+          "term": "plane",
+          "heading": true
+        }
+      ],
+      "extract": "The plane When F = R2 every element can be represented uniquely as a scalar multiple of the empty diagram. For a diagram D the resulting scalar < D >∈Λ is the framed Homﬂy polynomial of D. The more traditional Homﬂy polynomial P is deﬁned as the ambient isotopy invariant which satisﬁes the local relation v−1 −v = (s −s−1) , and which takes the value 1 on the unknot. The framed Homﬂy polynomial of D satisﬁes < D >=",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-the-hecke-algebras-and-extended-variants",
+      "number": null,
+      "title": "The Hecke algebras and extended variants",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 279,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hecke",
+          "heading": true
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "outputs",
+          "heading": false
+        },
+        {
+          "term": "n-tangles",
+          "heading": false
+        },
+        {
+          "term": "skein",
+          "heading": false
+        },
+        {
+          "term": "inputs",
+          "heading": false
+        }
+      ],
+      "extract": "The Hecke algebras and extended variants Write Hn for the skein S(F) of n-tangles, where F is a rectangle with n inputs at the bottom and n outputs at the top. Composing n-tangles by placing one above another induces a product which makes Hn into an algebra. It has a linear basis of n! elements, and is isomorphic to the Hecke algebra Hn(z), with coeﬃcients extended to the ring Λ. This algebra has a presentation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-the-annulus",
+      "number": null,
+      "title": "The annulus",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 358,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "annulus",
+          "heading": true
+        },
+        {
+          "term": "homﬂy skein",
+          "heading": false
+        },
+        {
+          "term": "lukac",
+          "heading": false
+        },
+        {
+          "term": "basis elements",
+          "heading": false
+        },
+        {
+          "term": "idempotents",
+          "heading": false
+        },
+        {
+          "term": "closures",
+          "heading": false
+        },
+        {
+          "term": "represented",
+          "heading": false
+        }
+      ],
+      "extract": "The annulus The Homﬂy skein of the annulus, C, as discussed in [13] and originally in [22], is the framed Homﬂy skein S(S1 × I). An element X ∈C will be indicated 4 schematically as X . The skein C has a product induced by placing one annulus outside another, under which C becomes a commutative algebra; XY = X Y . The closure map Hn,p →C, induced by taking an (n, p)-tangle T to its closure ˆT in the annulus, is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-the-annulus-with-two-boundary-points",
+      "number": null,
+      "title": "The annulus with two boundary points",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 198,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boundary points",
+          "heading": true
+        },
+        {
+          "term": "annulus",
+          "heading": true
+        },
+        {
+          "term": "skein",
+          "heading": false
+        },
+        {
+          "term": "output",
+          "heading": false
+        },
+        {
+          "term": "kawagoe",
+          "heading": false
+        }
+      ],
+      "extract": "The annulus with two boundary points Denote by A the Homﬂy skein of the annulus with one input and one output boundary point, one on each boundary component, as indicated. In a similar way to C, the skein A becomes an algebra under the product induced by placing one annulus outside another. The identity element e ∈A is represented by the diagram e = obtained by joining the two boundary points by a single straight",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-skein-involutions",
+      "number": null,
+      "title": "Skein involutions",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 188,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "involutions",
+          "heading": true
+        },
+        {
+          "term": "skein",
+          "heading": true
+        },
+        {
+          "term": "mirror map",
+          "heading": false
+        },
+        {
+          "term": "conjugate-linear",
+          "heading": false
+        }
+      ],
+      "extract": "Skein involutions We make use of two readily deﬁned involutions on the skeins C and A in our subsequent calculations. • For every surface F we can deﬁne the mirror map, : S(F) →S(F) as follows. For a tangle T in F deﬁne ¯T to be T with all its cross- ings switched. In the coeﬃcient ring Λ deﬁne conjugation by ¯s = s−1 and ¯v = v−1. The operation of switching crossings in tangles and conjugating coeﬃcients respects",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-some-basic-elements-in-the-annulus",
+      "number": null,
+      "title": "Some basic elements in the annulus",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 491,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "row young",
+          "heading": false
+        },
+        {
+          "term": "single row",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "single column",
+          "heading": false
+        },
+        {
+          "term": "elements",
+          "heading": true
+        },
+        {
+          "term": "skein",
+          "heading": false
+        },
+        {
+          "term": "idempotents",
+          "heading": false
+        },
+        {
+          "term": "monomials",
+          "heading": false
+        }
+      ],
+      "extract": "Some basic elements in the annulus In Hn there is a known set of idempotent elements, Eλ, one for each partition λ of n. These elements were originally given a purely algebraic description by Gyoja [3], and were subsequently given a skein picture based on the Young diagram for λ by the second author and Aiston [16]. The closure of Eλ gives the element Qλ ∈C+, making up the basis elements used in [16], and indirectly",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-the-meridian-maps-of-the-skein-c",
+      "number": null,
+      "title": "The meridian maps of the skein C",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 347,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "meridian maps",
+          "heading": true
+        },
+        {
+          "term": "skein",
+          "heading": true
+        },
+        {
+          "term": "mirror map",
+          "heading": false
+        },
+        {
+          "term": "linear endomorphisms",
+          "heading": false
+        },
+        {
+          "term": "s2n",
+          "heading": false
+        },
+        {
+          "term": "eigenvectors",
+          "heading": false
+        }
+      ],
+      "extract": "The meridian maps of the skein C We introduce here the linear endomorphisms ϕ, ¯ϕ of C which are of central importance in this work. Take a diagram X in the annulus and link it once with a simple meridian loop, oriented in either direction, to give diagrams ϕ(X) and ¯ϕ(X) in the annulus as indicated. This induces linear endomorphisms ϕ, ¯ϕ of the skein C, called the meridian maps. ϕ : C → C X 7→ X , and ¯ϕ : C → C X",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-relations-between-c-and-a",
+      "number": null,
+      "title": "Relations between C and A",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 476,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ayn",
+          "heading": false
+        },
+        {
+          "term": "mirror map",
+          "heading": false
+        },
+        {
+          "term": "distinguished boundary",
+          "heading": false
+        },
+        {
+          "term": "simple arc",
+          "heading": false
+        },
+        {
+          "term": "sln",
+          "heading": false
+        },
+        {
+          "term": "annulus",
+          "heading": false
+        },
+        {
+          "term": "relations",
+          "heading": true
+        }
+      ],
+      "extract": "Relations between C and A Two algebra homomorphisms l, r : C →A can be induced by placing an ele- ment of C respectively under or over the simple arc e joining the distinguished boundary points of the annulus. Thus l(X) = X and r(X) = X . The eﬀects of the mirror map and the involution ∗are readily seen to give l(X) = r(X) (4) (l(X))∗ = r(X∗). (5) Then l(hn) = r(hn), where hn ∈C is the closure of the idempotent in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-matrix-based-calculations",
+      "number": null,
+      "title": "Matrix-based calculations",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 40,
+      "summary": null,
+      "keywords": [],
+      "extract": "Matrix-based calculations In this section we work with square matrices whose entries, in C or A, are arranged in a fairly restricted format. Because of the restrictions we can use a simpliﬁed notation for them, which we now describe. 11",
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-notation",
+      "number": null,
+      "title": "Notation",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 521,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "starred rows",
+          "heading": false
+        },
+        {
+          "term": "template matrix",
+          "heading": false
+        },
+        {
+          "term": "standard rows",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst rows",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst column",
+          "heading": false
+        },
+        {
+          "term": "subscripts",
+          "heading": false
+        },
+        {
+          "term": "complete matrix",
+          "heading": false
+        },
+        {
+          "term": "index vector",
+          "heading": false
+        }
+      ],
+      "extract": "Notation The entries in each matrix are drawn from sequences such as h = {hn}, y∗= {y∗ n}, R = {Rn} with integer subscripts. On any given row the subscripts either increase in steps of 1 along the row, (a standard row), or decrease in steps of 1, (a starred row). The subscript for every entry of the matrix is then determined by knowing which rows are starred, and the subscripts to be used in the ﬁrst column. We",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-calculations",
+      "number": null,
+      "title": "Calculations",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 867,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "s2j det",
+          "heading": false
+        },
+        {
+          "term": "starred rows",
+          "heading": false
+        },
+        {
+          "term": "jth column",
+          "heading": false
+        },
+        {
+          "term": "standard rows",
+          "heading": false
+        },
+        {
+          "term": "column operation",
+          "heading": false
+        },
+        {
+          "term": "index vector",
+          "heading": false
+        },
+        {
+          "term": "sequences",
+          "heading": false
+        },
+        {
+          "term": "calculations",
+          "heading": true
+        }
+      ],
+      "extract": "choice of v will be unimportant, and we frequently suppress it, giving simply the template. 2.2 Calculations Throughout this section we use matrices whose entries are drawn from the sequences of elements of A or C described in section 1.8. The sequences will be denoted by the letters used there, h, h∗, y, y∗, l, r, L, R. The deﬁnitions can in all cases be extended to allow for negative index by setting hj = h∗ j =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-eigenvectors-of-the-meridian-maps",
+      "number": null,
+      "title": "Eigenvectors of the meridian maps",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 568,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "s2j",
+          "heading": false
+        },
+        {
+          "term": "meridian maps",
+          "heading": true
+        },
+        {
+          "term": "jth column",
+          "heading": false
+        },
+        {
+          "term": "eigenvectors",
+          "heading": true
+        },
+        {
+          "term": "s2jr",
+          "heading": false
+        },
+        {
+          "term": "index vector",
+          "heading": false
+        },
+        {
+          "term": "det",
+          "heading": false
+        }
+      ],
+      "extract": "Eigenvectors of the meridian maps We now come to the main result, giving potential eigenvectors Aw in C for the meridian maps. We show later that suﬃciently many of these vectors are non-zero, to provide our claimed basis Qλ,µ by suitable choices of index vector w. Theorem 3.1 Let w be any index vector. Then Aw = det \u0012 h∗ ⊣ h ⊣ \u0013 w ∈C satisﬁes ¯ϕ(Aw) = cwAw, and hence also ϕ(Aw) = cwAw, for some cw ∈Λ. 16 Proof:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-construction-of-q",
+      "number": null,
+      "title": "Construction of Q,",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1404,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "starred rows",
+          "heading": false
+        },
+        {
+          "term": "s2j",
+          "heading": false
+        },
+        {
+          "term": "standard rows",
+          "heading": false
+        },
+        {
+          "term": "repeated entry",
+          "heading": false
+        },
+        {
+          "term": "framed homﬂy",
+          "heading": false
+        },
+        {
+          "term": "diagonal entries",
+          "heading": false
+        },
+        {
+          "term": "index vector",
+          "heading": false
+        },
+        {
+          "term": "s2i",
+          "heading": false
+        }
+      ],
+      "extract": "Given two partitions λ and µ with k and k∗parts respectively we deﬁne Qλ,µ = Aw for a suitably chosen index vector w with k standard and k∗ starred rows. We choose w so that the subscripts of the diagonal entries in the standard rows are the parts λ1, λ2, . . . , λk of λ in order, while the subscripts of the diagonal entries in the starred rows are the parts µ1, µ2, . . . , µk∗of µ in reverse order. The entries in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-properties-of-the-basis-elements-q",
+      "number": null,
+      "title": "Properties of the basis elements Q,",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 965,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "basis elements",
+          "heading": true
+        },
+        {
+          "term": "homﬂy polynomial",
+          "heading": false
+        },
+        {
+          "term": "µqλ",
+          "heading": false
+        },
+        {
+          "term": "variable invariant",
+          "heading": false
+        },
+        {
+          "term": "framed knot",
+          "heading": false
+        },
+        {
+          "term": "decorate",
+          "heading": false
+        },
+        {
+          "term": "quantum invariant",
+          "heading": false
+        },
+        {
+          "term": "schur functions",
+          "heading": false
+        }
+      ],
+      "extract": "When an element X ∈C is used to decorate a framed knot K, the Homﬂy polynomial, P(K; X) ∈Λ, of the decorated knot gives a 2-variable invariant of K determined by X. Each basis element Qλ,µ gives such an invariant of K, and these determine the invariants for all choices of X. When µ = φ these invariants, for each ﬁxed λ, give a family of 1-variable invariants after setting v = s−N which coincide, up to a power of s,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-11-tangle-invariants",
+      "number": null,
+      "title": "(1,1)-tangle invariants",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 644,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homﬂy skein",
+          "heading": false
+        },
+        {
+          "term": "phd dissertation",
+          "heading": false
+        },
+        {
+          "term": "theory ramif",
+          "heading": false
+        },
+        {
+          "term": "liverpool",
+          "heading": false
+        },
+        {
+          "term": "hadji",
+          "heading": false
+        },
+        {
+          "term": "morton",
+          "heading": false
+        },
+        {
+          "term": "invariants",
+          "heading": true
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        }
+      ],
+      "extract": "K, and have the advantage that they often remain non-zero under evaluations which send the corresponding invariant P to zero irrespective of K. When µ = φ it can be shown [15], using properties of the Gyoja-Aiston idempotents, that the eigenvalues Kλ,φ, although conceivably rational func- tions in v and s, are in fact integral elements of Λ, lying in the subring Λ0 = Z[s±1, v±1]. This is also the case for K✷,✷, and",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "homﬂy skein",
+      "heading": false
+    },
+    {
+      "term": "framed homﬂy",
+      "heading": false
+    },
+    {
+      "term": "skein relations",
+      "heading": false
+    },
+    {
+      "term": "homﬂy polynomial",
+      "heading": false
+    },
+    {
+      "term": "s2j det",
+      "heading": false
+    },
+    {
+      "term": "skein theoretic",
+      "heading": false
+    },
+    {
+      "term": "skein theory",
+      "heading": false
+    },
+    {
+      "term": "starred rows",
+      "heading": false
+    },
+    {
+      "term": "full homﬂy",
+      "heading": false
+    },
+    {
+      "term": "starred row",
+      "heading": false
+    },
+    {
+      "term": "annulus outside",
+      "heading": false
+    },
+    {
+      "term": "basis elements",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 16,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 17,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p25); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 17 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0408078v2"
+  }
+}

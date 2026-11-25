@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-hep-ph-9502366v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Chiral Perturbation Theory",
+      "dcterms:creator": [
+        "Teòrica, Departament de F´ısica",
+        "Corpuscular, Institut de F´ısica"
+      ],
+      "dcterms:issued": "D:20241126",
+      "dcterms:identifier": "https://arxiv.org/abs/hep-ph/9502366",
+      "dcterms:abstract": "An introduction to the basic ideas and methods of Chiral Perturbation Theory is presented. Several phenomenological applica- tions of the eﬀective Lagrangian technique to strong, electromagnetic and weak interactions are discussed. To be published in Reports on Progress in Physics February 1995",
+      "dcterms:source": "library/arxiv-hep-ph-9502366v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-hep-ph-9502366v1"
+    }
+  ]
+}

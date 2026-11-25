@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-gram-weighted-qvalue",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:gram-weighted-qvalue",
+  "kind": "proposition",
+  "title": "Gram-weighted $\\mathcal{Q}_q$-value from Frobenius norm of conversion channels",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-typed-garside-element"
+  ],
+  "tags": [
+    "q-value",
+    "gram-matrix",
+    "frobenius-norm",
+    "beta-decay",
+    "garside-element",
+    "hecke-algebra",
+    "adjoint-character"
+  ],
+  "leanRef": "qou:QOU.MassTheory.gram_weighted_qvalue",
+  "text": "gram-weighted-qvalue.md",
+  "leanSource": "gram-weighted-qvalue.lean",
+  "provenance": "authored"
+}

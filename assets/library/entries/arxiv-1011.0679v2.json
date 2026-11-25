@@ -1,0 +1,234 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1011.0679v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1011.0679v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Let $\\mathbb F$ be a non-archimedean local field, and\nlet $L$ be the group of rational points of a connected reductive\nalgebraic group $\\mathbf{L}$ defined over $\\mathbb F$.\nAffine Hecke algebras are powerful tools to describe\nBernstein blocks \\cite{BeDe} of the category of smooth representations\nof $L$ explicitly, in a way compatible with harmonic analysis.\nFor example, if a Bernstein block $\\mc{B}$ admits a type $\\tau$ then the\ntheory of types \\cite{BK} establishes a Morita\nequivalence between $\\mathcal{B}$ and the module category\nof the Hecke algebra $\\mathcal{H}_\\tau$ of the type $\\tau$, s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.0679v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1011.0679v2  [math.RT]  17 Nov 2010\nA FORMULA OF ARTHUR AND AFFINE HECKE ALGEBRAS\nERIC OPDAM AND MAARTEN SOLLEVELD\nAbstract. Let π, π′ be tempered representations of an aﬃne Hecke algebra with\npositive parameters. We study their Euler–Poincar´e pairing EP(π, π′), the alter-\nnating sum of the dimensions of the Ext-groups. We show that EP(π, π′) can be\nexpressed in a simple formula involving an analytic R-group, analogous to a for-\nmula of Arthur in the setting of reductive p-adic groups. Our proof applies equally\nwell to aﬃne Hecke algebras and to reductive groups over nonarchimedean loca",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.0679v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Affine Hecke algebras",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-11-affine-hecke-algebras.md",
+      "narrative": null,
+      "content": "pairing of representations of either a ﬁnite Weyl group [Ree] or of an (extended) aﬃne\nWeyl group W e [OpSo1, Theorem 3.3]. To relate these to EPH one must compare\nEPH and EPWe, which is done in [Ree, Section 5.6] (for aﬃne Hecke algebras with\nequal parameters) and in [OpSo1, Chapter 3]. Recent results from [Sol3] allow us\nto conclude that GC(H) modulo the radical of EPH equals the vector space Ell(H)\nof ”elliptic characters”, and that this space does not depend on the parameters q\n(Theorem 2.3).\nArthur’s formula applies only to the Euler-Poincar´e pairing of tempered char-\nacters. In an abstr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.0679v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-1-preliminaries.md",
+      "narrative": null,
+      "content": "Here we recall the deﬁnitions and notations of our most important objects of\nstudy. Several things described in this section can be found in more detail elsewhere\nin the literature, see in particular [Lus1, Opd1, OpSo1, Sol3].\n1.1. Aﬃne Hecke algebras. Let a be a ﬁnite dimensional real vector space and\nlet a∗be its dual. Let Y ⊂a be a lattice and X = HomZ(Y, Z) ⊂a∗the dual lattice.\nLet\nR = (X, R0, Y, R∨\n0 , F0).\nbe a based root datum. Thus R0 is a reduced root system in X, R∨\n0 ⊂Y is the\ndual root system, F0 is a basis of R0 and the set of positive roots is denoted R+\n0 .\nFurthermore we are gi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.0679v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Parabolic induction",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-12-parabolic-induction.md",
+      "narrative": null,
+      "content": "For a set of simple roots $P \\subset F_0$ we introduce the notations\n\\begin{equation}\\label{eq:parabolic}\n\\begin{array}{l@{\\qquad}l}\nR_P = \\mh Q P \\cap R_0 & R_P^\\vee = \\mh Q R_P^\\vee \\cap R_0^\\vee , \\\\\nX_P = X \\big/ \\big( X \\cap (P^\\vee )^\\perp \\big) &\nX^P = X / (X \\cap \\mh Q P ) , \\\\\nY_P = Y \\cap \\mh Q P^\\vee & Y^P = Y \\cap P^\\perp , \\\\\n\\mf a_P = \\R P^\\vee & \\mf a^P = P^\\perp , \\\\\nT_P = \\mr{Hom}_{\\mh Z} (X_P, \\mh C^\\times ) &\nT^P = \\mr{Hom}_{\\mh Z} (X^P, \\mh C^\\times ) , \\\\\n\\mc R_P = ( X_P ,R_P ,Y_P ,R_P^\\vee ,P) & \\mc R^P = (X,R_P ,Y,R_P^\\vee ,P) .\n\\end{array}\n\\end{equation}\nAlthough $T_{rs",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.0679v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Schwartz algebra",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-13-the-schwartz-algebra.md",
+      "narrative": null,
+      "content": "We recall how to complete an affine Hecke algebra to a topological algebra called the\nSchwartz algebra. As a vector space $\\mc S$ will consist of rapidly decreasing functions\non $W^e$, with respect to some length function. For this purpose it is unsatisfactory\nthat $\\ell$ is 0 on the subgroup $Z(W^e)$, as this can be a large part\nof $W$. To overcome this inconvenience, let\n$L : X \\otimes \\mh R \\to [0,\\infty )$ be a function such that\n\\begin{itemize}\n\\item $L (X) \\subset \\mh Z$,\n\\item $L(x+y) = L(x) \\quad \\forall x \\in X \\otimes \\mh R, y \\in E$,\n\\item $L$ induces a norm on\n$X \\otimes \\mh R / E",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.0679v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Analytic R-groups for tempered representations",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-14-analytic-r-groups-for-tempered-representation.md",
+      "narrative": null,
+      "content": "\\label{sec:RgroupTemp}\n\nWe recall the definition of the analytic R-group from \\cite{DeOp2}.\nLet $\\delta$ be a discrete series representation of $\\mc H_P$ with central character\n$W(R_P) r_\\delta \\in T_P / W(R_P)$. Recall that a \\emph{parabolic subsystem}\nof $R_0$ is a subset $R_Q \\subset R_0$ satisfying $R_Q=R_0 \\cap \\mathbb{R}R_Q$.\nWe let $Q\\subset R_{Q,+}:=R_Q\\cap R_{0,+}$ denote the basis of $R_Q$ inside the\npositive subset $R_{Q,+}\\subset R_Q$. We call $R_Q$ \\emph{standard} if\n$Q\\subset F_0$, in which case these notions agree with \\eqref{eq:parabolic}.\nThe set of roots $R_0 \\setminus R_P$ i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.0679v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Euler-Poincaré pairing",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-006-2-the-euler-poincaré-pairing.md",
+      "narrative": null,
+      "content": "Let $\\pi, \\pi' \\in \\mr{Mod}_f (\\mc H)$. Their Euler-Poincar\\'e pairing is defined as\n\\begin{equation}\\label{eq:4}\nEP_{\\mc H} (\\pi,\\pi') = \\sum_{n \\geq 0} (-1)^n \\dim_\\C \\mr{Ext}_{\\mc H}^n (\\pi,\\pi') .\n\\end{equation}\nSince $\\mc H$ is Noetherian and has finite cohomological dimension \\cite[Proposition 2.4]{OpSo1},\nthis pairing is well-defined.\n\n\\begin{thm}\\label{thm:EP}\n\\enuma{\n\\item For all $\\pi,\\pi' \\in \\mr{Mod}_f (\\mc H)$ and $\\ep \\in [0,1] $:\n\\[\nEP_{\\mc H (\\mc R, q^\\ep)} (\\tilde \\sigma_\\ep (\\pi), \\tilde \\sigma_\\ep (\\pi')) = EP_{\\mc H} (\\pi,\\pi') .\n\\]\n\\item The pairing $EP_{\\mc H}$ is symmetr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.0679v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Arthur formula",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "../sections/sec-007-3-the-arthur-formula.md",
+      "narrative": null,
+      "content": "\\label{sec:Arthur}\n\nIn this section we prove the Arthur formula for the Euler--Poincar\\'e pairing \\eqref{eq:4}\nof representations of affine Hecke algebras. In view of Lemma \\ref{lem:Elltemp} little is lost\nif we restrict $EP_{\\mc H}$ to tempered representations, so we do that until further notice.\nOne of the main results of \\cite{OpSo1} says that\n\\begin{equation}\\label{eq:ExtHS}\n\\mr{Ext}^n_{\\mc S} (\\pi,\\pi') \\cong \\mr{Ext}^n_{\\mc H} (\\pi,\\pi') \\qquad n \\in \\Z_{\\geq 0}\n\\end{equation}\nfor all $\\pi,\\pi' \\in \\mr{Mod}_f (\\mc S)$, and hence\n\\begin{equation} \\label{eq:5}\nEP_{\\mc S} (\\pi,\\pi') := \\sum",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.0679v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algebras of invariants",
+      "pageStart": 17,
+      "pageEnd": 20,
+      "target": "../sections/sec-008-4-algebras-of-invariants.md",
+      "narrative": null,
+      "content": "Let $U$ be a smooth manifold, possibly with corners, and let $G$ be a finite group\nacting on $U$ by diffeomorphisms $\\alpha_g$. Let $V$ be a finite dimensional complex\n$G$-representation and endow the algebra $C^\\infty (U) \\otimes \\mr{End}_\\C (V)$\nwith the diagonal $G$-action. Algebras of the form\n\\[\n\\big( C^\\infty (U) \\otimes \\mr{End}_\\C (V) \\big)^G\n\\]\nwere studied among others in \\cite{Sol-Chern} and \\cite[Section 2.5]{Sol-Thesis}.\nIn the proof of Theorem \\ref{thm:ArthurFormula} we used some elementary results\non such algebras, which we prove here. Certainly a substantial part of this sectio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.0679v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Analytic R-groups for non-tempered representations",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-009-5-analytic-r-groups-for-non-tempered-representat.md",
+      "narrative": null,
+      "content": "In this section we extend the definitions and results from Section \\ref{sec:RgroupTemp}\n(which stem from \\cite{DeOp2}) to non-tempered induction data $\\xi \\in \\Xi \\setminus \\Xi_{un}$.\nOne approach would be to define the R-group of $\\xi = (P,\\delta,t)$ to be that of\n$\\xi_{un} = (P,\\delta ,t \\,|t|^{-1})$. This works out well in most cases, but it is unsatisfactory\nif the isotropy group $\\mc W_{\\xi_{un}}$ is strictly larger than $\\mc W_\\xi$.\n\nThe problem is that $t \\, |t|^{-1}$ is not always a generic point of $(T^P)^{\\mc W_\\xi}$.\nTo overcome this, we define $\\mc M_\\xi$ to be the collection of mi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.0679v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-010-references.md",
+      "narrative": null,
+      "content": "[Art] J. Arthur, “On elliptic tempered characters”, Acta. Math. 171 (1993), 73–130\n[BeDe] J.N. Bernstein, P. Deligne, “Le “centre” de Bernstein”, pp. 1–32 in: Repr´esentations des\ngroupes r´eductifs sur un corps local, Travaux en cours, Hermann, 1984\n[Bez] R.\nBezrukavnikov,\n“Homological\nproperties\nof\nrepresentations\nof\np-adic\ngroups\nre-\nlated to geometry of the group at inﬁnity”, PhD. Thesis, Tel-Aviv University, 1998,\narXiv:math.RT/0406223\n[Bie] E. Bierstone, “Local properties of smooth maps equivariant with respect to ﬁnite group ac-\ntions”, J. Diﬀerential Geometry 10.4 (1975), 523–540\n[BHK]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

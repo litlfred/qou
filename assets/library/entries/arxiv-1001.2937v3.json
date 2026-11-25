@@ -1,0 +1,112 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1001.2937v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1001.2937v3/blocks/prop-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "prop-sec-000-01.md",
+      "narrative": null,
+      "content": "Verbaarschot3 1Niels Bohr International Academy, Niels Bohr Institute, Blegdamsvej 17, DK-2100, Copenhagen Ø, Denmark 2Niels Bohr Institute, Blegdamsvej 17, DK-2100, Copenhagen Ø, Denmark 3Department of Physics and Astronomy, SUNY, Stony Brook, New York 11794, USA (Dated: October 23, 2018) We calculate the leading contribution to the spectral density of the Wilson Dirac operator using chiral perturbation theory where volume and lattice spacing corrections are given by universal scaling functions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1001.2937v3/blocks/prop-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "prop-sec-000-02.md",
+      "narrative": null,
+      "content": "In lattice QCD it has become standard to utilize these re- sults to obtain physical observables from simulations at ﬁnite four-volume V .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1001.2937v3/blocks/prop-sec-000-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "prop-sec-000-03.md",
+      "narrative": null,
+      "content": "We suggest that analyzing just these real eigenmodes of DW may provide a new useful tool in lattice QCD. -4 -2 0 2 4 ξ 0 0.2 0.4 0.6 0.8 1 ρ ν Wreal(ξ;a) ν=4 , a=0.2 FIG.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1001.2937v3/blocks/prop-sec-000-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "prop-sec-000-04.md",
+      "narrative": null,
+      "content": "Lattice QCD simulations depend crucially on control of this gap and its variation as a function of the lattice spacing.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1001.2937v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Microscopic Spectrum of the Wilson Dirac Operator",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-microscopic-spectrum-of-the-wilson-dirac-operato.md",
+      "narrative": null,
+      "content": "P.H. Damgaard,1 K. Splittorﬀ,2 and J.J.M. Verbaarschot3\n1Niels Bohr International Academy, Niels Bohr Institute,\nBlegdamsvej 17, DK-2100, Copenhagen Ø, Denmark\n2Niels Bohr Institute, Blegdamsvej 17, DK-2100, Copenhagen Ø, Denmark\n3Department of Physics and Astronomy, SUNY, Stony Brook, New York 11794, USA\n(Dated: October 23, 2018)\nWe calculate the leading contribution to the spectral density of the Wilson Dirac operator using\nchiral perturbation theory where volume and lattice spacing corrections are given by universal scaling\nfunctions. We ﬁnd analytical expressions for the spectral density o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1001.2937v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1001.2937v3  [hep-th]  20 Sep 2010",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1809.08419v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "GRÖBNER-SHIRSHOV BASES FOR NON-CRYSTALLOGRAPHIC COXETER GROUPS",
+      "dcterms:creator": [
+        "LEE, JEONG-YUP",
+        "LEE∗, DONG-IL"
+      ],
+      "dcterms:issued": "D:20181015",
+      "dcterms:identifier": "https://arxiv.org/abs/1809.08419",
+      "dcterms:abstract": "For the noncrystallographic Coxeter groups of type H, we construct their Gr¨obner- Shirshov bases and the corresponding standard monomials.",
+      "dcterms:source": "library/arxiv-1809.08419v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1809.08419v1"
+    }
+  ]
+}

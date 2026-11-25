@@ -1,0 +1,450 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0505170v2",
+  "title": "arxiv-math-0505170v2",
+  "variant": "pdf",
+  "pages": 11,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "0",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-0-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The Averaging Process",
+      "number": "1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-the-averaging-process"
+    },
+    {
+      "level": 1,
+      "title": "Simplicial Sections",
+      "number": "2",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-simplicial-sections"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 60,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "averaging process",
+          "heading": false
+        },
+        {
+          "term": "unipotent group",
+          "heading": false
+        },
+        {
+          "term": "torsor",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0505170v2 [math.RT] 12 Jan 2006 AN AVERAGING PROCESS FOR UNIPOTENT GROUP ACTIONS AMNON YEKUTIELI Abstract. We present an averaging process for sections of a torsor under a unipotent group. This process allows one to integrate local sections of such a torsor into a global simplicial section. The results of this paper have applica- tions to deformation quantization of algebraic varieties.",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-math-0505170v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-0-introduction",
+      "number": "0",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 337,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homx",
+          "heading": false
+        },
+        {
+          "term": "simplicial",
+          "heading": false
+        },
+        {
+          "term": "unipotent",
+          "heading": false
+        },
+        {
+          "term": "functorial",
+          "heading": false
+        },
+        {
+          "term": "sequence",
+          "heading": false
+        },
+        {
+          "term": "morphism",
+          "heading": false
+        }
+      ],
+      "extract": "Let K be a ﬁeld of characteristic 0. For any natural number q let K[t0, . . . , tq] be the polynomial algebra, and let ∆q K be the geometric q-dimensional simplex ∆q K := Spec K[t0, . . . , tq]/(t0 + · · · + tq −1). Our main result is the following theorem. Theorem 0.1. Let G be a unipotent algebraic group over K, let X be a K-scheme, let Z be a G-torsor over X, and let Y be any X-scheme. Suppose f = (f0, . . . ,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-the-averaging-process",
+      "number": "1",
+      "title": "The Averaging Process",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3390,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "opn wsym",
+          "heading": false
+        },
+        {
+          "term": "opn wav",
+          "heading": false
+        },
+        {
+          "term": "bsym delta",
+          "heading": false
+        },
+        {
+          "term": "wsym circ",
+          "heading": false
+        },
+        {
+          "term": "opn hom",
+          "heading": false
+        },
+        {
+          "term": "hom til",
+          "heading": false
+        },
+        {
+          "term": "cdot opn",
+          "heading": false
+        },
+        {
+          "term": "times opn",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec1} Throughout the paper $\\K$ denotes a fixed base field of characteristic $0$. All schemes and all morphisms are over $\\K$. We begin by recalling some standard facts about the combinatorics of simplicial objects. Let $\\bsym{\\Delta}$ denote the category with objects the ordered sets $[q] := \\{ 0, 1, \\ldots, q \\}$, $q \\in \\mbb{N}$. The morphisms $[p] \\to [q]$ are the order preserving functions, and we write",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-simplicial-sections",
+      "number": "2",
+      "title": "Simplicial Sections",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1300,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bsym sigma",
+          "heading": false
+        },
+        {
+          "term": "simplicial sections",
+          "heading": true
+        },
+        {
+          "term": "times bsym",
+          "heading": false
+        },
+        {
+          "term": "bsym delta",
+          "heading": false
+        },
+        {
+          "term": "til sigma",
+          "heading": false
+        },
+        {
+          "term": "multi-index bsym",
+          "heading": false
+        },
+        {
+          "term": "circ til",
+          "heading": false
+        },
+        {
+          "term": "opn wav",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec2} In this section we show how the averaging process is used to obtain simplicial sections of certain bundles. Suppose $H$ and $G$ are affine group schemes over $\\K$, and $H$ acts on $G$ by automorphisms. Namely there is a morphism of schemes $H \\times G \\to G$ which for every $\\K$-scheme $Y$ induces a group homomorphism $H(Y) \\to \\opn{Aut}_{\\cat{Groups}}(G(Y))$. Then $H \\times G$ has a structure of a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 191,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deformation quantization",
+          "heading": false
+        },
+        {
+          "term": "lie algebras",
+          "heading": false
+        },
+        {
+          "term": "math",
+          "heading": false
+        },
+        {
+          "term": "yekutieli",
+          "heading": false
+        },
+        {
+          "term": "culation",
+          "heading": false
+        }
+      ],
+      "extract": "[Bo] R. Bott, “Lectures on Characteristic Classes and Polarizations” , Lecture Notes in Math. 279, Springer, Berlin, 1972. [Gk] I.M. Gelfand and D.A. Kazhdan, Some problems of differential geometry and the cal- culation of cohomologies of Lie algebras of vector fields, Soviet Math. Dokl. 12 (1971), no. 5, 1367-1370. [Ho] G. Hochschild, “Basic Theory of Algebraic Groups and Lie Algebras,” Springer, 1981. [HY] R.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "bsym delta",
+      "heading": false
+    },
+    {
+      "term": "opn wav",
+      "heading": false
+    },
+    {
+      "term": "times bsym",
+      "heading": false
+    },
+    {
+      "term": "opn wsym",
+      "heading": false
+    },
+    {
+      "term": "sequence bsym",
+      "heading": false
+    },
+    {
+      "term": "bsym sigma",
+      "heading": false
+    },
+    {
+      "term": "times til",
+      "heading": false
+    },
+    {
+      "term": "cdot til",
+      "heading": false
+    },
+    {
+      "term": "let bsym",
+      "heading": false
+    },
+    {
+      "term": "circ til",
+      "heading": false
+    },
+    {
+      "term": "hom til",
+      "heading": false
+    },
+    {
+      "term": "multi-index bsym",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Simplicial sections, q = 1. We start with sections over two open sets U(0) and U(1) in the left diagram; and we pass to a simplicial section σ(0,1) on the right. As can be seen, σ(0,1) interpolates between σ(0) and σ(1)",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 4,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 5,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p10); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 5 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0505170v2"
+  }
+}

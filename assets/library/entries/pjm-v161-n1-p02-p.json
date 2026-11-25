@@ -1,0 +1,1926 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "pjm-v161-n1-p02-p",
+  "blocks": [
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Paciﬁc\nJournal of\nMathematics\nSTUDYING LINKS VIA CLOSED BRAIDS. III. CLASSIFYING\nLINKS WHICH ARE CLOSED 3-BRAIDS\nJOAN BIRMAN AND WILLIAM W. MENASCO\nVolume 161\nNo. 1\nNovember 1993\nPACIFIC JOURNAL OF MATHEMATICS\nVol. 161, No. 1, 1993",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/cor-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 22,
+      "target": "cor-sec-000-01.md",
+      "narrative": null,
+      "content": "We may assume that F is simultaneously a Ben- nequin surface relative to both H and H'. Moreover, there is a sec- ond shortest word W = W'{h), necessarily of the same length as W = W(L), in generators b\\y hi, Z?3 which describes the Bennequin disc-band decomposition of F relative to H'.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/cor-sec-000-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 22,
+      "target": "cor-sec-000-04.md",
+      "narrative": null,
+      "content": "We may assume that L = <9F, where F is a Ben- nequin surface with defining words W (with respect to H) and W (with respect to H'), such that both W and W are admissible.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/ex-sec-000-07",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 22,
+      "target": "ex-sec-000-07.md",
+      "narrative": null,
+      "content": "When we defined the planar projection of the elementary braids aγ, a2, <z3 in Figure 1.5 we showed them as they would appear to a viewer who was standing outside T, between p\\ and /?3 with his feet on the plane of the paper and his head above the paper, and also as they would look to a viewer inside T. STUDYING LINKS VIA CLOSED BRAIDS III \\::::| I >£:::::: lylil 1 . ' >£::jj:jj:j",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/lem-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 22,
+      "target": "lem-sec-000-02.md",
+      "narrative": null,
+      "content": "Given any closed 3-braid L which represents a prime, non-split link of braid index 3, there is a Bennequin surface F with d¥ - L such that W = W(L) is admissible.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/lem-sec-000-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "X",
+      "pageStart": 2,
+      "pageEnd": 22,
+      "target": "lem-sec-000-03.md",
+      "narrative": null,
+      "content": "Any two shortest words W, W\" which represent the same conjugacy class in 2?3 are related by a finite sequence of shortest words W = W o, ... , W/ = W\" of shortest words, such that each W/ differs from W/_i by a single application of relations (2.1). By Corollary 1.1 the surface F is a Bennequin surface with respect to both H and H'. Therefore we can assign to it a second defining word W in elementary braids b\\, bi, 63 which describes the second disc-band decomposition of F.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prop-sec-000-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 22,
+      "target": "prop-sec-000-05.md",
+      "narrative": null,
+      "content": "S 3 split along F u Ω has four open components. Their closures are 3-balls B{f B 2, B 3 and a solid torus T. The bound- ary dBif i = 1,2,3, is made up of r, digonsf a disc subset of F+ which contains D/+i and a disc subset of F~ which contains Df . The boundary dΊ is a union of r - rx+r2 + r3 digons and subsets of F + and F~.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prop-sec-000-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 22,
+      "target": "prop-sec-000-06.md",
+      "narrative": null,
+      "content": "There is a natural diagram for L on the bound- ary dΊ of the said torus T, visible to an observer who is inside T. The overcrossing arcs are on dT. The undercrossing arcs are the arcs {Lt(k), k = 1, ... , n:, ι = l , 2 , 3 } . They are on ΘBλ U dB2 U <9B3, and thus are not visible to an observer who is inside T. Proof, The link L is in <9T except for small ^-intervals about each F-singularity, e.g. [0 3, θΊ] in Figure 3.6, when L penetrates into B2 . A few moments reflection should make it clear that the part of L which penetrates B2 is precisely the subarc we called L2(fc) in Figure 3.1(b). F",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "STUDYING LINKS VIA CLOSED BRAIDS III: CLASSIFYING LINKS WHICH ARE CLOSED 3-BRAIDS",
+      "pageStart": 2,
+      "pageEnd": 22,
+      "target": "../sections/sec-000-studying-links-via-closed-braids-iii-classifying.md",
+      "narrative": null,
+      "content": "PACIFIC JOURNAL OF MATHEMATICS\nVol. 161, No. 1, 1993\nSTUDYING LINKS VIA CLOSED BRAIDS III:\nCLASSIFYING LINKS WHICH ARE CLOSED 3-BRAIDS\nJOAN S. BIRMAN AND WILLIAM W. MENASCO\nA complete solution is given to the classification problem for ori-\nented links which are closed three-braids. The Classification Theo-\nrem asserts that, up to a finite list of exceptional cases, links which\ncan be represented by closed 3-braids are represented by a unique\nconjugacy class in the group of 3-braids. The exceptional cases are\nthe expected ones (links of braid index 1 and 2) and an unexpected\ninfinite family of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/lem-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 32,
+      "target": "lem-sec-001-01.md",
+      "narrative": null,
+      "content": "Let Ω be the union of all the digons. We may assume that (i) The intersections of A! with F U Ω are finite in number and transverse. (ii) The non-standard foliation o / F u Ω is radial near each pierce point (iii) All but finitely many fibers H', ofH' meet FuΩ transversally. Those which do not (the Ω-singular fibers) are each tangent to FuΩ at exactly one point in the interior of Ω. STUDYING LINKS VIA CLOSED BRAIDS III (iv) Each component of intersection of a non-singular fiber H^ with F {respectively with Ω) is an arc. There are no simple closed curves in the foliation of ¥ (respectively Ω).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/lem-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 32,
+      "target": "lem-sec-001-03.md",
+      "narrative": null,
+      "content": "We may assume that there are no leaves in the equiv- alence classes [00] and [01]. Also, choosing any fixed fiber H 7^ we may assume that there are no leaves of type [11] in this fiber.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/lem-sec-001-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 32,
+      "target": "lem-sec-001-04.md",
+      "narrative": null,
+      "content": "Singularities in the class [mq + qq occur. qq + qm] do not",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/lem-sec-001-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 32,
+      "target": "lem-sec-001-05.md",
+      "narrative": null,
+      "content": "(I) Let T be a degenerately foliated region on Δ. Sup- pose that each nondegenerate leaf in T has name 24 (respectively 46, 62, 13, 35, 51). Then within a small φ-neighborhood of the instant of degeneracy a braiding of type b^",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prop-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 32,
+      "target": "prop-sec-001-02.md",
+      "narrative": null,
+      "content": "We may assume that the non-standard axis A! is disjoint from all of the dίgons.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "it",
+      "pageStart": 22,
+      "pageEnd": 32,
+      "target": "../sections/sec-001-it.md",
+      "narrative": null,
+      "content": "u\nK\nelementary 3-braids, viewed\nas they appear \"projected\"\nonto dT\n(dotted edges to be identified) \nDiagram on dT of a'^a? a^\n(opposite sides of rectangle to be identified)\nFIGURE 3.8\nIn the pictures at the left in Figure 3.8 we have augmented the pic-\ntures in Figure 1.5 by adding the digons and shading the two sides of\nF. On the right in Figure 3.8 we show an example of a link diagram\non <9T. The reader is advised to return to Figure 3.8 later, as needed.\nIn future pictures we will omit the shading which we use here to high-\nlight F + and F~ . The rule is clear: parts of F which are to the r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/lem-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "lem-sec-002-01.md",
+      "narrative": null,
+      "content": "(I) Let T be a degenerately foliated region on Δ. Sup- pose that each nondegenerate leaf in T has name 24 (respectively 46, 62, 13, 35, 51). Then within a small φ-neighborhood of the instant of degeneracy a braiding of type b^ 1 (resp. b^ 1 > b^ 1, b\\, #2, 63) occurs in F. (2) If a leaf a in the foliation of a digon A has type [24] then the side of A- a which does not contain the crossing dots is degenerately foliated.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 32)",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../sections/sec-002-resp-b-page-32.md",
+      "narrative": null,
+      "content": "STUDYING LINKS VIA CLOSED BRAIDS III \n55\n3-ball B in M. Then we can use B to isotope d\nr to d. Similarly,\nwe can isotope δ\nr to δ. After the change we tip the discs d and\nδ a little bit, to make the new digon transverse to the fibers of H'.\nThe effect of the isotopy is to eliminate the given singularity of the\nfoliation. See Figure 4.3. This reduces c$, keeping C\\, ... , C4 fixed.\nSince C is by hypothesis minimal, this cannot happen. Notice that\nthese changes can't increase |H' (F U IntΔ')|, even if there is another\ndigon Δ' in the picture, because distinct digons which intersect always\ndo so",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/lem-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "lem-sec-003-01.md",
+      "narrative": null,
+      "content": "If a has type [22] then the side of A- a which does not contain the crossing dots is degenerately foliated.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/lem-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "lem-sec-003-02.md",
+      "narrative": null,
+      "content": "Surgeries between two leaves which have sign ++ (or two leaves which have sign — ) do not occur.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 33)",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "../sections/sec-003-resp-b-page-33.md",
+      "narrative": null,
+      "content": "56\nJOAN S. BIRMAN AND WILLIAM W. MENASCO\nFIGURE 4.4\ndA — dA n L, the two crossing dots are on the same side of Δ split\nalong a. Let T be the closure of the region of Δ\\α which does not\ncontain the crossing dots. Then T must meet Hψ transversally, as in\nFigure 4.4, also the 2 (respectively 4) endpoint of a lies on the arc\nF2ψ (resp. F4<^) of F\n+ n H^ which runs out to p\\ (resp. p'2). Now,\ndT c dA is in F, so F necessarily forms a bridge over T, joining\n¥2φ to F 40. But then, possibly after a small change in H', the region\nT will be degenerately foliated. \nD\nLEMMA 4.3. If a has type [22] then th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 34,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "A-surgeries between leaves of sign ++ (or — ) and leaves of sign H— do not occur.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 34)",
+      "pageStart": 34,
+      "pageEnd": 34,
+      "target": "../sections/sec-004-resp-b-page-34.md",
+      "narrative": null,
+      "content": "STUDYING LINKS VIA CLOSED BRAIDS III \n57\nFIGURE 4.5\nProof. Let aγ and a2 be the leaves to be surgered. From Table 4.1\nwe see that each α, has type [22] or [24]. Let 7) , y = 1, 2, be the\nregion of Δ - αy which does not contain the crossing dots. Then 7)\nis degenerately foliated, by Lemmas 4.2 and 4.3. Now <97) = α, U βj\nwhere βj is in <9Δ\n+ for j = 1 and 2. There are two possibilities\n(depicted in Figure 4.5):\n(i) β\\ contains β2 (or β2 contains β\\)\n(ii) β\\ Π β2 is empty.\nIn case (i) the singularity is in T\\, contradicting the fact that T\\\nis degenerately foliated, so this can't happen. In case",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/lem-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 35,
+      "target": "lem-sec-005-01.md",
+      "narrative": null,
+      "content": "Let Δi and Δ2 be the components of Δ split along a leaf a of type [12]. Then (possibly after a small modification in H ;) we may assume that either Δi or Δ2 is degenerately foliated.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 35)",
+      "pageStart": 35,
+      "pageEnd": 35,
+      "target": "../sections/sec-005-resp-b-page-35.md",
+      "narrative": null,
+      "content": "58 \nJOAN S. BIRMAN AND WILLIAM W. MENASCO\ninstant of degeneracy there must be a braiding of type b^\n1. \nNow,\nthere is no obstruction to changing the ίibration a little bit so that the\nbraiding occurs before the surgery. The effect of the braiding of type\nb^\n1 is to change the names of the leaves which are involved in the\nsurgeries to 44 + rA —> 4r + 44 or 22 + rl -> 2r + 22. However, that\nviolates Lemma 4.1.\nIt remains to consider the case when the surgery both begins and\nends with a leaf in the class [24]. Up to equivalence, we may assume\nthat it begins with a leaf of name 24. Consulting Tabl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 36)",
+      "pageStart": 36,
+      "pageEnd": 36,
+      "target": "../sections/sec-006-resp-b-page-36.md",
+      "narrative": null,
+      "content": "STUDYING LINKS VIA CLOSED BRAIDS III\ny\n59\n(c) picture in 3-space\nFIGURE 4.6\nj = 1,2. The sub-arcs δ\\+ and 62+ are in <9Δ\n+, while <5i_ and £2_\nare in dA~.\nFigure 4.6c puts the pictures in 4.6a and b together to give view\nin 3-space. The disc Δi, together with a triangular region in F, is a\ncone C\\ on αUjS with vertex W\\. The union of C\\ and D is then\na 2-sphere S\\ which is pierced twice by L, at w\\ and at z. There is\nalso another cone C^ with vertex w2 on the other side of H^, with\nd n C2 = α U β , determining a second 2-sphere S2 which is pierced\ntwice by L at z and w2. Let j = 1 or 2. Then £",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/lem-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "cf Figure 4.1b",
+      "pageStart": 37,
+      "pageEnd": 37,
+      "target": "lem-sec-007-01.md",
+      "narrative": null,
+      "content": "Every A-surgery between two leaves in the foliation of a digon Δ may be assumed to be type pp + qq <-> PQ + QP > where one ofp,q is even and the other is odd.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/lem-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 37,
+      "target": "lem-sec-007-02.md",
+      "narrative": null,
+      "content": "the leaf 12 bounds a degenerately foliated region T on Δ which contains one of the crossing dots. Since the degenerate leaf in that region does not coincide with the dot (by our choices, in §4, of the attaching curves for the digons) the region T necessarily also contains leaves of type 11 or 22. By a small change in the fibration the surgery can be changed to one between 11 or 22 and 41, 61 and",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 37)",
+      "pageStart": 37,
+      "pageEnd": 37,
+      "target": "../sections/sec-007-resp-b-page-37.md",
+      "narrative": null,
+      "content": "60 \nJOAN S. BIRMAN AND WILLIAM W. MENASCO\nfor j = 1 and 2, and since L = (Ln£Ί) U (LnE2) \nthat's impossible.\nWe assume the notation to have been chosen so that Li =LnB\\ \nis\nunknotted. This means that the triangular region of F with vertices\nz, y, W\\ is a disc. Let N be a neighborhood of Li in 3-space\nwhich includes Δi. Then we can modify FT, if necessary, by pushing\nthe fibers up a little bit through N, to insure that Δi is degenerately\nfoliated. \nD\nLEMMA 4.7 (cf Figure 4.1b). Every A-surgery between two leaves\nin the foliation of a digon Δ may be assumed to be type pp + qq <->\nPQ + QP > where",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prop-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 38,
+      "target": "prop-sec-008-01.md",
+      "narrative": null,
+      "content": "(1) A leaf of type [12], [22] or [24] necessarily splits off a degenerately foliated region on a digon, as in Figure 4.1a. In the cases of types [22] and [24] the region is the one which does not contain the two crossing dots. (2) If a digon is not standardly foliated {Figure 3.4) then its singu- larities are one of the following three types: type [1 - 2], with representatives (1 - 2), (3 - 4) and (5 - 6); type [1 - 4], with representatives (1-4), (3 - 6) and (5 - 2). type [1 - 6], with representatives (1-6), (3 - 2) and (5 - 4). (3) If a singularity of type [1-4] or [1-6] occurs in a digon Δ,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 38)",
+      "pageStart": 38,
+      "pageEnd": 38,
+      "target": "../sections/sec-008-resp-b-page-38.md",
+      "narrative": null,
+      "content": "STUDYING LINKS VIA CLOSED BRAIDS III \n61\n45. However, since 11 has sign — \nand 22 has sign + + , while 41,\n61 and 45 all have sign H— this contradicts Lemma 4.5.\nThe surgery 24 + 55 —> 45 + 52 remains. The leaf 24 divides Δ\ninto two regions, one of which contains the singularity of the given\nfoliation. The other one must be degenerately foliated by Lemma 4.2.\nMoreover, there is a braiding of type b\\\n1 at the instant of degeneracy.\nBy a small change in the fibration, we may assume that the braiding\noccurs before the surgery. This braiding changes the leaf of type 24 to\na leaf of type 44 or 22 a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/cor-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 39,
+      "target": "cor-sec-009-01.md",
+      "narrative": null,
+      "content": "If the non-standard foliation of a digon Δ/(fc) con- tains an Ω-singularity in the equivalence class [1 - 2]~* then there is exactly one digon joining disc D; to D ί +i, and one of the braid gener- ators (at) ±ι occurs exactly once in W(L). Moreover, the non-standard foliation of the entire 2-sphere <9BZ contains exactly one digon-singula- rity, namely the given singularity of type [1 — 2]\"*.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 39)",
+      "pageStart": 39,
+      "pageEnd": 39,
+      "target": "../sections/sec-009-resp-b-page-39.md",
+      "narrative": null,
+      "content": "62 \nJOAN S. BIRMAN AND WILLIAM W. MENASCO\nleaves of type 11 and 22 each divide Δ into two pieces, one of which\ncontains the two crossing dots. By Lemma 4.3, the side which does\nnot contain the dots is degenerately foliated. Two leaves of name 12\nare produced by the surgery. Each divides Δ into two regions, one\nof which contains the singularity. By Lemma 4.6 the other must be\ndegenerately foliated. But then, all of Δ is foliated, with exactly one\nsingularity. \nD\nWe are now able to use information about the foliation of the digons\nto deduce a strong property of the braid word FF(L).\nCOROLLARY 4.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 40)",
+      "pageStart": 40,
+      "pageEnd": 40,
+      "target": "../sections/sec-010-resp-b-page-40.md",
+      "narrative": null,
+      "content": "STUDYING LINKS VIA CLOSED BRAIDS III\n63\n(a)Picture on a fiber of\nafter the singularity\n(b) Corresponding picture in aβi\nFIGURE 4.8\nwhich are illustrated in Figure 4.8b must be part of the same digon.\nBut then, this digon must be joined to itself by the undercrossing arc\nL|, so our digon is the only digon which joins the discs D, and D +i.\nSince the number of digons between D, and D / + 1 is equal to the\nnumber of bands between Df and D / +i this shows that αz or its\ninverse occurs exactly once in W{JL). \n•\n5. Moving A\nf into T. We have dealt with the minimization of\nevery entry in C except C4.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prop-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 41,
+      "target": "prop-sec-011-01.md",
+      "narrative": null,
+      "content": "The non-standard axis A! is inside the T com- ponent in the decomposition of S 3 split open along F u Ω .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 41)",
+      "pageStart": 41,
+      "pageEnd": 41,
+      "target": "../sections/sec-011-resp-b-page-41.md",
+      "narrative": null,
+      "content": "64 \nJOAN S. BIRMAN AND WILLIAM W. MENASCO\nPROPOSITION 5.1. The non-standard axis A! is inside the T com-\nponent in the decomposition of S\n3 split open along F u Ω .\nThe proof will occupy most of the section. After it is completed we\nwill establish a significant corollary.\nProof of Proposition 5.1. We begin by describing a set of partial \"co-\nordinates\" for the non-standard and standard axes. By Corollary 2.3\nwe know that A and A' each pierce F three times, and so each is\ndivided into 3 segments by its intersections with F. The segments\non A (respectively A\n7) have a natural cyclic order on A (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/lem-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 42,
+      "pageEnd": 42,
+      "target": "lem-sec-012-01.md",
+      "narrative": null,
+      "content": "Distinct points of A! Π F are in distinct components of subset #1' or 1\".",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 42)",
+      "pageStart": 42,
+      "pageEnd": 42,
+      "target": "../sections/sec-012-resp-b-page-42.md",
+      "narrative": null,
+      "content": "STUDYING LINKS VIA CLOSED BRAIDS III \n65\npierces F in set #3 its label will change from Bz to B / + 1. This shows\nimmediately that the cycles 222, 133, 211, 233, 311, 123, 321 do not\noccur because they do not correspond to cycles of labels. Also, the\ncycle of labels is B1B2B3 if and only if the cycle of pierce-points is\n333. This reduces things to the pierce-point sequences 111, 122 and\n322.\nThe subset #1 of F, which contains L, merits special attention.\nAs noted earlier, it splits into two subsets. The first contains the r\nundercrossing arcs L/(/c) and the adjacent triangular regions Ti(fc),",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 43)",
+      "pageStart": 43,
+      "pageEnd": 43,
+      "target": "../sections/sec-013-resp-b-page-43.md",
+      "narrative": null,
+      "content": "66\nJOAN S. BIRMAN AND WILLIAM W. MENASCO\nFIGURE 5.1\n3 4\nPositions of the p^'s, the ays and of 1,2,3,4,5,6\n-m~\n3\ncased)\ncase(ii)\ncase(iii)\nFIGURE \n5.2\ncase(iv)\ncase(v)\noccur are 1 Ί T , l ' Ί ' Ί \" , I'll, \n1\"22 and 322. Notice that the axis\nA' necessarily passes from T to T if it punctures F in set #1', from\nB/ to B, if it punctures F in 1\". Thus our five pierce-point cycles\ncorrespond to the cycles of labels and pierce-points which are listed in\nFigure 5.2. Note that we have fixed notation, so that (for example) in\ncase (ii) the pierce-points p[ and p\nf\n2 are in subset 2 of F and p\nf\n3 is\nin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 44)",
+      "pageStart": 44,
+      "pageEnd": 44,
+      "target": "../sections/sec-014-resp-b-page-44.md",
+      "narrative": null,
+      "content": "STUDYING LINKS VIA CLOSED BRAIDS III\n67\npicture in 3-space \npicture on djor dQr\nChoosing H\n1*\nFIGURE 5.3\nof F into subsets V, 1\" ,2 and 3 and the latter illustrates the induced\ndecomposition of 9B, .\nCase (ϋ). Assume that case (ii) occurs. We begin by examining the\ngeometry near the pierce-point p\\, which (unlike p[ and p'2) is in\nsubset #1' of F. See Figure 5.3 (and set / = 3). The facts that:\n(1) L is transverse to every fiber of H',\n(2) the foliation of F is radial near each pierce-point,\n(3) points in subset 1' are arbitrarily close to L, and\n(4) the point p'3 is the only point of A' n F i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 45)",
+      "pageStart": 45,
+      "pageEnd": 45,
+      "target": "../sections/sec-015-resp-b-page-45.md",
+      "narrative": null,
+      "content": "68\nJOAN S. BIRMAN AND WILLIAM W. MENASCO\n3 4\nThe arcs μ23(Φ0) and\nμ5g(Φ0) viewed onHV\n(a)\nThe arc μ23(Φ\nviewed on d\n(b)\nFIGURE 5.4\nThe disc δ\n(c)\nis in subset 2 of F\n+ , cuts across the L/(fe) 's and various digons as\nit passes from F\n+ to F~ , then across additional digons and possibly\nacross Lz(fc) again in F~ , ending at the point 3, which is in subset 2\nof F~ . From our earlier observations, we know that μ23(Φo)^β56(Φo)\nis empty. Thus, if the digon-crossing arc in μ2s(Φo) h\na s name pq,\nthen neither p nor q can be 5 or 6, so p, q e {1, 2, 3, 4}.\nWe next claim that we may assume that μ23(Φo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/lem-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 46,
+      "target": "lem-sec-016-01.md",
+      "narrative": null,
+      "content": "Assume that the pierce-point p\\ is in subset #V (or 1\"). Then (after a modification of H') we may choose a generic fiber Ή!φ with the property: H'^ n F includes an arc β which is entirely in set°#V (or #1\") and joins\"p\\ to L.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 46)",
+      "pageStart": 46,
+      "pageEnd": 46,
+      "target": "../sections/sec-016-resp-b-page-46.md",
+      "narrative": null,
+      "content": "STUDYING LINKS VIA CLOSED BRAIDS III\n69\nRemoving L-crossΐngs \n!\nFIGURE 5.5\nRemoving [ 12],[ 11 ] and [24] arcs\nFIGURE 5.6\nL. Thus, going to Figure 5.4(c) we conclude that the only possibility\nis that μ23(Φo) begins at 2 in F+, proceeds in set 2 to one of the\nadjacent digons, crosses that digon to subset 2 of F~ using a single\ndigon crossing-arc of name 23, and then proceeds in subset 2 of F~\nto 3. From Figure 5.4(c), we notice that the subarc a\\ of A' and\nβ23(Φ) bound a disc δ in H^. But then, we may push a\\ across δ\ninto T. The fact that μ23(Φo) only crosses one digon shows that this\nmove dec",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/lem-sec-017-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 47,
+      "pageEnd": 47,
+      "target": "lem-sec-017-01.md",
+      "narrative": null,
+      "content": "Suppose that p\\ and p'i+ι are in subsets #2 and/or #3 of F Π <9Bj•. Let H^ be any generic fiber. Then {after a modification of H') we may assume that an arc in Ή!ώ Π <9B/ which joins pi to Pi+ι does not cross L.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/lem-sec-017-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 47,
+      "pageEnd": 47,
+      "target": "lem-sec-017-02.md",
+      "narrative": null,
+      "content": "Let H^ be any generic fiber. Then we may assume that H'φ nΩ does not include any digon crossing-arcs of type [12], [11] or [24]. ° In addition, using the picture proof in Figure 5.7, we obtain:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/lem-sec-017-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 47,
+      "pageEnd": 47,
+      "target": "lem-sec-017-03.md",
+      "narrative": null,
+      "content": "Let Ή!ώ be any generic fiber. Then we may assume that Hφ n dBi (or H'φ n dΎ) does not contain any simple closed curves. We continue the proof of Proposition 5.1. Case (iii). Assume that case (iii) of Figure 5.2 occurs. Our first task is to prove that if H^ is a non-singular fiber of the non-standard fibration, then (as in case (ii)), there are no arcs of type [23] in H^ n Ω. Suppose the contrary. Among all such arcs, choose one which is outermost, i.e. closest to A', as in Figure 5.4(c). Without loss of generality we may assume that its name is 23. Passing to the picture on H^, as in Figure 5.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 47)",
+      "pageStart": 47,
+      "pageEnd": 47,
+      "target": "../sections/sec-017-resp-b-page-47.md",
+      "narrative": null,
+      "content": "70\nJOAN S. BIRMAN AND WILLIAM W. MENASCO\nFUΩ\nmodified\nRemoving simple closed curves\nFIGURE 5.7\nLEMMA 5.4. Suppose that p\\ and p'i+ι \nare in subsets #2 and/or #3\nof F Π <9Bj•. Let H^ be any generic fiber. Then {after a modification\nof H') we may assume that an arc in Ή!ώ Π <9B/ which joins pi to\nPi+ι does not cross L.\nLEMMA 5.5. Let H^ be any generic fiber. Then we may assume\nthat H'φ nΩ does not include any digon crossing-arcs of type [12], [11]\nor [24]. °\nIn addition, using the picture proof in Figure 5.7, we obtain:\nLEMMA 5.6. Let Ή!ώ be any generic fiber. Then we may assume that\nHφ n dBi (o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 48)",
+      "pageStart": 48,
+      "pageEnd": 48,
+      "target": "../sections/sec-018-resp-b-page-48.md",
+      "narrative": null,
+      "content": "STUDYING LINKS VIA CLOSED BRAIDS III\n71\nFIGURE 5.8\nThus pushing a\\ across δ into T, reduces complexity. Therefore\nthere are no digon-crossing arcs of name 23.\nThe fact that p[, p\nf\n2 and p'3 are in distinct components of subset 1\"\nof F shows that we may apply Lemma 5.3 three times to choose a fiber\nH^ such that H^ Π<9B/ is a union of arcs {//2/-i,2/(0o), / = 1 ? 2 ? 3}\nwhich join 2i — 1 to 2i, crossing L once and missing all digons.\nPushing I!', \nforward in the fibration, we follow the evolving arcs.\nThere must be a singularity in the foliation of <9B/. By Proposition\n4.8 the surgery is limite",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 49)",
+      "pageStart": 49,
+      "pageEnd": 49,
+      "target": "../sections/sec-019-resp-b-page-49.md",
+      "narrative": null,
+      "content": "72\nJOAN S. BIRMAN AND WILLIAM W. MENASCO\n21-1\nFIGURE 5.9\nin distinct components of subset 1\". Thus case (iii) does not occur.\nCase (iv). Assume that case (iv) occurs. By Lemma 5.4 applied 3\ntimes, we may choose a fiber H^ of H' which meets <9B/ in a simple\narc μ23(Φo) which joins 2 to 3 without crossing L, meets <9B;+i in\na simple arc μtsiΦo) which joins 4 to 5 without crossing L, and\nmeets dΎ in a simple arc μβi(Φo) in <9T which joins 6 to 1 without\ncrossing L. By Lemma 5.5 we may assume that μ23(Φo) and μ4s(φo)\ndo not contain digon-crossing arcs of type [12], [11] or [24], so that\nthe only p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 50)",
+      "pageStart": 50,
+      "pageEnd": 50,
+      "target": "../sections/sec-020-resp-b-page-50.md",
+      "narrative": null,
+      "content": "STUDYING LINKS VIA CLOSED BRAIDS III\n73\nPi\nFIGURE \n5.10\ncrosses a digon, the digon crossing-arc will have a name pq e\n{13, 14, 24 or 23}. However, the names 13 and 24 cannot occur by\nLemma 5.5, and the name 23 cannot occur by Lemma 5.6, so pq can\nonly be 14. Thus, we may assume that we have a disc fiber H^ for\nwhich H^ Π (Fn Ω) is as illustrated in Figure 5.11 (a) (next page).\nThat is, μu(Φo) begins at 1 c F~, proceeds in F~ until it meets a\ndigon Δ, crosses it in a single arc of name 14, and then proceeds to\n4 in F\n+ . The view we would have of FT, Π B/ when we are inside\nB; is shown in Figur",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 51)",
+      "pageStart": 51,
+      "pageEnd": 51,
+      "target": "../sections/sec-021-resp-b-page-51.md",
+      "narrative": null,
+      "content": "74\nJOAN S. BIRMAN AND WILLIAM W. MENASCO\n3 4\nFIGURE \n5.11\nof name 22 or 33 will be introduced in pairs (two 22's or two 33's),\nas in Figure 5.1 l(f), because μu(Φ) will meet a type 3 region on\nboth sides. Since the surgeries pp + pp —• pp + pp cannot occur, the\nonly possibility for foliating the intermediate digons is with a surgery\n22 + 33 —• 23 + 32. However, notice that the regions between the two\n22's in H'φ has label B/_i and the region between the two 33's has\nlabel Bz +i, so this is impossible. We conclude that when μu(Φ) is\ndeformed, it cannot intersect subset 3.\nBut then, after the 11",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/lem-sec-022-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 52,
+      "target": "lem-sec-022-01.md",
+      "narrative": null,
+      "content": "We may assume that every scc (resp. special scc) ¢ on OT (resp. OB;) is essential.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 52)",
+      "pageStart": 52,
+      "pageEnd": 52,
+      "target": "../sections/sec-022-resp-b-page-52.md",
+      "narrative": null,
+      "content": "STUDYING LINKS VIA CLOSED BRAIDS HI 75\n\nthe situation of subcase v.1, with the same contradiction to minimum\ncomplexity as before. Thus case (v) does not occur.\n\nWe are reduced to case (i) of Figure 5.2. The cycle of labels is\nTTT and the cycle of pierce-points is 1/1’1’. The integer cy in the\ncomplexity 5-tuple is 0. The proof of Proposition 5.1 is complete. O\n\nA simple closed curve (scc) ¢ = ¢(¢o) in the foliation of OT is es-\nsential if there exists a parallel scc c(¢) in the foliation which bounds\na disc 6(¢) which has non-empty intersection with L. Otherwise, c\nis inessential. A scc c = c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/cor-sec-023-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 53,
+      "pageEnd": 53,
+      "target": "cor-sec-023-01.md",
+      "narrative": null,
+      "content": "We may assume that there is a fiber H^ with the property: H', ΠdT is a union of three arcs μn, μ$4, and μ^y where μn-i,2i joins the pierce points 2/—1 and 2i, crossing L once, without intersecting any digons.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/lem-sec-023-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 53,
+      "pageEnd": 53,
+      "target": "lem-sec-023-02.md",
+      "narrative": null,
+      "content": "we know we may find a fiber of FT which satisfies the property we need for at least one i, say H^ n dΊ contains the arc μ 1 2 . But then if μ34 and μ56 did not have the stated properties there would be inessential simple closed curves in the foliation of dΎ, a possibility which is ruled out by Lemma 5.7. D 6. The Classification Theorem. All of the pieces are in place, and we are ready to prove the theorem which is the central result of this manuscript. Our proof will occupy the rest of this section. THE CLASSIFICATION THEOREM (Version 2). Let 3* and Jf be orh ented link types of braid index <",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 53)",
+      "pageStart": 53,
+      "pageEnd": 53,
+      "target": "../sections/sec-023-resp-b-page-53.md",
+      "narrative": null,
+      "content": "76 \nJOAN S. BIRMAN AND WILLIAM W. MENASCO\ndigon\nFIGURE \n5.12\nto eliminate the sec. Thus without loss of generality we may assume\nthat every simple closed curve in the foliation of 9T and every special\nsimple closed curve in the foliation of <9B; is essential. \nD\nCOROLLARY 5.8. We may assume that there is a fiber H^ with the\nproperty: H', ΠdT is a union of three arcs μn, μ$4, and μ^y where\nμn-i,2i joins the pierce points 2/—1 and 2i, crossing L once, without\nintersecting any digons.\nProof. This follows directly from Lemmas 5.3 and 5.7. For, by\nLemma 5.3 we know we may find a fiber of FT which s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prop-sec-024-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 54,
+      "target": "prop-sec-024-01.md",
+      "narrative": null,
+      "content": "As was observed at the end of §2, there is then a homeomorphism h: S 3 —> S 3 such that λ(A') = A; also h maps fibers of H to fibers of FT and maps L to a new representative M = Λ(L).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 54)",
+      "pageStart": 54,
+      "pageEnd": 54,
+      "target": "../sections/sec-024-resp-b-page-54.md",
+      "narrative": null,
+      "content": "STUDYING LINKS VIA CLOSED BRAIDS III \n77\nthe following exceptions:\n(i) W is conjugate to a\\a,2 and X to a\\a^\nx or ( ^ I ^ ) \"\n1 and L\nrepresents the unknot, which has braid index 1.\n(ii) W is conjugate to a\\ai and X to ctfa^\n1, where \\p\\ Φ 1, and\nL represents a type (2, p) torus link, which has braid index 2.\n(iii) W is conjugate to (a^(anγ\\am)\nr \nor \n(a^(an)<*(am)\nr(an)\n±ι,\nwhere {i9 n, m} — {1,2,3} and X is conjugate to W read back-\nwards. The 3-braid L represents a prime, non-split, invertible link of\nbraid index 3 which has at most two conjugacy classes of 3-braid rep-\nresentatives. These",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/cor-sec-025-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 55,
+      "target": "cor-sec-025-01.md",
+      "narrative": null,
+      "content": "there cannot be more than three singularities of type [1 - 2], since there are only three distinct letters α z. Suppose that the non-standard foliation contains three singularities of type [1 - 2]. Then Corollary 4.9 implies that W has letter length three and uses all three generators. Up to conjugation and possibly replacing L and M by their mirror images we may assume the first letter is a\\. So W = a\\{anγ{am) γ, where β, γ = ±1 and {n, m) = {2,3}. Of the 8 possible words of this form, we see from relations (2.1) that the only one which cannot be replaced by a word of syllable length 2 is W =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 55)",
+      "pageStart": 55,
+      "pageEnd": 55,
+      "target": "../sections/sec-025-resp-b-page-55.md",
+      "narrative": null,
+      "content": "78 \nJOAN S. BIRMAN AND WILLIAM W. MENASCO\nand also they use all three generators. By Proposition 5.1 we know that\nthe non-standard axis A' is in the interior of T. By Proposition 3.2\nwe know that there is a natural link diagram for L on ΘΎ. We begin\nto investigate the non-standard foliation of dΊ. \nWe are interested\nin its Ω-singularities and F-singularities. By Proposition 4.8 the Ω-\nsingularities are restricted to types [1 - 2], [1-4] and [1 - 6]. By\nCorollary 4.9 there cannot be more than three singularities of type\n[1 - 2], since there are only three distinct letters α z.\nSuppose that the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 56)",
+      "pageStart": 56,
+      "pageEnd": 56,
+      "target": "../sections/sec-026-resp-b-page-56.md",
+      "narrative": null,
+      "content": "STUDYING LINKS VIA CLOSED BRAIDS III\n79\nblock P=aP\nFIGURE 6.1\n[1 —2], to conclude that W = a\\a2a\\, with \\p\\ > 2. Interchange\nthe roles of the standard and non-standard fibrations. The new non-\nstandard fibration has n = 3, 2, 1 or 0 singularities of type [1 - 2].\nNow if n = 3 we are done by the argument used earlier for the\nstandard fibration. If n = 2, then W or (W)\"\n1 must also have\nthe form a\\a2{a^)\nq, where \\a\\ > 2. If W = aχa2a\\ , W = a\\a2a\\,\nthen the fact that W and W have the same exponent sum implies\nthat p = q and W - W . If W = a{a2a\np\n3 , (W)\"\n1 = axa2a\\, \nthen\nthe exponent sum argu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 57)",
+      "pageStart": 57,
+      "pageEnd": 57,
+      "target": "../sections/sec-027-resp-b-page-57.md",
+      "narrative": null,
+      "content": "80 \nJOAN S. BIRMAN AND WILLIAM W. MENASCO\n(ii) The second possibility is that the foliation near an F-singularity\nis not isotopic to the standard foliation. We call this a non-standard\nor NSF-singularity.\nThus the non-standard fibration of S\n3-L is described by a sequence\nof events, each of which is either a block of standard F-singularities,\nan NSF-singularity or an Ω-singularity. \nWe call the NSF and Ω-\nsingularities events. The cycle of events is the cyclic list of NSF-\nsingularities (described by a single letter (bj)\n±ι, \nj = 1,2,3) and\nΩ-singularities (described by a type symbol (p — q)~*",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/lem-sec-028-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 58,
+      "pageEnd": 58,
+      "target": "lem-sec-028-01.md",
+      "narrative": null,
+      "content": "Assume that the cycle of events contains only ^-singula- rities in the equivalence class [1-4]. Then W andX both have syllable length three, and X is W read backwards.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 58)",
+      "pageStart": 58,
+      "pageEnd": 58,
+      "target": "../sections/sec-028-resp-b-page-58.md",
+      "narrative": null,
+      "content": "STUDYING LINKS VIA CLOSED BRAIDS III \n81\ncontains only blocks and Ω-singularities of type [1 - 4]. The second\nmain step is to prove (Lemma 6.4) that the conditions of the theo-\nrem are also satisfied if the augmented cycle of events contains no\nsingularities of type [1 - 4]. The third main step (Lemma 6.5) is to\nprove that the augmented cycle of events either contains only blocks\nand Ω-singularities of type [1 - 4], or else it does not contain any\nΩ-singularities of type [1 - 4]. Thus every case is covered by Lemmas\n6.1 and 6.4.\nThe basic technique which we use is explained in some detail in\nt",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 59)",
+      "pageStart": 59,
+      "pageEnd": 59,
+      "target": "../sections/sec-029-resp-b-page-59.md",
+      "narrative": null,
+      "content": "82\nJOAN S. BIRMAN AND WILLIAM W. MENASCO\n3 \n4 \n3 \n4\ninitial fiber\n11 and 44 diqon \nafter the singularity\ncrossing arcs appear\nSnapshots on fibers of H'\nevolving foliation of aT\ntype (1-4)\"* singularity\nFIGURE 6.2\nThis curve bounds a disc d in H^_j, which (by the discussion in the\nproof of Lemma 5.7) is necessarily in one of the 3-balls, say B,. The\nsubarcs ax and a2 are also in dΊ, but β\\ and β2 are not.\nFigure 6.3 shows the curve c as it might look on dB;. In our\nexample there is a chain of two digons, joined up by undercrossing\narcs (cf. Figures 3.7 and 3.9). Our curve c meets one of the dig",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 60)",
+      "pageStart": 60,
+      "pageEnd": 60,
+      "target": "../sections/sec-030-resp-b-page-60.md",
+      "narrative": null,
+      "content": "STUDYING LINKS VIA CLOSED BRAIDS III\n83\nFIGURE 6.3\nis parallel to c and which intersects distinct digons. Thus δ\nf contains\none or more of the undercrossing arcs. This means that the singularity\nmust be followed by a block P = b?, p / 0 . The integer p is the\nnumber of undercrossing arcs between a\\ and a\\, in δ', on <9B/,\nwhen φι is chosen so that p is maximal. The digon-crossing arcs a\\\nand a\\ both have name 23, and they are separated on dT by the\nblock. Thus we have shown: if the cycle of singularities begins with\nan initial fiber, which is followed by the singularity (1 — 4)~* , then the\nse",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 61)",
+      "pageStart": 61,
+      "pageEnd": 61,
+      "target": "../sections/sec-031-resp-b-page-61.md",
+      "narrative": null,
+      "content": "84\nJOAN S. BIRMAN AND WILLIAM W. MENASCO\n3 4\npicture on split-open\nfiber of H\n1 after a\nsingularity\n(2-3)\"*\nlocal picture on dΎ\nafter a (2-3)\"* singularity\nFIGURE 6.4\n(1 — 4)\"~ are impossible, because the initial arcs which are required\nfor such a singularity don't exist. So we are reduced to (1—4)\"* or\n( 1 - 4 ) - .\nWe now claim that the initial forward sequence cannot begin with\n(1 - 4)~% (1 - 4)~\\ For, suppose that it did. After the second (1 - 4)\"~*\nthe picture in H^ will be as illustrated in Figure 6.5. There are\nnow two pairs of parallel digon crossing arcs of name 14. Each pair,\ntogethe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 62)",
+      "pageStart": 62,
+      "pageEnd": 62,
+      "target": "../sections/sec-032-resp-b-page-62.md",
+      "narrative": null,
+      "content": "STUDYING LINKS VIA CLOSED BRAIDS III\n85\nPartial picture on fiber of H'\nPartial picture on dT\nFIGURE 6.5\nwhich has shorter syllable length. So, W is not admissible and this\ncase does not occur.\nWe are reduced to the case where the initial forward sequence begins\nwith (1 - 4)~>, followed by (1 - 4)*~ . Recall that the (1 - 4)~> and\nsubsequent block resulted in the foliation of a disc δ\n1, with dδ' = c',\non <9B/. After the (1 - 4)*~ singularity we will have foliated a second\ndisc, also with boundary c', in 9B, . Thus we will have foliated an S\n2\nin dBj. But then we must have foliated all of B z.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/lem-sec-033-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 63,
+      "pageEnd": 63,
+      "target": "lem-sec-033-01.md",
+      "narrative": null,
+      "content": "The cycle of events does not begin with any of the follow- ing, or with any other sequences equivalent to these under symmetries: (6.2.1) ( l - 4 Γ , ( l - 4 ) - \\ (6.2.2) (2-3Γ,(2-3Γ, (6.2.3) (δiΓMftiΓ 1, (6.2.4) bx,{bxY x orψxy\\bx.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 63)",
+      "pageStart": 63,
+      "pageEnd": 63,
+      "target": "../sections/sec-033-resp-b-page-63.md",
+      "narrative": null,
+      "content": "86 \nJOAN S. BIRMAN AND WILLIAM W. MENASCO\nLEMMA 6.2. The cycle of events does not begin with any of the follow-\ning, or with any other sequences equivalent to these under symmetries:\n(6.2.1) ( l - 4 Γ , ( l - 4 ) - \\\n(6.2.2) (2-3Γ,(2-3Γ,\n(6.2.3) (δiΓMftiΓ\n1,\n(6.2.4) bx,{bxY\nx \norψxy\\bx.\nProof of Lemma 6.2.\nProof of 6.2.1 and 6.2.2. Assertion 6.2.1 was proved in the course\nof the proof of Lemma 6.2.1. The proof of 6.2.2 is identical, using\nthe modification described in the proof of Sublemma 6.1.1.\nProof of 623. To prove the assertion we need to understand the\nfoliation of d T in the region near",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 64)",
+      "pageStart": 64,
+      "pageEnd": 64,
+      "target": "../sections/sec-034-resp-b-page-64.md",
+      "narrative": null,
+      "content": "STUDYING LINKS VIA CLOSED BRAIDS III\n87\nΓ\ncomponent\nof subset * 1 ' '\n! attaching curves\nfordigons\nί \n^ π\nj \ncomponent of\n) \nsubset\n(b) viewed on dT \nc) joining arc on dT\n(a) viewed on F\n(d) Viewed on fibers of H'\nNSF-singularity of type\n\\-i\nFIGURE 6.6\narcs of H'φ Π F come together for the future type \n(bι)~\nι-singularity\nwe see a pair of digon crossing arcs of name 11 and 33 appear. The\nendpoints of each are separated by the endpoint of the joining arc for\nthe singularity. Therefore, after the singularity there will be a pair\nof parallel digon-crossing arcs of name 13. If, instead, the singul",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/lem-sec-035-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 65,
+      "pageEnd": 65,
+      "target": "lem-sec-035-01.md",
+      "narrative": null,
+      "content": "We may assume that the initial forward sequence in the cycle of events does not begin with any of the following sequences, or with other sequences equivalent to these under symmetries: (6.3.1) ( 1 - 4 ) - , ( 4 - 5 ) - , (6.3.2) (ft 1)- 1,(2-3Γ, (6.3.3) ( & 1 ) - 1 , 6 2 , ( 2 - 3 r , (6.3.4) ( & i ) - ? ό 2 , ( 4 - 5 Γ , (6.3.5) \\ (6.3.6) (6.3.7) (6.3.8) ( 1 - 4 ) - , ( 2 - 3 ) - , (6.3.9) ( 2 - 3 ) - , ( 4 - 5 ) - . Also, the following sequences are equivalent after a change in H': (6.3.10) (2-3)-, (fc)- 1 and (b2)- ι,(2-3Γ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 65)",
+      "pageStart": 65,
+      "pageEnd": 65,
+      "target": "../sections/sec-035-resp-b-page-65.md",
+      "narrative": null,
+      "content": "88 \nJOAN S. BIRMAN AND WILLIAM W. MENASCO\nProof of 6.2.4. W is freely reduced, so b[ and (6/)\"\n1 cannot be\nadjacent in W . \nD\nFor future use, we note that events b^\nx, [1 - 6]\"* and [1 - 4]~^\neach result in the creating of a pair of parallel digon crossing arcs in\nfibers of H'. We call these arcs bridges. The name of the bridge is\nthe name of its digon-crossing arcs. The bridge region is the region on\nfibers of H' cut off by the bridge together with subarcs of F\n± . The\nboundary of the bridge is the simple closed curve c which bounds the\nbridge region. The label of the bridge is B/ if the brid",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 66)",
+      "pageStart": 66,
+      "pageEnd": 66,
+      "target": "../sections/sec-036-resp-b-page-66.md",
+      "narrative": null,
+      "content": "STUDYING LINKS VIA CLOSED BRAIDS III \n89\n4\nthat p = 0, contradicting Sublemma 6.1.1. Therefore this case does\nnot occur.\nProof of 6.3.2, 6.3.3, 6.3.4, 6.3.5. The arguments are all essentially\nthe same as the one used to prove 6.3.1. The final event is a singularity\nof type (q - r)~*, where qr — 23, 23, 45, 45 in the four cases. By\nSublemma 6.1.1 that bridge must be followed by a non-empty block.\nPart of the picture on a fiber of FT after the (q — r)~* singularity is\nlike the right picture in Figure 6.7. Neither of the type or bridge arcs\nis on a leaf of the foliation of dΎ which crosses L twic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 67)",
+      "pageStart": 67,
+      "pageEnd": 67,
+      "target": "../sections/sec-037-resp-b-page-67.md",
+      "narrative": null,
+      "content": "90\nJOAN S. BIRMAN AND WILLIAM W. MENASCO\n1\n2 digor}\nI, •\nd\ndigoπ\nSingular leaves in the foliation of dT after <2-3)-», b*\n1\nFIGURE 6.8\nIf i Φ k the local picture on 9T must be the one on the right in\nFigure 6.8. It is essentially identical to Figure 6.5 and is ruled out\nfor the same reasons as were used to rule out the sequence (1 — 4)~*,\n(1 — 4)\"~* in the proof of Lemma 6.1.\nProof of 6.3.7. The events b^\n1 and (2 — 3)\"* result in the creation\nof bridges in fibers of H': first a bridge of name 35 with label B/, and\nthen a bridge of name 23 and label B^ . There are two cases: i Φ k\nand i = k. W",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 68)",
+      "pageStart": 68,
+      "pageEnd": 68,
+      "target": "../sections/sec-038-resp-b-page-68.md",
+      "narrative": null,
+      "content": "STUDYING LINKS VIA CLOSED BRAIDS III\n91\nopposite sides of rectangle to be identified\nFIGURE 6.9\nthe \" 1 \" side and the \"6\" side of the leaf ζ. The arcs a and β must\ncobound a disc Δ in S\n3, and the singularity will be realized by an\nisotopy along Δ. Since the block P is maximal, the only way that a\ncan exist is if P is followed (in the projection of L onto <9T) by a\ncrossing a^\nx, as illustrated in Figure 6.9. The (1 - 6)\"* singularity\nproduces digon crossing arcs of name 16 in a digon which lies between\nthe 3rd and 1st braid strands, Sublemma 6.1.1 says there must be a\nnon-empty block Q = b^",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 69)",
+      "pageStart": 69,
+      "pageEnd": 69,
+      "target": "../sections/sec-039-resp-b-page-69.md",
+      "narrative": null,
+      "content": "92\nJOAN S. BIRMAN AND WILLIAM W. MENASCO\nFIGURE \n6.10\nP, the crossing we called a^\nx and the block Q exist as before. Again\nW does not have shortest syllable length.\nProof of'6.3.8. If the sequence (1 - 4)\"\", (2 - 3)\"^ occurs, the local\npicture on <9T begins with the configuration which was illustrated in\nFigure 6.2. We leave it to the reader to extend it to the full picture,\nusing the following considerations: In order for the (2-3)\"\" event\nto be possible, the \"2\" side and the \"3\" side of the arc which joins 2\nto 3 in Figure 6.4 must be on opposite sides of the same digon. The\nonly way this c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 70)",
+      "pageStart": 70,
+      "pageEnd": 70,
+      "target": "../sections/sec-040-resp-b-page-70.md",
+      "narrative": null,
+      "content": "STUDYING LINKS VIA CLOSED BRAIDS III \n93\nin the initial fiber, i.e. the arcs μ12 , /*34, βsβ > cross L once, without\ncrossing any digons. In Figure 6.13, right picture, we have shown, in\naddition to the blocks P and Q, a (possibly empty) block R = (α3)\nΓ\nlocated above μ^ and below P. To show that the block R must be\nnon-empty, we notice that the three arcs //2/-1,2/\n \nc u t directly across\nL shows that A' loops directly under L between the pierce-points\n2i — 1 and 2i. But then, if r = 0, A' would cut directly under all\nthree strands and so be isotopic to A, which is impossible. Thus\nrφO.\nBut t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/lem-sec-041-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 71,
+      "pageEnd": 71,
+      "target": "lem-sec-041-01.md",
+      "narrative": null,
+      "content": "If the singularities in the non-standard foliation do not include any singularities of type [1 — 4], then W either has syllable length three, or else it has syllable length four and one of the braid generators occurs exactly once.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 71)",
+      "pageStart": 71,
+      "pageEnd": 71,
+      "target": "../sections/sec-041-resp-b-page-71.md",
+      "narrative": null,
+      "content": "94 \nJOAN S. BIRMAN AND WILLIAM W. MENASCO\nFor the case (2 - 3)\"*, φi)~\nx \nwith / φ k, we refer to Figure\n6.10, focusing on the foliation shown there on <9T after \nφ2)~\nι,\n(2 - 3)\"\" and before the subsequent (1 - 6)\"\". There is no obstruc-\ntion on d T to reversing the order of the singularities and doing the\n(2 — 3)~* singularity first. There is also no obstruction in fibers of H'.\nTherefore the two cases are equivalent, after a change in fibration. D\nLEMMA 6.4. If the singularities in the non-standard foliation do not\ninclude any singularities of type [1 — 4], then W either has syllable\nlength",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 72)",
+      "pageStart": 72,
+      "pageEnd": 72,
+      "target": "../sections/sec-042-resp-b-page-72.md",
+      "narrative": null,
+      "content": "STUDYING LINKS VIA CLOSED BRAIDS III \n95\n6.3.10, for we can exchange the order of the (62)\"\nι and the (2 - 3)\"\",\nwhich reduces things to a sequence in which the first two events are\nnot both, NSF singularities. The same reason rules out {b\\)~\nι, b2>\n(1—6)— because b2, (1 — 6)~* is equivalent under symmetries to\nto)\"\n1, \n(2-3)-*. The sequence \nto)\"\n1, \nto)\"\n1, \n(1-6)-\" is ruled\nout because if it occurs, then after the (1 - 6)\"* there must be a block\nb£. But then, W will contain the subword (bι)~\nι(b2)~\nι(b3)\np \n, which\nis equivalent to \nto)\np-1 \nto)\"\n1, \nso W does not have shortest syllable\nlen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 73)",
+      "pageStart": 73,
+      "pageEnd": 73,
+      "target": "../sections/sec-043-resp-b-page-73.md",
+      "narrative": null,
+      "content": "96\nJOAN S. BIRMAN AND WILLIAM W. MENASCO\nωi\nFIGURE \n6.11\nCase 2. b2,(2- \n3)\"* with i = k,\nCase 3. (2 - 3)~*, b2 with\nCase 4. b2,(2-\n \n3)~\"\n w i t h\nTo handle Case 1 we reason as follows. Since the first singularity\nis type (2 — 3)~* we know that the initial local picture is as in Figure\n6.4. In Figure 6.11 we have illustrated the same situation, but omit-\nted the digons and the leaves of the foliation in order to emphasize\nnew aspects of the geometry. In particular, we have shown how the\nnon-standard axis must look in the part of the picture which is of in-\nterest. The non-standard axis is ins",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-044",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 74)",
+      "pageStart": 74,
+      "pageEnd": 74,
+      "target": "../sections/sec-044-resp-b-page-74.md",
+      "narrative": null,
+      "content": "STUDYING LINKS VIA CLOSED BRAIDS III\n97\nb2, (2-3)-+, i=k\nFIGURE \n6.12\narc. However, we see from Figure 6.12 that no such block can occur.\nThus case 2 cannot occur.\nWe now claim that in Case 3 there is a non-standard axis, the word\nW satisfies the conditions of Lemma 6.4. (Remark: we could reduce\nCase 3 to Case 4 in the same way as we reduced Case 1 to Cases 2 and\n4, but it will be easier if we do not.) The first step in the proof is the\nconstruction of the projection onto dΎ of that part of the sequence\nwhich corresponds to the initial forward sequence. The procedure for\nso-doing should be fam",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-045",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 75)",
+      "pageStart": 75,
+      "pageEnd": 75,
+      "target": "../sections/sec-045-resp-b-page-75.md",
+      "narrative": null,
+      "content": "98\nJOAN S. BIRMAN AND WILLIAM W. MENASCO\n! R\n1\nF\n\\\ni\nQ\n• \" • 1\nί*k\nFIGURE \n6.13\nf\nP\nA'\nQ\n(2-3)\n4,b 2\n(2-3)^,b 2, with q=+i\nFIGURE \n6.14\nhave also sketched in part of the axis A' in Figure 6.14. We know\nit looks as sketched because the cyclic order of the six points on A!\nmust be 1, 2, ... , 6 and because the axis A' can't do anything more\ncomplicated than to simply loop under the / th braid strand between\nthe pierce-points 2i-1 and 2i, because we began with an initial fiber.\nNow notice that if q = 0 the non-standard axis will loop directly\naround the link, indicating that the braid has a trivi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-046",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 76)",
+      "pageStart": 76,
+      "pageEnd": 76,
+      "target": "../sections/sec-046-resp-b-page-76.md",
+      "narrative": null,
+      "content": "STUDYING LINKS VIA CLOSED BRAIDS III \n99\nthe initial forward sequence we know there is a subword\no f W w i t h p φ O , \nq φ θ , l .\nWe now study the possibilities for the initial backward sequence\n(IBS), using this initial forward sequence (IFS). The IBS begins with\nthe same initial fiber, with the pierce-points arranged as in the left\npicture in Figure 6.14. What can the first backward event be? The\nfirst thing to notice is that there are leaves μn, \nμ$4 and μ^ in the\nfoliation which join the point pairs 1-2, 3-4 and 5-6. Since we know\nthat after the IFS there will be leaves in the foliation",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/lem-sec-047-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 77,
+      "pageEnd": 77,
+      "target": "lem-sec-047-01.md",
+      "narrative": null,
+      "content": "If the non-standard foliation of one of the digons con- tains a singularity of type [ 1 - 4 ] then every singularity is type",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-047",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 77)",
+      "pageStart": 77,
+      "pageEnd": 77,
+      "target": "../sections/sec-047-resp-b-page-77.md",
+      "narrative": null,
+      "content": "100\nJOAN S. BIRMAN AND WILLIAM W. MENASCO\ncompleted cycle, with non-standard\naxis A\" (opposite sides of\nrectangle to be identified)\n(2-3)->,b2\nFIGURE \n6.15\n(2 - 3)~*, followed by a block (a\\)\nr, which results in the foliation\nof all of B{ too. Thus the cyclic word W is {aλ)\nr {a3)~\nx {ax)\np {a2)\nq ,\nas claimed. \nStraightening out A' in Figure 6.15, and referring\nback to Figure 1.3 at the beginning of this paper, we see that W =\n(aι)\np(a3)-\nι(aι)\nr(a2)\ng, \nas claimed.\nCase 4 remains, and we now show that it reduces to Case 3. To see\nthis, we first construct the partial projection associated to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-048",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 78)",
+      "pageStart": 78,
+      "pageEnd": 78,
+      "target": "../sections/sec-048-resp-b-page-78.md",
+      "narrative": null,
+      "content": "STUDYING LINKS VIA CLOSED BRAIDS III\n101\ninitial forward sequence\nb 2 / (2-3)\"*\nFIGURE \n6.16\n[ 1 - 4 ] . \nIn particular, there are no NSF\nΛ-singularities and there are\nno ^-singularities \nof type [ 1 - 6 ] or [ 1 - 2 ] .\nProof of Lemma 6.5. We are given a non-standard axis and a fibra-\ntion H' which includes a singularity of type [ 1 - 4 ] . By symmetry,\nwe may suppose that the singularity is type (1 — 4)~*. Irrespective\nof whether we begin with an initial fiber or not, there will be a 14\nbridge in fibers of H' immediately after the singularity. Therefore\nthe possibilities for the next event a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-049",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 79)",
+      "pageStart": 79,
+      "pageEnd": 79,
+      "target": "../sections/sec-049-resp-b-page-79.md",
+      "narrative": null,
+      "content": "102\nJOAN S. BIRMAN AND WILLIAM W. MENASCO\n(opposite sides of rectangle to be identified)\nFIGURE \n6.17\n&2 singularity the names of the 25 bridge arcs will have changed to\n23. Thus Hφ Π F u Ω includes bridges of name 24 and 23. There is\nanother sequence of singularities which also leads to bridges of name\n24 and 23, i.e. Z?2? (2-3)~*. We investigated it in the proof of Lemma\n6.4. It is not difficult to see that region which is foliated by the pair\nZ?2 , (2 - 3)~* can also be foliated by the pair (2 - 5)\"*, bι. That is,\nthe sequences (2 - 5)~*, b^ and 62 , (2 — 3)\"\"* are equivalent after a\nchange",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-050",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 80)",
+      "pageStart": 80,
+      "pageEnd": 80,
+      "target": "../sections/sec-050-resp-b-page-80.md",
+      "narrative": null,
+      "content": "STUDYING LINKS VIA CLOSED BRAIDS III \n103\ndetails from Figure 6.2. We have cut T open between the first and\nsecond strands. We see that W contains the subword \nb^(b2)~\nιb^,\nwhich is equivalent to (b2)~\nι(b^)\np+ι. \nWe conclude that W does not\nhave shortest syllable length and is therefore not admissible.\nThus the only possibility is that each singularity of type [1-4] is\nfollowed by another of type [1 - 4]. This completes the proof of\nLemma 6.5, and so also of the Classification Theorem. \nD\n7. The algorithm and applications. Our task in this section is to\ntranslate the Classification Theorem of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-051",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 81)",
+      "pageStart": 81,
+      "pageEnd": 81,
+      "target": "../sections/sec-051-resp-b-page-81.md",
+      "narrative": null,
+      "content": "104 \nJOAN S. BIRMAN AND WILLIAM W. MENASCO\nStep 1. Introduce new generators x and y, where:\n(7.1) \nx = {a\\O2(J\\)~\nx and y = O\\O2,\nso that:\n(7.1)* \nσ{=y\n2x,\nσ2 = xy\n1,\nσ~\nι =xy,\nσ^\nx=yx.\nUse (7.1)* to rewrite W as a cyclically reduced word WQ in powers\nof x and y.\nStep 2. Notice that if we use x and y as generators then B3 is a\nfree product with amalgamations of the cyclic groups generated by x\nand y, the amalgamation being defined by x~\n2 = y\n3. Set\nC = x~\n2 = y\n3 = (σϊσ2σι)\n2 \n= {σxσ2γ.\nThen C generates the center of #3. We may therefore replace the\ncyclic word WQ by:\n(7.2) \nW! = C\nkxy\na>xy\na",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/cor-sec-054-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 82,
+      "pageEnd": 92,
+      "target": "cor-sec-054-01.md",
+      "narrative": null,
+      "content": "A. The link type of L is invertible if and only if the conjugacy class ofW in (7.4)* satisfies one of the following: (a) W has any of the 3-braid non-generic normal forms, or (b) W is generic and the arrays {p\\, qx, p2 > , Pr, Qr) and (ρr, qr-\\, pr-\\, ... , p\\, qr) differ by an even cyclic permutation, or (c) W is one of the special ?>-braids which \"admits aflype\". B. The link of type L is amphicheiral if and only if the conjugacy class of W in (7.4)* satisfies one of the following: (a) W = 1, or (b) W is generic, the arrays {px, qx, p2, ... , pr, Qr) and {qx, p2, Qi 9 - > Pr 9 Qr 9 P\\) differ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/cor-sec-054-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 82,
+      "pageEnd": 92,
+      "target": "cor-sec-054-03.md",
+      "narrative": null,
+      "content": "<S? is a composite knot or link if and only if the Schreier representative of the conjugacy class of W or W\" 1 has one of the following normal forms o^ uσl, where u>υ>2. r x G u a-iO V G2, where u>υ>0. Proof By [Mo, 1] or [B-M, IV] a composite link which is a closed 3-braid is conjugate to (σι) a(σ2) b, where \\a\\>2, \\b\\>2. The first case occurs when a and b have opposite signs and the second when they have the same sign. D Our next corollary is an analogue of the Tait conjecture which holds for links of braid index 3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/cor-sec-054-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 82,
+      "pageEnd": 92,
+      "target": "cor-sec-054-04.md",
+      "narrative": null,
+      "content": "Let 3 and 3' be links of braid index 3, and let D and D' be diagrams which represent 3* and 3\" and which have 3 Seifert circles. Then 3 = 3' only if the algebraic crossing numbers of D and D' agree.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/cor-sec-054-06",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 82,
+      "pageEnd": 92,
+      "target": "cor-sec-054-06.md",
+      "narrative": null,
+      "content": "There is an algorithm to compute the genus of a link of braid index 3, if one begins with a closed 3-braid representative.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/cor-sec-054-07",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 82,
+      "pageEnd": 92,
+      "target": "cor-sec-054-07.md",
+      "narrative": null,
+      "content": "Let £f be represented by the conjugacy class of C kΎ and let 3? be represented by the conjugacy class of T. Then the integer k and the link type of 3? are invariants (even more, they are complete invariants) of the link type ofJ?', except in the special case where Jΐ? is one of the links covered by case (iii) of the algorithm of §7.2. In the latter case £? is invertible, but 3£ need not be, so one might have two distinct link types 3£~* and 3£*~ which correspond to the single link type £?~*.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/cor-sec-054-09",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 82,
+      "pageEnd": 92,
+      "target": "cor-sec-054-09.md",
+      "narrative": null,
+      "content": "The stabilization index of a link of braid index 3 is one.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/cor-sec-054-10",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 82,
+      "pageEnd": 92,
+      "target": "cor-sec-054-10.md",
+      "narrative": null,
+      "content": "For each integer N there exist infinitely many sets, each of which contains exactly N links of braid index 3 which share the same 2-variable Jones polynomial. Proof Let ζ: B3 -• SL(2, Z[t, r 1 ] ) be the reduced Burau rep- resentation of 2?3. Choose α, β e B$. Then the associated closed braids Lα and Lβ will have distinct link types if the conjugacy classes of a and β are distinct and are not one of the exceptional cases listed in the Classification Theorem. By [Bi, 2] the links Lα and Lβ will have the same 2-variable Jones polynomial if and only if (1) a and β have the same exponent sum (as w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-052",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(resp. b^ (page 82)",
+      "pageStart": 82,
+      "pageEnd": 82,
+      "target": "../sections/sec-052-resp-b-page-82.md",
+      "narrative": null,
+      "content": "STUDYING LINKS VIA CLOSED BRAIDS III \n105\nand σ2 > the list of the distinct conjugacy classes is:\n( 7 . 4 ) * \nC\nkσ;\np*σ*..'σϊ\np'σ}9 \n( k , r,Pi, \n?\nί G Z ; r,pi9 \nqt > 1 ) ,\nC*σf, \n(k,peZ)9\n(keZ).\nWe shall refer to the first case in (7.4)* as the generic case.\n7.2. \n77ze algorithm. Let ^ \nbe a link which is represented by a\nclosed 3-braid L. Let W = W{L) be a cyclic word in the standard\nelementary braids σ\\, σ2 which defines L. Let C^T be Schreier's\nunique representative of the conjugacy class of W. Then the conju-\ngacy class of W is the only conjugacy class in B$ which represents\no2*, with t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-053",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "σΐ",
+      "pageStart": 82,
+      "pageEnd": 82,
+      "target": "../sections/sec-053-σΐ.md",
+      "narrative": null,
+      "content": "p'σ}9 \n( k , r,Pi, \n?\nί G Z ; r,pi9 \nqt > 1 ) ,\nC*σf, \n(k,peZ)9\n(keZ).\nWe shall refer to the first case in (7.4)* as the generic case.\n7.2. \n77ze algorithm. Let ^ \nbe a link which is represented by a\nclosed 3-braid L. Let W = W{L) be a cyclic word in the standard\nelementary braids σ\\, σ2 which defines L. Let C^T be Schreier's\nunique representative of the conjugacy class of W. Then the conju-\ngacy class of W is the only conjugacy class in B$ which represents\no2*, with the following exceptions:\nLinks of braid index 1. The unknot, with three conjugacy classes of\n3-braid representatives:\nLinks of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-054",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "i f p > 4 , (σισ2)",
+      "pageStart": 82,
+      "pageEnd": 92,
+      "target": "../sections/sec-054-2-i-f-p-4-σισ2.md",
+      "narrative": null,
+      "content": "(σισ2)\n2\nand \nC\n1\ni \n—\nC~\nισχ\nif P = - 3 ,\nif p = -2.\nLwfe of braid index 3 w/wcλ \" admit flypes\". 5? or its mirror image\nhas two representatives, namely:\nC\nkσϊ\nισ$σΐ\nυσ? \nand \nC^σf^^σfV^,\nwhere k = 0 or 1, v > 2 and u and tί; are distinct positive integers,\n106 \nJOAN S. BIRMAN AND WILLIAM W. MENASCO\nor\nC\nsσ-\nισ%σ-\nισ%σ-\nισ? \nand C σ f ^ f σ f\n1 ^ \nσf\n1^,\nwhere s = 1 or 2 and u, v , w are pairwise distinct positive integers.\nOur starting point is the classification theorem (version 2).\nBraid index 1. The 3 cases are Schreier's representatives of the\nconjugacy classes of σ ^ , σf\n1^ \nand crf\n1^",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/rem-sec-054-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 82,
+      "pageEnd": 92,
+      "target": "rem-sec-054-02.md",
+      "narrative": null,
+      "content": "Since a typical word in Schreier's normal form does not have the symmetries of Corollary 7.1 we conclude that most links of braid index 3 are neither invertible nor amphicheiral. On the other hand, since the standard knot tables were organized by crossing num- ber, the examples which formed the core body of data for early workers in knot theory had many symmetries. JOAN S. BIRMAN AND WILLIAM W. MENASCO",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/rem-sec-054-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 82,
+      "pageEnd": 92,
+      "target": "rem-sec-054-05.md",
+      "narrative": null,
+      "content": "A different proof of Corollary 7.3 is given in [J] for n = 3 and 4. We hope to be able to prove in a later paper in this series that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/rem-sec-054-08",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 82,
+      "pageEnd": 92,
+      "target": "rem-sec-054-08.md",
+      "narrative": null,
+      "content": "The assumption that £? has braid index 3 is essential here, as may be seen by inspecting the exceptional cases (i) and (ii) in §7.2 above.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-055",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "PACIFIC JOURNAL OF MATHEMATICS",
+      "pageStart": 92,
+      "pageEnd": 92,
+      "target": "../sections/sec-055-pacific-journal-of-mathematics.md",
+      "narrative": null,
+      "content": "Founded by\nE. F. BECKENBACH (1906-1982) \nF. WOLF (1904-1989)\nSUN-YUNG A. CHANG\n(Managing Editor)\nUniversity of California\nLos Angeles, CA 90024-1555\nchang@math.ucla.edu\nF. MICHAEL CHRIST\nUniversity of California\nLos Angeles, CA 90024-1555\nchrist@math.ucla.edu\nHERBERT CLEMENS\nUniversity of Utah\nSalt Lake City, UT 84112\nclemens@math.utah.edu",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-056",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "EDITORS",
+      "pageStart": 92,
+      "pageEnd": 92,
+      "target": "../sections/sec-056-editors.md",
+      "narrative": null,
+      "content": "THOMAS ENRIGHT\nUniversity of California, San Diego\nLa Jolla, CA 92093\ntenright@ucsd.edu\nNICHOLAS ERCOLANI\nUniversity of Arizona\nTucson, AZ 85721\nercolani@math.arizona.edu\nR. FINN\nStanford University\nStanford, CA 94305\nfinn@gauss.stanford.edu\nVAUGHAN F. R. JONES\nUniversity of California\nBerkeley, CA 94720\nvfr@math.berkeley.edu\nSTEVEN KERCKHOFF\nStanford University\nStanford, CA 94305\nspk@gauss.stanford.edu\nMARTIN SCHARLEMANN\nUniversity of California\nSanta Barbara, CA 93106\nmgscharl@henri.ucsb.edu\nHAROLD STARK\nUniversity of California, San Diego\nLa Jolla, CA 92093\nV. S. VARADARAJAN\nUniversity of C",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v161-n1-p02-p/blocks/prose-sec-057",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "SUPPORTING INSTITUTIONS",
+      "pageStart": 92,
+      "pageEnd": 93,
+      "target": "../sections/sec-057-supporting-institutions.md",
+      "narrative": null,
+      "content": "UNIVERSITY OF ARIZONA\nUNIVERSITY OF BRITISH COLUMBIA\nCALIFORNIA INSTITUTE OF TECHNOLOGY\nUNIVERSITY OF CALIFORNIA\nUNIVERSITY OF MONTANA\nUNIVERSITY OF NEVADA, RENO\nNEW MEXICO STATE UNIVERSITY\nOREGON STATE UNIVERSITY\nUNIVERSITY OF OREGON\nUNIVERSITY OF SOUTHERN CALIFORNIA\nSTANFORD UNIVERSITY\nUNIVERSITY OF HAWAII\nUNIVERSITY OF UTAH\nWASHINGTON STATE UNIVERSITY\nUNIVERSITY OF WASHINGTON\nPACIFIC JOURNAL OF MATHEMATICS\nVolume 161\nNo. 1\nNovember 1993\n1\nTangential and normal Euler numbers, complex points, and\nsingularities of projections for oriented surfaces in four-space\nTHOMAS FRANCIS BANCHOFF and FRAN",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

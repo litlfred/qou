@@ -1,0 +1,949 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1303.6444v3",
+  "title": "arxiv-1303.6444v3",
+  "variant": "pdf",
+  "pages": 14,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Background to the Paper",
+      "number": "1.1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-background-to-the-paper"
+    },
+    {
+      "level": 1,
+      "title": "Main Results",
+      "number": "2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-main-results"
+    },
+    {
+      "level": 1,
+      "title": "Obtaining the Relationship",
+      "number": "3",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-3-obtaining-the-relationship"
+    },
+    {
+      "level": 1,
+      "title": "General Derivation: Derivation for Theorem 2.1",
+      "number": "4",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-4-general-derivation-derivation-for-theorem-21"
+    },
+    {
+      "level": 1,
+      "title": "Derivation of Corollary 2.2 and comparisons with previous results",
+      "number": "5",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-5-derivation-of-corollary-22-and-comparisons-wit"
+    },
+    {
+      "level": 2,
+      "title": "Derivation of Corollary 2.2",
+      "number": "5.1",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Morais-Procacci Bound",
+      "number": "5.2",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-52-morais-procacci-bound"
+    },
+    {
+      "level": 2,
+      "title": "Lebowitz-Penrose",
+      "number": "5.3",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-53-lebowitz-penrose"
+    },
+    {
+      "level": 2,
+      "title": "Comparison of the Bounds",
+      "number": "5.4",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-54-comparison-of-the-bounds"
+    },
+    {
+      "level": 1,
+      "title": "The Alternative Bound: Corollary 2.3",
+      "number": "6",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-6-the-alternative-bound-corollary-23"
+    },
+    {
+      "level": 1,
+      "title": "Comparison of the Separate Bound: Proposition 2.4",
+      "number": "7",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-7-comparison-of-the-separate-bound-proposition-2"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. Lagrange Inversion",
+      "number": null,
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-appendix-a-lagrange-inversion"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 128,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "virial expansion",
+          "heading": false
+        },
+        {
+          "term": "expansion bounds",
+          "heading": false
+        },
+        {
+          "term": "cluster expansion",
+          "heading": false
+        },
+        {
+          "term": "lebowitz",
+          "heading": false
+        }
+      ],
+      "extract": "VIRIAL EXPANSION BOUNDS STEPHEN JAMES TATE Abstract. In the 1960s, the technique of using cluster expansion bounds in order to achieve bounds on the virial expansion was developed by Lebowitz and Penrose (1964) and Ruelle (1969). This technique is generalised to more recent cluster expansion bounds by Poghosyan and Ueltschi (2009), which are related to the work of Procacci (2007) and the tree-graph identity,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1303.6444v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 117,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "expansion bounds",
+          "heading": false
+        },
+        {
+          "term": "cluster expansion",
+          "heading": false
+        },
+        {
+          "term": "lebowitz",
+          "heading": false
+        },
+        {
+          "term": "virial",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: intro label=\"sec: intro\"} In this article, further bounds on the virial coefficients and consequently the radius of convergence of the virial expansion are developed in a similar way to how they are achieved in the paper by Lebowitz and Penrose [@LPen64], that is via cluster expansion bounds. These techniques are shown in general and they rely upon the Lambert W-function. They give bounds which improve upon",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-background-to-the-paper",
+      "number": "1.1",
+      "title": "Background to the Paper",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 213,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "virial",
+          "heading": false
+        },
+        {
+          "term": "canonical ensemble",
+          "heading": false
+        },
+        {
+          "term": "fugacity",
+          "heading": false
+        },
+        {
+          "term": "pulvirenti",
+          "heading": false
+        },
+        {
+          "term": "tsagkarogiannis",
+          "heading": false
+        }
+      ],
+      "extract": "The bounds on the virial coefficients and consequently, the radius of convergence of the virial expansion, were mainly achieved in the 1960s by Lebowitz and Penrose [@LPen64], Groeneveld [@G62] and Ruelle [@R69]. These bounds have not been improved upon in the literature, even though our understanding of cluster and virial expansions has improved since then. Moreover, further, more refined, techniques have been",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-main-results",
+      "number": "2",
+      "title": "Main Results",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 931,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac eab",
+          "heading": false
+        },
+        {
+          "term": "beta frac",
+          "heading": false
+        },
+        {
+          "term": "beta right",
+          "heading": false
+        },
+        {
+          "term": "beta left",
+          "heading": false
+        },
+        {
+          "term": "lebpenbound",
+          "heading": false
+        },
+        {
+          "term": "temperature beta",
+          "heading": false
+        },
+        {
+          "term": "vir geq",
+          "heading": false
+        },
+        {
+          "term": "text vir",
+          "heading": false
+        }
+      ],
+      "extract": "The main results of this paper rely on the particle model of the classical gas. The main parameters in the model are: the inverse temperature $\\beta = \\frac{1}{kT}$, where $k$ is Boltzmann's constant and $T$ is the temperature; the fugacity $z$; the pressure $P$; and the density $\\rho$. We start with the Grand Canonical Partition function for a classical gas: $$\\Xi(z) = \\sum\\limits_{N=0}^{\\infty}Z_Nz^n$$ Where $Z_N$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-obtaining-the-relationship",
+      "number": "3",
+      "title": "Obtaining the Relationship",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 173,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "partial rho",
+          "heading": false
+        },
+        {
+          "term": "mathrm rho",
+          "heading": false
+        },
+        {
+          "term": "frac partial",
+          "heading": false
+        },
+        {
+          "term": "notag frac",
+          "heading": false
+        },
+        {
+          "term": "frac beta",
+          "heading": false
+        },
+        {
+          "term": "oint",
+          "heading": false
+        }
+      ],
+      "extract": "Lagrange Inversion techniques are the usual approach to obtaining the virial coefficients and this has a nice representation as a contour integral. If we want to compute the coefficient $c_n$, we can take the contour integral (around $0$) of $\\frac{\\partial P}{\\partial \\rho}$ divided by $n\\rho^n$. This gives us the formula: $$c_n = \\frac{1}{2\\pi i}\\oint_C \\, \\frac{\\frac{\\partial P}{\\partial",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-general-derivation-derivation-for-theorem-21",
+      "number": "4",
+      "title": "General Derivation: Derivation for Theorem 2.1",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 713,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eab gamma",
+          "heading": false
+        },
+        {
+          "term": "frac eab",
+          "heading": false
+        },
+        {
+          "term": "virial coefficients",
+          "heading": false
+        },
+        {
+          "term": "virial expansion",
+          "heading": false
+        },
+        {
+          "term": "cluster coefficients",
+          "heading": false
+        },
+        {
+          "term": "leq frac",
+          "heading": false
+        },
+        {
+          "term": "oint frac",
+          "heading": false
+        },
+        {
+          "term": "reqn",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: general label=\"sec: general\"} We wish to obtain bounds on virial coefficients using those which come from cluster coefficients, in order to gain an estimate of the lower bound for the radius of convergence of the virial expansion. The derivation loosely follows the method used by Ruelle in [@R69] and that of Lebowitz and Penrose in [@LPen64]. The starting point is the cluster expansion bound, which is given",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-derivation-of-corollary-22-and-comparisons-wit",
+      "number": "5",
+      "title": "Derivation of Corollary 2.2 and comparisons with previous results",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 120,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "beta frac",
+          "heading": false
+        },
+        {
+          "term": "beta right",
+          "heading": false
+        },
+        {
+          "term": "lebpenbound",
+          "heading": false
+        },
+        {
+          "term": "cbeta",
+          "heading": false
+        },
+        {
+          "term": "ass",
+          "heading": false
+        },
+        {
+          "term": "oldbounds",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: oldbounds label=\"sec: oldbounds\"} ## Derivation of Corollary [\\[cor:lebpenbound\\]](#cor:lebpenbound){reference-type=\"ref\" reference=\"cor:lebpenbound\"} We have the bound on cluster expansions from [@R69] as: $$|nb_n| \\leq \\frac{n^{n-1}}{n!}e^{2\\beta B(n-2)}C(\\beta)^{-1}$$ Where, the parameter $C(\\beta)< \\infty$ defines a tempered potential, which is defined in [\\[Cbeta\\]](#Cbeta){reference-type=\"eqref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-52-morais-procacci-bound",
+      "number": "5.2",
+      "title": "Morais-Procacci Bound",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 360,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "frac beta",
+          "heading": false
+        },
+        {
+          "term": "virial coefficients",
+          "heading": false
+        },
+        {
+          "term": "alphabeta",
+          "heading": false
+        },
+        {
+          "term": "reqn",
+          "heading": false
+        },
+        {
+          "term": "firstbound",
+          "heading": false
+        },
+        {
+          "term": "leq frac",
+          "heading": false
+        },
+        {
+          "term": "bound",
+          "heading": true
+        }
+      ],
+      "extract": "This is an alternative derivation of the Morais-Procacci bounds using the method outlined in Section [\\[sec: general\\]](#sec: general){reference-type=\"ref\" reference=\"sec: general\"}. In the recent paper [@MP13], Morais and Procacci obtain a bound for the virial coefficients via the Canonical Ensemble, using polymer expansion methods and the bounds for cluster coefficients, in the form: $$|nb_n| \\leq",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-53-lebowitz-penrose",
+      "number": "5.3",
+      "title": "Lebowitz-Penrose",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 466,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "notag frac",
+          "heading": false
+        },
+        {
+          "term": "frac beta",
+          "heading": false
+        },
+        {
+          "term": "delta frac",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "frac left",
+          "heading": false
+        },
+        {
+          "term": "uform",
+          "heading": false
+        },
+        {
+          "term": "v-v",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        }
+      ],
+      "extract": "We again use the same bounds on the cluster expansion and follow the method outlined in [@LPen64] and starting with [\\[uform\\]](#uform){reference-type=\"eqref\" reference=\"uform\"}, we arrange our expression $r(s)$ into the form: $$r(s)=\\frac{C(\\beta)^{-1}}{1+u}\\frac{s}{u^2}\\left((1+u)^2e^{-s}-(1+u)\\right) \\label{lebpenstart}$$ We use the identity: $\\frac{1+u}{u^2}=\\frac{(1+u)^2}{u^2}-\\frac{1+u}{u}$, to rewrite it as:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-54-comparison-of-the-bounds",
+      "number": "5.4",
+      "title": "Comparison of the Bounds",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 198,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "optimised bound",
+          "heading": false
+        },
+        {
+          "term": "lebowitz-penrose bound",
+          "heading": false
+        },
+        {
+          "term": "concentrate",
+          "heading": false
+        },
+        {
+          "term": "g-function",
+          "heading": false
+        }
+      ],
+      "extract": "r1 := e−4βB (W \u0010 e 1+e2βB \u0011 −1)2 W \u0010 e 1+e2βB \u0011 (5.28) r2 := 1 1 + e2βB 2(W( e 2) −1)2 W( e 2) (5.29) In order to concentrate on the factor over which the two bounds (5.27) and (5.7) diﬀer, we need only concentrate on r1 and r2 above. In Figure 1, we see that the optimised bound shows a slight improvement over the Lebowitz-Penrose bound. Furthermore, considering the quotient r1 r2 in Figure 2, we see that the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-6-the-alternative-bound-corollary-23",
+      "number": "6",
+      "title": "The Alternative Bound: Corollary 2.3",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 154,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bound",
+          "heading": true
+        },
+        {
+          "term": "pog",
+          "heading": false
+        },
+        {
+          "term": "bry",
+          "heading": false
+        }
+      ],
+      "extract": "There are alternative cluster coeﬃcient bounds relating to Tree-Graph-Identities found in [Bry86], [Pro07] and [Pog09]. The bounds are given by: |nbn| ≤nn−1 n! R(β)n−1enβB (6.1) where R(β) =   |B|rd + β Z |y|>r |Φ(0, y)|ddy    (6.2) where |B| denotes the surface area of the unit sphere in d-dimensions. In this case our parameters are: a = R(β)−1; b = R(β)eβB; ab = eβB; and µ = eβB+1 1+eβB . The general bound",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-7-comparison-of-the-separate-bound-proposition-2",
+      "number": "7",
+      "title": "Comparison of the Separate Bound: Proposition 2.4",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 292,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "comparison",
+          "heading": true
+        },
+        {
+          "term": "bound",
+          "heading": true
+        },
+        {
+          "term": "beta",
+          "heading": false
+        },
+        {
+          "term": "compare",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: comparison label=\"sec: comparison\"} This approach would be better for potentials where $\\zeta R(\\beta) < C(\\beta)$, for some $\\zeta$ representing the quotient of the coefficients $\\frac{f_1}{f_2}$, where: $$\\begin{aligned} f_1&:=e^{-4\\beta B}\\frac{\\left(W\\left(\\frac{e}{1+e^{2\\beta B}}\\right)-1\\right)^2}{W\\left(\\frac{e}{1+e^{2\\beta B}}\\right)} \\label{f1} \\\\ f_2&:=\\frac{\\left(W\\left(\\frac{e^{\\beta",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-appendix-a-lagrange-inversion",
+      "number": null,
+      "title": "Appendix A. Lagrange Inversion",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 199,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lagrange inversion",
+          "heading": true
+        },
+        {
+          "term": "power series",
+          "heading": false
+        },
+        {
+          "term": "helpful comments",
+          "heading": false
+        },
+        {
+          "term": "supervisor",
+          "heading": false
+        }
+      ],
+      "extract": "To ﬁnd the inverse of the function se−s as a power series, we can use the one-dimensional Lagrange inversion form from [Mer06]. We want to ﬁnd a power series of s in terms of y = se−s, which amounts to ﬁnding the inverse. We write the equation in the convenient form: s = yes (A.1) For a formal power series s(y), implicitly deﬁned by s = yφ(s), the Lagrange Inversion Formula can be stated as: [yn]s = 1 n[sn−1]φ(s)n",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 357,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "abstract polymer",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "statistical mechanics",
+          "heading": false
+        },
+        {
+          "term": "mayer",
+          "heading": false
+        },
+        {
+          "term": "cluster expansion",
+          "heading": false
+        },
+        {
+          "term": "gases",
+          "heading": false
+        },
+        {
+          "term": "leb",
+          "heading": false
+        },
+        {
+          "term": "fluids",
+          "heading": false
+        }
+      ],
+      "extract": "[Bry86] Brydges, D. C. A Short Course in Cluster Expansions, in ”Ph´enom`enes critiques, syst`emes al´eatoires, th´eories de jauge”, Les Houches 1984, 129-183 (1986) [Cor97] Corless, R. M., Jeﬀrey, D. J., Knuth, D. E., A Sequence of Series for the Lambert W Function, ISSAC ’97 Proceedings of the 1997 international symposium on Symbolic and algebraic computation, 197-204 (1997) [Fer08] Fernandez, R., Procacc, A.,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "beta frac",
+      "heading": false
+    },
+    {
+      "term": "virial expansion",
+      "heading": false
+    },
+    {
+      "term": "virial coefficients",
+      "heading": false
+    },
+    {
+      "term": "temperature beta",
+      "heading": false
+    },
+    {
+      "term": "beta right",
+      "heading": false
+    },
+    {
+      "term": "beta left",
+      "heading": false
+    },
+    {
+      "term": "cluster expansion",
+      "heading": false
+    },
+    {
+      "term": "expansion bounds",
+      "heading": false
+    },
+    {
+      "term": "frac eab",
+      "heading": false
+    },
+    {
+      "term": "alpha beta",
+      "heading": false
+    },
+    {
+      "term": "notag frac",
+      "heading": false
+    },
+    {
+      "term": "leq frac",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Comparison of the Optimised Bound (r1) (5.28) with the Lebowitz-Penrose Bound (r2) (5.29)",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Quotient of the Optimised Bound (r1) (5.28) and Lebowitz Penrose Bound (r2) (5.29)",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Quotient",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 14,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 14,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "3 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p14); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 14 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1303.6444v3"
+  }
+}

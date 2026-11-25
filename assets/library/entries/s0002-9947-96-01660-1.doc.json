@@ -1,0 +1,1545 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "s0002-9947-96-01660-1",
+  "title": "s0002-9947-96-01660-1",
+  "variant": "pdf",
+  "pages": 26,
+  "tocSource": "undetermined",
+  "tocMethod": "regex",
+  "toc": [],
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 462,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spherical category",
+          "heading": false
+        },
+        {
+          "term": "quantised enveloping",
+          "heading": false
+        },
+        {
+          "term": "involutive hopf",
+          "heading": false
+        },
+        {
+          "term": "turaev-viro invariant",
+          "heading": false
+        },
+        {
+          "term": "called spherical",
+          "heading": false
+        },
+        {
+          "term": "tensor category",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "algebraic framework",
+          "heading": false
+        }
+      ],
+      "extract": "TRANSACTIONS OF THE AMERICAN MATHEMATICAL SOCIETY Volume 348, Number 10, October 1996 INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS JOHN W. BARRETT AND BRUCE W. WESTBURY Abstract. This paper presents an algebraic framework for constructing in- variants of closed oriented 3-manifolds by taking a state sum model on a tri- angulation. This algebraic framework consists of a tensor category with a condition on the duals",
+      "extractCut": true,
+      "blocks": [
+        "library/s0002-9947-96-01660-1/blocks/prose-page-001"
+      ]
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 570,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "simplicial complexes",
+          "heading": false
+        },
+        {
+          "term": "simplicial complex",
+          "heading": false
+        },
+        {
+          "term": "piecewise-linear manifolds",
+          "heading": false
+        },
+        {
+          "term": "combinatorial maps",
+          "heading": false
+        },
+        {
+          "term": "simplex",
+          "heading": false
+        },
+        {
+          "term": "admit braiding",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite group",
+          "heading": false
+        },
+        {
+          "term": "adjective",
+          "heading": false
+        }
+      ],
+      "extract": "3998 JOHN W. BARRETT AND BRUCE W. WESTBURY Another feature of this paper is that we prove invariance from a ﬁnite list of moves on triangulations. The idea of working directly with triangulations dates from the earlier work of [16] and [14] on the recoupling theory of Lie groups. The moves on triangulations replace the Matveev moves on special spines which are used in [25] and [28]. This approach shows that the",
+      "extractCut": true,
+      "blocks": [
+        "library/s0002-9947-96-01660-1/blocks/prose-page-002"
+      ]
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 504,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "labelled simplicial",
+          "heading": false
+        },
+        {
+          "term": "oriented triangle",
+          "heading": false
+        },
+        {
+          "term": "opposite orientation",
+          "heading": false
+        },
+        {
+          "term": "standard oriented",
+          "heading": false
+        },
+        {
+          "term": "simplicial complex",
+          "heading": false
+        },
+        {
+          "term": "partition function",
+          "heading": false
+        },
+        {
+          "term": "state space",
+          "heading": false
+        },
+        {
+          "term": "tetrahedron",
+          "heading": false
+        }
+      ],
+      "extract": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS 3999 Our notation for the orientation of a simplex is ﬁxed as follows. The standard (n + 1)-simplex (012 . . .n) with vertices {0, 1, 2, . . .n} has a standard orientation (+). The opposite orientation is indicated with a minus (−). The standard (ori- ented) tetrahedron +(0123) has boundary (123) −(023) + (013) −(012). The signs indicate the induced orientation of the",
+      "extractCut": true,
+      "blocks": [
+        "library/s0002-9947-96-01660-1/blocks/prose-page-003"
+      ]
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 519,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "strict pivotal",
+          "heading": false
+        },
+        {
+          "term": "pivotal category",
+          "heading": false
+        },
+        {
+          "term": "pivotal categories",
+          "heading": false
+        },
+        {
+          "term": "strict duals",
+          "heading": false
+        },
+        {
+          "term": "spherical category",
+          "heading": false
+        },
+        {
+          "term": "trx",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "linear map",
+          "heading": false
+        }
+      ],
+      "extract": "4000 JOHN W. BARRETT AND BRUCE W. WESTBURY orientation. There is a unique standard linear map V π(M) →V (M) given by iterating the standard twist P : x ⊗y 7→y ⊗x. This deﬁnes a linear map V (M) → V (M), and the element Z(M) is deﬁned to be the trace of this linear map. Note that if A: X →Y and B : Y →X are linear maps, then trX⊗Y (P(A ⊗B)) = trX(AB) = trY (BA). This also introduces the notation, used throughout the",
+      "extractCut": true,
+      "blocks": [
+        "library/s0002-9947-96-01660-1/blocks/prose-page-004"
+      ]
+    },
+    {
+      "id": "page-005",
+      "number": null,
+      "title": "Page 5",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 442,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "trl",
+          "heading": false
+        },
+        {
+          "term": "pivotal category",
+          "heading": false
+        },
+        {
+          "term": "spherical category",
+          "heading": false
+        },
+        {
+          "term": "trr",
+          "heading": false
+        },
+        {
+          "term": "additive monoidal",
+          "heading": false
+        },
+        {
+          "term": "dimq",
+          "heading": false
+        },
+        {
+          "term": "following composite",
+          "heading": false
+        },
+        {
+          "term": "z-bilinear",
+          "heading": false
+        }
+      ],
+      "extract": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS 4001 1. For all morphisms, f : a →b, the following diagram commutes: e ϵ(a) −−−−→a ⊗ˆa ϵ(b) y yf⊗1 b ⊗ˆb −−−−→ 1⊗ˆf b ⊗ˆa 2. For all objects a, the following composite is the identity map of ˆa: ˆa = e ⊗ˆa ϵ(ˆa)⊗1 −−−−→(ˆa ⊗ˆˆa) ⊗ˆa = ˆa ⊗(a ⊗ˆa)b 1⊗ˆϵ(a) −−−−→ˆa ⊗ˆe = ˆa. 3. For all objects a and b the following composite is required to be ϵ(a ⊗b): e ϵ(a) −−→a ⊗ˆa = a",
+      "extractCut": true,
+      "blocks": [
+        "library/s0002-9947-96-01660-1/blocks/prose-page-005",
+        "library/s0002-9947-96-01660-1/blocks/lem-page-005-01"
+      ]
+    },
+    {
+      "id": "page-006",
+      "number": null,
+      "title": "Page 6",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 550,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spherical category",
+          "heading": false
+        },
+        {
+          "term": "additive spherical",
+          "heading": false
+        },
+        {
+          "term": "planar graph",
+          "heading": false
+        },
+        {
+          "term": "pivotal category",
+          "heading": false
+        },
+        {
+          "term": "spherical categories",
+          "heading": false
+        },
+        {
+          "term": "strict pivotal",
+          "heading": false
+        },
+        {
+          "term": "isotopy",
+          "heading": false
+        },
+        {
+          "term": "trl",
+          "heading": false
+        }
+      ],
+      "extract": "4002 JOHN W. BARRETT AND BRUCE W. WESTBURY some further conditions. These are that F is a ﬁeld and that each set of morphisms is a ﬁnite dimensional vector space over F. In this paper an additive spherical category means a spherical category in which these conditions are satisﬁed. The main examples of additive spherical categories arise as the category of rep- resentations of a Hopf algebra with some additional",
+      "extractCut": true,
+      "blocks": [
+        "library/s0002-9947-96-01660-1/blocks/prose-page-006",
+        "library/s0002-9947-96-01660-1/blocks/ex-page-006-01"
+      ]
+    },
+    {
+      "id": "page-007",
+      "number": null,
+      "title": "Page 7",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 332,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "additive spherical",
+          "heading": false
+        },
+        {
+          "term": "spherical category",
+          "heading": false
+        },
+        {
+          "term": "trl",
+          "heading": false
+        },
+        {
+          "term": "arbitrary morphisms",
+          "heading": false
+        },
+        {
+          "term": "piecewise-linear",
+          "heading": false
+        },
+        {
+          "term": "homc",
+          "heading": false
+        },
+        {
+          "term": "non-degenerate",
+          "heading": false
+        }
+      ],
+      "extract": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS 4003 = M M Figure 1 Theorem 2.9. Let C be an additive spherical category. Deﬁne the additive subcat- egory J to have the same set of objects and morphisms deﬁned by HomJ (c1, c2) = {f ∈HomC(c1, c2) : trL(fg) = 0 for all g ∈HomC(c2, c1)}. Then C/J is a non-degenerate additive spherical category. Proof. It is clear that J is closed under composition on either side by",
+      "extractCut": true,
+      "blocks": [
+        "library/s0002-9947-96-01660-1/blocks/prose-page-007",
+        "library/s0002-9947-96-01660-1/blocks/thm-page-007-01",
+        "library/s0002-9947-96-01660-1/blocks/lem-page-007-02"
+      ]
+    },
+    {
+      "id": "page-008",
+      "number": null,
+      "title": "Page 8",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 456,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "semisimple spherical",
+          "heading": false
+        },
+        {
+          "term": "spherical category",
+          "heading": false
+        },
+        {
+          "term": "dimq",
+          "heading": false
+        },
+        {
+          "term": "hom",
+          "heading": false
+        },
+        {
+          "term": "linear functional",
+          "heading": false
+        },
+        {
+          "term": "simple objects",
+          "heading": false
+        },
+        {
+          "term": "simplicial",
+          "heading": false
+        },
+        {
+          "term": "isomorphism class",
+          "heading": false
+        }
+      ],
+      "extract": "4004 JOHN W. BARRETT AND BRUCE W. WESTBURY Proof. In the formula M a∈J Hom(x, a) ⊗Hom(a, x) ∼= End(x) ﬁrst consider x to be an element of J. Then by counting dimensions, one has that End(x) ∼= F. Now consider the same formula with x any simple object. Again by counting di- mensions, only one of the terms on the left is non-zero. For this a ∈J, Hom(x, a) ∼= Hom(a, x) ∼= F. Thus there are elements f ∈Hom(x, a), g",
+      "extractCut": true,
+      "blocks": [
+        "library/s0002-9947-96-01660-1/blocks/prose-page-008",
+        "library/s0002-9947-96-01660-1/blocks/lem-page-008-01"
+      ]
+    },
+    {
+      "id": "page-009",
+      "number": null,
+      "title": "Page 9",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 139,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hom",
+          "heading": false
+        },
+        {
+          "term": "trl",
+          "heading": false
+        },
+        {
+          "term": "piecewise-linear",
+          "heading": false
+        }
+      ],
+      "extract": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS 4005 b 2 0 c a 1 Figure 2 b d c f a e Figure 3 using the non-degenerate pairings Hom∗(d ⊗c, e) ∼= Hom(e, d ⊗c) and Hom∗(e ⊗a, f) ∼= Hom(f, e ⊗a). For the partition function of −A labelled in the same way, the linear functional on Hom(e, d ⊗c) ⊗Hom(d ⊗b, f) ⊗Hom(f, e ⊗a) ⊗Hom(c ⊗a, b) deﬁned by α ⊗β ⊗γ ⊗δ 7→trL(γ(α ⊗1)(1 ⊗δ)β). likewise determines a unique linear map \u001a a b c",
+      "extractCut": true,
+      "blocks": [
+        "library/s0002-9947-96-01660-1/blocks/prose-page-009"
+      ]
+    },
+    {
+      "id": "page-010",
+      "number": null,
+      "title": "Page 10",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 446,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diagram commutes",
+          "heading": false
+        },
+        {
+          "term": "ordered tuple",
+          "heading": false
+        },
+        {
+          "term": "hom",
+          "heading": false
+        },
+        {
+          "term": "labellings",
+          "heading": false
+        },
+        {
+          "term": "abe",
+          "heading": false
+        },
+        {
+          "term": "simplicial",
+          "heading": false
+        },
+        {
+          "term": "edge",
+          "heading": false
+        }
+      ],
+      "extract": "4006 JOHN W. BARRETT AND BRUCE W. WESTBURY Lemma 3.2. Given any ordered 6-tuple of elements of I, (a,b,c,d,e, f), and an ordered 6-tuple of isomorphisms, (a,b, Gc, Od, be, bf), where da: a—a’,...,of: f — f', then the following diagram commutes: Hom(f,d ® b) ® Hom(b,c ® a) ——— Hom(f’,d’ ® b’) ®@ Hom(b’,c’ @ a’) abe adypeed oid Ke ah Hom(e,d @ c) ® Hom(f,e ® a) ——— Hom(e’,d’ @ c’) ® Hom(f\",e’ @ a’) Also, the diagram",
+      "extractCut": true,
+      "blocks": [
+        "library/s0002-9947-96-01660-1/blocks/prose-page-010",
+        "library/s0002-9947-96-01660-1/blocks/lem-page-010-01",
+        "library/s0002-9947-96-01660-1/blocks/prop-page-010-02",
+        "library/s0002-9947-96-01660-1/blocks/def-page-010-03"
+      ]
+    },
+    {
+      "id": "page-011",
+      "number": null,
+      "title": "Page 11",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 367,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "odd permutation",
+          "heading": false
+        },
+        {
+          "term": "even permutation",
+          "heading": false
+        },
+        {
+          "term": "ordered triple",
+          "heading": false
+        },
+        {
+          "term": "labelling",
+          "heading": false
+        },
+        {
+          "term": "every ordered",
+          "heading": false
+        },
+        {
+          "term": "pairing",
+          "heading": false
+        }
+      ],
+      "extract": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS 4007 b a c Figure 4 Note that, given f and a labelling of M, there is a unique compatible labelling of N. Now the properties of the state space of a triangle under combinatorial isomor- phisms are described. The combinatorial isomorphisms are just permutations in S3. For the standard triangle T(a,ˆb, c), labelled by ∂0T 7→a, ∂1T 7→ˆb, ∂2T 7→c, the labelling is permuted by",
+      "extractCut": true,
+      "blocks": [
+        "library/s0002-9947-96-01660-1/blocks/prose-page-011"
+      ]
+    },
+    {
+      "id": "page-012",
+      "number": null,
+      "title": "Page 12",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 257,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "trl",
+          "heading": false
+        },
+        {
+          "term": "fˆg",
+          "heading": false
+        },
+        {
+          "term": "spherical category",
+          "heading": false
+        },
+        {
+          "term": "pairings",
+          "heading": false
+        }
+      ],
+      "extract": "4008 JOHN W. BARRETT AND BRUCE W. WESTBURY b a c Figure 5 Lemma 3.6. For all even permutations σ+ 1 , σ+ 2 , odd permutations σ−, labels a, b and c and all v1 ∈V (a, b, c) and v2 ∈V σ−(ˆa,ˆb, ˆc) : θ(σ+ 1 σ+ 2 ) = θ(σ+ 1 )θ(σ+ 2 ), ⟨v1, v2⟩σ−= v1, θ(σ+)v2 σ−σ+ , ⟨v1, v2⟩σ−= ⟨v2, v1⟩σ−. Also, the pairings are non-degenerate bilinear forms. Proof. The ﬁrst two relations follow from the fact that the following",
+      "extractCut": true,
+      "blocks": [
+        "library/s0002-9947-96-01660-1/blocks/prose-page-012",
+        "library/s0002-9947-96-01660-1/blocks/lem-page-012-01"
+      ]
+    },
+    {
+      "id": "page-013",
+      "number": null,
+      "title": "Page 13",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 229,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vector bundle",
+          "heading": false
+        },
+        {
+          "term": "triangle",
+          "heading": false
+        },
+        {
+          "term": "simplicial",
+          "heading": false
+        },
+        {
+          "term": "permutation",
+          "heading": false
+        }
+      ],
+      "extract": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS 4009 b a c = a b c Figure 6 Deﬁnition 3.7. For each triple of labels, (a, b, c), and each permutation σ+ or σ− there are linear isomorphisms V (a, b, c) θ(σ+) −−−→V σ+(a, b, c), V ∗(a, b, c) θ∗−1(σ+) −−−−−−→V ∗σ+(a, b, c), if σ+ is even, and V (a, b, c) θ(σ−) −−−−→V ∗σ−(ˆa,ˆb, ˆc), V ∗(a, b, c) θ∗−1(σ−) −−−−−−→V σ−(ˆa,ˆb, ˆc), if σ−is odd. The maps θ(σ−) are deﬁned using",
+      "extractCut": true,
+      "blocks": [
+        "library/s0002-9947-96-01660-1/blocks/prose-page-013",
+        "library/s0002-9947-96-01660-1/blocks/lem-page-013-01",
+        "library/s0002-9947-96-01660-1/blocks/thm-page-013-02"
+      ]
+    },
+    {
+      "id": "page-014",
+      "number": null,
+      "title": "Page 14",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 463,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "labelled simplicial",
+          "heading": false
+        },
+        {
+          "term": "oriented labelled",
+          "heading": false
+        },
+        {
+          "term": "tensor product",
+          "heading": false
+        },
+        {
+          "term": "state space",
+          "heading": false
+        },
+        {
+          "term": "linear isomorphism",
+          "heading": false
+        },
+        {
+          "term": "partition function",
+          "heading": false
+        },
+        {
+          "term": "triangles",
+          "heading": false
+        },
+        {
+          "term": "combinatorial",
+          "heading": false
+        }
+      ],
+      "extract": "4010 JOHN W. BARRETT AND BRUCE W. WESTBURY There is a map V (M) ⊗V ∗(M) →V (N) ⊗V ∗(N) which is deﬁned by taking the tensor product over the set of triangles of the maps θ(σ) ⊗θ∗−1(σ) for each triangle, followed by an iteration of the standard twist P which rearranges the factors in the range of this map to coincide with V (N)⊗V ∗(N), as in Deﬁnition 1.6. Since the action of σ on V ∗(e1, e2, e3) is the inverse of",
+      "extractCut": true,
+      "blocks": [
+        "library/s0002-9947-96-01660-1/blocks/prose-page-014",
+        "library/s0002-9947-96-01660-1/blocks/lem-page-014-01"
+      ]
+    },
+    {
+      "id": "page-015",
+      "number": null,
+      "title": "Page 15",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 419,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "odd permutation",
+          "heading": false
+        },
+        {
+          "term": "trl",
+          "heading": false
+        },
+        {
+          "term": "hom",
+          "heading": false
+        },
+        {
+          "term": "even permutations",
+          "heading": false
+        },
+        {
+          "term": "spherical category",
+          "heading": false
+        },
+        {
+          "term": "symmetry property",
+          "heading": false
+        },
+        {
+          "term": "partition function",
+          "heading": false
+        }
+      ],
+      "extract": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS 4011 If Σ is an odd permutation, then \u001ae01 e02 e12 e23 e13 e03 \u001b + 7→ \u001ae′ 01 e′ 02 e′ 12 e′ 23 e′ 13 e′ 03 \u001b − and \u001a e01 e02 e12 e23 e13 e03 \u001b − 7→ \u001a e′ 01 e′ 02 e′ 12 e′ 23 e′ 13 e′ 03 \u001b + . Proof. The ﬁrst statement follows from the isomorphism Hom(X, Y ) ∼= X∗⊗Y for vector spaces X, Y . In the deﬁnition of the partition function of the tetrahedron, each factor Hom(ˆb,",
+      "extractCut": true,
+      "blocks": [
+        "library/s0002-9947-96-01660-1/blocks/prose-page-015"
+      ]
+    },
+    {
+      "id": "page-016",
+      "number": null,
+      "title": "Page 16",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 482,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bistellar move",
+          "heading": false
+        },
+        {
+          "term": "singular manifold",
+          "heading": false
+        },
+        {
+          "term": "pachner",
+          "heading": false
+        },
+        {
+          "term": "trl",
+          "heading": false
+        },
+        {
+          "term": "piecewise-linear",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite sequence",
+          "heading": false
+        },
+        {
+          "term": "triangulations",
+          "heading": false
+        },
+        {
+          "term": "link",
+          "heading": false
+        }
+      ],
+      "extract": "4012 JOHN W. BARRETT AND BRUCE W. WESTBURY The linear map of state spaces is x ⊗y ⊗z ⊗t 7→θ∗−1(σ−1)t ⊗θ∗−1(τ)y ⊗θ(τ)z ⊗θ(σ)x, where σ is the permutation (0, 1, 2) 7→(1, 2, 0), and τ is the permutation (0, 1, 2) 7→ (2, 1, 0). As a map of linear functionals, this is the adjoint of the map α ⊗β ⊗γ ⊗δ 7→θ(σ)δ ⊗ˆβ ⊗ˆγ ⊗\\ θ(σ)ˆα. The symmetry property is equivalent to the identity trL \u0010 ˆγ \u0000θ(σ)δ ⊗1 \u0001\u00001 ⊗\\ θ(σ)ˆα \u0001ˆβ \u0011 =",
+      "extractCut": true,
+      "blocks": [
+        "library/s0002-9947-96-01660-1/blocks/prose-page-016",
+        "library/s0002-9947-96-01660-1/blocks/ex-page-016-01",
+        "library/s0002-9947-96-01660-1/blocks/thm-page-016-02"
+      ]
+    },
+    {
+      "id": "page-017",
+      "number": null,
+      "title": "Page 17",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 359,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bistellar moves",
+          "heading": false
+        },
+        {
+          "term": "stellar moves",
+          "heading": false
+        },
+        {
+          "term": "tetrahedra",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite sequence",
+          "heading": false
+        },
+        {
+          "term": "orange",
+          "heading": false
+        },
+        {
+          "term": "piecewise-linear",
+          "heading": false
+        },
+        {
+          "term": "edge",
+          "heading": false
+        },
+        {
+          "term": "vertices",
+          "heading": false
+        }
+      ],
+      "extract": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS 4013 Figure 7 Figure 8 The result is based on the reduction of Alexander’s stellar moves to bistellar moves. The theorem for stellar moves is given in [8, Chapter II, §D, Theorem II.17]. Theorem 4.5. Two ﬁnite simplicial complexes are piecewise-linear homeomorphic if and only if they are related by a ﬁnite sequence of stellar moves. Our generalisation of Pachner’s result is",
+      "extractCut": true,
+      "blocks": [
+        "library/s0002-9947-96-01660-1/blocks/prose-page-017",
+        "library/s0002-9947-96-01660-1/blocks/thm-page-017-01",
+        "library/s0002-9947-96-01660-1/blocks/thm-page-017-02"
+      ]
+    },
+    {
+      "id": "page-018",
+      "number": null,
+      "title": "Page 18",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 575,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "simplicial manifold",
+          "heading": false
+        },
+        {
+          "term": "simplicial structure",
+          "heading": false
+        },
+        {
+          "term": "bistellar move",
+          "heading": false
+        },
+        {
+          "term": "triangulates",
+          "heading": false
+        },
+        {
+          "term": "singular manifolds",
+          "heading": false
+        },
+        {
+          "term": "closed manifolds",
+          "heading": false
+        },
+        {
+          "term": "oriented singular",
+          "heading": false
+        },
+        {
+          "term": "labelling",
+          "heading": false
+        }
+      ],
+      "extract": "4014 JOHN W. BARRETT AND BRUCE W. WESTBURY This results in a triangulation of the 3-ball with 2p + 1 tetrahedra. Finally do a bistellar move of order 2 on the 3 tetrahedra ONSEn, ONSE1 and NSE1En, replacing them by the two tetrahedra ONE1En and OSE1En. 5. Invariants of manifolds The following is the main theorem in this paper. Theorem 5.1. A ﬁnite semisimple spherical category of non-zero dimension de- termines an",
+      "extractCut": true,
+      "blocks": [
+        "library/s0002-9947-96-01660-1/blocks/prose-page-018",
+        "library/s0002-9947-96-01660-1/blocks/thm-page-018-01"
+      ]
+    },
+    {
+      "id": "page-019",
+      "number": null,
+      "title": "Page 19",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 442,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bistellar moves",
+          "heading": false
+        },
+        {
+          "term": "dimq",
+          "heading": false
+        },
+        {
+          "term": "edges internal",
+          "heading": false
+        },
+        {
+          "term": "biedenharn-elliot",
+          "heading": false
+        },
+        {
+          "term": "moves follows",
+          "heading": false
+        },
+        {
+          "term": "eij",
+          "heading": false
+        },
+        {
+          "term": "partition functions",
+          "heading": false
+        }
+      ],
+      "extract": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS 4015 Let (ij) 7→eij, for 0 ≤i < j ≤4 be a labelling of the standard 4-simplex (01234). This determines partition functions for each tetrahedron in the boundary, Z(±(1234)) = \u001ae12 e13 e23 e34 e24 e14 \u001b ± , Z(±(0234)) = \u001ae02 e03 e23 e34 e24 e04 \u001b ± , Z(±(0134)) = \u001ae01 e03 e13 e34 e14 e04 \u001b ± , Z(±(0124)) = \u001ae01 e02 e12 e24 e14 e04 \u001b ± , Z(±(0123)) = \u001a e01 e02 e12 e23 e13 e03",
+      "extractCut": true,
+      "blocks": [
+        "library/s0002-9947-96-01660-1/blocks/prose-page-019",
+        "library/s0002-9947-96-01660-1/blocks/prop-page-019-01",
+        "library/s0002-9947-96-01660-1/blocks/thm-page-019-02"
+      ]
+    },
+    {
+      "id": "page-020",
+      "number": null,
+      "title": "Page 20",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 287,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dimq",
+          "heading": false
+        },
+        {
+          "term": "dim hom",
+          "heading": false
+        },
+        {
+          "term": "left-hand side",
+          "heading": false
+        },
+        {
+          "term": "biedenharn-elliot",
+          "heading": false
+        },
+        {
+          "term": "right-hand side",
+          "heading": false
+        }
+      ],
+      "extract": "4016 JOHN W. BARRETT AND BRUCE W. WESTBURY Lemma 5.3. Z(0234) = K−1 X e01,e12, e13,e14∈J \u0012 tr3 \u0000\u00001 ⊗Z(0123) \u0001\u0000P ⊗1 \u0001\u00001 ⊗Z(0134) \u0001\u0000P ⊗1 \u0001 · \u0000Z(1234) ⊗1 \u0001\u00001 ⊗Z(−0124) \u0001\u0001 Y n=0,2,3,4 dimq(e1n) \u0013 , in which tr3 is the partial trace over the third factor: (α ⊗β ⊗γ) 7→α ⊗β tr(γ). Proof. Follow the linear maps on each side of the Biedenharn-Elliot relation with the linear map K−1 dimq (e01) dimq (e12) dimq (e14) (1",
+      "extractCut": true,
+      "blocks": [
+        "library/s0002-9947-96-01660-1/blocks/prose-page-020",
+        "library/s0002-9947-96-01660-1/blocks/lem-page-020-01",
+        "library/s0002-9947-96-01660-1/blocks/lem-page-020-02"
+      ]
+    },
+    {
+      "id": "page-021",
+      "number": null,
+      "title": "Page 21",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 406,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diagram commutes",
+          "heading": false
+        },
+        {
+          "term": "biedenharn-elliot",
+          "heading": false
+        },
+        {
+          "term": "quantum analogues",
+          "heading": false
+        },
+        {
+          "term": "dimq",
+          "heading": false
+        },
+        {
+          "term": "state space",
+          "heading": false
+        },
+        {
+          "term": "j-symbols",
+          "heading": false
+        },
+        {
+          "term": "partition function",
+          "heading": false
+        },
+        {
+          "term": "linear map",
+          "heading": false
+        }
+      ],
+      "extract": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS 4017 where the linear map Φ = M e02∈J e13∈J dimq(e13) \u001a e01 e02 e12 e23 e13 e03 \u001b + . Also, the linear map Ψ = M e02∈J e13∈J dimq(e02) \u001ae01 e02 e12 e23 e13 e03 \u001b − is the inverse of Φ. Proof. The semisimple condition implies that the vertical arrows are isomorphisms. Consider an element α ⊗β in the top left-hand space. Taking the trace of the two images of this element in",
+      "extractCut": true,
+      "blocks": [
+        "library/s0002-9947-96-01660-1/blocks/prose-page-021"
+      ]
+    },
+    {
+      "id": "page-022",
+      "number": null,
+      "title": "Page 22",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 470,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spherical hopf",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "self-dual simple",
+          "heading": false
+        },
+        {
+          "term": "simple object",
+          "heading": false
+        },
+        {
+          "term": "topological field",
+          "heading": false
+        },
+        {
+          "term": "field theory",
+          "heading": false
+        },
+        {
+          "term": "element",
+          "heading": false
+        },
+        {
+          "term": "condition",
+          "heading": false
+        }
+      ],
+      "extract": "4018 JOHN W. BARRETT AND BRUCE W. WESTBURY respect to these inner products. This condition implies that the invariant is defined for unoriented manifolds. The second condition is that each self-dual simple object in the category is orthogonal and not symplectic. If a is a self-dual simple object, then there is an isomorphism ¢: a > @. This object is called orthogonal if ¢ = @, or symplectic if o= —¢. These are the",
+      "extractCut": true,
+      "blocks": [
+        "library/s0002-9947-96-01660-1/blocks/prose-page-022",
+        "library/s0002-9947-96-01660-1/blocks/def-page-022-01",
+        "library/s0002-9947-96-01660-1/blocks/ex-page-022-02",
+        "library/s0002-9947-96-01660-1/blocks/rem-page-022-03"
+      ]
+    },
+    {
+      "id": "page-023",
+      "number": null,
+      "title": "Page 23",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 421,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spherical hopf",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "r-th root",
+          "heading": false
+        },
+        {
+          "term": "group algebra",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite dimensional",
+          "heading": false
+        },
+        {
+          "term": "trace condition",
+          "heading": false
+        },
+        {
+          "term": "non-commutative",
+          "heading": false
+        },
+        {
+          "term": "satisﬁed",
+          "heading": false
+        }
+      ],
+      "extract": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS 4019 Remark 6.4. If A is a Hopf algebra, there may exist more than one element w such that (A, w) is a spherical Hopf algebra. However, if w1 is one such element, then w2 = gw1 is another such element if and only if g satisﬁes the conditions: 1. g is central, 2. g is group-like, 3. g is an involution. Example 6.5. This is an example of a ﬁnite dimensional Hopf algebra which",
+      "extractCut": true,
+      "blocks": [
+        "library/s0002-9947-96-01660-1/blocks/prose-page-023",
+        "library/s0002-9947-96-01660-1/blocks/rem-page-023-01",
+        "library/s0002-9947-96-01660-1/blocks/ex-page-023-02",
+        "library/s0002-9947-96-01660-1/blocks/ex-page-023-03",
+        "library/s0002-9947-96-01660-1/blocks/prop-page-023-04"
+      ]
+    },
+    {
+      "id": "page-024",
+      "number": null,
+      "title": "Page 24",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 550,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spherical subcategory",
+          "heading": false
+        },
+        {
+          "term": "spherical hopf",
+          "heading": false
+        },
+        {
+          "term": "spherical category",
+          "heading": false
+        },
+        {
+          "term": "left a-modules",
+          "heading": false
+        },
+        {
+          "term": "proper spherical",
+          "heading": false
+        },
+        {
+          "term": "non-degenerate quotient",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite dimensional",
+          "heading": false
+        }
+      ],
+      "extract": "4020 JOHN W. BARRETT AND BRUCE W. WESTBURY trL of an endomorphism θ of a left A-module is the matrix trace of θw. The full construction is given in [3]. Some extra conditions are required to give invariants of manifolds. The ﬁrst way this can be achieved uses the same data as the construction of invariants given in [11]. Proposition 6.8. Let A be a ﬁnite dimensional involutory Hopf algebra over an algebraically",
+      "extractCut": true,
+      "blocks": [
+        "library/s0002-9947-96-01660-1/blocks/prose-page-024",
+        "library/s0002-9947-96-01660-1/blocks/prop-page-024-01",
+        "library/s0002-9947-96-01660-1/blocks/prop-page-024-02",
+        "library/s0002-9947-96-01660-1/blocks/prop-page-024-03"
+      ]
+    },
+    {
+      "id": "page-025",
+      "number": null,
+      "title": "Page 25",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 531,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tilting modules",
+          "heading": false
+        },
+        {
+          "term": "fundamental alcove",
+          "heading": false
+        },
+        {
+          "term": "quantised enveloping",
+          "heading": false
+        },
+        {
+          "term": "dominant weight",
+          "heading": false
+        },
+        {
+          "term": "dimq",
+          "heading": false
+        },
+        {
+          "term": "quantum dimension",
+          "heading": false
+        },
+        {
+          "term": "semisimple lie",
+          "heading": false
+        },
+        {
+          "term": "non-degenerate quotient",
+          "heading": false
+        }
+      ],
+      "extract": "INVARIANTS OF PIECEWISE-LINEAR 3-MANIFOLDS 4021 Proof. If A is any Hopf algebra, then the linear functional a 7→tr(x 7→γ−2(xa)) is a right co-integral. If A is not a semisimple algebra this is identically zero [12, Proposition 2.4]; and so if A satisﬁes the hypotheses of the proposition then, for all a ∈A, tr(x 7→w−1xaw) = 0. Now choose a primitive idempotent π and put a = πω−1. This gives 0 = tr(x 7→w−1xπ) =",
+      "extractCut": true,
+      "blocks": [
+        "library/s0002-9947-96-01660-1/blocks/prose-page-025",
+        "library/s0002-9947-96-01660-1/blocks/thm-page-025-01"
+      ]
+    },
+    {
+      "id": "page-026",
+      "number": null,
+      "title": "Page 26",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 492,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum invariants",
+          "heading": false
+        },
+        {
+          "term": "manifold invariants",
+          "heading": false
+        },
+        {
+          "term": "quan tum",
+          "heading": false
+        },
+        {
+          "term": "international journal",
+          "heading": false
+        },
+        {
+          "term": "hopf algebras",
+          "heading": false
+        },
+        {
+          "term": "nott",
+          "heading": false
+        },
+        {
+          "term": "tum groups",
+          "heading": false
+        },
+        {
+          "term": "turaev",
+          "heading": false
+        }
+      ],
+      "extract": "4022 JOHN W. BARRETT AND BRUCE W. WESTBURY [7] P. Freyd and D. N. Yetter, Coherence theorems via knot theory, J. Pure Appl. Algebra 78 (1992), 49–76. MR 93d:18013 [8] L. C. Glaser, Geometrical Combinatorial Topology I, Van Nostrand Reinhold Mathematical Studies 27 (1970). [9] A. Joyal and R. Street, The geometry of tensor calculus, I, Adv. in Math. 88 (1991), 55–112. MR 92d:18011 [10] G. M. Kelly and M. I. Laplaza,",
+      "extractCut": true,
+      "blocks": [
+        "library/s0002-9947-96-01660-1/blocks/prose-page-026"
+      ]
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "spherical category",
+      "heading": false
+    },
+    {
+      "term": "spherical hopf",
+      "heading": false
+    },
+    {
+      "term": "semisimple spherical",
+      "heading": false
+    },
+    {
+      "term": "piecewise-linear manifolds",
+      "heading": false
+    },
+    {
+      "term": "spherical categories",
+      "heading": false
+    },
+    {
+      "term": "additive spherical",
+      "heading": false
+    },
+    {
+      "term": "strict spherical",
+      "heading": false
+    },
+    {
+      "term": "called spherical",
+      "heading": false
+    },
+    {
+      "term": "simplicial invariants",
+      "heading": false
+    },
+    {
+      "term": "labelled simplicial",
+      "heading": false
+    },
+    {
+      "term": "spherical subcategory",
+      "heading": false
+    },
+    {
+      "term": "simplicial map",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "not-extracted",
+      "note": "split one section per page; no contents was trusted"
+    },
+    {
+      "kind": "sections",
+      "state": "partial",
+      "count": 26,
+      "note": "one per page, not by heading"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p25); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 26 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/s0002-9947-96-01660-1"
+  }
+}

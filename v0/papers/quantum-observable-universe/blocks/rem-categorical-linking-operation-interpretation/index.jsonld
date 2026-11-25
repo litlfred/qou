@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-categorical-linking-operation-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:categorical-linking-operation-interpretation",
+  "kind": "remark",
+  "title": "Proof scope of Property 1: linearity is a generic categorical fact",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-categorical-linking-operation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-categorical-linking-operation",
+  "text": "categorical-linking-operation-interpretation.md",
+  "provenance": "authored"
+}

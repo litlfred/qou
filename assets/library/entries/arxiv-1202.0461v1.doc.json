@@ -1,0 +1,486 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1202.0461v1",
+  "title": "arxiv-1202.0461v1",
+  "variant": "pdf",
+  "pages": 6,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The stellar dynamo",
+      "number": "2",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-the-stellar-dynamo"
+    },
+    {
+      "level": 1,
+      "title": "Magnetic white dwarfs in the solar neighborhood",
+      "number": "3",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-magnetic-white-dwarfs-in-the-solar-neighborhoo"
+    },
+    {
+      "level": 1,
+      "title": "Summary and conclusions",
+      "number": "4",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-summary-and-conclusions"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 258,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "white dwarfs",
+          "heading": false
+        },
+        {
+          "term": "high-ﬁeld magnetic",
+          "heading": false
+        },
+        {
+          "term": "plata",
+          "heading": false
+        },
+        {
+          "term": "stars",
+          "heading": false
+        },
+        {
+          "term": "magnetic ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "mergers",
+          "heading": false
+        },
+        {
+          "term": "draft version",
+          "heading": false
+        },
+        {
+          "term": "argentina",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1202.0461v1 [astro-ph.SR] 2 Feb 2012 Draft version October 11, 2018 Preprint typeset using LATEX style emulateapj v. 5/2/11 DOUBLE DEGENERATE MERGERS AS PROGENITORS OF HIGH-FIELD MAGNETIC WHITE DWARFS Enrique Garc´ıa–Berro1,2, Pablo Lor´en–Aguilar1,2, Gabriela Aznar–Sigu´an1,2, Santiago Torres1,2, Judit Camacho1,2, Leandro G. Althaus3,4, Alejandro H. C´orsico3,4, Baybars K¨ulebi5,2, & Jordi Isern5,2",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1202.0461v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 577,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "white dwarfs",
+          "heading": false
+        },
+        {
+          "term": "magnetic white",
+          "heading": false
+        },
+        {
+          "term": "high-field magnetic",
+          "heading": false
+        },
+        {
+          "term": "non-interacting binary",
+          "heading": false
+        },
+        {
+          "term": "magnetic fields",
+          "heading": false
+        },
+        {
+          "term": "degenerate cores",
+          "heading": false
+        },
+        {
+          "term": "merger",
+          "heading": false
+        },
+        {
+          "term": "dynamo",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#intro label=\"intro\"} The merger of two white dwarfs has received considerable interest during the last years because it is thought to be at the origin of several interesting astrophysical phenomena. In particular, the coalescence of two white dwarfs is one of the possible scenarios --- the so-called double-degenerate scenario --- to account for Type Ia supernova outbursts (Webbink 1984; Iben & Tutukov 1984).",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-stellar-dynamo",
+      "number": "2",
+      "title": "The stellar dynamo",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "3",
+      "words": 2116,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "white dwarfs",
+          "heading": false
+        },
+        {
+          "term": "dwarf merger",
+          "heading": false
+        },
+        {
+          "term": "hot corona",
+          "heading": false
+        },
+        {
+          "term": "convective shell",
+          "heading": false
+        },
+        {
+          "term": "magnetic white",
+          "heading": false
+        },
+        {
+          "term": "convective region",
+          "heading": false
+        },
+        {
+          "term": "high-field magnetic",
+          "heading": false
+        },
+        {
+          "term": "dynamo",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#dynamo label=\"dynamo\"} The merger of two degenerate cores is the final destiny of the evolution of a sizable fraction of binary systems. Three-dimensional simulations of the merger process (Guerrero et al. 2004; Yoon et al. 2007; Lorén--Aguilar et al. 2009) indicate that the remnant of the coalescence of two white dwarfs consists of a central white dwarf which contains all the mass of the primary. On top of it a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-magnetic-white-dwarfs-in-the-solar-neighborhoo",
+      "number": "3",
+      "title": "Magnetic white dwarfs in the solar neighborhood",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 1358,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "white dwarfs",
+          "heading": true
+        },
+        {
+          "term": "magnetic white",
+          "heading": true
+        },
+        {
+          "term": "dwarf mergers",
+          "heading": false
+        },
+        {
+          "term": "stellar mergers",
+          "heading": false
+        },
+        {
+          "term": "massive white",
+          "heading": false
+        },
+        {
+          "term": "helium white",
+          "heading": false
+        },
+        {
+          "term": "solar neighborhood",
+          "heading": true
+        },
+        {
+          "term": "merger channels",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#MC label=\"MC\"} To assess if our scenario can reproduce the observed number of high-field magnetic white dwarfs we have expanded an existing, state-of-the-art Monte Carlo code (Garcı́a--Berro et al. 1999; Torres et al. 2002; Garcı́a--Berro et al. 2004) designed to study the Galactic populations of single white dwarfs to deal with those of double degenerates. In our simulations we assumed that 50% of stars belong",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-summary-and-conclusions",
+      "number": "4",
+      "title": "Summary and conclusions",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 1187,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "white dwarfs",
+          "heading": false
+        },
+        {
+          "term": "high-ﬁeld magnetic",
+          "heading": false
+        },
+        {
+          "term": "mnras",
+          "heading": false
+        },
+        {
+          "term": "apj",
+          "heading": false
+        },
+        {
+          "term": "netic white",
+          "heading": false
+        },
+        {
+          "term": "berro",
+          "heading": false
+        },
+        {
+          "term": "isern",
+          "heading": false
+        },
+        {
+          "term": "wickramasinghe",
+          "heading": false
+        }
+      ],
+      "extract": "We have shown that the hot, convective, diﬀerentially rotating corona predicted by detailed three-dimensional simulations of the merger of two degenerate stellar cores is able to produce very high magnetic ﬁelds. We have also shown that these magnetic ﬁelds are conﬁned to the outer layers of the remnant of the coalescence, and do not propagate neither to the interior of the white dwarf or to the debris region. Our",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "white dwarfs",
+      "heading": true
+    },
+    {
+      "term": "magnetic white",
+      "heading": true
+    },
+    {
+      "term": "dwarf merger",
+      "heading": true
+    },
+    {
+      "term": "coalescing white",
+      "heading": false
+    },
+    {
+      "term": "massive white",
+      "heading": false
+    },
+    {
+      "term": "high-field magnetic",
+      "heading": false
+    },
+    {
+      "term": "field white",
+      "heading": false
+    },
+    {
+      "term": "helium white",
+      "heading": false
+    },
+    {
+      "term": "convective corona",
+      "heading": false
+    },
+    {
+      "term": "single white",
+      "heading": false
+    },
+    {
+      "term": "netic white",
+      "heading": false
+    },
+    {
+      "term": "stellar mergers",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "— Dynamo conﬁguration in a white dwarf merger. Temperature (solid line, left scale) and rotational velocity (dashed line, right scale) proﬁles of the ﬁnal remnant of a white dwarf merger as a function of radius are shown for the case of a binary system",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "— Mass distribution of the remnants of the mergers. The distribution shows the frequency of the diﬀerent merger channels",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 4,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 5,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "2 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p5); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 5 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1202.0461v1"
+  }
+}

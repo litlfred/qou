@@ -1,0 +1,788 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "drinfeld1991-quasitriangular",
+  "blocks": [
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "828 D. I. GUREVICH\n\nBIBLIOGRAPHY\n\n1, L.A. Takhtadzhyan and L. D. Faddeev, The quantum inverse scattering method and the XYZ-\nmodel of Heisenberg, Uspekhi Mat. Nauk 34 (1979), no. 5 (209), 13-63; English transl. in Russian\nMath. Surveys 34 (1979).\n\n2. V. G. Drinfel’d, Quantum groups, Zap. Nauchn. Sem. Leningrad. Otdel. Mat. Inst. Steklov.\n(LOMI) 155 (1986), 18-49; English transl. in J. Soviet Math. 41 (1988), no. 2.\n\n3. M. A. Semenov-Tyan-Shanskii, What is a classical R-matrix?, Funktsional. Anal. i Prilozhen.\n17 (1983), no. 4, 17-33; English transl. in Functional Anal. Appl. 17 (1983).\n\n4. N.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/def-page-002-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "def-page-002-01.md",
+      "narrative": null,
+      "content": "Let k be a field of characteristic 0. By a quasitriangular quasi- Hopf QUE-algebra over k{[h]] is meant a topological quasitriangular quasi-Hopf algebra (A, A, ¢, ®, R) over k[[h]] such that A/hA is a universal envelop- ing algebra-with the standard comultiplication, and A, as a topological k[/]]- module, is isomorphic to V[[A]] for some vector space V over k.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "830 V. G. DRINFEL’D\n\ninvertible element of A @ A such that\n\nA(a)=RA(a)R', aeA, (1.5)\n(A@id)(R) = @ 7 R?(o) “| Rw, (1.6a)\n(id @A)(R) = (071) RBG BRPO, (1.6b)\n\nHere A’ =a 0A, where o: AQ@A GABA interchanges the tensor factors. If\nR=>,a,b, then by definition R' =,a,96,@1, R= X49 186,,\nand R? = &,194,8 b;. We also need to explain that, for example, if ® =\njx; @y¥; @z,, then og? — 30 jy; 8 2; OX,;.\n\nThe gist of the axioms (1.1)-(1.6) is that the representations of a quasitri-\nangular quasi-Hopf algebra 4 form a quasitensored category in the sense of\n[5] (see also §3 of [1]). This means that, firstl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/rem-page-002-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "rem-page-002-02.md",
+      "narrative": null,
+      "content": "Since 4/hA isa universal enveloping algebra, it follows from (1.4) and the invertibility of ® that ® = 1 mod/A. Similarly, R = 1mod/A, and for a twisting of quasitriangular quasi-Hopf QUE-algebras, F = 1modh.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/thm-page-002-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "thm-page-002-03.md",
+      "narrative": null,
+      "content": "Such a ® exists, and is unique up to twisting via symmetric g-invariant elements F € A@A.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "832 V. G. DRINFEL’D\n\n(for short: the KZ system) that arises in conformal field theory [10]. This ®,\nhereafter denoted by ®,,, is expressed in terms of t = At by means of a\n“ C-universal formula”; i.e., if we write ®,, in the form\n\niid eddy ot\n®.7 = xs Qin.np) ‘ \"Cj cig Bj nj, Bhd, >\nm,n,p\nwhere the e, are a basis of g as a topological C[[/]]-module and the tensors\nQin,n,p) ate symmetric in each group of indices i, j,/, then the Gm,n,p) ate\n\nexpressed in terms of the structural constants ci, of the algebra g and the\ncomponents t”” of the tensor t in accordance with the rules of acyclic tensor\nc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/thm-page-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "thm-page-003-01.md",
+      "narrative": null,
+      "content": "Any quasitriangular quasi-Hopf QUE-algebra can be made stan- dard by a suitable twist.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/lem-page-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "lem-page-004-01.md",
+      "narrative": null,
+      "content": "There exist unique solutions W,,..., W; of the system (2.2) with the following asymptotic behaviors in the corresponding zones:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "834 V. G. DRINFEL'D\n\nof ®,, is obvious). To prove (1.6), we consider (2.2) for n = 4 in the region\n{(21 5 Zy5 23, 24) € Rr’ |Z, <2) <2, < 2Z,} and distinguish five zones:\n\n1) 2,-2, € 23-2, K€ Z4-2,; 3) 25-2) K 24-2) K 2-2,\n2) 23-2, 2,-2,K 24-2, 4) 24-23 <24- 2, 24- 2;\n\nThese zones correspond to the “vertices” of the pentagon (1.7) in accordance\nwith the following rule: if V, and V, fall between any two corresponding paren-\ntheses and V, is outside these parentheses, then |z; — Z| « |Z; - 213 for\nexample, (V, @ (V, @ V)) ® V, corresponds to the second zone.\n\nLEMMA. There exist unique solutions",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "836 V. G. DRINFEL'D\n\n§3 of [1]. It uses six solutions of the system (2.2) for = 3 in the complex\ndomain that have the standard asymptotic behavior in the corresponding zones;\nthey correspond to the “vertices” of the hexagon (1.9a).\nNow replace (2.1) by the equation\nfl 1 (A B\n\n6) = 5 (4+ 77 Jom, (2.11)\nwhere A and B are noncommuting symbols, and G is a formal series in A\nand B with coefficients that are analytic functions of x. Consider, as above,\nsolutions G, and G, with the standard asymptotics for x =0 and x =1. Put\n9x7(A, B) = Gy 'G, . The algebra C((A, B)) of noncommutative formal series\ni",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/rem-page-005-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "rem-page-005-01.md",
+      "narrative": null,
+      "content": "According to the Introduction in [11], similar computations have previously been made by Z. Wojtkowiak; indeed, they served as a stimulus to",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prop-page-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "prop-page-006-01.md",
+      "narrative": null,
+      "content": "Such R and ® exist. Proor. Suppose we have already constructed g-invariant elements R, € (Ug @ Ug){[Al] and ©, € (Ug @ Ug @ Ug)[{h]] such that Ry’ =R,, R, = 1+ At/2 modh’, ®, = l1modh, and R,, ®, satisfy modulo h” equa- tions (1.2), (1.4), (1.6a), and (2.10) (for m = 2 we can put R, = 1+ht/2, ®, =1). From the proof of Proposition 3.10 of [1] it follows that there exists a g-invariant ®, ¢ (Ug@Ug@Ug)[[A]] satisfying (1.2), (1.4), and (2.10) modulo h”*! and such that ®, = ®, modh\". Since R, and ®,, satisfy (1.6a) modulo h” , we have",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prop-page-006-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "prop-page-006-02.md",
+      "narrative": null,
+      "content": "Let g be a Lie algebra over k, and suppose that Re (Ug @ Ug)[[A]] and ® € (Ug @ Ug ®@ Ug)I[h]] are inverticle, g-invariant, and satisfy (1.2), (1.4), and (1.6). Then by twisting via some g-invariant Fe (Ug®Ug)[[Al] the elements ® and R can be turned into M (h0) and W(h6), where @ is a g-invariant element of (Sym? g)[[A]]. Furthermore, @ is uniquely determined, while F is determined up to multiplication by an element of the form",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "838 V. G. DRINFEL’D\n\nsymmetric form if and only if F? = F; 3) if RJ. R, then A’ = A and\n(2.10) holds. We recall also (see §2) that if R” = R, then (1.6b) follows from\n(1.6a) and (2.10).\n\nLet g be a Lie algebra over k, and t €g@g be symmetric and g-invariant.\nPutting A = (Ug)[[h]] we define in the usual fashion A: A - 4@A and\né: A— k[[A]]. We look for g-invariant elements R¢ A@A and De A@ABA\nsuch that R7) = R, R=1+ht/2 modh?, ® = 1modh and equations (1.2),\n(1.4), (1.6a), and (2.10) are satisfied (we do not require R = eft!) .\n\nPROPOSITION 3.1. Such R and ® exist.\n\nProor. Suppose we have already",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/lem-page-007-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "lem-page-007-01.md",
+      "narrative": null,
+      "content": "Suppose (®,, R,) and (®,, R,) satisfy the conditions of the propo- sition, with Rj' = R,, Rj! = Ry, ©, = ®,modh\", and R, = R,modh\". Let g and r be the reductions modh of the elements h\"\"(®, — ®,) and",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prop-page-007-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "prop-page-007-02.md",
+      "narrative": null,
+      "content": "Let g be a deformation algebra over k[[h]] (see §1), and Re Ug@Ug and ®E Ug@Uge@Uzg invertible g-invariant elements satisfying (1.2), (1.4), and (1.6). Then by twisting via some g-invariant F € Ug @ Ug",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "840 V. G. DRINFEL’D\n\n(u! @u')A(u), where u belongs to the center of (Ug)[[A]] and u=1modh,\ne(u) =1.\n\n; Proor. (A, A,é,®, R) can be brought into symmetric form by twisting\nvia some g-invariant element of (Ug ® Ug){[A]] (see the proof of Proposition\n3.5 in [1]). We can therefore assume that R?! = R (in which case ©?! = @7!\nwhile F must be symmetric). Then everything reduces to the following lemma.\n\nLEMMA. Suppose (®,, R,) and (®,, R,) satisfy the conditions of the propo-\nsition, with Rj' = R,, Rj! = Ry, ©, = ®,modh\", and R, = R,modh\".\nLet g and r be the reductions modh of the elements h\"\"(®, — ®",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prop-page-008-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "prop-page-008-01.md",
+      "narrative": null,
+      "content": "® REMARKS. 1) Theorem B can be proved without the use of Proposition 3.5 by arguing as in the proof of Proposition 3.13 of [1].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "842 V. G. DRINFEL'’D\n\nwhere x: Ug @ Ug — g ®g is the projection defined by identification of Ug\nwith Sym” g (we are forced to use 7, since it has not yet been proved that\nInR €g@g). We claim that f exists if f is constructed as in the proof of\nProposition 3.11 of [1]. Indeed, if we identify Ug, with Sym* go in the usual\nfashion, then Ug,@U gq is identified with Sym\" (gy@gy) = Bn 908s (Q)®”,\n(Ug,)®? with @,, 97 @, (Q°)®” and the f constructed in [1] is equal to\nL(g), where Ly: (Ug,)”? > (Ug)? is defined by means of certain S,,-\nequivariant operators 6,,: (Q°)®” — (Q?)®” . We can therefore put f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "844 V. G. DRINFEL’D\n\n“i\nHere (u,v) means uvu'v ' In terms of the x,\n\nip (4.5) says that\n\nSF (X42 + Xp3% pq) F(%13%23 » ¥3q)\n= F(X 93 + X34) f(% 2% 13» Xa4X3q) F(X 2 » 23)» (4.10)\nThus, every pair (A, f), 2 € 1+ 22, satisfying (4.3), (4.4), and (4.10)\ndetermines a “natural” way of constructing for any quasitensored category C a\nnew quasitensored category C’ , where the only change is in the commutativity\nand associativity isomorphisms (“natural” means that if F: C, — C, isa ten-\nsored functor in the sense of Definition 1.8 of [6], then F is a tensored functor\nfrom Cc to C,). It is easily shown",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prose-page-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 10",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/page-010.md",
+      "narrative": null,
+      "content": "846 V. G. DRINFEL’D\n\nwhere f satisfies (4.3) and (4.4). Conversely, (4.3) and (4.4) imply that (4.14)\ndefines an endomorphism of B,(k).\n\nWe describe now, following [2], how to construct a canonical homomorphism\nGal(Q/Q) — GT(Q,), where Q is the algebraic closure of Q in C (although\nthis construction will not be used in the sequel). Let us denote by GT (resp.\nGT,) the semigroup of all pairs (A, f) satisfying (4.3), (4.4), and (4.10), where\nf belongs to the pro-finite completion (resp. pro-/-completion) of the free\ngroup, and 4¢1+2Z (resp. 4€1+2Z,). Here Z= lim Z/nZ. The\n\nn\n\ngroups of invertible",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prop-page-011-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "prop-page-011-01.md",
+      "narrative": null,
+      "content": "The action of GT(k) on M(k) is free and transitive.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prop-page-011-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "prop-page-011-02.md",
+      "narrative": null,
+      "content": "The mapping M,(k) — {splittings of the sequence (5.8)} is bijective. In particular, exactness of (5.8) implies that M\\{k) # ©.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prose-page-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 11",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/page-011.md",
+      "narrative": null,
+      "content": "848 V. G. DRINFEL'D\n\nSimilarly, (2.14b) is equivalent to the equality\n\n9(C, Ae 9(C, Bye”\n\nwhere A+ B+C=0,\nobtained by substituting X’ = C, X7% = B, X' = A. (5.2a) and (5.2b)\nimply (2.12). On the other hand, if (2.12) holds, then (5.2a) and (5.2b) are\nequivalent to the equality\ncP o(C, Ale 9(B, Cle”? 9(A, B) =1,\nwhere A+ B+C=0.\nThus, M],(k) is the set of g € Fr,(A, B) satisfying (2.12), (5.3), and (2.13).\n\nLet M hk) be the set of g € Fr, (A, B) satisfying (2.12), (2.13), and the equa-\nA 4B/2 QC)? HAP? GHB/2 gHC/2-\n\n~1 4/2\n\ng(B, A) e =1,\n\n(5.2b)\n\n(5.3)\n\ntion obtained from (5.3) by replacing e by",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prop-page-012-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "prop-page-012-01.md",
+      "narrative": null,
+      "content": "M,(k) #2. Proor. Since M,(C) 4 © (see §2), the sequence (5.8) is exact for k = C. This implies (5.8) is exact for k =Q. Therefore M,(Q) 4 © (see Proposition 5.2) and, so much the more, M|(k) #@. Another version of the proof: since the composite of the homomorphism Gal(Q/Q) — GT(Q,) (see §4) and the homomorphism v: GT(Q,) > Q is the homomorphism /: Gal(@/Q) - Zy defined by the relation o~'(C) = cf | where fain , o € Gal(Q/Q), it follows that the image of vy is infinite, the sequence (5.8) is exact for kK =Q,, etc. ©",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prop-page-012-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "prop-page-012-02.md",
+      "narrative": null,
+      "content": "The set Mi (k) = {g € M,(k) | o(-A, —B) = 9(A, B)} is nonempty. It is acted on by the group GT*(k) = {(4, f) € GT(k) | f(x, ¥4) = f(X, ¥)}, and the action on Mj (k) by the subgroup GT*(k) N GT, (k) is free and transitive.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prose-page-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 12",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/page-012.md",
+      "narrative": null,
+      "content": "850 V. G. DRINFEL'D\n\nSuppose we have already proved that Q(A, B) = 1moddegn (ie., Q(A, B) =\n1+ terms of degree n and higher). If Q(A, B) = 1+ 4(A, B)moddeg(n +1),\nwhere g is homogeneous of degree 7, then the left-hand side of (5.10) is con-\ngruent to n-q(A, B) mod deg(n+1). Since e%e6 = e 4? Q(A, C)e~4”O(A, B) :\nwe find, denoting by a, 8, and y the residue classes of A, B— (A, B),\nand C — 4(A, C)moddeg(n + 1), that e*e%e” = 1. Therefore (5.6) holds,\nwith s = 1. Hence the right-hand side of (5.10) is congruent to (4, B) +\nq(A, C)moddeg(n + 1). From the definition of Q it follows that g(A, C) =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/rem-page-012-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "rem-page-012-03.md",
+      "narrative": null,
+      "content": "9,7(—A, —B) # Qxz(A, B) (see (2.15), (2.17), or (2.18)).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prop-page-013-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "prop-page-013-01.md",
+      "narrative": null,
+      "content": "The action of GRT(k) on M(k) is free and transiti > nsitive. TI same is true for the action of GRT,(k) on M,(k). isn sive, The",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prop-page-013-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "prop-page-013-02.md",
+      "narrative": null,
+      "content": "Every 9 € M(k) determines an isomorphism s,: GRT(k)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prop-page-013-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "prop-page-013-03.md",
+      "narrative": null,
+      "content": "(5.17), (5.18), and (5.20) imply (5.19).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prose-page-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 13",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/page-013.md",
+      "narrative": null,
+      "content": "852 V. G. DRINFEL'D\n\nREMARKS. 1) gt,(k) has the filtration whose nth term is {(0\ny= Omod degn}. We can use it to construct a complete ended Dis ai\nsrgt,(*). It will be shown (see Proposition 5.6) that Bigt, (k) = grt,(k). This\nis the reason for the notations grt, GRT. It is not hard to prove the inclusion\nGist, (k) C get, (Kk): (5.19) follows from the fact that y(a, B)-eP w(a, Bye? +\ne’w(a, ye” — w(a, y) = 0, where (0, y) € gt,(k), e*efe” = 1. This in turn\nfollows from the analogues fact about GT,(k): if (1, f) € GT,(k), then\n\n-1 -\nXyf(Kys XXX, X)- (XX) X F(X, X)\n= X\\ F(X; X)XAS(X;, X)XGA(X, >",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prop-page-014-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "prop-page-014-01.md",
+      "narrative": null,
+      "content": "The mapping MED ky ~~ M{(k) is surjective.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prop-page-014-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "prop-page-014-02.md",
+      "narrative": null,
+      "content": "(5.12), (5.13), and (5.15) imply (5.14). In other words, GRT, (k) = M,(k).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prop-page-014-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "prop-page-014-03.md",
+      "narrative": null,
+      "content": "2) Here is an outline of another proof of Proposition 5.2. Denote by Spl(k) the set of homomorphisms k — gt(k) that split (5.8). Put GT,(k) = {(4, f) € GT(k) | A = 0} and GTA (k) = {(0, f) € GT,(k) | f satisfies (5.23)}. In the process of proving Proposition 5.5 we constructed a mapping M,(k) + GT,(k). It is easily shown to be bijective. On the other hand, an element of Spl(k), or, what is the same, an element of gt(k) of the form (1, y), determines a l-parameter subgroup }: k* 4 GT(k). A priori, y is a formal mapping (Le., y(A) is expressed in terms of formal series in A—1), but in fact y is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prose-page-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 14",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/page-014.md",
+      "narrative": null,
+      "content": "854 V. G. DRINFEL'D\n\nPut fei, B) = fr,(A, B)/I,, where I, = {u € fc,(A, B)| wu = Omoddegr}.\nLet Fry?(4, B) = expfr{(4, B), and M\\\"(k) be the set of all g € Fr? (A, B)\nsatisfying (2.12), (5.3), and (2.13) mod degr.\n\nPROPOSITION 5.8. The mapping MED ky ~~ M{(k) is surjective.\n\nProoF. Similarly to GRT,(k) we consider the group GRT”” (k) , consisting\nof all elements g € Fr(A, B) satisfying (5.12)-(5.15) moddegn. Similarly\nto Proposition 5.5 we can prove that GRT”” (k) acts on MO (k) freely and tran-\nsitively. It remains to prove that the homomorphism GRTY*Y (k) ~ GRT\"(k)\nis surjective. Since both",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/lem-page-015-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "lem-page-015-03.md",
+      "narrative": null,
+      "content": "If S77.,[Y,, P|] =0, where the P, are Lie polynomials in Y,,..., Y,,» then there exists exactly one f € F(Y,,...5 Yn) such that Of/OY, = P, for all i.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prop-page-015-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "prop-page-015-02.md",
+      "narrative": null,
+      "content": "1) The action of S, on F(A, B) preserves the Poisson bracket.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prose-page-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 15",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/page-015.md",
+      "narrative": null,
+      "content": "856 V. G. DRINFEL'D\n\n§6. On the algebra grt, (k)\n\nWe recall that by ft,(A, B) is meant the set of Lie formal series w(A, B)\nwith coefficients in k, and by gtt,(k) the set of all y € fe,(A, B) that satisfy\n(5.17)-(5.20). By Proposition 5.7, equalities (5.17), (5.18), and (5.20) imply\n(5.19). Furthermore, (5.17) and (5.19) imply (5.18): indeed, from (5.17) and\n(5.19) one easily derives that the left-hand side of (5.18) commutes with A\nand B. Now, gtt,(k) is a Lie algebra with commutator (5.21). The set of\nall yw € fc,(A, B) that satisfy (5.17), (5.19), and therefore (5.18) also forms\na Lie algeb",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/rem-page-015-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "rem-page-015-01.md",
+      "narrative": null,
+      "content": "If from the right action (4.13) of the group GT,(k) on the com-",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prop-page-016-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "Deligne-Ihara [13]",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "prop-page-016-01.md",
+      "narrative": null,
+      "content": "dimIh”(k) =a, — B a, = (3n)\"'{ S0(1 ~ a(a/3))acay2\"4 —e,},",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prop-page-016-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "prop-page-016-02.md",
+      "narrative": null,
+      "content": "For any odd n >3 there exists a w € gtt;(k) such that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prose-page-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 16",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/page-016.md",
+      "narrative": null,
+      "content": "858 V. G, DRINFEL’D\n\néy = G00 , where a, € Derft,(A, B) is as before and o is the automorphism\nof ft,(A, B) given by o(A) = ~A—B and o(B) = B. We have 6,(A) =\n[w(-A — B, A), A] and 6, (B) = [yw(-A —- B, B), B]. If w corresponds to\nf € F(A, B), then 6,(A) =[4, 0f/04] and 6,(B) = [B, af/0B]. These\nformulas can be regarded as the Hamilton equation corresponding to f/f. It re-\nmains to use the connection between the Poisson bracket of Hamiltonians and\nthe commutator of the corresponding vector fields. ©\n\nRemarks, 1) The element f ¢.¥(A, B) that corresponds to y € grt} (k) C\nIh(k) (see the proof of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/drinfeld1991-quasitriangular/blocks/prose-page-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 17",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/page-017.md",
+      "narrative": null,
+      "content": "860 V. G. DRINFEL’D\n\n4, L. D. Faddeev, Integrable models in (1+1)-dimensional quantum Jield theory, Recent Advances\nin Field Theory and Statistical Mechanics (Les Houches, 1982), North-Holland, Amsterdam and\nNew York, 1984, pp. 561-608.\n\n5. N. Yu. Reshetikhin, Quasitriangular Hopf algebras, solutions of the Yang-Baxter equation and\n\nVv inyariants of connections, Algebra i Analiz 1 (1989), no. 2, 169-188; English transl. in Leningrad\nMath. J. 1 (1990), no. 2.\n\n6. Pierre Deligne and J. S. Milne, Tannakian categories, Hodge Cycles, Motives and Shimura\nVarieties, Lecture Notes in Math., vol. 900,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

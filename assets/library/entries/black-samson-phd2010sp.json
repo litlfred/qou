@@ -1,0 +1,1381 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "black-samson-phd2010sp",
+  "blocks": [
+    {
+      "id": "library/black-samson-phd2010sp/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 9,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "REPRESENTATIONS OF HECKE\nALGEBRAS AND THE\nALEXANDER POLYNOMIAL\nby\nSAMSON BLACK\nA DISSERTATION\nPresented to the Department of Mathematics\nand the Graduate School of the University of Oregon\nin partial fulfillment of the requirements\nfor the degree of\nDoctor of Philosophy\nJune 2010\nii\nUniversity of Oregon Graduate School\nConfirmation of Approval and Acceptance of Dissertation prepared by:\nSamson Black\nTitle:\n\"Representations of Heeke Algebras and the Alexander Polynomial\"\nThis dissertation has been accepted and approved in partial fulfillment of the requirements for\nthe degree in the Department",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/figure-img-p003-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/figure-img-p004-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/figure-img-p007-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../images/img-p007-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/figure-img-p009-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../images/img-p009-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "INTRODUCTION",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "../sections/sec-000-i-introduction.md",
+      "narrative": null,
+      "content": "1.1.\nHistorical Background\nThe Alexander polynomial has a history dating back to the early days of algebraic topology.\nThe original definition ([1]) came from analyzing the group of deck transformations on the infinite\ncyclic cover of the complement of a knot. In the same paper, Alexander reduced the calculation of\nthe invariant to a combinatorial procedure using knot diagrams. Decades later, Conway introduced\na special normalization of the invariant ([9]) extended to links, denoted \\7(L), that was recursively\ncomputable using a skein relation on the diagrams (see Figure 1.1).\nx x\n) (\nLo\nFigur",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/figure-img-p010-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../images/img-p010-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/figure-img-p012-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../images/img-p012-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "ILL Links and Braids",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "../sections/sec-001-ill-links-and-braids.md",
+      "narrative": null,
+      "content": "Links and Braids\nII.l.l.\nLinks\nWe recall some standard notions and establish some conventions (see [25, chapter 2] or [10,\nchapter 1] for details). A link is a smooth embedding SI u· .. U SI\n----> S3. Whenever it is convenient\nand does not cause confusion, we also refer to the image of the embedding as the link. All links\nare oriented. A link with one component is called a knot. An isotopy of links is a smooth path in\nthe space of embeddings, or equivalently a smooth embedding (SI U ... U SI) x I\n----> S3. Isotopy\nforms an equivalence relation whose equivalence classes are called link types. F",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/thm-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "thm-sec-001-01.md",
+      "narrative": null,
+      "content": "Two link diagrams realize isotopic links if and only if they are related by a sequence of planar isotopies and the following three local moves: (R I) P \" \"110 (R II) (R III) II. 1. 2. Braids There are many equivalent ways to define braids (see, e.g. [7] or [25, chapter 1]). A geometric braid with d strands is a smooth embedding of of d disjoint arcs in ]R2 x [0, 1] such that the endpoints of each strand have coordinates (i, 0, 0) and (7l\"(i), 0,1) for some permutation 7l\" E Sd and the height function (projecting onto the third coordinate) has no critical points. Bya geometric braid isotopy, we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/figure-img-p015-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../images/img-p015-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/figure-img-p016-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../images/img-p016-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/def-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 22,
+      "target": "def-sec-002-03.md",
+      "narrative": null,
+      "content": "Let 'Hd denote the Iwahori-Hecke algebra of type Ad- 1 associated to the symmetric group 3d. This is the algebra over <C(v) generated by H1, ... ,Hd-l' subject to the braid relations (II.5) (II.6) and also the quadratic relations (II.7) We recognize immediately that 'Hd --4> <C(v) 01F Ad(Q), Hi f---+ 1 0 XO'i, where <C(v) is considered as a (<C(v), IF) bimodule with x E IF acting on the right by 1. Let i denote the natural",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/def-sec-002-06",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 22,
+      "target": "def-sec-002-06.md",
+      "narrative": null,
+      "content": "The Jones polynomial is the function J : £ --> Z[v,v- 1J, defined by setting x = v2 in P(L). Thus, J is the unique isotopy invariant of links normalized so that J(unknot) = 1 and satisfying the skein relation (IU4) Extending the Jones polynomial to braids, we have Jd : Ed --> Z[v, V-I] for each d ;::::: 1. Since h is a specialization of the HOlvIFLYPT polynomial, it factors through the Hecke algebra. In fact, it factors through a smaller quotient, Ad ( J) which we now describe.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/figure-img-p017-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../images/img-p017-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/lem-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 22,
+      "target": "lem-sec-002-01.md",
+      "narrative": null,
+      "content": "Any a E Ad(Q) is equal to an IF-linear combination of words, each containing exactly one instance of either ad-l or ad~l'",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/lem-sec-002-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 22,
+      "target": "lem-sec-002-04.md",
+      "narrative": null,
+      "content": "2.4 (Ocneanu, [14]). For every y E <C(v), there is a linear map T : Ud~1 7-{d ----7 <C(v) uniquely defined by (i) T(ab) = T(ba), (ii) T(i(a)Hd ) = YT(a) for a E 7-{d, and (iii) T(l) = 1. Such a linear function is often called a Markov trace because of the first condition. Al- though T does not give a link invariant directly (unless Y = 1), it is a useful notion for the following two reasons. First of all, it behaves in a controlled manner with respect to the second Markov move, and so it defines an invariant of framed links and can, moreover, be rescaled to make an invariant of ordinary links.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/prop-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 22,
+      "target": "prop-sec-002-02.md",
+      "narrative": null,
+      "content": "The inclusion ~ Ed '---c> Ed+l descends to a well-defined injective algebra",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "2. Representations of the Braid Group and the Iwahori-Hecke Algebra",
+      "pageStart": 17,
+      "pageEnd": 22,
+      "target": "../sections/sec-002-ii-2-representations-of-the-braid-group-and-the.md",
+      "narrative": null,
+      "content": "Representations of the Braid Group and the Iwahori-Hecke Algebra\nIn this section, we introduce the Iwahori-Hecke algebras of type A, and discuss their\ncentral importance in knot theory.\nInitally, we will take the perspective that a link invariant\nsatisfying a skein relation akin to Ll is given, and use it to produce a particular quotient of the\nbraid group algebra that the invariant factors through. Afterwards, we take the Hecke algebra as\na starting point, and following Jones ([24]), show how to recover those link invariants (satisfying\nskein relations) from the characters of its representati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/thm-sec-002-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 22,
+      "target": "thm-sec-002-05.md",
+      "narrative": null,
+      "content": "2.5. The functions Pd : Ed ----7 IF given by (ILl0) define a link invariant P v'ia the formula P(a) = Pd(a). PTOof. Regarding the first Markov move, invariance of P follows from invariance of T and the fact that the exponent sums match: e(0.13) = e(f3o). It suffices to check invariance under the second Markov move. Let 0: E Bd and calculate The equality Pd+do:a-i 1 ) = Pd(o:) follows from a similar calculation, noting that o The invariants {Pd }d2:1 are normalized so that P1(1) = 1, where 1 is the trivial braid on one strand, and they satisfy the following skein relation for any 0: E Bk and an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/figure-img-p018-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/figure-img-p019-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../images/img-p019-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/figure-img-p020-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../images/img-p020-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/figure-img-p021-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../images/img-p021-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/def-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 24,
+      "target": "def-sec-003-01.md",
+      "narrative": null,
+      "content": "The Temperley-Lieb algebra T Ld(a) is the unital, associative algebra over C(v) generated by U1 , ... ,Ud-l subject to the relations UiUj = UjUi when Ii - jl > 1, and ul = aUi (IU5) (IU6) (IU7) The quantity aE C(v)X is called the loop value (the name will be explained in 11.4). Let Cd = d~1 (2;) denote the dth Catalan number, which is the solution to the recurrence Co = 1 d Cd+1 = L CjCd- j , j=O d;::::: o. (IU8) (lUg)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/lem-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "[25, Lemma 5.26]",
+      "pageStart": 22,
+      "pageEnd": 24,
+      "target": "lem-sec-003-02.md",
+      "narrative": null,
+      "content": "The Temperley-Lieb algebra is spanned by the set of words of the form where 0 ::; m < d, (u U -1'\" U )(U U -1'\" U ) ... (U U -1'\" U ) 1,1 'I.) .11 1,2 1,2 )2 2m 2m Jm , 0< i 1 < ... < i m < d, 0 < jl < ... < jm < d, (11.20) and .,. , There are Cd such words; hence, dimTLd(O\") ::; Cd. A word in the generators UI , ... , Ud-I corresponding to the indices (iI, ... , im,j I, ... ,jm) as in the Lemma will be referred to as a normal form. For our purposes, we choose 0\" = [2] = (v + v-I) E C(v) and let TLd = TLd([2]). We now describe TLd as a quotient of 'lid.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "3. The Temperley-Lieb Algebra",
+      "pageStart": 22,
+      "pageEnd": 24,
+      "target": "../sections/sec-003-ii-3-the-temperley-lieb-algebra.md",
+      "narrative": null,
+      "content": "The Temperley-Lieb Algebra\nDefinition 11.3.1. The Temperley-Lieb algebra T Ld(a) is the unital, associative algebra over C(v)\ngenerated by U1 , ... ,Ud-l subject to the relations\nUiUj = UjUi\nwhen Ii - jl > 1, and\nul = aUi\n(IU5)\n(IU6)\n(IU7)\nThe quantity aE C(v)X is called the loop value (the name will be explained in 11.4). Let\nCd =\nd~1 (2;) denote the dth Catalan number, which is the solution to the recurrence\nCo = 1\nd\nCd+1 = L CjCd- j ,\nj=O\nd;::::: o.\n(IU8)\n(lUg)\nLemma 11.3.2 ([25, Lemma 5.26]). The Temperley-Lieb algebra is spanned by the set of words of\nthe form\nwhere 0 ::; m < d,\n(u U -1'\"",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/thm-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Compare [25, Thm. 5.29]",
+      "pageStart": 22,
+      "pageEnd": 24,
+      "target": "thm-sec-003-03.md",
+      "narrative": null,
+      "content": "The map'ljJ : 'lid ----. TLd' defined on generators by (II.21 ) is a surjective C(v)-algebra homomorphism. PTOOf. Since Ui = ·ljJ(v - Hi) and UI, ... , Ud-I generate TLd' 'ljJ is surjective. We verify directly that the map is well-defined. For relation II.5, suppose that Ii - jl = 1 and calculate in TLd: 'l/J(HiHjHi) = (v - Ui)(v - Uj)(v - Ui) = v 3 - 2V2Ui - v2Uj + vUiUj + vUjUi + vUl- UiUjUi = v3 - V2Ui - v2Uj + vUiUj + vUjUi. This last expression is symmetric in i and j, and so 'lj)(HiHjHi) = ·ljJ(HjHiHj ). The verification that 'l/J(HiHj ) = ·ljJ(HjHi for Ii - jl > 1 is similar and easier.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/thm-sec-003-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 24,
+      "target": "thm-sec-003-04.md",
+      "narrative": null,
+      "content": "The kernel of·ljJ is the two-sided 'ideal of 'lid generated by (v - HI) (v - H2 )(v - HI) - (v - HI) = v3 - v 2HI - v 2H2 + vHIH2 + vH2H I - H IH2H I (II.22) PTOOf. Clearly, ker 1/1 is the two sided ideal generated by v 3 _v2 H i -V2Hj+vHiHj+vHjHi-HiHJHi for all i,j such that Ii - jl = 1. Using the braid relation (II.5), it suffices to consider the case j = i + 1, so the ideal is generated by In 'Hd, conjugation by the invertible element (H1 ... Hd_d i - 1 defines an automorphism sending H 1 to Hi' Therefore, the kernel is generated by [J I I I Although it's not obvious now, we will see in Cha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/cor-sec-004-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 29,
+      "target": "cor-sec-004-05.md",
+      "narrative": null,
+      "content": "The set of words in Lemma II. 3.2 forms a basis for TLd(O). Hence, From now on, we use the isomorphism eto identify T Ld and T L~. [J (II.26) II.4.2. Eval'Uation of Jones via Temperley-Lieb Here we set 0 = [2] = 'U + V-I. Let [D] denote the clos'Ure of an element of TL~ by connecting the ith vertex at the top of the diagram D to the ith vertex at the bottom of D by a simple curve for each i = 1, ... ,d. The result is a disjoint union of circles, each of which can be replaced by [2] = v + V-I E C(v), as in the definition of multiplication in TL~. See Figure II.7. o Figure 11.7: An example of th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/def-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 29,
+      "target": "def-sec-004-01.md",
+      "narrative": null,
+      "content": "4.10 A (d, d')-arc diagram D is a topological embedding of the disjoint union of (d+d')/2 intervals in the strip JRx [0,1] such that the boundary of the embedded I-manifold consists of the points {(I, 0), ... , (d', On u{ (1, 1), ... , (d, 1n. A (d, d)-diagram is called a Temperley-Lieb diagram on d strands. Let [D] denote the isotopy class of an arc diagram D, keeping its endpoints fixed. See Figure 11.4.1 for an illustration of Temperley-Lieb diagrams on three stands. '--..) '--..) (\\ (\\ Figure II.4: The five Temperley-Lieb diagrams on 3 strands. There is a natural concatenation operation gi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/def-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 29,
+      "target": "def-sec-004-02.md",
+      "narrative": null,
+      "content": "Let T L~ (0) consist of the q v)-vector space on the set of isotopy classes of Temperley-Lieb diagrams [D] on d strands, endowed with a multiplication defined by (II.23) The quantity 0 is called the loop value, which we assume is non-zero.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/figure-img-p024-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../images/img-p024-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/lem-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 29,
+      "target": "lem-sec-004-03.md",
+      "narrative": null,
+      "content": "Every TL diagram D on d strands is isotopic to the composition UI! o· .. 0 UI, for some sequence (i l , ... , ie) of integers with 0< ij < d. Therefore, [D] = lUI!]··' fUr,] E TL~(o).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "IIA. Diagram Algebras",
+      "pageStart": 24,
+      "pageEnd": 29,
+      "target": "../sections/sec-004-iia-diagram-algebras.md",
+      "narrative": null,
+      "content": "II.4.1.\nTemperley-Lieb ATe Diagrams\nDefinition II.4.10 A (d, d')-arc diagram D is a topological embedding of the disjoint union of\n(d+d')/2 intervals in the strip JRx [0,1] such that the boundary of the embedded I-manifold consists\nof the points {(I, 0), ... , (d', On u{ (1, 1), ... , (d, 1n. A (d, d)-diagram is called a Temperley-Lieb\ndiagram on d strands. Let [D] denote the isotopy class of an arc diagram D, keeping its endpoints\nfixed.\nSee Figure 11.4.1 for an illustration of Temperley-Lieb diagrams on three stands.\n'--..)\n'--..)\n(\\\n(\\\nFigure II.4: The five Temperley-Lieb diagrams on 3 stra",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/thm-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 29,
+      "target": "thm-sec-004-04.md",
+      "narrative": null,
+      "content": "The map e TLd(o) ----> TL~(o) defined on generators by e(Ui ) isomorphism of C(v) -algebras. [Un is an",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/thm-sec-004-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 29,
+      "target": "thm-sec-004-06.md",
+      "narrative": null,
+      "content": "The function J d : 3 d ----> C(v) defined by (11.28) Before proving the theorem, we introduce the following diagrammatic way to calculate ]d. Resolve each crossing of a braid diagram in a manner representing the map a I-t v- 2e (a) 'ljJ 0 ip(a). This is suggested by the pictures below, where the remaining vertical strands are suppressed. x x -2 -v (11.29) (11.30) Now, close the corresponding arc diagrams to form a collection of circles, each of which evaluates to the scalar v + V-I. As an immediate consequence, the trivial braid on d strands representing 1 E 3 d, closes to form d unlinked, unk",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/figure-img-p025-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../images/img-p025-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/figure-img-p028-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "target": "../images/img-p028-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "SCHUR-WEYL DUALITY AND QUOTIENTS OF THE HECKE ALGEBRA",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-005-iii-schur-weyl-duality-and-quotients-of-the-heck.md",
+      "narrative": null,
+      "content": "IlLI.\nSchur-Weyl Duality\nWe review the classical notion of Schur-Weyl duality between the general linear groups\nand the symmetric group.\nThen, we generalize this in two directions, giving a duality theorem\nbetween the quantum group associated to the Lie superalgebra g[(mln) and the Iwahori-Hecke\nalgebra rid.\nII!. 1. 1.\nClassical Schur- vVeyl Duality\nFix the ground field C\nLet Par(d) denote the set of all integer partitions of d.\nTo the\npartition A = (AI, A2,\"') with Al 2\" A2 2\" ... 2\" 0, associate its Young diagram, that is, the left-\njustified diagram with Al boxes on the first row, A2 boxes",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/thm-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "thm-sec-005-01.md",
+      "narrative": null,
+      "content": "Consider the representations of GL(n) and Sd on tensor space: (IIIA) 1. The actions of GL(n) and Sd on cn 0···0 cn commute. 2. As a (GL(n), Sd) -bimodule, tensor space decomposes into simples Cn 0 ... 0 Cn ~ EB V(A) 0 S(A). ).,EA+ (n,d) (IlL5) 3. The image of each group in End(Cn 0 ... 0 cn) generates the full centralizer algebra of the other group. For d ::::: n, the homomorphism trd : CSd ----t End(Cn 0 ... 0 C n ) is injective. In the sequel, we will be concerned with the other extreme, where trd is far from injective, so 7rd(CSd) is a proper quotient of the group algebra. But, first we mus",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "2. Representations of the Iwahori-Hecke Algebra",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "../sections/sec-006-iii-2-representations-of-the-iwahori-hecke-algeb.md",
+      "narrative": null,
+      "content": "Representations of the Iwahori-Hecke Algebra\nWe summarize some important facts about the Iwahori-Hecke algebra 7-{d and its represen-\ntations, most of which are modified versions of well know facts about the symmetric group Sd and\nits representations (see, e.g. [12]). Recall the standard generators HI, ... , H d-l for 7-{d, analogous\n23\nto the generators S1,.'\" Sd-1 of Sd, where Si is the elementary transposition (i i + 1).\n1. The standard basis for Hd consists of the elements H w , where w E Sd.\nIn terms of the\nstandard generators,\n(IlL6)\nwhere w = Si, ... Sin> is any reduced expression in Sd",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/thm-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "thm-sec-006-01.md",
+      "narrative": null,
+      "content": "2.1 (Compare [13]). The element c>. E'lid defined by (III.10) satisfies c>.c>. = h>.c>. for some h>. E CC(v)x. Moreover, for any two partitions A 1= il, c>,c/1 = O. Hence, the collection of e(A) = h-;lC>. for all partitions of d are mutually orthogonal, primitive, central idempotents that sum to one, which explicitly realize the decomposition in (III.8) . III.3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "IlI.3. The Quantum Group Uv (.6'[(2))",
+      "pageStart": 32,
+      "pageEnd": 36,
+      "target": "../sections/sec-007-ili3-the-quantum-group-uv-62.md",
+      "narrative": null,
+      "content": "III. 3.1.\nDefinitions and Conventions\nLet U be the quantum group Uv (s((2)) (see [21] or [20]). This is the unital, associative\nCC(v)-algehra generated by E, F, K, subject to the relations\nKF = v- 2FK,\nK -K- 1\nEF-FE=\n1\n.\nv -v-\nThe representation theory of U is analogous to that of s((2). Specifically, certain finite-\ndimensional simple modules for U are highest weight modules (the ones so-called type 1), in the\nfollowing multiplicative sense. In aU-module VV, a vector w has weight A if K.w = v>'w. For each\nA E Z>o, there is a unique finite-dimensional simple U-module L(A) of highest weight A.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/thm-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 36,
+      "target": "thm-sec-007-01.md",
+      "narrative": null,
+      "content": "3.1. Consider the maps Pd ( ) ITd U -----+ End W ® ... ® W ~ {-{d. 1. The actions of U and {-{d on W ® ... ® W commute. 2. As a (U, (-{d) -bimodule, tensor space decomposes into simples W ® .. , ® W ~ EB L(>.) ® S(>.). AEA+ (Z,k) (IlLl4) (IlLl5) 3. The map trd factors through the Temperley Lieb algebra T Ld' via 'l/J which was defined in (II. 21). (IlLl6)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/def-sec-008-03",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 42,
+      "target": "def-sec-008-03.md",
+      "narrative": null,
+      "content": "5.1. The super Temperley-Lieb algebra STLd is the centralizer algebra (HI.3D) By Theorem III.4.2, this is 7rd(Hd)'",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/lem-sec-008-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 42,
+      "target": "lem-sec-008-05.md",
+      "narrative": null,
+      "content": "(III.33) Proof The only partition of 4 that is not a hook is A = (22 ). The symmetrizer is (IlI.34) which is a nonzero scalar multiple of the idempotent e(A). Clearly, this generates the same two- sided ideal as J. o For d 2: 4, define the embedding & : H4 '--7 Hd by &(Hi) = Hi, and let ':!d be the two-sided (deal generated by &(J).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/prop-sec-008-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 42,
+      "target": "prop-sec-008-04.md",
+      "narrative": null,
+      "content": "5.2. d-l ( ) 2 dimSTLd = L d ~ 1 j=O J ( 2d - 2) d-1 (III.31) Proof As abstract CC(v)-algebras, STLd ~ Ih EndS(A), where the product is over A whose Young diagrams are hooks. Let AU) = (d - j, 11) be the hook partition of leg length j for 0 :s: j < d. The irreducible representation S(A (1)) is of degree d - 1, and for each j = 0, ... ,d - 1, S(A(J)) ~ lVS(A(l)), hence has degree (djl). The second equality follows from looking at the coefficient of t d - 1 in the expansion of o liVe have the presentation STLd = Hd/Id, where Id is the two sided ideal generated by the idempotents e(A), where A is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "IlIA. The Quantum Supergroup Uv (g[(111))",
+      "pageStart": 36,
+      "pageEnd": 42,
+      "target": "../sections/sec-008-ilia-the-quantum-supergroup-uv-g111.md",
+      "narrative": null,
+      "content": "We introduce the general linear Lie 8uperalgebra 9\n~ g[(111), as well as its universal\nenveloping algebra U(g) and its quantization Uv(g). (See [40]) and [4]).\nIIJ.4,l.\nLie Superalgebra g[(111)\n'We work over the base ring ceo\nA vector superspace of superdimension (min) is a Z2-\ngraded vector space W = Wo E8 WI whose even part Wo is of dimension m and whose odd part\nil'l is of dimension n, For homogeneous elements w E vV:i , write Iwl = i E Z2. Let cem1n denote\nthe superspace cem E8 cen . The endomorphisms of cem1m form the Lie superalgebra 9 = g[(mln),\nconsisting of block matrices of the form",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/thm-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 42,
+      "target": "thm-sec-008-01.md",
+      "narrative": null,
+      "content": "4.1 ([4]' Prop. 3.1). The representations Pd are completely reducible. Make l-tr0d into a right 'Hd-module by defining the homomorphism 11'd : 'Hd ----. End(W0d)OP, as follows. First, define the right operator H on W (>9 W by: if i = j and IWil = 0, (III.26) Wj (>9 Wi if i > j . Now, set and extend by linearity. IIq.8. SchuT- Weyl Duality for Uv(gl(111)) and 'Hd Recall that A+(111, d) is the set of Young diagrams of hook shape with d boxes.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/thm-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 42,
+      "target": "thm-sec-008-02.md",
+      "narrative": null,
+      "content": "4.2 ([32], Theorem 5.1). Consider the maps Pd ( ) 7T d U ------0- End W (>9 ... (>9 W ~ 'Hd. 1. The actions ofU and 'Hd on W (>9 ... (>9 W commute. 2. As a (U, 'Hd)-bimodule, tensor space decomposes into simples W (>9 ... (>9 W ~ EB L(>\") (>9 S(>..). AEi\\+(111.d) (III.27) (III.28) (III.29) III.5. The Super Temperley-Lieb Algebra III. 5.1 Defin·ition of STLd.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/thm-sec-008-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 42,
+      "target": "thm-sec-008-06.md",
+      "narrative": null,
+      "content": "I d = Jd JOT all d 2: 4. Pmof. The following diagram commutes (III.35) (III.36) where the bottom map sends ¢f-I c/J0Id@d-4. Since J E ker7f4, &(J) E ker7fd, and so Jd <;:;; Id. Conversely, suppose that Jd # Id. So, there exists A that is not a hook shape with e(A)Jd = O. Since S(A) embeds into Hde(A), Jd acts as 0 on S(A). Since A is not a hook, its diagram contains the diagram (2 2 ), so S(2 2 ) '--7 Res~= S(A). Thus, Jd acts as 0 on S(2 2 ), a contradiction. o",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/thm-sec-008-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 42,
+      "target": "thm-sec-008-07.md",
+      "narrative": null,
+      "content": "{Cw I shape of P(w) is a hook} is a basis fOT STLd. PTOOf. For any .\\ E Par(d) and for any T E Std(.\\), the collection of Cw such that P(w) = T is a basis for a submodule of the regular module Hd that is isomorphic to S(.\\). Moreover, the collection of all Cw such that the shape of P(w) is .\\ forms the Wedderburn component in Hd isomorphic to End S(.\\). By the definition of STLd and Theorem III.4.2, we obtain a basis for the algebra by concatenating the bases of each Wedderburn component corresponding to .\\ of hook shape. D CHAPTER IV",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/figure-img-p040-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 40,
+      "target": "../images/img-p040-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/figure-img-p041-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 41,
+      "target": "../images/img-p041-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/lem-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 42,
+      "pageEnd": 45,
+      "target": "lem-sec-009-02.md",
+      "narrative": null,
+      "content": "lo2. Standard tableaux of shape A£ are in bijeci'ion with sign sequences C = (cl' .. , ,Cd) E {±}d such that C j = + and g entries equal -.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A STATE-SUM FORMULA FOR THE ALEXANDER POLYNOMIAL",
+      "pageStart": 42,
+      "pageEnd": 45,
+      "target": "../sections/sec-009-iv-a-state-sum-formula-for-the-alexander-polynom.md",
+      "narrative": null,
+      "content": "IV.I.\nSemi-normal Representations of the Heeke Algebra\nMuch of the following is standard (see e.g. [11] or [25, chapters 4 and 5]). We collect some\nof the definitions here and fix some notation. In what follows, [r] E Z[v, V-I] denotes the quantum\ninteger\n(IV.1)\nfor any T E Z.\nIV.i.i.\nSerninormal RepTesentations\nThis exposition follows [35, section 3], although the results were originally worked out in\n[19]. For a new point of view and substantial generalization, see [8, section 5].\nLet Tab(A) denote the set of A-tableaux.\nThese are fillings of the boxes in the Young\ndiagram A by the numbers 1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/thm-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 42,
+      "pageEnd": 45,
+      "target": "thm-sec-009-01.md",
+      "narrative": null,
+      "content": "lol (Semi-normal representations). This action extends to make S(A) into a well- defined Hd-module. Furthermore, the modules {S(A) I A E Par(d)} constitute a complete set of pairwise non-isomorphic irreducible modules for Hd. IV 1.2. Sign Sequences and Hook Partitions For 0 :::; g:::; d -1, let A£ be the hook partition (d - g, If). We refer to g as leg length,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/thm-sec-009-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 42,
+      "pageEnd": 45,
+      "target": "thm-sec-009-03.md",
+      "narrative": null,
+      "content": "1.3. The irreducible module S(Ae) has basis {x,,,}, where C 'rUns over sign sequences ha'uing C1 = + and £ other entTies equal to -. The generators H1, ... , Hk-1 of Hd act by (IV.5) where SrC denotes the sign sequence obtained from C by permuting Cr and cr+ 1, Xc is interpreted as zero if C1 = -, and if (croCr+1) = (+,+) if (cr,cr+d = (~,-) 'i!(Cro Cr+1) = (-,+) if (cr,cr+d = (+,-), 'if (cr,cr+d = (-,+) if (cr,cr+d = (+,-) otherwise. The inverse generators H j 1 , ... , Hd~ 1 act by where ar (c) is obtained from ar (c) by replacing v by v- 1 . (IV.6) (IV.7) (IV.S)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/figure-img-p044-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 44,
+      "target": "../images/img-p044-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/def-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 48,
+      "target": "def-sec-010-01.md",
+      "narrative": null,
+      "content": "2.1. A permutation diagram x is admissible if (PI) the first (leftmost) strand goes straight through without crossing any other strands, and (P2) the underlying permutation is the identity. A state is a pair (X,E), where x is an admissible permutation diagram and E is an assignment of a sign ± to each strand such that (SI) the first (leftmost) sign is +, and (S2) no two strands of the same sign cross. Let Sea) denote the set of states for a. To a state (x, E) E Sea), we associate a weight M(a, x. E) E C(v) defined by multiplying together certain scalars, one for each resolved crossing. The sca",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/figure-img-p045-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 45,
+      "target": "../images/img-p045-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "2. Construction of the State-sum",
+      "pageStart": 45,
+      "pageEnd": 48,
+      "target": "../sections/sec-010-iv-2-construction-of-the-state-sum.md",
+      "narrative": null,
+      "content": "Construction of the State-sum\nBegin with a word a E I;d in the braid generators 0\"1, ... ,0\"d-I and their inverses, which\nwe picture as a diagram drawn up the page as the word is read from right to left.\nO\"r = I ... I X I .. · I\nr r+1\n0\",-:-1 = I ... I X I .. · I\nr r+1\nConstruct permutation diagrams from the braid diagram by replacing each crossing by one\nof two resolutions:\nx\nx\nI\nI\nI\nI\nor\nor x\nx\nDefinition IV.2.1. A permutation diagram x is admissible if\n(PI) the first (leftmost) strand goes straight through without crossing any other strands, and\n(P2) the underlying permutation is the identi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/thm-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 48,
+      "target": "thm-sec-010-02.md",
+      "narrative": null,
+      "content": "2.2. Let L be an oriented link, and let a E Ed represent a braid in Ed such that 0: = L. Then, A(a) is a polynomial in v - V-I, and A(a) = \\1(L), where \\7(L) is the Conway-normalized Alexander polynomial with z = v - V-I.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/figure-img-p046-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 46,
+      "target": "../images/img-p046-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/figure-img-p047-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 47,
+      "pageEnd": 47,
+      "target": "../images/img-p047-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/figure-img-p048-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 48,
+      "pageEnd": 48,
+      "target": "../images/img-p048-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "3. An Example",
+      "pageStart": 48,
+      "pageEnd": 49,
+      "target": "../sections/sec-011-iv-3-an-example.md",
+      "narrative": null,
+      "content": "An Example\nLet's use the braid presentation a = (J2 1(Jl(J2 1(J1 for the figure-eight knot, pictured below\nwith its six possible states.\nx\nM(a, x, E)\n+++\n-1\n-1\n1\nv\n. v· v\n. v\n++-\n_v 2\n_v2\nv 6\nl2f ,v'l2f'v\n[2]2\nl~\n+-+\nv- 2\n(\n-1)\nv-\n2\n(\n-1)\nv- 6\n~\nl2T' -v\n. l2T' -v\nW\n+--\n(-v)· (-v-I). (-v)· (-V-I)\n1\n~\n++-\nffi .(_V-I) .ill .v\n::Bl\n[2]2\n+-+\nill· v· ffi· (-v-I)\n::Bl\n[2]2\nNow, we calculate the sum, minding the signs associated to each state and the global\nrescaling.\n(\n6\n6\n[ ])\n1\nv + v-\n2 3\n2\n-2\n-1\n2\nA(a) = f:3T\n2 -\n[2]2\n+ [2]2\n= -v + 3 - v\n= 1 - (v - v\n)\n41\nCHAPTER V",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/figure-img-p049-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 49,
+      "pageEnd": 49,
+      "target": "../images/img-p049-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/lem-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 49,
+      "pageEnd": 51,
+      "target": "lem-sec-013-01.md",
+      "narrative": null,
+      "content": "l.l. Suppose that fJ, fJl E ~j satisfy A,,(fJ) = A,,(fJ') faT' all 7r E Sd. Then, A(afJ) = A(afJ') and A(fJa) = A(fJ'o:) for any 0: E ~j. P7'Oof. Let Srr(a,f3) = S7T(a) x SCI ({3). L (cv)M(a{3, xy, EV) S, (ex,(3) A(a(3) = 1dJ L 7TE S d = 1dJ L L (E)M(a, x, E) L (v)M({3, y, v) 7TES\" (x.E)ES,,(a) (Y,l/)ES,,-I ((3) = [d] L L (E)l\\1(a, x, E) A 7T-I ({3) 7TES\" (x,E)ES,,(a) (VA) (V.5) (V.6) This last expression is equal to A(a{3'), using the fact that A7T ((3) A({3a) = A({3'a) is completely analogous and is omitted. A7T ({3').",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/prop-sec-013-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 49,
+      "pageEnd": 51,
+      "target": "prop-sec-013-02.md",
+      "narrative": null,
+      "content": "1.2. If a, (3 E I:d represent the same group element in 3 d , then A(a) = A({3).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "COMBINATORIAL PROOF",
+      "pageStart": 49,
+      "pageEnd": 49,
+      "target": "../sections/sec-012-v-combinatorial-proof.md",
+      "narrative": null,
+      "content": "In this chapter we prove Theorem IV.2.2 directly from formulas (IV.lO) and (IV.ll). Since\nthe function A is defined on the set of words in the braid generators, we must show that A is well-\ndefined on the braid group.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "V.l. Braid Group Invariance",
+      "pageStart": 49,
+      "pageEnd": 51,
+      "target": "../sections/sec-013-vl-braid-group-invariance.md",
+      "narrative": null,
+      "content": "Braid Group Invariance\nFor a permutation diagram x, let 7r(x) E Sd denote the underlying permutation.\nLet\npT,(a) = {x permutation diagram satisfying (PI) /7r(x) = 7r}.\nNotice that P1(a) = P(a), the\nadmissible diagrams. 'vVe have immediately:\nP(afJ)\nIT {xy I x E P,,(a) and y E P,,-l (fJ)}\n\"ESd\nIT P,,(a) x P,,-1(fJ)\n\"ESd\n(V.l)\n\\iVith signs attached to the strands in the diagrams, we have the analogous definition of S,,(a) and\nthe decomposition:\nS(afJ) ~ IT S,,(a) x S,,-1 (fJ)·\n\"ESd\n(V.2)\n\\iVe prove a Lemma now that shows that the function A is invariant under concatenation\nfor certain pairs of b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/figure-img-p051-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 51,
+      "target": "../images/img-p051-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/lem-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 58,
+      "target": "lem-sec-014-01.md",
+      "narrative": null,
+      "content": "2.1. The state-sum fOTm'ula in (IV.ii) descends to a well-defined link invaTiant: A(a) = A(,6) if a and,6 aTe Telated by the MaTkov moves. PTOOf. In order to show invariance under the cyclic move (II.2), note that there is a bijection",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/lem-sec-014-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 58,
+      "target": "lem-sec-014-03.md",
+      "narrative": null,
+      "content": "2.3. The following identities hold for quantum integers: min(r,s) [r][sJ = L [r + s + 1 - 2k] k=l [r + s][r - sJ [rJ2 - [sf [r + s] r, s 2: 0 (V.l1) (V.12) (V.13) Proof The proofs are elementary and follow from the definition of quantum integers. REFERENCES [1] J. W. Alexander, Topological invariants of knots and links, Trans. ArneI'. Math. Soc. 30 (2) (1928) 275-306. [2] J. W. Alexander II, A lemma on systems of knotted curves, Nat. Acad. Proc. 9 (1923) 93-95. [3] E. Artin, Theory of braids, Ann. of Math. (2) 48 (1947) 101-126. [4] G. Benkart, S.-J. Kang, M. Kashiwara, Crystal bases for the q",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "V.2. Markov JVloves",
+      "pageStart": 51,
+      "pageEnd": 58,
+      "target": "../sections/sec-014-v2-markov-jvloves.md",
+      "narrative": null,
+      "content": "Now that we have established that A\n!3\n--'> q v) is well-defined, we check that A is\ninvariant under the Markov moves.\nLemma V.2.1.\nThe state-sum fOTm'ula in (IV.ii) descends to a well-defined link invaTiant:\nA(a) = A(,6) if a and,6 aTe Telated by the MaTkov moves.\nPTOOf. In order to show invariance under the cyclic move (II.2), note that there is a bijection\n44\n\n\\ LD\na \\\na=l 5\nabe a@e abe abd\nmt = (1 2) ‘\n|\naaec a@e @a@ae\n|\nmt = (2 3) |\nabo ab 8 abg\nw= (123) *\naagd aage\nn= (132) x\naaa oud\nn= (321)\n\nFigure V.1: Possible states x and y, organized according to 7.\n\nbetween states for a@ and fa, d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/black-samson-phd2010sp/blocks/thm-sec-014-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 58,
+      "target": "thm-sec-014-02.md",
+      "narrative": null,
+      "content": "2.2. For any link L and any choice of braid word w whose closure is L, A(w) = t::.(L).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

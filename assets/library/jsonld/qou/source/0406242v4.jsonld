@@ -1,0 +1,72 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0406242v4/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "On canonical triangulations of once-punctured torus bundles and two-bridge link complements Introduction",
+  "contains": [
+    "library/0406242v4/sections/sec-front-matter",
+    "library/0406242v4/sections/sec-000",
+    "library/0406242v4/sections/sec-001",
+    "library/0406242v4/sections/sec-002",
+    "library/0406242v4/sections/sec-003",
+    "library/0406242v4/sections/sec-004",
+    "library/0406242v4/sections/sec-005",
+    "library/0406242v4/sections/sec-006",
+    "library/0406242v4/sections/sec-007",
+    "library/0406242v4/sections/sec-008",
+    "library/0406242v4/sections/sec-009",
+    "library/0406242v4/sections/sec-010",
+    "library/0406242v4/sections/sec-011",
+    "library/0406242v4/sections/sec-012",
+    "library/0406242v4/sections/sec-013",
+    "library/0406242v4/sections/sec-014",
+    "library/0406242v4/sections/sec-015",
+    "library/0406242v4/sections/sec-016",
+    "library/0406242v4/sections/sec-017",
+    "library/0406242v4/sections/sec-018",
+    "library/0406242v4/sections/sec-019",
+    "library/0406242v4/sections/sec-020",
+    "library/0406242v4/sections/sec-021",
+    "library/0406242v4/sections/sec-022",
+    "library/0406242v4/sections/sec-023",
+    "library/0406242v4/sections/sec-024",
+    "library/0406242v4/sections/sec-025",
+    "library/0406242v4/sections/sec-026",
+    "library/0406242v4/sections/sec-027"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On canonical triangulations of once-punctured torus bundles and two-bridge link complements Introduction — 29 sections: Front matter; Introduction; Conjugacy in SL(2,Z) and the Farey\n\n**On canonical triangulations of once-punctured torus bundles and two-bridge link complements Introduction**\n\n*FRANC¸OIS GUÉRITAUD*\n\n46 pp, 29 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Conjugacy in SL(2,Z) and the Farey tesselati; 3 The canonical triangulation; 3.1 Diagonal exchanges; 3.2 Tetrahedra; 4 Combinatorics of the torus at infinity; 5 Finding positive angles; 6 Hyperbolic volume; 6.1 Volume of an ideal tetrahedron; 6.2 Critical volume and trivial holonomy; 6.3 Behavior of the volume functional; 7 Ruling out some degeneracies; 8 A geometrical lemma; 9 Ruling out all degeneracies; 9.1 Case 1: RR|LR; 9.2 Case 2: RR|LL; 10 A numerical example",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "0406242v4",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0406242v4.pdf",
+    "source_sha256": "27e48b483007b8240a4163dfc37f9dee64b8c07c7392e35329503d80bd25b2b6",
+    "pages": 46,
+    "arxiv": null,
+    "doi": "10.2140/gt.2006.10.1239",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

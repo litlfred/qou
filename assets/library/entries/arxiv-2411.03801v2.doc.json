@@ -1,0 +1,914 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2411.03801v2",
+  "title": "arxiv-2411.03801v2",
+  "variant": "pdf",
+  "pages": 24,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Two invariants from the asymptotics of the Kashaev invariant",
+      "number": "2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-two-invariants-from-the-asymptotics-of-the-kas"
+    },
+    {
+      "level": 2,
+      "title": "The 1-loop invariant",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-21-the-1-loop-invariant"
+    },
+    {
+      "level": 2,
+      "title": "Essential open diagrams and their potential",
+      "number": "2.2",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-essential-open-diagrams-and-their-potential"
+    },
+    {
+      "level": 2,
+      "title": "The Ohtsuki–Takata invariant",
+      "number": "2.3",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-the-ohtsukitakata-invariant"
+    },
+    {
+      "level": 1,
+      "title": "From planar diagrams to ideal triangulations",
+      "number": "3",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-3-from-planar-diagrams-to-ideal-triangulations"
+    },
+    {
+      "level": 2,
+      "title": "Octahedral decomposition",
+      "number": "3.1",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-31-octahedral-decomposition"
+    },
+    {
+      "level": 2,
+      "title": "Collapsing the octahedral decomposition to an ideal triangulation",
+      "number": "3.2",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-32-collapsing-the-octahedral-decomposition-to-an"
+    },
+    {
+      "level": 1,
+      "title": "Proof of the main theorem",
+      "number": "4",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-4-proof-of-the-main-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Flattening of the collapsed triangulation",
+      "number": "4.1",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-41-flattening-of-the-collapsed-triangulation"
+    },
+    {
+      "level": 2,
+      "title": "Variable reduction",
+      "number": "4.2",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-42-variable-reduction"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. Further discussion on collapsing",
+      "number": null,
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-appendix-a-further-discussion-on-collapsing"
+    },
+    {
+      "level": 1,
+      "title": "Appendix B. Braid closures",
+      "number": null,
+      "page": 21,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-appendix-b-braid-closures"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 23,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 279,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "octahedral decomposition",
+          "heading": false
+        },
+        {
+          "term": "kashaev invariant",
+          "heading": false
+        },
+        {
+          "term": "takata invariant",
+          "heading": false
+        },
+        {
+          "term": "ohtsuki takata",
+          "heading": false
+        },
+        {
+          "term": "loop invariant",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulation",
+          "heading": false
+        },
+        {
+          "term": "volume conjecture",
+          "heading": false
+        },
+        {
+          "term": "collapsing",
+          "heading": false
+        }
+      ],
+      "extract": "2. Two invariants from the asymptotics of the Kashaev invariant 3 2.1. The 1-loop invariant 3 2.2. Essential open diagrams and their potential 5 2.3. The Ohtsuki–Takata invariant 7 3. From planar diagrams to ideal triangulations 9 3.1. Octahedral decomposition 9 3.2. Collapsing the octahedral decomposition to an ideal triangulation 11 4. Proof of the main theorem 13 4.1. Flattening of the collapsed triangulation 14",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-21-the-1-loop-invariant",
+      "number": "2.1",
+      "title": "The 1-loop invariant",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 674,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "essential planar",
+          "heading": false
+        },
+        {
+          "term": "essential ideal",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic bridge",
+          "heading": false
+        },
+        {
+          "term": "bridge knots",
+          "heading": false
+        },
+        {
+          "term": "planar diagrams",
+          "heading": false
+        },
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        },
+        {
+          "term": "cusped hyperbolic",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulation",
+          "heading": false
+        }
+      ],
+      "extract": "geometric representation of a cusped hyperbolic 3-manifold M (call such triangulations es- sential), and it is an element of the invariant trace field of M, well-defined up to a sign. Moreover, it is unchanged under 2–3 and 0–2 Pachner moves of essential ideal triangulations (see e.g., [DG13, Sec.3] and [PW, Prop.5.1]). Since every cusped hyperbolic 3-manifold has an essential ideal triangulation obtained by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-two-invariants-from-the-asymptotics-of-the-kas",
+      "number": "2",
+      "title": "Two invariants from the asymptotics of the Kashaev invariant",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 976,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathcal mathring",
+          "heading": false
+        },
+        {
+          "term": "diagram mathring",
+          "heading": false
+        },
+        {
+          "term": "ohtsuki--takata invariant",
+          "heading": false
+        },
+        {
+          "term": "essential corners",
+          "heading": false
+        },
+        {
+          "term": "kashaev invariant",
+          "heading": true
+        },
+        {
+          "term": "essential triangulation",
+          "heading": false
+        },
+        {
+          "term": "dfrac partial",
+          "heading": false
+        },
+        {
+          "term": "essential open",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.prelim label=\"sec.prelim\"} In this section we recall the 1-loop and Ohtsuki--Takata invariants, following [@DG1] and [@OT2015]. They are both expected to equal to each other and to be the constant term of the asymptotic expansion of the Kashaev invariant, but their definitions are a bit different. The 1-loop invariant is modeled on Chern--Simons perturbation theory, and is defined using an essential ideal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-essential-open-diagrams-and-their-potential",
+      "number": "2.2",
+      "title": "Essential open diagrams and their potential",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 814,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "essential open",
+          "heading": true
+        },
+        {
+          "term": "mathcal mathring",
+          "heading": false
+        },
+        {
+          "term": "essential corners",
+          "heading": false
+        },
+        {
+          "term": "yokota potential",
+          "heading": false
+        },
+        {
+          "term": "dfrac right",
+          "heading": false
+        },
+        {
+          "term": "collapsed triangulation",
+          "heading": false
+        },
+        {
+          "term": "corners marked",
+          "heading": false
+        },
+        {
+          "term": "consecutive segments",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.PD label=\"sub.PD\"} The domain of the Ohtsuki--Takata invariant discussed below is the set of essential open diagrams of knots. An open diagram is a planar diagram of a $(1,1)$-tangle and is said to be essential if the corresponding collapsed triangulation is essential. We postpone a detailed description of the collapsed ideal triangulation to Section [\\[sec.octa\\]](#sec.octa){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-the-ohtsukitakata-invariant",
+      "number": "2.3",
+      "title": "The Ohtsuki–Takata invariant",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 405,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ohtsuki--takata invariant",
+          "heading": false
+        },
+        {
+          "term": "diagram mathring",
+          "heading": false
+        },
+        {
+          "term": "essential corners",
+          "heading": false
+        },
+        {
+          "term": "dfrac partial",
+          "heading": false
+        },
+        {
+          "term": "function omega",
+          "heading": false
+        },
+        {
+          "term": "xapp",
+          "heading": false
+        },
+        {
+          "term": "essential open",
+          "heading": false
+        },
+        {
+          "term": "corners among",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.OT label=\"sub.OT\"} To define the Ohtsuki--Takata invariant, we consider two more functions associated with $\\mathring{D}$. To define the first one, for each crossing, cup and cap of $\\mathring{D}$, we choose two corners around it and associate a rational function with each of them, shown as in Figure [1](#fig.omega1){reference-type=\"ref\" reference=\"fig.omega1\"}. These functions are well-defined and non-zero",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-from-planar-diagrams-to-ideal-triangulations",
+      "number": "3",
+      "title": "From planar diagrams to ideal triangulations",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 148,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "planar",
+          "heading": true
+        },
+        {
+          "term": "mathrel leadsto",
+          "heading": false
+        },
+        {
+          "term": "planar projection",
+          "heading": false
+        },
+        {
+          "term": "kashaev invariant",
+          "heading": false
+        },
+        {
+          "term": "octa",
+          "heading": false
+        },
+        {
+          "term": "mathring",
+          "heading": false
+        },
+        {
+          "term": "octahedral",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.octa label=\"sec.octa\"} In this section we recall a well-known connection between planar projections of (hyperbolic) knots and their ideal triangulations. The history of the subject predates quantum topology, and the sought algorithm takes as input a planar projection $D$ of a knot $K$, produces as an intermediate stage an octahedral cell decomposition of its complement minus two points, and eventually",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-31-octahedral-decomposition",
+      "number": "3.1",
+      "title": "Octahedral decomposition",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 649,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "octahedron",
+          "heading": false
+        },
+        {
+          "term": "r-edge",
+          "heading": false
+        },
+        {
+          "term": "dashed lines",
+          "heading": false
+        },
+        {
+          "term": "u-edge",
+          "heading": false
+        },
+        {
+          "term": "o-edge",
+          "heading": false
+        },
+        {
+          "term": "graph splits",
+          "heading": false
+        },
+        {
+          "term": "edge joining",
+          "heading": false
+        },
+        {
+          "term": "c-edge",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.oc label=\"sec.oc\"} Let $K$ be a knot in $S^3$ and $D$ be a knot diagram of $K$. Viewing $D$ as an embedded 4-valent graph in $\\mathbbm R^2$, a *segment* refers to an edge of the graph and a *region* refers to a connected component of the complement of the graph. If we add over/under-pass information at every crossing as usual, the graph splits up into intervals, which we call *over-arcs*. Reversing all the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-32-collapsing-the-octahedral-decomposition-to-an",
+      "number": "3.2",
+      "title": "Collapsing the octahedral decomposition to an ideal triangulation",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1049,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathcal mathring",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulation",
+          "heading": true
+        },
+        {
+          "term": "lying beside",
+          "heading": false
+        },
+        {
+          "term": "mathcal collapses",
+          "heading": false
+        },
+        {
+          "term": "dashed lines",
+          "heading": false
+        },
+        {
+          "term": "over-arc",
+          "heading": false
+        },
+        {
+          "term": "under-arc",
+          "heading": false
+        },
+        {
+          "term": "ones lying",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.collap label=\"sec.collap\"} In this section we discuss how to collapse the ideal cell decomposition $\\mathcal O_D$ of $S^3\\setminus (K \\cup \\{p,q\\})$ into an ideal triangulation $\\mathcal T_D$ of $S^3\\setminus K$. The collapsing depends on fixing an alternating segment $s$ of $D$. By alternating we mean that we overpass the diagram at one end of $s$ and underpass at the other end. We denote by $r_1$ and $r_2$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-4-proof-of-the-main-theorem",
+      "number": "4",
+      "title": "Proof of the main theorem",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 73,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathring",
+          "heading": false
+        },
+        {
+          "term": "main",
+          "heading": true
+        },
+        {
+          "term": "bridge knot",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.pf label=\"sec.pf\"} In this section we prove Theorem [\\[thm.main2\\]](#thm.main2){reference-type=\"ref\" reference=\"thm.main2\"} below, which combined with the work of Ohtsuki--Takata [@OT2015] implies Theorem [\\[thm.main\\]](#thm.main){reference-type=\"ref\" reference=\"thm.main\"}. We fix an open diagram $\\mathring{D}$ of a hyperbolic 2-bridge knot $K$ as in the following figure, where boxes are twist regions.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-41-flattening-of-the-collapsed-triangulation",
+      "number": "4.1",
+      "title": "Flattening of the collapsed triangulation",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1198,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "langle boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "boldsymbol zeta",
+          "heading": false
+        },
+        {
+          "term": "flattening boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "triple boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "mathcal mathring",
+          "heading": false
+        },
+        {
+          "term": "infty textrm",
+          "heading": false
+        },
+        {
+          "term": "crossing contributes",
+          "heading": false
+        },
+        {
+          "term": "cases textrm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.flat label=\"sec.flat\"} In this subsection, we find an explicit flattening ${\\boldsymbol f}=(f,f',f'')$ of $\\mathcal T_{\\mathring{D}}$. Recall from Section [\\[sec.OL\\]](#sec.OL){reference-type=\"ref\" reference=\"sec.OL\"} that ${\\boldsymbol f}$ consists of integer triples ${\\boldsymbol f}_j=(f_j,f'_j,f''_j) \\in \\mathbbm Z^3$, one for each tetrahedron $\\Delta_j$ of $\\mathcal T_{\\mathring{D}}$ and is required to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-42-variable-reduction",
+      "number": "4.2",
+      "title": "Variable reduction",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1132,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dfrac partial",
+          "heading": false
+        },
+        {
+          "term": "boldsymbol zeta",
+          "heading": false
+        },
+        {
+          "term": "boldsymbol det",
+          "heading": false
+        },
+        {
+          "term": "diagram mathring",
+          "heading": false
+        },
+        {
+          "term": "cdots zeta",
+          "heading": false
+        },
+        {
+          "term": "partial right",
+          "heading": false
+        },
+        {
+          "term": "partial left",
+          "heading": false
+        },
+        {
+          "term": "frac zeta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.reduction label=\"sec.reduction\"} In this subsection, we reduce the number of shape parameters by solving the gluing equations for the C and R-edges, and the completeness equation. The following lemma will be used repeatedly. ::: lemma []{#lem.red label=\"lem.red\"} Let $f_1,\\ldots,f_k$ be functions in variables $x_1,\\ldots,x_k$ and fix a solution to $$\\exp(f_1) = \\cdots = \\exp(f_k)=1\\,.$$ Suppose that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-appendix-a-further-discussion-on-collapsing",
+      "number": null,
+      "title": "Appendix A. Further discussion on collapsing",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 462,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boundary circles",
+          "heading": false
+        },
+        {
+          "term": "ofd",
+          "heading": false
+        },
+        {
+          "term": "dashed arrows",
+          "heading": false
+        },
+        {
+          "term": "body",
+          "heading": false
+        },
+        {
+          "term": "becomes sphere",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulation",
+          "heading": false
+        },
+        {
+          "term": "cylinders",
+          "heading": false
+        },
+        {
+          "term": "glued",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we illustrate the collasping process explained in Section 3.2. For simplicity, we only consider alternating diagrams, but the non-alternating case can be described in a similar way. Let D be an alternating diagram of a knot K⊂S3 and ˚D be an open diagram obtained fromD by cutting a segments ofD. Recall from Section 3 thatOD is an ideal triangulation of S3\\(K∪{±∞}) with tetrahedra placed at corners",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-appendix-b-braid-closures",
+      "number": null,
+      "title": "Appendix B. Braid closures",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 649,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "innermost region",
+          "heading": false
+        },
+        {
+          "term": "region adjacent",
+          "heading": false
+        },
+        {
+          "term": "braid",
+          "heading": true
+        },
+        {
+          "term": "r-edge",
+          "heading": false
+        },
+        {
+          "term": "u-edge",
+          "heading": false
+        },
+        {
+          "term": "segment",
+          "heading": false
+        },
+        {
+          "term": "following segments",
+          "heading": false
+        },
+        {
+          "term": "corners",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we explain how to find a flattening of the collapsed triangulation T˚D when ˚D is given by a closure of a braid, more precisely, when ˚D is an open diagram obtained 22 STA VROS GAROUF ALIDIS AND SEOKBEOM YOON x1 ∞ x5 x2 x3 x4 0 1 1 1 1 Figure 18. An open diagram of the knot 6 1. from a braid by taking the closure of all strands except the first one. See Figure 18 for an example. The triplef given in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 511,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "seokbeom yoon",
+          "heading": false
+        },
+        {
+          "term": "yoshiyuki yokota",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "hitoshi murakami",
+          "heading": false
+        },
+        {
+          "term": "nathan dunfield",
+          "heading": false
+        },
+        {
+          "term": "tudor dimofte",
+          "heading": false
+        },
+        {
+          "term": "dylan thurston",
+          "heading": false
+        },
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        }
+      ],
+      "extract": "[AW] Fathi Ben Aribi and Ka Ho Wong, The Andersen-Kashaev volume conjecture for FAMED geo- metric triangulations, Preprint 2024, arXiv:2410.10776. [CDGW] Marc Culler, Nathan Dunfield, Matthias Goerner, and Jeffrey Weeks, SnapPy, a computer program for studying the geometry and topology of 3-manifolds, Available at http://snappy. computop.org (version 3.1.1). [DG13] Tudor Dimofte and Stavros Garoufalidis, The quantum",
+      "extractCut": true
+    }
+  ],
+  "checks": {},
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mathcal mathring",
+      "heading": false
+    },
+    {
+      "term": "diagram mathring",
+      "heading": false
+    },
+    {
+      "term": "mathring adjacent",
+      "heading": false
+    },
+    {
+      "term": "viewing mathring",
+      "heading": false
+    },
+    {
+      "term": "mathring according",
+      "heading": false
+    },
+    {
+      "term": "essential corners",
+      "heading": false
+    },
+    {
+      "term": "essential triangulation",
+      "heading": false
+    },
+    {
+      "term": "essential ideal",
+      "heading": false
+    },
+    {
+      "term": "essential planar",
+      "heading": false
+    },
+    {
+      "term": "essential open",
+      "heading": true
+    },
+    {
+      "term": "dfrac right",
+      "heading": false
+    },
+    {
+      "term": "crossing lying",
+      "heading": false
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 14,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 14,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p23); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 14 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2411.03801v2"
+  }
+}

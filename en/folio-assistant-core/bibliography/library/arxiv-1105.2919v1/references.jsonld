@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1105.2919v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Chiral eﬀective ﬁeld theory and nuclear forces",
+      "dcterms:creator": [
+        "Machleidta, R.",
+        "∗",
+        "Entemb, D. R."
+      ],
+      "dcterms:issued": "D:20241126",
+      "dcterms:identifier": "https://arxiv.org/abs/1105.2919",
+      "dcterms:abstract": "We review how nuclear forces emerge from low-energy QCD via chiral eﬀective ﬁeld theory. The presentation is accessible to the non-specialist. At the same time, we also provide considerable detailed information (mostly in appendices) for the beneﬁt of researchers who wish to start working in this ﬁeld.",
+      "dcterms:source": "library/arxiv-1105.2919v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1105.2919v1"
+    }
+  ]
+}

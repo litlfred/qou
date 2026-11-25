@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-operator-selection-lp-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:operator-selection-lp-interpretation",
+  "kind": "remark",
+  "title": "Economic reading of the LP dual variables",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-operator-selection-lp"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-operator-selection-lp",
+  "text": "operator-selection-lp-interpretation.md",
+  "provenance": "authored"
+}

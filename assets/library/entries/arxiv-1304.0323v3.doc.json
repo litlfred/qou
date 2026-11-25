@@ -1,0 +1,1867 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1304.0323v3",
+  "title": "arxiv-1304.0323v3",
+  "variant": "pdf",
+  "pages": 83,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Convention",
+      "number": null,
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-convention"
+    },
+    {
+      "level": 1,
+      "title": "Quantum groups and Khovanov-Lauda-Rouquier algebras",
+      "number": "1",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-quantum-groups-and-khovanov-lauda-rouquier-alg"
+    },
+    {
+      "level": 2,
+      "title": "Cartan datum",
+      "number": "1.1",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-11-cartan-datum"
+    },
+    {
+      "level": 2,
+      "title": "Khovanov-Lauda-Rouquier algebras",
+      "number": "1.2",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-12-khovanov-lauda-rouquier-algebras"
+    },
+    {
+      "level": 2,
+      "title": "R-matrices for Khovanov-Lauda-Rouquier algebras",
+      "number": "1.3",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-13-r-matrices-for-khovanov-lauda-rouquier-algebr"
+    },
+    {
+      "level": 2,
+      "title": "R-matrices with spectral parameters",
+      "number": "1.4",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-14-r-matrices-with-spectral-parameters"
+    },
+    {
+      "level": 2,
+      "title": "R-matrices for one-dimensional modules",
+      "number": "1.5",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-15-r-matrices-for-one-dimensional-modules"
+    },
+    {
+      "level": 2,
+      "title": "Uniqueness of R-matrices",
+      "number": "1.6",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-16-uniqueness-of-r-matrices"
+    },
+    {
+      "level": 1,
+      "title": "Quantum affine algebras and their representations",
+      "number": "2",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-2-quantum-affine-algebras-and-their-representati"
+    },
+    {
+      "level": 2,
+      "title": "Quantum affine algebras",
+      "number": "2.1",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "R-matrices",
+      "number": "2.2",
+      "page": 25,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-22-r-matrices"
+    },
+    {
+      "level": 1,
+      "title": "Affine Schur-Weyl duality via Khovanov-Lauda-Rouquier algebras",
+      "number": "3",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-3-affine-schur-weyl-duality-via-khovanov-lauda-r"
+    },
+    {
+      "level": 2,
+      "title": "Action of Khovanov-Lauda-Rouquier algebras on V\"0362V",
+      "number": "3.1",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-31-action-of-khovanov-lauda-rouquier-algebras-on"
+    },
+    {
+      "level": 2,
+      "title": "The Functor F",
+      "number": "3.2",
+      "page": 31,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-32-the-functor-f"
+    },
+    {
+      "level": 2,
+      "title": "Exactness of the functor F",
+      "number": "3.3",
+      "page": 33,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-33-exactness-of-the-functor-f"
+    },
+    {
+      "level": 1,
+      "title": "Quantum affine algebra Uq'(sl\"0362slN) and the category CJ",
+      "number": "4",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "R-matrix for V(1) of Uq'(sl\"0362slN)",
+      "number": "4.1",
+      "page": 35,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "KLR-modules in A case",
+      "number": "4.2",
+      "page": 36,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-42-klr-modules-in-a-case"
+    },
+    {
+      "level": 2,
+      "title": "Properties of the functor F",
+      "number": "4.3",
+      "page": 43,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-43-properties-of-the-functor-f"
+    },
+    {
+      "level": 2,
+      "title": "Quotient of the category R-gmod",
+      "number": "4.4",
+      "page": 46,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-44-quotient-of-the-category-r-gmod"
+    },
+    {
+      "level": 2,
+      "title": "The category T'J",
+      "number": "4.5",
+      "page": 47,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Rigidity of the tensor categories T'J and TJ",
+      "number": "4.6",
+      "page": 54,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The Category CJ",
+      "number": "4.7",
+      "page": 61,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-47-the-category-cj"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. Localization",
+      "number": null,
+      "page": 65,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-appendix-a-localization"
+    },
+    {
+      "level": 2,
+      "title": "A.1. Tensor category",
+      "number": null,
+      "page": 66,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-a1-tensor-category"
+    },
+    {
+      "level": 2,
+      "title": "A.2. Adjunction and Quasi-adjunction",
+      "number": null,
+      "page": 67,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-a2-adjunction-and-quasi-adjunction"
+    },
+    {
+      "level": 2,
+      "title": "A.3. Central objects",
+      "number": null,
+      "page": 69,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-a3-central-objects"
+    },
+    {
+      "level": 2,
+      "title": "A.4. Commuting family of objects",
+      "number": null,
+      "page": 70,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-a4-commuting-family-of-objects"
+    },
+    {
+      "level": 2,
+      "title": "A.5. Localization",
+      "number": null,
+      "page": 71,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-a5-localization"
+    },
+    {
+      "level": 2,
+      "title": "A.6. Localization of tensor categories",
+      "number": null,
+      "page": 72,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-a6-localization-of-tensor-categories"
+    },
+    {
+      "level": 2,
+      "title": "A.7. Graded case",
+      "number": null,
+      "page": 75,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-a7-graded-case"
+    },
+    {
+      "level": 2,
+      "title": "A.8. Variant",
+      "number": null,
+      "page": 78,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-a8-variant"
+    },
+    {
+      "level": 2,
+      "title": "A.9. Twisting of tensor structure",
+      "number": null,
+      "page": 79,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-a9-twisting-of-tensor-structure"
+    },
+    {
+      "level": 1,
+      "title": "Appendix B. Quotient categories",
+      "number": null,
+      "page": 79,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-appendix-b-quotient-categories"
+    },
+    {
+      "level": 2,
+      "title": "B.1. Serre category",
+      "number": null,
+      "page": 79,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-b1-serre-category"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 81,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 256,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ﬁnite-dimensional graded",
+          "heading": false
+        },
+        {
+          "term": "ˆsln",
+          "heading": false
+        },
+        {
+          "term": "grothendieck ring",
+          "heading": false
+        },
+        {
+          "term": "khovanov-lauda-rouquier",
+          "heading": false
+        },
+        {
+          "term": "modules",
+          "heading": false
+        },
+        {
+          "term": "r-matrices",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1304.0323v3 [math.RT] 26 Mar 2021 SYMMETRIC QUIVER HECKE ALGEBRAS AND R-MATRICES OF QUANTUM AFFINE ALGEBRAS SEOK-JIN KANG 1, MASAKI KASHIW ARA2, MYUNGHO KIM 3 Abstract. Let J be a set of pairs consisting of good U ′ q(g)-modules and invertible elements in the base ﬁeld C(q). The distribution of poles of normalized R-matrices yields Khovanov-Lauda-Rouquier algebras RJ (β) for each β∈ Q+. We deﬁne a func- torFβ",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1304.0323v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1852,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soplus beta",
+          "heading": false
+        },
+        {
+          "term": "uqpg modules",
+          "heading": false
+        },
+        {
+          "term": "mathcal beta",
+          "heading": false
+        },
+        {
+          "term": "affine schur-weyl",
+          "heading": false
+        },
+        {
+          "term": "affine hecke",
+          "heading": false
+        },
+        {
+          "term": "otimes beta",
+          "heading": false
+        },
+        {
+          "term": "functor mathcal",
+          "heading": false
+        },
+        {
+          "term": "category mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "The {\\em \\KLRs}\\ (sometimes called the {\\em quiver Hecke algebras}) are a family of $\\mathbb Z$-graded algebras which {\\em categorifies} the negative half of a quantum group (\\cite{KL09, KL11, R08}). More precisely, if $U_q(\\g)$ is a quantum group associated with a symmetrizable Cartan datum, then there exists a family of algebras $\\{R(n)\\}_{n \\in \\Z_{\\ge 0}}$ such that the Grothendieck group of the direct sum",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-quantum-groups-and-khovanov-lauda-rouquier-alg",
+      "number": "1",
+      "title": "Quantum groups and Khovanov-Lauda-Rouquier algebras",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 147,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "khovanov-lauda-rouquier",
+          "heading": true
+        },
+        {
+          "term": "algebras",
+          "heading": true
+        },
+        {
+          "term": "leclerc",
+          "heading": false
+        },
+        {
+          "term": "category",
+          "heading": false
+        }
+      ],
+      "extract": "matrices for Khovanov-Lauda-Rouquier algebras and study their basic properties. In the second section, we recall the quantum aﬃne algebras and their representation theory. The notion of normalized R-matrices are also recalled. In th e third section, we deﬁne an ( RJ (β)),U′ q(g))-bimodule ˆV⊗β and a functor Fβ between the category of graded RJ (β)-modules and the category of U′ q(g)-modules. In the last section, we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-convention",
+      "number": null,
+      "title": "Convention",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 163,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ring",
+          "heading": false
+        },
+        {
+          "term": "gproj",
+          "heading": false
+        },
+        {
+          "term": "item",
+          "heading": false
+        },
+        {
+          "term": "modg",
+          "heading": false
+        }
+      ],
+      "extract": "\\bnum \\item All the algebras and rings in this paper are assumed to have a unit, and modules over them are unitary. \\item For a ring $A$, $A^\\opp$ denotes the opposite ring of $A$. \\item For a ring $A$, an $A$-module means a left $A$-module. \\item For a statement $P$, $\\delta(P)$ is $1$ if $P$ is true and $0$ if $P$ is false. \\item For a ring $A$, we denote by $\\Mod(A)$ the category of $A$-modules. We denote by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-11-cartan-datum",
+      "number": "1.1",
+      "title": "Cartan datum",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 522,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cartan datum",
+          "heading": true
+        },
+        {
+          "term": "aij",
+          "heading": false
+        },
+        {
+          "term": "a-subalgebra",
+          "heading": false
+        },
+        {
+          "term": "δij",
+          "heading": false
+        },
+        {
+          "term": "free abelian",
+          "heading": false
+        },
+        {
+          "term": "resp",
+          "heading": false
+        },
+        {
+          "term": "abelian group",
+          "heading": false
+        },
+        {
+          "term": "lattice",
+          "heading": false
+        }
+      ],
+      "extract": "Let I be an index set. A Cartan datum is a quintuple ( A,P, Π,P∨, Π∨) consisting of (a) an integer-valued matrix A = (aij)i,j∈I, called the symmetrizable generalized Cartan matrix, which satisﬁes (i) aii = 2 (i∈I), (ii) aij≤ 0 (i⁄=j), (iii) aij = 0 if aji = 0 (i,j ∈I), (iv) there exists a diagonal matrix D = diag(si|i∈I) such that DA is symmetric, and si are positive integers. SYMMETRIC QUIVER HECKE ALGEBRAS AND",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-12-khovanov-lauda-rouquier-algebras",
+      "number": "1.2",
+      "title": "Khovanov-Lauda-Rouquier algebras",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 931,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "khovanov-lauda-rouquier algebras",
+          "heading": true
+        },
+        {
+          "term": "gproj",
+          "heading": false
+        },
+        {
+          "term": "gmod",
+          "heading": false
+        },
+        {
+          "term": "cartan datum",
+          "heading": false
+        },
+        {
+          "term": "qνk",
+          "heading": false
+        },
+        {
+          "term": "qij",
+          "heading": false
+        },
+        {
+          "term": "xke",
+          "heading": false
+        },
+        {
+          "term": "symmetric quiver",
+          "heading": false
+        }
+      ],
+      "extract": "Now we recall the deﬁnition of Khovanov-Lauda-Rouquier algebras associated with a given Cartan datum ( A,P, Π,P∨, Π∨). Let k be a commutative ring. For i,j ∈I such that i⁄=j, set Si,j = { (p,q )∈ Z2 ≥0| (αi,αi)p + (αj,αj)q =−2(αi,αj) } . Let us take a family of polynomials ( Qij)i,j∈I in k[u,v ] which are of the form (1.2.1) Qij(u,v ) =    0 if i =j,∑ (p,q)∈Si,j ti,j;p,qupvq if i⁄=j with ti,j;p,q∈ k. We assume",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-13-r-matrices-for-khovanov-lauda-rouquier-algebr",
+      "number": "1.3",
+      "title": "R-matrices for Khovanov-Lauda-Rouquier algebras",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 579,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "khovanov-lauda-rouquier",
+          "heading": true
+        },
+        {
+          "term": "r-matrices",
+          "heading": true
+        },
+        {
+          "term": "aij",
+          "heading": false
+        },
+        {
+          "term": "module",
+          "heading": false
+        },
+        {
+          "term": "symmetric",
+          "heading": false
+        },
+        {
+          "term": "algebras",
+          "heading": true
+        },
+        {
+          "term": "commutative",
+          "heading": false
+        }
+      ],
+      "extract": "1.3.1. Intertwiners. For|β| =n and 1≤a<n , we deﬁne ϕa∈R(β) by ϕae(ν) =    ( τaxa−xaτa ) e(ν) = ( xa+1τa−τaxa+1 ) e(ν) = ( τa(xa−xa+1) + 1 ) e(ν) = ( (xa+1−xa)τa− 1 ) e(ν) if νa =νa+1, τae(ν) otherwise. (1.3.1) 12 S.-J. KANG, M. KASHIW ARA, M. KIM They are called the intertwiners. The following lemma is well-known (for example, it easily follows from the p olyno- mial representation of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-14-r-matrices-with-spectral-parameters",
+      "number": "1.4",
+      "title": "R-matrices with spectral parameters",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1481,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "seteq circ",
+          "heading": false
+        },
+        {
+          "term": "col circ",
+          "heading": false
+        },
+        {
+          "term": "cdots circ",
+          "heading": false
+        },
+        {
+          "term": "inp beta",
+          "heading": false
+        },
+        {
+          "term": "gamma circ",
+          "heading": false
+        },
+        {
+          "term": "rmat",
+          "heading": false
+        },
+        {
+          "term": "widetilde seteq",
+          "heading": false
+        },
+        {
+          "term": "cdots ell",
+          "heading": false
+        }
+      ],
+      "extract": "\\Lemma Let $\\Delta^\\pm$ be the set of positive \\ro resp.\\ negative\\rf\\ roots associated with a generalized Cartan matrix, as in {\\rm\\S\\,\\ref{subsec:Cartan}}. Let $\\set{\\al_i}{i\\in I}$ be the set of simple roots, $W$ the Weyl group, and $s_i\\in W$ the simple reflection. Let $G$ be the monoid generated by $\\ts_i$ with the defining relation: \\eq&&\\text{$\\ts_i\\ts_j= \\ts_j\\ts_i $ if $(\\al_i,\\al_j)=0$.}\\eneq Assume that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-15-r-matrices-for-one-dimensional-modules",
+      "number": "1.5",
+      "title": "R-matrices for one-dimensional modules",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 357,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tens",
+          "heading": false
+        },
+        {
+          "term": "cdots tau",
+          "heading": false
+        },
+        {
+          "term": "z'-z",
+          "heading": false
+        },
+        {
+          "term": "eneqn",
+          "heading": false
+        },
+        {
+          "term": "circ",
+          "heading": false
+        },
+        {
+          "term": "bigr",
+          "heading": false
+        },
+        {
+          "term": "bigl",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:R1} Let $\\mu=(\\mu_1,\\ldots, \\mu_n)$ be a sequence of elements in $I$. Let $L(\\mu)$ be a free $\\cor$-module $\\cor u(\\mu)$ with the generator $u(\\mu)$ of degree $0$. The following lemma can be easily verified. \\Lemma By defining \\eqn &&x_k u(\\mu)=0,\\quad \\tau_ku(\\mu)=0, \\quad e(\\nu) u(\\mu) = \\delta_{\\nu,\\mu} u(\\mu), \\eneqn $L(\\mu)$ becomes an $R(\\al_{\\mu_1}+\\cdots+\\al_{\\mu_n})$ -module if and only if \\eq",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-16-uniqueness-of-r-matrices",
+      "number": "1.6",
+      "title": "Uniqueness of R-matrices",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 420,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tens cor",
+          "heading": false
+        },
+        {
+          "term": "simple tens",
+          "heading": false
+        },
+        {
+          "term": "beta gamma",
+          "heading": false
+        },
+        {
+          "term": "vphi",
+          "heading": false
+        },
+        {
+          "term": "independent indeterminates",
+          "heading": false
+        },
+        {
+          "term": "circ",
+          "heading": false
+        },
+        {
+          "term": "simple modules",
+          "heading": false
+        },
+        {
+          "term": "qed",
+          "heading": false
+        }
+      ],
+      "extract": "The following lemma says that the convolution of two simple modules (after adding spectral parameters) remains simple. \\Lemma Assume that $\\cor$ is a field. Let $z$, $z'$ be algebraically independent indeterminates and set $K=\\cor(z,z')$. Let $M$ and $N$ be a simple $R( \\beta )$-module and a simple $R( \\gamma )$-module, respectively. Then $K\\tens_{\\cor[z, z']} (M_z\\circ N_{z'})$ is a simple $K\\tens R( \\beta+ \\gamma",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-2-quantum-affine-algebras-and-their-representati",
+      "number": "2",
+      "title": "Quantum affine algebras and their representations",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 958,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "col aff",
+          "heading": false
+        },
+        {
+          "term": "uqpg module",
+          "heading": false
+        },
+        {
+          "term": "cor uqpg",
+          "heading": false
+        },
+        {
+          "term": "integrable uqpg",
+          "heading": false
+        },
+        {
+          "term": "aff simeq",
+          "heading": false
+        },
+        {
+          "term": "quantum affine",
+          "heading": true
+        },
+        {
+          "term": "affine algebras",
+          "heading": true
+        },
+        {
+          "term": "varpi",
+          "heading": false
+        }
+      ],
+      "extract": "\\subsection{Quantum affine algebras} \\hfill In this section, we briefly review the representation theory of quantum affine algebras following \\cite{AK, Kas02}. Hereafter, we take the algebraic closure of $\\C(q)$ in $\\cup_{m >0}\\C((q^{1/m}))$ as a base field $\\cor$. Let $ I$ be an index set and $A=(a_{ij})_{i,j \\in I}$ be a generalized Cartan matrix of affine type; i.e., $A$ is positive semi-definite of corank 1. We",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-22-r-matrices",
+      "number": "2.2",
+      "title": "R-matrices",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1014,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aff tens",
+          "heading": false
+        },
+        {
+          "term": "circ rnorm",
+          "heading": false
+        },
+        {
+          "term": "otimes rnorm",
+          "heading": false
+        },
+        {
+          "term": "cdots tens",
+          "heading": false
+        },
+        {
+          "term": "tens cor",
+          "heading": false
+        },
+        {
+          "term": "equation rnorm",
+          "heading": false
+        },
+        {
+          "term": "write rnorm",
+          "heading": false
+        },
+        {
+          "term": "varpi ell",
+          "heading": false
+        }
+      ],
+      "extract": "\\hfill We recall the notion of R-matrices of good modules following \\cite[\\S\\;8]{Kas02}. For a vector $v$ in a $\\uqpg$-module $M$, assume that $\\wt(v)$ is of level $0$ and dominant with respect to $I_0$. Then $v$ is an extremal weight vector if and only if $\\wt(\\uqpg v) \\subset \\wt(v) + \\sum_{i \\in I_0} \\Z_{\\le0} \\cl(\\alpha_i)$. In this case, we call $v$ a {\\em dominant extremal weight vector of $M$}. Let $M_1$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-3-affine-schur-weyl-duality-via-khovanov-lauda-r",
+      "number": "3",
+      "title": "Affine Schur-Weyl duality via Khovanov-Lauda-Rouquier algebras",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-012-31-action-of-khovanov-lauda-rouquier-algebras-on",
+      "number": "3.1",
+      "title": "Action of Khovanov-Lauda-Rouquier algebras on V\"0362V",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1021,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bph beta",
+          "heading": false
+        },
+        {
+          "term": "beta seteq",
+          "heading": false
+        },
+        {
+          "term": "seteq soplus",
+          "heading": false
+        },
+        {
+          "term": "beta otimes",
+          "heading": false
+        },
+        {
+          "term": "otimes cor",
+          "heading": false
+        },
+        {
+          "term": "hookrightarrow bph",
+          "heading": false
+        },
+        {
+          "term": "mathbb beta",
+          "heading": false
+        },
+        {
+          "term": "soplus nolimits",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\{V_s\\}_{s\\in \\mathcal{S}}$ be a family of good $\\uqpg$-modules and let $\\lambda_s$ be a dominant extremal weight of $V_s$ and $v_s$ a dominant extremal weight vector in $V_s$ of weight $\\lambda_s$. Let $J$ be an index set and let $X \\colon J \\rightarrow \\mathbb{T}$ and $S \\colon J \\rightarrow \\Ss$ be maps, where $\\mathbb{T}=\\cor^\\times$ is the algebraic torus. For each $i,j \\in J $, we choose",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-32-the-functor-f",
+      "number": "3.2",
+      "title": "The Functor F",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 33,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 462,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "beta otimes",
+          "heading": false
+        },
+        {
+          "term": "aff otimes",
+          "heading": false
+        },
+        {
+          "term": "uqpg module",
+          "heading": false
+        },
+        {
+          "term": "tens mathbb",
+          "heading": false
+        },
+        {
+          "term": "tens cor",
+          "heading": false
+        },
+        {
+          "term": "col soplus",
+          "heading": false
+        },
+        {
+          "term": "finite-dimensional mathbb",
+          "heading": false
+        },
+        {
+          "term": "simeq cor",
+          "heading": false
+        }
+      ],
+      "extract": "Since $\\bV[{ \\beta }]$ is a $(\\uqpg, R^J({ \\beta }))$-bimodule, we can construct the following functor: \\begin{align} \\F_{ \\beta } \\colon \\Modg(R^J(\\beta)) &\\rightarrow \\Mod(\\uqpg)\\label{eq:the functor} \\end{align} sending an $R^J(\\beta)$-module $M$ to the $\\uqpg$-module \\eqn \\F_{ \\beta } (M) \\seteq \\bV[{ \\beta }] \\otimes_{R^J({ \\beta })} M. \\eneqn Set \\eqn && \\F_n \\seteq \\bigoplus_{\\beta \\in \\rootl^+, \\, |\\beta|=n",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-33-exactness-of-the-functor-f",
+      "number": "3.3",
+      "title": "Exactness of the functor F",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 36,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 833,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tens hom",
+          "heading": false
+        },
+        {
+          "term": "beta opp",
+          "heading": false
+        },
+        {
+          "term": "opp module",
+          "heading": false
+        },
+        {
+          "term": "functor tens",
+          "heading": false
+        },
+        {
+          "term": "flat module",
+          "heading": false
+        },
+        {
+          "term": "oep",
+          "heading": false
+        },
+        {
+          "term": "projective module",
+          "heading": false
+        },
+        {
+          "term": "equiv mod",
+          "heading": false
+        }
+      ],
+      "extract": "The following propositions are key ingredients in proving our main theorem. \\begin{prop}[{\\cite[Corollary 2.9]{Kato12}, \\cite[Theorem 4.6]{McNa12}}] \\label{pro:finite global dimension} If the quiver associated with $R^J$ is of finite type $A,D,E$, then $R^J( \\beta )$ has a finite global dimension for every $\\beta \\in \\rootl^+$. \\end{prop} \\begin{prop} \\label{pro:projectivity} Let $A\\to B$ be a homomorphism of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-42-klr-modules-in-a-case",
+      "number": "4.2",
+      "title": "KLR-modules in A case",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 43,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1974,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "etens tau",
+          "heading": false
+        },
+        {
+          "term": "cdots etens",
+          "heading": false
+        },
+        {
+          "term": "beta oep",
+          "heading": false
+        },
+        {
+          "term": "ell seteq",
+          "heading": false
+        },
+        {
+          "term": "seteq rmat",
+          "heading": false
+        },
+        {
+          "term": "multisegment big",
+          "heading": false
+        },
+        {
+          "term": "cdots circ",
+          "heading": false
+        },
+        {
+          "term": "eqn ell",
+          "heading": false
+        }
+      ],
+      "extract": "Let us recall the representation theory of \\KLRs\\ in $A$-case. A pair of integers $(a,b)$ such that $ a \\leq b$ is called a {\\em segment}. The \\emph{length} of $(a,b)$ is $b-a+1$. A \\emph{multisegment} is a finite sequence of segments. For a segment $(a,b)$ of length $\\ell$, we define a graded $1$-dimensional $R( \\oep_a-\\oep_{b+1} )$-module $L(a,b)=\\cor u{(a,b)}$ in $R( \\oep_a-\\oep_{b+1} )\\gmod$ which is generated",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-43-properties-of-the-functor-f",
+      "number": "4.3",
+      "title": "Properties of the functor F",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 46,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 818,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "varpi ell",
+          "heading": false
+        },
+        {
+          "term": "seteq rmat",
+          "heading": false
+        },
+        {
+          "term": "cdots tens",
+          "heading": false
+        },
+        {
+          "term": "ell leq",
+          "heading": false
+        },
+        {
+          "term": "smallskip noi",
+          "heading": false
+        },
+        {
+          "term": "simeq cor",
+          "heading": false
+        },
+        {
+          "term": "rnorm",
+          "heading": false
+        },
+        {
+          "term": "b'-a",
+          "heading": false
+        }
+      ],
+      "extract": "The {\\em trivial representation} is the 1-dimensional $\\UA$-module on which $e_i$, $f_i$ act by $0$. It is a unit object of the tensor category $\\UA\\smod$. For $k > N$ or $k < 0$, $V(\\varpi_{k})$ is understood to be zero, and the modules $V(\\varpi_{0})$ and $V(\\varpi_{N})$ are understood to be the trivial representation. \\begin{prop} \\label{prop:image of fund. repns.} Let $(a,b)$ be a segment with length $\\ell\\seteq",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-44-quotient-of-the-category-r-gmod",
+      "number": "4.4",
+      "title": "Quotient of the category R-gmod",
+      "level": 2,
+      "pageStart": 46,
+      "pageEnd": 61,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3762,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ˆsln",
+          "heading": false
+        },
+        {
+          "term": "rnorm",
+          "heading": false
+        },
+        {
+          "term": "kashiw ara",
+          "heading": false
+        },
+        {
+          "term": "ina",
+          "heading": false
+        },
+        {
+          "term": "multisegment associated",
+          "heading": false
+        },
+        {
+          "term": "d47f",
+          "heading": false
+        },
+        {
+          "term": "factors throughtj",
+          "heading": false
+        },
+        {
+          "term": "mod factors",
+          "heading": false
+        }
+      ],
+      "extract": "ℓ≥0 Aℓ. Similarly, we deﬁne Abig ℓ andAbig byAbig ℓ = Mod gr(R(ℓ)) andAbig = ⨁ ℓ∈Z≥0 Abig ℓ . Then we have a functor F = ⨁ ℓ≥0Fℓ :Abig→ Mod(U′ q(ˆslN )), whereFℓ is the functor from Abig ℓ to Mod(U′ q(ˆslN )) given in ( 3.2.1). LetS be the smallest Serre subcategory of A (see Appendix B) such that (1)S containsL(a,a +N) for any a∈ Z, (2) X◦Y, Y◦X∈S for all X∈A and Y∈S .(4.4.1) Note thatS containsL(a,b ) if b≥a +N.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-47-the-category-cj",
+      "number": "4.7",
+      "title": "The Category CJ",
+      "level": 2,
+      "pageStart": 61,
+      "pageEnd": 65,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1532,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nconv eneqn",
+          "heading": false
+        },
+        {
+          "term": "col nconv",
+          "heading": false
+        },
+        {
+          "term": "nconv ell",
+          "heading": false
+        },
+        {
+          "term": "isoto nconv",
+          "heading": false
+        },
+        {
+          "term": "nconv simeq",
+          "heading": false
+        },
+        {
+          "term": "col tens",
+          "heading": false
+        },
+        {
+          "term": "tens vphi",
+          "heading": false
+        },
+        {
+          "term": "cdots tens",
+          "heading": false
+        }
+      ],
+      "extract": "Since all the images of $L(a,a+N-1)$ under $\\F'$ are isomorphic to the trivial representation of $\\UA$, we can localize $\\As/\\Ss$ one step further by using Appendix~ \\ref{app:Local_tensor_categories}. Set \\begin{equation} L_a\\seteq L(a, a+N-1) \\quad \\text{and} \\quad u_a\\seteq u(a,a+N-1)\\in L_a \\quad\\text{for} \\ a \\in \\Z. \\end{equation} Then $\\F(L_a)$ is isomorphic to the trivial representation of $\\UA$. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-appendix-a-localization",
+      "number": null,
+      "title": "Appendix A. Localization",
+      "level": 1,
+      "pageStart": 65,
+      "pageEnd": 66,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 42,
+      "summary": null,
+      "keywords": [],
+      "extract": "In this section, we shall recall the basic facts on the localization of t ensor categories. Since the materials here are more or less known or elementary, we om it most of the proofs. 66 S.-J. KANG, M. KASHIW ARA, M. KIM",
+      "extractCut": false
+    },
+    {
+      "id": "sec-020-a1-tensor-category",
+      "number": null,
+      "title": "A.1. Tensor category",
+      "level": 2,
+      "pageStart": 66,
+      "pageEnd": 67,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 444,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tensor category",
+          "heading": true
+        },
+        {
+          "term": "additive tensor",
+          "heading": false
+        },
+        {
+          "term": "tensor categories",
+          "heading": false
+        },
+        {
+          "term": "unique isomorphism",
+          "heading": false
+        },
+        {
+          "term": "canonical isomorphism",
+          "heading": false
+        },
+        {
+          "term": "unit object",
+          "heading": false
+        },
+        {
+          "term": "d47x",
+          "heading": false
+        }
+      ],
+      "extract": "gory). In this paper, we mainly consider additive tensor categories. A tensor category consists of the following data: (i) a category T , (ii) a bifunctor •⊗ • :T ×T →T, (iii) an isomorphism a(X,Y,Z ) : (X⊗Y )⊗Z ∼−→X⊗(Y⊗Z) which is functorial in X,Y,Z ∈T , (iv) an object 1∈T (called a unit object ), (v) an isomorphism ε : 1⊗ 1 ∼−→1 satisfying the following axioms: (a) (the Pentagon axiom) the following diagram is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-a2-adjunction-and-quasi-adjunction",
+      "number": null,
+      "title": "A.2. Adjunction and Quasi-adjunction",
+      "level": 2,
+      "pageStart": 67,
+      "pageEnd": 69,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 630,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adjunction",
+          "heading": true
+        },
+        {
+          "term": "homt",
+          "heading": false
+        },
+        {
+          "term": "d47y",
+          "heading": false
+        },
+        {
+          "term": "d47x",
+          "heading": false
+        },
+        {
+          "term": "exists morphism",
+          "heading": false
+        },
+        {
+          "term": "tensor category",
+          "heading": false
+        },
+        {
+          "term": "right dual",
+          "heading": false
+        },
+        {
+          "term": "left dual",
+          "heading": false
+        }
+      ],
+      "extract": "Deﬁnition A.2.1. LetT be a tensor category with a unit object 1. Let (X,Y ) be a pair of objects and let ε : X⊗Y→ 1 and η : 1→Y⊗X be morphisms. (i) We say that (ε,η ) is an adjunction and that X is a left dual to Y and Y is a right dual to X if the conditions (a) and (b) below are satisﬁed: (a) the composition X≃X⊗ 1 X⊗η −−−→X⊗Y⊗X ε⊗X −−−→1⊗X≃X is equal to the identity of X. (b) the composition Y≃ 1⊗Y η⊗Y −−−→Y⊗X⊗Y",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-a3-central-objects",
+      "number": null,
+      "title": "A.3. Central objects",
+      "level": 2,
+      "pageStart": 69,
+      "pageEnd": 70,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 117,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "central objects",
+          "heading": true
+        },
+        {
+          "term": "d47x",
+          "heading": false
+        },
+        {
+          "term": "kashiw",
+          "heading": false
+        }
+      ],
+      "extract": "P ofT equipped with an isomorphism RP (X) :P⊗X ∼−→X⊗P 70 S.-J. KANG, M. KASHIW ARA, M. KIM functorial in X∈T such that P⊗X⊗Y RP (X) /d47/d47 RP (X⊗Y ) /d43/d43 X⊗P⊗Y RP (Y ) /d47/d47X⊗Y⊗P commutes for any X,Y ∈T .(A.3.1) Remark that we don’t assume that RP (P ) = id P⊗P . If ( P,RP ) is a central object, then the following diagram is necessarily commutative: P⊗ 1 ∼ RP (1) /d47/d47 ∼ /d42/d42❯❯❯❯❯❯❯❯❯❯❯❯❯❯❯❯❯❯❯ 1⊗P",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-a4-commuting-family-of-objects",
+      "number": null,
+      "title": "A.4. Commuting family of objects",
+      "level": 2,
+      "pageStart": 70,
+      "pageEnd": 71,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 335,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "commuting",
+          "heading": true
+        },
+        {
+          "term": "idpi",
+          "heading": false
+        },
+        {
+          "term": "pei",
+          "heading": false
+        },
+        {
+          "term": "d47pα",
+          "heading": false
+        },
+        {
+          "term": "commutative",
+          "heading": false
+        }
+      ],
+      "extract": "of object {Pi}i∈I inT and a family of isomorphisms {Bi,j : Pi⊗Pj ∼−→Pj⊗Pi}i,j∈I. Deﬁnition A.4.1. We say that ({Pi}i∈I,{Bi,j}i,j∈I) is a commuting family if the iso- morphisms Bi,j(i,j∈I) satisfy the following conditions: (a) Bi,i = idPi⊗Pi for any i∈I, (b) Bj,i◦Bi,j = idPi⊗Pj for any i,j ∈I, (c) the isomorphisms {Bi,j}i,j∈I satisﬁes the Yang-Baxter equation; namely, the following diagram is commutative for any",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-a5-localization",
+      "number": null,
+      "title": "A.5. Localization",
+      "level": 2,
+      "pageStart": 71,
+      "pageEnd": 72,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 261,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deﬁne functor",
+          "heading": false
+        },
+        {
+          "term": "fct",
+          "heading": false
+        },
+        {
+          "term": "abelian category",
+          "heading": false
+        },
+        {
+          "term": "localization",
+          "heading": true
+        }
+      ],
+      "extract": "has a structure of a tensor category by F⊗G = F·G, the composition of functors. Let{Φi}i∈I be a commuting family of objects of Fct( C,C). Then we can deﬁne Φ α∈ Fct(C,C) for α∈ Z⊕I ≥0 and Φ α· Φβ ∼−→Φα+β as in the preceding subsection. 72 S.-J. KANG, M. KASHIW ARA, M. KIM We deﬁne the category ~C as follows. The objects of ~C are pairs (X,α ) of X∈C and α∈ Z⊕I . The homomorphisms are deﬁned by Hom ~C ( (X,α ), (Y,β",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-a6-localization-of-tensor-categories",
+      "number": null,
+      "title": "A.6. Localization of tensor categories",
+      "level": 2,
+      "pageStart": 72,
+      "pageEnd": 75,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 714,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rpi",
+          "heading": false
+        },
+        {
+          "term": "homt",
+          "heading": false
+        },
+        {
+          "term": "d47x",
+          "heading": false
+        },
+        {
+          "term": "tensor",
+          "heading": true
+        },
+        {
+          "term": "tensor category",
+          "heading": false
+        },
+        {
+          "term": "tensor functor",
+          "heading": false
+        },
+        {
+          "term": "central objects",
+          "heading": false
+        },
+        {
+          "term": "simple object",
+          "heading": false
+        }
+      ],
+      "extract": "{(Pi,RPi)}i∈I be a family of central objects in T . Set Bi,j =RPi(Pj) :Pi⊗Pj ∼−→Pj⊗Pi for i,j ∈ I. If ( {Pi}i∈I,{Bi,j}i,j∈I) is a commuting family of objects, we say that {(Pi,RPi)}i∈I is a commuting family of central objects (see also [ 21] for its generaliza- tion). Note that it means that {(Pi,RPi)}i∈I satisﬁes the conditions: (a) for any i∈I, RPi satisﬁes ( A.3.1), (b) RPj (Pi)◦RPi(Pj) = idPi⊗Pj for any i,j∈I,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-a7-graded-case",
+      "number": null,
+      "title": "A.7. Graded case",
+      "level": 2,
+      "pageStart": 75,
+      "pageEnd": 78,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1188,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homt",
+          "heading": false
+        },
+        {
+          "term": "rpi",
+          "heading": false
+        },
+        {
+          "term": "tensor functor",
+          "heading": false
+        },
+        {
+          "term": "exact functor",
+          "heading": false
+        },
+        {
+          "term": "kashiw ara",
+          "heading": false
+        },
+        {
+          "term": "tensor category",
+          "heading": false
+        },
+        {
+          "term": "abelian category",
+          "heading": false
+        },
+        {
+          "term": "homc",
+          "heading": false
+        }
+      ],
+      "extract": "L-graded ifT has a decomposition T = ⨁ λ∈LTλ such that ⊗ induces a bifunctor Tλ×Tµ→T λ+µ for any λ,µ∈L and that 1∈T 0. Let{(Pi,RPi)}i∈I be a commuting family of central objects of T such that Pi∈T λi for λi∈ L,i ∈ I. Let ℓ : Z⊕I→ L be a homomorphism given by ℓ(ei) = λi (i∈ I). Hence Pα belongs toTℓ(α) for any α∈ Z⊕I ≥0. Now we assume that ℓ : Z⊕I→ L is injective. We will deﬁne a tensor category T′ and a tensor",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-a8-variant",
+      "number": null,
+      "title": "A.8. Variant",
+      "level": 2,
+      "pageStart": 78,
+      "pageEnd": 79,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 168,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rpi",
+          "heading": false
+        },
+        {
+          "term": "homt",
+          "heading": false
+        },
+        {
+          "term": "central objects",
+          "heading": false
+        }
+      ],
+      "extract": "commuting family of central objects in T as in § A.7. Let ( Q,RQ) be an invertible central object of T such that Q∈T 0. We assume that RQ(Pi) :Q⊗Pi ∼−→Pi⊗Q and RPi(Q) :Pi⊗Q∼−→Q⊗Pi are inverse to each other for any i∈I. (A.8.1) It is equivalent to saying that {(Q,RQ), (Pi,RPi)| i∈ I} is a commuting family of central objects. Given a family of integers ( si)i∈I, let s : Z⊕I → Z be the linear map deﬁned by s(ei) = si.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-a9-twisting-of-tensor-structure",
+      "number": null,
+      "title": "A.9. Twisting of tensor structure",
+      "level": 2,
+      "pageStart": 79,
+      "pageEnd": 79,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 112,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tensor",
+          "heading": true
+        },
+        {
+          "term": "tensor category",
+          "heading": false
+        },
+        {
+          "term": "central object",
+          "heading": false
+        }
+      ],
+      "extract": "λ∈LTλ be an L-graded additive tensor category. Let ( Q,RQ) be an invertible central object of T such that Q∈T 0. Then Q⊗n is a central object for all n∈ Z. LetB be a Z-valued bilinear form on L. We deﬁne an additive bifunctor ~⊗ onT by X ~⊗Y =Q⊗B(λ,µ)⊗X⊗Y for X∈T λ and Y∈T µ. Then it is easy to see that ~⊗ gives a new tensor category structure on T , where the associativity is given by (X ~⊗Y ) ~⊗Z ≃",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-appendix-b-quotient-categories",
+      "number": null,
+      "title": "Appendix B. Quotient categories",
+      "level": 1,
+      "pageStart": 79,
+      "pageEnd": 79,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-030-b1-serre-category",
+      "number": null,
+      "title": "B.1. Serre category",
+      "level": 2,
+      "pageStart": 79,
+      "pageEnd": 81,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 558,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "serre",
+          "heading": true
+        },
+        {
+          "term": "serre subcategory",
+          "heading": false
+        },
+        {
+          "term": "abelian category",
+          "heading": false
+        },
+        {
+          "term": "k-linear abelian",
+          "heading": false
+        },
+        {
+          "term": "exact functor",
+          "heading": false
+        },
+        {
+          "term": "homa",
+          "heading": false
+        },
+        {
+          "term": "ina",
+          "heading": false
+        },
+        {
+          "term": "ofa",
+          "heading": false
+        }
+      ],
+      "extract": "of an abelian category by a subcategory. For more details, see [ 33, § 4.3]. Let A be an abelian category and let S be a Serre subcategory ofA ; i.e., (i)S is a full subcategory of A, (ii)S is stable under taking subobjects, quotients and extensions, nam ely, for any exact sequence 0 →X′→X→X′′→ 0 inA, the middle term X is inS if and only if X′ and X′′ are inS. For two objects X and Y ofA, we have a directed set",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 81,
+      "pageEnd": 83,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 845,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "duke math",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "aﬃne algebras",
+          "heading": false
+        },
+        {
+          "term": "khovanov-lauda-rouquier algebras",
+          "heading": false
+        },
+        {
+          "term": "quiver hecke",
+          "heading": false
+        },
+        {
+          "term": "crystal bases",
+          "heading": false
+        },
+        {
+          "term": "quantum grou",
+          "heading": false
+        },
+        {
+          "term": "enveloping algebras",
+          "heading": false
+        }
+      ],
+      "extract": "[1] T. Akasaka and M. Kashiwara, Finite-dimensional representations of quantum aﬃne algeb ras, Publ. RIMS. Kyoto Univ., 33 (1997), 839-867. [2] S. Ariki, On the decomposition numbers of the Hecke algebra of G(M, 1, n), J. Math. Kyoto Univ. 36 (1996), 789-808. [3] I. N. Bernstein and A. V. Zelevinsky, Induced representations of reductive p-adic groups. I. Ann. Sci. ´Ecole. Norm. Sup. 10 (4) (1977), 441-472. [4] J.",
+      "extractCut": true
+    }
+  ],
+  "checks": {},
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "col tens",
+      "heading": false
+    },
+    {
+      "term": "cor tens",
+      "heading": false
+    },
+    {
+      "term": "functor tens",
+      "heading": false
+    },
+    {
+      "term": "aff tens",
+      "heading": false
+    },
+    {
+      "term": "cdots tens",
+      "heading": false
+    },
+    {
+      "term": "tens vphi",
+      "heading": false
+    },
+    {
+      "term": "simple tens",
+      "heading": false
+    },
+    {
+      "term": "tens hom",
+      "heading": false
+    },
+    {
+      "term": "circ rnorm",
+      "heading": false
+    },
+    {
+      "term": "tens mathbb",
+      "heading": false
+    },
+    {
+      "term": "otimes rnorm",
+      "heading": false
+    },
+    {
+      "term": "seteq circ",
+      "heading": false
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 37,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 33,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p81); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 33 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1304.0323v3"
+  }
+}

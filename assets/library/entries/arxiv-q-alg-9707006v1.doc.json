@@ -1,0 +1,976 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-q-alg-9707006v1",
+  "title": "Drinfeld twist for quantum su(2) in the adjoint representation",
+  "variant": "pdf",
+  "pages": 11,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Quantum su(2) in the adjoint representation",
+      "number": "2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-quantum-su2-in-the-adjoint-representation"
+    },
+    {
+      "level": 2,
+      "title": "The factorized basis",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-21-the-factorized-basis"
+    },
+    {
+      "level": 2,
+      "title": "The reduced basis",
+      "number": "2.2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-22-the-reduced-basis"
+    },
+    {
+      "level": 1,
+      "title": "The Drinfeld-Kohno theorem",
+      "number": "3",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-3-the-drinfeld-kohno-theorem"
+    },
+    {
+      "level": 1,
+      "title": "Adjoint representation of the twist",
+      "number": "4",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-4-adjoint-representation-of-the-twist"
+    },
+    {
+      "level": 2,
+      "title": "Preliminaries",
+      "number": "4.1",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-41-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "Explicit computation of Fq",
+      "number": "4.2",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-42-explicit-computation-of-fq"
+    },
+    {
+      "level": 2,
+      "title": "The representation of the coproduct of F",
+      "number": "4.3",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-43-the-representation-of-the-coproduct-of-f"
+    },
+    {
+      "level": 1,
+      "title": "Applications",
+      "number": "5",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-5-applications"
+    },
+    {
+      "level": 2,
+      "title": "The universal R-matrix in the adjoint representation",
+      "number": "5.1",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-010-51-the-universal-r-matrix-in-the-adjoint-represe"
+    },
+    {
+      "level": 2,
+      "title": "Quantum symmetrization",
+      "number": "5.2",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-011-52-quantum-symmetrization"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-012-references"
+    },
+    {
+      "level": 1,
+      "title": "Appendix",
+      "number": null,
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-013-appendix"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 83,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "drinfeld twist",
+          "heading": false
+        },
+        {
+          "term": "dublin",
+          "heading": false
+        },
+        {
+          "term": "adjoint representation",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:q-alg/9707006v1 4 Jul 1997 DIAS-STP 97-09 Drinfeld twist for quantum su(2) in the adjoint representation Chryssomalis Chryssomalakos∗ Dublin Institute for Advanced Studies School of Theoretical Physics 10 Burlington Road Dublin 4, Ireland Abstract We give a detailed description of the adjoint representation of Drinfeld’s twist element, as well as of its coproduct, for suq(2). We also discuss, as applications,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-q-alg-9707006v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 436,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "slq",
+          "heading": false
+        },
+        {
+          "term": "adjoint representation",
+          "heading": false
+        },
+        {
+          "term": "drinfeld work",
+          "heading": false
+        },
+        {
+          "term": "twist element",
+          "heading": false
+        },
+        {
+          "term": "tensor square",
+          "heading": false
+        },
+        {
+          "term": "suq",
+          "heading": false
+        },
+        {
+          "term": "applications",
+          "heading": false
+        },
+        {
+          "term": "explicit",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction Drinfeld’s work on quasitriangular quasi-Hopf algebras appeared (in english) in 1990. Its impact on elucidating the conceptual foundations of the deformation of semi-simple Lie algebras cannot be overestimated. By relaxing coassociativity, one perceives, through Drinfeld’s work, both the classical and the deformed algebras to belong to the same “space”, with a universal twist element F eﬀecting the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-quantum-su2-in-the-adjoint-representation",
+      "number": "2",
+      "title": "Quantum su(2) in the adjoint representation",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 161,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adjoint representation",
+          "heading": true
+        },
+        {
+          "term": "commutation relations",
+          "heading": false
+        },
+        {
+          "term": "quantum",
+          "heading": true
+        }
+      ],
+      "extract": "Quantum su(2) in the adjoint representation Quantum su(2) (or, more precisely, the quantum deformation of the universal enveloping algebra of su(2), denoted by Uq(su(2)) ≡Uq) is the Hopf algebra generated by q±H/2, X± obeying the commutation relations qH/2X± = q±1X±qH/2 X+X−−X−X+ = λ−1(qH −q−H) , (1) where λ = q −q−1 and q is a real number (the latter requirement originates in the ∗-structure of the algebra which we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-the-factorized-basis",
+      "number": "2.1",
+      "title": "The factorized basis",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 340,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adjoint action",
+          "heading": false
+        },
+        {
+          "term": "factorized",
+          "heading": true
+        },
+        {
+          "term": "closes",
+          "heading": false
+        },
+        {
+          "term": "generators",
+          "heading": false
+        }
+      ],
+      "extract": "The factorized basis We ﬁrst recall the deﬁnition of the adjoint representation in the quantum case. Classically, this representation is deﬁned via the adjoint action of the generators among themselves, which closes linearly in the generators. The representation is then extended to the entire universal enveloping algebra as a homomorphism. In the quantum case, the appropriate deﬁnition for the adjoint action of x on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-the-reduced-basis",
+      "number": "2.2",
+      "title": "The reduced basis",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 290,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reduced basis",
+          "heading": true
+        },
+        {
+          "term": "casimir",
+          "heading": false
+        },
+        {
+          "term": "eﬀected",
+          "heading": false
+        },
+        {
+          "term": "q3x",
+          "heading": false
+        }
+      ],
+      "extract": "The reduced basis To simplify subsequent calculations we chose to work in a reduced basis, in which the representation (denoted ρr) consists of 1 and 3-dimensional blocks. The transition is eﬀected by conjugation with the matrix A, i.e. (x ∈Uq) ρf(x) = Aρr(x)A−1 (8) with A being given by A =      q3 0 γ−1 0 0 1 0 0 0 0 0 q−1 q 0 −γ−1 0     . (9) This amounts to switching to the generators c = q3x1 + qx2 ,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-the-drinfeld-kohno-theorem",
+      "number": "3",
+      "title": "The Drinfeld-Kohno theorem",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 464,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "drinfeld-kohno theorem",
+          "heading": true
+        },
+        {
+          "term": "universal r-matrix",
+          "heading": false
+        },
+        {
+          "term": "classical generators",
+          "heading": false
+        },
+        {
+          "term": "coproduct",
+          "heading": false
+        },
+        {
+          "term": "q-dependence",
+          "heading": false
+        },
+        {
+          "term": "q-dependent",
+          "heading": false
+        },
+        {
+          "term": "quantum generators",
+          "heading": false
+        },
+        {
+          "term": "cocommutative",
+          "heading": false
+        }
+      ],
+      "extract": "The Drinfeld-Kohno theorem We give a brief discussion of the essential points only, as they pertain to the particular case examined (in particular, we do not mention coassociativity since it is not essential to the problem at hand) - the reader is referred to [5] for a detailed account of these matters in a general context. Starting from the (undeformed) universal enveloping algebra U(su(2)) ≡U one can form the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-4-adjoint-representation-of-the-twist",
+      "number": "4",
+      "title": "Adjoint representation of the twist",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 23,
+      "summary": null,
+      "keywords": [],
+      "extract": "Adjoint representation of the twist We compute here explicitly the adjoint representation of F, following (a variation of) the method presented in [6].",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-41-preliminaries",
+      "number": "4.1",
+      "title": "Preliminaries",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 529,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dimensional blocks",
+          "heading": false
+        },
+        {
+          "term": "casimir",
+          "heading": false
+        },
+        {
+          "term": "h-eigenvalue",
+          "heading": false
+        },
+        {
+          "term": "eigenvectors",
+          "heading": false
+        },
+        {
+          "term": "symmetric matrix",
+          "heading": false
+        },
+        {
+          "term": "glance",
+          "heading": false
+        },
+        {
+          "term": "preliminaries",
+          "heading": true
+        },
+        {
+          "term": "coproduct",
+          "heading": false
+        }
+      ],
+      "extract": "Preliminaries The method Consider the matrix representation Cq ≡ρ⊗2 r (∆(Cq)) of the coproduct of the quantum casimir. Its eigenvectors |i; q⟩, i = 1 . . . 9, form (for each value of q) a basis in the nine dimensional space on which the above matrix acts (i can be thought of as a composite label, i = {αq, hq}, where αq is an eigenvalue of the casimir in ρ⊗2 r and hq diﬀerentiates between eigenvectors belonging to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-42-explicit-computation-of-fq",
+      "number": "4.2",
+      "title": "Explicit computation of Fq",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1001,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tfq",
+          "heading": false
+        },
+        {
+          "term": "axes",
+          "heading": false
+        },
+        {
+          "term": "q2a",
+          "heading": false
+        },
+        {
+          "term": "get interchanged",
+          "heading": false
+        },
+        {
+          "term": "rotation",
+          "heading": false
+        },
+        {
+          "term": "cos",
+          "heading": false
+        },
+        {
+          "term": "basis vectors",
+          "heading": false
+        },
+        {
+          "term": "dimensional subspace",
+          "heading": false
+        }
+      ],
+      "extract": "Explicit computation of Fq We start by computing Cq. We ﬁrst ﬁnd ∆(Cq) = X−X+ ⊗qH + X−q−H/2 ⊗qH/2X+ +q−H/2X+ ⊗X−qH/2 + q−H ⊗X−X+ +λ−2(q · qH ⊗qH + q−1q−H ⊗q−H −2 · 1 ⊗1) (19) and substituting from (11) we obtain Cq = {[5/2]2, [1/2]2 + q−1[2]2 [2] [2] [1/2]2 + q[2]2 ! ,    [1/2]2 + q−2[2] −q−1[2] 0 −q−1[2] [1/2]2 + 2[2] −q[2] 0 −q[2] [1/2]2 + q2[2]   } . (20) The corresponding 2 and 3-dimensional eigenvectors",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-5-applications",
+      "number": "5",
+      "title": "Applications",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 271,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tfq",
+          "heading": false
+        },
+        {
+          "term": "q2a",
+          "heading": false
+        },
+        {
+          "term": "dimensional space",
+          "heading": false
+        },
+        {
+          "term": "bilinears",
+          "heading": false
+        },
+        {
+          "term": "omission",
+          "heading": false
+        }
+      ],
+      "extract": "-50 0 50 100 -8 -6 -4 -2 0 2 4 6 8 -100 -50 0 50 100 Figure 2: The curve TFq0 in the SO(3) manifold (−3 ≤q ≤3) Notice that the above two missing segments “touch” as q →±∞since, in this limit, TFq tends to the common value TF±∞= 1 √ 6    √ 2 √ 2 √ 2 − √ 3 0 √ 3 1 −2 1   . (29) As in the 2-dimensional case, the results are simpliﬁed when the crystal limit is used as reference point. We ﬁnd TFq0 = 1 ab    1 qb",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-43-the-representation-of-the-coproduct-of-f",
+      "number": "4.3",
+      "title": "The representation of the coproduct of F",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 168,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coproduct",
+          "heading": true
+        },
+        {
+          "term": "h-eigenvalue",
+          "heading": false
+        },
+        {
+          "term": "block-diagonal",
+          "heading": false
+        },
+        {
+          "term": "blocks",
+          "heading": false
+        }
+      ],
+      "extract": "The representation of the coproduct of F The method for computing Fq used above is easily adapted to the computation of Fq123 ≡ρ⊗3 r ((∆⊗id)F). The matrix C123 = ρ⊗3 r (∆(2)C), where ∆(2)(C) ≡(∆⊗id) ◦∆(C), is again symmetric and its eigenvectors are rotated by the orthogonal Fq123 from their classical to their deformed position. This allows the computation of Fq123 from a formula analogous to (18). Both C123 and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-51-the-universal-r-matrix-in-the-adjoint-represe",
+      "number": "5.1",
+      "title": "The universal R-matrix in the adjoint representation",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 424,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "r-matrix",
+          "heading": true
+        },
+        {
+          "term": "characteristic polynomial",
+          "heading": false
+        },
+        {
+          "term": "q2i",
+          "heading": false
+        },
+        {
+          "term": "minimal polynomial",
+          "heading": false
+        },
+        {
+          "term": "characteristic equation",
+          "heading": false
+        },
+        {
+          "term": "permutation matrix",
+          "heading": false
+        }
+      ],
+      "extract": "The universal R-matrix in the adjoint representation The block diagonal form of the matrices involved simpliﬁes signiﬁcantly the computation of R ≡ρ⊗2 r (R). Applying ρ⊗2 r in (15) gives R = F ′ q ρ⊗2 r (qt) F −1 q . (31) For the representation of the classical R-matrix we compute ρ⊗2 r (t) = {2, 0 2 2 0 ! ,    −2 −2 0 −2 0 −2 0 −2 −2   } (32) which gives, upon exponentiation µRc = q2, DRc = 1 2q2 q4 + 1 q4 −1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-52-quantum-symmetrization",
+      "number": "5.2",
+      "title": "Quantum symmetrization",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 497,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum symmetrization",
+          "heading": true
+        },
+        {
+          "term": "quantum permutation",
+          "heading": false
+        },
+        {
+          "term": "classical permutation",
+          "heading": false
+        },
+        {
+          "term": "quantum mechanics",
+          "heading": false
+        },
+        {
+          "term": "permutation matrix",
+          "heading": false
+        },
+        {
+          "term": "quantum group",
+          "heading": false
+        },
+        {
+          "term": "antisymmetric",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        }
+      ],
+      "extract": "Quantum symmetrization We consider here the problem of quantum symmetrization of identical particle states. We supply, for reasons of self-containment, a brief exposition of the relevant theory, along the lines of [7], which contains a thorough discussion. As a ﬁrst step towards the implementation of quantum group symmetries in quantum mechanics and quantum ﬁeld theory, the question of the compatibility of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 151,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zachos eds",
+          "heading": false
+        },
+        {
+          "term": "curtright",
+          "heading": false
+        },
+        {
+          "term": "world scientiﬁc",
+          "heading": false
+        },
+        {
+          "term": "fairlie",
+          "heading": false
+        }
+      ],
+      "extract": "References [1] M. Bonechi, R. Giachetti, E. Sorace and M. Tarlini “Deformation Quantization of the Heisenberg Group” Comm. Math. Phys. 169 (1995) 627-634 [2] T.L.Curtright “Deformations, Coproducts, and U”, in Quantum Groups, T.L. Curtright, D.B. Fairlie and C.K.Zachos eds., World Scientiﬁc 1991 [3] T.L. Curtright, G.I. Ghandour and C.K. Zachos “Quantum Algebra Deforming Maps, Clebsch-Gordan Co- eﬃcients,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-appendix",
+      "number": null,
+      "title": "Appendix",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 338,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q2t",
+          "heading": false
+        },
+        {
+          "term": "q2z",
+          "heading": false
+        },
+        {
+          "term": "q2e",
+          "heading": false
+        },
+        {
+          "term": "x2y",
+          "heading": false
+        }
+      ],
+      "extract": "We give here the explicit form for the 3, 6 and 7-dimensional blocks of Fq0123, acting in the subspaces (+ + 0, +0+, 0++), (++−, +00, +−+, 0+0, 00+, −++) and (+0−, +−0, 0+−, 000, 0−+, −+0, −0+) respectively. F (3) q0 123 = 1 mk   m q4k −q6 −q4m k −q2 0 q2k k2  , (41) F (6) q0 123 =          y −q3w q4z 0 q8r q2st2 q33q2x2y 2−q6w −q−12q2z −q2x −q32q2r q2−1 q4 s 0 q3w q−4z 0 r s q5(1 + 3q2)x2y q2w −q2q2z x",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "classical coproduct",
+      "heading": false
+    },
+    {
+      "term": "adjoint representation",
+      "heading": true
+    },
+    {
+      "term": "quantum generators",
+      "heading": false
+    },
+    {
+      "term": "dimensional representation",
+      "heading": false
+    },
+    {
+      "term": "matrix representation",
+      "heading": false
+    },
+    {
+      "term": "quantum casimir",
+      "heading": false
+    },
+    {
+      "term": "curve tfq",
+      "heading": true
+    },
+    {
+      "term": "quantum symmetrization",
+      "heading": true
+    },
+    {
+      "term": "quantum permutation",
+      "heading": false
+    },
+    {
+      "term": "quantum case",
+      "heading": false
+    },
+    {
+      "term": "dimensional blocks",
+      "heading": false
+    },
+    {
+      "term": "classical limit",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The curve TFq in the SO(3) manifold (−1 ≤q ≤1)",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The curve TFq0 in the SO(3) manifold (−3 ≤q ≤3)",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 14,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 15,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "2 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p10); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 15 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-q-alg-9707006v1"
+  }
+}

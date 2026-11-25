@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "Theta Functions, Modular Invariance, and Strings",
+      "dcterms:creator": [
+        "Theta Functions, Modular Invariance",
+        "Strings"
+      ],
+      "dcterms:issued": "D:20040916",
+      "dcterms:abstract": "We use Quillen's theorem and algebraic geometry to investigate the modular transformation properties of some quantities of interest in string theory. In particular, we show that the spin structure dependence of the chiral Dirac determinant on a Riemann surface is given by Riemann's theta function. We use this result to investigate the modular invariance of multiloop heterotic string amplitudes.",
+      "dcterms:source": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/manifest.jsonld",
+      "dcterms:hasVersion": "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari"
+    }
+  ]
+}

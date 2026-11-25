@@ -1,0 +1,9 @@
+TY  - JOUR
+ID  - arxiv-1907.00949v2
+AU  - KE YE, KEN SZE-WAI WONG
+AU  - LIM, LEK-HENG
+TI  - OPTIMIZATION ON FLAG MANIFOLDS
+DA  - D:20190808
+UR  - https://arxiv.org/abs/1907.00949
+AB  - A ﬂag is a sequence of nested subspaces. Flags are ubiquitous in numerical analysis, arising in ﬁnite elements, multigrid, spectral, and pseudospectral methods for numerical pde; they arise in the form of Krylov subspaces in matrix computations, and as multiresolution analysis in wavelets constructions. They are common in statistics too — principal component, canonical cor- relation, and correspondence analyses may all be viewed as methods for extracting ﬂags from a data set. The main goal of this article is to develop the tools needed for optimizing over a set of ﬂags, which is a smooth manifold called the ﬂag manifold, and it contains the Grassmannian as the simplest special case. We will derive closed-form analytic expressions for various diﬀerential geometric objects required for Riemannian optimization algorithms on the ﬂag manifold; introduc- ing various systems of extrinsic coordinates that allow us to parameterize points, metrics, tangent spaces, geodesics, distance, parallel transport, gradients, Hessians in terms of matrices and ma- trix operations; and thereby permitting us to formulate steepest descent, conjugate gradient, and Newton algorithms on the ﬂag manifold using only standard numerical linear algebra.
+ER  - 

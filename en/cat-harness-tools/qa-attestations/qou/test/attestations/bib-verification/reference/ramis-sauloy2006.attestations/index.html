@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/bib-verification/reference/ramis-sauloy2006.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../assets/navbar/rail-28spoq5l79c.js" defer></script><script src="../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../.." data-fa-to-root="../../../../../../../../..">{"data":"rail-28spoq5l79c","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/bib-verification/reference/ramis-sauloy2006.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/bib-verification/reference/ramis-sauloy2006.attestations</h1>
+<p class="m">A <a href="../../../../../../">qa-attestations</a> node held by <a href="../../../../../">qou</a>, at <code>test/attestations/bib-verification/reference/ramis-sauloy2006.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>bib-verification</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;reference&quot;,
+  &quot;id&quot;: &quot;ramis-sauloy2006&quot;,
+  &quot;path&quot;: null
+}</pre></dd>
+<dt>verifications</dt><dd><pre>[
+  {
+    &quot;position&quot;: 450,
+    &quot;verifier&quot;: &quot;unknown&quot;,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/arxiv-math-0611521v1/0611521v1.pdf&quot;
+      },
+      &quot;id&quot;: &quot;ramis-sauloy2006&quot;,
+      &quot;status&quot;: &quot;uncited&quot;,
+      &quot;note&quot;: &quot;Identified from the title page (arXiv:math/0611521v1, two authors, 22 pp, 16 sections). No ref() entry existed; ramis-sauloy2006 created 2026-09-07 by the triage. Owner upload for the Stokes / q-difference arc. No citation site yet; two cite-in-block beans queued.&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;core&quot;,
+        &quot;rationale&quot;: &quot;The object QOU/Mathlib/QAlienBridgeEquation.lean is named after and models — a q-native alien derivation, conjugated by the dilation automorphism, with the docstring claim that the adjoint action is &#39;the Levi decomposition of the local q-difference Galois group, a torus of characters q^n extended by a unipotent part that the q-logarithm generates&#39; — has its source in this paper, and the file cites only [ramis-sauloy-zhang2013] for it. Read: Abstract, §1, §2.3 (Prop 2.5 and eq. (6): the Stokes operator S_{c,d} is the ambiguity between two q-directions of summation c, d in E_q, points of the elliptic curve rather than sectors; &#39;case of one level&#39; assumes two integral slopes mu &lt; nu with delta = nu - mu), §3.1 (Thm 3.3: S_{c0,c} lies in the Stokes group St(A); Cor 3.4 its logarithm is Lie-like; Thm 3.5 DEFINES the q-alien derivations as residues of that logarithm in c, valued in the Stokes Lie algebra st(A) and graded by level, eq. (16); Thm 3.6 they are Lie-like tensor-endomorphisms of the fibre functor), §3.2 (Thm 3.8: the level-delta q-Borel transform vanishing on the block entries is a complete analytic invariant within the formal class; Thm 3.9: the q-Borel invariant maps to the alien-derivation invariant by left multiplication by a theta power), §4 (item 1: the programme of copying Ecalle&#39;s alien derivations to the q-case; items 2-3: global classification and confluence left open by the authors). Corpus-grep before judging (AGENTS.md paths 1-6): &#39;wild fundamental group&#39; has ZERO hits in content/, docs/, computations/ and .beans/; &#39;Ramis&#39;/&#39;Sauloy&#39; hits are all the RSZ Asterisque monograph or the Di Vizio-Ramis-Sauloy-Zhang survey; bean qou-vkg5 (open item 2, &#39;the q-native form ... whether the eigenvalue shift is additive or multiplicative is not settled&#39;) and the file&#39;s own &#39;Not claimed&#39; paragraph (&#39;exhibiting one from a resurgent q-series is untouched&#39;) are exactly the gap Thm 3.5 supplies the object for. Scope of the verdict: this paper supplies the OBJECT (the q-alien derivations and their Lie algebra) and the reading of the q-Borel kernel (Thm 3.8/3.9); it does NOT establish that QBridgeSystem&#39;s &#39;bridge&#39; field holds for those derivations with any particular weight, so no aid-proof is proposed. Also relevant, one level down: RSZ-route caveat stands — §2.3 is a two-slope, integral-slope setting, and C1 at infinity is pure isoclinic (docs/audits/2026-08-08-rsz-c1-infinity-route-closed.md), so nothing here supplies C1 Stokes data.&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;§2.3, Prop 2.5 and eq. (6)&quot;,
+            &quot;statement&quot;: &quot;For each q-direction c in E_q off the singular set there is a unique summation S_c of the formal isomorphism, and the Stokes operator S_{c,d} = (S_c)^{-1} S_d is the ambiguity between two directions.&quot;,
+            &quot;useForFolio&quot;: &quot;The q-Stokes operator is parameterised by points of the elliptic curve E_q, not by sectors — the structural fact behind the corpus&#39;s &#39;the Stokes data sits in the choice of theta / the theta torsor&#39; reading (bean qou-wgnx).&quot;,
+            &quot;targets&quot;: [
+              &quot;QOU.Mathlib.QAlienBridgeEquation&quot;,
+              &quot;qou-wgnx&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Thm 3.5, Thm 3.6, eq. (16)&quot;,
+            &quot;statement&quot;: &quot;The q-alien derivations are the residues in c of log S_{c0,c}; they lie in the Stokes Lie algebra st(A), decompose by level delta = mu_j - mu_i, and are Lie-like tensor-endomorphisms of the fibre functor.&quot;,
+            &quot;useForFolio&quot;: &quot;The source of the object QAlienBridgeEquation.lean abstracts as `alien : Omega -&gt; Derivation R A A`; the level grading is the q-analogue of the weight grading the file&#39;s `weight` field carries.&quot;,
+            &quot;targets&quot;: [
+              &quot;QOU.Mathlib.QAlienBridgeEquation&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Thm 3.8, Thm 3.9 (§3.2)&quot;,
+            &quot;statement&quot;: &quot;Equation (8) has a convergent solution iff the level-delta q-Borel transform of the block entries vanishes; the q-Borel invariants and the alien-derivation invariants are related by left multiplication by a theta power.&quot;,
+            &quot;useForFolio&quot;: &quot;Says what the level-d q-Borel kernel formalised in QBorelKernel.lean / QBorelKernelLevel.lean is an invariant OF, and ties it to the alien derivations — two corpus files currently linked only through RSZ §3.3.&quot;,
+            &quot;targets&quot;: [
+              &quot;QOU.MathlibExt.QBorelKernel&quot;,
+              &quot;QOU.MathlibExt.QBorelKernelLevel&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;§4 (Conclusion), item 1&quot;,
+            &quot;statement&quot;: &quot;Programme: define unpointed q-alien derivations acting on q-holonomic power series, replacing Ecalle&#39;s resurgence lattice by the singular sets in the q-Borel planes at each level.&quot;,
+            &quot;useForFolio&quot;: &quot;The literature statement of the open q-native bridge-equation question in bean qou-vkg5 — it is open in the source too, which scopes what a corpus derivation would be claiming.&quot;,
+            &quot;targets&quot;: [
+              &quot;qou-vkg5&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;add-reference&quot;,
+            &quot;rationale&quot;: &quot;No ref() entry existed for this document; created as ramis-sauloy2006 in this triage (done in the same commit series).&quot;,
+            &quot;target&quot;: &quot;folio/schema/references.ts&quot;
+          },
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;QAlienBridgeEquation.lean models the q-alien derivation and asserts the Levi-decomposition reading with only RSZ as its source; Prop 2.5 / Thm 3.5-3.6 are the source.&quot;,
+            &quot;target&quot;: &quot;folio/quantum-observable-universe/lean/QOU/Mathlib/QAlienBridgeEquation.lean&quot;,
+            &quot;bean&quot;: &quot;qou-at59&quot;
+          },
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;Thm 3.8/3.9 say what the level-delta q-Borel kernel is an invariant of; the kernel files cite RSZ §3.3 only.&quot;,
+            &quot;target&quot;: &quot;folio/quantum-observable-universe/lean/QOU/MathlibExt/QBorelKernel.lean&quot;,
+            &quot;bean&quot;: &quot;qou-x0aa&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-09-07T08:38:46Z&quot;,
+        &quot;source_sha&quot;: &quot;65fcd77b7b0a&quot;
+      }
+    }
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

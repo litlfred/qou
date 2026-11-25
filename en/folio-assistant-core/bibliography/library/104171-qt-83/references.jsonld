@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/104171-qt-83",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "On the asymptotic expansion of the Kashaev invariant of the 5_2 knot",
+      "dcterms:creator": [
+        "Topology, Quantum"
+      ],
+      "dcterms:issued": "D:20161223",
+      "bibo:doi": "10.4171/QT/83",
+      "dcterms:identifier": "https://doi.org/10.4171/QT/83",
+      "dcterms:abstract": "We give a presentation of the asymptotic expansion of the Kashaev invariant of the 52 knot. As the volume conjecture states, the leading term of the expansion presents the hyperbolic volume and the Chern–Simons invariant of the complement of the 52 knot. Further, we obtain a method to compute the full Poincare asymptotics to all orders of the Kashaev invariant of the 52 knot. Mathematics Subject Classiﬁcation (2010). 57M27; 57M25, 57M50.",
+      "dcterms:source": "library/104171-qt-83/manifest.jsonld",
+      "dcterms:hasVersion": "library/104171-qt-83"
+    }
+  ]
+}

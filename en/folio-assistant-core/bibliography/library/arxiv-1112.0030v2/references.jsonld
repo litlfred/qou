@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1112.0030v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Homological Algebra of Knots and BPS States",
+      "dcterms:creator": [
+        "Gukov, Sergei",
+        "Stoˇsić, Marko"
+      ],
+      "dcterms:issued": "D:20181022",
+      "dcterms:identifier": "https://arxiv.org/abs/1112.0030",
+      "dcterms:abstract": "It is known that knot homologies admit a physical description as spaces of open BPS states. We study operators and algebras acting on these spaces. This leads to a very rich story, which involves wall crossing phenomena, algebras of closed BPS states acting on spaces of open BPS states, and deformations of Landau-Ginzburg models. One important application to knot homologies is the existence of “colored diﬀerentials” that relate homological invariants of knots colored by diﬀerent representations. Based on this structure, we formulate a list of properties of the colored HOMFLY homology that categoriﬁes the colored HOMFLY polynomial. By calculating the colored HOMFLY homology for symmetric and anti-symmetric representations, we ﬁnd a remarkable “mirror symmetry” between these triply-graded theories.",
+      "dcterms:source": "library/arxiv-1112.0030v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1112.0030v2"
+    }
+  ]
+}

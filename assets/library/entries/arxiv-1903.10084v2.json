@@ -1,0 +1,82 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1903.10084v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1903.10084v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "I Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-i-introduction.md",
+      "narrative": null,
+      "content": "Transverse momentum dependent(TMD) parton distribution function [1] is one of the most powerful theoretical tools\nthat are utilized to explore the three-dimensional imaging of nuleon/nuclei. Among many TMD parton distributions,\nthe linearly polarized gluon distribution [2] has received growing attentions in recent years. It describes the correlation\nbetween gluon transverse momentum and its polarization vector inside an unpolarized nucleon or nucleus. It is of\nparticular interest to study linearly polarized gluon distribution at small x [3, 4], as it is predicted to grow equally\nrapidly toward",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1903.10084v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1903.10084v2  [hep-ph]  9 Jul 2019\nProbing the linear polarization of photons in ultraperipheral heavy ion collisions\nCong Li,1 Jian Zhou,1 and Ya-jin Zhou1\n1Key Laboratory of Particle Physics and Particle Irradiation (MOE),\nInstitute of frontier and interdisciplinary science,\nShandong University, QingDao, Shandong 266237, China\n(Dated: July 10, 2019)\nWe propose to measure the linear polarization of the external electromagnetic ﬁelds of a relativistic\nheavy ion through azimuthal asymmetries in dilepton production in ultraperipheral collisions. The\nasymmetries estimated with the equivalen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1903.10084v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "II Azimuthal asymmetries in di-lepton production in UPCs",
+      "pageStart": 2,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-ii-azimuthal-asymmetries-in-di-lepton-production.md",
+      "narrative": null,
+      "content": "Di-lepton production in UPCs is well described by two photons reaction at the lowest order QED,\nγ(x1P + k1⊥) + γ(x2 ¯P + k2⊥) →l+(p1) + l−(p2)\n(1)\nThe leptons are produced nearly back-to-back in azimuthal with total transverse momentum q⊥≡p1⊥+ p2⊥=\nk1⊥+ k2⊥being much smaller than the individual lepton transverse momenta p1⊥or p2⊥. Since there are two well\nseparated scales in this process, the application of TMD factorization is justiﬁed. If the calculation is formulated\nin TMD factorization, the two leading power photon TMDs: the normal unpolarized photon TMD and the linearly\npolarized photon",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1903.10084v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-acknowledgments.md",
+      "narrative": null,
+      "content": "J. Zhou thanks Zhang-bu Xu, James Daniel Brandenburg and Bowen Xiao for helpful discussions. J. Zhou has been\nsupported by the National Science Foundations of China under Grant No. 11675093, and by the Thousand Talents\nPlan for Young Professionals. Ya-jin Zhou has been supported by the National Science Foundations of China under\nGrant No. 11675092.\n[1] J. C. Collins and D. E. Soper, Nucl. Phys. B 193, 381 (1981) [Erratum-ibid. B 213, 545 (1983)]; Nucl. Phys. B 194, 445\n(1982). J. C. Collins, D. E. Soper and G. Sterman, Nucl. Phys. B 250, 199 (1985).\n[2] P. J. Mulders and J. Rodrigues, Phys. Re",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

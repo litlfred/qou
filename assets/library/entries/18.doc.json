@@ -1,0 +1,737 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "18",
+  "title": "rivin.tex.12/15/95",
+  "variant": "pdf",
+  "pages": 10,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Conformal simplices",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-1-conformal-simplices"
+    },
+    {
+      "level": 1,
+      "title": "Another coordinate system",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "54",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-2-another-coordinate-system"
+    },
+    {
+      "level": 1,
+      "title": "Hyperbolic conformal simplices",
+      "number": "3",
+      "page": 5,
+      "pageLabel": "55",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-3-hyperbolic-conformal-simplices"
+    },
+    {
+      "level": 1,
+      "title": "The space of conformal simplices",
+      "number": "4",
+      "page": 5,
+      "pageLabel": "55",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-4-the-space-of-conformal-simplices"
+    },
+    {
+      "level": 1,
+      "title": "Conformal deformation space of singular Euclidean metrics",
+      "number": "5",
+      "page": 7,
+      "pageLabel": "57",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-5-conformal-deformation-space-of-singular-euclid"
+    },
+    {
+      "level": 1,
+      "title": "Applications to ball packing",
+      "number": "6",
+      "page": 8,
+      "pageLabel": "58",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-6-applications-to-ball-packing"
+    },
+    {
+      "level": 1,
+      "title": "Remarks and questions",
+      "number": "7",
+      "page": 9,
+      "pageLabel": "59",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-7-remarks-and-questions"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 10,
+      "pageLabel": "60",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-008-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 10,
+      "pageLabel": "60",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-009-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 19,
+      "summary": null,
+      "keywords": [],
+      "extract": "Mathematical Research Letters 3, 51–60 (1996) COMBINATORIAL SCALAR CURVATURE AND RIGIDITY OF BALL PACKINGS Daryl Cooper and Igor Rivin",
+      "extractCut": false,
+      "blocks": [
+        "library/18/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 125,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "combinatorial analogue",
+          "heading": false
+        },
+        {
+          "term": "conformal deformation",
+          "heading": false
+        },
+        {
+          "term": "scalar curvature",
+          "heading": false
+        },
+        {
+          "term": "verdi",
+          "heading": false
+        }
+      ],
+      "extract": "Let M 3 be a triangulated three-dimensional manifold. In this paper we deﬁne a combinatorial analogue of scalar curvature for M 3, and also a combinatorial analogue of conformal deformation of the metric. We further deﬁne a functional S on the combinatorial conformal deformation space, show that S is concave, and show that critical points of S correspond pre- cisely to metrics of constant combinatorial scalar",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-conformal-simplices",
+      "number": "1",
+      "title": "Conformal simplices",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": "54",
+      "words": 981,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conformal simplices",
+          "heading": true
+        },
+        {
+          "term": "schl aﬂi",
+          "heading": false
+        },
+        {
+          "term": "regular simplex",
+          "heading": false
+        },
+        {
+          "term": "daryl cooper",
+          "heading": false
+        },
+        {
+          "term": "igor rivin",
+          "heading": false
+        },
+        {
+          "term": "simplex cannot",
+          "heading": false
+        },
+        {
+          "term": "solid angles",
+          "heading": false
+        },
+        {
+          "term": "lij",
+          "heading": false
+        }
+      ],
+      "extract": "results. In section 3 we extend these techniques to conformal simplices in H3. In section 4 we study the deformation space of conformal simplices. In section 5 we prove the results on scalar curvature alluded to above, and in section 6 we discuss the ball-packing results. 1. Conformal simplices Let T be a simplex in E3. Denote the vertices of T by v1, . . . , v4, and denote the edge joining vi and vj by eij. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-another-coordinate-system",
+      "number": "2",
+      "title": "Another coordinate system",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "54",
+      "labelEnd": "55",
+      "words": 242,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "null-space",
+          "heading": false
+        },
+        {
+          "term": "hij",
+          "heading": false
+        },
+        {
+          "term": "confor",
+          "heading": false
+        },
+        {
+          "term": "curvatures",
+          "heading": false
+        },
+        {
+          "term": "diﬀerentiating",
+          "heading": false
+        }
+      ],
+      "extract": "While the radii ri are a natural set of coordinates for the space of confor- mal simplices, it turns out that, in many ways, the curvatures of the spheres are better. That is, instead of r1, . . . , r4, use κ1, . . . , κ4, where κiri = 1. Using this parametrization embeds CT as an open set in R4. Call this open set Cκ T . Consider again the function S, as in Section 1. As a function of κ = (κ1, . . . , κ4), S can be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-hyperbolic-conformal-simplices",
+      "number": "3",
+      "title": "Hyperbolic conformal simplices",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "55",
+      "labelEnd": "55",
+      "words": 283,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conformal simplices",
+          "heading": true
+        },
+        {
+          "term": "schl aﬂi",
+          "heading": false
+        },
+        {
+          "term": "aﬂi formula",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic",
+          "heading": true
+        },
+        {
+          "term": "e4i",
+          "heading": false
+        }
+      ],
+      "extract": "3. Hyperbolic conformal simplices In this section we consider conformal simplices (deﬁned as in Section 1) in hyperbolic 3-space H3, rather than in E3. Rather than repeating all of the deﬁnitions, we will simply point out the diﬀerences. The main one of these is in the deﬁnition of the function S. We will now deﬁne Sh as (3.1) Sh(r) = \u0003 Siri + 2 vol T. Then, Schl¨aﬂi’s formula 1.1 immediately implies the following",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-the-space-of-conformal-simplices",
+      "number": "4",
+      "title": "The space of conformal simplices",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "55",
+      "labelEnd": "57",
+      "words": 780,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conformal simplices",
+          "heading": true
+        },
+        {
+          "term": "conformal simplex",
+          "heading": false
+        },
+        {
+          "term": "euclidean conformal",
+          "heading": false
+        },
+        {
+          "term": "conformal sim",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic conformal",
+          "heading": false
+        },
+        {
+          "term": "sim plices",
+          "heading": false
+        },
+        {
+          "term": "unique sphere",
+          "heading": false
+        },
+        {
+          "term": "tangent",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we will describe the space of Euclidean conformal sim- plices CT introduced in section 1. The ﬁrst observation is the following: 56 DARYL COOPER AND IGOR RIVIN Lemma 4.1. A simplex T is conformal if and only if there exists a unique sphere sT which is tangent to all of the edges of T. Furthermore, the point of tangency of sT with the edge eij is at distance ri from vi. Proof. We will show this result",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-conformal-deformation-space-of-singular-euclid",
+      "number": "5",
+      "title": "Conformal deformation space of singular Euclidean metrics",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "57",
+      "labelEnd": "58",
+      "words": 553,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conformal",
+          "heading": true
+        },
+        {
+          "term": "solid angles",
+          "heading": false
+        },
+        {
+          "term": "conformal structures",
+          "heading": false
+        },
+        {
+          "term": "metrics",
+          "heading": true
+        },
+        {
+          "term": "simplices",
+          "heading": false
+        },
+        {
+          "term": "euclidean",
+          "heading": true
+        },
+        {
+          "term": "lij",
+          "heading": false
+        },
+        {
+          "term": "growth rate",
+          "heading": false
+        }
+      ],
+      "extract": "Consider a closed three-dimensional manifold M 3, together with a topo- logical triangulation T . If we equip all of the simplices of T with metrics, so that they are isometric to geodesic simplices in E3, and, furthermore, these metrics are compatible (which is to say that all of the gluing maps are Euclidean isometries), M 3 acquires a metric, which is ﬂat on the com- plement of the 1-skeleton of T . We deﬁne the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-6-applications-to-ball-packing",
+      "number": "6",
+      "title": "Applications to ball packing",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "58",
+      "labelEnd": "59",
+      "words": 247,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "whose nerve",
+          "heading": false
+        },
+        {
+          "term": "ball",
+          "heading": true
+        },
+        {
+          "term": "packing",
+          "heading": true
+        },
+        {
+          "term": "euclidean",
+          "heading": false
+        },
+        {
+          "term": "centered",
+          "heading": false
+        },
+        {
+          "term": "spheres",
+          "heading": false
+        }
+      ],
+      "extract": "Consider the special case of the situation in the previous section where the metric on (M, T ) is in fact non-singular Euclidean or hyperbolic in the COMBINATORIAL SCALAR CURVATURE 59 interior (though the boundary may be polyhedral). The conformality of the structure means that there are Euclidean (resp. hyperbolic) balls centered at the vertices of T , such that the radius of the ball Bv centered at v is equal to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-7-remarks-and-questions",
+      "number": "7",
+      "title": "Remarks and questions",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "59",
+      "labelEnd": "60",
+      "words": 320,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ball-packings",
+          "heading": false
+        },
+        {
+          "term": "joined",
+          "heading": false
+        },
+        {
+          "term": "simplices",
+          "heading": false
+        },
+        {
+          "term": "characterization",
+          "heading": false
+        },
+        {
+          "term": "vertices",
+          "heading": false
+        },
+        {
+          "term": "dimensions",
+          "heading": false
+        },
+        {
+          "term": "though",
+          "heading": false
+        },
+        {
+          "term": "edge",
+          "heading": false
+        }
+      ],
+      "extract": "The results above can be viewed as generalizing of the work of Colin de Verdi`ere [2] to higher dimensions. A rather diﬃcult problem (perhaps intractable in dimension greater than 3) is obtaining any sort of existence results. It is known that no analogue of the results in two dimensions (that any triangulation of a surface is the nerve a circle packing) exists (see [4]), but no characterization is known. Indeed, it",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "60",
+      "labelEnd": "60",
+      "words": 32,
+      "summary": null,
+      "keywords": [],
+      "extract": "The authors would like to thanks Oded Schramm for pointing out an oversight in a previous version of this paper. The second author would like to thank Melbourne University for its hospitality.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "60",
+      "labelEnd": "60",
+      "words": 141,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "e-mail address",
+          "heading": false
+        },
+        {
+          "term": "mathematics department",
+          "heading": false
+        },
+        {
+          "term": "barbara",
+          "heading": false
+        },
+        {
+          "term": "santa",
+          "heading": false
+        },
+        {
+          "term": "rivin",
+          "heading": false
+        }
+      ],
+      "extract": "1. D. V. Alekseevskij, E. Vinberg, and A. S. Solodovnikov, Geometry of spaces of constant curvature, Geometry I, EMS 29; Springer Verlag, Berlin (1993). 2. Yves Colin de Verdiére, Un principe variationnel pour les empilements des cercles, Invent. Math. 104 (1991). 3. M. D. Kovalev, On curvatures of tangent spheres, Trudy Mat. Inst. Steklov.; in Russian 196 (1991), 90-92. 4. Greg Kuperberg and Oded Schramm, Average",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "conformal simplices",
+      "heading": true
+    },
+    {
+      "term": "euclidean conformal",
+      "heading": true
+    },
+    {
+      "term": "conformal simplex",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic conformal",
+      "heading": true
+    },
+    {
+      "term": "igor rivin",
+      "heading": false
+    },
+    {
+      "term": "scalar curvature",
+      "heading": false
+    },
+    {
+      "term": "conformal deformation",
+      "heading": true
+    },
+    {
+      "term": "daryl cooper",
+      "heading": false
+    },
+    {
+      "term": "conformal structures",
+      "heading": false
+    },
+    {
+      "term": "conformal sim",
+      "heading": false
+    },
+    {
+      "term": "tangent spheres",
+      "heading": false
+    },
+    {
+      "term": "combinatorial scalar",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 10,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p10); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/18"
+  }
+}

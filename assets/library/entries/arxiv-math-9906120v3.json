@@ -1,0 +1,445 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-9906120v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-9906120v3/blocks/prop-sec-001-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 9,
+      "target": "prop-sec-001-04.md",
+      "narrative": null,
+      "content": "The push-forward of the uniform distribution on WM,N by the map S : WM,N →Ω(N) M is (1.21) PW,M,N[S−1(λ)] = PCh,M,N[{λ}] .= N! MN \u0000M−1 Y j=1 j! \u0001 VM(λ)2WM(λ) on Ω(N) M . The Poissonization of this measure is the Charlier ensemble (1.16). Consequently, (1.22) PW,M,N[L(w) ≤t] = PCh,M,N[λ1 ≤t], and for the Poissonized word problem, (1.23) Pα W,M[L(w) ≤t] .= ∞ X N=0 e−α αN N! PW,M,N[L(w) ≤t] = Pα Ch,M[λ1 ≤t]. KURT JOHANSSON",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9906120v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Abstract",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-abstract.md",
+      "narrative": null,
+      "content": "We consider discrete orthogonal polynomial ensembles which are discrete\nanalogues of the orthogonal polynomial ensembles in random matrix theory.\nThese ensembles occur in certain problems in combinatorial probability and can\nbe thought of as probability measures on partitions. The Meixner ensemble is\nrelated to a two-dimensional directed growth model, and the Charlier ensemble\nis related to the lengths of weakly increasing subsequences in random words.\nThe Krawtchouk ensemble occurs in connection with zig-zag paths in random\ndomino tilings of the Aztec diamond, and also in a certain simpliﬁed",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9906120v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction and results",
+      "pageStart": 1,
+      "pageEnd": 9,
+      "target": "../sections/sec-001-1-introduction-and-results.md",
+      "narrative": null,
+      "content": "During the last years there has been a lot of activity around the problem of\nthe distribution of the length of a longest increasing subsequence of a random\npermutation, its generalizations and their connection with random matrices,\nsee for example [Ge], [Ra], [BDJ1], [Jo3], [Ok], [BR2], [Bi], and also [AD] for\nconnections with patience and the history of the problem. Let π be a random\npermutation from the symmetric group SN with uniform distribution Pperm,N\nand let L(π) denote the length of a longest increasing subsequence in π. It is\nproved by Baik, Deift and Johansson in [BDJ1] that\n(1.1)\nli",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9906120v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/9906120v3  [math.CO]  24 Feb 2004\nAnnals of Mathematics, 153 (2001), 259–296\nDiscrete orthogonal polynomial ensembles\nand the Plancherel measure\nBy Kurt Johansson",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9906120v3/blocks/thm-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 9,
+      "target": "thm-sec-001-01.md",
+      "narrative": null,
+      "content": "For any g ∈GL, L ≥0, and α > 0 we have that (1.15) Eα Plan[g] = lim N→∞Eα/N2 Me,N,N[g]. Thus the Poissonized Plancherel measure can be obtained as a limit of the Meixner ensemble. The theorem will be proved in Section 2. KURT JOHANSSON Next, we deﬁne the Charlier ensemble on ΩM, which can be obtained as a limit of the Meixner ensemble, see (3.1). Given α > 0 we deﬁne (1.16) Pα Ch,M[{λ}] =   M−1 Y j=1 j!  VM(λ)2WM(λ) M Y i=1 \u0014\u0010 α M \u0011λi e−α/M \u0015 on ΩM. Again, the change of variables hi = λi+M −i gives a discrete Coulomb gas, (1.7). The Poissonized Plancherel measure can also be obtained as a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9906120v3/blocks/thm-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 9,
+      "target": "thm-sec-001-02.md",
+      "narrative": null,
+      "content": "For any g ∈GL, L ≥0, and α > 0, (1.17) Eα Plan[g] = lim M→∞Eα Ch,M[g]. The Charlier ensemble has a probabilistic interpretation in terms of ran- dom words, see Proposition 1.5. Since the Meixner and Charlier ensembles both correspond to discrete orthogonal polynomial ensembles they can be an- alyzed in a way similar to that in which the Hermite ensemble (GUE) is an- alyzed. This makes it possible to prove the following theorem, compare with [BOO].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9906120v3/blocks/thm-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 9,
+      "target": "thm-sec-001-03.md",
+      "narrative": null,
+      "content": "Let g ∈GL, L ≥0, be generated by f, see (1.11), and write φ = f −1. Then, (1.18) Eα Plan[g] = ∞ X k=0 k! X h∈Nk k Y j=1 φ(hj) det[Bα(hi −L, hj −L)]k i,j=1, where Bα is the discrete Bessel kernel, (1.10). Note that the right-hand side is the Fredholm determinant of the operator on ℓ2(N) with kernel Bα(x −L, y −L)φ(y). The theorem will be proved in Section 3. As an example we can take φ(t) = −χ(n,∞)(s) and L = 0. This gives Pα Plan[λ1 ≤n] = det(I −Bα)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9906120v3/blocks/thm-sec-001-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 9,
+      "target": "thm-sec-001-05.md",
+      "narrative": null,
+      "content": "Let F(t) be the Tracy-Widom distribution function (1.5). Then, for all t ∈R, (1.26) lim α→∞Pα W,M \" L(w) ≤α M + 2√α + \u0012 1 + √α M \u00132/3 α1/6t # = F(t). Assume that M = M(N) →∞as N →∞in such a way that (log N)1/6/M(N) →0. Then, for all t ∈R, (1.27) lim N→∞PW,M,N \" L(w) ≤N M + 2 √ N + \u0012 1 + √ N M \u00132/3 N 1/6t # = F(t).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9906120v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Plancherel measure as a limit of the Meixner ensemble",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-002-2-the-plancherel-measure-as-a-limit-of-the-meixn.md",
+      "narrative": null,
+      "content": "The setting is the same as in [Jo3]. Let MN denote the set of all N × N\nmatrices with elements in N. We deﬁne a probability measure, Pq\nN[·] on MN\nby letting each element aij in A ∈MN be geometrically distributed with\nparameter q ∈(0, 1), and requiring all elements to be independent. Then\n(2.1)\nPq\nN[A] = (1 −q)N2qΣ(A),\nA ∈MN, where Σ(A) = PN\ni,j=1 aij. Let MN(k) denote the set of all A in\nMN for which Σ(A) = k. Note that by (2.1) all matrices in MN(k) have\nthe same probability. Furthermore we let\n˜\nMN(k) be the set of all matrices\nA in MN(k) for which P\ni aij ≤1 for each j and P\nj aij ≤1 for e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9906120v3/blocks/lem-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 27,
+      "target": "lem-sec-003-01.md",
+      "narrative": null,
+      "content": "If M ≥ℓ(λ), then (3.2) VM(λ)WM(λ) = Vℓ(λ)(λ)Wℓ(λ)(λ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9906120v3/blocks/lem-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 27,
+      "target": "lem-sec-003-02.md",
+      "narrative": null,
+      "content": "Assume that g ∈GL and let d > 0 be given. There is a numerical constant C such that if M ≥max(L, α exp(d + 1)), then (3.11)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9906120v3/blocks/lem-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 27,
+      "target": "lem-sec-003-03.md",
+      "narrative": null,
+      "content": "Let g ∈GL be generated by f. Assume that f satisﬁes (3.12) 0 ≤f(x) ≤C0f(x −1) for all x ∈Z and some constant C0. Then (3.13) e−α X λ∈Ω∗ M,K(j) g(λ)VM(λ)2WM(λ)2 M Y i=1 αλi ≤(C0α)M−j+1 (M −j + 1)!2 F α M[g].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9906120v3/blocks/lem-sec-003-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 27,
+      "target": "lem-sec-003-04.md",
+      "narrative": null,
+      "content": "Let g ∈GL be generated by f which satisﬁes (3.12). Assume that M > K ≥max(L, e√2C0α). Then, (3.15)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9906120v3/blocks/lem-sec-003-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 27,
+      "target": "lem-sec-003-07.md",
+      "narrative": null,
+      "content": "For any x, y ∈Z, (i) (3.30) lim M→∞Kα Ch,M(M + x, M + y) = Bα(x, y). (ii) (3.31) Bα(x, y) = ∞ X k=1 Jx+k(2√α)Jy+k(2√α). ENSEMBLES AND THE PLANCHEREL MEASURE Furthermore, there is a constant C = C(α, L), such that (iii) (3.32) ∞ X x=−L Kα Ch,M(M + x, M + x) ≤C if M is large enough, and (iv) (3.33) ∞ X x=−L Bα(x, x) ≤C. (In (3.33) we can take C(α, L) = α/ √ 2 + L.)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9906120v3/blocks/lem-sec-003-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 27,
+      "target": "lem-sec-003-08.md",
+      "narrative": null,
+      "content": "Let M0 > 0 be given. Then there exists a constant C = C(M0) such that if we write x = 2√α + ξα1/6, then (3.41) |Jx(2√α)| ≤Cα−1/6 exp \u0014 −1 4 min \u00121 4α1/6, |ξ|1/2 \u0013 |ξ| \u0015 for ξ ∈[−M0, ∞). Furthermore (3.42) lim α→∞α1/6Jx(2√α) = Ai (ξ), uniformly for ξ ∈[−M0, M0]. This can be deduced from classical asymptotic results, [Wa] and it is also rather straightforward to proceed as in Section 5 of [Jo3] using the integral formula (3.28). We are now ready for the",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9906120v3/blocks/prop-sec-003-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 27,
+      "target": "prop-sec-003-05.md",
+      "narrative": null,
+      "content": "Assume that g ∈GK is generated by f which satisﬁes (3.12). Let K = [r√α], r > √ 2C0e2. Then, (3.16) Eα Plan[g] = (1 + O(r−K)) 1 Zα K X h∈NK ∆K(h)2 K Y i=1 αhi hi!2 K Y i=1 f(hi), where Zα K = X h∈NK ∆K(h)2 K Y i=1 αhi hi!2 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9906120v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Plancherel measure as a limit of the Charlier ensemble",
+      "pageStart": 12,
+      "pageEnd": 27,
+      "target": "../sections/sec-003-3-the-plancherel-measure-as-a-limit-of-the-charl.md",
+      "narrative": null,
+      "content": "3.1. The limit of the Charlier ensemble. The Charlier ensemble is deﬁned\nby (1.16). It can be obtained as a limit of the Meixner ensemble (1.14) by\ntaking q = α/MN and letting N →∞with M ﬁxed. In this limit\n(1 −q)MN\nM−1\nY\nj=0\n(N −M)!\nj!(N −M + j)!\nM\nY\ni=1\n\u0012λi + N −i\nλi + M −i\n\u0013\nqλi\n(3.1)\n→\n\n\nM−1\nY\nj=1\n1\nj!\n\nWM(λ)\nM\nY\ni=1\n\u0014\u0010 α\nM\n\u0011λi e−α/M\n\u0015\n,\nso we obtain (1.16). In light of Theorem 1.1 we see that it is reasonable to\nexpect that the Poissonized Plancherel measure should be the limit of the\nCharlier ensemble as M →∞. The interpretation of the Charlier ensemble\nin connection with random word",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9906120v3/blocks/rem-sec-003-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 27,
+      "target": "rem-sec-003-06.md",
+      "narrative": null,
+      "content": "The conﬁning potential for the discrete Coulomb gas in (3.16) is V α K[hi] = −1 K log(αhi/(hi!)2) with limit lim α→∞V α K[Kx] = 2[x log x + (log r −1)x] = V (x). We can now use general techniques for Coulomb gases, see e.g. [Jo1], [Jo3], to deduce asymptotic distribution properties. The potential V has the (con- strained) equilibrium measure; compare with Section 2 in [Jo3], u(t)dt, where u(t) =      1, if 0 ≤t ≤1 −2/r 2 −1 π arcsin( r 2(t −1)), if 1 −2/r ≤t ≤1 + 2/r 0, if t ≥1 + 2/r. Pick f(t) = exp(φ(t/[r√α])) with φ : R →R continuous, bounded together with its derivative and φ(t) = 0 i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9906120v3/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "we obtain (4.3) L(M, N, λ) = N! \u0012M−1 Y j=1 j! \u0013 VM(λ)2WM(λ). Inserting the formula (4.3) into (4.1) yields the desired result (1.21). The formulas (1.22) and (1.23) are immediate consequences. The proposition is proved. Next, we give the KURT JOHANSSON",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9906120v3/blocks/lem-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "lem-sec-004-02.md",
+      "narrative": null,
+      "content": "Let ν = M + α/M + 2√α and σ = (1 + √α/M)2/3α1/6. (i) For any M0 > 0 there is a constant C = C(M0) such that, for all integers n ≥−M0σ, (4.5) ∞ X m=1 Kα Ch,M([ν] + n + m, [ν] + n + m) ≤C. (ii) For any ε > 0 there is an L > 0 such that (4.6) ∞ X m=1 Kα Ch,M([ν] + [σL] + m, [ν] + [σL] + m) ≤ε if M, α are suﬃciently large. ENSEMBLES AND THE PLANCHEREL MEASURE (iii) For any M0 > 0 and any ε > 0, (4.7)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9906120v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Random words and the Charlier ensemble",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "../sections/sec-004-4-random-words-and-the-charlier-ensemble.md",
+      "narrative": null,
+      "content": "In this section we will prove our results on random words.\nProof of Proposition 1.5. Let L(M, N, λ) denote the number of pairs\n(P, Q) of tableaux of shape λ ∈Ω(N)\nM\nwith P semistandard with elements\nin {1, . . . , M} and Q standard with elements in {1, . . . , N}. Then\n(4.1)\nPW,M,N[S−1(λ)] =\n1\nMN L(M, N, λ).\nThe number of possible P’s is, by [Fu],\n(4.2)\ndλ(M) =\nY\n1≤i<j≤M\nλi −λj + j −i\nj −i\n=\n\n\nM−1\nY\nj=1\n1\nj!\n\nVM(λ),\nand the number of possible Q’s is f λ given by (1.13).\nBy (4.2), (4.3) and\nLemma 3.1 we obtain\n(4.3)\nL(M, N, λ) = N!\n\u0012M−1\nY\nj=1\n1\nj!\n\u0013\nVM(λ)2WM(λ).\nInserting the formula (4.3)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9906120v3/blocks/lem-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 38,
+      "target": "lem-sec-005-02.md",
+      "narrative": null,
+      "content": "If µ ∈ΩN(M), then (5.8) VM(µ′) =   N+M−1 Y j=1 j!  VN(µ)WN(µ) N Y j=1 (M + j −1 −µj)!.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9906120v3/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 38,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "Let L(W) be deﬁned by (5.3) with W an M ×N 0−1- matrix with independent Bernoulli elements w(i, j), the probability of 1 being p. Then, (5.5) P[L(W) ≤n] = PKr,N,N+M−1,p \u0014 max 1≤j≤N hj ≤n + N −1 \u0015 . ENSEMBLES AND THE PLANCHEREL MEASURE",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9906120v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Applications of the Krawtchouk ensemble",
+      "pageStart": 29,
+      "pageEnd": 38,
+      "target": "../sections/sec-005-5-applications-of-the-krawtchouk-ensemble.md",
+      "narrative": null,
+      "content": "5.1. Sepp¨al¨ainen’s ﬁrst passage percolation model. The Krawtchouk en-\nsemble is deﬁned by (1.7) with the weight w(x) =\n\u0000K\nx\n\u0001\npxqK−x, 0 ≤x ≤K, i.e.\nwe consider the probability measure\nPKr,N,K,p[h] =\n1\nZN,K,p\n∆N(h)2\nN\nY\nj=1\n\u0012K\nhj\n\u0013\nphjqK−hj\n288\nKURT JOHANSSON\non {0, . . . , K}N, where ZN,K,p = N!\n\u0012QN−1\nj=0\nj!\n(K−j)!\n\u0013\n(K!)N(pq)N(N−1)/2. The\nﬁrst problem where the Krawtchouk ensemble appears is in the simpliﬁed ﬁrst-\npassage percolation model introduced by Sepp¨al¨ainen in [Se2]. Consider the\nlattice N2 and attach a passage time τ(e) to each nearest neighbour edge. If\ne is vertical τ(e) = τ0 >",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9906120v3/blocks/thm-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 38,
+      "target": "thm-sec-005-03.md",
+      "narrative": null,
+      "content": "If µ(x, y) is given by (5.2), σ(x, y) = (pq)1/6 (xy)1/6 (√px + √qy)2/3(√qx −√py)2/3 ENSEMBLES AND THE PLANCHEREL MEASURE and py < qx, then lim n→∞P \u0002T([nx], [ny]) −nµ(x, y) σ(x, y)n1/3 ≤ξ \u0003 = 1 −F(−ξ), where F(t) is the Tracy-Widom distribution (1.5).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

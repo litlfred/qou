@@ -1,0 +1,70 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1905.11619v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1905.11619v2",
+  "contains": [
+    "library/arxiv-1905.11619v2/sections/sec-front-matter",
+    "library/arxiv-1905.11619v2/sections/sec-000",
+    "library/arxiv-1905.11619v2/sections/sec-001",
+    "library/arxiv-1905.11619v2/sections/sec-002",
+    "library/arxiv-1905.11619v2/sections/sec-003",
+    "library/arxiv-1905.11619v2/sections/sec-004",
+    "library/arxiv-1905.11619v2/sections/sec-005",
+    "library/arxiv-1905.11619v2/sections/sec-006",
+    "library/arxiv-1905.11619v2/sections/sec-007",
+    "library/arxiv-1905.11619v2/sections/sec-008",
+    "library/arxiv-1905.11619v2/sections/sec-009",
+    "library/arxiv-1905.11619v2/sections/sec-010",
+    "library/arxiv-1905.11619v2/sections/sec-011",
+    "library/arxiv-1905.11619v2/sections/sec-012",
+    "library/arxiv-1905.11619v2/sections/sec-013",
+    "library/arxiv-1905.11619v2/sections/sec-014",
+    "library/arxiv-1905.11619v2/sections/sec-015"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "L2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS — We study (quasi-)cohomological properties through an analysis of quantum Markov semi-groups.\n\n**L2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS**\n\n*MARTIJN CASPERS, YUSUKE ISONO, AND MATEUSZ WASILEWSKI*\n\n24 pp, 17 sections.\n\n**Abstract.** We study (quasi-)cohomological properties through an analysis of quantum Markov semi-groups. We construct higher order Hochschild cocycles using gradient forms associated with a quantum Markov semi-group. By using Schatten-Sp estimates we analyze when these cocycles take values in the coarse bimodule. For the 1-cocycles (the derivations) we show that under natural conditions we obtain the Akemann-Ostrand property. We apply this to q-Gaussian algebras Γq(HR). As a result q-Gaussians satisfy AO+ for |q| ⩽dim(HR)−1/2. This includes a new range of q in low dimensions compared to Shlyakhtenko [Shl04].\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 2.1 General conventions and notation; 2.2 Containment of bimodules; 2.3 Hochschild cohomology; 3 Gradient tensoring, n-cocycles and gradient-; 3.2 Construction of n-cocycles.; 3.3 The Haagerup averaging technique; 4 Schatten Sp-estimates for the Ornstein-Uhlen; 4.1 q-Gaussian algebras; 4.2 Gradient-Sp estimates; 4.3 Consequences for Cartan rigidity; 5 Derivations and the Akemann-Ostrand property; 5.1 Group algebras; 5.2 Von Neumann algebras with filtration; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1905.11619&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1905.11619v2",
+    "title_source": "slug",
+    "source_file": "1905.11619v2.pdf",
+    "source_sha256": "f634f9ec4357d5f34d5a161a0fea1e598715b059592cfd5813b0a85d3764cd83",
+    "pages": 24,
+    "arxiv": {
+      "id": "1905.11619",
+      "version": "2",
+      "primary_class": "math.OA",
+      "stamp_date": "13 Feb 2020"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

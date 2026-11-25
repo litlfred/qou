@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-t-beta-markov-frobenius-collapse-general",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:t-beta-markov-frobenius-collapse-general",
+  "kind": "proposition",
+  "title": "Min-Frobenius-norm collapse: T_β = S · 1_A — general unital R-algebra lift of [prop:t-beta-markov-frobenius-collapse]",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-t-beta-markov-frobenius-collapse",
+    "papers/quantum-observable-universe/blocks/prop-markov-trace-frobenius-selection"
+  ],
+  "cites": [
+    "references/jones1987",
+    "references/wenzl1988"
+  ],
+  "tags": [
+    "markov-trace",
+    "frobenius",
+    "q-beta",
+    "min-norm",
+    "categorical-collapse",
+    "general-lift",
+    "typeclass"
+  ],
+  "leanRef": "qou:QOU.QBeta.MarkovFrobeniusCollapse.General.markov_frobenius_min_norm_twisted",
+  "text": "t-beta-markov-frobenius-collapse-general.md",
+  "leanSource": "t-beta-markov-frobenius-collapse-general.lean",
+  "provenance": "authored"
+}

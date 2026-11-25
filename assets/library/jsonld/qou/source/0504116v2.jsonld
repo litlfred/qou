@@ -1,0 +1,69 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0504116v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "On deformations of hyperbolic 3–manifolds with geodesic boundary",
+  "contains": [
+    "library/0504116v2/sections/sec-front-matter",
+    "library/0504116v2/sections/sec-000",
+    "library/0504116v2/sections/sec-001",
+    "library/0504116v2/sections/sec-002",
+    "library/0504116v2/sections/sec-003",
+    "library/0504116v2/sections/sec-004",
+    "library/0504116v2/sections/sec-005",
+    "library/0504116v2/sections/sec-006",
+    "library/0504116v2/sections/sec-007",
+    "library/0504116v2/sections/sec-008",
+    "library/0504116v2/sections/sec-009",
+    "library/0504116v2/sections/sec-010",
+    "library/0504116v2/sections/sec-011",
+    "library/0504116v2/sections/sec-012",
+    "library/0504116v2/sections/sec-013",
+    "library/0504116v2/sections/sec-014",
+    "library/0504116v2/sections/sec-015",
+    "library/0504116v2/sections/sec-016",
+    "library/0504116v2/sections/sec-017",
+    "library/0504116v2/sections/sec-018",
+    "library/0504116v2/sections/sec-019",
+    "library/0504116v2/sections/sec-020",
+    "library/0504116v2/sections/sec-021"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On deformations of hyperbolic 3-manifolds with geodesic boundary (Frigerio, AGT 6 (2006) 435–457) — the solution variety of consistency equations for a geometric partially truncated triangulation…\n\n**On deformations of hyperbolic 3-manifolds with geodesic boundary** — Roberto Frigerio. Algebraic & Geometric Topology 6 (2006) 435–457.\n\nFor M a complete finite-volume hyperbolic 3-manifold with compact non-empty geodesic boundary and k toric cusps, and T a geometric partially truncated triangulation of M: the variety of solutions of the consistency equations for T is a smooth manifold of real dimension 2k near the point representing the unique complete structure. Consequences follow for the relation between deformations of triangulations and deformations of the hyperbolic structure.\n\n**Why it may bear here.** Consistency (\"gluing\") equations and their solution variety are the same machinery as the Ptolemy / gluing-equation material already registered (garoufalidis-goerner-zickert2012); this is the geodesic-boundary case.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "agent",
+        "id": "claude-code",
+        "model": "not-disclosed",
+        "session": "https://claude.ai/code/session_01AWgkrPkXGZ1Hb2UmMmFMcP",
+        "date": "2026-08-15"
+      },
+      "drafted_at": "2026-08-15"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "0504116v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0504116v2.pdf",
+    "source_sha256": "24a8c998e40aed5da14e751f564ab590a3b178075b00896f42def6e23ec0927f",
+    "pages": 24,
+    "arxiv": null,
+    "doi": "10.2140/agt.2006.6.435",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

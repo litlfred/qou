@@ -1,0 +1,2966 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1610.02592v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 9,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "An Introduction to Geometric Topology\nBruno Martelli\narXiv:1610.02592v3  [math.GT]  5 Apr 2022\nBruno Martelli\nUniversity of Pisa, Italy\nhttp://people.dm.unipi.it/martelli/\nVersion 2.0 of April 2022\nTo Ada, Sara, and Ylenia.\nContents\nIntroduction\n1\nPart 1.\nHyperbolic geometry\n5\nChapter 1.\nPreliminaries\n7\n1.1.\nDiﬀerential topology\n7\n1.2.\nRiemannian geometry\n15\n1.3.\nMeasure theory\n23\n1.4.\nGroups\n26\n1.5.\nGroup actions\n32\n1.6.\nHomology\n34\n1.7.\nCells and handle decompositions\n37\nChapter 2.\nHyperbolic space\n45\n2.1.\nThe models of hyperbolic space\n45\n2.2.\nCompactiﬁcation and isometries of hyperbolic sp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 9,
+      "pageEnd": 13,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "The aim of this book is to introduce the reader to an area of mathematics\ncalled geometric topology. The text should be suitable to a master or PhD\nstudent in mathematics interested in geometry, and more generally to any\ncurious mathematician with a standard background in topology and analysis.\nWe interpret here the term “geometric topology” in a quite restrictive\nsense: for us, this topic is the study of topological manifolds via the assign-\nment of a preferred “geometric structure,” that is some Riemannian metric\nof a particular nice kind. It is one of the most important discoveries in mod-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Part 1. Hyperbolic geometry",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-001-part-1-hyperbolic-geometry.md",
+      "narrative": null,
+      "content": "CHAPTER 1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chapter 1. Preliminaries",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-002-chapter-1-preliminaries.md",
+      "narrative": null,
+      "content": "We expect the reader to be familiar with the mathematics usually taught\nto undergraduates, like multivariable diﬀerential calculus, group theory, topo-\nlogical spaces, and fundamental groups.\nSome knowledge on diﬀerentiable and Riemannian manifolds would also\nhelp, at least on an intuitive way: in any case, this chapter introduces from",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Differential topology",
+      "pageStart": 15,
+      "pageEnd": 23,
+      "target": "../sections/sec-003-11-differential-topology.md",
+      "narrative": null,
+      "content": "\\label{differential:topology:section}\nWe introduce manifolds, bundles, embeddings, tubular neighbourhoods, isotopies, and connected sums. Throughout this book, we will always work in the smooth category. \nThe material contained in this section is carefully explained in \\emph{Differentiable manifolds} of Kosinksi \\cite{K}.\n\n\n\\subsection{Differentiable manifolds}\nA \\emph{topological manifold} of dimension $n$ is a paracompact Hausdorff topological space $M$ locally homeomorphic to $\\matR^n$. In other words, there is a covering $\\{U_i\\}$ of $M$ consisting of open sets $U_i$ homeomorphic to open s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p016-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../images/img-p016-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p017-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../images/img-p017-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Riemannian geometry",
+      "pageStart": 23,
+      "pageEnd": 31,
+      "target": "../sections/sec-004-12-riemannian-geometry.md",
+      "narrative": null,
+      "content": "We briefly introduce Riemannian manifolds and their geometric properties: distance, geodesics, volume, exponential map, injectivity radius, completeness, curvature, and isometries. These notions are carefully explained in do Carmo's \\emph{Riemannian Geometry} \\cite{Do}.\n\n\n\\subsection{Metric tensor}\nA differentiable manifold lacks many natural geometric notions, such as distance between points, angle between vectors, path lengths, geodesics, volumes, etc. It is a quite remarkable fact that the introduction of a single additional mathematical entity suffices to recover all these geometric notion",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p029-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../images/img-p029-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Measure theory",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "../sections/sec-005-13-measure-theory.md",
+      "narrative": null,
+      "content": "\\label{measure:theory:section}\nWe will use some basic measure theory only in Chapter \\ref{automorfismi:chapter}.\n\n\n\\subsection{Borel measure}\nA \\emph{Borel set} in a topological space $X$ is any subset obtained from open sets through the operations of countable union, countable intersection, and relative complement. Let $\\calF$ denote the set of all Borel sets.\nA \\emph{Borel measure} on $X$ is a function $\\mu\\colon \\calF \\to [0,+\\infty]$ which is additive on any countable collection of disjoint sets. \n\\index{Borel set}\n\\index{Borel measure}\n\nThe measure is \\emph{locally finite} if every point",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Groups",
+      "pageStart": 34,
+      "pageEnd": 40,
+      "target": "../sections/sec-006-14-groups.md",
+      "narrative": null,
+      "content": "We recall some basic definitions and properties of groups. \n\n\n\\subsection{Presentations}\nRecall that a \\emph{finite presentation} of a group $G$ is a description of $G$ as\n$$\\langle g_1,\\ldots, g_k\\ |\\ r_1,\\ldots, r_s \\rangle$$\nwhere $g_1,\\ldots, g_k\\in G$ are the \\emph{generators} and $r_1,\\ldots, r_s$ are words in $g_i^{\\pm 1}$ called \\emph{relations}, such that \n$$G \\Isom F(g_i)/_{N(r_j)}$$\nwhere $F(g_i)$ is the free group generated by the $g_i$'s and $N(r_j)\\triangleleft F(g_i)$ is the \\emph{normal closure} of the $r_j$'s, the smallest normal subgroup containing them. \n\\index{finite presen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Group actions",
+      "pageStart": 40,
+      "pageEnd": 42,
+      "target": "../sections/sec-007-15-group-actions.md",
+      "narrative": null,
+      "content": "Groups acting of spaces are so important in geometry, that they are sometimes used as a definition of  ``geometry'' itself.\n\n\n\\subsection{Definitions}\nThe \\emph{action} of a group $G$ on a topological space $X$ is a homomorphism \n$$G\\to \\Omeo (X)$$ \nwhere $\\Omeo(X)$ is the group of all self-homeomorphisms of $X$. The quotient set $X/_G$ is the set of all orbits in $X$ and we give it the usual quotient topology. We denote by $g(x)$ the image of $x\\in X$ along the homeomorphism determined by $g\\in G$. The action is:\n\\begin{itemize}\n\\item \\emph{free} if $g(x) \\neq x$ for all non-trivial $g\\in G$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Homology",
+      "pageStart": 42,
+      "pageEnd": 45,
+      "target": "../sections/sec-008-16-homology.md",
+      "narrative": null,
+      "content": "The singular homology theory needed in this book is not very deep: all the homology groups of the manifolds that we consider are boringly determined by their fundamental group. The theory is quickly reviewed in this section, a standard introduction is Hatcher's \\emph{Algebraic Topology} \\cite{HAT}.\n\n\n\\subsection{Definition}\nLet $X$ be a topological space and $R$ be a ring. The cases $R = \\matZ$, $\\matR$, or $\\matZ/_{2\\matZ}$ are typically the most interesting ones.\n\nA \\emph{singular $k$-simplex} is a continuous map $\\alpha\\colon \\Delta_k \\to X$ from the standard  $k$-dimensional simplex $\\Delt",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cells and handle decompositions",
+      "pageStart": 45,
+      "pageEnd": 53,
+      "target": "../sections/sec-009-17-cells-and-handle-decompositions.md",
+      "narrative": null,
+      "content": "Many nice topological spaces can be constructed iteratively starting from finitely many points and then attaching some discs of increasing dimension called \\emph{cells}. When the topological space is a differentiable manifold one typically thickens the cells to \\emph{handles}. \n\nCells and handles are beautifully introduced by Hatcher \\cite{HAT} and Kosinksi \\cite{K}, respectively.\n\n\n\\subsection{Cell complexes}\nA \\emph{finite cell complex} of dimension $n$ (briefly, a $n$-complex) is a topological space obtained iteratively in the following manner:\n\\begin{itemize}\n\\item a $0$-complex $X^0$ is a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p050-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 50,
+      "pageEnd": 50,
+      "target": "../images/img-p050-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chapter 2. Hyperbolic space",
+      "pageStart": 53,
+      "pageEnd": 53,
+      "target": "../sections/sec-010-chapter-2-hyperbolic-space.md",
+      "narrative": null,
+      "content": "In every dimension n ⩾2 there exists a unique simply connected complete\nRiemannian manifold with constant sectional curvature 1, 0, or −1. These are\nthe sphere Sn, the Euclidean space Rn, and the hyperbolic space Hn.\nThese manifolds are the three most important spaces in Riemannian geom-\netry. We introduce in this chapter the least familiar and the most interesting\nof the three: hyperbolic space.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The models of hyperbolic space",
+      "pageStart": 53,
+      "pageEnd": 66,
+      "target": "../sections/sec-011-21-the-models-of-hyperbolic-space.md",
+      "narrative": null,
+      "content": "In contrast with $S^n$ and $\\matR^n$, the hyperbolic space $\\matH^n$ may be described in various different ways, no-one of which is prevalent in the literature. Each description is a \\emph{model} for $\\matH^n$. We first introduce the hyperboloid model, which has a more algebraic flavour, and then we turn to the disc and half-space models that are somehow more geometric (and easier to visualise in dimensions $n=2$ and $3$).\n\n\n\\subsection{Hyperboloid}\nThe sphere $S^n$ is the set of all points with norm 1 in $\\matR^{n+1}$, equipped with the Euclidean scalar product. Analogously, we may define $\\m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p054-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 54,
+      "target": "../images/img-p054-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p060-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 60,
+      "pageEnd": 60,
+      "target": "../images/img-p060-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p061-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 61,
+      "pageEnd": 61,
+      "target": "../images/img-p061-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p061-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 61,
+      "pageEnd": 61,
+      "target": "../images/img-p061-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p061-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 61,
+      "pageEnd": 61,
+      "target": "../images/img-p061-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p066-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 66,
+      "pageEnd": 66,
+      "target": "../images/img-p066-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Compactification and isometries of hyperbolic space",
+      "pageStart": 66,
+      "pageEnd": 72,
+      "target": "../sections/sec-012-22-compactification-and-isometries-of-hyperbolic.md",
+      "narrative": null,
+      "content": "In this section we compactify the hyperbolic space $\\matH^n$ by adding some ``points at infinity''. The compactification will then be used to classify the isometries of $\\matH^n$ into three types. We also study the mutual position of two subspaces and define some peculiar hyperbolic objects: the horospheres. \n\n\n\\subsection{Points at infinity}\nLet a \\emph{geodesic half-line} in $\\matH^n$ be a geodesic $\\gamma\\colon [0,+\\infty) \\to \\matH^n$ with constant unit speed. \\index{geodesic!geodesic half-line}\n\\begin{defn} The set $\\partial \\matH^n$ of the \\emph{points at infinity} in $\\matH^n$ is the se",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Isometry groups in dimensions two and three",
+      "pageStart": 72,
+      "pageEnd": 76,
+      "target": "../sections/sec-013-23-isometry-groups-in-dimensions-two-and-three.md",
+      "narrative": null,
+      "content": "\\label{isometry:2:3:section}\nWith the hyperboloid model the isometry group $\\Iso(\\matH^n)$ is the matrix group $O^+(n,1)$. We now see that in dimensions $n=2$ and $3$ the group $\\Iso^+(\\matH^n)$ is also isomorphic to some familiar groups of $2\\times 2$ matrices. \n\nWe start with a concise tour on M\\\"obius transformations. \n\\index{M\\\"obius transformation and anti-transformation}\n\n\n\\subsection{M\\\"obius transformations}\nLet the \\emph{Riemann sphere} be $S=\\matC \\cup \\{\\infty\\}$, homeomorphic to $S^2$. Consider the group\n$$ \\PSLC = \\SLC/_{\\pm I} = \\GLC/_{\\{ \\lambda I\\}} = \\PGLC $$\nof all $2\\times 2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometry of hyperbolic space",
+      "pageStart": 76,
+      "pageEnd": 81,
+      "target": "../sections/sec-014-24-geometry-of-hyperbolic-space.md",
+      "narrative": null,
+      "content": "We study the geometry of $\\matH^n$. We prove that $\\matH^n$ has constant sectional curvature $-1$, that the distance function along lines is convex, we define convex combinations and barycenters, and study parallel transport along lines. Finally, we prove that $\\Iso(\\matH^n)$ is a unimodular Lie group.\n\n\n\\subsection{Area and curvature}\nWe can verify that $\\matH^n$ has constant sectional curvature $-1$. It should be no surprise that $\\matH^n$ has constant curvature, since it has many symmetries (\\emph{i.e.}~isometries). To calculate its sectional curvature we compute the area of a disc. \n\n\\begi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chapter 3. Hyperbolic manifolds",
+      "pageStart": 81,
+      "pageEnd": 81,
+      "target": "../sections/sec-015-chapter-3-hyperbolic-manifolds.md",
+      "narrative": null,
+      "content": "A hyperbolic manifold is a Riemannian manifold locally isometric to the\nhyperbolic space Hn. Maybe the most striking aspect of geometric topology\nis that, despite this quite restrictive deﬁnition, there are plenty of hyperbolic\nmanifolds around, especially in the dimensions n = 2 and 3. For that reason\nhyperbolic manifolds (and hence hyperbolic geometry) play a central role in\nthe topology of surfaces and three-manifolds.\nThe study of complete hyperbolic manifolds is tightly connected to that\nof discrete subgroups in the Lie group Isom(Hn) and of polyhedra in Hn, so\nit has both an algebraic an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discrete groups of isometries",
+      "pageStart": 81,
+      "pageEnd": 86,
+      "target": "../sections/sec-016-31-discrete-groups-of-isometries.md",
+      "narrative": null,
+      "content": "We define hyperbolic manifolds and prove a crucial theorem, that says that every complete hyperbolic manifold is isometric to a quotient $\\matH^n/_\\Gamma$ for some discrete group $\\Gamma <\\Iso(\\matH^n)$ acting freely on $\\matH^n$.\n\n\n\\subsection{Hyperbolic, flat, and elliptic manifolds}\nWe introduce three important classes of Riemannian manifolds.\n\\index{hyperbolic manifold} \\index{flat manifold} \\index{elliptic manifold}\n\n\\begin{defn} A \\emph{hyperbolic} (resp.~\\emph{flat} or \\emph{elliptic}) \\emph{manifold} is a connected Riemannian $n$-manifold that may be covered by open sets isometric to o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Polyhedra",
+      "pageStart": 86,
+      "pageEnd": 90,
+      "target": "../sections/sec-017-32-polyhedra.md",
+      "narrative": null,
+      "content": "A polyhedron in $\\matH^n$ is a natural geometric object, that may be used to visualise discrete groups in $\\Iso(\\matH^n)$ and hence hyperbolic manifolds. \nPolyhedra may sometimes be combined to form some tessellations of the space. \n\n\n\\subsection{Polyhedra} \\label{polyhedra:subsection}\nA \\emph{half-space} in $\\matH^n$ is the closure of one of the two portions of space delimited by a hyperplane. We say that a set of half-spaces is locally finite if their boundary hyperplanes are. \\index{polyhedron}\n\n\\begin{defn}\nA $n$-dimensional \\emph{polyhedron} $P$ in $\\matH^n$ is the intersection of a local",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p089-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 89,
+      "pageEnd": 89,
+      "target": "../images/img-p089-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p089-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 89,
+      "pageEnd": 89,
+      "target": "../images/img-p089-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tessellations",
+      "pageStart": 90,
+      "pageEnd": 97,
+      "target": "../sections/sec-018-33-tessellations.md",
+      "narrative": null,
+      "content": "A tessellation is a nice paving of $\\matH^n$ made of polyhedra. Not only tessellations are beautiful objects, but they are also tightly connected with discrete groups of $\\Iso(\\matH^n)$ and hence with hyperbolic manifolds.\n\n\n\\index{tessellation}\n\n\\begin{defn}\nA \\emph{tessellation} of $\\matH^n$ (or $\\matR^n$, $S^n$) is a locally finite set of polyhedra that cover the space and may intersect only in common faces.\n\\end{defn}\n\n\\begin{figure}\n\\begin{center}\n\\includegraphics[width = 5 cm] {\\iftoggle{BW}{Uniform_tiling_532-t012-BW}{Uniform_tiling_532-t012}} \\quad\n\\includegraphics[width = 5 cm] {\\ifto",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p091-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 91,
+      "pageEnd": 91,
+      "target": "../images/img-p091-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p091-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 91,
+      "pageEnd": 91,
+      "target": "../images/img-p091-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p091-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 91,
+      "pageEnd": 91,
+      "target": "../images/img-p091-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p091-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 91,
+      "pageEnd": 91,
+      "target": "../images/img-p091-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p091-5",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 91,
+      "pageEnd": 91,
+      "target": "../images/img-p091-5.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p092-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 92,
+      "pageEnd": 92,
+      "target": "../images/img-p092-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p092-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 92,
+      "pageEnd": 92,
+      "target": "../images/img-p092-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p092-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 92,
+      "pageEnd": 92,
+      "target": "../images/img-p092-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p092-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 92,
+      "pageEnd": 92,
+      "target": "../images/img-p092-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p092-5",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 92,
+      "pageEnd": 92,
+      "target": "../images/img-p092-5.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p092-6",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 92,
+      "pageEnd": 92,
+      "target": "../images/img-p092-6.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p093-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 93,
+      "pageEnd": 93,
+      "target": "../images/img-p093-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p093-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 93,
+      "pageEnd": 93,
+      "target": "../images/img-p093-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p094-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 94,
+      "pageEnd": 94,
+      "target": "../images/img-p094-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p094-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 94,
+      "pageEnd": 94,
+      "target": "../images/img-p094-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p095-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 95,
+      "pageEnd": 95,
+      "target": "../images/img-p095-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p095-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 95,
+      "pageEnd": 95,
+      "target": "../images/img-p095-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p095-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 95,
+      "pageEnd": 95,
+      "target": "../images/img-p095-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p096-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 96,
+      "pageEnd": 96,
+      "target": "../images/img-p096-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fundamental domains",
+      "pageStart": 97,
+      "pageEnd": 105,
+      "target": "../sections/sec-019-34-fundamental-domains.md",
+      "narrative": null,
+      "content": "We turn back to our discrete subgroups $\\Gamma < \\Iso(\\matH^n)$. The geometry of a discrete $\\Gamma$ is nicely controlled by some polyhedra, called \\emph{fundamental domains}.\nWe introduce these objects and make some important examples.\n\n\n\\subsection{Fundamental and Dirichlet domains}\nLet $\\Gamma$ be a discrete group of isometries of $\\matH^n$. The group $\\Gamma$ may or may not act freely on $\\matH^n$.  \\index{fundamental domain}\n\\begin{defn}\nA \\emph{fundamental domain} for $\\Gamma$ is a polyhedron $D \\subset\\matH^n$ whose translates $g(D)$ as $g\\in \\Gamma$ varies are distinct and form a tesse",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p098-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 98,
+      "pageEnd": 98,
+      "target": "../images/img-p098-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geodesic boundary, non-complete, and cone manifolds",
+      "pageStart": 105,
+      "pageEnd": 109,
+      "target": "../sections/sec-020-35-geodesic-boundary-non-complete-and-cone-manif.md",
+      "narrative": null,
+      "content": "We now introduce three important variations on the complete hyperbolic manifolds theme.\nThe first consists of admitting a totally geodesic boundary, the second is a brief overlook of some phenomena that may occur when the completeness hypothesis is dropped, and in the third we allow some conical singularity on a codimension-two geodesic stratum.\n\n\n\\subsection{Hyperbolic manifolds with geodesic boundary}\nWe reformulate a definition of hyperbolic (elliptic, flat) manifolds that allows the presence of some geodesic boundary. These manifolds are useful because they can be glued along their boundar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Orbifolds",
+      "pageStart": 109,
+      "pageEnd": 117,
+      "target": "../sections/sec-021-36-orbifolds.md",
+      "narrative": null,
+      "content": "An orbifold is an object locally modelled on finite quotients of $\\matR^n$. It naturally arises when we quotient a Riemannian manifold by a discrete group of isometries that may not act freely. Orbifolds behave like manifolds on many aspects.\n\n\n\\subsection{Definition} Let $\\Gamma < \\On(n)$ be a finite group of linear isometries and $V\\subset \\matR^n$ be a $\\Gamma$-invariant open set. The resulting map\n$$\\varphi \\colon V \\longrightarrow V/_\\Gamma$$\nis called a \\emph{local orbifold model}. For instance, we may pick $V=B(0,r)$. \\index{orbifold!local model of an orbifold}\n\nWe now generalise manifo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chapter 4. Thick-thin decomposition",
+      "pageStart": 117,
+      "pageEnd": 117,
+      "target": "../sections/sec-022-chapter-4-thick-thin-decomposition.md",
+      "narrative": null,
+      "content": "A peculiar aspect of hyperbolic geometry is the existence of complete hy-\nperbolic manifolds that have ﬁnite volume but are not compact. These mani-\nfolds behave like the compact ones in many aspects, but are sometimes easier\nto construct. They arise naturally when we study hyperbolic surfaces, and are\na fundamental constituent of Thurston’s geometrisation of three-manifolds.\nWe prove here a structure theorem for all such manifolds. The theorem\nsays that every ﬁnite-volume complete hyperbolic manifold can be decomposed\ninto two domains: a thick part which is compact and has injectivity radius",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tubes and cusps",
+      "pageStart": 117,
+      "pageEnd": 123,
+      "target": "../sections/sec-023-41-tubes-and-cusps.md",
+      "narrative": null,
+      "content": "\\label{tubes:cusps:section}\nWe introduce here two very simple kinds of hyperbolic manifolds, so simple that their fundamental groups will be called \\emph{elementary} in the sequel: the tubes and the cusps. Before introducing them we show that the injectivity radius of a hyperbolic manifold behaves nicely.\n\nWe also study the closed geodesics in a hyperbolic manifold $M$, and prove that there is precisely one in every free homotopy class of closed curves of hyperbolic type.\n\n\n\\subsection{Injectivity radius}\nLike many other geometric properties, the injectivity radius of a complete hyperbolic man",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p120-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 120,
+      "pageEnd": 120,
+      "target": "../images/img-p120-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Margulis Lemma",
+      "pageStart": 123,
+      "pageEnd": 131,
+      "target": "../sections/sec-024-42-the-margulis-lemma.md",
+      "narrative": null,
+      "content": "We state and prove the \\emph{Margulis Lemma}, that concerns arbitrary discrete groups in Lie groups and more specifically in $\\Iso(\\matH^n)$. The lemma implies that there is a constant $\\varepsilon>0$, which depends only on the dimension $n$, such that the $\\varepsilon$-thin part of any complete hyperbolic $n$-manifold consists of truncated cusps and tubes only. The $\\varepsilon$-thin part is by definition the set of all the points with injectivity radius smaller than $\\varepsilon$.\n\nThe proof of the lemma for general Lie groups is surprisingly simple and elegant; its application to the hyperb",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geodesic spectrum, isometry groups, and finite covers",
+      "pageStart": 131,
+      "pageEnd": 136,
+      "target": "../sections/sec-025-43-geodesic-spectrum-isometry-groups-and-finite.md",
+      "narrative": null,
+      "content": "\\label{geodesic:spectrum:section}\nWe now study the geodesic spectrum and the isometry group of hyperbolic manifolds. The geodesic spectrum of $M$ is the set of the lengths of all the closed geodesics in $M$. We prove that a finite-volume $M$ has a discrete geodesic spectrum (with finite multiplicities) and a finite isometry group.\\index{geodesic spectrum}\n\nThen we turn to finite covers and derive some geometric consequences from the residually finiteness of fundamental groups.\n\nWe are almost exclusively interested in finite-volume hyperbolic manifolds. The general strategy when proving somethi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Bieberbach Theorem",
+      "pageStart": 136,
+      "pageEnd": 143,
+      "target": "../sections/sec-026-44-the-bieberbach-theorem.md",
+      "narrative": null,
+      "content": "\\label{Bieberbach:section}\nThe Margulis Lemma for Lie groups is fairly general and has important applications also in the elliptic and flat geometries. The most important one is the Bieberbach Theorem.\n\n\n\\subsection{Elliptic manifolds}\nRecall that every complete elliptic manifold is isometric to $S^n/_\\Gamma$ for some finite group $\\Gamma < \\On(n) = \\Iso(S^{n-1})$ acting freely. We now improve the Margulis Lemma \\ref{G:lemma} for $G=\\On(n)$ by promoting ``nilpotent'' to ``abelian''. To this purpose we need the following.\n\n\\begin{lemma} \\label{backwards:lemma}\nThere is a neighbourhood $U$ of $I",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chapter 5. The sphere at infinity",
+      "pageStart": 143,
+      "pageEnd": 143,
+      "target": "../sections/sec-027-chapter-5-the-sphere-at-infinity.md",
+      "narrative": null,
+      "content": "We have discovered that every complete hyperbolic manifold is a quotient\nM = Hn/Γ for some discrete group Γ < Isom(Hn) acting freely, and we now\nraise the following question: how does Γ act on the boundary ∂Hn at inﬁnity?\nDoes the action of Γ on ∂Hn furnish some information on the geometry of M?\nWe show in this chapter that ∂Hn subdivides naturally into two Γ-invariant\nsubsets: an open set Ω(Γ) called the domain of discontinuity where the action\nof Γ is properly discontinuous (like in Hn) and a complementary closed set",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Limit set",
+      "pageStart": 143,
+      "pageEnd": 151,
+      "target": "../sections/sec-028-51-limit-set.md",
+      "narrative": null,
+      "content": "How does a discrete group $\\Gamma $ of isometries of $\\matH^n$ act on the boundary at infinity $\\partial \\matH^n$? We now prove that $\\partial \\matH^n$ divides canonically into two $\\Gamma$-invariant subsets: an open zone $\\Omega(\\Gamma)$ where $\\Gamma$ acts properly discontinuously, and a closed one $\\Lambda(\\Gamma)$ where it does not. These regions are called respectively the \\emph{domain of discontinuity} and the \\emph{limit set} of $\\Gamma$. \n\n\n\\subsection{The limit set}\nThroughout this section, we let $\\Gamma$ be a non-trivial discrete group of isometries of $\\matH^n$. Fix a point $x\\in\\m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p148-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 148,
+      "pageEnd": 148,
+      "target": "../images/img-p148-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p148-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 148,
+      "pageEnd": 148,
+      "target": "../images/img-p148-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p149-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 149,
+      "pageEnd": 149,
+      "target": "../images/img-p149-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p150-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 150,
+      "pageEnd": 150,
+      "target": "../images/img-p150-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p151-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 151,
+      "pageEnd": 151,
+      "target": "../images/img-p151-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p151-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 151,
+      "pageEnd": 151,
+      "target": "../images/img-p151-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Extensions of homotopies",
+      "pageStart": 151,
+      "pageEnd": 161,
+      "target": "../sections/sec-029-52-extensions-of-homotopies.md",
+      "narrative": null,
+      "content": "This section is entirely devoted to the proof of the following theorem. Recall that every map $f\\colon M\\to N$ between connected manifolds lifts to a (non-unique) map $\\tilde f\\colon \\tilde M \\to \\tilde N$ between their universal covers.\n\\begin{teo} \\label{estensione:teo}\nLet $f\\colon M \\to N$ be a smooth homotopy equivalence between closed hyperbolic $n$-manifolds. Every lift $\\tilde f\\colon \\matH^n \\to \\matH^n$ extends to a continuous map $\\tilde f\\colon \\overline{\\matH^n} \\to \\overline{\\matH^n}$ whose restriction $\\tilde f|_{\\partial \\matH^n}\\colon \\partial \\matH^n \\to \\partial \\matH^n$ is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Topological classification",
+      "pageStart": 161,
+      "pageEnd": 165,
+      "target": "../sections/sec-030-61-topological-classification.md",
+      "narrative": null,
+      "content": "A surface can be topologically quite complicated: think for instance of $\\matR^2$ with a Cantor set removed. We decide to restrict our investigation to the surfaces \\emph{of finite type}, i.e.~obtained from a closed one by removing points and/or open discs: these include all the compact surfaces with or without boundary.\nWe introduce here these surfaces and classify them up to diffeomorphism.\n\nWe manipulate surfaces using various cut-and-paste tools: boundary gluings, removal of discs or points, handle decompositions, connected sums. See Section \\ref{differential:topology:section} to refresh t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p162-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 162,
+      "pageEnd": 162,
+      "target": "../images/img-p162-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p162-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 162,
+      "pageEnd": 162,
+      "target": "../images/img-p162-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p162-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 162,
+      "pageEnd": 162,
+      "target": "../images/img-p162-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometrisation",
+      "pageStart": 165,
+      "pageEnd": 176,
+      "target": "../sections/sec-031-62-geometrisation.md",
+      "narrative": null,
+      "content": "\\label{surface:geometrisation:section}\nWe now prove that every surface $S_{g,b,p}$ of finite type can be \\emph{geometrised}, that is it may be equipped with a hyperbolic, flat, or elliptic metric. The metric type is prescribed by the sign of the Euler characteristic of the surface.\n\n\n\\subsection{Hyperbolic pair-of-pants} \\label{pantaloni:subsection}\nThe sphere has of course an elliptic structure, and the torus has many flat structures, see Section \\ref{piatte:subsection}. We now construct hyperbolic structures on all the surfaces $S_g$ of genus $g\\geqslant 2$, and more generally on all the sur",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Curves on surfaces",
+      "pageStart": 176,
+      "pageEnd": 189,
+      "target": "../sections/sec-032-63-curves-on-surfaces.md",
+      "narrative": null,
+      "content": "\\label{curves:surfaces:section}\nIt is natural to study a manifold by examining the lower-dimensional sub-manifolds that it contains: we now look at closed curves in surfaces and unveil an unexpectedly rich world. We will discover that the study of curves in surfaces is tightly connected to hyperbolic geometry: \neach of the two topics seems designed to give us a better understanding of the other.\n\nWe first prove various facts on curves, and then we use this knowledge to deduce some topological non-trivial results on surfaces. We will end up by showing that two self-diffeomorphisms of a closed s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Homotopy and isotopy",
+      "pageStart": 189,
+      "pageEnd": 193,
+      "target": "../sections/sec-033-64-homotopy-and-isotopy.md",
+      "narrative": null,
+      "content": "We have proved that ``homotopy implies isotopy'' for non-trivial simple closed curves in $S_g$, and now we want to prove an analogous result for diffeomorphisms of $S_g$.\nA crucial ingredient is the following theorem proved by Smale in the 1950s, which considers the self-diffeomorphisms of the disc $D^2$.\n\n\\begin{teo} \\label{Smale:teo}\nTwo diffeomorphisms $\\varphi, \\psi\\colon D^2 \\to D^2$ that coincide on $\\partial D^2$ are isotopic, via an isotopy that fixes $\\partial D^2$ pointwise.\n\\end{teo}\n\nThere is a proof of Theorem \\ref{Smale:teo} in the topological category that is surprisingly easy a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mapping class group",
+      "pageStart": 193,
+      "pageEnd": 199,
+      "target": "../sections/sec-034-65-mapping-class-group.md",
+      "narrative": null,
+      "content": "\\label{MCG:section}\nWe have just proved that two self-diffeomorphisms of $S_g$ are homotopic if and only if they are isotopic. We have also seen that when $g=0$ there are only two self-diffeomorphisms up to isotopy: the identity and a reflection. Do we get a more complicated picture when $g\\geqslant 1$? Yes, we get an interesting group, called the \\emph{mapping class group} of $S_g$. The group is naturally defined on all finite-type surfaces $S_{g,b,p}$.\\index{group!mapping class group}\n\n\n\\subsection{Definition}\nRecall that the finite-type orientable surface $S_{g,b,p}$ has genus $g$, it has $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chapter 7. Teichmüller space",
+      "pageStart": 199,
+      "pageEnd": 199,
+      "target": "../sections/sec-035-chapter-7-teichmüller-space.md",
+      "narrative": null,
+      "content": "We have discovered in Chapter 6 that every surface Sg of genus g ⩾2\ncan be equipped with a hyperbolic metric, and we have already noticed that\nthis metric is not unique: this chapter is entirely devoted to studying this\nnon-uniqueness phenomenon.\nIt turns out that Sg admits a continuous family of non-equivalent hyper-\nbolic metrics, that form altogether a nice topological space called the Te-\nichmüller space of Sg. We prove in his chapter that the Teichmüller space\nof Sg is homeomorphic to an open ball of dimension 6g −6. To prove this\nfact we will introduce and study concepts like length func",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 199,
+      "pageEnd": 202,
+      "target": "../sections/sec-036-71-introduction.md",
+      "narrative": null,
+      "content": "Let $S_g$ be as usual a closed orientable surface of genus $g$. We know that $S_g$ admits an elliptic, flat, or hyperbolic metric if and only if $g=0$, $g=1$, or $g\\geqslant 2$ respectively. The elliptic metric on the two-sphere is unique up to isometries, but the flat and hyperbolic metrics on the other surfaces are not.\n\nWe want to define the space of all flat or hyperbolic metrics on $S_g$ when $g\\geqslant 1$. There are two natural ways do to this:\\index{Teichm\\\"uller space}\\index{moduli space}\n\n\\begin{defn}\nThe \\emph{moduli space} of $S_{g}$ is the set of all the flat or hyperbolic metrics",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Earthquakes and length functions",
+      "pageStart": 202,
+      "pageEnd": 210,
+      "target": "../sections/sec-037-72-earthquakes-and-length-functions.md",
+      "narrative": null,
+      "content": "Simple closed geodesics are a formidable tool to study $\\Teich(S_g)$: we can use a simple closed geodesic to \\emph{twist} a metric (the operation is called an \\emph{earthquake}), and by simply looking at the lengths of the other closed geodesics we can measure how the metric varies along this transformation. We introduce these operations here; later on, we will use them to parametrize $\\Teich(S_g)$.\n\n\n\\subsection{Earthquakes} \\label{earthquakes:subsection}\nThe hyperbolic, flat, and spherical metrics on surfaces may be twisted along simple closed geodesics: this operation is called an \\emph{ear",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fenchel–Nielsen coordinates",
+      "pageStart": 210,
+      "pageEnd": 219,
+      "target": "../sections/sec-038-73-fenchelnielsen-coordinates.md",
+      "narrative": null,
+      "content": "It is now time to fix a global set of coordinates for the Teichm\\\"uller space when $g\\geqslant 2$. These are the \\emph{Fenchel--Nielsen coordinates} and they identify $\\Teich(S_g)$ with $\\matR^{6g-6}$, more precisely with $\\matR_{>0}^{3g-3} \\times \\matR^{3g-3}$. \n\n\n\\subsection{The coordinates}\nWe want to construct a parametrisation for $\\Teich(S_g)$ when $g\\geqslant 2$. To identify a finite-dimensional vector space with $\\matR^n$ one needs to fix a basis; likewise, here the parametrisation depends on the choice of a  frame.\\index{Fenchel--Nielsen coordinates} \n\nLet $S_g$ be oriented. A \\emph{f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Shear coordinates",
+      "pageStart": 219,
+      "pageEnd": 227,
+      "target": "../sections/sec-039-74-shear-coordinates.md",
+      "narrative": null,
+      "content": "The Teichm\\\"uller space of a punctured surface may also be parametrized using ideal triangles instead of pairs-of-pants: this viewpoint is maybe a bit simpler, and generalises successfully to dimension three (via ideal tetrahedra). The coordinates that it produces are called \\emph{shear coordinates}.\\index{shear coordinates}\n\n\n\\subsection{Ideal triangulations}\nIn dimension two and three it is customary to relax the definition of \\emph{triangulation}, originally restricted to simplicial complexes, see Section \\ref{triangulations:subsection}. We prefer to define a triangulation in a looser sense",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chapter 8. Surface diffeomorphisms",
+      "pageStart": 227,
+      "pageEnd": 227,
+      "target": "../sections/sec-040-chapter-8-surface-diffeomorphisms.md",
+      "narrative": null,
+      "content": "We describe in this chapter an analogy between the hyperbolic space Hn\nand the Teichmüller space Teich(Sg) of a closed orientable surface Sg of genus\ng ⩾1. The theory, originated from Thurston in the late 1970s, provides a\nbeautiful and powerful framework for the analysis of the geometric and dynam-\nical properties of the surfaces Sg and of their mapping class group MCG(Sg).\nHere is a quick sketch of this analogy.\nWe have already seen that Hn\ncompactiﬁes to a closed disc Hn, that Isom(Hn) acts on it, that by Brouwer’s\ntheorem every non-trivial isometry ϕ has a ﬁxed point in Hn, and we have\ncal",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Thurston's compactification",
+      "pageStart": 227,
+      "pageEnd": 231,
+      "target": "../sections/sec-041-81-thurstons-compactification.md",
+      "narrative": null,
+      "content": "Let $S_g$ be a surface of genus $g\\geqslant 2$.\nRecall that $\\Teich(S_g)$ is the Teichm\\\"uller space of $S_g$ and $\\calS = \\calS(S_g)$ is the set of all non-trivial simple closed curves in $S_g$, considered up to isotopy and orientation reversal: all the closed curves considered in this chapter are \\emph{unoriented}. \n\nAlthough $\\Teich(S_g)$ and $\\calS$ are very different in nature, we want to compactify both spaces by embedding them in a single bigger space. The model that we have in mind, and that we would like to extend to higher genus surfaces, is the flat torus picture that was painted in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geodesic currents",
+      "pageStart": 231,
+      "pageEnd": 247,
+      "target": "../sections/sec-042-82-geodesic-currents.md",
+      "narrative": null,
+      "content": "We will prove Thurston's compactification Theorem \\ref{compattificazione:teo} using a slightly different perspective. We are guided by the analogy with the hyperbolic space: when we embed (actually, define) the space $\\matH^n$ in $\\matR^{n+1}$, we make an essential use of the lorentzian form $\\langle,\\rangle$ in $\\matR^{n+1}$, so that $\\matH^n$ consists of some points $v$ with $\\langle v,v \\rangle = -1$, and $\\partial \\matH^n$ may be identified with the light cone rays, that is the rays spanned by vectors $v$ with $\\langle v , v \\rangle = 0$.\n\nIt would be nice to have a similar nice bilinear f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p247-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 247,
+      "pageEnd": 247,
+      "target": "../images/img-p247-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Laminations",
+      "pageStart": 247,
+      "pageEnd": 266,
+      "target": "../sections/sec-043-83-laminations.md",
+      "narrative": null,
+      "content": "In this section we characterize geometrically the currents $\\alpha\\in\\calC$ contained in the ``light cone,'' \\emph{i.e.}~those with $i(\\alpha,\\alpha)=0$. Every such current may be represented as a \\emph{measured geodesic lamination}, a closed subset of $S_g$ foliated by geodesics and equipped with a transverse measure. These unexpected objects play an important part in the topology of manifolds of dimension two and three.\n\n\n\\subsection{Geodesic laminations.}\nLet $S = \\matH^2/_\\Gamma$ be a hyperbolic surface. Recall that in this chapter we consider geodesics only as subsets of $S$, neglecting t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p252-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 252,
+      "pageEnd": 252,
+      "target": "../images/img-p252-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-044",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Surface diffeomorphisms",
+      "pageStart": 266,
+      "pageEnd": 275,
+      "target": "../sections/sec-044-84-surface-diffeomorphisms.md",
+      "narrative": null,
+      "content": "\\label{surface:diffeomorphisms:section}\nWe have discovered that Thurston's compactification $\\overline{\\Teich(S_g)}$ of the Teichm\\\"uller space is homeomorphic to a closed disc. The mapping class group $\\MCG(S_g)$ acts on it naturally. We can now apply Brouwer's fixed point theorem to every element $\\varphi \\in \\MCG(S_g)$, and characterise $\\varphi$ according to the position of its fixed points, much similarly as we did for the isometries of $\\matH^n$.\n\n\n\\subsection{The torus case}\nAs usual, the flat torus case is very instructive because everything can be written explicitly. \n\nWe know from Pr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-045",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Part 3. Three-manifolds",
+      "pageStart": 275,
+      "pageEnd": 277,
+      "target": "../sections/sec-045-part-3-three-manifolds.md",
+      "narrative": null,
+      "content": "CHAPTER 9",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-046",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chapter 9. Topology of three-manifolds",
+      "pageStart": 277,
+      "pageEnd": 277,
+      "target": "../sections/sec-046-chapter-9-topology-of-three-manifolds.md",
+      "narrative": null,
+      "content": "The three-manifolds world is topologically much richer than the surfaces\nrealm, while yet not so crazy as the four-manifolds universe. In dimension two\na simple homological invariant (the Euler characteristic) suﬃces to classify\ntopologically all the closed orientable manifolds: at the complete opposite,\nthe closed four-manifolds cannot be classiﬁed in any reasonable sense. The\nthree-manifolds lie in the middle: we do not have yet a complete satisfactory\npicture, but we understand them a good deal.\nThe rest of this book is devoted to three-manifolds, more speciﬁcally to\ncompact orientable thre",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-047",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algebraic topology",
+      "pageStart": 277,
+      "pageEnd": 280,
+      "target": "../sections/sec-047-91-algebraic-topology.md",
+      "narrative": null,
+      "content": "The algebraic topology of compact three-manifolds is not very complicate. \n\n\n\\subsection{Integral homology}\nIn this section all the homology groups are considered over $\\matZ$. We first note that, for closed orientable 3-manifolds, the fundamental group determines everything.\n\n\\begin{prop}\nThe homology $H_*(M)$ of a closed orientable 3-manifold $M$ is determined by $\\pi_1(M)$. \n\\end{prop} \n\\begin{proof}\nAs in every path connected space, the group $H_1(M)$ is the abelianisation of $\\pi_1(M)$ and $H^1(M) = \\Hom(H_1(M),\\matZ)$, which is hence isomorphic to $H_1(M)$ modulo its torsion. By Poincar\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-048",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Prime decomposition",
+      "pageStart": 280,
+      "pageEnd": 295,
+      "target": "../sections/sec-048-92-prime-decomposition.md",
+      "narrative": null,
+      "content": "In this section we study spheres and discs in three-manifolds. We prove that every sphere in $\\matR^3$ bounds a disc, and we call \\emph{irreducible} a three-manifold that has this property. Then we study the connected sum of three-manifolds, and we show that it behaves like multiplication of natural numbers: every closed oriented three-manifold decomposes uniquely into some \\emph{prime} factors.\n\n\n\\subsection{Balls}\nIn general dimension $n$, we have used the term \\emph{disc} to denote the closed Euclidean disc $D^n$, and the term \\emph{ball} for its open interior. Speaking about three-dimensio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p282-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 282,
+      "pageEnd": 282,
+      "target": "../images/img-p282-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p287-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 287,
+      "pageEnd": 287,
+      "target": "../images/img-p287-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-049",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Incompressible surfaces",
+      "pageStart": 295,
+      "pageEnd": 302,
+      "target": "../sections/sec-049-93-incompressible-surfaces.md",
+      "narrative": null,
+      "content": "We have proved that every compact oriented 3-manifold decomposes along essential spheres and discs, into some canonical pieces that do not contain essential spheres or discs anymore. \n\nWe would like to pursue this strategy with the next simplest surfaces, namely tori and annuli. To this purpose we define the important notion of \\emph{incompressible} surface in a three-manifold, which applies to all surfaces of non-positive Euler characteristic.\n\n\n\\subsection{Incompressible surfaces}\nThroughout all this section $M$ denotes a compact orientable 3-manifold with (possibly empty) boundary. Let $S\\s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-050",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Haken manifolds",
+      "pageStart": 302,
+      "pageEnd": 311,
+      "target": "../sections/sec-050-94-haken-manifolds.md",
+      "narrative": null,
+      "content": "There are two classes of irreducible closed three-manifolds: those that contain incompressible surfaces, and those that do not. Both classes are very important and contain a wealth of interesting manifolds.\n\nThe manifolds belonging to the first class are called \\emph{Haken manifolds} and are somehow easier to study, because they can be cut into balls via a standard procedure called \\emph{hierarchy}: we cut the manifold along an essential surface, then along another, and we iterate until we get balls. We study these manifolds here. We also prove the converse of Proposition \\ref{pi1:prop}, that",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/cor-sec-052-06",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 311,
+      "pageEnd": 318,
+      "target": "cor-sec-052-06.md",
+      "narrative": null,
+      "content": "We have L(1, 0) = S3 and L(2, 1) = RP3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/lem-sec-052-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 311,
+      "pageEnd": 318,
+      "target": "lem-sec-052-01.md",
+      "narrative": null,
+      "content": "The manifold Mﬁll depends only on the isotopy class of the unoriented curve γ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prop-sec-052-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 311,
+      "pageEnd": 318,
+      "target": "prop-sec-052-02.md",
+      "narrative": null,
+      "content": "We have π1(Mﬁll) = π1(M)/N(γ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prop-sec-052-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 311,
+      "pageEnd": 318,
+      "target": "prop-sec-052-03.md",
+      "narrative": null,
+      "content": "We have L(0, 1) = S2 × S1 and L(1, 0) = S3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prop-sec-052-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 311,
+      "pageEnd": 318,
+      "target": "prop-sec-052-05.md",
+      "narrative": null,
+      "content": "The manifold S3/⟨f ⟩is the (q, p)-Dehn ﬁlling of the solid torus.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prop-sec-052-08",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 311,
+      "pageEnd": 318,
+      "target": "prop-sec-052-08.md",
+      "narrative": null,
+      "content": "(otherwise Σ would be homotopically trivial, contradicting p > 1) and hence ∂-parallel by Proposition 9.3.16, so it is isotopic to either A′ 1 or A′ 2, suppose to A′ 2; since A1 is clearly isotopic to A′ 1 we conclude that T and T ′ are isotopic. Our aim is now to prove that Σ can be isotoped inside T. To this purpose we construct two diﬀerent objects from T ′ and T, a spine ∆and a foliation F. The spine ∆⊂M is built by adding to Σ the meridian D of the other solid torus incident to T ′, enlarged so that ∂D is glued along Σ like a degree-p covering. Note that M \\ ∆is an open ball. We construct",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-051",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chapter 10. Seifert manifolds",
+      "pageStart": 311,
+      "pageEnd": 311,
+      "target": "../sections/sec-051-chapter-10-seifert-manifolds.md",
+      "narrative": null,
+      "content": "In the previous chapter we have proved various general theorems on three-\nmanifolds, and it is now time to construct examples. A rich and important\nsource is a family of manifolds built by Seifert in the 1930s, which generalises\ncircle bundles over surfaces by admitting some “singular” ﬁbres. The three-\nmanifolds that admit such kind of ﬁbration are now called Seifert manifolds.\nIn this chapter we introduce and completely classify (up to diﬀeomor-\nphisms) the Seifert manifolds. In Chapter 12 we will then show how to ge-\nometrise them, by assigning a nice Riemannian metric to each. We will show",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-052",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lens spaces",
+      "pageStart": 311,
+      "pageEnd": 318,
+      "target": "../sections/sec-052-101-lens-spaces.md",
+      "narrative": null,
+      "content": "We introduce some of the simplest 3-manifolds, the lens spaces. These\nmanifolds (and many more) are easily described using an important three-\ndimensional construction, called Dehn ﬁlling.\n10.1.1. Dehn ﬁlling. If a 3-manifold M has a spherical boundary com-\nponent, we can cap it oﬀwith a ball. If M has a toric boundary component,\nthere is no canonical way to cap it oﬀ: the simplest object that we can attach\nto it is a solid torus D × S1, but the resulting manifold depends on the gluing\nmap. This operation is called a Dehn ﬁlling and we now study it in detail.\nLet M be a 3-manifold and T ⊂∂M be",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/rem-sec-052-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 311,
+      "pageEnd": 318,
+      "target": "rem-sec-052-04.md",
+      "narrative": null,
+      "content": "The meridian m of the solid torus M = D × S1 may be deﬁned intrinsically as the unique slope in ∂M that is homotopically trivial in M. The longitude l is not intrinsically determined: a twist sends l to m + l. The solid torus contains inﬁnitely many non-isotopic longitudes, and there is no intrinsic way to choose one of them.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/thm-sec-052-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 311,
+      "pageEnd": 318,
+      "target": "thm-sec-052-07.md",
+      "narrative": null,
+      "content": "The lens spaces L(p, q) and L(p′, q′) are diﬀeomorphic ⇐⇒p = p′ and q′ ≡±q±1 (mod p).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-053",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Circle bundles",
+      "pageStart": 318,
+      "pageEnd": 321,
+      "target": "../sections/sec-053-102-circle-bundles.md",
+      "narrative": null,
+      "content": "We now introduce another simple class of 3-manifolds, the orientable circle bundles over some compact surface $S$. We will discover that there is essentially only one circle bundle if $S$ has boundary, and infinitely many if $S$ is closed, distinguished by an integer called the \\emph{Euler number}.\n\n\n\\subsection{The trivial circle bundle}\nLet $S$ be a compact connected surface. As every connected manifold, the surface $S$ has a unique orientable line bundle\n$$S\\times I \\quad {\\rm or} \\quad S\\timtil I$$ \ndepending on whether $S$ is orientable or not. We denote by \n$$M=S\\times S^1 \\quad {\\rm or}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-054",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Seifert manifolds",
+      "pageStart": 321,
+      "pageEnd": 339,
+      "target": "../sections/sec-054-103-seifert-manifolds.md",
+      "narrative": null,
+      "content": "We now enlarge the class of circle bundles over surfaces by admitting some kind of singular fibres. We introduce the \\emph{Seifert fibrations}, whose total spaces are called \\emph{Seifert manifolds}. These manifolds were introduced by Herbert Seifert in 1933 and fit perfectly in the much more recent geometrisation perspective: in the next chapter we will introduce the eight three-dimensional geometries, and prove that six of them are realised precisely by the Seifert manifolds.\n\n\n\\subsection{Definition}\nWe define the Seifert manifolds as Dehn fillings of trivial bundles over surfaces with boun",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p322-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 322,
+      "pageEnd": 322,
+      "target": "../images/img-p322-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-055",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classification",
+      "pageStart": 339,
+      "pageEnd": 351,
+      "target": "../sections/sec-055-104-classification.md",
+      "narrative": null,
+      "content": "In the previous section we have classified the Seifert fibrations up to isomorphism and the Seifert manifolds up to commensurability. We now want to complete our study by classifying Seifert manifolds up to diffeomorphism: our final achievement will be Theorem \\ref{Seifert:teo} that determines precisely the Seifert manifolds that admit non-isomorphic fibrations.\n\nThe proof of Theorem \\ref{Seifert:teo} is not straightforward: we will apply different techniques to different classes of Seifert manifolds. We start by studying the fundamental group of Seifert manifolds, showing in particular that i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/ex-sec-057-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 351,
+      "pageEnd": 353,
+      "target": "ex-sec-057-03.md",
+      "narrative": null,
+      "content": "The complement of a standardly embedded genus-g han- dlebody in S3 as in Figure 9.6 is another handlebody, and together they form",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prop-sec-057-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 351,
+      "pageEnd": 353,
+      "target": "prop-sec-057-01.md",
+      "narrative": null,
+      "content": "Every closed orientable 3-manifold M decomposes into two handlebodies of some genus g.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prop-sec-057-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 351,
+      "pageEnd": 353,
+      "target": "prop-sec-057-02.md",
+      "narrative": null,
+      "content": "The 3-sphere has genus zero, lens spaces (except S3) have genus one, and all the other closed orientable three-manifolds have genus at least two.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-056",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chapter 11. Constructions of three-manifolds",
+      "pageStart": 351,
+      "pageEnd": 351,
+      "target": "../sections/sec-056-chapter-11-constructions-of-three-manifolds.md",
+      "narrative": null,
+      "content": "In the previous chapter we have introduced and fully classiﬁed an important\nfamily of three-manifolds called Seifert manifolds, and we now address the\nfollowing question: how can we construct more three-manifolds?\nThe most popular techniques employed for the construction and manipu-\nlation of three-manifolds are of cut-and-paste type: we build three-manifolds\nby gluing some blocks altogether, and we try to describe both the blocks and\ntheir gluing with some reasonable combinatorial formalism.\nThe choice of the right blocks is of course fundamental, and diﬀerent\nchoices lead to quite diﬀerent e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-057",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Heegaard splittings",
+      "pageStart": 351,
+      "pageEnd": 353,
+      "target": "../sections/sec-057-111-heegaard-splittings.md",
+      "narrative": null,
+      "content": "surgery, and with product manifolds Σ × [−1, 1] we get surface bundles. We\nintroduce here all these topological constructions.\nWe end this chapter by showing that every prime three-manifold has a\ncanonical decomposition along disjoint embedded tori, called the geometric\ndecomposition – the reason for adopting this name will be evident in the next\nchapters.\n11.1. Heegaard splittings\nA Heegard splitting is a decomposition of a closed three-manifold in two\nmanifolds of the simple kinds, the handlebodies.\n11.1.1. Deﬁnition. The following proposition is quite surprising, because\nit shows that every",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-058",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Knots and links",
+      "pageStart": 353,
+      "pageEnd": 360,
+      "target": "../sections/sec-058-112-knots-and-links.md",
+      "narrative": null,
+      "content": "Knots and links are fundamental and beautiful objects in geometric topology. Knots and links in $S^3$ have a combinatorial and mildly two-dimensional nature because they can be treated as planar diagrams, but they should be considered as intrinsically three-dimensional objects.\n\n\n\\subsection{Definition}\nA \\emph{link} in a 3-manifold $M$ is a compact submanifold of dimension one. Being compact, it consists of finitely many circles, and a connected link is called a \\emph{knot}. Links and knots are usually considered up to ambient isotopy.\\index{link}\\index{knot}\n\n\\begin{figure}\n\\begin{center}\n\\i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p354-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 354,
+      "pageEnd": 354,
+      "target": "../images/img-p354-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p354-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 354,
+      "pageEnd": 354,
+      "target": "../images/img-p354-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p357-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 357,
+      "pageEnd": 357,
+      "target": "../images/img-p357-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p357-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 357,
+      "pageEnd": 357,
+      "target": "../images/img-p357-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p357-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 357,
+      "pageEnd": 357,
+      "target": "../images/img-p357-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p358-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 358,
+      "pageEnd": 358,
+      "target": "../images/img-p358-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p359-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 359,
+      "pageEnd": 359,
+      "target": "../images/img-p359-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p359-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 359,
+      "pageEnd": 359,
+      "target": "../images/img-p359-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-059",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dehn surgery",
+      "pageStart": 360,
+      "pageEnd": 367,
+      "target": "../sections/sec-059-113-dehn-surgery.md",
+      "narrative": null,
+      "content": "While a Dehn \\emph{filling} consists of attaching a solid torus to a boundary component, a Dehn \\emph{surgery} is a two-step operation that consists of drilling a tubular neighbourhood of a knot and then re-gluing it via a different map. \n\nUsing this fundamental operation we can describe \\emph{every} closed three-manifold via some reasonable and combinatorial drawing on the plane: a link diagram with some rational numbers attached to its components. Such a combinatorial description has a strong four-dimensional flavour and is called a \\emph{Kirby diagram}.\n\nIn this section we introduce some ba",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p361-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 361,
+      "pageEnd": 361,
+      "target": "../images/img-p361-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-060",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Surface bundles",
+      "pageStart": 367,
+      "pageEnd": 372,
+      "target": "../sections/sec-060-114-surface-bundles.md",
+      "narrative": null,
+      "content": "Seifert manifolds have base orbifolds of dimension 2 and smooth fibres of dimension 1. We now introduce a complementary construction where the base orbifolds have dimension 1 and the smooth fibres have dimension 2. These are called \\emph{surface bundles}.\n\n\n\\subsection{Surface bundles}\nA \\emph{surface bundle over $S^1$} is a fibre bundle $M\\to S^1$ of a compact orientable 3-manifold $M$ (possibly with boundary) over the circle, whose fibre $\\Sigma$ is a connected compact orientable surface. If $M$ has boundary, then $\\Sigma$ also has, and $\\partial M$ consists of tori fibering over $S^1$.\\inde",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-061",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "JSJ decomposition",
+      "pageStart": 372,
+      "pageEnd": 377,
+      "target": "../sections/sec-061-115-jsj-decomposition.md",
+      "narrative": null,
+      "content": "In Chapter \\ref{Three:topology:chapter} we cut every closed three-manifold along spheres, and it is now time to decompose it further along tori. \nThis two-steps cutting operation is called the \\emph{JSJ decomposition} of the manifold, after the names of Jaco, Shalen, and Johansson who discovered it in the mid 1970s.\\index{JSJ decomposition}\n\nThe core of this decomposition is the existence of a canonical set of disjoint essential tori, unique up to isotopy. \n\n\n\\subsection{Canonical torus decomposition}\nLet $M$ be an orientable irreducible and $\\partial$-irreducible compact 3-manifold with (poss",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-062",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chapter 12. The eight geometries",
+      "pageStart": 377,
+      "pageEnd": 377,
+      "target": "../sections/sec-062-chapter-12-the-eight-geometries.md",
+      "narrative": null,
+      "content": "We have concluded the previous chapter by deﬁning a geometric decom-\nposition of three-manifolds along sphere and tori. The reason for using this\nterminology is the famous geometrisation conjecture, proposed by Thurston in\n1982 and proved by Perelman in 2003, which states that each of the blocks of\nthe decomposition should be geometric, in the sense that it may be equipped\nwith a nice Riemannian metric.\nThere are eight nice Riemannian metrics available in dimension three.\nThree of them are the constant curvature ones (hyperbolic, elliptic, and ﬂat),\nwhile the other ﬁve are some kind of (someti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-063",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 377,
+      "pageEnd": 378,
+      "target": "../sections/sec-063-121-introduction.md",
+      "narrative": null,
+      "content": "A connected Riemannian manifold M is homogeneous if for every p, q ∈M\nthere is an isometry of M sending p to q, and is isotropic if at each point p\nevery isometry of TpM is realised by an isometry of M. It is easy to prove that\na complete isotropic manifold is also homogeneous and has constant sectional\ncurvature: the fundamental examples of isotropic spaces are Sn, Rn, and Hn.\nThe homogeneous condition alone (without isotropy) is more relaxed and\nproduces manifolds that may not have constant sectional curvature. We intro-\nduce in this chapter eight important homogeneous simply-connected compl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/thm-sec-063-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 377,
+      "pageEnd": 378,
+      "target": "thm-sec-063-01.md",
+      "narrative": null,
+      "content": "A closed orientable 3-manifold has a geometric structure modelled on one of the following six geometries: S3, R3, S2 × R, H2 × R, Nil, g SL2 if and only if it is a Seifert manifold of the appropriate commensurability class, as prescribed by Table 12.1. It has a Sol geometric structure if and only if it is a torus (semi-)bundle of Anosov type. It is a surprising (and maybe disappointing) fact that, despite its elegance and generality, the only known proof of this theorem available today works by investigating each geometry separately and carefully, often employing quite diﬀerent techniques. We",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-064",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Elliptic three-manifolds",
+      "pageStart": 378,
+      "pageEnd": 388,
+      "target": "../sections/sec-064-122-elliptic-three-manifolds.md",
+      "narrative": null,
+      "content": "We start our journey by investigating elliptic 3-manifolds, that is manifolds modelled on $S^3$. We want to prove the following.\n\n\\begin{teo} \\label{S3:teo}\nA closed 3-manifold $M$ admits an elliptic metric if and only if it is a Seifert manifold  with $e\\neq 0$ and $\\chi>0$.\n\\end{teo}\n\nAn important ingredient of the proof is the complete classification of elliptic three-manifolds: to achieve this goal we need to study the isometries of $S^3$, and these are described elegantly via quaternions. \n\n\n\\subsection{Unit quaternions}\nWe write as usual a \\emph{quaternion} as\\index{quaternion}\n$$q= a+bi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p382-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 382,
+      "pageEnd": 382,
+      "target": "../images/img-p382-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-065",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Flat three-manifolds",
+      "pageStart": 388,
+      "pageEnd": 391,
+      "target": "../sections/sec-065-123-flat-three-manifolds.md",
+      "narrative": null,
+      "content": "We now turn to flat three-manifolds. In dimension two, every orientation-preserving isometry of $\\matR^2$ is a translation, and this easily implies that every flat orientable closed surface is a torus. In dimension three we also have \\emph{rototranslations}, which produce more orientable manifolds. \n\nWe now classify all the closed flat orientable three-manifolds up to diffeomorphism and prove the following.\n\\begin{teo} \\label{main:flat:teo}\nA closed orientable 3-manifold $M$ admits a flat metric if and only if it is a Seifert manifold with $e=\\chi=0$.\n\\end{teo}\nThere are six such manifolds, li",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-066",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The product geometries",
+      "pageStart": 391,
+      "pageEnd": 394,
+      "target": "../sections/sec-066-124-the-product-geometries.md",
+      "narrative": null,
+      "content": "The eight three-dimensional geometries include the three isotropic ones, plus five more. Among the five non-isotropic geometries, two are products of lower-dimensional geometries. We analyse them here.\n\n\n\\subsection{$S^2 \\times \\matR$ geometry.}\nWe equip $S^2\\times \\matR$ with the product metric. The product $S^2\\times \\matR$ is the poorest of the eight geometries, in the sense that there are very few manifolds modelled on $S^2\\times \\matR$. \n\nRecall that the sectional curvature is a number assigned to every plane in the tangent space of every point $p\\in S^2 \\times \\matR$. One such plane is \\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-067",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Nil geometry",
+      "pageStart": 394,
+      "pageEnd": 404,
+      "target": "../sections/sec-067-125-nil-geometry.md",
+      "narrative": null,
+      "content": "There are still three non-isotropic geometries to analyse. These geometries are not products, but they have a reasonable bundle structure, so that many of the arguments of the previous section can be extended with not much effort.\n\nWe start with the geometry $\\Nil$, which is a $\\matR$-bundle over $\\matR^2$. This geometry is fully carried by a Lie group called the \\emph{Heisenberg group}.\\index{group!Heisenberg group}\\index{$\\Nil$\\ geometry}\n\n\n\\subsection{The Heisenberg group} \nThe \\emph{Heisenberg group} consists of all matrices\n$$\\begin{pmatrix} 1 & x & z \\\\ 0 & 1 & y \\\\ 0 & 0 & 1 \\end{pmatri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-068",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sol geometry",
+      "pageStart": 404,
+      "pageEnd": 408,
+      "target": "../sections/sec-068-127-sol-geometry.md",
+      "narrative": null,
+      "content": "The $\\Sol$ geometry is the least symmetric one among the eight. It has a bundle structure, but with a one-dimensional basis: it is a $\\matR^2$-bundle over $\\matR$. Again, the geometry is fully governed by a Lie group $\\Sol$.\\index{$\\Sol$ geometry}\n\n\n\\subsection{The Lie group Sol}\nThe Lie group $\\Sol$ is the space $\\matR^3$ equipped with the following operation\n$$(x,y,z)\\cdot(x',y',z') = (x+ e^{-z}x', y+e^zy', z+z').$$\n\\begin{ex} \\label{Sol:conti:ex}\nWe have\n\\begin{align*}\n(x,y,z)^{-1} & = (-xe^z, -ye^{-z}, -z), \\\\\n[(x,y,z),(x',y',z')] & = \\big(x(1\\!-\\!e^{-z'}) - x'(1\\!-\\!e^{-z}), y(1\\!-\\!e^{z'",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prop-sec-069-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 408,
+      "pageEnd": 409,
+      "target": "prop-sec-069-02.md",
+      "narrative": null,
+      "content": "Two closed 3-manifolds admitting diﬀerent geometries are not diﬀeomorphic, and not even commensurable.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prop-sec-069-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 408,
+      "pageEnd": 409,
+      "target": "prop-sec-069-03.md",
+      "narrative": null,
+      "content": "Let M be a closed manifold modelled on one X of the eight geometries; this ﬂowchart shows how to determine X from π1(M): • if π1(M) is ﬁnite, then X = S3; otherwise • if π1(M) is virtually cyclic, then X = S2 × R; otherwise • if π1(M) is virtually abelian, then X = R3; otherwise • if π1(M) is virtually nilpotent, then X = Nil; otherwise • if π1(M) is virtually solvable, then X = Sol; otherwise • if π1(M) contains a normal cyclic group K, then: – if a ﬁnite-index subgroup of the quotient lifts, then X = H2 ×R, – otherwise X = g SL2; • otherwise X = H3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-069",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary",
+      "pageStart": 408,
+      "pageEnd": 409,
+      "target": "../sections/sec-069-128-summary.md",
+      "narrative": null,
+      "content": "We have proudly completed the proof of Theorem 12.1.1. We state that\ntheorem again here:\nTheorem 12.8.1. A closed orentable 3-manifold has a geometric structure\nmodelled on one of the following six geometries:\nS3, R3, S2 × R, H2 × R, Nil, g\nSL2\nif and only if it is a Seifert manifold of the appropriate commensurability class,\nas prescribed by Table 12.1. It has a Sol geometric structure if and only if it\nis a torus (semi-)bundle of Anosov type.\nWe can deduce that the eight geometries are mutually exclusive:\nProposition 12.8.2. Two closed 3-manifolds admitting diﬀerent geometries\nare not diﬀeom",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/thm-sec-069-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 408,
+      "pageEnd": 409,
+      "target": "thm-sec-069-01.md",
+      "narrative": null,
+      "content": "A closed orentable 3-manifold has a geometric structure modelled on one of the following six geometries: S3, R3, S2 × R, H2 × R, Nil, g SL2 if and only if it is a Seifert manifold of the appropriate commensurability class, as prescribed by Table 12.1. It has a Sol geometric structure if and only if it is a torus (semi-)bundle of Anosov type. We can deduce that the eight geometries are mutually exclusive:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-070",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The geometrisation conjecture",
+      "pageStart": 409,
+      "pageEnd": 413,
+      "target": "../sections/sec-070-129-the-geometrisation-conjecture.md",
+      "narrative": null,
+      "content": "\\label{geometrisation:section}\n\nWe can finally state the famous Geometrisation Conjecture, proposed by Thurston in 1982 and proved twenty years later by Perelman in 2002.\n\n\n\\subsection{Statement and main consequences}\nWe say that a compact 3-manifold with (possibly empty) boundary consisting of tori is \\emph{geometric} if its interior has a finite-volume complete geometric structure modelled on one of the eight geometries:\\index{three-manifold!geometric three-manifold} \n$$S^3,\\ \\matR^3,\\ \\matH^3,\\ S^2\\times \\matR,\\ \\matH^2\\times \\matR,\\ \\Nil,\\ \\Sol,\\ \\widetilde{\\SL_2}.$$\nThe following conjectu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-071",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chapter 13. Mostow rigidity theorem",
+      "pageStart": 413,
+      "pageEnd": 413,
+      "target": "../sections/sec-071-chapter-13-mostow-rigidity-theorem.md",
+      "narrative": null,
+      "content": "We have deﬁned in Chapter 7 the Teichmüller space Teich(Sg) of a genus-\ng closed orientable surface Sg as the space of all the hyperbolic metrics on Sg,\nconsidered up to isometries isotopic to the identity; we have then proved that\nTeich(Sg) is homeomorphic to R6g−6 using the Fenchel–Nielsen coordinates.\nThis deﬁnition of Teich(M) actually applies to any closed hyperbolic man-\nifold M, and we show here a striking diﬀerence between the dimensions two\nand three: if dim M = 3 then Teich(M) is a single point. This strong result is\nknown as the Mostow rigidity Theorem.\nThe impact of Mostow’s rigidi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-072",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Volume of tetrahedra",
+      "pageStart": 413,
+      "pageEnd": 418,
+      "target": "../sections/sec-072-131-volume-of-tetrahedra.md",
+      "narrative": null,
+      "content": "\\label{volume:tetrahedra:section}\nThe volume of an ideal hyperbolic tetrahedron is a simple (but integral) formula that involves the \\emph{Lobachevsky function}: we now prove this formula here. As a consequence we show that the regular ideal tetrahedron is the hyperbolic tetrahedron with maximal volume.\n\n\n\\subsection{The Lobachevsky function}\nThe \\emph{Lobachevsky function} is\\index{Lobachevsky function}\n$$\\Lambda(\\theta) = -\\int_0^\\theta \\log |2\\sin t| dt.$$\nThe function $\\log |2\\sin t|$ is $-\\infty$ on $\\pi\\matZ$ but is integrable, hence $\\Lambda$ is well-defined and continuous on $\\matR$. I",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-073",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Simplicial volume",
+      "pageStart": 418,
+      "pageEnd": 425,
+      "target": "../sections/sec-073-132-simplicial-volume.md",
+      "narrative": null,
+      "content": "Gromov has introduced a topological invariant on closed manifolds of any dimension called the \\emph{simplicial volume}. This nice invariant can be used, among other things, to prove Mostow's rigidity theorem.\\index{simplicial volume}\n\n\n\\subsection{Definition}\nGromov has introduced a measure of ``volume'' of a closed manifold $M$ which makes use only of the homology of $M$. Quite surprisingly, this notion of volume coincides (up to a factor) with the Riemannian one when $M$ is hyperbolic. \n\nConsider a topological space $X$ and its homology with ring $\\matR$. We define the \\emph{norm} of a cycle",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-074",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mostow rigidity",
+      "pageStart": 425,
+      "pageEnd": 429,
+      "target": "../sections/sec-074-133-mostow-rigidity.md",
+      "narrative": null,
+      "content": "\\subsection{Introduction}\nWe want to prove the following.\n\\begin{teo}[Mostow rigidity] \\label{Mostow:teo}\nLet $M$ and $N$ be two closed connected orientable hyperbolic 3-manifolds. Every isomorphism $\\pi_1(M) \\stackrel \\sim\\to \\pi_1(N)$ between fundamental groups is induced by a unique isometry $M\\stackrel \\sim\\to N$.\n\\end{teo}\nThis very powerful theorem says that an algebraic isomorphism between fundamental groups alone is enough to produce and characterise an isometry. \n\n\\begin{cor} Two closed orientable hyperbolic 3-manifolds with isomorphic fundamental groups are isometric.\n\\end{cor}\n\nWe p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-075",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chapter 14. Hyperbolic three-manifolds",
+      "pageStart": 429,
+      "pageEnd": 429,
+      "target": "../sections/sec-075-chapter-14-hyperbolic-three-manifolds.md",
+      "narrative": null,
+      "content": "We have studied and classiﬁed the three-manifolds having seven of the\neight geometries, and we are now left with the most interesting ones: hyper-\nbolic three-manifolds.\nIn dimension two every closed hyperbolic surface is constructed by gluing\nsome geodesic pair-of-pants. In dimension three, although closed hyperbolic\nthree-manifolds are everywhere, it is somehow harder to construct them ex-\nplicitly: the most general procedure to determine a hyperbolic metric (if any)\non a given closed 3-manifold consists of solving Thurston’s equations.\nThurston’s equations arise naturally in the attempt of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-076",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cusped three-manifolds",
+      "pageStart": 429,
+      "pageEnd": 441,
+      "target": "../sections/sec-076-141-cusped-three-manifolds.md",
+      "narrative": null,
+      "content": "\\label{cusped:section}\nWe know that every cusped finite-volume complete hyperbolic surface is constructed by gluing isometrically finitely many ideal triangles along their edges (see Proposition \\ref{straightens:prop}). Likewise, we now construct plenty of cusped hyperbolic three-manifolds by gluing isometrically finitely many ideal tetrahedra along their faces.\n\n\n\\subsection{Ideal tetrahedra}\nIdeal triangles are all isometric, but ideal tetrahedra are not! We now show that they can be described up to isometry by a single complex parameter $z$ with $\\Im z >0$.\\index{ideal tetrahedron}\n\n\\begin{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p431-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 431,
+      "pageEnd": 431,
+      "target": "../images/img-p431-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p438-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 438,
+      "pageEnd": 438,
+      "target": "../images/img-p438-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/figure-img-p438-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 438,
+      "pageEnd": 438,
+      "target": "../images/img-p438-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-077",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Closed hyperbolic three-manifolds",
+      "pageStart": 441,
+      "pageEnd": 451,
+      "target": "../sections/sec-077-142-closed-hyperbolic-three-manifolds.md",
+      "narrative": null,
+      "content": "We have described in Section \\ref{cusped:section} a method to construct cusped finite-volume hyperbolic three-manifolds. How can we now build some \\emph{closed} hyperbolic three-manifolds? \n\nFollowing the same path, we could try to parametrize \\emph{compact} hyperbolic tetrahedra via some variables, and then encode the isometric gluings of their faces via some equations. However, it is really hard to parametrize compact tetrahedra and their gluings, and nobody has ever constructed any closed hyperbolic three-manifold in this way! \n\nThe usual procedure for building closed hyperbolic three-manif",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/cor-sec-079-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 451,
+      "pageEnd": 458,
+      "target": "cor-sec-079-01.md",
+      "narrative": null,
+      "content": "If M is a complete orientable ﬁnite-volume hyperbolic three-manifold with one cusp, all but ﬁnitely many Dehn ﬁllings Mﬁll are hy- perbolic. To appreciate the power of these theorems, consider for instance a hyper- bolic link L ⊂S3 (recall that L ⊂S3 is hyperbolic if S3 \\ L admits a ﬁnite- volume complete hyperbolic metric). By the hyperbolic Dehn ﬁlling theorem, there is a ﬁnite subset S ⊂Q such that every surgery on L with coeﬃcients in Q \\ S produces a closed hyperbolic manifold. 15.1.3. Examples. We describe a couple of clarifying examples. We know that the ﬁgure eight knot K ⊂S3 is hyperb",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prop-sec-079-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 451,
+      "pageEnd": 458,
+      "target": "prop-sec-079-03.md",
+      "narrative": null,
+      "content": "The image d(R) contains the coloured region shown in Figure 15.4-(right).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-078",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chapter 15. Hyperbolic Dehn filling",
+      "pageStart": 451,
+      "pageEnd": 451,
+      "target": "../sections/sec-078-chapter-15-hyperbolic-dehn-filling.md",
+      "narrative": null,
+      "content": "We have completely classiﬁed in Chapter 10 the closed three-manifolds\nthat belong to the six Seifert geometries, and now we long for a similar cata-\nlogue that displays all the closed hyperbolic three-manifolds that exist in nature.\nIs there something like a “name” to assign to each closed hyperbolic three-\nmanifold, together with some reasonable tables that list all possible names?\nThere is not yet one such thing, and we do not know if there will ever\nbe one: we still do not understand hyperbolic three-manifolds globally. The\nmain diﬃculty is that there are really many hyperbolic three-manifo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-079",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 451,
+      "pageEnd": 458,
+      "target": "../sections/sec-079-151-introduction.md",
+      "narrative": null,
+      "content": "It sometimes happens in three-dimensional topology, that a topological or\ngeometric property of a manifold is preserved under Dehn ﬁllings, with only\nfew exceptions. For instance, the Dehn ﬁlling of a Seifert manifold is again a\nSeifert manifold, with only one exception (a ﬁbre-parallel Dehn ﬁlling gives a\nconnected sum of Seifert manifolds, see Corollary 10.3.44).\nThe most striking appearance of this phenomenon is the Hyperbolic Dehn\nﬁlling Theorem, proved by Thurston at the end of the 1970s. This theorem\nsays roughly that “most” Dehn ﬁllings of a cusped hyperbolic manifold are still\nhyperbol",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/thm-sec-079-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 451,
+      "pageEnd": 458,
+      "target": "thm-sec-079-02.md",
+      "narrative": null,
+      "content": "A surgery on the Whitehead link with coeﬃcients ( p q, r s ) produces a closed hyperbolic manifold, unless one of the following holds: • p q or r s belongs to the set {0, 1, 2, 3, 4, ∞}, • up to permutation the pair \u0000 p q, r s \u0001 belongs to the set \b (−4, −1), (−3, −1), (−2, −2), (−2, −1), \u0000 3 2, 5 \u0001 , \u0000 4 3, 5 \u0001 \u0000 5 2, 7 \u0001 . The proposition is symmetric in the two coeﬃcients because the link itself has a symmetry that interchanges the two components. All the Dehn ﬁlling parameters listed in the theorem indeed produce non-hyperbolic manifolds. For instance, if p q ∈{1, 2, 3} we get a Seifert ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-080",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The solution space",
+      "pageStart": 458,
+      "pageEnd": 469,
+      "target": "../sections/sec-080-152-the-solution-space.md",
+      "narrative": null,
+      "content": "\\label{solution:space:section}\nIn this section we study the combinatorial properties of ideal triangulations of three-manifolds in general. We study the space of solutions to the consistency equations, we prove that it is a complex manifold and exhibit a concrete parametrisation via the holonomy of peripheral curves.\n\n\n\\subsection{Edges and tetrahedra}\nThroughout this section, we let $N$ be a compact oriented three-manifold $N$ with $\\partial N = T_1 \\sqcup \\ldots \\sqcup T_c$ consisting of tori, and define $M=\\interior N$. Let $\\calT$ be any ideal triangulation for $M$. \n\n\\begin{prop} \\label{e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-081",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of the theorem",
+      "pageStart": 469,
+      "pageEnd": 476,
+      "target": "../sections/sec-081-153-proof-of-the-theorem.md",
+      "narrative": null,
+      "content": "We now conclude the proof of Theorem \\ref{DF:teo}.\nThrough all this section, we let $M= \\interior N$ be a complete orientable finite-volume cusped hyperbolic three-manifold. We have $\\partial N = T_1 \\cup \\ldots \\cup T_c$ for some $c\\geqslant 1$. We also fix a positive pair $m_i, l_i$ of generators for $\\pi_1(T_i)$ at each $T_i$. Recall that each $T_i$ has Euclidean structure, defined up to rescaling.\n\n\n\\subsection{Near the complete solution} \\label{near:complete:subsection}\nWe now suppose that $M$ has a geometric decomposition $\\calT$ into ideal hyperbolic tetrahedra, in other words the space",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-082",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Volumes",
+      "pageStart": 476,
+      "pageEnd": 487,
+      "target": "../sections/sec-082-154-volumes.md",
+      "narrative": null,
+      "content": "We have discovered that ``most'' Dehn fillings of a cusped finite-volume hyperbolic manifold are hyperbolic, and we now discuss their volumes.\n\nLet $M$ be a complete orientable finite-volume cusped hyperbolic three-manifold. We say that  a Dehn filling of $M$ is \\emph{non-trivial} if it fills at least one boundary torus; in other words, it is determined by some Dehn filling parameter $s$ different from $(\\infty, \\ldots, \\infty)$, after fixing some arbitrary homology bases for the boundary tori. We prove in this section the following theorem. \n\n\\begin{teo} \\label{vol:vol:teo}\nIf a non-trivial D",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-083",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bibliography",
+      "pageStart": 487,
+      "pageEnd": 491,
+      "target": "../sections/sec-083-bibliography.md",
+      "narrative": null,
+      "content": "[1] I.\nAgol,\nThe\nminimal\nvolume\norientable\nhyperbolic\n2-cusped\n3-manifolds,\nProc. Amer. Math. Soc. 138 (2010), 3723–3732.\n[2] I. R. Aitchison – J. H. Rubinstein, Localising Dehn’s lemma and the loop theorem in\n3-manifolds, Math. Proc. Cambrdge Phil. Soc. 137 (2004), 281 – 292.\n[3] J. Aramayona – C. J. Leininger, Hyperbolic structures on surfaces and geodesic currents,\nto appear in “Algorithms and geometric topics around automorphisms of free groups”,\nAdvanced Courses CRM-Barcelona, Birkhäuser.\n[4] R. Benedetti – C. Petronio, “Lectures on hyperbolic geometry,” Universitext, Springer-\nVerlag, 19",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1610.02592v3/blocks/prose-sec-084",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Index",
+      "pageStart": 491,
+      "pageEnd": 494,
+      "target": "../sections/sec-084-index.md",
+      "narrative": null,
+      "content": "Dn, 49\nHn, 53\nIn, 45\nL(p, q), 97\nO(n, 1), 47\nO+(n, 1), 47\n[X, Y ], 113\nΛ(Γ), 135\nNil geometry, 386\nΩ(Γ), 137\nSO(3), 167\nSol geometry, 396\nM , 242\nM L, 242\nS , 208\nRPn, 96\ng\nSL2 geometry, 392\n3-torus, 323\nAlexander theorem, 275\nAlexander trick, 181\nalgebraic intersection, 36\nalgebraic intersection of curves, 156\nangle structure, 469\nAnosov diﬀeomorphism, 259\nball with holes, 282\nbarycenter, 70\nBetti number, 35\nBieberbach Theorem, 132\nBorel measure, 24\nBorel set, 24\nbox, 226\nBrieskorn homology sphere, 320\nCartan–Hadamard theorem, 39\nCayley graph, 144\ncell complex, 37\naspherical cell complex, 38",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

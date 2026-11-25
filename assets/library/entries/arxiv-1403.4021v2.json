@@ -1,0 +1,581 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1403.4021v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "MARKOV TRACES ON THE BIRMAN-WENZL-MURAKAMI ALGEBRAS\nIvan Marin & Emmanuel Wagner\nLAMFA\nUniversit´e de Picardie Jules-Verne\n33 rue Saint Leu\n80039 Amiens Cedex 1\nFrance\nivan.marin@u-picardie.fr\n—\nInstitut de Math´ematiques de Bourgogne UMR 5584\nUniversit´e de Bourgogne\n7 Avenue Alain Savary BP 47870\n21078 Dijon Cedex\nFrance\nemmanuel.wagner@u-bourgogne.fr\nAbstract. We classify the Markov traces factoring through the Birman-Wenzl-Murakami\n(BMW) algebras.\nFor this purpose, we deﬁne a common ‘cover’ for the two variations\nof the BMW-algebra originating from the quantum orthogonal/symplectic duality",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "1. Introduction",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Context",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-11-context.md",
+      "narrative": null,
+      "content": "When the Jones and Homfly polynomial appeared, they were first  described as Markov traces on the\ngroup algebra of the braid group, and therefore as invariants of oriented links produced\nby the virtue of Markov theorem. Indeed  this theorem says that an invariant of oriented\nlinks is the same thing as a Markov trace on the tower of the group algebra of the braid group.\nThis approach has had a great descent, on the existence of quantum invariants originating from\na quantum trace, in the study of Markov traces on generalized\nHecke algebras, and the Khovanov homology in more recent years has a de",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Presentation",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-12-presentation.md",
+      "narrative": null,
+      "content": "The origin of this work was the apparently innocent question to determine whether the `Kauffman trace', that is the\nMarkov trace affording the Kauffman polynomial, was indeed the only Markov\ntrace factoring through the BMW-algebra (in addition to the one factoring\nto the smaller Hecke algebra quotient). When we tried to answer this question, we faced\nanother problem. First of all, it is well-known that there are two variations of\nthe Kauffman polynomial, one of them having been given the name of the\ncity of Dubrovnik. These two variations can be seen as Markov traces,\nafter specialization of t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Organisation of the paper",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-13-organisation-of-the-paper.md",
+      "narrative": null,
+      "content": "The plan of the paper is as follows. In \\S 2 we compile a few results on the `cubic Hecke algebra' on 3 strands, namely\nthe quotient of the group algebra of $B_3$ by a generic cubic relations $(s_i -a)(s_i-b)(s_i-c) = 0$. The finite-dimensionality\nas well as the symmetric algebra structure of this algebra is a crucial tool in the sequel. In \\S 3 and \\S 4 we explore the algebraic\nstructure of the BMW-algebra, and define a suitable cover of its two avatars appearing in the construction of the\nKauffman polynomial. This provides a suitable setting for studying the Markov traces, and we do this in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries on the cubic Hecke algebras on 3 strands",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-2-preliminaries-on-the-cubic-hecke-algebras-on-3.md",
+      "narrative": null,
+      "content": "\\label{sectH3}\nIn order to insure the coherence of notations with the forthcoming sections,\nwe let \n$$\nR = \\Q[a,a^{-1},b,b^{-1},c,c^{-1}] = \\Q[a,b,c,(abc)^{-1}],$$\nalthough all the results of the present section are actually already valid with $R=\\Z[a,b,c,(abc)^{- 1}]$.\n\n\n We let $H_n$ denote\nthe $R$-algebra defined as the quotient of the group algebra $R B_n$\nof the braid group on $n$ strands by the relations $(s_i-a)(s_i-b)(s_i-c) = 0$\nfor $1 \\leq i \\leq n-1$ or, equivalently -- since each $s_i$ is conjugated to $s_1$ --\nby the relation $(s_1-a)(s_1-b)(s_1-c)= 0$. It is known that $H_n$ is a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two BMW algebras as quotients of the braid groups",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "../sections/sec-005-3-two-bmw-algebras-as-quotients-of-the-braid-gro.md",
+      "narrative": null,
+      "content": "\\label{secttwobmwagebras}\n\nWe still denote $R = \\Q[a,b,c,(abc)^{-1}]$ and let $S = R[(b+c)^{-1}]$, $S_{\\pm} = S/(a \\mp y)$.\nThere are two variants of the Birman-Wenzl-Murakami algebras, one which can be defined over $S_+$, the other one over $S_-$.\nUsually, they are defined as a algebras over\n$\\Q[\\alpha,\\alpha^{-1}, q,q^{-1}, (q \\pm q^{-1})^{-1}]$,\nby generators $\\sigma_1,\\dots,\\sigma_{n-1}$, braid relations between the $\\sigma_i$'s, and three series of relations\ninvolving the additional elements\n$$\ne_i = \\frac{ \\sigma_i^{-1} \\pm \\sigma_i}{q \\pm q^{-1}} \\mp 1,\n$$\nnamely\n\\begin{enumerate}\n\\item",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A universal cover for the two BMW algebras, and a shorter defining relation",
+      "pageStart": 13,
+      "pageEnd": 19,
+      "target": "../sections/sec-006-4-a-universal-cover-for-the-two-bmw-algebras-and.md",
+      "narrative": null,
+      "content": "We still denote $R = \\Q[a,b,c,(abc)^{-1}]$, $S = R[(b+c)^{-1}]$. In all what follows, $\\Q$ could be replaced by $\\Z[\\frac{1}{2}]$\nwithout damage ; however the invertibility of $2$ is crucial at several steps.\nIndeed, the BMW-algebras in characteristic 2 present very specific features (see \\cite{CABANESMARIN} for results in this direction).\nFor $n \\geq 3$, we let \n$I_n$ denote the ideal of $H_n$ generated by the elements\n$$\n\\mathcal{R}_i = -b c s_i s_{i+1}^{-1} s_i + (bc)^2 s_{i+1}^{-1}�s_i s_{i+1}^{-1} - s_i s_{i+1} s_i - (b+c) b^2c^2 s_{i+1}^{-2}\n+ (b+c) s_i^2 + (bc)^3 s_{i+1}^{-1} s_i^{-1} s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "General inductive properties",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "../sections/sec-007-51-general-inductive-properties.md",
+      "narrative": null,
+      "content": "The following proposition is a corollary of proposition \\ref{propstructgenWBMW} (ii).\n\n\\begin{prop} \\label{unicitetn1} For all $n \\geq 2$, $t_{n+1}$ is uniquely determined by $t_n$ and $t_{n+1}(1)$.\n\\end{prop}\n\\begin{proof}\nIn the sequel, we abuse notations by letting $\\WBMW_r$ denote the image of $\\WBMW_r$ inside $\\WBMW_{n+1}$. \nWe prove that, for all $r \\leq n+1$, $t_{n+1}$ is uniquely determined by $t_n$ and by its value\non $\\WBMW_r$. The case $r = 1$ is the statement of the proposition, since $\\WBMW_1 = R$.\nWe prove this by descending induction on $r$, the case $r = n+1$ being trivial.\nBec",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Restrictions to 3 strands, and the Ocneanu trace",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-008-52-restrictions-to-3-strands-and-the-ocneanu-tra.md",
+      "narrative": null,
+      "content": "We recall that the notation $MT_3(M)$ was defined in section \\ref{sectH3}. We note that\n$$\nt_3^H(1) = \\left( \\frac{y+1}{x} \\right)^2 \\ \\  \nt_3^H(s_1) =\\frac{y+1}{x}  \\ \\  \nt_3^H(s_1s_2) = 1 \\ \\  \n$${}\nand define additional elements $t_3^S$, $t_3^K$\nof $MT_3(M)$ by\n$$\nt_3^S(1) = a^3,\\ \\ \\ \\ t_3^S(s_1) = t_3^S(s_1s_2) = 0, \\ \\ \\ \\ \nt_3^S((s_1s_2^{-1})^2)=  x^2(2a+x),\n$$\n{}\n$$\nt_3^K(1) = \\delta_K^2,\\ \\ \\ \\ t_3^K(s_1) = \\delta_K,\\ \\ \\ \\ t_3^K(s_1s_2) = 1,\n\\ \\ \\ \\ \\delta_K =  \\frac{y^2 - ax+y}{xy}, \n$${}\n$$\n t_3^K((s_1 s_2^{-1})^2) = x^3 y(y+1) + x^2(y^2 + 2a + \\frac{a}{y}) - x(1+y) - (y + a + \\fra",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Kauffman trace",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-009-53-the-kauffman-trace.md",
+      "narrative": null,
+      "content": "Recall that we defined in \\S \\ref{secttwobmwagebras} two Markov traces $t_n^{\\pm} : BMW_n^{\\pm} \\to S_{\\pm}$. Using the Chinese\nRemainder Theorem isomorphism $\\overline{S} \\simeq S_+ \\oplus S_-$ they\ncan be patched together into a Markov trace $\\overline{BMW}_n \\otimes_{\\overline{R}}  \\overline{S} \\to\n\\overline{S}$, which extends to a Markov trace $t_n^K : \\WBMW_n \\to \\overline{S}$.\n\n\n$$\n\\xymatrix{\n  &\\overline{BMW}_n\\otimes_{\\overline{R}}S_+ \\ar[r]&  BMW_n^+ \\ar[r]^{t_n^+} & S_+ \\ar[dr] & \\\\\n \\overline{BMW}_n\\otimes_{\\overline{R}} \\overline{S} \\ar[ur] \\ar[dr] \\ar@{.>}[rrrr]^{t_n^K}& & & & \\ov",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An additional trace when y=a2= 1",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-010-54-an-additional-trace-when-ya2-1.md",
+      "narrative": null,
+      "content": "Let $S^{\\dagger\\dagger}  = S/(a^2-1,y-1) = S^{\\dagger}/(a^2-y^2) = \\overline{S}/(a^2-y)$,\nand $BMW_n^{\\dagger\\dagger} = \\WBMW_n \\otimes_R S^{\\dagger \\dagger}$.\n\nWe first deal with the very special case $x = -2a$.\n\\begin{prop} \\label{propTracesXm2a}\nLet $(x_n)_{n \\geq 1}$ denote a sequence with values in some $S^{\\dagger\\dagger}$-module\nsatisfying $(x+2a) M = 0$. Then there exists a Markov trace $(t_n^X)$ on $(\\widetilde{BMW}_n)$\nwith values in $M$ such that, for every braid $g$, $t_n^X(g) = x_{\\# \\hat{g}}$, where\n$\\hat{g}$ denotes the closure of the braid $g$ and $\\# L$ denotes the number of\nc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A central extension of BMW",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-011-6-a-central-extension-of-bmw.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definition",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "../sections/sec-012-61-definition.md",
+      "narrative": null,
+      "content": "We define an algebra $F_n$ over $A = \\Q[a,x,x^{-1}]/(a^2 = 1)$ by generators\n$s_1,\\dots,s_{n-1}$, $e_1,\\dots,e_{n-1},C$ and relations\n\\begin{enumerate}\n\\item $s_i s_{i+1} s_i  = s_{i+1} s_i s_{i+1}$, $s_i s_j = s_j s_j$\n\\item $(s_i -a)(s_i^2 -x s_i+1)=0$\n\\item $e_i = a \\left( \\frac{ s_i^{-1} + s_i}{x} - 1 \\right)$\n\\item $s_i e_i = a e_i$\n\\item $e_i s_{i+1} e_i =  e_i+C$\n\\item $e_i s_{i-1} e_i =  e_i+C$\n\\item $e_i s_{i+1}^{-1} e_i =  e_i+C$\n\\item $e_i s_{i-1}^{-1} e_i =  e_i+C$\n\\item $s_i C = C s_i = a C$.\n\\end{enumerate}\nLetting  $\\tilde{\\delta} = 2 - ax $, we have $e_i^2= \\tilde{\\delta}x^{-1}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/cor-sec-013-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "cor-sec-013-02.md",
+      "narrative": null,
+      "content": "For every morphism λ : S†† ,→C, the image of C inside (Fn ⊗A S††) ⊗λ C is nonzero.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/cor-sec-013-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "cor-sec-013-03.md",
+      "narrative": null,
+      "content": "The A-module Fn is free of rank 1 + dim BMW ± n",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/cor-sec-013-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "cor-sec-013-04.md",
+      "narrative": null,
+      "content": "The natural algebra morphism Fn →Fn+1 is injective.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/prop-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "prop-sec-013-01.md",
+      "narrative": null,
+      "content": "For every morphism λ : S†† →C, BMW †† n ⊗λ C and (Fn ⊗A S††) ⊗λ C have dimension at least 1 + dim BMW + n .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A genuine extension of BMWn",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-013-62-a-genuine-extension-of-bmwn.md",
+      "narrative": null,
+      "content": "n . Using the abelianization morphism Bn ↠Z we can\ndeﬁne a 3-dimensional Hn ⊗R S††-module by\nsi 7→\n\n\na\n1\n0\n0\nb\n1\n0\n0\nb−1\n\n\nIt is easily checked that R1 acts by 0 in this module, hence we get a 3-dimensional BMW ††\nn -\nmodule. We get that ei = a((si + s−1\ni )/x −1) is mapped to\n\n\n(ab−1)(−b+a)\nb2+1\nab−1\nb2+1\nb\nb2+1\n0\n0\n0\n0\n0\n0\n\n\nwhile eisi+1ei −ei and eis−1\ni+1ei −ei are both mapped to\n2ab −b2 −1\n(b2 + 1)2\n\n\n(ab −1)(a −b)\nab −1\nb\n0\n0\n0\n0\n0\n0\n\n\nThis proves that this module induces a Fn ⊗A S††-module, and therefore a Fn ⊗A S††\n± -\nmodule, which do not factorize through BMW ±\nn . It",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/cor-sec-014-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 32,
+      "target": "cor-sec-014-03.md",
+      "narrative": null,
+      "content": "Let (tn) be a Markov trace on (BMW †† n ) with value in some S††-module M, and t′ n its composite with M →M ⊗S††[(a−x)−1, (2a−x)−1, (2a+x)−1]. Then t′ n is a linear combination tH n , tK n , t†† n with coeﬃcients in M ⊗R S††[(a −x)−1, (2a −x)−1, (2a + x)−1].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/prop-sec-014-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 32,
+      "target": "prop-sec-014-02.md",
+      "narrative": null,
+      "content": "The Q-algebras BMW †† 4 ⊗S†† Q[b]/(b ± 1) both have dimension 115.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The algebra Fn as a specialization of BMW\"0365BMWn",
+      "pageStart": 27,
+      "pageEnd": 32,
+      "target": "../sections/sec-014-63-the-algebra-fn-as-a-specialization-of-bmw0365.md",
+      "narrative": null,
+      "content": "BMW n. The goal of this section is to prove\nthe following theorem.\nTheorem 6.8. The morphism of S††-algebras BMW ††\nn →Fn ⊗A S†† induces an isomorphism\nafter tensorisation by S††[(x + 2a)−1].\nWe deﬁne Si = eisi+1ei−ei, S′\ni = eis−1\ni+1ei−ei ∈Hn⊗RS††, and also c\nRi = (sisi+1si)Ri(sisi+1si)−1,\nand similarly bSi = (sisi+1si)(Si)(sisi+1si)−1. The two formulas below hold inside H3 ⊗S††\nand can be checked computationally by using the morphism ΦH3, as we did for lemma 4.6\n(these formulas were found by a similar procedure, too).\n(6.9)\nS1−S′\n1 = 1\nxR1s2−1\nx2 s−1\n1 R1s2−1\nx2 s1R1s2 = 1\nx2 (x−s−1\n1 −s1)R",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/thm-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 32,
+      "target": "thm-sec-014-01.md",
+      "narrative": null,
+      "content": "The morphism of S††-algebras BMW †† n →Fn ⊗A S†† induces an isomorphism after tensorisation by S††[(x + 2a)−1]. We deﬁne Si = eisi+1ei−ei, S′ i = eis−1 i+1ei−ei ∈Hn⊗RS††, and also c Ri = (sisi+1si)Ri(sisi+1si)−1, and similarly bSi = (sisi+1si)(Si)(sisi+1si)−1. The two formulas below hold inside H3 ⊗S†† and can be checked computationally by using the morphism ΦH3, as we did for lemma 4.6 (these formulas were found by a similar procedure, too). (6.9) S1−S′ 1 = 1 xR1s2−1 x2 s−1 1 R1s2−1 x2 s1R1s2 = 1 x2 (x−s−1 1 −s1)R1s2 = (b + c)2 (s1−b)(s1−c)s−1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Computations inside Fn",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../sections/sec-015-64-computations-inside-fn.md",
+      "narrative": null,
+      "content": "Following the arguments of Wenzl in \\cite{WENZL} p. 400 we can derive additional useful relations\ninside $F_n$.\n\n\\begin{lemma} \\label{lemformulesFsee}Assume $|j-i| = 1$. Then we have\n\\begin{enumerate}\n\\item $s_j s_i e_j = e_i s_j s_i$\n\\item $s_i e_j e_i = a s_j^{-1} e_i + C$, $e_i e_j s_i = a e_i s_j^{-1} + C$\n\\item $e_i e_j e_i = e_i + \\frac{2a}{x} C$\n\\item $e_i s_j s_i = a e_i e_j -C$\n\\end{enumerate}\n\\end{lemma}\n\\begin{proof}\nBy the braid relations, we have $s_j s_i s_j^{\\alpha} = s_i^{\\alpha} s_j s_i$ whenever $\\alpha \\in \\{ -1,0,1 \\}$.\nSince $e_k = a ((s_k^{-1} + s_k)/x-1)$ we get (i).\nUsi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A central extension of the Temperley-Lieb algebra",
+      "pageStart": 32,
+      "pageEnd": 35,
+      "target": "../sections/sec-016-65-a-central-extension-of-the-temperley-lieb-alg.md",
+      "narrative": null,
+      "content": "\\begin{defi} We define a unital algebra $\\widetilde{TL}_n$\nover $A = \\Q[a,x,x^{-1}]/(a^2 = 1)$ by generators $e_1,\\dots,e_{n-1},C$\nand relations\n\\begin{enumerate}\n\\item $e_i^2 = \\tilde{\\delta}x^{-1} e_i$\n\\item $e_i C = C e_i = \\tilde{\\delta} x^{-1} C$\n\\item $C^2 = 2 x^{-2} \\tilde{\\delta}(a-x) C$\n\\item $e_i e_j = e_j e_i $ if $|j-i| \\geq 2$\n\\item $e_i e_j e_i = e_i + \\frac{2a}{x} C$ if $|j-i|  = 1$\n\\end{enumerate}\n\\end{defi}\n\nWe have a natural morphism $\\widetilde{TL}_n \\to F_n $ of unital $A$-algebras.\nThe next proposition shows that $\\widetilde{TL}_n$ can be identified\nwith a subalgebra of $F",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Splittings",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "../sections/sec-017-66-splittings.md",
+      "narrative": null,
+      "content": "In this section we show that our extension of the BMW-algebra is not split\nexactly in the two cases we are interested in.\n\n\n\\begin{prop} \\label{propsplittingsBMW} Let $k$ be a field of characteristic $0$ and $\\varphi: S^{\\dagger\\dagger}_{\\pm} \\to k$\na morphism of $\\Q$-algebras. Then, for $n \\geq 3$, the natural short exact sequence\n$0 \\to k C \\to (F_n \\otimes_A S^{\\dagger\\dagger}_{\\pm} ) \\otimes_{\\varphi} k\n\\to (BMW_n^{\\pm})\\otimes S^{\\dagger\\dagger}_{\\pm} ) \\otimes_{\\varphi} k \\to 0$\nsplits iff $\\varphi(Q)$ has a root in $k$, where\n$$\nQ(\\la) = x^4(1+ u \\tilde{\\delta} + u^2 \\tilde{\\delta}) \\in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A central extension of the (-1)-Hecke algebras",
+      "pageStart": 36,
+      "pageEnd": 42,
+      "target": "../sections/sec-018-67-a-central-extension-of-the--1-hecke-algebras.md",
+      "narrative": null,
+      "content": "We introduce the two-sided ideal $F_n^+$ of $F_n$ generated by $e_1,\\dots,e_{n-1},C$,\nand we let $F_n^{++}$ denote the ideal $(F_n^+)^2$.\n \n\nInside $F_n/F_n^{++}$ we have $e_i = -C$ for all $i$, and therefore $\\tilde{\\delta} x^{-1} C = e_i C = -C^2\n= -2 \\tilde{\\delta}(a-x)C$, that is $\\left( \\frac{\\tilde{\\delta}}{x} \\right)^2 a C = 0$. \nWe thus let $\\overline{F}_n$ denote the quotient of $F_n(0) = F_n \\otimes_A A_0$ by the ideal\n$(A_0 F_n^+)^2$. It is spanned over $A_0$ by elements $E_w, w \\in \\mathfrak{S}_n$,\nand $C$. Indeed, one can easily check the following formula, when we also denote $s_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Knot invariants",
+      "pageStart": 42,
+      "pageEnd": 42,
+      "target": "../sections/sec-019-7-knot-invariants.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Number of connected components, special trace and change of variables",
+      "pageStart": 42,
+      "pageEnd": 44,
+      "target": "../sections/sec-020-71-number-of-connected-components-special-trace.md",
+      "narrative": null,
+      "content": "If $\\beta$ is a braid on $n$ strands, then its closure $L$ is an oriented link. As before,\nwe denote\n$\\ell : B_n \\to \\Z$\nthe abelianization morphism which maps $\\sigma_i$ to $1$.\nWe will use the following\nclassical fact :\n\n\\begin{lemma} \\label{lemwrithe} If $\\beta \\in B_n$ and $L$ is the closure of $\\beta$, then\n$n+\\ell(\\beta) \\equiv (\\# L)  \\mod 2$, where $\\# L$ denote the number of\ncomponents of the link $L$.\n\\end{lemma}\n\\begin{proof}\nDecomposing the projection\n$\\overline{\\beta} \\in \\mathfrak{S}_n$ \nof $\\beta$ under $B_n \\to \\mathfrak{S}_n$\ninto a product of disjoint cycles,\nwe get\n$r$ cycle",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tables",
+      "pageStart": 44,
+      "pageEnd": 46,
+      "target": "../sections/sec-021-74-tables.md",
+      "narrative": null,
+      "content": "We gather here some computations that we made of these two invariants, one of them (for $x =a$) being still conjectural.\n$$\n\\begin{array}{|lcc|lcc|lcc|}\n\\hline\nKnot & x=a & x=2a &Knot & x=a & x=2a &Knot & x=a & x=2a  \\\\\n\\hline\n0_{1} & &   & 3_{1} & 4 & 0  & 4_{1} &10 & 16  \\\\ \\hline\n5_{1} & 1 & 0  & 5_{2} &13 &48   & 6_{1} & 7& 80  \\\\ \\hline\n6_{2} &13 &96   & 6_{3} & 25 & 144  & 7_{1} & 1 & 0  \\\\ \\hline\n7_{2} & -2 & 112  & 7_{3} & 10 & 160  & 7_{4} & 7 & 224   \\\\ \\hline\n7_{5} & 25 & 288  & 7_{6} & 25 & 336  & 7_{7} & 31 & 416  \\\\ \\hline\n\\end{array}\n$$\n{}\n\n$$\n\\begin{array}{|lcc|lcc|lcc|}\n\\hline",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1403.4021v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 46,
+      "pageEnd": 46,
+      "target": "../sections/sec-022-references.md",
+      "narrative": null,
+      "content": "[1] J. Birman, H. Wenzl, Braids, link polynomials and a new algebra, Trans. Amer. Math. Soc. 313\n(1989), 249–273.\n[2] N. Bourbaki, Groupes et alg`ebres de Lie, chapitres 4,5,6, Masson, Paris, 1981.\n[3] D. Benson, K. Erdmann, A. Mikaelian, Cohomology of Hecke algebras, Homology, Homotopy Appl.\n12 (2010), 353–370.\n[4] M. Brou´e, G. Malle, Zyklotomische Heckealgebren, in Repr´esentations unipotentes g´en´eriques et blocs\ndes groupes r´eductifs ﬁnis, Ast´erisque 212 (1993), 119–189.\n[5] M. Brou´e, G. Malle, R. Rouquier, Complex reﬂection groups, braid groups, Hecke algebras, J. Reine\nAngew. Math.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

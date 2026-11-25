@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="../../../../assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="../../../../assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  
+
+  
+
+  <script src="../../../../assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+
+
+  <!-- Begin Jekyll SEO tag v2.9.0 -->
+<title>session-intent (skill) | Quantum Observable Universe</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="session-intent (skill)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Quantum Observable Universe — a framework for quantum physics via rigid monoidal categories" />
+<meta name="twitter:description" property="og:description" content="Quantum Observable Universe — a framework for quantum physics via rigid monoidal categories" />
+<link rel="canonical" href="https://litlfred.github.io/qou/en/cat-harness/processes/skills/session-intent.html" />
+<meta property="og:url" content="https://litlfred.github.io/qou/en/cat-harness/processes/skills/session-intent.html" />
+<meta property="og:site_name" content="Quantum Observable Universe" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="session-intent (skill)" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Quantum Observable Universe — a framework for quantum physics via rigid monoidal categories","headline":"session-intent (skill)","url":"https://litlfred.github.io/qou/en/cat-harness/processes/skills/session-intent.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <script type="application/json" id="fa-site-scheme">{"scheme": "dark"}</script><!-- fa-first-paint:begin -->
+<script>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+<style>html{background-color:#27262b}html[data-fa-scheme="light"]{background-color:#ffffff}</style>
+<!-- fa-first-paint:end --><meta name="fa-render-regions" content="1">
+<script>document.documentElement.setAttribute("data-fa-render","pending");</script><style>
+  .bpmn-figure {
+    overflow-x: auto;
+    background: #fff;
+    border: 1px solid rgba(128, 128, 128, 0.35);
+    border-radius: 6px;
+    margin: 1em 0 0.4em;
+  }
+  .bpmn-figure img {
+    display: block;
+    width: 100%;
+    min-width: 1200px;
+    max-width: none;
+  }
+  .bpmn-source {
+    margin-top: 0;
+    font-size: 0.75rem;
+  }
+</style><script type="application/json" id="fa-translation-meta">{
+  "lang": "en",
+  "translationStatus": "",
+  "translationSource": "",
+  "supportedLocales": ["ar","zh","en","fr","ru","es"],
+  "availableLocales": null,
+  "translationQa":{
+    "key": "page.translation",
+    "slug": "en-cat-harness-processes-skills-session-intent",
+    "src": "../../../../assets/qa/en-cat-harness-processes-skills-session-intent/page.translation.json",
+    "index": "../../../../assets/qa/en-cat-harness-processes-skills-session-intent/qa-index.json",
+    "list": "../../../../assets/qa/translation-qa-pages.json"
+  },
+  "sweep":{
+    "absent": "qou publishes no translation QA sweep on this site",
+    "run": false,
+    "sweptAt": "",
+    "totalPages": 0,
+    "pagesWithTranslations": 0,
+    "complete": false
+  },
+  "statusSrc":"../../../../assets/translation-status/index.json",
+  "reviewSrc":"../../../../assets/translation-status/review.json"
+}</script><script type="application/json" id="fa-navbar-row" data-fa-row-src="harness-data"></script><script type="application/json" id="fa-site-links">{"kg":"https://litlfred.github.io/folio-assistant/qou/","jsonld":"https://litlfred.github.io/folio-assistant/qou/qou.jsonld","source":"https://github.com/litlfred/qou"}</script><meta name="fa-site-index-src" content="../../../../assets/harness/site.json">
+<meta name="fa-todo-src" content="../../../../assets/todos/index.json"><meta name="fa-todo-graph" content="../../../../todos.jsonld"><meta name="fa-zoom-src" content="../../../../assets/semantic-zoom.json"><meta name="fa-tiles" content="" data-fa-src="harness-data">
+<meta name="fa-glass-strip" content="[&quot;glass-todos&quot;,&quot;glass-settings&quot;]"><meta name="fa-baseurl" content="../../../.."><meta name="fa-staging" content=""><meta name="fa-search-index" content="">
+
+<meta name="fa-beans-src" content="../../../../assets/beans/index.json"><meta name="fa-processes-src" content="../../../../subgraph/index.jsonld"><meta name="fa-build-src" content="../../../../build.json"><link rel="stylesheet" href="../../../../assets/css/navbar-row.css?v=263225e79ed9">
+<link rel="stylesheet" href="../../../../assets/css/docs-ui.css?v=4c7265cca407"><link rel="stylesheet" href="../../../../assets/css/narrow-viewport.css?v=173ef819dbf2"><link rel="stylesheet" href="../../../../assets/css/themes.css?v=5c199f8420d3"><link rel="stylesheet" href="../../../../assets/css/uml.css?v=e677f91cbf66"><link rel="stylesheet" href="../../../../assets/css/avatars.css?v=996b3ffe2ab3"><script type="application/json" id="fa-declared-kinds">["attestations","beans","code","computation-witness","folio","fsh-guts","lake-cache","lean","library","mn-chi-cache","processes","qa","references","tools","trace-cache","typologies","wheel-cache","xbot-relaxation-ckpt"]</script><script src="../../../../assets/js/harness-data.js" defer></script><script src="../../../../assets/js/kg-render.js" defer></script><script src="../../../../assets/js/navbar-row.js?v=fb3cd5c0d28c" defer></script>
+<script src="../../../../assets/js/docs-ui.js?v=cae1ad7ba8e7" defer></script><script src="../../../../assets/js/edit-links.js?v=7b072444cbb5" defer></script><script src="../../../../assets/js/translation-review.js?v=3ab638979d22" defer></script><script src="../../../../assets/js/code-highlight.js?v=0f94772226c3" defer></script><style>
+  .folio-landing { position: relative; margin: 0 0 2rem; }
+
+  /* WHAT IS LEFT HERE, AND WHY IT IS SO LITTLE.
+     `landing.html` emits exactly one folio-landing class —
+     `folio-landing folio-landing--plain` — the no-stickies fallback, which
+     renders the description and no art. The art path moved to the sticky
+     board (`fa-sticky--backdrop` in docs-ui.css), which composites text into
+     the picture through a declared `textRegion` and a scrim.
+
+     So this block used to carry fourteen selectors of which ELEVEN matched
+     nothing: every rule reaching for `folio-landing__art`,
+     `folio-landing__text` or `folio-landing--no-region`. Measured before they
+     were cut — those three classes appear in no markup in this repository and
+     on none of the 331 published pages that were inlining the CSS for them.
+     CSS has no error for a selector that matches nothing, which is the same
+     silence that let `.fa-sticky--backdrop > .fa-sticky-art` ship wrong.
+
+     The reasoning did not go with them. The blend-direction argument for the
+     fade is now at `.fa-sticky--backdrop::before`, where a scrim replaces it;
+     the region, overflow and breakpoint-parity lessons were already
+     re-derived and better stated on `.fa-landing-sticky--fixed`. What is NOT
+     carried over is the `cqw` container-query sizing: the successor scales
+     through `--fa-text-scale` rather than container queries, so a note about
+     `container-type` not being its own query container would be advice about
+     a mechanism nothing here uses. Bean `alox`, issue #873. */
+  .folio-landing--plain {
+    position: static; width: auto; height: auto; color: inherit;
+  }
+  .folio-landing--plain p { font-size: inherit; font-weight: inherit; }
+</style><style id="fa-page-ground" data-instance="cat-harness">
+  /* Grumpy cyborg agents, the theme of cat-harness. */
+  :root { --fa-page-scrim: rgba(39, 38, 43, 0.85); --fa-text-scrim: rgba(39, 38, 43, 0.96); }
+  :root[data-fa-scheme="light"] { --fa-page-scrim: rgba(255, 255, 255, 0.85); --fa-text-scrim: rgba(255, 255, 255, 0.96); }
+  /* The root carries the art, so it covers the whole viewport however short
+     the page; the body is made see-through so the art is not painted over. */
+  html:root body { background-color: transparent; }
+  html body .main-content { background-color: var(--fa-text-scrim); border-radius: 6px; }
+  html:root {
+    background-image:
+      linear-gradient(var(--fa-page-scrim), var(--fa-page-scrim)),
+      url("../../../../assets/img/harness/landing-grumpy-cyborg-agents-laptop.webp");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  @media (max-width: 48rem) {
+    html:root {
+      background-image:
+        linear-gradient(var(--fa-page-scrim), var(--fa-page-scrim)),
+        url("../../../../assets/img/harness/landing-grumpy-cyborg-agents-card.webp");
+    }
+  }
+  @media (max-width: 30rem) {
+    html:root {
+      background-image:
+        linear-gradient(var(--fa-page-scrim), var(--fa-page-scrim)),
+        url("../../../../assets/img/harness/landing-grumpy-cyborg-agents-mobile.webp");
+    }
+  }
+  /* Print and forced colours get the plain page: art is decoration. */
+  @media print, (forced-colors: active) {
+    html:root { background-image: none; }
+  }
+</style>
+
+<link rel="stylesheet" href="../../../../assets/css/navbar.css"><script src="../../../../assets/navbar/rail-2dtsu7qepqi.js" defer></script><script src="../../../../assets/js/navbar.js" defer></script><link rel="stylesheet" href="../../../../assets/page-layout.css" data-fa-page-layout><script src="../../../../assets/page-layout.js" defer data-fa-page-layout></script><script src="../../../../assets/draft-banner.js" defer data-fa-page-layout></script><noscript data-fa-draft-noscript><link rel="stylesheet" href="../../../../assets/draft-banner-noscript.css"></noscript><meta name="fa-pinned-data" content="../../../.."></head>
+
+<body><script type="application/json" id="fa-rail" data-fa-root="https://litlfred.github.io/folio-assistant" data-fa-to-root="../../../..">{"data":"rail-2dtsu7qepqi","here":"/en/cat-harness/processes/skills/session-intent.html","documentIndex":{"label":"On this page","icon":"§","items":[{"href":"#where-state-lives","label":"Where state lives"},{"href":"#session-start-protocol-5-steps","label":"Session-start protocol (5 steps)","children":[{"href":"#1-read-statusmd","label":"Read STATUS.md","icon":"1","depth":1},{"href":"#2-read-the-goals-master-ledger","label":"Read the goal’s master ledger","icon":"2","depth":1},{"href":"#3-read-the-queue","label":"Read the queue","icon":"3","depth":1},{"href":"#4-declare-intent-write","label":"Declare intent (write)","icon":"4","depth":1},{"href":"#5-hand-off-to-coordinate","label":"Hand off to /coordinate","icon":"5","depth":1}],"fold":"5 sub-sections"},{"href":"#session-end-protocol-3-steps","label":"Session-end protocol (3 steps)","children":[{"href":"#1-update-the-queue","label":"Update the queue","icon":"1","depth":1},{"href":"#2-append-results-to-the-master-ledger","label":"Append results to the master ledger","icon":"2","depth":1},{"href":"#3-update-the-pr-body","label":"Update the PR body","icon":"3","depth":1}],"fold":"3 sub-sections"},{"href":"#multi-agent-same-goal-coordination","label":"Multi-agent same-goal coordination"},{"href":"#hand-off-pickup-protocol","label":"Hand-off pickup protocol"},{"href":"#anti-patterns","label":"Anti-patterns"},{"href":"#see-also","label":"See also"}],"collapsible":true}}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../">Quantum Observable Universe</a></nav>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  
+    
+
+  
+  <div class="main" id="top">
+    <div id="main-header" class="main-header fa-site-bar fa-page-bar"><a class="fa-page-bar-home" href="../../../../">Quantum Observable Universe</a>
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search Quantum Observable Universe" autocomplete="off">
+    <label for="search-input" class="search-label">
+      <span class="sr-only">Search Quantum Observable Universe</span>
+      <svg viewBox="0 0 24 24" class="search-icon" aria-hidden="true"><use xlink:href="#svg-search"></use></svg>
+    </label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+<span class="fa-page-bar-locale" data-fa-slot="locale"></span></div>
+
+    <div class="main-content-wrap">
+      
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <blockquote class="note">
+  <p>The skill <code class="language-plaintext highlighter-rouge">session-intent</code> as its source file <a href="https://github.com/litlfred/qou/blob/main/skills/local/session-intent.md"><code class="language-plaintext highlighter-rouge">skills/local/session-intent.md</code></a> writes it, rendered by <code class="language-plaintext highlighter-rouge">gen-processes-viz.ts</code> because it has no instruction page on this site — do not edit here. <a href="../index.html">All processes</a></p>
+</blockquote>
+<h1 id="session-intent--durable-session-intent--results">
+  
+  
+    <a href="#session-intent--durable-session-intent--results" class="anchor-heading" aria-labelledby="session-intent--durable-session-intent--results"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> /session-intent — durable session intent + results
+  
+  
+</h1>
+    
+
+<p><strong>Skill <code class="language-plaintext highlighter-rouge">session-intent</code>:</strong> Session-start intent declaration + session-end results recording, against the goal-scoped master ledger and queue file. Enforces the durable-handoff discipline so any agent can pick up another’s thread.</p>
+
+<p><strong>Named by:</strong> <a href="../hand-back-to-discussion.html">Hand back to the discussion</a></p>
+
+<p>The 2026-05-31 c_k flip-flop episode (four flips in five days)
+exposed a coordination failure: agents had no durable record of
+which probes were in flight, what each one had already learned, or
+why a “derivation” had been retracted. Each new session
+re-discovered the same near-match and re-wired it, only to retract
+later.</p>
+
+<p>This skill enforces the <strong>read → declare → work → record</strong> loop so
+the next session — possibly a different agent — picks up exactly
+where the previous one left off.</p>
+<h2 id="where-state-lives">
+  
+  
+    <a href="#where-state-lives" class="anchor-heading" aria-labelledby="where-state-lives"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Where state lives
+  
+  
+</h2>
+    
+
+<div class="table-wrapper"><table>
+  <thead>
+    <tr>
+      <th>Artifact</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://github.com/litlfred/qou/blob/STATUS.md"><code class="language-plaintext highlighter-rouge">STATUS.md</code></a></td>
+      <td>Always-current root dashboard: goals → master ledgers → active PRs</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">docs/coordination/&lt;goal&gt;.md</code></td>
+      <td>Per-goal <strong>master ledger</strong>: status table, open probes, flip-flop history, session log</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">.beans/</code> (via <code class="language-plaintext highlighter-rouge">beans</code> CLI)</td>
+      <td>Machine-readable <strong>queue</strong> of probes, managed as hierarchical issues (Beans).</td>
+    </tr>
+    <tr>
+      <td>Per-PR body</td>
+      <td>Session intent at branch-open; EOS results appended</td>
+    </tr>
+  </tbody>
+</table></div>
+<h2 id="session-start-protocol-5-steps">
+  
+  
+    <a href="#session-start-protocol-5-steps" class="anchor-heading" aria-labelledby="session-start-protocol-5-steps"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Session-start protocol (5 steps)
+  
+  
+</h2>
+    
+
+<blockquote>
+  <p>Run these in order. Steps 1–3 are read-only; step 4 writes.</p>
+</blockquote>
+<h3 id="1-read-statusmd">
+  
+  
+    <a href="#1-read-statusmd" class="anchor-heading" aria-labelledby="1-read-statusmd"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 1. Read STATUS.md
+  
+  
+</h3>
+    
+
+<p>Open <a href="https://github.com/litlfred/qou/blob/STATUS.md"><code class="language-plaintext highlighter-rouge">STATUS.md</code></a>. Identify which goal row(s)
+the user’s current request touches. Note the active PRs column —
+those are your siblings.</p>
+<h3 id="2-read-the-goals-master-ledger">
+  
+  
+    <a href="#2-read-the-goals-master-ledger" class="anchor-heading" aria-labelledby="2-read-the-goals-master-ledger"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 2. Read the goal’s master ledger
+  
+  
+</h3>
+    
+
+<p>Open <code class="language-plaintext highlighter-rouge">docs/coordination/&lt;goal&gt;.md</code>. Read:</p>
+
+<ul>
+  <li><strong>Status table</strong> — current canonical status of each subgoal /
+coefficient / observable. If a recent commit “derived” something
+but the ledger says NOT derived, <strong>trust the ledger</strong>: it’s
+recording a retraction the commit doesn’t reflect.</li>
+  <li><strong>Flip-flop history</strong> — every previous retraction, with the
+failure-mode signature. <strong>Do not repeat any pattern listed here.</strong></li>
+  <li><strong>Open probes</strong> — what’s already in flight.</li>
+  <li><strong>Session log</strong> — what previous sessions on this goal did.</li>
+</ul>
+<h3 id="3-read-the-queue">
+  
+  
+    <a href="#3-read-the-queue" class="anchor-heading" aria-labelledby="3-read-the-queue"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 3. Read the queue
+  
+  
+</h3>
+    
+
+<p>Use the <code class="language-plaintext highlighter-rouge">beans</code> CLI to list current tasks. Run <code class="language-plaintext highlighter-rouge">beans list</code> to find:</p>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">todo</code> or <code class="language-plaintext highlighter-rouge">draft</code></strong> beans not yet picked up.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">blocked</code></strong> beans waiting on dependencies.</li>
+  <li>Assignee: Check the bean body/comments to see if another agent is working on it. Multiple agents MAY pick the same item; coordinate with the user if you see this happen.</li>
+</ul>
+<h3 id="4-declare-intent-write">
+  
+  
+    <a href="#4-declare-intent-write" class="anchor-heading" aria-labelledby="4-declare-intent-write"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 4. Declare intent (write)
+  
+  
+</h3>
+    
+
+<p>Three places, all required:</p>
+
+<p><strong>a. Master ledger session log</strong> — append a row:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| 2026-05-31 | Claude / <span class="sb">`&lt;branch&gt;`</span> | INTENT: <span class="nt">&lt;which</span> <span class="na">probe</span> <span class="na">IDs</span> <span class="na">from</span> <span class="na">queue</span> <span class="err">+</span> <span class="na">what</span> <span class="na">user</span> <span class="na">asked</span><span class="nt">&gt;</span> | (filled at EOS) |
+</code></pre></div></div>
+
+<p><strong>b. Beans CLI</strong> — Create a parent session bean and child tasks.</p>
+
+<blockquote>
+  <p><strong>Check before you create (STRICT).</strong> <code class="language-plaintext highlighter-rouge">beans create</code> is not idempotent — it
+mints a fresh ID every call and dedupes on nothing, so re-entering this step
+duplicates the whole plan rather than no-op’ing. Run the existence check in
+<a href="todo-manager.html"><code class="language-plaintext highlighter-rouge">todo-manager.md</code> §Check before you create</a> before <strong>every</strong>
+<code class="language-plaintext highlighter-rouge">beans create</code> below, the session milestone included. An unguarded re-run of
+exactly this step produced 14,688 duplicate beans on 2026-08-04.</p>
+</blockquote>
+
+<ul>
+  <li>Create a session-level milestone/epic: <code class="language-plaintext highlighter-rouge">beans create "Session: &lt;Branch/Goal&gt;" --type milestone</code></li>
+  <li>For each probe/task you pick up, create a child task and link it to the session bean:
+<code class="language-plaintext highlighter-rouge">beans create "&lt;Probe/Task&gt;" --type task</code>
+<code class="language-plaintext highlighter-rouge">beans update &lt;child-id&gt; --parent &lt;session-id&gt;</code>
+<code class="language-plaintext highlighter-rouge">beans update &lt;child-id&gt; --status in-progress</code>
+If working on an existing bean, just run <code class="language-plaintext highlighter-rouge">beans update &lt;id&gt; --status in-progress --body-append "Claimed by &lt;branch&gt;"</code></li>
+</ul>
+
+<blockquote>
+  <p><strong>Crucial Plan Check (Formalize-first):</strong> Before finalizing the intent, verify that the workplan prioritizes Lean artifacts. For any new math or physics derivation, the first tasks <em>must</em> be writing the Lean structure, class, or proof scaffold in <code class="language-plaintext highlighter-rouge">.lean</code> files. Do not plan Python fitting scripts or <code class="language-plaintext highlighter-rouge">.md</code> prose until the Lean axioms compile.</p>
+</blockquote>
+
+<p><strong>c. PR body</strong> — at branch-open, the PR body must include:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gu">## Intent (session start)</span>
+<span class="p">-</span> <span class="nt">&lt;one</span> <span class="na">line</span> <span class="na">per</span> <span class="na">probe</span> <span class="na">ID</span> <span class="na">from</span> <span class="na">queue</span> <span class="na">you</span><span class="err">'</span><span class="na">re</span> <span class="na">working</span><span class="nt">&gt;</span>
+<span class="p">-</span> <span class="nt">&lt;user</span><span class="err">'</span><span class="na">s</span> <span class="na">stated</span> <span class="na">goal</span> <span class="na">in</span> <span class="na">their</span> <span class="na">words</span><span class="nt">&gt;</span>
+
+<span class="gu">## Session results</span>
+<span class="nt">&lt;filled</span> <span class="na">at</span> <span class="na">EOS</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+<h3 id="5-hand-off-to-coordinate">
+  
+  
+    <a href="#5-hand-off-to-coordinate" class="anchor-heading" aria-labelledby="5-hand-off-to-coordinate"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 5. Hand off to /coordinate
+  
+  
+</h3>
+    
+
+<p>After step 4, run <code class="language-plaintext highlighter-rouge">/coordinate</code> to post intent on relevant sibling PRs</p>
+<ul>
+  <li>triage their review comments. Then start work.</li>
+</ul>
+<h2 id="session-end-protocol-3-steps">
+  
+  
+    <a href="#session-end-protocol-3-steps" class="anchor-heading" aria-labelledby="session-end-protocol-3-steps"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Session-end protocol (3 steps)
+  
+  
+</h2>
+    
+
+<blockquote>
+  <p>Run these BEFORE pushing the final commit. The push triggers PR
+auto-subscription + sibling-coord sweep, so the EOS state must be
+visible from the push commit.</p>
+</blockquote>
+<h3 id="1-update-the-queue">
+  
+  
+    <a href="#1-update-the-queue" class="anchor-heading" aria-labelledby="1-update-the-queue"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 1. Update the queue
+  
+  
+</h3>
+    
+
+<p>For each probe you worked, use the <code class="language-plaintext highlighter-rouge">beans</code> CLI:</p>
+
+<ul>
+  <li>If completed: <code class="language-plaintext highlighter-rouge">beans update &lt;id&gt; --status completed</code>. You should also add a summary comment using <code class="language-plaintext highlighter-rouge">beans update &lt;id&gt; --body-append "Completed with finding: ..."</code>.</li>
+  <li>If partial: leave <code class="language-plaintext highlighter-rouge">status: in-progress</code>, but append a comment: <code class="language-plaintext highlighter-rouge">beans update &lt;id&gt; --body-append "Partial result: ..."</code>.</li>
+  <li>If you discovered a NEW probe: create a new bean via <code class="language-plaintext highlighter-rouge">beans create</code>.</li>
+  <li>If you retract a previous “derivation” claim: append the retraction to the ledger’s flip-flop history (Stop Repeating Yourself).</li>
+</ul>
+<h3 id="2-append-results-to-the-master-ledger">
+  
+  
+    <a href="#2-append-results-to-the-master-ledger" class="anchor-heading" aria-labelledby="2-append-results-to-the-master-ledger"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 2. Append results to the master ledger
+  
+  
+</h3>
+    
+
+<p>The session log row from step 4a now gets its “RESULTS” column filled:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| 2026-05-31 | Claude / <span class="sb">`&lt;branch&gt;`</span> | INTENT: probe-c3-q0-stability | RESULTS: confirmed q_0 dependence at all 3 anchors; appended new probe <span class="sb">`probe-c3-rep-theoretic-source`</span> for follow-up. PR #1581 opened. |
+</code></pre></div></div>
+
+<p>If the session retracted a prior claim, add a row to the
+<strong>Flip-flop history</strong> table with the retraction reason.</p>
+<h3 id="3-update-the-pr-body">
+  
+  
+    <a href="#3-update-the-pr-body" class="anchor-heading" aria-labelledby="3-update-the-pr-body"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 3. Update the PR body
+  
+  
+</h3>
+    
+
+<p>Replace the placeholder <code class="language-plaintext highlighter-rouge">## Session results</code> section with:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gu">## Session results</span>
+<span class="p">-</span> Picked up: <span class="nt">&lt;probe</span> <span class="na">IDs</span><span class="nt">&gt;</span>
+<span class="p">-</span> Completed: <span class="nt">&lt;list&gt;</span>
+<span class="p">-</span> Partial: <span class="nt">&lt;list</span> <span class="na">with</span> <span class="na">where</span> <span class="na">to</span> <span class="na">pick</span> <span class="na">up</span><span class="nt">&gt;</span>
+<span class="p">-</span> New probes added: <span class="nt">&lt;list&gt;</span>
+<span class="p">-</span> Retractions: <span class="nt">&lt;list</span> <span class="na">of</span> <span class="na">any</span> <span class="na">prior-claim</span> <span class="na">retractions</span><span class="nt">&gt;</span>
+<span class="p">-</span> Open question for user: <span class="nt">&lt;if</span> <span class="na">any</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+<h2 id="multi-agent-same-goal-coordination">
+  
+  
+    <a href="#multi-agent-same-goal-coordination" class="anchor-heading" aria-labelledby="multi-agent-same-goal-coordination"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Multi-agent same-goal coordination
+  
+  
+</h2>
+    
+
+<p>Per author’s 2026-05-31 directive: <strong>multiple agents MAY attack
+the same goal simultaneously</strong>. The model is:</p>
+
+<ul>
+  <li><strong>Goal</strong> = product (user’s directive).</li>
+  <li><strong>Queue</strong> = per-goal item list, all agents read + write.</li>
+  <li><strong>Probes are not exclusively claimed.</strong> Two agents may pick the
+same probe; this is allowed.</li>
+  <li><strong>Coordination is with the USER on goal-level decisions</strong>, not
+agent-to-agent on probe-level locks.</li>
+</ul>
+
+<p>When you discover a probe you’re working has been picked up by
+another agent (<code class="language-plaintext highlighter-rouge">co_assignees</code> populated, or you see a sibling PR
+commit touching the same scope):</p>
+
+<ol>
+  <li><strong>Do not silently abandon</strong> — your independent attack is
+valuable (different methods may surface different findings).</li>
+  <li><strong>Post intent</strong> on the sibling PR via <code class="language-plaintext highlighter-rouge">/coordinate</code> so the
+sibling agent sees you’re also working it.</li>
+  <li>
+    <p><strong>Ask the user</strong> if they want both threads or want one to
+stand down. Use <code class="language-plaintext highlighter-rouge">AskUserQuestion</code> with rich context (AGENTS.md
+§User accessibility). Sample:</p>
+
+    <blockquote>
+      <p>🟡 Two agents attacking probe-c3-q0-stability — sibling PR
+#XXXX is at 50% with method A (Habiro recursion); I’d attack
+with method B (PSLQ basis sweep). Keep both threads?</p>
+    </blockquote>
+  </li>
+  <li><strong>If user says one stands down</strong>, the standing-down agent
+appends partial results to the ledger and updates queue
+<code class="language-plaintext highlighter-rouge">status: "open"</code> (releasing it).</li>
+</ol>
+<h2 id="hand-off-pickup-protocol">
+  
+  
+    <a href="#hand-off-pickup-protocol" class="anchor-heading" aria-labelledby="hand-off-pickup-protocol"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Hand-off pickup protocol
+  
+  
+</h2>
+    
+
+<p>If you’re the picking-up agent (someone else’s <code class="language-plaintext highlighter-rouge">in-progress</code> probe
+or partial result):</p>
+
+<ol>
+  <li>Read the previous session log row in the ledger — that’s the
+handoff letter.</li>
+  <li>Read the bean discussion/comments (<code class="language-plaintext highlighter-rouge">beans show &lt;id&gt;</code>) — that’s the technical state.</li>
+  <li>Read the partial PR (if open) — that’s the code state.</li>
+  <li>Declare your intent normally (create your session bean and append a comment to the existing bean).</li>
+</ol>
+<h2 id="anti-patterns">
+  
+  
+    <a href="#anti-patterns" class="anchor-heading" aria-labelledby="anti-patterns"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Anti-patterns
+  
+  
+</h2>
+    
+
+<ul>
+  <li>❌ Starting work without reading the ledger first (“just-the-prompt”
+agents miss retraction history and re-derive flipped claims).</li>
+  <li>❌ Claiming a probe but not writing the EOS results (“silent abandon”).</li>
+  <li>❌ Editing the queue file without also editing the ledger (“queue
+drift”).</li>
+  <li>❌ Retracting a previous claim by quietly removing it from the queue
+without updating the flip-flop history (“erasure” — guaranteed to
+re-flip next session).</li>
+  <li>❌ Asking the user “should I pick this probe?” — the queue is the
+authoritative list; just pick and declare.</li>
+</ul>
+<h2 id="see-also">
+  
+  
+    <a href="#see-also" class="anchor-heading" aria-labelledby="see-also"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> See also
+  
+  
+</h2>
+    
+
+<ul>
+  <li>AGENTS.md §Agent work-plan policy (the TodoWrite source rule)</li>
+  <li>AGENTS.md §Branch + PR workflow (the ALWAYS-PR rule)</li>
+  <li><code class="language-plaintext highlighter-rouge">.claude/skills/local/coordinate.md</code> (sibling-PR coordination)</li>
+  <li><code class="language-plaintext highlighter-rouge">.claude/skills/local/watch.md</code> (main-watching)</li>
+  <li><code class="language-plaintext highlighter-rouge">.claude/skills/local/pending-show.md</code> (showing current pending)</li>
+</ul>
+
+          
+
+          
+            
+          
+        </main>
+        
+<hr>
+<footer>
+  
+
+  <p class="text-small mb-0">Quantum Observable Universe — built with <a href="https://litlfred.github.io/folio-assistant/">folio-assistant</a>.</p><p class="text-small mb-0 fa-build-stamp">
+  deployed
+  <a href="https://github.com/litlfred/folio-assistant/actions"><code>dev</code></a></p>
+
+
+  
+</footer>
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+    
+  
+</body>
+</html>

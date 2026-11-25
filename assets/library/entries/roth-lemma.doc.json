@@ -1,0 +1,363 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "roth-lemma",
+  "title": "roth-lemma",
+  "variant": "pdf",
+  "pages": 21,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "JL^..+JaL",
+      "number": null,
+      "page": 11,
+      "pageLabel": "87",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-jljal"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 11,
+      "labelStart": "77",
+      "labelEnd": "87",
+      "words": 2617,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xm-i",
+          "heading": false
+        },
+        {
+          "term": "rational coefficients",
+          "heading": false
+        },
+        {
+          "term": "roth lemma",
+          "heading": false
+        },
+        {
+          "term": "wronskian",
+          "heading": false
+        },
+        {
+          "term": "real coefficients",
+          "heading": false
+        },
+        {
+          "term": "diophantine approximations",
+          "heading": false
+        },
+        {
+          "term": "integral coefficients",
+          "heading": false
+        },
+        {
+          "term": "rational numbers",
+          "heading": false
+        }
+      ],
+      "extract": "Chapter 5 ROTH'S LEMMA 1. Introduction Roth bases the proof of his theorem on a general property of polynomials which is to be proved in this chapter. This property is roughly as follows. Let A(Xl,...,xm)= 2 ii=0 im=0 be a polynomial in m variables, with integral coefficients which are not \"too large\" in absolute values. Assume that is a \"very small\" positive number. Further let _ PI Pm Qi ' *\"' Qm be m rational",
+      "extractCut": true,
+      "blocks": [
+        "library/roth-lemma/blocks/prose-sec-front-matter",
+        "library/roth-lemma/blocks/lem-sec-front-matter-01",
+        "library/roth-lemma/blocks/lem-sec-front-matter-02",
+        "library/roth-lemma/blocks/lem-sec-front-matter-03"
+      ]
+    },
+    {
+      "id": "sec-000-jljal",
+      "number": null,
+      "title": "JL^..+JaL",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 21,
+      "labelStart": "87",
+      "labelEnd": "97",
+      "words": 2021,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "roth lemma",
+          "heading": false
+        },
+        {
+          "term": "diophantine approximations",
+          "heading": false
+        },
+        {
+          "term": "ordered systems",
+          "heading": false
+        },
+        {
+          "term": "recursive inequality",
+          "heading": false
+        },
+        {
+          "term": "non-negative integers",
+          "heading": false
+        },
+        {
+          "term": "m-l",
+          "heading": false
+        },
+        {
+          "term": "aer",
+          "heading": false
+        },
+        {
+          "term": "suffixes",
+          "heading": false
+        }
+      ],
+      "extract": "Pi Pm for all systems of suffixes ji ,..., jm for which AJi— Jm^1'—'^ +°» and put J(A)=« in the excluded case of the polynomial A = 0. The function J(A) of A so defined is called the index of A at the point (/Ci,...,«m) relative to pi,,\">Pm- This index may also be obtained as follows. By Taylor's formula, 88 LECTURES ON DIOPHANTINE APPROXIMATIONS ri r m + _ + - = E - Z Ajl...jm(/c1,...,Km)xpl Pmxijl...xm3m, ji=0",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "roth lemma",
+      "heading": false
+    },
+    {
+      "term": "diophantine approximations",
+      "heading": false
+    },
+    {
+      "term": "rational coefficients",
+      "heading": false
+    },
+    {
+      "term": "xm-i",
+      "heading": false
+    },
+    {
+      "term": "rational numbers",
+      "heading": false
+    },
+    {
+      "term": "integral coefficients",
+      "heading": false
+    },
+    {
+      "term": "real coefficients",
+      "heading": false
+    },
+    {
+      "term": "non-negative integers",
+      "heading": false
+    },
+    {
+      "term": "induction hypothesis",
+      "heading": false
+    },
+    {
+      "term": "suffixes",
+      "heading": false
+    },
+    {
+      "term": "rational functions",
+      "heading": false
+    },
+    {
+      "term": "ordered system",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "77",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "78",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "79",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "80",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "81",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "82",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "83",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "84",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "85",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "86",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "87",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "88",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "89",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "90",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "91",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "92",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "93",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "94",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "95",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "96",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "97",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 1,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 2,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 2 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/roth-lemma"
+  }
+}

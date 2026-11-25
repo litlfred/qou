@@ -1,0 +1,70 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0502543v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-math-0502543v2",
+  "contains": [
+    "library/arxiv-math-0502543v2/sections/page-001",
+    "library/arxiv-math-0502543v2/sections/page-002",
+    "library/arxiv-math-0502543v2/sections/page-003",
+    "library/arxiv-math-0502543v2/sections/page-004",
+    "library/arxiv-math-0502543v2/sections/page-005",
+    "library/arxiv-math-0502543v2/sections/page-006",
+    "library/arxiv-math-0502543v2/sections/page-007",
+    "library/arxiv-math-0502543v2/sections/page-008",
+    "library/arxiv-math-0502543v2/sections/page-009",
+    "library/arxiv-math-0502543v2/sections/page-010",
+    "library/arxiv-math-0502543v2/sections/page-011",
+    "library/arxiv-math-0502543v2/sections/page-012"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "CONTINUITY OF VOLUMES – ON A GENERALIZATION OF A CONJECTURE OF J.W.MILNOR — 12 sections: Page 1; Page 2; Page 3\n\n**CONTINUITY OF VOLUMES – ON A GENERALIZATION OF A CONJECTURE OF J.W.MILNOR**\n\n*A CONJECTURE OF J.W.MILNOR*\n\n12 pp, 12 sections.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0502543&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0502543v2",
+    "title_source": "slug",
+    "source_file": "0502543v2.pdf",
+    "source_sha256": "227ef8150cb08faffa97580266e1708285e686b00fe527276827d90af633bd7f",
+    "pages": 12,
+    "arxiv": {
+      "id": "math/0502543",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "22 Mar 2005"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

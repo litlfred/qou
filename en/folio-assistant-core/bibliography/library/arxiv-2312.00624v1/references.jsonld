@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2312.00624v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "On the structure of wave functions in complex Chern–Simons theory",
+      "dcterms:creator": [
+        "Mariño, Marcos",
+        "Rella, Claudia"
+      ],
+      "dcterms:issued": "D:20231204",
+      "dcterms:identifier": "https://arxiv.org/abs/2312.00624",
+      "dcterms:abstract": "We study the structure of wave functions in complex Chern–Simons theory on the complement of a hyperbolic knot, emphasizing the similarities with the topological string/spectral theory correspondence. We first conjecture a hidden integrality structure in the holomorphic blocks and show that this structure guarantees the cancellation of potential singularities in the full non- perturbative wave function at rational values of the coupling constant. We then develop various techniques to determine the wave function at such rational points. Finally, we illustrate our conjec- tures and obtain explicit results in the examples of the figure-eight and the three-twist knots. In the case of the figure-eight knot, we also perform a direct evaluation of the state integral in the rational case and observe that the resulting wave function has the features of the ground state for a quantum mirror curve. arXiv:2312.00624v1 [hep-th] 1 Dec 2023",
+      "dcterms:source": "library/arxiv-2312.00624v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2312.00624v1"
+    }
+  ]
+}

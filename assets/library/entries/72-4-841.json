@@ -1,0 +1,182 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "72-4-841",
+  "blocks": [
+    {
+      "id": "library/72-4-841/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "841 \nProgress of Theoretical Physics, Vol. 72, No.4, October 1984 \nEuclidean Quantum Gravity on a Flat Lattice \nKei-ichi KONDO \nDepartment of Physics, Nagoya University, Nagoya 464 \n(Received July 19, 1984) \nWe present a Euclidean lattice fonniIlation of the Einstein-Cartan gravity. This fonnulation allows \nus to take any value of the cosmological tenn. Moreover, this lattice theory is bounded and reflection \npositive, which leads to the existence of a positive Hilbert space and Hamiltonian, and hence unitarity in \nMinkowski space fonnulation. In the strong coupling region, duster expansion co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/72-4-841/blocks/rem-sec-front-matter-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "rem-sec-front-matter-01.md",
+      "narrative": null,
+      "content": "1. Note that the reflected plaquette variables r(I) U, \"', r(3) U have the same orientation as r(O) U = U, which is necessary to obtain the action linear in the curvature tensor Rffi. This is in contrast with the ordinary gauge theory in which the continuum action is quadratic in the curvature. Hence different orientations of plaquettes give the same action. Thus we must choose a consistent universal orienta- tion of the plaquettes, as we have adopted in Fig. 1. The constraint (2 -12) turns to the zero torsion condition in the continuum limit. In fact, we have . 4ia2 tr( ra W( na; f.lv)) . . =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/72-4-841/blocks/rem-sec-front-matter-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "rem-sec-front-matter-02.md",
+      "narrative": null,
+      "content": "2. In the continuum limit, the gauge transformation (2·9) reduces to (2·28)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/72-4-841/blocks/rem-sec-front-matter-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "rem-sec-front-matter-03.md",
+      "narrative": null,
+      "content": "3. The replacement H(n; fJ.)~E(n; fJ.)=ae\"a(nah'a (2·29) in the lattice action (2·7) and/ or (2·26) does not change the naive continuum limit. Therefore we can adopt a new action with the replacement (2·29). But this replacement makes the action unbounded.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/72-4-841/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "§ 3. Reflection positivity",
+      "pageStart": 6,
+      "pageEnd": 12,
+      "target": "../sections/sec-000-3-reflection-positivity.md",
+      "narrative": null,
+      "content": "Let r denote geometrical reflection about some given (d - 1 )-dimensional hyperplane \n7[ with sites. Assume that a subset A C Zd is invariant under the reflection r. Let A+,-\ndenote the part of A to the right or left, respectively, of the plane J[, and let Ao = An J[. \nLet q +,- be the set of functions of the field variables, whth support included in A+,- U Ao. \nFor a bond b = < n, m> = (n; fJ.) along fJ. direction between the nearest neighbor sites nand \n. m, we write rb = < rn, rm> = (rn; rfJ.). \nGiven a refiection r, we introduce an antilinear \nmap {}8)_1l) defined by . \n{}U(b)= U(rb), \n{}H",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/72-4-841/blocks/rem-sec-000-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 12,
+      "target": "rem-sec-000-02.md",
+      "narrative": null,
+      "content": "4. If we define an antilinear map 8 for E by 8E(n; ,u)=E(rn; ,u), (3·7) the reflection positivity also holds for the new measure obtained by the replacement (2·28). Reflection positivity8)-1l) implies that there exists physical Hilbert space ${ with positive norm, and that the transfer matrix T acting on $( is positiye self~adjoint operator of norm less than 1. Hence, we .can write T=e- aH, with H=Ht~O. We regard H as the positive Hamiltonian. T denotes lattice translation by one lattice unit a. These properties hold for arbitrary lattice spacing a>O, and, therefore, are also satisfied in the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/72-4-841/blocks/rem-sec-000-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 12,
+      "target": "rem-sec-000-03.md",
+      "narrative": null,
+      "content": "5. In general, Osterwalder-Schrader (or \"reflection) positivity guarantees9b) that the representation of the group 0(4) can be analytically continued to that of the Downloaded from academic.oup.com/ptp/article/72/4/841/1853443 by guest on 29 August 2026 K.-L Kondo group 0(1,3), which is concerned with the external space-time coordinates XI\" Note that the usual lattice gauge theory with the gauge group 0(4) never becomes by the above procedure the gauge theory with the gauge group 0(1, 3) In the continuum Minkowski space. But, in the gravity theory, the quantity in terms of the internal, i.e.,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/72-4-841/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 12,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "Let F be a gauge invariant function in q +. Then we have the reflection positivity <F({}F»A~O (3·3) for all FE q +. Proof Let J[ be perpendicular to the II direction. (See Fig. 2(a).) Then we have for the [£J v L~ 11. 1t I I I I I I I I I I I I 7I. I v I I I I I L~ I I I I I I , I I , I I '\"ffi I I I I I i/ep7 rn. (a) (b) Fig. 2. The plaquette P=(n; /f.v) and the reflected plaquette gPwith respect to the plane 7C. (a) The plaquette P is perpendicular to 7C. (b) The plaquette P is parallel to 7C. Downloaded from academic.oup.com/ptp/article/72/4/841/1853443 by guest on 29 August 2026 Euclidean",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/72-4-841/blocks/thm-sec-000-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 12,
+      "target": "thm-sec-000-04.md",
+      "narrative": null,
+      "content": "For sufficiently large value of the coupling constant x, the cluster expansion converges uniformly in A, and the expectations of local observables have an infinite volume limit which has the physical positivity property, the exponential cluster property (this implies the existence of a positive mass gap) and is invariant under lattice translations. This theorem can be proved by the same method as in lattice Yang-Mills theory.S),9) But some remarks are in order. In the plaquette action S(P), P denotes four plaquettes in the f-l)) plane, which have a site n in common. This does not change essent",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/72-4-841/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-001-appendix.md",
+      "narrative": null,
+      "content": "Euclidean gamma matrices have the following properties: \n{ra, rb}=23ab, 3ab =diag (1, 1, 1, 1), rat = ra , \nrS=rOrlr2ra, rst=rs, {rs, ra}=O, \n(rs)2=1, \ntrra=O, tr(rarb)=43ab, \ntr( rarbrer d) =4(3 ab3ed - 3ae3bd+ 3ad3 be), \ntr rs=O, tr(rSrarb)=O, tr(rSrarbrerd)=4sabed , \ntr(rl·\"rn)=O, tr(rSrl···rn)=O if n=odd. \nVierbein fields satisfy the following relations: \nReferences \n1) A. Das, M. Kaku and P. K. Townsend, Phys. Lett: 8IB (1979), II. \n2) L. Smolin, Nuc1. Phys. B148 (1979), 333. \n3) D. Weingarten, Nuc!. Phys. B210 [FS6] (1982),.229. \n4) C. L. T. Mannion and J. G. Taylor, Phys. Lett. 100B (19",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

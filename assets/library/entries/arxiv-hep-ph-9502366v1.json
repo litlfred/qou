@@ -1,0 +1,685 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-ph-9502366v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-ph/9502366v1  22 Feb 1995\nFTUV/95-4\nIFIC/95-4\nhep-ph/9502366\nChiral Perturbation Theory\nA Pich\nDepartament de F´ısica Te`orica and Institut de F´ısica Corpuscular,\nUniversitat de Val`encia – CSIC, E-46100 Burjassot, Val`encia, Spain\nAbstract. An introduction to the basic ideas and methods of Chiral\nPerturbation Theory is presented.\nSeveral phenomenological applica-\ntions of the eﬀective Lagrangian technique to strong, electromagnetic\nand weak interactions are discussed.\nTo be published in Reports on Progress in Physics\nFebruary 1995",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Quantum Chromodynamics (QCD) is nowadays the established theory of the strong\ninteractions. Owing to its asymptotic-free nature (Gross and Wilczek 1973, Politzer\n1973), perturbation theory can be applied at short distances; the resulting predictions\nhave achieved a remarkable success, explaining a wide range of phenomena where large\nmomentum transfers are involved. In the low-energy domain, however, the growing\nof the running QCD coupling and the associated conﬁnement of quarks and gluons\nmake very diﬃcult to perform a thorough analysis of the QCD dynamics in terms\nof these fundamental degrees",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chiral symmetry",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-2-chiral-symmetry.md",
+      "narrative": null,
+      "content": "In the absence of quark masses, the QCD Lagrangian [q = column(u, d, . . .)]\nL0\nQCD = −1\n4 Ga\nµνGµν\na + i¯qLγµDµqL + i¯qRγµDµqR\n(2.1)\nis invariant under independent global G ≡SU(Nf)L ⊗SU(Nf)R transformations† of\nthe left- and right-handed quarks in ﬂavour space:\nqL\nG\n−→gL qL ,\nqR\nG\n−→gR qR ,\ngL,R ∈SU(Nf)L,R . (2.2)\nThe Noether currents associated with the chiral group G are [λa are Gell-Mann’s\nmatrices with Tr(λaλb) = 2δab]:\nJaµ\nX = ¯qXγµλa\n2 qX,\n(X = L, R;\na = 1, . . . , 8).\n(2.3)\nThe\ncorresponding\nNoether charges Qa\nX\n=\nR\nd3x Ja0\nX (x) satisfy the familiar\ncommutation relations\n[Qa\nX, Qb\nY ]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Eﬀective chiral Lagrangian at lowest order",
+      "pageStart": 5,
+      "pageEnd": 11,
+      "target": "../sections/sec-002-3-eﬀective-chiral-lagrangian-at-lowest-order.md",
+      "narrative": null,
+      "content": "The Goldstone nature of the pseudoscalar mesons implies strong constraints on\ntheir interactions, which can be most easily analyzed on the basis of an eﬀective\nLagrangian. Since there is a mass gap separating the pseudoscalar octet from the rest\nof the hadronic spectrum, we can build an eﬀective ﬁeld theory containing only the\nGoldstone modes. Our basic assumption is the pattern of SCSB:\nG ≡SU(3)L ⊗SU(3)R\nSCSB\n−→H ≡SU(3)V .\n(3.1)\nLet us denote φa (a = 1, . . ., 8) the coordinates describing the Goldstone ﬁelds in\nthe coset space G/H, and choose a coset representative ¯ξ(φ) ≡(ξL(φ), ξR(φ)) ∈G.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chiral loops",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-003-42-chiral-loops.md",
+      "narrative": null,
+      "content": "ChPT is a quantum ﬁeld theory, perfectly deﬁned through equation (3.19). As\nsuch, we must take into account quantum loops with Goldstone-boson propagators\nin the internal lines. The chiral loops generate non-polynomial contributions, with\nlogarithms and threshold factors, as required by unitarity.\nThe loop integrals are homogeneous functions of the external momenta and the\npseudoscalar masses occurring in the propagators.\nA simple dimensional counting\nshows that, for a general connected diagram with Nd vertices of O(pd) (d = 2, 4, . . .)\nand L loops, the overall chiral dimension is given by (W",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The chiral anomaly",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "../sections/sec-004-43-the-chiral-anomaly.md",
+      "narrative": null,
+      "content": "Although the QCD Lagrangian (3.10) is invariant under local chiral transforma-\ntions, this is no longer true for the associated generating functional. The anomalies of\nthe fermionic determinant break chiral symmetry at the quantum level (Adler 1969,\nBardeen 1969, Bell and Jackiw 1969). The fermionic determinant can always be de-\nﬁned with the convention that Z[v, a, s, p] is invariant under vector transformations.\nUnder an inﬁnitesimal chiral transformation\ngL,R = 1 + iα ∓iβ + . . .\n(4.6)\nthe anomalous change of the generating functional is then given by (Bardeen 1969):\nδZ[v, a, s, p] = −NC\n16",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "From the experimental value (Leutwyler and Roos 1984) fK fπ = 1.22 ± 0.01 , (5.5) one can then ﬁx L5(µ); this gives the result quoted in table 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prop-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "prop-sec-006-01.md",
+      "narrative": null,
+      "content": "The predicted value, ⟨r2⟩K0 V = −0.04±0.03 fm2, is in perfect agreement with the experimental determination (Molzon et al 1978) ⟨r2⟩K0 V = −0.054 ± 0.026 fm2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prop-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "prop-sec-006-02.md",
+      "narrative": null,
+      "content": "If one tries to ignore the L9 contribution, using instead some physical cut-oﬀpmax to regularize the loops, one needs pmax ∼60 GeV, in order to reproduce the experimental value; this is clearly nonsense.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prop-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "prop-sec-006-03.md",
+      "narrative": null,
+      "content": "Including those contributions, one gets the more precise values f K0π− + (0) = 0.977 , f K+π0 + (0) f K0π− + (0) = 1.022 , (5.12) which are in perfect agreement with the experimental result (5.11).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Decay constants",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-005-51-decay-constants.md",
+      "narrative": null,
+      "content": "In the isospin limit (mu = md = ˆm), the O(p4) calculation of the meson-decay\nconstants gives (Gasser and Leutwyler 1985):\nfπ = f\n\u001a\n1 −2µπ −µK + 4M 2\nπ\nf 2 Lr\n5(µ) + 8M 2\nK + 4M 2\nπ\nf 2\nLr\n4(µ)\n\u001b\n,\nfK = f\n\u001a\n1 −3\n4µπ −3\n2µK −3\n4µη8 + 4M 2\nK\nf 2 Lr\n5(µ) + 8M 2\nK + 4M 2\nπ\nf 2\nLr\n4(µ)\n\u001b\n,\nfη8 = f\n\u001a\n1 −3µK + 4M 2\nη8\nf 2 Lr\n5(µ) + 8M 2\nK + 4M 2\nπ\nf 2\nLr\n4(µ)\n\u001b\n,\n(5.3)\nwhere\nµP ≡\nM 2\nP\n32π2f 2 log\n\u0012M 2\nP\nµ2\n\u0013\n.\n(5.4)\nThe result depends on two O(p4) couplings, L4 and L5.\nThe L4 term generates\na universal shift of all meson-decay constants, δf 2 = 16L4B0⟨M⟩, which can be\neliminated taking ratios. From",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Electromagnetic form factors",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-006-52-electromagnetic-form-factors.md",
+      "narrative": null,
+      "content": "At O(p2) the electromagnetic coupling of the Goldstone bosons is just the minimal\none, obtained through the covariant derivative. The next-order corrections generate\na momentum-dependent form factor:\nF φ±\nV (q2) = 1 + 1\n6 ⟨r2⟩φ±\nV q2 + . . .\n;\nF φ0\nV (q2) = 1\n6 ⟨r2⟩φ0\nV q2 + . . .\n(5.7)\nThe meson electromagnetic radius ⟨r2⟩φ\nV gets local contributions from the L9 term,\nplus logarithmic loop corrections (Gasser and Leutwyler 1985):\n⟨r2⟩π±\nV\n= 12Lr\n9(µ)\nf 2\n−\n1\n32π2f 2\n\u001a\n2 log\n\u0012M 2\nπ\nµ2\n\u0013\n+ log\n\u0012M 2\nK\nµ2\n\u0013\n+ 3\n\u001b\n,\n⟨r2⟩K0\nV\n= −\n1\n16π2f 2 log\n\u0012MK\nMπ\n\u0013\n,\n⟨r2⟩K±\nV\n= ⟨r2⟩π±\nV\n+ ⟨r2⟩K0\nV .\n(5.8)\nSince",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Meson and quark masses",
+      "pageStart": 18,
+      "pageEnd": 21,
+      "target": "../sections/sec-007-54-meson-and-quark-masses.md",
+      "narrative": null,
+      "content": "The relations (3.25) get modiﬁed at O(p4). The additional contributions depend\non the low-energy constants L4, L5, L6, L7 and L8. It is possible, however, to obtain\none relation between the quark and meson masses, which does not contain any of the\nO(p4) couplings. The dimensionless ratios\nQ1 ≡M 2\nK\nM 2π\n,\nQ2 ≡(M 2\nK0 −M 2\nK+)QCD\nM 2\nK −M 2π\n,\n(5.17)\nget the same O(p4) correction (Gasser and Leutwyler 1985):\nQ1 = ms + ˆm\n2 ˆm\n{1 + ∆M},\nQ2 = md −mu\nms −ˆm {1 + ∆M},\n(5.18)\nwhere\n∆M = −µπ + µη8 + 8\nf 2 (M 2\nK −M 2\nπ) [2Lr\n8(µ) −Lr\n5(µ)] .\n(5.19)\nTherefore, at this order, the ratio Q1/Q2 is just gi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prop-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 25,
+      "target": "prop-sec-008-01.md",
+      "narrative": null,
+      "content": "We can estimate the size of these corrections from the electromagnetic form factor of the pion, which is known to be well-reproduced by vector-meson dominance (VMD): F π± V (t) ≈ M 2 ρ M 2 ρ −t , (6.16) i.e. ⟨r2⟩π± V ≈6/M 2 ρ = 0.4 fm2, to be compared with the measured value ⟨r2⟩π± V = 0.439 ± 0.008 fm2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prop-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 25,
+      "target": "prop-sec-008-02.md",
+      "narrative": null,
+      "content": "Moreover, one can then predict Γ(a0 →ηπ) = 59 MeV, in good agreement with the experimental value Γ(a0 →ηπ) ≈Γ(a0) = (57 ± 11) MeV.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The role of resonances in ChPT",
+      "pageStart": 21,
+      "pageEnd": 25,
+      "target": "../sections/sec-008-6-the-role-of-resonances-in-chpt.md",
+      "narrative": null,
+      "content": "It seems rather natural to expect that the lowest-mass resonances, such as ρ\nmesons, should have an important impact on the physics of the pseudoscalar bosons.\nIn particular, the low-energy singularities due to the exchange of those resonances\nshould generate sizeable contributions to the chiral couplings.\nThis can be easily\nunderstood, making a Taylor expansion of the ρ propagator:\n1\np2 −M 2ρ\n= −1\nM 2ρ\n\u001a\n1 + p2\nM 2ρ\n+ . . .\n\u001b\n,\n(p2 < M 2\nρ).\n(6.1)\nBelow the ρ-mass scale, the singularity associated with the pole of the resonance\npropagator is replaced by the corresponding momentum expansion.\nT",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Short-distance estimates of ChPT parameters",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "../sections/sec-009-7-short-distance-estimates-of-chpt-parameters.md",
+      "narrative": null,
+      "content": "All chiral couplings are in principle calculable from QCD. They are functions\nof ΛQCD and the heavy-quark masses mc, mb, mt. Unfortunately, we are not able\nat present to make such a ﬁrst-principle computation.\nAlthough the integral over\nthe quark ﬁelds in (3.19) can be done explicitly, we do not know how to perform\nanalytically the remaining integration over the gluon ﬁelds. A perturbative evaluation\nof the gluonic contribution would obviously fail in reproducing the correct dynamics of\nSCSB. A possible way out is to parametrize phenomenologically the SCSB and make\na weak gluon-ﬁeld expansion",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prop-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 30,
+      "target": "prop-sec-010-01.md",
+      "narrative": null,
+      "content": "Parameter Experimental value Prediction ζ1 −0.47 ± 0.15 −0.47 ± 0.18 ξ1 −1.51 ± 0.30 −1.58 ± 0.19 ζ3 −0.21 ± 0.08 −0.011 ± 0.006 ξ3 −0.12 ± 0.17 0.092 ± 0.030 ξ′ 3 −0.21 ± 0.51 −0.033 ± 0.077 The O(p4) analysis of these decays has also clariﬁed the role of long-distance eﬀects (ππ rescattering) in the dynamical enhancement of ∆I = 1 2 amplitudes.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "∆S = 1 non-leptonic weak interactions",
+      "pageStart": 27,
+      "pageEnd": 30,
+      "target": "../sections/sec-010-8-s-1-non-leptonic-weak-interactions.md",
+      "narrative": null,
+      "content": "The Standard Model predicts strangeness-changing transitions with ∆S = 1 via\nW-exchange between two weak charged currents. At low energies (E << MW), the\nheavy ﬁelds W, Z, t, b, c can be integrated out; using standard operator-product-\nexpansion techniques, the non-leptonic ∆S = 1 weak interactions are described by an\neﬀective Hamiltonian (Gilman and Wise 1979)\nH∆S=1\neﬀ\n= GF\n√\n2VudV ∗\nus\nX\ni\nCi(µ) Qi + h.c. ,\n(8.1)\nwhich is a sum of local four-quark operators, constructed with the light (u, d, s) quark\nﬁelds only,\nQ1 ≡4 (¯sLγµdL) (¯uLγµuL),\nQ2 ≡4 (¯sLγµuL) (¯uLγµdL),\nQ3 ≡4 (¯sLγµdL)\nX\nq=u,d,s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prop-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 36,
+      "target": "prop-sec-011-01.md",
+      "narrative": null,
+      "content": "The resulting prediction (D’Ambrosio and Espriu 1986, Goity 1987) is in very good agreement with the experimental measurement (Burkhardt et al 1987): Br(KS →γγ) = ( 2.0 × 10−6 (theory) (2.4 ± 1.2) × 10−6 (experiment) .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prop-sec-011-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 36,
+      "target": "prop-sec-011-02.md",
+      "narrative": null,
+      "content": "D’Ambrosio 1988), Br(KL →π0γγ) = 0.67 × 10−6, is smaller than the experimental value: Br(KL →π0γγ) = ( (1.7 ± 0.3) × 10−6 (Barr et al 1992), (2.2 ± 1.0) × 10−6 (Papadimitriou et al 1991).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prop-sec-011-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 36,
+      "target": "prop-sec-011-03.md",
+      "narrative": null,
+      "content": "To be able to interpret a future experimental measurement of this decay as a CP- violating signature, it is ﬁrst necessary, however, to pin down the actual size of the two-photon exchange CP-conserving amplitude.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Radiative K Decays",
+      "pageStart": 30,
+      "pageEnd": 36,
+      "target": "../sections/sec-011-82-radiative-k-decays.md",
+      "narrative": null,
+      "content": "Owing to the constraints of electromagnetic gauge invariance, radiative K decays\nwith at most one pion in the ﬁnal state do not occur at O(p2). Moreover, only a few\nterms of the octet O(p4) Lagrangian are relevant for this kind of processes (Ecker,\nPich and de Rafael 1987a, 1987b, 1988):\nL∆S=1,em\n4\n.= −GF\n√\n2VudV ∗\nus g8\nn\n−ie\nf 2F µν [w1 ⟨QλLµLν⟩+ w2 ⟨QLµλLν⟩]\n+ e2f 2w4F µνFµν ⟨λQU †QU⟩+ h.c.\no\n.\n(8.6)\nThe small number of unknown chiral couplings allows us to derive useful relations\namong diﬀerent processes and to obtain deﬁnite predictions. The absence of a tree-\nlevel O(p2) contribution mak",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prop-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 38,
+      "target": "prop-sec-013-01.md",
+      "narrative": null,
+      "content": "(9.7) Equation (9.7) is the well-known Goldberger–Treiman (1958) relation, which is well satisﬁed by the measured value gπNN ≈13.3 ± 0.3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The chiral anomaly in non-leptonic K decays",
+      "pageStart": 36,
+      "pageEnd": 36,
+      "target": "../sections/sec-012-83-the-chiral-anomaly-in-non-leptonic-k-decays.md",
+      "narrative": null,
+      "content": "The chiral anomaly also appears in the non-leptonic weak interactions.\nA\nsystematic study of all non-leptonic K decays where the anomaly contributes at\nleading order, O(p4), has been performed recently (Ecker, Neufeld and Pich 1992).\nOnly radiative K decays are sensitive to the anomaly in the non-leptonic sector.\nThe manifestations of the anomaly can be grouped in two diﬀerent classes of\nanomalous amplitudes: reducible and direct contributions. The reducible amplitudes\narise from the contraction of meson lines between a weak non-leptonic ∆S = 1 vertex\nand the Wess–Zumino–Witten functional (4.1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Baryons",
+      "pageStart": 36,
+      "pageEnd": 38,
+      "target": "../sections/sec-013-9-baryons.md",
+      "narrative": null,
+      "content": "The inclusion of baryons in the low-energy eﬀective ﬁeld theory follows the same\nprocedure used in section 6 to incorporate the mesonic resonances. The octet of baryon\nﬁelds is collected in a 3 × 3 matrix\nB(x) ≡\n\n\n1\n√\n2Σ0 +\n1\n√\n6Λ0\nΣ+\np\nΣ−\n−1\n√\n2Σ0 +\n1\n√\n6Λ0\nn\nΞ−\nΞ0\n−2\n√\n6Λ0\n\n,\n(9.1)\nwhich under SU(3)L ⊗SU(3)R transforms non-linearly\nB\nG\n−→h(φ, g) B h†(φ, g) .\n(9.2)\nWe look for the most general chiral-invariant eﬀective Lagrangian one can write in\nterms of the matrices B(x), B(x) ≡B(x)†γ0, and u(φ). We can easily write down the\nlowest-order baryon-meson Lagrangian for Green functions with",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Loops",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "../sections/sec-014-91-loops.md",
+      "narrative": null,
+      "content": "Goldstone loops generate non-analytic corrections to the lowest-order results (Li\nand Pagels 1971, Langacker and Pagels 1973, Pagels 1975).\nDue to the diﬀerent\nLorentz structure of meson and baryon ﬁelds, the baryon chiral expansion contains\nterms of O(pn) for each positive integer n, unlike in the mesonic sector where the\nexpansion proceeds in steps of two powers of p. This implies additional types of non-\nanalyticity in the baryonic amplitudes. The baryon masses, for instance, get calculable\ncorrections of order M 3\nπ,\nδMN ∼−3g2\nAM 3\nπ\n32πf 2 ,\n(9.12)\ni.e. a non-analytic (in the quark masses",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Heavy baryon ChPT",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "../sections/sec-015-92-heavy-baryon-chpt.md",
+      "narrative": null,
+      "content": "Since MB/Λχ ∼O(1), higher-loop contributions are not necessarily suppressed.\nThus, in the presence of baryons, the standard chiral expansion is not only complicated\nbut in addition its convergence is suspect.\nThe problem can be circumvented by\ntaking the limit p/MB << 1 and making and additional expansion in inverse powers\nof MB. Using heavy quark eﬀective theory techniques (Isgur and Wise 1989, Grinstein\n1990, Eichten and Hill 1990, Georgi 1990), developed for the study of bottom physics,\nJenkins and Manohar (1991a, 1991b, 1992a) have reformulated baryon ChPT in such\na way as to transfer MB f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Non-leptonic hyperon decays",
+      "pageStart": 41,
+      "pageEnd": 42,
+      "target": "../sections/sec-016-93-non-leptonic-hyperon-decays.md",
+      "narrative": null,
+      "content": "Neglecting the small (27L, 1R) contribution, the lowest-order ∆S = 1 non-leptonic\neﬀective Lagrangian involving baryons contains two terms (Manohar and Georgi 1984,\nGeorgi 1984):\nL(B)\n∆S=1 = −GF\n√\n2\nVudV ∗\nus\n\b\nhD ⟨B{uλu†, B}⟩+ hF ⟨B[uλu†, B]⟩\n\t\n.\n(9.20)\nThe invariant matrix elements for non-leptonic hyperon decays are conventionally\nparametrized as\nT(Bi →Bjπ) = ¯uBj\nh\nA(S)\nij + γ5A(P )\nij\ni\nuBi ,\n(9.21)\nwhere A(S)\nij\nand A(P )\nij\nare the S- and P-wave amplitudes, respectively. The Lagrangian\n(9.20) implies that the tree-level S-wave amplitudes obey the Lee (1964)–Sugawara\n(1964) relation:\nr\n3",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Large-NC limit, U(1)A anomaly and strong CP violation",
+      "pageStart": 42,
+      "pageEnd": 45,
+      "target": "../sections/sec-017-10-large-nc-limit-u1a-anomaly-and-strong-cp-viol.md",
+      "narrative": null,
+      "content": "In the large-NC limit the U(1)A anomaly (Adler 1969, Adler and Bardeen 1969,\nBell and Jackiw 1969) is absent.\nThe massless QCD Lagrangian (2.1) has then a\nlarger U(3)L⊗U(3)R chiral symmetry, and there are nine Goldstone bosons associated\nwith the SCSB to the diagonal subgroup U(3)V . These Goldstone excitations can be\nconveniently collected in the 3 × 3 unitary matrix\neU(φ) ≡⟨0| eU|0⟩U(φ) ≡⟨0| eU|0⟩exp\nn\ni\n√\n2eΦ/f\no\n,\neΦ ≡η1\n√\n3\nI3 +⃗\nλ\n√\n2⃗\nφ ,\n(10.1)\nwhere we have explicitly factor out from the eU(φ) matrix its vacuum expectation\nvalue. Under the chiral group, eU(φ) transforms as eU →gR eUg†",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Baryon electric dipole moments",
+      "pageStart": 45,
+      "pageEnd": 46,
+      "target": "../sections/sec-018-101-baryon-electric-dipole-moments.md",
+      "narrative": null,
+      "content": "It is completely straightforward to extend the previous analysis to the baryon\nsector (Pich and de Rafael 1991b). One simply writes the matrix eU(φ) in terms of the\ncanonical coset representative,\neU(φ) = ˜ξR(φ) ˜ξ†\nL(φ) ,\n˜ξL(φ) = ⟨0|˜ξL|0⟩u(φ)† ,\n˜ξR(φ) = ⟨0|˜ξR|0⟩u(φ) , (10.16)\nwith ⟨0|u|0⟩= 1 and U(φ) = u(φ)2.\nFrom equation (10.12) it follows that\n⟨0|˜ξ†\nR|0⟩eχ ⟨0|˜ξL|0⟩= ⟨0|˜ξL|0⟩⟨0|˜ξ†\nR|0⟩eχ = χ + iH ,\n(10.17)\nwhere we have used the fact that eχ is diagonal and, without loss of generality, ⟨0|˜ξL|0⟩\nand ⟨0|˜ξR|0⟩can be restricted to be diagonal as well.\nThe lowest-order baryon Lagrangia",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Interactions of a light Higgs",
+      "pageStart": 46,
+      "pageEnd": 47,
+      "target": "../sections/sec-019-11-interactions-of-a-light-higgs.md",
+      "narrative": null,
+      "content": "An hypothetical light Higgs particle provides a good example of the broad range\nof application of the chiral techniques. Its hadronic couplings are ﬁxed by low-energy\ntheorems which relate the φ →φ′h0 transition with a zero-momentum Higgs to the\ncorresponding φ →φ′ coupling (Gunion et al 1990). Although, within the Standard\nModel, the possibility of a light Higgs boson is already excluded, an extended scalar\nsector with additional degrees of freedom could easily avoid the present experimental\nlimits.\nThe quark–Higgs interaction can be written down in the general form\nLh0¯qq = −h0\nv\n\b\nkd ¯dMdd",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prop-sec-020-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 47,
+      "pageEnd": 49,
+      "target": "prop-sec-020-01.md",
+      "narrative": null,
+      "content": "It remains to be seen if the experimental determination of the higher-order electroweak chiral couplings will conﬁrm the renormalizable Standard Model Lagrangian, or will constitute an evidence of new physics ‡‡ There is a large number of publications devoted to this subject: Dobado and Herrero 1989, Donoghue and Ramirez 1990, Holdom and Terning 1990, Dawson and Valencia 1991, Dobado et al 1991, Georgi 1991, Golden and Randall 1991, Holdom 1991, Espriu and Herrero 1992, De Rujula et al 1992, Dobado and Pel´aez 1994, Herrero and Ruiz-Morales 1994, Espriu and Matias 1995.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Eﬀective theory at the electroweak scale",
+      "pageStart": 47,
+      "pageEnd": 49,
+      "target": "../sections/sec-020-12-eﬀective-theory-at-the-electroweak-scale.md",
+      "narrative": null,
+      "content": "In spite of the spectacular success of the Standard Model, we still do not really\nunderstand the dynamics underlying the electroweak symmetry breaking SU(2)L ⊗\nU(1)Y →U(1)QED. The Higgs mechanism provides a renormalizable way to generate\nthe W and Z masses and, therefore, their longitudinal degrees of freedom. However,\nan experimental veriﬁcation of this mechanism is still lacking.\nThe scalar sector of the Standard Model Lagrangian can be written in the form\nL(Φ) = 1\n2⟨DµΣ†DµΣ⟩−λ\n16\n\u0000⟨Σ†Σ⟩−v2\u00012 ,\n(12.1)\nwhere\nΣ ≡\n\u0012 Φ0\n−Φ+\nΦ−\nΦ0∗\n\u0013\n(12.2)\nand DµΣ is the usual gauge-covariant derivative\nDµΣ ≡∂µΣ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary",
+      "pageStart": 49,
+      "pageEnd": 49,
+      "target": "../sections/sec-021-13-summary.md",
+      "narrative": null,
+      "content": "ChPT is a powerful tool to study the low-energy interactions of the pseudoscalar-\nmeson octet.\nThis eﬀective Lagrangian framework incorporates all the constraints\nimplied by the chiral symmetry of the underlying Lagrangian at the quark–gluon level,\nallowing for a clear distinction between genuine aspects of the Standard Model and\nadditional assumptions of variable credibility, usually related to the problem of long-\ndistance dynamics. The low-energy amplitudes of the Standard Model are calculable in\nChPT, except for some coupling constants which are not restricted by chiral symmetry.\nThese con",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 49,
+      "pageEnd": 50,
+      "target": "../sections/sec-022-acknowledgments.md",
+      "narrative": null,
+      "content": "I am grateful to G. Ecker, E. Oset and E. de Rafael for useful discussions and\ncomments. This work has been supported in part by CICYT (Spain) under grant\nAEN-93-0234.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9502366v1/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 50,
+      "pageEnd": 57,
+      "target": "../sections/sec-023-references.md",
+      "narrative": null,
+      "content": "Adler S L 1969 Phys. Rev. 177 2426–38\nAdler S L and Bardeen W A 1969 Phys. Rev. 182 1517–36\nAdler S and Dashen R F 1968 Current Algebras (Benjamin, New York)\nde Alfaro V, Fubini S, Furlan G and Rossetti C 1973 Currents in Hadron Physics (North-Holland,\nAmsterdam)\nAlliegro C et al 1992 Phys. Rev. Lett. 68 278–81\nAltarev I S et al 1992 Phys. Lett. B276 242–6\nAmendolia S R et al 1986 Nucl. Phys. B277 168–96\nAppelquist T 1980 in Gauge Theories and Experiments at High Energies, ed. K C Brower and D G\nSutherland (Scottish University Summer School in Physics, St. Andrews)\nAppelquist T and Bernard C 1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

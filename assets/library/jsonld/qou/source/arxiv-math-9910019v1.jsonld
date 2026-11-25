@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9910019v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Symmetrized random permutations",
+  "contains": [
+    "library/arxiv-math-9910019v1/sections/sec-front-matter",
+    "library/arxiv-math-9910019v1/sections/sec-000",
+    "library/arxiv-math-9910019v1/sections/sec-001",
+    "library/arxiv-math-9910019v1/sections/sec-002",
+    "library/arxiv-math-9910019v1/sections/sec-003",
+    "library/arxiv-math-9910019v1/sections/sec-004",
+    "library/arxiv-math-9910019v1/sections/sec-005",
+    "library/arxiv-math-9910019v1/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Symmetrized random permutations — 8 sections: Front matter; Introduction; Tracy-Widom distribution functions\n\n**Symmetrized random permutations**\n\n*Jinho Baik∗and*\n\n17 pp, 8 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Tracy-Widom distribution functions; 3 Main Results; 4 Applications and related topics; 4.1 Random involutions and random signed invol; 4.3 Random turn vicious walker model; 4.4 Symmetrized versions of Johansson's model",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/9910019&metadataPrefix=arXiv), submitted 1999-10-05, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-9910019v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "9910019v1.pdf",
+    "source_sha256": "07dd7ab7068b1482af34a6f41e56f9ed1e9c55de89e9b46b624e6099ac253f33",
+    "pages": 17,
+    "arxiv": {
+      "id": "math/9910019",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "5 Oct 1999"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

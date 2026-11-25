@@ -1,0 +1,29 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1011.4891v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Mechanical Normal Forms of Knots and Flat Knots A.B.Sossinsky Independent University of Moscow Institute for Problems in Mechanics RAS Dedicated to the memory of V.I.Arnold",
+      "dcterms:issued": "D:20101123",
+      "dcterms:identifier": "https://arxiv.org/abs/1011.4891",
+      "dcterms:abstract": "A new type of knot energy is presented via real life experiments involving a thin resilient metallic tube. Knotted in diﬀerent ways, the device me- chanically acquires a uniquely determined (up to isometry) normal form at least when the original knot diagram has a small number of crossings, thus outper- forming the famous M¨obius energy due to Jun O’Hara and studied by Michael Freedman et al. Various properties of the device are described (under certain conditions it does the Reidemeister and Markov moves, it beautifully performs the Whitney trick by uniformizing its own local curvature). If the device is constrained between two parallel planes (e.g. glass panes), it yields a real life model of a ﬂat knot (class of knot diagrams equivalent under Reidemeister Ω2 and Ω3 moves) also leading to uniquely determined ”ﬂat normal forms” (for a small number of crossing points of the given ﬂat knot diagram). The paper concludes with two mathematical theorems, one reducing the knot recognition problem to the ﬂat knot recognition problem, the other (due to S.V.Matveev) giving an easily computable complete system of invariants for the ﬂat unknot knot equivalence problem. In one of his lectures, Vladimir Arnold declared that “mathematics is that part of physics where experiments are cheap”. The present paper is an illustration of this thesis. Accordingly, the paper begins (Sec.1) with a description of our “cheap experiments”, which are performed with a thin ﬂexible but resilient wire. This wire can be knotted and placed on a horizontal table, and in all the experiments it moves in a very speciﬁc way, sometimes sliding along the table top, sometimes jumping up in the air, and reaches an equilibrium position, which we call the mechanical normal form of the knot. Surprisingly, the experiments show that, for a small number of crossings of the initial knot diagram, the normal form is always unique up to isometry. In this situation, it turns out that our simple device performs much bet",
+      "dcterms:source": "library/arxiv-1011.4891v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1011.4891v1"
+    }
+  ]
+}

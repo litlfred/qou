@@ -1,0 +1,68 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0005038v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Braid groups are linear",
+  "contains": [
+    "library/arxiv-math-0005038v1/sections/sec-front-matter",
+    "library/arxiv-math-0005038v1/sections/sec-000",
+    "library/arxiv-math-0005038v1/sections/sec-001",
+    "library/arxiv-math-0005038v1/sections/sec-002",
+    "library/arxiv-math-0005038v1/sections/sec-003",
+    "library/arxiv-math-0005038v1/sections/sec-004",
+    "library/arxiv-math-0005038v1/sections/sec-005",
+    "library/arxiv-math-0005038v1/sections/sec-006",
+    "library/arxiv-math-0005038v1/sections/sec-007",
+    "library/arxiv-math-0005038v1/sections/sec-008",
+    "library/arxiv-math-0005038v1/sections/sec-009",
+    "library/arxiv-math-0005038v1/sections/sec-010",
+    "library/arxiv-math-0005038v1/sections/sec-011"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Braid groups are linear — The braid groups Bn can be deﬁned as the mapping class group of the n-punctured disc.\n\n**Braid groups are linear**\n\n*STEPHEN J. BIGELOW*\n\n13 pp, 13 sections.\n\n**Abstract.** The braid groups Bn can be deﬁned as the mapping class group of the n-punctured disc. The Lawrence-Krammer representation of the braid group is the induced action on a certain twisted second homology of the space C of unordered pairs of points in the n-punctured disc. Recently, Daan Krammer showed that this is a faithful representation in the case n = 4. In this paper, we show that it is faithful for all n.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Definitions; 1.2 Outline; 1.3 Notation; 2 Forks and Noodles; 2.1 Proof of the Basic Lemma; 2.2 Alternative proofs; 3 The representation is faithful; 3.1 Computing the pairing; 3.2 Proof of the Key Lemma; 3.3 Proof of the Theorem; 4 Matrices for the Lawrence-Krammer representa",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0005038&metadataPrefix=arXiv), submitted 2000-05-04, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0005038v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0005038v1.pdf",
+    "source_sha256": "db0b9b7a8534f16157041fbe8f6a4351064ed97839efb9ef6856774d89eb5072",
+    "pages": 13,
+    "arxiv": {
+      "id": "math/0005038",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "4 May 2000"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,466 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-th-0006111v2",
+  "title": "arxiv-hep-th-0006111v2",
+  "variant": "pdf",
+  "pages": 6,
+  "tocSource": "undetermined",
+  "tocMethod": "regex",
+  "toc": [],
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 822,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eigenvalue distributions",
+          "heading": false
+        },
+        {
+          "term": "eigenvalue density",
+          "heading": false
+        },
+        {
+          "term": "k-th smallest",
+          "heading": false
+        },
+        {
+          "term": "microscopic spectral",
+          "heading": false
+        },
+        {
+          "term": "operator eigenvalue",
+          "heading": false
+        },
+        {
+          "term": "micro scopic",
+          "heading": false
+        },
+        {
+          "term": "individual eigenvalue",
+          "heading": false
+        },
+        {
+          "term": "smallest dirac",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-th/0006111v2 14 Jul 2003 Distribution of the k-th smallest Dirac operator eigenvalue Poul H. Damgaard The Niels Bohr Institute, Blegdamsvej 17, DK-2100 Copenhagen Ø, Denmark Shinsuke M. Nishigaki Department of Physics, Tokyo Institute of Technology, O-okayama, Meguro, Tokyo 152-8551, Japan (June 15, 2000; revised July 14, 2003) Based on the exact relationship to Random Matrix Theory, we derive the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-0006111v2/blocks/prose-page-001"
+      ]
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 688,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "βxi",
+          "heading": false
+        },
+        {
+          "term": "gaussian ensembles",
+          "heading": false
+        },
+        {
+          "term": "dxn",
+          "heading": false
+        },
+        {
+          "term": "operator eigenvalues",
+          "heading": false
+        },
+        {
+          "term": "probability distributions",
+          "heading": false
+        },
+        {
+          "term": "joint probability",
+          "heading": false
+        },
+        {
+          "term": "random matrix",
+          "heading": false
+        },
+        {
+          "term": "dirac operator",
+          "heading": false
+        }
+      ],
+      "extract": "where the integrals are over complex, real, and quaternion real (N + ν) × N matrices W for β = 2, 1, 4, respectively. These chiral random matrix ensembles provide exactly equivalent descriptions of the eﬀective ﬁeld theory partition functions in the microscopic ﬁnite-volume scaling regime [3,5]. Moreover, all microscopic spectral properties of the Dirac operator coincide exactly with the corresponding",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-0006111v2/blocks/prose-page-002"
+      ]
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 795,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fermion species",
+          "heading": false
+        },
+        {
+          "term": "topological sector",
+          "heading": false
+        },
+        {
+          "term": "k-th smallest",
+          "heading": false
+        },
+        {
+          "term": "partition functions",
+          "heading": false
+        },
+        {
+          "term": "topological charge",
+          "heading": false
+        },
+        {
+          "term": "probability distribution",
+          "heading": false
+        },
+        {
+          "term": "eﬀective ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "operator eigenvalue",
+          "heading": false
+        }
+      ],
+      "extract": "fermion species, with the partition function now being evaluated in a ﬁxed topological sector of eﬀective charge ν = 1 + 2/β. Taking into account the deﬁnition (2), we then get, with Z(β) ν ({µ}) denoting the partition functions in the microscopic limit, ω(β) k (ζ1, . . . , ζk; {µ}) = lim N→∞ \u0010 k Y i=1 |ζi| 8N \u0011 Ω(β) N,k( ζ2 1 8N , . . . , ζ2 k 8N ; { µ2 8N }) = const. e−βζ2 k/8ζ β ν+1 2 −ν−1+ 2 β k Nf Y j=1 (µ2 j +",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-0006111v2/blocks/prose-page-003"
+      ]
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 575,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "massless ﬂavors",
+          "heading": false
+        },
+        {
+          "term": "const",
+          "heading": false
+        },
+        {
+          "term": "stituting",
+          "heading": false
+        },
+        {
+          "term": "odd",
+          "heading": false
+        },
+        {
+          "term": "eﬀective",
+          "heading": false
+        }
+      ],
+      "extract": "while for ν = 5 it gives p(1) 1 (ζ) = 1 ζ e−ζ2/8 \u00003I3(ζ)2 −4I2(ζ)I4(ζ) + I1(ζ)I5(ζ) \u0001 , (15) all of these being correctly normalized. By now, the eﬀective ﬁnite-volume partition functions are known in analytically closed forms for β = 2 [28] and β = 1 [16]. They are also known for a general even number of pairwise degenerate fermions for β = 4 [16] (this is a technical restriction that we expect to be lifted",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-0006111v2/blocks/prose-page-004"
+      ]
+    },
+    {
+      "id": "page-005",
+      "number": null,
+      "title": "Page 5",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 748,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quaternion kernels",
+          "heading": false
+        },
+        {
+          "term": "microscopic limit",
+          "heading": false
+        },
+        {
+          "term": "unitary ensemble",
+          "heading": false
+        },
+        {
+          "term": "spectral density",
+          "heading": false
+        },
+        {
+          "term": "smilga",
+          "heading": false
+        },
+        {
+          "term": "scalar kernel",
+          "heading": false
+        },
+        {
+          "term": "universality",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        }
+      ],
+      "extract": "B(4) =                                            h I4(˜µi, ˜µj) i i,j=1,...,a h I4(˜ζi, ˜µj) i i=1,..,k−1 j=1,...,a h S4(˜ζi, ˜µj) i i=1,..,k−1 j=1,...,a h I4(˜µi, ˜ζj) i i=1,...,a j=1,...,k−1 h I4(˜ζi, ˜ζj) i i,j=1,...,k−1 h S4(˜ζi, ˜ζj) i i,j=1,..,k−1 h −S4(˜µi, ˜ζj) i i=1,...,a j=1,...,k−1 h −S4(˜ζi, ˜ζj) i i,j=1,...,k−1 h D4(˜ζi, ˜ζj) i i,j=1,..,k−1   (a :",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-0006111v2/blocks/prose-page-005"
+      ]
+    },
+    {
+      "id": "page-006",
+      "number": null,
+      "title": "Page 6",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 464,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "verbaarschot",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "damgaard",
+          "heading": false
+        },
+        {
+          "term": "nucl",
+          "heading": false
+        },
+        {
+          "term": "nagao",
+          "heading": false
+        },
+        {
+          "term": "nishigaki",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "toublan",
+          "heading": false
+        }
+      ],
+      "extract": "[3] E.V. Shuryak and J.J.M. Verbaarschot, Nucl. Phys. A560, 306 (1993). [4] J.J.M. Verbaarschot and I. Zahed, Phys. Rev. Lett. 70, 3852 (1993); J.J.M. Verbaarschot, Nucl. Phys. B426 (1994) 559; Phys. Rev. Lett. 72, 2531 (1994). [5] M.A. Halasz and J.J.M. Verbaarschot, Phys. Rev. D52, 2563 (1995). [6] For an exhaustive list of references, see: J.J.M. Ver- baarschot and T. Wettig, hep-ph/0003017. [7] P.H. Damgaard,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-0006111v2/blocks/prose-page-006"
+      ]
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "microscopic ﬁnite-volume",
+      "heading": false
+    },
+    {
+      "term": "microscopic spectral",
+      "heading": true
+    },
+    {
+      "term": "eigenvalue distributions",
+      "heading": false
+    },
+    {
+      "term": "microscopic limit",
+      "heading": false
+    },
+    {
+      "term": "smallest eigenvalue",
+      "heading": true
+    },
+    {
+      "term": "k-th smallest",
+      "heading": true
+    },
+    {
+      "term": "smallest dirac",
+      "heading": false
+    },
+    {
+      "term": "individual eigenvalue",
+      "heading": false
+    },
+    {
+      "term": "eigenvalue density",
+      "heading": true
+    },
+    {
+      "term": "operator eigenvalue",
+      "heading": false
+    },
+    {
+      "term": "ﬁnite-volume partition",
+      "heading": false
+    },
+    {
+      "term": "probability distributions",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Microscopic spectral density ρS(ζ) (thin line), k-th smallest eigenvalue distribution pk(ζ), k = 1, 2, 3, 4 (solid lines),",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "not-extracted",
+      "note": "split one section per page; no contents was trusted"
+    },
+    {
+      "kind": "sections",
+      "state": "partial",
+      "count": 6,
+      "note": "one per page, not by heading"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 6 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-th-0006111v2"
+  }
+}

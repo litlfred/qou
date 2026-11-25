@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1706.06494v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Sampling General N-Body Interactions with Auxiliary Fields",
+      "dcterms:creator": [
+        "Christopher Körber, 1, ∗Evan Berkowitz,1, †",
+        "Thomas Luu1, ‡"
+      ],
+      "dcterms:issued": "D:20181014",
+      "dcterms:identifier": "https://arxiv.org/abs/1706.06494",
+      "dcterms:source": "library/arxiv-1706.06494v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1706.06494v2"
+    }
+  ]
+}

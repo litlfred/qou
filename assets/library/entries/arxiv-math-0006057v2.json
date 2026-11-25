@@ -1,0 +1,642 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0006057v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0006057v2  [math.QA]  10 Jun 2000\nFINITE QUANTUM GROUPOIDS AND THEIR APPLICATIONS\nDMITRI NIKSHYCH AND LEONID VAINERMAN\nAbstract. We give a survey of the theory of ﬁnite quantum groupoids (weak\nHopf algebras), including foundations of the theory and applications to ﬁnite\ndepth subfactors, dynamical deformations of quantum groups, and invariants\nof knots and 3-manifolds.\nContents\n1.\nIntroduction\n2\n2.\nDeﬁnitions and Examples\n3\n2.1.\nDeﬁnition of the quantum groupoid\n3\n2.2.\nCounital maps and subalgebras\n4\n2.3.\nProperties of the antipode\n5\n2.4.\nThe dual quantum groupoid\n7\n2.5.\nExamples :",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definition of the quantum groupoid",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-01-definition-of-the-quantum-groupoid.md",
+      "narrative": null,
+      "content": "By *quantum groupoids* or *weak Hopf algebras* we understand the objects introduced in [@BNSz], [@BSz1] as a generalization of ordinary Hopf algebras.\n\n::: definition\n[]{#finite quantum groupoid label=\"finite quantum groupoid\"} A *(finite) quantum groupoid* over $k$ is a finite dimensional $k$-vector space $H$ with the structures of an associative algebra $(H,\\,m,\\,1)$ with multiplication $m:H\\otimes_k H\\to H$ and unit $1\\in H$ and a coassociative coalgebra $(H,\\,\\Delta,\\,\\varepsilon)$ with comultiplication $\\Delta:H\\to H\\otimes_k H$ and counit $\\varepsilon:H\\to k$ such that:\n\n1.  The comultip",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Counital maps and subalgebras",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-02-counital-maps-and-subalgebras.md",
+      "narrative": null,
+      "content": "The linear maps defined in ([\\[S epst\\]](#S epst){reference-type=\"ref\" reference=\"S epst\"}) and ([\\[S epss\\]](#S epss){reference-type=\"ref\" reference=\"S epss\"}) are called *target* and *source counital maps* (see examples below for explanation of the terminology) and denoted $\\varepsilon_t$ and $\\varepsilon_s$ respectively : $$\\varepsilon_t(h) = (\\varepsilon\\otimes\\mbox{id})(\\Delta(1)(h\\otimes 1)),\\qquad\n\\varepsilon_s(h) = (\\mbox{id}\\otimes \\varepsilon)((1\\otimes h)\\Delta(1)).$$\n\nIn the next proposition we collect several useful properties of the counital maps.\n\n::: proposition\n[]{#counital pr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Properties of the antipode",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-03-properties-of-the-antipode.md",
+      "narrative": null,
+      "content": "The properties of the antipode of a quantum groupoid are similar to those of a finite-dimensional Hopf algebra.\n\n::: proposition\n[]{#properties of S label=\"properties of S\"} The antipode $S$ is unique and bijective. Also, it is both algebra and coalgebra anti-homomorphism.\n:::\n\n::: proof\n*Proof.* Let $f*g = m(f\\otimes g)\\Delta$ be the convolution of $f,g \\in \n\\mbox{End}_k(H)$. Then $S*\\mbox{id}=\\varepsilon_s,\\, \\mbox{id}*S=\\varepsilon_t$, and $S*\\mbox{id}*S=S$. If $S'$ is another antipode of $H$ then $$S' = S' *\\mbox{id}* S' = S' *\\mbox{id}* S = S*\\mbox{id}*S=S.$$ To check that $S$ is an algeb",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The dual quantum groupoid",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-04-the-dual-quantum-groupoid.md",
+      "narrative": null,
+      "content": "The set of axioms of Definition [\\[finite quantum groupoid\\]](#finite quantum groupoid){reference-type=\"ref\" reference=\"finite quantum groupoid\"} is self-dual. This allows to define a natural quantum groupoid structure on the dual vector space $\\widehat H=\\mbox{Hom}_k(H,k)$ by \"reversing the arrows\": $$\\begin{aligned}\n& & \\langle\\,h,\\,\\phi\\psi \\,\\rangle= \\langle\\,\\Delta(h),\\,\\phi\\otimes\\psi \\,\\rangle, \\\\\n& & \\langle\\,h\\otimes g,\\,{\\widehat\\Delta}(\\phi) \\,\\rangle=  \\langle\\,hg,\\, \\phi\\,\\rangle, \\\\\n& & \\langle\\,h,\\, {\\widehat S}(\\phi) \\,\\rangle= \\langle\\,S(h),\\,\\phi \\,\\rangle,\n\\end{aligned}$$ fo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples : groupoid algebras and their duals",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-05-examples-groupoid-algebras-and-their-duals.md",
+      "narrative": null,
+      "content": "[]{#groupoid algebras label=\"groupoid algebras\"}\n\nAs group algebras and their duals are the easiest examples of Hopf algebras, groupoid algebras and their duals provide examples of quantum groupoids ([@NV1], 2.1.4).\n\nLet $G$ be a finite *groupoid* (a category with finitely many morphisms, such that each morphism is invertible), then the groupoid algebra $kG$ (generated by morphisms $g\\in G$ with the product of two morphisms being equal to their composition if the latter is defined and $0$ otherwise) is a quantum groupoid via : $$\\Delta(g) = g\\otimes g,\\quad \\varepsilon(g) =1,\\quad S(g)=g^{-1},",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples : quantum transformation groupoids",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-06-examples-quantum-transformation-groupoids.md",
+      "narrative": null,
+      "content": "It is known that any group action on a set (i.e., on a commutative algebra of functions) gives rise to a groupoid [@R]. Extending this construction, we associate a quantum groupoid with any action of a Hopf algebra on a separable algebra (\"finite quantum space\").\n\nNamely, let $H$ be a Hopf algebra and $B$ be a separable (and, therefore, finite dimensional and semisimple [@P]) right $H$-module algebra with the action $b\\otimes h \\mapsto b\\cdot h$, where $b\\in B,h\\in H$. Then $B^{op}$, the algebra opposite to $B$, becomes a left $H$-module algebra via $h\\otimes a \\mapsto \nh\\cdot a = a\\cdot S_H(h",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples : Temperley-Lieb algebras",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-006-07-examples-temperley-lieb-algebras.md",
+      "narrative": null,
+      "content": "It was shown in [@NV3] (see Section $9$ for details) that any inclusion of type II${}_1$ factors with finite index and depth ([@GHJ], 4.1) gives rise to a quantum groupoid describing the symmetry of this inclusion. In the case of *Temperley-Lieb algebras* ([@GHJ], 2.1) we have this way the following example.\n\nLet $k=\\mathbb{C}$ be the field of complex numbers, $\\lambda^{-1} = 4\\cos^2\\frac{\\pi}{n+3}\\ (n\\geq 2)$, and $e_1, e_2,\\dots$ be a sequence of idempotents satisfying, for all $i$ and $j$, the braid-like relations $$\\begin{aligned}\ne_i e_{i\\pm 1} e_i &=& \\lambda e_i, \\\\\ne_i e_j &=& e_j e_i,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Other versions of a quantum groupoid",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-007-08-other-versions-of-a-quantum-groupoid.md",
+      "narrative": null,
+      "content": "Here we briefly discuss several notions of quantum groupoids\nthat appeared in the literature and relations between them.\nAll these objects  generalize both usual groupoid algebras and\ntheir duals and Hopf algebras. We apologize for possible\nnon-intentional omissions in the list below.\n\n{\\em Face algebras} of Hayashi \\cite{H1} were defined as Hopf-like\nobjects containing an abelian subalgebra generated by ``bases''.\nNon-trivial examples of such objects and applications to\nmonoidal categories and II${}_1$ subfactors were considered\nin \\cite{H2} and \\cite{H3}. It was shown in (\\cite{N}, 5.2) that",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Integrals in quantum groupoids",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-008-09-integrals-in-quantum-groupoids.md",
+      "narrative": null,
+      "content": "::: definition\n[]{#integral label=\"integral\"} A left (right) *integral* in $H$ is an element $l\\in H$ ($r\\in H$) such that $$hl =\\varepsilon_t(h)l, \\qquad (rh = r\\varepsilon_s(h)) \\qquad \\mbox{ for all } h\\in H.$$\n:::\n\nThese notions clearly generalize the corresponding notions for Hopf algebras ([@M], 2.1.1). We denote $\\int_H^l$ (respectively, $\\int_H^r$) the space of left (right) integrals in $H$ and by $\\int_H = \\int_H^l \\cap \\int_H^r$ the space of two-sided integrals.\n\nAn integral in $H$ (left or right) is called *non-degenerate* if it defines a non-degenerate functional on $\\widehat H$. A",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hopf modules",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-009-010-hopf-modules.md",
+      "narrative": null,
+      "content": "Since a quantum groupoid $H$ is both algebra and coalgebra, one \ncan consider modules and comodules over $H$. As in the theory of \nHopf algebras, an $H$-Hopf module is an $H$-module which is also \nan $H$-comodule such that these two structures are compatible \n(the action ``commutes'' with coaction) :\n\n\\begin{definition}\n\\label{Hopf module}\nA right $H$-Hopf module is such a $k$-vector space $M$ that\n\\begin{enumerate}\n\\item[(i)]\n$M$ is a right $H$-module via $m\\otimes h \\mapsto m\\cdot h$,\n\\item[(ii)]\n$M$ is a right  $H$-comodule via $m\\mapsto \\rho(m) = m\\0 \\otimes m\\I$,\n\\item[(iii)]\n$(m\\cdot h)\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/ex-sec-011-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "ex-sec-011-01.md",
+      "narrative": null,
+      "content": "(i) The target counital subalgebra Ht is a trivial H-module algebra via h · z = εt(hz), h ∈H, z ∈Ht. (ii) H is an bH-module algebra via the dual action φ ⇀h = h(1)⟨φ, h(2) ⟩, φ ∈ bH, h ∈H. (iii) Let A = CH(Hs) = {a ∈H | ay = ya ∀y ∈Hs}, be the centralizer of Hs in H, then A is an H-module algebra via the adjoint action h · a = h(1)aS(h(2)). 4.2. Smash products. Let A be an H-module algebra, then a smash product algebra A#H is deﬁned on a k-vector space A ⊗Ht H, where H is a left Ht-module via multiplication and A is a right Ht-module via a · z = S−1(z) · a = a(z · 1), a ∈A, z ∈Ht, as follows.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/ex-sec-011-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "ex-sec-011-02.md",
+      "narrative": null,
+      "content": "H is isomorphic to the trivial smash product algebra Ht#H.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Smash products",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-010-013-smash-products.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Module and comodule algebras",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-011-012-module-and-comodule-algebras.md",
+      "narrative": null,
+      "content": "1) h · ab = (h(1) · a)(h(2) · b),\n2) h · 1 = εt(h) · 1.\nIf A is an H-module algebra we will also say that H acts on A.\n1) ρ(ab) = a(0)b(0) ⊗a(1)b(1),\n2) ρ(1) = (id ⊗εt)ρ(1).\nand the unit of A#H is 1#1.\nProof. (i) ⇒(ii) : Suppose that H is semisimple, then since Ker εt is a left ideal\nin H we have Ker εt = Hp for some idempotent p. Therefore, Ker εt(1 −p) = 0\nand l = 1 −p is a left integral by Lemma 3.1.3(iv). It is normalized since εt(l) =\n1 −εt(p) = 1. (ii) ⇒(iii) : if l is normalized then l(1) ⊗S(l(2)) is a separability\nelement of H by Lemma 3.1.3(ii). (iii) ⇒(i) : this is a standard result",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Duality for actions",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-012-014-duality-for-actions.md",
+      "narrative": null,
+      "content": "An analogue of the Blattner-Montgomery duality theorem for\nactions of quantum groupoids was proven in \\cite{N2}.\nLet $H$ be a finite quantum groupoid and\n$A$ be a left $H$-module algebra. Then the smash product $A\\#H$\nis a left $\\widehat H$-module algebra via\n\\begin{equation}\n\\label{dual action}\n\\phi\\cdot (a\\#h) = a\\#(\\phi\\act h), \\quad\n\\phi\\in \\widehat H,\\,h\\in H,\\,a\\in A.\n\\end{equation}\nIn the case when $H$ is a finite dimensional Hopf algebra,\nthere is an isomorphism\n$(A\\#H)\\#\\widehat H \\cong M_n(A)$, where $n=\\dim H$ and $M_n(A)$ is an algebra\nof $n$-by-$n$ matrices over $A$ \\cite{BM}.\nThi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quasitriangular quantum groupoids",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "../sections/sec-013-016-quasitriangular-quantum-groupoids.md",
+      "narrative": null,
+      "content": "::: definition\n[]{#QT WHA label=\"QT WHA\"} A quasitriangular quantum groupoid is a pair ($H,\\, {\\mathcal R}$) where $H$ is a quantum groupoid and ${\\mathcal R}\\in \\Delta^{op}(1)(H\\otimes_k H)\\Delta(1)$ satisfying the following conditions : $$\\Delta^{op}(h){\\mathcal R}= {\\mathcal R}\\Delta(h),$$ for all $h\\in H$, where $\\Delta^{op}$ denotes the comultiplication opposite to $\\Delta$, $$\\begin{aligned}\n(\\mbox{id}\\otimes \\Delta){\\mathcal R}&=& {\\mathcal R}_{13}{\\mathcal R}_{12}, \\label{DR1}\\\\\n(\\Delta \\otimes \\mbox{id}){\\mathcal R}&=& {\\mathcal R}_{13}{\\mathcal R}_{23}, \\label{DR2}\n\\end{aligned}$$ wh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Drinfeld double",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-014-017-the-drinfeld-double.md",
+      "narrative": null,
+      "content": "To define the *Drinfeld double* $D(H)$ of a quantum groupoid $H$, consider on the vector space $\\widehat H^{op}\\otimes_k H$ an associative multiplication $$(\\phi\\otimes h)(\\psi\\otimes g) =\n\\psi_{(2)}\\phi \\otimes h_{(2)} g \\langle\\,S(h_{(1)}),\\, \\psi_{(1)}\\,\\rangle\\langle\\,h_{(3)},\\, \\psi_{(3)}\\,\\rangle,$$ where $\\phi, \\psi \\in \\widehat H^{op}$ and $h,g \\in H$. Then one can verify that the linear span $J$ of the elements $$\\begin{aligned}\n\\label{amalgamation}\n\\phi\\otimes zh &-& (\\varepsilon\\leftharpoonup z)\\phi \\otimes h, \\quad z\\in H_t,\\\\\n\\phi\\otimes yh &-& (y\\rightharpoonup\\varepsilon)\\phi \\o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ribbon quantum groupoids",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-015-018-ribbon-quantum-groupoids.md",
+      "narrative": null,
+      "content": "::: definition\n[]{#Ribbon WHA label=\"Ribbon WHA\"} A ribbon quantum groupoid is a quasitriangular quantum groupoid with an invertible central element $\\nu\\in H$ such that $$\\Delta(\\nu) = {\\mathcal R}_{21}{\\mathcal R}(\\nu\\otimes \\nu) \\quad\\mbox{and}\\quad S(\\nu)=\\nu.$$ The element $\\nu$ is called a *ribbon element* of $H$.\n:::\n\nFor an object $V$ of $\\mbox{Rep}(H)$ we define the twist $\\theta_V :V\\to V$ to be the multiplication by $\\nu$ : $$\\theta_V(v) =\\nu\\cdot v, \\quad v\\in V.$$\n\n::: proposition\n[]{#twist label=\"twist\"} Let $(H, {\\mathcal R},\\nu)$ be a ribbon quantum groupoid. The family of homo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prop-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "prop-sec-016-01.md",
+      "narrative": null,
+      "content": "In addition to quantum groups, such categories also arise from skein categories of tangles and, as it was observed by A.~Ocneanu, from certain bimodule categories of type II${}_1$ subfactors.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Towards modular categories",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-016-019-towards-modular-categories.md",
+      "narrative": null,
+      "content": "In \\cite{RT} a general method of constructing invariants of\n$3$-manifolds from modular Hopf algebras was introduced. \nLater it became clear that the technique of Hopf algebras can\nbe replaced by a more general technique of\nmodular categories (see \\cite{T}). In addition to quantum groups,\nsuch categories also arise from skein categories of tangles\nand, as it was observed by A.~Ocneanu, from certain bimodule\ncategories of type II${}_1$\nsubfactors.\n\nThe representation categories of {\\em quantum groupoids} give\nquite general construction of modular categories.\nRecall some definitions needed here.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisting of quantum groupoids",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-017-020-twisting-of-quantum-groupoids.md",
+      "narrative": null,
+      "content": "We describe the procedure of constructing new quantum groupoids by twisting a comultiplication. Twisting of Hopf algebroids without an antipode was developed in [@Xu] and a special case of twisting of $*$-quantum groupoids was considered in [@NV1].\n\n::: definition\n[]{#a twist label=\"a twist\"} A *twist* for a quantum groupoid $H$ is a pair ($\\Theta,\\,{\\bar \\Theta}$), with $$\\label{Theta and bTheta}\n\\Theta\\in \\Delta(1)(H\\otimes_k H), \\quad\n{\\bar \\Theta}\\in (H\\otimes_k H)\\Delta(1), \\quad\n\\mbox { and } \\quad\n\\Theta{\\bar \\Theta}= \\Delta(1)$$ satisfying the following axioms : $$\\begin{aligned}\n(\\var",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dynamical twists of Hopf algebras",
+      "pageStart": 24,
+      "pageEnd": 27,
+      "target": "../sections/sec-018-021-dynamical-twists-of-hopf-algebras.md",
+      "narrative": null,
+      "content": "We describe a method of constructing twists of quantum groupoids,\nwhich is a  finite-dimensional modification of the construction\nproposed in \\cite{Xu} and is dual to that of \\cite{EV}, cf.\\ \\cite{EN}.\n\nDynamical twists  first appeared in the work of Babelon \\cite{Ba},\nsee also \\cite{BBB}.\n\nLet $U$ be a Hopf algebra and $A=\\Map(\\mathbb{T},\\, k)$\nbe a commutative and cocommutative Hopf algebra\nof functions on a finite Abelian group $\\mathbb{T}$\nwhich is a Hopf subalgebra of $U$. Let $P_\\mu,\\, \\mu\\in \\mathbb{T}$\nbe the minimal idempotents in $A$. \n\n\n\\begin{definition} \n\\label{zero weight}\nWe say",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definitions",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-019-023-definitions.md",
+      "narrative": null,
+      "content": "::: definition\n[]{#semisimple and C* label=\"semisimple and C*\"} A quantum groupoid is said to be *semisimple* (resp., *$*$- or $C^*$-quantum groupoid*) if its algebra $H$ is semisimple (resp., a $*$-algebra over a field $k$ with involution, or finite-dimensional $C^*$-algebra over the field $\\mathbb{C}$ and $\\Delta$ is a $*$-homomorphism).\n:::\n\nGroupoid algebras and their duals give examples of commutative and cocommutative semisimple quantum groupoids (Corollary [\\[kG is semisimple\\]](#kG is semisimple){reference-type=\"ref\" reference=\"kG is semisimple\"}), which are $C^*$-quantum groupoids if",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Existence of the Haar integral",
+      "pageStart": 28,
+      "pageEnd": 31,
+      "target": "../sections/sec-020-024-existence-of-the-haar-integral.md",
+      "narrative": null,
+      "content": "Given a dual bases $\\{f_i\\}$ and $\\{\\xi^i\\}$ of $H$ and $\\widehat H$, respectively, let us consider the following canonical element $$\\chi =\\sum_i(\\xi^i\\leftharpoonup S^{-2}(f_i)).$$ One can show that $\\chi$ is a left integral in $\\widehat H$ such that $\\chi(xy)=\\chi(yS^2(x))$ for all $x,y\\in H$ and $l\\rightharpoonup\\chi={\\widehat S}^2(\\widehat 1\\leftharpoonup l)$ for any left integral $l$ in $H$ (see [@BNSz], 3.25).\n\n::: lemma\n[]{#Haar label=\"Haar\"}\n\n1.  The Haar integral $h\\in H$ exists iff the above mentioned $\\chi$ is non-degenerate, in which case $(h,\\chi)$ is a dual pair of left integral",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "$C^*$-quantum groupoids and unitary modular categories",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "../sections/sec-021-026-c-quantum-groupoids-and-unitary-modular-cate.md",
+      "narrative": null,
+      "content": "To define the (unitary) representation category $\\URep(H)$ of a $C^*$-quantum groupoid\n$H$ we consider {\\it unitary} $H$-modules, i.e., $H$-modules $V$ \nequipped with a scalar product \n$$\n(\\cdot,\\cdot): V\\times V\\to \\mathbb{C} \\qquad\n\\mbox{ such that } \\qquad \n(h\\cdot v,w)=(v,h^*\\cdot w)\\ \\forall h\\in H, v,w\\in V.\n$$\nThe notion of a morphism in this category is the same as in $\\Rep(H)$.\n\nThe monoidal product of $V,W\\in \\URep(H)$ is defined as follows. We\nconstruct a tensor product $V\\otimes_\\mathbb{C} W$ of Hilbert spaces and note\nthat the action of $\\Delta(1)$ on this left $H$-module is an or",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Actions of $C^*$-quantum groupoids on von Neumann algebras",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "../sections/sec-022-027-actions-of-c-quantum-groupoids-on-von-neuman.md",
+      "narrative": null,
+      "content": "Let a von Neumann algebra $M$ be a left $H$-module algebra in the sense of Definition [\\[module algebra\\]](#module algebra){reference-type=\"ref\" reference=\"module algebra\"} via a weakly continuous action of a $C^*$-quantum groupoid $$H\\otimes_\\mathbb{C} M \\ni  x\\otimes m \\mapsto (x\\triangleright m)\\in M$$ such that $(x\\triangleright m)^* = S(x)^* \\triangleright m^*$ and $x\\triangleright 1 =0$ iff $\\varepsilon_t(t)=0.$\n\nThen one can show ([@NSzW], 3.4.2) that the smash product algebra (now we call it *crossed product algebra* and denote by $M{>\\!\\!\\!\\triangleleft}H$), equipped with an involutio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Construction of a $C^*$-quantum groupoid from a depth 2 subfactor",
+      "pageStart": 33,
+      "pageEnd": 35,
+      "target": "../sections/sec-023-028-construction-of-a-c-quantum-groupoid-from-a.md",
+      "narrative": null,
+      "content": "Let $N\\subset M$ be a finite index ($[M:N]= \\lambda^{-1}$) depth 2 II${}_1$ subfactor and $$N \\subset M \\subset M_1 \\subset M_2 \\subset \\cdots$$ the corresponding Jones tower, $M_1 = \\langle M,\\,e_1 \\rangle,\\,\nM_2 = \\langle M_1,\\,e_2 \\rangle,\\dots,$ where $e_1 \\in N^\\prime\n\\cap M_1,\\,e_2 \\in M^\\prime \\cap M_2,\\cdots$ are the Jones projections. The depth 2 condition means that $N^\\prime \\cap M_{2}$ is the basic construction of the inclusion $N^\\prime \\cap M  \\subset  N^\\prime \\cap M_{1}$. Let $\\tau$ be the trace on $M_2$ normalized by $\\tau(1)=1$.\n\nLet us denote $$A=N'\\cap M_1, \\quad B=M'\\cap M",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Action on a subfactor",
+      "pageStart": 35,
+      "pageEnd": 37,
+      "target": "../sections/sec-024-029-action-on-a-subfactor.md",
+      "narrative": null,
+      "content": "Equation~(\\ref{good property}) suggests the following definition \nof the action of $B$ on $M_1$.\n\n\\begin{proposition}\n\\label{the action}\nThe map $\\lact : B \\otimes_\\mathbb{C} M_1 \\to M_1$ :\n\\begin{equation}\nb \\lact x = \\lambda^{-1} E_{M_1}(b x e_2)\n\\end{equation}\ndefines a left action of $B$ on $M_1$ (cf.\\ \\cite{S}, Proposition 17).\n\\end{proposition}\n\n\\begin{proof}\nThe above map defines a left $B$-module structure\non $M_1$, since $1\\lact x =x$ and\n$$\nb \\lact (c \\lact x) \n= \\lambda^{-2}  E_{M_1}(b  E_{M_1}(c x e_2)  e_2) \n= \\lambda^{-1}  E_{M_1}( bc x e_2 ) = (bc) \\lact x.\n$$\nNext, using equati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Galois correspondence",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "../sections/sec-025-030-a-galois-correspondence.md",
+      "narrative": null,
+      "content": "The following simple observation gives a natural passage from arbitrary finite depth subfactors to depth $2$ subfactors.\n\n::: proposition\n[]{#reducing depth label=\"reducing depth\"} For all $k\\geq 0$ the inclusion $N\\subset M_k$ has depth $d+1$, where $d$ is the smallest positive integer $\\geq\n\\frac{n-1}{k+1}$. In particular, $N\\subset M_i$ has depth $2$ for all $i\\geq n-2$, i.e., any finite depth subfactor is an intermediate subfactor of some depth $2$ inclusion.\n:::\n\n::: proof\n*Proof.* Note that $\\dim Z(N'\\cap M_i) = \\dim Z(N'\\cap M_{i+2})$ for all $i\\geq n-2$. By [@PP2], the tower of basic c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bimodule categories",
+      "pageStart": 38,
+      "pageEnd": 41,
+      "target": "../sections/sec-026-031-bimodule-categories.md",
+      "narrative": null,
+      "content": "Here we establish an equivalence between the tensor category $\\mbox{Bimod}_{N-N}(N\\subset M)$ of $N-N$ bimodules of a subfactor $N\\subset M$ (which is, by definition, the tensor category generated by simple subobjects of ${}_N L_2(M_n)_N,\\, n\\geq -1$, where $M_0=M$ and $M_{-1}=N$) and the co-representation category of the $C^*$-quantum groupoid $B$ canonically associated with it as in Theorem [\\[galois correspondence\\]](#galois correspondence){reference-type=\"ref\" reference=\"galois correspondence\"}.\n\nFirst introduce several useful categories associated to $B$. Recall that a left (resp., right)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/cor-sec-027-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 44,
+      "target": "cor-sec-027-02.md",
+      "narrative": null,
+      "content": "If N ⊂N>⊳B is a depth 2 inclusion corresponding to the quan- tum groupoid B, then its principal graph is given by the Bratteli diagram of the inclusion bBt ⊂bB.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prop-sec-027-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 44,
+      "target": "prop-sec-027-01.md",
+      "narrative": null,
+      "content": "If K is a coideal ∗-subalgebra of B then the principal graph of the subfactor N ⊂N>⊳K is given by the connected component of the Bratteli diagram of the inclusion δ(K) ⊂bB containing the trivial representation of bB.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0006057v2/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Principal graphs",
+      "pageStart": 41,
+      "pageEnd": 44,
+      "target": "../sections/sec-027-032-principal-graphs.md",
+      "narrative": null,
+      "content": "as follows ([JS], 4.2, [GHJ], 4.1). Let X = NL2(M)M and consider the following\nsequence of N −N and N −M bimodules :\nNL2(N)N, X, X ⊗M X∗, X ⊗M X∗⊗N X, . . .\nobtained by right tensoring with X∗and X. The vertex set of the principal graph\nis indexed by the classes of simple bimodules appearing as summands in the above\nsequence. Let us connect vertices corresponding to bimodules NYN and NZM by\nl edges if NYN is contained in the decomposition of NZN, the restriction of NZM,\nwith multiplicity l.\nWe apply Theorem 9.2.6 to express the principal graph of a ﬁnite depth subfactor\nN ⊂M in terms of the qu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/huang-2021-chinese-phys-c-45-030002",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "The AME 2020 atomic mass evaluation (I). Evaluation of input data, and adjustment procedures",
+      "dcterms:creator": [
+        "data, Evaluation of input",
+        "adjustment"
+      ],
+      "dcterms:issued": "D:20210302",
+      "bibo:doi": "10.1088/1674-1137/abddb0",
+      "dcterms:identifier": "https://doi.org/10.1088/1674-1137/abddb0",
+      "dcterms:source": "library/huang-2021-chinese-phys-c-45-030002/manifest.jsonld",
+      "dcterms:hasVersion": "library/huang-2021-chinese-phys-c-45-030002"
+    }
+  ]
+}

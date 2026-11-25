@@ -1,0 +1,36 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2406.05311v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "A quantum Murnaghan–Nakayama rule for the flag manifold",
+      "dcterms:creator": [
+        "BENEDETTI, C.",
+        "BERGERON, N.",
+        "COLMENAREJO, L.",
+        "SALIOLA, F.",
+        "SOTTILE, F."
+      ],
+      "dcterms:issued": "D:20240610",
+      "dcterms:identifier": "https://arxiv.org/abs/2406.05311",
+      "dcterms:abstract": "In this paper, we give a rule for the multiplication of a Schubert class by a tautological class in the (small) quantum cohomology ring of the ﬂag manifold. As an inter- mediate step, we establish a formula for the multiplication of a Schubert class by a quantum Schur polynomial indexed by a hook partition. This entails a detailed analysis of chains and intervals in the quantum Bruhat order. This analysis allows us to use results of Leung–Li and of Postnikov to reduce quantum products by hook Schur polynomials to the (known) classical product.",
+      "dcterms:source": "library/arxiv-2406.05311v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2406.05311v1"
+    }
+  ]
+}

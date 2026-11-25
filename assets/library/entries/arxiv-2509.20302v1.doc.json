@@ -1,0 +1,708 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2509.20302v1",
+  "title": "Universality in the resurgence of generalized Tracy-Widom distributions",
+  "variant": "pdf",
+  "pages": 7,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Observables",
+      "number": "2",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-2-observables"
+    },
+    {
+      "level": 1,
+      "title": "Trans-series expansion",
+      "number": "3",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-trans-series-expansion"
+    },
+    {
+      "level": 2,
+      "title": "Resurgence relations between ${\\cal D}^{\\{\\}}$ and ${\\cal D}^{\\{1\\}}$",
+      "number": "3.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-31-resurgence-relations-between-cal-d-and-cal-d1"
+    },
+    {
+      "level": 2,
+      "title": "Generic relations",
+      "number": "3.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-32-generic-relations"
+    },
+    {
+      "level": 2,
+      "title": "Example",
+      "number": "3.3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-33-example"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions",
+      "number": "4",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-4-conclusions"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": "5",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-5-acknowledgements"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 157,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "budapest",
+          "heading": false
+        },
+        {
+          "term": "hungary",
+          "heading": false
+        },
+        {
+          "term": "determinants",
+          "heading": false
+        },
+        {
+          "term": "resurgence",
+          "heading": false
+        },
+        {
+          "term": "non-perturbative",
+          "heading": false
+        }
+      ],
+      "extract": "Universality in the resurgence of generalized Tracy-Widom distributions Zoltan Bajnoka, Bercel Boldisa,b, Dennis le Plata aHUN-REN Wigner Research Centre for Physics, 1121 Budapest, Konkoly-Thege Miklós út 29-33, Hungary bDepartment of Theoretical Physics, Budapest University of Technology and Economics, M˝uegyetem rkp. 3., H-1111 Budapest, Hungary Abstract We analyze determinants associated with Bessel kernels and",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2509.20302v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-2-observables",
+      "number": "2",
+      "title": "Observables",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 774,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "belitsky",
+          "heading": false
+        },
+        {
+          "term": "bajnok",
+          "heading": false
+        },
+        {
+          "term": "tracy--widom distributions",
+          "heading": false
+        },
+        {
+          "term": "beccaria",
+          "heading": false
+        },
+        {
+          "term": "non-perturbative corrections",
+          "heading": false
+        },
+        {
+          "term": "coronado",
+          "heading": false
+        },
+        {
+          "term": "bargheer",
+          "heading": false
+        },
+        {
+          "term": "ypy",
+          "heading": false
+        }
+      ],
+      "extract": "Tracy--Widom distributions [@Tracy:1993xj] appear in many areas of physics and mathematics, providing surprising connections between seemingly unrelated systems. In particular, distributions related to Bessel kernels describe eigenvalues of random matrices in the Laguerre ensemble in an appropriate scaling limit [@Forrester:1993vtx]. Their generalizations have recently emerged in supersymmetric gauge theories -",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-trans-series-expansion",
+      "number": "3",
+      "title": "Trans-series expansion",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 709,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nonumber cal",
+          "heading": false
+        },
+        {
+          "term": "beta ell",
+          "heading": false
+        },
+        {
+          "term": "cal frac",
+          "heading": false
+        },
+        {
+          "term": "aligned cal",
+          "heading": false
+        },
+        {
+          "term": "cal quad",
+          "heading": false
+        },
+        {
+          "term": "cal delta",
+          "heading": false
+        },
+        {
+          "term": "equiv cal",
+          "heading": false
+        },
+        {
+          "term": "trans-series",
+          "heading": true
+        }
+      ],
+      "extract": "Based on the previous results [@Bajnok2024; @Bajnok20251], concrete examples and many consistency checks we conjecture that the strong coupling expansion (valid for $g>0$) has the trans-series structure $$\\begin{aligned} {\\cal D}(g)=A & e^{4\\pi g\\sum_{i}(x_{i}-y_{i})}g^{\\frac{\\beta^{2}+2\\ell\\beta}{2}}\\times\\\\ & \\quad\\sum_{\\{\\delta_{i}=0,1\\}}e^{-8\\pi g\\sum_{i}\\delta_{i}x_{i}}S^{\\{\\delta_{i}\\}}{\\cal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-31-resurgence-relations-between-cal-d-and-cal-d1",
+      "number": "3.1",
+      "title": "Resurgence relations between ${\\cal D}^{\\{\\}}$ and ${\\cal D}^{\\{1\\}}$",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 446,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cal",
+          "heading": true
+        },
+        {
+          "term": "delta cal",
+          "heading": false
+        },
+        {
+          "term": "correction cal",
+          "heading": false
+        },
+        {
+          "term": "coefficients cal",
+          "heading": false
+        },
+        {
+          "term": "cal sum",
+          "heading": false
+        },
+        {
+          "term": "lateral borel",
+          "heading": false
+        },
+        {
+          "term": "logarithmic cut",
+          "heading": false
+        },
+        {
+          "term": "cut starts",
+          "heading": false
+        }
+      ],
+      "extract": "The perturbative series ${\\cal D}^{\\{\\}}(g)$ and the non-perturbative correction ${\\cal D}^{\\{1\\}}(g)$ are related by resurgence relations, see [@Marino:2012zq; @Dorigoni:2014hea; @Aniceto:2018bis] for modern references. This correspondence originates from ambiguity cancellations and are manifested in asymptotic relations: the large order behaviour of the peturbative coefficients ${\\cal D}_{k}^{\\{\\}}$ are related to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-32-generic-relations",
+      "number": "3.2",
+      "title": "Generic relations",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 554,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cal delta",
+          "heading": false
+        },
+        {
+          "term": "bar cal",
+          "heading": false
+        },
+        {
+          "term": "equiv cal",
+          "heading": false
+        },
+        {
+          "term": "alien derivatives",
+          "heading": false
+        },
+        {
+          "term": "dots vert",
+          "heading": false
+        },
+        {
+          "term": "non-perturbative corrections",
+          "heading": false
+        },
+        {
+          "term": "frac phi",
+          "heading": false
+        },
+        {
+          "term": "prod frac",
+          "heading": false
+        }
+      ],
+      "extract": "For generic $\\{x_{j}\\}$ the non-perturbative corrections of order $e^{-8\\pi gx_{j}}$ satisfy the same equations as for $x_{1}$, merely $x_{1}$ is replaced with $x_{j}$. Thus we can conclude that ${\\cal D}^{\\{j\\}}\\equiv{\\cal D}^{\\{0,\\dots,0,1,0,\\dots,\\}}$ has the same form as ${\\cal D}^{\\{\\}}$ but with $I_{n}^{\\{j\\}}=I_{n}^{\\{\\}}+\\frac{2(-1)^{n}}{(2\\pi x_{j})^{2n-1}}$. The corresponding Stokes constant is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-33-example",
+      "number": "3.3",
+      "title": "Example",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 90,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-perturbative corrections",
+          "heading": false
+        },
+        {
+          "term": "resurgence relations",
+          "heading": false
+        },
+        {
+          "term": "dimensional cube",
+          "heading": false
+        }
+      ],
+      "extract": "In the case of $\\{x_{1},x_{2},x_{3}\\vert y_{1},\\dots\\}$ the non-perturbative corrections can be represented by a 3 dimensional cube. The vertex $\\{\\}$ represents the perturbative part, ${\\cal D}^{\\{\\}}$, while each other vertex represents a non-perturbative correction $,{\\cal D}^{\\{1\\}},\\dots$. The oriented edges show non-trivial resurgence relations between them. The alien derivatives move in the corresponding",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-4-conclusions",
+      "number": "4",
+      "title": "Conclusions",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 225,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-perturbative corrections",
+          "heading": false
+        },
+        {
+          "term": "symbols",
+          "heading": false
+        },
+        {
+          "term": "resurgence",
+          "heading": false
+        },
+        {
+          "term": "observables",
+          "heading": false
+        },
+        {
+          "term": "moments",
+          "heading": false
+        },
+        {
+          "term": "perturbative",
+          "heading": false
+        },
+        {
+          "term": "table",
+          "heading": false
+        }
+      ],
+      "extract": "In this Letter we derived the complete trans-series for semi-infinite determinants associated with the Bessel kernel, generalizations of the Tracy--Widom distributions that appear in many contexts, including observables of ${\\cal N}=4$ super Yang--Mills theory. We found that the non-perturbative corrections exhibit a special structure: each non-perturbative scale enters only linearly, and the corrections can be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-5-acknowledgements",
+      "number": "5",
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 924,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "korchemsky",
+          "heading": false
+        },
+        {
+          "term": "doi",
+          "heading": false
+        },
+        {
+          "term": "superconformal yang-mills",
+          "heading": false
+        },
+        {
+          "term": "jhep",
+          "heading": false
+        },
+        {
+          "term": "yang-mills theories",
+          "heading": false
+        },
+        {
+          "term": "supersymmetric yang-mills",
+          "heading": false
+        },
+        {
+          "term": "four-dimensional superconformal",
+          "heading": false
+        },
+        {
+          "term": "strong szeg",
+          "heading": false
+        }
+      ],
+      "extract": "The research was supported by the Doctoral Excel- lence Fellowship Programme funded by the National Research Development and Innovation Fund of the Min- istry of Culture and Innovation and the Budapest Uni- versity of Technology and Economics, under a grant agreement with the National Research, Development 5 and Innovation Office (NKFIH). DlP acknowledges support by the Alexander von Humboldt Foundation. References",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "non-perturbative corrections",
+      "heading": true
+    },
+    {
+      "term": "cal delta",
+      "heading": false
+    },
+    {
+      "term": "cal frac",
+      "heading": false
+    },
+    {
+      "term": "series cal",
+      "heading": false
+    },
+    {
+      "term": "aligned cal",
+      "heading": false
+    },
+    {
+      "term": "leading non-perturbative",
+      "heading": false
+    },
+    {
+      "term": "non-perturbative terms",
+      "heading": false
+    },
+    {
+      "term": "equiv cal",
+      "heading": false
+    },
+    {
+      "term": "nonumber cal",
+      "heading": false
+    },
+    {
+      "term": "cal quad",
+      "heading": false
+    },
+    {
+      "term": "cal sum",
+      "heading": false
+    },
+    {
+      "term": "non-perturbative scale",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "The determinant (1) corresponds to various observables in four dimensional supersymmetric gauge theories [21]. The octagon form factor is related to the four-point function of infinitely heavy half BPS operators and the parameters y,ξ are the parametrizations of the conformal cross-ratios",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Asymptotic behaviour of D{}",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Cut structure on the Borel plane of B[D{}](s) for a symbol with {x1,x2,x3|y1,y2}. We indicated the branch points of the cuts, while the other branch point is at infinity",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Cut structure on the Borel plane of B[D{1}](s) for a symbol with {x1,x2,x3|y1,y2}. This is the same cut structure we would have for {x2,x3|x1,y1,y2}",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Non-perturbative corrections for {x1,x2,x3|y1,...} and their resurgence relations",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 8,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "4 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p5); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2509.20302v1"
+  }
+}

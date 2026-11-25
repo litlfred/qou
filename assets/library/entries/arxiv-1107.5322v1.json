@@ -1,0 +1,230 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1107.5322v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1107.5322v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction: from Majorana to see-saw",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction-from-majorana-to-see-saw.md",
+      "narrative": null,
+      "content": "Introduction: from Majorana to see-saw\n1\n2\nLarge scale see-saw: GUT\n2\n2.1\nSO(10) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n3\n2.2\nSU(5)\n. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n4\n3\nLow scale seesaw: LHC\n4\n3.1\nLeft-Right Symmetry . . . . . . . . . . . . . . . . . . . . . . . . . . .\n5\n3.2\nMore SU(5) . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n7\n4\nSummary and Outlook\n7\n5\nAcknowledgements\n8\n1\nIntroduction: from Majorana to see-saw\nWe know that neutrinos are massive but light [1]. We can account for tiny neutrino\nmasses wi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1107.5322v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Probing the Origin of Neutrino Mass: from GUT to LHC\nGoran Senjanovi´c\nICTP, Trieste, Italy\nAbstract\nEver since the Majorana classic work, the nature of neutrino has been one\nof the central questions of the weak interaction physics. If neutrino is its own\nantiparticle, the immediate consequence is lepton number violation through the\nneutrinoless double beta decay. However, colliders such as the LHC oﬀer a hope\nof seeing directly the same phenomenon, and moreover the Majorana nature of\nnew particles needed to complete the Standard Model. I review here the salient\nfeatures of these phenomena, an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1107.5322v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Large scale see-saw: GUT",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-large-scale-see-saw-gut.md",
+      "narrative": null,
+      "content": "Large scale see-saw: GUT\nLarge scale seesaw allows for Yukawas of order one. This happens naturally in grand\nuniﬁed theories (GUT). Let us see the situation in the most popular candidates,\nSO(10) and SU(5) GUTs.\n2\np\np\nm\nx\ne\ne\nn\nn\nW\nW\nlightest neutrino mass in eV\nnormal\ninverted\n|mee\nν | in eV\n10−4\n0.001\n0.01\n0.1\n1\n10−4\n10−3\n0.01\n0.1\n1.0\nFigure 1: Neutrinoless double beta decay through the neutrino Majorana mass (left),\nand canonical contribution from light neutrino mass (right). The mixing angles are\nﬁxed at {θ12, θ23, θ13} = {35◦, 45◦, 7◦}, while the Dirac and Majorana phases vary in\nthe inte",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1107.5322v1/blocks/figure-img-p003-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1107.5322v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "SO(10)",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-21-so10.md",
+      "narrative": null,
+      "content": "SO(10)\nThere are some features that make SO(10) special [9].\n1. A family of fermions is uniﬁed in a 16-dimensional spinorial representation\n(16F), together with a right-handed neutrino. The seesaw mechanism emerges\nnaturally.\n2. In the supersymmetric version, R-parity is exact [10]. The LSP is then stable,\na natural candidate for the dark matter.\n3. The uniﬁcation of gauge couplings can be achieved even without supersymmetry,\nwith heavy right-handed neutrino and the seesaw.\n4. The minimal supersymmetric version gives naturally a large atmospheric mixing\nangle in the context of the type II see-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1107.5322v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "SU(5)",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-22-su5.md",
+      "narrative": null,
+      "content": "SU(5)\nMinimal non-supersymmmetric version.\nThe minimal SU(5) theory fails for\ntwo reasons:\n• gauge couplings do not unify\n• neutrinos as massless as in the SM.\nA simple extension cures both problems: add an extra fermionic 24F [18]. Under\nSU(3)C ×SU(2)W ×U(1)Y : 24F = (1, 1)0 +(1, 3)0 +(8, 1)0 +(3, 2)−5/6 +(¯3, 2)5/6. The\nuniﬁcation forces the triplet fermion to lie below TeV, with the color octet around\n107 GeV. The singlet mass is not determined, and the rest must be at the GUT scale.\nWith the notation S = (1, 1)0 (singlet), T = (1, 3)0 (triplet), it is evident that we\nhave hybrid Type-I and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1107.5322v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Low scale seesaw: LHC",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-3-low-scale-seesaw-lhc.md",
+      "narrative": null,
+      "content": "Low scale seesaw: LHC\nIn the case of low scale seesaw, one can look for collider signatures. However, this\nis not motivated very strongly since it requires taking ad-hoc some states that can\nserve as a source of neutrino mass, and keeping them light. Instead, it is preferable\nto study theories of neutrino masses and mixings. A natural candidate is provided by\nthe left-right symmetric theories. These theories were prophetic regarding neutrino\nmass, and the curse of its apparent largeness turned into the blessing with the advent\nof the seesaw mechanism. After going through their collider signatu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1107.5322v1/blocks/figure-img-p005-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1107.5322v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Left-Right Symmetry",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-31-left-right-symmetry.md",
+      "narrative": null,
+      "content": "Left-Right Symmetry\nL −R symmetric theories [9] are based on the SU(2)L × SU(2)R × U(1)B−L gauge\ngroup augmented by parity or charge conjugation. Then:\n• WL implies WR,\n• νL implies νR, with mνR of order MR through the breaking of L −R symmetry,\n• Type-I seesaw: connects neutrino mass to the scale of parity restoration.\nThese facts lead immediately to the new contribution [22] to the neutrino-less double\nbeta decay mentioned above, see Fig. 2. With WR in the TeV region and the right-\nhanded neutrino mass mN in the 100 GeV -TeV region, this contribution can easily\ndominate over the left-handed",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1107.5322v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "More SU(5)",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-006-32-more-su5.md",
+      "narrative": null,
+      "content": "More SU(5)\nWe saw that uniﬁcation predicts the mass of the fermion triplet below TeV, and thus\nit becomes accessible to the colliders such as Tevatron and LHC. It can be produced\nthrough gauge interactions (Drell-Yan)\npp →W ± + X →T ±T 0 + X\npp →(Z or γ) + X →T +T −+ X .\nThe best channel is like-sign dileptons + jets\nBR(T ±T 0 →l±\ni l±\nj + 4jets) ≈1\n20 × |yi\nT|2|yj\nT|2\n(P\nk |yk\nT|2)2\nSame couplings yi\nT contribute to ν mass matrix and T decays, so that T decays\ncan serve to probe the neutrino mass matrix [18];[32].\nWith an integrated luminosity of 10 (100) fb−1 one could ﬁnd the fermionic trip",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1107.5322v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary and Outlook",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-007-4-summary-and-outlook.md",
+      "narrative": null,
+      "content": "Summary and Outlook\nI discussed here an experimental probe of Majorana neutrino mass origin, both at\ncolliders and through the neutrinoless double beta decay. It is shown that a TeV scale\nL−R symmetry would have spectacular signatures at LHC, with a possible discovery\nof WR and νR. Moreover, if neutrinoless double beta decay were to be established,\nand neutrino masses were to be pushed down by cosmology, the TeV L-R scale could\nbe a must. It is gratifying that these fundamental experiments are going on at the\nsame time.\nA case is made for a predictive grand uniﬁed theory: minimal SU(5) with ex",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1107.5322v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-008-5-acknowledgements.md",
+      "narrative": null,
+      "content": "Acknowledgements\nI am grateful to Alejandra Melfo and Fabrizio Nesti for their help in preparing this\nreport, and Miha Nemevˇsek for a careful reading of the manuscript. I wish to thank\nSilvia Pascoli, Vittorio Paladino and other organizers of the Neutrino Roadmap 2012\nfor the invitation to present an overview of the origin of neutrino mass.\nReferences\n[1] For a review and references on neutrino masses and mixings, see A. Strumia and\nF. Vissani, arXiv:hep-ph/0606054.\n[2] S. Weinberg, Phys. Rev. Lett. 43, 1566 (1979).\n[3] For recent reviews and references, see e.g., Course CLXX of the Internati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

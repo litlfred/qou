@@ -1,0 +1,60 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1111.6782v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Stationary Points of O’Hara’s Knot Energies",
+  "contains": [
+    "library/arxiv-1111.6782v2/sections/sec-front-matter",
+    "library/arxiv-1111.6782v2/sections/sec-000",
+    "library/arxiv-1111.6782v2/sections/sec-001",
+    "library/arxiv-1111.6782v2/sections/sec-002",
+    "library/arxiv-1111.6782v2/sections/sec-003"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Stationary Points of O’Hara’s Knot Energies — In this article we study the regularity of stationary points of the knot ener- gies E(α) introduced by O’Hara in [14, 15, 16] in the range α ∈(2, 3).\n\n**Stationary Points of O’Hara’s Knot Energies**\n\n*Simon Blatt∗*\n\n19 pp, 5 sections.\n\n**Abstract.** In this article we study the regularity of stationary points of the knot ener- gies E(α) introduced by O’Hara in [14, 15, 16] in the range α ∈(2, 3). In a ﬁrst step we prove that E(α) is C1 on the set of all regular embedded curves belonging to H(α+1)/2,2(R/Z, Rn) and calculate its derivative. After that we use the structure of the Euler-Lagrange equation to study the regularity of stationary points of E(α) plus a positive multiple of the length. We show that stationary points of ﬁnite energy are of class C∞— so especially all local minimizers of E(α) among curves with ﬁxed length are smooth.\n\n**Outline.** Front matter; 1 Introduction; 2 Continuous differentiability; 3 Regularity of stationary points; A Results on fractional Sobolev spaces",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1111.6782&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1111.6782v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1111.6782v2.pdf",
+    "source_sha256": "5acfde49432e59e3329c6e402a39496934d5df3682eed4b337f9c32c1eca81a1",
+    "pages": 19,
+    "arxiv": {
+      "id": "1111.6782",
+      "version": "2",
+      "primary_class": "math.AP",
+      "stamp_date": "18 Jan 2012"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

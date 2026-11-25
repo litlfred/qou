@@ -1,0 +1,594 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "agt-v12-n2-p04-s",
+  "title": "The twisted Alexander polynomial for finite abelian covers over three manifolds with boundary",
+  "variant": "pdf",
+  "pages": 14,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "791",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "793",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "The Reidemeister torsion",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": "793",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-the-reidemeister-torsion"
+    },
+    {
+      "level": 1,
+      "title": "Definition of the polynomial torsion",
+      "number": "3",
+      "page": 6,
+      "pageLabel": "796",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-3-definition-of-the-polynomial-torsion"
+    },
+    {
+      "level": 1,
+      "title": "Torsion for finite sheeted abelian coverings",
+      "number": "4",
+      "page": 8,
+      "pageLabel": "798",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-4-torsion-for-finite-sheeted-abelian-coverings"
+    },
+    {
+      "level": 2,
+      "title": "Statement of the result",
+      "number": "4.1",
+      "page": 8,
+      "pageLabel": "798",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-41-statement-of-the-result"
+    },
+    {
+      "level": 2,
+      "title": "Proof of 0=thm.231=Theorem 4.1",
+      "number": "4.2",
+      "page": 9,
+      "pageLabel": "799",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 13,
+      "pageLabel": "803",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "791",
+      "labelEnd": "791",
+      "words": 73,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted alexander",
+          "heading": false
+        },
+        {
+          "term": "abelian covers",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomial",
+          "heading": false
+        }
+      ],
+      "extract": "Algebraic & Geometric Topology 12 (2012) 791–804 The twisted Alexander polynomial for ﬁnite abelian covers over three manifolds with boundary JÉRÔME DUBOIS YOSHIKAZU YAMAGUCHI We provide the twisted Alexander polynomials of ﬁnite abelian covers over three- dimensional manifolds whose boundary is a ﬁnite union of tori. This is a generaliza- tion of a well-known formula for the usual Alexander polynomial of knots in",
+      "extractCut": true,
+      "blocks": [
+        "library/agt-v12-n2-p04-s/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "791",
+      "labelEnd": "793",
+      "words": 968,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted alexander",
+          "heading": false
+        },
+        {
+          "term": "branched covers",
+          "heading": false
+        },
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomial",
+          "heading": false
+        },
+        {
+          "term": "cyclic branched",
+          "heading": false
+        },
+        {
+          "term": "abelian branched",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite cyclic",
+          "heading": false
+        },
+        {
+          "term": "branched along",
+          "heading": false
+        }
+      ],
+      "extract": "The classical Alexander polynomial is deﬁned for null–homologous knots in rational homology spheres, where null–homologous means that the homology class of a knot is trivial in the ﬁrst homology group with Z–coefﬁcients of the ambient space. If the pair .  M ; y K/ of a rational homology sphere  M and a null-homologous knot y K in  M is given by a ﬁnite cyclic branched cover over S3 branched along a knot K, where",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "793",
+      "labelEnd": "793",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-the-reidemeister-torsion",
+      "number": "2.1",
+      "title": "The Reidemeister torsion",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": "793",
+      "labelEnd": "796",
+      "words": 1249,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reidemeister torsion",
+          "heading": true
+        },
+        {
+          "term": "cells zei",
+          "heading": false
+        },
+        {
+          "term": "torsion tor",
+          "heading": false
+        },
+        {
+          "term": "acyclic chain",
+          "heading": false
+        },
+        {
+          "term": "orthonormal bases",
+          "heading": false
+        },
+        {
+          "term": "twisted chain",
+          "heading": false
+        },
+        {
+          "term": "bic",
+          "heading": false
+        },
+        {
+          "term": "sign reﬁnement",
+          "heading": false
+        }
+      ],
+      "extract": "We review the basic notions and results about the sign–determined Reidemeister torsion introduced by V Turaev which are needed in this paper. Details can be found in Milnor’s survey [3] and in Turaev’s monograph [10]. Torsion of a chain complex Let C\u0003 D .0 ! Cn dn \u0000! Cn\u00001 dn\u00001 \u0000\u0000\u0000! \u0001 \u0001 \u0001 d1 \u0000! C0 ! 0/ be a chain complex of ﬁnite dimensional vector spaces over a ﬁeld F . Choose a basis ci of Ci and a basis hi of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-definition-of-the-polynomial-torsion",
+      "number": "3",
+      "title": "Definition of the polynomial torsion",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "796",
+      "labelEnd": "798",
+      "words": 645,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polynomial torsion",
+          "heading": true
+        },
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        },
+        {
+          "term": "twisted chain",
+          "heading": false
+        },
+        {
+          "term": "reﬁned reidemeister",
+          "heading": false
+        },
+        {
+          "term": "chain complex",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomial",
+          "heading": false
+        },
+        {
+          "term": "sign reﬁned",
+          "heading": false
+        },
+        {
+          "term": "f0g",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we deﬁne the polynomial torsion. This gives a point of view from the Reidemeister torsion to polynomial invariants of topological spaces. Hereafter M denotes a compact and connected three–dimensional manifold such that its boundary @M is empty or a disjoint union of b two–dimensional tori: @M D T 2 1 [ : : : [ T 2 b : In the sequel, we denote by V a vector space over C and by \u001a a representation of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-torsion-for-finite-sheeted-abelian-coverings",
+      "number": "4",
+      "title": "Torsion for finite sheeted abelian coverings",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "798",
+      "labelEnd": "798",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-41-statement-of-the-result",
+      "number": "4.1",
+      "title": "Statement of the result",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 13,
+      "labelStart": "798",
+      "labelEnd": "803",
+      "words": 1855,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polynomial torsion",
+          "heading": false
+        },
+        {
+          "term": "twisted chain",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomial",
+          "heading": false
+        },
+        {
+          "term": "twisted complex",
+          "heading": false
+        },
+        {
+          "term": "total twisted",
+          "heading": false
+        },
+        {
+          "term": "geometric basis",
+          "heading": false
+        },
+        {
+          "term": "gei",
+          "heading": false
+        },
+        {
+          "term": "hti",
+          "heading": false
+        }
+      ],
+      "extract": "Let  M be a ﬁnite sheeted abelian covering of M , where M denotes a compact and connected three–dimensional manifold such that its boundary @M is empty or a disjoint union of b two–dimensional tori: @M D T 2 1 [ : : : [ T 2 b : We denote by p the induced homomorphism from \u00191.  M / to \u00191.M / by the covering map  M ! M . The associated deck transformation group is a ﬁnite abelian group G of order jGj. We endow the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "803",
+      "labelEnd": "804",
+      "words": 244,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted alexander",
+          "heading": false
+        },
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        },
+        {
+          "term": "alexander invariants",
+          "heading": false
+        },
+        {
+          "term": "mathématiques",
+          "heading": false
+        },
+        {
+          "term": "paris",
+          "heading": false
+        },
+        {
+          "term": "birkhäuser",
+          "heading": false
+        },
+        {
+          "term": "jussieu",
+          "heading": false
+        },
+        {
+          "term": "murasugi",
+          "heading": false
+        }
+      ],
+      "extract": "[1] M Hirasawa, K Murasugi, On the twisted Alexander Polynomials of Knots, from: “Proceedings of Hakone Seminar on Graphs and 3–manifolds”, (M Yamasita, editor), volume 23 (2007) 1–14 [2] P Kirk, C Livingston, Twisted Alexander invariants, Reidemeister torsion, and Casson– Gordon invariants, Topology 38 (1999) 635–661 MR1670420 [3] J Milnor, Whitehead torsion, Bull. Amer. Math. Soc. 72 (1966) 358–426 MR0196736 [4] J",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "reidemeister torsion",
+      "heading": true
+    },
+    {
+      "term": "twisted alexander",
+      "heading": false
+    },
+    {
+      "term": "torsion tor",
+      "heading": false
+    },
+    {
+      "term": "polynomial torsion",
+      "heading": true
+    },
+    {
+      "term": "twisted chain",
+      "heading": false
+    },
+    {
+      "term": "twisted homology",
+      "heading": false
+    },
+    {
+      "term": "twisted complex",
+      "heading": false
+    },
+    {
+      "term": "acyclic chain",
+      "heading": false
+    },
+    {
+      "term": "reﬁned reidemeister",
+      "heading": false
+    },
+    {
+      "term": "total twisted",
+      "heading": false
+    },
+    {
+      "term": "alexander invariants",
+      "heading": false
+    },
+    {
+      "term": "classical alexander",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "791",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 2,
+      "label": "792",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "793",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "794",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "795",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "796",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "797",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "798",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "799",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "800",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "801",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "802",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "803",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "804",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 8,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p13); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/agt-v12-n2-p04-s"
+  }
+}

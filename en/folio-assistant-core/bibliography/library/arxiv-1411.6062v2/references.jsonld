@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1411.6062v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "EVALUATION OF STATE INTEGRALS AT RATIONAL POINTS",
+      "dcterms:creator": [
+        "GAROUFALIDIS, STAVROS",
+        "KASHAEV, RINAT"
+      ],
+      "dcterms:issued": "D:20180908",
+      "dcterms:identifier": "https://arxiv.org/abs/1411.6062",
+      "dcterms:abstract": "Multi-dimensional state-integrals of products of Faddeev’s quantum diloga- rithms arise frequently in Quantum Topology, quantum Teichm¨uller theory and complex Chern–Simons theory. Using the quasi-periodicity property of the quantum dilogarithm, we evaluate 1-dimensional state-integrals at rational points and express the answer in terms of the Rogers dilogarithm, the cyclic (quantum) dilogarithm and ﬁnite state-sums at roots of unity. We illustrate our results with the evaluation of the state-integrals of the 41, 52 and (−2, 3, 7) pretzel knots at rational points.",
+      "dcterms:source": "library/arxiv-1411.6062v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1411.6062v2"
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-th-9803007v2",
+  "title": "arxiv-hep-th-9803007v2",
+  "variant": "pdf",
+  "pages": 4,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Smallest Dirac Eigenvalue Distribution from Random Matrix Theory",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-smallest-dirac-eigenvalue-distribution-from-rand"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 4,
+      "summary": null,
+      "keywords": [],
+      "extract": "arXiv:hep-th/9803007v2 17 Jun 1998",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-hep-th-9803007v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-smallest-dirac-eigenvalue-distribution-from-rand",
+      "number": null,
+      "title": "Smallest Dirac Eigenvalue Distribution from Random Matrix Theory",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "4",
+      "words": 2435,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "smallest eigenvalue",
+          "heading": true
+        },
+        {
+          "term": "eigenvalue distribution",
+          "heading": true
+        },
+        {
+          "term": "random matrix",
+          "heading": true
+        },
+        {
+          "term": "large-n random",
+          "heading": false
+        },
+        {
+          "term": "micro scopic",
+          "heading": false
+        },
+        {
+          "term": "massless ﬂavors",
+          "heading": false
+        },
+        {
+          "term": "ntr",
+          "heading": false
+        },
+        {
+          "term": "large-n limit",
+          "heading": false
+        }
+      ],
+      "extract": "Shinsuke M. Nishigaki1,∗, Poul H. Damgaard2,†, and Tilo Wettig3,‡ 1Institute for Theoretical Physics, University of California, Santa Barbara, CA 93106-4030, USA 2The Niels Bohr Institute, Blegdamsvej 17, DK-2100 Copenhagen Ø, Denmark 3Institut f¨ur Theoretische Physik, Technische Universit¨at M¨unchen, D-85747 Garching, Germany (March 2, 1998) We derive the hole probability and the distribution of the smallest",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "large-n random",
+      "heading": false
+    },
+    {
+      "term": "micro scopic",
+      "heading": false
+    },
+    {
+      "term": "massless ﬂavors",
+      "heading": false
+    },
+    {
+      "term": "ntr",
+      "heading": false
+    },
+    {
+      "term": "large-n limit",
+      "heading": false
+    },
+    {
+      "term": "microscopic spectral",
+      "heading": true
+    },
+    {
+      "term": "massless chiral",
+      "heading": false
+    },
+    {
+      "term": "massive bessel",
+      "heading": false
+    },
+    {
+      "term": "smallest eigenvalue",
+      "heading": true
+    },
+    {
+      "term": "unitary ensembles",
+      "heading": false
+    },
+    {
+      "term": "qcd partition",
+      "heading": false
+    },
+    {
+      "term": "qcd dirac",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Microscopic spectral density (solid line, normalized as ρs(ζ →∞)=1/π) and smallest eigenvalue distribution (dotted line) for the quenched chiral unitary ensemble",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 1,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 2,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 2 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-th-9803007v2"
+  }
+}

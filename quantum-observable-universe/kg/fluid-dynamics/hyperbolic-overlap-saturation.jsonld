@@ -1,0 +1,41 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-hyperbolic-overlap-saturation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:hyperbolic-overlap-saturation",
+  "kind": "remark",
+  "title": "Hyperbolic-overlap strain saturation: the core aspect ratio locks at $\\kappa^2 = \\pi\\nu/(2\\Gamma+\\pi\\nu)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-core-levi-form",
+    "papers/quantum-observable-universe/blocks/rem-townsend-biot-savart-strain"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-levi-degeneracy",
+  "cites": [
+    "references/townsend1951",
+    "references/saffman1992",
+    "references/moffatt1994"
+  ],
+  "tags": [
+    "townsend",
+    "hyperbolic-stagnation",
+    "vortex-core",
+    "levi-form",
+    "strain-saturation",
+    "fluid-dynamics",
+    "navier-stokes",
+    "blowup",
+    "millennium-problem"
+  ],
+  "text": "hyperbolic-overlap-saturation.md",
+  "leanSource": "hyperbolic-overlap-saturation.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,1073 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2404.02087v1",
+  "title": "Extreme plasmons",
+  "variant": "pdf",
+  "pages": 10,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Extreme plasmons",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-extreme-plasmons"
+    },
+    {
+      "level": 2,
+      "title": "Abstract",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Quantum framework",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-quantum-framework"
+    },
+    {
+      "level": 3,
+      "title": "Quantum system: Degeneracy and Correlation",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-quantum-system-degeneracy-and-correlation"
+    },
+    {
+      "level": 3,
+      "title": "Wigner quantum phase-space",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-wigner-quantum-phase-space"
+    },
+    {
+      "level": 3,
+      "title": "Modified independent electron approximation",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-modified-independent-electron-approximation"
+    },
+    {
+      "level": 3,
+      "title": "Small-amplitude plasmons: Quantum model",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-small-amplitude-plasmons-quantum-model"
+    },
+    {
+      "level": 3,
+      "title": "Quantum coherence limit",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-quantum-coherence-limit"
+    },
+    {
+      "level": 3,
+      "title": "Relativistic quantum dynamics",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-relativistic-quantum-dynamics"
+    },
+    {
+      "level": 2,
+      "title": "Controlled excitation",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-controlled-excitation"
+    },
+    {
+      "level": 2,
+      "title": "Surface crunch-in plasmon",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-surface-crunch-in-plasmon"
+    },
+    {
+      "level": 3,
+      "title": "Quantum kinetic equation using FQ(k,p)",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-quantum-kinetic-equation-using-fqkp"
+    },
+    {
+      "level": 2,
+      "title": "Fields of the extreme plasmon",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-fields-of-the-extreme-plasmon"
+    },
+    {
+      "level": 2,
+      "title": "Conclusion",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-conclusion"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-acknowledgments"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-extreme-plasmons",
+      "number": null,
+      "title": "Extreme plasmons",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 141,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "extreme plasmons",
+          "heading": true
+        },
+        {
+          "term": "denver",
+          "heading": false
+        },
+        {
+          "term": "oscillation",
+          "heading": false
+        },
+        {
+          "term": "sahai",
+          "heading": false
+        },
+        {
+          "term": "nanosciences",
+          "heading": false
+        }
+      ],
+      "extract": "Aakash A. Sahai1 1Department of Electrical Engineering, University of Colorado Denver, Denver, CO 80204∗ Nanosciences largely rely on plasmons which are quasiparticles constituted by collective oscilla- tions of quantum electron gas composed of conduction band electrons that occupy discrete quantum states. Our work has introduced non-perturbative plasmons with oscillation amplitudes that ap- proach the extreme limit",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 803,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "extreme plasmons",
+          "heading": false
+        },
+        {
+          "term": "plasmons cite",
+          "heading": false
+        },
+        {
+          "term": "conventional plasmons",
+          "heading": false
+        },
+        {
+          "term": "crunch-in plasmon",
+          "heading": false
+        },
+        {
+          "term": "electron gas",
+          "heading": false
+        },
+        {
+          "term": "cite plasmonics-ieee",
+          "heading": false
+        },
+        {
+          "term": "cite slac",
+          "heading": false
+        },
+        {
+          "term": "collective oscillations",
+          "heading": false
+        }
+      ],
+      "extract": "Plasmons \\cite{Pines-PhysRev-1953, Pines-Bohm-PhysRev-1952, Ritchie-surface-plasmon} underpin nanosciences \\cite{plasmonics-1} by making possible nanometric energy confinement. Nanometric size of these quasiparticles constituted by collective oscillations of delocalized, conduction band electron gas is realizable only due to the innately quantum nature of the gas which allows ultra-high densities,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-quantum-framework",
+      "number": null,
+      "title": "Quantum framework",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 105,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "electron gas",
+          "heading": false
+        },
+        {
+          "term": "framework",
+          "heading": true
+        },
+        {
+          "term": "quantum",
+          "heading": true
+        },
+        {
+          "term": "quantum systems",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:framework} Quantum systems, here the conduction electron gas, are made up of entities that occupy discrete states. These discrete levels are modified in an excited state such as a plasmon. As extreme plasmons are sustained by strong excitation of quantum electron gas, the statistical distribution of electron states significantly diverges from the initial Fermi-Dirac statistics, making linear theory",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-quantum-system-degeneracy-and-correlation",
+      "number": null,
+      "title": "Quantum system: Degeneracy and Correlation",
+      "level": 3,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 206,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum degeneracy",
+          "heading": true
+        },
+        {
+          "term": "quantum correlation",
+          "heading": true
+        },
+        {
+          "term": "conduction electron",
+          "heading": false
+        },
+        {
+          "term": "electron gas",
+          "heading": false
+        },
+        {
+          "term": "quantum state",
+          "heading": false
+        },
+        {
+          "term": "gtrsim",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:quantum-state} The quantum state of a system is defined by its characteristics at equilibrium. Quantum degeneracy (parameter, $\\chi$) and quantum correlation (parameter, $\\Gamma$) are two such key characteristics. {\\bf Quantum degeneracy parameter:} $\\chi = \\frac{8}{3\\sqrt{\\pi}}\\left(\\frac{\\mathcal{E}_F}{k_BT}\\right)^{3/2}$ quantifies Fermi energy, $\\mathcal{E}_F = \\frac{\\hbar^2}{2m_e}(3\\pi^2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-wigner-quantum-phase-space",
+      "number": null,
+      "title": "Wigner quantum phase-space",
+      "level": 3,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 540,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vec ell",
+          "heading": false
+        },
+        {
+          "term": "hbar vec",
+          "heading": false
+        },
+        {
+          "term": "vec frac",
+          "heading": false
+        },
+        {
+          "term": "phase-space",
+          "heading": true
+        },
+        {
+          "term": "wigner",
+          "heading": true
+        },
+        {
+          "term": "extreme plasmons",
+          "heading": false
+        },
+        {
+          "term": "electron gas",
+          "heading": false
+        },
+        {
+          "term": "conduction electrons",
+          "heading": false
+        }
+      ],
+      "extract": "The dynamics of any many-body quantum system with N quantum entities such as the quantum electron gas in this work, is fully describable by suitably transforming (Wigner-Weyl) the quantum variables representing the ensemble over the real-space $\\mathbb{R}^{3N}$. Instead of exact determination of many-body wavefunction, the density matrix, $\\rho(\\vec{r},\\vec{r'},t)$ which allows determination of the statistical",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-modified-independent-electron-approximation",
+      "number": null,
+      "title": "Modified independent electron approximation",
+      "level": 3,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 187,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "electron",
+          "heading": true
+        },
+        {
+          "term": "kinetic model",
+          "heading": false
+        },
+        {
+          "term": "quantum kinetic",
+          "heading": false
+        },
+        {
+          "term": "modified single-particle",
+          "heading": false
+        },
+        {
+          "term": "large-amplitude",
+          "heading": false
+        },
+        {
+          "term": "vec",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{quantum-kinetic-approx} In kinetic modeling of quantum systems, under certain conditions it is sufficient to calculate the trajectory of a single electron. When the energy of electron-electron interaction (already minimized by Pauli's exclusion principle) becomes small relative to kinetic energy and electron-lattice potential terms, particularly, in the large-amplitude limit, the many-body electron model can",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-small-amplitude-plasmons-quantum-model",
+      "number": null,
+      "title": "Small-amplitude plasmons: Quantum model",
+      "level": 3,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 975,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "plasmons",
+          "heading": true
+        },
+        {
+          "term": "quantum model",
+          "heading": true
+        },
+        {
+          "term": "collective oscillations",
+          "heading": false
+        },
+        {
+          "term": "cite pines-physrev",
+          "heading": false
+        },
+        {
+          "term": "extreme plasmons",
+          "heading": false
+        },
+        {
+          "term": "electron oscillations",
+          "heading": false
+        },
+        {
+          "term": "plasmon frequency",
+          "heading": false
+        },
+        {
+          "term": "small-amplitude",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{subsec:quantum-small-plasmons} Quantum mechanical framework of small-amplitude plasmons was developed by Pines et. al. \\cite{Pines-Bohm-PhysRev-1952, Pines-PhysRev-1953} to explain experimental observations. As the electronic states whether in the ground (equilibrium) or the excited (plasmon) state of conduction electrons, are valid only at discrete wavevectors, such a framework is indispensable. The dynamics",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-quantum-coherence-limit",
+      "number": null,
+      "title": "Quantum coherence limit",
+      "level": 3,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 591,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coherence limit",
+          "heading": true
+        },
+        {
+          "term": "electron gas",
+          "heading": false
+        },
+        {
+          "term": "electron oscillations",
+          "heading": false
+        },
+        {
+          "term": "extreme plasmon",
+          "heading": false
+        },
+        {
+          "term": "ionized electron",
+          "heading": false
+        },
+        {
+          "term": "fermi electron",
+          "heading": false
+        },
+        {
+          "term": "electron density",
+          "heading": false
+        },
+        {
+          "term": "cite plasmonics-ieee",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{subsec:quantum-coherence-limit} Extreme plasmons \\cite{plasmonics-ieee-2021,plasmonics-ieee-2022} for the first time access the coherence limit of oscillations of the quantum electron gas that is inherent in conductive media. The conduction electrons that are excited to energy states, $\\mathcal{E}\\gg\\mathcal{E}_F$, attain large $\\vec{k_\\ell}$. Collectively, electrons with various large $\\vec{k_\\ell}$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-relativistic-quantum-dynamics",
+      "number": null,
+      "title": "Relativistic quantum dynamics",
+      "level": 3,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 178,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tunneling increases",
+          "heading": false
+        },
+        {
+          "term": "electron gas",
+          "heading": false
+        },
+        {
+          "term": "fermi velocity",
+          "heading": false
+        },
+        {
+          "term": "ballistic transport",
+          "heading": false
+        },
+        {
+          "term": "induced ballistic",
+          "heading": false
+        },
+        {
+          "term": "relativistic",
+          "heading": true
+        }
+      ],
+      "extract": "{\\bf Relativistic quantum tunneling:} As the Fermi electron gas gains kinetic energy approaching (and eventually exceeding) the surface potential, the probability of its traversing the material interface through tunneling increases \\cite{Fowler-Nordheim}. The rate of tunneling increases with magnitude of the applied electric field. In our model, electron tunneling which is an ultrafast process with attosecond",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-controlled-excitation",
+      "number": null,
+      "title": "Controlled excitation",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 31,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "controlled",
+          "heading": true
+        },
+        {
+          "term": "excitation",
+          "heading": true
+        },
+        {
+          "term": "cillations",
+          "heading": false
+        }
+      ],
+      "extract": "CONTROLLED EXCITATION Our work [9] devises an experimentally realizable mechanism to controllably excite coherence-limited os- cillations of quantum electron gas. This is made possible using a new type of plasmon, the",
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-surface-crunch-in-plasmon",
+      "number": null,
+      "title": "Surface crunch-in plasmon",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 975,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "crunch-in plasmon",
+          "heading": true
+        },
+        {
+          "term": "surface crunch-in",
+          "heading": true
+        },
+        {
+          "term": "conduction electrons",
+          "heading": false
+        },
+        {
+          "term": "gaussian bunch",
+          "heading": false
+        },
+        {
+          "term": "beam density",
+          "heading": false
+        },
+        {
+          "term": "particle beam",
+          "heading": false
+        },
+        {
+          "term": "extreme plasmon",
+          "heading": false
+        },
+        {
+          "term": "electron gas",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:kinetic-model} In the analysis below we present the kinetic model of surface crunch-in plasmon excited by a charged particle beam. Our model is applicable over collisionless and coherent timescales of extreme plasmon. In consideration of the symmetry of interaction, with quantum electron gas in a tube surrounding the beam, our model is formulated in cylindrical coordinates. {\\bf Radial oscillations:} The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-quantum-kinetic-equation-using-fqkp",
+      "number": null,
+      "title": "Quantum kinetic equation using FQ(k,p)",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 1524,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conduction electrons",
+          "heading": false
+        },
+        {
+          "term": "electrons located",
+          "heading": false
+        },
+        {
+          "term": "ionic force",
+          "heading": false
+        },
+        {
+          "term": "hollow region",
+          "heading": false
+        },
+        {
+          "term": "kinetic",
+          "heading": true
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "end align",
+          "heading": false
+        },
+        {
+          "term": "force acting",
+          "heading": false
+        }
+      ],
+      "extract": "A kinetic equation is developed here within the quantum kinetic framework using modified single-particle approach (sec.\\ref{quantum-kinetic-approx}). Specifically, an equation of motion of individual conduction electrons oscillating at average frequency, $\\omega_Q$ is obtained. Assuming azimuthal symmetry, radial motion over an infinitesimally thin disk of thickness $dz$ is considered. The key parameters of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-fields-of-the-extreme-plasmon",
+      "number": null,
+      "title": "Fields of the extreme plasmon",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 827,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "plasmon",
+          "heading": true
+        },
+        {
+          "term": "peak longitudinal",
+          "heading": false
+        },
+        {
+          "term": "mathscr kappa",
+          "heading": false
+        },
+        {
+          "term": "peak radial",
+          "heading": false
+        },
+        {
+          "term": "frac mathscr",
+          "heading": false
+        },
+        {
+          "term": "sigma mathscr",
+          "heading": false
+        },
+        {
+          "term": "mathscr theta",
+          "heading": false
+        },
+        {
+          "term": "kappa sqrt",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:field-estimation} When the existence, Eq.\\ref{eq:existence-condition} and excitation condition, Eq.\\ref{eq:excitation-condition} are satisfied, the kinetic model in Eq.\\ref{eq:crunch-in-plasmon-kinetic} and the expression for $r_m$ in Eq.\\ref{eq:r-max-nano-Gaussian}, allow determination of the net charge displaced in the plasmon. Using the net charge that crunches-in into the core region of the tube,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-conclusion",
+      "number": null,
+      "title": "Conclusion",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 104,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "extreme plasmon",
+          "heading": false
+        },
+        {
+          "term": "aci",
+          "heading": false
+        },
+        {
+          "term": "colorado",
+          "heading": false
+        },
+        {
+          "term": "slac",
+          "heading": false
+        },
+        {
+          "term": "vec",
+          "heading": false
+        },
+        {
+          "term": "non-perturbative",
+          "heading": false
+        }
+      ],
+      "extract": "In conclusion, characteristics of the new class of plasmons necessitate a non-perturbative, quantum kinetic framework. A modified independent electron approximation introduced here that accounts for quantum frequency of plasmons, $\\omega_Q$ using, $\\mathscr{F}_Q(\\vec{k},\\vec{p})$, is found to be valuable to simplify the underlying non-perturbative, collisionless and relativistic quantum dynamics. The kinetic model",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 741,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "meter plasmonics",
+          "heading": false
+        },
+        {
+          "term": "sahai",
+          "heading": false
+        },
+        {
+          "term": "ieee access",
+          "heading": false
+        },
+        {
+          "term": "petavolts",
+          "heading": false
+        },
+        {
+          "term": "user meeting",
+          "heading": false
+        },
+        {
+          "term": "iss",
+          "heading": false
+        },
+        {
+          "term": "aci",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        }
+      ],
+      "extract": "This work was supported by the department of Electri- cal Engineering at University of Colorado Denver. The use of open-source particle tracking code EPOCH [31] is acknowledged. The RMACC Summit and Alpine su- percomputers utilized in this work were supported by the NSF awards ACI-1548562, ACI-1532235 and ACI- 1532236, the University of Colorado Boulder, and Col- orado State University [32]. [1] Bohm, D., Pines, D.,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "conduction electron",
+      "heading": true
+    },
+    {
+      "term": "electron gas",
+      "heading": false
+    },
+    {
+      "term": "extreme plasmon",
+      "heading": true
+    },
+    {
+      "term": "crunch-in plasmon",
+      "heading": true
+    },
+    {
+      "term": "quantum electron",
+      "heading": false
+    },
+    {
+      "term": "electron oscillations",
+      "heading": false
+    },
+    {
+      "term": "collective electron",
+      "heading": false
+    },
+    {
+      "term": "plasmon excited",
+      "heading": true
+    },
+    {
+      "term": "plasmon model",
+      "heading": true
+    },
+    {
+      "term": "large-amplitude plasmons",
+      "heading": false
+    },
+    {
+      "term": "electron density",
+      "heading": false
+    },
+    {
+      "term": "fermi electron",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Extreme plasmon excited in a conductive tube by an electron bunch (green envelope) launched inside it, illustrated in 3D using particle-tracking simulation. The conduction electrons in a tube with core radius: rt = 100nm, wall thickness:",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Cross-section of the surface crunch-in plasmon in a conductive tube from 3D particle-tracking simulation same as in Fig.1 using [31, 32]",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Notations in our surface crunch-in plasmon kinetic model. Here, rt is the tube radius, rm is the maximum radial amplitude of plasmon and ∆w is the wall thickness of the tube.This is zoomed-in version of Fig.2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p003-1",
+      "file": "images/img-p003-1.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-1",
+      "file": "images/img-p007-1.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 17,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 15,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 15 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2404.02087v1"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-hep-th-0006156v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Strongly coupled quantum discrete Liouville theory I: algebraic approach and duality",
+      "dcterms:creator": [
+        "APPROACH, THEORY. I: ALGEBRAIC",
+        "DUALITY"
+      ],
+      "dcterms:issued": "D:20181022",
+      "dcterms:identifier": "https://arxiv.org/abs/hep-th/0006156",
+      "dcterms:abstract": "The quantum discrete Liouville model in the strongly cou- pled regime, 1 < c < 25, is formulated as a well deﬁned quantum me- chanical problem with unitary evolution operator. The theory is self- dual: there are two exponential ﬁelds related by Hermitean conjugation, satisfying two discrete quantum Liouville equations, and living in mu- tually commuting subalgebras of the quantum algebra of observables.",
+      "dcterms:source": "library/arxiv-hep-th-0006156v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-hep-th-0006156v1"
+    }
+  ]
+}

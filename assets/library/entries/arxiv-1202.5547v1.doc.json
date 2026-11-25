@@ -1,0 +1,244 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1202.5547v1",
+  "title": "Markov property and Khovanov-Rozansky homology: Coxeter Case",
+  "variant": "pdf",
+  "pages": 4,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "4",
+      "words": 2019,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "khovanov-rozansky homology",
+          "heading": false
+        },
+        {
+          "term": "markov trace",
+          "heading": false
+        },
+        {
+          "term": "koszul complex",
+          "heading": false
+        },
+        {
+          "term": "tensor product",
+          "heading": false
+        },
+        {
+          "term": "gomi",
+          "heading": false
+        },
+        {
+          "term": "rouquier",
+          "heading": false
+        },
+        {
+          "term": "euler characteristic",
+          "heading": false
+        },
+        {
+          "term": "coxeter",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1202.5547v1 [math.RT] 24 Feb 2012 Markov property and Khovanov-Rozansky homology: Coxeter Case. Traﬁm LASY July 8, 2018 Abstract In [2] Khovanov gave a construction of Khovanov-Rozansky homology, new triple-graded link invariant, taking the Hochschild homology of the terms in Rouquier complexes. Its bigraded Euler characteristic provides the Markov trace of type An, which, in its turn, induces the well-known",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1202.5547v1/blocks/prose-sec-front-matter",
+        "library/arxiv-1202.5547v1/blocks/thm-sec-front-matter-01",
+        "library/arxiv-1202.5547v1/blocks/prop-sec-front-matter-02",
+        "library/arxiv-1202.5547v1/blocks/thm-sec-front-matter-03",
+        "library/arxiv-1202.5547v1/blocks/prop-sec-front-matter-04",
+        "library/arxiv-1202.5547v1/blocks/lem-sec-front-matter-05",
+        "library/arxiv-1202.5547v1/blocks/rem-sec-front-matter-06"
+      ]
+    },
+    {
+      "id": "sec-000-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 76,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lasy",
+          "heading": false
+        },
+        {
+          "term": "markov traces",
+          "heading": false
+        },
+        {
+          "term": "gomi",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Y. Gomi. ”The Markov traces and the Fourier transforms”, J. Algebra, 303(2):566-591, 2006. [2] M. Khovanov, ”Triply-graded link homology and Hochschild homology of Soergel bimodules”. Inter- nat. J. Math., 18(8):869-885, 2007. [3] T. Lasy, ”Special Markov traces and Gomi’s formula for reﬂection groups”, PhD thesis, University Denis Diderot, 2012. http://www.institut.math.jussieu.fr/theses/2012/lasy/These",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "gomi",
+      "heading": false
+    },
+    {
+      "term": "markov traces",
+      "heading": false
+    },
+    {
+      "term": "lasy",
+      "heading": false
+    },
+    {
+      "term": "khovanov-rozansky homology",
+      "heading": false
+    },
+    {
+      "term": "hochschild homology",
+      "heading": false
+    },
+    {
+      "term": "rouquier",
+      "heading": false
+    },
+    {
+      "term": "koszul complex",
+      "heading": false
+    },
+    {
+      "term": "tensor product",
+      "heading": false
+    },
+    {
+      "term": "khovanov",
+      "heading": false
+    },
+    {
+      "term": "euler characteristic",
+      "heading": false
+    },
+    {
+      "term": "coxeter",
+      "heading": false
+    },
+    {
+      "term": "homogeneous degree",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 1,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 2,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p4); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 2 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1202.5547v1"
+  }
+}

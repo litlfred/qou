@@ -1,0 +1,190 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1301.6953v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1301.6953v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1301.6953v1  [hep-ph]  29 Jan 2013\nLU TP 13-03\nJanuray 2013\nChiral Perturbation Theory and Mesons\nJohan Bijnens∗\nDepartment of Astronomy and Theoretical Physics, Lund University\nSölvegatan 14A, SE 22362 Lund, Sweden\nE-mail: bijnens@thep.lu.se\nThe talk contains a short introduction to mesonic Chiral Perturbation Theory (ChPT). In addition\nfour disparate areas where some progress has been made in recent years are discussed. These\nare the last ﬁt of the order p4 low-energy-constants Lr\ni to data, hard pion ChPT, the recent two-\nloop work on EFT for QCD like theories and the high order leadi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.6953v1/blocks/prop-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "prop-sec-001-01.md",
+      "narrative": null,
+      "content": "As far as the plenary talks are concerned these are the experimental tests from NA48 [6] and KLOE [7], the connection with dispersion relations [8, 9] and the connection with lattice QCD [10 – 12].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1301.6953v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chiral Perturbation Theory",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-2-chiral-perturbation-theory.md",
+      "narrative": null,
+      "content": "Johan Bijnens",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.6953v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-1-introduction.md",
+      "narrative": null,
+      "content": "This talk is dedicated to my friend and collaborator Ximo Prades who died since the previous\nChiral Dynamics in Berne in 2009. For those of you who like to know more I recommend looking\nup the slides from my talk at the symposium in Granada in his memory [1]. We have been very\nfrequent collaborators for a long time.\nI will not attempt to give an overview of Chiral Perturbation Theory (ChPT) for mesons in this\ntalk. Even with the restrictions to mesons the subject is very large. I have given several review talks\nearlier [2, 3] as well as written a review article of mesonic ChPT at two-loop orde",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.6953v1/blocks/prop-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "prop-sec-002-01.md",
+      "narrative": null,
+      "content": "Lattice QCD has now reached the stage where they can start determining the ChPT LECs.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1301.6953v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Determining low-energy-constants in the continuum",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-3-determining-low-energy-constants-in-the-contin.md",
+      "narrative": null,
+      "content": "Lattice QCD has now reached the stage where they can start determining\nthe ChPT LECs. A review is the FLAG collaboration \\cite{FLAG} and\ntalks at this conference that had results on LECS are \\cite{Lellouch,Stolz,\nDeuzeman,Bernard}.\n\nFor the two-flavour constants the status has not really changed much since\nthe previous chiral dynamics.\nThe constants $\\bar l_1$ to $\\bar l_4$\nare determined from ChPT at order $p^6$ and the Roy equation analysis\nin $\\pi\\pi$ and $F_S$ \\cite{CGL}. A related talk is \\cite{Rios}.\n$\\bar l_5$\nand $\\bar l_6$ come from $F_V$ and $\\pi\\to\\ell\\nu\\gamma$\n\\cite{BCT,BT}\nand fr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.6953v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hard pion ChPT",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-4-hard-pion-chpt.md",
+      "narrative": null,
+      "content": "The usual formulation of the powercounting in mesonic ChPT \\cite{Weinberg0}\nassumes that all the momenta in all diagrams are soft and this allows the\npowercounting to work as simple dimensional counting. In baryon and heavy\nmeson ChPT one takes a step further. There is a line with a heavy mass\nrunning through all diagrams but in a way all spatial momenta can still be\nconsidered small. In vector meson ChPT it has been argued that it is possible\nto also include diagrams where lines take a hard momentum, but not a hard mass\n\\cite{HP0}. This type of arguments was used by Flynn and Sachrajda \\cite{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.6953v1/blocks/prop-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "prop-sec-004-01.md",
+      "narrative": null,
+      "content": "The main idea was that lattice calculation can use our formulas to extrapolate to the massless case, see e.g. \\cite{Buchoff}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1301.6953v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Beyond QCD",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-004-5-beyond-qcd.md",
+      "narrative": null,
+      "content": "The methods of effective field theory and in particular ChPT can also be\nused for extensions. A simple extension is to take QCD with $N$ light\nflavours but one can also envisage using $N$ fermions in different\nrepresentations of the gauge group. The representations can be complex, real or\npseudo-real so we have in general three generic cases to study for\nthe spontaneous breaking of the global symmetries \\cite{Peskin,Preskill}\n\\begin{equation}\nSU(N)\\times SU(N)\\to SU(N),\\quad\nSU(2N)\\to SO(2N),\\quad\nSU(2N)\\to Sp(2N)\\,.\n\\end{equation}\nThe cases correspond to a complex, real and pseudo-real repres",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1301.6953v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Leading logarithms",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "../sections/sec-005-6-leading-logarithms.md",
+      "narrative": null,
+      "content": "The last part on which I want to report is some recent progress\nin calculating leading logarithms in effective field theories.\nSome of this is also mentioned in the talk by Kampf \\cite{Kampf}.\nThe underlying argument goes something like:\nTake a quantity with a single scale: $F(M)$.\nThe dependence on the scale in field theory is typically\nlogarithmic, so with $L=\\log\\left(\\mu/M\\right)$we get\n\\begin{equation}\nF= F_0 + F_1^1 {L} + F^1_0 + F_2^2{ L^2} + F^2_1 L + F^2_0 \n+ F_3^3{ L^3}\n +\\cdots\n\\end{equation}\nThe leading logarithms are the terms with $F_m^m{ L^m}$.\nThe $F_m^m$ can be more easily cal",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

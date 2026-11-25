@@ -1,0 +1,1894 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-9909027v1",
+  "title": "Planar Algebras, I",
+  "variant": "pdf",
+  "pages": 122,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "0",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-0-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The Formalism",
+      "number": "1",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-1-the-formalism"
+    },
+    {
+      "level": 2,
+      "title": "Positivity",
+      "number": null,
+      "page": 25,
+      "pageLabel": null,
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-positivity"
+    },
+    {
+      "level": 1,
+      "title": "Examples",
+      "number": "2",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-2-examples"
+    },
+    {
+      "level": 2,
+      "title": "Binunitaries",
+      "number": "2.11",
+      "page": 54,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-211-binunitaries"
+    },
+    {
+      "level": 1,
+      "title": "General Structure Theory",
+      "number": "3",
+      "page": 67,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-3-general-structure-theory"
+    },
+    {
+      "level": 2,
+      "title": "Algebra structure, Markov trace",
+      "number": "3.1",
+      "page": 67,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-31-algebra-structure-markov-trace"
+    },
+    {
+      "level": 2,
+      "title": "Duality",
+      "number": "3.2",
+      "page": 74,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-32-duality"
+    },
+    {
+      "level": 2,
+      "title": "Reduction and cabling",
+      "number": "3.3",
+      "page": 77,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-33-reduction-and-cabling"
+    },
+    {
+      "level": 2,
+      "title": "Tensor product",
+      "number": "3.4",
+      "page": 79,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-34-tensor-product"
+    },
+    {
+      "level": 2,
+      "title": "Free product",
+      "number": "3.5",
+      "page": 80,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-010-35-free-product"
+    },
+    {
+      "level": 2,
+      "title": "Fusion algebra",
+      "number": "3.6",
+      "page": 81,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-011-36-fusion-algebra"
+    },
+    {
+      "level": 1,
+      "title": "Planar algebras and subfactors",
+      "number": "4",
+      "page": 81,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-012-4-planar-algebras-and-subfactors"
+    },
+    {
+      "level": 2,
+      "title": "Some facts about subfactors",
+      "number": "4.1",
+      "page": 81,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-013-41-some-facts-about-subfactors"
+    },
+    {
+      "level": 2,
+      "title": "Subfactors give planar algebras",
+      "number": "4.2",
+      "page": 92,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-014-42-subfactors-give-planar-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Planar algebras give subfactors",
+      "number": "4.3",
+      "page": 115,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-015-43-planar-algebras-give-subfactors"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 118,
+      "pageLabel": null,
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-016-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 64,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "planar algebra",
+          "heading": false
+        },
+        {
+          "term": "california",
+          "heading": false
+        },
+        {
+          "term": "contractions",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/9909027v1 [math.QA] 4 Sep 1999 Planar Algebras, I V. F. R. Jones ∗ Department of Mathematics University of California Berkeley, California 94720–3840 Abstract We introduce a notion of planar algebra, the simplest example of which is a vector space of tensors, closed under planar contractions. A planar algebra with suitable positivity properties produces a ﬁnite index subfactor of a II1 factor, and vice",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-9909027v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-0-introduction",
+      "number": "0",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4219,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "planar operad",
+          "heading": false
+        },
+        {
+          "term": "planar k-tangle",
+          "heading": false
+        },
+        {
+          "term": "planar algebras",
+          "heading": false
+        },
+        {
+          "term": "constructing planar",
+          "heading": false
+        },
+        {
+          "term": "universal planar",
+          "heading": false
+        },
+        {
+          "term": "coloured operad",
+          "heading": false
+        },
+        {
+          "term": "internal discs",
+          "heading": false
+        },
+        {
+          "term": "annular tangles",
+          "heading": false
+        }
+      ],
+      "extract": "At ﬁrst glance there is nothing planar about a subfactor. A factor M is a unital ∗-algebra of bounded linear operators on a Hilbert space, with trivial centre and closed in the topology of pointwise convergence. The factor M is of type II1 if it admits a (normalized) trace, a linear function tr: M →C with tr(ab) = tr(ba) and tr(1) = 1. In [J1] we deﬁned the notion of index [M : N] for II1 factors N ⊂M. The most",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-the-formalism",
+      "number": "1",
+      "title": "The Formalism",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3838,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "planar networks",
+          "heading": false
+        },
+        {
+          "term": "planar algebra",
+          "heading": false
+        },
+        {
+          "term": "spherical planar",
+          "heading": false
+        },
+        {
+          "term": "labelled planar",
+          "heading": false
+        },
+        {
+          "term": "planar isotopy",
+          "heading": false
+        },
+        {
+          "term": "planar subalgebra",
+          "heading": false
+        },
+        {
+          "term": "called planar",
+          "heading": false
+        },
+        {
+          "term": "general planar",
+          "heading": false
+        }
+      ],
+      "extract": "Deﬁnition 1.1. If k is a non-negative integer, the standard k-box, Bk, is {(x, y) ∈R2 | 0 ≤x ≤k+1, 0 ≤y ≤1}, together with the 2k marked points, 1=(1, 1), 2=(2, 1), 3 = (3, 1), . . ., k = (k, 1), k + 1 = (k, 0), k + 2 = (k −1, 0), . . ., 2k = (1, 0). Deﬁnition 1.2. A planar network N will be a subset of R2 consisting of the union of a ﬁnite set of disjoint images of Bk’s (with k varying) under smooth",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-positivity",
+      "number": null,
+      "title": "Positivity",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 519,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unlabelled tangle",
+          "heading": false
+        },
+        {
+          "term": "planar algebra",
+          "heading": false
+        },
+        {
+          "term": "trr",
+          "heading": false
+        },
+        {
+          "term": "general planar",
+          "heading": false
+        },
+        {
+          "term": "sesquilinear",
+          "heading": false
+        },
+        {
+          "term": "trl",
+          "heading": false
+        },
+        {
+          "term": "box",
+          "heading": false
+        },
+        {
+          "term": "boundary point",
+          "heading": false
+        }
+      ],
+      "extract": "For the rest of this section suppose the ﬁeld is R or C. Suppose we are given an involution R →R∗on the set of labels L. Then P(L) becomes a ∗-algebra as follows. If T is a tangle in Tk(L) we reﬂect the underlying unlabelled tangle in the line y = 1 2 and reverse all the orientations of the strings. The ﬁrst boundary point for a box in the reﬂected unlabelled tangle is the one that was the last boundary point for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-2-examples",
+      "number": "2",
+      "title": "Examples",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 54,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 7799,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "planar tangle",
+          "heading": false
+        },
+        {
+          "term": "planar subalgebra",
+          "heading": false
+        },
+        {
+          "term": "planar network",
+          "heading": false
+        },
+        {
+          "term": "planar algebra",
+          "heading": false
+        },
+        {
+          "term": "deﬁne planar",
+          "heading": false
+        },
+        {
+          "term": "alt",
+          "heading": false
+        },
+        {
+          "term": "planar structure",
+          "heading": false
+        },
+        {
+          "term": "general planar",
+          "heading": false
+        }
+      ],
+      "extract": "Example 2.1: Temperley-Lieb algebra. If δ1 and δ2 are two non-zero scalars, one deﬁnes TL(n, δ1, δ2) as being the subspace of Pn(∅) spanned by 27 the tangles with no closed loops. Deﬁning multiplication on TL(n, δ1, δ2) by multiplication as in Pn(∅) except that one multiplies by a factor δ1 for each loop and δ2 for each loop , then discarding the loop. Clearly the map from Pn(∅) to TL(n, δ1, δ2) given by multiplying",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-211-binunitaries",
+      "number": "2.11",
+      "title": "Binunitaries",
+      "level": 2,
+      "pageStart": 54,
+      "pageEnd": 67,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3439,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "generalized hadamard",
+          "heading": false
+        },
+        {
+          "term": "hadamard matrix",
+          "heading": false
+        },
+        {
+          "term": "hadamard matrices",
+          "heading": false
+        },
+        {
+          "term": "hadamard equivalence",
+          "heading": false
+        },
+        {
+          "term": "planar subalgebra",
+          "heading": false
+        },
+        {
+          "term": "annular tangle",
+          "heading": false
+        },
+        {
+          "term": "spherical planar",
+          "heading": false
+        },
+        {
+          "term": "planar algebra",
+          "heading": false
+        }
+      ],
+      "extract": "Commuting squares have been used to construct subfactors (see [GHJ],[Ha]) and the general theory of calculating the subfactor planar algebra of §4.2 from a commuting square will be dealt with in a future paper. The treatment uses the language of statistical mechanical models with some attention paid to critical points as in chapter 4 of [JS]. Here we give a diﬀerent approach which seems more natural from a planar",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-general-structure-theory",
+      "number": "3",
+      "title": "General Structure Theory",
+      "level": 1,
+      "pageStart": 67,
+      "pageEnd": 67,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-31-algebra-structure-markov-trace",
+      "number": "3.1",
+      "title": "Algebra structure, Markov trace",
+      "level": 2,
+      "pageStart": 67,
+      "pageEnd": 74,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2185,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "markov trace",
+          "heading": true
+        },
+        {
+          "term": "planar algebra",
+          "heading": false
+        },
+        {
+          "term": "minimal projections",
+          "heading": false
+        },
+        {
+          "term": "through-strings",
+          "heading": false
+        },
+        {
+          "term": "temperley lieb",
+          "heading": false
+        },
+        {
+          "term": "bratteli diagram",
+          "heading": false
+        },
+        {
+          "term": "epk",
+          "heading": false
+        },
+        {
+          "term": "algebra summand",
+          "heading": false
+        }
+      ],
+      "extract": "The proof of Theorem 3.1.3 below is routine for those conversant with [J1] or [GHJ]. We include it since, as stated, it can be useful in determining prin- cipal graphs. Recall that in a planar algebra P, ek denotes the idempotent in Pk equal to 1 δ(|| . . . ). Lemma 3.1.1 Let P be a ﬁnite-dimensional spherical nondegenerate pla- nar algebra over an algebraically closed ﬁeld. Then for each k, Pk−1ek−1Pk−1 67 is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-32-duality",
+      "number": "3.2",
+      "title": "Duality",
+      "level": 2,
+      "pageStart": 74,
+      "pageEnd": 77,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 807,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "planar algebra",
+          "heading": false
+        },
+        {
+          "term": "natural planar",
+          "heading": false
+        },
+        {
+          "term": "box labelled",
+          "heading": false
+        },
+        {
+          "term": "tangles labelled",
+          "heading": false
+        },
+        {
+          "term": "internal boxes",
+          "heading": false
+        },
+        {
+          "term": "ﬁltered algebras",
+          "heading": false
+        },
+        {
+          "term": "straight vertical",
+          "heading": false
+        },
+        {
+          "term": "kpk",
+          "heading": false
+        }
+      ],
+      "extract": "If P = ∪kPk is a planar algebra, the ﬁltered algebras λn(P), where λn(P)k = Pn,n+k, for ﬁxed n, have natural planar algebra structures. For n even, this is rather obvious — just add n straight vertical lines to the left of a tangle. But if n is odd one must be more careful because of orientations. In fact λ1(P) and P are not isomorphic in general, even as ﬁltered algebras, as one can see from example 2.9. We begin",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-33-reduction-and-cabling",
+      "number": "3.3",
+      "title": "Reduction and cabling",
+      "level": 2,
+      "pageStart": 77,
+      "pageEnd": 79,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 535,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "planar algebra",
+          "heading": false
+        },
+        {
+          "term": "general planar",
+          "heading": false
+        },
+        {
+          "term": "ppp",
+          "heading": false
+        },
+        {
+          "term": "irreducible reductions",
+          "heading": false
+        },
+        {
+          "term": "δ1δ",
+          "heading": false
+        },
+        {
+          "term": "cabling",
+          "heading": true
+        },
+        {
+          "term": "reduction process",
+          "heading": false
+        },
+        {
+          "term": "tangle",
+          "heading": false
+        }
+      ],
+      "extract": "We give two ways to produce new planar algebras from a given one. The ﬁrst is a reduction process which makes “irreducible” planar algebras — those with dim P1 = 1 — the focus of study. A planar algebra is not reconstructible in any simple way from its irreducible reductions, though, as can be seen from example 2 where the irreducible reductions would be trivial. Given a general planar algebra P presented on itself",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-34-tensor-product",
+      "number": "3.4",
+      "title": "Tensor product",
+      "level": 2,
+      "pageStart": 79,
+      "pageEnd": 80,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 454,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tangle labelled",
+          "heading": false
+        },
+        {
+          "term": "unlabelled tangle",
+          "heading": false
+        },
+        {
+          "term": "planar algebras",
+          "heading": false
+        },
+        {
+          "term": "general planar",
+          "heading": false
+        },
+        {
+          "term": "tensor product",
+          "heading": true
+        },
+        {
+          "term": "same unlabelled",
+          "heading": false
+        },
+        {
+          "term": "annular",
+          "heading": false
+        }
+      ],
+      "extract": "Let P 1 = ∪kP 1 k and P 2 = ∪kP 2 k be general planar algebras. We will endow the ﬁltered algebra P 1 ⊗P 2 = ∪kP 1 k ⊗P 2 k with a general planar algebra structure on the labelling set L = ` i≥1 P 1 i × P 2 i . Consider P 1 and P 2 presented on themselves by Φ1 and Φ2 respectively. First deﬁne a linear map L : P(L) →P(P1) ⊗P(P2) by L(T) = T1 ⊗T2 where T is a tangle labelled by f : Boxes(T) →P1 × P2, Ti have the same",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-35-free-product",
+      "number": "3.5",
+      "title": "Free product",
+      "level": 2,
+      "pageStart": 80,
+      "pageEnd": 81,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 212,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "free product",
+          "heading": true
+        },
+        {
+          "term": "planar algebras",
+          "heading": false
+        },
+        {
+          "term": "bisch",
+          "heading": false
+        },
+        {
+          "term": "aaa",
+          "heading": false
+        },
+        {
+          "term": "tangle",
+          "heading": false
+        }
+      ],
+      "extract": "The notion of free product of planar algebras was developed in collabora- tion with D. Bisch and will be presented in a future paper. The free product P 1 × P 2 of two planar algebras P 1 and P 2 is by deﬁnition the subalgebra of the tensor product linearly spanned by (images of) T1 consisting of a pair T1 ∈P 1 k , T2 ∈P 2 k which can be drawn in a single 2k −1-box, with bound- ary points in pairs, alternately",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-36-fusion-algebra",
+      "number": "3.6",
+      "title": "Fusion algebra",
+      "level": 2,
+      "pageStart": 81,
+      "pageEnd": 81,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 50,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "planar algebra",
+          "heading": false
+        },
+        {
+          "term": "fusion",
+          "heading": true
+        },
+        {
+          "term": "bisch",
+          "heading": false
+        }
+      ],
+      "extract": "The reduced subalgebras of the cables on a planar algebra form a “fusion algebra” along the lines of [Bi]. This is to be thought of as part of the graded algebra structure given by a planar algebra and will be treated in detail in a future paper with D. Bisch.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-012-4-planar-algebras-and-subfactors",
+      "number": "4",
+      "title": "Planar algebras and subfactors",
+      "level": 1,
+      "pageStart": 81,
+      "pageEnd": 81,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 40,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "planar",
+          "heading": true
+        },
+        {
+          "term": "subfactors",
+          "heading": true
+        },
+        {
+          "term": "extremal",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we show that the centralizer tower for an extremal finite index type I, subfactor admits the structure of a spherical C*-planar algebra, and vice versa. We need several results from subfactors, some of which are well known.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-013-41-some-facts-about-subfactors",
+      "number": "4.1",
+      "title": "Some facts about subfactors",
+      "level": 2,
+      "pageStart": 81,
+      "pageEnd": 92,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2580,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "v2m x2m",
+          "heading": false
+        },
+        {
+          "term": "x1v",
+          "heading": false
+        },
+        {
+          "term": "δid follows",
+          "heading": false
+        },
+        {
+          "term": "v2p",
+          "heading": false
+        },
+        {
+          "term": "vpvp",
+          "heading": false
+        },
+        {
+          "term": "δen",
+          "heading": false
+        },
+        {
+          "term": "x2v",
+          "heading": false
+        },
+        {
+          "term": "formula reads",
+          "heading": false
+        }
+      ],
+      "extract": "Let N C M be I], factors with 7~! = [M : N] < co. We adopt standard notation so that M;, i = 0,1,2,... is the tower of [J1] with Mj) =M, M, = (M,en), Misi = (Mj, e:+1) where e; : L?(M;_1) > L?(M;_2) is orthogonal 81 projection, eN = e1. Let B = {b} be a ﬁnite subset of M (called a basis) with (4.1.1) X b∈B be1b∗= 1 . Then by [PP] and [Bi], (4.1.2) x( X b be1b∗) = ( X b be1b∗)x = x for x ∈M. (4.1.3) X b bb∗= τ −1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-42-subfactors-give-planar-algebras",
+      "number": "4.2",
+      "title": "Subfactors give planar algebras",
+      "level": 2,
+      "pageStart": 92,
+      "pageEnd": 115,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 5941,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "planar algebras",
+          "heading": true
+        },
+        {
+          "term": "principal graph",
+          "heading": false
+        },
+        {
+          "term": "coxeter graph",
+          "heading": false
+        },
+        {
+          "term": "critical depth",
+          "heading": false
+        },
+        {
+          "term": "pmp",
+          "heading": false
+        },
+        {
+          "term": "fuss catalan",
+          "heading": false
+        },
+        {
+          "term": "bratteli diagram",
+          "heading": false
+        },
+        {
+          "term": "eni",
+          "heading": false
+        }
+      ],
+      "extract": "We keep the notation of §4.1. The next theorem legitimizes the use of pictures to prove subfactor results. Theorem 4.2.1 Let N ⊂M be an extremal type II1 subfactor with [M : N] 1 2 = δ < ∞. For each k let P N⊂M k = N′ ∩Mk−1 (isomorphic via θ to Vk, i.e. N-central vectors in Nk N M). Then P N⊂M = S k P N⊂M k has a spherical C∗-planar algebra structure (with labelling set P N⊂M) for which Φ( x ) = x and, suppressing",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-43-planar-algebras-give-subfactors",
+      "number": "4.3",
+      "title": "Planar algebras give subfactors",
+      "level": 2,
+      "pageStart": 115,
+      "pageEnd": 118,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 481,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "planar",
+          "heading": true
+        },
+        {
+          "term": "subfactors",
+          "heading": true
+        },
+        {
+          "term": "aij",
+          "heading": false
+        },
+        {
+          "term": "emi",
+          "heading": false
+        },
+        {
+          "term": "popa",
+          "heading": false
+        },
+        {
+          "term": "poincar series",
+          "heading": false
+        },
+        {
+          "term": "deﬁnes linear",
+          "heading": false
+        },
+        {
+          "term": "vii",
+          "heading": false
+        }
+      ],
+      "extract": "The following theorem relies heavily on a result of Popa [Po2]. Theorem 4.3.1 Let (P, Φ) be a spherical C∗-planar algebra with invariant Z and trace tr. Then there is a subfactor N ⊆M and isomorphisms Ω: N′ ∩Mi →Pi with (i) Ωis compatible with inclusions (ii) tr(Ω(x)) = tr(x) (iii) Ω(M′ ∩Mi) = P1,i (linear span of tangles with vertical ﬁrst string) (iv) Ω(ei) = 1 δ(Φ( )) 115 (v) [M : N] = δ2. If x ∈N′ ∩Mi, choose T",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-references",
+      "number": null,
+      "title": "References",
+      "level": 2,
+      "pageStart": 118,
+      "pageEnd": 122,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 927,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kauﬀman polynomial",
+          "heading": false
+        },
+        {
+          "term": "subfactors",
+          "heading": false
+        },
+        {
+          "term": "bisch",
+          "heading": false
+        },
+        {
+          "term": "academic press",
+          "heading": false
+        },
+        {
+          "term": "spin models",
+          "heading": false
+        },
+        {
+          "term": "regular graphs",
+          "heading": false
+        },
+        {
+          "term": "relative commutants",
+          "heading": false
+        },
+        {
+          "term": "math",
+          "heading": false
+        }
+      ],
+      "extract": "[A] V. Arnold, Remarks on the enumeration of plane curves. Amer. Math. Soc. Transl. 173(1996), 17–32. [Bi] D.Bisch, Bimodules, higher relative commutants and the fu- sion algebra associated to a subfactor, The Fields Institute for Research in Mathematical Sciences Communications Se- ries 13 (1997), 13–63. [BW] J.Barrett and B.Westbury, “Spherical Categories”, hep- th/9310164. [BiW] J.Birman and H.Wenzl, Braids, link",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "planar tangle",
+      "heading": false
+    },
+    {
+      "term": "planar algebra",
+      "heading": false
+    },
+    {
+      "term": "labelled planar",
+      "heading": false
+    },
+    {
+      "term": "deﬁne planar",
+      "heading": false
+    },
+    {
+      "term": "spherical planar",
+      "heading": false
+    },
+    {
+      "term": "planar networks",
+      "heading": false
+    },
+    {
+      "term": "planar subalgebra",
+      "heading": false
+    },
+    {
+      "term": "planar isotopy",
+      "heading": false
+    },
+    {
+      "term": "planar structure",
+      "heading": false
+    },
+    {
+      "term": "planar k-tangle",
+      "heading": false
+    },
+    {
+      "term": "general planar",
+      "heading": false
+    },
+    {
+      "term": "nondegenerate planar",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 53,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 54,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 55,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 56,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 57,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 58,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 59,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 60,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 61,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 62,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 63,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 64,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 65,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 66,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 67,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 68,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 69,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 70,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 71,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 72,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 73,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 74,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 75,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 76,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 77,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 78,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 79,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 80,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 81,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 82,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 83,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 84,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 85,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 86,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 87,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 88,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 89,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 90,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 91,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 92,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 93,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 94,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 95,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 96,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 97,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 98,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 99,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 100,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 101,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 102,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 103,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 104,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 105,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 106,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 107,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 108,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 109,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 110,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 111,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 112,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 113,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 114,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 115,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 116,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 117,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 118,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 119,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 120,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 121,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 122,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "close to the internal boundary and inserting cancelling pairs of u and u−1 on strings connecting internal boundary points, we see that the tangle of Figure 2.10.2 gives the same element of P as the one where the only instances of u and u−1 surround the x",
+      "page": 53,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "",
+      "page": 61,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 17,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 18,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "2 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p118); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 18 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-9909027v1"
+  }
+}

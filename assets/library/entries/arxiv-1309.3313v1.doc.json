@@ -1,0 +1,651 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1309.3313v1",
+  "title": "arxiv-1309.3313v1",
+  "variant": "pdf",
+  "pages": 9,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "I Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-i-introduction"
+    },
+    {
+      "level": 1,
+      "title": "II Pion Form Factor",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-ii-pion-form-factor"
+    },
+    {
+      "level": 1,
+      "title": "III Dynamical Polarizabilities of Mesons",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-iii-dynamical-polarizabilities-of-mesons"
+    },
+    {
+      "level": 1,
+      "title": "IV Dynamical Polarizabilities of Baryons",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-iv-dynamical-polarizabilities-of-baryons"
+    },
+    {
+      "level": 1,
+      "title": "V Conclusions",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "VI Acknowledgements",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-vi-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 92,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chiral perturbation",
+          "heading": false
+        },
+        {
+          "term": "polarizabilities",
+          "heading": false
+        },
+        {
+          "term": "canada",
+          "heading": false
+        }
+      ],
+      "extract": "Hadron Structure in Chiral Perturbation Theory A. Aleksejevs∗ Grenfell campus of Memorial University, Newfoundland, Canada S. Barkanova† Acadia University, Nova Scotia, Canada We present our predictions for meson form factors for the SU(3) octet and investigate their impact on the pion electroproduction cross sections. The electric and magnetic polarizabilities of the SU(3) octet of mesons and baryons are analyzed",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1309.3313v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-i-introduction",
+      "number": null,
+      "title": "I Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 227,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "relativistic chpt",
+          "heading": false
+        },
+        {
+          "term": "magnetic polarizabilities",
+          "heading": false
+        },
+        {
+          "term": "compton structure",
+          "heading": false
+        },
+        {
+          "term": "hadronic",
+          "heading": false
+        },
+        {
+          "term": "chm",
+          "heading": false
+        },
+        {
+          "term": "low-energy",
+          "heading": false
+        },
+        {
+          "term": "non-perturbative",
+          "heading": false
+        }
+      ],
+      "extract": "The Chiral Perturbation Theory (CHPT) has been tremendously successful in describing low-energy hadronic properties in the non-perturbative regime of Quantum Chromodynamics (QCD). Some of the major goals of low-energy QCD are the study of hadronic form factors, which reflect the static structure, and the investigation of the dynamical hadronic response to the external electromagnetic field via electric and magnetic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-ii-pion-form-factor",
+      "number": null,
+      "title": "II Pion Form Factor",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "3",
+      "words": 1077,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pion form",
+          "heading": true
+        },
+        {
+          "term": "pion electroproduction",
+          "heading": false
+        },
+        {
+          "term": "momentum transfers",
+          "heading": false
+        },
+        {
+          "term": "form factor",
+          "heading": true
+        },
+        {
+          "term": "off-shell form",
+          "heading": false
+        },
+        {
+          "term": "two-photon box",
+          "heading": false
+        },
+        {
+          "term": "pion electromagnetic",
+          "heading": false
+        },
+        {
+          "term": "box correction",
+          "heading": false
+        }
+      ],
+      "extract": "The spatial pion electromagnetic form factor has been addressed in [@Ga84; @NR; @JK; @FC; @IBG; @MT] and is under experimental study currently [@Fpi]. To investigate the behavior of the pion form factor experimentally at momentum transfers $Q^{2}>0.3\\, GeV^{2}$ and in the transitional region between long-distance and short-distance QCD, one must use the charged pion electroproduction process. The two-fold",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-iii-dynamical-polarizabilities-of-mesons",
+      "number": null,
+      "title": "III Dynamical Polarizabilities of Mesons",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 960,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polarizabilities",
+          "heading": true
+        },
+        {
+          "term": "nonumber bigg",
+          "heading": false
+        },
+        {
+          "term": "pion polarizabilities",
+          "heading": false
+        },
+        {
+          "term": "magnetic polarizabilities",
+          "heading": false
+        },
+        {
+          "term": "nonumber beta",
+          "heading": false
+        },
+        {
+          "term": "aligned displaystyle",
+          "heading": false
+        },
+        {
+          "term": "bigg frac",
+          "heading": false
+        },
+        {
+          "term": "frac s-m",
+          "heading": false
+        }
+      ],
+      "extract": "Experimentally, a unique opportunity to study the dynamical structure of hadrons over a wide kinematic range is provided by Compton scattering. In the non-relativistic approximation, the Hamiltonian related to the meson internal structure can be represented as $$\\begin{aligned} H_{eff}=-\\frac{1}{2}4\\pi\\alpha_{E}\\vec{E}^{2}-\\frac{1}{2}4\\pi\\beta_{M}\\vec{H}^{2},\\label{eq:6} \\end{aligned}$$ where $\\alpha_{E}$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-iv-dynamical-polarizabilities-of-baryons",
+      "number": null,
+      "title": "IV Dynamical Polarizabilities of Baryons",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 9,
+      "labelStart": "5",
+      "labelEnd": "9",
+      "words": 1437,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dynamical polarizabilities",
+          "heading": true
+        },
+        {
+          "term": "magnetic polarizabilities",
+          "heading": false
+        },
+        {
+          "term": "polarizabilities calculated",
+          "heading": false
+        },
+        {
+          "term": "boldsymbol epsilon",
+          "heading": false
+        },
+        {
+          "term": "cdot boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "mbox sse",
+          "heading": false
+        },
+        {
+          "term": "boldsymbol sigma",
+          "heading": false
+        },
+        {
+          "term": "compton scattering",
+          "heading": false
+        }
+      ],
+      "extract": "The electric and magnetic polarizabilities of baryons introduce an additional contribution into the effective Hamiltonian for baryons in the electromagnetic field in the same way as defined in Eq.(6). The current PDG [@PDG] experimental values for the electric and magnetic polarizabilities for proton and neutron are (in units of $10^{-4} \\mbox{fm}^3$): $$\\begin{aligned} \\alpha_{p}=12.0\\pm0.6; & &",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-vi-acknowledgements",
+      "number": null,
+      "title": "VI Acknowledgements",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 506,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "aleksejevs",
+          "heading": false
+        },
+        {
+          "term": "hemmert",
+          "heading": false
+        },
+        {
+          "term": "holstein",
+          "heading": false
+        },
+        {
+          "term": "lett",
+          "heading": false
+        },
+        {
+          "term": "pasquini",
+          "heading": false
+        },
+        {
+          "term": "kambor",
+          "heading": false
+        }
+      ],
+      "extract": "This work has been supported by the Natu- ral Sciences and Engineering Research Council of Canada (NSERC). [1] J. Gasser and H. Leutwyler, Ann. Phys. 158, 142 (1984). [2] V. A. Nesterenko and A. V. Radyushkin, Phys. Lett. B115 410 (1982); A.V. Radyushkin, Nucl. Phys. A532 141 (1991). [3] R. Jakob and P. Kroll, Phys. Lett. B315 463 (1993). [4] F. Cardarelli et al., Phys. Lett. B332 (1994) 1; Phys. Lett. B357 267",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "pion polarizabilities",
+      "heading": false
+    },
+    {
+      "term": "magnetic polarizabilities",
+      "heading": true
+    },
+    {
+      "term": "dynamical polarizabilities",
+      "heading": true
+    },
+    {
+      "term": "static polarizabilities",
+      "heading": false
+    },
+    {
+      "term": "polarizabilities calculated",
+      "heading": false
+    },
+    {
+      "term": "pion electroproduction",
+      "heading": true
+    },
+    {
+      "term": "boldsymbol epsilon",
+      "heading": false
+    },
+    {
+      "term": "nonumber frac",
+      "heading": false
+    },
+    {
+      "term": "pion electromagnetic",
+      "heading": false
+    },
+    {
+      "term": "nonumber bigg",
+      "heading": false
+    },
+    {
+      "term": "pion production",
+      "heading": false
+    },
+    {
+      "term": "compton scattering",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "On-shell and oﬀ-shell pion form factors. The red line shows the monopole ﬁt of the on-shell formfactor to CHPT results. Experimental data are taken from [12–15]. The oﬀshell form factor is shown for both low (t = −0.005 GeV2, blue line) and high (t = −0.212 GeV2, green line) hadronic momentum transf",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Two-photon box radiative correction for the exclusive pion electroproduction for Q2 = 6.0 GeV2 (left plot) and",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Left graph: energy dependence of the pion electric polarizabilty. Right graph: γγ →ππ cross section, where red line corresponds to the Born cross section, blue line is the cross section related to the static CHPT value of polarizability and green line shows the cross section with dynamical polarizab",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Charged kaon dynamical polarizability and prediction for the γγ →K+K−cross section. On the left plot, red line is the Born cross section, blue line corresponds to the static polarizability and green line to the dynamical polarizability cross section",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Dependencies of the proton electric and magnetic polarizabilities (in 10−4 (fm3)) on photon energy, ω (GeV), in the center-of-mass reference frame. Green-dashed curves correspond to the meson-nucleon loops contribution only; solid-red curves include the ∆-resonance pole contribution",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Electric and magnetic dynamical polarizabilities of hyperons in units of 10−4 (fm3) as a function of the photon energy, ω (GeV). Here, the solid-red line represents the electric polarizability, and the dashed-green line is the magnetic polarizability",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p002-1",
+      "file": "images/img-p002-1.png",
+      "page": 2,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p003-1",
+      "file": "images/img-p003-1.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p003-2",
+      "file": "images/img-p003-2.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-1",
+      "file": "images/img-p005-1.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-2",
+      "file": "images/img-p005-2.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-1",
+      "file": "images/img-p006-1.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-2",
+      "file": "images/img-p006-2.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 6,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 7
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 6 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1309.3313v1"
+  }
+}

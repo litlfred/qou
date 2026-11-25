@@ -1,0 +1,549 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "pjm-v154-n1-p09-s",
+  "blocks": [
+    {
+      "id": "library/pjm-v154-n1-p09-s/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "Pacific Journal of\nMathematics\nTHE PERIOD MATRIX OF BRING’S CURVE\nGONZALO RIERA AND RUBI RODRIGUEZ\nVol. 154, No. 1\nMay 1992",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v154-n1-p09-s/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "PACIFIC JOURNAL OF MATHEMATICS\nVol. 154, No. 1, 1992\nTHE PERIOD MATRIX OF BRING'S CURVE\nGONZALO RlERA AND RUBI E. RODRIGUEZ\nIn genus four there is only one Riemann surface admitting the\nsymmetric group of order five as group of automorphisms: we compute\nits Riemann matrix. On the other hand, we show that there is a one\ncomplex parameter family of Jacobians admitting the same group of\nautomorphisms and using the Schottky relation we give a non-trivial\nequation vanishing exactly on the matrix of the surface.\n1. Introduction. When studying the general equation of degree five,\nBring constructed a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v154-n1-p09-s/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "180\nGONZALO RIERA AND RUBI E. RODRIGUEZ\n13\n3 - 12\n7 - 16\n11 - 20\n19 - 8\n15 - A\n15\n16\nmatrix in homology [/]*: Hy (B, Z) —• H\\ (B, Z) in terms of a canon-\nical homology basis. To construct such a basis is not altogether a\nstraightforward matter and to represent a given automorphism in this\nbasis can be troublesome. This is the main reason why we start from\nthe universal cover of the surface.\nConsider the non-euclidean polygon of 20 sides in the unit disc Δ\nas in Figure 1, the pattern of triangles with interior angles π/5, π/4,\nπ/2. \nWe let a denote the counterclockwise conformal rotation of\nord",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v154-n1-p09-s/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "THE PERIOD MATRIX OF BRING'S CURVE\n181\nwhere Γ = Keτφ so that Γ< Γ*, T*/T = 5%. Notice that Γ has no\ntorsion, since all torsion elements of Γ* are conjugate to powers of\na, β or βa.\nFurthermore, if we consider the Cayley diagram (graph of the group)\nassociated to the presentation for J/5 given by\n{A, B: A\n5 = B\n2 = {BAY = 1 = {BA~\n2BA\n2)\n2)\nand take its dual, we obtain a fundamental polygon for Γ, tessellated\nby fundamental domains for Γ*, as in Figure 1.\nThe side identifications indicated there allow us to compute that\nthere are three cycles of vertices on the boundary, so that the genus of\nB",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v154-n1-p09-s/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "182\nGONZALO RIERA AND RUBI E. RODRIGUEZ\nA =\nB =\nis a\nf°\n0\n1\n0\n0\n0\n0\n^0\n_1\n0\n0\n0\n0\n0\n0\n0\n,β\n0\n0\n0\n1\n0\n0\n0\n0\n1\n0\n0\n0\n1\n0\n0\n0\nthen act\n0\n0\n0\n0\n1\n0\n0\n0\n0\n0\n0\n0\n0\n1\n1\n0\n0 0\n0 0\n0 0\n0 0\n0 0\n1 0\n0 1\n0 0\n-1\n-1\n-1\n-1\n-1\n-1\n-1\n0\nin\n0\n0\n0\n0\n0\n0\n0\n1\n1\n1\n0\n0\n0\n0\n0\n0\nHι(B\n-1\n0\n-1\n0\n-1\n0\n-1\n0\n0\n0\n1\n0\n0\n0\n1 -\n0\n0\n0\n0\n0\n0\n0\n1\n0\n,Z)\n0\\\n-1\n0\n-1\n0\n-1\n0\n- 1 /\nc\n(\n(\n(\nc\nc\nc\nvia the matrices\n)\\\n)\n)\n)\n)\n)\n)\n•\nWe have C = -C, \ndetC = + 1 , A'CA = C, B'CB = C and\nA\n5 = /, B\n2 = /, {AB)\n4 = /, so that they give an integer valued\nrepresentation of the group <9$. (We do not know why these matrices\nhave only 0, 1, — 1 as e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v154-n1-p09-s/blocks/lem-page-006-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "lem-page-006-01.md",
+      "narrative": null,
+      "content": "If M is symplectic and commutes with S p ^ , then %, ( ml nc\\ Ί (m n\\ o τ /Λ ^ M = I i Γ , where e SL(2, R). Vpc- glj \\p q)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v154-n1-p09-s/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "THE PERIOD MATRIX OF BRING'S CURVE \n183\nthe matrices A, B, C transform into\nHere\nc =\n(\n \n4\n1\n-1\n^ 1\n1\n4\n1\n-1\n-1\n1\n4\n1\n\\\\\n-1\n1\n4)\nwith c\n ι = 4-\n/ 2 -1 \n1 -1\\\n-1 \n2 - 1 \n1\n1 - 1 \n2 - 1\n5\n\\ - l \n1 -1 \n2/\nis actually the only matrix invariant under the required actions of\na, b. The new change of coordinates\nΛ =\ntransforms these matrices into\nτc\n0\ncac~\nι\n0\\ \nfcbc-\n1 0\\ \n( 0 \nI\\\na)> \n{ 0 \nb ) ' {-I θj\nNotice that ΩΛ is unimodular (with integer entries), and that cac~\nι\n= (a')~\nι and cbc~\nι = {b')-\nχ.\nIn order to study the action of S% on SiegeΓs space, we embed <5%\nin Sp(8, Z) by sending a and β re",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v154-n1-p09-s/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "184 \nGONZALO RIERA AND RUBI E. RODRIGUEZ\nEquivalently, we obtain the equations\nE{a')-\nχ = {a')-\nχE, \nFa = (α\n7)\"\n1/\n7,\nG{a')-\nι=aG, \nHa = aH,\nand similar ones for b, with a and b the generators for the repre-\nsentation as in equation (1). Since this representation and the con-\ntragradient representation are irreducible and c is the \"only\" matrix\nsatisfying a'ca = c and b'cb = c, the first result follows.\nIf in addition we assume M is integral, then m,n,p, \nq are inte-\ngers and since G = pc~\nι has integer coefficients, 5 divides p.\nNow we can prove\nTHEOREM 1. There is a one complex parameter fa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v154-n1-p09-s/blocks/thm-page-007-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "thm-page-007-01.md",
+      "narrative": null,
+      "content": "There is a one complex parameter family—Bring's half-plane—ofRiemann matrices Z in SiegeΓs upper half space fixed under the action ofSpS^- These are the matrices of the form Z = τ c, τeC, Imτ > 0. The stabilizer of B ring's half plane in Sp(8, Z) is the product of the groups SρJ?5, which fixes the set pointwise, and SpΓo(5), which acts by τc —> τ*c, where τ* = pτ + m If TQC is a Riemann matrix for Bring's curve and M is a matrix in Sρ(8, Z) that maps τ$c to a point τ'c in the half plane, then M stabilizes Bring's half plane.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v154-n1-p09-s/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "THE PERIOD MATRIX OF BRING'S CURVE \n185\ncurve, and because B does not admit more automorphisms, we obtain\nwhere λ: <9$ -> <9$ is an automorphism of <5% . Since every automor-\nphism of J?5 is interior, there is some h in ^ \nsuch that Ah-\\M\ncommutes with all matrices Ag \nthen it follows from Lemma 1 that\nM = Ahγ with γ e SpΓ0(5).\n3. The Riemann matrix. We now compute the values of the complex\nnumber τ so that the matrix τ-c is the period matrix of Bring's curve;\nit is the only value modulo ΓQ(5) that comes from a Riemann surface.\nLet us identify the automorphisms α, β with their classes (12345)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v154-n1-p09-s/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "186 \nGONZALO RIERA AND RUBI E. RODRIGUEZ\nTherefore if dw is the differential on B invariant by this subgroup\nwe compute its periods to be\n1, - 1 , 1, - 1 , τ, - τ , τ, - τ ,\nwhere τ denotes the elliptic modules of E2.\nCompleting dw to a basis of if\n1 °(2?, C) as before gives Z = τ-c\\\nhence μ = 5τ.\nWith these two tori we can now establish\nTHEOREM 2. Γλe period matrix of Bring's curve is Z = τo c,\nc/αss\n1 of τo modulo ΓQ(5) £S characterized by the two values\nv \nΛ\n \n2 5 \n•/< Λ \n2 9\n3 x 5\nΛ*) \n(5τ)\nProo/. We first compute the quotient of B by (βa)\n2 = (24)(35). It\nis a curve of genus two and this",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v154-n1-p09-s/blocks/thm-page-009-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "thm-page-009-01.md",
+      "narrative": null,
+      "content": "Γλe period matrix of Bring's curve is Z = τo c, c/αss 1 of τo modulo ΓQ(5) £S characterized by the two values v Λ",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v154-n1-p09-s/blocks/prose-page-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 10",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/page-010.md",
+      "narrative": null,
+      "content": "THE PERIOD MATRIX OF BRING'S CURVE\n187\n-• \no\n \n!\nFIGURE 2\nThe torus E\\ is then obtained from this last equation by the iden-\ntification (z, w) <-+ (-z, -w), while the torus Eι is obtained by the\nother identification (z, w) <-+ (—z, w).\nThe first torus is therefore given by\n145\nΛ\nu - f 5 x\n421\n;(5τ 0) = -29\n3x5\n2\n5\nand the second torus by\n100w - [A x2940\nv \nλ \n25\nj(τ 0) = \n~γ.\nFinally we have to establish the fact that these values of j(5τo) and\n7*(τo) determine a unique class of TQ modulo Γo(5). To do so we\nshall locate TQ in a fundamental region for this group.\nWe consider then, as in Figure",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v154-n1-p09-s/blocks/prose-page-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 11",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/page-011.md",
+      "narrative": null,
+      "content": "188 \nGONZALO RIERA AND RUBI E. RODRIGUEZ\nwhence we have the inequalities\nSuppose τ 0 is in the arc labeled (1); then τ0 = (-1 + it)/2, with\nV3 < t, and 5τ0 = (-1 + /5/)/2 mod Γ(l). From ./((-I + I'Λ/7)/2)\n< y((-l + ιί)/2) < 0 we obtain \\β \n< t < y/1 and from\n7((-l + iV7)/2) < ./((-I + ίί)/2) < 0 we obtain \\fi < 5ί <\n>/ΓΓ. Both inequalities cannot hold and we have a contradiction in\nthis case.\nSuppose To is in the arc labeled (2); then TQ = -1 + cos 0 + / sin 0,\n0 < 0 < π/3, and 5τo = 5 cos θ + /5 sin 0 mod Γ(l). Since J(5TQ) is\na negative real number, there are only two possibilities for 5τo:",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v154-n1-p09-s/blocks/prose-page-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 12",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/page-012.md",
+      "narrative": null,
+      "content": "THE PERIOD MATRIX OF BRING'S CURVE\n189\n4. The Schottky relations. The theta function with characteristics\nε, η is defined by the series\nθ\n(z,Z) =\nnez\nΛ\nwhere Z = τ c, and transposition is denoted by primes. To ob-\ntain a formula for θ as a sum of theta functions of one variable we\ndiagonalize the matrix c: with\nwe have\nmem =\nί5 \n0 0 \n0\\\n0 5 0 0\n0 0 5 0\nVO 0 0 \\)\n= c.\nNote that then\nThe above matrix m has been well known since Riemann and it is\ncurious to see it appear in a purely group representation context; for\nus it is convenient, since we can almost copy the usual computations\nfor theta fu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v154-n1-p09-s/blocks/prose-page-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 13",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/page-013.md",
+      "narrative": null,
+      "content": "190 \nGONZALO RIERA AND RUBI E. RODRIGUEZ\nL\\=L2 \nas scalar product spaces. Then\nΘ [\ne 1 (z, Z) = Σ\n \ne χP\n π'(\nτ(* + Φ)'c{n + e/2)\nΊ Σ\n \ne x p πi(\nτ(\nn \n+ e/2)'c(n + e/2)\nneL\n+ 2(n + e/2')(z\n+ exρ(-π/ε' β\\)txpπi(τ(n + ε/2)\nfc{n + e/2)\n2 Σ\n \neχP\n7ΓZ'(\nτ(« + e/2)\n;c(n + e/2)\n+ exp π/(τ(/2 + ^i + e/2)\nrc{n + eλ+ e/2)\n+ exp π/(τ(n + ε/2)'c{n + e/2)\n+ exp π/(τ(n + ε/2)'c{n + e{+ e/2)\n+ 2(/i + ^i + e/2)\n;(z + ^i + A//2)) exp(-π/(ε' ^ ) ) .\nWe now change the summation index via m so that we obtain\nθ [\nε ] (z, Z) = i ]Γ exp πi(τ(n + mε/2)\nfc(n + mε/2)\n***** \nneL{\n+ 2(/ι + mε/2)\\mz + mη/2))\n+ exp π/(τ(/",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v154-n1-p09-s/blocks/prose-page-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 14",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/page-014.md",
+      "narrative": null,
+      "content": "THE PERIOD MATRIX OF BRING'S CURVE\n191\nfunctions of one variable, three with modulus 5τ, one with modulus\nτ. For instance\n[0 0 0 01\n2 6 [θ 0 0 \n0 j\n( z '\nZ )\n5τ)ϋ [ Jj (z; τ)\n(z τ)\nwhere if z = {z\\, zi, z^, Zύ), we have set z = [z\\ + z^ + z-x, + z4)/2.\nThe general Schottky relation\nΘ\n,1=0,1\no o o o p \n-,-r\nj k i o\n \n= \n11\n \nΘ\nJ \n7,A:,7=0,1\n+ Π\no o o η\n1 / 2\nj k i o\\\n0 0 0 0 1\n1 / 2\nj k \nI \\\nis an identity that has to be satisfied by the Riemann matrices that\ncome from surfaces and it was shown by Igusa [2] that this equation\ngives exactly the variety of these matrices. What we do now is show\ni",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v154-n1-p09-s/blocks/prose-page-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 15",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/page-015.md",
+      "narrative": null,
+      "content": "192 \nGONZALO RIERA AND RUBI E. RODRIGUEZ\nit follows that\nThus, for a given value of / (or j) there are six possible values of\nκ\n2,\n2\nK \n,\nK\n2\n \n2 \nJ \nK\n2 - 1 \n1\nj c\n2 - 1 ' \n' \nκ : 2\n5 \nK:\n2 \n' \n1 - κ\n2 >\nforming a group isomorphic to 5^. In all, we have an exact sequence\nof discrete groups\nso that even though κ\n2 is not an automorphic function for Γ(l), it\nis one for Γ*.\nTHEOREM 3. The Schottky relation restricted to Bring's half plane\ndefines a non trivial algebraic equation in the theta-nullwerte of one\ncomplex variable with moduli 5τ, τ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v154-n1-p09-s/blocks/thm-page-015-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "thm-page-015-01.md",
+      "narrative": null,
+      "content": "The Schottky relation restricted to Bring's half plane defines a non trivial algebraic equation in the theta-nullwerte of one complex variable with moduli 5τ, τ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/pjm-v154-n1-p09-s/blocks/prose-page-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 16",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/page-016.md",
+      "narrative": null,
+      "content": "THE PERIOD MATRIX OF BRING'S CURVE \n193\nThere is an exact sequence of discrete groups\n1 -+ N -> Γ o(5) -> Z 2 Θ Z 2 -+ 1\nand Schottky's relation defines a differential form of degree 4 for N.\nThis differential form has one zero in the upper half-plane Δ modulo\nΓ o(5): the point τo corresponding to Bring's curve.\nProof. We first shorten Schottky's relation using the action of <9$:\nif g G (α, b) then\nWe obtain\nΠ β[\ni,j,k=O,l\n \nL\n0 0 0 O l ^ Γ O \n0 0 0 ]\nA [ 0 \n0 0 0\n1 j \nk 0] \n[O 0 0 Oj \n[1 1 0 0\n0 0 0 01\n1 1 1 1 '\nΠ '\niJ,k=0,l\nπ \nro 0 0 η \nri 1 1 η \nri 1 1 η\n3\n11\n \nθ [ i j k 0\n \n= \"\nθ \n0 0 0 0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v154-n1-p09-s/blocks/prose-page-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 17",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/page-017.md",
+      "narrative": null,
+      "content": "194 \nGONZALO RIERA AND RUBI E. RODRIGUEZ\nwe can compute each thetanuUwerte:\n-β|'°Γ(5τ)β[°Ί(τ),\n»[!: ί\nΠ (5τ)ϋ\nWe then set\n= d [j]",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v154-n1-p09-s/blocks/prose-page-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 18",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/page-018.md",
+      "narrative": null,
+      "content": "THE PERIOD MATRIX OF BRING'S CURVE \n195\nso that we can write\noi Λ r o r \nroi . Λ r o r . Λ r o i r o n\ni\\ \n1/2\noi\n3 roi \nj i i\n3 \nrn \nΛ roi\n3 roi\\\n2\nWe examine now the behaviour of the differential form of 4th de-\ngree f(τ)(dτ)\n4 \nunder the generators of Γ o(5). These generators are\nW \n«>\n \nm \n+ι\nso that we may present this group by\nSince f(τ) has an expansion with only even powers of q, the differ-\nential form is invariant under γ. We define then a group epimorphism\nfrom Γo(5) to\nZ2 Θ Z2 = (u, v \nu\n2 = υ\n2 = (uv)\n2 = 1)\nvia λ(a) = u, λ(β) = v, λ(γ) = 1. This epimoφhism defines an",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v154-n1-p09-s/blocks/prose-page-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 19",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/page-019.md",
+      "narrative": null,
+      "content": "196 \nGONZALO RIERA AND RUBI E. RODRIGUEZ\nexact sequence\nwhere Δ/N and Δ/ΓQ(5) are surfaces of genus 0 and Z 2 Θ Z2 acts\nas a covering group on Δ/ΓQ(5) ~ Pi by the transformations\nz, u{z) \n= z~\nι, \nv(z) \n= - z , \n(MV)(Z) = \n- z \"\n1 .\nTo prove that /(τ) dτ\n4 is a differential form invariant by the ac-\ntion of the group N we have to look at its behaviour under β in a\nneighborhood of 0. Using the transformation τ —• -1/τ we are led\nto the expansion\n°]\n2W5)β[J]w5),[^])\n- . . . ) , \ng = e\nnιτ.\nSince by conjugation by -1/τ, β(τ) transforms to τ + 5 we ob-\ntain that g(τ)(dτ)\n4 \nis invariant under τ +",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v154-n1-p09-s/blocks/prose-page-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 20",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/page-020.md",
+      "narrative": null,
+      "content": "THE PERIOD MATRIX OF BRING'S CURVE \n197\nseries of q = e\nπιτ in a neighborhood of i • oo. From the expansions\nη\nn\nn\nΓ\n0\n\"0\"\n0\n0'\n1\nit follows that\nϋ\nand then\n(q = e\nπiτ)\n[o\\\n \nη[o] \n=\nproving that / is not constantly zero.\nTo find the number of zeros of this differential form on A/N we\nhave to study its behaviour at the six punctures:\noo, 0, j8(oo) = - ί , α(0) = - ± , α(oo) = - § , (αjί)(oo) = - f\nIf Z is the number of zeros and P the number of poles on A/N\nwe have the formula\nAt oo a local parameter is p = q\n2 = e\n2πιτ \nso that\ndp\n4,\nproving that the differential form has a simple zero there.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v154-n1-p09-s/blocks/prose-page-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 21",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/page-021.md",
+      "narrative": null,
+      "content": "198\nGONZALO RIERA AND RUBI E. RODRIGUEZ\nAt 0, using -1/τ as before, a local parameter is p = q\nχl\n5 = e\nπiτl\n5\nso that\n\\2niq\n40\nproving that the differential form has a simple pole there.\nAt - j we use the transformation β(τ) = τ/(-5τ + 1) so that\n= VΪ^-5τϋ\n0\n[?] H)\n(5τ),\nand similar formulas for #[}]»»/[}]• The expansion\nA(τ) = ϋ\n0\n0\n0\n0\nϋ\n0\n0\n0\n0\n1/2\n1/2\ngives, using the local parameter p = q\n2 = e\n= q\n2 = e\n2πiτ\nproving that it has a pole of order 2 there.\nAt - 5 , - 3 , - 3 similar expansions show that there are poles of\norders 4, 2, 4 so that in all we have\n=13 poles.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v154-n1-p09-s/blocks/prose-page-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 22",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/page-022.md",
+      "narrative": null,
+      "content": "THE PERIOD MATRIX OF BRING'S CURVE \n199\nTo determine its zeros we recall the proof of Theorem 2 where the\nelliptic curve E\\ has equation\nj(5τ) = \njΓ\nand roots c\\,c\\, c\\ with\nc\\ - c\\ \net-e3\nSolving the cubic equation gives\nc\\ = A + B, \nc\\ = pA + p\n2B, \nc] = p\n2A + pB,\nwhere as usual p = — j + ί*ψ and\nWith a similar value for τc(τ) there are in all 6 x 6 = 36 pairs of\nvalues that give the same invariants j(5τ), \nj(τ). One such pair gives\nthe values of\n•[ί] >•[!]• \n'[ί]\"[S]\nthat make Schottky's relation hold since for these values the Riemann\nmatrix corresponds to Bring's curve.\nSince acting by a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v154-n1-p09-s/blocks/prose-page-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 23",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/page-023.md",
+      "narrative": null,
+      "content": "200 \nGONZALO RIERA AND RUBI E. RODRIGUEZ\n[7] \nH. Rauch and J. Lewittes, The Riemann Surface of Klein with 168 Automor-\nphisms, in Problems in Analysis (a Symposium in honor of Solomon Bochner),\nPrinceton University Press, Princeton, NJ, 1970, 297-308.\n[8] \nG. Riera, Deformations of Klein's curve and representations of its group of 168\nautomorphisms, Complex Variables and Appl., 6 (1986), 265-281.\n[9] \nR. Rodriguez and V. Gonzalez, On automorphisms of compact Riemann surfaces\nof genus four, Complex Geometry Seminar, 2 (1986), 67-96.\n[10] A. Weil, Zum Beweis des Torellischen Satzes, Nachr. Akad.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v154-n1-p09-s/blocks/prose-page-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 24",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/page-024.md",
+      "narrative": null,
+      "content": "PACIFIC JOURNAL OF MATHEMATICS\nEDITORS\nV. S. VARADARAJAN\n(Managing Editor)\nUniversity of California\nLos Angeles, CA 90024-1555\nHERBERT CLEMENS\nUniversity of Utah\nSalt Lake City, UT 84112\nF. MICHAEL CHRIST\nUniversity of California\nLos Angeles, CA 90024-1555\nTHOMAS ENRIGHT\nUniversity of California, San Diego\nLa Jolla, CA 92093\nNICHOLAS ERCOLANI\nUniversity of Arizona\nTucson, AZ 85721\nR. FINN\nStanford University\nStanford, CA 94305\nVAUGHAN F. R. JONES\nUniversity of California\nBerkeley, CA 94720\nSTEVEN KERCKHOFF\nStanford University\nStanford, CA 94305\nC. C. MOORE\nUniversity of California\nBerkeley, CA",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/pjm-v154-n1-p09-s/blocks/prose-page-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 25",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/page-025.md",
+      "narrative": null,
+      "content": "Paciﬁc Journal of Mathematics\nVol. 154, No. 1\nMay, 1992\nRichard Arens, Pseudo regular elements in a normed ring . . . . . . . . . . . . . . . . . . . 1\nJoan Birman and William W. Menasco, Studying links via closed braids.\nI: A ﬁniteness theorem . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17\nEtsur¯o Date, Michio Jimbo, Kei Miki and Tetsuji Miwa, Braid group\nrepresentations arising from the generalized chiral Potts models . . . . . . . . . 37\nToshihiro Hamachi, A measure theoretical proof of the Connes-Woods\ntheorem on AT-ﬂows . . . . . . . . . . .",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

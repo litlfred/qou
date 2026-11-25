@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-casimir-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-casimir-remark",
+  "kind": "remark",
+  "title": "Normalisation and role of the $q$-Casimir element",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-casimir",
+    "papers/quantum-observable-universe/blocks/prop-q-casimir-exists"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-casimir",
+  "tags": [
+    "casimir",
+    "quantum-group"
+  ],
+  "text": "q-casimir-remark.md",
+  "provenance": "authored"
+}

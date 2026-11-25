@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff/node/Gateway_Outcome.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff/node/Gateway_Outcome",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/ProcessNode",
+      "name": "What did the check say?",
+      "nodeKind": "exclusive",
+      "bpmnType": "bpmn:ExclusiveGateway",
+      "partOf": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff",
+      "inLane": "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff/lane/Lane_Agent",
+      "requires": [],
+      "touchesWorkPlan": false,
+      "relaxable": true,
+      "incoming": [
+        "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff#flow/Flow_2"
+      ],
+      "outgoing": [
+        "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff#flow/Flow_InSync",
+        "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff#flow/Flow_Drift",
+        "https://litlfred.github.io/qou/process/Process_LeanRegenerateAndDiff#flow/Flow_Unknown"
+      ],
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    }
+  ]
+}

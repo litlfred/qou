@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-torus-knot-shell-binding-table1-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:torus-knot-shell-binding-table1-data",
+  "kind": "table",
+  "title": "Data table 1 from prop:torus-knot-shell-binding",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-torus-knot-shell-binding"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "torus-knot-shell-binding-table1-data.md",
+  "provenance": "authored"
+}

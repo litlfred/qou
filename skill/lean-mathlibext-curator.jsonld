@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/lean-mathlibext-curator.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/lean-mathlibext-curator",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "lean-mathlibext-curator",
+      "title": "Two-Tier `Mathlib4` & Lean Reservoir Community Curator (`lean-mathlibext-curator`)",
+      "description": "Curate QOU's non-QOU-specific Lean 4 mathematics under the Two-Tier Community Contribution Architecture: Tier A (`MathlibExt` selective `mathlib4` core PR candidates) and Tier B (6 standalone Lean Reservoir `lean_lib` community packages: `HeckeTemperleyLieb`, `TwistedFrobeniusHopf`, `ToricConicOpt`, `CompactQuantumMetrics`, `QCalculus`, `BraidKnotOctonion`). Enforces strict zero-`QOU.*` upward imports, §7c base-ring generality, and Mathlib4 style via `scripts/lean-best-practices-lint.py` and `scripts/lean-kg-detangler.py`.",
+      "instructionsPath": "skills/local/lean-mathlibext-curator.md",
+      "instructionLines": 115,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1704.06561v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Leading isospin-breaking corrections to pion, kaon and charmed-meson masses with Twisted-Mass fermions",
+      "dcterms:creator": [
+        "Giusti, D.",
+        "Lubicz, V.",
+        "Tarantino, C."
+      ],
+      "dcterms:issued": "D:20170613",
+      "dcterms:identifier": "https://arxiv.org/abs/1704.06561",
+      "dcterms:source": "library/arxiv-1704.06561v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1704.06561v2"
+    }
+  ]
+}

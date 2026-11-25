@@ -1,0 +1,806 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0209324v1",
+  "title": "arxiv-math-0209324v1",
+  "variant": "pdf",
+  "pages": 18,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-preliminaries"
+    },
+    {
+      "level": 1,
+      "title": "Monic completions of polynomial rings",
+      "number": "3",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-monic-completions-of-polynomial-rings"
+    },
+    {
+      "level": 2,
+      "title": "Definitions and basic properties",
+      "number": "3.1",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Injectivity of the homomorphism $\\rho ^R_{M,M'}$",
+      "number": "3.2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Injectivity of $\\rho ^R_{S,S'}$",
+      "number": "4",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Expansions at roots of unity",
+      "number": "5",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-5-expansions-at-roots-of-unity"
+    },
+    {
+      "level": 1,
+      "title": "Values at roots of unity",
+      "number": "6",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-6-values-at-roots-of-unity"
+    },
+    {
+      "level": 1,
+      "title": "Remarks",
+      "number": "7",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-7-remarks"
+    },
+    {
+      "level": 2,
+      "title": "Units in $\\Zq{S}$",
+      "number": "7.1",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "A localization of $\\Zq{{\\mathbb N} }$",
+      "number": "7.2",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Modules",
+      "number": "7.3",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-73-modules"
+    },
+    {
+      "level": 2,
+      "title": "Non-surjectivity of $\\rho ^{\\mathbb Z} _{{\\mathbb N} ,\\{n\\}}$",
+      "number": "7.4",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The ring $\\Qq{S}$",
+      "number": "7.5",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 182,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polynomial ring",
+          "heading": false
+        },
+        {
+          "term": "completions",
+          "heading": false
+        },
+        {
+          "term": "unity",
+          "heading": false
+        },
+        {
+          "term": "uniﬁes",
+          "heading": false
+        },
+        {
+          "term": "cyclotomic",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0209324v1 [math.AC] 24 Sep 2002 CYCLOTOMIC COMPLETIONS OF POLYNOMIAL RINGS KAZUO HABIRO Abstract. The main object of study in this paper is the completion Z[q]N = lim ←−n Z[q]/((1−q)(1−q2) · · · (1−qn)) of the polynomial ring Z[q], which arises from the study of a new invariant of integral homology 3- spheres with values in Z[q]N announced by the author, which uniﬁes all the sl2 Witten-Reshetikhin-Turaev",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0209324v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": "5",
+      "words": 1603,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zqn",
+          "heading": false
+        },
+        {
+          "term": "cyclotomic completions",
+          "heading": false
+        },
+        {
+          "term": "modz",
+          "heading": false
+        },
+        {
+          "term": "zagier cite",
+          "heading": false
+        },
+        {
+          "term": "ref sec",
+          "heading": false
+        },
+        {
+          "term": "zeta",
+          "heading": false
+        },
+        {
+          "term": "monic",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:introduction} The main object of study in this paper is the completion \\begin{equation} \\label{eq:3} \\ZqN = \\varprojlim_{n\\ge 0} \\modZ [q] /((q)_n) \\end{equation} of the polynomial ring $\\modZ [q]$ in an indeterminate $q$, where we use the notation \\[ (q)_n =(1-q)(1-q^2)\\cdots(1-q^n)\\in \\modZ [q], \\quad n\\ge 0. \\] Each element $a\\in \\ZqN$ is expressed as an infinite sum \\begin{equation} \\label{eq:17} a =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 243,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "modn",
+          "heading": false
+        },
+        {
+          "term": "preliminaries",
+          "heading": true
+        },
+        {
+          "term": "ring",
+          "heading": false
+        },
+        {
+          "term": "homomorphism",
+          "heading": false
+        },
+        {
+          "term": "letter",
+          "heading": false
+        },
+        {
+          "term": "separated",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:preliminaries} Throughout the paper, rings are unital and commutative, and homomorphisms of rings are unital. By ``homomorphism'' we will usually mean a ring homomorphism. Two rings that are considered to be canonically isomorphic to each other will often be identified. Also, if a ring $R$ embeds into another ring $R'$ in a natural way, we will often regard $R$ as a subring of $R'$. If $R$ is a ring and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-monic-completions-of-polynomial-rings",
+      "number": "3",
+      "title": "Monic completions of polynomial rings",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 10,
+      "labelStart": "6",
+      "labelEnd": "10",
+      "words": 1928,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zzzcolon rqm",
+          "heading": false
+        },
+        {
+          "term": "modf prec",
+          "heading": false
+        },
+        {
+          "term": "rqm rightarrow",
+          "heading": false
+        },
+        {
+          "term": "subset modm",
+          "heading": false
+        },
+        {
+          "term": "subset modn",
+          "heading": false
+        },
+        {
+          "term": "rqm simeq",
+          "heading": false
+        },
+        {
+          "term": "zzzcolon rqs",
+          "heading": false
+        },
+        {
+          "term": "rangle zzzcolon",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:lemma-compl-polyn} \\subsection{Definitions and basic properties} \\label{sec:defin-basic-prop} For a ring $R$ let $\\modM _R$ denote the set of the monic polynomials in $R[q]$, which is a directed set with respect to the divisibility relation $|$. For a subset $M\\subset \\modM _R$, let $M^*$ denote the multiplicative set in $R[q]$ generated by $M$, which is a directed subset of $\\modM _R$. The principal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-5-expansions-at-roots-of-unity",
+      "number": "5",
+      "title": "Expansions at roots of unity",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "12",
+      "words": 901,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "leftrightarrow zeta",
+          "heading": false
+        },
+        {
+          "term": "modn leftrightarrow",
+          "heading": false
+        },
+        {
+          "term": "ord zeta",
+          "heading": false
+        },
+        {
+          "term": "zeta zzzvert",
+          "heading": false
+        },
+        {
+          "term": "zeta zzzcolon",
+          "heading": false
+        },
+        {
+          "term": "zzzcolon rqz",
+          "heading": false
+        },
+        {
+          "term": "subset modn",
+          "heading": false
+        },
+        {
+          "term": "leftrightarrow connected",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:z-cycl-compl} For an integral domain $R$ of characteristic $0$ let $Z^R$ denote the set of the roots of unity in $R$. If $S\\subset \\modN $, then set $Z^R_S=\\{\\zeta \\in Z^R\\zzzvert \\ord\\zeta \\in S\\}$. For a subset $Z\\subset Z^R$ set \\[ \\RqZ = \\Rq{M_Z}, \\] where $M_Z = \\{q-\\zeta \\zzzvert \\zeta \\in Z\\}\\subset \\modM _R$. If $Z'\\subset Z$, then set \\[ \\rho ^R_{Z,Z'}=\\rho ^R_{M_Z,M_{Z'}}\\zzzcolon",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-6-values-at-roots-of-unity",
+      "number": "6",
+      "title": "Values at roots of unity",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 826,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zzzcolon rqs",
+          "heading": false
+        },
+        {
+          "term": "rqs rightarrow",
+          "heading": false
+        },
+        {
+          "term": "completion rqs",
+          "heading": false
+        },
+        {
+          "term": "bar modq",
+          "heading": false
+        },
+        {
+          "term": "zzzcolon rqz",
+          "heading": false
+        },
+        {
+          "term": "subset modn",
+          "heading": false
+        },
+        {
+          "term": "ord zeta",
+          "heading": false
+        },
+        {
+          "term": "cdots phi",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:values-at-roots} \\begin{theorem} \\label{thm:3} Let $R$ be a subring of the field $\\bar\\modQ $ of algebraic numbers, $S\\subset \\modN $ a $\\Leftrightarrow _R$-connected subset, and $T\\subset S$ a subset. Suppose that for some $n\\in S$ there are infinitely many elements $m\\in T$ with $m\\Leftrightarrow _Rn$. Then the homomorphism $\\tau ^R_{S,T}\\zzzcolon \\RqS\\rightarrow P_T(R)$ is injective. In particular, if",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-7-remarks",
+      "number": "7",
+      "title": "Remarks",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "16",
+      "words": 670,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zqn modz",
+          "heading": false
+        },
+        {
+          "term": "zqn subset",
+          "heading": false
+        },
+        {
+          "term": "zqn cap",
+          "heading": false
+        },
+        {
+          "term": "phi modn",
+          "heading": false
+        },
+        {
+          "term": "zqs",
+          "heading": false
+        },
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "inclusion supset",
+          "heading": false
+        },
+        {
+          "term": "elements phi",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:some-remarks} \\subsection{Units in $\\ZqS$} \\label{sec:invertibility-q} If $R$ is a ring and $S\\subset \\modM _R$ is a subset consisting of monic polynomials with the constant terms being units in $R$, then the element $q$ is invertible in $\\RqS$. In particular, we have an explicit formula for $q^{-1}\\in \\RqN$ as follows. \\begin{proposition} \\label{thm:6} For any ring $R$ the element $q\\in \\RqN$ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-73-modules",
+      "number": "7.3",
+      "title": "Modules",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": "16",
+      "labelEnd": null,
+      "words": 971,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "modz modn",
+          "heading": false
+        },
+        {
+          "term": "rho modz",
+          "heading": false
+        },
+        {
+          "term": "modz langle",
+          "heading": false
+        },
+        {
+          "term": "zzzcolon qqs",
+          "heading": false
+        },
+        {
+          "term": "simeq modz",
+          "heading": false
+        },
+        {
+          "term": "modz module",
+          "heading": false
+        },
+        {
+          "term": "otimes modz",
+          "heading": false
+        },
+        {
+          "term": "aqs rightarrow",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:modules} We can define cyclotomic completions also for any $\\modZ $-modules as follows. Let $A$ be a $\\modZ $-module, and let $A[q]$ denote the $\\modZ [q]$-module of polynomials in $q$ with coefficients in $A$. For each $S\\subset \\modN $ let $\\AqS$ denote the completion \\[ \\AqS= \\varprojlim_{f\\in \\PHI_S^*}A[q]/ f A[q]. \\] If $A$ is a ring, then this definition of $\\AqS$ is compatible with the previous",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 2,
+        "items": [
+          "A localization of Z[q]N",
+          "Modules"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "modz modn",
+      "heading": false
+    },
+    {
+      "term": "zqn modz",
+      "heading": false
+    },
+    {
+      "term": "modn leftrightarrow",
+      "heading": false
+    },
+    {
+      "term": "subset modn",
+      "heading": false
+    },
+    {
+      "term": "modn zzzvert",
+      "heading": false
+    },
+    {
+      "term": "phi modn",
+      "heading": false
+    },
+    {
+      "term": "zzzcolon zqn",
+      "heading": false
+    },
+    {
+      "term": "rho modz",
+      "heading": false
+    },
+    {
+      "term": "zzzcolon rqs",
+      "heading": false
+    },
+    {
+      "term": "ring modz",
+      "heading": false
+    },
+    {
+      "term": "zqn rightarrow",
+      "heading": false
+    },
+    {
+      "term": "simeq modz",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 14,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0209324v1"
+  }
+}

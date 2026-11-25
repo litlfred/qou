@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-delta-max-uniform-bound",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:delta-max-uniform-bound",
+  "kind": "proposition",
+  "title": "Uniform bound on the per-level jet residual $|\\Delta^{(n)}|$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-jet-tower-convergence",
+    "papers/quantum-observable-universe/blocks/prop-descent-eigenspaces"
+  ],
+  "cites": [
+    "references/kassel1995",
+    "references/leitner2026"
+  ],
+  "tags": [
+    "jet-tower",
+    "convergence",
+    "operator-norm",
+    "markov-trace",
+    "binding-energy",
+    "legacy-phi-q-tower"
+  ],
+  "leanRef": "qou:QOU.MassTheory.MassEndomorphism.delta_max_uniform_bound",
+  "text": "delta-max-uniform-bound.md",
+  "provenance": "authored"
+}

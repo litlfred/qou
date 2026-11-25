@@ -1,0 +1,1211 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1304.0323v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 6,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "The {\\em \\KLRs}\\ (sometimes called the {\\em quiver Hecke algebras})  are\r\na family of $\\mathbb Z$-graded algebras which {\\em categorifies}\r\nthe negative half of a quantum group (\\cite{KL09, KL11, R08}). More\r\nprecisely, if $U_q(\\g)$ is a quantum group associated with a\r\nsymmetrizable Cartan datum, then there exists a  family of algebras\r\n$\\{R(n)\\}_{n \\in \\Z_{\\ge 0}}$ such that the Grothendieck group of\r\nthe direct sum $\\soplus\\nolimits_{n\\in\\Z_{\\ge0}}R(n)\\gproj$ of\r\nthe categories of finitely generated projective graded $R(n)$-modules\r\nis isomorphic to the integral form\r\n$U^-_{\\A}(\\g)$ of the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1304.0323v3  [math.RT]  26 Mar 2021\nSYMMETRIC QUIVER HECKE ALGEBRAS\nAND\nR-MATRICES OF QUANTUM AFFINE ALGEBRAS\nSEOK-JIN KANG 1, MASAKI KASHIW ARA2, MYUNGHO KIM 3\nAbstract. Let J be a set of pairs consisting of good U ′\nq(g)-modules and invertible\nelements in the base ﬁeld C(q). The distribution of poles of normalized R-matrices\nyields Khovanov-Lauda-Rouquier algebras RJ (β) for each β∈ Q+. We deﬁne a func-\ntorFβ from the category of graded RJ (β)-modules to the category of U ′\nq(g)-modules.\nThe functorF = ⨁\nβ ∈Q+Fβ sends convolution products of ﬁnite-dimensional graded\nRJ (β)-modules to t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum groups and Khovanov-Lauda-Rouquier algebras",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-1-quantum-groups-and-khovanov-lauda-rouquier-alg.md",
+      "narrative": null,
+      "content": "matrices for Khovanov-Lauda-Rouquier algebras and study their basic properties. In\nthe second section, we recall the quantum aﬃne algebras and their representation\ntheory. The notion of normalized R-matrices are also recalled. In th e third section,\nwe deﬁne an ( RJ (β)),U′\nq(g))-bimodule ˆV⊗β and a functor Fβ between the category\nof graded RJ (β)-modules and the category of U′\nq(g)-modules. In the last section, we\nconstruct a category TJ and investigate its fundamental properties. In the appendices,\nwe gather necessary lemmas and propositions on the localization of t ensor categories\nand the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Convention",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-convention.md",
+      "narrative": null,
+      "content": "\\bnum\r\n\\item All the algebras and rings in this paper are assumed to have a unit,\r\nand modules over them are unitary.\r\n\\item For a ring $A$, $A^\\opp$ denotes the opposite ring of $A$.\r\n\\item For a ring $A$,  an $A$-module means a left $A$-module.\r\n\\item For a statement $P$, $\\delta(P)$ is $1$ if $P$ is true and $0$\r\nif $P$ is false.\r\n\\item For a ring $A$, we denote by $\\Mod(A)$ the category of $A$-modules.\r\nWe denote by $A\\proj$ the category of finitely generated projective $A$-modules.\r\nWhen $A$ is an algebra over a field $\\cor$, we denote by $A\\smod$\r\nthe category of $A$-modules which are fi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cartan datum",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-11-cartan-datum.md",
+      "narrative": null,
+      "content": "Let I be an index set. A Cartan datum is a quintuple ( A,P, Π,P∨, Π∨) consisting of\n(a) an integer-valued matrix A = (aij)i,j∈I, called the symmetrizable generalized Cartan\nmatrix, which satisﬁes\n(i) aii = 2 (i∈I),\n(ii) aij≤ 0 (i⁄=j),\n(iii) aij = 0 if aji = 0 (i,j ∈I),\n(iv) there exists a diagonal matrix D = diag(si|i∈I) such that DA is symmetric,\nand si are positive integers.\nSYMMETRIC QUIVER HECKE ALGEBRAS AND R-MATRICES 7\n(b) a free abelian group P , called the weight lattice,\n(c) Π = {αi∈P| i∈I}, called the set of simple roots,\n(d) P∨ := Hom(P, Z), called the co-weight lattice,\n(e) Π ∨ ={h",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Khovanov-Lauda-Rouquier algebras",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-12-khovanov-lauda-rouquier-algebras.md",
+      "narrative": null,
+      "content": "Now we recall the deﬁnition of Khovanov-Lauda-Rouquier algebras associated with\na given Cartan datum ( A,P, Π,P∨, Π∨).\nLet k be a commutative ring. For i,j ∈I such that i⁄=j, set\nSi,j =\n{\n(p,q )∈ Z2\n≥0| (αi,αi)p + (αj,αj)q =−2(αi,αj)\n}\n.\nLet us take a family of polynomials ( Qij)i,j∈I in k[u,v ] which are of the form\n(1.2.1) Qij(u,v ) =\n\n\n\n0 if i =j,∑\n(p,q)∈Si,j\nti,j;p,qupvq if i⁄=j\nwith ti,j;p,q∈ k. We assume that they satisfy ti,j;p,q =tj,i;q,p (equivalently,Qi,j(u,v ) =\nQj,i(v,u )) and ti,j:−aij,0∈ k×.\nWe denote by Sn =⟨s1,...,s n−1⟩ the symmetric group on n letters, where si :=\n(i,i + 1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/thm-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[24, 34]",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "thm-sec-004-01.md",
+      "narrative": null,
+      "content": "For a given Cartan datum (A,P, Π,P∨, Π∨), we take a parameter matrix (Qij)i,j∈J satisfying the conditions in (1.2.1), and let Uq(g) andR(β) be the associated quantum group and Khovanov-Lauda-Rouqui er algebra, respectively. Then there exists an A-algebra isomorphism U− A(g)≃ ⨁ β∈Q+ K(R(β)-gproj).(1.2.4) By duality, we have U− A(g)∨≃ ⨁ β∈Q+ K(R(β)-gmod),(1.2.5) where U− A(g)∨ :={x ∈ U− q (g)| (x,U− A(g))− ⊂ A} and ( , )− denotes the non- degenerate bilinear form on U− q (g) deﬁned in [18, § 3]. The Khovanov-Lauda-Rouquier algebras also categorify the globa l bases. For the deﬁnition of global b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/thm-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[37, 35]",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "thm-sec-004-02.md",
+      "narrative": null,
+      "content": "Assume that A is symmetric and that Qi,j(u,v ) is a poly- nomial in u−v. Assume further that k is a ﬁeld of characteristic 0. Then under the isomorphism in Theorem 1.2.2, the lower global basis (respectively, upper global ba- sis) corresponds to the set of isomorphism classes of indecompos able projective modules (respectively, the set of isomorphism classes of simple modu les).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/lem-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "lem-sec-005-01.md",
+      "narrative": null,
+      "content": "(i) ϕ2 ae(ν) = ( Qνa,νa+1(xa,xa+1) +δνa,νa+1 ) e(ν). (ii){ϕk}1≤k<n satisﬁes the braid relation. (iii) For w ∈ Sn, let w = sa1··· saℓ be a reduced expression of w and set ϕw = ϕa1··· ϕaℓ. Then ϕw does not depend on the choice of reduced expressions of w. (iv) Forw∈ Sn and 1≤k≤n, we have ϕwxk =xw(k)ϕw. (v) Forw∈ Sn and 1≤k <n, if w(k + 1) = w(k) + 1, then ϕwτk =τw(k)ϕw. (vi) ϕw−1ϕwe(ν) = ∏ a<b, w(a)>w(b) (Qνa,νb(xa,xb) +δνa,νb)e(ν). We deﬁne another symmetric bilinear form ( •, • )n on Q by (αi,αj)n =δij. Then the intertwiner ϕwe(ν) has degree ∑ 1≤a<b≤n, w(a)>w(b) ( −(ανa,ανb) + 2(ανa,ανb)n ) .",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "R-matrices for Khovanov-Lauda-Rouquier algebras",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "../sections/sec-005-13-r-matrices-for-khovanov-lauda-rouquier-algebr.md",
+      "narrative": null,
+      "content": "1.3.1. Intertwiners. For|β| =n and 1≤a<n , we deﬁne ϕa∈R(β) by\nϕae(ν) =\n\n\n\n(\nτaxa−xaτa\n)\ne(ν)\n=\n(\nxa+1τa−τaxa+1\n)\ne(ν)\n=\n(\nτa(xa−xa+1) + 1\n)\ne(ν)\n=\n(\n(xa+1−xa)τa− 1\n)\ne(ν) if νa =νa+1,\nτae(ν) otherwise.\n(1.3.1)\n12 S.-J. KANG, M. KASHIW ARA, M. KIM\nThey are called the intertwiners.\nThe following lemma is well-known (for example, it easily follows from the p olyno-\nmial representation of Khovanov-Lauda-Rouquier algebras ([ 24, Proposition 2.3], [ 34,\nProposition 3.12]).\nLemma 1.3.1.\n(i) ϕ2\nae(ν) =\n(\nQνa,νa+1(xa,xa+1) +δνa,νa+1\n)\ne(ν).\n(ii){ϕk}1≤k<n satisﬁes the braid relation.\n(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "R-matrices with spectral parameters",
+      "pageStart": 14,
+      "pageEnd": 19,
+      "target": "../sections/sec-006-14-r-matrices-with-spectral-parameters.md",
+      "narrative": null,
+      "content": "\\Lemma Let $\\Delta^\\pm$ be the set of positive\r\n\\ro resp.\\ negative\\rf\\  roots associated\r\nwith a generalized Cartan matrix, as in {\\rm\\S\\,\\ref{subsec:Cartan}}.\r\nLet $\\set{\\al_i}{i\\in I}$ be the set of simple roots,\r\n$W$ the Weyl group, and $s_i\\in W$ the simple reflection.\r\nLet $G$ be the monoid generated by $\\ts_i$ with the defining relation:\r\n\\eq&&\\text{$\\ts_i\\ts_j= \\ts_j\\ts_i   $ if  $(\\al_i,\\al_j)=0$.}\\eneq\r\nAssume that an element $w$ of $W$ satisfies the following conditions:\r\n\\eq&&\r\n \\text{if $\\al,\\beta\\in\\Delta^+$, $\\al \\not=\\beta$, and $w\\al,\\;w\\beta\\in \\Delta^-$, then ${(\\alpha,\\beta",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "R-matrices for one-dimensional modules",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "../sections/sec-007-15-r-matrices-for-one-dimensional-modules.md",
+      "narrative": null,
+      "content": "\\label{subsec:R1}\r\nLet $\\mu=(\\mu_1,\\ldots, \\mu_n)$ be a sequence of elements in $I$.\r\nLet $L(\\mu)$ be a free $\\cor$-module $\\cor u(\\mu)$ with the\r\ngenerator $u(\\mu)$ of degree $0$. The following lemma can be easily\r\nverified. \\Lemma By defining \\eqn &&x_k u(\\mu)=0,\\quad\r\n\\tau_ku(\\mu)=0, \\quad e(\\nu) u(\\mu) = \\delta_{\\nu,\\mu} u(\\mu),\r\n\\eneqn $L(\\mu)$ becomes an  $R(\\al_{\\mu_1}+\\cdots+\\al_{\\mu_n})$\r\n-module if and only if \\eq &&\\parbox{70ex}{ \\bna\\item\r\n$(\\al_{\\mu_k},\\al_{\\mu_{k+1}})<0$ for $1\\le k<n$,\r\n\\item if  $\\mu_{k}=\\mu_{k+2}$ $(1\\le k\\le n-2)$,\r\nthen\r\n$\\lan h_{\\mu_k}, \\al_{\\mu_{k+1}}\\ran\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Uniqueness of R-matrices",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-008-16-uniqueness-of-r-matrices.md",
+      "narrative": null,
+      "content": "The following lemma says that the convolution of\r\ntwo  simple modules\r\n(after adding spectral parameters)\r\nremains simple.\r\n\r\n\\Lemma Assume that $\\cor$ is a field. Let $z$, $z'$ be algebraically\r\nindependent indeterminates and set $K=\\cor(z,z')$. Let $M$ and $N$\r\nbe a simple $R( \\beta )$-module and a simple $R( \\gamma )$-module,\r\nrespectively. Then $K\\tens_{\\cor[z, z']} (M_z\\circ N_{z'})$ is a\r\nsimple $K\\tens R( \\beta+ \\gamma )$-module. \\enlemma\r\n\r\n\r\n\\Proof\r\nIn  this  proof,  we  write\r\n $M_z$ for the  $K\\tens R( \\beta )$-module $K\\tens_{\\cor[z]} M_z$ \r\nfor the sake of simplicity. Recall that",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum affine algebras and their representations",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "../sections/sec-009-2-quantum-affine-algebras-and-their-representati.md",
+      "narrative": null,
+      "content": "\\subsection{Quantum affine algebras}\r\n \\hfill\r\n\r\nIn this section, we briefly review the representation theory of quantum affine algebras following \\cite{AK, Kas02}.\r\nHereafter, we take the algebraic closure of $\\C(q)$\r\nin $\\cup_{m >0}\\C((q^{1/m}))$ as a base field $\\cor$.\r\n\r\nLet $ I$ be an index set and $A=(a_{ij})_{i,j \\in I}$ be a generalized\r\nCartan matrix of affine type; i.e., $A$ is positive semi-definite of corank 1.\r\n We choose $0\\in I$ as the leftmost vertices in the tables\r\nin \\cite[{pages 54, 55}]{Kac} except $A^{(2)}_{2n}$-case, in which\r\ncase we take the longest simple root as $\\al",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "R-matrices",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "../sections/sec-010-22-r-matrices.md",
+      "narrative": null,
+      "content": "\\hfill\r\n\r\nWe recall the notion of R-matrices of good modules following \\cite[\\S\\;8]{Kas02}.\r\nFor a vector $v$ in a $\\uqpg$-module $M$,\r\nassume that $\\wt(v)$ is of level $0$ and dominant with respect to $I_0$.\r\nThen\r\n$v$ is an extremal weight vector if and only if\r\n$\\wt(\\uqpg v) \\subset \\wt(v) + \\sum_{i \\in I_0} \\Z_{\\le0} \\cl(\\alpha_i)$.\r\nIn this case, we call $v$ a\r\n{\\em dominant extremal weight vector of $M$}.\r\n\r\nLet $M_1$ and $M_2$ be good $\\uqpg$-modules, and let $u_1$ and $u_2$\r\nbe dominant extremal weight vectors in $M_1$ and $M_2$,\r\nrespectively. Then there exists a unique $\\uqpg$-module",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Affine Schur-Weyl duality via Khovanov-Lauda-Rouquier algebras",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/sec-011-3-affine-schur-weyl-duality-via-khovanov-lauda-r.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Action of Khovanov-Lauda-Rouquier algebras on V\"0362V",
+      "pageStart": 27,
+      "pageEnd": 31,
+      "target": "../sections/sec-012-31-action-of-khovanov-lauda-rouquier-algebras-on.md",
+      "narrative": null,
+      "content": "Let $\\{V_s\\}_{s\\in \\mathcal{S}}$ be a family of good $\\uqpg$-modules\r\nand  let $\\lambda_s$ be a dominant extremal weight of $V_s$ and $v_s$\r\na dominant extremal weight vector in $V_s$ of weight $\\lambda_s$.\r\n\r\n\r\nLet $J$ be an index set and\r\nlet $X \\colon J \\rightarrow \\mathbb{T}$ and\r\n$S \\colon J \\rightarrow \\Ss$ be maps,\r\nwhere $\\mathbb{T}=\\cor^\\times$ is the algebraic torus.\r\nFor each $i,j \\in J $,\r\nwe choose $c_{i,j}(u,v)\\in\\cor[[u,v]]$ such that\r\n\\eq&&\\ba{l} \\label{cond:cij}\r\nc_{i,j}(u,v)c_{j,i}(v,u)=1,\\\\\r\nc_{i,i}(u,v)=1.\r\n\\ea\r\n\\eneq\r\nSet\r\n\\begin{equation}\r\nP_{ij}(u,v) =(u-v)^{d_{ij}}c_{i,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Functor F",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "../sections/sec-013-32-the-functor-f.md",
+      "narrative": null,
+      "content": "Since $\\bV[{ \\beta }]$ is a $(\\uqpg, R^J({ \\beta }))$-bimodule, we can construct the following functor:\r\n\\begin{align}\r\n\\F_{ \\beta } \\colon \\Modg(R^J(\\beta)) &\\rightarrow \\Mod(\\uqpg)\\label{eq:the functor}\r\n\\end{align}\r\n  sending an $R^J(\\beta)$-module $M$  to the $\\uqpg$-module\r\n\\eqn \\F_{ \\beta } (M) \\seteq \\bV[{ \\beta }] \\otimes_{R^J({ \\beta })}\r\nM. \\eneqn\r\nSet \\eqn && \\F_n \\seteq \\bigoplus_{\\beta \\in \\rootl^+, \\,\r\n|\\beta|=n } \\F_\\beta : \\Mod(R^J(n))\r\n\\to \\Mod(\\uqpg),  \\\\\r\n&& \\F\\seteq \\soplus_{n\\in\\Z_{\\ge0}}\\F_n\r\n\\col\\soplus_{n\\in\\Z_{\\ge0}} \\Mod(R^J(n)) \\rightarrow \\Mod(\\uqpg).\r\n\\eneqn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Exactness of the functor F",
+      "pageStart": 33,
+      "pageEnd": 36,
+      "target": "../sections/sec-014-33-exactness-of-the-functor-f.md",
+      "narrative": null,
+      "content": "The following\r\npropositions are  key ingredients in proving our main theorem.\r\n\\begin{prop}[{\\cite[Corollary 2.9]{Kato12}, \\cite[Theorem 4.6]{McNa12}}]\n\\label{pro:finite global dimension}\r\nIf the quiver associated with  $R^J$   is of   finite  type $A,D,E$, then $R^J( \\beta )$ has\r\na finite global dimension  for every $\\beta \\in \\rootl^+$.\r\n\\end{prop}\r\n\r\n\r\n\r\n\\begin{prop} \\label{pro:projectivity}\r\nLet $A\\to B$ be a homomorphism of algebras.\r\nWe assume the following conditions:\r\n\\bna\r\n\\item $B$ is a finitely generated projective $A$-module,\r\n\\item $\\Hom_A(B,A)$ is a projective $B$-module,\r\n\\item",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "KLR-modules in A case",
+      "pageStart": 36,
+      "pageEnd": 43,
+      "target": "../sections/sec-015-42-klr-modules-in-a-case.md",
+      "narrative": null,
+      "content": "Let us recall the representation theory of \\KLRs\\ in $A$-case.\r\n\r\n A pair of integers  $(a,b)$ such that $ a \\leq b$\r\nis called a {\\em segment}.  The \\emph{length} of $(a,b)$  is $b-a+1$.\r\nA \\emph{multisegment} is a  finite sequence of  segments.\r\n\r\n\r\n For a segment $(a,b)$ of length $\\ell$, we define a graded $1$-dimensional\r\n $R( \\oep_a-\\oep_{b+1} )$-module\r\n $L(a,b)=\\cor u{(a,b)}$ in $R( \\oep_a-\\oep_{b+1} )\\gmod$ which is generated by a\r\nvector $u{(a,b)}$ of degree $0$ with the action of $R( \\oep_a-\\oep_{b+1} )$ given by\r\n \\begin{align}\r\nx_m u{(a,b)} =0 , && \\tau_k u{(a,b)} =0 , &&\r\ne(\\nu)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Properties of the functor F",
+      "pageStart": 43,
+      "pageEnd": 46,
+      "target": "../sections/sec-016-43-properties-of-the-functor-f.md",
+      "narrative": null,
+      "content": "The {\\em trivial representation} is the 1-dimensional $\\UA$-module\r\non which $e_i$, $f_i$ act by $0$.\r\nIt is a unit object of the tensor category\r\n$\\UA\\smod$.\r\nFor $k > N$ or $k < 0$, $V(\\varpi_{k})$ is understood to be zero, and the modules\r\n$V(\\varpi_{0})$ and $V(\\varpi_{N})$ are understood to be the trivial representation.\r\n\r\n\\begin{prop} \\label{prop:image of fund. repns.}\r\nLet $(a,b)$ be a segment with length $\\ell\\seteq b-a+1$.\r\n Then we have\r\n\\begin{align*}\r\n\\F(L(a,b)) \\simeq V(\\varpi_\\ell)_{(-q)^{a+b}}\\simeq\\begin{cases}\r\n0 & \\text{if \\/ $\\ell >N$,} \\\\\r\nV(\\varpi_\\ell)_{(-q)^{a+b}} & \\te",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/cor-sec-017-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 61,
+      "target": "cor-sec-017-02.md",
+      "narrative": null,
+      "content": "The functor F′ :A/S→ U′ q(ˆslN )-mod sends simple objects in A/S to simple objects in U′ q(ˆslN )-mod. 4.5. The categoryT′ J . Since all the images of L(a,a +N−1) underF′ are isomorphic to the trivial representation of U′ q(ˆslN ), we can localize A/S one step further by using Appendix A.6. Set (4.5.1) La :=L(a,a +N− 1) and ua :=u(a,a +N− 1)∈La for a∈ Z. ThenF (La) is isomorphic to the trivial representation of U′ q(ˆslN ). The following proposition will play a central role in the rest of this sect ion.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/cor-sec-017-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 61,
+      "target": "cor-sec-017-04.md",
+      "narrative": null,
+      "content": "For any a,j ∈J, the R(N + 1)-module homomorphism fa,j(z)RLa,L(j)z : La◦L(j)z−−→qca(αj )z−1L(j)z◦La induces an isomorphism fa,j(z)RLa,L(j)z : La◦L(j)z−−→qca(αj )L(j)z◦La inAbig/S big.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/cor-sec-017-12",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 61,
+      "target": "cor-sec-017-12.md",
+      "narrative": null,
+      "content": "There exist a surjective homomorphism Lℓ(a)◦Kℓ(a) ։L◦(ℓ+1) a ,(4.6.2) and an injective homomorphism L◦(ℓ+1) a ֌q−ℓ−1Kℓ(a)◦Lℓ(a)(4.6.3) in R ( (ℓ + 1)βa ) -gmod.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/lem-sec-017-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 61,
+      "target": "lem-sec-017-07.md",
+      "narrative": null,
+      "content": "Let S be the automorphism of PJ = ⨁ a∈Z Zǫa given by S(ǫa) = ǫa+N . We deﬁne the bilinear form B on PJ by B(x,y ) =− ∑ k>0 (Skx,y ) for x,y∈PJ .(4.5.6) Then we have ca(x) = B(x,ǫa−ǫa+N )−B(ǫa−ǫa+N,x ) for any x∈ QJ .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/lem-sec-017-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 61,
+      "target": "lem-sec-017-08.md",
+      "narrative": null,
+      "content": "For any a∈J and β∈ Q+ J , the ( R(ǫa−ǫa+N−1 +β),R (β) ) - bimodule homomorphism fa,βRLa,RK (β) : La⋆RK(β)−−→RK(β)⋆La induces an isomorphism fa,βRLa,R(β) : La⋆R (β)−−→R(β)⋆La inAbig/S big which commutes with the right actions of R(β).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/lem-sec-017-14",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 61,
+      "target": "lem-sec-017-14.md",
+      "narrative": null,
+      "content": "Forb∈J, set Vk =Vq2(b−k) (1≤k≤N), W =VN⊗VN−1⊗···⊗ V1, and choose an epimorphism ϕ : W→ k in U′ q(ˆslN )-mod. Let Rnorm W,Vz : W⊗Vz→Vz⊗W be the R-matrix obtained by the composition of normalized R- matrices VN⊗···⊗ V1⊗Vz Rnorm V1 ,Vz −−−−→VN⊗···⊗ V2⊗Vz⊗V1−−→··· Rnorm VN ,Vz −−−−→Vz⊗VN⊗···⊗ V1, and let g(z) = qN−1(z−q2(b−N )) z−q2(b−1) . Then we have a commutative diagram W⊗Vz Rnorm W,Vz /d47/d47 ϕ⊗Vz /d15/d15 Vz⊗W Vz⊗ϕ /d15/d15 k⊗Vz g(z) /d47/d47Vz⊗ k. (4.6.6)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prop-sec-017-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 61,
+      "target": "prop-sec-017-01.md",
+      "narrative": null,
+      "content": "(a) If an object X is simple inA/S, then there exists a simple object M inA satisfying (i)Q(M)≃X, (ii) bk−ak +1≤N for 1≤k≤r, where ( (a1,b 1),..., (ar,br) ) is the multisegment associated with M. (b) Let ( (a1,b 1),..., (ar,br) ) be the multisegment associated with a simple object M in A. If bk−ak + 1≤N for 1≤k≤r, thenQ(M) is simple in A/S. SYMMETRIC QUIVER HECKE ALGEBRAS AND R-MATRICES 47",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prop-sec-017-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 61,
+      "target": "prop-sec-017-03.md",
+      "narrative": null,
+      "content": "Leta,j∈ Z and set p = ( ǫa−ǫa+N,αj)− 2δ(a≤j≤a +N− 1) = −δj,a−δj,a−1−δj,a+N−1−δj,a+N− 2δ(a<j <a +N− 1). (i) The image of the morphism RLa,L(j)z : La◦L(j)z→qpL(j)z◦La is contained in qpzδ(a≤j<a+N−1)L(j)z◦La. (ii) The image of the morphism RL(j)z,La : L(j)z◦La→qpLa◦L(j)z is contained in qpzδ(a<j≤a+N−1)La◦L(j)z. (iii) If j⁄=a− 1,a +N, then the morphisms z−δ(a≤j<a+N−1)RLa,L(j)z : La◦L(j)z→qδj,a−δj,a+N−1L(j)z◦La and (−1)δ(a<j≤a+N−1)z−δ(a<j≤a+N−1)RL(j)z,La : qδj,a−δj,a+N−1L(j)z◦La→La◦L(j)z are isomorphisms and the inverses to each other. 48 S.-J. KANG, M. KASHIW ARA, M. KIM (iv) If j =a− 1, then we h",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prop-sec-017-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 61,
+      "target": "prop-sec-017-06.md",
+      "narrative": null,
+      "content": "For any β∈ Q+ J , the R(ǫa−ǫa+N +β)-module homomorphism fa,βRLa,RK (β) : La◦RK(β)→qca(β)RK(β)◦La induces an isomorphism La◦R(β)∼−→qca(β)R(β)◦La inAbig/S big.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prop-sec-017-11",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 61,
+      "target": "prop-sec-017-11.md",
+      "narrative": null,
+      "content": "Forℓ≥ 0, let us denote by z theR(γa+ℓβa)-module endomorphism of Kℓ(a) given by the action of x1 on L◦(ℓ+1) a . Then we have (i) zℓ+1 = 0, (ii) Ker z = Imzℓ =R(αa,γa +ℓβa)u⊗(ℓ+1) a ≃K0(a)◦L◦ℓ a , (iii) Ker zℓ = Imz =R(αa,γa +ℓβa)R(ℓβa,βa)u⊗(ℓ+1) a ≃Kℓ−1(a)◦La.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quotient of the category R-gmod",
+      "pageStart": 46,
+      "pageEnd": 61,
+      "target": "../sections/sec-017-44-quotient-of-the-category-r-gmod.md",
+      "narrative": null,
+      "content": "ℓ≥0\nAℓ.\nSimilarly, we deﬁne Abig\nℓ andAbig byAbig\nℓ = Mod gr(R(ℓ)) andAbig = ⨁\nℓ∈Z≥0\nAbig\nℓ . Then\nwe have a functor F = ⨁\nℓ≥0Fℓ :Abig→ Mod(U′\nq(ˆslN )), whereFℓ is the functor from\nAbig\nℓ to Mod(U′\nq(ˆslN )) given in ( 3.2.1).\nLetS be the smallest Serre subcategory of A (see Appendix B) such that\n(1)S containsL(a,a +N) for any a∈ Z,\n(2) X◦Y, Y◦X∈S for all X∈A and Y∈S .(4.4.1)\nNote thatS containsL(a,b ) if b≥a +N.\nLet us denote byA/S the quotient category ofA relative toS and denote byQ :A→\nA/S the canonical functor. Since F sendsS to 0, the functor F :A→ U′\nq(ˆslN )-mod\nfactors throughQ by Th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/rem-sec-017-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 61,
+      "target": "rem-sec-017-05.md",
+      "narrative": null,
+      "content": "To make Corollary 4.5.2 hold, it is enough to take fa,j(z) = cz−δ(a≤j<a+N−1)−δj,a+N for an arbitrary c∈ k×. We take (−1)δj,a+N asc so that (ii) and (iii) in Theorem 4.5.8 below hold. Forβ∈ Q+ J , we deﬁne commutative algebras Pβ := ⨁ ν∈J β k[x1,...,x ℓ]e(ν)⊂R(β), K(β) := ⨁ ν∈J β k[x±1 1 ,...,x ±1 ℓ ]e(ν), and 50 S.-J. KANG, M. KASHIW ARA, M. KIM RK(β) :=K(β)⊗ Pβ R(β)⊃R(β), where ℓ =|β|. Set fa,β = ∑ ν∈I β ℓ∏ k=1 fa,νk(xk)e(ν)∈K(β)⊂RK(β). It belongs to the center of RK(β). Hence we may consider fa,β as an R(β)-module endomorphism of RK(β). Since R(β)≃ ⨁ ν∈J β (L(ν1))z1◦···◦ (L(νℓ))zℓ, we can ap",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/rem-sec-017-10",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 61,
+      "target": "rem-sec-017-10.md",
+      "narrative": null,
+      "content": "Note thatA,A/S andT′ J are QJ -graded (namely,T′ J has a decomposi- tionT′ J = ⨁ α∈QJ (T′ J )α, etc.). The category TJ is QJ,N-graded with QJ,N :=QJ/ ∑ a∈Z Zβa, where βa =εa−εa+N . Note that QJ,N≃ N−1⨁ k=1 Zαk. 54 S.-J. KANG, M. KASHIW ARA, M. KIM 4.6. Rigidity of the tensor categories T′ J andTJ . In this subsection, we will show that the tensor category T′ J is rigid; i.e., every object in T′ J has a left dual and a right dual. The rigidity of TJ follows from this fact. Letℓ be a non-negative integer and a∈J. We set βa =ǫa−ǫa+N andγa =βa−αa = ǫa+1−ǫa+N . Set Kℓ(a) :=e(αa,γa +ℓβa)L◦(ℓ+1) a ∈R",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/thm-sec-017-09",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 61,
+      "target": "thm-sec-017-09.md",
+      "narrative": null,
+      "content": "The family{La}a∈J is a commuting family of central objects in A/S (see §A.6). Namely, the following statements hold. (i) La is a central object in A/S (see § A.3); i.e., (a) fa,j(z)RLa,L(j)z induces an isomorphism in A/S Ra(X) :La⋆X ∼−→X⋆L a functorial in X∈A/S, (b) the diagram La⋆X ⋆Y Ra(X)⋆Y /d47/d47 Ra(X⋆Y ) /d41/d41❚❚❚❚❚❚❚❚❚❚❚❚❚❚❚ X⋆L a⋆Y X⋆Ra(Y ) /d15/d15 X⋆Y ⋆L a commutes inA/S for any X,Y ∈A/S. (ii) The isomorphism Ra(La) :La⋆La ∼−→La⋆La coincides with idLa⋆La inA/S. 52 S.-J. KANG, M. KASHIW ARA, M. KIM (iii) Fora,b∈ Z, the isomorphisms Ra(Lb) :La⋆Lb ∼−→Lb⋆La and Rb(La) :Lb⋆La ∼−→La⋆Lb",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/thm-sec-017-13",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 61,
+      "target": "thm-sec-017-13.md",
+      "narrative": null,
+      "content": "(i) The object ~Kℓ(a) is a right dual to Lℓ(a) in the category T′ J and (εℓ,ηℓ) is a quasi-adjunction (see § A.2). (ii) The categoryT′ J andTJ are rigid tensor categories; i.e., every object has a right dual object and a left dual object. SYMMETRIC QUIVER HECKE ALGEBRAS AND R-MATRICES 57",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/thm-sec-017-15",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 61,
+      "target": "thm-sec-017-15.md",
+      "narrative": null,
+      "content": "Fork∈ Z≥0 and i,j∈ Z, set ck,0(u,v ) = ∏ 0≤s≤k, s≡k modN Bs(u,v )Bs−N (u,v ) Bs−1(u,v )Bs−N +1(u,v ), ci,j(u,v ) = { ci−j,0(u,v ) for j≤i, cj−i,0(v,u )−1 for j >i. 60 S.-J. KANG, M. KASHIW ARA, M. KIM Then the diagram (A.7.1) is commutative for the functor F′ :A/S→ U′ q(ˆslN )-mod and the commuting family of central objects {(La,Ra)}a∈J . That is, the diagram F′(La⋆M ) F ′(Ra(M )) /d15/d15 ∼ /d47/d47F′(La)⊗F′(M) ga⊗F ′(M )/d47/d47 k⊗F′(M) /d40/d40◗◗◗◗◗◗◗◗◗◗◗◗ F′(M ⋆La) ∼ /d47/d47F′(M)⊗F′(La) F ′(M )⊗ga/d47/d47F′(M)⊗ k /d47/d47F′(M) (4.6.10) is commutative for any isomorphism ga :F′(La)∼−→k.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Category CJ",
+      "pageStart": 61,
+      "pageEnd": 65,
+      "target": "../sections/sec-018-47-the-category-cj.md",
+      "narrative": null,
+      "content": "Since   all the images of $L(a,a+N-1)$  under $\\F'$  are isomorphic\r\nto the trivial representation of $\\UA$,\r\n we can localize  $\\As/\\Ss$  one step further by\r\nusing Appendix~ \\ref{app:Local_tensor_categories}.\r\n\r\nSet\r\n\\begin{equation}\r\nL_a\\seteq L(a, a+N-1)  \\quad \\text{and} \\quad\r\n  u_a\\seteq u(a,a+N-1)\\in L_a\r\n\\quad\\text{for} \\  a \\in \\Z.\r\n\\end{equation}\r\nThen $\\F(L_a)$ is isomorphic to the trivial representation of\r\n$\\UA$.\r\n\r\nThe following proposition will play a central role in the rest of this section.\r\n\r\n\\begin{prop}  Let $a,j\\in\\Z$ and set\r\n\\eqn\r\np&=&(\\oep_a-\\oep_{a+N},\\al_j)-2\\delta(a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. Localization",
+      "pageStart": 65,
+      "pageEnd": 66,
+      "target": "../sections/sec-019-appendix-a-localization.md",
+      "narrative": null,
+      "content": "In this section, we shall recall the basic facts on the localization of t ensor categories.\nSince the materials here are more or less known or elementary, we om it most of the\nproofs.\n66 S.-J. KANG, M. KASHIW ARA, M. KIM",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.1. Tensor category",
+      "pageStart": 66,
+      "pageEnd": 67,
+      "target": "../sections/sec-020-a1-tensor-category.md",
+      "narrative": null,
+      "content": "gory). In this paper, we mainly consider additive tensor categories.\nA tensor category consists of the following data:\n(i) a category T ,\n(ii) a bifunctor •⊗ • :T ×T →T,\n(iii) an isomorphism a(X,Y,Z ) : (X⊗Y )⊗Z ∼−→X⊗(Y⊗Z) which is functorial in\nX,Y,Z ∈T ,\n(iv) an object 1∈T (called a unit object ),\n(v) an isomorphism ε : 1⊗ 1 ∼−→1\nsatisfying the following axioms:\n(a) (the Pentagon axiom) the following diagram is commutative for an y X,Y,Z,W ∈\nT :\n((X⊗Y )⊗Z)⊗W\na(X,Y,Z )⊗W\n/d15/d15\na(X⊗Y,Z,W ) /d47/d47 (X⊗Y )⊗(Z⊗W )\na(X,Y,Z⊗W )\n/d15/d15\n(X⊗(Y⊗Z))⊗W\na(X,Y⊗Z,W )\n/d15/d15\nX⊗((Y⊗Z)⊗W )\nX⊗a(Y,Z,W )",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/lem-sec-021-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 67,
+      "pageEnd": 69,
+      "target": "lem-sec-021-01.md",
+      "narrative": null,
+      "content": "2.2. LetT be a tensor category with a unit object 1 and let ε : X⊗Y→ 1 be a morphism in T. Then the following conditions are equivalent. (a) There exists a morphism η : 1→Y⊗X such that (ε,η ) is an adjunction. (b) There exists a morphism η : 1→ Y ⊗X such that (ε,η ) is a quasi-adjunction. Namely, the compositions f : X X⊗η −−−→X⊗Y⊗X ε⊗X −−−→X and g : Y η⊗Y −−−→Y⊗X⊗Y Y⊗ε −−−→Y are isomorphisms. (c) For any V,W ∈T , the composition HomT (V,Y ⊗W )→ HomT (X⊗V,X ⊗Y⊗W ) ε⊗W − −−− →HomT (X⊗V,W ) is a bijection. (d) For any V,W ∈T , the composition HomT (V,W ⊗X)→ HomT (V⊗Y,W ⊗X⊗Y ) W⊗ε − −−− →HomT (V⊗",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/lem-sec-021-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 67,
+      "pageEnd": 69,
+      "target": "lem-sec-021-02.md",
+      "narrative": null,
+      "content": "2.3. LetT be an abelian tensor category such that •⊗ • is an exact bi- functor. Let 0→X′→X→X′′→ 0, 0→Y′′→Y→Y′→ 0 be exact sequences and morphisms ε′ : X′⊗Y′→ 1, ε : X⊗Y→ 1, ε ′′ : X′′⊗Y′′→ 1, η′ : 1→Y′⊗X′, η : 1→Y⊗X, η ′′ : 1→Y′′⊗X′′ are given so that the following the diagrams are commutative : SYMMETRIC QUIVER HECKE ALGEBRAS AND R-MATRICES 69 X′⊗Y /d47/d47 /d15/d15 X′⊗Y′ ε′ /d15/d15 X⊗Y ε /d47/d47 1 X⊗Y′′ /d79/d79 /d47/d47X′′⊗Y′′, ε′′ /d79/d79 Y′⊗X′ /d47/d47Y′⊗X /d15/d15 η′ /d79/d79 η′′ /d15/d15 η /d47/d47Y⊗X /d15/d15 Y′′⊗X′′ /d47/d47Y⊗X′′. Assume further that (ε′,η′) and (ε′′,η′′) are quasi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.2. Adjunction and Quasi-adjunction",
+      "pageStart": 67,
+      "pageEnd": 69,
+      "target": "../sections/sec-021-a2-adjunction-and-quasi-adjunction.md",
+      "narrative": null,
+      "content": "Deﬁnition A.2.1. LetT be a tensor category with a unit object 1. Let (X,Y ) be a\npair of objects and let ε : X⊗Y→ 1 and η : 1→Y⊗X be morphisms.\n(i) We say that (ε,η ) is an adjunction and that X is a left dual to Y and Y is a\nright dual to X if the conditions (a) and (b) below are satisﬁed:\n(a) the composition X≃X⊗ 1\nX⊗η\n−−−→X⊗Y⊗X\nε⊗X\n−−−→1⊗X≃X is equal to\nthe identity of X.\n(b) the composition Y≃ 1⊗Y\nη⊗Y\n−−−→Y⊗X⊗Y\nY⊗ε\n−−−→1⊗Y ≃Y is equal to the\nidentity of Y .\n(ii) If the composition X⊗ 1\nX⊗η\n−−−→X⊗ Y ⊗ X\nε⊗X\n−−−→1⊗ X and 1⊗Y\nη⊗Y\n−−−→\nY⊗X⊗Y\nY⊗ε\n−−−→1⊗Y are isomorphisms, then we say that (ε,η",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.3. Central objects",
+      "pageStart": 69,
+      "pageEnd": 70,
+      "target": "../sections/sec-022-a3-central-objects.md",
+      "narrative": null,
+      "content": "P ofT equipped with an isomorphism\nRP (X) :P⊗X ∼−→X⊗P\n70 S.-J. KANG, M. KASHIW ARA, M. KIM\nfunctorial in X∈T such that\nP⊗X⊗Y\nRP (X)\n/d47/d47\nRP (X⊗Y )\n/d43/d43\nX⊗P⊗Y\nRP (Y )\n/d47/d47X⊗Y⊗P commutes for any X,Y ∈T .(A.3.1)\nRemark that we don’t assume that RP (P ) = id P⊗P . If ( P,RP ) is a central object,\nthen the following diagram is necessarily commutative:\nP⊗ 1\n∼\nRP (1)\n/d47/d47\n∼\n/d42/d42❯❯❯❯❯❯❯❯❯❯❯❯❯❯❯❯❯❯❯ 1⊗P\n≀/d15/d15\nP.\nIf (P1,RP1) and (P2,RP2) are central objects, then P1⊗P2 is a central object with\nRP1⊗P2(X) :P1⊗P2⊗X ∼−−−−−−−→P1⊗RP2 (X) P1⊗X⊗P2 ∼−−−−−−−→RP1 (X)⊗P2\nX⊗P1⊗P2.\nThe categor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/lem-sec-023-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 70,
+      "pageEnd": 71,
+      "target": "lem-sec-023-01.md",
+      "narrative": null,
+      "content": "4.2. Let ({Pi}i∈I,{Bi,j}i,j∈I) and ({P′ i}i∈I,{B′ i,j}i,j∈I) be two commuting families, and let ({Pα}α∈Z⊕I ≥0 ,{fα,β}α,β∈Z⊕I ≥0 ) and ({P′α}α∈Z⊕I ≥0 ,{f′ α,β}α,β∈Z⊕I ≥0 ) be the cor- responding families as above. Let ϕi : Pi→ P′ i (i∈ I) be a family of morphisms such that the diagram Pi⊗Pj Bi,j /d15/d15 ϕi⊗ϕj /d47/d47P′ i⊗P′ j B′ i,j /d15/d15 Pj⊗Pi ϕj⊗ϕi /d47/d47P′ j⊗P′ i is commutative for any i,j ∈ I. Then there exists a unique family of morphisms ϕα : Pα→P′α (α∈ Z⊕I ≥0) such that the diagram Pα⊗Pβ fα,β /d15/d15 ϕα⊗ϕβ /d47/d47P′α⊗P′β f ′ α,β /d15/d15 Pα+β ϕα+β /d47/d47P′α+β is commutative fo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.4. Commuting family of objects",
+      "pageStart": 70,
+      "pageEnd": 71,
+      "target": "../sections/sec-023-a4-commuting-family-of-objects.md",
+      "narrative": null,
+      "content": "of object {Pi}i∈I inT and a family of isomorphisms {Bi,j : Pi⊗Pj ∼−→Pj⊗Pi}i,j∈I.\nDeﬁnition A.4.1. We say that ({Pi}i∈I,{Bi,j}i,j∈I) is a commuting family if the iso-\nmorphisms Bi,j(i,j∈I) satisfy the following conditions:\n(a) Bi,i = idPi⊗Pi for any i∈I,\n(b) Bj,i◦Bi,j = idPi⊗Pj for any i,j ∈I,\n(c) the isomorphisms {Bi,j}i,j∈I satisﬁes the Yang-Baxter equation; namely,\nthe following diagram is commutative for any i,j,k ∈I:\nPi⊗Pj⊗PkBi,j\n/d115/d115❣❣❣❣❣❣ Bj,k\n/d43/d43❲❲❲❲❲❲\nPj⊗Pi⊗Pk\nBi,k\n/d15/d15\nPi⊗Pk⊗Pj\nBi,k\n/d15/d15\nPj⊗Pk⊗Pi\nBj,k\n/d43/d43❲❲❲❲❲❲ Pk⊗Pi⊗Pj\nBi,j\n/d115/d115❣❣❣❣❣❣\nPk⊗Pj⊗Pi.\nLet us de",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/lem-sec-024-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 71,
+      "pageEnd": 72,
+      "target": "lem-sec-024-01.md",
+      "narrative": null,
+      "content": "5.1. Assume thatC is an abelian category and the Φi’s are exact functors. Then (i)C[Φ−1 i |i∈I] is an abelian category and the functor Υ : C→C [Φ−1 i |i∈I] is an exact functor. (ii) ForX∈C , Υ(X)≃ 0 if and only if there exists α∈ Z⊕I ≥0 such that Φα(X)≃ 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.5. Localization",
+      "pageStart": 71,
+      "pageEnd": 72,
+      "target": "../sections/sec-024-a5-localization.md",
+      "narrative": null,
+      "content": "has a structure of a tensor category by F⊗G = F·G, the composition of functors.\nLet{Φi}i∈I be a commuting family of objects of Fct( C,C). Then we can deﬁne Φ α∈\nFct(C,C) for α∈ Z⊕I\n≥0 and Φ α· Φβ ∼−→Φα+β as in the preceding subsection.\n72 S.-J. KANG, M. KASHIW ARA, M. KIM\nWe deﬁne the category ~C as follows. The objects of ~C are pairs (X,α ) of X∈C and\nα∈ Z⊕I . The homomorphisms are deﬁned by\nHom ~C\n(\n(X,α ), (Y,β )\n)\n= lim−→\nγ∈Z⊕I\n≥0,\nγ+α,γ +β∈Z⊕I\n≥0\nHomC(Φγ+α(X), Φγ+β(Y )).\nNote that we have a well-deﬁned inductive system in the above deﬁnit ion, since\n{Φi}i∈I is a commuting family.\nThe com",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/lem-sec-025-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 72,
+      "pageEnd": 75,
+      "target": "lem-sec-025-01.md",
+      "narrative": null,
+      "content": "6.1. LetT be a tensor category and let {(Pi,RPi)}i∈I be a commuting family of central objects of T . Let C be another tensor category and Ψ : T → Ca tensor functor. Assume that Ψ(Pi) is invertible for any i∈ I. Then the functor Ψ factors throughT Υ −→T[P⊗− 1 i |i∈I] Ψ ′ − − →Cwith a tensor functor Ψ′. Moreover, such a Ψ′ is unique up to a unique isomorphism.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/lem-sec-025-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 72,
+      "pageEnd": 75,
+      "target": "lem-sec-025-03.md",
+      "narrative": null,
+      "content": "6.3. Let k be a ﬁeld and let C be a k-linear abelian category. Assume that (a) any object of C has ﬁnite length, (b) dim k HomC(S,S )<∞ for any simple object S inC. Then we have dimk HomC(X,Y )<∞ for all X,Y ∈C . SYMMETRIC QUIVER HECKE ALGEBRAS AND R-MATRICES 75",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prop-sec-025-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 72,
+      "pageEnd": 75,
+      "target": "prop-sec-025-02.md",
+      "narrative": null,
+      "content": "6.2. Let (T,⊗) be a tensor category and let {(Pi,RPi)}i∈I be a com- muting family of central objects of T . Consider the following conditions. (a)T is an abelian category. (b)⊗ is an exact bifunctor. (c) Any object of T has a ﬁnite length. (d) If X is a simple object of T , then X⊗Pi is a simple object for any i∈I. Set ~T =T [P⊗− 1 i |i∈I]. Then the following statements hold. (i) If (T,⊗) satisﬁes (a) and (b), then ~T is an abelian category and the functor Υ : T →~T is exact. (ii) If (T,⊗) satisﬁes (a)–(d), then ( ~T,⊗) satisﬁes (a)–(c), and the functor Υ : T → ~T sends simple objects to simpl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.6. Localization of tensor categories",
+      "pageStart": 72,
+      "pageEnd": 75,
+      "target": "../sections/sec-025-a6-localization-of-tensor-categories.md",
+      "narrative": null,
+      "content": "{(Pi,RPi)}i∈I be a family of central objects in T . Set\nBi,j =RPi(Pj) :Pi⊗Pj ∼−→Pj⊗Pi\nfor i,j ∈ I. If ( {Pi}i∈I,{Bi,j}i,j∈I) is a commuting family of objects, we say that\n{(Pi,RPi)}i∈I is a commuting family of central objects (see also [ 21] for its generaliza-\ntion). Note that it means that {(Pi,RPi)}i∈I satisﬁes the conditions:\n(a) for any i∈I, RPi satisﬁes ( A.3.1),\n(b) RPj (Pi)◦RPi(Pj) = idPi⊗Pj for any i,j∈I,\n(c) RPi(Pi) = idPi⊗Pi for any i∈I.\nSYMMETRIC QUIVER HECKE ALGEBRAS AND R-MATRICES 73\nFor a commuting family {(Pi,RPi)}i∈I of central objects, let Φ i∈ Fct(T,T ) be the\nendofunctor de",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/lem-sec-026-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 75,
+      "pageEnd": 78,
+      "target": "lem-sec-026-01.md",
+      "narrative": null,
+      "content": "7.1. LetT be an abelian L-graded tensor category and {(Pi,RPi)}i∈I be a commuting family of central objects in T as above. Assume that the functor T ∋X↦→ Pi⊗X is an exact functor for all i∈I. Then the following statements hold. (i) The functor Ω :T →T[Pi≃ 1|i∈I] is exact. (ii) Ω( Pi) is isomorphic to 1 for any i∈I. (iii) Every exact sequence in T [Pi≃ 1|i∈I] is isomorphic to the image of an exact sequence inT . (iv) The functor Ω is decomposed into T Υ −→T[P⊗− 1 i |i∈I] Ξ − →T[Pi≃ 1|i∈I], where Ξ(X,α ) = X for X∈T ,α∈ Z⊕I. We have the similar results to the one in Proposition A.6.2 for the cat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/lem-sec-026-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 75,
+      "pageEnd": 78,
+      "target": "lem-sec-026-04.md",
+      "narrative": null,
+      "content": "7.4. Under the conditions in the above proposition, we further as sume that C is an abelian category and Ψ is an exact functor. Then the functor Ψ′ :T [Pi≃ 1| i∈I]→C is exact.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prop-sec-026-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 75,
+      "pageEnd": 78,
+      "target": "prop-sec-026-02.md",
+      "narrative": null,
+      "content": "7.2. Let (T,⊗) and{(Pi,RPi)}i∈I be as in Lemma A.7.1. Consider the following conditions. (a)T is an abelian category. (b)⊗ is an exact bifunctor. (c) Every object of T has ﬁnite length. (d) If X is a simple object of T , then X⊗Pi is a simple object for all i∈I. 76 S.-J. KANG, M. KASHIW ARA, M. KIM SetT′ =T [Pi≃ 1|i∈I]. Then the following statements hold. (i) If (T,⊗) satisﬁes (a) and (b), then T′ is an abelian category and the functor Ω :T →T′ is exact. (ii) If (T,⊗) satisﬁes (a)–(d), then (T′,⊗) satisﬁes (a)–(c), and the functor Ω :T → T′ sends simple objects to simple objects. Conversely, e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prop-sec-026-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 75,
+      "pageEnd": 78,
+      "target": "prop-sec-026-03.md",
+      "narrative": null,
+      "content": "7.3. LetT be a tensor category and let {(Pi,RPi)}i∈I be a commuting family of central objects of T as in Lemma A.7.1. LetC be another tensor category and Ψ : T →C a tensor functor. Assume that, for any i∈I, there exists an isomorphism gi : Ψ( Pi)∼−→1 such that the following diagrams are commutative for any X∈T : Ψ(Pi⊗X) Ψ(RPi (X)) /d15/d15 ∼ /d47/d47 Ψ(Pi)⊗ Ψ(X) gi⊗ Ψ(X) /d47/d47 1⊗ Ψ(X) /d40/d40◗◗◗◗◗◗◗◗◗◗◗◗◗ Ψ(X⊗Pi) ∼ /d47/d47 Ψ(X)⊗ Ψ(Pi) Ψ(X)⊗gi /d47/d47 Ψ(X)⊗ 1 /d47/d47 Ψ(X). (A.7.1) Then Ψ factors as T Ω − →T[Pi≃ 1|i∈I] Ψ ′ − − →Cwith a tensor functor Ψ′. Moreover, such a Ψ′ is unique up t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.7. Graded case",
+      "pageStart": 75,
+      "pageEnd": 78,
+      "target": "../sections/sec-026-a7-graded-case.md",
+      "narrative": null,
+      "content": "L-graded ifT has a decomposition T = ⨁\nλ∈LTλ such that ⊗ induces a bifunctor\nTλ×Tµ→T λ+µ for any λ,µ∈L and that 1∈T 0.\nLet{(Pi,RPi)}i∈I be a commuting family of central objects of T such that Pi∈T λi\nfor λi∈ L,i ∈ I. Let ℓ : Z⊕I→ L be a homomorphism given by ℓ(ei) = λi (i∈ I).\nHence Pα belongs toTℓ(α) for any α∈ Z⊕I\n≥0.\nNow we assume that ℓ : Z⊕I→ L is injective. We will deﬁne a tensor category T′\nand a tensor functor\nΩ :T →T′\nsuch that Ω( Pi)≃ 1 for i∈I. We take Ob(T′) = Ob(T ) and\nHomT ′(X,Y ) = lim −→\nα,β∈Z⊕I\n≥0,\nλ+ℓ(α)=µ+ℓ(β)\nHomT (X⊗Pα,Y ⊗Pβ)\nforX∈T λ andY∈T µ. If λ−µ is not in the image",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/rem-sec-026-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 75,
+      "pageEnd": 78,
+      "target": "rem-sec-026-05.md",
+      "narrative": null,
+      "content": "7.5. The commutativity of ( A.7.1) does not depend on the choice of an isomorphism gi (i∈I). Indeed, in a tensor category T , the diagram X⊗ 1 ∼ /d47/d47 X⊗ϕ /d15/d15 X ∼ /d47/d47 1⊗X ϕ⊗X /d15/d15 X⊗ 1 ∼ /d47/d47X ∼ /d47/d47 1⊗X is commutative for any ϕ∈ EndT (1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.8. Variant",
+      "pageStart": 78,
+      "pageEnd": 79,
+      "target": "../sections/sec-027-a8-variant.md",
+      "narrative": null,
+      "content": "commuting family of central objects in T as in § A.7. Let ( Q,RQ) be an invertible\ncentral object of T such that Q∈T 0. We assume that\nRQ(Pi) :Q⊗Pi ∼−→Pi⊗Q and RPi(Q) :Pi⊗Q∼−→Q⊗Pi are inverse\nto each other for any i∈I.\n(A.8.1)\nIt is equivalent to saying that {(Q,RQ), (Pi,RPi)| i∈ I} is a commuting family of\ncentral objects.\nGiven a family of integers ( si)i∈I, let s : Z⊕I → Z be the linear map deﬁned by\ns(ei) = si. Then we can deﬁne a category T′ as follows. We take Ob( T′) = Ob(T ).\nSYMMETRIC QUIVER HECKE ALGEBRAS AND R-MATRICES 79\nForX∈T λ and Y∈T µ,\nHomT ′(X,Y ) = lim −→\nα,β∈Z⊕I\n≥0,\nλ+ℓ(α)=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/lem-sec-030-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 79,
+      "pageEnd": 81,
+      "target": "lem-sec-030-03.md",
+      "narrative": null,
+      "content": "1.3. Let k be a ﬁeld and let A be a k-linear abelian category. Assume the following conditions: (a) dim k HomA(X,Y )<∞ for any X,Y ∈A , SYMMETRIC QUIVER HECKE ALGEBRAS AND R-MATRICES 81 (b) any object of A has ﬁnite length. Then, for any Serre subcategoryS ofA, the quotient categoryA/S is a k-linear abelian category satisfying (a) and (b). The following proposition is easy to verify.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prop-sec-030-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 79,
+      "pageEnd": 81,
+      "target": "prop-sec-030-02.md",
+      "narrative": null,
+      "content": "1.2. LetS be a Serre subcategory of an abelian category A. (i) If X is simple in A and X /∈S , then Q(X) is simple in A/S. (ii) Assume that every object in A has ﬁnite length. Then every simple object Y in A/S is isomorphic to Q(X) for a simple object X inA. (iii) If X1 and X2 are simple objects of A andQ(X1)≃Q (X2)⁄≃0 inA/S, then X1≃X2 inA. Since the proofs are elementary, we omit them. The following lemma is also elementary.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prop-sec-030-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 79,
+      "pageEnd": 81,
+      "target": "prop-sec-030-04.md",
+      "narrative": null,
+      "content": "1.4. LetA be an abelian tensor category such that ⊗ is an exact bifunctor and let S be a Serre subcategory of A. Assume the following condition: for any X∈A and Y∈S , X⊗Y and Y⊗X belong toS.(B.1.1) ThenA/S has a structure of a tensor category such that Q :A→A /S is a tensor functor.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.9. Twisting of tensor structure",
+      "pageStart": 79,
+      "pageEnd": 79,
+      "target": "../sections/sec-028-a9-twisting-of-tensor-structure.md",
+      "narrative": null,
+      "content": "λ∈LTλ be an L-graded\nadditive tensor category. Let ( Q,RQ) be an invertible central object of T such that\nQ∈T 0. Then Q⊗n is a central object for all n∈ Z.\nLetB be a Z-valued bilinear form on L. We deﬁne an additive bifunctor ~⊗ onT by\nX ~⊗Y =Q⊗B(λ,µ)⊗X⊗Y for X∈T λ and Y∈T µ.\nThen it is easy to see that ~⊗ gives a new tensor category structure on T , where the\nassociativity is given by\n(X ~⊗Y ) ~⊗Z ≃ Q⊗B(λ+µ,ζ)⊗Q⊗B(λ,µ)⊗X⊗Y⊗Z\n≃ Q⊗B(λ,µ)+B(λ+ζ)+B(µ,ζ)⊗X⊗Y⊗Z\n≃ Q⊗B(λ,µ+ζ)⊗X⊗Q⊗B(µ,ζ)⊗Y⊗Z≃X ~⊗(Y ~⊗Z)\nfor X∈T λ, Y∈T µ, Z∈T ζ.\nWe say that (T, ~⊗) is the tensor category twisted by Q and B.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix B. Quotient categories",
+      "pageStart": 79,
+      "pageEnd": 79,
+      "target": "../sections/sec-029-appendix-b-quotient-categories.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.1. Serre category",
+      "pageStart": 79,
+      "pageEnd": 81,
+      "target": "../sections/sec-030-b1-serre-category.md",
+      "narrative": null,
+      "content": "of an abelian category by a subcategory. For more details, see [ 33, § 4.3]. Let A be an\nabelian category and let S be a Serre subcategory ofA ; i.e.,\n(i)S is a full subcategory of A,\n(ii)S is stable under taking subobjects, quotients and extensions, nam ely, for any\nexact sequence 0 →X′→X→X′′→ 0 inA, the middle term X is inS if and\nonly if X′ and X′′ are inS.\nFor two objects X and Y ofA, we have a directed set\nL(X,Y ) ={(X′,Y ′)|X′⊂X,Y ′⊂Y,X/X′∈S ,Y ′∈S}\n80 S.-J. KANG, M. KASHIW ARA, M. KIM\nwith the order given by\n(X′\n1,Y ′\n1)≤ (X′,Y ′)⇔X′⊂X′\n1,Y ′\n1⊂Y′.\nIf (X′\n1,Y ′\n1)≤ (X′,Y ′), we have a c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/thm-sec-030-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 79,
+      "pageEnd": 81,
+      "target": "thm-sec-030-01.md",
+      "narrative": null,
+      "content": "1.1 ([33, § 4.3]). LetS be a Serre subcategory of an abelian category A. Then the following statements hold. (i) The quotient category A/S is abelian. (ii) For an object X∈A ,Q(X)≃ 0 if and only if X∈S . (iii) The functorQ :A→A /S is exact. (iv) Every exact sequence in A/S is isomorphic to the image of an exact sequence in A underQ. (v) LetB be an abelian category and let H :A→B be an exact functor such that H(X)≃ 0 for all X inS. Then H factors through A/S with an exact functor H :A/S→B . Moreover, such an H is unique up to isomorphism. (vi) An additive functor G :A/S→B is exact if and only i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.0323v3/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 81,
+      "pageEnd": 83,
+      "target": "../sections/sec-031-references.md",
+      "narrative": null,
+      "content": "[1] T. Akasaka and M. Kashiwara, Finite-dimensional representations of quantum aﬃne algeb ras,\nPubl. RIMS. Kyoto Univ., 33 (1997), 839-867.\n[2] S. Ariki, On the decomposition numbers of the Hecke algebra of G(M, 1, n), J. Math. Kyoto Univ.\n36 (1996), 789-808.\n[3] I. N. Bernstein and A. V. Zelevinsky, Induced representations of reductive p-adic groups. I. Ann.\nSci. ´Ecole. Norm. Sup. 10 (4) (1977), 441-472.\n[4] J. Brundan and A. Kleshchev, Blocks of cyclotomic Hecke algebras and Khovanov-Lauda alg ebras,\nInvent. Math., 178 (2009) 451–484.\n[5] V. Chari and A. Pressley, A guide to Quantum Groups",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

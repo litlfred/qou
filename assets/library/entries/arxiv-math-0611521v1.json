@@ -1,0 +1,177 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0611521v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0611521v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 8,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "In this paper we return to the local analytic classification of $q$-difference modules. In [@RSZ1] we gave such a classification in Birkhoff style [@Birkhoff1; @Birkhoff2], using normal forms and index theorems. In [@JSSTO] (cf. also [@RSZ], [@RSZ2]) appears a classification using non abelian cohomology of sheaves on an elliptic curve. Here our aim is to give a classification based upon a \"fundamental group\" and its finite dimensional representations, in the style of the Riemann-Hilbert correspondence. At the abstract level there exists such a classification: the fundamental group is the tanna",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611521v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0611521v1  [math.QA]  17 Nov 2006\nTHE q-ANALOGUE OF THE WILD FUNDAMENTAL GROUP\n(I)\nJ.-P. Ramis∗, J. Sauloy †\nAbstract\nWe describe an explicit construction of galoisian Stokes operators for irregular linear q-difference\nequations. These operators are parameterized by the points of an elliptic curve minus a ﬁnite set of\nsingularities. Taking residues at these singularities, one gets q-analogues of alien derivations which freely\ngenerate the Lie algebra of the Stokes subgroup of the Galois group.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611521v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "General facts",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-001-21-general-facts.md",
+      "narrative": null,
+      "content": "[]{#subsection:generalfacts label=\"subsection:generalfacts\"}\n\n#### Notations, general conventions.\n\nWe fix $q \\in {\\mathbf C}$ such that $|q| > 1$. We then define the automorphism $\\sigma_q$ on various rings, fields or spaces of functions by putting $\\sigma_qf(z) = f(qz)$. This holds in particular for the ring ${{\\mathbf C}\\{z\\}}$ of convergent power series and its field of fractions ${{\\mathbf C}(\\{z\\})}$, the ring ${{\\mathbf C}[[z]]}$ of formal power series and its field of fractions ${{\\mathbf C}((z))}$, the ring ${\\mathcal{O}({\\mathbf C}^{*},0)}$ of holomorphic germs and the field ${\\mathc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611521v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Filtration by the slopes",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-002-22-filtration-by-the-slopes.md",
+      "narrative": null,
+      "content": "[]{#subsection:filtration label=\"subsection:filtration\"}\n\n#### The filtration and the associated graded module.\n\nThe module $M$ is said to be pure isoclinic of slope $\\mu$ if $S(M) = \\{\\mu\\}$ and fuchsian if moreover $\\mu = 0$. Direct sums of pure isoclinic modules are called pure modules [^1]: they are irregular objects without wild monodromy, as follows from [@RSZ] and [@JSSTO]. The tannakian subcategory of ${\\mathcal{E}}^{(0)}$ made up of pure modules is called ${\\mathcal{E}}^{(0)}_{p}$. Modules with integral slopes also form tannakian subcategories, which we write ${\\mathcal{E}}^{(0)}_{1}$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611521v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stokes operators",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-003-23-stokes-operators.md",
+      "narrative": null,
+      "content": "[]{#subsection:Stokesoperators label=\"subsection:Stokesoperators\"}\n\n#### Algebraic summation.\n\nThe following computations are extracted from [@JSSTO]. We need the following theta function of Jacobi: $\\theta_{q}(z) = \\sum_{n \\in {\\mathbf Z}} q^{-n(n+1)/2} z^{n}$. It is holomorphic in ${\\mathbf C}^{*}$ with simple zeroes, all located on the discrete $q$-spiral $[-1;q]$. It satisfies the functional equation: $\\sigma_q\\theta_{q} = z \\theta_{q}$. We then define $\\theta_{q,c}(z) = \\theta_{q}(z/c)$ (for $c \\in {\\mathbf C}^{*}$); it is holomorphic in ${\\mathbf C}^{*}$ with simple zeroes, all located o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611521v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stokes operators and alien derivations",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-004-3-stokes-operators-and-alien-derivations.md",
+      "narrative": null,
+      "content": "Stokes operators and alien derivations",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611521v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stokes operators are galois",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-005-31-stokes-operators-are-galois.md",
+      "narrative": null,
+      "content": "We take on the notations of section [\\[subsection:filtration\\]](#subsection:filtration){reference-type=\"ref\" reference=\"subsection:filtration\"} and consider moreover another object $B$, to which we apply similar notations: graded $B_{0}$, diagonal blocks $B_{j}$ corresponding to slopes $\\nu_{j}$ with multiplicities $s_{j}$, etc.\n\n::: lemma\n[]{#lemma:tensfonctrestreint label=\"lemma:tensfonctrestreint\"} (i) Assume the following condition: $$\\label{equation:nonresonancemixtetensorielle}\n\\forall i < i', j < j' \\;,\\; \nq^{{\\mathbf Z}} c^{\\mu_{i} + \\nu_{j}} Sp(A_{i}) Sp(B_{j}) \\cap \nq^{{\\mathbf Z}} c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611521v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Alien derivations and $q$-Borel transform",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "../sections/sec-006-32-alien-derivations-and-q-borel-transform.md",
+      "narrative": null,
+      "content": "Let $\\delta \\in {\\mathbf N}^{*}$ and assume that the matrix $A$ of ([\\[equation:forme-canonique\\]](#equation:forme-canonique){reference-type=\"ref\" reference=\"equation:forme-canonique\"}) has only null blocks $U_{i,j}$ for $\\mu_{j} - \\mu_{i} < \\delta$. Then, in the computation ([\\[equation:calculrecursifhat(F)\\]](#equation:calculrecursifhat(F)){reference-type=\"ref\" reference=\"equation:calculrecursifhat(F)\"}), we find the following equation for $\\mu_{j} - \\mu_{i} < \\delta$: $\\sigma_q\\hat{F}_{i,j} z^{\\mu_{j}} A_{j} - z^{\\mu_{i}} A_{i} \\hat{F}_{i,j} = 0$. Likewise, the upper diagonal blocks of any",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611521v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion",
+      "pageStart": 19,
+      "pageEnd": 22,
+      "target": "../sections/sec-007-4-conclusion.md",
+      "narrative": null,
+      "content": "The construction of the alien derivations in the differential and $q$-difference case are apparently quite different. In fact, it is possible to reformulate things in the differential case to exhibit some analogy; one can mimick the constructions of the $q$-difference case: in place of a meromorphic function of a $q$-direction of summation in $E_q$, one gets in the differential case a locally constant function of a direction of summation in $S^1$ minus a finite singular set, the poles being replaced by \"jump points\". The jumps are evaluated by a non-abelian boundary value: one gets the Stokes",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

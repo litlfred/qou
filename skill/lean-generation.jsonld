@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/lean-generation.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/lean-generation",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "lean-generation",
+      "title": "Lean 4 Module & Content-Sibling Generation (`lean-generation`)",
+      "description": "Author new Lean 4 modules and content-block `.lean` siblings from `.ts` + `.md` content-object triples under `folio/`. Enforces Lean 4.24+ imports-first header order, `set_option autoImplicit false`, Mathlib4 naming, §7c base-ring generality, Two-Tier Reservoir subgraph placement, and single-threaded `lean-overlay-env.sh` / `lean-best-practices-lint.py --diff` verification.",
+      "instructionsPath": "skills/local/lean-generation.md",
+      "instructionLines": 121,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

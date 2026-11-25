@@ -1,0 +1,177 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2512.18642v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2512.18642v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Hidden Markov models [@Rab2002] are recognized as powerful stochastic processes due to their ability to capture complex correlations, with broad applications across various domains [@Mor2021]---especially in machine learning tasks [@Li17], where algorithmic implementations [@V03; @FV05] have achieved significant success. Several proposals have been made to generalize hidden Markov models into the quantum setting [@Monras11; @Srin2017; @MRDFS22]. Namely, with the rising interest in quantum computing and quantum machine learning [@Li2024] but a suitable generalized probabilistic picture is remai",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.18642v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "A Hidden Quantum Markov model framework for\nEntanglement and Topological Order in the AKLT Chain\nAbdessatar Souissi\nDepartment of Management Information Systems, College of Business and Economics,\nQassim University, Buraydah 51452, Saudi Arabia\na.souaissi@qu.edu.sa\nAmenallah Andolsi\nNuclear Physics and High Energy Research Unit, Faculty of Sciences of Tunis,\nTunis El Manar University, Tunis, Tunisia\namenallah.andolsi@fst.utm.tn\nAbstract\nThis paper introduces a hidden quantum Markov models (HQMMs) framework to the Af-\nfleck–Kennedy–Lieb–Tasaki (AKLT) state—a cornerstone example of a symmetry-pr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.18642v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-preliminaries.md",
+      "narrative": null,
+      "content": "Preliminaries",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.18642v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hidden Quantum Markov Models",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-hidden-quantum-markov-models.md",
+      "narrative": null,
+      "content": "Let $\\mathcal{H}$ and $\\mathcal{K}$ be two finite-dimensional Hilbert spaces and let $\\mathcal{B}(\\mathcal{H})$ and $\\mathcal{B}(\\mathcal{K})$ be the algebras of bounded operators over the Hilbert spaces $\\mathcal{H}$ and $\\mathcal{K}$, respectively. A map is $\\mathcal{E}$ from $\\mathcal{B}(\\mathcal{H})$ to $\\mathcal{B}(\\mathcal{K})$ is said to be *completely positive* if all its matrix amplifications $$\\mathcal{E}: M_n(\\mathcal{A}) \\to M_n(\\mathcal{B}), \\quad [a_{ij}] \\mapsto [\\Phi(a_{ij})]$$ preserve positivity for every $n \\in \\mathbb{N}$. A *quantum channel* is a completely positive, trace",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.18642v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The AKLT State and its SPT Order",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-the-aklt-state-and-its-spt-order.md",
+      "narrative": null,
+      "content": "[]{#SbSect_AKLT label=\"SbSect_AKLT\"}\n\nThe seminal work of Affleck, Kennedy, Lieb, and Tasaki [@Affleck1988] marked a watershed moment in quantum magnetism by furnishing an exactly solvable model that provided rigorous foundation for Haldane's conjecture regarding the existence of a spectral gap in antiferromagnetic spin-1 chains. The AKLT Hamiltonian, defined on a one-dimensional lattice with spin-1 degrees of freedom, embodies profound physical insights through its elegantly simple form: $$\\hat{H}_{\\text{AKLT}} = \\sum_{\\langle i,j \\rangle} \\left[ \\vec{S}_i \\cdot \\vec{S}_j + \\frac{1}{3} (\\vec{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.18642v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "HQMM Structure of the AKLT State",
+      "pageStart": 6,
+      "pageEnd": 12,
+      "target": "../sections/sec-004-hqmm-structure-of-the-aklt-state.md",
+      "narrative": null,
+      "content": "[]{#Sect_HQMM_AKLT label=\"Sect_HQMM_AKLT\"} The AKLT state's unique structure can be naturally formulated as a HQMM, revealing a profound connection between topological quantum matter and quantum stochastic processes. This framework cleanly separates the system into hidden virtual degrees of freedom that encode topological information and observable physical degrees accessible to measurement.\n\nThe *Hidden Quantum Markov Model* for the AKLT chain is specified by the generative triplet $\\Xi_{\\mathrm{AKLT}} = (\\phi_0, \\mathcal{E}_H, \\mathcal{E}_{O,H})$ where:\n\n-   $\\phi_0: \\mathcal{B}(\\mathcal{H}_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.18642v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Entanglement Dynamics in Hidden Markov Channel",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "../sections/sec-005-entanglement-dynamics-in-hidden-markov-channel.md",
+      "narrative": null,
+      "content": "[]{#Sect_HiddenEntang label=\"Sect_HiddenEntang\"}\n\nTo analyze the entanglement properties of a quantum channel $\\Lambda: \\mathcal{B}(\\mathcal{H}_{\\text{in}}) \\to \\mathcal{B}(\\mathcal{H}_{\\text{out}})$, we employ the Choi--Jamiołkowski isomorphism: $$J(\\Lambda) = (\\mathrm{id}_{\\text{in}} \\otimes \\Lambda)\\bigl(|\\Omega\\rangle\\langle\\Omega|\\bigr),$$ where $|\\Omega\\rangle = \\frac{1}{\\sqrt{d_{\\text{in}}}}\\sum_{i=1}^{d_{\\text{in}}} |i\\rangle_{\\text{ref}} \\otimes |i\\rangle_{\\text{in}}$ is a maximally entangled state between a reference system $\\mathcal{H}_{\\text{ref}} \\cong \\mathcal{H}_{\\text{in}}$ and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.18642v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "SPT order on the AKLT,s HQMMs",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-006-spt-order-on-the-aklts-hqmms.md",
+      "narrative": null,
+      "content": "[]{#Sect_SPT_HQMM label=\"Sect_SPT_HQMM\"} The AKLT state's remarkable robustness stems from its symmetry-protected topological (SPT) order, which manifests elegantly within its Hidden Quantum Markov Model (HQMM) description. To understand this protection mechanism, clarify how symmetries operate in the HQMM framework.\n\nLet $G$ be a symmetry group with unitary representations $\\pi: G \\to \\mathcal{U}(\\mathcal{H}_{1/2})$ on the virtual space and $\\rho: G \\to \\mathcal{U}(\\mathcal{H}_1)$ on the physical space.\n\nThe heart of the matter lies in the *emission transition expectation* $\\mathcal{E}_{O,H}$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2512.18642v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion",
+      "pageStart": 16,
+      "pageEnd": 20,
+      "target": "../sections/sec-007-conclusion.md",
+      "narrative": null,
+      "content": "Conclusion\nThis work establishes a HQMMs structure on the AKLT spin chain. By identifying the virtual\nspin-½ chain as the hidden quantum system, and the physical spin-1 sites as the observable\noutput. The results transforms the algebraic-probabilistic HQMMs into a model grounded in\nmany-body quantum physics, revealing connections between quantum memory, topological order,\nand correlation structures. The analysis of the hidden chain demonstrates how the entangled\nstructure of the AKLT state manifests as a non-classical memory resource.\nFurthermore, by\nextending the notion of SPT order to the st",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

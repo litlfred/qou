@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-trm-hopf-sigma1-sq-closed-form",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:trm-hopf-sigma1-sq-closed-form",
+  "kind": "proposition",
+  "title": "Closed form for the canonical Markov trace of $\\sigma_1^2$ (positive Hopf braid)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-jones-markov-trace"
+  ],
+  "tags": [
+    "hecke-algebra",
+    "markov-trace",
+    "closed-form",
+    "hopf-braid",
+    "binomial-series"
+  ],
+  "leanRef": "qou:BraidKnotOctonion.TrMHopfSigma1SqClosedForm",
+  "text": "trm-hopf-sigma1-sq-closed-form.md",
+  "provenance": "authored"
+}

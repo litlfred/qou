@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-x5-z5-automorphism-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:x5-z5-automorphism-interpretation",
+  "kind": "remark",
+  "title": "Lagrange-resolvent interpretation of $\\phi_5$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-x5-z5-automorphism",
+    "papers/quantum-observable-universe/blocks/rem-lagrange-resolvents"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-x5-z5-automorphism",
+  "text": "x5-z5-automorphism-interpretation.md",
+  "provenance": "authored"
+}

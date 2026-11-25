@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/5s032x/sections/sec-006",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Spin(3) and the Complex Hopf Fibration",
+  "pageStart": 7,
+  "pageEnd": 7,
+  "contains": [
+    "library/5s032x/blocks/prose-sec-006"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/5s032x/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/5s032x/manifest.jsonld",
+  "provenance": "ingested"
+}

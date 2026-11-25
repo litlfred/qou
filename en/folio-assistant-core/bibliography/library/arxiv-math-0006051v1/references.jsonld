@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-0006051v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Finite and p-adic polylogarithms",
+      "dcterms:creator": [
+        "BESSER, AMNON"
+      ],
+      "dcterms:issued": "D:20181105",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0006051",
+      "dcterms:source": "library/arxiv-math-0006051v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-0006051v1"
+    }
+  ]
+}

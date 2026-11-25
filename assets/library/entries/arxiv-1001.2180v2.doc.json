@@ -1,0 +1,1976 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1001.2180v2",
+  "title": "arxiv-1001.2180v2",
+  "variant": "pdf",
+  "pages": 27,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Background",
+      "number": "1.1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-background"
+    },
+    {
+      "level": 2,
+      "title": "Results",
+      "number": "1.2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-results"
+    },
+    {
+      "level": 2,
+      "title": "Tools",
+      "number": "1.3",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-tools"
+    },
+    {
+      "level": 2,
+      "title": "Some open questions",
+      "number": "1.4",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-some-open-questions"
+    },
+    {
+      "level": 2,
+      "title": "Outline of the paper",
+      "number": "1.5",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-15-outline-of-the-paper"
+    },
+    {
+      "level": 1,
+      "title": "The q-Plancherel measure",
+      "number": "2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-2-the-q-plancherel-measure"
+    },
+    {
+      "level": 2,
+      "title": "Definition",
+      "number": "2.1",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-21-definition"
+    },
+    {
+      "level": 2,
+      "title": "Link with representation of the Hecke algebras",
+      "number": "2.2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-22-link-with-representation-of-the-hecke-algebra"
+    },
+    {
+      "level": 2,
+      "title": "Interpretation in the representation theory of GLn(Fq)",
+      "number": "2.3",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-23-interpretation-in-the-representation-theory-o"
+    },
+    {
+      "level": 1,
+      "title": "Observables of diagrams",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-3-observables-of-diagrams"
+    },
+    {
+      "level": 2,
+      "title": "Power sums of Frobenius coordinates",
+      "number": "3.1",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-31-power-sums-of-frobenius-coordinates"
+    },
+    {
+      "level": 2,
+      "title": "Normalized characters",
+      "number": "3.2",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-32-normalized-characters"
+    },
+    {
+      "level": 2,
+      "title": "Normalized conjugacy classes in symmetric group algebras",
+      "number": "3.3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-33-normalized-conjugacy-classes-in-symmetric-gro"
+    },
+    {
+      "level": 2,
+      "title": "Products of normalized characters",
+      "number": "3.4",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-34-products-of-normalized-characters"
+    },
+    {
+      "level": 2,
+      "title": "Another product",
+      "number": "3.5",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-35-another-product"
+    },
+    {
+      "level": 2,
+      "title": "q-characters",
+      "number": "3.6",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-36-q-characters"
+    },
+    {
+      "level": 1,
+      "title": "First order asymptotics",
+      "number": "4",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-4-first-order-asymptotics"
+    },
+    {
+      "level": 2,
+      "title": "Convergence of power sums",
+      "number": "4.1",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-41-convergence-of-power-sums"
+    },
+    {
+      "level": 2,
+      "title": "Convergence of row lengths",
+      "number": "4.2",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-42-convergence-of-row-lengths"
+    },
+    {
+      "level": 2,
+      "title": "Link with the representation theory of the infinite symmetric group",
+      "number": "4.3",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-43-link-with-the-representation-theory-of-the-in"
+    },
+    {
+      "level": 1,
+      "title": "Second order asymptotics",
+      "number": "5",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-5-second-order-asymptotics"
+    },
+    {
+      "level": 2,
+      "title": "Bound for cumulants",
+      "number": "5.1",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-51-bound-for-cumulants"
+    },
+    {
+      "level": 2,
+      "title": "Computation of covariances",
+      "number": "5.2",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-52-computation-of-covariances"
+    },
+    {
+      "level": 2,
+      "title": "Fluctuations of rows",
+      "number": "5.3",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-53-fluctuations-of-rows"
+    },
+    {
+      "level": 1,
+      "title": "Schur-Weyl representations",
+      "number": "6",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-6-schur-weyl-representations"
+    },
+    {
+      "level": 2,
+      "title": "Decomposition of tensor representations",
+      "number": "6.1",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-61-decomposition-of-tensor-representations"
+    },
+    {
+      "level": 2,
+      "title": "Asymptotic shape of the diagrams",
+      "number": "6.2",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-62-asymptotic-shape-of-the-diagrams"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 120,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-plancherel",
+          "heading": false
+        },
+        {
+          "term": "śniady",
+          "heading": false
+        },
+        {
+          "term": "pierre-loïc",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1001.2180v2 [math.RT] 27 Oct 2010 ASYMPTOTICS OF q-PLANCHEREL MEASURES VALENTIN FÉRAY AND PIERRE-LOÏC MÉLIOT Abstract. In this paper, we are interested in the asymptotic size of the rows and columns of a random Young diagram under a natural deformation of the Plancherel measure coming from Hecke algebras. The ﬁrst lines of such diagrams are typically of order n, so it does not ﬁt in the context of the work of",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1001.2180v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-background",
+      "number": "1.1",
+      "title": "Background",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 505,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "plancherel measure",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "second-order asymptotics",
+          "heading": false
+        },
+        {
+          "term": "limit shape",
+          "heading": false
+        },
+        {
+          "term": "diagrams rescaled",
+          "heading": false
+        },
+        {
+          "term": "schur-weyl duality",
+          "heading": false
+        },
+        {
+          "term": "asymptotic behavior",
+          "heading": false
+        },
+        {
+          "term": "limiting continuous",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsect:background label=\"subsect:background\"} Given a combinatorial family of planar objects, it is natural to ask if, with a good rescaling, there is a limiting continuous object when the size tends to infinity. In the case of Young diagrams endowed with Plancherel measure, this question has been solved in 1977 independently by A. Vershik and S. Kerov [@KV77] and B. Logan and L. Shepp [@LS77]. V. Ivanov and G.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-results",
+      "number": "1.2",
+      "title": "Results",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 1104,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "powersums encore",
+          "heading": false
+        },
+        {
+          "term": "longest increasing",
+          "heading": false
+        },
+        {
+          "term": "plancherel measure",
+          "heading": false
+        },
+        {
+          "term": "increasing subsequence",
+          "heading": false
+        },
+        {
+          "term": "lis upbound",
+          "heading": false
+        },
+        {
+          "term": "subsect",
+          "heading": false
+        },
+        {
+          "term": "random young",
+          "heading": false
+        },
+        {
+          "term": "alpha varepsilon",
+          "heading": false
+        }
+      ],
+      "extract": "### First rows of a random Young diagram under the $q$-Plancherel measure Let us suppose $q<1$. In this paper, we prove a law of large numbers and a central limit theorem for the vector containing the lengths of the first $k$ rows of a random diagram under the $q$-Plancherel measure $M_{n,q}$. Note that Theorem [\\[th:first_order_as_rows\\]](#th:first_order_as_rows){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-tools",
+      "number": "1.3",
+      "title": "Tools",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 138,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "plancherel measure",
+          "heading": false
+        },
+        {
+          "term": "random variables",
+          "heading": false
+        },
+        {
+          "term": "guideline",
+          "heading": false
+        }
+      ],
+      "extract": "Since we are looking at measures on diagrams of a given size, irreducible character values on a given permutation can be seen as random variables. Moreover, in our context, their expectations are easy to compute. Therefore we would like to express other random variables, linked directly to the shape of the diagrams in terms of the character value. This can be done thanks to Kerov's and Olshanski's theory of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-some-open-questions",
+      "number": "1.4",
+      "title": "Some open questions",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 378,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lis upbound",
+          "heading": false
+        },
+        {
+          "term": "fct sigma",
+          "heading": false
+        },
+        {
+          "term": "random vectors",
+          "heading": false
+        },
+        {
+          "term": "transition probabilities",
+          "heading": false
+        },
+        {
+          "term": "covariance matrix",
+          "heading": false
+        },
+        {
+          "term": "plancherel measure",
+          "heading": false
+        },
+        {
+          "term": "precise behavior",
+          "heading": false
+        },
+        {
+          "term": "borodin",
+          "heading": false
+        }
+      ],
+      "extract": "### Precise behavior of the first line Proposition [\\[prop:SW_first_row\\]](#prop:SW_first_row){reference-type=\"ref\" reference=\"prop:SW_first_row\"} (respectively Corollary [\\[th:SW_lis_upbound\\]](#th:SW_lis_upbound){reference-type=\"ref\" reference=\"th:SW_lis_upbound\"}) gives only an upper bound for the behavior of the first row of the diagrams (respectively the length of the longest non-decreasing subsequence of a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-2-the-q-plancherel-measure",
+      "number": "2",
+      "title": "The q-Plancherel measure",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 17,
+      "summary": null,
+      "keywords": [],
+      "extract": "hard to deal with and we do not know if this method would succeed in our context.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-15-outline-of-the-paper",
+      "number": "1.5",
+      "title": "Outline of the paper",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 160,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-plancherel measure",
+          "heading": false
+        },
+        {
+          "term": "perties",
+          "heading": false
+        },
+        {
+          "term": "sn-module",
+          "heading": false
+        },
+        {
+          "term": "paragraph",
+          "heading": false
+        }
+      ],
+      "extract": "perties. Then, in section 3, we introduce families of observables of diagrams, which will be useful in the proof of the main theorems. Sections 4 and 5 are respectively devoted to the proofs of Theorems 1 and 2. In section 6, we study other measures with the same tools. 2. The q-Plancherel measure In this section, we deﬁne and present basic properties of the q-Plancherel measure. The characterization given in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-21-definition",
+      "number": "2.1",
+      "title": "Definition",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 630,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "prod oblong",
+          "heading": false
+        },
+        {
+          "term": "lambda nearrow",
+          "heading": false
+        },
+        {
+          "term": "frac lambda",
+          "heading": false
+        },
+        {
+          "term": "markovian partition-valued",
+          "heading": false
+        },
+        {
+          "term": "dim lambda",
+          "heading": false
+        },
+        {
+          "term": "markovian process",
+          "heading": false
+        },
+        {
+          "term": "lambda emptyset",
+          "heading": false
+        },
+        {
+          "term": "lambda text",
+          "heading": false
+        }
+      ],
+      "extract": "Let us recall the definition of Young graph (*cf.* for example [@KOO97 p. 5]): its set of vertices is the disjoint union $\\mathscr{Y}=\\bigsqcup_{n \\in \\mathbb{N}} \\mathscr{Y}_{n}$, and its edges are the pairs $(\\lambda,\\Lambda)$, where the Young diagram $\\Lambda$ can be obtained by adding one box to the Young diagram $\\lambda$ (this situation will be denote $\\lambda \\nearrow \\Lambda$). The (standard) Plancherel",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-22-link-with-representation-of-the-hecke-algebra",
+      "number": "2.2",
+      "title": "Link with representation of the Hecke algebras",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 402,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "concentration q-characters",
+          "heading": false
+        },
+        {
+          "term": "varsigma lambda",
+          "heading": false
+        },
+        {
+          "term": "qplancherel trace",
+          "heading": false
+        },
+        {
+          "term": "chi lambda",
+          "heading": false
+        },
+        {
+          "term": "dim lambda",
+          "heading": false
+        },
+        {
+          "term": "remfluctuationsqcharacters",
+          "heading": false
+        },
+        {
+          "term": "module lambda",
+          "heading": false
+        },
+        {
+          "term": "sigma cdots",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsect:qPlancherel_trace label=\"subsect:qPlancherel_trace\"} The $q$-Plancherel measure appears naturally in the abstract harmonic analysis of the Iwahori-Hecke algebras $\\mathscr{H}_{n,q}$. Recall that if $n \\in \\mathbb{N}$ and $q$ is a complex parameter, then $\\mathscr{H}_{n,q}$ is the complex associative algebra with generators $T_1,T_2,\\ldots,T_{n-1}$ and relations: $$\\begin{aligned} \\text{braid",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-23-interpretation-in-the-representation-theory-o",
+      "number": "2.3",
+      "title": "Interpretation in the representation theory of GLn(Fq)",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 458,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "backslash mathrm",
+          "heading": false
+        },
+        {
+          "term": "right mathrm",
+          "heading": false
+        },
+        {
+          "term": "end mathrm",
+          "heading": false
+        },
+        {
+          "term": "algebra mathbb",
+          "heading": false
+        },
+        {
+          "term": "tiny iso",
+          "heading": false
+        },
+        {
+          "term": "mathscr",
+          "heading": false
+        },
+        {
+          "term": "probability measure",
+          "heading": false
+        },
+        {
+          "term": "ramification group",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsect:algebraic_int_regular_trace label=\"subsect:algebraic_int_regular_trace\"} If $q=p^e$ is a power of a prime number, the previous identities may be interpreted in the setting of the representation theory of the group of invertible $n \\times n$ matrices $\\mathrm{GL}(n,\\mathbb{F}_q)$. Indeed, it is a well-known fact [@Iwa64] that the relations defining $\\mathscr{H}_{n,q}$ are those of the convolution algebra",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-3-observables-of-diagrams",
+      "number": "3",
+      "title": "Observables of diagrams",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 122,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diagrams mathscr",
+          "heading": false
+        },
+        {
+          "term": "observables",
+          "heading": true
+        },
+        {
+          "term": "varsigma",
+          "heading": false
+        },
+        {
+          "term": "power sums",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sect:observables label=\"sect:observables\"} In this section, we introduce the algebra of observables of diagrams $\\mathscr{O}$. This subalgebra of the algebra of functions on the set of all Young diagrams $\\mathscr{Y}=\\bigsqcup_{n \\in \\mathbb{N}} \\mathscr{Y}_n$ is isomorphic to the algebra of (complex) symmetric functions, and it is known to be a powerful tool in the setting of asymptotic representation theory of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-31-power-sums-of-frobenius-coordinates",
+      "number": "3.1",
+      "title": "Power sums of Frobenius coordinates",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 259,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frobenius coordinates",
+          "heading": true
+        },
+        {
+          "term": "cdots rho",
+          "heading": false
+        },
+        {
+          "term": "overline lambda",
+          "heading": false
+        },
+        {
+          "term": "modified frobenius",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "mathscr",
+          "heading": false
+        },
+        {
+          "term": "leq",
+          "heading": false
+        }
+      ],
+      "extract": "If $\\lambda$ is a partition of size $n$, we recall that its Frobenius coordinates $(a_i,b_i)_{1 \\leq i \\leq d}$ are defined by $a_i=\\lambda_i-i$ and $b_i={\\lambda_i}'-i$, with $i$ less than the size $d$ of the diagonal of the diagram. The modified Frobenius coordinates are $(A_\\lambda,\\overline{B}_\\lambda)=\\big((a_i^*)_{1 \\leq i \\leq d},(-b_i^*)_{1 \\leq i \\leq d}\\big)$ with $a_i^*=a_i+1/2$ and $b_i^*=b_i+1/2$, see",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-32-normalized-characters",
+      "number": "3.2",
+      "title": "Normalized characters",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 262,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "varsigma frac",
+          "heading": false
+        },
+        {
+          "term": "sigma rho",
+          "heading": false
+        },
+        {
+          "term": "partition rho",
+          "heading": false
+        },
+        {
+          "term": "chi lambda",
+          "heading": false
+        },
+        {
+          "term": "normalized",
+          "heading": true
+        },
+        {
+          "term": "n-k",
+          "heading": false
+        },
+        {
+          "term": "vphantom",
+          "heading": false
+        },
+        {
+          "term": "downarrow",
+          "heading": false
+        }
+      ],
+      "extract": "Another graded algebraic basis may be considered: the normalized characters $(\\varSigma_k)_{k \\geq 1}$. If $\\rho$ and $\\lambda$ are two partitions of respective sizes $k$ and $n$, we define the following function on $\\mathscr{Y}$: $$\\varSigma_\\rho(\\lambda)=\\begin{cases} n^{\\downarrow k}\\,\\chi^\\lambda(\\sigma_{\\rho\\,1^{n-k}})&\\text{if }k\\leq n\\\\ 0 & \\text{if } k>n, \\end{cases}$$ where $n^{\\downarrow",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-33-normalized-conjugacy-classes-in-symmetric-gro",
+      "number": "3.3",
+      "title": "Normalized conjugacy classes in symmetric group algebras",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 262,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "varsigma rho",
+          "heading": false
+        },
+        {
+          "term": "sigma alg",
+          "heading": false
+        },
+        {
+          "term": "lambda big",
+          "heading": false
+        },
+        {
+          "term": "mathbb mathfrak",
+          "heading": false
+        },
+        {
+          "term": "chi lambda",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "fourier transform",
+          "heading": false
+        },
+        {
+          "term": "sum substack",
+          "heading": false
+        }
+      ],
+      "extract": "If $G$ is a group and $G^\\vee$ a set indexing its irreducible representations, one has a ring isomorphism, called abstract Fourier transform, between the center of the group algebra and the algebra of functions on $G^\\vee$: $$\\begin{aligned} Z(\\mathbb{C}G) &\\stackrel{\\sim}{\\rightarrow} \\mathcal{F}(G^\\vee,\\mathbb{C}) \\\\ x &\\mapsto \\big( \\lambda \\mapsto \\chi^\\lambda(x) \\big) \\end{aligned}$$ It is indeed a ring",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-34-products-of-normalized-characters",
+      "number": "3.4",
+      "title": "Products of normalized characters",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 592,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "varsigma rho",
+          "heading": false
+        },
+        {
+          "term": "cdot varsigma",
+          "heading": false
+        },
+        {
+          "term": "sum rho",
+          "heading": false
+        },
+        {
+          "term": "partial matching",
+          "heading": false
+        },
+        {
+          "term": "substack forall",
+          "heading": false
+        },
+        {
+          "term": "prod cycles",
+          "heading": false
+        },
+        {
+          "term": "forall neq",
+          "heading": false
+        },
+        {
+          "term": "cap emptyset",
+          "heading": false
+        }
+      ],
+      "extract": "As the abstract Fourier transform is a ring homomorphism, the point-wise multiplication of functions over Young diagrams of size $n$ corresponds to the product in the center of the symmetric group algebra. But, in $Z(\\mathbb{C}\\mathfrak{S}_n)$, one has $$\\varSigma_\\mu \\cdot \\varSigma_\\nu = \\sum_{\\substack{\\forall i,\\,\\,A_i \\in \\mathcal{A}(n,\\,\\mu_i)\\\\ \\forall i\\neq j,\\,\\,A_i\\cap A_j=\\emptyset}} \\ \\sum_{",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-35-another-product",
+      "number": "3.5",
+      "title": "Another product",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 252,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathcal varsigma",
+          "heading": false
+        },
+        {
+          "term": "varsigma rho",
+          "heading": false
+        },
+        {
+          "term": "mathcal bullet",
+          "heading": false
+        },
+        {
+          "term": "mathcal sqcup",
+          "heading": false
+        },
+        {
+          "term": "bullet product",
+          "heading": false
+        },
+        {
+          "term": "mathcal sum",
+          "heading": false
+        },
+        {
+          "term": "disjoint product",
+          "heading": false
+        },
+        {
+          "term": "bound cumulants",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsect:bullet_product label=\"subsect:bullet_product\"} In this paragraph, we recall the definition of the disjoint product $\\bullet$ on $\\mathscr{O}$ (see [@Sniady06]), which will be useful in section [\\[sect:second_order\\]](#sect:second_order){reference-type=\"ref\" reference=\"sect:second_order\"}. It is enough to give the value of the product of two elements of the basis $\\varSigma_\\rho$: $$\\varSigma_\\mu \\bullet",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-36-q-characters",
+      "number": "3.6",
+      "title": "q-characters",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 879,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rho vphantom",
+          "heading": false
+        },
+        {
+          "term": "n-k vphantom",
+          "heading": false
+        },
+        {
+          "term": "mathscr varsigma",
+          "heading": false
+        },
+        {
+          "term": "vphantom lambda",
+          "heading": false
+        },
+        {
+          "term": "langle rho",
+          "heading": false
+        },
+        {
+          "term": "sigmaq fct",
+          "heading": false
+        },
+        {
+          "term": "widetilde rho",
+          "heading": false
+        },
+        {
+          "term": "rho right",
+          "heading": false
+        }
+      ],
+      "extract": "In this paragraph, we present a quantization of the $\\varSigma$-basis of $\\mathscr{O}$ corresponding to renormalized $q$-characters of the Iwahori-Hecke algebras. The theory of character of Iwahori-Hecke algebra is a little more involved than the one of symmetric groups. Indeed, given two permutations $\\sigma$ and $\\tau$ in the same conjugacy class of $\\mathfrak{S}_n$, the $T$-basis elements $T_\\sigma$ and $T_\\tau$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-4-first-order-asymptotics",
+      "number": "4",
+      "title": "First order asymptotics",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 39,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "order",
+          "heading": true
+        },
+        {
+          "term": "rows",
+          "heading": false
+        },
+        {
+          "term": "sect",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sect:first_order label=\"sect:first_order\"} This section is devoted to the proof of Theorem [\\[th:first_order_as_rows\\]](#th:first_order_as_rows){reference-type=\"ref\" reference=\"th:first_order_as_rows\"}. Let us fix a real $q \\in \\,]0,1[$. The first step of the proof is the convergence of power sums of Frobenius coordinates.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-018-41-convergence-of-power-sums",
+      "number": "4.1",
+      "title": "Convergence of power sums",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 454,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "varsigma rho",
+          "heading": false
+        },
+        {
+          "term": "rho vphantom",
+          "heading": false
+        },
+        {
+          "term": "frac varsigma",
+          "heading": false
+        },
+        {
+          "term": "downarrow rho",
+          "heading": false
+        },
+        {
+          "term": "rho longrightarrow",
+          "heading": false
+        },
+        {
+          "term": "forall rho",
+          "heading": false
+        },
+        {
+          "term": "rho quad",
+          "heading": false
+        },
+        {
+          "term": "esp sigma",
+          "heading": false
+        }
+      ],
+      "extract": "The $q$-Plancherel measure is a measure on Young diagrams, so the functions on Young diagrams and in particular the elements of $\\mathscr{O}$ are in this context random variables. In particular we will denote by $\\mathbb{E}$ their expectation. Thanks to the characterization of the $q$-Plancherel measure with the normalized trace (paragraph",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-42-convergence-of-row-lengths",
+      "number": "4.2",
+      "title": "Convergence of row lengths",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 793,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fct repartition",
+          "heading": false
+        },
+        {
+          "term": "repartition functions",
+          "heading": false
+        },
+        {
+          "term": "convergence rows",
+          "heading": false
+        },
+        {
+          "term": "probability towards",
+          "heading": false
+        },
+        {
+          "term": "probability measures",
+          "heading": false
+        },
+        {
+          "term": "powersums",
+          "heading": false
+        },
+        {
+          "term": "lambda mapsto",
+          "heading": false
+        },
+        {
+          "term": "plancherel measure",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsect:convergence_rows label=\"subsect:convergence_rows\"} Note that the limit values of the rescaled $p_k$'s are the power sums of the sequence $((1-q),(1-q)q,(1-q)q^2,\\ldots)$. Indeed, $$\\sum_{i=1}^\\infty (1-q)^k\\, q^{(i-1)k}=\\frac{(1-q)^k}{1-q^k}.$$ In this paragraph, we show that the convergence of power sums implies the convergence of the sequence. This corresponds to the end of the proof of Theorem",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-43-link-with-the-representation-theory-of-the-in",
+      "number": "4.3",
+      "title": "Link with the representation theory of the infinite symmetric group",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 510,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "thoma simplex",
+          "heading": false
+        },
+        {
+          "term": "dim lambda",
+          "heading": false
+        },
+        {
+          "term": "int omega",
+          "heading": false
+        },
+        {
+          "term": "beta geq",
+          "heading": false
+        },
+        {
+          "term": "point omega",
+          "heading": false
+        },
+        {
+          "term": "alpha geq",
+          "heading": false
+        },
+        {
+          "term": "probability measures",
+          "heading": false
+        },
+        {
+          "term": "coherent system",
+          "heading": false
+        }
+      ],
+      "extract": "This result on the first order asymptotics could alternatively have been obtained by using general results coming from the representation theory of the infinite symmetric group $\\mathfrak{S}_{\\infty}$, see in particular [@KV81; @Ker03; @KOV04]. However, it seems impossible to understand the fluctuations with this approach. Recall that the Thoma simplex $$\\Omega=\\left\\{\\big((\\alpha_i)_{i \\geq 1},(\\beta_i)_{i \\geq",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-5-second-order-asymptotics",
+      "number": "5",
+      "title": "Second order asymptotics",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 198,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deviation powersums",
+          "heading": false
+        },
+        {
+          "term": "mathscr bullet",
+          "heading": false
+        },
+        {
+          "term": "plancherel measure",
+          "heading": false
+        },
+        {
+          "term": "asymptotics",
+          "heading": true
+        },
+        {
+          "term": "sect",
+          "heading": false
+        },
+        {
+          "term": "observables",
+          "heading": false
+        },
+        {
+          "term": "order",
+          "heading": true
+        },
+        {
+          "term": "rows",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sect:second_order label=\"sect:second_order\"} In this section, we investigate the second order asymptotics of the rows of diagrams under the $q$-Plancherel measure and we prove Theorem [\\[th:second_order_as_rows\\]](#th:second_order_as_rows){reference-type=\"ref\" reference=\"th:second_order_as_rows\"}. As in the previous section, the first part of the proof consists in studying asymptotics of $p_k$. In particular, we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-51-bound-for-cumulants",
+      "number": "5.1",
+      "title": "Bound for cumulants",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 21,
+      "labelStart": "18",
+      "labelEnd": "21",
+      "words": 1480,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bound cumulants",
+          "heading": true
+        },
+        {
+          "term": "cdots varsigma",
+          "heading": false
+        },
+        {
+          "term": "ordre cumulants",
+          "heading": false
+        },
+        {
+          "term": "varsigma underbrace",
+          "heading": false
+        },
+        {
+          "term": "varsigma sum",
+          "heading": false
+        },
+        {
+          "term": "bullet cdots",
+          "heading": false
+        },
+        {
+          "term": "bullet big",
+          "heading": false
+        },
+        {
+          "term": "bullet mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsect:bound_cumulants label=\"subsect:bound_cumulants\"} This sort of result (computing the fluctuations of an observable from the character values) has already been stated by P. Śniady in the case where the characters are small and the corresponding diagrams balanced. Here, we have to use different observables and a different gradation, but the ideas of the proof are the same, and the definitions of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-52-computation-of-covariances",
+      "number": "5.2",
+      "title": "Computation of covariances",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 523,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deviation powersums",
+          "heading": false
+        },
+        {
+          "term": "varsigma",
+          "heading": false
+        },
+        {
+          "term": "ordre cumulants",
+          "heading": false
+        },
+        {
+          "term": "rescaled deviations",
+          "heading": false
+        },
+        {
+          "term": "towards gaussian",
+          "heading": false
+        },
+        {
+          "term": "laws towards",
+          "heading": false
+        },
+        {
+          "term": "finite-dimensional laws",
+          "heading": false
+        },
+        {
+          "term": "geq converges",
+          "heading": false
+        }
+      ],
+      "extract": "Now, let us compute explicitly the limit (co)variances of the rescaled deviations of the $\\varSigma_k$. First, note that if $l$ and $m$ are two positive integers, then: $$\\begin{aligned} k^\\bullet(\\varSigma_l,\\varSigma_m)&=\\mathbb{E}[\\varSigma_l \\bullet \\varSigma_m] - \\mathbb{E}[\\varSigma_l]\\,\\mathbb{E}[\\varSigma_m] = \\mathbb{E}[\\varSigma_{l,m}] - \\mathbb{E}[\\varSigma_l]\\,\\mathbb{E}[\\varSigma_m]\\\\ &=",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-53-fluctuations-of-rows",
+      "number": "5.3",
+      "title": "Fluctuations of rows",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 486,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rows",
+          "heading": true
+        },
+        {
+          "term": "covariance matrix",
+          "heading": false
+        },
+        {
+          "term": "plancherel measure",
+          "heading": false
+        },
+        {
+          "term": "probability measure",
+          "heading": false
+        },
+        {
+          "term": "fluctuations",
+          "heading": true
+        },
+        {
+          "term": "fluctuations row",
+          "heading": false
+        },
+        {
+          "term": "towards gaussian",
+          "heading": false
+        },
+        {
+          "term": "mathscr",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsect:fluctuations_row label=\"subsect:fluctuations_row\"} As before, we denote by $X_\\lambda$ the probability measure on $[-1,1]$ associated to a Young diagram $\\lambda$, and by $X_{\\infty;q}$ the limit probability measure of the $X_{\\lambda}$ under the $q$-Plancherel measures. If $f \\in \\mathscr{C}^1([-1,1])$ is a continuously differentiable function on $[-1;1]$, we define the rescaled deviation of $f$ under",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-6-schur-weyl-representations",
+      "number": "6",
+      "title": "Schur-Weyl representations",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 64,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schur-weyl",
+          "heading": true
+        },
+        {
+          "term": "sect",
+          "heading": false
+        },
+        {
+          "term": "alpha",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sect:schur-weyl label=\"sect:schur-weyl\"} In this section, we use the same tools to study other measures on partitions and to describe asymptotically the shape of the diagrams. The purpose of this section is to show that our method works as soon as the typical length of the first rows of the diagram is of order $n^\\alpha$ with $\\alpha>1/2$ and not only with $\\alpha=1$.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-026-61-decomposition-of-tensor-representations",
+      "number": "6.1",
+      "title": "Decomposition of tensor representations",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 334,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "suite croissante",
+          "heading": false
+        },
+        {
+          "term": "downarrow rho",
+          "heading": false
+        },
+        {
+          "term": "rho cdot",
+          "heading": false
+        },
+        {
+          "term": "shape lambda",
+          "heading": false
+        },
+        {
+          "term": "tabular right",
+          "heading": false
+        },
+        {
+          "term": "begin tabular",
+          "heading": false
+        },
+        {
+          "term": "end tabular",
+          "heading": false
+        },
+        {
+          "term": "subsect",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsect:def_SW label=\"subsect:def_SW\"} We consider the following representation of the symmetric group: $\\mathfrak{S}_n$ acts on the space $(\\mathbb{C}^N)^{\\otimes n}$ by commuting the vectors of the pure tensors. Its character is very easy to compute: $\\chi(\\rho)=N^{\\ell(\\rho)}$, where $\\ell(\\rho)$ is the number of parts of the partition $\\rho$ (or, equivalently, the number of cycles of any permutation of type",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-62-asymptotic-shape-of-the-diagrams",
+      "number": "6.2",
+      "title": "Asymptotic shape of the diagrams",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 26,
+      "labelStart": "24",
+      "labelEnd": "26",
+      "words": 1087,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "powersums encore",
+          "heading": false
+        },
+        {
+          "term": "varsigma rho",
+          "heading": false
+        },
+        {
+          "term": "asymptotic shape",
+          "heading": true
+        },
+        {
+          "term": "alpha rho",
+          "heading": false
+        },
+        {
+          "term": "encore dominant",
+          "heading": false
+        },
+        {
+          "term": "lambda alpha",
+          "heading": false
+        },
+        {
+          "term": "deg alpha",
+          "heading": false
+        },
+        {
+          "term": "rho ell",
+          "heading": false
+        }
+      ],
+      "extract": "In the previous paragraph, we introduced some measures on Young diagrams of size $n$. Here we are interested in the asymptotic shape of typical diagrams when $n$ tends to infinity. That means, as the measure we introduced also depends on an other parameter $N$, that we have to choose a value of $N$ for each $n$. The case where the parameter $N$ is equivalent of an expression of the kind $1/c \\cdot n^\\alpha$ with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "26",
+      "labelEnd": "26",
+      "words": 87,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sage-combinat",
+          "heading": false
+        },
+        {
+          "term": "diag",
+          "heading": false
+        },
+        {
+          "term": "rows",
+          "heading": false
+        },
+        {
+          "term": "open-source",
+          "heading": false
+        }
+      ],
+      "extract": "The authors would like to thank P. Biane for his valuable help, as well as A. Borodin and P. Śniady for interesting remarks. In addition, we want to mention that Theorem [\\[th:first_order_as_rows\\]](#th:first_order_as_rows){reference-type=\"ref\" reference=\"th:first_order_as_rows\"} was conjectured by the second author from examples (like Figure [\\[fig:ex_diag_qplanch\\]](#fig:ex_diag_qplanch){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "26",
+      "labelEnd": "27",
+      "words": 859,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "young tableaux",
+          "heading": false
+        },
+        {
+          "term": "random young",
+          "heading": false
+        },
+        {
+          "term": "plancherel measure",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "english translation",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "symmetric groups",
+          "heading": false
+        },
+        {
+          "term": "kerov",
+          "heading": false
+        }
+      ],
+      "extract": "[BDJ99] J. Baik, P. Deift, and K. Johansson. On the distribution of the length of the longest increasing subsequence of random permutations. J. Amer. Math. Soc., 12(4):1119–1178, 1999. [BDJ00] J. Baik, P. Deift, and K. Johansson. On the distribution of the length of the second row of a Young diagram under Plancherel measure. Geometric And Functional Analysis, 10(4):702–731, 2000. [Bia01] P. Biane. Approximate",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mathscr varsigma",
+      "heading": false
+    },
+    {
+      "term": "varsigma lambda",
+      "heading": false
+    },
+    {
+      "term": "varsigma rho",
+      "heading": false
+    },
+    {
+      "term": "frac varsigma",
+      "heading": false
+    },
+    {
+      "term": "mathbb mathscr",
+      "heading": false
+    },
+    {
+      "term": "varsigma sum",
+      "heading": false
+    },
+    {
+      "term": "characters varsigma",
+      "heading": false
+    },
+    {
+      "term": "cdots varsigma",
+      "heading": false
+    },
+    {
+      "term": "aligned varsigma",
+      "heading": false
+    },
+    {
+      "term": "bullet varsigma",
+      "heading": false
+    },
+    {
+      "term": "diagrams mathscr",
+      "heading": false
+    },
+    {
+      "term": "measure lambda",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "A random Young diagram λ = (101, 51, 28, 8, 7, 3, 1, 1) of size 200 under the 1/2-Plancherel measure",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Limit shape of a rescaled random diagram under the Schur-Weyl measure of parameters c > 0 and α < 1/2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Generic degrees, q-Plancherel measures and q-transition probabilities on diagrams of size n ≤4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Modiﬁed Frobenius coordinates of a Young diagram drawn in Russian style. For instance, a∗",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Graphical representation of the test function fi",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 30,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 31,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "5 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p26); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 31 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1001.2180v2"
+  }
+}

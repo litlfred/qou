@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-weight-decomposition-su2",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:weight-decomposition-su2",
+  "kind": "example",
+  "title": "Constructive weight decomposition for $\\mathrm{SU}(2)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-weight-decomposition-exists",
+    "papers/quantum-observable-universe/blocks/ex-maximal-torus-su2"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-weight-decomposition-exists",
+  "tags": [
+    "su2",
+    "weight-decomposition",
+    "constructive",
+    "peter-weyl"
+  ],
+  "text": "weight-decomposition-su2.md",
+  "provenance": "authored"
+}

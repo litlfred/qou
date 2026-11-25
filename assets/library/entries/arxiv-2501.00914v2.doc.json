@@ -1,0 +1,1763 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2501.00914v2",
+  "title": "L-spaces and knot traces",
+  "variant": "pdf",
+  "pages": 37,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Nonzero traces",
+      "number": "1.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-nonzero-traces"
+    },
+    {
+      "level": 2,
+      "title": "Questions",
+      "number": "1.2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-questions"
+    },
+    {
+      "level": 2,
+      "title": "Conventions",
+      "number": "1.3",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-conventions"
+    },
+    {
+      "level": 2,
+      "title": "Organization",
+      "number": "1.4",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-organization"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgements",
+      "number": "1.5",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-15-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "Zero-surgeries on ffpf knots",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-2-zero-surgeries-on-ffpf-knots"
+    },
+    {
+      "level": 2,
+      "title": "Surface homeomorphisms and fibered knots",
+      "number": "2.1",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-21-surface-homeomorphisms-and-fibered-knots"
+    },
+    {
+      "level": 2,
+      "title": "Fixed points and ffpf knots",
+      "number": "2.2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-22-fixed-points-and-ffpf-knots"
+    },
+    {
+      "level": 2,
+      "title": "Zero-surgeries on ffpf knots",
+      "number": "2.3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-23-zero-surgeries-on-ffpf-knots"
+    },
+    {
+      "level": 1,
+      "title": "Traces and large surgeries",
+      "number": "3",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-3-traces-and-large-surgeries"
+    },
+    {
+      "level": 2,
+      "title": "Topological preliminaries",
+      "number": "3.1",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-31-topological-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "The span of the relative invariants of the n-trace",
+      "number": "3.2",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-32-the-span-of-the-relative-invariants-of-the-n"
+    },
+    {
+      "level": 2,
+      "title": "The mod 2 grading",
+      "number": "3.3",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-33-the-mod-2-grading"
+    },
+    {
+      "level": 2,
+      "title": "Zero-traces of L-space knots",
+      "number": "3.4",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-34-zero-traces-of-l-space-knots"
+    },
+    {
+      "level": 1,
+      "title": "Traces and rational surgeries",
+      "number": "4",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-4-traces-and-rational-surgeries"
+    },
+    {
+      "level": 1,
+      "title": "Negative traces and positive torus knots",
+      "number": "5",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-5-negative-traces-and-positive-torus-knots"
+    },
+    {
+      "level": 2,
+      "title": "Torus knots",
+      "number": "5.1",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Satellite knots",
+      "number": "5.2",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-52-satellite-knots"
+    },
+    {
+      "level": 2,
+      "title": "Hyperbolic knots",
+      "number": "5.3",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-53-hyperbolic-knots"
+    },
+    {
+      "level": 1,
+      "title": "Positive traces and T2,2g+1 torus knots",
+      "number": "6",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-6-positive-traces-and-t22g1-torus-knots"
+    },
+    {
+      "level": 2,
+      "title": "Alexander polynomials of L-space knots",
+      "number": "6.1",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-61-alexander-polynomials-of-l-space-knots"
+    },
+    {
+      "level": 2,
+      "title": "Knots with the same knot Floer homology as T2,2g+1",
+      "number": "6.2",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-62-knots-with-the-same-knot-floer-homology-as-t2"
+    },
+    {
+      "level": 2,
+      "title": "Traces that detect knot Floer homology",
+      "number": "6.3",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-63-traces-that-detect-knot-floer-homology"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. Non-characterizing slopes for torus knots",
+      "number": null,
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-appendix-a-non-characterizing-slopes-for-torus-k"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 131,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "torus knot",
+          "heading": false
+        },
+        {
+          "term": "characterizing",
+          "heading": false
+        },
+        {
+          "term": "sivek",
+          "heading": false
+        },
+        {
+          "term": "baldwin",
+          "heading": false
+        }
+      ],
+      "extract": "L-SPACES AND KNOT TRACES JOHN A. BALDWIN AND STEVEN SIVEK Abstract. There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries. We study a 4-dimensional version of this question: which knots are determined by which of their traces? We prove several results that are in stark contrast with what is known about characterizing surgeries, most notably that the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2501.00914v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 998,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "l-space knot",
+          "heading": false
+        },
+        {
+          "term": "ffpf knot",
+          "heading": false
+        },
+        {
+          "term": "characterizing slope",
+          "heading": false
+        },
+        {
+          "term": "trace detects",
+          "heading": false
+        },
+        {
+          "term": "heegaard floer",
+          "heading": false
+        },
+        {
+          "term": "floer homology",
+          "heading": false
+        },
+        {
+          "term": "dim hfkhat",
+          "heading": false
+        },
+        {
+          "term": "knot subset",
+          "heading": false
+        }
+      ],
+      "extract": "Given a knot $K\\subset S^3$ and an integer $n$, the \\emph{$n$-trace} $X_n(K)$ is the smooth, oriented 4-manifold with boundary obtained from $B^4$ by attaching an $n$-framed 2-handle along $K\\subset \\partial B^4$. We say that $X_n(K)$ \\emph{detects} $K$ if its oriented diffeomorphism type determines $K$ --- that is, if \\[X_n(J)\\cong X_n(K) \\] implies that $J=K$. In this paper, we propose and study the following",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-nonzero-traces",
+      "number": "1.1",
+      "title": "Nonzero traces",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 319,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "trace detects",
+          "heading": false
+        },
+        {
+          "term": "characterizing slope",
+          "heading": false
+        },
+        {
+          "term": "torus knot",
+          "heading": false
+        },
+        {
+          "term": "knot floer",
+          "heading": false
+        },
+        {
+          "term": "negtracetorus",
+          "heading": false
+        },
+        {
+          "term": "ref thm",
+          "heading": false
+        },
+        {
+          "term": "hfkhat",
+          "heading": false
+        },
+        {
+          "term": "lspace-detection-main",
+          "heading": false
+        }
+      ],
+      "extract": "We consider detection by nonzero traces as well, and prove several results that are in stark contrast with what is known about characterizing slopes. For instance, all rational surgeries characterize the trefoils \\cite{osz-characterizing}, but if $K$ is a positive torus knot besides the right-handed trefoil, then it is unknown whether \\emph{any} integer $n\\leq 0$ is a characterizing slope for $K$. On the other hand,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-questions",
+      "number": "1.2",
+      "title": "Questions",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 408,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-fibered knots",
+          "heading": false
+        },
+        {
+          "term": "ffpf condition",
+          "heading": false
+        },
+        {
+          "term": "dim hfkhat",
+          "heading": false
+        },
+        {
+          "term": "l-space knot",
+          "heading": false
+        },
+        {
+          "term": "characterizing slopes",
+          "heading": false
+        },
+        {
+          "term": "affirmative answer",
+          "heading": false
+        },
+        {
+          "term": "begin question",
+          "heading": false
+        },
+        {
+          "term": "end question",
+          "heading": false
+        }
+      ],
+      "extract": "Our results above and their comparisons with results about characterizing slopes raise many natural questions; we record a few of these here. The first asks whether we can upgrade our main result, Theorem \\ref{thm:main}, to a statement about characterizing slopes: \\begin{question} Is $0$ a characterizing slope for every L-space knot? \\end{question} An affirmative answer would follow from Theorem",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-conventions",
+      "number": "1.3",
+      "title": "Conventions",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 9,
+      "summary": null,
+      "keywords": [],
+      "extract": "We will use ∼= to indicate orientation-preserving diffeomorphism throughout.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-004-14-organization",
+      "number": "1.4",
+      "title": "Organization",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 185,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ref thm",
+          "heading": false
+        },
+        {
+          "term": "heegaard floer",
+          "heading": false
+        },
+        {
+          "term": "characterizing slopes",
+          "heading": false
+        },
+        {
+          "term": "ref sec",
+          "heading": false
+        },
+        {
+          "term": "torus knots",
+          "heading": false
+        },
+        {
+          "term": "floer homology",
+          "heading": false
+        },
+        {
+          "term": "trace-large-surgery",
+          "heading": false
+        },
+        {
+          "term": "main-lspace-zero",
+          "heading": false
+        }
+      ],
+      "extract": "In \\S\\ref{sec:veering}, we review and prove some facts about surface diffeomorphisms and their dynamics, which we then apply to prove Theorem~\\ref{thm:zero-surgery-fpf} and consequently Theorem \\ref{thm:main-lspace-zero}. In \\S\\ref{sec:large-surgeries}, we prove Theorem~\\ref{thm:trace-large-surgery}, which says that if $n\\geq 0$ then $X_n(K)$ determines the Heegaard Floer homology of large surgeries on $K$. It",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-15-acknowledgements",
+      "number": "1.5",
+      "title": "Acknowledgements",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 19,
+      "summary": null,
+      "keywords": [],
+      "extract": "We thank Matt Hedden and Tye Lidman for helpful conversations, and the referee for a very careful reading and lots of detailed feedback on the original version of this paper.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-2-zero-surgeries-on-ffpf-knots",
+      "number": "2",
+      "title": "Zero-surgeries on ffpf knots",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 48,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ffpf-examples",
+          "heading": false
+        },
+        {
+          "term": "ref thm",
+          "heading": false
+        },
+        {
+          "term": "main-lspace-zero",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:veering} The ultimate goal of this section is to prove Theorem \\ref{thm:zero-surgery-fpf}; we will see in Lemma~\\ref{lem:ffpf-examples} that this subsumes Theorem~\\ref{thm:main-lspace-zero}, thereby proving the latter as well. We first establish some results about monodromies of fibered knots and their behaviors under \\emph{capping off}.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-21-surface-homeomorphisms-and-fibered-knots",
+      "number": "2.1",
+      "title": "Surface homeomorphisms and fibered knots",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 8,
+      "labelStart": "5",
+      "labelEnd": "8",
+      "words": 2212,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hat varphi",
+          "heading": false
+        },
+        {
+          "term": "hat sigma",
+          "heading": false
+        },
+        {
+          "term": "hat gamma",
+          "heading": false
+        },
+        {
+          "term": "pseudo-anosov component",
+          "heading": false
+        },
+        {
+          "term": "foliations hat",
+          "heading": false
+        },
+        {
+          "term": "fibered knots",
+          "heading": true
+        },
+        {
+          "term": "setminus hat",
+          "heading": false
+        },
+        {
+          "term": "pseudo-anosov homeomorphism",
+          "heading": false
+        }
+      ],
+      "extract": "Let $h:\\Sigma\\to\\Sigma$ be a homeomorphism of a compact oriented surface with possibly empty boundary. By Thurston's classification \\cite{thurston-diffeomorphisms}, $h$ is isotopic rel boundary to a map $\\varphi:\\Sigma\\to\\Sigma$ such that \\begin{itemize} \\item there exists a possibly empty \\emph{reducing system} $\\Gamma \\subset \\Sigma$ consisting of a finite disjoint union of simple closed curves which is fixed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-22-fixed-points-and-ffpf-knots",
+      "number": "2.2",
+      "title": "Fixed points and ffpf knots",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 690,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ffpf",
+          "heading": true
+        },
+        {
+          "term": "ffpf knot",
+          "heading": false
+        },
+        {
+          "term": "hfk",
+          "heading": false
+        },
+        {
+          "term": "l-space knot",
+          "heading": false
+        },
+        {
+          "term": "ffpf condition",
+          "heading": false
+        },
+        {
+          "term": "almost l-space",
+          "heading": false
+        },
+        {
+          "term": "nontrivial l-space",
+          "heading": false
+        },
+        {
+          "term": "fixed points",
+          "heading": true
+        }
+      ],
+      "extract": "Vela-Vick proved in [BVV18] that dim [ HFK(K, g −1) ≥1. We will focus on knots for which equality is achieved, motivating the following definition: Definition 2.6. A knot K ⊂S3 is ffpf (for “fibered and fixed-point-free”) if it is fibered of some genus g ≥1, and dim [ HFK(K, g −1) = 1. We will justify this terminology in Proposition 2.9, which says that if a knot is ffpf then no pseudo- Anosov component of its",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-23-zero-surgeries-on-ffpf-knots",
+      "number": "2.3",
+      "title": "Zero-surgeries on ffpf knots",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 13,
+      "labelStart": "10",
+      "labelEnd": "13",
+      "words": 2068,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ffpf knots",
+          "heading": true
+        },
+        {
+          "term": "cable knots",
+          "heading": false
+        },
+        {
+          "term": "cable pattern",
+          "heading": false
+        },
+        {
+          "term": "pseudo-anosov component",
+          "heading": false
+        },
+        {
+          "term": "jsj piece",
+          "heading": false
+        },
+        {
+          "term": "seifert fibered",
+          "heading": false
+        },
+        {
+          "term": "capping disk",
+          "heading": false
+        },
+        {
+          "term": "torus knots",
+          "heading": false
+        }
+      ],
+      "extract": "to prove the main result of this section, Theorem 2.10. By Lemma 2.7, this theorem immediately implies Theorem 1.4, which says that any two L-space knots are distinguished by their 0-surgeries. Theorem 2.10. If J and K are ffpf knots such that S3 0(J) ∼= S3 0(K), then J = K. We begin by proving some special cases. Lemma 2.11. If J and K are torus knots such that S3 0(J) ∼= S3 0(K), then J = K. Proof. Write J = Ta,b",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-3-traces-and-large-surgeries",
+      "number": "3",
+      "title": "Traces and large surgeries",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 261,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hfhat godd",
+          "heading": false
+        },
+        {
+          "term": "hfhat geven",
+          "heading": false
+        },
+        {
+          "term": "dim hfhat",
+          "heading": false
+        },
+        {
+          "term": "hfhat-odd-from-hfhat",
+          "heading": false
+        },
+        {
+          "term": "l-space knot",
+          "heading": false
+        },
+        {
+          "term": "trace detects",
+          "heading": false
+        },
+        {
+          "term": "surgeries",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{sec:large-surgeries} Our goal in this section is to show that for any $n \\geq 0$, the oriented diffeomorphism type of the $n$-trace $X_n(K)$ determines the $\\Z/2\\Z$-graded Heegaard Floer homology $\\hfhat(S^3_m(K))$ of large integer surgeries on $K$, where $m \\gg 0$ (in fact, $m \\geq 2g(K)-1$ will suffice). Specifically, the fact that $\\chi(\\hfhat(Y)) = |H_1(Y)|$ tells us that for integers $m > 0$ we have",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-31-topological-preliminaries",
+      "number": "3.1",
+      "title": "Topological preliminaries",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 321,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hfhat",
+          "heading": false
+        },
+        {
+          "term": "spint",
+          "heading": false
+        },
+        {
+          "term": "framed handle",
+          "heading": false
+        },
+        {
+          "term": "hat sigma",
+          "heading": false
+        },
+        {
+          "term": "cobordism map",
+          "heading": false
+        },
+        {
+          "term": "circ",
+          "heading": false
+        },
+        {
+          "term": "handle along",
+          "heading": false
+        },
+        {
+          "term": "adjunction inequality",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ssec:topology-setup} We begin by introducing some cobordisms and other notation which will be needed in the proof. Given an oriented knot $K \\subset S^3$ and an integer $n$, the homology $H_2(X_n(K)) \\cong \\Z$ is generated by a class $[\\hat\\Sigma_n]$, where $\\hat\\Sigma_n$ is constructed by gluing the core of the $n$-framed 2-handle to a Seifert surface for $K$ to produce an oriented surface of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-32-the-span-of-the-relative-invariants-of-the-n",
+      "number": "3.2",
+      "title": "The span of the relative invariants of the n-trace",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 17,
+      "labelStart": "14",
+      "labelEnd": "17",
+      "words": 1042,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "substack spint",
+          "heading": false
+        },
+        {
+          "term": "xrightarrow circ",
+          "heading": false
+        },
+        {
+          "term": "circ dots",
+          "heading": false
+        },
+        {
+          "term": "rangle langle",
+          "heading": false
+        },
+        {
+          "term": "align langle",
+          "heading": false
+        },
+        {
+          "term": "circ right",
+          "heading": false
+        },
+        {
+          "term": "hat sigma",
+          "heading": false
+        },
+        {
+          "term": "circ cup",
+          "heading": false
+        }
+      ],
+      "extract": "The following key lemma is the Heegaard Floer analogue of \\cite[Proposition~7.1]{bs-lspace}; the proof is essentially the same, but appears simpler since (unlike in framed instanton homology) we can work over $\\F=\\Z/2\\Z$. \\begin{lemma} \\label{lem:fw-z} We have $F_{W_{n+1}}(z_{n,i}) = z_{n+1,i} + z_{n+1,i+1}$ for all $n \\geq 0$ and all $i$. \\end{lemma} \\begin{proof} Arguing as in \\cite[Proposition~7.1]{bs-lspace}, we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-33-the-mod-2-grading",
+      "number": "3.3",
+      "title": "The mod 2 grading",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 19,
+      "labelStart": "17",
+      "labelEnd": "19",
+      "words": 924,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hfhat godd",
+          "heading": false
+        },
+        {
+          "term": "dim hfhat",
+          "heading": false
+        },
+        {
+          "term": "grading",
+          "heading": true
+        },
+        {
+          "term": "spint",
+          "heading": false
+        },
+        {
+          "term": "odd grading",
+          "heading": false
+        },
+        {
+          "term": "heegaard floer",
+          "heading": false
+        },
+        {
+          "term": "absolute grading",
+          "heading": false
+        },
+        {
+          "term": "even grading",
+          "heading": false
+        }
+      ],
+      "extract": "Heegaard Floer homology has a canonical $\\Z/2\\Z$ grading, with respect to which $\\hfhat(Y)$ has Euler characteristic $|H_1(Y;\\Z)|$ if this order is finite, and $0$ otherwise. We will write the graded pieces as $\\hfhat_\\geven(Y)$ and $\\hfhat_\\godd(Y)$. \\begin{lemma} \\label{lem:cobordism-degree} For all $n \\geq 0$, we have $\\deg(F_{X^\\circ_n}) = 1$ and $\\deg(F_{W_{n+1}}) = 0$ with respect to the absolute $\\Z/2\\Z$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-34-zero-traces-of-l-space-knots",
+      "number": "3.4",
+      "title": "Zero-traces of L-space knots",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": "19",
+      "labelEnd": "19",
+      "words": 128,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "l-space",
+          "heading": true
+        },
+        {
+          "term": "l-space knot",
+          "heading": false
+        },
+        {
+          "term": "ref thm",
+          "heading": false
+        },
+        {
+          "term": "ffpf-examples",
+          "heading": false
+        },
+        {
+          "term": "theorem ref",
+          "heading": false
+        }
+      ],
+      "extract": "We conclude this section by proving our main result, Theorem~\\ref{thm:main}, which asserts that every L-space knot is detected by its $0$-trace. \\begin{proof}[Proof of Theorem~\\ref{thm:main}] Suppose that $K$ is an L-space knot, and that $X_0(J) \\cong X_0(K)$. Then since Theorem~\\ref{thm:trace-large-surgery} says that the diffeomorphism type of the 0-trace determines whether or not a given knot is an L-space knot,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-4-traces-and-rational-surgeries",
+      "number": "4",
+      "title": "Traces and rational surgeries",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 23,
+      "labelStart": "19",
+      "labelEnd": "23",
+      "words": 1710,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hfhat godd",
+          "heading": false
+        },
+        {
+          "term": "dim hfhat",
+          "heading": false
+        },
+        {
+          "term": "detects hat",
+          "heading": false
+        },
+        {
+          "term": "almost l-space",
+          "heading": false
+        },
+        {
+          "term": "l-space knot",
+          "heading": false
+        },
+        {
+          "term": "recover hat",
+          "heading": false
+        },
+        {
+          "term": "leq tau",
+          "heading": false
+        },
+        {
+          "term": "trace-determines-hfhat-restated",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:rational-surgeries} The goal of this section is to prove in Theorem~\\ref{thm:trace-determines-hfhat-restated} that any trace $X_n(K)$ determines the Heegaard Floer homology of many or all rational surgeries on $K$; this quickly implies Theorem~\\ref{thm:lspace-detection-main} as well. For this, we combine the results of the previous section with work of Hayden--Mark--Piccirillo, who proved in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-5-negative-traces-and-positive-torus-knots",
+      "number": "5",
+      "title": "Negative traces and positive torus knots",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 826,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "l-space knot",
+          "heading": false
+        },
+        {
+          "term": "torus knot",
+          "heading": false
+        },
+        {
+          "term": "negtracetorus-restated",
+          "heading": false
+        },
+        {
+          "term": "ref thm",
+          "heading": false
+        },
+        {
+          "term": "p-q",
+          "heading": false
+        },
+        {
+          "term": "ref prop",
+          "heading": false
+        },
+        {
+          "term": "item proposition",
+          "heading": false
+        },
+        {
+          "term": "theorem ref",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:torus-surgeries} The goal of this section is to prove Theorem~\\ref{thm:negtracetorus}, which we restate here as follows: \\begin{theorem} \\label{thm:negtracetorus-restated} Let $T_{p,q}$ be a positive torus knot, and suppose for some knot $K \\subset S^3$ and some integer $n \\leq 0$ that $X_n(K) \\cong X_n(T_{p,q})$. Then $K = T_{p,q}$. \\end{theorem} For $n=0$ this follows from Theorem \\ref{thm:main}, since",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-52-satellite-knots",
+      "number": "5.2",
+      "title": "Satellite knots",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 27,
+      "labelStart": "24",
+      "labelEnd": "27",
+      "words": 1363,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "l-space knot",
+          "heading": false
+        },
+        {
+          "term": "bridge braid",
+          "heading": false
+        },
+        {
+          "term": "cong times",
+          "heading": false
+        },
+        {
+          "term": "cite gabai-foliations",
+          "heading": false
+        },
+        {
+          "term": "satellite",
+          "heading": true
+        },
+        {
+          "term": "companion torus",
+          "heading": false
+        },
+        {
+          "term": "cite moser",
+          "heading": false
+        },
+        {
+          "term": "item cong",
+          "heading": false
+        }
+      ],
+      "extract": "In this subsection we show that if $K$ is a satellite L-space knot of the same genus as $T_{p,q}$, and if $S^3_r(K) \\cong S^3_r(T_{p,q})$, then $r$ must be large enough so that their common $r$-surgery is an L-space. \\begin{lemma} \\label{lem:prelim-satellite-surgeries} Suppose for some nontrivial satellite knot $K=P(C)$ and slope $r\\in\\Q$ that the companion torus $\\partial \\nu(C)$ is compressible in $S^3_r(K)$. Then",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-53-hyperbolic-knots",
+      "number": "5.3",
+      "title": "Hyperbolic knots",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": "27",
+      "labelEnd": "28",
+      "words": 700,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fibered l-space",
+          "heading": false
+        },
+        {
+          "term": "l-space knot",
+          "heading": false
+        },
+        {
+          "term": "seifert fibered",
+          "heading": false
+        },
+        {
+          "term": "right-veering monodromy",
+          "heading": false
+        },
+        {
+          "term": "fibered hyperbolic",
+          "heading": false
+        },
+        {
+          "term": "fibered cite",
+          "heading": false
+        },
+        {
+          "term": "genus fibered",
+          "heading": false
+        },
+        {
+          "term": "cite gabai-foliations",
+          "heading": false
+        }
+      ],
+      "extract": "In this subsection we determine when a fibered hyperbolic knot can have some surgery in common with a torus knot. \\begin{proposition} \\label{prop:hyperbolic} If $S^3_0(K) \\cong S^3_0(T_{p,q})$ but $K$ is not isotopic to $T_{p,q}$, then $K$ is a fibered hyperbolic knot, and its monodromy is not veering. In particular, neither $K$ nor its mirror is an L-space knot. \\end{proposition} \\begin{proof} Since 0-surgery",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-6-positive-traces-and-t22g1-torus-knots",
+      "number": "6",
+      "title": "Positive traces and T2,2g+1 torus knots",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 28,
+      "labelStart": "28",
+      "labelEnd": "28",
+      "words": 130,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "traces",
+          "heading": true
+        },
+        {
+          "term": "torus knots",
+          "heading": true
+        },
+        {
+          "term": "hfkhat",
+          "heading": false
+        },
+        {
+          "term": "ref thm",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:t2n-positive} As a special case of Theorem~\\ref{thm:main}, we know that all torus knots are characterized by their 0-traces, but the proof makes essential use of the fact that $S^3_0(T_{p,q})$ is a fibered 3-manifold. Similarly, Theorem~\\ref{thm:negtracetorus} tells us that positive torus knots are characterized by any of their negative traces, but reveals very little about their positive traces. However,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-61-alexander-polynomials-of-l-space-knots",
+      "number": "6.1",
+      "title": "Alexander polynomials of L-space knots",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 30,
+      "labelStart": "28",
+      "labelEnd": "30",
+      "words": 946,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "l-space knots",
+          "heading": true
+        },
+        {
+          "term": "alexander polynomials",
+          "heading": true
+        },
+        {
+          "term": "krcatovich",
+          "heading": false
+        },
+        {
+          "term": "multline delta",
+          "heading": false
+        },
+        {
+          "term": "align delta",
+          "heading": false
+        },
+        {
+          "term": "frac delta",
+          "heading": false
+        },
+        {
+          "term": "satellite knots",
+          "heading": false
+        },
+        {
+          "term": "begin multline",
+          "heading": false
+        }
+      ],
+      "extract": "We begin with a computation that follows from useful restrictions found by Krcatovich \\cite{krcatovich} on the Alexander polynomials of L-space knots. \\begin{theorem}[{\\cite[Theorem~1.6]{krcatovich}}] \\label{thm:krcatovich} If $K \\subset S^3$ is an L-space knot of genus $g \\geq 1$, then its Alexander polynomial has the form \\begin{equation} \\label{eq:krcatovich-lspace} \\Delta_K(t) = (1-t^{-1})\\sum_{i=0}^\\infty",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-62-knots-with-the-same-knot-floer-homology-as-t2",
+      "number": "6.2",
+      "title": "Knots with the same knot Floer homology as T2,2g+1",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": "30",
+      "labelEnd": "31",
+      "words": 447,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "satellite l-space",
+          "heading": false
+        },
+        {
+          "term": "l-space knot",
+          "heading": false
+        },
+        {
+          "term": "baker--motegi cite",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "casson-t2n",
+          "heading": false
+        },
+        {
+          "term": "end align",
+          "heading": false
+        },
+        {
+          "term": "delta",
+          "heading": false
+        },
+        {
+          "term": "floer",
+          "heading": true
+        }
+      ],
+      "extract": "We know that $\\hfkhat(K)$ detects the trefoil $T_{2,3}$ \\cite{ghiggini} and the cinquefoil $T_{2,5}$ \\cite{frw-cinquefoil}, but not whether it detects other knots $T_{2,2g+1}$ with $g \\geq 3$. However, we can combine Proposition~\\ref{prop:casson-t2n} with work of Baker--Motegi \\cite{baker-motegi-twist} on L-space satellites to show that any other knot whose knot Floer homology agrees with that of $T_{2,2g+1}$ must",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-63-traces-that-detect-knot-floer-homology",
+      "number": "6.3",
+      "title": "Traces that detect knot Floer homology",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 32,
+      "labelStart": "31",
+      "labelEnd": "32",
+      "words": 407,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "knot floer",
+          "heading": true
+        },
+        {
+          "term": "floer homology",
+          "heading": true
+        },
+        {
+          "term": "cong hfkhat",
+          "heading": false
+        },
+        {
+          "term": "l-space knot",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic l-space",
+          "heading": false
+        },
+        {
+          "term": "satellite knot",
+          "heading": false
+        },
+        {
+          "term": "right-veering monodromy",
+          "heading": false
+        },
+        {
+          "term": "frac delta",
+          "heading": false
+        }
+      ],
+      "extract": "We now combine the results of the previous sections to prove that the $n$-trace of any $T_{2,2g+1}$ recovers the knot Floer homology of any knot with the same $n$-trace. \\begin{proposition} \\label{prop:lspace-trace-hyperbolic} Fix $g \\geq 1$, and suppose for some knot $K \\subset S^3$ and integer $n \\in \\Z$ that $X_n(K) \\cong X_n(T_{2,2g+1})$. Then \\[ \\hfkhat(K) \\cong \\hfkhat(T_{2,2g+1}) \\] as bigraded $\\F$-vector",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-appendix-a-non-characterizing-slopes-for-torus-k",
+      "number": null,
+      "title": "Appendix A. Non-characterizing slopes for torus knots",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 34,
+      "labelStart": "32",
+      "labelEnd": "34",
+      "words": 1104,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "torus knots",
+          "heading": true
+        },
+        {
+          "term": "f2k",
+          "heading": false
+        },
+        {
+          "term": "tck",
+          "heading": false
+        },
+        {
+          "term": "tak",
+          "heading": false
+        },
+        {
+          "term": "akbk",
+          "heading": false
+        },
+        {
+          "term": "lens spaces",
+          "heading": false
+        },
+        {
+          "term": "different genera",
+          "heading": false
+        },
+        {
+          "term": "leading coefficient",
+          "heading": false
+        }
+      ],
+      "extract": "Here we describe a sequence of monic integer polynomials ak(n), bk(n), ck(n), dk(n) and pk(n) that determine a 2-parameter family of pairs of torus knots with lens space surgeries in common. By Proposition 5.2 the torus knots in each pair must have different genera, although we do not compute these genera directly. Theorem A.1. For each integer k ≥−1 we define polynomials ak, bk, ck, dk, pk, qk ∈Z[n] by setting",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 37,
+      "labelStart": "34",
+      "labelEnd": "37",
+      "words": 1497,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ozsv ath",
+          "heading": false
+        },
+        {
+          "term": "floer homology",
+          "heading": false
+        },
+        {
+          "term": "knot floer",
+          "heading": false
+        },
+        {
+          "term": "l-space surgeries",
+          "heading": false
+        },
+        {
+          "term": "heegaard floer",
+          "heading": false
+        },
+        {
+          "term": "baldwin",
+          "heading": false
+        },
+        {
+          "term": "characterizing slopes",
+          "heading": false
+        },
+        {
+          "term": "sivek",
+          "heading": false
+        }
+      ],
+      "extract": "[AJOT13] T. Abe, I. D. Jong, Y. Omae, and M. Takeuchi. Annulus twist and diffeomorphic 4-manifolds. Math. Proc. Cambridge Philos. Soc., 155(2):219–235, 2013. 1 [Akb77] S. Akbulut. On 2-dimensional homology classes of 4-manifolds. Math. Proc. Cambridge Philos. Soc., 82(1):99–106, 1977. 1 [BHS25] J. A. Baldwin, Y. Hu, and S. Sivek. Khovanov homology and the cinquefoil. J. Eur. Math. Soc. (JEMS), 27(6):2443–2465, 2025.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "l-space knot",
+      "heading": false
+    },
+    {
+      "term": "fibered l-space",
+      "heading": false
+    },
+    {
+      "term": "l-space satellite",
+      "heading": false
+    },
+    {
+      "term": "genus l-space",
+      "heading": false
+    },
+    {
+      "term": "l-space surgeries",
+      "heading": false
+    },
+    {
+      "term": "nontrivial l-space",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic l-space",
+      "heading": false
+    },
+    {
+      "term": "every l-space",
+      "heading": false
+    },
+    {
+      "term": "almost l-space",
+      "heading": false
+    },
+    {
+      "term": "instanton l-space",
+      "heading": false
+    },
+    {
+      "term": "knot floer",
+      "heading": true
+    },
+    {
+      "term": "knot cite",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The transverse foliations ˆFs and ˆFu on D, in the cases where Fs and Fu each have n = 2, 3, 4 boundary prongs. When n = 2 the point p at the center is a smooth point of each foliation, while for n ≥3 it is an n-pronged singular point",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 26,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 26,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p34); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 26 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2501.00914v2"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1203.6041v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "S and D-wave phase shifts in isospin-2 ππ scattering from lattice QCD",
+      "dcterms:creator": [
+        "S",
+        "QCD, D-wave phase shifts in isospin-2 ππ scattering from lattice"
+      ],
+      "dcterms:issued": "D:20241127",
+      "dcterms:identifier": "https://arxiv.org/abs/1203.6041",
+      "dcterms:source": "library/arxiv-1203.6041v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1203.6041v2"
+    }
+  ]
+}

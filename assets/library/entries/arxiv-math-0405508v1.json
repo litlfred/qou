@@ -1,0 +1,120 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0405508v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0405508v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introductory remarks on knots, braids and trace functions",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introductory-remarks-on-knots-braids-and-trace.md",
+      "narrative": null,
+      "content": "In  classical knot theory we  study knots inside the $3$-sphere modulo\nisotopy.   Using the Alexander and Markov  theorem,  we can translate\nthis into a purely  algebraic setting in terms  of Artin  braid groups\nmodulo an equivalence  relation generated  by  `Markov moves'  (one of\nwhich   is usual  conjugation  inside  the   braid\ngroup).    V.F.R.\\  Jones \\cite{Jones} used  this    fact  in 1984 for\nconstructing   a new knot   invariant  through trace functions  on the\nassociated Iwahori-Hecke  algebras of type  $A$  with suitable \nproperties that reflect  the  above  Markov moves.  \n\nJones'",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405508v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0405508v1  [math.RT]  26 May 2004\nMarkov traces and knot invariants related to\nIwahori-Hecke algebras of type B\nMeinolf Geck and Soﬁa Lambropoulou",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405508v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Computations in the braid group of type $B_n$",
+      "pageStart": 4,
+      "pageEnd": 9,
+      "target": "../sections/sec-001-2-computations-in-the-braid-group-of-type-b-n.md",
+      "narrative": null,
+      "content": "It is the purpose of  this section to reformulate  some of the results\nin \\cite{GP}  on elements in signed block  form in  terms of the braid\ngroup. These will then carry through to the Iwahori-Hecke algebra level and will be\nused in the  existence and  uniqueness proof for the  analogues of   Ocneanu's \ntrace for type $B$.\n \n\\medskip\n2.1. Let $W_n$ and $\\tilde{W}_n$ as in Section 1. For  each element $w$ in $W_n$ (or\nin $\\tilde{W}_n$) we  define the length, $l(w)$, to be the smallest non-negative \ninteger $k$ such that $w$  can   be  written as  a    product of $k$  generators  \n(or their inv",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405508v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Trace functions on the Iwahori-Hecke algebra of type $B$",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-002-3-trace-functions-on-the-iwahori-hecke-algebra-o.md",
+      "narrative": null,
+      "content": "In this section, we introduce the  Iwahori-Hecke algebra $H_n$ of type\n$B_n$ as a quotient of  the braid group algebra  of $\\tilde{W}_n$.  We\nalso   show how the  main  results  of \\cite{GP}  on determining trace\nfunctions on  $H_n$ can be   adapted to  our  present situation  where\nreduced expressions  for representatives   of minimal length    in the\nconjugacy classes involve some inverses.\n\n\\medskip\n3.1. Let $A$ be a commutative ring with~$1$ and $Q,q \\in A$ two\nfixed invertible elements.  Then $H_n$  is an associative algebra over $A$. \nIt can be described as a quotient of the\ngroup algebr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405508v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Markov traces for Iwahori-Hecke algebras of type $B$",
+      "pageStart": 12,
+      "pageEnd": 20,
+      "target": "../sections/sec-003-4-markov-traces-for-iwahori-hecke-algebras-of-ty.md",
+      "narrative": null,
+      "content": "Jones writes in \\cite{Jones}, p.346, that there should be analogues of\nOcneanu's trace for  Iwahori-Hecke  algebras other than those  of type\n$A$. The  trace given  in \\cite{L2} was  the  first such  analogue for\n$B$-type  Iwahori-Hecke   algebras.  The  aim of  this   section is to\nclassify  {\\it all} such  `Markov' traces on Iwahori-Hecke algebras of\ntype $B$, based on the results in the previous sections.\n\n\n\\begin{defn} \nLet $z \\in A$ and $\\tau:H \\rightarrow A$ be an $A$-linear map. Then $\\tau$\nis called a Markov trace (with parameter $z$) if the following conditions \nare satisfied.\n\\begin{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0405508v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The knot invariants related to the Hecke algebras of $B$-type",
+      "pageStart": 20,
+      "pageEnd": 27,
+      "target": "../sections/sec-004-5-the-knot-invariants-related-to-the-hecke-algeb.md",
+      "narrative": null,
+      "content": "5.1.  Knots  and links  inside  a solid  torus $T$ can be represented  \nunambiguously  by  `mixed' knots/links   in  $S^3$  which contain one \noriented,  unknotted, pointwise fixed  component (the core of the \ncomplementary unknotted solid torus in $S^3$).  An example of a\nmixed link is illustrated below.\n\n$$\\vbox{\\picill1.7inby1in(mein3)  }$$ \n\n\\noindent So, two links  $L_1$, $L_2$ in  $T$ are isotopic  if and only \nif their corresponding mixed  links in $S^3$  are, through an  isotopy\nthat  keeps the  specified unknotted  component  pointwise fixed.   By\napplying to an oriented mixed link an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

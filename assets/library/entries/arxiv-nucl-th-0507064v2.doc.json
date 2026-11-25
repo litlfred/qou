@@ -1,0 +1,799 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-nucl-th-0507064v2",
+  "title": "The Virial Equation of State of Low-Density Neutron Matter",
+  "variant": "pdf",
+  "pages": 8,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Virial Equation of State",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-virial-equation-of-state"
+    },
+    {
+      "level": 1,
+      "title": "Results",
+      "number": "3",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-results"
+    },
+    {
+      "level": 2,
+      "title": "Virial Coefficients",
+      "number": "3.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-31-virial-coefficients"
+    },
+    {
+      "level": 2,
+      "title": "Pressure",
+      "number": "3.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-32-pressure"
+    },
+    {
+      "level": 2,
+      "title": "Scaling and Energy",
+      "number": "3.3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-33-scaling-and-energy"
+    },
+    {
+      "level": 2,
+      "title": "Entropy and Free Energy",
+      "number": "3.4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-34-entropy-and-free-energy"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions",
+      "number": "4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-4-conclusions"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-acknowledgments"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 153,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "low-density neutron",
+          "heading": false
+        },
+        {
+          "term": "virial equation",
+          "heading": false
+        },
+        {
+          "term": "virial expansion",
+          "heading": false
+        },
+        {
+          "term": "neutron matter",
+          "heading": false
+        },
+        {
+          "term": "temperatures",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:nucl-th/0507064v2 17 May 2006 The Virial Equation of State of Low-Density Neutron Matter C.J. Horowitz∗and A. Schwenk† Nuclear Theory Center and Department of Physics, Indiana University, Bloomington, IN 47408 We present a model-independent description of low-density neutron matter based on the virial expansion. The virial equation of state provides a benchmark for all nuclear equations of state at densities",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-nucl-th-0507064v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 696,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fermi gases",
+          "heading": false
+        },
+        {
+          "term": "dilute fermi",
+          "heading": false
+        },
+        {
+          "term": "neutron matter",
+          "heading": false
+        },
+        {
+          "term": "nuclear matter",
+          "heading": false
+        },
+        {
+          "term": "virial equation",
+          "heading": false
+        },
+        {
+          "term": "virial expansion",
+          "heading": false
+        },
+        {
+          "term": "matter composed",
+          "heading": false
+        },
+        {
+          "term": "cold",
+          "heading": false
+        }
+      ],
+      "extract": "INTRODUCTION Matter composed of neutrons and protons exhibits remarkable properties. Cold neutron matter is close to a scaling regime for densities n ≲1/10 n0, where n0 = 0.16 fm−3 denotes nuclear saturation density. In this regime, thermodynamic properties of neutron mat- ter scale only with the density, and for the energy per particle E/N one has approximately [1, 2] E N ≈0.5 \u0012 E N \u0013 free = 0.5 3(3π2)2/3 10m n2/3",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-virial-equation-of-state",
+      "number": "2",
+      "title": "Virial Equation of State",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 1387,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "virial equation",
+          "heading": true
+        },
+        {
+          "term": "virial coeﬃcient",
+          "heading": false
+        },
+        {
+          "term": "virial expansion",
+          "heading": false
+        },
+        {
+          "term": "low-density neutron",
+          "heading": false
+        },
+        {
+          "term": "neutron matter",
+          "heading": false
+        },
+        {
+          "term": "scattering phase",
+          "heading": false
+        },
+        {
+          "term": "entropy density",
+          "heading": false
+        },
+        {
+          "term": "tron matter",
+          "heading": false
+        }
+      ],
+      "extract": "neutron matter approaches this unitary limit. There are many theoretical approaches to low-density neutron matter. Recently, the equation of state of neu- tron matter at zero temperature has been calculated us- ing an eﬀective ﬁeld theory for large scattering length and large eﬀective range [2]. This provides a model- independent description of neutron matter for densities where the interparticle separation is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-results",
+      "number": "3",
+      "title": "Results",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "[]{#results label=\"results\"}",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-31-virial-coefficients",
+      "number": "3.1",
+      "title": "Virial Coefficients",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 807,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "virial",
+          "heading": true
+        },
+        {
+          "term": "virial coefficient",
+          "heading": false
+        },
+        {
+          "term": "cib effects",
+          "heading": false
+        },
+        {
+          "term": "begin ruledtabular",
+          "heading": false
+        },
+        {
+          "term": "end ruledtabular",
+          "heading": false
+        },
+        {
+          "term": "s-wave scattering",
+          "heading": false
+        },
+        {
+          "term": "text tot",
+          "heading": false
+        },
+        {
+          "term": "leqslant mev",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{figure}[t] \\begin{center} \\includegraphics[scale=0.36,clip=]{NN_phases_neut.eps} \\caption{(Color online) The total phase shift $\\delta^{\\text{tot}}(E)$ versus laboratory energy $E$ obtained from including successively higher partial waves.} \\label{Fig1} \\end{center} \\end{figure} We first calculate the second virial coefficient $b_n$. We use the $T=1$ $np$ phase shifts obtained from the Nijmegen partial wave",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-32-pressure",
+      "number": "3.2",
+      "title": "Pressure",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 426,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pressure",
+          "heading": true
+        },
+        {
+          "term": "virial equation",
+          "heading": false
+        },
+        {
+          "term": "error bands",
+          "heading": false
+        },
+        {
+          "term": "fhnc",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{figure}[t] \\begin{center} \\includegraphics[scale=0.36,clip=]{pressure_neut+err.eps} \\caption{(Color online) The pressure $P$ versus density $n$ for $T=10$, $16$ and $20 \\mev$. The dotted error bands for the virial equation of state are based on an estimate of a neglected third virial coefficient $b^{(3)}_n = \\pm b_n/2$. Note that a negative $b_n^{(3)}$ increases the pressure. Also shown are the FHNC results",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-33-scaling-and-energy",
+      "number": "3.3",
+      "title": "Scaling and Energy",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 678,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "virial pressures",
+          "heading": false
+        },
+        {
+          "term": "scaled pressures",
+          "heading": false
+        },
+        {
+          "term": "unscaled mev",
+          "heading": false
+        },
+        {
+          "term": "virial coefficient",
+          "heading": false
+        },
+        {
+          "term": "energy density",
+          "heading": false
+        },
+        {
+          "term": "scaling",
+          "heading": true
+        },
+        {
+          "term": "versus density",
+          "heading": false
+        },
+        {
+          "term": "kinetic energy",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{figure}[t] \\begin{center} \\includegraphics[scale=0.36,clip=]{pressure_neut_scaling.eps} \\caption{(Color online) The pressure $P$ versus density $n$ calculated for $T=1$, $4$, $8$ and $20 \\mev$ and scaled to a temperature of $T'=4 \\mev$ (for details see text). The lower curves are results for the scaled pressures obtained with a virial coefficient calculated only from the S-wave scattering length $a_{np}$. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-34-entropy-and-free-energy",
+      "number": "3.4",
+      "title": "Entropy and Free Energy",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 268,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "entropy",
+          "heading": true
+        },
+        {
+          "term": "model-independent virial",
+          "heading": false
+        },
+        {
+          "term": "free energy",
+          "heading": true
+        },
+        {
+          "term": "virial equation",
+          "heading": false
+        },
+        {
+          "term": "fhnc",
+          "heading": false
+        },
+        {
+          "term": "particle versus",
+          "heading": false
+        },
+        {
+          "term": "color online",
+          "heading": false
+        },
+        {
+          "term": "center includegraphics",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{figure}[t] \\begin{center} \\includegraphics[scale=0.36,clip=]{entropy_neut.eps} \\caption{(Color online) The entropy per particle $S/N$ versus density $n$ for $T=10$, $16$ and $20 \\mev$. Also shown are the FHNC results of Friedman and Pandharipande (crosses)~\\cite{FP}. The circles indicate where the fugacity is $z =0.5$.} \\label{Fig5} \\end{center} \\end{figure} We present our virial results for the entropy per",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-4-conclusions",
+      "number": "4",
+      "title": "Conclusions",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 454,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "virial coefficient",
+          "heading": false
+        },
+        {
+          "term": "virial equation",
+          "heading": false
+        },
+        {
+          "term": "low-density neutron",
+          "heading": false
+        },
+        {
+          "term": "virial expansion",
+          "heading": false
+        },
+        {
+          "term": "neutron matter",
+          "heading": false
+        },
+        {
+          "term": "model-independent predictions",
+          "heading": false
+        },
+        {
+          "term": "wide range",
+          "heading": false
+        },
+        {
+          "term": "conclusions",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#conclusions label=\"conclusions\"} We have presented the virial equation of state of low-density neutron matter. The virial expansion provides a systematic way to include strong interactions with a well-defined range of validity. The resulting virial equation of state has a simple parametric form and is thermodynamically consistent. We have calculated the second virial coefficient directly from the NN scattering",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 593,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "schwenk",
+          "heading": false
+        },
+        {
+          "term": "pandharipande",
+          "heading": false
+        },
+        {
+          "term": "nucl",
+          "heading": false
+        },
+        {
+          "term": "gehm",
+          "heading": false
+        },
+        {
+          "term": "granade",
+          "heading": false
+        },
+        {
+          "term": "lett",
+          "heading": false
+        }
+      ],
+      "extract": "This work is supported by the US Department of En- ergy under Grant No. DE–FG02–87ER40365 and the National Science Foundation under Grant No. PHY– 0244822. [1] J. Carlson, J. Morales, V.R. Pandharipande and D.G. Ravenhall, Phys. Rev. C68 (2003) 025802. [2] A. Schwenk and C.J. Pethick, Phys. Rev. Lett. 95 (2005) 160401. [3] C.J. Horowitz and A. Schwenk, nucl-th/0507033. [4] M. Costantinit, A. Ianni and F. Visanni,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "model-independent virial",
+      "heading": false
+    },
+    {
+      "term": "virial equation",
+      "heading": true
+    },
+    {
+      "term": "virial coefficient",
+      "heading": false
+    },
+    {
+      "term": "virial pressures",
+      "heading": false
+    },
+    {
+      "term": "virial coeﬃcient",
+      "heading": true
+    },
+    {
+      "term": "virial expansion",
+      "heading": false
+    },
+    {
+      "term": "low-density neutron",
+      "heading": false
+    },
+    {
+      "term": "neutron matter",
+      "heading": false
+    },
+    {
+      "term": "low-density nuclear",
+      "heading": false
+    },
+    {
+      "term": "pressure neut",
+      "heading": false
+    },
+    {
+      "term": "density range",
+      "heading": false
+    },
+    {
+      "term": "energy density",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "(Color online) The total phase shift δtot(E) versus laboratory energy E obtained from including successively higher partial waves",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "(Color online) The pressure P versus density n for T = 10, 16 and 20 MeV. The dotted error bands for the virial equation of state are based on an estimate of a neglected third virial coeﬃcient b(3)",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "(Color online) The pressure P versus density n calculated for T = 1, 4, 8 and 20 MeV and scaled to a temperature",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "(Color online) The energy per particle E/N versus density n for T = 4, 8 and 20 MeV. In order to clearly show the interaction eﬀects we have subtracted the free kinetic energy 3T/2 from all curves. The energy per particle obtained using the universal relation ǫ = 3P/2 with the corresponding virial p",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "(Color online) The entropy per particle S/N versus density n for T = 10, 16 and 20 MeV. Also shown are the FHNC results of Friedman and Pandharipande (crosses) [19]",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "(Color online) The free energy per particle F/N versus density n for T = 10, 16 and 20 MeV. Also shown are the FHNC results of Friedman and Pandharipande (crosses) [19]",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 10,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "6 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 10 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-nucl-th-0507064v2"
+  }
+}

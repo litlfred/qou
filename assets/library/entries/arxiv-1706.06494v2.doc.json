@@ -1,0 +1,289 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1706.06494v2",
+  "title": "Sampling General N-Body Interactions with Auxiliary Fields",
+  "variant": "pdf",
+  "pages": 5,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": "5",
+      "words": 2862,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n-body forces",
+          "heading": false
+        },
+        {
+          "term": "n-body interactions",
+          "heading": false
+        },
+        {
+          "term": "two-body forces",
+          "heading": false
+        },
+        {
+          "term": "many-body forces",
+          "heading": false
+        },
+        {
+          "term": "auxiliary ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "body interactions",
+          "heading": false
+        },
+        {
+          "term": "two-site model",
+          "heading": false
+        },
+        {
+          "term": "fermion auxiliary-ﬁeld",
+          "heading": false
+        }
+      ],
+      "extract": "Sampling General N-Body Interactions with Auxiliary Fields Christopher Körber,1, ∗Evan Berkowitz,1, † and Thomas Luu1, ‡ 1Institut für Kernphysik and Institute for Advanced Simulation Forschungszentrum Jülich 52425 Jülich Germany (Dated: October 14, 2018) We present a general auxiliary ﬁeld transformation which generates eﬀective interactions con- taining all possible N-body contact terms. The strength of the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1706.06494v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 308,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nucl-th",
+          "heading": false
+        },
+        {
+          "term": "fz-juelich",
+          "heading": false
+        },
+        {
+          "term": "electronic address",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "büchler",
+          "heading": false
+        },
+        {
+          "term": "cond-mat",
+          "heading": false
+        },
+        {
+          "term": "arxiv",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        }
+      ],
+      "extract": "We thank A. Rokash, D. Lee and A. Cherman for in- sightful discussions. This work was done in part through ﬁnancial support from the Deutsche Forschungsgemein- schaft (Sino-German CRC 110). ∗Electronic address: c.koerber@fz-juelich.de † Electronic address: e.berkowitz@fz-juelich.de ‡ Electronic address: t.luu@fz-juelich.de [1] R. L. Stratonovich, Doklady Akad. Nauk S.S.S.R. 115, 1097 (1957). [2] J. Hubbard, Physical",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "n-body forces",
+      "heading": false
+    },
+    {
+      "term": "n-body interactions",
+      "heading": false
+    },
+    {
+      "term": "two-body forces",
+      "heading": false
+    },
+    {
+      "term": "many-body forces",
+      "heading": false
+    },
+    {
+      "term": "auxiliary ﬁelds",
+      "heading": false
+    },
+    {
+      "term": "nucl-th",
+      "heading": false
+    },
+    {
+      "term": "body interactions",
+      "heading": false
+    },
+    {
+      "term": "two-site model",
+      "heading": false
+    },
+    {
+      "term": "fermion auxiliary-ﬁeld",
+      "heading": false
+    },
+    {
+      "term": "contact interactions",
+      "heading": false
+    },
+    {
+      "term": "fermion species",
+      "heading": false
+    },
+    {
+      "term": "trial wavefunction",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "E(τ)/κ for diﬀerent systems. All systems were studied with 2 × 108 measurements. Some systems show a signalto-noise problem and others yield an easy extraction of a constant plateau in the long-time-limit. The left panels all show two-fermion systems and the corresponding right panels show the three",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 2,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 2,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 2 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1706.06494v2"
+  }
+}

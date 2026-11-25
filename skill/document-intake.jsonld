@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/document-intake.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/document-intake",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "document-intake",
+      "title": "Document Intake",
+      "description": "Process uploaded documents (PDFs, scans, LaTeX, WHO L1/L2 guidelines, etc.) from library/ into structured content objects. Handles OCR extraction, environment detection, structural analysis, and content-object generation. Supports multi-stage pipelines: raw upload → extracted text → structured blocks → .ts/.md content objects.",
+      "instructionsPath": "skills/local/document-intake.md",
+      "instructionLines": 368,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

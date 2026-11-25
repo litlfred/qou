@@ -1,0 +1,1300 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1402.4615v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Jack deformation of Plancherel measure and random matrices",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-11-jack-deformation-of-plancherel-measure-and-ra.md",
+      "narrative": null,
+      "content": "[]{#subsect:JackPlancherel label=\"subsect:JackPlancherel\"}\n\nRandom partitions occur in mathematics and physics in a wide variety of contexts, in particular in the Gromov-Witten and Seiberg-Witten theories, see [@OkounkovRandomPartitions] for an introduction to the subject. Another aspect which makes them attractive is the link with random matrices. Namely, some classical models of random matrices have random partition counterparts, which display the same kind of asymptotic behaviour.\n\nIn this paper, we consider the following probability measure on the set of partitions (or equivalently, Young",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1402.4615v3  [math.PR]  3 Feb 2015\nGAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND\nSTRUCTURE CONSTANTS OF JACK CHARACTERS\nMACIEJ DOŁ ˛EGA AND VALENTIN FÉRAY\nABSTRACT. In this paper, we consider a deformation of Plancherel measure\nlinked to Jack polynomials. Our main result is the description of the ﬁrst and\nsecond-order asymptotics of the bulk of a random Young diagram under this dis-\ntribution, which extends celebrated results of Vershik-Kerov and Logan-Shepp\n(for the ﬁrst order asymptotics) and Kerov (for the second order asymptotics).\nThis gives more evidence of the connection with Gaussi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main result",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-12-main-result.md",
+      "narrative": null,
+      "content": "The main result of this paper is the description of the first and second order asymptotics of the bulk of Young diagrams under Jack measure.\n\nFirst, we prove a law of large numbers. If $\\lambda$ is a Young diagram of size $n$, we denote by $\\overline{A_\\alpha(\\lambda)}$ the (generalized) Young diagram obtained from $\\lambda$ by an horizontal stretching of ratio $\\sqrt{\\alpha/n}$ and a vertical stretching of ratio $1/\\sqrt{n\\alpha}$ (a formal definition of generalized Young diagrams is given in Section [\\[SubsectGeneralizedYD\\]](#SubsectGeneralizedYD){reference-type=\"ref\" reference=\"SubsectGene",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Jack polynomials and Jack measure",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-13-jack-polynomials-and-jack-measure.md",
+      "narrative": null,
+      "content": "To explain our intermediate results and the main steps of the proof, we first need to review the connection between Jack measure and Jack polynomials.\n\n### Jack polynomials\n\nIn a seminal paper [@Jack1970/1971], Jack introduced a family of symmetric functions $J^{(\\alpha)}_\\lambda$ depending on an additional parameter $\\alpha$. These functions are now called *Jack polynomials*. For some special values of $\\alpha$, they coincide with some established families of symmetric functions. Namely, up to multiplicative constants, for $\\alpha=1$, Jack polynomials coincide with Schur polynomials, for $\\al",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ingredients of the proof",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "../sections/sec-004-14-ingredients-of-the-proof.md",
+      "narrative": null,
+      "content": "results. The proof of Theorem 1.1 is easier than the proof of the ﬂuctuation result,\nso we will focus here on the second and compare it to the work of Ivanov, Kerov\nand Olshanski.\n8\nM. DOŁ ˛EGA AND V. FÉRAY\nRemark. While beautiful and elementary, Hora’s proof of the central limit theorem\nfor characters in the case α = 1 seems very hard to be generalized for a generic\nvalue of α as it relies from the beginning on the representation-theoretical back-\nground.\n1.4.1. Polynomial functions. A central idea in the paper [IO02] is to consider char-\nacters as functions on all Young diagrams by deﬁning:",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/rem-sec-004-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "rem-sec-004-01.md",
+      "narrative": null,
+      "content": "While beautiful and elementary, Hora’s proof of the central limit theorem for characters in the case α = 1 seems very hard to be generalized for a generic value of α as it relies from the beginning on the representation-theoretical back- ground. 1.4.1. Polynomial functions. A central idea in the paper [IO02] is to consider char- acters as functions on all Young diagrams by deﬁning: Ch(1) µ (λ) =    |λ|(|λ| −1) · · · (|λ| −|µ| + 1) χλ µ 1|λ|−|µ| dim(λ) if |λ| ≥|µ| if |λ| < |µ|. In Sections 1-4 of paper [IO02], the authors prove that the functions Ch(1) µ span lin- early a subalgebra of the a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Second main result: polynomiality of structure constants of Jack characters",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-15-second-main-result-polynomiality-of-structure.md",
+      "narrative": null,
+      "content": "[]{#subsect:Second_Main_Result label=\"subsect:Second_Main_Result\"} It follows from the work of Lassalle -- see Proposition [\\[prop:Jack-characters-basis\\]](#prop:Jack-characters-basis){reference-type=\"ref\" reference=\"prop:Jack-characters-basis\"} -- that the functions $\\mathop{\\mathrm{Ch}}_{\\mu}^{(\\alpha)}$ span linearly the algebra of $\\alpha$-polynomial functions denoted by $\\Lambda_\\star^{(\\alpha)}$ (when $\\mu$ runs over integer partitions of all sizes). Hence, there exist some rational numbers $g^{(\\alpha)}_{\\mu,\\nu;\\pi}$, depending on $\\alpha$ such that $$\\label{eq:definition-structure-con",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An open problem: edge fluctuations of Jack measure",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-16-an-open-problem-edge-fluctuations-of-jack-mea.md",
+      "narrative": null,
+      "content": "Another natural question on asymptotics of Jack measure is the behavior of the first few rows of the Young diagrams. This kind of results, orthogonal to the ones in this paper, is called *edge fluctuations*. Our law of large number on the bulk on Young diagrams implies that, for any fixed positive integer $k$ and real number $C<1$, $$\\mathbb{P}\\left[ \\frac{(\\lambda_{(n)})_k}{\\sqrt{n}} \\leq \\frac{2\\, C}{\\sqrt{\\alpha}} \\right] \\to 0,$$ while Lemma [\\[lem:FiniteSupport\\]](#lem:FiniteSupport){reference-type=\"ref\" reference=\"lem:FiniteSupport\"} tells us that $(\\lambda_{(n)})_k/\\sqrt{n}$ exceeds $(2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outline of the paper",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-007-17-outline-of-the-paper.md",
+      "narrative": null,
+      "content": "The paper is organized as follows. Section [\\[SectDefKerov\\]](#SectDefKerov){reference-type=\"ref\" reference=\"SectDefKerov\"} gives all definitions and background on Jack characters, free cumulants and Kerov polynomials. In Section [\\[SectPolynomial\\]](#SectPolynomial){reference-type=\"ref\" reference=\"SectPolynomial\"} we prove the polynomiality of the coefficients of Kerov's polynomials, with bounds on the degrees. Then our second main result (that is the polynomiality of structure constants, with precise bound on the degree) is proved in Section [\\[SectStructureConstants\\]](#SectStructureConstan",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Jack characters and Kerov polynomials",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-008-2-jack-characters-and-kerov-polynomials.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Polynomial functions on the set of Young diagrams",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-009-21-polynomial-functions-on-the-set-of-young-diag.md",
+      "narrative": null,
+      "content": "[]{#subsec:polfunct label=\"subsec:polfunct\"} The ring $\\Lambda_\\star^{(1)}$ of *polynomial functions on the set of Young diagrams* (briefly: the ring of *polynomial functions*) has been introduced by Kerov and Olshanski in order to study irreducible character values of the symmetric groups [@KerovOlshanskiPolFunc].\n\nThe first characterization of $\\Lambda_\\star^{(1)}$, that we shall use as definition, is the following.\n\n::: definition\n[]{#def:polynomial label=\"def:polynomial\"} A function $F$ on the set of all Young diagrams belongs to $\\Lambda_\\star^{(1)}$ if there exists a collection of polyno",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Transition measure and free cumulants",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-010-22-transition-measure-and-free-cumulants.md",
+      "narrative": null,
+      "content": "[]{#subsect:TransMeasure label=\"subsect:TransMeasure\"} Kerov [@KerovTransitionMeasure] introduced the notion of *transition measure* of a Young diagram. This is a probability measure $\\mu_\\lambda$ on the real line $\\mathbb{R}$ associated to $\\lambda$ and defined by its Cauchy transform: $$G_{\\mu_\\lambda}(z) = \\int_\\mathbb{R}\\frac{d\\mu_\\lambda(x)}{z-x} =\n\\frac{\\prod_{o \\in \\mathbb{O}_\\lambda} z-o}{\\prod_{i \\in \\mathbb{I}_\\lambda} z-i}.$$ In particular, transition measure is supported on $\\mathbb{I}_\\lambda$. Besides, its *moment generating series* is given by $$\\sum_{k \\ge 0} M^{(1)}_k(\\lambda)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalized Young diagrams",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-011-23-generalized-young-diagrams.md",
+      "narrative": null,
+      "content": "[]{#SubsectGeneralizedYD label=\"SubsectGeneralizedYD\"} The second description of $\\Lambda_\\star^{(1)}$ is interesting because it shows that the value of a polynomial function is defined on more general objects than just Young diagrams.\n\n::: definition\nA *generalized Young diagram* is a broken line going from a point $(0,y)$ on the $y$-axis to a point $(x,0)$ on the $x$-axis such that every piece is either a horizontal segment from left to right or a vertical segment from top to bottom.\n:::\n\nAny Young diagram can be seen as such a broken line: just consider its border. The notions of inner and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prop-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "prop-sec-013-01.md",
+      "narrative": null,
+      "content": "When µ runs over all partitions, Jack characters \u0010 Ch(α) µ \u0011 µ form a linear basis of the algebra of α-polynomial functions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prop-sec-013-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "prop-sec-013-02.md",
+      "narrative": null,
+      "content": "Let µ be a partition and α > 0 a ﬁxed real number. There exist unique polynomials L(α) µ and K(α) µ such that, for every λ, Ch(α) µ (λ) = L(α) µ \u0010 M(α) (λ), M(α) (λ), · · · \u0011 ; Ch(α) µ (λ) = K(α) µ \u0010 R(α) 2 (λ), R(α) 3 (λ), · · · \u0011 . The polynomials K(α) µ have been introduced by Kerov in the case α = 1 [Ker00b, Bia03] and by Lassalle in the general case [Las09] and they are called Kerov poly- nomials. Once again, our normalizations are different from his. We will explain this choice later. From now on, when it does not create any confusion, we suppress the superscript (α). We present a few ex",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Continuous Young diagrams",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-012-24-continuous-young-diagrams.md",
+      "narrative": null,
+      "content": "seen as a function on the real line. Indeed, if one rotates the zigzag line coun-\nterclockwise by 45◦and scale it by a factor\n√\n2 (so that the new z-coordinate\ncorresponds to contents), then it can be seen as the graph of a piecewise afﬁne\ncontinuous function with slope ±1. We denote this function by ω(λ). This def-\ninition is illustrated in Figure 1. It is very useful to state convergence results for\nYoung diagrams.\nNote that the limiting function Ωcorresponds neither to a real Young diagram,\nnor to a generalized Young diagram. Therefore, it is natural to work with even more\ngeneral objects t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "-polynomial functions",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-013-25--polynomial-functions.md",
+      "narrative": null,
+      "content": "Deﬁnition 2.8. We say that F is an α-polynomial function on the set of (continuous)\nYoung diagrams if\nλ 7→F(Tα−1,1(λ))\nis a polynomial function. The set of α-polynomial functions is an algebra which\nwill be denoted by Λ(α)\n⋆.\nUsing Deﬁnition 2.1, this means that the polynomial F(α−1λ1, · · · , α−1λh) is\nsymmetric in λ1 −1, . . . , λh −h. Equivalently (by a change of variables), F is\nsymmetric in αλ1 −1, . . . , αλh −h or in\nλ1 −1\nα, . . . , λh −h\nα.\nThe last characterization is the deﬁnition of what is usually called an α-shifted\nsymmetric function [OO97, Las08].\nIt would be equivalent to ask",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Polynomiality in Kerov's expansion",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/sec-014-3-polynomiality-in-kerovs-expansion.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Notations",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/sec-015-31-notations.md",
+      "narrative": null,
+      "content": "As in the previous sections, most of our objects are indexed by integer partitions. Therefore it will be useful to use some short notations for small modifications (adding or removing a box or a part) of partitions. We denote by $\\mu \\cup (r)$ ($\\mu \\setminus (r)$, respectively) the partition obtained from $\\mu$ by adding (deleting, respectively) one part equal to $r$. We denote by $\\mu_{\\downarrow r}=\\mu \\setminus (r) \\cup (r-1)$ the partition obtained from $\\mu$ by removing one box in a row of size $r$. The reader might wonder what do $\\mu \\setminus (r)$ and $\\mu_{\\downarrow r}$ mean if $\\mu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "How to compute Jack character polynomials?",
+      "pageStart": 19,
+      "pageEnd": 22,
+      "target": "../sections/sec-016-32-how-to-compute-jack-character-polynomials.md",
+      "narrative": null,
+      "content": "[]{#SubsectAlgo label=\"SubsectAlgo\"} Unfortunately, the argument given above to prove the existence of $L_\\mu$ and $K_\\mu$ is not effective. M. Lassalle [@Lassalle2009] gave an algorithm for computing $K_\\mu$ by induction over $\\mu$. In this section we present a slightly simpler version of this algorithm which allows to compute $L_\\mu$ instead of $K_\\mu$.\n\nOne of the base ingredients is the following formula, which corresponds to [@Lassalle2009 Proposition 8.3].\n\n::: proposition\n[]{#PropMkLo label=\"PropMkLo\"} Let $k \\geq 2$, $\\lambda$ be a Young diagram and $i=(x,y)$ an inner corner of $\\lambd",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A triangular subsystem",
+      "pageStart": 22,
+      "pageEnd": 24,
+      "target": "../sections/sec-017-33-a-triangular-subsystem.md",
+      "narrative": null,
+      "content": "In the previous section we explained how to determine the coefficients $a^\\mu_\\rho$ (where $\\rho$ runs over partitions without parts equal to $1$) of $L_\\mu$ as the solution of an overdetermined linear system of equations. In this section, we extract from this system a triangular subsystem.\n\nWe will need an order on all partitions: let us define $<_1$ as follows: $$\\rho <_1 \\rho' \\iff\n\\begin{cases}\n    & |\\rho| <|\\rho'|; \\\\\n    \\text{or}&|\\rho| = |\\rho'| \\text{ and } \\ell(\\rho) > \\ell(\\rho'); \\\\\n    \\text{or}&|\\rho|= |\\rho'|,\\ \\ell(\\rho) = \\ell(\\rho') \\text{ and } \\min(\\rho) > \\min(\\rho').\n\\en",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A first bound on the degree",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "../sections/sec-018-34-a-first-bound-on-the-degree.md",
+      "narrative": null,
+      "content": "[]{#SubsectBound1 label=\"SubsectBound1\"} Recall that $(M_k)_{k \\geq 2}$ is an algebraic basis of the ring $\\Lambda_\\star^{(\\alpha)}$ of $\\alpha$-polynomial functions on Young diagrams. Hence, we can define a gradation on $\\Lambda_\\star^{(\\alpha)}$ by choosing arbitrarily the degree of each of the generators $M_k$. In this section, we do the following natural choice: $$\\deg_1(M_k)=k \\qquad \\text{for } k\\geq 2.$$\n\nOur goal is to obtain a bound on the degree of the polynomial $a^\\mu_\\rho\\in\\mathbb{Q}[\\gamma]$. We begin by the following lemma concerning the polynomials $b_{g,\\pi}^\\rho(\\gamma)$.\n\n*",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A second bound on degrees",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-019-35-a-second-bound-on-degrees.md",
+      "narrative": null,
+      "content": "[]{#SubsectBound2 label=\"SubsectBound2\"} For some purposes the bound on the degree of $a_\\rho^\\mu$ given by Proposition [\\[PropBound1\\]](#PropBound1){reference-type=\"ref\" reference=\"PropBound1\"} is not strong enough. In this section we give another bound which is related to another gradation of $\\Lambda_\\star^{(\\alpha)}$ defined by: $$\\ \\deg_2(M_k)=k-2 \\qquad \\text{for } k\\geq 2 .$$ One has the following analogue of Lemma [\\[LemDeg1B\\]](#LemDeg1B){reference-type=\"ref\" reference=\"LemDeg1B\"}:\n\n::: lemma\nLet $\\rho$ and $\\pi$ be two partitions and $g\\geq 0$ an integer. Then $$\\begin{aligned}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Yet another gradation and bound on degrees",
+      "pageStart": 27,
+      "pageEnd": 30,
+      "target": "../sections/sec-020-37-yet-another-gradation-and-bound-on-degrees.md",
+      "narrative": null,
+      "content": "The gradation introduced in Section [\\[SubsectBound2\\]](#SubsectBound2){reference-type=\"ref\" reference=\"SubsectBound2\"} is suitable for some purposes (as we have seen in the previous section), but it has the unpleasant aspect that all homogeneous spaces have an infinite dimension. In particular, Proposition [\\[PropBound2\\]](#PropBound2){reference-type=\"ref\" reference=\"PropBound2\"} does not give any information on the maximal power of $M_2$ which can appear in $L_\\mu$. In this section we propose a way to avoid this difficulty. It is technical but will be useful in the next section.\n\nWe define a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gradations and characters",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-021-38-gradations-and-characters.md",
+      "narrative": null,
+      "content": "[]{#SubsectDegCh label=\"SubsectDegCh\"} In the previous sections we have defined three different gradations. The elements of our favorite basis $(\\mathop{\\mathrm{Ch}}_\\mu)$ are not homogeneous, but have the following nice property: if we define $$V_i^d := \\{x \\in \\Lambda_\\star^{(\\alpha)}: \\deg_i(x) \\leq d\\}$$ then, for $i=1$ and $i=3$, each $V_i^d$ is spanned linearly by the functions $\\mathop{\\mathrm{Ch}}_\\mu$ that it contains (this comes from a direct dimension argument). This simple observation will be useful later.\n\nThe same argument can not be used for $i=2$, as the spaces $V_2^d$ are all",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Polynomiality of structure constants of Jack characters",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../sections/sec-022-4-polynomiality-of-structure-constants-of-jack-c.md",
+      "narrative": null,
+      "content": "4. POLYNOMIALITY OF STRUCTURE CONSTANTS OF JACK CHARACTERS",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Structure constants are polynomials in",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "../sections/sec-023-41-structure-constants-are-polynomials-in.md",
+      "narrative": null,
+      "content": "[]{#SubsectStructPol label=\"SubsectStructPol\"}\n\nIn this section we are going to prove our main result for the structure constants of the algebra $\\Lambda_\\star^{(\\alpha)}$ of $\\alpha$-polynomial functions which was stated as Theorem [\\[theo:struct-const\\]](#theo:struct-const){reference-type=\"ref\" reference=\"theo:struct-const\"}.\n\n::: proof\n*Proof of Theorem [\\[theo:struct-const\\]](#theo:struct-const){reference-type=\"ref\" reference=\"theo:struct-const\"}:.* First observe that for each $i \\in \\{1,2,3\\}$ one has: $$n_i(\\mu) = \\deg_i(\\mathop{\\mathrm{Ch}}_\\mu),$$ hence our bound on the degree of struc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Projection on functions on Young diagrams of size n",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "../sections/sec-024-42-projection-on-functions-on-young-diagrams-of.md",
+      "narrative": null,
+      "content": "[]{#SubsectProjN label=\"SubsectProjN\"} Recall that $\\Lambda_\\star^{(\\alpha)}$ is a subalgebra of the algebra of functions on all Young diagrams. The latter has a natural projection map $\\varphi_n$ onto $\\mathcal{F}(\\mathcal{Y}_n,\\mathbb{Q})$, the algebra of functions on Young diagrams of size $n$. As Jack symmetric functions $J_\\lambda$ form a basis of the symmetric function ring, the functions $(\\theta_\\mu)_{\\mu \\vdash n}$ form a basis of $\\mathcal{F}(\\mathcal{Y}_n,\\mathbb{Q})$ (see [@FerayInductionJM Proposition 4.1]).\n\nWe consider the structure constants $c_{\\mu,\\nu;\\pi}$ of $\\mathcal{F}(\\m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Special values of and polynomial interpolation",
+      "pageStart": 33,
+      "pageEnd": 37,
+      "target": "../sections/sec-025-5-special-values-of-and-polynomial-interpolation.md",
+      "narrative": null,
+      "content": "[]{#SectSpecialValues label=\"SectSpecialValues\"}\n\n## Case $\\alpha=1$: symmetric group algebra {#SubsectStructA1}\n\nIn the case $\\alpha=1$, the structure constants considered in the previous section are linked with the symmetric group algebra. Let $\\mathfrak{S}_{n}$ denote the symmetric group of size $n$, *i.e.* the group of permutations of the set $[n]:=\\{1,\\dots,n\\}$. Recall that the cycle-type of a permutation $\\sigma \\in \\mathfrak{S}_{n}$ is the integer partition $\\mu \\vdash n$ obtained by sorting the lengths of the cycles of $\\sigma$. We consider the group algebra $\\mathbb{Q}[\\mathfrak{S}_{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A technical lemma obtained by polynomial interpolation",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "../sections/sec-026-53-a-technical-lemma-obtained-by-polynomial-inte.md",
+      "narrative": null,
+      "content": "In order to study asymptotics of large Young diagrams we need to understand some special cases of structure constants. Here, we present some technical, but useful lemma about them:\n\n::: lemma\n[]{#lem:SC label=\"lem:SC\"} We have the following identities:\n\n1.  []{#eq:SC-1 label=\"eq:SC-1\"} $g_{\\mu,\\nu;\\rho} = \\delta_{\\rho, \\mu \\cup \\nu}$ for $|\\rho| + \\ell(\\rho) \\geq |\\mu| + \\ell(\\mu) + |\\nu| + \\ell(\\nu)$;\n\n2.  []{#eq:SC-2 label=\"eq:SC-2\"} $g_{\\mu,\\nu;1^k} = 0$ for $\\tilde{\\mu} \\neq \\tilde{\\nu}$ and $2k \\geq |\\mu| + \\ell(\\mu) + |\\nu| + \\ell(\\nu) - 2$;\n\n3.  []{#eq:SC-3 label=\"eq:SC-3\"} $g_{(k),(k);",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Jack measure: law of large numbers",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "../sections/sec-027-6-jack-measure-law-of-large-numbers.md",
+      "narrative": null,
+      "content": "[]{#sect:FirstOrder label=\"sect:FirstOrder\"}\n\nThe purpose of this Section is to prove Theorem [\\[theo:RYD-limit\\]](#theo:RYD-limit){reference-type=\"ref\" reference=\"theo:RYD-limit\"}. As in [@IvanovOlshanski2002], the key point is to prove the convergence of polynomial functions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Convergence of polynomial functions",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "../sections/sec-028-61-convergence-of-polynomial-functions.md",
+      "narrative": null,
+      "content": "Let us recall equation [\\[eq:exp_Ch\\]](#eq:exp_Ch){reference-type=\"eqref\" reference=\"eq:exp_Ch\"}, which gives us the expectation of Jack characters with respect to Jack measure: $$\\mathbb{E}_{\\mathbb{P}_n^{(\\alpha)}}(\\mathop{\\mathrm{Ch}}^{(\\alpha)}_\\mu)=\\begin{cases}\n    n(n-1)\\cdots(n-k+1) & \\text{if }\\mu=1^k \\text{ for some }k \\leq n,\\\\\n    0   & \\text{otherwise.}\n\\end{cases}$$ As $\\mathop{\\mathrm{Ch}}_\\mu$ is a linear basis of $\\Lambda_\\star^{(\\alpha)}$, it implies the following lemma (which is an analogue of [@OlshanskiJackPlancherel Theorem 5.5] with another gradation).\n\n::: lemma\nLet $F$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Shape convergence",
+      "pageStart": 40,
+      "pageEnd": 40,
+      "target": "../sections/sec-029-62-shape-convergence.md",
+      "narrative": null,
+      "content": "In the previous Section, we proved that evaluations of polynomial functions at $D_{1/\\sqrt{n}} \\big(A_\\alpha(\\lambda_{(n)})\\big)$ converge towards the evaluation at $\\Omega$. Ivanov and Olshanski has established that, if one can prove that the support of these renormalized Young diagrams lies in some compact, this would imply the uniform convergence, that is Theorem [\\[theo:RYD-limit\\]](#theo:RYD-limit){reference-type=\"ref\" reference=\"theo:RYD-limit\"}.\n\nThe following technical lemma, proved by Fulman [@FulmanFluctuationChA2 Lemma 6.6] will allow us to conclude:\n\n::: lemma\n[]{#lem:FiniteSupport",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Jack measure: central limit theorem for Jack characters",
+      "pageStart": 40,
+      "pageEnd": 41,
+      "target": "../sections/sec-030-7-jack-measure-central-limit-theorem-for-jack-ch.md",
+      "narrative": null,
+      "content": "[]{#sect:CLT label=\"sect:CLT\"}\n\nIn this section we prove the central limit theorem for Jack characters (Theorem [\\[theo:FluctuationsJackCharacters\\]](#theo:FluctuationsJackCharacters){reference-type=\"ref\" reference=\"theo:FluctuationsJackCharacters\"}) and the bound of the speed of convergence in this theorem (Theorem [\\[theo:SpeedConvergence\\]](#theo:SpeedConvergence){reference-type=\"ref\" reference=\"theo:SpeedConvergence\"}).\n\n## Multivariate Stein's method\n\nAs explained in introduction, our main tool will be a multivariate analog of the so-called *Stein's method* due to Reinert and Röllin [@Rei",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An exchangeable pair",
+      "pageStart": 41,
+      "pageEnd": 43,
+      "target": "../sections/sec-031-72-an-exchangeable-pair.md",
+      "narrative": null,
+      "content": "The first step consists in building a $d$-tuple $\\tilde{W}_d^*$, such that $(\\tilde{W}_d,\\tilde{W}_d^*)$ is an exchangeable pair. The construction that we will describe here is due to Fulman [@FulmanFluctuationChA2].\n\nHis construction uses Markov chains, so let us begin by fixing some terminology. Let $X$ be a finite set. A Markov chain $M$ on $X$ is the data of transition probability $M(x,y)$ indexed by pairs of elements of $X$ with $$M(x,y) \\ge 0 \\text{ and } \\sum_{y \\in X} M(x,y) =1.$$ If $x$ is a random element of $X$ distributed with probability $\\mathbb{P}$, then, applying once the Marko",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Checking hypotheses",
+      "pageStart": 43,
+      "pageEnd": 45,
+      "target": "../sections/sec-032-73-checking-hypotheses.md",
+      "narrative": null,
+      "content": "[]{#subsec:CheckingHypotheses label=\"subsec:CheckingHypotheses\"}\n\nRecall that we have defined $$W_k = n^{-k/2} \\sqrt{k}^{-1} \\mathop{\\mathrm{Ch}}_{(k)}$$ and the random vector $$\\tilde{W}_d = (W_2,\\dots,W_{d+1})$$ on the probability space of Young diagrams of size $n$ endowed with Jack measure. Let $\\lambda$ be a random partition distributed according to Jack measure, and $\\lambda^*$ ($\\lambda'$, respectively) be obtained from $\\lambda$ by applying the Markov chain $M^{(\\alpha)}$ ($L^{(\\alpha)}$, respectively). By a small abuse of notations, set $\\tilde{W}_d:=\\tilde{W}_d(\\lambda)$, $\\tilde{W}_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Error term",
+      "pageStart": 45,
+      "pageEnd": 50,
+      "target": "../sections/sec-033-74-error-term.md",
+      "narrative": null,
+      "content": "[]{#subsec:ErrorTerm label=\"subsec:ErrorTerm\"} In the previous Section, we have checked that the pair $(\\tilde{W}_d, \\tilde{W}_d^*)$ of the random vectors satisfies the assumptions of Theorem [\\[theo:MultivariateStein\\]](#theo:MultivariateStein){reference-type=\"ref\" reference=\"theo:MultivariateStein\"}. In order to prove that the random vector $\\tilde{W}_d$ is asymptotically Gaussian, we need to show that quantities $A$ and $B$ from Theorem [\\[theo:MultivariateStein\\]](#theo:MultivariateStein){reference-type=\"ref\" reference=\"theo:MultivariateStein\"} vanish as $n \\to \\infty$. This section is dev",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of the central limit theorem",
+      "pageStart": 50,
+      "pageEnd": 51,
+      "target": "../sections/sec-034-75-proof-of-the-central-limit-theorem.md",
+      "narrative": null,
+      "content": "We are now ready to prove the main result of this section:\n\n::: proof\n*Proof of Theorem [\\[theo:FluctuationsJackCharacters\\]](#theo:FluctuationsJackCharacters){reference-type=\"ref\" reference=\"theo:FluctuationsJackCharacters\"}.* Let $\\tilde{\\Xi}_d = (\\Xi_2,\\dots,\\Xi_{d+1})$. In order to show that $$\\left( \\frac{\\mathop{\\mathrm{Ch}}_{(k)}}{ \\sqrt{k} n^{k/2}} \\right)_{k=2,3,\\dots} \\xrightarrow{d} \\left( \\Xi_k \\right)_{k=2,3,\\dots}$$ as $n \\to \\infty$, it is enough to show, that for all $d \\in \\mathbb{N}$ and for any smooth function $h$ on $\\mathbb{R}^d$, with all derivatives bounded, one has, as",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Speed in convergence",
+      "pageStart": 51,
+      "pageEnd": 53,
+      "target": "../sections/sec-035-76-speed-in-convergence.md",
+      "narrative": null,
+      "content": "We now use [@ReinertRollin2009 Corollary 3.1], which gives an estimate for $$\\left| \\mathbb{E}_n^{(\\alpha)}h(\\tilde{W}_d) - \\mathbb{E}h(\\tilde{\\Xi}_d) \\right|$$ for non-smooth test functions $h$. In particular, we shall consider functions $h$ in the set $\\mathcal{H}$ of indicator functions of convex sets. We have the following result, which is stronger than Theorem [\\[theo:SpeedConvergence\\]](#theo:SpeedConvergence){reference-type=\"ref\" reference=\"theo:SpeedConvergence\"}.\n\n::: theorem\nFor any integer $d \\ge 2$, we have $$\\sup_{h \\in \\mathcal{H}} |\\mathbb{E}_n^{(\\alpha)}\\, h(\\tilde{W}_d) - \\mat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fluctuations of other polynomial functions",
+      "pageStart": 53,
+      "pageEnd": 53,
+      "target": "../sections/sec-036-77-fluctuations-of-other-polynomial-functions.md",
+      "narrative": null,
+      "content": "[]{#subsect:Fluct_NonHook label=\"subsect:Fluct_NonHook\"}\n\nAs $\\mathop{\\mathrm{Ch}}_{(k)}$ is an algebraic basis of polynomial functions, Theorem [\\[theo:FluctuationsJackCharacters\\]](#theo:FluctuationsJackCharacters){reference-type=\"ref\" reference=\"theo:FluctuationsJackCharacters\"} implies that any polynomial function $F$ converge, after proper normalization, towards a multivariate polynomial evaluated in independent Gaussian variables.\n\nHowever, the proper order of normalization and the actual polynomial are not easy to be expressed explicitly, as this relies on the expansion of $F$ in the $\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Jack measure: central limit theorems for Young diagrams and transition measures",
+      "pageStart": 53,
+      "pageEnd": 54,
+      "target": "../sections/sec-037-8-jack-measure-central-limit-theorems-for-young.md",
+      "narrative": null,
+      "content": "[]{#sect:CLT2 label=\"sect:CLT2\"}\n\nIn this section, we state formally and prove our fluctuation results for Young diagrams under Jack measure. We will also present a fluctuation result for the transition measures of these diagrams.\n\nBefore we state our results, we need some preparations. We follow here notations from [@IvanovOlshanski2002 Sections 7 and 8]. First, we define $$\\begin{aligned}\nu_k(x) &= U_k(x/2) = \\sum_{0 \\leq j \\leq \\lfloor k/2 \\rfloor}(-1)^j\\binom{k-j}{j}x^{k-2j},\\\\\n t_k(x) &= 2T_k(x/2) = \\sum_{0 \\leq j \\leq \\lfloor k/2 \\rfloor}(-1)^j\\frac{k}{k-j}\\binom{k-j}{j}x^{k-2j},\n\\end{al",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/lem-sec-038-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 56,
+      "target": "lem-sec-038-01.md",
+      "narrative": null,
+      "content": "For any integer d, one has V ≤d = V ≤d {1}. 2In [IO02], deg{1} is abbreviated as deg1 but we shall not do that to avoid a conﬂict of notation with Section 3.4. M. DOŁ ˛EGA AND V. FÉRAY",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Extended algebra of polynomial functions and gradations",
+      "pageStart": 54,
+      "pageEnd": 56,
+      "target": "../sections/sec-038-81-extended-algebra-of-polynomial-functions-and.md",
+      "narrative": null,
+      "content": "bines our ﬂuctuation results for Jack characters and arguments from the proof of\nKerov, Ivanov and Olshanski for the case α = 1. In particular we shall com-\npare some α-polynomial functions with their counterpart for α = 1. Therefore,\nthroughout this section, we will make the dependence in (α) explicit and we use\nthe notations Ch(α)\nµ , M(α)\nk\n, and so on. The only exception to this is Ch(1) as, for\nany α, the function Ch(1) associates to a Young diagram its number of boxes.\nLARGE DIAGRAMS AND STRUCTURE CONSTANTS\n55\nTo prove Theorem 8.1, it is convenient to extend the algebra Λ(α)\n⋆\nin the sam",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/rem-sec-038-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 56,
+      "target": "rem-sec-038-02.md",
+      "narrative": null,
+      "content": "We are not able to show that deg{1} \u0012 Ch(α) µ \u0000Ch(1) \u0001m/2 \u0013 = |µ| + m deﬁnes a ﬁltration of \u0010 Λ(α) ⋆ \u0011ext , which would make a natural extension of (43). However, thanks to Lemma 8.2, we can use the multiplicative family f Ch (α) µ instead.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/cor-sec-039-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 56,
+      "pageEnd": 58,
+      "target": "cor-sec-039-02.md",
+      "narrative": null,
+      "content": "One has the following equalities in \u0010 Λ(α) ⋆ \u0011ext : u(α) k = Ch(α) (k+1) (k + 1) \u0000Ch(1) \u0001(k+1)/2 − γ k + 1[k is odd] + terms of negative degree; (52) t(α) k = Ch(α) (k−1) \u0000Ch(1) \u0001(k−1)/2 −γ [k is odd] + terms of negative degree. (53)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/lem-sec-039-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 56,
+      "pageEnd": 58,
+      "target": "lem-sec-039-01.md",
+      "narrative": null,
+      "content": "For any integer m ≥1 we have that (51) Ch(1) (k) \u0000Aα(λ) \u0001 = Ch(α) (k)(λ) −γ \u0000Ch(1) \u0001(k/2) [k is even] + terms of degree less than k with respect to deg4 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/lem-sec-039-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 56,
+      "pageEnd": 58,
+      "target": "lem-sec-039-03.md",
+      "narrative": null,
+      "content": "Let f ∈ \u0010 Λ(α) ⋆ \u0011ext be a function of degree less than 0. Then, as n →∞, f(λ(n)) d−→0, where the distribution of λ(n) is Jack measure of size n.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 8.1",
+      "pageStart": 56,
+      "pageEnd": 58,
+      "target": "../sections/sec-039-82-proof-of-theorem-81.md",
+      "narrative": null,
+      "content": "Olshanski is to prove that u(1)\nk\nand t(1)\nk\nare in\n\u0010\nΛ(1)\n⋆\n\u0011ext\nand fulﬁll\nu(1)\nk\n=\nCh(1)\n(k+1)\n(k + 1) Ch(k+1)/2\n(1)\n+ terms of negative degree for deg4;\n(45)\nt(1)\nk\n=\nCh(1)\n(k−1)\nCh(k−1)/2\n(1)\n+ terms of negative degree for deg4.\n(46)\nThese equations are respectively the last equations of Sections 7 and 8 in paper\n[IO02]. As the notations are a little bit different here, let us give a few precisions.\n• The quantity ηk+1 in [IO02] is deﬁned by equation (6.5) and deﬁnition 3.1.\n• In [IO02], it is shown that the reminder has negative degree in the ﬁltration\ndeg{1}, while here we use the grada",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Informal reformulation of Theorem 8.1",
+      "pageStart": 58,
+      "pageEnd": 59,
+      "target": "../sections/sec-040-83-informal-reformulation-of-theorem-81.md",
+      "narrative": null,
+      "content": "independent standard Gaussian random variables (Ξk)k=2,3,... and consider the ran-\ndom series\n∆(α)\n∞(2 cos(θ)) := 1\nπ\n∞\nX\nk=2\n\u0012 Ξk\n√\nk\n−γ\nk [k is even]\n\u0013\nsin(kθ)\n= 1\nπ\n∞\nX\nk=2\nΞk\n√\nk\nsin(kθ) −γ/4 + γθ/2π.\nLARGE DIAGRAMS AND STRUCTURE CONSTANTS\n59\nThis series is nowhere convergent (almost surely), but it makes sense as a general-\nized Gaussian process with values in the space of generalized functions (C∞(R))′,\nthat is the dual of the space of inﬁnitely differentiable functions; see [IO02, Section\n9] for details.\nFor polynomials uℓ(x), one has\n⟨uℓ, ∆(α)\n∞⟩=\nZ 2\n−2\nuℓ(x)∆(α)\n∞(x)dx = 2\nZ π\n0\nuℓ(2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prop-sec-042-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 59,
+      "pageEnd": 60,
+      "target": "prop-sec-042-01.md",
+      "narrative": null,
+      "content": "1. The coefﬁcient cµ ρ of Rρ in Kµ with Lassalle’s normalization is a polynomial in α divisible by α|ρ|−ℓ(ρ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. Kerov polynomials",
+      "pageStart": 59,
+      "pageEnd": 59,
+      "target": "../sections/sec-041-appendix-a-kerov-polynomials.md",
+      "narrative": null,
+      "content": "In this Section, we answer some questions of Lassalle concerning Kerov polyno-\nmials [Las09]. The results are consequences of the methods or results from Section\n3 and thus ﬁt in the scope of this paper. However, as Kerov polynomials are used\nin this paper only as a tool, we decided to present them in Appendix.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.1. Comparison with Lassalle's normalizations",
+      "pageStart": 59,
+      "pageEnd": 60,
+      "target": "../sections/sec-042-a1-comparison-with-lassalles-normalizations.md",
+      "narrative": null,
+      "content": "is different than the one used by Lassalle. As in Section 3.2, we use boldface font\nfor quantities deﬁned in Lassalle’s paper [Las09]. Our second bound on the degree\nof coefﬁcients of Kµ, implies the following result.\nProposition A.1. The coefﬁcient cµ\nρ of Rρ in Kµ with Lassalle’s normalization is\na polynomial in α divisible by α|ρ|−ℓ(ρ).\nProof. Let us start by a comparison of Lassalle’s conventions with ours. If µ does\nnot contain a part equal to 1 then\nϑλ\nµ(α) = zµθ(α)\nµ,1|λ|−|µ|(λ),\nso that\nChµ(λ) = α−|µ|−ℓ(µ)\n2\nϑλ\nµ(α).\nBesides,\nRk(λ) = α−k/2Rk(λ)\n60\nM. DOŁ ˛EGA AND V. FÉRAY\nand\nϑλ\nµ(α) =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prop-sec-043-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 60,
+      "pageEnd": 62,
+      "target": "prop-sec-043-01.md",
+      "narrative": null,
+      "content": "2. For any integers k > 0 and k −1 ≥i ≥0, we have [Rk+1−i]K(k) = \u0014 k k −i \u0015 γi + lower degree terms, where \u0014 k k −i \u0015 denotes the positive Stirling number of the ﬁrst kind.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.2. Linear terms in Kerov polynomials",
+      "pageStart": 60,
+      "pageEnd": 62,
+      "target": "../sections/sec-043-a2-linear-terms-in-kerov-polynomials.md",
+      "narrative": null,
+      "content": "top degree part of the coefﬁcients of linear terms in Kerov polynomials. This proves\na conjecture of Lassalle [Las09, page 31].\nProposition A.2. For any integers k > 0 and k −1 ≥i ≥0, we have\n[Rk+1−i]K(k) =\n\u0014\nk\nk −i\n\u0015\nγi + lower degree terms,\nwhere\n\u0014\nk\nk −i\n\u0015\ndenotes the positive Stirling number of the ﬁrst kind.\nProof. We recall that\nChµ(λ) =\nX\nρ\naµ\nρMρ(λ).\nThanks to the relation between moments and free cumulants – see Section 2.2 – it\nis enough to prove that\na(k)\n(k+1−i) =\n\u0014\nk\nk −i\n\u0015\nγi + lower degree terms\nfor any positive integers k > 0 and k −1 ≥i ≥0. We will prove it by induction\nover k",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prop-sec-044-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 62,
+      "pageEnd": 63,
+      "target": "prop-sec-044-01.md",
+      "narrative": null,
+      "content": "3. For k ≥1, one has (56) K(k) = Rk+1 + γ k X |µ|=k (ℓ(µ) −1)! ˜Rµ+ X |µ|=k−1 \u00121 \u0012k + 1 \u0013 + γ2k3h2(µ) + 4h12(µ) + 2h1(µ) \u0013 ℓ(µ)! ˜Rµ+ terms of degree less than k −1 with respect to deg1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-044",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.3. High degree terms of Kerov polynomials for deg1",
+      "pageStart": 62,
+      "pageEnd": 63,
+      "target": "../sections/sec-044-a3-high-degree-terms-of-kerov-polynomials-for-de.md",
+      "narrative": null,
+      "content": "have given the highest degree term of Kµ for deg1. We shall now describe the next\ntwo terms for a one-part partition µ = (k).\nLet hπ(µ) denotes the monomial symmetric function indexed by π evaluated in\nvariables µ1,µ2, . . . . For example,\nh12(µ) =\nX\ni<j\nµiµj.\nWe also introduce the notation ˜Ri = (i −1)Ri and ˜Rµ = Q\ni\n˜Rmi(µ)\ni\nmi(µ)! .\nProposition A.3. For k ≥1, one has\n(56)\nK(k) = Rk+1 + γ k\n2\nX\n|µ|=k\n(ℓ(µ) −1)! ˜Rµ+\nX\n|µ|=k−1\n\u00121\n4\n\u0012k + 1\n3\n\u0013\n+ γ2k3h2(µ) + 4h12(µ) + 2h1(µ)\n24\n\u0013\nℓ(µ)! ˜Rµ+\nterms of degree less than k −1 with respect to deg1.\nProof. Let us write:\nK(k) =\nX\nµ\ncµRµ.\nBy Propositi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/rem-sec-044-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 62,
+      "pageEnd": 63,
+      "target": "rem-sec-044-02.md",
+      "narrative": null,
+      "content": "One can notice, that the explicit formulas for cµ with |µ| ≥k were also proved by Lassalle [Las09, Theorems 10.2 and 10.3]. Moreover, our calculations for cµ with |µ| = k−1 are consistent with Lassalle’s computer experiments [Las09, p. 2257], which provide a new evidence to Conjecture 11.2 of Lassalle [Las09].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/lem-sec-046-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 63,
+      "pageEnd": 64,
+      "target": "lem-sec-046-01.md",
+      "narrative": null,
+      "content": "(1): X λ⊢n j(α) λ θµ(λ)θν(λ) = δµ,ν zµαℓ(µ) (see [Vas13, Section 3.3]), we get (58) ar µ(α) = zµαℓ(µ) X µ1,µ2,...,µr⊢n µ1=(2,1r−2), µr=µ r−1 Y i=1 cµi,(2,1r−2);µi+1. From Corollary 4.2, the coefﬁcient cµi,(2,1r−2);µi+1 vanishes unless (59) |µi+1| −ℓ(µi+1) ≤|µi| −ℓ(µi) + 1. As |µ1|−ℓ(µ1) = 1 and |µr|−ℓ(µr) = |µ|−ℓ(µ) = r, for any non-zero summand in (58), one has equality in (59) for all integers i. But, again from Corollary 4.2, equality in (59) implies that the coefﬁcient cµi,(2,1r−2);µi+1 is independent of α. Hence, the quantity αℓ(µ)zµar µ(α) is independent on α. M. DOŁ ˛EGA AND V. FÉRAY In",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-045",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix B. Other consequences of the second main result",
+      "pageStart": 63,
+      "pageEnd": 63,
+      "target": "../sections/sec-045-appendix-b-other-consequences-of-the-second-main.md",
+      "narrative": null,
+      "content": "We present here three consequences of our polynomiality result for structure\nconstants for Jack characters (see Theorem 1.4). These results were mentioned in\nthe introduction (Section 1.5.1), but, as they are quite independent of the rest of the\npaper, we present them in Appendix.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-046",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.1. Recovering a recent result of Vassilieva",
+      "pageStart": 63,
+      "pageEnd": 64,
+      "target": "../sections/sec-046-b1-recovering-a-recent-result-of-vassilieva.md",
+      "narrative": null,
+      "content": "on the degree in α of cµ,ν;π, can be used to give a short proof of a recent result of\nVassilieva. In the paper [Vas13], she considered the following quantity: for µ a\npartition of n, let r = |µ| −ℓ(µ) and\n(57)\nar\nµ(α) :=\nX\nλ⊢n\n1\nj(α)\nλ\nθµ(λ)\n\u0000θ(2,1n−2)(λ)\n\u0001r .\nUsing structure constants, we can write: for any partition λ of n,\n\u0000θ(2,1r−2)(λ)\n\u0001r =\nX\nµ1,µ2,...,µr⊢n\nµ1=(2,1r−2)\n r−1\nY\ni=1\ncµi,(2,1r−2);µi+1\n!\nθµr(λ).\nPlugging this into Equation (57) and using the orthogonality relation presented in\nLemma 7.3 (1):\nX\nλ⊢n\n1\nj(α)\nλ\nθµ(λ)θν(λ) =\nδµ,ν\nzµαℓ(µ)\n(see [Vas13, Section 3.3]), we get\n(58)\nar\nµ(α",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prop-sec-047-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 64,
+      "pageEnd": 65,
+      "target": "prop-sec-047-01.md",
+      "narrative": null,
+      "content": "1. Let µ, ν and π be three partitions of the same integer n. Then cµ,ν;π = zπαℓ(π) X λ⊢n θπ(λ) θµ(λ) θν(λ) ⟨Jλ, Jλ⟩ .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prop-sec-047-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 64,
+      "pageEnd": 65,
+      "target": "prop-sec-047-02.md",
+      "narrative": null,
+      "content": "2. The connection series cπ µ,ν(b) introduced in [GJ96a] is a poly- nomial in b with rational coefﬁcients of degree at most d(µ, ν; π).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-047",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.2. Goulden's and Jackson's b-conjecture",
+      "pageStart": 64,
+      "pageEnd": 65,
+      "target": "../sections/sec-047-b2-gouldens-and-jacksons-b-conjecture.md",
+      "narrative": null,
+      "content": "quantities cµ,ν;π (for a general value of the parameter α) are the same as quantities\ncπ\nµ,ν(b) considered by Goulden and Jackson in [GJ96a]. As a consequence, we\ngive a partial answer to a question raised by these authors. We use the convention\nthat the boldface quantities refer to the notations of Goulden and Jackson [GJ96a].\nTo establish this connection we will need to use the α-scalar product on the\nsymmetric functions, for which Jack polynomials and power-sum symmetric func-\ntions are orthogonal basis [Mac95, (VI,10)]. The following formula is a natural\nextension of Frobenius counting for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/lem-sec-048-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 65,
+      "pageEnd": 68,
+      "target": "lem-sec-048-02.md",
+      "narrative": null,
+      "content": "4. Let µ be a partition. For n ≥|µ|+ℓ(µ), let π := µ+(1n−|µ|) be the partition obtained from µ by adding 1 to every part and adding new parts equal to",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prop-sec-048-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 65,
+      "pageEnd": 68,
+      "target": "prop-sec-048-01.md",
+      "narrative": null,
+      "content": "3. Let F be a symmetric function of degree d and let µ be a parti- tion. The coefﬁcient aµ(F) is a polynomial in γ of degree at most d −(|µ| −ℓ(µ) + m1(µ)).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prop-sec-048-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 65,
+      "pageEnd": 68,
+      "target": "prop-sec-048-03.md",
+      "narrative": null,
+      "content": "3, when translated into Matsumoto’s notation by Lemma B.4, has several interesting consequences. As above, we consider an homogeneous sym- metric function F of degree d. • If d = |µ|, the only term of the sum which can be non-zero corresponds to i = 0 (by Proposition B.3). Moreover, it does not depend on α. Besides, the exponent of α in the formula is equal to zero. Finally, A(α) µ (F, n) does not depend neither on α nor on n, which proves [Mat10, Conjecture 9.2]. • If d = |µ| + 1, there are only two terms (corresponding to i = 0, 1) which can be non-zero in the sum. Besides, the coefﬁcient a˜",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-048",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.3. Symmetric functions of contents",
+      "pageStart": 65,
+      "pageEnd": 68,
+      "target": "../sections/sec-048-b3-symmetric-functions-of-contents.md",
+      "narrative": null,
+      "content": "lated problem considered by Matsumoto in [Mat10, Section 8] in connection with\nmatrix integrals. Our results allow us to prove two conjectures stated in his paper.\nFor a box □= (i, j) of a Young diagram λ (i is the row-index, j is the column\nindex and j ≤λi), we deﬁne its (α-)content as c(□) = √α(j −1)−√α−1(i−1).\nThe alphabet of the contents of λ is the multiset Cλ = {c(□) : □∈λ}.\nMatsumoto [Mat10, Equation (8.9)] (beware that in his paper the normalization\nis different than ours) showed the following remarkable result: for any partition λ\n(63)\nek(Cλ) =\nX\nµ:\n|µ|−ℓ(µ)=k,\nm1(µ)=0\nChµ(λ)\nzµ\n.\nIn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-049",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 68,
+      "pageEnd": 68,
+      "target": "../sections/sec-049-acknowledgments.md",
+      "narrative": null,
+      "content": "We thank I. Goulden and P. ´Sniady for enlightening discussions on the subject\nand relevant pieces of advice for the presentation of the paper.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1402.4615v3/blocks/prose-sec-050",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 68,
+      "pageEnd": 71,
+      "target": "../sections/sec-050-references.md",
+      "narrative": null,
+      "content": "[AC12]\nK. Aker and M. B. Can. Generators of the Hecke algebra of (S2n, Bn). Advances in\nMathematics, 231(5):2465–2483, 2012.\n[AGZ10]\nG. W. Anderson, A. Guionnet, and O. Zeitouni. An introduction to random matrices,\nvolume 118. Cambridge University Press, 2010.\n[BDJ99]\nJ. Baik, P. Deift, and K. Johansson. On the distribution of the length of the longest\nincreasing subsequence of random permutations. J. Amer. Math. Soc., 12(4):1119–1178,\n1999.\n[BDR01]\nJ. Baik, P. Deift, and E. Rains. A Fredholm determinant identity and the convergence\nof moments for random Young tableaux. Communications in Mathe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

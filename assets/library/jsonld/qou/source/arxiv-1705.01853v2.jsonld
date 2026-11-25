@@ -1,0 +1,66 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1705.01853v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Line Operators in the Standard Model",
+  "contains": [
+    "library/arxiv-1705.01853v2/sections/sec-front-matter",
+    "library/arxiv-1705.01853v2/sections/sec-000",
+    "library/arxiv-1705.01853v2/sections/sec-001",
+    "library/arxiv-1705.01853v2/sections/sec-002",
+    "library/arxiv-1705.01853v2/sections/sec-003",
+    "library/arxiv-1705.01853v2/sections/sec-004",
+    "library/arxiv-1705.01853v2/sections/sec-005",
+    "library/arxiv-1705.01853v2/sections/sec-006",
+    "library/arxiv-1705.01853v2/sections/sec-007",
+    "library/arxiv-1705.01853v2/sections/sec-008",
+    "library/arxiv-1705.01853v2/sections/sec-009"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Line Operators in the Standard Model — There is an ambiguity in the gauge group of the Standard Model.\n\n**Line Operators in the Standard Model**\n\n*David Tong*\n\n18 pp, 11 sections.\n\n**Abstract.** There is an ambiguity in the gauge group of the Standard Model. The group is G = SU(3) × SU(2) × U(1)/Γ, where Γ is a subgroup of Z6 which cannot be determined by current experiments. We describe how the electric, magnetic and dyonic line operators of the theory depend on the choice of Γ. We also explain how the periodicity of the theta angles, associated to each factor of G, diﬀer.\n\n**Outline.** Front matter; 2 A Review of Line Operators; An Example: $SU(N)$ vs $SU(N)/{\\bf Z}_N$; How Does the Dynamics Differ?; 3 Line Operators in the Standard Model; 3.1 Theta Angles; Time Reversal Invariant States; The Effect of Global Anomalies; 3.2 Electroweak Symmetry Breaking; 4 Summary; Acknowledgements",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1705.01853&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1705.01853v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1705.01853v2.pdf",
+    "source_sha256": "895e0b22c93bca1b83d0a42b4735c2bdd923720cc50dea2ecf3fa50b5a07a5b8",
+    "pages": 18,
+    "arxiv": {
+      "id": "1705.01853",
+      "version": "2",
+      "primary_class": "hep-th",
+      "stamp_date": "12 Jun 2017"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

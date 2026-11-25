@@ -1,0 +1,5666 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "kondev-2021-chinese-phys-c-45-030001",
+  "title": "The NUBASE2020 evaluation of nuclear physics properties",
+  "variant": "pdf",
+  "pages": 181,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Mass excess",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-21-mass-excess"
+    },
+    {
+      "level": 2,
+      "title": "Isomers",
+      "number": "2.2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-22-isomers"
+    },
+    {
+      "level": 2,
+      "title": "Half-life",
+      "number": "2.3",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-23-half-life"
+    },
+    {
+      "level": 2,
+      "title": "Spin and parity",
+      "number": "2.4",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-24-spin-and-parity"
+    },
+    {
+      "level": 2,
+      "title": "Decay modes and their intensities",
+      "number": "2.5",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-25-decay-modes-and-their-intensities"
+    },
+    {
+      "level": 2,
+      "title": "Isotopic abundances",
+      "number": "2.6",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-26-isotopic-abundances"
+    },
+    {
+      "level": 2,
+      "title": "Year of discovery",
+      "number": "2.7",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-27-year-of-discovery"
+    },
+    {
+      "level": 2,
+      "title": "References and Dissemination",
+      "number": "2.8",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-28-references-and-dissemination"
+    },
+    {
+      "level": 2,
+      "title": "Trends in neighboring nuclei (TNN)",
+      "number": "3.1",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-31-trends-in-neighboring-nuclei-tnn"
+    },
+    {
+      "level": 2,
+      "title": "Averaging procedure and uncertainties",
+      "number": "3.2",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-010-32-averaging-procedure-and-uncertainties"
+    },
+    {
+      "level": 2,
+      "title": "Symmetrization of asymmetric uncertainties",
+      "number": "3.3",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-011-33-symmetrization-of-asymmetric-uncertainties"
+    },
+    {
+      "level": 2,
+      "title": "Rounding policy",
+      "number": "3.4",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-012-34-rounding-policy"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions and outlook",
+      "number": "4",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-013-4-conclusions-and-outlook"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": "5",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-015-5-acknowledgments"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-014-references"
+    },
+    {
+      "level": 1,
+      "title": "MMC12 J",
+      "number": "15",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-016-15-mmc12-j"
+    },
+    {
+      "level": 1,
+      "title": "AHW",
+      "number": "17",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-017-17-ahw"
+    },
+    {
+      "level": 1,
+      "title": "MMC12 J",
+      "number": "06",
+      "page": 37,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-018-06-mmc12-j"
+    },
+    {
+      "level": 1,
+      "title": "MMC12 J",
+      "number": "10",
+      "page": 42,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-016-15-mmc12-j"
+    },
+    {
+      "level": 1,
+      "title": "FGK208 JD",
+      "number": "95",
+      "page": 79,
+      "pageLabel": "9",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-057-95-fgk208-jd"
+    },
+    {
+      "level": 1,
+      "title": "FGK205 EJ",
+      "number": "17",
+      "page": 97,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-058-17-fgk205-ej"
+    },
+    {
+      "level": 1,
+      "title": "FGK208 IJ",
+      "number": "06",
+      "page": 123,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 343,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nubase evaluation",
+          "heading": false
+        },
+        {
+          "term": "nuclear physics",
+          "heading": false
+        },
+        {
+          "term": "nuclear properties",
+          "heading": false
+        },
+        {
+          "term": "chinese academy",
+          "heading": false
+        },
+        {
+          "term": "kondev",
+          "heading": false
+        },
+        {
+          "term": "recommended values",
+          "heading": false
+        },
+        {
+          "term": "jain",
+          "heading": false
+        },
+        {
+          "term": "audi",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C PAPER • OPEN ACCESS The NUBASE2020 evaluation of nuclear physics properties * To cite this article: F.G. Kondev et al 2021 Chinese Phys. C 45 030001 View the article online for updates and enhancements. You may also like The NUBASE2016 evaluation of nuclear properties G. Audi, , F. G. Kondev et al. - Phenomenological model for favored proton radioactivity Xiao-Yan Zhu, Wei Gao, Jia Liu et al. -",
+      "extractCut": true,
+      "blocks": [
+        "library/kondev-2021-chinese-phys-c-45-030001/blocks/prose-sec-front-matter",
+        "library/kondev-2021-chinese-phys-c-45-030001/blocks/figure-img-p002-1"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 832,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "recommended data",
+          "heading": false
+        },
+        {
+          "term": "nuclear physics",
+          "heading": false
+        },
+        {
+          "term": "evaluated nuclear",
+          "heading": false
+        },
+        {
+          "term": "data library",
+          "heading": false
+        },
+        {
+          "term": "nuclear properties",
+          "heading": false
+        },
+        {
+          "term": "nuclear structure",
+          "heading": false
+        },
+        {
+          "term": "nubase",
+          "heading": false
+        },
+        {
+          "term": "recommended values",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction NUBASE2020 is an evaluated nuclear data library that contains the recommended values of the main nuclear physics properties: masses, excitation energies (for excited isomers), half-lives, spins and parities and decay modes, and their in- tensities, for all known nuclei in their ground and excited, isomeric (T1/2≥100 ns) states. It also includes information for yet unobserved nuclides that is based on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-22-isomers",
+      "number": "2.2",
+      "title": "Isomers",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 29,
+      "summary": null,
+      "keywords": [],
+      "extract": "the systematic trends in neighboring nuclei (TNN, see sec- tion 3.1). For each nuclide and for each state (ground or isomeric), the following properties were compiled and, when necessary,",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-mass-excess",
+      "number": "2.1",
+      "title": "Mass excess",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1547,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "isomer excitation",
+          "heading": false
+        },
+        {
+          "term": "mass excess",
+          "heading": true
+        },
+        {
+          "term": "nuclear isomers",
+          "heading": false
+        },
+        {
+          "term": "excitation energy",
+          "heading": false
+        },
+        {
+          "term": "excitation energies",
+          "heading": false
+        },
+        {
+          "term": "isomeric state",
+          "heading": false
+        },
+        {
+          "term": "ground state",
+          "heading": false
+        },
+        {
+          "term": "ﬂagged",
+          "heading": false
+        }
+      ],
+      "extract": "meric state, half-life, spin and parity, decay modes and their intensities, isotopic abundance (for stable nuclides), year of discovery and the corresponding bibliographical information for all experimental values of the above items. 2.1 Mass excess In general, the knowledge of atomic masses can provide valuable information on the lifetimes of nuclear states and their decay modes, and in particular on the β-delayed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-23-half-life",
+      "number": "2.3",
+      "title": "Half-life",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 974,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "half-life",
+          "heading": true
+        },
+        {
+          "term": "super-heavy nuclei",
+          "heading": false
+        },
+        {
+          "term": "half-life values",
+          "heading": false
+        },
+        {
+          "term": "tropical year",
+          "heading": false
+        },
+        {
+          "term": "half-lives",
+          "heading": false
+        },
+        {
+          "term": "half life",
+          "heading": false
+        },
+        {
+          "term": "nuclides",
+          "heading": false
+        },
+        {
+          "term": "data entry",
+          "heading": false
+        }
+      ],
+      "extract": "Half-life The lifetime is a fundamental property of a nuclear level. It is related to the total decay width, Γ, a linear sum of all partial decay widths (γ ray, conversion electrons, α decay, β decay, ﬁssion, etc.), through the uncertainty relationship: Γ = ¯h τ (1) where τ=T1/2/ln(2) is the level mean life and T1/2 is the half- life. Figures 3 displays the ground-state half-life as a function of N and Z for all",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-24-spin-and-parity",
+      "number": "2.4",
+      "title": "Spin and parity",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 582,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "measured spins",
+          "heading": false
+        },
+        {
+          "term": "chart displaying",
+          "heading": false
+        },
+        {
+          "term": "parity",
+          "heading": true
+        },
+        {
+          "term": "nuclear chart",
+          "heading": false
+        },
+        {
+          "term": "experimental data",
+          "heading": false
+        },
+        {
+          "term": "ensdf",
+          "heading": false
+        },
+        {
+          "term": "isolde",
+          "heading": false
+        },
+        {
+          "term": "parentheses",
+          "heading": false
+        }
+      ],
+      "extract": "Spin and parity Spin and parity values are presented with or without parentheses, based on “weak” or “strong” arguments, respec- tively, as adopted in ENSDF [12], but with one important exception. Since, it is a policy of NUBASE2020 to make a clear distinction between experimental and non-experimental information, parentheses are used only when the so-called “weak” arguments are based on experimental observations.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-25-decay-modes-and-their-intensities",
+      "number": "2.5",
+      "title": "Decay modes and their intensities",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1019,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "decay modes",
+          "heading": true
+        },
+        {
+          "term": "β-delayed particle",
+          "heading": false
+        },
+        {
+          "term": "daughter nuclide",
+          "heading": false
+        },
+        {
+          "term": "intensities",
+          "heading": true
+        },
+        {
+          "term": "particle emission",
+          "heading": false
+        },
+        {
+          "term": "excited states",
+          "heading": false
+        },
+        {
+          "term": "intensity",
+          "heading": false
+        },
+        {
+          "term": "delayed",
+          "heading": false
+        }
+      ],
+      "extract": "Decay modes and their intensities Figure 6 displays the main ground-state decay modes for all nuclei included in Table I. The most important policy in assembling the informa- tion about the decay modes and their intensities was to un- ambiguously establish whether a particular decay is energet- ically allowed, but not experimentally observed (represented by a question mark alone ‘?’, e.g. ‘IT ?’ or ‘α ?’, the ques-",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-26-isotopic-abundances",
+      "number": "2.6",
+      "title": "Isotopic abundances",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 68,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "isotopic abundances",
+          "heading": true
+        },
+        {
+          "term": "meija",
+          "heading": false
+        },
+        {
+          "term": "variance",
+          "heading": false
+        }
+      ],
+      "extract": "Isotopic abundances Isotopic abundances are given in the decay ﬁeld of Table I with the symbol IS and the values were taken from the most- recent publication of Meija et al. [20]. In several cases the IS values are listed in Ref. [20] as an interval [a,b], but in Table I they are given as IS = (a + b)/2 with a variance σ2= (b−a)2/12 (see section 3.2).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-27-year-of-discovery",
+      "number": "2.7",
+      "title": "Year of discovery",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 54,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "year",
+          "heading": true
+        },
+        {
+          "term": "discovery",
+          "heading": true
+        },
+        {
+          "term": "isomeric",
+          "heading": false
+        }
+      ],
+      "extract": "Year of discovery Similarly to the previous version of NUBASE [3, 4], Ta- ble I includes information about the year of discovery for each nuclide in its ground or isomeric state. For the former, rec- ommendations by Thoennessen [21] were adopted. Similar criteria were used when assigning the year of discovery for isomeric states.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-28-references-and-dissemination",
+      "number": "2.8",
+      "title": "References and Dissemination",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 270,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dissemination",
+          "heading": true
+        },
+        {
+          "term": "references",
+          "heading": true
+        },
+        {
+          "term": "nubase",
+          "heading": false
+        },
+        {
+          "term": "evaluators",
+          "heading": false
+        },
+        {
+          "term": "ﬁle",
+          "heading": false
+        },
+        {
+          "term": "ensdf",
+          "heading": false
+        },
+        {
+          "term": "ame",
+          "heading": false
+        }
+      ],
+      "extract": "References and Dissemination The year of the ENSDF archival ﬁle that was consulted during the development of NUBASE2020 is given in Table I. The entry is left blank when information for a particular nu- clide was not available in ENSDF. The bibliographical information used in NUBASE2020 is referenced by means of the “Nuclear Science Reference” (NSR) database [22] keynumber style. However, references quoted in Table",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-31-trends-in-neighboring-nuclei-tnn",
+      "number": "3.1",
+      "title": "Trends in neighboring nuclei (TNN)",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 191,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "neighboring nuclei",
+          "heading": true
+        },
+        {
+          "term": "tnn",
+          "heading": true
+        },
+        {
+          "term": "trends",
+          "heading": true
+        },
+        {
+          "term": "nubase",
+          "heading": false
+        },
+        {
+          "term": "estimated",
+          "heading": false
+        },
+        {
+          "term": "yet",
+          "heading": false
+        }
+      ],
+      "extract": "Trends in neighboring nuclei (TNN) In general, NUBASE2020 contains numerical and biblio- graphical information for all known nuclei for which at least one property is experimentally known. However, it also in- cludes results on yet unobserved nuclides, as well as data on properties (mostly excitation energy for isomers, half-lives and spins and/or parities) that are not yet measured. Such values are estimated from",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-32-averaging-procedure-and-uncertainties",
+      "number": "3.2",
+      "title": "Averaging procedure and uncertainties",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 479,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uncertainties",
+          "heading": true
+        },
+        {
+          "term": "policy",
+          "heading": false
+        },
+        {
+          "term": "statistical analysis",
+          "heading": false
+        },
+        {
+          "term": "average value",
+          "heading": false
+        },
+        {
+          "term": "reported",
+          "heading": false
+        },
+        {
+          "term": "certainties",
+          "heading": false
+        },
+        {
+          "term": "nubase",
+          "heading": false
+        },
+        {
+          "term": "standard deviation",
+          "heading": false
+        }
+      ],
+      "extract": "Averaging procedure and uncertainties It is a policy of NUBASE2020 to use one standard devi- ation as a representation of uncertainties associated with the recommended values. Unfortunately, authors of research ar- ticles do not always clarify the meaning of their reported un- certainties and, under such circumstances, these values are assumed to be one standard deviation. In several instances, uncertainties are not",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-33-symmetrization-of-asymmetric-uncertainties",
+      "number": "3.3",
+      "title": "Symmetrization of asymmetric uncertainties",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 348,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "asymmetric uncertainties",
+          "heading": true
+        },
+        {
+          "term": "two-piece normal",
+          "heading": false
+        },
+        {
+          "term": "normal distribution",
+          "heading": false
+        },
+        {
+          "term": "symmetrization",
+          "heading": true
+        },
+        {
+          "term": "median value",
+          "heading": false
+        },
+        {
+          "term": "erf",
+          "heading": false
+        },
+        {
+          "term": "mean value",
+          "heading": false
+        }
+      ],
+      "extract": "Symmetrization of asymmetric uncertainties Experimental results are sometimes reported in the litera- ture with asymmetric uncertainties, e.g. X+a −b , and it is a policy of NUBASE to symmetrize these uncertainties. Similarly to the previous version of NUBASE [1–4], the asymmetric uncertainty is associated with a two-piece normal distribution (sometimes called “split-normal distribution” or “Fechner distribution”),",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-34-rounding-policy",
+      "number": "3.4",
+      "title": "Rounding policy",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 120,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rounded off",
+          "heading": false
+        },
+        {
+          "term": "rounding",
+          "heading": true
+        },
+        {
+          "term": "policy",
+          "heading": true
+        },
+        {
+          "term": "ensdf",
+          "heading": false
+        }
+      ],
+      "extract": "Rounding policy In general, values for properties presented in NUBASE2020 and their uncertainties are rounded off, even if unrounded ones were given in the literature or in ENSDF. However, for some very precise data, as well as for data that were deemed essential for traceability purposes (e.g. isotopic abundances), the precisions quoted in the original publica- tions were retained. In cases where the two",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-4-conclusions-and-outlook",
+      "number": "4",
+      "title": "Conclusions and outlook",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 160,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "outlook",
+          "heading": true
+        },
+        {
+          "term": "nuclei",
+          "heading": false
+        },
+        {
+          "term": "two-piece",
+          "heading": false
+        },
+        {
+          "term": "conclusions",
+          "heading": true
+        },
+        {
+          "term": "nubase",
+          "heading": false
+        }
+      ],
+      "extract": "Conclusions and outlook The NUBASE2020 evaluated nuclear data library contains the recommended values for the basic nuclear physics prop- erties for all known nuclei, such as mass excess, excitation 030001-13 Chinese Physics C Vol. 45, No. 3 (2021) 030001 X b σ m a x Fig. 7. (dashed black) original Normal distributions, N(X,b) (left on X) and N(X,a) (right on X), associated with the measured quantity X+a −b ; (solid",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-references",
+      "number": null,
+      "title": "References",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 140,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "synchronization",
+          "heading": false
+        },
+        {
+          "term": "traceability",
+          "heading": false
+        },
+        {
+          "term": "nubase",
+          "heading": false
+        },
+        {
+          "term": "ﬁrm",
+          "heading": false
+        }
+      ],
+      "extract": "experimental results, especially for cases that are not included in ENSDF or in other topical evaluations. Such a traceability would allow any user to promptly review the recommended data and, if necessary, to undertake a re-evaluation. NUBASE2020 is an integral part of AME2020 and the synchronization of these two libraries allows better homo- geneity of all experimental data to be achieved. Furthermore, assignments",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-5-acknowledgments",
+      "number": "5",
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 5554,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "delayed emission",
+          "heading": false
+        },
+        {
+          "term": "delayed ﬁssion",
+          "heading": false
+        },
+        {
+          "term": "delayed neutron",
+          "heading": false
+        },
+        {
+          "term": "delayed proton",
+          "heading": false
+        },
+        {
+          "term": "data nucl",
+          "heading": false
+        },
+        {
+          "term": "excited isomer",
+          "heading": false
+        },
+        {
+          "term": "mass excess",
+          "heading": false
+        },
+        {
+          "term": "excitation energy",
+          "heading": false
+        }
+      ],
+      "extract": "Acknowledgments This work was supported by the U.S. Department of En- ergy, Ofﬁce of Science, Ofﬁce of Nuclear Physics, under Contract No. DE-AC02-06CH11357 (ANL) and in part by the National Key Research and Development Program of China (Grant No. 2016YFA0400504) and the Strategic Prior- ity Research Program of Chinese Academy of Sciences (CAS, Grant No. XDB34000000) (IMP). W.J. Huang acknowledges the ﬁnancial",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-15-mmc12-j",
+      "number": "15",
+      "title": "MMC12 J",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4753,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nubase table",
+          "heading": false
+        },
+        {
+          "term": "birge ratio",
+          "heading": false
+        },
+        {
+          "term": "decay modes",
+          "heading": false
+        },
+        {
+          "term": "mass excess",
+          "heading": false
+        },
+        {
+          "term": "excitation energy",
+          "heading": false
+        },
+        {
+          "term": "average",
+          "heading": false
+        },
+        {
+          "term": "cli",
+          "heading": false
+        },
+        {
+          "term": "ens reference",
+          "heading": false
+        }
+      ],
+      "extract": "α=?;p=? ∗ 22Al 18200# 400# 91.1 ms0.5 (4)+ 15 1982 β +=100;β +p=55 3; ∗ β +2p=1.10 11; β +α=0.038 17 22Si 33640# 500# 28.7 ms1.1 0+ 15 20Le16 TD 1987 β +=100;β +p=62 5; ∗ β +2p=0.7 3 ∗22C T : symmetrized from 03Yo02=6.1(+1.4-1.2) ∗∗ ∗22C D : %β −n symmetrized from 03Yo02=61(+14-13) ∗∗ ∗22Nei E : from 16Ma.A, but T=2 assignment is not ﬁrm ∗∗ ∗22Na D : from 71GoYM ∗∗ ∗22Mg T : average 17Du11=3.87400(0.00079)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-17-ahw",
+      "number": "17",
+      "title": "AHW",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 37,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2413,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tii",
+          "heading": false
+        },
+        {
+          "term": "cai",
+          "heading": false
+        },
+        {
+          "term": "scm",
+          "heading": false
+        },
+        {
+          "term": "scn",
+          "heading": false
+        },
+        {
+          "term": "cri",
+          "heading": false
+        }
+      ],
+      "extract": "E IT=100 ∗ 40Caj −22858.4 1.0 11988 1 0+ T=2 17 IT=100 40Sc −20523.4 2.8 182.3 ms0.7 4− 17 1955 β +=100;β +p=0.44 7; β +α=0.017 5 40Sci −16164 6 4359 6 RQ 0+ T=2 17 IT=100 40Ti −8990 70 52.4 ms0.3 0+ 17 07Do17 TD 1982 β +=100;β +p=95.8 13 40V 12470# 300# 2−# p ? ∗40Mg I : 5 events observed in direct two-proton removal from 42Si ∗∗ ∗40Si T : average 17Tr02=27.6(1.4) 04Gr20=33(1); Birge ratio=3.14 ∗∗ ∗40K J : also",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-06-mmc12-j",
+      "number": "06",
+      "title": "MMC12 J",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 42,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3242,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fragmented state",
+          "heading": false
+        },
+        {
+          "term": "nubase table",
+          "heading": false
+        },
+        {
+          "term": "kev lower",
+          "heading": false
+        },
+        {
+          "term": "coi",
+          "heading": false
+        },
+        {
+          "term": "nii",
+          "heading": false
+        },
+        {
+          "term": "kev higher",
+          "heading": false
+        },
+        {
+          "term": "decay modes",
+          "heading": false
+        },
+        {
+          "term": "mass excess",
+          "heading": false
+        }
+      ],
+      "extract": "p=100 48Fe −18010 90 45.3 ms0.6 0+ 06 07Do17 TD 1987 β +=100;β +p=15.3 5 48Co 1730# 500# 6+# 06 p ? 48Ni 18180# 420# 2.8 ms0.8 0+ 06 11Po09 TD 2000 2p=70 20;β +=30 20;β +p ? ∗ ∗48Ar T : average 12We08=381(35) 412(19) 04Gr20=475(40) ∗∗ ∗48K J : 14Kr04,14Pa45=1 ∗∗ ∗48K T : average 75Mu08=6.8(0.2) 81HuZT=6.9(0.2) 78De17=6(1) ∗∗ 030001-36 Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-mmc12-j-page-42",
+      "number": null,
+      "title": "MMC12 J (page 42)",
+      "level": 2,
+      "pageStart": 42,
+      "pageEnd": 42,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 688,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nii",
+          "heading": false
+        },
+        {
+          "term": "fragmented state",
+          "heading": false
+        },
+        {
+          "term": "kev lower",
+          "heading": false
+        },
+        {
+          "term": "kev higher",
+          "heading": false
+        },
+        {
+          "term": "scm",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 57Coi −52092.3 0.4 7253.3 0.6 RQ 1/2−T=5/2 MMC120J 57Ni −56084.0 0.6 35.60 h 0.06 3/2− 98 1938 β +=100 57Nii −50845.2 0.9 5238.8 0.7 7/2−frg. T=3/298 ∗ 57Cu −47309.0 0.5",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-mmc12-j-page-43",
+      "number": null,
+      "title": "MMC12 J (page 43)",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 43,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 686,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nii",
+          "heading": false
+        },
+        {
+          "term": "mnm",
+          "heading": false
+        },
+        {
+          "term": "cui",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 59Mn −55525.3 2.3 4.59 s 0.05 5/2−∗ 18 15Ba49 J 1976 β −=100 59Fe −60665.0 0.3 44.500 d 0.012 3/2−∗ 18 FGK204 T 1938 β −=100 59Co −62229.8 0.4 STABLE 7/2−∗ 18 1923 IS=100",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-mmc12-j-page-44",
+      "number": null,
+      "title": "MMC12 J (page 44)",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 44,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 676,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tej",
+          "heading": false
+        },
+        {
+          "term": "mnm",
+          "heading": false
+        },
+        {
+          "term": "cui",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 61Ca 19010# 800# 1# ms 1/2−# β −?;β −n ?;β −2n ? 61Sc 500# 600# 7# ms>620ns 7/2−# 15 09Ta24 I 2009 β −?;β −n ?;β −2n ? 61Ti −16370# 300# 15 ms4 1/2−# 15 1997 β −=100;β −n ?;β",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-mmc12-j-page-45",
+      "number": null,
+      "title": "MMC12 J (page 45)",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 45,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 691,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mnm",
+          "heading": false
+        },
+        {
+          "term": "kev",
+          "heading": false
+        },
+        {
+          "term": "p-unstable",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗62Ge T : average 14Gr10=82.9(1.4) 17Ku12=76(6) ∗∗ ∗62As D : most likely p-unstable from estimated Sp=-1980#(420#) keV ∗∗ 63Sc 13070# 700# 1# ms 7/2−# β −?;β −n ?;β −2n ?",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-mmc12-j-page-46",
+      "number": null,
+      "title": "MMC12 J (page 46)",
+      "level": 2,
+      "pageStart": 46,
+      "pageEnd": 46,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 736,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fgk",
+          "heading": false
+        },
+        {
+          "term": "asn",
+          "heading": false
+        },
+        {
+          "term": "fen",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗64As T : from 20Gi02, supersedes 19Ru.A=63.4(1.2) (same collaboration); ∗∗ ∗64As T : others 14Ro14=72(6) 02Lo13=18(+43-7) ∗∗ 65Ti 5210# 700# 1# ms 1/2−# β −?;β −n ?;β −2n ?",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-mmc12-j-page-47",
+      "number": null,
+      "title": "MMC12 J (page 47)",
+      "level": 2,
+      "pageStart": 47,
+      "pageEnd": 47,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 684,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "direct feeding",
+          "heading": false
+        },
+        {
+          "term": "znm",
+          "heading": false
+        },
+        {
+          "term": "birge ratio",
+          "heading": false
+        },
+        {
+          "term": "fem",
+          "heading": false
+        },
+        {
+          "term": "average",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗66Mn J : 11Li50=(1+) due to large ground-state feeding from 66Cr (J=0+); ∗∗ ∗66Mn J : large direct β −feeding to 66Fe gs (J=0+) in 18St18 ∗∗ ∗66Mn T : avgerage",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-mmc12-j-page-48",
+      "number": null,
+      "title": "MMC12 J (page 48)",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 48,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 739,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nim",
+          "heading": false
+        },
+        {
+          "term": "cum",
+          "heading": false
+        },
+        {
+          "term": "nin",
+          "heading": false
+        },
+        {
+          "term": "znm",
+          "heading": false
+        },
+        {
+          "term": "average",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 68Con −51450# 150# 195# 150# 101 ns 10 (1) 12 10Da06 T 2010 IT=100 ∗ 68Ni −63463.8 3.0 29 s 2 0+ 12 1977 β −=100 68Nim −61860 3 1603.51 0.28 270 ns 5 0+ 12 15Fl01 E 1984",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-mmc12-j-page-49",
+      "number": null,
+      "title": "MMC12 J (page 49)",
+      "level": 2,
+      "pageStart": 49,
+      "pageEnd": 49,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 738,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "outweighed",
+          "heading": false
+        },
+        {
+          "term": "brm",
+          "heading": false
+        },
+        {
+          "term": "nu-bb",
+          "heading": false
+        },
+        {
+          "term": "nim",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗69Sen T : average 00Ch07=950(21) 95Po01=960(23) ∗∗ ∗69Kr T : average 20Gi02=27.8(1.6) 14De41=28(1) 11Ro47=27(3); other 97Xu01=32(10) ∗∗ ∗69Kr D : %β +p average",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-mmc12-j-page-50",
+      "number": null,
+      "title": "MMC12 J (page 50)",
+      "level": 2,
+      "pageStart": 50,
+      "pageEnd": 50,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 720,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "znm",
+          "heading": false
+        },
+        {
+          "term": "cum",
+          "heading": false
+        },
+        {
+          "term": "xuzz",
+          "heading": false
+        },
+        {
+          "term": "gam",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗71Co T : 98Am04=210(40) 95Am.A=200(50) ∗∗ ∗71Cu T : average 99Pr10=19(3) 83Ru06=19.5(1.6) ∗∗ ∗71Cu J : 20De21,10Vi07=3/2 ∗∗ ∗71Cum T : average 98Is11=250(30) 98Gr14=275(14)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-mmc12-j-page-51",
+      "number": null,
+      "title": "MMC12 J (page 51)",
+      "level": 2,
+      "pageStart": 51,
+      "pageEnd": 51,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 699,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kozh",
+          "heading": false
+        },
+        {
+          "term": "outweighed",
+          "heading": false
+        },
+        {
+          "term": "average",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 73Kri −53350# 120# 3204# 118# T=3/2 20Ho17 E 73Rb −46010 40 < 81 ns 3/2−# 19 17Su31 T 1996 β + ?; p≈100 73Rbm −45580# 110# 430# 100# 9/2+# Mirror I 73Rbi −42809 20 3200 40 p",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-mmc12-j-page-52",
+      "number": null,
+      "title": "MMC12 J (page 52)",
+      "level": 2,
+      "pageStart": 52,
+      "pageEnd": 52,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 681,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tjd",
+          "heading": false
+        },
+        {
+          "term": "gerda",
+          "heading": false
+        },
+        {
+          "term": "igex",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 75Sr −46620 220 85.2 ms2.3 (3/2−) 13 19Si33 T 1991 β +=100;β +p=5.2 9 ∗ 75Y −31820# 300# 100# µs 5/2+# β + ?;β +p ?;p ? ∗75Co D : %β −n from 11Ho21<16 ∗∗ ∗75Co T : from",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-mmc12-j-page-53",
+      "number": null,
+      "title": "MMC12 J (page 53)",
+      "level": 2,
+      "pageStart": 53,
+      "pageEnd": 53,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 697,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "znm",
+          "heading": false
+        },
+        {
+          "term": "xuzz",
+          "heading": false
+        },
+        {
+          "term": "gam",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 77Asm −73440.8 1.7 475.48 0.04 114.0 µs 2.5 9/2+ 20 1957 IT=100 77Se −74599.50 0.06 STABLE 1/2−∗ 20 1922 IS=7.60 7 77Sem −74437.58 0.06 161.9223 0.0010 17.36 s 0.05 7/2+ 20",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-mmc12-j-page-54",
+      "number": null,
+      "title": "MMC12 J (page 54)",
+      "level": 2,
+      "pageStart": 54,
+      "pageEnd": 54,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 718,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gem",
+          "heading": false
+        },
+        {
+          "term": "sem",
+          "heading": false
+        },
+        {
+          "term": "brm",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 79Ga −62548.4 1.2 2.848 s 0.003 3/2−∗ 16 1974 β −=100;β −n=0.089 19 ∗ 79Ge −69530 40 18.98 s 0.03 (1/2)− 16 1970 β −=100 79Gem −69340 40 185.95 0.04 39.0 s 1.0 7/2+# 16 1970",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-mmc12-j-page-55",
+      "number": null,
+      "title": "MMC12 J (page 55)",
+      "level": 2,
+      "pageStart": 55,
+      "pageEnd": 55,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 742,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gam",
+          "heading": false
+        },
+        {
+          "term": "rbm",
+          "heading": false
+        },
+        {
+          "term": "brm",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 81As −72533.3 2.6 33.3 s 0.8 3/2− 08 1960 β −=100 81Se −76389.0 1.0 18.45 m 0.12 1/2− 08 1948 β −=100 81Sem −76286.0 1.0 103.00 0.06 57.28 m 0.02 7/2+ 08 1971 IT≈100;β",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-mmc12-j-page-56",
+      "number": null,
+      "title": "MMC12 J (page 56)",
+      "level": 2,
+      "pageStart": 56,
+      "pageEnd": 56,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 697,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "krn",
+          "heading": false
+        },
+        {
+          "term": "xuzz",
+          "heading": false
+        },
+        {
+          "term": "brm",
+          "heading": false
+        },
+        {
+          "term": "krm",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗82Se T : 19Az04=86.0(0.3)(+1.9-1.3) 12Si23=96(10) 15Ba11=92(7) (evaluation); ∗∗ ∗82Se T : 0nu-BB: 19Az02>3.5 Yy 18Az05>2.4 Yy 99Pi08=83(+9-7) 98Ar10=83(12) ∗∗ ∗82Se T :",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-mmc12-j-page-57",
+      "number": null,
+      "title": "MMC12 J (page 57)",
+      "level": 2,
+      "pageStart": 57,
+      "pageEnd": 57,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 710,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rbm",
+          "heading": false
+        },
+        {
+          "term": "srm",
+          "heading": false
+        },
+        {
+          "term": "average",
+          "heading": false
+        },
+        {
+          "term": "gam",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 84Y −73894 4 39.5 m 0.8 (6+) 09 1962 β +=100 84Ym −73827 4 67.0 0.2 4.6 s 0.2 1+ 09 1976 β +=100 84Yn −73684 4 210.42 0.16 292 ns 10 (4−) 09 2005 IT=100 84Zr −71422 5 25.8 m",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-mmc12-j-page-58",
+      "number": null,
+      "title": "MMC12 J (page 58)",
+      "level": 2,
+      "pageStart": 58,
+      "pageEnd": 58,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 749,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nbn",
+          "heading": false
+        },
+        {
+          "term": "nbm",
+          "heading": false
+        },
+        {
+          "term": "half-life",
+          "heading": false
+        },
+        {
+          "term": "tcm",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗85Nbm E : from 05Ka39 > 69 keV ∗∗ ∗85Nbn I : activity reported in 98Oi02 and adopted in Ensdf2014 as a new isomer; ∗∗ ∗85Nbn I : not conﬁrmed in 05Ka39 (the same laboratory",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-mmc12-j-page-59",
+      "number": null,
+      "title": "MMC12 J (page 59)",
+      "level": 2,
+      "pageStart": 59,
+      "pageEnd": 59,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 654,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "srm",
+          "heading": false
+        },
+        {
+          "term": "tcn",
+          "heading": false
+        },
+        {
+          "term": "tcm",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 87Tcm −57683 4 7 1 * 2# s 1/2−# 09Ga40 E β + ?;IT ? ∗ 87Tcn −57619 4 71 1 647 ns 24 7/2+# 15 2007 IT=100 87Ru −45730# 400# 50# ms>1.5us 1/2−# 15 95Ry03 I 1995 β + ?;β +p ?",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-mmc12-j-page-60",
+      "number": null,
+      "title": "MMC12 J (page 60)",
+      "level": 2,
+      "pageStart": 60,
+      "pageEnd": 60,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 700,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nbr",
+          "heading": false
+        },
+        {
+          "term": "nbn",
+          "heading": false
+        },
+        {
+          "term": "zrm",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 89Ym −86802.2 0.3 908.97 0.03 15.663 s 0.005 9/2+∗ 13 94It.A T 1951 IT=100 ∗ 89Zr −84878.0 2.8 78.360 h 0.023 9/2+ 13 20Fe10 T 1948 β +=100 ∗ 89Zrm −84290.2 2.8 587.82 0.10",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-mmc12-j-page-61",
+      "number": null,
+      "title": "MMC12 J (page 61)",
+      "level": 2,
+      "pageStart": 61,
+      "pageEnd": 61,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 759,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rhm",
+          "heading": false
+        },
+        {
+          "term": "nbm",
+          "heading": false
+        },
+        {
+          "term": "nbn",
+          "heading": false
+        },
+        {
+          "term": "mom",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 91Br −61107 4 543 ms4 5/2−# 13 14Ag12 D 1974 β −=100;β −n=29.5 5 91Kr −70974.0 2.2 8.57 s 0.04 5/2+∗ 13 1951 β −=100;β −n ? 91Rb −77745 8 58.2 s 0.3 3/2−∗ 13 1951 β −=100;β",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-mmc12-j-page-62",
+      "number": null,
+      "title": "MMC12 J (page 62)",
+      "level": 2,
+      "pageStart": 62,
+      "pageEnd": 62,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 682,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rhn",
+          "heading": false
+        },
+        {
+          "term": "uncertainty estimated",
+          "heading": false
+        },
+        {
+          "term": "sem",
+          "heading": false
+        },
+        {
+          "term": "nbm",
+          "heading": false
+        },
+        {
+          "term": "gamma rays",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 92Rh −62999 4 5.61 s 0.08 (6+) 12 19Pa16 TD 1994 β +=100;β +p=2.05 7 ∗ 92Rhm −62950# 100# 50# 100# 3.18 s 0.22 (2+) 12 19Pa16 TD 2004 β +=100;β +p=1.7 3 ∗ 92Rhn −62890# 100#",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-mmc12-j-page-63",
+      "number": null,
+      "title": "MMC12 J (page 63)",
+      "level": 2,
+      "pageStart": 63,
+      "pageEnd": 63,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 728,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pdm",
+          "heading": false
+        },
+        {
+          "term": "pdn",
+          "heading": false
+        },
+        {
+          "term": "rum",
+          "heading": false
+        },
+        {
+          "term": "average",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗93Sr J : 90Li28=5/2 ∗∗ ∗93Y J : 07Ch07=1/2 ∗∗ ∗93Ym J : 07Ch07=9/2 ∗∗ ∗93Nb J : also 09Ch25=9/2 ∗∗ ∗93Nbn E : from 7435.3(2.1)+x keV in Ensdf2011; x<50 keV assumed in Nubase",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-mmc12-j-page-64",
+      "number": null,
+      "title": "MMC12 J (page 64)",
+      "level": 2,
+      "pageStart": 64,
+      "pageEnd": 64,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 736,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rbm",
+          "heading": false
+        },
+        {
+          "term": "brm",
+          "heading": false
+        },
+        {
+          "term": "krm",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗94Agn D : %p=1.9(5) + 2.2(4) from 05Mu15, %2p from 06Mu03 ∗∗ 95Se −30460# 500# 70# ms>400ns 3/2+# 12 10Oh02 I 2010 β −?;β −n ?;β −2n ? 95Br −43850# 300# 80# ms>300ns 5/2−#",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-mmc12-j-page-65",
+      "number": null,
+      "title": "MMC12 J (page 65)",
+      "level": 2,
+      "pageStart": 65,
+      "pageEnd": 65,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 712,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "agp",
+          "heading": false
+        },
+        {
+          "term": "agq",
+          "heading": false
+        },
+        {
+          "term": "cdn",
+          "heading": false
+        },
+        {
+          "term": "cdm",
+          "heading": false
+        },
+        {
+          "term": "average",
+          "heading": false
+        },
+        {
+          "term": "pdm",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 96Rhm −79636 10 51.98 0.09 1.51 m 0.02 3+ 08 1966 IT=60 5;β +=40 5 96Pd −76183 4 122 s 2 0+ 08 1980 β +=100 96Pdm −73652 4 2530.57 0.23 1.804 µs 0.007 8+# 08 17Pa35 T 1983",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-mmc12-j-page-66",
+      "number": null,
+      "title": "MMC12 J (page 66)",
+      "level": 2,
+      "pageStart": 66,
+      "pageEnd": 66,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 685,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "srn",
+          "heading": false
+        },
+        {
+          "term": "srm",
+          "heading": false
+        },
+        {
+          "term": "etd",
+          "heading": false
+        },
+        {
+          "term": "superseded",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 97Nb −85603 4 72.1 m 0.7 9/2+ 10 1951 β −=100 97Nbm −84860 4 743.35 0.03 58.7 s 1.8 1/2− 10 1950 IT=100 97Mo −87544.70 0.16 STABLE 5/2+∗ 10 1930 IS=9.582 15 97Tc −87224 4",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-mmc12-j-page-67",
+      "number": null,
+      "title": "MMC12 J (page 67)",
+      "level": 2,
+      "pageStart": 67,
+      "pageEnd": 67,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 716,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zrm",
+          "heading": false
+        },
+        {
+          "term": "rhm",
+          "heading": false
+        },
+        {
+          "term": "tcm",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 98Mo −88115.98 0.17 STABLE >100Ty 0+ 20 52Fr23 T 1930 IS=24.292 80;2β −? ∗ 98Tc −86432 3 4.2 My0.3 6+∗ 20 20Kr09 J 1955 β −=100;β +=0 98Tcm −86341 3 90.77 0.16 14.7 µs 0.5",
+      "extractCut": true
+    },
+    {
+      "id": "sec-045-mmc12-j-page-68",
+      "number": null,
+      "title": "MMC12 J (page 68)",
+      "level": 2,
+      "pageStart": 68,
+      "pageEnd": 68,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 713,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nbp",
+          "heading": false
+        },
+        {
+          "term": "isomer",
+          "heading": false
+        },
+        {
+          "term": "nbn",
+          "heading": false
+        },
+        {
+          "term": "pfzx",
+          "heading": false
+        },
+        {
+          "term": "kev above",
+          "heading": false
+        },
+        {
+          "term": "srm",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗99Zrm T : other 04Hw02=316(48) 99Ge01=400(20) 79Se01=292(20) 70Gr38=400(80) ∗∗ ∗99Nb J : 09Ch25=9/2 ∗∗ ∗99Mo J : 74Ru05=1/2 ∗∗ ∗99Tc J : 20Kr09,58Lo62=9/2 ∗∗ ∗99Ru J :",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-mmc12-j-page-69",
+      "number": null,
+      "title": "MMC12 J (page 69)",
+      "level": 2,
+      "pageStart": 69,
+      "pageEnd": 69,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 698,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rhm",
+          "heading": false
+        },
+        {
+          "term": "gamma rays",
+          "heading": false
+        },
+        {
+          "term": "average",
+          "heading": false
+        },
+        {
+          "term": "tcm",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗100Mo T : 19Ar04=6.81(0.01,stat)(+0.38-0.40,syst) ∗∗ ∗100Mo T : 17Ar18=6.90(0.15,stat)(0.37,syst) 15Ba11=7.1(0.4) (evaluation) ∗∗ ∗100Ag J : 14Fe01=(5) ∗∗ ∗100Sn T : also",
+      "extractCut": true
+    },
+    {
+      "id": "sec-047-mmc12-j-page-70",
+      "number": null,
+      "title": "MMC12 J (page 70)",
+      "level": 2,
+      "pageStart": 70,
+      "pageEnd": 70,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 721,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "direct feeding",
+          "heading": false
+        },
+        {
+          "term": "decaying state",
+          "heading": false
+        },
+        {
+          "term": "pfzx",
+          "heading": false
+        },
+        {
+          "term": "snm",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 102Rh −86783 6 207.0 d 1.5 2−∗ 09 98Sh21 T 1941 β +=78 5;β −=22 5 ∗ 102Rhm −86642 6 140.73 0.09 3.742 y 0.010 6+∗ 09 99Gi14 J 1962 β +≈100;IT=0.233 24 102Pd −87903.0 0.4",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-mmc12-j-page-71",
+      "number": null,
+      "title": "MMC12 J (page 71)",
+      "level": 2,
+      "pageStart": 71,
+      "pageEnd": 71,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 738,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "supersedes",
+          "heading": false
+        },
+        {
+          "term": "inm",
+          "heading": false
+        },
+        {
+          "term": "symmetrized",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 104Y −54080# 200# 197 ms4 (0+,1+)# 15 09Pe06 D 1994 β −=100;β −n=34 10;β −2n ? ∗ 104Zr −65718 9 920 ms28 0+ 07 09Pe06 TD 1990 β −=100;β −n<1 104Nb −71811.0 1.8 * 0.98 s 0.05",
+      "extractCut": true
+    },
+    {
+      "id": "sec-049-mmc12-j-page-72",
+      "number": null,
+      "title": "MMC12 J (page 72)",
+      "level": 2,
+      "pageStart": 72,
+      "pageEnd": 72,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 729,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sbm",
+          "heading": false
+        },
+        {
+          "term": "nbm",
+          "heading": false
+        },
+        {
+          "term": "inm",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗105Sb D : %p from 05Li47<0.1% above 430 keV, disagrees with 96FaZZ,94Ti03 1% ∗∗ ∗105Te T : average 06Li41=620(70) 06Se08=700(+250-170) ∗∗ ∗105Te J : favorite α decay to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-050-mmc12-j-page-73",
+      "number": null,
+      "title": "MMC12 J (page 73)",
+      "level": 2,
+      "pageStart": 73,
+      "pageEnd": 73,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 687,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mom",
+          "heading": false
+        },
+        {
+          "term": "average",
+          "heading": false
+        },
+        {
+          "term": "zrm",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 107Sb −70653 4 4.0 s 0.2 5/2+# 08 1994 β +=100 107Te −60660# 100# 3.22 ms0.09 5/2+# 08 19Au02 T 1979 α=70 30;β + ?;β +p ? ∗ 107I −49430# 300# 20# µs 5/2+# α ? ∗107Y T : other",
+      "extractCut": true
+    },
+    {
+      "id": "sec-051-mmc12-j-page-74",
+      "number": null,
+      "title": "MMC12 J (page 74)",
+      "level": 2,
+      "pageStart": 74,
+      "pageEnd": 74,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 692,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gamma depopulating",
+          "heading": false
+        },
+        {
+          "term": "nbm",
+          "heading": false
+        },
+        {
+          "term": "gated",
+          "heading": false
+        },
+        {
+          "term": "isomer",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 109Ag −88719.4 1.3 STABLE 1/2−∗ 16 1924 IS=48.161 8 ∗ 109Agm −88631.4 1.3 88.0337 0.0010 39.79 s 0.21 7/2+∗ 16 1967 IT=100 109Cd −88504.3 1.5 461.3 d 0.5 5/2+∗ 16 FGK209 T",
+      "extractCut": true
+    },
+    {
+      "id": "sec-052-mmc12-j-page-75",
+      "number": null,
+      "title": "MMC12 J (page 75)",
+      "level": 2,
+      "pageStart": 75,
+      "pageEnd": 75,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 732,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "supersedes",
+          "heading": false
+        },
+        {
+          "term": "cdm",
+          "heading": false
+        },
+        {
+          "term": "tcm",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 111Zr −36480# 600# 24.0 ms0.5 5/2+# 15 15Lo04 T 2010 β −=100;β −n ?;β −2n ? 111Nb −48960# 300# 54 ms2 3/2−# 15 1997 β −=100;β −n ?;β −2n ? 111Mo −59940 13 193.6 ms4.4 1/2+#",
+      "extractCut": true
+    },
+    {
+      "id": "sec-053-mmc12-j-page-76",
+      "number": null,
+      "title": "MMC12 J (page 76)",
+      "level": 2,
+      "pageStart": 76,
+      "pageEnd": 76,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 730,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tcm",
+          "heading": false
+        },
+        {
+          "term": "cdm",
+          "heading": false
+        },
+        {
+          "term": "kev level",
+          "heading": false
+        },
+        {
+          "term": "inm",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗112Tcm T : from 10Br15=150(17); other 12Ka36=218(+60-43) ∗∗ ∗112Rh T : 99Lh01=3.45(0.37) supersedes 91Jo11=2.1(0.3), 88Ay02=3.8(0.6) same group ∗∗ ∗112Rhm T : supersedes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-054-mmc12-j-page-77",
+      "number": null,
+      "title": "MMC12 J (page 77)",
+      "level": 2,
+      "pageStart": 77,
+      "pageEnd": 77,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 756,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kev",
+          "heading": false
+        },
+        {
+          "term": "sbm",
+          "heading": false
+        },
+        {
+          "term": "page",
+          "heading": true
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 114Sb −84497 20 3.49 m 0.03 3+ 12 1959 β +=100 114Sbm −84002 20 495.5 0.7 219 µs 12 (8−) 12 1973 IT=100 114Te −81890 24 15.2 m 0.7 0+ 12 1968 β +=100 114I −72639 20 2.01 s",
+      "extractCut": true
+    },
+    {
+      "id": "sec-055-mmc12-j-page-78",
+      "number": null,
+      "title": "MMC12 J (page 78)",
+      "level": 2,
+      "pageStart": 78,
+      "pageEnd": 78,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 783,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "csm",
+          "heading": false
+        },
+        {
+          "term": "birge ratio",
+          "heading": false
+        },
+        {
+          "term": "sbn",
+          "heading": false
+        },
+        {
+          "term": "snn",
+          "heading": false
+        },
+        {
+          "term": "snm",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 116Agm −82495 3 47.90 0.10 20 s 1 (3+) 10 05Ba94 TJD 2005 β −=93 4;IT=7 4 116Agn −82413 3 129.80 0.22 9.3 s 0.3 (6−) 10 05Ba94 TJD 1970 β −=92 4;IT=8 4 116Cd −88712.49 0.16",
+      "extractCut": true
+    },
+    {
+      "id": "sec-056-mmc12-j-page-79",
+      "number": null,
+      "title": "MMC12 J (page 79)",
+      "level": 2,
+      "pageStart": 79,
+      "pageEnd": 79,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 742,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "high-spin decaying",
+          "heading": false
+        },
+        {
+          "term": "rhm",
+          "heading": false
+        },
+        {
+          "term": "direct feeding",
+          "heading": false
+        },
+        {
+          "term": "spmix",
+          "heading": false
+        },
+        {
+          "term": "snm",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 117Cs −66490 60 * 8.4 s 0.6 9/2+# 11 1972 β +=100 117Csm −66340# 100# 150# 80# * 6.5 s 0.4 3/2+# 11 1978 β +=100 117Csx −66440 80 50 50 R =? spmix 117Ba −57460 250 1.75 s",
+      "extractCut": true
+    },
+    {
+      "id": "sec-057-95-fgk208-jd",
+      "number": "95",
+      "title": "FGK208 JD",
+      "level": 1,
+      "pageStart": 79,
+      "pageEnd": 97,
+      "labelStart": "9",
+      "labelEnd": null,
+      "words": 13400,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "snm snn",
+          "heading": false
+        },
+        {
+          "term": "nezy xem",
+          "heading": false
+        },
+        {
+          "term": "fgk",
+          "heading": true
+        },
+        {
+          "term": "compilation inm",
+          "heading": false
+        },
+        {
+          "term": "inn isomers",
+          "heading": false
+        },
+        {
+          "term": "above prm",
+          "heading": false
+        },
+        {
+          "term": "isomer agm",
+          "heading": false
+        },
+        {
+          "term": "nubase table",
+          "heading": false
+        }
+      ],
+      "extract": "1971 β −=59 3;IT=41 3 ∗ 118Agp −79274.4 2.5 279.37 0.20 ∼0.1 µs (3+) 95 93Ja03 TJ 1989 IT=100 118Cd −86702 20 50.3 m 0.2 0+ 95 1961 β −=100 118In −87228 8 * 5.0 s 0.5 1+ 95 1949 β −=100 118Inm −87130# 50# 100# 50# * 4.364 m 0.007 5+∗ 95 94It.A T 1964 β −=100 118Inn −86990# 50# 240# 50# 8.5 s 0.3 8−∗ 95 1969 IT=98.6 3[gs=0,m=98.6]; ∗ β −=1.4 3 118Sn −91652.8 0.5 STABLE 0+ 95 1924 IS=24.22 9 118Snm −89077.9 0.5",
+      "extractCut": true
+    },
+    {
+      "id": "sec-058-17-fgk205-ej",
+      "number": "17",
+      "title": "FGK205 EJ",
+      "level": 1,
+      "pageStart": 97,
+      "pageEnd": 123,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 19480,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "decay tmm",
+          "heading": false
+        },
+        {
+          "term": "fgk",
+          "heading": true
+        },
+        {
+          "term": "favored decay",
+          "heading": false
+        },
+        {
+          "term": "above tmm",
+          "heading": false
+        },
+        {
+          "term": "decay modes",
+          "heading": false
+        },
+        {
+          "term": "decay feeding",
+          "heading": false
+        },
+        {
+          "term": "nubase table",
+          "heading": false
+        },
+        {
+          "term": "above lum",
+          "heading": false
+        }
+      ],
+      "extract": "1982 β + ? ∗ 138Eum −61650# 60# 100# 50# *& 12.1 s 0.6 7−# 17 FGK205 EJ 1982 β +=100 ∗ 138Gd −55660# 200# 4.7 s 0.9 0+ 17 1985 β +=100 138Gdm −53430# 200# 2232.6 1.1 6.2 µs 0.2 (8−) 17 1997 IT=100 138Tb −43600# 300# 800# ms>200ns 2+# 17 1993 β + ?;β +p ?;p=0 138Dy −34930# 500# 200# ms 0+ β + ?;β +p ? ∗138Sn T : average 20Wu04=158(15) 20Ju02t=142(12), supersedes 15Lo04=140(+30-20) ∗∗ ∗138Sb T : average 20Wu04=326(8)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-059-fgk208-ij-page-123",
+      "number": null,
+      "title": "FGK208 IJ (page 123)",
+      "level": 2,
+      "pageStart": 123,
+      "pageEnd": 123,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 767,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fgk",
+          "heading": true
+        },
+        {
+          "term": "age comparison",
+          "heading": false
+        },
+        {
+          "term": "ybm",
+          "heading": false
+        },
+        {
+          "term": "world data",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 176Hf −54576.4 1.5 STABLE 0+ 06 1934 IS=5.26 70 176Hfm −53243.3 1.5 1333.07 0.07 9.6 µs 0.3 6+ 06 1964 IT=100 176Hfn −53017.1 1.5 1559.31 0.09 9.9 µs 0.2 8− 06 1967 IT=100",
+      "extractCut": true
+    },
+    {
+      "id": "sec-060-fgk208-ij-page-124",
+      "number": null,
+      "title": "FGK208 IJ (page 124)",
+      "level": 2,
+      "pageStart": 124,
+      "pageEnd": 124,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 750,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tam",
+          "heading": false
+        },
+        {
+          "term": "aun",
+          "heading": false
+        },
+        {
+          "term": "kev above",
+          "heading": false
+        },
+        {
+          "term": "aup",
+          "heading": false
+        },
+        {
+          "term": "hfp",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 177Os −41956 15 3.0 m 0.2 1/2− 19 1970 β +=100 177Ir −36047 20 29.8 s 1.7 5/2− 19 1967 β +≈100;α=0.06 1 177Irm −35950# 50# 100# 50# > 100 ns (9/2−) 19 IT=100 177Irn −35866 20",
+      "extractCut": true
+    },
+    {
+      "id": "sec-061-fgk208-ij-page-125",
+      "number": null,
+      "title": "FGK208 IJ (page 125)",
+      "level": 2,
+      "pageStart": 125,
+      "pageEnd": 125,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 727,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "favored decay",
+          "heading": false
+        },
+        {
+          "term": "hfn",
+          "heading": false
+        },
+        {
+          "term": "aum",
+          "heading": false
+        },
+        {
+          "term": "aup",
+          "heading": false
+        },
+        {
+          "term": "fgk",
+          "heading": true
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 179Er −36080# 500# 3# s >550ns 3/2−# 18Fu08 I 2018 β −?;β −n ? 179Tm −41900# 400# 18# s >300ns 1/2+# 13 12Ku26 I 2012 β −?;β −n ? 179Yb −46640# 200# 8.0 m 0.4 (1/2−) 09 1982",
+      "extractCut": true
+    },
+    {
+      "id": "sec-062-fgk208-ij-page-126",
+      "number": null,
+      "title": "FGK208 IJ (page 126)",
+      "level": 2,
+      "pageStart": 126,
+      "pageEnd": 126,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 791,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hfn",
+          "heading": false
+        },
+        {
+          "term": "taq",
+          "heading": false
+        },
+        {
+          "term": "hfp",
+          "heading": false
+        },
+        {
+          "term": "tap",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 180Hf −49779.5 1.4 STABLE 0+ 15 1934 IS=35.08 33 180Hfm −48637.9 1.4 1141.552 0.015 5.53 h 0.02 8− 15 1951 IT≈100;β −=0.31 8 180Hfn −48405.1 1.4 1374.36 0.04 570 µs 20 4− 15",
+      "extractCut": true
+    },
+    {
+      "id": "sec-063-fgk208-ij-page-127",
+      "number": null,
+      "title": "FGK208 IJ (page 127)",
+      "level": 2,
+      "pageStart": 127,
+      "pageEnd": 127,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 705,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kev above",
+          "heading": false
+        },
+        {
+          "term": "above rem",
+          "heading": false
+        },
+        {
+          "term": "ren",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 181Au −27871 20 13.7 s 1.4 (5/2−) 06 1968 β +=97.3 5;α=2.7 5 ∗ 181Aup −27660# 200# 210# 200# (11/2−) 06 181Hg −20661 15 3.6 s 0.1 1/2−∗ 06 1969 β +=73 2;α=27 2; ∗ β +p=0.014",
+      "extractCut": true
+    },
+    {
+      "id": "sec-064-fgk208-ij-page-128",
+      "number": null,
+      "title": "FGK208 IJ (page 128)",
+      "level": 2,
+      "pageStart": 128,
+      "pageEnd": 128,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 701,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hfm",
+          "heading": false
+        },
+        {
+          "term": "aum",
+          "heading": false
+        },
+        {
+          "term": "etj",
+          "heading": false
+        },
+        {
+          "term": "half-life",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗182Aum I : direct β + feeding to 4+ and 5+ levels in 182Pt (99Da18) ∗∗ ∗182Aum I : indicates the existence of an isomer ∗∗ ∗182Hg D : %α average 97Ba21=13.3(0.5)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-065-fgk208-ij-page-129",
+      "number": null,
+      "title": "FGK208 IJ (page 129)",
+      "level": 2,
+      "pageStart": 129,
+      "pageEnd": 129,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 803,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hfm",
+          "heading": false
+        },
+        {
+          "term": "ptm",
+          "heading": false
+        },
+        {
+          "term": "tlm",
+          "heading": false
+        },
+        {
+          "term": "fgk",
+          "heading": true
+        },
+        {
+          "term": "ejt",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 184Rem −44032 4 188.0463 0.0017 169 d 8 8+ 10 1964 IT=74.5 8;ε=25.5 8 ∗ 184Os −44252.6 0.8 11.2 Ty 2.3 0+ 10 14Pe22 T 1937 IS=0.02 2;α ?;2β + ? ∗ 184Ir −39611 28 3.09 h 0.03",
+      "extractCut": true
+    },
+    {
+      "id": "sec-066-fgk208-ij-page-130",
+      "number": null,
+      "title": "FGK208 IJ (page 130)",
+      "level": 2,
+      "pageStart": 130,
+      "pageEnd": 130,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 699,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hfm",
+          "heading": false
+        },
+        {
+          "term": "tam",
+          "heading": false
+        },
+        {
+          "term": "both isomers",
+          "heading": false
+        },
+        {
+          "term": "irm",
+          "heading": false
+        },
+        {
+          "term": "fgk",
+          "heading": true
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗185Irm E : 2157.3(0.5) + x keV; x<80 keV ∗∗ ∗185Pt J : 92Hi07,99Le52=9/2 ∗∗ ∗185Pt D : %α from E(a)=4444(10) keV in 91Bi04 ∗∗ ∗185Ptm J : 92Hi07,99Le52=1/2 ∗∗ ∗185Hg J :",
+      "extractCut": true
+    },
+    {
+      "id": "sec-067-fgk208-ij-page-131",
+      "number": null,
+      "title": "FGK208 IJ (page 131)",
+      "level": 2,
+      "pageStart": 131,
+      "pageEnd": 131,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 763,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "favored decay",
+          "heading": false
+        },
+        {
+          "term": "bare ion",
+          "heading": false
+        },
+        {
+          "term": "etj",
+          "heading": false
+        },
+        {
+          "term": "bin",
+          "heading": false
+        },
+        {
+          "term": "tam",
+          "heading": false
+        },
+        {
+          "term": "kev",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 187Ta −36900 60 2.3 m 6 (7/2+) 09 10Re07 T 1999 β −=100 ∗ 187Tam −35110 60 1778 1 7.3 s 0.9 (25/2−) 20Wa29 ETJ 2010 IT≈100;β −? ∗ 187Tan −33970 60 2935 14 > 5 m 41/2+# 10Re07",
+      "extractCut": true
+    },
+    {
+      "id": "sec-068-fgk208-ij-page-132",
+      "number": null,
+      "title": "FGK208 IJ (page 132)",
+      "level": 2,
+      "pageStart": 132,
+      "pageEnd": 132,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 787,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "irm",
+          "heading": false
+        },
+        {
+          "term": "fgk",
+          "heading": true
+        },
+        {
+          "term": "pbn",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 188Wm −36741 3 1926.7 0.8 109.5 ns 3.5 8− 18 2010 IT=100 188Re −39016.9 0.7 17.005 h 0.003 1−∗ 18 1939 β −=100 188Rem −38844.8 0.7 172.0848 0.0024 18.59 m 0.04 6− 18 1953",
+      "extractCut": true
+    },
+    {
+      "id": "sec-069-fgk208-ij-page-133",
+      "number": null,
+      "title": "FGK208 IJ (page 133)",
+      "level": 2,
+      "pageStart": 133,
+      "pageEnd": 133,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 706,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kev gammas",
+          "heading": false
+        },
+        {
+          "term": "irp",
+          "heading": false
+        },
+        {
+          "term": "favored decay",
+          "heading": false
+        },
+        {
+          "term": "osm",
+          "heading": false
+        },
+        {
+          "term": "fgk",
+          "heading": true
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗189Tam T : other 11St21=0.58(0.22), possibly a different isomer ∗∗ ∗189Tam E : 11St11=154,284,343,389,482 keV gammas in a mutual coincidence; other ∗∗ ∗189Tam E :",
+      "extractCut": true
+    },
+    {
+      "id": "sec-070-fgk208-ij-page-134",
+      "number": null,
+      "title": "FGK208 IJ (page 134)",
+      "level": 2,
+      "pageStart": 134,
+      "pageEnd": 134,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 763,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "favored decay",
+          "heading": false
+        },
+        {
+          "term": "tlp",
+          "heading": false
+        },
+        {
+          "term": "kev above",
+          "heading": false
+        },
+        {
+          "term": "bim",
+          "heading": false
+        },
+        {
+          "term": "osm",
+          "heading": false
+        },
+        {
+          "term": "irn",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗190Tlp E : 236(7) keV above 190Tlm ∗∗ ∗190Tlp T : from BM2=5.2(0.6)e-6 (W.u.) for a similar isomer in 188Tl; other ∗∗ ∗190Tlp T : 91Va04>1 us ∗∗ ∗190Pbm T : uncertainty from",
+      "extractCut": true
+    },
+    {
+      "id": "sec-071-fgk208-ij-page-135",
+      "number": null,
+      "title": "FGK208 IJ (page 135)",
+      "level": 2,
+      "pageStart": 135,
+      "pageEnd": 135,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 750,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "favored decay",
+          "heading": false
+        },
+        {
+          "term": "ptm",
+          "heading": false
+        },
+        {
+          "term": "osm",
+          "heading": false
+        },
+        {
+          "term": "pbm",
+          "heading": false
+        },
+        {
+          "term": "pbn",
+          "heading": false
+        },
+        {
+          "term": "fgk",
+          "heading": true
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗191Ptm J : E2 to 5/2- ∗∗ ∗191Ptm T : other 2 us, estimated from B(E2)=0.088(5) (W.u.) in 189Pt ∗∗ ∗191Ptn J : M2 to 9/2- ∗∗ ∗191Aun J : E2 to 27/2+; measured magnetic moment",
+      "extractCut": true
+    },
+    {
+      "id": "sec-072-fgk208-ij-page-136",
+      "number": null,
+      "title": "FGK208 IJ (page 136)",
+      "level": 2,
+      "pageStart": 136,
+      "pageEnd": 136,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 700,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "favored decay",
+          "heading": false
+        },
+        {
+          "term": "tlm",
+          "heading": false
+        },
+        {
+          "term": "kev above",
+          "heading": false
+        },
+        {
+          "term": "pbm",
+          "heading": false
+        },
+        {
+          "term": "pom",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗192Aum J : E3 to 2-; M2 to 3- ∗∗ ∗192Aun J : E3 to 8+ ∗∗ ∗192Tl J : also 92Me07=2 ∗∗ ∗192Tlm J : also 92Me07=7 ∗∗ ∗192Tlm E : from 91Va04=168+x keV, 15 keV <x< 40 keV ∗∗",
+      "extractCut": true
+    },
+    {
+      "id": "sec-073-fgk208-ij-page-137",
+      "number": null,
+      "title": "FGK208 IJ (page 137)",
+      "level": 2,
+      "pageStart": 137,
+      "pageEnd": 137,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 739,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "favored decay",
+          "heading": false
+        },
+        {
+          "term": "kev gamma",
+          "heading": false
+        },
+        {
+          "term": "bin",
+          "heading": false
+        },
+        {
+          "term": "fgk",
+          "heading": true
+        },
+        {
+          "term": "magnetic moment",
+          "heading": false
+        },
+        {
+          "term": "atm",
+          "heading": false
+        },
+        {
+          "term": "ren",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗193Atn J : favored α decay to 189Bin (J=13/2+) ∗∗ ∗193Rn J : favored α decay to 189Po [J=(3/2-)] ∗∗ 194Ta −17130# 500# 2# s >300ns 13 12Ku26 I 2012 β −?;β −n ? 194W −24410#",
+      "extractCut": true
+    },
+    {
+      "id": "sec-074-fgk208-ij-page-138",
+      "number": null,
+      "title": "FGK208 IJ (page 138)",
+      "level": 2,
+      "pageStart": 138,
+      "pageEnd": 138,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 742,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "favored decay",
+          "heading": false
+        },
+        {
+          "term": "uncertainty estimated",
+          "heading": false
+        },
+        {
+          "term": "irm",
+          "heading": false
+        },
+        {
+          "term": "atm",
+          "heading": false
+        },
+        {
+          "term": "osm",
+          "heading": false
+        },
+        {
+          "term": "etj",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 195Os −29510 60 6.5 m 1.1 (3/2−) 14 13Bi14 TD 2004 β −=100 ∗ 195Osm −29080 60 427.8 0.3 47 s 3 (13/2+) 14 20Wa12 ETJ 2012 IT≈100;β −? ∗ 195Ir −31692.3 1.3 2.29 h 0.17 3/2+ 14",
+      "extractCut": true
+    },
+    {
+      "id": "sec-075-fgk208-ij-page-139",
+      "number": null,
+      "title": "FGK208 IJ (page 139)",
+      "level": 2,
+      "pageStart": 139,
+      "pageEnd": 139,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 728,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tlm",
+          "heading": false
+        },
+        {
+          "term": "aun",
+          "heading": false
+        },
+        {
+          "term": "irm",
+          "heading": false
+        },
+        {
+          "term": "aum",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 196Ir −29440 40 52.0 s 1.1 (1,2−) 07 20Mu16 TJ 1966 β −=100 ∗ 196Irm −29227 20 210 40 BD 1.40 h 0.02 11−# 07 1959 β −≈100;IT ? 196Pt −32644.5 0.5 STABLE 0+ 07 1935 IS=25.211",
+      "extractCut": true
+    },
+    {
+      "id": "sec-076-fgk208-ij-page-140",
+      "number": null,
+      "title": "FGK208 IJ (page 140)",
+      "level": 2,
+      "pageStart": 140,
+      "pageEnd": 140,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 737,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fgk",
+          "heading": true
+        },
+        {
+          "term": "tjd",
+          "heading": false
+        },
+        {
+          "term": "biq",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 197Pb −24745 5 8.1 m 1.7 3/2− 05 1955 β +=100 197Pbm −24426 5 319.31 0.11 IT 42.9 m 0.9 13/2+∗ 05 1957 β +=81 2;IT=19 2 ∗ 197Pbn −22831 5 1914.10 0.25 1.15 µs 0.20 21/2− 05",
+      "extractCut": true
+    },
+    {
+      "id": "sec-077-fgk208-ij-page-141",
+      "number": null,
+      "title": "FGK208 IJ (page 141)",
+      "level": 2,
+      "pageStart": 141,
+      "pageEnd": 141,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 727,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fgk",
+          "heading": true
+        },
+        {
+          "term": "favored decay",
+          "heading": false
+        },
+        {
+          "term": "atm",
+          "heading": false
+        },
+        {
+          "term": "pbp",
+          "heading": false
+        },
+        {
+          "term": "magnetic moment",
+          "heading": false
+        },
+        {
+          "term": "pbm",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 198Tlm −26985 8 543.6 0.4 1.87 h 0.03 7+∗ 16 1949 β +=55.9 23;IT=44.1 23 198Tln −26842 8 686.8 0.5 150 ns 40 (5)+ 16 77Kr04 EJT 1977 IT=100 198Tlp −26787 8 742.4 0.4 32.1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-078-fgk208-ij-page-142",
+      "number": null,
+      "title": "FGK208 IJ (page 142)",
+      "level": 2,
+      "pageStart": 142,
+      "pageEnd": 142,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 699,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "favored decay",
+          "heading": false
+        },
+        {
+          "term": "atn",
+          "heading": false
+        },
+        {
+          "term": "pom",
+          "heading": false
+        },
+        {
+          "term": "atm",
+          "heading": false
+        },
+        {
+          "term": "ptm",
+          "heading": false
+        },
+        {
+          "term": "atp",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 199Bi −20798 11 27 m 1 9/2−∗ 07 1950 β +=100 199Bim −20131 11 667 3 IT 24.70 m 0.15 (1/2+) 07 1950 β +=?;IT<2;α≈0.01 199Bin −18836 25 1962 23 100 ns 30 25/2+# 07 1974 IT=100",
+      "extractCut": true
+    },
+    {
+      "id": "sec-079-fgk208-ij-page-143",
+      "number": null,
+      "title": "FGK208 IJ (page 143)",
+      "level": 2,
+      "pageStart": 143,
+      "pageEnd": 143,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 726,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pbm",
+          "heading": false
+        },
+        {
+          "term": "pbn",
+          "heading": false
+        },
+        {
+          "term": "fgk",
+          "heading": true
+        },
+        {
+          "term": "pon",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 200Bin −19943 23 428.20 0.10 400 ms50 (10−) 07 1972 IT=100 200Po −16942 8 11.51 m 0.08 0+ 07 1951 β +=88.9 3;α=11.1 3 200Pom −14346 8 2596.1 0.3 100 ns 10 11− 07 1985 IT=100",
+      "extractCut": true
+    },
+    {
+      "id": "sec-080-fgk208-ij-page-144",
+      "number": null,
+      "title": "FGK208 IJ (page 144)",
+      "level": 2,
+      "pageStart": 144,
+      "pageEnd": 144,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 736,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ptm",
+          "heading": false
+        },
+        {
+          "term": "aum",
+          "heading": false
+        },
+        {
+          "term": "systematics",
+          "heading": false
+        },
+        {
+          "term": "high-spin",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 201Rn −4107 10 7.0 s 0.4 3/2− 07 1967 α=?;β + ? ∗ 201Rnm −3863 7 245 12 AD 3.8 s 0.1 13/2+ 07 17Al34 E 1967 α=?;β + ? ∗ 201Fr 3589 9 62.8 ms1.9 9/2− 07 14Ka23 TD 1980 α≈100;β",
+      "extractCut": true
+    },
+    {
+      "id": "sec-081-fgk208-ij-page-145",
+      "number": null,
+      "title": "FGK208 IJ (page 145)",
+      "level": 2,
+      "pageStart": 145,
+      "pageEnd": 145,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 767,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "irm",
+          "heading": false
+        },
+        {
+          "term": "tjd",
+          "heading": false
+        },
+        {
+          "term": "irn",
+          "heading": false
+        },
+        {
+          "term": "fgk",
+          "heading": true
+        },
+        {
+          "term": "kev",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗202Ir T : 14Ku23=11(3) supersedes 14Mo15=15(3) ∗∗ ∗202Irm E : 311.5, 655.9, 737.2, 889.2, 967.6 gamma rays seen in decay and by ∗∗ ∗202Irm E : assuming that 655.9 and 967.6",
+      "extractCut": true
+    },
+    {
+      "id": "sec-082-fgk208-ij-page-146",
+      "number": null,
+      "title": "FGK208 IJ (page 146)",
+      "level": 2,
+      "pageStart": 146,
+      "pageEnd": 146,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 698,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "favored decay",
+          "heading": false
+        },
+        {
+          "term": "pom",
+          "heading": false
+        },
+        {
+          "term": "pbp",
+          "heading": false
+        },
+        {
+          "term": "etj",
+          "heading": false
+        },
+        {
+          "term": "kev",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗203Hgm T : average 11St21=21.9(1.0) 86Ze03=27(5) 64Br27=21(5) ∗∗ ∗203Tl J : other 13Ba41=1/2 ∗∗ ∗203Tlm T : not directly measured; half-life expected ∼2-20 ns ∗∗ ∗203Tln E :",
+      "extractCut": true
+    },
+    {
+      "id": "sec-083-fgk208-ij-page-147",
+      "number": null,
+      "title": "FGK208 IJ (page 147)",
+      "level": 2,
+      "pageStart": 147,
+      "pageEnd": 147,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 661,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "favored decay",
+          "heading": false
+        },
+        {
+          "term": "frn",
+          "heading": false
+        },
+        {
+          "term": "frm",
+          "heading": false
+        },
+        {
+          "term": "symmetrized",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗204At T : other 10Ka29=9.6(2) ∗∗ ∗204At J : 18Cu02=(7) ∗∗ ∗204Fr T : average 05Uu02=1.9(0.5) 92Hu04=1.7(0.3) ∗∗ ∗204Fr J : 15Vo05,14Ly01,13Vo10=3 ∗∗ ∗204Frm T : average",
+      "extractCut": true
+    },
+    {
+      "id": "sec-084-fgk208-ij-page-148",
+      "number": null,
+      "title": "FGK208 IJ (page 148)",
+      "level": 2,
+      "pageStart": 148,
+      "pageEnd": 148,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 737,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hgn",
+          "heading": false
+        },
+        {
+          "term": "atm",
+          "heading": false
+        },
+        {
+          "term": "ejd",
+          "heading": false
+        },
+        {
+          "term": "fgk",
+          "heading": true
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 206Hgm −18844 20 2102.4 0.3 2.088 µs 0.017 5− 08 11St21 T 1982 IT=100 ∗ 206Hgn −17224 20 3722.3 1.0 106 ns 3 (10+) 08 18La03 T 2001 IT=100 ∗ 206Tl −22253.3 1.3 4.202 m 0.011",
+      "extractCut": true
+    },
+    {
+      "id": "sec-085-fgk208-ij-page-149",
+      "number": null,
+      "title": "FGK208 IJ (page 149)",
+      "level": 2,
+      "pageStart": 149,
+      "pageEnd": 149,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 699,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "favored decay",
+          "heading": false
+        },
+        {
+          "term": "ram",
+          "heading": false
+        },
+        {
+          "term": "hgm",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 207Ra 3510 60 1.38 s 0.18 5/2−# 11 1967 α≈86;β + ? ∗ 207Ram 4071 10 560 60 AD 57 ms8 13/2+ 11 96Le09 T 1987 IT=85#;α=?;β + ? ∗ 207Ac 11150 60 31 ms8 9/2− 11 98Es02 T 1994",
+      "extractCut": true
+    },
+    {
+      "id": "sec-086-fgk208-ij-page-150",
+      "number": null,
+      "title": "FGK208 IJ (page 150)",
+      "level": 2,
+      "pageStart": 150,
+      "pageEnd": 150,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 757,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "favored decay",
+          "heading": false
+        },
+        {
+          "term": "frm",
+          "heading": false
+        },
+        {
+          "term": "rnn",
+          "heading": false
+        },
+        {
+          "term": "hgn",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 209Pom −12100.6 1.8 4265.4 0.3 119 ns 4 31/2− 15 1974 IT=100 209At −12884 5 5.42 h 0.05 9/2−∗ 15 17Lo13 D 1951 β +=96.1 4;α=3.9 4 ∗ 209Atm −10455 5 2429.32 0.22 916 ns 10",
+      "extractCut": true
+    },
+    {
+      "id": "sec-087-fgk208-ij-page-151",
+      "number": null,
+      "title": "FGK208 IJ (page 151)",
+      "level": 2,
+      "pageStart": 151,
+      "pageEnd": 151,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 725,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kev above",
+          "heading": false
+        },
+        {
+          "term": "tlm",
+          "heading": false
+        },
+        {
+          "term": "rnn",
+          "heading": false
+        },
+        {
+          "term": "pbm",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗210Rnn E : 2147.4(0.2) keV above the 8+ level at 1664.6(0.1) ∗∗ ∗210Rnp E : 4803.7(0.4) keV above the 8+ level at 1664.6(0.1) ∗∗ ∗210Frm E : uncertainty estimated by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-088-fgk208-ij-page-152",
+      "number": null,
+      "title": "FGK208 IJ (page 152)",
+      "level": 2,
+      "pageStart": 152,
+      "pageEnd": 152,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 768,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tde",
+          "heading": false
+        },
+        {
+          "term": "frp",
+          "heading": false
+        },
+        {
+          "term": "rnn",
+          "heading": false
+        },
+        {
+          "term": "rnp",
+          "heading": false
+        },
+        {
+          "term": "kev",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 212Po −10369.4 1.2 294.4 ns 0.8 0+ 20 17Ap03 T 1906 α=100 ∗ 212Pom −7446 5 2923 4 AD 45.1 s 0.6 (18+) 20 1962 α=99.93 2;IT ? 212At −8628.1 2.4 314 ms3 (1−) 20 1954 α≈100;β +",
+      "extractCut": true
+    },
+    {
+      "id": "sec-089-fgk208-ij-page-153",
+      "number": null,
+      "title": "FGK208 IJ (page 153)",
+      "level": 2,
+      "pageStart": 153,
+      "pageEnd": 153,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 683,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frp",
+          "heading": false
+        },
+        {
+          "term": "kev",
+          "heading": false
+        },
+        {
+          "term": "frm",
+          "heading": false
+        },
+        {
+          "term": "frn",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗213Tln E : 19Go10 and similarity with 209Tlm ∗∗ ∗213Bi T : average 21Ta01=45.60(0.09) 13Ma13=45.62(0.06) 73Po16=45.59(0.06) ∗∗ ∗213Bim E : from 12Ch19 ∗∗ ∗213Po T : average",
+      "extractCut": true
+    },
+    {
+      "id": "sec-090-fgk208-ij-page-154",
+      "number": null,
+      "title": "FGK208 IJ (page 154)",
+      "level": 2,
+      "pageStart": 154,
+      "pageEnd": 154,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 776,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kev estimated",
+          "heading": false
+        },
+        {
+          "term": "acn",
+          "heading": false
+        },
+        {
+          "term": "rap",
+          "heading": false
+        },
+        {
+          "term": "nubase",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 215Hg 17110# 400# 600# ms>300ns 9/2+# 13 10Al24 I 2010 β −?;β −n ? 215Tl 10030# 300# 9.7 s 3.8 1/2+# 13 17Ca12 TD 2010 β −=100;β −n=4.6 46 215Pb 4340 50 142 s 11 9/2+# 13",
+      "extractCut": true
+    },
+    {
+      "id": "sec-091-fgk208-ij-page-155",
+      "number": null,
+      "title": "FGK208 IJ (page 155)",
+      "level": 2,
+      "pageStart": 155,
+      "pageEnd": 155,
+      "labelStart": "19",
+      "labelEnd": "19",
+      "words": 648,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "thn",
+          "heading": false
+        },
+        {
+          "term": "favored decay",
+          "heading": false
+        },
+        {
+          "term": "kev above",
+          "heading": false
+        },
+        {
+          "term": "average",
+          "heading": false
+        },
+        {
+          "term": "above thm",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗216Pbm E : 1459 + x keV; x=20-90 keV from 12Go19 ∗∗ ∗216Bi T : average 14Mo02=2.21(25) 00Ku06=2.25(0.05) 96Ry.B=2.17(0.05); ∗∗ ∗216Bi T : other 90Ru02=3.6(0.4) ∗∗ ∗216Po T :",
+      "extractCut": true
+    },
+    {
+      "id": "sec-092-fgk208-ij-page-156",
+      "number": null,
+      "title": "FGK208 IJ (page 156)",
+      "level": 2,
+      "pageStart": 156,
+      "pageEnd": 156,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 700,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pam",
+          "heading": false
+        },
+        {
+          "term": "acn",
+          "heading": false
+        },
+        {
+          "term": "tdj",
+          "heading": false
+        },
+        {
+          "term": "average",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 218Frm 7147 5 87 4 AD 21.9 ms0.5 (8−) 19 99Sh03 J 1982 α≈100;IT ? 218Ra 6646 10 25.91 µs 0.14 0+ 19 1970 α=100 218Ac 10850 60 * 1.00 µs 0.04 (1−) 19 19Ya04 T 1970 α=100 ∗",
+      "extractCut": true
+    },
+    {
+      "id": "sec-093-fgk208-ij-page-157",
+      "number": null,
+      "title": "FGK208 IJ (page 157)",
+      "level": 2,
+      "pageStart": 157,
+      "pageEnd": 157,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 597,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symmetrized",
+          "heading": false
+        },
+        {
+          "term": "average",
+          "heading": false
+        },
+        {
+          "term": "pan",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 220Pan 20570 50 290 50 AD 260 ns 210 18Hu13 ET 2018 α=100 ∗ 220U 23010# 100# 60# ns 0+ α ?;β + ? 220Np 30480 30 29 ns 11 1−# 19Zh23 TD 2019 α=100 ∗ ∗220Rn T : other",
+      "extractCut": true
+    },
+    {
+      "id": "sec-094-fgk208-ij-page-158",
+      "number": null,
+      "title": "FGK208 IJ (page 158)",
+      "level": 2,
+      "pageStart": 158,
+      "pageEnd": 158,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 679,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "favored decay",
+          "heading": false
+        },
+        {
+          "term": "symmetrized",
+          "heading": false
+        },
+        {
+          "term": "average",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 223Bi 32240# 400# 1# s >300ns 9/2−# 11 10Al24 I 2009 β −?;β −n ? 223Po 27080# 200# 6# s >300ns 11/2+# 11 10Al24 I 2010 β −? 223At 23428 14 50 s 7 3/2−# 01 1989 β −≈100;α ?",
+      "extractCut": true
+    },
+    {
+      "id": "sec-095-fgk208-ij-page-159",
+      "number": null,
+      "title": "FGK208 IJ (page 159)",
+      "level": 2,
+      "pageStart": 159,
+      "pageEnd": 159,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 650,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "favored decay",
+          "heading": false
+        },
+        {
+          "term": "tie",
+          "heading": false
+        },
+        {
+          "term": "kev",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗225Ac J : also favored α decay to J=3/2- level at 552.1 keV in 221Fr ∗∗ ∗225Th J : favored α decay to J=3/2+ level at 321.4 keV in 221Ra ∗∗ ∗225Th D : %α from 51Me10 ∗∗",
+      "extractCut": true
+    },
+    {
+      "id": "sec-096-fgk208-ij-page-160",
+      "number": null,
+      "title": "FGK208 IJ (page 160)",
+      "level": 2,
+      "pageStart": 160,
+      "pageEnd": 160,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 662,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symemtrized",
+          "heading": false
+        },
+        {
+          "term": "ejd",
+          "heading": false
+        },
+        {
+          "term": "metallic",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 228Am 42850# 200# 100# ms α ?;SF ? ∗228Frm T : symmetrized from 08Ch.A=94(+170-29) s ∗∗ ∗228Acm T : symemtrized from 08Ch.A=149(+95-42) s ∗∗ ∗228Th T : average",
+      "extractCut": true
+    },
+    {
+      "id": "sec-097-fgk208-ij-page-161",
+      "number": null,
+      "title": "FGK208 IJ (page 161)",
+      "level": 2,
+      "pageStart": 161,
+      "pageEnd": 161,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 626,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "page",
+          "heading": true
+        },
+        {
+          "term": "kev",
+          "heading": false
+        },
+        {
+          "term": "table",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 230Pu 36932 14 105 s 10 0+ 12 18Mi11 T 1990 α≈100;β + ? ∗ 230Am 42870# 140# 40 s 9 1−# 12 17Wi13 TD 2003 β +≈100;β +SF>30 ∗ ∗230Pu T : average 18Mi11=200(+77-43)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-098-fgk208-ij-page-162",
+      "number": null,
+      "title": "FGK208 IJ (page 162)",
+      "level": 2,
+      "pageStart": 162,
+      "pageEnd": 162,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 632,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symmetrized",
+          "heading": false
+        },
+        {
+          "term": "acn",
+          "heading": false
+        },
+        {
+          "term": "pam",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗233Np D : %α observed in 50Ma14 with β +/α=1.5e5 ∗∗ ∗233Am D : %α combining 10Kh06<6 and 00Sa52>3 ∗∗ ∗233Cm T : symmetrized from 10Kh06=23(+13-6) ∗∗ ∗233Bk T : symmetrized",
+      "extractCut": true
+    },
+    {
+      "id": "sec-099-fgk208-ij-page-163",
+      "number": null,
+      "title": "FGK208 IJ (page 163)",
+      "level": 2,
+      "pageStart": 163,
+      "pageEnd": 163,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 669,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "npm",
+          "heading": false
+        },
+        {
+          "term": "amm",
+          "heading": false
+        },
+        {
+          "term": "cmp",
+          "heading": false
+        },
+        {
+          "term": "symmetrized",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 236Npp 43616 14 240 50 AD (3−) 06 236Pu 42901.5 1.8 2.858 y 0.008 0+ 06 90Og01 D 1949 α=100;SF=1.9e-7 4; 28Mg=2e-12;2β + ? 236Pum 44087.0 1.8 1185.45 0.15 1.2 µs 0.3 5− 06",
+      "extractCut": true
+    },
+    {
+      "id": "sec-100-fgk208-ij-page-164",
+      "number": null,
+      "title": "FGK208 IJ (page 164)",
+      "level": 2,
+      "pageStart": 164,
+      "pageEnd": 164,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 698,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pum",
+          "heading": false
+        },
+        {
+          "term": "amm",
+          "heading": false
+        },
+        {
+          "term": "pun",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 239Th 56500# 400# 1# m 7/2+# β −? 239Pa 53340# 200# 1.8 h 0.5 1/2+# 14 1995 β −=100 239U 50572.7 1.5 23.45 m 0.02 5/2+ 14 1937 β −=100 239Um 50706.5 1.5 133.7991 0.0010 780",
+      "extractCut": true
+    },
+    {
+      "id": "sec-101-fgk208-ij-page-165",
+      "number": null,
+      "title": "FGK208 IJ (page 165)",
+      "level": 2,
+      "pageStart": 165,
+      "pageEnd": 165,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 661,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "average",
+          "heading": false
+        },
+        {
+          "term": "cfp",
+          "heading": false
+        },
+        {
+          "term": "jtd",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 241Cfp 59480# 200# 150# 100# Nm 1/2+# 15 241Es 63890# 230# 5.1 s 0.8 3/2−# 15 20Kh08 TD 1996 α≈100;β + ? ∗ 241Esp 64120# 250# 230# 100# am 241Fm 69220# 300# 730 µs 60 5/2+#",
+      "extractCut": true
+    },
+    {
+      "id": "sec-102-fgk208-ij-page-166",
+      "number": null,
+      "title": "FGK208 IJ (page 166)",
+      "level": 2,
+      "pageStart": 166,
+      "pageEnd": 166,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 710,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "esm",
+          "heading": false
+        },
+        {
+          "term": "mdm",
+          "heading": false
+        },
+        {
+          "term": "esp",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗243Es D : %α from 10An08; SF was not observed ∗∗ ∗243Fm D : %β + 20Kh10,08Kh10<10% ∗∗ 244Np 63240# 100# 2.29 m 0.16 7−# 17 1987 β −=100 244Pu 59806.0 2.3 81.3 My0.3 0+ 17",
+      "extractCut": true
+    },
+    {
+      "id": "sec-103-fgk208-ij-page-167",
+      "number": null,
+      "title": "FGK208 IJ (page 167)",
+      "level": 2,
+      "pageStart": 167,
+      "pageEnd": 167,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 637,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fmm",
+          "heading": false
+        },
+        {
+          "term": "cmm",
+          "heading": false
+        },
+        {
+          "term": "amn",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 246Pu 65395 15 10.84 d 0.02 0+ 11 1955 β −=100 246Am 64994# 18# 39 m 3 7− 11 1955 β −=100 ∗ 246Amm 65024 15 30# 10# 25.0 m 0.2 2(−) 11 1955 β −≈100;IT ? ∗ 246Amn 66990# 800#",
+      "extractCut": true
+    },
+    {
+      "id": "sec-104-fgk208-ij-page-168",
+      "number": null,
+      "title": "FGK208 IJ (page 168)",
+      "level": 2,
+      "pageStart": 168,
+      "pageEnd": 168,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 733,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fmm",
+          "heading": false
+        },
+        {
+          "term": "mdm",
+          "heading": false
+        },
+        {
+          "term": "nom",
+          "heading": false
+        },
+        {
+          "term": "bkm",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 249Cm 70750.7 2.4 64.15 m 0.03 1/2+ 11 1956 β −=100 249Cmm 70799.5 2.4 48.76 0.04 23 µs 7/2+ 11 1966 α=100 249Bk 69846.3 1.2 327.2 d 0.3 7/2+∗ 11 14Ch47 T 1954 β",
+      "extractCut": true
+    },
+    {
+      "id": "sec-105-fgk208-ij-page-169",
+      "number": null,
+      "title": "FGK208 IJ (page 169)",
+      "level": 2,
+      "pageStart": 169,
+      "pageEnd": 169,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 682,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nom",
+          "heading": false
+        },
+        {
+          "term": "fmm",
+          "heading": false
+        },
+        {
+          "term": "tjd",
+          "heading": false
+        },
+        {
+          "term": "mdp",
+          "heading": false
+        },
+        {
+          "term": "kev",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗251Fmm T : average 18Re07=23.7(1.1) 11As03=21.1(1.9) 06He20=21(3) 71Di03=15.2(2.3) ∗∗ ∗251Md T : average 06Ch52=4.27(0.26) 73Es01=4.0(0.5) ∗∗ ∗251No D : %α symmetrized from",
+      "extractCut": true
+    },
+    {
+      "id": "sec-106-fgk208-ij-page-170",
+      "number": null,
+      "title": "FGK208 IJ (page 170)",
+      "level": 2,
+      "pageStart": 170,
+      "pageEnd": 170,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 650,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lrm",
+          "heading": false
+        },
+        {
+          "term": "nop",
+          "heading": false
+        },
+        {
+          "term": "kev",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗253Non E : greater than 1011 keV and less than 1380 keV ∗∗ ∗253Non T : 11Lo06=706(24); others: 07Lo11=970(210), 11An13=627(5) (r-ce-g(t)) ∗∗ ∗253Non T : 650(15)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-107-fgk208-ij-page-171",
+      "number": null,
+      "title": "FGK208 IJ (page 171)",
+      "level": 2,
+      "pageStart": 171,
+      "pageEnd": 171,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 700,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rfp",
+          "heading": false
+        },
+        {
+          "term": "rfn",
+          "heading": false
+        },
+        {
+          "term": "lrp",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 255Lrp 91412 22 1465 12 1.78 ms0.05 (25/2+) 13 2008 IT≈100;α<0.15 ∗ 255Rf 94330# 180# 1.63 s 0.05 (9/2−) 13 15An05 D 1975 α=52.8 22;SF=47.2 22; ∗ β +<6 255Rfm 94480# 180# 150",
+      "extractCut": true
+    },
+    {
+      "id": "sec-108-fgk208-ij-page-172",
+      "number": null,
+      "title": "FGK208 IJ (page 172)",
+      "level": 2,
+      "pageStart": 172,
+      "pageEnd": 172,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 656,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dbm",
+          "heading": false
+        },
+        {
+          "term": "symmetrized",
+          "heading": false
+        },
+        {
+          "term": "rfn",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) SF ? 257Rfn 97022 10 1155 11 AD 106 µs 6 21/2+# 13 13Ri07 TJ 2009 IT=100 ∗ 257Db 100150 160 * 2.3 s 0.2 9/2+# 13 09He20 T 1985 α>94;SF<6;β + ? ∗ 257Dbm 100290# 200# 140# 110#",
+      "extractCut": true
+    },
+    {
+      "id": "sec-109-fgk208-ij-page-173",
+      "number": null,
+      "title": "FGK208 IJ (page 173)",
+      "level": 2,
+      "pageStart": 173,
+      "pageEnd": 173,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 649,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tjd",
+          "heading": false
+        },
+        {
+          "term": "rfm",
+          "heading": false
+        },
+        {
+          "term": "rfp",
+          "heading": false
+        },
+        {
+          "term": "dbp",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 259Lr 95850# 70# 6.2 s 0.3 1/2−# 13 1971 α=78 2;SF=22 2;β + ? 259Lrp 96200# 170# 350# 150# 259Rf 98370# 70# 2.63 s 0.26 3/2+# 13 08Ga08 T 1969 α=85 4;β +=15 4;SF<3 ∗ 259Rfp",
+      "extractCut": true
+    },
+    {
+      "id": "sec-110-fgk208-ij-page-174",
+      "number": null,
+      "title": "FGK208 IJ (page 174)",
+      "level": 2,
+      "pageStart": 174,
+      "pageEnd": 174,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 602,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sgm",
+          "heading": false
+        },
+        {
+          "term": "bhm",
+          "heading": false
+        },
+        {
+          "term": "symmetrized",
+          "heading": false
+        },
+        {
+          "term": "sgp",
+          "heading": false
+        },
+        {
+          "term": "dbp",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗261Sg T : average 10St14=184(5), supersedes 09He20=195(15), 10Be16=178(14) ∗∗ ∗261Sgm T : symmetrized from 10Be16=9.0(+2.0-1.5) ∗∗ ∗261Bh T : symmetrized from",
+      "extractCut": true
+    },
+    {
+      "id": "sec-111-fgk208-ij-page-175",
+      "number": null,
+      "title": "FGK208 IJ (page 175)",
+      "level": 2,
+      "pageStart": 175,
+      "pageEnd": 175,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 632,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hsm",
+          "heading": false
+        },
+        {
+          "term": "sgm",
+          "heading": false
+        },
+        {
+          "term": "symmetrized",
+          "heading": false
+        },
+        {
+          "term": "mtm",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 264Sg 110780# 280# 78 ms25 0+ 06 17He08 TD 2006 SF>80;α ? ∗ 264Bh 115960# 180# 1.07 s 0.21 99 04Mo26 TD 1995 α≈86;SF≈14;β + ? ∗ 264Bhp 116290# 230# 330# 150# am 264Hs 119563",
+      "extractCut": true
+    },
+    {
+      "id": "sec-112-fgk208-ij-page-176",
+      "number": null,
+      "title": "FGK208 IJ (page 176)",
+      "level": 2,
+      "pageStart": 176,
+      "pageEnd": 176,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 576,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symmetrized",
+          "heading": false
+        },
+        {
+          "term": "dsm",
+          "heading": false
+        },
+        {
+          "term": "event",
+          "heading": false
+        },
+        {
+          "term": "hsm",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 267Bh 118770# 260# 22 s 10 5/2−# 05 2000 α=100 ∗ 267Hs 122660# 100# * 55 ms11 05 04Mo40 T 1995 α>80;SF ? ∗ 267Hsm 122700# 100# 39 24 AD* 990 µs 90 05 04Fo08 TD 2004 α=?;IT ?",
+      "extractCut": true
+    },
+    {
+      "id": "sec-113-fgk208-ij-page-177",
+      "number": null,
+      "title": "FGK208 IJ (page 177)",
+      "level": 2,
+      "pageStart": 177,
+      "pageEnd": 177,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 529,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symmetrized",
+          "heading": false
+        },
+        {
+          "term": "dsm",
+          "heading": false
+        },
+        {
+          "term": "symemtrized",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 271Bh 125860# 380# 2.9 s 1.9 05 17Og01 TD 2013 α=100 ∗ 271Hs 127690# 280# 10# s 2008 α ?;SF ? 271Mt 131100# 330# 400# ms α ? 271Ds 135950# 100# *& 144 ms53 05 16Ho09 TD 1998",
+      "extractCut": true
+    },
+    {
+      "id": "sec-114-fgk208-ij-page-178",
+      "number": null,
+      "title": "FGK208 IJ (page 178)",
+      "level": 2,
+      "pageStart": 178,
+      "pageEnd": 178,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 555,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symmetrized",
+          "heading": false
+        },
+        {
+          "term": "trusted",
+          "heading": false
+        },
+        {
+          "term": "tnn",
+          "heading": false
+        },
+        {
+          "term": "hsm",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) ∗276Mt T : symmetrized from 16Fo10=690(+90-70); other 17Og01=520(100) ∗∗ ∗276Mtm T : symmetrized from 17Og01=4(+5-1) ∗∗ 277Bh 141100# 600# 10# s α ?;SF ? 277Hs 141380# 450# *",
+      "extractCut": true
+    },
+    {
+      "id": "sec-115-fgk208-ij-page-179",
+      "number": null,
+      "title": "FGK208 IJ (page 179)",
+      "level": 2,
+      "pageStart": 179,
+      "pageEnd": 179,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 568,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symmetrized",
+          "heading": false
+        },
+        {
+          "term": "cnm",
+          "heading": false
+        },
+        {
+          "term": "dsm",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 281Ds 153270# 490# * 14 s 3 05 17Ka66 T 2004 SF=90 7;α=10 7 ∗ 281Dsm 153350# 460# 80# 240# * 0.9 s 0.7 12Ho12 TD 2012 α=100 ∗ 281Dsp 153340# 500# 70# 100# 281Rg 155330# 770#",
+      "extractCut": true
+    },
+    {
+      "id": "sec-116-fgk208-ij-page-180",
+      "number": null,
+      "title": "FGK208 IJ (page 180)",
+      "level": 2,
+      "pageStart": 180,
+      "pageEnd": 180,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 534,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symmetrized",
+          "heading": false
+        },
+        {
+          "term": "flm",
+          "heading": false
+        },
+        {
+          "term": "recommended",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 286Fl 171610# 550# 130 ms30 0+ 19 17Og01 TD 2004 α=59 11;SF=41 11 ∗ ∗286Rg T : 16Ho09=640(+3100-300)s not trusted by evaluator, based on TNN ∗∗ ∗286Cn T : symmetrized from",
+      "extractCut": true
+    },
+    {
+      "id": "sec-117-fgk208-ij-page-181",
+      "number": null,
+      "title": "FGK208 IJ (page 181)",
+      "level": 2,
+      "pageStart": 181,
+      "pageEnd": 181,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 219,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symmetrized",
+          "heading": false
+        },
+        {
+          "term": "lvm",
+          "heading": false
+        },
+        {
+          "term": "retracted",
+          "heading": false
+        }
+      ],
+      "extract": "Chinese Physics C Vol. 45, No. 3 (2021) 030001 Table I. The NUBASE2020 table (Explanation of Table on page 030001-16) Nuclide Mass excess Excitation Energy Half-life Jπ Ens Reference Year of Decay modes and intensities (keV) (keV) discovery (%) 293Lv 190570# 520# 70 ms30 05 17Og01 T 2004 α≈100; SF ? ∗ 293Lvm 191290# 470# 720# 290# 80 ms60 12Ho12 TD 2012 α=100 ∗ 293Ts 194430# 780# 25 ms6 10 17Og01 TD 2010 α=100 ∗",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "nubase table",
+      "heading": false
+    },
+    {
+      "term": "decay modes",
+      "heading": true
+    },
+    {
+      "term": "kev estimated",
+      "heading": false
+    },
+    {
+      "term": "kev rem",
+      "heading": false
+    },
+    {
+      "term": "kev cdm",
+      "heading": false
+    },
+    {
+      "term": "kev level",
+      "heading": false
+    },
+    {
+      "term": "kev gamma",
+      "heading": false
+    },
+    {
+      "term": "favored decay",
+      "heading": false
+    },
+    {
+      "term": "kev above",
+      "heading": false
+    },
+    {
+      "term": "mass excess",
+      "heading": true
+    },
+    {
+      "term": "excitation energy",
+      "heading": false
+    },
+    {
+      "term": "kev lower",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "5",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 49,
+      "label": "6",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 50,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "9",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 53,
+      "label": "10",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 54,
+      "label": "11",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 55,
+      "label": "12",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 56,
+      "label": "13",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 57,
+      "label": "14",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 58,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 60,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 61,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "4",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 63,
+      "label": "5",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 64,
+      "label": "6",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 65,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 67,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 68,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 69,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 70,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 71,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 72,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 73,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 74,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 75,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 76,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 77,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 78,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 79,
+      "label": "9",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 80,
+      "label": "10",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 81,
+      "label": "11",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 82,
+      "label": "12",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 83,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 84,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 85,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 86,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 87,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 88,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 89,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 90,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 91,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 92,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 93,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 94,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 95,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 96,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 97,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 98,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 99,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 100,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 101,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 102,
+      "label": "9",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 103,
+      "label": "10",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 104,
+      "label": "11",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 105,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 106,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 107,
+      "label": "14",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 108,
+      "label": "15",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 109,
+      "label": "16",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 110,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 111,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 112,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 113,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 114,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 115,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 116,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 117,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 118,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 119,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 120,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 121,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 122,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 123,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 124,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 125,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 126,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 127,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 128,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 129,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 130,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 131,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 132,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 133,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 134,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 135,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 136,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 137,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 138,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 139,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 140,
+      "label": "4",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 141,
+      "label": "5",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 142,
+      "label": "6",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 143,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 144,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 145,
+      "label": "9",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 146,
+      "label": "10",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 147,
+      "label": "11",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 148,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 149,
+      "label": "13",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 150,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 151,
+      "label": "15",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 152,
+      "label": "16",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 153,
+      "label": "17",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 154,
+      "label": "18",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 155,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 156,
+      "label": "20",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 157,
+      "label": "21",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 158,
+      "label": "22",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 159,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 160,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 161,
+      "label": "6",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 162,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 163,
+      "label": "8",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 164,
+      "label": "9",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 165,
+      "label": "10",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 166,
+      "label": "11",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 167,
+      "label": "12",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 168,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 169,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 170,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 171,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 172,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 173,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 174,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 175,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 176,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 177,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 178,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 179,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 180,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 181,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Nuclear chart displaying the mass-excess uncertainties for all nuclei in their ground state",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Nuclear chart displaying isomeric states with T1/2≥100 ns. For a given isotope where multiple isomers exist, only the longest-lived state is plotted",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Nuclear chart displaying the ground-state half-lives for all nuclei",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Nuclear chart displaying the measured ground-state spins",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Nuclear chart displaying the measured isomeric-state spins",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Nuclear chart displaying the main decay mode for nuclei in their ground state",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "(dashed black) original Normal distributions, N(X,b) (left on X) and N(X,a) (right on X), associated with the measured",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p002-1",
+      "file": "images/img-p002-1.png",
+      "page": 2,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 23,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 119,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 1,
+      "note": "7 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p15); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 119 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/kondev-2021-chinese-phys-c-45-030001"
+  }
+}

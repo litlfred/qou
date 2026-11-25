@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/attestation/block-qa/folio/quantum-observable-universe/predicted-spectra/shell-structure-eigenvalues.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/attestation/block-qa/folio/quantum-observable-universe/predicted-spectra/shell-structure-eigenvalues",
+      "@type": "https://litlfred.github.io/cat-harness/v0/ns/QaAttestation",
+      "title": "block-qa attestation: block folio/quantum-observable-universe/predicted-spectra/shell-structure-eigenvalues",
+      "description": "The block-qa judgements recorded for block folio/quantum-observable-universe/predicted-spectra/shell-structure-eigenvalues (folio/quantum-observable-universe/predicted-spectra/shell-structure-eigenvalues), each pinned to the hash it attested.",
+      "sourceKind": "block-qa",
+      "sourcePath": "test/attestations/block-qa/folio/quantum-observable-universe/predicted-spectra/shell-structure-eigenvalues.attestations.json",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/attestations"
+    }
+  ]
+}

@@ -1,0 +1,4622 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>library/0310279v5/footnotes — folio-document-footnotes/v1</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../assets/navbar/rail-2f7k3e1ehi.js" defer></script><script src="../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../.." data-fa-to-root="../../../../../../../..">{"data":"rail-2f7k3e1ehi","here":"/en/cat-harness-tools/folio-document-footnotes/v1/qou/library/0310279v5/footnotes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">library/0310279v5/footnotes</h1>
+<p class="m">A <a href="../../../../">folio-document-footnotes/v1</a> node held by <a href="../../../">qou</a>, at <code>library/0310279v5/footnotes.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>folio-document-footnotes/v1</dd>
+<dt>entry</dt><dd>0310279v5</dd>
+<dt>status</dt><dd>determined</dd>
+<dt>body_size</dt><dd>11</dd>
+<dt>footnotes</dt><dd><pre>[]</pre></dd>
+<dt>uncalled_notes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p050-1&quot;,
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;5&quot;,
+    &quot;block&quot;: &quot;library/0310279v5/blocks/prose-sec-023&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p050-2&quot;,
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;5&quot;,
+    &quot;block&quot;: &quot;library/0310279v5/blocks/prose-sec-023&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p050-3&quot;,
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;5&quot;,
+    &quot;block&quot;: &quot;library/0310279v5/blocks/prose-sec-023&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p050-4&quot;,
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;5&quot;,
+    &quot;block&quot;: &quot;library/0310279v5/blocks/prose-sec-023&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p050-5&quot;,
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;5&quot;,
+    &quot;block&quot;: &quot;library/0310279v5/blocks/prose-sec-023&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p050-6&quot;,
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;5&quot;,
+    &quot;block&quot;: &quot;library/0310279v5/blocks/prose-sec-023&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p050-7&quot;,
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;5&quot;,
+    &quot;block&quot;: &quot;library/0310279v5/blocks/prose-sec-023&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p050-8&quot;,
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;5&quot;,
+    &quot;block&quot;: &quot;library/0310279v5/blocks/prose-sec-023&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p050-9&quot;,
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;5&quot;,
+    &quot;block&quot;: &quot;library/0310279v5/blocks/prose-sec-023&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p050-10&quot;,
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;5&quot;,
+    &quot;block&quot;: &quot;library/0310279v5/blocks/prose-sec-023&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p050-11&quot;,
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;5&quot;,
+    &quot;block&quot;: &quot;library/0310279v5/blocks/prose-sec-023&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p050-12&quot;,
+    &quot;page&quot;: 50,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;5&quot;,
+    &quot;block&quot;: &quot;library/0310279v5/blocks/prose-sec-023&quot;
+  }
+]</pre></dd>
+<dt>unlinked_marks</dt><dd><pre>[
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;−)thereis&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;+=X&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+=X1→X&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;+=X1→X2→· · ·→X&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;passageX&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;passageXi→X&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;index.The templates which deﬁne the passagesX&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;index.The templates which deﬁne the passagesXi→X&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;LetXbeanorientedlinktypeintheoriented3–sphereS&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;LetXbeanorientedlinktypeintheoriented3–sphereS3orR&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;LetXbeanorientedlinktypeintheoriented3–sphereS3orR3=S&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;A⊂(S&quot;
+  },
+  {
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;A⊂(S3\\ X)(theaxis)andachoiceofﬁbrationHoftheopensolidtorusS&quot;
+  },
+  {
+    &quot;page&quot;: 2,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;by which we mean an isotopy of the pair (X, R&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;genusgfor the 3–sphereS&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;AblockBinR&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;fB.A strandlis homeomorphic to an interval[0, 1]or a circleS&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;is a collection of pairwise disjoint blocks{B&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;is a collection of pairwise disjoint blocks{B1, . . . , B&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;{l&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;{l1, . . . , l&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(1)Ifl&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;(1)Ifli∩B&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(1)Ifli∩Bj̸= ∅thenl&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;(1)Ifli∩Bj̸= ∅thenli∩B&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(1)Ifli∩Bj̸= ∅thenli∩Bj= (l&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;0∩b&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;0∩bj)where&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;0∩bj)wheret&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;0∩bj)wheretjis the top ofB&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;0∩bj)wheretjis the top ofBjand&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;0∩bj)wheretjis the top ofBjandb&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;1∩t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;1∩tj) ∪(l&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;is the bottom ofB&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot; the bottom ofBj.(We allow for the possibility that either(l&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;1∩t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;1∩tj)or(l&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;0∩b&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;1) there is some&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;1) there is someb&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;1) there is somebj⊂B&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;1) there is somebj⊂Bj(resp.&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;1) there is somebj⊂Bj(resp.t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;1) there is somebj⊂Bj(resp.tj⊂B&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;1) there is somebj⊂Bj(resp.tj⊂Bj) such that&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;1) there is somebj⊂Bj(resp.tj⊂Bj) such thatl&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(2)For eachl&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;0(resp.&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;0(resp.l&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;0⊂b&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(resp.l&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;1⊂t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;(3)For each blockB&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;(3)For each blockBjwe have|t&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(3)For each blockBjwe have|tj∩(∪1≤i≤ll&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;1)| = |b&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;1)| = |bj ∩(∪1≤i≤l&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;1)| = |bj ∩(∪1≤i≤ll&quot;
+  },
+  {
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;Thefactthatforeachj=1, . . . , kthereisaﬁberwhichmissesB&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;deﬁned.For a speciﬁed block B&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;deﬁned.For a speciﬁed block Bj⊂Dwe deﬁne its braid index b(B&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;For a speciﬁed block Bj⊂Dwe deﬁne its braid index b(Bj) = |t&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;iﬁed block Bj⊂Dwe deﬁne its braid index b(Bj) = |tj∩(∪1≤i≤ll&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;(4)IfB&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;(4)IfBj⊂Dthen the braid indexb(B&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;a pair of block-strand diagrams (D+, D−), both with blocks B&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;ock-strand diagrams (D+, D−), both with blocks B1, . . . , B&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;braiding assignments to the blocks B&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;braiding assignments to the blocks B1, . . . , B&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;a choice of a braid onmjstrands for eachB&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;oice of a braid onmjstrands for eachBj∈D.That is,we replaceB&quot;
+  },
+  {
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;chosen braid, so thatB&quot;
+  },
+  {
+    &quot;page&quot;: 7,
+    &quot;mark&quot;: &quot;n&quot;,
+    &quot;context&quot;: &quot;(σ1σ2 . . . σn−1)&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;The ﬂype motion is supported in a 3–ballB&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;θ= π/2intersectsX+ ∩B&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;−→· · · →X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;+→· · · →X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;In(1–2) and(1–3) each passageX&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;−→X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;andX&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;+→X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;–2) each passage is realized by an exchange move, so thatb(X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;b(X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;so thatb(X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;+) ≥b(X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;+= X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;+= Xq→· · · →X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;In(1–4) each passageX&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;In(1–4) each passageXj→X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;one of the templatesT∈T (m), wherem=b(X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;one of the templatesT∈T (m), wherem=b(Xj).The inequalityb(X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;f the templatesT∈T (m), wherem=b(Xj).The inequalityb(Xj)≥b(X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;Stabilization.SettingX&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;Stabilization.SettingXj=X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;+when&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;+whenj=1, . . . ,&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;X+= X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;X+= X1→· · · →X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;X+= X1→· · · →Xq→· · · →X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;In this combined sequenceb(X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;In this combined sequenceb(Xj) ≥b(X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;−) = · · · = b(X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;hand,b(X−) = b(X&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−) = b(X&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;Remark1.3.3WhenapassageX&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;Remark1.3.3WhenapassageXj→X&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;carry the pair(X&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;carry the pair(Xj, X&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;1,&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;Anarbitraryelementisthenσ&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;transversal knot types in the standard contact structure onR&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ProofWithout loss of generality we may assume thatX+⊂R&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;+andX−⊂R&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;X+far aboveR&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;X+far aboveR2= R&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;−∩R&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+, andX−a little bit belowR&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;−, X&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;−, X0,allrepresentingX ,withX&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;−out ofR&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;−and intoR&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;−is forced to dip back intoR&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;−andisentirelyinR&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;−across pairwise disjoint discsD&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;−across pairwise disjoint discsD1∪· · · ∪D&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;placingX−very close toR&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;that each subarcβiis in braid position and inR&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;representsX , and it is entirely inR&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;XandarebothintheinteriorofR&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;+showsthatwemayﬁnd&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+which is the identity onR&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;+which is the identity onR2with&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;g:R&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;+→R&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;−) = X+.Extend&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;−to a homeomorphism G:R&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;−to a homeomorphism G:R3→R&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;−to a homeomorphism G:R3→R3.Let R&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;−to a homeomorphism G:R3→R3.Let Ri= G(D&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;−to a homeomorphism G:R3→R3.Let Ri= G(Di,+∪D&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;−to a homeomorphism G:R3→R3.Let Ri= G(Di,+∪Di,−) = g(D&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;−to a homeomorphism G:R3→R3.Let Ri= G(Di,+∪Di,−) = g(Di,+)∪D&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;on R&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot; facts that (i)Gis a homeomorphism which is the identity inR&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;−and (ii) if&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;X−pierces eachRiexactly once.The fact thatX+was well aboveR&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i= g(β&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i⊂X+by∂R&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;0is the connected sum ofX+and&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;0is the connected sum ofX+andkcopies of the unknot, the&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;omorphismG−1:R&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;omorphismG−1:R3→R&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;omorphismG−1:R3→R3,beingtheidentityonR&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;−,sendsX−∪X&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;is and the modiﬁedX&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;osition2.2.1Chooseanyµ–componentorientedlinktypeXinorientedR&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;+and&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+andk&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(1)Each componentX&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;0ofX&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;0ofX0is the braid connected sum ofX&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;representatives of the unknot.Thesek= k&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;(X&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;+, X&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;−)there exists a closed braidX&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;ofX .Moreover,foreachj=1, . . . , µthefollowingholds:X&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;+−X&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;X&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;0−X&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;−) is the boundary an embedded annulusA&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;+(resp.A&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;intersections can be clasp intersections between the annuliA&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+andA&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;associated to a single componentX&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;+andA&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;−associated to distinct componentsX&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;−associated to distinct componentsX i, X&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;the annuliA&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;X+= σ&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;2σ&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;2,X−= σ&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;2σ&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;isotopy is supported in a 3–ballB&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;The 3–ballB&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;are givenX∈B(X)withb(X) = nand with braid structure(A, H)inR&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;First, we assign the standard orientation toR&quot;
+  },
+  {
+    &quot;page&quot;: 27,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Note that the singular leafα(θ&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;AnyS&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;tiles in the foliation ofFdetermines the embedding ofXinR&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Fdepends upon the choice of half-planesHθin the ﬁbration ofR&quot;
+  },
+  {
+    &quot;page&quot;: 31,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;neighborhood inR&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;1(resp.&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;iddle (resp. right) sketch, because it evolves directly from&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ddle (resp. right) sketch, because it evolves directly froms&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;1).In fact (see [4]) if&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;1).In fact (see [4]) ifs&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;1).In fact (see [4]) ifs1and&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1).In fact (see [4]) ifs1ands&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;1).In fact (see [4]) ifs1ands2occur in an angular interval[θ&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;n fact (see [4]) ifs1ands2occur in an angular interval[θ1, θ&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(see [4]) ifs1ands2occur in an angular interval[θ1, θ2] ⊂[0,&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;s&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;si, i = 1, 2.LetHθibe the ﬁber ofHwhich containss&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;2andγ ∩l&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;X+ ∪X0 ∪X−∪Γis embedded inCA, which is a subset ofR&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;homeomorphismf :S&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;homeomorphismf :S3→S&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;+, . . . , T&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;special foliated discsT&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;We say thatT&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+⊂PAis a tab associated to the clasp arcγ&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+⊂T&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;∂T&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;e pathl+which is contained in a union of singular leaves inT&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;vertices inT&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;•The arcγ&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+is the only clasp arc which intersectsT&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;to the leaves in the foliation ofPA.The arcγ&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;leaves in the induced foliation ofT&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Lemma 4.3.1We may assume that eachRiis a tabT&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;in Section 2.We construct the tab T&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+as a subset of the disc R&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;It containsγ&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;The arc γ&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;+has one of its endpoints at a point&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+has one of its endpoints at a point e&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;+on X+and its other endpoint&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+on X+and its other endpoint e&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;lossofgeneralitythatthepointe&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;−whereX−piercestheinteriorofR&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;−whereX−piercestheinteriorofRiisnoton&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;singular leaf.Thereforee&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;−belongs to a non-singular leaf of type&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;−belongs to a non-singular leaf of types,&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;−belongs to a non-singular leaf of types, a+,&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;−belongs to a non-singular leaf of types, a+, a−or&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Letα ⊂Ri \\ γ&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;+be a simple path that starts at&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+be a simple path that starts ate&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;−and ends at a point&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+∪α ⊂R&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;+∪α ⊂Riis a simple path that joins&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+∪α ⊂Riis a simple path that joinse&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;+to&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+topin the interior ofR&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i⊂R&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+∪αsplits off inR&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;We are now in position to re-chooseγ&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;+, αandX&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;icontains&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;icontainsapositivevertex&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot; must also contain a singular leaf that has its endpoint onγ&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;o a (possibly different) positive vertexv′.We can then pushγ&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;In the latter case, sincee&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;−can be adjacent to only one negative vertex, eitherγ&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;vertex, as in Figure 34(b), with eitherγ&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;s negative vertex fromRi.Iterating this procedure, we alterγ&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot; run along a band which is foliated without singularities by&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;s–arcs, as depicted in Figure 34(c) in the case ofγ&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;now know that each clasp arcγ&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+is contained in a tab.In this section we studyγ&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2i)havesignϵ(resp.−ϵ).For&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;2i−1have parityϵδ&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;2ihave parity−ϵδ&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Proposition4.5.1Foreachclasparcpair(γ+, γ−)=(γ&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+, γ&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;begins with the tab neighborhoods ofγ&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;+, . . . , γ&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;itsothatwehaverelatedtabneighborhoodsofγ&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;−, . . . , γ&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;38&quot;,
+    &quot;context&quot;: &quot;−.SeeFigure&quot;
+  },
+  {
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;l&quot;
+  },
+  {
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;lt&quot;
+  },
+  {
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ltl&quot;
+  },
+  {
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;clasp arcγ&quot;
+  },
+  {
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;+which begins onX+, follows an&quot;
+  },
+  {
+    &quot;page&quot;: 58,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;t singular leaf, together with the corresponding segment onγ&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;2&quot;
+  },
+  {
+    &quot;page&quot;: 62,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;1&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;least two puncture end-points of clasp arcs, one from someγ&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;of the Corollary we need the puncture endpoints of bothγ&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+andγ&quot;
+  },
+  {
+    &quot;page&quot;: 65,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Eis homeomorphic to eitherS&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;preimagesγ&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−, γ&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;−, γ&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+andγ&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;+are long, but their partnersγ&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+, γ&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;+, γ&quot;
+  },
+  {
+    &quot;page&quot;: 67,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;−andγ&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;+, γ&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;clasp arcsγ&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+,&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;o we assume that there are at least two long clasp arcs.Letγ&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;clasp arc, so thatγ&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;−begins onX−and ends nearX+.Assume thatγ&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+andγ&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;by the construction in Proposition 4.5.1.LetN&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;−be the normal neighborhood ofγ&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Figure 45.It is a subset ofN&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;−, and it coincides withN&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;2.It has three edges which are in∂N&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;+.We choose its&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;boundary edges which are in ∂N&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;In the special case whenγ&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+has length 2 the puncture endpoint of the arcγ&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+, but ifγ&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+has length≥3thenγ&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;endpoints on the boundary.We correct this by modifyingγ&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+to a subarc ofγ&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;which has the same image inCAas the intersection ofγ&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+.By construction,γ&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;−and the newγ&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;clasp intersection inCAcorresponding toγ&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;±∩(γ&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;−∪γ&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;−γ&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;+γ&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;−γ&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;preimage ofSsharing two clasp intersections,γ&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;preimage ofSsharing two clasp intersections,γ1andγ&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;blocks:strandsabanddfare associated with the microblock forγ&quot;
+  },
+  {
+    &quot;page&quot;: 77,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;a′b′andd′f′are associated with the microblock forγ&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;arcs.For any pairγ&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+, γ&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;uli these chains will always have exactly two leaves.)Sinceγ&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+∈X.The fact thatγ&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;the endpoints ofγ&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;+is a point&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+is a pointq&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;of the endpoints ofγ&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;pointq&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;x&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;x&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;B&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;x&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;B&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;x&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;We ﬁx subarcsx&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;+and&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+andx&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;−ofX, where&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;−ofX, wherex&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;+(resp.&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+(resp.x&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;−) onX.The subarc&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;−) onX.The subarcx&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;q&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;+(resp.&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+(resp.q&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ated to adjacent singular leaves onX, also so that the arcsx&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;+and&quot;
+  },
+  {
+    &quot;page&quot;: 81,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+andx&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;are, of course, similar thick grey microstrandsx&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;+and&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+andx&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ofXacrossSpushesXacrossN&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+(resp.N&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Construct disjoint solid cylindersB&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Construct disjoint solid cylindersBi, B&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;asdeﬁnedinSection5.2.ThemicroblockB&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;braided arcsx&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;+and&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+andx&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;−, which meet the disc ﬁbers transversally insideB&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;and grey projection with the index ofγ&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Construct the black and grey microblocks,{B&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;Construct the black and grey microblocks,{B1, . . . , B&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;nstruct the black and grey microblocks,{B1, . . . , Br}and{B&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;black and grey microblocks,{B1, . . . , Br}and{B1, . . . , B&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;eachclasparcinS.LetB⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;{B&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;{B1, . . . , B&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;{B1, . . . , Br}associated to the microstrands {x&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;+,&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;+, x&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;−, . . .&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;−, . . . x&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;+,&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;+, x&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(1)EachB&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(4)Ifx&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;+(resp.&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+(resp.x&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;−)⊂int(B),thenitspartner&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;−)⊂int(B),thenitspartnerx&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;−(resp.&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;−(resp.x&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;+)isalso&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;int(B).Also, the dotted segment between eachq&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;+and&quot;
+  },
+  {
+    &quot;page&quot;: 82,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+andq&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;{B, t, c, b, a, {B&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;{B, t, c, b, a, {B1, . . . , B&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;{B, t, c, b, a, {B1, . . . , Br}, {x&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;+,&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;+, x&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;−, . . . ,&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;−, . . . , x&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;+,&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;+, x&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;{B, t, c, b, a, {B&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;{B, t, c, b, a, {B1, . . . , B&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;{B, t, c, b, a, {B1, . . . , Br}, {x&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;+,&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;+, x&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;−, . . . ,&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;−, . . . , x&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;+,&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;+, x&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;we can also deﬁne the amalgamation of microblocks{B&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;can also deﬁne the amalgamation of microblocks{B1, . . . , B&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;the microstrands inB&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;inB&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;{B&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;{B1, . . . , B&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;{B1, . . . , Br}and{B&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;{B1, . . . , Br}and{B1, . . . , B&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;tions{γ&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;tions{γ1, . . . , γ&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Bis a block amalgamation of microblocks{B&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;Bis a block amalgamation of microblocks{B1, . . . , B&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Bis a block amalgamation of microblocks{B&quot;
+  },
+  {
+    &quot;page&quot;: 83,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;Bis a block amalgamation of microblocks{B1, . . . , B&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 84,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 85,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;e stabilization ofX.Suppose we have two clasp intersectionsγ&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;andγ&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;andγjwhere the black microblock associated withγ&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;B(i) and the black microblock associated with γ&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;g&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;g&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;g&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;g&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;g&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;g&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;g&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;g&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;g&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;g&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;g&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;g&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;g&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;g&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;g&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;g&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;±and&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;±andg&quot;
+  },
+  {
+    &quot;page&quot;: 86,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;clasp arcs with the regions of interest are labeledg&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;CApushesX+acrossN&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;−microstrands.Exactly as in Section 5.3.2 we have cylindersB&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;rostrands.Exactly as in Section 5.3.2 we have cylindersBi, B&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;microblocks.The local projection of the microstrands in B&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;locks.The local projection of the microstrands in Bi(resp. B&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;the intersections ofS+(resp.S−) with the walls ofB&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;the intersections ofS+(resp.S−) with the walls ofBi(resp.B&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ints of the local projections are labeled with the index ofg&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;{B&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;{B1, . . . , B&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;{B1, . . . , Br}for microstrands{x&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;+,&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;+, x&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;−, . . .&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;−, . . . x&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;+,&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;+, x&quot;
+  },
+  {
+    &quot;page&quot;: 89,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(1)As in Section 5.3.2:EachB&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(4)As in Section 5.3.2:Ifx&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;+(resp.&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+(resp.x&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;−) ⊂int(B), then its partner&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;−) ⊂int(B), then its partnerx&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;−(resp.&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;−(resp.x&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;lso a subset ofint(B).Also, the dotted segment between eachq&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;+and&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+andq&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;{B, t, c, b, a, {B&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;{B, t, c, b, a, {B1, . . . , B&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;{B, t, c, b, a, {B1, . . . , Br}, {x&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;+,&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;+, x&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;−, . . . ,&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;−, . . . , x&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;+,&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;+, x&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;{B, t, c, b, a, {B&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;{B, t, c, b, a, {B1, . . . , B&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;{B, t, c, b, a, {B1, . . . , Br}, {x&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;+,&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;+, x&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;−, . . . ,&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;−, . . . , x&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;+,&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;+, x&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;we can also deﬁne the amalgamation of microblocks{B&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;can also deﬁne the amalgamation of microblocks{B1, . . . , B&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;{B&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;{B1, . . . , B&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;consider{R&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;consider{R1, . . . , R&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(3)(a).Let{β&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;+3, . . . , β&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Then the graphρ(∪1≤i≤lβ&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot; are inπ(B).Similarly,π(B)is just the labeled graphρ(∪1≤i≤lβ&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;{B&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;{B1, . . . , B&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;{B1, . . . , Br}and{B&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;{B1, . . . , Br}and{B1, . . . , B&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;tions{γ&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;tions{γ1, . . . , γ&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Bis a block amalgamation of microblocks{B&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;Bis a block amalgamation of microblocks{B1, . . . , B&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Bis a block amalgamation of microblocks{B&quot;
+  },
+  {
+    &quot;page&quot;: 90,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;Bis a block amalgamation of microblocks{B1, . . . , B&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;S&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;S1⊂PAhaving∂S&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;S1⊂PAhaving∂S1=X&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;S1⊂PAhaving∂S1=X0∪X&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;S1⊂PAhaving∂S1=X0∪X1, whereX&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;S1⊂PAhaving∂S1=X0∪X1, whereX0=X+, alsoX&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;S&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;S1toX&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;S1toX1using a sequence of ﬂypes.The complement ofS&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;family of annuli which has boundaryX&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Proposition5.1.1tosimplifyS&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;PA \\ S&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;two cases together we can construct a second annulusS&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;two cases together we can construct a second annulusS2with∂S&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;cases together we can construct a second annulusS2with∂S2= X&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;es together we can construct a second annulusS2with∂S2= X1∪X&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;that the movement acrossS&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;that difﬁculty in mind, we say that a family of thin annuliS&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;t difﬁculty in mind, we say that a family of thin annuliSk∪S&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;in mind, we say that a family of thin annuliSk∪Sk+1∪· · · ∪S&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;ange moves, and (ii) there exist integers k, q such that b(X&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;s, and (ii) there exist integers k, q such that b(Xk+i) ≥b(X&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;for1 ≤i ≤(q −1)andb(X&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;for1 ≤i ≤(q −1)andb(Xk+q) ≤b(X&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;abor(ab)⋆motion across the regionS&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;abor(ab)⋆motion across the regionSk∪S&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;abor(ab)⋆motion across the regionSk∪Sk+1∪· · · ∪S&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;collapsingthenormalneighborhoodsoftheclasparcsγ&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+andγ&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;possible, and we did it to save space.The arcsγ&quot;
+  },
+  {
+    &quot;page&quot;: 92,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;possible, and we did it to save space.The arcsγ1andγ&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;γ&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;sketch (a) and tab neighborhoods around clasp arcsγ&quot;
+  },
+  {
+    &quot;page&quot;: 93,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;sketch (a) and tab neighborhoods around clasp arcsγ3andγ&quot;
+  },
+  {
+    &quot;page&quot;: 96,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;{t&quot;
+  },
+  {
+    &quot;page&quot;: 96,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;{t1(1, 2), . . . , t&quot;
+  },
+  {
+    &quot;page&quot;: 96,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;{t1(1, 2), . . . , tk&quot;
+  },
+  {
+    &quot;page&quot;: 96,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;{t1(1, 2), . . . , tk1(1, 2), t&quot;
+  },
+  {
+    &quot;page&quot;: 96,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;{t1(1, 2), . . . , tk1(1, 2), t1(2, 3), . . . , t&quot;
+  },
+  {
+    &quot;page&quot;: 96,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;{t1(1, 2), . . . , tk1(1, 2), t1(2, 3), . . . , tk&quot;
+  },
+  {
+    &quot;page&quot;: 96,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;), . . . , tk1(1, 2), t1(2, 3), . . . , tk2(2, 3), . . . , t&quot;
+  },
+  {
+    &quot;page&quot;: 96,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;t1(2, 3), . . . , tk2(2, 3), . . . , t1(i, i + 1), . . . , t&quot;
+  },
+  {
+    &quot;page&quot;: 96,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;1(2, 3), . . . , tk2(2, 3), . . . , t1(i, i + 1), . . . , tk&quot;
+  },
+  {
+    &quot;page&quot;: 96,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;Bi+1;t&quot;
+  },
+  {
+    &quot;page&quot;: 96,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;and if there exist embedded discs∆(i, i + 1, j) ⊂S&quot;
+  },
+  {
+    &quot;page&quot;: 96,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;•The∆–discs have disjoint interiors.Also, for eacht&quot;
+  },
+  {
+    &quot;page&quot;: 97,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;∂∆(i, i+1, j) ⊂t&quot;
+  },
+  {
+    &quot;page&quot;: 97,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;s(i, i + 1)and∆(i, i + 1, j) ∩t&quot;
+  },
+  {
+    &quot;page&quot;: 97,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;s(i, i + 1)and∆(i, i + 1, j) ∩tj(i, i + 1) = t&quot;
+  },
+  {
+    &quot;page&quot;: 97,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;t&quot;
+  },
+  {
+    &quot;page&quot;: 97,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;t&quot;
+  },
+  {
+    &quot;page&quot;: 97,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;t&quot;
+  },
+  {
+    &quot;page&quot;: 97,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;t&quot;
+  },
+  {
+    &quot;page&quot;: 99,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Cis homeomorphic to eitherS&quot;
+  },
+  {
+    &quot;page&quot;: 99,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(2)IfCishomeomorphictoS&quot;
+  },
+  {
+    &quot;page&quot;: 100,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;i&quot;
+  },
+  {
+    &quot;page&quot;: 101,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot; of regions such that each int(Ri),1 ≤i ≤k, is embedded in S&quot;
+  },
+  {
+    &quot;page&quot;: 101,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;component,X&quot;
+  },
+  {
+    &quot;page&quot;: 101,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;+cobounds withX&quot;
+  },
+  {
+    &quot;page&quot;: 101,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−a standard annulus with&quot;
+  },
+  {
+    &quot;page&quot;: 101,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;−a standard annulus with2&quot;
+  },
+  {
+    &quot;page&quot;: 101,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;X&quot;
+  },
+  {
+    &quot;page&quot;: 101,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;+toX&quot;
+  },
+  {
+    &quot;page&quot;: 102,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;for the possibility that other components ofXbraid withX&quot;
+  },
+  {
+    &quot;page&quot;: 102,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Wearegivenaµ–componentorientedlinktypeXinorientedS&quot;
+  },
+  {
+    &quot;page&quot;: 102,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;Wearegivenaµ–componentorientedlinktypeXinorientedS3orR&quot;
+  },
+  {
+    &quot;page&quot;: 102,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;components of Xas X&quot;
+  },
+  {
+    &quot;page&quot;: 102,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;ofCAandX+andX−, so that each annulusA&quot;
+  },
+  {
+    &quot;page&quot;: 102,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;ofCAandX+andX−, so that each annulusAjinCAhas∂A&quot;
+  },
+  {
+    &quot;page&quot;: 102,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;ofCAandX+andX−, so that each annulusAjinCAhas∂Aj= X&quot;
+  },
+  {
+    &quot;page&quot;: 102,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;+−X&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;−→· · · →X&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;+→· · · →X&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;sequences X−= X&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;−as in (1–2) and X+= X&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;+= X&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+= X1→X&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;+= X1→X2→· · · →X&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;adjacent pairX&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;adjacent pairXi→X&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;into clasp subannuli.That is,for each pair(X&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;into clasp subannuli.That is,for each pair(Xi, X&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;to clasp subannuli.That is,for each pair(Xi, Xi+1),the linkX&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;clasp subannuli.That is,for each pair(Xi, Xi+1),the linkXi−X&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;asinSection5.5weusethenotationS&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(X&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(Xi, X&quot;
+  },
+  {
+    &quot;page&quot;: 103,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;(Xi, Xi+1).The claim then asserts thatS&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;−, CA′)=(c&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;−, CA′)=(c1,&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−, CA′)=(c1, c&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;−, CA) = (c&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;−, CA) = (c0,&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;−, CA) = (c0, c&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;−, CA) = (c0, c1,&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;−, CA) = (c0, c1, c&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;+)and&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;+)andc&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;+)andc1and&quot;
+  },
+  {
+    &quot;page&quot;: 104,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;+)andc1andc&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;X+= X&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;X+= Xi&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;X+= Xi1→X&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;X+= Xi1→Xi&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;X+= Xi1→Xi2→· · · →X&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;X+= Xi1→Xi2→· · · →Xi&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;such that0 &lt; i1&lt; i2&lt; · · · &lt; irandb(X&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;such that0 &lt; i1&lt; i2&lt; · · · &lt; irandb(Xi&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;such that0 &lt; i1&lt; i2&lt; · · · &lt; irandb(Xij) ≥b(X&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;such that0 &lt; i1&lt; i2&lt; · · · &lt; irandb(Xij) ≥b(Xi&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot; that0 &lt; i1&lt; i2&lt; · · · &lt; irandb(Xij) ≥b(Xij+1), and for anyX&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;ij&lt; k &lt; ij+1we haveb(X&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ij&lt; k &lt; ij+1we haveb(Xk) &gt; b(X&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;ij&lt; k &lt; ij+1we haveb(Xk) &gt; b(Xi&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ij&lt; k &lt; ij+1we haveb(Xk) &gt; b(Xij).SinceX&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;ij&lt; k &lt; ij+1we haveb(Xk) &gt; b(Xij).SinceXi&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ij&lt; k &lt; ij+1we haveb(Xk) &gt; b(Xij).SinceXij−X&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;ij&lt; k &lt; ij+1we haveb(Xk) &gt; b(Xij).SinceXij−Xi&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;we haveb(Xk) &gt; b(Xij).SinceXij−Xij+1cobound a clasp annulusS&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;e haveb(Xk) &gt; b(Xij).SinceXij−Xij+1cobound a clasp annulusSi&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;complexity function is non-increasing on the triple(X&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;complexity function is non-increasing on the triple(Xi&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;complexity function is non-increasing on the triple(Xij, X&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;complexity function is non-increasing on the triple(Xij, Xi&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;exity function is non-increasing on the triple(Xij, Xij+1, S&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;xity function is non-increasing on the triple(Xij, Xij+1, Si&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;emark 6.1.1(b)Our decomposition of CA into clasp subannuli S&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;mark 6.1.1(b)Our decomposition of CA into clasp subannuli Si&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;k 6.1.1(b)Our decomposition of CA into clasp subannuli Si1∪S&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot; 6.1.1(b)Our decomposition of CA into clasp subannuli Si1∪Si&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Our decomposition of CA into clasp subannuli Si1∪Si2∪· · ·∪S&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;ur decomposition of CA into clasp subannuli Si1∪Si2∪· · ·∪Si&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;alsoshowsustheoriginoftemplatesinT (m).Speciﬁcally,anS&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;alsoshowsustheoriginoftemplatesinT (m).Speciﬁcally,anSi&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;use each triple(X&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;use each triple(Xi&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;use each triple(Xij, X&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;use each triple(Xij, Xi&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;use each triple(Xij, Xij+1, S&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;use each triple(Xij, Xij+1, Si&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;each triple(Xij, Xij+1, Sij)to construct a template inT (b(X&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;ach triple(Xij, Xij+1, Sij)to construct a template inT (b(Xi&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ple(Xij, Xij+1, Sij)to construct a template inT (b(Xij), b(X&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;le(Xij, Xij+1, Sij)to construct a template inT (b(Xij), b(Xi&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;using the triple (X+, X&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;using the triple (X+, Xi&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;using the triple (X+, Xij+1, S&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;using the triple (X+, Xij+1, Si&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;using the triple (X+, Xij+1, Si1∪· · ·∪S&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;using the triple (X+, Xij+1, Si1∪· · ·∪Si&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;j+1, Si1∪· · ·∪Sij) we can construct a template in T (m, b(X&quot;
+  },
+  {
+    &quot;page&quot;: 105,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;+1, Si1∪· · ·∪Sij) we can construct a template in T (m, b(Xi&quot;
+  },
+  {
+    &quot;page&quot;: 108,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;if for every missing block ofD−, the ambient isotopy ofS&quot;
+  },
+  {
+    &quot;page&quot;: 108,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;To see this, let(D+, D−) = T∈T (m)and let{B&quot;
+  },
+  {
+    &quot;page&quot;: 108,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;To see this, let(D+, D−) = T∈T (m)and let{B1, . . . , B&quot;
+  },
+  {
+    &quot;page&quot;: 108,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;all the blocks inT.As before,b(B&quot;
+  },
+  {
+    &quot;page&quot;: 108,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;e blocks inT.As before,b(Bi)is the braid index of the blockB&quot;
+  },
+  {
+    &quot;page&quot;: 108,
+    &quot;mark&quot;: &quot;k&quot;,
+    &quot;context&quot;: &quot;complexity ofTto be a lexicographically ordered2–tuple(k,P&quot;
+  },
+  {
+    &quot;page&quot;: 108,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;1(n −b(B&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;isotopy ofS&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;of theB&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;blocks or strands ofD+that do not intersectB&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;B&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;long with some number of extra strands thenm −b(B+) &lt; m −b(B&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Let{l&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;+, . . . ,&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;h&quot;,
+    &quot;context&quot;: &quot;+, . . . , l&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;+}be&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;{l&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;−, . . . ,&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;h&quot;,
+    &quot;context&quot;: &quot;−, . . . , l&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;−}be&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;acrossCAhasl&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;+being taken to&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+being taken tol&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;−for&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;R&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;Ri⊂CAtiledthat hasl&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;±⊂∂R&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;±⊂∂Ri,&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;s&quot;,
+    &quot;context&quot;: &quot;±⊂∂Ri,1 ≤i ≤h.Now, if we collapse each of the&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;by replacing everyl&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;+inX+with&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+inX+withl&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;−, or to abuse notation[(X+\\ (l&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;h&quot;,
+    &quot;context&quot;: &quot;+∪· · · ∪l&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;h&quot;,
+    &quot;context&quot;: &quot;−∪· · · ∪l&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(l&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;{l&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;{li&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;+, . . . ,&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+, . . . , l&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;+, . . . , li&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;−}such that[(X+\\ (l&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;−}such that[(X+\\ (li&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+∪· · · ∪l&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;+∪· · · ∪li&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;+)) ∪(l&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;+)) ∪(li&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;−∪· · · ∪l&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;−∪· · · ∪li&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;+} ⊂{l&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;−, . . . ,&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;h&quot;,
+    &quot;context&quot;: &quot;−, . . . , l&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;fromCAby replacing each component{R&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;fromCAby replacing each component{Ri&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;fromCAby replacing each component{Ri1, . . . , R&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;fromCAby replacing each component{Ri1, . . . , Ri&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;is parallel to the strands{l&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;is parallel to the strands{li&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;−, . . . ,&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;−, . . . , l&quot;
+  },
+  {
+    &quot;page&quot;: 109,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;−, . . . , li&quot;
+  },
+  {
+    &quot;page&quot;: 110,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;position which goes over to a cellular decomposition ofS&quot;
+  },
+  {
+    &quot;page&quot;: 110,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;the fact thatχ(S&quot;
+  },
+  {
+    &quot;page&quot;: 112,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;N′and contribute toV(α, β).LetV&quot;
+  },
+  {
+    &quot;page&quot;: 112,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;N′and contribute toV(α, β).LetVe(α, β&quot;
+  },
+  {
+    &quot;page&quot;: 112,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;adjacent toαa–arcs andβ&quot;
+  },
+  {
+    &quot;page&quot;: 112,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;we need fromV(α, β), V′(α, β)andV&quot;
+  },
+  {
+    &quot;page&quot;: 112,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;we need fromV(α, β), V′(α, β)andVe(α, β&quot;
+  },
+  {
+    &quot;page&quot;: 112,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;V&quot;
+  },
+  {
+    &quot;page&quot;: 112,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;Ve(1, 2)andV&quot;
+  },
+  {
+    &quot;page&quot;: 112,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;β=3V&quot;
+  },
+  {
+    &quot;page&quot;: 112,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;β=3Ve(1, β&quot;
+  },
+  {
+    &quot;page&quot;: 112,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;β=5V&quot;
+  },
+  {
+    &quot;page&quot;: 112,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;β=5Ve(0, β&quot;
+  },
+  {
+    &quot;page&quot;: 112,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;α ≤2then there are twoaϵ–arcs,a&quot;
+  },
+  {
+    &quot;page&quot;: 112,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;ϵ,&quot;
+  },
+  {
+    &quot;page&quot;: 112,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ϵ, a&quot;
+  },
+  {
+    &quot;page&quot;: 112,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;ϵ, adjacent to&quot;
+  },
+  {
+    &quot;page&quot;: 112,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;otherinthefoliation.Thesubdisc,∆(vϵ),thata&quot;
+  },
+  {
+    &quot;page&quot;: 112,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ϵ∪a&quot;
+  },
+  {
+    &quot;page&quot;: 114,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;1≤j≤LC&quot;
+  },
+  {
+    &quot;page&quot;: 114,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;iL′} ⊂{C&quot;
+  },
+  {
+    &quot;page&quot;: 115,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;suchthat:R0⊂S+isatype0&quot;
+  },
+  {
+    &quot;page&quot;: 115,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;suchthat:R0⊂S+isatype0d,2region;R−1d⊂S+isatype−1&quot;
+  },
+  {
+    &quot;page&quot;: 115,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;inR−1d .(Referringtothetype−1&quot;
+  },
+  {
+    &quot;page&quot;: 115,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;and the remaining portion ofR−1dwill be a type0&quot;
+  },
+  {
+    &quot;page&quot;: 115,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;and the remaining portion ofR−1dwill be a type0d,&quot;
+  },
+  {
+    &quot;page&quot;: 115,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;+, and we will have&quot;
+  },
+  {
+    &quot;page&quot;: 115,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;+) = b(X+) + 1.But, sinceR&quot;
+  },
+  {
+    &quot;page&quot;: 115,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;+) = b(X+) + 1.Thus, if we had&quot;
+  },
+  {
+    &quot;page&quot;: 115,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;+) = b(X+) + 1.Thus, if we hadxsuch(R&quot;
+  },
+  {
+    &quot;page&quot;: 115,
+    &quot;mark&quot;: &quot;x&quot;,
+    &quot;context&quot;: &quot;+) = b(X+) + x.This implies&quot;
+  },
+  {
+    &quot;page&quot;: 116,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;β=5V&quot;
+  },
+  {
+    &quot;page&quot;: 116,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;β=5Ve(0, β&quot;
+  },
+  {
+    &quot;page&quot;: 116,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;β=3V&quot;
+  },
+  {
+    &quot;page&quot;: 116,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;β=3Ve(1, β&quot;
+  },
+  {
+    &quot;page&quot;: 116,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;By construction the vertices that contribute toV&quot;
+  },
+  {
+    &quot;page&quot;: 116,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;By construction the vertices that contribute toVe(0, β&quot;
+  },
+  {
+    &quot;page&quot;: 116,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;By construction the vertices that contribute toVe(0, βe)andV&quot;
+  },
+  {
+    &quot;page&quot;: 116,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;struction the vertices that contribute toVe(0, βe)andVe(1, β&quot;
+  },
+  {
+    &quot;page&quot;: 116,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;β=5V&quot;
+  },
+  {
+    &quot;page&quot;: 116,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;β=5Ve(0, β&quot;
+  },
+  {
+    &quot;page&quot;: 116,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;β=3V&quot;
+  },
+  {
+    &quot;page&quot;: 116,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;β=3Ve(1, β&quot;
+  },
+  {
+    &quot;page&quot;: 116,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;+=A+∪A&quot;
+  },
+  {
+    &quot;page&quot;: 116,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;−=A−∪A&quot;
+  },
+  {
+    &quot;page&quot;: 116,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;−=A−∪A0whichhave&quot;
+  },
+  {
+    &quot;page&quot;: 117,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;β=5V&quot;
+  },
+  {
+    &quot;page&quot;: 117,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;β=5Ve(0, β&quot;
+  },
+  {
+    &quot;page&quot;: 117,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;β=5V&quot;
+  },
+  {
+    &quot;page&quot;: 117,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;β=5Ve(0, β&quot;
+  },
+  {
+    &quot;page&quot;: 117,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;β=5V&quot;
+  },
+  {
+    &quot;page&quot;: 117,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;β=5Ve(0, β&quot;
+  },
+  {
+    &quot;page&quot;: 117,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;β=5V&quot;
+  },
+  {
+    &quot;page&quot;: 117,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;β=5Ve(0, β&quot;
+  },
+  {
+    &quot;page&quot;: 117,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;β=5V&quot;
+  },
+  {
+    &quot;page&quot;: 117,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;β=5Ve(0, β&quot;
+  },
+  {
+    &quot;page&quot;: 117,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;β=3V&quot;
+  },
+  {
+    &quot;page&quot;: 117,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;β=3Ve(1, β&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;P&quot;
+  },
+  {
+    &quot;page&quot;: 118,
+    &quot;mark&quot;: &quot;v&quot;,
+    &quot;context&quot;: &quot;α=0(v + α −4)V(α,&quot;
+  },
+  {
+    &quot;page&quot;: 119,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;thatγ&quot;
+  },
+  {
+    &quot;page&quot;: 119,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;ϵis long butγ&quot;
+  },
+  {
+    &quot;page&quot;: 119,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;is not embedded nearγ&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;be the interval[θ&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;i, θ&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;i] ⊂[0,&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;i] ⊂[0, 2π)for whichθ∈[θ&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;i, θ&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;i]iffHθ∩[(X+∪X−) ∩N&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;subcollection{N&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;subcollection{Nj1, . . . , N&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;subcollection{Nj1, . . . , NjR} ⊂{N&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;r&quot;,
+    &quot;context&quot;: &quot;subcollection{Nj1, . . . , NjR} ⊂{N1, . . . , N&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;lection{Nj1, . . . , NjR} ⊂{N1, . . . , Nr}intersectsBthen∠N&quot;
+  },
+  {
+    &quot;page&quot;: 120,
+    &quot;mark&quot;: &quot;j&quot;,
+    &quot;context&quot;: &quot;. . . , NjR} ⊂{N1, . . . , Nr}intersectsBthen∠Nj1 ∩· · · ∩∠N&quot;
+  },
+  {
+    &quot;page&quot;: 121,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;are the ones that contribute to the count ofV&quot;
+  },
+  {
+    &quot;page&quot;: 121,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;are the ones that contribute to the count ofVe(1, β&quot;
+  },
+  {
+    &quot;page&quot;: 122,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;θ∈[θi, θi+1]of the set{(Hθ \\Hθ ∩CAtiled)}has aD&quot;
+  },
+  {
+    &quot;page&quot;: 122,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;Let θ&quot;
+  },
+  {
+    &quot;page&quot;: 122,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;Let θ1, . . . , θ&quot;
+  },
+  {
+    &quot;page&quot;: 122,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;register in our listing of remaining anglesθ&quot;
+  },
+  {
+    &quot;page&quot;: 122,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;register in our listing of remaining anglesθ1, . . . , θ&quot;
+  },
+  {
+    &quot;page&quot;: 123,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;our remaining anglesθ&quot;
+  },
+  {
+    &quot;page&quot;: 123,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;our remaining anglesθ1, . . . , θ&quot;
+  },
+  {
+    &quot;page&quot;: 123,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;contributetothecountofV&quot;
+  },
+  {
+    &quot;page&quot;: 123,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;contributetothecountofVe(α, β&quot;
+  },
+  {
+    &quot;page&quot;: 124,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;would have the components ofG++andG−−being homeomorphic toS&quot;
+  },
+  {
+    &quot;page&quot;: 126,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;G−,δandG+,δas deﬁning knots inR&quot;
+  },
+  {
+    &quot;page&quot;: 128,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;R Kirby, A calculus for framed links in S&quot;
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

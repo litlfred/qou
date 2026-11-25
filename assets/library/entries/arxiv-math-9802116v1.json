@@ -1,0 +1,725 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-9802116v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "In this paper we provide a natural setting for the octonion algebra, namely as an algebra in\na quasitensor category. Such categories have a tensor product and associativity isomorphisms\nV ⊗(W ⊗Z)∼=(V ⊗W) ⊗Z for any three objects, but these need not, however, be the trivial\nvector space isomorphisms. These categories also arise naturally as the representation categories\nof quasi-Hopf algebras[1]. Our ﬁrst result is to identify the correct ‘octonion generating quasi-\nHopf algebra’ in the category of representations of which the octonions live. The categorical point\nof view then provides further",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/9802116v1  [math.QA]  25 Feb 1998\nDAMTP/97-138\nQUASIALGEBRA STRUCTURE OF THE OCTONIONS\nHelena Albuquerque1\nDepartamento de Matematica-Faculdade de Ciencias e Tecnologia\nUniversidade de Coimbra, Apartado 3008\n3000 Coimbra, Portugal\n+\nShahn Majid2\nDepartment of Applied Mathematics & Theoretical Physics\nUniversity of Cambridge, Cambridge CB3 9EW, UK\nwww.damtp.cam.ac.uk/user/majid\nDecember, 1997 – February, 1998\nAbstract We show that the octonions are a twisting of the group algebra of Z2 ×\nZ2 × Z2 in the quasitensor category of representations of a quasi-Hopf algebra asso-\nciated to a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/cor-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 7,
+      "target": "cor-sec-001-02.md",
+      "narrative": null,
+      "content": "kF G deﬁned as kG with a modiﬁed product x ·F y = xyF(x, y), ∀x, y ∈G is a coboudary G-graded quasialgebra. The degree of x ∈G is x, and F is any 2-cochain on G. Proof This is a special case of the twisting proposition. Here kG coacts on itself by β = ∆, i.e. the degree of x ∈G is x. We now twist kG to the dual quasi-Hopf algebra (kG, φ = ∂F). In the process, we also twist kG as a comodule algebra to kF G as a comodule quasialgebra under this dual quasi-Hopf algebra. ⊔⊓ We note an elementary properties of kF G.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prop-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 7,
+      "target": "prop-sec-001-01.md",
+      "narrative": null,
+      "content": "If A is an H-comodule quasialgebra and F : H ⊗H →k a 2-cochain, then AF with the new product a ·F b = X a ¯ (1)b ¯ (1)F(a ¯ (2), b ¯ (2)) and unchanged unit, is an HF -comodule quasialgebra. Proof This is elementary and follows from the equivalence of the comodule categories under twisting. See also [6] in the module version. ⊔⊓ There is a parallel theory with all arrows reversed. Thus, H can be a quasi-Hopf algebra, with associative product and ∆coassociative up to conjugation by an invertible 3-cocycle φ ∈H⊗3[1]. In this case the modules of H form a monoidal category and, in the quasitriangu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prop-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 7,
+      "target": "prop-sec-001-03.md",
+      "narrative": null,
+      "content": "With trivial initial bicharacter R0, the category of G-graded vector spaces is symmetrically braided (in the sense Ψ2 = id) and kF G is braided-commutative in the sense a · b = · ◦Ψ(a ⊗b), ∀a, b ∈kF G. Proof This is immediate from (11) and the deﬁnition of Ψ from R. The latter is clearly Ψ(a ⊗b) = b ⊗a F (|a|,|b|) F (|b|,|a|) for elements of homogeneous degree |a|, |b|, which is braided but trivially braided in the sense Ψ2 = id (i.e. the category of G-graded spaces in this case is symmetric monoidal rather than strictly braided.) ⊔⊓",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries: General constructions",
+      "pageStart": 2,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-2-preliminaries-general-constructions.md",
+      "narrative": null,
+      "content": "An introduction to quantum groups, including quasitensor categories and quasi-Hopf algebras\nis in [2], the main notations of which we use here. In fact, the natural setting for us is the dual\nof Drinfeld’s axioms[1], namely the notion of a dual quasi-Hopf algebra[3][2].\nThus, a dual quasibialgebra is a (H, ∆, ǫ, φ) where the coproduct ∆: H →H ⊗H and counit\nǫ : H →k form a coalgebra (the axioms are those of a unital associative algebra with arrows\nreversed) and are multiplicative with respect to a ‘product’ H ⊗H →H. This is required to be\n2\nassociative up to‘conjugation’ by φ in the sense\nX\na(1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/cor-sec-002-07",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 15,
+      "target": "cor-sec-002-07.md",
+      "narrative": null,
+      "content": "If σ(x) = F(x, x)x for all x ∈G is a strong involution, and F 2 = 1, then the following are equivalent, i) kF G is an alternative algebra, ii) kF G is a composition algebra. The conditions in Proposition 3.7 and the corollary are evidently highly restrictive, because if k has characteristic diﬀerent from 2 it is known that we have only the following composition algebras with the Euclidean norm: k, the algebra with basis 1, v, v2 = −1, the algebra over k with the product of quaternions and the algebra over k with the product of octonions. If k is algebraically closed these algebras are isomorph",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/lem-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 15,
+      "target": "lem-sec-002-03.md",
+      "narrative": null,
+      "content": "kF G admits an involution which is diagonal in the basis G iﬀR = ∂s (a group coboundary) for some 1-cochain s : G →k∗with s2 = 1. In this case, one has R(x, y) = R(y, x) and φ(x, y, z) = φ(z, y, x)−1 for all x, y, z ∈G. Proof Consider the endomorphism σ of the vector space kF G of the form σ(x) = s(x)x, ∀x ∈G, extended linearly, for some function s : G →k. For an involution we need σ2 = id, s(1) = 1 and σ(a · b) = σ(b)σ(a), ∀a, b in our algebra. It is enough to consider these on the basis elements. Then clearly the ﬁrst two correspond to i) s(e) = 1 and s2(x) = 1 for all x ∈G. For the second c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prop-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 15,
+      "target": "prop-sec-002-01.md",
+      "narrative": null,
+      "content": "If kF G admits a quadratic character then F 2 is a coboundary and φ2 = 1. If the Euclidean norm quadratic function deﬁned by q(x) = 1 for all x ∈G is multiplicative (making kF G a composition algebra) then F 2 = 1. Proof (For all discussions of quadratic forms we suppose that k has characteristic not 2). Given a quadratic character q : kF G →k, we have q(x · y) = q(F(x, y)xy) = F 2(x, y)q(xy) = q(x)q(y) on x, y ∈G, i.e. F 2(x, y) = q(x)q(y)/q(xy) is a coboundary in the group cohomology. In general, if F 2 = ∂q we still need to specify a bilinear form with diagonal q, so the converse is not aut",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prop-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 15,
+      "target": "prop-sec-002-02.md",
+      "narrative": null,
+      "content": "kF G is an alternative algebra if and only if φ−1(y, x, z) + R(x, y)φ−1(x, y, z) = 1 + R(x, y) φ(x, y, z) + R(z, y)φ(x, z, y) = 1 + R(z, y) for all x, y, z ∈G. In this case, φ(x, x, y) = φ(x, y, y) = φ(x, y, x) = 1 for all x, y ∈G. Proof It is enough to consider the conditions of an alternative algebra on our basis elements, x, y, z ∈G, i.e. (x · y) · z −x · (y · z) + (y · x) · z −y · (x · z) = 0 (x · y) · z −x · (y · z) + (x · z) · y −x · (z · y) = 0. This translates at once into the two equations F(x, y)F(xy, z) + F(y, x)F(yx, z) = F(y, z)F(x, yz) + F(x, z)F(y, xz) F(x, z)F(xz, y) + F(x, y)F",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prop-sec-002-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 15,
+      "target": "prop-sec-002-04.md",
+      "narrative": null,
+      "content": "kF G admits a diagonal strong involution σ if and only if i) G ≃(Z2)n for some n, ii) σ(e) = e, σ(x) = −x for all x̸ = e, iii) kF G is altercommutative in the sense of Deﬁnition 3.2. Proof Consider an endomorphism of the diagonal form σ(x) = s(x)x. A general element a = P x∈G αxx, we have of course σ(a) = X x∈G αxs(x)x, hence a + σ(a) = X x∈G αx(1 + s(x))x ∈k1 for all coeﬃcients αx if and only if s(x) = −1 for all x̸ = e. Here the group identity e ∈G is the basis element 1 ∈kF G. Since we also need σ(1) = 1 for an involution, these two conditions hold iﬀ ii’) s(e) = 1 and s(x) = −1 for all x̸",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prop-sec-002-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 15,
+      "target": "prop-sec-002-05.md",
+      "narrative": null,
+      "content": "If σ(x) = F(x, x)x for all x ∈G deﬁnes a strong involution and |G|̸ = 2 in k, then the algebra kFG is simple. Proof Let I be an ideal of kF G diﬀerent from kF G, and a = P x∈G αxx an element of I. Then for each y̸ = e ∈G, a · y = X x∈G αxF(x, y)xy ∈I, y · a = X x∈G αxF(y, x)xy ∈I. Adding these together and using Proposition 3.5 in the form of the conditions ii’) and iii’), we see that a · y + y · a = X x̸=y αx(F(y, x) + F(x, y))xy + αy2F(y, y)e = 2αey −2αye ∈I. Then (a · y + y · a) · y = −2(αee + αyy) ∈I as well. Since this is for all y̸ = e, we have P y̸=e αyy + (|G| −1)αee ∈I and hence αee ∈",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prop-sec-002-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 15,
+      "target": "prop-sec-002-06.md",
+      "narrative": null,
+      "content": "If G∼=(Z2)n then the Euclidean norm quadratic function deﬁned by q(x) = 1 for all x ∈G makes kFG a composition algebra if and only if i) F 2(x, y) = 1 for all x, y ∈G ii) F(x, xz)F(y, yz) + F(x, yz)F(y, xz) = 0, for all x, y, z ∈G with x̸ = y. In this case the conditions in the Proposition 3.6 hold, i.e. σ(x) = F(x, x)x for all x ∈G is a strong involution and kF G is simple if |G|̸ = 2. Moreover, kF G is alternative. Proof Suppose that q is multiplicative. q(x · y) = q(x)q(y) on all basis elements x, y ∈G is F 2 = 1, as we know already from Proposition 3.1. The next case q((x + y) · z) = q(x +",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "More about the quasi-algebras kFG",
+      "pageStart": 7,
+      "pageEnd": 15,
+      "target": "../sections/sec-002-3-more-about-the-quasi-algebras-kfg.md",
+      "narrative": null,
+      "content": "More about the quasi-algebras kFG\nIn this section, we will study further properties of the G-graded quasialgebras kF G beyond the\ngeneral ones arising from their categorical structure in the preceding section. We assume that\nG is Abelian, that F is a 2-cochain and φ a 3-cocycle.\nFirst of all, we note that kF G has a natural symmetric bilinear form whereby the basis of\ngroup elements is orthonormal. In general, the associated quadratic function on kF G will not\nbe multiplicative (a quadratic character).\nProposition 3.1 If kF G admits a quadratic character then F 2 is a coboundary and φ2 = 1.\nIf",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/cor-sec-003-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 19,
+      "target": "cor-sec-003-04.md",
+      "narrative": null,
+      "content": "If G = (Z2)n and F = (−1)f then the standard Cayley-Dickson process has ¯G = (Z2)n+1 and ¯F = (−1) ¯f. We use a vector notation⃗x = (x1, · · · , xn) ∈(Z2)n where xi ∈{0, 1} (and the group Z2 is now written additively). Then ¯f((⃗x, xn+1), (⃗y, yn+1)) = f(⃗x,⃗y)(1 −xn+1) + f(⃗y,⃗x)xn+1 + yn+1f(⃗x,⃗x) + xn+1yn+1. Proof ¿From the above, we have clearly ¯f(x, y) = f(x, y), ¯f(x, vy) = f(x, y) + f(x, x), ¯f(vx, y) = f(y, x), ¯f(vx, vy) = 1 + f(x, x) + f(y, x). We then convert this to a vector notation where each copy of Z2 in G is the additive group of Z2. We then make use of the product in Z2 to e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prop-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 19,
+      "target": "prop-sec-003-01.md",
+      "narrative": null,
+      "content": "Let kF G be an algebra that admits a strong diagonal involution σ(x) = s(x)x. Then the non degenerate form n(x) = x · σ(x) makes kF G a composition algebra if and only if i) s(xy)F(x, y)2F(xy, xy) = s(x)s(y)F(x, x)F(y, y), for all x, y ∈G. ii) F(x, xz)F(y, yz)F(z, z)s(z) + F(x, yz)F(y, xz)F(xyz, xyz)s(xyz) = 0, for all x, y ∈G with x̸ = y. Proof Let A be a quasialgebra kF G that admits a strong diagonal involution σ(x) = s(x)x and let us consider the form n(x) = xσ(x). For all x, y ∈G if the form n(x) admits compo- sition we have n(x · y) = n(x)n(y) and then n(x · y) = F 2(x, y)F(xy, xy)s(xy)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prop-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 19,
+      "target": "prop-sec-003-02.md",
+      "narrative": null,
+      "content": "Let G be a ﬁnite Abelian group F a cochain on it (so kF G is a G-graded quasialgebra). For any s : G →k∗with s(e) = 1 we deﬁne ¯G = G × Z2 and on it the cochain ¯F and function ¯s, ¯F(x, y) = F(x, y), ¯F(x, vy) = s(x)F(x, y), ¯F(vx, y) = F(y, x) ¯F(vx, vy) = αs(x)F(y, x), ¯s(x) = s(x), ¯s(vx) = −1 for all x, y ∈G. Here x ≡(x, e) and vx ≡(x, ν) denote elements of ¯G, where Z2 = {e, ν} with product ν2 = e. If σ(x) = s(x)x is a strong involution, then k ¯F ¯G is the Cayley-Dickson process applied to kF G. Proof The only features to be checked for a cochain are that ¯F should be pointwise invertib",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prop-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 19,
+      "target": "prop-sec-003-03.md",
+      "narrative": null,
+      "content": "If F(x, x) = −1 for all x ∈G and x̸ = e then the same holds for ¯F under the standard Cayley-Dickson process. Moreover, in this case, (i) ¯s has the standard form on ¯G. (ii) If F 2 = 1 then ¯F 2 = 1 as well. (iii) If kF G is altercommutative then so is k ¯F ¯G. Proof We have ¯σ(x) = ¯F(x, x)x = F(x, x)x = σ(x), ¯σ(vx) = ¯F(vx, vx)vx = −F(x, x)2vx = −vx since F 2(x, x) = 1. The ﬁrst two parts are then immediate. The third part is ¯R(x, vy) = ¯F(x, vy) ¯F(vy, x) = F(x, x), ¯R(vx, y) = F(y, y)−1 ¯R(vx, vy) = ¯F(vx, vy) F(vy, vx) = F(x, x) F(y, y) R(x, y) has the altercommutative form in Deﬁnitio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prop-sec-003-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 19,
+      "target": "prop-sec-003-05.md",
+      "narrative": null,
+      "content": "i) The ‘complex number’ algebra has this form with G = Z2, f(x, y) = xy, x, y ∈Z2 where we identify G as the additive group Z2 but also make use of its product.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cayley algebras",
+      "pageStart": 15,
+      "pageEnd": 19,
+      "target": "../sections/sec-003-4-cayley-algebras.md",
+      "narrative": null,
+      "content": "will see in the next section.\nFinally, for completeness, we include a slight generalisation of Proposition 3.7.\nProposition 3.9 Let kF G be an algebra that admits a strong diagonal involution σ(x) = s(x)x.\nThen the non degenerate form n(x) = x · σ(x) makes kF G a composition algebra if and only if\ni) s(xy)F(x, y)2F(xy, xy) = s(x)s(y)F(x, x)F(y, y), for all x, y ∈G.\nii) F(x, xz)F(y, yz)F(z, z)s(z) + F(x, yz)F(y, xz)F(xyz, xyz)s(xyz) = 0, for all x, y ∈G\nwith x̸ = y.\nProof\nLet A be a quasialgebra kF G that admits a strong diagonal involution σ(x) = s(x)x\nand let us consider the form n(x) = xσ(x)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/cor-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "cor-sec-005-02.md",
+      "narrative": null,
+      "content": "k ¯F ¯G is associative if and only if kF G is associative and commutative. Proof We already know that kF G is commutative iﬀF is symmetric, which means iﬀR = 1. So in this case if φ = 1 then ¯φ = 1. So if kF G is associative and commutative, k ¯F ¯G is associative. Conversely, if ¯φ = 1 then by restriction, φ = 1 so kF G is associative. Moreover, 1 = ¯φ(x, y, v) = R(x, y)φ(x, y, e) = R(x, y) tells us that kF G is commutative. ⊔⊓",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "The associativity cocycle φ of kF G and the associativity cocycle ¯φ of k ¯F ¯G are related by ¯φ(x, y, z) = φ(x, y, z), ¯φ(vx, y, z) = R(y, z)φ(x, y, z) ¯φ(x, vy, z) = R(y, z)R(xy, z)φ(x, y, z), ¯φ(x, y, vz) = R(x, y)φ(x, y, z) ¯φ(vx, vy, z) = R(xy, z)φ(x, y, z), ¯φ(vx, y, vz) = R(y, z)R(x, y)φ(x, y, z) ¯φ(x, vy, vz) = R(x, yz)φ(x, y, z), ¯φ(vx, vy, vz) = R(xy, z)R(x, y)φ(x, y, z) ∀x, y, z ∈G. Proof We use the deﬁnition of ¯φ as coboundary of ¯F, the form of this in Proposition 4.1 and F(x, y) = R(x, y)F(y, x) from Deﬁnition 3.2. We also use Lemma 3.4 which tells us that s2 = 1, R(x, y) = s(x",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The quaternion algebra is of this form with",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/sec-004-ii-the-quaternion-algebra-is-of-this-form-with.md",
+      "narrative": null,
+      "content": "¯G = Z2 × Z2,\n¯f(⃗x,⃗y) = x1y1 + (x1 + x2)y2\nwhere⃗x = (x1, x2) ∈¯G is a vector notation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The octonion algebra is of this form with",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-005-iii-the-octonion-algebra-is-of-this-form-with.md",
+      "narrative": null,
+      "content": "¯¯G = Z2 × Z2 × Z2,\n¯¯f(⃗x,⃗y) =\nX\ni≤j\nxiyj + y1x2x3 + x1y2x3 + x2x2y3.\niv) The 16-onion algebra is of the form ¯¯¯G = Z2 × Z2 × Z2 × Z2 and\n¯¯¯f(⃗x,⃗y) =\nX\ni≤j\nxiyj +\nX\ni̸=j̸=k̸=i\nxixjyk +\nX\ndistinct i,j,k,l\nxixjykyl +\nX\ni̸=j̸=k̸=i\nxiyjykx4\nWe are now able to apply our various criteria in the last section for the structure of the\nalgebras of the form kF G, to this construction and to all these algebras. Note in all these cases\n(and for the who 2n-onion family generated in this way) f has a bilinear part deﬁned by the\nbilinear form\n\n\n\n\n\n\n\n1\n1\n· · ·\n1\n0\n1\n· · ·\n1\n...\n...\n0\n· · ·\n1\n1\n0\n·",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prop-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 24,
+      "target": "prop-sec-006-01.md",
+      "narrative": null,
+      "content": "If we consider the symmetric Hadamard matrix H =   −1 −1 −1 −1 −1 −1   as a cochain on the group Z2 × Z2 we obtain a nonsimple, associative and commutative algebra. Proof The algebra deﬁned by H and the group (Z2)2 has the multiplication table e x y z x e −z −y y −z e −x z −y −x e By straightforward calculations, one can see that this algebra is commutative and associative. Moreover, I =< e + x, y −z > is an ideal of this algebra. ⊔⊓ Next we consider q = pr where p is an odd prime number. Let χ(x) be the character deﬁned in the ﬁnite ﬁeld Fq where χ(0) = 0, χ(x) = 1 if x is a square, a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prop-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 24,
+      "target": "prop-sec-006-02.md",
+      "narrative": null,
+      "content": "Let kF Z3 be a quasialgebra which cochain deﬁned by the matrix,   H   where H is an Hadamard matrix of order 2. Then kF Z3 is a nonassociative simple algebra (commutative or altercommutative). Proof If H is an Hadamard matrix of order 2 we have only two diferent possibilities for kF Z3, with the multiplication table I: e x y x −y e y e x or the multiplication table II: e x y x y −e y e x Let I̸ = kF Z3 be an ideal of kF Z3 and let a = P x∈Z3 αxx an element of I. Then in both cases (a · x) · y ∈I and if kF Z3 is deﬁned by table I this implies that αx = 0 ( if not, x ∈I and I = kF Z3). And i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prop-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 24,
+      "target": "prop-sec-006-03.md",
+      "narrative": null,
+      "content": "Let n ≥4 and F(x, y) = (−1)δx,y for x, y̸ = e, then kF Zn is a simple commu- tative, nonassociative algebra. Proof It’s easy to see that these algebras are commutative and nonassociative. To prove that they are simple we recall that as Zn is a group we know that for x, y ∈Zn we have Lx ·Ly = Lxy and so Lx · Ly · Lxy = Id if we denote by Lx the map Lx(a) = xa. So let’s consider an ideal I̸ = kF Zn and let a = P x∈Zn αxx be an element of I. Now let’s consider an element y ∈Zn that is diferent from e and has order diferent from 2, 3. Then y · a = P x∈Zn αxF(y, x)yx = P x̸=y∈Zn αxyx −αyy2 is an el",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "New quasialgebras",
+      "pageStart": 20,
+      "pageEnd": 24,
+      "target": "../sections/sec-006-5-new-quasialgebras.md",
+      "narrative": null,
+      "content": "New quasialgebras\nIt is clear that there are many examples of quasialgebras kF G according to the group G and the\ncochain F. In this section we will consider examples where F 2 = 1; we will see that even in this\ncase we can obtain very diﬀerent types of algebras.\nBy Proposition 3.7 we know that if kF G is an n-dimensional composition algebra for the\nEuclidean norm, the cochain F is deﬁned by an Hadamard matrix H (that is, a matrix such\nthat HtH = nI where t is transpose and I is the identity matrix). The matrix entries are\nHx,y = F(x, y) for x, y ∈G. Motivated by this, we begin by considering",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/cor-sec-007-06",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 30,
+      "target": "cor-sec-007-06.md",
+      "narrative": null,
+      "content": "For F a cochain on G, and basis G of A = kF G, the diagonal quotient MD0 = (kG, φ) as a dual quasi-Hopf algebra. Proof In this basis cijk = 1 iﬀij = k in G and zero otherwise. Hence the relations of MD are titj = tk for k = ij and empty for k̸ = ij. In MD0 we further identify te = 1 as in the group algebra. Finally, |ti| = i and we obtain kG, φ as a dual quasi-Hopf algebra. When G is commutative we obtain a commutative algebra and MD0 = MD0(R, kF G). ⊔⊓ We now compute these constructions for the complex numbers and for the quaternions, as real two and four dimensional algebras. More generally,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/ex-sec-007-07",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 30,
+      "target": "ex-sec-007-07.md",
+      "narrative": null,
+      "content": "When A = k[i] (where i2 = −1), the comeasuring bialgebra M1(k[i]) is generated by 1 and a matrix of generators \u0012 a b c d \u0013 , with the relations a2−c2 = a = d2−b2, ac+ca = c, −c = bd+db, ab−cd = b = ba−dc, ad+cb = d = bc+da. This has a natural bialgebra quotient of the form \u0012 c s −s c \u0013 with ∆c = c ⊗c −s ⊗s, ∆s = s ⊗c + c ⊗s, c2 −s2 = c, sc + cs = s. The quotient M0 = M0(R) = MD0 is kZ2 (as generated by d), and its coaction is β(1) = 1 ⊗1, β(i) = i ⊗d. Proof We write out the 8 relations for M0 using the structure constants of k[i]. The quotient M0 is already diagonal and commutative. Hence by t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prop-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 30,
+      "target": "prop-sec-007-01.md",
+      "narrative": null,
+      "content": "Associated to a G-graded quasialgebra A is a dual quasi-Hopf algebra M1(A) (the comeasuring dual quasi-Hopf algebra) deﬁned as the free G × G-quasialgebra generated by {1, tij} where |tij| = (|i|, |j|) and |1| = (e, e), modulo the additional relations X a cijatka = X a,b cabktai · tbj. We deﬁne ∆, ǫ as ∆tij = X a tia ⊗taj, ǫ(tij) = δij extended multiplicatively, and extend φ to a linear functional φ : M1(A)⊗3 →k by φ(ti1p1 · · · tiαpα, tj1q1 · · · tjβ qβ, tk1r1 · · · tiγ pγ) = δi1p1 · · · δiαpαδj1q1 · · · δjβ qβδk1r1 · · · δiγ pγφ(|i1| · · · |iα|, |j1| · · · |jβ|, |k1| · · · |kγ|). Proof Since",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prop-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 30,
+      "target": "prop-sec-007-02.md",
+      "narrative": null,
+      "content": "If R is a quasi-bicharacter on G, the comeasuring dual quasi-bialgebra M1(A) has a natural quotient M1(R, A) with the additional relation of quasi-commutativity as a G×G- quasialgebra. Then M1(R, A) is a dual-quasitriangular dual quasi-Hopf algebra with R extended as a linear functional on M1(R, A)⊗2 by R(ti1p1 · · · tiαpα, tj1q1 · · · tjβ qβ) = δi1p1 · · · δiαpαδj1q1 · · · δjβ qβR(|i1| · · · |iα|, |j1| · · · |jβ|) Proof Explicitly, quasicommutativity as a G × G-graded algebra is (tj1q1 · · · tjβ qβ) · (ti1p1 · · · tiαpα)R(|p1| · · · |pα|, |q1| · · · |qβ|) = R(|i1| · · · |iα|, |j1| · · · |jβ|)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prop-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 30,
+      "target": "prop-sec-007-03.md",
+      "narrative": null,
+      "content": "M1 coacts on A by β : ei 7→ea ⊗tai and β is an algebra map. Proof The deﬁnition of the coaction is consistent with the relations of A: β(ei · ej) = β(ei)β(ej) = ea · eb ⊗tai · tbj = cabkek ⊗tai · tbj = cijaek ⊗tka = β(cijaea) in virtue of the relations of M1. ⊔⊓ In fact, it should be clear from the proof that the relations of M are the minimum relations such that a coaction of this form extends as an algebra map. In the case where φ is trivial we recover in fact the dual (arrows-reversed) version of the measuring bialgebra M(A, A) in [10], and this is the reason motivation behind our construct",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prop-sec-007-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 30,
+      "target": "prop-sec-007-04.md",
+      "narrative": null,
+      "content": "The diagonal quotient MD of M1 by the relations tij = 0 when i̸ = j is an associative Hopf algebra with generators ti and relations cijk(tk −titj) = 0, ∆(ti) = ti ⊗ti, ǫ(ti) = 1. It can also be viewed as a dual quasi-Hopf algebra with φ(ti1 · · · tiα, tj1 · · · tjβ, tk1 · · · tkγ) = φ(|i1| · · · |iα|, |j1| · · · |jβ|, |k1| · · · |kγ|) The diagonal quotient MD(R, A) of M1(A) is the commutative quotient of MD, and can be viewed as a dual quasitriangular dual quasi-Hopf algebra with R(ti1 · · · tiα, tj1 · · · tjβ) = R(|i1| · · · |iα|, |j1| · · · |jβ|). Proof This is elementary. The quasi-associat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prop-sec-007-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 30,
+      "target": "prop-sec-007-05.md",
+      "narrative": null,
+      "content": "When e0 = 1 the unit of A, we deﬁne M0(A) as the quotient of M1(A) by t00 = 1 and ti0 = t0i = 0. This forms a dual quasi-Hopf algebra with relations and coproduct cijatka = cabktaitbj, cij0c = cab0taitbj, ∆tij = tia ⊗taj. Similarly, M0(R, A) remains dual quasitriangular and preserves this form. Proof We set ti0 = 0 = t0i and denote t00 = c. Note that ci0j = c0ij = δji and c000 = 1. Therefore, the relations of M1(A) become (for all labels not 0), the relations as stated, and the additional relations tijc = tij = ctij, c2 = c. In view of these latter relations, it is natural to set c = 1. Moreov",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prop-sec-007-08",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 30,
+      "target": "prop-sec-007-08.md",
+      "narrative": null,
+      "content": "When A = H the quaternion algebra over k, the comeasuring bialgebra M0(H) has generators 1 and three vectors of generators⃗tj = (tij), i = 1, 2, 3 and relations⃗ t1 ×⃗t2 =⃗t3,⃗ t1 ×⃗t1 = 0, +cyclic,⃗ ti ·⃗tj = δij. Here × is the vector cross product and · is the vector dot product. The quotient M0(R) is deﬁned by the additional relation that the generators commute. Proof We choose the standard basis (where e0 = 1 and ei, i = 1, 2, 3 have the relations ee2 = e3 and e2 = −1 and their cyclic permutations). In this case the structure constants are cijk = ǫijk, the totally antisymmetric tensor with",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Automorphism quasi-Hopf algebras",
+      "pageStart": 24,
+      "pageEnd": 30,
+      "target": "../sections/sec-007-6-automorphism-quasi-hopf-algebras.md",
+      "narrative": null,
+      "content": "Automorphism quasi-Hopf algebras\nWe return to the general setting of Section 2, where G is equipped with a 3-cocycle φ forming\na dual quasi-Hopf algebra.\nWe let A be a ﬁnite-dimensional G-graded quasi-algebra in the sense of Deﬁnition 2.3, and\nintroduce a general construction for its comeasuring or ‘automorphism’ dual quasi-Hopf algebra.\nWe let {ei} be a basis of A with homogeneous degrees, denoted |ei| = |i| ∈G. We let ei · ej =\nP\nk cijkek deﬁne the structure constants of A in this basis. Also, we consider the group G × G\nwith cocycle\nφ((a, g), (b, h), (c, f)) = φ(g, h, f)\nφ(a, b, c) .\nPropos",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prop-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "prop-sec-008-01.md",
+      "narrative": null,
+      "content": "If V is rigid then End(V ) = V ⊗V ∗becomes a G-graded quasialgebra. The product map is (v ⊗f)(w ⊗h) = v ⊗h < f, w > φ(|v|, |f|, |w||h|) φ(|f|, |w|, |h|) . Moreover, ﬁnite-dimensional representations V of a quasialgebra A are in 1-1 correspondence with quasialgebra maps A →End(V ). Proof This is proven by commuting diagrams exactly as one would prove these statements in linear algebra, only inserting the associator Φ wherever needed to change bracketing. Thus (in any monoidal category) one ﬁnds (id ⊗(ev ⊗id)) ◦(id ⊗Φ−1 V ∗,V,V ∗) ◦ΦV,V ∗,V ⊗V ∗: (V ⊗V ∗) ⊗(V ⊗V ∗) →V ⊗V ∗ as the natural product",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prop-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "prop-sec-008-02.md",
+      "narrative": null,
+      "content": "Let |i| ∈G for i = 1, · · · , n be a choice of grading function. Then the usual n × n matrices Mn with the new product (α · β)ij = X k αikβkj φ(|i|, |k|−1, |k||j|−1) φ(|k|−1, |k|, |j|−1) , ∀α, β ∈Mn form a G-graded quasialgebra Mn,φ, where |Eij| = |i||j|−1 ∈G is the degree of the usual basis element of Mn. An action of a G-graded quasialgebra in the n-dimensional vector space with grading |i| is equivalent to an algebra map ρ : A →Mn,φ. Proof The product suggested by the preceding proposition is Eij · Ekl = δj kEil φ(|i|, |j|−1, |j||l|−1) φ(|j|−1, |j|, |l|−1) , which yields the formula shown f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quasiassociative linear algebra",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "../sections/sec-008-7-quasiassociative-linear-algebra.md",
+      "narrative": null,
+      "content": "Quasiassociative linear algebra\nIn this section we use our categorical approach to octonions to provide the natural ‘quasiasso-\nciative’ setting for the basic linear algebra associated to them. We deﬁne the natural notion\nof ‘representation’. We also provide the deﬁnition of V ∗for any ﬁnite-dimensional G-graded\nvector space, and the associated endomorphism quasialgebra V ⊗V ∗. These constructions are\nthe specialization to the G-graded quasi-algebra setting of standard constructions for braided\ncategories.\nThus, the notion of representations, indeed of all linear algebra and quantum group cons",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9802116v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 33,
+      "pageEnd": 34,
+      "target": "../sections/sec-009-references.md",
+      "narrative": null,
+      "content": "[1] V.G. Drinfeld. QuasiHopf algebras. Leningrad Math. J., 1:1419–1457, 1990.\n[2] S. Majid. Foundations of Quantum Group Theory. Cambridge Univeristy Press, 1995.\n[3] S. Majid.\nTannaka-Krein theorem for quasiHopf algebras and other results.\nContemp.\nMaths, 134:219–232, 1992.\n[4] S. Mac Lane. Categories for the Working Mathematician. Springer, 1974. GTM vol. 5.\n[5] A. Joyal and R. Street. Braided monoidal categories. Mathematics Reports 86008, Mac-\nquarie University, 1986.\n[6] D.I. Gurevich and S. Majid. Braided groups of Hopf algebras obtained by twisting. Pac.\nJ. Math., 162:27–44, 1994.\n[7] S",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

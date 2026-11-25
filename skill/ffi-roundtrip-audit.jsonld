@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/ffi-roundtrip-audit.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/ffi-roundtrip-audit",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "ffi-roundtrip-audit",
+      "title": "FFI roundtrip audit",
+      "description": "Audit Python compute scripts for Python ↔ Rust ping-pong patterns — Python loops that cross the PyO3 (or `subprocess`) boundary per iteration, instead of one boundary crossing for the whole pipeline. Each occurrence forfeits typically 20-50% of wall time to FFI marshalling + Python combine overhead (empirical: ⁶Li mass-table trace was 117 s back-and-forth → 95 s all-Rust, 19% saved; the Tier 1.A landing on PR #886).",
+      "instructionsPath": "skills/local/ffi-roundtrip-audit.md",
+      "instructionLines": 321,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

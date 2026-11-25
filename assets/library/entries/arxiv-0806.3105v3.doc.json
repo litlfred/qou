@@ -1,0 +1,577 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0806.3105v3",
+  "title": "arxiv-0806.3105v3",
+  "variant": "pdf",
+  "pages": 14,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The Knot Representation",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-the-knot-representation"
+    },
+    {
+      "level": 1,
+      "title": "The Preon Representation",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-the-preon-representation"
+    },
+    {
+      "level": 1,
+      "title": "The Intepretation of SUq(2) Preons",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-the-intepretation-of-suq2-preons"
+    },
+    {
+      "level": 1,
+      "title": "Preons as Physical Particles",
+      "number": null,
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-preons-as-physical-particles"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 139,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "preons",
+          "heading": false
+        },
+        {
+          "term": "slq",
+          "heading": false
+        },
+        {
+          "term": "replicated",
+          "heading": false
+        },
+        {
+          "term": "angeles",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0806.3105v3 [hep-th] 4 Nov 2008 KNOTS AND PREONS Robert J. Finkelstein Department of Physics and Astronomy University of California, Los Angeles, CA 90095-1547 Abstract. It is shown that the four quantum trefoil solitons that are described by the irreducible representations D3/2 mm′ of the quantum algebra SLq(2) (and that may be identiﬁed with the four families of elementary fermions (e, µ, τ; νeνµντ; d, s, b;",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0806.3105v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 317,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum trefoils",
+          "heading": false
+        },
+        {
+          "term": "simplest particles",
+          "heading": false
+        },
+        {
+          "term": "cal frac",
+          "heading": false
+        },
+        {
+          "term": "elementary particles",
+          "heading": false
+        },
+        {
+          "term": "four classes",
+          "heading": false
+        },
+        {
+          "term": "proposal",
+          "heading": false
+        },
+        {
+          "term": "fermions",
+          "heading": false
+        },
+        {
+          "term": "knot",
+          "heading": false
+        }
+      ],
+      "extract": "One proposal for going beyond the standard theory of elementary particles depends on the use of the quantum groups. A particular form of this proposal, which exploits the fact that the quantum group $SL_q(2)$ is the symmetry group of the knot, has revived interest in the old speculation that the elementary particles are knots.$^{1,2,3}$ This possibility may be empirically tested by comparing the four simplest",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-the-knot-representation",
+      "number": null,
+      "title": "The Knot Representation",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 7,
+      "labelStart": "3",
+      "labelEnd": "7",
+      "words": 1066,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "array prime",
+          "heading": false
+        },
+        {
+          "term": "prime varphi",
+          "heading": false
+        },
+        {
+          "term": "frac prime",
+          "heading": false
+        },
+        {
+          "term": "varphi cal",
+          "heading": false
+        },
+        {
+          "term": "multicolumn underline",
+          "heading": false
+        },
+        {
+          "term": "rcl cal",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        }
+      ],
+      "extract": "We replace the point particles of standard theory with quantum knots by attaching to each normal mode a knot state just as one introduces spin by attaching a spin state. The knot states and the corresponding fields are defined only up to a gauge transformation and the action is required to be invariant under these gauge transformations. We assume that the kinematical quantum states of the knot are derived from the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-the-preon-representation",
+      "number": null,
+      "title": "The Preon Representation",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 12,
+      "labelStart": "7",
+      "labelEnd": "12",
+      "words": 1180,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "underline cal",
+          "heading": false
+        },
+        {
+          "term": "a-n b-n",
+          "heading": false
+        },
+        {
+          "term": "prime cal",
+          "heading": false
+        },
+        {
+          "term": "a-n d-n",
+          "heading": false
+        },
+        {
+          "term": "cal frac",
+          "heading": false
+        },
+        {
+          "term": "cal omega",
+          "heading": false
+        },
+        {
+          "term": "preon",
+          "heading": true
+        },
+        {
+          "term": "cal right",
+          "heading": false
+        }
+      ],
+      "extract": "Ignoring numerical normalization one finds by (2.1) that the four fermionic knots are represented by four monomials in the knot algebra according to Table 2: \\[ \\begin{array}{ccccc} \\underline{\\mbox{Solitons}} & \\underline{{\\cal{D}}^{N/2}_{\\frac{w}{2}\\frac{r+1}{2}}} & \\underline{{\\cal{D}}^{3/2}_{\\frac{w}{2}\\frac{r+1}{2}}} & \\underline{Q_e} & \\underline{et_0} \\\\ (e^-,\\mu^-,\\tau^-) &",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-the-intepretation-of-suq2-preons",
+      "number": null,
+      "title": "The Intepretation of SUq(2) Preons",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 179,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bar prime",
+          "heading": false
+        },
+        {
+          "term": "varphi bar",
+          "heading": false
+        },
+        {
+          "term": "array prime",
+          "heading": false
+        },
+        {
+          "term": "preons",
+          "heading": true
+        },
+        {
+          "term": "bar end",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        }
+      ],
+      "extract": "The preceding discussion is based on $SL_q(2)$. One may, however, describe the knots by $SU_q(2)$ instead of by $SL_q(2)$ if one sets \\be \\begin{array}{rcl} \\bar a &=& d \\\\ \\bar b &=& -qc \\end{array} \\ee Then the $SU_q(2)$ algebra is \\be \\left. \\begin{array}{l} ab=qba \\\\ a\\bar b=q\\bar ba \\end{array} \\right. \\quad \\left. \\begin{array}{l} a\\bar a+b\\bar b=1 \\\\ \\bar aa+q_1^2\\bar bb=1 \\end{array} \\right. \\quad b\\bar",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-preons-as-physical-particles",
+      "number": null,
+      "title": "Preons as Physical Particles",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 454,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "preons",
+          "heading": true
+        },
+        {
+          "term": "physical particles",
+          "heading": true
+        },
+        {
+          "term": "longrightarrow cal",
+          "heading": false
+        },
+        {
+          "term": "cal frac",
+          "heading": false
+        },
+        {
+          "term": "normal modes",
+          "heading": false
+        },
+        {
+          "term": "prime representation",
+          "heading": false
+        },
+        {
+          "term": "vskip",
+          "heading": false
+        },
+        {
+          "term": "finkelstein",
+          "heading": false
+        }
+      ],
+      "extract": "We have so far viewed the preons only as a simple way to describe the algebraic structure of the knot polynomials. If these preons are in fact physical particles, the following decay modes of the quarks are possible \\[ \\begin{array}{llll} {\\rm down~quarks:} & {\\cal{D}}^{3/2}_{\\frac{3}{2}-\\frac{1}{2}} \\longrightarrow {\\cal{D}}^{1/2}_{\\frac{1}{2}\\frac{1}{2}} + {\\cal{D}}^1_{1-1} & & ab^2 \\longrightarrow a+b^2 \\\\ & &",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "prime cal",
+      "heading": false
+    },
+    {
+      "term": "cal frac",
+      "heading": false
+    },
+    {
+      "term": "array prime",
+      "heading": false
+    },
+    {
+      "term": "underline cal",
+      "heading": false
+    },
+    {
+      "term": "rcl cal",
+      "heading": false
+    },
+    {
+      "term": "prime particles",
+      "heading": false
+    },
+    {
+      "term": "varphi cal",
+      "heading": false
+    },
+    {
+      "term": "bosonic preons",
+      "heading": false
+    },
+    {
+      "term": "cal right",
+      "heading": false
+    },
+    {
+      "term": "neutral preons",
+      "heading": false
+    },
+    {
+      "term": "cal omega",
+      "heading": false
+    },
+    {
+      "term": "prime end",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4",
+      "title": "8",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 5,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 6,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "4 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 6 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0806.3105v3"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/90-1-219/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "90-1-219",
+  "contains": [
+    "library/90-1-219/sections/sec-front-matter",
+    "library/90-1-219/sections/sec-000",
+    "library/90-1-219/sections/sec-001",
+    "library/90-1-219/sections/sec-002",
+    "library/90-1-219/sections/sec-003",
+    "library/90-1-219/sections/sec-004",
+    "library/90-1-219/sections/sec-005",
+    "library/90-1-219/sections/sec-006",
+    "library/90-1-219/sections/sec-007",
+    "library/90-1-219/sections/sec-008"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Quaternions and non-commutative geometry — 10 sections: Front matter; Quaternionic formulation of the Di; TST\n\n**Quaternions and non-commutative geometry**\n\n*Quaternions and Non-Commutative Geometry*\n\n18 pp, 10 sections.\n\n**Outline.** Front matter; Quaternionic formulation of the Dirac theory; TST-; Bosonic sector; XX8(dX'); § 4. Bosonic sector of Weinberg-Salam theory; 2 Bw=1/4.; Discussion; Acknowledgements; Appendix",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "90-1-219",
+    "title_source": "slug",
+    "source_file": "90-1-219.pdf",
+    "source_sha256": "c2e3f2f8946c6f84c27c4482eb5b8375ce85cc9bd63293c8ce6f41a97c10edce",
+    "pages": 18,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

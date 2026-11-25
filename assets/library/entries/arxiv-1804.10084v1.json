@@ -1,0 +1,158 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1804.10084v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1804.10084v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "We study the question whether functions of negatively dependent random variables satisfy concentration bounds, similar to functions of independent random variables. Many tools are known for functions of independent random variables --- e.g., martingales, Talagrand's inequality, the Kim-Vu inequality, and the entropy method for self-bounding functions. It is also known that Chernoff-Hoeffding bounds for (linear functions of) independent random variables generalize to negatively dependent variables, assuming a relatively weak property known as negative cylinder dependence. A natural question the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1804.10084v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Prior work",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-11-prior-work.md",
+      "narrative": null,
+      "content": "Negatively dependent random variables arise naturally in scenarios motivated by statistical physics as well as computer science. Newman studied the asymptotic behavior of ensembles of random variables under a certain notion of negative dependence, and proved a central limit theorem in this setting [@Newman84]. Panconesi and Srinivasan [@PancoSrini97] proved that random variables under the condition of *negative cylinder dependence* (see Section [\\[sec:neg-dep\\]](#sec:neg-dep){reference-type=\"ref\" reference=\"sec:neg-dep\"} for definitions) satisfy Chernoff-Hoeffding concentration bounds, just li",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1804.10084v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1804.10084v1  [math.PR]  21 Apr 2018\nConcentration of Lipschitz Functions\nof Negatively Dependent Variables\nKevin Garbe\nJan Vondr´ak\nApril 27, 2018\nAbstract\nWe explore the question whether Lipschitz functions of random variables under various forms\nof negative correlation satisfy concentration bounds similar to McDiarmid’s inequality for indepen-\ndent random variables. We prove such a concentration bound for random variables satisfying the\ncondition of negative regression, correcting an earlier proof [5].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1804.10084v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Notions of negative dependence",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-2-notions-of-negative-dependence.md",
+      "narrative": null,
+      "content": "[]{#sec:neg-dep label=\"sec:neg-dep\"}\n\nLet us survey here several notions of negative dependence and their known relationships. In this paper, we restrict attention to (correlated) Bernoulli random variables, i.e. probability measures on $\\{0,1\\}^n$.\n\n#### Pairwise Negative Correlation.\n\nThis is the weakest notion of negative dependence considered here. Variables $X_1,\\ldots,X_n$ are pairwise negatively correlated, if $$\\mathsf{Cov}[X_i,X_j] = {\\mathbb E}[X_i X_j] - {\\mathbb E}[X_i] {\\mathbb E}[X_j] \\leq 0$$ for all $i,j \\in [n]$. Pairwise negative correlation allows one to use Chebyshev's ineq",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1804.10084v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Concentration under negative regression",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-3-concentration-under-negative-regression.md",
+      "narrative": null,
+      "content": "[]{#sec:neg-reg-result label=\"sec:neg-reg-result\"}\n\nWe provide here what (we claim) is a correct proof of a previously claimed result [@DubhashiRanjan98 Proposition 31], namely a concentration bound for Lipschitz functions of random variables under the property of negative regression. In fact we improve their theorem in the sense that we do not require the assumption of monotonicity of $f$. For simplicity, we focus on the case of $1$-Lipschitz functions.\n\n::: theorem\n[]{#thm:Lipschitz-R label=\"thm:Lipschitz-R\"} Let $X_1,\\ldots,X_n$ be $\\{0,1\\}$ random variables satisfying the condition of nega",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1804.10084v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Adaptive martingale analysis",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-31-adaptive-martingale-analysis.md",
+      "narrative": null,
+      "content": "As we show in Appendix [\\[app:error\\]](#app:error){reference-type=\"ref\" reference=\"app:error\"}, it is not possible to replicate the martingale analysis of McDiarmid's inequality under negative regression, if we work with a fixed ordering of variables $X_1,\\ldots,X_n$. The problem is that a particular variable $X_1$ might have a large influence on the distribution of the remaining variables, and hence affect significantly the conditional expectation of $f$ once the value of $X_1$ is revealed.\n\nOur way around this issue is that we can choose variables *adaptively*, in order to construct a martin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1804.10084v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discussion and conclusion",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-4-discussion-and-conclusion.md",
+      "narrative": null,
+      "content": "Let us discuss briefly the notion of negative regression and how it relates to other notions of negative dependence. It is fair to say that most known examples that satisfy negative association or negative regression actually satisfy the strong Rayleigh property as well. For example, random variables arising in the context of random spanning trees, determinantal point processes and exclusion dynamics processes are in this category. However, there are ensembles of random variables satisfying negative regression and not stronger notions of negative dependence. We want to mention a few examples h",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1804.10084v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A The failure of a fixed ordering",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-006-a-the-failure-of-a-fixed-ordering.md",
+      "narrative": null,
+      "content": "The failure of a ﬁxed ordering\nHere we review brieﬂy the argument presented in [5] and why it is ﬂawed. In Proposition 31, [5]\nstates Theorem 1 under the assumption of f being monotone and Lipschitz with constant ci in\nvariable Xi; here let us assume ci = 1. The proof proceeds by deﬁning Yk = E[f(X) | X1, . . . , Xk]\n(using our notation) and claiming that this martingale has bounded diﬀerences. In the last line of\nthe proof, it is claimed that “Similarly it follows that . . . ”. However, the desired inequality does\nnot follow by the same argument, and can be false.\nExample. Consider the follow",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

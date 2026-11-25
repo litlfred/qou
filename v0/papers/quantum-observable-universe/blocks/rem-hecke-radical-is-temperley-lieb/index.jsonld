@@ -1,0 +1,42 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-hecke-radical-is-temperley-lieb",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:hecke-radical-is-temperley-lieb",
+  "kind": "remark",
+  "title": "The radical is the Temperley--Lieb ideal: $\\sum \\dim^{2}$ over the surviving blocks is $C_n$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-convention-d-kills-antisymmetriser"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-convention-d-kills-antisymmetriser",
+  "cites": [
+    "references/temperley-lieb1971",
+    "references/jones1987",
+    "references/wenzl1988",
+    "references/orellana1998",
+    "references/geck-lambropoulou-2004",
+    "references/bhmv1995",
+    "references/turaev2010",
+    "references/barrett1993",
+    "references/jimbo1986"
+  ],
+  "tags": [
+    "temperley-lieb",
+    "catalan",
+    "radical",
+    "convention-d",
+    "trace-convention"
+  ],
+  "leanRef": "qou:HeckeTemperleyLieb.TemperleyLiebTower.catalan_five",
+  "text": "hecke-radical-is-temperley-lieb.md",
+  "provenance": "authored"
+}

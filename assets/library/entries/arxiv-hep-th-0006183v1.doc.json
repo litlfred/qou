@@ -1,0 +1,896 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-th-0006183v1",
+  "title": "Fine-tuning and the Wilson renormalization group",
+  "variant": "pdf",
+  "pages": 22,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Abstract",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-abstract"
+    },
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-001-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Renormalization group ﬂow",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "2",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-2-renormalization-group-ﬂow"
+    },
+    {
+      "level": 1,
+      "title": "Eﬀective ST identity",
+      "number": "3",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-3-eﬀective-st-identity"
+    },
+    {
+      "level": 1,
+      "title": "One-loop computations",
+      "number": "4",
+      "page": 5,
+      "pageLabel": "4",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-4-one-loop-computations"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions",
+      "number": "5",
+      "page": 15,
+      "pageLabel": "14",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-005-5-conclusions"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A",
+      "number": null,
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-006-appendix-a"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 21,
+      "pageLabel": "20",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-007-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 33,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "parma",
+          "heading": false
+        },
+        {
+          "term": "bonini",
+          "heading": false
+        },
+        {
+          "term": "viale",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-th/0006183v1 23 Jun 2000 UPRF-00-04 Fine-tuning and the Wilson renormalization group M. Bonini and E. Tricarico Universit`a degli Studi di Parma and I.N.F.N., Gruppo collegato di Parma, viale delle Scienze, 43100 Parma, Italy",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-hep-th-0006183v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-abstract",
+      "number": null,
+      "title": "Abstract",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "1",
+      "words": 58,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "renormalization group",
+          "heading": false
+        },
+        {
+          "term": "slavnov-taylor",
+          "heading": false
+        },
+        {
+          "term": "non-invariant",
+          "heading": false
+        }
+      ],
+      "extract": "We use the Wilson renormalization group (RG) formulation to solve the ﬁne-tuning proce- dure needed in renormalization schemes breaking the gauge symmetry. To illustrate this method we systematically compute the non-invariant couplings of the ultraviolet action of the SU(2) pure Yang-Mills theory at one-loop order. Keywords: Renormalization group formalism, gauge theory, Slavnov-Taylor identity PACS numbers:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 554,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-invariant couplings",
+          "heading": false
+        },
+        {
+          "term": "non-invariant counterterms",
+          "heading": false
+        },
+        {
+          "term": "relevant non-invariant",
+          "heading": false
+        },
+        {
+          "term": "wilsonian eﬀective",
+          "heading": false
+        },
+        {
+          "term": "bare action",
+          "heading": false
+        },
+        {
+          "term": "ﬁne-tuning",
+          "heading": false
+        },
+        {
+          "term": "chiral fermions",
+          "heading": false
+        },
+        {
+          "term": "pure gauge",
+          "heading": false
+        }
+      ],
+      "extract": "The Wilsonian renormalization group (RG) provides the most physical framework to study general properties of quantum ﬁeld theories. In this formulation [1, 2] quantum ﬂuctuations at short distances are integrated out to give an eﬀective action for longer distances. In this approach the bare action can be though as the result of integrating out the degrees of freedom with frequencies higher than the ultraviolet (UV)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-renormalization-group-ﬂow",
+      "number": "2",
+      "title": "Renormalization group ﬂow",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 875,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wilsonian eﬀective",
+          "heading": false
+        },
+        {
+          "term": "relevant couplings",
+          "heading": false
+        },
+        {
+          "term": "eﬀective action",
+          "heading": false
+        },
+        {
+          "term": "irrelevant vertices",
+          "heading": false
+        },
+        {
+          "term": "ﬂow",
+          "heading": true
+        },
+        {
+          "term": "bare action",
+          "heading": false
+        },
+        {
+          "term": "brs",
+          "heading": false
+        },
+        {
+          "term": "ﬂow equation",
+          "heading": false
+        }
+      ],
+      "extract": "Consider the SU(2) gauge theory described by the classical Lagrangian (in the Feynman gauge) SY M = Z d4x \u001a −1 4Fµν · F µν −1 2 (∂µAµ)2 −¯c · ∂µDµc \u001b , where the gauge stress tensor and the covariant derivative are given by Fµν = ∂µAν − ∂νAµ + g Aµ ∧Aν, Dµc = ∂µc + g Aµ ∧c and we have introduced the usual scalar and external SU(2) products. This action is invariant under the BRS transformation [9] δAa µ = 1 gη Dab µ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-eﬀective-st-identity",
+      "number": "3",
+      "title": "Eﬀective ST identity",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 489,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cutoﬀeﬀective action",
+          "heading": false
+        },
+        {
+          "term": "ﬁne-tuning equations",
+          "heading": false
+        },
+        {
+          "term": "eﬀective",
+          "heading": true
+        },
+        {
+          "term": "δγi",
+          "heading": false
+        },
+        {
+          "term": "physical eﬀective",
+          "heading": false
+        },
+        {
+          "term": "δφi",
+          "heading": false
+        },
+        {
+          "term": "δφj",
+          "heading": false
+        },
+        {
+          "term": "couplings",
+          "heading": false
+        }
+      ],
+      "extract": "In the RG formulation the ST identity for the physical eﬀective action Γ[Φ, γ] ≡Γ[Φ, γ; 0, ∞] is ensured if the cutoﬀeﬀective action satisﬁes a modiﬁed ST [3]-[7]. As usual in studying 1For a generalization of this proof to gauge theories see for instance [4]. 3 ST identities, it is convenient to remove from the functional Π given in (4) the gauge ﬁxing term and introduce the Slavnov operator [13] SΠ′ = −i Z p \u0012 δ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-one-loop-computations",
+      "number": "4",
+      "title": "One-loop computations",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 15,
+      "labelStart": "4",
+      "labelEnd": "14",
+      "words": 2307,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "p2n λ2n",
+          "heading": false
+        },
+        {
+          "term": "k0λ",
+          "heading": false
+        },
+        {
+          "term": "diﬀerent cutoﬀfunctions",
+          "heading": false
+        },
+        {
+          "term": "sint",
+          "heading": false
+        },
+        {
+          "term": "one-loop",
+          "heading": true
+        },
+        {
+          "term": "brs",
+          "heading": false
+        },
+        {
+          "term": "ﬁne-tuning equation",
+          "heading": false
+        },
+        {
+          "term": "sbrs",
+          "heading": false
+        }
+      ],
+      "extract": "At one-loop and at Λ = Λ0, the ﬁne-tuning equation (6) reduces to SΠ(0) Π(1)(Λ0) = −ˆ∆(1) Γ (Λ0) , (8) 4 where the local functional Π(1)(Λ0) ≡Π(1)[Φ, γ; Λ0] contains the relevant monomials given in (5) (as discussed in the previous section its irrelevant contributions vanish as Λ0 →∞ and therefore can be omitted in the calculations performed in this section). This functional can be split into two contributions 2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-conclusions",
+      "number": "5",
+      "title": "Conclusions",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 731,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ﬁne-tuning procedure",
+          "heading": false
+        },
+        {
+          "term": "non-invariant couplings",
+          "heading": false
+        },
+        {
+          "term": "irrelevant vertices",
+          "heading": false
+        },
+        {
+          "term": "relevant vertices",
+          "heading": false
+        },
+        {
+          "term": "higher loops",
+          "heading": false
+        },
+        {
+          "term": "k0λ",
+          "heading": false
+        },
+        {
+          "term": "δ2γ",
+          "heading": false
+        },
+        {
+          "term": "chiral gauge",
+          "heading": false
+        }
+      ],
+      "extract": "Conclusions The computation presented in this paper has shown that the requirement that the physical eﬀective action satisﬁes the ST identity translates into a ﬁne-tuning equation which allows to determine the couplings of the relevant, non-invariant interactions in the bare action Π(Λ0). Once the ﬁeld normalization and the gauge coupling are ﬁxed at the physical point Λ = 0, the problem of assigning the boundary",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-appendix-a",
+      "number": null,
+      "title": "Appendix A",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 21,
+      "labelStart": "15",
+      "labelEnd": "20",
+      "words": 1182,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "k0λ",
+          "heading": false
+        },
+        {
+          "term": "graphical contribution",
+          "heading": false
+        },
+        {
+          "term": "four-vector vertex",
+          "heading": false
+        },
+        {
+          "term": "aaac",
+          "heading": false
+        },
+        {
+          "term": "µ1µ2µ",
+          "heading": false
+        },
+        {
+          "term": "tνµ2ρ",
+          "heading": false
+        },
+        {
+          "term": "permutations",
+          "heading": false
+        },
+        {
+          "term": "graph",
+          "heading": false
+        }
+      ],
+      "extract": "In this appendix we compute the various contributions to the AAAc-vertex. We ﬁrst consider in (12) the terms with γi = wµ. In this case both the contributions to the functional ¯Γ(0) given in (21) and (25) are needed to compute this vertex. The former involves the four-vector vertex given in (14) and the corresponding graphs are shown in Fig. 5. (a) (b) (c) Figure 5: Graphical contribution to the A-A-A-c-vertex of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 271,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bonini",
+          "heading": false
+        },
+        {
+          "term": "marchesini",
+          "heading": false
+        },
+        {
+          "term": "becchi",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "exact renormalization",
+          "heading": false
+        },
+        {
+          "term": "renormalization group",
+          "heading": false
+        },
+        {
+          "term": "morris",
+          "heading": false
+        }
+      ],
+      "extract": "[1] K.G. Wilson, Phys. Rev. B 4 (1971) 3174,3184; K.G. Wilson and J.G. Kogut, Phys. Rep. 12 (1974) 75. [2] J. Polchinski, Nucl. Phys. B231 (1984) 269. [3] C. Becchi, On the construction of renormalized quantum ﬁeld theory using renormal- ization group techniques, in Elementary particles, Field theory and Statistical mechan- ics, Eds. M. Bonini, G. Marchesini and E. Onofri, Parma University 1993. [4] M. Bonini, M.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "non-invariant couplings",
+      "heading": false
+    },
+    {
+      "term": "relevant couplings",
+      "heading": false
+    },
+    {
+      "term": "ﬁne-tuning equation",
+      "heading": false
+    },
+    {
+      "term": "ﬁne-tuning procedure",
+      "heading": false
+    },
+    {
+      "term": "k0λ",
+      "heading": false
+    },
+    {
+      "term": "non-invariant counterterms",
+      "heading": false
+    },
+    {
+      "term": "brs sources",
+      "heading": false
+    },
+    {
+      "term": "gauge symmetry",
+      "heading": false
+    },
+    {
+      "term": "eﬀective action",
+      "heading": false
+    },
+    {
+      "term": "irrelevant vertices",
+      "heading": false
+    },
+    {
+      "term": "physical eﬀective",
+      "heading": false
+    },
+    {
+      "term": "one-loop order",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Graphical contribution to the A-c-vertex of ˆ∆Γ. The curly and dashed line denotes the gluon and ghost ﬁeld respectively; the double lines represent the BRS source associated to the ﬁeld depicted by the top line. All momenta are incoming",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "One-loop values of the couplings σ1 and σ2 for three diﬀerent cutoﬀfunctions (r =",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Graphical contribution to the A-A-c-vertex of ˆ∆Γ",
+      "page": 10,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "One-loop values of the coupling σ3 for three diﬀerent cutoﬀfunctions (r =",
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "One-loop values of the couplings σ5 and σ6 for three diﬀerent cutoﬀfunctions (r =",
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Graphical contribution to the w-c-c-vertex of ˆ∆Γ",
+      "page": 13,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Graphical contribution to the w-c-c-A-vertex of ˆ∆Γ",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "",
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Graphical contribution to the A-A-A-c vertex of ˆ∆Γ",
+      "page": 18,
+      "pageLabel": "17",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Graphical contribution to the A-A-A-c vertex of ˆ∆Γ",
+      "page": 20,
+      "pageLabel": "19",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 8,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "7 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "3 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p21); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-th-0006183v1"
+  }
+}

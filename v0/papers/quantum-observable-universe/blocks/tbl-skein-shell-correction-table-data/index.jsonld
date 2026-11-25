@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-skein-shell-correction-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:skein-shell-correction-table-data",
+  "kind": "table",
+  "title": "Data table from rem:skein-shell-correction",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-skein-shell-correction"
+  ],
+  "tags": [
+    "extracted-table"
+  ],
+  "text": "skein-shell-correction-table-data.md",
+  "provenance": "authored"
+}

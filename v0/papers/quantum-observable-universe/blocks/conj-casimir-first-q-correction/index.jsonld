@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-casimir-first-q-correction",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:casimir-first-q-correction",
+  "kind": "conjecture",
+  "title": "First substrate correction to the Casimir force is carried by the figure-eight knot $4_1$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-casimir-epsilon-vacuum",
+    "papers/quantum-observable-universe/blocks/lem-degree-one-braid-trivial-volume"
+  ],
+  "cites": [
+    "references/casimir1948",
+    "references/lickorish1997"
+  ],
+  "tags": [
+    "tier:P",
+    "surreal-numbers",
+    "vacuum",
+    "casimir-effect",
+    "figure-eight-knot",
+    "hyperbolic-volume",
+    "skein-expansion",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.Observations.AppendixSurreals.FirstInteractingCasimirCorrection",
+  "text": "casimir-first-q-correction.md",
+  "provenance": "authored"
+}

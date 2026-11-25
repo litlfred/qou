@@ -1,0 +1,44 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-gr-qc-0407052v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-gr-qc-0407052v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 9,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:gr-qc/0407052v1  14 Jul 2004\nBlack hole entropy in Loop Quantum Gravity\nKrzysztof A. Meissner\nInstitute of Theoretical Physics, Warsaw University\nHo˙za 69, 00-681 Warsaw, Poland,\nAbstract\nWe calculate the black hole entropy in Loop Quantum Gravity as a\nfunction of the horizon area and provide the exact formula for the\nleading and sub-leading terms. By comparison with the Bekenstein–\nHawking formula we uniquely ﬁx the value of the ’quantum of area’\nin the theory.\nThe Bekenstein–Hawking formula gives the leading term in the entropy\nof the black hole in the form\nS = 1\n4\nA\nl2\nP\n(1)\nwhere lP",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-gr-qc-0407052v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-000-references.md",
+      "narrative": null,
+      "content": "[1] G. t’Hooft, Nucl. Phys. B335 (1990) 138.\n[2] L. Susskind, Some Speculations about Black Hole Entropy in String\nTheory, hep-th/9309145.\n[3] E. Halyo, A. Rajaraman, L. Susskind, Phys.Lett. B392 (1997) 319.\n[4] G.T. Horowitz, J. Polchinski, Phys.Rev. D55 (1997) 6189.\n[5] T. Damour, G. Veneziano, Nucl.Phys. B568 (2000) 93.\n[6] L. Smolin, J.Math.Phys. 36 (1995) 6417.\n9\n[7] C. Rovelli, Phys.Rev.Lett. 77 (1996) 3288.\n[8] K. Krasnov, Phys.Rev. D55 (1997) 3505.\n[9] A. Ashtekar, J. Baez, A. Corichi, K. Krasnov, Phys.Rev.Lett. 80 (1998)\n904.\n[10] A. Ashtekar, J. Baez, K. Krasnov, Adv.Theor.Math.Phys.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

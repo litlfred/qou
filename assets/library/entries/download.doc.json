@@ -1,0 +1,933 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "download",
+  "title": "Concentration of empirical distribution functions with applications to non-i.i.d. models",
+  "variant": "pdf",
+  "pages": 30,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1385",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Empirical Poincaré inequalities",
+      "number": null,
+      "page": 5,
+      "pageLabel": "1389",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-empirical-poincaré-inequalities"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem 1.1",
+      "number": null,
+      "page": 7,
+      "pageLabel": "1391",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-proof-of-theorem-11"
+    },
+    {
+      "level": 1,
+      "title": "Large deviations above the mean",
+      "number": null,
+      "page": 10,
+      "pageLabel": "1394",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-large-deviations-above-the-mean"
+    },
+    {
+      "level": 1,
+      "title": "Empirical log-Sobolev inequalities",
+      "number": null,
+      "page": 14,
+      "pageLabel": "1398",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-empirical-log-sobolev-inequalities"
+    },
+    {
+      "level": 1,
+      "title": "Local behavior of empirical distributions",
+      "number": null,
+      "page": 16,
+      "pageLabel": "1400",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-local-behavior-of-empirical-distributions"
+    },
+    {
+      "level": 1,
+      "title": "Bounds on the Kolmogorov distance. Proof of Theorem 1.2",
+      "number": null,
+      "page": 20,
+      "pageLabel": "1404",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-bounds-on-the-kolmogorov-distance-proof-of-theor"
+    },
+    {
+      "level": 1,
+      "title": "High-dimensional random matrices",
+      "number": null,
+      "page": 23,
+      "pageLabel": "1407",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-high-dimensional-random-matrices"
+    },
+    {
+      "level": 1,
+      "title": "Appendix",
+      "number": null,
+      "page": 26,
+      "pageLabel": "1410",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-appendix"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 28,
+      "pageLabel": "1412",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 28,
+      "pageLabel": "1412",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1385",
+      "labelEnd": "1385",
+      "words": 100,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "empirical distribution",
+          "heading": false
+        },
+        {
+          "term": "empirical measures",
+          "heading": false
+        },
+        {
+          "term": "sobolev inequalities",
+          "heading": false
+        },
+        {
+          "term": "logarithmic sobolev",
+          "heading": false
+        }
+      ],
+      "extract": "Bernoulli 16(4), 2010, 1385–1414 DOI: 10.3150/10-BEJ254 Concentration of empirical distribution functions with applications to non-i.i.d. models S.G. BOBKOV1 and F. GÖTZE2 1School of Mathematics, University of Minnesota, 127 Vincent Hall, 206 Church St. S.E., Minneapolis, MN 55455, USA. E-mail: bobkov@math.umn.edu 2Fakultät für Mathematik, Universität Bielefeld, Postfach 100131, 33501 Bielefeld, Germany. E-mail:",
+      "extractCut": true,
+      "blocks": [
+        "library/download/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 5,
+      "labelStart": "1385",
+      "labelEnd": "1389",
+      "words": 1867,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "empirical distribution",
+          "heading": false
+        },
+        {
+          "term": "kolmogorov distance",
+          "heading": false
+        },
+        {
+          "term": "empirical measure",
+          "heading": false
+        },
+        {
+          "term": "spectral empirical",
+          "heading": false
+        },
+        {
+          "term": "lsi",
+          "heading": false
+        },
+        {
+          "term": "poincaré-type inequality",
+          "heading": false
+        },
+        {
+          "term": "ξjk",
+          "heading": false
+        },
+        {
+          "term": "kantorovich rubinstein",
+          "heading": false
+        }
+      ],
+      "extract": "Let (X1,...,Xn) be a random vector in Rn with distribution μ. We study rates of approximation of the average marginal distribution function F(x) = EFn(x) = 1 n n \u0002 i=1 P{Xi ≤x} by the empirical distribution function Fn(x) = 1 n card{i ≤n:Xi ≤x}, x ∈R. We shall measure the distance between F and Fn by means of the (uniform) Kolmogorov metric ∥Fn −F∥= supx |Fn(x) −F(x)|, as well as by means of the L1-metric W1(Fn,F) =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-empirical-poincaré-inequalities",
+      "number": null,
+      "title": "Empirical Poincaré inequalities",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "1389",
+      "labelEnd": "1391",
+      "words": 704,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "empirical poincaré-type",
+          "heading": false
+        },
+        {
+          "term": "poincaré-type inequality",
+          "heading": false
+        },
+        {
+          "term": "dfn",
+          "heading": false
+        },
+        {
+          "term": "lipschitz",
+          "heading": false
+        },
+        {
+          "term": "norm",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite",
+          "heading": false
+        },
+        {
+          "term": "line",
+          "heading": false
+        }
+      ],
+      "extract": "We assume that the random variables X1,...,Xn have a joint distribution μ on Rn, satisfying the Poincaré-type inequality (1.1). For a bounded smooth function f on the real line, we apply it to g(x1,...,xn) = f (x1) + ··· + f (xn) n = \u0003 f dFn, (2.1) where Fn is the empirical measure, deﬁned for the ‘observations’ X1 = x1,...,Xn = xn. Since |∇g(x1,...,xn)|2 = f ′(x1)2 + ··· + f ′(xn)2 n2 = 1 n \u0003 f ′2 dFn, (2.2) we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-proof-of-theorem-11",
+      "number": null,
+      "title": "Proof of Theorem 1.1",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 10,
+      "labelStart": "1391",
+      "labelEnd": "1394",
+      "words": 893,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "logn",
+          "heading": false
+        },
+        {
+          "term": "exi",
+          "heading": false
+        },
+        {
+          "term": "argmin",
+          "heading": false
+        },
+        {
+          "term": "kantorovich",
+          "heading": false
+        }
+      ],
+      "extract": "We shall now study the concentration properties of empirical measures Fn around their mean F based on Poincaré-type inequalities. In particular, we shall prove Theorem 1.1, which provides a bound on the mean of the Kantorovich–Rubinstein distance W1(Fn,F) = \u0003 +∞ −∞ |Fn(x) −F(x)|dx. Note that it is homogeneous of order 1 with respect to the random vector (X1,...,Xn). We ﬁrst need a general observation. Lemma 3.1.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-large-deviations-above-the-mean",
+      "number": null,
+      "title": "Large deviations above the mean",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 14,
+      "labelStart": "1394",
+      "labelEnd": "1398",
+      "words": 1356,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kantorovich rubinstein",
+          "heading": false
+        },
+        {
+          "term": "poincaré-type inequality",
+          "heading": false
+        },
+        {
+          "term": "lipschitz seminorm",
+          "heading": false
+        },
+        {
+          "term": "rubinstein distance",
+          "heading": false
+        },
+        {
+          "term": "exi exj",
+          "heading": false
+        },
+        {
+          "term": "probability measures",
+          "heading": false
+        },
+        {
+          "term": "empirical measures",
+          "heading": false
+        },
+        {
+          "term": "wasserstein distance",
+          "heading": false
+        }
+      ],
+      "extract": "In addition to the upper bound on the mean of the Kantorovich–Rubinstein distance W1(Fn,F), one may wonder how to bound large deviations of W1(Fn,F) above the mean. To this end, the following general observation may be helpful. Lemma 4.1. For all points x = (x1,...,xn), x′ = (x′ 1,...,x′ n) in Rn, we have W1(Fn,F ′ n) ≤1 √n∥x −x′∥, where Fn = δx1+···+δxn n , F ′ n = δx′ 1+···+δx′n n . In other words, the canonical",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-empirical-log-sobolev-inequalities",
+      "number": null,
+      "title": "Empirical log-Sobolev inequalities",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "1398",
+      "labelEnd": "1400",
+      "words": 954,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eexp dfn",
+          "heading": false
+        },
+        {
+          "term": "inequalities",
+          "heading": true
+        },
+        {
+          "term": "empirical",
+          "heading": true
+        },
+        {
+          "term": "log-sobolev",
+          "heading": true
+        },
+        {
+          "term": "sobolev inequalities",
+          "heading": false
+        },
+        {
+          "term": "log-sobolev inequality",
+          "heading": false
+        },
+        {
+          "term": "logarithmic sobolev",
+          "heading": false
+        },
+        {
+          "term": "empirical measures",
+          "heading": false
+        }
+      ],
+      "extract": "As before, let (X1,...,Xn) be a random vector in Rn with joint distribution μ. Similarly to Proposition 2.1, now using a log-Sobolev inequality for μ, we arrive at the following ‘empirical’ log-Sobolev inequality. Proposition 5.1. Under LSI(σ 2), for any bounded, smooth function f on R, Entμ \u000e\u0005\u0003 f dFn \u00062\u000f ≤2σ 2 n \u0003 f ′2 dF. In analogy with Poincaré-type inequalities, one may also develop reﬁned applications to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-local-behavior-of-empirical-distributions",
+      "number": null,
+      "title": "Local behavior of empirical distributions",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 20,
+      "labelStart": "1400",
+      "labelEnd": "1404",
+      "words": 1236,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "operators ptf",
+          "heading": false
+        },
+        {
+          "term": "logeet",
+          "heading": false
+        },
+        {
+          "term": "supremum-convolution operators",
+          "heading": false
+        },
+        {
+          "term": "lsi",
+          "heading": false
+        },
+        {
+          "term": "indicator function",
+          "heading": false
+        },
+        {
+          "term": "lnf",
+          "heading": false
+        },
+        {
+          "term": "absolute constant",
+          "heading": false
+        },
+        {
+          "term": "distribution function",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we develop a few direct applications of Proposition 5.4 to the behavior of em- pirical distribution functions Fn(x) at a ﬁxed point. Such functionals are linear, that is, of the form \u0004 f dFn, corresponding to the indicator function of the half-axis f = (−∞,x]. When f is smooth, Proposition 5.2 tells us that the deviations of Lnf = \u0004 f dFn − \u0004 f dF are of order σ/√n. In the general non-smooth case,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-bounds-on-the-kolmogorov-distance-proof-of-theor",
+      "number": null,
+      "title": "Bounds on the Kolmogorov distance. Proof of Theorem 1.2",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 23,
+      "labelStart": "1404",
+      "labelEnd": "1407",
+      "words": 945,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lsi",
+          "heading": false
+        },
+        {
+          "term": "max",
+          "heading": false
+        },
+        {
+          "term": "theorem",
+          "heading": true
+        },
+        {
+          "term": "bounds",
+          "heading": true
+        },
+        {
+          "term": "derive",
+          "heading": false
+        },
+        {
+          "term": "inequalities",
+          "heading": false
+        },
+        {
+          "term": "exp",
+          "heading": false
+        },
+        {
+          "term": "scheme",
+          "heading": false
+        }
+      ],
+      "extract": "As before, let Fn denote the empirical measure associated with observations x1,...,xn and F = EFn their mean with respect to a given probability measure μ on Rn. In this section, we derive uniform bounds on Fn(x) −F(x), based on Proposition 6.3, and thus prove Theorem 1.2. For applications to the matrix scheme, we shall also replace F, which may be difﬁcult to determine, by the well-behaving limit law G (with the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-high-dimensional-random-matrices",
+      "number": null,
+      "title": "High-dimensional random matrices",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 26,
+      "labelStart": "1407",
+      "labelEnd": "1410",
+      "words": 1231,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "let ξjk",
+          "heading": false
+        },
+        {
+          "term": "eξjk",
+          "heading": false
+        },
+        {
+          "term": "eet",
+          "heading": false
+        },
+        {
+          "term": "var",
+          "heading": false
+        },
+        {
+          "term": "interval",
+          "heading": false
+        },
+        {
+          "term": "bound",
+          "heading": false
+        },
+        {
+          "term": "probability",
+          "heading": false
+        },
+        {
+          "term": "random",
+          "heading": true
+        }
+      ],
+      "extract": "We shall now apply the bounds obtained in Theorems 1.1 and 7.1, to the case of the spectral empirical distributions. Let {ξjk}1≤j≤k≤n be a family of independent random variables on some probability space with mean Eξjk = 0 and variance Var(ξjk) = 1. Put ξjk = ξkj for 1 ≤k < j ≤n and introduce a symmetric n × n random matrix, \u0011 = 1 √n ⎛ ⎜⎜⎝ ξ11 ξ12 ··· ξ1n ξ21 ξ22 ··· ξ2n ... ... ... ... ξn1 ξn2 ··· ξnn ⎞ ⎟⎟⎠.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-appendix",
+      "number": null,
+      "title": "Appendix",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 28,
+      "labelStart": "1410",
+      "labelEnd": "1412",
+      "words": 675,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "poincaré-type inequalities",
+          "heading": false
+        },
+        {
+          "term": "probability measure",
+          "heading": false
+        },
+        {
+          "term": "lsi",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite constant",
+          "heading": false
+        },
+        {
+          "term": "hardy-type",
+          "heading": false
+        },
+        {
+          "term": "lip",
+          "heading": false
+        },
+        {
+          "term": "some ﬁnite",
+          "heading": false
+        },
+        {
+          "term": "continuous component",
+          "heading": false
+        }
+      ],
+      "extract": "Here we recall some facts about Poincaré-type and log-Sobolev inequalities. While Lemmas 2.2 and 5.3 list some of their consequences, one might wonder which measures actually satisfy these analytic inequalities. Many interesting examples can be constructed with the help of the following elementary proposition. Proposition A1. Let μ1,...,μN be probability measures on R satisfying PI(σ 2) (resp., LSI(σ 2)). The image",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 28,
+      "labelStart": "1412",
+      "labelEnd": "1412",
+      "words": 11,
+      "summary": null,
+      "keywords": [],
+      "extract": "This research was supported by NSF Grants DMS-07-06866 and SFB 701.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 30,
+      "labelStart": "1412",
+      "labelEnd": "1414",
+      "words": 951,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sobolev inequalities",
+          "heading": false
+        },
+        {
+          "term": "studia math",
+          "heading": false
+        },
+        {
+          "term": "probab",
+          "heading": false
+        },
+        {
+          "term": "bobkov",
+          "heading": false
+        },
+        {
+          "term": "götze",
+          "heading": false
+        },
+        {
+          "term": "deviation inequalities",
+          "heading": false
+        },
+        {
+          "term": "multidimensional empirical",
+          "heading": false
+        },
+        {
+          "term": "empirical processes",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Ball, K. (1988). Logarithmically concave functions and sections of convex sets in Rn. Studia Math. 88 69–84. MR0932007 [2] Bhatria, R. (1997). Matrix Analysis. Graduate Texts in Mathematics 169. New York: Springer. MR1477662 [3] Bobkov, S.G. (1999). Remarks on the Gromov–Milman inequality. Vestn. Syktyvkar. Univ. Ser. 1 Mat. Mekh. Inform. 3 15–22. MR1716649 [4] Bobkov, S.G. (1999). Isoperimetric and analytic",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "empirical poincaré-type",
+      "heading": false
+    },
+    {
+      "term": "poincaré-type inequalities",
+      "heading": false
+    },
+    {
+      "term": "empirical measures",
+      "heading": false
+    },
+    {
+      "term": "empirical distribution",
+      "heading": false
+    },
+    {
+      "term": "poincaré-type inequality",
+      "heading": false
+    },
+    {
+      "term": "sobolev inequalities",
+      "heading": false
+    },
+    {
+      "term": "empirical spectral",
+      "heading": false
+    },
+    {
+      "term": "logarithmic sobolev",
+      "heading": false
+    },
+    {
+      "term": "probability measures",
+      "heading": false
+    },
+    {
+      "term": "multidimensional empirical",
+      "heading": false
+    },
+    {
+      "term": "empirical processes",
+      "heading": false
+    },
+    {
+      "term": "log-sobolev inequalities",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1385",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "1386",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "1387",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "1388",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "1389",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "1390",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "1391",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "1392",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "1393",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "1394",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "1395",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "1396",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "1397",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "1398",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "1399",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "1400",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "1401",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "1402",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "1403",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "1404",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "1405",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "1406",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "1407",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "1408",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "1409",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "1410",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "1411",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "1412",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 29,
+      "label": "1413",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "1414",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p28); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/download"
+  }
+}

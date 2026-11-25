@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/gn2",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "SOME RESULTS ABOUT THE KAUFFMAN BRACKET SKEIN MODULE OF THE TWIST KNOT EXTERIOR",
+      "dcterms:creator": [
+        "GELCA, R˘AZVAN",
+        "NAGASATO, FUMIKAZU"
+      ],
+      "dcterms:abstract": "In this paper, we list in explicit form the factoring relations of the Kauﬀman bracket skein module (KBSM for short) of a twist knot exterior. This is done using curves decorated by characters of irreducible SL(2, C)-representations. In the process, we exhibit a relation which holds in the KBSM of the knot exterior, called the minimal relation. In the ﬁnal section we prove that, when specializing the variable of the Kauﬀman bracket at t = −1, the minimal relation becomes the deﬁning polynomial of the SL(2, C)-character variety of the twist knot. 1. Motivation and background 1.1. Motivation. The Kauﬀman bracket skein module of a 3-manifold was intro- duced by J. Przyticki as a natural generalization of the Kauﬀman bracket to general 3-manifolds. It was later linked to the character variety of SL(2, C)-representations of the fundamental group of the manifold [B1], [PS]. In this perspective, Kauﬀman bracket skein modules were used to give an alternate description of the A-polynomial of Cooper, Culler, Gillet, Long, and Shalen, and to generalize it to a noncommuta- tive setting [FGL]. The computation of the noncommutative generalization of the A-polynomial of a knot relies heavily on the good understanding of the skein module of the knot complement. The noncommutative generalization of the A-polynomial was computed for the unknot in [FGL], trefoil knot in [G1], partially for (2, 2p + 1)-torus knots in [GS1], and for the ﬁgure-eight knot in [GS2]. In those papers, and also in [G2] this knot invariant was linked to the Jones polynomial. This relation led to new developments in the study of colored Jones polynomials [GL]. Let us also point out that such computations yield an alternative way of ﬁnding the classical A-polynomial, as it was discussed in [N]. The computation itself is done in three stages. The ﬁrst stage consists of the understanding of the Kauﬀman bracket skein module of the knot complement. As knot complements can be obtained by attaching 2-handles to a hand",
+      "dcterms:source": "library/gn2/manifest.jsonld",
+      "dcterms:hasVersion": "library/gn2"
+    }
+  ]
+}

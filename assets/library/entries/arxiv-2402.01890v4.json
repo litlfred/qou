@@ -1,0 +1,332 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2402.01890v4",
+  "blocks": [
+    {
+      "id": "library/arxiv-2402.01890v4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "The {\\it partition algebra} $ \\ParAlg  $ arose around thirty years ago \nin the second named author's work on the Potts model in statistical mechanics, \nsee \\cite{PMartin}. \nSince then it has been understood that $ \\ParAlg $ is in fact connected \nwith many other areas of mathematics\nand physics, including Deligne's category $ \\underline{\\rm Rep}(S_t) $, \nthe Kronecker problem in the representation theory of \nthe symmetric group, Schur algebras, and symmetric function theory, see for example\n\\cite{BOdV}, \\cite{CO}, \\cite{MartinWoodcock}, \\cite{OrellanaZabrocki}.\n\n\\medskip\nBy definition, $ \\ParAl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2402.01890v4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "On the spherical partition algebra\nKatherine Orme˜no Bast´ıas∗1, Paul Martin†2, and Steen Ryom-Hansen‡3\n1Instituto de Matem´aticas, Universidad de Talca, Chile\n2School of Mathematics, Leeds University, UK\n3Instituto de Matem´aticas, Universidad de Talca, Chile\nAbstract\nFor k ∈N we introduce an idempotent subalgebra, the spherical partition algebra SPk, of the partition\nalgebra Pk, that we define using an embedding associated with the trivial representation of the symmetric group\nSk. We determine a basis for SPk, and this provides a combinatorial interpretation of the dimension of SPk\ninvolving",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2402.01890v4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basic notation",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-basic-notation.md",
+      "narrative": null,
+      "content": "to be used throughout the paper. This concerns integer partitions, Young tableaux and other concepts related to",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2402.01890v4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bipartite partitions",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-bipartite-partitions.md",
+      "narrative": null,
+      "content": "and introduce the corresponding diagrammatic representations. For b ∈BiPark, we further recall the lexicographic\nnormal form N(b) and Garsia and Gessel’s normal form GG(b) from [23]. In section 4 we recall the partition algebra\nPk and introduce the spherical partition algebra SPk, the main protagonist of our paper. In section 5 we show that\nrkC[x]SPk = bpk, by constructing a concrete basis for SPk. This uses diagrammatic arguments involving the normal\nform N(b) from section 3. In section 6 we construct commuting actions of SPk(n) and CSn on SkVn and show\nthat they satisfy a double centralizer",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2402.01890v4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The partition algebra and the spherical partition algebra",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-the-partition-algebra-and-the-spherical-partitio.md",
+      "narrative": null,
+      "content": "\\label{The partition algebra}\nWe next recall the partition algebra $ \\ParAlg$; it was \nintroduced by the second named author via considerations\nin statistical mechanics, see \\cite{PMartin}.\nLet $ \\SetPar_k $ be the set of set partitions on $ \\{ 1,2 \\ldots, k \\} $, \nthat is the set of equivalence relations\n$ d $ on $ \\{ 1,2 \\ldots, k \\}$. For even subscript $ 2 k $ we\nshall usually think of $ \\SetPar_{2k} $ as set partitions on $ \\{ 1,2 \\ldots, k \\} \\cup \n\\{ 1^{\\prime},2^{\\prime} \\ldots, k^{\\prime} \\}$. \nIf $ d \\in \\SetPar_{k} $ we\nwrite $ d = \\{ d_1, d_2, \\ldots, d_a   \\} $ where the $ d_i $'s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2402.01890v4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rank of the Spherical Partition Algebra",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-rank-of-the-spherical-partition-algebra.md",
+      "narrative": null,
+      "content": "\\label{Rank of the}\nAs a $ \\CC[x]$-module $ \\SpheAlg $ is automatically free,\nsince $ \\CC[x]$ is a PID \nand $ \\SpheAlg $ is \na submodule of the free $ \\CC[x]$-module $ \\ParAlg $, and hence torsion-free. \nOur first task is to determine the rank of $ \\SpheAlg $. \n\n\\medskip\nFor this, we first observe that any diagrammatic\nrepresentation of $ b \\in \\BiPar_k $ may be viewed \nas an element of \n$\\SetPar_{2k} $. For example, for $ b  $ as in \\eqref{dib3}, \nand hence $ \\norm(b) $ as in \\eqref{dib11}, we have\n\\begin{equation}\nb = \\raisebox{-.45\\height}{\\includegraphics[scale=0.8]{dib12.pdf}}, \\, \\, \\,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2402.01890v4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Schur-Weyl duality for SP k(n)",
+      "pageStart": 9,
+      "pageEnd": 15,
+      "target": "../sections/sec-005-schur-weyl-duality-for-sp-kn.md",
+      "narrative": null,
+      "content": "\\label{Schur-Weyl duality}\nIn this section we study the specialized spherical partition algebra \n$\\SpheAlg(n)$, where $ n \\in \\N$. Our main result\n\nis a double centralizer property\ninvolving $\\SpheAlg(n)$ and $ \\Si_n $, \nboth acting on the symmetric power $ S^{k} V_n $ where $ V_n$ is a $\\CC $-vector space of dimension \n$ n $. It is an analogue of Schur-Weyl duality, see \\cite{Schur}, \\cite{Weyl}. \n\n\n\n\\medskip\nFix a basis $ \\{ v_1, v_2, \\ldots, v_n \\} $ for $ V_n$. We consider $ V_n $ as a left $ \\CC \\Si_n $-module\nvia $ \\sigma v_i = v_{ \\sigma(i)} $ for $ \\sigma \\in \\Si_n $.\nLet $ V_n^{\\otime",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2402.01890v4/blocks/cor-sec-006-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 22,
+      "target": "cor-sec-006-05.md",
+      "narrative": null,
+      "content": "With the above notation we have e,Ax(A) 4 0 if and only if A € Mone",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2402.01890v4/blocks/cor-sec-006-08",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 22,
+      "target": "cor-sec-006-08.md",
+      "narrative": null,
+      "content": "Suppose that t € {1,2,...,2k—2}. Then SP;,(t) is quasi-hereditary on the poset A* modules {e,A(A) | € AE}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2402.01890v4/blocks/def-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 22,
+      "target": "def-sec-006-01.md",
+      "narrative": null,
+      "content": "Suppose that A is a k-algebra over the domain k. Suppose moreover that (Λ, ≤) is a poset such that for each λ ∈Λ there is a finite set T(λ) and elements Cst ∈A such that C = {Cst | λ ∈Λ and s, t ∈T(λ)} (7.1) is a k-basis for A. Then the pair (C, Λ) is called a cellular basis for A if (i) The k-linear map ∗: A →A determined by (Cst)∗= Cts for all λ ∈Λ and s, t ∈T(λ) is an algebra anti-automorphism of A. (ii) For any λ ∈Λ, t ∈T(λ) and a ∈A there exist elements rasu ∈k such that for all s ∈T(λ) aCst ≡ X u∈T (λ) rasuCut mod A>λ (7.2) where A>λ is the free k-submodule of A, given by {Cuv | µ ∈Λ, µ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2402.01890v4/blocks/ex-sec-006-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 22,
+      "target": "ex-sec-006-02.md",
+      "narrative": null,
+      "content": "For the partitions (k) and (1*) in A* we get via (7.10) that dim A,(k) = dim A,(1*) = 1 and so in particular A,(k) and A;(1*) are simple P;,(¢)-modules. Suppose that n > 2k such that P;,(n) is semisimple by [33]. Then explicit expressions for the primitive idempotents in P;,(n) associated with A,(k) and A;,(1*) were determined in [6] and [11]. In the notation of [11], these idempotents are the elements Quasi; and Alt, of Pi.(n).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2402.01890v4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cellularity of SP k(t)",
+      "pageStart": 15,
+      "pageEnd": 22,
+      "target": "../sections/sec-006-cellularity-of-sp-kt.md",
+      "narrative": null,
+      "content": "In this section we initiate the study of the representation theory of SPk(t), for arbitrary t ∈C.\nIt was shown in [33] that Pk(t) is semisimple if and only if t /∈{0, 1, 2, . . . , 2k −2}. This gives us immediately\nthe following Theorem.\nTheorem 8. Suppose that t /∈{0, 1, 2, . . . , 2k −2}. Then SPk(t) is a semisimple algebra.\nProof:\nLet Jk and SJ k be the Jacobson radicals for Pk(t) and SPk(t), respectively. Then, by definition, a ∈Jk\nif and only if aL = 0 for all irreducible Pk(t)-modules, and similarly for SJ k.\nSince t /∈{0, 1, 2, . . . , 2k −2} we have that Pk(t) is semisimple, which by d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2402.01890v4/blocks/thm-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 22,
+      "target": "thm-sec-006-03.md",
+      "narrative": null,
+      "content": "The spherical partition algebra SP;,(t) is cellular on the poset A®. The cell modules for SP,(t) are fe, Ax (A) | A € A*}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2402.01890v4/blocks/thm-sec-006-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 22,
+      "target": "thm-sec-006-04.md",
+      "narrative": null,
+      "content": "a) Let \\ € Par; C A*. Then the set By = {ty,5. |v € Par; forl <i <k such that U(v) € Par, s € SStd(A, V(v)), pw € Parg_i} (7.16) is a cellular basis for e,A,(A).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2402.01890v4/blocks/thm-sec-006-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 22,
+      "target": "thm-sec-006-06.md",
+      "narrative": null,
+      "content": "Suppose that t ¢ {0,1,2,...,2k — 2}. Then SPx(t) is semisimple and {exAg(A)|A € AS, } is a complete set of representatives for the isomorphism classes of irreducible SP;,(t)-modules.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2402.01890v4/blocks/thm-sec-006-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 22,
+      "target": "thm-sec-006-07.md",
+      "narrative": null,
+      "content": "A is quasi-hereditary if and only if (-,-), #0 for allX EA.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2402.01890v4/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The decomposition numbers for SP k(n) when SP k(n) is non-semisimple.",
+      "pageStart": 22,
+      "pageEnd": 24,
+      "target": "../sections/sec-007-the-decomposition-numbers-for-sp-kn-when-sp-kn-i.md",
+      "narrative": null,
+      "content": "\\label{decompositionnumbers}\nIn this section we shall use the results of the previous sections to determine the decomposition numbers for $ \\SpheAlg(n) $ when $ \\SpheAlg(n) $ is\nquasi-hereditary and non-semisimple, that is \nwhen $ n \\in \\{1,2,\\ldots, 2k-2\\} $. \n\n\\medskip\nOur arguments depend crucially on \\cite{PMartin1} in which the decomposition numbers for $  \\ParAlg(n)$ are determined.\nThe results in \\cite{PMartin1} are formulated in terms of the notion of {\\it $n$-pairs of partitions}, which we need to explain.\nFor this, let $ \\lambda \\in \\Par_l $ and let $ u \\in  \\lambda $ be the $(i,j)^{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2402.01890v4/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tilting modules for P k(n) and SP k(n)",
+      "pageStart": 24,
+      "pageEnd": 27,
+      "target": "../sections/sec-008-tilting-modules-for-p-kn-and-sp-kn.md",
+      "narrative": null,
+      "content": "We already saw that Pk(n) are quasi-hereditary algebras when n̸ = 0 and therefore, in particular, they are endowed\nwith families of tilting modules, see the appendix to [15]. In this section we take the opportunity to describe the\nstructure of these tilting modules, using standard arguments from the theory of quasi-hereditary algebras. We\nobserve that the same arguments also provide us with a description of the tilting modules for SPk(n).\nWe assume n ∈{1, 2, . . . , 2k −2} in which case Pk(n), as we already saw, is non-semisimple quasi-hereditary on\nthe poset Λk defined in (7.4). Corresponding",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

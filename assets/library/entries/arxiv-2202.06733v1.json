@@ -1,0 +1,365 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2202.06733v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2202.06733v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some recent results for SU(3) and Octonions within the Geometric Algebra approach to the fundamental forces of nature",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-some-recent-results-for-su3-and-octonions-within.md",
+      "narrative": null,
+      "content": "Geometric Algebra approach to the fundamental forces of nature\nAnthony Lasenby*1,2\n1Astrophysics Group, Cavendish Laboratory,\nUniversity of Cambridge, United Kingdom\n2Kavli Institute for Cosmology, University\nof Cambridge, United Kingdom\nCorrespondence\n*Anthony N. Lasenby, Astrophysics Group,\nCavendish Laboratory, JJ Thomson Avenue,\nCambridge, CB3 0HE, Untited Kingdom.\nEmail: a.n.lasenby@mrao.cam.ac.uk",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.06733v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Abstract",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-001-abstract.md",
+      "narrative": null,
+      "content": "Diﬀerent ways of representing the group 푆푈(3) within a Geometric Algebra\napproach are explored. As part of this we consider characteristic multivectors for\n푆푈(3), and how these are linked with decomposition of generators into commut-\ning bivectors. The setting for this work is within a 6d Euclidean Cliﬀord Algebra.\nWe then go on to consider whether the fundamental forces of particle physics might\narise from symmetry considerations in just the 4d geometric algebra of spacetime —\nthe STA. As part of this, a representation of 푆푈(3) is found wholly within the STA,\ninvolving preservation of a bivec",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.06733v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-002-1-introduction.md",
+      "narrative": null,
+      "content": "\\label{sec1}\n\nGeometric algebra may be a very good way of understanding where the symmetries underlying the standard model of particle physics come from. It is worthwhile seeking to understand this, since it may expose an underlying geometric content which can help shape our ideas about where extensions to the standard model can be sought, and perhaps how it may be unified with gravity.\n\nIn this contribution we discuss aspects of the application of GA to the strong force, in particular the $SU(3)$ colour forces, using initially an approach stemming from the exploration of characteristic multiv",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.06733v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Received <day> <Month>, <year>;\nRevised <day> <Month>, <year>;\nAccepted <day> <Month>, <year>\nDOI: xxx/xxxx\nARTICLE TYPE",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.06733v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Characteristic multivectors and SU(3)",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-003-2-characteristic-multivectors-and-su3.md",
+      "narrative": null,
+      "content": "\\label{sect:first-su3}\n\nIn a paper also in these proceedings, Lasenby \\etal\\cite{lasenby-char-multi} discuss the role of `characteristic multivectors' in finding the rotor that corresponds to the finite rotation from one frame of vectors to another. \n\nHere, where we are concerned overall with a {\\em particle physics} context, we want to start by looking at how characteristic multivectors relate to the {\\em infinitesimal generators} that correspond to a generalised rotation. This will enable us to make contact with recent developments in the decomposition of bivectors into sums of mutually comm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.06733v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Characteristic Multivectors",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-004-21-characteristic-multivectors.md",
+      "narrative": null,
+      "content": "\\label{sect:char-mult}\n\nThe essential objects here are the {\\em simplicial derivatives}\\cite{hestenessobczyk}. If $f$ is a vector-valued linear function of a vector $a$ living in an $m$-dimensional space, $V_m$, and the output $f(a)$ lives in the same space (the simplest case) then we can define the $r$th simplicial derivative of $f$ as follows.\n\nWe let $\\{a_k\\}$, $k=1,\\ldots,m$ be a {\\em frame} for the space and $\\{a^k\\}$ its reciprocal frame, which is defined by the requirement $a^i \\dt a_j= \\delta^i_j$ for all $i$, $j$, and where $\\delta^i_j$ is the Kronecker delta. We further define $b_k=f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.06733v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The characteristic polynomial and the Cayley-Hamilton theorem",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-005-22-the-characteristic-polynomial-and-the-cayley.md",
+      "narrative": null,
+      "content": "\\label{sect:cay-ham}\n\nWe can now employ these definitions to look at the characteristic polynomial and {\\em Cayley-Hamilton theorem}. These use just the scalar parts of the various simplicial derivatives. As shown in Hestenes \\& Sobczyk\\cite{hestenessobczyk} Section 3-2, the characteristic polynomial is\n\n\\be\nC_f(\\lambda)=\\sum_{s=0}^{m} (-\\lambda)^{m-s} \\, \\partial_{(s)} \\!\\ast\\! f_{(s)}\n\\ee\n\nwhere $\\partial_{(0)} \\!\\ast\\! f_{(0)}$ is interpreted as 1, $\\lambda$ here is the scalar argument of the polynomial function, and the $\\ast$ means `scalar part of' the geometric product.\n\nIf $\\lambda$ is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.06733v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Application to generators of SU(3)",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-006-23-application-to-generators-of-su3.md",
+      "narrative": null,
+      "content": "As discussed above, we now want to look at the characteristic multivectors for the case of the generators of the group $SU(3)$. There has been recent attention to $SU(3)$ in a Geometric Algebra context from the work by Martin Roelfs in his thesis, and he has translated some of this into a conventional {\\em matrix} approach in the paper {\\em `Geometric invariant decomposition of $SU(3)$'}\\cite{roelfs2021geometric}. The specific GA results for an invariant commuting bivector decomposition of a generator of $SU(3)$ are given as an example in the recent paper by Roelfs and de Keninck {\\em `Graded",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.06733v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The characteristic polynomial and Cayley-Hamilton theorem for SU(3)",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-007-24-the-characteristic-polynomial-and-cayley-hami.md",
+      "narrative": null,
+      "content": "We can now employ these results to look at the characteristic polynomial and Cayley-Hamilton theorem. For the characteristic polynomial\n\n\\be\nC_f(\\lambda)=\\sum_{s=0}^{m} (-\\lambda)^{m-s} \\, \\partial_{(s)} \\!\\ast\\! f_{(s)}\n\\ee\n\nthen taking the scalar parts of the above results for $f(a)=B\\dt a$, we find\n\n\\be\nC_f(\\lambda)=\\textstyle{\\frac{1}{64}}\\det^2(M) + \\textstyle{\\frac{1}{16}}|B|^4 \\lambda^2 +\\half|B|^2\\lambda^4+\\lambda^6\n\\ee\n\n\nFor the Cayley-Hamilton theorem, i.e.\\ that a linear function satisfies its own characteristic equation, we should find\n\n\\be\n\\sum_{s=0}^{m} (-1)^{m-s} \\, \\partial_{(s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.06733v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "GA and the forces of nature",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-008-3-ga-and-the-forces-of-nature.md",
+      "narrative": null,
+      "content": "As expressed in the talk at GAME2020 (\\url{https://www.youtube.com/watch?v=m7v2IUJtC3g&t=7s}), a particularly interesting question for someone working with GA in Physics, is whether the Spacetime Algebra (STA), is sufficient for representing and deriving {\\em all} the forces of nature.\n\nIt is clear that electromagnetism and gravity fit well into this STA context (see e.g.\\ the paper \\alert{Gravity, gauge theories and geometric algebra}\\cite{1998RSPTA.356..487L}) but what about electroweak and strong forces?\n\nFor electroweak, David Hestenes\\cite{1982FoPh...12..153H}, Antony Lewis (in unpublishe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.06733v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Strong forces",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-009-31-strong-forces.md",
+      "narrative": null,
+      "content": "\\label{sect:strong-forces}\n\nBut how about \\alert{Strong forces}?\n\nWe know the group we want here is $SU(3)$, but the mathematics of $SU(3)$ we were discussing just now, in either the approach given in the previous section, or Martin Roelf's version, is set in a 6d Euclidean space, in which we employ the `Lie groups as spin groups' approach in order to represent the action of unitary groups of order $N$ in a space of order $2N$. There are now two developments relative to this, which I want to talk about.\n\nThe first is earlier work (discussed in the talk at GAME2020) on how we can incorporate th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.06733v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Octonions and the STA",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-010-4-octonions-and-the-sta.md",
+      "narrative": null,
+      "content": "There are still several further aspects that are relevant for representing the $SU(3)$ aspect of strong forces, and in particular something we have not discussed here is that the $\\psi=\\psi(B)$ recipe for allowing the spacetime Dirac wavefunction to respond to the internal colour forces needs to be `self-dual', i.e.\\ we need $\\psi(IB)=I\\psi(B)$, where $I$ is the spacetime pseudoscalar. Nevertheless, it seems very likely overall that what we need can be done wholly with STA entities. \nHowever, such an approach deals only with one generation of particles and only with $SU(3)$ and not the other g",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.06733v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Explicit assignment of octonion units to STA elements",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-011-41-explicit-assignment-of-octonion-units-to-sta.md",
+      "narrative": null,
+      "content": "We now discuss the explicit linking of the octonion units $e_0$ through $e_7$ with the 8 elements making up Dirac spinors in the STA. The latter are the even elements of the STA, which as mentioned above, can be derived as the full geometric algebra of 3d space, via the identification $\\sigma_i = \\gamma_i \\gamma_0$, $i=1,2,3$, as illustrated in Fig.~\\ref{fig:sta-split}.\n\n\\begin{figure}\n\\begin{center}    \n\\includegraphics[width=0.7\\textwidth]{sta_split.jpg}\n\\caption{Illustration of the relation between the even elements of the STA (blue entries on the top line) and the full 3d Pauli algebra (th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.06733v1/blocks/figure-img-p010-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../images/img-p010-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2202.06733v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Octonions, the STA and particle physics",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-012-5-octonions-the-sta-and-particle-physics.md",
+      "narrative": null,
+      "content": "Now, excitingly, we can start to reinterpret what we have already discussed above for the STA approach to the strong force, as a partial piece of a larger scale project for understanding the symmetries that nature may want to use. Here is a proposal:\n\n\\begin{center}\n{\\bf Proposal:} Nature is interested in transformations that preserve the timelike part of the STA Dirac current.\n\\end{center}\n\nThis is instantiated by using octonionic multiplication to represent operations upon states, since this can preserve octonionic norms, which we have said are the same thing as $J\\dt\\go$\n\nThis is palpably w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.06733v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An identification of the SU(8) subgroup of E7 within the 64-dimensional octonionic left multiplication space",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-013-51-an-identification-of-the-su8-subgroup-of-e7-w.md",
+      "narrative": null,
+      "content": "What we will do here is consider the full space of 64 STA states we get corresponding to the distinct chains of octonion multiplication we can carry out to the left on some initial (general) STA state $\\phi$.\n\nIn seeking to interpret this in terms of a Lie algebra, we can take the operation of one state upon another as being the action of taking a {\\em commutator} with that state, and we will ask for the largest set of mutually commuting states, since we can then identify this with the {\\em Cartan subalgebra} of the group involved.\n\nThe notion of a Cartan subalgebra (CSA) may not be familiar t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.06733v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The group G2 and the representation of quarks and gluons via the STA",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "../sections/sec-014-52-the-group-g2-and-the-representation-of-quarks.md",
+      "narrative": null,
+      "content": "\\label{sect:G2-and-quarks}\n\nTurning to the other example we want to consider, the most direct way to approach this that we have found, starts from the 7 groups of 8 states each just discussed. Each group of 8 itself breaks into two groups of 4, distinguished by the mutual commutation of each of the 4 elements in a given split. One of these two subgroups (we are using `group' and `subgroup' in a non-technical way at this point, just to indicate a collection of objects) contains $e_i\\star\\phi$ and this happens for each of the 7 sets of 8, $i=1,\\ldots,7$. We label the three remaining states in th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.06733v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Future prospects",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-015-6-future-prospects.md",
+      "narrative": null,
+      "content": "So far, in particle terms, we have only considered a limited segment of the Standard Model, and there is much still to do in terms of having a complete version expressible in the STA. An interesting feature concerning this is that recently, following Furey's work,  Gording and Schmidt-May\\cite{gording2020unified} report that they have fitted the entire SM, with all three generations, into the 64-dimensional octonionic left multiplication space. This is carried out, however, using a complex $8\\times 8$ matrix approach, rather than using either Clifford algebras or octonions, and so is not immed",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2202.06733v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-016-references.md",
+      "narrative": null,
+      "content": "1. Lasenby Anthony, Lasenby Joan, Matsantonis Charalampos. Reconstructing a Rotor from Initial and Final Frames using\nCharacteristic Multivectors: with applications in Orthogonal Transformations. Mathematical Methods in the Applied\nSciences (submitted). 2022;.\n2. Roelfs Martin. Geometric invariant decomposition of SU(3). arXiv preprint arXiv:2102.11940. 2021;.\n3. Hestenes David. Space-Time Algebra. Birkhauser/Springer; 1966/2015.\n4. Furey C.. Charge quantization from a number operator. Phys. Lett. B. 2015;742:195–199.\n5. Furey N.. Three generations, two unbroken gauge symmetries, and one eight",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

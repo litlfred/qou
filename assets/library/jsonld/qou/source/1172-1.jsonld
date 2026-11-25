@@ -1,0 +1,43 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1172-1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "1172-1",
+  "contains": [
+    "library/1172-1/sections/sec-000",
+    "library/1172-1/sections/sec-001"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On a computation method for the colored Jones polynomial of doubled knots — 2 sections: Fs=E2=7k$SL\\$Ncolored Jones B?9`<0; Whitehead Mm$_L\\$Ncolored Jones B?\n\n**On a computation method for the colored Jones polynomial of doubled knots**\n\n7 pp, 2 sections.\n\n**Outline.** 1 Fs=E2=7k$SL\\$Ncolored Jones B?9`<0; 2 Whitehead Mm$_L\\$Ncolored Jones B?9`<0$H$H(\\",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "1172-1",
+    "title_source": "slug",
+    "source_file": "1172-1.pdf",
+    "source_sha256": "f067a1bfa4c60df06b0e5ae0b6e79b8cb59517295ad82d25f1f376ef88d133a9",
+    "pages": 7,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

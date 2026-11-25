@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/sandbox-egress.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/sandbox-egress",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "sandbox-egress",
+      "title": "Sandbox egress — what's open, what's blocked, and the mirror route",
+      "description": "Egress workarounds for firewalled sandboxes — github.com clones and PyPI work when a tool's own data host 403s. Route table + worked examples (mathlib, SnapPy/ptolemy). Read before declaring an external resource unreachable.",
+      "instructionsPath": "skills/local/sandbox-egress.md",
+      "instructionLines": 174,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

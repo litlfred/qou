@@ -1,0 +1,3068 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "birkhoff-generalizedriemannproblem-1913",
+  "title": "The Generalized Riemann Problem for Linear Differential Equations and the Allied Problems for Linear Difference and q-Difference Equations",
+  "variant": "pdf",
+  "pages": 49,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Contents",
+      "number": null,
+      "page": null,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "[521]",
+      "number": null,
+      "page": 2,
+      "pageLabel": "522",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "522",
+      "number": null,
+      "page": 3,
+      "pageLabel": "523",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-522"
+    },
+    {
+      "level": 2,
+      "title": "523",
+      "number": null,
+      "page": 4,
+      "pageLabel": "524",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-523"
+    },
+    {
+      "level": 2,
+      "title": "524",
+      "number": null,
+      "page": 5,
+      "pageLabel": "525",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-524"
+    },
+    {
+      "level": 2,
+      "title": "525",
+      "number": null,
+      "page": 6,
+      "pageLabel": "526",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-525"
+    },
+    {
+      "level": 2,
+      "title": "526",
+      "number": null,
+      "page": 7,
+      "pageLabel": "527",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-526"
+    },
+    {
+      "level": 2,
+      "title": "527",
+      "number": null,
+      "page": 8,
+      "pageLabel": "528",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-527"
+    },
+    {
+      "level": 2,
+      "title": "528",
+      "number": null,
+      "page": 9,
+      "pageLabel": "529",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-528"
+    },
+    {
+      "level": 2,
+      "title": "529",
+      "number": null,
+      "page": 10,
+      "pageLabel": "530",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-529"
+    },
+    {
+      "level": 2,
+      "title": "530",
+      "number": null,
+      "page": 11,
+      "pageLabel": "531",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-530"
+    },
+    {
+      "level": 2,
+      "title": "531",
+      "number": null,
+      "page": 12,
+      "pageLabel": "532",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-531"
+    },
+    {
+      "level": 2,
+      "title": "532",
+      "number": null,
+      "page": 13,
+      "pageLabel": "533",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-532"
+    },
+    {
+      "level": 2,
+      "title": "533",
+      "number": null,
+      "page": 14,
+      "pageLabel": "534",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-533"
+    },
+    {
+      "level": 2,
+      "title": "534",
+      "number": null,
+      "page": 15,
+      "pageLabel": "535",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-534"
+    },
+    {
+      "level": 2,
+      "title": "535",
+      "number": null,
+      "page": 16,
+      "pageLabel": "536",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-535"
+    },
+    {
+      "level": 2,
+      "title": "536",
+      "number": null,
+      "page": 17,
+      "pageLabel": "537",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-536"
+    },
+    {
+      "level": 2,
+      "title": "537",
+      "number": null,
+      "page": 18,
+      "pageLabel": "538",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-537"
+    },
+    {
+      "level": 2,
+      "title": "538",
+      "number": null,
+      "page": 19,
+      "pageLabel": "539",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-538"
+    },
+    {
+      "level": 2,
+      "title": "539",
+      "number": null,
+      "page": 20,
+      "pageLabel": "540",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-539"
+    },
+    {
+      "level": 2,
+      "title": "540",
+      "number": null,
+      "page": 21,
+      "pageLabel": "541",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-540"
+    },
+    {
+      "level": 2,
+      "title": "541",
+      "number": null,
+      "page": 22,
+      "pageLabel": "542",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-541"
+    },
+    {
+      "level": 2,
+      "title": "542",
+      "number": null,
+      "page": 23,
+      "pageLabel": "543",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-542"
+    },
+    {
+      "level": 2,
+      "title": "543",
+      "number": null,
+      "page": 24,
+      "pageLabel": "544",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-543"
+    },
+    {
+      "level": 2,
+      "title": "544",
+      "number": null,
+      "page": 25,
+      "pageLabel": "545",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-544"
+    },
+    {
+      "level": 2,
+      "title": "545",
+      "number": null,
+      "page": 26,
+      "pageLabel": "546",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-545"
+    },
+    {
+      "level": 2,
+      "title": "546",
+      "number": null,
+      "page": 27,
+      "pageLabel": "547",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-546"
+    },
+    {
+      "level": 2,
+      "title": "547",
+      "number": null,
+      "page": 28,
+      "pageLabel": "548",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-547"
+    },
+    {
+      "level": 2,
+      "title": "548",
+      "number": null,
+      "page": 29,
+      "pageLabel": "549",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-548"
+    },
+    {
+      "level": 2,
+      "title": "549",
+      "number": null,
+      "page": 30,
+      "pageLabel": "550",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-549"
+    },
+    {
+      "level": 2,
+      "title": "550",
+      "number": null,
+      "page": 31,
+      "pageLabel": "551",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-550"
+    },
+    {
+      "level": 2,
+      "title": "551",
+      "number": null,
+      "page": 32,
+      "pageLabel": "552",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-551"
+    },
+    {
+      "level": 2,
+      "title": "552",
+      "number": null,
+      "page": 33,
+      "pageLabel": "553",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-552"
+    },
+    {
+      "level": 2,
+      "title": "553",
+      "number": null,
+      "page": 34,
+      "pageLabel": "554",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-553"
+    },
+    {
+      "level": 2,
+      "title": "554",
+      "number": null,
+      "page": 35,
+      "pageLabel": "555",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-554"
+    },
+    {
+      "level": 2,
+      "title": "555",
+      "number": null,
+      "page": 36,
+      "pageLabel": "556",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-555"
+    },
+    {
+      "level": 2,
+      "title": "556",
+      "number": null,
+      "page": 37,
+      "pageLabel": "557",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-556"
+    },
+    {
+      "level": 2,
+      "title": "557",
+      "number": null,
+      "page": 38,
+      "pageLabel": "558",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-557"
+    },
+    {
+      "level": 2,
+      "title": "558",
+      "number": null,
+      "page": 39,
+      "pageLabel": "559",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-558"
+    },
+    {
+      "level": 2,
+      "title": "559",
+      "number": null,
+      "page": 40,
+      "pageLabel": "560",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-559"
+    },
+    {
+      "level": 2,
+      "title": "560",
+      "number": null,
+      "page": 41,
+      "pageLabel": "561",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-560"
+    },
+    {
+      "level": 2,
+      "title": "561",
+      "number": null,
+      "page": 42,
+      "pageLabel": "562",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-561"
+    },
+    {
+      "level": 2,
+      "title": "562",
+      "number": null,
+      "page": 43,
+      "pageLabel": "563",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-562"
+    },
+    {
+      "level": 2,
+      "title": "563",
+      "number": null,
+      "page": 44,
+      "pageLabel": "564",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-043-563"
+    },
+    {
+      "level": 2,
+      "title": "564",
+      "number": null,
+      "page": 45,
+      "pageLabel": "565",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-044-564"
+    },
+    {
+      "level": 2,
+      "title": "565",
+      "number": null,
+      "page": 46,
+      "pageLabel": "566",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-045-565"
+    },
+    {
+      "level": 2,
+      "title": "566",
+      "number": null,
+      "page": 47,
+      "pageLabel": "567",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-046-566"
+    },
+    {
+      "level": 2,
+      "title": "567",
+      "number": null,
+      "page": 48,
+      "pageLabel": "568",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-047-567"
+    },
+    {
+      "level": 2,
+      "title": "568",
+      "number": null,
+      "page": 49,
+      "pageLabel": "568",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-048-568"
+    },
+    {
+      "level": 1,
+      "title": "Issue Table of Contents",
+      "number": null,
+      "page": null,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Proceedings of the American Academy of Arts and Sciences, Vol. 49, No. 9 (Oct., 1913), pp. 519-568",
+      "number": null,
+      "page": null,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-proceedings-of-the-american-academy-of-arts-and"
+    },
+    {
+      "level": 3,
+      "title": "Front Matter",
+      "number": null,
+      "page": null,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "The Generalized Riemann Problem for Linear Differential Equations and the Allied Problems for Linear Difference and q-Difference Equations [pp. 521-568]",
+      "number": null,
+      "page": null,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-the-generalized-riemann-problem-for-linear-diffe"
+    },
+    {
+      "level": 3,
+      "title": "Back Matter",
+      "number": null,
+      "page": null,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-the-generalized-riemann-problem-for-linear-diffe",
+      "number": null,
+      "title": "The Generalized Riemann Problem for Linear Differential Equations and the Allied Problems for Linear Difference and q-Difference Equations [pp. 521-568]",
+      "level": 3,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "[521]",
+      "labelEnd": "[521]",
+      "words": 11,
+      "summary": null,
+      "keywords": [],
+      "extract": "Problems for Linear Difference and q-Difference Equations Author(s): George D. Birkhoff",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-proceedings-of-the-american-academy-of-arts-and",
+      "number": null,
+      "title": "Proceedings of the American Academy of Arts and Sciences, Vol. 49, No. 9 (Oct., 1913), pp. 519-568",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "[521]",
+      "labelEnd": "523",
+      "words": 448,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arts sciences",
+          "heading": true
+        },
+        {
+          "term": "american academy",
+          "heading": true
+        },
+        {
+          "term": "jstor",
+          "heading": false
+        },
+        {
+          "term": "difference equations",
+          "heading": false
+        },
+        {
+          "term": "content downloaded",
+          "heading": false
+        },
+        {
+          "term": "differential equations",
+          "heading": false
+        },
+        {
+          "term": "linear difference",
+          "heading": false
+        },
+        {
+          "term": "irregular singular",
+          "heading": false
+        }
+      ],
+      "extract": "No. 9 (Oct., 1913), pp. 521-568 Published by: American Academy of Arts & Sciences Stable URL: https://www.jstor.org/stable/20025482 JSTOR is a not-for-profit service that helps scholars, researchers, and students discover, use, and build upon a wide range of content in a trusted digital archive. We use information technology and tools to increase productivity and facilitate new forms of scholarship. For more",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-522",
+      "number": null,
+      "title": "522",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "523",
+      "labelEnd": "524",
+      "words": 362,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "plemelj",
+          "heading": false
+        },
+        {
+          "term": "classic",
+          "heading": false
+        },
+        {
+          "term": "treatment",
+          "heading": false
+        },
+        {
+          "term": "analytic",
+          "heading": false
+        },
+        {
+          "term": "curve",
+          "heading": false
+        },
+        {
+          "term": "variable",
+          "heading": false
+        }
+      ],
+      "extract": "classic form was first solved by Hilbert.4 His treatment and Plemelj's elegant completion thereof5 reposed alike upon a certain theorem whose proof was made by means of the Fredholm theory. Owing to the deep-seated analogy between linear differential and difference and g-difference equations, I have been able to apply a convenient extension of the same theorem in all cases; my proof is based on a method of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-523",
+      "number": null,
+      "title": "523",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "524",
+      "labelEnd": "525",
+      "words": 336,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ttv",
+          "heading": false
+        },
+        {
+          "term": "regular outer",
+          "heading": false
+        },
+        {
+          "term": "continua",
+          "heading": false
+        },
+        {
+          "term": "outer function",
+          "heading": false
+        },
+        {
+          "term": "inner function",
+          "heading": false
+        },
+        {
+          "term": "continuous along",
+          "heading": false
+        },
+        {
+          "term": "superscript",
+          "heading": false
+        }
+      ],
+      "extract": "points of C. These restric-, tions on a (x) ensure that we can choose regular curves Di and D2, within and without C respectively, and osculating C at the points where a (x) is not analytic (Fig. 1) in such a way that on the continua lim ited by Di, D2, we have (1) \\a{x)\\^K, a (x) ? a (x) Fig. 1. <K; in these continua a (x) is defined as the analytic extension of a (x) on C. It is possible to extend further the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-524",
+      "number": null,
+      "title": "524",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "525",
+      "labelEnd": "526",
+      "words": 317,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "continuous along",
+          "heading": false
+        },
+        {
+          "term": "maximum modulus",
+          "heading": false
+        },
+        {
+          "term": "integrand",
+          "heading": false
+        },
+        {
+          "term": "likewise",
+          "heading": false
+        },
+        {
+          "term": "approaches",
+          "heading": false
+        },
+        {
+          "term": "valid",
+          "heading": false
+        }
+      ],
+      "extract": "provided that x lies between C and C& since the function rp(x) g+(x) is analytic in the ring C, C\\ and continuous along its boundary. Thus we may write t-!a=f\"'l\"'\"t 27rV-? lJci ? ?^ The first integrand on the right-hand side is continuous in x and t, for t on C and x in the ring 0, C2 unless x ? t, when the integrand is not defined; in the neighborhood of a pair of values x = t, the integrand remains finite by (1).",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-525",
+      "number": null,
+      "title": "525",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "526",
+      "labelEnd": "527",
+      "words": 325,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "regular inner",
+          "heading": false
+        },
+        {
+          "term": "outer",
+          "heading": false
+        },
+        {
+          "term": "integrand",
+          "heading": false
+        },
+        {
+          "term": "maximum",
+          "heading": false
+        },
+        {
+          "term": "integral",
+          "heading": false
+        },
+        {
+          "term": "lies",
+          "heading": false
+        }
+      ],
+      "extract": "Now modify the contour C of integration in (4) to D;. The integrand is analytic in-¢ over the continua enclosed by C and Dj, so that the value of the integral will not thereby be altered. (It must be remem- bered that x lies without C in (4).) From this modified form of (4) we obtain (9) IP@issz | [| oat f PO alt, upon applying (8) and (1). But the two integrals which appear in the right hand member of this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-526",
+      "number": null,
+      "title": "526",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "527",
+      "labelEnd": "528",
+      "words": 368,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "matrix equations",
+          "heading": false
+        },
+        {
+          "term": "maximum",
+          "heading": false
+        },
+        {
+          "term": "along",
+          "heading": false
+        },
+        {
+          "term": "solution",
+          "heading": false
+        },
+        {
+          "term": "function",
+          "heading": false
+        },
+        {
+          "term": "pair",
+          "heading": false
+        }
+      ],
+      "extract": "and (6) likewise by (60 /- (z)+t-*(x) g-{x)a{x) = ) fr* 2tt V?1 Jc 2tt V? 1 Jc2 t ? x From these two equations there results at once (70 f+ (x) -1 (x) = r~p (x) g- (x) a (x) along C. In order to develop an inequality for the modulus of f+(x) in this case, we note that the contour C in (40 may be modified to D2. The modification yields -p(x) -dt (90 irWI^Pj f\\r-*(f)dt\\+ f 2tt ( Jd2 JCzl t ? X where L is the maximum",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-527",
+      "number": null,
+      "title": "527",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "528",
+      "labelEnd": "529",
+      "words": 400,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mth pair",
+          "heading": false
+        },
+        {
+          "term": "pm-r",
+          "heading": false
+        },
+        {
+          "term": "t-p",
+          "heading": false
+        }
+      ],
+      "extract": "for the unit matrix (%) in which d? = 1, <5# = 0 for l 9? j, and A~l(x) stands for the matrix inverse to A(x). The matrices F+{x), G+(x), F~(x), G~{x) are to be determined to satisfy (11), the first two as matrices of regular inner functions and the last two as matrices of regular outer functions. The matrix products on the right hand side are the customary matrix products, and the factors rp (x), r~p{x) stand for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-528",
+      "number": null,
+      "title": "528",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "529",
+      "labelEnd": "530",
+      "words": 444,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "maximum modulus",
+          "heading": false
+        },
+        {
+          "term": "pij",
+          "heading": false
+        },
+        {
+          "term": "inner functions",
+          "heading": false
+        },
+        {
+          "term": "converge",
+          "heading": false
+        },
+        {
+          "term": "subscript",
+          "heading": false
+        },
+        {
+          "term": "matrices",
+          "heading": false
+        },
+        {
+          "term": "along",
+          "heading": false
+        },
+        {
+          "term": "elements",
+          "heading": false
+        }
+      ],
+      "extract": "where the third subscript on the functions corresponds to the subscript on the matrix. We have already obtained a solution of an equation of the form /+ 0*0 ? /\" (x) = tp (x) qi,\\,m-i+ (x) aX;- Or) along C (compare with (7)) in the form of a definite integral. By forming the sum of f+(x) and/-(a:) for X = 1,. .,n we obtain for every I and j, elements Pij>m+ (x) and Pij^m~ (x) which form the elements of Pm+(x) and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-529",
+      "number": null,
+      "title": "529",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "530",
+      "labelEnd": "531",
+      "words": 323,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "x-c",
+          "heading": false
+        },
+        {
+          "term": "analytic along",
+          "heading": false
+        },
+        {
+          "term": "matrix equation",
+          "heading": false
+        },
+        {
+          "term": "member",
+          "heading": false
+        },
+        {
+          "term": "log",
+          "heading": false
+        },
+        {
+          "term": "zero",
+          "heading": false
+        }
+      ],
+      "extract": "The matrices F~(x), F+(x), G~(x), G+(x) thus obtained will satisfy (11), as appears from (12) by letting n become infinite. ? 4. Application to the Solution of a Single Matrix Equation. Multiply the second matrix equation (11) on the right by tp(x)A(x) and subtract it, member for member, from the first equation (11). There results (16) F+ (x) = rp (a?) [/ + 0- (x)] A (x) along C. Inasmuch as G~{x) reduces to a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-530",
+      "number": null,
+      "title": "530",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "531",
+      "labelEnd": "532",
+      "words": 336,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "continuous",
+          "heading": false
+        },
+        {
+          "term": "derivatives",
+          "heading": false
+        },
+        {
+          "term": "orders",
+          "heading": false
+        },
+        {
+          "term": "analytic",
+          "heading": false
+        },
+        {
+          "term": "elements",
+          "heading": false
+        },
+        {
+          "term": "curve",
+          "heading": false
+        }
+      ],
+      "extract": "PROCEEDINGS OF THE AMERICAN ACADEMY. ? 5. Further Properties of <p(r) and ^r(x). It is necessary for us to investigate further the nature of any solu tion <p (r), ^ (x) of (17) in the neighborhood of the curve C. In the first place, it is to be observed that at points of C where all of the elements of A(x) are analytic, the same is true of the elements of $(x) and S0f(x) ; in truth, the equation (17) shows us that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-531",
+      "number": null,
+      "title": "531",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "532",
+      "labelEnd": "533",
+      "words": 528,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "approaches limit",
+          "heading": false
+        },
+        {
+          "term": "continuous along",
+          "heading": false
+        },
+        {
+          "term": "functions analytic",
+          "heading": false
+        },
+        {
+          "term": "extended plane",
+          "heading": false
+        },
+        {
+          "term": "save",
+          "heading": false
+        },
+        {
+          "term": "row",
+          "heading": false
+        },
+        {
+          "term": "vanish",
+          "heading": false
+        },
+        {
+          "term": "pole",
+          "heading": false
+        }
+      ],
+      "extract": "If now x be made to approach a point r0 of C, and if y be taken as the foot of the normal from x to C, this term approaches a limit which is continuous along C. In fact the factor (t ? y)k/(t ? x)k remains finite for t along C, and approaches the limit 1 uniformly save in the vicinity of aro- Thus if x (and y also of course) approaches x0, dk-x^ (x)/dxk~l approaches a limit along C continuous for an arbitrary r0. A",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-532",
+      "number": null,
+      "title": "532",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "533",
+      "labelEnd": "534",
+      "words": 504,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "save",
+          "heading": false
+        },
+        {
+          "term": "along",
+          "heading": false
+        },
+        {
+          "term": "analytic",
+          "heading": false
+        },
+        {
+          "term": "zeros",
+          "heading": false
+        },
+        {
+          "term": "process",
+          "heading": false
+        },
+        {
+          "term": "point",
+          "heading": false
+        }
+      ],
+      "extract": "x ? c by one unit, without the introduction of further zeros of | $(x) | or | ^(r) | in the finite plane. An entirely similar process eliminates a zero of | ty(x) | without C, or a zero of | $(r) | and \\^(x) | along C. In consequence of the results of ? 5, if either of these functions vanishes along C, the other does also, both at least to the first order. This process may be continued so long as there remain zeros",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-533",
+      "number": null,
+      "title": "533",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "534",
+      "labelEnd": "535",
+      "words": 420,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "plemelj",
+          "heading": false
+        },
+        {
+          "term": "preliminary theorem",
+          "heading": false
+        },
+        {
+          "term": "special case",
+          "heading": false
+        },
+        {
+          "term": "hilbert",
+          "heading": false
+        },
+        {
+          "term": "restrictions",
+          "heading": false
+        },
+        {
+          "term": "suggested",
+          "heading": false
+        },
+        {
+          "term": "content",
+          "heading": false
+        },
+        {
+          "term": "analytic",
+          "heading": false
+        }
+      ],
+      "extract": "or become infinite to finite order at x = a. To obtain such a solution &(x), S^Or) it is only necessary to divide each element of <&(x), ^(x) by a suitable power of x ? a, so chosen as to make each element of these matrices analytic at x = oo ; and then to apply the normaliza tion above indicated, letting l/x ? a replace x. The curve C can also be taken to be a simply closed analytic curve which passes through x=",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-534",
+      "number": null,
+      "title": "534",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "535",
+      "labelEnd": "536",
+      "words": 457,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dlfferentlable along",
+          "heading": false
+        },
+        {
+          "term": "vanishes save",
+          "heading": false
+        },
+        {
+          "term": "nowhere vanishes",
+          "heading": false
+        },
+        {
+          "term": "analytic except",
+          "heading": false
+        },
+        {
+          "term": "either side",
+          "heading": false
+        },
+        {
+          "term": "differentiable",
+          "heading": false
+        },
+        {
+          "term": "become infinite",
+          "heading": false
+        },
+        {
+          "term": "arbitrary point",
+          "heading": false
+        }
+      ],
+      "extract": "vanish, there exists a matrix $(r) with the folloivmg properties: (1) each element of ^(x) Is analytic except along Ch. . ., Cr and at an arbitrary point x ~ a where the elements may become infinite to finite order; \\ $(x) j nowhere vanishes save possibly atx = a; (2) the elements of <i>(r) are continuous and unlimitedly dlfferentlable along each curve Ct- from either side, analytic from either side save at points",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-535",
+      "number": null,
+      "title": "535",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "536",
+      "labelEnd": "537",
+      "words": 405,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "analytic",
+          "heading": false
+        },
+        {
+          "term": "fails",
+          "heading": false
+        },
+        {
+          "term": "contact",
+          "heading": false
+        },
+        {
+          "term": "points",
+          "heading": false
+        },
+        {
+          "term": "intersection",
+          "heading": false
+        },
+        {
+          "term": "matrix",
+          "heading": false
+        },
+        {
+          "term": "conditions",
+          "heading": false
+        }
+      ],
+      "extract": "of the curves or at those points where an element of Ai (x) fails to be analytic; xi^+ U (x) = , i^_ U (x) (i = 1,. . ., k), ( j ,4m+1+ U(x)*k(x) = [,4m+1- ?(x)*k{x)] Ak+1(xk?. The condition (30 necessitates that U (x) is analytic at any point of d (i = 1,. . ., k) and throughout the extended plane save at a and at points of Ck+i. The condition (30 gives us in addition *4m+i+ U(x) = [xJ^+r",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-536",
+      "number": null,
+      "title": "536",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "537",
+      "labelEnd": "538",
+      "words": 363,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cauchy matrices",
+          "heading": false
+        },
+        {
+          "term": "linear transformation",
+          "heading": false
+        },
+        {
+          "term": "circuit",
+          "heading": false
+        },
+        {
+          "term": "matrix",
+          "heading": false
+        },
+        {
+          "term": "determinant",
+          "heading": false
+        },
+        {
+          "term": "constants",
+          "heading": false
+        },
+        {
+          "term": "replace",
+          "heading": false
+        },
+        {
+          "term": "curve",
+          "heading": false
+        }
+      ],
+      "extract": "at the point. Thus the elements of (23) are unlimitedly differentiable in the neighborhood of such a point along CkH- The same is true at more complicated points of intersection or points of contact, as a similar argument shows. The theorem is now demonstrated, at least for the case when a does not lie on a curve &,..., Cr. If a does lie on such a curve, we first choose an ol which is not on these curves to replace",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-537",
+      "number": null,
+      "title": "537",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "538",
+      "labelEnd": "539",
+      "words": 360,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "singular points",
+          "heading": false
+        },
+        {
+          "term": "ordinary point",
+          "heading": false
+        },
+        {
+          "term": "finite plane",
+          "heading": false
+        },
+        {
+          "term": "circuit",
+          "heading": false
+        },
+        {
+          "term": "analytic",
+          "heading": false
+        },
+        {
+          "term": "infinity",
+          "heading": false
+        },
+        {
+          "term": "elements",
+          "heading": false
+        }
+      ],
+      "extract": "where L is a matrix of constants. In fact we have dT(d _ dl'jx) n X -. ? X j O. ax ax But the matrix x dlr{x) / dx KI'(x), K= (kj? Thus we obtain dT(x) dx KV Or) C = EC- C-lT (x) C = LT (x). ? 9. The Monodromic Group Problem. The most elementary existence theorems for ordinary linear differ ential equations show that the linear differential system (24) d^=zR^x) 7W admits a ?matrix solution Y(x) whose elements are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-538",
+      "number": null,
+      "title": "538",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "539",
+      "labelEnd": "540",
+      "words": 348,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pass through",
+          "heading": false
+        },
+        {
+          "term": "save",
+          "heading": false
+        },
+        {
+          "term": "circuit",
+          "heading": false
+        },
+        {
+          "term": "assigned",
+          "heading": false
+        },
+        {
+          "term": "curve",
+          "heading": false
+        },
+        {
+          "term": "determinant",
+          "heading": false
+        },
+        {
+          "term": "matrices",
+          "heading": false
+        }
+      ],
+      "extract": "such wise that the combined circuit is reducible to a point, it is clear that (25) 1 m J- m-1 J-l ? J- y a necessary relation between the matrices Th..., Tm. The problem of Riemann is the following: For assigned points a\\,...,am and assigned matrices T\\,...,Tm for which (25) holds, to construct a matrix Y(x) of functions of determinant not identically zero, with elements analytic save at ah. . .,am where these",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-539",
+      "number": null,
+      "title": "539",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "540",
+      "labelEnd": "541",
+      "words": 434,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "analytic outside",
+          "heading": false
+        },
+        {
+          "term": "undergoes transformation",
+          "heading": false
+        },
+        {
+          "term": "trans formation",
+          "heading": false
+        },
+        {
+          "term": "single-valued",
+          "heading": false
+        },
+        {
+          "term": "across",
+          "heading": false
+        },
+        {
+          "term": "matrix",
+          "heading": false
+        },
+        {
+          "term": "along",
+          "heading": false
+        }
+      ],
+      "extract": "By slightly modifying each element of A(x) along a small segment near either end of the arc of D within C? for I = 1,. . ., m, it is possible to obtain a matrix A(x) whose elements are analytic save at the end points of these segments, and unlimitedly differentiable along D. Such a matrix A(x) satisfies all of the conditions necessary for the application of the preliminary theorem in the case r = 1. Taking D as the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-540",
+      "number": null,
+      "title": "540",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "541",
+      "labelEnd": "542",
+      "words": 476,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "become infinite",
+          "heading": false
+        },
+        {
+          "term": "single-valued",
+          "heading": false
+        },
+        {
+          "term": "save",
+          "heading": false
+        },
+        {
+          "term": "analytic",
+          "heading": false
+        },
+        {
+          "term": "vanish",
+          "heading": false
+        },
+        {
+          "term": "composed",
+          "heading": false
+        },
+        {
+          "term": "finite order",
+          "heading": false
+        },
+        {
+          "term": "matrices",
+          "heading": false
+        }
+      ],
+      "extract": "(31) x + 3> Or) = [xT?r $ Or)] Ai (x?)9 Ai (x) = U (x) Zrl (x~ai). (I = 1,. . ., m). This suggests another application of the preliminary theorem, since the curves C\\,. . .,Cm and the matrices Ai(x),. . ., Am(x) of known functions satisfy the necessary restrictions. Let <I>0r) be the solution given by the theorem for a = am, and let Zi(x),. . .,Zm(x), Z(x), be defined as equal to $(x) within d,. . ., Cm and outside",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-541",
+      "number": null,
+      "title": "541",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "542",
+      "labelEnd": "543",
+      "words": 418,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cauchy matrices",
+          "heading": false
+        },
+        {
+          "term": "cauchy matrix",
+          "heading": false
+        },
+        {
+          "term": "elements analytic",
+          "heading": false
+        },
+        {
+          "term": "circuit",
+          "heading": false
+        },
+        {
+          "term": "reduction",
+          "heading": false
+        },
+        {
+          "term": "determinant",
+          "heading": false
+        },
+        {
+          "term": "composed",
+          "heading": false
+        }
+      ],
+      "extract": "functions analytic of determinant not zero In the vicinity of ai and under going a transformation to Z?(x) T\\, . . ., Zm(x) Tm as x makes a positive circuit of a\\, . . ., am respectively. There exists then a matrix Yix) of functions of determinant not zero for x 9^ a\\,. . ., am and analytic save at these points, which undergoes a transformation to Y (x) Ti as x makes a positive circuit of a{ (i = 1,. . .m);",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-542",
+      "number": null,
+      "title": "542",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "543",
+      "labelEnd": "544",
+      "words": 389,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cauchy matrix",
+          "heading": false
+        },
+        {
+          "term": "x-am",
+          "heading": false
+        },
+        {
+          "term": "exhibited",
+          "heading": false
+        },
+        {
+          "term": "highest",
+          "heading": false
+        },
+        {
+          "term": "multiplying",
+          "heading": false
+        },
+        {
+          "term": "power",
+          "heading": false
+        },
+        {
+          "term": "solution",
+          "heading": false
+        }
+      ],
+      "extract": "The matrix of elements on the right can be written in the form (x?am)kl(aii+bii(x?am) + ...),..., (x-am)fc?(% + &in(x?am) + . . .) (33). (x?am)kl(anl+bni(x?am) + ...),..., (x?am)kn(ann+bnn(x ? am) + ...) Here it is supposed that the exponents of the Cauchy matrix do not differ by integers; but a similar form can be found in all cases. In each column of Y(x) the highest possible power of x ? am is exhibited which",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-543",
+      "number": null,
+      "title": "543",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "544",
+      "labelEnd": "545",
+      "words": 132,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "inasmuch",
+          "heading": false
+        },
+        {
+          "term": "prope",
+          "heading": false
+        },
+        {
+          "term": "secured",
+          "heading": false
+        }
+      ],
+      "extract": "1, 0,.0 C2 (x ? am)1 , 1,.0 Cn (x ? am)1' 0,.1 Inasmuch as | P( at x = am, this m secured for Y(x) clearly make all vided fi t^ 0. In without altering Inasmuch as | Y steps of this typ Y(x) C has the stage is reached belonging to Tm When F(r) has t of a linear diffe x = a\\,...,am and proved.13 The el functions whose n and whose denom ? 12. Irregular The Cauchy mat which a matrix so equivalent at a r possible matrix",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-544",
+      "number": null,
+      "title": "544",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "545",
+      "labelEnd": "546",
+      "words": 380,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cauchy matrix",
+          "heading": false
+        },
+        {
+          "term": "undergoes",
+          "heading": false
+        },
+        {
+          "term": "singular point",
+          "heading": false
+        },
+        {
+          "term": "analytic",
+          "heading": false
+        },
+        {
+          "term": "elements",
+          "heading": false
+        },
+        {
+          "term": "equivalent",
+          "heading": false
+        }
+      ],
+      "extract": "is improperly equivalent to a Cauchy matrix which at x = 0 undergoes a transformation inverse to that which Y Or) undergoes at x = oo. Here we take m = 2, ax = 0, w? = oo. The condition T2Ti = / is satisfied. By means of a modification precisely like that of ? 11 we can make Z{x) properly equivalent to a suitable Cauchy matrix at x = 0, and yet preserve the other properties listed in ? 10. Now consider Rl{x) =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-545",
+      "number": null,
+      "title": "545",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "546",
+      "labelEnd": "547",
+      "words": 385,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "irregular singular",
+          "heading": false
+        },
+        {
+          "term": "differential system",
+          "heading": false
+        },
+        {
+          "term": "singular points",
+          "heading": false
+        },
+        {
+          "term": "canonical differential",
+          "heading": false
+        },
+        {
+          "term": "matrix solution",
+          "heading": false
+        },
+        {
+          "term": "sij",
+          "heading": false
+        },
+        {
+          "term": "above argument",
+          "heading": false
+        },
+        {
+          "term": "nature",
+          "heading": false
+        }
+      ],
+      "extract": "In order not to introduce artificial difficulties we shall consider the regular singular point to be of rank zero. To this case the above argument applies also, and the canonical system is that satisfied by a Cauchy matrix. If Y(x) is the matrix solution of a differential system (24) in which the elements of R(x) are rational, the above argument shows that at each of its singular points ah. . ., am, Y(x) is properly",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-546",
+      "number": null,
+      "title": "546",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": "547",
+      "labelEnd": "548",
+      "words": 479,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arg",
+          "heading": false
+        },
+        {
+          "term": "argr",
+          "heading": false
+        },
+        {
+          "term": "vergent",
+          "heading": false
+        },
+        {
+          "term": "conven",
+          "heading": false
+        },
+        {
+          "term": "present paper",
+          "heading": false
+        }
+      ],
+      "extract": "where | si;- | 9e 0. The quantities ah. . ., an are the roots of the char acteristic equation alluded to, and the series s?? (x) are in general di vergent. We shall assume for the time being that no three of the points ai,. . ., an lie on the same straight line in the complex plane. Let now n, . . ., rN denote the N = n(n ? 1) (p + 1) arguments in order of increasing angular magnitude such that for some j and h (j *",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-547",
+      "number": null,
+      "title": "547",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": "548",
+      "labelEnd": "549",
+      "words": 303,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cauchy matrix",
+          "heading": false
+        },
+        {
+          "term": "arg",
+          "heading": false
+        },
+        {
+          "term": "ray",
+          "heading": false
+        },
+        {
+          "term": "sector",
+          "heading": false
+        },
+        {
+          "term": "analytic",
+          "heading": false
+        },
+        {
+          "term": "along",
+          "heading": false
+        }
+      ],
+      "extract": "and of determinant not zero. At x = 0 these matrices are properly equivalent to a Cauchy matrix. These further facts come at once from the form of (34). Conversely let us prove that if Zi (x), . . ., Z^ (x) exist possessing such properties, they are all matrix solutions of one and the same canonical system (34).19 In the first place it is clear that the matrix P(x) = xdZ^Zm-lix) (m = 1, . . ., N) is defined in each",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-548",
+      "number": null,
+      "title": "548",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": "549",
+      "labelEnd": "550",
+      "words": 354,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rays arg",
+          "heading": false
+        },
+        {
+          "term": "problem",
+          "heading": false
+        },
+        {
+          "term": "solution",
+          "heading": false
+        },
+        {
+          "term": "power",
+          "heading": false
+        },
+        {
+          "term": "elements",
+          "heading": false
+        },
+        {
+          "term": "order",
+          "heading": false
+        }
+      ],
+      "extract": "Thus P(x) is represented asymptotically in the complete vicinity of x = oo by (39). But we have formally (40) ^_(^{(4^ +3)^ + 4^}). If (35) and (40) be used in evaluating the expression (39), it is seen that each element of P{x) is given asymptotically by a power series in descending integral powers of x, with leading term in xp+l or lower power of x. It follows that the elements of P(x) are analytic or have a pole",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-549",
+      "number": null,
+      "title": "549",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": "550",
+      "labelEnd": "551",
+      "words": 433,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "r'm",
+          "heading": false
+        },
+        {
+          "term": "arg",
+          "heading": false
+        },
+        {
+          "term": "non-zero element",
+          "heading": false
+        },
+        {
+          "term": "rays",
+          "heading": false
+        },
+        {
+          "term": "ray",
+          "heading": false
+        },
+        {
+          "term": "along",
+          "heading": false
+        },
+        {
+          "term": "powers",
+          "heading": false
+        }
+      ],
+      "extract": "where x in Am (x) is taken along arg x = t'm, and the determinations of T(x) chosen are obtained from one another by allowing arg x to increase from t\\ to tn. The matrix Am (x) thus defined is analytic along its line save at x = 0. Also Am (r) ? 7 is a matrix whose only non-zero element is CmeVkmW-pJmWxrkm-rim. Now we have xv+i xp Pkm (x) ? pjm (x) = (akm ? ajm) ~~TTl + (Am ? ?imY? + . . . + (\\km ? ^jm)xy which",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-550",
+      "number": null,
+      "title": "550",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 32,
+      "labelStart": "551",
+      "labelEnd": "552",
+      "words": 449,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "r'm",
+          "heading": false
+        },
+        {
+          "term": "canonical system",
+          "heading": false
+        },
+        {
+          "term": "differential system",
+          "heading": false
+        },
+        {
+          "term": "arg",
+          "heading": false
+        },
+        {
+          "term": "canonical linear",
+          "heading": false
+        },
+        {
+          "term": "determinant",
+          "heading": false
+        },
+        {
+          "term": "solutions",
+          "heading": false
+        },
+        {
+          "term": "matrices",
+          "heading": false
+        }
+      ],
+      "extract": "Now write for m = 1,. . ., Ar + 1 Zm Or) = $ Or) T Or) (r'm ^ arg x ^ r'm+i). From (41) and (42) there results along arg x = t'to+i Zm+i Or) = ZmOr) [I + Cm], \\x\\^.r. The functions Zm (x) may accordingly be continued analytically across each ray arg x = Tm and represent matrices analytic for | x | ^ r, of determinant not zero. The relation (43) leads to the conclusion that Zmix) ?? Six) (r'm^ arga^rVi) where S(r) is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-551",
+      "number": null,
+      "title": "551",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 33,
+      "labelStart": "552",
+      "labelEnd": "553",
+      "words": 331,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "characteristic constants",
+          "heading": false
+        },
+        {
+          "term": "singular points",
+          "heading": false
+        },
+        {
+          "term": "rays",
+          "heading": false
+        },
+        {
+          "term": "assigned",
+          "heading": false
+        },
+        {
+          "term": "nature",
+          "heading": false
+        },
+        {
+          "term": "com",
+          "heading": false
+        },
+        {
+          "term": "problem",
+          "heading": false
+        }
+      ],
+      "extract": "of curved rays so chosen that the real part of only one of the differences Pi (x) ? Pj (x) changes sign along the ray, and thence to apply the preliminary theorem in much the same fashion as before. If two or more polynomials p\\ (x),. . ., pn (x) are identical it is not necessary to modify the nature of the rays. Furthermore it would be possible to construct an analogous existence proof when S(x) has for its",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-552",
+      "number": null,
+      "title": "552",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 34,
+      "labelStart": "553",
+      "labelEnd": "554",
+      "words": 404,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "characteristic constants",
+          "heading": false
+        },
+        {
+          "term": "differential system",
+          "heading": false
+        },
+        {
+          "term": "matrix solution",
+          "heading": false
+        },
+        {
+          "term": "proper",
+          "heading": false
+        },
+        {
+          "term": "satisfied",
+          "heading": false
+        },
+        {
+          "term": "required",
+          "heading": false
+        },
+        {
+          "term": "equivalence",
+          "heading": false
+        }
+      ],
+      "extract": "This second condition is satisfied if the elementary divisors associated with Ti and T{ are the same. With the understanding that the two conditions of compatibility are satisfied, we can assert that there exist m + 1 canonical systems with the prescribed characteristic constants at xi,. . ., xm+1 and with solu tions Vi(x),. . ., Vm+i (r) undergoing a transformation to V\\ (x) T\\,..., Vm+\\ Tm+i as x makes a positive",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-553",
+      "number": null,
+      "title": "553",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 35,
+      "labelStart": "554",
+      "labelEnd": "555",
+      "words": 297,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "linear difference",
+          "heading": false
+        },
+        {
+          "term": "modified",
+          "heading": false
+        },
+        {
+          "term": "constants",
+          "heading": false
+        },
+        {
+          "term": "solution",
+          "heading": false
+        },
+        {
+          "term": "system",
+          "heading": false
+        },
+        {
+          "term": "matrix",
+          "heading": false
+        }
+      ],
+      "extract": "associated properly equivalent canonical system has characteristic constants only modified as stated. Now we have I Y(x) | - \\S(x)\\ in the complete vicinity of x = oo y which is made up of the sectors (ti,t2), . . . (rN,TN+i). It follows that the series for | S (x) \\ converges and hence must be of the form ePi(*)+. +PnW -xp(a-{-h . . . ), a 9? 0, V x J so that always f\\ + . . + rn ^ p. But the above reductions",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-554",
+      "number": null,
+      "title": "554",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 36,
+      "labelStart": "555",
+      "labelEnd": "556",
+      "words": 361,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rlund",
+          "heading": false
+        },
+        {
+          "term": "half plane",
+          "heading": false
+        },
+        {
+          "term": "v-i",
+          "heading": false
+        },
+        {
+          "term": "characteristic constants",
+          "heading": false
+        },
+        {
+          "term": "dissertation",
+          "heading": false
+        },
+        {
+          "term": "difference system",
+          "heading": false
+        },
+        {
+          "term": "save",
+          "heading": false
+        }
+      ],
+      "extract": "there exist two matrix solutions Y~ (x) and Y+ (x), with elements analytic in the finite plane save for poles, such that Y~ (x) S (x) in any left half plane and Y+ (x) ** S (r) in any right half plane.25 The existence of such a solution was proved by N?rlund and Galbrun by methods based on the Laplace transformation somewhat earlier.26 These matrices Y~ (x) and Y+ (x) are connected by a relation (46) Y- (r) = 7+",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-555",
+      "number": null,
+      "title": "555",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 37,
+      "labelStart": "556",
+      "labelEnd": "557",
+      "words": 425,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "upper half",
+          "heading": false
+        },
+        {
+          "term": "half plane",
+          "heading": false
+        },
+        {
+          "term": "lower half",
+          "heading": false
+        },
+        {
+          "term": "imagi",
+          "heading": false
+        },
+        {
+          "term": "jth column",
+          "heading": false
+        },
+        {
+          "term": "ith row",
+          "heading": false
+        },
+        {
+          "term": "continuous branch",
+          "heading": false
+        },
+        {
+          "term": "axis",
+          "heading": false
+        }
+      ],
+      "extract": "? 17. Solution of the Problem of ? 16. In order to treat the problem of ? 16 we apply the preliminary theorem. We shall take r = 1, and take C\\ to be the axis of imagi narles in the complex plane unless | P(x) | = 0 at a point of that axis. The matrix A\\ (x) is taken equal to T Or) P Or) T'1 (x), T (x) = (x\"* (pj(r?)x zr%), except near to x = 0, where it is chosen in any way so as to satisfy the restrictions of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-556",
+      "number": null,
+      "title": "556",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 38,
+      "labelStart": "557",
+      "labelEnd": "558",
+      "words": 369,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "imaginaries",
+          "heading": false
+        },
+        {
+          "term": "pje",
+          "heading": false
+        },
+        {
+          "term": "half plane",
+          "heading": false
+        },
+        {
+          "term": "axis",
+          "heading": false
+        },
+        {
+          "term": "right-hand side",
+          "heading": false
+        },
+        {
+          "term": "right half",
+          "heading": false
+        },
+        {
+          "term": "either side",
+          "heading": false
+        }
+      ],
+      "extract": "naries is obtained from that on the right-hand side by a complete positive circuit of x = 0, during which T(x) changes from (x?x (pje-?)x xrJ?ij) to (e2^ VI? V VZ?rix?x (pje~?)x xrJOi?). The Ith. diagonal element of Ai(x) may now be written while the element in the Ith row and jth column of A (r) (i 9? j) may be written ?MXy-n Tl-lxpxpi*xri-rj [Cij(0)e-2^-l) V~l* + _ . + C{j(/?-tt]. Bearing (49) in mind we readily",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-557",
+      "number": null,
+      "title": "557",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 39,
+      "labelStart": "558",
+      "labelEnd": "559",
+      "words": 456,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "half plane",
+          "heading": false
+        },
+        {
+          "term": "right half",
+          "heading": false
+        },
+        {
+          "term": "imaginaries",
+          "heading": false
+        },
+        {
+          "term": "asymptotic form",
+          "heading": false
+        },
+        {
+          "term": "circle",
+          "heading": false
+        },
+        {
+          "term": "axis",
+          "heading": false
+        }
+      ],
+      "extract": "Let us now apply the preliminary theorem a second time, taking r = 1, and for C? a circle with center at the origin and radius so large as to include within it all those points of the axis of imaginaries at which an element of A\\(x) as chosen above is not analytic, and also so as not to pass through a zero of | Y~(x) |. In this second application of the theorem we choose ^fiOr) to be [F~(r)]_1, and in this way",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-558",
+      "number": null,
+      "title": "558",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 40,
+      "labelStart": "559",
+      "labelEnd": "560",
+      "words": 436,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "imaginaries",
+          "heading": false
+        },
+        {
+          "term": "reductions",
+          "heading": false
+        },
+        {
+          "term": "axis",
+          "heading": false
+        },
+        {
+          "term": "vanish",
+          "heading": false
+        },
+        {
+          "term": "parallel",
+          "heading": false
+        },
+        {
+          "term": "half",
+          "heading": false
+        },
+        {
+          "term": "determinant",
+          "heading": false
+        },
+        {
+          "term": "left",
+          "heading": false
+        }
+      ],
+      "extract": "One further remark comes in appropriately at this point. The definition of 7 (x) and Y\"(x) ensured that | Y~ (x) | and | 7+ (x) | do not vanish to the left or right of the axis of imaginarles respectively, save possibly for x = oo . Hence | Y~(x) | and | 7+(r) | do not vanish in these left or right half planes respectively. We may now enter upon a series of modifications of 7(r) which will preserve the above stated",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-559",
+      "number": null,
+      "title": "559",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 41,
+      "labelStart": "560",
+      "labelEnd": "561",
+      "words": 411,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "asymptote",
+          "heading": false
+        },
+        {
+          "term": "anormal",
+          "heading": false
+        },
+        {
+          "term": "linear difference",
+          "heading": false
+        },
+        {
+          "term": "curve",
+          "heading": false
+        },
+        {
+          "term": "vertical",
+          "heading": false
+        },
+        {
+          "term": "employ",
+          "heading": false
+        },
+        {
+          "term": "line",
+          "heading": false
+        },
+        {
+          "term": "constants",
+          "heading": false
+        }
+      ],
+      "extract": "indeed any simple analytic curve without a horizontal tangent and with vertical asymptote, provided that \\ P(x) \\ 9e- 0 along the curve. If the equality sign obtains in (49) it will be necessary to employ a curve with asymptote not quite in the vertical and to employ half planes not bounded by a vertical line. It is also possible to replace S(x) by certain anormal forms,29 and thus extend the above results to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-560",
+      "number": null,
+      "title": "560",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 42,
+      "labelStart": "561",
+      "labelEnd": "562",
+      "words": 177,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vao",
+          "heading": false
+        },
+        {
+          "term": "logr",
+          "heading": false
+        },
+        {
+          "term": "logg",
+          "heading": false
+        }
+      ],
+      "extract": "and let g? (x) be a solution of the g-difference equation of the type (54) (55) g (qx) = (r - m) g (x) for m = a{. If one takes for new variable Y(x) = gi(x)...g,(x)Y(x), a new matrix equation (54) in Y{x) is obtained with Q(x) polynomial in x. Let us write = logr logg' In terms of this new variable a solution of (55) for m = 0 is qHt2-t)m For m 9e- 0, the transformation _ ,? log x loga x = mx, y (r) = ?* v~1 l?s q",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-561",
+      "number": null,
+      "title": "561",
+      "level": 2,
+      "pageStart": 42,
+      "pageEnd": 43,
+      "labelStart": "562",
+      "labelEnd": "563",
+      "words": 355,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "functions analytic",
+          "heading": false
+        },
+        {
+          "term": "periodic functions",
+          "heading": false
+        },
+        {
+          "term": "linear difference",
+          "heading": false
+        },
+        {
+          "term": "difference system",
+          "heading": false
+        },
+        {
+          "term": "poles",
+          "heading": false
+        },
+        {
+          "term": "plane",
+          "heading": false
+        },
+        {
+          "term": "matrix",
+          "heading": false
+        }
+      ],
+      "extract": "result may be expressed as follows: There exist in general two matrix solutions [ 70 (a?) = (xpj Oij (r)) I Yao(x) = q*(t ?(x-Jbvix)), where each function a# (x) is analytic at x = 0, and each function b^ (x) is analytic at x = oo ; and where furthermore the determinants of the leading coefficients of a^ (x) and b{j (x) at x = 0 and x = oo respec tively are not zero. It is only the case when such series exist that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-562",
+      "number": null,
+      "title": "562",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 44,
+      "labelStart": "563",
+      "labelEnd": "564",
+      "words": 253,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homologous points",
+          "heading": false
+        },
+        {
+          "term": "logg",
+          "heading": false
+        },
+        {
+          "term": "jth column",
+          "heading": false
+        },
+        {
+          "term": "ith row",
+          "heading": false
+        },
+        {
+          "term": "circuit",
+          "heading": false
+        }
+      ],
+      "extract": "belong to the periods = 1, o/ = 2W? l/logg, and let ABCD be a parallelogram with vertices .1 i i . 27tVZ7I 27rV=Ti r0, a:0 +1, ?t0 + 1 H-,-, .r0 H-1-, logg logg respectively. At homologous points of BC and AD, P(t) has t value, since P(t + 1) =P(t). To obtain the relation between P(t) at homologous points and DC we consider first the matrix (59) P(x)=Yx-i(x)Yo(x). It is apparent from the form of the elements of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-563",
+      "number": null,
+      "title": "563",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 45,
+      "labelStart": "564",
+      "labelEnd": "565",
+      "words": 247,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "logg",
+          "heading": false
+        },
+        {
+          "term": "pij",
+          "heading": false
+        },
+        {
+          "term": "direct substitution",
+          "heading": false
+        }
+      ],
+      "extract": "(63) We have also seen that (61) pij(t+ 1) =pij(t). Now let us attempt to satisfy (60) and (61) by writing (62) pij (t) = ceat2+uo- (t ? ai)...a(t ? aM), where cr(t) is the Weierstrass sigma function belonging to the periods , 27T-VITT CO = 1, co = ?-.-, logg which satisfies the relations logg ) _ a(t+l) = - e'<?+*) a (t), 772^-^1 - n' = 2tt V~l. logg The above choice of co and co' meets the requirement 9t (co'/co)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-564",
+      "number": null,
+      "title": "564",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 46,
+      "labelStart": "565",
+      "labelEnd": "566",
+      "words": 273,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "logg",
+          "heading": false
+        },
+        {
+          "term": "bined",
+          "heading": false
+        },
+        {
+          "term": "logr",
+          "heading": false
+        },
+        {
+          "term": "o-i",
+          "heading": false
+        }
+      ],
+      "extract": "provided that (67) Z^ = ^ + ft-n xti logg This is of course under the assumption that Pij(t) in the form (62). But this fact may be proved at be any function which satisfies (60) and (61), and <? one above obtained. The function \\f/(t)/$ (t) is analytic save for poles, and can therefore be exp of products of sigma functions n<r(t ? Ti) . . (T(t?yk) R <r(t ? ?i)...<r(t ? ?k) But this quotient when multiplied by 4>",
+      "extractCut": true
+    },
+    {
+      "id": "sec-045-565",
+      "number": null,
+      "title": "565",
+      "level": 2,
+      "pageStart": 46,
+      "pageEnd": 47,
+      "labelStart": "566",
+      "labelEnd": "567",
+      "words": 457,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "g-difference system",
+          "heading": false
+        },
+        {
+          "term": "con stants",
+          "heading": false
+        },
+        {
+          "term": "loop",
+          "heading": false
+        },
+        {
+          "term": "analytic",
+          "heading": false
+        },
+        {
+          "term": "constants",
+          "heading": false
+        },
+        {
+          "term": "composed",
+          "heading": false
+        },
+        {
+          "term": "poles",
+          "heading": false
+        },
+        {
+          "term": "elements",
+          "heading": false
+        }
+      ],
+      "extract": "The relation (68) with the explicit values of y0(x), y^(x) and p (x) substituted in is essentially one of the fundamental product formulas for the sigma function. ? 20. The q-Dlfference Equation Problem. It is now easy to show that conversely if 70 (x), 7^ (x) are matrices of functions of the form (58) in the vicinity of x = 0 and x = oo respectively, analytic for x 9e- 0, oo, save for poles, and if the matrix P(x),",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-566",
+      "number": null,
+      "title": "566",
+      "level": 2,
+      "pageStart": 47,
+      "pageEnd": 48,
+      "labelStart": "567",
+      "labelEnd": "568",
+      "words": 406,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "g-difference system",
+          "heading": false
+        },
+        {
+          "term": "characteristic constants",
+          "heading": false
+        },
+        {
+          "term": "preliminary theorem",
+          "heading": false
+        },
+        {
+          "term": "loop",
+          "heading": false
+        },
+        {
+          "term": "arbitrary",
+          "heading": false
+        },
+        {
+          "term": "solutions",
+          "heading": false
+        },
+        {
+          "term": "transformation",
+          "heading": false
+        }
+      ],
+      "extract": "wise any Ith column of 7^ (x) is only determined up to a constant factor h{. This fact appears from (58). The effect is to allow one to replace c^ in pij(x) by ffijlh{, and thus vary at will 2 n ? 1 of the characteristic constants c#. There remain then essentially only 2 n + n2 (p + 1) - n2 - (2n ? 1) or n2 \\x + 1 characteristic constants. It is readily verified that these constants are all invariant under a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-047-567",
+      "number": null,
+      "title": "567",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 49,
+      "labelStart": "568",
+      "labelEnd": "568",
+      "words": 376,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aln",
+          "heading": false
+        },
+        {
+          "term": "terminates",
+          "heading": false
+        },
+        {
+          "term": "reduction",
+          "heading": false
+        },
+        {
+          "term": "utc",
+          "heading": false
+        },
+        {
+          "term": "anl",
+          "heading": false
+        }
+      ],
+      "extract": "According to the theorem there exists a matrix $(r) such that (71) ' J%+*(x) = [,H -*(*)Mi(*i), where x\\ is an arbitrary point of d and the + and ? signs denote approach to x? from within and without C\\ respectively; the matrix &(x) possesses certain other properties: it is composed of elements analytic for x not on C\\, save at a point a which we shall take to be at infinity; furthermore its determinant does not",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-568",
+      "number": null,
+      "title": "568",
+      "level": 2,
+      "pageStart": 49,
+      "pageEnd": 49,
+      "labelStart": "568",
+      "labelEnd": "568",
+      "words": 80,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "harvard",
+          "heading": false
+        },
+        {
+          "term": "utc",
+          "heading": false
+        },
+        {
+          "term": "sat",
+          "heading": false
+        }
+      ],
+      "extract": "It is deserving of notice that the properties stated above determine the location of the poles of the elements of 7X (x), namely at the zeros of | P(x) | within the loop, the maximum order of the pole of any element being precisely the order of the corresponding zero of | P(x) |. This is an immediate consequence of the relation. 1'??= Y0(x)P-Hx). Harvard University, Cambridge, Mass. This content downloaded from",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "content downloaded",
+      "heading": false
+    },
+    {
+      "term": "analytic along",
+      "heading": false
+    },
+    {
+      "term": "analytic save",
+      "heading": false
+    },
+    {
+      "term": "elements analytic",
+      "heading": false
+    },
+    {
+      "term": "utc",
+      "heading": false
+    },
+    {
+      "term": "matrix solution",
+      "heading": false
+    },
+    {
+      "term": "matrices analytic",
+      "heading": false
+    },
+    {
+      "term": "sat",
+      "heading": false
+    },
+    {
+      "term": "cauchy matrix",
+      "heading": false
+    },
+    {
+      "term": "aug",
+      "heading": false
+    },
+    {
+      "term": "functions analytic",
+      "heading": false
+    },
+    {
+      "term": "analytic curve",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "[521]",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "522",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "523",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "524",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "525",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "526",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "527",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "528",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "529",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "530",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "531",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "532",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "533",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "534",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "535",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "536",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "537",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "538",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "539",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "540",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "541",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "542",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "543",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "544",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "545",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "546",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "547",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "548",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "549",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "550",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "551",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "552",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "553",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "554",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "555",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "556",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "557",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "558",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "559",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "560",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "561",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "562",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "563",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "564",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "565",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "566",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "567",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "568",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "568",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "",
+      "page": 4,
+      "pageLabel": "524",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "",
+      "page": 19,
+      "pageLabel": "539",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-2",
+      "file": "images/img-p001-2.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 54,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 49,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 49 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/birkhoff-generalizedriemannproblem-1913"
+  }
+}

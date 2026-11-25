@@ -1,0 +1,695 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "1-s20-s009731651830061x-main",
+  "blocks": [
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/figure-img-p001-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Constant term formulas for reﬁned enumerations of Gog and Magog trapezoids",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-constant-term-formulas-for-reﬁned-enumerations-o.md",
+      "narrative": null,
+      "content": "of Gog and Magog trapezoids oe\n\nIlse Fischer !\n\nFakultat fiir Mathematik, Universitét Wien, Oskar-Morgenstern-Platz 1,\n1090 Wien, Austria\n\nARTICLE INFO ABSTRACT\nArticle history: xog and Magog trapezoids are certain arrays of positive\nReceived 29 September 2017 integers that generalize alternating sign matrices (ASMs)\n\nand totally symmetric self-complementary plane partitions\n(TSSCPPs) respectively. Zeilberger used constant term for-\nmulas to prove that there is the same number of (n, k)-Gog\nGog trapezoid trapezoids as there is of (n, k)-Magog trapezoids, thereby pro-\nMagog trapezoid viding so",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Journal of Combinatorial Theory, Series A 158 (2018) 560-604\n\nContents lists available at ScienceDirect\n\nJournal of Combinatorial Theory,\nSeries A\n\nwww.elsevier.com/locate/jcta",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-1-introduction.md",
+      "narrative": null,
+      "content": "When Robbins and Rumsey [29] introduced alternating sign matrices in the 1980s, \nthis was exciting for several reasons. On the one hand, they formulated a conjecture \ntogether with Mills [26] which states that the number of n × n ASMs is given by the \ncompelling simple product formula \nn−1\n\u0002\ni=0\n(3i+1)!\n(n+i)! . This conjecture turned out to be diﬃcult \nto prove [32,23] and still deserves to be better understood. On the other hand, it was \nsoon realized that the product formula has appeared before as the counting formula for \ntwo classes of plane partitions, namely for totally symmetric self-c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gog trapezoids",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-111-gog-trapezoids.md",
+      "narrative": null,
+      "content": "known tools that may be helpful to relate constant term formulas for Gogs to those for \nMagogs.\nIn general, the purpose of our results is twofold: On the one hand, they provide a \nframework for computational proofs of the conjectures of Krattenthaler, and of Biane \nand Cheballah, but, on the other hand, they can also be useful in the (experimental) \nsearch for statistics on the two classes of objects that have the same distribution to \neventually construct an explicit bijection between Gogs and Magogs. In particular, the \npresentation aims at illustrating a certain versatility of the result on",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gog trapezoids, Magog trapezoids and Krattenthaler's conjecture",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-11-gog-trapezoids-magog-trapezoids-and-krattenth.md",
+      "narrative": null,
+      "content": "1.1.1. Gog trapezoids\nIn [21,22], Krattenthaler generalizes Zeilberger’s Gog trapezoids [32] (which appeared \nunnamed for the ﬁrst time in [28, Conjecture 7]) as follows: For m, n, k non-negative \nintegers with k ≤n, an (m, n, k)-Gog trapezoid is deﬁned as an arrangement of positive \nintegers of the following form (the bullets correspond to the integers)\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n,\nwhere n is the number of rows (n = 7 in the example), k is the number of north-east \ndiagonals (k = 5 in the example) and the entries in the i-th south-east diagonal (1 ≤\ni ≤n, counted from t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/conj-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "conj-sec-004-01.md",
+      "narrative": null,
+      "content": "The number of (m, n, k)-Gog trapezoids with p minima and q maxima is equal to the number of (m, n, k)-Magog trapezoids with p maxima and q minima. The case m = 0 is Conjecture 7’ in [28]. Conjecture 1 implies in particular that the number of (m, n, k)-Gog trapezoids is equal to the number of (m, n, k)-Magog trapezoids. In [32], Zeiberger proved this for m = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Magog trapezoids",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-112-magog-trapezoids.md",
+      "narrative": null,
+      "content": "In [21,22], Krattenthaler generalized also Zeilberger’s Magog trapezoids [32] (the latter \nalso appeared essentially for the ﬁrst time in [28, Conjecture 7]): For m, n, k non-negative \nintegers with k ≤n, an (m, n, k)-Magog trapezoid is deﬁned as an arrangement of positive \nintegers of the following form\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n•\n,\nwhere n is the number of rows (n = 7 in the example), k is the number of SE-diagonals \n(k = 5 in the example) and the entries in the i-th NE-diagonal (1 ≤i ≤n, counted from \nthe left) are bounded from above by m + i such that the entries are",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries: monotone triangles and truncated monotone triangles",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-005-2-preliminaries-monotone-triangles-and-truncated.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Inversion numbers",
+      "pageStart": 5,
+      "pageEnd": 10,
+      "target": "../sections/sec-006-21-inversion-numbers.md",
+      "narrative": null,
+      "content": "The inversion number of an ASM A = (ai,j)1≤i,j≤n, as deﬁned in [29, Eq. (18)], is \ngiven by\ninv(A) =\n\u0003\n1≤i′<i≤n,1≤j′≤j≤n\nai′,jai,j′.\nIt generalizes the inversion number of permutations, that is, for a permutation matrix A, \ninv(A) is the number of inversions of the permutation π = (π1, . . . , πn), where πi is the \ncolumn of the unique 1 in row i. Deﬁne the complementary inversion number inv′(A) as \nfollows.\ninv′(A) =\n\u0003\n1≤i′<i≤n,1≤j≤j′≤n\nai′,jai,j′\nI. Fischer / Journal of Combinatorial Theory, Series A 158 (2018) 560–604\n565\nIf A is the permutation matrix of π = (π1, . . . , πn), then inv′(A)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Reﬁned enumeration with respect to the top entry",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-007-22-reﬁned-enumeration-with-respect-to-the-top-en.md",
+      "narrative": null,
+      "content": "For a positive integer n, non-negative integers min ≤a ≤max and x = (x1, . . . , xn), \nwe deﬁne\nGTn,a,min,max(x) =\nmax −min\n\u0003\nb=0\n(−1)a+min +b\n\u0006\nb\na −min\n\u0007\ndet\n1≤i,j≤n\n\u0006\u0006xi + i −min −1\nj −1 + b[j = n]\n\u0007\u0007\n.\nSuppose min ≤b1\n≤b2\n≤. . . ≤bn\n≤max is a sequence of integers, then \nGTn,a,min,max(b1, . . . , bn) is the number of Gelfand–Tsetlin patterns with bottom row \nb1, . . . , bn and top row a. This follows, for instance, from a result in [13, Theorem 3, \nS = ∅, P = Q = 1], as\n\b\nmin≤i≤max,i̸=a\nx −i\na −i =\nmax −min\n\u0003\nb=0\n(−1)a+min +b\n\u0006\nb\na −min\n\u0007\u0006x −min\nb\n\u0007\n.\nFurther, we deﬁne\nMn,a,min,max(u, v, x)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Truncated monotone triangles: (s,t)-trees",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "../sections/sec-008-23-truncated-monotone-triangles-st-trees.md",
+      "narrative": null,
+      "content": "Next we turn to certain partial monotone triangles. Let l, r, n be non-negative integers \nwith l + r ≤n. Suppose s = (s1, s2, . . . , sl), t = (tn−r+1, tn−r+2, . . . , tn) are sequences \nof non-negative integers, where s is weakly decreasing, while t is weakly increasing. \nAn (s, t)-tree of order n is an integer array whose shape is obtained from the shape \nof a monotone triangle with n rows when deleting the bottom si entries from the i-th \nNE-diagonal for 1 ≤i ≤l (NE-diagonals are counted from the left) and the bottom ti\nentries from the i-th SE-diagonal for n −r + 1 ≤i ≤n (SE-diagonals are",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/cor-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "cor-sec-009-01.md",
+      "narrative": null,
+      "content": "now implies the following formulas. I. Fischer / Journal of Combinatorial Theory, Series A 158 (2018) 560–604",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Application: constant term formula for the generating function of (m,n,k)-Gog trapezoids",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-009-3-application-constant-term-formula-for-the-gene.md",
+      "narrative": null,
+      "content": "trapezoids\nUsing the terminology of the previous section, (m, n, k)-Gog trapezoids with bottom \nrow b1, . . . , bk correspond to (s, t)-trees of order n, where s = ∅, t = (0, 1, . . . , n −k −1), \nsuch that\n(1) the bottom entries of the ﬁrst k NE-diagonals are b1, . . . , bk,\n(2) the bottom entries of the last n −k SE-diagonals are m + k + 1, . . . , m + n.\nIn order to obtain the Gog trapezoid from the (s, t)-tree, one has to delete the (k + 1)-st \nNE-diagonal from the (s, t)-tree.\nCorollary 6 now implies the following formulas.\n574\nI. Fischer / Journal of Combinatorial Theory, Series A 158 (2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Inversion numbers",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-010-31-inversion-numbers.md",
+      "narrative": null,
+      "content": "The two inversion numbers are deﬁned in the obvious way: Suppose M = (mi,j) is an \n(m, n, k)-Gog trapezoid, then\ninv(M) = #{mi,j : mi,j = mi+1,j+1},\ninv′(M) = #{mi,j : mi,j = mi+1,j}.\nSo, in order for the entry mi,j to contribute to inv(A), it must have a SE neighbor in the \n(m, n, k)-Gog trapezoid and this neighbor must be equal to mi,j; however, mi,j need not \nto have a SW neighbor. Similar for the complementary inversion number. Corollary 6\nimplies the following.\nTheorem 8. The generating function of (m, n, k)-Gog trapezoids with bottom row \nb1, . . . , bk w.r.t. inv and inv′ is the constan",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/cor-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "cor-sec-011-01.md",
+      "narrative": null,
+      "content": "The generating function of (0, n, k)-Gog trapezoids w.r.t. the number of minima and maxima is the constant term of PQ(1 + Px1)−1(1 + x1)2x−n+1 k \b i=2 (1 + xi)ix−n+1 i n \b i=k+1 (1 + Qxi) (1 + xi)m+kx−n+i−k i × \b 1≤i<j≤n (xi −xj)(1 + xj + xixj). In order to obtain the number of all (m, n, k)-Gog trapezoids with p minima and q maxima also if m ̸ = 0, one has to sum over all possible bottom rows and take into account whether the rightmost entry in the bottom row is a maximum. In the expres- sions in Theorem 9, the bottom row appears only through the factors k\u0002 i=2 (1 + xi)bi and k\u0002 i=1 (1 + xi)b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Minima and maxima",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-011-32-minima-and-maxima.md",
+      "narrative": null,
+      "content": "3.2. Minima and maxima\nIn order to involve the number of minima and the number of maxima in the Gog-\ntrapezoids, we have to apply the version of Corollary 6 where the requirement on b1, b2,\n. . . , bn is only that it is weakly increasing, and thus we cannot involve the inversion \nnumbers at the same time.\nAn (m, n, k)-Gog trapezoids with p minima can be identiﬁed with (s, t)-trees of or-\nder n, where s = (p −1), t = (0, 1, . . . , n −k −1) and where the bottommost entry of \nthe ﬁrst NE-diagonal is set to 2. In order to see this, delete in the (m, n, k)-Gog trape-\nzoids with p minima the occurr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gog pentagons",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-012-33-gog-pentagons.md",
+      "narrative": null,
+      "content": "3.3. Gog pentagons\nIn this section, we consider generalizations of Gog trapezoids (so-called Gog pen-\ntagons) that were recently introduced by Biane and Cheballah [4]. In that paper also \ncertain Magog-type objects were introduced (so-called GOGAm pentagons) along with \nthe conjecture that there is the same number of Gog pentagons of a given type as there \nis of GOGAm pentagons of the same type and that this is still true if we restrict to \npentagons that have a prescribed bottom entry. In this section, we use Corollary 6 to de-\nrive constant term expressions for various reﬁned countings of Go",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Inversion numbers",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/sec-013-34-inversion-numbers.md",
+      "narrative": null,
+      "content": "We observe that (m, n, kL, kR)-Gog pentagons with bottom row bn−kR+1, bn−kR+2,\n. . . , bkL correspond to (s, t)-trees of order n, where s = (n −kR −1, n −kR −2, . . . , 0) and \nt = (0, 1, . . . , n −kL −1). This implies that the number of (m, n, kL, kR)-Gog pentagons \nwith bottom row bn−kR+1, . . . , bkL is equal to\n(−1)\n\u0004n−kR\n2\n\u0005 n−kR\n\b\ni=1\n(1+xi)ix1−kR−i\ni\nkL\n\b\ni=n−kR+1\n(1+xi)bix−n+1\ni\nn\n\b\ni=kL+1\n(1+xi)m+kL+1x−n+i−kL\ni\n×\n\b\n1≤i<j≤n\n(xi −xj)(1 + xj + xixj).\nIf we deﬁne the inversion numbers for Gog pentagons in the obvious way, it fol-\nlows that the generating function of (m, n, kL, kR)-Gog pe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Minima and maxima",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-014-35-minima-and-maxima.md",
+      "narrative": null,
+      "content": "A bottom-minimum is an entry in the leftmost SE-diagonal that is equal to the lower \nbound of its SE-diagonal, while a bottom-maximum is an entry in the rightmost NE-\ndiagonal that is equal to the upper bound of its NE-diagonal. A top-minimum is an entry \nequal to 1 and such entries can only be in the leftmost NE-diagonal. A top-maximum is \nan entry equal to m + n and such entries can only be in the rightmost SE-diagonal. Ob-\nserve that minima (resp. maxima) as deﬁned for Gog trapezoids are top-minima (resp. \nbottom-maxima) as deﬁned for Gog pentagons.\nAlso in this case, it is not possible to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Constant term formula for the number of (m,n,k)-Magog trapezoids with prescribed numbers of minima and maxima",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-015-4-constant-term-formula-for-the-number-of-mnk-ma.md",
+      "narrative": null,
+      "content": "prescribed numbers of minima and maxima\nIn this section we derive constant term formulas for the number of (m, n, k)-Magog \ntrapezoids with p maxima and q minima. Together with Theorem 9, where a constant \nterm formula for the number of (m, n, k)-Gog trapezoids with p minima and q maxima is \nprovided, this could serve as a framework to give a computational proof of Conjecture 1.\nIn special cases such constant term formulas have been derived before: Zeilberger gave \na constant term expression for the unrestricted enumeration of (0, n, k)-Magog trapezoids \n580\nI. Fischer / Journal of Combinatori",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/lem-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 27,
+      "target": "lem-sec-016-01.md",
+      "narrative": null,
+      "content": "Let r ≥1 be an integer. Then \u0003 σ∈Sr sgn σ · σ",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "First version",
+      "pageStart": 21,
+      "pageEnd": 27,
+      "target": "../sections/sec-016-41-first-version.md",
+      "narrative": null,
+      "content": "Using a standard technique, we can transform (m, n, k)-Magog trapezoids with pre-\nscribed bottom row (bn−k+1, bn−k+2, . . . , bn) into families of non-intersecting lattice \npaths as follows: We start by adding a new leftmost SE-diagonal consisting entirely of \n1’s and a new rightmost SE-diagonal consisting of (m +1, m +2, . . . , m +n) as indicated \nin green in our running Example 1.1:\n3\n3\n4\n2\n3\n5\n2\n3\n4\n6\n1\n3\n4\n5\n7\n1\n2\n3\n5\n7\n8\n1\n1\n3\n4\n6\n7\n9\n1\n2\n3\n4\n7\n9\n.\nNext, we add i −1 to the i-th NE-diagonal, counted from the left, for all 1 ≤i ≤n. \nThen we associate with each NE-diagonal a lattice path wi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Second version",
+      "pageStart": 27,
+      "pageEnd": 31,
+      "target": "../sections/sec-017-42-second-version.md",
+      "narrative": null,
+      "content": "There are other options to encode (m, n, k)-Magog trapezoids as families of non-\nintersecting lattice paths, see for instance [21]. We derive the constant term expression \nfor a second possibility in this subsection, following an encoding that was used for in-\nstance in [17]. Instead of interpreting NE-diagonals as lattice paths, we now consider \nthe lattice paths that separate the entries that are less than or equal to i in the Magog \ntrapezoid from the entries that are greater than or equal to i + 1, 1 ≤i ≤m + n −1, \nsee Fig. 3. By rotating the picture and shifting the paths appropriately, t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/thm-sec-017-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 31,
+      "target": "thm-sec-017-01.md",
+      "narrative": null,
+      "content": "Suppose k̸ = 1 or m + q̸ = 1. The generating function of (m, n, k)-Magog trapezoids w.r.t. the weight P # of maxima and with q minima is equal to the constant term of I. Fischer / Journal of Combinatorial Theory, Series A 158 (2018) 560–604 P [m=0] m+n−1 \b i=1 (1 + xi)nx−i−k+2 i (1 −xi)−1 m+n−1 \b i=max(m,1) (1 + xi)m−i−1 (Pxi + 1) × \b 1≤i<j≤m+n−1 xj −xi 1 −xixj × ⎧ ⎪ ⎪ ⎨ ⎪ ⎪ ⎩ k+m+q−2 \u0014 i=1 (1 + xi)k+q−n−1(1 −xi) \u0002 1≤j≤m+n−1 j̸=i 1−xixj xj−xi , if q ≤n −k 1, if q = n −k + 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connecting Gogs and Magogs",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "../sections/sec-018-5-connecting-gogs-and-magogs.md",
+      "narrative": null,
+      "content": "In summary, we have seen that the constant term expressions for the number of \nGog-type objects are all of the following form\ns ·\nn\n\b\ni=1\nfi(xi)\n\b\n1≤i<j≤n\n(xi −xj)(1 + xj + xixj),\nwhere fi(x) are certain (simple) rational function—often of the form\nfi(x) = xai(1 + x)bi,\nai, bi integers—and s is a sign. These functions usually have (somewhat) homogeneous \ndeﬁnitions for certain ranges of i: for instance, when considering (m, n, k)-Gog trapezoids, \nthe deﬁnition is homogeneous for 1 ≤i ≤k and also for k +1 ≤i ≤n, see Theorem 7. In \nthis case, a factor 1 +x in fi(x) is replaced by 1 +Qxi for k+1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A variant of Theorem 16 and its application to (2.3) and to (2.6) when bi=i",
+      "pageStart": 34,
+      "pageEnd": 38,
+      "target": "../sections/sec-019-51-a-variant-of-theorem-16-and-its-application-t.md",
+      "narrative": null,
+      "content": "Next we state a theorem that is similar to Theorem 16 and that can be proven \nanalogously.\nTheorem 17. Let hq(w, y) = qw −q−1y. Then the antisymmetrizer of\n\u0002\n1≤i<j≤n hq(wi, wj)\n\u0002\n1≤i≤j≤n h1(wj, yi) \u0002\n1≤j≤i≤n hq(wj, yi)\n(5.6)\nw.r.t. w1, . . . , wn is\ndet1≤i,j≤n\n\u0019\n1\nh1(wi,yj)hq(wi,yj)\n\u001a\n\u0002\n1≤i<j≤n h1(yj, yi)\n.\nProof. The proof is by induction w.r.t. n. The case n = 1 is easy to check.\nLet A(w1, . . . , wn; y1, . . . , yn) denote the antisymmetrizer of (5.6). We have the fol-\nlowing recursion for A(w1, . . . , wn; y1, . . . , yn).\nA(w1, . . . , wn; y1, . . . , yn)\n=\nn\n\u0003\nk=1\n(−1)k+n\n\u0002\n1≤i≤n,i̸=k\nhq",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The application of Theorem 17 to (2.8) when bi=i",
+      "pageStart": 38,
+      "pageEnd": 41,
+      "target": "../sections/sec-020-52-the-application-of-theorem-17-to-28-when-bii.md",
+      "narrative": null,
+      "content": "The expression in (2.8) is more complicated at ﬁrst glance as it already involves the \nantisymmetrizer operator. However, as our approach involves the computation of the \nantisymmetrizer anyway, this is no disadvantage.\n598\nI. Fischer / Journal of Combinatorial Theory, Series A 158 (2018) 560–604\nBy (5.11), (2.8) is equal to\n(−1)\n\u0004n+1\n2\n\u0005\nqn(q −q−1)(n+3)n/2\nn\n\b\ni=1\n(1 + xi)n+1(1 + q + xi)−2\n×\nlim\n(y1,...,yn)→1\ndet\n1≤i,j≤n\n⎛\n⎝\n1\n\u0019\nyj −xi+1+q−1\nxi+1+q\n\u001a \u0019\nyj −q2 xi+1+q−1\nxi+1+q\n\u001a\n⎞\n⎠\n×\n\b\n1≤i<j≤n\n(xj −xi)−1(yj −yi)−1,\n(5.14)\nwhere q = e2πi/3. The same procedure as above can be used to show that t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgment",
+      "pageStart": 41,
+      "pageEnd": 41,
+      "target": "../sections/sec-021-acknowledgment.md",
+      "narrative": null,
+      "content": "The author thanks an anonymous referee for the careful reading of the paper and \nseveral interesting comments.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A The case v=1-u",
+      "pageStart": 41,
+      "pageEnd": 41,
+      "target": "../sections/sec-022-appendix-a-the-case-v1-u.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.1 The cases (u,v)=(0,1) and (u,v)=(1,0)",
+      "pageStart": 41,
+      "pageEnd": 41,
+      "target": "../sections/sec-023-a1-the-cases-uv01-and-uv10.md",
+      "narrative": null,
+      "content": "The generating function of monotone triangles with bottom row b1, . . . , bn evaluated \nat (u, v) = (0, 1) is equal to the number of monotone triangles with that bottom row, \nwhere SE-diagonals are strictly increasing, while the evaluation at (u, v) = (1, 0) is \nthe number of monotone triangles that are strictly increasing along NE-diagonals. The \nnumber is in both cases \u0002\n1≤i<j≤n\nbj−bi\nj−i as both sets are in bijective correspondence with \nGelfand–Tsetlin patterns with bottom row b1 −1, b2 −2, . . . , bn −n (in the ﬁrst case, this \nfollows by subtracting i from the i-th NE-diagonal for all i,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.2 The case (u,v)=(1/2,1/2)",
+      "pageStart": 41,
+      "pageEnd": 42,
+      "target": "../sections/sec-024-a2-the-case-uv1212.md",
+      "narrative": null,
+      "content": "2, 1\n2)\nOn the other hand, the generating function of monotone triangles with bottom \nrow b1, . . . , bn evaluated at (u, v) = ( 1\n2, 1\n2) is—up to the factor 2\n\u0004n\n2\n\u0005\n—equal to the \n2-enumeration of monotone triangles with respect to the number of entries that lie strictly \nbetween their SW-neighbors and their SE-neighbors. By [27, Theorem 2], this number is \n2\n\u0004n\n2\n\u0005 \u0002\n1≤i<j≤n\nbj−bi\nj−i . If (b1, . . . , bn) = (1, . . . , n), this corresponds to the 2-enumeration \nof ASMs with respect to the number of −1’s, or, equivalently, to the enumeration of \ndomino tilings of the Aztec diamond of order",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.3 The general case",
+      "pageStart": 42,
+      "pageEnd": 42,
+      "target": "../sections/sec-025-a3-the-general-case.md",
+      "narrative": null,
+      "content": "The results mentioned in the previous two paragraphs can also be deduced from \nTheorem 2 as follows. In all cases, \u0002\n1≤p<q≤n Exq Strictxq,xp is a symmetric polyno-\nmial in Δx1, . . . , Δxn with constant term 1, and the enumeration formulas follow from \nthe fact that the application of an “operator” polynomial with these properties to \n\u0002\n1≤i<j≤n\nxj−xi\nj−i\nleaves the polynomial invariant as was shown, e.g., in [15, Lemma 2.5]. \nIn fact, a common generalization follows if we assume that v = 1 −u, because in \nthis case the same argument applies and we can conclude that the generating func-\ntion is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.3.1 Perfect matchings",
+      "pageStart": 42,
+      "pageEnd": 44,
+      "target": "../sections/sec-026-a31-perfect-matchings.md",
+      "narrative": null,
+      "content": "The specialization v = 1 −u of the generating function is also the weighted enumeration \nof perfect matchings of a certain portion of the square grid: First observe that, by \nextending the bijection between monotone triangles with bottom row 1, 2, . . . , n and \nn × n ASMs to monotone triangles with arbitrary increasing bottom row of positive4\nintegers, say, b1, . . . , bn, we see that the latter are in bijection to n × m matrices, where \nm is any positive integer with m ≥bn that have the same properties as ASMs with \nthe exception that column sums do not have to be 1, but it is still required",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.3.2 Independence of u",
+      "pageStart": 44,
+      "pageEnd": 44,
+      "target": "../sections/sec-027-a32-independence-of-u.md",
+      "narrative": null,
+      "content": "We sketch an argument that shows that the weighted enumeration of our perfect \nmatchings is independent of u, and thus the generating function of monotone triangles \n(after setting v = 1 −u): This is done with the help of the local graph operation urban \nrenewal which was introduced by Kuperberg and Propp, see Fig. 6. If we replace a cell \nwith edge weights a, b, c, d by the conﬁguration indicated in Fig. 6 (right), the generat-\ning function of perfect matchings of the original graph is obtained from the generating \nfunction of the modiﬁed graph by multiplication of ad + bc. We perform this op",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s009731651830061x-main/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 44,
+      "pageEnd": 45,
+      "target": "../sections/sec-028-references.md",
+      "narrative": null,
+      "content": "[1] R.E. Behrend, P. Di Francesco, P. Zinn-Justin, On the weighted enumeration of alternating sign \nmatrices and descending plane partitions, J. Combin. Theory Ser. A 119 (2012) 331–363.\n[2] J. Bettinelli, A simple explicit bijection between (n, 2)-Gog and Magog-trapezoids, Sém. Lothar. \nCombin. 75 (2016) B75e.\n[3] P. Biane, H. Cheballah, Gog, Magog and Schützenberger II: left trapezoids, in: 25th International \nConference on Formal Power Series and Algebraic Combinatorics (FPSAC 2013), Proc., AS, in: \nDiscrete Math. Theor. Comput. Sci., Assoc. Discrete Math. Theor. Comput. Sci., Nancy, 2013,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1611.03697v5",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "RIEMANN-HILBERT PROBLEMS FROM DONALDSON-THOMAS THEORY",
+      "dcterms:creator": [
+        "BRIDGELAND, TOM"
+      ],
+      "dcterms:issued": "D:20200624",
+      "dcterms:identifier": "https://arxiv.org/abs/1611.03697",
+      "dcterms:abstract": "We study a class of Riemann-Hilbert problems arising naturally in Donaldson-Thomas theory. In certain special cases we show that these problems have unique solutions which can be written explicitly as products of gamma functions. We brieﬂy explain connections with Gromov- Witten theory and exact WKB analysis.",
+      "dcterms:source": "library/arxiv-1611.03697v5/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1611.03697v5"
+    }
+  ]
+}

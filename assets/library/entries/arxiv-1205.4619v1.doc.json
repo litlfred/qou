@@ -1,0 +1,856 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1205.4619v1",
+  "title": "Quaternion-Octonion Unitary Symmetries and Analogous Casimir Operators",
+  "variant": "pdf",
+  "pages": 17,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Quaternion Gauge Theory and Isospin",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-quaternion-gauge-theory-and-isospin"
+    },
+    {
+      "level": 1,
+      "title": "Quaternions and Dirac spinors",
+      "number": "3",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-quaternions-and-dirac-spinors"
+    },
+    {
+      "level": 1,
+      "title": "Flavor SU(3)f and Octonions",
+      "number": "4",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-flavor-su3f-and-octonions"
+    },
+    {
+      "level": 1,
+      "title": "Generators and Casimir Invariants",
+      "number": "5",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-generators-and-casimir-invariants"
+    },
+    {
+      "level": 1,
+      "title": "Casimir Operator for Quaternion SU(2) group",
+      "number": "6",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-6-casimir-operator-for-quaternion-su2-group"
+    },
+    {
+      "level": 1,
+      "title": "Split Octonions",
+      "number": "7",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-7-split-octonions"
+    },
+    {
+      "level": 1,
+      "title": "Split Octonions and SU(3)f Symmetry",
+      "number": "8",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-8-split-octonions-and-su3f-symmetry"
+    },
+    {
+      "level": 1,
+      "title": "Casimir Operators for split Octonion SU(3) group",
+      "number": "9",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-9-casimir-operators-for-split-octonion-su3-group"
+    },
+    {
+      "level": 1,
+      "title": "Conclusion",
+      "number": "10",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-10-conclusion"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 192,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zhong guan",
+          "heading": false
+        },
+        {
+          "term": "cun east",
+          "heading": false
+        },
+        {
+          "term": "ﬂavor symmetries",
+          "heading": false
+        },
+        {
+          "term": "east street",
+          "heading": false
+        },
+        {
+          "term": "casimir operators",
+          "heading": false
+        },
+        {
+          "term": "chinese academy",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1205.4619v1 [physics.gen-ph] 3 Apr 2012 Quaternion-Octonion Unitary Symmetries and Analogous Casimir Operators Pushpa(1), P. S. Bisht(1), Tianjun Li(2) and O. P. S. Negi(1.2)∗ May 1, 2018 (1) Department of Physics Kumaun University S. S. J. Campus Almora - 263601 (U.K.), India. (2) Institute of Theoretical Physics Chinese Academy of Sciences Zhong Guan Cun East Street 55 P. O. Box 2735 Beijing 100190, P. R.",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1205.4619v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 629,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "octonions cite",
+          "heading": false
+        },
+        {
+          "term": "casimir operators",
+          "heading": false
+        },
+        {
+          "term": "cite key",
+          "heading": false
+        },
+        {
+          "term": "analogous casimir",
+          "heading": false
+        },
+        {
+          "term": "quaternions",
+          "heading": false
+        },
+        {
+          "term": "flavor group",
+          "heading": false
+        },
+        {
+          "term": "octonion algebra",
+          "heading": false
+        },
+        {
+          "term": "handled",
+          "heading": false
+        }
+      ],
+      "extract": "Division algebras, specifically quaternions and octonions, Jordan and related algebras, are described \\cite{key-1} in a conceited manner in unified theories of basic interactions. Quaternions were discovered by Hamilton \\cite{key-2} in 1843 as an illustration of group structure and also applied to mechanics in three-dimensional space. Quaternions have the same properties as complex numbers with the difference that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-quaternion-gauge-theory-and-isospin",
+      "number": "2",
+      "title": "Quaternion Gauge Theory and Isospin",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 6,
+      "labelStart": "2",
+      "labelEnd": "6",
+      "words": 1106,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "psi shortmid",
+          "heading": false
+        },
+        {
+          "term": "shortmid overline",
+          "heading": false
+        },
+        {
+          "term": "array bar",
+          "heading": false
+        },
+        {
+          "term": "align psi",
+          "heading": false
+        },
+        {
+          "term": "dagger psi",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        },
+        {
+          "term": "psi star",
+          "heading": false
+        },
+        {
+          "term": "bar equiv",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\phi(x)$ be a quaternionic field ($Q$ field) and expressed as \\begin{align} \\phi= & e_{0}\\phi_{0}+e_{j}\\phi_{j}\\,\\,(\\forall\\, j=1,2,3)\\label{eq:1} \\end{align} where $\\phi_{0}$ and $\\phi_{j}$ are local Hermitian fields while the $e_{0}$ and $e_{j}$ are respectively the real and the imaginary basis of quaternion \\textbf{$Q$ }satisfying the following multiplication property \\begin{eqnarray} e_{0}^{2} & =e_{0};\\,\\,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-quaternions-and-dirac-spinors",
+      "number": "3",
+      "title": "Quaternions and Dirac spinors",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 598,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lyxmathsym textgreek",
+          "heading": false
+        },
+        {
+          "term": "text textgreek",
+          "heading": false
+        },
+        {
+          "term": "dagger psi",
+          "heading": false
+        },
+        {
+          "term": "array psi",
+          "heading": false
+        },
+        {
+          "term": "align gamma",
+          "heading": false
+        },
+        {
+          "term": "widehat psi",
+          "heading": false
+        },
+        {
+          "term": "equiv psi",
+          "heading": false
+        },
+        {
+          "term": "psi left",
+          "heading": false
+        }
+      ],
+      "extract": "Let us define the free particle quaternion Dirac equation \\cite{key-26} for a particle of mass $m$ as \\begin{align} \\left(i\\gamma^{\\mu}\\partial_{\\mu}-m\\right)\\psi= & 0.\\label{eq:26} \\end{align} Here, we used the following quaternion valued Weyl representation of $\\gamma$ matrices as it is convenient for ultra relativistic problems i.e \\begin{align} \\gamma^{0}=\\left[\\begin{array}{cc} 0 & e_{0}\\\\ e_{0} & 0",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-flavor-su3f-and-octonions",
+      "number": "4",
+      "title": "Flavor SU(3)f and Octonions",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "9",
+      "words": 621,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "abc lambda",
+          "heading": false
+        },
+        {
+          "term": "nonumber lambda",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "rightarrow lambda",
+          "heading": false
+        },
+        {
+          "term": "align psi",
+          "heading": false
+        },
+        {
+          "term": "frac lambda",
+          "heading": false
+        },
+        {
+          "term": "qquad lambda",
+          "heading": false
+        }
+      ],
+      "extract": "Gell-Mann and Ne'eman \\cite{key-28} were the first to propose $SU(3)_{f}$ as the correct generalization of isospin $SU(2)_{f}$ to include third quantum number the strangeness along with the isospin. The Gell-Mann $\\lambda$ matrices are used for the representations of the infinitesimal generators of the special unitary group called $SU(3)$. This group consists eight linearly independent generators",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-generators-and-casimir-invariants",
+      "number": "5",
+      "title": "Generators and Casimir Invariants",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 639,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "casimir",
+          "heading": true
+        },
+        {
+          "term": "casimir operators",
+          "heading": false
+        },
+        {
+          "term": "widehat right",
+          "heading": false
+        },
+        {
+          "term": "generators mathbb",
+          "heading": false
+        },
+        {
+          "term": "bcd ade",
+          "heading": false
+        },
+        {
+          "term": "align left",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "end align",
+          "heading": false
+        }
+      ],
+      "extract": "A very useful concept in group representation theory is that of Casimir operators \\cite{key-16,key- 29} although there is no general agreement \\cite{key-15} on a unique definition of Casimir operator\\cite{key-8,key-9}. Nonetheless, there exists a set of invariant matrices \\cite{key-15} which can be constructed from the contractions of the generators of a Lie group. Such invariant matrices are called the Casimir",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-casimir-operator-for-quaternion-su2-group",
+      "number": "6",
+      "title": "Casimir Operator for Quaternion SU(2) group",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 642,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "casimir operator",
+          "heading": true
+        },
+        {
+          "term": "mathsf widehat",
+          "heading": false
+        },
+        {
+          "term": "mathbb widehat",
+          "heading": false
+        },
+        {
+          "term": "nonumber widehat",
+          "heading": false
+        },
+        {
+          "term": "casimir invariant",
+          "heading": false
+        },
+        {
+          "term": "quaternion",
+          "heading": true
+        },
+        {
+          "term": "align hat",
+          "heading": false
+        },
+        {
+          "term": "mathfrak frac",
+          "heading": false
+        }
+      ],
+      "extract": "In Section-2, we have already stated the correspondence between the quaternion units $e_{j}$ and generators of $SU(2)$ isotopic spin group. One of the important property of $SU(2)$group is the existence of invariant operator (namely the total angular momentum, $\\hat{\\mathbb{J}}^{2}$ in internal isotopic spin space) which commutes with all of the generators of $SU(2)$ group. For compact groups, the Killing form is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-7-split-octonions",
+      "number": "7",
+      "title": "Split Octonions",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 514,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nonumber star",
+          "heading": false
+        },
+        {
+          "term": "star frac",
+          "heading": false
+        },
+        {
+          "term": "star delta",
+          "heading": false
+        },
+        {
+          "term": "split octonion",
+          "heading": false
+        },
+        {
+          "term": "align mathcal",
+          "heading": false
+        },
+        {
+          "term": "octonion algebra",
+          "heading": false
+        },
+        {
+          "term": "mathcal overline",
+          "heading": false
+        },
+        {
+          "term": "mathcal right",
+          "heading": false
+        }
+      ],
+      "extract": "Let us start with an octonion $\\mathcal{O}$, which is expanded \\cite{key-30} in a basis $(e_{0},e_{A})$ as \\begin{align} \\mathcal{O=O}^{0}+\\sum_{A=1}^{A=7} & O^{A}e_{A}(\\forall A,B.C,=1,2,3,....,7);\\label{eq:57} \\end{align} where $e_{A}(A=1,2,.....,7)$ : the imaginary octonion units and $(e_{0}=1)$ : the real octonion unit satisfy the properties given by Eqs. (\\ref{eq:43}) and (\\ref{eq:44}) for non-commutative and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-8-split-octonions-and-su3f-symmetry",
+      "number": "8",
+      "title": "Split Octonions and SU(3)f Symmetry",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": "13",
+      "labelEnd": "15",
+      "words": 567,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dagger star",
+          "heading": false
+        },
+        {
+          "term": "lambda star",
+          "heading": false
+        },
+        {
+          "term": "nonumber dagger",
+          "heading": false
+        },
+        {
+          "term": "align dagger",
+          "heading": false
+        },
+        {
+          "term": "star right",
+          "heading": false
+        },
+        {
+          "term": "dagger left",
+          "heading": false
+        },
+        {
+          "term": "spin octonion",
+          "heading": false
+        },
+        {
+          "term": "split octonion",
+          "heading": false
+        }
+      ],
+      "extract": "The split octonion algebra may now be regarded as the Lie algebra of $SU(3)$. So, we may write the complex Octonion $\\lyxmathsym{\\textgreek{y}}$ in terms of split octonion basis as, \\begin{align} \\psi= & u^{\\dagger}\\phi+u_{0}^{\\star}\\phi_{0};\\label{eq:66} \\end{align} where \\begin{align} u^{\\dagger}= & \\left(u_{1}^{\\star}u_{2}^{\\star}u_{3}^{\\star}\\right),\\,\\,\\,\\phi=\\left(\\begin{array}{c} \\phi_{1}\\\\ \\phi_{2}\\\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-9-casimir-operators-for-split-octonion-su3-group",
+      "number": "9",
+      "title": "Casimir Operators for split Octonion SU(3) group",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 317,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "split octonion",
+          "heading": true
+        },
+        {
+          "term": "boldsymbol widehat",
+          "heading": false
+        },
+        {
+          "term": "quarks flavors",
+          "heading": false
+        },
+        {
+          "term": "widehat frac",
+          "heading": false
+        },
+        {
+          "term": "align boldsymbol",
+          "heading": false
+        },
+        {
+          "term": "widehat label",
+          "heading": false
+        },
+        {
+          "term": "casimir",
+          "heading": true
+        },
+        {
+          "term": "triplet",
+          "heading": false
+        }
+      ],
+      "extract": "The group $SU(3)$ deals the global $SU(3)$ of quark flavors and the local $SU(3)_{C}$gauge symmetry of quantum Chromodynamics (QCD). Here we are interested in the former case where the fundamental representation is the triplet of (lowest mass) quarks flavors $u$, $d$,$s$. In the latter case the fundamental representation is the triplet, $A=1,2,3$ (or red, green, blue), with one such triplet for each of the$6$ quark",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-10-conclusion",
+      "number": "10",
+      "title": "Conclusion",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 867,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "casimir operators",
+          "heading": false
+        },
+        {
+          "term": "split octonion",
+          "heading": false
+        },
+        {
+          "term": "analogous casimir",
+          "heading": false
+        },
+        {
+          "term": "octonion basis",
+          "heading": false
+        },
+        {
+          "term": "negi",
+          "heading": false
+        },
+        {
+          "term": "quaternions",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "bisht",
+          "heading": false
+        }
+      ],
+      "extract": "Conclusion The foregoing analysis provides a fundamental representation of quaternions and the split octonion algebra in order to investigate the ﬂavor SU(2) and SU(3) symmetries. Instead of Pauli Spin matrices for SU(2) group we have used the compact notations of quaternions while for the case of SU(3) symmetry we have established the connection between the Gellmann λ matrices and octonion basis elements. The",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "align widehat",
+      "heading": false
+    },
+    {
+      "term": "align dagger",
+      "heading": false
+    },
+    {
+      "term": "align left",
+      "heading": false
+    },
+    {
+      "term": "align hat",
+      "heading": false
+    },
+    {
+      "term": "align frac",
+      "heading": false
+    },
+    {
+      "term": "begin align",
+      "heading": false
+    },
+    {
+      "term": "end align",
+      "heading": false
+    },
+    {
+      "term": "align psi",
+      "heading": false
+    },
+    {
+      "term": "casimir operators",
+      "heading": true
+    },
+    {
+      "term": "nonumber widehat",
+      "heading": false
+    },
+    {
+      "term": "widehat right",
+      "heading": false
+    },
+    {
+      "term": "nonumber star",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 10,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p16); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1205.4619v1"
+  }
+}

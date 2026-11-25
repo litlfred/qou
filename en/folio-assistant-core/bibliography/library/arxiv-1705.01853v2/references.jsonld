@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1705.01853v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Line Operators in the Standard Model",
+      "dcterms:creator": [
+        "Tong, David"
+      ],
+      "dcterms:issued": "D:20170612",
+      "dcterms:identifier": "https://arxiv.org/abs/1705.01853",
+      "dcterms:abstract": "There is an ambiguity in the gauge group of the Standard Model. The group is G = SU(3) × SU(2) × U(1)/Γ, where Γ is a subgroup of Z6 which cannot be determined by current experiments. We describe how the electric, magnetic and dyonic line operators of the theory depend on the choice of Γ. We also explain how the periodicity of the theta angles, associated to each factor of G, diﬀer.",
+      "dcterms:source": "library/arxiv-1705.01853v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1705.01853v2"
+    }
+  ]
+}

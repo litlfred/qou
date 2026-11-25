@@ -1,0 +1,1776 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1604.01247v2",
+  "title": "arxiv-1604.01247v2",
+  "variant": "pdf",
+  "pages": 37,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Unimodularity of SU(3) and the quark-lepton symmetry",
+      "number": "2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-unimodularity-of-su3-and-the-quark-lepton-symm"
+    },
+    {
+      "level": 2,
+      "title": "SU(3)-spaces",
+      "number": "2.1",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-su3-spaces"
+    },
+    {
+      "level": 2,
+      "title": "SU(3)-algebra version of octonion algebra",
+      "number": "2.2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-su3-algebra-version-of-octonion-algebra"
+    },
+    {
+      "level": 2,
+      "title": "The quark-lepton symmetry",
+      "number": "2.3",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-the-quark-lepton-symmetry"
+    },
+    {
+      "level": 2,
+      "title": "Gauge theoretical aspect",
+      "number": "2.4",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-24-gauge-theoretical-aspect"
+    },
+    {
+      "level": 1,
+      "title": "The 3-generations, triality and the exceptional finite quantum space",
+      "number": "3",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-3-the-3-generations-triality-and-the-exceptional"
+    },
+    {
+      "level": 2,
+      "title": "the 3-generations",
+      "number": "3.1",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-31-the-3-generations"
+    },
+    {
+      "level": 2,
+      "title": "Finite quantum spaces",
+      "number": "3.2",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-32-finite-quantum-spaces"
+    },
+    {
+      "level": 2,
+      "title": "The exceptional finite quantum space",
+      "number": "3.3",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-33-the-exceptional-finite-quantum-space"
+    },
+    {
+      "level": 2,
+      "title": "Exceptional almost classical quantum spacetime",
+      "number": "3.4",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-34-exceptional-almost-classical-quantum-spacetim"
+    },
+    {
+      "level": 1,
+      "title": "Modules and fundamental fermions",
+      "number": "4",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-4-modules-and-fundamental-fermions"
+    },
+    {
+      "level": 2,
+      "title": "Modules over Jordan algebras",
+      "number": "4.1",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-41-modules-over-jordan-algebras"
+    },
+    {
+      "level": 2,
+      "title": "J83-modules and SU(3)SU(3)-action",
+      "number": "4.2",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-42-j83-modules-and-su3su3-action"
+    },
+    {
+      "level": 2,
+      "title": "Modules for the two families by generation",
+      "number": "4.3",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-43-modules-for-the-two-families-by-generation"
+    },
+    {
+      "level": 2,
+      "title": "Problem of the U(1)SU(2)-symmetry",
+      "number": "4.4",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-44-problem-of-the-u1su2-symmetry"
+    },
+    {
+      "level": 2,
+      "title": "Charge conjugation",
+      "number": "4.5",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-45-charge-conjugation"
+    },
+    {
+      "level": 1,
+      "title": "Differential calculus over Jordan algebras",
+      "number": "5",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-5-differential-calculus-over-jordan-algebras"
+    },
+    {
+      "level": 2,
+      "title": "First order differential calculi",
+      "number": "5.1",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-51-first-order-differential-calculi"
+    },
+    {
+      "level": 2,
+      "title": "First order differential calculi over J83",
+      "number": "5.2",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-52-first-order-differential-calculi-over-j83"
+    },
+    {
+      "level": 2,
+      "title": "Differential graded Jordan algebras",
+      "number": "5.3",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-53-differential-graded-jordan-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Higher order derivation-based differential calculi",
+      "number": "5.4",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-54-higher-order-derivation-based-differential-ca"
+    },
+    {
+      "level": 2,
+      "title": "Differential calculi as A-algebras",
+      "number": "5.5",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-55-differential-calculi-as-a-algebras"
+    },
+    {
+      "level": 1,
+      "title": "Connections on Jordan modules",
+      "number": "6",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-6-connections-on-jordan-modules"
+    },
+    {
+      "level": 2,
+      "title": "Derivation-based connections. First definition",
+      "number": "6.1",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-61-derivation-based-connections-first-definition"
+    },
+    {
+      "level": 2,
+      "title": "Derivation-based connections. Second definition",
+      "number": "6.2",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-62-derivation-based-connections-second-definitio"
+    },
+    {
+      "level": 2,
+      "title": "General connections",
+      "number": "6.3",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-63-general-connections"
+    },
+    {
+      "level": 1,
+      "title": "Tentative conclusion",
+      "number": "7",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-7-tentative-conclusion"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "3",
+      "words": 767,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diﬀerential calculi",
+          "heading": false
+        },
+        {
+          "term": "derivation-based connections",
+          "heading": false
+        },
+        {
+          "term": "jordan modules",
+          "heading": false
+        },
+        {
+          "term": "jordan algebras",
+          "heading": false
+        },
+        {
+          "term": "quark-lepton symmetry",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential calculus",
+          "heading": false
+        },
+        {
+          "term": "exceptional ﬁnite",
+          "heading": false
+        },
+        {
+          "term": "quantum spacetime",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1604.01247v2 [math.QA] 1 May 2016 EXCEPTIONAL QUANTUM GEOMETRY AND PARTICLE PHYSICS Michel DUBOIS-VIOLETTE 1 To the memory of Raymond Stora Abstract Based on an interpretation of the quark-lepton symmetry in terms of the unimodularity of the color group SU(3) and on the existence of 3 generations, we develop an argumentation suggesting that the “ﬁnite quantum space” corresponding to the exceptional real Jordan",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1604.01247v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": "3",
+      "labelEnd": "6",
+      "words": 1321,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exceptional jordan",
+          "heading": false
+        },
+        {
+          "term": "jordan algebra",
+          "heading": false
+        },
+        {
+          "term": "quark-lepton symmetry",
+          "heading": false
+        },
+        {
+          "term": "product vartimes",
+          "heading": false
+        },
+        {
+          "term": "hilbertian scalar",
+          "heading": false
+        },
+        {
+          "term": "octonion algebra",
+          "heading": false
+        },
+        {
+          "term": "mathbb oplus",
+          "heading": false
+        },
+        {
+          "term": "mathbb mbox",
+          "heading": false
+        }
+      ],
+      "extract": "It is well known that the Standard Model of particles is very successful but contains several inputs which ought to have explainations at a fundamental level. Some of these inputs like the existence of the Higgs particles, which seem to have recently acquired experimental confimations, appear naturally for instance in the (almost commutative) noncommutative geometric formulations [@mdv-ker-mad:1989a],",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-unimodularity-of-su3-and-the-quark-lepton-symm",
+      "number": "2",
+      "title": "Unimodularity of SU(3) and the quark-lepton symmetry",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "symmetry",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-su3-spaces",
+      "number": "2.1",
+      "title": "SU(3)-spaces",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 233,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "orthonormal basis",
+          "heading": false
+        },
+        {
+          "term": "ﬁnes",
+          "heading": false
+        },
+        {
+          "term": "hilbertian",
+          "heading": false
+        }
+      ],
+      "extract": "SU(3)-spaces In the following, an SU(3)-space will be a complex 3-dimensional Hilbert space E equipped with an antisymmetric complex 3-linear form v : Λ3E →C of norm ∥v ∥= 1, that is such that one has |v(e1, e2, e3)| = 1 for any orthonormal basis (ek) of E. An SU(3)-basis of E will be an orthonormal basis (e1, e2, e3) of E such that one has v(e1, e2, e3) = 1. Given such an SU(3)-basis (e1, e2, e3), one de- ﬁnes a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-su3-algebra-version-of-octonion-algebra",
+      "number": "2.2",
+      "title": "SU(3)-algebra version of octonion algebra",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "9",
+      "words": 506,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vert parallel",
+          "heading": false
+        },
+        {
+          "term": "mapsto vartimes",
+          "heading": false
+        },
+        {
+          "term": "beta vert",
+          "heading": false
+        },
+        {
+          "term": "alpha vert",
+          "heading": false
+        },
+        {
+          "term": "mathbb oplus",
+          "heading": false
+        },
+        {
+          "term": "ell bar",
+          "heading": false
+        },
+        {
+          "term": "hilbertian",
+          "heading": false
+        },
+        {
+          "term": "scalar product",
+          "heading": false
+        }
+      ],
+      "extract": "One can combine the 3-linear form $v$ on $E$ with the Hilbertian scalar product to define an antibilinear antisymmetric product $(Z_1,Z_2)\\mapsto Z_1\\vartimes Z_2$ on $E$ by $$v(Z_1,Z_2,Z_3)=\\langle Z_1\\vartimes Z_2,Z_3\\rangle \\label{vectp}$$ for any $Z_1,Z_2,Z_3\\in E$. In the $SU(3)$-basis $(e_1,e_2,e_3)$ and the corresponding identification of $E$ with $\\mathbb C^3$ this product reads $$(Z_1\\vartimes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-the-quark-lepton-symmetry",
+      "number": "2.3",
+      "title": "The quark-lepton symmetry",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 103,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quark-lepton symmetry",
+          "heading": true
+        },
+        {
+          "term": "mathbb mbox",
+          "heading": false
+        },
+        {
+          "term": "simeq mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "The representation of $SU(3)$ on $A=\\mathbb C\\mbox{\\rm 1\\hspace {-.6em} l}\\oplus E$ is the direct sum of the fundamental representation on $E$ with the trivial representation on its orthogonal complement $\\mathbb C\\mbox{\\rm 1\\hspace {-.6em} l}\\simeq \\mathbb C$. If one interprets $E$ as the internal space for a quark, it is therefore natural to identify $\\mathbb C\\mbox{\\rm 1\\hspace {-.6em} l}$ with the trivial",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-gauge-theoretical-aspect",
+      "number": "2.4",
+      "title": "Gauge theoretical aspect",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 445,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mbox der",
+          "heading": false
+        },
+        {
+          "term": "rightarrow mbox",
+          "heading": false
+        },
+        {
+          "term": "rho rightarrow",
+          "heading": false
+        },
+        {
+          "term": "gluon field",
+          "heading": false
+        },
+        {
+          "term": "stackrel rho",
+          "heading": false
+        },
+        {
+          "term": "nabla",
+          "heading": false
+        },
+        {
+          "term": "mathbb oplus",
+          "heading": false
+        },
+        {
+          "term": "vector bundle",
+          "heading": false
+        }
+      ],
+      "extract": "Up to now, the discussion is over each spacetime point. One knows however that the color group $SU(3)$ is the structure group of an $SU(3)$-gauge theory of strong interactions. Indeed the gluon field which induces the strong interactions is an $SU(3)$-connection.\\ This means that one has a complex vector bundle over spacetime with fiber $\\mathbb C\\oplus \\mathbb C^3$ associated with a principal $SU(3)$-bundle which",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-31-the-3-generations",
+      "number": "3.1",
+      "title": "the 3-generations",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-3-the-3-generations-triality-and-the-exceptional",
+      "number": "3",
+      "title": "The 3-generations, triality and the exceptional finite quantum space",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 220,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "generations",
+          "heading": true
+        },
+        {
+          "term": "triality",
+          "heading": true
+        },
+        {
+          "term": "exceptional jordan",
+          "heading": false
+        },
+        {
+          "term": "quantum space",
+          "heading": true
+        },
+        {
+          "term": "jordan algebra",
+          "heading": false
+        }
+      ],
+      "extract": "tional ﬁnite quantum space 3.1 the 3-generations There are 6 ﬂavours of quark-lepton (u, νe), (d, e), (c, νµ), (s, µ), (t, ντ), (b, τ) which can be grouped in 3 generations of doublets of quark-lepton which are the columns of the following table generations quarks Q = 2/3 u c t leptons Q = 0 νe νµ ντ quarks Q = −1/3 d s b leptons Q = −1 e µ τ where Q denotes the electric charge. This is the present experimental",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-32-finite-quantum-spaces",
+      "number": "3.2",
+      "title": "Finite quantum spaces",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 15,
+      "labelStart": "12",
+      "labelEnd": "15",
+      "words": 1078,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jspin mathbb",
+          "heading": false
+        },
+        {
+          "term": "euclidean jordan",
+          "heading": false
+        },
+        {
+          "term": "jordan algebra",
+          "heading": false
+        },
+        {
+          "term": "mathbb mbox",
+          "heading": false
+        },
+        {
+          "term": "finite-dimensional euclidean",
+          "heading": false
+        },
+        {
+          "term": "finite quantum",
+          "heading": true
+        },
+        {
+          "term": "jordan identity",
+          "heading": false
+        },
+        {
+          "term": "oplus mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "The notion of finite-dimensional Euclidean (or formally real) Jordan algebra was introduced and analyzed in [@jor-vn-wig:1934] under the name $r$-number algebra in order to formalize the properties of the observables of finite quantum systems. A minimal set of requirement for the observables of a finite quantum system is that it is a finite-dimensional real vector space $J$ such that one can consistently define",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-33-the-exceptional-finite-quantum-space",
+      "number": "3.3",
+      "title": "The exceptional finite quantum space",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 399,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exceptional quantum",
+          "heading": true
+        },
+        {
+          "term": "cal jord",
+          "heading": false
+        },
+        {
+          "term": "jordan algebra",
+          "heading": false
+        },
+        {
+          "term": "finite quantum",
+          "heading": true
+        },
+        {
+          "term": "euclidean jordan",
+          "heading": false
+        },
+        {
+          "term": "jordan product",
+          "heading": false
+        },
+        {
+          "term": "quantum space",
+          "heading": true
+        },
+        {
+          "term": "associative algebra",
+          "heading": false
+        }
+      ],
+      "extract": "Apart $J^8_3$, all the other finite-dimensional simple Euclidean Jordan algebras can be realized as real vector spaces of self-adjoint operators in finite-dimensional Hilbert spaces, stable by the anticommutator of the associative composition of linear operators. They can therefore be considered as algebras of observabes of some finite quantum systems.These special algebras enter in the frame of noncommutative",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-34-exceptional-almost-classical-quantum-spacetim",
+      "number": "3.4",
+      "title": "Exceptional almost classical quantum spacetime",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": "16",
+      "labelEnd": "18",
+      "words": 583,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exceptional almost",
+          "heading": true
+        },
+        {
+          "term": "classical spacetime",
+          "heading": true
+        },
+        {
+          "term": "quantum spacetime",
+          "heading": true
+        },
+        {
+          "term": "mbox der",
+          "heading": false
+        },
+        {
+          "term": "mbox diff",
+          "heading": false
+        },
+        {
+          "term": "idj",
+          "heading": false
+        },
+        {
+          "term": "rightarrow mbox",
+          "heading": false
+        },
+        {
+          "term": "algebra mbox",
+          "heading": false
+        }
+      ],
+      "extract": "As in §2.4 these algebras $J^8_3$ over each spacetime point are the fiber of a bundle in algebras $J^8_3$ which is associated to the principal (color) $SU(3)$-bundle on which the gluon field is a connection. This connection is compatible with the identification of the octonionic matrix elements of $J^8_3$ as elements of $\\mathbb C\\oplus \\mathbb C^3$. Let $J^8_3(M)$ be the real Jordan algebra of the sections of this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-4-modules-and-fundamental-fermions",
+      "number": "4",
+      "title": "Modules and fundamental fermions",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 4,
+      "summary": null,
+      "keywords": [],
+      "extract": "Modules and fundamental fermions",
+      "extractCut": false
+    },
+    {
+      "id": "sec-012-41-modules-over-jordan-algebras",
+      "number": "4.1",
+      "title": "Modules over Jordan algebras",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 409,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jordan algebras",
+          "heading": true
+        },
+        {
+          "term": "jordan bimodule",
+          "heading": false
+        },
+        {
+          "term": "unital",
+          "heading": false
+        },
+        {
+          "term": "reads",
+          "heading": false
+        },
+        {
+          "term": "modules",
+          "heading": true
+        },
+        {
+          "term": "iii",
+          "heading": false
+        }
+      ],
+      "extract": "Modules over Jordan algebras There are general deﬁnitions of bimodules for classes of algebras [38], [27] or for categories of algebras [14]. For Jordan algebras this reduces to the following (see also in [31]). Let J be a Jordan algebra and let M be a vector space equipped with left and right actions of J J ⊗M →M, x ⊗Φ 7→xΦ ∈M M ⊗J →M, Φ ⊗x 7→Φx ∈M for x ∈J, Φ ∈M. Deﬁne a bilinear product on J ⊕M by setting (x +",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-42-j83-modules-and-su3su3-action",
+      "number": "4.2",
+      "title": "J83-modules and SU(3)SU(3)-action",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 398,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jordan module",
+          "heading": false
+        },
+        {
+          "term": "jordan algebra",
+          "heading": false
+        },
+        {
+          "term": "action",
+          "heading": true
+        },
+        {
+          "term": "mixes",
+          "heading": false
+        },
+        {
+          "term": "modules isomorphic",
+          "heading": false
+        },
+        {
+          "term": "generations",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst factor",
+          "heading": false
+        }
+      ],
+      "extract": "Any Jordan algebra J is canonically a Jordan module over itself which is uni- tal whenever J has a unit. The list of the unital irreducible Jordan modules over the ﬁnite-dimensional simple Euclidean Jordan algebras can be found in [27]. In the case of the exceptional Jordan algebra J8 3, it turns out that any unital Jordan module is a product or a direct sum of modules isomorphic to J8 3, [27]. In particular any",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-43-modules-for-the-two-families-by-generation",
+      "number": "4.3",
+      "title": "Modules for the two families by generation",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 247,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "generation",
+          "heading": true
+        },
+        {
+          "term": "families",
+          "heading": true
+        },
+        {
+          "term": "internal spaces",
+          "heading": false
+        },
+        {
+          "term": "majorana",
+          "heading": false
+        }
+      ],
+      "extract": "Modules for the two families by generation As recalled in §3.1, there are two families by generation. In view of §4.2 it seems, at ﬁrst sight, reasonable to take as J8 3-module the product of two copies Ju and Jd of J8 3 as module with the particle assignment Ju =   α1 ντ + t ¯νµ −c ¯ντ −t α2 νe + u νµ + c ¯νe −u α3   (4.11) Jd =   β1 τ + b ¯µ −s ¯τ −b β2 e + d µ + s ¯e −d β3   (4.12) or the representation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-44-problem-of-the-u1su2-symmetry",
+      "number": "4.4",
+      "title": "Problem of the U(1)SU(2)-symmetry",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 594,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "z2j",
+          "heading": false
+        },
+        {
+          "term": "euclidean jordan",
+          "heading": false
+        },
+        {
+          "term": "jordan algebra",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite-dimensional euclidean",
+          "heading": false
+        },
+        {
+          "term": "symmetry",
+          "heading": true
+        },
+        {
+          "term": "color",
+          "heading": false
+        },
+        {
+          "term": "eiθ",
+          "heading": false
+        },
+        {
+          "term": "analog",
+          "heading": false
+        }
+      ],
+      "extract": "Up to now the analysis deals only with the color symmetry SU(3), its ten- tative connection with the quark-lepton symmetry and the 3 generations. This leads naturally to the above assignment of internal spaces for funda- mental fermions (of §4.3) by (4.13) and (4.14) together with an action of SU(3) × SU(3)/Z3 described in §4.2 by (4.10) where the ﬁrst factor SU(3) is the color group. However then, the description",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-45-charge-conjugation",
+      "number": "4.5",
+      "title": "Charge conjugation",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 140,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cal",
+          "heading": false
+        },
+        {
+          "term": "conjugation",
+          "heading": true
+        },
+        {
+          "term": "mathbb",
+          "heading": false
+        },
+        {
+          "term": "bar",
+          "heading": false
+        }
+      ],
+      "extract": "In the identification of the octonion algebra $\\mathbb O$ as $\\mathbb C\\oplus \\mathbb C^3$, the octonionic conjugate of $(z,Z)=z+Z$ is $\\overline{(z,Z)}=(\\bar z,-Z)=\\bar z-Z$.\\ On the other hand if one interprets $Z\\in \\mathbb C^3$ as an internal quark state and $z\\in \\mathbb C$ as an internal state of the corresponding lepton, the charge conjugation ${\\cal C}$ induces the complex conjugation in $\\mathbb C^3$ and in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-5-differential-calculus-over-jordan-algebras",
+      "number": "5",
+      "title": "Differential calculus over Jordan algebras",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": "24",
+      "labelEnd": "24",
+      "words": 5,
+      "summary": null,
+      "keywords": [],
+      "extract": "Diﬀerential calculus over Jordan algebras",
+      "extractCut": false
+    },
+    {
+      "id": "sec-018-51-first-order-differential-calculi",
+      "number": "5.1",
+      "title": "First order differential calculi",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 300,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "differential calculi",
+          "heading": true
+        },
+        {
+          "term": "tiny der",
+          "heading": false
+        },
+        {
+          "term": "mbox tiny",
+          "heading": false
+        },
+        {
+          "term": "order differential",
+          "heading": true
+        },
+        {
+          "term": "omega mbox",
+          "heading": false
+        },
+        {
+          "term": "unital jordan",
+          "heading": false
+        },
+        {
+          "term": "differential calculus",
+          "heading": false
+        },
+        {
+          "term": "jordan algebra",
+          "heading": false
+        }
+      ],
+      "extract": "Given a category $\\mathbf C$ of algebras over some field $\\mathbb K$ and an algebra ${\\cal A}$ in $\\mathbf C$, a pair $(\\Omega^1,d)$ of an ${\\cal A}$-bimodule $\\Omega^1$ for $\\mathbf C$ [@mdv:2001] and a derivation $d$ of ${\\cal A}$ into $\\Omega^1$, that is a $\\mathbb K$-linear mapping satisfying (the Leibniz rule) $$d(xy)=d(x)y+xd(y)$$ for any $x,y\\in {\\cal A}$, will be refered to as a *first order differential",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-52-first-order-differential-calculi-over-j83",
+      "number": "5.2",
+      "title": "First order differential calculi over J83",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 379,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tiny der",
+          "heading": false
+        },
+        {
+          "term": "mbox tiny",
+          "heading": false
+        },
+        {
+          "term": "omega mbox",
+          "heading": false
+        },
+        {
+          "term": "otimes mbox",
+          "heading": false
+        },
+        {
+          "term": "circ mbox",
+          "heading": false
+        },
+        {
+          "term": "exceptional jordan",
+          "heading": false
+        },
+        {
+          "term": "otimes alpha",
+          "heading": false
+        },
+        {
+          "term": "jordan algebras",
+          "heading": false
+        }
+      ],
+      "extract": "The Lie algebra ${\\mbox{Der}}(J^8_3)$ of all derivations of the exceptional Jordan algebra $J^8_3$ is the exceptional compact simple Lie algebra $\\mathfrak f_4$. Since $J^8_3$ is simple $Z(J^8_3)=\\mathbb R$ so the unital $J^8_3$-module $\\Omega^1_{{\\mbox{\\tiny Der}}}(J^8_3)$ is the vector space of all linear mappings of ${\\mbox{Der}}(J^8_3)$ into $J^8_3$ that is $$\\Omega^1_{{\\mbox{\\tiny Der}}}(J^8_3)=J^8_3\\otimes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-53-differential-graded-jordan-algebras",
+      "number": "5.3",
+      "title": "Differential graded Jordan algebras",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "26",
+      "labelEnd": "27",
+      "words": 216,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "graded jordan",
+          "heading": true
+        },
+        {
+          "term": "differential graded",
+          "heading": true
+        },
+        {
+          "term": "omega vert",
+          "heading": false
+        },
+        {
+          "term": "parallel vert",
+          "heading": false
+        },
+        {
+          "term": "degree vert",
+          "heading": false
+        },
+        {
+          "term": "omega oplus",
+          "heading": false
+        },
+        {
+          "term": "algebra omega",
+          "heading": false
+        }
+      ],
+      "extract": "Let us define a *differential graded Jordan algebra* to be a $\\mathbb N$-graded algebra $$\\Omega=\\oplus_{n\\in \\mathbb N}\\Omega^n$$ which is a *Jordan superalgebra*, (see e.g. in [@kac:1977], [@mar-zel:2010]), for the induced $\\mathbb Z/2\\mathbb Z$ degree and which is equipped with a *differential*, that is with an antiderivation $d$ of degree 1 and of square 0.\\ Thus $\\Omega$ is a graded-commutative algebra, that is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-54-higher-order-derivation-based-differential-ca",
+      "number": "5.4",
+      "title": "Higher order derivation-based differential calculi",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": "27",
+      "labelEnd": "28",
+      "words": 457,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tiny der",
+          "heading": false
+        },
+        {
+          "term": "mbox tiny",
+          "heading": false
+        },
+        {
+          "term": "omega mbox",
+          "heading": false
+        },
+        {
+          "term": "graded jordan",
+          "heading": false
+        },
+        {
+          "term": "unital jordan",
+          "heading": false
+        },
+        {
+          "term": "wedge mbox",
+          "heading": false
+        },
+        {
+          "term": "jordan algebra",
+          "heading": false
+        },
+        {
+          "term": "jordan subalgebra",
+          "heading": false
+        }
+      ],
+      "extract": "Let $J$ be a unital Jordan algebra with center $Z(J)$ and let $\\Omega^n_{{\\mbox{\\tiny Der}}}(J)$ be the $J$-module of all $n$-$Z(J)$-linear antisymmetric mappings of ${\\mbox{Der}}(J)$ into $J$, that is $\\omega\\in \\Omega^n_{{\\mbox{\\tiny Der}}}(J)$ is a $Z(J)$-linear mapping $$\\omega:\\wedge^n_{Z(J)} {\\mbox{Der}}(J)\\rightarrow J$$ of the n-th exterior power over $Z(J)$ of the $Z(J)$-module ${\\mbox{Der}}(J)$ into $J$ as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-55-differential-calculi-as-a-algebras",
+      "number": "5.5",
+      "title": "Differential calculi as A-algebras",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 30,
+      "labelStart": "28",
+      "labelEnd": "30",
+      "words": 414,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alpha ast",
+          "heading": false
+        },
+        {
+          "term": "alpha circ",
+          "heading": false
+        },
+        {
+          "term": "beta circ",
+          "heading": false
+        },
+        {
+          "term": "graded jordan",
+          "heading": false
+        },
+        {
+          "term": "circ gamma",
+          "heading": false
+        },
+        {
+          "term": "geq omega",
+          "heading": false
+        },
+        {
+          "term": "let cal",
+          "heading": false
+        },
+        {
+          "term": "ast algebra",
+          "heading": false
+        }
+      ],
+      "extract": "Let ${\\cal A}$ be a complex unital $\\ast$-algebra and let $\\Omega_u({\\cal A})=\\oplus_{n\\geq 0}\\Omega^n_u({\\cal A})$ be the universal differential calculus over ${\\cal A}$, [@kar:1983]. It is shown in [@wor:1989] (see also in [@mdv:2001]) that there is a unique involution on $\\Omega_u({\\cal A})$ which extends the involution of ${\\cal A}$ for which it is a differential graded $\\ast$-algebra. This means that one has",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-6-connections-on-jordan-modules",
+      "number": "6",
+      "title": "Connections on Jordan modules",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 30,
+      "labelStart": "30",
+      "labelEnd": "30",
+      "words": 4,
+      "summary": null,
+      "keywords": [],
+      "extract": "Connections on Jordan modules",
+      "extractCut": false
+    },
+    {
+      "id": "sec-024-61-derivation-based-connections-first-definition",
+      "number": "6.1",
+      "title": "Derivation-based connections. First definition",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 30,
+      "labelStart": "30",
+      "labelEnd": "30",
+      "words": 206,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "derivation-based",
+          "heading": true
+        },
+        {
+          "term": "mbox der",
+          "heading": false
+        },
+        {
+          "term": "nabla",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        }
+      ],
+      "extract": "Let $J$ be a unital Jordan algebra with center (= centroid) $Z(J)$ and let ${\\mbox{Der}}(J)$ be the Lie algebra and $Z(J)$-module of derivations of $J$. A *(derivation-based) connection* $\\nabla$ on a unital $J$-module $M$ is a linear mapping $X\\mapsto \\nabla_X$ of ${\\mbox{Der}}(J)$ into the linear endomorphisms of $M$ such that $$\\left\\{ \\begin{array}{l} \\nabla_X(xm)=X(x)m +x\\nabla_X(m)\\\\ \\\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-62-derivation-based-connections-second-definitio",
+      "number": "6.2",
+      "title": "Derivation-based connections. Second definition",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 32,
+      "labelStart": "30",
+      "labelEnd": "32",
+      "words": 314,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tiny der",
+          "heading": false
+        },
+        {
+          "term": "mbox tiny",
+          "heading": false
+        },
+        {
+          "term": "omega nabla",
+          "heading": false
+        },
+        {
+          "term": "omega phi",
+          "heading": false
+        },
+        {
+          "term": "mapsto nabla",
+          "heading": false
+        },
+        {
+          "term": "atop vee",
+          "heading": false
+        },
+        {
+          "term": "stackrel atop",
+          "heading": false
+        },
+        {
+          "term": "vee cdots",
+          "heading": false
+        }
+      ],
+      "extract": "Let $J$, $Z(J)$, ${\\mbox{Der}}(J)$ and $M$ be as in §6.1 and let $\\Omega^n_{{\\mbox{\\tiny Der}}}(M)$ be the $J$-module of all $n$-$Z(J)$-linear antisymmetric mapping of ${\\mbox{Der}}(J)$ into $M$, which means that $\\Phi\\in \\Omega^n_{{\\mbox{\\tiny Der}}}(M)$ is a $Z(J)$-linear mapping $$\\Phi: \\wedge^n_{Z(J)}{\\mbox{Der}}(J)\\rightarrow M$$ with the notations of §5.4. The graded $J$-module $\\Omega_{\\mbox{\\tiny",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-63-general-connections",
+      "number": "6.3",
+      "title": "General connections",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 32,
+      "labelStart": "32",
+      "labelEnd": "32",
+      "words": 148,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "omega nabla",
+          "heading": false
+        },
+        {
+          "term": "endomorphism nabla",
+          "heading": false
+        },
+        {
+          "term": "omega phi",
+          "heading": false
+        },
+        {
+          "term": "graded jordan",
+          "heading": false
+        },
+        {
+          "term": "jordan algebra",
+          "heading": false
+        },
+        {
+          "term": "oplus geq",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\Omega=\\oplus_{n\\geq 0}\\Omega^n$ be a differential graded Jordan algebra and let $\\Gamma=\\oplus_{n\\geq 0}\\Gamma^n$ be a graded Jordan module over the graded Jordan algebra $\\Omega$, (the axioms for this notion are easy to guess). A *connection* on $\\Gamma$ will be defined to be a linear endomorphism $\\nabla$ of $\\Gamma$ satisfying $$\\left\\{ \\begin{array}{l} \\nabla(\\Gamma^n)\\subset \\Gamma^{n+1}\\\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-7-tentative-conclusion",
+      "number": "7",
+      "title": "Tentative conclusion",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 37,
+      "labelStart": "32",
+      "labelEnd": null,
+      "words": 1230,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "first-order operator",
+          "heading": false
+        },
+        {
+          "term": "tentative",
+          "heading": true
+        },
+        {
+          "term": "usual formulation",
+          "heading": false
+        },
+        {
+          "term": "lorentzian",
+          "heading": false
+        },
+        {
+          "term": "differential calculus",
+          "heading": false
+        },
+        {
+          "term": "jordan",
+          "heading": false
+        },
+        {
+          "term": "spectral action",
+          "heading": false
+        },
+        {
+          "term": "frame",
+          "heading": false
+        }
+      ],
+      "extract": "From a physical point of view, it is clear that what is described in these notes is quite incomplete : One should write some dynamics. Before that, one must develop several points.\\ Firstly one must understand the formulation of the $U(1)\\times SU(2)$-symmetry in this frame. Since the new suspected particles have $\\mathbb R$ as internal spaces, it is suggested that they are described by Majorana fermions in a",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "jordan algebra",
+      "heading": false
+    },
+    {
+      "term": "exceptional jordan",
+      "heading": false
+    },
+    {
+      "term": "unital jordan",
+      "heading": false
+    },
+    {
+      "term": "jordan module",
+      "heading": false
+    },
+    {
+      "term": "euclidean jordan",
+      "heading": false
+    },
+    {
+      "term": "real jordan",
+      "heading": false
+    },
+    {
+      "term": "graded jordan",
+      "heading": true
+    },
+    {
+      "term": "jordan product",
+      "heading": false
+    },
+    {
+      "term": "algebra mbox",
+      "heading": false
+    },
+    {
+      "term": "mbox der",
+      "heading": false
+    },
+    {
+      "term": "mathbb mbox",
+      "heading": false
+    },
+    {
+      "term": "jordan subalgebra",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 28,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 29,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 29 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1604.01247v2"
+  }
+}

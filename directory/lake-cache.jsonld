@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/directory/lake-cache.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/directory/lake-cache",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Subgraph",
+      "name": "lake-cache",
+      "path": "lake-cache/",
+      "contentSource": {
+        "kind": "family",
+        "branch": "cat/folio-assistant-sci/lake-cache/",
+        "keyFrom": "<package>-<toolchain-slug>, or toolchain-<slug>, or an addon suffix such as qou-v4-24-0-mathlib-gap-modules",
+        "declaredIn": "storage"
+      },
+      "holdsGraph": [
+        "https://litlfred.github.io/cat-harness/v0/ns/graphTypology/lake-cache"
+      ],
+      "description": "Lean build caches, one orphan branch per package and toolchain, restored so a build starts warm. Declared here, on the folio that builds the Lean packages, rather than as a row in folio-assistant's special-branches.json (owner, 2026-10-03). MIGRATED 2026-10-05 (owner: \"migratez qou\") from the legacy `lake-cache/<member>` names: scripts/lib/lake-cache-family.sh writes the declared name and reads it first, falling back to `lake-cache/<member>`, whose branches are kept and never deleted (AGENTS.md rule 9). `lake-cache/` is where a member is mounted; the restore scripts untar into `.lake/`, which the dot-prefix guard forbids declaring.",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/lake-cache"
+    }
+  ]
+}

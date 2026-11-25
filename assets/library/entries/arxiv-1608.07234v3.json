@@ -1,0 +1,82 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1608.07234v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1608.07234v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 11,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Let  $\\GG$ be a   semisimple $\\Q$-group, and let $Y(K)$ \nbe the associated arithmetic manifold (see   \\eqref{YKdef}). \n Particularly when $Y(K)$ is not an algebraic variety, it often happens\nthat the same Hecke eigensystem can occur in several different cohomological degrees (see \\S \\ref{sec:MV}). \nOur goal is to construct extra endomorphisms of cohomology that partly explain this,\n and give evidence that these extra endomorphisms are related to certain motivic cohomology groups. \n  \n\\subsection{Derived Hecke algebra}\\label{introdha}\n Let $v$ be a prime, $G_v = \\GG(\\Q_v)$ and $K_v$ a maximal c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07234v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Derived Hecke algebra",
+      "pageStart": 11,
+      "pageEnd": 85,
+      "target": "../sections/sec-001-2-derived-hecke-algebra.md",
+      "narrative": null,
+      "content": "\\label{introdha}\n Let $v$ be a prime, $G_v = \\GG(\\Q_v)$ and $K_v$ a maximal compact subgroup. The  usual Hecke algebra at $v$, with  coefficients in a (say finite) ring $S$,  can be described as    $  \\Hom_{S G_v} \\left(  S[G_v/K_v],  S[G_v/K_v] \\right).$\n If in place of $\\Hom$ we use $\\Ext$ (see \\S \\ref{sec:dha} for more details)\n we get a graded extension, which we  may call the ``local derived Hecke algebra'':\n\\begin{eqnarray} \\label{extdef} \\mathscr{H}_{v,S} :=  \\bigoplus_i \\Ext^i_{S G_v} \\left(  S[G_v/K_v],  S[G_v/K_v] \\right) \n\\end{eqnarray}\n \n Such a construction has been considered by",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07234v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Index of symbols and important notation",
+      "pageStart": 85,
+      "pageEnd": 86,
+      "target": "../sections/sec-002-index-of-symbols-and-important-notation.md",
+      "narrative": null,
+      "content": "Av, 21\nB_, dual Borel , 11\nBv, 21\nF , 10\nGv, 10, 21\nH 1\nf , 56\nK0, 39\nKv, 11\nM ˚ , dual of a Galois module, 56\nR, 40\nRn, 51\nRQn , 51\nS (set of ramiﬁed places), 40\nSn, 43\nT , 22\nT (set of places), 40\nT _, dual torus, 11\nTn, 43\nTq, 57\nWn, 62\nWs, 42\nX˚ , 10, 22\nY p1q, 39\nY pKq, 10\nY0pQnq, 43\nY0pqq, 42\nY1pqq, 42\nY1pq, n q, 42\nY ˚\n1 pQnq, 43\nAd˚ , 56\nq, minimal degree of tempered cohomology, 2\nFrobT\nq , 42\nΠ , 39, 40\nS, 43\nV, 57\nV-convergent, 70\nχ t, 46\nχ F robT , 46\nRρ , 42\n˜T, 18\n˜TpV q, 20\n˜TpV0q, 20\nιq,n , 57\nH (hypercohomology), 79\nApFvq˝ , 21\nG, 10\nA, 21\nB, 21\nG, 21\nm, 40\ntRn , 62\ntSn , 62\ntR",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07234v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 86,
+      "pageEnd": 87,
+      "target": "../sections/sec-003-references.md",
+      "narrative": null,
+      "content": "[1] Patrick Allen, Bao Le Hung, Ana Caraiani, Frank Calegari , Toby Gee, David Helm, James New-\nton, Richard Taylor, Jack Thorne, and Peter Scholze. Potent ial automorphy over CM ﬁelds. preprint,\nhttp://math.uchicago.edu/ fcale/papers/Ramanujan.pdf .\n[2] Spencer Bloch and Kazuya Kato. L-functions and Tamagawa numbers of motives. In The Grothendieck\nFestschrift, Vol. I, volume 86 of Progr . Math., pages 333–400. Birkhäuser Boston, Boston, MA, 1990.\n[3] A. Borel and N. Wallach. Continuous cohomology, discrete subgroups, and represent ations of reductive\ngroups, volume 67 of Mathematical Surveys",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

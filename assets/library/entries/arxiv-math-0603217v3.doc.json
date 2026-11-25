@@ -1,0 +1,477 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0603217v3",
+  "title": "arxiv-math-0603217v3",
+  "variant": "pdf",
+  "pages": 5,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "A conjecture",
+      "number": "2",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-a-conjecture"
+    },
+    {
+      "level": 1,
+      "title": "Proof",
+      "number": "3",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-proof"
+    },
+    {
+      "level": 1,
+      "title": "Comments",
+      "number": "4",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-comments"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 88,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "volume conjecture",
+          "heading": false
+        },
+        {
+          "term": "hitoshi",
+          "heading": false
+        },
+        {
+          "term": "conﬁrm",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0603217v3 [math.GT] 15 Apr 2006 A VERSION OF THE VOLUME CONJECTURE HITOSHI MURAKAMI Abstract. We propose a version of the volume conjecture that would relate a certain limit of the colored Jones polynomials of a knot to the volume function deﬁned by a representation of the fundamental group of the knot complement to the special linear group of degree two over complex numbers. We also conﬁrm the conjecture",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0603217v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 251,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "volume conjecture",
+          "heading": false
+        },
+        {
+          "term": "garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "log left",
+          "heading": false
+        },
+        {
+          "term": "rem",
+          "heading": false
+        },
+        {
+          "term": "gukov",
+          "heading": false
+        },
+        {
+          "term": "murakami",
+          "heading": false
+        },
+        {
+          "term": "bigr",
+          "heading": false
+        },
+        {
+          "term": "bigl",
+          "heading": false
+        }
+      ],
+      "extract": "For a knot $K$ in the three-sphere $S^3$, one can define the colored Jones polynomial $J_N(K;t)$ as the quantum invariant corresponding to the $N$-dimensional irreducible representation of the Lie algebra $sl(2;\\mathbb{C})$ [@Jones:BULAM385; @Kirillov/Reshetikhin:1989] (see also [@Kirby/Melvin:INVEM1991]). The volume conjecture [@Kashaev:LETMP97; @Murakami/Murakami:ACTAM12001] states that the limit of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-a-conjecture",
+      "number": "2",
+      "title": "A conjecture",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 806,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac operatorname",
+          "heading": false
+        },
+        {
+          "term": "murakami yokota",
+          "heading": false
+        },
+        {
+          "term": "operatorname length",
+          "heading": false
+        },
+        {
+          "term": "exp bigl",
+          "heading": false
+        },
+        {
+          "term": "parameterization",
+          "heading": false
+        },
+        {
+          "term": "volume conjecture",
+          "heading": false
+        },
+        {
+          "term": "sqrt right",
+          "heading": false
+        },
+        {
+          "term": "conj",
+          "heading": false
+        }
+      ],
+      "extract": "Let $K$ be a knot in $S^3$. Denote by $J_N(K;q)$ the colored Jones polynomial associated to the $N$-dimensional irreducible representation of the Lie algebra $sl(2,\\mathbb{C})$ [@Kirillov/Reshetikhin:1989]. We normalize it so that $J_2(K;q)$ is the Jones polynomial [@Jones:BULAM385] and that $J_N(U;q)=1$, where $U$ is the unknot. We propose the following conjecture as a version of the volume conjecture. ::: conj",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-proof",
+      "number": "3",
+      "title": "Proof",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 407,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac operatorname",
+          "heading": false
+        },
+        {
+          "term": "frac abr",
+          "heading": false
+        },
+        {
+          "term": "sqrt right",
+          "heading": false
+        },
+        {
+          "term": "dehn surgery",
+          "heading": false
+        },
+        {
+          "term": "parameterization",
+          "heading": false
+        },
+        {
+          "term": "conj",
+          "heading": false
+        },
+        {
+          "term": "bigr",
+          "heading": false
+        },
+        {
+          "term": "bigl",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we prove Conjecture [\\[conj:parameterization\\]](#conj:parameterization){reference-type=\"ref\" reference=\"conj:parameterization\"} for torus knots. (To be honest, [\\[eq:volume\\]](#eq:volume){reference-type=\"eqref\" reference=\"eq:volume\"} is proved only up to a constant, that is, we prove [\\[eq:Schlafli\\]](#eq:Schlafli){reference-type=\"eqref\" reference=\"eq:Schlafli\"} instead.) Let $T(a,b)$ be the torus",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-comments",
+      "number": "4",
+      "title": "Comments",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 436,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exp bigl",
+          "heading": false
+        },
+        {
+          "term": "delta bigl",
+          "heading": false
+        },
+        {
+          "term": "operatorname arccosh",
+          "heading": false
+        },
+        {
+          "term": "culler gillet",
+          "heading": false
+        },
+        {
+          "term": "figure-eight knot",
+          "heading": false
+        },
+        {
+          "term": "cooper culler",
+          "heading": false
+        },
+        {
+          "term": "gukov",
+          "heading": false
+        },
+        {
+          "term": "torus knot",
+          "heading": false
+        }
+      ],
+      "extract": "In [@Gukov:COMMP2005 (5.29)], Gukov proposed the following conjecture. ::: conj [@Gukov:COMMP2005][]{#conj:Gukov label=\"conj:Gukov\"} Let $K$ be a knot in the three-sphere. For $a\\in\\mathbb{C}\\setminus\\mathbb{Q}$, define the function $l(a)$ as follows: $$\\label{eq:lambda} l(a):= -\\frac{d}{d\\,a} \\left\\{ a\\lim_{N\\to\\infty} \\frac{\\log{J_N\\left(K;\\exp(2\\pi{a}\\sqrt{-1}/N)\\right)}}{N} \\right\\}.$$ Then the pair",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 417,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure-eight knot",
+          "heading": false
+        },
+        {
+          "term": "jones polynomials",
+          "heading": false
+        },
+        {
+          "term": "torus knot",
+          "heading": false
+        },
+        {
+          "term": "math",
+          "heading": false
+        },
+        {
+          "term": "murakami",
+          "heading": false
+        },
+        {
+          "term": "arxiv",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        }
+      ],
+      "extract": "References [1] D. Cooper, M. Culler, H. Gillet, D. D. Long, and P. B. Shalen, Plane curves associated to character varieties of 3-manifolds, Invent. Math. 118 (1994), no. 1, 47–84. [2] S. Garoufalidis and T. T. Q. Le, An analytic version of the Melvin-Morton-Rozansky Con- jecture, arXiv:math.GT/0503641. [3] , Asymptotics of the colored Jones function of a knot, arXiv:math.GT/0508100. [4] S. Gukov, Three-dimensional",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "exp bigl",
+      "heading": false
+    },
+    {
+      "term": "murakami yokota",
+      "heading": false
+    },
+    {
+      "term": "sqrt right",
+      "heading": false
+    },
+    {
+      "term": "frac operatorname",
+      "heading": false
+    },
+    {
+      "term": "torus knot",
+      "heading": false
+    },
+    {
+      "term": "volume conjecture",
+      "heading": false
+    },
+    {
+      "term": "delta bigl",
+      "heading": false
+    },
+    {
+      "term": "figure-eight knot",
+      "heading": false
+    },
+    {
+      "term": "operatorname arccosh",
+      "heading": false
+    },
+    {
+      "term": "exp left",
+      "heading": false
+    },
+    {
+      "term": "ﬁgure-eight knot",
+      "heading": false
+    },
+    {
+      "term": "operatorname length",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 5,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 6,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p5); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 6 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0603217v3"
+  }
+}

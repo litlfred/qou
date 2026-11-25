@@ -1,0 +1,1148 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin",
+  "title": "deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin",
+  "variant": "pdf",
+  "pages": 33,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Statement of results",
+      "number": null,
+      "page": 3,
+      "pageLabel": "253",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-statement-of-results"
+    },
+    {
+      "level": 1,
+      "title": "Background and motivation",
+      "number": null,
+      "page": 5,
+      "pageLabel": "255",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-background-and-motivation"
+    },
+    {
+      "level": 1,
+      "title": "Explicit formula for the characteristic map gL",
+      "number": null,
+      "page": 8,
+      "pageLabel": "258",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-explicit-formula-for-the-characteristic-map-gl"
+    },
+    {
+      "level": 2,
+      "title": "An asymmetric version of the characteristic map",
+      "number": null,
+      "page": 9,
+      "pageLabel": "259",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-an-asymmetric-version-of-the-characteristic-map"
+    },
+    {
+      "level": 1,
+      "title": "Sketch of the topological proof of Theorem A",
+      "number": null,
+      "page": 10,
+      "pageLabel": "260",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-sketch-of-the-topological-proof-of-theorem-a"
+    },
+    {
+      "level": 1,
+      "title": "Sketch of the algebraic proof of Theorem A",
+      "number": null,
+      "page": 17,
+      "pageLabel": "267",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-sketch-of-the-algebraic-proof-of-theorem-a"
+    },
+    {
+      "level": 1,
+      "title": "Sketch of the proof of Theorem B",
+      "number": null,
+      "page": 23,
+      "pageLabel": "273",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-sketch-of-the-proof-of-theorem-b"
+    },
+    {
+      "level": 2,
+      "title": "The fundamental solution of the Laplacian on the 3-torus",
+      "number": null,
+      "page": 25,
+      "pageLabel": "275",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-the-fundamental-solution-of-the-laplacian-on-the"
+    },
+    {
+      "level": 2,
+      "title": "Completing the proof of Theorem B",
+      "number": null,
+      "page": 26,
+      "pageLabel": "276",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-completing-the-proof-of-theorem-b"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "251",
+      "labelEnd": "253",
+      "words": 442,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "matem atica",
+          "heading": false
+        },
+        {
+          "term": "triple linking",
+          "heading": false
+        },
+        {
+          "term": "pairwise linking",
+          "heading": false
+        },
+        {
+          "term": "linking numbers",
+          "heading": false
+        },
+        {
+          "term": "ambiguous hopf",
+          "heading": false
+        },
+        {
+          "term": "three-component links",
+          "heading": false
+        },
+        {
+          "term": "greatest common",
+          "heading": false
+        },
+        {
+          "term": "common divisor",
+          "heading": false
+        }
+      ],
+      "extract": "Matem´atica Contemporˆanea, Vol. 34, 251–283 http://doi.org/10.21711/231766362008/rmc3411 ©2008, Sociedade Brasileira de Matem´atica TRIPLE LINKING NUMBERS, AMBIGUOUS HOPF INVARIANTS AND INTEGRAL FORMULAS FOR THREE-COMPONENT LINKS D. DeTurck H. Gluck R. Komendarczyk P. Melvin C. Shonkwiler D. S. Vela-Vick To Manfredo do Carmo, in friendship and admiration, on his 80th birthday Abstract Three-component links in the",
+      "extractCut": true,
+      "blocks": [
+        "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/prose-sec-front-matter",
+        "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/figure-img-p002-1",
+        "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin/blocks/figure-img-p003-1"
+      ]
+    },
+    {
+      "id": "sec-000-statement-of-results",
+      "number": null,
+      "title": "Statement of results",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "253",
+      "labelEnd": "255",
+      "words": 772,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "milnor µ-invariant",
+          "heading": false
+        },
+        {
+          "term": "manifold g2r",
+          "heading": false
+        },
+        {
+          "term": "pontryagin ν-invariant",
+          "heading": false
+        },
+        {
+          "term": "pairwise linking",
+          "heading": false
+        },
+        {
+          "term": "grassmann map",
+          "heading": false
+        },
+        {
+          "term": "linking numbers",
+          "heading": false
+        },
+        {
+          "term": "link homotopy",
+          "heading": false
+        },
+        {
+          "term": "conf3s",
+          "heading": false
+        }
+      ],
+      "extract": "Statement of results Consider the configuration space Conf3S3 ⊂S3 × S3 × S3 of ordered triples (x, y, z) of distinct points in the unit 3-sphere S3 in R4. Since x, y and z are distinct, they span a 2-plane in R4. Orient this plane so that the vectors from x to y and from x to z form a positive basis, and then move it parallel to itself until it passes through the origin. The result is an element G(x, y, z) of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-background-and-motivation",
+      "number": null,
+      "title": "Background and motivation",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 8,
+      "labelStart": "255",
+      "labelEnd": "258",
+      "words": 652,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "triple linking",
+          "heading": false
+        },
+        {
+          "term": "rigid motions",
+          "heading": false
+        },
+        {
+          "term": "magnetic field",
+          "heading": false
+        },
+        {
+          "term": "helicity",
+          "heading": false
+        },
+        {
+          "term": "linking number",
+          "heading": false
+        },
+        {
+          "term": "vector field",
+          "heading": false
+        },
+        {
+          "term": "komendarczyk",
+          "heading": false
+        },
+        {
+          "term": "scalar laplacian",
+          "heading": false
+        }
+      ],
+      "extract": "Background and motivation Let L be an ordered oriented link in R3 with two parametrized compo- nents X = {x(s) | s ∈S1} and Y = {y(t) | t ∈S1}. The classical linking number Lk(X, Y ) is the degree of the Gauss map S1 × S1 →S2 sending (s, t) to (y(t) −x(s))/∥y(t) −x(s)∥, and can be 256 DETURC, GLUCK, KOMENDARCZYK, MELVIN et al expressed by the famous integral formula of Gauss [1833], Lk(X,Y ) = 1 4π Z S1×S1 x′(s) ×",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-explicit-formula-for-the-characteristic-map-gl",
+      "number": null,
+      "title": "Explicit formula for the characteristic map gL",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "258",
+      "labelEnd": "259",
+      "words": 328,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "characteristic map",
+          "heading": true
+        },
+        {
+          "term": "conf3s",
+          "heading": false
+        },
+        {
+          "term": "g2r",
+          "heading": false
+        },
+        {
+          "term": "precomposing",
+          "heading": false
+        },
+        {
+          "term": "permutation",
+          "heading": false
+        }
+      ],
+      "extract": "Explicit formula for the characteristic map gL View R4 as the space of quaternions, with 1, i, j, k as basis, and consider the map F : Conf3S3 →R3 −{0} defined by F(x, y, z) =    ix  y + iy  z + iz  x jx  y + jy  z + jz  x kx  y + ky  z + kz  x   . Here  denotes the dot product in R4. The components of F(x, y, z) are quadratic polynomials in the components of x, y and z in R4, and the norm ∥F(x, y,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-an-asymmetric-version-of-the-characteristic-map",
+      "number": null,
+      "title": "An asymmetric version of the characteristic map",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "259",
+      "labelEnd": "260",
+      "words": 396,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "characteristic map",
+          "heading": true
+        },
+        {
+          "term": "egl",
+          "heading": false
+        },
+        {
+          "term": "asymmetric",
+          "heading": true
+        },
+        {
+          "term": "stereographic projection",
+          "heading": false
+        },
+        {
+          "term": "conf3s",
+          "heading": false
+        },
+        {
+          "term": "linking number",
+          "heading": false
+        },
+        {
+          "term": "moved",
+          "heading": false
+        }
+      ],
+      "extract": "An asymmetric version of the characteristic map Continuing to view S3 ⊂R4, let ℘x denote stereographic projection of S3 −{x} onto the 3-space R3 x through the origin in R4 that is orthogonal to the vector x, as shown in Figure 2. Figure 2: Stereographic projection For any (x, y, z) ∈Conf3S3, consider the points ℘xy and ℘xz in R3 x. Translation in R3 x moves ℘xz to the origin, and then dilation in R3 x makes the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-sketch-of-the-topological-proof-of-theorem-a",
+      "number": null,
+      "title": "Sketch of the topological proof of Theorem A",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 17,
+      "labelStart": "260",
+      "labelEnd": "267",
+      "words": 1955,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "orange spiral",
+          "heading": false
+        },
+        {
+          "term": "orange annulus",
+          "heading": false
+        },
+        {
+          "term": "purple spirals",
+          "heading": false
+        },
+        {
+          "term": "delta move",
+          "heading": false
+        },
+        {
+          "term": "spiral loop",
+          "heading": false
+        },
+        {
+          "term": "move affects",
+          "heading": false
+        },
+        {
+          "term": "great circle",
+          "heading": false
+        },
+        {
+          "term": "move increases",
+          "heading": false
+        }
+      ],
+      "extract": "Sketch of the topological proof of Theorem A Starting with a link in the 3-sphere, consider the delta move shown in Figure 3, which may be thought of as a higher order variant of a crossing change. It takes place within a 3-ball, outside of which the link is left fixed. This move was introduced by Matveev [1987]. Figure 3: The delta move L →L′ TRIPLE LINKING NUMBERS AND INTEGRAL FORMULAS 261 It was shown by Murakami",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-sketch-of-the-algebraic-proof-of-theorem-a",
+      "number": null,
+      "title": "Sketch of the algebraic proof of Theorem A",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 23,
+      "labelStart": "267",
+      "labelEnd": "273",
+      "words": 1783,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "three-component string",
+          "heading": false
+        },
+        {
+          "term": "k-component string",
+          "heading": false
+        },
+        {
+          "term": "three-component links",
+          "heading": false
+        },
+        {
+          "term": "link-homotopy classes",
+          "heading": false
+        },
+        {
+          "term": "link homotopy",
+          "heading": false
+        },
+        {
+          "term": "right corner",
+          "heading": false
+        },
+        {
+          "term": "framed links",
+          "heading": false
+        },
+        {
+          "term": "pairwise linking",
+          "heading": false
+        }
+      ],
+      "extract": "Sketch of the algebraic proof of Theorem A This proof is organized around the following key diagram: The left half represents the geometric-topological problem we are trying to solve, and is devoid of algebraic structure. The right half represents the algebraic structures that we impose on the left half via the two horizontal maps in order to solve the problem. In the upper left corner of (∗) we have the set of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-sketch-of-the-proof-of-theorem-b",
+      "number": null,
+      "title": "Sketch of the proof of Theorem B",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 25,
+      "labelStart": "273",
+      "labelEnd": "275",
+      "words": 702,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pontryagin ν-invariant",
+          "heading": false
+        },
+        {
+          "term": "hopf invariant",
+          "heading": false
+        },
+        {
+          "term": "whitehead formula",
+          "heading": false
+        },
+        {
+          "term": "integral formula",
+          "heading": false
+        },
+        {
+          "term": "explicit formula",
+          "heading": false
+        },
+        {
+          "term": "linking numbers",
+          "heading": false
+        },
+        {
+          "term": "vector field",
+          "heading": false
+        },
+        {
+          "term": "characteristic map",
+          "heading": false
+        }
+      ],
+      "extract": "Sketch of the proof of Theorem B Let L be a 3-component link in S3 with pairwise linking numbers p, q and r all zero. We saw in Theorem A that these numbers are the degrees of the characteristic map gL : T 3 →S2 on the 2-dimensional coordinate subtori. Thus gL is homotopic to a map which collapses the 2-skeleton of T 3, and so is in effect a map of S3 →S2. The Hopf invariant of this map, which we will regard as the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-the-fundamental-solution-of-the-laplacian-on-the",
+      "number": null,
+      "title": "The fundamental solution of the Laplacian on the 3-torus",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "275",
+      "labelEnd": "276",
+      "words": 352,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fundamental solution",
+          "heading": true
+        },
+        {
+          "term": "laplacian",
+          "heading": true
+        },
+        {
+          "term": "scalar laplacian",
+          "heading": false
+        },
+        {
+          "term": "torus",
+          "heading": true
+        },
+        {
+          "term": "fourier series",
+          "heading": false
+        },
+        {
+          "term": "average value",
+          "heading": false
+        },
+        {
+          "term": "observations",
+          "heading": false
+        }
+      ],
+      "extract": "The fundamental solution of the Laplacian on the 3-torus Proposition 1. The fundamental solution of the scalar Laplacian on the 3-torus T 3 = S1 × S1 × S1 is given by the formula φ(x, y, z) = −1 8π3 ∞ X m,n,p=−∞ m2+n2+p2̸=0 ei(mx+ny+pz) m2 + n2 + p2 . Even though we have expressed φ in terms of complex exponentials, the value of φ is real for real values of x, y and z because of the symmetry of the coefficients, and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-completing-the-proof-of-theorem-b",
+      "number": null,
+      "title": "Completing the proof of Theorem B",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 33,
+      "labelStart": "276",
+      "labelEnd": "283",
+      "words": 1666,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "milnor µ-invariants",
+          "heading": false
+        },
+        {
+          "term": "massey products",
+          "heading": false
+        },
+        {
+          "term": "triple linking",
+          "heading": false
+        },
+        {
+          "term": "gauss linking",
+          "heading": false
+        },
+        {
+          "term": "linking numbers",
+          "heading": false
+        },
+        {
+          "term": "magnetic fields",
+          "heading": false
+        },
+        {
+          "term": "chicago circle",
+          "heading": false
+        },
+        {
+          "term": "fluid mech",
+          "heading": false
+        }
+      ],
+      "extract": "Completing the proof of Theorem B Now we have an explicit formula for the fundamental solution φ of the scalar Laplacian on the 3-torus T 3, and just as in R3, both the scalar and TRIPLE LINKING NUMBERS AND INTEGRAL FORMULAS 277 vector Green’s operators act by convolution with φ. In particular, if V is a smooth vector field on T 3, then Gr(V ) = V ∗φ, that is, Gr(V )(τ) = Z T 3 V (σ)φ(τ −σ) dσ. To obtain the formula",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "triple linking",
+      "heading": false
+    },
+    {
+      "term": "linking numbers",
+      "heading": true
+    },
+    {
+      "term": "linking integral",
+      "heading": false
+    },
+    {
+      "term": "pairwise linking",
+      "heading": true
+    },
+    {
+      "term": "three-component link",
+      "heading": false
+    },
+    {
+      "term": "gauss linking",
+      "heading": false
+    },
+    {
+      "term": "pontryagin ν-invariant",
+      "heading": false
+    },
+    {
+      "term": "order linking",
+      "heading": false
+    },
+    {
+      "term": "milnor triple",
+      "heading": false
+    },
+    {
+      "term": "milnor µ-invariant",
+      "heading": false
+    },
+    {
+      "term": "link homotopy",
+      "heading": true
+    },
+    {
+      "term": "gluck",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "251",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "252",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "253",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "254",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "255",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "256",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "257",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "258",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "259",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "260",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "261",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "262",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "263",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "264",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "265",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "266",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "267",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "268",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "269",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "270",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "271",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "272",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "273",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "274",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "275",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "276",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "277",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "278",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 29,
+      "label": "279",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "280",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 31,
+      "label": "281",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "282",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "283",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The Grassmann map The Grassmann manifold G2R4 is isometric (up to scale) to the product S2 × S2 of two unit 2-spheres",
+      "page": 3,
+      "pageLabel": "253",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Stereographic projection For any (x, y, z) ∈Conf3S3, consider the points ℘xy and ℘xz in R3",
+      "page": 9,
+      "pageLabel": "259",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The delta move L →L′",
+      "page": 10,
+      "pageLabel": "260",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Seifert surfaces for L and L′ To see how the delta move affects the ν-invariant, we will view ν as a relative Euler class, following Gompf [1998] and Cencelj, Repovˇs and Skopenkov [2007]",
+      "page": 11,
+      "pageLabel": "261",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "A different view of the delta move",
+      "page": 13,
+      "pageLabel": "263",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Borromean Rings We have, as before, that X′ is the great circle through 1 and i, with image the blue vertical axis, while Y ′ and Z′ lie in a small tubular neigborhood of the great circle C through j and k, with images shown in red and green",
+      "page": 14,
+      "pageLabel": "264",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "The two clasps",
+      "page": 15,
+      "pageLabel": "265",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Computing e(A) = 2",
+      "page": 16,
+      "pageLabel": "266",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Generators for H(3) Following Habegger and Lin, we derive the following presentation for H(3): H(3) = ⟨P, Q, R, B | [P, Q] = [Q, R] = [R, P] = B, [P, B] = [Q, B] = [R, B] = 1⟩ The string links P, Q, R and B are those shown in Figure 9",
+      "page": 18,
+      "pageLabel": "268",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "The string link B closes up to the Borromean rings bB The closing-up operation descends to link homotopy classes and provides the upper horizontal map in (∗). That the closure of the string link P pQqRrBµ has pairwise linking numbers p, q and r is apparent for the generators P, Q and R depicted in F",
+      "page": 19,
+      "pageLabel": "269",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Closing up the generators of H2(3)",
+      "page": 22,
+      "pageLabel": "272",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "Fundamental solution of the scalar Laplacian on S1 × S1",
+      "page": 26,
+      "pageLabel": "276",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p002-1",
+      "file": "images/img-p002-1.png",
+      "page": 2,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p003-1",
+      "file": "images/img-p003-1.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p009-1",
+      "file": "images/img-p009-1.png",
+      "page": 9,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-1",
+      "file": "images/img-p010-1.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-1",
+      "file": "images/img-p011-1.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-1",
+      "file": "images/img-p012-1.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-1",
+      "file": "images/img-p013-1.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-1",
+      "file": "images/img-p014-1.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-1",
+      "file": "images/img-p015-1.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-1",
+      "file": "images/img-p016-1.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p017-1",
+      "file": "images/img-p017-1.png",
+      "page": 17,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-1",
+      "file": "images/img-p018-1.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p019-1",
+      "file": "images/img-p019-1.png",
+      "page": 19,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-1",
+      "file": "images/img-p022-1.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p026-1",
+      "file": "images/img-p026-1.png",
+      "page": 26,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 10,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 15
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p26); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 10 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/deturck-melvin-gluck-komendarczyk-shonkwiler-2008-triple-lin"
+  }
+}

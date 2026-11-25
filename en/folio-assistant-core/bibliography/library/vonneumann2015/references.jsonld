@@ -1,0 +1,30 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/vonneumann2015",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "Von Neumann Algebras",
+      "dcterms:creator": [
+        "November 13, 2015"
+      ],
+      "dcterms:issued": "D:20151113",
+      "dcterms:source": "library/vonneumann2015/manifest.jsonld",
+      "dcterms:hasVersion": "library/vonneumann2015"
+    }
+  ]
+}

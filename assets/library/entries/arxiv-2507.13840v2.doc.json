@@ -1,0 +1,2308 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2507.13840v2",
+  "title": "Quantifying mixed-state entanglement via partial transpose and realignment moments",
+  "variant": "pdf",
+  "pages": 43,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Efficient algorithm to measure PT negativity moment",
+      "number": null,
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-efficient-algorithm-to-measure-pt-negativity-mom"
+    },
+    {
+      "level": 1,
+      "title": "Efficient algorithm to measure CCNR negativity moment",
+      "number": null,
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-efficient-algorithm-to-measure-ccnr-negativity-m"
+    },
+    {
+      "level": 1,
+      "title": "Upper bounds for the PT negativity and the CCNR negativity",
+      "number": null,
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-upper-bounds-for-the-pt-negativity-and-the-ccnr"
+    },
+    {
+      "level": 1,
+      "title": "Upper bound on DF",
+      "number": null,
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-upper-bound-on-df"
+    },
+    {
+      "level": 1,
+      "title": "Relationship between PT negativity, CCNR negativity, and robustness of entanglement",
+      "number": null,
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-relationship-between-pt-negativity-ccnr-negativi"
+    },
+    {
+      "level": 1,
+      "title": "Relationship between PT negativity, CCNR negativity, and the Schmidt number",
+      "number": null,
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Depth-dependent bound on the PT negativity and the CCNR negativity",
+      "number": null,
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-depth-dependent-bound-on-the-pt-negativity-and-t"
+    },
+    {
+      "level": 1,
+      "title": "Certification of circuit depth",
+      "number": null,
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-certification-of-circuit-depth"
+    },
+    {
+      "level": 1,
+      "title": "Entanglement of pseudorandom density matrices and pseudoentanglement",
+      "number": null,
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-entanglement-of-pseudorandom-density-matrices-an"
+    },
+    {
+      "level": 1,
+      "title": "Schmidt rank testing",
+      "number": null,
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-schmidt-rank-testing"
+    },
+    {
+      "level": 1,
+      "title": "Operator Schmidt rank testing",
+      "number": null,
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-operator-schmidt-rank-testing"
+    },
+    {
+      "level": 1,
+      "title": "p-negativity in Haar random states",
+      "number": null,
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-p-negativity-in-haar-random-states"
+    },
+    {
+      "level": 1,
+      "title": "PT and realignment moments in translation-invariant MPS",
+      "number": null,
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-pt-and-realignment-moments-in-translation-invari"
+    },
+    {
+      "level": 1,
+      "title": "Matrix product states algorithm for the PT negativity and the CCNR negativity",
+      "number": null,
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-matrix-product-states-algorithm-for-the-pt-negat"
+    },
+    {
+      "level": 1,
+      "title": "Effects of depolarizing noise on entanglement",
+      "number": null,
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-effects-of-depolarizing-noise-on-entanglement"
+    },
+    {
+      "level": 1,
+      "title": "Witnessing entanglement in Werner States",
+      "number": null,
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-witnessing-entanglement-in-werner-states"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "4",
+      "words": 2154,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "entanglement witnesses",
+          "heading": false
+        },
+        {
+          "term": "entanglement enyi",
+          "heading": false
+        },
+        {
+          "term": "entanglement wit",
+          "heading": false
+        },
+        {
+          "term": "mixed-state entanglement",
+          "heading": false
+        },
+        {
+          "term": "entanglement testing",
+          "heading": false
+        },
+        {
+          "term": "entanglement phase",
+          "heading": false
+        },
+        {
+          "term": "entanglement properties",
+          "heading": false
+        },
+        {
+          "term": "enyi entropy",
+          "heading": false
+        }
+      ],
+      "extract": "Quantifying mixed-state entanglement via partial transpose and realignment moments Poetri Sonya Tarabunga1,2 and Tobias Haug3 1Technical University of Munich, TUM School of Natural Sciences, Physics Department, 85748 Garching, Germany 2Munich Center for Quantum Science and Technology (MCQST), Schellingstr. 4, 80799 M¨unchen, Germany 3Quantum Research Center, Technology Innovation Institute, Abu Dhabi, UAE",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 694,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "entanglement entropy",
+          "heading": false
+        },
+        {
+          "term": "bipartite entanglement",
+          "heading": false
+        },
+        {
+          "term": "p3-ppt condition",
+          "heading": false
+        },
+        {
+          "term": "entangled states",
+          "heading": false
+        },
+        {
+          "term": "mixed states",
+          "heading": false
+        },
+        {
+          "term": "enyi entropy",
+          "heading": false
+        },
+        {
+          "term": "partial transpose",
+          "heading": false
+        },
+        {
+          "term": "pure state",
+          "heading": false
+        }
+      ],
+      "extract": "we introduce the families of quantitative entan- glement witnesses. In Sec. 3, we show how our families of witness quantify entanglement dimen- sionality. In Sec. 5 we discuss the relation be- tween the rα-negativity and the operator space entanglement entropy. In Sec. 6 we introduce an algorithm for entanglement testing in mixed states, as well as the Schmidt rank and opera- tor Schmidt rank testing. In Sec. 7 we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-quantitative",
+      "number": "3",
+      "title": "Quantitative",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 244,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "realignment matrix",
+          "heading": false
+        },
+        {
+          "term": "entanglement",
+          "heading": false
+        },
+        {
+          "term": "ccnr",
+          "heading": false
+        },
+        {
+          "term": "negativity",
+          "heading": false
+        },
+        {
+          "term": "witnesses",
+          "heading": false
+        }
+      ],
+      "extract": "(e.g. in terms of inequalities) related to the PT negativity. An alternative approach to detect entangle- ment in mixed states is via the CCNR crite- rion [24]. We define the realignment matrix Rρ as a, a′ Rρ b, b′ = ⟨a, b| ρ a′, b′ , (8) which provides a necessary condition for separa- bility that ∥Rρ∥1 ≤1. The CCNR negativity is defined by [73, 117, 118] C(ρ) = ln∥Rρ∥1 = ln X i |λi|, (9) where λi are singular",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-31-from-the-pt-moments",
+      "number": "3.1",
+      "title": "From the PT moments",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 789,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "glement witness",
+          "heading": false
+        },
+        {
+          "term": "entan glement",
+          "heading": false
+        },
+        {
+          "term": "entangle ment",
+          "heading": false
+        },
+        {
+          "term": "pα-negativity",
+          "heading": false
+        },
+        {
+          "term": "lower bound",
+          "heading": false
+        },
+        {
+          "term": "entanglement",
+          "heading": false
+        },
+        {
+          "term": "enyi",
+          "heading": false
+        },
+        {
+          "term": "pure states",
+          "heading": false
+        }
+      ],
+      "extract": "From the PT moments For an n-qubit state ρ, we define our entangle- ment witness, pα-negativity, as Eα(ρ) = 1 2 −α ln (˜pα) + 1 −α 2 −α ln (p2) = 1 2 −α[ln(˜pα) + (α −1)S2(ρ)] , (13) where we define ˜pα(ρ) = tr((|ρΓ|)α). Note that ˜pα = pα for even integer α. Eα(ρ) is an entan- glement witness since Eα(ρ) > 0 implies that the state is entangled. To see this, let qi = λ2 i /p2, which forms a probability distribution",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-32-from-the-realignment-moments",
+      "number": "3.2",
+      "title": "From the realignment moments",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 270,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "realignment",
+          "heading": true
+        },
+        {
+          "term": "moments",
+          "heading": true
+        },
+        {
+          "term": "constant-depth",
+          "heading": false
+        },
+        {
+          "term": "full-state",
+          "heading": false
+        }
+      ],
+      "extract": "From the realignment moments We also define entanglement witnesses based on the CCNR negativity C(ρ) using the realignment matrix moments. We define the rα-negativity as Cα(ρ) = 1 2 −α ln (rα) + 1 −α 2 −α ln (r2) = 1 2 −α[ln(rα) + (α −1)S2(ρ)] , (20) Using similar argument for the pα-negativity, by replacing pα with rα, one can show that Cα sat- isfies the monotonicity Cα ≥Cβ for α < β, which Accepted in Quantum",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-33-symmetry-resolved",
+      "number": "3.3",
+      "title": "Symmetry-resolved",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 778,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symmetry-resolved",
+          "heading": true
+        },
+        {
+          "term": "esr",
+          "heading": false
+        },
+        {
+          "term": "entanglement witness",
+          "heading": false
+        },
+        {
+          "term": "entan glement",
+          "heading": false
+        },
+        {
+          "term": "quantitative entanglement",
+          "heading": false
+        },
+        {
+          "term": "resolved moments",
+          "heading": false
+        },
+        {
+          "term": "witnesses",
+          "heading": false
+        },
+        {
+          "term": "realignment matrix",
+          "heading": false
+        }
+      ],
+      "extract": "Symmetry-resolved entanglement wit- nesses We will now discuss how to exploit symmetry to enhance the bounds from the witnesses. We will first focus on the witnesses from the PT moments before commenting on the realignment moments. In the presence of a global symmetry, the den- sity matrix ρ can be split into different charge sec- tors. For concreteness, we consider a global U(1) symmetry where the state commutes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-4-quantifying",
+      "number": "4",
+      "title": "Quantifying",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 366,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schmidt number",
+          "heading": false
+        },
+        {
+          "term": "schmidt rank",
+          "heading": false
+        },
+        {
+          "term": "schmidt coefficients",
+          "heading": false
+        },
+        {
+          "term": "mixed states",
+          "heading": false
+        },
+        {
+          "term": "quantifying",
+          "heading": true
+        },
+        {
+          "term": "pure states",
+          "heading": false
+        },
+        {
+          "term": "lower bound",
+          "heading": false
+        },
+        {
+          "term": "entanglement",
+          "heading": false
+        }
+      ],
+      "extract": "Quantifying entanglement dimen- sionality Beyond traditional entanglement measures, en- tanglement dimensionality has been identified as a crucial resource that quantifies the min- imum dimension required to represent a given state [105]. This is formally measured by the Schmidt number, which we define as follows. Consider the Schmidt decomposition for a pure state |ψ⟩in the subsystem A: |ψ⟩= s(|ψ⟩) X i=1 p λi |i⟩A",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-5-relation-to-operator-space-entanglement-entrop",
+      "number": "5",
+      "title": "Relation to operator space entanglement entropy",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 290,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "osee",
+          "heading": false
+        },
+        {
+          "term": "entanglement",
+          "heading": true
+        },
+        {
+          "term": "operator schmidt",
+          "heading": false
+        },
+        {
+          "term": "schmidt coefficients",
+          "heading": false
+        },
+        {
+          "term": "schmidt decomposition",
+          "heading": false
+        },
+        {
+          "term": "entropy",
+          "heading": true
+        }
+      ],
+      "extract": "ment entropy Next, we discuss the connection between the rα- negativity and the operator space entanglement entropy (OSEE) [86]. For a mixed state ρ, the operator Schmidt decomposition with respect to the bipartition A and B is given by [120] ρ q tr(ρ2 A) = X i q λO i OA,i ⊗OB,i , (44) where λO i are the operator Schmidt coefficients and {OA,i} and {OB,i} are a set of orthonormal operators in the subsystem A and B,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-6-entanglement-testing",
+      "number": "6",
+      "title": "Entanglement testing",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 861,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "testing",
+          "heading": true
+        },
+        {
+          "term": "efficient testing",
+          "heading": false
+        },
+        {
+          "term": "testing algorithm",
+          "heading": false
+        },
+        {
+          "term": "entanglement",
+          "heading": true
+        },
+        {
+          "term": "rank testing",
+          "heading": false
+        },
+        {
+          "term": "schmidt rank",
+          "heading": false
+        },
+        {
+          "term": "two-copy measurements",
+          "heading": false
+        },
+        {
+          "term": "operator schmidt",
+          "heading": false
+        }
+      ],
+      "extract": "Entanglement testing While witnessing indicates the presence of entan- glement, it is not a necessary criterion, as there are entangled states that have non-positive wit- ness. An alternative way to study entanglement is via property testing [18, 74]: Here, one asks whether a given state has a property, or is it far from it? Notably, as our witnesses are quantita- tive, they can be utilized for this task. We now",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-7-circuit-depth-certification",
+      "number": "7",
+      "title": "Circuit depth certification",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 324,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circuit depth",
+          "heading": true
+        },
+        {
+          "term": "two-qubit gates",
+          "heading": false
+        },
+        {
+          "term": "certify",
+          "heading": false
+        },
+        {
+          "term": "certification",
+          "heading": true
+        },
+        {
+          "term": "noisy",
+          "heading": false
+        },
+        {
+          "term": "entanglement",
+          "heading": false
+        },
+        {
+          "term": "act across",
+          "heading": false
+        },
+        {
+          "term": "estimator",
+          "heading": false
+        }
+      ],
+      "extract": "Circuit depth certification A key task is to certify the depth of the cir- cuit that was used to prepare a given quantum state ρ. For noiseless circuits, i.e. S2(ρ) = 0, the circuit depth can be certified efficiently using Bell measurements [51]. We now prove that the same task is also efficient for noisy quantum cir- cuits, assuming the final state has low entropy, i.e. S2(ρ) = O(log n). We apply a noisy circuit of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-8-pseudorandom-density-matrices-and-pseudoentang",
+      "number": "8",
+      "title": "Pseudorandom density matrices and pseudoentanglement",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 588,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pseudoentanglement",
+          "heading": true
+        },
+        {
+          "term": "pseudoentanglement gap",
+          "heading": false
+        },
+        {
+          "term": "prdms",
+          "heading": false
+        },
+        {
+          "term": "mixed states",
+          "heading": false
+        },
+        {
+          "term": "pseudoentangled state",
+          "heading": false
+        },
+        {
+          "term": "efi pairs",
+          "heading": false
+        },
+        {
+          "term": "pure states",
+          "heading": false
+        },
+        {
+          "term": "random states",
+          "heading": false
+        }
+      ],
+      "extract": "pseudoentanglement Our quantitative witnesses have direct implica- tions on recent developments in quantum cryp- tography. In particular, pseudorandom states (PRS) have been proposed as efficiently prepara- ble pure state ensembles that are indistinguish- able from Haar random states by any efficient quantum algorithm [59]. Such states have been generalized to mixed states, known as pseudoran- dom density matrices",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-9-entanglement-phase-diagram",
+      "number": "9",
+      "title": "Entanglement phase diagram",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 18,
+      "summary": null,
+      "keywords": [],
+      "extract": "Entanglement phase diagram In this section, we discuss the entanglement phase diagram in two different sets of states:",
+      "extractCut": false
+    },
+    {
+      "id": "sec-012-91-haar-random-states",
+      "number": "9.1",
+      "title": "Haar random states",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 1168,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "haar random",
+          "heading": true
+        },
+        {
+          "term": "random states",
+          "heading": true
+        },
+        {
+          "term": "entanglement phase",
+          "heading": false
+        },
+        {
+          "term": "subsys tem",
+          "heading": false
+        },
+        {
+          "term": "ppt phase",
+          "heading": false
+        },
+        {
+          "term": "nab",
+          "heading": false
+        },
+        {
+          "term": "mixed states",
+          "heading": false
+        },
+        {
+          "term": "negativity",
+          "heading": false
+        }
+      ],
+      "extract": "9.1 Haar random states We will consider a tripartite system in a pure state |ψ⟩∈HA ⊗HB ⊗HC, where |ψ⟩is Haar random. Here, the region X consists of nX qubits with Hilbert space dimension LX = 2nX, where X ∈{A, B, C}. We also denote nAB = nA + nB and LAB = LALB = 2nAB. We will analyze the Haar-random induced mixed states ρ = trC(|ψ⟩) which are generated by tracing out subsystem C from tripartite pure Haar random",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-92-stabilizer-states",
+      "number": "9.2",
+      "title": "Stabilizer states",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 715,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stabilizer states",
+          "heading": true
+        },
+        {
+          "term": "ebc eab",
+          "heading": false
+        },
+        {
+          "term": "eac ebc",
+          "heading": false
+        },
+        {
+          "term": "clifford unitaries",
+          "heading": false
+        },
+        {
+          "term": "epr",
+          "heading": false
+        },
+        {
+          "term": "entanglement phase",
+          "heading": false
+        },
+        {
+          "term": "n-qubit pauli",
+          "heading": false
+        },
+        {
+          "term": "haar random",
+          "heading": false
+        }
+      ],
+      "extract": "Stabilizer states Pure stabilizer states |ψS⟩are states generated by applying Clifford unitaries UC onto the |0⟩ state. Here, Clifford unitaries UC are unitaries generated from Hadamard, S-gate and CNOT gates [44]. Clifford unitaries map (under con- jugation) any n-qubit Pauli operator P to some n-qubit Pauli operator, P ′, i.e. P ′ = UCPU† C. It is known by the Gottesman-Knill theorem that stabilizer states can be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-10-entanglement-and-noise",
+      "number": "10",
+      "title": "Entanglement and noise",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 433,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "noise",
+          "heading": true
+        },
+        {
+          "term": "depolarizing noise",
+          "heading": false
+        },
+        {
+          "term": "entanglement",
+          "heading": true
+        },
+        {
+          "term": "global depolarizing",
+          "heading": false
+        },
+        {
+          "term": "haar random",
+          "heading": false
+        },
+        {
+          "term": "haar-random",
+          "heading": false
+        },
+        {
+          "term": "random state",
+          "heading": false
+        }
+      ],
+      "extract": "Entanglement and noise In this section, we analyze the average bipartite entanglement of Haar-random pure states sub- jected to global depolarizing noise. These sys- tems approximate deep random quantum circuits with local noise [31]. We are interested in deter- mining under which condition entanglement sur- vives in the presence of noise. We consider Haar states subject to global depolarizing noise ρ′ = (1 −p)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-11-matrix-product-states-and-matrix-product-oper",
+      "number": "11",
+      "title": "Matrix product states and matrix product operators algorithms",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 214,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "product operators",
+          "heading": true
+        },
+        {
+          "term": "algorithms",
+          "heading": true
+        },
+        {
+          "term": "mps",
+          "heading": false
+        },
+        {
+          "term": "asn",
+          "heading": false
+        }
+      ],
+      "extract": "product operators algorithms Here, we introduce algorithms to compute par- tial transpose and realignment moments for ma- trix product states (MPS) and matrix product operators (MPO). Let us consider a system of n qubits in a pure state |ψ⟩given by an MPS of bond dimension χ: |ψ⟩= X s1,s2,··· ,sn As1 1 As2 2 · · · Asn n |s1, s2, · · · sn⟩ (73) with Asi i being χ × χ matrices, except at the left (right) boundary",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-111-partial-transpose-moments",
+      "number": "11.1",
+      "title": "Partial transpose moments",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 443,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lli",
+          "heading": false
+        },
+        {
+          "term": "mpo",
+          "heading": false
+        },
+        {
+          "term": "moments",
+          "heading": true
+        },
+        {
+          "term": "transpose",
+          "heading": true
+        },
+        {
+          "term": "mps",
+          "heading": false
+        },
+        {
+          "term": "contracted",
+          "heading": false
+        }
+      ],
+      "extract": "Partial transpose moments The PT moments pα can be computed efficiently for integer α ≥1 for MPS. To do so, we write pα as pα = X a(γ),a′ (γ),b(γ),b′ (γ) α Y γ=1 h δa′ (γ),a(σ+(γ))δb′ (γ),b(σ−(γ)) ⟨a(γ), b(γ)|ρ|a′ (γ), b′ (γ)⟩ i . (75) Using this identity, we can compute pα for MPS by forming a transfer matrix at each site, defined as Li = X {s(γ),s′ (γ)} α Y γ=1 δs′ (γ),s(π(γ)) α O γ=1 A s(γ) i ⊗A s′ (γ) i , (76)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-112-realignment-moments",
+      "number": "11.2",
+      "title": "Realignment moments",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": "16",
+      "labelEnd": "18",
+      "words": 1607,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "entanglement witnesses",
+          "heading": false
+        },
+        {
+          "term": "entanglement wit",
+          "heading": false
+        },
+        {
+          "term": "mixed-state entanglement",
+          "heading": false
+        },
+        {
+          "term": "esr",
+          "heading": false
+        },
+        {
+          "term": "ccnr negativity",
+          "heading": false
+        },
+        {
+          "term": "wit nesses",
+          "heading": false
+        },
+        {
+          "term": "depolarization noise",
+          "heading": false
+        },
+        {
+          "term": "realignment",
+          "heading": true
+        }
+      ],
+      "extract": "Realignment moments For the realignment moment, we first consider an MPO with the subsystem A = {1, 2, · · · , nA} and B = Ac. The MPO contraction for computing r4 is sketched in Fig. 2(b). Viewing the MPO as an MPS with two physical indices, one can see that the contraction is equivalent to the purity of the MPS. Similarly, higher order rα is equivalent to the higher order α−R´enyi entanglement entropy of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-13-discussion",
+      "number": "13",
+      "title": "Discussion",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 1466,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "entanglement witnesses",
+          "heading": false
+        },
+        {
+          "term": "mixed-state entanglement",
+          "heading": false
+        },
+        {
+          "term": "entanglement enyi",
+          "heading": false
+        },
+        {
+          "term": "entan glement",
+          "heading": false
+        },
+        {
+          "term": "entanglement monotones",
+          "heading": false
+        },
+        {
+          "term": "enyi entropies",
+          "heading": false
+        },
+        {
+          "term": "entanglement phase",
+          "heading": false
+        },
+        {
+          "term": "state entanglement",
+          "heading": false
+        }
+      ],
+      "extract": "Discussion In this work, we introduced a generalization of entanglement Renyi entropies to mixed states, which we call the pα-negativity. For α = 1, it equals the PT negativity, while for α > 1 it serves as a quantitative witness for mixed state entanglement. In other words, they offer useful quantitative information about the degree of en- tanglement by rigorously bounding entanglement monotones [36]. Further, we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 71,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pseudorandom",
+          "heading": false
+        },
+        {
+          "term": "pseudoentanglement",
+          "heading": false
+        },
+        {
+          "term": "witnesses",
+          "heading": false
+        }
+      ],
+      "extract": "P.S.T. acknowledges funding by the Deutsche Forschungsgemeinschaft (DFG, German Re- search Foundation) under Germany’s Excellence Strategy – EXC-2111 – 390814868. Author contributions P.S.T. conceived the initial idea and carried out most of the analytical and numerical calculations, with the guidance of T.H. T.H. developed the analysis of pseudorandom density matrices and pseudoentanglement, and the measurements of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 28,
+      "labelStart": "20",
+      "labelEnd": "28",
+      "words": 3183,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "url doi",
+          "heading": false
+        },
+        {
+          "term": "url physrevlett",
+          "heading": false
+        },
+        {
+          "term": "url org",
+          "heading": false
+        },
+        {
+          "term": "url http",
+          "heading": false
+        },
+        {
+          "term": "phys revlett",
+          "heading": false
+        },
+        {
+          "term": "phys reva",
+          "heading": false
+        },
+        {
+          "term": "entanglement negativity",
+          "heading": false
+        },
+        {
+          "term": "pawe horodecki",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Scott Aaronson and Daniel Gottesman. Improved simulation of stabilizer circuits. Accepted in Quantum 2026-08-11, click title to verify. Published under CC-BY 4.0. 20 Phys. Rev. A, 70:052328, Nov 2004. DOI: 10.1103/PhysRevA.70.052328. URL https://link.aps.org/doi/10.1103/ PhysRevA.70.052328. [2] Scott Aaronson, Adam Bouland, Bill Fef- ferman, Soumik Ghosh, Umesh Vazirani, Chenyi Zhang, and Zixin Zhou. Quan- tum",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-8-url",
+      "number": "8",
+      "title": "URL",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 30,
+      "labelStart": "28",
+      "labelEnd": "30",
+      "words": 1176,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "url",
+          "heading": true
+        },
+        {
+          "term": "url org",
+          "heading": false
+        },
+        {
+          "term": "ccnr negativity",
+          "heading": false
+        },
+        {
+          "term": "negativity moment",
+          "heading": false
+        },
+        {
+          "term": "phys reva",
+          "heading": false
+        },
+        {
+          "term": "issn",
+          "heading": false
+        },
+        {
+          "term": "phys revlett",
+          "heading": false
+        },
+        {
+          "term": "doi",
+          "heading": false
+        }
+      ],
+      "extract": "http://dx.doi.org/10.1103/PhysRevB. 95.165101. [100] Hassan Shapourian, Shang Liu, Jonah Kudler-Flam, and Ashvin Vishwanath. Entanglement negativity spectrum of random mixed states: A diagrammatic approach. PRX Quantum, 2(3):030347, September 2021. ISSN 2691-3399. DOI: 10.1103/prxquantum.2.030347. URL http://dx.doi.org/10.1103/ PRXQuantum.2.030347. [101] Adam L. Shaw, Zhuo Chen, Joonhee Choi, Daniel K. Mark, Pascal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-efficient-algorithm-to-measure-pt-negativity-mom",
+      "number": null,
+      "title": "Efficient algorithm to measure PT negativity moment",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": "30",
+      "labelEnd": "31",
+      "words": 757,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "negativity moment",
+          "heading": true
+        },
+        {
+          "term": "efficient algorithm",
+          "heading": true
+        },
+        {
+          "term": "ccnr negativity",
+          "heading": false
+        },
+        {
+          "term": "toffoli gates",
+          "heading": false
+        },
+        {
+          "term": "swap gates",
+          "heading": false
+        },
+        {
+          "term": "controlled swaps",
+          "heading": false
+        },
+        {
+          "term": "hadamard gates",
+          "heading": false
+        },
+        {
+          "term": "swap test",
+          "heading": false
+        }
+      ],
+      "extract": "30 B Efficient algorithm to measure CCNR negativity moment 31 C Upper bounds for the PT negativity and the CCNR negativity 32 D Upper bound on DF 33 E Relationship between PT negativity, CCNR negativity, and robustness of entanglement 34 F Relationship between PT negativity, CCNR negativity, and the Schmidt number 34 G Depth-dependent bound on the PT negativity and the CCNR negativity 35 H Certification of circuit",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-efficient-algorithm-to-measure-ccnr-negativity-m",
+      "number": null,
+      "title": "Efficient algorithm to measure CCNR negativity moment",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 32,
+      "labelStart": "31",
+      "labelEnd": "32",
+      "words": 299,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ccnr negativity",
+          "heading": true
+        },
+        {
+          "term": "negativity moment",
+          "heading": true
+        },
+        {
+          "term": "efficient algorithm",
+          "heading": true
+        },
+        {
+          "term": "bell measurements",
+          "heading": false
+        },
+        {
+          "term": "classical post-processing",
+          "heading": false
+        },
+        {
+          "term": "measure",
+          "heading": true
+        },
+        {
+          "term": "swaps",
+          "heading": false
+        }
+      ],
+      "extract": "Efficient algorithm to measure CCNR negativity moment We now study the measurement complexity of the CCNR negativity moment C4(ρ) = 1 2[−ln(r4) −3S2(ρ)] , (88) Accepted in Quantum 2026-08-11, click title to verify. Published under CC-BY 4.0. 31 with r4 = tr(S1,2 A S3,4 A ⊗S1,3 B S2,4 B ρ⊗4) . (89) Notably, the different SWAPs Si,j A act on different qubits. Thus, in contrast to the PT moments, one can measure r4",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-upper-bounds-for-the-pt-negativity-and-the-ccnr",
+      "number": null,
+      "title": "Upper bounds for the PT negativity and the CCNR negativity",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 33,
+      "labelStart": "32",
+      "labelEnd": "33",
+      "words": 578,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ccnr negativity",
+          "heading": true
+        },
+        {
+          "term": "upper bounds",
+          "heading": true
+        },
+        {
+          "term": "purification",
+          "heading": false
+        },
+        {
+          "term": "mutual information",
+          "heading": false
+        },
+        {
+          "term": "ρab",
+          "heading": false
+        },
+        {
+          "term": "c2n",
+          "heading": false
+        },
+        {
+          "term": "pα-negativity",
+          "heading": false
+        },
+        {
+          "term": "monotonicity",
+          "heading": false
+        }
+      ],
+      "extract": "Upper bounds for the PT negativity and the CCNR negativity Here, we prove upper bounds for the PT negativity and the CCNR negativity. First, we show an inequality that holds for the pα-negativity: Eα(ρ) ≤1 2(n ln 2 −S2(ρ)), (90) for any α ≥0. This can be directly shown using the monotonicity of the pα-negativity E0(ρ) ≥Eα(ρ). An upper bound for the PT negativity is thus obtained by setting α = 1. Next, we have E(ρ)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-upper-bound-on-df",
+      "number": null,
+      "title": "Upper bound on DF",
+      "level": 1,
+      "pageStart": 33,
+      "pageEnd": 34,
+      "labelStart": "33",
+      "labelEnd": "34",
+      "words": 180,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "purification",
+          "heading": false
+        },
+        {
+          "term": "c2n",
+          "heading": false
+        },
+        {
+          "term": "tra",
+          "heading": false
+        }
+      ],
+      "extract": "Upper bound on DF Here, we prove the bound on the fidelity of separability DF as Sα(ρA(B)) ≥DF(ρ) , (98) for any α ≥0. First, by the Uhlman’s theorem [80], we can write DF(ρ) = min σ∈SEP min |ψσ⟩−ln | ⟨√ρ|ψσ⟩|2 (99) where √ρ is the canonical purification of ρ defined in Eq. (93) and |ψσ⟩is a purification of σ in HA ⊗HB ⊗HA′ ⊗HB′ ≃C2n ⊗C2n. Consider the Schmidt decomposition for the state √ρ in the subsystem A: |√ρ⟩=",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-relationship-between-pt-negativity-ccnr-negativi",
+      "number": null,
+      "title": "Relationship between PT negativity, CCNR negativity, and robustness of entanglement",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 35,
+      "labelStart": "34",
+      "labelEnd": "35",
+      "words": 298,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ccnr negativity",
+          "heading": true
+        },
+        {
+          "term": "robustness",
+          "heading": true
+        },
+        {
+          "term": "entanglement",
+          "heading": true
+        },
+        {
+          "term": "triangle inequality",
+          "heading": false
+        },
+        {
+          "term": "relationship",
+          "heading": true
+        },
+        {
+          "term": "sep",
+          "heading": false
+        }
+      ],
+      "extract": "Relationship between PT negativity, CCNR negativity, and robustness of entan- glement Here, we prove the inequality between the PT negativity and robustness of entanglement: E(ρ) ≤ln(2R(ρ) + 1). (103) Note that this has previously been proven in Ref. [107], and here we give an alternative proof. Let s be the optimal value such that ρ = (1 + s)ρ+ −sρ−for ρ+, ρ−∈SEP, so that R(ρ) = s. We have ρΓ = (1 + s)ρΓ + −sρΓ −,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-depth-dependent-bound-on-the-pt-negativity-and-t",
+      "number": null,
+      "title": "Depth-dependent bound on the PT negativity and the CCNR negativity",
+      "level": 1,
+      "pageStart": 35,
+      "pageEnd": 35,
+      "labelStart": "35",
+      "labelEnd": "35",
+      "words": 94,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "depth-dependent bound",
+          "heading": true
+        },
+        {
+          "term": "negativity",
+          "heading": true
+        },
+        {
+          "term": "ccnr",
+          "heading": true
+        }
+      ],
+      "extract": "Depth-dependent bound on the PT negativity and the CCNR negativity Here, we prove the depth-dependent bound: E(ρ) ≤d|∂A| ln 2 . (109) To this end, we recall that the Schmidt number s(ρ) is an entanglement monotone for mixed states [105]. Since S0(|ψ⟩) ≤d|∂A| ln 2 in noiseless quantum circuits [51], it follows that we have the bound s(ρ) ≤2d|∂A|, (110) in the case of noisy circuits. Now, combining Eq. (110) and Eq.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-certification-of-circuit-depth",
+      "number": null,
+      "title": "Certification of circuit depth",
+      "level": 1,
+      "pageStart": 35,
+      "pageEnd": 36,
+      "labelStart": "35",
+      "labelEnd": "36",
+      "words": 435,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circuit depth",
+          "heading": true
+        },
+        {
+          "term": "swap tests",
+          "heading": false
+        },
+        {
+          "term": "exp ϵ2l",
+          "heading": false
+        },
+        {
+          "term": "certification",
+          "heading": true
+        },
+        {
+          "term": "failure probability",
+          "heading": false
+        },
+        {
+          "term": "certify",
+          "heading": false
+        },
+        {
+          "term": "estimator",
+          "heading": false
+        },
+        {
+          "term": "fulfilled",
+          "heading": false
+        }
+      ],
+      "extract": "Certification of circuit depth Here, we give bounds on the number of measurements needed to certify the circuit depth d for preparing mixed states: Proposition 4 (Efficient certification of circuit depth). Given n-qubit mixed state ρ, there exists an efficient quantum algorithm to certify the minimal circuit depth d needed to generate the state using a fixed architecture where |∂A| noisy two-qubit gates act across",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-entanglement-of-pseudorandom-density-matrices-an",
+      "number": null,
+      "title": "Entanglement of pseudorandom density matrices and pseudoentanglement",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 37,
+      "labelStart": "36",
+      "labelEnd": "37",
+      "words": 562,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pseudorandom density",
+          "heading": true
+        },
+        {
+          "term": "pseudoentanglement",
+          "heading": true
+        },
+        {
+          "term": "density matrices",
+          "heading": true
+        },
+        {
+          "term": "prdms",
+          "heading": false
+        },
+        {
+          "term": "entanglement",
+          "heading": true
+        },
+        {
+          "term": "mixed states",
+          "heading": false
+        },
+        {
+          "term": "random mixed",
+          "heading": false
+        },
+        {
+          "term": "poly-time quantum",
+          "heading": false
+        }
+      ],
+      "extract": "Entanglement of pseudorandom density matrices and pseudoentanglement In this section, we show that pseudorandom density matrices (PRDMs) with S2 = O(log n) must have E(ρ) = ω(log n). PRDMs are efficiently preparable states that are indistinguishable for any efficient observer from truly random mixed states [10]. They generalize pseudorandom states (PRSs), which are computa- tionally indistinguishable from Haar",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-schmidt-rank-testing",
+      "number": null,
+      "title": "Schmidt rank testing",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 38,
+      "labelStart": "37",
+      "labelEnd": "38",
+      "words": 589,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schmidt rank",
+          "heading": true
+        },
+        {
+          "term": "two-copy measurements",
+          "heading": false
+        },
+        {
+          "term": "efficient algorithm",
+          "heading": false
+        },
+        {
+          "term": "n-qubit state",
+          "heading": false
+        },
+        {
+          "term": "testing",
+          "heading": true
+        },
+        {
+          "term": "one-sided error",
+          "heading": false
+        },
+        {
+          "term": "pure state",
+          "heading": false
+        },
+        {
+          "term": "test",
+          "heading": false
+        }
+      ],
+      "extract": "Schmidt rank testing Here, we present an efficient algorithm to test the Schmidt rank of a given pure state. Consider the Schmidt decomposition of a pure n-qubit state |ψ⟩with respect to bipartition A, B |ψ⟩= R X i=1 p λi |ϕi⟩A ⊗|ϕi⟩B , (120) where |ϕi⟩A and |ϕi⟩B are normalized states on subsystem A and B, λi ≥0 are the Schmidt coefficients with λ1 ≥· · · ≥λR, P i λi = 1 and Schmidt rank R ≤2n. The maximum overlap",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-operator-schmidt-rank-testing",
+      "number": null,
+      "title": "Operator Schmidt rank testing",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 39,
+      "labelStart": "38",
+      "labelEnd": "39",
+      "words": 667,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schmidt rank",
+          "heading": true
+        },
+        {
+          "term": "operator schmidt",
+          "heading": true
+        },
+        {
+          "term": "schmidt decomposition",
+          "heading": false
+        },
+        {
+          "term": "efficient algorithm",
+          "heading": false
+        },
+        {
+          "term": "testing",
+          "heading": true
+        },
+        {
+          "term": "n-qubit state",
+          "heading": false
+        },
+        {
+          "term": "pure-state",
+          "heading": false
+        },
+        {
+          "term": "mixed-state",
+          "heading": false
+        }
+      ],
+      "extract": "Operator Schmidt rank testing Here, we present an efficient algorithm to test the operator Schmidt rank of a given mixed state. Consider the operator Schmidt decomposition of a mixed n-qubit state ρ with respect to bipartition A, B ρ q tr(ρ2 A) = X i q λO i OA,i ⊗OB,i, (123) where {OA,i} and {OB,i} are a set of orthonormal operators in the subsystem A and B, λO i ≥0 are the operator Schmidt coefficients with λO 1 ≥·",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-p-negativity-in-haar-random-states",
+      "number": null,
+      "title": "p-negativity in Haar random states",
+      "level": 1,
+      "pageStart": 39,
+      "pageEnd": 40,
+      "labelStart": "39",
+      "labelEnd": "40",
+      "words": 557,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nab sites",
+          "heading": false
+        },
+        {
+          "term": "haar random",
+          "heading": true
+        },
+        {
+          "term": "ppt phase",
+          "heading": false
+        },
+        {
+          "term": "random states",
+          "heading": true
+        },
+        {
+          "term": "thermodynamic limit",
+          "heading": false
+        },
+        {
+          "term": "pα-negativity",
+          "heading": false
+        },
+        {
+          "term": "full-rank",
+          "heading": false
+        },
+        {
+          "term": "upper bound",
+          "heading": false
+        }
+      ],
+      "extract": "Here, we compute the Haar average of pα-negativity as a function of the partition sizes. The compu- tation for E4 has been given in the main text, and here we discuss Eα for α ≥0. We recall an upper bound for EH[E(ρ)], which we report here for convenience EH[E(ρ)] ≤min{nA ln 2, nB ln 2, 1 2(nAB ln 2 −min(nAB ln 2, nC ln 2))}. (134) Accepted in Quantum 2026-08-11, click title to verify. Published under CC-BY 4.0. 39",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-pt-and-realignment-moments-in-translation-invari",
+      "number": null,
+      "title": "PT and realignment moments in translation-invariant MPS",
+      "level": 1,
+      "pageStart": 40,
+      "pageEnd": 41,
+      "labelStart": "40",
+      "labelEnd": "41",
+      "words": 432,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mps",
+          "heading": true
+        },
+        {
+          "term": "realignment",
+          "heading": true
+        },
+        {
+          "term": "translation-invariant",
+          "heading": true
+        },
+        {
+          "term": "entanglement",
+          "heading": false
+        },
+        {
+          "term": "negativity",
+          "heading": false
+        },
+        {
+          "term": "ijk",
+          "heading": false
+        },
+        {
+          "term": "moments",
+          "heading": true
+        },
+        {
+          "term": "eigenvalues",
+          "heading": false
+        }
+      ],
+      "extract": "PT and realignment moments in translation-invariant MPS Let us consider a translationally invariant (TI) MPS of n qubits of bond dimension χ: |ψ⟩= X s1,s2,··· ,sn tr (As1As2 · · · Asn) |s1, s2, · · · sn⟩ (138) Accepted in Quantum 2026-08-11, click title to verify. Published under CC-BY 4.0. 40 with As being a χ × χ matrix. We consider the entanglement within ρ = trC(|ψ⟩⟨ψ|), where C is a contiguous subsystem of |ψ⟩.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-matrix-product-states-algorithm-for-the-pt-negat",
+      "number": null,
+      "title": "Matrix product states algorithm for the PT negativity and the CCNR negativity",
+      "level": 1,
+      "pageStart": 41,
+      "pageEnd": 42,
+      "labelStart": "41",
+      "labelEnd": "42",
+      "words": 267,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ccnr negativity",
+          "heading": true
+        },
+        {
+          "term": "realigned matrix",
+          "heading": false
+        },
+        {
+          "term": "subsystem",
+          "heading": false
+        },
+        {
+          "term": "mps",
+          "heading": false
+        },
+        {
+          "term": "cost",
+          "heading": false
+        }
+      ],
+      "extract": "Matrix product states algorithm for the PT negativity and the CCNR negativity Given MPS |ψ⟩, we consider the entanglement within ρ = trC(|ψ⟩⟨ψ|), where C is a contiguous subsystem in the middle of the chain, C = {nA + 1, nA + 2, · · · , nA + nC}, and we take the subsystem A = {1, 2, · · · , nA} and B is the complement of A in ρ, i.e. the subsystem connected to the right edge. Both the PT negativity and the CCNR can",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-effects-of-depolarizing-noise-on-entanglement",
+      "number": null,
+      "title": "Effects of depolarizing noise on entanglement",
+      "level": 1,
+      "pageStart": 42,
+      "pageEnd": 43,
+      "labelStart": "42",
+      "labelEnd": "43",
+      "words": 395,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "depolarizing noise",
+          "heading": true
+        },
+        {
+          "term": "entanglement",
+          "heading": true
+        },
+        {
+          "term": "effects",
+          "heading": true
+        },
+        {
+          "term": "pure state",
+          "heading": false
+        },
+        {
+          "term": "low-entangled",
+          "heading": false
+        }
+      ],
+      "extract": "Effects of depolarizing noise on entanglement In this section, we consider the effects of global depolarizing noise ρ′ = (1 −p) |ψ⟩⟨ψ| + pI/2n, (147) on the bipartite entanglement of a general pure state |ψ⟩. For a given subsystem A, the entanglement in the pure state (p = 0) is characterized by the Schmidt coefficients λi for i = 1, . . . , r, where λi ≥λj for i < j, and the Schmidt decomposition of the state is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-witnessing-entanglement-in-werner-states",
+      "number": null,
+      "title": "Witnessing entanglement in Werner States",
+      "level": 1,
+      "pageStart": 43,
+      "pageEnd": 43,
+      "labelStart": "43",
+      "labelEnd": "43",
+      "words": 329,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "werner states",
+          "heading": true
+        },
+        {
+          "term": "witnessing",
+          "heading": true
+        },
+        {
+          "term": "entanglement",
+          "heading": true
+        }
+      ],
+      "extract": "Witnessing entanglement in Werner States Werner states are bipartite quantum states in a Hilbert space HAB = HA ⊗HB with dimensions dA = dB ≡d, defined as ρW = α d + 1 2 !−1 Π+ + (1 −α) d 2 !−1 Π− (152) with α ∈[0, 1] and Π± = 1 2 (I ± Π12) projectors onto symmetric H+ and anti-symmetric H−subspaces of H = H+ ⊕H−, respectively. Here, Π12 = Pd i,j=1 |i⟩⟨j| ⊗|j⟩⟨i| is the swap operator. Using that ΠTA ± = 1/2(∆1",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "entanglement negativity",
+      "heading": true
+    },
+    {
+      "term": "entanglement witnesses",
+      "heading": true
+    },
+    {
+      "term": "state entanglement",
+      "heading": true
+    },
+    {
+      "term": "entanglement enyi",
+      "heading": false
+    },
+    {
+      "term": "ccnr negativity",
+      "heading": true
+    },
+    {
+      "term": "quantum entanglement",
+      "heading": false
+    },
+    {
+      "term": "entanglement entropy",
+      "heading": false
+    },
+    {
+      "term": "entanglement witness",
+      "heading": false
+    },
+    {
+      "term": "mixed-state entanglement",
+      "heading": false
+    },
+    {
+      "term": "entanglement testing",
+      "heading": false
+    },
+    {
+      "term": "tanglement negativity",
+      "heading": false
+    },
+    {
+      "term": "glement negativity",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "a) Schematic representation of n-qubit state space in terms of the PT negativity E(ρ). Darker regions indicate higher values of E(ρ)",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Number of copies of state ρ needed to test whether mixed state ρ has O(log n) or ω(log n) entanglement, as characterized by PT negativity E(ρ) and fidelity of separability DF(ρ)",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Pseudoentanglement gap f(n) vs g(n) between high-entanglement and low-entanglement state ensembles, depending on 2-R´enyi entropy S2 = −ln tr(ρ2)",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "MPO contractions to compute (a) p4 and (b) r4. The system size is n = 6 and we take A = {1, 2, 3} and B = {4, 5, 6}",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Update of the tensor L →LLi in the calculation of p4 if (a) i ∈A or (b) i ∈B",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Entanglement witnesses for the groundstate of the TFIM (81) of n = 12 sites and subsystem size nA = nB = 5 for (a) connected and (b) disconnected partitions as a function of the transverse field h",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Entanglement witnesses for the groundstate of the TFIM (81) of n = 6 sites under depolarization noise. The partition size is nA = 3. In (a), we show E4 for different depolarisation probability p",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Entanglement witnesses for the TFIM (81) (a) under depolarization noise with n = 6 and h = 1, and (b) at finite temperature T with n = 10 sites and h = 1.5. The partition size is nA = n/2",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Entanglement witnesses for the groundstate of the XXZ model (82) of n = 12 sites and subsystem size nA = nB = 5 for (a) connected and (b) disconnected partitions as a function of the anisotropy ∆",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "S1",
+      "title": "SWAP test to measure expectation value of PT moment P TB",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "S2",
+      "title": "Bell measurements to measure expectation value of CCNR negativity moment r4 for state ρ. Uses 4 copies of ρ and O(1) depth",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "S3",
+      "title": "pα-negativity for Haar random states. The system size is (a) nAB = 12 sites and nC = 2 and (b) nAB = 12 sites and nC = 4. Each data point is averaged over 100 realizations. The dashed lines show the analytical prediction in the thermodynamic limit",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "S4",
+      "title": "MPS contraction to construct EC in Eq. (146)",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p003-1",
+      "file": "images/img-p003-1.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p003-2",
+      "file": "images/img-p003-2.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p003-3",
+      "file": "images/img-p003-3.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 16,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 37,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 3,
+      "note": "11 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "2 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p20); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 37 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2507.13840v2"
+  }
+}

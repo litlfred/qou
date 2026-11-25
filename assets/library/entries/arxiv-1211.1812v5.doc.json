@@ -1,0 +1,1333 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1211.1812v5",
+  "title": "Presheaves of superselection structures in curved spacetimes",
+  "variant": "pdf",
+  "pages": 37,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction.",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Mathematical background.",
+      "number": "2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-mathematical-background"
+    },
+    {
+      "level": 2,
+      "title": "Geometry of posets.",
+      "number": "2.1",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-geometry-of-posets"
+    },
+    {
+      "level": 2,
+      "title": "Nets of C*-algebras.",
+      "number": "2.2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-nets-of-c-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Nets and presheaves of tensor categories.",
+      "number": "2.3",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-nets-and-presheaves-of-tensor-categories"
+    },
+    {
+      "level": 1,
+      "title": "Presheaves in quantum field theory.",
+      "number": "3",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-3-presheaves-in-quantum-field-theory"
+    },
+    {
+      "level": 2,
+      "title": "Charge structure.",
+      "number": "3.1",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-31-charge-structure"
+    },
+    {
+      "level": 2,
+      "title": "Symmetry.",
+      "number": "3.2",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-32-symmetry"
+    },
+    {
+      "level": 2,
+      "title": "The main result.",
+      "number": "3.3",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-33-the-main-result"
+    },
+    {
+      "level": 1,
+      "title": "Group bundles as global gauge symmetries.",
+      "number": "4",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-4-group-bundles-as-global-gauge-symmetries"
+    },
+    {
+      "level": 2,
+      "title": "Twisted field nets.",
+      "number": "4.1",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-41-twisted-field-nets"
+    },
+    {
+      "level": 2,
+      "title": "Twisted nets and background potentials.",
+      "number": "4.2",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-42-twisted-nets-and-background-potentials"
+    },
+    {
+      "level": 2,
+      "title": "Current algebras on S1.",
+      "number": "4.3",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-43-current-algebras-on-s1"
+    },
+    {
+      "level": 2,
+      "title": "Existence of field nets with a given gauge symmetry.",
+      "number": "4.4",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-44-existence-of-field-nets-with-a-given-gauge-sy"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions and the gerbe perspective.",
+      "number": "5",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-5-conclusions-and-the-gerbe-perspective"
+    },
+    {
+      "level": 1,
+      "title": "A Symmetry and fields in globally hyperbolic manifolds.",
+      "number": null,
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-a-symmetry-and-fields-in-globally-hyperbolic-man"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 578,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ﬁeld nets",
+          "heading": false
+        },
+        {
+          "term": "curved spacetimes",
+          "heading": false
+        },
+        {
+          "term": "superselection structures",
+          "heading": false
+        },
+        {
+          "term": "presheaves",
+          "heading": false
+        },
+        {
+          "term": "vasselli",
+          "heading": false
+        },
+        {
+          "term": "tensor categories",
+          "heading": false
+        },
+        {
+          "term": "group bundle",
+          "heading": false
+        },
+        {
+          "term": "embedding functor",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1211.1812v5 [math-ph] 11 Aug 2014 Presheaves of superselection structures in curved spacetimes Ezio Vasselli ezio.vasselli@gmail.com October 17, 2018 Abstract We show that superselection structures on curved spacetimes, that are expected to describe quantum charges aﬀected by the underlying geometry, are categories of sections of presheaves of symmetric tensor categories. When an embedding functor is given,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1211.1812v5/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction.",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 5,
+      "labelStart": "2",
+      "labelEnd": "5",
+      "words": 1922,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eufrak bullet",
+          "heading": false
+        },
+        {
+          "term": "eufrak gerbe",
+          "heading": false
+        },
+        {
+          "term": "presheaf eufrak",
+          "heading": false
+        },
+        {
+          "term": "check eufrak",
+          "heading": false
+        },
+        {
+          "term": "pair eufrak",
+          "heading": false
+        },
+        {
+          "term": "field precosheaf",
+          "heading": false
+        },
+        {
+          "term": "jmath o'o",
+          "heading": false
+        },
+        {
+          "term": "precosheaf having",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#intro label=\"intro\"} In the ordinary approach to the theory of particle physics quantum fields are fundamental objects, but do not necessarily yield quantum observables because the property of gauge invariance with respect to a symmetry group must be imposed. In algebraic quantum field theory this point of view is subverted: at a first stage only quantum observables are considered, in the spirit that these",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-mathematical-background",
+      "number": "2",
+      "title": "Mathematical background.",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 148,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hilbert space",
+          "heading": false
+        },
+        {
+          "term": "unitary group",
+          "heading": false
+        },
+        {
+          "term": "sequel",
+          "heading": false
+        },
+        {
+          "term": "families",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.back label=\"sec.back\"} In the present section we recall some mathematical tools that shall be used in the sequel. In the following lines we start by defining some notations. Given a Hilbert space $H$, we write $UH$ for the unitary group and $BH$ for the *C\\**-algebra of bounded operators on $H$. In the sequel, families of Hilbert spaces $H = \\{ H_o \\}_{o \\in I}$ will be considered and we shall write $BH = \\{",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-geometry-of-posets",
+      "number": "2.1",
+      "title": "Geometry of posets.",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 885,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zeta uparrow",
+          "heading": false
+        },
+        {
+          "term": "partial overline",
+          "heading": false
+        },
+        {
+          "term": "posets",
+          "heading": true
+        },
+        {
+          "term": "chi",
+          "heading": false
+        },
+        {
+          "term": "constant bundle",
+          "heading": false
+        },
+        {
+          "term": "delta",
+          "heading": false
+        },
+        {
+          "term": "omega",
+          "heading": false
+        },
+        {
+          "term": "derham",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.back.posets label=\"sec.back.posets\"} Let $M$ be a connected manifold. We say that a base $\\Delta$ for the topology of $M$ is *good* whenever any $a \\in \\Delta$ has compact closure and is arcwise and simply connected. For example, we have the Minkowski spacetime, that has a good base given by the set of double cones, or, more generally, a globally hyperbolic spacetime, that has a good base base given by the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-nets-of-c-algebras",
+      "number": "2.2",
+      "title": "Nets of C*-algebras.",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "9",
+      "words": 1295,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "a'a jmath",
+          "heading": false
+        },
+        {
+          "term": "bundle eufrak",
+          "heading": false
+        },
+        {
+          "term": "jmath o'o",
+          "heading": false
+        },
+        {
+          "term": "jmath a''a",
+          "heading": false
+        },
+        {
+          "term": "circ jmath",
+          "heading": false
+        },
+        {
+          "term": "eufrak equivariant",
+          "heading": false
+        },
+        {
+          "term": "let eufrak",
+          "heading": false
+        },
+        {
+          "term": "nets",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sec.back.nets label=\"sec.back.nets\"} A *net* [^1] of *C\\**-algebras over $\\Delta$ is given by a family $A = \\{ A_a \\}_{a \\in \\Delta}$ of unital *C\\**-algebras, and unital \\*-monomorphisms (called *the net structure*) $$\\jmath_{a'a} : A_a \\to A_{a'} \\ \\ : \\ \\ \\jmath_{a''a'} \\circ \\jmath_{a'a} = \\jmath_{a''a} \\ \\ , \\ \\ \\forall a \\subseteq a' \\subseteq a'' \\ .$$ We shall use the notation $\\EuFrak{A}=",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-nets-and-presheaves-of-tensor-categories",
+      "number": "2.3",
+      "title": "Nets and presheaves of tensor categories.",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 13,
+      "labelStart": "9",
+      "labelEnd": "13",
+      "words": 1675,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "presheaf eufrak",
+          "heading": false
+        },
+        {
+          "term": "jmath a'a",
+          "heading": false
+        },
+        {
+          "term": "eufrak downarrow",
+          "heading": false
+        },
+        {
+          "term": "eufrak otimes",
+          "heading": false
+        },
+        {
+          "term": "widehat varrho",
+          "heading": false
+        },
+        {
+          "term": "widetilde eufrak",
+          "heading": false
+        },
+        {
+          "term": "tensor categories",
+          "heading": true
+        },
+        {
+          "term": "a'a rho",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.back.presheaves label=\"sec.back.presheaves\"} In the present section we recall some properties of nets and presheaves of tensor categories, that constitute one of the main objects of study in the present paper. More detailed references on this topic are [@Rob; @Vas12]. #### DR-categories. A *C\\**-*category* is a category $C$ whose spaces of arrows are Banach spaces endowed with an antilinear involution $* :",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-presheaves-in-quantum-field-theory",
+      "number": "3",
+      "title": "Presheaves in quantum field theory.",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 894,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bundle eufrak",
+          "heading": false
+        },
+        {
+          "term": "overline perp",
+          "heading": false
+        },
+        {
+          "term": "einstein causality",
+          "heading": false
+        },
+        {
+          "term": "glrv",
+          "heading": false
+        },
+        {
+          "term": "bar otimes",
+          "heading": false
+        },
+        {
+          "term": "superselection structure",
+          "heading": false
+        },
+        {
+          "term": "haag duality",
+          "heading": false
+        },
+        {
+          "term": "net bundle",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.qft label=\"sec.qft\"} In the present section we give the main result of the present paper, showing that the superselection structures over globally hyperbolic spacetimes introduced by Brunetti and Ruzzi ([@BR08]) can be interpreted as section categories of simple, symmetric tensor presheaves. Actually, the fact that a superselection structure defines a *net* $\\EuFrak{T}$ of tensor *C\\**-categories was",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-31-charge-structure",
+      "number": "3.1",
+      "title": "Charge structure.",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "16",
+      "words": 693,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "partial rho",
+          "heading": false
+        },
+        {
+          "term": "sigma partial",
+          "heading": false
+        },
+        {
+          "term": "rho circ",
+          "heading": false
+        },
+        {
+          "term": "cdot rho",
+          "heading": false
+        },
+        {
+          "term": "equiv rho",
+          "heading": false
+        },
+        {
+          "term": "eufrak",
+          "heading": false
+        },
+        {
+          "term": "end array",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        }
+      ],
+      "extract": "To introduce the charge structure we follow the standard way and, given $a \\in \\Delta$, define the set ${\\bf loc}R_a \\subseteq {\\bf end}R_a$ whose elements are \\*-endomorphims $$\\label{eq.C0} \\rho \\in {\\bf end}R_a \\ \\ | \\ \\ \\exists e < a \\ \\ {\\mathrm{fulfilling}} \\ \\ \\left\\{ \\begin{array}{ll} \\rho(R_o) \\subseteq R_o \\ , \\ \\forall o \\supseteq e , o < a , \\\\ \\rho = id_{R_o} \\ , \\ \\forall o \\perp e , o < a \\ .",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-32-symmetry",
+      "number": "3.2",
+      "title": "Symmetry.",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 481,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cdot rho",
+          "heading": false
+        },
+        {
+          "term": "cdot epsilon",
+          "heading": false
+        },
+        {
+          "term": "forall perp",
+          "heading": false
+        },
+        {
+          "term": "rho circ",
+          "heading": false
+        },
+        {
+          "term": "circ sigma",
+          "heading": false
+        },
+        {
+          "term": "cap perp",
+          "heading": false
+        },
+        {
+          "term": "o'e",
+          "heading": false
+        },
+        {
+          "term": "haag duality",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.sym label=\"sec.sym\"} As a final step we consider the symmetry structure. This is an essential ingredient at the level of duality theory ([@DR89 §1]) and, at the same time, encodes the Fermi-Bose statistics (see [@Dop11] for a friendly introduction). We introduce the family of unitary operators $$\\label{eq.sym.z1} \\epsilon(z_\\rho,w_\\sigma)_e := w_\\sigma(p_{oe})^* \\sigma_o(z_\\rho(p_{o'e}))^* \\cdot",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-33-the-main-result",
+      "number": "3.3",
+      "title": "The main result.",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 20,
+      "labelStart": "17",
+      "labelEnd": "20",
+      "words": 1917,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eufrak bullet",
+          "heading": false
+        },
+        {
+          "term": "widetilde eufrak",
+          "heading": false
+        },
+        {
+          "term": "hilb eufrak",
+          "heading": false
+        },
+        {
+          "term": "let eufrak",
+          "heading": false
+        },
+        {
+          "term": "cdot varrho",
+          "heading": false
+        },
+        {
+          "term": "lem ccs",
+          "heading": false
+        },
+        {
+          "term": "widehat chi",
+          "heading": false
+        },
+        {
+          "term": "supseteq delta",
+          "heading": false
+        }
+      ],
+      "extract": "We now define a presheaf structure on the family $Z^1_c(\\EuFrak{R})_< := \\{ Z^1_c(\\EuFrak{R})_{<a} \\}_{a \\in \\Delta}$, by means of the restriction functors $$r_{aa'} : Z^1_c(\\EuFrak{R})_{<a'} \\to Z^1_c(\\EuFrak{R})_{<a} \\ \\ , \\ \\ ( \\ r_{aa'}z := z|_{\\Sigma_1(\\Delta^a)} \\ , \\ r_{aa'}\\rho := \\{ \\rho_e \\}_{e \\in \\Delta^a} \\ ) \\ \\ , \\ \\ r_{aa'}t := \\{ t_e \\}_{e \\in \\Delta^a} \\ ,$$ which obviously fulfill the presheaf",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-4-group-bundles-as-global-gauge-symmetries",
+      "number": "4",
+      "title": "Group bundles as global gauge symmetries.",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 147,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gauge group",
+          "heading": true
+        },
+        {
+          "term": "eufrak",
+          "heading": false
+        },
+        {
+          "term": "nets",
+          "heading": false
+        },
+        {
+          "term": "superselection",
+          "heading": false
+        },
+        {
+          "term": "bfm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.gauge label=\"sec.gauge\"} In the previous section we proved that the superselection structure $Z^{1,\\bullet}(\\EuFrak{R})$ can be described by a presheaf and, as a consequence of [@Vas12], as the dual of a group (net) bundle $\\EuFrak{G}$ when an embedding is given. To illustrate the way in which $\\EuFrak{G}$ should behave like a gauge group, we give a class of examples in which an action of the type",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-41-twisted-field-nets",
+      "number": "4.1",
+      "title": "Twisted field nets.",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 23,
+      "labelStart": "20",
+      "labelEnd": "23",
+      "words": 1425,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "a'a imath",
+          "heading": false
+        },
+        {
+          "term": "a'a jmath",
+          "heading": false
+        },
+        {
+          "term": "net eufrak",
+          "heading": false
+        },
+        {
+          "term": "field nets",
+          "heading": true
+        },
+        {
+          "term": "a'a cdot",
+          "heading": false
+        },
+        {
+          "term": "a''a imath",
+          "heading": false
+        },
+        {
+          "term": "a'a circ",
+          "heading": false
+        },
+        {
+          "term": "bundle eufrak",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\EuFrak{F}= (F,\\jmath)_\\Delta$ be a net of $C^*$-algebras. We say that $\\EuFrak{F}$ is ${\\mathbb Z}_2$-*graded* whenever there is a period $2$ automorphism $$\\beta_a : F_a \\to F_a \\ \\ : \\ \\ \\beta_{a'} \\circ \\jmath_{a'a} = \\jmath_{a'a} \\circ \\beta_a \\ \\ , \\ \\ \\beta_a^2 = id_{F_a} \\ \\ , \\ \\ \\forall a \\subseteq a' \\in \\Delta \\ .$$ In this case we set $$F^\\pm_a \\ := \\ \\{ t \\in F_a : \\beta_a(t) = \\pm t \\} \\ \\ , \\ \\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-42-twisted-nets-and-background-potentials",
+      "number": "4.2",
+      "title": "Twisted nets and background potentials.",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 25,
+      "labelStart": "23",
+      "labelEnd": "25",
+      "words": 994,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jmath o'o",
+          "heading": false
+        },
+        {
+          "term": "lambda o'o",
+          "heading": false
+        },
+        {
+          "term": "bundle eufrak",
+          "heading": false
+        },
+        {
+          "term": "int ell",
+          "heading": false
+        },
+        {
+          "term": "field psi",
+          "heading": false
+        },
+        {
+          "term": "int beta",
+          "heading": false
+        },
+        {
+          "term": "net bundle",
+          "heading": false
+        },
+        {
+          "term": "forall subseteq",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#rem.qed label=\"rem.qed\"} We show how a class of twists arises when a quantum field interacts with a *classical* background potential. We start by assuming that $M$ is a globally hyperbolic spin manifold and consider the free Dirac field $\\psi_*$ interacting with a (classical) closed 1--form $A \\in Z^1_{deRham}(M)$. To this end we extract some informations from $A$. A first point is that, since $A$ is closed, for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-43-current-algebras-on-s1",
+      "number": "4.3",
+      "title": "Current algebras on S1.",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 615,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "net eufrak",
+          "heading": false
+        },
+        {
+          "term": "bmt",
+          "heading": false
+        },
+        {
+          "term": "twisted net",
+          "heading": false
+        },
+        {
+          "term": "field net",
+          "heading": false
+        },
+        {
+          "term": "mathrm supp",
+          "heading": false
+        },
+        {
+          "term": "parallel displacement",
+          "heading": false
+        },
+        {
+          "term": "above-cited references",
+          "heading": false
+        },
+        {
+          "term": "von neumann",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.BMT label=\"sec.BMT\"} We now apply Lemma [\\[lem.gauge1\\]](#lem.gauge1){reference-type=\"ref\" reference=\"lem.gauge1\"} to current algebras on $S^1$ defined as in the approach of Buchholz-Mach-Todorov ([@BMT1; @BMT2]); here, at a first stage, fields fulfilling braided commutation relations appear, anyway after a \\\"bosonization\\\" procedure a causal field net is constructed. For a complete discussion of the model",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-44-existence-of-field-nets-with-a-given-gauge-sy",
+      "number": "4.4",
+      "title": "Existence of field nets with a given gauge symmetry.",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 28,
+      "labelStart": "26",
+      "labelEnd": "28",
+      "words": 1127,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "oplus varrho",
+          "heading": false
+        },
+        {
+          "term": "varrho neq",
+          "heading": false
+        },
+        {
+          "term": "finite varrho",
+          "heading": false
+        },
+        {
+          "term": "gamma lambda",
+          "heading": false
+        },
+        {
+          "term": "algebras eufrak",
+          "heading": false
+        },
+        {
+          "term": "lambda otimes",
+          "heading": false
+        },
+        {
+          "term": "net bundle",
+          "heading": false
+        },
+        {
+          "term": "tau phi",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.free label=\"sec.free\"} The following construction is on the line [@DP02], where similar results are proven for the Minkowski spacetime. We prove that for every suitable compact group $G_0$, globally hyperbolic spacetime $M$ and flat bundle $\\mathcal G\\to M$ with suitable structure group, there is a twisted field net over which $\\mathcal G$ acts as a group of internal symmetries. The \\\"untwisted\\\" net from",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-5-conclusions-and-the-gerbe-perspective",
+      "number": "5",
+      "title": "Conclusions and the gerbe perspective.",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 30,
+      "labelStart": "28",
+      "labelEnd": "30",
+      "words": 1449,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eufrak gerbe",
+          "heading": false
+        },
+        {
+          "term": "net eufrak",
+          "heading": false
+        },
+        {
+          "term": "jmath a'a",
+          "heading": false
+        },
+        {
+          "term": "check eufrak",
+          "heading": false
+        },
+        {
+          "term": "circ jmath",
+          "heading": false
+        },
+        {
+          "term": "haag-kastler net",
+          "heading": false
+        },
+        {
+          "term": "overline a'a",
+          "heading": false
+        },
+        {
+          "term": "jmath alpha",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.concl label=\"sec.concl\"} In the present paper we proved that superselection structures in curved spacetimes are section categories of presheaves of symmetric tensor *C\\**-categories. As a consequence, several new invariants are assigned to a sector: a holonomy with values in a compact Lie group, characteristic classes, a 1--cochain defining a non-abelian cocycle. As a further novelty, when an embedding is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-a-symmetry-and-fields-in-globally-hyperbolic-man",
+      "number": null,
+      "title": "A Symmetry and fields in globally hyperbolic manifolds.",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 37,
+      "labelStart": "30",
+      "labelEnd": "37",
+      "words": 2756,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "superselection sectors",
+          "heading": false
+        },
+        {
+          "term": "vasselli",
+          "heading": false
+        },
+        {
+          "term": "ruzzi",
+          "heading": false
+        },
+        {
+          "term": "curved spacetimes",
+          "heading": false
+        },
+        {
+          "term": "kastler world",
+          "heading": false
+        },
+        {
+          "term": "dirac ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "hong kong",
+          "heading": false
+        },
+        {
+          "term": "isham",
+          "heading": false
+        }
+      ],
+      "extract": "Symmetry and ﬁelds in globally hyperbolic manifolds. The proof of the symmetry relations (3.10). Before to make the necessary computations we need two Lemmata: Lemma A.1. For any a ∈∆, cocycle zρ ∈obj Z1 c (R)<a and paths p, p′ : e →o in ∆a , we have z(p) = z(p′). 30 Proof. Let p′ : o →e denote the opposite path. Then p ∗p′ : o →o is a loop in ∆a and, since π1(∆) = π1(a) = 0, we have that p ∗p′ is homotopic to the",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "October 17,"
+        ]
+      },
+      "found_not_listed": {
+        "count": 5,
+        "items": [
+          "1 Introduction.",
+          "2 Mathematical background.",
+          "3 Presheaves in quantum ﬁeld theory.",
+          "4 Group bundles as global gauge symmetries.",
+          "5 Conclusions and the gerbe perspective."
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "net eufrak",
+      "heading": false
+    },
+    {
+      "term": "bundle eufrak",
+      "heading": false
+    },
+    {
+      "term": "eufrak gerbe",
+      "heading": false
+    },
+    {
+      "term": "presheaf eufrak",
+      "heading": false
+    },
+    {
+      "term": "eufrak bullet",
+      "heading": false
+    },
+    {
+      "term": "eufrak otimes",
+      "heading": false
+    },
+    {
+      "term": "algebras eufrak",
+      "heading": false
+    },
+    {
+      "term": "eufrak defines",
+      "heading": false
+    },
+    {
+      "term": "eufrak downarrow",
+      "heading": false
+    },
+    {
+      "term": "widetilde eufrak",
+      "heading": false
+    },
+    {
+      "term": "action eufrak",
+      "heading": false
+    },
+    {
+      "term": "check eufrak",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 16,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 17,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p30); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 10
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 17 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1211.1812v5"
+  }
+}

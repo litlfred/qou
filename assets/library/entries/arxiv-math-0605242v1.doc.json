@@ -1,0 +1,658 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0605242v1",
+  "title": "N-Fold Integer Programming",
+  "variant": "pdf",
+  "pages": 16,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Applications",
+      "number": null,
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-applications"
+    },
+    {
+      "level": 2,
+      "title": "High dimensional transportation problems",
+      "number": null,
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-high-dimensional-transportation-problems"
+    },
+    {
+      "level": 2,
+      "title": "Some packing problems",
+      "number": null,
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-some-packing-problems"
+    },
+    {
+      "level": 1,
+      "title": "Graver bases and directed augmentation",
+      "number": null,
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-graver-bases-and-directed-augmentation"
+    },
+    {
+      "level": 1,
+      "title": "Graver bases of n-fold matrices",
+      "number": null,
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-graver-bases-of-n-fold-matrices"
+    },
+    {
+      "level": 1,
+      "title": "The polynomial time algorithm for n-fold integer programming",
+      "number": null,
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-the-polynomial-time-algorithm-for-n-fold-integer"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 124,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "programming problems",
+          "heading": false
+        },
+        {
+          "term": "integer programming",
+          "heading": false
+        },
+        {
+          "term": "n-fold integer",
+          "heading": false
+        },
+        {
+          "term": "multiway",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0605242v1 [math.OC] 9 May 2006 N-Fold Integer Programming Jes´us A. De Loera ∗ Raymond Hemmecke † Shmuel Onn ‡ Robert Weismantel § Abstract In this article we study a broad class of integer programming problems in variable dimension. We show that these so-termed n-fold integer programming problems are polynomial time solvable. Our proof involves two heavy ingredients discovered recently: the equivalence",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0605242v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 822,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n-fold integer",
+          "heading": false
+        },
+        {
+          "term": "integer transportation",
+          "heading": false
+        },
+        {
+          "term": "integer programming",
+          "heading": false
+        },
+        {
+          "term": "generalized n-fold",
+          "heading": false
+        },
+        {
+          "term": "graver bases",
+          "heading": false
+        },
+        {
+          "term": "transportation problem",
+          "heading": false
+        },
+        {
+          "term": "graver basis",
+          "heading": false
+        },
+        {
+          "term": "ref threeway",
+          "heading": false
+        }
+      ],
+      "extract": "The integer programming problem is the following discrete optimization problem, where $\\N$ denotes the set of nonnegative integers, $A$ is an integer matrix and $b,c$ are integer vectors of suitable dimensions: $$ \\min\\, \\{cx:\\ Ax=b,\\ x\\in\\N^q\\}. $$ It is well known to be generally NP-hard but polynomial time solvable in fixed dimension $q$, see \\cite{Sch}. In this article, motivated by applications to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-applications",
+      "number": null,
+      "title": "Applications",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 225,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "graver bases",
+          "heading": false
+        },
+        {
+          "term": "graver basis",
+          "heading": false
+        },
+        {
+          "term": "transportation problems",
+          "heading": false
+        },
+        {
+          "term": "long tables",
+          "heading": false
+        },
+        {
+          "term": "n-fold",
+          "heading": false
+        },
+        {
+          "term": "polynomial time",
+          "heading": false
+        }
+      ],
+      "extract": "transportation problems and to some packing problems, as follows. In 2.1 we obtain the aforementioned Corollary 2.2 which provides a polynomial time solution to 3-way integer transportation problems for long tables, contrasting the recent universality theorem of [6] for slim tables. We also extend this result to d-way transportation problems for long tables of any dimension (Corollary 2.4). In 2.2 we describe",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-high-dimensional-transportation-problems",
+      "number": null,
+      "title": "High dimensional transportation problems",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1255,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transportation problems",
+          "heading": true
+        },
+        {
+          "term": "transportation polytope",
+          "heading": false
+        },
+        {
+          "term": "multiway transportation",
+          "heading": false
+        },
+        {
+          "term": "integer transportation",
+          "heading": false
+        },
+        {
+          "term": "times arrays",
+          "heading": false
+        },
+        {
+          "term": "n-fold integer",
+          "heading": false
+        },
+        {
+          "term": "fixed margins",
+          "heading": false
+        },
+        {
+          "term": "ref threeway",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{Applications1} A {\\em $d$-way transportation polytope} is the set of all $m_1\\times\\cdots\\times m_d$ nonnegative arrays $x=(x_{i_1,\\dots,i_d})$ such that the sums of the entries over some of their lower dimensional subarrays ({\\em margins}) are specified. For simplicity of exposition, we shall concentrate here only on $d$-way {\\em line-sum polytopes}, of the form $$T = \\left\\{\\,x\\in\\R_+^{m_1\\times\\cdots",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-some-packing-problems",
+      "number": null,
+      "title": "Some packing problems",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 906,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cost shipment",
+          "heading": false
+        },
+        {
+          "term": "standard rolls",
+          "heading": false
+        },
+        {
+          "term": "shipment problem",
+          "heading": false
+        },
+        {
+          "term": "unused width",
+          "heading": false
+        },
+        {
+          "term": "lceil lfloor",
+          "heading": false
+        },
+        {
+          "term": "rfloor rceil",
+          "heading": false
+        },
+        {
+          "term": "cutting stock",
+          "heading": false
+        },
+        {
+          "term": "minimum cost",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{Applications2} \\vskip.5cm\\noindent{\\sc Minimum cost shipment} \\vskip.2cm\\noindent The minimum cost shipment problem concerns the shipment of a large stock of items of several types, using various vessels, with minimum possible cost. More precisely, the data is as follows. There are $t$ types of items. The weight of each item of type $j$ is $w_j$ and there are $n_j$ items of type $j$ to be shipped. There are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-graver-bases-and-directed-augmentation",
+      "number": null,
+      "title": "Graver bases and directed augmentation",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1512,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "directed augmentation",
+          "heading": true
+        },
+        {
+          "term": "graver bases",
+          "heading": true
+        },
+        {
+          "term": "augmentation oracle",
+          "heading": false
+        },
+        {
+          "term": "graver basis",
+          "heading": false
+        },
+        {
+          "term": "oracle time",
+          "heading": false
+        },
+        {
+          "term": "polynomial oracle",
+          "heading": false
+        },
+        {
+          "term": "augmentation problem",
+          "heading": false
+        },
+        {
+          "term": "improving direction",
+          "heading": false
+        }
+      ],
+      "extract": "Consider the following family $\\IP_A$ of integer programs in standard form, with arbitrary demand vector $b\\in\\Z^m$ and arbitrary objective vector $c\\in\\Z^n$, sharing the same constraint matrix $A\\in\\Z^{m\\times n}$, \\[ \\IP_A(b,c):\\quad \\min\\{cx:\\ Ax=b,\\ x\\in\\N^n\\}. \\] A {\\em universal test set} for the family $\\IP_A$ is a {\\em finite} subset $G$ of the lattice $\\L(A):=\\{x\\in\\Z^n:\\ Ax=0\\}$ of dependencies on $A$ such",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-graver-bases-of-n-fold-matrices",
+      "number": null,
+      "title": "Graver bases of n-fold matrices",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1159,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "graver bases",
+          "heading": true
+        },
+        {
+          "term": "graver complexity",
+          "heading": false
+        },
+        {
+          "term": "graver basis",
+          "heading": false
+        },
+        {
+          "term": "n-fold",
+          "heading": true
+        },
+        {
+          "term": "array cccccccc",
+          "heading": false
+        },
+        {
+          "term": "nonzero dependency",
+          "heading": false
+        },
+        {
+          "term": "dots leq",
+          "heading": false
+        },
+        {
+          "term": "n-fold matrix",
+          "heading": false
+        }
+      ],
+      "extract": "Fix any pair of integer matrices $A$ and $B$ with the same number of columns, of dimensions $r\\times q$ and $s\\times q$, respectively. The {\\em n-fold matrix of the ordered pair $A,B$} is the following $(s+nr)\\times nq$ matrix, \\[ [A,B]^{(n)} \\quad:=\\quad ({\\bf 1}_n\\otimes B)\\oplus (I_n\\otimes A)\\quad=\\quad \\left( \\begin{array}{ccccc} B & B & B & \\cdots & B \\\\ A & 0 & 0 & \\cdots & 0 \\\\ 0 & A & 0 & \\cdots & 0 \\\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-the-polynomial-time-algorithm-for-n-fold-integer",
+      "number": null,
+      "title": "The polynomial time algorithm for n-fold integer programming",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1222,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n-fold integer",
+          "heading": true
+        },
+        {
+          "term": "integer programming",
+          "heading": true
+        },
+        {
+          "term": "time algorithm",
+          "heading": true
+        },
+        {
+          "term": "polynomial time",
+          "heading": true
+        },
+        {
+          "term": "transportation polytopes",
+          "heading": false
+        },
+        {
+          "term": "generalized n-fold",
+          "heading": false
+        },
+        {
+          "term": "graver bases",
+          "heading": false
+        },
+        {
+          "term": "contingency tables",
+          "heading": false
+        }
+      ],
+      "extract": "The polynomial time algorithm for n-fold integer programming We now provide the polynomial time algorithm for the generalized n-fold integer programming problem min{cx : [A, B](n)x = b, x ∈Nnq} . (2) First, combining the results of the previous two sections, we get a polynomial time procedure for converting any feasible solution to an optimal one. We record this result in the following lemma. Lemma 5.1 Fix any pair",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "n-fold integer",
+      "heading": true
+    },
+    {
+      "term": "graver bases",
+      "heading": true
+    },
+    {
+      "term": "n-fold program",
+      "heading": false
+    },
+    {
+      "term": "integer transportation",
+      "heading": false
+    },
+    {
+      "term": "integer programming",
+      "heading": true
+    },
+    {
+      "term": "graver complexity",
+      "heading": false
+    },
+    {
+      "term": "graver basis",
+      "heading": false
+    },
+    {
+      "term": "programming algorithm",
+      "heading": true
+    },
+    {
+      "term": "transportation problem",
+      "heading": false
+    },
+    {
+      "term": "ref graver",
+      "heading": false
+    },
+    {
+      "term": "n-fold matrix",
+      "heading": false
+    },
+    {
+      "term": "n-fold matrices",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p13); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0605242v1"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/arxiv-1610.09640v4/sections/sec-063",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Triangulated Derived Functors",
+  "pageStart": 155,
+  "pageEnd": 162,
+  "contains": [
+    "library/arxiv-1610.09640v4/blocks/prose-sec-063",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-063-01",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-063-02",
+    "library/arxiv-1610.09640v4/blocks/lem-sec-063-03",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-063-04",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-063-05",
+    "library/arxiv-1610.09640v4/blocks/cor-sec-063-06",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-063-07",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-063-08",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-063-09",
+    "library/arxiv-1610.09640v4/blocks/thm-sec-063-10",
+    "library/arxiv-1610.09640v4/blocks/cor-sec-063-11",
+    "library/arxiv-1610.09640v4/blocks/prop-sec-063-12",
+    "library/arxiv-1610.09640v4/blocks/ex-sec-063-13",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-063-14",
+    "library/arxiv-1610.09640v4/blocks/rem-sec-063-15"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.09640v4/manifest.jsonld",
+  "provenance": "ingested"
+}

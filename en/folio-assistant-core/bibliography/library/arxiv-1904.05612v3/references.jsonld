@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1904.05612v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "ON ORTHOGONAL SYSTEMS, TWO-SIDED BASES AND REGULAR SUBFACTORS",
+      "dcterms:creator": [
+        "BAKSHI, KESHAB CHANDRA",
+        "GUPTA, VED PRAKASH"
+      ],
+      "dcterms:issued": "D:20200727",
+      "dcterms:identifier": "https://arxiv.org/abs/1904.05612",
+      "dcterms:abstract": "We prove that a regular subfactor of type II1 with ﬁnite Jones index always admits a two-sided Pimsner-Popa basis. This is preceded by a pragmatic revisit of Popa’s notion of orthogonal systems.",
+      "dcterms:source": "library/arxiv-1904.05612v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1904.05612v3"
+    }
+  ]
+}

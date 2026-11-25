@@ -1,0 +1,62 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2311.15631v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2311.15631v3",
+  "contains": [
+    "library/arxiv-2311.15631v3/sections/sec-front-matter",
+    "library/arxiv-2311.15631v3/sections/sec-000",
+    "library/arxiv-2311.15631v3/sections/sec-001",
+    "library/arxiv-2311.15631v3/sections/sec-002",
+    "library/arxiv-2311.15631v3/sections/sec-003",
+    "library/arxiv-2311.15631v3/sections/sec-004",
+    "library/arxiv-2311.15631v3/sections/sec-005",
+    "library/arxiv-2311.15631v3/sections/sec-006",
+    "library/arxiv-2311.15631v3/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Classification of connected étale algebras in pre-modular fusion categories up to rank three — We classify connected ´etale algebras A’s in pre-modular fusion categories B with rank(B) ≤3 including\n\n**Classification of connected étale algebras in pre-modular fusion categories up to rank three**\n\n*Ken KIKUCHI*\n\n30 pp, 9 sections.\n\n**Abstract.** We classify connected ´etale algebras A’s in pre-modular fusion categories B with rank(B) ≤3 including degenerate and non-(pseudo-)unitary ones. We comment on Lagrangian algebras and physical applications to ground state degeneracy and proof of spontaneous B-symmetry breaking.\n\n**Outline.** Front matter; Introduction; Classification; Rank one; Rank two; Rank three; Physical applications; Conformal dimensions of BRep(S3); Conformal dimensions of Bpsu(2)5",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2311.15631&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2311.15631v3",
+    "title_source": "slug",
+    "source_file": "2311.15631v3.pdf",
+    "source_sha256": "a3cc6d51cd04fc0736955afa21ff937ff60793a255bc282e835a6e7b662688db",
+    "pages": 30,
+    "arxiv": {
+      "id": "2311.15631",
+      "version": "3",
+      "primary_class": "math.QA",
+      "stamp_date": "2 May 2024"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

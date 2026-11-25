@@ -1,0 +1,869 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1112.5179v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Prepared for submission to JHEP\n3-Manifolds and 3d Indices\nTudor Dimofte1,2 Davide Gaiotto1 Sergei Gukov3,4\n1Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA\n2Trinity College, Cambridge CB2 1TQ, UK\n3California Institute of Technology, Pasadena, CA 91125, USA\n4Max-Planck-Institut f¨ur Mathematik, Vivatsgasse 7, D-53111 Bonn, Germany\nAbstract: We identify a large class R of three-dimensional N = 2 superconformal ﬁeld the-\nories. This class includes the eﬀective theories TM of M5-branes wrapped on 3-manifolds M,\ndiscussed in previous work by the authors, and more generally com",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 3,
+      "pageEnd": 7,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "[]{#sec:intro label=\"sec:intro\"}\n\nThe space of three-dimensional superconformal field theories is vast and only partially explored. Many superconformal field theories can be defined as the IR fixed point of supersymmetric gauge theories coupled to matter. The inclusion of Chern-Simons couplings gives a large variety of IR fixed points, as the CS coupling does not flow. Furthermore, in supersymmetric CS theories coupled to matter, the CS coupling controls the strength of several interaction terms in the Lagrangian.\n\nTheories with different UV Lagrangian definitions can flow to the same IR SCFT,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Actions on the 3d index",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-2-actions-on-the-3d-index.md",
+      "narrative": null,
+      "content": "[]{#sec:actions label=\"sec:actions\"}\n\nLet us consider a 3d $\\mathcal{N}=2$ SCFT $\\mathcal{T}$ with flavor symmetry $U(1)^N$. The generalized supersymmetric index was defined in [@KW-index], following [@KMMR-index; @BBMR-index; @Kim-index; @IY-index; @KSV-index], as a trace\n\n$$\\label{IH}\n\\mathcal{I}_\\mathcal{T}( m;q,\\zeta) \\;=\\;\n{\\rm Tr}_{\\mathcal{H}_{ m}} (-1)^Fe^{-\\beta(E-R-j_3)}  q^{\\frac{E+j_3}{2}} \\zeta^{ e}$$\n\nover a superselection sector of the Hilbert space of the 3d theory on $S^2$. Specifically, the Hilbert space $\\mathcal{H}_m$ is labelled by the magnetic flux $m = (m_1,...,m_N)\\in {",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Sp(2N,Z) action",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-002-21-the-sp2nz-action.md",
+      "narrative": null,
+      "content": "The Sp(2N, Z) action\nIn [22], an Sp(2N, Z) action on 3d SCFT’s with N U(1) ﬂavor symmetries was introduced.5\nThe index (2.5) in the charge basis transforms very transparently under this action. Namely,\n4This is a possibly more reﬁned version of the requirement of positive monopole operator dimensions used\nto discuss the IR behavior of N = 4 gauge theories [47].\n5We refer the reader to [22], as well as [19], for details of Sp(2N, Z) transformations on SCFT’s.\nOur\nnotation here closely follows that in [19].\n– 7 –\nfor g ∈Sp(2N, Z), we have6\nIg◦T (g γ; q) = IT (γ; q) .\n(2.7)\nFor simplicity, we can",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Affine shifts",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-003-22-affine-shifts.md",
+      "narrative": null,
+      "content": "[]{#sec:aff label=\"sec:aff\"}\n\nAs mentioned above, the R-charge used in the index does not need to coincide with the R-charge that appears in the superconformal algebra. We can take $R$ to be any R-symmetry charge. If we redefine the R-charge by a flavor symmetry, then different choices are related by $R \\to R -\\alpha_e \\cdot e$ for some vector $\\alpha_e$. Under such a shift, the index varies accordingly as\n\n$$\\mathcal{I}_\\mathcal{T}(m,e;q) \\to q^{-\\tfrac{1}{2} \\alpha_e \\cdot e} \\mathcal{I}_\\mathcal{T}(m,e;q)\\,.$$\n\nThere is also a certain degree of latitude in choosing the R-charge of the vacuu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Adding a superpotential",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-004-23-adding-a-superpotential.md",
+      "narrative": null,
+      "content": "[]{#sec:W label=\"sec:W\"}\n\nIn the framework of [@DGG], another important operation on a 3d $\\mathcal{N}=2$ SCFT $\\mathcal{T}$ was the addition of a superpotential. The index is affected by superpotential terms in a simple fashion; one just has to drop, in an appropriate way, any flavor symmetry broken by the superpotential.\n\nThis has three basic consequences. To illustrate them, suppose that we add a superpotential $\\mathcal{W}$ charged only under the first $U(1)$ of the flavor symmetry group $U(1)^N$; in other words, $\\mathcal{W}$ has electric charge $c_\\mathcal{W}= (1,0,...,0)$. Suppose that",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A discrete symmetry",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-005-24-a-discrete-symmetry.md",
+      "narrative": null,
+      "content": "[]{#sec:kappa label=\"sec:kappa\"}\n\nWe could define standard discrete symmetries $C$, $P$, and $T$ acting on theories $\\mathcal{T}$ and their indices, though in general the 3d SCFT's in class $\\mathcal{R}$ will not be invariant under any of these \"symmetries\" alone. To see which discrete symmetries stand a chance at preserving a theory $\\mathcal{T}$ and its index, it is useful to consider more closely the Hilbert space $\\mathcal{H}_m$ of $\\mathcal{T}$ on $S^2$ in the presence of magnetic flux $m$. Suppose further that $\\mathcal{T}$ is in class $\\mathcal{R}$, and has a $UV$ Lagrangian description",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An operator algebra",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "../sections/sec-006-25-an-operator-algebra.md",
+      "narrative": null,
+      "content": "[]{#sec:ops label=\"sec:ops\"}\n\nIn [@DGH] (see also [@DG-Sdual; @DGG]), we encountered a certain universal structure common to 3d $\\mathcal{N}=2$ theories with $U(1)^N$ flavor symmetry. Upon compactification on ${\\mathbb R}^2 \\times S^1$, the moduli space of SUSY vacua maps to a Lagrangian submanifold $\\mathcal{L}$ of $({\\mathbb C}^*)^{2N}$, parameterized by the choices of complexified twisted masses $X$ and effective complexified FI parameters $P$. Both parameters have periodic imaginary parts (flavor Wilson lines and effective theta angles respectively), so the true $({\\mathbb C}^*)^{2N}$ para",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The tetrahedron index",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-007-3-the-tetrahedron-index.md",
+      "narrative": null,
+      "content": "[]{#sec:T1 label=\"sec:T1\"}\n\nThe basic building block used to construct the theory $T_M$ for any 3-manifold $M$ is the theory $T_\\Delta$ associated to a single ideal tetrahedron. More precisely, we should call the theory\n\n$$T_{\\Delta,\\Pi_Z}\\,, \\label{tetthy}$$\n\nsince it depends on a polarization for the boundary of the tetrahedron. As discussed in Sections 2 and 4 of [@DGG], we make a specific choice of polarization $\\Pi_Z$ (see also Section [\\[sec:tetdiff\\]](#sec:tetdiff){reference-type=\"ref\" reference=\"sec:tetdiff\"} below). Then $T_\\Delta$ consists of a single free $\\mathcal{N}=2$ chiral mult",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Parity and symmetry",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-008-31-parity-and-symmetry.md",
+      "narrative": null,
+      "content": "[]{#sec:tetkappa label=\"sec:tetkappa\"}\n\nSeveral identities satisfied by the tetrahedron index can be understood via discrete symmetries acting on $T_\\Delta$. Let's first consider the action of parity $\\mathbf{P}$ on $T_\\Delta$. In is not an exact symmetry because it inverts the sign of the Chern-Simons level, from $k=-\\tfrac12$ to $k=\\tfrac12$. However, this can be compensated for by subtracting a Chern-Simons term, *i.e.* applying $T^{-1}\\in Sp(2,{\\mathbb Z})$. In the $S^2\\times S^1$ background, it actually turns out that the R-charge and fermion number of the vacuum must also be shifted, so",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Triality",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-009-32-triality.md",
+      "narrative": null,
+      "content": "[]{#sec:tri label=\"sec:tri\"}\n\nExperimentally, we observe that the tetrahedron index enjoys yet another more interesting discrete symmetry of order three:\n\n$$\\mathcal{I}_\\Delta(m,e;q) = \\big(-q^{\\frac12}\\big)^{-e}\\mathcal{I}_\\Delta(e,-e-m;q)=\\big(-q^{\\frac12}\\big)^{m}\\mathcal{I}_\\Delta(-e-m,m;q)\\,. \\label{tettri}$$\n\nFor a visual demonstration of this symmetry, let us define ${\\rm lead}(m,e)$ to be the leading power of $q$ that appears in $\\mathcal{I}_\\Delta(m,e;q)$ when written as a series in $q$. For example,\n\n$$\\begin{array}{ll}\n \\mathcal{I}_\\Delta(0,0;q) = 1-q-2q^2-2q^3-2q^4+q^6+5q^7+...\\qqu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/figure-img-p019-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../images/img-p019-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Difference equations",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "../sections/sec-010-33-difference-equations.md",
+      "narrative": null,
+      "content": "[]{#sec:tetdiff label=\"sec:tetdiff\"}\n\nA final interesting property of the tetrahedron index is the fact that it obeys two difference equations. In terms of operators $\\hat x_{\\pm}=\\exp(\\hat X_\\pm)$ and $\\hat p_\\pm =\\exp(\\hat P_\\pm)$ as defined in Section [\\[sec:ops\\]](#sec:ops){reference-type=\"ref\" reference=\"sec:ops\"}, these are\n\n$$\\big(\\hat p_++\\hat x_+^{-1}-1\\big)\\mathcal{I}_\\Delta = 0\\,,\\qquad\n  \\big(\\hat p_-+\\hat x_-^{-1}-1\\big)\\mathcal{I}_\\Delta = 0\\,.\n\\label{teteqs}$$\n\nFor example, writing these out in the charge basis we find\n\n$$\\label{teteqsem}\n\\begin{align}\n q^{\\frac e2}\\mathcal{I}_\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The index of TM",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-011-4-the-index-of-tm.md",
+      "narrative": null,
+      "content": "[]{#sec:TM label=\"sec:TM\"}\n\nSeveral copies of the tetrahedron theory $T_\\Delta$ can be appropriately combined to construct an $\\mathcal{N}=2$ SCFT associated to any oriented 3-manifold $M$ that admits an ideal triangulation. The gluing rules for $T_\\Delta$ theories, described in [@DGG], immediately translate to a simple, combinatorial prescription for calculating the supersymmetric index $\\mathcal{I}_M \\equiv \\mathcal{I}_{T_M}$ of $T_M$ on $S^2\\times S^1$. Here we proceed to write down these rules explicitly, and to give several examples of the resulting 3-manifold indices $\\mathcal{I}_M$. Sim",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gluing rules",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "../sections/sec-012-41-gluing-rules.md",
+      "narrative": null,
+      "content": "[]{#sec:rules label=\"sec:rules\"}\n\nLet's begin by recalling the gluing rules of [@DGG] for theories $T_M$. To construct $T_M$, we must choose an oriented 3-manifold $M$, an ideal triangulation $M = \\bigcup_{i=1}^N\\Delta_i$ of $M$ (which doesn't matter in the end), and a polarization $\\Pi$ for the symplectic space $\\mathcal{P}_{\\partial M}$ of flat connections on the boundary $\\partial M$ (which does matter).\n\nThe choice of polarization was described carefully in Section 2 of [@DGG], and we recall a few facts about it here. Physically, if we think of $T_M$ as a 3d boundary condition for a 4d $\\m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The bipyramid",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "../sections/sec-013-42-the-bipyramid.md",
+      "narrative": null,
+      "content": "[]{#sec:bip label=\"sec:bip\"}\n\nAs a simple but crucial example of a nontrivial 3-manifold, let us take $M$ to be the bipyramid, shown in the center of Figure [1](#fig:bip){reference-type=\"ref\" reference=\"fig:bip\"}. The bipyramid can be decomposed into either 2 or 3 tetrahedra, leading to two different UV descriptions of the theory $T_M$. It was shown in [@DGG] that, with an appropriate polarization, the gluing of two tetrahedra produces $N_f=1$ SQED, while the gluing of three tetrahedra produces the so-called XYZ model, a theory of three chiral multiplets coupled by a cubic superpotential. The",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some knot complements",
+      "pageStart": 28,
+      "pageEnd": 31,
+      "target": "../sections/sec-014-43-some-knot-complements.md",
+      "narrative": null,
+      "content": "[]{#sec:knots label=\"sec:knots\"}\n\nA well-studied class of 3-manifolds are the complements of knots in the 3-sphere. One forms a knot complement $M_K$ by slightly thickening a knot $K\\in S^3$ into a solid torus $N_K$, and then cutting it out,\n\n$$M_K = S^3\\backslash N_K\\,.$$\n\nWith the single exception of the unknot complement, all knot complements seem to admit\n\n[^1]\n\nideal triangulations that can be used to define the index $\\mathcal{I}_{M_K}$, a topological invariant of $M_K$.\n\n::: wrapfigure\nr3in ![image](LM){width=\"2.8in\"}\n:::\n\nThe boundary of a knot complement is a torus $T^2$, and its phas",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mapping tori and T[SU(2)]",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "../sections/sec-015-44-mapping-tori-and-tsu2.md",
+      "narrative": null,
+      "content": "Mapping tori and T[SU(2)]\nOne could also try constructing indices for some 3-manifolds without explicit reference to ideal\ntriangulations. Another popular construction of 3-manifolds starts with a Riemann surface\nC and builds a 3-manifold by identifying the “top” and “bottom” boundaries of a mapping\ncylinder Mϕ = C ×ϕ I,\nM = C ×ϕ S1 ≡C ×ϕ I\n\u000e\n(x, 0) ∼(ϕ(x), 1) ,\n(4.24)\n16The gluing data of this triangulation, and triangulations of any other knot or link complement, can be\neasily obtained from computer packages such as snap [59] or SnapPy [60].\n– 30 –\nwith an element of the mapping class group",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum Lagrangian operators",
+      "pageStart": 34,
+      "pageEnd": 37,
+      "target": "../sections/sec-016-45-quantum-lagrangian-operators.md",
+      "narrative": null,
+      "content": "[]{#sec:glueops label=\"sec:glueops\"}\n\nJust as the index of the tetrahedron theory $T_\\Delta$ is annihilated by two difference operators [\\[teteqs\\]](#teteqs){reference-type=\"eqref\" reference=\"teteqs\"}\n\n$$\\big(\\hat p_{\\pm}+\\hat x_{\\pm}{}^{-1}-1\\big) \\mathcal{I}_\\Delta(m,e;q) \\,=\\, 0\\,,$$\n\nwe find that the index of any 3-manifold theory $T_M$ satisfies pairs of difference equations\n\n$$\\hat \\mathcal{L}_M^{(i)}(\\hat p_\\pm,\\hat x_\\pm;q^{\\pm1})\\cdot\\mathcal{I}_M(m,e;q) \\,=\\, 0\\,, \\label{Meqs}$$\n\nwith $\\hat x,\\hat p$ as in Section [\\[sec:ops\\]](#sec:ops){reference-type=\"ref\" reference=\"sec:ops\"}. Gen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tentacles and vacua",
+      "pageStart": 37,
+      "pageEnd": 42,
+      "target": "../sections/sec-017-46-tentacles-and-vacua.md",
+      "narrative": null,
+      "content": "[]{#sec:tent label=\"sec:tent\"}\n\nSome interesting physical consequences of the difference equations [\\[Meqs\\]](#Meqs){reference-type=\"eqref\" reference=\"Meqs\"} result from the fact that they control the behavior of the index at large charges $(m,e)$, in a fairly simple manner. There are actually two ways to send $m$ and/or $e$ to infinity: we can either keep $|q|<1$ fixed, or simultaneously send $m\\to \\infty$ and $q\\to 1$ ($\\hbar\\to 0$) so that $q^m$ stays fixed. In the latter case, the index $\\mathcal{I}_M$ diverges, with leading asymptotics governed by the volume of $M$. Mathematically, this i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/figure-img-p038-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 38,
+      "target": "../images/img-p038-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/figure-img-p038-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 38,
+      "target": "../images/img-p038-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/figure-img-p038-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 38,
+      "target": "../images/img-p038-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/figure-img-p040-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 40,
+      "target": "../images/img-p040-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/figure-img-p042-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 42,
+      "pageEnd": 42,
+      "target": "../images/img-p042-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/figure-img-p042-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 42,
+      "pageEnd": 42,
+      "target": "../images/img-p042-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mutation invariance from gauge theory",
+      "pageStart": 42,
+      "pageEnd": 46,
+      "target": "../sections/sec-018-47-mutation-invariance-from-gauge-theory.md",
+      "narrative": null,
+      "content": "[]{#sec:mutant label=\"sec:mutant\"}\n\nIn this section, we begin to test the strength of the index as a topological invariant of 3-manifolds --- *i.e.* its ability to distinguish 3-manifolds from one another. We will specialize to the case of knot complements $M$, either in $S^3$ or in some closed 3-manifold $\\overline M$, and consider the operation of mutation [@Conway-mutation]. To perform a mutation, the knot complement $M$ is cut along an $S^2$ that is punctured exactly four times by the knot, separating $M$ into two halves\n\n[^1]\n\n$M_1$ and $M_2$; then the halves are glued back together with",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/figure-img-p043-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 43,
+      "target": "../images/img-p043-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/figure-img-p043-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 43,
+      "target": "../images/img-p043-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/figure-img-p043-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 43,
+      "target": "../images/img-p043-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/figure-img-p045-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 45,
+      "target": "../images/img-p045-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/figure-img-p045-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 45,
+      "target": "../images/img-p045-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/figure-img-p045-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 45,
+      "target": "../images/img-p045-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/figure-img-p045-5",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 45,
+      "target": "../images/img-p045-5.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The index from four dimensions and line operators",
+      "pageStart": 46,
+      "pageEnd": 50,
+      "target": "../sections/sec-019-5-the-index-from-four-dimensions-and-line-operat.md",
+      "narrative": null,
+      "content": "[]{#sec:3d4d label=\"sec:3d4d\"}\n\nOur discussion until now has been purely three dimensional. When the three-manifold $M$ has boundary components, the three-dimensional theory $T_{M,\\Pi}$ we defined by the gluing construction depends on a choice of polarization, and different polarizations are related by the action of $Sp(2N,{\\mathbb Z})$.\n\nHowever, there is a simple way to erase the polarization dependence: consider a combined 3d/4d system, where $T_{M,\\Pi}$ lives at the boundary of a half-space, and a free $U(1)^N$ gauge theory lives in the half space, with Neumann-type boundary conditions tha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Line operator algebra",
+      "pageStart": 50,
+      "pageEnd": 51,
+      "target": "../sections/sec-020-51-line-operator-algebra.md",
+      "narrative": null,
+      "content": "One real payoff of the 3d/4d construction is an explanation of why the index of the 3d theory satisfies the difference equations built from the operators $(\\hat{x}_{\\pm}, \\hat{p}_{\\pm})$, which we are about to identify with line operators. First, we need a simple observation about the OPE of line operators. Consider a setup with two line operators, wrapping $S^1$ and lying at different points $p_1$ and $p_2$ in $\\mathcal{G}$, as defined above. Although the positions $p_1$, $p_2$ locally do not matter, the relative order along $\\mathcal{G}$ is a topological invariant, as we cannot bring one ope",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Boundary conditions for hypermultiplets",
+      "pageStart": 51,
+      "pageEnd": 52,
+      "target": "../sections/sec-021-52-boundary-conditions-for-hypermultiplets.md",
+      "narrative": null,
+      "content": "So far, we have considered $U(1)^N$ vector multiplets coupled to a boundary theory $T_M$. Generically, the 4d theories $T[\\partial M]$ arising from a geodesic boundary $M$ will also involve hypermultiplet matter, which leads to further interesting observations in our 3d/4d setup.\n\nA theory of a single hypermultiplet has two natural classes of boundary conditions. In one class, one of the chiral fields $Y$ in the hypermultiplet has Dirichlet-type boundary conditions, $$Y = \\mathcal{O}$$ for some chiral operator $\\mathcal{O}$ in the boundary theory, and the other chiral field $\\tilde Y$ has Neum",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Non-abelian line defects",
+      "pageStart": 52,
+      "pageEnd": 56,
+      "target": "../sections/sec-022-53-non-abelian-line-defects.md",
+      "narrative": null,
+      "content": "There are natural ways to use the three-dimensional theories $T_M$ to define domain walls in the UV for four-dimensional ${\\cal N}=2$ $SU(2)$ gauge theories. A full account of that construction will be the subject of a future publication [@DGGV-hybrid]. For now, we will content ourselves with sketching some interesting directions of inquiry. For simplicity, we will focus on the example of $SU(2)$ ${\\cal N}=2^*$ SYM.\n\nWe would like to establish a very concrete parallel between the general structure of Pestun's $S^4$ partition function and the refined index. In the presence of line defects or do",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The index as SL(2,C) Chern-Simons theory",
+      "pageStart": 56,
+      "pageEnd": 58,
+      "target": "../sections/sec-023-6-the-index-as-sl2c-chern-simons-theory.md",
+      "narrative": null,
+      "content": "[]{#sec:CS label=\"sec:CS\"}\n\nThroughout the preceding sections, there have been various hints that the index $\\mathcal{I}_M(m,e;q)$ of a theory $T_M$ may have some relation to complex Chern-Simons theory on $M$ itself, *i.e.* Chern-Simons theory with complex gauge group $SL(2,{\\mathbb C})$. For example, the constructions of $T_M$ and $\\mathcal{I}_M$ involve choosing a polarization on the phase space $\\mathcal{P}_{\\partial M}$, and this is precisely the phase space of complex Chern-Simons theory on a 3-manifold $M$ with boundary [@Wit-Jones; @Witten-cx]. In addition, the flat $SL(2,{\\mathbb C})$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantization at k=0",
+      "pageStart": 58,
+      "pageEnd": 62,
+      "target": "../sections/sec-024-61-quantization-at-k0.md",
+      "narrative": null,
+      "content": "[]{#sec:k0 label=\"sec:k0\"}\n\nLet's begin by reviewing a few facts about Chern-Simons theory with gauge group $G_{\\mathbb C}=SL(2,{\\mathbb C})$ [@Wit-CSgrav; @Witten-cx; @gukov-2003]. The most general complex bulk action on a 3-manifold $M$ is\n\n$$S_{CS}(M) \\,=\\, \\frac{t}{8\\pi}\\int_M {\\rm Tr \\,}\\Big(\\mathcal{A}\\, d\\mathcal{A}+\\frac{2}{3}\\mathcal{A}^3\\Big)\\,+\\,\\frac{\\tilde t}{8\\pi}\\int_M {\\rm Tr \\,}\\Big(\\overline\\mathcal{A}\\, d\\overline\\mathcal{A}+\\frac{2}{3}\\overline\\mathcal{A}^3\\Big)\\,,\n\\label{CSaction}$$\n\nwhere $\\mathcal{A}$ is a local $\\mathfrak{g}_{\\mathbb C}=\\mathfrak{sl}(2,{\\mathbb C})$-val",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symplectic action",
+      "pageStart": 62,
+      "pageEnd": 65,
+      "target": "../sections/sec-025-62-symplectic-action.md",
+      "narrative": null,
+      "content": "[]{#sec:CSsymp label=\"sec:CSsymp\"}\n\nWe would like to define an affine symplectic action on the Hilbert space $\\mathcal{H}\\equiv \\mathcal{H}_{0,s}$ (or products thereof) that intertwines an obvious symplectic action in the algebra of operators [\\[CSops\\]](#CSops){reference-type=\"eqref\" reference=\"CSops\"}. This was already done in Section [\\[sec:actions\\]](#sec:actions){reference-type=\"ref\" reference=\"sec:actions\"} for the index, but we want to rediscover it here from the point of view of Chern-Simons theory and geometric quantization.\n\nFortunately, a holomorphic version of the desired symplecti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chern-Simons theory from 6d",
+      "pageStart": 65,
+      "pageEnd": 68,
+      "target": "../sections/sec-026-63-chern-simons-theory-from-6d.md",
+      "narrative": null,
+      "content": "[]{#sec:6d label=\"sec:6d\"}\n\nAs we argued in [@DGG], a three-dimensional $\\mathcal{N}=2$ theory $T_M$ labeled by a 3-manifold $M$ can be thought of as the result of compactification of the six-dimensional $(2,0)$ theory of type $A_1$ on a 3-manifold $M$. Therefore, a 3d $\\mathcal{N}=2$ theory $T_M$ in the space-time $S^1 \\times S^2$ relevant to the index computation can be equivalently approached by studying the $A_1$ 6d theory that describes two coincident M5-branes on $S^1 \\times S^2 \\times M$.\n\nThis configuration of two five-branes on $S^1 \\times S^2 \\times M$ fits in a large web of dualitie",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/figure-img-p066-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 66,
+      "pageEnd": 66,
+      "target": "../images/img-p066-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Proof of triality for the tetrahedron index",
+      "pageStart": 68,
+      "pageEnd": 70,
+      "target": "../sections/sec-027-a-proof-of-triality-for-the-tetrahedron-index.md",
+      "narrative": null,
+      "content": "Proof of triality for the tetrahedron index\nWe would like to prove that the index is invariant under the aﬃne σeST transformation\ndiscussed in Section 3.2. We will prove it in the form\nI∆(m, e; q) =\n\u0000−q\n1\n2 \u0001m I∆(−e −m, m; q) ,\n(A.1)\nwhich immediately implies the middle equality of (3.11) as well.\nThere are several possible ways to show this, but one of the easiest (and most instructive)\nis to invoke the diﬀerence equations for the index. Recall from Section 3.3 that\n(ˆp+ + ˆx−1\n+ −1)I∆(m, e) = (ˆp−+ ˆx−1\n−−1)I∆(m, e) = 0 ,\n(A.2)\nwhere ˆp±, ˆx± are deﬁned by\nˆx± = q\nm\n2 e∓∂e ,\nˆp± = q\ne\n2 e±∂m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B Figure-eight index from six tetrahedra",
+      "pageStart": 70,
+      "pageEnd": 71,
+      "target": "../sections/sec-028-b-figure-eight-index-from-six-tetrahedra.md",
+      "narrative": null,
+      "content": "The gluing data for the six-tetrahedron triangulation of the figure-eight knot complement\nwas described in Section 4.6 of [19]. A map of the torus boundary, which encodes all the\nnecessary combinatorial data, is reproduced in Figure 14. The six tetrahedra have edge\nparameters (Z,W, X,Y, R,S). Here we start out in a product polarization Hz x --- x IIs, and\nfind that we need to implement a change of polarization\n\nU 0 0 1 0-1-1 1 -1 1 -1-1-1 Z 0\nen —2-2 0 1 1 0-2-20 0 0 2 Zo Qrit+h\nC2 0 1 0-20 1 0 0 2-22 0 23 Qrit+h\nC3 1 0-20 10 0 2-22 0 0 Z4 Qrit+h\nC4 0 0 1 1 0 00 0 0 0 0 0 25 Qrit+h\nCs _ 1 00 0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "C Quantum Lagrangian calculations",
+      "pageStart": 71,
+      "pageEnd": 73,
+      "target": "../sections/sec-029-c-quantum-lagrangian-calculations.md",
+      "narrative": null,
+      "content": "Quantum Lagrangian calculations\nHere we calculate explicitly the quantum Lagrangian operators ˆLM that annihilate a few\nindices, as promised in Section 4.5. We follow the computational framework delineated in\nSection 4.5, or in [31].\nBipyramid\nLet’s begin with the operators for the bipyramid theory. If we build the bipyramid from two\ntetrahedra, we can start with two pairs of operators ˆr′′\n± + ˆr−1\n± −1, ˆs′′\n± + ˆs−1\n± −1 that both\nannihilate the product index I∆(mR, eR) I∆(mS, eS), as in Section 4.2. We could write this\nsomewhat more suggestively as\nˆr′′\n± + ˆr−1\n± −1 ≃0 ,\nˆs′′\n± + ˆs−1\n± −",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.5179v1/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "D Tentacles and difference equations",
+      "pageStart": 73,
+      "pageEnd": 79,
+      "target": "../sections/sec-030-d-tentacles-and-difference-equations.md",
+      "narrative": null,
+      "content": "Tentacles and diﬀerence equations\nIn this appendix, we seek to motivate the relation between tentacles of a classical amoeba of\nLM and “linear growth” in the index, as discussed in Section 4.6. We show how these two\nphenomena are connected via quantized diﬀerence equations ˆLMIM = 0. Our argument is\nheuristic, but indicates a path toward a more rigorous proof, given further information about\nquantization and/or indices.\nFor simplicity, suppose that a theory39 TM has a single U(1) symmetry, so that the\nindex IM(m, e; q) depends on a single pair of charges (m, e). Correspondingly, the classical",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

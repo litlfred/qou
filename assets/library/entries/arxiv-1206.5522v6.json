@@ -1,0 +1,554 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1206.5522v6",
+  "blocks": [
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1206.5522v6  [math.AT]  23 Jun 2024\nFACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS\nDAVID AYALA & JOHN FRANCIS\nAbstract. Factorization homology theories of topological manifolds, after Beilinson, Drinfeld\nand Lurie, are homology-type theories for topological n-manifolds whose coeﬃcient systems are\nn-disk algebras or n-disk stacks. In this work we prove a precise formulation of this idea, giving an\naxiomatic characterization of factorization homology with coeﬃcients in n-disk algebras in terms\nof a generalization of the Eilenberg–Steenrod axioms for singular homology. Each such theory\ngiv",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 6,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Factorization homology takes an algebraic input, either an $n$-disk algebra or more generally a stack over $n$-disk algebras, and outputs a homology-type theory for $n$-dimensional manifolds. In the case where the input coefficients are an $n$-disk algebra, this factorization homology -- the topological chiral homology introduced by Lurie [@dag] -- satisfies an analogue of the axioms of Eilenberg and Steenrod. This work proves this statement and some consequences afforded by this point of view.\n\nWhile the subject of factorization homology is new, at least in name, it has important roots and an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B-framed disks and manifolds",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-2-b-framed-disks-and-manifolds.md",
+      "narrative": null,
+      "content": "We now specify the details of our basic objects of study, $n$-manifolds.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B-framings",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-21-b-framings.md",
+      "narrative": null,
+      "content": "We consider a topological category of $n$-manifolds and embeddings among them. We use this to consider the tangent classifier, which thereafter offers the notion of a $B$-framing on an $n$-manifold, as well as an $\\infty$-category of such.\n\n::: definition\n[]{#manifold label=\"manifold\"} $\\mathop{\\mathrm{{\\mathcal M}\\mathsf{fld}}}_n$ is the symmetric monoidal topological category for which an object is a topological $n$-manifold that admits a finite *good* cover, which is to say a finite open cover by Euclidean spaces with the property that each non-empty intersection of terms in the cover is it",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Disks",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-003-22-disks.md",
+      "narrative": null,
+      "content": "We now consider $B$-framed $n$-disks. In terms of configuration spaces, we identify the maximal $\\infty$-subgroupoid of $\\mathop{\\mathrm{{\\mathcal D}\\sf isk}}^B_{n/M}$, $B$-framed $n$-disks embedding into a $B$-framed $n$-manifold.\n\n::: definition\nThe symmetric monoidal $\\mathop{\\mathrm{\\infty}}$-category $\\mathop{\\mathrm{{\\mathcal D}\\sf isk}}^B_n$ is the full $\\mathop{\\mathrm{\\infty}}$-subcategory of $\\mathop{\\mathrm{{\\mathcal M}\\mathsf{fld}}}^B_n$ whose objects are disjoint unions of $B$-framed $n$-dimensional Euclidean spaces.\n:::\n\n::: remark\nConsider $\\ast\\rightarrow\\mathop{\\mathrm{\\sf BTo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Manifolds with boundary",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-004-23-manifolds-with-boundary.md",
+      "narrative": null,
+      "content": "We will also employ the category of topological manifolds with boundary.\n\n::: definition\n$\\mathop{\\mathrm{{\\mathcal M}\\mathsf{fld}}}_n^\\partial$ is the symmetric monoidal topological category of topological $n$-manifolds, possibly with boundary, which have finite good covers by Euclidean spaces $\\mathbb R^n$ and upper half spaces $\\mathbb R_{\\geq 0} \\times \\mathbb R^{n-1}$. Morphisms are open embeddings which map boundary to boundary. $\\mathop{\\mathrm{{\\mathcal D}\\sf isk}}_n^\\partial$ is the full symmetric monoidal topological subcategory of $\\mathop{\\mathrm{{\\mathcal M}\\mathsf{fld}}}_n^\\parti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Localizing with respect to isotopy equivalences",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-005-24-localizing-with-respect-to-isotopy-equivalenc.md",
+      "narrative": null,
+      "content": "Here we explain that the $\\infty$-category $\\mathop{\\mathrm{{\\mathcal D}\\sf isk}}^B_{n/M}$ is a localization of its un-topologized version $\\mathop{\\mathrm{{\\sf Disk}}}^B_{n/M}$ on the collection of those inclusions of finite disjoint unions of disks $U\\subset V$ in $M$ that are isotopic to an isomorphism. This comparison plays a fundamental role in recognizing certain colimit expressions in this theory, for instance those that support the pushforward formula of §[\\[sec.push\\]](#sec.push){reference-type=\"ref\" reference=\"sec.push\"}.\n\n::: definition\n[]{#def.ddisk label=\"def.ddisk\"} The ordinary",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Homology theories for topological manifolds",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-006-3-homology-theories-for-topological-manifolds.md",
+      "narrative": null,
+      "content": "Factorization homology evaluates on a general manifold as the average over 'factorizations' of the manifold into disks of the values of an $n$-disk algebra on such disks. We make this precise by defining factorization homology as the left Kan extension of an $n$-disk algebra along the inclusion $\\mathop{\\mathrm{{\\mathcal D}\\sf isk}}_n \\hookrightarrow \\mathop{\\mathrm{{\\mathcal M}\\mathsf{fld}}}_n$.\\\nFor this section, we fix a symmetric monoidal $\\infty$-category $\\mathcal V$.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Disk algebras",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "../sections/sec-007-31-disk-algebras.md",
+      "narrative": null,
+      "content": "::: definition\nThe $\\infty$-category of $\\mathop{\\mathrm{{\\mathcal D}\\sf isk}}_n^B$-algebras in $\\mathcal V$ $$\\mathop{\\mathrm{\\mathsf{Alg}}}_{\\mathop{\\mathrm{{\\mathcal D}\\sf isk}}_n^B}(\\mathcal V)~:=~\\mathop{\\mathrm{\\sf Fun}}^\\otimes(\\mathop{\\mathrm{{\\mathcal D}\\sf isk}}^B_n, \\mathcal V)$$ is the $\\infty$-category of symmetric monoidal functors.\n:::\n\nThere is the restricted Yoneda functor $$\\mathbb E\\colon \\mathop{\\mathrm{{\\mathcal M}\\mathsf{fld}}}_n^B \\longrightarrow  \\mathop{\\mathrm{\\sf PShv}}(\\mathop{\\mathrm{{\\mathcal M}\\mathsf{fld}}}_n^B) \\longrightarrow \\mathop{\\mathrm{\\sf PShv}}(\\mathop",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Factorization homology over oriented 1-manifolds with boundary",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-008-32-factorization-homology-over-oriented-1-manifo.md",
+      "narrative": null,
+      "content": "[]{#sec.interval label=\"sec.interval\"} We show that factorization homology of a closed interval is a two-sided bar construction.\n\nThe data of an oriented embedding $U\\hookrightarrow [-1,1]$ from a finite disjoint union of oriented intervals, determines a linear ordering of the connected components of $U$. This is organized as a monoidal functor between $\\infty$-operads $$\\label{interval-assoc}\n\\mathop{\\mathrm{{\\mathcal D}\\sf isk}}^{\\partial, {\\sf or}}_{1/[-1,1]} \\longrightarrow {\\sf Assoc}_{\\sf RL}$$ to the standard multi-category corepresenting the datum of an associative algebra $A$, togethe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Homology theories",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-009-33-homology-theories.md",
+      "narrative": null,
+      "content": "We now give our second main definition of this paper, that of a homology theory. First, note that taking products of manifolds defines a functor $\\mathop{\\mathrm{{\\mathcal M}\\mathsf{fld}}}_{n-1}^B\\times\\mathop{\\mathrm{{\\mathcal M}\\mathsf{fld}}}_1^{\\sf or} \\rightarrow\\mathop{\\mathrm{{\\mathcal M}\\mathsf{fld}}}_n^B$, where $\\mathop{\\mathrm{{\\mathcal M}\\mathsf{fld}}}_1^{\\sf or}$ is oriented 1-manifolds and $$\\mathop{\\mathrm{{\\mathcal M}\\mathsf{fld}}}_{n-1}^B : = \\mathop{\\mathrm{{\\mathcal M}\\mathsf{fld}}}_{n-1}\\underset{\\mathop{\\mathrm{\\mathsf{Spaces}}}_{/{\\sf BTop(n)}}}\\times\\mathop{\\mathrm{\\maths",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/cor-sec-010-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "cor-sec-010-04.md",
+      "narrative": null,
+      "content": "For M a B-framed n-manifold, the ∞-category DiskB n/M is sifted.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/lem-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "lem-sec-010-01.md",
+      "narrative": null,
+      "content": "For V a symmetric monoidal ∞-category which is ⊗-presentable, factorization ho- mology valued in V satisﬁes ⊗-excision: for any DiskB n -algebra A in V, and for any collar-gluing M ′ S M0×R M ′′ ∼= M among B-framed n-manifolds, the canonical morphism in V Z M′ A O Z M0×R A Z M′′ A ≃ −−→ Z M A is an equivalence. We give the following n = 1 example to indicate the utility of ⊗-excision as well as some intuition about how factorization homology behaves. See [Lu2] for a diﬀerent proof of the following result.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/lem-sec-010-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "lem-sec-010-03.md",
+      "narrative": null,
+      "content": "In the situation of Deﬁnition 3.20, the functor ev0 : Diskf →DiskB n/M is ﬁnal.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/prop-sec-010-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "prop-sec-010-05.md",
+      "narrative": null,
+      "content": "Let M be a B-framed n-manifold, N an oriented k-manifold, possibly with boundary, and f : M →N a map which ﬁbers over the interior and boundary of N. For A a B-framed n-disk algebra in V, a symmetric monoidal ∞-category which is ⊗-presentable, then the canonical morphism in V Z N f∗A ≃ −−→ Z M A is an equivalence.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pushforward",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "../sections/sec-010-34-pushforward.md",
+      "narrative": null,
+      "content": "instance of a general paradigm: pushforward.\nThe following technical lemma is the crux of the later results of this paper. An earlier treatment,\nnot in terms of the pushforward, is in [Fra2]; a generalization of this result to structured stratiﬁed\nspaces is given in §2 of [AFT2]. We state the the lemma now, and prove it at the end of this section.\nLemma 3.18. For V a symmetric monoidal ∞-category which is ⊗-presentable, factorization ho-\nmology valued in V satisﬁes ⊗-excision: for any DiskB\nn -algebra A in V, and for any collar-gluing\nM ′ S\nM0×R\nM ′′ ∼= M among B-framed n-manifolds, the canoni",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/thm-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "thm-sec-010-02.md",
+      "narrative": null,
+      "content": "For an associative algebra A in a symmetric monoidal ∞-category V which is ⊗-presentable, there is an equivalence Z S1 A ≃HC∗(A) between the factorization homology of the circle with coeﬃcients in A and the Hochschild complex of A.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/ex-sec-011-05",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "ex-sec-011-05.md",
+      "narrative": null,
+      "content": "Let V⊕be either the ∞-category of chain complexes or of spectra equipped with the direct sum monoidal structure. Since every object V therein has an essentially unique morphism V ⊕V →V , there is an equivalence AlgDiskfr n(V⊕) ≃V. The factorization homology of a framed n- manifold M with coeﬃcients in V is then equivalent to R M V ≃C∗(M, V ), or Σ∞ ∗M ⊗V for spectra, the stabilization of M smashed with V . There is a natural functor lim −→Mﬂdfr n →Spacesﬁn, and this functor is an equivalence because: it is fully faithful since lim −→k Embfr(M × Rk, N × Rk) →Map(M × R∞, N × R∞) ≃Map(M, N) is a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/lem-sec-011-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "lem-sec-011-02.md",
+      "narrative": null,
+      "content": "For G : V →V′ a symmetric monoidal functor between ⊗-presentable ∞-categories whose restriction to underlying ∞-categories preserves geometric realizations, there is a canonical equivalence R ◦G ≃ −→G ◦ R of functors AlgDiskB n (V) →Fun⊗(MﬂdB n , V′).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Homology theories",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "../sections/sec-011-35-homology-theories.md",
+      "narrative": null,
+      "content": "factorization homology; this is the central conceptual result of this paper.\nTheorem 3.24. For V a symmetric monoidal ∞-category which is ⊗-presentable, there is an equiv-\nalence\nZ\n: AlgDiskB\nn (V)\n/ H(MﬂdB\nn , V) : evRn\no\nbetween DiskB\nn -algebras in V and homology theories of B-framed n-manifolds with coeﬃcients in\nV.\nThis equivalence is implemented by the factorization homology functor R and the functor of\nevaluation on Rn.\nProof. Proposition 3.7 recognizes factorization homology as a symmetric monoidal left Kan exten-\nsions, thereby implementing the left adjoint in an adjunction\ni! : AlgDi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/rem-sec-011-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "rem-sec-011-04.md",
+      "narrative": null,
+      "content": "There is an analogous theorem available for stratiﬁed spaces proved in §2 of [AFT2], where embeddings are conically smooth and preserve the stratiﬁcations. The previous theorems hold if the ⊗-presentable condition is weakened to the condition that the monoidal structure distributes over sifted colimits. The following example describes how factorization homology specializes to usual homology.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/rem-sec-011-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "rem-sec-011-06.md",
+      "narrative": null,
+      "content": "One could replace the ∞-category of topological n-manifolds and embeddings with that of smooth n-manifolds and smooth embeddings, Mﬂdsm n , or piecewise linear n-manifolds and piecewise linear embeddings, MﬂdPL n , and Theorem 3.24 is still valid. The proof, in fact, is even simpler, as the existence of handlebody structures is much easier than in the case of topological manifolds. However, a consequence of smoothing theory [KS] is an equivalence Mﬂdsm n ≃MﬂdBO(n) n between smooth n-manifolds and BO(n)-framed topological n-manifolds, so long as n is not equal 4, so nothing new is obtained by c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/thm-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "thm-sec-011-01.md",
+      "narrative": null,
+      "content": "For V a symmetric monoidal ∞-category which is ⊗-presentable, there is an equiv- alence Z : AlgDiskB n (V) / H(MﬂdB n , V) : evRn o between DiskB n -algebras in V and homology theories of B-framed n-manifolds with coeﬃcients in V. This equivalence is implemented by the factorization homology functor R and the functor of evaluation on Rn.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/thm-sec-011-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "thm-sec-011-03.md",
+      "narrative": null,
+      "content": "For V a symmetric monoidal ∞-category which is ⊗-presentable, and for B → BTop(n) a map of spaces, there is an equivalence between ∞-categories Z : AlgDisk∂,B n (V) / H(Mﬂd∂,B n , V) : evRn,Rn−1×[0,1) o from Disk∂,B n -algebras in V and homology theories of B-framed n-manifolds with coeﬃcients in V. This equivalence is implemented by the factorization homology functor R and evaluation on B-framed Euclidean n-spaces and half-spaces.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Nonabelian Poincaré duality",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "../sections/sec-012-4-nonabelian-poincaré-duality.md",
+      "narrative": null,
+      "content": "Applying Theorem [\\[homology\\]](#homology){reference-type=\"ref\" reference=\"homology\"}, we offer a slightly different perspective, and proof, of the nonabelian Poincaré duality of Salvatore [@salvatore], Segal [@segallocal], and Lurie [@dag], which calculate factorization homology with coefficients in iterated loop spaces as a compactly supported mapping space.\n\n::: definition\nFor a space $B$, the $\\infty$-category $\\mathop{\\mathrm{\\sf Spaces}}_B$ is that of retractive spaces over $B$. The $\\mathop{\\mathrm{\\infty}}$-category $\\mathop{\\mathrm{\\sf Spaces}}^{\\geq n}_B$ is the full $\\mathop{\\mathrm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Commutative algebras, free algebras, and Lie algebras",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "target": "../sections/sec-013-5-commutative-algebras-free-algebras-and-lie-alg.md",
+      "narrative": null,
+      "content": "Previously, we have described factorization homology for $n$-disk algebras in spaces, chain complexes, and spectra, when the monoidal structure is given by products, and the resulting homology theories give rise to twisted mapping spaces and usual homology theories. Factorization homology behaves very differently, and with greater sensitivity to manifold topology, when the monoidal structure on chain complexes or spectra is given by tensor product or smash product -- this case is closest to the physical motivation given in the introduction. We will consider this case in this section, focusing",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Factorization homology with coefficients in commutative algebras",
+      "pageStart": 28,
+      "pageEnd": 31,
+      "target": "../sections/sec-014-51-factorization-homology-with-coefficients-in-c.md",
+      "narrative": null,
+      "content": "We begin by examining commutative algebras in $\\mathcal V$, otherwise known as $\\mathcal E_\\infty$-algebras in $\\mathcal V$. Note first that a commutative algebra in $\\mathcal V$ is equivalent to a symmetric monoidal functor ${\\sf Fin}\\rightarrow\\mathcal V$ from finite sets with disjoint union. So restriction along the connected components functor $[-]: \\mathop{\\mathrm{{\\mathcal D}\\sf isk}}^B_n\\rightarrow\\mathop{\\mathrm{{\\mathcal D}\\sf isk}}_n \\xrightarrow{[-]} {\\sf Fin}$ defines a forgetful functor $${\\sf fgt}\\colon \\mathop{\\mathrm{\\mathsf{Alg}}}_{\\mathop{\\mathrm{\\mathsf{Com}}}}(\\mathcal V)\\l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Factorization homology with coefficients in free n-disk algebras",
+      "pageStart": 31,
+      "pageEnd": 35,
+      "target": "../sections/sec-015-52-factorization-homology-with-coefficients-in-f.md",
+      "narrative": null,
+      "content": "We next turn to the factorization homology of free $n$-disk algebras, a topic studied in more detail in §2 of [@aft2].\n\nDenote by $\\mathop{\\mathrm{\\sf Free}}_n(V)$ the augmented $n$-disk algebra freely generated by $V\\in \\mathcal V$, regarded as a trivial $\\mathop{\\mathrm{\\mathsf{Top}}}(n)$-module. Let $\\mathop{\\mathrm{\\mathsf{Conf}}}_i(M,\\partial M)$ denote the quotient of $\\mathop{\\mathrm{\\mathsf{Conf}}}_i(M)$ by the subspace of all configurations in which at least one point lies in the boundary of $M$.\n\n::: prop\n[]{#free label=\"free\"} Let $M$ be an $n$-manifold, possibly with boundary. Let",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Factorization homology from Lie algebras",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "../sections/sec-016-53-factorization-homology-from-lie-algebras.md",
+      "narrative": null,
+      "content": "We now discuss factorization homology of $n$-disk algebras coming from Lie algebras. Our results are closely analogous to those above about the factorization homology of $n$-disk algebras coming from topological spaces. For simplicity, we assume our Lie algebras are defined over a fixed field $k$ of characteristic zero.\n\nAs we proceed, we make use of the fact that Lie algebras in ${\\sf Mod}_k$ admit totalizations, and therefore the $\\infty$-category of such is cotensored over pointed spaces in a natural and standard way: $(X,\\mathfrak{g})\\mapsto {\\mathfrak{g}}^X$. For $M$ an $n$-manifold, we n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1206.5522v6/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-017-references.md",
+      "narrative": null,
+      "content": "[An] Andrade, Ricardo. From manifolds to invariants of En-algebras. Thesis (PhD) – Massachusetts Institute of\nTechnology. 2010.\n[AF1] Ayala, David; Francis, John. Poincar´e/Koszul duality. Preprint. Available at http://arxiv.org/abs/1409.2478.\n[AF2] Ayala, David; Francis, John. Zero-pointed manifolds. Preprint. Available at http://arxiv.org/abs/1409.2857.\n[AFT1] Ayala, David; Francis, John; Tanaka, Hiro Lee. Local structures on stratiﬁed spaces. Preprint. Available at\nhttp://arxiv.org/abs/1409.0501.\n[AFT2] Ayala, David; Francis, John; Tanaka, Hiro Lee. Factorization homology of stratiﬁed space",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

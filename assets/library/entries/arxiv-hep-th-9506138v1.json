@@ -1,0 +1,365 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-th-9506138v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-th-9506138v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-th/9506138v1  21 Jun 1995\nhep-th/9506138\nNSF-ITP-95-47\nUCSBTH-95-12\nSU-ITP-95-13\nBlack Hole Complementarity vs. Locality\nDavid A. Lowe,a Joseph Polchinski,b Leonard Susskind,c\nL´arus Thorlacius,b and John Uglumc\na) Department of Physics\nUniversity of California\nSanta Barbara\nCA 93106-4030\nb) Inst. for Theoretical Physics\nUniversity of California\nSanta Barbara\nCA 93106-4030\nc) Department of Physics\nStanford University\nStanford\nCA 94305-4060\nThe evaporation of a large mass black hole can be described throughout most of its lifetime\nby a low-energy eﬀective theory deﬁned on a suitably c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9506138v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "According to the principle of black hole complementarity [1], an observer who remains\noutside the horizon of a black hole can describe the black hole as a very hot membrane,\nthe stretched horizon, which lies just above the mathematical event horizon, and absorbs\nany matter, energy, and information which fall onto it. The information which is absorbed\nby the stretched horizon is eventually re-emitted in the Hawking radiation, albeit in a very\nscrambled form. An observer who falls freely into the black hole sees things very diﬀerently:\nno membrane, no high temperature, no irregularities of any k",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9506138v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Nice-Slice Argument",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-2-the-nice-slice-argument.md",
+      "narrative": null,
+      "content": "Consider the process by which a collection of particles of total mass M gravitation-\nally collapses to form a black hole. In the absence of any net angular momentum, the\nblack hole becomes approximately spherically symmetric in a short time after the collapse\nprocess. As long as we are only considering processes with lifetimes short compared to\nG2M 3, we can approximate the geometry of the system by the Schwarzschild solution.\nThe nice-slice argument begins by introducing a family of Cauchy surfaces which foliate\nthe geometry. The surfaces should avoid regions of strong spacetime curvature and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9506138v1/blocks/prop-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "prop-sec-002-01.md",
+      "narrative": null,
+      "content": "In Appendix A we calculate the matrix element M(1, 2; 3) = ⟨0|[Φ(1), Φ(2)]|3⟩, (3.6) to leading order in the string coupling g.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9506138v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Nice Slice and String Field Theory",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "../sections/sec-002-3-the-nice-slice-and-string-field-theory.md",
+      "narrative": null,
+      "content": "Although the nice-slice argument seems very general, we will present evidence from\nstring theory that it fails. A key assumption that goes into the nice-slice argument is that\nthe underlying microscopic theory is approximately a local ﬁeld theory. Speciﬁcally, it\nassumes that any nonlocality which results from the non-zero size of strings is limited to\nsmall space-like separations, but this is incorrect, as we shall see later on.\nThe analysis begins by considering two spacetime points, x1 and x2, which lie on a\nﬁxed nice slice Σt corresponding to Schwarzschild time t. The time t is chosen larg",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9506138v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discussion and Conclusions",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-003-4-discussion-and-conclusions.md",
+      "narrative": null,
+      "content": "Having obtained the commutators of nice-slice ﬁelds from string ﬁeld theory, we are\nnow in a position to understand their signiﬁcance for the nice-slice argument.\nIn this\nsection we will argue that the assumption of locality of the low-energy nice-slice theory is\nnot valid in string theory. Evidence for this will be obtained in two ways. First, we compare\nthe commutators of nice slice ﬁelds derived from string ﬁeld theory to their ﬁeld theory\ncounterparts, and ﬁnd that the commutators in string theory exhibit far more nonlocality.\nSecond, we argue that mathematical consistency of the low-energ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9506138v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparing Commutators",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-004-41-comparing-commutators.md",
+      "narrative": null,
+      "content": "Let us begin our comparison by examining the commutators of local ﬁelds more closely.\nFor the moment, let us ignore gravity, and focus on quantum ﬁeld theory on a ﬁxed\nbackground spacetime. The statement of causality is that no local physical signal can\npropagate faster than light. For a theory of quantum ﬁelds on a (well-behaved) manifold\nwith a ﬁxed metric, there exists a well deﬁned light cone for each point, and causality is\nimplemented by requiring the gauge invariant local ﬁelds to commute when their arguments\nare spacelike related. There is no such requirement for gauge variant ﬁelds. F",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9506138v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Structure of the Nice Slice Theory",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-005-42-the-structure-of-the-nice-slice-theory.md",
+      "narrative": null,
+      "content": "The comparison of the commutators of low-energy nice-slice ﬁelds in quantum ﬁeld\ntheory and in string theory has provided evidence that the assumption of locality of the\nnice-slice theory is not valid. Now, let us turn our attention to the mathematical structure\nof the low-energy nice-slice theory. The assumption of locality in the nice-slice argument is\nan assumption about the result of truncating a high-energy theory, which includes gravity,\nto the low nice-slice energy modes. This involves an order of operations. The order of\noperations that is implicit in presenting the nice-slice argument",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9506138v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Commutator of Open Bosonic String Fields",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-006-appendix-a-the-commutator-of-open-bosonic-string.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9506138v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Calculation of the Commutator",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "../sections/sec-007-a1-calculation-of-the-commutator.md",
+      "narrative": null,
+      "content": "We employ the formalism of light-front open bosonic string ﬁeld theory [19,20,21,22],\nand work in D=26-dimensional Minkowski spacetime with light-front coordinates\nx± =\n1\n√\n2\n(x0 ∓xD−1) .\n(A.1)\nThe coordinate x+ is the time coordinate, and in the light-front gauge we ﬁx the string\ncoordinate X+ = x+. The D −2 transverse string coordinates are expanded as⃗\nX(σ) =⃗x + 2\n∞\nX\nℓ=1⃗\nxℓcos(ℓσ) .\n(A.2)\nWe are interested in the following commutator [ΦH(1), ΦH(2)], where ΦH(i) =\nΦH(x+\ni , x−\ni ,⃗Xi(σ)) are light-front open bosonic string ﬁeld operators in the Heisenberg\npicture. We will suppress gauge i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9506138v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Correspondence with Low Energy Minkowski Field Theory",
+      "pageStart": 19,
+      "pageEnd": 22,
+      "target": "../sections/sec-008-a2-correspondence-with-low-energy-minkowski-fiel.md",
+      "narrative": null,
+      "content": "Local quantum ﬁeld theory in Minkowski space provides a very good description of\nthe low-energy world we observe, and any uniﬁed theory should reproduce the structure of\nlocal Minkowski ﬁeld theory for kinematic situations appropriate to low-energy Minkowski\nobservers. This structure includes the requirement that the commutator of gauge-invariant\nlocal ﬁelds must vanish at spacelike separation. In this section, we show that the low-energy\nﬁelds obtained from light-front string ﬁeld theory satisfy this requirement.\nConsider a Minkowski observer, whose measuring apparatus is sensitive to frequen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9506138v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Tachyon Commutator on a Nice Slice",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-009-a3-the-tachyon-commutator-on-a-nice-slice.md",
+      "narrative": null,
+      "content": "In equation (A.15), we considered the overlap of the state [T(x1), T(x2)]|0⟩with a\nsingle tachyon state. We would now like to consider the behavior of this matrix element\nwhen the ﬁelds T(x1) and T(x2) are replaced with low-energy nice-slice ﬁelds ˆT(x1) and\nˆT(x2). Following an analysis similar to that in Subsection A.2, it is easy to see that the\ntest functions deﬁned by equations (3.2) and (3.3) restrict p−\n2 ∼E, as before, but now\np−\n3 ∼α′−1/2eω. The momentum conservation delta-functions restrict α3 and pi\n3 to be of\norder E, so the only way to make p−\n3 large is to have a very large mass",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9506138v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Magnitude of the Commutator",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-010-appendix-b-the-magnitude-of-the-commutator.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9506138v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Four Point Amplitude Involving Commutators",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "../sections/sec-011-b1-a-four-point-amplitude-involving-commutators.md",
+      "narrative": null,
+      "content": "In this Appendix we present the calculation of the matrix element\nC(4; 3; 2; 1) = ⟨0|[ΦH(4), ΦH(3)][ΦH(2), ΦH(1)]|0⟩.\n(B.1)\nAs before, we will use perturbation theory to calculate C to leading nontrivial order in g.\nInserting a complete set of states {|γ⟩}, equation (B.1) can be written\nC(4; 3; 2; 1) =\nX\nγ\nM(4, 3; γ)M(1, 2; γ)∗,\n(B.2)\nwhere M is given by equation (A.6). The ﬁrst term which does not vanish identically when\nthe centers of mass of the string ﬁelds are spacelike related is the second order term\nC(2)(4; 3; 2; 1) =\nX\nγ\nM (1)(4, 3; γ)M (1)(1, 2; γ)∗.\n(B.3)\n>\nσ\n0\n1\nσ\n>\n1\n2\n3\n4\nFig. 3:",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9506138v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Behavior of the Commutator of Nice Slice Fields",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-012-b2-the-behavior-of-the-commutator-of-nice-slice.md",
+      "narrative": null,
+      "content": "Low-energy nice-slice ﬁelds are deﬁned as in Section 3. As before, we consider the case\nof four tachyon component ﬁelds. We treat the mass squared of the tachyon as a small\npositive parameter; we can do this, for example, by giving the external tachyons momenta\nin a compactiﬁed direction. This is ultimately justiﬁed by considering superstring theory\nwhere the calculations will yield essentially the same qualitative results. The commutator\nin free superstring ﬁeld theory was studied in Ref. [24] where further discussion of this\nissue can be found.\nWe smear the ﬁelds T(1) and T(4) with test func",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9506138v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Extension to Closed Bosonic Strings and Superstrings",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-013-b3-extension-to-closed-bosonic-strings-and-super.md",
+      "narrative": null,
+      "content": "Our calculation was only carried out at tree level, in part because the inconsistency of\nbosonic string theory prevents a further analysis. Since gravity does not appear in the open\nbosonic string at tree level, we do not expect to see gravitational eﬀects in the commutator\ncalculated above. The closed bosonic string does contain gravity at tree level, however,\nso it is of interest to repeat the calculation for this case. The result is easily anticipated:\nsince the amplitude is dominated by the Regge behavior of the strings, we simply need\nto replace the open string Regge trajectory α(s) = 1\n2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9506138v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Limiting Case",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-014-b4-a-limiting-case.md",
+      "narrative": null,
+      "content": "For completeness we evaluate the commutator (B.13) in a limit where it is possible to\nobtain an analytic expression, namely α1, α4 →0 with other quantities held ﬁxed. Solving\nfor the interaction points gives\nz′ = α2(1 −x)\nα4\n+ O(α0\n1,4),\nz′′ =\nα1x\nα2(1 −x) + O(α2\n1,4)\nσ′0 = ¯ρ −α4 log\nα4\nα2e(1 −x) + O(α2\n1,4)\nσ′′0 = ¯ρ + α2 log x + α1 log\nα1x\nα2e(1 −x) + O(α2\n1,4)\nx = e−δ/α2 + O(α1,4).\n(B.19)\nWe have kept some second order terms which are needed because some of the exponents in\nthe commutator are of order α−1\n1,4. Inserting the values (B.19) into the commutator (B.13)\ngives\n˜C(2)(4; 3; 2; 1) =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9506138v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "target": "../sections/sec-015-references.md",
+      "narrative": null,
+      "content": "[1]\nL. Susskind, L. Thorlacius, and J. Uglum, Phys. Rev. D48 (1993) 3743.\n[2]\nG. ’t Hooft, Nucl. Phys. B256 (1985) 727; Nucl. Phys. B335 (1990) 138; Phys. Scr.\nT36 (1991) 247, and references therein.\n[3]\nY. Kiem, E. Verlinde, and H. Verlinde, Black Hole Horizons and Complementarity,\npreprint CERN-TH-7469/94, PUPT-1504, hep-th/9502074.\n[4]\nL. Susskind and L. Thorlacius, Phys. Rev. D49 (1994) 966.\n[5]\nC. R. Stephens, G. ’t Hooft, and B. F. Whiting, Class. Quan. Grav.11 (1994) 621;\nG. ’t Hooft, Horizon Operator Approach to Black Hole Quantization, preprint THU-\n94-02, gr-qc/9402037.\n[6]\nE. Verlin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9506138v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A. Lowe, The Planckian Conspiracy: String Theory and the Black Hole Information",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "target": "../sections/sec-016-d-a-lowe-the-planckian-conspiracy-string-theory.md",
+      "narrative": null,
+      "content": "Paradox, preprint UCSBTH-95-11, hep-th/9505074.\n[15]\nL. Susskind, The World as a Hologram, preprint SU-ITP-94-33, hepth/9409089.\n[16]\nJ. J. Atick and E. Witten, Nucl. Phys. B310 (1988) 291.\n[17]\nI. Klebanov and L. Susskind, Nucl. Phys. B309 (1988) 175.\n[18]\nD. J. Gross, Phys. Rev. Lett. 60 (1988) 1229.\n[19]\nS. Mandelstam, Nucl. Phys. B64 (1973) 205; B83 (1974) 413; Phys. Rep.13 (1974)\n259.\n[20]\nM. Kaku and K. Kikkawa, Phys. Rev. D10 (1974) 1110, 1823.\n[21]\nE. Cremmer and J.-L. Gervais, Nucl. Phys. B76 (1974) 209; B90 (1975) 410.\n[22]\nJ. F. L. Hopkinson, R. W. Tucker, and P. A. Collins, Phys. R",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

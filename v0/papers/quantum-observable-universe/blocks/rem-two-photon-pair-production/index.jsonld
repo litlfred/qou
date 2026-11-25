@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-two-photon-pair-production",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:two-photon-pair-production",
+  "kind": "remark",
+  "title": "Two photons hitting a heavy nucleus: $\\gamma\\gamma \\to e^- e^+$ as a forced symmetric-crystal step",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-symmetric-crystal-pair-production"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-symmetric-crystal-pair-production",
+  "tags": [
+    "pair-production",
+    "two-photon",
+    "concrete-example",
+    "qed",
+    "symmetric-crystal",
+    "cpt"
+  ],
+  "text": "two-photon-pair-production.md",
+  "provenance": "authored"
+}

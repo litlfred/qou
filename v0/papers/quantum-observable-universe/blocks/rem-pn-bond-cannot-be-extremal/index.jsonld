@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-pn-bond-cannot-be-extremal",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:pn-bond-cannot-be-extremal",
+  "kind": "remark",
+  "title": "The $pn$ bond constant is a convex combination of the $pp$ and $nn$ constants, so it can never be extremal",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-markov-trace-factorization",
+    "papers/quantum-observable-universe/blocks/rem-canonical-trace-factorises-over-chain"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-markov-trace-factorization",
+  "tags": [
+    "mass-theory",
+    "markov-trace",
+    "binding-energy",
+    "bond-constants",
+    "open-problem",
+    "lean-formalised",
+    "draft"
+  ],
+  "leanRef": "qou:QOU.MassTheory.ChainTraceFactor.L_strict_mono",
+  "sorryFree": true,
+  "text": "pn-bond-cannot-be-extremal.md",
+  "provenance": "authored"
+}

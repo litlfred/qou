@@ -1,0 +1,326 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "ant-v14-n7-s-p04",
+  "blocks": [
+    {
+      "id": "library/ant-v14-n7-s-p04/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Let K be a totally real number ﬁeld and let E be an elliptic curve over K with conductor N. It is\nconjectured that such a curve E is modular in the following sense: there is a level N Hilbert newform\nf over K of parallel weight 2 and rational Hecke eigenvalues such that L(E, s) = L(f, s), where the\nL-function on the left is the Hasse–Weil L-function of E, and the L-function on the right is the Hecke\nL-function of f. This modularity conjecture is the natural generalization to totally real ﬁelds of the\nShimura–Taniyama conjecture for elliptic curves over the rationals. The latter is a celebrated",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p04/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "msp\nALGEBRA AND NUMBER THEORY 14:7 (2020)\nhttps://doi.org/10.2140/ant.2020.14.1791\nElliptic curves over totally real cubic ﬁelds are modular\nMaarten Derickx, Filip Najman and Samir Siksek\nWe prove that all elliptic curves deﬁned over totally real cubic ﬁelds are modular. This builds on previous\nwork of Freitas, Le Hung and Siksek, who proved modularity of elliptic curves over real quadratic ﬁelds,\nas well as recent breakthroughs due to Thorne and to Kalyanswamy.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p04/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Freitas, Le Hung and Siksek",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "Elliptic curves over real quadratic ﬁelds are modular. Derickx is supported by Simons Foundation grant 550033. Najman is supported by the QuantiXLie Centre of Excellence, a project coﬁnanced by the Croatian Government and European Union through the European Regional Development Fund - the Competitiveness and Cohesion Operational Programme (Grant KK.01.1.1.01.0004) and by the Croatian Science Foundation under the project no. IP-2018-01-1313.. Siksek is supported by EPSRC LMF: L-Functions and Modular Forms Programme Grant EP/K034383/1. MSC2010: primary 11F80; secondary 11G05. Keywords: modularit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p04/blocks/thm-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "thm-sec-000-02.md",
+      "narrative": null,
+      "content": "Let K be a totally real cubic number ﬁeld. Let E be an elliptic curve over K. Then E is modular. The computations in this paper were carried out in the computer algebra system Magma [Bosma et al. 1997]. The reader can ﬁnd the Magma scripts for verifying these computations in the online supplement. We heartily thank the referee for many excellent suggestions that have improved the exposition of this paper.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p04/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Images mod 3, 5, 7 and modularity",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-images-mod-3-5-7-and-modularity.md",
+      "narrative": null,
+      "content": "Let p ≥3 be a prime. Write B(p) for a Borel subgroup of GL2(Fp), and Cs(p) and Cns(p) respectively\nfor a split and nonsplit Cartan subgroup. Let C+\ns (p) and C+\nns(p) respectively be their normalizers.\nThe proof of Theorem 2 is based on the fact that a putative nonmodular curve must have small mod p\nimages for p = 3, 5 and 7 simultaneously. We now make the conditions for each prime precise.\nTheorem 3. Let K be a totally real ﬁeld and E an elliptic curve over K. Suppose that ρ E,3(G K) is not\nconjugate to a subgroup of B(3) or C+\ns (3). Then E is modular.\nProof. By the aforementioned modularity",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p04/blocks/thm-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "thm-sec-001-01.md",
+      "narrative": null,
+      "content": "Let K be a totally real ﬁeld and E an elliptic curve over K. Suppose that ρ E,3(G K) is not conjugate to a subgroup of B(3) or C+ s (3). Then E is modular.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p04/blocks/thm-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Thorne",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "thm-sec-001-02.md",
+      "narrative": null,
+      "content": "Let K be a totally real ﬁeld and E an elliptic curve over K. Suppose 5 is not a square in K, and ρ E,5 is irreducible. Then E is modular. For p = 7 we use the following result of Kalyanswamy [2018, Proposition 4.3 and Theorem 4.4].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p04/blocks/thm-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Kalyanswamy",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "thm-sec-001-03.md",
+      "narrative": null,
+      "content": "Let K be a totally real ﬁeld and E an elliptic curve over K. Suppose: • K ∩Q(ζ7) = Q. • ρ E,7 is irreducible. • ρ E,7(G K) is not conjugate to a subgroup of C+ ns(7). Then E is modular. Kalyanswamy’s theorem is somewhat more precise, but we shall not need its full strength. We note that Q(ζ7)+ is the only totally real cubic ﬁeld for which Kalyanswamy’s theorem is inapplicable. It is for this reason that we consider elliptic curves deﬁned over that ﬁeld separately in Section 4. Elliptic curves over totally real cubic ﬁelds are modular",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p04/blocks/lem-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "lem-sec-002-03.md",
+      "narrative": null,
+      "content": "Let K = Q(ζ7)+. Let E be an elliptic curve deﬁned over K. Then E is modular.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p04/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Modular curves",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-3-modular-curves.md",
+      "narrative": null,
+      "content": "We quickly sketch some background on modular curves; for fuller details the reader may want to\nconsult [Deligne and Rapoport 1973; Freitas et al. 2015, Section 2.2.2; Rohrlich 1997]. Let H∗=\nH ∪Q ∪{∞} denote the extended upper half-plane. The modular group SL2(Z) acts on H by fractional\nlinear transformations. The quotient SL2(Z)\\H∗is a compact Riemann surface of genus 0, and hence is\nthe analytiﬁcation of a genus 0 algebraic curve deﬁned (a priori) over C which is denoted by X(1). The\nset Q ∪{∞} ⊂H∗forms a single orbit under the action of SL2(Z), and hence that orbit corresponds to\na point of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p04/blocks/thm-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "thm-sec-002-01.md",
+      "narrative": null,
+      "content": "Let K be a totally real cubic ﬁeld. Then X(b5, b7)(K) consists only of cusps.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p04/blocks/thm-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "thm-sec-002-02.md",
+      "narrative": null,
+      "content": "Let K be a cubic ﬁeld. Then X(b5, ns7)(K) consists only of cusps. The remainder of the paper is devoted to the proof of these two theorems. 4. Modularity of elliptic curves over Q(ζ7)+ In this section we prove Theorem 2 for K = Q(ζ7)+.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p04/blocks/lem-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "lem-sec-003-01.md",
+      "narrative": null,
+      "content": "Let A/Q be the abelian subvariety of J that is the image of w5 −1. Then A ∼A2 × A3 has dimension 4. Moreover, the Mordell–Weil group A(Q) is torsion. Le Hung’s model for X = X(b5, ns7). We need a good model for X(b5, ns7). Le Hung [2014, page 47] gives a model which will be a good starting point for us. We brieﬂy sketch Le Hung’s derivation of his model, but work with projective rather than afﬁne coordinates. Later we explain how to derive a better model. The curves X(b5) and X(ns7) are both isomorphic to P1 over Q. Let F1(x1, x2) = (x2 1 + 10x1x2 + 5x2 2)3, F2(x1, x2) = x1x5 2, G1(y1, y2) = 6",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p04/blocks/lem-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "lem-sec-003-02.md",
+      "narrative": null,
+      "content": "The Q-rational automorphism group of X(b5, ns7) is generated by w5, i.e., AutQ(X) = ⟨w5⟩∼= Z/2Z.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p04/blocks/lem-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "lem-sec-003-03.md",
+      "narrative": null,
+      "content": "A(Q) = (Z/7Z) · [c0 −c∞]. Maarten Derickx, Filip Najman and Samir Siksek",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p04/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 6",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-5-proof-of-theorem-6.md",
+      "narrative": null,
+      "content": "Let X = X(b5, b7) (in standard notation denoted by X0(35)). It is known that X has four Q-points and\nthat these are cusps. Let K be a totally real cubic ﬁeld. For the proof of Theorem 6 it will be sufﬁcient\nto show that X(K) = X(Q). Suppose P ∈X(K)\\X(Q). Let P1, P2, P3 be the conjugates of P given\nby the three embeddings of K in Q, and write D = P1 + P2 + P3. Then D is an irreducible Q-rational\ndivisor on X of degree 3. We shall determine all the irreducible Q-rational divisors of degree 3 on X and\nshow that none of them arise from totally real cubic points, giving a contradiction.\nThe arithme",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p04/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 7",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-7-proof-of-theorem-7.md",
+      "narrative": null,
+      "content": "In this section we prove Theorem 7 thereby completing the proof of Theorem 2. Recall X = X(b5, ns7).\nWrite X(3) for the third symmetric power of X. We shall prove the following result which immediately\nimplies Theorem 7.\nProposition 7.1.\nX(3)(Q) = {c0, c∞}.\nProof. Let x ∈X(3)(Q). By Lemma 6.3 we have (1 −w5)[x −c∞] = ℓ· [c0 −c∞] for some ℓ∈Z/7Z.\nAs w5(c∞) = c0 we may rewrite this as\n(x −w5(x)) ∼k · (c0 −c∞)\nfor some k ∈{−3, . . . , 3}. We write xF3, c0,F3, c∞,F3 ∈X(3)(F3) for the reductions of x, c0, c∞modulo 3\nrespectively. It follows that\n(y −w5(y)) ∼k · (c0,F3 −c∞,F3)\n(3)\nwhere y = xF3. Usi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p04/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-005-references.md",
+      "narrative": null,
+      "content": "[Arbarello et al. 1985] E. Arbarello, M. Cornalba, P. A. Grifﬁths, and J. Harris, Geometry of algebraic curves, I, Grundlehren\nder Math. Wissenschaften 267, Springer, 1985. MR Zbl\n[Barnet-Lamb et al. 2012] T. Barnet-Lamb, T. Gee, and D. Geraghty, “Congruences between Hilbert modular forms: constructing\nordinary lifts”, Duke Math. J. 161:8 (2012), 1521–1580. MR Zbl\n[Barnet-Lamb et al. 2013] T. Barnet-Lamb, T. Gee, and D. Geraghty, “Congruences between Hilbert modular forms: constructing\nordinary lifts, II”, Math. Res. Lett. 20:1 (2013), 67–72. MR Zbl\n[Bosma et al. 1997] W. Bosma, J. Cannon, and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

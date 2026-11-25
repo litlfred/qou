@@ -1,0 +1,190 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2304.07001v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-2304.07001v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The modern theory of resurgence began with the voluminous works of Écalle in 1981 [@e1; @e2] and 1985 [@e3]. This theory now plays a vital rôle in a remarkable number of diverse areas, to name just a few examples: nonlinear systems of ODEs and difference equations [@costin1; @kamimoto], algebraic combinatorics [@cfmt1; @cfmt2], enumerative combinatorics and quantum field theory [@BD; @MY], period integrals and string theory scattering amplitudes [@dk], wall-crossing phenomena [@ks] and matrix models [@mm]. In this paper, we are interested in a conjecture due to Costin and Garoufalidis [@cg] wh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.07001v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:2304.07001v3  [math.NT]  10 Apr 2025\nRESURGENCE, HABIRO ELEMENTS AND STRANGE IDENTITIES\nSAMUEL CREW, VERONICA FANTINI, ANKUSH GOSWAMI, ROBERT OSBURN,\nAND CAMPBELL WHEELER\nAbstract. We prove resurgence properties for the Borel transform of a formal power series\nassociated to elements in the Habiro ring that come from radial limits of partial theta series via\nstrange identities. As an application, we prove a conjecture in quantum topology due to Costin\nand Garoufalidis for two families of torus knots.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.07001v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 1.2",
+      "pageStart": 7,
+      "pageEnd": 13,
+      "target": "../sections/sec-001-2-proof-of-theorem-12.md",
+      "narrative": null,
+      "content": "2. Proof of Theorem 1.2\nProof of Theorem 1.2. The Borel transform of Ff(1/x) from (1.16) is given by\nB[Ff](p) = CMδ + Gf(p)\nwhere\nCM = −M\n2\nM\nX\nm=1\nf(m)B2\n\u0010 m\nM\n\u0011\nand\nGf(p) =\n∞\nX\nn=1\n(−1)n+1M2n+1\n(2n + 2)n!\nM\nX\nm=1\nf(m)B2n+2\n\u0010 m\nM\n\u0011\npn−1\n(n −1)!bn\n= M\n∞\nX\nn=0\nM\nX\nm=1\n(−1)nf(m)B2n+4\n\u0010 m\nM\n\u0011\n(2n + 4)!\n(2n + 3)!\nn!(n + 1)!\n\u0012M2\nb\n\u0013n+1\npn.\n(2.1)\nFrom the generating function\nxext\nex −1 =\n∞\nX\nn=0\nBn(t)\nn!\nxn,\nwhere |x| < 2π, we deduce\n∞\nX\nn=0\nB2n(t)\n(2n)! x2n = x\n2\n\u0012\next\nex −1 −\ne−xt\ne−x −1\n\u0013\n= x(ext + e−(t−1)x)\n2(ex −1)\n.\n(2.2)\nAssuming |y| < 2π\nM , x = iMy, and taking t = m\nM , where 1 ≤m ≤M, we us",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.07001v3/blocks/lem-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 17,
+      "target": "lem-sec-002-01.md",
+      "narrative": null,
+      "content": "For all k ∈Z, 1 ≤m ≤t −1 and 1 ≤n ≤s −1, we have χ(n,m) s,t (k) = χ(s−n,t−m) s,t (k).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2304.07001v3/blocks/lem-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 17,
+      "target": "lem-sec-002-02.md",
+      "narrative": null,
+      "content": "Let s and t be coprime positive integers and D(s, t) be the set given by (1.21). Then the integers in the set S = {±(nt ± ms) : (n, m) ∈D(s, t)} are distinct and thus |S| = 2(s −1)(t −1). 14 S. CREW, V. FANTINI, A. GOSWAMI, R. OSBURN, AND C. WHEELER,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2304.07001v3/blocks/prop-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 17,
+      "target": "prop-sec-002-03.md",
+      "narrative": null,
+      "content": "For all k € Z, and (n,m) € D(s,t), we have ~(ny st bor tom! = Sitar). (3.4) (n!,m')ED(s,t)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2304.07001v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 1.4 and Corollary 1.5",
+      "pageStart": 13,
+      "pageEnd": 17,
+      "target": "../sections/sec-002-3-proof-of-theorem-14-and-corollary-15.md",
+      "narrative": null,
+      "content": "In order to prove Theorem 1.4 and Corollary 1.5, we require some general preliminaries. Recall\nthe periodic function χ(n,m)\ns,t\n(k) given by (1.18).\nLemma 3.1. For all k ∈Z, 1 ≤m ≤t −1 and 1 ≤n ≤s −1, we have\nχ(n,m)\ns,t\n(k) = χ(s−n,t−m)\ns,t\n(k).\nProof. By replacing n →s −n and m →t −m, we see that\n±((s −n)t −(t −m)s) = ±(ms −nt) = ∓(nt −ms) ,\n±((s −n)t + (t −m)s) = ±(2st −ms −nt) ≡∓(nt + ms)\n(mod 2st) ,\n(3.1)\nand thus the result follows from (3.1).\n□\nIn view of Lemma 3.1, the map\n(n, m) −→\n(\n(n, m)\nif 1 ≤n ≤s−1\n2 ,\n1 ≤m ≤t−1\n2 ,\n(s −n, t −m)\notherwise.\n(3.2)\nis a bijection between the pairs de",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.07001v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Concluding Remarks",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-003-4-concluding-remarks.md",
+      "narrative": null,
+      "content": "[]{#sec:remarks label=\"sec:remarks\"} In order to apply Theorems [\\[main\\]](#main){reference-type=\"ref\" reference=\"main\"} and [\\[main2\\]](#main2){reference-type=\"ref\" reference=\"main2\"} and thus verify Conjecture [\\[cgconj\\]](#cgconj){reference-type=\"ref\" reference=\"cgconj\"} for all torus knots $T(s,t)$, one needs to prove the relevant strange identity in [\\[Hstrange\\]](#Hstrange){reference-type=\"eqref\" reference=\"Hstrange\"}. The first obstruction in this task is finding an explicit \"non-cyclotomic\\\" expansion for $J_N(T(s,t); q)$ from which an element in $\\mathcal{H}$ such as the one in [\\[xm\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.07001v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-004-acknowledgements.md",
+      "narrative": null,
+      "content": "The first author thanks Dan Zhang, Nick Dorey and Phil Trinh for many interesting discussions. He was supported by EPSRC grant EP/V012479/1 as a postdoc at the University of Bath while part of this work was completed. The fourth author was partially supported by Enterprise Ireland CS20212030 and the Irish Research Council Advanced Laureate Award IRCLA/2023/1934. He would like to thank the Okinawa Institute of Science and Technology for their hospitality and support during his visit from June 9 to September 1, 2022 as part of their Theoretical Sciences Visiting Program. In particular, the first",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.07001v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-005-references.md",
+      "narrative": null,
+      "content": "[1] S. Ahlgren, B. Kim, Dissections of a “strange” function, Int. J. Number Theory 11 (2015), no. 5, 1557–1562.\n[2] S. Ahlgren, B. Kim and J. Lovejoy, Dissections of strange q-series, Ann. Comb. 23 (2019), no. 3-4, 427–442.\n[3] J. Andersen, W. Misteg˚ard, Resurgence analysis of quantum invariants of Seifert ﬁbered homology spheres,\nJ. Lond. Math. Soc. (2) 105 (2022), no. 2, 709–764.\n[4] G. E. Andrews, J. Sellers, Congruences for the Fishburn numbers, J. Number Theory 161 (2016), 298–310.\n[5] C. Armond, Walks along braids and the colored Jones polynomial, J. Knot Theory Ramiﬁcations 23 (2014),",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

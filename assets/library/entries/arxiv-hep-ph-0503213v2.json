@@ -1,0 +1,207 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-ph-0503213v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-ph-0503213v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "[]{#sec:intro label=\"sec:intro\"} The Standard Model (SM) provides an extremely succesful and simple means of classifying and understanding the physical processes which fill the Universe. However the existence of many seemingly arbitrary features hints at a more fundamental physical theory from which the SM arises. Considering the successful series of ideas leading through molecules, to atoms, nuclei, nucleons, and quarks, it was perhaps inevitable that a model based on compositeness of quarks and leptons would be developed. The first such was proposed by Pati and Salam [@PatiSalam] in 1974, ho",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0503213v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Helon model",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-2-the-helon-model.md",
+      "narrative": null,
+      "content": "[]{#sec:helons label=\"sec:helons\"} Let us now introduce our topologically-based toy model of quarks, leptons, and gauge bosons. It is convenient to represent the most fundamental objects in this model by twists through $\\pm\\pi$ in a ribbon. For convenience let us denote a twist through $\\pi$ as a \"dum\", and a twist through $-\\pi$ as a \"dee\" ($U$ and $E$ for short, after Tweedle-dum and Tweedle-dee [@wonderland]). Generically we refer to such twists by the somewhat whimsical name \"tweedles\"[@yesteryear]. We hope to deduce the properties of quarks and leptons and their interactions from the beha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0503213v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-ph/0503213v2  27 Oct 2006\nADP-05-05/T615\nA topological model of composite preons\nSundance O. Bilson-Thompson∗\nCentre for the Subatomic Structure of Matter, Department of Physics,\nUniversity of Adelaide, Adelaide SA 5005, Australia\n(Dated: February 2, 2008)\nWe describe a simple model, based on the preon model of Shupe and Harari, in which the binding\nof preons is represented topologically. We then demonstrate a direct correspondence between this\nmodel and much of the known phenomenology of the Standard Model. In particular we identify the\nsubstructure of quarks, leptons and gauge boso",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0503213v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Phenomenology of the helon model",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-3-phenomenology-of-the-helon-model.md",
+      "narrative": null,
+      "content": "[]{#sec:phenom label=\"sec:phenom\"} A braid on $n$ strands is said to be an element of the braid group $B_n$. Given any element of $B_n$, it is also possible to create a corresponding anti-braid, which is the top-to-bottom mirror image of that braid, and is also an element of $B_n$ (it is therefore merely a matter of convention what we call a braid or an anti-braid). If we join the strands of a braid with those of its top-to-bottom mirror image (i.e. we take the braid product [@braid]) we obtain a structure which can be deformed into the trivial braid. Conversely, if the strands of a trivial br",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0503213v2/blocks/figure-img-p003-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0503213v2/blocks/figure-img-p003-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0503213v2/blocks/figure-img-p004-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0503213v2/blocks/figure-img-p004-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-ph-0503213v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Unresolved issues",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-4-unresolved-issues.md",
+      "narrative": null,
+      "content": "[]{#sec:issues label=\"sec:issues\"} There are three significant issues the helon model has not yet addressed: the origin of spin, the origin of mass, and the nature of Cabbibo-mixing.\\\nAt the outset we hoped that spin would be emergent. Thus far we have been partly successful, identifying helicity of helon triplets, but not spin itself. It may be tempting then to assume that helons carry spin-$\\frac{1}{2}$, and combine to form spin-$\\frac{1}{2}$ composites. However this would not explain what spin is, would complicate the model, and would necessitate further assumptions to explain why helons ne",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0503213v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discussion",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-5-discussion.md",
+      "narrative": null,
+      "content": "[]{#sec:discussion label=\"sec:discussion\"} The Helon Model differs from previous preon models in that we have chosen to describe the properties of composite fermions and bosons not in terms of fundamental properties of the preons themselves (e.g. hypercolour), but in the interrelations between the preons (in essence extending the idea behind Harari and Shupe's original explanation of colour charge to other quantitiess). We note once again that the helon model should, to be precise, not even be viewed as a preon model, but as a preon-inspired set of mathematical properties. The significance of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0503213v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-005-6-acknowledgements.md",
+      "narrative": null,
+      "content": "ACKNOWLEDGEMENTS\nThe author is extremely grateful to Alex Kalloniatis for\nnumerous helpful comments on style and content, Larisa\nLindsay for proofreading, and to L. J. Nickisch and John\nHedditch for encouragement and helpful discussions.\n[1] J. C. Pati, A. Salam, Phys. Rev. D10, 275 (1974).\n[2] See e.g. H. Terazawa, K. Akama, Phys. Lett. B96, 276\n(1980) and references therein.\n[3] H. Harari, Phys. Lett. B86, 83 (1979).\n[4] M. Shupe, Phys. Lett. B86, 87 (1979).\n[5] H. Harari, N. Seiberg, Phys. Lett. B98, 269 (1981).\n[6] S. Dimopolous, S. Raby, L. Susskind, Nucl. Phys. B173,\n208 (1980).\n[7] Lewi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

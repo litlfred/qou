@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/bib-verification/reference/jurgenson2009srg.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../assets/navbar/rail-23x0fr27jrd.js" defer></script><script src="../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../.." data-fa-to-root="../../../../../../../../..">{"data":"rail-23x0fr27jrd","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/bib-verification/reference/jurgenson2009srg.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/bib-verification/reference/jurgenson2009srg.attestations</h1>
+<p class="m">A <a href="../../../../../../">qa-attestations</a> node held by <a href="../../../../../">qou</a>, at <code>test/attestations/bib-verification/reference/jurgenson2009srg.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>bib-verification</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;reference&quot;,
+  &quot;id&quot;: &quot;jurgenson2009srg&quot;,
+  &quot;path&quot;: null
+}</pre></dd>
+<dt>verifications</dt><dd><pre>[
+  {
+    &quot;position&quot;: 200,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/arxiv-0905.1873v2/0905.1873v2.pdf&quot;
+      },
+      &quot;id&quot;: &quot;jurgenson2009srg&quot;,
+      &quot;status&quot;: &quot;unreviewed&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;core&quot;,
+        &quot;rationale&quot;: &quot;This paper is the sole source of a numeric bound that a sorry-free Lean theorem in the corpus certifies against, and it has no ref() entry. folio/quantum-observable-universe/lean/QOU/MassTheory/TjonSimplexForm.lean lines 40-45 state that mu4_target_exceeds_n3lo_bound &#39;certifies the numeric claim behind the GAP-9 probe: the corpus target mu_4 = -4.591 (in units of B(D) = 2.224566 MeV) exceeds 34x the N3LO four-nucleon estimate of 0.300 MeV (Jurgenson-Navratil-Furnstahl, arXiv:0905.1873 ...)&#39;. I verified both quoted figures against the PDF: p.3 col.2 reads &#39;induced four-body forces, which therefore contribute about 50 keV net at lambda = 2 fm^-1. This is small compared to the rough estimate in Ref. [20] that the contribution from the long-ranged part of the N3LO four-nucleon force to 4He binding is of order a few hundred keV.&#39; The Lean docstring is a faithful quotation. Per §1 of AGENTS.md, that citation should carry a registered bib key, not a bare arXiv id. The paper is also the source of the Tjon-line trajectory the Lean file is named after (Fig. 5, B(4He) vs B(3H)).&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;p.3, col.2 (discussion of Fig. 3/4, lambda-dependence)&quot;,
+            &quot;statement&quot;: &quot;SRG-induced short-range four-body forces contribute about 50 keV net to the 4He ground-state energy at lambda = 2 fm^-1; the long-ranged N3LO four-nucleon contribution to 4He binding is estimated at a few hundred keV.&quot;,
+            &quot;useForFolio&quot;: &quot;The external numeric ceiling on genuine four-body physics in A = 4 that mu4_target_exceeds_n3lo_bound certifies the corpus target exceeds. It is what turns &#39;mu_4 = -4.591 is large&#39; into a falsifiable scope-(a) statement about the C(A,k) basis rather than about the operator.&quot;,
+            &quot;targets&quot;: [
+              &quot;folio/quantum-observable-universe/lean/QOU/MassTheory/TjonSimplexForm.lean&quot;,
+              &quot;computations/deltalambda/mu4_vs_nuclear_4n_force_bound_probe.py&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Fig. 5 and surrounding text, p.4&quot;,
+            &quot;statement&quot;: &quot;Plotting B(4He) against B(3H), the SRG NN-only results trace out the Tjon line; including the evolved NNN force collapses the trajectory to a short segment through the experimental point.&quot;,
+            &quot;useForFolio&quot;: &quot;The concrete data the reformulated GAP-9 test needs: the B(3H)-B(4He) plane with the field&#39;s own trajectory in it, against which the QOU block-trace operator can be tested convention-free. Gives the Lean file TjonSimplexForm its empirical referent.&quot;,
+            &quot;targets&quot;: [
+              &quot;folio/quantum-observable-universe/lean/QOU/MassTheory/TjonSimplexForm.lean&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Abstract + conclusions, p.4&quot;,
+            &quot;statement&quot;: &quot;The net induced four-body contribution in A = 4 is smaller than the truncation errors of the chiral interaction, but four-nucleon forces are strongly density dependent so their size must be monitored for heavier nuclei.&quot;,
+            &quot;useForFolio&quot;: &quot;Scopes the bound honestly: the small-4N-force statement is an A = 4 statement, not an all-A statement. Any QOU use of it as a ceiling for heavier isotopes in the mass-table sweep must carry that caveat, or it over-claims.&quot;,
+            &quot;targets&quot;: [
+              &quot;folio/quantum-observable-universe/lean/QOU/MassTheory/TjonSimplexForm.lean&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;add-reference&quot;,
+            &quot;rationale&quot;: &quot;Orphan supplying a load-bearing numeric claim in sorry-free Lean. Per §1, a citation backing a corpus claim must resolve to a references.ts entry. Suggested id jurgenson-navratil-furnstahl2009 (Phys. Rev. Lett. 103, 082501).&quot;,
+            &quot;target&quot;: &quot;folio/schema/references.ts&quot;,
+            &quot;bean&quot;: &quot;qou-g4m2&quot;
+          },
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;Replace the bare &#39;arXiv:0905.1873&#39; in the TjonSimplexForm docstring with the registered key so the Lean -- Ref: convention holds and validate-bib can see the dependency.&quot;,
+            &quot;target&quot;: &quot;folio/quantum-observable-universe/lean/QOU/MassTheory/TjonSimplexForm.lean&quot;,
+            &quot;bean&quot;: &quot;qou-owbd&quot;
+          },
+          {
+            &quot;action&quot;: &quot;compute-check&quot;,
+            &quot;rationale&quot;: &quot;The Lean bound uses 0.300 MeV as &#39;the N3LO four-nucleon estimate&#39;; the paper says &#39;of order a few hundred keV&#39; (a range, sourced to its own Ref. [20]) and separately measures 50 keV for the SRG-INDUCED four-body force. Confirm the probe is using the intended one of the two numbers and record which, since the 34x factor depends on it.&quot;,
+            &quot;target&quot;: &quot;computations/deltalambda/mu4_vs_nuclear_4n_force_bound_probe.py&quot;,
+            &quot;bean&quot;: &quot;qou-u8cp&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-08T16:12:29.859Z&quot;,
+        &quot;source_sha&quot;: &quot;d4f785469faf&quot;
+      },
+      &quot;note&quot;: &quot;Source IS held: library/arxiv-0905.1873v2. The ledger recorded it as unavailable, so corpus-grep path 5 reported the repo does not have it — which sends an agent to re-derive a result it could have cited. Re-pointed from the measurement in scripts/cited-source-availability-audit.py.&quot;,
+      &quot;verified_at&quot;: &quot;2026-09-03T04:19:53Z&quot;,
+      &quot;verified_by&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;model&quot;: &quot;claude-opus-5&quot;
+      }
+    }
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

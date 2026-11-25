@@ -1,0 +1,59 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1309.3313v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1309.3313v1",
+  "contains": [
+    "library/arxiv-1309.3313v1/sections/sec-front-matter",
+    "library/arxiv-1309.3313v1/sections/sec-000",
+    "library/arxiv-1309.3313v1/sections/sec-001",
+    "library/arxiv-1309.3313v1/sections/sec-002",
+    "library/arxiv-1309.3313v1/sections/sec-003",
+    "library/arxiv-1309.3313v1/sections/sec-004"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Hadron Structure in Chiral Perturbation Theory — 6 sections: Front matter; I Introduction; II Pion Form Factor\n\n**Hadron Structure in Chiral Perturbation Theory**\n\n*Grenfell campus of Memorial University, Newfoundland, Canada*\n\n9 pp, 6 sections.\n\n**Outline.** Front matter; I Introduction; II Pion Form Factor; III Dynamical Polarizabilities of Mesons; IV Dynamical Polarizabilities of Baryons; VI Acknowledgements",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1309.3313&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1309.3313v1",
+    "title_source": "slug",
+    "source_file": "1309.3313v1.pdf",
+    "source_sha256": "11614aa35b1ffa50445679d8ac8beb3fce19d3b6e25ffdecac7393b04ec1f0b8",
+    "pages": 9,
+    "arxiv": {
+      "id": "1309.3313",
+      "version": "1",
+      "primary_class": "hep-ph",
+      "stamp_date": "12 Sep 2013"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

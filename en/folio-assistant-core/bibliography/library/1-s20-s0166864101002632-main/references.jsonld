@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/1-s20-s0166864101002632-main",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "PII: S0166-8641(01)00263-2",
+      "dcterms:creator": [
+        "a, Eric J. Rawdon",
+        "1",
+        "b, Jonathan Simon",
+        "∗"
+      ],
+      "dcterms:issued": "D:20021003",
+      "dcterms:abstract": "The Möbius energy of a knot is an energy functional for smooth curves based on an idea of self- repelling. If a knot has a thick tubular neighborhood, we would intuitively expect the energy to be low. In this paper, we give explicit bounds for energy in terms of the ropelength of the knot, i.e., the ratio of the length of a thickest tube to its radius. 2001 Elsevier Science B.V. All rights reserved.",
+      "dcterms:source": "library/1-s20-s0166864101002632-main/manifest.jsonld",
+      "dcterms:hasVersion": "library/1-s20-s0166864101002632-main"
+    }
+  ]
+}

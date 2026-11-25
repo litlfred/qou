@@ -1,0 +1,1941 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2503.08846v1",
+  "title": "A Tutorial on Knots and Quantum Mechanics",
+  "variant": "pdf",
+  "pages": 51,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Basics of knot theory",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-basics-of-knot-theory"
+    },
+    {
+      "level": 2,
+      "title": "Topological invariants from matrix traces",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-topological-invariants-from-matrix-traces"
+    },
+    {
+      "level": 2,
+      "title": "Skein relation",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-skein-relation"
+    },
+    {
+      "level": 2,
+      "title": "Bracket and Jones polynomials",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-bracket-and-jones-polynomials"
+    },
+    {
+      "level": 2,
+      "title": "Matrix representation",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-matrix-representation"
+    },
+    {
+      "level": 1,
+      "title": "Topological bits",
+      "number": null,
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-topological-bits"
+    },
+    {
+      "level": 2,
+      "title": "Topological Quantum Field Theory",
+      "number": null,
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-topological-quantum-field-theory"
+    },
+    {
+      "level": 2,
+      "title": "Topological Quantum Mechanics",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-topological-quantum-mechanics"
+    },
+    {
+      "level": 2,
+      "title": "Chern-Simons theory",
+      "number": null,
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-chern-simons-theory"
+    },
+    {
+      "level": 2,
+      "title": "TQFT in the Semiclassical Limit",
+      "number": null,
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-tqft-in-the-semiclassical-limit"
+    },
+    {
+      "level": 1,
+      "title": "Quantum Entanglement",
+      "number": null,
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-quantum-entanglement"
+    },
+    {
+      "level": 2,
+      "title": "Topological Tangling and Quantum Entanglement",
+      "number": null,
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-topological-tangling-and-quantum-entanglement"
+    },
+    {
+      "level": 2,
+      "title": "SLOCC Classification",
+      "number": null,
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-slocc-classification"
+    },
+    {
+      "level": 2,
+      "title": "Entropy of Entanglement",
+      "number": null,
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-entropy-of-entanglement"
+    },
+    {
+      "level": 2,
+      "title": "Inequalities for the Entanglement entropy",
+      "number": null,
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-inequalities-for-the-entanglement-entropy"
+    },
+    {
+      "level": 1,
+      "title": "Quantum Algorithms",
+      "number": null,
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-quantum-algorithms"
+    },
+    {
+      "level": 2,
+      "title": "Quantum Teleportation",
+      "number": null,
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-quantum-teleportation"
+    },
+    {
+      "level": 2,
+      "title": "Dense Coding",
+      "number": null,
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-dense-coding"
+    },
+    {
+      "level": 1,
+      "title": "Outlook",
+      "number": null,
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-outlook"
+    },
+    {
+      "level": 2,
+      "title": "Multipartite Entanglement",
+      "number": null,
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-multipartite-entanglement"
+    },
+    {
+      "level": 2,
+      "title": "Quantum Gravity",
+      "number": null,
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-quantum-gravity"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 827,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "entanglement entropy",
+          "heading": false
+        },
+        {
+          "term": "quantum entanglement",
+          "heading": false
+        },
+        {
+          "term": "quantum mechanics",
+          "heading": false
+        },
+        {
+          "term": "topological quantum",
+          "heading": false
+        },
+        {
+          "term": "quantum mechanical",
+          "heading": false
+        },
+        {
+          "term": "quantum field",
+          "heading": false
+        },
+        {
+          "term": "field theory",
+          "heading": false
+        },
+        {
+          "term": "build",
+          "heading": false
+        }
+      ],
+      "extract": "A Tutorial on Knots and Quantum Mechanics Dmitry Melnikov International Institute of Physics, Federal University of Rio Grande do Norte, Campus Universit´ario, Lagoa Nova, Natal-RN 59078-970, Brazil Abstract These notes review a description of quantum mechanics in terms of the topology of spaces, basing on the axioms of Topological Quantum Field Theory and path integral formalism. In this description quantum states",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2503.08846v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 1486,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum entanglement",
+          "heading": false
+        },
+        {
+          "term": "atiyah tqfts",
+          "heading": false
+        },
+        {
+          "term": "topological quantum",
+          "heading": false
+        },
+        {
+          "term": "quantum mechanics",
+          "heading": false
+        },
+        {
+          "term": "quantum mechanical",
+          "heading": false
+        },
+        {
+          "term": "topological phases",
+          "heading": false
+        },
+        {
+          "term": "topological spaces",
+          "heading": false
+        },
+        {
+          "term": "atiyah definition",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction Physics contributed to the birth of knot theory in the 19th century, when Lord Kelvin hypothesized that atoms are knotted vortices of aether [1]. Although the idea was doomed to fail,1 it is said to inspire the first knot classification by Peter Guthrie Tait. Tait’s knot table had significant impact on developing knot theory as a branch of pure mathematics, a subfield of topology. Until late 20th",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-basics-of-knot-theory",
+      "number": null,
+      "title": "Basics of knot theory",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 877,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "knot theory",
+          "heading": true
+        },
+        {
+          "term": "linking number",
+          "heading": false
+        },
+        {
+          "term": "same knot",
+          "heading": false
+        },
+        {
+          "term": "smooth deformations",
+          "heading": false
+        },
+        {
+          "term": "diagrams correspond",
+          "heading": false
+        },
+        {
+          "term": "topological invariant",
+          "heading": false
+        },
+        {
+          "term": "circuit",
+          "heading": false
+        },
+        {
+          "term": "basics",
+          "heading": true
+        }
+      ],
+      "extract": "Basics of knot theory In this section we give a minimal introduction to knots and their topological invariants, necessary to make quantum mechanical computations. Introductory material into knot theory can be found in these books [18,42,43]. We understand a knot K as a map of a circle S1 into an ambient three-dimensional space R3. For example:2 K : −→ . (1) The trivial map takes S1 into a circle in R3, which is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-topological-invariants-from-matrix-traces",
+      "number": null,
+      "title": "Topological invariants from matrix traces",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 548,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tracelike closures",
+          "heading": false
+        },
+        {
+          "term": "topological invariants",
+          "heading": true
+        },
+        {
+          "term": "trm",
+          "heading": false
+        },
+        {
+          "term": "traces",
+          "heading": true
+        },
+        {
+          "term": "braid group",
+          "heading": false
+        },
+        {
+          "term": "reidemeister moves",
+          "heading": false
+        },
+        {
+          "term": "knot diagrams",
+          "heading": false
+        },
+        {
+          "term": "markov property",
+          "heading": false
+        }
+      ],
+      "extract": "Topological invariants from matrix traces It will be useful to review a few important steps explaining the origin of the Jones polynomial, as they will also be helpful for later applications. An important object is the (Artin) braid group. This group is a generalization of the group of permutations of n elements and can be defined in terms of n −1 generators: Bn := {bk, k = 1, . . . , n −1| bibi+1bi = bi+1bibi+1, i",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-skein-relation",
+      "number": null,
+      "title": "Skein relation",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 587,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "skein relation",
+          "heading": true
+        },
+        {
+          "term": "temperley-lieb generator",
+          "heading": false
+        },
+        {
+          "term": "temperley-lieb algebra",
+          "heading": false
+        },
+        {
+          "term": "c-number",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": false
+        },
+        {
+          "term": "defining relations",
+          "heading": false
+        },
+        {
+          "term": "tln",
+          "heading": false
+        },
+        {
+          "term": "additional relation",
+          "heading": false
+        }
+      ],
+      "extract": "Skein relation To construct an explicit example of a Markov trace it is convenient to introduce another structure, the Temperley-Lieb algebra TLn [48]. Similarly the to the braid group, it can be introduced via generators as follows: TLn := {uk, k = 1, . . . , n −1| u2 i = d · ui, i = 1, . . . n −1; uiui+1ui = ui, i = 1, . . . , n −2; ui+1uiui+1 = ui+1, i = 1, . . . , n −2; uiuj = ujui, |i −j| > 1} , (18) where d is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-bracket-and-jones-polynomials",
+      "number": null,
+      "title": "Bracket and Jones polynomials",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 11,
+      "labelStart": "8",
+      "labelEnd": "11",
+      "words": 898,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bracket",
+          "heading": true
+        },
+        {
+          "term": "skein relations",
+          "heading": false
+        },
+        {
+          "term": "parent curve",
+          "heading": false
+        },
+        {
+          "term": "bracket polynomial",
+          "heading": false
+        },
+        {
+          "term": "trefoil knot",
+          "heading": false
+        },
+        {
+          "term": "nonintersecting circles",
+          "heading": false
+        },
+        {
+          "term": "writhe",
+          "heading": false
+        },
+        {
+          "term": "jones",
+          "heading": true
+        }
+      ],
+      "extract": "Bracket and Jones polynomials Skein relation and Hecke algebras allow to compute Markov traces diagrammatically, without explicitly defining matrix representations [45]. Recall that we agreed to substitute any disconnected circle by the 8 number d = −A2 −A−2. First, one can check that the diagrammatic closure of a braid has the Markov property. Applying the skein relation one finds that βn = A βn + A−1 βn = −A−3 βn",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-matrix-representation",
+      "number": null,
+      "title": "Matrix representation",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "13",
+      "words": 952,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "matrix representation",
+          "heading": true
+        },
+        {
+          "term": "bracket polynomial",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": false
+        },
+        {
+          "term": "trm",
+          "heading": false
+        },
+        {
+          "term": "temperley-lieb algebra",
+          "heading": false
+        },
+        {
+          "term": "simple transposition",
+          "heading": false
+        },
+        {
+          "term": "writhe",
+          "heading": false
+        },
+        {
+          "term": "computing",
+          "heading": false
+        }
+      ],
+      "extract": "Matrix representation To complete the review of knot calculus let us give an alternative way of computing the bracket polynomial using an explicit matrix representation of the braid group and Temperley-Lieb algebra. This method can be extracted from papers of Kauffman an others [53–55]. See [56] for a recent short compilation of the idea. Let us start from matrix R =     A A −A−3 A−1 A−1 0 A    . (33) This",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-topological-bits",
+      "number": null,
+      "title": "Topological bits",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 130,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bits",
+          "heading": true
+        },
+        {
+          "term": "topological",
+          "heading": true
+        },
+        {
+          "term": "quantum mechanics",
+          "heading": false
+        },
+        {
+          "term": "conveyed",
+          "heading": false
+        }
+      ],
+      "extract": "Topological bits In this section we will explain how knots can be used in the description of quantum mechanics. In fact, the main idea was already anticipated in the last section, when we introduce a matrix description of knots and their invariants. In this section we will put this idea on a more formal ground using methods of category theory, following the definition given by Michael Atiyah [19]. Only very basic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-topological-quantum-field-theory",
+      "number": null,
+      "title": "Topological Quantum Field Theory",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 16,
+      "labelStart": "13",
+      "labelEnd": "16",
+      "words": 1379,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "topological quantum",
+          "heading": true
+        },
+        {
+          "term": "quantum field",
+          "heading": true
+        },
+        {
+          "term": "stress-energy tensor",
+          "heading": false
+        },
+        {
+          "term": "field theory",
+          "heading": true
+        },
+        {
+          "term": "atiyah axioms",
+          "heading": false
+        },
+        {
+          "term": "functor maps",
+          "heading": false
+        },
+        {
+          "term": "following axioms",
+          "heading": false
+        },
+        {
+          "term": "cobordisms",
+          "heading": false
+        }
+      ],
+      "extract": "Topological Quantum Field Theory Theories whose description does not explicitly or implicitly use the spacetime metric are called topolog- ical [15, 20]. Metric independence means that observables of such theories do not depend on distances. This imposes powerful constraints on the theory, one of which is vanishing Hamiltonian. Recall that the stress-energy tensor can be obtained by the variation of the action of a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-topological-quantum-mechanics",
+      "number": null,
+      "title": "Topological Quantum Mechanics",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 19,
+      "labelStart": "16",
+      "labelEnd": "19",
+      "words": 1034,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum mechanics",
+          "heading": true
+        },
+        {
+          "term": "topological quantum",
+          "heading": true
+        },
+        {
+          "term": "temperley-lieb diagrams",
+          "heading": false
+        },
+        {
+          "term": "n-point hilbert",
+          "heading": false
+        },
+        {
+          "term": "diagrammatic states",
+          "heading": false
+        },
+        {
+          "term": "basis diagrams",
+          "heading": false
+        },
+        {
+          "term": "diagrammatic presentation",
+          "heading": false
+        },
+        {
+          "term": "hilbert space",
+          "heading": false
+        }
+      ],
+      "extract": "Topological Quantum Mechanics Let us imagine the most simple situation: a one-dimensional TQFT. We will follow a physics-level exposition in [59]. See [60,61] for a more formal mathematical construction. 16 A 0+1 dimensional quantum field theory is called quantum mechanics, so we will consider a topological quantum mechanics. In this case, the role of (0-dimensional) Σ will be played by a collection of points. For",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-chern-simons-theory",
+      "number": null,
+      "title": "Chern-Simons theory",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 23,
+      "labelStart": "19",
+      "labelEnd": "23",
+      "words": 2331,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chern-simons theory",
+          "heading": true
+        },
+        {
+          "term": "wzw theory",
+          "heading": false
+        },
+        {
+          "term": "fundamental sources",
+          "heading": false
+        },
+        {
+          "term": "nondynamical particles",
+          "heading": false
+        },
+        {
+          "term": "spin particles",
+          "heading": false
+        },
+        {
+          "term": "gauge transformations",
+          "heading": false
+        },
+        {
+          "term": "net zero",
+          "heading": false
+        },
+        {
+          "term": "wilson lines",
+          "heading": false
+        }
+      ],
+      "extract": "Chern-Simons theory In this section we will briefly review how the model described in the previous section emerges from a three-dimensional quantum gauge theory. The review will be rather imprecise and its understanding is not necessary for discussion of the applications in the next section, but it might provide some additional intuition about the connection between topology, quantum mechanics gauge and conformal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-tqft-in-the-semiclassical-limit",
+      "number": null,
+      "title": "TQFT in the Semiclassical Limit",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 414,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "semiclassical",
+          "heading": true
+        },
+        {
+          "term": "limit",
+          "heading": true
+        },
+        {
+          "term": "classical limit",
+          "heading": false
+        },
+        {
+          "term": "connectomes",
+          "heading": false
+        },
+        {
+          "term": "tqft",
+          "heading": true
+        },
+        {
+          "term": "chern-simons theory",
+          "heading": false
+        },
+        {
+          "term": "equivalence classes",
+          "heading": false
+        },
+        {
+          "term": "spins",
+          "heading": false
+        }
+      ],
+      "extract": "TQFT in the Semiclassical Limit In Chern-Simons theory, the coupling constant k (also called the level of Chern-Simons theory) appears as a factor multiplying the Lagrangian, e.g. (79). Hence, it has a role similar to the inverse Planck constant. In particular, the limit k →∞localizes the path integral on classical configurations, computing the semiclassical wavefunction (83). It is instructive to learn what happens",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-quantum-entanglement",
+      "number": null,
+      "title": "Quantum Entanglement",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": "24",
+      "labelEnd": "24",
+      "words": 202,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum entanglement",
+          "heading": true
+        },
+        {
+          "term": "ghz",
+          "heading": false
+        },
+        {
+          "term": "borromean",
+          "heading": false
+        },
+        {
+          "term": "rings",
+          "heading": false
+        },
+        {
+          "term": "subject",
+          "heading": false
+        },
+        {
+          "term": "approach",
+          "heading": false
+        }
+      ],
+      "extract": "Quantum Entanglement In the previous section we described an approach in which some quantum states can be understood as topological configurations (spaces). In this section we will show how this approach can be useful to understand and interpret fundamental concepts of quantum mechanics. The main subject of the discussion will be quantum entanglement. The idea that entanglement can be thought as of topological",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-topological-tangling-and-quantum-entanglement",
+      "number": null,
+      "title": "Topological Tangling and Quantum Entanglement",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 26,
+      "labelStart": "24",
+      "labelEnd": "26",
+      "words": 751,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum entanglement",
+          "heading": true
+        },
+        {
+          "term": "percent probability",
+          "heading": false
+        },
+        {
+          "term": "tangling",
+          "heading": true
+        },
+        {
+          "term": "epr",
+          "heading": false
+        },
+        {
+          "term": "hilbert spaces",
+          "heading": false
+        },
+        {
+          "term": "topological",
+          "heading": true
+        },
+        {
+          "term": "tensor product",
+          "heading": false
+        },
+        {
+          "term": "correlations",
+          "heading": false
+        }
+      ],
+      "extract": "Topological Tangling and Quantum Entanglement Quantum entanglement is a property of quantum mechanical systems quantified by correlations. A canonical example of quantum entanglement is the correlation in the Einstein-Podolsky-Rosen (EPR) or Bell pair [90]. An EPR-Bell pair can be represented by a pair of spins in the state |Φ+⟩:= 1 √ 2 (|0⟩⊗|0⟩+ |1⟩⊗|1⟩) . (102) 24 Either of the spins can be measured in the state",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-slocc-classification",
+      "number": null,
+      "title": "SLOCC Classification",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 33,
+      "labelStart": "26",
+      "labelEnd": "33",
+      "words": 3273,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "slocc classification",
+          "heading": true
+        },
+        {
+          "term": "entanglement classification",
+          "heading": false
+        },
+        {
+          "term": "bipartite entanglement",
+          "heading": false
+        },
+        {
+          "term": "slocc classes",
+          "heading": false
+        },
+        {
+          "term": "multipartite entanglement",
+          "heading": false
+        },
+        {
+          "term": "separable state",
+          "heading": false
+        },
+        {
+          "term": "qutrit basis",
+          "heading": false
+        },
+        {
+          "term": "entangled state",
+          "heading": false
+        }
+      ],
+      "extract": "SLOCC Classification In the previous section we made an observation that disconnected topologies correspond to separable states in quantum theory, while connected ones are avatars of entangled states. In most cases we would like to have more information about the system. In particular, one may be interested in quantifying the amount of the correlation, or detail its structure. It is straightforward to elaborate on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-entropy-of-entanglement",
+      "number": null,
+      "title": "Entropy of Entanglement",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 36,
+      "labelStart": "33",
+      "labelEnd": "36",
+      "words": 1786,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "entropy",
+          "heading": true
+        },
+        {
+          "term": "entanglement",
+          "heading": true
+        },
+        {
+          "term": "neumann entropy",
+          "heading": false
+        },
+        {
+          "term": "reduced density",
+          "heading": false
+        },
+        {
+          "term": "svn",
+          "heading": false
+        },
+        {
+          "term": "density matrix",
+          "heading": false
+        },
+        {
+          "term": "density matrices",
+          "heading": false
+        },
+        {
+          "term": "von neumann",
+          "heading": false
+        }
+      ],
+      "extract": "Entropy of Entanglement So far we avoided working with a precise quantitative measure of entanglement. In this section we will discuss the von Neumann entropy, which provides one of the most common measures, and try to explain why it is natural for the topological formulation of quantum mechanics. The von Neumann, or entanglement entropy is defined in terms of density matrices. If a state is pure, that is we have",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-inequalities-for-the-entanglement-entropy",
+      "number": null,
+      "title": "Inequalities for the Entanglement entropy",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 38,
+      "labelStart": "36",
+      "labelEnd": "38",
+      "words": 612,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "entanglement entropy",
+          "heading": true
+        },
+        {
+          "term": "svn",
+          "heading": false
+        },
+        {
+          "term": "strong subadditivity",
+          "heading": false
+        },
+        {
+          "term": "ℓab",
+          "heading": false
+        },
+        {
+          "term": "connectome limit",
+          "heading": false
+        },
+        {
+          "term": "mutual information",
+          "heading": false
+        },
+        {
+          "term": "inequalities",
+          "heading": true
+        },
+        {
+          "term": "subsystems",
+          "heading": false
+        }
+      ],
+      "extract": "Inequalities for the Entanglement entropy In the previous parts of section 4 we discussed expression of quantum entanglement in terms of topology and showed how a specific measure of entanglement – the von Neumann entropy – gets a topological expression. In this part we will discuss the entropy a little further and explain some of its well-known properties in topological terms. Specifically, we will consider",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-quantum-teleportation",
+      "number": null,
+      "title": "Quantum Teleportation",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 38,
+      "labelStart": "38",
+      "labelEnd": "38",
+      "words": 141,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "connectome limit",
+          "heading": false
+        },
+        {
+          "term": "strong subadditivity",
+          "heading": false
+        },
+        {
+          "term": "obstacle",
+          "heading": false
+        },
+        {
+          "term": "converts",
+          "heading": false
+        }
+      ],
+      "extract": "algorithms. where A + B and B + C denote the complements of A + B and B + C respectively. Again, in the connectome limit, this directly converts into the strong subadditivity (161). We see that in this case the “obstacle” is the existence of correlations between A and C. Strong subadditivity is notoriously difficult to prove in general [104], but for the special class of states that we consider here it comes almost",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-quantum-algorithms",
+      "number": null,
+      "title": "Quantum Algorithms",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 40,
+      "labelStart": "38",
+      "labelEnd": "40",
+      "words": 992,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bob qubit",
+          "heading": false
+        },
+        {
+          "term": "teleportation protocol",
+          "heading": false
+        },
+        {
+          "term": "state bob",
+          "heading": false
+        },
+        {
+          "term": "quantum algorithms",
+          "heading": true
+        },
+        {
+          "term": "bell state",
+          "heading": false
+        },
+        {
+          "term": "alice",
+          "heading": false
+        },
+        {
+          "term": "entangled state",
+          "heading": false
+        },
+        {
+          "term": "bell basis",
+          "heading": false
+        }
+      ],
+      "extract": "Quantum Algorithms As another set of applications of the topological visualization of quantum mechanics let us consider a pair of basic quantum algorithms. Quantum algorithms exploiting quantum correlations should be the most natural target for such a study. The example of the EPR pair puzzles us with the apparent instantaneity of interactions between causally separated particles. Quantum teleportation is a basic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-dense-coding",
+      "number": null,
+      "title": "Dense Coding",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 42,
+      "labelStart": "40",
+      "labelEnd": "42",
+      "words": 1049,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bob qubits",
+          "heading": false
+        },
+        {
+          "term": "dense coding",
+          "heading": true
+        },
+        {
+          "term": "alice applies",
+          "heading": false
+        },
+        {
+          "term": "qubits she",
+          "heading": false
+        },
+        {
+          "term": "protocol",
+          "heading": false
+        },
+        {
+          "term": "classical bits",
+          "heading": false
+        },
+        {
+          "term": "bell basis",
+          "heading": false
+        },
+        {
+          "term": "top qubit",
+          "heading": false
+        }
+      ],
+      "extract": "Dense Coding Superdense, or, simply, dense coding is a protocol closely related to quantum teleportation. It uses entanglement properties in a very similar way, allowing to use a quantum channel to simultaneously transmit more than a single bit of classical information. In the textbook version Alice and Bob share an entangled pair of qubits, so that Bob can encode two classical bits of information, sending only one",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-outlook",
+      "number": null,
+      "title": "Outlook",
+      "level": 1,
+      "pageStart": 42,
+      "pageEnd": 43,
+      "labelStart": "42",
+      "labelEnd": "43",
+      "words": 391,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hilbert spaces",
+          "heading": false
+        },
+        {
+          "term": "topological quantum",
+          "heading": false
+        },
+        {
+          "term": "outlook",
+          "heading": true
+        },
+        {
+          "term": "quantum mechanics",
+          "heading": false
+        },
+        {
+          "term": "precise mathematical",
+          "heading": false
+        },
+        {
+          "term": "tensor products",
+          "heading": false
+        },
+        {
+          "term": "tqft",
+          "heading": false
+        },
+        {
+          "term": "diagrammatic",
+          "heading": false
+        }
+      ],
+      "extract": "Outlook Hopefully the present notes convincingly demonstrate the potential and functionality of topology and, in particular, knot theory in the discussion of quantum mechanics. We have shown that states and operators can be thought as of topological spaces, equipped with a set of basic operations, such as braiding. The formalism of topological quantum field theories, or path integral formalism, gave precise",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-multipartite-entanglement",
+      "number": null,
+      "title": "Multipartite Entanglement",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 44,
+      "labelStart": "43",
+      "labelEnd": "44",
+      "words": 482,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "connectome inequalities",
+          "heading": false
+        },
+        {
+          "term": "entanglement",
+          "heading": true
+        },
+        {
+          "term": "connectome diagrams",
+          "heading": false
+        },
+        {
+          "term": "slocc classification",
+          "heading": false
+        },
+        {
+          "term": "multipartite",
+          "heading": true
+        },
+        {
+          "term": "ghz class",
+          "heading": false
+        },
+        {
+          "term": "diagrams number",
+          "heading": false
+        },
+        {
+          "term": "parties",
+          "heading": false
+        }
+      ],
+      "extract": "Multipartite Entanglement In section 4.2 we reviewed classification of bipartite entanglement and showed that a classification similar to SLOCC is possible in terms of the number of connections (Wilson lines) held by the two subsystems. How does this classification works for multipartite systems? For a 3-qubit system the SLOCC classification expects four distinct classes, two of which are bisep- arable (either all",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-quantum-gravity",
+      "number": null,
+      "title": "Quantum Gravity",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 51,
+      "labelStart": "44",
+      "labelEnd": "51",
+      "words": 3328,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum gravity",
+          "heading": true
+        },
+        {
+          "term": "entanglement entropy",
+          "heading": false
+        },
+        {
+          "term": "multipartite entanglement",
+          "heading": false
+        },
+        {
+          "term": "topological entanglement",
+          "heading": false
+        },
+        {
+          "term": "entanglement wedge",
+          "heading": false
+        },
+        {
+          "term": "anti-de sitter",
+          "heading": false
+        },
+        {
+          "term": "ads cft",
+          "heading": false
+        },
+        {
+          "term": "replica wormholes",
+          "heading": false
+        }
+      ],
+      "extract": "Quantum Gravity Knot theory explicitly appears in the construction of states of loop quantum gravity [101,110]. Quantum states in this theory are similar to the Chern-Simons states used in this review, although they are based on closed lines, or closed networks, which are analogs of conformal blocks mentioned here, but with no open ends. Consequently, some questions addressed in this review, such as properties of",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 4,
+        "items": [
+          "6 Outlook",
+          "6 Outlook",
+          "6.1 Multipartite Entanglement",
+          "6.2 Quantum Gravity"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "topological entanglement",
+      "heading": true
+    },
+    {
+      "term": "quantum entanglement",
+      "heading": true
+    },
+    {
+      "term": "entanglement entropy",
+      "heading": true
+    },
+    {
+      "term": "quantum states",
+      "heading": false
+    },
+    {
+      "term": "entanglement classification",
+      "heading": false
+    },
+    {
+      "term": "multipartite entanglement",
+      "heading": true
+    },
+    {
+      "term": "bipartite entanglement",
+      "heading": false
+    },
+    {
+      "term": "diagrammatic states",
+      "heading": false
+    },
+    {
+      "term": "topological spaces",
+      "heading": true
+    },
+    {
+      "term": "tqft hilbert",
+      "heading": false
+    },
+    {
+      "term": "entangled states",
+      "heading": false
+    },
+    {
+      "term": "quantum mechanics",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Calculation of the bracket polynomial of the trefoil knot 31 using skein relations (25)",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "A schematic depiction of a category (objects and morphisms)",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Topological presentation of correlations can be used to illustrate subadditivity (left) and strong subadditivity (right)",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The quantum circuit diagrams of quantum teleportation protocol (left) and dense coding (right) algorithms",
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "The exponents of the operators in the sequence ZaXb for different measurement outcomes",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Braids used for encoding classical bits",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Topological operators acting on tensor products of two Hilbert spaces are in general nonunitary. Contracting an operator with its unitary conjugate creates a topological defect, preventing the result to be an identity matrix",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p004-1",
+      "file": "images/img-p004-1.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-5",
+      "file": "images/img-p004-5.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-7",
+      "file": "images/img-p004-7.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-8",
+      "file": "images/img-p004-8.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-1",
+      "file": "images/img-p006-1.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-1",
+      "file": "images/img-p014-1.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-1",
+      "file": "images/img-p016-1.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-1",
+      "file": "images/img-p020-1.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p020-3",
+      "file": "images/img-p020-3.png",
+      "page": 20,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-3",
+      "file": "images/img-p022-3.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-4",
+      "file": "images/img-p022-4.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-5",
+      "file": "images/img-p022-5.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p023-1",
+      "file": "images/img-p023-1.png",
+      "page": 23,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 22,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 23,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 13
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "2 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p44); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 7
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 23 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2503.08846v1"
+  }
+}

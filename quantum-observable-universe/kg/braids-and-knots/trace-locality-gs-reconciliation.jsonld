@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-trace-locality-gs-reconciliation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:trace-locality-gs-reconciliation",
+  "kind": "remark",
+  "title": "Locality after normalisation: digesting global entanglement",
+  "interprets": "papers/quantum-observable-universe/blocks/prop-trace-locality-meets-gs-non-locality",
+  "tags": [
+    "markov-trace",
+    "groebner-shirshov",
+    "locality"
+  ],
+  "text": "trace-locality-gs-reconciliation.md",
+  "provenance": "authored"
+}

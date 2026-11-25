@@ -1,0 +1,424 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-ph-0012035v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "For tens years the (standard, i.e. Abelian) *Stokes* theorem is one of the central points of (multivariable) analysis on manifolds. Lower-dimensional versions of this theorem, known as the (proper) Stokes theorem, in dimensions 1 and 2, and the, so-called *Gauss* theorem, in dimensions 2 and 3, respectively, are well-known and extremally useful in practice, e.g. in classical electrodynamics (Maxwell equations). In fact, it is difficult, if not impossible, to imagine lectures on classical electrodynamics without intensive use of the Stokes theorem. The standard Stokes theorem is also being call",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math-ph/0012035v3  16 Jan 2002\nNon-Abelian Stokes theorem in action\nBogus law Broda1\nDepartment of Theoretical Physics\nUniversity of L´od´z\nPomorska 149/153\nPL 90–236 L´od´z\nPoland\nAbstract\nIn this short review main issues related to the non-Abelian Stokes\ntheorem have been addressed. The two principal approaches to the non-\nAbelian Stokes theorem, operator and two variants (coherent-state and\nholomorphic) of the path-integral one, have been formulated in their sim-\nplest possible forms. A recent generalization for a knotted loop as well as a\nsuggestion concerning higher-degree forms hav",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Abelian Stokes theorem",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-11-abelian-stokes-theorem.md",
+      "narrative": null,
+      "content": "Before we engage in the non-Abelian Stokes theorem it seems reasonable to recall its Abelian version. The (Abelian) Stokes theorem says (see, e.g. \\[Spi65\\], for an excellent introduction to the subject) that we can convert an integral around a closed curve $C$ bounding some surface $S$ into an integral defined on this surface. Namely, in e.g. three dimensions $$\\oint_C \\vec{A} \\cdot d\\vec{s}\n    =\\int_S {\\rm curl}\\vec{A} \\cdot\n    \\vec{n}\\,d\\sigma, \n    \\label{prop.Stok.}$$\n\n<figure id=\"fig:ast\">\n<div class=\"center\">\n<div class=\"picture\">\n<p>(58,60)</p>\n</div>\n</div>\n<figcaption>Integration a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Historical remarks",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-12-historical-remarks.md",
+      "narrative": null,
+      "content": "Historical remarks\nThe birth of the ideas related to the (non-)Abelian Stokes theorem dates back\nto the ninetenth century and is connected with the emergence of the Abelian\nStokes theorem. The Abelian Stokes theorem can be treated as a prototype of\nthe non-Abelian Stokes theorem or a version of thereof when we conﬁne ourselves\nto an Abelian group.\n3",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Non-Abelian Stokes theorem",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-2-non-abelian-stokes-theorem.md",
+      "narrative": null,
+      "content": "[Sch27], where generally non-commuting matrix-values functions have been con-\nsidered appeared in 1927. In fact no work on the genuine non-Abelian Stokes\ntheorem could appear before the birth of very idea of non-Abelian gauge ﬁelds in\nthe beginning of ﬁfthies. And really, ﬁrst papers on the non-Abelian Stokes the-\norem appeared in the very end of seventhies. At ﬁrst, the non-Abelian Stokes\ntheorem emerged in the operator version [Hal79] (the ﬁrst appearance of the\nnon-Abelian Stokes theorem, see Eq.3.8 therein), [Are80], [Bra80], [FGK81], and\nlater on, in the very end of eighties, in the path-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Contents",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-13-contents.md",
+      "narrative": null,
+      "content": "Contents\nThe propert part of the paper consists of two sections. The ﬁrst section is de-\nvoted to the non-Abelian Stokes theorem itself. In the beginning, we introduce\nnecessary notions and conventions. The operator version of the non-Abelian\nStokes theorem is formulated in the ﬁrst subsection. The second subsection con-\ncerns the path-integral versions of the non-Abelian Stokes theorem: coherent-\nstate approach and holomorphic approach. The last subsection describes gen-\neralizations of the non-Abelian Stokes theorem. First of all, to topologically\nmore general situations, and also to higher-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Operator formalism",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-21-operator-formalism.md",
+      "narrative": null,
+      "content": "Unfortunately, it is not possible to automatically generalize the Abelian Stokes theorem (e.g. Eq.[\\[ab.prop.Stok.2\\]](#ab.prop.Stok.2){reference-type=\"ref\" reference=\"ab.prop.Stok.2\"}) to the non-Abelian one. In the non-Abelian case one faces a qualitatively different situation because the integrand on the LHS assumes values in a Lie algebra $\\bf g$ rather than in the field of real or complex numbers. The picture simplifies significantly if one switches from the \"local\" language to a global one (see, Eq.[\\[glob.ab.Stok.\\]](#glob.ab.Stok.){reference-type=\"ref\" reference=\"glob.ab.Stok.\"}). Ther",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Calculus of paths",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-006-211-calculus-of-paths.md",
+      "narrative": null,
+      "content": "[]{#SECTION:calculusofPaths label=\"SECTION:calculusofPaths\"}\n\nAs a kind of a short introduction for properly manipulating parallel-transport operators along oriented curves we recall a number of standard facts. It is obvious that we can perform some operations on the parallel transport operators. We can superpose them, we can introduce an identity element, and finally we can find an inverse element for each element.\n\nRoughly, the structure is similar to the structure of the group with the following standard postulates satisfied: (1) associativity, $(U_1U_2)U_3=U_1(U_2U_3)$; (2) existence of an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ordering",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-007-212-ordering.md",
+      "narrative": null,
+      "content": "There are a lot of different ordering operators in our formulas which have been collected in this section.\n\n#### Dyson series\n\nWe know from quantum theory that the path-ordered exponent of an operator $\\hat{A}$ can be expressed by the power series called the Dyson series, $$\\begin{aligned}\n        \\lefteqn{{\\rm P}\\,\\exp\\left[i\\int_{t'}^{t''}\\!\\hat{A}(t)\\;dt\\right]}   \\nonumber \\\\\n    &=& {\\rm P}\\left[1+\\sum_{n=1}^{\\infty}\\frac{i^n}{n!}\n    \\int_{t'}^{t''}\\!dt_1\\int_{t'}^{t''}\\!dt_2\\ldots\n    \\int_{t'}^{t''}\\!dt_n\\,\\hat{A}(t_1)\\hat{A}(t_2)\\ldots\n    \\hat{A}(t_n)\\right]   \\nonumber \\\\\n    &=&1+\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Theorem",
+      "pageStart": 11,
+      "pageEnd": 16,
+      "target": "../sections/sec-008-213-theorem.md",
+      "narrative": null,
+      "content": "The non-Abelian Stokes theorem in its original operator form roughly claims that the holonomy round a closed curve $C=\\partial S$ equals a surface-ordered exponent of the *twisted* curvature, namely $${\\rm P}\\exp\\left(i\\oint_C A \\right)\n        ={\\cal P}\\exp\\left(i\\int_S {\\cal F}\\right),\n    \\label{op.NAST}$$ where $\\cal F$ is the twisted curvature $${\\cal F}\\equiv U^{-1} F U.$$ A more precise form of the non-Abelian Stokes theorem as well as an exact meaning of the notions appearing in the theorem will be given in the course of the proof.\n\n#### Proof\n\nFollowing \\[Are80\\] and \\[Men83\\] we will",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Path-integral formalism",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-009-22-path-integral-formalism.md",
+      "narrative": null,
+      "content": "There are two main approaches to the non-Abelian Stokes theorem in the framework of the path-integral formalism: coherent-state approach and holomorphic approach. In the literature, the both approaches occur in few, a bit different, incarnations. Also, the both have found applications in different areas of mathematical and/or theoretical physics, and therefore the both are usefull. The first one is formulated more in the spirit of group theory, whereas the second one follows from traditional path-integral formulation of quantum mechanics or rather quantum field theory. Similarly to the situati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Coherent-state approach",
+      "pageStart": 17,
+      "pageEnd": 21,
+      "target": "../sections/sec-010-221-coherent-state-approach.md",
+      "narrative": null,
+      "content": "#### Group-theoretic coherent states\n\nAccording to \\[ZFG90\\] (see, also \\[Per86\\]) the group-theoretic coherent states emerge in the following construction:\n\n1.  For $\\bf g$, a semisimple Lie algebra of a Lie group $G$, we introduce the standard Cartan basis $\\{H_i,E_\\alpha,E_{-\\alpha}\\}$: $$\\begin{aligned}\n        \\left[H_i,H_j\\right]&=&0,\n        \\nonumber\\\\\n        \\left[H_i,E_\\alpha\\right]&=& \\alpha_iE_\\alpha,\n        \\nonumber\\\\ \n        \\left[E_\\alpha,E_{-\\alpha}\\right]&=&\\alpha^iH_i,\n        \\nonumber\\\\\n        \\left[E_\\alpha,E_\\beta\\right]\n        &=&N_{\\alpha;\\beta}E_{\\alpha+\\beta}.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Holomorphic approach",
+      "pageStart": 21,
+      "pageEnd": 28,
+      "target": "../sections/sec-011-222-holomorphic-approach.md",
+      "narrative": null,
+      "content": "#### Quantum-mechanics background\n\nFor our further convenience let us formulate an auxiliary \"Schrödinger problem\" governing the parallel-transport operator [\\[par.trans.\\]](#par.trans.){reference-type=\"ref\" reference=\"par.trans.\"} for the Abelian gauge potential $A$, $$i\\frac {d z}{dt }=-\\dot{x}^i A_i  z,\n    \\label{ab.Schr.eq.}$$ which expresses the fact that the \"wave function\" $z$ should be covariantly constant along the line $L$, i.e. $$D_t   z\n\\stackrel{\\rm def}{=}\n \\left( \\frac {d}{dt } -i\\dot{x}^i A_i\n\\right)  z =0,$$ where $D_t$ is the absolute covariant derivative.\n\nFirst of all, let",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Measure",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "../sections/sec-012-223-measure.md",
+      "narrative": null,
+      "content": "The described theory possesses the following \"topological\" gauge symmetry: $$\\delta  z(x)=\\theta(x), \\qquad\n    \\delta\\bar{z} (x)=\\bar{\\theta}(x),\n    \\label{top.sym.}$$ where $\\theta (x)$ and $\\bar{\\theta}(x)$ are arbitrary except at the boundary $\\partial S$ where they vanish. The origin of the symmetry [\\[top.sym.\\]](#top.sym.){reference-type=\"ref\" reference=\"top.sym.\"} will become clear when we convert the action [\\[top.act.\\]](#top.act.){reference-type=\"ref\" reference=\"top.act.\"} into a line integral. Integrating by parts in Eq.[\\[top.act.\\]](#top.act.){reference-type=\"ref\" reference=\"top",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalizations",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "../sections/sec-013-23-generalizations.md",
+      "narrative": null,
+      "content": "Generalizations",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Topology",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "../sections/sec-014-231-topology.md",
+      "narrative": null,
+      "content": "Up to now we have investigated the non-Abelian Stokes theorem for topologically trivial situation. The term *topologically trivial situation* means, in this context, that the loop we are integrating along in the non-Abelian Stokes theorem is unknotted in the sense of theory of knots \\[Rol76\\]. It appears that in contradistinction to the Abelian case, the non-Abelian one is qualitatively different. If the loop $C$ is topologically non-trivial and the bounded surface $S$ ($\\partial S=C$) is not simply connected, the parameter space given in the form of a unit square (as in the proof of the non-A",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Higher-dimensional forms",
+      "pageStart": 33,
+      "pageEnd": 34,
+      "target": "../sections/sec-015-232-higher-dimensional-forms.md",
+      "narrative": null,
+      "content": "The theorem being considered up to now is a very particular, though seemingly the most important, non-Abelian version of the Stokes theorem. It connects a non-Abelian differential one-form in dimension $1$ and a two-form in dimension $2$. The forms are of a very particular shape, namely, the connection $1$-form and the curvature $2$-form. Now, we would like to discuss possible generalizations to arbitrary, higher-dimensional differential forms in arbitrary dimensions. Since there may be a lot of variants of such generalizations depending on a particular mathematical and/or physical context, we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Applications",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "../sections/sec-016-3-applications.md",
+      "narrative": null,
+      "content": "The number of applications of the non-Abelian Stokes theorem is not so large as in the case of the Abelian Stokes theorem but neverthelles it is the main motivation to formulate the non-Abelian Stokes theorem at all. It is interesting to note that in contradistinction to the Abelian Stokes theorem, which formulation is \"homogenous\" (unique), different formulations of the non-Abelian Stokes theorem are usefull for particular purposes/applications. From a purely techincal point of view, one can classify applications of the non-Abelian Stokes theorem as exact and approximate. The term *exact appl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two-dimensional Yang-Mills theory",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "../sections/sec-017-31-two-dimensional-yang-mills-theory.md",
+      "narrative": null,
+      "content": "There is a huge literature on the subject of the two-dimensional Yang-Mills theory approaching it from different points of view. One of the latest papers is \\[AK00\\], where a list of references to earlier papers is given. Two-dimensional Yang-Mills theory is a specific theory. From the dynamical point of view it is almost trivial---there are no local degrees of freedom, as a standard canonical analysis indicates. In fact it is \"semi-topological\" field theory, i.e. roughly it only describes combinatorial/topological phenomena and surface areas.\n\nThere are lot of important and interesting aspect",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Three-dimensional topological quantum field theory",
+      "pageStart": 38,
+      "pageEnd": 41,
+      "target": "../sections/sec-018-32-three-dimensional-topological-quantum-field-t.md",
+      "narrative": null,
+      "content": "Topological quantum field theory has recently become a fascinating and fashionable subject in mathematical physics. At present, main applications of topological field theory are in mathematics (topology of low-dimensional manifolds) rather than in physics. Its application to the issue of classification of knots and links is one of the most interesting. To approach this problem one usually tries to somehow encode the topology of a knot/link . As was first noted by Witten \\[Wit89\\], the problem can be attacked by means of standard theoretical physics techniques of quantum field theory. In partic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Other applications",
+      "pageStart": 41,
+      "pageEnd": 42,
+      "target": "../sections/sec-019-33-other-applications.md",
+      "narrative": null,
+      "content": "We could continue the idea of the previous section and try to generalize it to higher-dimensional (topological) theories. To this end we should use a generalization of the non-Abelian Stokes theorem to non-Abelian forms of higher degree, e.g. following the approach proposed in Eq.[\\[STop\\]](#STop){reference-type=\"ref\" reference=\"STop\"}, and yielding the resluts obtained in \\[Bro94\\].\n\nQuite a different story is the possibility to apply the non-Abelian Stokes theorem (in the coherent-state version) to computations in QCD (QCD string, area-low, etc.) \\[AE97\\], \\[DP95\\], \\[Sim92\\] and gravity \\[D",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0012035v3/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary",
+      "pageStart": 42,
+      "pageEnd": 46,
+      "target": "../sections/sec-020-4-summary.md",
+      "narrative": null,
+      "content": "Summary\nIn this short review we have addressed main issues related to the non-Abelian\nStokes theorem. The two principal approaches (operator and path-integral) to\nthe non-Abelian Stokes theorem have been formulated in their simplest possible\nforms. A generalization for a knotted loop as well as a suggestion concerning\nhigher-degree forms have been also presented. Only non-perturbative applica-\ntions of the non-Abelian Stokes theorem (to low-dimensional gauge theories)\nhave been described. The review is not comprehensive and is rather directed\ntowards topological aspects reﬂecting author’s inte",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

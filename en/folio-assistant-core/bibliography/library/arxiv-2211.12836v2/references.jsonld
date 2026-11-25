@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2211.12836v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "QUANTUM COHOMOLOGY OF THE GRASSMANNIAN AND UNITARY",
+      "dcterms:creator": [
+        "MOTION, DYSON BROWNIAN"
+      ],
+      "dcterms:issued": "D:20230515",
+      "dcterms:identifier": "https://arxiv.org/abs/2211.12836",
+      "dcterms:abstract": "We study a class of commuting Markov kernels whose simplest element describes the movement of k particles on a discrete circle of size n conditioned to not intersect each other. Such Markov kernels are related to the quantum cohomology ring of the Grassmannian, which is an algebraic object counting analytic maps from P1(C) to the Grassmannian space of k-dimensional vector subspaces of Cn with prescribed constraints at some points of P1(C). We obtain a Berry- Esseen theorem and a local limit theorem for an arbitrary product of approximately n2 Markov kernels belonging to the above class, when k is ﬁxed. As a byproduct of those results, we derive asymptotic formulas for the quantum cohomology ring of the Grassmannian in terms of the heat kernel on SU(k). To Philippe Biane, for his 60th birthday.",
+      "dcterms:source": "library/arxiv-2211.12836v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2211.12836v2"
+    }
+  ]
+}

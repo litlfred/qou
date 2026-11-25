@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/block-qa/folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet-table1-data.a… — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../../../assets/navbar/rail-xpt0913vis.js" defer></script><script src="../../../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../../../.." data-fa-to-root="../../../../../../../../../../..">{"data":"rail-xpt0913vis","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/block-qa/folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet-table1-data.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/block-qa/folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet-table1-data.a…</h1>
+<p class="m">A <a href="../../../../../../../../">qa-attestations</a> node held by <a href="../../../../../../../">qou</a>, at <code>test/attestations/block-qa/folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet-table1-data.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>block-qa</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;block&quot;,
+  &quot;id&quot;: &quot;folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet-table1-data&quot;,
+  &quot;path&quot;: &quot;folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet-table1-data&quot;
+}</pre></dd>
+<dt>criteria</dt><dd><pre>{
+  &quot;trap-negation-contrast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cc051e034b8c&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:pq_08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T06:38:29.769Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;934ea7cd53e76f7107e79529f299ab7340fcd236&quot;,
+      &quot;evidence&quot;: &quot;Data table with no running prose; the ten constructions are judged absent by inspection of every cell. Cell text is column-label and role-annotation register throughout. 7 rows (pipeline step -&gt; EM analog -&gt; EW analog); \&quot;open:\&quot; cells are honest status, not trap register.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4d9ba7dc00fe&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:19.831Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;None found.&quot;
+    }
+  ],
+  &quot;trap-rhetorical-pivot&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cc051e034b8c&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:pq_08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T06:38:29.769Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;934ea7cd53e76f7107e79529f299ab7340fcd236&quot;,
+      &quot;evidence&quot;: &quot;Data table with no running prose; the ten constructions are judged absent by inspection of every cell. Cell text is column-label and role-annotation register throughout. 7 rows (pipeline step -&gt; EM analog -&gt; EW analog); \&quot;open:\&quot; cells are honest status, not trap register.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4d9ba7dc00fe&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:19.853Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;None found.&quot;
+    }
+  ],
+  &quot;trap-em-dash&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cc051e034b8c&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:pq_08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T06:38:29.769Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;934ea7cd53e76f7107e79529f299ab7340fcd236&quot;,
+      &quot;evidence&quot;: &quot;Data table with no running prose; the ten constructions are judged absent by inspection of every cell. Cell text is column-label and role-annotation register throughout. 7 rows (pipeline step -&gt; EM analog -&gt; EW analog); \&quot;open:\&quot; cells are honest status, not trap register.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4d9ba7dc00fe&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:19.880Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;No em-dash (Seifert–Hodge uses an en dash).&quot;
+    }
+  ],
+  &quot;trap-triples&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cc051e034b8c&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:pq_08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T06:38:29.769Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;934ea7cd53e76f7107e79529f299ab7340fcd236&quot;,
+      &quot;evidence&quot;: &quot;Data table with no running prose; the ten constructions are judged absent by inspection of every cell. Cell text is column-label and role-annotation register throughout. 7 rows (pipeline step -&gt; EM analog -&gt; EW analog); \&quot;open:\&quot; cells are honest status, not trap register.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4d9ba7dc00fe&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:19.908Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;None found.&quot;
+    }
+  ],
+  &quot;trap-closing-aphorism&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cc051e034b8c&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:pq_08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T06:38:29.769Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;934ea7cd53e76f7107e79529f299ab7340fcd236&quot;,
+      &quot;evidence&quot;: &quot;Data table with no running prose; the ten constructions are judged absent by inspection of every cell. Cell text is column-label and role-annotation register throughout. 7 rows (pipeline step -&gt; EM analog -&gt; EW analog); \&quot;open:\&quot; cells are honest status, not trap register.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4d9ba7dc00fe&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:19.937Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Table only.&quot;
+    }
+  ],
+  &quot;trap-meta-commentary&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cc051e034b8c&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:pq_08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T06:38:29.769Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;934ea7cd53e76f7107e79529f299ab7340fcd236&quot;,
+      &quot;evidence&quot;: &quot;Data table with no running prose; the ten constructions are judged absent by inspection of every cell. Cell text is column-label and role-annotation register throughout. 7 rows (pipeline step -&gt; EM analog -&gt; EW analog); \&quot;open:\&quot; cells are honest status, not trap register.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4d9ba7dc00fe&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:19.960Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;None found.&quot;
+    }
+  ],
+  &quot;trap-thesis-restatement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cc051e034b8c&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:pq_08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T06:38:29.769Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;934ea7cd53e76f7107e79529f299ab7340fcd236&quot;,
+      &quot;evidence&quot;: &quot;Data table with no running prose; the ten constructions are judged absent by inspection of every cell. Cell text is column-label and role-annotation register throughout. 7 rows (pipeline step -&gt; EM analog -&gt; EW analog); \&quot;open:\&quot; cells are honest status, not trap register.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4d9ba7dc00fe&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:19.989Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;None found.&quot;
+    }
+  ],
+  &quot;trap-performed-warmth&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cc051e034b8c&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:pq_08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T06:38:29.769Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;934ea7cd53e76f7107e79529f299ab7340fcd236&quot;,
+      &quot;evidence&quot;: &quot;Data table with no running prose; the ten constructions are judged absent by inspection of every cell. Cell text is column-label and role-annotation register throughout. 7 rows (pipeline step -&gt; EM analog -&gt; EW analog); \&quot;open:\&quot; cells are honest status, not trap register.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4d9ba7dc00fe&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:20.026Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;None found.&quot;
+    }
+  ],
+  &quot;trap-superlative&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cc051e034b8c&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:pq_08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T06:38:29.769Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;934ea7cd53e76f7107e79529f299ab7340fcd236&quot;,
+      &quot;evidence&quot;: &quot;Data table with no running prose; the ten constructions are judged absent by inspection of every cell. Cell text is column-label and role-annotation register throughout. 7 rows (pipeline step -&gt; EM analog -&gt; EW analog); \&quot;open:\&quot; cells are honest status, not trap register.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4d9ba7dc00fe&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:20.052Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;None found.&quot;
+    }
+  ],
+  &quot;trap-nonspeakable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;cc051e034b8c&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:pq_08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T06:38:29.769Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;934ea7cd53e76f7107e79529f299ab7340fcd236&quot;,
+      &quot;evidence&quot;: &quot;Data table with no running prose; the ten constructions are judged absent by inspection of every cell. Cell text is column-label and role-annotation register throughout. 7 rows (pipeline step -&gt; EM analog -&gt; EW analog); \&quot;open:\&quot; cells are honest status, not trap register.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4d9ba7dc00fe&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:20.079Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Table cells are formulas and labels; the spectral-completeness EW cell now reads &#39;exhaustion proved; the W, Z, H naming is open&#39;, consistent with prop:weak-spectral-completeness. Zero modes 2/(3π) and 1/π and the EW fixed-point sign agree with the parent block&#39;s item 1 (checked 2026-11-21).&quot;
+    }
+  ],
+  &quot;does_not_default_to_float&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4d9ba7dc00fe&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:19.514Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;compute_no_mpf_to_float_cast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4d9ba7dc00fe&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:19.547Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;respects_archimedean_wall&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4d9ba7dc00fe&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:19.579Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;code_is_commented&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4d9ba7dc00fe&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:19.603Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;variables_typed&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4d9ba7dc00fe&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:19.631Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;has_references_to_paper&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4d9ba7dc00fe&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:19.659Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;connected_to_ci_pipeline&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4d9ba7dc00fe&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:19.684Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;deprecated&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4d9ba7dc00fe&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:19.707Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;uses_library_framework_appropriately&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4d9ba7dc00fe&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:19.734Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;assertions_are_falsifiable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4d9ba7dc00fe&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;n/a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:19.760Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;Block .ts declares no computation.script; no Python producer to audit for this script-quality criterion.&quot;
+    }
+  ],
+  &quot;fit-section-chapter&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4d9ba7dc00fe&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:19.784Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;EM-vs-EW parallel-pipeline table extracted from conj:electroweak-higgs-torus-link-triplet, in the same chapter.&quot;
+    }
+  ],
+  &quot;uses-editorial-completeness&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;4d9ba7dc00fe&quot;,
+        &quot;ts&quot;: &quot;74342ca4b095&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:readjudicate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T02:47:19.805Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3e1f7a5efbebdb61116ff7d6893e8feba6184b47&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/knots-particles-confinement/electroweak-higgs-torus-link-triplet-table1-data.md links thm:em-spectral-completeness and prop:weak-spectral-completeness, which are not in uses[] (only the parent conjecture is).&quot;
+    }
+  ]
+}</pre></dd>
+</dl>
+</main>
+</body>
+</html>

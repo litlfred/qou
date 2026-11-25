@@ -1,0 +1,614 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-th-0006156v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "The Liouville equation[@liouville] $$\\label{liouville}\n\\phi_{tt} -\\phi_{xx}-4e^{-2\\phi}=0$$ has plenty of important applications in Mathematics and Physics. In particular, it describes the surfaces of constant negative curvature and plays the indispensable role in uniformization theory of Riemannian surfaces [@poinc] (for some recent approach see [@takhtajan; @takhtajan1; @takhtajan2]).\n\nIn modern physics the Liouville equation defines one parameter family of models in conformal field theory (CFT), which usually is identified with 2-dimensional gravity [@jackiw]. It plays even more important r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-th/0006156v1  20 Jun 2000\nSTRONGLY COUPLED QUANTUM DISCRETE LIOUVILLE\nTHEORY. I: ALGEBRAIC APPROACH AND DUALITY\nL.D. FADDEEV, R.M. KASHAEV, AND A.YU. VOLKOV\nAbstract. The quantum discrete Liouville model in the strongly cou-\npled regime, 1 < c < 25, is formulated as a well deﬁned quantum me-\nchanical problem with unitary evolution operator. The theory is self-\ndual: there are two exponential ﬁelds related by Hermitean conjugation,\nsatisfying two discrete quantum Liouville equations, and living in mu-\ntually commuting subalgebras of the quantum algebra of observables.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Recollecting the facts",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-1-recollecting-the-facts.md",
+      "narrative": null,
+      "content": "In this section we remind in appropriate form some facts about the Liouville model and the technique of its discretization.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Liouville formula and M\"obius-invariance",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-11-liouville-formula-and-mobius-invariance.md",
+      "narrative": null,
+      "content": "Liouville formula makes solutions, all of them in fact, from pairs of arbitrary functions of one variable \"moving\" in light-cone directions $$\\label{lf}\n   -e^{-2\\phi(x,t)}=\\frac{\\alpha'(x-t)\\beta'(x+t)}\n   {(\\alpha(x-t)-\\beta(x+t))^2}  \\;  .$$ The right hand side of eqn ([\\[lf\\]](#lf){reference-type=\"ref\" reference=\"lf\"}) is invariant under simultaneous point-wise Möbius transformations $$\\alpha\\mapsto\\alpha\\triangleleft M=\\frac{m_{21}+\\alpha m_{11}}{m_{22}\n  +\\alpha m_{12}}\\qquad\\qquad\\beta\\mapsto\\beta\\triangleleft M$$ of the \"chiral halves\" $\\alpha$ and $\\beta$. Accordingly, if those are \"M",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Magri bracket",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-12-magri-bracket.md",
+      "narrative": null,
+      "content": "The canonical Poisson bracket $$\\{\\varpi(x),\\varphi(y)\\}=\\delta(x-y)$$ on the laboratory Cauchy data $$\\varphi=\\phi|_{t=0}\\qquad\\qquad\n\\varpi=\\phi_t|_{t=0} ,$$ together with canonical total momentum and energy $$P=\\int\\varpi\\varphi'dx\\qquad\\qquad\nH={\\tfrac12}\\int(\\varpi^2 +\\varphi^{\\prime2}+4e^{-2\\varphi})dx$$ gives the equations of motion in the Hamiltonian formalism: $$\\begin{aligned} \\varphi'&=\\{P,\\varphi\\}       \\\\\n     \\varpi'&=\\{P,\\varpi\\} \\end{aligned} \\qquad\\qquad\\begin{aligned}\n     \\dot\\varphi&=\\varpi=\\{H,\\varphi\\}             \\\\\n     \\dot\\varpi&=\\varphi''+4e^{-2\\varphi} =\\{H,\\varpi\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Volterra model",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-13-volterra-model.md",
+      "narrative": null,
+      "content": "The first such attempt [@fadtak] produced a viable lattice counterpart of the Magri bracket $$\\tag{\\ref{mb}\\('\\)}\\begin{aligned}\n    \\{u_m,u_n\\}={\\tfrac14}\\:u_mu_n\\big((4-u_m\n    &-u_n)(\\delta_{m+1,n}-\\delta_{m-1,n})        \\\\\n    &-u_{\\frac12(m+n)}(\\delta_{m+2,n} -\\delta_{m-2,n}) ,\n  \\end{aligned}$$ with $u_n\\sim1-\\Delta^2u(n\\Delta)$. In the traditional difference-differential scheme of things it has to do with Volterra's venerable preys and predators $$\\tag{\\ref{cr}\\('\\)}\n   \\dot u_n=u_n(u_{n-1}-u_{n+1})=\n   \\left\\{\\sum\\log u_m,u_n\\right\\},$$ otherwise known as the lattice KdV equation. It s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bi-hamiltonity",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-005-14-bi-hamiltonity.md",
+      "narrative": null,
+      "content": "Historically, the Magri bracket brought about the notion of \"raising and lowering\" which soon became paramount for the whole Hamiltonian theory of soliton equation. In our case, one lifts $L_0$ to $$L_0^\\uparrow=\\int{\\tfrac14}\\:u^2dx$$ to turn the free motion ([\\[cr\\]](#cr){reference-type=\"ref\" reference=\"cr\"}) into the KdV equation $$\\dot u={\\tfrac12}u'''-3uu'\n=\\{L_0^\\uparrow,u\\} ,$$ then drops the Magri bracket to that of Zakharov-Faddeev's $$\\{u(x),u(y)\\}_\\downarrow=2\\delta'(x-y)$$ to restore the free motion in a different guise $$\\dot u=-u'=\\{L_0^\\uparrow,u\\}_\\downarrow .$$ Although not qu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantization",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-006-15-quantization.md",
+      "narrative": null,
+      "content": "[]{#subsec:goquant label=\"subsec:goquant\"} Going quantum, bracket $_\\downarrow$ ought to become Weyl-style exchange relations $$u_mu_n=q^{2(\\delta_{m+1,n}\n  -\\delta_{m-1,n})}u_nu_m\\;.$$ We do not want to discuss before time the nature of quantization constant $q$ or the exact degree of formality implied in what follows, but we want to be very clear about boundary conditions: the $u$'s are strictly periodic and so is the Kronecker symbol of course $$u_{n+N}=u_n\\qquad\\qquad\\delta_{m,n}\n=\\begin{cases}1&\\text{if }m\\equiv n\\pmod{N}\\\\\n  0&\\text{otherwise,}\\end{cases}$$ on top of that, for the reason",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-007-16-proof.md",
+      "narrative": null,
+      "content": "[]{#subsecProof label=\"subsecProof\"} We just honestly start from $n=1$: $$\\begin{gathered}\n Q^{-1}u_1^{}Q=Q^{-1}u_1^{}\n  b_1^{}b_2^{}b_3^{}\\ldots b_{N-1}^{}=Q^{-1}\n  b_1^{}\\sum_{a=-\\infty}^\\infty q^{a^2+2a}u_2^a\n  u_1^{}b_3^{}\\ldots b_{N-1}^{}                \\\\\n  =Q^{-1}b_1^{}b_2^{}q^{-1}u_2^{-1}\n  u_1^{}b_3^{}\\ldots b_{N-1}^{}=Q^{-1}b_1^{}\n  b_2^{}b_3^{}u_2^{-1}u_1^{}u_3^{}b_4^{}\n  \\ldots b_{N-1}^{}=\\cdots \n\\end{gathered}$$ --- every step adds another factor, in the end parity of $N$ and that center-reducing condition ([\\[eq:c1c2\\]](#eq:c1c2){reference-type=\"ref\" reference=\"eq:c1c2\"}) make al",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "It has to do with braids",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-008-17-it-has-to-do-with-braids.md",
+      "narrative": null,
+      "content": "Let us compile a list of what we know about the $b$'s. They are periodic, $b_{n+N}=b_n$, they are this \"local\" $$b_mb_n=b_nb_m\\qquad\n\\text{if }|m-n|\\not\\equiv1\\pmod{N} ,$$ and they satisfy \"global\" relations which closed the previous subsection $$b_1b_2\\ldots b_{N-1}=b_2b_3\\ldots b_N\n=\\cdots=b_Nb_{N+1}\\ldots b_{N-2}\\;.$$ Let us now consider these as defining relations and identify the emerging group. It is $B_N$, the group of braids of $N$ strings in 3 dimensions, alternatively defined by an exhaustive list of (Artin's) relations $$b_nb_{n-1}b_n=b_{n-1}b_nb_{n-1}\\qquad\n\\qquad b_nb_m=b_mb_n\\mbo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lattice Virasoro algebra",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-009-18-lattice-virasoro-algebra.md",
+      "narrative": null,
+      "content": "[]{#sec:lva label=\"sec:lva\"} Now we look for a generalization of this construction by natural interpretation of the \"raising\". So, we want the lattice Virasoro algebra actually to be a group. If that is to be, the \"global\" relations ought to remain the same as in the braid group $$d_1d_2\\ldots d_{N-1}=d_2d_3\\ldots d_N\n=\\cdots=d_Nd_{N+1}\\ldots d_{2N-2}\\;,$$ or equivalently $$\\tag{\\ref{cr}\\(''\\)}\n   \\hat d_n=d_{n-1}=Q^{-1}d_nQ\\qquad\\qquad\n   Q=d_1d_2\\ldots d_{N-1}\\;    ,$$ but this time each generator should interfere not only with the nearest neighbours but also with the second-nearest ones $$d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Difference-difference Liouville equation",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-010-2-difference-difference-liouville-equation.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Liouville formula",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-011-21-liouville-formula.md",
+      "narrative": null,
+      "content": "For aesthetical reason alone, its difference approximation can only be $$\\begin{picture}(260,65)(-10,0)\\thicklines\n\\put(-10,5){\\vector(1,0){85}}\\put(80,2){\\(x\\)}\n\\put(0,0){\\vector(0,1){40}}\\put(-10,37){\\(t\\)}\n\\put(10,20){\\line(1,1){40}}\\put(53,57){\\(\\alpha\\)}\n\\put(10,50){\\line(1,-1){40}}\\put(0,47){\\(\\beta\\)}\n\\put(20,10){\\line(1,1){40}}\\put(63,47){\\(\\alpha'\\)}\n\\put(20,60){\\line(1,-1){40}}\\put(10,57){\\(\\beta'\\)}\n\\put(31,32){\\(\\phi\\)}\\put(120,32){\\(-\\Delta^2\ne^{-2\\phi}\\sim\\dfrac{(\\alpha'-\\alpha)\n(\\beta'-\\beta)}{(\\alpha'-\\beta')(\\alpha-\\beta)}\\;,\\)} \\end{picture}$$ with primes now denoting finite",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discrete Liouville equation",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-012-22-discrete-liouville-equation.md",
+      "narrative": null,
+      "content": "It not only ideologically justifies the chosen discretization but also helps make the following action more entertaining. In continuum, the Liouville equation may be considered as a compatibility condition for the Liouville formula overloaded with Möbius-invariance. It ought to be just the same on the lattice, so let us find out what \"equation of motion\" the $\\chi$'s might solve. We pick four of them next to each other to figure out that they are four cross-ratios made from the total of six $\\alpha$'s and $\\beta$'s. That is one too many: 4 $\\chi$'s + 3 symmetry parameters -- 3 $\\alpha$'s -- 3",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Poisson bracket",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-013-23-poisson-bracket.md",
+      "narrative": null,
+      "content": "Two rows of $\\chi$'s make perfect Cauchy data $$\\chi_{2n}=\\chi_{2n,-1}\\qquad\\qquad\n\\chi_{2n+1}=\\chi_{2n+1,0}\\;,$$ just in case one may directly check that the lattice canonical bracket of [@fadVol97] $$\\{\\chi_{2n\\pm1},\\chi_{2n}\\}=\\chi_{2n\\pm1}\n\\chi_{2n}\\qquad\\{\\chi_j,\\chi_i\\}=0 \\mbox{ if }|j-i|\\not\\equiv1\\pmod{N}$$ both a) reproduces itself as the $\\chi$'s evolve according to the lattice Liouville equation ([\\[lle\\]](#lle){reference-type=\"ref\" reference=\"lle\"}) and b) translates, by means of formula ([\\[lse\\]](#lse){reference-type=\"ref\" reference=\"lse\"}) at $k=0$, into the lattice Magri bracke",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Formal quantization",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-014-3-formal-quantization.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algebra of observables",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-015-31-algebra-of-observables.md",
+      "narrative": null,
+      "content": "In a virtual replay of subsection [\\[subsec:goquant\\]](#subsec:goquant){reference-type=\"ref\" reference=\"subsec:goquant\"}, we introduce a formal quantization constant $q$, replace the above lattice canonical bracket by Weyl-style exchange relations $$\\chi_{2n\\pm1}\\chi_{2n}=q^2\\chi_{2n}\n\\chi_{2n\\pm1}\\qquad\\chi_j\\chi_i=\\chi_i\\chi_j \\mbox{ if\n  }|j-i|\\not\\equiv1\\pmod{2N} ,$$ opt for even $N$ and impose an additional condition on central elements $$\\label{cc}\n   \\chi_1^{}\\chi_3^{-1}\\chi_5^{}\\chi_7^{-1}\\ldots\n   \\chi_{2N-3}^{}\\chi_{2N-1}^{-1}=\\chi_2^{}\n   \\chi_4^{-1}\\chi_6^{}\\chi_8^{-1}\\ldots\n   \\ch",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum lattice Liouville equation",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-016-32-quantum-lattice-liouville-equation.md",
+      "narrative": null,
+      "content": "We can only afford a Heisenberg evolution of observables, so let us again consider $\\chi_j$ as initial data ($\\chi_{2n,-1}=\\chi_{2n}$, $\\chi_{2n+1,0}=\\chi_{2n+1}$) and determine elements $\\chi_{j,k+1}$, $j+k\\equiv0\\pmod2$ step by step using a slightly \"quantized\" lattice Liouville equation $$\\label{qeq}\n   \\chi_{j,k+1}\\chi_{j,k-1}=\\frac{q^2\\chi_{j-1,k}\n   \\chi_{j+1,k}}{(1+q\\chi_{j-1,k})\n   (1+q\\chi_{j+1,k})}    .$$ We deliberately present the r.h.s. as a ratio to stress that all the factors there commute with each other, on the contrary, those in the l.h.s commute neither with each other nor w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Shift and evolution operators",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-017-33-shift-and-evolution-operators.md",
+      "narrative": null,
+      "content": "[]{#subsec:shevol label=\"subsec:shevol\"} If we guessed the equation right, there must exist the \"evolution operator\", that is an element $K$ such that $$\\chi_{j,k+1}=K^{-1}\\chi_{j,k-1}K.$$ Needless to say, these relations will hold everywhere if and only if they do so for $k$ equal $0$ and $-1$ where they become $$\\begin{aligned}\n \\chi_{2n-1}K\\chi_{2n-1}\n  K^{-1}&=\\frac{q^2\\chi_{2n-2}\\chi_{2n}}\n  {(1+q\\chi_{2n-2})(1+q\\chi_{2n})}              \\\\\n  K^{-1}\\chi_{2n}K\\chi_{2n} &=\\frac{q^2\\chi_{2n-1}\\chi_{2n+1}}\n  {(1+q\\chi_{2n-1})(1+q\\chi_{2n+1})}. \n\\end{aligned}$$ Following [@fadVol93; @fadVol97]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chiral evolution operator",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-018-35-chiral-evolution-operator.md",
+      "narrative": null,
+      "content": "We define it as $$Q=UE_1   \\;   ,$$ and it indeed moves the $\\chi$'s in the right direction $$\\chi_{j,k+1}=Q^{-1}\\chi_{j+1,k}Q$$ and equals $\\sqrt{J^{-1}K}$, in the sense that $Q^2=J^{-1}K$. So, the total momentum $P$, Hamiltonian $H$ and the chiral Hamiltonian $\\frac12(H-P)$ of the original equation have finally become shift-evolution-operators $J$, $K$ and $Q$ of the quantum lattice equation, but we have yet to find out in what sense, if at all, this $Q$ coincides with that hypothetical quantum lattice group-like counterpart of $L_0$ which we called $Q$ in section [\\[sec:lva\\]](#sec:lva){ref",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dualization",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-019-4-dualization.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Involution",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-020-41-involution.md",
+      "narrative": null,
+      "content": "The formal quantization of section [\\[sec:fquant\\]](#sec:fquant){reference-type=\"ref\" reference=\"sec:fquant\"} can be put in the usual framework of quantum mechanics if we assume that both the formal parameter $q$ and the generators $\\chi$ are exponentials $$q=e^{\\pi i\\tau}\\qquad\\qquad\n\\chi_j=e^{-2\\pi\\sqrt\\tau\\varphi_j},$$ and the new generators $\\varphi_j$ have the commutation relations $$[\\varphi_{2n\\pm1},\\varphi_{2n}]=-\\tfrac{I}\n{2\\pi i}\\qquad\\qquad[\\varphi_j,\\varphi_i]=0 \\mbox{ if\n  }|j-i|\\not\\equiv1\\pmod{N}$$ independent of $\\tau$, and so could be taken as selfadjoint operators $$\\varphi_j",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Unitarity",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-021-43-unitarity.md",
+      "narrative": null,
+      "content": "Replace $\\epsilon$ by $f$ in every factor of every shift-evolution operator, all those little factors and big operators will at once become unitary but all the relations we have found them to satisfy will remain intact, for they rely only on that one and only functional equation. For instance, let us write out the so upgraded chiral evolution operator: $$Q=\\kappa^{2(N-1)}\ne^{\\pi i(\\varphi_1-\\varphi_2)^2} e^{\\pi\n  i(\\varphi_3-\\varphi_4)^2}\\ldots e^{\\pi\n  i(\\varphi_{2N-3}-\\varphi_{2N-2})^2}\n\\prod_{n=1}^Nf(i\\sqrt\\tau\\varphi_{2n-1}) ,$$ where it is already taken into account that $$f(z)f(-z)=\\kapp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dual Liouville equation",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-022-44-dual-liouville-equation.md",
+      "narrative": null,
+      "content": "Let us permute the factors in the l.h.s of the lattice Liouville equation ([\\[qeq\\]](#qeq){reference-type=\"ref\" reference=\"qeq\"}) $$\\begin{aligned}\n    \\chi_{j,k-1}^{}\\chi_{j,k+1}^{}\n    &=\\chi_{j,k-1}^{}\\left(\\chi_{j,k+1}^{}\n      \\chi_{j,k-1}^{}\\right)\\chi_{j,k-1}^{-1}       \\\\\n    &=\\chi_{j,k-1}^{}\\left(\\frac{q^2\\chi_{j-1,k}\n        \\chi_{j+1,k}}{(1+q\\chi_{j-1,k})\n        (1+q\\chi_{j+1,k})}\\right)\\chi_{j,k-1}^{-1}    \\\\\n    &=\\frac{q^{-2}\\chi_{j-1,k}\\chi_{j+1,k}}\n    {(1+q^{-1}\\chi_{j-1,k})(1+q^{-1}\\chi_{j+1,k})}\n                       \\end{aligned}$$ and treat the both sides with Hermitean",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Baxter equation",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-023-45-baxter-equation.md",
+      "narrative": null,
+      "content": "It reads $$t_\\tau(\\lambda)Q(\\lambda)=Q(\\lambda+{\\tfrac12})\n+(e^{4\\pi i\\tau\\lambda}+1)^N Q(\\lambda-{\\tfrac12}) ,$$ where $t_\\tau(\\lambda)$ and $Q(\\lambda)$ are two families of elements (of $\\mathcal A_\\tau$ and $\\mathcal B$ respectively), which all commute with each other $$[t_\\tau(\\lambda),t_\\tau(\\mu)]=[Q(\\lambda),\nt_\\tau(\\mu)]=[Q(\\lambda),Q(\\mu)] .$$ In this paper we do not define those families explicitly and do not derive the equation. Let us only mention that the chiral evolution operator $Q$ is in fact  $Q(\\lambda)$ evaluated at a particular value of $\\lambda$. The duality symmetry of our",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions and comments",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-024-5-conclusions-and-comments.md",
+      "narrative": null,
+      "content": "We have shown, that the appropriate lattice regularization of the quantum Liouville model allows to enter the \"forbidden region\" of the Virasoro central charge $1\\le c\\le25$. The key for this is using the double family of dual quantum fields, which are not selfadjoint, but normal and adjoint to each other. The results are still rather modest, but proving the point quite persuasively.\n\nThe real problem is that of findng the spectrum of the model. One viable approach to this can be based on the Baxter equation. In the next paper of this series we plan to deal with this equation. The idea of its",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix: the non-compact quantum dilogarithm",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-025-6-appendix-the-non-compact-quantum-dilogarithm.md",
+      "narrative": null,
+      "content": "Let complex $b$ have a nonzero real part $\\Re b\\ne0$. The non-compact QDL, $e_b(z)$, $z\\in\\mathbb C$, $|\\Im z|<|\\Im c_b|$, $$c_b\\equiv i(b+b^{-1})/2,$$ is defined by the formula $$\\label{ncqdl}\ne_b(z)\\equiv\\exp\\left(\\frac{1}{4}\n\\int_{-\\infty}^{+\\infty}\n\\frac{e^{-2iz x}\\, dx}{\\sinh(xb)\n\\sinh(x/b) x}\\right),$$ where the singularity at $x=0$ is put below the contour of integration. This definition implies that $e_b(z)$ is unchanged under substitutions $b\\to b^{-1}$, $b\\to-b$. Using this symmetry, we choose $b$ to lay in the first quadrant of the complex plane, namely $$\\Re b>0,\\quad \\Im b\\ge 0,$$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Functional relations",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-026-61-functional-relations.md",
+      "narrative": null,
+      "content": "Function ([\\[ncqdl\\]](#ncqdl){reference-type=\"ref\" reference=\"ncqdl\"}) satisfies the 'inversion' relation $$\\label{inversion}\ne_b(z)e_b(-z)=e^{i\\pi z^2\n-i\\pi(1+2c_b^2)/6},$$ and a pair of functional equations $$\\label{shift}\ne_b(z-ib^{\\pm1}/2)=(1+e^{2\\pi zb^{\\pm1} })\ne_b(z+ib^{\\pm1}/2).$$ The latter equations enable us to extend the definition of the QDL to the entire complex plane.\n\nWhen $b$ is real or a pure phase, function $e_b(z)$ is *unitary* in the sense that $$\\label{qdlunitarity}\n\\overline{e_b(z)}=1/e_b(\\bar z).$$ If selfadjoint operators $\\mathsf P$ and $\\mathsf X$ in $L^2(\\mathbb R)$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Analytic properties",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-027-62-analytic-properties.md",
+      "narrative": null,
+      "content": "We can perform the integration in ([\\[ncqdl\\]](#ncqdl){reference-type=\"ref\" reference=\"ncqdl\"}) by the residue method. The result can be written as ratio of two q-exponentials $$\\label{ratio}\ne_b(z)=\n(e^{2\\pi (z+c_b)b};q^2)_\\infty/\n(e^{2\\pi (z-c_b)b^{-1}};\\bar q^2)_\\infty,$$ where $$q=e^{i\\pi b^2},\\quad \\bar q=e^{-i\\pi b^{-2}},$$ thus reprpoducing definition ([\\[eq:fofz\\]](#eq:fofz){reference-type=\"ref\" reference=\"eq:fofz\"}) in the text. Formula ([\\[ratio\\]](#ratio){reference-type=\"ref\" reference=\"ratio\"}) defines a meromorphic function on the entire complex plane, satisfying functional equati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Integral Ramanujan identity",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-028-63-integral-ramanujan-identity.md",
+      "narrative": null,
+      "content": "Consider the following Fourier integral: $$\\label{ramanint}\n\\Psi(u,v,w)\\equiv\n\\int_{\\mathbb R}\\frac{e_b(x+u)}{e_b(x+v)}e^{2\\pi iwx}\\, dx,$$ where $$\\label{restrictions1}\n\\Im(v+c_b)>0,\\quad\\Im(-u+c_b)>0, \\quad \\Im(v-u)<\\Im w<0.$$ Restrictions ([\\[restrictions1\\]](#restrictions1){reference-type=\"ref\" reference=\"restrictions1\"}) actually can be considerably relaxed by deforming the integration path in the complex $x$ plane, keeping the asymptotic directions of the two ends within the sectors $\\pm(|\\arg x|-\\pi/2)>\\arg b$. So, the enlarged in this way domain for the variables $u,v,w$ has the form:",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fourier transformation of the QDL",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-029-64-fourier-transformation-of-the-qdl.md",
+      "narrative": null,
+      "content": "Certain specializations of $\\Psi(u,v,w)$ lead to the following Fourier transformation formulas for the QDL: $$\\begin{gathered}\n\\label{fourier1}\n  \\lefteqn{\\phi_+(w)\\equiv \\int_{\\mathbb R}e_b(x)e^{2\\pi i\n      wx}\\,dx\n    =\\Psi(0,v,w)\\vert_{v\\to-\\infty}}\\\\\n  =e^{2\\pi iwc_b-i\\pi(1-4c_b^2)/12}/\n  e_b(-w-c_b)=e^{-i\\pi w^2+i\\pi(1-4c_b^2)/12}\n  e_b(w+c_b),\n\\end{gathered}$$ and $$\\begin{gathered}\n\\label{fourier2}\n  \\lefteqn{\\phi_-(w)\\equiv \\int_{\\mathbb R}(e_b(x))^{-1}e^{2\\pi\n      iwx}\\,dx\n    =\\Psi(u,0,w)\\vert_{u\\to-\\infty}}\\\\\n  =e^{-2\\pi iwc_b+i\\pi(1-4c_b^2)/12} e_b(w+c_b)=\n  e^{i\\pi w^2-i\\pi(1-4c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006156v1/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of the Pentagon identity",
+      "pageStart": 17,
+      "pageEnd": 20,
+      "target": "../sections/sec-030-65-proof-of-the-pentagon-identity.md",
+      "narrative": null,
+      "content": "tion relation (19), we equate the coeﬃcients of the operator terms\ne−2πixXe−2πiyP\nin the pentagon relation (20), the result being an integral identity:\nφ+(x)φ+(y)e2πixy =\nZ\nR\nφ+(z)φ+(x −z)φ+(y −z)eiπz2dz,\nwhere the singularities at z = x, z = y are put below, and at z = 0,\nabove the integration path. Now, multiplying both sides of this identity by\nexp(−2πiyu), integrating over y, and using (32), we obtain\nφ+(x)eb(u −x) = eb(u)\nZ\nR\nφ+(z)φ+(x −z)eiπz2−2πiuzdz.\nUsing (30), we rewrite it equivalently\n(33)\neb(u −x)\neb(−x −cb)eb(u)e−iπ(1−4c2\nb)/12\n=\nZ\nR\neb(z + cb)\neb(z −x −cb)e−2πiz(u+cb)dz = Ψ(cb,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

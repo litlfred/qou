@@ -1,0 +1,99 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0611181v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0611181v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "The volume conjecture relates the colored Jones polynomials of a knot to the simplicial volume of its complement. More precisely, let us denote the normalized $N$-colored Jones polynomial of a knot $K$ by $J_N(K)$ and let $\\mathrm{Vol}(K)$ be $v_3$ times the simplicial volume (Gromov norm) of $\\mathbb{S}^3 - K$, where $v_3$ is the volume of the hyperbolic regular ideal tetrahedron. The volume conjecture can now be stated as follows:\n\n::: conj\n(**Volume conjecture**) [@Murakami2]\\\nFor any knot $K$ we have: $$\\lim_{N\\to\\infty}\\frac{2\\pi}{N}\\log|J_N(K)(e^{\\frac{2\\pi i}{N}})| = \\mathrm{Vol}(K)$$\n:",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611181v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0611181v2  [math.GT]  30 Jul 2007\nProof of the volume conjecture for Whitehead\nchains\nRoland van der Veen\nNovember 29, 2021\nAbstract\nWe prove the volume conjecture for an inﬁnite family of links called White-\nhead chains that generalizes both the Whitehead link and the Borromean\nrings.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611181v2/blocks/figure-img-p002-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../images/img-p002-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0611181v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of the main theorem",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-proof-of-the-main-theorem.md",
+      "narrative": null,
+      "content": "In this section we give an overview of the proof of the main theorem, postponing the proofs of the more technical lemmas to the next section.\n\nThe first step is to obtain an expression for the colored Jones polynomials of a general Whitehead chain.\n\n::: lem\nLet $a,b,c,d$ be integers, with $b \\geq 2$ and $c,d \\geq 0$. We have the following formulas for the colored Jones polynomial: $$J_N(W_{a,1,c,d})(e^{\\frac{2\\pi i}{N}}) =  \\phi_N\\sum_{n=0}^{N-1}(2n+1)\\chi_{N,n}^{4a-c+d}\\left(\\sum_{k=0}^{N-1-n} S_{n,k}\\right)^{c+d}$$ $J_{N}(W_{a,b,c,d})(e^{\\frac{2\\pi i}{N}})=0$ when $N$ is even and for $N=2M+1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611181v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of the lemmas",
+      "pageStart": 6,
+      "pageEnd": 13,
+      "target": "../sections/sec-002-proof-of-the-lemmas.md",
+      "narrative": null,
+      "content": "In this section we prove the more technical lemmas 2,3,4 and 5.\n\n::: proof\n*Proof.* (of lemma 2) The proof of this lemma hinges on the following key estimate of $S_{n,k}$ in terms of the Lobachevski function $\\Lambda(x)$ that was proved in [@HaoZheng]. Define $f(x,y)=\n-2\\Lambda(x+y)+2\\Lambda(y)+\\Lambda(x)$. For integers $0\\leq n,k, n+k < N$ we have the uniform estimate $$\\log S_{n,k}=\\frac{N}{\\pi}f(\\frac{n\\pi}{N},\\frac{k\\pi}{N})+\\mathcal{O}(\\log N),\\quad N\\to \\infty$$ Before we can apply this result we first need to show that inside the triangle $0<x,y,x+y<\\pi$ the function $f$ has a unique cr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2205.07095v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Virial Expansions for Correlation Functions in Canonical Ensemble",
+  "contains": [
+    "library/arxiv-2205.07095v1/sections/sec-front-matter",
+    "library/arxiv-2205.07095v1/sections/sec-000",
+    "library/arxiv-2205.07095v1/sections/sec-001",
+    "library/arxiv-2205.07095v1/sections/sec-002",
+    "library/arxiv-2205.07095v1/sections/sec-003",
+    "library/arxiv-2205.07095v1/sections/sec-004",
+    "library/arxiv-2205.07095v1/sections/sec-005",
+    "library/arxiv-2205.07095v1/sections/sec-006",
+    "library/arxiv-2205.07095v1/sections/sec-007",
+    "library/arxiv-2205.07095v1/sections/sec-008",
+    "library/arxiv-2205.07095v1/sections/sec-009",
+    "library/arxiv-2205.07095v1/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Virial Expansions for Correlation Functions in Canonical Ensemble — The inﬁnite set of coupled integral nonlinear equations for correlation func- tions in the case of classical canonical ensemble is\n\n**Virial Expansions for Correlation Functions in Canonical Ensemble**\n\n*Institute of Mathematics, Ukrainian National Academy of Sciences, Kyiv, Ukraine*\n\n14 pp, 12 sections.\n\n**Abstract.** The inﬁnite set of coupled integral nonlinear equations for correlation func- tions in the case of classical canonical ensemble is considered. Some kind of graph expansions of correlation functions in the density parameter are constructed. Existing of unique solutions for small value of density and high temperature is discussed.\n\n**Outline.** Front matter; 1 Introduction.; 2 On some mathematical concepts; 2.1 Configuration spaces and Lebesgue-Poisson ; 2.2 Algebra of generating functionals.; 3 Description of the system of interacting par; 3.1 Interaction between particles; 3.2 Derivation of equations for correlation fu; 4 Construction of expansion for correlation fu; 4.1 Solution of equations for correlation func; 4.2 Graphic interpretation of solutions.; 4.3 Conclusion on the convergence of the expan",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2205.07095&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2205.07095v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "2205.07095v1.pdf",
+    "source_sha256": "2ec6916399150e2d1cf3e406b98e7cc316a40d790eb048fe5659774482ff0354",
+    "pages": 14,
+    "arxiv": {
+      "id": "2205.07095",
+      "version": "1",
+      "primary_class": "math-ph",
+      "stamp_date": "14 May 2022"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

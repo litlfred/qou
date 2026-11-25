@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/attestation/kg-qa/skills/local/docs-generation.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/attestation/kg-qa/skills/local/docs-generation",
+      "@type": "https://litlfred.github.io/cat-harness/v0/ns/QaAttestation",
+      "title": "kg-qa attestation: skill docs-generation",
+      "description": "The kg-qa judgements recorded for skill docs-generation (skills/local/docs-generation.md), each pinned to the hash it attested.",
+      "sourceKind": "kg-qa",
+      "sourcePath": "test/attestations/kg-qa/skills/local/docs-generation.attestations.json",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/attestations"
+    }
+  ]
+}

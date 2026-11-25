@@ -1,0 +1,1845 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1403.4021v2",
+  "title": "arxiv-1403.4021v2",
+  "variant": "pdf",
+  "pages": 46,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Context",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-context"
+    },
+    {
+      "level": 2,
+      "title": "Presentation",
+      "number": "1.2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-presentation"
+    },
+    {
+      "level": 2,
+      "title": "Organisation of the paper",
+      "number": "1.3",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-organisation-of-the-paper"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries on the cubic Hecke algebras on 3 strands",
+      "number": "2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-2-preliminaries-on-the-cubic-hecke-algebras-on-3"
+    },
+    {
+      "level": 1,
+      "title": "Two BMW algebras as quotients of the braid groups",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-3-two-bmw-algebras-as-quotients-of-the-braid-gro"
+    },
+    {
+      "level": 1,
+      "title": "A universal cover for the two BMW algebras, and a shorter defining relation",
+      "number": "4",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-4-a-universal-cover-for-the-two-bmw-algebras-and"
+    },
+    {
+      "level": 1,
+      "title": "Traces on BMW\"0365BMWn",
+      "number": "5",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "General inductive properties",
+      "number": "5.1",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-51-general-inductive-properties"
+    },
+    {
+      "level": 2,
+      "title": "Restrictions to 3 strands, and the Ocneanu trace",
+      "number": "5.2",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-52-restrictions-to-3-strands-and-the-ocneanu-tra"
+    },
+    {
+      "level": 2,
+      "title": "The Kauffman trace",
+      "number": "5.3",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-53-the-kauffman-trace"
+    },
+    {
+      "level": 2,
+      "title": "An additional trace when y=a2= 1",
+      "number": "5.4",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-54-an-additional-trace-when-ya2-1"
+    },
+    {
+      "level": 1,
+      "title": "A central extension of BMW",
+      "number": "6",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-6-a-central-extension-of-bmw"
+    },
+    {
+      "level": 2,
+      "title": "Definition",
+      "number": "6.1",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-61-definition"
+    },
+    {
+      "level": 2,
+      "title": "A genuine extension of BMWn",
+      "number": "6.2",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-62-a-genuine-extension-of-bmwn"
+    },
+    {
+      "level": 2,
+      "title": "The algebra Fn as a specialization of BMW\"0365BMWn",
+      "number": "6.3",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-63-the-algebra-fn-as-a-specialization-of-bmw0365"
+    },
+    {
+      "level": 2,
+      "title": "Computations inside Fn",
+      "number": "6.4",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-64-computations-inside-fn"
+    },
+    {
+      "level": 2,
+      "title": "A central extension of the Temperley-Lieb algebra",
+      "number": "6.5",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-65-a-central-extension-of-the-temperley-lieb-alg"
+    },
+    {
+      "level": 2,
+      "title": "Splittings",
+      "number": "6.6",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-66-splittings"
+    },
+    {
+      "level": 2,
+      "title": "A central extension of the (-1)-Hecke algebras",
+      "number": "6.7",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-67-a-central-extension-of-the--1-hecke-algebras"
+    },
+    {
+      "level": 2,
+      "title": "The case x = -2a",
+      "number": "6.8",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Knot invariants",
+      "number": "7",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-7-knot-invariants"
+    },
+    {
+      "level": 2,
+      "title": "Number of connected components, special trace and change of variables",
+      "number": "7.1",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-71-number-of-connected-components-special-trace"
+    },
+    {
+      "level": 2,
+      "title": "The special case a = 1, b = j, c = j2",
+      "number": "7.2",
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The special case a =b=c= 1",
+      "number": "7.3",
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Tables",
+      "number": "7.4",
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-74-tables"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 46,
+      "pageLabel": "46",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 456,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "marin emmanuel",
+          "heading": false
+        },
+        {
+          "term": "bmw algebras",
+          "heading": false
+        },
+        {
+          "term": "emmanuel wagner",
+          "heading": false
+        },
+        {
+          "term": "ivan marin",
+          "heading": false
+        },
+        {
+          "term": "markov traces",
+          "heading": false
+        },
+        {
+          "term": "central extension",
+          "heading": false
+        },
+        {
+          "term": "shorter deﬁning",
+          "heading": false
+        },
+        {
+          "term": "temperley-lieb algebra",
+          "heading": false
+        }
+      ],
+      "extract": "MARKOV TRACES ON THE BIRMAN-WENZL-MURAKAMI ALGEBRAS Ivan Marin & Emmanuel Wagner LAMFA Universit´e de Picardie Jules-Verne 33 rue Saint Leu 80039 Amiens Cedex 1 France ivan.marin@u-picardie.fr — Institut de Math´ematiques de Bourgogne UMR 5584 Universit´e de Bourgogne 7 Avenue Alain Savary BP 47870 21078 Dijon Cedex France emmanuel.wagner@u-bourgogne.fr Abstract. We classify the Markov traces factoring through the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1403.4021v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "1. Introduction",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-context",
+      "number": "1.1",
+      "title": "Context",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 589,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "markov traces",
+          "heading": false
+        },
+        {
+          "term": "kauffman polynomial",
+          "heading": false
+        },
+        {
+          "term": "bmw",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": false
+        },
+        {
+          "term": "skein relations",
+          "heading": false
+        },
+        {
+          "term": "oriented links",
+          "heading": false
+        },
+        {
+          "term": "khovanov homology",
+          "heading": false
+        }
+      ],
+      "extract": "When the Jones and Homfly polynomial appeared, they were first described as Markov traces on the group algebra of the braid group, and therefore as invariants of oriented links produced by the virtue of Markov theorem. Indeed this theorem says that an invariant of oriented links is the same thing as a Markov trace on the tower of the group algebra of the braid group. This approach has had a great descent, on the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-presentation",
+      "number": "1.2",
+      "title": "Presentation",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 1047,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "widetilde bmw",
+          "heading": false
+        },
+        {
+          "term": "markov traces",
+          "heading": false
+        },
+        {
+          "term": "traces factoring",
+          "heading": false
+        },
+        {
+          "term": "kauffman trace",
+          "heading": false
+        },
+        {
+          "term": "additional markov",
+          "heading": false
+        },
+        {
+          "term": "ref propisombmwtilde",
+          "heading": false
+        },
+        {
+          "term": "ocneanu trace",
+          "heading": false
+        },
+        {
+          "term": "factoring through",
+          "heading": false
+        }
+      ],
+      "extract": "The origin of this work was the apparently innocent question to determine whether the `Kauffman trace', that is the Markov trace affording the Kauffman polynomial, was indeed the only Markov trace factoring through the BMW-algebra (in addition to the one factoring to the smaller Hecke algebra quotient). When we tried to answer this question, we faced another problem. First of all, it is well-known that there are two",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-organisation-of-the-paper",
+      "number": "1.3",
+      "title": "Organisation of the paper",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 353,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "array hline",
+          "heading": false
+        },
+        {
+          "term": "hline end",
+          "heading": false
+        },
+        {
+          "term": "markov traces",
+          "heading": false
+        },
+        {
+          "term": "dagger",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "bmw-algebra",
+          "heading": false
+        },
+        {
+          "term": "overline",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        }
+      ],
+      "extract": "The plan of the paper is as follows. In \\S 2 we compile a few results on the `cubic Hecke algebra' on 3 strands, namely the quotient of the group algebra of $B_3$ by a generic cubic relations $(s_i -a)(s_i-b)(s_i-c) = 0$. The finite-dimensionality as well as the symmetric algebra structure of this algebra is a crucial tool in the sequel. In \\S 3 and \\S 4 we explore the algebraic structure of the BMW-algebra, and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-2-preliminaries-on-the-cubic-hecke-algebras-on-3",
+      "number": "2",
+      "title": "Preliminaries on the cubic Hecke algebras on 3 strands",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 8,
+      "labelStart": "5",
+      "labelEnd": "8",
+      "words": 1825,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "noalign medskip",
+          "heading": false
+        },
+        {
+          "term": "ccc noalign",
+          "heading": false
+        },
+        {
+          "term": "array lcl",
+          "heading": false
+        },
+        {
+          "term": "medskip alpha",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "end array",
+          "heading": false
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "otimes varphi",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sectH3} In order to insure the coherence of notations with the forthcoming sections, we let $$ R = \\Q[a,a^{-1},b,b^{-1},c,c^{-1}] = \\Q[a,b,c,(abc)^{-1}],$$ although all the results of the present section are actually already valid with $R=\\Z[a,b,c,(abc)^{- 1}]$. We let $H_n$ denote the $R$-algebra defined as the quotient of the group algebra $R B_n$ of the braid group on $n$ strands by the relations",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-two-bmw-algebras-as-quotients-of-the-braid-gro",
+      "number": "3",
+      "title": "Two BMW algebras as quotients of the braid groups",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 13,
+      "labelStart": "8",
+      "labelEnd": "13",
+      "words": 1922,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bmw algebras",
+          "heading": true
+        },
+        {
+          "term": "overrightarrow infty",
+          "heading": false
+        },
+        {
+          "term": "sigma alpha",
+          "heading": false
+        },
+        {
+          "term": "alpha item",
+          "heading": false
+        },
+        {
+          "term": "frac alpha",
+          "heading": false
+        },
+        {
+          "term": "braid",
+          "heading": true
+        },
+        {
+          "term": "mapsto alpha",
+          "heading": false
+        },
+        {
+          "term": "alpha end",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{secttwobmwagebras} We still denote $R = \\Q[a,b,c,(abc)^{-1}]$ and let $S = R[(b+c)^{-1}]$, $S_{\\pm} = S/(a \\mp y)$. There are two variants of the Birman-Wenzl-Murakami algebras, one which can be defined over $S_+$, the other one over $S_-$. Usually, they are defined as a algebras over $\\Q[\\alpha,\\alpha^{-1}, q,q^{-1}, (q \\pm q^{-1})^{-1}]$, by generators $\\sigma_1,\\dots,\\sigma_{n-1}$, braid relations between",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-4-a-universal-cover-for-the-two-bmw-algebras-and",
+      "number": "4",
+      "title": "A universal cover for the two BMW algebras, and a shorter defining relation",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 19,
+      "labelStart": "13",
+      "labelEnd": "19",
+      "words": 3133,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bmw algebras",
+          "heading": true
+        },
+        {
+          "term": "wbmw otimes",
+          "heading": false
+        },
+        {
+          "term": "bmw dagger",
+          "heading": false
+        },
+        {
+          "term": "wbmw subset",
+          "heading": false
+        },
+        {
+          "term": "overline bmw",
+          "heading": false
+        },
+        {
+          "term": "maps wbmw",
+          "heading": false
+        },
+        {
+          "term": "bmw widetilde",
+          "heading": false
+        },
+        {
+          "term": "bmw oplus",
+          "heading": false
+        }
+      ],
+      "extract": "We still denote $R = \\Q[a,b,c,(abc)^{-1}]$, $S = R[(b+c)^{-1}]$. In all what follows, $\\Q$ could be replaced by $\\Z[\\frac{1}{2}]$ without damage ; however the invertibility of $2$ is crucial at several steps. Indeed, the BMW-algebras in characteristic 2 present very specific features (see \\cite{CABANESMARIN} for results in this direction). For $n \\geq 3$, we let $I_n$ denote the ideal of $H_n$ generated by the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-51-general-inductive-properties",
+      "number": "5.1",
+      "title": "General inductive properties",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": "19",
+      "labelEnd": "21",
+      "words": 727,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "overline bmw",
+          "heading": false
+        },
+        {
+          "term": "wbmw",
+          "heading": false
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "ref propstructgenwbmw",
+          "heading": false
+        },
+        {
+          "term": "begin prop",
+          "heading": false
+        },
+        {
+          "term": "end prop",
+          "heading": false
+        },
+        {
+          "term": "markov trace",
+          "heading": false
+        },
+        {
+          "term": "label prop",
+          "heading": false
+        }
+      ],
+      "extract": "The following proposition is a corollary of proposition \\ref{propstructgenWBMW} (ii). \\begin{prop} \\label{unicitetn1} For all $n \\geq 2$, $t_{n+1}$ is uniquely determined by $t_n$ and $t_{n+1}(1)$. \\end{prop} \\begin{proof} In the sequel, we abuse notations by letting $\\WBMW_r$ denote the image of $\\WBMW_r$ inside $\\WBMW_{n+1}$. We prove that, for all $r \\leq n+1$, $t_{n+1}$ is uniquely determined by $t_n$ and by its",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-52-restrictions-to-3-strands-and-the-ocneanu-tra",
+      "number": "5.2",
+      "title": "Restrictions to 3 strands, and the Ocneanu trace",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 762,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wbmw",
+          "heading": false
+        },
+        {
+          "term": "otimes dagger",
+          "heading": false
+        },
+        {
+          "term": "circ",
+          "heading": false
+        },
+        {
+          "term": "frac left",
+          "heading": false
+        },
+        {
+          "term": "mt3bmw",
+          "heading": false
+        },
+        {
+          "term": "begin prop",
+          "heading": false
+        },
+        {
+          "term": "end prop",
+          "heading": false
+        },
+        {
+          "term": "ref prop",
+          "heading": false
+        }
+      ],
+      "extract": "We recall that the notation $MT_3(M)$ was defined in section \\ref{sectH3}. We note that $$ t_3^H(1) = \\left( \\frac{y+1}{x} \\right)^2 \\ \\ t_3^H(s_1) =\\frac{y+1}{x} \\ \\ t_3^H(s_1s_2) = 1 \\ \\ $${} and define additional elements $t_3^S$, $t_3^K$ of $MT_3(M)$ by $$ t_3^S(1) = a^3,\\ \\ \\ \\ t_3^S(s_1) = t_3^S(s_1s_2) = 0, \\ \\ \\ \\ t_3^S((s_1s_2^{-1})^2)= x^2(2a+x), $$ {} $$ t_3^K(1) = \\delta_K^2,\\ \\ \\ \\ t_3^K(s_1) =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-53-the-kauffman-trace",
+      "number": "5.3",
+      "title": "The Kauffman trace",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 421,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "overline bmw",
+          "heading": false
+        },
+        {
+          "term": "bmw otimes",
+          "heading": false
+        },
+        {
+          "term": "cite licko",
+          "heading": false
+        },
+        {
+          "term": "licko proposition",
+          "heading": false
+        },
+        {
+          "term": "ref secttwobmwagebras",
+          "heading": false
+        },
+        {
+          "term": "delta frac",
+          "heading": false
+        },
+        {
+          "term": "kauffman",
+          "heading": true
+        },
+        {
+          "term": "markov trace",
+          "heading": false
+        }
+      ],
+      "extract": "Recall that we defined in \\S \\ref{secttwobmwagebras} two Markov traces $t_n^{\\pm} : BMW_n^{\\pm} \\to S_{\\pm}$. Using the Chinese Remainder Theorem isomorphism $\\overline{S} \\simeq S_+ \\oplus S_-$ they can be patched together into a Markov trace $\\overline{BMW}_n \\otimes_{\\overline{R}} \\overline{S} \\to \\overline{S}$, which extends to a Markov trace $t_n^K : \\WBMW_n \\to \\overline{S}$. $$ \\xymatrix{",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-54-an-additional-trace-when-ya2-1",
+      "number": "5.4",
+      "title": "An additional trace when y=a2= 1",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 855,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bmw dagger",
+          "heading": false
+        },
+        {
+          "term": "otimes dagger",
+          "heading": false
+        },
+        {
+          "term": "widetilde bmw",
+          "heading": false
+        },
+        {
+          "term": "markov trace",
+          "heading": false
+        },
+        {
+          "term": "wbmw",
+          "heading": false
+        },
+        {
+          "term": "a-x",
+          "heading": false
+        },
+        {
+          "term": "ccc delta",
+          "heading": false
+        },
+        {
+          "term": "exists markov",
+          "heading": false
+        }
+      ],
+      "extract": "Let $S^{\\dagger\\dagger} = S/(a^2-1,y-1) = S^{\\dagger}/(a^2-y^2) = \\overline{S}/(a^2-y)$, and $BMW_n^{\\dagger\\dagger} = \\WBMW_n \\otimes_R S^{\\dagger \\dagger}$. We first deal with the very special case $x = -2a$. \\begin{prop} \\label{propTracesXm2a} Let $(x_n)_{n \\geq 1}$ denote a sequence with values in some $S^{\\dagger\\dagger}$-module satisfying $(x+2a) M = 0$. Then there exists a Markov trace $(t_n^X)$ on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-6-a-central-extension-of-bmw",
+      "number": "6",
+      "title": "A central extension of BMW",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": "24",
+      "labelEnd": "24",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-012-61-definition",
+      "number": "6.1",
+      "title": "Definition",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 26,
+      "labelStart": "24",
+      "labelEnd": "26",
+      "words": 753,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bmw dagger",
+          "heading": false
+        },
+        {
+          "term": "tilde delta",
+          "heading": false
+        },
+        {
+          "term": "otimes dagger",
+          "heading": false
+        },
+        {
+          "term": "frac tilde",
+          "heading": false
+        },
+        {
+          "term": "enumerate item",
+          "heading": false
+        },
+        {
+          "term": "markov trace",
+          "heading": false
+        },
+        {
+          "term": "delta right",
+          "heading": false
+        },
+        {
+          "term": "through bmw",
+          "heading": false
+        }
+      ],
+      "extract": "We define an algebra $F_n$ over $A = \\Q[a,x,x^{-1}]/(a^2 = 1)$ by generators $s_1,\\dots,s_{n-1}$, $e_1,\\dots,e_{n-1},C$ and relations \\begin{enumerate} \\item $s_i s_{i+1} s_i = s_{i+1} s_i s_{i+1}$, $s_i s_j = s_j s_j$ \\item $(s_i -a)(s_i^2 -x s_i+1)=0$ \\item $e_i = a \\left( \\frac{ s_i^{-1} + s_i}{x} - 1 \\right)$ \\item $s_i e_i = a e_i$ \\item $e_i s_{i+1} e_i = e_i+C$ \\item $e_i s_{i-1} e_i = e_i+C$ \\item $e_i",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-62-a-genuine-extension-of-bmwn",
+      "number": "6.2",
+      "title": "A genuine extension of BMWn",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "26",
+      "labelEnd": "27",
+      "words": 627,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dim bmw",
+          "heading": false
+        },
+        {
+          "term": "free module",
+          "heading": false
+        },
+        {
+          "term": "every morphism",
+          "heading": false
+        },
+        {
+          "term": "get surjective",
+          "heading": false
+        },
+        {
+          "term": "genuine",
+          "heading": true
+        },
+        {
+          "term": "injective",
+          "heading": false
+        },
+        {
+          "term": "letting denote",
+          "heading": false
+        },
+        {
+          "term": "a-module",
+          "heading": false
+        }
+      ],
+      "extract": "n . Using the abelianization morphism Bn ↠Z we can deﬁne a 3-dimensional Hn ⊗R S††-module by si 7→   a 1 0 0 b 1 0 0 b−1   It is easily checked that R1 acts by 0 in this module, hence we get a 3-dimensional BMW †† n - module. We get that ei = a((si + s−1 i )/x −1) is mapped to   (ab−1)(−b+a) b2+1 ab−1 b2+1 b b2+1 0 0 0 0 0 0   while eisi+1ei −ei and eis−1 i+1ei −ei are both mapped to 2ab −b2 −1 (b2 + 1)2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-63-the-algebra-fn-as-a-specialization-of-bmw0365",
+      "number": "6.3",
+      "title": "The algebra Fn as a specialization of BMW\"0365BMWn",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 32,
+      "labelStart": "27",
+      "labelEnd": "32",
+      "words": 3326,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "s1s r1s",
+          "heading": false
+        },
+        {
+          "term": "bmw",
+          "heading": true
+        },
+        {
+          "term": "r2s",
+          "heading": false
+        },
+        {
+          "term": "marin emmanuel",
+          "heading": false
+        },
+        {
+          "term": "emmanuel wagner",
+          "heading": false
+        },
+        {
+          "term": "ivan marin",
+          "heading": false
+        },
+        {
+          "term": "algebras bmw",
+          "heading": false
+        },
+        {
+          "term": "specialization",
+          "heading": true
+        }
+      ],
+      "extract": "BMW n. The goal of this section is to prove the following theorem. Theorem 6.8. The morphism of S††-algebras BMW †† n →Fn ⊗A S†† induces an isomorphism after tensorisation by S††[(x + 2a)−1]. We deﬁne Si = eisi+1ei−ei, S′ i = eis−1 i+1ei−ei ∈Hn⊗RS††, and also c Ri = (sisi+1si)Ri(sisi+1si)−1, and similarly bSi = (sisi+1si)(Si)(sisi+1si)−1. The two formulas below hold inside H3 ⊗S†† and can be checked computationally",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-64-computations-inside-fn",
+      "number": "6.4",
+      "title": "Computations inside Fn",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 32,
+      "labelStart": "32",
+      "labelEnd": "32",
+      "words": 243,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac tilde",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "tilde delta",
+          "heading": false
+        },
+        {
+          "term": "wenzl",
+          "heading": false
+        },
+        {
+          "term": "i-e",
+          "heading": false
+        }
+      ],
+      "extract": "Following the arguments of Wenzl in \\cite{WENZL} p. 400 we can derive additional useful relations inside $F_n$. \\begin{lemma} \\label{lemformulesFsee}Assume $|j-i| = 1$. Then we have \\begin{enumerate} \\item $s_j s_i e_j = e_i s_j s_i$ \\item $s_i e_j e_i = a s_j^{-1} e_i + C$, $e_i e_j s_i = a e_i s_j^{-1} + C$ \\item $e_i e_j e_i = e_i + \\frac{2a}{x} C$ \\item $e_i s_j s_i = a e_i e_j -C$ \\end{enumerate} \\end{lemma}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-65-a-central-extension-of-the-temperley-lieb-alg",
+      "number": "6.5",
+      "title": "A central extension of the Temperley-Lieb algebra",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 35,
+      "labelStart": "32",
+      "labelEnd": "35",
+      "words": 1153,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "otimes dagger",
+          "heading": false
+        },
+        {
+          "term": "temperley-lieb algebra",
+          "heading": true
+        },
+        {
+          "term": "overline dagger",
+          "heading": false
+        },
+        {
+          "term": "bar dots",
+          "heading": false
+        },
+        {
+          "term": "inside widetilde",
+          "heading": false
+        },
+        {
+          "term": "bmw otimes",
+          "heading": false
+        },
+        {
+          "term": "j-i geq",
+          "heading": false
+        },
+        {
+          "term": "morphism widetilde",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{defi} We define a unital algebra $\\widetilde{TL}_n$ over $A = \\Q[a,x,x^{-1}]/(a^2 = 1)$ by generators $e_1,\\dots,e_{n-1},C$ and relations \\begin{enumerate} \\item $e_i^2 = \\tilde{\\delta}x^{-1} e_i$ \\item $e_i C = C e_i = \\tilde{\\delta} x^{-1} C$ \\item $C^2 = 2 x^{-2} \\tilde{\\delta}(a-x) C$ \\item $e_i e_j = e_j e_i $ if $|j-i| \\geq 2$ \\item $e_i e_j e_i = e_i + \\frac{2a}{x} C$ if $|j-i| = 1$ \\end{enumerate}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-66-splittings",
+      "number": "6.6",
+      "title": "Splittings",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 36,
+      "labelStart": "35",
+      "labelEnd": "36",
+      "words": 713,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mapsto check",
+          "heading": false
+        },
+        {
+          "term": "otimes dagger",
+          "heading": false
+        },
+        {
+          "term": "expanding check",
+          "heading": false
+        },
+        {
+          "term": "check frac",
+          "heading": false
+        },
+        {
+          "term": "otimes varphi",
+          "heading": false
+        },
+        {
+          "term": "iff varphi",
+          "heading": false
+        },
+        {
+          "term": "get check",
+          "heading": false
+        },
+        {
+          "term": "a-x",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we show that our extension of the BMW-algebra is not split exactly in the two cases we are interested in. \\begin{prop} \\label{propsplittingsBMW} Let $k$ be a field of characteristic $0$ and $\\varphi: S^{\\dagger\\dagger}_{\\pm} \\to k$ a morphism of $\\Q$-algebras. Then, for $n \\geq 3$, the natural short exact sequence $0 \\to k C \\to (F_n \\otimes_A S^{\\dagger\\dagger}_{\\pm} ) \\otimes_{\\varphi} k \\to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-67-a-central-extension-of-the--1-hecke-algebras",
+      "number": "6.7",
+      "title": "A central extension of the (-1)-Hecke algebras",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 42,
+      "labelStart": "36",
+      "labelEnd": "42",
+      "words": 4412,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "s-a",
+          "heading": false
+        },
+        {
+          "term": "t-a",
+          "heading": false
+        },
+        {
+          "term": "underbrace tsts",
+          "heading": false
+        },
+        {
+          "term": "underbrace stst",
+          "heading": false
+        },
+        {
+          "term": "tsts dots",
+          "heading": false
+        },
+        {
+          "term": "hat tilde",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": true
+        },
+        {
+          "term": "underline underbrace",
+          "heading": false
+        }
+      ],
+      "extract": "We introduce the two-sided ideal $F_n^+$ of $F_n$ generated by $e_1,\\dots,e_{n-1},C$, and we let $F_n^{++}$ denote the ideal $(F_n^+)^2$. Inside $F_n/F_n^{++}$ we have $e_i = -C$ for all $i$, and therefore $\\tilde{\\delta} x^{-1} C = e_i C = -C^2 = -2 \\tilde{\\delta}(a-x)C$, that is $\\left( \\frac{\\tilde{\\delta}}{x} \\right)^2 a C = 0$. We thus let $\\overline{F}_n$ denote the quotient of $F_n(0) = F_n \\otimes_A A_0$ by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-7-knot-invariants",
+      "number": "7",
+      "title": "Knot invariants",
+      "level": 1,
+      "pageStart": 42,
+      "pageEnd": 42,
+      "labelStart": "42",
+      "labelEnd": "42",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-020-71-number-of-connected-components-special-trace",
+      "number": "7.1",
+      "title": "Number of connected components, special trace and change of variables",
+      "level": 2,
+      "pageStart": 42,
+      "pageEnd": 44,
+      "labelStart": "42",
+      "labelEnd": "44",
+      "words": 1346,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "overline bmw",
+          "heading": false
+        },
+        {
+          "term": "licko table",
+          "heading": false
+        },
+        {
+          "term": "cite licko",
+          "heading": false
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "markov traces",
+          "heading": false
+        },
+        {
+          "term": "hat beta",
+          "heading": false
+        },
+        {
+          "term": "markov property",
+          "heading": false
+        },
+        {
+          "term": "ref proprelrecutracefn",
+          "heading": false
+        }
+      ],
+      "extract": "If $\\beta$ is a braid on $n$ strands, then its closure $L$ is an oriented link. As before, we denote $\\ell : B_n \\to \\Z$ the abelianization morphism which maps $\\sigma_i$ to $1$. We will use the following classical fact : \\begin{lemma} \\label{lemwrithe} If $\\beta \\in B_n$ and $L$ is the closure of $\\beta$, then $n+\\ell(\\beta) \\equiv (\\# L) \\mod 2$, where $\\# L$ denote the number of components of the link $L$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-74-tables",
+      "number": "7.4",
+      "title": "Tables",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 46,
+      "labelStart": "44",
+      "labelEnd": "46",
+      "words": 699,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lcc hline",
+          "heading": false
+        },
+        {
+          "term": "bar hline",
+          "heading": false
+        },
+        {
+          "term": "array lcc",
+          "heading": false
+        },
+        {
+          "term": "knot hline",
+          "heading": false
+        },
+        {
+          "term": "link hline",
+          "heading": false
+        },
+        {
+          "term": "hline end",
+          "heading": false
+        },
+        {
+          "term": "bar mbox",
+          "heading": false
+        },
+        {
+          "term": "array begin",
+          "heading": false
+        }
+      ],
+      "extract": "We gather here some computations that we made of these two invariants, one of them (for $x =a$) being still conjectural. $$ \\begin{array}{|lcc|lcc|lcc|} \\hline Knot & x=a & x=2a &Knot & x=a & x=2a &Knot & x=a & x=2a \\\\ \\hline 0_{1} & & & 3_{1} & 4 & 0 & 4_{1} &10 & 16 \\\\ \\hline 5_{1} & 1 & 0 & 5_{2} &13 &48 & 6_{1} & 7& 80 \\\\ \\hline 6_{2} &13 &96 & 6_{3} & 25 & 144 & 7_{1} & 1 & 0 \\\\ \\hline 7_{2} & -2 & 112 & 7_{3}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 46,
+      "pageEnd": 46,
+      "labelStart": "46",
+      "labelEnd": "46",
+      "words": 379,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "marin",
+          "heading": false
+        },
+        {
+          "term": "pure applied",
+          "heading": false
+        },
+        {
+          "term": "applied algebra",
+          "heading": false
+        },
+        {
+          "term": "groupes",
+          "heading": false
+        },
+        {
+          "term": "wenzl",
+          "heading": false
+        },
+        {
+          "term": "hecke",
+          "heading": false
+        }
+      ],
+      "extract": "[1] J. Birman, H. Wenzl, Braids, link polynomials and a new algebra, Trans. Amer. Math. Soc. 313 (1989), 249–273. [2] N. Bourbaki, Groupes et alg`ebres de Lie, chapitres 4,5,6, Masson, Paris, 1981. [3] D. Benson, K. Erdmann, A. Mikaelian, Cohomology of Hecke algebras, Homology, Homotopy Appl. 12 (2010), 353–370. [4] M. Brou´e, G. Malle, Zyklotomische Heckealgebren, in Repr´esentations unipotentes g´en´eriques et",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "bmw dagger",
+      "heading": false
+    },
+    {
+      "term": "bmw otimes",
+      "heading": false
+    },
+    {
+      "term": "overline bmw",
+      "heading": false
+    },
+    {
+      "term": "bmw algebra",
+      "heading": true
+    },
+    {
+      "term": "bmw widetilde",
+      "heading": false
+    },
+    {
+      "term": "through bmw",
+      "heading": false
+    },
+    {
+      "term": "bmw oplus",
+      "heading": false
+    },
+    {
+      "term": "dim bmw",
+      "heading": false
+    },
+    {
+      "term": "dagger wbmw",
+      "heading": false
+    },
+    {
+      "term": "trace dagger",
+      "heading": false
+    },
+    {
+      "term": "inside dagger",
+      "heading": false
+    },
+    {
+      "term": "markov trace",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Skein relations for the Kauﬀman polynomial of unoriented links The fact that the value of such a trace on braids lies inside the S± is a consequence of the following probably classical lemma",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Decomposition of V ⊗V and V ⊗V ⊗V",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Eigenvalues of the braid action",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "6-terms deﬁning relation for ^",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Diagrammatic relations for ^",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "For a = 1, 2(x + 2)2x4(S1 −S2) to be continued",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "For a = 1, 2(x + 2)2x4(S1 −S2), continued",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "For a = 1, 2(x + 2)2x4(S1 −S2), last part",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Closure of a Temperley-Lieb diagram with 2 components",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 27,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 24,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "8 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p46); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 24 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1403.4021v2"
+  }
+}

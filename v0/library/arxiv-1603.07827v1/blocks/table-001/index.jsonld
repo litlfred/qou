@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "library/arxiv-1603.07827v1/blocks/table-001",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "kind": "table",
+  "label": "Table 1",
+  "file": "../tables/table-1.csv",
+  "headers": [
+    "1.",
+    "R.J. Baxter. Exactly Solved Models in Statistical Mechanics. Acad. Press (1982)."
+  ],
+  "pageStart": 14,
+  "pageEnd": 15,
+  "derivedFrom": "library/arxiv-1603.07827v1/sections/sec-010",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1603.07827v1",
+  "provenance": "ingested"
+}

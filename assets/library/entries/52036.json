@@ -1,0 +1,279 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "52036",
+  "blocks": [
+    {
+      "id": "library/52036/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "Torus Knots Extremizing the Mobius Energy\n\nDenise Kim and Rob Kusner\n\nCONTENTS\n\n. Introduction\n\n. Mobius Invariance\n\n. Torus Knots and Symmetric Criticality\n. Torus Links\n\n. Discretization and Computer Experiments\n\nDau ktWwn =\n\n. Further Experiments\nAcknowledgements\nReferences\n\nSoftware Availability\n\nThis work was accomplished while the authors were at the\nInstitute for Advanced Study, and was partly supported by an\nNSF Postdoctoral Fellowship.\n\nUsing the principle of symmetric criticality [Palais 1979], we\nconstruct torus knots and links that extremize the Mébius-\ninvariant energy introduced",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/52036/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "2 Experimental Mathematics, Vol. 2 (1993), No. 1\n\nIn this article we construct the first explicit ex-\namples of knotted curves that are critical for E.\nOur basic observation is that the Mébius-invariant\nenergy E extends naturally to simple closed curves\nI. c R™ (Section 2). In particular, if T is a simple\nclosed curve in S? C R‘ and o : S? + R?Uco\nis stereographic projection, then E(o(I)) = E(L)\nprovided o([) C R®. Then we use the principle of\nsymmetric criticality (Section 3) to show that for\neach relatively prime pair of integers (p, q) there is\na (p,q)-torus knot T,,, C S® critical for E. T",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/52036/blocks/cor-page-003-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "cor-page-003-01.md",
+      "narrative": null,
+      "content": "If T c S™ Cc R™** is a Cl\" simple S™ — R™ Uo is stereo- graphic projection, then E(a()) = E(L) provided o(f) CR”.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/52036/blocks/lem-page-003-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "lem-page-003-02.md",
+      "narrative": null,
+      "content": "The knot T,,4(r) is critical for the Mobius energy E if and only if",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/52036/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "Note that the 4a/e term here precisely cancels a\ncorresponding singular term from the first inte-\ngral. This is the “regularization” of E introduced\nin [O’Hara 1991].\n\nStereographic projection extends to a Mébius\ntransformation of R™*! U oo, so we deduce:\n\nCorollary. If T c S™ Cc R™** is a Cl\" simple\nS™ — R™ Uo is stereo-\ngraphic projection, then E(a()) = E(L) provided\no(f) CR”.\n\nclosed curve and o :\n\n3. TORUS KNOTS AND SYMMETRIC CRITICALITY\n\nFor each pair (p, q) of integers, there is an isometric\naction ap,q of S' on the unit sphere S? c R* = C?,\n\ndefined by\nanal\"): (5) > (Sora)\n\nThis action",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/52036/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "4\n\nExperimental Mathematics, Vol. 2 (1993), No. 1\n\nComputing the Mébius Energy of Torus Knots by Residue Calculus\nRob Kusner and Gil Stengle\n\nTo compute the Mobius energy E(r) of the orbital torus knot T’p,4(r) of (3.2), we first rescale so the knot has\nthe parametrization (r e’?”,e’7”), and then use the definition of E:\n\nQn pytr rp? + @2\npi+q 1\n£0) = [ay [ dz| =; San - p> 5\n0 dyn \\ rem — eu? + [elem — claw (@—y)\n\njon [ as( —— ete\n= r2|etps — 1]? + Jetas — 1)? 32)?\n\nwhere we have made the substitution s = x — y. In each of the cases (p,q) = (1,0), (0,1) or (1,1), the orbit\nT,,,q(7) is a round",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/52036/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": ", §6], but its linearity is the only property we\nneed here.)\n\nSuppose that [ is not critical, so there exists a\nfield V such that dE(V) 4 0. Since T is an orbit of\nthe S1-action a = a»,4, we can average the push-\nforward (a(e\")). V over $1 to obtain an a-invariant\nvector field V for which dE(V) # 0 as well.\n\nNow V induces a variation through a-orbits, so\nwe can view V as tangent to the orbit space § =\n8p,q at TP. But\n\ndE\\s = OF dn at = oF ar,\nbecause knots with same ¢ have the same energy.\nThus dE|s(V) = dE(V) 4 0 implies 0E/r 4 0,\nas required. Oo\n\nWe come next to our main result.\n\nTheorem 1.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/52036/blocks/thm-page-005-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "thm-page-005-01.md",
+      "narrative": null,
+      "content": "For each relatively prime pair of inte- gers p and q greater than 1, there is a (p,q)-torus knot Tq C S® that is critical for the Mébius en- ergy E. The knot Tpq is a principal orbit of the S1-action Gp defined above.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/52036/blocks/cor-page-006-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "cor-page-006-02.md",
+      "narrative": null,
+      "content": "For any k, the Hopf link T;,,,(1) is E- critical.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/52036/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "6 Experimental Mathematics, Vol. 2 (1993), No. 1\n\nTheorem 2. For each relatively prime pair of inte-\ngers p,q > 1 and each k > 1, there is a (kp, kq)-\ntorus link Vpp,4q which minimizes E among k-com-\nponent links invariant under S' x Cy, and which is\ntherefore critical for E. In particular, there are in-\nfinitely many E-critical links with any number of\ncomponents.\n\nA (k,k)-torus link is a particular case of a Hopf\nlink, that is, a link whose component curves are\norbits of the Hopf action a;;. A Hopf link can\nbe regarded as a collection of points in the orbit\nspace 8; = S?; the case of [.,(7)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/52036/blocks/thm-page-006-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "thm-page-006-01.md",
+      "narrative": null,
+      "content": "For each relatively prime pair of inte- gers p,q > 1 and each k > 1, there is a (kp, kq)- torus link Vpp,4q which minimizes E among k-com- ponent links invariant under S' x Cy, and which is therefore critical for E. In particular, there are in- finitely many E-critical links with any number of components.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/52036/blocks/def-page-007-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "def-page-007-01.md",
+      "narrative": null,
+      "content": "The discrete energy of a polygon with vertices y : Z/nZ — R” is",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/52036/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "phenomenon illustrates the conjectured behavior,\ndiscussed in Section 1, of an E-minimizing (p, q)-\ntorus knot for p and q large. Further results on\nHopf links are given in [Kusner and Sullivan].\n\n5. DISCRETIZATION AND COMPUTER EXPERIMENTS\n\nGiven a C!! knot [.: S$! = R/27Z > R”™, and\na sufficiently large integer n, the polygon y with\nvertices y(h) = T(2ah/n), for 1 < h <n, is a knot\nisotopic to T, which we call a polygonal approxima-\ntion to T. One possible way to approximate E(I)\ndiscretely would be simply to use E(), but this en-\nergy unfortunately is infinite! It can be regularized,\nby dele",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/52036/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "8 Experimental Mathematics, Vol. 2 (1993), No. 1\n\nThese two programs are publicly available, to-\ngether with their link counterparts, called tle.m\nand toruslinkenergy.f. For details, see “Soft-\nware Availability” at the end of the article.\n\nAs a further check, we compared the computed\nvalues of E and r,,, under an interchange of p and\nq. As expected, E remains the same, while r,q is\nreplaced by its reciprocal, to within the chosen ac-\ncuracy. (In the case of tke.m, the default accuracy\nof the minimum search is six significant digits for r,\nbut any desired accuracy can be specified, subject\nonl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/52036/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "Kim and Kusner: Torus Knots Extremizing the Mébius Energy\n\nDenise Kim, Department of Physics, University of Massachusetts, Amherst, MA 01003 (kim@gang.umass.edu)\n\nRob Kusner, Department of Mathematics, University of Massachusetts, Amherst, MA 01003\n(kusner@math.umass.edu)\n\nGil Stengle, Department of Mathematics, Lehigh University, Bethlehem, PA 18015 (gas0@lehigh.edu)\n\nReceived February 6, 1993; accepted in revised form April 27\n\n9",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0006051v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0006051v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "[]{#sec:intro label=\"sec:intro\"} The finite logarithm was introduced by Kontsevich (under the name \"The $1\\frac{1}{2}$ logarithm\") in [@Kon99]. The finite logarithm is the case $n=1$ of the $n$-th polylogarithm $\\operatorname{li}_n\\in \\mathbb{Z}/p[z]$ defined by $\\operatorname{li}_n(z)= \\sum_{k=1}^{p-1} z^k/k^n$. In loc. cit. Kontsevich proved that the finite logarithm satisfies a 4-term functional equation, known as the fundamental equation of information theory. The same functional equation is satisfied by the so called infinitesimal dilogarithm $-(x\\log|x|+(1-x)\\log|1-x|)$. Cathelineau [@Ca",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006051v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0006051v1  [math.NT]  7 Jun 2000\nFINITE AND p-ADIC POLYLOGARITHMS\nAMNON BESSER",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006051v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The proof",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-2-the-proof.md",
+      "narrative": null,
+      "content": "[]{#sec:proof label=\"sec:proof\"}\n\nThe connection between $p$-adic and finite polylogarithms is made by the following\n\n::: proposition\nLet $\\operatorname{Li}^{(p)}_n(z):= \\operatorname{Li}_n(z)- \\operatorname{Li}_n(z^p)/p^n$. Then $\\operatorname{Li}^{(p)}_n(X) \\subset\n  W$ and the function $\\operatorname{Li}^{(p)}_n$ reduces modulo $p$ to $(1-z^p)^{-1}\n  \\operatorname{li}_n(z)$.\n:::\n\n::: proof\n*Proof.* According to [@Col82], the function $\\operatorname{Li}^{(p)}_n(z)$ can be computed as $$\\operatorname{Li}^{(p)}_n(z)= \\int_{\\mathbb{Z}_p^\\times}x^{-n} d\\mu_z(x)\\;,$$ where $\\mu_z$ is the measure",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0006051v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Another proof of the main result",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-3-another-proof-of-the-main-result.md",
+      "narrative": null,
+      "content": "[]{#sec:another label=\"sec:another\"}\n\nIn this section we sketch another proof of the main result. This proof has two interesting features: First of all, it proves directly the formula for $F_n$ in terms of the functions $L_n(z)$ defined at the end of the last section. This formula is of course simpler than the original formula. The other feature is that the key ingredient in the proof is a formula, discovered by Rob de Jeu and the author, which seems to be of some further importance. This formula shows up in the computation of syntomic regulators. These two features suggest that the proof to b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

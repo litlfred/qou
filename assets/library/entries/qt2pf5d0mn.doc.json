@@ -1,0 +1,2311 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "qt2pf5d0mn",
+  "title": "UC Santa Barbara",
+  "variant": "pdf",
+  "pages": 106,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Curriculum Vitae",
+      "number": null,
+      "page": 2,
+      "pageLabel": "ii",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Abstract",
+      "number": null,
+      "page": 7,
+      "pageLabel": "vi",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-abstract"
+    },
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 10,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Higher Categories",
+      "number": null,
+      "page": 15,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-higher-categories"
+    },
+    {
+      "level": 2,
+      "title": "Ribbon Fusion Categories",
+      "number": null,
+      "page": 16,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-ribbon-fusion-categories"
+    },
+    {
+      "level": 2,
+      "title": "G-crossed Braided Spherical Fusion Categories (G-BSFC)",
+      "number": null,
+      "page": 32,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-g-crossed-braided-spherical-fusion-categories-g"
+    },
+    {
+      "level": 2,
+      "title": "Monoidal 2-categories with Duals",
+      "number": null,
+      "page": 36,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-monoidal-2-categories-with-duals"
+    },
+    {
+      "level": 1,
+      "title": "Invariants of 4-manifolds",
+      "number": null,
+      "page": 42,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-invariants-of-4-manifolds"
+    },
+    {
+      "level": 2,
+      "title": "Partition Function",
+      "number": null,
+      "page": 43,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-partition-function"
+    },
+    {
+      "level": 2,
+      "title": "A Formula for the Partition Function",
+      "number": null,
+      "page": 51,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-a-formula-for-the-partition-function"
+    },
+    {
+      "level": 2,
+      "title": "Examples",
+      "number": null,
+      "page": 54,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-examples"
+    },
+    {
+      "level": 2,
+      "title": "Variation: Trivial G-grading",
+      "number": null,
+      "page": 59,
+      "pageLabel": "50",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-variation-trivial-g-grading"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Invariance",
+      "number": null,
+      "page": 62,
+      "pageLabel": "53",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-proof-of-invariance"
+    },
+    {
+      "level": 2,
+      "title": "Invariance under Choice of Representatives",
+      "number": null,
+      "page": 62,
+      "pageLabel": "53",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-invariance-under-choice-of-representatives"
+    },
+    {
+      "level": 2,
+      "title": "Invariance under change of ordering",
+      "number": null,
+      "page": 67,
+      "pageLabel": "58",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-invariance-under-change-of-ordering"
+    },
+    {
+      "level": 2,
+      "title": "Pachner Moves",
+      "number": null,
+      "page": 81,
+      "pageLabel": "72",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-pachner-moves"
+    },
+    {
+      "level": 2,
+      "title": "Invariance under Pachner Moves",
+      "number": null,
+      "page": 83,
+      "pageLabel": "74",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-invariance-under-pachner-moves"
+    },
+    {
+      "level": 1,
+      "title": "Future Directions and Open Questions",
+      "number": null,
+      "page": 100,
+      "pageLabel": "91",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-future-directions-and-open-questions"
+    },
+    {
+      "level": 1,
+      "title": "Bibliography",
+      "number": null,
+      "page": 103,
+      "pageLabel": "94",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-bibliography"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 8,
+      "labelStart": "i",
+      "labelEnd": "vii",
+      "words": 649,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xingshan cui",
+          "heading": false
+        },
+        {
+          "term": "professor zhenghan",
+          "heading": false
+        },
+        {
+          "term": "zhenghan wang",
+          "heading": false
+        },
+        {
+          "term": "professor darren",
+          "heading": false
+        },
+        {
+          "term": "professor michael",
+          "heading": false
+        },
+        {
+          "term": "santa barbara",
+          "heading": false
+        },
+        {
+          "term": "professor stephen",
+          "heading": false
+        },
+        {
+          "term": "michael freedman",
+          "heading": false
+        }
+      ],
+      "extract": "UC Santa Barbara UC Santa Barbara Electronic Theses and Dissertations Title Higher Categories and Topological Quantum Field Theories Permalink https://escholarship.org/uc/item/2pf5d0mn Author Cui, Xingshan Publication Date 2016 Peer reviewed|Thesis/dissertation eScholarship.org Powered by the California Digital Library University of California University of California Santa Barbara Higher Categories and Topological",
+      "extractCut": true,
+      "blocks": [
+        "library/qt2pf5d0mn/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-abstract",
+      "number": null,
+      "title": "Abstract",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "vii",
+      "labelEnd": "1",
+      "words": 530,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "g-crossed braided",
+          "heading": false
+        },
+        {
+          "term": "braided spherical",
+          "heading": false
+        },
+        {
+          "term": "spherical fusion",
+          "heading": false
+        },
+        {
+          "term": "fusion categories",
+          "heading": false
+        },
+        {
+          "term": "fusion category",
+          "heading": false
+        },
+        {
+          "term": "pachner moves",
+          "heading": false
+        },
+        {
+          "term": "higher categories",
+          "heading": false
+        },
+        {
+          "term": "known invariants",
+          "heading": false
+        }
+      ],
+      "extract": "Higher Categories and Topological Quantum Field Theories by Xingshan Cui We give a construction of Turaev-Viro type (3+1)-TQFT out of a G-crossed braided spherical fusion category for G a ﬁnite group. The resulting invariant of 4-manifolds generalizes several known invariants in literature such as the Crane-Yetter invariant and Yetter’s invariant from homotopy 2-types. Some concrete examples will be provided to show",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 15,
+      "labelStart": "1",
+      "labelEnd": "6",
+      "words": 1609,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "crane-yetter invariant",
+          "heading": false
+        },
+        {
+          "term": "spherical fusion",
+          "heading": false
+        },
+        {
+          "term": "weak n-categories",
+          "heading": false
+        },
+        {
+          "term": "braided fusion",
+          "heading": false
+        },
+        {
+          "term": "constructing tqfts",
+          "heading": false
+        },
+        {
+          "term": "g-crossed braided",
+          "heading": false
+        },
+        {
+          "term": "spherical categories",
+          "heading": false
+        },
+        {
+          "term": "dijkgraaf-witten invariant",
+          "heading": false
+        }
+      ],
+      "extract": "The notion of a topological quantum ﬁeld theory (TQFT) was invented by E. Witten based on path integrals in physics [1]. M. Atiyah gave a mathematical formulation of TQFTs [2]. Since then there has been a vast study of TQFTs both from the physics side and mathematics side. Roughly speaking, a (d + 1)-TQFT associates to every d- manifold a Hilbert space and to every (d + 1)-manifold a vector in the Hilbert space",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-higher-categories",
+      "number": null,
+      "title": "Higher Categories",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 247,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "higher categories",
+          "heading": true
+        },
+        {
+          "term": "g-bsfc",
+          "heading": false
+        },
+        {
+          "term": "morphisms",
+          "heading": false
+        },
+        {
+          "term": "letters",
+          "heading": false
+        },
+        {
+          "term": "spherical",
+          "heading": false
+        },
+        {
+          "term": "monoidal",
+          "heading": false
+        }
+      ],
+      "extract": "In this chapter, we give a brief review of categories with extra structures such as tensor product, dual, braiding, etc. The ultimate goal of this chapter is to introduce G-crossed braided spherical fusion categories (G-BSFC) in Section 2.2, which are the input to the (3+1) topological quantum ﬁeld theory to be deﬁned in Section 3.1. All of these categories are special examples of higher categories, e.g., 2-, 3-,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-ribbon-fusion-categories",
+      "number": null,
+      "title": "Ribbon Fusion Categories",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 32,
+      "labelStart": "7",
+      "labelEnd": "23",
+      "words": 4032,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ribbon fusion",
+          "heading": true
+        },
+        {
+          "term": "fusion categories",
+          "heading": true
+        },
+        {
+          "term": "c-linear pivotal",
+          "heading": false
+        },
+        {
+          "term": "strict monoidal",
+          "heading": false
+        },
+        {
+          "term": "monoidal category",
+          "heading": false
+        },
+        {
+          "term": "spherical fusion",
+          "heading": false
+        },
+        {
+          "term": "rigid monoidal",
+          "heading": false
+        },
+        {
+          "term": "monoidal functor",
+          "heading": false
+        }
+      ],
+      "extract": "A is denoted by IA or I when it is clear from the context what the sub index should be. 2.1 Ribbon Fusion Categories In this section, we give a review of monoidal category theories, which are the prelim- inaries to the concept of G-crossed braided spherical fusion categories. In the following subsections, we will talk about some basic ingredients such as tensor product, dual, braiding, fusion, etc. 2.1.1 Monoidal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-g-crossed-braided-spherical-fusion-categories-g",
+      "number": null,
+      "title": "G-crossed Braided Spherical Fusion Categories (G-BSFC)",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 36,
+      "labelStart": "23",
+      "labelEnd": "27",
+      "words": 1046,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "g-crossed braided",
+          "heading": true
+        },
+        {
+          "term": "braided spherical",
+          "heading": true
+        },
+        {
+          "term": "spherical fusion",
+          "heading": true
+        },
+        {
+          "term": "fusion categories",
+          "heading": true
+        },
+        {
+          "term": "g-bsfc",
+          "heading": true
+        },
+        {
+          "term": "fusion category",
+          "heading": false
+        },
+        {
+          "term": "crossed braiding",
+          "heading": false
+        },
+        {
+          "term": "g-action",
+          "heading": false
+        }
+      ],
+      "extract": "2.2 G-crossed Braided Spherical Fusion Categories (G-BSFC) G-BSFCs are the main ingredients we wish to introduce. In [47], they are called G-equivariant fusion categories. Let (C, ⊗, 1, a, l, r) be a tensor category and G be a ﬁnite group. Recall in Section 2.1.1 that Aut⊗(C) is the monoidal category where objects are auto tensor equivalences of C, morphisms are natural transformations, and tensor product of two",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-monoidal-2-categories-with-duals",
+      "number": null,
+      "title": "Monoidal 2-categories with Duals",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 42,
+      "labelStart": "27",
+      "labelEnd": "33",
+      "words": 1506,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monoidal categories",
+          "heading": true
+        },
+        {
+          "term": "morphisms hom",
+          "heading": false
+        },
+        {
+          "term": "duals",
+          "heading": true
+        },
+        {
+          "term": "monoidal category",
+          "heading": false
+        },
+        {
+          "term": "greek letters",
+          "heading": false
+        },
+        {
+          "term": "capital letters",
+          "heading": false
+        },
+        {
+          "term": "spherical category",
+          "heading": false
+        },
+        {
+          "term": "vertical composition",
+          "heading": false
+        }
+      ],
+      "extract": "A Figure 2.12: The twist θA 2. θA∗= (θA)∗; 3. θ1 = I; 4. (θA) h = θ A h . 2.3 Monoidal 2-categories with Duals In this section we show that a monoidal 2-category with certain extra structures can be constructed from a G-crossed braided spherical fusion category (G-BSFC) introduced in the previous section. The readers can skip this section if they are only interested in the (3 + 1)-TQFT out of a G-BSFC. Here we do",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-invariants-of-4-manifolds",
+      "number": null,
+      "title": "Invariants of 4-manifolds",
+      "level": 1,
+      "pageStart": 42,
+      "pageEnd": 43,
+      "labelStart": "33",
+      "labelEnd": "34",
+      "words": 221,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "g-bsfc",
+          "heading": false
+        },
+        {
+          "term": "manifolds",
+          "heading": true
+        },
+        {
+          "term": "ordered triangulations",
+          "heading": false
+        },
+        {
+          "term": "invariants",
+          "heading": true
+        },
+        {
+          "term": "partition function",
+          "heading": false
+        },
+        {
+          "term": "chapter",
+          "heading": false
+        }
+      ],
+      "extract": "In this chapter, we introduce the key construction of the 4-manifold invariants out of a G-BSFC. The invariant, called partition function, is a state-sum model and a natural generalization of the Tuaev-Viro invariant. Although we will only describe the invariants for oriented closed 4-manifolds, it is straight forward to extend the construction to 3- manifolds and to 4-manifolds with boundaries, and thus produce a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-partition-function",
+      "number": null,
+      "title": "Partition Function",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 51,
+      "labelStart": "34",
+      "labelEnd": "42",
+      "words": 1965,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "partition function",
+          "heading": true
+        },
+        {
+          "term": "triangle color",
+          "heading": false
+        },
+        {
+          "term": "induced ordering",
+          "heading": false
+        },
+        {
+          "term": "ordered triangulation",
+          "heading": false
+        },
+        {
+          "term": "relative ordering",
+          "heading": false
+        },
+        {
+          "term": "non-degenerate pairing",
+          "heading": false
+        },
+        {
+          "term": "hom",
+          "heading": false
+        },
+        {
+          "term": "simple objects",
+          "heading": false
+        }
+      ],
+      "extract": "invariant reduces to the twisted Dijkgraaf-Witten invariant as a special case. 3.1 Partition Function An ordered triangulation of a manifold is a triangulation with an ordering of its vertices by 0, 1, 2, · · · . Let T be an ordered triangulation of a closed oriented 4-manifold M, and for k = 0, 1, 2, 3, 4, let T k be the set of k-simplicies of the triangulation. The restriction of the ordering on each k-simplex σ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-a-formula-for-the-partition-function",
+      "number": null,
+      "title": "A Formula for the Partition Function",
+      "level": 2,
+      "pageStart": 51,
+      "pageEnd": 54,
+      "labelStart": "42",
+      "labelEnd": "45",
+      "words": 582,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "partition function",
+          "heading": true
+        },
+        {
+          "term": "rba",
+          "heading": false
+        },
+        {
+          "term": "formula",
+          "heading": true
+        },
+        {
+          "term": "pictorial",
+          "heading": false
+        },
+        {
+          "term": "j-symbol",
+          "heading": false
+        },
+        {
+          "term": "admissible",
+          "heading": false
+        },
+        {
+          "term": "bases",
+          "heading": false
+        },
+        {
+          "term": "hom",
+          "heading": false
+        }
+      ],
+      "extract": "Sa Ib g/a b YY _ usted Figure 3.4: Definition of U-symbol 3.2 A Formula for the Partition Function Here we give an explicit formula for the 25j-symbol ZO (0) in Figure}3.3]in terms of the data of a G-BSFC D =C& such as the F-symbol, R-symbol, etc. This formula will be convenient for computer calculations. For simplicity, we assume D is multiplicity free. The formula for the general case can be obtained in a similar",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-examples",
+      "number": null,
+      "title": "Examples",
+      "level": 2,
+      "pageStart": 54,
+      "pageEnd": 59,
+      "labelStart": "45",
+      "labelEnd": "50",
+      "words": 1549,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "trivial g-action",
+          "heading": false
+        },
+        {
+          "term": "crane-yetter invariant",
+          "heading": false
+        },
+        {
+          "term": "admissible coloring",
+          "heading": false
+        },
+        {
+          "term": "trivial g-grading",
+          "heading": false
+        },
+        {
+          "term": "crossed module",
+          "heading": false
+        },
+        {
+          "term": "colored simplex",
+          "heading": false
+        },
+        {
+          "term": "extended coloring",
+          "heading": false
+        },
+        {
+          "term": "construct g-bsfc",
+          "heading": false
+        }
+      ],
+      "extract": "3.3 Examples In this section, we give several examples of the partition function deﬁned in Section 3.1. Some of the known invariants in literature emerge as special cases of our construction. 3.3.1 Crane-Yetter invariant The Crane-Yetter invariant was introduced in [22], where the authors gave a state sum construction of 4-manifold invariants with the modular tensor category Rep(Uq(sl2)) as input, where Rep(Uq(sl2))",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-variation-trivial-g-grading",
+      "number": null,
+      "title": "Variation: Trivial G-grading",
+      "level": 2,
+      "pageStart": 59,
+      "pageEnd": 62,
+      "labelStart": "50",
+      "labelEnd": "53",
+      "words": 667,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "trivial g-grading",
+          "heading": true
+        },
+        {
+          "term": "ˆzϵ",
+          "heading": false
+        },
+        {
+          "term": "variation",
+          "heading": true
+        },
+        {
+          "term": "cyc",
+          "heading": false
+        },
+        {
+          "term": "twisted dijkgraaf-witten",
+          "heading": false
+        },
+        {
+          "term": "dijkgraaf-witten invariant",
+          "heading": false
+        },
+        {
+          "term": "g-bsfc",
+          "heading": false
+        },
+        {
+          "term": "g02g01g",
+          "heading": false
+        }
+      ],
+      "extract": "Proof: By Equation 3.3 and the argument above, ZD(M; T ) = X ˆF=(g,f,t) (D2/|G|)|T 0|( Q α∈T 2 df(α))( Q σ∈T 4 ˆZϵ(σ) ˆF (σ)) (D2)|T 1|( Q τ∈T 3 dt(τ)) = X g 1 |G||T 0| X f,t (D2)|T 0|( Q α∈T 2 df(α))( Q σ∈T 4 ˆZϵ(σ)(σ)) (D2)|T 1|( Q τ∈T 3 dt(τ)) = X g 1 |G||T 0|CYC(M) = DWG(M)CYC(M), where ˆZϵ(σ)(σ) is the partition function of σ for which we have hidden the dependence on the coloring. In Section 3.4, we will give",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-proof-of-invariance",
+      "number": null,
+      "title": "Proof of Invariance",
+      "level": 1,
+      "pageStart": 62,
+      "pageEnd": 62,
+      "labelStart": "53",
+      "labelEnd": "53",
+      "words": 42,
+      "summary": null,
+      "keywords": [],
+      "extract": "In this chapter we will prove in turn that ZD(M; T ) is independent on the choice of repre- sentatives for each triangle color (Section 4.1), the ordering of vertices of a triangulation (Section 4.2), and the choice of a triangulation 4.4.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-012-invariance-under-choice-of-representatives",
+      "number": null,
+      "title": "Invariance under Choice of Representatives",
+      "level": 2,
+      "pageStart": 62,
+      "pageEnd": 67,
+      "labelStart": "53",
+      "labelEnd": "58",
+      "words": 1081,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "representatives",
+          "heading": true
+        },
+        {
+          "term": "invariance",
+          "heading": true
+        },
+        {
+          "term": "diagram commutes",
+          "heading": false
+        },
+        {
+          "term": "ijk",
+          "heading": false
+        },
+        {
+          "term": "choice",
+          "heading": true
+        },
+        {
+          "term": "ida",
+          "heading": false
+        },
+        {
+          "term": "coloring",
+          "heading": false
+        },
+        {
+          "term": "simplex",
+          "heading": false
+        }
+      ],
+      "extract": "Invariance under Choice of Representatives To deﬁne the partition function ZD(M; T ), for each coloring F = (g, f), we chose arbitrarily a representative fβ for the triangle color f(β), β ∈T 2. In the following, we show that Tr( N σ∈T 4 Zϵ(σ) F (σ)) is independent on the choice of representatives, and thus ZD(M; T ) is also independent on the choice of representatives by Deﬁnition 3.1.3. Let φA : A ∼ −→A′, φB : B ∼",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-invariance-under-change-of-ordering",
+      "number": null,
+      "title": "Invariance under change of ordering",
+      "level": 2,
+      "pageStart": 67,
+      "pageEnd": 81,
+      "labelStart": "58",
+      "labelEnd": "72",
+      "words": 3925,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored k-simplex",
+          "heading": false
+        },
+        {
+          "term": "colored simplex",
+          "heading": false
+        },
+        {
+          "term": "colored simplices",
+          "heading": false
+        },
+        {
+          "term": "ordering",
+          "heading": true
+        },
+        {
+          "term": "sub simplex",
+          "heading": false
+        },
+        {
+          "term": "invariance",
+          "heading": true
+        },
+        {
+          "term": "reordering",
+          "heading": false
+        },
+        {
+          "term": "relative ordering",
+          "heading": false
+        }
+      ],
+      "extract": "implies Diagram 4.6 commutes. Theorem 4.1.4 Given a coloring F = (g, f), we have Tr( O σ∈T 4 Zϵ(σ) F (σ)) = Tr( O σ∈T 4 Zϵ(σ) F (σ)′). As a consequence, the partition function ZD(M; T ) is independent on the choice of rep- resentatives for each triangle color. Proof: It suﬃces to prove Diagram 4.10 commutes, which follows from Proposition 4.1.3 since each V + F (τ) is acted on by exactly one Zϵ(σ) F (σ). N τ∈T 3 V +",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-pachner-moves",
+      "number": null,
+      "title": "Pachner Moves",
+      "level": 2,
+      "pageStart": 81,
+      "pageEnd": 83,
+      "labelStart": "72",
+      "labelEnd": "74",
+      "words": 552,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pachner moves",
+          "heading": true
+        },
+        {
+          "term": "sgn",
+          "heading": false
+        },
+        {
+          "term": "triangulations",
+          "heading": false
+        },
+        {
+          "term": "closed manifold",
+          "heading": false
+        },
+        {
+          "term": "pairing",
+          "heading": false
+        },
+        {
+          "term": "homeomorphic",
+          "heading": false
+        },
+        {
+          "term": "preserves",
+          "heading": false
+        },
+        {
+          "term": "suﬃces",
+          "heading": false
+        }
+      ],
+      "extract": "The map Φ restricted to the component V + F (τ) ⊗V − F (τ) is the map Φ′: V + F (τ) ⊗V − F (τ) V sgn(sτ)(H1(τ)) ⊗V −sgn(sτ)(H2(τ)) V sgn(sτ) F ′ (τ ′) ⊗V −sgn(sτ) F ′ (τ ′) V (H1)⊗V (H2) can⊗can To show Φ′(φF,τ) = φF ′,τ ′, it suﬃces to show Φ′ preserves the pairing. Since the canonical isomorphisms preserves the pairing, it suﬃces then to show (I ⊗can) ◦(V (H1) ⊗V (H2)) in the the following diagram does. V + F (τ)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-invariance-under-pachner-moves",
+      "number": null,
+      "title": "Invariance under Pachner Moves",
+      "level": 2,
+      "pageStart": 83,
+      "pageEnd": 100,
+      "labelStart": "74",
+      "labelEnd": "91",
+      "words": 2952,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pachner moves",
+          "heading": true
+        },
+        {
+          "term": "typical pachner",
+          "heading": false
+        },
+        {
+          "term": "invariance",
+          "heading": true
+        },
+        {
+          "term": "extended coloring",
+          "heading": false
+        },
+        {
+          "term": "ﬁxed coloring",
+          "heading": false
+        },
+        {
+          "term": "simplex run",
+          "heading": false
+        },
+        {
+          "term": "invariance proof",
+          "heading": false
+        },
+        {
+          "term": "ordered triangulations",
+          "heading": false
+        }
+      ],
+      "extract": "Ik I′ k k = 4 02345 01245 01234 12345 01345 01235 k = 3 0124 0234 0245 0135 1235 1345 k = 2 024 135 Table 4.1: Comparison of T and T ′ for 3-3 move pachner move. The typical pachner moves for n = 4 are as follows: (02345)(01245)(01234) (3,3) ←→ (12345)(01345)(01235) (02345)(01245)(01234)(12345) (2,4) ←→ (01345)(01235) (02345)(01245)(01234)(12345)(01345) (1,5) ←→ (01235) 4.4 Invariance under Pachner Moves We prove",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-future-directions-and-open-questions",
+      "number": null,
+      "title": "Future Directions and Open Questions",
+      "level": 1,
+      "pageStart": 100,
+      "pageEnd": 103,
+      "labelStart": "91",
+      "labelEnd": "94",
+      "words": 561,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "crane-yetter invariant",
+          "heading": false
+        },
+        {
+          "term": "g-crossed braided",
+          "heading": false
+        },
+        {
+          "term": "kuperberg invariant",
+          "heading": false
+        },
+        {
+          "term": "reﬁned invariant",
+          "heading": false
+        },
+        {
+          "term": "turaev-viro invariant",
+          "heading": false
+        },
+        {
+          "term": "ribbon fusion",
+          "heading": false
+        },
+        {
+          "term": "braided category",
+          "heading": false
+        },
+        {
+          "term": "g-bsfc",
+          "heading": false
+        }
+      ],
+      "extract": "Questions We have constructed a 4-manifold invariant out of a G-crossed braided spherical fusion category and this invariant is a generalization of several known invariants in literature. Here we point out a few directions/questions for future study. 1. What is the power of the invariants? Can they distinguish any smooth structures? In particular, it is worth checking if the invariants are strictly better than the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-bibliography",
+      "number": null,
+      "title": "Bibliography",
+      "level": 1,
+      "pageStart": 103,
+      "pageEnd": 106,
+      "labelStart": "94",
+      "labelEnd": "97",
+      "words": 951,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathematical journal",
+          "heading": false
+        },
+        {
+          "term": "bibliography",
+          "heading": true
+        },
+        {
+          "term": "state-sum invariants",
+          "heading": false
+        },
+        {
+          "term": "modular categories",
+          "heading": false
+        },
+        {
+          "term": "fusion categories",
+          "heading": false
+        },
+        {
+          "term": "quantum invariants",
+          "heading": false
+        },
+        {
+          "term": "spherical categories",
+          "heading": false
+        },
+        {
+          "term": "tensor categories",
+          "heading": false
+        }
+      ],
+      "extract": "[1] E. Witten, Topological quantum ﬁeld theory, Communications in Mathematical Physics 117 (1988), no. 3 353–386. [2] M. Atiyah, Topological quantum ﬁeld theories, Publications Math´ematiques de l’IH´ES 68 (1988), no. 1 175–186. [3] J. Lurie, Higher topos theory. No. 170. Princeton University Press, 2009. [4] J. C. Baez and J. Dolan, Higher dimensional algebra and topological quantum ﬁeld theory, Journal of",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 2,
+        "items": [
+          "3 Rep(H) : the category of representations of a bi-algebra H. The previous example",
+          "4 Aut⊗(C) : The objects are monoidal equivalences of a monoidal category C, and"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [
+      "figure 2.8"
+    ],
+    "pageLabelConflicts": {
+      "count": 103,
+      "items": [
+        "p4: pdf-labels iv, printed iii",
+        "p5: pdf-labels v, printed iv",
+        "p6: pdf-labels vi, printed v",
+        "p7: pdf-labels vii, printed vi, contents vi",
+        "p8: pdf-labels viii, printed vii, contents vii",
+        "p9: pdf-labels 1, printed viii",
+        "p10: pdf-labels 2, printed 1, contents 1",
+        "p11: pdf-labels 3, printed 2",
+        "p12: pdf-labels 4, printed 3",
+        "p13: pdf-labels 5, printed 4",
+        "p14: pdf-labels 6, printed 5",
+        "p15: pdf-labels 7, printed 6, contents 6",
+        "p16: pdf-labels 8, printed 7, contents 7",
+        "p17: pdf-labels 9, printed 8",
+        "p18: pdf-labels 10, printed 9",
+        "p19: pdf-labels 11, printed 10",
+        "p20: pdf-labels 12, printed 11",
+        "p21: pdf-labels 13, printed 12",
+        "p22: pdf-labels 14, printed 13",
+        "p23: pdf-labels 15, printed 14",
+        "p24: pdf-labels 16, printed 15",
+        "p25: pdf-labels 17, printed 16",
+        "p26: pdf-labels 18, printed 17",
+        "p27: pdf-labels 19, printed 18",
+        "p28: pdf-labels 20, printed 19",
+        "p29: pdf-labels 21, printed 20",
+        "p30: pdf-labels 22, printed 21",
+        "p31: pdf-labels 23, printed 22",
+        "p32: pdf-labels 24, printed 23, contents 23",
+        "p33: pdf-labels 25, printed 24",
+        "p34: pdf-labels 26, printed 25",
+        "p35: pdf-labels 27, printed 26",
+        "p36: pdf-labels 28, printed 27, contents 27",
+        "p37: pdf-labels 29, printed 28",
+        "p38: pdf-labels 30, printed 29",
+        "p39: pdf-labels 31, printed 30",
+        "p40: pdf-labels 32, printed 31",
+        "p41: pdf-labels 33, printed 32",
+        "p42: pdf-labels 34, printed 33, contents 33",
+        "p43: pdf-labels 35, printed 34, contents 34",
+        "p44: pdf-labels 36, printed 35",
+        "p45: pdf-labels 37, printed 36",
+        "p46: pdf-labels 38, printed 37",
+        "p47: pdf-labels 39, printed 38",
+        "p48: pdf-labels 40, printed 39",
+        "p49: pdf-labels 41, printed 40",
+        "p50: pdf-labels 42, printed 41",
+        "p51: pdf-labels 43, printed 42, contents 42",
+        "p52: pdf-labels 44, printed 43",
+        "p53: pdf-labels 45, printed 44"
+      ]
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "fusion categories",
+      "heading": true
+    },
+    {
+      "term": "construct g-bsfc",
+      "heading": false
+    },
+    {
+      "term": "fusion category",
+      "heading": false
+    },
+    {
+      "term": "g-crossed braided",
+      "heading": true
+    },
+    {
+      "term": "spherical fusion",
+      "heading": true
+    },
+    {
+      "term": "morphisms hom",
+      "heading": false
+    },
+    {
+      "term": "monoidal categories",
+      "heading": true
+    },
+    {
+      "term": "isomorphisms hom",
+      "heading": false
+    },
+    {
+      "term": "ribbon fusion",
+      "heading": true
+    },
+    {
+      "term": "g-crossed braiding",
+      "heading": false
+    },
+    {
+      "term": "crane-yetter invariant",
+      "heading": false
+    },
+    {
+      "term": "tensor categories",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "i",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "ii",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "iii",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "iii",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "iv",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "v",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "vi",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "vii",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "viii",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 37,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 43,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 44,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 52,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 55,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 60,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 63,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 67,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 68,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 69,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 71,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 72,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 73,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 74,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 75,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 76,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 77,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 78,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 79,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 80,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 81,
+      "label": "72",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 82,
+      "label": "73",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 83,
+      "label": "74",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 84,
+      "label": "75",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 85,
+      "label": "76",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 86,
+      "label": "77",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 87,
+      "label": "78",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 88,
+      "label": "79",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 89,
+      "label": "80",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 90,
+      "label": "81",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 91,
+      "label": "82",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 92,
+      "label": "83",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 93,
+      "label": "84",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 94,
+      "label": "85",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 95,
+      "label": "86",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 96,
+      "label": "87",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 97,
+      "label": "88",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 98,
+      "label": "89",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 99,
+      "label": "90",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 100,
+      "label": "91",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 101,
+      "label": "92",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 102,
+      "label": "93",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 103,
+      "label": "94",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 104,
+      "label": "95",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 105,
+      "label": "96",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 106,
+      "label": "97",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "2.1",
+      "title": "Pictures of some morphisms",
+      "page": 22,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.2",
+      "title": "Identities of a right dual",
+      "page": 23,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.3",
+      "title": "Identities of a left dual",
+      "page": 23,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.4",
+      "title": "f∗(Left) and f",
+      "page": 24,
+      "pageLabel": "15",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.5",
+      "title": "Trl(f) (Left) and Trr(f) (Right)",
+      "page": 26,
+      "pageLabel": "17",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.6",
+      "title": "A local picture near a rectangle (Left), R × {0} (Middle), R × {1} (Right)",
+      "page": 28,
+      "pageLabel": "19",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.7",
+      "title": "cA,B (Left) and c−1",
+      "page": 30,
+      "pageLabel": "21",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.9",
+      "title": "Equalities of the braiding",
+      "page": 31,
+      "pageLabel": "22",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.10",
+      "title": "The twist θA",
+      "page": 31,
+      "pageLabel": "22",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.11",
+      "title": "cA,B (Left) and c−1",
+      "page": 35,
+      "pageLabel": "26",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.12",
+      "title": "The twist θA",
+      "page": 36,
+      "pageLabel": "27",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.1",
+      "title": "(Left): ˜Z+",
+      "page": 46,
+      "pageLabel": "37",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.2",
+      "title": "Some identities",
+      "page": 49,
+      "pageLabel": "40",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.3",
+      "title": "(Left): ˆZ+",
+      "page": 50,
+      "pageLabel": "41",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.4",
+      "title": "Deﬁnition of U-symbol",
+      "page": 51,
+      "pageLabel": "42",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.5",
+      "title": "Two Bases B1 and B2",
+      "page": 52,
+      "pageLabel": "43",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.6",
+      "title": "Deﬁnition of the F-symbol",
+      "page": 52,
+      "pageLabel": "43",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.7",
+      "title": "Deﬁnition of the F −1-symbol",
+      "page": 52,
+      "pageLabel": "43",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.8",
+      "title": "Deﬁnition of the R-symbol Rba",
+      "page": 53,
+      "pageLabel": "44",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.1",
+      "title": "Reordering by a permutation s",
+      "page": 69,
+      "pageLabel": "60",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.2",
+      "title": "Deﬁnition of V (˜s0)",
+      "page": 75,
+      "pageLabel": "66",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.3",
+      "title": "Deﬁnition of V (˜s1)",
+      "page": 75,
+      "pageLabel": "66",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.4",
+      "title": "Deﬁnition of V (˜s2)",
+      "page": 76,
+      "pageLabel": "67",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.5",
+      "title": "Pachner move (1, 2); n = 1",
+      "page": 82,
+      "pageLabel": "73",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.6",
+      "title": "Pachner moves (1, 3), (2, 2); n = 2",
+      "page": 82,
+      "pageLabel": "73",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4.1",
+      "title": "Comparison of T and T ′ for 3-3 move",
+      "page": 83,
+      "pageLabel": "74",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4.2",
+      "title": "Comparison of T and T ′ for 2-4 move",
+      "page": 84,
+      "pageLabel": "75",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4.3",
+      "title": "Comparison of T and T ′ for 1-5 move",
+      "page": 84,
+      "pageLabel": "75",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.7",
+      "title": "Trace Identity (1)",
+      "page": 87,
+      "pageLabel": "78",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.8",
+      "title": "Trace Identity (2)",
+      "page": 87,
+      "pageLabel": "78",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.9",
+      "title": "Dimension Identity",
+      "page": 88,
+      "pageLabel": "79",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.10",
+      "title": "Short notations for basis elements",
+      "page": 89,
+      "pageLabel": "80",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 19,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 19,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "29 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "3 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p103); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 19 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/qt2pf5d0mn"
+  }
+}

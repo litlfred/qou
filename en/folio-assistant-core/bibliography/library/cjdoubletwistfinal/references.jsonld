@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/cjdoubletwistfinal",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "THE COLORED JONES POLYNOMIAL AND KONTSEVICH-ZAGIER SERIES FOR DOUBLE TWIST KNOTS",
+      "dcterms:creator": [
+        "LOVEJOY, JEREMY",
+        "OSBURN, ROBERT"
+      ],
+      "dcterms:issued": "D:20210413",
+      "dcterms:abstract": "Using a result of Takata, we prove a formula for the colored Jones polynomial of the double twist knots K(−m,−p) and K(−m,p) where m and p are positive integers. In the (−m, −p) case, this leads to new families of q-hypergeometric series generalizing the Kontsevich-Zagier series. Comparing with the cyclotomic expansion of the colored Jones polynomials of K(m,p) gives a generalization of a duality at roots of unity between the Kontsevich-Zagier function and the generating function for strongly unimodal sequences.",
+      "dcterms:source": "library/cjdoubletwistfinal/manifest.jsonld",
+      "dcterms:hasVersion": "library/cjdoubletwistfinal"
+    }
+  ]
+}

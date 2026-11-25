@@ -1,0 +1,1735 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "0307092v2",
+  "title": "Extended Bloch group and the Cheeger–Chern–Simons class",
+  "variant": "pdf",
+  "pages": 62,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The extended Bloch group",
+      "number": "2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-the-extended-bloch-group"
+    },
+    {
+      "level": 1,
+      "title": "Parameters for ideal hyperbolic simplices",
+      "number": "3",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-parameters-for-ideal-hyperbolic-simplices"
+    },
+    {
+      "level": 1,
+      "title": "Definition of",
+      "number": "4",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-definition-of"
+    },
+    {
+      "level": 2,
+      "title": "Representing elements of Hn(G;Z)",
+      "number": "4.1",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-41-representing-elements-of-hngz"
+    },
+    {
+      "level": 3,
+      "title": "Algebraic description",
+      "number": "4.1.1",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-411-algebraic-description"
+    },
+    {
+      "level": 3,
+      "title": "Topological description",
+      "number": "4.1.2",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-412-topological-description"
+    },
+    {
+      "level": 2,
+      "title": "Definition of 2mu-:6muplus1muH3(G;Z)P\"0362P(C)",
+      "number": "4.2",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Developing map",
+      "number": "5",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-5-developing-map"
+    },
+    {
+      "level": 1,
+      "title": "The cycle relation",
+      "number": "6",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-6-the-cycle-relation"
+    },
+    {
+      "level": 1,
+      "title": "Computation of B\"0362B(C)",
+      "number": "7",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-7-computation-of-b0362bc"
+    },
+    {
+      "level": 1,
+      "title": "The more extended Bloch group",
+      "number": "8",
+      "page": 30,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-8-the-more-extended-bloch-group"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem ??",
+      "number": "9",
+      "page": 32,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-9-proof-of-theorem"
+    },
+    {
+      "level": 1,
+      "title": "Start of the proof of Theorem ??",
+      "number": "10",
+      "page": 36,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-10-start-of-the-proof-of-theorem"
+    },
+    {
+      "level": 1,
+      "title": "Completion of proof of Theorem ??",
+      "number": "11",
+      "page": 41,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-11-completion-of-proof-of-theorem"
+    },
+    {
+      "level": 1,
+      "title": "Cheeger--Chern--Simons class",
+      "number": "12",
+      "page": 47,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-12-cheeger--chern--simons-class"
+    },
+    {
+      "level": 1,
+      "title": "Unordered simplices",
+      "number": "13",
+      "page": 49,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-13-unordered-simplices"
+    },
+    {
+      "level": 1,
+      "title": "Invariants of 3--manifolds",
+      "number": "14",
+      "page": 52,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-14-invariants-of-3--manifolds"
+    },
+    {
+      "level": 1,
+      "title": "Example",
+      "number": "15",
+      "page": 58,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-15-example"
+    },
+    {
+      "level": 1,
+      "title": "Other fields",
+      "number": "16",
+      "page": 60,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-16-other-fields"
+    },
+    {
+      "level": 1,
+      "title": "Bibliography",
+      "number": null,
+      "page": 61,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 181,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chern simons",
+          "heading": false
+        },
+        {
+          "term": "cheeger chern",
+          "heading": false
+        },
+        {
+          "term": "simons class",
+          "heading": false
+        },
+        {
+          "term": "simons invariant",
+          "heading": false
+        },
+        {
+          "term": "extended bloch",
+          "heading": false
+        },
+        {
+          "term": "walter neumann",
+          "heading": false
+        }
+      ],
+      "extract": "ISSN 1364-0380 (on line) 1465-3060 (printed) 413 Geometry & Topology G G G GG GGG G GGGG G G T TTTT T T T T T T T T TT Volume 8 (2004) 413–474 Published: 14 February 2004 Extended Bloch group and the Cheeger–Chern–Simons class Walter D Neumann Department of Mathematics, Barnard College Columbia University, New York, NY 10027, USA Email: neumann@math.columbia.edu Abstract We deﬁne an extended Bloch group and show it",
+      "extractCut": true,
+      "blocks": [
+        "library/0307092v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1035,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chern simons",
+          "heading": false
+        },
+        {
+          "term": "cheeger chern",
+          "heading": false
+        },
+        {
+          "term": "simons class",
+          "heading": false
+        },
+        {
+          "term": "simons invariant",
+          "heading": false
+        },
+        {
+          "term": "bloch wigner",
+          "heading": false
+        },
+        {
+          "term": "ﬂat psl",
+          "heading": false
+        },
+        {
+          "term": "extended bloch",
+          "heading": false
+        },
+        {
+          "term": "bloch group",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction There are several variations of the deﬁnition of the Bloch group in the litera- ture; by [7] they diﬀer at most by torsion and they agree with each other for algebraically closed ﬁelds. In this paper we shall use the following. Deﬁnition 1.1 Let k be a ﬁeld. The pre-Bloch group P(k) is the quotient of the free Z–module Z(k −{0, 1}) by all instances of the following relation: [x] −[y] + [y x] −[1 −x−1 1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-extended-bloch-group",
+      "number": "2",
+      "title": "The extended Bloch group",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1466,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lifted ﬁve",
+          "heading": false
+        },
+        {
+          "term": "extended bloch",
+          "heading": true
+        },
+        {
+          "term": "log pπi",
+          "heading": false
+        },
+        {
+          "term": "ﬁve term",
+          "heading": false
+        },
+        {
+          "term": "bloch group",
+          "heading": true
+        },
+        {
+          "term": "transfer relation",
+          "heading": false
+        },
+        {
+          "term": "cheeger chern",
+          "heading": false
+        },
+        {
+          "term": "qπi",
+          "heading": false
+        }
+      ],
+      "extract": "by an idea of Jun Yang, to whom I am grateful also for many useful conversa- tions. I’m grateful to Benedetti and Baseilhac, whose use in [1] of the prelimi- nary preprint [17] and subsequent correspondence led me to ﬁnish writing this paper. This research was supported by the Australian Research Council and by the NSF. 2 The extended Bloch group We shall need a Z × Z cover bC of C −{0, 1} which can be constructed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-parameters-for-ideal-hyperbolic-simplices",
+      "number": "3",
+      "title": "Parameters for ideal hyperbolic simplices",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1729,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ideal simplices",
+          "heading": true
+        },
+        {
+          "term": "hyperbolic simplices",
+          "heading": true
+        },
+        {
+          "term": "combinatorial ﬂattening",
+          "heading": false
+        },
+        {
+          "term": "edge z3z",
+          "heading": false
+        },
+        {
+          "term": "ﬂattening condition",
+          "heading": false
+        },
+        {
+          "term": "edges z0z",
+          "heading": false
+        },
+        {
+          "term": "lifted ﬁve",
+          "heading": false
+        },
+        {
+          "term": "simplices meeting",
+          "heading": false
+        }
+      ],
+      "extract": "Parameters for ideal hyperbolic simplices In this section we shall interpret bC as a space of parameters for what we call “combinatorial ﬂattenings” of ideal hyperbolic simplices. We need this to deﬁne the above map λ. It also gives a geometric interpretation of the lifted ﬁve term relation. We shall denote the standard compactiﬁcation of H3 by H 3 = H3 ∪CP 1. An ideal simplex ∆with vertices z0, z1, z2, z3 ∈CP 1 is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-definition-of",
+      "number": "4",
+      "title": "Definition of",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 245,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "simplices embed",
+          "heading": false
+        },
+        {
+          "term": "closed simplices",
+          "heading": false
+        },
+        {
+          "term": "simplicial complex",
+          "heading": false
+        },
+        {
+          "term": "complexes",
+          "heading": false
+        },
+        {
+          "term": "star",
+          "heading": false
+        },
+        {
+          "term": "simplex",
+          "heading": false
+        }
+      ],
+      "extract": "Deﬁnition of λ Let G = PSL(2, C) (with the discrete topology). In this section we describe the map λ: H3(G; Z) →bP(C). We ﬁrst describe the combinatorial representation of elements of H3(G; Z) that we will use. As we will describe, a special case is to give a closed oriented triangulated 3–manifold with a ﬂat G–bundle on it. Any element of H3(G; Z) can be represented this way, but we do not want to restrict to this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-41-representing-elements-of-hngz",
+      "number": "4.1",
+      "title": "Representing elements of Hn(G;Z)",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 267,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ordered cycle",
+          "heading": false
+        },
+        {
+          "term": "simplex",
+          "heading": false
+        },
+        {
+          "term": "labeling",
+          "heading": false
+        },
+        {
+          "term": "ggi",
+          "heading": false
+        },
+        {
+          "term": "orients",
+          "heading": false
+        }
+      ],
+      "extract": "Representing elements of Hn(G; Z) Deﬁnition 4.2 An ordered n–cycle will be a compact n–dimensional simpli- cial complex K such that the complement |K|−|K(n−3)| of its (n−3)–skeleton is an oriented n–manifold, together with an ordering of the vertices of each n– simplex of K so that these orderings agree on common faces. The ordering orients each n–simplex ∆i of K, and this orientation may or may not agree with the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-411-algebraic-description",
+      "number": "4.1.1",
+      "title": "Algebraic description",
+      "level": 3,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 428,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homogeneous simplices",
+          "heading": false
+        },
+        {
+          "term": "quasi-simplicial complex",
+          "heading": false
+        },
+        {
+          "term": "chain complex",
+          "heading": false
+        },
+        {
+          "term": "homology class",
+          "heading": false
+        },
+        {
+          "term": "free module",
+          "heading": false
+        },
+        {
+          "term": "faces",
+          "heading": false
+        },
+        {
+          "term": "simplex",
+          "heading": false
+        },
+        {
+          "term": "distinct elements",
+          "heading": false
+        }
+      ],
+      "extract": "Algebraic description We recall a standard chain complex for homology of G = PSL(2, C), the chain complex of “homogeneous simplices for G.” We will, however, diverge from the standard by using only non-degenerate simplices, ie, simplices with distinct vertices — we may do this because G is inﬁnite. Let Cn(G) denote the free Z–module on all ordered (n+1)–tuples ⟨g0, . . . , gn⟩ of distinct elements of G. Deﬁne δ : Cn",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-412-topological-description",
+      "number": "4.1.2",
+      "title": "Topological description",
+      "level": 3,
+      "pageStart": 15,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1760,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "strong ﬂattening",
+          "heading": false
+        },
+        {
+          "term": "log-parameter along",
+          "heading": false
+        },
+        {
+          "term": "ﬂat bundle",
+          "heading": false
+        },
+        {
+          "term": "ordered cycle",
+          "heading": false
+        },
+        {
+          "term": "path passes",
+          "heading": false
+        },
+        {
+          "term": "cheeger chern",
+          "heading": false
+        },
+        {
+          "term": "simplex",
+          "heading": false
+        },
+        {
+          "term": "simplices",
+          "heading": false
+        }
+      ],
+      "extract": "Topological description Given a space X , any element α ∈Hn(X; Z) can be represented as f∗[K] for some map f : |K| →X of an ordered n–cycle to X . If X = BG is a classifying space for G then this map is determined up to homotopy by the ﬂat G–bundle f ∗EG over |K|, so this ﬂat bundle determines the homology class α ∈Hn(BG; Z) = Hn(G; Z) Flat G–bundles over |K| are determined by G–valued 1–cocycles on K up to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-5-developing-map",
+      "number": "5",
+      "title": "Developing map",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1591,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "developing map",
+          "heading": true
+        },
+        {
+          "term": "ideal simplex",
+          "heading": false
+        },
+        {
+          "term": "edge path",
+          "heading": false
+        },
+        {
+          "term": "ﬂattening condition",
+          "heading": false
+        },
+        {
+          "term": "normal path",
+          "heading": false
+        },
+        {
+          "term": "orientation changes",
+          "heading": false
+        },
+        {
+          "term": "star neighborhood",
+          "heading": false
+        },
+        {
+          "term": "adjacent faces",
+          "heading": false
+        }
+      ],
+      "extract": "Developing map Suppose we have a G–labeled 3–cycle K. Choose a generic point z ∈∂H 3 as in the deﬁnition of ﬂattenings (Deﬁnition 4.4). Then each simplex ∆i of K corresponds to a non-degenerate ideal simplex ⟨g(i) 0 z, g(i) 1 z, g(i) 2 z, g(i) 3 z⟩in H 3. This simplex is determined up to isometry, since (g(i) 0 , . . . , g(i) 3 ) is well deﬁned up to left multiplication by elements of G = PSL(2, C) = Isom+(H3). This",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-6-the-cycle-relation",
+      "number": "6",
+      "title": "The cycle relation",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1396,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cycle relation",
+          "heading": true
+        },
+        {
+          "term": "common simplex",
+          "heading": false
+        },
+        {
+          "term": "adjacent simplices",
+          "heading": false
+        },
+        {
+          "term": "ideal simplex",
+          "heading": false
+        },
+        {
+          "term": "ﬁve vertices",
+          "heading": false
+        },
+        {
+          "term": "combinatorial ﬂattening",
+          "heading": false
+        },
+        {
+          "term": "common faces",
+          "heading": false
+        },
+        {
+          "term": "parity parameters",
+          "heading": false
+        }
+      ],
+      "extract": "The cycle relation In this section we prove a general relation called the “cycle relation,” that holds in bP(C). We will use it repeatedly later. It is, in fact, a consequence of the ﬁve-term relation (2) alone and does not involve the transfer relation (3). Let K be a simplicial complex obtained by gluing 3–simplices ∆1, . . . , ∆n to- gether in sequence around a common 1–simplex E. Thus, for each index j modulo n,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-7-computation-of-b0362bc",
+      "number": "7",
+      "title": "Computation of B\"0362B(C)",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 30,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1353,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lifted ﬁve",
+          "heading": false
+        },
+        {
+          "term": "transfer relation",
+          "heading": false
+        },
+        {
+          "term": "ﬁve-term relation",
+          "heading": false
+        },
+        {
+          "term": "cycle relation",
+          "heading": false
+        },
+        {
+          "term": "ﬁve term",
+          "heading": false
+        },
+        {
+          "term": "cheeger chern",
+          "heading": false
+        },
+        {
+          "term": "extended bloch",
+          "heading": false
+        },
+        {
+          "term": "chern simons",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we work out the relationship of the extended Bloch group with the usual one. The result is Theorem 7.5. We consider the case n = 3 of the cycle relation (Lemma 6.1). Denote the ﬁve vertices involved v0 . . . , v4 and assume the three 3–simplices meet along the edge E = v3v4. If we order v0, . . . , v4 in this order and give the simplices the inherited vertex orders then the cycle relation can be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-8-the-more-extended-bloch-group",
+      "number": "8",
+      "title": "The more extended Bloch group",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 32,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 461,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "extended bloch",
+          "heading": true
+        },
+        {
+          "term": "bloch group",
+          "heading": true
+        },
+        {
+          "term": "π2z",
+          "heading": false
+        },
+        {
+          "term": "abelian cover",
+          "heading": false
+        },
+        {
+          "term": "universal abelian",
+          "heading": false
+        },
+        {
+          "term": "log",
+          "heading": false
+        },
+        {
+          "term": "geometry topology",
+          "heading": false
+        }
+      ],
+      "extract": "The more extended Bloch group This section is a digression. We describe a slightly more natural looking variant of the extended Bloch group, based on the universal abelian cover X00 of C − {0, 1}. It turns out to be a Z/2 extension of bB(C). We are not sure of its signiﬁcance, so we describe it brieﬂy. Recall that bC consists of four components X00, X01, X10, and X11, of which X00 is naturally the universal abelian",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-9-proof-of-theorem",
+      "number": "9",
+      "title": "Proof of Theorem ??",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 36,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1470,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "normal paths",
+          "heading": false
+        },
+        {
+          "term": "strong ﬂattening",
+          "heading": false
+        },
+        {
+          "term": "ordered cycle",
+          "heading": false
+        },
+        {
+          "term": "cheeger chern",
+          "heading": false
+        },
+        {
+          "term": "paths leads",
+          "heading": false
+        },
+        {
+          "term": "chern simons",
+          "heading": false
+        },
+        {
+          "term": "log-parameters",
+          "heading": false
+        },
+        {
+          "term": "simons class",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we will prove Theorem 4.5, which says that a strong ﬂattening of any G–labeled ordered 3–cycle K exists. This proof, and the ﬁrst two lemmas in the next section, depend heavily on [13]. We must ﬁrst therefore recall some notation and results from there. (The results of [13] do not require as strong conditions on K as we have here: there, the ordering is not needed and K is only required to be a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-10-start-of-the-proof-of-theorem",
+      "number": "10",
+      "title": "Start of the proof of Theorem ??",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 41,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2242,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "strong ﬂattening",
+          "heading": false
+        },
+        {
+          "term": "lifted ﬁve-term",
+          "heading": false
+        },
+        {
+          "term": "ﬂattening condition",
+          "heading": false
+        },
+        {
+          "term": "giz",
+          "heading": false
+        },
+        {
+          "term": "ﬁve-term relations",
+          "heading": false
+        },
+        {
+          "term": "ideal simplex",
+          "heading": false
+        },
+        {
+          "term": "pachner moves",
+          "heading": false
+        },
+        {
+          "term": "simplices",
+          "heading": false
+        }
+      ],
+      "extract": "Lemma 10.1 The choice of strong ﬂattening of K does not aﬀect the resulting element P i ǫi[xi; pi, qi] ∈bP(C). Proof If we have a diﬀerent choice of ﬂattenings wi satisfying the parity and log-parameter conditions for a strong ﬂattening of K then Lemma 9.3 implies that the diﬀerence between the corresponding elements δ represents 0 in H3(J ). It is thus in the image of β. For E ∈C2 the eﬀect of changing δ by β(E) is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-11-completion-of-proof-of-theorem",
+      "number": "11",
+      "title": "Completion of proof of Theorem ??",
+      "level": 1,
+      "pageStart": 41,
+      "pageEnd": 47,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2980,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "log-parameter ﬂattening",
+          "heading": false
+        },
+        {
+          "term": "simplices radiating",
+          "heading": false
+        },
+        {
+          "term": "old simplices",
+          "heading": false
+        },
+        {
+          "term": "old simplex",
+          "heading": false
+        },
+        {
+          "term": "adjacent simplices",
+          "heading": false
+        },
+        {
+          "term": "ﬂattening condition",
+          "heading": false
+        },
+        {
+          "term": "strong ﬂattening",
+          "heading": false
+        },
+        {
+          "term": "simplices around",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we show that we can always resolve the singularities of |K| to replace it by a triangulated 3–manifold and then discuss surgery on this 3–manifold to complete the proof of Theorem 4.6. The underlying space of K is a 3–manifold except at 0–simplices, where it may look locally like the cone on a closed surface of genus ≥1. Suppose this occurs at some 0–simplex v. Choose a non-separating simple closed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-12-cheeger--chern--simons-class",
+      "number": "12",
+      "title": "Cheeger--Chern--Simons class",
+      "level": 1,
+      "pageStart": 47,
+      "pageEnd": 49,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 714,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "torsion subgroup",
+          "heading": false
+        },
+        {
+          "term": "cheeger chern",
+          "heading": false
+        },
+        {
+          "term": "π2z",
+          "heading": false
+        },
+        {
+          "term": "chern simons",
+          "heading": false
+        },
+        {
+          "term": "rogers dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "simons class",
+          "heading": false
+        },
+        {
+          "term": "ﬂattening",
+          "heading": false
+        },
+        {
+          "term": "psl",
+          "heading": false
+        }
+      ],
+      "extract": "The following is simply a restatement of Theorem 2.6. Theorem 12.1 The homomorphism λ: H3(G; Z) →bB(C) is an isomorphism and it ﬁts in a commutative square: H3(G; Z) λ −−−−→ bB(C) c y R y C/π2Z −−−−→C/π2Z Here G is, as usual, PSL(2, C) with discrete topology, c is the Cheeger–Chern– Simons class, and R is the Rogers dilogarithm map of Proposition 2.5. Geometry & Topology, Volume 8 (2004) 460 Walter D Neumann",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-13-unordered-simplices",
+      "number": "13",
+      "title": "Unordered simplices",
+      "level": 1,
+      "pageStart": 49,
+      "pageEnd": 52,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1233,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "simplices",
+          "heading": true
+        },
+        {
+          "term": "half plane",
+          "heading": false
+        },
+        {
+          "term": "upper half",
+          "heading": false
+        },
+        {
+          "term": "eπi",
+          "heading": false
+        },
+        {
+          "term": "ﬁve-term relation",
+          "heading": false
+        },
+        {
+          "term": "cyclic subgroup",
+          "heading": false
+        },
+        {
+          "term": "vertex-orderings",
+          "heading": false
+        },
+        {
+          "term": "walter neumann",
+          "heading": false
+        }
+      ],
+      "extract": "Unordered simplices As we have shown in Proposition 11.2, our complexes can be quasi-simplicial (closed simplices not required to embed). The triangulations that arise in prac- tice (eg, ideal triangulations of complete ﬁnite volume 3–manifolds, see section 14) are often not simplicial. However, a quasi-simplicial triangulation does not always admit vertex-orderings of its 3–simplices that agree on common faces.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-14-invariants-of-3--manifolds",
+      "number": "14",
+      "title": "Invariants of 3--manifolds",
+      "level": 1,
+      "pageStart": 52,
+      "pageEnd": 58,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2734,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ideal simplices",
+          "heading": false
+        },
+        {
+          "term": "chern simons",
+          "heading": false
+        },
+        {
+          "term": "ideal simplex",
+          "heading": false
+        },
+        {
+          "term": "ﬂattening parameters",
+          "heading": false
+        },
+        {
+          "term": "dehn ﬁlling",
+          "heading": false
+        },
+        {
+          "term": "dehn ﬁlled",
+          "heading": false
+        },
+        {
+          "term": "cheeger chern",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulation",
+          "heading": false
+        }
+      ],
+      "extract": "Suppose we have a compact oriented hyperbolic 3–manifold M , or, more gen- erally, a compact oriented manifold 3–manifold with a ﬂat G–bundle (equiv- alently, a homomorphism π1(M) →G; as usual G denotes PSL(2, C)). Then Theorems 4.6 and 2.6 give a computation of the corresponding homology class in H3(G; Z) and its Cheeger–Chern–Simons class from a triangulation of M . In this section we extend this to the case that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-15-example",
+      "number": "15",
+      "title": "Example",
+      "level": 1,
+      "pageStart": 58,
+      "pageEnd": 60,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 678,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ﬂattening condition",
+          "heading": false
+        },
+        {
+          "term": "dehn ﬁlling",
+          "heading": false
+        },
+        {
+          "term": "read oﬀfrom",
+          "heading": false
+        },
+        {
+          "term": "consistency condition",
+          "heading": false
+        },
+        {
+          "term": "cusp torus",
+          "heading": false
+        },
+        {
+          "term": "log",
+          "heading": false
+        },
+        {
+          "term": "simplex",
+          "heading": false
+        },
+        {
+          "term": "geometry topology",
+          "heading": false
+        }
+      ],
+      "extract": "Example We return to the ﬁgure 8 knot complement m004 of Example 14.4 to illustrate the above formulae. Denote the cross-ratio parameters of the two simplices in Figure 8 by z and y, and choose ﬂattenings [z; p, q] and [y, r, s]. The consis- tency condition about each edge can be read oﬀfrom the ﬁgure. The condition for the edge labeled with a single arrow is: 2 log z + log z′ −log y′ −2 log y′′ = 2πi (18) and the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-16-other-fields",
+      "number": "16",
+      "title": "Other fields",
+      "level": 1,
+      "pageStart": 60,
+      "pageEnd": 62,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 634,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chern simons",
+          "heading": false
+        },
+        {
+          "term": "cheeger chern",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifolds",
+          "heading": false
+        },
+        {
+          "term": "scissors congruences",
+          "heading": false
+        },
+        {
+          "term": "simons class",
+          "heading": false
+        },
+        {
+          "term": "cusped hyperbolic",
+          "heading": false
+        },
+        {
+          "term": "lecture notes",
+          "heading": false
+        },
+        {
+          "term": "geometry topology",
+          "heading": false
+        }
+      ],
+      "extract": "Other ﬁelds Although we have worked over C in this paper, most of what we have done works for a subﬁeld K ⊂C if we replace G = PSL(2, C) = PGL(2, C) by G = PGL(2, K). In Theorem 7.5 we must replace the group µ of roots of unity by the group µK of roots of unity in K. The homomorphism λ: H3(PGL(2, K)) → bB(K) is still deﬁned. For a hyperbolic 3–manifold H3/Γ with Γ ⊂PGL(2, K) Geometry & Topology, Volume 8 (2004)",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [
+      "figure 1",
+      "figure 2",
+      "figure 5"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "cheeger chern",
+      "heading": false
+    },
+    {
+      "term": "log-parameter ﬂattening",
+      "heading": false
+    },
+    {
+      "term": "chern simons",
+      "heading": false
+    },
+    {
+      "term": "ideal simplices",
+      "heading": true
+    },
+    {
+      "term": "ideal simplex",
+      "heading": true
+    },
+    {
+      "term": "ﬂattened simplices",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic simplices",
+      "heading": true
+    },
+    {
+      "term": "simplices around",
+      "heading": false
+    },
+    {
+      "term": "ordered simplex",
+      "heading": false
+    },
+    {
+      "term": "adjacent simplices",
+      "heading": false
+    },
+    {
+      "term": "closed simplices",
+      "heading": false
+    },
+    {
+      "term": "old simplices",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 53,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 54,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 55,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 56,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 57,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 58,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 59,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 60,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 61,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 62,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Three triangles in developing image of N in C showing rotation levels of edges and resulting adjusted angles. One triangle is from a “folded” simplex",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Conﬁguration for the cycle relation",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Double cone on a disc",
+      "page": 41,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Left and right sides are identiﬁed to form an annulus. Signs indicate change of ﬂattening by ±πi and 0 signiﬁes that ﬂattening has been changed by both πi and −πi so total change is zero. The log-parameters aﬀected by applying the cycle relation about a single ei are bold",
+      "page": 45,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "A quasi-simplicial ordered 3–cycle",
+      "page": 46,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Fundamental domain of the cusp torus, triangulated as the link of the 0– simplex of the ideal triangulation of m004",
+      "page": 59,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 21,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 20,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "6 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p60); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 20 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/0307092v2"
+  }
+}

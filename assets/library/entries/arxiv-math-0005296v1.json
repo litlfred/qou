@@ -1,0 +1,61 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0005296v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0005296v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0005296v1  [math.QA]  31 May 2000\nAn example concerning Ohtsuki’s invariant and the full\nSO(3) quautum invariant ∗\nBang-He Li & Tian-Jun Li\nAbstract\nTwo lens spaces are given to show that Ohtsuki’s τ for rational homology spheres\ndoes not determine Kirby-Melvin’s {τ\n′\nr, r odd ≥3}\nBy using partial Kirby-Melvin’s quautum SO(3) invariants {τ\n′\nr(M), r odd prime >\n|H1(M, Z)|} [KM], Ohtsuki [O] deﬁned a topological invariant\nτ(M) =\n∞\nX\nn=0\nλn(M)(t −1)n ∈Q[[t −1]]\nfor rational homology 3-sphere M. R.Lawrence [La] conjectured that\nλn(M) ∈\n(\nZ,\nif |H1(M, Z)| = 1\nZ[1\n2,\n1\n|H1(M,Z)|],\nif |H1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0005296v1/blocks/thm-sec-front-matter-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "thm-sec-front-matter-01.md",
+      "narrative": null,
+      "content": "s(6, 25) = s(11, 25), while ξr(L(25, 11)) = ξr(L(25, 6)) if and only if (r, 25)̸ = 5.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0005296v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-references.md",
+      "narrative": null,
+      "content": "[RT] Reshetikhin, N.Yu., Turaev, V.G.:\nInvariants of 3-manifolds via link polynomials\nand quantum groups, Invent. Math. 103 (1991), 547-597\n[KM] Kirby, R., Melvin, P.: The 3-manifold invariants of Witten and Reshetikhin-Turaev\nfor sl(2, C), Invent. Math. 105 (1991), 473-545\n[Li] Li, B.H., Relations among Chern-Simons-Witten-Jones invariants , Science in China,\nseries A, 38 (1995), 129-146\n[LL1] Li, B.H., Li, T.J.: Generelized Gaussian Sums and Chern-Simons- Witten-Jones\ninvariants of Lens spaces, J. Knot theory and its Ramiﬁcations, vol.5 No. 2 (1996)\n183-224\n[O] Ohtsuki, T., A polynomial inva",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,3904 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0203273v3",
+  "title": "arxiv-math-0203273v3",
+  "variant": "pdf",
+  "pages": 146,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Post-scriptum",
+      "number": null,
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Id'eaux et radicaux",
+      "number": "1",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "$K$-ca-t'e-go-ries, ca-t'e-go-ries $K$-li-n'e-aires et $K$-ca-t'e-go-ries pseu-do-a-b'e-lien-nes",
+      "number": "1.1",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Compl'etions",
+      "number": "1.2",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "${\\mathcal{A}}^\\oplus$",
+      "number": "1.2.1",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "${\\mathcal{A}}^\\natural$",
+      "number": "1.2.2",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Propri'et'es universelles",
+      "number": "1.2.3",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Alg`ebres `a plusieurs objets",
+      "number": "1.3",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-13-algebres-a-plusieurs-objets"
+    },
+    {
+      "level": 2,
+      "title": "Radical",
+      "number": "1.4",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-14-radical"
+    },
+    {
+      "level": 1,
+      "title": "ca-t'e-go-ries de Wedderburn",
+      "number": "2",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Ca-t'e-go-ries semi-simples",
+      "number": "2.1",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Ca-t'e-go-ries s'eparables",
+      "number": "2.2",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Ca-t'e-go-ries semi-primaires",
+      "number": "2.3",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Ca-t'e-go-ries de Wedderburn",
+      "number": "2.4",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Radical infini et nilpotence renforc'ee",
+      "number": "3",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Le radical infini",
+      "number": "3.1",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Cas des ca-t'e-go-ries de modules",
+      "number": "3.2",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Radical et extension des scalaires",
+      "number": "4",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-radical-et-extension-des-scalaires"
+    },
+    {
+      "level": 1,
+      "title": "Extensions des scalaires na\"ve et non na\"ve",
+      "number": "5",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Deux types d'extensions des scalaires",
+      "number": "5.1",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Sur l'extension des scalaires `a la Saavedra",
+      "number": "5.2",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Comparaison de ${\\mathcal{A}}_L$ et ${\\mathcal{A}}_{(L)}$",
+      "number": "5.3",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "G'en'eralit'es",
+      "number": "6",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Id'eaux mono\"daux, duaux.",
+      "number": "6.1",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Le cas sy-m'e-tri-que",
+      "number": "6.2",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Interpr'etation",
+      "number": "6.3",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Traces",
+      "number": "7",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-7-traces"
+    },
+    {
+      "level": 2,
+      "title": "Traces et id'eal $\\mathcal{N}$",
+      "number": "7.1",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Traces et puissances ext'erieures",
+      "number": "7.2",
+      "page": 38,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Trace des endomor-phis-mes nilpotents",
+      "number": "7.3",
+      "page": 38,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "$\\otimes$-Radicaux",
+      "number": "7.4",
+      "page": 44,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Th'eor`emes de structure",
+      "number": "8",
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Structure de ${\\mathcal{A}}/{\\mathcal{N}}$",
+      "number": "8.1",
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Radical, traces, semi-simplicit'e. Trois th'eor`emes de structure",
+      "number": "8.2",
+      "page": 46,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Variante $\\mathbf{Z}/2$-gradu'ee",
+      "number": "8.3",
+      "page": 48,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Le Pair et l'Impair",
+      "number": "9",
+      "page": 50,
+      "pageLabel": "50",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Fondements",
+      "number": "9.1",
+      "page": 50,
+      "pageLabel": "50",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-91-fondements"
+    },
+    {
+      "level": 2,
+      "title": "Ca-t'e-go-ries de Kimura et ``projecteurs de K\"unneth\"",
+      "number": "9.2",
+      "page": 53,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Exemples et compl'ements",
+      "number": "10",
+      "page": 55,
+      "pageLabel": "55",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Trois contre-exemples",
+      "number": "10.1",
+      "page": 55,
+      "pageLabel": "55",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-101-trois-contre-exemples"
+    },
+    {
+      "level": 2,
+      "title": "Compl'ement: l'alg`ebre commutative $HH_0({\\mathcal{A}})$",
+      "number": "10.2",
+      "page": 55,
+      "pageLabel": "55",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Cohomologie de Hochschild-Mitchell",
+      "number": "11",
+      "page": 58,
+      "pageLabel": "58",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-11-cohomologie-de-hochschild-mitchell"
+    },
+    {
+      "level": 2,
+      "title": "Produit tensoriel de $K$-ca-t'e-go-ries",
+      "number": "11.1",
+      "page": 58,
+      "pageLabel": "58",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Complexe de Hochschild-Mitchell",
+      "number": "11.2",
+      "page": 59,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-112-complexe-de-hochschild-mitchell"
+    },
+    {
+      "level": 1,
+      "title": "Un ``th'eor`eme de Wedderburn `a plusieurs objets\"",
+      "number": "12",
+      "page": 60,
+      "pageLabel": "60",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Existence et ``unicit'e\" de sections",
+      "number": "12.1",
+      "page": 60,
+      "pageLabel": "60",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Variantes relatives",
+      "number": "12.2",
+      "page": 63,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-122-variantes-relatives"
+    },
+    {
+      "level": 1,
+      "title": "Sections mo-no-\"-dales",
+      "number": "13",
+      "page": 64,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Foncteurs mono\"daux",
+      "number": "13.1",
+      "page": 64,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Existence et ``unicit'e\" de sections mo-no-\"-dales",
+      "number": "13.2",
+      "page": 64,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Sorites",
+      "number": "13.3",
+      "page": 65,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-133-sorites"
+    },
+    {
+      "level": 2,
+      "title": "Cat' egories mo-no-\"-dales strictes",
+      "number": "13.4",
+      "page": 65,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "La construction de Mac Lane",
+      "number": "13.4.1",
+      "page": 67,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-1341-la-construction-de-mac-lane"
+    },
+    {
+      "level": 2,
+      "title": "R'eductions",
+      "number": "13.5",
+      "page": 67,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Au cur du probl`eme: d'emonstration de la proposition",
+      "number": "13.6",
+      "page": 69,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "D'ebut de la preuve de c)",
+      "number": "13.6.1",
+      "page": 69,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Une relation de cocycle, I",
+      "number": "13.6.2",
+      "page": 70,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-1362-une-relation-de-cocycle-i"
+    },
+    {
+      "level": 3,
+      "title": "Une relation de cocycle, II",
+      "number": "13.6.3",
+      "page": 70,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-013-1363-une-relation-de-cocycle-ii"
+    },
+    {
+      "level": 3,
+      "title": "Une relation de cocycle, III -- fin de la preuve de c)",
+      "number": "13.6.4",
+      "page": 71,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "D'ebut de la preuve de a)",
+      "number": "13.6.5",
+      "page": 71,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Une relation de cocycle, I",
+      "number": "13.6.6",
+      "page": 72,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-1362-une-relation-de-cocycle-i"
+    },
+    {
+      "level": 3,
+      "title": "Une relation de cocycle, II",
+      "number": "13.6.7",
+      "page": 73,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-015-1367-une-relation-de-cocycle-ii"
+    },
+    {
+      "level": 3,
+      "title": "Une relation de cocycle, III - fin de la preuve de a)",
+      "number": "13.6.8",
+      "page": 74,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Preuve de b)",
+      "number": "13.6.9",
+      "page": 74,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-016-1369-preuve-de-b"
+    },
+    {
+      "level": 2,
+      "title": "Variantes",
+      "number": "13.7",
+      "page": 76,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-017-137-variantes"
+    },
+    {
+      "level": 2,
+      "title": "Compl'ement",
+      "number": "13.8",
+      "page": 77,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Repr'esentabilit'e",
+      "number": "14",
+      "page": 78,
+      "pageLabel": "78",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Le paysage discret",
+      "number": "14.1",
+      "page": 79,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-018-141-le-paysage-discret"
+    },
+    {
+      "level": 3,
+      "title": "Le cas non mo-no-\"-dal",
+      "number": "14.1.1",
+      "page": 81,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Le cas mo-no-\"-dal",
+      "number": "14.1.2",
+      "page": 84,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Objets compacts, duaux et limites inductives",
+      "number": "14.1.3",
+      "page": 84,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Extension des scalaires",
+      "number": "14.1.4",
+      "page": 112,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-019-1414-extension-des-scalaires"
+    },
+    {
+      "level": 2,
+      "title": "Objets en ca-t'e-go-ries, en groupo\"des et en actions de grou-pe",
+      "number": "14.2",
+      "page": 112,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Objets en ca-t'e-go-ries et en groupo\"des",
+      "number": "14.2.1",
+      "page": 112,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Objets en actions de groupe",
+      "number": "14.2.2",
+      "page": 112,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Actions de groupe et groupo\"des",
+      "number": "14.2.3",
+      "page": 112,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Repr'esentabilit'e alg'ebrique",
+      "number": "14.3",
+      "page": 112,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Le cas non mo-no-\"-dal",
+      "number": "14.3.1",
+      "page": 112,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Le cas mo-no-\"-dal",
+      "number": "14.3.2",
+      "page": 112,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Sections et tressages",
+      "number": "15",
+      "page": 112,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Tressages",
+      "number": "15.1",
+      "page": 112,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Sorites",
+      "number": "15.2",
+      "page": 112,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": "sec-010-133-sorites"
+    },
+    {
+      "level": 2,
+      "title": "Sections",
+      "number": "15.3",
+      "page": 112,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Compl'ements",
+      "number": "15.4",
+      "page": 112,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Premi`ere application: ca-t'e-go-ries de Kimura",
+      "number": "16",
+      "page": 112,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Le cas non mo-no-\"-dal: enveloppes pro-semi-simples",
+      "number": "17",
+      "page": 112,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Enveloppes pro-semi-simples",
+      "number": "17.1",
+      "page": 112,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Lien avec l'alg`ebre d'Auslander.",
+      "number": "17.2",
+      "page": 112,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Cas des alg`ebres h'er'editaires",
+      "number": "17.3",
+      "page": 112,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Sections mo-no-\"-dales et foncteurs fibres",
+      "number": "18",
+      "page": 112,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Un contexte g'en'eral",
+      "number": "18.1",
+      "page": 112,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Le cas tannakien neutralis'e",
+      "number": "18.2",
+      "page": 112,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Au-del`a de Jacobson-Morozov: enveloppes pro-r'eductives",
+      "number": "19",
+      "page": 112,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Groupes `a conjugaison pr`es",
+      "number": "19.1",
+      "page": 112,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Exactitude",
+      "number": "19.2",
+      "page": 112,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "L'enveloppe pro-r'eductive",
+      "number": "19.3",
+      "page": 112,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Quelques propri'et'es de l'enveloppe pro-r'eductive",
+      "number": "19.4",
+      "page": 112,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Le cas du groupe additif",
+      "number": "19.5",
+      "page": 112,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Extension des scalaires",
+      "number": "19.6",
+      "page": 115,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-020-196-extension-des-scalaires"
+    },
+    {
+      "level": 2,
+      "title": "Enveloppes pro-r'eductives des groupes pro-unipotents",
+      "number": "19.7",
+      "page": 115,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Applications aux groupes alg'ebriques et aux re-pr'e-sen-ta-tions in-d'e-com-po-sa-bles.",
+      "number": "20",
+      "page": 115,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Applications aux groupes alg'ebriques",
+      "number": "20.1",
+      "page": 115,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Applications aux re-pr'e-sen-ta-tions in-d'e-com-po-sa-bles",
+      "number": "20.2",
+      "page": 115,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Enveloppes pro-r'eductives de gerbes",
+      "number": "21",
+      "page": 115,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Des ca-t'e-go-ries semi-simples",
+      "number": "A",
+      "page": 115,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Objets projectifs et injectifs",
+      "number": "A.1",
+      "page": 119,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-021-a1-objets-projectifs-et-injectifs"
+    },
+    {
+      "level": 2,
+      "title": "Ca-t'e-go-ries semi-simples",
+      "number": "A.2",
+      "page": 119,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Ca-t'e-go-ries s'eparables (ou absolument semi-simples)",
+      "number": "A.3",
+      "page": 125,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Erratum `a",
+      "number": "B",
+      "page": 125,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": "sec-022-b-erratum-a"
+    },
+    {
+      "level": 2,
+      "title": "Premi`ere correction",
+      "number": "B.1",
+      "page": 126,
+      "pageLabel": "126",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-023-b1-premiere-correction"
+    },
+    {
+      "level": 2,
+      "title": "Seconde correction",
+      "number": "B.2",
+      "page": 127,
+      "pageLabel": "127",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-024-b2-seconde-correction"
+    },
+    {
+      "level": 2,
+      "title": "Table de concordance pour les r'ef'erences de",
+      "number": null,
+      "page": 127,
+      "pageLabel": "127",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Finite dimensionality of reductive envelopes, by Peter O'Sullivan",
+      "number": "C",
+      "page": 127,
+      "pageLabel": "127",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": "sec-025-c-finite-dimensionality-of-reductive-envelopes-b"
+    },
+    {
+      "level": 2,
+      "title": "Families of representations",
+      "number": "C.1",
+      "page": 128,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-026-c1-families-of-representations"
+    },
+    {
+      "level": 2,
+      "title": "Application to proreductive envelopes",
+      "number": "C.2",
+      "page": 138,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-027-c2-application-to-proreductive-envelopes"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 379,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mono idales",
+          "heading": false
+        },
+        {
+          "term": "yves andr",
+          "heading": false
+        },
+        {
+          "term": "bruno kahn",
+          "heading": false
+        },
+        {
+          "term": "appendice",
+          "heading": false
+        },
+        {
+          "term": "structures mono",
+          "heading": false
+        },
+        {
+          "term": "pred",
+          "heading": false
+        },
+        {
+          "term": "jacobson-morozov",
+          "heading": false
+        },
+        {
+          "term": "wedderburn",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0203273v3 [math.CT] 12 Oct 2002 NILPOTENCE, RADICAUX ET STRUCTURES MONO¨IDALES YVES ANDR´E ET BRUNO KAHN AVEC UN APPENDICE DE PETER O’SULLIVAN TABLE DES MATI`ERES Introduction 3 I. Radicaux et nilpotence 7 1. Id´eaux et radicaux 7 2. cat´egories de Wedderburn 15 3. Radical inﬁni et nilpotence renforc´ee 22 4. Radical et extension des scalaires 23 5. Extensions des scalaires na¨ıve et non na¨ıve 26 II.",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0203273v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2835,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "catégorie monoı",
+          "heading": false
+        },
+        {
+          "term": "est monoı",
+          "heading": false
+        },
+        {
+          "term": "monoı dale",
+          "heading": false
+        },
+        {
+          "term": "catégorie linéaire",
+          "heading": false
+        },
+        {
+          "term": "d'une catégorie",
+          "heading": false
+        },
+        {
+          "term": "catégorie des",
+          "heading": false
+        },
+        {
+          "term": "une catégorie",
+          "heading": false
+        },
+        {
+          "term": "les catégories",
+          "heading": false
+        }
+      ],
+      "extract": "En algèbre non commutative, on rencontre d'abord, par ordre de complexité croissant, les anneaux semi-simples, puis les anneaux semi-primaires, c'est-à-dire les extensions d'un anneau semi-simple par un idéal nilpotent (le radical). Parmi ces derniers, le cas où l'anneau semi-simple est en fait une algèbre séparable est particulièrement agréable puisque, d'après un théorème classique de Wedderburn, l'extension par",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-13-algebres-a-plusieurs-objets",
+      "number": "1.3",
+      "title": "Alg`ebres `a plusieurs objets",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1626,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "foncteur est",
+          "heading": false
+        },
+        {
+          "term": "que est",
+          "heading": false
+        },
+        {
+          "term": "hbox mathcal",
+          "heading": false
+        },
+        {
+          "term": "idéaux gauche",
+          "heading": false
+        },
+        {
+          "term": "est une",
+          "heading": false
+        },
+        {
+          "term": "hbox modf",
+          "heading": false
+        },
+        {
+          "term": "pour tout",
+          "heading": false
+        },
+        {
+          "term": "les idéaux",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#1.3 label=\"1.3\"} Dans cet article, nous adoptons le point de vue de B. Mitchell [@mitchell] et considérons les $K$-catégories comme des \"$K$-algèbres (associatives) à plusieurs objets\\\". Suivant ce point de vue, un idéal (bilatère) ${\\mathcal{I}}$ d'une $K$-catégorie ${\\mathcal{A}}$ est la donnée, pour tout couple d'objets $(A,B)$, d'un sous-$K$-module de ${\\mathcal{I}}(A,B)\\allowbreak \\subset",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-14-radical",
+      "number": "1.4",
+      "title": "Radical",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": "23",
+      "words": 4286,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "est strictement",
+          "heading": false
+        },
+        {
+          "term": "operatorname rad",
+          "heading": false
+        },
+        {
+          "term": "est une",
+          "heading": false
+        },
+        {
+          "term": "est plein",
+          "heading": false
+        },
+        {
+          "term": "radical est",
+          "heading": false
+        },
+        {
+          "term": "est conservatif",
+          "heading": false
+        },
+        {
+          "term": "mathcal est",
+          "heading": false
+        },
+        {
+          "term": "est semi-simple",
+          "heading": false
+        }
+      ],
+      "extract": "On démontre [@kelly] que $$\\begin{gathered} {\\operatorname{rad}}({\\mathcal{A}})(A,B)=\\\\ \\{f\\in {\\mathcal{A}}(A,B)\\mid \\text{pour tout}\\ g\\in {\\mathcal{A}}(B,A), 1_A-gf \\text{ est inversible}\\} \\end{gathered}$$ définit un idéal ${\\operatorname{rad}}({\\mathcal{A}})$ de ${\\mathcal{A}}$. ::: defn []{#D1 label=\"D1\"} Cet idéal s'appelle le *radical* de ${\\mathcal{A}}$. ::: Si ${\\mathcal{A}}$ est une $K$-algèbre, vue comme",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-radical-et-extension-des-scalaires",
+      "number": "4",
+      "title": "Radical et extension des scalaires",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 35,
+      "labelStart": "23",
+      "labelEnd": "35",
+      "words": 4709,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "des scalaires",
+          "heading": true
+        },
+        {
+          "term": "bullet est",
+          "heading": false
+        },
+        {
+          "term": "extension des",
+          "heading": true
+        },
+        {
+          "term": "bullet vee",
+          "heading": false
+        },
+        {
+          "term": "que est",
+          "heading": false
+        },
+        {
+          "term": "est une",
+          "heading": false
+        },
+        {
+          "term": "idéal gauche",
+          "heading": false
+        },
+        {
+          "term": "idéal monoı",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s3 label=\"s3\"} ## Il est connu que le radical d'une algèbre se comporte \"mal\\\" par extension des scalaires en général, *cf.* [@alg], [@rowen]. La situation s'améliore toutefois dans le cas \"de Wedderburn\\\". ::: prop []{#L5 label=\"L5\"} 1) Soit $L/K$ une extension de corps. Soit $A$ une $K$-algèbre de Wedderburn, *i.e.* ${\\operatorname{rad}}(A)$ est nilpotent et $A/{\\operatorname{rad}}(A)$ est séparable. Alors\\ a)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-7-traces",
+      "number": "7",
+      "title": "Traces",
+      "level": 1,
+      "pageStart": 35,
+      "pageEnd": 50,
+      "labelStart": "35",
+      "labelEnd": "50",
+      "words": 6516,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "est monoı",
+          "heading": false
+        },
+        {
+          "term": "bullet est",
+          "heading": false
+        },
+        {
+          "term": "que est",
+          "heading": false
+        },
+        {
+          "term": "monoı dal",
+          "heading": false
+        },
+        {
+          "term": "idéal monoı",
+          "heading": false
+        },
+        {
+          "term": "monoı dale",
+          "heading": false
+        },
+        {
+          "term": "catégorie monoı",
+          "heading": false
+        },
+        {
+          "term": "dal symétrique",
+          "heading": false
+        }
+      ],
+      "extract": "*Dans tout ce paragraphe, on suppose que $({\\mathcal{A}},\\bullet)$ est $K$-linéaire monoı̈dale rigide, symétrique, et que $End({\\bf 1}) =K$* (en revanche, on ne suppose pas ${\\mathcal{A}}$ abélienne). ## Traces et idéal ${\\mathcal{N}}$ {#traces} Rappelons que la *trace* d'un endomorphisme $h\\in {\\mathcal{A}}(C,C)$ est l'élément $tr(h) \\in K= End({\\bf 1})$ défini par $$\\varepsilon_C \\circ R_{C^\\vee, C}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-91-fondements",
+      "number": "9.1",
+      "title": "Fondements",
+      "level": 2,
+      "pageStart": 50,
+      "pageEnd": 55,
+      "labelStart": "50",
+      "labelEnd": "55",
+      "words": 2225,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "finie est",
+          "heading": false
+        },
+        {
+          "term": "kim est",
+          "heading": false
+        },
+        {
+          "term": "dimension finie",
+          "heading": false
+        },
+        {
+          "term": "est une",
+          "heading": false
+        },
+        {
+          "term": "kim operatorname",
+          "heading": false
+        },
+        {
+          "term": "kimura mathcal",
+          "heading": false
+        },
+        {
+          "term": "que operatorname",
+          "heading": false
+        },
+        {
+          "term": "kimura s'il",
+          "heading": false
+        }
+      ],
+      "extract": "::: defn []{#dkim.1 label=\"dkim.1\"} a) Un objet $A\\in {\\mathcal{A}}$ est *pairement de dimension finie au sens de Kimura* s'il existe un entier $n>0$ tel que $\\Lambda^n(A)=0$.\\ b) Un objet $A\\in {\\mathcal{A}}$ est *impairement de dimension finie au sens de Kimura* s'il existe un entier $n>0$ tel que $\\mathbf{S}^n(A)=0$.\\ c) Un objet $A\\in {\\mathcal{A}}$ est *de dimension finie au sens de Kimura* s'il admet une",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-101-trois-contre-exemples",
+      "number": "10.1",
+      "title": "Trois contre-exemples",
+      "level": 2,
+      "pageStart": 55,
+      "pageEnd": 58,
+      "labelStart": "55",
+      "labelEnd": "58",
+      "words": 1000,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monoı dale",
+          "heading": false
+        },
+        {
+          "term": "monoı dal",
+          "heading": false
+        },
+        {
+          "term": "vert est",
+          "heading": false
+        },
+        {
+          "term": "catégorie monoı",
+          "heading": false
+        },
+        {
+          "term": "mathcal est",
+          "heading": false
+        },
+        {
+          "term": "est linéaire",
+          "heading": false
+        },
+        {
+          "term": "cadre monoı",
+          "heading": false
+        },
+        {
+          "term": "est maintenant",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#3contrex label=\"3contrex\"} Voici trois exemples de catégories monoı̈dales $K$-linéaires symétriques et rigides, vérifiant $End({\\bf 1})=K$, abéliennes, de Wedderburn, mais *dont le radical n'est pas un idéal monoı̈dal*. ::: contrex []{#super label=\"super\"} Partons de $D=K[\\varepsilon],\\varepsilon^2=0$, vue comme super-algèbre ($\\varepsilon$ placé en degré impair). On considère le super-groupe algébrique",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-11-cohomologie-de-hochschild-mitchell",
+      "number": "11",
+      "title": "Cohomologie de Hochschild-Mitchell",
+      "level": 1,
+      "pageStart": 58,
+      "pageEnd": 59,
+      "labelStart": "58",
+      "labelEnd": null,
+      "words": 442,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "operatorname rad",
+          "heading": false
+        },
+        {
+          "term": "mathcal est",
+          "heading": false
+        },
+        {
+          "term": "boxtimes mathcal",
+          "heading": false
+        },
+        {
+          "term": "est semi-primaire",
+          "heading": false
+        },
+        {
+          "term": "que mathcal",
+          "heading": false
+        },
+        {
+          "term": "est semi-simple",
+          "heading": false
+        },
+        {
+          "term": "est séparable",
+          "heading": false
+        },
+        {
+          "term": "catégorie mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#hochschild label=\"hochschild\"}[]{#s4 label=\"s4\"} ## Produit tensoriel de $K$-catégories {#prodtens} Ici, $K$ désigne de nouveau un anneau commutatif unitaire quelconque. ::: defn []{#D5 label=\"D5\"} (*cf.* [@mitchell §11]). Soient ${\\mathcal{A}},{\\mathcal{B}}$ deux $K$-catégories. Le *produit tensoriel* de ${\\mathcal{A}}$ par ${\\mathcal{B}}$ est la $K$-catégorie ${\\mathcal{A}}\\boxtimes_K{\\mathcal{B}}$ dont les",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-112-complexe-de-hochschild-mitchell",
+      "number": "11.2",
+      "title": "Complexe de Hochschild-Mitchell",
+      "level": 2,
+      "pageStart": 59,
+      "pageEnd": 63,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1980,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "est une",
+          "heading": false
+        },
+        {
+          "term": "mathcal est",
+          "heading": false
+        },
+        {
+          "term": "que pour",
+          "heading": false
+        },
+        {
+          "term": "pour tout",
+          "heading": false
+        },
+        {
+          "term": "telle que",
+          "heading": false
+        },
+        {
+          "term": "que bar",
+          "heading": false
+        },
+        {
+          "term": "une sous-catégorie",
+          "heading": false
+        },
+        {
+          "term": "que les",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#7.2 label=\"7.2\"} Soit ${\\mathcal{A}}$ une petite $K$-catégorie, telle que pour tout $(A,B)\\in {\\mathcal{A}}\\times {\\mathcal{A}}$, ${\\mathcal{A}}(A,B)$ soit un $K$-module projectif. Notons $C_*({\\mathcal{A}})$ le complexe de Hochschild de ${\\mathcal{A}}$ [@mitchell § 17]: c'est un complexe de ${{\\mathcal{A}}}^e$-modules tel que $$\\scriptstyle C_m({\\mathcal{A}})(A,B)=\\displaystyle\\bigoplus_{A_0,\\dots,A_{m}}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-122-variantes-relatives",
+      "number": "12.2",
+      "title": "Variantes relatives",
+      "level": 2,
+      "pageStart": 63,
+      "pageEnd": 65,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 896,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monoı dale",
+          "heading": false
+        },
+        {
+          "term": "monoı daux",
+          "heading": false
+        },
+        {
+          "term": "foncteur monoı",
+          "heading": false
+        },
+        {
+          "term": "monoı dal",
+          "heading": false
+        },
+        {
+          "term": "catégorie monoı",
+          "heading": false
+        },
+        {
+          "term": "tel que",
+          "heading": false
+        },
+        {
+          "term": "mathcal est",
+          "heading": false
+        },
+        {
+          "term": "une catégorie",
+          "heading": false
+        }
+      ],
+      "extract": "::: prop []{#P3 label=\"P3\"} Soit $T:{\\mathcal{B}}\\to {\\mathcal{A}}$ un $K$-foncteur radiciel entre deux petites $K$-catégories de Wedderburn. Notons $\\bar {\\mathcal{A}}={\\mathcal{A}}/{\\operatorname{rad}}({\\mathcal{A}})$, $\\bar {\\mathcal{B}}={\\mathcal{B}}/{\\operatorname{rad}}({\\mathcal{B}})$ et $\\bar T:\\bar {\\mathcal{B}}\\to \\bar {\\mathcal{A}}$ le foncteur induit. Soit $s_{\\mathcal{A}}:\\bar{\\mathcal{A}}\\to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-133-sorites",
+      "number": "13.3",
+      "title": "Sorites",
+      "level": 2,
+      "pageStart": 65,
+      "pageEnd": 67,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 749,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mono ıdale",
+          "heading": false
+        },
+        {
+          "term": "est mono",
+          "heading": false
+        },
+        {
+          "term": "ıdale stricte",
+          "heading": false
+        },
+        {
+          "term": "egorie mono",
+          "heading": false
+        },
+        {
+          "term": "foncteur mono",
+          "heading": false
+        },
+        {
+          "term": "mono ıdal",
+          "heading": false
+        },
+        {
+          "term": "mono ıdaux",
+          "heading": false
+        },
+        {
+          "term": "est une",
+          "heading": false
+        }
+      ],
+      "extract": "Pour cela, quelques sorites sont n´ecessaires. 13.3.1. Sorite. Soit (s, ˜s) : (B, ⊤) →(A, •) un foncteur mono¨ıdal, et soit u : s ⇒t un isomorphisme naturel de s sur un autre foncteur t. Alors il existe une unique structure mono¨ıdale ˜t sur t faisant de u un morphisme de foncteurs mono¨ıdaux. D´emonstration. D´eﬁnissons ˜tA,B = uA⊤B˜sA,B(uA • uB)−1 (cf. (13.1)). Il faut voir que ˜t est compatible avec les",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-1341-la-construction-de-mac-lane",
+      "number": "13.4.1",
+      "title": "La construction de Mac Lane",
+      "level": 3,
+      "pageStart": 67,
+      "pageEnd": 70,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1193,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mono ıdale",
+          "heading": false
+        },
+        {
+          "term": "mono ıdal",
+          "heading": false
+        },
+        {
+          "term": "foncteur mono",
+          "heading": false
+        },
+        {
+          "term": "egorie mono",
+          "heading": false
+        },
+        {
+          "term": "ıdale stricte",
+          "heading": false
+        },
+        {
+          "term": "pour tout",
+          "heading": false
+        },
+        {
+          "term": "est donn",
+          "heading": false
+        },
+        {
+          "term": "donn par",
+          "heading": false
+        }
+      ],
+      "extract": "(A, •), on associe une petite cat´egorie mono¨ıdale stricte (Astr, ⊤), et deux foncteurs mono¨ıdaux B u → ← v A, avec u strict, tels que le compos´e uv soit le foncteur mono¨ıdal identique de A (les foncteurs sous-jacents `a u et v sont donc quasi-inverses). Rappelons cette construction : on prend pour objets de Astr les mots (ﬁnis) dont les lettres sont les objets de A. Les morphismes entre mots sont les morphismes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-1362-une-relation-de-cocycle-i",
+      "number": "13.6.2",
+      "title": "Une relation de cocycle, I",
+      "level": 3,
+      "pageStart": 70,
+      "pageEnd": 70,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 189,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "d'une famille",
+          "heading": false
+        },
+        {
+          "term": "bullet",
+          "heading": false
+        },
+        {
+          "term": "une famille",
+          "heading": false
+        },
+        {
+          "term": "pmod mathcal",
+          "heading": false
+        },
+        {
+          "term": "pour tout",
+          "heading": false
+        },
+        {
+          "term": "l'existence d'une",
+          "heading": false
+        },
+        {
+          "term": "equiv pmod",
+          "heading": false
+        },
+        {
+          "term": "couple d'objets",
+          "heading": false
+        }
+      ],
+      "extract": "Supposons $r\\ge 1$ et trouvée une famille $u_A^{(r)}$ vérifiant la condition (ii) du lemme [\\[l4\\]](#l4){reference-type=\"ref\" reference=\"l4\"}. Quitte à remplacer $s$ par $s_r$, on peut supposer $s_r=s$, $u^{(r)}=1$. On a donc $\\tilde s_{A,B}\\in 1+{\\mathcal{R}}(A\\bullet B)^r$ pour tout couple d'objets $(A,B)$. Posons $n_{A,B}=1_{A\\bullet B}-\\tilde s_{A,B}\\in{\\mathcal{R}}(A\\bullet B)^r$. La relation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-1363-une-relation-de-cocycle-ii",
+      "number": "13.6.3",
+      "title": "Une relation de cocycle, II",
+      "level": 3,
+      "pageStart": 70,
+      "pageEnd": 71,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 197,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "objets",
+          "heading": false
+        },
+        {
+          "term": "notons",
+          "heading": false
+        },
+        {
+          "term": "les",
+          "heading": false
+        }
+      ],
+      "extract": "de 2-cocycle, et la congruence (13.5) `a une relation de 2-cobord. Pour donner corps `a ces impressions, introduisons encore quelques notations. Si w = A1A2 . . . Am est un mot form´e d’objets de A, notons •w l’objet A1 •A2 • · · · • Am de A ou ¯ A (notation plus commode que celle u(w) utilis´ee plus haut) ; notons les formules • ( [ •w1 •w2) = • [ w1w2 • ∅= 1. Pour tout A ∈A, posons R(A)[r] = R(A)r/R(A)r+1. On peut",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-1366-une-relation-de-cocycle-i",
+      "number": "13.6.6",
+      "title": "Une relation de cocycle, I",
+      "level": 3,
+      "pageStart": 71,
+      "pageEnd": 73,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 749,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "une famille",
+          "heading": false
+        },
+        {
+          "term": "pour tout",
+          "heading": false
+        },
+        {
+          "term": "existe une",
+          "heading": false
+        },
+        {
+          "term": "comme dans",
+          "heading": false
+        },
+        {
+          "term": "nous allons",
+          "heading": false
+        },
+        {
+          "term": "eriﬁant",
+          "heading": false
+        },
+        {
+          "term": "lemme",
+          "heading": false
+        },
+        {
+          "term": "est",
+          "heading": false
+        }
+      ],
+      "extract": "tenant en mesure d’interpr´eter (13.4) comme relation de 2-cocycle de Hochschild pour l’alg`ebre K⟨Ob(A)⟩. En effet, reprenons la famille (nA,B) ci-dessus. Avec les notations pr´ec´edentes, on a une famille induite ¯nAB ∈R(AB)[r]. On d´eﬁnit alors une 2-cochaˆıne de Hochschild ¯n pour K⟨Ob(A)⟩`a valeurs dans le K⟨Ob(A)⟩-bimodule R[r], en associant `a tout couple de mots non vides (w0, w1) l’´el´ement ¯nw0,w1 ∈R[r]",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-1367-une-relation-de-cocycle-ii",
+      "number": "13.6.7",
+      "title": "Une relation de cocycle, II",
+      "level": 3,
+      "pageStart": 73,
+      "pageEnd": 74,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 359,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cocycle",
+          "heading": true
+        },
+        {
+          "term": "cobord",
+          "heading": false
+        },
+        {
+          "term": "comme",
+          "heading": false
+        }
+      ],
+      "extract": "2-cocycle et (13.7) comme une relation de cobord, on proc`ede comme ci-dessus en introduisant un K⟨Ob(A)⟩-bimodule appropri´e. Notons que l’action de A sur R[r] = Rr/Rr+1 se factorise en une action de ¯ A. En particulier, on peut se dispenser d’´ecrire la section s dans (13.6) et (13.7). Pour tout mot w = A1 . . . Am en les objets de A, notons ¯ A(w) = ¯ A(A1) • · · · • ¯ A(Am) ⊂¯ A( •w). On a ¯ A(ww′) = ¯ A(w) ¯",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-1369-preuve-de-b",
+      "number": "13.6.9",
+      "title": "Preuve de b)",
+      "level": 3,
+      "pageStart": 74,
+      "pageEnd": 76,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 676,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pour tout",
+          "heading": false
+        },
+        {
+          "term": "bar bullet",
+          "heading": false
+        },
+        {
+          "term": "overset bullet",
+          "heading": false
+        },
+        {
+          "term": "bar mathcal",
+          "heading": false
+        },
+        {
+          "term": "une famille",
+          "heading": false
+        },
+        {
+          "term": "pour tous",
+          "heading": false
+        },
+        {
+          "term": "engendrée par",
+          "heading": false
+        },
+        {
+          "term": "vérifiant les",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#prb label=\"prb\"} Soient $s,s'$ deux sections monoı̈dales strictes de $\\pi_{\\mathcal{A}}$. Il s'agit de montrer qu'il existe une famille $(u_A)_{A\\in {\\mathcal{A}}}, u_A \\in 1_A +{\\mathcal{R}}(A,A)$, telle que pour tous $A,B\\in {\\mathcal{A}}$ on ait $s'(f)= u_As(f)(u_A)^{-1}$ pour tout $f\\in \\bar{\\mathcal{A}}(A)$ et $$u_{A\\bullet B}=u_A\\bullet u_B.$$ Nous allons montrer: ::: lemme []{#l6 label=\"l6\"} Il existe une",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-137-variantes",
+      "number": "13.7",
+      "title": "Variantes",
+      "level": 2,
+      "pageStart": 76,
+      "pageEnd": 79,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1205,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monoı dale",
+          "heading": false
+        },
+        {
+          "term": "est monoı",
+          "heading": false
+        },
+        {
+          "term": "monoı dal",
+          "heading": false
+        },
+        {
+          "term": "l'isomorphisme monoı",
+          "heading": false
+        },
+        {
+          "term": "isomorphisme monoı",
+          "heading": false
+        },
+        {
+          "term": "que est",
+          "heading": false
+        },
+        {
+          "term": "dal identique",
+          "heading": false
+        },
+        {
+          "term": "dale vérifiant",
+          "heading": false
+        }
+      ],
+      "extract": "Voici un avatar monoı̈dal de la proposition [\\[P3\\]](#P3){reference-type=\"ref\" reference=\"P3\"}. ::: prop []{#P3' label=\"P3'\"} Soit $({\\mathcal{B}}, \\bullet)$ une autre catégorie monoı̈dale vérifiant les hypothèses du théorème [\\[T2\\]](#T2){reference-type=\"ref\" reference=\"T2\"}. Soit $T:{\\mathcal{B}}\\to {\\mathcal{A}}$ un $K$-foncteur monoı̈dal radiciel. Notons $\\bar T:\\bar {\\mathcal{B}}\\to \\bar {\\mathcal{A}}$ le",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-141-le-paysage-discret",
+      "number": "14.1",
+      "title": "Le paysage discret",
+      "level": 2,
+      "pageStart": 79,
+      "pageEnd": 112,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 12895,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "modf est",
+          "heading": false
+        },
+        {
+          "term": "que est",
+          "heading": false
+        },
+        {
+          "term": "ıde est",
+          "heading": false
+        },
+        {
+          "term": "egorie modf",
+          "heading": false
+        },
+        {
+          "term": "est une",
+          "heading": false
+        },
+        {
+          "term": "groupo ıde",
+          "heading": false
+        },
+        {
+          "term": "k-cat egorie",
+          "heading": false
+        },
+        {
+          "term": "est alg",
+          "heading": false
+        }
+      ],
+      "extract": "14.1.1. Le cas non mono¨ıdal. Soit A une petite K-cat´egorie de Wedderburn. Con- sid´erons la cat´egorie G(A) dont les objets sont les sections de πA, un morphisme de s vers s′ ´etant une famille (uA)A∈A comme dans le th´eor`eme 12.1.1 b) et le com- pos´e de deux morphismes (uA), (vA) ´etant (vAuA). (Comme nous l’a fait remarquer A. Brugui`eres, les morphismes de G(A) s’interpr`etent aussi comme les transforma-",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-1414-extension-des-scalaires",
+      "number": "14.1.4",
+      "title": "Extension des scalaires",
+      "level": 3,
+      "pageStart": 112,
+      "pageEnd": 115,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 960,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "est une",
+          "heading": false
+        },
+        {
+          "term": "que pour",
+          "heading": false
+        },
+        {
+          "term": "est pas",
+          "heading": false
+        },
+        {
+          "term": "pred",
+          "heading": false
+        },
+        {
+          "term": "repr esentation",
+          "heading": false
+        },
+        {
+          "term": "cat egories",
+          "heading": false
+        },
+        {
+          "term": "des",
+          "heading": true
+        },
+        {
+          "term": "mono idales",
+          "heading": false
+        }
+      ],
+      "extract": "pos´e de caract´eristique nulle), pour un K-groupe afﬁne G et une extension L/K, il y a lieu de distinguer entre les L-groupes afﬁnes pRed(G×K L) et pRed(G)×K L. Par la propri´et´e universelle de pRed, on a toujours un morphisme naturel (19.4) pRed(G ×K L) →pRed(G) ×K L. Nous verrons ci-dessous que ce morphisme n’est pas un isomorphisme en g´en´eral. Par contre : 19.6.1. Th´eor`eme. Si L/K est ﬁnie, (19.4) est un",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-196-extension-des-scalaires",
+      "number": "19.6",
+      "title": "Extension des scalaires",
+      "level": 2,
+      "pageStart": 115,
+      "pageEnd": 119,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1580,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dans est",
+          "heading": false
+        },
+        {
+          "term": "enveloppe eductive",
+          "heading": false
+        },
+        {
+          "term": "sous-groupe eductif",
+          "heading": false
+        },
+        {
+          "term": "groupe eductif",
+          "heading": false
+        },
+        {
+          "term": "est alors",
+          "heading": false
+        },
+        {
+          "term": "que enveloppe",
+          "heading": false
+        },
+        {
+          "term": "est une",
+          "heading": false
+        },
+        {
+          "term": "dans appendice",
+          "heading": false
+        }
+      ],
+      "extract": "La r´eponse est donn´ee dans l’appendice C : ceci se produit si et seulement si G est de dimension ﬁnie et son radical unipotent U est de dimension ≤1. De plus, pRed(G) est alors produit semi-direct de G/U par SL2. Un cas ´eclairant est celui du produit semi-direct G de SL2 par Ga × Ga (d´eﬁni par la repr´esentation standard de SL2). Ce cas a ´et´e examin´e dans [46]. L’auteur y montre que pour tout n ≥1, l’alg`ebre",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-a1-objets-projectifs-et-injectifs",
+      "number": "A.1",
+      "title": "Objets projectifs et injectifs",
+      "level": 2,
+      "pageStart": 119,
+      "pageEnd": 126,
+      "labelStart": null,
+      "labelEnd": "126",
+      "words": 3222,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "objet est",
+          "heading": false
+        },
+        {
+          "term": "que est",
+          "heading": false
+        },
+        {
+          "term": "est projectif",
+          "heading": false
+        },
+        {
+          "term": "tout objet",
+          "heading": false
+        },
+        {
+          "term": "pour tout",
+          "heading": false
+        },
+        {
+          "term": "est facteur",
+          "heading": false
+        },
+        {
+          "term": "est k-lin",
+          "heading": false
+        },
+        {
+          "term": "est semi-simple",
+          "heading": false
+        }
+      ],
+      "extract": "gorie ab´elienne K-lin´eaire A–Mod des A-modules (`a gauche) poss`ede assez d’in- jectifs et de projectifs. Pour les projectifs, nous allons retrouver ce fait de mani`ere constructive. A.1.1. Lemme. Soit f : M →N un homomorphisme de A-modules. Alors a) f est un ´epimorphisme si et seulement si f(A) : M(A) →N(A) est un ´epimor- phisme pour tout A ∈A. b) f est un monomorphisme si et seulement si f(A) : M(A) →N(A) est",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-b-erratum-a",
+      "number": "B",
+      "title": "Erratum `a",
+      "level": 1,
+      "pageStart": 126,
+      "pageEnd": 126,
+      "labelStart": "126",
+      "labelEnd": "126",
+      "words": 125,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "est",
+          "heading": false
+        },
+        {
+          "term": "que",
+          "heading": false
+        },
+        {
+          "term": "gabber",
+          "heading": false
+        }
+      ],
+      "extract": "O. Gabber nous a fait remarquer que la preuve de [1, Prop. 6] ´etait (encore) incompl`ete. Le probl`eme est que la d´emonstration donn´ee dans loc. cit. s’applique `a un motif de la forme h(X), o`u X est une vari´et´e projective lisse, mais pas a priori `a un motif g´en´eral M. Plus pr´ecis´ement, si M est effectif (pour ﬁxer les id´ees) et que le projecteur de K¨unneth pair de M est alg´ebrique, il n’est pas clair",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-b1-premiere-correction",
+      "number": "B.1",
+      "title": "Premi`ere correction",
+      "level": 2,
+      "pageStart": 126,
+      "pageEnd": 127,
+      "labelStart": "126",
+      "labelEnd": "127",
+      "words": 437,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "est clair",
+          "heading": false
+        },
+        {
+          "term": "ego rie",
+          "heading": false
+        },
+        {
+          "term": "emonstration",
+          "heading": false
+        },
+        {
+          "term": "lemme",
+          "heading": false
+        },
+        {
+          "term": "moth",
+          "heading": false
+        },
+        {
+          "term": "objets",
+          "heading": false
+        },
+        {
+          "term": "epend",
+          "heading": false
+        },
+        {
+          "term": "esulte",
+          "heading": false
+        }
+      ],
+      "extract": "sufﬁt de supposer que le corps de base k est de type ﬁni sur Fp. B.1.1. Lemme. Soient H : Motrat →Modf-L une cohomologie de Weil classique `a coefﬁcients dans une Q-alg`ebre commutative semi-simple L et MotH la cat´ego- rie des k-motifs H-homologiques `a coefﬁcients rationnels. Pour tout A ∈MotH, notons H+(A) = M i pair Hi(A), H−(A) = M i impair Hi(A). Alors, pour A, B ∈MotH, on a RH(A, B) = {f ∈MotH(A, B) | ∀g",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-b2-seconde-correction",
+      "number": "B.2",
+      "title": "Seconde correction",
+      "level": 2,
+      "pageStart": 127,
+      "pageEnd": 127,
+      "labelStart": "127",
+      "labelEnd": "127",
+      "words": 102,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "toute cohomologie",
+          "heading": false
+        },
+        {
+          "term": "pour toute",
+          "heading": false
+        },
+        {
+          "term": "remplacer",
+          "heading": false
+        }
+      ],
+      "extract": "toute cohomologie de Weil, classique ou non. D’apr`es le th´eor`eme 9.2.1 c), pour toute cohomologie de Weil H on a Mot± H = (MotH)kim. D’autre part, la proposition 9.1.14 implique que le foncteur (MotH)kim →(Motnum)kim est essentiellement surjectif. Ainsi, Mot± num = (Motnum)kim pour toute cohomologie de Weil H. □ Table de concordance pour les r´ef´erences de [1]. – Preuve du th´eor`eme 1 : remplacer [3, 6.7.3] par",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-c-finite-dimensionality-of-reductive-envelopes-b",
+      "number": "C",
+      "title": "Finite dimensionality of reductive envelopes, by Peter O'Sullivan",
+      "level": 1,
+      "pageStart": 127,
+      "pageEnd": 128,
+      "labelStart": "127",
+      "labelEnd": null,
+      "words": 208,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "prounipotent radical",
+          "heading": false
+        },
+        {
+          "term": "proreductive",
+          "heading": false
+        },
+        {
+          "term": "envelopes",
+          "heading": true
+        },
+        {
+          "term": "ﬁnite dimensional",
+          "heading": false
+        },
+        {
+          "term": "peter",
+          "heading": true
+        }
+      ],
+      "extract": "PETER O’SULLIVAN The object of this appendix is to determine when proreductive envelopes are ﬁ- nite dimensional and when their formation is compatible with extension of scalars. Let k be a ﬁeld of characteristic 0, and let H be an afﬁne k-group. Then the prore- ductive envelope of H is ﬁnite dimensional if and only if H is ﬁnite dimensional with prounipotent radical of dimension ≤1 (Theorem C.5). This is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-c1-families-of-representations",
+      "number": "C.1",
+      "title": "Families of representations",
+      "level": 2,
+      "pageStart": 128,
+      "pageEnd": 138,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 6193,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-isomorphic ﬁbres",
+          "heading": false
+        },
+        {
+          "term": "afﬁne k-group",
+          "heading": false
+        },
+        {
+          "term": "pairwise non-isomorphic",
+          "heading": false
+        },
+        {
+          "term": "tive k-group",
+          "heading": false
+        },
+        {
+          "term": "non-zero weights",
+          "heading": false
+        },
+        {
+          "term": "mono idales",
+          "heading": false
+        },
+        {
+          "term": "highest weight",
+          "heading": false
+        },
+        {
+          "term": "non-isomorphic dimensional",
+          "heading": false
+        }
+      ],
+      "extract": "rems C.1 and C.2. The proofs are based on Lemmas C.4 and C.5. Lemma C.5 is necessary also for the proof of Theorem C.4. Lemma C.1. Suppose that k is algebraically closed. Let M be a connected reduc- tive k-group and let V be a representation of M. Denote by P the set of dominant weights of M relative to some maximal torus T and Borel subgroup B ⊃T of M, and for each µ ∈P let Vµ be a representation of M with highest",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-c2-application-to-proreductive-envelopes",
+      "number": "C.2",
+      "title": "Application to proreductive envelopes",
+      "level": 2,
+      "pageStart": 138,
+      "pageEnd": 146,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 6577,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proreductive",
+          "heading": true
+        },
+        {
+          "term": "cat egorie",
+          "heading": false
+        },
+        {
+          "term": "skowro nski",
+          "heading": false
+        },
+        {
+          "term": "alg ebres",
+          "heading": false
+        },
+        {
+          "term": "des repr",
+          "heading": false
+        },
+        {
+          "term": "repr esentations",
+          "heading": false
+        },
+        {
+          "term": "bruno kahn",
+          "heading": false
+        },
+        {
+          "term": "math ematiques",
+          "heading": false
+        }
+      ],
+      "extract": "velopes it will be convenient to use the following terminology. Let f : H →K be a k-homomorphism from an afﬁne k-group to a proreductive k-group. Call f uni- versal if each k-homomorphism H →K′ to a proreductive K′ factors, uniquely up to conjugation by a k-point of K′, through f. Equivalently, f is universal if its conjugacy class is the embedding of H into its proreductive envelope. Th´eor`eme 19.3.1 states that",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 4,
+        "items": [
+          "TABLE DES MATI`ERES Introduction",
+          "Extensions des scalaires na¨ıve et non na¨ıve",
+          "G´en´eralit´es",
+          "Sections mono¨ıdales et foncteurs ﬁbres"
+        ]
+      },
+      "found_not_listed": {
+        "count": 2,
+        "items": [
+          "0 (cf. th´eor`eme 9.2.1). Par ailleurs, soit π+",
+          "20 APPLICATIONS AUX GROUPES ALG´EBRIQUES ET AUX REPR´ESENTATIONS"
+        ]
+      },
+      "page_mismatch": {
+        "count": 3,
+        "items": [
+          "Sections mono¨ıdales: listed p64, found p85",
+          "Le cas non mono¨ıdal : enveloppes pro-semi-simples: listed p94, found p84",
+          "ind´ecomposables. 115 Appendice A. Des cat´egories semi-simples: listed p119, found p115"
+        ]
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "est que",
+      "heading": false
+    },
+    {
+      "term": "est une",
+      "heading": false
+    },
+    {
+      "term": "dans est",
+      "heading": false
+    },
+    {
+      "term": "est par",
+      "heading": false
+    },
+    {
+      "term": "alors est",
+      "heading": false
+    },
+    {
+      "term": "pour que",
+      "heading": false
+    },
+    {
+      "term": "objet est",
+      "heading": false
+    },
+    {
+      "term": "comme est",
+      "heading": false
+    },
+    {
+      "term": "foncteur est",
+      "heading": false
+    },
+    {
+      "term": "que tout",
+      "heading": false
+    },
+    {
+      "term": "est monoı",
+      "heading": false
+    },
+    {
+      "term": "mathcal est",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 53,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 54,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 56,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 57,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 59,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 61,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 62,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 63,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 64,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 65,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 66,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 67,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 68,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 69,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 70,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 71,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 72,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 73,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 74,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 75,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 76,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 77,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 78,
+      "label": "78",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 79,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 80,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 81,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 82,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 83,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 84,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 85,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 86,
+      "label": "86",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 87,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 88,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 89,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 90,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 91,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 92,
+      "label": "92",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 93,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 94,
+      "label": "94",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 95,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 96,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 97,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 98,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 99,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 100,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 101,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 102,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 103,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 104,
+      "label": "104",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 105,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 106,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 107,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 108,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 109,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 110,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 111,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 112,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 113,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 114,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 115,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 116,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 117,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 118,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 119,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 120,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 121,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 122,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 123,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 124,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 125,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 126,
+      "label": "126",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 127,
+      "label": "127",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 128,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 129,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 130,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 131,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 132,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 133,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 134,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 135,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 136,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 137,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 138,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 139,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 140,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 141,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 142,
+      "label": "142",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 143,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 144,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 145,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 146,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 116,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 29,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 29 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0203273v3"
+  }
+}

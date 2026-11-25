@@ -1,0 +1,799 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1308.2499v1",
+  "title": "Towards a regularity theory for integral Menger curvature",
+  "variant": "pdf",
+  "pages": 32,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Classification of finite-energy curves",
+      "number": "1",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-classification-of-finite-energy-curves"
+    },
+    {
+      "level": 1,
+      "title": "Existence of minimizers within knot classes",
+      "number": "2",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-existence-of-minimizers-within-knot-classes"
+    },
+    {
+      "level": 1,
+      "title": "Differentiability",
+      "number": "3",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-3-differentiability"
+    },
+    {
+      "level": 1,
+      "title": "Regularity of stationary points",
+      "number": "4",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-4-regularity-of-stationary-points"
+    },
+    {
+      "level": 1,
+      "title": "A Product and chain rule",
+      "number": null,
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-a-product-and-chain-rule"
+    },
+    {
+      "level": 1,
+      "title": "B Equivalence of fractional seminorms",
+      "number": null,
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-b-equivalence-of-fractional-seminorms"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 194,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ﬁnite-energy curves",
+          "heading": false
+        },
+        {
+          "term": "menger curvature",
+          "heading": false
+        },
+        {
+          "term": "integral menger",
+          "heading": false
+        },
+        {
+          "term": "sub-critical",
+          "heading": false
+        },
+        {
+          "term": "karlsruhe",
+          "heading": false
+        },
+        {
+          "term": "intm",
+          "heading": false
+        }
+      ],
+      "extract": "Towards a regularity theory for integral Menger curvature Simon Blatt∗ Philipp Reiter∗∗ October 28, 2018 Abstract We generalize the notion of integral Menger curvature introduced by Gonzalez and Maddocks [14] by decoupling the powers in the integrand. This leads to a new two-parameter family of knot energies intM(p,q). We classify ﬁnite-energy curves in terms of Sobolev-Slobodecki˘ı spaces. More- over, restricting",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1308.2499v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 6,
+      "labelStart": "2",
+      "labelEnd": "6",
+      "words": 1861,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "abs v-w",
+          "heading": false
+        },
+        {
+          "term": "abs p-q",
+          "heading": false
+        },
+        {
+          "term": "abs u-v",
+          "heading": false
+        },
+        {
+          "term": "abs w-v",
+          "heading": false
+        },
+        {
+          "term": "abs iint",
+          "heading": false
+        },
+        {
+          "term": "abs wedge",
+          "heading": false
+        },
+        {
+          "term": "tfrac abs",
+          "heading": false
+        },
+        {
+          "term": "abs p-2q",
+          "heading": false
+        }
+      ],
+      "extract": "\\addcontentsline{toc}{section}{Introduction} \\emph{Imagine a closed curve in the Euclidean space. Each triple of distinct points on the curve uniquely defines its {circumcircle} that passes through these three points. It degenerates to a line if and only if the points are collinear. The reciprocal of the circumcircle radius can be seen as some kind of approximate curvature. How much information on shape and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-classification-of-finite-energy-curves",
+      "number": "1",
+      "title": "Classification of finite-energy curves",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 11,
+      "labelStart": "6",
+      "labelEnd": "11",
+      "words": 2227,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "b2r",
+          "heading": false
+        },
+        {
+          "term": "intm",
+          "heading": false
+        },
+        {
+          "term": "lebesgue points",
+          "heading": false
+        },
+        {
+          "term": "sign",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite-energy",
+          "heading": false
+        },
+        {
+          "term": "arc-length",
+          "heading": false
+        },
+        {
+          "term": "curves",
+          "heading": true
+        },
+        {
+          "term": "bounded below",
+          "heading": false
+        }
+      ],
+      "extract": "Classiﬁcation of ﬁnite-energy curves Before we begin the discussion of the ﬁrst variation, let us rewrite the integral Menger curvature using the symmetry and a suitable covering of the domain of integration (R/Z)3 by domains, on which it is easier to estimate the terms that will appear. The general idea here is quite similar to [3] and Hermes [17], but we will show that it is actually enough to integrate over a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-existence-of-minimizers-within-knot-classes",
+      "number": "2",
+      "title": "Existence of minimizers within knot classes",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 15,
+      "labelStart": "11",
+      "labelEnd": "15",
+      "words": 1251,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lim intm",
+          "heading": false
+        },
+        {
+          "term": "knot classes",
+          "heading": true
+        },
+        {
+          "term": "bi-lipschitz estimate",
+          "heading": false
+        },
+        {
+          "term": "minimizers",
+          "heading": true
+        },
+        {
+          "term": "non-injective curve",
+          "heading": false
+        },
+        {
+          "term": "knot class",
+          "heading": false
+        },
+        {
+          "term": "inf",
+          "heading": false
+        },
+        {
+          "term": "existence",
+          "heading": true
+        }
+      ],
+      "extract": "Existence of minimizers within knot classes The arguments here are quite similar as for the tangent-point energies [5], however, we provide full proofs for the readers’ convenience. Using Theorem 1 together with the Arzel`a-Ascoli theorem, we see that sets of curves in C1 ia(R/Z, Rn) with a uniform bound on the energy are sequentially compact in C1. To this end we need the following result. Proposition 2.1 (Uniform",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-differentiability",
+      "number": "3",
+      "title": "Differentiability",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 19,
+      "labelStart": "15",
+      "labelEnd": "19",
+      "words": 1409,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "δintm",
+          "heading": false
+        },
+        {
+          "term": "intm",
+          "heading": false
+        },
+        {
+          "term": "embedded curves",
+          "heading": false
+        },
+        {
+          "term": "openness",
+          "heading": false
+        }
+      ],
+      "extract": "Diﬀerentiability Recall that we have for v, w ∈D |v|, |w| ≤|v −w| ≤2 3. Hence, we obtain for a each curve γ ∈C0,1 ia (R/Z) with intM(p,q)(γ) < ∞due to the bi-Lipschitz estimate |γ(u + v) −γ(u)| ≃|v|, |γ(u + w) −γ(u)| ≃|w|, |γ(u + v) −γ(u + w)| ≃|v −w| for all (u, v, w) ∈R/Z × D. (Here a ≃b is an abbreviation for the existence of uniform constants 0 < c ≤C < ∞with cb ≤a ≤Cb.) We derive the following form for the ﬁrst",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-regularity-of-stationary-points",
+      "number": "4",
+      "title": "Regularity of stationary points",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 26,
+      "labelStart": "19",
+      "labelEnd": "26",
+      "words": 2417,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "regularity",
+          "heading": true
+        },
+        {
+          "term": "s1v",
+          "heading": false
+        },
+        {
+          "term": "s1w",
+          "heading": false
+        },
+        {
+          "term": "s2w",
+          "heading": false
+        },
+        {
+          "term": "ˆγk",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst term",
+          "heading": false
+        },
+        {
+          "term": "δintm",
+          "heading": false
+        },
+        {
+          "term": "s3v",
+          "heading": false
+        }
+      ],
+      "extract": "Regularity of stationary points For the rest of this section, let us restrict to the case that γ is parametrized by arc-length. Then we get using Lemma 3.1 δintM(p,q)(γ; h) := 6q ˜Qp,q(γ, h) + 6Rp,q 1 (γh) where ˜Qp,q(γ, h) := $ R/Z×D △w,0γ ∧△v,0γ q−2 △w,0γ ∧△v,0γ, △w,0h ∧△v,0γ + △w,0γ ∧△v,0h |△w,0γ|p|△v,0γ|p|△v,wγ|p dw dv du 19 and R1(γ, h) := $ R/Z×D −p △w,0γ ∧△v,0γ q |△w,0γ|p+2|△v,0γ|p|△v,wγ|p · △w,0γ, △w,0h −p",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-a-product-and-chain-rule",
+      "number": null,
+      "title": "A Product and chain rule",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "26",
+      "labelEnd": "27",
+      "words": 167,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "psi circ",
+          "heading": false
+        },
+        {
+          "term": "chain",
+          "heading": true
+        },
+        {
+          "term": "rule",
+          "heading": true
+        },
+        {
+          "term": "label lem",
+          "heading": false
+        },
+        {
+          "term": "norm",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sect:fractional} As in~\\cite{blatt-reiter2}, we make use of the following results which we briefly state for the readers' convenience. \\begin{lemma}[Product rule]\\label{lem:product} Let $q_1,\\dots,q_{k} \\in (1,\\infty)$ with $\\sum_{i=1}^{k}\\frac1{q_{k}}=\\frac1r\\in(1,\\infty)$ and $s > 0$. Then, for $f_{i}\\in\\W[s,q_{i}]\\rzd$, $i=1,\\dots,k$, \\begin{equation*} \\norm{\\prod_{i=1}^{k} f_{i}}_{\\W[s,r]} \\leq C_{k,s}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-b-equivalence-of-fractional-seminorms",
+      "number": null,
+      "title": "B Equivalence of fractional seminorms",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 32,
+      "labelStart": "27",
+      "labelEnd": "32",
+      "words": 1793,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "menger curvature",
+          "heading": false
+        },
+        {
+          "term": "integral menger",
+          "heading": false
+        },
+        {
+          "term": "arxiv e-prints",
+          "heading": false
+        },
+        {
+          "term": "szuma nska",
+          "heading": false
+        },
+        {
+          "term": "der mosel",
+          "heading": false
+        },
+        {
+          "term": "seminorms",
+          "heading": true
+        },
+        {
+          "term": "rwth aachen",
+          "heading": false
+        },
+        {
+          "term": "von der",
+          "heading": false
+        }
+      ],
+      "extract": "Equivalence of fractional seminorms We give a straightforward proof of the equivalence of two seminorms on the Sobolev- Slobodecki˘ı spaces we used in this article. Lemma B.1. For s ∈(0, 1), p ∈[1, ∞) the seminorms \u0002 f\u0003 W1+s,p := Z R/Z Z 1/2 −1/2 | f ′(u + w) −f ′(u)|p |w|1+sp dw du !1/p , (0.11) \u0012f\u0013 W1+s,p := Z R/Z Z 1/4 −1/4 | f(u + w) −2 f(u) + f(u −w)|p |w|1+(1+s)p dw du !1/p (0.12) are equivalent on W1,p.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "October 28,"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "lim intm",
+      "heading": false
+    },
+    {
+      "term": "menger curvature",
+      "heading": false
+    },
+    {
+      "term": "integral menger",
+      "heading": false
+    },
+    {
+      "term": "abs v-w",
+      "heading": false
+    },
+    {
+      "term": "karl menger",
+      "heading": false
+    },
+    {
+      "term": "curvature energies",
+      "heading": false
+    },
+    {
+      "term": "arc-length parametrized",
+      "heading": false
+    },
+    {
+      "term": "total menger",
+      "heading": false
+    },
+    {
+      "term": "abs p-q",
+      "heading": false
+    },
+    {
+      "term": "abs u-v",
+      "heading": false
+    },
+    {
+      "term": "sub-critical range",
+      "heading": false
+    },
+    {
+      "term": "abs w-v",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The range of intM(p,q). Above the green line, the integrand is not suﬃciently",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The range of integration D",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "A pair of curves (γ1, γ2) ∈Mµ deﬁned in Lemma 2.2. Note that the arcs γ1,",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "3 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p27); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 5
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1308.2499v1"
+  }
+}

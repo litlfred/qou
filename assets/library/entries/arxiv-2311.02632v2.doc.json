@@ -1,0 +1,1437 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2311.02632v2",
+  "title": "arxiv-2311.02632v2",
+  "variant": "pdf",
+  "pages": 40,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Background",
+      "number": "2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-background"
+    },
+    {
+      "level": 2,
+      "title": "Laplacian on Riemannian manifolds",
+      "number": "2.1",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-laplacian-on-riemannian-manifolds"
+    },
+    {
+      "level": 2,
+      "title": "Two models of hyperbolic plane",
+      "number": "2.2",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-two-models-of-hyperbolic-plane"
+    },
+    {
+      "level": 2,
+      "title": "Selberg trace formula",
+      "number": "2.3",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-selberg-trace-formula"
+    },
+    {
+      "level": 1,
+      "title": "Explicit uniformization of the Fricke-Macbeath surface and its fundamental domain",
+      "number": "3",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-3-explicit-uniformization-of-the-fricke-macbeath"
+    },
+    {
+      "level": 2,
+      "title": "Hurwitz surfaces and the Fricke-Macbeath surface",
+      "number": "3.1",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-31-hurwitz-surfaces-and-the-fricke-macbeath-surf"
+    },
+    {
+      "level": 2,
+      "title": "Definition of as a subgroup of a Coxeter group",
+      "number": "3.2",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-32-definition-of-as-a-subgroup-of-a-coxeter-grou"
+    },
+    {
+      "level": 2,
+      "title": "Fundamental domain for",
+      "number": "3.3",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-33-fundamental-domain-for"
+    },
+    {
+      "level": 2,
+      "title": "Length spectrum of the Fricke-Macbeath surface",
+      "number": "3.4",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-34-length-spectrum-of-the-fricke-macbeath-surfac"
+    },
+    {
+      "level": 1,
+      "title": "Multiplicity of the first eigenvalue",
+      "number": "4",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-4-multiplicity-of-the-first-eigenvalue"
+    },
+    {
+      "level": 2,
+      "title": "Overview of the proof",
+      "number": "4.1",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-41-overview-of-the-proof"
+    },
+    {
+      "level": 2,
+      "title": "Proof of 1 -.25ex-.25ex-.25ex-.25ex[0, 0.25]",
+      "number": "4.2",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Proof of 1 -.25ex-.25ex-.25ex-.25ex[0.25, 1]",
+      "number": "4.3",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Proof of 1-.25ex-.25ex-.25ex-.25ex[1,1.23]",
+      "number": "4.4",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Proof of 1[1.23, 1.26] and determination of its multiplicity",
+      "number": "4.5",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-45-proof-of-1123-126-and-determination-of-its-mu"
+    },
+    {
+      "level": 1,
+      "title": "Numerical determination of the eigenspace associated to 1",
+      "number": "5",
+      "page": 32,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-5-numerical-determination-of-the-eigenspace-asso"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 37,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. Word processing in (2,3,7)",
+      "number": null,
+      "page": 37,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-appendix-a-word-processing-in-237"
+    },
+    {
+      "level": 1,
+      "title": "Appendix B. GAP code for the automorphism group of the Fricke-Macbeath surface",
+      "number": null,
+      "page": 37,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-appendix-b-gap-code-for-the-automorphism-group-o"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 38,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 100,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fricke-macbeath surface",
+          "heading": false
+        },
+        {
+          "term": "chul-hee",
+          "heading": false
+        },
+        {
+          "term": "laplacian",
+          "heading": false
+        }
+      ],
+      "extract": "SPECTRUM OF THE LAPLACIAN ON THE FRICKE-MACBEATH SURFACE CHUL-HEE LEE Abstract. The Fricke-Macbeath surface is the unique Hurwitz surface of genus 7 with 504 conformal automorphisms. In this paper, we prove that the first eigenvalue of the Laplacian on the Fricke-Macbeath surface has a sevenfold multiplicity and con- tained in the interval [1.23, 1.26]. Further, we numerically identify the 7-dimensional",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2311.02632v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1288,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fricke-macbeath surface",
+          "heading": false
+        },
+        {
+          "term": "hurwitz surface",
+          "heading": false
+        },
+        {
+          "term": "hurwitz bound",
+          "heading": false
+        },
+        {
+          "term": "backslash uhp",
+          "heading": false
+        },
+        {
+          "term": "klein quartic",
+          "heading": false
+        },
+        {
+          "term": "surface possesses",
+          "heading": false
+        },
+        {
+          "term": "riemann surface",
+          "heading": false
+        },
+        {
+          "term": "gamma backslash",
+          "heading": false
+        }
+      ],
+      "extract": "In 1893, Hurwitz proved that a compact Riemann surface $X$ of genus $g \\geq 2$ has at most $84(g - 1)$ conformal automorphisms [@hurwitz1893]. This upper bound is now known as the Hurwitz bound, and a Riemann surface attaining this bound is called a Hurwitz surface. Notably, for Riemann surfaces of low genera, those meeting the Hurwitz bound are rare. One prominent example is the Klein quartic [@Klein79], described",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-background",
+      "number": "2",
+      "title": "Background",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-laplacian-on-riemannian-manifolds",
+      "number": "2.1",
+      "title": "Laplacian on Riemannian manifolds",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 185,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "laplacian",
+          "heading": true
+        },
+        {
+          "term": "riemannian",
+          "heading": true
+        },
+        {
+          "term": "laplacian delta",
+          "heading": false
+        },
+        {
+          "term": "riemannian manifold",
+          "heading": false
+        },
+        {
+          "term": "sqrt det",
+          "heading": false
+        }
+      ],
+      "extract": "In this subsection, we provide a brief review of the properties of the Laplacian on a Riemannian manifold. For a detailed discussion on this topic, see [@MR2742784]. Consider a Riemannian manifold $M$ with the metric given by $$ds^2 = \\sum_{j,k} g_{jk} dx^j dx^k.$$ The Laplacian $\\Delta$, acting on $C^\\infty(M)$, can be locally expressed by: $$\\Delta = -\\sum_{j,k} \\frac{1}{\\sqrt{\\det g}} \\frac{\\partial}{\\partial",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-two-models-of-hyperbolic-plane",
+      "number": "2.2",
+      "title": "Two models of hyperbolic plane",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 392,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyperbolic plane",
+          "heading": true
+        },
+        {
+          "term": "uhp",
+          "heading": false
+        },
+        {
+          "term": "frac partial",
+          "heading": false
+        },
+        {
+          "term": "partial right",
+          "heading": false
+        },
+        {
+          "term": "distd",
+          "heading": false
+        },
+        {
+          "term": "pmat",
+          "heading": false
+        },
+        {
+          "term": "disk",
+          "heading": false
+        },
+        {
+          "term": "gaussian curvature",
+          "heading": false
+        }
+      ],
+      "extract": "In this subsection, we review the two models of the hyperbolic plane. One such model is the upper half-plane, denoted by $\\uhp$. This consists of complex numbers $z$ where the imaginary part is positive: $\\uhp = \\{ z \\in \\C : \\Im(z) > 0 \\}$. This model of the hyperbolic plane carries a metric: $$ds^2 = \\frac{dx^2 + dy^2}{y^2},$$ which yields a constant Gaussian curvature $-1$. The distance $\\distH(z,z')$ between two",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-selberg-trace-formula",
+      "number": "2.3",
+      "title": "Selberg trace formula",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 407,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "selberg trace",
+          "heading": true
+        },
+        {
+          "term": "mathscr varepsilon",
+          "heading": false
+        },
+        {
+          "term": "gamma backslash",
+          "heading": false
+        },
+        {
+          "term": "trace formula",
+          "heading": true
+        },
+        {
+          "term": "backslash uhp",
+          "heading": false
+        },
+        {
+          "term": "stf",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "conjugacy classes",
+          "heading": false
+        }
+      ],
+      "extract": "Let $X=\\Gamma\\backslash \\uhp$ be a compact Riemann surface of genus $g\\geq 2$, where $\\Gamma$ is discrete, torsion-free subgroup of $\\PSL_2(\\R)$. Hence, every non-trivial element of $\\Gamma$ is hyperbolic. The Selberg trace formula establishes a link between the conjugacy classes of $\\Gamma$ and and the eigenvalues of the Laplacian. Before delving into the formula itself, we present some requisite notation. Given a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-explicit-uniformization-of-the-fricke-macbeath",
+      "number": "3",
+      "title": "Explicit uniformization of the Fricke-Macbeath surface and its fundamental domain",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "fundamental domain",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-31-hurwitz-surfaces-and-the-fricke-macbeath-surf",
+      "number": "3.1",
+      "title": "Hurwitz surfaces and the Fricke-Macbeath surface",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 348,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hurwitz surface",
+          "heading": true
+        },
+        {
+          "term": "delp",
+          "heading": false
+        },
+        {
+          "term": "gamma backslash",
+          "heading": false
+        },
+        {
+          "term": "appb",
+          "heading": false
+        },
+        {
+          "term": "backslash disk",
+          "heading": false
+        },
+        {
+          "term": "fricke-macbeath",
+          "heading": true
+        },
+        {
+          "term": "group psl",
+          "heading": false
+        },
+        {
+          "term": "hurwitzsurfaces",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:hurwitzsurfaces label=\"subsec:hurwitzsurfaces\"} Hurwitz demonstrated in [@hurwitz1893 §7] that a group of order $84(g - 1)$ can act as the automorphism group of a compact Riemann surface of genus $g\\geq 2$ precisely when it is a quotient of the $(2,3,7)$-triangle group $\\Delp$, whose presentation is given by $$\\langle a, b \\mid a^{3} = b^{7} = (ab)^{2} = 1 \\rangle.$$ This transforms the challenge of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-32-definition-of-as-a-subgroup-of-a-coxeter-grou",
+      "number": "3.2",
+      "title": "Definition of as a subgroup of a Coxeter group",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1126,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gamma recursive",
+          "heading": false
+        },
+        {
+          "term": "notag gamma",
+          "heading": false
+        },
+        {
+          "term": "aligned gamma",
+          "heading": false
+        },
+        {
+          "term": "center gamma",
+          "heading": false
+        },
+        {
+          "term": "elements gamma",
+          "heading": false
+        },
+        {
+          "term": "coxrelation",
+          "heading": false
+        },
+        {
+          "term": "del generated",
+          "heading": false
+        },
+        {
+          "term": "delp",
+          "heading": false
+        }
+      ],
+      "extract": "Consider a Coxeter group given by the following presentation $$\\Del = \\langle s_1,s_2,s_3 | s_1^2 = s_2^2 = s_3^2 = (s_1s_2)^7=(s_2s_3)^3=(s_1s_3)^2 \\rangle.$$ Then $\\Delp$ becomes the index two subgroup of $\\Del$, consisting of elements of even length. The following relations can be readily verified within $\\Del$: $$\\label{eq:coxrelation} \\begin{alignedat}{2} & s_3s_1 && = s_1s_3, \\\\ & s_3s_2s_3 && = s_2s_3s_2, \\\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-33-fundamental-domain-for",
+      "number": "3.3",
+      "title": "Fundamental domain for",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2202,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gamma xleftarrow",
+          "heading": false
+        },
+        {
+          "term": "notag xleftarrow",
+          "heading": false
+        },
+        {
+          "term": "qquad xleftarrow",
+          "heading": false
+        },
+        {
+          "term": "gamma xrightarrow",
+          "heading": false
+        },
+        {
+          "term": "fundamental domain",
+          "heading": true
+        },
+        {
+          "term": "aligned xrightarrow",
+          "heading": false
+        },
+        {
+          "term": "isometric dist",
+          "heading": false
+        },
+        {
+          "term": "isometric circles",
+          "heading": false
+        }
+      ],
+      "extract": "It is worth noting that the motivation behind adopting the above action of $\\Del$ is that it provides the classical tessellation of a fundamental domain, given as a regular 14-gon inside $\\disk$, for the Klein quartic. This is illustrated in Figure [1](#fig:237_klein){reference-type=\"ref\" reference=\"fig:237_klein\"}. ![Tessellation of a fundamental domain for the Klein quartic](237_klein.png){#fig:237_klein",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-34-length-spectrum-of-the-fricke-macbeath-surfac",
+      "number": "3.4",
+      "title": "Length spectrum of the Fricke-Macbeath surface",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 642,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fricke-macbeath surface",
+          "heading": true
+        },
+        {
+          "term": "vogeler table",
+          "heading": false
+        },
+        {
+          "term": "shortest geodesic",
+          "heading": false
+        },
+        {
+          "term": "length arccosh",
+          "heading": false
+        },
+        {
+          "term": "shortest classes",
+          "heading": false
+        },
+        {
+          "term": "conjugacy classes",
+          "heading": false
+        },
+        {
+          "term": "conjugacy class",
+          "heading": false
+        },
+        {
+          "term": "selberg trace",
+          "heading": false
+        }
+      ],
+      "extract": "In Vogeler's study [@Vogeler2003], an in-depth analysis of closed geodesics on Hurwitz surfaces is presented, with a special focus on the length spectrum of Hurwitz surfaces of low genera. Of particular relevance to us, Vogeler offers an exhaustive table [@Vogeler2003 Table C.2] enumerating the short primitive closed geodesics on the Fricke-Macbeath surface, along with their corresponding lengths and multiplicities.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-4-multiplicity-of-the-first-eigenvalue",
+      "number": "4",
+      "title": "Multiplicity of the first eigenvalue",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-011-41-overview-of-the-proof",
+      "number": "4.1",
+      "title": "Overview of the proof",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2767,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calg hatf",
+          "heading": false
+        },
+        {
+          "term": "cali calg",
+          "heading": false
+        },
+        {
+          "term": "infty hatf",
+          "heading": false
+        },
+        {
+          "term": "cali leq",
+          "heading": false
+        },
+        {
+          "term": "aligned cali",
+          "heading": false
+        },
+        {
+          "term": "because hatf",
+          "heading": false
+        },
+        {
+          "term": "subinterval label",
+          "heading": false
+        },
+        {
+          "term": "calg frac",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we will investigate the multiplicity $m_1$ of the first eigenvalue $\\la_1$ of the Laplacian on the Fricke-Macbeath surface $\\X=\\Gamma\\backslash\\disk$. Specifically, we will prove the following: ::: theorem []{#thm:mult7 label=\"thm:mult7\"} The multiplicity of the first eigenvalue $\\la_1$ of the Fricke-Macbeath surface is 7, and $\\la_1\\in [1.23, 1.26]$. ::: To achieve this, we begin with the following",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-45-proof-of-1123-126-and-determination-of-its-mu",
+      "number": "4.5",
+      "title": "Proof of 1[1.23, 1.26] and determination of its multiplicity",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 32,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 933,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calg hatf",
+          "heading": false
+        },
+        {
+          "term": "infty hatf",
+          "heading": false
+        },
+        {
+          "term": "cali calg",
+          "heading": false
+        },
+        {
+          "term": "quad hatf",
+          "heading": false
+        },
+        {
+          "term": "because hatf",
+          "heading": false
+        },
+        {
+          "term": "calg geq",
+          "heading": false
+        },
+        {
+          "term": "obtain cali",
+          "heading": false
+        },
+        {
+          "term": "calg cals",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsec:subinterval4 label=\"subsec:subinterval4\"} ::: prop []{#prop:subinterval4 label=\"prop:subinterval4\"} There is an eigenvalue in the interval $[1.23, 1.26]$. ::: ::: proof *Proof.* Let $a = 1.23$ and $b = 1.26$. We define the test functions $h,g$ as in [\\[eq:gh_hermite\\]](#eq:gh_hermite){reference-type=\"eqref\" reference=\"eq:gh_hermite\"}. For this, we choose the sequence of rational numbers",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-5-numerical-determination-of-the-eigenspace-asso",
+      "number": "5",
+      "title": "Numerical determination of the eigenspace associated to 1",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 37,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1784,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "delp gamma",
+          "heading": false
+        },
+        {
+          "term": "chi rangle",
+          "heading": false
+        },
+        {
+          "term": "langle chi",
+          "heading": false
+        },
+        {
+          "term": "characters chi",
+          "heading": false
+        },
+        {
+          "term": "character table",
+          "heading": false
+        },
+        {
+          "term": "rho equation",
+          "heading": false
+        },
+        {
+          "term": "approximate values",
+          "heading": false
+        },
+        {
+          "term": "eigenfunctions",
+          "heading": false
+        }
+      ],
+      "extract": "Having established that the first eigenvalue of the Fricke-Macbeath surface has a multiplicity of 7, our objective in this section is to numerically determine which 7-dimensional representation of $\\Aut(\\X)=\\Delp/\\Gamma$ corresponds to the eigenspace associated to $\\la_1$. There are four 7-dimensional irreducible representations of $\\Aut(\\X)\\cong \\PSL_2(8)$. Refer to Table",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 37,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 26,
+      "summary": null,
+      "keywords": [],
+      "extract": "This work was supported by a KIAS Individual Grant (SP067302) via the June E Huh Center for Mathematical Challenges at Korea Institute for Advanced Study.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-015-appendix-a-word-processing-in-237",
+      "number": null,
+      "title": "Appendix A. Word processing in (2,3,7)",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 37,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 142,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reduce",
+          "heading": false
+        },
+        {
+          "term": "vdk",
+          "heading": false
+        },
+        {
+          "term": "s2s",
+          "heading": false
+        }
+      ],
+      "extract": "The following Mathematica code defines a function named reduce. For a given input, the function repeatedly employs a collection of transformation rules to a list, simplifying it according to the rules given in (3.1) and the relations s2 i = 1. reduce [{a___ ,1,1, b___ }]:= reduce [{a,b}] reduce [{a___ ,2,2, b___ }]:= reduce [{a,b}] reduce [{a___ ,3,3, b___ }]:= reduce [{a,b}] reduce [{a___ ,3,1, b___ }]:= reduce",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-appendix-b-gap-code-for-the-automorphism-group-o",
+      "number": null,
+      "title": "Appendix B. GAP code for the automorphism group of the Fricke-Macbeath surface",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 38,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 135,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "code",
+          "heading": true
+        },
+        {
+          "term": "conjclasses",
+          "heading": false
+        },
+        {
+          "term": "fricke-macbeath",
+          "heading": true
+        }
+      ],
+      "extract": "Fricke-Macbeath surface The GAP code provided below computes the order of the group G in Subsection 3.1 defined by the presentation ⟨a, b | a3 = b7 = (ab)2 = (a−1b3a−1ba−1b3)2 = 1⟩: f := FreeGroup(\"a\", \"b\"); a := f.1; b := f.2; t := a^( -1) * b^3 * a^( -1) * b * a^(-1) * b^3; G := f / [a^3, b^7, (a*b)^2, t^2]; Size(G); The execution of this code yields 504. Building on the above code, one can obtain the character",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 40,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 812,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "der elliptischen",
+          "heading": false
+        },
+        {
+          "term": "hurwitz groups",
+          "heading": false
+        },
+        {
+          "term": "uber die",
+          "heading": false
+        },
+        {
+          "term": "cambridge university",
+          "heading": false
+        },
+        {
+          "term": "riemann surfaces",
+          "heading": false
+        },
+        {
+          "term": "coxeter groups",
+          "heading": false
+        },
+        {
+          "term": "selberg eigenvalue",
+          "heading": false
+        },
+        {
+          "term": "university press",
+          "heading": false
+        }
+      ],
+      "extract": "[AS89] R. Aurich and F. Steiner, Periodic-orbit sum rules for the Hadamard-Gutzwiller model, Phys. D 39 (1989), no. 2-3, 169–193. [Bea83] A. F. Beardon, The geometry of discrete groups, Graduate Texts in Mathematics, vol. 91, Springer-Verlag, New York, 1983. [BLS20] A. R. Booker, M. Lee, and A. Str¨ombergsson, Twist-minimal trace formulas and the Selberg eigenvalue conjecture, J. Lond. Math. Soc. (2) 102 (2020), no.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [
+      "figure 1",
+      "figure 2"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "delp gamma",
+      "heading": false
+    },
+    {
+      "term": "aligned gamma",
+      "heading": false
+    },
+    {
+      "term": "gamma xleftarrow",
+      "heading": false
+    },
+    {
+      "term": "sum gamma",
+      "heading": false
+    },
+    {
+      "term": "gamma backslash",
+      "heading": false
+    },
+    {
+      "term": "gamma notag",
+      "heading": false
+    },
+    {
+      "term": "group gamma",
+      "heading": false
+    },
+    {
+      "term": "fricke-macbeath surface",
+      "heading": true
+    },
+    {
+      "term": "gamma xrightarrow",
+      "heading": false
+    },
+    {
+      "term": "elements gamma",
+      "heading": false
+    },
+    {
+      "term": "gamma recursive",
+      "heading": false
+    },
+    {
+      "term": "center gamma",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Fundamental hyperbolic triangle for ∆(2, 3, 7)",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Tessellation of a fundamental domain for the Klein quartic fundamental domain for Γ. To achieve this, we will employ Poincar´e’s polyhedron theorem as presented by Maskit [Mas71]. Recall that a closed set D is called a fundamental domain for a Fuchsian group G if: (1) No two distinct points of the i",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Isometric circles of γi",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Hyperbolic polygon F and its vertices {vi}",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Coordinates for vj = xj + yjı, 1 ≤j ≤6",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Angles at vertices of F",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "Character table of Aut(X)",
+      "page": 33,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p004-1",
+      "file": "images/img-p004-1.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-2",
+      "file": "images/img-p004-2.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-1",
+      "file": "images/img-p011-1.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-1",
+      "file": "images/img-p012-1.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-1",
+      "file": "images/img-p014-1.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-1",
+      "file": "images/img-p015-1.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 21,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 19,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 6
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "3 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p38); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 19 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2311.02632v2"
+  }
+}

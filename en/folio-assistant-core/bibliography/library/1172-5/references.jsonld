@@ -1,0 +1,28 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/1172-5",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "Optimistic calculations about the Witten-Reshetikhin-Turaev invariants of closed three-manifolds obtained from the figure-eight knot by integral Dehn surgeries",
+      "dcterms:issued": "D:20080313",
+      "dcterms:abstract": "I calculate optimistically asymptotic behaviors of the WRT $SU(2)$ invariants for the three-manifolds obtained from the ﬁgure-eight knot by p- surgeries with $p=0,1,2,$ $\\ldots,$ $10$ , from which one can extract volumes and the Chern-Simons invariants of these closed manifolds. I conjecture that this also holds for general closed three-manifolds.",
+      "dcterms:source": "library/1172-5/manifest.jsonld",
+      "dcterms:hasVersion": "library/1172-5"
+    }
+  ]
+}

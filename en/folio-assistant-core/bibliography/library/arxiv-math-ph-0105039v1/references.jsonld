@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-ph-0105039v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Hyperbolic Structure Arising from a Knot Invariant",
+      "dcterms:creator": [
+        "Department of Physics, Graduate School of Science"
+      ],
+      "dcterms:issued": "D:20190506",
+      "dcterms:identifier": "https://arxiv.org/abs/math-ph/0105039",
+      "dcterms:abstract": "We study the knot invariant based on the quantum dilogarithm function. This invariant can be regarded as a non-compact analogue of Kashaev’s invariant, or the colored Jones invariant, and is deﬁned by an integral form. The 3-dimensional picture of our invariant originates from the pentagon identity of the quantum dilogarithm function, and we show that the hyperbolicity consistency conditions in gluing polyhedra arise naturally in the classical limit as the saddle point equation of our invariant.",
+      "dcterms:source": "library/arxiv-math-ph-0105039v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-ph-0105039v1"
+    }
+  ]
+}

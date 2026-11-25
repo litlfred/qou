@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-sign-sequence-of-braid-invariant",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:sign-sequence-of-braid-invariant",
+  "kind": "remark",
+  "title": "The sign-sequence functor as a transfinite refinement of the crossing number",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-sign-sequence-of-braid",
+    "papers/quantum-observable-universe/blocks/prop-hoefsmit-seminormal-form",
+    "papers/quantum-observable-universe/blocks/def-birthday-grading"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-sign-sequence-of-braid",
+  "tags": [
+    "surreal-numbers",
+    "braid-group",
+    "hecke-algebra",
+    "sign-sequence",
+    "knot-invariant"
+  ],
+  "text": "sign-sequence-of-braid-invariant.md",
+  "provenance": "authored"
+}

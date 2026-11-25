@@ -1,0 +1,642 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2108.03616v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:2108.03616v2  [math.CO]  14 Dec 2021\nCircuit imbalance measures and linear programming ∗\nFarbod Ekbatani, Bento Natura, and L´aszl´o A. V´egh\nLondon School of Economics and Political Science\n{F.Ekbatani, B.Natura, L.Vegh}@lse.ac.uk\n15th December, 2021\nAbstract\nWe study properties and applications of various circuit imbalance measures associated\nwith linear spaces.\nThese measures describe possible ratios between nonzero entries of\nsupport-minimal nonzero vectors of the space.\nThe fractional circuit imbalance measure\nturns out to be a crucial parameter in the context of linear programming,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "\\label{sec:intro}\n\nFor a linear space $W\\subset \\R^n$, $g\\in W$  is an \n \\emph{elementary vector} if $g$ is a support minimal nonzero vector in $W$, that is, no $h\\in W\\setminus\\{0\\}$ exists such that $\\supp(h)\\subsetneq \\supp(g)$, where $\\supp$ denotes the support of a vector. \n A \\emph{circuit} in $W$ is the support of some elementary vector; these are precisely the circuits in the associated  linear matroid $\\mathcal{M}(W)$. We let $\\EE(W)\\subseteq W$ and $\\circuits_W\\subseteq 2^n$\n denote the set of elementary vectors and circuits in the space $W$, respectively.\n\nElementary vectors were fi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-2-preliminaries.md",
+      "narrative": null,
+      "content": "\\label{sec:prelim}\n\nWe let $[n] := \\{1, \\ldots, n\\}$. For $k\\in\\N$, a number $q\\in\\Q$ is \\emph{$1/k$-integral} if it is an integer multiple of $1/k$. Let $\\primes\\subseteq\\N$ denote the set of primes.\nLet $\\R_{++}$ denote the set of positive reals, and $\\R_+$ the set of nonnegative reals. \n  \n\nFor a prime number $p\\in \\primes$, the $p$-\\emph{adic valuation} for $\\mathbb{Z}$ is the function $\\nu_p\\colon \\Z \\to \\N$ defined by\n\\begin{equation}\\label{eq:p-adic}\n  \\nu_p(n) =\n  \\begin{cases}\n      \\max \\{v \\in \\N : p^v \\divides n\\} & \\text{if } n \\neq 0\\\\\n      \\infty & \\text{if } n=0.\n  \\end{cases}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Properties of the imbalance measures",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-3-properties-of-the-imbalance-measures.md",
+      "narrative": null,
+      "content": "\\label{sec:basic}\n\n\\paragraph{Comparison to well-scaled frames}\nLee's work ~\\cite{Lee89} on \\emph{`well-scaled frames'},\ninvestigated the following closely related concepts. For a set $S\\subseteq \\Q$ the rational linear space $W$ is \\emph{$S$-regular} if for every elementary vector $g\\in \\EE(F)$, there exists a $\\lambda\\neq 0$ such that all nonzero entries of $\\lambda g$ are in $S$. For $S=\\{-k,\\ldots,k\\}$, the subspace is called \\emph{$k$-regular}. \nFor $k,\\Omega\\in \\N$, a subspace is \\emph{$k$-adic of order $\\Omega$} if it is $S$-regular for $S=\\{\\pm 1,\\pm k,\\ldots,\\pm k^\\Omega\\}$. The \\emph",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bounds on subdeterminants",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-31-bounds-on-subdeterminants.md",
+      "narrative": null,
+      "content": "\\label{sec:subdet}\nFor an integer matrix $A\\in \\Z^{m\\times n}$, we define \n\\begin{equation}\n\\begin{aligned}\n  \\Delta_A &:= \\max \\{|\\det(B)|: B \\text{ is a  nonsingular submatrix of } A\\},\\mbox{ and}\\\\\n  \\dot\\Delta_A &:=\\lcm \\{|\\det(B)|: B \\text{ is a nonsingular submatrix of } A\\}.\\\\\n  \\end{aligned}\n\\end{equation} \nThe matrix is \\emph{totally unimodular (TU)}, if $\\Delta_A=1$: thus, all subdeterminants are $0$ or $\\pm 1$. This class of matrices plays a foundational role in combinatorial optimization,  see e.g., \\cite[Chapters 19-20]{SchrijverLPIP}. A significant example is the node-arc inciden",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fractional integrality characterization",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-004-32-fractional-integrality-characterization.md",
+      "narrative": null,
+      "content": "\\label{sec:HK}\n\nHoffman and Kruskal \\cite{Hoffman56} gave the following characterization of TU matrices. A polyhedron $P\\subseteq \\R^n$ is \\emph{integral}, if all vertices (=basic feasible solutions) are integer.\n\\begin{theorem}[Hoffman and Kruskal, 1956]\\label{thm:HK}\nAn integer matrix $A\\in\\Z^{m\\times n}$ is totally unimodular if and only if for every $b\\in\\Z^m$\n, the polyhedron $\\{x\\in \\R^n:\\, Ax\\le b,x\\ge 0\\}$\n is integral.\n\\end{theorem}\n\nSince $\\kd$ is a property of the subspace, it will be more convenient to work with the standard equality form of an LP. Here as well as in Section~\\ref{s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Self-duality",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-33-self-duality.md",
+      "narrative": null,
+      "content": "\\label{sec:self-dual}\nWe next show that both $\\Le_W$ and $\\kd_W$ are self-dual.\nThese rely on the following duality property of circuits.\nWe introduce the following more refined quantities that will also come useful later on.\n\n\\begin{Def}[Pairwise Circuit Imbalances] \\label{def:pairwise circuit_imbalances} For a space $W \\subseteq \\R^n$ and variables $i,j \\in [n]$ we define \n\\[\n\\begin{aligned}\\KK_{ij}^W &:= \\set{\\left|\\frac{g_j}{g_i}\\right|:\\,  \\{i,j\\} \\subseteq \\supp(g), g \\in \\EE(W)}\\, ,\\quad \\Le_{ij}^W := \\max \\KK_{ij}^W\\, ,\\\\\n\\dot \\KK_{ij}^W &:= \\left\\{\\lcm(p,q) : p,q \\in \\N, \\gcd(p,q) = 1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Matrix representations",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-006-34-matrix-representations.md",
+      "narrative": null,
+      "content": "\\label{sec:matrix}\n\nProposition~\\ref{prop:kappa-max} already tells us that  any rational matrix of the form $A=(I_m|A')$ is $1/\\kd_A$-integral, and according to Lemma~\\ref{lem:sub-inverse}, the inverse of every non-singular square submatrix of $A$ is also $1/\\kd_A$-integral. It is natural to ask whether every linear subspace $W$ can be represented as $W=\\ker(A)$ for an \n\\emph{integer} matrix $A$ with the same property on the inverse matrices. \n\nWe show that this is true if the dual space is \\emph{anchored} but false in general. Recall that this means that every elementary vector $g^C$, $C\\in\\c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The triangle inequality",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-007-35-the-triangle-inequality.md",
+      "narrative": null,
+      "content": "\\label{sec:triangle}\nAn interesting additional fact about circuit imbalances is that the logarithm of the weights satisfy the triangle inequality; this was shown in \\cite{DHNV20}. Here, we formulate a stronger version and give a simpler proof. Throughout, we assume that ${\\cal M}(W)$ is non-separable. Thus, according to Proposition~\\ref{prop:conn}, for any $i,j\\in [n]$ there is a circuit $C\\in \\circuits_W$ with $i,j\\in C$.\n\\begin{theorem}\\label{thm:imbalance_triangle_inequality}\nLet $W\\subseteq \\R^n$ be a linear space, and assume ${\\cal M}(W)$ is non-separable. Then, \n  \\begin{enumerate}[(i)]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connections to other condition numbers",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-008-4-connections-to-other-condition-numbers.md",
+      "narrative": null,
+      "content": "Connections to other condition numbers\n4.1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The condition number chi bar and the lifting operator",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-009-41-the-condition-number-chi-bar-and-the-lifting.md",
+      "narrative": null,
+      "content": "\\label{subsec:lifting_operator}\n\nFor a full row rank matrix $A\\in \\R^{m\\times n}$, the\n condition number $\\bar\\chi_A$ can be defined in the following two equivalent ways:\n\\begin{equation}\n\\begin{aligned}\n\\bar\\chi_A&=\\sup\\left\\{\\left\\|A^\\top \\left(A D A^\\top\\right)^{-1}AD\\right\\|\\, : D\\in\n    \\bD_n\\right\\}\\\\\n&=\\sup\\left\\{\\frac{\\norm{A^\\top y}}{\\norm{p}} :\n\\text{$y$ minimizes $\\norm{D^{1/2}(A^\\top y - p)}$ for some $0 \\neq p \\in \\R^n$ and $D \\in \\bD_n$}\\right\\}.\n\\end{aligned}\n\\end{equation}\nThis condition number was first studied by Dikin \\cite{dikin}, Stewart \\cite{stewart}, and\nTodd \\cite{todd",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The condition number and bounds on diameters of polyhedra",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-010-42-the-condition-number-and-bounds-on-diameters.md",
+      "narrative": null,
+      "content": "\\label{sec:delta}\n\nAnother related condition number is $\\delta$, defined as follows:\n\\begin{Def}\\label{def:delta}\nLet $V\\subseteq \\R^n$ be a set of vectors. Then\n$\\delta_V$ is the largest value such that for any set of linearly independent vectors $\\{v_i:\\,  i\\in I\\}\\subseteq V$ and $\\lambda\\in \\R^I$,\n\\[\n\\left\\|\\sum_{i\\in I}\\lambda_i v_i\\right\\|\\ge \\delta_V \\max_{i \\in I} |\\lambda_i| \\cdot\\|v_i\\|\\, .\n\\]\nFor a matrix $M\\in\\R^{m\\times n}$, we let $\\delta_M$ denote the value associated with the rows $M^1,M^2,\\ldots,M^m$ of $M$.\n\\end{Def}\nThis can be equivalently characterized as follows: for a su",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Optimizing circuit imbalances",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-011-5-optimizing-circuit-imbalances.md",
+      "narrative": null,
+      "content": "\\label{subsec:def_chi_bar_star}\nRecall that $\\bD_n$ is the set of  $n\\times n$ positive definite diagonal matrices. For  every $D\\in \\bD_n$, $AD$ represents a column rescaling. This is a natural symmetry in linear programming, and particularly relevant in the context of interior point algorithms, as discussed in Section~\\ref{sec:LLS}.\n\n The condition number $\\Le_{AD}$ may vastly differ from $\\Le_{A}$. In terms of the subspace $W=\\ker(A)$, this amounts to rescaling the subspace by $D^{-1}$; we denote this by $D^{-1}W$. It is natural to ask for the best possible value that can be achieved by res",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Perfect balancing: *W=1",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-012-51-perfect-balancing-w1.md",
+      "narrative": null,
+      "content": "Let us now show that  $\\kappa^*_A=1$ can be efficiently checked.\n\\begin{theorem}\\label{thm:kappa-star-1}\nThere exists a strongly polynomial algorithm, that given a matrix $A\\in\\R^{m\\times n}$, returns one of the following outcomes:\n\\begin{enumerate}[(a)]\n\\item \\label{i:outcome_TU} \nA diagonal matrix $D\\in{\\bD}_n$ such that $\\kappa_{AD}=1$ showing that $\\kappa^*_A=1$. The algorithm also returns the exact value of $\\kappa_A$.\nFurther, if $\\ker(A)$ is a rational linear space, then we can select $D$ with integer diagonal entries that divide $\\kd_A$.\n\\item \\label{i:outcome_not_TU} The answer $\\kapp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hoffman proximity theorems",
+      "pageStart": 22,
+      "pageEnd": 24,
+      "target": "../sections/sec-013-6-hoffman-proximity-theorems.md",
+      "narrative": null,
+      "content": "\\label{sec:hoffman}\n\nHoffman's seminal work \\cite{Hoffman52} has analyzed proximity of LP solutions. Given $P=\\{x\\in \\R^n:\\, Ax\\le b\\}$, $x_0\\in \\R^n$, and norms $\\|.\\|_\\alpha$ and $\\|.\\|_\\beta$, we are interested in the minimum of \n$\\|x-x_0\\|_\\alpha$ over $x\\in P$.\nHoffman showed that this can be bounded as $H_{\\alpha,\\beta}(A)\\|(Ax_0-b)^+\\|_\\beta$, where the Lipschitz-bound $H_{\\alpha,\\beta}(A)$ is a constant that only depends on $A$ and the norms. Such results are known as \\emph{Hoffman proximity bounds} in the literature and have been extensively studied;  we refer the reader to \\cite{Gule",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Linear programming with dependence on the constraint matrix only",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-014-7-linear-programming-with-dependence-on-the-cons.md",
+      "narrative": null,
+      "content": "\\label{sec:only-A}\n\nRecent years have seen tremendous progress in the development of more efficient \nLP algorithms using interior point methods, see e.g. \\cite{CLS19,LS19,Brand2020,Brand2021} and references therein. These algorithms are \\emph{weakly} polynomial, i.e., their running time depends on the encoding length of the input $(A,b,c)$ of \\ref{LP_primal_dual}.\n\nA fundamental open problem is the existence of a \\emph{strongly} polynomial LP algorithm; this was listed by Smale as one of the key open problems  in mathematics for the 21st century \\cite{Smale98}. The number of arithmetic operati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A black box algorithm",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-015-71-a-black-box-algorithm.md",
+      "narrative": null,
+      "content": "\\label{sec:black-box}\nThe LP feasibility and optimization algorithms in \\cite{DadushNV20} rely on a black-box subroutine for approximate LP solutions, and use their outputs to find exact primal (and dual) optimal solutions in time $\\poly(m,n,\\log (\\bar \\Le_A+n))$. For the black-box, one can use the fast interior-point algorithms cited above.\n\nMore precisely, we require  the following approximately feasible and optimal solution $\\tilde x$ to \\ref{LP-subspace-f} in time $\\mathrm{poly}(n,m)\\log((\\bar\\kappa_A + n)/\\varepsilon)\\big)$.\nHere $\\operatorname{OPT}_{\\mathrm{LP}}$ denotes the objective va",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Layered least squares interior point methods",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "../sections/sec-016-72-layered-least-squares-interior-point-methods.md",
+      "narrative": null,
+      "content": "\\label{sec:LLS}\n\nIn this section, we briefly review layered least squares (LLS) interior-point methods, and highlight the role of the circuit imbalance measure $\\Le_W$ in this context.\nThe \\emph{central path} for the standard log-barrier function is the  parametrized curve given by the solutions to the system following system for $\\mu\\in \\R_{++}$\n\\begin{equation}\n  \\label{sys:central_path}\n  \\begin{aligned}\n  Ax &= b \\\\\n  A^\\top y + s & = c\\\\\n  x_is_i &= \\mu \\;\\quad \\forall i \\in [n]\\\\\n  x, s &>0\n  \\end{aligned}\n\\end{equation}\n A unique solution for each $\\mu>0$ exist whenever \\ref{LP_primal_d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The curvature of the central path",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "target": "../sections/sec-017-73-the-curvature-of-the-central-path.md",
+      "narrative": null,
+      "content": "The condition number $\\bar\\chi_A^*$ also has an interesting connection to the geometry of the central path. In this context, Sonnevend, Stoer, and Zhao~\\cite{Sonnevend1991} introduced a primal-dual curvature notion. \nMonteiro and\nTsuchiya~\\cite{Monteiro2008} reveal strong connections between the curvature integral, the Mizuno-Todd-Ye predictor-corrector algorithm, and the Vavasis-Ye algorithm. In particular, they prove a bound \n$O(n^{3.5} \\log(\\bar{\\chi}^*_A+n))$ on the curvature integral.\n\nBesides the above primal-dual curvature, one can also study the \\emph{total curvature} of the central pa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Circuit diameter bounds and circuit augmentation algorithms",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-018-8-circuit-diameter-bounds-and-circuit-augmentati.md",
+      "narrative": null,
+      "content": "\\label{sec:augment}\nConsider an LP in standard equality form with upper  bounds, where $A\\in \\R^{m\\times n}$, $b\\in \\R^m$, $u\\in \\R^n$:\n\\begin{equation}\n\\label{LP-augment}\\tag{LP$(A,b,c,u)$}\n\\begin{aligned}\n\\min \\; & \\pr{c}{x} \\\\ \nAx&=b \\\\\n0\\leq x&\\leq u\\,\\\\\n\\end{aligned}\n\\end{equation}\n\nIn Section~\\ref{sec:delta} we briefly mentioned the Hirsch conj\\-ecture and some progress towards the polynomial Hirsch conjecture; in Theorem~\\ref{thm:kappa-diameter} shows a bound $O((n-m)^3m\\Le_A\\log(\\Le_A+n))$ on the diameter of $\\{x\\in \\R^n:\\, Ax=b,x\\ge 0\\}$ for $A\\in\\R^{m\\times n}$.\n\n\\emph{Circuit diamet",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An improved circuit diameter bound",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/sec-019-81-an-improved-circuit-diameter-bound.md",
+      "narrative": null,
+      "content": "In a recent paper Dadush et al. \\cite{dadush2021circuit} gave the following bound on the circuit diameter:\n\n\\begin{theorem}[\\cite{dadush2021circuit}]\\label{thm:diam-augment} An LP of the form \\ref{LP-augment} has circuit diameter bound\n$O(m^2 \\log(m + \\kappa_A) + n \\log n)$.\n\\end{theorem}\n\nLet us highlight the main ideas to prove Theorem~\\ref{thm:diam-augment}. The argument is constructive but non algorithmic in the sense that the augmentation steps are defined using the optimal solution.\nWe first show the bound in Theorem~\\ref{thm:diam-augment} for \\ref{LP_primal_dual} (i.e., without upper bo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Circuit augmentation algorithms",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-020-82-circuit-augmentation-algorithms.md",
+      "narrative": null,
+      "content": "\\label{subsec:circ-diameter-algorithms}\nThe generic \\emph{circuit augmentation algorithm} is a circuit walk  $x^{(1)},x^{(2)},\\ldots,x^{(k+1)}\\in P$ as defined above, such that an initial  feasible $x^{(0)}$ is given, \nand $\\pr{c}{x^{(t+1)}}<\\pr{c}{x^{(t)}}$, i.e., the objective value decreases in every iteration.\nThe elementary vector $g$ is an \\emph{augmenting direction} for the solution $x^{(t)}$\n if and only if $\\pr{c}{g}<0$, $g_i\\ge 0$ for every $x^{(t)}_i=0$ and $g_i\\le 0$ for every  $x^{(t)}_i=u_i$. By LP duality, $x^{(t)}$ is optimal if and only if no augmenting direction exists. Other",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Augmenting directions for flow problems",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-021-821-augmenting-directions-for-flow-problems.md",
+      "narrative": null,
+      "content": "It is instructive to consider these algorithms  for the special case of \\emph{minimum-cost flows}. Given a directed graph $D=(V,E)$ with capacities $u\\in \\R^E$, costs $c\\in \\R^E$, and node demands $b\\in \\R^V$ with $b(V)= \\sum_{i \\in V} b_i = 0$. The objective is to find the minimum cost flow $x$ that satisfies the capacity constraints: $0\\le x\\le u$, and the node demands: for each node $i\\in V$, the total incoming minus the total outgoing flow equals $b_i$. This can be written in the form \\ref{LP-augment} with $A$ as the node-arc incidence matrix of $D$, a TU matrix. \nLet us define the \\emph{r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Convergence bounds",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "../sections/sec-022-822-convergence-bounds.md",
+      "narrative": null,
+      "content": "We now state the convergence bounds from \\cite{DHL15}. The original statement refers to subdeterminant bounds; we paraphrase them in terms of finding approximately optimal solutions.\n\n\\begin{theorem}[{De Loera, Hemmecke, Lee \\cite{DHL15}}]\\label{thm:DLHL}\nConsider a linear program in the form \\ref{LP-augment}. \nAssume we are given an initial feasible solution $x^{(0)}$, and let $\\OPT$ denote the optimum value. By an $\\varepsilon$-\n optimal solution we mean an iterate $x^{(t)}$ such that $\\pr{c}{x^{(t)}}\\le \\OPT+\\varepsilon$.\n\\begin{enumerate}[(a)]\n\t\\item \\label{i:deepest}For given $\\varepsilon",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A circuit augmentation algorithm with logA dependence",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "../sections/sec-023-83-a-circuit-augmentation-algorithm-with-loga-de.md",
+      "narrative": null,
+      "content": "\\label{sec:log-kappa}\nRecall that the diameter bound Theorem~\\ref{thm:diam-augment} is non-algorithmic in the sense that the augmentation steps rely on knowing the optimal solution $x^*$.\nDadush et al.~\\cite{dadush2021circuit} complemented this with an efficient circuit augmentation algorithm, assuming oracles are provided for certain circuit directions.\n\n\\begin{theorem}[\\cite{dadush2021circuit}]\\label{thm:opt-augment}\n    Consider the primal of \\ref{LP_primal_dual}. Given a feasible solution, there exists a circuit augmentation algorithm that finds an optimal solution or concludes unboundedne",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An improved bound for steepest-descent augmentation",
+      "pageStart": 33,
+      "pageEnd": 36,
+      "target": "../sections/sec-024-84-an-improved-bound-for-steepest-descent-augmen.md",
+      "narrative": null,
+      "content": "\\label{sec:steepest-improved}\nWe now prove Theorem~\\ref{thm:steepest-main}.\nThe proof follows the same lines as that of the Goldberg--Tarjan algorithm; see also \\cite[Section 10.5]{amo} for the analysis. A factor $\\log n$ improvement over the original bound was given in \\cite{Radzik-Goldberg}. A key property in the original analysis is that for a flow around a cycle (i.e., an elementary vector), every edge carries at least $1/|V|$ fraction of the $\\ell_1$-norm of the flow. This can be naturally replaced by the argument that for every elementary flow $g$, the minimum nonzero value of $|g_i|$ is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Circuits, integer proximity, and Graver bases",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-025-9-circuits-integer-proximity-and-graver-bases.md",
+      "narrative": null,
+      "content": "\\label{sec:graver}\nWe now briefly discuss implications of circuit imbalances to the integer program (IP) of the form\n\\begin{equation}\n\\label{eq:IP} \\tag{IP}\n\\begin{aligned}\n\\min \\; &\\pr{c}{x} \\quad \\\\\nAx& =b \\\\\nx &\\geq 0, \\\\\nx &\\in \\Z^n.\n\\end{aligned}\n\\end{equation}\n\nMany algorithms for \\eqref{eq:IP} solve the LP-relaxation first and deduce from the optimal solution of the relaxation information about the IP itself. The following proximity lemma shows that in case that \\eqref{eq:IP} is feasible, the distance of an optimal integral solution to the optimal solution of the relaxation can be bound",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/conj-sec-026-02",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 44,
+      "target": "conj-sec-026-02.md",
+      "narrative": null,
+      "content": "Let W ⊆Rn be a rational linear subspace. Then, for every z ∈W ∩Zn, there exists a conformal circuit decomposition z = Ph k=1 gk, h ≤n such that each gk is a 1/˙κW -integral vector in F(W).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prop-sec-026-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 44,
+      "target": "prop-sec-026-01.md",
+      "narrative": null,
+      "content": "Let W ⊆Rn be a linear space with κW = 1, and let z ∈W ∩Zn. Then, for every maximal conformal circuit decomposition z = Ph k=1 gk, we have gk ∈F(W) ∩Zn. We formulate a conjecture asserting that this property generalizes for arbitrary ˙κW values.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prop-sec-026-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 44,
+      "target": "prop-sec-026-03.md",
+      "narrative": null,
+      "content": "Let W ⊆Rn be a rational linear subspace with κ∗ W = 1. Then, for every z ∈W ∩Zn, and every maximal conformal circuit decomposition z = Ph k=1 gk, we have that gk is a 1/˙κ-integral vector in F(W).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prop-sec-026-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 44,
+      "target": "prop-sec-026-04.md",
+      "narrative": null,
+      "content": "Let W ⊆Rn be a rational linear subspace with κW = 2α for α ∈Zn. If z ∈W ∩Zn has a maximal conformal circuit decomposition z = Ph k=1 gk with h ≤3, then each gk is a 1/˙κ-integral vector in F(W).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A decomposition conjecture",
+      "pageStart": 37,
+      "pageEnd": 44,
+      "target": "../sections/sec-026-10-a-decomposition-conjecture.md",
+      "narrative": null,
+      "content": "A decomposition conjecture\nLet W ⊆Rn be a linear space. As the analogue of maximal augmentations, we say that a\nconformal circuit decomposition of z ∈W is maximal, if it can be obtained as follows. If z ∈W\nis an elementary vector, return the decomposition containing the single vector z. Otherwise,\nselect an arbitrary g ∈F(W) that is conformal with z (in particular, supp(g) ⊊supp(z)), and\nset g1 = αg for the largest value α > 0 such that z −g1 is conformal with z. Then, recursively\napply this procedure to z −g1 to obtain the other elementary vectors g2, . . . , gh. We have h ≤n,\nsince the suppo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prop-sec-027-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 44,
+      "target": "prop-sec-027-01.md",
+      "narrative": null,
+      "content": "Consider the matrix A = \u00141 \u0015 . For this matrix ˙κA = 5850 = 2 × 32 × 52 × 13 holds, and there exists no ˜A ∈Z2×4 such that ker( ˜A) = ker(A) and the inverse of every nonsingular 2 × 2 submatrix of ˜A is 1/5850-integral.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2108.03616v2/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Appendix: Proof of Proposition 3.20",
+      "pageStart": 44,
+      "pageEnd": 44,
+      "target": "../sections/sec-027-a-appendix-proof-of-proposition-320.md",
+      "narrative": null,
+      "content": "Appendix: Proof of Proposition 3.20\nProposition 3.20. Consider the matrix\nA =\n\u00141\n3\n4\n3\n0\n13\n9\n10\n\u0015\n.\nFor this matrix ˙κA = 5850 = 2 × 32 × 52 × 13 holds, and there exists no ˜A ∈Z2×4 such that\nker( ˜A) = ker(A) and the inverse of every nonsingular 2 × 2 submatrix of ˜A is 1/5850-integral.\nProof. We know all other representations of the space like ˜A such that ker( ˜A) = ker(A) are of\nthe form ˜A = BA where B is a 2 × 2 invertible matrix. Since A11 = 1 then to get an integral ˜A\nwe need to have integer B11 and B21. Furthermore since the g.c.d. of the numbers in the second\ncolumn is equal to 1,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

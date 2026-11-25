@@ -1,0 +1,1073 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-th-0001202v2",
+  "title": "Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees",
+  "variant": "pdf",
+  "pages": 21,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The second grading",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-the-second-grading"
+    },
+    {
+      "level": 1,
+      "title": "Bigrading the cocommutative subalgebra",
+      "number": "3",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-bigrading-the-cocommutative-subalgebra"
+    },
+    {
+      "level": 1,
+      "title": "Bigrading the Connes-Moscovici subalgebra",
+      "number": "4",
+      "page": 5,
+      "pageLabel": "4",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-bigrading-the-connes-moscovici-subalgebra"
+    },
+    {
+      "level": 1,
+      "title": "Bigrading the full Hopf algebra of rooted trees",
+      "number": "5",
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-5-bigrading-the-full-hopf-algebra-of-rooted-tree"
+    },
+    {
+      "level": 2,
+      "title": "General inequalities",
+      "number": "5.1",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-51-general-inequalities"
+    },
+    {
+      "level": 2,
+      "title": "Saturation",
+      "number": "5.2",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-52-saturation"
+    },
+    {
+      "level": 2,
+      "title": "Natural growth by a single node",
+      "number": "5.3",
+      "page": 13,
+      "pageLabel": "12",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-53-natural-growth-by-a-single-node"
+    },
+    {
+      "level": 2,
+      "title": "Natural growth by appending sums of forests",
+      "number": "5.4",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-54-natural-growth-by-appending-sums-of-forests"
+    },
+    {
+      "level": 2,
+      "title": "Comments on the main theorem",
+      "number": "5.5",
+      "page": 15,
+      "pageLabel": "14",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-55-comments-on-the-main-theorem"
+    },
+    {
+      "level": 1,
+      "title": "Prospects",
+      "number": "6",
+      "page": 17,
+      "pageLabel": "16",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-6-prospects"
+    },
+    {
+      "level": 1,
+      "title": "Appendix: asymptotic enumerations",
+      "number": null,
+      "page": 18,
+      "pageLabel": "17",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-appendix-asymptotic-enumerations"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "1",
+      "words": 275,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rooted trees",
+          "heading": false
+        },
+        {
+          "term": "physics dept",
+          "heading": false
+        },
+        {
+          "term": "bigrading",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "connes-moscovici",
+          "heading": false
+        },
+        {
+          "term": "hcm",
+          "heading": false
+        },
+        {
+          "term": "kreimer",
+          "heading": false
+        },
+        {
+          "term": "broadhurst",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-th/0001202v2 29 Jan 2000 OUT–4102–85 MZ–TH/00–01 hep-th/0001202 28 January 2000 Towards cohomology of renormalization: bigrading the combinatorial Hopf algebra of rooted trees D. J. Broadhurst1) and D. Kreimer2) Abstract The renormalization of quantum ﬁeld theory twists the antipode of a non- cocommutative Hopf algebra of rooted trees, decorated by an inﬁnite set of primitive divergences. The Hopf algebra",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-0001202v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 789,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rooted trees",
+          "heading": false
+        },
+        {
+          "term": "undecorated rooted",
+          "heading": false
+        },
+        {
+          "term": "subalgebra cal",
+          "heading": false
+        },
+        {
+          "term": "hopf subalgebra",
+          "heading": false
+        },
+        {
+          "term": "algebra cal",
+          "heading": false
+        },
+        {
+          "term": "feynman diagrams",
+          "heading": false
+        },
+        {
+          "term": "closed hopf",
+          "heading": false
+        },
+        {
+          "term": "noncocommutative",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper we bigrade the Hopf algebra of undecorated rooted trees, and both of its closed Hopf subalgebras, taking account of Hochschild cohomology. In [@DK]--[@shuffle] we have exposed the connection between renormalization and Hopf algebra. The joblist of renormalization specifies a noncocommutative coproduct, $\\Delta$. On the left are products of divergent subdiagrams; on the right these shrink to points. An",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-second-grading",
+      "number": "2",
+      "title": "The second grading",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 517,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circ delta",
+          "heading": false
+        },
+        {
+          "term": "circ bar",
+          "heading": false
+        },
+        {
+          "term": "empty tree",
+          "heading": false
+        },
+        {
+          "term": "coproduct delta",
+          "heading": false
+        },
+        {
+          "term": "forest prod",
+          "heading": false
+        },
+        {
+          "term": "delta label",
+          "heading": false
+        },
+        {
+          "term": "grading",
+          "heading": true
+        },
+        {
+          "term": "weight terms",
+          "heading": false
+        }
+      ],
+      "extract": "The weight $n$ of a rooted tree $t$ is the number of its nodes. The weight of a forest $F=\\prod_j t_j$ is the sum of the weights of the trees $t_j$ in the product. This is the first grading. To define the index $k$ for the second grading, $k$-primitivity, we use $k$-fold iterations of the coproduct $\\Delta$, defined by the highly nontrivial recursion [@DK] $$\\Delta(t)=t\\otimes e+({\\rm id}\\otimes B_+)\\circ\\Delta\\circ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-bigrading-the-cocommutative-subalgebra",
+      "number": "3",
+      "title": "Bigrading the cocommutative subalgebra",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 661,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "star delivers",
+          "heading": false
+        },
+        {
+          "term": "cocommutative",
+          "heading": true
+        },
+        {
+          "term": "star product",
+          "heading": false
+        },
+        {
+          "term": "overline",
+          "heading": false
+        },
+        {
+          "term": "primitives",
+          "heading": false
+        },
+        {
+          "term": "weight sum",
+          "heading": false
+        },
+        {
+          "term": "n-k",
+          "heading": false
+        },
+        {
+          "term": "ladder",
+          "heading": false
+        }
+      ],
+      "extract": "We first consider the cocommutative Hopf algebra ${\\cal H}_{\\rm ladder}$ of rooted trees all of whose nodes have fertility less than 2, i.e. the Hopf algebra with linear basis $l_n=B_+^n(e)$, $n\\geq 0$. In this very simple case, the recursive definition ([\\[D\\]](#D){reference-type=\"ref\" reference=\"D\"}) linearizes on the left, giving $$\\Delta(l_n)=\\sum_{k=0}^n l_{n-k}\\otimes l_k \\label{Dl}$$ for the unique $n$-node",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-bigrading-the-connes-moscovici-subalgebra",
+      "number": "4",
+      "title": "Bigrading the Connes-Moscovici subalgebra",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 591,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "connes-moscovici",
+          "heading": true
+        },
+        {
+          "term": "subleading diagonal",
+          "heading": false
+        },
+        {
+          "term": "noncocommutative coproduct",
+          "heading": false
+        },
+        {
+          "term": "bigrading",
+          "heading": true
+        },
+        {
+          "term": "delta otimes",
+          "heading": false
+        },
+        {
+          "term": "widetilde",
+          "heading": false
+        },
+        {
+          "term": "delta right",
+          "heading": false
+        },
+        {
+          "term": "partitioning",
+          "heading": false
+        }
+      ],
+      "extract": "To compute Table 2 we proceeded as above, now using the coproduct [@CK] $$\\begin{aligned} \\Delta(\\delta_n)&=&\\delta_n\\otimes e+e\\otimes\\delta_n+R_{n-1}\\label{Dd}\\\\ R_n&=&\\left[{\\bf X}\\otimes e+e\\otimes{\\bf X} +\\delta_1\\otimes{\\bf Y},~R_{n-1}\\right]+\\delta_1\\otimes Y(\\delta_n)\\label{Rd} \\end{aligned}$$ with $R_0=0$, $\\left[{\\bf X},\\delta_n\\right] =\\delta_{n+1}$ increasing weight, and $\\left[{\\bf",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-bigrading-the-full-hopf-algebra-of-rooted-tree",
+      "number": "5",
+      "title": "Bigrading the full Hopf algebra of rooted trees",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 562,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rooted trees",
+          "heading": true
+        },
+        {
+          "term": "bigrading",
+          "heading": true
+        },
+        {
+          "term": "hopf algebra",
+          "heading": true
+        },
+        {
+          "term": "req",
+          "heading": false
+        },
+        {
+          "term": "rbx",
+          "heading": false
+        },
+        {
+          "term": "ans",
+          "heading": false
+        },
+        {
+          "term": "sloane",
+          "heading": false
+        },
+        {
+          "term": "weight",
+          "heading": false
+        }
+      ],
+      "extract": "Given how long it took to compute the data that eventually led to the generating principle for the Connes-Moscovici subalgebra, one might be daunted by the task of inferring the bigrading of the full Hopf algebra of undecorated rooted trees. In fact, we discovered this first, by mere consideration of the first 8 entries in the first column of Table 3. Thanks to [@BK1] we had an extremely efficient `Reduce`",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-51-general-inequalities",
+      "number": "5.1",
+      "title": "General inequalities",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 428,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cal otimes",
+          "heading": false
+        },
+        {
+          "term": "let cal",
+          "heading": false
+        },
+        {
+          "term": "deg",
+          "heading": false
+        },
+        {
+          "term": "circ delta",
+          "heading": false
+        },
+        {
+          "term": "primitivity",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "label elements",
+          "heading": false
+        },
+        {
+          "term": "weak",
+          "heading": false
+        }
+      ],
+      "extract": "Let ${\\cal H}$ be a commutative graded Hopf algebra with unit $e$. Let ${\\rm deg}$ be the grading, with ${\\rm deg}(X)\\in {\\Nb}$ for all $X\\in{\\cal H}$ and ${\\rm deg}(e)=0$. We assume that ${\\cal H}$ is reduced to scalars by the counit $\\bar{e}$. Let ${\\cal H}_k$ be the set of elements in the kernel of $U_k$ which are in the range of $U_{k-1}$, so that $U_k(X)=0$ and $U_{k-1}(X)\\not=0$, for $X\\in{\\cal H}_k$. Then we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-52-saturation",
+      "number": "5.2",
+      "title": "Saturation",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 13,
+      "labelStart": "8",
+      "labelEnd": "12",
+      "words": 1694,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "delta widetilde",
+          "heading": false
+        },
+        {
+          "term": "delta otimes",
+          "heading": false
+        },
+        {
+          "term": "ldots otimes",
+          "heading": false
+        },
+        {
+          "term": "otimes mid",
+          "heading": false
+        },
+        {
+          "term": "inequivalent primitive",
+          "heading": false
+        },
+        {
+          "term": "place otimes",
+          "heading": false
+        },
+        {
+          "term": "primitive products",
+          "heading": false
+        },
+        {
+          "term": "delta frac",
+          "heading": false
+        }
+      ],
+      "extract": "We now seek to prove that $H_{k}(x)=[H_1(x)]^k$ in the case that ${\\cal H}={\\cal H}_R$ is the Hopf algebra of undecorated rooted trees. First we prove that ${\\rm deg}_p(X_j X_k)={\\rm deg}_p(X_j) +{\\rm deg}_p(X_k)$. **Proof**: Suppose that $X_j\\in{\\cal H}_j$ and $X_k\\in{\\cal H}_k$. Then $$U_{j+k-1}(X_j X_k)=P^{\\otimes(j+k)} (\\Delta^{j+k-1}(X_j)\\Delta^{j+k-1}(X_k))\\not=0 \\label{jk}$$ contains 1-primitives in all its",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-53-natural-growth-by-a-single-node",
+      "number": "5.3",
+      "title": "Natural growth by a single node",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 514,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "natural growth",
+          "heading": true
+        },
+        {
+          "term": "circ label",
+          "heading": false
+        },
+        {
+          "term": "node",
+          "heading": true
+        },
+        {
+          "term": "growth operator",
+          "heading": false
+        },
+        {
+          "term": "primitives",
+          "heading": false
+        },
+        {
+          "term": "leibniz rule",
+          "heading": false
+        },
+        {
+          "term": "prime",
+          "heading": false
+        },
+        {
+          "term": "weight",
+          "heading": false
+        }
+      ],
+      "extract": "There is a clear candidate for the second operator: the natural growth operator $N$, which appends a single node in all possible ways, and hence obeys a Leibniz rule. The commutators of $N$ with $B_\\pm$ are easily found, since we need only consider what is happening at the root. Defining the operator $L$ by $L(X):=l_1X$, we obtain $$\\begin{aligned} \\left[N,\\,B_+\\right]&=&B_+\\circ L\\,,\\label{np}\\\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-54-natural-growth-by-appending-sums-of-forests",
+      "number": "5.4",
+      "title": "Natural growth by appending sums of forests",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 649,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "otimes prime",
+          "heading": false
+        },
+        {
+          "term": "forests",
+          "heading": true
+        },
+        {
+          "term": "natural growth",
+          "heading": true
+        },
+        {
+          "term": "ans",
+          "heading": false
+        },
+        {
+          "term": "circ label",
+          "heading": false
+        },
+        {
+          "term": "appending",
+          "heading": true
+        },
+        {
+          "term": "node",
+          "heading": false
+        },
+        {
+          "term": "grading operator",
+          "heading": false
+        }
+      ],
+      "extract": "Let $F$ be a forest. We define $N_F(X)$ to be the sum of forests obtained by appending $F$ to every node of $X$, in turn. To append $F=\\prod_j t_j$ to a particular node, one connects the roots of all the $t_j$ to that node. We note that $N_F$ obeys a Leibniz rule, with $N_F(e)=0$ and $N_F(l_1)=B_+(F)$. We have already encountered two examples, namely the grading operator $Y:=N_{e}$, which merely counts nodes, and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-55-comments-on-the-main-theorem",
+      "number": "5.5",
+      "title": "Comments on the main theorem",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 17,
+      "labelStart": "14",
+      "labelEnd": "16",
+      "words": 1133,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "primitives",
+          "heading": false
+        },
+        {
+          "term": "ladder diagrams",
+          "heading": false
+        },
+        {
+          "term": "filad",
+          "heading": false
+        },
+        {
+          "term": "ficm",
+          "heading": false
+        },
+        {
+          "term": "widetilde delta",
+          "heading": false
+        },
+        {
+          "term": "connes-moscovici",
+          "heading": false
+        },
+        {
+          "term": "weight products",
+          "heading": false
+        },
+        {
+          "term": "bigrading",
+          "heading": false
+        }
+      ],
+      "extract": "Four comments are in order. The first concerns the enumeration of the filtration. This follows from taking logs in ([\\[filter\\]](#filter){reference-type=\"ref\" reference=\"filter\"}), which gives $$\\log H(x,y)=-\\log(1-H_1(x)y)=-\\sum_{n,k} P_{n,k}\\log(1-x^n y^k)\\,. \\label{logs}$$ Equating coefficients of $y^j$, and setting $x=z^{1/j}$, we obtain $$^j=\\sum_{k|j} k P_k(z^{1/k}) \\label{classic}$$ which is a classic problem",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-6-prospects",
+      "number": "6",
+      "title": "Prospects",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 273,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ukm",
+          "heading": false
+        },
+        {
+          "term": "undecorated",
+          "heading": false
+        },
+        {
+          "term": "decode",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "bigrading",
+          "heading": false
+        },
+        {
+          "term": "quantum field",
+          "heading": false
+        },
+        {
+          "term": "field theory",
+          "heading": false
+        },
+        {
+          "term": "decorated",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper, we were content to study the bigrading of the Hopf algebra of undecorated [@BK1; @BK2] rooted trees, by the number of nodes and a degree of primitivity analyzed by iterations of the coproduct. The extension of this bigrading to the decorated [@Over; @DR2] case is the obvious next step, in our plan to decode the rich structure of mature quantum field theory. The present work makes it clear that the key",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-appendix-asymptotic-enumerations",
+      "number": null,
+      "title": "Appendix: asymptotic enumerations",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 21,
+      "labelStart": "17",
+      "labelEnd": "20",
+      "words": 1122,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "loose",
+          "heading": false
+        },
+        {
+          "term": "persist",
+          "heading": false
+        },
+        {
+          "term": "inferred",
+          "heading": false
+        }
+      ],
+      "extract": "Here we consider inequalities inferred from Tables 3 and 4 and show that they persist at large weights, thanks to the upper bound $c<3$ on the Otter constant [@Otter]. Asymptotically, the number of rooted trees is given by $$r_n={c^n n^{-3/2}}(b+O(1/n)) \\label{asy}$$ with Otter constants that we evaluated in [@BK1]: b = 0.43992401257102530404090339143454476479808540794011",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "rooted trees",
+      "heading": true
+    },
+    {
+      "term": "cal otimes",
+      "heading": false
+    },
+    {
+      "term": "undecorated rooted",
+      "heading": false
+    },
+    {
+      "term": "delta otimes",
+      "heading": false
+    },
+    {
+      "term": "weight primitive",
+      "heading": false
+    },
+    {
+      "term": "circ delta",
+      "heading": false
+    },
+    {
+      "term": "algebra cal",
+      "heading": false
+    },
+    {
+      "term": "subalgebra cal",
+      "heading": false
+    },
+    {
+      "term": "coproduct delta",
+      "heading": false
+    },
+    {
+      "term": "cocommutative hopf",
+      "heading": false
+    },
+    {
+      "term": "noncocommutative hopf",
+      "heading": false
+    },
+    {
+      "term": "delta widetilde",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Dimensions",
+      "page": 20,
+      "pageLabel": "19",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Dimensions f",
+      "page": 20,
+      "pageLabel": "19",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "Dimensions Hn,k of the bigrading of the Hopf algebra of rooted trees, HR",
+      "page": 21,
+      "pageLabel": "20",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4",
+      "title": "Filtration Pn,k of the bigrading of HR",
+      "page": 21,
+      "pageLabel": "20",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 12,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 13,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "4 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 13 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-th-0001202v2"
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "exploring-the-geometric-buchberger-algorithm-in-integer-prog",
+  "blocks": [
+    {
+      "id": "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "Exploring the Geometric Buchberger Algorithm in Integer\nProgramming\n\nGabriel Mattos Langeloh\ngmlangeloh@inf.ufrgs.br\nInstituto de Informatica, Universidade Federal do Rio Grande do Sul\nPorto Alegre, RS, Brazil\n\nABSTRACT\n\nThe Geometric Buchberger algorithm is a specialization of the clas-\nsical Buchberger algorithm to the case of toric ideals, with applica-\ntions in the solution of families of integer programming problems.\nIn this paper, we investigate the performance of the Geometric\nBuchberger algorithm in a variety of combinatorial optimization\nproblems with both integer and binary variables",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/blocks/def-page-002-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "def-page-002-01.md",
+      "narrative": null,
+      "content": "A test set S for IP4,-(b) is a finite subset of kerz A such that for all x feasible for IP4,-(b), there exists s € S with x —s feasible and x — s <, x if and only if x is not an optimal solution. We say that S is a test set for IP4.-(-) if S is a test set for all b.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/blocks/def-page-002-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "def-page-002-02.md",
+      "narrative": null,
+      "content": "suggests a simple primal or augmentation algo- rithm for integer programming: given a test set S and any feasible solution x, iteratively search for some s € S such that x — s is feasi- ble and improves <,. When no such s exists, x must already be an optimal solution. Further information on augmentation algorithms, both with and without Grébner bases, can be found in [19, 26, 27]. The following graph-theoretic view of this primal algorithm is also useful.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/blocks/def-page-002-03",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "def-page-002-03.md",
+      "narrative": null,
+      "content": "Let F be the set of feasible solutions of IP 4,.(b) and S € Z”. We define the digraph G(F,S) as the digraph with vertex set F and arcs (x1, x2) whenever x; — x2 € S.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/blocks/def-page-002-05",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "def-page-002-05.md",
+      "narrative": null,
+      "content": "A finite subset G C kerz A is a b-truncated Gréb- ner basis of IP 4,,(b) if it is a test set for all IP4,(y) such that y < b.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/blocks/def-page-002-06",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "def-page-002-06.md",
+      "narrative": null,
+      "content": "A Markov basis of IP 4,,(b) is a finite subset M of kerz A such that the digraph G(F, M) is weakly connected. Also, M is a Markov basis of the family IP4,,(-) if it is a Markov basis for all b.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "ISSAC 24, July 16-19, 2024, Raleigh, NC, USA\n\nLet IP4¢(b) = min{c!x | Ax = b, Z\"} be a family of integer\nprograms parameterized by the right-hand side vectors b € Z’”\nwith fixed constraint matrix A € Z’*\" and objective function\nc € R\". We say x € Z? is a feasible solution for IP4,,(b) if Ax = b,\nand that it is an optimal solution if it is feasible and it minimizes\nc! x. We denote the set of feasible solutions of IP4,c(b) by F.\n\nFor some fixed field k, define a map $4 by:\n\nbat k[ x1. ...%n] > ROE... ta]\n\nxt Au,\n\nIt is well known that I, = ker ¢, is a toric ideal, that is, a prime\nbinomial ideal",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/blocks/thm-page-002-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[32]",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "thm-page-002-04.md",
+      "narrative": null,
+      "content": "G is a Grébner basis for I, with respect to <c if and only if (G) is a test set for IP 4 (-).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "Exploring the Geometric Buchberger Algorithm in Integer Programming,\n\nProject-and-lift uses the Hermite Normal Form algorithm to com-\npute a lexicographical Grébner basis of the group relaxation for\nsome o with |o| = rank A, which, by definition, is a Markov basis of\nIP, ()- This is the projection step of project-and-lift. Next, it suc-\ncessively computes Grébner bases G°\\{4} of pti (-) where e; is\nthe i-th canonical basis vector of R”, obtaining thus a Markov basis\nfor the group relaxation of the o — {i} variables. We call this process\nMd ‘computing a Markov basis of Phe cy (b) from a Markov",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/blocks/thm-page-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "thm-page-003-01.md",
+      "narrative": null,
+      "content": "If G is a partial Grébner basis obtained by the Geometric Buchberger algorithm and g1, 92 € G, then h = S(g1, 92) can be b’ -truncated whenever h; ¢ {-1, 0, 1}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "ISSAC 24, July 16-19, 2024, Raleigh, NC, USA\n\nBecause all terms in the left-hand side of Equation (2) are non-\nnegative, it follows that hy < 1 for all j € [2n]. The same argument\nwith deg, h = A’h” instead shows that hy < las well. a\n\nTheorem 3.1 also leads to the following characterization of the\nelements in a b’-truncated Grébner basis.\n\nTHEOREM 3.2. IfG is the reduced b’-truncated Grobner basis of\nIP4’,01(b’) andg € G, then g; € {—1,0, 1} for alli € [2n].\n\nProor. Letg € Gand assume G was computed via the Geometric\nBuchberger algorithm. Either g was in the input Markov basis for\nthe Geometr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/blocks/thm-page-004-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "thm-page-004-01.md",
+      "narrative": null,
+      "content": "IfG is the reduced b’-truncated Grobner basis of IP4’,01(b’) andg € G, then g; € {—1,0, 1} for alli € [2n].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "Exploring the Geometric Buchberger Algorithm in Integer Programming,\n\nISSAC ’24, July 16-19, 2024, Raleigh, NC, USA\n\nIPGBs-NC IPGBs 4ti2\nProblem nom |G| t(s) mem(GB)  #Reductions t(s) mem(GB) #Reductions t (s)\n0-1KP 5 1 20.40 0.01 0.00 48.80 0.01 0.00 37.70 0.02\n0-1KP 10 1 105.20 0.01 0.00 1130.80 0.01 0.00 818.20 0.03\n0-1KP 20 1 972.60 0.05 0.02 81189.10 0.04 0.01 58755.80 0.17\n0-1KP 30 1 6301.40 2.69 0.62 4134558.20 2.09 0.42 2852043.10 5.52\n0-1KP 40 1 18153.60 38.32 5.44 37787790.40 32.86 3.72 26161116.50 72.46\n0-1KP 50 1 34642.10 140.35 16.90 118704565.10 132.12 12.67 89624182.30 260.93\n0-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "ISSAC 24, July 16-19, 2024, Raleigh, NC, USA\n\nProblem n m_  t(%) mem(%) #Rs (%)\n0-1KP 5 1 75.69 99.08 77.25,\n0-1KP 10 1 56.75 85.80 72.36\n0-1KP 20 1 83.10 72.74 72.37\n0-1KP 30 1 77.78 67.56 68.98\n0-1KP 40 1 85.75 68.44 69.23\n0-1KP 50 1 94.14 74.98 75.50\n0-1MDKP 10 2 60.69 81.09 60.72\n0-1MDKP 10 3 56.36 66.33 49.80\n0-1MDKP 10. 4 52.75 67.08 49.27\n0-1MDKP 10 5 54.52 54.65 42.78\n0-1MDKP 15 2 66.92 55.53 51.68\n0-1MDKP 15 3 59.36 46.67 45.24\n0-1MDKP 15 4 58.84 39.90 37.33\n0-1MDKP 15 5 51.36 31.56 28.88\n0-1MDKP 20 2 69.96 55.33 55.95\n0-IMDKP 20 3. 52.20 38.37 37.69\n0-IMDKP 20 4 = 55.72 32.74 31.74\n0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "Exploring the Geometric Buchberger Algorithm in Integer Programming,\n\nn LP GR rd(%) #Lifts\n5 1812.60 1707.25 6.07 0.00\n10 3710.53 3549.40 4.29 0.00\n20 7919.06 7844.80 0.94 0.00\n30 11517.17 11415.20 0.88 0.00\n\nTable 4: Average linear relaxation value (LP), group relax-\nation value (GR), relative deviation between LP and GR (Equa-\ntion (3)) and number of lift operations to optimal solution\ncomputed by IPGBs.jl’s project-and-lift implementation over\nthe same small binary knapsacks presented in Table 1.\n\nGrébner bases according to Table 1. This indicates that project-and-\nlift early termination vi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/exploring-the-geometric-buchberger-algorithm-in-integer-prog/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "ISSAC 24, July 16-19, 2024, Raleigh, NC, USA\n\n[15]\n\n[16]\n\n(17]\n\n{18]\n\n{19]\n\n[20]\n\n(21]\n\n[22]\n\n(23]\n\n(24]\n\n[25]\n\n[26]\n\nSerkan Hosten and Rekha R. Thomas. 1999. The Associated Primes of Initial\nIdeals of Lattice Ideals. Mathematical Research Letters 6, 1 (Jan. 1999), 83-97.\nhttps://doi.org/10.4310/MRL.1999.v6.n1.a6\n\nSerkan Hosten and Rekha R. Thomas. 1999. Standard Pairs and Group Relaxations\nin Integer Programming. Journal of Pure and Applied Algebra 139, 1-3 (June 1999),\n133-157. https://doi.org/10.1016/S0022-4049(99)00009-2\n\nSerkan Hosten and Rekha R. Thomas. 2003. Gomory Integer Programs. Ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

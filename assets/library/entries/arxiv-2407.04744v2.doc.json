@@ -1,0 +1,1934 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2407.04744v2",
+  "title": "Magnetic structure of A ≤ 10 nuclei using the Norfolk nuclear models with quantum Monte Carlo methods",
+  "variant": "pdf",
+  "pages": 29,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Magnetic structure of A 10 nuclei using the Norfolk nuclear models with quantum Monte Carlo methods",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-magnetic-structure-of-a-10-nuclei-using-the-norf"
+    },
+    {
+      "level": 2,
+      "title": "Abstract",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Theory",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-theory"
+    },
+    {
+      "level": 3,
+      "title": "Quantum Monte Carlo methods",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-quantum-monte-carlo-methods"
+    },
+    {
+      "level": 3,
+      "title": "The Norfolk interaction model",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-the-norfolk-interaction-model"
+    },
+    {
+      "level": 3,
+      "title": "The electromagnetic current operator",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-the-electromagnetic-current-operator"
+    },
+    {
+      "level": 3,
+      "title": "Magnetic form factors and moments",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-magnetic-form-factors-and-moments"
+    },
+    {
+      "level": 2,
+      "title": "Results and Discussion",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-results-and-discussion"
+    },
+    {
+      "level": 3,
+      "title": "Magnetic moments",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-magnetic-moments"
+    },
+    {
+      "level": 4,
+      "title": "VMC magnetic moments of A=3-7 nuclei",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-vmc-magnetic-moments-of-a3-7-nuclei"
+    },
+    {
+      "level": 4,
+      "title": "VMC magnetic moments of A=8-10 nuclei",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-vmc-magnetic-moments-of-a8-10-nuclei"
+    },
+    {
+      "level": 4,
+      "title": "GFMC magnetic moments of A=3-9 nuclei",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-gfmc-magnetic-moments-of-a3-9-nuclei"
+    },
+    {
+      "level": 4,
+      "title": "Scaled two-body magnetic densities",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-scaled-two-body-magnetic-densities"
+    },
+    {
+      "level": 4,
+      "title": "Model dependencies in two-body magnetic densities",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-model-dependencies-in-two-body-magnetic-densitie"
+    },
+    {
+      "level": 3,
+      "title": "Magnetic form factors and high-momentum structure",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-magnetic-form-factors-and-high-momentum-structur"
+    },
+    {
+      "level": 4,
+      "title": "Tritium and Helium-3",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-tritium-and-helium-3"
+    },
+    {
+      "level": 4,
+      "title": "Lithium-6",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-lithium-6"
+    },
+    {
+      "level": 4,
+      "title": "Lithium-7 and Beryllium-7",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-lithium-7-and-beryllium-7"
+    },
+    {
+      "level": 4,
+      "title": "Lithium-8 and Boron-8",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-lithium-8-and-boron-8"
+    },
+    {
+      "level": 4,
+      "title": "A=9 nuclei",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 4,
+      "title": "Boron-10",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-boron-10"
+    },
+    {
+      "level": 2,
+      "title": "Conclusions",
+      "number": null,
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-conclusions"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-acknowledgments"
+    },
+    {
+      "level": 2,
+      "title": "Electromagnetic currents in configuration space",
+      "number": null,
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-electromagnetic-currents-in-configuration-space"
+    },
+    {
+      "level": 2,
+      "title": "Evaluation of the magnetic multipoles",
+      "number": null,
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-evaluation-of-the-magnetic-multipoles"
+    },
+    {
+      "level": 2,
+      "title": "Note on the magnetic form factors data",
+      "number": null,
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-note-on-the-magnetic-form-factors-data"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-magnetic-structure-of-a-10-nuclei-using-the-norf",
+      "number": null,
+      "title": "Magnetic structure of A 10 nuclei using the Norfolk nuclear models with quantum Monte Carlo methods",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 182,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monte carlo",
+          "heading": true
+        },
+        {
+          "term": "norfolk",
+          "heading": true
+        },
+        {
+          "term": "saint louis",
+          "heading": false
+        },
+        {
+          "term": "magnetic",
+          "heading": true
+        },
+        {
+          "term": "washington university",
+          "heading": false
+        },
+        {
+          "term": "nuclei",
+          "heading": true
+        }
+      ],
+      "extract": "Monte Carlo methods G. Chambers-Wall1,∗A. Gnech2,3,† G. B. King1,‡ S. Pastore1,4,§ M. Piarulli1,4,¶ R. Schiavilla2,3,∗∗and R. B. Wiringa5†† 1Department of Physics, Washington University in Saint Louis, Saint Louis, MO 63130, USA 2Department of Physics, Old Dominion University, Norfolk, VA 23529 3Theory Center, Jefferson Lab, Newport News, VA 23610 4McDonnell Center for the Space Sciences at Washington University in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 908,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "electromagnetic currents",
+          "heading": false
+        },
+        {
+          "term": "qmc calculations",
+          "heading": false
+        },
+        {
+          "term": "chi eft",
+          "heading": false
+        },
+        {
+          "term": "two-nucleon currents",
+          "heading": false
+        },
+        {
+          "term": "magnetic moments",
+          "heading": false
+        },
+        {
+          "term": "sub-leading two-nucleon",
+          "heading": false
+        },
+        {
+          "term": "magnetic densities",
+          "heading": false
+        },
+        {
+          "term": "pastore",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:intro label=\"sec:intro\"} In this work, we present quantum Monte Carlo (QMC) calculations, including both variational Monte Carlo (VMC) and Green's Function Monte Carlo (GFMC) methods, to study magnetic moments and form factors of $A\\le 10$ nuclei. We use the precise experimental measurements of these electromagnetic observables to validate our microscopic modeling; namely, we verify the accuracy of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-theory",
+      "number": null,
+      "title": "Theory",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "[]{#sec:theory label=\"sec:theory\"}",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-quantum-monte-carlo-methods",
+      "number": null,
+      "title": "Quantum Monte Carlo methods",
+      "level": 3,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 638,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ket psi",
+          "heading": false
+        },
+        {
+          "term": "monte carlo",
+          "heading": true
+        },
+        {
+          "term": "tau ket",
+          "heading": false
+        },
+        {
+          "term": "mel psi",
+          "heading": false
+        },
+        {
+          "term": "psi rangle",
+          "heading": false
+        },
+        {
+          "term": "langle psi",
+          "heading": false
+        },
+        {
+          "term": "mathcal psi",
+          "heading": false
+        },
+        {
+          "term": "tni ijk",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:qmc label=\"sec:qmc\"} Quantum Monte Carlo (QMC) approaches [@Carlson:2014vla] are a suite of computational methods used to stochastically solve the Schrödinger equation $$H \\Psi(J^\\pi;T,T_z)= E \\Psi(J^\\pi;T,T_z) \\ ,$$ where $\\Psi(J^\\pi;T,T_z)$ is a nuclear wave function with specific spin-parity $J^\\pi$, isospin $T$, and charge state $T_z$. The Hamiltonian has the form $$\\begin{aligned} \\label{eq:hamiltonian}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-the-norfolk-interaction-model",
+      "number": null,
+      "title": "The Norfolk interaction model",
+      "level": 3,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 587,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "norfolk",
+          "heading": true
+        },
+        {
+          "term": "piarulli",
+          "heading": false
+        },
+        {
+          "term": "contact interactions",
+          "heading": false
+        },
+        {
+          "term": "lecs associated",
+          "heading": false
+        },
+        {
+          "term": "non-local terms",
+          "heading": false
+        },
+        {
+          "term": "triton ground",
+          "heading": false
+        },
+        {
+          "term": "scattering data",
+          "heading": false
+        },
+        {
+          "term": "n3lo",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:nv23 label=\"sec:nv23\"} We base our calculations on electromagnetic many-body currents [@Pastore:2008ui; @Pastore:2009is; @Schiavilla:2018udt; @Gnech:2022vwr] derived consistently with the Norfolk two- and three-body (NV2+3) nuclear interactions [@Piarulli:2014bda; @Piarulli:2016vel; @Piarulli:2017dwd; @Baroni:2018fdn; @Piarulli:2019cqu]. The Norfolk two-body potential (NV2) is a fully local interaction --",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-the-electromagnetic-current-operator",
+      "number": null,
+      "title": "The electromagnetic current operator",
+      "level": 3,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 841,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "electromagnetic current",
+          "heading": true
+        },
+        {
+          "term": "current operator",
+          "heading": true
+        },
+        {
+          "term": "ope current",
+          "heading": false
+        },
+        {
+          "term": "n3lo",
+          "heading": false
+        },
+        {
+          "term": "non-minimal contact",
+          "heading": false
+        },
+        {
+          "term": "unknown lecs",
+          "heading": false
+        },
+        {
+          "term": "current conservation",
+          "heading": false
+        },
+        {
+          "term": "jnm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:current label=\"sec:current\"} <figure id=\"fig:currn3lo\"> <div class=\"center\"> <embed src=\"em_current3.pdf\" style=\"width:2.2in\" /> </div> <figcaption>Diagrams illustrating the contributions to the electromagnetic current at N3LO adopted in this work. Nucleons, pions, and external fields are denoted by solid, dashed, and wavy lines, respectively. The solid circle in panel (f) is associated with a sub-leading",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-magnetic-form-factors-and-moments",
+      "number": null,
+      "title": "Magnetic form factors and moments",
+      "level": 3,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 640,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnetic multipole",
+          "heading": false
+        },
+        {
+          "term": "magnetic form",
+          "heading": true
+        },
+        {
+          "term": "hat mathbf",
+          "heading": false
+        },
+        {
+          "term": "multipole operators",
+          "heading": false
+        },
+        {
+          "term": "mathbf lambda",
+          "heading": false
+        },
+        {
+          "term": "magnetic moment",
+          "heading": false
+        },
+        {
+          "term": "times hat",
+          "heading": false
+        },
+        {
+          "term": "cdot mathbf",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:multipole label=\"sec:multipole\"} The magnetic form factors are extracted from elastic electron scattering differential cross section data (see Ref. [@Donnelly1984] for a review). For this work we use the definition given in Ref. [@Donnelly1984], *i.e.*, $$\\begin{aligned} F_M^2(q)= \\frac{1}{2 J+1} \\sum_{L=1}^{\\infty}\\left|\\left\\langle J ||M_L(q)|| J\\right\\rangle\\right|^2\\,,\\label{eq:fm} \\end{aligned}$$ where",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-results-and-discussion",
+      "number": null,
+      "title": "Results and Discussion",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 279,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnetic",
+          "heading": false
+        },
+        {
+          "term": "two-body",
+          "heading": false
+        },
+        {
+          "term": "densities",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:results label=\"sec:results\"} In this section, we summarize our calculations. Specifically, we report the results for i) magnetic moments; ii) two-body magnetic densities; and iii) magnetic form factors of light nuclei.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-magnetic-moments",
+      "number": null,
+      "title": "Magnetic moments",
+      "level": 3,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 306,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "iib star",
+          "heading": false
+        },
+        {
+          "term": "iia star",
+          "heading": false
+        },
+        {
+          "term": "magnetic moments",
+          "heading": true
+        },
+        {
+          "term": "vmc",
+          "heading": false
+        },
+        {
+          "term": "two-body currents",
+          "heading": false
+        },
+        {
+          "term": "filled symbols",
+          "heading": false
+        },
+        {
+          "term": "empty symbols",
+          "heading": false
+        },
+        {
+          "term": "tab",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:mm label=\"sec:mm\"} ::: table* ::: center ::: tabular l l \\*9d3.3 &Model & & & & & & & & &\\ $^3{\\rm H}(\\frac{1}{2}^+;\\frac{1}{2})$ &Ia$^{\\star}$ &2.588 &0.196 &0.036 &0.042 &0.089 &-0.005 &0.027 &2.973 &0.385\\ &IIa$^{\\star}$ &2.588 &0.197 &0.035 &0.038 &0.125 &-0.038 & 0.027 & 2.972 &0.384\\ &Ib$^{\\star}$ &2.589 &0.224 &0.061 &0.042 &0.076 &-0.030 &0.021 &2.972 &0.394\\ &IIb$^{\\star}$ &2.592 &0.226 &0.059",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-vmc-magnetic-moments-of-a3-7-nuclei",
+      "number": null,
+      "title": "VMC magnetic moments of A=3-7 nuclei",
+      "level": 4,
+      "pageStart": 6,
+      "pageEnd": 9,
+      "labelStart": "6",
+      "labelEnd": "9",
+      "words": 1825,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnetic moments",
+          "heading": true
+        },
+        {
+          "term": "n3lo ope",
+          "heading": false
+        },
+        {
+          "term": "vmc",
+          "heading": true
+        },
+        {
+          "term": "n3lo contributions",
+          "heading": false
+        },
+        {
+          "term": "two-body magnetic",
+          "heading": false
+        },
+        {
+          "term": "two-body currents",
+          "heading": false
+        },
+        {
+          "term": "n2lo contributions",
+          "heading": false
+        },
+        {
+          "term": "nuclei",
+          "heading": true
+        }
+      ],
+      "extract": "The computation of the $^3$H and $^3$He magnetic moments represents a benchmark with the exact hyperspherical harmonics calculation of Ref. [@Gnech:2022vwr]. The VMC calculations are in excellent agreement with the previous results, and thus we do not summarize again the findings contained therein. The salient features of these systems are a strong two-body component of $\\sim13\\%~(16\\%)$ to the overall $^3{\\rm",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-vmc-magnetic-moments-of-a8-10-nuclei",
+      "number": null,
+      "title": "VMC magnetic moments of A=8-10 nuclei",
+      "level": 4,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 1291,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnetic moments",
+          "heading": true
+        },
+        {
+          "term": "n3lo ope",
+          "heading": false
+        },
+        {
+          "term": "vmc",
+          "heading": true
+        },
+        {
+          "term": "n3lo contributions",
+          "heading": false
+        },
+        {
+          "term": "two-body magnetic",
+          "heading": false
+        },
+        {
+          "term": "two-body currents",
+          "heading": false
+        },
+        {
+          "term": "n2lo contributions",
+          "heading": false
+        },
+        {
+          "term": "nuclei",
+          "heading": true
+        }
+      ],
+      "extract": "The computation of the $^3$H and $^3$He magnetic moments represents a benchmark with the exact hyperspherical harmonics calculation of Ref. [@Gnech:2022vwr]. The VMC calculations are in excellent agreement with the previous results, and thus we do not summarize again the findings contained therein. The salient features of these systems are a strong two-body component of $\\sim13\\%~(16\\%)$ to the overall $^3{\\rm",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-gfmc-magnetic-moments-of-a3-9-nuclei",
+      "number": null,
+      "title": "GFMC magnetic moments of A=3-9 nuclei",
+      "level": 4,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 785,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gfmc magnetic",
+          "heading": true
+        },
+        {
+          "term": "magnetic moments",
+          "heading": true
+        },
+        {
+          "term": "gfmc propagation",
+          "heading": false
+        },
+        {
+          "term": "nuclei",
+          "heading": true
+        },
+        {
+          "term": "vmc",
+          "heading": false
+        },
+        {
+          "term": "two-body",
+          "heading": false
+        },
+        {
+          "term": "conservative estimate",
+          "heading": false
+        },
+        {
+          "term": "tab",
+          "heading": false
+        }
+      ],
+      "extract": "We now turn our attention to the GFMC results summarized in Table [\\[tab:gfmc.mm.light\\]](#tab:gfmc.mm.light){reference-type=\"ref\" reference=\"tab:gfmc.mm.light\"}. Due to the relatively small model dependence found in the summed contributions, we perform GFMC propagation only for model Ia$^{\\star}$. Typically, we extracted the GFMC result for the magnetic moment by averaging ${\\sim}30$ mixed estimates after",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-scaled-two-body-magnetic-densities",
+      "number": null,
+      "title": "Scaled two-body magnetic densities",
+      "level": 4,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 525,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnetic densities",
+          "heading": true
+        },
+        {
+          "term": "scaled two-body",
+          "heading": true
+        },
+        {
+          "term": "short distances",
+          "heading": false
+        },
+        {
+          "term": "universal behavior",
+          "heading": false
+        },
+        {
+          "term": "dens",
+          "heading": false
+        },
+        {
+          "term": "different nuclei",
+          "heading": false
+        },
+        {
+          "term": "fum",
+          "heading": false
+        },
+        {
+          "term": "short range",
+          "heading": false
+        }
+      ],
+      "extract": "<figure id=\"fig:dens.is\"> <div class=\"center\"> <embed src=\"mdens-is.pdf\" style=\"width:46.0%\" /> </div> <figcaption>Scaled two-body VMC IS magnetic densities for different nuclei computed with model IIb<span class=\"math inline\"><sup>⋆</sup></span> as a function of interparticle spacing <span class=\"math inline\"><em>r</em><sub><em>i</em><em>j</em></sub></span>. Different colors represent different nuclei.</figcaption>",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-model-dependencies-in-two-body-magnetic-densitie",
+      "number": null,
+      "title": "Model dependencies in two-body magnetic densities",
+      "level": 4,
+      "pageStart": 12,
+      "pageEnd": 16,
+      "labelStart": "12",
+      "labelEnd": "16",
+      "words": 1183,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "two-body magnetic",
+          "heading": true
+        },
+        {
+          "term": "magnetic densities",
+          "heading": true
+        },
+        {
+          "term": "softer cutoff",
+          "heading": false
+        },
+        {
+          "term": "cutoff dependence",
+          "heading": false
+        },
+        {
+          "term": "two-body vmc",
+          "heading": false
+        },
+        {
+          "term": "two-body contributions",
+          "heading": false
+        },
+        {
+          "term": "magnetic moment",
+          "heading": false
+        },
+        {
+          "term": "interparticle spacing",
+          "heading": false
+        }
+      ],
+      "extract": "<figure id=\"fig:dens.comp.iv\"> <div class=\"center\"> <embed src=\"mdens-comp.pdf\" style=\"width:45.0%\" /> </div> <figcaption>Two-body VMC magnetic densities arising from the NLO (blue circles), N2LO-<span class=\"math inline\"><em>Δ</em></span> (orange squares), and the N3LO(NM) IV (green triangles) contributions for <span class=\"math inline\"><sup>3</sup></span>H computed with model Ia<span class=\"math",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-magnetic-form-factors-and-high-momentum-structur",
+      "number": null,
+      "title": "Magnetic form factors and high-momentum structure",
+      "level": 3,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 315,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mff iib",
+          "heading": false
+        },
+        {
+          "term": "mff multipole",
+          "heading": false
+        },
+        {
+          "term": "mff err",
+          "heading": false
+        },
+        {
+          "term": "linewidth",
+          "heading": false
+        },
+        {
+          "term": "iib star",
+          "heading": false
+        },
+        {
+          "term": "figure width",
+          "heading": false
+        },
+        {
+          "term": "magnetic form",
+          "heading": true
+        },
+        {
+          "term": "truncation error",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:ff label=\"sec:ff\"} ::: figure* ![${}^3\\text{H}$](h3_order_by_order_nviib.pdf){width=\"\\\\linewidth\"} ![${}^3\\text{He}$](he3_order_by_order_nviib.pdf){width=\"\\\\linewidth\"} ![${}^6\\text{Li}$](li6_order_by_order_nviib.pdf){width=\"\\\\linewidth\"} \\ ![${}^7\\text{Li}$](li7_order_by_order_nviib.pdf){width=\"\\\\linewidth\"} ![${}^7\\text{Be}$](be7_order_by_order_nviib.pdf){width=\"\\\\linewidth\"}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-tritium-and-helium-3",
+      "number": null,
+      "title": "Tritium and Helium-3",
+      "level": 4,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 119,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mff iib",
+          "heading": false
+        },
+        {
+          "term": "vwr",
+          "heading": false
+        },
+        {
+          "term": "diffraction",
+          "heading": false
+        },
+        {
+          "term": "gnech",
+          "heading": false
+        },
+        {
+          "term": "vmc",
+          "heading": false
+        }
+      ],
+      "extract": "The experimental magnetic form factors (shortened to f.f.'s, throughout the reminder of this section) of ${}^3\\text{H}$ and ${}^3\\text{He}$ [@Amroun:1994qj; @Sick2001] are well reproduced by the VMC calculation as can be seen in Figs. [\\[fig:MFF_IIb_co\\]](#fig:MFF_IIb_co){reference-type=\"ref\" reference=\"fig:MFF_IIb_co\"}a and [\\[fig:MFF_IIb_co\\]](#fig:MFF_IIb_co){reference-type=\"ref\" reference=\"fig:MFF_IIb_co\"}b. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-lithium-6",
+      "number": null,
+      "title": "Lithium-6",
+      "level": 4,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 178,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mff iib",
+          "heading": false
+        },
+        {
+          "term": "mff err",
+          "heading": false
+        },
+        {
+          "term": "phenomenological interactions",
+          "heading": false
+        },
+        {
+          "term": "wiringa",
+          "heading": false
+        },
+        {
+          "term": "peak",
+          "heading": false
+        },
+        {
+          "term": "fig",
+          "heading": false
+        },
+        {
+          "term": "strength",
+          "heading": false
+        }
+      ],
+      "extract": "The ${}^6\\text{Li}$ experimental magnetic form factor presents two peaks at $q\\simeq0.5$ and 2 fm$^{-1}$ [@Peterson1962; @Goldemberg1963; @Rand1966; @Lapikas1978; @Bergstrom1982]. Our calculations are able to reproduce the two peaks even if, for all the interactions considered, the zero tends to come a little too early, and the second peak contains too much strength. This is evidenced when comparing the theoretical",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-lithium-7-and-beryllium-7",
+      "number": null,
+      "title": "Lithium-7 and Beryllium-7",
+      "level": 4,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 372,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mff iib",
+          "heading": false
+        },
+        {
+          "term": "mff multipole",
+          "heading": false
+        },
+        {
+          "term": "n3lo currents",
+          "heading": false
+        },
+        {
+          "term": "two-body currents",
+          "heading": false
+        },
+        {
+          "term": "linewidth",
+          "heading": false
+        },
+        {
+          "term": "width",
+          "heading": false
+        },
+        {
+          "term": "phenomenological models",
+          "heading": false
+        },
+        {
+          "term": "peak",
+          "heading": false
+        }
+      ],
+      "extract": "The ${}^7\\text{Li}$ and ${}^7\\text{Be}$ magnetic f.f.'s receive contributions from $M_1$ and $M_3$ multipoles, as can be seen in Figs. [\\[fig:MFF_multipole_IIb\\]](#fig:MFF_multipole_IIb){reference-type=\"ref\" reference=\"fig:MFF_multipole_IIb\"}a and [\\[fig:MFF_multipole_IIb\\]](#fig:MFF_multipole_IIb){reference-type=\"ref\" reference=\"fig:MFF_multipole_IIb\"}b. The $M_3$ contribution becomes dominant in the region",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-lithium-8-and-boron-8",
+      "number": null,
+      "title": "Lithium-8 and Boron-8",
+      "level": 4,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 702,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mff iib",
+          "heading": false
+        },
+        {
+          "term": "mff multipole",
+          "heading": false
+        },
+        {
+          "term": "two-body currents",
+          "heading": false
+        },
+        {
+          "term": "unpaired proton",
+          "heading": false
+        },
+        {
+          "term": "unpaired neutron",
+          "heading": false
+        },
+        {
+          "term": "n3lo two-body",
+          "heading": false
+        },
+        {
+          "term": "mirror nuclei",
+          "heading": false
+        },
+        {
+          "term": "peak",
+          "heading": false
+        }
+      ],
+      "extract": "There are no experimental data for the magnetic f.f.'s of the $A=8$ systems; however, from our calculations, we observe again a large contribution from two-body currents (Figs. [\\[fig:MFF_IIb_co\\]](#fig:MFF_IIb_co){reference-type=\"ref\" reference=\"fig:MFF_IIb_co\"}, panels (f) and (g)). This is particularly striking in $^8$B, where two-body currents reduce the strength of the form factor for all $q$. It is also worth",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-boron-10",
+      "number": null,
+      "title": "Boron-10",
+      "level": 4,
+      "pageStart": 17,
+      "pageEnd": 19,
+      "labelStart": "17",
+      "labelEnd": "19",
+      "words": 493,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mff iib",
+          "heading": false
+        },
+        {
+          "term": "mff multipole",
+          "heading": false
+        },
+        {
+          "term": "secondary peak",
+          "heading": false
+        },
+        {
+          "term": "goldemberg",
+          "heading": false
+        },
+        {
+          "term": "main peak",
+          "heading": false
+        },
+        {
+          "term": "lesssim",
+          "heading": false
+        }
+      ],
+      "extract": "The experimental data for the ${}^{10}\\text{B}$ magnetic f.f. are provided for $0.5\\lesssim q \\lesssim 2.0$ fm$^{-1}$ region [@Goldemberg1963; @Goldemberg1965; @Rand1966; @Vanpraet1965; @Lapikas1978]. We did not include the data of Refs. [@Goldemberg1963; @Goldemberg1965] in the plots because of the strong disagreement with the more recent experimental results reported in Ref. [@Donnelly1984]. The VMC calculation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-conclusions",
+      "number": null,
+      "title": "Conclusions",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 737,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "two-body currents",
+          "heading": false
+        },
+        {
+          "term": "magnetic densities",
+          "heading": false
+        },
+        {
+          "term": "two-body contributions",
+          "heading": false
+        },
+        {
+          "term": "alcc grant",
+          "heading": false
+        },
+        {
+          "term": "norfolk model",
+          "heading": false
+        },
+        {
+          "term": "magnetic moments",
+          "heading": false
+        },
+        {
+          "term": "topical collaboration",
+          "heading": false
+        },
+        {
+          "term": "qmc studies",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:conclusion label=\"sec:conclusion\"} In this work we presented QMC calculations of magnetic moments and magnetic form factors of nuclei for $A\\leq10$ based on chiral effective field theory. For the calculation we used the Norfolk two- and three- body interaction and consistent one- and two-body current operators. The computation of magnetic moments in light nuclei displayed the important role of two-body",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 286,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alcc grant",
+          "heading": false
+        },
+        {
+          "term": "de-sc",
+          "heading": false
+        },
+        {
+          "term": "physics topical",
+          "heading": false
+        },
+        {
+          "term": "award",
+          "heading": false
+        },
+        {
+          "term": "office",
+          "heading": false
+        },
+        {
+          "term": "doe",
+          "heading": false
+        },
+        {
+          "term": "argonne",
+          "heading": false
+        },
+        {
+          "term": "col",
+          "heading": false
+        }
+      ],
+      "extract": "The authors would like to thank Josh Martin, Emanuele Mereghetti, and Ingo Tews for useful dis- cussions at various stages in the preparation of this manuscript. This work is supported by the US Department of En- ergy under Contracts No. DE-SC0021027 (G. C.-W., G. B. K. and S. P.), DE-AC02-06CH11357 (R.B.W.), DE- AC05-06OR23177 (A.G. and R.S.), a 2021 Early Career Award number DE-SC0022002 (M. P.), the FRIB Theory",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-electromagnetic-currents-in-configuration-space",
+      "number": null,
+      "title": "Electromagnetic currents in configuration space",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 24,
+      "labelStart": "20",
+      "labelEnd": "24",
+      "words": 2286,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eiq rij",
+          "heading": false
+        },
+        {
+          "term": "ˆrij",
+          "heading": false
+        },
+        {
+          "term": "n3lo loop",
+          "heading": false
+        },
+        {
+          "term": "xij",
+          "heading": false
+        },
+        {
+          "term": "λij",
+          "heading": false
+        },
+        {
+          "term": "zij",
+          "heading": false
+        },
+        {
+          "term": "µγn",
+          "heading": false
+        },
+        {
+          "term": "one-pion range",
+          "heading": false
+        }
+      ],
+      "extract": "configuration space In this appendix, we collect the r-space expressions of the electromagnetic current operators used in this work, which are currently dispersed across various ref- erences [6, 7, 11–14]. The electromagnetic current oper- ators are written as an expansion in a generic low mo- mentum scale Q. The LO (Q−2) one-body current operator, displayed in panel (a) of Fig. 1, is given by jLO(q) = ϵi(q2 µ) 2 m",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-evaluation-of-the-magnetic-multipoles",
+      "number": null,
+      "title": "Evaluation of the magnetic multipoles",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 581,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnetic multipoles",
+          "heading": true
+        },
+        {
+          "term": "linear equations",
+          "heading": false
+        },
+        {
+          "term": "reduced matrix",
+          "heading": false
+        },
+        {
+          "term": "matrix elements",
+          "heading": false
+        },
+        {
+          "term": "rection",
+          "heading": false
+        },
+        {
+          "term": "select",
+          "heading": false
+        },
+        {
+          "term": "angle",
+          "heading": false
+        },
+        {
+          "term": "cos",
+          "heading": false
+        }
+      ],
+      "extract": "Using Eq. (18) we can evaluate the value of the reduced matrix elements for the magnetic multipole operators. To do that we need a number of linear equations equal to the number of the multipoles allowed by the transition. As stated in Ref. [67] for VMC and GFMC, in order to obtain the linear equations we need for the extraction of the reduced matrix elements, is more computationally efficient to change the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-note-on-the-magnetic-form-factors-data",
+      "number": null,
+      "title": "Note on the magnetic form factors data",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": "25",
+      "labelEnd": "25",
+      "words": 18,
+      "summary": null,
+      "keywords": [],
+      "extract": "The experimental data of the magnetic form factors shown in this work have been obtained directly the orig-",
+      "extractCut": false
+    },
+    {
+      "id": "sec-025-references",
+      "number": null,
+      "title": "References",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 29,
+      "labelStart": "25",
+      "labelEnd": "29",
+      "words": 3677,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nucl-th",
+          "heading": false
+        },
+        {
+          "term": "elastic magnetic",
+          "heading": false
+        },
+        {
+          "term": "elastic electron",
+          "heading": false
+        },
+        {
+          "term": "nuclear magnetic",
+          "heading": false
+        },
+        {
+          "term": "electron scattering",
+          "heading": false
+        },
+        {
+          "term": "light nuclei",
+          "heading": false
+        },
+        {
+          "term": "monte carlo",
+          "heading": false
+        },
+        {
+          "term": "arxiv preprint",
+          "heading": false
+        }
+      ],
+      "extract": "perimental works for the magnetic f.f. are different com- pared to the one used in this work, therefore we renor- malize them with an appropriate factor given by the ratio among the experimental values F 2∗ M (q) in the paper and the one defined in Eq. (15). For example, in the cases of Refs. [94, 97, 100], this ratio is given by F 2 M(q) F 2∗ M (q) = 1 2π µ2 \u0010 q 2M \u00112 J + 1 3J , (C1) where µ is the magnetic moment",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "two-body magnetic",
+      "heading": true
+    },
+    {
+      "term": "n3lo two-body",
+      "heading": true
+    },
+    {
+      "term": "n3lo currents",
+      "heading": true
+    },
+    {
+      "term": "vmc magnetic",
+      "heading": true
+    },
+    {
+      "term": "magnetic multipole",
+      "heading": false
+    },
+    {
+      "term": "gfmc magnetic",
+      "heading": true
+    },
+    {
+      "term": "magnetic moments",
+      "heading": true
+    },
+    {
+      "term": "mff iib",
+      "heading": false
+    },
+    {
+      "term": "n3lo contributions",
+      "heading": true
+    },
+    {
+      "term": "magnetic densities",
+      "heading": true
+    },
+    {
+      "term": "n3lo ope",
+      "heading": true
+    },
+    {
+      "term": "nuclear magnetic",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Diagrams illustrating the contributions to the electromagnetic current up to N2LO. Nucleons, ∆-isobars, pions, and external fields are denoted by solid, thick-solid, dashed, and wavy lines, respectively",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Diagrams illustrating the contributions to the electromagnetic current at N3LO adopted in this work",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "VMC magnetic moments calculated with the NV2+3-Ia⋆(blue circles) and NV2+3-IIb⋆(red circles) compared with experiment (black dots). GFMC results based on NV2+3-Ia⋆are given by the green stars",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "VMC calculations of two-body IV magnetic densities for A = 3, 7, and 8 systems computed with the NV2+3-IIb⋆model as a function of interparticle spacing rij. Contributions from the ‘NLO’, ‘N2LO(∆)’, ‘N3LO",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "VMC calculations of two-body IS magnetic densities for 6Li and 10B computed with the NV2+3-IIb⋆model as a function of interparticle spacing rij. Contributions from the ‘N3LO(MIN) IS’, ‘N3LO(NM) IS’, and ‘N3LO(OPE) IS’ currents are represented by pink triangles, yellow crosses, and purple times symbo",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Same as Fig. 4 but for A = 9 systems",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Scaled two-body VMC IS magnetic densities for different nuclei computed with model IIb⋆as a function of interparticle spacing rij. Different colors represent different nuclei",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Scaled two-body VMC IV magnetic densities for different nuclei computed with model IIb⋆as a function of interparticle spacing rij. Different colors represent different nuclei",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Two-body VMC magnetic densities arising from the NLO (blue circles), N2LO-∆(orange squares), and the N3LO(NM) IV (green triangles) contributions for 3H computed with model Ia⋆(filled symbols) and IIb⋆ (open symbols) as a function of interparticle spacing rij",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Two-body VMC magnetic densities arising from the N3LO(MIN) IS (blue circles), and the N3LO(OPE) IS (orange squares) contributions for 6Li computed with model Ia⋆(filled symbols) and IIb⋆ (open symbols) as a function of interparticle spacing rij",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Magnetic form factors computed with the NV2+3-IIb⋆interaction and consistent electromagnetic current. In the figure we show the contribution of the currents up to LO (dotted blue), NLO (dashed yellow), N2LO (dot dashed green) and N3LO (full red) in the chiral expansion. We compare our calculations w",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "Multipole contribution to the form factors computed with the NV2+3-IIb∗interaction and consistent electromagnetic current at N3LO for nuclei with J > 1. In the figure we show the contribution of the multipoles M1 (dashed blue line), M3 (dotted green), and M5 (dashed dot purple). The red line represe",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "Errors generated by the truncation of the chiral current (only) for the magnetic form factors computed with",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "Contributions of the spin (full) and orbit (dashed) terms to the M1 (blue) and M3 (red)",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p003-1",
+      "file": "images/img-p003-1.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-1",
+      "file": "images/img-p004-1.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 28,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 26,
+      "note": "4 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 2,
+      "note": "14 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p25); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 6
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 26 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2407.04744v2"
+  }
+}

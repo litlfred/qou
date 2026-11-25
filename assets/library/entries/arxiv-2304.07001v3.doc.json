@@ -1,0 +1,658 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2304.07001v3",
+  "title": "arxiv-2304.07001v3",
+  "variant": "pdf",
+  "pages": 20,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem 1.2",
+      "number": "2",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-proof-of-theorem-12"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem 1.4 and Corollary 1.5",
+      "number": "3",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-proof-of-theorem-14-and-corollary-15"
+    },
+    {
+      "level": 1,
+      "title": "Concluding Remarks",
+      "number": "4",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-concluding-remarks"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 76,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "strange identities",
+          "heading": false
+        },
+        {
+          "term": "ankush",
+          "heading": false
+        },
+        {
+          "term": "resurgence",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:2304.07001v3 [math.NT] 10 Apr 2025 RESURGENCE, HABIRO ELEMENTS AND STRANGE IDENTITIES SAMUEL CREW, VERONICA FANTINI, ANKUSH GOSWAMI, ROBERT OSBURN, AND CAMPBELL WHEELER Abstract. We prove resurgence properties for the Borel transform of a formal power series associated to elements in the Habiro ring that come from radial limits of partial theta series via strange identities. As an application, we prove a",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2304.07001v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2330,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textbf med",
+          "heading": false
+        },
+        {
+          "term": "dfrac ell",
+          "heading": false
+        },
+        {
+          "term": "dfrac alpha",
+          "heading": false
+        },
+        {
+          "term": "dfrac frac",
+          "heading": false
+        },
+        {
+          "term": "infty dfrac",
+          "heading": false
+        },
+        {
+          "term": "med left",
+          "heading": false
+        },
+        {
+          "term": "dfrac tilde",
+          "heading": false
+        },
+        {
+          "term": "mathbb dfrac",
+          "heading": false
+        }
+      ],
+      "extract": "The modern theory of resurgence began with the voluminous works of Écalle in 1981 [@e1; @e2] and 1985 [@e3]. This theory now plays a vital rôle in a remarkable number of diverse areas, to name just a few examples: nonlinear systems of ODEs and difference equations [@costin1; @kamimoto], algebraic combinatorics [@cfmt1; @cfmt2], enumerative combinatorics and quantum field theory [@BD; @MY], period integrals and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-proof-of-theorem-12",
+      "number": "2",
+      "title": "Proof of Theorem 1.2",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1958,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "πiα eπi",
+          "heading": false
+        },
+        {
+          "term": "b2m",
+          "heading": false
+        },
+        {
+          "term": "smed",
+          "heading": false
+        },
+        {
+          "term": "branch cut",
+          "heading": false
+        },
+        {
+          "term": "e2πi",
+          "heading": false
+        },
+        {
+          "term": "b2n",
+          "heading": false
+        },
+        {
+          "term": "m2b",
+          "heading": false
+        },
+        {
+          "term": "square root",
+          "heading": false
+        }
+      ],
+      "extract": "2. Proof of Theorem 1.2 Proof of Theorem 1.2. The Borel transform of Ff(1/x) from (1.16) is given by B[Ff](p) = CMδ + Gf(p) where CM = −M 2 M X m=1 f(m)B2 \u0010 m M \u0011 and Gf(p) = ∞ X n=1 (−1)n+1M2n+1 (2n + 2)n! M X m=1 f(m)B2n+2 \u0010 m M \u0011 pn−1 (n −1)!bn = M ∞ X n=0 M X m=1 (−1)nf(m)B2n+4 \u0010 m M \u0011 (2n + 4)! (2n + 3)! n!(n + 1)! \u0012M2 b \u0013n+1 pn. (2.1) From the generating function xext ex −1 = ∞ X n=0 Bn(t) n! xn, where |x| <",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-proof-of-theorem-14-and-corollary-15",
+      "number": "3",
+      "title": "Proof of Theorem 1.4 and Corollary 1.5",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1613,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "points πiq",
+          "heading": false
+        },
+        {
+          "term": "radial limits",
+          "heading": false
+        },
+        {
+          "term": "coprime",
+          "heading": false
+        },
+        {
+          "term": "theorem",
+          "heading": true
+        },
+        {
+          "term": "similar argument",
+          "heading": false
+        },
+        {
+          "term": "integers",
+          "heading": false
+        },
+        {
+          "term": "proof",
+          "heading": true
+        }
+      ],
+      "extract": "In order to prove Theorem 1.4 and Corollary 1.5, we require some general preliminaries. Recall the periodic function χ(n,m) s,t (k) given by (1.18). Lemma 3.1. For all k ∈Z, 1 ≤m ≤t −1 and 1 ≤n ≤s −1, we have χ(n,m) s,t (k) = χ(s−n,t−m) s,t (k). Proof. By replacing n →s −n and m →t −m, we see that ±((s −n)t −(t −m)s) = ±(ms −nt) = ∓(nt −ms) , ±((s −n)t + (t −m)s) = ±(2st −ms −nt) ≡∓(nt + ms) (mod 2st) , (3.1) and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-concluding-remarks",
+      "number": "4",
+      "title": "Concluding Remarks",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 129,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cgconj",
+          "heading": false
+        },
+        {
+          "term": "hstrange",
+          "heading": false
+        },
+        {
+          "term": "strange identity",
+          "heading": false
+        },
+        {
+          "term": "remarks",
+          "heading": true
+        },
+        {
+          "term": "non-cyclotomic",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:remarks label=\"sec:remarks\"} In order to apply Theorems [\\[main\\]](#main){reference-type=\"ref\" reference=\"main\"} and [\\[main2\\]](#main2){reference-type=\"ref\" reference=\"main2\"} and thus verify Conjecture [\\[cgconj\\]](#cgconj){reference-type=\"ref\" reference=\"cgconj\"} for all torus knots $T(s,t)$, one needs to prove the relevant strange identity in [\\[Hstrange\\]](#Hstrange){reference-type=\"eqref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 207,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fourth author",
+          "heading": false
+        },
+        {
+          "term": "oist",
+          "heading": false
+        },
+        {
+          "term": "support during",
+          "heading": false
+        },
+        {
+          "term": "hospitality",
+          "heading": false
+        },
+        {
+          "term": "thank",
+          "heading": false
+        },
+        {
+          "term": "program",
+          "heading": false
+        }
+      ],
+      "extract": "The first author thanks Dan Zhang, Nick Dorey and Phil Trinh for many interesting discussions. He was supported by EPSRC grant EP/V012479/1 as a postdoc at the University of Bath while part of this work was completed. The fourth author was partially supported by Enterprise Ireland CS20212030 and the Irish Research Council Advanced Laureate Award IRCLA/2023/1934. He would like to thank the Okinawa Institute of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1359,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ematiques orsay",
+          "heading": false
+        },
+        {
+          "term": "math ematique",
+          "heading": false
+        },
+        {
+          "term": "fishburn numbers",
+          "heading": false
+        },
+        {
+          "term": "email address",
+          "heading": false
+        },
+        {
+          "term": "fonctions esurgentes",
+          "heading": false
+        },
+        {
+          "term": "goswami",
+          "heading": false
+        },
+        {
+          "term": "irma lectures",
+          "heading": false
+        },
+        {
+          "term": "publishing house",
+          "heading": false
+        }
+      ],
+      "extract": "[1] S. Ahlgren, B. Kim, Dissections of a “strange” function, Int. J. Number Theory 11 (2015), no. 5, 1557–1562. [2] S. Ahlgren, B. Kim and J. Lovejoy, Dissections of strange q-series, Ann. Comb. 23 (2019), no. 3-4, 427–442. [3] J. Andersen, W. Misteg˚ard, Resurgence analysis of quantum invariants of Seifert ﬁbered homology spheres, J. Lond. Math. Soc. (2) 105 (2022), no. 2, 709–764. [4] G. E. Andrews, J. Sellers,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "label smed",
+      "heading": false
+    },
+    {
+      "term": "strange identities",
+      "heading": false
+    },
+    {
+      "term": "cgconj",
+      "heading": false
+    },
+    {
+      "term": "strange identity",
+      "heading": false
+    },
+    {
+      "term": "resurgent borel",
+      "heading": false
+    },
+    {
+      "term": "prove resurgence",
+      "heading": false
+    },
+    {
+      "term": "theta series",
+      "heading": false
+    },
+    {
+      "term": "borel transform",
+      "heading": false
+    },
+    {
+      "term": "textbf med",
+      "heading": false
+    },
+    {
+      "term": "dfrac ell",
+      "heading": false
+    },
+    {
+      "term": "int theta",
+      "heading": false
+    },
+    {
+      "term": "partial theta",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "A singularity set N ⊂C and the contours γl and γr. Following [13, Sections 4.2–4.3], the median resummation of F is given by",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Contour deformation of γR −γ Now, we consider the poles of g1,f(s). Note that there is no pole at s = 0. By (2.4), they are",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Branch cut of (1 + pα)3/2. On the left for ℜ(α) < 0 and on the right",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The Hankel contour C for the discontinuity disc0(x). with S±",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 6,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 7,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "4 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p18); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 7 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2304.07001v3"
+  }
+}

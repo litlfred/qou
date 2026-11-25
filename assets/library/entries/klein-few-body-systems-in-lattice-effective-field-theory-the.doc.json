@@ -1,0 +1,4465 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "klein-few-body-systems-in-lattice-effective-field-theory-the",
+  "title": "Few-Body Systems in Lattice Effective Field Theory",
+  "variant": "pdf",
+  "pages": 111,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction and Motivation",
+      "number": null,
+      "page": 7,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction-and-motivation"
+    },
+    {
+      "level": 2,
+      "title": "The standard model of particle physics and quantum chromodynamics",
+      "number": null,
+      "page": 7,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-the-standard-model-of-particle-physics-and-quant"
+    },
+    {
+      "level": 2,
+      "title": "Lattice QCD",
+      "number": null,
+      "page": 8,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-lattice-qcd"
+    },
+    {
+      "level": 2,
+      "title": "Effective Theory",
+      "number": null,
+      "page": 9,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-effective-theory"
+    },
+    {
+      "level": 2,
+      "title": "From nucleons to nuclei",
+      "number": null,
+      "page": 11,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-from-nucleons-to-nuclei"
+    },
+    {
+      "level": 2,
+      "title": "Quantum Monte Carlo methods - status and open challenges",
+      "number": null,
+      "page": 11,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-quantum-monte-carlo-methods---status-and-open-ch"
+    },
+    {
+      "level": 1,
+      "title": "Theory",
+      "number": null,
+      "page": 15,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-theory"
+    },
+    {
+      "level": 2,
+      "title": "The effective theory of few-nucleon systems",
+      "number": null,
+      "page": 15,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-the-effective-theory-of-few-nucleon-systems"
+    },
+    {
+      "level": 2,
+      "title": "Scattering Theory",
+      "number": null,
+      "page": 19,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-scattering-theory"
+    },
+    {
+      "level": 3,
+      "title": "Basic concepts of scattering theory",
+      "number": null,
+      "page": 19,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-basic-concepts-of-scattering-theory"
+    },
+    {
+      "level": 3,
+      "title": "Extension to systems with internal degrees of freedom and coupled channels",
+      "number": null,
+      "page": 23,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-extension-to-systems-with-internal-degrees-of-fr"
+    },
+    {
+      "level": 3,
+      "title": "Scattering theory for Coulomb forces",
+      "number": null,
+      "page": 24,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-scattering-theory-for-coulomb-forces"
+    },
+    {
+      "level": 2,
+      "title": "Correlations in Few-Body physics",
+      "number": null,
+      "page": 25,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-correlations-in-few-body-physics"
+    },
+    {
+      "level": 1,
+      "title": "Nuclear Lattice Effective Field Theory",
+      "number": null,
+      "page": 27,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-nuclear-lattice-effective-field-theory"
+    },
+    {
+      "level": 2,
+      "title": "Effective theory on the lattice",
+      "number": null,
+      "page": 27,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-effective-theory-on-the-lattice"
+    },
+    {
+      "level": 2,
+      "title": "The reduced symmetry of SO(3,Z)",
+      "number": null,
+      "page": 29,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-the-reduced-symmetry-of-so3z"
+    },
+    {
+      "level": 2,
+      "title": "Bound states on the lattice",
+      "number": null,
+      "page": 30,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-bound-states-on-the-lattice"
+    },
+    {
+      "level": 2,
+      "title": "Scattering on the lattice",
+      "number": null,
+      "page": 32,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-scattering-on-the-lattice"
+    },
+    {
+      "level": 3,
+      "title": "Lüscher's effective range expansion in the finite volume",
+      "number": null,
+      "page": 32,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-lüschers-effective-range-expansion-in-the-finite"
+    },
+    {
+      "level": 3,
+      "title": "Spherical wall and radial projection",
+      "number": null,
+      "page": 32,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-spherical-wall-and-radial-projection"
+    },
+    {
+      "level": 2,
+      "title": "Exact methods",
+      "number": null,
+      "page": 36,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-exact-methods"
+    },
+    {
+      "level": 2,
+      "title": "The auxiliary field partition function",
+      "number": null,
+      "page": 37,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-the-auxiliary-field-partition-function"
+    },
+    {
+      "level": 2,
+      "title": "Hybrid Monte Carlo algorithm for Nuclear Lattice Effective Field Theory",
+      "number": null,
+      "page": 39,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-hybrid-monte-carlo-algorithm-for-nuclear-lattice"
+    },
+    {
+      "level": 2,
+      "title": "The sign problem",
+      "number": null,
+      "page": 42,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-the-sign-problem"
+    },
+    {
+      "level": 1,
+      "title": "Regularization Methods for Nuclear Lattice Effective Field Theory",
+      "number": null,
+      "page": 45,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-regularization-methods-for-nuclear-lattice-effec"
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "number": null,
+      "page": 45,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-introduction"
+    },
+    {
+      "level": 2,
+      "title": "The lattice Hamiltonian",
+      "number": null,
+      "page": 46,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-the-lattice-hamiltonian"
+    },
+    {
+      "level": 2,
+      "title": "The pionless theory",
+      "number": null,
+      "page": 49,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-the-pionless-theory"
+    },
+    {
+      "level": 2,
+      "title": "The pionful theory",
+      "number": null,
+      "page": 51,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-the-pionful-theory"
+    },
+    {
+      "level": 2,
+      "title": "Conclusion and Outlook",
+      "number": null,
+      "page": 53,
+      "pageLabel": "47",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-conclusion-and-outlook"
+    },
+    {
+      "level": 1,
+      "title": "The Tjon band in Nuclear Lattice Effective Field Theory",
+      "number": null,
+      "page": 55,
+      "pageLabel": "49",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-the-tjon-band-in-nuclear-lattice-effective-field"
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "number": null,
+      "page": 55,
+      "pageLabel": "49",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Two-body-sector",
+      "number": null,
+      "page": 57,
+      "pageLabel": "51",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-two-body-sector"
+    },
+    {
+      "level": 3,
+      "title": "Theoretical framework",
+      "number": null,
+      "page": 57,
+      "pageLabel": "51",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-theoretical-framework"
+    },
+    {
+      "level": 3,
+      "title": "Results",
+      "number": null,
+      "page": 63,
+      "pageLabel": "57",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-results"
+    },
+    {
+      "level": 2,
+      "title": "Three-body sector",
+      "number": null,
+      "page": 65,
+      "pageLabel": "59",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-three-body-sector"
+    },
+    {
+      "level": 3,
+      "title": "Theoretical framework",
+      "number": null,
+      "page": 65,
+      "pageLabel": "59",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-theoretical-framework"
+    },
+    {
+      "level": 3,
+      "title": "Results",
+      "number": null,
+      "page": 68,
+      "pageLabel": "62",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-results"
+    },
+    {
+      "level": 2,
+      "title": "Four-body sector",
+      "number": null,
+      "page": 69,
+      "pageLabel": "63",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-four-body-sector"
+    },
+    {
+      "level": 3,
+      "title": "Theoretical framework",
+      "number": null,
+      "page": 69,
+      "pageLabel": "63",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-theoretical-framework"
+    },
+    {
+      "level": 3,
+      "title": "Results",
+      "number": null,
+      "page": 70,
+      "pageLabel": "64",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-results"
+    },
+    {
+      "level": 2,
+      "title": "The Tjon band",
+      "number": null,
+      "page": 71,
+      "pageLabel": "65",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-the-tjon-band"
+    },
+    {
+      "level": 3,
+      "title": "Theoretical framework",
+      "number": null,
+      "page": 71,
+      "pageLabel": "65",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-theoretical-framework"
+    },
+    {
+      "level": 3,
+      "title": "Results",
+      "number": null,
+      "page": 73,
+      "pageLabel": "67",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-043-results"
+    },
+    {
+      "level": 2,
+      "title": "Conclusion",
+      "number": null,
+      "page": 74,
+      "pageLabel": "68",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-044-conclusion"
+    },
+    {
+      "level": 1,
+      "title": "Lattice Improvement in Lattice Effective Field Theory",
+      "number": null,
+      "page": 75,
+      "pageLabel": "69",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-045-lattice-improvement-in-lattice-effective-field-t"
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "number": null,
+      "page": 75,
+      "pageLabel": "69",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-046-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Bosons in one dimension",
+      "number": null,
+      "page": 76,
+      "pageLabel": "70",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-047-bosons-in-one-dimension"
+    },
+    {
+      "level": 2,
+      "title": "Lattice implementation",
+      "number": null,
+      "page": 78,
+      "pageLabel": "72",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-048-lattice-implementation"
+    },
+    {
+      "level": 2,
+      "title": "Results",
+      "number": null,
+      "page": 79,
+      "pageLabel": "73",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-049-results"
+    },
+    {
+      "level": 2,
+      "title": "Summary and outlook",
+      "number": null,
+      "page": 81,
+      "pageLabel": "75",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-050-summary-and-outlook"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions and Perspectives",
+      "number": null,
+      "page": 85,
+      "pageLabel": "79",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-051-conclusions-and-perspectives"
+    },
+    {
+      "level": 1,
+      "title": "Special functions and algebras",
+      "number": null,
+      "page": 89,
+      "pageLabel": "83",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-052-special-functions-and-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Partial wave decomposition",
+      "number": null,
+      "page": 89,
+      "pageLabel": "83",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-053-partial-wave-decomposition"
+    },
+    {
+      "level": 2,
+      "title": "Pauli matrices and spin algebra",
+      "number": null,
+      "page": 90,
+      "pageLabel": "84",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-054-pauli-matrices-and-spin-algebra"
+    },
+    {
+      "level": 2,
+      "title": "Anticommutator and Grassmann algebra",
+      "number": null,
+      "page": 91,
+      "pageLabel": "85",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-055-anticommutator-and-grassmann-algebra"
+    },
+    {
+      "level": 1,
+      "title": "Density and current operators",
+      "number": null,
+      "page": 93,
+      "pageLabel": "87",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-056-density-and-current-operators"
+    },
+    {
+      "level": 1,
+      "title": "Uncertainty analysis",
+      "number": null,
+      "page": 95,
+      "pageLabel": "89",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-057-uncertainty-analysis"
+    },
+    {
+      "level": 1,
+      "title": "Loop integrals",
+      "number": null,
+      "page": 97,
+      "pageLabel": "91",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-058-loop-integrals"
+    },
+    {
+      "level": 1,
+      "title": "Non-perturbative calculation of lattice artifacts in the two-boson sector",
+      "number": null,
+      "page": 99,
+      "pageLabel": "93",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-059-non-perturbative-calculation-of-lattice-artifact"
+    },
+    {
+      "level": 1,
+      "title": "Bibliography",
+      "number": null,
+      "page": 103,
+      "pageLabel": "97",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-060-bibliography"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 7,
+      "labelStart": "i",
+      "labelEnd": "1",
+      "words": 2553,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lattice eﬀective",
+          "heading": false
+        },
+        {
+          "term": "lattice spacing",
+          "heading": false
+        },
+        {
+          "term": "lattice artifacts",
+          "heading": false
+        },
+        {
+          "term": "nuclear lattice",
+          "heading": false
+        },
+        {
+          "term": "helium binding",
+          "heading": false
+        },
+        {
+          "term": "lattice improvement",
+          "heading": false
+        },
+        {
+          "term": "eﬀective field",
+          "heading": false
+        },
+        {
+          "term": "lattice effective",
+          "heading": false
+        }
+      ],
+      "extract": "Few-Body Systems in Lattice Eﬀective Field Theory Dissertation zur Erlangung des Doktorgrades (Dr. rer. nat.) der Mathematisch-Naturwissenschaftlichen Fakultät der Rheinischen Friedrich-Wilhelms-Universität Bonn von Nico Klein aus Bonn, November 2018 Dieser Forschungsbericht wurde als Dissertation von der Mathematisch-Naturwissenschaftlichen Fakultät der Universität Bonn angenommen und ist auf dem",
+      "extractCut": true,
+      "blocks": [
+        "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prose-sec-front-matter",
+        "library/klein-few-body-systems-in-lattice-effective-field-theory-the/blocks/prop-sec-front-matter-01"
+      ]
+    },
+    {
+      "id": "sec-000-introduction-and-motivation",
+      "number": null,
+      "title": "Introduction and Motivation",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-the-standard-model-of-particle-physics-and-quant",
+      "number": null,
+      "title": "The standard model of particle physics and quantum chromodynamics",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 486,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jlab clas",
+          "heading": false
+        },
+        {
+          "term": "strong force",
+          "heading": false
+        },
+        {
+          "term": "color gauge",
+          "heading": false
+        },
+        {
+          "term": "electromagnetic force",
+          "heading": false
+        },
+        {
+          "term": "weak force",
+          "heading": false
+        },
+        {
+          "term": "chromodynamics",
+          "heading": true
+        },
+        {
+          "term": "strong coupling",
+          "heading": false
+        },
+        {
+          "term": "quark conﬁnement",
+          "heading": false
+        }
+      ],
+      "extract": "chromodynamics The standard model of particle physics consists of the fundamental particles and the fundamental forces. The particles are quarks on the one hand and leptons on the other hand. The quarks consist of (u)p, (d)own, (s)trange, (c)harm, (b)ottom and (t)op quarks and they interact via gluons. Besides, the leptons consist of electron, muon and tau as well as electron neutrino, muon neutrino and tau",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-lattice-qcd",
+      "number": null,
+      "title": "Lattice QCD",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 232,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lattice qcd",
+          "heading": true
+        },
+        {
+          "term": "carlo methods",
+          "heading": false
+        },
+        {
+          "term": "monte carlo",
+          "heading": false
+        },
+        {
+          "term": "eﬀective theory",
+          "heading": false
+        },
+        {
+          "term": "many-body",
+          "heading": false
+        },
+        {
+          "term": "discretized",
+          "heading": false
+        },
+        {
+          "term": "shell",
+          "heading": false
+        }
+      ],
+      "extract": "theory approach. Both methods are explained in the subsequent sections. While lattice QCD and eﬀective theory are highly successful in the two- and partly three- and four-body sector, one has to use diﬀerent methods for the description of many-body physics. The reason is that an extension of the corresponding Faddeev-Yakubovsky equations become impractical to solve. There are various many-body methods whereas we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-effective-theory",
+      "number": null,
+      "title": "Effective Theory",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 1293,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "meson sector",
+          "heading": false
+        },
+        {
+          "term": "quark sector",
+          "heading": false
+        },
+        {
+          "term": "lattice spacing",
+          "heading": false
+        },
+        {
+          "term": "heavy quarks",
+          "heading": false
+        },
+        {
+          "term": "lattice qcd",
+          "heading": false
+        },
+        {
+          "term": "light quark",
+          "heading": false
+        },
+        {
+          "term": "breakdown scale",
+          "heading": false
+        },
+        {
+          "term": "counting scheme",
+          "heading": false
+        }
+      ],
+      "extract": "we give a very short introduction with a focus on the questions which will arise throughout this thesis. A thorough introduction can be found in [2]. Starting point is the partition function, Z = Z DADΨD ¯Ψ exp n −S F h Ψ, ¯Ψ, A i −S G[A] o , (1.5) where A is the gauge ﬁeld, and Ψ the fermion ﬁeld. S F and S G are the fermion and gauge actions. Any correlation function of two operators ˆO1, ˆO2 can be calculated by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-from-nucleons-to-nuclei",
+      "number": null,
+      "title": "From nucleons to nuclei",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 513,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hoyle state",
+          "heading": false
+        },
+        {
+          "term": "nuclei",
+          "heading": true
+        },
+        {
+          "term": "alpha-alpha scattering",
+          "heading": false
+        },
+        {
+          "term": "energy gap",
+          "heading": false
+        },
+        {
+          "term": "ground state",
+          "heading": false
+        },
+        {
+          "term": "mev",
+          "heading": false
+        },
+        {
+          "term": "nucleon-nucleon",
+          "heading": false
+        },
+        {
+          "term": "carbon",
+          "heading": false
+        }
+      ],
+      "extract": "for the regularization of nucleon-nucleon potentials. As the cutoﬀshould reﬂect the validity range of the theory, one should use a more conservative approach and the breakdown scale is mainly chosen as Λ ∼500 MeV [21, 22]. While the upper scale is set by Λ ∼500 MeV we could also look at the opposite limit. In the former picture of meson-mediated interaction the nucleon-nucleon interaction is mediated by pion",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-quantum-monte-carlo-methods---status-and-open-ch",
+      "number": null,
+      "title": "Quantum Monte Carlo methods - status and open challenges",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 15,
+      "labelStart": "5",
+      "labelEnd": "9",
+      "words": 1383,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monte carlo",
+          "heading": true
+        },
+        {
+          "term": "carlo methods",
+          "heading": true
+        },
+        {
+          "term": "quantum monte",
+          "heading": true
+        },
+        {
+          "term": "lattice spacing",
+          "heading": false
+        },
+        {
+          "term": "trial wave",
+          "heading": false
+        },
+        {
+          "term": "state wave",
+          "heading": false
+        },
+        {
+          "term": "function monte",
+          "heading": false
+        },
+        {
+          "term": "hoyle state",
+          "heading": false
+        }
+      ],
+      "extract": "Generally, there are two approaches in Quantum Monte Carlo calculations, a continuum and a lattice approach, which are used for the estimation of physical properties of nuclei. In continuum Monte Carlo theory, the ﬁrst approach is a variational method called variational Monte Carlo (VMC) for the calculation of ground states, E0. The basic idea is to minimize the energy EV of the 5 Chapter 1 Introduction and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-theory",
+      "number": null,
+      "title": "Theory",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-the-effective-theory-of-few-nucleon-systems",
+      "number": null,
+      "title": "The effective theory of few-nucleon systems",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 19,
+      "labelStart": "9",
+      "labelEnd": "13",
+      "words": 1607,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nucleon lagrangian",
+          "heading": false
+        },
+        {
+          "term": "nucleon-nucleon interaction",
+          "heading": false
+        },
+        {
+          "term": "leading-order lagrangian",
+          "heading": false
+        },
+        {
+          "term": "pion-nucleon coupling",
+          "heading": false
+        },
+        {
+          "term": "pion masses",
+          "heading": false
+        },
+        {
+          "term": "pion ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "chiral symmetry",
+          "heading": false
+        },
+        {
+          "term": "meson sector",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we construct the most general Lagrangian of the same symmetry properties as the underlying theory, QCD, focusing on the nucleon-nucleon interaction. We summarize the Lagrangian for nucleons and pions up to N2LO in the power counting framework. Afterward we will use this Lagrangian to construct all nucleon-nucleon interactions up to N2LO [39]. In the following we restrict ourselves to the SU(2) case,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-scattering-theory",
+      "number": null,
+      "title": "Scattering Theory",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 387,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tpep",
+          "heading": false
+        },
+        {
+          "term": "n4lo",
+          "heading": false
+        },
+        {
+          "term": "arctan",
+          "heading": false
+        },
+        {
+          "term": "gac",
+          "heading": false
+        },
+        {
+          "term": "λmπ",
+          "heading": false
+        }
+      ],
+      "extract": "conditions, V(1) contact =C1⃗q 2 + C2⃗k 2 + \u0010 C3⃗q 2 + C4⃗k 2\u0011⃗ σ1 ·⃗σ2 + \u0010 C5⃗q 2 + C6⃗k 2\u0011⃗ τ1 ·⃗τ2 + \u0010 C7⃗q 2 + C8⃗k 2\u0011⃗ σ1 ·⃗σ2⃗τ1 ·⃗τ2 + iC9 1 2 \u0000⃗σ1 +⃗σ2 \u0001 ·⃗q ×⃗k + iC10 1 2 \u0000⃗σ1 +⃗σ2 \u0001 ·⃗q ×⃗k⃗τ1 ·⃗τ2 + C11⃗q ·⃗σ1⃗q ·⃗σ2 + C12⃗q ·⃗σ1⃗q ·⃗σ2⃗τ1 ·⃗τ2 + C13⃗k ·⃗σ1⃗k ·⃗σ2 + C14⃗k ·⃗σ1⃗k ·⃗σ2⃗τ1 ·⃗τ2. (2.20) Eq. (2.20) consists of 14 terms with correspondingly 14 LECs and depend not only on the transfer",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-basic-concepts-of-scattering-theory",
+      "number": null,
+      "title": "Basic concepts of scattering theory",
+      "level": 3,
+      "pageStart": 19,
+      "pageEnd": 23,
+      "labelStart": "13",
+      "labelEnd": "17",
+      "words": 1513,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "scattering theory",
+          "heading": true
+        },
+        {
+          "term": "incoming wave",
+          "heading": false
+        },
+        {
+          "term": "q2l cot",
+          "heading": false
+        },
+        {
+          "term": "spherical harmonics",
+          "heading": false
+        },
+        {
+          "term": "scattering amplitude",
+          "heading": false
+        },
+        {
+          "term": "angular momentum",
+          "heading": false
+        },
+        {
+          "term": "partial wave",
+          "heading": false
+        },
+        {
+          "term": "scattering length",
+          "heading": false
+        }
+      ],
+      "extract": "First of all, we give a basic introduction into scattering theory which follows [55, 56]. Starting point of non-relativistic quantum mechanics is the corresponding Schrödinger equation, which has the subsequent 13 Chapter 2 Theory form in the center-of-mass frame, \" −1 2µ∆+ V \u0000⃗r \u0001# Ψ \u0000⃗r \u0001 = EΨ \u0000⃗r \u0001 . (2.24) µ is the reduced mass, V(⃗r ) is the interaction potential and E is the eigenenergy for the eigenfunction",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-extension-to-systems-with-internal-degrees-of-fr",
+      "number": null,
+      "title": "Extension to systems with internal degrees of freedom and coupled channels",
+      "level": 3,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 585,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ψin exp",
+          "heading": false
+        },
+        {
+          "term": "stapp parametrization",
+          "heading": false
+        },
+        {
+          "term": "orbital angular",
+          "heading": false
+        },
+        {
+          "term": "angular momentum",
+          "heading": false
+        },
+        {
+          "term": "partial waves",
+          "heading": false
+        },
+        {
+          "term": "wave function",
+          "heading": false
+        },
+        {
+          "term": "channels",
+          "heading": true
+        },
+        {
+          "term": "freedom",
+          "heading": true
+        }
+      ],
+      "extract": "As we use nucleons as degrees of freedom, the partial waves must be characterized by their spin and isospin content as well. This is why Eq. (2.36) does not hold generally for angular momentum larger than zero, and one has to sum over all magnetic quantum numbers as well. Consequently, the partial waves are described by orbital angular momentum, its magnetic quantum number and the internal degrees of freedom spin",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-scattering-theory-for-coulomb-forces",
+      "number": null,
+      "title": "Scattering theory for Coulomb forces",
+      "level": 3,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 210,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eﬀective potential",
+          "heading": false
+        },
+        {
+          "term": "coulomb",
+          "heading": true
+        },
+        {
+          "term": "ifl",
+          "heading": false
+        }
+      ],
+      "extract": "Beside the strong interaction between particles, we also have the electromagnetic interaction, which must be treated separately. The beforementioned considerations concerning the solution of the free system only hold for an eﬀective potential ∝1/r 2 due to angular momentum and all other interactions must fall oﬀwith 1/r a with a ≥2. Including the Coulomb force results in a diﬀerent eﬀective potential and leads to a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-correlations-in-few-body-physics",
+      "number": null,
+      "title": "Correlations in Few-Body physics",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 27,
+      "labelStart": "19",
+      "labelEnd": "21",
+      "words": 857,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tjon line",
+          "heading": false
+        },
+        {
+          "term": "tjon band",
+          "heading": false
+        },
+        {
+          "term": "three-body sector",
+          "heading": false
+        },
+        {
+          "term": "two-body interaction",
+          "heading": false
+        },
+        {
+          "term": "three-body physics",
+          "heading": false
+        },
+        {
+          "term": "three-body force",
+          "heading": false
+        },
+        {
+          "term": "original tjon",
+          "heading": false
+        },
+        {
+          "term": "pionless eft",
+          "heading": false
+        }
+      ],
+      "extract": "one for Bessel functions in the case of vanishing Coulomb interaction, Fl(η, ρ) ρ≫1 −−−→sin \u0012 ρ −η log(2ρ) −lπ 2 + σl \u0013 η→0 −−−→sin \u0012 ρ −lπ 2 \u0013 , (2.59) Gl(η, ρ) ρ≫1 −−−→cos \u0012 ρ −η log(2ρ) −lπ 2 + σl \u0013 η→0 −−−→cos \u0012 ρ −lπ 2 \u0013 . (2.60) Here, σl = arg[Γ(l + 1 + iη)] is the Coulomb phase. Now, we already see that the asymptotic solutions with vanishing Coulomb interaction are the same as in Eqs. (2.38) and (2.39) (up",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-nuclear-lattice-effective-field-theory",
+      "number": null,
+      "title": "Nuclear Lattice Effective Field Theory",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 103,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monte carlo",
+          "heading": false
+        },
+        {
+          "term": "carlo methods",
+          "heading": false
+        },
+        {
+          "term": "discretize",
+          "heading": false
+        }
+      ],
+      "extract": "In NLEFT, the degrees of freedom are nucleons and pions rather than quarks and gluons as in lattice QCD. Hence, we have to discretize the previous Hamiltonians in all spatial dimensions. If one uses Monte Carlo methods and the inﬁnite time extrapolation, then one also has to discretize it in its temporal dimension. In the following we explain how to put the system in a discrete box of ﬁnite volume and how we could",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-effective-theory-on-the-lattice",
+      "number": null,
+      "title": "Effective theory on the lattice",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 29,
+      "labelStart": "21",
+      "labelEnd": "23",
+      "words": 891,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "contact interaction",
+          "heading": false
+        },
+        {
+          "term": "smearing",
+          "heading": false
+        },
+        {
+          "term": "one-pion-exchange potential",
+          "heading": false
+        },
+        {
+          "term": "eﬀective ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "lattice",
+          "heading": true
+        },
+        {
+          "term": "lattice spacing",
+          "heading": false
+        },
+        {
+          "term": "momentum space",
+          "heading": false
+        },
+        {
+          "term": "one-pion exchange",
+          "heading": false
+        }
+      ],
+      "extract": "As already mentioned, we have to discretize all operators so that they are deﬁned on the lattice and the explicit form of discretization for any operator will be given explicitly in the subsequent chapters. Here we want to examine some speciﬁc problems, namely the smearing of nucleon-nucleon contact interactions and the discretization of the one-pion-exchange potential, which puts the link between lattice spacing,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-the-reduced-symmetry-of-so3z",
+      "number": null,
+      "title": "The reduced symmetry of SO(3,Z)",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 720,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reduced symmetry",
+          "heading": true
+        },
+        {
+          "term": "angular momentum",
+          "heading": false
+        },
+        {
+          "term": "lattice spacings",
+          "heading": false
+        },
+        {
+          "term": "angular momenta",
+          "heading": false
+        },
+        {
+          "term": "exact discretization",
+          "heading": false
+        },
+        {
+          "term": "one-pion-exchange potential",
+          "heading": false
+        },
+        {
+          "term": "opep",
+          "heading": false
+        },
+        {
+          "term": "irreducible representations",
+          "heading": false
+        }
+      ],
+      "extract": "respectively. As we see in Fig. 3.1 the continuum result and the continuum-regularized one are both attractive albeit the latter one vanishes for small lattice spacings. This is in line with eﬀective ﬁeld theory, where all short-range physics is absorbed in contact interaction terms. All lattice realizations show a very good agreement for distances larger than 3.5 fm, while the trigonometric ones show a repulsive",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-bound-states-on-the-lattice",
+      "number": null,
+      "title": "Bound states on the lattice",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 32,
+      "labelStart": "24",
+      "labelEnd": "26",
+      "words": 621,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bound states",
+          "heading": true
+        },
+        {
+          "term": "wave bound",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite-volume eﬀects",
+          "heading": false
+        },
+        {
+          "term": "schrödinger equation",
+          "heading": false
+        },
+        {
+          "term": "volume solution",
+          "heading": false
+        },
+        {
+          "term": "inﬁnite volume",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite volume",
+          "heading": false
+        },
+        {
+          "term": "wave function",
+          "heading": false
+        }
+      ],
+      "extract": "The identiﬁcation of bound states in the energy spectrum of a lattice calculation is quite important for the determination of deuteron, triton and helium properties as well as any other description of nuclei in the framework of NLEFT. Instead of neglecting ﬁnite-volume eﬀects by using a box with large enough volume, one could also use these eﬀects to extrapolate to the inﬁnite volume. Therefore, it is necessary to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-scattering-on-the-lattice",
+      "number": null,
+      "title": "Scattering on the lattice",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 32,
+      "labelStart": "26",
+      "labelEnd": "26",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-018-lüschers-effective-range-expansion-in-the-finite",
+      "number": null,
+      "title": "Lüscher's effective range expansion in the finite volume",
+      "level": 3,
+      "pageStart": 32,
+      "pageEnd": 32,
+      "labelStart": "26",
+      "labelEnd": "26",
+      "words": 213,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "range expansion",
+          "heading": true
+        },
+        {
+          "term": "volume",
+          "heading": true
+        },
+        {
+          "term": "eﬀective range",
+          "heading": false
+        }
+      ],
+      "extract": "Similar to the ﬁnite volume eﬀects of bound states, we can have a look on ﬁnite volume calculations of the phase shift and the eﬀective range expansion. In [93, 94], a ﬁnite volume eﬀective range expansion was derived, q cot δ (q) = 1 πLS (η) , η = \u0012Lq 2π \u00132 , (3.16) and is related to Eq. (2.44) in the inﬁnite volume. Here, q = |⃗q | is the relative momentum linked to the measured ﬁnite-volume eigenenergy via EL =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-spherical-wall-and-radial-projection",
+      "number": null,
+      "title": "Spherical wall and radial projection",
+      "level": 3,
+      "pageStart": 32,
+      "pageEnd": 36,
+      "labelStart": "26",
+      "labelEnd": "30",
+      "words": 1554,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spherical wall",
+          "heading": true
+        },
+        {
+          "term": "spherical projection",
+          "heading": true
+        },
+        {
+          "term": "radial projection",
+          "heading": true
+        },
+        {
+          "term": "standing waves",
+          "heading": false
+        },
+        {
+          "term": "partial wave",
+          "heading": false
+        },
+        {
+          "term": "uncoupled channels",
+          "heading": false
+        },
+        {
+          "term": "outgoing wave",
+          "heading": false
+        },
+        {
+          "term": "mixing angle",
+          "heading": false
+        }
+      ],
+      "extract": "Lüscher’s eﬀective range expansion is the appropriate method for low energy and zero angular mo- mentum. Although nowadays there are extensions to higher partial waves and one could also improve the predictability range by including higher terms in the eﬀective range expansion, we choose another approach to describe two-particle scattering in a box. By imposing a spherical wall as a boundary condition at r ≈RW in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-exact-methods",
+      "number": null,
+      "title": "Exact methods",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 37,
+      "labelStart": "30",
+      "labelEnd": "31",
+      "words": 413,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hessenberg matrix",
+          "heading": false
+        },
+        {
+          "term": "sparse matrices",
+          "heading": false
+        },
+        {
+          "term": "eigenvalue problem",
+          "heading": false
+        },
+        {
+          "term": "phase shifts",
+          "heading": false
+        },
+        {
+          "term": "lanczos",
+          "heading": false
+        },
+        {
+          "term": "general matrix",
+          "heading": false
+        },
+        {
+          "term": "faster",
+          "heading": false
+        },
+        {
+          "term": "vectors",
+          "heading": false
+        }
+      ],
+      "extract": "As long as we consider only systems with a few particles, we can use the Lanczos/ Arnoldi algorithm [95, 96] for sparse matrices to solve the eigenvalue problem. Afterward, we have the energy and the wave function of the system and use this information for the calculation of binding energies and phase shifts. The Lanczos algorithm works as the following. A general eigenvalue problem reads A · v = λ · v, (3.38) where",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-the-auxiliary-field-partition-function",
+      "number": null,
+      "title": "The auxiliary field partition function",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 39,
+      "labelStart": "31",
+      "labelEnd": "33",
+      "words": 850,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "auxiliary",
+          "heading": true
+        },
+        {
+          "term": "auxiliary ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "partition function",
+          "heading": true
+        },
+        {
+          "term": "integral reads",
+          "heading": false
+        },
+        {
+          "term": "path integral",
+          "heading": false
+        },
+        {
+          "term": "das",
+          "heading": false
+        },
+        {
+          "term": "antiperiodic boundary",
+          "heading": false
+        },
+        {
+          "term": "transfer matrix",
+          "heading": false
+        }
+      ],
+      "extract": "3.6 The auxiliary ﬁeld partition function Generally, we use three diﬀerent methods to extract physical observables. While we use the Hamiltonian formalism and the transfer matrix formalism for the exact calculations, we use a Grassmann path integral formalism with auxiliary ﬁelds in the case of Monte Carlo simulations. In the following we will show that all formalisms are equivalent up to higher order lattice",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-hybrid-monte-carlo-algorithm-for-nuclear-lattice",
+      "number": null,
+      "title": "Hybrid Monte Carlo algorithm for Nuclear Lattice Effective Field Theory",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 42,
+      "labelStart": "33",
+      "labelEnd": "36",
+      "words": 1499,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lto lti",
+          "heading": false
+        },
+        {
+          "term": "hybrid monte",
+          "heading": true
+        },
+        {
+          "term": "monte carlo",
+          "heading": true
+        },
+        {
+          "term": "carlo algorithm",
+          "heading": true
+        },
+        {
+          "term": "mlo lti",
+          "heading": false
+        },
+        {
+          "term": "nuclear lattice",
+          "heading": true
+        },
+        {
+          "term": "auxiliary ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "accept reject",
+          "heading": false
+        }
+      ],
+      "extract": "3.7 Hybrid Monte Carlo algorithm for Nuclear Lattice Effective Field Theory While there are a lot of diﬀerent algorithms to calculate Eq. (3.41), we choose the Hybrid Monte Carlo (HMC) algorithm in this thesis [102]. In this algorithm we update the whole ﬁeld and auxiliary ﬁeld conﬁguration at the same time making it very eﬃcient and exact. In the following we give a detailed description of the method. Starting",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-the-sign-problem",
+      "number": null,
+      "title": "The sign problem",
+      "level": 2,
+      "pageStart": 42,
+      "pageEnd": 45,
+      "labelStart": "36",
+      "labelEnd": "39",
+      "words": 389,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sign problem",
+          "heading": true
+        },
+        {
+          "term": "monte carlo",
+          "heading": false
+        },
+        {
+          "term": "bosonic system",
+          "heading": false
+        },
+        {
+          "term": "fermionic",
+          "heading": false
+        },
+        {
+          "term": "severe",
+          "heading": false
+        },
+        {
+          "term": "free energy",
+          "heading": false
+        },
+        {
+          "term": "fermions",
+          "heading": false
+        },
+        {
+          "term": "conﬁguration",
+          "heading": false
+        }
+      ],
+      "extract": "As long as the system scales only proportional to the number of particles and L3 in the spatial size, we do not have any storing problems for a large number of particles or a large box size. Sure enough, in fermionic Monte Carlo systems one has to deal with a sign problem. While we interpret the Boltzman factor as a probability factor and as such allows us to calculate the average of any observable just by summing",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-regularization-methods-for-nuclear-lattice-effec",
+      "number": null,
+      "title": "Regularization Methods for Nuclear Lattice Effective Field Theory",
+      "level": 1,
+      "pageStart": 45,
+      "pageEnd": 45,
+      "labelStart": "39",
+      "labelEnd": "39",
+      "words": 3,
+      "summary": null,
+      "keywords": [],
+      "extract": "Effective Field Theory⋆",
+      "extractCut": false
+    },
+    {
+      "id": "sec-025-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 46,
+      "labelStart": "39",
+      "labelEnd": "40",
+      "words": 678,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lattice spacing",
+          "heading": false
+        },
+        {
+          "term": "spacing independence",
+          "heading": false
+        },
+        {
+          "term": "spacing dependence",
+          "heading": false
+        },
+        {
+          "term": "lattice eft",
+          "heading": false
+        },
+        {
+          "term": "nuclear lattice",
+          "heading": false
+        },
+        {
+          "term": "four-nucleon contact",
+          "heading": false
+        },
+        {
+          "term": "lattice eﬀective",
+          "heading": false
+        },
+        {
+          "term": "contact interactions",
+          "heading": false
+        }
+      ],
+      "extract": "The Nuclear Lattice Eﬀective Field Theory (EFT) method [33] has led to impressive progress in the last decade and it has been applied to few- and many-body-systems successfully, for reviews see e.g. Refs. [52, 107]. The lattice spacing serves as a natural UV regulator for the theory, as for a given value of a the maximal momentum is pmax = π/a. Although these calculations give a quite good description for the phase",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-the-lattice-hamiltonian",
+      "number": null,
+      "title": "The lattice Hamiltonian",
+      "level": 2,
+      "pageStart": 46,
+      "pageEnd": 49,
+      "labelStart": "40",
+      "labelEnd": "43",
+      "words": 1285,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "smearing function",
+          "heading": false
+        },
+        {
+          "term": "lattice",
+          "heading": true
+        },
+        {
+          "term": "pion propagator",
+          "heading": false
+        },
+        {
+          "term": "same smearing",
+          "heading": false
+        },
+        {
+          "term": "contact interaction",
+          "heading": false
+        },
+        {
+          "term": "one-pion-exchange potential",
+          "heading": false
+        },
+        {
+          "term": "lattice spacings",
+          "heading": false
+        },
+        {
+          "term": "pion ﬁeld",
+          "heading": false
+        }
+      ],
+      "extract": "To set the stage and to introduce our notations, we ﬁrst discuss the free Hamiltonian. Its discretized form reads Hfree = 1 2mN X⃗ n,i,j X ˆl 2ω0a† i,j \u0000⃗n \u0001 ai,j \u0000⃗n \u0001 + 3 X k=1 (−1)k × ωk h a† i,j \u0000⃗n \u0001 ai,j \u0010⃗ n + kˆl \u0011 + a† i,j \u0000⃗n \u0001 ai,j \u0010⃗ n −kˆl \u0011io . (4.1) Here, ai,j, a† i,j are the fermionic annihilation and creation operators with spin and isospin indices i, j, respectively, mN = (mp + mn)/2 denotes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-the-pionless-theory",
+      "number": null,
+      "title": "The pionless theory",
+      "level": 2,
+      "pageStart": 49,
+      "pageEnd": 51,
+      "labelStart": "43",
+      "labelEnd": "45",
+      "words": 890,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "c1s c3s",
+          "heading": false
+        },
+        {
+          "term": "pionless theory",
+          "heading": true
+        },
+        {
+          "term": "pionless eft",
+          "heading": false
+        },
+        {
+          "term": "lattice spacing",
+          "heading": false
+        },
+        {
+          "term": "eﬀective range",
+          "heading": false
+        },
+        {
+          "term": "lattice size",
+          "heading": false
+        },
+        {
+          "term": "stretching factors",
+          "heading": false
+        },
+        {
+          "term": "range expansion",
+          "heading": false
+        }
+      ],
+      "extract": "93] EB(L) −E∞ B = −24|A|2 exp \u0010 − p −2µE∞ B L \u0011 2µL , (4.15) p cot δ0(p) = 1 πLS (η), η = \u0012Lp 2π \u00132 , (4.16) with A the normalization constant of the wave function for large distances and µ = mpmn/(mp + mn) the reduced mass. The energy eigenvalues of the system are linked to the momentum squared by E = p2/(2µ) and S (η) is the zeta function. Its expansion for small η is given by S (η) = −1 η + S 0 + S 1η1 + S 2η2 +",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-the-pionful-theory",
+      "number": null,
+      "title": "The pionful theory",
+      "level": 2,
+      "pageStart": 51,
+      "pageEnd": 53,
+      "labelStart": "45",
+      "labelEnd": "47",
+      "words": 1357,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lattice spacing",
+          "heading": false
+        },
+        {
+          "term": "smearing constant",
+          "heading": false
+        },
+        {
+          "term": "eﬀective range",
+          "heading": false
+        },
+        {
+          "term": "lattice predictions",
+          "heading": false
+        },
+        {
+          "term": "smearing factor",
+          "heading": false
+        },
+        {
+          "term": "pion-nucleon interaction",
+          "heading": false
+        },
+        {
+          "term": "contact interaction",
+          "heading": false
+        },
+        {
+          "term": "smeared contact",
+          "heading": false
+        }
+      ],
+      "extract": "N = 0 case reﬂecting the improved dispersion relation approximation which is necessary as we receive data points in diﬀerent regimes for diﬀerent lattice spacings. Therefore, we use N = 3.5 for the following calculations. Comparing the theoretical predictions with the experimental values gives the impression of a large deviation particularly for r 3S 1. As we only work at lowest order, we cannot expect to get the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-conclusion-and-outlook",
+      "number": null,
+      "title": "Conclusion and Outlook",
+      "level": 2,
+      "pageStart": 53,
+      "pageEnd": 55,
+      "labelStart": "47",
+      "labelEnd": "49",
+      "words": 789,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lattice spacing",
+          "heading": false
+        },
+        {
+          "term": "eﬀective range",
+          "heading": false
+        },
+        {
+          "term": "spacing dependence",
+          "heading": false
+        },
+        {
+          "term": "binding energy",
+          "heading": false
+        },
+        {
+          "term": "lattice size",
+          "heading": false
+        },
+        {
+          "term": "pionful theory",
+          "heading": false
+        },
+        {
+          "term": "range expansion",
+          "heading": false
+        },
+        {
+          "term": "contact interaction",
+          "heading": false
+        }
+      ],
+      "extract": "5 6 7 8 9 -500 -400 -300 -200 -100 0 -36 -33 -30 -27 0 500 1000 1500 -2.50 -2.45 -2.40 -2.35 -2.30 -2.25 -2.20 34 36 38 p cot(δ) [MeV] p2 [MeV2] a = 1.97 fm a = 0.82 fm a = 0.66 fm a = 0.56 fm a = 0.49 fm p cot(δ) [MeV] p2 [MeV2] Eb [MeV] L Figure 4.2: Lattice space dependence of various parameters. Upper panel: The ﬁnite-volume deuteron bound state energy. Central panel: The eﬀective range expansion for the 1S",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-the-tjon-band-in-nuclear-lattice-effective-field",
+      "number": null,
+      "title": "The Tjon band in Nuclear Lattice Effective Field Theory",
+      "level": 1,
+      "pageStart": 55,
+      "pageEnd": 55,
+      "labelStart": "49",
+      "labelEnd": "49",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "Theory⋆",
+      "extractCut": false
+    },
+    {
+      "id": "sec-031-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 2,
+      "pageStart": 55,
+      "pageEnd": 57,
+      "labelStart": "49",
+      "labelEnd": "51",
+      "words": 1176,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tjon band",
+          "heading": false
+        },
+        {
+          "term": "lattice spacing",
+          "heading": false
+        },
+        {
+          "term": "lattice eﬀective",
+          "heading": false
+        },
+        {
+          "term": "nuclear lattice",
+          "heading": false
+        },
+        {
+          "term": "temporal lattice",
+          "heading": false
+        },
+        {
+          "term": "two-body sector",
+          "heading": false
+        },
+        {
+          "term": "multi-particle interactions",
+          "heading": false
+        },
+        {
+          "term": "eﬀective ﬁeld",
+          "heading": false
+        }
+      ],
+      "extract": "Nuclear Lattice Eﬀective Field Theory (NLEFT) has become a powerful tool in the last years to study the formation of nuclei from nucleons in an ab initio way. Using this method it was possible to calculate the binding energies of medium mass nuclei with good accuracy [108, 115] and postdict the Hoyle state [34, 35], which is an excited state in carbon-12 indispensable for nucleosynthesis in stars. Besides binding",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-two-body-sector",
+      "number": null,
+      "title": "Two-body-sector",
+      "level": 2,
+      "pageStart": 57,
+      "pageEnd": 57,
+      "labelStart": "51",
+      "labelEnd": "51",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "5.2 Two-body-sector",
+      "extractCut": false
+    },
+    {
+      "id": "sec-033-theoretical-framework",
+      "number": null,
+      "title": "Theoretical framework",
+      "level": 3,
+      "pageStart": 57,
+      "pageEnd": 63,
+      "labelStart": "51",
+      "labelEnd": "57",
+      "words": 2685,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nlo contact",
+          "heading": false
+        },
+        {
+          "term": "c1s c3s",
+          "heading": false
+        },
+        {
+          "term": "pion propagator",
+          "heading": false
+        },
+        {
+          "term": "contact interaction",
+          "heading": false
+        },
+        {
+          "term": "smearing parameter",
+          "heading": false
+        },
+        {
+          "term": "lattice spacing",
+          "heading": false
+        },
+        {
+          "term": "n2lo",
+          "heading": false
+        },
+        {
+          "term": "partial waves",
+          "heading": false
+        }
+      ],
+      "extract": "In the two-body sector we solve the LO non-pertubatively and we include the NLO and N2LO corrections perturbatively. For the free part of the Hamiltonian, we use an O(a4)-improved version Hfree = 1 2mN X⃗ n,i,j 2ω0a† i,j \u0000⃗n \u0001 ai,j \u0000⃗n \u0001 + 3 X l=1 X ˆs (−1)k ωl h a† i,j \u0000⃗n \u0001 ai,j \u0000⃗n + lˆs \u0001 + a† i,j \u0000⃗n \u0001 ai,j \u0000⃗n −lˆs \u0001i. (5.1) The coeﬃcients ωl represent the improved action including a stretching",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-results",
+      "number": null,
+      "title": "Results",
+      "level": 3,
+      "pageStart": 63,
+      "pageEnd": 65,
+      "labelStart": "57",
+      "labelEnd": "59",
+      "words": 818,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pcm",
+          "heading": false
+        },
+        {
+          "term": "lattice spacings",
+          "heading": false
+        },
+        {
+          "term": "phase shifts",
+          "heading": false
+        },
+        {
+          "term": "description improves",
+          "heading": false
+        },
+        {
+          "term": "ipr",
+          "heading": false
+        },
+        {
+          "term": "mev",
+          "heading": false
+        },
+        {
+          "term": "smaller lattice",
+          "heading": false
+        },
+        {
+          "term": "pwa",
+          "heading": false
+        }
+      ],
+      "extract": "analysis at a = 1.97 fm. All LECs are given in lattice units: C1S 0,C3S 1,∆C,∆CI2,Cnn,Cpp are multiplied with a2, while the rest is multiplied with a4. a = 1.97 fm a = 1.64 fm a = 1.32 fm C1S 0 −0.421(2) −0.370(4) −0.289(3) C3S 1 −0.603(2) −0.549(3) −0.424(3) ∆C −0.2(2) 0.4(3) −0.5(2) ∆CI2 −0.0(1) −0.0(1) −0.08(9) Cq2 −0.05(6) 0.10(8) 0.45(6) CI2,q2 −0.06(3) 0.13(4) 0.27(4) CS 2,q2 −0.00(7) −0.0(1) 0.00(5) CS",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-three-body-sector",
+      "number": null,
+      "title": "Three-body sector",
+      "level": 2,
+      "pageStart": 65,
+      "pageEnd": 65,
+      "labelStart": "59",
+      "labelEnd": "59",
+      "words": 304,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "three-body sector",
+          "heading": true
+        },
+        {
+          "term": "pcm",
+          "heading": false
+        },
+        {
+          "term": "phase shift",
+          "heading": false
+        },
+        {
+          "term": "mev",
+          "heading": false
+        },
+        {
+          "term": "npwa",
+          "heading": false
+        }
+      ],
+      "extract": "0 20 40 60 80 100 0 50 100 150 200 0 20 40 60 80 100 120 140 160 180 0 50 100 150 200 -10 -5 0 5 10 0 50 100 150 200 -20 -15 -10 -5 0 5 10 15 20 0 50 100 150 200 -20 -15 -10 -5 0 5 10 15 20 0 50 100 150 200 -20 -15 -10 -5 0 5 10 15 20 0 50 100 150 200 -20 -15 -10 -5 0 5 10 15 20 0 50 100 150 200 -10 -5 0 5 10 0 50 100 150 200 -10 -5 0 5 10 0 50 100 150 200 -10 -5 0 5 10 0 50 100 150 200 -10 -5 0 5 10 0 50 100 150",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-theoretical-framework",
+      "number": null,
+      "title": "Theoretical framework",
+      "level": 3,
+      "pageStart": 65,
+      "pageEnd": 68,
+      "labelStart": "59",
+      "labelEnd": "62",
+      "words": 1116,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "d3n contact",
+          "heading": false
+        },
+        {
+          "term": "pcm",
+          "heading": false
+        },
+        {
+          "term": "v3n",
+          "heading": false
+        },
+        {
+          "term": "triton binding",
+          "heading": false
+        },
+        {
+          "term": "three-body sector",
+          "heading": false
+        },
+        {
+          "term": "lattice spacing",
+          "heading": false
+        },
+        {
+          "term": "tpe",
+          "heading": false
+        },
+        {
+          "term": "nijmegen pwa",
+          "heading": false
+        }
+      ],
+      "extract": "Although we work in the three-body sector, we are still able to do an exact calculation using the Lanczos method. Therefore we extend the former analysis of the 2N sector to the triton, which means that we cannot work in radial coordinates anymore but we calculate the spectrum in a cubic box. In addition to two-body forces we include three-body potentials, which were reviewed in [115]. They consist of a 59 Chapter 5",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-results",
+      "number": null,
+      "title": "Results",
+      "level": 3,
+      "pageStart": 68,
+      "pageEnd": 69,
+      "labelStart": "62",
+      "labelEnd": "63",
+      "words": 227,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lattice spacing",
+          "heading": false
+        },
+        {
+          "term": "binding energy",
+          "heading": false
+        },
+        {
+          "term": "n2lo",
+          "heading": false
+        },
+        {
+          "term": "inﬁnite volume",
+          "heading": false
+        },
+        {
+          "term": "mev",
+          "heading": false
+        }
+      ],
+      "extract": "-10.5 -10 -9.5 -9 -8.5 -8 -7.5 8 9 10 11 12 13 14 EB [MeV] L [l.u.] E3H LO N2LO 2N N2LO 2N+EM N2LO 2N+EM+ 3N Figure 5.5: Inﬁnite volume extrapolation for the triton and a lattice spacing of a = 1.32 fm. The triangles are included in the ﬁt while the circles are not due to higher order ﬁnite volume eﬀects. The extrapolation is plotted in Fig. 5.5 where one can see excellent agreement with the data points. The ﬁt",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-four-body-sector",
+      "number": null,
+      "title": "Four-body sector",
+      "level": 2,
+      "pageStart": 69,
+      "pageEnd": 69,
+      "labelStart": "63",
+      "labelEnd": "63",
+      "words": 162,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "triton binding",
+          "heading": false
+        },
+        {
+          "term": "binding energy",
+          "heading": false
+        },
+        {
+          "term": "n2lo",
+          "heading": false
+        },
+        {
+          "term": "four-body",
+          "heading": true
+        }
+      ],
+      "extract": "Table 5.2: Triton binding energy predictions at LO, N2LO, N2LO+EM, N2LO+EM+3NF and the ﬁt parameter cD. The energy errors in brackets are due to the uncertainties of the LECs. The ⋆denotes the triton binding energy as an input parameter. a = 1.97 fm a = 1.64 fm a = 1.32 fm ELO [MeV] −7.80 −8.29 −8.74 EN2LO [MeV] −7.846(4) −8.11(2) −7.95(2) E+EM N2LO [MeV] −7.68(2) −7.91(3) −7.77(2) E+EM+3N⋆ N2LO [MeV] −8.48(3)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-theoretical-framework",
+      "number": null,
+      "title": "Theoretical framework",
+      "level": 3,
+      "pageStart": 69,
+      "pageEnd": 70,
+      "labelStart": "63",
+      "labelEnd": "64",
+      "words": 537,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monte carlo",
+          "heading": false
+        },
+        {
+          "term": "time extrapolation",
+          "heading": false
+        },
+        {
+          "term": "ﬁeld monte",
+          "heading": false
+        },
+        {
+          "term": "carlo methods",
+          "heading": false
+        },
+        {
+          "term": "four-body system",
+          "heading": false
+        },
+        {
+          "term": "auxiliary ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "additional n2lo",
+          "heading": false
+        },
+        {
+          "term": "trial states",
+          "heading": false
+        }
+      ],
+      "extract": "In the four-body system, we do not have any new operator as our system should be describable by the 2NFs and 3NFs only. As the four-body system scales with L9, an exact calculation at suﬃcient large lattices is not practical anymore, and hence we have to use Monte Carlo methods. More precisely, we use auxiliary ﬁeld Monte Carlo with the hybrid Monte Carlo algorithm [33]. In the following we will deﬁne the LO",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-results",
+      "number": null,
+      "title": "Results",
+      "level": 3,
+      "pageStart": 70,
+      "pageEnd": 71,
+      "labelStart": "64",
+      "labelEnd": "65",
+      "words": 289,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "statistical uncertainties",
+          "heading": false
+        },
+        {
+          "term": "time extrapolation",
+          "heading": false
+        },
+        {
+          "term": "extrapolation order",
+          "heading": false
+        },
+        {
+          "term": "lattice spacings",
+          "heading": false
+        },
+        {
+          "term": "binding energy",
+          "heading": false
+        },
+        {
+          "term": "inﬁnite time",
+          "heading": false
+        },
+        {
+          "term": "errors",
+          "heading": false
+        }
+      ],
+      "extract": "First of all, we start with the benchmark calculation. The results are shown in Tab. 5.3. One can see very good agreement particularly for the LO result which is around one per mille relative error. The diﬀerence for the perturbative corrections is larger but still below 10 % which is ﬁnally within the error bars of the inﬁnite time LO extrapolation. Even though the accuracy will go down with larger volumes due to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-the-tjon-band",
+      "number": null,
+      "title": "The Tjon band",
+      "level": 2,
+      "pageStart": 71,
+      "pageEnd": 71,
+      "labelStart": "65",
+      "labelEnd": "65",
+      "words": 184,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n2lo contribution",
+          "heading": false
+        },
+        {
+          "term": "monte carlo",
+          "heading": false
+        },
+        {
+          "term": "mev",
+          "heading": false
+        },
+        {
+          "term": "en2lo",
+          "heading": false
+        }
+      ],
+      "extract": "Table 5.3: 4He benchmark calculation for a = 1.97 fm and L = 4. The ﬁrst bracket of Monte Carlo error are statistical ones, while the latter ones and the Lanczos ones are errors due to uncertainties of the LECs. Monte Carlo Lanczos ELO [MeV] −30.32(2)(1) −30.34 ∆EN2LO [MeV] 0.511(9)(10) 0.52(2) ∆EEM [MeV] 0.86(4)(2) 0.91(3) ∆E3NNLO [MeV] −5.1223(1128)(5) −5.0278(5) -29 -28 -27 -26 -25 -24 -23 0 5 10 15 20 -0.5 -0.4",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-theoretical-framework",
+      "number": null,
+      "title": "Theoretical framework",
+      "level": 3,
+      "pageStart": 71,
+      "pageEnd": 73,
+      "labelStart": "65",
+      "labelEnd": "67",
+      "words": 638,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n2lo contribution",
+          "heading": false
+        },
+        {
+          "term": "tjon band",
+          "heading": false
+        },
+        {
+          "term": "binding energy",
+          "heading": false
+        },
+        {
+          "term": "binding energies",
+          "heading": false
+        },
+        {
+          "term": "lattice spacing",
+          "heading": false
+        },
+        {
+          "term": "mev",
+          "heading": false
+        },
+        {
+          "term": "en2lo",
+          "heading": false
+        },
+        {
+          "term": "overbinding",
+          "heading": false
+        }
+      ],
+      "extract": "The correlation between the 3H and 4He binding energies was ﬁrst observed by Tjon [24] for a large class of 2N potentials of diﬀerent accuracy. This was later dubbed the Tjon line. It was shown in Refs. [70, 71, 136] that this correlation still holds in the case of modern, accurate semi-phenomenological potentials as well as nuclear eﬀectice ﬁeld theory. In Ref. [72] this correlation was studied in the framework of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-results",
+      "number": null,
+      "title": "Results",
+      "level": 3,
+      "pageStart": 73,
+      "pageEnd": 74,
+      "labelStart": "67",
+      "labelEnd": "68",
+      "words": 613,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tjon band",
+          "heading": false
+        },
+        {
+          "term": "tjon line",
+          "heading": false
+        },
+        {
+          "term": "mev underbound",
+          "heading": false
+        },
+        {
+          "term": "binding energy",
+          "heading": false
+        },
+        {
+          "term": "deuteron binding",
+          "heading": false
+        },
+        {
+          "term": "n2lo",
+          "heading": false
+        },
+        {
+          "term": "lec errors",
+          "heading": false
+        },
+        {
+          "term": "lattice spacing",
+          "heading": false
+        }
+      ],
+      "extract": "The results for the binding energy of triton and 4He in the previous sections are combined and shown in Fig. 5.9. For the standard coarse lattice spacing of a = 1.97 fm already the LO is above the Tjon line as 3H is approximately 1 MeV underbound or 4He is approximately 2.5 MeV overbound. The data points for 2N N2LO are close the LO data point as there is not very much diﬀerence in the np phase shift shown in Fig.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-conclusion",
+      "number": null,
+      "title": "Conclusion",
+      "level": 2,
+      "pageStart": 74,
+      "pageEnd": 75,
+      "labelStart": "68",
+      "labelEnd": "69",
+      "words": 374,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lattice spacings",
+          "heading": false
+        },
+        {
+          "term": "tjon band",
+          "heading": false
+        },
+        {
+          "term": "tjon line",
+          "heading": false
+        },
+        {
+          "term": "phase shifts",
+          "heading": false
+        },
+        {
+          "term": "smaller lattice",
+          "heading": false
+        },
+        {
+          "term": "nfs",
+          "heading": false
+        },
+        {
+          "term": "n2lo",
+          "heading": false
+        },
+        {
+          "term": "three-body",
+          "heading": false
+        }
+      ],
+      "extract": "In this chapter we have analysed the Tjon band in the framework of NLEFT. We studied the two-, three-, and four-body sector for lattice spacings from a = 1.97 fm to a = 1.32 fm up to N2LO and including subleading two-pion-exchange contributions as well as the electromagnetic interaction and the leading 3NFs. There is a general convergence of the phase shifts in the two-body sector by including higher orders as well",
+      "extractCut": true
+    },
+    {
+      "id": "sec-045-lattice-improvement-in-lattice-effective-field-t",
+      "number": null,
+      "title": "Lattice Improvement in Lattice Effective Field Theory",
+      "level": 1,
+      "pageStart": 75,
+      "pageEnd": 75,
+      "labelStart": "69",
+      "labelEnd": "69",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "Theory⋆",
+      "extractCut": false
+    },
+    {
+      "id": "sec-046-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 2,
+      "pageStart": 75,
+      "pageEnd": 76,
+      "labelStart": "69",
+      "labelEnd": "70",
+      "words": 543,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lattice errors",
+          "heading": false
+        },
+        {
+          "term": "lattice artifacts",
+          "heading": false
+        },
+        {
+          "term": "lattice spacing",
+          "heading": false
+        },
+        {
+          "term": "lattice improvement",
+          "heading": false
+        },
+        {
+          "term": "lattice eﬀective",
+          "heading": false
+        },
+        {
+          "term": "removing lattice",
+          "heading": false
+        },
+        {
+          "term": "improvement program",
+          "heading": false
+        },
+        {
+          "term": "lattice action",
+          "heading": false
+        }
+      ],
+      "extract": "Lattice simulations based on the framework of eﬀective ﬁeld theory (EFT) have been used in the study of nuclear forces [116, 138], nuclear structure [34, 35, 108, 129, 139, 140], as well as scattering and reactions [36, 133, 141]. It has also been applied to few-body [142, 143] and many-body [144–150] problems in ultracold atomic systems. One of the challenges common to all of these lattice calculations is the need",
+      "extractCut": true
+    },
+    {
+      "id": "sec-047-bosons-in-one-dimension",
+      "number": null,
+      "title": "Bosons in one dimension",
+      "level": 2,
+      "pageStart": 76,
+      "pageEnd": 78,
+      "labelStart": "70",
+      "labelEnd": "72",
+      "words": 1095,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bosons",
+          "heading": true
+        },
+        {
+          "term": "root-mean-square radii",
+          "heading": false
+        },
+        {
+          "term": "root-mean-square radius",
+          "heading": false
+        },
+        {
+          "term": "one-loop diagram",
+          "heading": false
+        },
+        {
+          "term": "lattice amplitudes",
+          "heading": false
+        },
+        {
+          "term": "diagram involving",
+          "heading": false
+        },
+        {
+          "term": "incoming particles",
+          "heading": false
+        },
+        {
+          "term": "outgoing particles",
+          "heading": false
+        }
+      ],
+      "extract": "We consider a one-dimensional system of bosons with attractive zero-range interactions [62]. The Hamiltonian is given by H = −1 2m N X i=1 d2 dx2 i + C0 N X i>j=1 δ(xi −xj), (6.2) where m is the boson mass, N is the number of particles and C0 < 0 is the two-boson contact interaction coeﬃcient. From either the Bethe ansatz [155] or by direct inspection, the ground state of this Hamiltonian is a bound state with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-lattice-implementation",
+      "number": null,
+      "title": "Lattice implementation",
+      "level": 2,
+      "pageStart": 78,
+      "pageEnd": 79,
+      "labelStart": "72",
+      "labelEnd": "73",
+      "words": 84,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lattice",
+          "heading": true
+        },
+        {
+          "term": "ω0a",
+          "heading": false
+        },
+        {
+          "term": "hfree",
+          "heading": false
+        }
+      ],
+      "extract": "We now implement our one-dimensional theory of bosons on the lattice. We use lattice units where all quantities are multiplied by powers of the lattice spacing to form dimensionless combinations. Since we are interested in methods that can be readily applied to many-body calculations, we work with energy-independent interactions only. We use an O(a4)-improved free Hamiltonian lattice action, Hfree = 1 2m X n",
+      "extractCut": true
+    },
+    {
+      "id": "sec-049-results",
+      "number": null,
+      "title": "Results",
+      "level": 2,
+      "pageStart": 79,
+      "pageEnd": 81,
+      "labelStart": "73",
+      "labelEnd": "75",
+      "words": 986,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "two-boson eﬀective",
+          "heading": false
+        },
+        {
+          "term": "two-boson sector",
+          "heading": false
+        },
+        {
+          "term": "lattice errors",
+          "heading": false
+        },
+        {
+          "term": "energy e2b",
+          "heading": false
+        },
+        {
+          "term": "volume errors",
+          "heading": false
+        },
+        {
+          "term": "bound-state energy",
+          "heading": false
+        },
+        {
+          "term": "lattice improvement",
+          "heading": false
+        },
+        {
+          "term": "continuum observables",
+          "heading": false
+        }
+      ],
+      "extract": "with coeﬃcients ω0 = 49 36, ω1 = 3 2, ω2 = 3 20, ω3 = 1 90 . (6.14) The lattice artifacts due to the free Hamiltonian start at O(a6). At LO, we have a contact interaction in the two-boson sector, VLO = C0 2 X n : ρ2(n): , (6.15) where ρ(n) = a†(n)a(n) and the :: symbols indicate normal ordering where the annihilation operators stand to the right and the creation operators stand to the left. The lattice contact",
+      "extractCut": true
+    },
+    {
+      "id": "sec-050-summary-and-outlook",
+      "number": null,
+      "title": "Summary and outlook",
+      "level": 2,
+      "pageStart": 81,
+      "pageEnd": 85,
+      "labelStart": "75",
+      "labelEnd": "79",
+      "words": 1487,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lattice errors",
+          "heading": false
+        },
+        {
+          "term": "r2b rms",
+          "heading": false
+        },
+        {
+          "term": "r3b rms",
+          "heading": false
+        },
+        {
+          "term": "r4b rms",
+          "heading": false
+        },
+        {
+          "term": "r5b rms",
+          "heading": false
+        },
+        {
+          "term": "n2lo data",
+          "heading": false
+        },
+        {
+          "term": "nlo data",
+          "heading": false
+        },
+        {
+          "term": "lattice spacing",
+          "heading": false
+        }
+      ],
+      "extract": "NLO N2LO a [fm] ∆C0 [×10−3] ∆C0 [×10−3] C3b [×10−3] Cq2 [×10−4] CGIR [×10−3] 1.973 −8.79793 −9.09089 1.04056 7.16271 1.43521 1.715 −7.55226 −7.72824 1.11585 4.55222 1.23930 1.315 −5.67790 −5.75996 0.97610 2.41371 0.93898 0.986 −4.19286 −4.23347 0.64741 1.41280 0.69463 0.789 −3.32409 −3.34855 0.43540 0.98669 0.54967 0.659 −2.75375 −2.77014 0.30594 0.75364 0.45367 0.563 −2.35055 −2.36231 0.22429 0.60773 0.38527 0.438",
+      "extractCut": true
+    },
+    {
+      "id": "sec-051-conclusions-and-perspectives",
+      "number": null,
+      "title": "Conclusions and Perspectives",
+      "level": 1,
+      "pageStart": 85,
+      "pageEnd": 89,
+      "labelStart": "79",
+      "labelEnd": "83",
+      "words": 1345,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lattice spacing",
+          "heading": false
+        },
+        {
+          "term": "nuclear eﬀective",
+          "heading": false
+        },
+        {
+          "term": "ﬁnest lattice",
+          "heading": false
+        },
+        {
+          "term": "binding energy",
+          "heading": false
+        },
+        {
+          "term": "spacing errors",
+          "heading": false
+        },
+        {
+          "term": "triton binding",
+          "heading": false
+        },
+        {
+          "term": "tjon band",
+          "heading": false
+        },
+        {
+          "term": "binding energies",
+          "heading": false
+        }
+      ],
+      "extract": "Some limitations and challenges of nuclear lattice eﬀective ﬁeld theory have been studied in this thesis. For a better understanding and a link to continuum nuclear eﬀective theory, we have done a detailed investigation into the connection between lattice spacing artifacts, cutoﬀeﬀects and physical observables of the eﬀective theory for few-body systems in nuclear physics. This analysis helps to bridge the gap",
+      "extractCut": true
+    },
+    {
+      "id": "sec-052-special-functions-and-algebras",
+      "number": null,
+      "title": "Special functions and algebras",
+      "level": 1,
+      "pageStart": 89,
+      "pageEnd": 89,
+      "labelStart": "83",
+      "labelEnd": "83",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-053-partial-wave-decomposition",
+      "number": null,
+      "title": "Partial wave decomposition",
+      "level": 2,
+      "pageStart": 89,
+      "pageEnd": 90,
+      "labelStart": "83",
+      "labelEnd": "84",
+      "words": 413,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "riccati-bessel functions",
+          "heading": false
+        },
+        {
+          "term": "conﬂuent hypergeometric",
+          "heading": false
+        },
+        {
+          "term": "spherical harmonics",
+          "heading": false
+        },
+        {
+          "term": "wave",
+          "heading": true
+        },
+        {
+          "term": "special functions",
+          "heading": false
+        },
+        {
+          "term": "irregular",
+          "heading": false
+        }
+      ],
+      "extract": "In the following we give the deﬁnition of special functions used throughout the thesis. A basis of spherical functions is given by the spherical harmonics Yl,lz(φ, θ), where l = 0, 1, 2, ∞and lz = −l, −l + 1, . . . , l. They are deﬁned as Yl,lz(φ, θ) = (−1)lz \"2l + 1 4π (l −lz)! (l + lz)! # 1 2 Pl,lz(cos θ) exp \u0010 ilzφ \u0011 , (A.1) with the Laguerre polynomials, Pl,lz(x) = (1 −x2) lz 2 dlz dxlz Pl(x). (A.2) Pl(x) are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-054-pauli-matrices-and-spin-algebra",
+      "number": null,
+      "title": "Pauli matrices and spin algebra",
+      "level": 2,
+      "pageStart": 90,
+      "pageEnd": 91,
+      "labelStart": "84",
+      "labelEnd": "85",
+      "words": 75,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pauli",
+          "heading": true
+        },
+        {
+          "term": "spin",
+          "heading": true
+        },
+        {
+          "term": "levi-civita",
+          "heading": false
+        }
+      ],
+      "extract": "The Pauli matrices are the generators of the SU(2) algebra. They are deﬁned as σ1 = 0 1 1 0 ! , σ2 = 0 −i i 0 ! , σ3 = 1 0 0 −1 ! , (A.17) and fulﬁll the following angular momentum algebra, h σi, σj i = 2iϵi jkσk, (A.18) with ϵi jk the totally antisymmetric Levi-Civita tensor. The respective spin matrix is deﬁned as⃗ S = 1 2⃗σ, (A.19) 84",
+      "extractCut": false
+    },
+    {
+      "id": "sec-055-anticommutator-and-grassmann-algebra",
+      "number": null,
+      "title": "Anticommutator and Grassmann algebra",
+      "level": 2,
+      "pageStart": 91,
+      "pageEnd": 93,
+      "labelStart": "85",
+      "labelEnd": "87",
+      "words": 266,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "grassmann",
+          "heading": true
+        },
+        {
+          "term": "anticommutator",
+          "heading": true
+        },
+        {
+          "term": "annihilation",
+          "heading": false
+        }
+      ],
+      "extract": "whose eigenvalues are S 2 S, S z E = S (S + 1) S, S z E , (A.20) S z S, S z E = S z S, S z E . (A.21) It can be used to evaluate the appearing operators σ1 · σ2 in the respective triplet and singlet channel,⃗ σ1 ·⃗σ2 |S = 1⟩= 1 |S = 1⟩, (A.22)⃗ σ1 ·⃗σ2 |S = 0⟩= −3 |S = 0⟩. (A.23) The isospin case for⃗τ1 ·⃗τ2 is analogous. A.3 Anticommutator and Grassmann algebra As nucleons are fermions, their respective creation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-056-density-and-current-operators",
+      "number": null,
+      "title": "Density and current operators",
+      "level": 1,
+      "pageStart": 93,
+      "pageEnd": 95,
+      "labelStart": "87",
+      "labelEnd": "89",
+      "words": 183,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "density operators",
+          "heading": true
+        },
+        {
+          "term": "lai",
+          "heading": false
+        },
+        {
+          "term": "current",
+          "heading": true
+        }
+      ],
+      "extract": "Here, we deﬁne the various nucleon density, current and derivative operators that we are using. Following Refs. [32, 116, 164], we deﬁne the local density operators. The LO and NLO density operators include contact, contact isospin, contact spin as well as contact spin-isopsin operators given by ρ(⃗n) = X i,j=0,1 a† i,j(⃗n)ai,j(⃗n), (B.1) ρI(⃗n) = X i,j,j′=0,1 a† i,j(⃗n)(τI)j,j′ai,j′(⃗n), (B.2) ρS (⃗n) = X",
+      "extractCut": true
+    },
+    {
+      "id": "sec-057-uncertainty-analysis",
+      "number": null,
+      "title": "Uncertainty analysis",
+      "level": 1,
+      "pageStart": 95,
+      "pageEnd": 97,
+      "labelStart": "89",
+      "labelEnd": "91",
+      "words": 267,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uncertainty",
+          "heading": true
+        },
+        {
+          "term": "ndof",
+          "heading": false
+        },
+        {
+          "term": "rescale",
+          "heading": false
+        },
+        {
+          "term": "analysis",
+          "heading": true
+        },
+        {
+          "term": "underestimation",
+          "heading": false
+        }
+      ],
+      "extract": "From the deﬁnition of χ2 given in Eq. (5.46), we note that χ2 is a function of the LO and NLO coupling constants χ2 LO = χ2 \u0012 C1S 0,C3S 1, \u0013 , (C.1) χ2 N2LO = χ2 \u0000C1, . . . ,C10 \u0001 , (C.2) . . . . χ2 can be expanded around its minimum, giving χ2 = χ2 min + 1 2 X i,j hi j(Ci −Cmin i )(C j −Cmin j ) + . . . , (C.3) where the Hessian matrix is denoted by hi j ≡ ∂2χ2 ∂Ci∂C j , (C.4) and Cmin i denotes the result of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-058-loop-integrals",
+      "number": null,
+      "title": "Loop integrals",
+      "level": 1,
+      "pageStart": 97,
+      "pageEnd": 99,
+      "labelStart": "91",
+      "labelEnd": "93",
+      "words": 316,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "energies momenta",
+          "heading": false
+        },
+        {
+          "term": "one-loop integral",
+          "heading": false
+        },
+        {
+          "term": "ima",
+          "heading": false
+        }
+      ],
+      "extract": "In the following we give more details about the terms appearing in Eq. (6.10) and Eq. (6.11). In our notation, (Ei, pi) are the incoming energies/ momenta and (E′ i, p′ i) are the outgoing energies/ momenta. The non-relativistic propagator for a single boson is deﬁned as S (E, p) = 1 E −p2 2m + iϵ , (D.1) and the one-loop integral for the two-boson diagram in Fig. 6.1 reads I2 \u0010 E1, p1, E2, p2; E′ 1, p′ 1, E′ 2, p′",
+      "extractCut": true
+    },
+    {
+      "id": "sec-059-non-perturbative-calculation-of-lattice-artifact",
+      "number": null,
+      "title": "Non-perturbative calculation of lattice artifacts in the two-boson sector",
+      "level": 1,
+      "pageStart": 99,
+      "pageEnd": 103,
+      "labelStart": "93",
+      "labelEnd": "97",
+      "words": 735,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "two-boson sector",
+          "heading": true
+        },
+        {
+          "term": "lattice artifacts",
+          "heading": true
+        },
+        {
+          "term": "two-body sector",
+          "heading": false
+        },
+        {
+          "term": "tanh",
+          "heading": false
+        },
+        {
+          "term": "lattice spacing",
+          "heading": false
+        },
+        {
+          "term": "non-perturbative",
+          "heading": true
+        },
+        {
+          "term": "eﬀective range",
+          "heading": false
+        },
+        {
+          "term": "t-matrix",
+          "heading": false
+        }
+      ],
+      "extract": "in the two-boson sector In Chap. 6 we argued that a non-perturbative treatment of cutoﬀ/ lattice spacing eﬀects in an eﬀective framework is preferable but not practical. However, in the two-body sector with only contact interaction it is possible. In the following we give explicit expressions for the coupling constants ∆C0 and Cq2 which cancel the cutoﬀartifacts at O(a) and O(a3) in the T-matrix of the two-body",
+      "extractCut": true
+    },
+    {
+      "id": "sec-060-bibliography",
+      "number": null,
+      "title": "Bibliography",
+      "level": 1,
+      "pageStart": 103,
+      "pageEnd": 111,
+      "labelStart": "97",
+      "labelEnd": "105",
+      "words": 3304,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nucl-th",
+          "heading": false
+        },
+        {
+          "term": "cit",
+          "heading": false
+        },
+        {
+          "term": "annals phys",
+          "heading": false
+        },
+        {
+          "term": "notes phys",
+          "heading": false
+        },
+        {
+          "term": "bibliography",
+          "heading": true
+        },
+        {
+          "term": "hep-lat",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "arxiv",
+          "heading": false
+        }
+      ],
+      "extract": "[1] A. Deur, S. J. Brodsky, and G. F. de Téramond, Prog. Part. Nucl. Phys. 90 (2016) 1, arXiv: 1604.08082 [hep-ph] (cit. on p. 2). [2] C. Gattringer and C. B. Lang, Lect. Notes Phys. 788 (2010) 1 (cit. on pp. 3, 22). [3] K. Symanzik, Nucl. Phys. B226 (1983) 187 (cit. on pp. 3, 7, 69). [4] K. Symanzik, Nucl. Phys. B226 (1983) 205 (cit. on pp. 3, 7, 69). [5] S. Aoki et al., Eur. Phys. J. C77 (2017) 112, arXiv:",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 1,
+        "items": [
+          "2.2.2 Extension to systems with internal degrees of freedom and coupled channels"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "lattice eﬀective",
+      "heading": false
+    },
+    {
+      "term": "lattice spacing",
+      "heading": true
+    },
+    {
+      "term": "lattice n2lo",
+      "heading": true
+    },
+    {
+      "term": "lattice momentum",
+      "heading": false
+    },
+    {
+      "term": "nuclear lattice",
+      "heading": true
+    },
+    {
+      "term": "chapter lattice",
+      "heading": false
+    },
+    {
+      "term": "lattice errors",
+      "heading": false
+    },
+    {
+      "term": "lattice discretization",
+      "heading": true
+    },
+    {
+      "term": "wave eﬀective",
+      "heading": false
+    },
+    {
+      "term": "lattice calculations",
+      "heading": false
+    },
+    {
+      "term": "eﬀective range",
+      "heading": true
+    },
+    {
+      "term": "diﬀerent lattice",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "i",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "ii",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "iii",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "iv",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "v",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "vi",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "1",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 8,
+      "label": "2",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 9,
+      "label": "3",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 10,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "5",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 12,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "9",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 16,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "13",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 20,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "18",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 25,
+      "label": "19",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 26,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "21",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 28,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 29,
+      "label": "23",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 30,
+      "label": "24",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 31,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "26",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 33,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 35,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 36,
+      "label": "30",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 37,
+      "label": "31",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 38,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 39,
+      "label": "33",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 40,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 41,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 42,
+      "label": "36",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 43,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 44,
+      "label": "38",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 45,
+      "label": "39",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 46,
+      "label": "40",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 47,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 48,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 49,
+      "label": "43",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 50,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 51,
+      "label": "45",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 52,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 53,
+      "label": "47",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 54,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 55,
+      "label": "49",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 56,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 57,
+      "label": "51",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 58,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 59,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 60,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 61,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 62,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 63,
+      "label": "57",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 64,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 65,
+      "label": "59",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 66,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 67,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 68,
+      "label": "62",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 69,
+      "label": "63",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 70,
+      "label": "64",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 71,
+      "label": "65",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 72,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 73,
+      "label": "67",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 74,
+      "label": "68",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 75,
+      "label": "69",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 76,
+      "label": "70",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 77,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 78,
+      "label": "72",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 79,
+      "label": "73",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 80,
+      "label": "74",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 81,
+      "label": "75",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 82,
+      "label": "76",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 83,
+      "label": "77",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 84,
+      "label": "78",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 85,
+      "label": "79",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 86,
+      "label": "80",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 87,
+      "label": "81",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 88,
+      "label": "82",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 89,
+      "label": "83",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 90,
+      "label": "84",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 91,
+      "label": "85",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 92,
+      "label": "86",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 93,
+      "label": "87",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 94,
+      "label": "88",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 95,
+      "label": "89",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 96,
+      "label": "90",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 97,
+      "label": "91",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 98,
+      "label": "92",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 99,
+      "label": "93",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 100,
+      "label": "94",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 101,
+      "label": "95",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 102,
+      "label": "96",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 103,
+      "label": "97",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 104,
+      "label": "98",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 105,
+      "label": "99",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 106,
+      "label": "100",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 107,
+      "label": "101",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 108,
+      "label": "102",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 109,
+      "label": "103",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 110,
+      "label": "104",
+      "source": "pdf-labels",
+      "confidence": 0.85
+    },
+    {
+      "physical": 111,
+      "label": "105",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1.1",
+      "title": "",
+      "page": 8,
+      "pageLabel": "2",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1.2",
+      "title": "Fermi’s beta decay. Left: Exact picture. Right: Eﬀective picture for q2 ≪m2",
+      "page": 10,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.1",
+      "title": "Chiral expansion of two-and three-body forces up to N2LO. Solid dots, ﬁlled circles and squares denote vertices with ∆i = 0, 1 and 2 according to Eq. (2.13). Figure taken from [52]",
+      "page": 18,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.2",
+      "title": "The original Tjon line. The dots are various predictions for diﬀerent local potentials. Reprinted from [24] with permission from Elsevier",
+      "page": 26,
+      "pageLabel": "20",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.3",
+      "title": "Generally, all of them are reproducing the Tjon line, but depending on the method, they also give a width or only give results for a speciﬁc pair of the triton and the helium-4 binding energy",
+      "page": 26,
+      "pageLabel": "20",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.1",
+      "title": "1S 0 one-pion-exchange potential for various lattice discretization schemes and continuum solutions",
+      "page": 29,
+      "pageLabel": "23",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3.1",
+      "title": "Spherical harmonics for various representations [79]",
+      "page": 30,
+      "pageLabel": "24",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3.2",
+      "title": "Irreducible representations for angular momentum j ≤6 [79]",
+      "page": 30,
+      "pageLabel": "24",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3.3",
+      "title": "Radial projection and binning for the ﬁrst radii. The second line gives the value of the radii and the third line gives the counting of points with the respective radius",
+      "page": 34,
+      "pageLabel": "28",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.2",
+      "title": "Schematic sketch of the radial wall and spherical projection method. Left ﬁgure: The spherical wall is introduced at |⃗RW|. In the case of radial projection, the wave function is measured at all lattice points⃗r with |⃗RI| < |⃗r | < |⃗RO|. Right ﬁgure: All lattice nodes and operators with the same r",
+      "page": 35,
+      "pageLabel": "29",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.3",
+      "title": "Sketch of an example potential in spherical projection [83]",
+      "page": 35,
+      "pageLabel": "29",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.4",
+      "title": "Schematic time steps for time evolution. Figure taken from [33]",
+      "page": 41,
+      "pageLabel": "35",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4.1",
+      "title": "The ωi are the coeﬃcients for the lattice discretization of the Laplacian and the dispersion relation",
+      "page": 46,
+      "pageLabel": "40",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4.2",
+      "title": "Fit results in the Gaussian-smeared pionless EFT case for L = 34, 36, 38 and N = 3.5. The values for a 3S 1 and r 3S 1 are predictions (modulo the consistency condition Eq. (4.20))",
+      "page": 49,
+      "pageLabel": "43",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.1",
+      "title": "Low-energy coupling constants and the smearing parameter b in the pionless EFT for a lattice size of L = 34, 36, 38 and two diﬀerent stretching factors",
+      "page": 50,
+      "pageLabel": "44",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.2",
+      "title": "Lattice space dependence of various parameters. Upper panel: The ﬁnite-volume deuteron bound",
+      "page": 53,
+      "pageLabel": "47",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4.3",
+      "title": "Fit results in EFT with Gaussian-smeared contact interaction and position space regularization for the pion-nucleon interaction with N = 3.5. The lattice size is L = 34, 36, 38 for a = 0.49 . . . 1.97 fm and L = 38, 40, 42 for a = 0.39 . . . 0.28 fm. The values for a 3S 1 and r 3S 1 are predictions",
+      "page": 54,
+      "pageLabel": "48",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5.4",
+      "title": "The corresponding LECs are summarized in Tab. 5.1. When we compare the LO results for the various lattice spacings, we see that the 1S 0 phase shift is",
+      "page": 63,
+      "pageLabel": "57",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "5.1",
+      "title": "Summary of ﬁt results with perturbatively improved OPE (in units of a) for the perturbative NLO+NNLO",
+      "page": 63,
+      "pageLabel": "57",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5.1",
+      "title": "LO (squares) and NNLO (circles) neutron-proton phase shifts and mixing angles for a = 1.97 fm. The Nijmegen partial wave analysis (NPWA) is given by the solid line",
+      "page": 64,
+      "pageLabel": "58",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5.2",
+      "title": "LO (squares) and NNLO (circles) neutron-proton phase shifts and mixing angles for a = 1.64 fm. The NPWA is given by the solid line",
+      "page": 65,
+      "pageLabel": "59",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5.3",
+      "title": "LO (squares) and NNLO (circles) neutron-proton phase shifts and mixing angles for a = 1.32 fm. The NPWA is given by the solid line",
+      "page": 66,
+      "pageLabel": "60",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5.5",
+      "title": "Inﬁnite volume extrapolation for the triton and a lattice spacing of a = 1.32 fm. The triangles are included in the ﬁt while the circles are not due to higher order ﬁnite volume eﬀects",
+      "page": 68,
+      "pageLabel": "62",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "5.2",
+      "title": "Triton binding energy predictions at LO, N2LO, N2LO+EM, N2LO+EM+3NF and the ﬁt parameter cD",
+      "page": 69,
+      "pageLabel": "63",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5.6",
+      "title": "4He time extrapolation for lattice spacing of a = 1.97 fm. The triangles are included in the ﬁt while the circles are excluded due to statistics. See Sec. 3.7 for details",
+      "page": 71,
+      "pageLabel": "65",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "5.3",
+      "title": "4He benchmark calculation for a = 1.97 fm and L = 4. The ﬁrst bracket of Monte Carlo error are statistical ones, while the latter ones and the Lanczos ones are errors due to uncertainties of the LECs",
+      "page": 71,
+      "pageLabel": "65",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5.7",
+      "title": "4He time extrapolation for lattice spacing of a = 1.64 fm. The triangles are included in the ﬁt while the circles are excluded due to statistics. See Sec. 3.7 for details",
+      "page": 72,
+      "pageLabel": "66",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5.8",
+      "title": "4He time extrapolation for lattice spacing of a = 1.32 fm. The triangles are included in the ﬁt while the circles are excluded due to statistics. See Sec. 3.7 for details",
+      "page": 72,
+      "pageLabel": "66",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "5.4",
+      "title": "4He binding energy prediction at LO, N2LO, N2LO+EM, N2LO+EM+3N. The ﬁrst brackets give the statistical error while the latter ones give the errors due to uncertainties of the LECs. All binding energies are given in MeV",
+      "page": 73,
+      "pageLabel": "67",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5.9",
+      "title": "3H-4He binding energy plot for various lattice spacings. The black dot is the physical point and the",
+      "page": 74,
+      "pageLabel": "68",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6.1",
+      "title": "One-loop diagram I2 involving two bosons in the initial and the ﬁnal state",
+      "page": 77,
+      "pageLabel": "71",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6.2",
+      "title": "One-loop diagram I3 involving three bosons in the initial and the ﬁnal state",
+      "page": 78,
+      "pageLabel": "72",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6.3",
+      "title": "One-loop form factor diagram I′",
+      "page": 78,
+      "pageLabel": "72",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "6.1",
+      "title": "Continuum observables and lattice error exponents bO as deﬁned in Eq. (6.21)",
+      "page": 80,
+      "pageLabel": "74",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "6.2",
+      "title": "Low-energy coupling constants for NLO and N2LO. All constants are in lattice units",
+      "page": 81,
+      "pageLabel": "75",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6.4",
+      "title": "Bound-state energies and root-mean-square radius versus lattice spacing for up to ﬁve bosons at LO. The vertical lines give the upper limits of the ﬁt range",
+      "page": 82,
+      "pageLabel": "76",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6.5",
+      "title": "Bound-state energies and root-mean-square radius versus lattice spacing for up to ﬁve bosons at NLO and N2LO. The vertical lines give the upper limits of the ﬁt range",
+      "page": 82,
+      "pageLabel": "76",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6.6",
+      "title": "Eﬀective mass in the two-boson sector at LO and NLO. The vertical lines gives the upper limits of the ﬁt range",
+      "page": 83,
+      "pageLabel": "77",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6.7",
+      "title": "The two-boson inverse scattering length 1/a2 versus lattice spacing at LO and NLO. The dotted vertical",
+      "page": 83,
+      "pageLabel": "77",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6.8",
+      "title": "The dimer-boson inverse scattering length 1/a3 versus lattice spacing at LO, NLO, and N2LO. The",
+      "page": 83,
+      "pageLabel": "77",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p018-1",
+      "file": "images/img-p018-1.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-2",
+      "file": "images/img-p018-2.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p026-1",
+      "file": "images/img-p026-1.png",
+      "page": 26,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 61,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 62,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 3,
+      "note": "28 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "12 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p103); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 7
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 62 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/klein-few-body-systems-in-lattice-effective-field-theory-the"
+  }
+}

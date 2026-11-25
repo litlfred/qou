@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-shadow-ordering-compute-shortcut",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:shadow-ordering-compute-shortcut",
+  "kind": "remark",
+  "title": "Computational shortcut from local constancy",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-local-shadow-ordering",
+    "papers/quantum-observable-universe/blocks/def-unstable-atom",
+    "papers/quantum-observable-universe/blocks/prop-phase-boundary-variety",
+    "papers/quantum-observable-universe/blocks/prop-confinement-local-constancy"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-local-shadow-ordering",
+  "tags": [
+    "computational-shortcut",
+    "local-constancy",
+    "phase-boundary",
+    "interpolation"
+  ],
+  "text": "shadow-ordering-compute-shortcut.md",
+  "provenance": "authored"
+}

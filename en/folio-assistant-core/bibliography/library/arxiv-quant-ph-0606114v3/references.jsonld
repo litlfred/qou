@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-quant-ph-0606114v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "q - Deformed Spin Networks, Knot Polynomials and Anyonic Topological Quantum Computation",
+      "dcterms:creator": [
+        "Polynomials",
+        "Topological, Anyonic"
+      ],
+      "dcterms:issued": "D:20241126",
+      "dcterms:identifier": "https://arxiv.org/abs/quant-ph/0606114",
+      "dcterms:abstract": "We review the q-deformed spin network approach to Topological Quantum Field Theory and apply these methods to produce unitary representations of the braid groups that are dense in the unitary groups. Our methods are rooted in the bracket state sum model for the Jones polynomial. We give our results for a large class of representations based on values for the bracket polynomial that are roots of unity. We make a separate and self-contained study of the quan- tum universal Fibonacci model in this framework. We apply our results to give quantum algorithms for the computation of the colored Jones polynomi- als for knots and links, and the Witten-Reshetikhin-Turaev invariant of three manifolds.",
+      "dcterms:source": "library/arxiv-quant-ph-0606114v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-quant-ph-0606114v3"
+    }
+  ]
+}

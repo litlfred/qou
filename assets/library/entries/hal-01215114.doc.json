@@ -1,0 +1,1188 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "hal-01215114",
+  "title": "hal-01215114",
+  "variant": "pdf",
+  "pages": 12,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": "317",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Notations",
+      "number": null,
+      "page": 2,
+      "pageLabel": "318",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-notations"
+    },
+    {
+      "level": 2,
+      "title": "Symmetric functions",
+      "number": null,
+      "page": 2,
+      "pageLabel": "318",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-symmetric-functions"
+    },
+    {
+      "level": 2,
+      "title": "Jack symmetric functions and zonal polynomials",
+      "number": null,
+      "page": 3,
+      "pageLabel": "319",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-jack-symmetric-functions-and-zonal-polynomials"
+    },
+    {
+      "level": 2,
+      "title": "Pair partitions",
+      "number": null,
+      "page": 3,
+      "pageLabel": "319",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-pair-partitions"
+    },
+    {
+      "level": 1,
+      "title": "The main result",
+      "number": null,
+      "page": 4,
+      "pageLabel": "320",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-the-main-result"
+    },
+    {
+      "level": 2,
+      "title": "Zonal polynomials in terms of pair-partition",
+      "number": null,
+      "page": 4,
+      "pageLabel": "320",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-zonal-polynomials-in-terms-of-pair-partition"
+    },
+    {
+      "level": 2,
+      "title": "Application",
+      "number": null,
+      "page": 5,
+      "pageLabel": "321",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-application"
+    },
+    {
+      "level": 2,
+      "title": "Combinatorial interpretation",
+      "number": null,
+      "page": 5,
+      "pageLabel": "321",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-combinatorial-interpretation"
+    },
+    {
+      "level": 2,
+      "title": "Links between pair-partitions and zonal characters",
+      "number": null,
+      "page": 5,
+      "pageLabel": "321",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-links-between-pair-partitions-and-zonal-characte"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem 3",
+      "number": null,
+      "page": 6,
+      "pageLabel": "322",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-proof-of-theorem-3"
+    },
+    {
+      "level": 2,
+      "title": "Combinatorial lemmas",
+      "number": null,
+      "page": 6,
+      "pageLabel": "322",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-combinatorial-lemmas"
+    },
+    {
+      "level": 2,
+      "title": "Triangularity",
+      "number": null,
+      "page": 7,
+      "pageLabel": "323",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-triangularity"
+    },
+    {
+      "level": 2,
+      "title": "Orthogonality",
+      "number": null,
+      "page": 8,
+      "pageLabel": "324",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-orthogonality"
+    },
+    {
+      "level": 2,
+      "title": "Normalization",
+      "number": null,
+      "page": 9,
+      "pageLabel": "325",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-normalization"
+    },
+    {
+      "level": 1,
+      "title": "Combinatorial formulas for zonal characters",
+      "number": null,
+      "page": 9,
+      "pageLabel": "325",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-combinatorial-formulas-for-zonal-characters"
+    },
+    {
+      "level": 2,
+      "title": "Via numbers of embeddings",
+      "number": null,
+      "page": 9,
+      "pageLabel": "325",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-via-numbers-of-embeddings"
+    },
+    {
+      "level": 2,
+      "title": "In terms of Stanley's coordinates",
+      "number": null,
+      "page": 10,
+      "pageLabel": "326",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-in-terms-of-stanleys-coordinates"
+    },
+    {
+      "level": 2,
+      "title": "In terms of free cumulants",
+      "number": null,
+      "page": 10,
+      "pageLabel": "326",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-in-terms-of-free-cumulants"
+    },
+    {
+      "level": 1,
+      "title": "Conclusion",
+      "number": null,
+      "page": 11,
+      "pageLabel": "327",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-conclusion"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "317",
+      "labelEnd": "317",
+      "words": 292,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "des polynômes",
+          "heading": false
+        },
+        {
+          "term": "les caractères",
+          "heading": false
+        },
+        {
+          "term": "zonal polynomials",
+          "heading": false
+        },
+        {
+          "term": "zonal characters",
+          "heading": false
+        },
+        {
+          "term": "instytut matematyczny",
+          "heading": false
+        },
+        {
+          "term": "sur les",
+          "heading": false
+        },
+        {
+          "term": "des fonctions",
+          "heading": false
+        },
+        {
+          "term": "pour les",
+          "heading": false
+        }
+      ],
+      "extract": "FPSAC 2011, Reykjavík, Iceland DMTCS proc. AO, 2011, 317–328 Dual combinatorics of zonal polynomials Valentin Féray1 and Piotr ´Sniady2,3 1 LaBRI, cnrs, Université Bordeaux 1, Talence, France 2 Instytut Matematyczny, Uniwersytet Wrocławski, Wrocław, Poland 3 Instytut Matematyczny, Polska Akademia Nauk, Warszawa, Poland Abstract. In this paper we establish a new combinatorial formula for zonal polynomials in terms of",
+      "extractCut": true,
+      "blocks": [
+        "library/hal-01215114/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "317",
+      "labelEnd": "318",
+      "words": 285,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zonal spherical",
+          "heading": false
+        },
+        {
+          "term": "zonal polynomials",
+          "heading": false
+        },
+        {
+          "term": "gld",
+          "heading": false
+        },
+        {
+          "term": "jam",
+          "heading": false
+        },
+        {
+          "term": "hua",
+          "heading": false
+        },
+        {
+          "term": "spherical functions",
+          "heading": false
+        },
+        {
+          "term": "s2n",
+          "heading": false
+        },
+        {
+          "term": "symmetric functions",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction Zonal polynomials were introduced by James [Jam60, Jam61] (who credits also Hua [Hua63]) in order to solve some problems from statistics and multivariate analysis. They quickly became a fundamental tool in this theory as well as in the random matrix theory (an overview can be found in the book of Muirhead [Mui82]). They also play an important role in representation theory: they appear as zonal spherical",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-symmetric-functions",
+      "number": null,
+      "title": "Symmetric functions",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "318",
+      "labelEnd": "318",
+      "words": 128,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zonal polynomials",
+          "heading": false
+        },
+        {
+          "term": "jack polynomials",
+          "heading": false
+        },
+        {
+          "term": "symmetric",
+          "heading": true
+        },
+        {
+          "term": "las",
+          "heading": false
+        }
+      ],
+      "extract": "approach [Las08, Proposition 2]. The situation is analogous to recent developments concerning characters of the symmetric groups. Zonal polynomials are known to be the special case of Jack symmetric functions. We conjecture that there exists some formula for Jack polynomials extending the one we present here for zonal polynomials, but unfortunately we have not been able to ﬁnd it: even if our proof uses only general",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-notations",
+      "number": null,
+      "title": "Notations",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "318",
+      "labelEnd": "319",
+      "words": 266,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zonal polynomials",
+          "heading": false
+        },
+        {
+          "term": "notations",
+          "heading": true
+        },
+        {
+          "term": "symmetric functions",
+          "heading": false
+        },
+        {
+          "term": "scalar product",
+          "heading": false
+        },
+        {
+          "term": "deﬁnitions",
+          "heading": false
+        },
+        {
+          "term": "aut",
+          "heading": false
+        }
+      ],
+      "extract": "Notations In this section, we give some deﬁnitions and notations on symmetric functions in general, on Jack poly- nomials and, in particular, zonal polynomials. We also give a few deﬁnitions of pair-partitions, which are the combinatorial objects involved in our formulas. 2.1 Symmetric functions As much as possible, we use the notations of I.G. Macdonald’s book [Mac95]. By deﬁnition, a partition λ = (λ1, λ2, . . . )",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-jack-symmetric-functions-and-zonal-polynomials",
+      "number": null,
+      "title": "Jack symmetric functions and zonal polynomials",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "319",
+      "labelEnd": "319",
+      "words": 339,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jack symmetric",
+          "heading": true
+        },
+        {
+          "term": "zonal polynomials",
+          "heading": true
+        },
+        {
+          "term": "symmetric functions",
+          "heading": true
+        },
+        {
+          "term": "monomial basis",
+          "heading": false
+        },
+        {
+          "term": "schur functions",
+          "heading": false
+        },
+        {
+          "term": "hall scalar",
+          "heading": false
+        },
+        {
+          "term": "dominance order",
+          "heading": false
+        },
+        {
+          "term": "upper triangular",
+          "heading": false
+        }
+      ],
+      "extract": "Jack symmetric functions and zonal polynomials The set of partitions of a given integer n can be endowed with a partial order, called dominance order: by deﬁnition, λ ⪯µ ⇐⇒ ∀i≥1 λ1 + · · · + λi ≤µ1 + · · · + µi. With respect to this order, the matrix of Schur functions in the monomial basis is upper triangular: i.e., if one writes a Schur functions sλ on the monomial basis, the indices of the monomial symmetric",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-pair-partitions",
+      "number": null,
+      "title": "Pair partitions",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "319",
+      "labelEnd": "320",
+      "words": 343,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-increasing sequence",
+          "heading": false
+        },
+        {
+          "term": "pair-partition",
+          "heading": false
+        },
+        {
+          "term": "set-partition",
+          "heading": false
+        },
+        {
+          "term": "partitions",
+          "heading": true
+        },
+        {
+          "term": "integer partition",
+          "heading": false
+        },
+        {
+          "term": "disjoint",
+          "heading": false
+        }
+      ],
+      "extract": "Pair partitions Deﬁnition 2 A pair-partition of [2n] = {1, . . . , 2n} is a set of pairwise disjoint two-element sets, such that their (disjoint) union is equal to [2n]. A pair-partition S can be also seen as an involution as the set [2n]. Therefore, we use the notation S(i) for the partner of i, i.e. the other element in the same set of S. For two pair-partitions S1, S2 of the same set [2n] we consider the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-the-main-result",
+      "number": null,
+      "title": "The main result",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "320",
+      "labelEnd": "320",
+      "words": 3,
+      "summary": null,
+      "keywords": [],
+      "extract": "The main result",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-zonal-polynomials-in-terms-of-pair-partition",
+      "number": null,
+      "title": "Zonal polynomials in terms of pair-partition",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "320",
+      "labelEnd": "321",
+      "words": 440,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zonal polynomials",
+          "heading": true
+        },
+        {
+          "term": "pair-partition",
+          "heading": true
+        },
+        {
+          "term": "bijective ﬁlling",
+          "heading": false
+        },
+        {
+          "term": "t-admissible",
+          "heading": false
+        },
+        {
+          "term": "boxes",
+          "heading": false
+        },
+        {
+          "term": "permutations",
+          "heading": false
+        },
+        {
+          "term": "matches",
+          "heading": false
+        }
+      ],
+      "extract": "Zonal polynomials in terms of pair-partition Let λ = (λ1, λ2, . . . ) be a partition of n and T be a bijective ﬁlling of the Young diagram 2λ = (2λ1, 2λ2, . . . ) with the elements of [2n]. Any pair-partition of [2n] can be viewed as a pairings of the boxes of T. We denote S(T) the pair partition which matches the boxes (i, 2j −1) and (i, 2j) of T for all values of i and 1 ≤j ≤λi. Besides, a couple of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-application",
+      "number": null,
+      "title": "Application",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "321",
+      "labelEnd": "321",
+      "words": 164,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "las",
+          "heading": false
+        },
+        {
+          "term": "zonal",
+          "heading": false
+        },
+        {
+          "term": "jack",
+          "heading": false
+        },
+        {
+          "term": "representation-theoretical",
+          "heading": false
+        }
+      ],
+      "extract": "Application Let us look at the coefﬁcients θ(α) ν (λ) of the power sum expansion of Jack polynomials: J(α) λ = X θ(α) ν (λ) pν. In the case α = 1 we obtain, up to a multiplicative constant, the irreducible characters of the symmetric groups. By analogy, in the general case, we call these quantities Jack characters (or zonal characters in the case α = 2). With the right choice of the normalizing constant, namely Σ(α)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-combinatorial-interpretation",
+      "number": null,
+      "title": "Combinatorial interpretation",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "321",
+      "labelEnd": "321",
+      "words": 94,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "s11b",
+          "heading": false
+        },
+        {
+          "term": "pair-partitions",
+          "heading": false
+        },
+        {
+          "term": "rephrased",
+          "heading": false
+        }
+      ],
+      "extract": "Combinatorial interpretation The triplet of pair-partitions (S(T), S1, S2) can be seen as a map (bipartite graph drawn on a — possibly non-orientable — two-dimensional, borderless surface), see [GJ96]. The statistics considered in Theorem 3, Theorem 9, Theorem 10 and Theorem 11 are natural in this context: L(S(T), S1) and L(S(T), S2) correspond respectively to white and black vertices, while L(S1, S2) corresponds to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-links-between-pair-partitions-and-zonal-characte",
+      "number": null,
+      "title": "Links between pair-partitions and zonal characters",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "321",
+      "labelEnd": "322",
+      "words": 81,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zonal characters",
+          "heading": true
+        },
+        {
+          "term": "pair-partitions",
+          "heading": true
+        },
+        {
+          "term": "goulden",
+          "heading": false
+        }
+      ],
+      "extract": "Links between pair-partitions and zonal characters It should be stressed that a previous link between pair-partitions and zonal characters can be found in the work of Goulden and Jackson [GJ96]. But their result goes in the opposite direction than ours: they count pair-partitions using zonal characters, while we express zonal characters using pair-partitions. The same picture exists for permutations and usual",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-proof-of-theorem-3",
+      "number": null,
+      "title": "Proof of Theorem 3",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "322",
+      "labelEnd": "322",
+      "words": 71,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theorem",
+          "heading": true
+        },
+        {
+          "term": "proof",
+          "heading": true
+        },
+        {
+          "term": "right-hand",
+          "heading": false
+        }
+      ],
+      "extract": "Proof of Theorem 3 From now on we ﬁx α = 2. Let us deﬁne Yλ as the right-hand side of Theorem 3 (it obviously does not depend on the choice of T). In this section we prove that Yλ satisﬁes the three properties of Proposition 1. In this way we prove Theorem 3 and we also give an alternative proof of Proposition 1 in the special case α = 2.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-011-combinatorial-lemmas",
+      "number": null,
+      "title": "Combinatorial lemmas",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "322",
+      "labelEnd": "323",
+      "words": 805,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "combinatorial lemmas",
+          "heading": true
+        },
+        {
+          "term": "j-th column",
+          "heading": false
+        },
+        {
+          "term": "same column",
+          "heading": false
+        },
+        {
+          "term": "different loops",
+          "heading": false
+        },
+        {
+          "term": "s2n",
+          "heading": false
+        },
+        {
+          "term": "zν2ℓ",
+          "heading": false
+        },
+        {
+          "term": "pair-partition",
+          "heading": false
+        },
+        {
+          "term": "couples",
+          "heading": false
+        }
+      ],
+      "extract": "Combinatorial lemmas The proof relies on three simple combinatorial lemmas. Lemma 4 Let λ and µ be two partitions of the same integer n. If λ does not dominate µ then for any bijective ﬁllings Tλ and Tµ of the diagrams λ and µ with integers in [n] there exist two elements i and j which are in the same row of Tµ and in the same column of Tλ. Proof: Let us replace in the tableau Tλ each number i by the index of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-triangularity",
+      "number": null,
+      "title": "Triangularity",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "323",
+      "labelEnd": "324",
+      "words": 333,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "triangularity",
+          "heading": true
+        },
+        {
+          "term": "t-admissible",
+          "heading": false
+        },
+        {
+          "term": "monomial basis",
+          "heading": false
+        },
+        {
+          "term": "aut",
+          "heading": false
+        },
+        {
+          "term": "admissible",
+          "heading": false
+        },
+        {
+          "term": "dominated",
+          "heading": false
+        }
+      ],
+      "extract": "Triangularity In this paragraph we prove that the functions Yλ satisfy property TR. Let us ﬁx a bijective ﬁlling T of 2λ and set S = S(T). The ﬁrst step of the proof consist of writing Yλ = X (S1,S2) T -admissible (−1)(S,S1) pL(S1,S2) in the monomial basis. In order to do that we will write each pL(S1,S2) on this basis. Recall that, if Π and Π′ are two set partitions, we say that Π is ﬁner than Π′ (and write Π ≤Π′)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-orthogonality",
+      "number": null,
+      "title": "Orthogonality",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "324",
+      "labelEnd": "325",
+      "words": 488,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pair-partitions",
+          "heading": false
+        },
+        {
+          "term": "zν2ℓ",
+          "heading": false
+        },
+        {
+          "term": "admissible",
+          "heading": false
+        },
+        {
+          "term": "t-admissible",
+          "heading": false
+        },
+        {
+          "term": "ﬁllings",
+          "heading": false
+        },
+        {
+          "term": "orthogonality",
+          "heading": true
+        }
+      ],
+      "extract": "Orthogonality In this section we prove that the functions Yλ satisfy property OR. As the deﬁnition of Yλ does not depend on the choice of the bijective ﬁlling T ∈F(λ) (F(λ) is by deﬁnition the set of bijective ﬁllings of 2λ), one can write: (2n)! Yλ = X T ∈F (λ) X (S1,S2) T -admissible (−1)(S(T ),S1) pL(S1,S2) = X S1,S2 pair-partitions X T ∈F (λ) s.t. (S1,S2) T -admissible (−1)(S(T ),S1) pL(S1,S2). (4) Let ν be a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-normalization",
+      "number": null,
+      "title": "Normalization",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "325",
+      "labelEnd": "325",
+      "words": 82,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "t-admissible",
+          "heading": false
+        },
+        {
+          "term": "p1n",
+          "heading": false
+        },
+        {
+          "term": "normalization",
+          "heading": true
+        }
+      ],
+      "extract": "Normalization In this paragraph we prove that the functions Yλ satisfy property N. Let λ be a partition of n. We ﬁx a bijective ﬁlling T of 2λ. We have to ﬁnd the T-admissible couples (S1, S2) with µ(L(S1, S2)) = 1n. The last condition is equivalent to S1 = S2 and a couple (S1, S1) is T-admissible if and only if S1 = S(T). In this case, (−1)(S(T ),S1) = 1. Therefore, [p1n]Yλ = 1 and Theorem 3 is proved. 2",
+      "extractCut": false
+    },
+    {
+      "id": "sec-015-combinatorial-formulas-for-zonal-characters",
+      "number": null,
+      "title": "Combinatorial formulas for zonal characters",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "325",
+      "labelEnd": "325",
+      "words": 66,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zonal characters",
+          "heading": true
+        },
+        {
+          "term": "formulas",
+          "heading": true
+        },
+        {
+          "term": "s11b",
+          "heading": false
+        }
+      ],
+      "extract": "Combinatorial formulas for zonal characters In this section we give new formulas for zonal characters (the latter are deﬁned in Section 3.2), which are analogues of some recent formulas for characters of the symmetric groups and establish some particular cases of some conjectures of Lassalle. These formulas can be derived relatively easily from our main result, as done in the complete version of this paper [F´S11b].",
+      "extractCut": false
+    },
+    {
+      "id": "sec-016-via-numbers-of-embeddings",
+      "number": null,
+      "title": "Via numbers of embeddings",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "325",
+      "labelEnd": "326",
+      "words": 165,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pair-partitions",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "embeddings",
+          "heading": true
+        }
+      ],
+      "extract": "Via numbers of embeddings Let S0, S1, S2 be three pair-partitions of the set [2k]. We consider the following function on the set of Young diagrams: Deﬁnition 8 N (1) S0,S1,S2(λ) is the number of functions f from [2k] to the boxes of the Young diagram λ such that for every l ∈[2k]: (Q0) f(l) = f(S0(l)), in other words f can be viewed as a function on the set of pairs constituting S0; (Q1) f(l) and f(S1(l)) are in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-in-terms-of-stanleys-coordinates",
+      "number": null,
+      "title": "In terms of Stanley's coordinates",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "326",
+      "labelEnd": "326",
+      "words": 229,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stanley",
+          "heading": true
+        },
+        {
+          "term": "sta",
+          "heading": false
+        },
+        {
+          "term": "fér",
+          "heading": false
+        },
+        {
+          "term": "pair-partitions",
+          "heading": false
+        }
+      ],
+      "extract": "The notion of Stanley’s coordinates was introduced by Stanley [Sta04] who found a nice formula for normalized irreducible character values of the symmetric group corresponding to rectangular Young dia- grams. In order to generalize this result, he deﬁned, given two sequences p and q of positive integers of same size (q being non-increasing), the partition: p × q = (q1, . . . , q1 | {z } p1 times , . . . , ql, . . .",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-in-terms-of-free-cumulants",
+      "number": null,
+      "title": "In terms of free cumulants",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "326",
+      "labelEnd": "327",
+      "words": 477,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "free cumulants",
+          "heading": true
+        },
+        {
+          "term": "jack kerov",
+          "heading": false
+        },
+        {
+          "term": "zonal kerov",
+          "heading": false
+        },
+        {
+          "term": "generalized jack",
+          "heading": false
+        },
+        {
+          "term": "kerov polynomials",
+          "heading": false
+        },
+        {
+          "term": "α-shifted symmetric",
+          "heading": false
+        },
+        {
+          "term": "las",
+          "heading": false
+        },
+        {
+          "term": "lassalle",
+          "heading": false
+        }
+      ],
+      "extract": "In terms of free cumulants The following observation is due to Lassalle [Las09]. Let k ≥1 be a ﬁxed integer and let α be ﬁxed. Since Σ(α) k is an α-shifted symmetric function and the anisotropic free cumulants (R(α) l )l≥2 form an algebraic basis of the ring of α-shifted symmetric functions (see [Las09] for their deﬁnition), there exists a polynomial K(α) k such that, for any Young diagram λ, Σ(α) k (λ) = K(α) k",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-conclusion",
+      "number": null,
+      "title": "Conclusion",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "327",
+      "labelEnd": "328",
+      "words": 594,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "piotr sniady",
+          "heading": false
+        },
+        {
+          "term": "zonal polynomials",
+          "heading": false
+        },
+        {
+          "term": "doł ega",
+          "heading": false
+        },
+        {
+          "term": "valentin féray",
+          "heading": false
+        },
+        {
+          "term": "jack polynomials",
+          "heading": false
+        },
+        {
+          "term": "jack symmetric",
+          "heading": false
+        },
+        {
+          "term": "combinatorial interpretation",
+          "heading": false
+        },
+        {
+          "term": "stanley",
+          "heading": false
+        }
+      ],
+      "extract": "Conclusion Our result on zonal polynomials and zonal characters are analogs of recent developments on Schur poly- nomials and characters of symmetric groups. Lassalle’s work suggests that this kind of results hold for generic values of the parameter α, but we have not been able (yet) to generalize our argument. Note that, unlike the proof in the full version of the paper [F´S11b], which relies on the representation",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "zonal polynomials",
+      "heading": true
+    },
+    {
+      "term": "zonal characters",
+      "heading": true
+    },
+    {
+      "term": "zonal kerov",
+      "heading": false
+    },
+    {
+      "term": "zonal spherical",
+      "heading": false
+    },
+    {
+      "term": "jack polynomials",
+      "heading": true
+    },
+    {
+      "term": "jack symmetric",
+      "heading": true
+    },
+    {
+      "term": "ﬁxed pair-partitions",
+      "heading": false
+    },
+    {
+      "term": "piotr sniady",
+      "heading": false
+    },
+    {
+      "term": "symmetric functions",
+      "heading": true
+    },
+    {
+      "term": "valentin féray",
+      "heading": false
+    },
+    {
+      "term": "called jack",
+      "heading": false
+    },
+    {
+      "term": "generalized jack",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "317",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "318",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "319",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "320",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "321",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "322",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "323",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "324",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "325",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "326",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "327",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "328",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 20,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 21,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p11); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 21 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/hal-01215114"
+  }
+}

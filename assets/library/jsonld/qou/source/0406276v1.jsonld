@@ -1,0 +1,59 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/0406276v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "The GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE",
+  "contains": [
+    "library/0406276v1/sections/sec-front-matter",
+    "library/0406276v1/sections/sec-000",
+    "library/0406276v1/sections/sec-001",
+    "library/0406276v1/sections/sec-002",
+    "library/0406276v1/sections/sec-003",
+    "library/0406276v1/sections/sec-004",
+    "library/0406276v1/sections/sec-005",
+    "library/0406276v1/sections/sec-006",
+    "library/0406276v1/sections/sec-007",
+    "library/0406276v1/sections/sec-008",
+    "library/0406276v1/sections/sec-009",
+    "library/0406276v1/sections/sec-010",
+    "library/0406276v1/sections/sec-011",
+    "library/0406276v1/sections/sec-012",
+    "library/0406276v1/sections/sec-013",
+    "library/0406276v1/sections/sec-014"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "The GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE — 16 sections: Front matter; Linking integrals in S3 and H3 .; Historical background.\n\n**The GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE**\n\n*Dennis DeTurck and Herman Gluck*\n\n40 pp, 16 sections.\n\n**Outline.** Front matter; 1 Linking integrals in S3 and H3 .; 2 Historical background.; 3 Organization of this report.; 4 Magnetic fields on S3 and H3 .; 5 Proof scheme for Theorem 2, formula (1).; 6 Proof scheme for Theorem 2, formula (2).; 7 Proof scheme for Theorem 2, formula (3).; 8 Maxwell's equations on S3 and H3 .; 9 Proof scheme for Theorem 1.; 10 Link, twist and writhe on S3 and H3 .; 11 Proof scheme for Theorem 5.; 12 Helicity of vector fields on S3 and H3 .; 13 Upper bounds for helicity in R3 , S3 and H3; 14 Spectral geometry of the curl operator in R; REFERENCES",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "0406276v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0406276v1.pdf",
+    "source_sha256": "8fdf4b5950e8b5f5ef32355780c77e8ef297dae078fa8d2bd6742e5550472741",
+    "pages": 40,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

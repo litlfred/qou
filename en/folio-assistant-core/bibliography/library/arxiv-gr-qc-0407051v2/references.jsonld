@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-gr-qc-0407051v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Black hole entropy from quantum geometry",
+      "dcterms:creator": [
+        "Domagala1, Marcin",
+        "Jerzy Lewandowski1, 2,3"
+      ],
+      "dcterms:issued": "D:20241126",
+      "dcterms:identifier": "https://arxiv.org/abs/gr-qc/0407051",
+      "dcterms:abstract": "Quantum Geometry (the modern Loop Quantum Gravity using graphs and spin-networks instead of the loops) provides microscopic degrees of freedom that account for the black-hole entropy. However, the procedure for state counting used in the literature contains an error and the number of the rel- evant horizon states is underestimated. In our paper a correct method of counting is presented. Our results lead to a revision of the literature of the subject. It turns out that the contribution of spins greater then 1/2 to the entropy is not negligible. Hence, the value of the Barbero-Immirzi parameter involved in the spectra of all the geometric and physical operators in this theory is diﬀerent than previously derived. Also, the conjectured relation be- tween Quantum Geometry and the black hole quasi-normal modes should be understood again. Pacs 04.60Pp, 04.60.Ds, 04.60.Nc, 03.65.Sq 1",
+      "dcterms:source": "library/arxiv-gr-qc-0407051v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-gr-qc-0407051v2"
+    }
+  ]
+}

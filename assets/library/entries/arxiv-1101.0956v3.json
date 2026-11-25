@@ -1,0 +1,691 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1101.0956v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/ex-sec-front-matter-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "ex-sec-front-matter-03.md",
+      "narrative": null,
+      "content": "If (ϕ, ϕ0) ∈Bv ((E, π, M) , (E′, π′, M′)) such that ϕ0 ∈Diff (M, M′) , then we obtain the unique Mod-morphism Γ (E, π, M) Γ(ϕ,ϕ0) −−−−−−−−−−→ Γ (E′, π′, M′) u 7−→ Γ (ϕ, ϕ0) u deﬁned by (Γ (ϕ, ϕ0) u) (x′) = ϕ \u0010 uϕ−1 0 (x′) \u0011 . Γ (ϕ, ϕ0) is called the Mod-morphism associated to the Bv-morphism (ϕ, ϕ0) . The category of generalized Lie algebroids We know that a Lie algebroid is a vector bundle (F, ν, N) ∈|Bv| such that there exists (ρ, IdN) ∈Bv ((F, ν, N) , (TN, τ N, N)) and an operation Γ (F, ν, N) × Γ (F, ν, N) [,]F −−→ Γ (F, ν, N) (u, v) 7−→ [u, v]F with the following properties: LA1. the equa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/prop-sec-front-matter-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "prop-sec-front-matter-01.md",
+      "narrative": null,
+      "content": "If (ϕ, ϕ0) ∈Bv ((E, π, M) , (E′, π′, M′)) , then it exists a Mod- morphism Γ (ϕ, ϕ0) of Γ (E, π, M) source and Γ (E′, π′, M′) target.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/prop-sec-front-matter-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "prop-sec-front-matter-06.md",
+      "narrative": null,
+      "content": "The set AFTN put = S (U,ξU )∈AFT N , (V,sV )∈AF F U∩h−1(V )̸=φ n\u0010 U ∩h−1 (V ) , ¯ξU∩h−1(V ) \u0011o is a vector ﬁbred n + n-atlas for the vector bundle (TN, τ N, N) . If X = X˜ı ∂ ∂κ˜ı ∈Γ (TN, τ N, N) , then we obtain the section ¯X = ¯X˜ı ◦h ∂ ∂¯κ˜ı ∈Γ (TN, τ N, N) , such that ¯X (¯κ) = X (h (¯κ)) , for any ¯κ ∈U ∩h−1 (V ) . The set \b ∂ ∂¯κ˜ı , ˜ı ∈1, n",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1101.0956v3  [math.DG]  25 Jul 2011\nALGEBRAIC CONSTRUCTIONS\nIN THE CATEGORY OF VECTOR BUNDLES\nby\nCONSTANTIN M. ARCUS¸\nAbstract\nIn this paper we present the category of generalized Lie algebroids. Important\nresults (a theorem of Maurer-Cartan type, theorems of Cartan type,...) emphasize\nthe importance and the utility of the objects of this new category.\n2000 Mathematics Subject Classiﬁcation: 00A69, 58A15, 58B34.\nKeywords: vector bundle, (generalized) Lie algebroid, interior diﬀerential system,\nexterior diﬀerential calculus, exterior diﬀerential system.\nContents\nIntroduction\n1\n2\nPrelimina",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/rem-sec-front-matter-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "rem-sec-front-matter-02.md",
+      "narrative": null,
+      "content": "The construction of the extension Mod-morphism associated to a Bv- morphism (ϕ, ϕ0) is not unique, but any two extension Mod-morphisms associated to a Bv-morphism (ϕ, ϕ0) has the same properties.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/rem-sec-front-matter-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "rem-sec-front-matter-04.md",
+      "narrative": null,
+      "content": "The following equalities hold good: (3.7) ρi α ◦h∂f ◦h ∂xi = \u0012 θ˜ı α ∂f ∂κ˜ı \u0013 ◦h, ∀f ∈F (N) . and (3.8) \u0010 Lγ αβ ◦h \u0011 \u0010 ρk γ ◦h \u0011 = \u0000ρi α ◦h \u0001 ∂ \u0010 ρk β ◦h \u0011 ∂xi − \u0010 ρj β ◦h \u0011 ∂ \u0000ρk α ◦h \u0001 ∂xj . In the next we build some examples of objects of the category GLA.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/thm-sec-front-matter-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "thm-sec-front-matter-05.md",
+      "narrative": null,
+      "content": "Let M ∈|Manm| and g, h ∈IsoMan (M) be. Using the tangent Bv-morphism (Tg, g) and the operation Γ (TM, τ M, M) × Γ (TM, τ M, M) [,]T M,h −−−−−−−−−→ Γ (TM, τ M, M) (u, v) 7−→ [u, v]TM,h where [u, v]TM,h = Γ \u0010 T (h ◦g)−1 , (h ◦g)−1\u0011 ([Γ (T (h ◦g) , h ◦g) u, Γ (T (h ◦g) , h ◦g) v]TM) , for any u, v ∈Γ (TM, τ M, M), we obtain that \u0010 (TM, τ M, M) , (Tg, g) , [, ]TM,h \u0011 ∈|GLA| . For any Man-isomorphisms g and h we obtain new and interesting generalized Lie algebroid structures for the tangent vector bundle (TM, τ M, M) . For any base \b tα, α ∈1, m",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/thm-sec-front-matter-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "thm-sec-front-matter-07.md",
+      "narrative": null,
+      "content": "If we consider the operation Γ (F, ν, N) × Γ (F, ν, N) [,]F,h −−−−−−−→ Γ (F, ν, N) deﬁned by [tα, tβ]F,h = \u0010 Lγ αβ ◦h \u0011 tγ, [tα, ftβ]F,h = f \u0010 Lγ αβ ◦h \u0011 tγ + ρ˜ı α ◦h ∂f ∂¯κ˜ı tβ, [ftα, tβ]F,h = −[tβ, ftα]F,h , for any f ∈F (N) , then \u0010 (F, ν, N) , [, ]F,h , (ρ, IdN) \u0011 ∈|GLA| . The generalized Lie algebroid \u0010 (F, ν, N) , [, ]F,h , (ρ, IdN) \u0011 given by the previous theorem, will be called the generalized Lie algebroid associated to the Lie algebroid ((F, ν, N) , [, ]F , (ρ, IdN)) and to the surjective application h ∈ Man (N, N) . In particular, if h = IdN, then the generalized Lie algebroid \u0010 (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/prop-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "prop-sec-000-01.md",
+      "narrative": null,
+      "content": "The set AFF put = S (U,ξU)∈AF T M , (V,sV )∈AF F U∩h−1(V )̸=φ \b\u0000U ∩h−1 (V ) , ¯sU∩h−1(V ) \u0001 is a vector ﬁbred m + p-atlas for the vector bundle (h∗F, h∗ν, M) . If z = zαtα ∈Γ (F, ν, N) , then we obtain the section Z = (zα ◦h) Tα ∈Γ (h∗F, h∗ν, M) such that Z (x) = z (h (x)) , for any x ∈U ∩h−1 (V ) .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The pull-back Lie algebroid of a generalized Lie algebroid",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-000-31-the-pull-back-lie-algebroid-of-a-generalized.md",
+      "narrative": null,
+      "content": "The pull-back Lie algebroid of a generalized Lie algebroid\nLet\n\u0010\n(F, ν, N) , [, ]F,h , (ρ, η)\n\u0011\nbe a generalized Lie algebroid.\nLet AFF be a vector ﬁbred (n + p)-atlas for the vector bundle (F, ν, N) and let\nAFTM be a vector ﬁbred (m + m)-atlas for the vector bundle (TM, τ M, M).\nLet (h∗F, h∗ν, M) be the pull-back vector bundle through h.\nIf (U, ξU) ∈AFTM and (V, sV ) ∈AFF such that U ∩h−1 (V )̸ = φ, then we deﬁne\nthe application\nh∗ν−1(U∩h−1(V )))\n¯sU∩h−1(V )\n−−−−−−−→\n\u0000U∩h−1(V )\n\u0001\n×Rp\n(κ, z (h (κ)))\n7−→\n\u0010\nκ, t−1\nV,h(κ)z (h (κ))\n\u0011\n.\nProposition 3.1.1 The set\nAFF\nput\n=\nS\n(U,ξU)∈AF T M , (V,sV )∈",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/thm-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "thm-sec-000-02.md",
+      "narrative": null,
+      "content": "Let \u0010h∗F ρ , IdM \u0011 be the Bv-morphism of (h∗F, h∗ν, M) source and (TM, τ M, M) target, where (3.1.1) h∗F h∗F ρ −−→ TM ZαTα (x) 7−→ \u0000Zα · ρi α ◦h \u0001 ∂ ∂xi (x) Using the operation Γ (h∗F, h∗ν, M) × Γ (h∗F, h∗ν, M) [,]h∗F −−−−−−−−→ Γ (h∗F, h∗ν, M) deﬁned by (3.1.2) [Tα, Tβ]h∗F = \u0010 Lγ αβ ◦h \u0011 Tγ, [Tα, fTβ]h∗F = f \u0010 Lγ αβ ◦h \u0011 Tγ + \u0000ρi α ◦h \u0001 ∂f ∂xi Tβ, [fTα, Tβ]h∗F = −[Tβ, fTα]h∗F , for any f ∈F (M) , it results that \u0010 (h∗F, h∗ν, M) , [, ]h∗F , \u0010h∗F ρ , IdM \u0011\u0011 ia a Lie algebroid which is called the pull-back Lie algebroid of the generalized Lie algebroid \u0010 (F, ν, N) , [, ]F,h , (ρ, η) \u0011 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/cor-sec-001-09",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "cor-sec-001-09.md",
+      "narrative": null,
+      "content": "If \u0010 (h∗F, h∗ν, M) , [, ]h∗F , \u0010h∗F ρ , IdM \u0011\u0011 is the pull-back Lie algebroid associated to the generalized Lie algebroid \u0010 (F, ν, N) , [, ]F,h , (ρ, η) \u0011 and dh∗F is the exte- rior diﬀerentiation operator for the exterior diﬀerential F (M)-algebra (Λ (h∗F, h∗ν, M) , +, ·, ∧), then we obtain the following structure equations of Maurer- Cartan type (C′ 1) dh∗FT α = −1 \u0000Lα βγ ◦h \u0001 T β ∧T γ, α ∈1, p and (C′ 2) dh∗Fxi = \u0000ρi α ◦h \u0001 T α, i ∈1, m. This equations will be called the structure equations of Maurer-Cartan type associated to the pull-back Lie algebroid \u0010 (h∗F, h∗ν, M) , [, ]h∗F , \u0010h∗F ρ ,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/prop-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "prop-sec-001-02.md",
+      "narrative": null,
+      "content": "If (E, π, M) is an IDS of the generalized Lie algebroid \u0010 (F, ν, N) , [, ]F,h , (ρ, η) \u0011 such that Γ (E, π, M) = ⟨S1, ..., Sr⟩, then it exists Θr+1, ..., Θp ∈Γ \u0012 ∗ h∗F, ∗ h∗ν, M \u0013 linearly independent such that Γ \u0000E0, π0, M \u0001 =",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/prop-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "prop-sec-001-03.md",
+      "narrative": null,
+      "content": "If (E, π, M) is an IDS of the generalized Lie algebroid \u0010 (F, ν, N) , [, ]F,h , (ρ, η) \u0011 and {S1, ..., Sr} is a base for the F (M)-submodule (Γ (E, π, M) , +, ·) then (E, π, M) is involutive if and only if [Sa, Sb]h∗F ∈Γ (E, π, M) , for any a, b ∈1, r. Exterior diﬀerential calculus Let \u0010 (F, ν, N) , [, ]F,h , (ρ, η) \u0011 be a generalized Lie algebroid. We denoted by Λq (F, ν, N) the set of diﬀerential forms of degree q. We remark that if Λ (F, ν, N) = ⊕ q≥0Λq (F, ν, N) , then we obtain the exterior diﬀerential algebra (Λ (F, ν, N) , +, ·, ∧) . Deﬁnition 4.1 For any z ∈Γ (F, ν, N), the application",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Interior Differential Systems",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "../sections/sec-001-32-interior-differential-systems.md",
+      "narrative": null,
+      "content": "Interior Diﬀerential Systems\nLet\n\u0010\n(h∗F, h∗ν, M) , [, ]h∗F ,\n\u0010h∗F\nρ , IdM\n\u0011\u0011\nbe the pull-back Lie algebroid of the generali-\nzed Lie algebroid\n\u0010\n(F, ν, N) , [, ]F,h , (ρ, η)\n\u0011\n.\nDeﬁnition 3.2.1 Any vector subbundle (E, π, M) of the vector bundle (h∗F, h∗ν, M)\nwill be called interior diﬀerential system (IDS) of the generalized Lie algebroid\n\u0010\n(F, ν, N) , [, ]F,h , (ρ, η)\n\u0011\n.\nIn particular, if h = IdN = η, then any vector subbundle (E, π, N) of the vector\nbundle (F, ν, N) will be called interior diﬀerential system of the Lie algebroid\n((F, ν, N) , [, ]F , (ρ, IdN)) .\nRemark 3.2.1 If (E, π, M) is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/rem-sec-001-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "rem-sec-001-01.md",
+      "narrative": null,
+      "content": "If (E, π, M) is an IDS of the generalized Lie algebroid \u0010 (F, ν, N) , [, ]F,h , (ρ, η) \u0011 , then we obtain a vector subbundle \u0000E0, π0, M \u0001 of the vector bundle \u0012 ∗ h∗F, ∗ h∗ν, M \u0013 such that Γ \u0000E0, π0, M \u0001 put = \u001a Ω∈Γ \u0012 ∗ h∗F, ∗ h∗ν, M \u0013 : Ω(S) = 0, ∀S ∈Γ (E, π, M) \u001b . The vector subbundle \u0000E0, π0, M \u0001 will be called the annihilator vector subbundle of the IDS (E, π, M) .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/thm-sec-001-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "thm-sec-001-04.md",
+      "narrative": null,
+      "content": "If z ∈Γ (F, ν, N) , ω ∈Λq (F, ν, N) and θ ∈Λr (F, ν, N), then (4.1) Lz (ω ∧θ) = Lzω ∧θ + ω ∧Lzθ. Deﬁnition 4.2 For any z ∈Γ (F, ν, N), the application Λ (F, ν, N) iz −−−→ Λ (F, ν, N) Λq (F, ν, N) ∋ω 7−→ izω ∈Λq−1 (F, ν, N) , deﬁned by izf = 0, for any f ∈F (N) and izω (z2, ..., zq) = ω (z, z2, ..., zq) , for any z2, ..., zq ∈Γ (F, ν, N), is called the interior product associated to the section z.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/thm-sec-001-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "thm-sec-001-05.md",
+      "narrative": null,
+      "content": "If z ∈Γ (F, ν, N), then for any ω ∈Λq (F, ν, N) and θ ∈Λr (F, ν, N) we obtain (4.2) iz (ω ∧θ) = izω ∧θ + (−1)q ω ∧izθ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/thm-sec-001-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "thm-sec-001-06.md",
+      "narrative": null,
+      "content": "For any z, v ∈Γ (F, ν, N) we obtain (4.3) Lv ◦iz −iz ◦Lv = i[z,v]F,h.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/thm-sec-001-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "thm-sec-001-07.md",
+      "narrative": null,
+      "content": "The application Λq (F, ν, N) dF −−−→ Λq+1 (F, ν, N) ω 7−→ dω deﬁned by dF f (z) = Γ (Th ◦ρ, h ◦η) (z) f, for any z ∈Γ (F, ν, N) , and dF ω (z0, z1, ..., zq) = qP i=0 (−1)i Γ (Th ◦ρ, h ◦η) zi (ω ((z0, z1, ..., ˆzi, ..., zq))) + P i<j (−1)i+j ω \u0010\u0010 [zi, zj]F,h , z0, z1, ..., ˆzi, ..., ˆzj, ..., zq \u0011\u0011 , for any z0, z1, ..., zq ∈Γ (F, ν, N) , is unique with the following property: (4.4) Lz = dF ◦iz + iz ◦dF , ∀z ∈Γ (F, ν, N) . This application will be called the exterior diﬀerentiation operator for the exterior diﬀerential algebra of the generalized Lie algebroid ((F, ν, N), [, ]F,h, (ρ, η)).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/thm-sec-001-08",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "thm-sec-001-08.md",
+      "narrative": null,
+      "content": "The exterior diﬀerentiation operator dF given by the previous theorem has the following properties: 1. For any ω ∈Λq (F, ν, N) and θ ∈Λr (F, ν, N) we obtain (4.5) dF (ω ∧θ) = dF ω ∧θ + (−1)q ω ∧dF θ. 2. For any z ∈Γ (F, ν, N) we obtain Lz ◦dF = dF ◦Lz. 3. dF ◦dF = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/thm-sec-001-10",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "of Cartan type",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "thm-sec-001-10.md",
+      "narrative": null,
+      "content": "Let (E, π, M) be an IDS of the generalized Lie algebroid \u0010 (F, ν, N) , [, ]F,h , (ρ, η) \u0011 . If \b Θr+1, ..., Θp is a base for the F (M)-submodule \u0000Γ \u0000E0, π0, M \u0001 , +, · \u0001 , then the IDS (E, π, M) is involutive if and only if it exists Ωα β ∈Λ1 (h∗F, h∗ν, M) , α, β ∈r + 1, p such that dh∗F Θα = Σβ∈r+1,pΩα β ∧Θβ ∈I \u0000Γ \u0000E0, π0, M \u0001\u0001 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/thm-sec-001-11",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "thm-sec-001-11.md",
+      "narrative": null,
+      "content": "If (ϕ, ϕ0) is a GLA-morphism of \u0010 (F, ν, N) , [, ]F,h , (ρ, η) \u0011 source and \u0010\u0000F ′, ν′, N ′\u0001 , [, ]F ′,h′ , \u0000ρ′, η′\u0001\u0011 target, then the following aﬃrmations are satisﬁed: 1. For any ω′ ∈Λq (F ′, ν′, N ′) and θ′ ∈Λr (F ′, ν′, N ′) we obtain (4.13) (ϕ, ϕ0)∗\u0000ω′ ∧θ′\u0001 = (ϕ, ϕ0)∗ω′ ∧(ϕ, ϕ0)∗θ′. 2. For any z ∈Γ (F, ν, N) and ω′ ∈Λq (F ′, ν′, N ′) we obtain (4.14) iz ((ϕ, ϕ0)∗ω′) = (ϕ, ϕ0)∗\u0000iϕ(z)ω′\u0001 . 3. If N = N ′ and (Th ◦ρ, h ◦η) = (Th′ ◦ρ′, h′ ◦η′) ◦(ϕ, ϕ0) , then we obtain (4.15) (ϕ, ϕ0)∗◦dF ′ = dF ◦(ϕ, ϕ0)∗.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Exterior Differential Systems",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-002-41-exterior-differential-systems.md",
+      "narrative": null,
+      "content": "Let $\\left( \\left( h^{\\ast }F,h^{\\ast }\\nu ,M\\right) ,\\left[ ,\\right]\n_{h^{\\ast }F},\\left( \\overset{h^{\\ast }F}{\\rho },Id_{M}\\right) \\right)$ be the pull-back Lie algebroid of the generalized Lie algebroid $\\left( \\left(\nF,\\nu ,N\\right) ,\\left[ ,\\right] _{F,h},\\left( \\rho ,\\eta \\right) \\right)$.\n\n**Definition 5.1** Any ideal $\\left( \\mathcal{I},+,\\cdot \\right)$ of the exterior differential algebra of the pull-back Lie algebroid $\\left(\n\\left( h^{\\ast }F,h^{\\ast }\\nu ,M\\right) ,\\left[ ,\\right] _{h^{\\ast\n}F},\\left( \\overset{h^{\\ast }F}{\\rho },Id_{M}\\right) \\right)$ closed under differentiation o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-003-references.md",
+      "narrative": null,
+      "content": "[1] C. M. Arcus,\nThe generalized Lie algebroids and their applications,\narXiv:\n1007.1451v2, math-ph, 10 Aug (2010).\n[2] R.L. Bryant, S.S. Chern, R.B. Gardner, H.L. Goldschmidt, and P.A. Griﬃths, Ex-\nterior Diﬀerential Systems, Springer-Verlag, 1991.\n[3] J. Grabowski, P. Urbanski, Lie algebroids and Poisson-Nijenhuis structures, Rep.\nMath. Phys. 40 (1997), 196-208.\n[4] P Griﬃths, Exterior Diﬀerential Systems and the Calculus of Variations, Progr.\nMath., No. 25, Birkh¨auser, Boston, MA, 1983.\n[5] P.J. Higgins, K. Mackenzei, Algebraic constructions in the category of Lie algebroids,\nJ. Algebra, 1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-004-1-introduction.md",
+      "narrative": null,
+      "content": "Using the notion of generalized Lie algebroid introduced in the paper $[1]$ we present the category of generalized Lie algebroids. In the framework of Lie algebroids (see $\\left[ 2\\right]$) we know the following\n\n**Theorem** (of Maurer-Cartan type) *If* $((F,\\nu\n,N),[,]_{F},(\\rho ,Id_{N}))$ *is a Lie algebroid and* $d^{F}$ *is the exterior differentiation operator of the exterior differential* $\\mathcal{F}(N)$*-algebra*$(\\Lambda (F,\\nu\n,N),+,\\cdot ,\\wedge ),$ *then we obtain the structure equations of Maurer-Cartan type* $$\\begin{array}{c}\nd^{F}t^{\\alpha }=-\\displaystyle\\frac{1}{2}L_{\\beta \\ga",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The category of generalized Lie algebroids",
+      "pageStart": 18,
+      "pageEnd": 21,
+      "target": "../sections/sec-005-2-the-category-of-generalized-lie-algebroids.md",
+      "narrative": null,
+      "content": "In general, if $\\mathcal{C}$ is a category, then we denote $\\left\\vert\n\\mathcal{C}\\right\\vert$ the class of objects and for any $A,B{\\in }\n\\left\\vert \\mathcal{C}\\right\\vert$, we denote $\\mathcal{C}\\left( A,B\\right)$ the set of morphisms of $A$ source and $B$ target. Let$\\mathbf{~Vect},$ $\\mathbf{Liealg},~\\mathbf{Mod}$**,** $\\mathbf{Man}$ and $\\mathbf{B}^{\n\\mathbf{v}}$ be the category of real vector spaces, Lie algebras, modules, manifolds and vector bundles respectively.\n\nWe know that if $\\left( E,\\pi ,M\\right) \\in \\left\\vert \\mathbf{B}^{\\mathbf{v}\n}\\right\\vert ,$ $\\Gamma \\left( E,\\pi ,M\\right",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Interior Differential Systems",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-006-3-interior-differential-systems.md",
+      "narrative": null,
+      "content": "Let $\\left( \\left( F,\\nu ,N\\right) ,\\left[ ,\\right] _{F,h},\\left( \\rho ,\\eta\n\\right) \\right)$ be an object of the category $\\mathbf{GLA}$.\n\nLet $\\mathcal{AF}_{F}$ be a vector fibred $\\left( n+p\\right)$-atlas for the vector bundle $\\left( F,\\nu ,N\\right)$ and let $\\mathcal{AF}_{TM}$ be a vector fibred $\\left( m+m\\right)$-atlas for the vector bundle $\\left(\nTM,\\tau _{M},M\\right)$.\n\nLet $\\left( h^{\\ast }F,h^{\\ast }\\nu ,M\\right)$ be the pull-back vector bundle through $h.$\n\nIf $\\left( U,\\xi _{U}\\right) \\in \\mathcal{AF}_{TM}$ and $\\left(\nV,s_{V}\\right) \\in \\mathcal{AF}_{F}$ such that $U\\cap h^{-1}\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Exterior differential calculus",
+      "pageStart": 23,
+      "pageEnd": 36,
+      "target": "../sections/sec-007-4-exterior-differential-calculus.md",
+      "narrative": null,
+      "content": "We propose an exterior differential calculus in the general framework of generalized Lie algebroids. As any Lie algebroid can be regarded as a generalized Lie algebroid, in particular, we obtain a new point of view over the exterior differential calculus for Lie algebroids. Let $\\left( \\left(\nF,\\nu ,N\\right) ,\\left[ ,\\right] _{F,h},\\left( \\rho ,\\eta \\right) \\right)\n\\in \\left\\vert \\mathbf{GLA}\\right\\vert$ be.\n\n**Definition 4.1** For any $q\\in \\mathbb{N}$ we denote by $\\left(\n\\Sigma _{q},\\circ \\right)$ the permutations group of the set $\\left\\{\n1,2,...,q\\right\\} .$\n\n**Definition 4.2** We denoted",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Exterior Differential Systems",
+      "pageStart": 36,
+      "pageEnd": 38,
+      "target": "../sections/sec-008-5-exterior-differential-systems.md",
+      "narrative": null,
+      "content": "Let $\\left( \\left( h^{\\ast }F,h^{\\ast }\\nu ,M\\right) ,\\left[ ,\\right]\n_{h^{\\ast }F},\\left( \\overset{h^{\\ast }F}{\\rho },Id_{M}\\right) \\right)$ be the pull-back Lie algebroid of the generalized Lie algebroid $\\left( \\left(\nF,\\nu ,N\\right) ,\\left[ ,\\right] _{F,h},\\left( \\rho ,\\eta \\right) \\right)$.\n\n**Definition 5.1** Any ideal $\\left( \\mathcal{I},+,\\cdot \\right)$ of the exterior differential algebra of the pull-back Lie algebroid $\\left(\n\\left( h^{\\ast }F,h^{\\ast }\\nu ,M\\right) ,\\left[ ,\\right] _{h^{\\ast\n}F},\\left( \\overset{h^{\\ast }F}{\\rho },Id_{M}\\right) \\right)$ closed under differentiation o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/cor-sec-009-06",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 44,
+      "target": "cor-sec-009-06.md",
+      "narrative": null,
+      "content": "In particular, if h = IdM, then the identities (C1) and (C2) become (C′ 1) ρTa = dF sa + ωa b ∧sb, and (C′ 2) ρRa b = dF ωa b + ωa c ∧ωc b respectively. Moreover, if ρ = IdTM, then the identities (C′ 1) and (C′ 2) become: (C′′ 1 ) Ti = ddxi + ωi j ∧dxj = ωi j ∧dxj and (C′′ 2 ) Ri j = dωi j + ωi h ∧ωh j , respectively. q.e.d.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/cor-sec-009-08",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 44,
+      "target": "cor-sec-009-08.md",
+      "narrative": null,
+      "content": "In particular, if h = IdM, then the identities (B1) and (B2) become (B′ 1) dF ρTa = ρRa b ∧sb −ωa c ∧ρTc and (B′ 2) dF ρRa b = ρRa c ∧ωc b −ωa c ∧ρRc b, respectively. Moreover, if ρ = IdTM, then the identities (B′ 1) and (B′ 2) become: (B′′ 1) dTi = Ri j ∧dxj −ωi k ∧Tk and (B′′ 2) dRi j = Ri h ∧ωh j −ωi h ∧Rh j , respectively. References [1] C. M. Arcus, Algebraic constructions in the category of Lie algebroids, arXiv:math.DG/1101.0960v3, 20 Jul (2011). [2] C. M. Arcus, Interior and exterior diﬀerential systems for Lie algebroids, arXiv:math-ph/1102.1781v2, 11 May (2011). (to appear) [3] R.L.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/prop-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 44,
+      "target": "prop-sec-009-02.md",
+      "narrative": null,
+      "content": "The (ρ, h)-torsion (ρ, h) T associated to linear ρ-connection ρΓ is R-bilinear and antisymmetric. If (ρ, h) T (Sa, Sb) put = (ρ, h) Tc abSc then (6.6) (ρ, h) Tc ab = ρΓc ab −ρΓc ba −Lc ab ◦h. In particular, if h = IdM and ρT (sa, sb) put = ρTc absc, then (6.6′) ρTc ab = ρΓc ab −ρΓc ba −Lc ab. Moreover, if ρ = IdTM, then the equality (6.6′) becomes: (6.6′′) Ti jk = Γi jk −Γi kj. Deﬁnition 6.2 If (E, π, M) = (F, ν, N), then the vector valued 2-form (6.7) (ρ, h) T = ((ρ, h) Tc abSc) Sa ∧Sb will be called the vector valued form of (ρ, h)-torsion (ρ, h) T. In particular, if h = IdM, then the vector",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/prop-sec-009-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 44,
+      "target": "prop-sec-009-04.md",
+      "narrative": null,
+      "content": "The (ρ, h)-curvature (ρ, h) R associated to linear ρ-connection ρΓ, is R-linear in each argument and antisymmetric in the ﬁrst two arguments. If (ρ, h) R (Tβ, Tα) sb put = (ρ, h) Ra b αβsa, then (6.11) (ρ, h) Ra b αβ = ρj β ◦h∂ρΓa bα ∂xj + ρΓa eβρΓe bα −ρi α ◦h ∂ρΓa bβ ∂xi −ρΓa eαρΓe bβ + ρΓa bγLγ αβ ◦h. In particular, if h = IdM and ρR (tβ, tα) sb put = ρRa b αβsa, then (6.11′) ρRa b αβ = ρj β ∂ρΓa bα ∂xj + ρΓa eβρΓe bα −ρi α ∂ρΓa bβ ∂xi −ρΓa eαρΓe bβ + ρΓa bγLγ αβ. Moreover, if ρ = IdTM, then equality (6.11′) becomes: (6.11′′) Ra b hk = ∂Γa bh ∂xk + Γa ekΓe bh −∂Γa bk ∂xh −Γa ehΓe bk. Deﬁnit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Torsion and curvature forms. Identities of Cartan and Bianchi type",
+      "pageStart": 38,
+      "pageEnd": 44,
+      "target": "../sections/sec-009-6-torsion-and-curvature-forms-identities-of-cart.md",
+      "narrative": null,
+      "content": "Torsion and curvature forms. Identities of Cartan and\nBianchi type\nUsing the theory of linear connections of Eresmann type presented in [1] for the diagram:\n(6.1)\nE\nπ\n\u000f\n\u0010\nF, [, ]F,h , (ρ, IdN)\n\u0011\nν\n\u000f\nM\nh\n/ N\nwhere (E, π, M) ∈|Bv| and\n\u0010\n(F, ν, N) , [, ]F,h , (ρ, IdN)\n\u0011\n∈|GLA| , we obtain a linear\nρ-connection ρΓ for the vector bundle (E, π, M) by components ρΓa\nbα.\nUsing the components of this linear ρ-connection, we obtain a linear ρ-connection\nρ ˙Γ for the vector bundle (E, π, M) given by the diagram:\n(6.2)\nE\n\u0010\nh∗F, [, ]h∗F ,\n\u0010h∗F\nρ , IdM\n\u0011\u0011\nπ ↓\n↓h∗ν\nM\nIdM\n−−−−−−−−→\nM\nIf (E, π, M) = (F, ν, N)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/rem-sec-009-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 44,
+      "target": "rem-sec-009-01.md",
+      "narrative": null,
+      "content": "In particular, if h = IdM, then we obtain the application (6.4′) Γ (E, π, M)2 ρT −−→ Γ (E, π, M) (u, v) −→ ρT (u, v) deﬁned by: (6.5′) ρT (u, v) = ρDuv −ρDvu −[u, v]E , for any u, v ∈Γ (E, π, M) , which will be called ρ-torsion associated to linear ρ-connection ρΓ. Moreover, if ρ = IdTM, then we obtain the torsion T associated to linear connec- tion Γ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/rem-sec-009-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 44,
+      "target": "rem-sec-009-03.md",
+      "narrative": null,
+      "content": "In particular, if h = IdM, then we obtain the application (6.9′) Γ (F, ν, M)2 ×Γ(E, π, M) ρR −−→ Γ(E, π, M) ((z, v), u) −→ ρR(z, v)u deﬁned by (6.10′) ρR (z, v) u = ρDz (ρDvu) −ρDv (ρDzu) −ρD[z,v]F u, for any z, v ∈Γ (F, ν, M) , u ∈Γ (E, π, M) , which will be called ρ-curvature associated to linear ρ-connection ρΓ. Moreover, if ρ = IdTM, then we obtain the curvature R associated to linear connec- tion Γ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/thm-sec-009-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 44,
+      "target": "thm-sec-009-05.md",
+      "narrative": null,
+      "content": "The identities (C1) (ρ, h) Ta = dh∗FSa + Ωa b ∧Sb, and (C2) (ρ, h) Ra b = dh∗F Ωa b + Ωa c ∧Ωc b hold good. These will be called the ﬁrst respectively the second identity of Cartan type.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.0956v3/blocks/thm-sec-009-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 44,
+      "target": "thm-sec-009-07.md",
+      "narrative": null,
+      "content": "The identities (B1) dh∗F (ρ, h) Ta = (ρ, h) Ra b ∧Sb −Ωa c ∧(ρ, h) Tc and (B2) dh∗F (ρ, h) Ra b = (ρ, h) Ra c ∧Ωc b −Ωa c ∧(ρ, h) Rc b, hold good. We will called these the ﬁrst respectively the second identity of Bianchi type. If the (ρ, h)-torsion is null, then the ﬁrst identity of Bianchi type becomes: ( ˜B1) (ρ, h) Ra b ∧sb = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

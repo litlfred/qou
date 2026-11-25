@@ -1,0 +1,767 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "celebratio-mathematica-neumann-hyperbolic-3-manifolds",
+  "title": "celebratio-mathematica-neumann-hyperbolic-3-manifolds",
+  "variant": "pdf",
+  "pages": 27,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Ideal triangulations and the gluing equations",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-ideal-triangulations-and-the-gluing-equations"
+    },
+    {
+      "level": 1,
+      "title": "Volumes and Dehn surgeries",
+      "number": "2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-volumes-and-dehn-surgeries"
+    },
+    {
+      "level": 1,
+      "title": "The Bloch group and the extended Bloch group",
+      "number": "3",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-the-bloch-group-and-the-extended-bloch-group"
+    },
+    {
+      "level": 1,
+      "title": "Symplectic properties",
+      "number": "4",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-symplectic-properties"
+    },
+    {
+      "level": 1,
+      "title": "Quantization",
+      "number": "5",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-5-quantization"
+    },
+    {
+      "level": 1,
+      "title": "Connections to number theory",
+      "number": "6",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-6-connections-to-number-theory"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 23,
+      "pageLabel": null,
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-006-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 191,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "walter neumann",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifolds",
+          "heading": false
+        },
+        {
+          "term": "later work",
+          "heading": false
+        },
+        {
+          "term": "alone",
+          "heading": false
+        },
+        {
+          "term": "triangulations",
+          "heading": false
+        },
+        {
+          "term": "papers",
+          "heading": false
+        }
+      ],
+      "extract": "Jump to Bibliography by Stavros Garoufalidis and Don Zagier Published: 2023 Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann Abstract: Walter Neumann — henceforth simply Walter — has made huge contribu‐ tions to topology, singularity theory, and number theory. His work on the combin‐ atorics of triangulations of 3-manifolds and its interactions with algebraic -theory certainly can be counted",
+      "extractCut": true,
+      "blocks": [
+        "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-ideal-triangulations-and-the-gluing-equations",
+      "number": "1",
+      "title": "Ideal triangulations and the gluing equations",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1200,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gluing equations",
+          "heading": true
+        },
+        {
+          "term": "ideal triangulations",
+          "heading": true
+        },
+        {
+          "term": "mostow rigidity",
+          "heading": false
+        },
+        {
+          "term": "shape parameters",
+          "heading": false
+        },
+        {
+          "term": "complete hyperbolic",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic structures",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic space",
+          "heading": false
+        },
+        {
+          "term": "ideal tetrahedron",
+          "heading": false
+        }
+      ],
+      "extract": "The starting point of the paper [1] was Thurston’s amazing insight in the 1980’s that all 3-dimensional manifolds should be canonically divisible into pieces having a well-defined geometric structure of one of eight types, the most important of which is the hyperbolic one. In conjunction with the famous Mostow rigidity the‐ orem, this means that 3-dimensional topology becomes a part, first of differential geometry,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-volumes-and-dehn-surgeries",
+      "number": "2",
+      "title": "Volumes and Dehn surgeries",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1614,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dehn surgeries",
+          "heading": true
+        },
+        {
+          "term": "volumes",
+          "heading": true
+        },
+        {
+          "term": "complexified volume",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifold",
+          "heading": false
+        },
+        {
+          "term": "shape parameters",
+          "heading": false
+        },
+        {
+          "term": "volume spectrum",
+          "heading": false
+        },
+        {
+          "term": "dehn surgery",
+          "heading": false
+        },
+        {
+          "term": "solid torus",
+          "heading": false
+        }
+      ],
+      "extract": "As already stated, the original main purpose of [1] was to study the arithmetic of the set of volumes of all hyperbolic 3-manifolds. It had been observed by Thur‐ ston, using earlier work of Jørgensen, that this volume spectrum is a well-ordered subset of the positive reals. In other words, there is a smallest volume (which is known), a second smallest, a third smallest, …, then a smallest limit point, a second",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-the-bloch-group-and-the-extended-bloch-group",
+      "number": "3",
+      "title": "The Bloch group and the extended Bloch group",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1102,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "extended bloch",
+          "heading": true
+        },
+        {
+          "term": "bloch group",
+          "heading": true
+        },
+        {
+          "term": "five-term relation",
+          "heading": false
+        },
+        {
+          "term": "complexified volume",
+          "heading": false
+        },
+        {
+          "term": "pachner moves",
+          "heading": false
+        },
+        {
+          "term": "functional equation",
+          "heading": false
+        },
+        {
+          "term": "regulator map",
+          "heading": false
+        },
+        {
+          "term": "multiplicative group",
+          "heading": false
+        }
+      ],
+      "extract": "The Bloch group of a field is an analogue of its multiplicative group, but with the relation satisfied by the logarithm function replaced by the func‐ tional equation of the dilogarithm. In this section we recall its definition and the definition of the “extended Bloch group” that was introduced by Walter [4] and further developed by Zickert and Goette [e15], [e26], and explain their connec‐ tions with the volume",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-symplectic-properties",
+      "number": "4",
+      "title": "Symplectic properties",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 546,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symplectic",
+          "heading": true
+        },
+        {
+          "term": "half-symplectic",
+          "heading": false
+        },
+        {
+          "term": "chain complex",
+          "heading": false
+        },
+        {
+          "term": "free abelian",
+          "heading": false
+        },
+        {
+          "term": "abelian group",
+          "heading": false
+        },
+        {
+          "term": "simplices",
+          "heading": false
+        },
+        {
+          "term": "edges",
+          "heading": false
+        },
+        {
+          "term": "walter",
+          "heading": false
+        }
+      ],
+      "extract": "In retrospect, the symplectic properties as described in equation (3) and the fol‐ lowing text, and their refinement from to as given in the follow-up paper [2], turned out to be the most important aspects of these papers. They are responsible both for the existence of the potential function and for all of the applications to quantization that we will describe in the next section, as well as many of the con‐",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-quantization",
+      "number": "5",
+      "title": "Quantization",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1271,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chern simons",
+          "heading": false
+        },
+        {
+          "term": "quantization",
+          "heading": true
+        },
+        {
+          "term": "kinematical kernel",
+          "heading": false
+        },
+        {
+          "term": "pachner move",
+          "heading": false
+        },
+        {
+          "term": "ideal triangu",
+          "heading": false
+        },
+        {
+          "term": "ptolemy variables",
+          "heading": false
+        },
+        {
+          "term": "ideal tetrahedra",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulation",
+          "heading": false
+        }
+      ],
+      "extract": "Perhaps the most far-reaching consequences of Walter’s work on the combinator‐ ics of 3-dimensional triangulations have been the applications of the symplectic structure to quantization. Recall the definition of for a single tetrahedron as the abelian group with the symplectic structure (11). This symplectic structure on each space for any ideal tetrahedron leads to an integral Lagrangian subspace of ⇧ the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-connections-to-number-theory",
+      "number": "6",
+      "title": "Connections to number theory",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2520,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nahm conjecture",
+          "heading": false
+        },
+        {
+          "term": "nahm sums",
+          "heading": false
+        },
+        {
+          "term": "half-symplectic matrices",
+          "heading": false
+        },
+        {
+          "term": "half-symplectic matrix",
+          "heading": false
+        },
+        {
+          "term": "bloch group",
+          "heading": false
+        },
+        {
+          "term": "higher bloch",
+          "heading": false
+        },
+        {
+          "term": "extended bloch",
+          "heading": false
+        },
+        {
+          "term": "mat rix",
+          "heading": false
+        }
+      ],
+      "extract": "The paper [1] and its sequel [2] suggested or led to several interesting develop‐ ments in pure number theory as well as in topology. In this final section we de‐ scribe of a few of these. Values of Dedekind zeta functions and higher Bloch groups ⇧ An important subclass of hyperbolic manifolds are the arithmetic ones, where is either the Bianchi group for some imaginary quadratic field or more generally a group of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1224,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zbl",
+          "heading": false
+        },
+        {
+          "term": "chern simons",
+          "heading": false
+        },
+        {
+          "term": "arxiv math",
+          "heading": false
+        },
+        {
+          "term": "cheeger chern",
+          "heading": false
+        },
+        {
+          "term": "theory phys",
+          "heading": false
+        },
+        {
+          "term": "bibtex",
+          "heading": false
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "extended bloch",
+          "heading": false
+        }
+      ],
+      "extract": "[e1] S. Bloch: “Applications of the dilogarithm function in algebraic -theory and algeb‐ raic geometry,” pp. 103–​114 in Proceedings of the International Symposium on Algebraic ⇧ Geometry (Kyoto, 1977). Edited by M. Nagata. Kinokuniya Book Store (Tokyo), 1978. MR 578856 Zbl 0416.​18016 [e2] T. Yoshida: “The -invariant of hyperbolic 3-manifolds,” Invent. Math. 81 : 3 (1985), pp. 473–​514. MR 807069 Zbl 0594.​58012",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "hyperbolic manifolds",
+      "heading": false
+    },
+    {
+      "term": "bloch group",
+      "heading": true
+    },
+    {
+      "term": "hyperbolic volume",
+      "heading": false
+    },
+    {
+      "term": "extended bloch",
+      "heading": true
+    },
+    {
+      "term": "walter neumann",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic geometry",
+      "heading": false
+    },
+    {
+      "term": "higher bloch",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic structure",
+      "heading": false
+    },
+    {
+      "term": "complete hyperbolic",
+      "heading": false
+    },
+    {
+      "term": "bloch wigner",
+      "heading": false
+    },
+    {
+      "term": "dimensional hyperbolic",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic knot",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p23); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/celebratio-mathematica-neumann-hyperbolic-3-manifolds"
+  }
+}

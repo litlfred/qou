@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-h2o-bent-geometry",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:h2o-bent-geometry",
+  "kind": "remark",
+  "title": "Bent geometry and the four hydrogen-bond directions",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-h2o-molecular-braid",
+    "papers/quantum-observable-universe/blocks/def-ch4-molecular-braid"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-h2o-molecular-braid",
+  "tags": [
+    "water",
+    "H2O",
+    "bent-geometry",
+    "lone-pair",
+    "ice",
+    "hydrogen-bond"
+  ],
+  "text": "h2o-bent-geometry.md",
+  "provenance": "authored"
+}

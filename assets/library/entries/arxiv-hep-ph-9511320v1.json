@@ -1,0 +1,272 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-ph-9511320v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Over the last years, there has been considerable activity in the formulation of effective chiral Lagrangians including baryons, see e.g. [@gss; @jm; @dobo; @bkkm] or the recent review [@bkmrev]. Beyond leading order, such effective Lagrangians contain coefficients not fixed by symmetry, the so--called low--energy constants (LECs) [@wein79; @gl84]. In general, these LECs should be determined from phenomenology. However, in the baryon sector, there do not yet exist sufficiently many accurate data which allow to independently determine all these LECs. That is quite different from the meson sector",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-ph/9511320v1  15 Nov 1995\nTK 95 31\nCHIRAL LAGRANGIANS FOR BARYONS\nCOUPLED TO MASSIVE SPIN–1 FIELDS ⋆\nB. Borasoy a 1 , Ulf-G. Meißner a 2\naInstitut f¨ur Theoretische Kernphysik, Universit¨at Bonn\nNußallee 14–16, D-53115 Bonn, Germany\nAbstract\nWe analyze the eﬀective low–energy ﬁeld theory of Goldstone bosons and baryons\nchirally coupled to massive spin–1 ﬁelds. We use the electromagnetic baryon form\nfactors to demonstrate the formal equivalence between the vector and the tensor ﬁeld\nformulation for the spin–1 ﬁelds. We also discuss the origin of the so–called Weinberg\nterm in pion–nuc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Effective Lagrangian of Goldstones, Baryons and Spin--1 Fields",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-2-effective-lagrangian-of-goldstones-baryons-and.md",
+      "narrative": null,
+      "content": "To perform the calculations, we make use of the effective Goldstone boson--baryon Lagrangian. Our notation is identical to the one used in [@bkmz] and we compile here only some necessary definitions. Denoting by $\\phi$ the pseudoscalar Goldstone fields ($\\pi, K, \\eta$) and by $B$ the baryon octet ($N,\\Lambda,\\Sigma,\\Xi$), the effective Lagrangian takes the form (to one loop accuracy) $${\\cal L}_{\\rm eff} = {\\cal L}_{\\phi B}^{(1)} +  {\\cal L}_{\\phi B}^{(2)} +\n  {\\cal L}_{\\phi B}^{(3)} +\n  {\\cal L}_{\\phi B}^{(4)} + {\\cal L}_{\\phi}^{(2)}+ {\\cal L}_{\\phi}^{(4)}\n\\label{leff}$$ where the chiral dime",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Addition of Spin--1 Fields: Tensor Field Formulation",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-21-addition-of-spin--1-fields-tensor-field-formu.md",
+      "narrative": null,
+      "content": "First, let us discuss the chiral couplings of spin--1 fields to the Goldstone bosons in the tensor field formulation. We use the notation of Refs.[@reso; @reso1] and only write down the necessary definitions for our extension to include baryons. Representing massive spin--1 fields by an antisymmetric tensor is quite common in e.g. supergravity theories. One of the main advantages in the hadron sector is that there is no mixing between axials and pseudoscalars in such an approach. Our basic object is the antisymmetric tensor field $W_{\\mu \\nu}$ (which is a generic symbol for any vector or axial",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Addition of Spin--1 Fields: Vector Field Formulation",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-003-22-addition-of-spin--1-fields-vector-field-formu.md",
+      "narrative": null,
+      "content": "We now consider the three vector $V_\\mu$ representing the three degrees of freedom of a massive spin--1 vector field (the generalization to axials is straightforward). We do not assign any particular microscopic dynamics to this vector field, like it is e.g the case in the hidden symmetry [@bky] or the massive Yang--Mills approaches [@ulfpr]. $V_\\mu$ is assumed to have the standard transformation properties of any matter field under the non--linearly realized chiral symmetry, $$V_{\\mu} \\to h(\\phi,g) \\, V_{\\mu} \\, h(\\phi,g)^{-1} \\, \\, \\, .\n\\label{ccwzv}$$ The corresponding free--field Lagrangia",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Equivalence for Spin--1 Pole Contributions",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-004-23-equivalence-for-spin--1-pole-contributions.md",
+      "narrative": null,
+      "content": "We are now in the position to establish in steps the equivalenve between the effective Lagrangians ${\\cal L}_{B\\phi W}^{(1)}$ and ${\\cal L}_{B\\phi V}^{(1)}$. Comparing the effective actions, Eqs.([\\[sefft\\]](#sefft){reference-type=\"ref\" reference=\"sefft\"},[\\[seffv\\]](#seffv){reference-type=\"ref\" reference=\"seffv\"}), and making use of the first relation in Eq.([\\[relat\\]](#relat){reference-type=\"ref\" reference=\"relat\"}), one establishes the complete equivalence of the terms at order $q^3$ $$S_{D/F} \\, {\\rm Tr} \\, \\bigl[ \\bar{B} \\, \\gamma^\\mu \\, ( [D^\\nu,\nW_{\\mu \\nu}]\\, , \\, B) \\, \\bigr]\n\\quad {",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Electromagnetic Form Factors for the Baryon Octet",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-3-electromagnetic-form-factors-for-the-baryon-oc.md",
+      "narrative": null,
+      "content": "In this section, we want to establish the equivalence between the tensor and the vector field formulation by calculating the vector meson contribution to the electromagnetic form factors of the baryon octet. This is analogous to the pion form factor calculation performed in Ref.[@reso1]. First, we will give some basic definitions and then establish the equivalence.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basic Definitions",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-006-31-basic-definitions.md",
+      "narrative": null,
+      "content": "Consider an electromagnetic external vector source, $$v_\\mu = - e \\, A_\\mu \\, Q \\, \\, \\, ,\n\\label{vem}$$ where $e > 0$ is the unit charge, $A_\\mu$ denotes the photon field and $Q= (1/3) \\,$ diag$(2,-1,-1)$ is the quark charge matrix. We also have for the chiral connection $\\Gamma_\\mu = -i v_\\mu +{\\cal\n  O}(\\phi^2)$. In the tensor formulation, the antisymmetric currents $J_{\\mu \\nu}$ simplify to $$J^{\\mu \\nu} = \\frac{1}{2 \\sqrt{2}} \\, F_V \\, f_+^{\\mu \\nu} =\n- \\frac{e}{\\sqrt{2}} \\, F_V \\, Q \\, (\\partial^\\mu A^\\nu -\n\\partial^\\nu A^\\mu ) \\, \\, ,\n\\label{jmunuem}$$ and similarly for the vector formu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Vector Meson Contribution to the Electromagnetic Form Factors",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-007-32-vector-meson-contribution-to-the-electromagne.md",
+      "narrative": null,
+      "content": "We now calculate the vector meson contribution to the form factors $F_{1,2}^\\pm (t)$. A full chiral calculation would also involve the one loop contributions for the isovector form factors, these are e.g. given in Refs.[@gss; @bkkm]. For our purpose, these terms are of no relevance and are thus neglected here.\n\nConsider first the tensor field formulation. From the effective action, Eq.([\\[sefft\\]](#sefft){reference-type=\"ref\" reference=\"sefft\"}), it is straightforward to get the one--baryon transition matrix elements. To order $q^3$ in the effective action, i.e. to order $q^2$ in the form fact",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Vector Meson Contribution to Pion--Nucleon Scattering",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-008-4-vector-meson-contribution-to-pion--nucleon-sca.md",
+      "narrative": null,
+      "content": "Consider the vector meson contribution to the elastic Goldstone boson--baryon scattering amplitude, in particular $T( \\pi(q) + N(p) \\to \\pi(q') +\nN(p') )$, cf. Fig.1b. We will evaluate this for the vector and the tensor field formulations. In doing so, we make use of momentum conservation, $p+q = p' + q'$, the fact that the baryons are on--shell, $$( p\\!\\!\\!/ -m) \\,u(p) = \\, 0 \\,=  \\,\n\\bar{u}(p') \\,  ( p\\!\\!\\!/ ' -m) \\, \\, \\, ,$$ and also the Gordon decomposition, $$i \\, \\bar{u}(p') \\,  \\sigma^{\\mu \\nu} \\, ( p' -p)_\\nu \\, u(p) =\n\\, \\bar{u}(p') \\,  \\bigl( \\,2 m \\gamma^\\mu  - ( p' +p)^\\mu \\,\\big",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Loops with massive particles",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-009-5-loops-with-massive-particles.md",
+      "narrative": null,
+      "content": "Up to now, we have only considered tree graphs. However, it is well--known that in the relativistic formulation of baryon CHPT, loops can contribute below the chiral dimension one would expect (as detailed by Gasser et al. in Ref.[@gss]). Therefore, for the single vector-exchange graphs we consider, we have to be more careful. These general diagrams for Goldstone boson--baryon scattering (in forward direction) or the baryon electromagnetic form factors are shown in Fig.2. The shaded areas denote the whole class of multi--loop diagrams. To be precise, these are Goldstone boson loops. The blob o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Short Summary",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-010-6-short-summary.md",
+      "narrative": null,
+      "content": "In this paper, we have considered the coupling of massive spin--1 fields to the effective field theory of the Goldstone bosons and the ground state baryon octet. The corresponding Lagrangian is parametrized beyond leading order in terms of so--called low--energy constants. These can be estimated by $s$--channel baryonic and $t$--channel mesonic excitations. For the latter type of contributions, massive spin--1 fields (in particular vector mesons) play an important role. If one does not assume any particular underlying dynamics for these fields but only their transformation properties under non",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Construction Principles",
+      "pageStart": 19,
+      "pageEnd": 22,
+      "target": "../sections/sec-011-a-construction-principles.md",
+      "narrative": null,
+      "content": "Construction Principles\nHere, we collect a few useful formulae which are needed to construct the\neﬀective Lagrangians L(1)\nBφW and L(1)\nBφV . To the order we are working, we can\nmake use of the equation of motion for the baryon ﬁelds derived from L(1)\nBφ\niγµ[Dµ, B] −mB + 1\n2Dγµγ5{uµ, B} + 1\n2Fγµγ5[uµ, B] = 0 .\n(A.1)\nIn fact, only the chiral–covariant kinetic and the mass terms will be of rele-\nvance to the order we are working. It is worth to stress that we only consider\nprocesses with at most two external pions or one external vector source, like\ne.g. single vector–meson exchange in Goldstone",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "On the Equivalence from Dual Transformations",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "../sections/sec-012-b-on-the-equivalence-from-dual-transformations.md",
+      "narrative": null,
+      "content": "On the Equivalence from Dual Transformations\nHere, we wish to critically examine the approach of Ref.[13], were it was ar-\ngued that the equivalence between the tensor and vector ﬁeld formulations\ncan be shown formally by using path integral methods and a set of dual trans-\nformations as motivated by e.g. Refs.[26],[27]. The starting point of Ref.[13]\nis the generating functional in the presence of Goldstone bosons and external\nvector and axial–vector sources,\nZ[uµ, f +\nµν] =\nZ\n[DVµ] δ(∂µV µ)eiR\nd4x LV ,\n(B.1)\nwhere LV denotes the meson Lagrangian of Goldstone bosons chirally coupled\nto massiv",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

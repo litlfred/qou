@@ -1,0 +1,90 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9303139v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-hep-th-9303139v2",
+  "contains": [
+    "library/arxiv-hep-th-9303139v2/sections/sec-front-matter",
+    "library/arxiv-hep-th-9303139v2/sections/sec-000",
+    "library/arxiv-hep-th-9303139v2/sections/sec-001",
+    "library/arxiv-hep-th-9303139v2/sections/sec-002",
+    "library/arxiv-hep-th-9303139v2/sections/sec-003",
+    "library/arxiv-hep-th-9303139v2/sections/sec-004",
+    "library/arxiv-hep-th-9303139v2/sections/sec-005",
+    "library/arxiv-hep-th-9303139v2/sections/sec-006",
+    "library/arxiv-hep-th-9303139v2/sections/sec-007",
+    "library/arxiv-hep-th-9303139v2/sections/sec-008",
+    "library/arxiv-hep-th-9303139v2/sections/sec-009",
+    "library/arxiv-hep-th-9303139v2/sections/sec-010",
+    "library/arxiv-hep-th-9303139v2/sections/sec-011",
+    "library/arxiv-hep-th-9303139v2/sections/sec-012",
+    "library/arxiv-hep-th-9303139v2/sections/sec-013",
+    "library/arxiv-hep-th-9303139v2/sections/sec-014",
+    "library/arxiv-hep-th-9303139v2/sections/sec-015",
+    "library/arxiv-hep-th-9303139v2/sections/sec-016",
+    "library/arxiv-hep-th-9303139v2/sections/sec-017",
+    "library/arxiv-hep-th-9303139v2/sections/sec-018",
+    "library/arxiv-hep-th-9303139v2/sections/sec-019",
+    "library/arxiv-hep-th-9303139v2/sections/sec-020",
+    "library/arxiv-hep-th-9303139v2/sections/sec-021",
+    "library/arxiv-hep-th-9303139v2/sections/sec-022",
+    "library/arxiv-hep-th-9303139v2/sections/sec-023",
+    "library/arxiv-hep-th-9303139v2/sections/sec-024",
+    "library/arxiv-hep-th-9303139v2/sections/sec-025",
+    "library/arxiv-hep-th-9303139v2/sections/sec-026",
+    "library/arxiv-hep-th-9303139v2/sections/sec-027",
+    "library/arxiv-hep-th-9303139v2/sections/sec-028",
+    "library/arxiv-hep-th-9303139v2/sections/sec-029",
+    "library/arxiv-hep-th-9303139v2/sections/sec-030",
+    "library/arxiv-hep-th-9303139v2/sections/sec-031",
+    "library/arxiv-hep-th-9303139v2/sections/sec-032",
+    "library/arxiv-hep-th-9303139v2/sections/sec-033",
+    "library/arxiv-hep-th-9303139v2/sections/sec-034",
+    "library/arxiv-hep-th-9303139v2/sections/sec-035"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "arXiv:hep-th/9303139v2 5 Apr 1993 — The theory of matrix models is reviewed from the point of view of its relation to integrable hierarchies.\n\n**arXiv:hep-th/9303139v2 5 Apr 1993**\n\n149 pp, 37 sections.\n\n**Abstract.** The theory of matrix models is reviewed from the point of view of its relation to integrable hierarchies. Discrete 1-matrix, 2-matrix, ”conformal” (multicomponent) and Kontsevich models are considered in some detail, to- gether with the Ward identites (”W-constraints”), determinantal formulas and continuum limits, taking one kind of models into another. Subtle points and directions of the future research are also discussed. Lectures presented at the University of Amsterdam and the Dutch Institute for High Energy Physics(NIKHEF) in February-March 1993 1ITEP 117259 Moscow; morozov@vxdesy.desy.de 1\n\n**Outline.** Front matter; 1 Introduction; 2 Ward identities for the simplest matrix mode; 2.1 Ward identites versus equations of motion; 2.2 Virasoro constraints for the discrete 1-ma; 2.3 CFT formulation of matrix models; 2.4 Gross-Newman equation; 2.5 Ward identities for Generalized Kontsevich; 2.6 Discrete Virasoro constraints for the Gaus; 2.7 Continuous Virasoro constraints for the $V; 3 Eigenvalue models; 3.1 What are eigenvalue models; 3.2 1-matrix model; 3.3 Itzykson-Zuber and Kontsevich integrals; 3.4 Conventional Multimatrix models; 3.5 Determinant formulas for eigenvalue models; 3.6 Orthogonal polinomials; 3.7 Scalar-product models in Miwa parametrizat",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-th/9303139&metadataPrefix=arXiv), submitted 1993-04-05, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-hep-th-9303139v2",
+    "title_source": "slug",
+    "source_file": "9303139v2.pdf",
+    "source_sha256": "79b9a45fd4c5b4aa3aa48371f4f2fa91f812c0f42cc6a9445931a4ba286f79af",
+    "pages": 149,
+    "arxiv": {
+      "id": "hep-th/9303139",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "5 Apr 1993"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

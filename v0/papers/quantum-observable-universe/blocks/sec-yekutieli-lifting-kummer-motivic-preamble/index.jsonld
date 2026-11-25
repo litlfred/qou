@@ -1,0 +1,18 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/sec-yekutieli-lifting-kummer-motivic-preamble",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "sec:yekutieli-lifting-kummer-motivic-preamble",
+  "kind": "prose",
+  "text": "yekutieli-lifting-kummer-motivic-intro.md",
+  "provenance": "authored"
+}

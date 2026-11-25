@@ -1,0 +1,712 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "du-1995-algebra-colloq-2-363",
+  "title": "A note on quantized Weyl reciprocity at roots of unity",
+  "variant": "pdf",
+  "pages": 13,
+  "tocSource": "undetermined",
+  "tocMethod": "font",
+  "toc": [],
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 279,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantized kostant",
+          "heading": false
+        },
+        {
+          "term": "weyl reciprocity",
+          "heading": false
+        },
+        {
+          "term": "quantized enveloping",
+          "heading": false
+        },
+        {
+          "term": "enveloping algebra",
+          "heading": false
+        },
+        {
+          "term": "q-schur",
+          "heading": false
+        },
+        {
+          "term": "schur",
+          "heading": false
+        },
+        {
+          "term": "actions",
+          "heading": false
+        }
+      ],
+      "extract": "Algebra Colloquium, 2 (1995), 363–372. A NOTE ON QUANTIZED WEYL RECIPROCITY AT ROOTS OF UNITY Jie Du School of Mathematics University of New South Wales Sydney, 2052, Australia In this note we show that the epimorphism over Q(v) from the quantized enveloping algebra U to a q-Schur algebra can be taken up to any ﬁeld via the quantized Kostant Z[v, v−1]-form of U. 0. Introduction Let n, r be integers ⩾1 and let V be a",
+      "extractCut": true,
+      "blocks": [
+        "library/du-1995-algebra-colloq-2-363/blocks/prose-page-001",
+        "library/du-1995-algebra-colloq-2-363/blocks/figure-img-p001-1"
+      ]
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 407,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kostant a-form",
+          "heading": false
+        },
+        {
+          "term": "quantized kostant",
+          "heading": false
+        },
+        {
+          "term": "q-schur algebra",
+          "heading": false
+        },
+        {
+          "term": "quantized weyl",
+          "heading": false
+        },
+        {
+          "term": "weyl reciprocity",
+          "heading": false
+        },
+        {
+          "term": "commuting actions",
+          "heading": false
+        },
+        {
+          "term": "quantum version",
+          "heading": false
+        },
+        {
+          "term": "sydney",
+          "heading": false
+        }
+      ],
+      "extract": "A-form of U (deﬁned in §2). For a specialization A →C with q being the image of v, we put Uq = U ⊗C. Replacing the commuting actions of GL(V) and Sr on V⊗r by commuting actions of the quantized enveloping algebra Uq and of the Hecke algebra Hq corresponding to Sr, we obtain the quantum version over C of (0.a) with Schur algebras replaced by the so-called q-Schur algebras. M. Jimbo proved in [Ji] a quantized Weyl",
+      "extractCut": true,
+      "blocks": [
+        "library/du-1995-algebra-colloq-2-363/blocks/prose-page-002"
+      ]
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 289,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "u-module",
+          "heading": false
+        },
+        {
+          "term": "quantized deformation",
+          "heading": false
+        },
+        {
+          "term": "enveloping algebra",
+          "heading": false
+        },
+        {
+          "term": "universal enveloping",
+          "heading": false
+        }
+      ],
+      "extract": "and relations KiKj = KjKi, KiK−1 i = 1 KiEj,k = vϵ(i,j,k)Ej,kKi, where ϵ(i, j, k) = 1 if (i, j, k) = (a, a, a + 1) or (a, a, a −1), and −1 if (i, j, k) = (a, a −1, a) or (a, a + 1, a), EijEkh = EkhEij for j̸ = k and i̸ = h Ei,i+1Ei+1,i −Ei+1,iEi,i+1 = Ki,i+1 −K−1 i,i+1 v −v−1 E2 ijEjk −(v + v−1)EijEjkEij + EjkE2 ij = 0 where (i, j, k) = (a, a + 1, a + 2) or (a, a −1, a −2), and Ki,i+1 = KiK−1 i+1. The algebra U is",
+      "extractCut": true,
+      "blocks": [
+        "library/du-1995-algebra-colloq-2-363/blocks/prose-page-003"
+      ]
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 392,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dpw",
+          "heading": false
+        },
+        {
+          "term": "eir",
+          "heading": false
+        },
+        {
+          "term": "eij",
+          "heading": false
+        },
+        {
+          "term": "aij",
+          "heading": false
+        },
+        {
+          "term": "corresponding representation",
+          "heading": false
+        },
+        {
+          "term": "dim",
+          "heading": false
+        }
+      ],
+      "extract": "Δ(2) = Δ and Δ(i) = ( id⊗(i−2) U ⊗Δ) ◦Δ(i−1). We denote by ρr : U →End(E⊗r) the corresponding representation. Let H be the Hecke algebra over A associated with the symmetric group Sr on r letters. We denote by {Tw}w∈Sr the standard basis for H. Deﬁne a right action of H on E⊗r (see e.g. [GL,1.12] or [DPW,§5]) by (ei1⊗· · ·⊗eir)T(j,j+1) = ⎧ ⎪ ⎪ ⎪ ⎨ ⎪ ⎪ ⎪ ⎩ vei1 ⊗· · ·⊗eij+1 ⊗eij ⊗· · ·⊗eir, if ij < ij+1; v2ei1 ⊗· ·",
+      "extractCut": true,
+      "blocks": [
+        "library/du-1995-algebra-colloq-2-363/blocks/prose-page-004",
+        "library/du-1995-algebra-colloq-2-363/blocks/thm-page-004-01"
+      ]
+    },
+    {
+      "id": "page-005",
+      "number": null,
+      "title": "Page 5",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 382,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dimv",
+          "heading": false
+        },
+        {
+          "term": "double coset",
+          "heading": false
+        },
+        {
+          "term": "resp",
+          "heading": false
+        },
+        {
+          "term": "column",
+          "heading": false
+        },
+        {
+          "term": "subalgebra",
+          "heading": false
+        },
+        {
+          "term": "matrices",
+          "heading": false
+        }
+      ],
+      "extract": "Clearly, if (f, f ′) ∈OA as in (1.3.a) then ro(A) = (dimV1, dimV2/V1, · · · , dimVn/Vn−1) and co(A) = (dimV ′ 1, dimV ′ 2/V ′ 1, · · · , dimV ′ n/V ′ n−1). For A, A′, A′′ ∈Θr, there exist integers c0, c1, · · · , cm such that for any ﬁnite ﬁeld F = Fq of q elements, we have (see [BLM, Proposition 1.2]) gA,A′,A′′,q = #{f ∈F | (f1, f) ∈OA, (f, f2) ∈OA′} = c0 + c1q + · · · + cmqm, where (f1, f2) ∈OA′′. Put gA,A′,A′′ =",
+      "extractCut": true,
+      "blocks": [
+        "library/du-1995-algebra-colloq-2-363/blocks/prose-page-005",
+        "library/du-1995-algebra-colloq-2-363/blocks/rem-page-005-01"
+      ]
+    },
+    {
+      "id": "page-006",
+      "number": null,
+      "title": "Page 6",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 333,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eij",
+          "heading": false
+        },
+        {
+          "term": "endh",
+          "heading": false
+        },
+        {
+          "term": "blm",
+          "heading": false
+        },
+        {
+          "term": "aij",
+          "heading": false
+        },
+        {
+          "term": "u-module",
+          "heading": false
+        }
+      ],
+      "extract": "(1) ro(A) = λ and co(A) = μ, and (2) W d λ ∩Wμ = Wν where ν = (ν(1), · · · , ν(n)) with ν(i) = (a1i, · · · , ani). Then the linear isomorphism sending eA to φd λμ gives the required isomorphism of algebras from Sn,r to Sq(n, r). 1.5 Let Θ be the set of n×n matrices with non-negative integer entries, σ : Θ →N the map sending A = (aij) to σA = aij. Thus, σ−1(r) = Θr. Denote by D the set of all diagonal matrices in Θ",
+      "extractCut": true,
+      "blocks": [
+        "library/du-1995-algebra-colloq-2-363/blocks/prose-page-006"
+      ]
+    },
+    {
+      "id": "page-007",
+      "number": null,
+      "title": "Page 7",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 264,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "a-subalgebra",
+          "heading": false
+        },
+        {
+          "term": "aij",
+          "heading": false
+        },
+        {
+          "term": "a-free",
+          "heading": false
+        }
+      ],
+      "extract": "2. The A-subalgebra U 2.1 Let U0 be the A-subalgebra of U generated by Ki, K−1 i , and U 0 the A- subalgebra of U0 generated by Ki, K−1 i , Ki; c t , where Ki; c t = t s=1 Kivc−s+1 −K−1 i v−c+s−1 vs −v−s for 1 ≤i ≤n, t ∈N, c ∈Z. One checks easily that these generators satisfy the relations (g1)–(g5) in [Lu3]. By [loc. cit.] we have the following. Lemma. U 0 is a free A-module with basis Kδ1 1 · · · Kδn n K1; 0 t1 ·",
+      "extractCut": true,
+      "blocks": [
+        "library/du-1995-algebra-colloq-2-363/blocks/prose-page-007",
+        "library/du-1995-algebra-colloq-2-363/blocks/lem-page-007-01",
+        "library/du-1995-algebra-colloq-2-363/blocks/prop-page-007-02"
+      ]
+    },
+    {
+      "id": "page-008",
+      "number": null,
+      "title": "Page 8",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 348,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "t1t",
+          "heading": false
+        },
+        {
+          "term": "gebra",
+          "heading": false
+        },
+        {
+          "term": "a-subalgebra",
+          "heading": false
+        },
+        {
+          "term": "lemma implies",
+          "heading": false
+        }
+      ],
+      "extract": "Assume now that (2.3.a) is true for all t < m. By [L1, (2.3)(g9)–(g10)], we have K−1 i,i+1; c t ∈U for all c ∈Z and t < m. With this and using the commutation relation again, we see that (2.3.a) is true for t = m. So the result is proved. □ 2.4 Corollary. Let ′U be deﬁned as in (1.1). Then ′U is a subalgebra of U. □ 2.5 Corollary. For any i, 1 ≤i ≤n, and t ∈N, we have K−1 i,i+1; 0 t ∈U 0. In particular, the",
+      "extractCut": true,
+      "blocks": [
+        "library/du-1995-algebra-colloq-2-363/blocks/prose-page-008",
+        "library/du-1995-algebra-colloq-2-363/blocks/cor-page-008-01",
+        "library/du-1995-algebra-colloq-2-363/blocks/cor-page-008-02",
+        "library/du-1995-algebra-colloq-2-363/blocks/lem-page-008-03",
+        "library/du-1995-algebra-colloq-2-363/blocks/prop-page-008-04"
+      ]
+    },
+    {
+      "id": "page-009",
+      "number": null,
+      "title": "Page 9",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 301,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aij",
+          "heading": false
+        },
+        {
+          "term": "eij",
+          "heading": false
+        },
+        {
+          "term": "kja",
+          "heading": false
+        },
+        {
+          "term": "kjn",
+          "heading": false
+        }
+      ],
+      "extract": "2.8 Remark. (1) As we deﬁne ′U in (1.1), we can deﬁne naturally an A-subalgebra ′′U of U to be the algebra generated by E(t) ij , |i −j| = 1, and Ki, K−1 i . Thus, we have ′U ⊊′′U ⊊U. (2) The restrictions to U of the maps ρr (1.2) and αr (1.5) give rise to two A-algebra maps from U to EndH(E⊗r) and from U to Sn,r. The former is the quantized version of the ﬁrst map in (0.a). We shall prove that the latter is",
+      "extractCut": true,
+      "blocks": [
+        "library/du-1995-algebra-colloq-2-363/blocks/prose-page-009",
+        "library/du-1995-algebra-colloq-2-363/blocks/rem-page-009-01",
+        "library/du-1995-algebra-colloq-2-363/blocks/lem-page-009-02"
+      ]
+    },
+    {
+      "id": "page-010",
+      "number": null,
+      "title": "Page 10",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 267,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diag",
+          "heading": false
+        },
+        {
+          "term": "a-algebra",
+          "heading": false
+        },
+        {
+          "term": "aij",
+          "heading": false
+        }
+      ],
+      "extract": "for any D̸ = D′ with σA + σD = σA + σD′ = r. Note also that O(0) = D∈Dr[D], where O is the zero matrix, is the identity element of Sn,r. These observations have proved the following lemma. 3.3 Lemma. Let A = (aij) ∈Θr and A0 = A −diag(a11, · · · , ann) ∈Θ0. Then [A] = [D]A0(0) = A0(0)[D′] in Sn,r for some D, D′ ∈Dr with co(D) = ro(A) and ro(D′) = co(A). □ 3.4 Theorem. For each r > 0, the A-algebra homomorphism αr :",
+      "extractCut": true,
+      "blocks": [
+        "library/du-1995-algebra-colloq-2-363/blocks/prose-page-010",
+        "library/du-1995-algebra-colloq-2-363/blocks/lem-page-010-01",
+        "library/du-1995-algebra-colloq-2-363/blocks/thm-page-010-02"
+      ]
+    },
+    {
+      "id": "page-011",
+      "number": null,
+      "title": "Page 11",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 280,
+      "summary": null,
+      "keywords": [],
+      "extract": "Note also that [D][D′] = δD,D′[D] for all D, D′ ∈Dr. Thus, we have (3.4.a) αr Ki; 0 t = αr \u0007 t s=1 Kiv−s+1 −K−1 i vs−1 vs −v−s = t s=1 ⎛ ⎝ r \b j=0 vj−s+1 −v−(j−s+1) vs −v−s Di(j) ⎞ ⎠ = r \b j=0 \u0007 t s=1 vj−s+1 −v−(j−s+1) vs −v−s Di(j) = r \b j=0 j t Di(j), where j t = \u0002t s=1 vj−s+1−v−(j−s+1) vs−v−s is the Gaussian binomial coeﬃcient. Now, we are ready to prove the case when m = 1. Note ﬁrst that j t = 0 for 0 ≤j < t.",
+      "extractCut": true,
+      "blocks": [
+        "library/du-1995-algebra-colloq-2-363/blocks/prose-page-011"
+      ]
+    },
+    {
+      "id": "page-012",
+      "number": null,
+      "title": "Page 12",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 371,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-schur algebras",
+          "heading": false
+        },
+        {
+          "term": "modular representations",
+          "heading": false
+        },
+        {
+          "term": "endh",
+          "heading": false
+        },
+        {
+          "term": "lusztig",
+          "heading": false
+        },
+        {
+          "term": "math",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst equality",
+          "heading": false
+        },
+        {
+          "term": "gln",
+          "heading": false
+        },
+        {
+          "term": "contemp",
+          "heading": false
+        }
+      ],
+      "extract": "Solving the simultaneous equations (3.4.b) and (3.4.c), and noting that the expres- sion on the L. H. S. of (3.4.b) and (3.4.c) are in αr(U), we obtain that D(a1, · · · , am−1, j) ∈αr(U) for all j, 0 ≤j ≤r −s. □ As mentioned in (2.8), this result together with (1.5.b) and the isomorphism Sn,r ∼= EndH(T ) imply the following. 3.5 Corollary. The algebra homomorphism ρr : U →EndH(E⊗r) is surjective. By now, we have",
+      "extractCut": true,
+      "blocks": [
+        "library/du-1995-algebra-colloq-2-363/blocks/prose-page-012",
+        "library/du-1995-algebra-colloq-2-363/blocks/cor-page-012-01",
+        "library/du-1995-algebra-colloq-2-363/blocks/thm-page-012-02"
+      ]
+    },
+    {
+      "id": "page-013",
+      "number": null,
+      "title": "Page 13",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 43,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unsw",
+          "heading": false
+        },
+        {
+          "term": "glq",
+          "heading": false
+        },
+        {
+          "term": "princeton",
+          "heading": false
+        }
+      ],
+      "extract": "[L2] G. Lusztig, Finite dimensional Hopf algebras arising from quantized enveloping algebras, J. Amer. Math. Soc. 3 (1990), 257–296. [Ta] M. Takeuchi, Some topics on GLq(n), J. Algebra 147 (1992), 379–410. [W] H. Weyl, Classical groups, Princeton University Press, Princeton, 1953. E-mail: j.du@unsw.edu.au",
+      "extractCut": false,
+      "blocks": [
+        "library/du-1995-algebra-colloq-2-363/blocks/prose-page-013"
+      ]
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "q-schur algebra",
+      "heading": false
+    },
+    {
+      "term": "quantized enveloping",
+      "heading": false
+    },
+    {
+      "term": "quantized kostant",
+      "heading": false
+    },
+    {
+      "term": "quantized weyl",
+      "heading": false
+    },
+    {
+      "term": "aij",
+      "heading": false
+    },
+    {
+      "term": "quantized deformation",
+      "heading": false
+    },
+    {
+      "term": "weyl reciprocity",
+      "heading": false
+    },
+    {
+      "term": "hecke algebra",
+      "heading": false
+    },
+    {
+      "term": "blm",
+      "heading": false
+    },
+    {
+      "term": "eij",
+      "heading": false
+    },
+    {
+      "term": "subalgebra generated",
+      "heading": false
+    },
+    {
+      "term": "a-subalgebra",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "not-extracted",
+      "note": "split one section per page; no contents was trusted"
+    },
+    {
+      "kind": "sections",
+      "state": "partial",
+      "count": 13,
+      "note": "one per page, not by heading"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p12); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 13 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/du-1995-algebra-colloq-2-363"
+  }
+}

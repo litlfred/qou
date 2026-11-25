@@ -1,0 +1,319 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1101.3374v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1101.3374v1/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.3374v1/blocks/prop-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 9,
+      "target": "prop-sec-000-01.md",
+      "narrative": null,
+      "content": "Furthermore, it was observed above that if $h\\in\\so(4)$ is an orientation preserving isometry of $S^3$, then $e_{h(L)} = h\\cdot e_L$ where $\\cdot$ is the diagonal action, and so the integrands in the formulas for Milnor's triple linking number $\\mu(L)$ in \\thmref{B} are invariant under the action of $\\so(4)$.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.3374v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 9,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "\\label{sec:intro}\n\n\\begin{wrapfigure}[10]{l}{35mm}\n  \\begin{center}\n  \\includegraphics[height=100pt]{cremona7.jpg}\n  \\put(-88,-12){\\small\\bf Borromean Rings}\n\n  \\end{center}\n\\label{fig:borromean}\n\\end{wrapfigure}\nThree-component links in the $3$-sphere $S^3$ were classified up to {\\itb link homotopy} -- a deformation during which each component may cross itself but distinct components must remain disjoint -- by John Milnor in his senior thesis, published in 1954.   A complete set of invariants is given by the pairwise linking numbers $p$, $q$ and $r$ of the components, and by the residue class",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.3374v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "PONTRYAGIN INVARIANTS AND INTEGRAL FORMULAS\nFOR MILNOR’S TRIPLE LINKING NUMBER\nDENNIS DETURCK, HERMAN GLUCK, RAFAL KOMENDARCZYK,\nPAUL MELVIN, CLAYTON SHONKWILER, AND DAVID SHEA VELA-VICK\nAbstract. To each three-component link in the 3-sphere, we associate a geometrically\nnatural characteristic map from the 3-torus to the 2-sphere, and show that the pairwise\nlinking numbers and Milnor triple linking number that classify the link up to link ho-\nmotopy correspond to the Pontryagin invariants that classify its characteristic map up\nto homotopy. This can be viewed as a natural extension of the fami",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.3374v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Milnor -invariant",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-001-2-the-milnor--invariant.md",
+      "narrative": null,
+      "content": "[]{#sec:milnor label=\"sec:milnor\"}\n\nLet $L$ be a three-component link in either $\\mathbb R^3$ or $S^3$, with oriented components $X$, $Y$ and $Z$, and pairwise linking numbers $p$, $q$ and $r$. Milnor's original definition of the triple linking number $\\mu(L)$, typically denoted $\\bar\\mu_{123}(L)$, was algebraic. The formulation in his PhD thesis [@Milnor57] is expressed in terms of the lower central series of the link group $G$, the fundamental group of the complement of $L$, as follows.\n\nChoose based meridians for the link components $X$, $Y$ and $Z$, and let $x$, $y$ and $z$ denote the corr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.3374v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Pontryagin -invariant",
+      "pageStart": 12,
+      "pageEnd": 20,
+      "target": "../sections/sec-002-3-the-pontryagin--invariant.md",
+      "narrative": null,
+      "content": "[]{#sec:pontryagin label=\"sec:pontryagin\"}\n\nHeinz Hopf proved in 1931 that homotopy classes of maps from the $3$-sphere to the $2$-sphere are in one-to-one correspondence with the integers via his now famous Hopf invariant. Pontryagin [@Pontryagin41] generalized this to give the homotopy classification for maps from an arbitrary finite $3$-complex to the $2$-sphere. It is convenient for our purposes to restrict to smooth maps from $3$-manifolds to the $2$-sphere, and to use Poincaré duality to take Pontryagin's result, originally presented via cohomology, and reformulate it in homological term",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.3374v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Explicit formulas for the characteristic map",
+      "pageStart": 20,
+      "pageEnd": 25,
+      "target": "../sections/sec-003-4-explicit-formulas-for-the-characteristic-map.md",
+      "narrative": null,
+      "content": "[]{#sec:characteristic label=\"sec:characteristic\"}\n\nIn this section we give an explicit diffeomorphism from the Grassmann manifold $\\mathrm{G}_2\\mathbb R^4$ of oriented $2$-planes through the origin in $4$-space to a product of two $2$-spheres, and then use it to give a formula for the characteristic map $g_L:T^3\\to S^2$ of a three-component link $L$ in the $3$-sphere.\n\nWe also describe an alternative form $h_L:T^3\\to S^2$ of the characteristic map, homotopic to $g_L$ but more convenient for the proof of Theorem [\\[thm:A\\]](#thm:A){reference-type=\"ref\" reference=\"thm:A\"} that we will give in S",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.3374v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Pontryagin -invariant of the characteristic map",
+      "pageStart": 25,
+      "pageEnd": 41,
+      "target": "../sections/sec-004-5-the-pontryagin--invariant-of-the-characteristi.md",
+      "narrative": null,
+      "content": "[]{#sec:Aprep label=\"sec:Aprep\"}\n\nFix a link $L$ in $S^3$ with three components $X$, $Y$ and $Z$ parametrized by $x=x(s)$, $y=y(t)$ and $z=z(u)$. Recalling that $S^3$ is regarded as the group of unit quaternions, the asymmetric characteristic map $h_L:T^3\\to S^2$ is given by $$h_L(s,t,u) \\ = \\ (y_z-x_z)/|y_z-x_z|$$ where $a_z$ is an abbreviation for the vector $\\mathrm{pr}_{-1}(-a\\bar z)$ in pure imaginary quaternion $3\\text{-space}$ $\\mathbb R^3$. To carry out the proof of Theorem [\\[thm:A\\]](#thm:A){reference-type=\"ref\" reference=\"thm:A\"}, we need a way to compute the absolute Pontryagin $\\n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.3374v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem ??",
+      "pageStart": 41,
+      "pageEnd": 43,
+      "target": "../sections/sec-005-6-proof-of-theorem.md",
+      "narrative": null,
+      "content": "Let L be a three-component link in the 3-sphere with characteristic map gL : T 3 →S2.\nTheorem A asserts that the degrees of gL on the coordinate 2-tori of T 3 are equal to the\npairwise linking numbers p, q and r of the components of L, and that Pontryagin’s absolute\nν-invariant of gL is equal to twice Milnor’s triple linking number µ(L) mod 2 gcd(p, q, r).\nThe ﬁrst statement was proved easily at the end of Section 4. We now prove the second\nstatement by an inductive argument, relying heavily on the techniques and results of the\nlast section. Throughout, we will use the asymmetric characteristi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.3374v1/blocks/thm-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 43,
+      "target": "thm-sec-005-01.md",
+      "narrative": null,
+      "content": "asserts that the degrees of gL on the coordinate 2-tori of T 3 are equal to the pairwise linking numbers p, q and r of the components of L, and that Pontryagin’s absolute ν-invariant of gL is equal to twice Milnor’s triple linking number µ(L) mod 2 gcd(p, q, r). The ﬁrst statement was proved easily at the end of Section 4. We now prove the second statement by an inductive argument, relying heavily on the techniques and results of the last section. Throughout, we will use the asymmetric characteristic map hL : T 3 →S2 in place of gL, since these two maps are homotopic. Proof of the base case of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.3374v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sketch of an algebraic proof of Theorem ??",
+      "pageStart": 43,
+      "pageEnd": 45,
+      "target": "../sections/sec-006-7-sketch-of-an-algebraic-proof-of-theorem.md",
+      "narrative": null,
+      "content": "[]{#sec:A' label=\"sec:A'\"}\n\nIn this section we sketch an entirely different proof of the theorem using string links and maps of the $2$-torus to the $2$-sphere. The reader is referred to our paper [@DGKMSV] for more details.\n\nThe proof is organized around the following key diagram, in which the left half, devoid of algebraic structure, represents the topological problem we are trying to solve, while the right half represents the algebraic structures that we impose on the left half via the two horizontal maps in order to solve the problem.\n\n$$\\label{eqn:keydiagram}\n\\begin{diagram}[size=3em]\n\\fb",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.3374v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem ??, formulas (1) and (2)",
+      "pageStart": 45,
+      "pageEnd": 48,
+      "target": "../sections/sec-007-8-proof-of-theorem-formulas-1-and-2.md",
+      "narrative": null,
+      "content": "[]{#sec:B label=\"sec:B\"}\n\nTheorem [\\[thm:B\\]](#thm:B){reference-type=\"ref\" reference=\"thm:B\"} provides three formulas for Milnor's $\\mu$-invariant of a three-component link $L$ in $S^3$ whose pairwise linking numbers vanish:\n\n$(1)$ (differential forms)  $\\mu(L) \\ = \\ \\displaystyle{\\frac12\\, \\int_{T^3} \\delta(\\varphi*\\omega_L) \\wedge \\omega_L}$\n\n$(2)$ (vector fields)  $\\mu(L) \\ = \\ \\displaystyle{\\frac12\\, \\int_{T^3\\times T^3} \\overset{\\scriptstyle{}_\\rightharpoonup}{\\textup{\\bf v}}_L(\\textup{\\bf x}) \\times \\overset{\\scriptstyle{}_\\rightharpoonup}{\\textup{\\bf v}}_L(\\textup{\\bf y}) \\,\\,\\raisebox{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.3374v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fourier series and the Proof of Theorem ??, formula (3)",
+      "pageStart": 48,
+      "pageEnd": 56,
+      "target": "../sections/sec-008-9-fourier-series-and-the-proof-of-theorem-formul.md",
+      "narrative": null,
+      "content": "[]{#sec:B' label=\"sec:B'\"}\n\n-.2in -.2in\n\nIn the proofs of formulas (1) and (2) of Theorem [\\[thm:B\\]](#thm:B){reference-type=\"ref\" reference=\"thm:B\"}, we needed to find a 1-form $\\alpha$ on $T^3$ whose exterior derivative is the exact 2-form $\\omega_L$ associated with the three-component link $L$ in $S^3$. We asserted that we can choose $\\alpha=\\delta(\\varphi* \\omega_L)$, where $\\varphi$ is the fundamental solution of the scalar Laplacian on $T^3$. Furthermore, we asserted that this choice of $\\alpha$ is canonical in the sense that it has the smallest $L^2$ norm among all possible choices. We",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.3374v1/blocks/figure-img-p050-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 50,
+      "pageEnd": 50,
+      "target": "../images/img-p050-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1101.3374v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix. Whitehead's integral formula for the Hopf invariant",
+      "pageStart": 56,
+      "pageEnd": 57,
+      "target": "../sections/sec-009-appendix-whiteheads-integral-formula-for-the-hop.md",
+      "narrative": null,
+      "content": "We take this opportunity to make J. H. C. Whitehead’s integral formula for the Hopf\ninvariant of a map f : S3 →S2 explicit, and have relegated it to an appendix because we\ndo not use the result in this paper.\nRecall from Section 8 Whitehead’s formula,\nHopf(f) =\nZ\nS3 α ∧ωf,\nwhere ωf = f∗ω is the pullback to S3 of the normalized area form ω on S2, and α is any\n1-form on S3 such that dα = ωf. To make this formula explicit requires a way to produce\nsuch an α.\nTo do this, we ﬁrst write Whitehead’s formula in the language of vector ﬁelds,\nHopf(f) =\nZ\nS3\n⇀a·\n⇀vf d vol,\nwhere the 2-form ωf on S3 has b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.3374v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 57,
+      "pageEnd": 60,
+      "target": "../sections/sec-010-references.md",
+      "narrative": null,
+      "content": "[1820]\nJean-Baptiste Biot and Felix Savart, Note sur le magnetisme de la pile de Volta, Annales\nde Chimie et de Physique, 2nd ser. 15, 222–223.\n[1824]\nJean-Baptiste Biot, Precise Elementaire de Physique Experimentale, 3rd ed., vol. II, Chez\nDeterville, Paris.\n[1833]\nCarl Friedrich Gauss, Integral formula for linking number, Zur Mathematischen Theorie der\nElectrodynamische Wirkungen (Collected Works, Vol. 5), Koniglichen Gesellschaft des Wis-\nsenschaften, G¨ottingen, 2nd ed., p. 605.\n[1931]\nHeinz Hopf, ¨Uber die Abbildungen der dreidimensionalen Sph¨are auf die Kugelﬂ¨ache, Math.\nAnn. 104, 637–",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1101.3374v1/blocks/figure-img-p060-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 60,
+      "pageEnd": 60,
+      "target": "../images/img-p060-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

@@ -1,0 +1,865 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1706.06168v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "In 1914, Pólya and Schur [@polya1914zwei] characterized the set of diagonal linear operators on polynomials which preserve real-rootedness. Since this seminal paper, much work has been done in extending this characterization to other classes of linear operators. This program in essence came to a close in 2009 with a paper of Borcea and Brändén [@bb1], which gave a complete characterization of linear operators on polynomials which preserve real-rootedness.\n\nTheir real-rootedness preservation characterization is derived from a more general result pertaining to stable polynomials. Given $\\Omega \\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1706.06168v3  [math.CV]  6 Aug 2021\nA Representation Theoretic Explanation of the Borcea-Br¨and´en\nCharacterization\nJonathan Leake\nAugust 9, 2021\nAbstract\nIn 2009, Borcea and Br¨and´en characterized all linear operators on multivariate polynomials which\npreserve the property of being non-vanishing (stable) on products of prescribed open circular regions.\nWe give a representation theoretic interpretation of their ﬁndings, which generalizes and simpliﬁes their\nresult and leads to a conceptual uniﬁcation of many related results in polynomial stability theory. At the\nheart of this uniﬁcation",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-2-preliminaries.md",
+      "narrative": null,
+      "content": "Preliminaries",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Notation",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-21-notation.md",
+      "narrative": null,
+      "content": "more detail the notation and consequences related to the use of homogeneous polynomials in place of usual\nunivariate and mutlivariate polynomials. Then, we state a number of basic stability results in the language\nof homogeneous polynomials.\n2.1\nNotation\nLet [n] := {1, 2, . . ., n} and (1m) := (1, . . . , 1) ∈Nm\n0 . For λ = (λ1, . . . , λm) ∈Nm\n0 , we deﬁne:\nCλ[x1, . . . , xm] :=\n\b\nf ∈C[x1, . . . , xm] : degxk(f) ≤λk\n\t\nThat is, elements of Cλ[x1, . . . , xm] are of degree at most λk in the variable xk.\nIn particular, we call\npolynomials in C(1m)[x1, . . . , xm] multi-aﬃne. We will also use the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Homogeneous Polynomials",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-22-homogeneous-polynomials.md",
+      "narrative": null,
+      "content": "[]{#homog_subsect label=\"homog_subsect\"}\n\nThe usual degree-$n$ homogenization of a polynomial $f \\in \\mathbb{C}^n[x]$ is defined on monomials as follows and is extended linearly. $$\\begin{split}\n        \\mathop{\\mathrm{Hmg}}_n : \\mathbb{C}^n[x] &\\rightarrow V(n) \\\\\n        x^k &\\mapsto x^ky^{n-k}\n    \\end{split}$$ More generally, for $\\lambda \\in \\mathbb{N}_0^m$ the *degree-$\\lambda$ homogenization* is defined on monomials as follows and is extended linearly. $$\\begin{split}\n        \\mathop{\\mathrm{Hmg}}_\\lambda: \\mathbb{C}^\\lambda[x_1,\\ldots,x_m] &\\rightarrow V(\\lambda)\\\\\n        x^{\\mu} &\\ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Homogeneous Polynomials as Representations",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-3-homogeneous-polynomials-as-representations.md",
+      "narrative": null,
+      "content": "[]{#reps_sect label=\"reps_sect\"}\n\nIn this section, we will discuss some basic representation theory of $\\mathop{\\mathrm{SL}}_2(\\mathbb{C})$ and show how the apolarity form and the notion of the symbol of an operator arise naturally in the representation theoretic context. Most of the representation theory we use in this section is very basic. There are a number of references which discuss the theory in full detail, albeit with different goals in mind. Typically this is done via the theory of Lie groups and algebras, as in [@fulton2013reptheory] and in [@humphreys2012lietheory].\n\nAs a note, mos",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Action of SL2(C)",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-31-the-action-of-sl2c.md",
+      "narrative": null,
+      "content": "[]{#SL_action_subsect label=\"SL_action_subsect\"}\n\nGiven $(\\alpha:\\beta) \\in \\mathbb{CP}^1$ and $\\phi \\in \\mathop{\\mathrm{SL}}_2(\\mathbb{C})$, we define the usual action of $\\mathop{\\mathrm{SL}}_2(\\mathbb{C})$ on $\\mathbb{CP}^1$ via $\\phi \\cdot (\\alpha:\\beta) := \\phi \\binom{\\alpha}{\\beta}$. That is, $\\phi$ acts by matrix multiplication on the vector $\\binom{\\alpha}{\\beta}$. Equivalently, $\\phi$ acts as its corresponding Möbius transformation on $\\mathbb{CP}^1$. Note that, as with Möbius transformations, $\\mathop{\\mathrm{SL}}_2(\\mathbb{C})$ acts transitively on circular regions in $\\mathbb{CP}^1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An Important Invariant Map, and Apolarity",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-006-32-an-important-invariant-map-and-apolarity.md",
+      "narrative": null,
+      "content": "[]{#inv_maps_subsect label=\"inv_maps_subsect\"}\n\nTo aide in our investigation of inner tensor products of $\\mathop{\\mathrm{SL}}_2(\\mathbb{C})$ representations, we now define an important $\\mathop{\\mathrm{SL}}_2(\\mathbb{C})$-invariant linear map, denoted by $D$. This map has a long history in invariant theory, and we touch on this below.\n\n::: proposition\n[]{#Dmap_prop label=\"Dmap_prop\"} The linear map $D := (\\partial_x \\otimes \\partial_y - \\partial_y \\otimes \\partial_x): V(n+1) \\otimes V(m+1) \\rightarrow V(n) \\otimes V(m)$ is $\\mathop{\\mathrm{SL}}_2(\\mathbb{C})$-invariant.\n:::\n\n::: proof\n*Proof.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Symbol of an Operator",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-007-33-the-symbol-of-an-operator.md",
+      "narrative": null,
+      "content": "[]{#symb_subsect label=\"symb_subsect\"}\n\nGiven representations $V(\\lambda)$ and $V(\\alpha)$ (for $\\lambda \\in \\mathbb{N}_0^m$ and $\\alpha \\in \\mathbb{N}_0^l$) of $(\\mathop{\\mathrm{SL}}_2(\\mathbb{C}))^m$ and $(\\mathop{\\mathrm{SL}}_2(\\mathbb{C}))^l$ respectively, the space of linear maps between $V(\\lambda)$ and $V(\\alpha)$ can be viewed as a representation of $(\\mathop{\\mathrm{SL}}_2(\\mathbb{C}))^{m+l}$ in a standard way. This space of linear maps is denoted $\\mathop{\\mathrm{Hom}}(V(\\lambda),V(\\alpha))$. As discussed previously, we will now use the apolarity form defined above to construct a rep",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Polynomial Stability Theory",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-008-4-polynomial-stability-theory.md",
+      "narrative": null,
+      "content": "[]{#stability_sect label=\"stability_sect\"}\n\nGiven $\\lambda \\in \\mathbb{N}_0^m$, a polynomial $p(x_1,y_1,\\ldots,x_m,y_m) \\in V(\\lambda)$ is said to be *stable* if it doesn't vanish in $\\mathcal{H}_+^m \\subset (\\mathbb{CP}^1)^m$. More generally, $p$ is said to be *$\\Omega$-stable* if it doesn't vanish in $\\Omega$. As above, we say $p$ is *weakly $\\Omega$-stable* if possibly $p \\equiv 0$. Most all results related to zero location of polynomials then can be translated into statements about stability properties of polynomials and stability preservation properties of operations applied to polynomial",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Polar Derivatives",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-009-41-polar-derivatives.md",
+      "narrative": null,
+      "content": "A crucial tool of classical stability theory is the polar derivative. In particular, this notion leads to Laguerre's theorem (Proposition [\\[laguerre_prop\\]](#laguerre_prop){reference-type=\"ref\" reference=\"laguerre_prop\"}), which is the main lemma toward Grace's theorem. By passing to homogeneous polynomials the polar derivative becomes conceptually simpler, and this in turn sheds further light on the general connection to $\\mathop{\\mathrm{SL}}_2(\\mathbb{C})$-invariance and the $D$ map. One example of this, as we will see below, is that the polar derivative can be defined as the conjugation of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Projective Convexity and Laguerre's Theorem",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-010-42-projective-convexity-and-laguerres-theorem.md",
+      "narrative": null,
+      "content": "[]{#proj_conv_subsect label=\"proj_conv_subsect\"}\n\nCircular regions play a key role in Grace's theorem and its corollaries. The main reason for this is Laguerre's theorem, which essentially says that polar derivatives with respect to points of a circular region preserve stability for that circular region. This theorem in turn relies on the Gauss-Lucas theorem, which deals with convex regions.\n\nA *circular region* in $\\mathbb{C}$ is defined to be a disc, half-plane, or complement of a disc, and such a circular region can be either open or closed. The generalization of circular regions to $\\mathb",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Real Stable Polynomials",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-011-43-real-stable-polynomials.md",
+      "narrative": null,
+      "content": "[]{#stab_subsect label=\"stab_subsect\"}\n\nWe now give a number of classical real stability results, along with a few results from [@bb1] and [@bb2]. Additionally, we state these results for homogeneous polynomials in $V_\\mathbb{R}(\\lambda)$, taking roots at infinity into account. The results of this section will come in to play mainly in §[\\[Rops_sect\\]](#Rops_sect){reference-type=\"ref\" reference=\"Rops_sect\"}, where we discuss real linear operators and operators preserving interval- and ray-rootedness.\n\nThe first result we will need for our considerations of $V_\\mathbb{R}(\\lambda)$ is a version",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Grace's Theorem",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-012-5-graces-theorem.md",
+      "narrative": null,
+      "content": "[]{#graces_sect label=\"graces_sect\"}\n\nWe now prove the multivariate homogeneous Grace's theorem for some specific projectively convex regions and then derive a few important corollaries. These corollaries will be almost immediate once Grace's theorem has been proven, and yet will quickly yield stronger results regarding linear operators in the next section.\n\nIn the usual proof of the classical univariate Grace's theorem, reference to linear factors of $f \\in \\mathbb{C}^n[x]$ is necessary. This makes generalization to $\\mathbb{C}^\\lambda[x_1,\\ldots,x_m]$ difficult, as multivariate polynomials d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Other Regions",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-013-51-other-regions.md",
+      "narrative": null,
+      "content": "We now generalize the above theorem to other regions via $\\mathop{\\mathrm{SL}}_2(\\mathbb{C})$ action and topological considerations. Theorem [\\[grace_pairs_thm\\]](#grace_pairs_thm){reference-type=\"ref\" reference=\"grace_pairs_thm\"} can then be considered our most general form of Grace's theorem. First though, we define two new notions in order to simplify the rest of this section.\n\n::: definition\n[]{#grace_pair_def label=\"grace_pair_def\"} Fix $m \\in \\mathbb{N}_0$ and any sets $S_1,S_2 \\subseteq (\\mathbb{CP}^1)^m$. We call $(S_1,S_2)$ a *Grace pair* if: for all $\\lambda \\in \\mathbb{N}_0^m$ and $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Evaluation Symbols",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-014-52-evaluation-symbols.md",
+      "narrative": null,
+      "content": "One way to interpret the stability properties of a given polynomial is via the stability-preservation properties of a particular type of linear operator: the evaluation map. That is, the map which evaluates a polynomial $p(x,y)$ at $(a,b) \\neq (0,0)$ preserves strong $\\{(a:b)\\}$-stability, where $\\{(a:b)\\}$ is a subset of $\\mathbb{CP}^1$ consisting of a single point. Further, given $\\lambda \\in \\mathbb{N}_0^m$ and $(a,b) = (a_1,b_1,\\ldots,a_m,b_m) \\in \\mathbb{C}^{2m}$ (with $(a_j,b_j) \\neq 0$ for all $j$), we can define the corresponding evaluation map as an element of $\\mathop{\\mathrm{Hom}}(V",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stability Properties of Complex Linear Operators",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-015-6-stability-properties-of-complex-linear-operato.md",
+      "narrative": null,
+      "content": "[]{#Cops_sect label=\"Cops_sect\"}\n\nIn [@bb1], Borcea and Brändén were concerned with classifying the class of weak $\\Omega$-stability preserving operators, where $\\Omega$ is some product of open circular regions. What they found is that an operator preserves weak $\\Omega$-stability if a particular associated polynomial (what they called the symbol) is $\\Omega$-stable. However, the \"only if\" direction does not necessarily hold. In particular, there are some weak $\\Omega$-stability preserving operators for which the corresponding symbol is not $\\Omega$-stable. They then showed that this could onl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weak Stability Preservation",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-016-61-weak-stability-preservation.md",
+      "narrative": null,
+      "content": "Borcea and Brändén define the following symbol: $$\\mathop{\\mathrm{Symb}}_{BB}(T) := T[(x+z)^\\lambda] = \\sum_{\\mu \\leq \\lambda} \\binom{\\lambda}{\\mu} z^{\\lambda-\\mu} T(x^\\mu)$$ They then obtain the following characterization of stability-preserving linear operators.\n\n::: BB_Cops_thm\n**Theorem [\\[BB_Cops_thm\\]](#BB_Cops_thm){reference-type=\"ref\" reference=\"BB_Cops_thm\"} 1** (Borcea-Brändén). *Fix $\\lambda \\in \\mathbb{N}_0^m$ and any linear operator $T: \\mathbb{C}^\\lambda[x_1,\\ldots,x_m] \\to \\mathbb{C}[x_1,\\ldots,x_m]$. The following are equivalent.*\n\n1.  *$T$ maps $\\mathcal{H}_+^m$-stable polynom",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Strong Stability Preservation",
+      "pageStart": 19,
+      "pageEnd": 22,
+      "target": "../sections/sec-017-62-strong-stability-preservation.md",
+      "narrative": null,
+      "content": "[]{#str_Cstab_subsect label=\"str_Cstab_subsect\"}\n\nWe now state one of our main characterization results, the strong stability preservation characterization. We then derive the Borcea-Brändén characterization as a corollary.\n\n::: theorem\n[]{#Cops_graces label=\"Cops_graces\"} Fix $\\lambda \\in \\mathbb{N}_0^m$, $\\alpha \\in \\mathbb{N}_0^l$, a linear operator $T \\in \\mathop{\\mathrm{Hom}}(V(\\lambda),V(\\alpha))$, any disjoint Grace pair $(C_1 \\times \\cdots \\times C_m, B_1 \\times \\cdots \\times B_m)$, and any sets $S_1,\\ldots,S_l \\subseteq \\mathbb{CP}^1$. The following are equivalent.\n\n1.  $T$ maps $(C_1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Deriving the Complex Borcea-Brändén Characterization",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-018-63-deriving-the-complex-borcea-brändén-character.md",
+      "narrative": null,
+      "content": "[]{#Cops_deriv_subsect label=\"Cops_deriv_subsect\"}\n\nAs mentioned above, we hope to obtain the Borcea-Brändén characterization from our strong stability characterization given in Theorem [\\[Cops_graces\\]](#Cops_graces){reference-type=\"ref\" reference=\"Cops_graces\"}. To this end, we state two corollaries to Theorem [\\[Cops_graces\\]](#Cops_graces){reference-type=\"ref\" reference=\"Cops_graces\"}, which look (naively) as close to the Borcea-Brändén characterization as possible. Let $C^c$ denote the complement of $C$ in $\\mathbb{CP}^1$.\n\n::: corollary\n[]{#naive_CBB_cor1 label=\"naive_CBB_cor1\"} Fix $\\la",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stability Properties of Real Linear Operators",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-019-7-stability-properties-of-real-linear-operators.md",
+      "narrative": null,
+      "content": "[]{#Rops_sect label=\"Rops_sect\"}\n\nBorcea and Brändén also classified the class of weak real stability preserving linear operators. As in the complex case, they showed that weak real stability preservation of a linear operator $T$ is almost equivalent to real stability of the associated symbol $\\mathop{\\mathrm{Symb}}_{BB}(T)$. We have to say \"almost equivalent\" here because there are certain weak real stability preserving operators for which the corresponding symbol is not real stable. As before, this implies a certain dimension restriction: such operators must have image of dimension at most t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weak Real Stability Preservation",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-020-71-weak-real-stability-preservation.md",
+      "narrative": null,
+      "content": "Borcea and Brändén obtain the following characterization of weak real stability preserving linear operators. Recall the notion of *proper position* (denoted by $\\ll$) given in Definition [\\[pp_def\\]](#pp_def){reference-type=\"ref\" reference=\"pp_def\"}.\n\n::: BB_Rops_thm\n**Theorem [\\[BB_Rops_thm\\]](#BB_Rops_thm){reference-type=\"ref\" reference=\"BB_Rops_thm\"} 1** (Borcea-Brändén). *Fix $\\lambda \\in \\mathbb{N}_0^m$ and any linear operator $T: \\mathbb{R}_\\lambda[x_1,\\ldots,x_m] \\to \\mathbb{R}[x_1,\\ldots,x_m]$. The following are equivalent.*\n\n1.  *$T$ maps real stable polynomials to weakly real stable",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Strong Real Stability Preservation",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-021-72-strong-real-stability-preservation.md",
+      "narrative": null,
+      "content": "We state and prove our strong real stability preservation characterization here, and then derive the Borcea-Brändén characterization as a corollary. The proof here takes a bit more work than in the complex case, and will rely on many of the real stability results discussed in §[\\[stab_subsect\\]](#stab_subsect){reference-type=\"ref\" reference=\"stab_subsect\"}. This extra work is essentially taken from the proof of Theorem [\\[BB_Rops_thm\\]](#BB_Rops_thm){reference-type=\"ref\" reference=\"BB_Rops_thm\"} found in [@bb1].\n\n::: theorem\n[]{#Rops_graces label=\"Rops_graces\"} Fix $\\lambda \\in \\mathbb{N}_0^m$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Deriving the Real Borcea-Brändén Characterization",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-022-73-deriving-the-real-borcea-brändén-characteriza.md",
+      "narrative": null,
+      "content": "[]{#Rops_deriv_subsect label=\"Rops_deriv_subsect\"}\n\nAs in the complex case, we now obtain the Borcea-Brändén weak real stability characterization as a corollary to our strong real stability characterization given in Theorem [\\[Rops_graces\\]](#Rops_graces){reference-type=\"ref\" reference=\"Rops_graces\"}. To this end, we start by giving a sort of real stability version of Lemma [\\[bb_Clink\\]](#bb_Clink){reference-type=\"ref\" reference=\"bb_Clink\"}. The proof of this lemma is similar in spirit to that of the strong real stability characterization given above.\n\n::: lemma\n[]{#bb_Rlink label=\"bb_Rlink\"}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ray and Interval Stability",
+      "pageStart": 26,
+      "pageEnd": 31,
+      "target": "../sections/sec-023-74-ray-and-interval-stability.md",
+      "narrative": null,
+      "content": "[]{#Jops_subsect label=\"Jops_subsect\"}\n\nWe now apply the above results to projectively convex regions of the form $\\mathcal{H}_+\\cup J^c$, where $J \\subset \\overline{\\mathbb{R}}$ is some connected set. From this, we obtain a classification of operators which both preserve strong $J$-rootedness and weak real-rootedness (a polynomial $p \\in V(n)$ is $J$-rooted if all its roots lie in $J$). This of course does not completely solve the open problem of providing a classification of interval- and ray-stability preserving operators (see, e.g., [@bba]). However, it does seem to be the natural corollar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/cor-sec-025-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "cor-sec-025-03.md",
+      "narrative": null,
+      "content": "5. For k ≤m ≤n, consider the map DkU k : V (n −k) ⊗V (m −k) →V (n −k) ⊗V (m −k). We have: DkU k(xn−k ⊗xm−k) = k!(n + m −k + 1)! (n + m −2k + 1)! (xn−k ⊗xm−k)̸ = 0 In particular, xn−k ⊗xm−k is in the image of Dk : V (n) ⊗V (m) →V (n −k) ⊗V (m −k).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/cor-sec-025-07",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "cor-sec-025-07.md",
+      "narrative": null,
+      "content": "9. The apolarity form is the unique (up to scalar) nondegenerate SL2(C)-invariant bilinear form on V (n). A.2 Decomposition of V (λ) ⊗V (µ) Fix λ, µ ∈Nm 0 , and let V (λ) and V (µ) denote the irreducible representations of (SL2(C))m given by the outer tensor products: V (λ) ∼= V (λ1) ⊠· · · ⊠V (λm) V (µ) ∼= V (µ1) ⊠· · · ⊠V (µm) We next generalize the above results to the inner tensor product of these two representations, V (λ) ⊗V (µ). In particular, we determine the decomposition of this tensor product and deﬁne a multivariate apolarity form. Note that these statements strictly generalize the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/cor-sec-025-10",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "cor-sec-025-10.md",
+      "narrative": null,
+      "content": "9). The apolarity form is the unique (up to scalar) nondegenerate (SL2(C))m-invariant bilinear form on V (λ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/lem-sec-025-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "lem-sec-025-02.md",
+      "narrative": null,
+      "content": "4. For k ≤m ≤n, consider the map DU k : V (n −k) ⊗V (m −k) →V (n −1) ⊗V (m −1). We have: DU k = U kD + k(n + m −k + 1)U k−1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/lem-sec-025-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "lem-sec-025-04.md",
+      "narrative": null,
+      "content": "6 (Schur’s Lemma). Let V, V ′, W be representations of a group G, and suppose V, V ′ are irre- ducible. Then: (i) Any G-invariant map π : W →V is either surjective or the zero map. (ii) Any G-invariant map ι : V →W is either injective or the zero map. (iii) Any G-invariant map ψ : V →V ′ is either an isomorphism or the zero map. Further, if V, V ′ are vector spaces over an algebraically closed ﬁeld, then ψ is unique up to scalar. Applying Schur’s lemma to each of the rth transvectants (discussed at the end of §3.2) yields the desired representation decomposition.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prop-sec-024-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "prop-sec-024-01.md",
+      "narrative": null,
+      "content": "1. For all n ∈N0, we have that V (n) is an irreducible representation of SL2(C) of dimension n + 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prop-sec-024-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "prop-sec-024-02.md",
+      "narrative": null,
+      "content": "2. For all λ ∈Nm 0 , we have that V (λ) ∼= V (λ1)⊠· · ·⊠V (λm) is an irreducible representation of (SL2(C))m of dimension Q i(λi + 1). In particular, outer tensor products of irreducible representations of SL2(C) are irreducible representations of (SL2(C))m. On the other hand, inner tensor products are not irreducible and their decomposition leads to a natural deﬁnition of the apolarity form (see §3.2). We now set out to compute these decompositions, which are often given as exercises in the literature (see, e.g., Exercise 11.11 of [FH13]). A.1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prop-sec-025-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "prop-sec-025-01.md",
+      "narrative": null,
+      "content": "3. Let x and y denote the linear maps deﬁned on V (k) via multiplication by x and y, respectively. The linear map U := (x⊗y −y ⊗x) : V (n)⊗V (m) →V (n+1)⊗V (m+1) is SL2(C)-invariant.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prop-sec-025-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "prop-sec-025-05.md",
+      "narrative": null,
+      "content": "7. Let m ≤n. We have the following decomposition of V (n) ⊗V (m), as a representation of SL2(C), into irreducible components. V (n) ⊗V (m) ∼= M r≤m V (n + m −2r) In particular, V (n) ⊗V (n) ∼= V (2n) ⊕V (2n −2) ⊕· · · ⊕V (2) ⊕V (0).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prop-sec-025-08",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "prop-sec-025-08.md",
+      "narrative": null,
+      "content": "10 (c.f. Proposition A.7). Let µ ≤λ. We have the following decomposition of V (λ)⊗V (µ), as a representation of (SL2(C))m, into irreducible components. V (λ) ⊗V (µ) ∼= M α≤µ V (λ + µ −2α)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Tensor Product Decomposition of SL2(C) Representations",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../sections/sec-024-a-tensor-product-decomposition-of-sl2c-represent.md",
+      "narrative": null,
+      "content": "Tensor Product Decomposition of SL2(C) Representations\nIn this appendix, we discuss in detail the decomposition of inner tensor products of SL2(C) and (SL2(C))m\nrepresentations. The results given here are for the most part standard, and they are typically presented via\nthe theory of Lie groups and algebras (e.g., in [FH13] and [Hum12]). Here though, we discuss these results\nin terms of the polynomial spaces V (n) and V (λ).\nThat said, the ﬁrst results we state demonstrate the importance of V (n) and V (λ) in the representation\ntheory of SL2(C). In fact, these representations are precisely the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.1 Decomposition of V(n) tensor V(m)",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "../sections/sec-025-a1-decomposition-of-vn-tensor-vm.md",
+      "narrative": null,
+      "content": "Fix n, m ∈N0. We now consider the representation of SL2(C) given by the inner tensor product, V (n)⊗V (m).\nThe importance of the tensor product comes from the fact that it relates to consideration of SL2(C)-invariant\nbilinear forms like the apolarity form. In particular, the decomposition of the tensor product as a sum of\nirreducible representations (Proposition A.7) will show us exactly how the D map (see Proposition 3.1) can\nbe used to deﬁne the apolarity form in the representation theoretic context (Deﬁnition 3.3).\nWe begin with an important SL2(C)-invariant map.\nProposition A.3. Let x and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/thm-sec-025-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "thm-sec-025-06.md",
+      "narrative": null,
+      "content": "8. Consider the decomposition V (n) ⊗V (m) ∼= V (n + m) ⊕V (n + m −2) ⊕· · · ⊕V (n −m + 2) ⊕V (n −m). The maps U : V (n) ⊗V (m) →V (n + 1) ⊗V (m + 1) D : V (n + 1) ⊗V (m + 1) →V (n) ⊗V (m) restrict to SL2(C)-invariant isomorphisms from V (n + m −2r) to V (n + m −2r) for all 0 ≤r ≤m ≤n. Additionally, D restricts to the zero map on V (n + m + 2).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/thm-sec-025-09",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "thm-sec-025-09.md",
+      "narrative": null,
+      "content": "11 (c.f. Theorem A.8). For any β ∈Nm 0 , deﬁne U β := U β1 ⊠· · · ⊠U βm. Deﬁne Dβ similarly. For any µ ≤λ ∈Nm 0 , the maps U β : V (λ) ⊗V (µ) →V (λ + β) ⊗V (µ + β) Dβ : V (λ + β) ⊗V (µ + β) →V (λ) ⊗V (µ) restrict to SL2(C)-invariant isomorphisms on the components of V (λ) ⊗V (µ) ∼= L α≤µ V (λ + µ −2α). Finally, Dβ restricts to the zero map on the other irreducible components of V (λ + β) ⊗V (µ + β).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/lem-sec-027-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "lem-sec-027-02.md",
+      "narrative": null,
+      "content": "2. Fix λ ∈Nm 0 . Then the apolarity form commutes with polarization up to scalar. That is: Dλ = D(1λ) ◦(Π↑ λ ⊗Π↑ λ)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prop-sec-027-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "prop-sec-027-01.md",
+      "narrative": null,
+      "content": "1. Fix λ ∈Nm 0 , and view V (λ) ∼= V (λ1)⊠· · ·⊠V (λm) and V (1λ) ∼= V (1)⊗λ1 ⊠· · ·⊠V (1)⊗λm as representations of (SL2(C))m. The maps Π↑ λ : V (λ) →V (1λ) and Π↓ λ : V (1λ) →V (λ) are (SL2(C))m- invariant.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prop-sec-027-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "prop-sec-027-03.md",
+      "narrative": null,
+      "content": "1 also leads to one of the crucial results used in the proof of the Borcea-Br¨and´en char- acterization of linear operators (Lemma 2.5 in [BB09a]). It relies on the notion of “the polarization of an operator”, given by T 7→Π↑ α ◦T ◦Π↓ λ (see §2.2 in [BB09a]). We do not make explicit use of this result, but we state it here to demonstrate that operator polarization has a representation theoretic interpretation similar to that of the usual polynomial polarization.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prop-sec-027-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "prop-sec-027-04.md",
+      "narrative": null,
+      "content": "3. The symbol of the polarization of an operator T is the polarization of the symbol of T .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B The Grace-Walsh-Szego Coincidence Theorem",
+      "pageStart": 34,
+      "pageEnd": 34,
+      "target": "../sections/sec-026-b-the-grace-walsh-szego-coincidence-theorem.md",
+      "narrative": null,
+      "content": "The Grace-Walsh-Szeg˝o Coincidence Theorem\nA classical result in the representation theory of SL2(C) is the fact that V (n) ∼= Symn(V (1)).\nHere,\nSymn(V (1)) denotes the set of symmetric tensors in V (1)⊗n, or alternatively, the set of symmetric elements\nin V (1n). That is, there is some SL2(C)-invariant injection from V (n) to V (1)⊗n, and by our conceptual the-\nsis this map should transfer stability information. In fact, this idea is formalized in the Grace-Walsh-Szeg˝o\ncoincidence theorem, and the injective map is known as the polarization map.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.1 Polarization and Projection",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "../sections/sec-027-b1-polarization-and-projection.md",
+      "narrative": null,
+      "content": "Polarization and Projection\nFor polynomials of degree m ≤n, the degree-n polarization map is deﬁned on monomials as follows and is\nextended linearly.\nΠ↑\nn : Cn[x] →C(1n)[x1, . . . , xn]\nxk 7→1\nn!\nX\nσ∈Sn\nk\nY\nj=1\nxσ(j)\nThis deﬁnition can be extended to homogeneous polynomials in V (n) by composing with Hmg−1\nn\nand\nHmg(1n). The map Π↑\nn has a left inverse Π↓\nn, called the projection map, which we deﬁne as follows.\nΠ↓\nn : C(1n)[x1, . . . , xn] →Cn[x]\nf(x1, x2, . . . , xn) 7→f(x, x, . . . , x)\nThat is, Π↓\nn ◦Π↑\nn is the identity map. Similarly, this deﬁnition can be extended to homogeneous polynomi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/cor-sec-028-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "cor-sec-028-01.md",
+      "narrative": null,
+      "content": "5 (Grace-Walsh-Szeg˝o). Fix λ ∈Nm 0 , p ∈V (λ), and any disjoint Grace pair (C1 × · · · × Cm, B1 × · · · × Bm). If p is (C1 × · · · × Cm)-stable, then Π↑ λp is (Cλ1 × · · · × Cλm m )-stable.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1706.06168v3/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.2 The Coincidence Theorem",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "../sections/sec-028-b2-the-coincidence-theorem.md",
+      "narrative": null,
+      "content": "The Coincidence Theorem\nThe Grace-Walsh-Szeg˝o coincidence theorem has strong ties to Grace’s theorem, and most books and surveys\non the subject state the two results side by side. Some books (e.g., [RS02]) even go so far as to demonstrate\ntheir equivalence, perhaps with other results involving typical polynomial convolutions. Here, we will state\nand prove the general multivariate version of the theorem in terms of homogeneous polynomials, making use\nof evaluation symbols and Grace’s theorem (Theorem 5.1).\nFirst though, consider the following corollary to the symbol lemma (Lemma 3.7) which is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

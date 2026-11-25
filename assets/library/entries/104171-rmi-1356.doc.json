@@ -1,0 +1,892 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "104171-rmi-1356",
+  "title": "Handlebody diagram algebras",
+  "variant": "pdf",
+  "pages": 52,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "845",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "A generalization of cellularity",
+      "number": "2",
+      "page": 5,
+      "pageLabel": "849",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-a-generalization-of-cellularity"
+    },
+    {
+      "level": 1,
+      "title": "Handlebody braid and Coxeter groups",
+      "number": "3",
+      "page": 14,
+      "pageLabel": "858",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-handlebody-braid-and-coxeter-groups"
+    },
+    {
+      "level": 1,
+      "title": "Handlebody Temperley–Lieb and blob algebras",
+      "number": "4",
+      "page": 20,
+      "pageLabel": "864",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-handlebody-temperleylieb-and-blob-algebras"
+    },
+    {
+      "level": 1,
+      "title": "Handlebody Brauer and BMW algebras",
+      "number": "5",
+      "page": 34,
+      "pageLabel": "878",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-handlebody-brauer-and-bmw-algebras"
+    },
+    {
+      "level": 1,
+      "title": "Handlebody Hecke and Ariki–Koike algebras",
+      "number": "6",
+      "page": 43,
+      "pageLabel": "887",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-6-handlebody-hecke-and-arikikoike-algebras"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 49,
+      "pageLabel": "893",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "845",
+      "labelEnd": "845",
+      "words": 97,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "handlebody versions",
+          "heading": false
+        },
+        {
+          "term": "diagram algebras",
+          "heading": false
+        },
+        {
+          "term": "española",
+          "heading": false
+        },
+        {
+          "term": "sociedad",
+          "heading": false
+        }
+      ],
+      "extract": "Rev. Mat. Iberoam. 39 (2023), no. 3, 845–896 DOI 10.4171/RMI/1356 © 2022 Real Sociedad Matemática Española Published by EMS Press and licensed under a CC BY 4.0 license Handlebody diagram algebras Daniel Tubbenhauer and Pedro Vaz Abstract. In this paper, we study handlebody versions of some classical diagram algebras, most prominently, handlebody versions of Temperley–Lieb, blob, Brauer, BMW, Hecke and Ariki–Koike",
+      "extractCut": true,
+      "blocks": [
+        "library/104171-rmi-1356/blocks/prose-sec-front-matter",
+        "library/104171-rmi-1356/blocks/figure-img-p001-1"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 5,
+      "labelStart": "845",
+      "labelEnd": "849",
+      "words": 1569,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "handlebody temperley",
+          "heading": false
+        },
+        {
+          "term": "temperley lieb",
+          "heading": false
+        },
+        {
+          "term": "handlebody versions",
+          "heading": false
+        },
+        {
+          "term": "handlebody braid",
+          "heading": false
+        },
+        {
+          "term": "handlebody diagram",
+          "heading": false
+        },
+        {
+          "term": "lieb algebras",
+          "heading": false
+        },
+        {
+          "term": "sandwich cellular",
+          "heading": false
+        },
+        {
+          "term": "blob algebras",
+          "heading": false
+        }
+      ],
+      "extract": "A large collection of diagram algebras, such as Temperley–Lieb or (type A) Hecke alge- bras, are interesting from at least two perspectives: they are of fundamental importance in low-dimensional topology and they also have a rich representation theory. Having an eye on the study of links in 3-manifolds brings the topology of the ambient space into play. In all the classical examples, like Temperley–Lieb or Hecke",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-a-generalization-of-cellularity",
+      "number": "2",
+      "title": "A generalization of cellularity",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 14,
+      "labelStart": "849",
+      "labelEnd": "858",
+      "words": 3941,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fixed apex",
+          "heading": false
+        },
+        {
+          "term": "simple brn",
+          "heading": false
+        },
+        {
+          "term": "sandwich cellular",
+          "heading": false
+        },
+        {
+          "term": "brauer diagrams",
+          "heading": false
+        },
+        {
+          "term": "brauer algebra",
+          "heading": false
+        },
+        {
+          "term": "simple a-module",
+          "heading": false
+        },
+        {
+          "term": "cellularity",
+          "heading": true
+        },
+        {
+          "term": "simple modules",
+          "heading": false
+        }
+      ],
+      "extract": "2. A generalization of cellularity Let K be a unital, commutative, Noetherian domain, e.g. the integers or a field, or polyno- mial rings over these. Everything in this paper is linear over K. In particular, algebras are K-algebras. 2A. Inflation by algebras We start by defining sandwich cellular algebras. Remark 2.1. Our discussion below is motivated by Green’s theory of cells [23], often called Green’s relations,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-handlebody-braid-and-coxeter-groups",
+      "number": "3",
+      "title": "Handlebody braid and Coxeter groups",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 20,
+      "labelStart": "858",
+      "labelEnd": "864",
+      "words": 2095,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "handlebody braid",
+          "heading": true
+        },
+        {
+          "term": "jucys murphy",
+          "heading": false
+        },
+        {
+          "term": "handlebody diagram",
+          "heading": false
+        },
+        {
+          "term": "coxeter",
+          "heading": true
+        },
+        {
+          "term": "core strands",
+          "heading": false
+        },
+        {
+          "term": "affine coxeter",
+          "heading": false
+        },
+        {
+          "term": "coxeter type",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": false
+        }
+      ],
+      "extract": "Throughout, we fix the genus g 2 N as well as the number of strands n 2 N>0. As a general conventions, all notions involving g are vacuous if g D 0, and similarly all notions involving n are vacuous for n D 1. Handlebody diagram algebras 859 3A. Handlebody braid diagrams In this section we consider handlebody braid diagrams (in n strands and of genus g). These diagrams are similar to classical braid diagrams with g",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-handlebody-temperleylieb-and-blob-algebras",
+      "number": "4",
+      "title": "Handlebody Temperley–Lieb and blob algebras",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 34,
+      "labelStart": "864",
+      "labelEnd": "878",
+      "words": 5785,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "handlebody blob",
+          "heading": true
+        },
+        {
+          "term": "handlebody temperley",
+          "heading": true
+        },
+        {
+          "term": "temperley lieb",
+          "heading": true
+        },
+        {
+          "term": "blob algebras",
+          "heading": true
+        },
+        {
+          "term": "dimk bld",
+          "heading": false
+        },
+        {
+          "term": "simple bld",
+          "heading": false
+        },
+        {
+          "term": "blob diagrams",
+          "heading": false
+        },
+        {
+          "term": "tangled blob",
+          "heading": false
+        }
+      ],
+      "extract": "Recall that K denotes a unital, commutative, Noetherian domain. The example the reader should keep in mind throughout this section is K D ZŒc, where c D .c / is a collection of variables c which are circle evaluations. Recall further that we have fixed g 2 N and n 2 N>0. 4A. Handlebody Temperley–Lieb algebras In this section we consider non-topological crossingless matchings of 2n points of genus g, which are all",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-handlebody-brauer-and-bmw-algebras",
+      "number": "5",
+      "title": "Handlebody Brauer and BMW algebras",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 43,
+      "labelStart": "878",
+      "labelEnd": "887",
+      "words": 3739,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "handlebody brauer",
+          "heading": true
+        },
+        {
+          "term": "handlebody bmw",
+          "heading": true
+        },
+        {
+          "term": "brauer algebras",
+          "heading": true
+        },
+        {
+          "term": "brauer blobs",
+          "heading": false
+        },
+        {
+          "term": "perfect matchings",
+          "heading": false
+        },
+        {
+          "term": "blobbed perfect",
+          "heading": false
+        },
+        {
+          "term": "brauer specialization",
+          "heading": false
+        },
+        {
+          "term": "cyclotomic handlebody",
+          "heading": false
+        }
+      ],
+      "extract": "We will be brief in this section as it is very similar to the previous discussions. Recall that we have fixed the genus g and the number of strands n. 5A. Handlebody Brauer and BMW algebras We use handlebody (framed) tangle diagrams of 2n points of genus g as in Subsection 4C. We fix invertible scalars q; a 2 K with q ¤ q\u00001. Circles that may appear after concate- nation of these diagrams are evaluated as in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-handlebody-hecke-and-arikikoike-algebras",
+      "number": "6",
+      "title": "Handlebody Hecke and Ariki–Koike algebras",
+      "level": 1,
+      "pageStart": 43,
+      "pageEnd": 49,
+      "labelStart": "887",
+      "labelEnd": "893",
+      "words": 2819,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "handlebody hecke",
+          "heading": true
+        },
+        {
+          "term": "ariki koike",
+          "heading": true
+        },
+        {
+          "term": "hecke algebras",
+          "heading": true
+        },
+        {
+          "term": "jucys murphy",
+          "heading": false
+        },
+        {
+          "term": "cyclotomic handlebody",
+          "heading": false
+        },
+        {
+          "term": "handlebody coxeter",
+          "heading": false
+        },
+        {
+          "term": "handlebody braid",
+          "heading": false
+        },
+        {
+          "term": "handlebody diagram",
+          "heading": false
+        }
+      ],
+      "extract": "We define handlebody Hecke algebras as quotients of handlebody braid groups. All alge- bras can alternatively be defined as quotients of an appropriate BMW algebra from Sec- tion 5. 6A. Handlebody Hecke algebras Fix an invertible scalar q 2 K and recall the definitions regarding the handlebody braid groups Bg;n from Subsection 3A. Definition 6.1. The handlebody Hecke algebra (in n strands and of genus g) Hg;n is the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 49,
+      "pageEnd": 52,
+      "labelStart": "893",
+      "labelEnd": "896",
+      "words": 1590,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "temperley lieb",
+          "heading": false
+        },
+        {
+          "term": "cellular algebras",
+          "heading": false
+        },
+        {
+          "term": "brauer algebras",
+          "heading": false
+        },
+        {
+          "term": "koike algebras",
+          "heading": false
+        },
+        {
+          "term": "q-howe duality",
+          "heading": false
+        },
+        {
+          "term": "wenzl algebras",
+          "heading": false
+        },
+        {
+          "term": "birman wenzl",
+          "heading": false
+        },
+        {
+          "term": "tubbenhauer",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Allcock, D.: Braid pictures for Artin groups. Trans. Amer. Math. Soc. 354 (2002), no. 9, 3455–3474. [2] Andersen, H. H., Stroppel, C. and Tubbenhauer, D.: Semisimplicity of Hecke and (walled) Brauer algebras. J. Aust. Math. Soc. 103 (2017), no. 1, 1–44. [3] Andersen, H. H., Stroppel, C. and Tubbenhauer, D.: Cellular structures using Uq-tilting mod- ules. Pacific J. Math. 292 (2018), no. 1, 21–59. [4] Ariki, S.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "handlebody brauer",
+      "heading": true
+    },
+    {
+      "term": "handlebody blob",
+      "heading": true
+    },
+    {
+      "term": "handlebody temperley",
+      "heading": true
+    },
+    {
+      "term": "handlebody bmw",
+      "heading": true
+    },
+    {
+      "term": "handlebody braid",
+      "heading": true
+    },
+    {
+      "term": "cyclotomic handlebody",
+      "heading": false
+    },
+    {
+      "term": "handlebody diagram",
+      "heading": false
+    },
+    {
+      "term": "handlebody hecke",
+      "heading": true
+    },
+    {
+      "term": "handlebody coxeter",
+      "heading": true
+    },
+    {
+      "term": "handlebody versions",
+      "heading": false
+    },
+    {
+      "term": "handlebody tangle",
+      "heading": false
+    },
+    {
+      "term": "define handlebody",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "845",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "846",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "847",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "848",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "849",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "850",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "851",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "852",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "853",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "854",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "855",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "856",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "857",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "858",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "859",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "860",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "861",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "862",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "863",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "864",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "865",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "866",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "867",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "868",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "869",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "870",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "871",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "872",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 29,
+      "label": "873",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "874",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 31,
+      "label": "875",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "876",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "877",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "878",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 35,
+      "label": "879",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 36,
+      "label": "880",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 37,
+      "label": "881",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 38,
+      "label": "882",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 39,
+      "label": "883",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 40,
+      "label": "884",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 41,
+      "label": "885",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 42,
+      "label": "886",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 43,
+      "label": "887",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 44,
+      "label": "888",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 45,
+      "label": "889",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 46,
+      "label": "890",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 47,
+      "label": "891",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 48,
+      "label": "892",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 49,
+      "label": "893",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 50,
+      "label": "894",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 51,
+      "label": "895",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 52,
+      "label": "896",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p49); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/104171-rmi-1356"
+  }
+}

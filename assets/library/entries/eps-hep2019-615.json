@@ -1,0 +1,171 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "eps-hep2019-615",
+  "blocks": [
+    {
+      "id": "library/eps-hep2019-615/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "PoS(EPS-HEP2019)615\nSedenions, the Clifford algebra Cℓ(8), and three\nfermion generations\nNiels G. Gresnigt∗†\nXi’an Jiaotong-Liverpool University, Department of Mathematical Sciences, 111 Ren’ai Road,\nSuzhou HET, Jiangsu, China 215123.\nE-mail: niels.gresnigt@xjtlu.edu.cn\nRecently there has been renewed interest in using tensor products of division algebras, together\nwith their associated Clifford algebras, to identify the structures of the Standard Model. One full\ngenerations of leptons and quarks transforming correctly under the electrocolor group SU(3)c ⊗\nU(1)em can be described in terms of c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/eps-hep2019-615/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "PoS(EPS-HEP2019)615\nSedenions, Cℓ(8), and three generations of fermions\nNiels G. Gresnigt\n1. Introduction\nThe establishment of the Standard Model (SM) as a description of the structure of particles\nand their interactions has been one of the great achievements in theoretical physics. However,\ndespite the model’s overwhelming success, its underlying mathematical structure is not derived\nfrom more fundamental principles. Finding a theoretical basis for the mathematical structure that\nunderlies the SM remains a prominent challenge in physics. Instead of the common approach\nof embedding the SM gaug",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/eps-hep2019-615/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "PoS(EPS-HEP2019)615\nSedenions, Cℓ(8), and three generations of fermions\nNiels G. Gresnigt\nsatisfying the anticommutator algebra of fermionic ladder operators\nn\nα†\ni ,α†\nj\no\n=\n\b\nαi,αj\n\t\n= 0,\nn\nα†\ni ,αj\no\n= δi j.\n(2.4)\nConsidering the basis vectors as elements of the left adjoint algebra (C⊗O)L ∼= Cℓ(6), allows for\nthe construction of a primitive idempotent ωω† = α1α2α3α†\n3α†\n2α†\n1 which deﬁnes a minimal left\nideal Su ≡Cℓ(6)ωω†. Explicitly:\nSu ≡\nνωω† +\n¯drα†\n1ωω† + ¯dgα†\n2ωω† + ¯dbα†\n3ωω†\nurα†\n3α†\n2ωω† + ugα†\n1α†\n3ωω† +ubα†\n2α†\n1ωω†\n+ e+α†\n3α†\n2α†\n1ωω†,\n(2.5)\nwhere ν, ¯dr etc. are suggestively l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/eps-hep2019-615/blocks/figure-img-p004-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/eps-hep2019-615/blocks/figure-img-p004-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/eps-hep2019-615/blocks/figure-img-p004-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/eps-hep2019-615/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "PoS(EPS-HEP2019)615\nSedenions, Cℓ(8), and three generations of fermions\nNiels G. Gresnigt\nof leptons and quarks with unbroken SU(3)c ⊗U(1)em symmetry. These three C⊗O subalgebras\nare not independent but share a common quaternionic subalgebra spanned by {1,e1,e14,e15}. The\nthree intersecting octonion subalgebras together with the multiplication rules of their base elements\nmay be represented by the three Fano planes in Figure 1. Each of the three octonionic subalgebras\nFigure 1: Fano planes of three octonionic subalgebras in the sedenions.\nabove generates via its adjoint left actions a copy of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/eps-hep2019-615/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "PoS(EPS-HEP2019)615\nSedenions, Cℓ(8), and three generations of fermions\nNiels G. Gresnigt\nThis at the same time may provide a basis for the CKM mixing of quarks. This is currently being\ninvestigated.\n4. Three generations from the triality of Cℓ(8)\nIt was mentioned earlier that (C ⊗H ⊗O)L ∼= (C ⊗S)L ∼= Cℓ(8). Unlike the smaller algebra\nCℓ(6) associated with C ⊗O, this larger algebra admits a triality automorphism associated with\nSpin(8). Triality is a non-linear outer automorphism of Spin(8) of order three. It would be inter-\nesting to interpret this triality physically in the C ⊗H ⊗O and C ⊗S",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/eps-hep2019-615/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "PoS(EPS-HEP2019)615\nSedenions, Cℓ(8), and three generations of fermions\nNiels G. Gresnigt\n[3] N. G. Gresnigt, Braids, normed division algebras, and standard model symmetries, Phys. Lett. B, 783,\n212-221 [arXiv:1803.02202] (2018) .\n[4] N. G. Gresnigt, Braided fermions from hurwitz algebras, in Journal of Physics: Conference Series,\nvol. 1194, p. 012040, IOP Publishing, 2019.\n[5] T. Dray and C. A. Manogue, Octonionic cayley spinors and e6, Comment. Math. Univ. Carolin 51\n(2010) 193.\n[6] ˇC. Burdik and S. Catto, Hurwitz algebras and the octonion algebra, in Journal of Physics:\nConference Series,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

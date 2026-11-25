@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/nrarith/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Arithmetic of Hyperbolic Manifolds",
+  "contains": [
+    "library/nrarith/sections/sec-front-matter",
+    "library/nrarith/sections/sec-000",
+    "library/nrarith/sections/sec-001",
+    "library/nrarith/sections/sec-002",
+    "library/nrarith/sections/sec-003",
+    "library/nrarith/sections/sec-004",
+    "library/nrarith/sections/sec-005",
+    "library/nrarith/sections/sec-006",
+    "library/nrarith/sections/sec-007",
+    "library/nrarith/sections/sec-008",
+    "library/nrarith/sections/sec-009",
+    "library/nrarith/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Arithmetic of hyperbolic manifolds (Neumann–Reid) — survey of arithmetic Kleinian groups: an arithmetic M = H³/Γ is determined up to commensurability by its invariant trace field and quaternion…\n\n**Arithmetic of Hyperbolic Manifolds** — Walter D. Neumann and Alan W. Reid. Survey.\n\nHyperbolic 3-manifolds here are complete orientable finite-volume quotients H³/Γ with Γ ⊂ PSL₂ℂ a Kleinian group. The arithmetic ones form a more tractable subclass because arithmetic invariants are available: an arithmetic M is determined up to commensurability by its defining field k (a number field with exactly one complex place) together with a quaternion algebra over k.\n\nCovers the invariant trace field, the invariant quaternion algebra, commensurability classes, and the identification of arithmetic manifolds among all hyperbolic ones.\n\n**Why it may bear here.** The invariant trace field and quaternion algebra are the arithmetic side of the same hyperbolic-volume objects this corpus uses geometrically (Vol(4₁), cusp shapes, the Bloch-group material). Relevance is a prior, not a verdict — no claim is made that a specific result is needed.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "agent",
+        "id": "claude-code",
+        "model": "not-disclosed",
+        "session": "https://claude.ai/code/session_01AWgkrPkXGZ1Hb2UmMmFMcP",
+        "date": "2026-08-15"
+      },
+      "drafted_at": "2026-08-15"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "nrarith",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "nrarith.pdf",
+    "source_sha256": "085ec9541ddc6cd4b52b6af8b268b5d325b9df86e9a253e2d64bdf058bccdcc8",
+    "pages": 38,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

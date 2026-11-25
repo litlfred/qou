@@ -1,0 +1,79 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-0206161v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING",
+  "contains": [
+    "library/arxiv-hep-th-0206161v1/sections/sec-front-matter",
+    "library/arxiv-hep-th-0206161v1/sections/sec-000",
+    "library/arxiv-hep-th-0206161v1/sections/sec-001",
+    "library/arxiv-hep-th-0206161v1/sections/sec-002",
+    "library/arxiv-hep-th-0206161v1/sections/sec-003",
+    "library/arxiv-hep-th-0206161v1/sections/sec-004",
+    "library/arxiv-hep-th-0206161v1/sections/sec-005",
+    "library/arxiv-hep-th-0206161v1/sections/sec-006",
+    "library/arxiv-hep-th-0206161v1/sections/sec-007",
+    "library/arxiv-hep-th-0206161v1/sections/sec-008",
+    "library/arxiv-hep-th-0206161v1/sections/sec-009",
+    "library/arxiv-hep-th-0206161v1/sections/sec-010",
+    "library/arxiv-hep-th-0206161v1/sections/sec-011",
+    "library/arxiv-hep-th-0206161v1/sections/sec-012",
+    "library/arxiv-hep-th-0206161v1/sections/sec-013",
+    "library/arxiv-hep-th-0206161v1/sections/sec-014",
+    "library/arxiv-hep-th-0206161v1/sections/sec-015",
+    "library/arxiv-hep-th-0206161v1/sections/sec-016",
+    "library/arxiv-hep-th-0206161v1/sections/sec-017",
+    "library/arxiv-hep-th-0206161v1/sections/sec-018",
+    "library/arxiv-hep-th-0206161v1/sections/sec-019",
+    "library/arxiv-hep-th-0206161v1/sections/sec-020",
+    "library/arxiv-hep-th-0206161v1/sections/sec-021",
+    "library/arxiv-hep-th-0206161v1/sections/sec-022"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING — 24 sections: Front matter; Jourdain:; Introduction\n\n**SEIBERG-WITTEN PREPOTENTIAL FROM INSTANTON COUNTING**\n\n*Institut des Hautes Etudes Scientifiques, Le Bois-Marie, Bures-sur-Yvette, F-91440 France*\n\n31 pp, 24 sections.\n\n**Outline.** Front matter; M Jourdain:; 1 Introduction; 2 Field theory expectations; 2.1 Supersymmetries and twisted supersymmetrie; Field; 2.2 Good observables: UV; 2.3 Good observables: IR; 3 Instanton measure and its localization; 3.1 ADHM data; 3.2 Instanton measure; 3.3 Curing non-compactness; 3.4 Reduction to contour integrals; 3.5 Classiﬁcation of the residues; 3.6 Residues and ﬁxed points; 3.7 The ﬁrst three nonabelian instantons; 3.8 Four and ﬁve instantons; 3.9 Adjoint matter and other matters",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-th/0206161&metadataPrefix=arXiv), submitted 2002-06-18, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-hep-th-0206161v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0206161v1.pdf",
+    "source_sha256": "9530c40215baa02defa98405a7655179d0ceac797ffaf78521b3b6513d554b6d",
+    "pages": 31,
+    "arxiv": {
+      "id": "hep-th/0206161",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "18 Jun 2002"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

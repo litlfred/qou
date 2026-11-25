@@ -1,0 +1,277 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "1-s20-s0097316524000426-main",
+  "blocks": [
+    {
+      "id": "library/1-s20-s0097316524000426-main/blocks/conj-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "conj-sec-001-01.md",
+      "narrative": null,
+      "content": "For n ≥0 and k ≥1, (−1)k ⎛ ⎝αn − k \u0002 j=1−k (−1)jb6(n −j(3j −1)/2) ⎞ ⎠≥0 (1.5) with strict inequality if n ≥k(3k + 1)/2, where αn is deﬁned by αn := \u0010 (−1)m, if n = 3m(3m −1), m ∈Z, 0, otherwise.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s0097316524000426-main/blocks/conj-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "conj-sec-001-02.md",
+      "narrative": null,
+      "content": "For n ≥0 and k ≥1, (−1)k−1 ⎛ ⎝αn − k \u0002 j=−k (−1)jb6(n −j(3j −1)/2) ⎞ ⎠≥0 (1.6) with strict inequality if n ≥(k + 1)(3k + 2)/2. The purpose of this paper is to prove a general result which implies Conjecture 1.1 by using a formula on the number of partitions into parts not exceeding 3 given by Cayley. We omit the proof of Conjecture 1.2 since (1.6) is a weaker version of (1.5). In fact, we will prove the following theorem.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s0097316524000426-main/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s0097316524000426-main/blocks/figure-img-p001-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s0097316524000426-main/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of a conjecture of Ballantine and Merca on truncated sums of 6-regular partitions",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-proof-of-a-conjecture-of-ballantine-and-merca-on.md",
+      "narrative": null,
+      "content": "truncated sums of 6-regular partitions pene\n\nOlivia X.M. Yao\n\nSchool of Mathematical Sciences, Suzhou University of Science and Technology,\nSuzhou, 215009, Jiangsu Province, PR China\n\nARTICLE INFO ABSTRACT\nArticle history: In 2012, Andrews and Merca proved a truncated theorem on\nReceived 27 December 2023 Euler’s pentagonal number theorem. Their work has opened\n\nAccepted 29 March 2024\n\n. : . up a new study of truncated series. Recently, Ballantine and\nAvailable online 15 April 2024 . y\n\nMerca posed a conjecture on infinite families of inequalities\ninvolving be (n), which counts the number of 6-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s0097316524000426-main/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-1-introduction.md",
+      "narrative": null,
+      "content": "Recall that a partition of a positive integer n is an integer sequence A = (Aj, Ag, .--, Ax)\nsuch that Ay > Ag > ++: > Ap > Oand Ay + AQ +--+: +Az_ =n. The numbers A; are called\nparts of A [1]. Let p(n) denote the number of partitions of n. As usual, set p(0) = 1 and\np(x) = 0 when z is not a nonnegative integer. Euler found that the generating function\n\nfor p(n) is\n\nE-mail address: yaoxiangmei@163.com.\n\nhttps: //doi.org/10.1016/j.jcta.2024.105903\n0097-3165/© 2024 Elsevier Inc. All rights reserved.\n2\nO.X.M. Yao / Journal of Combinatorial Theory, Series A 206 (2024) 105903\n∞\n\u0002\nn=0\np(n)qn =\n1\n(q;",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s0097316524000426-main/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Journal of Combinatorial Theory, Series A 206 (2024) 105903\n\nContents lists available at ScienceDirect\n\nJournal of Combinatorial Theory,\nSeries A\n\njournal homepage: www.elsevier.com/locate/jcta",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s0097316524000426-main/blocks/thm-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "thm-sec-001-03.md",
+      "narrative": null,
+      "content": "For k ≥1,deﬁne ∞ \u0002 n=0 ν(n, k)qn := (1 −q)(1 −q2)(1 −q3) ∞ \u0002 j=0 (−1)jq(3j2+6jk+j)/2(1 −q2j+2k+1). Then ν(n, k) is positive for all nonnegative integers n and positive integers k with (n, k) ̸= (11, 1). In particular, ν(11, 1) = 0. From Theorem 1.3, we obtain the following corollary.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s0097316524000426-main/blocks/lem-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 9,
+      "target": "lem-sec-002-01.md",
+      "narrative": null,
+      "content": "Let m0 ≥1, k ≥1 and n ≥6(m0 −1)2 + 6k(m0 −1) + 11(m0 −1) + 5k + 5 be integers. We have G(n, k, m0) ≥−m0n −5 2m0 + m0k2 −1 6m0k + 3m2 0k + 2m3 0, (2.4) where G(n, k, m0) is deﬁned by G(n, k, m0) := m0−1 \u0002 j=0 (p3(n −6j2 −6kj −j) −p3(n −6j2 −6kj −5j −2k −1) −p3(n −6j2 −6kj −7j −3k −2) + p3(n −6j2 −6kj −11j −5k −5)). (2.5)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s0097316524000426-main/blocks/lem-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 9,
+      "target": "lem-sec-002-02.md",
+      "narrative": null,
+      "content": "Let k ≥1 and n ≥0 be integers and deﬁne F(n, k) := ∞ \u0002 j=0 (p3(n −6j2 −6kj −j) −p3(n −6j2 −6kj −5j −2k −1) −p3(n −6j2 −6kj −7j −3k −2) + p3(n −6j2 −6kj −11j −5k −5)). (2.6) If (n, k) ̸= (11, 1), then F(n, k) ≥1. (2.7) In addition, F(11, 1) = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1-s20-s0097316524000426-main/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proofs of Theorem 1.3 and Corollary 1.4",
+      "pageStart": 3,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-2-proofs-of-theorem-13-and-corollary-14.md",
+      "narrative": null,
+      "content": "In order to prove Conjecture 1.1, we need a formula of p3(n) due to Cayley [5], where \np3(n) denotes the number of partitions of n into parts not exceeding 3. The generating \nfunction of p3(n) is\n4\nO.X.M. Yao / Journal of Combinatorial Theory, Series A 206 (2024) 105903\n∞\n\u0002\nn=0\np3(n)qn =\n1\n(1 −q)(1 −q2)(1 −q3).\n(2.1)\nIt is well-known that if n is a nonnegative integer, then\np3(n) =\n\u0011(n + 3)2\n12\n\u0012\n,\n(2.2)\nwhere < N > denotes the nearest integer of N. It follows from (2.2) that if n ∈N, then\n(n + 3)2\n12\n−1\n3 ≤p3(n) ≤(n + 3)2\n12\n+ 1\n4.\n(2.3)\nWe ﬁrst prove two lemmas.\nLemma 2.1. Let m0 ≥1, k ≥1 an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s0097316524000426-main/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Declaration of competing interest",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-declaration-of-competing-interest.md",
+      "narrative": null,
+      "content": "The author declares that she has no known competing ﬁnancial interests or personal \nrelationships that could have appeared to inﬂuence the work reported in this paper.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s0097316524000426-main/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Data availability",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-004-data-availability.md",
+      "narrative": null,
+      "content": "No data was used for the research described in the article.\n10\nO.X.M. Yao / Journal of Combinatorial Theory, Series A 206 (2024) 105903",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s0097316524000426-main/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-005-acknowledgments.md",
+      "narrative": null,
+      "content": "This work was supported by the National Science Foundation of China (no. 12371334) \nand the Natural Science Foundation of Jiangsu Province of China (no. BK20221383).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1-s20-s0097316524000426-main/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-006-references.md",
+      "narrative": null,
+      "content": "[1] G.E. Andrews, The Theory of Partitions, Addison-Wesley, Reading, Mass, 1976, reprinted, Cam-\nbridge University Press, 1998.\n[2] G.E. Andrews, M. Merca, The truncated pentagonal number theorem, J. Comb. Theory, Ser. A 119 \n(2012) 1639–1643.\n[3] G.E. Andrews, M. Merca, Truncated theta series and a problem of Guo and Zeng, J. Comb. Theory, \nSer. A 154 (2018) 610–619.\n[4] C. Ballantine, M. Merca, 6-regular partitions: new combinatorial properties, congruences, and linear \ninequalities, Rev. R. Acad. Cienc. Exactas Fís. Nat., Ser. A Mat. 117 (2023) 159.\n[5] A. Cayley, Researches in the partitio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1386 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0908.4305v3",
+  "title": "Higher Dimensional Algebra VII: Groupoidiﬁcation",
+  "variant": "pdf",
+  "pages": 67,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Degroupoidification",
+      "number": "2",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-degroupoidification"
+    },
+    {
+      "level": 1,
+      "title": "Homology versus Cohomology",
+      "number": "3",
+      "page": 25,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-homology-versus-cohomology"
+    },
+    {
+      "level": 1,
+      "title": "Groupoidification",
+      "number": "4",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-groupoidification"
+    },
+    {
+      "level": 2,
+      "title": "Feynman Diagrams",
+      "number": "4.1",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-41-feynman-diagrams"
+    },
+    {
+      "level": 2,
+      "title": "Hecke Algebras",
+      "number": "4.2",
+      "page": 36,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-42-hecke-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Hall Algebras",
+      "number": "4.3",
+      "page": 41,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-43-hall-algebras"
+    },
+    {
+      "level": 1,
+      "title": "Degroupoidifying a Tame Span",
+      "number": "5",
+      "page": 45,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-5-degroupoidifying-a-tame-span"
+    },
+    {
+      "level": 2,
+      "title": "Tame Spans Give Operators",
+      "number": "5.1",
+      "page": 45,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-51-tame-spans-give-operators"
+    },
+    {
+      "level": 2,
+      "title": "An Explicit Formula",
+      "number": "5.2",
+      "page": 50,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-52-an-explicit-formula"
+    },
+    {
+      "level": 1,
+      "title": "Properties of Degroupoidification",
+      "number": "6",
+      "page": 52,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-6-properties-of-degroupoidification"
+    },
+    {
+      "level": 2,
+      "title": "Scalar Multiplication",
+      "number": "6.1",
+      "page": 52,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-61-scalar-multiplication"
+    },
+    {
+      "level": 2,
+      "title": "Functoriality of Degroupoidification",
+      "number": "6.2",
+      "page": 53,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-62-functoriality-of-degroupoidification"
+    },
+    {
+      "level": 2,
+      "title": "Inner Products and Adjoints",
+      "number": "6.3",
+      "page": 56,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-63-inner-products-and-adjoints"
+    },
+    {
+      "level": 1,
+      "title": "A Review of Groupoids",
+      "number": null,
+      "page": 58,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-a-review-of-groupoids"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 278,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "groupoidiﬁcation",
+          "heading": false
+        },
+        {
+          "term": "dynkin diagram",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "groupoidify",
+          "heading": false
+        },
+        {
+          "term": "feynman diagrams",
+          "heading": false
+        },
+        {
+          "term": "groupoids",
+          "heading": false
+        },
+        {
+          "term": "spans",
+          "heading": false
+        },
+        {
+          "term": "linear operators",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0908.4305v3 [math.QA] 21 Oct 2010 Higher Dimensional Algebra VII: Groupoidiﬁcation John C. Baez, Alexander E. Hoﬀnung, and Christopher D. Walker Department of Mathematics, University of California Riverside, CA 92521 USA August 29, 2009 Abstract Groupoidiﬁcation is a form of categoriﬁcation in which vector spaces are replaced by groupoids and linear operators are replaced by spans of groupoids. We introduce",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0908.4305v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2780,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "groupoid cardinality",
+          "heading": false
+        },
+        {
+          "term": "stuff types",
+          "heading": false
+        },
+        {
+          "term": "extra stuff",
+          "heading": false
+        },
+        {
+          "term": "dynkin diagram",
+          "heading": false
+        },
+        {
+          "term": "some groupoid",
+          "heading": false
+        },
+        {
+          "term": "mathbb underline",
+          "heading": false
+        },
+        {
+          "term": "cardinality frac",
+          "heading": false
+        },
+        {
+          "term": "tame span",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#intro label=\"intro\"} 'Groupoidification' is an attempt to expose the combinatorial underpinnings of linear algebra---the hard bones of set theory underlying the flexibility of the continuum. One of the main lessons of modern algebra is to avoid choosing bases for vector spaces until you need them. As Hermann Weyl wrote, \"The introduction of a coordinate system to geometry is an act of violence\\\". But vector",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-degroupoidification",
+      "number": "2",
+      "title": "Degroupoidification",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4904,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "degroupoidification",
+          "heading": true
+        },
+        {
+          "term": "psi utilde",
+          "heading": false
+        },
+        {
+          "term": "tame spans",
+          "heading": false
+        },
+        {
+          "term": "tame groupoid",
+          "heading": false
+        },
+        {
+          "term": "spans xymatrix",
+          "heading": false
+        },
+        {
+          "term": "utilde phi",
+          "heading": false
+        },
+        {
+          "term": "utilde lambda",
+          "heading": false
+        },
+        {
+          "term": "square-integrable groupoids",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#degroupoidification label=\"degroupoidification\"} In this section we describe a systematic process for turning groupoids into vector spaces and tame spans into linear operators. This process, 'degroupoidification', is in fact a kind of functor. 'Groupoidification' is the attempt to *undo* this functor. To 'groupoidify' a piece of linear algebra means to take some structure built from vector spaces and linear",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-homology-versus-cohomology",
+      "number": "3",
+      "title": "Homology versus Cohomology",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1455,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alpha degroupoidification",
+          "heading": false
+        },
+        {
+          "term": "utilde psi",
+          "heading": false
+        },
+        {
+          "term": "beta utilde",
+          "heading": false
+        },
+        {
+          "term": "degroupoidification vector",
+          "heading": false
+        },
+        {
+          "term": "operator utilde",
+          "heading": false
+        },
+        {
+          "term": "degroupoidification formula",
+          "heading": false
+        },
+        {
+          "term": "degroupoidification label",
+          "heading": false
+        },
+        {
+          "term": "tame groupoid",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#homology label=\"homology\"} The work we have described so far has its roots in the cohomology of groupoids. Any groupoid $X$ can be turned into a topological space, namely the geometric realization of its nerve [@GJ], and we can define the cohomology of $X$ to be the cohomology of this space. The set of connected components of this space is just the set of isomorphism classes of $X$, which we have denoted",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-groupoidification",
+      "number": "4",
+      "title": "Groupoidification",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 101,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "groupoidiﬁcation",
+          "heading": false
+        },
+        {
+          "term": "degroupoidiﬁcation",
+          "heading": false
+        },
+        {
+          "term": "degroupoidifying",
+          "heading": false
+        }
+      ],
+      "extract": "a matter of convenience, but there is a real diﬀerence between homology and cohomology, at least for groupoids with inﬁnitely many nonisomorphic objects. The process described in Section 2 is the combination of choosing to work with cohomology and the convention α = 0 for degroupoidifying spans. This will suﬃce for the majority of this paper. However, we will use a diﬀerent choice in our study of Hall algebras. 4",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-41-feynman-diagrams",
+      "number": "4.1",
+      "title": "Feynman Diagrams",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 36,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2250,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vibrational mode",
+          "heading": false
+        },
+        {
+          "term": "quanta occupying",
+          "heading": false
+        },
+        {
+          "term": "feynman",
+          "heading": true
+        },
+        {
+          "term": "univalent vertices",
+          "heading": false
+        },
+        {
+          "term": "electromagnetic radiation",
+          "heading": false
+        },
+        {
+          "term": "feynman diagram",
+          "heading": false
+        },
+        {
+          "term": "colon",
+          "heading": false
+        },
+        {
+          "term": "vertices labelled",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#feynman label=\"feynman\"} One of the first steps in developing quantum theory was Planck's new treatment of electromagnetic radiation. Classically, electromagnetic radiation in a box can be described as a collection of harmonic oscillators, one for each vibrational mode of the field in the box. Planck 'quantized' the electromagnetic field by assuming that the energy of each oscillator could only take discrete,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-42-hecke-algebras",
+      "number": "4.2",
+      "title": "Hecke Algebras",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 41,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2058,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hecke algebras",
+          "heading": true
+        },
+        {
+          "term": "groupoidified hecke",
+          "heading": false
+        },
+        {
+          "term": "groupoidify hecke",
+          "heading": false
+        },
+        {
+          "term": "cong lpl",
+          "heading": false
+        },
+        {
+          "term": "dynkin diagram",
+          "heading": false
+        },
+        {
+          "term": "composing spans",
+          "heading": false
+        },
+        {
+          "term": "complete flag",
+          "heading": false
+        },
+        {
+          "term": "flag variety",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#hecke label=\"hecke\"} Here we sketch how to groupoidify a Hecke algebra when the parameter $q$ is a power of a prime number and the finite reflection group comes from a Dynkin diagram in this way. More details will appear in future work [@Baez]. Let $D$ be a Dynkin diagram. We write $d \\in D$ to mean that $d$ is a dot in this diagram. Associated to each unordered pair of dots $d,d' \\in D$ is a number $m_{dd'} \\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-43-hall-algebras",
+      "number": "4.3",
+      "title": "Hall Algebras",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 45,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1247,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hall",
+          "heading": true
+        },
+        {
+          "term": "rightarrow stackrel",
+          "heading": false
+        },
+        {
+          "term": "alpha degroupoidification",
+          "heading": false
+        },
+        {
+          "term": "laced dynkin",
+          "heading": false
+        },
+        {
+          "term": "colon rightarrow",
+          "heading": false
+        },
+        {
+          "term": "hall algebra",
+          "heading": false
+        },
+        {
+          "term": "groupoid cardinality",
+          "heading": false
+        },
+        {
+          "term": "rightarrow mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#hall label=\"hall\"} The Hall algebra of a quiver is a very natural example of groupoidification, and a very important one, since it lets us groupoidify 'half of a quantum group'. However, to obtain the usual formula for the Hall algebra product, we need to exploit one of the alternative conventions explained in Section [\\[homology\\]](#homology){reference-type=\"ref\" reference=\"homology\"}. In this section we begin",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-5-degroupoidifying-a-tame-span",
+      "number": "5",
+      "title": "Degroupoidifying a Tame Span",
+      "level": 1,
+      "pageStart": 45,
+      "pageEnd": 45,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 76,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tame span",
+          "heading": true
+        },
+        {
+          "term": "degroupoidification",
+          "heading": false
+        },
+        {
+          "term": "processes",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#processes label=\"processes\"} In Section [\\[degroupoidification\\]](#degroupoidification){reference-type=\"ref\" reference=\"degroupoidification\"} we described a process for turning a tame span of groupoids into a linear operator. In this section we show this process is well-defined. The calculations in the proof yield an explicit criterion for when a span is tame. They also give an explicit formula for the the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-51-tame-spans-give-operators",
+      "number": "5.1",
+      "title": "Tame Spans Give Operators",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 50,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1719,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "psi utilde",
+          "heading": false
+        },
+        {
+          "term": "utilde phi",
+          "heading": false
+        },
+        {
+          "term": "skeletal groupoid",
+          "heading": false
+        },
+        {
+          "term": "operator utilde",
+          "heading": false
+        },
+        {
+          "term": "tame groupoids",
+          "heading": false
+        },
+        {
+          "term": "colon psi",
+          "heading": false
+        },
+        {
+          "term": "psi rightarrow",
+          "heading": false
+        },
+        {
+          "term": "groupoids xymatrix",
+          "heading": false
+        }
+      ],
+      "extract": "To prove that a tame span gives a well-defined operator, we begin with three lemmas that are of some interest in themselves. We postpone to Appendix [\\[appendix\\]](#appendix){reference-type=\"ref\" reference=\"appendix\"} some well-known facts about groupoids that do not involve the concept of degroupoidification. This Appendix also recalls the familiar concept of 'equivalence' of groupoids, which serves as a basis for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-52-an-explicit-formula",
+      "number": "5.2",
+      "title": "An Explicit Formula",
+      "level": 2,
+      "pageStart": 50,
+      "pageEnd": 52,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 542,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "psi utilde",
+          "heading": false
+        },
+        {
+          "term": "tame spans",
+          "heading": false
+        },
+        {
+          "term": "bigcap underline",
+          "heading": false
+        },
+        {
+          "term": "mathbb underline",
+          "heading": false
+        },
+        {
+          "term": "explicit formula",
+          "heading": true
+        },
+        {
+          "term": "form psi",
+          "heading": false
+        },
+        {
+          "term": "add spans",
+          "heading": false
+        },
+        {
+          "term": "aut",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#explicit label=\"explicit\"} Our calculations in the proof of Theorem [\\[PROCESS1\\]](#PROCESS1){reference-type=\"ref\" reference=\"PROCESS1\"} yield an explicit formula for the operator coming from a tame span, and a criterion for when a span is tame: ::: thm []{#matrix1 label=\"matrix1\"} A span of groupoids $$\\xymatrix{ & S\\ar[dl]_{q} \\ar[dr]^{p} & \\\\ Y & & X }$$ is tame if and only if: 1. For any object $y\\in Y$, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-6-properties-of-degroupoidification",
+      "number": "6",
+      "title": "Properties of Degroupoidification",
+      "level": 1,
+      "pageStart": 52,
+      "pageEnd": 52,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 18,
+      "summary": null,
+      "keywords": [],
+      "extract": "Properties of Degroupoidiﬁcation In this section we prove all the remaining results stated in Section 2. We start",
+      "extractCut": false
+    },
+    {
+      "id": "sec-011-61-scalar-multiplication",
+      "number": "6.1",
+      "title": "Scalar Multiplication",
+      "level": 2,
+      "pageStart": 52,
+      "pageEnd": 53,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 229,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "utilde lambda",
+          "heading": false
+        },
+        {
+          "term": "groupoid lambda",
+          "heading": false
+        },
+        {
+          "term": "scalarmult label",
+          "heading": false
+        },
+        {
+          "term": "lambda times",
+          "heading": false
+        },
+        {
+          "term": "colon lambda",
+          "heading": false
+        },
+        {
+          "term": "times psi",
+          "heading": false
+        },
+        {
+          "term": "scalar mult",
+          "heading": false
+        },
+        {
+          "term": "tame",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#scalar_mult label=\"scalar_mult\"} To prove facts about scalar multiplication, we use the following lemma: ::: lemma []{#essinverseproduct label=\"essinverseproduct\"} Given a groupoid $\\Lambda$ and a functor between groupoids $p\\colon X\\rightarrow Y$, then the functor $c\\times p \\colon\\Lambda\\times Y\\rightarrow 1\\times X$ (where $c\\colon\\Lambda\\rightarrow 1$ is the unique morphism from $\\Lambda$ to the terminal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-62-functoriality-of-degroupoidification",
+      "number": "6.2",
+      "title": "Functoriality of Degroupoidification",
+      "level": 2,
+      "pageStart": 53,
+      "pageEnd": 56,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1214,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "degroupoidification",
+          "heading": true
+        },
+        {
+          "term": "tame spans",
+          "heading": false
+        },
+        {
+          "term": "utilde psi",
+          "heading": false
+        },
+        {
+          "term": "beta colon",
+          "heading": false
+        },
+        {
+          "term": "colon rightarrow",
+          "heading": false
+        },
+        {
+          "term": "alpha colon",
+          "heading": false
+        },
+        {
+          "term": "mathbb utilde",
+          "heading": false
+        },
+        {
+          "term": "linops equivspans",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we prove that our process of turning groupoids into vector spaces and spans of groupoids into linear operators is indeed a functor. We first show that the process preserves identities, then show associativity of composition, from which many other things follow, including the preservation of composition. The lemmas in this section add up to a proof of the following theorem: ::: thm []{#functor",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-63-inner-products-and-adjoints",
+      "number": "6.3",
+      "title": "Inner Products and Adjoints",
+      "level": 2,
+      "pageStart": 56,
+      "pageEnd": 58,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 655,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "utilde psi",
+          "heading": false
+        },
+        {
+          "term": "psi rangle",
+          "heading": false
+        },
+        {
+          "term": "square-integrable groupoids",
+          "heading": false
+        },
+        {
+          "term": "langle psi",
+          "heading": false
+        },
+        {
+          "term": "utilde phi",
+          "heading": false
+        },
+        {
+          "term": "linops equivspans",
+          "heading": false
+        },
+        {
+          "term": "langle dagger",
+          "heading": false
+        },
+        {
+          "term": "colon psi",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#innerprodandadjoint label=\"innerprodandadjoint\"} Now we prove our results about the inner product of groupoids over a fixed groupoid, and the adjoint of a span: ::: thm []{#innerprod_theorem label=\"innerprod_theorem\"} Given a groupoid $X$, there is a unique inner product $\\langle \\cdot,\\cdot \\rangle$ on the vector space $L^2(X)$ such that $$\\langle \\utilde{\\Phi},\\utilde{\\Psi} \\rangle = |\\langle \\Phi,\\Psi",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-a-review-of-groupoids",
+      "number": null,
+      "title": "A Review of Groupoids",
+      "level": 1,
+      "pageStart": 58,
+      "pageEnd": 67,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2968,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "groupoids",
+          "heading": true
+        },
+        {
+          "term": "equivalent cospans",
+          "heading": false
+        },
+        {
+          "term": "weak pullbacks",
+          "heading": false
+        },
+        {
+          "term": "rhode island",
+          "heading": false
+        },
+        {
+          "term": "duke math",
+          "heading": false
+        },
+        {
+          "term": "ﬂexible limits",
+          "heading": false
+        },
+        {
+          "term": "temperley lieb",
+          "heading": false
+        },
+        {
+          "term": "hall algebras",
+          "heading": false
+        }
+      ],
+      "extract": "Review of Groupoids Deﬁnition 50. A groupoid is a category in which all morphisms are invertible. Deﬁnition 51. We denote the set of objects in a groupoid X by Ob(X) and the set of morphisms by Mor(X). Deﬁnition 52. A functor F : X →Y between categories is a pair of functions F : Ob(X) →Ob(Y ) and F : Mor(X) →Mor(Y ) such that F(1x) = 1F (x) for x ∈Ob(X) and F(gh) = F(g)F(h) for g, h ∈Mor(X). 58 Deﬁnition 53. A",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "utilde colon",
+      "heading": false
+    },
+    {
+      "term": "psi utilde",
+      "heading": false
+    },
+    {
+      "term": "groupoids colon",
+      "heading": false
+    },
+    {
+      "term": "tame groupoid",
+      "heading": false
+    },
+    {
+      "term": "tame spans",
+      "heading": true
+    },
+    {
+      "term": "mathbb utilde",
+      "heading": false
+    },
+    {
+      "term": "alpha utilde",
+      "heading": false
+    },
+    {
+      "term": "groupoids xymatrix",
+      "heading": false
+    },
+    {
+      "term": "operator utilde",
+      "heading": false
+    },
+    {
+      "term": "phi utilde",
+      "heading": false
+    },
+    {
+      "term": "vector utilde",
+      "heading": false
+    },
+    {
+      "term": "beta utilde",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 53,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 54,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 55,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 56,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 57,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 58,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 59,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 60,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 61,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 62,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 63,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 64,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 65,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 66,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 67,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 15,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 16,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p58); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 16 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0908.4305v3"
+  }
+}

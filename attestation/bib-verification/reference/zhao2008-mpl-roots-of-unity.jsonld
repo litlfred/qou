@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/attestation/bib-verification/reference/zhao2008-mpl-roots-of-unity.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/attestation/bib-verification/reference/zhao2008-mpl-roots-of-unity",
+      "@type": "https://litlfred.github.io/cat-harness/v0/ns/QaAttestation",
+      "title": "bib-verification attestation: reference zhao2008-mpl-roots-of-unity",
+      "description": "The bib-verification judgements recorded for reference zhao2008-mpl-roots-of-unity, each pinned to the hash it attested.",
+      "sourceKind": "bib-verification",
+      "sourcePath": "test/attestations/bib-verification/reference/zhao2008-mpl-roots-of-unity.attestations.json",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/attestations"
+    }
+  ]
+}

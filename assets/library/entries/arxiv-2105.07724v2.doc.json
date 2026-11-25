@@ -1,0 +1,997 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2105.07724v2",
+  "title": "SL2 tilting modules in the mixed case",
+  "variant": "pdf",
+  "pages": 54,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-preliminaries"
+    },
+    {
+      "level": 1,
+      "title": "Additive structure",
+      "number": "3",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-additive-structure"
+    },
+    {
+      "level": 1,
+      "title": "Monoidal structure",
+      "number": "4",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-monoidal-structure"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. Fusion rules for eves",
+      "number": null,
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-appendix-a-fusion-rules-for-eves"
+    },
+    {
+      "level": 1,
+      "title": "Appendix B. Applications",
+      "number": null,
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-appendix-b-applications"
+    },
+    {
+      "level": 1,
+      "title": "Appendix C. Some additional comments and details",
+      "number": null,
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-appendix-c-some-additional-comments-and-details"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 51,
+      "pageLabel": "51",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 114,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tilting modules",
+          "heading": false
+        },
+        {
+          "term": "mixed case",
+          "heading": false
+        },
+        {
+          "term": "monoidal structure",
+          "heading": false
+        },
+        {
+          "term": "sutton",
+          "heading": false
+        }
+      ],
+      "extract": "SL2 TILTING MODULES IN THE MIXED CASE LOUISE SUTTON, DANIEL TUBBENHAUER, PAUL WEDRICH, AND JIERU ZHU Abstract. Using the non-semisimple Temperley–Lieb calculus, we study the additive and monoidal structure of the category of tilting modules for SL2 in the mixed case. This simultane- ously generalizes the semisimple situation, the case of the complex quantum group at a root of unity, and the algebraic group case in",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2105.07724v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "4",
+      "words": 2084,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wenzl projectors",
+          "heading": false
+        },
+        {
+          "term": "temperley lieb",
+          "heading": false
+        },
+        {
+          "term": "projectors agree",
+          "heading": false
+        },
+        {
+          "term": "category tlk",
+          "heading": false
+        },
+        {
+          "term": "tiltk",
+          "heading": false
+        },
+        {
+          "term": "tilting modules",
+          "heading": false
+        },
+        {
+          "term": "tilting characters",
+          "heading": false
+        },
+        {
+          "term": "goodman wenzl",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction 1 2. Preliminaries 4 3. Additive structure 11 4. Monoidal structure 22 Appendix A. Fusion rules for eves 29 Appendix B. Applications 37 Appendix C. Some additional comments and details 42 References 51 1. Introduction Let k be a field of characteristic p, fix a non-zero element q ∈k∗, and let K be an algebraically closed field containing k. Tilting modules for SL2, the reductive group SL2(K) if q = ±1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 11,
+      "labelStart": "4",
+      "labelEnd": "11",
+      "words": 3654,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "down-admissible hull",
+          "heading": false
+        },
+        {
+          "term": "up-admissible",
+          "heading": false
+        },
+        {
+          "term": "non-zero digit",
+          "heading": false
+        },
+        {
+          "term": "pℓ-adic expansions",
+          "heading": false
+        },
+        {
+          "term": "leading digit",
+          "heading": false
+        },
+        {
+          "term": "eve",
+          "heading": false
+        },
+        {
+          "term": "tilting modules",
+          "heading": false
+        },
+        {
+          "term": "category fdmodk",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we introduce necessary pℓ-adic notation, and recall how tilting modules of SL2 and the Temperley–Lieb calculus are related. 2A. Basics of pℓ-adic expansions. Let k denote a field, and fix an invertible element q ∈k throughout. We also let v denote a formal variable. For x ∈k and a ∈N we consider the quantum numbers: [0]x = 0, [a]x = x−(a−1) + x−(a−3) + ... + xa−3 + xa−1, [−a]x = −[a]x. 5 Definition",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-additive-structure",
+      "number": "3",
+      "title": "Additive structure",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 22,
+      "labelStart": "11",
+      "labelEnd": "22",
+      "words": 5797,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "down-admissible stretch",
+          "heading": false
+        },
+        {
+          "term": "pℓjw projectors",
+          "heading": false
+        },
+        {
+          "term": "minimal down-admissible",
+          "heading": false
+        },
+        {
+          "term": "non-leading digits",
+          "heading": false
+        },
+        {
+          "term": "non-semisimple projectors",
+          "heading": false
+        },
+        {
+          "term": "semisimple pℓjw",
+          "heading": false
+        },
+        {
+          "term": "tilting modules",
+          "heading": false
+        },
+        {
+          "term": "zeroth digit",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we explain the additive structure of the category of tilting modules. Some of results in this section are well-known, others generalize the results from [BLS19] and [TW21]. We also added a few new observations. 3A. Character formulas. The Weyl and dual Weyl modules have classical Weyl characters, i.e. χ∆(v−1) = χ∇(v−1) = [v]v, which we view as elements of N0[v±1] where the coefficient of vk is the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-monoidal-structure",
+      "number": "4",
+      "title": "Monoidal structure",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 29,
+      "labelStart": "22",
+      "labelEnd": "29",
+      "words": 3458,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pℓjw projectors",
+          "heading": false
+        },
+        {
+          "term": "genv weyl",
+          "heading": false
+        },
+        {
+          "term": "zeroth digit",
+          "heading": false
+        },
+        {
+          "term": "fusion rule",
+          "heading": false
+        },
+        {
+          "term": "categorified fusion",
+          "heading": false
+        },
+        {
+          "term": "primitive idempotents",
+          "heading": false
+        },
+        {
+          "term": "generation drop",
+          "heading": false
+        },
+        {
+          "term": "trace rules",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we study Tiltk,q as a monoidal category. In the semisimple and complex quantum group cases, the results in this section appear throughout the literature, see for example the remarks in this section for a small (and somewhat biased) collection of references. 4A. Fusion rules. We start by recalling the well-known fusion rules for tilting modules lying in the fundamental alcove, in which tilting",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-appendix-a-fusion-rules-for-eves",
+      "number": null,
+      "title": "Appendix A. Fusion rules for eves",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 37,
+      "labelStart": "29",
+      "labelEnd": "37",
+      "words": 4345,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fusion rules",
+          "heading": true
+        },
+        {
+          "term": "eves",
+          "heading": true
+        },
+        {
+          "term": "appendix",
+          "heading": true
+        },
+        {
+          "term": "genv",
+          "heading": false
+        },
+        {
+          "term": "digon morphism",
+          "heading": false
+        },
+        {
+          "term": "pℓ-adic expansions",
+          "heading": false
+        },
+        {
+          "term": "relevant pℓ-adic",
+          "heading": false
+        },
+        {
+          "term": "lemma appendix",
+          "heading": false
+        }
+      ],
+      "extract": "Appendix A. Fusion rules for eves For this section, we fix a, b ∈N with 1 ⩽a, b < p∨ℓand k, t ∈N0. A.1. On the level of objects. For any x ∈k we will also use quantum factorials and binomials: [0]x! = 1, [a]x! = [a]x[a −1]x...[1]x, \u0002b 0 \u0003 x = 1, \u0002b a \u0003 x = [b]x[b−1]x...[b−a+1]x [a]x[a−1]x...[1]x . Note that (quantum) binomials are zero for 0 ⩽b < a. Here a ∈N and b ∈Z, and all of these are elements of k. Note that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-appendix-b-applications",
+      "number": null,
+      "title": "Appendix B. Applications",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 42,
+      "labelStart": "37",
+      "labelEnd": "42",
+      "words": 2552,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tiltk",
+          "heading": false
+        },
+        {
+          "term": "thick ideal",
+          "heading": false
+        },
+        {
+          "term": "appendix",
+          "heading": true
+        },
+        {
+          "term": "direct summands",
+          "heading": false
+        },
+        {
+          "term": "monoidal category",
+          "heading": false
+        },
+        {
+          "term": "theorem appendix",
+          "heading": false
+        },
+        {
+          "term": "non-zero",
+          "heading": false
+        },
+        {
+          "term": "cells",
+          "heading": false
+        }
+      ],
+      "extract": "We now derive some consequences for the monoidal structure of Tiltk,q. These results are generalizations to mixed characteristic of well-known results. B.1. Tensor ideals, cells and Verlinde quotients. A (two-sided) ⊗-ideal I in a monoidal category is a collection of morphisms that is closed under composition and tensoring with arbitrary morphisms. Recall also that a thick ⊗-ideal J in a monoidal category is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-appendix-c-some-additional-comments-and-details",
+      "number": null,
+      "title": "Appendix C. Some additional comments and details",
+      "level": 1,
+      "pageStart": 42,
+      "pageEnd": 51,
+      "labelStart": "42",
+      "labelEnd": "51",
+      "words": 3535,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "characteristic mchar",
+          "heading": false
+        },
+        {
+          "term": "zeroth digit",
+          "heading": false
+        },
+        {
+          "term": "fusion graph",
+          "heading": false
+        },
+        {
+          "term": "fusion rule",
+          "heading": false
+        },
+        {
+          "term": "relevant pℓ-adic",
+          "heading": false
+        },
+        {
+          "term": "pℓ-adic expansions",
+          "heading": false
+        },
+        {
+          "term": "mixed characteristic",
+          "heading": false
+        },
+        {
+          "term": "bratteli diagram",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we collect a bit more details than in the main text, for example, various fractal-like patterns arising from the characteristic p and the strictly mixed cases, which may be interesting in their own right. The following figures illustrate the formulas in Proposition 3.3. Precisely, see Figure C-1 for an illustration of \u0000T(v −1) : ∆(w −1) \u0001 (compare to [JW17, Figure 1]), and Figure C-2 for an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 51,
+      "pageEnd": 54,
+      "labelStart": "51",
+      "labelEnd": "54",
+      "words": 1380,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "url",
+          "heading": false
+        },
+        {
+          "term": "temperley lieb",
+          "heading": false
+        },
+        {
+          "term": "valenced temperley",
+          "heading": false
+        },
+        {
+          "term": "tilting modules",
+          "heading": false
+        },
+        {
+          "term": "doi",
+          "heading": false
+        },
+        {
+          "term": "uq-tilting modules",
+          "heading": false
+        },
+        {
+          "term": "lieb algebras",
+          "heading": false
+        },
+        {
+          "term": "selecta math",
+          "heading": false
+        }
+      ],
+      "extract": "[Alp76] J. Alperin. On modules for the linear fractional groups. In International Symposium on the Theory of Finite Groups, Finite Groups, Sapporo and Kyoto, 1974, pages 157–163. Japan Society for the Promotion of Science, 1976. [And19] H.H. Andersen. Simple modules for Temperley–Lieb algebras and related algebras. J. Algebra, 520:276– 308, 2019. URL: https://arxiv.org/abs/1709.00248,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mixed projectors",
+      "heading": false
+    },
+    {
+      "term": "tilting modules",
+      "heading": false
+    },
+    {
+      "term": "pℓjw projectors",
+      "heading": false
+    },
+    {
+      "term": "non-semisimple projectors",
+      "heading": false
+    },
+    {
+      "term": "indecomposable tilting",
+      "heading": false
+    },
+    {
+      "term": "wenzl projectors",
+      "heading": false
+    },
+    {
+      "term": "eve fusion",
+      "heading": false
+    },
+    {
+      "term": "simple tilting",
+      "heading": false
+    },
+    {
+      "term": "genv weyl",
+      "heading": false
+    },
+    {
+      "term": "tilting characters",
+      "heading": false
+    },
+    {
+      "term": "zeroth digit",
+      "heading": false
+    },
+    {
+      "term": "mixed characteristic",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "images": [
+    {
+      "id": "img-p043-1",
+      "file": "images/img-p043-1.png",
+      "page": 43,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p043-2",
+      "file": "images/img-p043-2.png",
+      "page": 43,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p043-3",
+      "file": "images/img-p043-3.png",
+      "page": 43,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p043-4",
+      "file": "images/img-p043-4.png",
+      "page": 43,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p051-1",
+      "file": "images/img-p051-1.png",
+      "page": 51,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p051-2",
+      "file": "images/img-p051-2.png",
+      "page": 51,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 8,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 6
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p51); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2105.07724v2"
+  }
+}

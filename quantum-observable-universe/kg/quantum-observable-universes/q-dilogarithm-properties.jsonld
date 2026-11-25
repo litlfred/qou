@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-dilogarithm-properties",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-dilogarithm-properties",
+  "kind": "remark",
+  "title": "$\\mathrm{Li}_2^q$ as the categorical braiding potential (R-matrix)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-dilogarithm"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-dilogarithm",
+  "cites": [
+    "references/faddeev_kashaev1994",
+    "references/faddeev1994",
+    "references/faddeev1995",
+    "references/andersen-kashaev2014",
+    "references/dusenbury2025"
+  ],
+  "tags": [
+    "hopf-algebra",
+    "dilogarithm",
+    "associator",
+    "r-matrix"
+  ],
+  "text": "q-dilogarithm-properties.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,536 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2101.05931v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-2101.05931v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "In their seminal work, Chuang and Rouquier introduced $\\fsl_2$ categorifications on abelian categories \\cite{CR}.  Their definition mirrors the notion of an $\\fsl_2$ representation on a vector space: weight spaces are replaced by weight categories, Chevalley generators acting on them are replaced by Chevalley functors, and Lie algebra relations are replaced by isomorphisms of functors.  But, crucially, these isomorphisms are part of the ``higher data'' of categorification.\n\n\nThe richness of this theory was immediately evident.  As a corollary of an $\\fsl_2$ categorification on representations",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2101.05931v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:2101.05931v3  [math.RT]  15 Jun 2023\nCATEGORICAL BRAID GROUP ACTIONS\nAND CACTUS GROUPS\nIVA HALACHEVA, ANTHONY LICATA, IVAN LOSEV, AND ODED YACOBI\nAbstract. Let g be a semisimple simply-laced Lie algebra of ﬁnite type. Let C be an abelian\ncategorical representation of the quantum group Uq(g) categorifying an integrable representation\nV . The Artin braid group B of g acts on Db(C) by Rickard complexes, providing a triangulated\nequivalence\nΘw0 : Db(Cµ) →Db(Cw0(µ))\nwhere µ is a weight of V , and Θw0 is a positive lift of the longest element of the Weyl group.\nWe prove that this equivalence i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2101.05931v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgement",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-acknowledgement.md",
+      "narrative": null,
+      "content": "We would like to thank Sabin Cautis, Ian Grojnowski, Joel Kamnitzer,  Aaron Lauda, Andrew Mathas, Peter McNamara, Bregje Pauwels, Raph\\\"ael Rouquier, and Geordie Williamson  for insightful discussions.  We are grateful to two anonymous referees for their helpful comments.\nI.L. is partially supported by the NSF under grant DMS-2001139.\nO.Y. is supported by the Australian Research Council Grants DP180102563 and DP230100654.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2101.05931v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Background on quantum groups",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-2-background-on-quantum-groups.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2101.05931v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The quantum group",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-21-the-quantum-group.md",
+      "narrative": null,
+      "content": "In this article we work with a  simply-laced quantum group $U_q(\\fg)$ of finite type.  Recall that we have an associated Cartan datum and a root datum, which consists of:\n\\begin{itemize}\n\\item A finite set $I$,\n\\item a symmetric bilinear form $(\\cdot,\\cdot)$ on $\\ZZ I$ satisfying $(i,i)=2$ and $(i,j)\\in \\{0,-1\\}$ for all $i \\neq j \\in I$,\n\\item a free $\\ZZ$-module $X$, called the weight lattice, and\n\\item a choice of simple roots $\\{ \\alpha_i \\}_{i\\in I} \\subset X$ and simple coroots $\\{ h_i \\}_{i\\in I} \\subset X^\\vee=\\Hom(X,\\ZZ)$ satisfying $\\langle h_i,\\alpha_j\\rangle=(i,j)$, where $\\langle",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2101.05931v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Braid group actions on integrable representations of U_q(g).",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-22-braid-group-actions-on-integrable-representat.md",
+      "narrative": null,
+      "content": "Given a $U_q(\\fg)$-module $V$ and $\\mu \\in X$ we let $V_\\mu$ denote the $\\mu$ weight space of $V$.  \nFor $\\lambda \\in X_+$ we let $L(\\lambda)$ be the irreducible representation of $U_q(\\fg)$ of highest weight $\\lambda$.  Let $\\Iso_\\lambda(V)$ denote the $\\lambda$-isotypic component of $V$.  We say that $V$ is \\textbf{isotypic} if there exists $\\lambda \\in X_+$ such that $V=\\Iso_\\lambda(V)$.\n\n\n\n\nThe representation $L(\\lambda)$ has a canonical basis, which we denote by $\\bB(\\lambda)$ \\cite{Lusbook}.  We let $v_\\lambda$ (respectively $v_\\la^{low}$) denote the unique highest weight (respectively l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2101.05931v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Notation",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-005-31-notation.md",
+      "narrative": null,
+      "content": "of [36], ti = t′′\ni,−1. (Note that the formula given in [36] is more complicated. This simpler form\nwas initially observed in [16] in the non-quantum setting, and generalised in [12] to the quantum\nsetting.). The assignment θi 7→ti deﬁnes an action of B on V , and so we can unambiguously write\ntw for any w ∈W.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2101.05931v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Categorical representations of U_q(g)",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-006-3-categorical-representations-of-u-qg.md",
+      "narrative": null,
+      "content": "3.1. Notation. Fix a ﬁeld\nk of any characteristic. In this paper we will be concerned mostly with\nabelian\nk-linear categories C. We will assume throughout that each block of C is a ﬁnite abelian\ncategory [39, Deﬁnition 1.8.6].\nRecall that a category A is graded if it is equipped with an auto-equivalence ⟨1⟩: A →A called\nthe “shift functor”. We let ⟨ℓ⟩be the auto-equivalence obtained by applying the shift functor ℓ\ntimes. We denote by Irr(A) the set of equivalence classes of simple objects of A up to shift.\nA functor F : A →A′ between graded categories is graded if it commutes with the shift fu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2101.05931v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definition",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-007-32-definition.md",
+      "narrative": null,
+      "content": "In this section we introduce our main objects of study: representations of the 2-quantum group on abelian categories, which we refer to as “categorical representations” of $U_q(\\fg)$.  This definition of the categorified quantum groups and their categorical actions is originally due to Rouquier and Khovanov-Lauda \\cite{Rou2KM, KLI,KLII}.  \n\nIn the literature, there are a number of slightly different-looking examples of 2-representations, depending not just on whether or not one is working with the Khovanov-Lauda or Rouquier 2-categories, but also depending on whether or not one is interested i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2101.05931v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Crystals",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-008-33-crystals.md",
+      "narrative": null,
+      "content": "We recall the definition of a crystal. \n\n\\begin{Definition} [\\cite{Kash90}] A \\textbf{$\\fg$-crystal} is a finite set $\\bB$ together with maps:\n\t$$\\tilde{e}_i,\\tilde{f}_i:\\bB \\rightarrow \\bB\\sqcup \\{0\\}, \\quad \\eps_i,\\phi_i : \\bB\\rightarrow \\ZZ, \\quad \\wt: \\bB \\rightarrow X$$\n\tfor all $i \\in I$, such that:\n\t\\begin{enumerate}\n\t\t\\item for any $b,b' \\in \\bB$, $\\tilde{e}_i(b)=b'$ if and only if $b=\\tilde{f}_i(b')$ ,\n\t\t\\item for all $b \\in \\bB$, if $\\tilde{e}_i(b) \\in \\bB$ then $\\wt(\\tilde{e}_i(b))=\\wt(b)+\\alpha_i$, and if $\\tilde{f}_i(b) \\in \\bB$ then $\\wt(\\tilde{f}_i(b))=\\wt(b)-\\alpha_i$,\n\t\t\\item",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2101.05931v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Jordan-Hölder series",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-009-34-jordan-hölder-series.md",
+      "narrative": null,
+      "content": "A categorification of a simple representation (respectively an isotypic representation)  is called  a \\textbf{simple categorification} (respectively an \\textbf{isotypic categorification}).\nThere is a  distinguished  categorification of $L(\\lambda)$ called the \\textbf{minimal categorification} and denoted $\\cL(\\lambda)$ \\cite{CR,Rou2KM,KLI,Webmerged,KK}. It  is characterized by the fact that $\\cL(\\lambda)_{\\lambda}\\cong \\cL(\\lambda)_{w_0(\\lambda)} \\cong \\kk\\mmod_{\\ZZ}$.  We let $\\kk_{low} \\in \\cL(\\lambda)_{w_0(\\lambda)}, \\kk_{high}\\in \\cL(\\lambda)_{\\lambda}$ be the generators.  \n\n\n\n\n\n\n\n\nThe Jor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2101.05931v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The categorical braid group action",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-010-35-the-categorical-braid-group-action.md",
+      "narrative": null,
+      "content": "Let $\\cC$ be a categorical representation of $U_q(\\fg), \\mu \\in X$ and $i\\in I$.     \nWe define a complex of functors $\\Theta_i\\bone_\\mu$, supported in nonpositive cohomological degrees, where for $r\\geq0$ the $-r$ component is\n\\begin{align*}\n(\\Theta_i\\bone_\\mu)^{-r}=\\begin{cases}\\sE_i^{(-\\mu_i+r)}\\sF_i^{(r)}\\bone_\\mu\\langle -s \\rangle &\\text{ if } \\mu_i\\leq0, \\\\\n\\sF_i^{(\\mu_i+r)}\\sE_i^{(r)}\\bone_\\mu\\langle -r \\rangle &\\text{ if } \\mu_i\\geq0.\n\\end{cases}\n\\end{align*}\nThe differential $d^r:(\\Theta_i\\bone_\\mu)^{-r} \\to (\\Theta_i\\bone_\\mu)^{-r+1}$ is defined using the counits of the bi-adjunction",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2101.05931v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Perverse equivalences",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-011-4-perverse-equivalences.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2101.05931v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "General definition",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-012-41-general-definition.md",
+      "narrative": null,
+      "content": "\\label{sec:pervdef}\nLet $\\cT$ be a triangulated category with shift functor $[1]:\\cT \\rightarrow \\cT$. In the cases of most interest to us, $\\cT$ is a subcategory of a derived category, in which case $[1]$ is the homological shift functor.\nSuppose $\\cT$ has a t-structure $t=(\\cT^{\\leq0},\\cT^{\\geq0})$, with heart $\\cT^\\heartsuit=\\cT^{\\leq0} \\cap \\cT^{\\geq0}$ \\cite{BBD}.  Recall that a triangulated functor $F:\\cT \\to \\cS$ between triangulated categories with $t$-structure is \\textbf{$t$-exact} if $F(\\cT^{\\leq0})\\subseteq \\cS^{\\leq0}$ and $F(\\cT^{\\geq0})\\subseteq \\cS^{\\geq0}$.  We let $F[p]: \\cT",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2101.05931v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Derived categories of graded abelian categories",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-013-42-derived-categories-of-graded-abelian-categori.md",
+      "narrative": null,
+      "content": "We now specialise to the case of derived categories.  We recall that if $\\cA$ is an abelian category, then the bounded derived category $D^b(\\cA)$ has a standard t-structure $(D^b(\\cA)^{\\leq0},D^b(\\cA)^{\\geq0})$ whose heart is $\\cA$.  \n\nGiven a $\\cB \\subset \\cA$ a Serre subcategory, we let $D_\\cB^b(\\cA) \\subset D^b(\\cA)$ denote the thick subcategory consisting of complexes with cohomology supported in $\\cB$. The category $D_\\cB^b(\\cA)$ inherits a natural t-structure from the standard t-structure on $D^b(\\cA)$: $D_\\cB^b(\\cA)^{\\leq0}=D_\\cB^b(\\cA) \\cap D^b(\\cA)^{\\leq0}$ and $D_\\cB^b(\\cA)^{\\geq0}=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2101.05931v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some commutation relations",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-014-5-some-commutation-relations.md",
+      "narrative": null,
+      "content": "\\label{sec:commrels}\nWe fix throughout a categorical representation $\\cC$ of  $U_q(\\fg)$.\nRecall that $w_0\\in W$ is the longest word, and let $w_0=s_{i_1}s_{i_2} \\cdots s_{i_r}$ be a reduced expression.\nWe consider the composition of Rickard complexes which categorifies the positive lift in $B$ of $w_0$:\n$$\n\\Theta_{w_0}\\bone_\\lambda=\\Theta_{i_1} \\cdots \\Theta_{i_r}\\bone_\\mu:D^b(\\cC_\\lambda) \\to D^b(\\cC_{w_0(\\lambda)}).\n$$\nIn preparation for the proofs our main results in the next section, we prove some commutation relations between $\\Theta_{w_0}$ and the Chevalley functors.  \n\n\n\n\\subsection{Ca",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2101.05931v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Marked words",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-015-52-marked-words.md",
+      "narrative": null,
+      "content": "We now introduce a combinatorial set-up which we'll use to prove  Proposition \\ref{prop:mainrel} below.  A \\textbf{marked word} is a word in the elements of $I$ with one letter marked: $\\ba=(i_1,i_2,...,\\ul{i_\\ell},...,i_n)$.  From $\\ba$ we can define a functor and an element of $W$: \n\\begin{align*}\n\\Phi(\\ba)&=\\Theta_{i_1}\\cdots\\Theta_{i_{\\ell-1}}\\sF_{i_\\ell}\\Theta_{i_{\\ell1}}\\cdots \\Theta_{i_n}\\bone_\\lambda, \\\\\nw(\\ba)&=s_{i_1}\\cdots s_{i_n}.\n\\end{align*}\nNote that unlike $\\Phi(\\ba)$, $w(\\ba)$ forgets the location of the marked letter.  We say that $\\ba$ is \\textbf{reduced}, if the correspondi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2101.05931v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The relation between _w_0 and Chevalley functors",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-016-53-the-relation-between-w-0-and-chevalley-functo.md",
+      "narrative": null,
+      "content": "We now have the machinery in place to prove our main relation.  \n\n\\begin{Proposition}\\label{prop:mainrel}\nFor any $i\\in I, \\lambda \\in X$ we have the following relations:\n\\begin{align*}\n\\Theta_{w_0}\\sE_i\\bone_\\lambda &\\cong \\sF_{\\tau(i)}\\Theta_{w_0}\\bone_\\lambda[1]\\langle \\lambda_i \\rangle, \n\\\\\n\\Theta_{w_0}\\sF_i\\bone_\\lambda &\\cong \\sE_{\\tau(i)}\\Theta_{w_0}\\bone_\\lambda[1]\\langle -\\lambda_i \\rangle. \n\\end{align*}\n\\end{Proposition}\n\n\\begin{proof}\nWe'll prove the first relation, the second being entirely analogous.  \nFor two functors $\\sF,\\sG$ we write $\\sF \\equiv \\sG$ if there exist integers $\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2101.05931v3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "On t-exactness and perversity of _w_0",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-017-6-on-t-exactness-and-perversity-of-w-0.md",
+      "narrative": null,
+      "content": "In this section we will state and prove the central results of the paper.  We fix throughout a categorical representation $\\cC$ of  $U_q(\\fg)$, and let $w_0=s_{i_1}s_{i_2} \\cdots s_{i_n}$ be a reduced expression.\n\n\n\n\n\n\\subsection{$\\Theta_{w_0}$ on isotypic categorifications}\tIn this section we prove that $\\Theta_{w_0}$ is t-exact on any isotypic categorification.  Fix $\\lambda \\in X_+$.  We write $\\Theta=\\Theta_{w_0}, L=L(\\lambda)$ and $\\cL=\\cL(\\lambda)$.\n\n\\begin{Lemma}\\label{lem:techbit}\nLet $k\\in\\{2,\\hdots,n\\}$ and set $\\mu=s_{i_k}\\cdots s_{i_n}(w_0(\\lambda))$.  The weight space $L(\\lambda)_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2101.05931v3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cactus groups",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-018-71-cactus-groups.md",
+      "narrative": null,
+      "content": "17",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2101.05931v3/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "_w_0 on general categorical representations",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-019-62-w-0-on-general-categorical-representations.md",
+      "narrative": null,
+      "content": "\\label{sec:mainpf}\n\nIn this section we prove that $\\Theta_{w_0}$ is a perverse equivalence on an arbitrary categorical representation.\nFix $\\mu \\in X$ such that $\\cC_\\mu$ is nonzero.  For ease of notation, set $\\cA=\\cC_\\mu$ and $\\cA'=\\cC_{w_0(\\mu)}$.    \n\n\nConsider a filtration by Serre subcategories\n\\begin{align*}\n0=\\cC_0\\subset \\cC_1\\subset \\cdots \\subset \\cC_r=\\cC,\n\\end{align*}\nwhich can be either the Jordan-H\\\"older filtration (Theorem \\ref{thm:JH}) or the isotypic filtration (Remark \\ref{rem:isofilts}).  So for every $i$,  $\\cC_i$ is a subrepresentation of $\\cC$, and $\\cC_i/\\cC_{i-1}$ is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2101.05931v3/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Crystalising the braid group action",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-020-7-crystalising-the-braid-group-action.md",
+      "narrative": null,
+      "content": "Already in the work of Chuang and Rouquier, a close connection is established between categori-\ncal representation theory and the theory of crystals (although it is not phrased in this language, cf.\nProposition 3.4 below). In this section we describe a new component of this theory. More precisely,\nlet V be an integrable representation of Uq(g). Recall that Lusztig has deﬁned a braid group action\non V [36]. In this section we explain how to use our results to “crystalise” this braid group action\nto obtain a cactus group action on the crystal of V , recovering the recently discovered action by\ng",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2101.05931v3/blocks/thm-sec-020-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "thm-sec-020-01.md",
+      "narrative": null,
+      "content": "([21, Theorem 5.19]) For any g-crystal B, the assignment cJ 7→ξJ deﬁnes a (set- theoretic) action of C on B.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2101.05931v3/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The cactus group action arising from Rickard complexes",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-021-72-the-cactus-group-action-arising-from-rickard.md",
+      "narrative": null,
+      "content": "We now explain how  cactus group actions arise from categorical representations, analogous to the construction of the crystal on $\\Irr(\\cC)$ in Proposition \\ref{prop:cryst}.\n\nLet $\\cC$ be a categorical representation of $U_q(\\fg)$.  For any weight $\\mu \\in X$, by Theorem \\ref{thm:perveq} $\\Theta_{w_0}\\bone_\\mu:D^b(\\cC_\\mu) \\to D^b(\\cC_{w_0(\\mu)})$ is a perverse equivalence, and hence it induces a bijection $\\varphi_I1_\\mu:\\Irr(\\cC_\\mu) \\to \\Irr(\\cC_{w_0(\\mu)})$.  By varying $\\mu$  we obtain a bijection \n$\n\\varphi_I:\\Irr(\\cC) \\to \\Irr(\\cC).\n$  \n\nNow let $J\\subseteq I$ be a connected subdiagram,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2101.05931v3/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Reconciling the two cactus group actions",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-022-73-reconciling-the-two-cactus-group-actions.md",
+      "narrative": null,
+      "content": "Let $\\cC$ be a categorical representation of $U_q(\\fg)$, and consider the $\\fg$-crystal $\\bB=\\Irr(\\cC)$.   There are two actions of the cactus group on $\\bB$, the first arising combinatorially via  Sch\\\"utzenberger involutions (Theorem \\ref{thm:cactact}) and the other categorically via Theorem \\ref{thm:cactus}. \n\n\\begin{Theorem}\\label{thm:agree}\nThe two actions of the cactus group on $\\bB$  agree.\n\\end{Theorem}\n\n\\begin{proof}\nIt suffices to show that $\\varphi_I=\\xi_I$.  \nFirst, suppose $\\cC$ is a simple categorification of type $\\lambda \\in X_+$.  In this case $\\bB=\\bB(\\lambda)$, and $\\xi=\\xi_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2101.05931v3/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples and Applications",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-023-8-examples-and-applications.md",
+      "narrative": null,
+      "content": "\\subsection{Examples}\nWe now examine three examples.  The first two consider minimal categorifications of the adjoint representation, while the third studies the categorification of the $n$-fold tensor product of the standard representation of $\\fsl_n$.  For ease of presentation, we ignore gradings and consider non-quantum categorical representations.\n\n\\begin{example}\nLet's consider the first non-trivial example of Theorem \\ref{thm:mincat}: the minimal categorification of the adjoint representation of $\\fsl_2$.  We can model this as follows:\n$$\n\\begin{tikzcd}\n\\kk\\mmod \\arrow[rr, bend left, \"in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2101.05931v3/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Type A combinatorics",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-024-82-type-a-combinatorics.md",
+      "narrative": null,
+      "content": "\\label{sec:typeA}\n\nIn this final section, we specialise to type A and discuss  the combinatorics of Kazhdan-Lusztig bases and standard Young tableaux from the vantage of perverse equivalences.   \n\nSet  $I=A_{n-1}=\\{1,\\hdots,n-1\\}$.\nWe continue with the notation in Example \\ref{ex:catO} and view a partition $\\lambda \\vdash n$ simultaneously as a dominant integral highest weight for $\\fsl_n$, and as an index of the Specht module $S^\\lambda$. Recall that by Schur-Weyl duality, $L(\\lambda)_0$ is isomorphic to $S^\\lambda$.  The Kazhdan-Lusztig basis of the Hecke algebra naturally descends to a basi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2101.05931v3/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "../sections/sec-025-references.md",
+      "narrative": null,
+      "content": "[1] Mina Aganagic, Knot categoriﬁcation from mirror symmetry, arXiv:2004.14518.\n[2] Pierre Baumann, The q-Weyl group of a q-Schur algebra. Preprint available on author webpage.\n[3] Arkady Berenstein and Andrei Zelevinsky, Canonical bases for the quantum groups of type Ar and piecewise\nlinear combinatorics, Duke Math. J. 82 (1996), 473–502.\n[4] A. A. Be˘ılinson, J. Bernstein, and P. Deligne, Faisceaux pervers, Analysis and topology on singular spaces, I\n(Luminy, 1981), 1982, pp. 5–171.\n[5] Roman Bezrukavnikov and Ivan Losev, Etingof’s conjecture for quantized quiver varieties, Invent. Math. 223",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

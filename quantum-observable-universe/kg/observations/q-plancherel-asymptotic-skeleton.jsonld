@@ -1,0 +1,41 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-q-plancherel-asymptotic-skeleton",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:q-plancherel-asymptotic-skeleton",
+  "kind": "proposition",
+  "title": "Asymptotic skeleton of the q-Plancherel measure $\\mathbb{M}_{n,q}$ — convergence on a continuous Young-diagram space",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-wedderburn-weight-canonical",
+    "papers/quantum-observable-universe/blocks/prop-algebraic-gns-embedding"
+  ],
+  "cites": [
+    "references/vershik-kerov1977",
+    "references/biane1998",
+    "references/feray-meliot2012",
+    "references/dolega-feray2014",
+    "references/dolega-sniady2018",
+    "references/biane2000"
+  ],
+  "tags": [
+    "causal-fermion-systems",
+    "plancherel",
+    "asymptotic-plancherel",
+    "kerov-vershik",
+    "wedderburn-weight",
+    "thoma-simplex",
+    "partly-established"
+  ],
+  "leanRef": "qou:QOU.Observations.QPlancherelAsymptoticSkeleton",
+  "text": "q-plancherel-asymptotic-skeleton.md",
+  "provenance": "authored"
+}

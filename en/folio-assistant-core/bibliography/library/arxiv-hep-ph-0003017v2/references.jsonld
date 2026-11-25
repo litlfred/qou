@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-hep-ph-0003017v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "arXiv:hep-ph/0003017v2 26 Jun 2000",
+      "dcterms:creator": [
+        "Verbaarschot, J.J.M."
+      ],
+      "dcterms:issued": "D:20241126",
+      "dcterms:identifier": "https://arxiv.org/abs/hep-ph/0003017",
+      "dcterms:abstract": "Random matrix theory is a powerful way to describe universal correlations of eigenvalues of complex systems. It also may serve as a schematic model for disorder in quantum systems. In this review, we discuss both types of applications of chiral random matrix theory to the QCD partition function. We show that constraints imposed by chiral symmetry and its spontaneous breaking determine the structure of low-energy eﬀective partition functions for the Dirac spectrum. We thus derive exact results for the low-lying eigenvalues of the QCD Dirac operator. We argue that the statistical properties of these eigenvalues are universal and can be described by a random matrix theory with the global symmetries of the QCD partition function. The total number of such eigenvalues increases with the square root of the Euclidean four-volume. The spectral density for larger eigenvalues (but still well below a typical hadronic mass scale) also follows from the same low-energy eﬀective partition function. The validity of the random matrix approach has been conﬁrmed by many lattice QCD simulations in a wide parameter range. Stimulated by the success of the chiral random matrix theory in the description of universal properties of the Dirac eigenvalues, the random matrix model is extended to nonzero temperature and chemical potential. In this way we obtain qualitative results for the QCD phase diagram and the spectrum of the QCD Dirac operator. We discuss the nature of the quenched approximation and analyze quenched Dirac spectra at nonzero baryon density in terms of an eﬀective partition function. Relations with other ﬁelds are also discussed.",
+      "dcterms:source": "library/arxiv-hep-ph-0003017v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-hep-ph-0003017v2"
+    }
+  ]
+}

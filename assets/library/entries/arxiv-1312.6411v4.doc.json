@@ -1,0 +1,1134 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1312.6411v4",
+  "title": "arxiv-1312.6411v4",
+  "variant": "pdf",
+  "pages": 52,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "0",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-0-introduction"
+    },
+    {
+      "level": 1,
+      "title": "DG Modules and their Resolutions",
+      "number": "1",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-dg-modules-and-their-resolutions"
+    },
+    {
+      "level": 1,
+      "title": "Cohomological Dimension",
+      "number": "2",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-cohomological-dimension"
+    },
+    {
+      "level": 1,
+      "title": "Reduction and Lifting",
+      "number": "3",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-3-reduction-and-lifting"
+    },
+    {
+      "level": 1,
+      "title": "Localization of Commutative DG Rings",
+      "number": "4",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-4-localization-of-commutative-dg-rings"
+    },
+    {
+      "level": 1,
+      "title": "Perfect DG Modules",
+      "number": "5",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-5-perfect-dg-modules"
+    },
+    {
+      "level": 1,
+      "title": "Tilting DG Modules",
+      "number": "6",
+      "page": 30,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-6-tilting-dg-modules"
+    },
+    {
+      "level": 1,
+      "title": "Dualizing DG Modules",
+      "number": "7",
+      "page": 35,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-7-dualizing-dg-modules"
+    },
+    {
+      "level": 1,
+      "title": "Cohen-Macaulay DG Modules",
+      "number": "8",
+      "page": 43,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-8-cohen-macaulay-dg-modules"
+    },
+    {
+      "level": 1,
+      "title": "Rigid DG Modules",
+      "number": "9",
+      "page": 47,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-9-rigid-dg-modules"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 51,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 449,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rigid dualizing",
+          "heading": false
+        },
+        {
+          "term": "group dpic",
+          "heading": false
+        },
+        {
+          "term": "cohen-macaulay",
+          "heading": false
+        },
+        {
+          "term": "a-modules",
+          "heading": false
+        },
+        {
+          "term": "amnon yekutieli",
+          "heading": false
+        },
+        {
+          "term": "perfect",
+          "heading": false
+        },
+        {
+          "term": "derived categories",
+          "heading": false
+        },
+        {
+          "term": "modules",
+          "heading": false
+        }
+      ],
+      "extract": "DUALITY AND TILTING FOR COMMUTATIVE DG RINGS AMNON YEKUTIELI Abstract. We consider commutative DG rings (better known as nonpositive strongly commutative associative unital DG algebras). For such a DG ring A we de- ﬁne the notions of perfect, tilting, dualizing, Cohen-Macaulay and rigid DG A-modules. Geometrically perfect DG modules are deﬁned by a local condition on Spec ¯A, where ¯A is the commutative ring H0(A).",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1312.6411v4/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-0-introduction",
+      "number": "0",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3085,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "opn mrm",
+          "heading": false
+        },
+        {
+          "term": "cat mrm",
+          "heading": false
+        },
+        {
+          "term": "opn dpic",
+          "heading": false
+        },
+        {
+          "term": "opn rhom",
+          "heading": false
+        },
+        {
+          "term": "opn spec",
+          "heading": false
+        },
+        {
+          "term": "rhom til",
+          "heading": false
+        },
+        {
+          "term": "tup dualizing",
+          "heading": false
+        },
+        {
+          "term": "rigid dualizing",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper we are interested in {\\em commutative DG rings}. This is an abbreviation for strongly commutative nonpositive associative unital differential graded algebras over $\\Z$. Thus a commutative DG ring is a graded ring $A = \\bigoplus_{i \\leq 0} A^i$, together with a differential $\\d$ of degree $1$, that satisfies the graded Leibniz rule. The multiplication satisfies $b \\cd a = (-1)^{i j} \\cd a \\cd b$ for all",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-dg-modules-and-their-resolutions",
+      "number": "1",
+      "title": "DG Modules and their Resolutions",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2222,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pseudo-finite semi-free",
+          "heading": false
+        },
+        {
+          "term": "cat mrm",
+          "heading": false
+        },
+        {
+          "term": "opn inf",
+          "heading": false
+        },
+        {
+          "term": "opn amp",
+          "heading": false
+        },
+        {
+          "term": "opn sup",
+          "heading": false
+        },
+        {
+          "term": "module opn",
+          "heading": false
+        },
+        {
+          "term": "interval opn",
+          "heading": false
+        },
+        {
+          "term": "opn smt",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:resol} A {\\em DG ring} (usually called an associative unital DG algebra over $\\Z$) is a graded ring $A = \\bigoplus_{i \\in \\Z} A^i$, with differential $\\d$ of degree $1$, satisfying the graded Leibniz rule \\[ \\d(a \\cd b) = \\d(a) \\cd b + (-1)^i \\cd a \\cd \\d(b) \\] for $a \\in A^i$ and $b \\in A^j$. A homomorphism of DG rings is a degree $0$ ring homomorphism that commutes with the differentials. In this way we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-cohomological-dimension",
+      "number": "2",
+      "title": "Cohomological Dimension",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2585,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cohomological dimension",
+          "heading": true
+        },
+        {
+          "term": "cat mrm",
+          "heading": false
+        },
+        {
+          "term": "cohomological displacement",
+          "heading": false
+        },
+        {
+          "term": "opn rhom",
+          "heading": false
+        },
+        {
+          "term": "cat subseteq",
+          "heading": false
+        },
+        {
+          "term": "cat star",
+          "heading": false
+        },
+        {
+          "term": "opn con",
+          "heading": false
+        },
+        {
+          "term": "cat mod",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:coh-dim} We continue with the conventions of Section \\ref{sec:resol}, namely our DG rings are nonpositive, and the DG modules are acted upon from the left. The concentration $\\opn{con}(M)$ of a graded module $M$ was introduced in Definition \\ref{dfn:550}. \\begin{dfn} \\label{dfn:10} Let $A$ and $B$ be DG rings, and let $\\cat{E} \\subseteq \\cat{D}(A)$ be a full subcategory. \\begin{enumerate} \\item Let $F :",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-reduction-and-lifting",
+      "number": "3",
+      "title": "Reduction and Lifting",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1420,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bar xar",
+          "heading": false
+        },
+        {
+          "term": "bar phi",
+          "heading": false
+        },
+        {
+          "term": "bar cong",
+          "heading": false
+        },
+        {
+          "term": "bar oplus",
+          "heading": false
+        },
+        {
+          "term": "cong opn",
+          "heading": false
+        },
+        {
+          "term": "bar psi",
+          "heading": false
+        },
+        {
+          "term": "opn cone",
+          "heading": false
+        },
+        {
+          "term": "quasi-isomorphism bar",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:lifting} Recall that by default all DG modules are left DG modules, and all DG rings are nonpositive (Convention \\ref{conv:305}). In this section we study the canonical DG ring homomorphism $A \\to \\bar{A}$, and the corresponding reduction functor $\\cat{D}(A) \\to \\cat{D}(\\bar{A})$, $M \\mapsto \\bar{A} \\ot^{\\mrm{L}}_{A} M$. We do not make any finiteness assumptions on the cohomology modules $\\opn{H}^i(M)$. A",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-localization-of-commutative-dg-rings",
+      "number": "4",
+      "title": "Localization of Commutative DG Rings",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2767,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "opn mrm",
+          "heading": false
+        },
+        {
+          "term": "opn spec",
+          "heading": false
+        },
+        {
+          "term": "bar opn",
+          "heading": false
+        },
+        {
+          "term": "ring opn",
+          "heading": false
+        },
+        {
+          "term": "cat dgr",
+          "heading": false
+        },
+        {
+          "term": "cong opn",
+          "heading": false
+        },
+        {
+          "term": "circ opn",
+          "heading": false
+        },
+        {
+          "term": "sequence bsym",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:localiz} In this section we specialize to DG rings satisfying a commutativity condition. Such a DG ring $A$ can be localized on $\\opn{Spec} \\bar{A}$. \\begin{dfn} \\label{dfn:305} Let $A = \\bigoplus_{i \\in \\Z} A^i$ be a DG ring. \\begin{enumerate} \\item $A$ is called {\\em weakly commutative} if $b \\cd a = (-1)^{i j} \\cd a \\cd b$ for all $a \\in A^{i}$ and $b \\in A^{j}$. \\item $A$ is called {\\em strongly",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-perfect-dg-modules",
+      "number": "5",
+      "title": "Perfect DG Modules",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 30,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3249,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "opn rhom",
+          "heading": false
+        },
+        {
+          "term": "cat mrm",
+          "heading": false
+        },
+        {
+          "term": "nolimits opn",
+          "heading": false
+        },
+        {
+          "term": "bar opn",
+          "heading": false
+        },
+        {
+          "term": "opn bigl",
+          "heading": false
+        },
+        {
+          "term": "cong opn",
+          "heading": false
+        },
+        {
+          "term": "opn smt",
+          "heading": false
+        },
+        {
+          "term": "opn hom",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:perfect} Recall that all DG rings are now commutative by default (Convention \\ref{conv:100}). In particular all rings are commutative. For a DG ring $A$, its reduction is $\\bar{A} = \\opn{H}^0(A)$. Let $A$ be a DG ring and $s \\in \\bar{A}$ an element. The localization $A_s$ was defined in Definition \\ref{dfn:40}. The notion of covering sequence of $\\bar{A}$ was introduced in Definition \\ref{dfn:70}, and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-6-tilting-dg-modules",
+      "number": "6",
+      "title": "Tilting DG Modules",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 35,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2875,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "opn dpic",
+          "heading": false
+        },
+        {
+          "term": "opn mrm",
+          "heading": false
+        },
+        {
+          "term": "cat mrm",
+          "heading": false
+        },
+        {
+          "term": "opn rhom",
+          "heading": false
+        },
+        {
+          "term": "opn pic",
+          "heading": false
+        },
+        {
+          "term": "cong opn",
+          "heading": false
+        },
+        {
+          "term": "opn spec",
+          "heading": false
+        },
+        {
+          "term": "tilting",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{sec:tilting} Recall that all DG rings here are commutative (Convention \\ref{conv:100}). In particular all rings are commutative. \\begin{dfn} Let $A$ be a DG ring. A DG $A$-module $P$ is called a {\\em tilting DG module} if there exists some DG $A$-module $Q$ such that $P \\ot^{\\mrm{L}}_A Q \\cong A$ in $\\cat{D}(A)$. \\end{dfn} The DG module $Q$ in the definition is called a {\\em quasi-inverse} of $P$. Due to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-7-dualizing-dg-modules",
+      "number": "7",
+      "title": "Dualizing DG Modules",
+      "level": 1,
+      "pageStart": 35,
+      "pageEnd": 43,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4367,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mrm til",
+          "heading": false
+        },
+        {
+          "term": "cat mrm",
+          "heading": false
+        },
+        {
+          "term": "opn rhom",
+          "heading": false
+        },
+        {
+          "term": "dualizing",
+          "heading": true
+        },
+        {
+          "term": "mrm eft",
+          "heading": false
+        },
+        {
+          "term": "mrm cong",
+          "heading": false
+        },
+        {
+          "term": "ring mrm",
+          "heading": false
+        },
+        {
+          "term": "opn dpic",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:dualizing} Recall that all our DG rings are now commutative (Convention \\ref{conv:100}), and $\\bar{A} = \\opn{H}^0(A)$. In this section we concentrate on cohomologically pseudo-noetherian DG rings (Definition \\ref{dfn:391}). Here is a generalization of Grothendieck's definition of dualizing complex. \\lb When $A$ is a ring, this is identical to the definition in \\cite[Section V.2]{RD}. \\begin{dfn}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-8-cohen-macaulay-dg-modules",
+      "number": "8",
+      "title": "Cohen-Macaulay DG Modules",
+      "level": 1,
+      "pageStart": 43,
+      "pageEnd": 47,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1926,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mrm opn",
+          "heading": false
+        },
+        {
+          "term": "cat mrm",
+          "heading": false
+        },
+        {
+          "term": "opn rhom",
+          "heading": false
+        },
+        {
+          "term": "rhom til",
+          "heading": false
+        },
+        {
+          "term": "opn dpic",
+          "heading": false
+        },
+        {
+          "term": "mrm bar",
+          "heading": false
+        },
+        {
+          "term": "cong opn",
+          "heading": false
+        },
+        {
+          "term": "opn rest",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:cm} In this section we work with cohomologically pseudo-noetherian commutative DG rings (see Convention \\ref{conv:100} and Definition \\ref{dfn:391}). Let $A$ be such a DG ring. Recall that $\\bar{A} = \\opn{H}^0(A)$, and $\\cat{D}^0(A)$ is the full subcategory of $\\cat{D}(A)$ consisting of the DG modules $M$ such that $\\opn{H}^i(M) = 0$ for all $i \\neq 0$. Inside $\\cat{D}^{0}(A)$ we have",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-9-rigid-dg-modules",
+      "number": "9",
+      "title": "Rigid DG Modules",
+      "level": 1,
+      "pageStart": 47,
+      "pageEnd": 51,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2097,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mrm til",
+          "heading": false
+        },
+        {
+          "term": "cat mrm",
+          "heading": false
+        },
+        {
+          "term": "rhom til",
+          "heading": false
+        },
+        {
+          "term": "eft mrm",
+          "heading": false
+        },
+        {
+          "term": "resolution til",
+          "heading": false
+        },
+        {
+          "term": "ring til",
+          "heading": false
+        },
+        {
+          "term": "mrm cong",
+          "heading": false
+        },
+        {
+          "term": "loc mrm",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:rigid} Recall that all our DG rings are commutative (Convention \\ref{conv:100}); namely we work inside the category $\\cat{DGR}^{\\leq 0}_{\\mrm{sc}}$. At the beginning of this section we do not make any finiteness assumptions on DG rings. In our new paper \\cite{Ye5} we introduced the {\\em squaring operation} for commutative DG rings. It is summarized in Theorem \\ref{thm:500} below, which is a combination of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 51,
+      "pageEnd": 52,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 881,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dualizing complexes",
+          "heading": false
+        },
+        {
+          "term": "rigid dualizing",
+          "heading": false
+        },
+        {
+          "term": "eprint arxiv",
+          "heading": false
+        },
+        {
+          "term": "derived picard",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential graded",
+          "heading": false
+        },
+        {
+          "term": "london math",
+          "heading": false
+        },
+        {
+          "term": "commutative rings",
+          "heading": false
+        },
+        {
+          "term": "formal schemes",
+          "heading": false
+        }
+      ],
+      "extract": "[ABIM] L.L. Avramov, R.-O. Buchweitz, S.B. Iyengar and C. Miller, Homology of perfect complexes, Advances in Mathematics 223 (2010) 1731-1781. [AFH] L.L. Avramov, H.-B. Foxby and S. Halperin, Diﬀerential Graded Homological Algebra, preprint dated 21 June 2006, available from the authors. [AG] B. Antieau and D. Gepner, Brauer groups and étale cohomology in derived algebraic geometry, Geometry and Topology 18 (2014),",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mrm opn",
+      "heading": false
+    },
+    {
+      "term": "cat mrm",
+      "heading": false
+    },
+    {
+      "term": "bar opn",
+      "heading": false
+    },
+    {
+      "term": "opn rhom",
+      "heading": false
+    },
+    {
+      "term": "mrm til",
+      "heading": false
+    },
+    {
+      "term": "ring opn",
+      "heading": false
+    },
+    {
+      "term": "cong opn",
+      "heading": false
+    },
+    {
+      "term": "module opn",
+      "heading": false
+    },
+    {
+      "term": "opn dpic",
+      "heading": false
+    },
+    {
+      "term": "homomorphism opn",
+      "heading": false
+    },
+    {
+      "term": "isomorphism opn",
+      "heading": false
+    },
+    {
+      "term": "opn bigl",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p51); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 10
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1312.6411v4"
+  }
+}

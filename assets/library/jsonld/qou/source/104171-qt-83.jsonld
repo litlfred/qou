@@ -1,0 +1,53 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/104171-qt-83/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "On the asymptotic expansion of the Kashaev invariant of the 5_2 knot",
+  "contains": [
+    "library/104171-qt-83/sections/sec-front-matter",
+    "library/104171-qt-83/sections/sec-000",
+    "library/104171-qt-83/sections/sec-001",
+    "library/104171-qt-83/sections/sec-002",
+    "library/104171-qt-83/sections/sec-003",
+    "library/104171-qt-83/sections/sec-004",
+    "library/104171-qt-83/sections/sec-005",
+    "library/104171-qt-83/sections/sec-006",
+    "library/104171-qt-83/sections/sec-007",
+    "library/104171-qt-83/sections/sec-008",
+    "library/104171-qt-83/sections/sec-009"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On the asymptotic expansion of the Kashaev invariant of the 5_2 knot — We give a presentation of the asymptotic expansion of the Kashaev invariant of the 52 knot.\n\n**On the asymptotic expansion of the Kashaev invariant of the 5_2 knot**\n\n*Quantum Topology*\n\n67 pp, 11 sections.\n\n**Abstract.** We give a presentation of the asymptotic expansion of the Kashaev invariant of the 52 knot. As the volume conjecture states, the leading term of the expansion presents the hyperbolic volume and the Chern–Simons invariant of the complement of the 52 knot. Further, we obtain a method to compute the full Poincare asymptotics to all orders of the Kashaev invariant of the 52 knot. Mathematics Subject Classiﬁcation (2010). 57M27; 57M25, 57M50.\n\n**Outline.** Front matter; Introduction; Calculation of the Kashaev invariant of the 5_; Calculation by the saddle point method; Calculation by the Poisson summation formula; Proof of Theorem 1.1; Properties of phi (t); Convergence of V(t,s) to hat V(t,s); Critical points of V(t,s) and hat V(t,s); Proof of Lemma 2.1; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "104171-qt-83",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "10.4171-qt-83.pdf",
+    "source_sha256": "d95b9363de2766d21f1e6a4e059d54e9bed0d31d7ebf061bc237e991e71e5378",
+    "pages": 67,
+    "arxiv": null,
+    "doi": "10.4171/QT/83",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

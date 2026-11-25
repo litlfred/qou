@@ -1,0 +1,996 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "amc-2730",
+  "title": "Braid representatives minimizing the number of simple walks *",
+  "variant": "pdf",
+  "pages": 27,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The colored Jones polynomial and walks along braids",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-the-colored-jones-polynomial-and-walks-along-bra"
+    },
+    {
+      "level": 1,
+      "title": "The colored Jones polynomial in closed form",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-the-colored-jones-polynomial-in-closed-form"
+    },
+    {
+      "level": 1,
+      "title": "Representing knots as braids",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-representing-knots-as-braids"
+    },
+    {
+      "level": 1,
+      "title": "Semi-simple walks and cyclic permutation",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-semi-simple-walks-and-cyclic-permutation"
+    },
+    {
+      "level": 1,
+      "title": "Simple walks on (2,n) torus braids",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-simple-walks-on-2n-torus-braids"
+    },
+    {
+      "level": 1,
+      "title": "Simple walks on (3,n) torus braids",
+      "number": null,
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-simple-walks-on-3n-torus-braids"
+    },
+    {
+      "level": 1,
+      "title": "Minimal braid representatives",
+      "number": null,
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-minimal-braid-representatives"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 213,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "simple walks",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "issn",
+          "heading": false
+        },
+        {
+          "term": "edn",
+          "heading": false
+        },
+        {
+          "term": "cyclic permutation",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "braid",
+          "heading": false
+        }
+      ],
+      "extract": "ISSN 1855-3966 (printed edn.), ISSN 1855-3974 (electronic edn.) ARS MATHEMATICA CONTEMPORANEA 23 (2023) #P1.10 https://doi.org/10.26493/1855-3974.2730.6ac (Also available at http://amc-journal.eu) Braid representatives minimizing the number of simple walks* Hans U. Boden † , Matthew Shimoda ‡ Mathematics & Statistics, McMaster University, Hamilton, Ontario, Canada Received 15 November 2021, accepted 19 July 2022,",
+      "extractCut": true,
+      "blocks": [
+        "library/amc-2730/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "3",
+      "words": 850,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "simple walks",
+          "heading": false
+        },
+        {
+          "term": "walks satisfy",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "braid representatives",
+          "heading": false
+        },
+        {
+          "term": "kpqq",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "finding braid",
+          "heading": false
+        },
+        {
+          "term": "torus knots",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction The Jones polynomial VLptq is an invariant of knots and links defined using quantum rep- resentations of braids. It can be uniquely characterized as the polynomial-valued invariant of oriented links with V⃝ptq “ 1 for ⃝the unknot and satisfying the skein relation t´1VL`ptq ´ tVL´ptq “ pt1{2 ´ t´1{2qVL0ptq, *The authors are especially grateful to Alexander Stoimenow for providing crucial input. They",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-the-colored-jones-polynomial-and-walks-along-bra",
+      "number": null,
+      "title": "The colored Jones polynomial and walks along braids",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": "3",
+      "labelEnd": "6",
+      "words": 1976,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "walks along",
+          "heading": true
+        },
+        {
+          "term": "colored jones",
+          "heading": true
+        },
+        {
+          "term": "jones polynomial",
+          "heading": true
+        },
+        {
+          "term": "simple walks",
+          "heading": false
+        },
+        {
+          "term": "along braids",
+          "heading": true
+        },
+        {
+          "term": "braid word",
+          "heading": false
+        },
+        {
+          "term": "local weights",
+          "heading": false
+        },
+        {
+          "term": "n-th colored",
+          "heading": false
+        }
+      ],
+      "extract": "The colored Jones polynomial and walks along braids Given a knot K and integer N ě 2, the colored Jones polynomial JN,Kpqq is a Laurent polynomial in the variable q1{2. It is normalized so that JN,⃝pqq “ 1, where ⃝is the un- knot. When N “ 2, the colored Jones polynomial agrees with the usual Jones polynomial. In general, the N-th colored Jones polynomial of a knot K can be expressed in terms of the usual Jones",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-the-colored-jones-polynomial-in-closed-form",
+      "number": null,
+      "title": "The colored Jones polynomial in closed form",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 10,
+      "labelStart": "6",
+      "labelEnd": "10",
+      "words": 1759,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored jones",
+          "heading": true
+        },
+        {
+          "term": "mbm kak",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": true
+        },
+        {
+          "term": "q-multinomial coefficient",
+          "heading": false
+        },
+        {
+          "term": "zebra stripes",
+          "heading": false
+        },
+        {
+          "term": "simple walks",
+          "heading": false
+        },
+        {
+          "term": "σ1σ2σ σ2σ1σ",
+          "heading": false
+        },
+        {
+          "term": "kpqq",
+          "heading": false
+        }
+      ],
+      "extract": "The colored Jones polynomial in closed form In this section, we apply Theorem 2.2 and Lemma 2.3 to compute JN,Kpqq, the colored Jones polynomial, for the knots 52, 61 and 72. This is achieved by choosing favorable braid representatives, namely those with only a few simple walks. In [22], Masbaum uses skein theory to compute the colored Jones polynomial for all twist knots, a class which includes 52, 61, and 72. More",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-representing-knots-as-braids",
+      "number": null,
+      "title": "Representing knots as braids",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 14,
+      "labelStart": "10",
+      "labelEnd": "14",
+      "words": 1674,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "simple walks",
+          "heading": false
+        },
+        {
+          "term": "braid word",
+          "heading": false
+        },
+        {
+          "term": "representing knots",
+          "heading": true
+        },
+        {
+          "term": "braid representative",
+          "heading": false
+        },
+        {
+          "term": "active crossings",
+          "heading": false
+        },
+        {
+          "term": "braid represen",
+          "heading": false
+        },
+        {
+          "term": "find braid",
+          "heading": false
+        },
+        {
+          "term": "some braid",
+          "heading": false
+        }
+      ],
+      "extract": "Representing knots as braids One of the objectives in this paper is to find braid representations of knots that minimize the number of simple walks. To do that, we will apply several different operations that alter the braid word without changing its representative knot. These operations include reflection, rotation, and cyclic permutation of the braid word, and each of them can be used to reduce the number of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-semi-simple-walks-and-cyclic-permutation",
+      "number": null,
+      "title": "Semi-simple walks and cyclic permutation",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 17,
+      "labelStart": "14",
+      "labelEnd": "17",
+      "words": 2159,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "semi-simple walks",
+          "heading": true
+        },
+        {
+          "term": "active arcs",
+          "heading": false
+        },
+        {
+          "term": "active crossings",
+          "heading": false
+        },
+        {
+          "term": "active arc",
+          "heading": false
+        },
+        {
+          "term": "cyclic permutation",
+          "heading": true
+        },
+        {
+          "term": "swβ",
+          "heading": false
+        },
+        {
+          "term": "simple walk",
+          "heading": false
+        },
+        {
+          "term": "walk jumps",
+          "heading": false
+        }
+      ],
+      "extract": "Semi-simple walks and cyclic permutation The main result in this section is an invariance property which asserts that under the cyclic permutation, the total number of simple walks on a braid β and its reflection β˚ does not change. To see this, we introduce the notion of semi-simple walks and study their behavior under reflection. Recall the definition of SWβ in Equation (4). Previously, we identified walks W with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-simple-walks-on-2n-torus-braids",
+      "number": null,
+      "title": "Simple walks on (2,n) torus braids",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 682,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "simple walks",
+          "heading": true
+        },
+        {
+          "term": "walks extended",
+          "heading": false
+        },
+        {
+          "term": "n-th crossing",
+          "heading": false
+        },
+        {
+          "term": "t2u",
+          "heading": false
+        },
+        {
+          "term": "extending simple",
+          "heading": false
+        },
+        {
+          "term": "torus",
+          "heading": true
+        },
+        {
+          "term": "torus braid",
+          "heading": false
+        },
+        {
+          "term": "torus link",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we show that the number of simple walks on the braid βn with closure the p2, nq torus link is given by the n-th term in the Fibonacci sequence 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, . . . We will find a closed form solution for the number of simple walks and use it to show they grow exponentially in n. For n ě 1 let βn “ σ´n 1 . The closure of βn is the p2, nq torus knot if n is odd and the p2, nq",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-simple-walks-on-3n-torus-braids",
+      "number": null,
+      "title": "Simple walks on (3,n) torus braids",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 21,
+      "labelStart": "18",
+      "labelEnd": "21",
+      "words": 1436,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "simple walks",
+          "heading": true
+        },
+        {
+          "term": "b2n c2n",
+          "heading": false
+        },
+        {
+          "term": "a2n c2n",
+          "heading": false
+        },
+        {
+          "term": "p2n q-st",
+          "heading": false
+        },
+        {
+          "term": "p2n q-th",
+          "heading": false
+        },
+        {
+          "term": "overstrand just",
+          "heading": false
+        },
+        {
+          "term": "q-st crossing",
+          "heading": false
+        },
+        {
+          "term": "t2u",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we show that the number of simple walks on the braid γn with closure the p3, nq torus link is given by the n-th term of the sequence 0, 1, 4, 5, 10, 19, 34, 63, 116, 213, 392, 721, 1326, . . . We will find a closed form solution for the number of simple walks and use it to show they grow exponentially in n. For n ě 1, let γn “ pσ´1 1 σ´1 2 qn. The closure of γn is the p3, nq torus knot if n ı 0 pmod",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-minimal-braid-representatives",
+      "number": null,
+      "title": "Minimal braid representatives",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 27,
+      "labelStart": "21",
+      "labelEnd": "27",
+      "words": 2625,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braid representatives",
+          "heading": true
+        },
+        {
+          "term": "minimal braid",
+          "heading": true
+        },
+        {
+          "term": "braid width",
+          "heading": false
+        },
+        {
+          "term": "minimizing braid",
+          "heading": false
+        },
+        {
+          "term": "braid word",
+          "heading": false
+        },
+        {
+          "term": "simple walks",
+          "heading": false
+        },
+        {
+          "term": "braid length",
+          "heading": false
+        },
+        {
+          "term": "crossing knots",
+          "heading": false
+        }
+      ],
+      "extract": "Minimal braid representatives In Table 5, we list knots up to 9 crossings with the braid representatives giving minimal numbers of simple walks. More extensive tables of knots up to 13 crossings and braid representatives for them can be found online at [7]. (In [7] and Table 1 below, we use the notation for braid words from sagemath, meaning that a braid word σε1 a1 ¨ ¨ ¨ σεℓ aℓis denoted by rε1a1, . . . , εℓaℓs.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "simple walks",
+      "heading": true
+    },
+    {
+      "term": "semi-simple walks",
+      "heading": true
+    },
+    {
+      "term": "walks extended",
+      "heading": false
+    },
+    {
+      "term": "walks along",
+      "heading": true
+    },
+    {
+      "term": "walks satisfy",
+      "heading": false
+    },
+    {
+      "term": "braid word",
+      "heading": true
+    },
+    {
+      "term": "walk jumps",
+      "heading": false
+    },
+    {
+      "term": "braid representatives",
+      "heading": true
+    },
+    {
+      "term": "braid closure",
+      "heading": true
+    },
+    {
+      "term": "braid width",
+      "heading": true
+    },
+    {
+      "term": "torus braid",
+      "heading": false
+    },
+    {
+      "term": "minimizing braid",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The simple walks A and B shown as arcs with zebra stripes for the braid",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The simple walks A, B and C as arcs with zebra stripes on the braid σ1σ2σ3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The Markov moves. Given a braid β, its closure is denoted pβ and is the knot or link obtained by connecting the strands on top with the corresponding strands on bottom without introducing any additional crossings",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "A braid β representing the knot 52 and its reflection β˚, rotation β:, and reversal",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "An active crossing and its oriented smoothing for σi and σ´1",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Extending simple walks from βn´1 and βn´2 to βn. The two sets of simple walks are disjoint. This can be verified by noting that they traverse different strands between the pn ´ 1q-st and n-th crossings. Equivalently, one can",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Extending simple walks from γn´1 to γn",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Extending simple walks from γn´2 to γn",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Extending simple walks from γn´3 to γn",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Knots up to 12 crossings whose minimizing braid word begins with σ´1",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Average number of simple walks by crossing number",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "Average number of simple walks by braid length",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4",
+      "title": "Simple walks for representatives of minimal braid width and length",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "5",
+      "title": "Knots up to 9 crossings and braid words minimizing the number of simple walks",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 8,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "10 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "5 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p21); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 5
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/amc-2730"
+  }
+}

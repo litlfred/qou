@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/arxiv-2007.10190v2/sections/sec-011",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "The 41 knot",
+  "pageStart": 13,
+  "pageEnd": 16,
+  "contains": [
+    "library/arxiv-2007.10190v2/blocks/prose-sec-011",
+    "library/arxiv-2007.10190v2/blocks/figure-img-p014-1",
+    "library/arxiv-2007.10190v2/blocks/figure-img-p014-18",
+    "library/arxiv-2007.10190v2/blocks/figure-img-p014-35",
+    "library/arxiv-2007.10190v2/blocks/figure-img-p014-52",
+    "library/arxiv-2007.10190v2/blocks/figure-img-p014-69",
+    "library/arxiv-2007.10190v2/blocks/figure-img-p014-86",
+    "library/arxiv-2007.10190v2/blocks/figure-img-p014-103",
+    "library/arxiv-2007.10190v2/blocks/figure-img-p014-120",
+    "library/arxiv-2007.10190v2/blocks/figure-img-p014-137",
+    "library/arxiv-2007.10190v2/blocks/figure-img-p014-154",
+    "library/arxiv-2007.10190v2/blocks/figure-img-p014-171",
+    "library/arxiv-2007.10190v2/blocks/figure-img-p014-188",
+    "library/arxiv-2007.10190v2/blocks/figure-img-p014-205",
+    "library/arxiv-2007.10190v2/blocks/figure-img-p014-222",
+    "library/arxiv-2007.10190v2/blocks/figure-img-p014-239",
+    "library/arxiv-2007.10190v2/blocks/figure-img-p014-256",
+    "library/arxiv-2007.10190v2/blocks/figure-img-p014-273"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2007.10190v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2007.10190v2/manifest.jsonld",
+  "provenance": "ingested"
+}

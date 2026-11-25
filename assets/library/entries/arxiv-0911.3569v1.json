@@ -1,0 +1,693 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0911.3569v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction.",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "I have been asked by the AMS to survey the recent work of Julius Borcea\nand Petter Br\\\"and\\'en on their multivariate generalization of the theory\nof univariate polynomials with only real roots, and its applications.\nIt is exciting work -- elementary but subtle, and with spectacular consequences.\nBorcea and Br\\\"and\\'en take center stage but there are many other actors,\nmany of whom I am unable to mention in this brief treatment.  Notably, Leonid\nGurvits provides a transparent proof of a vast generalization of the famous van\nder Waerden Conjecture.\n\nSpace is limited and I have been advised to us",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "MULTIVARIATE STABLE POLYNOMIALS:\nTHEORY AND APPLICATIONS\nDAVID G. WAGNER\nIn memoriam Julius Borcea.\nAbstract. Univariate polynomials with only real roots – while special – do\noccur often enough that their properties can lead to interesting conclusions in\ndiverse areas. Due mainly to the recent work of two young mathematicians,\nJulius Borcea and Petter Br¨and´en, a very successful multivariate generaliza-\ntion of this method has been developed. The ﬁrst part of this paper surveys\nsome of the main results of this theory of “multivariate stable” polynomials\n– the most central of these results is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stable polynomials.",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-2-stable-polynomials.md",
+      "narrative": null,
+      "content": "we use parts of the forgoing for Borcea and Br¨and´en’s splendid proof of the Grace-\nWalsh-Szeg˝o Coincidence Theorem. In Section 5, the Grace-Walsh-Szeg˝o Theorem\nis used to extend the results of Section 3 from multiaﬃne to arbitrary stable polyno-\nmials. This culminates in an amazing multivariate generalization of the P´olya-Schur\nTheorem, the proof of which requires the development of a multivariate extension\nof the Szasz Principle (which is omitted, regretfully, for lack of space). Section 6\npresents Borcea and Br¨and´en’s resolution of some matrix-theoretic conjectures of\nJohnson. Section",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples.",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-21-examples.md",
+      "narrative": null,
+      "content": "\\begin{prop}[Proposition 2.4 of \\cite{BB1}]\nFor $i\\in[m]$, let $A_i$ be an $n$-by-$n$ matrix and let $x_i$ \nbe an indeterminate, and let $B$ be an $n$-by-$n$ matrix. If $A_i$ is\npositive semidefinite for all $i\\in[m]$ and $B$ is Hermitian then\n$$\nf(\\x) = \\det(x_1 A_1 + x_2 A_2 + \\cdots + x_m A_m + B)\n$$\nis real stable.\n\\end{prop}\n\\begin{proof}\nLet $\\overline{f}$ denote the coefficientwise complex conjugate of $f$.\nSince $\\overline{A_i}=A_i^\\T$ for all $i\\in[m]$, and $\\overline{B}=B^\\T$,\nit follows that $\\overline{f}=f$, so that $f\\in\\RR[\\x]$.  By Hurwitz's Theorem\nand a routine perturbation ar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Elementary properties.",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-22-elementary-properties.md",
+      "narrative": null,
+      "content": "The following simple observation often allows multivariate problems to\nbe reduced to univariate ones, as will be seen. \n\\begin{lemma}\nA polynomial $f\\in\\CC[\\x]$ is stable if and only if for all\n$\\a,\\b\\in\\RR^m$ with $\\b>\\zero$, $f(\\a + \\b t)$ is stable in $\\Stab[t]$.\n\\end{lemma}\n\\begin{proof}\nSince $\\HH^{m} = \\{\\a+\\b t:\\ \\a,\\b\\in\\RR^{m},\\ \\b>\\zero,\\\n\\mathrm{and}\\ t\\in\\HH\\}$, the result follows.\n\\end{proof}\n\nFor $f\\in\\CC[\\x]$ and $i\\in[m]$, let $\\deg_i(f)$ denote the degree of $x_i$\nin $f$.\n\\begin{lemma}\nThese operations preserve stability of polynomials in $\\CC[\\x]$.\\\\\n\\textup{(a)}\\ \\textbf{Per",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "\\ the roots of $g'(x)$ lie in the convex hull of the roots of $g(x)$.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Univariate stable polynomials.",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-23-univariate-stable-polynomials.md",
+      "narrative": null,
+      "content": "A nonzero univariate polynomial is real stable if and only if\nit has only real roots.  Let $f$ and $g$ be two such polynomials,\nlet $\\xi_{1}\\leq\\xi_{2}\\leq\\cdots\\leq\\xi_{k}$ be the roots of $f$,\nand let $\\theta_{1}\\leq\\theta_{2}\\leq\\cdots\\leq\\theta_{\\ell}$ be the \nroots of $g$.  These roots are \\emph{interlaced} if they are ordered so that \n$\\xi_{1}\\leq\\theta_{1}\\leq\\xi_{2}\\leq\\theta_{2}\\leq\\cdots$ or\n$\\theta_{1}\\leq\\xi_{1}\\leq\\theta_{2}\\leq\\xi_{2}\\leq\\cdots$.\nFor each $i\\in[\\ell]$, let $\\ghat_{i} = g/(x-\\theta_{i})$.  If $\\deg f \n\\leq \\deg g$ and the roots of $g$ are simple,\nthen there is a u",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "(a) shows that (a) and (b) are equivalent.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prop-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "prop-sec-005-02.md",
+      "narrative": null,
+      "content": "(a) and Lemma 2.3. By the Wronskian condition for univariate polynomials in proper position, $$ \\Wr[f(\\a+(\\b+\\delta_i)t),g(\\a+(\\b+\\delta_i)t)]\\leq 0 $$ for all $t\\in\\RR$. Taking the limit as $\\b\\goesto\\zero$ and evaluating at $t=0$ yields $$ \\Wr_i[f,g](\\a) = \\Wr[f(\\a+\\delta_i t),g(\\a+\\delta_i t)]|_{t=0}\\leq 0, $$ by continuity. Thus (a) implies (c).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Multivariate analogues of the HKO and HB Theorems.",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-24-multivariate-analogues-of-the-hko-and-hb-theo.md",
+      "narrative": null,
+      "content": "By analogy with the univariate HB Theorem, polynomials\n$f,g\\in\\RR[\\x]$ are said to be in \\emph{proper position}, denoted by\n$f\\ll g$, when $g+\\i f\\in\\Stab[\\x]$.  (As will be seen, this implies\nthat $f,g\\in\\StabR[\\x]$.)  Thus, the multivariate analogue of\nHermite-Biehler is a \\underline{definition}, not a theorem.\n\n\\begin{prop}[Lemma 1.8 and Remark 1.3 of \\cite{BB5}]\nLet $f,g\\in\\CC[\\x]$.\\\\\n\\textup{(a)}\\ If $f,g\\in\\RR[\\x]$ then $f \\ll g$\nif and only if $g+yf\\in\\StabR[\\x,y]$.\\\\\n\\textup{(b)}\\ If $0\\not\\equiv f\\in\\Stab[\\x]$ then\n$g+yf\\in\\Stab[\\x,y]$ if and only if for all $\\z\\in\\HH^m$,\n$$\n\\Im\\left(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prop-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "prop-sec-007-01.md",
+      "narrative": null,
+      "content": "(a) shows that $f_{j}\\ll f^{j}$, and from the calculation above and Corollary 2.10, it follows that $\\Delta_{ij}f(\\a) = -\\Wr_{i}[f_{j},f^{j}](\\a)\\geq 0$ for all $\\a\\in\\RR^m$.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Multiaffine stable polynomials.",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-006-3-multiaffine-stable-polynomials.md",
+      "narrative": null,
+      "content": "A polynomial $f$ is \\emph{multiaffine} if each indeterminate occurs\nat most to the first power in $f$.  For a set $\\EuScript{S}$ of polynomials,\nlet $\\EuScript{S}^\\ma$ denote the set of multiaffine polynomials in\n$\\EuScript{S}$.  For multiaffine $f\\in\\CC[\\x]^{\\ma}$ and $i\\in[m]$\nwe use the ``ultra-shorthand'' notation $f = f^{i} + x_{i} f_{i}$\nin which $f^{i} = f|_{x_{i}=0}$ and $f_{i} = \\partial_{i} f$.\nThis notation is extended to multiple distinct indices in the\nobvious way -- in particular,\n$$\nf = f^{ij} + x_{i} f_{i}^{j} + x_{j} f_{j}^{i} + x_{i} x_{j} f_{ij}.\n$$",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A criterion for real stability.",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-007-31-a-criterion-for-real-stability.md",
+      "narrative": null,
+      "content": "For $f\\in\\CC[\\x]$ and $\\{i,j\\}\\subseteq[m]$, let\n$$\n\\Delta_{ij}f\n= \\partial_i f \\cdot \\partial_j f - f \\cdot \\partial_i\\partial_j f.\n$$\nNotice that for $f\\in\\CC[\\x]^\\ma$,\n$$\n\\Delta_{ij}f\n=\nf_{i}^{j} f_{j} - f^{j} f_{ij}\n=\n\\Wr_{i}[f^{j},f_{j}] = -\\Wr_{i}[f_{j},f^{j}],\n$$\nand\n$$\n\\Delta_{ij}f = f_{i}^{j} f_{j}^{i} - f^{ij} f_{ij}.\n$$\n\n\\begin{theorem}[Theorem 5.6 of \\cite{B} and Theorem 3 of \\cite{WW}]\nLet $f\\in\\RR[\\x]^\\ma$ be multiaffine.  The following are equivalent:\\\\\n\\textup{(a)}\\ $f$ is real stable.\\\\\n\\textup{(b)}\\ For all $\\{i,j\\}\\subseteq[m]$ and all $\\a\\in\\RR^m$,\n$\\Delta_{ij}f(\\a)\\geq 0$.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Linear transformations preserving stability – multiaffine case.",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-008-32-linear-transformations-preserving-stability-m.md",
+      "narrative": null,
+      "content": "\\begin{lemma}[Lieb-Sokal Lemma, Lemma 2.1 of \\cite{BB5}]\nLet $g(\\x)+yf(\\x)\\in\\Stab[\\x,y]$ be stable and such that\n$\\deg_i(f)\\leq 1$.  Then $g-\\partial_{i}f \\in\\Stab[\\x]$ is stable.\n\\end{lemma}\n\\begin{proof}\nSince $g$ is stable (by specialization to $y=0$), there is nothing to\nprove if $\\partial_i f\\equiv 0$ identically, so assume otherwise\n(and hence that $f\\not\\equiv 0$).\nBy permutation we can assume that $i=1$.  Since $f$ is stable and\n$z_1,z\\in\\HH$ imply that $z_1-z^{-1}\\in\\HH$, it follows that\n$$\nyf(x_1-y^{-1},x_2,...,x_m)= - \\partial_1 f(\\x) + yf(\\x)\n$$\nis stable.  Proposition 2.7(b) impl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Grace-Walsh-Szego Coincidence Theorem.",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-009-4-the-grace-walsh-szego-coincidence-theorem.md",
+      "narrative": null,
+      "content": "Let $f\\in\\CC[x]$ be a univariate polynomial of degree at most $m$,\nand let $\\x=(x_1,...,x_m)$ as usual.  For $0\\leq j\\leq m$, the\n\\emph{$j$-th elementary symmetric function} of $\\x$ is\n$$\ne_j(\\x) = \\sum_{1\\leq i_1<\\cdots< i_j\\leq m} x_{i_1}\\cdots x_{i_j}\n= \\sum_{S\\subseteq[m]:\\ |S|=j} \\x^{S}.\n$$\nThe \\emph{$m$-th polarization} of $f$ is the polynomial obtained\nas the image of $f$ under the linear transformation $\\Pol_m$\ndefined by $x^j \\mapsto \\binom{m}{j}^{-1}e_j(\\x)$ for all $0\\leq j\\leq m$,\nand linear extension.  In other words, $\\Pol_m f$ is the unique\nmultiaffine polynomial in $\\CC[\\x]^\\ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Reduction to the case of stable polynomials.",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-010-41-reduction-to-the-case-of-stable-polynomials.md",
+      "narrative": null,
+      "content": "First of all, it suffices to prove GWS for open circular regions, since a closed\ncircular region is the intersection of all the open circular regions which\ncontain it.  Second, it suffices to show that for any $g\\in\\CC[x]$ of degree\nat most $m$, if $\\deg(g)=m$ or $\\A$ is convex, and $\\z\\in\\A^m$ is such that\n$\\Pol_m g(\\z)= 0$, then there exists $z\\in\\A$ such that $g(z)=0$.\nThis implies the stated form of GWS by applying this special case to\n$g(x)=f(x)-c$, where $c=\\Pol_m f(\\z)$.  Stated otherwise, it suffices to show\nthat if $f(z)\\neq 0$ for all $z\\in\\A$ then $\\Pol_m f(\\z)\\neq 0$ for\nall $\\z\\in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/thm-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "thm-sec-009-01.md",
+      "narrative": null,
+      "content": "} The proof of GWS in this section is adapted from Borcea and Br\\\"and\\'en \\cite{BB6}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/figure-img-p012-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../images/img-p012-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Partial symmetrization.",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-011-42-partial-symmetrization.md",
+      "narrative": null,
+      "content": "The group $\\S(m)$ of all permutations $\\sigma:[m]\\goesto[m]$ acts on $\\CC[\\x]$\nby the rule $\\sigma(f)(x_1,...,x_m)=f(x_{\\sigma(1)},...,x_{\\sigma(m)})$.\nNotice that\n$$\n\\sigma(\\x^\\alpha) = \\prod_{i=1}^m x_{\\sigma(i)}^{\\alpha(i)} =\n\\prod_{i=1}^m x_i^{\\alpha\\circ\\sigma^{-1}(i)} = \\x^{\\alpha\\circ\\sigma^{-1}}.\n$$\nFor $\\{i,j\\}\\subseteq[m]$, let $\\tau_{ij}$ be\nthe transposition that exchanges $i$ and $j$ and fixes all other elements of $[m]$.\n\\begin{lemma}\nLet $0\\leq \\lambda\\leq 1$ and $\\{i,j\\}\\subseteq[m]$, and let\n$T_{ij}^{(\\lambda)}=(1-\\lambda)+\\lambda\\tau_{ij}$.  If $f\\in\\Stab[\\x]^\\ma$ is stable\na",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Convergence to the polarization.",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-012-43-convergence-to-the-polarization.md",
+      "narrative": null,
+      "content": "Let $0\\not\\equiv f(x)\\in\\Stab[x]$ be a univariate stable polynomial of degree\nat most $m$:\\ say $f(x) = c(x-\\xi_1)\\cdots(x-\\xi_n)$ in which $c\\neq 0$,\n$n\\leq m$, and $\\xi_i\\not\\in\\HH$ for all $i\\in[n]$.  Then the polynomial\n$F_0\\in\\CC[\\x]$ defined by\n$$\nF_0(x_1,...,x_m)=c(x_1-\\xi_1)\\cdots(x_n-\\xi_n)\n$$\nis multiaffine and stable, and $F_0(x,...,x)=f(x)$.\nLet $\\Sigma=(\\{i_k,j_k\\}:\\ k\\in\\NN)$ be a sequence of two-element subsets of\n$[m]$, and for each $k\\in\\NN$ let $T_k = T_{i_k j_k}^{(1/2)}$ and define\n$F_{k+1} = T_k(F_k)$.  By induction using Lemma 4.3, each\n$F_k\\in\\Stab[\\x]^\\ma$ is multiaffine",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Polarization arguments and stability preservers.",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-013-5-polarization-arguments-and-stability-preserver.md",
+      "narrative": null,
+      "content": "For $\\kappa\\in\\NN^m$ and a set $\\S\\subseteq\\CC[\\x]$ of polynomials,\nlet $\\S^{\\leq\\kappa}$ be the set of all $f\\in\\S$ such that $\\deg_i(f)\\leq\n\\kappa(i)$ for all $i\\in[m]$.  Let\n$$\nI(\\kappa) = \\{(i,j):\\ i\\in[m]\\ \\mathrm{and}\\ j\\in[\\kappa(i)]\\}\n$$\nand let $\\u=\\{u_{ij}:\\ (i,j)\\in I(\\kappa)\\}$ be indeterminates.\nFor $f\\in\\CC[\\x]^{\\leq\\kappa}$, Let $\\Pol_{\\kappa(i)}^{(i)} f$ denote\nthe \\emph{$\\kappa(i)$-th polarization of $x_i$ in $f$}:\\ this is the image\nof $f$ under the linear transformation $\\Pol_{\\kappa(i)}^{(i)}$ defined by\n$x_i^j \\mapsto \\binom{\\kappa(i)}{j}^{-1} e_j(u_{i1},...,u_{i\\kappa(i)}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The real stability criterion revisited.",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-014-51-the-real-stability-criterion-revisited.md",
+      "narrative": null,
+      "content": "\\begin{prop}\nLet $\\kappa\\in\\NN^{m}$ and $f\\in\\CC[x]^{\\leq\\kappa}$.  Then\n$\\Pol_\\kappa f$ is stable if and only if $f$ is stable.\n\\end{prop}\n\\begin{proof}\nDiagonalization implies that if $\\Pol_\\kappa f$ is stable then $f$\nis stable, so only the converse implication needs proof.  Assume that\n$f$ is stable, and let $z_{ij}\\in\\HH$ for $(i,j)\\in I(\\kappa)$.\nBy induction on $m$, repeated application of GWS \nshows that there are $\\z=(z_{1},\\ldots,z_{m})\\in\\HH^m$ such that\n$$\n\\Pol_{\\kappa} f(z_{ij}:\\ (i,j)\\in I(\\kappa)) = f(\\z).\n$$\nSince $f$ is stable it follows that $\\Pol_{\\kappa} f$ is stable.\n\\end{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Linear transformations preserving stability – polynomial case.",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-015-52-linear-transformations-preserving-stability-p.md",
+      "narrative": null,
+      "content": "\\begin{theorem}[Theorem 1.1 of \\cite{BB5}]\nLet $\\kappa\\in\\NN^m$, and let $T:\\CC[\\x]^{\\leq\\kappa}\\goesto\\CC[\\x]$\nbe a linear transformation.\nThen $T$ maps $\\Stab[\\x]^{\\leq\\kappa}$ into $\\Stab[\\x]$ if and only if \neither\\\\\n\\textup{(a)}\\ $T(f) = \\eta(f)\\cdot p$ for some linear functional\n$\\eta:\\CC[\\x]^{\\leq\\kappa}\\goesto\\CC$ and $p\\in\\Stab[\\x]$, or\\\\\n\\textup{(b)}\\ the polynomial $T((\\x+\\y)^\\kappa)$ is stable in $\\Stab[\\x,\\y]$.\n\\end{theorem}\n\\begin{proof}\nLet $\\u=\\{u_{ij}:\\ (i,j)\\in I(\\kappa)\\}$, and define a linear \ntransformation $\\widetilde{T}:\\CC[\\u]^{\\ma}\\goesto\\CC[\\x]$ as follows.\nFor every",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Johnson's Conjectures.",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-016-6-johnsons-conjectures.md",
+      "narrative": null,
+      "content": "Let $\\A = (A_{1},\\ldots,A_{k})$ be a $k$-tuple of $n$-by-$n$ matrices.\nDefine the \\emph{mixed determinant} of $\\A$ to be\n$$\n\\Det(\\A) = \\Det(A_{1},\\ldots,A_{k}) = \n\\sum_{(S_{1},\\ldots,S_{k})} \\prod_{i=1}^{k} \\det A_{i}[S_{i}],\n$$\nin which the sum is over all ordered sequences of $k$ pairwise disjoint\nsubsets of $[n]$ such that $[n]=S_{1}\\cup\\cdots\\cup S_{k}$,  and\n$A_{i}[S_{i}]$ is the principal submatrix of $A_{i}$ supported on rows \nand columns in $S_{i}$.  Let $A_i(S_i)$ be the complementary\nprincipal submatrix supported on rows and columns not in $S_i$,\nand for $j\\in[n]$ let $A_i(j)=A_i(\\{j",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The symmetric exclusion process.",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/sec-017-7-the-symmetric-exclusion-process.md",
+      "narrative": null,
+      "content": "This section summarizes an application of stable polynomials to probability\nand statistical mechanics from a 2009 paper of Borcea, Br\\\"and\\'en and Liggett\n\\cite{BBL}.\n\nLet $\\Lambda$ be a set of \\emph{sites}.  A symmetric exclusion process\n(SEP) is a type of Markov chain with state space a subset of $\\{0,1\\}^\\Lambda$.\nIn a state $S:\\Lambda\\goesto\\{0,1\\}$, the sites in\n$S^{-1}(1)$ are \\emph{occupied} and the sites in $S^{-1}(0)$ are \\emph{vacant}.\nThis is meant to model a physical system of particles interacting by means of\nhard-core exclusions.  Such models come in many varieties -- to avoid te",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Negative correlation and negative association.",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-018-71-negative-correlation-and-negative-association.md",
+      "narrative": null,
+      "content": "Consider a probability distribution $\\varphi$ on $\\Omega$.\nAn \\emph{event} $\\E$ is any subset of $\\Omega$.  The probability of the event\n$\\E$ is $\\Pr[\\E] = \\sum_{S\\in\\E} \\varphi(S)$.\nAn event $\\E$ is \\emph{increasing} if whenever $S\\leq S'$ in $\\Omega$\nand $S\\in\\E$, then $S'\\in\\E$.  For example, if $K$ is any subset of \n$\\Lambda$ and $\\E_{K}$ is the event that all sites in $K$ are occupied, \nthen $\\E_{K}$ is an increasing event.  Notice that this event has the \nform $\\E_{K}=\\E' \\times \\{0,1\\}^{\\Lambda\\drop K}$ for some event \n$\\E'\\subseteq\\{0,1\\}^{K}$.  Two events $\\E$ and $\\F$ are \n\\emph{disj",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A conjecture of Liggett and Pemantle.",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-019-72-a-conjecture-of-liggett-and-pemantle.md",
+      "narrative": null,
+      "content": "In the early 2000s, Liggett and Pemantle arrived independently at\nthe following conjecture, now a theorem.\n\n\\begin{theorem}[Theorem 5.2 of \\cite{BBL}]\nIf the initial distribution $\\varphi_0$ of a SEP is deterministic (\\emph{i.e.}\nconcentrated on a single state) then $\\varphi_t$ is NA for all $t\\geq 0$.\n\\end{theorem}\n\\begin{proof}\nThis amounts to finding a class $\\Stab$ of probability distributions\nsuch that:\\\\\n(1)\\ deterministic distributions are in $\\Stab$,\\\\\n(2)\\ being in $\\Stab$ implies NA, and\\\\\n(3)\\ time evolution of the SEP preserves membership in $\\Stab$.\n\nBorcea, Br\\\"and\\'en, and Ligge",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/thm-sec-019-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "thm-sec-019-01.md",
+      "narrative": null,
+      "content": "Hypotheses (i) and (ii) hold since $Z(\\varphi)$ is multiaffine and homogeneous. By specialization and contraction, (iii) holds. To check (iv), let $\\a\\in\\RR^{\\Lambda}$ with $\\a>\\zero$, let $\\{i,j\\}\\subseteq \\Lambda$, and consider the probability distribution $\\varphi^{\\a}$ on $\\Omega$. The occupation probability for site $i$ is $$ \\Pr[\\E_{\\{i\\}}] = \\sum_{S\\in\\{0,1\\}^\\Lambda:\\ S(i)=1} \\frac{\\varphi(S)\\a^{S}}{Z(\\varphi;\\a)} = a_{i} \\frac{\\partial_{i}Z(\\varphi;\\a)}{Z(\\varphi;\\a)}, $$ and similarly for $\\Pr[\\E_{\\{j\\}}]$. Likewise, $\\Pr[\\E_{\\{i,j\\}}] = a_{i}a_{j}Z(\\varphi;\\a)^{-1} \\cdot \\partial_{i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Further observations.",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-020-73-further-observations.md",
+      "narrative": null,
+      "content": "In verifying the hypotheses of the Feder-Mihail Theorem we used the \nfact that if $f\\in\\StabR[\\x]^{\\ma}$ is multiaffine and real stable, \nthen $\\Delta_{ij}f(\\a)\\geq 0$ for all $\\{i,j\\}\\subseteq E$ and\n$\\a\\in\\RR^{m}$, by Theorem 3.1.  In fact, we only needed the\nweaker hypothesis that $\\Delta_{ij}f(\\a)\\geq 0$ for all $\\{i,j\\}\\subseteq E$\nand $\\a\\in\\RR^{m}$ with $\\a>\\zero$.  A multiaffine real polynomial \nsatisfying this weaker condition is a \\emph{Rayleigh} polynomial.\n(This terminology is by analogy with the Rayleigh monotonicity \nproperty of electrical networks -- see Definition 2.5 of \\cite{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/cor-sec-021-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 27,
+      "target": "cor-sec-021-01.md",
+      "narrative": null,
+      "content": "if and only if there are nonnegative reals $a_i\\geq 0$ for $i\\in[m]$ such that $$ f(\\x) = (a_1 x_1 + \\cdots + a_m x_m)^m. $$ \\end{theorem} (We omit the proof.)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Inequalities for mixed discriminants.",
+      "pageStart": 23,
+      "pageEnd": 27,
+      "target": "../sections/sec-021-8-inequalities-for-mixed-discriminants.md",
+      "narrative": null,
+      "content": "This section summarizes a powerful application of stable polynomials from\na 2008 paper of Gurvits \\cite{Gu}.\n\nWe will use without mention the facts that $\\log$ and $\\exp$ are strictly\nincreasing functions on $(0,\\infty)$.\nA function $\\rho:I\\goesto\\RR$ defined on an interval $I\\subseteq\\RR$ is\n\\emph{convex} provided that for all $a_1,a_2\\in I$,\n$\\rho((a_1+a_2)/2)\\leq (\\rho(a_1)+\\rho(a_2))/2$.  It is \\emph{strictly\nconvex} if it is convex and equality holds here only when $a_1=a_2$.\nA function $\\rho:I\\goesto\\RR$ is \\emph{(strictly) concave} if $-\\rho$\nis (strictly) convex.\nFor example, for posit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Further Directions.",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/sec-022-9-further-directions.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Other circular regions.",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/sec-023-91-other-circular-regions.md",
+      "narrative": null,
+      "content": "Let $\\Omega\\subseteq\\CC^m$.  A polynomial $f\\in\\CC[\\x]$ is\n\\emph{$\\Omega$-stable} if either $f\\equiv 0$ identically, or\n$f(\\z)\\neq 0$ for all $\\z\\in\\Omega$.  At this level of generality little\ncan be said.  If $\\Omega=\\A_1\\times\\cdots\\times\\A_m$ is a product of\nopen circular regions then there are M\\\"obius transformations\n$z\\mapsto \\phi_i(z)=(a_i z+b_i)/(c_i z+d_i)$ such that $\\phi_i(\\HH)=\\A_i$\nfor all $i\\in[m]$.  The argument in Section 4.1 shows that\n$f\\in\\CC[\\x]$ is $\\Omega$-stable if and only if\n$$\n\\widetilde{f}=(\\c\\z+\\mathbf{d})^{\\deg f}\\cdot f(\\phi_1(z_1),...,\\phi_m(z_m))\n$$\nis stable.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Applications of Theorem 5.4.",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-024-92-applications-of-theorem-54.md",
+      "narrative": null,
+      "content": "It is natural to consider a multivariate anaogue of the multiplier sequences\nstudied by P\\'olya and Schur.  Let $\\lambda:\\NN^m\\goesto\\RR$, and define\na linear transformation $T_\\lambda:\\CC[\\x]\\goesto\\CC[\\x]$ by\n$T_\\lambda(\\x^\\alpha)= \\lambda(\\alpha)\\x^\\alpha$ for all $\\alpha\\in\\NN^m$,\nand linear extension.  For which $\\lambda$ does $T_{\\lambda}$\npreserve real stability?  The answer:\\  just the ones you get from\nthe P\\'olya-Schur Theorem, and no more.\n\n\\begin{theorem}[Theorem 1.8 of \\cite{BB4}.]\nLet $\\lambda:\\NN^m\\goesto\\RR$.  Then $T_\\lambda$ preserves real stability if\nand only if there are u",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A converse to the Grace-Walsh-Szego Theorem.",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-025-93-a-converse-to-the-grace-walsh-szego-theorem.md",
+      "narrative": null,
+      "content": "The argument of Sections 4.2 and 4.3 can be used to prove the following.\n\n\\begin{exercise}\nIf $f\\in\\Stab[\\x]^\\ma$ is multiaffine and stable then\n$$\nT_{\\S(m)} (f) = \\frac{1}{m!} \\sum_{\\sigma\\in\\S(m)} \\sigma(f)\n$$\nis multiaffine and stable.\n\\end{exercise}\n\nThis is in fact equivalent to the GWS Theorem,\nsince for all $f\\in\\CC[\\x]^{\\ma}$, $T_{\\S(m)}f(\\x) = \\Pol_{m} f(x,\\ldots,x)$.\nFor which transitive permutation groups $G\\leq\\S(m)$ does\nthe linear transformation $T_G = |G|^{-1}\\sum_{\\sigma\\in G}\\sigma$\npreserve stability?  The answer:\\ not many, and they give nothing new.\n\n\\begin{theorem}[Theorem",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Phase and support theorems.",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/sec-026-94-phase-and-support-theorems.md",
+      "narrative": null,
+      "content": "A polynomial $f\\in\\CC[\\x]$ has \\emph{definite parity} if every monomial\n$\\x^\\alpha$ occurring in $f$ has total degree of the same parity:\\\nall are even, or all are odd.\n\n\\begin{theorem}[Theorem 6.2 of \\cite{COSW}]\nLet $f\\in\\CC[\\x]$ be Hurwitz stable and with definite parity.  Then\nthere is a phase $0\\leq \\theta < 2\\pi$ such that $\\mathrm{e}^{-\\i\\theta}f(\\x)$\nhas only real nonnegative coefficients.\n\\end{theorem}\n\nThe \\emph{support} of $f=\\sum_{\\alpha}c(\\alpha)\\x^{\\alpha}$ is\n$\\supp(f) = \\{\\alpha\\in\\NN^{m}:\\ c(\\alpha)\\neq 0\\}$.\nLet $\\delta_i$ denote the unit vector with a one in the $i$-th coord",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0911.3569v1/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-027-references.md",
+      "narrative": null,
+      "content": "1. J. Borcea and P. Br¨and´en, Applications of stable polynomials to mixed determinants: John-\nson’s conjectures, unimodality, and symmetrized Fischer products, Duke Math. J. 143\n(2008), 205–223.\n2. J. Borcea and P. Br¨and´en, Lee–Yang problems and the geometry of multivariate polynomi-\nals, Lett. Math. Phys. 86 (2008), 53–61.\n3. J. Borcea and P. Br¨and´en, P´olya–Schur master theorems for circular domains and their\nboundaries, Ann. of Math. 170 (2009), 465–492.\n4. J. Borcea and P. Br¨and´en, Multivariate P´olya-Schur classiﬁcation problems in the Weyl\nalgebra, to appear in Proc. London Math.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

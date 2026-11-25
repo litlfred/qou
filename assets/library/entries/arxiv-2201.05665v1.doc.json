@@ -1,0 +1,795 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2201.05665v1",
+  "title": "arxiv-2201.05665v1",
+  "variant": "pdf",
+  "pages": 16,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The sine-kernel determinant",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-the-sine-kernel-determinant"
+    },
+    {
+      "level": 1,
+      "title": "The Tracy-Widom distribution functions",
+      "number": "3",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-the-tracy-widom-distribution-functions"
+    },
+    {
+      "level": 1,
+      "title": "Universality of the Tracy-Widom Distributions",
+      "number": "4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-universality-of-the-tracy-widom-distributions"
+    },
+    {
+      "level": 2,
+      "title": "General invariant ensembles and the Wigner ensembles",
+      "number": "4.1",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-41-general-invariant-ensembles-and-the-wigner-en"
+    },
+    {
+      "level": 2,
+      "title": "Random permutations",
+      "number": "4.2",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-42-random-permutations"
+    },
+    {
+      "level": 1,
+      "title": "The asymmetric simple exclusion process. Harold Widom's papers 133,134,135",
+      "number": "5",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-5-the-asymmetric-simple-exclusion-process-harold"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 83,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "harold widom",
+          "heading": false
+        },
+        {
+          "term": "widom work",
+          "heading": false
+        },
+        {
+          "term": "random matrix",
+          "heading": false
+        }
+      ],
+      "extract": "HAROLD WIDOM’S WORK IN RANDOM MATRIX THEORY IVAN Z. CORWIN, PERCY A. DEIFT, AND ALEXANDER R. ITS Abstract. This is a survey of Harold Widom’s work in random matrices. We start with his pioneering papers on the sine-kernel determinant, continue with his and Craig Tracy’s groundbreaking results concerning the distribution functions of random matrix theory, touch on the remarkable universality of the Tracy-Widom",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2201.05665v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 393,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sine kernel",
+          "heading": false
+        },
+        {
+          "term": "fredholm determinant",
+          "heading": false
+        },
+        {
+          "term": "random matrix",
+          "heading": false
+        },
+        {
+          "term": "distribution functions",
+          "heading": false
+        },
+        {
+          "term": "matrix theory",
+          "heading": false
+        },
+        {
+          "term": "papers",
+          "heading": false
+        },
+        {
+          "term": "probability",
+          "heading": false
+        },
+        {
+          "term": "systems",
+          "heading": false
+        }
+      ],
+      "extract": "The distributions of random matrix theory govern the statistical properties of a wide variety of large systems which do not obey the usual laws of classical probability. Such systems appear in many different areas of applied science and technology, including heavy nuclei, polymer growth, high-dimensional data analysis, and certain percolation processes. The four distribution functions play a particularly important",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-sine-kernel-determinant",
+      "number": "2",
+      "title": "The sine-kernel determinant",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 714,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textrm sine",
+          "heading": false
+        },
+        {
+          "term": "sine right",
+          "heading": false
+        },
+        {
+          "term": "gue matrix",
+          "heading": false
+        },
+        {
+          "term": "widom",
+          "heading": false
+        },
+        {
+          "term": "leading asymptotics",
+          "heading": false
+        },
+        {
+          "term": "determinant",
+          "heading": true
+        },
+        {
+          "term": "dcm",
+          "heading": false
+        },
+        {
+          "term": "dyson",
+          "heading": false
+        }
+      ],
+      "extract": "Let $J = \\cup_{k=0}^{n}J_k = \\cup_{k=0}^{n}(a_k, b_k)$ be a union of $n+1$ disjoint intervals in $\\mathbb{R}$. Consider the Fredholm determinant $$P_x= \\det \\left( 1 - K_{\\textrm{sine}}\\right),$$ where $K_{\\textrm{sine}}$ is the trace class operator in $L_2\\Bigl(J; dz\\Bigr)$ with kernel $$K_{\\textrm{sine}}(z,z') = \\frac{\\sin x(z-z')}{\\pi (z-z')}.$$ The determinant $P_x$ plays a central role in random matrix theory.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-the-tracy-widom-distribution-functions",
+      "number": "3",
+      "title": "The Tracy-Widom distribution functions",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": "3",
+      "labelEnd": "6",
+      "words": 1250,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "painleve",
+          "heading": false
+        },
+        {
+          "term": "tracy-widom",
+          "heading": true
+        },
+        {
+          "term": "baik",
+          "heading": false
+        },
+        {
+          "term": "ode",
+          "heading": false
+        },
+        {
+          "term": "resolvent",
+          "heading": false
+        },
+        {
+          "term": "integral operator",
+          "heading": false
+        },
+        {
+          "term": "kernel",
+          "heading": false
+        },
+        {
+          "term": "riemann-hilbert",
+          "heading": false
+        }
+      ],
+      "extract": "The joint probability densities of the eigenvalues of random matrices from the GOE, GUE and GSE ensembles are given by $$\\label{eigenprob} P_{N\\beta}(\\lambda_1, ..., \\lambda_N) = Z^{-1}_{N\\beta}\\,e^{-\\frac{1}{2}\\beta\\sum_{j=1}^{N}\\lambda^{2}_j} \\prod_{j<k}|\\lambda_j - \\lambda_k|^{\\beta},$$ where $Z_{N\\beta}$ is a normalization constant (or partition function) and $$\\beta := \\begin{cases} 1 & \\textrm{for GOE},\\cr 2 &",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-universality-of-the-tracy-widom-distributions",
+      "number": "4",
+      "title": "Universality of the Tracy-Widom Distributions",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 201,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tracy-widom",
+          "heading": true
+        },
+        {
+          "term": "random matrix",
+          "heading": false
+        },
+        {
+          "term": "harold",
+          "heading": false
+        },
+        {
+          "term": "resolvent",
+          "heading": false
+        },
+        {
+          "term": "kernel",
+          "heading": false
+        },
+        {
+          "term": "matrix theory",
+          "heading": false
+        }
+      ],
+      "extract": "A remarkable fact is that the Tracy-Widom distribution functions Fβ(z) appear in a large and growing number of applications in random matrix theory as well as in areas beyond random matrices. In this section we will describe some of these applications. with some functions fj(z) and hj(z) deﬁned on a contour C. This type of integral operators was singled out as a distinguished class in [IIKS] (see also [Dei2]; in a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-41-general-invariant-ensembles-and-the-wigner-en",
+      "number": "4.1",
+      "title": "General invariant ensembles and the Wigner ensembles",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "9",
+      "words": 1044,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ensembles",
+          "heading": true
+        },
+        {
+          "term": "eigenprob",
+          "heading": false
+        },
+        {
+          "term": "unitary ensembles",
+          "heading": false
+        },
+        {
+          "term": "tracy-widom distribution",
+          "heading": false
+        },
+        {
+          "term": "textrm reg",
+          "heading": false
+        },
+        {
+          "term": "betaedge",
+          "heading": false
+        },
+        {
+          "term": "dkmvz",
+          "heading": false
+        },
+        {
+          "term": "wigner",
+          "heading": true
+        }
+      ],
+      "extract": "The GUE, GOE and GSE ensembles are respectively particular examples of unitary (UE), orthogonal (OE) and symplectic (SE) ensembles of random matrix theory. The joint probability density of the eigenvalues for these ensembles are given by (cf. ([\\[eigenprob\\]](#eigenprob){reference-type=\"ref\" reference=\"eigenprob\"})) $$\\label{eigenprob1} P_{N \\beta}(\\lambda_1, ..., \\lambda_N) =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-42-random-permutations",
+      "number": "4.2",
+      "title": "Random permutations",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 635,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bdj lim",
+          "heading": false
+        },
+        {
+          "term": "harold widom",
+          "heading": false
+        },
+        {
+          "term": "label bdj",
+          "heading": false
+        },
+        {
+          "term": "borodin-okounkov formula",
+          "heading": false
+        },
+        {
+          "term": "bbb bigl",
+          "heading": false
+        },
+        {
+          "term": "brownian motions",
+          "heading": false
+        },
+        {
+          "term": "toeplitz determinants",
+          "heading": false
+        },
+        {
+          "term": "ulam problem",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\pi = (\\pi(1), \\pi(2), ..., \\pi(N))$ be a permutation of the numbers $1, 2, ..., N$. If $1 \\leq i_1 < i_2 < ... < i_k \\leq N$ and $\\pi( i_1) < \\pi( i_2) < ... < \\pi(i_k)$, we say that $\\pi( i_1), \\pi( i_2), ...,\\pi(i_k)$ is an *increasing subsequence* in $\\pi$ of length $k$. Denote by $l_{N}(\\pi)$ the maximal length of all of the increasing subsequences in $\\pi$. Suppose that the permutations are random and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-5-the-asymmetric-simple-exclusion-process-harold",
+      "number": "5",
+      "title": "The asymmetric simple exclusion process. Harold Widom's papers 133,134,135",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 14,
+      "labelStart": "10",
+      "labelEnd": "14",
+      "words": 1666,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "asep lim",
+          "heading": false
+        },
+        {
+          "term": "label asep",
+          "heading": false
+        },
+        {
+          "term": "widom",
+          "heading": true
+        },
+        {
+          "term": "sigma rho",
+          "heading": false
+        },
+        {
+          "term": "quad sigma",
+          "heading": false
+        },
+        {
+          "term": "tracy-widom distributions",
+          "heading": false
+        },
+        {
+          "term": "textrm prob",
+          "heading": false
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        }
+      ],
+      "extract": "The asymmetric simple exclusion process (ASEP) was introduced (in the probability literature) in Spitzer's 1970 work [@Sp]. It is a continuous time Markov process of interacting particles on the integer lattice ${\\Bbb Z}$. A particle at a location $x$ waits an exponential time with parameter one (independently of all other particles). When that time has elapsed, the particle flips a coin and with probability $p$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "16",
+      "words": 1847,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fredholm determinants",
+          "heading": false
+        },
+        {
+          "term": "toeplitz determinants",
+          "heading": false
+        },
+        {
+          "term": "painlev transcendent",
+          "heading": false
+        },
+        {
+          "term": "corwin",
+          "heading": false
+        },
+        {
+          "term": "random matrices",
+          "heading": false
+        },
+        {
+          "term": "harold widom",
+          "heading": false
+        },
+        {
+          "term": "deift",
+          "heading": false
+        },
+        {
+          "term": "sch utz",
+          "heading": false
+        }
+      ],
+      "extract": "Cited Publications by Harold Widom [1] The strong Szeg˝o limit theorem for circular arcs. Indiana Univ. Math. J. 21, 277–283 (1971). [2] Toeplitz determinants with singular generating functions. Amer. J. Math. 95, 333–383 (1973). [3] The asymptotics of a continuous analogue of orthogonal polynomials. J. Approx. Th. 76, 51–64 (1994). [4] (with J. Gravner and C. A. Tracy) Limit theorems for height ﬂuctuations in a",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "harold widom",
+      "heading": true
+    },
+    {
+      "term": "tracy-widom distribution",
+      "heading": true
+    },
+    {
+      "term": "fredholm determinant",
+      "heading": false
+    },
+    {
+      "term": "random matrix",
+      "heading": false
+    },
+    {
+      "term": "widom work",
+      "heading": true
+    },
+    {
+      "term": "integrable fredholm",
+      "heading": false
+    },
+    {
+      "term": "random matrices",
+      "heading": false
+    },
+    {
+      "term": "kernel fredholm",
+      "heading": false
+    },
+    {
+      "term": "widom proved",
+      "heading": false
+    },
+    {
+      "term": "wigner random",
+      "heading": false
+    },
+    {
+      "term": "tracy-widom system",
+      "heading": false
+    },
+    {
+      "term": "craig tracy",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The eigenvalues of a large (2000 × 2000) GUE matrix. The full point process sits on the bottom of the ﬁgure, and the histogram records the density of points (approximating the Wigner semi-circle)",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Harold and his wife, Linda Larkin, at Lake Sonoma in 2013. Photo courtesy of Craig Tracy",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "In the ASEP, particles jump left and right according to exponential clocks with rates q and p. All jumps are independent, and those that would lead to collisions are excluded (the grey ×)",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Harold Widom with his long-time collaborator, Craig Tracy at Oberwolfach in May 2009. Seen on the blackboard is calculations related to their work on ASEP. Photo courtesy of the Archives of the Mathematisches Forschungsinstitut Oberwolfach",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p002-1",
+      "file": "images/img-p002-1.png",
+      "page": 2,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-1",
+      "file": "images/img-p007-1.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-1",
+      "file": "images/img-p011-1.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-1",
+      "file": "images/img-p012-1.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 8,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p14); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 9
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2201.05665v1"
+  }
+}

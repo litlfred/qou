@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-knot-operator-selection-multichannel",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:knot-operator-selection-multichannel",
+  "kind": "remark",
+  "title": "Multi-channel interpretation of knot operator selection",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-knot-operator-selection"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-knot-operator-selection",
+  "text": "knot-operator-selection-multichannel.md",
+  "provenance": "authored"
+}

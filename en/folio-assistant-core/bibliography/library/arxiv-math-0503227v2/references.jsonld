@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-0503227v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "An Inductive Proof of the Berry-Esseen Theorem for Character Ratios Running head: Berry-Esseen Theorem for Character Ratios",
+      "dcterms:creator": [
+        "Fulman, By Jason"
+      ],
+      "dcterms:issued": "D:20190429",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0503227",
+      "dcterms:abstract": "Bolthausen used a variation of Stein’s method to give an inductive proof of the Berry-Esseen theorem for sums of independent, iden- tically distributed random variables. We modify this technique to prove a Berry-Esseen theorem for character ratios of a random representation of the symmetric group on transpositions. An analogous result is proved for Jack measure on partitions.",
+      "dcterms:source": "library/arxiv-math-0503227v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-0503227v2"
+    }
+  ]
+}

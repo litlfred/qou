@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-hadron-operations",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:hadron-operations",
+  "kind": "remark",
+  "title": "Operations on hadrons",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-hadron-operations-closure"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-hadron-operations-closure",
+  "tags": [
+    "hadron",
+    "knot",
+    "braiding",
+    "hopf-link"
+  ],
+  "text": "hadron-operations.md",
+  "provenance": "authored"
+}

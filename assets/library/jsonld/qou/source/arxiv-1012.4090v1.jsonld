@@ -1,0 +1,60 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1012.4090v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Generalized Skyrme Crystals",
+  "contains": [
+    "library/arxiv-1012.4090v1/sections/sec-front-matter",
+    "library/arxiv-1012.4090v1/sections/sec-000",
+    "library/arxiv-1012.4090v1/sections/sec-001",
+    "library/arxiv-1012.4090v1/sections/sec-002",
+    "library/arxiv-1012.4090v1/sections/sec-003"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Generalized Skyrme Crystals — This letter deals with triply-periodic (crystalline) solutions in a family of Skyrme systems, namely where the ﬁeld takes values in the squashed 3-sphere.\n\n**Generalized Skyrme Crystals**\n\n*J. Silva Loboa,∗, R. S. Warda*\n\n5 pp, 5 sections.\n\n**Abstract.** This letter deals with triply-periodic (crystalline) solutions in a family of Skyrme systems, namely where the ﬁeld takes values in the squashed 3-sphere. The family includes the standard Skyrme model (round 3-sphere), and the Skyrme- Faddeev case (maximal squashing). In the round case, the lowest-energy crystal is the well-known cubic lattice of half-skyrmions; but in the squashed case the minimal-energy crystal structures turn out to be diﬀerent. We describe some of the solutions that arise, including arrays of vortices and multi-sheeted structures.\n\n**Outline.** Front matter; 1 Introduction; 2 The Generalized Skyrme System; 3 Crystals in the Generalized Skyrme Family; 4 Conclusions",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1012.4090&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1012.4090v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1012.4090v1.pdf",
+    "source_sha256": "02fe4a5eb36ff0edb291ac6917e0f7cb99e1ccd43217af8498ffc29961fb83a7",
+    "pages": 5,
+    "arxiv": {
+      "id": "1012.4090",
+      "version": "1",
+      "primary_class": "hep-th",
+      "stamp_date": "18 Dec 2010"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0309426v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0309426v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction and statement of main results",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction-and-statement-of-main-results.md",
+      "narrative": null,
+      "content": "The irreducible representations of the symmetric groups and their\nIwahori-Hecke algebras have been classified and constructed by\nJames~\\cite{James:SnIrr} and Dipper and James~\\cite{DJ:reps}, yet\nsimple properties of these modules, such as their dimensions, are\nstill not known. Every irreducible representation of these algebras is\nconstructed by quotienting out the radical of a bilinear form on a\nparticular type of module, known as a Specht module. The bilinear\nforms on the Specht modules are the objects of our study.  \n\nOne way of determining the dimension of the simple modules would be to\nfir",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0309426v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Hecke algebra and permutation modules",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-the-hecke-algebra-and-permutation-modules.md",
+      "narrative": null,
+      "content": "Fix a positive integer $n$ and let $\\Sym_n$ be the symmetric group of\ndegree $n$. \n\nLet $R$ be a commutative domain and let $q$ be an\ninvertible element in $R$. \n\nThe Iwahori--Hecke algebra of $\\Sym_n$ with\nparameter $q$ is the unital associative algebra $\\H$ with generators\n$T_1,T_2,\\dots,T_{n-1}$ and relations\n$$\n\\begin{array}{rcll}\n  (T_i-q)(T_i+1)  & = & 0                   & \\For 1\\le i < n,\\\\\n  T_i T_j         & = & T_j T_i             & \\For 1\\le i < j-1 < n-1,\\\\\n  T_i T_{i+1} T_i & = & T_{i+1} T_i T_{i+1} & \\For 1\\le i < n-1 \\; .\n\\end{array}\n$$\n\nLet $r_i=(i,i+1)$, for $i=1,2,\\dots,n-1$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0309426v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0309426v2  [math.RT]  1 Jul 2004\nELEMENTARY DIVISORS OF SPECHT MODULES\nMATTHIAS K¨UNZER AND ANDREW MATHAS",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0309426v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Specht modules",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-3-specht-modules.md",
+      "narrative": null,
+      "content": "We recall some well-known facts due to Dipper and\nJames~\\cite{DJ:reps}.\n\nLet $\\lambda = (\\lambda_1,\\lambda_2,\\dots)$ be a composition of $n$.\nThe {\\sf diagram} of $\\lambda$ is the set $[\\lambda] = \\set{(i,j)\\in\\N^2|1\\le\nj\\le\\lambda_i}$. We identify the diagram of $\\lambda$ with an array of\nboxes in the plane. For example, if $\\lambda = (4,3,2)$ then\n$$\n[\\lambda] \\; =\\; \\yng(4,3,2) \\; .\n$$\nThe {\\sf conjugate} of $\\lambda$ is the partition\n$\\lambda' = (\\lambda_1',\\lambda_2',\\dots)$, where\n$\\lambda_j' = \\#\\set{i\\ge 1|\\lambda_i\\ge j}$ for all $j$; that is,\n$\\lambda'$ is the partition of $n$ whose",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0309426v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Diagonalizability and elementary divisors",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-4-diagonalizability-and-elementary-divisors.md",
+      "narrative": null,
+      "content": "Given an integer $m\\geq 1$, an $m\\times m$ matrix $A$ with coefficients in $R$ is\n{\\sf diagonalizable} if there exist matrices $S$ and $T$ in $\\GL_m(R)$ such that\n$SAT$ is a diagonal matrix. The matrix $A$ is {\\sf divisibly diagonalizable}\nif $SAT = \\diag(d_1,\\dots,d_m)$ \nis a diagonal matrix such that $d_i$ divides $d_{i+1}$ in $R$, \nfor $1\\leq i < m$. If $A$ is divisibly diagonalizable and\n$SAT = \\diag(d_1,\\dots,d_m)$ satisfies this condition, then we call $d_1,\\dots,d_m$ \nthe elementary divisors of $A$.\n\nGiven $A\\in R^{m\\times m}$, we let $I_k(A)$ be the ideal of the\n$k\\times k$ minors of $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0309426v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Elementary divisors for conjugate partitions",
+      "pageStart": 5,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-5-elementary-divisors-for-conjugate-partitions.md",
+      "narrative": null,
+      "content": "\\label{SecConj}\n\nLet $R = \\Z[q,q^{-1}]$. Let $\\lambda$ be a partition of $n$. In this\nsection we relate the Gram matrices $G(\\lambda)$ and $G(\\lambda')$. We\nstart with some mild generalizations of some results about Specht\nmodules which were proved by Dipper and James~\\cite{DJ:reps} over a\nfield.\n\nRecall that if $Y$ is a submodule of an $R$--free module $X$ then $Y$\nis \\textsf{pure} if the quotient module $X/Y$ is $R$-free.\n\n\\begin{Lemma}\n\\label{LemTr1}\nSuppose that $\\lambda$ is a partition. Then the Specht module\n$S(\\lambda)$ is a pure submodule of $M(\\lambda)$. \n\\end{Lemma}\n\n\\begin{proof}\nUs",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0309426v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The elementary divisors for hook partitions",
+      "pageStart": 9,
+      "pageEnd": 17,
+      "target": "../sections/sec-005-6-the-elementary-divisors-for-hook-partitions.md",
+      "narrative": null,
+      "content": "Throughout this section we fix an integer $k$, with $0\\le k<n$, and\nconsider the Specht module $S(\\lambda)$, where $\\lambda=(n-k,1^k)$. We\nwill show that $G(\\lambda)$ is divisibly diagonalizable by explicitly\nconstructing two bases of $S(\\lambda)$ which transform $G(\\lambda)$\ninto the form of the matrix in Lemma~\\ref{diag}. In particular, this\nwill allow us to determine the elementary divisors of $S(\\lambda)$.\n\nThe Specht module $S(\\lambda)$ is defined as a submodule of the\npermutation module $M(\\lambda)$; however, to compute the elementary\ndivisors we will work inside a different permutation",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0309426v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some counterexamples",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-006-7-some-counterexamples.md",
+      "narrative": null,
+      "content": "\\label{SecCounterEx}\n\nLet $R = \\Z[q,q^{-1}]$. We write the $m^\\th$ cyclotomic polynomial in\n$q$ as $\\Phi_m = \\Phi_m(q)$.\n\nAndersen remarked that in general the Gram matrix $G(\\lambda)$ is not\ndiagonalizable \\cite[Remark~5.11]{Andersen:Tilting}. We give two\nexamples of this kind.\n\nNote that $G(\\lambda)$ is divisibly diagonalizable over\n$\\Z_{(p)}[q,q^{-1}]$ for all but finitely many primes $p$. In fact, it\nsuffices to exclude the primes occurring in the denominators of the\nentries of the matrices used to diagonalize $G(\\lambda)$ over\n$\\Q[q,q^{-1}]$.\n\nWe record the elementary divisors in ``jump n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0309426v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-007-acknowledgements.md",
+      "narrative": null,
+      "content": "The authors would like to thank Adrian Williams for pointing out some errors\nin an earlier version of this manuscript.\nReferences\n[1] H. H. Andersen, Tilting modules for Algebraic Groups, in Algebraic Groups and their Rep-\nresentations, ed. by R. W. Carter and J. Saxl (1998), 25–42.\n[2] R. Dipper and G. James, Representations of Hecke algebras of general linear groups, Proc.\nL.M.S. (3), 52 (1986), 20–52.\n20\nMATTHIAS K¨UNZER AND ANDREW MATHAS\n[3]\n, Blocks and idempotents of Hecke algebras of general linear groups, Proc. L.M.S. (3),\n54 (1987), 57–82.\n[4]\n, Representations of Hecke algebras of ty",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

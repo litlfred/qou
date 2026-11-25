@@ -1,0 +1,1877 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2502.02662v1",
+  "title": "The String Dual to Two-dimensional Yang-Mills Theory Revisited",
+  "variant": "pdf",
+  "pages": 34,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The Hurwitz Topological Quantum Field Theory",
+      "number": null,
+      "page": 3,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-the-hurwitz-topological-quantum-field-theory"
+    },
+    {
+      "level": 2,
+      "title": "The Hurwitz Theory at Fixed Degree",
+      "number": null,
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-the-hurwitz-theory-at-fixed-degree"
+    },
+    {
+      "level": 2,
+      "title": "The Extended Hurwitz Theory",
+      "number": null,
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-the-extended-hurwitz-theory"
+    },
+    {
+      "level": 2,
+      "title": "The String Dual",
+      "number": null,
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-the-string-dual"
+    },
+    {
+      "level": 1,
+      "title": "From Two-dimensional Yang-Mills to Hurwitz",
+      "number": null,
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-from-two-dimensional-yang-mills-to-hurwitz"
+    },
+    {
+      "level": 2,
+      "title": "The Observables of Two-dimensional Yang-Mills Theory",
+      "number": null,
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-the-observables-of-two-dimensional-yang-mills-th"
+    },
+    {
+      "level": 2,
+      "title": "The Schur-Weyl Dictionary",
+      "number": null,
+      "page": 10,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-the-schur-weyl-dictionary"
+    },
+    {
+      "level": 2,
+      "title": "The Gross-Taylor Expansion",
+      "number": null,
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-the-gross-taylor-expansion"
+    },
+    {
+      "level": 2,
+      "title": "Chiral Yang-Mills Theory as a Deformed Hurwitz Theory",
+      "number": null,
+      "page": 13,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-chiral-yang-mills-theory-as-a-deformed-hurwitz-t"
+    },
+    {
+      "level": 1,
+      "title": "The Stringy Structure of Chiral Yang-Mills Theory",
+      "number": null,
+      "page": 15,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-the-stringy-structure-of-chiral-yang-mills-theor"
+    },
+    {
+      "level": 2,
+      "title": "A Double Expansion",
+      "number": null,
+      "page": 15,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-a-double-expansion"
+    },
+    {
+      "level": 2,
+      "title": "Vertex Operators",
+      "number": null,
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-vertex-operators"
+    },
+    {
+      "level": 2,
+      "title": "A Stringy Deformation",
+      "number": null,
+      "page": 17,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-a-stringy-deformation"
+    },
+    {
+      "level": 1,
+      "title": "A Deformed Gromov-Witten Theory",
+      "number": null,
+      "page": 19,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-a-deformed-gromov-witten-theory"
+    },
+    {
+      "level": 2,
+      "title": "The Partial Permutation Algebra of Yang-Mills Theory",
+      "number": null,
+      "page": 19,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-the-partial-permutation-algebra-of-yang-mills-th"
+    },
+    {
+      "level": 2,
+      "title": "The Duality Map",
+      "number": null,
+      "page": 20,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-the-duality-map"
+    },
+    {
+      "level": 2,
+      "title": "The Gromov-Witten Formulation",
+      "number": null,
+      "page": 21,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-the-gromov-witten-formulation"
+    },
+    {
+      "level": 2,
+      "title": "The Inverse Map",
+      "number": null,
+      "page": 23,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-the-inverse-map"
+    },
+    {
+      "level": 2,
+      "title": "Remarks on Wilson Loops",
+      "number": null,
+      "page": 24,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-remarks-on-wilson-loops"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions",
+      "number": null,
+      "page": 25,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-conclusions"
+    },
+    {
+      "level": 1,
+      "title": "Useful Identities",
+      "number": null,
+      "page": 26,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-useful-identities"
+    },
+    {
+      "level": 1,
+      "title": "Determining the Dictionary",
+      "number": null,
+      "page": 26,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-determining-the-dictionary"
+    },
+    {
+      "level": 1,
+      "title": "Phase Transitions",
+      "number": null,
+      "page": 27,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-phase-transitions"
+    },
+    {
+      "level": 2,
+      "title": "Analytical Phase Transitions",
+      "number": null,
+      "page": 28,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-analytical-phase-transitions"
+    },
+    {
+      "level": 2,
+      "title": "Numerical Phase Transitions",
+      "number": null,
+      "page": 30,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-numerical-phase-transitions"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 160,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "two-dimensional yang-mills",
+          "heading": false
+        },
+        {
+          "term": "yang-mills theory",
+          "heading": false
+        },
+        {
+          "term": "string dual",
+          "heading": false
+        },
+        {
+          "term": "gromov-witten",
+          "heading": false
+        },
+        {
+          "term": "universit",
+          "heading": false
+        },
+        {
+          "term": "codes",
+          "heading": false
+        }
+      ],
+      "extract": "The String Dual to Two-dimensional Yang-Mills Theory Revisited Lior Benizri and Jan Troost Laboratoire de Physique de l’´Ecole Normale Sup´erieure CNRS, ENS, Universit´e PSL, Sorbonne Universit´e, Universit´e Paris Cit´e F-75005 Paris, France Abstract We propose that chiral two-dimensional Yang-Mills theory on a Riemann surface X is dual to a deformed stationary subsector of the Gromov-Witten theory of X. Firstly,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2502.02662v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 869,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "two-dimensional yang-mills",
+          "heading": false
+        },
+        {
+          "term": "hurwitz theory",
+          "heading": false
+        },
+        {
+          "term": "gromov-witten theory",
+          "heading": false
+        },
+        {
+          "term": "string theory",
+          "heading": false
+        },
+        {
+          "term": "deformedgw",
+          "heading": false
+        },
+        {
+          "term": "extra string",
+          "heading": false
+        },
+        {
+          "term": "topological string",
+          "heading": false
+        },
+        {
+          "term": "dual string",
+          "heading": false
+        }
+      ],
+      "extract": "Two-dimensional Yang-Mills theory provides an interesting case study for the proposed relation between large $N$ gauge theory and string theory [@tHooft:1973alw; @Gross:1992tu; @Gross:1993hu; @Gross:1993yt; @Cordes:1994fc]. For a gauge theory with gauge group $U(N)$, one can rearrange the Feynman diagram expansion of observables in an expansion in terms of the genus of a Riemann surface that one would like to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-the-hurwitz-topological-quantum-field-theory",
+      "number": null,
+      "title": "The Hurwitz Topological Quantum Field Theory",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 373,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hurwitz theory",
+          "heading": true
+        },
+        {
+          "term": "hurwitz topological",
+          "heading": true
+        },
+        {
+          "term": "field theory",
+          "heading": true
+        },
+        {
+          "term": "gromov-witten theory",
+          "heading": false
+        },
+        {
+          "term": "two-dimensional yang-mills",
+          "heading": false
+        },
+        {
+          "term": "string theory",
+          "heading": false
+        },
+        {
+          "term": "grand canonical",
+          "heading": false
+        },
+        {
+          "term": "stringy",
+          "heading": false
+        }
+      ],
+      "extract": "We review its grand canonical version that treats all degrees d of covering maps simultaneously and how the grand canonical theory corresponds to a Gromov-Witten theory [9,10]. In section 3, we review the rewriting of the two-dimensional Yang-Mills partition functions in terms of a sum of contributions of degree d covering maps described by Hurwitz theories [2–5]. We argue that boundary holonomies play a role",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-the-hurwitz-theory-at-fixed-degree",
+      "number": null,
+      "title": "The Hurwitz Theory at Fixed Degree",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 372,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hurwitz theory",
+          "heading": true
+        },
+        {
+          "term": "conjugacy classes",
+          "heading": false
+        },
+        {
+          "term": "conjugacy class",
+          "heading": false
+        },
+        {
+          "term": "one-point function",
+          "heading": false
+        },
+        {
+          "term": "chi lambda",
+          "heading": false
+        },
+        {
+          "term": "fourier space",
+          "heading": false
+        },
+        {
+          "term": "symmetric group",
+          "heading": false
+        },
+        {
+          "term": "rvert",
+          "heading": false
+        }
+      ],
+      "extract": "The Hurwitz theory is the topological quantum field theory in two dimensions with gauge group equal to the symmetric group $S_d$.[^1] The operators of the Hurwitz theory are in one-to-one correspondence with the conjugacy classes of the symmetric group $S_d$, or equivalently, with the partitions of $d$. The algebra of operators is the algebra $\\mathcal{C}_d$ of conjugacy classes of the symmetric group $S_d$, which",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-the-extended-hurwitz-theory",
+      "number": null,
+      "title": "The Extended Hurwitz Theory",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 668,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "partial permutations",
+          "heading": false
+        },
+        {
+          "term": "lvert rvert",
+          "heading": false
+        },
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "cdots rangle",
+          "heading": false
+        },
+        {
+          "term": "permutations mathcal",
+          "heading": false
+        },
+        {
+          "term": "rangle sum",
+          "heading": false
+        },
+        {
+          "term": "hurwitz",
+          "heading": true
+        },
+        {
+          "term": "two-dimensional yang-mills",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#ExtendedHurwitz label=\"ExtendedHurwitz\"} In the context of the string description of two-dimensional Yang-Mills theory, one needs to sum over covering maps of all degrees $d$ [@Gross:1992tu; @Gross:1993hu]. This motivates the introduction of an overarching grand canonical version of the Hurwitz theories with gauge groups $S_d$ that takes into account coverings of all degrees simultaneously [@IvanovKerov; @OP1;",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-the-string-dual",
+      "number": null,
+      "title": "The String Dual",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 1186,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "string dual",
+          "heading": true
+        },
+        {
+          "term": "lvert rvert",
+          "heading": false
+        },
+        {
+          "term": "string vertex",
+          "heading": false
+        },
+        {
+          "term": "completed cycles",
+          "heading": false
+        },
+        {
+          "term": "operator insertions",
+          "heading": false
+        },
+        {
+          "term": "gromov-witten theory",
+          "heading": false
+        },
+        {
+          "term": "single string",
+          "heading": false
+        },
+        {
+          "term": "string coupling",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#StringDual label=\"StringDual\"} In this subsection, we discuss the string dual to the extended Hurwitz theory [@OP1]. See also [@Benizri:2024mpx]. Firstly, we describe the string theory, which is a theory of two-dimensional gravity coupled to two-dimensional matter. The matter theory is a $\\mathcal{N}=(2,2)$ supersymmetric sigma model with world-sheet $\\Sigma$ and a two-dimensional, closed target space $X$ of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-from-two-dimensional-yang-mills-to-hurwitz",
+      "number": null,
+      "title": "From Two-dimensional Yang-Mills to Hurwitz",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 137,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "yang-mills",
+          "heading": true
+        },
+        {
+          "term": "hurwitz",
+          "heading": true
+        },
+        {
+          "term": "yang-mills theory",
+          "heading": false
+        },
+        {
+          "term": "gross",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#YMtoHurwitz label=\"YMtoHurwitz\"} In this section, we explain the link between $U(N)$ Yang-Mills and Hurwitz theory in detail. We review how the correlators of two-dimensional Yang-Mills theory can be written in terms of symmetric group quantities [@Gross:1992tu; @Gross:1993hu; @Gross:1993yt]. We then discuss the large $N$ asymptotic expansion of the theory. Finally, we define a deformed Hurwitz theory that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-the-observables-of-two-dimensional-yang-mills-th",
+      "number": null,
+      "title": "The Observables of Two-dimensional Yang-Mills Theory",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 689,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "two-dimensional yang-mills",
+          "heading": true
+        },
+        {
+          "term": "yang-mills theory",
+          "heading": true
+        },
+        {
+          "term": "fixed-degree correlators",
+          "heading": false
+        },
+        {
+          "term": "observables",
+          "heading": true
+        },
+        {
+          "term": "thedualitymap",
+          "heading": false
+        },
+        {
+          "term": "sum lambda",
+          "heading": false
+        },
+        {
+          "term": "g-k exp",
+          "heading": false
+        },
+        {
+          "term": "wilsonloops",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#YMObservables label=\"YMObservables\"} Two-dimensional Yang-Mills theory is invariant under area-preserving diffeomorphisms [@Witten:1991we] and therefore has no local observables. It is a prototypical example of an area dependent quantum field theory [@Runkel:2018uls], which is a mild generalization of a topological quantum field theory. The observables of two-dimensional Yang-Mills theory are Wilson loops on the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-the-schur-weyl-dictionary",
+      "number": null,
+      "title": "The Schur-Weyl Dictionary",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 708,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eta rvert",
+          "heading": false
+        },
+        {
+          "term": "lvert eta",
+          "heading": false
+        },
+        {
+          "term": "two-dimensional yang-mills",
+          "heading": false
+        },
+        {
+          "term": "schur-weyl",
+          "heading": true
+        },
+        {
+          "term": "frac lambda",
+          "heading": false
+        },
+        {
+          "term": "operator omega",
+          "heading": false
+        },
+        {
+          "term": "sum lambda",
+          "heading": false
+        },
+        {
+          "term": "schurtopower",
+          "heading": false
+        }
+      ],
+      "extract": "Our aim in this section is to review how the Schur-Weyl duality can be leveraged to explicitly rewrite the observables of two-dimensional Yang-Mills theory in terms of symmetric group quantities[@Gross:1992tu; @Gross:1993hu; @Cordes:1994fc; @Novak:2023bft]. Our goal is to claim that a certain sector of two-dimensional Yang-Mills theory at large $N$ is captured by a deformed Hurwitz theory. We recall that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-the-gross-taylor-expansion",
+      "number": null,
+      "title": "The Gross-Taylor Expansion",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 784,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chiral yang-mills",
+          "heading": false
+        },
+        {
+          "term": "exactcorrelators",
+          "heading": false
+        },
+        {
+          "term": "yang-mills theory",
+          "heading": false
+        },
+        {
+          "term": "full yang-mills",
+          "heading": false
+        },
+        {
+          "term": "string theory",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "string dual",
+          "heading": false
+        },
+        {
+          "term": "expansion",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#GTExpansion label=\"GTExpansion\"} Consider the fixed-degree correlator [\\[ExactCorrelators\\]](#ExactCorrelators){reference-type=\"eqref\" reference=\"ExactCorrelators\"}. It features a sum over Young diagrams of the Fourier transform of conjugacy classes weighted by a generalized Plancherel measure -- it seems it can be interpreted as a complicated Hurwitz correlator. Nevertheless, there is an obstacle to this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-chiral-yang-mills-theory-as-a-deformed-hurwitz-t",
+      "number": null,
+      "title": "Chiral Yang-Mills Theory as a Deformed Hurwitz Theory",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 955,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deformed hurwitz",
+          "heading": true
+        },
+        {
+          "term": "hurwitz theory",
+          "heading": true
+        },
+        {
+          "term": "chiral yang-mills",
+          "heading": true
+        },
+        {
+          "term": "exactcorrelators",
+          "heading": false
+        },
+        {
+          "term": "hat alpha",
+          "heading": false
+        },
+        {
+          "term": "alpha vdash",
+          "heading": false
+        },
+        {
+          "term": "prod alpha",
+          "heading": false
+        },
+        {
+          "term": "sum alpha",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Premise label=\"Premise\"} We have all the necessary tools in hand to define a deformed Hurwitz theory that is manifestly dual to two-dimensional chiral Yang-Mills theory. As suggested at the end of section [\\[YMObservables\\]](#YMObservables){reference-type=\"ref\" reference=\"YMObservables\"}, we will focus on the degree $d$ sector of chiral Yang-Mills theory and postpone the discussion of the sum over degrees.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-the-stringy-structure-of-chiral-yang-mills-theor",
+      "number": null,
+      "title": "The Stringy Structure of Chiral Yang-Mills Theory",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 36,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chiral yang-mills",
+          "heading": true
+        },
+        {
+          "term": "yang-mills theory",
+          "heading": true
+        },
+        {
+          "term": "stringy",
+          "heading": true
+        }
+      ],
+      "extract": "The Stringy Structure of Chiral Yang-Mills Theory In this section, we develop the string theory perspective on the chiral Yang-Mills theory fur- ther. Firstly, we neglect the deformations introduced in section 3.4 and explain the structure",
+      "extractCut": false
+    },
+    {
+      "id": "sec-011-a-double-expansion",
+      "number": null,
+      "title": "A Double Expansion",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 619,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alpha vdash",
+          "heading": false
+        },
+        {
+          "term": "dsumdictionary",
+          "heading": false
+        },
+        {
+          "term": "world-sheet",
+          "heading": false
+        },
+        {
+          "term": "string tension",
+          "heading": false
+        },
+        {
+          "term": "sum alpha",
+          "heading": false
+        },
+        {
+          "term": "alpha right",
+          "heading": false
+        },
+        {
+          "term": "string theory",
+          "heading": false
+        },
+        {
+          "term": "constrained correlators",
+          "heading": false
+        }
+      ],
+      "extract": "If we neglect the $\\Omega$ points and deformation by transpositions[^1] the partition function of chiral Yang-Mills theory on a surface with $k$ boundaries becomes: $$Z_{G}^{+}(U_1,\\dots,U_k)=\\sum_d (q\\, g_s^{2G-2+k})^d\\, \\langle \\prod_{i=1}^k \\left(\\sum_{\\alpha\\vdash d} p_{\\alpha}(U_i) C_{\\alpha}\\right) \\rangle_d\\, . \\label{dSumDictionary}$$ We wish to make the string theory structure of these correlators manifest.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-vertex-operators",
+      "number": null,
+      "title": "Vertex Operators",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 510,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "langle alpha",
+          "heading": false
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "vertex operators",
+          "heading": true
+        },
+        {
+          "term": "beta rangle",
+          "heading": false
+        },
+        {
+          "term": "fieldtostring",
+          "heading": false
+        },
+        {
+          "term": "gamma rangle",
+          "heading": false
+        },
+        {
+          "term": "deformedgw",
+          "heading": false
+        },
+        {
+          "term": "string theory",
+          "heading": false
+        }
+      ],
+      "extract": "In string theory, correlation functions on a genus $g$ world-sheet at instanton degree $d$ scale as $g_s^{2g-2+k}$, where $k$ is the number of insertions on the world-sheet. The genus expansion is canonically written as a sum over all world-sheet topologies weighted by a factor $g_s^{2g-2}$. The remaining factor $g_s^k$ is relegated to the normalization of vertex operators: each one comes with a single factor of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-a-stringy-deformation",
+      "number": null,
+      "title": "A Stringy Deformation",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 19,
+      "labelStart": "16",
+      "labelEnd": "18",
+      "words": 588,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eta rvert",
+          "heading": false
+        },
+        {
+          "term": "lvert eta",
+          "heading": false
+        },
+        {
+          "term": "alpha rangle",
+          "heading": false
+        },
+        {
+          "term": "langle alpha",
+          "heading": false
+        },
+        {
+          "term": "string coupling",
+          "heading": false
+        },
+        {
+          "term": "stringy",
+          "heading": true
+        },
+        {
+          "term": "string theoretic",
+          "heading": false
+        },
+        {
+          "term": "hat alpha",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#AStringyDeformation label=\"AStringyDeformation\"} We start from the undeformed partition function [\\[dSumDictionary\\]](#dSumDictionary){reference-type=\"eqref\" reference=\"dSumDictionary\"} and study the implementation of the deformation into the structure of the genus expansion of the string theory. Consider first the deformation by transpositions. The exponential can be expanded inside the correlation functions to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-a-deformed-gromov-witten-theory",
+      "number": null,
+      "title": "A Deformed Gromov-Witten Theory",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 111,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "extendedhurwitz",
+          "heading": false
+        },
+        {
+          "term": "chiral yang-mills",
+          "heading": false
+        },
+        {
+          "term": "yang-mills theory",
+          "heading": false
+        },
+        {
+          "term": "deformedgw",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#DeformedGW label=\"DeformedGW\"} In this section, we propose that the dual of chiral Yang-Mills theory is a deformed matter coupled to topological gravity model. Firstly, we argue that the algebra of partial permutations introduced in section [\\[ExtendedHurwitz\\]](#ExtendedHurwitz){reference-type=\"ref\" reference=\"ExtendedHurwitz\"} is the natural structure that underlies the symmetric group perspective on the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-the-partial-permutation-algebra-of-yang-mills-th",
+      "number": null,
+      "title": "The Partial Permutation Algebra of Yang-Mills Theory",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 417,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "partial permutation",
+          "heading": true
+        },
+        {
+          "term": "lvert rvert",
+          "heading": false
+        },
+        {
+          "term": "dsumdictionary",
+          "heading": false
+        },
+        {
+          "term": "yang-mills theory",
+          "heading": true
+        },
+        {
+          "term": "hat mathsf",
+          "heading": false
+        },
+        {
+          "term": "tilde omega",
+          "heading": false
+        },
+        {
+          "term": "omega cdot",
+          "heading": false
+        },
+        {
+          "term": "omegadeformation",
+          "heading": false
+        }
+      ],
+      "extract": "We have shown that the correlators of chiral Yang-Mills theory may be written as a sum over Hurwitz theory correlators of all degrees with insertions specified by operators in the algebra $\\mathcal{C}_d$ of conjugacy classes of degree $d$. This observation suggests that the appropriate structure to deal with the right-hand side of equation [\\[dSumDictionary\\]](#dSumDictionary){reference-type=\"eqref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-the-duality-map",
+      "number": null,
+      "title": "The Duality Map",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 526,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lvert rvert",
+          "heading": false
+        },
+        {
+          "term": "bar rvert",
+          "heading": false
+        },
+        {
+          "term": "rvert ell",
+          "heading": false
+        },
+        {
+          "term": "bar cup",
+          "heading": false
+        },
+        {
+          "term": "hat mathsf",
+          "heading": false
+        },
+        {
+          "term": "partial permutations",
+          "heading": false
+        },
+        {
+          "term": "langle hat",
+          "heading": false
+        },
+        {
+          "term": "chiral yang-mills",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#TheDualityMap label=\"TheDualityMap\"} In order to extend this picture to the correlation functions, we need to establish a dictionary between the observables of chiral Yang-Mills theory and those of the deformed extended Hurwitz theory. Given an insertion $U$, we need to identify the unique element $\\sum_{s} a_s(U) \\hat{\\mathsf{A}}_s$ in the algebra of partial permutations which behaves as $$\\sum_{\\alpha\\vdash d}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-the-gromov-witten-formulation",
+      "number": null,
+      "title": "The Gromov-Witten Formulation",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 23,
+      "labelStart": "20",
+      "labelEnd": "22",
+      "words": 617,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lvert rvert",
+          "heading": false
+        },
+        {
+          "term": "gromov-witten",
+          "heading": true
+        },
+        {
+          "term": "rvert left",
+          "heading": false
+        },
+        {
+          "term": "leq lvert",
+          "heading": false
+        },
+        {
+          "term": "minimal lvert",
+          "heading": false
+        },
+        {
+          "term": "deformed gromov-witten",
+          "heading": false
+        },
+        {
+          "term": "gromov-witten operators",
+          "heading": false
+        },
+        {
+          "term": "gromov-witten theory",
+          "heading": false
+        }
+      ],
+      "extract": "The description of the correlation functions of chiral Yang-Mills theory in terms of a partial permutation algebra enables us to provide an explicit string dual by deforming the Gromov-Witten theory. We symbolically define this deformed Gromov-Witten theory as: $$\\mathcal{L}_{GW} \\to \\mathcal{L}_{GW} - t\\, \\tau_1 + \\log \\Tilde{\\Omega}_{u}^{2-2G} \\, , \\label{StringDualLagrangian}$$ where the expression of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-the-inverse-map",
+      "number": null,
+      "title": "The Inverse Map",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 552,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dualitymap",
+          "heading": false
+        },
+        {
+          "term": "langle prod",
+          "heading": false
+        },
+        {
+          "term": "def langle",
+          "heading": false
+        },
+        {
+          "term": "sigma rangle",
+          "heading": false
+        },
+        {
+          "term": "lvert rvert",
+          "heading": false
+        },
+        {
+          "term": "prod hat",
+          "heading": false
+        },
+        {
+          "term": "yang-mills observables",
+          "heading": false
+        },
+        {
+          "term": "rangle text",
+          "heading": false
+        }
+      ],
+      "extract": "The duality map [\\[DualityMap\\]](#DualityMap){reference-type=\"eqref\" reference=\"DualityMap\"} we have uncovered is a rather complicated one, and it would be interesting to identify new Yang-Mills variables in terms of which which this map simplifies. To that effect, we shall invert the duality map [\\[DualityMap\\]](#DualityMap){reference-type=\"eqref\" reference=\"DualityMap\"}. We consider the correlation functions of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-remarks-on-wilson-loops",
+      "number": null,
+      "title": "Remarks on Wilson Loops",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 396,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wilson",
+          "heading": true
+        },
+        {
+          "term": "cup beta",
+          "heading": false
+        },
+        {
+          "term": "alpha cup",
+          "heading": false
+        },
+        {
+          "term": "langle alpha",
+          "heading": false
+        },
+        {
+          "term": "wilson lines",
+          "heading": false
+        },
+        {
+          "term": "gromov-witten theory",
+          "heading": false
+        },
+        {
+          "term": "stringdual",
+          "heading": false
+        },
+        {
+          "term": "vdash",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#WilsonLoops label=\"WilsonLoops\"} In the previous subsections, we have studied partition functions of the chiral Yang-Mills theory. We have shown that in the absence of boundaries, the partition functions are reproduced by a deformed Gromov-Witten theory of the target space. Furthermore, we have argued that boundaries with prescribed holonomies may be thought of as operator insertions, and that their correlation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-conclusions",
+      "number": null,
+      "title": "Conclusions",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 548,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ads string",
+          "heading": false
+        },
+        {
+          "term": "two-dimensional yang-mills",
+          "heading": false
+        },
+        {
+          "term": "perturbative string",
+          "heading": false
+        },
+        {
+          "term": "string theory",
+          "heading": false
+        },
+        {
+          "term": "gauge string",
+          "heading": false
+        },
+        {
+          "term": "string duality",
+          "heading": false
+        },
+        {
+          "term": "hurwitz theory",
+          "heading": false
+        },
+        {
+          "term": "gromov-witten theory",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Conclusions label=\"Conclusions\"} It was well-known that two-dimensional Yang-Mills theory allows for a large $N$ expansion that resembles a string theory. A sum over covering maps reproduces the expansion and the description of the covering maps of degree $d$ is closely related to the description of $S_d$ principal bundles that are part of the configuration space of a two-dimensional topological quantum field",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-useful-identities",
+      "number": null,
+      "title": "Useful Identities",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "25",
+      "words": 163,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "useful identities",
+          "heading": true
+        },
+        {
+          "term": "sum polynomials",
+          "heading": false
+        },
+        {
+          "term": "power sum",
+          "heading": false
+        }
+      ],
+      "extract": "Useful Identities In this appendix, we collect useful identities on symmetric polynomials and their inner prod- ucts. Firstly, we recall that the character of a unitary matrix sλ(U) is a Schur polynomial evaluated in the eigenvalues of the representation λ of the matrix U. Schur polynomials are related to power sum polynomials through pα(U) = X λ∈Y d sλ(U)χλ(α) , (A.1) where d = P i αi and the pα(U) are the power",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-determining-the-dictionary",
+      "number": null,
+      "title": "Determining the Dictionary",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 308,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "binomial coefficients",
+          "heading": false
+        },
+        {
+          "term": "dictionary",
+          "heading": true
+        },
+        {
+          "term": "p1l",
+          "heading": false
+        },
+        {
+          "term": "determining",
+          "heading": true
+        },
+        {
+          "term": "lgl",
+          "heading": false
+        }
+      ],
+      "extract": "Determining the Dictionary In order to determine the coefficients (5.8), one can fix some maximal degree and solve the linear system of equations up to that degree by Gaussian elimination. This yields the ansatz (5.8) which may then be proved by induction. Here, we shall simply check that the ansatz (5.8) does indeed solve equation (5.6). Uniqueness of the solution follows by restricting to finite values for the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-phase-transitions",
+      "number": null,
+      "title": "Phase Transitions",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": "26",
+      "labelEnd": "27",
+      "words": 209,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phase transitions",
+          "heading": true
+        },
+        {
+          "term": "yang-mills string",
+          "heading": false
+        },
+        {
+          "term": "two-dimensional yang-mills",
+          "heading": false
+        },
+        {
+          "term": "chiral yang-mills",
+          "heading": false
+        },
+        {
+          "term": "dual string",
+          "heading": false
+        },
+        {
+          "term": "yang-mills theory",
+          "heading": false
+        }
+      ],
+      "extract": "Phase Transitions Two-dimensional Yang-Mills theory admits a phase transition on the sphere [11]. Indeed, its free energy trivializes for small coupling, namely g2 Y MA < π2. This transition was studied in [33] from the perspective of a weak-coupling expansion and was understood in that paper to originate in instanton corrections. More precisely, only representations of the unitary group with a small number of boxes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-analytical-phase-transitions",
+      "number": null,
+      "title": "Analytical Phase Transitions",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 30,
+      "labelStart": "27",
+      "labelEnd": "29",
+      "words": 1004,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phase transitions",
+          "heading": true
+        },
+        {
+          "term": "hurwitz numbers",
+          "heading": false
+        },
+        {
+          "term": "double hurwitz",
+          "heading": false
+        },
+        {
+          "term": "connected hurwitz",
+          "heading": false
+        },
+        {
+          "term": "hurwitz theory",
+          "heading": false
+        },
+        {
+          "term": "yang-mills string",
+          "heading": false
+        },
+        {
+          "term": "chiral yang-mills",
+          "heading": false
+        },
+        {
+          "term": "riemann-hurwitz constraint",
+          "heading": false
+        }
+      ],
+      "extract": "Analytical Phase Transitions The free energy of the chiral string theory is defined as the logarithm of the disconnected partition function of the theory. It may be identified with a partially evaluated generating function of disconnected double Hurwitz numbers. Specifically, the parameters associated with the non-trivial insertions are evaluated to 1 and the instanton weight is related to the area. We slightly",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-numerical-phase-transitions",
+      "number": null,
+      "title": "Numerical Phase Transitions",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 34,
+      "labelStart": "29",
+      "labelEnd": "33",
+      "words": 1421,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phase transitions",
+          "heading": true
+        },
+        {
+          "term": "chiral yang-mills",
+          "heading": false
+        },
+        {
+          "term": "hurwitz theory",
+          "heading": false
+        },
+        {
+          "term": "hurwitz numbers",
+          "heading": false
+        },
+        {
+          "term": "one-point function",
+          "heading": false
+        },
+        {
+          "term": "hep-th",
+          "heading": false
+        },
+        {
+          "term": "double hurwitz",
+          "heading": false
+        },
+        {
+          "term": "doi",
+          "heading": false
+        }
+      ],
+      "extract": "Numerical Phase Transitions At present, computing double Hurwitz numbers remains largely outside the scope of analytical methods. Numerically, disconnected double Hurwitz numbers can be computed for small values of the degree using the definition of Hurwitz numbers in terms of conjugacy classes. However, computing the free energy (C.13) of the deformed extended Hurwitz theory remains hard. In the case of Yang-Mills,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Introduction"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "yang-mills string",
+      "heading": false
+    },
+    {
+      "term": "yang-mills correlators",
+      "heading": false
+    },
+    {
+      "term": "yang-mills theory",
+      "heading": true
+    },
+    {
+      "term": "two-dimensional yang-mills",
+      "heading": true
+    },
+    {
+      "term": "yang-mills observables",
+      "heading": true
+    },
+    {
+      "term": "chiral yang-mills",
+      "heading": true
+    },
+    {
+      "term": "hurwitz theory",
+      "heading": true
+    },
+    {
+      "term": "yang-mills partition",
+      "heading": false
+    },
+    {
+      "term": "yang-mills coupling",
+      "heading": false
+    },
+    {
+      "term": "deformed hurwitz",
+      "heading": true
+    },
+    {
+      "term": "dual string",
+      "heading": true
+    },
+    {
+      "term": "lvert rvert",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 22,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "22",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 24,
+      "label": "23",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 25,
+      "label": "24",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 26,
+      "label": "25",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 27,
+      "label": "26",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 28,
+      "label": "27",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 29,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "29",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 31,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The domains of convergence of the renormalized identity one-point function (on the left) and of the renormalized transposition one-point function (on the right)",
+      "page": 31,
+      "pageLabel": "30",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The one-point function for a renormalized identity class insertion as a function of t",
+      "page": 32,
+      "pageLabel": "31",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p031-1",
+      "file": "images/img-p031-1.png",
+      "page": 31,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p031-2",
+      "file": "images/img-p031-2.png",
+      "page": 31,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p032-1",
+      "file": "images/img-p032-1.png",
+      "page": 32,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 26,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 27,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p30); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 20
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 27 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2502.02662v1"
+  }
+}

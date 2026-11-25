@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-chain-spring-modes",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:chain-spring-modes",
+  "kind": "remark",
+  "title": "Spring-like modes of open Hopf chains",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-molecular-hopf-chain"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-molecular-hopf-chain",
+  "tags": [
+    "spring",
+    "vibration",
+    "open-chain",
+    "reidemeister",
+    "endpoint",
+    "flexibility",
+    "phonon"
+  ],
+  "text": "chain-spring-modes.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,346 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2406.02111v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-2406.02111v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Categorical Quantum Volume Operator",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-categorical-quantum-volume-operator.md",
+      "narrative": null,
+      "content": "Alexander Hahn ,1, ∗Sebastian Murk ,2, † Sukhbinder Singh,3, ‡ and Gavin K. Brennen\n1, §\n1School of Mathematical and Physical Sciences, Macquarie University, Sydney, New South Wales 2109, Australia\n2Quantum Gravity Unit, Okinawa Institute of Science and Technology, 1919-1 Tancha, Onna-son, Okinawa 904-0495, Japan\n3Multiverse Computing, Spadina Ave., Toronto, ON M5T 2C2, Canada\nWe present a generalization of the quantum volume operator quantifying the volume in curved three-\ndimensional discrete geometries. In its standard form, the quantum volume operator is constructed from tetra-\nhedra whose",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.02111v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-introduction.md",
+      "narrative": null,
+      "content": "\\label{sec:introduction}\nIn the search for an all-encompassing theory of quantum gravity that successfully reconciles general relativity and quantum field theory, background-independent theories such as loop quantum gravity (LQG)~\\cite{Thiemann2007,Rovelli2014,Bilson-Thompson2024} and causal dynamical triangulations~\\cite{Ambjorn2012,Loll2020} are widely regarded as the main contenders to string theory/M-theory. \nArguably the most salient\nproperty of background-independent theories is the prediction of a granular structure of space in which lengths, areas, and volumes are fundamentally discret",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.02111v3/blocks/figure-img-p003-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2406.02111v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Volume Operator in Loop Quantum Gravity",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-the-volume-operator-in-loop-quantum-gravity.md",
+      "narrative": null,
+      "content": "GRAVITY",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.02111v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spin networks and graph states",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-003-spin-networks-and-graph-states.md",
+      "narrative": null,
+      "content": "In LQG, a spin network state is defined on an oriented graph $\\Gamma$. Each link $\\ell$ has a direction and is labeled by a half-integer $j_\\ell \\in \\mathbb{N} \\frac{1}{2}$ spanning a $2 j_\\ell + 1$ dimensional $\\SU(2)$ irreducible representation space $\\mathcal{H}_{j_\\ell}$. Each node $\\kappa$ of the graph carries a so-called intertwiner $\\ket{\\iota_\\kappa}$. The intertwiner $\\ket{\\iota_\\kappa}$ is a vector in the tensor representation $\\mathcal{K}_\\varv = \\mathrm{Inv} \\left( \\mathcal{H}_{j_1} \\otimes \\mathcal{H}_{j_2} \\otimes \\cdots \\mathcal{H}_{j_\\varv} \\right)$, which forms the kinematical",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.02111v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum tetrahedron",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-quantum-tetrahedron.md",
+      "narrative": null,
+      "content": "\\label{subsec:quantumtetrahedron}\n\\begin{figure}\n\t\\centering\n\t\\includegraphics{Fig_1_Tetrahedron.pdf}\n\t\\caption{Schematic illustration of a quantum tetrahedron as the dual of a graph state. The node $\\kappa$ is located in the center of the tetrahedron and carries a four-valent intertwiner $\\ket{\\iota_\\kappa}$. A link $\\ell$ in the graph state connected to this vertex pierces one of the tetrahedron's faces. It carries a half-integer spin $j_\\ell\\in\\mathbb{N}\\frac{1}{2}$ representing the area of the polyhedron face it pierces. More precisely, the quantum numbers $j_\\ell$ are associated with the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.02111v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Volume operator",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-005-volume-operator.md",
+      "narrative": null,
+      "content": "\\label{subsec:volumeoperator}\nThe action of the volume operator is given by~\\cite{Rovelli2014}\n\\begin{equation}\n\t\\hat{V} \\ket{\\iota_\\kappa} = \\frac{\\sqrt{2}}{3} \\left( 8 \\pi G \\hbar \\gamma \\right)^{3/2} \\sqrt{\\vert \\hat{Q} \\vert} \\ket{\\iota_\\kappa} ,\n\t\\label{eq:def:vol_op}\n\\end{equation}\nwhere $\\gamma$ denotes the Barbero--Immirzi parameter, and $G$ and $\\hbar$ the gravitational and reduced Planck constant, respectively.\\footnote{While the volume operator is technically $\\hat{V} \\propto \\big(\\hat{Q}^\\dagger \\hat{Q}\\big)^{\\nicefrac{1}{4}}$, where the dagger symbol $^\\dagger$ indicates the adjoi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.02111v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chakrabarti's derivation of the volume operator",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-006-chakrabartis-derivation-of-the-volume-operator.md",
+      "narrative": null,
+      "content": "\\label{sec:chaktabarti}\t\nInterestingly, the derivation of the matrix elements of $\\hat{Q}$ was provided some sixty years ago by Chakrabarti~\\cite{Chakrabarti1964}, who referred to it as an operator ``whose classical analog is a volume generated by the three angular momentum vectors\". Chakrabarti was interested in constructing eigenstates, which reflect the permutation symmetry of three particles with angular momentum $\\vec{L}_1,\\vec{L}_2,\\vec{L}_3$ and total angular momentum $\\vec{L}_4=\\sum_{k}\\vec{L}_k$, which is the same as our closure constraint Eq.~\\eqref{eq:closure_constraint}\\@. In the b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.02111v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Categorification of the Volume Operator",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-007-categorification-of-the-volume-operator.md",
+      "narrative": null,
+      "content": "\\label{sec:Qvol}\nIn this section, we outline the framework for generalizing the quantum volume operator introduced in the previous section to a general class of categories. We briefly introduce the category theoretical concepts needed for our construction in the \\hyperref[sec:category_theory]{Appendix}\\@. For a more comprehensive introduction to category theory, we refer the reader to Refs.~\\cite{Beer2018,Wolf2020,Etingof2015}\\@. We will assume that $\\C$ is a ribbon fusion category, sometimes also called a premodular category. By Tannaka duality~\\cite{Joyal1990}, such categories are the repres",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.02111v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "String diagrams",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-008-string-diagrams.md",
+      "narrative": null,
+      "content": "\\label{subsec:string_diagrams}\nA fusion category is uniquely specified by its skeletal data, see e.g.\\ Refs.~\\cite{Bridgeman2020,Barter2022}\\@. That is\n\\begin{enumerate}[(i)]\n\t\\item a finite set $I=\\{0,a,b,\\dots\\}$ of simple objects as well as their duals $0,a^*,b^*,\\dots$, where $0$ labels the unit object;\n\t\\item the fusion rules for all $a,b\\in I$,\n\t\\begin{equation*}\n\t\ta\\otimes b = \\sum_{c\\in I} N_{ab}^{c} c,\n\t\\end{equation*}\n\ttogether with the fusion spaces $\\hom(a\\otimes b,c)$ [which are vector spaces of dimension $N_{ab}^c$] represented by trivalent vertices\n\t\\begin{equation*}\n\t\t\\begin{ti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.02111v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Derivation of the categorical volume operator",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "../sections/sec-009-derivation-of-the-categorical-volume-operator.md",
+      "narrative": null,
+      "content": "\\label{subsec:Qvol.derivation}\nTo compute the matrix elements of the generalized volume operator, we follow the same steps as for the standard $\\SU(2)$ volume operator in LQG~\\cite{Rovelli2014}\\@. That is, we consider a tetrahedron, but the corresponding four-valent intertwiners are not necessarily irreducible representations of $\\SU(2)$. Instead, we treat them as morphisms in a premodular category $\\C$,\n\\begin{equation*}\n\t\\ket{\\iota_\\kappa}=\n\t(d_{j_1} d_{j_2} d_{j_3} d_{j_4})^{-1/4}\\;\n\t\\begin{tikzpicture}[decoration={markings,mark=at position 0.6 with {\\arrow[scale=1,thick,>=stealth]{>}}},bas",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.02111v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Beyond ribbon fusion categories",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-010-beyond-ribbon-fusion-categories.md",
+      "narrative": null,
+      "content": "\\label{subsec:spherical.C}\nIn the derivation of the standard volume operator for $\\SU(2)$, the closure constraint~\\eqref{eq:closure_constraint} guarantees that any oriented triplet $\\vec{L}_j,\\vec{L}_k,\\vec{L}_\\ell$ in the definition of the volume operator~\\eqref{eq:def_volume_operator} gives the same result. As mentioned previously, the category-theoretic analog of the closure constraint is the tetrahedral symmetry condition~\\eqref{eq:tetrahedral_symmetry}\\@. However, there is a subtlety, which comes from the fact that we have to project the diagram in Eq.~\\eqref{eq:volume_diagram} to the pla",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.02111v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hermiticity of the categorical volume operator",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-011-hermiticity-of-the-categorical-volume-operator.md",
+      "narrative": null,
+      "content": "\\label{subsec:Hermicity}\nFor the volume operator to be a physical observable, it must be Hermitian. By looking at a specific example, we will see that for non-unitary $\\C$ the volume operator is \\emph{not} Hermitian in general. This is not surprising, but rather the expected behavior of generic non-unitary models. The same observation has been made, for instance, in anyon chains~\\cite{Ardonne2011} and Levin--Wen string-net models~\\cite{Freedman2012, Hahn2020}\\@. However, we can prove that the volume operator is always Hermitian if $\\C$ is unitary.\nFurthermore, even in the non-unitary case, the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.02111v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Recovering the Standard SU(2) Volume Operator",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-012-recovering-the-standard-su2-volume-operator.md",
+      "narrative": null,
+      "content": "\\label{sec:recovery}\nIn this section, we show that our construction recovers the standard volume operator for $\\SU(2)$, see Eq.~\\eqref{eq:QRS} and Eq.~\\eqref{eq:QCh}\\@. For this, we consider the input category $\\SU(2)_k$, which is the $q$-deformed version of $\\SU(2)$ with deformation parameter $q=\\rme^{\\frac{2\\pi\\rmi}{k+2}}$. In the limit $k\\rightarrow\\infty$, we have $q \\rightarrow 1$ and recover $\\SU(2)$. The categorical data of $\\SU(2)_k$ can be found in Ref.~\\cite{Bonderson2007} or Ref.~\\cite{Ardonne2010}\\@. $\\SU(2)_k$ has simple objects $I=\\big\\{\\frac{1}{2},1,\\frac{3}{2},\\dots k\\big\\}$. W",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.02111v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spectrum of the SU(2)k Volume Operator",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-013-spectrum-of-the-su2k-volume-operator.md",
+      "narrative": null,
+      "content": "\\label{sec:spectrum}\nThe volume operator is a physical observable quantifying the volume of the three-dimensional spatial component of discrete spacetime. Therefore, the main interest is its spectral properties. The spectral analysis of the $\\SU(2)$ volume operator has been carried out in Refs.~\\cite{Loll1996,BrunnemannThiemann2006,Meissner2006,BrunnemannRideout2008a,BrunnemannRideout2008a}\\@. By restricting the possible $\\SU(2)$ irreducible representation labels of each tetrahedron to a value up to $k$, we obtain a categorical volume operator with input category $\\SU(2)_k$. As shown in Sec.~\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.02111v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discussion and Conclusions",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-014-discussion-and-conclusions.md",
+      "narrative": null,
+      "content": "\\label{sec:discussion_conclusions}\nIn condensed matter physics, the categorification of spin models such as the Heisenberg model and certain lattice gauge theories has given rise to several physically rich anyonic lattice models that realize both conventional and exotic quantum phases of matter. Motivated by these developments, here we have introduced a categorification of the quantum volume operator [Sec.~\\ref{sec:Qvol}] that plays a fundamental role in the description of discrete spacetime geometries underlying the formulation of background-independent candidate theories of quantum gravity s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.02111v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-015-references.md",
+      "narrative": null,
+      "content": "man and Ramona Wolf for an interesting exchange. SM and\nGKB thank Sundance Bilson-Thompson for illuminating dis-\ncussions.\nAH acknowledges partial funding from the Sydney Quan-\ntum Academy. SM is supported by the Quantum Gravity Unit\nof the Okinawa Institute of Science and Technology (OIST).\nG.K.B. acknowledges support from the Australian Research\nCouncil Centre of Excellence for Engineered Quantum Sys-\ntems (Grant No. CE 170100009).\n[1] T. Thiemann, Modern Canonical Quantum General Relativity\n(Cambridge University Press, Cambridge, 2007).\n[2] C. Rovelli and F. Vidotto, Covariant Loop Quantum",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2406.02111v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix: Basic Concepts in Category Theory",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "../sections/sec-016-appendix-basic-concepts-in-category-theory.md",
+      "narrative": null,
+      "content": "THEORY\nIn this appendix, we introduce the basic category theoret-\nical concepts that appear in the main text of this article. We\nwill often not provide the full technical definitions, but in-\nstead focus on the implications of a categorical property to\nthe graphical calculus of string diagrams. For an elementary\nphysics-friendly introduction to category theory, we refer the\nreader to Refs. [41, 42]. A thorough and exhaustive mathe-\nmatical introduction is provided in Ref. [43].\nIn the following, we denote a category with C and assume\nthat it is small.4\nA category consists of objects and mor-\np",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2311.15631v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-2311.15631v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Throughout the paper, $\\mathcal C$ denotes a fusion category (FC) over the field $\\mathbb C$ of complex numbers (see [@EGNO15] for definitions). Its simple objects are denoted $c_i$'s with $i=1,\\dots,\\text{rank}(\\mathcal C)$. We denote its fusion ring by $K(\\mathcal C)$. A pivotal structure $a:id_{\\mathcal C}\\cong(-)^{**}$ defines left and right quantum (or categorical) traces $\\text{tr}^{L/R}(a):1\\to1$. A pivotal structure is called spherical if $\\forall c\\in\\mathcal C$, $\\text{tr}^L(a_c)=\\text{tr}^R(a_{c^*})$. In an FC $\\mathcal C$ with a spherical structure $a$, a (quantum) dimension of an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2311.15631v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:2311.15631v3  [math.QA]  2 May 2024\nClassiﬁcation of connected ´etale algebras in pre-modular\nfusion categories up to rank three\nKen KIKUCHI\nDepartment of Physics, National Taiwan University, Taipei 10617, Taiwan\nAbstract\nWe classify connected ´etale algebras A’s in pre-modular fusion categories B with\nrank(B) ≤3 including degenerate and non-(pseudo-)unitary ones.\nWe comment on\nLagrangian algebras and physical applications to ground state degeneracy and proof of\nspontaneous B-symmetry breaking.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2311.15631v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classification",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-classification.md",
+      "narrative": null,
+      "content": "Classiﬁcation",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2311.15631v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rank one",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-rank-one.md",
+      "narrative": null,
+      "content": "A rank one pre-MFC has only one simple object $1$. There are two pre-MFCs depending on the sign of categorical dimension $D(\\mathcal B)=\\pm1$. Since $1\\le\\text{FPdim}(\\mathcal B_A)\\le\\text{FPdim}(\\mathcal B)=1$, the only possibility is $$\\text{FPdim}(\\mathcal B_A)=1.$$ Accordingly, the algebra has $$\\text{FPdim}_{\\mathcal B}(A)=\\frac{\\text{FPdim}(\\mathcal B)}{\\text{FPdim}(\\mathcal B_A)}=1.$$ Since the only simple object is $1\\in\\mathcal B$, we get the unique algebra object $$A\\cong1.\\label{rank1alg}$$ It is trivially connected étale. The algebra is also Lagrangian.\n\n::: center\n::: {#rank1resul",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2311.15631v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rank two",
+      "pageStart": 6,
+      "pageEnd": 11,
+      "target": "../sections/sec-003-rank-two.md",
+      "narrative": null,
+      "content": "A rank two pre-MFC has two simple objects $\\{1,X\\}$. There are two fusion rings, $\\mathbb Z/2\\mathbb Z$ and $K(\\text{Fib})$. We start from the $\\mathbb Z/2\\mathbb Z$ case.\n\n### $\\mathcal B\\simeq\\text{Vec}_{\\mathbb Z/2\\mathbb Z}^\\alpha$\n\nThe pre-MFCs $\\mathcal B$'s have two simple objects $\\{1,X_h\\}$. They obey the $\\mathbb Z/2\\mathbb Z$ fusion ring $$\\forall b\\in\\mathcal B,\\quad1\\otimes b\\cong b\\cong b\\otimes1,\\quad X\\otimes X\\cong1,$$ and have $$\\text{FPdim}_{\\mathcal B}(1)=1=\\text{FPdim}_{\\mathcal B}(X).$$ Accordingly, the pre-MFCs have $$\\text{FPdim}(\\mathcal B)=2.$$ The quantum dimension $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2311.15631v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rank three",
+      "pageStart": 11,
+      "pageEnd": 23,
+      "target": "../sections/sec-004-rank-three.md",
+      "narrative": null,
+      "content": "A rank three pre-MFC has three simple objects $\\{1,X,Y\\}$. As we reviewed above, with the assumption of pivotal structure, there are five fusion rings, $\\text{FR}^{3,2}_1,\\text{FR}^{3,0}_1,\\text{FR}^{3,0}_2,\\text{FR}^{3,0}_3,K(1,0,2,0)$. The last with multiplicity is known [@HH07] not to admit braiding. Thus, we classify connected étale algebras in the first four[^1] pre-MFCs.\n\n### $\\mathcal B\\simeq\\text{Vec}_{\\mathbb Z/3\\mathbb Z}^1$ {#Z3}\n\nThe pre-MFCs $\\mathcal B$'s have three simple objects $\\{1,X_{h_X},Y_{h_Y}\\}$ obeying $\\mathbb Z/3\\mathbb Z$ fusion ring\n\n::: center\n   $\\otimes$   1   $X",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2311.15631v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Physical applications",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "../sections/sec-005-physical-applications.md",
+      "narrative": null,
+      "content": "In this section, we discuss physical applications of the classification results.\n\nConsider a two-dimensional $\\mathcal C$-symmetric gapped phase (an existence of braiding is not assumed at this level). It is known [@TW19; @HLS21] that such phases stand in bijection with $\\mathcal C$-module categories $$\\{\\text{2d }\\mathcal C\\text{-symmetric gapped phases}\\}\\cong\\{\\mathcal C\\text{-module categories }\\mathcal M\\}.\\label{1to1}$$ In particular, ground state degeneracy (GSD) in the LHS is given by $\\text{rank}(\\mathcal M)$ of a module category $\\mathcal M$ in the RHS. Therefore, we can translate ph",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2311.15631v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conformal dimensions of BRep(S3)",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-006-conformal-dimensions-of-breps3.md",
+      "narrative": null,
+      "content": "There are two classes of pre-MFCs with fusion ring FR3,0\n2\n(or K(0, 1, 0, 1) in the notation of\n[34]); both are degenerate, but one is symmetric and the other is non-symmetric. In this\nappendix, we compute conformal dimensions of them.\nSymmetric Rep(S3).\nThe symmetric Rep(S3) has S-matrix (in the basis {1, X, Y })\neS =\n\n\n1\n1\ndY\n1\n1\ndY\ndY\ndY\nd2\nY\n\n.\n(We used dX = 1.)\nSince the (i, j) component is deﬁned by eSi,j := tr(cbj,bi · cbi,bj) =\nPrank(B)\nk=1\nNi,j\nk\ne2πihk\ne2πi(hi+hj)dk, we can read oﬀthe conformal dimensions. The (2, 3) component\nsays e2πihX = 1, or\nhX = 0\n(mod 1).\n(A.1)\nSimilarly,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2311.15631v3/blocks/lem-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 30,
+      "target": "lem-sec-007-01.md",
+      "narrative": null,
+      "content": "There does not exist a pre-modular fusion category with fusion ring K(psu(2)5) and trivial conformal dimension. In other words, all pre-modular fusion categories with fu- sion ring K(psu(2)5) are modular.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2311.15631v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conformal dimensions of Bpsu(2)5",
+      "pageStart": 26,
+      "pageEnd": 30,
+      "target": "../sections/sec-007-conformal-dimensions-of-bpsu25.md",
+      "narrative": null,
+      "content": "By deﬁnition, the S-matrix in this example is given by (in the basis {1, X, Y })\neS =\n\n\n1\ndX\ndY\ndX\ne−4πihX + e2πi(hY −2hX)dY\ne−2πihY dX + e−2πihXdY\ndY\ne−2πihY dX + e−2πihXdY\ne−4πihY + e2πi(hX−2hY )dX + e−2πihY dY\n\n.\nThe S-matrix obeys eSi∗,j = eS∗\ni,j. Since all simple objects are self-dual b∗∼= b, this means all\ncomponents should be real. This imposes three necessary conditions on conformal dimensions\nhX, hY :\ne−4πihX + e2πi(hY −2hX)dY\n!∈R,\ne−2πihY dX + e−2πihXdY\n!∈R,\ne−4πihY + e2πi(hX−2hY )dX + e−2πihY dY\n!∈R.\n(B.1)\nSolving the conditions for (dX, dY ) = (\nsin π\n7\ncos π\n14 , −\nsin 2π\n7\nc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

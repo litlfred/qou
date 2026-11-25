@@ -1,0 +1,895 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0110119v1",
+  "title": "Idempotents of the Hecke algebra become Schur functions in the skein of the annulus",
+  "variant": "pdf",
+  "pages": 17,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "The skein of a planar surface",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-the-skein-of-a-planar-surface"
+    },
+    {
+      "level": 1,
+      "title": "Young diagrams and symmetric functions",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-young-diagrams-and-symmetric-functions"
+    },
+    {
+      "level": 2,
+      "title": "Young diagrams",
+      "number": "2.1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Symmetric functions",
+      "number": "2.2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "n of a disk with 2n boundary points",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-n-of-a-disk-with-2n-boundary-points"
+    },
+    {
+      "level": 1,
+      "title": "The skein C of the annulus",
+      "number": "4",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-the-skein-c-of-the-annulus"
+    },
+    {
+      "level": 1,
+      "title": "The variant skein C′ of the annulus",
+      "number": "5",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-5-the-variant-skein-c-of-the-annulus"
+    },
+    {
+      "level": 1,
+      "title": "Basic skein relations in C′",
+      "number": "6",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-6-basic-skein-relations-in-c"
+    },
+    {
+      "level": 1,
+      "title": "Determinantal calculations in C′",
+      "number": "7",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-7-determinantal-calculations-in-c"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-007-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 150,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "skein theory",
+          "heading": false
+        },
+        {
+          "term": "liverpool",
+          "heading": false
+        },
+        {
+          "term": "lukac",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0110119v1 [math.GT] 11 Oct 2001 Idempotents of the Hecke algebra become Schur functions in the skein of the annulus Sascha G. Lukac lukac@liv.ac.uk Department of Mathematical Sciences, University of Liverpool, Peach St, Liverpool L69 7ZL, England Abstract The Hecke algebra Hn contains well known idempotents Eλ which are indexed by Young diagrams with n cells. They were originally described by Gyoja [5]. A",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0110119v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-the-skein-of-a-planar-surface",
+      "number": "1",
+      "title": "The skein of a planar surface",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 226,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "planar surface",
+          "heading": true
+        },
+        {
+          "term": "skein",
+          "heading": true
+        },
+        {
+          "term": "skein relations",
+          "heading": false
+        },
+        {
+          "term": "nators",
+          "heading": false
+        },
+        {
+          "term": "quasi-idempotent",
+          "heading": false
+        }
+      ],
+      "extract": "The skein of a planar surface We consider a planar surface F with designated n incoming and n outgoing boundary points for some integer n ≥0. The Homﬂy skein S(F) is deﬁned as the module of linear combinations of oriented tangles in F quotiented by regular isotopy (i.e. Reidemeister moves II and III), the two local skein relations in ﬁgure 1 where v and s are variables, and the relation that a disjoint simple closed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-young-diagrams-and-symmetric-functions",
+      "number": "2",
+      "title": "Young diagrams and symmetric functions",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 355,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "young diagrams",
+          "heading": true
+        },
+        {
+          "term": "graphical depiction",
+          "heading": false
+        },
+        {
+          "term": "symmetric functions",
+          "heading": true
+        },
+        {
+          "term": "cells",
+          "heading": false
+        },
+        {
+          "term": "consider partitions",
+          "heading": false
+        },
+        {
+          "term": "k-th",
+          "heading": false
+        }
+      ],
+      "extract": "Young diagrams and symmetric functions 2.1 Young diagrams We consider partitions of non-negative integers where the summands are in non- strictly decreasing order. We consider partitions to be equal if they diﬀer only by a number of zero-summands at the end. A Young diagram is a graphical depiction of a partition. A partition λ = (λ1, λ2, . . . , λk) becomes a ﬂush-left arrangement of square cells with λ1 cells in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-n-of-a-disk-with-2n-boundary-points",
+      "number": null,
+      "title": "n of a disk with 2n boundary points",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 558,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boundary points",
+          "heading": true
+        },
+        {
+          "term": "permutation braids",
+          "heading": false
+        },
+        {
+          "term": "incoming points",
+          "heading": false
+        },
+        {
+          "term": "elementary braids",
+          "heading": false
+        },
+        {
+          "term": "outgoing points",
+          "heading": false
+        },
+        {
+          "term": "αλeλ",
+          "heading": false
+        },
+        {
+          "term": "quasi-idempotent",
+          "heading": false
+        },
+        {
+          "term": "skein",
+          "heading": false
+        }
+      ],
+      "extract": "We consider a rectangle F with n outgoing points at the top and n incoming points at the bottom, n ≥0. We denote the Homﬂy skein of this surface by Rn n. It is known to be isomorphic to the Hecke algebra Hn. Rn n gets an algebra structure by deﬁning D · E as putting D above E so that the incoming points of D match with the outgoing points of E. Clearly, Rn n is generated as an algebra by the elementary braids σ1, .",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-the-skein-c-of-the-annulus",
+      "number": "4",
+      "title": "The skein C of the annulus",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 637,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "annulus",
+          "heading": true
+        },
+        {
+          "term": "skein",
+          "heading": true
+        },
+        {
+          "term": "young diagram",
+          "heading": false
+        },
+        {
+          "term": "encircling",
+          "heading": false
+        },
+        {
+          "term": "cells",
+          "heading": false
+        },
+        {
+          "term": "pairwise diﬀerent",
+          "heading": false
+        },
+        {
+          "term": "weighted degree",
+          "heading": false
+        },
+        {
+          "term": "commutative algebra",
+          "heading": false
+        }
+      ],
+      "extract": "The skein C of the annulus The skein of the annulus shall be denoted by C. Let D1 and D2 be two diagrams in the annulus S1×[0, 1]. We can bring D1 into S1×[0, 1/2), and D2 into S1×(1/2, 1] by regular isotopies. Then the product of D1 and D2 is deﬁned as the diagram D1 ∪D2. An example is shown in ﬁgure 2. The product is commutative since D1D2 and D2D1 diﬀer by regular isotopy. The empty diagram is the identity. 4 Γ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-the-variant-skein-c-of-the-annulus",
+      "number": "5",
+      "title": "The variant skein C′ of the annulus",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 665,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "annulus",
+          "heading": true
+        },
+        {
+          "term": "skein",
+          "heading": true
+        },
+        {
+          "term": "closing operation",
+          "heading": false
+        },
+        {
+          "term": "marked points",
+          "heading": false
+        },
+        {
+          "term": "boundary points",
+          "heading": false
+        },
+        {
+          "term": "distinguished boundary",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure",
+          "heading": false
+        },
+        {
+          "term": "arc",
+          "heading": false
+        }
+      ],
+      "extract": "The variant skein C′ of the annulus The skein of the annulus C′ with two boundary points has been considered e.g. in [6] and [4]. We are using the version introduced by Morton in [10] where the two boundary points lie on diﬀerent boundary components of the annulus. This version has the beneﬁt of a commutative multiplication. We equip the annulus with two distinguished boundary points. An output point on the inner",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-basic-skein-relations-in-c",
+      "number": "6",
+      "title": "Basic skein relations in C′",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 11,
+      "labelStart": "8",
+      "labelEnd": "11",
+      "words": 490,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hie ehi",
+          "heading": false
+        },
+        {
+          "term": "skein",
+          "heading": true
+        },
+        {
+          "term": "ehj",
+          "heading": false
+        },
+        {
+          "term": "vhi",
+          "heading": false
+        },
+        {
+          "term": "ˆti",
+          "heading": false
+        },
+        {
+          "term": "quasi-idempotent",
+          "heading": false
+        },
+        {
+          "term": "interchange",
+          "heading": false
+        }
+      ],
+      "extract": "Basic skein relations in C′ We recall that the quasi-idempotent ai ∈Ri i satisﬁes aiai = αiai for a non-zero scalar αi. We deﬁne hi = 1 αi∆(ai) ∈Ci and h′ i = 1 αi∆′(ai) ∈C′i for any integer i ≥0. We deﬁne hi = 0 and h′ i = 0 for any integer i < 0. 8 [i+1] αi+1 ai+1 = 1 αi ai + s−1[i] αi ai Figure 10: Depiction of lemma 6.1. The following lemma is a direct consequence of the decomposition ai+1 = (ai ⊗11)(1i+1 + sσi",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-7-determinantal-calculations-in-c",
+      "number": "7",
+      "title": "Determinantal calculations in C′",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 17,
+      "labelStart": "11",
+      "labelEnd": "17",
+      "words": 1679,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hir tir",
+          "heading": false
+        },
+        {
+          "term": "hλn",
+          "heading": false
+        },
+        {
+          "term": "ehi",
+          "heading": false
+        },
+        {
+          "term": "young diagram",
+          "heading": false
+        },
+        {
+          "term": "hλi",
+          "heading": false
+        },
+        {
+          "term": "hie",
+          "heading": false
+        },
+        {
+          "term": "s2k",
+          "heading": false
+        },
+        {
+          "term": "standard tableaux",
+          "heading": false
+        }
+      ],
+      "extract": "Determinantal calculations in C′ Lemma 7.1 For any integer r ≥2 and integers i1, i2, . . . , ir we have an equality of (r × r)-determinants in C′+ hi1e · · · hi1+r−2e ti1+r−1 ... ... ... hire · · · hir+r−2e tir+r−1 = s2(r−1) ehi1 · · · ehi1+r−2 ti1+r−1 ... ... ... ehir · · · ehir+r−2 tir+r−1 . Proof Since ti = hie −ehi, we deduce from lemma 6.4 by the multilinearity of the determinant that hie ti+1 hje tj+1 = s2 ehi",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 226,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "theory ramif",
+          "heading": false
+        },
+        {
+          "term": "skein theory",
+          "heading": false
+        },
+        {
+          "term": "phd thesis",
+          "heading": false
+        },
+        {
+          "term": "liverpool",
+          "heading": false
+        },
+        {
+          "term": "aiston",
+          "heading": false
+        }
+      ],
+      "extract": "[1] A. K. Aiston. Skein theoretic idempotents of Hecke algebras and quantum group invariants. PhD thesis, University of Liverpool, 1996. [2] A. K. Aiston and H. R. Morton. Idempotents of Hecke algebras of type A. J. Knot Theory Ramif., 7(4):463–487, 1998. [3] C. Blanchet. Hecke algebras, modular categories and 3-manifolds quantum invariants. Topology, 39(1):193–223, 2000. [4] P. M. Gilmer and J. Zhong. On the",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "homﬂy skein",
+      "heading": false
+    },
+    {
+      "term": "skein relations",
+      "heading": true
+    },
+    {
+      "term": "skein calculations",
+      "heading": false
+    },
+    {
+      "term": "skein theory",
+      "heading": false
+    },
+    {
+      "term": "hie ehi",
+      "heading": false
+    },
+    {
+      "term": "young diagram",
+      "heading": false
+    },
+    {
+      "term": "annulus",
+      "heading": true
+    },
+    {
+      "term": "closure map",
+      "heading": true
+    },
+    {
+      "term": "hir tir",
+      "heading": false
+    },
+    {
+      "term": "cells",
+      "heading": false
+    },
+    {
+      "term": "empty diagram",
+      "heading": false
+    },
+    {
+      "term": "linear map",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Skein relations",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The multiplication in the skein of the annulus C",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The additional arcs for the closure map ∆n : Rn",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Encircling a diagram in the annulus",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The multiplication in C′",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The identity e in C′",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "The arc a (at the left) and its",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Map ∆′",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "The additional arc for the closure",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Depiction of lemma 6.1",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "The closure of ∆′(ai)a",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 10,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "11 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p17); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0110119v1"
+  }
+}

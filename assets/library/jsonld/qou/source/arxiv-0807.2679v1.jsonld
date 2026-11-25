@@ -1,0 +1,59 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0807.2679v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "A cabling formula for the colored Jones polynomial",
+  "contains": [
+    "library/arxiv-0807.2679v1/sections/sec-front-matter",
+    "library/arxiv-0807.2679v1/sections/sec-000",
+    "library/arxiv-0807.2679v1/sections/sec-001",
+    "library/arxiv-0807.2679v1/sections/sec-002"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "A cabling formula for the colored Jones polynomial — We prove an explicit cabling formula for the colored Jones polynomial.\n\n**A cabling formula for the colored Jones polynomial**\n\n*Roland van der Veen*\n\n12 pp, 4 sections.\n\n**Abstract.** We prove an explicit cabling formula for the colored Jones polynomial. As an application we prove the volume conjecture for all zero volume knots and links, i.e. all knots and links that are obtained from the unknot by repeated cabling and connected sum.\n\n**Outline.** Front matter; Introduction; Proof of the cabling formula; Proof of the volume conjecture for zero volume",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0807.2679&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0807.2679v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0807.2679v1.pdf",
+    "source_sha256": "69ef10f8e70fc6f6fded518e9653f2f222f5a42cea4d29eee37d20dc92db0d66",
+    "pages": 12,
+    "arxiv": {
+      "id": "0807.2679",
+      "version": "1",
+      "primary_class": "math.GT",
+      "stamp_date": "17 Jul 2008"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

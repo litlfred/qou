@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2205.07095v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Virial Expansions for Correlation Functions in Canonical Ensemble",
+      "dcterms:creator": [
+        "Institute of Mathematics, Ukrainian National Academy of Sciences, Kyiv, Ukraine"
+      ],
+      "dcterms:issued": "D:20220516",
+      "dcterms:identifier": "https://arxiv.org/abs/2205.07095",
+      "dcterms:abstract": "The inﬁnite set of coupled integral nonlinear equations for correlation func- tions in the case of classical canonical ensemble is considered. Some kind of graph expansions of correlation functions in the density parameter are constructed. Existing of unique solutions for small value of density and high temperature is discussed.",
+      "dcterms:source": "library/arxiv-2205.07095v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2205.07095v1"
+    }
+  ]
+}

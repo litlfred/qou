@@ -1,0 +1,196 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0611941v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0611941v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "[]{#sec:intro label=\"sec:intro\"}\n\nThe concept of \"cellular algebras\" was introduced by Graham and Lehrer [@GrLe]. It provides a systematic framework for studying the representation theory of non-semisimple algebras which are deformations of semisimple ones. The original definition was modeled on properties of the Kazhdan--Lusztig basis [@KaLu] in Hecke algebras of type $A_n$. There is now a significant literature on the subject, and many classes of algebras have been shown to admit a \"cellular\" structure, including Ariki-Koiki algebras, $q$-Schur algebras, Temperley--Lieb algebras, and a varie",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611941v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0611941v3  [math.RT]  19 Mar 2007\nHECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR\nMEINOLF GECK\nAbstract. Let H be the one-parameter Hecke algebra associated to a ﬁnite Weyl group\nW, deﬁned over a ground ring in which “bad” primes for W are invertible. Using deep\nproperties of the Kazhdan–Lusztig basis of H and Lusztig’s a-function, we show that H has\na natural cellular structure in the sense of Graham and Lehrer. Thus, we obtain a general\ntheory of “Specht modules” for Hecke algebras of ﬁnite type. Previously, a general cellular\nstructure was only known to exist in types An and Bn.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611941v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Kazhdan–Lusztig theory and the asymptotic ring",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-2-kazhdanlusztig-theory-and-the-asymptotic-ring.md",
+      "narrative": null,
+      "content": "[]{#sec2 label=\"sec2\"} References for this section are the books [@GePf] and [@Lusztig03]. Let $W$ be a finite Weyl group, with generating set $S$. Let $L \\colon \nW \\rightarrow {\\mathbb{Z}}$ be a weight function. Thus, we have $L(ww')=L(w)+L(w')$ whenever $l(ww')=l(w)+l(w')$ for $w,w'\\in W$; here $l(w)$ denotes the length of $w \\in W$. Note that $L(s)=L(t)$ whenever $s,t \\in S$ are conjugate in $W$.\n\nWe will assume throughout that $L(s)\\geqslant 0$ for all $s \\in S$.\n\nLet $R \\subseteq {\\mathbb{C}}$ be a subring and $A=R[v,v^{-1}]$ be the ring of Laurent polynomials in an indeterminate $v$. Let",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611941v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Irreducible representations of W and H",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-21-irreducible-representations-of-w-and-h.md",
+      "narrative": null,
+      "content": "[]{#sub21 label=\"sub21\"}\n\nIt is known that ${\\mathbb{Q}}$ is a splitting field for $W$; see, for example, [@GePf 6.3.8]. We will write $${\\operatorname{Irr}}(W)=\\{E^\\lambda \\mid \\lambda \\in \\Lambda\\}, \\qquad  d_\\lambda= \n\\dim E^\\lambda,$$ for the set of irreducible representations of $W$ (up to equivalence), where $\\Lambda$ is some finite indexing set.\n\nNow let $K$ be the field of fractions of $A$. By extension of scalars, we obtain a $K$-algebra ${\\mathcal{H}}_K=K\\otimes_A {\\mathcal{H}}$. This algebra is known to be split semisimple; see [@GePf 9.3.5]. (Note the form of the quadratic relation",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611941v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Kazhdan–Lusztig basis of H",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-23-the-kazhdanlusztig-basis-of-h.md",
+      "narrative": null,
+      "content": "[]{#sub23 label=\"sub23\"}\n\nLet $\\{c_w\\mid w\\in W\\}$ be the \"new\" basis of ${\\mathcal{H}}$ defined in [@Lusztig03 Theorem 5.2]. We have $c_w=T_w+ \\sum_{y} p_{y,w}\\, T_y$ where $p_{y,w} \\in v^{-1}{{\\mathbb{Z}}}[v^{-1}]$ and $p_{y,w}=0$ unless $y<w$ in the Bruhat--Chevalley order. Given $x,y\\in W$, we write $$c_xc_y=\\sum_{z\\in W} h_{x,y,z}c_z\\qquad\\mbox{where $h_{x,y,z}\\in A$}.$$ As in [@Lusztig03], we usually work with the elements $c_w^\\dagger$ obtained by applying the unique $A$-algebra involution $H \\rightarrow H$, $h \\mapsto h^\\dagger$ such that $T_s^\\dagger=-T_s^{-1}$ for any $s\\in S$; see [",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611941v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lusztig's conjectures and the asymptotic ring J",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-24-lusztigs-conjectures-and-the-asymptotic-ring.md",
+      "narrative": null,
+      "content": "[]{#sub24 label=\"sub24\"}\n\nIn the sequel, we assume that the following hypotheses are satisfied.\n\n::: center\n:::\n\n(Actually, for our purposes, instead of **(P15)** it is enough to require the somewhat weaker statement [@Lusztig03 18.9(b)], which we called **(P15')** in [@mylaus §5].) By [@Lusztig03 Chap. 15], these conjectures are known to hold when $L$ is a positive multiple of the length function (\"equal parameter case\"), thanks to a deep geometric interpretation of the basis $\\{c_w\\}$. They are also known for a certain class of non-trivial weight functions in type $B_n$; see [@GeIa06], [@mye",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611941v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Representations of J",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-25-representations-of-j.md",
+      "narrative": null,
+      "content": "[]{#sub25 label=\"sub25\"}\n\nUntil the end of this section, we will assume that $R={\\mathbb{Q}}$. Upon substituting $v\\mapsto 1 \\in {\\mathbb{Q}}$, the algebra ${\\mathcal{H}}$ specialises to ${{\\mathbb{Q}}}[W]$. Hence, we obtain a homomorphism of ${\\mathbb{Q}}$-algebras $$\\phi_1\\colon {{\\mathbb{Q}}}[W]  \\rightarrow J_{{\\mathbb{Q}}}, \\qquad \\mbox{where $J_{{\\mathbb{Q}}}=\n{{\\mathbb{Q}}} \\otimes_{{\\mathbb{Z}}} J$}.$$ This is an isomorphism by the argument in [@Lusztig03 20.1]. Since ${{\\mathbb{Q}}}[W]$ is split semisimple, we can conclude that $J_{{\\mathbb{Q}}}$ also is split semisimple. Via the isom",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611941v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A cell datum for H",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "../sections/sec-006-3-a-cell-datum-for-h.md",
+      "narrative": null,
+      "content": "[]{#secDatum label=\"secDatum\"} We keep the notation of the previous sections. In order to show that ${\\mathcal{H}}$ is \"cellular\" in the sense of Graham--Lehrer [@GrLe Definition 1.1], we must specify a quadruple $(\\Lambda,M,C,*)$ satisfying the following conditions.\n\n-   $\\Lambda$ is a partially ordered set, $\\{M(\\lambda) \\mid\n    \\lambda \\in \\Lambda\\}$ is a collection of finite sets and $$C \\colon \\coprod_{\\lambda \\in \\Lambda} M(\\lambda)\\times M(\\lambda)\n    \\rightarrow {\\mathcal{H}}$$ is an injective map whose image is an $A$-basis of ${\\mathcal{H}}$;\n\n-   If $\\lambda \\in \\Lambda$ and ${\\ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611941v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples and applications to modular representations",
+      "pageStart": 11,
+      "pageEnd": 15,
+      "target": "../sections/sec-007-4-examples-and-applications-to-modular-represent.md",
+      "narrative": null,
+      "content": "[]{#secApp label=\"secApp\"}\n\nThroughout this section, we assume that Lusztig's conjectures on Hecke algebras with unequal parameters hold; see §[\\[sub24\\]](#sub24){reference-type=\"ref\" reference=\"sub24\"}. (Recall that this is the case, for example, if the weight function $L$ is a positive multiple of the length function.) We now discuss examples and applications of Theorem [\\[mainthm\\]](#mainthm){reference-type=\"ref\" reference=\"mainthm\"}.\n\n::: example\n[]{#expdim1 label=\"expdim1\"} Assume that $L(s)>0$ for all $s \\in S$ and that $\\lambda \\in \\Lambda$ is such that $\\dim E^\\lambda=d_\\lambda=1$. The",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0611941v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-008-references.md",
+      "narrative": null,
+      "content": "basic sets for type Bn and any L (where k has characteristic 0) has been established without\nassuming Lusztig’s conjectures on Hecke algebras with unequal parameters.\nExample 4.5. Assume that W is of type Bn (n ⩾2) with diagram and weight function\ngiven by\nBn\n✐\n✐\n✐\n· · ·\n✐\nb\na\na\na\nwhere a, b are non-negative integers. Then we have two cellular structures on H: the one\ngiven by Theorem 3.1, and the one given by Dipper–James–Murphy [4] (or, alternatively,\nby Graham–Lehrer [16, §5]). In both cases, Λ is the set of all pairs of partitions (λ, µ) such\nthat |λ| + |µ| = n. The partial order on Λ that",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

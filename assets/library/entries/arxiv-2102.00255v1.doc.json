@@ -1,0 +1,689 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2102.00255v1",
+  "title": "arxiv-2102.00255v1",
+  "variant": "pdf",
+  "pages": 20,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "0",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-0-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The Squaring Operation and Rigid Complexes over Rings",
+      "number": "1",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-the-squaring-operation-and-rigid-complexes-ove"
+    },
+    {
+      "level": 1,
+      "title": "Rigid Dualizing Complexes over Rings",
+      "number": "2",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-rigid-dualizing-complexes-over-rings"
+    },
+    {
+      "level": 1,
+      "title": "Rigid Residue Complexes over Rings",
+      "number": "3",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-3-rigid-residue-complexes-over-rings"
+    },
+    {
+      "level": 1,
+      "title": "Rigidity, Residues and Duality for Schemes",
+      "number": "4",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-4-rigidity-residues-and-duality-for-schemes"
+    },
+    {
+      "level": 1,
+      "title": "Rigidity, Residues and Duality for DM Stacks",
+      "number": "5",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-5-rigidity-residues-and-duality-for-dm-stacks"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 118,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rigid residue",
+          "heading": false
+        },
+        {
+          "term": "residue complexes",
+          "heading": false
+        },
+        {
+          "term": "proper maps",
+          "heading": false
+        },
+        {
+          "term": "antic",
+          "heading": false
+        }
+      ],
+      "extract": "RIGIDITY, RESIDUES AND DUALITY: OVERVIEW AND RECENT PROGRESS AMNON YEKUTIELI Abstract. In this article we explain the theory of rigid residue complexes in commutative algebra and algebraic geometry, summarizing the background, recent results and antic- ipated future results. Unlike all previous approaches to Grothendieck Duality, the rigid approach concentrates on the construction of rigid residue complexes over",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2102.00255v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-0-introduction",
+      "number": "0",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1042,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "opn mrm",
+          "heading": false
+        },
+        {
+          "term": "mrm ires",
+          "heading": false
+        },
+        {
+          "term": "rigid backward",
+          "heading": false
+        },
+        {
+          "term": "mrm rig",
+          "heading": false
+        },
+        {
+          "term": "rigid dualizing",
+          "heading": false
+        },
+        {
+          "term": "rigid etale-localization",
+          "heading": false
+        },
+        {
+          "term": "nondegenerate rigid",
+          "heading": false
+        },
+        {
+          "term": "homomorphism opn",
+          "heading": false
+        }
+      ],
+      "extract": "This article is about the {\\em rigid approach to Grothendieck Duality} (GD). We survey the main features of this approach, discussing both results that were already obtained, and future expected results. Throughout this article we work over a fixed base ring $\\K$, which is a finite dimensional regular noetherian commutative ring (e.g.\\ a field or the ring of integers $\\Z$). All rings are commutative $\\K$-rings, and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-the-squaring-operation-and-rigid-complexes-ove",
+      "number": "1",
+      "title": "The Squaring Operation and Rigid Complexes over Rings",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1295,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rigid complexes",
+          "heading": true
+        },
+        {
+          "term": "cat mrm",
+          "heading": false
+        },
+        {
+          "term": "squaring operation",
+          "heading": true
+        },
+        {
+          "term": "rho opn",
+          "heading": false
+        },
+        {
+          "term": "cat rng",
+          "heading": false
+        },
+        {
+          "term": "opn rhom",
+          "heading": false
+        },
+        {
+          "term": "mrm rig",
+          "heading": false
+        },
+        {
+          "term": "ring til",
+          "heading": false
+        }
+      ],
+      "extract": "We fix a base ring $\\K$, which is regular noetherian of finite Krull dimension (e.g.\\ a field or $\\Z$). Recall that a commutative $\\K$-ring $A$ is called {\\em essentially finite type} (EFT) if it is a localization of a finite type $\\K$-ring. Note that such a ring $A$ is noetherian and of finite Krull dimension. The category of EFT commutative $\\K$-rings is denoted by $\\cat{Rng} \\eftover \\K$. All rings in this paper",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-rigid-dualizing-complexes-over-rings",
+      "number": "2",
+      "title": "Rigid Dualizing Complexes over Rings",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1309,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rigid dualizing",
+          "heading": true
+        },
+        {
+          "term": "dualizing complexes",
+          "heading": true
+        },
+        {
+          "term": "mrm rig",
+          "heading": false
+        },
+        {
+          "term": "opn mrm",
+          "heading": false
+        },
+        {
+          "term": "cat mrm",
+          "heading": false
+        },
+        {
+          "term": "mrm lind",
+          "heading": false
+        },
+        {
+          "term": "opn twind",
+          "heading": false
+        },
+        {
+          "term": "circ mrm",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:RRD-rings} Again $\\K$ is a regular base ring, and $A$ is an EFT $\\K$-ring. The next definition is taken from \\cite{RD}, except that the derived Morita property (Definition \\ref{dfn:232}) had not yet been introduced when \\cite{RD} was written. \\begin{dfn} \\label{dfn:240} A complex $R \\in \\cat{D}^{\\mrm{b}}_{\\mrm{f}}(A)$ is called {\\em dualizing} if it has finite injective dimension and the derived Morita",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-rigid-residue-complexes-over-rings",
+      "number": "3",
+      "title": "Rigid Residue Complexes over Rings",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1247,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rigid residue",
+          "heading": true
+        },
+        {
+          "term": "opn mrm",
+          "heading": false
+        },
+        {
+          "term": "mrm ires",
+          "heading": false
+        },
+        {
+          "term": "mrm rig",
+          "heading": false
+        },
+        {
+          "term": "cat mrm",
+          "heading": false
+        },
+        {
+          "term": "residue complexes",
+          "heading": true
+        },
+        {
+          "term": "mrm res",
+          "heading": false
+        },
+        {
+          "term": "mrm str",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:rrr-rings} Now we enter the zone of \"anticipated results\": many of the results still only have sketchy proofs, and should therefore be regarded with caution. Such a theorem will be labeled {\\bf Theorem$^{\\bsym{(*)}}$}. Recall that we are still working in $\\cat{Rng} \\eftover \\K$, where $\\K$ is a regular noetherian base ring. If $L \\in \\cat{Rng} \\eftover \\K$ is a field, then its rigid dualizing complex",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-rigidity-residues-and-duality-for-schemes",
+      "number": "4",
+      "title": "Rigidity, Residues and Duality for Schemes",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1377,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quasi-coherent mcal",
+          "heading": false
+        },
+        {
+          "term": "opn mrm",
+          "heading": false
+        },
+        {
+          "term": "cat mrm",
+          "heading": false
+        },
+        {
+          "term": "mrm ires",
+          "heading": false
+        },
+        {
+          "term": "thmstar tup",
+          "heading": false
+        },
+        {
+          "term": "mcal bigr",
+          "heading": false
+        },
+        {
+          "term": "mcal modules",
+          "heading": false
+        },
+        {
+          "term": "mrm rig",
+          "heading": false
+        }
+      ],
+      "extract": "Recall that $\\K$ is a regular finite dimensional noetherian base ring. We use the notation $\\cat{Sch} \\ftover \\K$ for the category of finite type (FT) $\\K$-schemes. Consider a FT $\\K$-scheme $X$. If $U \\sub X$ is an affine open set, then $A := \\Gamma(U, \\mcal{O}_X)$ is a FT $\\K$-ring. Given a quasi-coherent $\\mcal{O}_X$-module, for every affine open set $U$ we get an $A$-module $M := \\Gamma(U, \\mcal{M})$. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-rigidity-residues-and-duality-for-dm-stacks",
+      "number": "5",
+      "title": "Rigidity, Residues and Duality for DM Stacks",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2850,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sch ftover",
+          "heading": false
+        },
+        {
+          "term": "cat mrm",
+          "heading": false
+        },
+        {
+          "term": "stacks",
+          "heading": true
+        },
+        {
+          "term": "cat qcoh",
+          "heading": false
+        },
+        {
+          "term": "ftover sub",
+          "heading": false
+        },
+        {
+          "term": "thmstar tup",
+          "heading": false
+        },
+        {
+          "term": "mrm ires",
+          "heading": false
+        },
+        {
+          "term": "cat grpd",
+          "heading": false
+        }
+      ],
+      "extract": "Here is a brief recollection of facts about Deligne-Mumford (DM) stacks and quasi-coherent sheaves on them, extracted from \\cite{SP} and \\cite{Ol}, with some additional elaboration. This will help us state our results. As a first approximation, it useful to think of a DM stack $\\XX$ as a scheme equipped with an extra structure: the points of $\\XX$ are bunched together as objects of a groupoid, in an intricate",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 447,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dualizing complexes",
+          "heading": false
+        },
+        {
+          "term": "grothendieck duality",
+          "heading": false
+        },
+        {
+          "term": "rigid complexes",
+          "heading": false
+        },
+        {
+          "term": "yekutieli",
+          "heading": false
+        },
+        {
+          "term": "compositio math",
+          "heading": false
+        },
+        {
+          "term": "commutative rings",
+          "heading": false
+        },
+        {
+          "term": "stacks",
+          "heading": false
+        },
+        {
+          "term": "lecture notes",
+          "heading": false
+        }
+      ],
+      "extract": "[AILN] L.L. Avramov, S.B. Iyengar, J. Lipman and S. Nayak, Reduction of derived Hochschild functors over commutative algebras and schemes, Advances in Mathematics 223 (2010) 735-772. [AOV] D. Abramovich, M. Olsson and A. Vistoli, Tame stacks in positive characteristic, Ann. Inst. Fourier 58, 4 (2008), 1057-1091. [Co] B. Conrad, \"Grothendieck Duality and Base Change\", Lecture Notes in Math. 1750, Springer, 2000. [HR]",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "opn mrm",
+      "heading": false
+    },
+    {
+      "term": "cat mrm",
+      "heading": false
+    },
+    {
+      "term": "mrm rig",
+      "heading": false
+    },
+    {
+      "term": "mrm ires",
+      "heading": false
+    },
+    {
+      "term": "rho opn",
+      "heading": false
+    },
+    {
+      "term": "pseudofunctor opn",
+      "heading": false
+    },
+    {
+      "term": "homomorphism opn",
+      "heading": false
+    },
+    {
+      "term": "rigid complexes",
+      "heading": true
+    },
+    {
+      "term": "schemes opn",
+      "heading": false
+    },
+    {
+      "term": "functor mrm",
+      "heading": false
+    },
+    {
+      "term": "morphism opn",
+      "heading": false
+    },
+    {
+      "term": "mrm res",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p19); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2102.00255v1"
+  }
+}

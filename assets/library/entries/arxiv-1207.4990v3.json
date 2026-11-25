@@ -1,0 +1,268 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1207.4990v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1207.4990v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1207.4990v3  [math.FA]  1 Dec 2012\nToeplitz matrices and Toeplitz determinants under the impetus of\nthe Ising model. Some history and some recent results\nPercy Deift\nCourant Institute, New York\nAlexander Its\nIUPUI, Indianapolis\nIgor Krasovsky\nImperial College, London\nIn memory of Bruria Kaufman, 1918–2010\nContents\n1\nSetting the problem\n3\nToeplitz meets Ising\n9\n3\nSzeg˝o’s Theorem\n12\n4\nBack to Ising\n23\n5\nNew questions for SSLT\n27\n6\nFisher-Hartwig singularities. Fisher-Hartwig conjecture\n29\n7\nBasor-Tracy conjecture\n36\n8\nHankel and Toeplitz+Hankel determinants\n40\n9\nSome applications\n42\n10 Bl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1207.4990v3/blocks/prop-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 9,
+      "target": "prop-sec-000-01.md",
+      "narrative": null,
+      "content": "On the other hand, it was observed in 1941 by van der Waerden [@vanderW] that the calculation of the Ising partition function is equivalent to the problem of counting closed polygons on the square lattice.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1207.4990v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Setting the problem",
+      "pageStart": 3,
+      "pageEnd": 9,
+      "target": "../sections/sec-000-1-setting-the-problem.md",
+      "narrative": null,
+      "content": "An $n\\times n$ *Toeplitz matrix* $T_n$ is a matrix with coefficients of the form $(T_n)_{jk} = c_{j-k},\n\\;0\\le j,\\; k \\le n-1$, for some given sequence $\\{c_\\ell\\}_{\\ell \\in \\mathbb{Z}}$. An $n\\times n$ *Toeplitz determinant* $D_n(T)$ is the determinant of some given Toeplitz matrix $T=T_n$. If $\\varphi = \\varphi\\!\\left(e^{i\\theta}\\right)$ is an integrable function on the unit circle $S^1=\\{z=e^{i\\theta}\\}$ (oriented in the positive direction) with Fourier coefficients $$\\varphi_{\\ell} = \\int^{\\pi}_{-\\pi} e^{-i\\ell \\theta} \\, \\varphi \\!\\left(e^{i\\theta}\\right) \\,\\frac{d\\theta}{2\\pi},\n\\qquad \\e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1207.4990v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Toeplitz meets Ising",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-001-2-toeplitz-meets-ising.md",
+      "narrative": null,
+      "content": "What precisely was this \"last problem\" that Kaufman and Onsager had to face in order to compute the limit in [\\[eq16\\]](#eq16){reference-type=\"eqref\" reference=\"eq16\"}? It is here that we make contact with the theory of Toeplitz matrices. In [@KauOns] Kaufman and Onsager expressed $\\langle \\sigma_{1,1} \\, \\sigma_{1,1+n}\\rangle$ as a sum of two Toeplitz determinants as follows (in the notation of [@MPW]): $$\\label{eq17}\n\\begin{aligned}\n(-1)^n \\left\\langle \\sigma_{1,1} \\,\\sigma_{1, 1+n}\\right\\rangle &= c^{*\\,2}_2 \\det\n\\begin{pmatrix}\nb_{-1}  & b_{-2} & b_{-3}  & \\dots & b_{-n} \\\\\nb_{0}  & b_{-1}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1207.4990v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Szego's Theorem",
+      "pageStart": 12,
+      "pageEnd": 23,
+      "target": "../sections/sec-002-3-szegos-theorem.md",
+      "narrative": null,
+      "content": "[]{#secSzego label=\"secSzego\"} Here is Szegő's result [@Sz3] [@GreSz].\n\n::: theorem\n[]{#theorem3 label=\"theorem3\"} Let $\\varphi\\!\\left(e^{i\\theta}\\right)$ be a positive, $C^{1+\\varepsilon}$, $\\varepsilon>0$, function on $S^1$. Let $(\\log \\varphi)_k = \\frac{1}{2\\pi} \\int^\\pi_{-\\pi} e^{-ik\\theta} \\log \\varphi\n\\!\\left(e^{i\\theta}\\right) d\\theta$, $k\\in \\mathbb{Z}$, denote the Fourier coefficients of $\\log \\varphi\\!\\left(e^{i\\theta}\\right)$. Then $$\\label{eq31}\n\\lim_{n\\to \\infty} \\frac{D_n (\\varphi)}{e^{n(\\log\\varphi)_0}} = e^{E(\\varphi)}$$ where $$\\label{eq33}\nE(\\varphi) = \\sum^\\infty_{k=1} k \\le",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1207.4990v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Back to Ising",
+      "pageStart": 23,
+      "pageEnd": 27,
+      "target": "../sections/sec-003-4-back-to-ising.md",
+      "narrative": null,
+      "content": "[]{#section4 label=\"section4\"} After Onsager announced formula [\\[eq15\\]](#eq15){reference-type=\"eqref\" reference=\"eq15\"} for $M_0$ in 1948, and again in 1949, but did not provide a proof, three years went by until a derivation of the formula was found by Yang in a tour de force in 1952 [@Yan1]. Yang's method is based on results of Kaufman and Onsager, but his approach is different, and he does not explicitly use Toeplitz determinants. In his Selected Papers in 2005 ([@Yan2]), Yang described the long and winding road that led him to the Kaufman-Onsager formula [\\[eq15\\]](#eq15){reference-type=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1207.4990v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "New questions for SSLT",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "../sections/sec-004-5-new-questions-for-sslt.md",
+      "narrative": null,
+      "content": "In view of the above calculations for $T\\ge T_c$, the Ising problem raised new questions and challenges in Toeplitz theory. From [\\[eq50\\]](#eq50){reference-type=\"eqref\" reference=\"eq50\"}, $\\left\\langle \\sigma_{1,1}\\, \\sigma_{1, 1+n}\\right\\rangle = D_n\n\\!\\left(\\varphi_{\\text{ons}}\\right)$ (similarly, from [\\[eq27\\]](#eq27){reference-type=\"eqref\" reference=\"eq27\"}, $\\langle \\sigma_{1,1}\\, \\sigma_{1+n,\\, 1+n}\\rangle = D_n \\left(\\varphi_{\\text{diag}}\\right)$), and so we want to know precisely how $D_n \\!\\left(\\varphi_{\\text{ons}}\\right)$ behaves as $n\\to\\infty$ for $T\\ge T_c$. But for $T>T_c$, we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1207.4990v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fisher-Hartwig singularities. Fisher-Hartwig conjecture",
+      "pageStart": 29,
+      "pageEnd": 36,
+      "target": "../sections/sec-005-6-fisher-hartwig-singularities-fisher-hartwig-co.md",
+      "narrative": null,
+      "content": "[]{#sectionFH label=\"sectionFH\"} In addition to the new questions and challenges raised in Toeplitz theory by the Ising model for $T\\ge T_c$, other kinds of singularities also began to appear. For example, in 1964, in his work on the ground state of the one-dimensional system of impenetrable bosons [@Len1] Lenard expressed the one-particle density matrix for the system as a Toeplitz matrix with a symbol $\\varphi\\!\\left(e^{i\\theta}\\right)$ that vanished at some points on $S^1$ (see [\\[eq81\\]](#eq81){reference-type=\"eqref\" reference=\"eq81\"} and particularly Remark [\\[Lenard\\]](#Lenard){reference",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1207.4990v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basor-Tracy conjecture",
+      "pageStart": 36,
+      "pageEnd": 40,
+      "target": "../sections/sec-006-7-basor-tracy-conjecture.md",
+      "narrative": null,
+      "content": "As already observed in [@BottSilb5] [@BottSilb6], Ehrhardt's condition on the seminorm, $|||\\beta|||<1$, is not just a technical matter. In a critical calculation in 1991, Basor and Tracy [@BasTr] considered a particular symbol $f\\!\\left(e^{i\\theta}\\right)$ which has two FH singularities at $z_0=1$ and $z_1=e^{i\\,\\pi}=-1$ respectively $$\\label{eq94}\nf\\!\\left(e^{i\\theta}\\right) =  g_{1, \\frac{1}{2}}(z) \\, g_{-1, -\\frac{1}{2}}(z)\\, e^{i\\,\\pi/2}$$ with $\\beta_0= \\frac{1}{2}, \\, \\beta_1 = -\\frac{1}{2}$ so that $|||\\beta|||=1$. By direct computation they found that as $n\\to \\infty$ $$\\label{eq95}\nD",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1207.4990v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hankel and Toeplitz+Hankel determinants",
+      "pageStart": 40,
+      "pageEnd": 42,
+      "target": "../sections/sec-007-8-hankel-and-toeplitzhankel-determinants.md",
+      "narrative": null,
+      "content": "In [@DIK1] the authors also consider Hankel and Toeplitz + Hankel determinants with FH-type singularities. For a weight $w=w(x) \\ge 0$ on $[-1,1]$, the associated Hankel determinant is given by [@Sz5] $$\\label{eq108}\nD_n^{(H)}(w) = \\det \\left(\\int^1_{-1} x^{j+k}\\, w(x) \\, dx\\right)^{n-1}_{j, k=0} \\ .$$ The Hankel determinant $D_n^{(H)}(w)$ is related to the polynomials orthogonal with respect to the weight $w$ on the interval $[-1,1]$ in a similar way as a Toeplitz determinant is related to OPUC's.\n\nFor fixed $r=0,1,2, \\dots$ we consider $w(x)$ of the following form: $$\\label{eq109}\nw(x) =e^{U",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1207.4990v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some applications",
+      "pageStart": 42,
+      "pageEnd": 45,
+      "target": "../sections/sec-008-9-some-applications.md",
+      "narrative": null,
+      "content": "[]{#sec9 label=\"sec9\"} As advertised at the outset, the goal of this paper has been to show how SSLT developed and was generalized in response to questions arising in the analysis of the Ising model. Although the case $|||\\beta|||=1$ in [@DIK1] does not arise in the Ising model (the same is true for the Hankel and Toeplitz + Hankel determinants [\\[eq108\\]](#eq108){reference-type=\"eqref\" reference=\"eq108\"} and [\\[eq115\\]](#eq115){reference-type=\"eqref\" reference=\"eq115\"} respectively), this case does arise in many other problems in statistical physics. For example, the probability $P_E(n)$ of a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1207.4990v3/blocks/prop-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 49,
+      "target": "prop-sec-009-01.md",
+      "narrative": null,
+      "content": "However, as was observed in [@IJK], in the case of algebraic matrix functions $\\varphi(z)$ one can take advantage of the algebro-geometric method that had been developed in the late 70s to the early 90s in soliton theory (see e.g. [@BBEIM]).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1207.4990v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Block Toeplitz matrices",
+      "pageStart": 45,
+      "pageEnd": 49,
+      "target": "../sections/sec-009-10-block-toeplitz-matrices.md",
+      "narrative": null,
+      "content": "We now consider block Toeplitz matrices $D_n(\\varphi)$ of the form $D_n(\\varphi) =\n\\det\\!\\left(\\varphi_{j-k}\\right)^{n-1}_{j, k=0}$ where $\\varphi_q \\in M(r,\\mathbb{C})$ are the Fourier coefficients of an $r\\times r$-matrix-valued integrable function $\\varphi\\!\\left(e^{i\\theta}\\right)$ on $S^1$. The earliest asymptotic result for such determinants is the analog of Szegő's Theorem 1 due to Gyires in 1956 [@Gy], who showed that if $\\varphi(z)$ is continuous and positive definite for $|z|=1$, then $$\\label{eq125}\n\\lim_{n\\to\\infty} \\,\\frac{1}{n}\\, \\log D_n(\\varphi) = \\frac{1}{2\\pi}\n\\int^{2\\pi}_0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1207.4990v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Double-scaling limits",
+      "pageStart": 49,
+      "pageEnd": 70,
+      "target": "../sections/sec-010-11-double-scaling-limits.md",
+      "narrative": null,
+      "content": "[]{#sec-ds label=\"sec-ds\"} Of all the challenges in Toeplitz theory that arise from the Ising model, the deepest is the issue of the double-scaling limit (or in physicists' parlance, simply the scaling limit), $T\\to T_c$ and $n\\to\\infty$. We have already mentioned the importance of this problem in physics. At the purely mathematical level, the issue is the following: Suppose one has a Toeplitz determinant $D_n(\\varphi)$ with a symbol that depends on some external parameter, say $t$, $\\varphi\\!\\left(e^{i\\theta}\\right) = \\varphi_t \\!\\left(e^{i\\theta}\\right)$. For $t>0$, $\\varphi_t$ is regular, b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

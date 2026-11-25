@@ -1,0 +1,73 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.05082v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1610.05082v3",
+  "contains": [
+    "library/arxiv-1610.05082v3/sections/sec-front-matter",
+    "library/arxiv-1610.05082v3/sections/sec-000",
+    "library/arxiv-1610.05082v3/sections/sec-001",
+    "library/arxiv-1610.05082v3/sections/sec-002",
+    "library/arxiv-1610.05082v3/sections/sec-003",
+    "library/arxiv-1610.05082v3/sections/sec-004",
+    "library/arxiv-1610.05082v3/sections/sec-005",
+    "library/arxiv-1610.05082v3/sections/sec-006",
+    "library/arxiv-1610.05082v3/sections/sec-007",
+    "library/arxiv-1610.05082v3/sections/sec-008",
+    "library/arxiv-1610.05082v3/sections/sec-009",
+    "library/arxiv-1610.05082v3/sections/sec-010",
+    "library/arxiv-1610.05082v3/sections/sec-011",
+    "library/arxiv-1610.05082v3/sections/sec-012",
+    "library/arxiv-1610.05082v3/sections/sec-013",
+    "library/arxiv-1610.05082v3/sections/sec-014",
+    "library/arxiv-1610.05082v3/sections/sec-015",
+    "library/arxiv-1610.05082v3/sections/sec-016",
+    "library/arxiv-1610.05082v3/sections/sec-017",
+    "library/arxiv-1610.05082v3/sections/sec-018"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL — Weighted dependency graphs have been recently introduced by the second author, as a toolbox to prove central limit theorems.\n\n**WEIGHTED DEPENDENCY GRAPHS AND THE ISING MODEL**\n\n*JEHANNE DOUSSE AND VALENTIN FÉRAY*\n\n24 pp, 20 sections.\n\n**Abstract.** Weighted dependency graphs have been recently introduced by the second author, as a toolbox to prove central limit theorems. In this paper, we prove that spins in the d-dimensional Ising model display such a weighted dependency structure. We use this to obtain various central limit theorems for the number of occurrences of local and global patterns in a growing box.\n\n**Outline.** Front matter; 1 Introduction and statement of results; 1.1 Cumulants in the Ising model; 1.2 Weighted dependency graphs; 1.3 Central limit theorems; 2.1 The Ising model; 1.4 Outline of the paper; 2 Preliminaries; 2.2 Joint cumulants; 2.3 Spanning trees of maximal weight and tree ; 2.4 Weighted dependency graphs; 3 Cluster expansions and bounds on joint cumul; 3.1 At very high temperature, without magnetic; 3.2 At very low temperature, without magnetic ; 4.1 Weighted dependency graph for the i's and ; 3.3 With a strong magnetic field; 4 Weighted dependency graphs and central limit; 4.2 Central limit theorem for occurrences of g",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1610.05082&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1610.05082v3",
+    "title_source": "slug",
+    "source_file": "1610.05082v3.pdf",
+    "source_sha256": "90c8089953ff2d97dfad3a72635a7fa197076aa563a53eefd6f092af31f11a04",
+    "pages": 24,
+    "arxiv": {
+      "id": "1610.05082",
+      "version": "3",
+      "primary_class": "math.PR",
+      "stamp_date": "27 Jun 2017"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,367 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "monodromyhitchiny",
+  "blocks": [
+    {
+      "id": "library/monodromyhitchiny/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/monodromyhitchiny/blocks/figure-img-p001-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/monodromyhitchiny/blocks/figure-img-p001-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/monodromyhitchiny/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "HAL Id: hal-00465731\nhttps://hal.science/hal-00465731v1\nSubmitted on 21 Mar 2010\nHAL is a multi-disciplinary open access archive\nfor the deposit and dissemination of scientific re-\nsearch documents, whether they are published or not.\nThe documents may come from teaching and research\ninstitutions in France or abroad, or from public or pri-\nvate research centers.\nL’archive ouverte pluridisciplinaire HAL, est des-\ntinée au dépôt et à la diffusion de documents scien-\ntifiques de niveau recherche, publiés ou non, émanant\ndes établissements d’enseignement et de recherche\nfrançais ou étrangers, des l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/monodromyhitchiny/blocks/cor-sec-000-11",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 14,
+      "target": "cor-sec-000-11.md",
+      "narrative": null,
+      "content": "In the four cases l = 1, 2, 4 and 8, the image eρl(B3) in GL(2, C) is ﬁnite.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/monodromyhitchiny/blocks/prop-sec-000-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "[TK] Theorem 5.2",
+      "pageStart": 2,
+      "pageEnd": 14,
+      "target": "prop-sec-000-06.md",
+      "narrative": null,
+      "content": "We put q = exp( 2iπ l+2). There exists a basis B of the vector space V† l,⃗14(F) p3 = V† l,⃗14(F)p3 such that MatB(eρl(g1)) = q−3 \u0012 q −1 \u0013 , MatB(eρl(g2)) = q−3 q + 1 \u0012 −1 t t q2 \u0013 , with t = p q(1 + q + q2). Note that both matrices have eigenvalues q 4 and −q−3 4.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/monodromyhitchiny/blocks/prop-sec-000-08",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 14,
+      "target": "prop-sec-000-08.md",
+      "narrative": null,
+      "content": "Let σ ∈π1(M0,4, x) be the element introduced in (2). If the level l̸ = 1, 2, 4 and 8, then the element ρl(σ) has inﬁnite order in both PGL(2, C) and GL(2, C)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/monodromyhitchiny/blocks/prop-sec-000-10",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 14,
+      "target": "prop-sec-000-10.md",
+      "narrative": null,
+      "content": "In the four cases l = 1, 2, 4 and 8, the image ρl(π1(M0,4, x)) in the projective linear group PGL(2, C) is ﬁnite and isomorphic to the groups given in table l ρl(π1(M0,4, x)) µ3 µ2 × µ2 A4 A5 Here An denotes the alternating group on n letters.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/monodromyhitchiny/blocks/prop-sec-000-12",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 14,
+      "target": "prop-sec-000-12.md",
+      "narrative": null,
+      "content": "For any µ ∈Pl and any⃗λ ∈(Pl)n the sewing map over the generic ﬁber BK sµ : V† l,⃗λ,µ,µ†( eF) ⊗OB OBK −→V† l,⃗λ(FK) is projectively ﬂat for the WZW connections on both sheaves of conformal blocks.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/monodromyhitchiny/blocks/prop-sec-000-16",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 14,
+      "target": "prop-sec-000-16.md",
+      "narrative": null,
+      "content": "Let eF and FR be two families of curves as in Proposition 6.1. Then for any µ ∈Pl and any⃗λ ∈(Pl)n (1) the monodromy representation of the sheaf of conformal blocks V† l,⃗λ(FK) over BK takes values in the subgroup D, i.e., ρl,⃗λ : π1(BK, b) −→D ⊂PGL(V† l,⃗λ(FK)b). (2) we have a commutative diagram π1(BK, b) ρl,⃗λ −−−→ D y∼ = ypµ π1(B, b) ρl,⃗λ,µ,µ† −−−−→PGL(V† l,⃗λ,µ,µ†( eF)b ⊗C K) 6.3. Proof of the Theorem. We will now prove the theorem stated in the introduction. This theorem will be a corollary of the following more general result (Theorem 6.7) since we know by [L] assuming g ≥3 that th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/monodromyhitchiny/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "ON THE MONODROMY OF THE HITCHIN CONNECTION",
+      "pageStart": 2,
+      "pageEnd": 14,
+      "target": "../sections/sec-000-on-the-monodromy-of-the-hitchin-connection.md",
+      "narrative": null,
+      "content": "YVES LASZLO, CHRISTIAN PAULY, AND CHRISTOPH SORGER\nAbstract. We show that the image of the monodromy representation of the Hitchin con-\nnection on the sheaf of generalized SL(2)-theta functions over a family of complex smooth\nprojective curves of genus g ≥3 contains an element of inﬁnite order.\n1. Introduction\nLet π : C →B be a family of smooth connected complex projective curves of genus1 g ≥3. For\nany positive integer l, we denote Zl the vector bundle over B having ﬁbers H0(MCb(SL(2)), L⊗l),\nwhere MCb(SL(2)) is the moduli space of semistable rank-2 vector bundles with trivial deter-\nminant o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/monodromyhitchiny/blocks/rem-sec-000-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 14,
+      "target": "rem-sec-000-02.md",
+      "narrative": null,
+      "content": "An analagous statement is true for more general simple groups, at least for SL(n), n ≥2 (see remark 4.3 below).We will discuss this question in a future paper. In the context of Topological Quantum Field Theory as deﬁned by Blanchet-Habegger- Masbaum-Vogel [BHMV], the analogue of the above theorem is well known due to work of Funar [F] for the inﬁniteness of the image and of Masbaum [Ma] for the exhibition of an explicit element in the mapping class group with image of inﬁnite order. It is enough to show the above theorem in the context of Conformal Field Theory as deﬁned by Tsuchiya-Ueno-Yama",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/monodromyhitchiny/blocks/rem-sec-000-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 14,
+      "target": "rem-sec-000-03.md",
+      "narrative": null,
+      "content": "At this stage we observe that under the isomorphism j the two elements σ−1 1 σ2 ∈ π1(M0,4, x) and T −1 γ23T γ13 ∈Γ4 0 coincide. It was shown by G. Masbaum in [Ma] that the latter element has inﬁnite order in the TQFT-representation of the mapping class group Γg — note that T −1 γ23Tγ13 also makes sense in Γg. We will show in Proposition 5.1 that the loop σ−1 1 σ2 has inﬁnite order in the monodromy representation of the WZW connection. 2.4. Braid groups and conﬁguration spaces. We recall some basic results about braid groups and conﬁguration spaces. We refer the reader e.g. to [KT] Chapter 1. F",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/monodromyhitchiny/blocks/rem-sec-000-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 14,
+      "target": "rem-sec-000-04.md",
+      "narrative": null,
+      "content": "For a family of smooth n-pointed curves of genus 0 the projective WZW con- nection is actually a connection.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/monodromyhitchiny/blocks/rem-sec-000-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 14,
+      "target": "rem-sec-000-05.md",
+      "narrative": null,
+      "content": "It is known [TK] that the diﬀerential equations satisﬁed by the ﬂat sections of (V† l,⃗14(F), ∇) coincide with the Knizhnik-Zamolodchikov equations (see e.g. [EFK]). Moreover, we will show in a forthcoming paper that the local system (V† l,⃗14(F), ∇) also coincides with a certain Gauss-Manin local system. We observe that the symmetric group Σ3 acts naturally on the base variety X3. The local sys- tem (V† l,⃗14(F), ∇) is invariant under this Σ3-action and admits a natural Σ3-linearization. Thus by descent we obtain a local system (V† l,⃗14(F), ∇) over X3. Therefore, we obtain a monodromy repres",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/monodromyhitchiny/blocks/rem-sec-000-07",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 14,
+      "target": "rem-sec-000-07.md",
+      "narrative": null,
+      "content": "We would like to mention that the above theorem has been generalized to the Lie algebra sln in [Ka].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/monodromyhitchiny/blocks/rem-sec-000-09",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 14,
+      "target": "rem-sec-000-09.md",
+      "narrative": null,
+      "content": "The same computation shows that the element ρl(σ1σ−1 2 ) ∈GL(2, C) also has inﬁnite order if l̸ = 1, 2, 4 and 8. This implies that the orientation chosen for both loops σ1 and σ2 around 0 and 1 is irrelevant. On the other hand, it is immediately seen that the elements ρl(σ1), ρl(σ2) and ρl(σ1σ2) have ﬁnite order for any level l. YVES LASZLO, CHRISTIAN PAULY, AND CHRISTOPH SORGER",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/monodromyhitchiny/blocks/rem-sec-000-14",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 14,
+      "target": "rem-sec-000-14.md",
+      "narrative": null,
+      "content": "We note that the statement given in [TUY] Theorem 6.2.2 says that there exists a vector ﬁeld⃗l such that \u0012 −τ d dτ + T[⃗l] \u0013 . bψ = 0 (mod OBK bψ), which is equivalent to the above statement using the property θ(⃗l) = −τ d dτ . This last equality is actually proved in [TUY] Corollary 6.1.4, but there is a sign error. The correct formula of [TUY] Corollary 6.1.4 is θ(⃗l) = −τ d dτ , which is obtained by writing the 1-cocycle θ12(u, τ) = ˜l′ u,τ|U2 −˜lu,τ|U1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/monodromyhitchiny/blocks/rem-sec-000-15",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 14,
+      "target": "rem-sec-000-15.md",
+      "narrative": null,
+      "content": "By making the base change νk = τ, where k is the denominator of the trace anom- aly ∆µ, we obtain a section bψ ∈V† l,⃗λ(FR′) with R′ = C[[ν]] satisfying ∇ν d dν ( bψ) = 0 (mod OBK bψ). Moreover, summing over all dominant weights µ ∈Pl we obtain a OBR-linear isomorphism (the factorization rules, see e.g. [TUY] Theorem 6.2.6 or [U] Theorem 4.4.9) ⊕sµ : M µ∈Pl V† l,⃗λ,µ,µ†( eF) ⊗OB OBR ∼ −→V† l,⃗λ(FR). Hence, the ﬁber over a point b ∈BK has a direct sum decomposition (as K-vector spaces) (4) M µ∈Pl V† l,⃗λ,µ,µ†( eF)b ⊗C K ∼ −→V† l,⃗λ(FK)b. We denote by D the subgroup of PGL(V† l,⃗λ(FK)b) consisti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/monodromyhitchiny/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 14,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "Assume that the level l̸ = 1, 2, 4, 8 and that the genus g ≥3. Then there exists a family π : C →B of smooth connected projective curves of genus g such that the monodromy representation of the Hitchin connection ρl : π1(B, b) −→PGL(Zl,b) has an element of inﬁnite order in its image.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/monodromyhitchiny/blocks/thm-sec-000-13",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[TUY] Theorem 6.2.2",
+      "pageStart": 2,
+      "pageEnd": 14,
+      "target": "thm-sec-000-13.md",
+      "narrative": null,
+      "content": "For any section ψ ∈V† l,⃗λ,µ,µ†( eF) the multi-valued formal power series bψ = τ ∆µ eψ satisﬁes the relation ∇τ d dτ ( bψ) = 0 (mod OBK bψ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1704.01735v4",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Modular curves, invariant theory and E 8",
+      "dcterms:creator": [
+        "Yang, Lei"
+      ],
+      "dcterms:issued": "D:20170608",
+      "dcterms:identifier": "https://arxiv.org/abs/1704.01735",
+      "dcterms:abstract": "The E8 root lattice can be constructed from the modular curve X(13) by the invariant theory for the simple group PSL(2, 13). This gives a diﬀerent construction of the E8 root lattice. It also gives an explicit construction of the modular curve X(13).",
+      "dcterms:source": "library/arxiv-1704.01735v4/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1704.01735v4"
+    }
+  ]
+}

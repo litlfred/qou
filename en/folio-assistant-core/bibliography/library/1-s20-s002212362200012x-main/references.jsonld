@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/1-s20-s002212362200012x-main",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Journal of Functional Analysis Log concavity and concentration of Lipschitz functions on the Boolean hypercube",
+      "dcterms:creator": [
+        "concavity, Log",
+        "Lipschitz, concentration of"
+      ],
+      "bibo:doi": "10.1016/j.jfa.2022.109392",
+      "dcterms:identifier": "https://doi.org/10.1016/j.jfa.2022.109392",
+      "dcterms:abstract": "V Article history: Received 17 December 2020 Accepted 13 January 2022 Available online 19 January 2022 Communicated by Pietro Caputo",
+      "dcterms:source": "library/1-s20-s002212362200012x-main/manifest.jsonld",
+      "dcterms:hasVersion": "library/1-s20-s002212362200012x-main"
+    }
+  ]
+}

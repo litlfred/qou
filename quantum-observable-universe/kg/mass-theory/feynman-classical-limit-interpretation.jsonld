@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-feynman-classical-limit-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:feynman-classical-limit-interpretation",
+  "kind": "remark",
+  "title": "Classical limit and the symmetric degeneration",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-feynman-classical-limit"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-feynman-classical-limit",
+  "tags": [
+    "path-integral",
+    "classical-limit",
+    "symmetric-group",
+    "specht-module"
+  ],
+  "leanRef": "qou:QOU.StandardModel.FeynmanPathIntegrals.jones_trace_generator_at_one",
+  "text": "feynman-classical-limit-interpretation.md",
+  "provenance": "authored"
+}

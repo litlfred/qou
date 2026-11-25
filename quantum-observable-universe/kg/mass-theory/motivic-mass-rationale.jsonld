@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-motivic-mass-rationale",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:motivic-mass-rationale",
+  "kind": "remark",
+  "title": "Why a motivic measure: singular intermediate states and the archimedean realization",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-wedderburn-mass-formula",
+    "papers/quantum-observable-universe/blocks/def-motivic-mass-measure",
+    "papers/quantum-observable-universe/blocks/prop-mass-endomorphism-tower",
+    "papers/quantum-observable-universe/blocks/conj-topological-mass-formula",
+    "papers/quantum-observable-universe/blocks/def-archimedean-realization-functor"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-motivic-mass-measure",
+  "tags": [
+    "motivic",
+    "mass",
+    "lefschetz",
+    "arc-space"
+  ],
+  "text": "motivic-mass-rationale.md",
+  "provenance": "authored"
+}

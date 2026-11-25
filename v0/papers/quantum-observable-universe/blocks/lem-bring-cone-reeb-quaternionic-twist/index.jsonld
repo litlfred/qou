@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-bring-cone-reeb-quaternionic-twist",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:bring-cone-reeb-quaternionic-twist",
+  "kind": "lemma",
+  "title": "Reeb quaternionic twist on the Bring-cone model: $[M_i, M_j] = 2M_k$ and cyclic",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-bring-cone-tetraplectic-structure"
+  ],
+  "cites": [
+    "references/fothleitner2003"
+  ],
+  "tags": [
+    "tetraplectic",
+    "bring-cone",
+    "reeb-triad",
+    "3-sasakian-retired",
+    "quaternionic-contact",
+    "su2",
+    "lean-formalised"
+  ],
+  "leanRef": "qou:QOU.BringsSurface.BringCone.reeb_twist_ij",
+  "sorryFree": true,
+  "text": "bring-cone-reeb-quaternionic-twist.md",
+  "provenance": "authored"
+}

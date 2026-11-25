@@ -1,0 +1,902 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-9911033v1",
+  "title": "arxiv-math-9911033v1",
+  "variant": "pdf",
+  "pages": 34,
+  "tocSource": "inferred",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introductions 1",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "inferred",
+      "section": "sec-000-1-introductions-1"
+    },
+    {
+      "level": 1,
+      "title": "A lower bound estimate 4",
+      "number": "2",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "inferred",
+      "section": "sec-001-2-a-lower-bound-estimate-4"
+    },
+    {
+      "level": 1,
+      "title": "A counterexample 11",
+      "number": "3",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "inferred",
+      "section": "sec-002-3-a-counterexample-11"
+    },
+    {
+      "level": 1,
+      "title": "Partial uniform estimates 17",
+      "number": "4",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "inferred",
+      "section": "sec-003-4-partial-uniform-estimates-17"
+    },
+    {
+      "level": 1,
+      "title": "The uniform corona problem 24",
+      "number": "5",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "inferred",
+      "section": "sec-004-5-the-uniform-corona-problem-24"
+    },
+    {
+      "level": 1,
+      "title": "Introductions",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "A lower bound estimate",
+      "number": "2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "inferred",
+      "section": "sec-005-2-a-lower-bound-estimate"
+    },
+    {
+      "level": 1,
+      "title": "(−δx(y) + 1",
+      "number": "4",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "inferred",
+      "section": "sec-006-4-δxy-1"
+    },
+    {
+      "level": 1,
+      "title": "A counterexample",
+      "number": "3",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "inferred",
+      "section": "sec-007-3-a-counterexample"
+    },
+    {
+      "level": 1,
+      "title": "Then f is a",
+      "number": "C",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "inferred",
+      "section": "sec-008-c-then-f-is-a"
+    },
+    {
+      "level": 1,
+      "title": "Let S ∈H 0(M,K m",
+      "number": "2",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "inferred",
+      "section": "sec-009-2-let-s-h-0mk-m"
+    },
+    {
+      "level": 1,
+      "title": "Partial uniform estimates",
+      "number": "4",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "inferred",
+      "section": "sec-010-4-partial-uniform-estimates"
+    },
+    {
+      "level": 1,
+      "title": "In a neighborhood Ux of x, ϕ can be written as",
+      "number": "1",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "inferred",
+      "section": "sec-011-1-in-a-neighborhood-ux-of-x-ϕ-can-be-written-as"
+    },
+    {
+      "level": 1,
+      "title": "There is a constant C13 such that",
+      "number": "2",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "inferred",
+      "section": "sec-012-2-there-is-a-constant-c13-such-that"
+    },
+    {
+      "level": 1,
+      "title": "The uniform corona problem",
+      "number": "5",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "inferred",
+      "section": "sec-013-5-the-uniform-corona-problem"
+    },
+    {
+      "level": 1,
+      "title": "There are decompositions U ′",
+      "number": "2",
+      "page": 28,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "inferred",
+      "section": "sec-014-2-there-are-decompositions-u"
+    },
+    {
+      "level": 1,
+      "title": "By (5.4) and (5.5),",
+      "number": "3",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "inferred",
+      "section": "sec-015-3-by-54-and-55"
+    },
+    {
+      "level": 1,
+      "title": "(Ui|Cδj (Rj ),v 1j)Cδj (Rj ) = 0 for i ⁄=j, 1 ≤i,j ≤s;",
+      "number": "2",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "inferred",
+      "section": "sec-016-2-uicδj-rj-v-1jcδj-rj-0-for-i-j-1-ij-s"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 34,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "inferred",
+      "section": "sec-017-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-1-introductions-1",
+      "number": "1",
+      "title": "Introductions 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-2-a-lower-bound-estimate-4",
+      "number": "2",
+      "title": "A lower bound estimate 4",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-3-a-counterexample-11",
+      "number": "3",
+      "title": "A counterexample 11",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-4-partial-uniform-estimates-17",
+      "number": "4",
+      "title": "Partial uniform estimates 17",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-004-5-the-uniform-corona-problem-24",
+      "number": "5",
+      "title": "The uniform corona problem 24",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1359,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uniform corona",
+          "heading": true
+        },
+        {
+          "term": "corona problem",
+          "heading": true
+        },
+        {
+          "term": "ahler metric",
+          "heading": false
+        },
+        {
+          "term": "uniform estimate",
+          "heading": false
+        },
+        {
+          "term": "riemann surfaces",
+          "heading": false
+        },
+        {
+          "term": "injective radius",
+          "heading": false
+        },
+        {
+          "term": "ahler manifold",
+          "heading": false
+        },
+        {
+          "term": "partial uniform",
+          "heading": false
+        }
+      ],
+      "extract": "References 34 1. Introductions Suppose M is an n-dimensional K¨ ahler manifold andL is an ample line bundle over M . Let the K¨ ahler form of M be ω g and the Hermitian metric ofL be H. We assume that ω g is the curvature of H, that is, ω g =Ric(H). The K¨ ahler metric ofω g is called a polarized K¨ ahler metric on M . Using H and ω g, for any positive integer m, H 0(M,L m) becomes a Her- mitian inner product space.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-2-a-lower-bound-estimate",
+      "number": "2",
+      "title": "A lower bound estimate",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 875,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "delta frac",
+          "heading": false
+        },
+        {
+          "term": "leq frac",
+          "heading": false
+        },
+        {
+          "term": "delta sqrt",
+          "heading": false
+        },
+        {
+          "term": "phi leq",
+          "heading": false
+        },
+        {
+          "term": "int leq",
+          "heading": false
+        },
+        {
+          "term": "geq frac",
+          "heading": false
+        },
+        {
+          "term": "eta frac",
+          "heading": false
+        },
+        {
+          "term": "psi leq",
+          "heading": false
+        }
+      ],
+      "extract": "Suppose that $M$ is a Riemann surface of genus $g\\geq 2$. Let $K_M$ be the canonical line bundle over $M$ with the Hermitian metric $H$. We assume that the curvature $\\omega_g$ of $H$ is positive and $\\omega_g$ defines a K\\\"ahler metric of $M$. Let $K$ be the Gauss curvature of the metric $\\omega_g$. Let $K_1$ and $K_2$ be two nonnegative constants such that \\begin{equation}\\label{kbd} -K_1\\leq K\\leq K_2.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-4-δxy-1",
+      "number": "4",
+      "title": "(−δx(y) + 1",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1086,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "l-valued",
+          "heading": false
+        },
+        {
+          "term": "ahler",
+          "heading": false
+        },
+        {
+          "term": "vol",
+          "heading": false
+        },
+        {
+          "term": "laplacian",
+          "heading": false
+        },
+        {
+          "term": "metric",
+          "heading": false
+        },
+        {
+          "term": "deﬁned",
+          "heading": false
+        },
+        {
+          "term": "max",
+          "heading": false
+        },
+        {
+          "term": "genus",
+          "heading": false
+        }
+      ],
+      "extract": "vol(M ) ),∫ MG(x,y )dx = 0, where ∆ x is the (complex) Laplacian with respect to x andδx(·) is the Dirac function. Let b be the function on M such that{ ∆ b =K/ 4 + 1/ 2,∫ Mb = 0. Since the K¨ ahler metric ω g ∈ −c1(M ), the above equation has a unique solution. Let the function a :M → R deﬁned by a =G(x,x 0) + 1 2π (r − 1 vol(M ) ∫ M r) +b,(2.15) where x0 is the ﬁxed point of M and r is deﬁned in (2.13). Then a is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-3-a-counterexample",
+      "number": "3",
+      "title": "A counterexample",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 546,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arctan rho",
+          "heading": false
+        },
+        {
+          "term": "delta theta",
+          "heading": false
+        },
+        {
+          "term": "rho frac",
+          "heading": false
+        },
+        {
+          "term": "counterexample",
+          "heading": true
+        },
+        {
+          "term": "cosh rho",
+          "heading": false
+        },
+        {
+          "term": "leq eps",
+          "heading": false
+        },
+        {
+          "term": "ref keen",
+          "heading": false
+        },
+        {
+          "term": "infty frac",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec3} In the last section, we give a lower bound estimate of~\\eqref{quan} in terms of the injective radius of $M$. In this section, we give a counterexample that the uniform estimate is not true. More precisely, we are going to disapprove the following: {\\bf Conjecture.} Let $K_M$ be the canonical line bundle of a Riemann surface $M$ of genus $g\\geq 2$ and constant Gauss curvature $(-1)$. Then for $m$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-c-then-f-is-a",
+      "number": "C",
+      "title": "Then f is a",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 580,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arctan",
+          "heading": false
+        },
+        {
+          "term": "ake",
+          "heading": false
+        },
+        {
+          "term": "bke",
+          "heading": false
+        },
+        {
+          "term": "holomorphic",
+          "heading": false
+        },
+        {
+          "term": "coshρ",
+          "heading": false
+        }
+      ],
+      "extract": "period function on [ −R,R ] × R, satisfying f (ρ,θ ±δ) = f (ρ,θ ). Let the Fourier expansion of f (−R,θ ) and f (R,θ ) be f (−R,θ ) = +∞∑ k=−∞ Ake 2πi δ kθ; f (R,θ ) = +∞∑ k=−∞ Bke 2πi δ kθ. 12 Deﬁne g1 = ∞∑ k=1 Ake− 4π δ k( π 4 −arctan e− R)wk, g2 =B0, g3 = −1∑ k=−∞ Bke− 4π δ k( π 4 −arctan eR)wk, (3.4) where w is in (3.2). We have the following lemma: Lemma 3.1. With the notations as above, g1,g 2,g 3 are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-2-let-s-h-0mk-m",
+      "number": "2",
+      "title": "Let S ∈H 0(M,K m",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 699,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coshρ",
+          "heading": false
+        },
+        {
+          "term": "arctan",
+          "heading": false
+        },
+        {
+          "term": "bke",
+          "heading": false
+        }
+      ],
+      "extract": "M ). We choose an x0 ∈M as follows: let ρ0< 0 be the number such that δ(coshρ0)2 =ε1. 14 Then ρ0 → −∞, ρ0 +R → +∞ as δ → 0. By (3.3), we see that ( dz)m ∈H 0(C,K m M ). Furthermore (dz)m ⁄= 0 on C. Thus for any S ∈H 0(M,K m M ), there is a holomorphic function f onC such that S|C =f (dz)m. Let f =g1 +g2 +g3, where g1,g 2,g 3 are deﬁned in Lemma 3.1. Let Si =gi(dz)m, i = 1, 2, 3.(3.7) Lemma 3.4. With the notations as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-4-partial-uniform-estimates",
+      "number": "4",
+      "title": "Partial uniform estimates",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1690,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "delta eps",
+          "heading": false
+        },
+        {
+          "term": "eps log",
+          "heading": false
+        },
+        {
+          "term": "frac eps",
+          "heading": false
+        },
+        {
+          "term": "arctan rho",
+          "heading": false
+        },
+        {
+          "term": "geq eps",
+          "heading": false
+        },
+        {
+          "term": "leq rho",
+          "heading": false
+        },
+        {
+          "term": "phi leq",
+          "heading": false
+        },
+        {
+          "term": "cosh rho",
+          "heading": false
+        }
+      ],
+      "extract": "Let $M$ be a Riemann surface of genus $g$ and constant curvature $(-1)$. In this section, we prove that there is a (positive) lower bound of ~\\eqref{quan} depending only on the injective radius of the point. More precisely, for $m$ large enough, for any $x\\in M$, there is a section $S\\in H^0(M,K_M^m)$ such that $||S||_{L^2}=1$ and $||S||(x)\\geq C(\\delta_x)$ where $C(\\delta_x)$ is a positive constant depending only",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-1-in-a-neighborhood-ux-of-x-ϕ-can-be-written-as",
+      "number": "1",
+      "title": "In a neighborhood Ux of x, ϕ can be written as",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 18,
+      "summary": null,
+      "keywords": [],
+      "extract": "ϕ = 2 logd(x) +ψ, whereψ is a smooth function on Ux. Consequently, ∫ Ux e−ϕ = +∞.(4.28)",
+      "extractCut": false
+    },
+    {
+      "id": "sec-012-2-there-is-a-constant-c13-such-that",
+      "number": "2",
+      "title": "There is a constant C13 such that",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 524,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mδ2x",
+          "heading": false
+        },
+        {
+          "term": "ofm",
+          "heading": false
+        },
+        {
+          "term": "dist",
+          "heading": false
+        }
+      ],
+      "extract": "√−1 2π ∂∂ϕ ≥ −C13ω g(4.29) on M \\{x}, where ω g is the K¨ ahler form ofM ; 22 3. ϕ satisﬁes ϕ ≤C13(4.30) on M and ϕ ≥ 2 logd(x) − 2π δx0 −C13(4.31) for d(x) ≤δx0. Proof. Letγ1, · · ·,γ s be the closed geodesics such that length(γi)< 1 1000 . LetCγi be the corresponding collars. Let Cγi(Ri − 4) = {x|dist(x,γ i) ≤Ri − 4} i = 1, · · ·s. For any x0 ∈ M , if x0 ∈ Cγi(Ri − 4) for some i, then let Cδ = Cγi and deﬁne ϕ =ϕ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-5-the-uniform-corona-problem",
+      "number": "5",
+      "title": "The uniform corona problem",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 28,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1458,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "corona problem",
+          "heading": true
+        },
+        {
+          "term": "eps rho",
+          "heading": false
+        },
+        {
+          "term": "arctan rho",
+          "heading": false
+        },
+        {
+          "term": "leq sim",
+          "heading": false
+        },
+        {
+          "term": "cosh rho",
+          "heading": false
+        },
+        {
+          "term": "sim delta",
+          "heading": false
+        },
+        {
+          "term": "rho frac",
+          "heading": false
+        },
+        {
+          "term": "nabla leq",
+          "heading": false
+        }
+      ],
+      "extract": "Let $M$ be a Riemann surface of genus $g\\geq 2$. It is well known that the coordinate ring $\\oplus_{m=0}^\\infty H^0(M,K_M^m)$ is finitely generated. That is, there is an $m_0>0$ such that for any $m>0$ and $S\\in H^0(M,K_M^m)$, $S$ can be represented by \\begin{equation}\\label{corona} S=\\sum_{i=1}^{d} U_iT_i, \\end{equation} where $U_i\\in H^0(M,K_M^{m_0})$ and $T_i\\in H^0(M,K_M^{m-m_0})$ for $i=1,\\cdots, d=\\dim",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-2-there-are-decompositions-u",
+      "number": "2",
+      "title": "There are decompositions U ′",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 46,
+      "summary": null,
+      "keywords": [],
+      "extract": "i|Cδi (Ri) =α iv1i +v2i with v1i = 1√δi ηi(dzi)m0, 1 ≤i ≤s(5.23) and (v1i,v 2i)Cδi (Ri) = 0, 1 ≤i ≤s, where α i(i = 1, · · ·,s ) are a constant such that for 1 ≤i ≤s, 1 ≤∼α i ≤∼ 1;(5.24) 28",
+      "extractCut": false
+    },
+    {
+      "id": "sec-015-3-by-54-and-55",
+      "number": "3",
+      "title": "By (5.4) and (5.5),",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 52,
+      "summary": null,
+      "keywords": [],
+      "extract": "∫ M \\Cδi(Ri) ||U ′ i||2 ≤∼δ2m0−1 i(5.25) for i = 1, · · ·,s . We have the following lemma: Lemma 5.3. With the notations as above, there are holomorphic sections U1, · · ·,U s ∈H 0(M,K m0 M ) such that 1. ||Ui|| ≥∼ 1√ δi e−m0|ρi| on Cδi(Ri);",
+      "extractCut": false
+    },
+    {
+      "id": "sec-016-2-uicδj-rj-v-1jcδj-rj-0-for-i-j-1-ij-s",
+      "number": "2",
+      "title": "(Ui|Cδj (Rj ),v 1j)Cδj (Rj ) = 0 for i ⁄=j, 1 ≤i,j ≤s;",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1315,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tiui",
+          "heading": false
+        },
+        {
+          "term": "cik",
+          "heading": false
+        },
+        {
+          "term": "cauchy integral",
+          "heading": false
+        },
+        {
+          "term": "inner product",
+          "heading": false
+        },
+        {
+          "term": "integral formula",
+          "heading": false
+        },
+        {
+          "term": "deﬁne",
+          "heading": false
+        },
+        {
+          "term": "lemma",
+          "heading": false
+        },
+        {
+          "term": "let",
+          "heading": false
+        }
+      ],
+      "extract": "3. ∫ M \\Cδi (Ri) ||Ui||2 ≤∼δ2m0−1 i . Proof. Let βij = (U ′ i,v 1j)Cδj (Rj ), 1 ≤i,j ≤s. Then if i ⁄=j we have |βij| ≤∼ δ m0− 1 2 i(5.26) by (5.25) and the deﬁnition of v1j, (j = 1, · · ·,s ) in (5.23). We also have 1 ≥∼βii ≥∼ 1(5.27) by (5.24). LetB = (βij)s×s be the matrix of (βij) for 1 ≤i,j ≤s. Then by (5.26), (5.27), B is an invertible matrix, when max δi is small enough. Let A = B−1 be the inverse matrix and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 347,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tian",
+          "heading": false
+        },
+        {
+          "term": "kawamata",
+          "heading": false
+        },
+        {
+          "term": "riemann surfaces",
+          "heading": false
+        },
+        {
+          "term": "math",
+          "heading": false
+        },
+        {
+          "term": "metrics",
+          "heading": false
+        },
+        {
+          "term": "bergman",
+          "heading": false
+        },
+        {
+          "term": "bounded analytic",
+          "heading": false
+        },
+        {
+          "term": "pages",
+          "heading": false
+        }
+      ],
+      "extract": "[1] L. Carleson. Interpolations by bounded analytic functi ons and the corona problem. Ann. of Math. (2) , 76:547–559, 1962. [2] D. Catlin. The Bergman kernel and a theorem of Tian. In Analysis and geometry in several complex variables , Trends Math., pages 1–23. Birkh¨ user, 1997. [3] J. Cheeger and D. Ebin. Comparison theorems in Riemannian geometry . North- Holland Publishing Company, 1975. [4] J. Garnett.",
+      "extractCut": true
+    }
+  ],
+  "checks": {},
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "arctan rho",
+      "heading": false
+    },
+    {
+      "term": "delta leq",
+      "heading": false
+    },
+    {
+      "term": "delta eps",
+      "heading": false
+    },
+    {
+      "term": "delta frac",
+      "heading": false
+    },
+    {
+      "term": "delta cosh",
+      "heading": false
+    },
+    {
+      "term": "delta geq",
+      "heading": false
+    },
+    {
+      "term": "let delta",
+      "heading": false
+    },
+    {
+      "term": "constant eps",
+      "heading": false
+    },
+    {
+      "term": "delta sqrt",
+      "heading": false
+    },
+    {
+      "term": "phi leq",
+      "heading": false
+    },
+    {
+      "term": "int delta",
+      "heading": false
+    },
+    {
+      "term": "eta frac",
+      "heading": false
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 19,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 18,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p34); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 18 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-9911033v1"
+  }
+}

@@ -1,0 +1,2165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>library/arxiv-1706.09531v1/footnotes — folio-document-footnotes/v1</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../assets/navbar/rail-2f7k3e1ehi.js" defer></script><script src="../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../.." data-fa-to-root="../../../../../../../..">{"data":"rail-2f7k3e1ehi","here":"/en/cat-harness-tools/folio-document-footnotes/v1/qou/library/arxiv-1706.09531v1/footnotes/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">library/arxiv-1706.09531v1/footnotes</h1>
+<p class="m">A <a href="../../../../">folio-document-footnotes/v1</a> node held by <a href="../../../">qou</a>, at <code>library/arxiv-1706.09531v1/footnotes.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>folio-document-footnotes/v1</dd>
+<dt>entry</dt><dd>arxiv-1706.09531v1</dd>
+<dt>status</dt><dd>determined</dd>
+<dt>body_size</dt><dd>12</dd>
+<dt>footnotes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p001-1&quot;,
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;Presented at the Abdus Salam 90th birthday Memorial Meeting, IAS, Singapore, January 25–28, 2016[1]&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;BaryogenesisandProtonDecay&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p001-2&quot;,
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;E-mailaddress:pati@slac.stanford.edu.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;JogeshC.Pati&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p001-3&quot;,
+    &quot;page&quot;: 1,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;WorksupportedinpartbytheUSDepartmentofEnergy,contractDE–AC02–76SF00515.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 1,
+        &quot;context&quot;: &quot;JogeshC.Pati2,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p004-1&quot;,
+    &quot;page&quot;: 4,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;text&quot;: &quot;NownamedtheAbdusSalamInternationalCentreforTheoreticalPhysics.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 4,
+        &quot;context&quot;: &quot;Italy,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-front-matter&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p005-1&quot;,
+    &quot;page&quot;: 5,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;text&quot;: &quot;AbriefaccountofhowourcollaborationstartedinMay1972leadingtotheideasofhigheruniﬁcation and to the origin of the notion of “Lepton Number as the Fourth Color”, in this context, is given in my article in the Proceedings of the Salamfestschrift[3] which was held at ICTP in 1993 (that is probably the last scientiﬁc meeting that Salam attended), and a shorter version is given in the articles written in his honor after he passed away[4,5].The ﬁrst two sections of this talk are based in part on these three articles.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 5,
+        &quot;context&quot;: &quot;decade.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-001&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p006-1&quot;,
+    &quot;page&quot;: 6,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;text&quot;: &quot;Althoughtheideaofgeneratingstronginteractionsbythegaugeprincipleisattractive,itmighthave been argued that the ﬂavor-SU(3) gauge symmetry is not a suitable choice to generate the fundamental&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 6,
+        &quot;context&quot;: &quot;the lines suggested&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-003&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-1&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;text&quot;: &quot;For reasons alluded to in footnote 3, one could argue that the SU(3)-color degree of freedom of quarks in the explicit sense[35] is essential not only to achieve a higher uniﬁcation but just to realize a pure gauge-origin of the three forces-weak, electromagnetic and strong (see below). I thank O.W. Greenberg for a discussion on the need of Fermi-Dirac rather than parastatistics especially in the context of grand uniﬁcation.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 8,
+        &quot;context&quot;: &quot;umingthatquarksdoinfactpossesstheSU(3)-colordegreeoffreedom,&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-2&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;text&quot;: &quot;Eﬀectivelysucha4 × 4-structureistobeviewedasamergeroftwofamilieseachbeinga2 × 4.In reality, one must of course gauge either the chiral SU(4)f L × SU(4)f R (by assuming mirror fermions to avoid anomalies), or a suitable anomaly-free subgroup of it. This is what we did (see below). But for the purposes of classiﬁcation and assignment of electric charge, which is vectorial, it suﬃced to use the non-Abelian vectorial SU(4)f × SU(4)c.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 8,
+        &quot;context&quot;: &quot;4)coloroperatingonfourﬂavors(u,d,c,s)andfourcolors(r,y,b,l).&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p008-3&quot;,
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;6&quot;,
+    &quot;text&quot;: &quot;I should comment here on a common impression that exists in the literature, including especially popular writings, as regards the origin of the standard model versus that of the idea of grand uniﬁcation. It is often stated that the successes of the standard model naturally suggested that it be extended to include grand uniﬁcation. Historically, the story is, however, quite diﬀerent. In the beginning of May 1972, neither the standard model in its entirity, including SU(3)-color, nor any of its empirical successes, such as the discovery of weak neutral current interactions, existed. As indicated in the text, the combined gauge symmetry of the standard model emerged[6,7] at this juncture simultaneously with the attempts at higher uniﬁcation, based (in our case) on SU(4)-color. See further remarks in Ref. [40].&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 8,
+        &quot;context&quot;: &quot;mustminimallybegivenbythecombinedgaugesymmetry&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p009-1&quot;,
+    &quot;page&quot;: 9,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;text&quot;: &quot;Thefulﬁllmentofthisconjectureis,ofcourse,aprerequisitefortheideaofgranduniﬁcationtowork. See remarks in Sec. 1 of Ref. [7].&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 9,
+        &quot;context&quot;: &quot;hibitingexplicitlyasymmetrytoimplementthisidea.Weconjectured&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-005&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p012-1&quot;,
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;8&quot;,
+    &quot;text&quot;: &quot;Theextenttowhichthisbeliefwasingrainedamongmanyleadingphysicistseveninthe1990’smaybe assessed by an interesting remark by C.N. Yang at the 2002 Stony Brook conference on neutrinos [54]. See also remarks in Ref. [55].&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 12,
+        &quot;context&quot;: &quot;thattheymustbeexactlymassless.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-007&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p012-2&quot;,
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;text&quot;: &quot;Thisisbarring,ofcourse,possiblecontributions[57]totheMajoranamassofνLfromlepton-number EW/MP l) ∼(250 GeV)2/1019 GeV ∼10−5 eV, which are tiny, com- violating quantum gravity eﬀects ∼(v2 pared to the presently observed mass scales of atmospheric and even solar neutrino oscillations. As expressed elsewhere [58], this smallness of (possible) quantum gravity eﬀects prompts one to regard the atmospheric and solar neutrino oscillations as clear signals for physics beyond what one may expect within the standard model combined with quantum gravity.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 12,
+        &quot;context&quot;: &quot;l[10],possessingonlyLHneutrinos(νL’s),wouldnaturallysuggest.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-007&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p014-1&quot;,
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;text&quot;: &quot;The 15th diagonal generator of SU(4)-color entering into the electric charge formula of Ref. [9] is naturally proportional (as per Eq. (11)) to the charge (Bq −3L) where Bq = quark number. It was pointed out in Ref. [61] that this can be expressed in terms of the more familiar charge (B-L), since Bq = 3B, resulting in Eq. (4).&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 14,
+        &quot;context&quot;: &quot;gaugebosons).&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-009&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p015-1&quot;,
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;text&quot;: &quot;SuchanultraheavyMajoranamass(∼1018 GeV)fortheRHneutrinowouldbeunacceptablebecause it would lead to too tiny a mass (&lt;10−4 eV) for even the heaviest Dirac mass ∼200 GeV for any neutrino species through the seeaw formula.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 15,
+        &quot;context&quot;: &quot;ring-scale(∼1018Gev)Majoranamassthroughquantumgravityeﬀects.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-009&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p017-1&quot;,
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;13&quot;,
+    &quot;text&quot;: &quot;ThecaseofspontaneousviolationarisesbecauseB-LisgaugedinG(2, 2, 4).Now,amasslessgauge particle coupled to any linear combination of B and L (which is gauged) must acquire a mass through SSB in order to conform with the limits from the E¨otvos type experiments. The corresponding charge (B and/or L) must then be violated spontaneously.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 17,
+        &quot;context&quot;: &quot;G(2, 2, 4),withthelatterbreakingatanintermediatescaleof∼10&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-009&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p019-1&quot;,
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;text&quot;: &quot;InthecontextofSO(10),theL-RdiscretesymmetryassociatedwithG(2, 2, 4)isreplacedbyanequiv- alent generalized charge conjugation symmetry, which is a gauge symmetry in SO(10)[78].&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 19,
+        &quot;context&quot;: &quot;ThesymmetrySO(10)ofcoursefullypreservesthesefeatures&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-010&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p020-1&quot;,
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;15&quot;,
+    &quot;text&quot;: &quot;LikeSO(10),SU(5)doespossess,however,fermiontoanti-fermiongaugetransformationswhichare absent in G(2, 2, 4).&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 20,
+        &quot;context&quot;: &quot;onSU(4)-color.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-011&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p022-1&quot;,
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;text&quot;: &quot;ThecaseofRef.[84]issomewhatofanexceptioninthisregardbecausethesingleintermediatescale associated with the breaking of the G(2, 2, 4) symmetry to the SM is identiﬁed with the Peccei-Quinn symmetry breaking scale. But, even in this case, intermediate-scale breaking of B-L does not go well with attempts to obtain a natural understanding of the mass-scale of the atmospheric neutrino oscillation (see Sec 6).&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 21,
+        &quot;context&quot;: &quot;MU≈2 × 10&quot;
+      },
+      {
+        &quot;page&quot;: 22,
+        &quot;context&quot;: &quot;itneedstobeusedasaninputtoﬁxtheintermediatescale(s).&quot;
+      },
+      {
+        &quot;page&quot;: 22,
+        &quot;context&quot;: &quot;highscaleMU≈2 × 10&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-012&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p023-1&quot;,
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;17&quot;,
+    &quot;text&quot;: &quot;SuchanultraheavyMajoranamass(∼1018 GeV)fortheRHneutrinowouldbeunacceptablebecauseit would lead to too tiny a mass (&lt;10−4 eV) for even the heaviest LH neutrino through the seeaw formula.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 23,
+        &quot;context&quot;: &quot;stringorPlanckscale.&quot;
+      },
+      {
+        &quot;page&quot;: 23,
+        &quot;context&quot;: &quot;scale,givenbyMst≈gst×5.2×10&quot;
+      },
+      {
+        &quot;page&quot;: 23,
+        &quot;context&quot;: &quot;scale,givenbyMst≈gst×5.2×1017GeV≈3.6×10&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-013&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p025-1&quot;,
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;text&quot;: &quot;I thank Mirjam Cvetic, Alon Faraggi, Arthur Hebecker, George Leontaris and Stuart Raby for discussions on these points.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 25,
+        &quot;context&quot;: &quot;and [88] respectively&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-013&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p029-1&quot;,
+    &quot;page&quot;: 29,
+    &quot;mark&quot;: &quot;19&quot;,
+    &quot;text&quot;: &quot;IthankRadovanDermisekforacommunicationinthisregard.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 29,
+        &quot;context&quot;: &quot;scale Mc(see e.g.the fourth and ﬁfth papers of Ref. [100]).&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-013&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p032-1&quot;,
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;text&quot;: &quot;AlternativeSO(10)-modelsoffermionmassesandmixingsbasedonthelow-dimensionalHiggssystem have been developed with some overlapping features and some distinctions (see e.g. Refs. [113] and [114]).&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 32,
+        &quot;context&quot;: &quot;efermionswithintheminimallow-dimensionalHiggssystem(Eq.(6)).&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-014&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p033-1&quot;,
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;21&quot;,
+    &quot;text&quot;: &quot;The zeros in “11”, “13”, “31”, and “22” elements signify that they are relatively small.For instance, the “22”-elements are set to zero because (restricted by ﬂavor symmetries, see below), they are meant to be less than (“23”)(“32”)/“33” ∼10−2, and thus unimportant for our purposes. Likewise, for the other “zeros.”&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 33,
+        &quot;context&quot;: &quot;thethreefamilies,attheuniﬁcationscale,taketheform(Ref.[25]):&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p034-1&quot;,
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;22&quot;,
+    &quot;text&quot;: &quot;Thereisanimpression,sometimesconveyedintheliterature,thatamultipletlike126HofSO(10)(or equivalently (1, 3R, 10)H of G(2, 2, 4)) is needed to give Majorana masses to the RH neutrinos. While 126H would contribute through renormalizable Yukawa couplings, as explained before for the case of the low- dimensional Higgs multiplets exhibited in Eq. (9), the eﬀective non-renormalizable interactions, allowed by all relevant symmetries, should be expected to arise through exchange of heavy states in the string-tower (see Ref. [121]), and at least through quantum gravity. Thus 126H is not really needed for the purpose. The virtue of Eq. (9) in understanding the mass-scale of atmospheric neutrino oscillation, owing to the suppression of the operator by a factor ∼(M 2 GUT/Mst) is discussed in Sec. 6.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 34,
+        &quot;context&quot;: &quot;wouldarisethrougheﬀectivecouplingsoftheform[121]:&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p037-1&quot;,
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;23&quot;,
+    &quot;text&quot;: &quot;Theexplanationofthelargenessofθν&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 37,
+        &quot;context&quot;: &quot;natureofthemass-matrices.&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p041-1&quot;,
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;24&quot;,
+    &quot;text&quot;: &quot;In this case the inﬂaton can naturally be composed of the Higgs-like objects having the quantum numbers of the RH sneutrinos (˜νRH and ˜νRH) lying in (1, 2, 4)H and (1, 2, 4)H for G(2, 2, 4) (or 16H and 16H for SO(10)), whose VEV’s break B-L and give Majorana masses to the RH neutrinos via the coupling shown in Eq. (12).&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 41,
+        &quot;context&quot;: &quot;the inﬂaton&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-016&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p043-1&quot;,
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;25&quot;,
+    &quot;text&quot;: &quot;Foralternativeattemptsininﬂationaryleptogenesis,basedonsubcriticalhybridinﬂation,withinthe G(2, 2, 4) symmetry, see Ref.[138], and for models of so-called “semi-shifted ” hybrid inﬂation, also based on the symmetry G(2, 2, 4), which possess certain desirable features, see[139].&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 43,
+        &quot;context&quot;: &quot;tion&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-017&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p054-1&quot;,
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;26&quot;,
+    &quot;text&quot;: &quot;WithinaneﬀectiveG(2, 2, 4)-symmetry,theexchangeofascalar(1, 1, 6)-multiplethavingaGUT-scale mass can induce the p →e+π◦decay, but such a decay mode will not be a compelling feature of the symmetry.&quot;,
+    &quot;marks&quot;: [
+      {
+        &quot;page&quot;: 54,
+        &quot;context&quot;: &quot;observedneutrinooscillations[25])&quot;
+      }
+    ],
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-021&quot;
+  }
+]</pre></dd>
+<dt>uncalled_notes</dt><dd><pre>[
+  {
+    &quot;id&quot;: &quot;fn-p013-1&quot;,
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;text&quot;: &quot;Inthediscussiontofollow,theL-Rdiscretesymmetryshouldthusbeunderstoodtoaccompanythe symmetry G(2, 2, 4), with or without being speciﬁed as such.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-008&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p037-2&quot;,
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;23&quot;,
+    &quot;text&quot;: &quot;togetherwiththesmallnessofVcboutlinedabove,basedon medium-large contributions from the charged lepton and neutrino sectors, is quite distinct from alternative In paricular, in the lop-sided Albright-Barr model[113], the largeness of θν explanations.&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-015&quot;
+  },
+  {
+    &quot;id&quot;: &quot;fn-p037-3&quot;,
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;23&quot;,
+    &quot;text&quot;: &quot;arisesalmost entirely from the lop-sidedness of the charged lepton mass matrix. This distinction between the BPW and the AB models leads to markedly diﬀerent predictions for the rate of µ →eγ decay in the two models [128].&quot;,
+    &quot;block&quot;: &quot;library/arxiv-1706.09531v1/blocks/prose-sec-015&quot;
+  }
+]</pre></dd>
+<dt>unlinked_marks</dt><dd><pre>[
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;e being close to the gauge coupling uniﬁcation scale ∼2 × 10&quot;
+  },
+  {
+    &quot;page&quot;: 3,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;supersymmetry, at a scale MU∼2×10&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;withinabouttwoweeks&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;energies to SU(3)&quot;
+  },
+  {
+    &quot;page&quot;: 8,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;SU(3)&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ons,‘violationsofparityandofstangenessbyoneunitareoforderGFm&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;◦)areoforder(GFm&quot;
+  },
+  {
+    &quot;page&quot;: 10,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;◦)areoforder(GFm2)&quot;
+  },
+  {
+    &quot;page&quot;: 11,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;G(2, 2, 4) ≡SU(2)L × SU(2)R × SU(4)&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;masseswereknowntobesosmall:(m(ν&quot;
+  },
+  {
+    &quot;page&quot;: 12,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;masseswereknowntobesosmall:(m(νe)/m&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;F&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;ThemultipletsF&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;LandF&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;SU(2)L,RtreateachcolumnofF&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;L,Ras&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;quarksandleptonsbytreatingeachrowofF&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;LandF&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;Ras&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;ance—atafundamentallevel[59]10,thatinterchangesF&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;L↔F&quot;
+  },
+  {
+    &quot;page&quot;: 13,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;SU(2)L × SU(2)R × U(1)B-L × SU(3)&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;of SU(2)L, SU(2)R, and SU(4)&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;mate link between SU(4)&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;ing that SU(4)&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;tatethatonemustminimallygaugethesymmetry SU(4)&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;ethatonemustminimallygaugethesymmetry SU(4)c(ratherthanSU(3)&quot;
+  },
+  {
+    &quot;page&quot;: 14,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;tingminimalgaugesymmetryisthenG(224)=SU(2)L × SU(2)R × SU(4)&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;δm&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;uniﬁcationscaleMU≈2 × 10&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;context&quot;: &quot;aPlanckorstring-scale(∼10&quot;
+  },
+  {
+    &quot;page&quot;: 15,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot; angle successfully, would in fact suggest that MB−L≈MU≈2×10&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;expectedtobreakinonestepattheuniﬁcation-scaleMU∼2 × 10&quot;
+  },
+  {
+    &quot;page&quot;: 16,
+    &quot;mark&quot;: &quot;17&quot;,
+    &quot;context&quot;: &quot;besuperheavywithmasses∼few × 10&quot;
+  },
+  {
+    &quot;page&quot;: 17,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;10&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;13&quot;,
+    &quot;context&quot;: &quot;therefore B and/or L must be violated spontaneously&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;highenergies∼10&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;=2, ∆L=0)whichprobesintophysicstypicallyatenergy-scalesof∼10&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;magnitude,reachingfreen −noscillationtime∼10&quot;
+  },
+  {
+    &quot;page&quot;: 18,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;magnitude,reachingfreen −noscillationtime∼109−10&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;35&quot;,
+    &quot;context&quot;: &quot;uldoccurataccessiblerates,withalifetimeboundedabovebyabout10&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;years,forprotondecayingintoe+π&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;34&quot;,
+    &quot;context&quot;: &quot;protondecayingintoe+π0,andalifetimeoflessthanabout(1−8) × 10&quot;
+  },
+  {
+    &quot;page&quot;: 19,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;structureofG(2, 2, 4)byusingthesetF=(FL⊕(FR)&quot;
+  },
+  {
+    &quot;page&quot;: 20,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;re SU(5) splits members of a family (not including νRor (νR)&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;couplingconstants(inparticularsin&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;sin&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;MS= 0.214±0.004, where as current experimental data show:sin&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;0.23153 ± 0.00016[81].Thedisagreementwithrespecttosin&quot;
+  },
+  {
+    &quot;page&quot;: 21,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;mentoftheMSSM-basedpredictionofsin&quot;
+  },
+  {
+    &quot;page&quot;: 22,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;caleMU,thatpreservesthesuccessfulpredictionoftheweakanglesin&quot;
+  },
+  {
+    &quot;page&quot;: 23,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;2, 2, 4) or its close relative G(2, 1, 4) = SU(2)L×I3R×SU(4)&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;17&quot;,
+    &quot;context&quot;: &quot;ut0.25–0.3andsimultaneouslyMU,intwoloop,toabout(1/2 −2) × 10&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;H+ (2,&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;HofSO(10).TheVEVsof{(1,&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;HofSO(10).TheVEVsof{(1, 2, 4)H+ (1,&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Hand the (2,&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;H)and&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;H)anda&quot;
+  },
+  {
+    &quot;page&quot;: 24,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;Hand&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;17&quot;,
+    &quot;context&quot;: &quot;uniﬁedatthestringscaleMst≈4×10&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;extraandtheMSSM-GUTspectrum,theone-loopbetafunctionsfor&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;extraandtheMSSM-GUTspectrum,theone-loopbetafunctionsforg&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;xtraandtheMSSM-GUTspectrum,theone-loopbetafunctionsforg2L, g&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;ndtheMSSM-GUTspectrum,theone-loopbetafunctionsforg2L, g2Rand&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;dtheMSSM-GUTspectrum,theone-loopbetafunctionsforg2L, g2Randg&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;le running down upto the conventional MSSM GUT-scale MU≈2×10&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;17&quot;,
+    &quot;context&quot;: &quot;niﬁcationatMUandthestring-uniﬁcationofG(2, 2, 4)atMst≈4 × 10&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;onetheconventionalvaluesofMU≈2 × 10&quot;
+  },
+  {
+    &quot;page&quot;: 25,
+    &quot;mark&quot;: &quot;17&quot;,
+    &quot;context&quot;: &quot;onetheconventionalvaluesofMU≈2 × 1016GeVandMst≈4 × 10&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Handone(2,&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;extra,togetherwithone(1,&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;couplinguniﬁcationatMU≈2 × 10&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;giveGUT-scalemassestothed&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;giveGUT-scalemassestothedcandd&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;S&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;H.(1,&quot;
+  },
+  {
+    &quot;page&quot;: 26,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;H.(1,&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;34&quot;,
+    &quot;context&quot;: &quot;estimatedlifetimes∼10&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;ﬂavorstructurethatthebranchingratiosforprotondecayingviae+π&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;rstructurethatthebranchingratiosforprotondecayingviae+π0,µ+π&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;cturethatthebranchingratiosforprotondecayingviae+π0,µ+π0,e+K&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;thatthebranchingratiosforprotondecayingviae+π0,µ+π0,e+K0,µ+K&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;35&quot;,
+    &quot;context&quot;: &quot;or (c) to d = 6 proton decays with an estimated lifetime ∼10&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;14&quot;,
+    &quot;context&quot;: &quot;scaleMc∼10&quot;
+  },
+  {
+    &quot;page&quot;: 28,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;scaleMc∼1014GeV)withthenovelfeaturethattheµ+K&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;SO(10)symmetrytoSU(3)&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;H⟩to SU(3)&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;⟨10H⟩and that of the EW doublet of the down-type in ⟨16&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;c)+(2L, 2R, 15&quot;
+  },
+  {
+    &quot;page&quot;: 30,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;126H= {∆L= (3L, 1R, 10&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;both to break G(2, 2, 4) to SU(3)&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;the one hand, and accounting for features such as m&quot;
+  },
+  {
+    &quot;page&quot;: 32,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;µ̸= m&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;\u0002h2316216310H(S/M) + a2316216310H(45H/M ′)(S/M)&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;H(16H/M ′′)(S/M)&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;H(16H/M ′′)(S/M)q&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;+ g2316216316&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;h2216216210H(S/M)&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;h2216216210H(S/M)2+ g2216216216&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;H(16H/M ′′)(S/M)&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;H(16H/M ′′)(S/M)q+1&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;q&quot;,
+    &quot;context&quot;: &quot;H(16H/M ′′)(S/M)&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;H(16H/M ′′)(S/M)q+2 + a&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;H(16H/M ′′)(S/M)q+2 + a12&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;H(16H/M ′′)(S/M)q+2 + a1216&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;H(16H/M ′′)(S/M)q+2 + a12161&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;H(16H/M ′′)(S/M)q+2 + a1216116&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;H(16H/M ′′)(S/M)q+2 + a12161162&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;p&quot;,
+    &quot;context&quot;: &quot;H(16H/M ′′)(S/M)q+2 + a1216116210H(45H/M ′)(S/M)&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;H(16H/M ′′)(S/M)q+2 + a1216116210H(45H/M ′)(S/M)p+2&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;g1216116216&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;SU(2)L-doubletcomponentin16H(denotedby16&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;M&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;M&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;M&quot;
+  },
+  {
+    &quot;page&quot;: 33,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;M&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;ν, and the same ηoccurs in M&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;ν, and the same ηoccurs in Mdand M&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;l&quot;,
+    &quot;context&quot;: &quot;νandM&quot;
+  },
+  {
+    &quot;page&quot;: 34,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;oforderϵ&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;|z|∼(⟨S/M⟩)&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;|z|∼(⟨S/M⟩)2∼10−2(1to1/2),|x|∼(⟨S/M⟩)&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(not shown) is ∼(⟨S/M⟩)&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;not shown) is ∼(⟨S/M⟩)2and its magnitude is taken to be &lt; |y&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;(notshown)is∼(⟨S/M⟩)&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;theparameters(σ, η, ϵ, ϵ′, η′, M&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;u, M&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;y&quot;,
+    &quot;context&quot;: &quot;D,and&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;M&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;u≈m&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;M&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;D≈m&quot;
+  },
+  {
+    &quot;page&quot;: 35,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;D≈mb(MU) ≈1.&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;τ(1 −8ϵ&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;τ(1 −8ϵ2) ⇒m&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;τ(1 −8ϵ2) ⇒mb(m&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆m&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆m&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;31≈m(ν&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Thus[123],sin&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;994&quot;,
+    &quot;context&quot;: &quot;23≈0.&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;thashowever,beennoted[111]thatnon-seesawcontribution,e.g.toν&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;R,thatyields&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(1 −few) × 10−3eV; thus∆m&quot;
+  },
+  {
+    &quot;page&quot;: 36,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;21≈7 × 10−5 eV&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;TheMajoranamassesoftheRHneutrinos(Ni≡ν&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;15&quot;,
+    &quot;context&quot;: &quot;MR≈10&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;|y&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;|y2|M3≈(3 × 10&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;|x −z&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;|x −z2|M3∼(1/4-2)10−5M3∼10&quot;
+  },
+  {
+    &quot;page&quot;: 37,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;wherey≈−1/18andx∼z&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;32|∼=|∆m&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;thetwoindependent(mass)&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;thetwoindependent(mass)2-diﬀerencesof:|∆m&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;31|≡∆m&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Atm≈(1/20 eV)&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;solar∼= (1/115 eV)&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;23&quot;,
+    &quot;context&quot;: &quot;solar∼= (1/115 eV)2,andthethreeoscillationanglesof:θ&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;∼= (1/115 eV)2,andthethreeoscillationanglesof:θ23≈π/4(within&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆m&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;21≡∆m&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;D)&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;18&quot;,
+    &quot;context&quot;: &quot;(which,ingeneral,canvaryfromthestringorPlanckscale∼10&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;symmetry,andistiedtotheuniﬁcation-scale(MU∼2 × 10&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;RandtheDiracmass&quot;
+  },
+  {
+    &quot;page&quot;: 38,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;uniﬁcation-scale∼2 × 10&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;allofwhichpertaintophysicsattrulyhighenergies(∼10&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;thelow-energysymmetrySU(3)&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;33&quot;,
+    &quot;context&quot;: &quot;MR=f&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;15&quot;,
+    &quot;context&quot;: &quot;≈(10&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;where I have put ⟨16H⟩≈MU≈2×10&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;17&quot;,
+    &quot;context&quot;: &quot;where I have put ⟨16H⟩≈MU≈2×1016GeV, M≈Mstring≈4×10&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;15&quot;,
+    &quot;context&quot;: &quot;centrally expected value of MR of about 10&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;Lwith&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;Lwithamass&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;L) ≈m(ντ)&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;m(ν3) ≈B&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Dirac)&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ect,representingmixing)andisgivenbyB= (σ + 3ϵ)(σ + 3ϵ −2y)/y&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ofsin&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;994&quot;,
+    &quot;context&quot;: &quot;23≈0.&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(2.9)(120GeV)&quot;
+  },
+  {
+    &quot;page&quot;: 39,
+    &quot;mark&quot;: &quot;15&quot;,
+    &quot;context&quot;: &quot;10&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;ahierarchicalspectrumofneutrino-masses:m(ν&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;ahierarchicalspectrumofneutrino-masses:m(ν1)&lt;∼m(ν&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;ierarchicalspectrumofneutrino-masses:m(ν1)&lt;∼m(ν2) ∼(1/10)m(ν&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆m&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;|∆m&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;31| ≈m(ν&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆m&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;i&quot;,
+    &quot;context&quot;: &quot;introducetheνR’s.Evenifonedidintroduceν&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;17&quot;,
+    &quot;context&quot;: &quot;singletsofSU(5),canwellbeashighasthestringscale∼4 × 10&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;t&quot;,
+    &quot;context&quot;: &quot;Dirac) ≈m&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;Dirac) ≈mt(MX) and&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;b&quot;,
+    &quot;context&quot;: &quot;Dirac) ≈mt(MX) and m&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆m&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆m&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;|∆m&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;21≈m(ν&quot;
+  },
+  {
+    &quot;page&quot;: 40,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;scales — MU≈2×10&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;thermalequilibriuminthetemperaturerangeofabout10&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;amass≈10&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;followingreheating(TRH≈few × 10&quot;
+  },
+  {
+    &quot;page&quot;: 41,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;the inﬂaton24(with TRHin this case being about 10&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;M&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;mass-matrices(seeRef.[131]).Notethattheparametersσ,ϵ,yand(M&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;s(forthepresentcaseofthermalleptogenesis),wehaveputM1≈4 × 10&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;andM2≈2 × 10&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;Inthiscase,forM1≈4 × 10&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;9&quot;,
+    &quot;context&quot;: &quot;×10&quot;
+  },
+  {
+    &quot;page&quot;: 42,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;eff=λ ˆS(ΦΦ −M&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;2λM, where M=&lt; (1, 2, 4)H&gt;≈2×10&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;2λM, where M=&lt; (1, 2, 4)H&gt;≈2×1016GeV; TRH≈(1/7)(ΓinflMPl)&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;1&quot;,
+    &quot;context&quot;: &quot;(1/7)(M1/M)(minflMPl/8π)&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;plausiblerange(10−5−10−6),wegetminfl≈3 × (10&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;11&quot;,
+    &quot;context&quot;: &quot;plausiblerange(10−5−10−6),wegetminfl≈3 × (1010−10&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;temperature(seebelow).TakingM1≈(4/3 −2/3) × 10&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;perature(seebelow).TakingM1≈(4/3 −2/3) × 1010GeVandM2≈2 × 10&quot;
+  },
+  {
+    &quot;page&quot;: 43,
+    &quot;mark&quot;: &quot;7&quot;,
+    &quot;context&quot;: &quot;(1/3 −1/6),andwithTRHbeingaslowas10&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;Figure3:Thestandardd=5protondecayoperator.The&quot;
+  },
+  {
+    &quot;page&quot;: 44,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;Figure3:Thestandardd=5protondecayoperator.TheeH&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;0.012 GeV&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;30&quot;,
+    &quot;context&quot;: &quot;d=6(p →e+π◦) ≃(1.&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;35&quot;,
+    &quot;context&quot;: &quot;d=6(p →e+π◦) ≃(1.30 × 10&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;(MX/10&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;4&quot;,
+    &quot;context&quot;: &quot;(MX/1016GeV)&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;X/4πdenotesthe(X, Y )-bosoncouplingatMX; |αH|≃0.012 GeV&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;g&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;decayoperator;thefunctionf(p)=4 + (1 + 1/(1 + p&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;decayoperator;thefunctionf(p)=4 + (1 + 1/(1 + p2))&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;MX.Oftenin theliterature,a value of MX= MU≈2 × 10&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;33&quot;,
+    &quot;context&quot;: &quot;MX= MUeither way, one would obtain:Γ−1(p →e+π◦)estimated∼(10&quot;
+  },
+  {
+    &quot;page&quot;: 45,
+    &quot;mark&quot;: &quot;37&quot;,
+    &quot;context&quot;: &quot;10&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;νπ+modes,butinallcasestohighlysuppressede+π&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;νπ+modes,butinallcasestohighlysuppressede+π0,e+K&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;νπ+modes,butinallcasestohighlysuppressede+π0,e+K0andevenµ+K&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∼[mu/mcsin&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;[ Γ(µ+K&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;A&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Ad=5(p →νK+)std ∞α&quot;
+  },
+  {
+    &quot;page&quot;: 46,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;W/m&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;SUSYSU(5))=MH&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;M(SO(10)) = Meﬀ≈M&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;10&quot;,
+    &quot;context&quot;: &quot;GUT/M&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;19&quot;,
+    &quot;context&quot;: &quot;weexpectM=Meﬀtobeashighas∼10&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;20&quot;,
+    &quot;context&quot;: &quot;weexpectM=Meﬀtobeashighas∼1019−10&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;32&quot;,
+    &quot;context&quot;: &quot;,and they can plausibly lead to lifetimes in the range of 10&quot;
+  },
+  {
+    &quot;page&quot;: 47,
+    &quot;mark&quot;: &quot;35&quot;,
+    &quot;context&quot;: &quot;they can plausibly lead to lifetimes in the range of 1032−10&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;W∼(800−1200) GeVand&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;W∼(800−1200) GeVandm&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;g&quot;,
+    &quot;context&quot;: &quot;W∼(800−1200) GeVandme&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;5&quot;,
+    &quot;context&quot;: &quot;W∼(800−1200) GeVandmeg∼(2.&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;31&quot;,
+    &quot;context&quot;: &quot;Γ−1(p →ντK+)new d=5≈[(5 × 10&quot;
+  },
+  {
+    &quot;page&quot;: 48,
+    &quot;mark&quot;: &quot;35&quot;,
+    &quot;context&quot;: &quot;Γ−1(p →ντK+)new d=5≈[(5 × 1031) −10&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;MXtoliebelowtheuniﬁcationscaleMU≃2 × 10&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;(1.5−1.7) × 10&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;35&quot;,
+    &quot;context&quot;: &quot;wellbeashighas≈(5−10) × 10&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;34&quot;,
+    &quot;context&quot;: &quot;≈(fewto 10) × 10&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Itshouldbestressed,however,thatthee+π&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;SUSYspectrum.Ishouldalsomentionthatthee+π&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;reasons,intensifying the search for the e+π&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;35&quot;,
+    &quot;context&quot;: &quot;×10&quot;
+  },
+  {
+    &quot;page&quot;: 49,
+    &quot;mark&quot;: &quot;36&quot;,
+    &quot;context&quot;: &quot;inanext-generationprotondecaydetectorand,ifneedbe,tothatof10&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;Meﬀ∝KSUSY[10&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Eq.(32),atheoreticalupperlimitonMXandtherebyonΓ−1(p→e+π&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;empiricallowerlimitonΓ−1(p→e+π&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;for proton decaying via both the e+π&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;34&quot;,
+    &quot;context&quot;: &quot;1.6 × 10&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Γ−1(p →e+π&quot;
+  },
+  {
+    &quot;page&quot;: 51,
+    &quot;mark&quot;: &quot;33&quot;,
+    &quot;context&quot;: &quot;6.6 × 10&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;h&quot;,
+    &quot;context&quot;: &quot;∂(ln m&quot;
+  },
+  {
+    &quot;page&quot;: 52,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;thee+π&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;Γ−1(p →e+π&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;34&quot;,
+    &quot;context&quot;: &quot;Γ−1(p →e+π0)Theory&lt;∼(2 −10) × 10&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;34&quot;,
+    &quot;context&quot;: &quot;Γ−1(p →νK+)Theory&lt;∼(1 −8) × 10&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;energies∼10&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;34&quot;,
+    &quot;context&quot;: &quot;)If p →νK+decay mode is seen with an inverse decay rate ∼(10&quot;
+  },
+  {
+    &quot;page&quot;: 53,
+    &quot;mark&quot;: &quot;35&quot;,
+    &quot;context&quot;: &quot;ode is seen with an inverse decay rate ∼(1034to (a few) × 10&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;ouldmeanthatfundamentalphysicsatintermediatescales≪MU≈2 × 10&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;36&quot;,
+    &quot;context&quot;: &quot;(iv)Ifp→e+π◦decayisseenwithadecentinverserate(&lt;∼10&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;36&quot;,
+    &quot;context&quot;: &quot;highas,(say)(10&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;37&quot;,
+    &quot;context&quot;: &quot;highas,(say)(1036-even10&quot;
+  },
+  {
+    &quot;page&quot;: 54,
+    &quot;mark&quot;: &quot;35&quot;,
+    &quot;context&quot;: &quot;rate&lt;∼10&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;tothee+π&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆m&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆m&quot;
+  },
+  {
+    &quot;page&quot;: 55,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;2×10&quot;
+  },
+  {
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆m&quot;
+  },
+  {
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;atm≈1/20 eV;(vi)&quot;
+  },
+  {
+    &quot;page&quot;: 56,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;23≈π/4with&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;SU(2)L × U(1)Y × SU(3)&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;(Ref.[6]),FritzschandGell-MannalsonotedthepossibilityofSU(3)&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;alternative to thecase of spontaneously broken SU(3)&quot;
+  },
+  {
+    &quot;page&quot;: 61,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;itethepresenceoffundamentalscalars,thatareneededtobreakSU(3)&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;haveaVEVofEWscalealongthe“˜νL”directionduetoitsmixingwith10&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;theHdofMSSMisamixtureof10&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;Hand&quot;
+  },
+  {
+    &quot;page&quot;: 69,
+    &quot;mark&quot;: &quot;d&quot;,
+    &quot;context&quot;: &quot;Hand16&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;form:W12⊃κ1216116216H16H10H10H/M&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;oftheformm&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;e&quot;,
+    &quot;context&quot;: &quot;12ν&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;L,with&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;L,withastrengthgivenby&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;L,withastrengthgivenbym&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;12&quot;,
+    &quot;context&quot;: &quot;12≈κ&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;12≈κ12⟨16H⟩2(175GeV)&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;3&quot;,
+    &quot;context&quot;: &quot;12≈κ12⟨16H⟩2(175GeV)2/M&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;16&quot;,
+    &quot;context&quot;: &quot;1.5-6) × 10−3eV,for⟨16H⟩≈(1-2)MGUTandκ12∼1,ifMeﬀ∼MGUT≈2 × 10&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;22≈(8 −10) × 10−3eV,&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;22≈(8 −10) × 10−3eV,m&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;m&quot;,
+    &quot;context&quot;: &quot;12≈3 × 10−3eVasaboveand&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;12≈3 × 10−3eVasaboveandm&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;0&quot;,
+    &quot;context&quot;: &quot;m&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;21≈(6 −8) × 10−5eV&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;∆m&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;a&quot;,
+    &quot;context&quot;: &quot;2≈33◦.(ForreviewandnotationsseeRefs.[125]and[126]).Likewise,&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;Oct.2016.Bestﬁtvaluesquotedhereare:sin&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;1.2◦, θ13≈8.45◦± 0.15◦.Thebestﬁt(fornormalordering)yields:∆m&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(2.55 ± 0.05) × 10−3eV&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(2.55 ± 0.05) × 10−3eV2; ∆m&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;45&quot;,
+    &quot;context&quot;: &quot;21= (7.&quot;
+  },
+  {
+    &quot;page&quot;: 70,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;21= (7.45 ± 0.25) × 10−5 eV&quot;
+  },
+  {
+    &quot;page&quot;: 71,
+    &quot;mark&quot;: &quot;c&quot;,
+    &quot;context&quot;: &quot;supersymmetricSU(4)&quot;
+  },
+  {
+    &quot;page&quot;: 72,
+    &quot;mark&quot;: &quot;2&quot;,
+    &quot;context&quot;: &quot;(fij)νgklK⟨16H⟩⟨16H⟩/(M&quot;
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

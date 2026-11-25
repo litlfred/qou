@@ -1,0 +1,543 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "13116841v1",
+  "blocks": [
+    {
+      "id": "library/13116841v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Contents",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-contents.md",
+      "narrative": null,
+      "content": "Introduction\n2\nI. Uq(su(2)) in a nutshell\n4\nA. Deﬁnition of Uq(su(2))\n4\nB. q-harmonic oscillators and the Schwinger-Jordan trick\n7\nII. Tensor operators for Uq(su(2))\n7\nA. Deﬁnition and Wigner-Eckart theorem\n7\nB. Product of tensor operators: scalar product, vector product and triple product\n8\n1. Scalar product\n9\n2. Vector product\n10\nC. Tensor products of tensor operators\n10\nIII. Realization of tensor operators of rank 1/2 and 1 for Uq(su(2))\n11\nA. Rank 1/2 tensor operators\n11\nB. Rank 1 tensor operators\n13\nIV. Observables for the intertwiner space\n16\nA. General construction and properties of int",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/13116841v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Observables in Loop Quantum Gravity with a cosmological constant\nMa¨ıt´e Dupuis1, ∗and Florian Girelli2, 1, †\n1University Erlangen-Nuremberg, Institute for Theoretical Physics III, Erlangen, Germany\n2Department of Applied Mathematics, University of Waterloo, Waterloo, Ontario, Canada\nAn open issue in loop quantum gravity (LQG) is the introduction of a non-vanishing cosmological\nconstant Λ. In 3d, Chern-Simons theory provides some guiding lines: Λ appears in the quantum\ndeformation of the gauge group. The Turaev-Viro model, which is an example of spin foam model is\nalso deﬁned in terms of a qua",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/13116841v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-introduction.md",
+      "narrative": null,
+      "content": "Background:\nThere are diﬀerent proposals to understand the nature of the cosmological constant Λ. It can be\ninterpreted as encoding some type of vacuum energy (see [1–3] and references therein) or as a coupling constant just\nlike the Newton’s constant G. The loop quantum gravity and spinfoam frameworks use the latter interpretation which\nis motivated by the seminal works of Witten [4], and later of Fock and Rosly [5], and Alekseev, Grosse, Schomerus\n[6, 7]. Indeed, in a 3d space-time, one can rewrite General Relativity with a (possibly zero) cosmological constant as\na Chern-Simons gauge theory",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/13116841v1/blocks/lem-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "lem-sec-003-01.md",
+      "narrative": null,
+      "content": "1. Let C ∈Uq(su(2)) invariant under the adjoint action, then C commutes with the generators Jσ, σ = +, −, z. Conversely, if C ∈Uq(su(2)) commutes with Jσ, then it is invariant under the adjoint action. B.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/13116841v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "I Uq(su(2)) in a nutshell",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-i-uqsu2-in-a-nutshell.md",
+      "narrative": null,
+      "content": "A.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/13116841v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Definition of Uq(su(2))",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-a-definition-of-uqsu2.md",
+      "narrative": null,
+      "content": "In this section, we review the salient features of Uq(su(2)), which we shall extensively use, to ﬁx the notations. We\nconsider Uq(su(2)), the q-deformation of the universal algebra of SU(2), with q real, generated by Jz, J+, J−. We\nhave the commutation relations\n[Jz, J±] = ±J±,\n[J+, J−] = [2Jz], with [Jz] = qJz/2 −q−Jz/2\nq1/2 −q−1/2 .\n(1)\nFor q →1 the right-hand side of the second equation of (1) approaches 2Jz and we thus recover the usual Lie algebra\nsu(2). Uq(su(2)) is equipped with a structure of quasitriangular Hopf algebra (∆, ϵ, S, R) [9, 39, 40].\n• The coproduct ∆: Uq(su(2)) →Uq(su(2))",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/13116841v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B q-harmonic oscillators and the Schwinger-Jordan trick",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-b-q-harmonic-oscillators-and-the-schwinger-jorda.md",
+      "narrative": null,
+      "content": "To account for the deformation, we consider a pair of q-harmonic oscillators, comprising annihilation operators\nαi = a, b, creation operators α†\ni = a†, b† and number operators Nαi = Na, Nb, to construct representations of\nUq(su(2)). There are deﬁned as follows,\n[αi, αj] = [αi, α†\nj] = 0, with i̸ = j,\n[αi, α†\ni]q± 1\n2 = q\n∓Nαi\n2\n,\n[Nαi, α†\nj] = δijα†\ni,\n[Nαi, αj] = −δijαi,\n(16)\nwhere [A, B]qn ≡AB −qnBA. Let us point out that the operator α†\niαi is not the number operator Nαi but rather is\nequal to [Nαi]. From (16), we have also that\nqNαi/2α†\ni = q1/2α†\niqNαi/2,\nqNαi/2αi = q−1/2αiqNαi/2,\nα†\niαi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/13116841v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "II Tensor operators for Uq(su(2))",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-ii-tensor-operators-for-uqsu2.md",
+      "narrative": null,
+      "content": "We now introduce the concept of tensor operators. The general deﬁnition of tensor operators for a general quasitri-\nangular Hopf algebra has been given in [34]. We use their formalism in the speciﬁc case of Uq(su(2)). These objects\nare the building blocks of our construction of observables for LQG deﬁned with Uq(su(2)) as gauge group. We show\nin section IV that the use of tensor operators allows us to build any observables associated to an intertwiner (of a\nquantum or a classical group) in a straightforward manner.\nA.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/13116841v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Definition and Wigner-Eckart theorem",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-006-a-definition-and-wigner-eckart-theorem.md",
+      "narrative": null,
+      "content": "Deﬁnition II.1. Tensor operators [34].\nLet V and W be two representations of Uq(su(2)), not necessarily irreducible, and L(W) the set of linear maps on W.\nA tensor operator t is deﬁned as the intertwinning linear map\nt : V\n→L(W)\nx →t(x)\n(22)\nIf we take V ≡V j the irreducible representation of rank j spanned by vectors |j, m⟩, then we note t(|j, m⟩) ≡tj\nm.\ntj =\n\u0000tj\nm\n\u0001\nm=−j..j is called a tensor operator of rank j.\nA tensor operator being an intertwining map for the action of Uq(su(2)) means that tj\nm transforms at the same\ntime as an operator under the adjoint action of Uq(su(2)) and as a vect",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/13116841v1/blocks/thm-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "thm-sec-006-01.md",
+      "narrative": null,
+      "content": "2. Wigner-Eckart theorem [34]: The matrix elements ⟨j1, m1|tj m|j2, m2⟩are proportional to the CG coeﬃcients. The constant of proportionality N j j1j2 is a function of j1, j2 and j only. ⟨j1, m1|tj m|j2, m2⟩= N j j1j2 qC j j2 j1 mm2m1 . (24) The proof of the theorem follows from the constraints (23) written for the matrix elements of the tensor operator. These constraints essentially implement the recurrence relations which deﬁne the CG coeﬃcients, as given in (13). In order to have at least a non-zero matrix element, the j’s in the CG coeﬃcients must satisfy the triangular condition. This mea",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/13116841v1/blocks/lem-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "lem-sec-007-01.md",
+      "narrative": null,
+      "content": "3. Product of tensor operators [34]. Let t : V →L(W) and ˜t : V ′ →L(W) be two tensor operators then t˜t : V ⊗V ′ →L(W) (x, y) →t(x)˜t(y) (25) is still a tensor operator. 2 As always we can perform the limit q →1 to recover the tensor operators for su(2). In this case we have [Jz, tj m] = m tj m, [J±, tj m] = p (j ∓m)(j ± m + 1) tj m±1. This transformation is the inﬁnitesimal version of g tj m g−1 = P m′ ρj mm′(g)tj m′, g ∈SU(2), where ρ is a representation of SU(2). For example, we can decompose a given tensor operator in terms of two other tensor operators, using the CG coeﬃcients. tj m = X",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/13116841v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B Product of tensor operators: scalar product, vector product and triple product",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-007-b-product-of-tensor-operators-scalar-product-vec.md",
+      "narrative": null,
+      "content": "We would like now to consider the analogue of (11) and (12) in terms of tensor operators.\nLemma II.3. Product of tensor operators [34].\nLet t : V →L(W) and ˜t : V ′ →L(W) be two tensor operators then\nt˜t : V ⊗V ′ →L(W)\n(x, y) →t(x)˜t(y)\n(25)\nis still a tensor operator.\n2 As always we can perform the limit q →1 to recover the tensor operators for su(2). In this case we have\n[Jz, tj\nm] = m tj\nm,\n[J±, tj\nm] =\np\n(j ∓m)(j ± m + 1) tj\nm±1.\nThis transformation is the inﬁnitesimal version of g tj\nm g−1 = P\nm′ ρj\nmm′(g)tj\nm′, g ∈SU(2), where ρ is a representation of SU(2).\nFor example, we can decompose",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/13116841v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Scalar product",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-008-1-scalar-product.md",
+      "narrative": null,
+      "content": "1.\nScalar product\nWe call “scalar product” of two tensor operators, the projection of these operators on the trivial representation.\nIndeed, considering two tensor operators tj1 and ˜tj2, we can combine them using the CG coeﬃcients to build a tensor\noperator of rank 0, i.e. a scalar operator.\ntj1 · ˜tj2 ≡\np\n[2j1 + 1]\nX\nm1+m2=0\nqC j1 j2 0\nm1m20 tj1\nm1 ˜tj2\nm2 = δj1,j2\nX\nm\n(−1)j1−mq\nm\n2 tj1\nm ˜tj1\n−m,\n(27)\nIn this sense, we can interpret these quantum Clebsch-Gordan coeﬃcients as encoding a (non-degenerated) bilinear\nform B(j) deﬁning a scalar product.\nB(j)(v, w) = g(j)\nmnvmwn = v · w,\ng(j)\nmn =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/13116841v1/blocks/lem-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "lem-sec-010-01.md",
+      "narrative": null,
+      "content": "4. [34] If t is a tensor operator of rank j then (1)t = t ⊗1 and (2)t = ψR(t ⊗1)ψ−1 R = R21(1 ⊗t)R−1 are tensor operators of rank j We extend the construction to an arbitrary number of tensor products5. (i)t = Rii−1Rii−2..Ri 1(1 ⊗1 ⊗.. ⊗1 ⊗t)R−1 i 1 ..R−1 ii−2R−1 ii−1 ⊗1 ⊗.. ⊗1. (41) By abuse of notation, we say that (i)t acts on the ith Hilbert space, even though it is not really the case when q̸ = 1. Note also that if q = 1, tensor operators which act on diﬀerent Hilbert spaces will commute, but when q̸ = 1, this will not be the case in general due to the presence of the R-matrices. When we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/13116841v1/blocks/lem-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "lem-sec-010-02.md",
+      "narrative": null,
+      "content": "5. The scalar product of the tensor operators (i)tj1 and (i)˜tj2 can be reduced to (i)tj1 · (i)˜tj2 = 1 ⊗..1 ⊗tj1 · ˜tj2 ⊗1 ⊗.. ⊗1. (42) This lemma simply follows from (41). III.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/13116841v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Vector product",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-009-2-vector-product.md",
+      "narrative": null,
+      "content": "Vector product\nThe notion of “vector product” is deﬁned by associating a vector operator ˆt1 to two vector operators t1, ˜t1 using\nthe CG coeﬃcients,\nˆt1\nm = (t1 ∧˜t1)m ≡\nX\nm1,m2\nqC 1\n1 1\nm1m2m t1\nm1 ˜t1\nm2.\n(32)\nUsing their value (recalled in the appendix B), we obtain explicitly\nˆt1 =\ns\n[2]\n[4]\n\u0010\nq1/2t1\n1˜t1\n0 −q−1/2t1\n0˜t1\n1\n\u0011\n,\nˆt−1 =\ns\n[2]\n[4]\n\u0010\nq1/2t1\n0˜t1\n−1 −q−1/2t1\n−1˜t1\n0\n\u0011\n,\nˆt0 =\ns\n[2]\n[4]\n\u0010\nt1\n1˜t1\n−1 −t1\n−1˜t1\n1 +\n\u0010\nq\n1\n2 −q−1\n2\n\u0011\nt1\n0˜t1\n0\n\u0011\n.\nAs we shall see when giving a realization of the vector operators, this vector product is related to the commutation\nrelations of the su(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/13116841v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "C Tensor products of tensor operators",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-010-c-tensor-products-of-tensor-operators.md",
+      "narrative": null,
+      "content": "The tensor product of tensor operators necessitates more attention. Indeed if t ∈L(W) and ˜t ∈L(W ′) are tensor\noperators for Uq(su(2)), then in general t ⊗˜t will not be a tensor operator for Uq(su(2)). To see this, ﬁrst we recall\nthat we need the coproduct to deﬁne the action of the generators Jα on |j1m1, j2m2⟩. For example,\n∆J+|j1m1, j2m2⟩=\n\u0000J+ ⊗K + K−1 ⊗J+\n\u0001\n|j1m1, j2m2⟩,\nK ≡q\nJz\n2 .\n(35)\nIf t ⊗˜t is a (linear) module homomorphism, we have then\n\u0000t ⊗˜t\n\u0001\n(∆J+|j1m1, j2m2⟩) =\n\u0000t ⊗˜t\n\u0001\n(J+ ⊗K + K−1 ⊗J+|j1m1, j2m2⟩)\n= (J+ ▷tj1\nm1) ⊗(K ▷˜tj2\nm2) + (K−1 ▷tj1\nm1) ⊗(J+ ▷˜tj2\nm2).\n(36)\nOn the other",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/13116841v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "III Realization of tensor operators of rank 1/2 and 1 for Uq(su(2))",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-011-iii-realization-of-tensor-operators-of-rank-12-a.md",
+      "narrative": null,
+      "content": "The abstract theory of tensor operators has been summarized above. We want to illustrate the construction by\ngiving some realization of these tensor operators. We know that any representation V j of Uq(su(2)) can be recovered\nfrom the fundamental spinor representation 1\n2 and the CG coeﬃcients. In the same way, the most important operators\nto identify are the spinor operators. If we know them, we can concatenate them using the CG coeﬃcients to obtain\nany other tensor operators. We ﬁrst present the realization of the spinor operators using q-harmonic oscillators and\nthen present the vector oper",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/13116841v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Rank 1/2 tensor operators",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-012-a-rank-12-tensor-operators.md",
+      "narrative": null,
+      "content": "Rank 1\n2 tensor operators (i.e. spinor operators) t\n1\n2m should be solution of the following constraints.\nJ± ▷t\n1\n2\n∓= t\n1\n2\n±,\nJ± ▷t\n1\n2\n± = 0,\nJz ▷t\n1\n2\n± = ±1\n2t\n1\n2\n±.\n(43)\nUsing the Schwinger-Jordan realization of Uq(su(2)) generators given in (19), we can solve these equations and we get\ntwo solutions T\n1\n2 and ˜T\n1\n2 satisfying (43).\nT\n1\n2 =\n \nA†\nB†\n!\n=\n \na†qNa/4\nb†q(2Na+Nb)/4\n!\n,\n˜T\n1\n2 =\n \n˜B\n˜A\n!\n=\n \nq(2Na+Nb+1)/4b\n−q(Na−1)/4a\n!\n.\n(44)\nWe recall that a and b are q-harmonic oscillators which satisfy the modiﬁed commutation relations (16). We can check\nthat T\n1\n2 and ˜T\n1\n2 are Hermiti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/13116841v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B Rank 1 tensor operators",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "../sections/sec-013-b-rank-1-tensor-operators.md",
+      "narrative": null,
+      "content": "Rank 1 tensor operators (i.e. vector operator) for Uq(su(2)) have been identiﬁed [34]. These operators are important\nas in the LQG context, they will encode the notion of ﬂux operator. We explicitly construct them and provide their\ncommutation relations, when they act on diﬀerent legs, or not.\nWe can construct them using the spinor operators T\n1\n2 , ˜T\n1\n2 and the CG coeﬃcients.\nt1\nm =\nX\nm1,m2\nqC\n1\n2\n1\n2 1\nm1m2m T\n1\n2\nm1 ˜T\n1\n2\nm2.\n(51)\nUsing the explicit non-zero CG coeﬃcients given in the appendix B, we have that\nt1\n±1 = T\n1\n2\n± ˜T\n1\n2\n±,\nt1\n0 =\n1\np\n[2]\n\u0010\nq−1\n4 T\n1\n2\n+ ˜T\n1\n2\n−+ q\n1\n4 T\n1\n2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/13116841v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "IV Observables for the intertwiner space",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-014-iv-observables-for-the-intertwiner-space.md",
+      "narrative": null,
+      "content": "As emphasized in the introduction, we focus on the quantum group Uq(su(2)) with q real, which is relevant for 3d\nEuclidian gravity with Λ < 0 and the physical case, i.e. 4d Lorentzian gravity with Λ > 0.\nA.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/13116841v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A General construction and properties of intertwiner observables",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-015-a-general-construction-and-properties-of-intertw.md",
+      "narrative": null,
+      "content": "From now on, we consider the space of N-valent intertwiners with N legs ordered from 1 to N. Let’s consider n\ntensor operators (α)tJα of respective rank Jα, associated with the αth leg of the vertex, built from (41). To construct\nan observable, i.e. a scalar operator, we can use the same combination that would appear in the deﬁnition of an\nintertwiner built out from the vectors |Jα, mα⟩. Indeed, if |ιJ1..Jn⟩= P\nm cJ1..Jn\nm1..mn|J1m1, ..Jnmn⟩, then,\nIJ1..Jn =\nX\nmi\ncJ1..Jn\nm1..mn\n(1)tJ1\nm1.. (n)tJn\nmn\n(67)\nwill be a scalar operator. Like for intertwiners, the bivalent and trivalent ones are the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/13116841v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B Uq(u(n)) formalism for LQG defined over Uq(su(2))",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-016-b-uqun-formalism-for-lqg-defined-over-uqsu2.md",
+      "narrative": null,
+      "content": "We want to construct the ”smallest” observables. It is therefore natural to consider the observables built from\nthe scalar product of spinor operators (47). Since we have two types of spinor operators, we have diﬀerent possible\ncombinations.\nEαβ ≡−(α)T\n1\n2 ·(β) ˜T\n1\n2 ,\nG†\nαβ ≡−(α)T\n1\n2 ·(β) T\n1\n2\nFαβ ≡−(α) ˜T\n1\n2 ·(β) ˜T\n1\n2 .\n(82)\nNote that since the operators on diﬀerent legs do not commute, we could a priori choose a diﬀerent order of T and ˜T\nin the deﬁnition of Eαβ. One can show however that choosing the order leads to the same operator modulo a constant\nfactor. This factor comes from th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/13116841v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "V Geometric interpretation of some observables in the LQG context",
+      "pageStart": 20,
+      "pageEnd": 24,
+      "target": "../sections/sec-017-v-geometric-interpretation-of-some-observables-i.md",
+      "narrative": null,
+      "content": "In LQG with Λ = 0, the intertwiner is understood as the fundamental chunk of quantum space. For a 2d space, it is\ndual to a face, whereas in 3d it is dual to a polyhedron. The intertwiner is invariant under the action of su(2), hence\nthe observables should be invariant under the adjoint action of su(2). We see that the use of tensor operators allows\nto construct in a direct manner such observables: we need to construct operators which transform as a scalar under\nthe adjoint action of su(2). We have seen in the previous section how this formalism can be extended to the quantum\ngroup case Uq(su(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/13116841v1/blocks/figure-img-p021-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../images/img-p021-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/13116841v1/blocks/figure-img-p021-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../images/img-p021-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/13116841v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outlook",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-018-outlook.md",
+      "narrative": null,
+      "content": "Summary:\nLet us summarize the main results of our paper. We have recalled the deﬁnition of tensor operators\nfor Uq(su(2)), with q real, which is the relevant case to study Euclidian 3d LQG with Λ < 0 and Lorentzian 3+1 LQG\nwith Λ > 0.\nWe have shown how they are the natural objects to construct observables for a Uq(su(2)) intertwiner.\nThese\noperators are the key to study LQG deﬁned in terms of a quantum group as they provide sets of operators that\ntransform well under the quantum group. We have generalized the U(n) formalism to the quantum group Uq(su(2)).\nThat is, we have shown how we can cons",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/13116841v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Hyperbolic cosine law",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-019-a-hyperbolic-cosine-law.md",
+      "narrative": null,
+      "content": "Consider the upper 2d hyperboloid H2\n+, embedded into R3, with curvature −R−2 = Λ, where R is the radius of\ncurvature.\nH2\n+ = {⃗x ∈R3, x1 > 0, xiηijxj = x2\n1 −x2\n2 −x2\n3 = |⃗x|2 = R2}.\n(A1)\nOn H2\n+, consider three points A, B, C and the geodesics joining them: we obtain an hyperbolic triangle. Without loss\nof generality, we can always assume that A sits at the origin of H2\n+, that is as a point of R3, it is given by the vector⃗\nA = (R, 0, 0). The points B and C are then obtained from⃗A by performing a boost Lc, Lb with respective rapidity c\nand b. Explicitly,⃗\nB = Lc⃗A,⃗\nC = Lb⃗A.\n(A2)\nAs a co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/13116841v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B Useful formulae",
+      "pageStart": 25,
+      "pageEnd": 29,
+      "target": "../sections/sec-020-b-useful-formulae.md",
+      "narrative": null,
+      "content": "These formulae are taken from the book [37].\na. q-Clebsch-Gordan An explicit expression of the g-Clebsch-Gordan in the van der Waerden form is given as\n\nqc JL Jad\nmymem\n\n“= Smncmay ting {2 It He -Datd2tI+ 1) + 3 (Grm2—d2™1) A (44 j9) (B1)\n\nx (ja tra]! — ma)! j2 + mal! i2 — ma}! + mL — m]![25 +1)? (B2)\n(-1)\"qr 2 Gi tie+d+1)\n\nx —— : : — — . (B38\n> [n}![i1 + J2 — 9 — me)! — my — n! [92 + mg — n![F — jo + m1 + n]![F — jr — m2 +n)! (88)\nwhere the triangle function A is given by\n1\nb—cH![a —b+ c}![-a + b+ c}!\\?\nA(abe) = [a+b —c]![a—b+c]![-a+b+¢ (B4)\n[jat+b+ct+l}!\nFor gq > 1 the q-Clebsch-Gordan coeff",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

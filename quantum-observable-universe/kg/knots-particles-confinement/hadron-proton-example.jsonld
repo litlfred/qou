@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-hadron-proton",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:hadron-proton",
+  "kind": "example",
+  "title": "The proton as a Borromean hadron",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-crossing-energy-trefoil"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-hadron",
+  "cites": [
+    "references/dgkmsv2013"
+  ],
+  "tags": [
+    "hadron",
+    "proton",
+    "borromean",
+    "example"
+  ],
+  "text": "hadron-proton-example.md",
+  "provenance": "authored"
+}

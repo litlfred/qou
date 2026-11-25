@@ -1,0 +1,84 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0405249v5/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Twisted homology of quantum SL (2)",
+  "contains": [
+    "library/arxiv-math-0405249v5/sections/sec-front-matter",
+    "library/arxiv-math-0405249v5/sections/sec-000",
+    "library/arxiv-math-0405249v5/sections/sec-001",
+    "library/arxiv-math-0405249v5/sections/sec-002",
+    "library/arxiv-math-0405249v5/sections/sec-003",
+    "library/arxiv-math-0405249v5/sections/sec-004",
+    "library/arxiv-math-0405249v5/sections/sec-005",
+    "library/arxiv-math-0405249v5/sections/sec-006",
+    "library/arxiv-math-0405249v5/sections/sec-007",
+    "library/arxiv-math-0405249v5/sections/sec-008",
+    "library/arxiv-math-0405249v5/sections/sec-009",
+    "library/arxiv-math-0405249v5/sections/sec-010",
+    "library/arxiv-math-0405249v5/sections/sec-011",
+    "library/arxiv-math-0405249v5/sections/sec-012",
+    "library/arxiv-math-0405249v5/sections/sec-013",
+    "library/arxiv-math-0405249v5/sections/sec-014",
+    "library/arxiv-math-0405249v5/sections/sec-015",
+    "library/arxiv-math-0405249v5/sections/sec-016",
+    "library/arxiv-math-0405249v5/sections/sec-017",
+    "library/arxiv-math-0405249v5/sections/sec-018",
+    "library/arxiv-math-0405249v5/sections/sec-019",
+    "library/arxiv-math-0405249v5/sections/sec-020",
+    "library/arxiv-math-0405249v5/sections/sec-021",
+    "library/arxiv-math-0405249v5/sections/sec-022"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Twisted homology of quantum SL (2) — We calculate the twisted Hochschild and cyclic homology (in the sense of Kustermans, Murphy and Tuset) of the coordinate algebra of the quan- tum SL(2) group\n\n**Twisted homology of quantum SL (2)**\n\n*Tom Hadfield∗1, Ulrich Krähmer2*\n\n28 pp, 24 sections.\n\n**Abstract.** We calculate the twisted Hochschild and cyclic homology (in the sense of Kustermans, Murphy and Tuset) of the coordinate algebra of the quan- tum SL(2) group relative to twisting automorphisms acting by rescaling the standard generators a, b, c, d. We discover a family of automorphisms for which the “twisted” Hochschild dimension coincides with the classical dimension of SL(2, C), thus avoiding the “dimension drop” in Hochschild homology seen for many quantum deformations. Strikingly, the simplest such automorphism is the canonical modular automorphism arising from the Haar functional. In addition, we identify the twisted cyclic cohomol- ogy classes corresponding to the three covariant diﬀerential calculi over quantum SU(2) discovered by Woronowicz.\n\n**Outline.** Front matter; Introduction; Twisted cyclic homology; motivation; twisted hochschild and cyclic homology; hochschild homology of hopf algebras; noncommutative koszul resolutions; Quantum SL(2); the hopf algebra A(SLq (2)); the haar functional; the automorphism group of A( SLq (2)); Twisted Hochschild homology of A( SLq (2)); a koszul resolution of A/ ker; Computation of HHn(A), n 3; Twisted cocycles defined by derivations; Twisted cyclic homology of A( SLq (2)); Case 1; Case 2",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0405249&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0405249v5",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0405249v5.pdf",
+    "source_sha256": "bc699482e5cd7679c881f01e2dd973253cebc2bccc86d8d4286b58075c571288",
+    "pages": 28,
+    "arxiv": {
+      "id": "math/0405249",
+      "version": "5",
+      "primary_class": null,
+      "stamp_date": "27 Jun 2005"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

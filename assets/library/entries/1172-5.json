@@ -1,0 +1,322 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "1172-5",
+  "blocks": [
+    {
+      "id": "library/1172-5/blocks/conj-sec-front-matter-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "Volume Conjecture, [9]",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "conj-sec-front-matter-01.md",
+      "narrative": null,
+      "content": "Let $J_{N}(K)$ be the $N$-colored Jones polynomial of a knot $K$ evaluated at $\\exp(\\frac{2\\pi\\sqrt{-1}}{N})$ . Then $\\lim_{Narrow\\infty}\\frac{\\log|J_{N}(I\\mathrm{f})|}{N}=\\frac{v_{3}}{2\\pi}||K||$, where $||K||$ is the Gromov norm (or the simplicial volume) of the complement of $K$ and $v_{3}$ is the hyperbolic volume of the regular ideal tetrahedron. Recent developments toward the Volume Conjecture can be found in [3, 14, 13, 8, 10]. It is natural to ask whether a similar formula holds for closed three-manifolds re- placing the colored Jones polynomial with the $\\mathrm{W}\\mathrm{i}\\mathrm{t}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1172-5/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "OPTIMISTIC CALCULATIONS ABOUT\nTHE\n$\\mathrm{W}\\mathrm{I}\\mathrm{T}\\mathrm{T}\\mathrm{E}\\mathrm{N}-\\mathrm{R}\\mathrm{E}\\mathrm{s}\\mathrm{H}\\mathrm{E}\\mathrm{T}\\mathrm{I}\\mathrm{K}\\mathrm{H}\\mathrm{I}\\mathrm{N}$-TURAEV INVARIANTS OF\nCLOSED THREE-MANIFOLDS OBTAINED FROM THE\nFIGURE-EIGHT KNOT\nBY INTEGRAL DEHN SURGERIES\n東京工業大学大学院理工学研究科\n村上斉(HITOSHI MURAKAMI)\nABSTRACT. I calculate optimistically asymptotic behaviors of the WRT $SU(2)$\ninvariants for the three-manifolds obtained from the ﬁgure-eight knot by p-\nsurgeries with $p=0,1,2,$\n$\\ldots,$ $10$ , from which one can extract volumes and the\nChern-Si",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1172-5/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "THE",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-2-the.md",
+      "narrative": null,
+      "content": "rithms of the WRT invariants of closed three-manifolds obtained from the ﬁgure-\neight knot by Dehn surgeries with integral coeﬃcients.\nI will follow Kashaev’s\ncalculation in [2] formally and optimistically, and deduce an analytic function with\ninteger parameter corresponding to the surgery coeﬃcient. The function turns out\nto describe not only the (simplicial) volume but also the Chern-Simons invariant of\nthe manifold. (J. Murakami told me to look at the Chern-Simons invariants after\nmy earlier calculations. See [10] for a similar relation between the Chern-Simons\ninvariants and the colored Jo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1172-5/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "AN OPTIMISTIC LIMIT",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-3-an-optimistic-limit.md",
+      "narrative": null,
+      "content": "Suppose that we are given a function $S(N)$ of $N$ by the following summation.\n(3.1)\n$S(N)=P(N)n2 \\sum_{n_{1},,..,n_{k}}.q^{Q+}L\\prod_{a=1}(q\\alpha)_{l_{a}}\\epsilon_{a}$ ,\nwhere $P(N)$ is a function of $N$ with polynomial growth,\n$\\epsilon_{a}=\\pm 1,$\n$l_{a}$ and\n$L$ are linear\nfunctions of\n$n_{1},$\n$n_{2},$\n$\\ldots,$\n$n_{k}$ (they do not depend on $N$ but may have constant terms),\n$Q= \\sum_{1\\leq i\\leq j\\leq k}\\gamma_{i}jn_{i}nj$ , and the summation runs over some range in\n$\\{(n_{1}, n_{2}, \\ldots, n_{k})|$\n$0\\leq n_{i}\\leq N-1(i=1,2, \\ldots, k)\\}$ . Note that\n$q= \\exp(\\frac{2\\pi\\sqrt{-1}}{N}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1172-5/blocks/rem-sec-001-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "rem-sec-001-01.md",
+      "narrative": null,
+      "content": "The term $- \\frac{\\pi^{2}}{6}$ in (3.3) appears so that $V(1,1, \\ldots, 1)=0$ since $\\mathrm{L}\\mathrm{i}_{2}(1)=\\frac{\\pi^{2}}{6}$ (see for example [6, (1.5)]). (I learned this from [11, \\S 5].)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1172-5/blocks/rem-sec-001-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "rem-sec-001-02.md",
+      "narrative": null,
+      "content": "Note that $V$ and $\\tilde{V}$ satisfy the same algebraic equations (3.5) but diﬀerent partial diﬀerential equations (3.4) and that the extra terms in (3.6) are necessary to choose an appropriate branch since $\\mathrm{L}\\mathrm{i}_{2}$ and $\\log$ are multivalued func- tions. (I learned this from T. Takata.)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1172-5/blocks/rem-sec-001-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "rem-sec-001-03.md",
+      "narrative": null,
+      "content": "An optimistic limit is not well deﬁned. There are many ambiguities both in choosing $I(N)$ (I did not say anything about the range of the summation in $S(N)$ and the contours in $I(N))$ and in choosing $(\\zeta_{1}, \\zeta_{2}, \\ldots, \\zeta_{k})$ .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1172-5/blocks/rem-sec-001-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "rem-sec-001-04.md",
+      "narrative": null,
+      "content": "Following Kashaev [2], the behavior of $S(N)$ for large $N$ may be approximated by $P(N)I(N)$ with suitably chosen contours. Moreover by using the saddle point method (see for example [7, \\S 7.2]) we see that $I(N)$ (and $S(N)$ ) behaves like $\\exp(\\frac{N}{2\\pi\\sqrt{-1}}\\mathrm{o}-\\lim\\frac{2\\pi\\sqrt{-1}\\log S(N)}{N}Narrow\\infty)$ for large $N$ if we choose a solu- tion $(\\zeta_{1}, \\zeta_{2}, \\ldots, \\zeta_{k})$ suitably. Even if this is not true I expect that there is a relation between an optimistic limit and the asymptotic behavior of $S(N)$ .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1172-5/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "DEHN SURGERY ALONG THE FIGURE-EIGHT KNOT",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-4-dehn-surgery-along-the-figure-eight-knot.md",
+      "narrative": null,
+      "content": "Put $k:=2,$\n$n_{1}:=n,$ $n_{2}:=m,$\n$z:=z_{1},$ $w:=z_{2},$ $Q:=pn^{2}/4-mn,$ $L:=-n/2$ ,\n$\\alpha:=4,$ $l_{1}:=n,$\n$\\epsilon_{1}$ $:=1,$ $l_{2}:=n-1,$\n$\\epsilon_{2}:=-1,$\n$l_{3}$ $:=n+m,$\n$\\epsilon_{3}:=1,$ $l_{4}:=n-m-1$ ,\nand\n$\\epsilon_{4}:=-1$ in (3.1). Note that\n$x_{1}=z,$\n$x_{2}=z,$ $x_{3}=zw,$ $x_{4}=zw^{-1},$ $r_{11}=p/4$ ,\n$r_{12}=-1,$\n$r_{22}=0,$\n$l_{11}=1,$\n$l_{12}=0,$\n$l_{21}=1,$\n$l_{22}=0,$\n$l_{31}=1,$\n$l_{32}=1,$ $l_{41}=1$ ,\n$l_{42}=-1$ . Then\n$\\tilde{V}(z, w):=-\\mathrm{L}\\mathrm{i}_{2}(Zw)+\\mathrm{L}\\mathrm{i}_{2}(\\frac{z}{w})+\\frac{p}{4}(\\log z)2-\\log_{Z}\\log w$\nand\n$\\{$\n$\\sim$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1172-5/blocks/rem-sec-002-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "rem-sec-002-01.md",
+      "narrative": null,
+      "content": "Since the second equation of (4.2) is symmetric with respect to $z$ and $z^{-1}$ , if $\\zeta$ is a solution to it then so is $\\zeta^{-1}$ . (This may be caused by the amphicheirality of the ﬁgure-eight knot.) Clearly $\\overline{\\zeta}$ ) the complex conjugate of $\\zeta$ , also satisﬁes it. Therefore if $(\\zeta, \\omega)$ is a solution to (4.2) then so are $(\\overline{\\zeta},\\overline{\\omega}),$ $(\\zeta^{-1},\\omega)$ , and $(\\overline{\\zeta},\\overline{\\omega})1$ . I will show calculations for $p=0,1,$ . , . , 10. 4.1. 6-surgery along the ﬁgure-eight knot. I will describe the case where $p=6$ in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1172-5/blocks/rem-sec-002-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "rem-sec-002-02.md",
+      "narrative": null,
+      "content": "For $p=4n+2$ with $n=1,2,$ $\\ldots$ , 100, we can observe the same result. See Figures 1 and 2 for $(\\zeta_{p},\\omega_{p})$ . 4.3. 1, 2, 3-surgeries along the ﬁgure-eight knot. Next we consider the case where $p=1,2$ and 3. Note that the manifold $M_{p}$ for $p=1,2,3$ is a Seifert ﬁbered space. See [4, p. 95] for details, which was informed by K. Ichihara. In this case, the (simplicial) volume of $M_{p}$ is zero but $\\mathrm{s}_{\\mathrm{n}\\mathrm{a}_{\\mathrm{P}}}\\mathrm{p}\\mathrm{e}\\mathrm{a}$ tells us that it has the non-trivial Chern-Simons invariant. MAPLE V shows that the same observation",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1172-5/blocks/rem-sec-002-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "rem-sec-002-03.md",
+      "narrative": null,
+      "content": "It was suggested by A. Kricker to observe the $parrow\\infty$ limit.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1172-5/blocks/conj-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "Volume conjecture for closed three-manifolds",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "conj-sec-003-01.md",
+      "narrative": null,
+      "content": "For any closed three-manifold $M$ $N arrow\\infty 0-\\lim\\frac{2\\pi\\sqrt{-1}\\log\\tau N(M)}{N}=\\mathrm{C}\\mathrm{S}(M)+\\sqrt{-1}\\mathrm{V}_{0}1(M)$ , where $\\mathrm{V}\\mathrm{o}\\mathrm{l}(M):=v_{3}||M||$ with $||M||$ the simplicial volume of $M$ . A weaker but more precise conjecture is",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1172-5/blocks/conj-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "conj-sec-003-02.md",
+      "narrative": null,
+      "content": "For an integer $p$ put $V_{p}(_{Z,w}).--- \\mathrm{L}\\mathrm{i}_{2}(Zw)+\\mathrm{L}\\mathrm{i}_{2}(\\frac{z}{w})+\\frac{p}{4}(\\log z)2-\\log_{Z}\\log w$ . Then there exists $(\\zeta_{p},\\omega_{p})$ such that (1) $\\frac{\\partial V_{p}}{\\partial z}(\\zeta_{p}, \\omega_{p})=\\frac{\\partial V_{p}}{\\partial w}(\\zeta_{p}, \\omega_{p})=0$ , and (2) $V_{\\mathrm{p}}(\\zeta_{\\mathrm{P}}, \\omega_{\\mathrm{p}})=\\mathrm{C}\\mathrm{S}(M_{P})+\\sqrt{-1}\\mathrm{V}_{0}1(M_{p})$ . Here $M_{p}$ is the closed three-manifold obtained from the three-sphere by p-surgery along the ﬁgure-eight knot.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1172-5/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "VOLUME CONJECTURE FOR CLOSED THREE-MANIFOLDS",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-5-volume-conjecture-for-closed-three-manifolds.md",
+      "narrative": null,
+      "content": "Now I propose a very ambiguous conjecture.\nConjecture 5.1 (Volume conjecture for closed three-manifolds). For any closed\nthree-manifold $M$\n$N arrow\\infty 0-\\lim\\frac{2\\pi\\sqrt{-1}\\log\\tau N(M)}{N}=\\mathrm{C}\\mathrm{S}(M)+\\sqrt{-1}\\mathrm{V}_{0}1(M)$ ,\nwhere\n$\\mathrm{V}\\mathrm{o}\\mathrm{l}(M):=v_{3}||M||$ with\n$||M||$ the simplicial volume of $M$ .\nA weaker but more precise conjecture is\nConjecture 5.2. For an integer\n$p$ put\n$V_{p}(_{Z,w}).--- \\mathrm{L}\\mathrm{i}_{2}(Zw)+\\mathrm{L}\\mathrm{i}_{2}(\\frac{z}{w})+\\frac{p}{4}(\\log z)2-\\log_{Z}\\log w$ .\nThen there exists\n$(\\zeta_{p},\\omega_{p})$ su",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/1172-5/blocks/rem-sec-003-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "rem-sec-003-03.md",
+      "narrative": null,
+      "content": "Conjecture 5.2 is numerically true (up to 8 digits or so) for $p=$ $0,$ $\\pm 1,$ $\\pm 2,$ $\\pm 3,$ $\\pm 5,$ $\\pm 6,$ $\\ldots,$ $\\pm 100$ .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1172-5/blocks/rem-sec-003-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "rem-sec-003-04.md",
+      "narrative": null,
+      "content": "Note that $V_{p}(1, w)=- \\mathrm{L}\\mathrm{i}_{2}(w)+\\mathrm{L}\\mathrm{i}_{2}(\\frac{1}{w})$ and this appears in calcu- lations about the ﬁgure-eight knot [2, 3.15]. More precisely $\\omega:=\\exp(-\\frac{\\pi\\sqrt{-1}}{3})$ satisﬁes (1) $\\frac{\\partial V_{p}}{\\partial w}(1,\\omega)=0$ , and (2) $V_{p}(1,\\omega)=\\mathrm{C}\\mathrm{S}(4_{1})+\\sqrt{-1}\\mathrm{V}\\mathrm{o}\\mathrm{l}(4_{1})$. Finally I raise some natural problems. Problem 5.5. Can one generalize Conjecture 5.2 to rational surgery? Compare with [15]. Problem 5.6. $\\mathrm{F}\\mathrm{o}1$ any knot $K$ (or more generally link) and any ration",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/1172-5/blocks/rem-sec-003-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "rem-sec-003-05.md",
+      "narrative": null,
+      "content": "Y. Yokota told me that Conjecture 5.2 and Problem 5.5 can be solved by considering deformations of tetrahedron decomposition described in [13]. REFERENCES [1] S.-S. Chern and J. Simons, Characteristic forms and geometric invariants, Ann. of Math. (2) 99 (1974), 48-69. [2] R.M. Kashaev, The hyperbolic volume of knots from the quantum dilogarithm, Lett. Math. Phys. 39 (1997), no. 3, 269-275. [3] R.M. Kashaev and O. Tirkkonen, Proof of the volume conjecture for torus knots, math. $\\mathrm{G}\\mathrm{T}/9912210$ . [4] R. Kirby, Problems in low-dimensional topology, Geometric topology (Athens, GA, 1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

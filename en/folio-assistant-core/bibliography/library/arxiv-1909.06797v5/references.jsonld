@@ -1,0 +1,37 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1909.06797v5",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Quantum Mechanics of Plancherel Growth",
+      "dcterms:creator": [
+        "Chattopadhyaya, Arghya",
+        "b",
+        "Duttac, Suvankar",
+        "Mukherjeec, Debangshu",
+        "d",
+        "Neetuc"
+      ],
+      "dcterms:issued": "D:20210415",
+      "dcterms:identifier": "https://arxiv.org/abs/1909.06797",
+      "dcterms:abstract": "Growth of Young diagrams, equipped with Plancherel measure, follows the automodel equation of Kerov. Using the technology of unitary matrix model we show that such growth process is exactly same as the growth of gap-less phase in Gross-Witten and Wadia (GWW) model. The limit shape of asymptotic Young diagrams corresponds to GWW transition point. Our analysis also oﬀers an alternate proof of limit shape theorem of Vershik-Kerov and Logan-Shepp. Using the connection between unitary matrix model and free Fermi droplet description, we map the Young diagrams in automodel class to diﬀerent shapes of two dimensional phase space droplets. Quantising these droplets we further set up a correspondence between automodel diagrams and coherent states in the Hilbert space. Thus growth of Young diagrams are mapped to evolution of coherent states in the Hilbert space. Gaussian ﬂuctuations of large N Young diagrams are also mapped to quantum (large N) ﬂuctuations of the coherent states.",
+      "dcterms:source": "library/arxiv-1909.06797v5/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1909.06797v5"
+    }
+  ]
+}

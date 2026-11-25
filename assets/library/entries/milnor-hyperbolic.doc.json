@@ -1,0 +1,473 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "milnor-hyperbolic",
+  "title": "milnor-hyperbolic",
+  "variant": "pdf",
+  "pages": 16,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "U~>PSL2C which is uniquely determined, up to inner automorphism and complex conjugation.",
+      "number": "h",
+      "page": 6,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-h-upsl2c-which-is-uniquely-determined-up-to-inne"
+    },
+    {
+      "level": 1,
+      "title": "of Humbert. Here (-D/ri) is a generalized quadratic residue symbol, with values ± 1 or 0. In order to express this infinite series in terms of the function JI(0), note first that the real-valued function n \\-^ (-D/ri) on Z/D is equal to its own Fourier transform, up to a factor of V-D = iVD . More precisely k£àD\\ k I",
+      "number": "21",
+      "page": 13,
+      "pageLabel": "21",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-21-of-humbert-here--dri-is-a-generalized-quadrat"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 6,
+      "labelStart": "9",
+      "labelEnd": "14",
+      "words": 2364,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-euclidean geometry",
+          "heading": false
+        },
+        {
+          "term": "dimensional non-euclidean",
+          "heading": false
+        },
+        {
+          "term": "forty years",
+          "heading": false
+        },
+        {
+          "term": "clifford-klein space",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic geometry",
+          "heading": false
+        },
+        {
+          "term": "constant curvature",
+          "heading": false
+        },
+        {
+          "term": "euclidean geometry",
+          "heading": false
+        },
+        {
+          "term": "earth orbit",
+          "heading": false
+        }
+      ],
+      "extract": "BULLETIN (New Series) OF THE AMERICAN MATHEMATICAL SOCIETY Volume 6, Number 1, January 1982 HYPERBOLIC GEOMETRY: THE FIRST 150 YEARS BY JOHN MILNOR This will be a description of a few highlights in the early history of non-euclidean geometry, and a few miscellaneous recent developments. An Appendix describes some explicit formulas concerning volume in hyperbolic 3-space. The mathematical literature on non-euclidean",
+      "extractCut": true,
+      "blocks": [
+        "library/milnor-hyperbolic/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-h-upsl2c-which-is-uniquely-determined-up-to-inne",
+      "number": "h",
+      "title": "U~>PSL2C which is uniquely determined, up to inner automorphism and complex conjugation.",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 13,
+      "labelStart": "14",
+      "labelEnd": "21",
+      "words": 2271,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "psl2c",
+          "heading": true
+        },
+        {
+          "term": "group psl2z",
+          "heading": false
+        },
+        {
+          "term": "dihedral angles",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifold",
+          "heading": false
+        },
+        {
+          "term": "log sin",
+          "heading": false
+        },
+        {
+          "term": "hpq",
+          "heading": false
+        },
+        {
+          "term": "triangle inscribed",
+          "heading": false
+        },
+        {
+          "term": "mani folds",
+          "heading": false
+        }
+      ],
+      "extract": "which is uniquely determined, up to inner automorphism and complex conjuga- tion. Since the image h(U) is contained in the Bianchi group PSL2Z[œ], it is certainly discrete in PSL2C. In fact Riley proves that h maps II isomorphi- cally onto a subgroup h(U) c PSL2Z[oi] of index twelve. Using the Haken- Waldhausen theory of 3-manifolds, he then proves that the complement S3 — K is actually homeomorphic to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-21-of-humbert-here--dri-is-a-generalized-quadrat",
+      "number": "21",
+      "title": "of Humbert. Here (-D/ri) is a generalized quadratic residue symbol, with values ± 1 or 0. In order to express this infinite series in terms of the function JI(0), note first that the real-valued function n \\-^ (-D/ri) on Z/D is equal to its own Fourier transform, up to a factor of V-D = iVD . More precisely k£àD\\ k I",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 16,
+      "labelStart": "21",
+      "labelEnd": "24",
+      "words": 1482,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ueber die",
+          "heading": false
+        },
+        {
+          "term": "uber die",
+          "heading": false
+        },
+        {
+          "term": "german transi",
+          "heading": false
+        },
+        {
+          "term": "sur les",
+          "heading": false
+        },
+        {
+          "term": "les groupes",
+          "heading": false
+        },
+        {
+          "term": "acta math",
+          "heading": false
+        },
+        {
+          "term": "école norm",
+          "heading": false
+        },
+        {
+          "term": "humbert",
+          "heading": true
+        }
+      ],
+      "extract": "of Humbert. Here (-D/ri) is a generalized quadratic residue symbol, with values ± 1 or 0. In order to express this infinite series in terms of the function JI(0), note first that the real-valued function n \\-^ (-D/ri) on Z/D is equal to its own Fourier transform, up to a factor of V-D = iVD . More precisely k£àD\\ k I \\ n I for every positive integer n. (See Hecke §§52, 58.) Substituting this formula in (3), we",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "non-euclidean geometry",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic manifolds",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic simplex",
+      "heading": false
+    },
+    {
+      "term": "john milnor",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic space",
+      "heading": true
+    },
+    {
+      "term": "dimensional non-euclidean",
+      "heading": false
+    },
+    {
+      "term": "gieseking manifold",
+      "heading": false
+    },
+    {
+      "term": "psl2c",
+      "heading": true
+    },
+    {
+      "term": "dihedral angles",
+      "heading": false
+    },
+    {
+      "term": "group psl2z",
+      "heading": false
+    },
+    {
+      "term": "maximal volume",
+      "heading": false
+    },
+    {
+      "term": "clifford-klein space",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "A right triangle in hyperbolic space By early 1830, Lobachevsky was testing his \"imaginary geometry\" as a",
+      "page": 1,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "(The factor 1/2 is inserted so that curvature will be -1.) Here",
+      "page": 3,
+      "pageLabel": "11",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The figure eight knot The possible choices for A and B can be drastically narrowed as follows",
+      "page": 6,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The Whitehead Link and a twisted version of it",
+      "page": 8,
+      "pageLabel": "16",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Graph of JI(0)",
+      "page": 9,
+      "pageLabel": "17",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "A triangle inscribed in the unit disk If all three angles are acute, then barycentrically subdividing from the",
+      "page": 11,
+      "pageLabel": "19",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 2,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 3,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "6 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p13); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 3 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/milnor-hyperbolic"
+  }
+}

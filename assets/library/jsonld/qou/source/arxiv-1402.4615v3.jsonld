@@ -1,0 +1,105 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1402.4615v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1402.4615v3",
+  "contains": [
+    "library/arxiv-1402.4615v3/sections/sec-front-matter",
+    "library/arxiv-1402.4615v3/sections/sec-000",
+    "library/arxiv-1402.4615v3/sections/sec-001",
+    "library/arxiv-1402.4615v3/sections/sec-002",
+    "library/arxiv-1402.4615v3/sections/sec-003",
+    "library/arxiv-1402.4615v3/sections/sec-004",
+    "library/arxiv-1402.4615v3/sections/sec-005",
+    "library/arxiv-1402.4615v3/sections/sec-006",
+    "library/arxiv-1402.4615v3/sections/sec-007",
+    "library/arxiv-1402.4615v3/sections/sec-008",
+    "library/arxiv-1402.4615v3/sections/sec-009",
+    "library/arxiv-1402.4615v3/sections/sec-010",
+    "library/arxiv-1402.4615v3/sections/sec-011",
+    "library/arxiv-1402.4615v3/sections/sec-012",
+    "library/arxiv-1402.4615v3/sections/sec-013",
+    "library/arxiv-1402.4615v3/sections/sec-014",
+    "library/arxiv-1402.4615v3/sections/sec-015",
+    "library/arxiv-1402.4615v3/sections/sec-016",
+    "library/arxiv-1402.4615v3/sections/sec-017",
+    "library/arxiv-1402.4615v3/sections/sec-018",
+    "library/arxiv-1402.4615v3/sections/sec-019",
+    "library/arxiv-1402.4615v3/sections/sec-020",
+    "library/arxiv-1402.4615v3/sections/sec-021",
+    "library/arxiv-1402.4615v3/sections/sec-022",
+    "library/arxiv-1402.4615v3/sections/sec-023",
+    "library/arxiv-1402.4615v3/sections/sec-024",
+    "library/arxiv-1402.4615v3/sections/sec-025",
+    "library/arxiv-1402.4615v3/sections/sec-026",
+    "library/arxiv-1402.4615v3/sections/sec-027",
+    "library/arxiv-1402.4615v3/sections/sec-028",
+    "library/arxiv-1402.4615v3/sections/sec-029",
+    "library/arxiv-1402.4615v3/sections/sec-030",
+    "library/arxiv-1402.4615v3/sections/sec-031",
+    "library/arxiv-1402.4615v3/sections/sec-032",
+    "library/arxiv-1402.4615v3/sections/sec-033",
+    "library/arxiv-1402.4615v3/sections/sec-034",
+    "library/arxiv-1402.4615v3/sections/sec-035",
+    "library/arxiv-1402.4615v3/sections/sec-036",
+    "library/arxiv-1402.4615v3/sections/sec-037",
+    "library/arxiv-1402.4615v3/sections/sec-038",
+    "library/arxiv-1402.4615v3/sections/sec-039",
+    "library/arxiv-1402.4615v3/sections/sec-040",
+    "library/arxiv-1402.4615v3/sections/sec-041",
+    "library/arxiv-1402.4615v3/sections/sec-042",
+    "library/arxiv-1402.4615v3/sections/sec-043",
+    "library/arxiv-1402.4615v3/sections/sec-044",
+    "library/arxiv-1402.4615v3/sections/sec-045",
+    "library/arxiv-1402.4615v3/sections/sec-046",
+    "library/arxiv-1402.4615v3/sections/sec-047",
+    "library/arxiv-1402.4615v3/sections/sec-048",
+    "library/arxiv-1402.4615v3/sections/sec-049",
+    "library/arxiv-1402.4615v3/sections/sec-050"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS — In this paper, we consider a deformation of Plancherel measure linked to Jack polynomials.\n\n**GAUSSIAN FLUCTUATIONS OF YOUNG DIAGRAMS AND STRUCTURE CONSTANTS OF JACK CHARACTERS**\n\n*MACIEJ DOŁ ˛EGA AND VALENTIN FÉRAY*\n\n71 pp, 52 sections.\n\n**Abstract.** In this paper, we consider a deformation of Plancherel measure linked to Jack polynomials. Our main result is the description of the ﬁrst and second-order asymptotics of the bulk of a random Young diagram under this dis- tribution, which extends celebrated results of Vershik-Kerov and Logan-Shepp (for the ﬁrst order asymptotics) and Kerov (for the second order asymptotics). This gives more evidence of the connection with Gaussian β-ensemble, already suggested by some work of Matsumoto. Our main tool is a polynomiality result for the structure constant of some quantities that we call Jack characters, recently introduced by Lassalle. We be- lieve that this result is also interested in itself and we give several other applica- tions of it.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Jack deformation of Plancherel measure and; 1.2 Main result; 1.3 Jack polynomials and Jack measure; 1.4 Ingredients of the proof; 1.5 Second main result: polynomiality of struc; 1.6 An open problem: edge fluctuations of Jack; 1.7 Outline of the paper; 2 Jack characters and Kerov polynomials; 2.1 Polynomial functions on the set of Young d; 2.2 Transition measure and free cumulants; 2.3 Generalized Young diagrams; 2.4 Continuous Young diagrams; 2.5 -polynomial functions; 3 Polynomiality in Kerov's expansion; 3.1 Notations; 3.2 How to compute Jack character polynomials?",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1402.4615&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1402.4615v3",
+    "title_source": "slug",
+    "source_file": "1402.4615v3.pdf",
+    "source_sha256": "b6e7c795cd1a7cd21e9acb848ea35289a5a60b8863bf09d093c47ac18df3597f",
+    "pages": 71,
+    "arxiv": {
+      "id": "1402.4615",
+      "version": "3",
+      "primary_class": "math.PR",
+      "stamp_date": "3 Feb 2015"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

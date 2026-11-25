@@ -1,0 +1,565 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-q-alg-9601025v2",
+  "title": "The hyperbolic volume of knots from the quantum dilogarithm",
+  "variant": "pdf",
+  "pages": 8,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The quantum invariant for three hyperbolic knots",
+      "number": "2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-the-quantum-invariant-for-three-hyperbolic-kno"
+    },
+    {
+      "level": 1,
+      "title": "The classical limit",
+      "number": "3",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-the-classical-limit"
+    },
+    {
+      "level": 2,
+      "title": "Knot $4_1$ (figure-eight knot)",
+      "number": "3.1",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-31-knot-4-1-figure-eight-knot"
+    },
+    {
+      "level": 2,
+      "title": "Knot $5_2$",
+      "number": "3.2",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Knot $6_1$",
+      "number": "3.3",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Summary",
+      "number": "4",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-4-summary"
+    },
+    {
+      "level": 1,
+      "title": "Acknowlegements",
+      "number": "5",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-5-acknowlegements"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 126,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "enslapp",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic volume",
+          "heading": false
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "petersburg",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:q-alg/9601025v2 25 Mar 1996 The hyperbolic volume of knots from quantum dilogarithm R.M. Kashaev∗ Laboratoire de Physique Th´eorique enslapp† ENSLyon, 46 All´ee d’Italie, 69007 Lyon, FRANCE E-mail: rkashaev@enslapp.ens-lyon.fr January, 1996 Abstract The invariant of a link in three-sphere, associated with the cyclic quantum dilogarithm, depends on a natural number N. By the analysis of particular examples it",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-q-alg-9601025v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 485,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyperbolic volume",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic knot",
+          "heading": false
+        },
+        {
+          "term": "quantum gravity",
+          "heading": false
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "knot complement",
+          "heading": false
+        },
+        {
+          "term": "euclidean quantum",
+          "heading": false
+        },
+        {
+          "term": "cyclic quantum",
+          "heading": false
+        },
+        {
+          "term": "quantum dimensional",
+          "heading": false
+        }
+      ],
+      "extract": "Many known knot and link invariants, including Alexander [@A] and Jones [@J] polynomials, can be obtained from $R$-matrices, solutions to the Yang-Baxter equation (YBE) [@Y; @B1]. Remarkably, many $R$-matrices in turn appear in quantum 3-dimensional Chern-Simons (CS) theory as partition functions of a 3-manifold with boundary, and with properly chosen Wilson lines [@W1]. The corresponding knot invariant acquires an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-quantum-invariant-for-three-hyperbolic-kno",
+      "number": "2",
+      "title": "The quantum invariant for three hyperbolic knots",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 153,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "m-k",
+          "heading": false
+        },
+        {
+          "term": "asterisk",
+          "heading": false
+        },
+        {
+          "term": "knots",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sec1 label=\"sec1\"} Let $\\omega$ be a primitive $N$-th root of unity. Throughout this paper we will work with the following choice for this root: =(2i/N). The result of calculation of the link invariant from papers [@K1; @K2] for three simplest hyperbolic knots reads: []{#4_1 label=\"4_1\"} \\_1=\\_k\\|()\\_k\\|\\^2,(\\\"figure-eight\\\" knot), []{#5_2 label=\"5_2\"} \\_2=\\_kl\\^-k(l+1), []{#6_1 label=\"6_1\"} \\_1=\\_k+lm",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-the-classical-limit",
+      "number": "3",
+      "title": "The classical limit",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 352,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fad",
+          "heading": false
+        },
+        {
+          "term": "analytic continuations",
+          "heading": false
+        },
+        {
+          "term": "anal",
+          "heading": false
+        },
+        {
+          "term": "lob",
+          "heading": false
+        },
+        {
+          "term": "gamma",
+          "heading": false
+        },
+        {
+          "term": "contour",
+          "heading": false
+        },
+        {
+          "term": "leading asymptotics",
+          "heading": false
+        },
+        {
+          "term": "functional equation",
+          "heading": false
+        }
+      ],
+      "extract": "Here we calculate explicitly the leading asymptotics at $N\\to\\infty$ of the invariant for the hyperbolic knots from section [\\[sec1\\]](#sec1){reference-type=\"ref\" reference=\"sec1\"} and justify formula ([\\[main\\]](#main){reference-type=\"ref\" reference=\"main\"}). First, for a positive real $\\gamma$ and complex $p$ with \\|Re p\\|\\<+, define two functions []{#mainfun label=\"mainfun\"} f\\_(p)=S\\_(-)/S\\_(p),",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-31-knot-4-1-figure-eight-knot",
+      "number": "3.1",
+      "title": "Knot $4_1$ (figure-eight knot)",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 374,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "contour integral",
+          "heading": false
+        },
+        {
+          "term": "contour label",
+          "heading": false
+        },
+        {
+          "term": "nonumber alpha",
+          "heading": false
+        },
+        {
+          "term": "stat",
+          "heading": false
+        },
+        {
+          "term": "mbox",
+          "heading": false
+        },
+        {
+          "term": "stationary points",
+          "heading": false
+        },
+        {
+          "term": "integral comes",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        }
+      ],
+      "extract": "The exact formula ([\\[4_1\\]](#4_1){reference-type=\"ref\" reference=\"4_1\"}) can be rewritten as a contour integral: []{#contour4_1 label=\"contour4_1\"} \\_1=\\_Cdp ()f\\_(p)f\\_(p), Where contour $C$ encircles $N$ points: -++2kk\\<N, in the counterclockwise direction. In the large $N$ (small $\\gamma$) limit integral ([\\[contour4_1\\]](#contour4_1){reference-type=\"ref\" reference=\"contour4_1\"}), by using",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-summary",
+      "number": "4",
+      "title": "Summary",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 52,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reproduces",
+          "heading": false
+        },
+        {
+          "term": "tqft",
+          "heading": false
+        },
+        {
+          "term": "demonstrated",
+          "heading": false
+        }
+      ],
+      "extract": "We have demonstrated on three examples of hyperbolic knots, that the link invariant, defined in [@K1; @K2] via cyclic quantum dilogarithm, in the asymptotic limit $N\\to\\infty$ reproduces the hyperbolic volume of a knot, see formula ([\\[main\\]](#main){reference-type=\"ref\" reference=\"main\"}). This result implies a possible relation of the corresponding combinatorial TQFT to quantum 2+1-dimensional gravity.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-5-acknowlegements",
+      "number": "5",
+      "title": "Acknowlegements",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 416,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "lett",
+          "heading": false
+        },
+        {
+          "term": "quantum ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "bazhanov",
+          "heading": false
+        },
+        {
+          "term": "faddeev",
+          "heading": false
+        },
+        {
+          "term": "math",
+          "heading": false
+        },
+        {
+          "term": "kashaev",
+          "heading": false
+        }
+      ],
+      "extract": "Acknowlegements The author is grateful to M. Blau, L. Freidel, J.M. Maillet, F. Smirnov for valuable discussions, and L.D. Faddeev for his encouragement in this work. The work is supported by the Programme TEMPRA- Europe de l’Est from the R´egion Rhˆone-Alpes. References [1] J.W. Alexander, Topological invariants of knots and links, Trans. Amer. Math. Soc. 30 (1928) 275-306 [2] V.F.R. Jones, A polynomial invariant",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "hyperbolic knot",
+      "heading": false
+    },
+    {
+      "term": "quantum dilogarithm",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic volume",
+      "heading": false
+    },
+    {
+      "term": "link invariant",
+      "heading": false
+    },
+    {
+      "term": "contour label",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic manifolds",
+      "heading": false
+    },
+    {
+      "term": "quantum gravity",
+      "heading": false
+    },
+    {
+      "term": "euler dilogarithm",
+      "heading": false
+    },
+    {
+      "term": "knot complement",
+      "heading": false
+    },
+    {
+      "term": "contour integral",
+      "heading": false
+    },
+    {
+      "term": "cyclic quantum",
+      "heading": false
+    },
+    {
+      "term": "topological invariant",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 8,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 7,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p7); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 7 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-q-alg-9601025v2"
+  }
+}

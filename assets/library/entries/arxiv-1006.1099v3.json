@@ -1,0 +1,2717 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1006.1099v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1006.1099v3  [math.SG]  13 Oct 2011\nFLOER COHOMOLOGY AND PENCILS OF QUADRICS\nIVAN SMITH\nAbstract. There is a classical relationship in algebraic geometry between a hyperelliptic\ncurve and an associated pencil of quadric hypersurfaces. We investigate symplectic aspects of\nthis relationship, with a view to applications in low-dimensional topology.\nContents\n1.\nIntroduction\n2\n1.1.\nTwo contexts\n2\n1.2.\nThe theorem\n2\n1.3.\nEntropy\n3\n1.4.\nRepresentation varieties\n3\n1.5.\nInstanton Floer homology\n4\n1.6.\nWitten’s conjecture\n5\n1.7.\nHomological Mirror Symmetry\n6\n1.8.\nAnother birational motivation\n7\n1.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two contexts",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-11-two-contexts.md",
+      "narrative": null,
+      "content": "The main result of this paper, Theorem [\\[Thm:Embed\\]](#Thm:Embed){reference-type=\"ref\" reference=\"Thm:Embed\"}, belongs to categorical symplectic topology in the sense of Donaldson, Fukaya and Kontsevich. It relates the derived Fukaya categories of a genus $g$ surface $\\Sigma_g$ and of the complete intersection $Q_0 \\cap Q_1$ of two smooth quadric hypersurfaces in ${\\mathbb P}^{2g+1}$. The result is of interest in at least two different contexts.\n\n-   The intersection of two quadric 4-folds in ${\\mathbb P}^5$ is also a moduli space of solutions to the anti-self-dual Yang-Mills equations on the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The theorem",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-12-the-theorem.md",
+      "narrative": null,
+      "content": "Let $\\Sigma_g$ be a closed surface of genus $g\\geq 2$, equipped with a symplectic form. This has a well-defined balanced Fukaya category $\\EuScript{F}(\\Sigma_g)$, linear over ${\\mathbb C}$. Let $\\{Q^{2g}_t\\}_{t\\in {\\mathbb P}^1} \\subset {\\mathbb P}^{2g+1}$ denote a pencil of smooth $2g$-dimensional quadric hypersurfaces in ${\\mathbb P}^{2g+1}$, with smooth base locus $Q^{2g}_0 \\cap Q^{2g}_1$. By Moser's theorem, the symplectic manifold underlying the complete intersection $Q_0 \\cap Q_1$ is independent of the choice of generic pencil of quadrics. It is a simply-connected Fano variety, in partic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Entropy",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-003-13-entropy.md",
+      "narrative": null,
+      "content": "Corollary [\\[Cor:Faithful2\\]](#Cor:Faithful2){reference-type=\"ref\" reference=\"Cor:Faithful2\"} is essentially equivalent to a related dynamical statement. For a symplectic manifold $X$ the (conjugation-invariant) *Floer-theoretic entropy* of a mapping class $\\phi \\in \\operatorname{Symp}(X)/\\operatorname{Ham}(X)$ is $$h_{Floer}(\\phi) \\ = \\ \\limsup \\frac{1}{n} \\log \\operatorname{rk}\\, HF(\\phi^n).$$ This is a kind of robust version of the periodic entropy, robust in the sense that it depends on a symplectic diffeomorphism only through its mapping class; by contrast topological and periodic entropy",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Representation varieties",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-14-representation-varieties.md",
+      "narrative": null,
+      "content": "[]{#Sec:RepVar label=\"Sec:RepVar\"}\n\nFix a point $p\\in \\Sigma_g$ and denote by $\\EuScript{M}(\\Sigma_g)$ the moduli space of rank two, fixed odd determinant stable bundles on a complex curve of genus $g$, equivalently the space of conjugacy classes of $SU(2)$-representations of $\\pi_1(\\Sigma\\backslash\\{p\\})$ which have holonomy $-I$ at the puncture. $\\EuScript{M}(\\Sigma_g)$ admits a natural symplectic structure; the symplectic volume of $\\EuScript{M}(\\Sigma_g)$ was computed by Witten and Jeffrey-Weitsman [@Witten; @JW], and techniques from number theory, gauge theory and birational geometry have",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Instanton Floer homology",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-005-15-instanton-floer-homology.md",
+      "narrative": null,
+      "content": "[]{#Sec:InstFloer label=\"Sec:InstFloer\"}\n\nLet $f: Y_h \\rightarrow S^1$ be a fibred 3-manifold with a distinguished section, defined by a monodromy map $h \\in \\Gamma(\\Sigma_{g,1})$ in the mapping class group of a once-marked surface $f^{-1}(pt)$. Up to isomorphism there is a unique non-trivial $SO(3)$-bundle $E\\rightarrow f^{-1}(pt)$, with $\\langle w_2(E),  f^{-1}(pt)\\rangle \\neq 0$; the section of $Y_h \\rightarrow S^1$ defines a distinguished extension of $E$ to an $SO(3)$ bundle (still denoted) $E\\rightarrow Y_h$. If $Y_h$ is a homology $S^1 \\times S^2$, this is the unique non-trivial $SO(3)$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Homological Mirror Symmetry",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-006-17-homological-mirror-symmetry.md",
+      "narrative": null,
+      "content": "[]{#Sec:HMS label=\"Sec:HMS\"}\n\nThe proof of Theorem [\\[Thm:Embed\\]](#Thm:Embed){reference-type=\"ref\" reference=\"Thm:Embed\"} involves establishing Fukaya category analogues of three well-known results concerning derived categories of sheaves.\n\n-   (Bondal-Orlov) The derived category of sheaves on the intersection of two even-dimensional quadrics has a semi-orthogonal decomposition in which one factor is the derived category of sheaves on an underlying hyperelliptic curve [@BondalOrlov].\n\n-   (Kapranov) The derived category of sheaves on an even-dimensional quadric has a semi-orthogonal decomposi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Another birational motivation",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-007-18-another-birational-motivation.md",
+      "narrative": null,
+      "content": "[]{#Sec:BirModel label=\"Sec:BirModel\"} There is another description of $\\EuScript{M}(\\Sigma_2) = Q_0 \\cap Q_1 \\subset {\\mathbb P}^5$ which, whilst not used in this paper, is undoubtedly related to the $g=2$ case of Theorem [\\[Thm:Embed\\]](#Thm:Embed){reference-type=\"ref\" reference=\"Thm:Embed\"}, and provided motivation for the result. Let's say that a line $l \\subset Q_0\\cap Q_1$ is *generic* if its normal bundle is holomorphically trivial $\\mathcal{O} \\oplus \\mathcal{O}$ (rather than $\\mathcal{O}(i) \\oplus \\mathcal{O}(-i)$. Recall that a genus 2 curve, whilst not a complete intersection, admit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outline of proof",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-008-19-outline-of-proof.md",
+      "narrative": null,
+      "content": "As mentioned previously, our proof of Theorem [\\[Thm:Embed\\]](#Thm:Embed){reference-type=\"ref\" reference=\"Thm:Embed\"} constructs equivalences with quasi-isomorphic images $$D^{\\pi}\\EuScript{F}(\\Sigma) \\ \\hookrightarrow \\ D^{\\pi}\\EuScript{F}(Z) \\ \\hookleftarrow  \\ D^{\\pi}\\EuScript{F}(Q_0\\cap Q_1;0).$$ Both $\\EuScript{F}(\\Sigma_g)$ and $\\EuScript{F}(Q_0 \\cap Q_1)$ are naturally ${\\mathbb Z}_{4g-4}$-graded, but only the underlying ${\\mathbb Z}_2$-graded categories are equivalent; from this perspective, that is because the intermediate category $\\EuScript{F}(Z)$ only admits a ${\\mathbb Z}_2$-gradi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/ex-sec-010-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "ex-sec-010-02.md",
+      "narrative": null,
+      "content": "We noted in the Introduction that M(Σ2) ∼= Q0∩Q1 ⊂P5. The map µ : H1(Σ; Z) → H3(M(Σ); Z) is an isomorphism, equivariant for the action of the symplectic group Sp4(Z). The quantum cohomology of any closed symplectic manifold splits into generalised eigenspaces for the action of quantum multiplication by the ﬁrst Chern class, cf. Section 3.1 for a fuller discussion. For M(Σ2) one can compute this explicitly, starting from a presentation of quantum cohomology derived by Donaldson.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-010-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "lem-sec-010-03.md",
+      "narrative": null,
+      "content": "There is a ring isomorphism QH∗(M(Σ2)) ∼= H∗(pt) ⊕H∗(Σ2) ⊕H∗(pt) with summands the generalised eigenspaces for quantum cup with c1(M(Σ2)).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The representation variety",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-009-2-the-representation-variety.md",
+      "narrative": null,
+      "content": "2. The representation variety",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Topology",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-010-21-topology.md",
+      "narrative": null,
+      "content": "mental group of a punctured surface Σg\\{p}:\nM(Σg) =\n(\n(A1, B1, . . . , Ag, Bg) ∈SU(2)2g \n\n Y\ni\n[Ai, Bi] = −I\n) .\nSO(3)\n(2.1)\nwhere SO(3) = SU(2)/{±I} acts diagonally by conjugation. There are no reducible representa-\ntions (since an abelian representation couldn’t have holonomy −I around the puncture), and the\nmoduli space is a smooth compact manifold of real dimension 6g −6. It has a natural symplectic\nstructure, which comes from a skew form on the tangent space H1(ad E) given by combining\nthe Killing form in the Lie algebra su2 with wedge product. The representation variety is sym-\nplectomor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-010-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "rem-sec-010-01.md",
+      "narrative": null,
+      "content": "Finite subgroups of Γ(Σ) ∼= Γg,1 are cyclic, which implies that the sequence of Equation 2.2 does not split [32]. Results of Morita [68, 69] imply that for g ≥2 Z2֒ →H2(Γg; H1(Σ; Z2)), the map being an isomorphism for large g. It follows that there are two distinct extensions of the mapping class group by the ﬁnite group H1(Σ; Z2), and bΓ is isomorphic to the non-trivial extension (cf. [28, Section 9] and [69, Proposition 4]). That is, the quotient sequence 1 →H1(Σ; Z2) →bΓ(Σ) →Γg →1 (2.3) does not split; compare to Remark 3.23. However, the pullback of the extension to the mapping class group",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/cor-sec-011-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "cor-sec-011-04.md",
+      "narrative": null,
+      "content": "(which says that Lagrangian spheres are essentially determined by their associated twist functors). Unfortunately, we do not know of any (smooth and embedded) Lagrangian correspondence Γ ⊂Σ2 × M(Σ2) which might deﬁne such a functor. The upshot of the following sections will be to show that a certain generalised Lagrangian correspondence Σ2 ⇝Z ⇝M(Σ2) does deﬁne an equivalence on suitable subcategories, where Z denotes the relative quadric BlM(Σ)(P5). Even here, two subtleties arise: the ﬁrst correspondence (from the curve to the relative quadric) would be singular, and not amenable to quilt the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "lem-sec-011-01.md",
+      "narrative": null,
+      "content": "Fix g = 2. Let γ and γ′ be homologically independent simple closed curves in Σ2. • If γ ∩γ′ = ∅then Vγ ∩Vγ′ = ∅. • If γ ⋔γ′ = {pt} then Vγ ⋔Vγ′ = {pt}. FLOER COHOMOLOGY AND PENCILS OF QUADRICS",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prop-sec-011-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "Seidel, Callahan",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "prop-sec-011-03.md",
+      "narrative": null,
+      "content": "Let tc denote the positive Dehn twist along a curve c ⊂Σ and let τc denote the induced action of the twist on M(Σ). • τγ is a rank 3 ﬁbred positive Dehn twist in the S3-ﬁbred co-isotropic V¯γ. • τσ is a rank 1 ﬁbred positive Dehn twist in the S1-ﬁbred co-isotropic Vσ. IVAN SMITH Both results are proved by considering the monodromy of suitable Morse-Bott degenerations, cf. related discussions in [80, 86, 106] (the last reference contains proofs of both cases). If there is any equivalence of categories DπF(Σ2) ≃DπF(M(Σ2); 0) which respects the actions of the mapping class group, then necessarily",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Monodromy and degenerations",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-011-22-monodromy-and-degenerations.md",
+      "narrative": null,
+      "content": "homology computations on Σ2 and on M(Σ2) which helped to motivate Theorem 1.1. Let γ ⊂Σ\ndenote a homologically essential simple closed curve. Taking the subspace of representations\ntrivial along γ deﬁnes a co-isotropic submanifold Vγ ⊂M(Σ) which is an SU(2)-bundle over\nM(Σg−1), where the lower genus surface is essentially the normalisation of the nodal surface\nΣ/{γ}. When g = 2, M(Σg−1) is a single point, and Vγ ∼= SU(2) is a Lagrangian 3-sphere.\nLemma 2.4. Fix g = 2. Let γ and γ′ be homologically independent simple closed curves in Σ2.\n• If γ ∩γ′ = ∅then Vγ ∩Vγ′ = ∅.\n• If γ ⋔γ′ = {pt} then Vγ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-011-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "rem-sec-011-02.md",
+      "narrative": null,
+      "content": "An essential simple closed curve γ ⊂Σ2 deﬁnes two Lagrangian 3-spheres, namely hol−1 γ (±I). Call these Vγ and V¯γ. Since these spheres are disjoint, one obviously has HF(Vγ, Vγ) ∼= H∗(S3) ∼= HF(V¯γ, V¯γ); HF(Vγ, V¯γ) = 0. (2.5) The spheres Vγ and V¯γ lie in the same homology class and the same orbit under the action of H1(Σ; Z2). This should be compared with Remark 3.22. The action on M(Σ) of a Dehn twist on Σ has been studied by Callahan and Seidel (both unpublished, now discussed in detail in [106]). Let σ ⊂Σ denote a nullhomologous but not nullhomotopic simple closed curve, dividing Σ into",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fibred 3-manifolds",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-012-23-fibred-3-manifolds.md",
+      "narrative": null,
+      "content": "determined up to isomorphism by its second Stiefel-Whitney class w2(E) ∈H2(Y ; Z2).\nLet\nf : Y →S1 be a 3-manifold which ﬁbres smoothly over the circle. The ﬁbre f −1(pt) is nec-\nessarily homologically essential and primitive, and we ﬁx an SO(3)-bundle E over Y for which\n⟨w2(E), [f −1(pt)]⟩̸ = 0. Indeed, we take E to be the mapping torus of a lift of the monodromy\nof Y to the unique non-trivial SO(3)-bundle over a preferred ﬁbre f −1(pt), with w2(E) Poincar´e\ndual to a section of f. The Chern-Simons functional\na 7→\nZ\nY\na ∧da + a ∧a ∧a\non the aﬃne space Ω1(Y ) of connexions A = A0 + a on E has c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-012-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "rem-sec-012-01.md",
+      "narrative": null,
+      "content": "If Yh →S1 has monodromy h with im(1−h∗) = H1(Σ; Z) for the induced action on H1(Σ; Z), the mapping torus is a homology S1 ×S2, and there is a unique SO(3)-bundle over Yh. In particular, the left hand side of Equation (2.6) is independent of the lift of h to the principal bundle E →Σ. It follows that the Floer homologies on the representation variety of all lifts of h to bΓ(Σ) are actually isomorphic, which doesn’t seem obvious directly. Finally, one can consider the set of non-abelian SO(3)-representations of π1(Y ) and its be- haviour under coverings, analogously to recent interest in the gro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/cor-sec-013-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "cor-sec-013-05.md",
+      "narrative": null,
+      "content": "For g ≥2, the representation bΓ(Σg) →π0 Symp(M(Σg)) is non-trivial on the Torelli group I(Γ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Thurston",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "lem-sec-013-01.md",
+      "narrative": null,
+      "content": "Let Σg be a closed surface and σ ⊂Σg a separating simple closed curve. There is another separating simple closed curve σ′ ⊂Σg for which the products τk στ −k σ′ are pseudo-Anosov mapping classes for all k ≥1. In fact, one chooses σ′ so that σ ∪σ′ ﬁll Σg in the sense that their complement is a union of disks. Then any word in positive twists along σ and negative twists along σ′ (with both twists appearing) yields a pseudo-Anosov diﬀeomorphism; a proof is given in [31, Expos´e 13, Th´eor`eme III.3].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-013-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "lem-sec-013-02.md",
+      "narrative": null,
+      "content": "Let g(Σ) ≥2. Suppose that for any ˆφ ∈bΓ(Σ) with a pseudo-Anosov component, ˆρ(ˆφ) has strictly positive Floer-theoretic entropy. Then ˆρ is faithful.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-013-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "lem-sec-013-04.md",
+      "narrative": null,
+      "content": "If g(Σ) = 2, the hypothesis of Lemma 2.9 is satisﬁed.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Faithfulness",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-013-24-faithfulness.md",
+      "narrative": null,
+      "content": "entropy of a mapping class φ ∈Symp(X)/ Ham(X)\nhF loer(φ) = lim sup 1\nn log rkK HF(φn).\nAs mentioned in the Introduction, for area-preserving diﬀeomorphisms of a surface Σ the Floer-\ntheoretic entropy (of the action on Σ itself) co-incides with the topological entropy which in\nturn co-incides with the periodic entropy, or rather their minimal values on the isotopy class\n[21, 31, 33]. Thus\nhF loer(φ) > 0 ⇔φ has a pseudo-Anosov component.\n(2.7)\nThis follows from the classical fact that pseudo-Anosov maps have exponentially growing numbers\nof periodic points realising exponentially many diﬀerent N",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-013-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "rem-sec-013-03.md",
+      "narrative": null,
+      "content": "It may be worth emphasising that the hypotheses of the faithfulness criterion",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/cor-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "Perutz",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "cor-sec-014-01.md",
+      "narrative": null,
+      "content": "There is an isomorphism HF(Vγ, Vγ) ∼= QH∗(M(Σg−1)) ⊗H∗(S3; ΛR) as QH∗(M(Σg−1))-modules. This is [80, Theorem 7.5] (and is a direct application of Perutz’ Theorem 3.3 in a case where the Euler class of the sphere bundle vanishes).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/cor-sec-014-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "cor-sec-014-03.md",
+      "narrative": null,
+      "content": "Let ˆφ ∈Symp(M(Σg)) represent a mapping class in the image of the natural homomorphism ˆρ : bΓ(Σg) →π0 Symp(M(Σg)). Then HF(ˆφ)̸ = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/cor-sec-014-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "cor-sec-014-04.md",
+      "narrative": null,
+      "content": "Every ﬁbred 3-manifold admits a non-abelian SO(3)-representation. A stronger statement was proved by Kronheimer-Mrowka [55], who used Feehan and Leness’ deep work on the relation between Seiberg-Witten and Donaldson invariants of closed 4-manifolds (note the proof given above uses the Dehn twist exact triangle, but not the existence of the Fukaya category). Any element of the mapping class group Γ2,1 can be written as a product of Dehn twists in simple closed curves lifted from arcs in C. Addendum 1.2 and Corollary 2.17 imply that over K = C, there is an isomorphism HF(ˆρ(φ)) ∼= C ⊕HF(φ) ⊕C (2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A fixed point theorem",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-014-25-a-fixed-point-theorem.md",
+      "narrative": null,
+      "content": "2.5. A ﬁxed point theorem. Since there are periodic, ﬁxed-point free surface diﬀeomorphisms,\neven when g = 2 Theorem 1.1 does not imply that HF(ˆρ(φ))̸ = 0 for an arbitrary mapping class\nφ. In fact, such a non-vanishing result does hold in any genus; the proof relies on concentrating\nnot on the summand of the Fukaya category corresponding to the underlying curve but on a\n“semi-simple” summand. The moduli space M(Σg) is monotone with minimal Chern number 2,\nhence its quantum cohomology is mod 4 graded. We recall a result of Munoz [70]:\nTheorem 2.13 (Munoz). The eigenvalues of quantum cap-produc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-014-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "rem-sec-014-05.md",
+      "narrative": null,
+      "content": "Corollary 2.17 implies that the summand F(Σg; 4(g −1))̸ = ∅. One can exhibit explicit Lagrangian submanifolds in this summand using toric degeneration methods. For in- stance, when g = 2, Nishinou et. al. [74] show by degenerating M(Σ2) to the toric intersection {x2 = yz, p2 = qr} ⊂P5 that there is a Lagrangian torus with m0(T 3) = 4 and with Floer cohomology a Cliﬀord algebra. In general, take an idempotent summand of a Lagrangian L+ ∈T wπF(M(Σg−1)) lying in the top summand of its Fukaya category, corresponding to eigenvalue 4(g −2), and with HF(L+, L+) ∼= K. Given any homologically essential",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/thm-sec-014-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Wehrheim-Woodward",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "thm-sec-014-02.md",
+      "narrative": null,
+      "content": "Let k > 1. Suppose that V ⊂M is an Sk-ﬁbred co- isotropic, whose graph deﬁnes an orientable monotone Lagrangian submanifold of B × M of minimal Maslov number ≥4. Let φ ∈Symp(M). There is an exact triangle · · · →HF ∗(φ) →HF ∗(τV ◦φ) →HF ∗(V, (φ × idB)V ) [1] −→HF ∗(φ) →· · · of (relatively graded) modules for the ring QH∗(M; K). This is taken from [106]. We point out that when g = 2, the case relevant for determining instanton Floer homology of genus 2 ﬁbred 3-manifolds in Equation 1.1, the generalised Dehn twist of Proposition 2.6 is just a classical Dehn twist in a Lagrangian 3-sphere, and t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-016-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "lem-sec-016-02.md",
+      "narrative": null,
+      "content": "The composite map QH∗(M) →HF ∗(L, L) →QH∗(M) is given by quantum cup-product with the fundamental class [L]. Sketch. The composite counts pairs of disks, each with one interior marked point, and with an incidence condition at their boundary marked points on L. Gluing, one obtains a disk with boundary on L and two interior marked points lying on the real diameter, but no boundary marked point. The relevant one-dimensional moduli space (with modulus the distance d between the interior marked points) has another boundary component, where d →0 rather than d →∞; this is geometrically realised by a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prop-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "prop-sec-016-01.md",
+      "narrative": null,
+      "content": "The map QH∗(M) →HF ∗(L, L) takes c1(M) 7→m0(L) · 1L. Sketch. Counting holomorphic disks with one interior marked point, constrained to lie on a closed cycle in M\\L, and one boundary marked point deﬁnes a map H∗(M, L) ∼= H∗ ct(M\\L) −→HF ∗(L, L). (3.2) The Maslov class deﬁnes an element of H2(M, L), hence a class in H2n−2(M\\L). Fix a cycle D ⊂M\\L representing this class (in [7] this cycle is taken to be a holomorphic anticanonical divisor disjoint from L, which need not exist in general). The argument of [7] implies that, provided L bounds no Maslov index ≤0 disks, (3.2) takes D to twice the obs",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Fukaya category",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-015-3-the-fukaya-category.md",
+      "narrative": null,
+      "content": "Notation. Fix a coeﬃcient ﬁeld K which is algebraically closed and of characteristic zero; unless\notherwise speciﬁed we assume K = C, but for much of the paper one could work with the Novikov\nﬁeld ΛC of formal series P\ni∈Z aitqi with ai ∈C, qi ∈R and qi →∞.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Floer and quantum cohomology",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-016-31-floer-and-quantum-cohomology.md",
+      "narrative": null,
+      "content": "plectic manifold, meaning that the homomorphisms π2(M) →R deﬁned by the symplectic form\nand the ﬁrst Chern class are positively proportional. Recall that a Lagrangian submanifold L is\nmonotone if the symplectic area and Maslov index homomorphisms π2(M, L) →R are positively\nproportional. If M is spherically monotone and π1(L) = 0 then L is automatically monotone,\nwith minimal Maslov index given by twice the ﬁrst Chern class 2c1(M). We will always assume\nthat L is orientable and equipped with a Spin structure. Floer cohomology is particularly benign\nin the monotone case, since energy and index o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/thm-sec-016-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Perutz",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "thm-sec-016-03.md",
+      "narrative": null,
+      "content": "The Floer cohomology HF(˜L1, ˜L2) is the cohomology of the mapping cone of quantum cup-product ∗(eV + σ) : CF(L1, L2) →CF(L1, L2) with the sum of the Euler class of V →B and a correction term σ · 1 ∈QH∗(B), where σ is the algebraic count of the number of Maslov index 2 disks meeting both a generic point of V and the global angular chain [σ]. Under the same hypotheses, the Floer cohomology HF(V, V ) (computed in B × M) is the (chain-level) mapping cone on quantum product by the same element on QH∗(B). If the co- isotropic V has minimal Maslov number > 2 there is no correction term, and the rele",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Higher order products",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "../sections/sec-017-32-higher-order-products.md",
+      "narrative": null,
+      "content": "linear over C. By deﬁnition, F(M) has:\n• objects being monotone oriented Lagrangian submanifolds equipped with Spin structures\nand additional perturbation data1;\n• morphisms given by Floer cochain complexes CF(L, L′); and\n• higher order composition operations from counting pseudoholomorphic polygons.\nThe higher order operations of the A∞-structure comprise a collection of maps µd\nF of degree d\n(mod 2), for d ≥1, with µ1\nF being the diﬀerential and µ2\nF the holomorphic triangle product\nmentioned previously:\nµd\nF : CF(Ld−1, Ld) ⊗· · · ⊗CF(L0, L1) →CF(L0, Ld)[2 −d]\nThe {µd\nF} have matrix coeﬃcien",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-017-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "rem-sec-017-01.md",
+      "narrative": null,
+      "content": "The simplest construction of F(M) uses Hamiltonian perturbations to to guarantee that the Lagrangian submanifolds {Lj} which are boundary conditions for a given higher-order product are pairwise transverse. In the sequel, we will encounter Lagrangians ﬁbred over arcs in C (as matching cycles in Lefschetz ﬁbrations), and the Riemann mapping theorem will provide 1One can also equip the Lagrangians with ﬂat unitary line bundles; we will not need that reﬁnement in this paper, though see Remark 3.22. IVAN SMITH a useful constraint on the µd F. To take advantage of this systematically would preclude",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-017-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "rem-sec-017-02.md",
+      "narrative": null,
+      "content": "The monotone Fukaya category F(M) is invariant, up to quasi-isomorphism, under rescaling the symplectic form. Some care must be taken, however, when considering products of monotone manifolds, since the factors cannot be scaled independently preserving monotonicity.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/cor-sec-018-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "cor-sec-018-02.md",
+      "narrative": null,
+      "content": "A Lagrangian sphere L ⊂M is determined up to quasi-isomorphism in F(M) by its associated twist functor TL together with the natural transformation id →TL[−1]. IVAN SMITH",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prop-sec-018-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "Seidel",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "prop-sec-018-01.md",
+      "narrative": null,
+      "content": "If L ⊂M is a Lagrangian sphere, equipped with the non-trivial Spin structure if L ∼= S1, then the geometric twist and the algebraic twist are quasi-isomorphic in nu-fun(F(M), F(M)). This is [92, Corollary 17.17] for exact symplectic manifolds; the argument carries over mutatis mutandis to the monotone case (see [106] for a detailed account, but note most of their work is needed only for the strictly more diﬃcult case of ﬁbred Dehn twists). Seidel also proves that if G : A →B is an A∞-functor, then for Y ∈A, G ◦TY ≃TG(Y ) ◦G ∈nu−fun(A, B). (3.6)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prop-sec-018-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "prop-sec-018-03.md",
+      "narrative": null,
+      "content": "If for some positive relation w in the τVj quantum cup-product by the cycle class C(w) is nilpotent as an operation on QH∗(M; λ), the spheres {Vj} split-generate DπF(M; λ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prop-sec-018-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "prop-sec-018-04.md",
+      "narrative": null,
+      "content": "If the vanishing cycles {Vj} all lie in the summand F(M; λ) and for some positive relation w in the τVj the cycle class C(w) is a multiple of c1(M) −λ id, then the {Vj} split-generate DπF(M; λ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisting and generation",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-018-33-twisting-and-generation.md",
+      "narrative": null,
+      "content": "gebraic operation which formally enlarges A to yield a more computable object: ﬁrst, passing\nto twisted complexes to give T w A; second, idempotent-completing to give Π(T w A) = T wπA.\nTwisted complexes themselves form the objects of a non-unital A∞-category T w(A), which has\nthe property that all morphisms can be completed with cones to sit in exact triangles. Idempotent\ncompletion, or split-closure, includes objects quasi-representing all cohomological idempotents,\nand is discussed further in Section 4.3. We write nu-fun(A, B) for the A∞-category of non-unital\nfunctors from A to B; mod-A for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/cor-sec-019-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "cor-sec-019-02.md",
+      "narrative": null,
+      "content": "In the situation of Proposition 3.9, the Hochschild cohomology HH∗(DπF(M; λ)) ∼= QH∗(M; λ) is isomorphic to the λ-generalised eigenspace of quantum cohomology.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/cor-sec-019-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "cor-sec-019-03.md",
+      "narrative": null,
+      "content": "In the situation of Proposition 3.9, for any φ ∈Symp(M) in the subgroup generated by Dehn twists in the vanishing cycles Vj inducing a functor Gφ of F(M; λ), one has HF(φ; λ) ∼= HH∗(Gφ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Functors from quilts",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "../sections/sec-019-34-functors-from-quilts.md",
+      "narrative": null,
+      "content": "from counts of quilted holomorphic surfaces, using the theory developed by Mau, Wehrheim and\nWoodward [104, 105, 65, 64]. They begin by deﬁning an extended category F#(M) which comes\nwith a fully faithful embedding F(M)֒ →F#(M); objects of the extended category are generalised\nLagrangian submanifolds, which comprise an integer k ≥1 and a sequence of symplectic manifolds\nand Lagrangian correspondences\n({pt} = M0, M1, . . . , Mk = M);\nLi,i+1 ⊂M −\ni × Mi+1, 0 ≤i ≤k −1\nwhere (X, ω)−is shorthand for (X, −ω). These form the objects of a category H(F#(M)), in\nwhich morphisms are given by quilted Floe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-019-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "rem-sec-019-04.md",
+      "narrative": null,
+      "content": "For any subcategory A ⊂F(M), there are always natural open-closed string maps HH∗(A, A) →QH∗(M) →HH∗(A, A). Abouzaid [1] proves (in the exact case, and for wrapped Floer cohomology) that if the unit is in the image of the ﬁrst map, then A split-generates the Fukaya category. Such split-generation results are often proved by showing that the diagonal is resolved by products, in the manner of Beilinson’s classical argument for sheaves on projective space. In our case, we know from",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/thm-sec-019-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Mau, Wehrheim, Woodward",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "thm-sec-019-01.md",
+      "narrative": null,
+      "content": "Let M and N be monotone symplectic manifolds. The association L♭7→FL♭deﬁnes a Z2-graded A∞-functor Φ : F(M −× N) −→nu-fun(F#(M), F#(N)). IVAN SMITH We will combine this general theory with an argument from [2], which uses properties of Yoneda embeddings to deduce that, in special cases, the Mau-Wehrheim-Woodward functor is actually fully faithful.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/thm-sec-019-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Mau, Wehrheim, Woodward",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "thm-sec-019-05.md",
+      "narrative": null,
+      "content": "Given correspondences L♭ 0 ⊂M −× N and L♭ 1 ⊂ N −× P with the geometric composition L♭ 1 ◦L♭ 0 ⊂M −× P smooth, embedded and transversely cut out, there is a quasi-isomorphism of functors FL♭ 1◦L♭ 0 ≃FL♭ 1 ◦FL♭ 0. The construction of a morphism in the functor-category between FL♭ 1◦L♭ 0 and FL♭ 1 ◦FL♭ 0 comes from counting “biquilted” disks with two interior seams (two parallel horocycles). The quasi- isomorphism statement is a diﬃcult result which relies on a delicate strip-shrinking argument for the associated cohomological functors, proved in detail in [105]. A diﬀerent proof of the cohomolo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/ex-sec-021-05",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 29,
+      "target": "ex-sec-021-05.md",
+      "narrative": null,
+      "content": "Let V have dimension 1 and A = Λ(V ), with basis 1, x say. Any formal function W ∈C[[x]] of degree ≥2 deﬁnes an A∞-structure on A, which induces the given product if and only if the degree 2 component vanishes. Up to formal change of variables (gauge transformation), any W(x) = xk + O(xk+1) ≃yk via y = x(1 + α1x + α2x2 + · · · ) is equivalent to a monomial, hence the resulting A∞-structures are equivalent to those deﬁned by monomial functions. Equation 5.11 simpliﬁes to the complex 0 −→C[[x]] ⊗⟨dx⟩ ιdW −−−−→C[[x]] −→0 with cohomology C[[x]]/⟨W ′(x)⟩given by the Jacobian ring, so the Hochschild",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-020-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "lem-sec-020-01.md",
+      "narrative": null,
+      "content": "If the ﬁrst Chern class c1( ¯ M) = r[∆], with r ∈Q, then deg(q) = 2r. This is a consequence of the index theorem for the Cauchy-Riemann equations with totally real boundary conditions, see [92, Section 11]. It is most familiar in the case when c1( ¯ M) = 0, and the deformed category is Z-graded, or when ∆⊂ ¯ M is an anticanonical divisor and the deformation parameter has degree 2 (for instance, deforming the cohomology of the zero-section T n ⊂(C∗)n from an exterior algebra to the Cliﬀord algebra on compactifying to CPn, with ∆ the toric anticanonical divisor). Suppose then c1( ¯ M) is eﬀectiv",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-021-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 29,
+      "target": "lem-sec-021-02.md",
+      "narrative": null,
+      "content": "Let A denote the A∞-algebra deﬁned by the Maurer-Cartan element α ∈CC1(A, A), with H(A) = A. The Hochschild cohomology HH∗(A, A) is the cohomology of the complex CC•(A, A) with respect to the twisted diﬀerential dCC• + [·, α].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Grading and deformations",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-020-35-grading-and-deformations.md",
+      "narrative": null,
+      "content": "category Aq over K[[q]], with µd\nAq = µd\nA + O(q), i.e.\nµd\nAq = µd\nA + qµd\nAq,1 + q2µd\nAq,2 + · · ·\n(3.9)\nwith each µd\nAq,j comprising K-linear maps\nhomA(Xd1, Xd) ⊗· · · ⊗homA(X1, X2) →homA(X1, Xd)[2 −d]\nfor any (X1, . . . , Xd) ∈(Ob A)d. The operations µd\nAq should be q-adically convergent (for us they\nwill always vanish for q ≫0). In applications, such deformations of Fukaya categories will arise\nfrom (partial) compactiﬁcations of symplectic manifolds M ⊂¯\nM, obtained by adding in a divi-\nsor ∆= ¯\nM\\M disjoint from the Lagrangian submanifolds under consideration. The operation\nµd\nF( ¯\nM),j w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Formality",
+      "pageStart": 26,
+      "pageEnd": 29,
+      "target": "../sections/sec-021-36-formality.md",
+      "narrative": null,
+      "content": "the A∞-structure on an algebra A = ⊕i,jHF(Li, Lj), where the {Li} are some ﬁnite collection\nof Lagrangians distinguished by the geometry in some fashion. In general this is a rather in-\ntractable problem, but in the case when A is smooth and commutative, A∞-structures up to\ngauge equivalence correspond to classical Poisson structures, by Kontsevich’s formality theorem.\nThe particular case of this that pertains to exterior algebras was used by Seidel in computing\nF(Σ2), and will play an important role later.\nFLOER COHOMOLOGY AND PENCILS OF QUADRICS\n27\nLet A be a Z2-graded algebra. We will be in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-021-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 29,
+      "target": "rem-sec-021-01.md",
+      "narrative": null,
+      "content": "The shift in grading follows the convention of [93], since we will later imitate some arguments from that paper. The shift ﬁts with a view of A∞-structures as deﬁned by formal super-vector ﬁelds, but disagrees with the usual conventions of the bar complex. One typically incorporates a formal parameter q of even degree into CC•+1(A, A), which makes the resulting Lie algebra g = CC•+1[[q]] ﬁltered pronilpotent. This is necessary to guarantee convergence of formal gauge transformations; L∞-quasi-isomorphisms of ﬁltered pronilpotent L∞-algebras induce bijections between equivalence classes of Maur",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-021-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 29,
+      "target": "rem-sec-021-04.md",
+      "narrative": null,
+      "content": "In fact, this Φ is strictly left-inverse to an explicit quasi-isomorphism Ψ : Sym•(V ∨) ⊗Λ(V ) →CC•(Λ(V ), Λ(V )) deﬁned by Kontsevich. The components of Ψ are linear combinations Ψi = P λi ⊗UΓi, where UΓi is a multilinear operation indexed by a certain class of graphs {Γi}, and the coeﬃcients λi are explicit integrals over conﬁguration spaces of points in the upper half-plane. The Lie algebra of polyvector ﬁelds on a ﬁnite-dimensional vector space V is the algebra Sym•(V ∨) ⊗Λ(V ) = C[[V ]] ⊗Λ(V ). The Lie algebra structure comes from the Schouten bracket [f ξi1 ∧· · · ∧ξik, g ξj1 ∧· · · ξjl]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-021-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 29,
+      "target": "rem-sec-021-06.md",
+      "narrative": null,
+      "content": "For the ring R = C[x]/⟨x2 −1⟩, the Hochschild cohomology2 group of the category of Z2-graded modules has rank 2 if deg(x) is even and rank 1 if deg(x) is odd (the latter fact is the computation of Example 3.20 in the special case k = 1, where the underlying product on A is itself deformed). This comes down to the fact that the group HomR⊗R(R ⊗R, R) of bimodule homomorphisms has rank 2 in the ﬁrst case, comprising the elements 1⊗1 7→α1+βx, but only rank 1 in the second, since for a Z2-graded map one must have 1 ⊗1 7→α1. From another viewpoint, when deg(x) is even, R is semisimple, splitting int",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/thm-sec-021-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Formality Theorem, Kontsevich",
+      "pageStart": 26,
+      "pageEnd": 29,
+      "target": "thm-sec-021-03.md",
+      "narrative": null,
+      "content": "When A = Λ(V ) is an exterior algebra, with its natural Z2-grading placing V in degree 1, there is an L∞-quasi-isomorphism Φ : CC•(A, A) −→Sym•(V ∨) ⊗Λ(V ) between the Hochschild complex and its cohomology, the Lie algebra of polyvector ﬁelds.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Fukaya category of a curve",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-022-37-the-fukaya-category-of-a-curve.md",
+      "narrative": null,
+      "content": "p→P1 to be the unique curve branched\nover the points {0, ξj, 1 ≤j ≤2g + 1}, where ξ is a primitive (2g + 1)-st root of unity. We\ncan exhibit embedded circles in C via matching arcs amongst these points, i.e. the projections\nof Z2-invariant curves to P1. For instance, when g = 2, 5 Lagrangian submanifolds {Lj} of C\nare determined by the arcs of the pentagram on the left of Figure 1 (the vertices are the 5th\nroots of unity); more generally there is a spikier (2g + 1)-gram deﬁning 2g + 1 associated spheres\npermuted by the obvious cyclic symmetry. In an act of shameless innumeracy, we will refer t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-022-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "rem-sec-022-01.md",
+      "narrative": null,
+      "content": "An isotopy class of essential simple closed curve γ ⊂Σ deﬁnes two objects in F(Σ) modulo shifts, namely the balanced representative of γ equipped with either Spin structure. Label these γ and ¯γ for the non-trivial respectively trivial Spin-structure. Then HF(γ, γ) ∼= C ∼= HF(¯γ, ¯γ); HF(γ, ¯γ) = 0. (3.16) One can equivalently regard ¯γ as the pair (γ, ξ) where ξ →γ is the non-trivial line bundle with holonomy in Z2, from which point of view one sees that the group H1(Σ; Z2) acts on F(Σ), tensoring by ﬂat line bundles.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-022-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "rem-sec-022-02.md",
+      "narrative": null,
+      "content": "One can combine the actions of diﬀeomorphisms and tensoring by ﬂat line bundles into an action of the canonical split extension bΓsplit(Σg) of Γg by H1(Σ; Z2). Strictly, this is only a weak action, meaning that the functors Ggi associated to group elements gi satisfy Gg1Gg2 ∼= Gg1g2 (but we do not keep track of coherence amongst these isomorphisms). We will suppress this point in the sequel, but it would probably enter in reconciling the appearance of bΓsplit with Remark 2.1; compare to [92, Remark 10.4]. We collect a number of other facts from the work of Seidel [93] and Eﬁmov [29]: let V be",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/cor-sec-024-11",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "cor-sec-024-11.md",
+      "narrative": null,
+      "content": "We have the following equivalences: • If Q ⊂P2g+1 is an even-dimensional quadric, DπF(Q; 0) ≃DπF(S0). • If Q ⊂P2g is an odd-dimensional quadric, DπF(Q; 0) ≃Dπ(mod-Cl1), except when dim(Q) = 1 and the nilpotent summand of the category is empty.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/ex-sec-024-06",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "ex-sec-024-06.md",
+      "narrative": null,
+      "content": "Suppose n = 2g. The monodromy π1(P1\\{λj}) →π0 Symp(Q) (4.2) of the pencil (4.1) factors through the cyclic subgroup Z2 generated by the Dehn twist τL, by",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-024-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "lem-sec-024-01.md",
+      "narrative": null,
+      "content": "A quadric hypersurface Q ⊂Pn+1contains a distinguished isotopy class of La- grangian sphere L, which is the unique sphere arising as the vanishing cycle of an algebraic degeneration. If n > 1, this sphere lies in the nilpotent summand F(Q; 0).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-024-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "lem-sec-024-02.md",
+      "narrative": null,
+      "content": "Let n = dimC(Q) and let τL denote the Dehn twist in the Lagrangian sphere L of",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-024-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "lem-sec-024-03.md",
+      "narrative": null,
+      "content": "(1) If n is odd, then τL is Hamiltonian isotopic to the identity. (2) If n is even, then τL ∈π0 Symp(Q) has order 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-024-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "lem-sec-024-04.md",
+      "narrative": null,
+      "content": "Let Q ⊂Pn+1 denote a smooth n-dimensional quadric hypersurface. The quantum cohomology ring admits the presentation • if n = 4k + 2, ⟨h, a, b | hn+1 = 4h, h(a −b) = 0, ab = (hn −2)/2, a2 = 1 = b2⟩; • if n = 4k, ⟨h, a, b | hn+1 = 4h, h(a −b) = 0, ab = 1, a2 = (hn −2)/2 = b2⟩; • if n = 2k + 1, ⟨h | hn+1 = 4h⟩. The element h ∈QH2 is induced by the hyperplane class, whilst a, b ∈QH2k are the classes of the two ruling Pk’s on the quadric. Now take a pencil of quadrics {Qt}t∈P1 ⊂Pn+1 generated by two smooth quadrics Q0, Q1 meeting transversely. Let Z denote the relative quadric, the blow-up of Pn+1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-024-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "lem-sec-024-05.md",
+      "narrative": null,
+      "content": "If Y is the blow-up of Pn+1 along a (d1, d2)-complete intersection, with d1 ≥d2, then |pH −E| is very ample provided p ≥d1 + 1. A proof is given in either of [20, 41]. Therefore Z is a Fano variety, in fact the anti-canonical class is very ample; this is obvious if one views Z ⊂Pn+1 × P1 as a divisor of bidegree (2, 1). IVAN SMITH We equip Z with the monotone symplectic form. For generic pencils of quadrics, the ﬁbration w : Z →P1 of proper transforms of quadric hypersurfaces is a Lefschetz ﬁbration with (n + 2) singular ﬁbres; Lemma 4.1 shows these all deﬁne the same vanishing cycle in Q.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-024-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "lem-sec-024-07.md",
+      "narrative": null,
+      "content": "The nilpotent summand F(Q; 0) is split-generated by the Lagrangian sphere of",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-024-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "lem-sec-024-08.md",
+      "narrative": null,
+      "content": "Let Lg ⊂Q2g be the Lagrangian sphere of Lemma 4.1, in an even-dimensional quadric. Then HF(L, L) is semisimple, and carries a formal A∞-structure.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-024-10",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "lem-sec-024-10.md",
+      "narrative": null,
+      "content": "Let L2k+1 ⊂Q2k+1 be the Lagrangian sphere of Lemma 4.1, in an odd-dimensional quadric. Then HF(L, L) ∼= Cl1 is quasi-isomorphic to the Cliﬀord algebra with vanishing higher order products.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From the base locus to the relative quadric",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "../sections/sec-023-4-from-the-base-locus-to-the-relative-quadric.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Fukaya category of a quadric",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "../sections/sec-024-41-the-fukaya-category-of-a-quadric.md",
+      "narrative": null,
+      "content": "categorically, a pair of points S0 and a smooth even-dimensional quadric Q. For completeness,\nwe discuss quadrics of both even and odd dimension.\nFLOER COHOMOLOGY AND PENCILS OF QUADRICS\n31\nLemma 4.1. A quadric hypersurface Q ⊂Pn+1contains a distinguished isotopy class of La-\ngrangian sphere L, which is the unique sphere arising as the vanishing cycle of an algebraic\ndegeneration. If n > 1, this sphere lies in the nilpotent summand F(Q; 0).\nProof. A singular quadric is a cone on a quadric of lower-dimension, hence a quadric with isolated\nsingularities has a unique singular point. In particular",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-024-09",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "rem-sec-024-09.md",
+      "narrative": null,
+      "content": "More precisely, that computation shows that up to rescaling, the unique non-formal A∞-structure treats the idempotent summands of 1L asymmetrically, and hence the non-formal structure admits no autoequivalence which acts on HF(L, L) in the same way as the Dehn twist τL (this must act non-trivially since it reverses orientation on L, hence interchanges the two idempotents). □ We remark that one can also derive the above formality result from the fact that the Lagrangian sphere is invariant under an anti-symplectic involution of the quadric, together with 4-divisibility of all its Maslov indices",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-024-12",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "rem-sec-024-12.md",
+      "narrative": null,
+      "content": "Every twisted complex in T w F(S0) is quasi-isomorphic to a pair of graded vector spaces, one supported at each point of S0. The endomorphism algebra of any idempotent is therefore a sum of matrix algebras, hence has rank two if and only if it is a direct sum of two one-dimensional matrix algebras. It follows that, for an even-dimensional quadric, DπF(Q; 0) contains a unique spherical object up to quasi-isomorphism.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/cor-sec-025-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 36,
+      "target": "cor-sec-025-05.md",
+      "narrative": null,
+      "content": "There is a ring isomorphism HH∗(F(Q0 ∩Q1); 0)) ∼= H∗(Σg).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-025-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 36,
+      "target": "lem-sec-025-03.md",
+      "narrative": null,
+      "content": "W is deﬁned by ρ ◦η : π1(S2\\{Crit}) →π0 Symp(Q0 ∩Q1). This is true essentially tautologically, by deﬁnition of ρ. There are (2g + 1)(2g + 2) singular ﬁbres in W, deﬁning a collection of that many Lagrangian (2g −1)-spheres in Q0 ∩Q1. These actually only give rise to (2g + 1) distinct Hamiltonian isotopy classes {Vj} ⊂Q0 ∩Q1; when g = 2 these are associated to the 5 distinct vanishing cycles {ζj} in the pencil on the sextic K3, cf. Figure 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-025-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 36,
+      "target": "lem-sec-025-04.md",
+      "narrative": null,
+      "content": "The Lagrangian spheres {Vj} split-generate DπF(Q0 ∩Q1; 0).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hyperelliptic curves and quadrics",
+      "pageStart": 33,
+      "pageEnd": 36,
+      "target": "../sections/sec-025-42-hyperelliptic-curves-and-quadrics.md",
+      "narrative": null,
+      "content": "a hyperelliptic curve branched over the (distinct) points {λ1, . . . , λ2g+2} ⊂C ⊂P1, there is an\nassociated pencil of quadric hypersurfaces {sQ0 + tQ1}[s:t]∈P1, where\nQ0 =\nnX\nz2\nj = 0\no\n⊂P2g+1;\nQ1 =\nnX\nλjz2\nj = 0\no\n⊂P2g+1.\n(4.3)\nRemark 4.11. The fundamental group of the universal family of hyperelliptic curves is a central\nextension\n1 →Z2 −→Γhyp\ng\n−→π1 Conf2g+2(CP1) →1\nwith the ﬁrst factor generated by the hyperelliptic involution. More explicitly, as Seidel pointed\nout (MIT reading group, unpublished notes), to identify the hyperelliptic curves\ny2 =\nY\nj\n(λj −µjx)\nand\ny2 =\nY\nj\n(tjλj −tjµjx)\na",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-025-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 36,
+      "target": "rem-sec-025-01.md",
+      "narrative": null,
+      "content": "The fundamental group of the universal family of hyperelliptic curves is a central extension 1 →Z2 −→Γhyp g −→π1 Conf2g+2(CP1) →1 with the ﬁrst factor generated by the hyperelliptic involution. More explicitly, as Seidel pointed out (MIT reading group, unpublished notes), to identify the hyperelliptic curves y2 = Y j (λj −µjx) and y2 = Y j (tjλj −tjµjx) associated to points (λj, µj), (tjλj, tjµj) ⊂C2\\{0} relies on a choice of square root of Q tj, which is how the central Z2-factor arises when constructing parallel transport maps. (Accordingly, there is no universal hyperelliptic curve over Con",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-025-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 33,
+      "pageEnd": 36,
+      "target": "rem-sec-025-02.md",
+      "narrative": null,
+      "content": "A classical result of Kn¨orrer [54] asserts that if Q0 ∩Q1 is a complete intersection of two quadrics in P2g+1 with isolated singularities, then the number of singular points of Q0∩Q1 is at most 2g + 2 (these are then necessarily all nodes, and the bound is realised). The curve FLOER COHOMOLOGY AND PENCILS OF QUADRICS Σg admits at most g + 1 pairwise disjoint balanced simple closed curves invariant under the hyperelliptic involution, each of which can carry either of two Spin structures, so this ﬁts nicely. Consider now a net of quadric 2g-folds in P2g+1, spanned by Q0 = {P z2 j = 0}, Q1 = {P",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/cor-sec-026-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "cor-sec-026-02.md",
+      "narrative": null,
+      "content": "There is a natural functor ΠA →nu-fun(B, ΠC). We will not need this stronger result and omit the proof.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-026-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "lem-sec-026-01.md",
+      "narrative": null,
+      "content": "Let A, B and C be non-unital A∞-categories and suppose there is an A∞-functor Φ : A →nu-fun(B, C). To each idempotent up to homotopy ℘for Y ∈A one can canonically associate an element of nu-fun(B, ΠC).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Idempotents for functors",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-026-43-idempotents-for-functors.md",
+      "narrative": null,
+      "content": "categories.\nWe begin by recalling the construction of a split-closure.\nAn idempotent up to\nhomotopy for an object Y ∈A is an A∞-functor from K to A taking the unit of the ﬁeld to Y .\nExplicitly, this amounts to giving a collection of elements\n℘d ∈hom1−d\nA\n(Y, Y );\nd ≥1\nsatisfying the equations\nX\nr\nX\ns1,...,sr\nµr\nA(℘s1, . . . , ℘sr) =\n(\n℘d−1\nif d is even,\n0\nif d is odd\n(4.4)\nsumming over partitions s1+· · ·+sr = d. If p ∈HomH(A)(Y, Y ) is an idempotent endomorphism\nin the cohomological category3, there is always an idempotent up to homotopy ℘for which\n[℘1] = p [92, Lemma 4.2]. Any A∞-category h",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/ex-sec-027-07",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 41,
+      "target": "ex-sec-027-07.md",
+      "narrative": null,
+      "content": "Let p = (0, 0) ∈C2 and consider the arc γ ⊂R+ ⊂C = {w = 0} ⊂C2, with co-ordinates (z, w) on C2. The blow-up at p is eﬀected symplectically by choosing a ball with boundary S3 ε = {|z|2 + |w|2 = ε2} and quotienting out Hopf circles. Suppose now we consider the circles {|w| = ε} lying over the arc γ ⊂{w = 0}. The union of these circles is a Lagrangian tube in C2 which meets S3 ε only over the end-point of γ at the origin, where the intersection is precisely the circle {z = 0, |w| = ε} which is collapsed in forming the blow-up, cf. Figure 4. Figure 4. The symplectic cut of a Lagrangian tube in Bl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-027-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 41,
+      "target": "lem-sec-027-01.md",
+      "narrative": null,
+      "content": "X contains a Lagrangian torus T which, equipped with the Spin structure which is non-trivial on both factors, has HF(T, T ) ∼= Cl2̸ = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-027-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 41,
+      "target": "lem-sec-027-03.md",
+      "narrative": null,
+      "content": "Equip E = P1 with the symplectic form 2ωF S of area 2π, and equip X = O(−1) with the symplectic form Ω1 giving the zero-section area π. Deﬁne ∂νE as the boundary of the sphere of radius √ 2 in C2, viewed via (4.6) as the boundary of the unit disk subbundle O(−1)1 ⊂O(−1). Then the correspondence Γ2 ⊂E−× X associated to νE is a monotone Lagrangian submanifold.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-027-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 41,
+      "target": "lem-sec-027-04.md",
+      "narrative": null,
+      "content": "The Lagrangian torus T of Lemma 4.19 has a non-trivial idempotent.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-027-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 41,
+      "target": "lem-sec-027-08.md",
+      "narrative": null,
+      "content": "The torus T ⊂Bl0(C2) meets the Lagrangian disk ∆which is the symplectic cut of R≥0 × {|w| = ε} cleanly in a circle. The Floer cohomology HF(T 2, ∆) ∼= H∗(S1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An illustrative example",
+      "pageStart": 37,
+      "pageEnd": 41,
+      "target": "../sections/sec-027-44-an-illustrative-example.md",
+      "narrative": null,
+      "content": "the origin. We equip this with a symplectic form giving the exceptional divisor area c > 0. Let\nClk denote the Cliﬀord algebra associated to a non-degenerate quadratic form on Ck, of total\ndimension 2k.\nLemma 4.19. X contains a Lagrangian torus T which, equipped with the Spin structure which\nis non-trivial on both factors, has HF(T, T ) ∼= Cl2̸ = 0.\nProof. There is a natural Hamiltonian torus action on C2, which is inherited by the blow-up\nsince we have blown up a toric ﬁxed point. The relevant moment polytope is depicted in Figure\n3; in this ﬁgure the ﬁbre lying over the black dot, placed sym",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-027-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 41,
+      "target": "rem-sec-027-02.md",
+      "narrative": null,
+      "content": "The torus T is actually special Lagrangian with respect to the pullback of the holomorphic volume form dz1/z1 ∧dz2/z2 from C2. The pullback has ﬁrst order poles along the proper transforms of the axes and the exceptional divisor, hence any Maslov index 2 disk must meet this locus transversely once, as in Figure 3. For another viewpoint on the Lagrangian torus T ⊂O(−1), recall the construction of the symplectic blow-up. We let O(−1) = \b ((z1, z2), [w1 : w2]) ∈C2 × P1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-027-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 41,
+      "target": "rem-sec-027-05.md",
+      "narrative": null,
+      "content": "The proof shows there are two “indistinguishable” idempotents in HF(T, T ), and one could use either in the construction of the functor below. In fact, e+ ∼= e−[1] and e−∼= e+[1] (which is compatible with the fact that the double shift is isomorphic to the identity in the Z2-graded Fukaya category). The same binary choice appears on the mirror side, when one considers Kn¨orrer periodicity for Orlov’s derived categories of singularities. In principle, this choice ﬁbrewise in a family of Cliﬀord-like 2-tori could lead to an obstruction to the existence of a global idempotent, but this obstructio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-027-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 41,
+      "target": "rem-sec-027-06.md",
+      "narrative": null,
+      "content": "Non-triviality of HF(T, T ) implies that the Lagrangian correspondences Γi are non-trivial elements of their Fukaya categories. Note that the individual correspondences Γ1 ∼= S1 and Γ2 ∼= S3 cannot split for reasons of degree: in both cases only the identity lives in HF ev. The composite correspondence Γ1 ◦Γ2 has an idempotent summand which deﬁnes a functor Φ(e+) : F({pt}) →T wπF(X) (4.8) which takes the unique Lagrangian submanifold of the base locus {pt} to an object on the RHS with the same Floer cohomology; i.e. the summand of the functor is fully faithful. To obtain a slightly less trivia",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/ex-sec-028-09",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 49,
+      "target": "ex-sec-028-09.md",
+      "narrative": null,
+      "content": "(Auroux) The hypothesis on dim(B) plays a deﬁnite role. Take a pencil of linear hyperplanes in P3 with base locus P1 and blow that up. This may be done torically, and we obtain a toric variety whose moment map is a truncated tetrahedron. The Lagrangian L × T 2 is just the monotone torus T 3 which is the central ﬁbre of that moment map, and it bounds one family of Maslov index 2 disks for each facet of the moment polytope, in particular it bounds 5 families, not all of which miss the reference hyperplane Href if this is taken to be one face of the tetrahedron. This is because the original Lagra",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-028-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 49,
+      "target": "lem-sec-028-01.md",
+      "narrative": null,
+      "content": "Under hypothesis (4.11), the correspondences ΓE and ΓR can be chosen to be embedded monotone Lagrangian submanifolds, with embedded monotone composition Γ = ΓR ◦ ΓE ⊂B−× Y .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-028-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 49,
+      "target": "lem-sec-028-05.md",
+      "narrative": null,
+      "content": "The functor ΦΓR◦ΓE is quasi-isomorphic to a functor with image in the fully faithfully embedded A∞-subcategory F(Y ) ⊂F#(Y ). Sketch. Write Γ = ΓR ◦ΓE ⊂B−× Y . For every object L ∈F(B) the image of L under Γ is a smooth Lagrangian submanifold ˆL in Y . Quilt theory, via Theorem 3.14, again provides a quasi-isomorphism of functors F(pt) →F#(Y ) with images ˆL and ΦΓ(L); the quasi-isomorphism IVAN SMITH of functors implies that the target objects ˆL ∼ −→{pt L −→B Γ −→Y } = ΦΓ(L) are quasi-isomorphic objects of F#(Y ), and in particular HF(ˆL, ΦΓ(L)) ∼= HF(ˆL, ˆL). More explicitly, the Floer chai",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-028-06",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 49,
+      "target": "lem-sec-028-06.md",
+      "narrative": null,
+      "content": "Suppose L ∈F(B; 0), and let ΓL denote its image under the correspondence Γ = ΓR ◦ΓE. Either HF(ΓL, ΓL) = 0 for all L ∈F(B; 0), or there is an isomorphism HF(ΓL, ΓL) ∼= HF(L, L) ⊗Cl2 of QH∗(B; 0)-modules.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-028-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 49,
+      "target": "lem-sec-028-07.md",
+      "narrative": null,
+      "content": "If for some Lagrangian sphere L ⊂B all holomorphic disks of Maslov index 2 with boundary on ΓL lie inside a disk bundle Ltaut →E, then ΓL̸ ≃0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-028-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 49,
+      "target": "lem-sec-028-08.md",
+      "narrative": null,
+      "content": "Suppose dimC(B) > 1. Then Maslov index 2 disks with boundary on L × T 2 meet exactly one of E, H0 and H∞once, and are disjoint from Href. In particular, no such Maslov index 2 disk can project onto P1 under π.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-028-10",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 49,
+      "target": "lem-sec-028-10.md",
+      "narrative": null,
+      "content": "Assuming that dimC(B) > 1 and that the hypotheses (4.10, 4.11) hold, then ΓL̸ = 0 for a Lagrangian sphere L ⊂B.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-028-12",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 49,
+      "target": "lem-sec-028-12.md",
+      "narrative": null,
+      "content": "now says that HF(ΓL, ΓL) ∼= HF(L, L) ⊗Cl2 as a module over QH∗(B; 0). Although the ring structure on the second tensor factor is not a priori determined by the quantum Gysin sequence, for degree reasons the Floer product amongst the codimension 1 cycles given by the circle factors L × {pt} × S1 and L × S1 × {pt} is completely determined by disks of Maslov index 2. The constraints on the Maslov 2 disks obtained in the proof of Lemma 4.36 are suﬃcient to imply that HF(ΓL, ΓL) ∼= HF(L, L) ⊗Cl2 as a ring. This is true for all Lagrangian spheres L ∈F(B; 0), hence for any such L the image ΓL has a n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-028-13",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 49,
+      "target": "lem-sec-028-13.md",
+      "narrative": null,
+      "content": "The functor Φ+ Γ is fully faithful.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prop-sec-028-14",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 49,
+      "target": "prop-sec-028-14.md",
+      "narrative": null,
+      "content": "Assuming (4.10, 4.11) and that dimC(B) > 1, there is a fully faithful em- bedding DπF(B; 0)֒ →DπF(Y ). This is exactly the content of Lemmas 4.31 and 4.38. Now take B = Q0 ∩Q1 ⊂P2g+1 for some g > 1, so the space Y →P1 is the relative quadric. Lemma 4.4 shows that the crucial hypothesis (4.11) holds, and Proposition 4.39 yields one of the embeddings of Theorem 1.1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Idempotents and blow-ups",
+      "pageStart": 41,
+      "pageEnd": 49,
+      "target": "../sections/sec-028-45-idempotents-and-blow-ups.md",
+      "narrative": null,
+      "content": "pencil of hypersurface sections with smooth base locus B = H0 ∩H1 ⊂X.\nFor simplicity,\nwe suppose π1(B) = 0. We also ﬁx an additional “reference” hyperplane section Href linearly\nequivalent to the Hi but not in the pencil deﬁning B, so there is an associated net of hyperplanes\n⟨H0, H1, Href⟩. We denote by b : Y →X the blow-up Y = BlB(X) along the base locus, and\nby E ⊂Y the exceptional divisor; note that E ∼= B × P1 canonically, since the normal bundle\nνB/X ∼= L ⊗C2 for the line bundle L = νHi/X. We assume:\n• X, B and Y are all monotone (Fano); c1(X) = (d + 2)H with d ≥2;\n• c1(L|B) is proportio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-028-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 49,
+      "target": "rem-sec-028-02.md",
+      "narrative": null,
+      "content": "We emphasise that there are two diﬀerent symplectic forms on B × P1 in play; ﬁrst, the non-monotone form arising by restricting a monotone form on Y to E ⊂Y ; second, the monotone form arising from co-isotropic reduction of the boundary of a suitable disk bundle νE ⊂Y . We only use the Fukaya category of the monotone form; as a mild abuse of notation, we will continue to write E for the space B × P1 even though it is not equipped with the symplectic form it inherits from the embedding in the ambient space Y .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-028-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 49,
+      "target": "rem-sec-028-03.md",
+      "narrative": null,
+      "content": "For the case of interest in this paper, namely (2, 2)-intersections in P2g+1 with g ≥2, the ampleness hypothesis (4.11) holds by Lemma 4.4. When g = 1, this conditions fails; the class c1(P3) −2PD[E] lies on the boundary of the K¨ahler cone of the blow-up of P3 along a complete intersection elliptic curve. In that case, there is no monotone correspondence, which ﬁts with the fact that the elliptic curve has no balanced Fukaya category and F(Σ1) is naturally deﬁned over ΛC.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-028-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 49,
+      "target": "rem-sec-028-04.md",
+      "narrative": null,
+      "content": "There is another viewpoint on the composite correspondence Γ = ΓR ◦ΓE which is often useful. Again starting from a K¨ahler form on Y which is standard in a large disk bundle over E, we perform a symplectic cut [61] along the boundary of a sub-disk bundle. Algebro- geometrically, symplectic cutting is eﬀected by deformation to the normal cone [40, Chapter 5]. We obtain a space with two components meeting along a divisor. One component is a F1- bundle over B, given by projective completion of the normal bundle to E, and the other Y ′ is holomorphically isomorphic to Y , but equipped with a diﬀer",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-028-11",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 49,
+      "target": "rem-sec-028-11.md",
+      "narrative": null,
+      "content": "Another viewpoint on the previous proof is also informative. The ﬁbration over F1 has a (generally singular) discriminant curve, whose amoeba projects to some complicated subset of the moment map image. However, this image is disjoint from the −1-section, because we originally chose Href transverse to B (i.e. a net of hypersurfaces with smooth base locus). A holomorphic rescaling of F1 (the lift of the holomorphic action on P2 taking [x : y : z] 7→[x : y : cz] where we obtain F1 from blowing up [0 : 0 : 1]) will move the discriminant into a small neigbourhood of Href. On the other hand, the sy",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/cor-sec-029-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 49,
+      "pageEnd": 52,
+      "target": "cor-sec-029-04.md",
+      "narrative": null,
+      "content": "The triangulated embedding Φ+ : DπF(Q0 ∩Q1)֒ →DπF(Z) is compatible with the natural weak actions of the hyperelliptic pointed mapping class group, in the sense that for any element f ∈Γhyp g,1 there is some quasi-equivalence of functors Φ+ ◦f|DπF(Q0∩Q1) ≃f|DπF(Z) ◦Φ+.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-029-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 49,
+      "pageEnd": 52,
+      "target": "lem-sec-029-01.md",
+      "narrative": null,
+      "content": "Let Sn ∼= L ⊂M be a Lagrangian sphere. Fix a Lagrangian disk ∆n+1 ⊂H with ∂∆= L in a smooth element H ⊂P of the pencil, and with ∆∩M = L. There is a Lagrangian sphere Sn+2 ∼= ˆL ⊂(BlM(P), Ωλ). The Hamiltonian isotopy class of ˆL is determined by the Lagrangian isotopy class of ∆.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-029-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 49,
+      "pageEnd": 52,
+      "target": "lem-sec-029-02.md",
+      "narrative": null,
+      "content": "The cup-product map HF( ˆVγj, ˆVγj+1) ⊗HF(Vγj × T 2, ˆVγj) −→HF(Vγj × T 2, ˆVγj+1) (4.18) does not vanish.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-029-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 49,
+      "pageEnd": 52,
+      "target": "lem-sec-029-03.md",
+      "narrative": null,
+      "content": "Φ+ Γ (Vγ) ≃ˆVγ are quasi-isomorphic objects of mod-P.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-029-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 49,
+      "pageEnd": 52,
+      "target": "lem-sec-029-05.md",
+      "narrative": null,
+      "content": "The relation between algebraic and geometric twists, Proposition 3.6 and more speciﬁcally Equation 3.6, implies TΦ+(Vγ) ◦Φ+ = Φ+ ◦TVγ. Using Lemma 4.44 to identify Φ+(Vγ) ≃ˆVγ, we see Φ+ entwines the action of a Dehn twist. This implies the Lemma (note we do not claim any compatibility between the quasi-isomorphisms for diﬀerent mapping classes). □",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spinning",
+      "pageStart": 49,
+      "pageEnd": 52,
+      "target": "../sections/sec-029-46-spinning.md",
+      "narrative": null,
+      "content": "for proving Addendum 1.2.\nLet ν →H be a real rank 2 symplectic vector bundle over a\nsymplectic manifold (H, ωH), and equip ν with a Hermitian metric. Suppose the ﬁrst Chern\nclass c1(ν) = t[ωH] ∈H2(H) is positively proportional to the symplectic form. The symplectic\nform on the total space of the disk bundle of ν of radius < 1/\n√\nt is\nΩν = π∗ωH + 1\n2d(r2α)\nwhere r is the radial co-ordinate and α is a connection form for the bundle satisfying dα =\n−tπ∗ωH. Fibrewise, this is the standard area form on R2. If ∆⊂H is a Lagrangian cycle and\nˆ∆is the lift of ∆to ν given by taking the union over ∆of ci",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/cor-sec-031-06",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 54,
+      "target": "cor-sec-031-06.md",
+      "narrative": null,
+      "content": "The subcategory P ⊂F(Z; 1) generated by the matching spheres Lγ for arbitrary paths γ has Hochschild cohomology HH∗(P, P) ∼= H∗(Σg).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-031-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 54,
+      "target": "lem-sec-031-01.md",
+      "narrative": null,
+      "content": "Any matching path χ : [−1, 1] →P1 for Z →P1 deﬁnes a Lagrangian sphere Lχ ⊂Z, unique up to Hamiltonian isotopy.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-031-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 54,
+      "target": "lem-sec-031-03.md",
+      "narrative": null,
+      "content": "For a matching path γ ⊂C deﬁning Lγ ⊂Z, HF(Lγ, Lγ) ∼= H∗(S2g+1) as a ring.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-031-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 54,
+      "target": "lem-sec-031-04.md",
+      "narrative": null,
+      "content": "For any matching path γ, the sphere Lγ ∈F(Z; 1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-031-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 54,
+      "target": "lem-sec-031-05.md",
+      "narrative": null,
+      "content": "For a matching path γ ⊂C, the spun sphere ˆVγ and the matching sphere Lγ are quasi-isomorphic objects of F(Z).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-031-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 54,
+      "target": "lem-sec-031-08.md",
+      "narrative": null,
+      "content": "We take the matching paths of the pentagram, Figure 1, and write A for the subcategory of F(Z) generated by the associated matching spheres.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From the curve to the relative quadric",
+      "pageStart": 52,
+      "pageEnd": 52,
+      "target": "../sections/sec-030-5-from-the-curve-to-the-relative-quadric.md",
+      "narrative": null,
+      "content": "Notation. For a space M equipped with a map p : M →P1, write M̸=t for the complement of\nthe ﬁbre p−1(t) ⊂M; similarly M̸=T denotes the complement of the union of the ﬁbres for t ∈T .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Matching Spheres",
+      "pageStart": 52,
+      "pageEnd": 54,
+      "target": "../sections/sec-031-51-matching-spheres.md",
+      "narrative": null,
+      "content": "matching cycle is by deﬁnition a path χ : [−1, 1] →P1 in the base of a Lefschetz ﬁbration which\nends at distinct critical values (and is otherwise disjoint from the set of critical values) and for\nwhich the associated vanishing cycles are Hamiltonian isotopic in the ﬁbre over χ(0). Any path\nbetween critical points for Z →P1 is a matching path, by Lemma 4.1.\nLemma 5.1. Any matching path χ : [−1, 1] →P1 for Z →P1 deﬁnes a Lagrangian sphere\nLχ ⊂Z, unique up to Hamiltonian isotopy.\nProof. The monotone symplectic form on Z is restricted from a global K¨ahler form on P2g+1×P1.\nWe deﬁne the sphere Lχ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-031-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 54,
+      "target": "rem-sec-031-02.md",
+      "narrative": null,
+      "content": "If one restricts to Z̸=t for some t̸ ∈χ, there is another description of this sphere. By hypothesis the vanishing cycles associated to χ|[−1,0] and χ|[0,1] are Hamiltonian isotopic in the ﬁbre Q0, by a Hamiltonian isotopy Hs. One can deform the symplectic connection of the ﬁbration Z̸=t →C so that the parallel transport along χ|[−δ,δ] incorporates this isotopy, and exactly matches up the boundaries of the two vanishing thimbles, cf. Lemma 8.4 of [9]. It is standard that the two constructions give rise to the same Lagrangian sphere up to isotopy. Note that the matching cycle construction, requi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-031-07",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 54,
+      "target": "rem-sec-031-07.md",
+      "narrative": null,
+      "content": "The relative quadric Z ⊂P2g+1 × P1 is a divisor of bidegree (2, 1), from which perspective it is straightforward to construct a Lefschetz pencil with ﬁbre Z and with vanishing cycles matching spheres in the sense of Lemma 5.1. However, the cycle class C(w) for the corresponding ﬁbration w : BlZ∩Z′(P2g+1 × P1) →P1 does not act nilpotently on HF(Lχ, Lχ), which means we can’t compute the Hochschild cohomology of P by direct appeal to Corollary 3.11. This accounts for the somewhat roundabout proof of Corollary 5.6, and its appeal to",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-032-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 56,
+      "target": "lem-sec-032-02.md",
+      "narrative": null,
+      "content": "The categories T w V(C̸=∞) and T w V(Z̸=∞) are quasi-isomorphic as Z2-graded A∞-categories. Similarly, T w V(C̸=0) ≃T w V(Z̸=0).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-032-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 56,
+      "target": "lem-sec-032-03.md",
+      "narrative": null,
+      "content": "Each pentagram matching path is obtained from some basic, respectively radial, matching path by applying a half twist along another basic, respectively radial, matching path.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-032-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 56,
+      "target": "lem-sec-032-04.md",
+      "narrative": null,
+      "content": "The equivalence of Lemma 5.9 yields a quasi-isomorphism between the subcate- gories T w A(C̸=∞) and T w A(Z̸=∞) generated by the ﬁnite set of Lagrangian matching spheres associated to the arcs of the generalised pentagram.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-032-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 56,
+      "target": "lem-sec-032-05.md",
+      "narrative": null,
+      "content": "One can deﬁne A(Z) with respect to almost complex structures with the following properties: (i) the map π : Z →P1 is pseudoholomorphic; (ii) the structure is integrable near the ﬁbres lying over 0 and ∞; (ii) the rotation group Z2g+1 pulled back from P1 acts holomorphically. IVAN SMITH Sketch. The ﬁrst statement is standard. The ﬁbres over 0 and ∞are disjoint from the La- grangians, and holomorphic pearls contributing to the A∞-structure contain no sphere bubbles by monotonicity, which implies the second statement. Since no holomorphic curve components of any pearl lie inside the ﬁxed locus of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prop-sec-032-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "Seidel",
+      "pageStart": 54,
+      "pageEnd": 56,
+      "target": "prop-sec-032-01.md",
+      "narrative": null,
+      "content": "Any compact Lagrangian submanifold in V(π) is generated by a dis- tinguished basis of Lefschetz thimbles. Sketch. In the exact case, this is Proposition 18.17 of [92]. The argument relies on a beautiful double-covering trick. Namely, one considers the double cover c W of W over a smooth ﬁbre π−1(t), viewed as near inﬁnity. Lefschetz thimbles ∆i with boundary lying in π−1(t) lift to closed Lagrangian spheres Si in c W, and one actually deﬁnes V(π) as a Z2-equivariant version of the usual Fukaya category F(c W ); this requires the underlying coeﬃcient ﬁeld K not to be of characteristic 2. Any co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Thimbles",
+      "pageStart": 54,
+      "pageEnd": 56,
+      "target": "../sections/sec-032-52-thimbles.md",
+      "narrative": null,
+      "content": "by V(π) the Fukaya category of the Lefschetz ﬁbration in the sense of [92, Section 18]; we refer to\nop. cit. for foundational material on such categories. V(π) has objects either closed Lagrangian\nsubmanifolds or Lefschetz thimbles, equipped with the usual brane and perturbation data; we\nrecall that one can achieve transversality for curves without components contained in ﬁbres within\nthe class of almost complex structures making π pseudo-holomorphic. In general W will not be\nconvex at inﬁnity. However, when we consider compact Lagrangian submanifolds, they project to\na compact set in C, and (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-032-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 56,
+      "target": "rem-sec-032-06.md",
+      "narrative": null,
+      "content": "The usual obstruction to equivariant transversality is the existence of holomorphic curves entirely contained in the ﬁxed point locus of the ﬁnite group action, cf. [52, Lemma 5.12], which cannot exist if the ﬁnite group action is free on the Lagrangian submanifolds involved in the relevant category A. More generally, working in characteristic zero one can always take the A∞-structure on A to be strictly invariant under a given action of a ﬁnite group Γ. In the approach pioneered in [36], the A∞-operations are constructed via virtual perturbations and Kuranishi chains, and equivariance with re",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/cor-sec-033-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 56,
+      "pageEnd": 59,
+      "target": "cor-sec-033-04.md",
+      "narrative": null,
+      "content": "If g ≥2, the Floer cohomology algebra generated by the pentagram spheres in Z is Λ(C3) ⋊Z2g+1 (graded mod 2). FLOER COHOMOLOGY AND PENCILS OF QUADRICS Both the curve C and the relative quadric Z deﬁne A∞-structures on the exterior algebra which can be viewed as deformations of the particular quasi-isomorphism type of Lemma 5.11, with the deformation parameter counting intersections of holomorphic curves with the ﬁbre over ∞∈P1. Since the relevant deformation space is large, we appeal to more algebraic methods to pin down the A∞-structure.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-033-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 56,
+      "pageEnd": 59,
+      "target": "lem-sec-033-01.md",
+      "narrative": null,
+      "content": "For a pair of pentagram spheres L, L′, the Floer products HF(L′, L′) ⊗HF(L, L′) −→HF(L, L′) HF(L′, L) ⊗HF(L, L′) −→HF(L, L) (5.2) are the same in Z as in Z̸=∞.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-033-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 56,
+      "pageEnd": 59,
+      "target": "lem-sec-033-02.md",
+      "narrative": null,
+      "content": "No rigid holomorphic triangle in Z has boundary which projects to the second triangle of Figure 6.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-033-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 56,
+      "pageEnd": 59,
+      "target": "lem-sec-033-03.md",
+      "narrative": null,
+      "content": "The product µ2 F(Z)(p, ·) : HF odd(L′′, L) →HF ev(L′′, L′) is an isomorphism.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Exterior Algebra",
+      "pageStart": 56,
+      "pageEnd": 59,
+      "target": "../sections/sec-033-53-exterior-algebra.md",
+      "narrative": null,
+      "content": "pentagram spheres of Figure 1. We orient the spheres equivariantly for the cyclic symmetry\ngroup which permutes them. Any two pentagram spheres are either disjoint, meet transversely\nin a point, or meet cleanly in a copy of S2g. The two generators of the Floer complex in the last\ncase have degrees of the same parity, so there is no diﬀerential. Therefore as Z2-graded groups,\nHF(Li, Lj) can be computed equivalently in Z̸=∞or in Z (in either case one just recovers the\ncohomology of the clean intersection). It follows that H(A) = ⊕i,jHF(Li, Lj) is isomorphic,\nas a Z2-graded complex vector space,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-033-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 56,
+      "pageEnd": 59,
+      "target": "rem-sec-033-05.md",
+      "narrative": null,
+      "content": "By comparing to [93] and [29], one sees that two of the generators of the exterior algebra arise from the two idempotent summands of HF(V, V ) ∼= H∗(S0), where V ⊂Q is the Lagrangian vanishing cycle in a quadric ﬁbre of Z. These play an essentially symmetric role. Indeed, returning to Remark 4.11, there is a holomorphic involution τ of Z which reverses the sign of the ﬁrst projective homogeneous co-ordinate x0, and acts ﬁbrewise over P1, in particular ﬁxes the nodes in the singular ﬁbres. τ is one lift of the hyperelliptic involution on Σ to a symplectomorphism of Z. The monotone K¨ahler form,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/cor-sec-034-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 59,
+      "pageEnd": 62,
+      "target": "cor-sec-034-04.md",
+      "narrative": null,
+      "content": "The coeﬃcient of 1L in exactly one of µ3 A(Z)(e + f, e −f, p) and µ3 A(Z)(e + f, e + f, p) is non-zero. IVAN SMITH",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-034-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 59,
+      "pageEnd": 62,
+      "target": "lem-sec-034-01.md",
+      "narrative": null,
+      "content": "The Z-gradings on the pentagram algebra inside W are Z2g+1-equivariant.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-034-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 59,
+      "pageEnd": 62,
+      "target": "lem-sec-034-03.md",
+      "narrative": null,
+      "content": "In Z̸=∞, the product µ3(e + f, e −f, p) contains 1L with non-zero coeﬃcient, whilst µ3(e + f, e + f, p) is trivial. This follows from Equation 3.17; in that notation, the ﬁrst statement of the Lemma reﬂects the non-trivial cubic term v1v2v3 whilst the second reﬂects the vanishing of the terms v2 i v3, i = 1, 2. We now combine Lemma 5.21 with the Z-grading considerations discussed before (5.7).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The cubic term",
+      "pageStart": 59,
+      "pageEnd": 62,
+      "target": "../sections/sec-034-54-the-cubic-term.md",
+      "narrative": null,
+      "content": "only Z2-graded, as in Section 3.5 one can impose a Z-grading by considering the ﬁltrations on\nFloer complexes coming from intersections of holomorphic polygons with the polar divisor ∆of\na meromorphic 1-form. We will choose the divisor ∆disjoint from the pentagram Lagrangians,\nat which point one can achieve transversality with perturbations of the almost complex structure\nand Floer equation supported away from ∆. The reason this is useful is that the term ∆·[im(u)]\nin Equation 3.10 is necessarily positive, by positivity of intersections of holomorphic curves with\nholomorphic divisors. If one k",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-034-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "Notation",
+      "pageStart": 59,
+      "pageEnd": 62,
+      "target": "rem-sec-034-02.md",
+      "narrative": null,
+      "content": "Recall in Figure 7 the three Lagrangians are L′′ (vertical), L (lower) and L′ (upper). We will write e, f and p for three Floer generators (or their Z2g+1-orbits) arising as follows: p is the external vertex of the pentagram, graded in odd degree as the generator of HF(L, L′) (as in the proof of Lemma 5.16); and e, f are the generators of H∗(S2g)[1] = HF(L′′, L) (which are also, by equivariance, the odd degree generators of HF(L′, L′′), cf. op. cit.). We will write ¯e, ¯f for the Poincar´e dual generators, and ιη(·) = | · | for the absolute index of any generator. We declare |f| = |e| + 2g, so",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/cor-sec-035-06",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 62,
+      "pageEnd": 67,
+      "target": "cor-sec-035-06.md",
+      "narrative": null,
+      "content": "The embedding of categories DπF(Σg)֒ →DπF(Z) is compatible with the nat- ural weak actions of the pointed hyperelliptic mapping class group.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-035-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 62,
+      "pageEnd": 67,
+      "target": "lem-sec-035-01.md",
+      "narrative": null,
+      "content": "The formal function W deﬁning the A∞-structure on A(Z) has the form W = λv1v2v3 + O(4) or W = λ(v2 1 + v2 2)v3 + O(4). for some non-zero λ ∈C∗.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-035-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 62,
+      "pageEnd": 67,
+      "target": "lem-sec-035-02.md",
+      "narrative": null,
+      "content": "A(Z) is deﬁned by a Maurer-Cartan pair (W, η) for which η is a coboundary in the Koszul complex associated to W, so there is some formal 3-form g3 for which [g3, dW] = η. We can therefore apply a gauge transformation as in Equation 5.10 to kill η, so up to gauge equivalence, the A∞-structure on Z is deﬁned by a formal function W satisfying Lemma 5.24, together with the trivial 2-form. Gauge transformations of A∞-structures induce the identity on cohomology. There are also A∞-equivalences which act non-trivially on cohomology; in par- ticular, A∞-structures on Λ(V ) ⋊G are invariant under G-equ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-035-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 62,
+      "pageEnd": 67,
+      "target": "lem-sec-035-03.md",
+      "narrative": null,
+      "content": "HH∗(DπF(Σg)) ≃H∗(Σg) as Z2g+1-representations. FLOER COHOMOLOGY AND PENCILS OF QUADRICS",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-035-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 62,
+      "pageEnd": 67,
+      "target": "lem-sec-035-04.md",
+      "narrative": null,
+      "content": "If the formal function W = λv1v2v3+O(4), λ̸ = 0, determines an A∞-structure A on Λ(C3)⋊Z2g+1 for which HH∗(A, A)Z2g+1 has rank 2, then the coeﬃcients of the 3 monomials v2g+1 i in W are all non-zero.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/lem-sec-035-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 62,
+      "pageEnd": 67,
+      "target": "lem-sec-035-05.md",
+      "narrative": null,
+      "content": "Pick constants (λ, µ1, µ2, µ3) ∈(C∗)4. Let p(·) be a polynomial of degree 4 ≤ deg(p) ≤2g + 1, with vanishing coeﬃcients of the monomials v2g+1 i . The A∞-structure deﬁned by any Z2g+1-invariant Maurer-Cartan pair (W, 0) with W = λv1v2v3 + p(v1, v2, v3) + µ1v2g+1 + µ2v2g+1 + µ3v2g+1 + O(2g + 2) is A∞-isomorphic to the structure deﬁned by (Q, 0). IVAN SMITH",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Finite determinacy",
+      "pageStart": 62,
+      "pageEnd": 67,
+      "target": "../sections/sec-035-55-finite-determinacy.md",
+      "narrative": null,
+      "content": "exterior algebra A = Λ∗(V ). Suppose now V ∼= C3 is 3-dimensional, so A has graded summands\nA0 = C ⊕Λ2(V );\nA1 = V ⊕Λ3(V ).\nAccording to [93, Theorem 3.3], the L∞-quasi-isomorphism Φ of Theorem 3.18 has linear term\nΦ1 which is given by restricting elements of Hom(Λ(V )⊗i, Λ(V )) to the subspace of symmetric\nelements of Hom(V ⊗i, Λ(V )) (this is the Hochschild-Kostant-Rosenberg map). Since V is in odd\ndegree, αi(v1, . . . , vi) ∈Λ0 ⊕Λ2 for all i and any vj ∈V . In other words, taking the parities of\nthe αi into consideration, a Maurer-Cartan element comprises a pair\n(W, η) ∈C[[V ∨]] ⊕C[[V ∨]] ⊗",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/rem-sec-035-07",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 62,
+      "pageEnd": 67,
+      "target": "rem-sec-035-07.md",
+      "narrative": null,
+      "content": "The ﬁnite group H1(Σg; Z2) ∋ξ has a natural weak action on F(Σg), tensoring by ﬂat line bundles ξ, and on F(Q0∩Q1; 0), by symplectic involutions ιξ of Remark 4.11, and one can ask if the equivalence Υ : DπF(Σg) ≃DπF(Q0 ∩Q1; 0) we have constructed also entwines that action. We shall not prove this, but the relevant cohomological evidence is provided by Remark 3.22 and Remark 2.5. Presumably, just as Υ(γ) ≃V¯γ, also Υ(ξ →γ) ≃ιξV¯γ. If true, one could compute the Hochschild cohomology of the autoequivalence ⊗ξ ∈Auteq(F(Σ)) in terms of the ﬁxed point Floer cohomology HF(ιξ) on Q0 ∩Q1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1006.1099v3/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 67,
+      "pageEnd": 70,
+      "target": "../sections/sec-036-references.md",
+      "narrative": null,
+      "content": "1. M. Abouzaid. A geometric criterion for generating the Fukaya category. Publ. Math. Inst. Hautes Etudes\nSci. 112: 191-240, (2010).\n2. M. Abouzaid and I. Smith. Homological mirror symmetry for the four-torus. Duke Math. J. 152:373-440,\n(2010).\n3. M. Abouzaid, D. Auroux and L. Katzarkov. In preparation.\n4. P. Albers. On the extrinsic topology of Lagrangian submanifolds. Int. Math. Res. Not. 38:2341-2371, (2005).\n5. M.F. Atiyah and R. Bott. The Yang-Mills equations over Riemann surfaces. Philos. Trans. Roy. Soc. London\nSer. A 308: 523-615, (1983).\n6. M.F. Atiyah and I. MacDonald. Introduction t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

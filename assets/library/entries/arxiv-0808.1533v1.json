@@ -1,0 +1,175 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0808.1533v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-0808.1533v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "A purpose of this paper is to develop a particular formula for the third order helicity on certain invariant sets of a volume preserving vector field $X$. The third order helicity, [@Khesin98], is an invariant of $X$ under the action of volumorphisms isotopic to the identity (denoted here by $\\text{Diff}^\\text{vol}_0(M)$). Importance of such invariants stems from the basic fact that e.g. the evolution of the vorticity in the ideal hydrodynamics or the magnetic field $\\mathbf{B}_0$ in the ideal magnetohydrodynamics (MHD), occurs along a path $t\\longrightarrow g(t)\\in \\text{Diff}^\\text{vol}_0(M)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1533v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0808.1533v1  [math.DG]  11 Aug 2008\nOn the third order helicity of magnetic ﬁelds\non invariant domains in S3\nR. Komendarczyk∗\nDecember 8, 2018\nAbstract\nWe introduce an alternative approach to the third order helicity of a volume preserving\nvector ﬁeld X. The proposed approach exploits correspondence between the Milnor\n¯µ123-invariant for 3-component links and the homotopy invariants of maps to conﬁg-\nuration spaces, and we provide a simple geometric proof of this fact in the case of\nborromean links. Based on these connections we develop a formulation for the third\norder helicity of X on",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1533v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Milnor 123-invariant and the Hopf degree.",
+      "pageStart": 2,
+      "pageEnd": 12,
+      "target": "../sections/sec-001-the-milnor-123-invariant-and-the-hopf-degree.md",
+      "narrative": null,
+      "content": "[]{#sec:mu-and-hopf label=\"sec:mu-and-hopf\"}\n\nThe $\\bar{\\mu}$-invariants of $n$-component links in $S^3$ have been introduced by Milnor in [@Milnor54; @Milnor57] as invariants of links up to *link-homotopy*, recall that the link homotopy is a deformation of a link in $S^3$ which allows each component of the link to pass through itself but not through a different component. Clearly, this is a weaker equivalence than the equivalence of links up to *isotopy* where components are not allowed to pass through themselves at all. The fundamental example of a $\\bar{\\mu}$-invariant is the linking number",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1533v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariants of volume preserving flows. Helicity.",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-002-invariants-of-volume-preserving-flows-helicity.md",
+      "narrative": null,
+      "content": "[]{#sec:invariants-flows label=\"sec:invariants-flows\"}\n\nGiven finitely many volume preserving vector fields $X_1$, $X_2$, $\\ldots X_k\\in \\text{Vect}^\\text{vol}(M)$ on $M=S^3$ or a homology 3-sphere one seeks quantities $\\mathsf{I}(X_1,X_2,\\ldots,X_k)$ invariant under the action of volumorphisms isotopic to the identity $g\\in \\text{Diff}^\\text{vol}_0(M)$, commonly known as *higher-helicities*: $$\\begin{gathered}\n\\label{eq:invariants}\n \\mathsf{I}(X_1,X_2,\\ldots,X_k)=\\mathsf{I}(g_\\ast X_1,g_\\ast X_2,\\ldots,g_\\ast X_k),\\qquad\\quad \\text{for all }g\\in \\text{Diff}^\\text{vol}_0(M), \n\\end{gathered}$$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1533v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definition of ``123-helicity'' on invariant unlinked handlebodies.",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "../sections/sec-003-definition-of-123-helicity-on-invariant-unlinked.md",
+      "narrative": null,
+      "content": "[]{#sec:handlebody label=\"sec:handlebody\"}\n\nIn this section we apply the formulation of the $\\bar{\\mu}_{123}$-invariant for the 3-component links in $S^3$, obtained in Section [\\[sec:mu-and-hopf\\]](#sec:mu-and-hopf){reference-type=\"ref\" reference=\"sec:mu-and-hopf\"}, to define the third order helicity of a volume preserving vector field $X$ on certain invariant domains $\\mathcal{T}$ in $S^3$. As a \"warm-up\" to a more general case presented in Section [\\[sec:ergodic\\]](#sec:ergodic){reference-type=\"ref\" reference=\"sec:ergodic\"}, in the following paragraphs we consider the case of three disjoint",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1533v1/blocks/figure-img-p015-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../images/img-p015-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0808.1533v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The ergodic interpretation of H123(X;T)",
+      "pageStart": 18,
+      "pageEnd": 23,
+      "target": "../sections/sec-004-the-ergodic-interpretation-of-h123xt.md",
+      "narrative": null,
+      "content": "[]{#sec:ergodic label=\"sec:ergodic\"}\n\nThe following statement is often seen in literature [@Cantarella-DeTurck-Gluck01; @Cantarella-DeTurck-Gluck-Teytel00]:\n\n> *Helicity measures the extend to which vector fields twist and coil around each other.*\n\nA beauty of Arnold's ergodic approach to the helicity $\\mathsf{H}_{12}(X)$ is that it makes this statement precise, by interpreting $\\mathsf{H}_{12}(X)$ as an average asymptotic linking number of orbits of $X$. But it also has a practical application as it allows us to extend our approach to certain invariant sets of $X$. In this section we apply th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1533v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Energy bound.",
+      "pageStart": 23,
+      "pageEnd": 27,
+      "target": "../sections/sec-005-energy-bound.md",
+      "narrative": null,
+      "content": "[]{#sec:energy label=\"sec:energy\"}\n\nIn this section we indicate how the quantity $\\mathsf{H}_{123}(X;\\mathcal{T})$ invariant under frozen-in-field deformations provides a lower bound for the $L^2$-energy $E_2(X)$ of a volume preserving field $X$ on $M=S^3$. For simplicity we restrict our considerations to the case of an invariant unlinked handlebody $\\mathcal{T}$, as in Section [\\[sec:handlebody\\]](#sec:handlebody){reference-type=\"ref\" reference=\"sec:handlebody\"}. For the notation used in this section see Appendix C.\n\nRecall the definition $$\\label{eq:energy}\n E_2(X)=\\int_M |X|^2 = \\|X\\|^2_{L^",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0808.1533v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparison to the known approaches via Massey products.",
+      "pageStart": 27,
+      "pageEnd": 31,
+      "target": "../sections/sec-006-comparison-to-the-known-approaches-via-massey-pr.md",
+      "narrative": null,
+      "content": "[]{#sec:massey label=\"sec:massey\"}\n\nIn several prior works [@Berger90; @Berger-Evans92; @Laurence-Stredulinsky00b; @Mayer03] higher helicities were developed via the Massey product formula for $\\bar{\\mu}_{123}$. These approaches should be equivalent to the one presented here in the sense that invariants obtained this way measure the same topological information. Most notably the work [@Laurence-Stredulinsky00b] provides an explicit expression for the third order helicity of the borromean flux tubes, where the ergodic interpretation in the style of Arnold's asymptotic linking number is also pro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

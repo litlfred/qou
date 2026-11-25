@@ -1,0 +1,766 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0611941v3",
+  "title": "arxiv-math-0611941v3",
+  "variant": "pdf",
+  "pages": 16,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Kazhdan–Lusztig theory and the asymptotic ring",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-kazhdanlusztig-theory-and-the-asymptotic-ring"
+    },
+    {
+      "level": 2,
+      "title": "Irreducible representations of W and H",
+      "number": "2.1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-irreducible-representations-of-w-and-h"
+    },
+    {
+      "level": 2,
+      "title": "The integers a and f",
+      "number": "2.2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The Kazhdan–Lusztig basis of H",
+      "number": "2.3",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-23-the-kazhdanlusztig-basis-of-h"
+    },
+    {
+      "level": 2,
+      "title": "Lusztig's conjectures and the asymptotic ring J",
+      "number": "2.4",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-24-lusztigs-conjectures-and-the-asymptotic-ring"
+    },
+    {
+      "level": 2,
+      "title": "Representations of J",
+      "number": "2.5",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-25-representations-of-j"
+    },
+    {
+      "level": 1,
+      "title": "A cell datum for H",
+      "number": "3",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-3-a-cell-datum-for-h"
+    },
+    {
+      "level": 1,
+      "title": "Examples and applications to modular representations",
+      "number": "4",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-4-examples-and-applications-to-modular-represent"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 100,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cellular structure",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "a-function",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0611941v3 [math.RT] 19 Mar 2007 HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR MEINOLF GECK Abstract. Let H be the one-parameter Hecke algebra associated to a ﬁnite Weyl group W, deﬁned over a ground ring in which “bad” primes for W are invertible. Using deep properties of the Kazhdan–Lusztig basis of H and Lusztig’s a-function, we show that H has a natural cellular structure in the sense of Graham and",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0611941v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 550,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cellular algebras",
+          "heading": false
+        },
+        {
+          "term": "kazhdan--lusztig basis",
+          "heading": false
+        },
+        {
+          "term": "grle",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "thmb",
+          "heading": false
+        },
+        {
+          "term": "noncryst",
+          "heading": false
+        },
+        {
+          "term": "cell representations",
+          "heading": false
+        },
+        {
+          "term": "djm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:intro label=\"sec:intro\"} The concept of \"cellular algebras\" was introduced by Graham and Lehrer [@GrLe]. It provides a systematic framework for studying the representation theory of non-semisimple algebras which are deformations of semisimple ones. The original definition was modeled on properties of the Kazhdan--Lusztig basis [@KaLu] in Hecke algebras of type $A_n$. There is now a significant literature on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-kazhdanlusztig-theory-and-the-asymptotic-ring",
+      "number": "2",
+      "title": "Kazhdan–Lusztig theory and the asymptotic ring",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 151,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quad mbox",
+          "heading": false
+        },
+        {
+          "term": "lusztig",
+          "heading": true
+        },
+        {
+          "term": "gepf",
+          "heading": false
+        },
+        {
+          "term": "iwahori--hecke",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec2 label=\"sec2\"} References for this section are the books [@GePf] and [@Lusztig03]. Let $W$ be a finite Weyl group, with generating set $S$. Let $L \\colon W \\rightarrow {\\mathbb{Z}}$ be a weight function. Thus, we have $L(ww')=L(w)+L(w')$ whenever $l(ww')=l(w)+l(w')$ for $w,w'\\in W$; here $l(w)$ denotes the length of $w \\in W$. Note that $L(s)=L(t)$ whenever $s,t \\in S$ are conjugate in $W$. We will assume",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-irreducible-representations-of-w-and-h",
+      "number": "2.1",
+      "title": "Irreducible representations of W and H",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 451,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbf lambda",
+          "heading": false
+        },
+        {
+          "term": "lambda bigr",
+          "heading": false
+        },
+        {
+          "term": "lambda mid",
+          "heading": false
+        },
+        {
+          "term": "irreducible representations",
+          "heading": true
+        },
+        {
+          "term": "mbox trace",
+          "heading": false
+        },
+        {
+          "term": "gepf",
+          "heading": false
+        },
+        {
+          "term": "integers mathbf",
+          "heading": false
+        },
+        {
+          "term": "operatorname irr",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub21 label=\"sub21\"} It is known that ${\\mathbb{Q}}$ is a splitting field for $W$; see, for example, [@GePf 6.3.8]. We will write $${\\operatorname{Irr}}(W)=\\{E^\\lambda \\mid \\lambda \\in \\Lambda\\}, \\qquad d_\\lambda= \\dim E^\\lambda,$$ for the set of irreducible representations of $W$ (up to equivalence), where $\\Lambda$ is some finite indexing set. Now let $K$ be the field of fractions of $A$. By extension of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-23-the-kazhdanlusztig-basis-of-h",
+      "number": "2.3",
+      "title": "The Kazhdan–Lusztig basis of H",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 255,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lusztig",
+          "heading": true
+        },
+        {
+          "term": "leqslant mathcal",
+          "heading": false
+        },
+        {
+          "term": "sim mathcal",
+          "heading": false
+        },
+        {
+          "term": "qquad mbox",
+          "heading": false
+        },
+        {
+          "term": "mathbb geqslant",
+          "heading": false
+        },
+        {
+          "term": "dagger",
+          "heading": false
+        },
+        {
+          "term": "mathbf",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub23 label=\"sub23\"} Let $\\{c_w\\mid w\\in W\\}$ be the \"new\" basis of ${\\mathcal{H}}$ defined in [@Lusztig03 Theorem 5.2]. We have $c_w=T_w+ \\sum_{y} p_{y,w}\\, T_y$ where $p_{y,w} \\in v^{-1}{{\\mathbb{Z}}}[v^{-1}]$ and $p_{y,w}=0$ unless $y<w$ in the Bruhat--Chevalley order. Given $x,y\\in W$, we write $$c_xc_y=\\sum_{z\\in W} h_{x,y,z}c_z\\qquad\\mbox{where $h_{x,y,z}\\in A$}.$$ As in [@Lusztig03], we usually work with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-24-lusztigs-conjectures-and-the-asymptotic-ring",
+      "number": "2.4",
+      "title": "Lusztig's conjectures and the asymptotic ring J",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 247,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lusztig",
+          "heading": true
+        },
+        {
+          "term": "lusztig chap",
+          "heading": false
+        },
+        {
+          "term": "conjectures",
+          "heading": true
+        },
+        {
+          "term": "hat",
+          "heading": false
+        },
+        {
+          "term": "mathbf",
+          "heading": false
+        },
+        {
+          "term": "mathcal",
+          "heading": false
+        },
+        {
+          "term": "hypotheses",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub24 label=\"sub24\"} In the sequel, we assume that the following hypotheses are satisfied. ::: center ::: (Actually, for our purposes, instead of **(P15)** it is enough to require the somewhat weaker statement [@Lusztig03 18.9(b)], which we called **(P15')** in [@mylaus §5].) By [@Lusztig03 Chap. 15], these conjectures are known to hold when $L$ is a positive multiple of the length function (\"equal parameter",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-25-representations-of-j",
+      "number": "2.5",
+      "title": "Representations of J",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 853,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rho mathfrak",
+          "heading": false
+        },
+        {
+          "term": "lambda mathfrak",
+          "heading": false
+        },
+        {
+          "term": "spadesuit lambda",
+          "heading": false
+        },
+        {
+          "term": "bar rho",
+          "heading": false
+        },
+        {
+          "term": "cdot rho",
+          "heading": false
+        },
+        {
+          "term": "lambda quad",
+          "heading": false
+        },
+        {
+          "term": "beta mathfrak",
+          "heading": false
+        },
+        {
+          "term": "quad mbox",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub25 label=\"sub25\"} Until the end of this section, we will assume that $R={\\mathbb{Q}}$. Upon substituting $v\\mapsto 1 \\in {\\mathbb{Q}}$, the algebra ${\\mathcal{H}}$ specialises to ${{\\mathbb{Q}}}[W]$. Hence, we obtain a homomorphism of ${\\mathbb{Q}}$-algebras $$\\phi_1\\colon {{\\mathbb{Q}}}[W] \\rightarrow J_{{\\mathbb{Q}}}, \\qquad \\mbox{where $J_{{\\mathbb{Q}}}= {{\\mathbb{Q}}} \\otimes_{{\\mathbb{Z}}} J$}.$$ This is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-3-a-cell-datum-for-h",
+      "number": "3",
+      "title": "A cell datum for H",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 11,
+      "labelStart": "7",
+      "labelEnd": "11",
+      "words": 1517,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lambda mathfrak",
+          "heading": false
+        },
+        {
+          "term": "rho mathfrak",
+          "heading": false
+        },
+        {
+          "term": "sum mathfrak",
+          "heading": false
+        },
+        {
+          "term": "beta mathfrak",
+          "heading": false
+        },
+        {
+          "term": "aligned mathfrak",
+          "heading": false
+        },
+        {
+          "term": "lambda bigr",
+          "heading": false
+        },
+        {
+          "term": "lambda bigl",
+          "heading": false
+        },
+        {
+          "term": "mathbf lambda",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#secDatum label=\"secDatum\"} We keep the notation of the previous sections. In order to show that ${\\mathcal{H}}$ is \"cellular\" in the sense of Graham--Lehrer [@GrLe Definition 1.1], we must specify a quadruple $(\\Lambda,M,C,*)$ satisfying the following conditions. - $\\Lambda$ is a partially ordered set, $\\{M(\\lambda) \\mid \\lambda \\in \\Lambda\\}$ is a collection of finite sets and $$C \\colon \\coprod_{\\lambda \\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-4-examples-and-applications-to-modular-represent",
+      "number": "4",
+      "title": "Examples and applications to modular representations",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 15,
+      "labelStart": "11",
+      "labelEnd": "15",
+      "words": 1857,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathfrak lambda",
+          "heading": false
+        },
+        {
+          "term": "varepsilon dagger",
+          "heading": false
+        },
+        {
+          "term": "mathbf varepsilon",
+          "heading": false
+        },
+        {
+          "term": "begin bmatrix",
+          "heading": false
+        },
+        {
+          "term": "bmatrix end",
+          "heading": false
+        },
+        {
+          "term": "mid lambda",
+          "heading": false
+        },
+        {
+          "term": "lambda colon",
+          "heading": false
+        },
+        {
+          "term": "expdim",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#secApp label=\"secApp\"} Throughout this section, we assume that Lusztig's conjectures on Hecke algebras with unequal parameters hold; see §[\\[sub24\\]](#sub24){reference-type=\"ref\" reference=\"sub24\"}. (Recall that this is the case, for example, if the weight function $L$ is a positive multiple of the length function.) We now discuss examples and applications of Theorem [\\[mainthm\\]](#mainthm){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 927,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dipper james",
+          "heading": false
+        },
+        {
+          "term": "graham lehrer",
+          "heading": false
+        },
+        {
+          "term": "james murphy",
+          "heading": false
+        },
+        {
+          "term": "lusztig cells",
+          "heading": false
+        },
+        {
+          "term": "kazhdan lusztig",
+          "heading": false
+        },
+        {
+          "term": "cellular algebras",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "iwahori hecke",
+          "heading": false
+        }
+      ],
+      "extract": "basic sets for type Bn and any L (where k has characteristic 0) has been established without assuming Lusztig’s conjectures on Hecke algebras with unequal parameters. Example 4.5. Assume that W is of type Bn (n ⩾2) with diagram and weight function given by Bn ✐ ✐ ✐ · · · ✐ b a a a where a, b are non-negative integers. Then we have two cellular structures on H: the one given by Theorem 3.1, and the one given by",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "lusztig conjectures",
+      "heading": true
+    },
+    {
+      "term": "lusztig cells",
+      "heading": false
+    },
+    {
+      "term": "lusztig chap",
+      "heading": false
+    },
+    {
+      "term": "lambda mathfrak",
+      "heading": false
+    },
+    {
+      "term": "kazhdan lusztig",
+      "heading": true
+    },
+    {
+      "term": "lusztig a-function",
+      "heading": false
+    },
+    {
+      "term": "mathbf lambda",
+      "heading": false
+    },
+    {
+      "term": "lusztig prop",
+      "heading": false
+    },
+    {
+      "term": "lambda mbox",
+      "heading": false
+    },
+    {
+      "term": "following lusztig",
+      "heading": false
+    },
+    {
+      "term": "lambda mid",
+      "heading": false
+    },
+    {
+      "term": "lambda quad",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 10,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 10,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p15); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 10 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0611941v3"
+  }
+}

@@ -1,0 +1,291 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-ph-0105039v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-ph-0105039v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math-ph/0105039v1  28 May 2001\nDecember 23, 2000\n(Revised Edition)\nHyperbolic Structure Arising from a Knot Invariant\nKazuhiro HIKAMI †\nDepartment of Physics, Graduate School of Science,\nUniversity of Tokyo,\nHongo 7–3–1, Bunkyo, Tokyo 113–0033, Japan.\n(Received:\n)\nABSTRACT\nWe study the knot invariant based on the quantum dilogarithm function. This invariant can\nbe regarded as a non-compact analogue of Kashaev’s invariant, or the colored Jones invariant,\nand is deﬁned by an integral form. The 3-dimensional picture of our invariant originates from\nthe pentagon identity of the quantum dilog",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0105039v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Since\nthe discovery of  the Jones polynomial~\\cite{Jones85},\nmany knot invariants are proposed.\nIn  construction of these  quantum invariants, the quantum group\nplays a crucial role,\nand a representation of the\nbraid generator is derived  from  the\nuniversal $R$-matrix ~\\cite{Turae88}.\nContrary to\nthat the Alexander polynomial was known to be related with the\nhomology of the universal abelian covering,\nthe quantum invariants  still lack\nthe geometrical interpretation.\n\n\nIn Ref.~\\citen{Kasha95}, Kashaev introduced \nthe knot invariant   by\nuse of the finite dimensional representation of  the qua",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0105039v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum Dilogarithm Function",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-quantum-dilogarithm-function.md",
+      "narrative": null,
+      "content": "spondingly the R-operator is identiﬁed with the oriented octahedron, whose vertices belong to the\nlink L. This explains how the octahedron was introduced for each braiding in Ref. 10. We can\napply the saddle point method to evaluate the asymptotic behavior of the classical limit of the knot\ninvariant, and we further demonstrate that the saddle point equation for integrals of the knot in-\nvariant exactly coincides with the hyperbolicity consistency condition in gluing faces. Combining",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0105039v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classical Dilogarithm Function",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-21-classical-dilogarithm-function.md",
+      "narrative": null,
+      "content": "We collect properties concerning the classical dilogarithm function\n(see Refs.~\\citen{LLewi91Book,Kiril94} for review).\nThe Euler dilogarithm function $\\Li(x)$ is defined by\n\n\\begin{align}\n  \\Li(x)\n  =\n  \\sum_{n=1}^\\infty \\frac{x^n}{n^2}\n\n  = - \\int_0^x\n  \\frac{\\log(1-s)}{s} \\, \\mathrm{d} s  .\n  \\label{Euler_integral}\n\\end{align}\n\nThe range $|x| \\leq 1$ in an infinite series is extended outside the\nunit circle in the second\nintegral form~\\eqref{Euler_integral}.\nWe later use the Rogers dilogarithm function  defined by\n\\begin{equation}\n  \\label{Rogers}\n  L(z)\n  =\n  \\Li(z) + \\frac{1}{2} \\log z \\,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0105039v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum Dilogarithm Function and the $R$ Operator",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-22-quantum-dilogarithm-function-and-the-r-operat.md",
+      "narrative": null,
+      "content": "We define a function  $\\Phi_\\gamma(\\varphi)$ by an integral form\nfollowing Ref.~\\citen{LFadd96a}:\n\\begin{equation}\n  \\label{Faddeev_integral}\n  \\Phi_\\gamma(\\varphi)\n  =\n  \\exp\n  \\left(\n    \\int_{\\mathbb{R}+\\mathrm{i} \\, 0}\n    \\frac{\\mathrm{e}^{- \\mathrm{i} \\, \\varphi \\, x}}\n    {\n      4 \\sh ( \\gamma \\, x) \\, \\sh(\\pi \\, x)\n      } \\,\n    \\frac{\\mathrm{d} x}{x}\n  \\right) ,\n\\end{equation}\nwhere we take $\\gamma \\in \\mathbb{R}$.\nWe note that in Ref.~\\citen{Ruijse97a} an essentially same integral\nwas introduced\nin a context of the hyperbolic gamma function, and that\nin Ref.~\\citen{SLWoron00a} anot",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0105039v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Representation",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-004-23-representation.md",
+      "narrative": null,
+      "content": "We now give  the  representation of these operators on the momentum\nspace;\n$\\Hat{p} \\, |p \\rangle = p \\, | p \\rangle$ with $p\\in \\mathbb{R}$,\nand we take the vector space as\n$\\mathbf{V} = L^2(\\mathbb{R})$.\nThe matrix elements  of the $S$-operators are  given by~\\cite{Hikam00a}\n\\begin{subequations}\n  \\label{S_element}\n\\begin{align}\n  \\langle p_1, p_2 \\ | \\ S_{1, 2} \\ | \\ p_1^\\prime , p_2^\\prime \\rangle\n  & =\n  \\frac{1}{4 \\, \\pi \\, \\gamma} \\,\n  \\delta(p_1 +  p_2 - p_1^\\prime ) \\,\n  \\int \\mathrm{d} x \\\n  \\Phi_\\gamma(x+p_1) \\,\n  \\mathrm{e}^{\n    \\frac{1}{2 \\, \\gamma \\, \\mathrm{i}} \\,\n    \\left(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0105039v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariant of Knot and Link",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-005-3-invariant-of-knot-and-link.md",
+      "narrative": null,
+      "content": "\\label{sec:invariant}\n\nWith the ${R}$-matrix\n$\\Check{R}: \\mathbf{W}^{\\otimes 2} \\to \\mathbf{W}^{\\otimes 2}$\nsatisfying the braid\nrelation~\\eqref{YBE_compact},\nwe can define the invariant of  the  knot $K$.\n\n\n\n\n\n\n\n\n\n\nWe assume that we\nhave the  enhanced Yang--Baxter operators\n($\\Check{R}, \\mu , \\alpha, \\beta$)\nsatisfying~\\cite{Turae88}\n\\begin{subequations}\n  \\label{other_enhanced}\n  \\begin{gather}\n    \\bigl( \\mu \\otimes \\mu \\bigr) \\, \\Check{R}\n    =\n    \\Check{R} \\, \\bigl( \\mu \\otimes \\mu \\bigr) ,\n    \\\\[2mm]\n                                \n    \\Tr_2 \\Bigl(\n    \\Check{R}^{\\pm 1} \\, \n    \\bigl(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0105039v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotic Behavior and 3-dimensional Picture",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "../sections/sec-006-4-asymptotic-behavior-and-3-dimensional-picture.md",
+      "narrative": null,
+      "content": "\\label{sec:asymptotic}\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe  shall reveal the 3-dimensional picture  of the knot invariant\n$\\tau_1(K)$\nby studying  an asymptotic behavior in  a limit $\\gamma \\to 0$.\nUsing eq.~\\eqref{Phi_gamma_0},\nwe find\nthat the $S$-operator~\\eqref{S_element_2} \nis\nrepresented by\n\\begin{subequations}\n  \\label{S_asymptotics}\n  \\begin{align}\n    \\langle p_1 , p_2 \\ | \\ S_{1,2}  \\ | \\ p_1^\\prime , p_2^\\prime \\rangle\n    & \\sim\n    \\delta(p_1 + p_2 - p_1^\\prime) \\cdot\n    \\exp\n    \\left(\n      - \\frac{1}{2 \\, \\mathrm{i} \\, \\gamma}\n      \\, V(p_2^\\prime - p_2 , p_1)\n    \\righ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0105039v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "3-Dimensional Picture of the Invariant",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-007-5-3-dimensional-picture-of-the-invariant.md",
+      "narrative": null,
+      "content": "3-Dimensional Picture of the Invariant\n5.1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0105039v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "$R$-Operators as the Braid Operator",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "../sections/sec-008-51-r-operators-as-the-braid-operator.md",
+      "narrative": null,
+      "content": "We now give the 3-dimensional picture of the\n$R$-operators~\\eqref{check_R}, and study  the relationship between the\nhyperbolic geometry and our invariant.\nThe $R$-operator consists from four  $S$ operators, and its\nmatrix element\n$\\langle \\vec{p} \\ | \\ \\Check{R}_{12,34} \\ | \\  \\vec{p^\\prime} \\rangle$\nis explicitly  given by\n\\begin{multline}\n  \\label{R_element_int}\n  \\langle p_1, p_2, p_3, p_4 \\  | \\\n  \\Check{R}_{12,34}  \\ | \\\n  p_1^\\prime , p_2^\\prime, p_3^\\prime, p_4^\\prime \\rangle\n  \\\\\n  =\n  \\iiiint \\mathrm{d} x \\ \\mathrm{d} y \\ \\mathrm{d} z \\\n  \\mathrm{d} w \\\n  \\langle p_3, w \\ | \\  S^{-1}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0105039v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hyperbolicity Condition for Surface",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-009-52-hyperbolicity-condition-for-surface.md",
+      "narrative": null,
+      "content": "We first consider a surface $D_a$, which is surrounded by  alternating\ncrossings as in Fig.~\\ref{fig:alternate_knot}.\nWe assign octahedron  for each crossing following\neq.~\\eqref{attach_octa}, and introduce variables as\nshown there.\n\\begin{figure}[t]\n  \\begin{equation*}\n    \\xy/r2.0pc/:.\n    {\n      { (0,0)*+{D_a} },\n\n      { (5, -1.73) \\ar@{-}|@{} (4.4, -0.7) },\n      { (3.6, 0.7) \\ar@{-}|@{} (1, 5.2) },\n      { (4, 3.46) \\ar@{-}|@{} (2.5, 3.46) },\n      { (1.5, 3.46) \\ar@{-}|@{} (-4, 3.46) },\n\n      { (-1, 5.2) \\ar@{-}|@{} (-1.6, 4.15) },\n      { (-2.4, 2.77) \\ar@{-}|@{} (-5, -1.73) },",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0105039v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gluing Around Ridgeline of Octahedron",
+      "pageStart": 20,
+      "pageEnd": 24,
+      "target": "../sections/sec-010-53-gluing-around-ridgeline-of-octahedron.md",
+      "narrative": null,
+      "content": "We shall check  a correspondence between the hyperbolic condition and the\nsaddle point equation for ridgelines of octahedron.\nWe consider a case such as Fig.~\\ref{fig:Ridge_condition}.\nTherein\n$n-1$ over-crossings $\\text{\\rotatebox{45}{$\\xybox{0;/r1.4pc/:, {\\xoverv}}$}}$\nare  sandwiched by two under-crossings\n$\\text{\\rotatebox{45}{$\\xybox{0;/r1.4pc/:, {\\xunderv}}$}}$.\n\n\\begin{figure}[htbp]\n  \\begin{equation*}\n    \\xy/r1pc/:.\n    {\n      {  (2,0) \\ar@{-}|@{} (9.5,0) },\n      {  (10.5,0) \\ar@{-}|@{} (14.5,0) },\n      {  (15.5,0) \\ar@{-}|@{} (18,0) },\n      {  (18,0) \\ar@{--}|@{} (22,0) },",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0105039v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Example: Figure-Eight Knot",
+      "pageStart": 24,
+      "pageEnd": 28,
+      "target": "../sections/sec-011-6-example-figure-eight-knot.md",
+      "narrative": null,
+      "content": "\\label{sec:eight}\n\nWe shall demonstrate\nhow to decompose the knot complement  into  tetrahedra in a\ncase of the  figure-eight knot.\nThe figure-eight knot is\ngiven as $\\sigma_1 \\, \\sigma_2^{~-1} \\, \\sigma_1\n\\, \\sigma_2^{~-1}$ in the braid group, and is\ndepicted as Fig.~\\ref{fig:fig_eight}.\nTo each crossing in the  figure-eight knot,  we assign the octahedron\n(Fig.~\\ref{fig:R_matrix}\n\nor eq.~\\eqref{attach_octa}),\nand\ngive the numbering to each crossing  as in\nFig.~\\ref{fig:fig_eight_tetra}.\nWe have  also named  each surface as  $D_i$.\nWe call the surface inside the octahedron as $S^a_{i,j}$;\na",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0105039v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Concluding Remarks",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-012-7-concluding-remarks.md",
+      "narrative": null,
+      "content": "We have studied the knot invariant\nby use of the infinite dimensional representation of the quantum\ndilogarithm function.\nThis invariant can be seen\nby construction  as the non-compact analogue\nof the colored Jones polynomial.\nWe  have found  that,\nby assigning the oriented tetrahedra to the $S$-operator\nwhich solves the five-term relation,\nthe braid operators can be  depicted  as the octahedron as was\nshown  in Ref.~\\citen{DThurs99a}.\nWith this realization,\nwe have obtained a general scheme to triangulate the knot complements.\nThis method can be applicable   for arbitrary knots and links, whe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0105039v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgement",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "../sections/sec-013-acknowledgement.md",
+      "narrative": null,
+      "content": "The author would like to thank Hitoshi Murakami for kind explanation of his results and for stim-\nulating discussions. He is also grateful to R. Kashaev and Y. Yokota for useful communications.\nThanks are to Referee for useful comments.\nReferences\n[1] V. F. R. Jones: Bull. Amer. Math. Soc. 12, 103 (1985).\n[2] V. Turaev: Invent. Math. 92, 527 (1988).\n[3] R. M. Kashaev: Mod. Phys. Lett. A 10, 1409 (1995).\n[4] R. M. Kashaev: Lett. Math. Phys. 39, 269 (1997).\n[5] W. P. Thurston: The Geometry and Topology of Three-Manifolds, Lecture Notes in Princeton\nUniversity, Princeton (1980).\n[6] J. Milnor: Bu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

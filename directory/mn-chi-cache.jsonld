@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/directory/mn-chi-cache.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/directory/mn-chi-cache",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Subgraph",
+      "name": "mn-chi-cache",
+      "path": "mn-chi-cache/",
+      "contentSource": {
+        "kind": "family",
+        "branch": "cat/qou/mn-chi-cache/",
+        "keyFrom": "mn-chi-q-<engine-key>, where engine-key is the wheel-cache / trace-cache source key (git trees of tools/pyhecke-native and tools/hecke-engine)",
+        "declaredIn": "storage"
+      },
+      "holdsGraph": [
+        "https://litlfred.github.io/cat-harness/v0/ns/graphTypology/mn-chi-cache"
+      ],
+      "description": "Exact values of `pyhecke_native.mn_chi_q(lambda, mu)`, the q-Murnaghan-Nakayama Hecke character table, stored so a sweep that needs a heavy table (n = 24, 27) computes each entry once. One orphan branch per engine source key; inside it, content-addressed JSONL shards of (lambda, mu) -> the producer's exact [q-degree, coefficient-string] pairs, never a float. Before 2026-11-22 this was the in-tree file computations/.derived-chi-mn-cache.json, keyed by (lambda, mu) alone, so an entry from one engine build was served to every later one. Read and written by computations/derived_chi_catalogue_mn_disk_cache.py through the shared layer (scripts/lib/branch-cache.sh, computations/_branch_cache.py); it restores by default but seeds origin only when QOU_MN_CHI_CACHE_PUSH=1. A dirty engine tree has no key and nothing is served from the store; loaded entries are re-checked against the live binary first. `mn-chi-cache/` is where a member is mounted; nothing is tracked there. The kind is `typologies/mn-chi-cache.json`.",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/mn-chi-cache"
+    }
+  ]
+}

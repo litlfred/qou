@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-golden-skew-dual-node",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:golden-skew-dual-node",
+  "kind": "proposition",
+  "title": "Skew-dual golden node at $q = \\varphi^2$ under the bar involution $q \\leftrightarrow q^{-1}$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-golden-ratio-degeneration"
+  ],
+  "tags": [
+    "golden-ratio",
+    "bar-involution",
+    "skew-symmetry",
+    "elliptic-degeneration",
+    "stability-margin",
+    "substrate-parameter"
+  ],
+  "leanRef": "qou:QOU.MassTheory.Archimedean.golden_skew_dual_node",
+  "text": "golden-skew-dual-node.md",
+  "leanSource": "golden-skew-dual-node.lean",
+  "provenance": "authored"
+}

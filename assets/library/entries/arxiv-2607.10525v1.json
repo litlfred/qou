@@ -1,0 +1,395 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2607.10525v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2607.10525v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Let $\\mathcal{C}$ be a finite tensor category over an algebraically closed field ${\\Bbbk}$ of characteristic zero. A *fiber functor* on $\\mathcal{C}$ is a ${\\Bbbk}$-linear exact faithful tensor functor $F:\\mathcal{C}\\to\\mathop{\\mathrm{Vec}}_{{\\Bbbk}}$. Classical neutral Tannakian duality reconstructs affine group schemes from symmetric tensor categories equipped with a fiber functor [@Saavedra72; @DM82]. In the non-symmetric setting relevant here, Tannaka--Krein reconstruction instead produces a Hopf algebra [@JS91; @Schauenburg92; @BV07]: for every fiber functor $F$ on a finite tensor categor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.10525v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "FIBER FUNCTORS OF EQUIVARIANTIZATIONS OF FINITE\nTENSOR CATEGORIES\nCÉSAR GALINDO, CLAUDIA GALLEGO, AND YIBY MORALES\nAbstract. Let G be a finite group acting on a finite tensor category C. We classify\nfiber functors on the equivariantization CG in terms of equivariant exact module\ncategories over C, indexed by subgroups of G. The data are a subgroup H ⊆G\nand an H-equivariant C-module category M whose underlying C-module category is\nindecomposable, exact, and semisimple; they give a fiber functor precisely when H\nacts transitively on the simple objects of M and the stabilizer cocycle of one, henc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.10525v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Equivariant tensor categories and their module categories",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-22-equivariant-tensor-categories-and-their-modul.md",
+      "narrative": null,
+      "content": "C. GALINDO, C. GALLEGO, AND Y. MORALES\nthe group-theoretical description of fiber functors, Goursat’s lemma, and the explicit\ncocycle representatives of [CGR00] show that only the trivial cohomology class sur-\nvives. The odd elliptic prime-cyclic rows are excluded using the prime-cyclic gauging\ndescription, the non-group-theoreticality theorem of [GPR24], and the Hopf-algebra\nobstruction of [JL09]. The dimension 36 row requires instead a separate invariant-\nLagrangian computation for the F4 extension, together with the same Hopf-algebra\nobstruction.\nThe paper is organized as follows.\nSection 2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.10525v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-2-preliminaries.md",
+      "narrative": null,
+      "content": "[]{#sec:preliminaries label=\"sec:preliminaries\"}\n\nWe use [@EGNO15; @EO04] as our main references for finite tensor categories and module categories. All categories and functors are ${\\Bbbk}$-linear, and functors are additive, unless stated otherwise.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.10525v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Finite tensor categories and their module categories",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-21-finite-tensor-categories-and-their-module-cat.md",
+      "narrative": null,
+      "content": "egory is a finite abelian category equipped with a rigid monoidal structure, bilinear\ntensor product, and simple unit [EO04, Section 2.2]; a fusion category is a semisimple\nfinite tensor category.\nA left C-module category is a finite abelian category M with an exact bilinear\naction ⊗: C × M →M and the usual associativity and unit constraints. It is exact\nif P⊗M is projective whenever P is projective in C, and indecomposable if it is not a\ndirect sum of two nonzero module categories. A C-module functor F : M →N is an\nexact functor equipped with coherent natural isomorphisms\nF(X⊗M)\n∼−→X⊗F(M).\nWe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.10525v1/blocks/rem-sec-003-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "rem-sec-003-01.md",
+      "narrative": null,
+      "content": "If M is indecomposable and exact, then C∗ M := FunC(M, M) is a finite tensor category [EO04, Theorem 3.27]. We use reverse composition, F ⊗ G := G ◦F, so that evaluation gives the right action M ◁F = F(M) and the double- dual equivalence (C∗ M)∗ M ≃C. In this situation C and C∗ M are Morita equivalent. 2.2. Equivariant tensor categories and their module categories. FIBER FUNCTORS OF EQUIVARIANTIZATIONS 2.2.1. Group actions on tensor categories. Let G be the strict monoidal category associated with a group G. An action of G on a tensor category C is a monoidal functor G −→Aut⊗(C). By the cohere",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2607.10525v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The equivariant category CG and its module categories",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-23-the-equivariant-category-cg-and-its-module-ca.md",
+      "narrative": null,
+      "content": "Given a $G$-action on a tensor category $\\mathcal{C}$, one forms the *equivariant category* $\\mathcal{C}^G$.\n\nIts objects are pairs $(X, u)$ where $X \\in \\mathcal{C}$ and $u = \\{u_g: g_*(X) \\to X\\}_{g \\in G}$ is a collection of isomorphisms satisfying $u_{gh} = u_g \\circ g_*(u_h)$ for all $g, h \\in G$ and $u_e = \\operatorname{id}_X$. The tensor product is $(X, u) \\otimes (Y, v) = (X \\otimes Y, w)$, where $w_g = u_g \\otimes v_g$, and the unit object is $(\\mathbf{1}, \\operatorname{id}_{\\mathbf{1}})$.\n\nBy [@EGNO15 Section 4.15 and Example 7.12.25], if $\\mathcal{C}$ is a finite tensor category wit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.10525v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fiber functors for CG",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-3-fiber-functors-for-cg.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.10525v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The correspondence between fiber functors and rank-one module categories",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-006-31-the-correspondence-between-fiber-functors-and.md",
+      "narrative": null,
+      "content": "A *fiber functor* on a finite tensor category $\\mathcal{C}$ is an exact faithful tensor functor $F:\\mathcal{C}\\to\\mathop{\\mathrm{Vec}}_{{\\Bbbk}}$. We use the monoidal constraints $$F_2:F(X)\\otimes F(Y)\\xrightarrow{\\sim}F(X\\otimes Y),\n\\qquad\nF_0:{\\Bbbk}\\xrightarrow{\\sim}F(\\mathbf1),$$ and identify fiber functors that are monoidally naturally isomorphic. A $\\mathcal{C}$-module category has *rank one* if its underlying abelian category is equivalent to $\\mathop{\\mathrm{Vec}}_{{\\Bbbk}}$.\n\n::: proposition\n[]{#prop:fiber_rank_one label=\"prop:fiber_rank_one\"} There is a bijection between equivalence",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.10525v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rank-one equivariantizations",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-007-32-rank-one-equivariantizations.md",
+      "narrative": null,
+      "content": "We next characterize when $\\mathcal{M}^H$ has rank one. Since $H$ is finite and $\\operatorname{char}({\\Bbbk})=0$, Tambara's theorem gives $$\\mathcal{M}^H\\text{ semisimple}\\quad\\Longleftrightarrow\\quad \\mathcal{M}\\text{ semisimple}$$ [@T01 Proposition 5.2]. We therefore assume that $\\mathcal{M}$ is semisimple.\n\n### Action on simple objects and obstruction cocycles\n\nLet $H$ be a finite group acting on a semisimple ${\\Bbbk}$-linear category $\\mathcal{M}$ via autoequivalences $\\{U_h\\}_{h \\in H}$ and normalized coherence isomorphisms $\\mu_{h_1,h_2}:U_{h_1}U_{h_2}\\xrightarrow{\\sim}U_{h_1h_2}$. The g",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.10525v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classification of fiber functors",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-008-33-classification-of-fiber-functors.md",
+      "narrative": null,
+      "content": "::: theorem\n[]{#thm:main_classification label=\"thm:main_classification\"} Let $G$ act on a finite tensor category $\\mathcal{C}$. Fiber functors on $\\mathcal{C}^G$ are in bijection with conjugacy classes of pairs $(H,\\mathcal{M})$ such that:\n\n1.  $H\\leq G$;\n\n2.  $\\mathcal{M}$ is an $H$-equivariant $\\mathcal{C}$-module category whose underlying $\\mathcal{C}$-module category is indecomposable, exact, and semisimple;\n\n3.  $H$ acts transitively on $\\operatorname{Irr}(\\mathcal{M})$;\n\n4.  for some, equivalently every, simple $X\\in\\mathcal{M}$, the class $[\\alpha_X]\\in H^2(\\operatorname{St}_H(X),{\\Bbbk",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.10525v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fiber functors for the Hopf algebras Hp",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-009-4-fiber-functors-for-the-hopf-algebras-hp.md",
+      "narrative": null,
+      "content": "[]{#sec:nikshych label=\"sec:nikshych\"}\n\nWe apply Theorem [\\[thm:main_classification\\]](#thm:main_classification){reference-type=\"ref\" reference=\"thm:main_classification\"} to Nikshych's $C_2$-equivariantizations of Tambara--Yamagami categories [@Nik08].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.10525v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tambara–Yamagami categories and fiber functors",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-010-41-tambarayamagami-categories-and-fiber-functors.md",
+      "narrative": null,
+      "content": "group A, a nondegenerate symmetric bicharacter χ, and τ 2 = |A|−1, the category\nTY(A, χ, τ) has simple objects A ∪{m} and fusion rules\na ⊗b = a + b,\na ⊗m = m ⊗a = m,\nm ⊗m =\nM\na∈A\na;\nits associator is determined by (χ, τ) [TY98]. In particular, FPdim(m) =\np\n|A| and\nFPdim(TY(A, χ, τ)) = 2|A|.\nThe form χ is hyperbolic if A = L × L′ with χ trivial on L × L and on L′ × L′;\notherwise it is elliptic. For |A| odd, Tambara’s classification states that TY(A, χ, τ)\nadmits a fiber functor exactly when τ −1 is a positive integer and χ is hyperbolic. Its\nfiber functors are then parametrized by the ordered d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.10525v1/blocks/lem-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 18,
+      "target": "lem-sec-011-01.md",
+      "narrative": null,
+      "content": "The Tt-invariant indecomposable rank-two Cp-module categories are as follows. If p ≡3 (mod 4), there are none. If p ≡1 (mod 4), there is exactly one equivalence class.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2607.10525v1/blocks/lem-sec-011-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 18,
+      "target": "lem-sec-011-02.md",
+      "narrative": null,
+      "content": "Let s denote the non-trivial element of the acting group C2; it acts on Cp by Tt. In the semidirect product D = Cp ⋊C2, let em = [m, s], E∆= ⟨[a, e] (a ∈Ap), em⟩. Then E∆is a Tambara–Yamagami fusion subcategory E∆≃TY(Ap, eχp, p−1), eχp(a, b) = χp(a, t(b)). In coordinates, eχp((x1, x2), (y1, y2)) = ξx1y1+x2y2. Thus eχp is hyperbolic if and only if p ≡1 (mod 4).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2607.10525v1/blocks/prop-sec-011-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 18,
+      "target": "prop-sec-011-03.md",
+      "narrative": null,
+      "content": "Assume that p ≡1 (mod 4). The unique Tt-invariant indecompos- able rank-two Cp-module category admits a C2-equivariant structure whose non-trivial element acts freely on its two simple objects. Moreover, the case J = C2 contributes exactly one equivalence class of fiber functors on CC2 p .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2607.10525v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classification of fiber functors for Rep(Hp)",
+      "pageStart": 13,
+      "pageEnd": 18,
+      "target": "../sections/sec-011-43-classification-of-fiber-functors-for-rephp.md",
+      "narrative": null,
+      "content": "4.3. Classification of fiber functors for Rep(Hp). The only subgroups in Theo-\nrem 3.6 are J = {e} and J = C2. The first gives the C2-orbits of fiber functors on Cp.\nIn the second, Corollary 3.7 requires an indecomposable rank-two Cp-module category\nwith a free transitive C2-action on its simples.\nLemma 4.1. The Tt-invariant indecomposable rank-two Cp-module categories are as\nfollows. If p ≡3 (mod 4), there are none. If p ≡1 (mod 4), there is exactly one\nequivalence class.\nProof. With the convention fixed above, the map [µ] 7→Alt(µ) identifies H2(Ap, k×)\nwith the alternating bicharacters on Ap",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.10525v1/blocks/thm-sec-011-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 18,
+      "target": "thm-sec-011-04.md",
+      "narrative": null,
+      "content": "Let p be an odd prime, and let Hp be Nikshych’s semisimple Hopf algebra of dimension 4p2, so that Rep(Hp) ≃CC2 p as tensor categories. Then Rep(Hp) has one equivalence class of fiber functors if p ≡3 (mod 4), and two equivalence classes of fiber functors if p ≡1 (mod 4).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2607.10525v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fiber functors on gaugings",
+      "pageStart": 18,
+      "pageEnd": 21,
+      "target": "../sections/sec-012-5-fiber-functors-on-gaugings.md",
+      "narrative": null,
+      "content": "[]{#sec:gauging label=\"sec:gauging\"}\n\nWe now apply the classification to gaugings. Let $\\mathcal{B}$ be a braided fusion category and let $$\\mathcal{E}=\\bigoplus_{g\\in G}\\mathcal{E}_g$$ be a faithful $G$-crossed braided fusion category with neutral component $\\mathcal{E}_e=\\mathcal{B}$. We denote by $\\rho$ the crossed action of $G$ on $\\mathcal{E}$. Following the formulation of gauging in [@CGPW16], based on the extension theory of [@ENO10], the gauging determined by the $G$-crossed extension $\\mathcal{E}$ is the equivariantization $$\\mathcal{E}^G.$$ The crossed braiding makes $\\mathcal{E}^G$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.10525v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "First reductions for small radical gaugings",
+      "pageStart": 21,
+      "pageEnd": 33,
+      "target": "../sections/sec-013-51-first-reductions-for-small-radical-gaugings.md",
+      "narrative": null,
+      "content": "We apply the preceding description to the small radical gaugings classified in [@GNradical]. Table [1](#tab:small_radical_gaugings){reference-type=\"ref\" reference=\"tab:small_radical_gaugings\"}, adapted from [@GNradical Table 3], records the non-pointed nondegenerate entries and the conclusions proved below. We follow the notation and parameter conventions of that reference. Here $D_r$ has order $2r$; the symbols $e$, $h$, and $N$ denote the elliptic, hyperbolic, and norm forms, respectively; and $p,r$ are distinct odd primes except in the final row.\n\n::: {#tab:small_radical_gaugings}\n  $\\opera",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2607.10525v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 33,
+      "pageEnd": 34,
+      "target": "../sections/sec-014-references.md",
+      "narrative": null,
+      "content": "[BV07]\nAlain Bruguières and Alexis Virelizier. Hopf monads. Adv. Math., 215(2):679–733, 2007.\n[CGPW16] Shawn X. Cui, César Galindo, Julia Yael Plavnik, and Zhenghan Wang. On gauging\nsymmetry of modular categories. Comm. Math. Phys., 348(3):1043–1064, 2016.\n[CGR00]\nAntoine Coste, Terry Gannon, and Philippe Ruelle. Finite group modular data. Nuclear\nPhysics B, 581(3):679–717, 2000.\n[CM17]\nJuan Cuadra and Ehud Meir. Orders of Nikshych’s Hopf algebra. J. Noncommut. Geom.,\n11(3):919–955, 2017.\n[DM82]\nPierre Deligne and James S. Milne. Tannakian categories. In Hodge cycles, motives,\nand Shimura vari",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

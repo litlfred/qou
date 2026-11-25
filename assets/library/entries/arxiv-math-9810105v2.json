@@ -1,0 +1,137 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-9810105v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-9810105v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 8,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "\\label{s-intro}\n\nLet $S_N$ be the group of permutations of $1,2,\\dots,N$.\nIf $\\pi\\in S_N$, we say that $\\pi(i_1),\\cdots,\\pi(i_k)$\nis an increasing subsequence in $\\pi$ if $i_1<i_2< \\cdots <i_k$ and\n$\\pi(i_1) < \\pi(i_2) < \\cdots < \\pi(i_k)$.\nLet $l_N(\\pi)$ be the length of the longest increasing subsequence.\nFor example, if $N=5$ and $\\pi$ is the permutation \n$5\\ \\ 1\\ \\ 3\\ \\  2\\ \\ 4$ (in one-line notation \n: thus $\\pi(1)=5$, $\\pi(2)=1$, $\\dots$), then the longest\nincreasing subsequences are $1\\ \\ 2\\ \\ 4$ and $1\\ \\ 3\\ \\ 4$, and $l_N(\\pi)=3$.\nEquip $S_N$ with uniform distribution, \n\\begin{equatio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9810105v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/9810105v2  [math.CO]  26 Mar 1999\nON THE DISTRIBUTION OF THE LENGTH OF THE LONGEST\nINCREASING SUBSEQUENCE OF RANDOM PERMUTATIONS\nJINHO BAIK, PERCY DEIFT, AND KURT JOHANSSON\nAbstract. The authors consider the length, lN, of the length of the longest\nincreasing subsequence of a random permutation of N numbers. The main\nresult in this paper is a proof that the distribution function for lN, suitably\ncentered and scaled, converges to the Tracy-Widom distribution [TW1] of the\nlargest eigenvalue of a random GUE matrix.\nThe authors also prove con-\nvergence of moments. The proof is based on",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9810105v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Riemann-Hilbert Theory",
+      "pageStart": 8,
+      "pageEnd": 16,
+      "target": "../sections/sec-001-2-riemann-hilbert-theory.md",
+      "narrative": null,
+      "content": "\\label{s-PII}\n\nIn this section, we first summarize some basic facts about RHP's in general,   \nand then discuss the RHP for the PII equation in some detail.\nBasic references for RHP's are \\cite{CG}, \\cite{GK}, and \nthe material on PII is taken from \\cite{DZ}.\n\n\\medskip\nLet $\\Sigma$ be an oriented curve in the plane (see, \nfor example, Figure~\\ref{fig-rh1}).\n\\begin{figure}[ht]\n \\centerline{\\epsfig{file=rh1.eps, width=6cm}}\n \\caption{}\\label{fig-rh1}\n\\end{figure}\nBy convention, the $(+)$-side (resp., $(-)$-side) of an arc in $\\Sigma$ \nlies to the left (resp., right) as one traverses the arc in t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9810105v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connection to the Toda Lattice and the Painlev'e III Equation",
+      "pageStart": 16,
+      "pageEnd": 50,
+      "target": "../sections/sec-002-3-connection-to-the-toda-lattice-and-the-painlev.md",
+      "narrative": null,
+      "content": "\\label{s-TL}\n\nIn this Section, we discuss the connection of the RHP~\\eqref{e-Y} \nfor $\\kappa^2_k$ and the RHP for the Toda lattice \nand the Painlev\\'e III equation. \nIn the RH context, the connection results from \nthe specific form of the weight, $e^{\\sqrt{\\lambda}(z+z^{-1})}$. \nConnections can also be seen from the Toeplitz determinant/orthogonal \npolynomial point of view as in \\cite{PS}, \\cite{Hi} and \\cite{Wi}.\nThe purpose of this short Section is purely to establish the \nvarious connection, but we do not use the results in the sequel.\n\n\\bigskip\nWrite $q=k+1$ in~\\eqref{e-Y}.\nWe define \n\\beg",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9810105v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "De-Poissonization Lemmas",
+      "pageStart": 50,
+      "pageEnd": 51,
+      "target": "../sections/sec-003-8-de-poissonization-lemmas.md",
+      "narrative": null,
+      "content": "\\label{s- dep}\n\nIn this section, we present two Lemmas which show that $\\phi_n(N)$ is \na good approximation of $q_{n,N}=f_{N,n}/N!$.\n\nWe need a Lemma showing the monotonicity of $q_{n,N}$ in $N$.\nThe statement and proof can be found in \\cite{Johan}.\n\\begin{lem}\\label{lem-dep1}\n   For all $n,N\\geq 1$, \n\\begin{equation*}\n  q_{n,N+1} \\le q_{n,N}.\n\\end{equation*}\n\\end{lem}\n\nUsing this monotonicity result, \nthe following Tauberian-like ``de-Poissonization'' Lemma can be proved.\nThis is a modification of Lemma 2.5 in \\cite{Johan} and \nthe proof is the same.\n\\begin{lem}\\label{lem-dep2}\n   Let $m>0$ b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9810105v2/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 60,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "Using Lemma 7.1 (iii), we have, for some constant C(M6) which depends on M6, and a constant C which is independent of M6, φn(µ(m) N ) = exp \u0012Z ∞ tN 2imP II 1,22(y)dy \u0013\u00001 + OM6( 1 n1/3 ) + O(e−1 4 M3/2 ) \u0001 Taking N →∞, and then taking M6 →∞, we obtain, lim N→∞φn(µ(m) N ) = exp \u0012Z ∞ t 2imP II 1,22(y)dy \u0013 . For φn(ν(m) N ), we obtain the same limit by a similar calculation, lim N→∞φn(ν(m) N ) = exp \u0012Z ∞ t 2imP II 1,22(y)dy \u0013 . Thus, recalling d dx2i(mP II )22(x) = u2(x) in (2.18), integration by parts yields lim N→∞Prob \u0012lN −2√n N 1/6 ≤t \u0013 = exp \u0012Z ∞ t 2imP II 1,22(y)dy \u0013 = F(t). □",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-9810105v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proofs of main Theorems",
+      "pageStart": 51,
+      "pageEnd": 60,
+      "target": "../sections/sec-004-9-proofs-of-main-theorems.md",
+      "narrative": null,
+      "content": "In this Section, we prove the main Theorems.\nProof of Theorem 1.1 Assume for deﬁniteness that t < 0.\nFor t ≥0, the\ncalculation is similar. From the deﬁnition of qn,N ≡fN,n\nN! ,\nFN(t) = Prob(lN −2\n√\nN\nN 1/6\n≤t) = q[2\n√\nN+tN 1/6],N.\n(9.1)\nSet\nn = [2\n√\nN + tN 1/6].\n52\nJINHO BAIK, PERCY DEIFT, AND KURT JOHANSSON\nAs t is ﬁxed, observe that 0 ≤n ≤N, as N →∞. Using Lemma 8.2 with any ﬁxed\nvalue of m > 0, we have\nφn(µ(m)\nN ) −C\nN m ≤FN(t) ≤φn(ν(m)\nN\n) + C\nN m .\nSet\ntN = 21/3(n + 1)2/3\u00001 −\n2\nq\nµ(m)\nN\nn + 1\n\u0001\n.\n(cf. the deﬁnition of t in (7.10).) Then, for all large N,\n2t ≤tN ≤1\n2t,\nand\nlim\nN→∞tN = t.\nL",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

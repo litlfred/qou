@@ -1,0 +1,803 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "helicity03mmj",
+  "blocks": [
+    {
+      "id": "library/helicity03mmj/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The helicity of a vector ﬁeld in a three-dimensional space can be thought of as\na real-valued version of the integral-valued Hopf invariant for a continuous map\nS3 →S2. The latter has two well-known deﬁnitions: topological or analytic ones.\nTopologically, the Hopf invariant of a map S3 →S2 is deﬁned as the linking number\nin S3 of the curves which are preimages of two arbitrary generic points in S2.\nAlternatively, the Hopf invariant can be deﬁned as the integral\nZ\nS3 ω ∧d−1ω,\nwhere a 2-form ω is the pullback to S3 of any area form on S2, normalized by the\ncondition that the area of S2 equals 1.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/helicity03mmj/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "MOSCOW MATHEMATICAL JOURNAL\nVolume 3, Number 3, July–September 2003, Pages 989–1011\nGEOMETRY OF HIGHER HELICITIES\nBORIS A. KHESIN\nTo Vladimir Igorevich Arnold on the occasion of his 65th birthday\nAbstract. We revisit an interpretation of higher-dimensional helicities\nand Hopf–Novikov invariants from the point of view of the Brownian\nergodic theorem. We also survey various results related to Arnold’s the-\norem on the asymptotic Hopf invariant on three-dimensional manifolds\nand recent work on linking of a vector ﬁeld with a foliation, the asymp-\ntotic crossing number, short path systems, and rel",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/helicity03mmj/blocks/ex-sec-001-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "ex-sec-001-02.md",
+      "narrative": null,
+      "content": "In a simply connected domain M ⊂R3 one can rewrite the helicity of a ﬁeld ξ (tangent to the boundary of M) as follows: H(ξ) = Z M (ξ, curl−1 ξ) d3x, where ( , ) is the Euclidean inner product, and A = curl−1 ξ is a divergence-free vector potential of the ﬁeld ξ, i. e., ∇×A = ξ. (One can easily see that the integral is independent of the choice of A deﬁned up to an addition of a gradient ∇f.) For instance, consider a divergence-free ﬁeld ξ which is identically zero except in two narrow ﬂux tubes whose axes are two linked closed curves C1 and C2. Sup- pose that there is no net twist within each",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/helicity03mmj/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "What is Helicity?",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-2-what-is-helicity.md",
+      "narrative": null,
+      "content": "Let M be a simply connected three-dimensional manifold with a volume form\nµ, and ξ a divergence-free vector ﬁeld on M. The divergence-free property means\nthat the Lie derivative of µ along ξ vanishes: Lξµ = 0, or, which is the same,\nthe substitution ωξ := iξµ of the ﬁeld ξ to the volume form µ, is a closed 2-form:\ndωξ = 0. On a simply connected manifold M (or, even, for an M with H1(M) = 0)\nthe latter implies that ωξ is exact: ωξ = dα for some 1-form α, called a potential (or,\nprimitive) 1-form. If M has boundary, we require ξ to be tangent to the boundary.\n(If H1(M)̸ = 0 for the manifold M, w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/helicity03mmj/blocks/rem-sec-001-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "rem-sec-001-04.md",
+      "narrative": null,
+      "content": "In the original paper [1], instead of segments of shortest geodesics, one considered “systems of short paths” between every two points of the manifold M. These systems have to satisfy some conditions to provide the existence of λξ(x1, x2) almost everywhere as a pointwise limit as T1, T2 →∞. Such a system of “short paths” would, generally speaking, depend on a vector ﬁeld. In [25] T. Vogel suggested to use the L1-convergence, rather than the pointwise one, and showed that in the L1-approach it is suﬃcient to use the system of shortest geodesics for any vector ﬁeld, see Section 3.4. His approach",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/helicity03mmj/blocks/rem-sec-001-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "rem-sec-001-05.md",
+      "narrative": null,
+      "content": "Just like the two deﬁnitions of the Hopf invariant manifest the Poincare duality, the ergodic interpretation of the helicity-type integrals in dimen- sion three and higher can be thought of in similar terms. The “Poincare duality” here is as follows. Consider foliations of codimension k with transverse holonomy- invariant measure, and the corresponding Ruelle–Sullivan currents. (If the measure is represented by a smooth form, the kernel distribution of the form spans the foliation leaves.) The operations ∧and d−1 on currents (or forms) correspond, respectively, to the intersection and “ﬁlling”",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/helicity03mmj/blocks/thm-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "1",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "thm-sec-001-01.md",
+      "narrative": null,
+      "content": "The helicity H(ξ) is preserved under the action on ξ of a volume- preserving diﬀeomorphism of M. Indeed, the helicity H(ξ) was deﬁned without coordinates or metric. Hence, H(ξ) is the same for all ﬁelds that diﬀer only by a volume-preserving change of coordinates. In this sense, helicity is a topological invariant. The word “helicity” was coined by K. Moﬀatt in [19] and it reveals the topological meaning of this characteristic of a vector ﬁeld (see also [20] for a historical survey).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/helicity03mmj/blocks/thm-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "1",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "thm-sec-001-03.md",
+      "narrative": null,
+      "content": "Helicity of a divergence-free vector ﬁeld ξ on a simply connected manifold M with a volume element µ is equal to the average pairwise linking of tra- jectories of this ﬁeld, i. e., to the asymptotic linking number λξ(x1, x2) of trajectory pairs integrated over M × M: H(ξ) = Z M Z M λξ(x1, x2) µ1µ2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/helicity03mmj/blocks/ex-sec-003-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "ex-sec-003-01.md",
+      "narrative": null,
+      "content": "An example of such a triple of ﬁelds is given by a divergence-free vector ﬁeld conﬁned to three solid tori which form a Borromean link and have no net twist inside each of the tori. One can think of such a ﬁeld as a triple, where each of the three ﬁelds is supported in its own component. In this case, one can choose the potential 1-forms αj satisfying d(αi ∧αj) = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/helicity03mmj/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Three-Dimensional Ramifications",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-3-three-dimensional-ramifications.md",
+      "narrative": null,
+      "content": "In this section we consider vector ﬁelds on three-dimensional manifolds.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/helicity03mmj/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bilinear and multi-linear forms.",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-31-bilinear-and-multi-linear-forms.md",
+      "narrative": null,
+      "content": "quadratic form on divergence-free vector ﬁelds, as the explicit formula in Deﬁ-\nnition 2.1 shows. Similarly, one deﬁnes a symmetric form, the cross-helicity, for\ntwo divergence-free vector ﬁelds:\nH(ξ, η) =\nZ\nM\nωξ ∧d−1ωη.\n(2)\nIts value turns out to be equal to the asymptotic linking of the ξ- and η-trajecto-\nries [1].\n994\nB. KHESIN\nThe bilinear form H(ξ, η) corresponds to the linking of curves in 3D. For links\nwith zero linking number there are higher invariants (Massey numbers, higher Mil-\nnor numbers, etc.). However, the adaptation of the higher link invariants to con-\nstructing the correspon",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/helicity03mmj/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Energy estimates.",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-32-energy-estimates.md",
+      "narrative": null,
+      "content": "in physics are magnetic ﬁelds.\nImagine a magnetic ﬁeld frozen in an inﬁnitely\nconducting, but viscous medium. Then moving according to the system of the MHD\nequations, the medium kinetic energy will be dissipating due to the ﬂuid viscosity,\nuntil it comes to a rest. The magnetic energy of the transported magnetic ﬁeld\nshould tend to its minimal value during the evolution, as any energy excess beyond\nthe minimum would be converted to further motion, see [1].\nIt turns out that helicity of a divergence-free (magnetic) vector ﬁeld is that it\nbounds from below ﬁeld’s (magnetic) energy, i. e., the s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/helicity03mmj/blocks/rem-sec-004-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "rem-sec-004-02.md",
+      "narrative": null,
+      "content": "In a sense, the above theorem gives an estimate of a geometric quan- tity via topology. A geometric meaning of this inequality can be seen in the example of the ﬁeld with closed orbits ﬁlling linked tori, which was discussed in Section 2. To minimize the energy of a vector ﬁeld with closed orbits by acting on the ﬁeld by a volume-preserving diﬀeomorphism, one has to shorten the length of most trajec- tories. (Indeed, the orbit periods are preserved under the diﬀeomorphism action; therefore, a reduction of the orbits’ lengths shrinks the velocity vectors along the orbits.) In turn, the shorteni",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/helicity03mmj/blocks/rem-sec-004-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "rem-sec-004-03.md",
+      "narrative": null,
+      "content": "More direct energy estimates were provided in [9] with the help of the notion of asymptotic crossing number. The crossing number of two curves is given by the Gauss integral (1) where, however, one takes the absolute value of the numerator. Geometrically, such an integral gives the number of over-crossings in B. KHESIN a plane projection of two curves and averaged over all directions of the projection. This number is not a homotopy invariant, but one can “force” it to be invariant by minimizing over all homotopies of two given space curves. Similarly to the linking number, one deﬁnes an asympt",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/helicity03mmj/blocks/rem-sec-004-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "rem-sec-004-05.md",
+      "narrative": null,
+      "content": "The rotation ﬁeld in the three-dimensional ball is an example of an opposite type: all its trajectories are pairwise unlinked. It was suggested by A. Sakharov and Ya. Zeldovich, and proved by M. Freedman [8], that this ﬁeld can be transformed by a volume-preserving diﬀeomorphism to a ﬁeld whose energy is arbitrarily close to 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/helicity03mmj/blocks/thm-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "1",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "thm-sec-004-01.md",
+      "narrative": null,
+      "content": "For a divergence-free vector ﬁeld ξ in a compact domain M Z M (ξ, ξ) dx3 ≥c(M) · H(ξ), where c(M) is a positive constant related to the shape and size of M.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/helicity03mmj/blocks/thm-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "9",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "thm-sec-004-04.md",
+      "narrative": null,
+      "content": "Suppose a vector ﬁeld ξ in R3 has an invariant torus T forming a nontrivial knot K. Then Z T (ξ, ξ) dx3 ≥ \u0012 π · Vol(T) \u00131/3 · |Flux ξ|2 · (2 · genus(K) −1), where Flux ξ is the ﬂux of ξ through a crossection of T, Vol(T) is the volume of the solid torus, and genus(K) is the genus of the knot K. Recall, that for any knot its genus is the minimal number of handles of a spanning (oriented) surface for this knot. For an unknot the genus is 0, since one can take a disk as a spanning surface. For a nontrivial knot one has genus(K) ≥1 and, therefore, the above energy is bounded away from zero: R (ξ,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/helicity03mmj/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ergodic meaning of the Calabi invariant.",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-005-33-ergodic-meaning-of-the-calabi-invariant.md",
+      "narrative": null,
+      "content": "ﬁelds with an invariant solid torus knotted in a complicated way.\nHowever, in\nthe case of a “complicated ﬁeld” in a “simple” standard solid torus the following\napproach based on the notion of Calabi invariant in symplectic geometry sometimes\ngives sharper estimates, see [10], [12]. One has to note that the asymptotic Hopf\ninvariant (unlike the Hopf invariant for a map) is diﬃcult to ﬁnd explicitly for a\nsomewhat generic divergence-free vector ﬁeld. Here, however, we discuss the case\nGEOMETRY OF HIGHER HELICITIES\n997\nwhere these calculations can be done explicitly for a ﬁeld in a solid torus, c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/helicity03mmj/blocks/rem-sec-005-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "rem-sec-005-01.md",
+      "narrative": null,
+      "content": "Another way to deﬁne this invariant is to consider a Hamiltonian isotopy {φt}, t ∈[0, 1], which starts with the identity map at t = 0, and at t = 1 coincides with φ. Such an isotopy can be deﬁned by a t-dependent Hamiltonian function Ht : D2 →R, which vanishes near the boundary and satisﬁes the identity dHt( . ) = ω \u0012∂φt ∂t , . \u0013 for all t ∈[0, 1]. Then one can show (see, e. g., [2]) that the Calabi invariant is (twice) the volume under the graph of the Hamiltonian function Ht over D2×[0, 1]: C(φ) = 2 Z 1 Z D2 Ht(x) ω dt,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/helicity03mmj/blocks/rem-sec-005-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "rem-sec-005-02.md",
+      "narrative": null,
+      "content": "One more deﬁnition of the Calabi invariant, due to A. Fathi, has an ergodic meaning of an average orbit braiding, and was used in [10], [12] for a variety of applications. Let {φt}, t ∈[0, 1], be a Hamiltonian isotopy. Consider the map Angφ : (D2 × D2) \\ ∆→R2, which associates to any pair of points x̸ = y in D2 the angular variation of the vector from φt(x) to φt(y) when t goes from 0 to 1 (here ∆stands for the diagonal). Note that this map does not depend on the isotopy. Then the Calabi invariant is the integral of this function (see [10]): C(φ) = ZZ D2×D2 Angφ(x, y) ωxωy.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/helicity03mmj/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Short paths systems.",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-34-short-paths-systems.md",
+      "narrative": null,
+      "content": "one needs to pass to linkings of non-closed curves. A way to do this is to introduce\na “linking form.”\nDeﬁnition 3.13. A linking form on an n-dimensional compact manifold M is\na (k, l)-form LF ∈Ω∗(M × M) satisfying the condition: the linking number of\nany two non-intersecting closed oriented compact submanifolds P and Q of linking\ndimensions k and l (with k + l = n −1) is given by the double integral\nZZ\nP ×Q⊂M×M\nLF.\nFor instance, the Gauss linking form in R3 is a linking (1, 1)-form, whose value\nat a point (x, y) ∈R3 × R3 on a pair of vectors v and w is\nLF(x, y)|(v,w) = 1\n4π\n(v × w, x −y)\n|x −",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/helicity03mmj/blocks/rem-sec-006-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "rem-sec-006-01.md",
+      "narrative": null,
+      "content": "In [1] it was discussed that there are plenty of SSP which pro- vide this bound for almost all pairs x1 and x2. Note that there might be some exceptional values of x1 and x2, where, e. g., the ξ-trajectory through x1 winds exponentially fast on a short path for x2. Then, of course, lk(g[0,T1] x1 , ∆x2) grows also exponentially, as T1 →∞, even after the division by T1. One can see that a small perturbation of such a system {∆} destroys this exponential winding. This way, however, the deﬁnition of the SSP might depend on the ﬁeld ξ. T. Vogel in [25] suggested to replace the convergence almost ev",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/helicity03mmj/blocks/thm-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "25",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "thm-sec-006-02.md",
+      "narrative": null,
+      "content": "On any compact Riemannian manifold M a system of shortest geodesics joining any pair of points x1 and x2 is a system of short paths for any vector ﬁeld ξ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/helicity03mmj/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Linking of a Vector Field with a Measured Foliation",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-007-4-linking-of-a-vector-field-with-a-measured-foli.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/helicity03mmj/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Linking of a curve with a foliation",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-008-41-linking-of-a-curve-with-a-foliation.md",
+      "narrative": null,
+      "content": "foliation of codimension 2 and a divergence-free vector ﬁeld is a direct generaliza-\ntion of the cross-helicity, cf. [2], [16], [17]. The corresponding helicity invariants in\nhigher dimensions are similar to those appearing in higher-dimensional ideal hy-\ndrodynamics, an odd-dimensional ideal incompressible ﬂuid moving according to\nthe Euler equations. It should be mentioned however, that they do not seem to be\nrelated to higher-dimensional physical problems, similar, e. g. to the helicity-energy\ninteraction in the MHD theory in two and three dimensions.\nLet M be a closed manifold with b1(M) =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/helicity03mmj/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Linking of a vector field with a foliation.",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-009-42-linking-of-a-vector-field-with-a-foliation.md",
+      "narrative": null,
+      "content": "dimensional case, we can now deﬁne an asymptotic and average linking numbers\nfor a vector ﬁeld and a measured foliation. For a ﬁeld ξ on M denote by ΓT (x) a\nGEOMETRY OF HIGHER HELICITIES\n1001\nclosed curve consisting of the long segment (for time 0 ≤t ≤T) of the ξ-trajectory\ngt\nξx starting at x ∈M and of a short closing path (e. g., geodesic).\nDeﬁnition 4.2. An asymptotic linking lkξ(x, F) of the trajectory of a vector ﬁeld\nξ emanating from a point x ∈M with the measured foliation F is the time-average\nof the linking number of the curve ΓT (x) with F:\nlkξ(x, F) = lim\nT →∞\n1\nT lk(ΓT (x), F).\nTh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/helicity03mmj/blocks/rem-sec-009-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "rem-sec-009-01.md",
+      "narrative": null,
+      "content": "Note that the proof of Arnold’s theorem 2.5 is achieved similarly by applying the Birkhoﬀergodic theorem to the ﬁeld ξ × ξ on M × M, and using the short path properties (Section 3.4). For more details on the case of a general transverse holonomy-invariant measure we refer to [17].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/helicity03mmj/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Linking of several measured foliations.",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-010-43-linking-of-several-measured-foliations.md",
+      "narrative": null,
+      "content": "the problem of generalizing the ergodic linking to foliations. However, there is one\ncase where such a generalization follows immediately from the deﬁnitions above.\nConsider an n-dimensional closed manifold M with a volume form µ, and several\nfoliations of arbitrary dimensions with holonomy invariant measures on M. We\nassume that (at least) one of the foliations is of codimension 2, and that the sum\nof all codimensions of these foliations is n + 1. Finally, assume that the foliations\nare null-homologous, i. e., so are the corresponding Ruelle–Sullivan cycles.\nFor simplicity we suppose that the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/helicity03mmj/blocks/thm-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "thm-sec-010-01.md",
+      "narrative": null,
+      "content": "The cross-helicity type integral R M d−1β1 ∧β2 ∧· · · ∧βk is equal to the average linking of the foliation F1, deﬁned by β1, and the vector ﬁeld ξ, deﬁned by the intersection of the others. In other words, the Hopf type integral above is equal to the average linking of the ﬁrst foliation with the intersection of the rest, provided that the whole set has linking dimensions. The same holds for the foliations with holonomy invariant transversal measures: the intersection foliation (with singularities) has a holonomy invariant product measure. (The latter automatically vanishes at the points of no",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/helicity03mmj/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Linking of Foliations and Brownian Motion",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "../sections/sec-011-5-linking-of-foliations-and-brownian-motion.md",
+      "narrative": null,
+      "content": "An attempt to generalize the ergodic view on helicity to higher dimensions en-\ncounters the following diﬃculty. Consider, for instance, the Hopf invariant for a\nmap ρ: S2k−1 →Sk. Just like in the S3 →S2-case, it is deﬁned as the linking\nnumber of the preimages in S2k−1 of two generic points in the target sphere Sk.\nAlternatively, one can deﬁne it as the integral\nZ\nS2k−1 β ∧d−1β,\n(4)\nwhere a k-form β is the pullback to S2k−1 of any volume form on Sk, normalized by\nthe condition that the total volume of Sk equals 1. The analytic deﬁnition above\n(generalized helicity) extends easily to the case o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/helicity03mmj/blocks/rem-sec-011-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "rem-sec-011-01.md",
+      "narrative": null,
+      "content": "In the case of smooth βi the cross-helicity can be also deﬁned as follows: H(F1, F2) := Z M β1 ∧d−1β2 = Z C(F1) d−1β2. B. KHESIN The equivalence of these deﬁnitions follows from the main property of the linking form: it deﬁnes an operator e LF : Ω∗(M) →Ω∗(M), such that for an exact k-form u the image is one of possible primitives: LF(u) = d−1u modulo an exact (k−1)-form. Actually, this very property (or the equivalence of the above deﬁnitions) is a higher-dimensional (somewhat tautological) analog of the helicity ergodic interpre- tation in 3D: the linking characteristic of the foliations is e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/helicity03mmj/blocks/rem-sec-011-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "rem-sec-011-02.md",
+      "narrative": null,
+      "content": "Note that in dimension 3 for linking of two vector ﬁelds, as well as for linking of one ﬁeld and a foliation in higher dimensions, one has a natural “time” along the ﬁeld trajectories, which allows one to apply the Birkhoﬀergodic theorem, as well a short path system. In higher dimension, where the interpretation should be related to linking of possibly non-compact leaves of the foliations, one is lacking both a natural expanding system of sets, comprising the linking of diﬀerent leaves, and a natural generalization of short path systems. A way around these diﬃculties is an application of a Bro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/helicity03mmj/blocks/rem-sec-011-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "rem-sec-011-05.md",
+      "narrative": null,
+      "content": "To give an ergodic interpretation of the higher Hopf invariant (4) one should consider the linking of diﬀerent leaves of the same foliation deﬁned by the form β. In the latter case one can guarantee that there exists a harmonic form ¯ν on M, such that the harmonic form on M × M is its square: ν = ¯ν ⊗¯ν. For arbitrary transverse holonomy-invariant measures the harmonic measure ν is not smooth in general, cf. [17]. Note that this “Brownian interpretation” does not involve short path systems.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/helicity03mmj/blocks/thm-sec-011-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "13",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "thm-sec-011-03.md",
+      "narrative": null,
+      "content": "1) Any compact foliated Riemannian manifold (M, F) has a nontrivial harmonic measure ν, i. e., probability measure such that ⟨∆F f, ν⟩= 0 for all f smooth in the leaf direction, where ∆F is the leaf Laplacian; GEOMETRY OF HIGHER HELICITIES R x z Figure 2. Brownian trajectories on leaves 2) Let ν be a ﬁnite harmonic measure. Then the ergodic theorem holds, using the leaf diﬀusion operators D(t) as follows: For any ν-integrable function f there exists an ν-integrable Brownian average ˜f which is constant along the leaves and ⟨˜f, ν⟩= ⟨f, ν⟩. This theorem allows one to interpret ergodically the a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/helicity03mmj/blocks/thm-sec-011-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "thm-sec-011-04.md",
+      "narrative": null,
+      "content": "Consider a pair of foliations F1 and F2 of linking dimensions k and l in a compact manifold M. Let ν be a harmonic measure on M×M for the foliation F = F1×F2 for any Riemannian metric on M. Then the space average over M×M for the Brownian ergodic average ˜f of the function f(x, y) := iF(x,y)LF(x, y) with respect to the measure ν does not depend on the Riemannian metric on M and is equal to the cross-helicity H(F1, F2) of the foliations. B. KHESIN",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/helicity03mmj/blocks/prop-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 22,
+      "target": "prop-sec-012-01.md",
+      "narrative": null,
+      "content": "The integrals J(α; α, β) = Z S4 α ∧d−1α ∧d−1β and J(β; α, β) = Z S4 β ∧d−1α ∧d−1β do not depend on the choices of d−1α and d−1β. GEOMETRY OF HIGHER HELICITIES \u0000\u0000\u0002 ∂−1B A U C ∂−1C B Figure 3. The linking of three surfaces A, B, and C in a four-sphere",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/helicity03mmj/blocks/prop-sec-012-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 22,
+      "target": "prop-sec-012-05.md",
+      "narrative": null,
+      "content": "(i) The operator f MLF corresponding to a multi-linking form MLF sends the product of two exact forms into the product of their potentials: f MLF : β(y) ⊗γ(z) 7→d−1β(x) ∧d−1γ(x). In other words, the form MLF(x, y, z) satisﬁes the property dy dzMLF(x, y, z) = δ(x, y)δ(x, z) (modulo addition of an exact in x term). (ii) The multi-linking form MLF(x, y, z) can be chosen to be L1-integrable on (S4)3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/helicity03mmj/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Novikov's Integrals",
+      "pageStart": 18,
+      "pageEnd": 22,
+      "target": "../sections/sec-012-6-novikovs-integrals.md",
+      "narrative": null,
+      "content": "Novikov’s invariants [21] can be thought of as a generalization of the Hopf-type\ninvariants to a wide class of maps.\nIn particular, he constructed an analog of\nthe Whitehead operations in the homotopy groups for closed diﬀerential forms on\nmanifolds. In [21], Novikov deﬁned a set of invariants on manifolds of an arbitrary\ndimension, and we consider the four-dimensional case for illustration.\nConsider the invariants designed to distinguish various homotopy classes of the\nmaps S4 →R3 \\ {a, b}. Their geometric realization in diﬀerential forms on S4 is\nas follows. Consider a pair of closed 2-forms",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/helicity03mmj/blocks/rem-sec-012-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 22,
+      "target": "rem-sec-012-02.md",
+      "narrative": null,
+      "content": "Consider the foliations A and B in S4 deﬁned by the kernel subspaces of the 2-forms α and β. The conditions α ∧α = β ∧β = 0 on the pair α, β give the restrictions on the rank of the forms: rk(α), rk(β) ≤2, so that they deﬁne kernel foliations of dimension 2 in S4. The third condition α ∧β = 0 ensures that these kernel foliations have non-transversal intersection. Namely, their leaves at generic points form a 1-dimensional foliation. Moreover, the distribution spanned by the sum of the kernels of α and β is integrable and deﬁnes a 3-dimensional foliation [1]. In [16] the integrals above were gi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/helicity03mmj/blocks/rem-sec-012-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 22,
+      "target": "rem-sec-012-04.md",
+      "narrative": null,
+      "content": "A similar operator e LF : Ω∗(M) →Ω∗(M) corresponding to a linking form LF ∈Ω∗(M × M) on a manifold M sends β(y) 7→ Z My LF(x, y) ∧β(y). GEOMETRY OF HIGHER HELICITIES The key property of this operator is that it sends an exact form to its potential: e LF(β) = d−1β. (A linking form is not unique, and so is not a potential.) This property is related to the fact that the diﬀerential of the linking form gives the δ-form δ(x, y) supported on the diagonal ∆⊂M × M: LF(x, y) = d−1 y δ(x, y), see details in [2].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/helicity03mmj/blocks/rem-sec-012-07",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 22,
+      "target": "rem-sec-012-07.md",
+      "narrative": null,
+      "content": "This theorem was inspired in part by the work [22], where a similar statement was proved under an additional restrictive assumption on the proper be- havior of the foliation leaves at inﬁnity (one assumes that the foliation is amenable). In the latter case there is a reformulation of such averaging in terms of closures of the leaves by means of “small caps,” similar to the short path approach for trajectories in three dimensions. By lifting this assumption, we have to stick to the Brownian averaging along the leaves of a foliation, without possibility of closing them up, but now such averaging",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/helicity03mmj/blocks/thm-sec-012-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 22,
+      "target": "thm-sec-012-03.md",
+      "narrative": null,
+      "content": "(i) The mutual linking number of a triple is well-deﬁned, i. e., it does not depend on the choices of ∂−1B and ∂−1C. (ii) In R4 this linking number coincides with the degree of the Gauss map: lk(A; B, C) = deg ρ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/helicity03mmj/blocks/thm-sec-012-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 22,
+      "target": "thm-sec-012-06.md",
+      "narrative": null,
+      "content": "Let ν be a harmonic measure on (S4)3 for the foliation F = A×B× C for any Riemannian metric. Then the space average over (S4)3 for the Brownian ergodic average ˜g of the function g := iFMLF with respect to the measure ν does not depend on the Riemannian metric on (S4)3 and is equal to the Novikov invariant J(α; β, γ). B. KHESIN The proof mimics the consideration of the preceding section and uses the above two properties of the form MLF: ⟨˜g, ν⟩= ZZZ (S4)3(iA×B×CMLF)ν = ZZZ S4 x×S4 y×S4 z MLF(x, y, z) ∧(α(x) ⊗β(y) ⊗γ(z)) = Z S4 x α(x) ∧d−1β(x) ∧d−1γ(x) = J(α; β, γ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/helicity03mmj/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-013-acknowledgments.md",
+      "narrative": null,
+      "content": "Vienna, the IHES in Bures-sur-Yvette, and Ecole Polytechnique in Paris, where\nthis paper was written. Special thanks go to V. Kaimanovich, M. Kapovich and\nS. Tabachnikov for illuminating discussions and to D. Novikov for drawing the\nﬁgures.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/helicity03mmj/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-014-references.md",
+      "narrative": null,
+      "content": "[1] V. I. Arnold, The asymptotic Hopf invariant and its applications, Proc. Summer School in\nDiﬀ. Equations at Dilizhan (Erevan), 1973, English translation in: Selecta Math. Soviet. 5\n(1986), no. 4, 327–345. MR 89m:58053 (Russian).\n[2] V. I. Arnold and B. A. Khesin, Topological methods in hydrodynamics, Applied Mathematical\nSciences, vol. 125, Springer-Verlag, New York, 1998. MR 99b:58002\n[3] M. A. Berger, Third-order link invariant, J. Phys. A 23 (1990), no. 13, 2787–2793.\nMR 91i:82023\n[4] M. A. Berger and G. B. Field, The topological properties of magnetic helicity, J. Fluid Mech.\n147 (1984)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

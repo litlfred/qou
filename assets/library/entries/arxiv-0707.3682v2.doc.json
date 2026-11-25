@@ -1,0 +1,1042 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0707.3682v2",
+  "title": "arxiv-0707.3682v2",
+  "variant": "pdf",
+  "pages": 44,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The p-adiccomingchar Beilinson conjecture for totally real fields",
+      "number": "2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-the-p-adiccomingchar-beilinson-conjecture-for"
+    },
+    {
+      "level": 1,
+      "title": "A motivic version of the conjecture",
+      "number": "3",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-a-motivic-version-of-the-conjecture"
+    },
+    {
+      "level": 1,
+      "title": "More explicit K -groups and regulators",
+      "number": "4",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-more-explicit-k--groups-and-regulators"
+    },
+    {
+      "level": 1,
+      "title": "Computing K -groups in practice",
+      "number": "5",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-computing-k--groups-in-practice"
+    },
+    {
+      "level": 1,
+      "title": "Computing p-adiccomingchar L-functionscomingchar",
+      "number": "6",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Examples",
+      "number": "7",
+      "page": 30,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-7-examples"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 34,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 119,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "p-adic",
+          "heading": false
+        },
+        {
+          "term": "regulators",
+          "heading": false
+        },
+        {
+          "term": "eightieth",
+          "heading": false
+        },
+        {
+          "term": "lating",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0707.3682v2 [math.KT] 19 Nov 2007 ON THE p-ADIC BEILINSON CONJECTURE FOR NUMBER FIELDS. AMNON BESSER, PAUL BUCKINGHAM, ROB DE JEU, AND XAVIER-FRANC¸OIS ROBLOT Dedicated to Jean-Pierre Serre on the occasion of his eightieth birthday. Abstract. We formulate a conjectural p-adic analogue of Borel’s theorem re- lating regulators for higher K-groups of number ﬁelds to special values of the corresponding",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0707.3682v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1946,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "syntomic regulator",
+          "heading": false
+        },
+        {
+          "term": "artin motives",
+          "heading": false
+        },
+        {
+          "term": "beilinson regulator",
+          "heading": false
+        },
+        {
+          "term": "regulator reg",
+          "heading": false
+        },
+        {
+          "term": "syntomic cohomology",
+          "heading": false
+        },
+        {
+          "term": "omega eul",
+          "heading": false
+        },
+        {
+          "term": "ell eul",
+          "heading": false
+        },
+        {
+          "term": "overline chi",
+          "heading": false
+        }
+      ],
+      "extract": "The Beilinson conjectures about special values of [@bei85] are a far reaching generalization of the class number formula for the Dedekind zeta function. For every algebraic variety $X$ over the rationals it predicts the leading term of the Taylor expansions of $L(H^i(X),s)$ at certain points, up to a rational multiple, in terms of arithmetic information associated with $X$, namely, its algebraic K-groups $K_j(X)$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-p-adiccomingchar-beilinson-conjecture-for",
+      "number": "2",
+      "title": "The p-adiccomingchar Beilinson conjecture for totally real fields",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2747,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "beilinson conjecture",
+          "heading": true
+        },
+        {
+          "term": "syntomic regulator",
+          "heading": false
+        },
+        {
+          "term": "p-adic l-function",
+          "heading": false
+        },
+        {
+          "term": "artin l-functions",
+          "heading": false
+        },
+        {
+          "term": "artin character",
+          "heading": false
+        },
+        {
+          "term": "k2n",
+          "heading": false
+        },
+        {
+          "term": "modiﬁed syntomic",
+          "heading": false
+        },
+        {
+          "term": "syntomic cohomology",
+          "heading": false
+        }
+      ],
+      "extract": "Let k be a number ﬁeld with r1 real embeddings, 2r2 complex embeddings, ring of algebraic integers Ok, and discriminant Dk. As is well-known, O∗ k is a ﬁnitely generated Abelian group of rank r = r1 + r2 −1, and its regulator R satisﬁes w p |Dk| Ress=1ζk(s) = 2r1(2π)r2 |Cl(Ok)| R, with Cl(Ok) the class group of Ok, and w the number of roots of unity in k. Because K0(Ok) ∼= Cl(Ok) ⊕Z and K1(Ok) ∼= O∗ k, so |Cl(Ok)| =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-a-motivic-version-of-the-conjecture",
+      "number": "3",
+      "title": "A motivic version of the conjecture",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4271,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tensor qpbar",
+          "heading": false
+        },
+        {
+          "term": "kne tilde",
+          "heading": false
+        },
+        {
+          "term": "times kmn",
+          "heading": false
+        },
+        {
+          "term": "vee tensor",
+          "heading": false
+        },
+        {
+          "term": "tensor rightiso",
+          "heading": false
+        },
+        {
+          "term": "psi tensor",
+          "heading": false
+        },
+        {
+          "term": "iso tensor",
+          "heading": false
+        },
+        {
+          "term": "rightiso oplus",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#motivicsection label=\"motivicsection\"} If $E$ is any extension of $\\Q$, and $k/\\Q$ is finite and Galois with Galois group $G$, then we let $M^E = E \\tensor_\\Q k$ and $\\KnE k = E \\tensor_\\Q \\Kn k$, which are $E[G]$-modules. The goal of this section is to refine Conjecture [\\[pborel\\]](#pborel){reference-type=\"ref\" reference=\"pborel\"} to a conjecture for Artin motives with coefficients in $E$, or equivalently,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-more-explicit-k--groups-and-regulators",
+      "number": "4",
+      "title": "More explicit K -groups and regulators",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2940,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zagierthm",
+          "heading": false
+        },
+        {
+          "term": "motiveconjecture",
+          "heading": false
+        },
+        {
+          "term": "dfrac ker",
+          "heading": false
+        },
+        {
+          "term": "cap ker",
+          "heading": false
+        },
+        {
+          "term": "prime chi",
+          "heading": false
+        },
+        {
+          "term": "hbox prime",
+          "heading": false
+        },
+        {
+          "term": "bdj proposition",
+          "heading": false
+        },
+        {
+          "term": "abelprop",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#ksection label=\"ksection\"} In this section we first describe an inductive procedure that conjecturally gives $\\Kn k$ ($n \\ge 2$) for any number field $k$. It is originally due to Zagier [@Zag91], but we essentially give a reformulation by Deligne [@del:imd]. We also describe results concerning Conjecture [\\[motiveconjecture\\]](#motiveconjecture){reference-type=\"ref\" reference=\"motiveconjecture\"} when the action",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-computing-k--groups-in-practice",
+      "number": "5",
+      "title": "Computing K -groups in practice",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 30,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3853,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kne oplus",
+          "heading": false
+        },
+        {
+          "term": "kne iso",
+          "heading": false
+        },
+        {
+          "term": "iso ind",
+          "heading": false
+        },
+        {
+          "term": "s3example",
+          "heading": false
+        },
+        {
+          "term": "galoisdescent",
+          "heading": false
+        },
+        {
+          "term": "zeta mathfrak",
+          "heading": false
+        },
+        {
+          "term": "d8example",
+          "heading": false
+        },
+        {
+          "term": "oplus alt",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#practical label=\"practical\"} Let $n \\ge 2$. It follows from Theorem [\\[zagierthm\\]](#zagierthm){reference-type=\"ref\" reference=\"zagierthm\"} that Zagier's approach as described in Section [\\[ksection\\]](#ksection){reference-type=\"ref\" reference=\"ksection\"} can be used to obtain at least some part of $\\Kn k$. Using the notation introduced in Section [\\[ksection\\]](#ksection){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-7-examples",
+      "number": "7",
+      "title": "Examples",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1982,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "repeat advance",
+          "heading": false
+        },
+        {
+          "term": "loop advance",
+          "heading": false
+        },
+        {
+          "term": "vphantom tensor",
+          "heading": false
+        },
+        {
+          "term": "vphantom hbox",
+          "heading": false
+        },
+        {
+          "term": "s3computation",
+          "heading": false
+        },
+        {
+          "term": "hline vphantom",
+          "heading": false
+        },
+        {
+          "term": "tensor omega",
+          "heading": false
+        },
+        {
+          "term": "d8example",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#examplesection label=\"examplesection\"} In this section we describe the evidence for Conjecture [\\[motiveconjecture\\]](#motiveconjecture){reference-type=\"ref\" reference=\"motiveconjecture\"} in the case of primitive idempotents $\\pi$ in $E[\\Gal(k/\\Q)]$ as in Examples [\\[S3example\\]](#S3example){reference-type=\"ref\" reference=\"S3example\"}, [\\[D8example\\]](#D8example){reference-type=\"ref\" reference=\"D8example\"} and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 44,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4130,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zˆeta p-adiques",
+          "heading": false
+        },
+        {
+          "term": "p-adic regulators",
+          "heading": false
+        },
+        {
+          "term": "p-adic l-functions",
+          "heading": false
+        },
+        {
+          "term": "fonctions p-adiques",
+          "heading": false
+        },
+        {
+          "term": "ois roblot",
+          "heading": false
+        },
+        {
+          "term": "p-adic beilinson",
+          "heading": false
+        },
+        {
+          "term": "syntomic regulators",
+          "heading": false
+        },
+        {
+          "term": "xavier-franc ois",
+          "heading": false
+        }
+      ],
+      "extract": "[1] D. Barsky. Fonctions zˆeta p-adiques d’une classe de rayon des corps de nombres totalement r´eels. In Groupe d’Etude d’Analyse Ultram´etrique (5e ann´ee: 1977/78), pages Exp. No. 16, 23. Secr´etariat Math., Paris, 1978. [2] A. A. Beilinson. Higher regulators and values of L-functions. J. Sov. Math., 30:2036–2070, 1985. [3] A. Besser. Syntomic regulators and p-adic integration I: rigid syntomic regulators. Israel",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "beilinson regulator",
+      "heading": false
+    },
+    {
+      "term": "syntomic regulator",
+      "heading": false
+    },
+    {
+      "term": "beilinson conjecture",
+      "heading": true
+    },
+    {
+      "term": "omega eul",
+      "heading": false
+    },
+    {
+      "term": "motiveconjecture",
+      "heading": false
+    },
+    {
+      "term": "artin conjecture",
+      "heading": false
+    },
+    {
+      "term": "chi omega",
+      "heading": false
+    },
+    {
+      "term": "chi tensor",
+      "heading": false
+    },
+    {
+      "term": "regulator reg",
+      "heading": false
+    },
+    {
+      "term": "prime chi",
+      "heading": false
+    },
+    {
+      "term": "tensor qpbar",
+      "heading": false
+    },
+    {
+      "term": "p-adic beilinson",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "5.1",
+      "title": "The subgroups of G = D8 and their ﬁxed ﬁelds in k/Q. Then Q[G] = Q[G]π1⊕Q[G]π2 where π1 = (1+σ2)/2 and π2 = 1−π1 are orthogonal",
+      "page": 25,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Splitting ﬁeld of x3 −x2 −3x + 1, where C(χπ) = 22 · 37. n = 3",
+      "page": 37,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Splitting ﬁeld of x3 −6x −2, where C(χπ) = 22 · 33 · 7. n = 3",
+      "page": 37,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "Splitting ﬁeld of x3 −4x −1, where C(χπ) = 229. n = 3",
+      "page": 38,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4",
+      "title": "Splitting ﬁeld of x3 −6x2 + 2, where C(χπ) = 22 · 34 · 5. n = 3",
+      "page": 38,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "5",
+      "title": "Splitting ﬁeld of x4 −x3 −3x2 + x + 1, where C(χπ) = 5 · 29. n = 3",
+      "page": 39,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "6",
+      "title": "Splitting ﬁeld of x4 −2x3 −3x2 + 4x + 1, where C(χπ) = 22 · 32 · 11. n = 3",
+      "page": 39,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "7",
+      "title": "Splitting ﬁeld of x4 −6x2 + 6, where C(χπ) = 27 · 32. n = 3",
+      "page": 40,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "8",
+      "title": "Splitting ﬁeld of x4 −6x2 −4x + 2, where C(χπ) = 25 · 17. n = 3",
+      "page": 40,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "9",
+      "title": "Splitting ﬁeld of x4 −2x3 + 5x2 −4x + 2, where C(χπ) = 23 · 17. n = 2",
+      "page": 41,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "10",
+      "title": "Splitting ﬁeld of x4 −x3 + 3x2 −2x + 4, where C(χπ) = 5 · 41. n = 2",
+      "page": 41,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "11",
+      "title": "Splitting ﬁeld of x4 −2x3 + 6x2 −5x + 2, where C(χπ) = 13 · 17. n = 2",
+      "page": 42,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "12",
+      "title": "Splitting ﬁeld of x4 + 3x2 −6x + 6, where C(χπ) = 22 · 32 · 11. n = 2",
+      "page": 42,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "13",
+      "title": "Splitting ﬁeld of x6 −x5 −6x4 + 7x3 + 4x2 −5x + 1, where C(χπ ⊗id) = 22 · 5 · 19. n = 3",
+      "page": 43,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "14",
+      "title": "Splitting ﬁeld of x6 −x5 −8x4 −x3 + 12x2 + 7x + 1, where C(χπ ⊗id) = 22 · 5 · 31. n = 3",
+      "page": 43,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "15",
+      "title": "Splitting ﬁeld of x6 −x5 −8x4 + 5x3 + 19x2 −4x −11, where C(χπ ⊗id) = 5 · 139. n = 3",
+      "page": 44,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "16",
+      "title": "Splitting ﬁeld of x6 −x5 −8x4 + 11x3 + 2x2 −5x + 1, where C(χπ ⊗id) = 22 · 32 · 13. n = 3",
+      "page": 44,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 8,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "16 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p34); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0707.3682v2"
+  }
+}

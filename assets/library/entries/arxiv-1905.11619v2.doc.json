@@ -1,0 +1,1175 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1905.11619v2",
+  "title": "arxiv-1905.11619v2",
+  "variant": "pdf",
+  "pages": 24,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "General conventions and notation",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-general-conventions-and-notation"
+    },
+    {
+      "level": 2,
+      "title": "Containment of bimodules",
+      "number": "2.2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-containment-of-bimodules"
+    },
+    {
+      "level": 2,
+      "title": "Hochschild cohomology",
+      "number": "2.3",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-hochschild-cohomology"
+    },
+    {
+      "level": 1,
+      "title": "Gradient tensoring, n-cocycles and gradient-Sp",
+      "number": "3",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-3-gradient-tensoring-n-cocycles-and-gradient-sp"
+    },
+    {
+      "level": 2,
+      "title": "Gradient tensoring",
+      "number": "3.1",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Construction of n-cocycles.",
+      "number": "3.2",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-32-construction-of-n-cocycles"
+    },
+    {
+      "level": 2,
+      "title": "The Haagerup averaging technique",
+      "number": "3.3",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-33-the-haagerup-averaging-technique"
+    },
+    {
+      "level": 1,
+      "title": "Schatten Sp-estimates for the Ornstein-Uhlenbeck semi-group on q-Gaussians",
+      "number": "4",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-4-schatten-sp-estimates-for-the-ornstein-uhlenbe"
+    },
+    {
+      "level": 2,
+      "title": "q-Gaussian algebras",
+      "number": "4.1",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-41-q-gaussian-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Gradient-Sp estimates",
+      "number": "4.2",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-42-gradient-sp-estimates"
+    },
+    {
+      "level": 2,
+      "title": "Consequences for Cartan rigidity",
+      "number": "4.3",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-43-consequences-for-cartan-rigidity"
+    },
+    {
+      "level": 1,
+      "title": "Derivations and the Akemann-Ostrand property",
+      "number": "5",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-5-derivations-and-the-akemann-ostrand-property"
+    },
+    {
+      "level": 2,
+      "title": "Group algebras",
+      "number": "5.1",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-51-group-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Von Neumann algebras with filtration",
+      "number": "5.2",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-52-von-neumann-algebras-with-filtration"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 23,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 109,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-gaussian algebras",
+          "heading": false
+        },
+        {
+          "term": "quantum markov",
+          "heading": false
+        },
+        {
+          "term": "semi-groups",
+          "heading": false
+        },
+        {
+          "term": "cocycles",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1905.11619v2 [math.OA] 13 Feb 2020 L2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV SEMI-GROUPS ON q-GAUSSIAN ALGEBRAS MARTIJN CASPERS, YUSUKE ISONO, AND MATEUSZ WASILEWSKI Abstract. We study (quasi-)cohomological properties through an analysis of quantum Markov semi-groups. We construct higher order Hochschild cocycles using gradient forms associated with a quantum Markov semi-group. By using Schatten-Sp",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1905.11619v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 963,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "markov semi-groups",
+          "heading": false
+        },
+        {
+          "term": "ornstein-uhlenbeck semi-group",
+          "heading": false
+        },
+        {
+          "term": "sect gradienttensor",
+          "heading": false
+        },
+        {
+          "term": "sect orhnstein-uhlenbeck",
+          "heading": false
+        },
+        {
+          "term": "coarse bimodule",
+          "heading": false
+        },
+        {
+          "term": "gradient mathcal",
+          "heading": false
+        },
+        {
+          "term": "akemann-ostrand property",
+          "heading": false
+        },
+        {
+          "term": "von neumann",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Sect=Intro label=\"Sect=Intro\"} The aim of this paper is to connect the theory of quantum Markov semi-groups to certain cohomological properties of their algebras. Quantum Markov semi-groups are continuous semi-groups of trace preserving unital completely positive maps on a finite von Neumann algebra. Such quantum Markov semi-groups naturally arise in time evolutions of open systems that undergo decoherence. With",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 211,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-gaussians",
+          "heading": false
+        },
+        {
+          "term": "authors thank",
+          "heading": false
+        },
+        {
+          "term": "preliminaries",
+          "heading": true
+        },
+        {
+          "term": "derivations",
+          "heading": false
+        },
+        {
+          "term": "grant",
+          "heading": false
+        },
+        {
+          "term": "research",
+          "heading": false
+        }
+      ],
+      "extract": "construction in Section 3. We analyze when a repeated tensor product is contained in the coarse bimodule through the notion of being gradient-Sp (Theorem A). We also show that in the group case, under a domain condition, one may always average quantum Markov semi-groups to a semi- group of Fourier multipliers retaining the gradient Sp-properties. In Section 4 we illustrate this using q-Gaussians and we show that the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-general-conventions-and-notation",
+      "number": "2.1",
+      "title": "General conventions and notation",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 38,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tau",
+          "heading": false
+        },
+        {
+          "term": "neumann",
+          "heading": false
+        },
+        {
+          "term": "trace",
+          "heading": false
+        }
+      ],
+      "extract": "Throughout the paper $M$ is a finite von Neumann algebra with a trace $\\tau$. Let $\\Omega_\\tau \\in L_2(M) := L_2(M, \\tau)$ be the cyclic vector given by $1 \\in M$. We denote by $\\mathcal{S}_p$ the Schatten-von Neumann class, which is the non-commutative $L_p$-space associated with $B(H)$ and its trace.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-22-containment-of-bimodules",
+      "number": "2.2",
+      "title": "Containment of bimodules",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 610,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "containment",
+          "heading": true
+        },
+        {
+          "term": "bimodule actions",
+          "heading": false
+        },
+        {
+          "term": "eta rangle",
+          "heading": false
+        },
+        {
+          "term": "langle eta",
+          "heading": false
+        },
+        {
+          "term": "normal bimodule",
+          "heading": false
+        },
+        {
+          "term": "lem containment",
+          "heading": false
+        },
+        {
+          "term": "von neumann",
+          "heading": false
+        },
+        {
+          "term": "sub-bimodule",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\mathcal{A}$ be a $\\ast$-algebra. By an $\\mathcal{A}$--$\\mathcal{A}$ bimodule $H$ we mean a Hilbert space together with $\\ast$-homomorphisms $\\pi_l: \\mathcal{A}\\rightarrow B(H)$ and $\\pi_r: \\mathcal{A}^{op} \\rightarrow B(H)$ whose images commute. If $\\mathcal{A}$ is a von Neumann algebra then we assume moreover that $\\pi_l$ and $\\pi_r$ are normal. We write $L_2(M)$ for the trivial bimodule and $L_2(M) \\otimes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-hochschild-cohomology",
+      "number": "2.3",
+      "title": "Hochschild cohomology",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 183,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hochschild",
+          "heading": true
+        },
+        {
+          "term": "dnf",
+          "heading": false
+        },
+        {
+          "term": "bar resolution",
+          "heading": false
+        }
+      ],
+      "extract": "[Tho08] and also [CoSh05]) through the bar resolution as follows. Let Fn be the space of all linear maps f : A⊗n →H to a ﬁxed A-A bimodule H. For f ∈Fn we deﬁne dnf : A⊗n+1 →H by (dnf)(a1 ⊗a2 ⊗. . . ⊗an+1) = a1 · f(a2 ⊗. . . ⊗an+1) + n X k=1 (−1)kf(a1 ⊗. . . ⊗akak+1 ⊗. . . ⊗an+1) + (−1)n+1f(a1 ⊗. . . ⊗an) · an+1 with a1, . . . , an+1 ∈A. Further, set for ξ ∈H the map d0ξ : A →H by (d0ξ)(a) = aξ −ξa, a ∈A. We get a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-gradient-tensoring-n-cocycles-and-gradient-sp",
+      "number": "3",
+      "title": "Gradient tensoring, n-cocycles and gradient-Sp",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1534,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nabla otimes",
+          "heading": false
+        },
+        {
+          "term": "nabla omega",
+          "heading": false
+        },
+        {
+          "term": "nabla eta",
+          "heading": false
+        },
+        {
+          "term": "tau ast",
+          "heading": false
+        },
+        {
+          "term": "ast psi",
+          "heading": false
+        },
+        {
+          "term": "langle ast",
+          "heading": false
+        },
+        {
+          "term": "markov semi-group",
+          "heading": false
+        },
+        {
+          "term": "nabla ldots",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Sect=GradientTensor label=\"Sect=GradientTensor\"} The aim of this section is to construct $n$-cocycles in Hochschild cohomology using quantum Markov semi-groups. ::: dfn A **quantum Markov semi-group** $(\\Phi_t)_{t \\geq 0}$ on $(M, \\tau)$ is a semi-group of unital completely positive maps $\\Phi_t: M\\rightarrow M$ that preserve the trace, i.e. $\\tau \\circ \\Phi_t = \\tau$ for all $t \\geq 0$. Further we assume that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-32-construction-of-n-cocycles",
+      "number": "3.2",
+      "title": "Construction of n-cocycles.",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 318,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "otimes nabla",
+          "heading": false
+        },
+        {
+          "term": "dots otimes",
+          "heading": false
+        },
+        {
+          "term": "nabla omega",
+          "heading": false
+        },
+        {
+          "term": "mathcal otimes",
+          "heading": false
+        },
+        {
+          "term": "ldots otimes",
+          "heading": false
+        },
+        {
+          "term": "otimes rightarrow",
+          "heading": false
+        },
+        {
+          "term": "colon mathcal",
+          "heading": false
+        },
+        {
+          "term": "omega tau",
+          "heading": false
+        }
+      ],
+      "extract": "The following proposition allows to construct cocycles at the expense of changing the bimodule. We will remedy this change by using Schatten-$\\mathcal{S}_p$ properties below. ::: thm []{#Thm=Gdelta label=\"Thm=Gdelta\"} Let $H$ be an $A$-$A$-bimodule and let $f\\colon \\mathcal{A}^{\\otimes (n-1)} \\rightarrow H$ be a linear map. Set $Gf\\colon \\mathcal{A}^{\\otimes n} \\rightarrow H_\\nabla$ by, $$(G f)(a_1 \\otimes \\ldots",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-33-the-haagerup-averaging-technique",
+      "number": "3.3",
+      "title": "The Haagerup averaging technique",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 601,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "markov semi-group",
+          "heading": false
+        },
+        {
+          "term": "delta psi",
+          "heading": false
+        },
+        {
+          "term": "delta lambda",
+          "heading": false
+        },
+        {
+          "term": "multiplier psi",
+          "heading": false
+        },
+        {
+          "term": "gamma mapsto",
+          "heading": false
+        },
+        {
+          "term": "gradient mathcal",
+          "heading": false
+        },
+        {
+          "term": "gamma rangle",
+          "heading": false
+        },
+        {
+          "term": "circ delta",
+          "heading": false
+        }
+      ],
+      "extract": "We will show that under algebraic conditions gradient-$\\mathcal{S}_p$ properties behave well under Haagerup averaging techniques. We believe this result is of independent interest, though we will not use it in the subsequent sections. Let $\\Lambda$ be a discrete group with group algebra $\\mathbb{C}[\\Lambda]$ and von Neumann algebra $(\\mathcal{L}(\\Lambda), \\tau)$. We will identify $\\Lambda$ with its image under the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-4-schatten-sp-estimates-for-the-ornstein-uhlenbe",
+      "number": "4",
+      "title": "Schatten Sp-estimates for the Ornstein-Uhlenbeck semi-group on q-Gaussians",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 27,
+      "summary": null,
+      "keywords": [],
+      "extract": "[]{#Sect=Orhnstein-Uhlenbeck label=\"Sect=Orhnstein-Uhlenbeck\"} We show that $q$-Gaussians $\\Gamma_q(H_{\\mathbb{R}})$ with the Ornstein-Uhlenbeck semi-group are gradient-$\\mathcal{S}_p$ for a range of $q$ depending on $p$ and the dimension of the Hilbert space $H_{\\mathbb{R}}$.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-41-q-gaussian-algebras",
+      "number": "4.1",
+      "title": "q-Gaussian algebras",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 617,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ldots otimes",
+          "heading": false
+        },
+        {
+          "term": "eta otimes",
+          "heading": false
+        },
+        {
+          "term": "lem wickproduct",
+          "heading": false
+        },
+        {
+          "term": "dots otimes",
+          "heading": false
+        },
+        {
+          "term": "varphi omega",
+          "heading": false
+        },
+        {
+          "term": "eta rangle",
+          "heading": false
+        },
+        {
+          "term": "cartaneilenberg",
+          "heading": false
+        },
+        {
+          "term": "wick operators",
+          "heading": false
+        }
+      ],
+      "extract": "Let $H_{\\mathbb{R}}$ be a finite dimensional real Hilbert space with complexification $H = H_{\\mathbb{R}}\\otimes \\mathbb{C}$. We denote by $I$ the complex conjugation on $H$ and we extend it to $H^{\\otimes n}$ by $I(v_1\\otimes\\dots\\otimes v_n):= Iv_n\\otimes\\dots\\otimes Iv_1$. Let $q \\in (-1, 1)$ and consider the symmetrization operator on $H^{\\otimes n}$ given by $$P_q^n(\\xi_1 \\otimes \\ldots \\otimes \\xi_n) =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-42-gradient-sp-estimates",
+      "number": "4.2",
+      "title": "Gradient-Sp estimates",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2886,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dots otimes",
+          "heading": false
+        },
+        {
+          "term": "lem wickproduct",
+          "heading": false
+        },
+        {
+          "term": "leqslant",
+          "heading": false
+        },
+        {
+          "term": "wick words",
+          "heading": false
+        },
+        {
+          "term": "crossings",
+          "heading": false
+        },
+        {
+          "term": "dim",
+          "heading": false
+        },
+        {
+          "term": "eta",
+          "heading": false
+        },
+        {
+          "term": "blocks",
+          "heading": false
+        }
+      ],
+      "extract": "Let $[n]$ be the set $\\{ 1, \\ldots, n \\}$, with $n\\in \\mathbb{N}$. $[n]$ has its natural order. We will consider the operator $\\Psi^{a,b}$ associated to the Ornstein-Uhlenbeck semigroup. We will need a formula for products of Wick words to be able to work with this operator. We will follow Effros-Popa [@EffrosPopa] (see also [@DeyaSchott]). ::: dfn Let $n_1,\\dots,n_k$ be natural numbers. By $P^{\\leqslant",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-43-consequences-for-cartan-rigidity",
+      "number": "4.3",
+      "title": "Consequences for Cartan rigidity",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 604,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eta vert",
+          "heading": false
+        },
+        {
+          "term": "varepsilon vert",
+          "heading": false
+        },
+        {
+          "term": "vert leq",
+          "heading": false
+        },
+        {
+          "term": "rangle vert",
+          "heading": false
+        },
+        {
+          "term": "vert langle",
+          "heading": false
+        },
+        {
+          "term": "eqn inn",
+          "heading": false
+        },
+        {
+          "term": "nabla omega",
+          "heading": false
+        },
+        {
+          "term": "otimes nabla",
+          "heading": false
+        }
+      ],
+      "extract": "We gather some Cartan rigidity properties; these were already obtained in an unpublished manuscript by Avsec [@Avsec], where they were proved for any $-1 < q < 1$. Our cohomological properties in the next section are new however. Recall that we assumed that $\\dim(H_{\\mathbb{R}}) < \\infty$. We recall that a von Neumann algebra $M$ has the W$^\\ast$CMAP (weak-$\\ast$ complete metric approximation property) if there",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-5-derivations-and-the-akemann-ostrand-property",
+      "number": "5",
+      "title": "Derivations and the Akemann-Ostrand property",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 613,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "akemann-ostrand property",
+          "heading": true
+        },
+        {
+          "term": "ucp map",
+          "heading": false
+        },
+        {
+          "term": "desired ucp",
+          "heading": false
+        },
+        {
+          "term": "mathcal rightarrow",
+          "heading": false
+        },
+        {
+          "term": "bounded ast",
+          "heading": false
+        },
+        {
+          "term": "circ varphi",
+          "heading": false
+        },
+        {
+          "term": "ast subalgebra",
+          "heading": false
+        },
+        {
+          "term": "map theta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Sect=AO label=\"Sect=AO\"} In this section we show that quantum Markov semi-groups may be used to prove the Akemann-Ostrand property AO$^+$ of a von Neumann algebra. In particular we find a new range of $q$ for which $q$-Gaussians have AO$^+$. Let us first recall the definition of the Akemann-Ostrand property that is most suitable for us, see [@IsonoTransactions]. ::: dfn A finite von Neumann algebra $M$ has",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-51-group-algebras",
+      "number": "5.1",
+      "title": "Group algebras",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 375,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gamma vert",
+          "heading": false
+        },
+        {
+          "term": "vert partial",
+          "heading": false
+        },
+        {
+          "term": "vert leqslant",
+          "heading": false
+        },
+        {
+          "term": "colon gamma",
+          "heading": false
+        },
+        {
+          "term": "otimes ell",
+          "heading": false
+        },
+        {
+          "term": "gamma times",
+          "heading": false
+        },
+        {
+          "term": "otimes lambda",
+          "heading": false
+        },
+        {
+          "term": "otimes rho",
+          "heading": false
+        }
+      ],
+      "extract": "We first consider group von Neumann algebras. This case was (essentially) discussed in [@NateTaka Section 15], but we include all proofs for reader's convenience. Let $\\Gamma$ be a discrete group. Let $\\pi\\colon \\Gamma \\to \\mathcal{U}(H)$ be a unitary representation and $b\\colon \\Gamma \\to H$ a 1-cocycle for $\\pi$ in the sense that $b(xy)=b(x)+\\pi_xb(y)$ for all $x,y\\in \\Gamma$. Consider left and right actions of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-52-von-neumann-algebras-with-filtration",
+      "number": "5.2",
+      "title": "Von Neumann algebras with filtration",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1823,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vert leqslant",
+          "heading": false
+        },
+        {
+          "term": "rangle vert",
+          "heading": false
+        },
+        {
+          "term": "vert langle",
+          "heading": false
+        },
+        {
+          "term": "vert partial",
+          "heading": false
+        },
+        {
+          "term": "markov semi-group",
+          "heading": false
+        },
+        {
+          "term": "lem filtered",
+          "heading": false
+        },
+        {
+          "term": "cor gradientcoarseconsequence",
+          "heading": false
+        },
+        {
+          "term": "nabla rangle",
+          "heading": false
+        }
+      ],
+      "extract": "We fix again $(M, \\tau)$ a finite von Neumann algebra with $(\\Phi_t)_{t \\geq 0} = (\\exp(-t \\Delta))_{t \\geq 0}$ a quantum Markov semi-group. Let $$\\partial: \\mathcal{A}\\rightarrow L_2(M)_\\nabla: a \\mapsto a \\otimes \\Omega_\\tau$$ be the derivation of Corollary [\\[Cor=Derivation\\]](#Cor=Derivation){reference-type=\"ref\" reference=\"Cor=Derivation\"}. We shall assume that $\\Delta$ satisfies certain properties that are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 835,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "von neumann",
+          "heading": false
+        },
+        {
+          "term": "markov semigroups",
+          "heading": false
+        },
+        {
+          "term": "reine angew",
+          "heading": false
+        },
+        {
+          "term": "neumann algebras",
+          "heading": false
+        },
+        {
+          "term": "caspers",
+          "heading": false
+        },
+        {
+          "term": "dirichlet forms",
+          "heading": false
+        },
+        {
+          "term": "cipriani",
+          "heading": false
+        },
+        {
+          "term": "cartan subalgebras",
+          "heading": false
+        }
+      ],
+      "extract": "[Avs11] S. Avsec, Strong Solidity of the q-Gaussian Algebras for all −1 < q < 1, preprint, arXiv 1110.4918. [BoSp91] M. Bozejko, R. Speicher, An example of a generalized Brownian motion, Comm. Math. Phys. 137 (1991), no. 3, 519–531. [BKS97] M. Bozejko, B. K¨ummerer, R. Speicher, q-Gaussian processes: non-commutative and classical aspects, Comm. Math. Phys. 185 (1997), no. 1, 129–154. [CaEi56] H. Cartan, S.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mathcal otimes",
+      "heading": false
+    },
+    {
+      "term": "gamma vert",
+      "heading": false
+    },
+    {
+      "term": "leqslant vert",
+      "heading": false
+    },
+    {
+      "term": "nabla otimes",
+      "heading": false
+    },
+    {
+      "term": "rangle vert",
+      "heading": false
+    },
+    {
+      "term": "eta vert",
+      "heading": false
+    },
+    {
+      "term": "vert langle",
+      "heading": false
+    },
+    {
+      "term": "mathcal bimodule",
+      "heading": false
+    },
+    {
+      "term": "markov semi-group",
+      "heading": false
+    },
+    {
+      "term": "vert partial",
+      "heading": false
+    },
+    {
+      "term": "otimes mathbb",
+      "heading": false
+    },
+    {
+      "term": "gradient mathcal",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 17,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 17,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p23); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 17 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1905.11619v2"
+  }
+}

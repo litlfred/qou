@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/hal-01215114",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "FPSAC 2011, Reykjavík, Iceland",
+      "dcterms:creator": [
+        "AO, DMTCS proc.",
+        "2011",
+        "317–328"
+      ],
+      "dcterms:issued": "D:20110611",
+      "dcterms:abstract": "In this paper we establish a new combinatorial formula for zonal polynomials in terms of power-sums. The proof relies on the sign-reversing involution principle. We deduce from it formulas for zonal characters, which are deﬁned as suitably normalized coefﬁcients in the expansion of zonal polynomials in terms of power-sum symmetric functions. These formulas are analogs of recent developments on irreducible character values of symmetric groups. The existence of such formulas could have been predicted from the work of M. Lassalle who formulated two positivity conjectures for Jack characters, which we prove in the special case of zonal polynomials. Résumé. Dans cet article, nous établissons une nouvelle formule combinatoire pour les polynômes zonaux en fonction des fonctions puissance. La preuve utilise le principe de l’involution changeant les signes. Nous en déduisons des formules pour les caractères zonaux, qui sont déﬁnis comme les coefﬁcients des polynômes zonaux écrits sur la base des fonctions puissance, normalisés de manière appropriée. Ces formules sont des analogues de développements récents sur les caractères du groupe symétrique. L’existence de telles formules aurait pu être prédite à partir des travaux de M. Lassalle, qui a proposé deux conjectures de positivité sur les caractères de Jack, que nous prouvons dans le cas particulier des polynômes zonaux.",
+      "dcterms:source": "library/hal-01215114/manifest.jsonld",
+      "dcterms:hasVersion": "library/hal-01215114"
+    }
+  ]
+}

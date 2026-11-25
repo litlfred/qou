@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prf-global-gluing",
+  "@type": [
+    "folio-assistant-sci:Proof",
+    "doco:Section"
+  ],
+  "label": "prf:global-gluing",
+  "kind": "proof",
+  "title": "Proof of global gluing via twisted quantization",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-global-gluing"
+  ],
+  "cites": [
+    "references/yekutieli2008",
+    "references/yekutieli2009",
+    "references/yekutieli2015-twisted-dq"
+  ],
+  "text": "global-gluing-proof.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2109.04664v4",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "ON THE ASYMPTOTIC BEHAVIOR OF THE COLORED JONES POLYNOMIAL OF THE FIGURE-EIGHT KNOT ASSOCIATED WITH A REAL NUMBER",
+      "dcterms:creator": [
+        "MURAKAMI, HITOSHI",
+        "TRAN, ANH T."
+      ],
+      "dcterms:issued": "D:20220816",
+      "dcterms:identifier": "https://arxiv.org/abs/2109.04664",
+      "dcterms:abstract": "We study the asymptotic behavior of the N-dimensional colored Jones polynomial evaluated at exp(ξ/N) for a real number ξ greater than a certain constant. We prove that, from the asymptotic behavior, we can extract the SL(2; C) Chern–Simons invariant and the Reidemeister torsion twisted by the adjoint action both associated with a representation determined by ξ.",
+      "dcterms:source": "library/arxiv-2109.04664v4/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2109.04664v4"
+    }
+  ]
+}

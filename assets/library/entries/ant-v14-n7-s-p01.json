@@ -1,0 +1,1184 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "ant-v14-n7-s-p01",
+  "blocks": [
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "1A. Background. Several of the most important conjectures in modern number theory, such as the\nBloch–Kato and Beilinson conjectures, relate the special values of L-functions to arithmetic data. In\nmuch of the work on these conjectures to date, an important role has been played by p-adic L-functions:\nmeasures or distributions on Z×\np, for a prime p, interpolating the special values of a given complex\nL-function and its twists by Dirichlet characters of p-power conductor. Such functions are expected to\nexist in wide generality, but in practice they can be difﬁcult to construct, and there are lar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "msp\nALGEBRA AND NUMBER THEORY 14:7 (2020)\nhttps://doi.org/10.2140/ant.2020.14.1669\np-adic Asai L-functions of Bianchi modular forms\nDavid Loeﬄer and Chris Williams\nThe Asai (or twisted tensor) L-function of a Bianchi modular form 9 is the L-function attached to the\ntensor induction to Q of its associated Galois representation. When 9 is ordinary at p we construct a\np-adic analogue of this L-function: that is, a p-adic measure on Z×\np that interpolates the critical values\nof the Asai L-function twisted by Dirichlet characters of p-power conductor. The construction uses\ntechniques analogous to t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "For any integer c > 1 coprime to 6n, there exists a p-adic measure cLAs p (9) ∈R[[Z× p ]] on Z× p satisfying the following interpolation property: if χ is a Dirichlet character of conductor pr, and 0 ⩽j ⩽k, then we have Z Z×p χ(x)x j dcLAs p (9)(x) = \u001a(∗)LAs(9, χ, j + 1) if χ(−1)(−1) j = 1, if χ(−1)(−1) j = −1, where (∗) is an explicit factor (which is always nonzero if r ⩾1). See Theorem 7.5 of the main text for a precise statement. Note that cLAs p interpolates all critical values in the left half of the critical strip. The critical values in the right half are related to these via a functio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/ex-sec-001-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 14,
+      "target": "ex-sec-001-01.md",
+      "narrative": null,
+      "content": "The following three locally symmetric spaces are of particular importance in the sequel, so here we describe them explicitly (and record some of their other basic properties) for later reference. (i) YQ,1(N) is the usual (open) modular curve of level 01(N). It has one connected component, isomorphic to 01(N)\\H. (ii) The space Y ∗ F,1(n) also has a single connected component, isomorphic to 0∗ F,1(n)\\H3, where 0∗ F,1(n) := G∗(F)+ ∩U ∗ F,1(n) = \b\u0000a c b d \u0001 ∈SL2(OF) : c = 0, a = d = 1 mod n",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/lem-sec-001-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 14,
+      "target": "lem-sec-001-07.md",
+      "narrative": null,
+      "content": "Suppose 9 is a normalised eigenform of level n coprime to p, n′ = n Q p|p p, and 9α is a normalised eigenform of level n′ such that c(m, 9α) = c(m, 9) for all m coprime to p. Let α = c(pOF, 9α). Then we have LAs(9α, s) = (1 −αp−s)−1LAs,(p)(9, s), and LAs(9α, χ, s) = LAs(9, χ, s) for every nontrivial χ of p-power conductor. □ 1Since the eigenvalues c(l, 9) for l prime satisfy |c(l, 9)| ⩽2NF/Q(l)k/2+1 [Jacquet and Langlands 1970, §11], it sufﬁces to take ℜ(s) > k + 3. This bound is not optimal, but it sufﬁces for our purposes. David Loeﬄer and Chris Williams 2F. The primitive Asai L-function. Th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prop-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 14,
+      "target": "prop-sec-001-02.md",
+      "narrative": null,
+      "content": "If n is divisible by some integer q ⩾4, then Y ∗ F,1(n) is a smooth manifold, and ι : YQ,1(N) ,→Y ∗ F,1(n) is a closed immersion. p-adic Asai L-functions of Bianchi modular forms",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prop-sec-001-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 14,
+      "target": "prop-sec-001-04.md",
+      "narrative": null,
+      "content": "The map : Y ∗ F,1(n) →YF,1(n) has image equal to the identity component 0F,1\\H3. Its ﬁbres are the orbits of the ﬁnite group \b\u0000 ϵ \u0001 : ϵ ∈O× F",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prop-sec-001-10",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 14,
+      "target": "prop-sec-001-10.md",
+      "narrative": null,
+      "content": "We have LAs(9, χ, s) = LAs(5, χ, s) Y ℓ|mN Cℓ(9, χ, s), where the local error terms Cℓ(9, χ, s) are polynomials in ℓ−s, of degree ⩽4. In particular, the primitive and imprimitive L-functions have the same local factors at all but ﬁnitely many primes.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prop-sec-001-11",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 14,
+      "target": "prop-sec-001-11.md",
+      "narrative": null,
+      "content": "In the notation of [Coates 1989], for ( j, χ) as above we have L(ρ) ∞(M( j)(χ)) = 2(2πi)−1−j j!, L(ρ) p (M( j)(χ)) =    \u0010 1 −p j α \u0011 · \u0010 1 − α p1+ j \u0011−1 if χ is trivial, G(χ) \u0010 p j α \u0011r if χ has conductor pr > 1, where G(χ) := X a∈(Z/pr)× χ(a)e2πia/pr. □ The conjecture of Coates and Perrin-Riou thus predicts that there should exist a nonzero constant M, and a p-adic measure µ on Z× p , such that Z Z×p x jχ(x) dµ(x) = L(ρ) p (M( j)(χ)) · j!LAs,(p)(5, χ−1, j + 1) (2πi)(1+ j)M , for ( j, χ) as above. Stated in this form, the conjecture is independent of the existence of the motive MAs(5)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prop-sec-001-13",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 14,
+      "target": "prop-sec-001-13.md",
+      "narrative": null,
+      "content": "There exists a complex period 9 ∈C×, uniquely determined up to multiplication by (R′)×, such that the quotient φ9 := ω9/9 is an R′-basis of H1 c(YF,1(n), Vkk(R′))[9].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries and notation",
+      "pageStart": 4,
+      "pageEnd": 14,
+      "target": "../sections/sec-001-2-preliminaries-and-notation.md",
+      "narrative": null,
+      "content": "2A. Basic notation. We ﬁx notation for a general number ﬁeld K, which will either be Q or an imaginary\nquadratic ﬁeld. (We’ll generally denote this imaginary quadratic ﬁeld by F to distinguish it from the\np-adic Asai L-functions of Bianchi modular forms\n1673\nrationals in the notation). Denote the ring of integers by OK, the adele ring by AK and the ﬁnite adeles\nby A f\nK. We let b\nOK := bZ⊗Z OK be the ﬁnite integral adeles, and K ×+ the totally positive elements of K ×\n(so that K ×+ = K × for K = F).\nLet H := {z ∈C : Im(z) > 0} be the usual upper half-plane, with GL2(R)+ (the group of 2×2 matri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/rem-sec-001-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 14,
+      "target": "rem-sec-001-03.md",
+      "narrative": null,
+      "content": "Henceforth, we will always assume that n is divisible by such a q, or, more generally, is small enough to avoid the possibility that these spaces are (nonsmooth) orbifolds. In contrast, the composition ◦ι is never injective, since \u0000 −1 \u0001 ∈01(n) preserves the image of H3 in H, and acts on H by x +iy 7→−x +iy, so the points −x +iy and x +iy of YQ,1(N) (which are distinct for generic x, y) are identiﬁed when mapped to YF,1(n). This failure of injectivity is a key reason for introducing the space Y ∗ F,1(n). In fact, one can see directly that:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/rem-sec-001-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 14,
+      "target": "rem-sec-001-05.md",
+      "narrative": null,
+      "content": "The maps (Ta)∗and (Ua)∗are perhaps more familiar, as their action on automorphic forms is given by simple formulae in terms of Fourier expansions, as we shall recall below. The lower-star versions (Ta)∗and (Ua)∗are the transpose of the upper-star versions with respect to Poincaré duality; this duality explains the key role played by (Up)∗in our norm relation computations. 2D. Bianchi modular forms. We brieﬂy recall the deﬁnition of Bianchi modular forms; for further details following our exact conventions, see [Williams 2017, §1; Ghate 1999] for a more general treatment. As above, let F be an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/rem-sec-001-08",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 14,
+      "target": "rem-sec-001-08.md",
+      "narrative": null,
+      "content": "The representation rAs of LG factors through the quotient LG∗, which explains the prominent role the group G∗plays in our constructions. If 5 is the automorphic representation of GL2(AF) generated by an eigenform 9 as above, then for each rational prime ℓ, the local factors 5v for primes v | ℓof F determine (via the local Langlands correspondence for GL2) a Weil–Deligne representation w5,ℓof Qℓwith values in LG. Moreover, a Dirichlet character χ modulo m determines uniquely a character χA = Q ℓχℓof A× Q/Q× such that for ℓ∤m, χℓis unramiﬁed and maps a uniformiser to χ(ℓ). We may interpret χℓals",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/rem-sec-001-09",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 14,
+      "target": "rem-sec-001-09.md",
+      "narrative": null,
+      "content": "(i) Theorem 1.4 of [Ramakrishnan 2002] shows that LAs(5, χ, s) is an automorphic L-function: more precisely, there exists an automorphic representation As(5) of GL4(AQ) such that LAs(5, χ, s) coincides with the L-function of As(5) ⊗χ, for every Dirichlet character χ. (ii) The L-factor LAs ℓ(5, χ, s) can also be deﬁned as the “lowest common denominator” of the values of a local zeta-integral, as in [Flicker 1988]. This alternative deﬁnition is known to be equivalent to Deﬁnition 2.13: if ℓis split in F, this equivalence is one of the deﬁning properties of the local Langlands correspondence (see",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/thm-sec-001-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 14,
+      "target": "thm-sec-001-06.md",
+      "narrative": null,
+      "content": "Let 9 be a Bianchi modular form of weight (k, k) and level U. Then there is a Fourier– Whittaker expansion \u0012\u0012y x 0 1 \u0013\u0013 = |y|AF X ζ∈F× W f (ζ y f , 9)W∞(ζ y∞)eF(ζ x), where W f (−, 9), the “Kirillov function” of 9, is a locally constant function on (A f F)×, with support contained in a compact subset of A f F. If U = UF,1(n) for some n, then W f (−, 9) is supported in D−1b OF. For m an ideal of OF, we deﬁne a coefﬁcient c(m, 9) as the value W f (y f , 9) for any y f generating the fractional ideal D−1mb OF; this is independent of the choice of y f . Exactly as for elliptic modular forms, the s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/thm-sec-001-12",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Eichler–Shimura–Harder",
+      "pageStart": 4,
+      "pageEnd": 14,
+      "target": "thm-sec-001-12.md",
+      "narrative": null,
+      "content": "There is a canonical, Hecke-equivariant injection Sk,k(UF,1(n)) ,→H1 c(YF,1(n), Vkk(C)). Moreover, if 9 ∈Sk,k(UF,1(n)) is a normalised eigenform, this map induces isomorphisms of 1-dimensional C-vector spaces Sk,k(UF,1(n))[9] ∼= −→H1 c(YF,1(n), Vkk(C))[9] ∼= −→H1(YF,1(n), Vkk(C))[9].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/lem-sec-002-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 19,
+      "target": "lem-sec-002-04.md",
+      "narrative": null,
+      "content": "If ρ denotes the involution of Y1(N) corresponding to x + iy 7→−x + iy on H, then ρ∗(cCN) = −cCN. p-adic Asai L-functions of Bianchi modular forms",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/lem-sec-002-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 19,
+      "target": "lem-sec-002-07.md",
+      "narrative": null,
+      "content": "If n | n′ are two ideals of OF with the same prime factors, then pushforward along the map YF,1(n′) →YF,1(n) sends c8r n′,a to c8r n,a (for any valid choices of c, a, r).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prop-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 19,
+      "target": "prop-sec-002-01.md",
+      "narrative": null,
+      "content": "The canonical comparison isomorphism H1(Y1(N), Z) ⊗Z C ∼= −→H1 dR(Y1(N), Q) ⊗Q C maps C(φ) to 1/(2πi)CdR(φ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prop-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 19,
+      "target": "prop-sec-002-03.md",
+      "narrative": null,
+      "content": "(i) The Siegel units are norm-compatible, in the sense that if N ′|N and N and N ′ have the same prime divisors, then under the natural map pr : Y(M, N) →Y(M, N ′) we have (pr)∗(cgN) = cgN ′. (ii) The de Rham realisation of gN is the Eisenstein series d log(gN)(τ) = −2πi F(2) 1/N(τ) dτ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prop-sec-002-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 19,
+      "target": "prop-sec-002-06.md",
+      "narrative": null,
+      "content": "We have \u0000 −1 \u0001∗· c4m,n,a = c4m,n,−a.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Siegel units and weight 2 Asai–Eisenstein elements",
+      "pageStart": 14,
+      "pageEnd": 19,
+      "target": "../sections/sec-002-3-siegel-units-and-weight-2-asaieisenstein-eleme.md",
+      "narrative": null,
+      "content": "3A. Modular units. Let U ⊂GL2(bZ) be an open compact subgroup, with associated symmetric space\nYQ(U). In this section, we work exclusively over Q, so we shall drop the subscript Q from the notation. As\nis well known, the manifolds Y(U) are naturally the complex points of algebraic varieties deﬁned over Q.\nDeﬁnition 3.1. A modular unit on Y(U) is an element of O(Y(U))×, that is, a regular function on Y(U)\nwith no zeros or poles. (This corresponds to a rational function on the compactiﬁcation X(U) whose\ndivisor is supported on the cusps).\nModular units are motivic in the sense that there are rea",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/rem-sec-002-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 19,
+      "target": "rem-sec-002-02.md",
+      "narrative": null,
+      "content": "It is conventional to “normalise away” the factor of 2πi by deﬁning C(φ) as an element of H1(Y1(N), Z(1)), where Z(1) = 2πi · Z ⊂C. However, this formalism does not work well when considering the cohomology of nonalgebraic manifolds, so we shall not use it here. 3B. Eisenstein series. The de Rham realisations of modular units give rise to weight 2 Eisenstein series in the de Rham cohomology. In the next section, we’ll exhibit a canonical system of modular units – the Siegel units – whose de Rham realisations can be written down very explicitly in terms of the following Eisenstein series. Deﬁni",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/rem-sec-002-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 19,
+      "target": "rem-sec-002-05.md",
+      "narrative": null,
+      "content": "Note that κa/m is not in general well-deﬁned on YF,1(m2n), since \u00121 a/m \u0013 \u0012−1 0 \u0013 \u00121 −a/m \u0013 = \u0012−1 2a/m \u0013 , which is not in 0F,1(n) if 2a /∈mOF. The elements we care about are the following. Assume that n is divisible by some integer q ⩾4, as above. Then we have maps YQ,1(m2N) ι→Y ∗ F,1(m2n) κa/m −−→Y ∗ F,1(n). Moreover, writing HBM ∗ for Borel–Moore homology (homology with noncompact supports), there are isomorphisms H1(YQ,1(m2N), Z) ∼= HBM (YQ,1(m2N), Z), H2(YF,1(m2n), Z) ∼= HBM (YF,1(m2n), Z), (3-3) given by cap-product with the fundamental classes in HBM (YQ,1(m2N), Z) and HBM (Y ∗ F,1(m2n)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/rem-sec-002-09",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 19,
+      "target": "rem-sec-002-09.md",
+      "narrative": null,
+      "content": "Before embarking on the proof, which will occupy the next section of the paper, we pause to give a brief description of how this is important for the construction of p-adic Asai L-functions, in the simplest case of a Bianchi eigenform 9 of weight (0, 0). Deﬁne eord,∗:= limn→∞(U n! p )∗to be the p-adic Asai L-functions of Bianchi modular forms ordinary projector on cohomology with Zp coefﬁcients associated to (Up)∗, so that (Up)∗is invertible on the space eord,∗H2(Y1(n), Zp). Given the theorem, we see that the collection [(Up)−r ∗eord,∗· c8r n,a]r⩾1 forms an element c8∞ n,a in the inverse limit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/thm-sec-002-08",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 19,
+      "target": "thm-sec-002-08.md",
+      "narrative": null,
+      "content": "Let r ⩾1, let a be a generator of OF/(pOF + Z), and let πr+1 : H2(Y ∗ F,1(n), Z) ⊗Z Zp[(Z/pr+1)×] →H2(Y ∗ F,1(n), Z) ⊗Z Zp[(Z/pr)×] denote the map that is the identity on the ﬁrst component and the natural quotient map on the second component. Then we have πr+1(c8r+1 n,a ) = (Up)∗· c8r n,a, where the Hecke operator (Up)∗acts via its action on H2(Y ∗ F,1(n), Z). Similarly, when r = 0 we have π1(c81 n,a) = ((Up)∗−1) · c80 n,a.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/cor-sec-003-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 24,
+      "target": "cor-sec-003-05.md",
+      "narrative": null,
+      "content": "The classes c4m,n,a, cZm,n,a depend only on the image of a in the quotient OF/(mOF+Z).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/lem-sec-003-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 24,
+      "target": "lem-sec-003-04.md",
+      "narrative": null,
+      "content": "The pushforward of cCm2N along the map YQ,1(m2N) →YQ(1(m), mN), given by z 7→mz on H, is cCmN.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/lem-sec-003-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 24,
+      "target": "lem-sec-003-07.md",
+      "narrative": null,
+      "content": "Let n′ = (p)−1n. Under pushforward by the natural projection map pr1 : Y ∗ F(pm, pmn) →Y ∗ F(pm, mn) = Y ∗ F(pm, pmn′), we have (pr1)∗(cZpr+1,n,a) = cZpr+1,n′,a.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/lem-sec-003-08",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 24,
+      "target": "lem-sec-003-08.md",
+      "narrative": null,
+      "content": "Suppose that a ∈OF is a generator of OF/(pOF + Z). Then: (i) The map αpm,n,a is injective. (ii) The diagram YQ(pm, mN)  αpm,n,a / \u000f Y ∗ F(m(p), mn) π1 \u000f YQ(m, mN)  ιm,n,a / Y ∗ F(m, mn) is Cartesian, where the left vertical arrow is the natural projection.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prop-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 24,
+      "target": "prop-sec-003-01.md",
+      "narrative": null,
+      "content": "For any a ∈OF, the element \u00001 a \u0001 normalises U ∗(m, mn) ⊂GL∗ 2(A f F).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prop-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 24,
+      "target": "prop-sec-003-03.md",
+      "narrative": null,
+      "content": "We have (sm)∗(cZm,n,a( j)) = c4m,n, ja, and hence c8r n,a = X j (spr)∗(cZpr,n,a( j)) ⊗[ j].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proving the norm relations (Theorem 3.13)",
+      "pageStart": 19,
+      "pageEnd": 24,
+      "target": "../sections/sec-003-4-proving-the-norm-relations-theorem-313.md",
+      "narrative": null,
+      "content": "Theorem 3.13 is directly analogous to the norm-compatibility relations for Euler systems constructed\nfrom Siegel units; speciﬁcally, it is the analogue in our context of [Lei et al. 2014, Theorem 3.3.2].\nExactly as in [op. cit.] it is simplest not to prove the theorem directly but rather to deduce it from a\nrelated result concerning cohomology classes on the symmetric spaces Y ∗\nF(m, mn), analogous to [op. cit.,\nTheorem 3.3.1]. Note that these symmetric spaces are not connected for m > 2, but have φ(m) connected\ncomponents; this will allow us to give a tidy conceptual interpretation of the sum",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/rem-sec-003-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 24,
+      "target": "rem-sec-003-02.md",
+      "narrative": null,
+      "content": "The change of sign appears because we are comparing left and right actions. David Loeﬄer and Chris Williams Deﬁnition 4.3. We deﬁne cZm,n,a to be the image of cCmN ∈H1(YQ(m, mN), Z) under pushforward via ιm,n,a, and cZm,n,a( j) the projection of cZm,n,a to the direct summand of H1(Y ∗ F(m, mn), Z) given by the j-th component, so that cZm,n,a = X j cZm,n,a( j). Exactly as in the situation of Beilinson–Flach elements, these Z elements turn out to be closely related to the 8’s deﬁned above (compare [Lei et al. 2014, Proposition 2.7.4]). We consider the map sm : Y ∗ F(m, mn) →Y ∗ F,1(n) given by t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/rem-sec-003-09",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 24,
+      "target": "rem-sec-003-09.md",
+      "narrative": null,
+      "content": "Since this lemma is crucial to the proof, we expand slightly on what part (i) really says. The map αmp,n,a is p-to-1 on connected components, in the sense that the preimage of a single component of Y ∗ F(pr(p), prn) contains p connected components of Y ∗ F(pr+1, pr N). The condition on a ensures that the map ua “twists” these p components away from each other inside that single component of the target space, so that their images are disjoint. In particular, the result would certainly fail without this condition; for instance, if a = 0 then the map factors through YQ(m(p), mN).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/thm-sec-003-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 24,
+      "target": "thm-sec-003-06.md",
+      "narrative": null,
+      "content": "Suppose p is a prime with p | m, and suppose that a ∈OF maps to a generator of the quotient OF/(pOF + Z) ∼= Z/pZ. Then we have the norm relation (τp)∗(cZpm,n,a) = (Up)∗(Zm,n,a). For simplicity, we give the proof under the slightly stronger hypothesis that p | n (rather than just that every prime above p divides n, which is our running hypothesis). This only makes a difference if p is ramiﬁed in F, and the proof can be extended to handle this extra case at the cost of slightly more complicated notation; we leave the necessary modiﬁcations to the interested reader. Firstly, note that there is a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/lem-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 27,
+      "target": "lem-sec-004-02.md",
+      "narrative": null,
+      "content": "As elements of H2\u0000Y ∗ F,1(n), Tkk(L) \u0001 we have 4k, j m,n,a = m j · (κa/m)∗ \u0000ι∗CG[k,k, j](Eis2k−2 j m2N ) \u0001 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prop-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 27,
+      "target": "prop-sec-004-01.md",
+      "narrative": null,
+      "content": "There exists a class Eisk N ∈H1(YQ,1(N), Tk(Q)) whose image under the comparison isomorphism (5-1) is the class of the differential form −N k F(k+2) 1/N (τ) dw⊗k dτ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prop-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 27,
+      "target": "prop-sec-004-03.md",
+      "narrative": null,
+      "content": "For any r ⩾0 we have c8k,r n,a = X t∈(Z/pr)× c4k,0 pr,n,at ⊗[t] = \u0000c2 −c−2k[c]2⟨c⟩ \u0001 · X t∈(Z/pr)× 4k,0 pr,n,at ⊗[t], where the ﬁrst equality takes place in H2(Y ∗ F,1(n), Tkk(R)) ⊗R R[(Z/pr)×] and the second after base- extension to L.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prop-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 27,
+      "target": "prop-sec-004-04.md",
+      "narrative": null,
+      "content": "For r ⩾1, as classes in H2(Y ∗ F,1(n), Tkk(R/pr)) we have c4k, j pr,n,a = (a −aσ) j j! \u0010k j \u00112 c4k,0 pr,n,a.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asai–Eisenstein elements in higher weights",
+      "pageStart": 24,
+      "pageEnd": 27,
+      "target": "../sections/sec-004-5-asaieisenstein-elements-in-higher-weights.md",
+      "narrative": null,
+      "content": "In the previous sections, we have deﬁned compatible systems of classes in the Betti cohomology of\nthe spaces Y ∗\nF,1(n) with trivial coefﬁcients. We now extend this to coefﬁcients arising from nontrivial\nalgebraic representations.\nWe ﬁx, for the duration of this section, a prime p and a ﬁnite extension L of Qp large enough that F\nembeds into L (and we ﬁx such an embedding). We let R be the ring of integers of L. We also choose an\nideal n of OF divisible by all primes above p. For convenience, we also assume that n is divisible by\nsome integer q ⩾4; note that this is automatic if p is unramiﬁed",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/def-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 30,
+      "target": "def-sec-005-02.md",
+      "narrative": null,
+      "content": "We shall assume that the Bianchi modular eigenform 9 is ordinary with respect to this embedding, i.e., that the (Up)∗-eigenvalue of 9 lies in R×. Since the adjoint of (Up)∗is (Up)∗, this assumption implies that the linear functional on Lk(n, R) given by pairing with φ∗ 9 factors through projection to the (Up)∗-ordinary part Lord k (n, R). We also need to ﬁx a value of a, which must generate the quotient (OF ⊗Zp)/Zp. It sufﬁces to take a = 1 2(1 + √−D) if D = −1 mod 4, and a = 1 √−D if D = 0 mod 4; then we have OF = Z + Za, and a −aσ = √−D. Deﬁnition 6.4. Deﬁne the p-adic Asai L-function cLAs p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 30,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "For j an integer with 0 ⩽j ⩽k, and χ : Z× p →C× p a ﬁnite-order character of conductor pr with r ⩾1, we have Z Z×p x jχ(x) d c8k,∞ n,a (x) = (a −aσ) j j! \u0000k j \u00012 (Up)−r ∗eord,∗ X t∈(Z/pr)× χ(t)c4k, j pr,n,at as elements of L(χ) ⊗R Lord k (n, R). For χ trivial we have Z Z×p x j d c8k,∞ n,a (x) = (a −aσ) j j! \u0000k j \u00012 (1 −p j(Up)−1 ∗)eord,∗c4k, j 1,n,a. David Loeﬄer and Chris Williams",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prop-sec-005-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 30,
+      "target": "prop-sec-005-04.md",
+      "narrative": null,
+      "content": "The class cLAs p (9) is invariant under translation by [−1] ∈Z× p.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prop-sec-005-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 30,
+      "target": "prop-sec-005-05.md",
+      "narrative": null,
+      "content": "Suppose that the nebentypus character ε9 : (OF/n)× →R× of 9 has nontrivial restriction to (Z/NZ)×, and moreover this restriction does not have p-power conductor. Then there exists a measure LAs p (9) ∈L ⊗R R[[Z× p ]] such that cLAs p (9) = (c2 −c−2kε9(c)[c]2)LAs p (9) for all valid integers c.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The p-adic Asai L-function",
+      "pageStart": 27,
+      "pageEnd": 30,
+      "target": "../sections/sec-005-6-the-p-adic-asai-l-function.md",
+      "narrative": null,
+      "content": "In this short section, we put together the norm-compatibility and p-adic interpolation relations proved\nabove in order to deﬁne a measure on Z×\np with values in a suitable eigenspace of the Betti H2. This will\nbe our p-adic L-function.\nTo ease the notation, we will assume for the rest of the paper that p is odd. Similar arguments — with\nsome additional care — should also hold for p = 2, but we leave this case to the interested reader.\n6A. Constructing the measure. As in Section 5, let L be a ﬁnite extension of Qp, with a chosen embed-\nding of F into L, and write R for the ring of integers in L",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/rem-sec-005-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 30,
+      "target": "rem-sec-005-03.md",
+      "narrative": null,
+      "content": "If we relax the assumption that 9 be ordinary, and let h = vp(c(pOF, 9)) (where the valuation is normalised such that vp(p) = 1), then we can still make sense of cLAs p (9) as long as h < 1; however, it is no longer a measure, but a distribution of order h. This can be extended to h < 1 + k using the same techniques as in [Loefﬂer and Zerbes 2016]. However, if k = 0 and h ⩾1 (as in the case of an eigenform associated to an elliptic curve supersingular at the primes above p) then we are stuck.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/rem-sec-005-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 30,
+      "target": "rem-sec-005-06.md",
+      "narrative": null,
+      "content": "Note that if p = 1 mod 4 and ε9,Q(ρ) = (−1)k, where ρ is either of the square roots of −1 in Zp, then both of the characters at which LAs p could have a pole actually lie in W−, so we see immediately that LAs p is a measure. In the remaining cases, where one or both potential poles are in W+, we suspect that these potential poles are genuine poles if and only if the corresponding complex-analytic Asai L-functions have poles (which can only occur if 9 is either of CM type, or a twist of a base-change form). However, we have not proved this.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/lem-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 34,
+      "target": "lem-sec-006-02.md",
+      "narrative": null,
+      "content": "Let F ∈Skk(U ∗ F,1(n)), χ a Dirichlet character of conductor m, and a ∈OF/mOF. Then the function Ra,χF = X t∈(Z/m)× χ(t)κ∗ at/m(F) is in Skk(U ∗ F,1(m2n)), and its Fourier–Whittaker coefﬁcients for ζ ∈D−1 are given by W f (ζ, Ra,χF) = G(χ) χ(trF/Q aζ) W f (ζ, F), where G(χ) := P t∈(Z/m)× χ(t)e2πit/m is the Gauss sum of χ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prop-sec-006-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 34,
+      "target": "prop-sec-006-04.md",
+      "narrative": null,
+      "content": "Let F ∈Skk(U ∗ F,1(n)), and let N = n ∩Z. Then we have",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Interpolation of critical L-values",
+      "pageStart": 30,
+      "pageEnd": 34,
+      "target": "../sections/sec-006-7-interpolation-of-critical-l-values.md",
+      "narrative": null,
+      "content": "In this section, we want to show that the values of the Asai p-adic L-function at suitable locally algebraic\ncharacters are equal to special values of the complex L-function.\n7A. Automorphic forms for G∗. We shall need to work with automorphic forms for the group G∗of\nDeﬁnition 2.1 above. We refer the reader to [Lei et al. 2018] for an account of automorphic forms for the\ngroup G∗, and their relation to those for G, in the analogous setting where F is a real quadratic ﬁeld.\nFor U ∗⊂G∗(bZ), we let Skk(U ∗) denote the space of automorphic forms for G∗of level U ∗and\nweight (k, k). These are deﬁn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/rem-sec-006-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 34,
+      "target": "rem-sec-006-01.md",
+      "narrative": null,
+      "content": "The theory of automorphic representations of G∗is more complicated than that of G: not all cuspidal representations are globally generic, and the naive formulation of strong multiplicity one is false, due to the presence of nontrivial global L-packets. In practice, this means that although cusp forms for G∗ do have Fourier–Whittaker expansions, one cannot necessarily recover all of their Fourier–Whittaker coef- ﬁcients from the action of the Hecke algebra of G∗(A f Q). However, this will not concern us here, since we will only consider automorphic forms for G∗which are restrictions of eigenfor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/rem-sec-006-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 34,
+      "target": "rem-sec-006-06.md",
+      "narrative": null,
+      "content": "Up to rescaling 9, this is precisely the interpolation formula predicted by Coates and Perrin-Riou (see Section 2G). p-adic Asai L-functions of Bianchi modular forms",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/rem-sec-006-07",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 34,
+      "target": "rem-sec-006-07.md",
+      "narrative": null,
+      "content": "(i) The factor Ep(9, χ, j) is nonzero if r ⩾1. If r = 0 then this factor vanishes if and only if k = 0, 9 is new at the primes above p, and ε9(p) = 1. In this case the p-adic L-function has an exceptional zero at the trivial character. For exceptional zeroes of the standard p-adic L-function of a Bianchi cusp form, a theory of L-invariants was developed in [Barrera Salazar and Williams 2019]; it would be interesting to investigate analogues of this for the Asai L-function. David Loeﬄer and Chris Williams (ii) The measure LAs p (9) depends on the choice of √−D ﬁxed at the start; indeed, this ch",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/thm-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 34,
+      "target": "thm-sec-006-03.md",
+      "narrative": null,
+      "content": "Let χ be a Dirichlet character of odd conductor m, and let 0 ⩽j ⩽k. Let a ∈OF be the value we chose in the remarks before Deﬁnition 6.4 (so that a −aσ = √−D). Then X t∈(Z/mZ)× χ(t)I j 9,at,m =    C′(k, j)G(χ) (m2N)2k−2 j9 LAs(9, χ, j + 1) if (−1) jχ(−1) = 1, if (−1) jχ(−1) = −1, where C′(k, j) = (−1)k+1 √−D j+1( j!)2\u0000k j \u00012 2 · (2πi) j+1N 2k−2 j . We begin by explaining how to reduce the theorem to the case m = 1. Note that the deﬁnition of the Asai L-function depends only on the pullback ∗9, and in fact makes sense for any F ∈Skk(U ∗ F,1(n)), David Loeﬄer and Chris Williams whether or no",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/thm-sec-006-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 34,
+      "target": "thm-sec-006-05.md",
+      "narrative": null,
+      "content": "Let p be an odd prime. Let 9 be an ordinary Bianchi eigenform of weight (k, k) and level UF,1(n), where all primes above p divide n, with Up-eigenvalue λp = c(pOF, 9). Let χ be a Dirichlet character of conductor pr, and let 0 ⩽j ⩽k. (a) If χ(−1)(−1) j = 1, then LAs p (9, χ, j) = C(k, j)Ep(9, χ, j)G(χ) 9 · LAs(9, χ, j + 1), where C(k, j) := (−1)k+1 j! · √−D 2 · (2πi) j+1 , Ep(9, χ, j) :=    \u0010 1 −p j λp \u0011 if r = 0, (p jλ−1 p )r if r > 0. (b) If χ(−1)(−1) j = −1, then LAs p (9, χ, j) = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/cor-sec-007-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 41,
+      "target": "cor-sec-007-05.md",
+      "narrative": null,
+      "content": "7. (i) If k + 1 −n + j is odd, then c′( j, n) Z ∞ Z 1 gn, j(x, y)yr+s dx dy = 0, where gn, j is as deﬁned in Proposition A.3. (ii) For ℓodd in the sum in Proposition A.3, only the a( j, ℓ, n) terms contribute to I j F(s). For ℓeven, only the b( j, ℓ, n) terms contribute. p-adic Asai L-functions of Bianchi modular forms",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/cor-sec-007-06",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 41,
+      "target": "cor-sec-007-06.md",
+      "narrative": null,
+      "content": "8. We have I j F(s) = H(s, k, j) · L(N)(ψF, 2s + k j) 2k+2 X n=0 k+ j+n+1 even (−1) j2c( j, n)J n,2k−j F (s), where c( j, n) := (−1)k+1 2k−2 j X ℓ=0 ℓeven iℓ\u0002 a( j, ℓ−1, n) −2b( j, ℓ, n) \u0003 , (normalised to agree with [Ghate 1999, p. 628]) where we take a( j, −1, n) = 0 for all j, n. The following is the main result of this appendix.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/cor-sec-007-08",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 41,
+      "target": "cor-sec-007-08.md",
+      "narrative": null,
+      "content": "10. Let 0 ⩽j ⩽k. Then I j F(−1 −2k + 2 j) =    C′(k, j) N 2k−2 j LAs(F, j + 1) if \u0000−1 \u0001∗F = (−1) jF, if \u0000−1 \u0001∗F = (−1)1+ jF, where C′(k, j) = (−1)k+1 √−D j+1( j!)2\u0000k j \u00012 2 · (2πi) j+1 . □ This proves Proposition 7.4 of the main text. p-adic Asai L-functions of Bianchi modular forms",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/lem-sec-007-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 41,
+      "target": "lem-sec-007-04.md",
+      "narrative": null,
+      "content": "6. Suppose W f (ζ, F)̸ = 0. Then we have Z 1 e2πiTrF/Q(ζ x) dx = \u001a1 if ζ = m/√−D with 0̸ = m ∈Z, otherwise.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prop-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 41,
+      "target": "prop-sec-007-01.md",
+      "narrative": null,
+      "content": "2. We have CG[k,k, j],⋆(δ) = (−1) j j! · ( j!)2 ∇j(δ)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prop-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 41,
+      "target": "prop-sec-007-02.md",
+      "narrative": null,
+      "content": "4. We have I j F(s) = H(s, k, j) · L(N)(ψF, 2s + k j) k+1 X n=0 (−1)nc′( j, n) Z ∞ Z 1 gn, j y2k−j+s dx dy, where H(s, k, j) := (−1) j j!0(s + k j)N 2s+k j (−2πi)k jπs (A-2) and c′( j, n) := 2k−2 j X ℓ=0 iℓ\u0002 i · a( j, ℓ, n) −2b( j, ℓ, n) \u0003 . □ To compute this, we look at components separately. In particular, consider the integral J n,r F (s) := \u00122k + 2 n \u0013−1 Z ∞ Z 1 Fn(x, y)yr+s dx dy. The expression I j F is a linear combination of J n,2k−j F for varying n. David Loeﬄer and Chris Williams",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prop-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 41,
+      "target": "prop-sec-007-03.md",
+      "narrative": null,
+      "content": "5. We have J n,r F (s) = G(n,r, s) X 0̸=m∈Z (−σ(m))k+1−nW f \u0010 m √−D, F \u0011 |m|−(s+r+2), where σ(m) is the sign of m and G(n,r, s) = 0 \u0012s −k + n +r + 1 \u0013 \u0012s + k −n +r + 3 \u0013 2s+r \u0012√ D 4π \u0013s+r+2 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix: An integral formula for the Asai L-function",
+      "pageStart": 34,
+      "pageEnd": 41,
+      "target": "../sections/sec-007-appendix-an-integral-formula-for-the-asai-l-func.md",
+      "narrative": null,
+      "content": "In this appendix, we provide a slight extension of Ghate’s results on the rationality of Asai L-values.\nThe main result is given in Theorem A.9. Most of the arguments go through almost exactly as in [Ghate\n1999]. However, in order to present the p-adic interpolation computations in the main body of the paper\nin the most natural way, we have adopted conventions which differ from those of Ghate’s in a few places:\nﬁrstly, the Eisenstein series which we work with are slightly different, as is our normalisation for the\nClebsch–Gordan map; secondly, we focus on computing the special values of the As",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/thm-sec-007-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 41,
+      "target": "thm-sec-007-07.md",
+      "narrative": null,
+      "content": "9. Let 0 ⩽j ⩽k. Then I j F(s) = ( C(k, j, s)LAs(F, s + 2k −j + 2) if \u0000 −1 \u0001∗F = (−1) jF if \u0000 −1 \u0001∗F = (−1) j+1F, where C(k, j, s) := (−1) j \u0012√ D 2π \u0013s+2k−j+2 H(s, k, j)G′ ∞(s) David Loeﬄer and Chris Williams for G′ ∞(s) = (−1) j√π \u0000k j \u00012 2s \u0000 s 2 + k −j + 1 \u0001 \u0000 s+1 \u0001 0(s + k −j + 1)0(s + 2k −j + 2) 0(s + 2k −2 j + 2) . Here I j F(s) was deﬁned in Deﬁnition A.1 and H(s, k, j) was deﬁned in (A-2).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 41,
+      "pageEnd": 41,
+      "target": "../sections/sec-008-acknowledgements.md",
+      "narrative": null,
+      "content": "The authors would like to thank Aurel Page for suggesting the proof of Proposition 2.5; and the two\nanonymous referees, who provided valuable comments and corrections on an earlier draft of the paper.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p01/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 41,
+      "pageEnd": 42,
+      "target": "../sections/sec-009-references.md",
+      "narrative": null,
+      "content": "[Ash and Stevens 1986] A. Ash and G. Stevens, “Modular forms in characteristic l and special values of their L-functions”,\nDuke Math. J. 53:3 (1986), 849–868. MR Zbl\n[Balasubramanyam et al. 2019] B. Balasubramanyam, E. Ghate, and R. Vangala, “p-adic Asai L-functions attached to Bianchi\ncusp forms”, preprint, 2019. arXiv\n[Barrera Salazar and Williams 2019] D. Barrera Salazar and C. Williams, “Exceptional zeros and L -invariants of Bianchi\nmodular forms”, Trans. Amer. Math. Soc. 372:1 (2019), 1–34. MR Zbl\n[Beilinson and Levin 1994] A. Beilinson and A. Levin, “The elliptic polylogarithm”, pp. 123",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

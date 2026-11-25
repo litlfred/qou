@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-sdp-regime-switch",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:sdp-regime-switch",
+  "kind": "proposition",
+  "title": "Discrete regime switches in SDP cross-channel couplings across isotopes",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-unified-iterative-correction",
+    "papers/quantum-observable-universe/blocks/prop-q-heat-kernel-peter-weyl"
+  ],
+  "tags": [
+    "sdp",
+    "regime-switch",
+    "cross-channel",
+    "shell-closure",
+    "isotope-scan"
+  ],
+  "leanRef": "qou:QOU.Observations.SDPRegimeSwitch",
+  "text": "sdp-regime-switch.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/angled-survey",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "From angled triangulations to hyperbolic structures",
+      "dcterms:creator": [
+        "Futer, David",
+        "Guéritaud, Fran¸cois"
+      ],
+      "dcterms:issued": "D:20190704",
+      "bibo:doi": "10.1090/conm/541/10683",
+      "dcterms:identifier": "https://doi.org/10.1090/conm/541/10683",
+      "dcterms:abstract": "This survey paper contains an elementary exposition of Casson and Rivin’s technique for ﬁnding the hyperbolic metric on a 3–manifold M with toroidal boundary. We also survey a number of applications of this technique. The method involves subdividing M into ideal tetrahedra and solving a system of gluing equations to ﬁnd hyperbolic shapes for the tetrahedra. The gluing equations decompose into a linear and non-linear part. The solutions to the linear equations form a convex polytope A. The solution to the non-linear part (unique if it exists) is a critical point of a certain volume functional on this polytope. The main contribution of this paper is an elementary proof of Rivin’s theorem that a critical point of the volume functional on A produces a complete hyperbolic structure on M.",
+      "dcterms:source": "library/angled-survey/manifest.jsonld",
+      "dcterms:hasVersion": "library/angled-survey"
+    }
+  ]
+}

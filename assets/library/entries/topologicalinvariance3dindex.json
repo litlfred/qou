@@ -1,0 +1,1332 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "topologicalinvariance3dindex",
+  "blocks": [
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED\nHYPERBOLIC 3-MANIFOLD\nSTAVROS GAROUFALIDIS, CRAIG D. HODGSON, J. HYAM RUBINSTEIN,\nAND HENRY SEGERMAN\nAbstract. In this paper we will promote the 3D index of an ideal triangulation T of\nan oriented cusped 3-manifold M (a collection of q-series with integer coe\ncients, intro-\nduced by Dimofte-Gaiotto-Gukov) to a topological invariant of oriented cusped hyperbolic\n3-manifolds. To achieve our goal we show that (a) T admits an index structure if and only if\nT is 1-e\ncient and (b) if M is hyperbolic, it has a canonical set of 1-e\ncient ideal trian",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "1. Introduction",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The 3D index of Dimofte-Gaiotto-Gukov",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-11-the-3d-index-of-dimofte-gaiotto-gukov.md",
+      "narrative": null,
+      "content": "index of an ideal triangulation T (a remarkable collection of Laurent series in q1/2 introduced\nby Dimofte-Gaiotto-Gukov [DGG14, DGG13] and further studied in [Garb]) to a topological\ninvariant of oriented cusped hyperbolic 3-manifolds M. Our goal will be achieved in two\nsteps.\nThe \nrst step identi\nes the existence of an index structure of T (a necessary and su\ncient\ncondition for the existence of the index of T; see [Garb]) with the non-existence of sphere or\nnon vertex-linking torus normal surfaces of T; see Theorem 1.2 below. Such ideal triangula-\ntions are called 1-e\ncient in [JR03, KR05].",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/thm-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "thm-sec-001-01.md",
+      "narrative": null,
+      "content": "(a) IT is well-de ned if and only if T admits an index structure. (b) If T and T′ are related by a 2\u00153 move and both admit an index structure, then IT = IT′.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Index structures and 1-efficiency",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-12-index-structures-and-1-efficiency.md",
+      "narrative": null,
+      "content": "ciency.\nTheorem 1.2. An ideal triangulation T of an oriented 3-manifold with cusps admits an\nindex structure if and only if T is 1-e\ncient.\nThe above theorem has some consequences for our sought topological invariants.\nRemark 1.3. 1-e\nciency of T implies restrictions on the topology of M: it follows that M is\nirreducible and atoroidal. Note that here by atoroidal, we mean that any embedded torus is\neither compressible or boundary parallel. It follows by Thurston's Hyperbolization Theorem\nin dimension 3 that M is hyperbolic or small Seifert-\nbred.\nRemark 1.4. If K is the connected sum of the 41",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/rem-sec-002-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "rem-sec-002-02.md",
+      "narrative": null,
+      "content": "1-e ciency of T implies restrictions on the topology of M: it follows that M is irreducible and atoroidal. Note that here by atoroidal, we mean that any embedded torus is either compressible or boundary parallel. It follows by Thurston's Hyperbolization Theorem in dimension 3 that M is hyperbolic or small Seifert- bred.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/rem-sec-002-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "rem-sec-002-03.md",
+      "narrative": null,
+      "content": "If K is the connected sum of the 41 and 52 knots, or K′ is the Whitehead double of the 41 knot and T is any ideal triangulation of the complement of K or K′, then T is not 1-e cient, thus IT never exists. On the other hand, the (coloured) Jones polynomial, the Kashaev invariant and the PSL(2, C)-character variety of K and K′ happily exist; see [Jon87, Kas97, CCG+94].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/rem-sec-002-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "rem-sec-002-05.md",
+      "narrative": null,
+      "content": "Taut and strict angle structures are examples of semi-angle structures, and for these cases this is proved in [KR05, Thm.2.6]. In Section 3, we give a brief outline of the argument for a general semi\u0015angle structure. 1Here and below we will use the notation M for both a cusped hyperbolic 3-manifold and the corresponding compact manifold with boundary ∂M consisting of a disjoint union of tori; the intended meaning should be clear from the context. STAVROS GAROUFALIDIS, CRAIG D. HODGSON, J. HYAM RUBINSTEIN, AND HENRY SEGERMAN",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/rem-sec-002-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "rem-sec-002-06.md",
+      "narrative": null,
+      "content": "In Corollary 3.4, we note that a construction of Lackenby produces triangu- lations with taut angle structures, which are therefore 1\u0015e cient, on all irreducible cusped 3\u0015manifolds containing no essential annulus. However, it is not clear that the triangulations produced by this construction are connected by the appropriate 2\u00153 and 0\u00152 moves, so we cannot prove that the 3D index is independent of the choice of taut triangulation for the manifold.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/thm-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "thm-sec-002-01.md",
+      "narrative": null,
+      "content": "An ideal triangulation T of an oriented 3-manifold with cusps admits an index structure if and only if T is 1-e cient. The above theorem has some consequences for our sought topological invariants.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/thm-sec-002-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "thm-sec-002-04.md",
+      "narrative": null,
+      "content": "Let T be an ideal triangulation of an oriented atoroidal 3\u0015manifold with at least one cusp. If T admits a semi\u0015angle structure then T is 1\u0015e cient.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Regular ideal triangulations and topological invariance",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-13-regular-ideal-triangulations-and-topological.md",
+      "narrative": null,
+      "content": "we restrict our attention to hyperbolic 3-manifolds M with at least one cusp. All we need\nis a canonical set XM of 1\u0015e\ncient ideal triangulations of M such that any two of these\ntriangulations are related by moves that preserve IT. From Theorem 1.1, we know that\nwe can use 2\u00153 and 3\u00152 moves for this purpose. Given the choice we will make for XM\nbelow, it turns out that we will also need to use 0\u00152 and 2\u00150 moves to connect together\nthe triangulations of XM. Using the dual language of special spines, it is shown in [Mat07,\nLem.2.1.11] and [Pie88] (see also [Pet95, Prop.I.1.13]) that the 0\u00152 and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/rem-sec-003-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "rem-sec-003-03.md",
+      "narrative": null,
+      "content": "In [HRS12], it is shown that a cusped hyperbolic 3\u0015manifold M admits an ideal triangulation with strict angle structure if H1(M, ∂M; Z2) = 0. All link complements in the 3\u0015sphere satisfy this condition. Such triangulations admit index structures but it is not known if they can be connected by 2\u00153 and 0\u00152 moves within the class of 1\u0015e cient triangulations.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/rem-sec-003-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "rem-sec-003-04.md",
+      "narrative": null,
+      "content": "For a typical cusped hyperbolic manifold, one expects that the Epstein-Penner ideal cell decomposition consists of ideal tetrahedra, i.e., that XEP M consists of one element. Many examples of such cusped hyperbolic manifolds appear in the census [CDW] and also in [Aki01, GS10].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/rem-sec-003-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "rem-sec-003-05.md",
+      "narrative": null,
+      "content": "In a later paper we will extend this work in the following ways: • extend the domain of the 3D index IT([ϖ]) to [ϖ] ∈H1(∂M; 1 2Z) such that 2[ϖ] ∈ Ker(H1(∂M; Z) →H1(M; Z/2Z)), • give a de nition of the 3D index using singular normal surfaces in M.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/rem-sec-003-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "rem-sec-003-06.md",
+      "narrative": null,
+      "content": "Theorem 1.8 constructs a family of q-series IM([ϖ])(q) (parametrized by [ϖ] ∈ H1(∂M, Z)) associated to a cusped hyperbolic manifold M. When M = S3 \\ K is the complement of a knot K, we can choose [ϖ] = µ to be the homology class of the meridian and consider the series (2) Itot K (q) = X e∈Z IM(eµ)(q) Since the semi-angle structures of Theorem 1.9 have zero holonomy at all peripheral curves, it can be shown that Itot K (q) is well-de ned. It turns out that Itot K (q) is closely related to the state-integral invariants of Andersen-Kashaev and Kashaev-Luo-Vartanov [AK14, KLV12]. The relation betw",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "If M is a cusped hyperbolic 3-manifold, and T ∈XEP M we have IM := IT is well-de ned. 1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD The next theorem is of independent interest, and may be useful for the problem of con- tructing topological invariants of cusped hyperbolic 3-manifolds. For a de nition of the gluing equations of an ideal triangulation, see [NZ85, Thu77] and also Section 4.3 below.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/thm-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "thm-sec-003-02.md",
+      "narrative": null,
+      "content": "Fix a cusped hyperbolic 3-manifold M. (a) For every T ∈XEP M , there exists a solution ZT to the gluing equations of T which recovers the complete hyperbolic structure on M. Moreover, all shapes of ZT have non-negative imaginary part. (b) If T, T′ ∈XEP M are related by 2\u00153, 3\u00152, 0\u00152 or 2\u00150 moves, then so are ZT and ZT′. (c) For every T, the arguments of ZT give a semi-angle structure on T.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Plan of the paper",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-14-plan-of-the-paper.md",
+      "narrative": null,
+      "content": "nitions of ideal triangulations,\ne\nciency, angle structures and index structures.\nIn Section 3 we prove Theorem 1.2. So for an ideal triangulation, existence of an index\nstructure is equivalent to being 1-e\ncient.\nIn Section 4 we review the basic properties of the tetrahedron index from [Garb], and give\na detailed discussion of the 3D index for an ideal triangulation of a cusped 3-manifold. In\nSection 5 we study the behaviour of the 3D index under the 0\u00152 and 2\u00150 move.\n6\nSTAVROS GAROUFALIDIS, CRAIG D. HODGSON, J. HYAM RUBINSTEIN, AND HENRY SEGERMAN\nIn Section 6 we discuss the Epstein-Penner id",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definitions",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-2-definitions.md",
+      "narrative": null,
+      "content": "De\nnition 2.1. Let M be a topologically \nnite 3-manifold which is the interior of a compact\n3-manifold with torus boundary components. An ideal triangulation T of M consists of a\npairwise disjoint union of standard Euclidean 3\u0015simplices e∆= ∪n\nk=1 e∆k with vertex set e∆(0),\ntogether with a collection Φ of Euclidean isometries between the 2\u0015simplices in e∆, called\nface pairings, such that the quotient space (e∆\\ e∆(0))/Φ is homeomorphic to M. The images\nof the simplices in T may be singular in M.\nDe\nnition 2.2. Let T be an ideal triangulation with at least 2 distinct tetrahedra. A 2\u00153\nmove can",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/rem-sec-005-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "rem-sec-005-01.md",
+      "narrative": null,
+      "content": "A 0\u00152 move is also called a lune move in the dual language of standard spines [Mat87, Mat07, Pie88, BP97]. In [Mat87, Lem.2.1.11] and [Pie88] (see also [Pet95, Prop.I.1.13]) it was shown that a 0\u00152 move follows from a combination of 2\u00153 moves as long as the initial triangulation has at least 2 ideal tetrahedra. De nition 2.5. Let ∆3 be the standard 3\u0015simplex with a chosen orientation. Each pair of opposite edges corresponds to a normal isotopy class of quadrilateral discs in ∆3, disjoint from the pair of edges. We call such an isotopy class a normal quadrilateral type. Each vertex of ∆3 corres",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/cor-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 16,
+      "target": "cor-sec-006-02.md",
+      "narrative": null,
+      "content": "Suppose that T is an ideal triangulation of an oriented 3-manifold M with cusps. If M is an-annular and T admits a semi-angle structure then M is strongly 1-e cient. 3A closed properly embedded surface is almost normal if it is a union of normal discs together with precisely one exceptional piece (lying inside one tetrahedron), which is an octagon or an annulus consisting of two disjoint normal discs joined by a tube. 1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/cor-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 16,
+      "target": "cor-sec-006-03.md",
+      "narrative": null,
+      "content": "Suppose that M is a compact oriented irreducible 3-manifold with incom- pressible tori boundary components and no immersed incompressible tori or Klein bottles, except those which are homotopic into the boundary tori. Then M admits an ideal trian- gulation T having an index structure. Moreover if M has no essential annuli (i.e M is 1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD an-annular) then for any nite sheeted covering space f M, the lifted triangulation also admits an index structure.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/ex-sec-006-05",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 16,
+      "target": "ex-sec-006-05.md",
+      "narrative": null,
+      "content": "The trefoil knot complement has an ideal layered triangulation with two tetrahedra and two edges, one of degree 2 and one of degree 10. See Figure 4. The comple- ment of the trefoil knot can be seen as a punctured torus bundle with monodromy given by RL−1, where L = \u0012 \u0013 R = \u0012 \u0013 . 14 STAVROS GAROUFALIDIS, CRAIG D. HODGSON, J. HYAM RUBINSTEIN, AND HENRY SEGERMAN L−1 R (0, 0) (1, 0) (1, 1) (0, 1) (0, 1) (0, 0) (1, 0) (1, 1) (0, −1) (1, 1) (0, 0) (1, 0) Figure 4. A layered triangulation of the complement of the trefoil knot, seen as a punctured torus bundle. On the left, the monodromy is decompose",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/ex-sec-006-06",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 16,
+      "target": "ex-sec-006-06.md",
+      "narrative": null,
+      "content": "We give an example of a subset of a triangulation consisting of two tetrahedra identi ed in a particular way. Namely, we have a tetrahedron σ1 with opposite edges e1 of degree 1 and e2 of degree 2, and another tetrahedron σ2 which is the second tetrahedron incident to e2. See Figure 5. If these tetrahedra are part of any ideal triangulation with torus boundary components then that triangulation will not have an index structure, and will have a normal torus that is not vertex-linking, so it is not 1\u0015e cient. First we show that there is no index structure. Since e1 is degree 1, for any generalis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Index structures and 1--efficiency",
+      "pageStart": 9,
+      "pageEnd": 16,
+      "target": "../sections/sec-006-3-index-structures-and-1--efficiency.md",
+      "narrative": null,
+      "content": "We \nrst give a sketch proof of Theorem 1.5, showing that a semi\u0015angle structure implies\n1\u0015e\nciency. We follow [KR05] and indicate the required small modi\ncation. Suppose that M\nis oriented with cusps and has an ideal triangulation T with a semi-angle structure. Assume\nthat there is an embedded normal torus or Klein bottle or sphere or projective plane, where\nthe normal torus is not a peripheral torus. Firstly, exactly as in [Lac00b] the latter two cases\nare excluded by a simple Euler characteristic argument. Similarly, if there is a cube with\nknotted hole bounded by an embedded normal torus, t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/rem-sec-006-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 16,
+      "target": "rem-sec-006-01.md",
+      "narrative": null,
+      "content": "Lackenby gives a result similar to Theorem 1.5 in Theorem 2.1 of [Lac08]. A useful observation (see [KR05]) following from Theorem 1.5 is the following;",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/rem-sec-006-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 16,
+      "target": "rem-sec-006-04.md",
+      "narrative": null,
+      "content": "The small Seifert bred spaces from the proof of Corollary 3.4 have nite sheeted coverings with embedded incompressible tori so that the lifted triangulations do not all admit index structures, in contrast with the hyperbolic case.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A review of the index of an ideal triangulation",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-007-4-a-review-of-the-index-of-an-ideal-triangulatio.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The tetrahedron index and its properties",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-008-41-the-tetrahedron-index-and-its-properties.md",
+      "narrative": null,
+      "content": "nition\nand the identities satis\ned by the tetrahedron index of [DGG13]. For a detailed discussion,\nsee [Garb].\nThe building block of the index IT of an ideal triangulation T is the tetrahedron index\nI∆(m, e)(q) ∈Z[[q1/2]] de\nned by\n(5)\nI∆(m, e) =\n∞\nX\nn=(−e)+\n(−1)nq\n1\n2 n(n+1)−(n+ 1\n2 e)m\n(q)n(q)n+e\nwhere\ne+ = max{0, e}\nand (q)n = Qn\ni=1(1 −qi). If we wish, we can sum in the above equation over the integers,\nwith the understanding that 1/(q)n = 0 for n < 0.\nThe tetrahedron index satis\nes the following linear recursion relations\n(6a)\nq\ne\n2I∆(m + 1, e) + q−m\n2 I∆(m, e + 1) −I∆(m, e) = 0\n(6b)\nq\ne",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The degree of the tetrahedron index",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-009-42-the-degree-of-the-tetrahedron-index.md",
+      "narrative": null,
+      "content": "to q of I∆(m, e) is given by\n(12)\nδ(m, e) = 1\n2 (m+(m + e)+ + (−m)+e+ + (−e)+(−e −m)+ + max{0, m, −e})\nIt follows that δ(m, e) is a piecewise quadratic polynomial shown in Figure 6.\ne = 0\nm = 0\ne + m = 0\n−em\n2\nm(e+m)\n2\n+ m\n2\ne(e+m)\n2\n−e\n2\nFigure 6. The degree of the tetrahedron index I∆(m, e). Here the positive\nm axis is to the right and the positive e axis is upwards.\nThe regions of polynomiality of δ(m, e) give a fan in R2 with rays spanned by the vectors\n(0, 1), (−1, 0) and (1, −1). An important feature of δ is that it is a convex function on rays.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Angle structure equations",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-010-43-angle-structure-equations.md",
+      "narrative": null,
+      "content": "given in De\nnition 2.13. In this section, we will refer to the angle variables within the ith\ntetrahedron, α(qi), α(q′\ni), α(q′′\ni ), as Zi, Z′\ni, Z′′\ni respectively.\nWe can view a quad-choice Q for T (as in De\nnition 2.12) as a choice of pair of opposite\nedges at each tetrahedron ∆i for i = 1, . . . , N. The quad-choice Q can be used to eliminate\n18 STAVROS GAROUFALIDIS, CRAIG D. HODGSON, J. HYAM RUBINSTEIN, AND HENRY SEGERMAN\none of the three variables Zi, Z′\ni, Z′′\ni at each tetrahedron using the relation Zi + Z′\ni + Z′′\ni = π.\nDoing so, equations (3) take the form\nA Z + B Z′′ = πν ,\nwhere",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Peripheral equations",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-011-44-peripheral-equations.md",
+      "narrative": null,
+      "content": "rst, for simplicity, that ∂M consists of a single torus,\nand let ϖ be an oriented simple closed curve in ∂M that is in normal position with respect\nto the induced triangulation T∂of ∂M. Let\n(13)\n(aϖ|bϖ|cϖ) = (¯aϖ,1 . . . , ¯aϖ,N | ¯bϖ,1, . . . ,¯bϖ,N | ¯cϖ,1, . . . , ¯cϖ,N)\ndenote the vector in Z3N computed as follows. See Figure 7.\nVertex 0\nVertex 1\nVertex 2\nVertex 3\nZ\nZ\nZ′\nZ′\nZ′′\nZ′′\n¯b0\nϖ\n¯a0\nϖ\n¯c0\nϖ\n¯c3\nϖ\n¯b3\nϖ\n¯a3\nϖ\n¯c2\nϖ\n¯b2\nϖ\n¯a2\nϖ\n¯a1\nϖ\n¯b1\nϖ\n¯c1\nϖ\nFigure 7. Each term of the \u0010turning number\u0011 vector (aϖ|bϖ|cϖ) is calculated\nas a sum of the signed number of times the curve ϖ turns anticl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The index of an ideal triangulation",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-012-45-the-index-of-an-ideal-triangulation.md",
+      "narrative": null,
+      "content": "ary ∂M consists of r ≥1 tori T1, . . . , Tr, and let T be an ideal triangulation of M. Let\nϖ = (ϖ1, . . . , ϖr) be a collection of oriented peripheral curves as above. By Theorem 4.3,\nproved below, we can order the edges of T so that the \nrst N −r rows of the Neumann-Zagier\nmatrix (A | B) form an integer basis for its integer row space (i.e. the Z-module of all linear\ncombinations of its rows with integer coe\ncients). Then we de\nne\n(17)\nIT(ϖ)(q) =\nX\nk∈ZN−r⊂ZN\n(−q\n1\n2)k·ν+νϖ\nN\nY\nj=1\nI∆(−bϖ,j −k · bj, aϖ,j + k · aj) .\nwhere aj and bj for j = 1, . . . , N denote the columns of A and B, and\nZN−r =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/ex-sec-013-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 24,
+      "target": "ex-sec-013-02.md",
+      "narrative": null,
+      "content": "The following example shows that the edges omitted must be chosen carefully in the multi-cusped case. Let M be the Whitehead link complement (with the triangulation given by m129 in SnapPy notation). Then the matrix of edge equations is (A | B) =     −1 −2 −1 −1 −1 −1 −2 −2 −1 −1     24 STAVROS GAROUFALIDIS, CRAIG D. HODGSON, J. HYAM RUBINSTEIN, AND HENRY SEGERMAN The cusp incidence matrix is C = \u0012 \u0013 and the corresponding graph G is shown in Figure 10. e1 e3 e0 e2 c0 c1 Figure 10. The graph of edges and cusps for the Whitehead link. The rows E0, E1, E2, E3 of (A | B) satisfy the relati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Choice of edges in the summation for index",
+      "pageStart": 20,
+      "pageEnd": 24,
+      "target": "../sections/sec-013-46-choice-of-edges-in-the-summation-for-index.md",
+      "narrative": null,
+      "content": "with r ≥1 torus cusps and let T be an ideal triangulation of M with N tetrahedra and,\nhence, N edges which we denote e1, . . . , eN. Let G be the 1-skeleton T(1) of T together with\none (ideal) vertex for each cusp of M. Note that G has r vertices and N edges, and may\ncontain loops (i.e. edges with both ends at a single vertex) or multiple edges between the\nsame two vertices. The incidence matrix C = (chi) for G is an r×N matrix whose (h, i) entry\ngives the number of ends of edge i on cusp h. Note that each chi ∈{0, 1, 2} and the sum of\nentries is 2 in each column of C. Let E(ei) = Ei ⊂Z2N be t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/rem-sec-013-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 24,
+      "target": "rem-sec-013-01.md",
+      "narrative": null,
+      "content": "In other words, we can choose any maximal tree with 1- or 3- cycle for our set X of excluded edges, and hence choose the remaining edges as our set B of basic edges. This result and its proof were inspired by Je\u001b Weeks' argument in [Wee85, pp. 35\u001536].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A reformulation of the definition of the index",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "../sections/sec-014-47-a-reformulation-of-the-definition-of-the-inde.md",
+      "narrative": null,
+      "content": "nition of the index. It is sometimes convenient to work\nwith a slight variation on the tetrahedral index function (5). Whenever a −b, b −c ∈Z we\nde\nne\n(21) J∆(a, b, c) = (−q\n1\n2)−bI∆(b−c, a−b) = (−q\n1\n2)−cI∆(c−a, b−c) = (−q\n1\n2)−aI∆(a−b, c−a).\nNote that the above expressions are equal by the triality identity (9) for I∆, and by using the\nduality identity (8), it follows that J∆is invariant under all permutations of its arguments.\nFurther, we have\n(22)\nJ∆(a + s, b + s, c + s) = (−q\n1\n2)−sJ∆(a, b, c) for all s ∈R.\nWe also note that the quadratic identity (11) can be rewritten in the form\n(23)\nX",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariance of index under isotopy of peripheral curve",
+      "pageStart": 26,
+      "pageEnd": 29,
+      "target": "../sections/sec-015-48-invariance-of-index-under-isotopy-of-peripher.md",
+      "narrative": null,
+      "content": "Theorem 4.7. Let ϖ be an oriented simple closed curve ϖ in ∂M which is a normal curve\nrelative to the triangulation T∂of ∂M. Then the index IT(ϖ) is invariant under isotopy of\nthe curve ϖ in ∂M.\nProof. Suppose we have two isotopic oriented normal curves ϖ1, ϖ2. Then we can convert\none into the other via a sequence of moves (and their inverses) of the form shown in Figure\n11. That is, we choose a point p on the curve ϖ and an arc α, disjoint from ϖ other than at\np, and which joins p to either a vertex or a point in the interior of an edge of T∂. We then\npush the curve along and in a regular nei",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/rem-sec-015-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 29,
+      "target": "rem-sec-015-02.md",
+      "narrative": null,
+      "content": "These calculations are exactly analogous to those for calculating the holonomy of a peripheral curve given shapes of ideal hyperbolic tetrahedra satisfying Thurston's gluing equations. Thus this argument can easily be adapted to reprove the well-known fact that the holonomy is independent of the choice of simple closed curve representing an element of H1(∂M; Z).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/thm-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 29,
+      "target": "thm-sec-015-01.md",
+      "narrative": null,
+      "content": "Let ϖ be an oriented simple closed curve ϖ in ∂M which is a normal curve relative to the triangulation T∂of ∂M. Then the index IT(ϖ) is invariant under isotopy of the curve ϖ in ∂M.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariance of index under the 0--2 move",
+      "pageStart": 29,
+      "pageEnd": 32,
+      "target": "../sections/sec-016-5-invariance-of-index-under-the-0--2-move.md",
+      "narrative": null,
+      "content": "Let M be a cusped 3-manifold and consider the 0\u00152 move on a pair T and eT of ideal\ntriangulations of M with N and N + 2 tetrahedra, as shown in Figure 14.\nTheorem 5.1. Suppose that T and eT are ideal triangulations related by a 0\u00152 move and both\nadmit an index structure. Then, for any [ϖ] ∈H1(∂M; Z), IT([ϖ]) = IeT([ϖ]).\nProof. Our assumptions imply that both IT and IeT exist. We now compare these indices\nusing the alternative de\nnition (25) and quadratic identity (23).\nWe use the labelling of the two bigons and triangles on eT shown in Figure 14. Let Ti for\ni = 3, . . . , N +2 denote the tetra",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/thm-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 32,
+      "target": "thm-sec-016-01.md",
+      "narrative": null,
+      "content": "Suppose that T and eT are ideal triangulations related by a 0\u00152 move and both admit an index structure. Then, for any [ϖ] ∈H1(∂M; Z), IT([ϖ]) = IeT([ϖ]).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The XMEP class of triangulations",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../sections/sec-017-6-the-xmep-class-of-triangulations.md",
+      "narrative": null,
+      "content": "M class of triangulations",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Subdivisions of the Epstein--Penner decomposition",
+      "pageStart": 32,
+      "pageEnd": 34,
+      "target": "../sections/sec-018-61-subdivisions-of-the-epstein--penner-decomposi.md",
+      "narrative": null,
+      "content": "bolic 3\u0015manifold M, the Epstein\u0015Penner decomposition (see [EP88]) divides M into a \nnite\nnumber of ideal hyperbolic polyhedra. This subdivision is canonical, depending only on the\ntopology of the manifold, if M has a single cusp. If M has r ≥1 cusps, then the Epstein-\nPenner cell decomposition is canonical up to the choice of a scale vector (t1, . . . , tr) with\nt1, t2, . . . , tr > 0 giving the relative size of the cusps. The scale vector is well-de\nned up to\nmultiplication by a positive real number. For the purposes of de\nning our canonical set, we\ncan choose all ti to be the same.\nVery ofte",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/rem-sec-018-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 34,
+      "target": "rem-sec-018-01.md",
+      "narrative": null,
+      "content": "Any triangulation produced in the way described above has a natural semi\u0015 angle structure. This comes from the shapes of the tetrahedra as ideal hyperbolic tetrahedra. The dihedral angles of the positive volume ideal hyperbolic tetrahedra, together with 0 and π angles for the at tetrahedra in the layered triangulations in the polygonal pillows satisfy all of the rules for a generalised angle structure, and all angles are in [0, π]. The natural semi\u0015angle structure together with Theorem 1.5 show that each triangulation in our class is 1-e cient. However, we also need to show that our class is c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/lem-sec-019-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 39,
+      "target": "lem-sec-019-04.md",
+      "narrative": null,
+      "content": "In our case, the 3\u0015cells of an almost\u0015triangulation are all simplices apart from one or two 3\u0015cells. These 3\u0015cells can have the following forms: (1) The convex hull of ve points on a sphere, in general position, as in the upper diagram of Figure 17. (2) A 4\u0015sided pyramid, with the base of the pyramid on a boundary face of the polyhedron, as in the upper diagram of Figure 18a. (3) Two 4\u0015sided pyramids whose bases are coincident, as in the upper diagram of Figure 18b. 38 STAVROS GAROUFALIDIS, CRAIG D. HODGSON, J. HYAM RUBINSTEIN, AND HENRY SEGERMAN",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/lem-sec-019-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Corollary 2.4.6 of [DLRS10]",
+      "pageStart": 34,
+      "pageEnd": 39,
+      "target": "lem-sec-019-05.md",
+      "narrative": null,
+      "content": "Every almost\u0015triangulation has exactly two proper re nements, which are both triangulations. De nition 6.26. Two triangulations of the same point con guration are connected by a ip supported on the almost\u0015triangulation S if they are the only two triangulations re ning S. De nition 6.27. We call the ips associated to the three possible almost\u0015triangulation types listed in Lemma 6.23 the 2-3 ip, external 2\u00152 ip, and internal 2\u00152 ip respectively. See Figures 17 and 18.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Regular triangulations",
+      "pageStart": 34,
+      "pageEnd": 39,
+      "target": "../sections/sec-019-62-regular-triangulations.md",
+      "narrative": null,
+      "content": "gurations, following [DLRS10].\n6.2. Regular triangulations. The concept of a regular triangulation comes from the study\nof triangulations of convex polytopes in Rn. Here we are not dealing with topological trian-\ngulations, where tetrahedra may have self-identi\ncations or two vertices may have multiple\nedges connecting them. Rather, the vertices are concrete points in Rn, the edges are straight\nline segments in Rn and so on. In this context, a triangulation of a convex polytope is a\nsubdivision of the polytope into concrete Euclidean simplices. Roughly speaking, a triangu-\nlation of a polytope",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/rem-sec-019-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 39,
+      "target": "rem-sec-019-01.md",
+      "narrative": null,
+      "content": "The rst condition says that if some cell is in our subdivision then all faces of it are also. The second condition says that it is a subdivision of the whole convex hull of the points in A. The third condition says that the cells can only overlap with each other on their faces, not their interiors. De nition 6.12. With the above notation, a triangulation of A is a polyhedral subdivision of A such that every cell is a simplex. De nition 6.13. Let A = (pj)j∈J be a point con guration with label set J. Suppose that ω: A →R is any map. The lifted point con guration in Rn+1 is the point con guration",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/rem-sec-019-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 39,
+      "target": "rem-sec-019-02.md",
+      "narrative": null,
+      "content": "From the geometric construction, every triangulation of XEP M has a natural semi-angle structure, as in Remark 6.6, so they are all 1-e cient by Theorem 1.5. De nition 6.19. The corank of a d\u0015dimensional point con guration with n points is the number n −d −1. A point con guration has corank zero if and only if it is a nely independent. A point con guration has corank one if and only if it has a unique a ne dependence relation. This means that there is a unique solution to X j∈J λjpj = 0 with X j∈J λj = 0, where at least one λj̸ = 0. Uniqueness is up to scaling all λ's by the same factor. The a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/rem-sec-019-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 39,
+      "target": "rem-sec-019-03.md",
+      "narrative": null,
+      "content": "For us then, the only possible corank one con gurations are (1) ve points in general position, or (2) four points in a plane, or (3) four points in a plane plus one point not in that plane. De nition 6.22. Let S be a polyhedral subdivision that is not a triangulation. Then S is an almost\u0015triangulation if (1) all of the cells of S have corank at most one, and (2) all of the cells of S of corank one contain the same circuit.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/rem-sec-019-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 39,
+      "target": "rem-sec-019-06.md",
+      "narrative": null,
+      "content": "The internal 2-2 ip acts on the triangulation by a move sometimes called the 4-4 move, as it removes four tetrahedra and replaces them with four others. However, here we stick with the notation derived from the bistellar ip terminology. De nition 6.29. The ip graph of the point con guration A is the graph whose vertices are the triangulations of A and whose edges are triangulations connected by ips. We use the following result, due to Gelfand, Kapranov and Zelevinsky, and given as",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/rem-sec-019-08",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 39,
+      "target": "rem-sec-019-08.md",
+      "narrative": null,
+      "content": "Our strategy for connecting two triangulations T1, T2 ∈XEP M is as follows. Both triangulations consist of regular triangulations of the polyhedra of the PPP\u0015cellulation, together with layered triangulations in the polygonal pillows between them. (1) Use Theorem 6.30 on each polyhedron, to change the triangulation of each polyhedron in T1 into the corresponding triangulation of the polyhedron in T2. This step may alter the triangulations of the polygonal pillows as well. (2) Change the triangulation in each polygonal pillow of the resulting triangulation so that it matches with the correspondi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/thm-sec-019-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Gelfand, Kapranov and Zelevinsky [GKZ94]",
+      "pageStart": 34,
+      "pageEnd": 39,
+      "target": "thm-sec-019-07.md",
+      "narrative": null,
+      "content": "Let A be a point con gura- tion. The subgraph of the ip graph induced by all regular triangulations of A that use the same vertices is connected. In our case, since the vertices lie on a sphere, all vertices are used in every triangulation, so this says that we can get from any regular triangulation of the polyhedron to any other by performing ips.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Interpreting flip moves using 2--3 moves",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "../sections/sec-020-63-interpreting-flip-moves-using-2--3-moves.md",
+      "narrative": null,
+      "content": "ip moves using 2\u00153 moves. In order to carry out step (1) of our plan\nin Remark 6.31, we will interpret the \nip moves in terms of the 2\u00153 and 3\u00152 moves allowed\nin Theorem 1.1.\n40 STAVROS GAROUFALIDIS, CRAIG D. HODGSON, J. HYAM RUBINSTEIN, AND HENRY SEGERMAN\n(1) First, consider a 2\u00153 \nip in one polyhedron. This is simply a 2\u00153 move. Since the\ntriangulations on either side of the move are in XEP\nM , they are both 1\u0015e\ncient by\nRemark 6.18. Therefore the triangulations have the same index by Theorem 1.1.\n(2) Second, consider an external 2\u00152 \nip. See Figure 19a. The base of the pyramid is on\na face",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/rem-sec-020-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "rem-sec-020-01.md",
+      "narrative": null,
+      "content": "Therefore the triangulations have the same index by Theorem 1.1. (2) Second, consider an external 2\u00152 ip. See Figure 19a. The base of the pyramid is on a face of the polyhedron that is glued to a polygonal pillow. The two triangles on the base of the pyramid are glued to either a single tetrahedron in the pillow, or two tetrahedra in either the polygonal pillow or the polyhedron on the other side of the polygonal pillow. • If the two triangles are glued to a single tetrahedron then we are in the situation shown in the top diagram of Figure 19a, and we can perform a 3\u00152 move, which performs the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Moving paths in the 1--skeleton of the associahedron using 2--3 and 0--2 moves",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "../sections/sec-021-64-moving-paths-in-the-1--skeleton-of-the-associ.md",
+      "narrative": null,
+      "content": "moves. In order to carry out step (2) of our plan in Remark 6.31, we need to modify the\nlayered triangulations in the polygonal pillows. We will do this using the 2\u00153, 3\u00152, 0\u00152 and\n2\u00150 moves allowed in Theorems 1.1 and 5.1.\nHaving completed step (1), we have two triangulations, T1 and T2, which agree on the\npolyhedra but may di\u001ber in the polygonal pillows. Let Q be a polygonal pillow. Since T1\nand T2 agree on the polyhedra glued to either side of Q, they agree on the triangulations of\nthe polygonal faces Q+ and Q−. Call these triangulations t+ and t−.\nThe next well-known theorem concerns the i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/thm-sec-021-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "thm-sec-021-01.md",
+      "narrative": null,
+      "content": "The set of triangulations of an n\u0015gon and the set of diagonal ips connecting them correspond to the vertices and edges of a convex polytope called the associahedron. The set of 2\u0015cells of the associahedron consists of squares and pentagons. Each square corresponds to two commuting diagonal ips (as in De nition 6.4) on two 4-gons whose interiors are disjoint. Each pentagon corresponds to a pentagon relation between the ve triangulations of a pentagon. See Figure 20. Our two layered triangulations of the polygonal pillow Q can be represented as two paths p1 and p2 in the 1\u0015skeleton of the associ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Computations",
+      "pageStart": 43,
+      "pageEnd": 43,
+      "target": "../sections/sec-022-7-computations.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "How to compute the coefficients of a q-series",
+      "pageStart": 43,
+      "pageEnd": 44,
+      "target": "../sections/sec-023-71-how-to-compute-the-coefficients-of-a-q-series.md",
+      "narrative": null,
+      "content": "cients of a q-series. In this section we will explain a\ngeneral method to compute the coe\ncients of a q-series which is given by a multi-dimensional\nsum of some basic q-series. The idea is simple, but the e\u001bective aspects of it are tricky and\nwere explained to the \nrst author by D. Zagier. The method is applied in forthcoming work\n[GV] which computes the coe\ncients of the stabilization of the coloured Jones polynomial\nof an alternating knot [GL].\nFix a 1-e\ncient ideal triangulation T with n tetrahedra of a 1-cusped hyperbolic manifold\nM and an oriented multi-curve ϖ on ∂M. The index IT(ϖ)(q) ∈",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/rem-sec-023-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 44,
+      "target": "rem-sec-023-01.md",
+      "narrative": null,
+      "content": "If two 1-cusped hyperbolic 3-manifolds M and M ′ have 1-e cient ideal tri- angulations T and T′ with equal angle structure matrices, then IT(0)(q) = IT′(0)(q). For example, M and −M have such triangulations, where −M denotes the orientation reversed cusped hyperbolic manifold. Also, Mφ and M−φ have such triangulations for a pseudo- Anosov homeomorphism φ of a once punctured torus, where Mφ denotes the mapping torus of φ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The index of the 41 knot complement",
+      "pageStart": 44,
+      "pageEnd": 45,
+      "target": "../sections/sec-024-72-the-index-of-the-41-knot-complement.md",
+      "narrative": null,
+      "content": "41 knot complement uses 2 regular ideal tetrahedra and coincides with the Epstein-Penner\ndecomposition, thus XEP\n41 = {T}. SnapPy gives the angle structure matrices of T:\nA =\n\u0012\n2\n2\n0\n0\n\u0013\nB =\n\u0012\n1\n1\n1\n1\n\u0013\nC =\n\u0012\n0\n0\n2\n2\n\u0013\n.\nSnapPy also gives an additional two rows which correspond to the meridian and longitude\nequations; we will not use these in our examples so we omit them here. We eliminate B to\nobtain A and B. We choose our basic edge set B = {e1} and excluded edge set X = {e2}.\nWe can therefore ignore the rows of our matrices corresponding to e2, and write\nA′ =\n\u0000 1\n1 \u0001\nB′ =\n\u0000 −1\n−1 \u0001\nν′ =\n\u0000 0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The index of the sister of the 41 knot complement",
+      "pageStart": 45,
+      "pageEnd": 45,
+      "target": "../sections/sec-025-73-the-index-of-the-sister-of-the-41-knot-comple.md",
+      "narrative": null,
+      "content": "and its sister are the census manifolds m004 and m003 respectively, and are punctured torus\nbundles over a circle with monodromy +RL and −RL respectively [CDW]. The Epstein-\nPenner decompositions for m004 and m003 consist of two regular ideal tetrahedra. The edge\ngluing equations of +RL and −RL coincide. Thus, Im003(0) = Im004(0).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The index of the 52 knot complement",
+      "pageStart": 45,
+      "pageEnd": 47,
+      "target": "../sections/sec-026-74-the-index-of-the-52-knot-complement.md",
+      "narrative": null,
+      "content": "52 knot complement uses 3 ideal tetrahedra. The Epstein-Penner decomposition TEP uses 4\nideal tetrahedra. Both triangulations carry geometric shape structures and thus canonical\nstrict angle structures. One can show that T and TEP are related by geometric 2\u00153 moves\nhence they have equal indices. For reasons of e\nciency, we will work with the triangulation\nT. Its angle structure matrices are given by:\n46 STAVROS GAROUFALIDIS, CRAIG D. HODGSON, J. HYAM RUBINSTEIN, AND HENRY SEGERMAN\nA =\n\n\n1\n1\n1\n0\n0\n0\n1\n1\n1\n\n\nB =\n\n\n0\n2\n0\n1\n0\n1\n1\n0\n1\n\n\nC =\n\n\n1\n0\n1\n1\n2\n1\n0\n0\n0\n\n.\nEliminating B, and remo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/figure-img-p047-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 47,
+      "pageEnd": 47,
+      "target": "../images/img-p047-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The index of the (-2,3,7) pretzel knot complement",
+      "pageStart": 47,
+      "pageEnd": 48,
+      "target": "../sections/sec-027-75-the-index-of-the--237-pretzel-knot-complement.md",
+      "narrative": null,
+      "content": "is the 12 crossing knot 12n242 in the census. The default SnapPy triangulation T of the\n12n242 complement uses 3 ideal tetrahedra. The Epstein-Penner decomposition TEP uses 3\nideal tetrahedra. However, the two triangulations T and TEP are combinatorially di\u001berent; for\ninstance have edge-valencies 5, 6, 7 and 5, 5, 8 respectively. Nevertheless, both triangulations\n48 STAVROS GAROUFALIDIS, CRAIG D. HODGSON, J. HYAM RUBINSTEIN, AND HENRY SEGERMAN\nare geometric with canonical strict angle structure and are related by geometric 2\u00153 moves,\nwhich preserve the index. The angle structure equations of T",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The index of the 61 knot complement",
+      "pageStart": 48,
+      "pageEnd": 49,
+      "target": "../sections/sec-028-76-the-index-of-the-61-knot-complement.md",
+      "narrative": null,
+      "content": "as an example of the phenomenon of linear growth. The default SnapPy triangulation T of\nthe 61 knot complement has 4 ideal tetrahedra, and the Epstein-Penner decomposition uses\n6 ideal tetrahedra. The two triangulations are related by geometric 2\u00153 moves and so have\nequal indices. The angle structure equations of T are given by:\nA =\n\n\n\n\n1\n1\n0\n0\n0\n0\n0\n1\n0\n1\n1\n0\n1\n0\n1\n1\n\n\n\n\nB =\n\n\n\n\n0\n2\n0\n1\n1\n0\n1\n0\n1\n0\n0\n0\n0\n0\n1\n1\n\n\n\n\nC =\n\n\n\n\n1\n0\n1\n1\n1\n2\n1\n0\n0\n0\n0\n1\n0\n0\n0\n0\n\n\n\n.\nEliminating B, and removing the fourth row (which corresponds to the fourth edge equa-\ntion), we obtain the angl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The index of the 72 knot complement",
+      "pageStart": 49,
+      "pageEnd": 51,
+      "target": "../sections/sec-029-77-the-index-of-the-72-knot-complement.md",
+      "narrative": null,
+      "content": "growth. The default SnapPy triangulation T of the 72 knot complement has 4 ideal tetrahedra,\nand the Epstein-Penner decomposition has 8 ideal tetrahedra. The two triangulations are\nrelated by geometric 2\u00153 moves and have equal indices. The angle structure equations of T\nare given by:\n50 STAVROS GAROUFALIDIS, CRAIG D. HODGSON, J. HYAM RUBINSTEIN, AND HENRY SEGERMAN\nA =\n\n\n\n\n1\n2\n1\n0\n0\n0\n1\n0\n1\n0\n0\n1\n0\n0\n0\n1\n\n\n\n\nB =\n\n\n\n\n1\n0\n0\n0\n1\n0\n0\n0\n0\n2\n1\n0\n0\n0\n1\n2\n\n\n\n\nC =\n\n\n\n\n0\n0\n1\n0\n0\n1\n0\n2\n1\n1\n1\n0\n1\n0\n0\n0\n\n\n\n.\nEliminating B, and removing the fourth row (which corresponds to the fourth",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 51,
+      "pageEnd": 51,
+      "target": "../sections/sec-030-78-acknowledgments.md",
+      "narrative": null,
+      "content": "7.8. Acknowledgments. S.G. wishes to thank Tudor Dimofte, Josephine Yu and especially\nDon Zagier for enlightening conversations. A preliminary report was delivered by S.G. during\nthe Oberwolfach 8/2012 workshop on Low-Dimensional Topology and Number Theory; we\nthank the organizers, Paul E. Gunnells, Walter Neumann, Adam S. Sikora and Don Zagier,\nfor their hospitality.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. The 2--3 move",
+      "pageStart": 51,
+      "pageEnd": 57,
+      "target": "../sections/sec-031-appendix-a-the-2--3-move.md",
+      "narrative": null,
+      "content": "For completeness, in this appendix we give a detailed proof of the invariance of the index\nunder 2\u00153 moves, following [Garb, Sec.6] and also [DGG13]. Let M be a cusped 3-manifold\nand let ϖ be an oriented multi-curve on ∂M. Consider two ideal triangulations T and eT of\nM with N and N + 1 tetrahedra, respectively, related by a 2\u00153 move as shown in Figure 23,\nmatching the conventions of [DG13, Sec.3.6].\n2\u00153\n3\u00152\n4\n0\n1\n3\n2\n4\n0\n1\n3\n2\n¯b1\n¯c1\n¯a1\n¯b2 ¯b3\n¯a2\n¯c3\n¯c2 ¯a3\n¯b1\n¯c1\n¯a1\n¯b2 ¯b3\n¯a2\n¯c3\n¯c2 ¯a3\n¯a3 ¯c1\n¯c3 ¯a1\n¯b3\n¯b1\n¯a2 ¯c3\n¯c2 ¯a3\n¯b2\n¯b3\n¯a1 ¯c2\n¯c1 ¯a2\n¯b1\n¯b2\n¯a0\n¯b0\n¯c0\n¯a4\n¯b4\n¯c4",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/thm-sec-031-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 57,
+      "target": "thm-sec-031-01.md",
+      "narrative": null,
+      "content": "1. Suppose that T and eT are ideal triangulations related by a 2\u00153 move and both admit an index structure. Then, for any [ϖ] ∈H1(∂M; Z), IT([ϖ]) = IeT([ϖ]). Recall that the index is not changed by isotopies of ϖ and, from (25), can be written in the form IT(ϖ)(q) = X k∈ZN−r q P i ki Y j J(Tj; k, ϖ) 52 STAVROS GAROUFALIDIS, CRAIG D. HODGSON, J. HYAM RUBINSTEIN, AND HENRY SEGERMAN where the contribution from tetrahedron Tj is J(Tj; k, ϖ) = J∆(¯aj(k, ϖ),¯bj(k, ϖ), ¯cj(k, ϖ)).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/thm-sec-031-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 57,
+      "target": "thm-sec-031-02.md",
+      "narrative": null,
+      "content": "1 now follows immediately: In the sum (25) for IT we choose a set X of excluded edges from a maximal tree with 1- or 3-cycle for T as in Theorem 4.3. Then the same set of edges can be excluded from the summation for IeT, so the summation for IeT is over the original set of basic edges B for T together with the new edge introduced in the 2\u00153 move. Proof of Lemma. The plan is as follows. First, we isotope ϖ if necessary, so that it intersects the truncated ends of the bipyramid involved in the 2\u00153 move in a standardised way. For a given k, we consider ϖk, and the ϖek where ek = (k0, k) and k0 ∈Z",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/topologicalinvariance3dindex/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 57,
+      "pageEnd": 60,
+      "target": "../sections/sec-032-references.md",
+      "narrative": null,
+      "content": "[AK14]\nJørgen Ellegaard Andersen and Rinat Kashaev, A TQFT from Quantum Teichmüller theory,\nComm. Math. Phys. 330 (2014), no. 3, 887\u0015934.\n[Aki01]\nHirotaka Akiyoshi, Finiteness of polyhedral decompositions of cusped hyperbolic manifolds ob-\ntained by the Epstein-Penner's method, Proc. Amer. Math. Soc. 129 (2001), no. 8, 2431\u00152439\n(electronic).\n[BB05]\nStéphane Baseilhac and Riccardo Benedetti, Classical and quantum dilogarithmic invariants of\n\nat PSL(2, C)-bundles over 3-manifolds, Geom. Topol. 9 (2005), 493\u0015569 (electronic).\n[BB07]\n, Quantum hyperbolic geometry, Algebr. Geom. Topol. 7 (2007), 8",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

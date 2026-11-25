@@ -1,0 +1,139 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0803.1227v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-0803.1227v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Nowadays breakthrough of wireless communications has provided new and nice problems to the field of coding theory. Indeed strategic issues of MIMO communications has lead to consider coding in Grassmann and Stiefel manifolds, and also in unitary groups [@TSE]. Codes in unitary groups are useful in the context of non-coherent flat Rayleigh channel as shown in [@MARZETTA]. The performance of a unitary space-time code $\\Code$ is measured (see [@ROSEN]) by two functions namely the diversity sum $\\Sigma \\Nu$ and the diversity product $\\Pi \\Nu$ : $$\\begin{aligned}\n \\Sigma \\Nu := \\frac{1}{2\\sqrt{n}}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0803.1227v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0803.1227v1  [cs.IT]  8 Mar 2008\nLinear programming bounds for unitary space\ntime codes\nJean Creignou\nHerv´e Diet\nOctober 25, 2018\nAbstract\nThe linear programming method is applied to the space Un(C) of uni-\ntary matrices in order to obtain bounds for codes relative to the diversity\nsum and the diversity product. Theoretical and numerical results improv-\ning previously known bounds are derived.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0803.1227v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The linear programming method on homogeneous spaces",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-the-linear-programming-method-on-homogeneous-spa.md",
+      "narrative": null,
+      "content": "We briefly describe the linear programming method on homogeneous spaces. For more details we refer to [@LEVEN], [@CS Chapter 9] for a treatment of 2-point homogeneous spaces, and to [@CHRISTINE1] for the prominent case of Grassmann codes.\n\nLet $G$ be a compact group acting transitively and continuously on a compact space $X$, and $\\tau : X\\times X  \\to Y$ such that $\\tau$ characterizes the orbits of $G$ acting on $X\\times X$. We mean here that, for all $x_1,x_2,x'_1,x'_2 \\in X$, $$\\tau(x_1,x_2)=\\tau(x'_1,x'_2) \\Leftrightarrow \\exists  g \\in G :\ng(x_1,x_2)=(x'_1,x'_2).$$\n\nLet $S$ be any subset",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0803.1227v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The case of unitary codes",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-the-case-of-unitary-codes.md",
+      "narrative": null,
+      "content": "As a particular case we set $G=\\U_n(\\C)\\times \\U_n(\\C)$ and $X=\\U_n(\\C)$. For $g=U\\times V$ and $x=M$ we set $gx=UMV^{-1}$. In this context the orbit of a pair $(x,y)$ is characterized by the eigenvalues $(e^{i\\theta_1},...,e^{i\\theta_n})$ of the unitary matrix $xy^{-1}$. The Peter-Weil theorem gives a decomposition of $L^2(X)$ into irreducible subspaces $$\\label{dec}\nL^2(X)=\\oplus (V_{\\chi}\\otimes V_{\\conj{\\chi}})$$ where the sum runs over all irreducible representations $V_{\\chi}$ of $\\U_n(\\C)$. It is worth noticing that the $G$-subspaces $V_{\\chi}\\otimes V_{\\conj{\\chi}}$ are pairwise non is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0803.1227v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Analytic bounds of low degree",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-analytic-bounds-of-low-degree.md",
+      "narrative": null,
+      "content": "From the explicit description of the zonal functions [\\[P1\\]](#P1){reference-type=\"eqref\" reference=\"P1\"}, we have deduced convenient polynomials of low degree which verify the positivity property. Using formula ([\\[FUNDA\\]](#FUNDA){reference-type=\"ref\" reference=\"FUNDA\"}) we derive the analytic bounds of Theorems [\\[THM1\\]](#THM1){reference-type=\"ref\" reference=\"THM1\"} and [\\[THM2\\]](#THM2){reference-type=\"ref\" reference=\"THM2\"}.\\\n\n::: theorem\n[]{#THM1 label=\"THM1\"} Let $\\Code$ be a unitary space time code with diversity sum $\\Sigma \\Nu$, the following upper bounds hold : $$\\noindent  \\quad |",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0803.1227v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Numerical bounds",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-numerical-bounds.md",
+      "narrative": null,
+      "content": "Numerical programs give accurate approximations of the best linear programming bounds over a large interval of validity, not covered by the bounds proved in Section IV. The following curves plot the linear programming bound on the diversity functions as a function of the cardinality of the code. The programs optimize the choice of a polynomial in the variables $(\\cos\\theta_1,\\dots,\\cos\\theta_n)$, with degree at most equal to some parameter $D$. Increasing $D$ gives accurate results over a wider range of values for the diversity functions, but also increase the computational time. We use $D=19$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0803.1227v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-005-conclusions.md",
+      "narrative": null,
+      "content": "Conclusions\nIn this paper we have developed the linear programming method for the unitary\nspace time codes. We have obtained both numerical and analytic bounds. The\n9\nresults improve previously known bounds. Furthermore the linear programming\nmethod allows to deal with non-distance functions as the diversity product di-\nrectly.\nAcknowledgment\nThe authors would like to thank Christine Bachoc for her precious advises on\nthe writing of this article.\nReferences\n[1] C. Bachoc, Linear programming bounds for codes in Grassmannian spaces,\nIEEE Trans. Inform. Theory, 52-5 (2006), pp. 2111-2125.\n[2] A.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

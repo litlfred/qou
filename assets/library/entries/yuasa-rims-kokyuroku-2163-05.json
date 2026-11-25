@@ -1,0 +1,453 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "yuasa-rims-kokyuroku-2163-05",
+  "blocks": [
+    {
+      "id": "library/yuasa-rims-kokyuroku-2163-05/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "Twist formulas for one-row colored A» webs and sl; tails of\n(2, 2m)-torus links\n\nWataru Yuasa\nResearch Institute for Mathematical Sciences, Kyoto University\n\n1 Introduction\n\nThe author made tools to calculate the quantum invariant of knots and links obtained\nfrom sl3 by using the Kuperberg’s linear skein theory. In this article, we will introduce\none of these tools, a full twist formula, which is useful to compute explicitly the lz colored\nJones polynomial. As an application, we give explicit formula of the one-row colored sl3\ntail for a (2, 2m)-torus link.\n\nThe quantum invariants of knots are",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/yuasa-rims-kokyuroku-2163-05/blocks/def-page-002-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "A, web space {[Kup96]",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "def-page-002-01.md",
+      "narrative": null,
+      "content": "Let G(e; D) be the set of boundary fixing isotopy classes of tangled trivalent graphs on D. The Ay an space W(e; D) is the quotient of the C(q)-vector space on G(e; D) by the following Ag skein relation:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yuasa-rims-kokyuroku-2163-05/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "1) in [AD11], for T(2, 2m) in [Haj16], for a pretzel knot P(2k +1, 2, 21+ 1) in [EH17], for\nknots with small crossing numbers in [KO16], [BO17], and [GL15]. Especially, the tail of\nT(2, 2m + 1) is given by the theta series and one of T(2,2m) is the false theta series.\n\nOne can consider a tail for the one-row colored slz colored Jones polynomial {Tero (K)}.\nWe call it the one-row colored sl; tail of A’. As a case study, the author gave an explicit\nformula of the one-row colored sl; tail for a (2, 2m)-torus link T=(2, 2m) with anti-parallel\norientation by using the full twist formula. This slz t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/yuasa-rims-kokyuroku-2163-05/blocks/def-page-003-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "the Temperley-Lieb category for Az",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "def-page-003-01.md",
+      "narrative": null,
+      "content": "Let D = [0, 1] x [0, 1] and n denotes a set of n points on J = [0,1] dividing it into n +1 equal parts. The Temperley-Lieb category TL“? is a linear category over C(qe) is defined as follows:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yuasa-rims-kokyuroku-2163-05/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "e\n\n|\n\ns)\n\noe\n; (\n\ne\n\nAn element in W(e; D) is called web and an element in G(¢; D) without crossings which\nhas no internal 0-, 2-, 4-gons a basis web. Any web is described as the sum of basis webs.\n\nThe Ag skein relation realize the Reidemeister moves (R1) — (R4), that is, we can show\nthat webs represent diagrams in the left side and right side is the same web in W(D;c).\n\n(R1) S\n\n(R3) RO QS (R4) ZX Le Bohs.\n\nWe review a diagrammatic definition of an Ag clasp introduced in [Kup96, OY97,\nKim07] and its properties. The A2 clasp gives a coloring of strands in a web by pairs\nof non-negative integer",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/yuasa-rims-kokyuroku-2163-05/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "Loe d)e/b ee 1) =|Le tbe]\n\nFigure 2.1: the composition and the tensor product in TL”\n\nWe identify an object a with length n as a map n > {+,—} by using the order on n.\nA map @U 6 means that the domain n Cc J of the map @ is identified with the top edge\n[0,1] x {0} and 8 identified with the bottom edge (0, 1] x {1}.\n\n¢ The composition GF € G(aLl7; D) of F € G(@U8; D) and G € G(8U7; D) is given\nby gluing the top edge of F and the bottom edge of G.\n\ne The “tensor product” F @G € G(@1d2, 31%; D) of F € G(a@ U 61; D) and G €\nG(a2 U 2; D) by gluing the right edge {1} x [0,1] of F and the left edge {",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/yuasa-rims-kokyuroku-2163-05/blocks/def-page-005-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "def-page-005-02.md",
+      "narrative": null,
+      "content": "For positive integers n and m, » as nis defined by",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yuasa-rims-kokyuroku-2163-05/blocks/def-page-005-03",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "def-page-005-03.md",
+      "narrative": null,
+      "content": "For positive integer n, pac is defined by Xi = na and n 1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yuasa-rims-kokyuroku-2163-05/blocks/lem-page-005-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "lem-page-005-01.md",
+      "narrative": null,
+      "content": "ie - tt 3 cts =(-¢6)\"™ ae aes = (-4\")\"\" ae . 1 =q? [ [ 1 =q 3 ,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yuasa-rims-kokyuroku-2163-05/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "Lemma 2.3.\n\nie - tt 3 cts\n=(-¢6)\"™ ae aes = (-4\")\"\" ae\n. 1 =q? [ [ 1 =q 3 ,\n\nThe “stair-step” and “triangle”\n\nwebs appear in the above are defined by the following.\n\nThese webs also appear in [Kim06, Kim07, Yual7, FS20].\n\nm\n\nDefinition 2.4. For positive integers n and m, » as nis defined by\n\nSpecifying a direction on an edge\nthe box.\n\nm\n= - poe and\nm-1l 1\n=n aN n for m>1.\nm-1 1\n\naround the box determine the all directions of edges in\n\nDefinition 2.5. For positive integer n, pac is defined by Xi = na and\nn 1\n\n1 1\nn-1\nnf Xn = for n\nn-1\nn\n\n1ln-1\nedge around the triangle.\n\n> 1. We obtain a web by",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/yuasa-rims-kokyuroku-2163-05/blocks/prop-page-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "prop-page-006-01.md",
+      "narrative": null,
+      "content": "»(0,0)= S> re (0,3 TEx i (7) on(kyl).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yuasa-rims-kokyuroku-2163-05/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "3 Twist formula and q-binomial coefficient\n\nIn this section, we show new twist formulas derived from a combinatorial method related\nto the generating function of lattice paths. We firstly explain this method which is used\nin the proof of full twist formulas in [Yua17].\n\nLet us consider a set of web {o,(k,1) | 0 < k,l <n} such that\n\n1. o,,(k, 1) is basis web if k +1 =n,\n\n2. on(k,l) = X(k, on(k+ 1,1) +Y(k, Don(k,t+ 1),\nwhere X(k,1),¥(k,1) € C(qe). The web on(k, 1) corresponds to a lattice point (k,l). We\ndenote a lattice path from (0,0) to (k,1) by a sequence of x and y where «x (resp. y)\nmeans",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/yuasa-rims-kokyuroku-2163-05/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "d=min{s,t} and 6 = |s — ¢].\n\nDG =F ai emay(\n\ns\n\nd\n_ —2d(d-+6)—d salae reel\n=q 3 > qd T\\\nka0 (Dera \\k\n\ns s\n\nk+s—d\n\nIn [Yua20], the author obtained a full twist formula for one-row colored parallel Ag\nwebs by setting n = d = min{s,t} and\n\nifd=s,\n\nifd=t.\n\nThese Ay webs also satisfy the condition of Proposition 3.1. Thus, one can obtain the\nfollowings.\n\nTheorem 3.3 (full twist formula for one-row colored parallel A, webs [Yua20]). Let\nd=min{s,t} and 6 = |s — ¢].\n\nFrom these formulas, the author obtained an m-full twist formula for one-row colored\nAy webs.\n\nTheorem 3.4 (anti-parallel m-full twist f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/yuasa-rims-kokyuroku-2163-05/blocks/thm-page-007-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "full twist formula for one-row colored parallel A, webs [Yua20]",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "thm-page-007-01.md",
+      "narrative": null,
+      "content": "Let d=min{s,t} and 6 = |s — ¢].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yuasa-rims-kokyuroku-2163-05/blocks/thm-page-007-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "anti-parallel m-full twist formula [Yual7]",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "thm-page-007-02.md",
+      "narrative": null,
+      "content": "Let k = (ki,...,km) be an",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yuasa-rims-kokyuroku-2163-05/blocks/def-page-008-02",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "def-page-008-02.md",
+      "narrative": null,
+      "content": "Let LZ be a link diagram of a framed link whose framing is given by the blackboard framing. The one-row colored sl; Jones polynomial of n boxes Fis (9) is defined by sls 41 (L™) = JiK,(q)0 € W(0; D) = Q(q**).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yuasa-rims-kokyuroku-2163-05/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "m-tuple of integers, kg = d = min{s,t}, and 6 = |s — t}.\n\nt t\nmet Lae Ar _ qu 3 Fol ko+8)—2mko >\nV J\n\n8 m full twists 8 ko zhi 2--2km20\n\nt km +(t—ko) t\n\nwhere\n\nan 2k; ko —kn (D)ko-+6 ko\nC(k) = ht Bi (Bit 5)+ 2h: gk km 0\n) (aints (Rs bs sla Fn)\n\nand ki, = ki — kiq1 for? =0,1,...,m—1.\n\nTheorem 3.5 (parallel m-full twist formula). Let k = (ki,...,km) be an m-tuple of\nintegers, ko = d = min{s,t}, and 6 = |s — tl].\n\nt—d+km\n\nAt\n\nc =\" ko (ko +6)—mk d—km d—km\niv m full twists 8 ko2ki 2 2km20 s s\n\n“  s-dtkm ~\nwhere\nD(k) = q&lea Blber) +h gh) (Dko+6 d\n“ (q) Kh kb... Klay\nDQ) km+6 1200553 msm) g\n\nand ki,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/yuasa-rims-kokyuroku-2163-05/blocks/rem-page-008-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "rem-page-008-03.md",
+      "narrative": null,
+      "content": "— e In [Le00], Lé showed the integrality of the coefficients of a quantum g invariant of links. It says that J7',(q) belongs to Z[q].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yuasa-rims-kokyuroku-2163-05/blocks/thm-page-008-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "parallel m-full twist formula",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "thm-page-008-01.md",
+      "narrative": null,
+      "content": "Let k = (ki,...,km) be an m-tuple of integers, ko = d = min{s,t}, and 6 = |s — tl].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yuasa-rims-kokyuroku-2163-05/blocks/def-page-009-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "the one-row colored s[3 tail of a link",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "def-page-009-01.md",
+      "narrative": null,
+      "content": "The one-row colored sls colored Jones polynomial {FB (D}n of a link L is zero stable if there exists a formal power series T;*(q) in Z[{q]] such that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yuasa-rims-kokyuroku-2163-05/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "Definition 4.3 (the one-row colored s[3 tail of a link). The one-row colored sls colored\nJones polynomial {FB (D}n of a link L is zero stable if there exists a formal power series\nT;*(q) in Z[{q]] such that\n\nTQ — FS(@ € a Zlldl]\n\nfor all n. Then, we call 7;\"(q) a tail of {HS (Q}n or the one-row colored sl3 tail of L.\n\nA (2,2m)-torus link is obtained by taking a closure of the m full twist two strands.\nThus, one can obtain the explicit formula of Fis (@) for the (2,2m)-torus link L =\nT5(2,2m) and T=(2, 2m).\n\nTheorem 4.4.\n\njes . (q) _ que ki? + 2h; g—2km (q)n (Qn\nPQ2m).n wees (Déem (Dn—hs (Dire",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/yuasa-rims-kokyuroku-2163-05/blocks/thm-page-009-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "thm-page-009-02.md",
+      "narrative": null,
+      "content": "jes . (q) _ que ki? + 2h; g—2km (q)n (Qn PQ2m).n wees (Déem (Dn—hs (Dire °° (Dn 1 him (Dn 1- 1-¢ : x (l= g(Q=@) A(n,0)?",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yuasa-rims-kokyuroku-2163-05/blocks/thm-page-009-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "An explicit formula for the one-row colored sl3 tail of a (2, 2m",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "thm-page-009-03.md",
+      "narrative": null,
+      "content": "torus link [Yual8, Yua20}).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/yuasa-rims-kokyuroku-2163-05/blocks/prose-page-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 10",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/page-010.md",
+      "narrative": null,
+      "content": "[Arm13]\n\n[BKM19]\n\n[BM15]\n\n[BM17]\n[BO17\n[CM14]\n[CM17]\n[DL06]\n[DLO7|\n[EH17]\n[FS20]\n\n[GL15]\n\n[GMV13]\n\n[GV17]\n[Haj16]\n\n[Kim06]\n\nCody Armond, The head and tail conjecture for alternating knots, Algebr.\nGeom. Topol. 13 (2013), no. 5, 2809-2826. MR 3116304\n\nKathrin Bringmann, Jonas Kaszian, and Antun Milas, Higher depth quantum\nmodular forms, multiple Eichler integrals, and sl3 false theta functions, Res.\nMath. Sci. 6 (2019), no. 2, Paper No. 20, 41. MR 3919493\n\nKathrin Bringmann and Antun Milas, W-algebras, false theta functions and\nquantum modular forms, I, Int. Math. Res. Not. IMRN (2015), no. 21,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/yuasa-rims-kokyuroku-2163-05/blocks/prose-page-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 11",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/page-011.md",
+      "narrative": null,
+      "content": "[Kim07]\n[KO16]\n\n[Kup94]\n[Kup96]\n\n[Law03]\n\n[Le00]\n[Lic97]\n\n[OY97]\n\n[Yual7]\n[Yual8]\n\n[Yua20]\n\n, Jones-Wenzl idempotents for rank 2 simple Lie algebras, Osaka J.\nMath. 44 (2007), no. 3, 691-722. MR 2360947\n\nAdam Keilthy and Robert Osburn, Rogers-Ramanujan type identities for alter-\nnating knots, J. Number Theory 161 (2016), 255-280. MR 3435728\n\nGreg Kuperberg, The quantum G2 link invariant, Internat. J. Math. 5 (1994),\nno. 1, 61-85. MR 1265145\n\n, Spiders for rank 2 Lie algebras, Comm. Math. Phys. 180 (1996), no. 1,\n109-151. MR 1403861\n\nRuth Lawrence, The PSU(3) invariant of the Poincaré homology",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

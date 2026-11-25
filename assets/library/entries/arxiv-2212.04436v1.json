@@ -1,0 +1,154 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2212.04436v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2212.04436v1/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "Dilute neutron star matter from neural-network quantum states\nBryce Fore,1 Jane M. Kim,2 Giuseppe Carleo,3 Morten Hjorth-Jensen,2, 4 and Alessandro Lovato5, 6, 7\n1Physics Division, Argonne National Laboratory, Argonne, IL 60439, USA\n2Department of Physics and Astronomy and Facility for Rare Isotope Beams,\nMichigan State University, East Lansing, MI 48824, USA\n3Institute of Physics, ´Ecole Polytechnique F´ed´erale de Lausanne (EPFL), CH-1015 Lausanne, Switzerland\n4Department of Physics and Center for Computing in Science Education, University of Oslo, N-0316 Oslo, Norway\n5Physics Division, Argo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2212.04436v1/blocks/prop-page-002-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "prop-page-002-01.md",
+      "narrative": null,
+      "content": "slightly larger than the experimental value of −18.9(4) fm, see [41] and references therein, while the eﬀective range is well reproduced.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2212.04436v1/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "slightly larger than the experimental value of −18.9(4)\nfm, see [41] and references therein, while the eﬀective\nrange is well reproduced. The Hamiltonian also contains\na repulsive three-body force that ensures the stability of\nnuclei.\nWe approximate the ground-state solution of the nu-\nclear many-body problem with an NQS ansatz that be-\nlongs to the hidden-fermion family [42], recently general-\nized to continuum Hilbert spaces and applied to atomic\nnuclei in Ref. [29]. In addition to the visible spatial and\nspin coordinates of the A neutrons, R = {r1 . . . rA} and\nS = {sz\n1 . . . sz\nA}, the Hi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2212.04436v1/blocks/prop-page-003-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "prop-page-003-01.md",
+      "narrative": null,
+      "content": "These minor diﬀer- ences are likely because model “o” yields a slightly larger nn scattering length than the experimental value and, therefore, more attraction in neutron matter.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2212.04436v1/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "0.010\n0.015\n0.020\n0.025\n0.030\n0.035\n0.040\nDensity (fm−3)\n4\n6\n8\n10\n12\n14\nEnergy (MeV)\n/πEFT\nAV18+UIX\nFermi Gas\nFIG. 2. Low-density neutron-matter /πEFT equation of state\nas obtained with the hidden-nucleon NQS (solid green circles)\ncompared with FHNC/SOC calculations with the AV18+UIX\nHamiltonian (red triangles) and the non-interacting Fermi\nGas (solid blue line).\nAs shown in Fig. 1 for ρ = 0.04 fm−3, after ≃2000\nstochastic-reconﬁguration steps, the NQS ansatz con-\nverges to the virtually exact unconstrained AFDMC en-\nergy, using a fraction of its computing time:\nabout\n100 hours on NVIDIA-A100",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2212.04436v1/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "yields energies per particle of low-density neutron mat-\nter that are in excellent agreement with unconstrained\nAFDMC calculations at a fraction of the computa-\ntional cost. In contrast, the computationally-inexpensive\nAFDMC constrained-path approximation brings about\nappreciable violations of the variational principle.\nWe have shown that /πEFT yields a low-density neu-\ntron matter equation of state that is remarkably close to\nthe APR one [40]. This ﬁnding paves the way for more\nsystematic comparisons between dilute neutron matter\nand Fermi gas around the unitary limit. In addition, it\nenables",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2212.04436v1/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "[18] Fr´ed´eric Nowacki, Alexandre Obertelli,\nand Alfredo\nPoves, “The neutron-rich edge of the nuclear landscape:\nExperiment and theory.” Prog. Part. Nucl. Phys. 120,\n103866 (2021), arXiv:2104.06238 [nucl-th].\n[19] J. Carlson, S. Gandolﬁ, F. Pederiva, Steven C. Pieper,\nR. Schiavilla, K. E. Schmidt, and R. B. Wiringa, “Quan-\ntum Monte Carlo methods for nuclear physics,” Rev.\nMod. Phys. 87, 1067 (2015), arXiv:1412.3081 [nucl-th].\n[20] K. E. Schmidt and S. Fantoni, “A quantum Monte Carlo\nmethod for nucleon systems,” Phys. Lett. B 446, 99–103\n(1999).\n[21] A. Lovato,\nI. Bombaci,\nD. Logoteta,\nM. Pia",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2212.04436v1/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "arXiv:1707.02883 [nucl-th].\n[50] John W. Negele and D. Vautherin, “Neutron star mat-\nter at subnuclear densities,” Nucl. Phys. A 207, 298–320\n(1973).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

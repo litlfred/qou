@@ -1,0 +1,81 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2407.04744v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Magnetic structure of A ≤ 10 nuclei using the Norfolk nuclear models with quantum Monte Carlo methods",
+  "contains": [
+    "library/arxiv-2407.04744v2/sections/sec-000",
+    "library/arxiv-2407.04744v2/sections/sec-001",
+    "library/arxiv-2407.04744v2/sections/sec-002",
+    "library/arxiv-2407.04744v2/sections/sec-003",
+    "library/arxiv-2407.04744v2/sections/sec-004",
+    "library/arxiv-2407.04744v2/sections/sec-005",
+    "library/arxiv-2407.04744v2/sections/sec-006",
+    "library/arxiv-2407.04744v2/sections/sec-007",
+    "library/arxiv-2407.04744v2/sections/sec-008",
+    "library/arxiv-2407.04744v2/sections/sec-009",
+    "library/arxiv-2407.04744v2/sections/sec-010",
+    "library/arxiv-2407.04744v2/sections/sec-011",
+    "library/arxiv-2407.04744v2/sections/sec-012",
+    "library/arxiv-2407.04744v2/sections/sec-013",
+    "library/arxiv-2407.04744v2/sections/sec-014",
+    "library/arxiv-2407.04744v2/sections/sec-015",
+    "library/arxiv-2407.04744v2/sections/sec-016",
+    "library/arxiv-2407.04744v2/sections/sec-017",
+    "library/arxiv-2407.04744v2/sections/sec-018",
+    "library/arxiv-2407.04744v2/sections/sec-019",
+    "library/arxiv-2407.04744v2/sections/sec-020",
+    "library/arxiv-2407.04744v2/sections/sec-021",
+    "library/arxiv-2407.04744v2/sections/sec-022",
+    "library/arxiv-2407.04744v2/sections/sec-023",
+    "library/arxiv-2407.04744v2/sections/sec-024",
+    "library/arxiv-2407.04744v2/sections/sec-025"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Magnetic structure of A ≤ 10 nuclei using the Norfolk nuclear models with quantum Monte Carlo methods — 26 sections: Magnetic structure of A 10 nuclei ; Introduction; Theory\n\n**Magnetic structure of A ≤ 10 nuclei using the Norfolk nuclear models with quantum Monte Carlo methods**\n\n*Pastore1,4,§ M. Piarulli1,4,¶ R. Schiavilla2,3,∗∗and R. B. Wiringa5††*\n\n29 pp, 26 sections.\n\n**Outline.** Magnetic structure of A 10 nuclei using the No; Introduction; Theory; Quantum Monte Carlo methods; The Norfolk interaction model; The electromagnetic current operator; Magnetic form factors and moments; Results and Discussion; Magnetic moments; VMC magnetic moments of A=3-7 nuclei; VMC magnetic moments of A=8-10 nuclei; GFMC magnetic moments of A=3-9 nuclei; Scaled two-body magnetic densities; Model dependencies in two-body magnetic densit; Magnetic form factors and high-momentum struct; Tritium and Helium-3; Lithium-6; Lithium-7 and Beryllium-7",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2407.04744&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2407.04744v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "2407.04744v2.pdf",
+    "source_sha256": "fc6fda3138296fb1f0c693652d26ced7fd279b09f4742b9b1a8ef6459b5c63a2",
+    "pages": 29,
+    "arxiv": {
+      "id": "2407.04744",
+      "version": "2",
+      "primary_class": "nucl-th",
+      "stamp_date": "4 Dec 2024"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

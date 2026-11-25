@@ -1,0 +1,371 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2003.13612v3",
+  "title": "On the mass difference between proton and neutron",
+  "variant": "pdf",
+  "pages": 11,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Abstract",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-abstract"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-002-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-001-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 62,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bern",
+          "heading": false
+        },
+        {
+          "term": "theoretical physics",
+          "heading": false
+        },
+        {
+          "term": "bonn",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:2003.13612v3 [hep-ph] 22 Jan 2021 On the mass diﬀerence between proton and neutron J. Gasser, H. Leutwyler Albert Einstein Center for Fundamental Physics, Institute for Theoretical Physics, University of Bern, Sidlerstrasse 5, 3012 Bern, Switzerland A. Rusetsky Helmholtz-Institut f¨ur Strahlen- und Kernphysik (Theorie) and Bethe Center for Theoretical Physics, Universit¨at Bonn, Nussallee 14-16, D-53115 Bonn,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2003.13612v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-abstract",
+      "number": null,
+      "title": "Abstract",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4866,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reggeon dominance",
+          "heading": false
+        },
+        {
+          "term": "elastic contributions",
+          "heading": false
+        },
+        {
+          "term": "reggeon exchange",
+          "heading": false
+        },
+        {
+          "term": "compton amplitude",
+          "heading": false
+        },
+        {
+          "term": "unsubtracted dispersion",
+          "heading": false
+        },
+        {
+          "term": "inelastic contributions",
+          "heading": false
+        },
+        {
+          "term": "cottingham formula",
+          "heading": false
+        },
+        {
+          "term": "spin contributions",
+          "heading": false
+        }
+      ],
+      "extract": "The Cottingham formula expresses the electromagnetic part of the mass of a particle in terms of the virtual Compton scattering amplitude. At large photon momenta, this amplitude is dominated by short distance singularities associated with operators of spin 0 and spin 2. In the diﬀerence between proton and neutron, chiral symmetry suppresses the spin 0 term. Although the angular integration removes the spin 2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 26,
+      "summary": null,
+      "keywords": [],
+      "extract": "results, but the method is gradually improved. In the long run, these will achieve comparable accuracy and thereby put Reggeon dominance to a very stringent test.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1034,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "annals phys",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "arxiv",
+          "heading": false
+        },
+        {
+          "term": "lipatov",
+          "heading": false
+        },
+        {
+          "term": "moch",
+          "heading": false
+        },
+        {
+          "term": "umlein",
+          "heading": false
+        },
+        {
+          "term": "eur",
+          "heading": false
+        },
+        {
+          "term": "carrazza",
+          "heading": false
+        }
+      ],
+      "extract": "We thank Johannes Bl¨umlein for providing us with numerical tables for the structure functions based on the ABM solutions of the DGLAP equations, Thomas Becher for information about the anomalous dimensions in QCD+QED, Vadim Lensky and Vladimir Pascalutsa for a Mathemat- ica notebook concerning the representation of the Compton amplitude in χPT and Ryan Bignell, Irinel Caprini, Stefano Carrazza, Gilberto Colangelo,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "compton amplitude",
+      "heading": false
+    },
+    {
+      "term": "reggeon dominance",
+      "heading": false
+    },
+    {
+      "term": "mass diﬀerence",
+      "heading": false
+    },
+    {
+      "term": "cottingham formula",
+      "heading": false
+    },
+    {
+      "term": "elastic contributions",
+      "heading": false
+    },
+    {
+      "term": "reggeon exchange",
+      "heading": false
+    },
+    {
+      "term": "compton scattering",
+      "heading": false
+    },
+    {
+      "term": "unsubtracted dispersion",
+      "heading": false
+    },
+    {
+      "term": "inelastic contributions",
+      "heading": false
+    },
+    {
+      "term": "annals phys",
+      "heading": false
+    },
+    {
+      "term": "spin contributions",
+      "heading": false
+    },
+    {
+      "term": "integration suppresses",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 3,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 4,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p10); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 4 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2003.13612v3"
+  }
+}

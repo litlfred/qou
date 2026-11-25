@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1711.08944v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "The second largest eigenvalues of some Cayley graphs on alternating groups ∗",
+      "dcterms:creator": [
+        "Huang, Xueyi"
+      ],
+      "dcterms:issued": "D:20181212",
+      "dcterms:identifier": "https://arxiv.org/abs/1711.08944",
+      "dcterms:abstract": "Let An denote the alternating group of degree n with n ≥3. The al- ternating group graph AGn, extended alternating group graph EAGn and complete alternating group graph CAGn are the Cayley graphs Cay(An, T1), Cay(An, T2) and Cay(An, T3), respectively, where T1 = {(1, 2, i), (1, i, 2) | 3 ≤i ≤n}, T2 = {(1, i, j), (1, j, i) | 2 ≤i < j ≤n} and T3 = {(i, j, k), (i, k, j) | 1 ≤i < j < k ≤n}. In this paper, we determine the second largest eigenvalues of AGn, EAGn and CAGn.",
+      "dcterms:source": "library/arxiv-1711.08944v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1711.08944v2"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1409.4073v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION",
+      "dcterms:creator": [
+        "TONINI, FABIO"
+      ],
+      "dcterms:issued": "D:20220531",
+      "dcterms:identifier": "https://arxiv.org/abs/1409.4073",
+      "dcterms:abstract": "We introduce “sheaﬁﬁcation” functors from categories of (lax monoidal) linear functors to categories of quasi-coherent sheaves (of algebras) of stacks. They generalize the homogeneous sheaﬁﬁcation of graded modules for projective schemes and have applications in the theory of non-abelian Galois covers and of Cox rings and homogeneous sheaﬁﬁcation functors. Moreover, using this theory, we prove a non-neutral form of Tannaka’s reconstruction, extending the classical correspondence between torsors and strong monoidal functors.",
+      "dcterms:source": "library/arxiv-1409.4073v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1409.4073v1"
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/bib-verification/reference/crew2023.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../assets/navbar/rail-2bw6z1udzso.js" defer></script><script src="../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../.." data-fa-to-root="../../../../../../../../..">{"data":"rail-2bw6z1udzso","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/bib-verification/reference/crew2023.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/bib-verification/reference/crew2023.attestations</h1>
+<p class="m">A <a href="../../../../../../">qa-attestations</a> node held by <a href="../../../../../">qou</a>, at <code>test/attestations/bib-verification/reference/crew2023.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>bib-verification</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;reference&quot;,
+  &quot;id&quot;: &quot;crew2023&quot;,
+  &quot;path&quot;: null
+}</pre></dd>
+<dt>verifications</dt><dd><pre>[
+  {
+    &quot;position&quot;: 294,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/arxiv-2304.07001v3/2304.07001v3.pdf&quot;
+      },
+      &quot;id&quot;: &quot;crew2023&quot;,
+      &quot;status&quot;: &quot;unreviewed&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;core&quot;,
+        &quot;rationale&quot;: &quot;rem:st-is-median-resummation identifies the surreal standard part st with the Ecalle median resummation L^med and leans on &#39;the unique real single-valued average&#39; being well defined; conj:kashaev-surreal applies exactly that to the Kashaev transseries at a root of unity. Both currently cite only ecalle1981 and berarducci-mantova2018 -- i.e. the general theory -- while in quantum topology the existence and radial-limit behaviour of S^med is Conjecture 1.1 of Costin-Garoufalidis, still open in general. This paper proves Conjecture 1.1 parts (1) and (2), plus an explicit radial-limit formula (part 3), for every Habiro-ring element Phi_f admitting a strange identity to a partial theta series with even, mean-zero periodic f (Thm 1.2), and derives the full conjecture for the torus-knot families T(2,2u+1) and T(3,2k) (Cor 1.5). That converts the folio&#39;s &#39;conjecturally well-defined median resummation&#39; into &#39;proved on a named class&#39;, which is precisely the epistemic status rem:st-is-median-resummation should be recording. Explicit scope caveat, and the reason no aid-proof is proposed: the hypothesis is a strange identity to a partial theta series, which the trefoil/torus-knot Kontsevich-Zagier series satisfy and the *hyperbolic* 4_1 tail S(q) = sum prod (1-q^j)(1-q^{-j}) of prop:habiro-tail-archimedean-action does NOT. Citing this at the 4_1 block must therefore be a scope statement (&#39;proved for the torus families, open for 4_1&#39;), never a discharge.&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;Thm 1.2 (1)-(3), p. 5, with the Borel transform computed at eq. (2.1)&quot;,
+            &quot;statement&quot;: &quot;For Phi_f in the Habiro ring with strange identity Phi_f &#39;equals&#39; theta^{(1)}_{a,b,f} (f even, period M, mean zero), F_f(x) has a resurgent Borel transform, S^med_f is analytic on Re(x) &gt; 0 with radial limits at (1/2 pi i)Q on its natural boundary, and those limits are given in closed form by eq. (1.17) as an integral of theta^{(0)} plus an explicit theta^{(1)} term.&quot;,
+            &quot;useForFolio&quot;: &quot;Upgrades rem:st-is-median-resummation from &#39;each side is the unique real single-valued value compatible with the asymptotics&#39; (an appeal to Watson/Nevanlinna-Sokal uniqueness) to a cited theorem establishing existence and radial limits on a concrete class of Habiro elements, and supplies the exact vocabulary (median resummation, natural boundary, radial limit at rationals) that rem:ecalle-borel-resurgence-vocabulary fixes.&quot;,
+            &quot;targets&quot;: [
+              &quot;rem:st-is-median-resummation&quot;,
+              &quot;rem:ecalle-borel-resurgence-vocabulary&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Cor 1.5 (p. 6), via Thm 1.4 (eq. 1.22)&quot;,
+            &quot;statement&quot;: &quot;The Costin-Garoufalidis Conjecture 1.1 holds for the torus-knot families T(2,2u+1) and T(3,2k); specialising u = 1 or k = 1 recovers the trefoil.&quot;,
+            &quot;useForFolio&quot;: &quot;conj:kashaev-surreal asserts that st applied to the Kashaev transseries is its median resummation, i.e. the asymptotic content of the volume conjecture in resummation form. Cor 1.5 gives the first proved knot families in which the resummation half of that statement holds, so the conjecture can name its verified cases rather than standing entirely unanchored.&quot;,
+            &quot;targets&quot;: [
+              &quot;conj:kashaev-surreal&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Sec 1, eqs (1.3)-(1.8) and Conj 1.1&quot;,
+            &quot;statement&quot;: &quot;Setup identifying the Habiro ring H, the Kashaev invariant Phi_K in H, F_K(x) = Phi_K(e^{-1/x}) in C[[1/x]], its Borel transform G_K and median resummation S^med_K, and the statement of the Costin-Garoufalidis conjecture.&quot;,
+            &quot;useForFolio&quot;: &quot;Provides the standard dictionary Habiro element -&gt; formal series -&gt; Borel -&gt; median resummation that prop:habiro-tail-archimedean-action uses implicitly when it reads an optimal-truncation resurgent action A_0 off the 4_1 tail, and makes explicit that 4_1 is outside the proved class.&quot;,
+            &quot;targets&quot;: [
+              &quot;prop:habiro-tail-archimedean-action&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;add-reference&quot;,
+            &quot;rationale&quot;: &quot;Orphan, though two of its authors are already in references.ts via fantini-rella2024 and fantini-wheeler2024; this is the Habiro-ring-side resurgence result those entries do not cover.&quot;,
+            &quot;target&quot;: &quot;folio/schema/references.ts (proposed id: crew-fantini-goswami-osburn-wheeler2025)&quot;,
+            &quot;bean&quot;: &quot;qou-xmgd&quot;
+          },
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;rem:st-is-median-resummation asserts median resummation is the unique real single-valued selection but cites only the general Ecalle theory; Thm 1.2 proves existence + radial limits on a named Habiro class.&quot;,
+            &quot;target&quot;: &quot;rem:st-is-median-resummation&quot;,
+            &quot;bean&quot;: &quot;qou-74i5&quot;
+          },
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;conj:kashaev-surreal can name Cor 1.5 (T(2,2u+1), T(3,2k)) as the proved cases of the resummation half of its statement.&quot;,
+            &quot;target&quot;: &quot;conj:kashaev-surreal&quot;,
+            &quot;bean&quot;: &quot;qou-5le3&quot;
+          },
+          {
+            &quot;action&quot;: &quot;new-remark&quot;,
+            &quot;rationale&quot;: &quot;Record the scope boundary explicitly: the strange-identity/partial-theta hypothesis of Thm 1.2 covers torus knots and not the hyperbolic 4_1 tail on which prop:habiro-tail-archimedean-action computes A_0 = pi^2/5, so the proved resurgence does not transfer to the 4_1 face. Deliberately a remark and not aid-proof, because the hypotheses demonstrably do not hold there.&quot;,
+            &quot;target&quot;: &quot;prop:habiro-tail-archimedean-action&quot;,
+            &quot;bean&quot;: &quot;qou-jeae&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-08T16:12:29.859Z&quot;,
+        &quot;source_sha&quot;: &quot;b6c0d7f50b64&quot;
+      },
+      &quot;note&quot;: &quot;Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \&quot;held but uncitable\&quot;; the join already existed on the references.ts side.&quot;,
+      &quot;verified_at&quot;: &quot;2026-09-03T04:37:40Z&quot;,
+      &quot;verified_by&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;model&quot;: &quot;claude-opus-5&quot;
+      }
+    }
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

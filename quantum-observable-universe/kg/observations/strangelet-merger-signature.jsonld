@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-strangelet-merger-signature",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:strangelet-merger-signature",
+  "kind": "remark",
+  "title": "Strangelet deconversion energy in neutron star mergers",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-strangelet-witten-stability",
+    "papers/quantum-observable-universe/blocks/prop-eos-borromean-cfl",
+    "papers/quantum-observable-universe/blocks/rem-cfl-neutron-star-observables"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/rem-strangelet-witten-stability",
+  "tags": [
+    "strangelet",
+    "neutron-star",
+    "merger",
+    "kilonova",
+    "gravitational-waves",
+    "neutrino-burst",
+    "phase-transition",
+    "falsifiability"
+  ],
+  "text": "strangelet-merger-signature.md",
+  "provenance": "authored"
+}

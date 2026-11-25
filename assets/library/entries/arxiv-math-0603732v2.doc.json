@@ -1,0 +1,2538 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0603732v2",
+  "title": "arxiv-math-0603732v2",
+  "variant": "pdf",
+  "pages": 31,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "0",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-0-introduction"
+    },
+    {
+      "level": 2,
+      "title": "0.1.",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-01"
+    },
+    {
+      "level": 2,
+      "title": "Rigid dualising complexes",
+      "number": "0.2",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-02-rigid-dualising-complexes"
+    },
+    {
+      "level": 2,
+      "title": "Nakayama automorphisms",
+      "number": "0.3",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-03-nakayama-automorphisms"
+    },
+    {
+      "level": 2,
+      "title": "Twisted Hochschild groups",
+      "number": "0.4",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-04-twisted-hochschild-groups"
+    },
+    {
+      "level": 2,
+      "title": "Classes of examples",
+      "number": "0.5",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-05-classes-of-examples"
+    },
+    {
+      "level": 2,
+      "title": "The antipode",
+      "number": "0.6",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-06-the-antipode"
+    },
+    {
+      "level": 2,
+      "title": "0.7.",
+      "number": null,
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-07"
+    },
+    {
+      "level": 1,
+      "title": "General preparations",
+      "number": "1",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-1-general-preparations"
+    },
+    {
+      "level": 2,
+      "title": "Standard notation",
+      "number": "1.1",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-11-standard-notation"
+    },
+    {
+      "level": 2,
+      "title": "Artin-Schelter Gorenstein algebras",
+      "number": "1.2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-12-artin-schelter-gorenstein-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Homological integrals",
+      "number": "1.3",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-13-homological-integrals"
+    },
+    {
+      "level": 1,
+      "title": "Hopf algebra Preparations",
+      "number": "2",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-2-hopf-algebra-preparations"
+    },
+    {
+      "level": 2,
+      "title": "Restriction via",
+      "number": "2.1",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-21-restriction-via"
+    },
+    {
+      "level": 2,
+      "title": "The left adjoint action",
+      "number": "2.2",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-22-the-left-adjoint-action"
+    },
+    {
+      "level": 2,
+      "title": "Twisted (bi)modules",
+      "number": "2.3",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-23-twisted-bimodules"
+    },
+    {
+      "level": 2,
+      "title": "Homological properties of the adjoint action",
+      "number": "2.4",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-24-homological-properties-of-the-adjoint-action"
+    },
+    {
+      "level": 2,
+      "title": "Representations and winding automorphisms",
+      "number": "2.5",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-25-representations-and-winding-automorphisms"
+    },
+    {
+      "level": 2,
+      "title": "The right adjoint action",
+      "number": "2.6",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-26-the-right-adjoint-action"
+    },
+    {
+      "level": 1,
+      "title": "Twisted Hochschild homology",
+      "number": "3",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-3-twisted-hochschild-homology"
+    },
+    {
+      "level": 2,
+      "title": "Definition",
+      "number": "3.1",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-31-definition"
+    },
+    {
+      "level": 2,
+      "title": "Ischebeck's spectral sequence",
+      "number": "3.2",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The link with integrals",
+      "number": "3.3",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-33-the-link-with-integrals"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem 0.4(a)",
+      "number": "3.4",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-34-proof-of-theorem-04a"
+    },
+    {
+      "level": 2,
+      "title": "Remarks",
+      "number": "3.5",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-35-remarks"
+    },
+    {
+      "level": 1,
+      "title": "AS-Gorenstein algebras and dualising complexes",
+      "number": "4",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-4-as-gorenstein-algebras-and-dualising-complexes"
+    },
+    {
+      "level": 2,
+      "title": "Dualising Complexes",
+      "number": "4.1",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Rigid dualising complexes",
+      "number": "4.2",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-42-rigid-dualising-complexes"
+    },
+    {
+      "level": 2,
+      "title": "Van den Bergh condition",
+      "number": "4.3",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-43-van-den-bergh-condition"
+    },
+    {
+      "level": 2,
+      "title": "Rigid Gorenstein algebras and Nakayama automorphisms",
+      "number": "4.4",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-44-rigid-gorenstein-algebras-and-nakayama-automo"
+    },
+    {
+      "level": 2,
+      "title": "AS-Gorenstein Hopf algebras are rigid Gorenstein",
+      "number": "4.5",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-45-as-gorenstein-hopf-algebras-are-rigid-gorenst"
+    },
+    {
+      "level": 2,
+      "title": "The antipode",
+      "number": "4.6",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-46-the-antipode"
+    },
+    {
+      "level": 1,
+      "title": "Twisted Hochschild cohomology",
+      "number": "5",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-5-twisted-hochschild-cohomology"
+    },
+    {
+      "level": 2,
+      "title": "Cohomology and duality",
+      "number": "5.1",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-51-cohomology-and-duality"
+    },
+    {
+      "level": 2,
+      "title": "Poincaré duality for Hopf algebras",
+      "number": "5.2",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-52-poincaré-duality-for-hopf-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem ??(b)",
+      "number": "5.3",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Examples",
+      "number": "6",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-6-examples"
+    },
+    {
+      "level": 2,
+      "title": "Some general properties",
+      "number": "6.1",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-61-some-general-properties"
+    },
+    {
+      "level": 2,
+      "title": "Noetherian PI Hopf algebras",
+      "number": "6.2",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-62-noetherian-pi-hopf-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Enveloping algebras",
+      "number": "6.3",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-63-enveloping-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Quantised enveloping algebras",
+      "number": "6.4",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-64-quantised-enveloping-algebras"
+    },
+    {
+      "level": 2,
+      "title": "Quantised function algebras",
+      "number": "6.5",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-65-quantised-function-algebras"
+    },
+    {
+      "level": 2,
+      "title": "The special linear group",
+      "number": "6.6",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-66-the-special-linear-group"
+    },
+    {
+      "level": 2,
+      "title": "Noetherian group algebras",
+      "number": "6.7",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-67-noetherian-group-algebras"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 223,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "noetherian hopf",
+          "heading": false
+        },
+        {
+          "term": "hopf algebras",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite dimensional",
+          "heading": false
+        },
+        {
+          "term": "automorphism",
+          "heading": false
+        },
+        {
+          "term": "hochschild",
+          "heading": false
+        },
+        {
+          "term": "twisted",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0603732v2 [math.RA] 6 Jul 2006 DUALISING COMPLEXES AND TWISTED HOCHSCHILD (CO)HOMOLOGY FOR NOETHERIAN HOPF ALGEBRAS K.A. BROWN AND J.J. ZHANG Abstract. We show that many noetherian Hopf algebras A have a rigid du- alising complex R with R ∼ = νA1[d]. Here, d is the injective dimension of the algebra and ν is a certain k-algebra automorphism of A, unique up to an inner automorphism. In honour of the ﬁnite",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0603732v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-0-introduction",
+      "number": "0",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-01",
+      "number": null,
+      "title": "0.1.",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 88,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantised function",
+          "heading": false
+        },
+        {
+          "term": "ahmer",
+          "heading": false
+        },
+        {
+          "term": "hadﬁeld",
+          "heading": false
+        }
+      ],
+      "extract": "The starting point for the work described in this paper was the observa- tion by Hadﬁeld and Kr¨ahmer [HK1] that, when calculating the Hochschild co- homology of the quantised function algebra Oq(SL(2)), twisting the coeﬃcient bimodule Oq(SL(2)) by a suitable algebra automorphism ν, and so calculating H∗(Oq(SL(2)), νOq(SL(2))1), avoids the “dimension drop” which occurs if one works with untwisted coeﬃcients. Our",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-02-rigid-dualising-complexes",
+      "number": "0.2",
+      "title": "Rigid dualising complexes",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 193,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rigid dualising",
+          "heading": true
+        },
+        {
+          "term": "xxsec",
+          "heading": false
+        },
+        {
+          "term": "dualising complex",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "transpires",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#xxsec0.2 label=\"xxsec0.2\"} It transpires that twisting enters the theory at the level of the *rigid dualising complex* $R$ of $A$, defined in paragraph ([\\[xxsec4.2\\]](#xxsec4.2){reference-type=\"ref\" reference=\"xxsec4.2\"}). Let $A$ be a noetherian Hopf algebra over the base field $k$. (We will assume except where stated otherwise that $k$ is algebraically closed.) Conjecturally, $A$ is *Artin-Schelter*",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-03-nakayama-automorphisms",
+      "number": "0.3",
+      "title": "Nakayama automorphisms",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 107,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nakayama",
+          "heading": true
+        },
+        {
+          "term": "xxsec",
+          "heading": false
+        },
+        {
+          "term": "mathrm ext",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#xxsec0.3 label=\"xxsec0.3\"} To describe the Nakayama automorphism of $A$ we need to recall from [@LWZ] the definition of the *left integral* of $A$. When $A$ is AS-Gorenstein of dimension $d$, $\\mathrm{Ext}^i_A({_{A}k},{_{A}A})$ is 0 except when $i=d$, and $\\mathrm{Ext}^d_A({_{A}k},{_{A}A})$, the left integral $\\textstyle \\int^l_A$ of $A$, has $k$-dimension 1. Thus $\\mathrm{Ext}^d_A({_{A}k},{_{A}A}) \\cong \\,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-04-twisted-hochschild-groups",
+      "number": "0.4",
+      "title": "Twisted Hochschild groups",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 281,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted hochschild",
+          "heading": true
+        },
+        {
+          "term": "xxsec",
+          "heading": false
+        },
+        {
+          "term": "hochschild homology",
+          "heading": false
+        },
+        {
+          "term": "mathrm thcdim",
+          "heading": false
+        },
+        {
+          "term": "mathrm thdim",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "consequence mathop",
+          "heading": false
+        },
+        {
+          "term": "kmt",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#xxsec0.4 label=\"xxsec0.4\"} Hochschild (co)homology with coefficients in a twisted bimodule arises naturally when one studies the twisted (co)homology introduced by Kustermans, Murphy and Tuset [@KMT]. Thus, let $B$ be an algebra of finite global homological dimension, let $\\sigma$ be an algebra automorphism of $B$ and let $HH^\\sigma_i(B)$ be the $i$th $\\sigma$-twisted Hochschild homology of $B$ (see [@KMT] or",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-05-classes-of-examples",
+      "number": "0.5",
+      "title": "Classes of examples",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 206,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xxsec",
+          "heading": false
+        },
+        {
+          "term": "enveloping algebras",
+          "heading": false
+        },
+        {
+          "term": "noetherian hopf",
+          "heading": false
+        },
+        {
+          "term": "nakayama automorphism",
+          "heading": false
+        },
+        {
+          "term": "group algebras",
+          "heading": false
+        },
+        {
+          "term": "classes",
+          "heading": true
+        },
+        {
+          "term": "quantised",
+          "heading": false
+        },
+        {
+          "term": "homological",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#xxsec0.5 label=\"xxsec0.5\"} Our results apply to all currently known classes of noetherian Hopf algebras (with bijective antipode $S$). In $\\S$<!-- -->6 we examine the details of the application, and in particular the nature of the Nakayama automorphism, for - affine noetherian Hopf algebras satisfying a polynomial identity, ([\\[xxsec6.2\\]](#xxsec6.2){reference-type=\"ref\" reference=\"xxsec6.2\"}); - enveloping",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-06-the-antipode",
+      "number": "0.6",
+      "title": "The antipode",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 212,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xxsec",
+          "heading": false
+        },
+        {
+          "term": "antipode",
+          "heading": true
+        },
+        {
+          "term": "inner automorphism",
+          "heading": false
+        },
+        {
+          "term": "nakayama order",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "twisted hochschild",
+          "heading": false
+        },
+        {
+          "term": "finite order",
+          "heading": false
+        },
+        {
+          "term": "reference-type",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#xxsec0.6 label=\"xxsec0.6\"} If $A$ is a noetherian AS-Gorenstein Hopf algebra we can apply Theorem [\\[xxsec0.2\\]](#xxsec0.2){reference-type=\"ref\" reference=\"xxsec0.2\"} also to the Hopf algebra $(A, \\Delta^{\\sf op}, S^{-1}, \\epsilon)$. The two answers thus obtained for $\\nu$ are necessarily equal to within an inner automorphism of $A$. Consequently we deduce ::: theorem Let $A$ be as in Theorem",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-07",
+      "number": null,
+      "title": "0.7.",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 63,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted hochschild",
+          "heading": false
+        },
+        {
+          "term": "dualising",
+          "heading": false
+        },
+        {
+          "term": "respec",
+          "heading": false
+        }
+      ],
+      "extract": "Some homological and Hopf algebra background is given in §§1 and 2 respec- tively. Twisted Hochschild homology is recalled and studied in §3, and Theorem 0.4(a) is proved. Rigid dualising complexes are deﬁned in §4, and Theorems 0.2, 0.3 and 0.6 are proved. In §5 we study twisted Hochschild cohomology, and prove Theorem 0.4(b) and Corollary 0.4. 4 K.A. BROWN AND J.J. ZHANG",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-1-general-preparations",
+      "number": "1",
+      "title": "General preparations",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-11-standard-notation",
+      "number": "1.1",
+      "title": "Standard notation",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 255,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "noetherian hopf",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "antipode",
+          "heading": false
+        },
+        {
+          "term": "algebra homomorphism",
+          "heading": false
+        },
+        {
+          "term": "xxsec",
+          "heading": false
+        },
+        {
+          "term": "otimes",
+          "heading": false
+        },
+        {
+          "term": "coproduct",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#xxsec1.1 label=\"xxsec1.1\"} Let $k$ be a commutative base field, arbitrary for the moment. When we are working with quantum groups it will sometimes be necessary to assume that $k$ contains ${\\mathbb C}(q)$. Unless stated otherwise all vector spaces are over $k$, and an unadorned $\\otimes$ will mean $\\otimes_k$. An algebra or a ring always means a $k$-algebra with associative multiplication $m_A$ and with unit 1.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-12-artin-schelter-gorenstein-algebras",
+      "number": "1.2",
+      "title": "Artin-Schelter Gorenstein algebras",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 312,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "artin-schelter gorenstein",
+          "heading": true
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathrm gldim",
+          "heading": false
+        },
+        {
+          "term": "augmentation epsilon",
+          "heading": false
+        },
+        {
+          "term": "mathrm ext",
+          "heading": false
+        },
+        {
+          "term": "xxsec",
+          "heading": false
+        },
+        {
+          "term": "global dimension",
+          "heading": false
+        },
+        {
+          "term": "injective dimension",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#xxsec1.2 label=\"xxsec1.2\"} While our main interest is in Hopf algebras of various sorts, some of our results apply in fact to any algebra possessing a natural augmentation $\\epsilon$ to the base field $k$, such as, for example, the connected $\\mathbb{N}$-graded $k$-algebras, where $\\epsilon$ is the graded map $A\\to A/A_{\\geq 1}(=k)$. Accordingly, we give the following definitions in this more general context.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-13-homological-integrals",
+      "number": "1.3",
+      "title": "Homological integrals",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 164,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textstyle int",
+          "heading": false
+        },
+        {
+          "term": "write textstyle",
+          "heading": false
+        },
+        {
+          "term": "mathrm ext",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "homological",
+          "heading": true
+        },
+        {
+          "term": "homological integral",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#xxsec1.3 label=\"xxsec1.3\"} Here is the natural extension to augmented algebras of a definition recently given in [@LWZ] for Hopf algebras. This definition generalises a familiar concept from the case of a finite dimensional Hopf algebra [@Mo Definition 2.1.1]). The motive for the use of the term \"integral\\\" in the latter setting arises from the relation to the Haar integral. ::: definition Let $A$ be a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-2-hopf-algebra-preparations",
+      "number": "2",
+      "title": "Hopf algebra Preparations",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-013-21-restriction-via",
+      "number": "2.1",
+      "title": "Restriction via",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 307,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm res",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "hom otimes",
+          "heading": false
+        },
+        {
+          "term": "res preserves",
+          "heading": false
+        },
+        {
+          "term": "otimes mapsto",
+          "heading": false
+        },
+        {
+          "term": "sum otimes",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "xxsec",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#xxsec2.1 label=\"xxsec2.1\"} Let $A$ be a Hopf algebra. Let $\\Delta: A\\to A\\otimes A$ be the coproduct. Then we may view $A$ as a subalgebra of the algebra $A\\otimes A$ via $\\Delta$. Define a functor $$\\mathrm{Res}_A\\; : \\; (A\\otimes A)-\\mathop{\\mathrm{{\\sf Mod}}}\\; \\to\\; A-\\mathop{\\mathrm{{\\sf Mod}}}$$ by restriction of the scalars via $\\Delta$, so that $\\mathrm{Res}_A$ is equivalent to the functor",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-22-the-left-adjoint-action",
+      "number": "2.2",
+      "title": "The left adjoint action",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 147,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "left adjoint",
+          "heading": true
+        },
+        {
+          "term": "xxsec",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "preserves injectives",
+          "heading": false
+        },
+        {
+          "term": "adjoint functor",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#xxsec2.2 label=\"xxsec2.2\"} The algebra homomorphism $\\operatorname{id}_A\\otimes S: A\\otimes A\\to A\\otimes A^{\\sf op}=A^e$ induces a functor $$F_{\\operatorname{id}_A\\otimes S}\\; : \\; A^e - \\mathop{\\mathrm{{\\sf Mod}}}\\; \\to \\; (A\\otimes A) - \\mathop{\\mathrm{{\\sf Mod}}}.$$ If $S$ is bijective, then $F_{\\operatorname{id}_A\\otimes S}$ is an invertible functor. The *left adjoint functor* $L$ [@Mo Definition 3.4.1(1)]",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-23-twisted-bimodules",
+      "number": "2.3",
+      "title": "Twisted (bi)modules",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 494,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sigma tau",
+          "heading": false
+        },
+        {
+          "term": "cdot sigma",
+          "heading": false
+        },
+        {
+          "term": "automorphisms sigma",
+          "heading": false
+        },
+        {
+          "term": "sigma beta",
+          "heading": false
+        },
+        {
+          "term": "aligned sigma",
+          "heading": false
+        },
+        {
+          "term": "sigma normal",
+          "heading": false
+        },
+        {
+          "term": "write sigma",
+          "heading": false
+        },
+        {
+          "term": "sum sigma",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#xxsec2.3 label=\"xxsec2.3\"} We extend slightly a standard notation for twisted one-sided modules, as follows. Let $A$ be an algebra and let $M$ be an $A$-bimodule. For every pair of algebra automorphisms $\\sigma, \\tau$ of $A$, we write $^\\sigma M^\\tau$ for the $A$-bimodule defined by $$a\\cdot m\\cdot b\\; =\\; \\sigma(a)m\\tau(b)$$ for all $a,b\\in A$ and all $m\\in M$. When one or the other of $\\sigma, \\tau$ is the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-24-homological-properties-of-the-adjoint-action",
+      "number": "2.4",
+      "title": "Homological properties of the adjoint action",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 246,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "xxsec",
+          "heading": false
+        },
+        {
+          "term": "injective resolution",
+          "heading": false
+        },
+        {
+          "term": "mathrm hom",
+          "heading": false
+        },
+        {
+          "term": "mathrm ext",
+          "heading": false
+        },
+        {
+          "term": "sum epsilon",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#xxsec2.4 label=\"xxsec2.4\"} For us, the usefulness of $L$ rests in its role linking homological algebra over $A$ with that over $A^e$, thus permitting the calculation of Hochschild cohomology. The key lemma is the following result of Ginzburg and Kumar [@GK Proposition p.197]: ::: lemma [@GK] Let $A$ be a Hopf algebra and let $M$ be an $A$-bimodule. 1.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-25-representations-and-winding-automorphisms",
+      "number": "2.5",
+      "title": "Representations and winding automorphisms",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 323,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "winding",
+          "heading": true
+        },
+        {
+          "term": "winding automorphism",
+          "heading": false
+        },
+        {
+          "term": "mathrm alg",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathrm aut",
+          "heading": false
+        },
+        {
+          "term": "xxsec",
+          "heading": false
+        },
+        {
+          "term": "text mathrm",
+          "heading": false
+        },
+        {
+          "term": "right winding",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#xxsec2.5 label=\"xxsec2.5\"} Let $G(A^\\circ)$ be the group of group-like elements of the Hopf dual $A^\\circ$ of the Hopf algebra $A$; that is, $G(A^\\circ)$ is the set of algebra homomorphisms from $A$ to $k$, which is a group under multiplication in $A^\\circ$, namely, convolution of maps, $\\pi\\ast \\pi':= m_A (\\pi\\otimes \\pi')\\Delta$, with identity element the counit $\\epsilon$. When $A$ is noetherian and is known",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-26-the-right-adjoint-action",
+      "number": "2.6",
+      "title": "The right adjoint action",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 350,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xxsec",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "textstyle int",
+          "heading": false
+        },
+        {
+          "term": "mathrm hom",
+          "heading": false
+        },
+        {
+          "term": "right adjoint",
+          "heading": true
+        },
+        {
+          "term": "right action",
+          "heading": true
+        },
+        {
+          "term": "phi ast",
+          "heading": false
+        },
+        {
+          "term": "sigma",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#xxsec2.6 label=\"xxsec2.6\"} Let $M$ be an $A$-bimodule. The *right adjoint* $A$-module $R(M)$ [@Mo Definition 3.4.1(2)], which we shall often denote by $M'$ (see also [@FT; @HK1]), is $M$ as a $k$-vector space, with right $A$-action given by $$m \\cdot a\\; =\\; \\sum S(a_2)ma_1$$ for all $a\\in A$ and $m\\in M$. Below we shall want to combine twisting with the right adjoint action, producing right modules of the form",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-31-definition",
+      "number": "3.1",
+      "title": "Definition",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 71,
+      "summary": null,
+      "keywords": [],
+      "extract": "π = π0 and φ = π−1 0 , together with (b) with A for M, we see that HomAop( R l, (S−2Aσ)′) = Zσ A(A). The ﬁrst isomorphism in (d) now follows from Lemma 2.3(a). The second isomor- phism in (d) follows from the ﬁrst after we observe that (Aσ)′ ∼= (S−2AS−2σ)′, which is clear from (2.3.1). (e) In view of (2.3.2), this is a special case of (d). □",
+      "extractCut": false
+    },
+    {
+      "id": "sec-020-3-twisted-hochschild-homology",
+      "number": "3",
+      "title": "Twisted Hochschild homology",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 616,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hochschild homology",
+          "heading": true
+        },
+        {
+          "term": "twisted hochschild",
+          "heading": true
+        },
+        {
+          "term": "dim extd",
+          "heading": false
+        },
+        {
+          "term": "ischebeck spectral",
+          "heading": false
+        },
+        {
+          "term": "hochschild dimension",
+          "heading": false
+        },
+        {
+          "term": "hhσ",
+          "heading": false
+        },
+        {
+          "term": "aop",
+          "heading": false
+        },
+        {
+          "term": "left a-modules",
+          "heading": false
+        }
+      ],
+      "extract": "3.1. Deﬁnition. Let A be an algebra and let σ be an algebra automorphism. A σ-twisted version of the standard cochain complex used to deﬁne cyclic cohomology is deﬁned in [KMT, Section 2], and used to deﬁne σ-twisted cyclic and Hochschild (co)homology; the notation is HCσ ∗(A) and HHσ ∗(A) in the case of the homology groups, and analogously for the cohomology groups. As shown in [HK1, Proposition 2.1], when σ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-33-the-link-with-integrals",
+      "number": "3.3",
+      "title": "The link with integrals",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 315,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "cong mathop",
+          "heading": false
+        },
+        {
+          "term": "mathrm thdim",
+          "heading": false
+        },
+        {
+          "term": "mathrm gldim",
+          "heading": false
+        },
+        {
+          "term": "as-regular hopf",
+          "heading": false
+        },
+        {
+          "term": "mathrm tor",
+          "heading": false
+        },
+        {
+          "term": "mathrm ext",
+          "heading": false
+        },
+        {
+          "term": "leq mathop",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#xxsec3.3 label=\"xxsec3.3\"} We need two fundamental observations. The first is due to Feng and Tsygan [@FT Corollary (2.5)] (see also [@HK1 Proposition 2.3]): ::: proposition [@FT] Let $A$ be a Hopf algebra and let $M$ be an $A$-bimodule. Then, for all $i\\geq 0$, there are vector space isomorphisms $$H_i(A,M)\\cong \\mathop{\\mathrm{Tor}}_i^{A^e}(A,M)\\cong \\mathop{\\mathrm{Tor}}^A_i(M',k).$$ Consequently,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-34-proof-of-theorem-04a",
+      "number": "3.4",
+      "title": "Proof of Theorem 0.4(a)",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 166,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "xxsec",
+          "heading": false
+        },
+        {
+          "term": "mathrm thdim",
+          "heading": false
+        },
+        {
+          "term": "mathrm hdim",
+          "heading": false
+        },
+        {
+          "term": "textstyle int",
+          "heading": false
+        },
+        {
+          "term": "mathrm hom",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#xxsec3.4 label=\"xxsec3.4\"} In this subsection we assume that $S$ is bijective. Recall from (2.5.1) that ${\\xi}=\\Xi[\\pi_0],$ the left winding automorphism obtained from $\\pi_0: A\\to A/(\\text{r.ann}(\\int^l))$. ::: theorem Let $A$ be a noetherian AS-regular Hopf algebra of global dimension $d$. 1. Let $\\sigma$ be an algebra automorphism of $A$. Then $H_d(A,{^\\sigma A})\\cong Z({^{S^2{\\xi}\\; \\sigma} A})$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-35-remarks",
+      "number": "3.5",
+      "title": "Remarks",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 168,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xxsec",
+          "heading": false
+        },
+        {
+          "term": "non-central",
+          "heading": false
+        },
+        {
+          "term": "as-regular",
+          "heading": false
+        },
+        {
+          "term": "sigma",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#xxsec3.5 label=\"xxsec3.5\"} \\(a\\) When $A$ is an affine commutative Hopf algebra, and $k$ has characteristic 0, the global dimension hypothesis always holds [@Mo 9.2.11 and 9.3.2], so that $A$ is commutative Gorenstein and therefore AS-regular [@Ba]. Moreover the homological integral is clearly in this case a trivial module, and $S^2$ is the identity map by [@Mo Corollary 1.5.12]. So Theorem 3.4(a) reduces in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-4-as-gorenstein-algebras-and-dualising-complexes",
+      "number": "4",
+      "title": "AS-Gorenstein algebras and dualising complexes",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 180,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dualising complexes",
+          "heading": true
+        },
+        {
+          "term": "rigid dualising",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "dualising complex",
+          "heading": false
+        },
+        {
+          "term": "balanced dualising",
+          "heading": false
+        },
+        {
+          "term": "mathrm rhom",
+          "heading": false
+        },
+        {
+          "term": "cong mathop",
+          "heading": false
+        },
+        {
+          "term": "complexes xxsec",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#xxsec4 label=\"xxsec4\"} ## Dualising Complexes {#xxsec4.1} The noncommutative version of the dualising complex was introduced by Yekutieli in [@Ye1], and has now become one of the standard homological tools of noncommutative ring theory. We review in the next four paragraphs the small amount of this theory which we shall need to draw on. Most of the details, including some of the necessary facts about derived",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-42-rigid-dualising-complexes",
+      "number": "4.2",
+      "title": "Rigid dualising complexes",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 229,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dualising",
+          "heading": true
+        },
+        {
+          "term": "rop",
+          "heading": false
+        },
+        {
+          "term": "balanced dualising",
+          "heading": false
+        },
+        {
+          "term": "dualising complex",
+          "heading": false
+        },
+        {
+          "term": "rigid",
+          "heading": true
+        },
+        {
+          "term": "aop",
+          "heading": false
+        }
+      ],
+      "extract": "a complex of A-bimodules. Let Rop denote the “opposite complex” of R which is deﬁned as follows: as a complex of k-modules Rop = R, and the left and right Aop-module actions on Rop are given by a · r · b := bra for all a, b ∈Aop and r ∈Rop(= R). If R ∈D(Ae-Mod) then Rop ∈Db((Aop)e-Mod). The ﬂip map τ : (Aop)e = Aop ⊗A −→A ⊗Aop = Ae is an algebra isomorphism, so (Aop)e is isomorphic to Ae. Hence there is a natural",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-43-van-den-bergh-condition",
+      "number": "4.3",
+      "title": "Van den Bergh condition",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 123,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "den bergh",
+          "heading": true
+        },
+        {
+          "term": "van den",
+          "heading": true
+        },
+        {
+          "term": "bergh condition",
+          "heading": true
+        },
+        {
+          "term": "xxsec",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#xxsec4.3 label=\"xxsec4.3\"} ::: definition Suppose that $A$ has finite injective dimension $d$. Then $A$ satisfies the *Van den Bergh condition* if $$\\mathop{\\mathrm{Ext}}^i_{A^e}(A,A^e)=\\begin{cases} 0& i\\neq d\\\\ U& i=d\\end{cases}$$ where $U$ is an invertible $A$-bimodule. ::: For us, the Van den Bergh condition will constitute a key hypothesis in deriving Poincar$\\acute{\\mathrm{e}}$ duality between Hochschild",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-44-rigid-gorenstein-algebras-and-nakayama-automo",
+      "number": "4.4",
+      "title": "Rigid Gorenstein algebras and Nakayama automorphisms",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 194,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rigid gorenstein",
+          "heading": true
+        },
+        {
+          "term": "nakayama",
+          "heading": true
+        },
+        {
+          "term": "nakayama automorphism",
+          "heading": false
+        },
+        {
+          "term": "rigid dualising",
+          "heading": false
+        },
+        {
+          "term": "xxsec",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#xxsec4.4 label=\"xxsec4.4\"} The definition of the Van den Bergh condition leads us naturally to the following ::: definition Let $A$ be an algebra with finite injective dimension $d$. 1. $A$ is *rigid Gorenstein* if there is an algebra automorphism $\\nu$ such that $$\\mathop{\\mathrm{Ext}}^i_{A^e}(A,A^e)= \\begin{cases} 0 & i\\neq d\\\\ {^1A^\\nu} &i=d\\end{cases}$$ as $A$-bimodules. 2. The automorphism $\\nu$ is called",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-45-as-gorenstein-hopf-algebras-are-rigid-gorenst",
+      "number": "4.5",
+      "title": "AS-Gorenstein Hopf algebras are rigid Gorenstein",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 754,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "as-gorenstein hopf",
+          "heading": true
+        },
+        {
+          "term": "rigid gorenstein",
+          "heading": true
+        },
+        {
+          "term": "left a-action",
+          "heading": false
+        },
+        {
+          "term": "exti",
+          "heading": false
+        },
+        {
+          "term": "left a-module",
+          "heading": false
+        },
+        {
+          "term": "nakayama automorphism",
+          "heading": false
+        },
+        {
+          "term": "res",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        }
+      ],
+      "extract": "4.5. AS-Gorenstein Hopf algebras are rigid Gorenstein. In this subsection we prove the statement in the heading, and also that the automorphism ξS2 is the Nakayama automorphism of A. (Recall that ξ is deﬁned in (2.5.1).) Throughout this subsection we assume that S is bijective. Lemma. Let A be a Hopf algebra and let π : A →k be an algebra map. Then, as A-bimodules, kπ ⊗A L(Ae) = kΞ[π] ⊗A L(Ae) ∼= 1AΞ[π]S2. Proof.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-46-the-antipode",
+      "number": "4.6",
+      "title": "The antipode",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 770,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "noetherian as-gorenstein",
+          "heading": false
+        },
+        {
+          "term": "as-gorenstein hopf",
+          "heading": false
+        },
+        {
+          "term": "inner automorphism",
+          "heading": false
+        },
+        {
+          "term": "nakayama automorphism",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite dimensional",
+          "heading": false
+        },
+        {
+          "term": "aab",
+          "heading": false
+        },
+        {
+          "term": "right winding",
+          "heading": false
+        }
+      ],
+      "extract": "then so is A′ := (A, ∆op, S−1, ǫ) [Mo, Lemma 1.5.11]. Suppose that A is noetherian and AS-Gorenstein. Then we can apply Proposition 4.5 to A′. In particular we can conclude from (a) of Proposition 4.5 that A has Nakayama automorphism ν′ = φS−2, where φ is the right winding automorphism (with respect to ∆) of the left integral of A. That is, in the notation of (2.5), φ(a) = X a1π0(a2) NOETHERIAN HOPF ALGEBRAS 17 for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-5-twisted-hochschild-cohomology",
+      "number": "5",
+      "title": "Twisted Hochschild cohomology",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 11,
+      "summary": null,
+      "keywords": [],
+      "extract": "[]{#xxsec5 label=\"xxsec5\"} In this section we will complete the proof of Theorem [\\[xxsec0.2\\]](#xxsec0.2){reference-type=\"ref\" reference=\"xxsec0.2\"}(b).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-031-51-cohomology-and-duality",
+      "number": "5.1",
+      "title": "Cohomology and duality",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 539,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathrm thcdim",
+          "heading": false
+        },
+        {
+          "term": "xxsec",
+          "heading": false
+        },
+        {
+          "term": "mathrm ext",
+          "heading": false
+        },
+        {
+          "term": "den bergh",
+          "heading": false
+        },
+        {
+          "term": "twisted hochschild",
+          "heading": false
+        },
+        {
+          "term": "hochschild cohomological",
+          "heading": false
+        },
+        {
+          "term": "van den",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#xxsec5.1 label=\"xxsec5.1\"} We begin with some definitions parallel to those introduced for homology in ([\\[xxsec3.1\\]](#xxsec3.1){reference-type=\"ref\" reference=\"xxsec3.1\"}). Let $A$ be an algebra, and let $\\sigma$ be an algebra automorphism of $A.$ The *twisted Hochschild cohomology groups* $HH^{\\ast}_{\\sigma}(A)$ of $A$ with respect to $\\sigma$ were defined in [@KMT] in a way exactly analogous to the twisted",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-52-poincaré-duality-for-hopf-algebras",
+      "number": "5.2",
+      "title": "Poincaré duality for Hopf algebras",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 615,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathrm ext",
+          "heading": false
+        },
+        {
+          "term": "xxsec",
+          "heading": false
+        },
+        {
+          "term": "mathrm thcdim",
+          "heading": false
+        },
+        {
+          "term": "inductive direct",
+          "heading": false
+        },
+        {
+          "term": "noetherian as-regular",
+          "heading": false
+        },
+        {
+          "term": "direct limits",
+          "heading": false
+        },
+        {
+          "term": "as-regular hopf",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#xxsec5.2 label=\"xxsec5.2\"} In parallel to Proposition [\\[xxsec3.3\\]](#xxsec3.3){reference-type=\"ref\" reference=\"xxsec3.3\"} for Hochschild dimension, there is an easy upper bound for the twisted cohomological dimension of a Hopf algebra. Throughout this subsection we assume $S$ is bijective. ::: lemma Let $A$ be a Hopf algebra of finite global dimension $d$. 1. $A$ has finite homological dimension, bounded by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-6-examples",
+      "number": "6",
+      "title": "Examples",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "6. Examples",
+      "extractCut": false
+    },
+    {
+      "id": "sec-034-61-some-general-properties",
+      "number": "6.1",
+      "title": "Some general properties",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 275,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xxsec",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathrm ext",
+          "heading": false
+        },
+        {
+          "term": "cohen-macaulay",
+          "heading": false
+        },
+        {
+          "term": "auslander-gorenstein",
+          "heading": false
+        },
+        {
+          "term": "as-regular",
+          "heading": false
+        },
+        {
+          "term": "antipode",
+          "heading": false
+        },
+        {
+          "term": "auslander",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#xxsec6.1 label=\"xxsec6.1\"} To apply the results of Sections [\\[xxsec3\\]](#xxsec3){reference-type=\"ref\" reference=\"xxsec3\"} and [\\[xxsec5\\]](#xxsec5){reference-type=\"ref\" reference=\"xxsec5\"} to a particular Hopf algebra $A$, we need to check that \\(1\\) $A$ is AS-regular, and \\(2\\) the antipode $S$ of $A$ is bijective. In all examples in this section the antipode $S$ is bijective, thanks either to known",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-62-noetherian-pi-hopf-algebras",
+      "number": "6.2",
+      "title": "Noetherian PI Hopf algebras",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 836,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hopf algebras",
+          "heading": true
+        },
+        {
+          "term": "xxsec",
+          "heading": false
+        },
+        {
+          "term": "noetherian",
+          "heading": true
+        },
+        {
+          "term": "noetherian affine",
+          "heading": false
+        },
+        {
+          "term": "nakayama automorphism",
+          "heading": false
+        },
+        {
+          "term": "inner automorphism",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "finite global",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#xxsec6.2 label=\"xxsec6.2\"} Let $A$ be a noetherian affine PI Hopf algebra, and consider conditions (1) and (2) of (6.1). By Skryabin's result Proposition [\\[xxsec1.1\\]](#xxsec1.1){reference-type=\"ref\" reference=\"xxsec1.1\"}(b), the antipode of $A$ is bijective, so (2) is satisfied. As for (1), first note that $A$ is Auslander-Gorenstein, of dimension $d$, say, by [@WZ1 Theorem 0.1]. By [@Br2 Theorem A] there is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-63-enveloping-algebras",
+      "number": "6.3",
+      "title": "Enveloping algebras",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 292,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xxsec",
+          "heading": false
+        },
+        {
+          "term": "bigwedge mathfrak",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "rigid dualising",
+          "heading": false
+        },
+        {
+          "term": "dualising complex",
+          "heading": false
+        },
+        {
+          "term": "poincaré duality",
+          "heading": false
+        },
+        {
+          "term": "twisted poincaré",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#xxsec6.3 label=\"xxsec6.3\"} In this subsection we drop the hypothesis that $k$ is algebraically closed. ::: proposition Let $\\mathfrak{g}$ be a Lie algebra over $k$ of finite dimension $d$, and let $A$ be its universal enveloping algebra $U(\\mathfrak{g}).$ 1. $S^2=\\operatorname{id}_A$. 2. $A$ is an AS-regular Hopf algebra with $\\mathop{\\mathrm{gldim}}A = d.$ 3. [@Ye2] The rigid dualising complex of $A$ is $(A",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-64-quantised-enveloping-algebras",
+      "number": "6.4",
+      "title": "Quantised enveloping algebras",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 263,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantised enveloping",
+          "heading": true
+        },
+        {
+          "term": "xxsec",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "enveloping algebra",
+          "heading": false
+        },
+        {
+          "term": "global dimension",
+          "heading": false
+        },
+        {
+          "term": "mathfrak",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        },
+        {
+          "term": "ell",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#xxsec6.4 label=\"xxsec6.4\"} For the definition of the quantised enveloping algebra $U_q(\\mathfrak{g})$ of the semisimple Lie algebra $\\mathfrak{g}$, see for example [@BG2 I.6.3] or [@Ja 4.3]. The results in this case are already known; the details are as follows. ::: proposition Let $\\ell$ be an odd positive integer greater than 2. Let $q$ denote either a primitive $\\ell$th root of one in $\\mathbb{C}$, or an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-65-quantised-function-algebras",
+      "number": "6.5",
+      "title": "Quantised function algebras",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 192,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xxsec",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "quantised",
+          "heading": true
+        },
+        {
+          "term": "as-regular",
+          "heading": false
+        },
+        {
+          "term": "global dimension",
+          "heading": false
+        },
+        {
+          "term": "indeterminate",
+          "heading": false
+        },
+        {
+          "term": "ell",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#xxsec6.5 label=\"xxsec6.5\"} Our hypotheses on $q$, $\\ell$ and $k$ in this paragraph will be the same as in Proposition [\\[xxsec6.4\\]](#xxsec6.4){reference-type=\"ref\" reference=\"xxsec6.4\"}. Let $G$ be a connected complex semisimple algebraic group of dimension $d.$ The definition of the *quantised function algebra* $\\mathcal{O}_q(G)$ is given in the case where $q$ is an indeterminate over $\\mathbb{C}$ in [@BG2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-66-the-special-linear-group",
+      "number": "6.6",
+      "title": "The special linear group",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 998,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xxsec",
+          "heading": false
+        },
+        {
+          "term": "textstyle int",
+          "heading": false
+        },
+        {
+          "term": "quad mathop",
+          "heading": false
+        },
+        {
+          "term": "cong quad",
+          "heading": false
+        },
+        {
+          "term": "mathrm ext",
+          "heading": false
+        },
+        {
+          "term": "neq quad",
+          "heading": false
+        },
+        {
+          "term": "int bar",
+          "heading": false
+        },
+        {
+          "term": "tau normal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#xxsec6.6 label=\"xxsec6.6\"} In Proposition [\\[xxsec6.5\\]](#xxsec6.5){reference-type=\"ref\" reference=\"xxsec6.5\"} we did not answer the following ::: question What is the precise form of the Nakayama automorphism $\\nu={\\xi}S^2$ of $\\mathcal{O}_q(G)$? ::: Here we answer the question for the case $G = SL(n,\\mathbb{C})$, giving $\\nu$ in a form which, we conjecture, remains valid for *all* semisimple groups $G.$ First",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-67-noetherian-group-algebras",
+      "number": "6.7",
+      "title": "Noetherian group algebras",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1116,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "negmedspace uparrow",
+          "heading": false
+        },
+        {
+          "term": "longrightarrow negmedspace",
+          "heading": false
+        },
+        {
+          "term": "auslander gorenstein",
+          "heading": false
+        },
+        {
+          "term": "xxsec",
+          "heading": false
+        },
+        {
+          "term": "mathrm ext",
+          "heading": false
+        },
+        {
+          "term": "as-gorenstein",
+          "heading": false
+        },
+        {
+          "term": "nakayama automorphism",
+          "heading": false
+        },
+        {
+          "term": "winding automorphism",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#xxsec6.7 label=\"xxsec6.7\"} ::: theorem Let $k$ be a field of characteristic $p \\geq 0,$ and let $G$ be a polycyclic-by-finite group of Hirsch length $d.$ 1. $kG$ is noetherian Auslander Gorenstein and AS-Gorenstein of injective dimension $d.$ 2. $kG$ is AS-regular if and only if it is Auslander regular if and only if $G$ contains no elements of order $p.$ ::: ::: proof *Proof.* (a) First, $kG$ is noetherian by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 92,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "catharina stroppel",
+          "heading": false
+        },
+        {
+          "term": "hadfield",
+          "heading": false
+        },
+        {
+          "term": "thierry",
+          "heading": false
+        }
+      ],
+      "extract": "Both authors would like to thank Ken Goodearl, Tom Lenagan, Thierry Levasseur, Catharina Stroppel, Michel Van den Bergh and Amnon Yekutieli for useful conversations and valuable comments. In particular, Catharina Stroppel made many suggestions which have improved the exposition. The first author thanks Tom Hadfield for telling him about the \"dimension drop\" phenomenon for $SL_2$. Both authors are supported in part",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1035,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "noetherian rings",
+          "heading": false
+        },
+        {
+          "term": "gorenstein rings",
+          "heading": false
+        },
+        {
+          "term": "noetherian hopf",
+          "heading": false
+        },
+        {
+          "term": "dualizing complexes",
+          "heading": false
+        },
+        {
+          "term": "hopf algebras",
+          "heading": false
+        },
+        {
+          "term": "homological algebra",
+          "heading": false
+        },
+        {
+          "term": "matem atica",
+          "heading": false
+        },
+        {
+          "term": "hochschild homology",
+          "heading": false
+        }
+      ],
+      "extract": "[ASZ1] K. Ajitabh, S.P. Smith and J.J. Zhang, Auslander-Gorenstein rings, Comm. Algebra 26 (1998), no. 7, 2159–2180. [ASZ2] K. Ajitabh, S.P. Smith and J.J. Zhang, Injective resolutions of some regular rings, J. Pure Appl. Algebra 140 (1999), no. 1, 1–21. [AB] K. Ardakov and K.A. Brown, Primeness, semiprimeness and localisation in Iwasawa algebras, Trans. Amer. Math. Soc., to appear; arXiv RA/0412401. [Ba] H. Bass,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "complexes xxsec",
+      "heading": false
+    },
+    {
+      "term": "mathop mathrm",
+      "heading": false
+    },
+    {
+      "term": "cong mathop",
+      "heading": false
+    },
+    {
+      "term": "mathrm ext",
+      "heading": false
+    },
+    {
+      "term": "noetherian hopf",
+      "heading": true
+    },
+    {
+      "term": "hopf algebra",
+      "heading": true
+    },
+    {
+      "term": "hdim mathop",
+      "heading": false
+    },
+    {
+      "term": "hcdim mathop",
+      "heading": false
+    },
+    {
+      "term": "quad mathop",
+      "heading": false
+    },
+    {
+      "term": "algebra automorphism",
+      "heading": false
+    },
+    {
+      "term": "hence mathop",
+      "heading": false
+    },
+    {
+      "term": "mathrm thdim",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 46,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 44,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p29); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 44 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0603732v2"
+  }
+}

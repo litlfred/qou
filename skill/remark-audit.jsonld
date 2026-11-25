@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/remark-audit.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/remark-audit",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "remark-audit",
+      "title": "Remark Audit Skill",
+      "description": "Audit remarks for provable content. Every remark must interpret a categorical/mathematical statement that can be formalized in Lean. Detects dangling remarks (no `interprets` link), ambiguous physics terms, and missing formalization.",
+      "instructionsPath": "skills/local/remark-audit.md",
+      "instructionLines": 177,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

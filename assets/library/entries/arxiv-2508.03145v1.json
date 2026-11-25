@@ -1,0 +1,194 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2508.03145v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2508.03145v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Θ-Categories and Tannakian duality\nJoost NUITEN, Bertrand TOEN\nJuly 2025\nAbstract\nWe introduce a notion of Θ-categories, which is a refinement of the\nnotion of symmetric monoidal ∞-categories.\nWe use this notion to\nprove a Tannakian duality statement, relating Θ-categories with fpqc-\nstacks by means of a certain stack of fiber functors in the context of\nΘ-categories. This provides, over a base ring of arbitrary characteris-\ntic, a strong link between Tannakian Θ-categories and the schematic\nhomotopy types of [Toe06].\nContents\n1\nΘ-Categories\n3\n1.1\nµ-Categories . . . . . . . . . . . . . . . . .",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2508.03145v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "-Categories",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "../sections/sec-000--categories.md",
+      "narrative": null,
+      "content": "## $\\mu$-Categories\n\nWe let $\\infty\\text{-}\\mathbf{Cat}_{pr}^{R}$ be the $(2,\\infty)$-category of presentable $(1,\\infty)$-categories and right adjoints (i.e. limit preserving accessible $\\infty$-functors). We have the corresponding $(2,\\infty)$-category $\\mathsf{Fun}(\\Delta^1,\\infty\\text{-}\\mathbf{Cat}^{R}_{pr})$, of morphisms in $\\infty\\text{-}\\mathbf{Cat}_{pr}^{R}$. For any object $f \\colon T' \\to T$ in $\\mathsf{Fun}(\\Delta^1,\\infty\\text{-}\\mathbf{Cat}^R_{pr})$, we will denote by $f^* \\colon T \\to T'$ the left adjoint to $f$, and sometimes write $f_*$ instead of $f$.\n\n::: df\n[]{#d1-1 label=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2508.03145v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "-Categories",
+      "pageStart": 6,
+      "pageEnd": 11,
+      "target": "../sections/sec-001--categories.md",
+      "narrative": null,
+      "content": "## $\\mu$-Categories\n\nWe let $\\infty\\text{-}\\mathbf{Cat}_{pr}^{R}$ be the $(2,\\infty)$-category of presentable $(1,\\infty)$-categories and right adjoints (i.e. limit preserving accessible $\\infty$-functors). We have the corresponding $(2,\\infty)$-category $\\mathsf{Fun}(\\Delta^1,\\infty\\text{-}\\mathbf{Cat}^{R}_{pr})$, of morphisms in $\\infty\\text{-}\\mathbf{Cat}_{pr}^{R}$. For any object $f \\colon T' \\to T$ in $\\mathsf{Fun}(\\Delta^1,\\infty\\text{-}\\mathbf{Cat}^R_{pr})$, we will denote by $f^* \\colon T \\to T'$ the left adjoint to $f$, and sometimes write $f_*$ instead of $f$.\n\n::: df\n[]{#d1-1 label=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2508.03145v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "-Categories of modules",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "../sections/sec-002--categories-of-modules.md",
+      "narrative": null,
+      "content": "To conclude this part on $\\Theta$-categories, we will define a $\\Theta$-category of left $B$-modules for a given $\\Theta$-algebra $B \\in \\Theta\\text{-}\\mathsf{CAlg}(T^\\Theta)$. To this end, we first consider the underlying commutative algebra $B_0:=U_{E_\\infty}^{\\Theta}(B)$ and the corresponding symmetric monoidal $\\infty$-category $\\mathsf{LMod}_{B_0}(T)$ of left $B_0$-modules in $T$ endowed with its natural symmetric monoidal structure $\\otimes_{B_0}$. It will be denoted by $B_0\\text{-}\\mathsf{Mod}(T)$.\n\nWe define a $\\Theta$-structure on $B_0\\text{-}\\mathsf{Mod}(T)$ by considering the compos",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2508.03145v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tannaka duality",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-003-tannaka-duality.md",
+      "narrative": null,
+      "content": "In this section, we fix a commutative ground ring $k$. We denote by $\\mathbf{St}_k$ the $\\infty$-category of stacks on the big site of affine $k$-schemes endowed with the fpqc topology.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2508.03145v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "-Categories of quasi-coherent and ind-perfect sheaves",
+      "pageStart": 15,
+      "pageEnd": 21,
+      "target": "../sections/sec-004--categories-of-quasi-coherent-and-ind-perfect-sh.md",
+      "narrative": null,
+      "content": "For a commutative $k$-algebra $A$, we consider $\\mathsf{QCoh}(\\mathbf{Spec}\\, A)$, also denoted by $\\mathsf{QCoh}(A)$, the symmetric monoidal $\\infty$-category of complexes of $A$-modules. When $A$ varies in commutative $k$-algebras this defines an fpqc-stack in presentable symmetric monoidal $\\infty$-categories $$\\mathsf{QCoh}\\colon \\mathbf{Aff}_k^{op} \\longrightarrow \\infty\\text{-}\\mathbf{Cat}_{pr}^\\otimes.$$ We will need a slight modification of the stack $\\mathsf{QCoh}$, which involves ind-perfect complexes. For any small stack $F$, the dualizable objects in the symmetric monoidal $\\infty$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2508.03145v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tannakian -categories and Tannakian gerbes",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-005-tannakian--categories-and-tannakian-gerbes.md",
+      "narrative": null,
+      "content": "For the sake of simplicity we will only deal with the neutral case in the present work.\n\n::: df\nA *neutralized $k$-linear Tannakian $\\Theta$-category* is a map of $k$-linear $\\Theta$-categories $$\\omega\\colon  T^\\Theta \\longrightarrow \\widehat{\\mathsf{Perf}}{}^{\\mathrm{LSym}}(k)\\simeq \\mathsf{QCoh}^{\\mathrm{LSym}}(k)$$ satisfying the following conditions.\n\n1.  The underlying presentable symmetric monoidal $\\infty$-category $T$ is \\\"rigid\\\": it is compactly generated and compact objects in $T$ coincide with dualizable objects.\n\n2.  The underlying $\\infty$-functor $\\omega \\colon T \\to \\widehat{\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2508.03145v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Tannakian duality theorem",
+      "pageStart": 23,
+      "pageEnd": 29,
+      "target": "../sections/sec-006-the-tannakian-duality-theorem.md",
+      "narrative": null,
+      "content": "We start by investigating the morphism $\\beta$.\n\n::: thm\n[]{#t1 label=\"t1\"} Let $T^\\Theta$ be a neutralized Tannakian $\\Theta$-category over $k$. Then the following hold.\n\n1.  The unit morphism of $\\Theta$-categories $\\beta_{T^\\Theta}\\colon T^\\Theta \\to \\mathsf{QCoh}^{\\mathrm{LSym}}(\\mathsf{Fib}^{\\mathrm{LSym}}_*(T^\\Theta))$ induces an equivalence of symmetric monoidal $\\infty$-categories $$T \\simeq \\widehat{\\mathsf{Perf}}(\\mathsf{Fib}^{\\mathrm{LSym}}_*(T^\\Theta)).$$\n\n2.  The stack $\\mathsf{Fib}_*^{\\mathrm{LSym}}(T^\\Theta)$ is a pointed Tannakian gerbe.\n:::\n\nThe proof of Theorem [\\[t1\\]](#t1){",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2508.03145v1/blocks/prop-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 33,
+      "target": "prop-sec-007-01.md",
+      "narrative": null,
+      "content": "1. Assume that B ∈CAlg(T) is of positive tor-dimension and that B ⊗−: T >−∞→T >−∞is conservative. Then the ∞-functor ψ: T >−∞→lim n∈∆ \u0000CN(u)n-Mod(T)>−∞\u0001 is an equivalence of ∞-categories.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2508.03145v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Positive tor-dimension descent",
+      "pageStart": 29,
+      "pageEnd": 33,
+      "target": "../sections/sec-007-positive-tor-dimension-descent.md",
+      "narrative": null,
+      "content": "Positive tor-dimension descent\nLet T be a stable presentable symmetric monoidal ∞-category endowed with\na non-degenerate and multiplicative t-structure. For a morphism of commu-\ntative algebras u: 1 →B in T, we can consider the co-nerve of u, which is a\n29\ncoaugmented cosimplicial object\nCN(u)∗: ∆+ −→CAlg(T)\nsending n ≥−1 to B⊗n+1. Tensoring along 1 →CN(u)∗yields a colimit\npreserving ∞-functor\nψ: T = 1-Mod(T) →lim\nn∈∆(CN(u)n-Mod(T)).\nThe right adjoint to this ∞-functor is obtained as the composition\nlimn∈∆\n\u0000CN(u)n-Mod(T)\n\u0001\n/ T ∆\nlim / T\nwhere the first ∞-functor is the levelwise forgetful ∞-fu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

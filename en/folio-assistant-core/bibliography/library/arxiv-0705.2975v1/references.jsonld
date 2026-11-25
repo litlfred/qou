@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-0705.2975v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "On the Deﬁnitions of Diﬀerence Galois Groups",
+      "dcterms:creator": [
+        "Chatzidakis∗, Zoé",
+        "Hardouin, Charlotte",
+        "Singer†, Michael F."
+      ],
+      "dcterms:issued": "D:20181119",
+      "dcterms:identifier": "https://arxiv.org/abs/0705.2975",
+      "dcterms:abstract": "We compare several deﬁnitions of the Galois group of a linear diﬀerence equation that have arisen in algebra, analysis and model theory and show, that these groups are isomorphic over suitable ﬁelds. In addition, we study properties of Picard-Vessiot extensions over ﬁelds with not necessarily algebraically closed subﬁelds of constants.",
+      "dcterms:source": "library/arxiv-0705.2975v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-0705.2975v1"
+    }
+  ]
+}

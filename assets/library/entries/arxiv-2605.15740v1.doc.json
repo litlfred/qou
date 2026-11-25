@@ -1,0 +1,888 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2605.15740v1",
+  "title": "Bailey pairs, Eichler integrals and unified Witten-Reshetikhin-Turaev invariants",
+  "variant": "pdf",
+  "pages": 26,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Bailey pairs and key identities",
+      "number": "2",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-bailey-pairs-and-key-identities"
+    },
+    {
+      "level": 2,
+      "title": "Preliminaries and auxiliary results",
+      "number": "2.1",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-preliminaries-and-auxiliary-results"
+    },
+    {
+      "level": 2,
+      "title": "An arsenal of Bailey pairs",
+      "number": "2.2",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-an-arsenal-of-bailey-pairs"
+    },
+    {
+      "level": 2,
+      "title": "The key results",
+      "number": "2.3",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-the-key-results"
+    },
+    {
+      "level": 1,
+      "title": "Incomplete quadratic Gauss sums",
+      "number": "3",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-3-incomplete-quadratic-gauss-sums"
+    },
+    {
+      "level": 2,
+      "title": "Properties for incomplete quadratic Gauss sums",
+      "number": "3.1",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-31-properties-for-incomplete-quadratic-gauss-sum"
+    },
+    {
+      "level": 2,
+      "title": "Relations between incomplete quadratic Gauss sums",
+      "number": "3.2",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-32-relations-between-incomplete-quadratic-gauss"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem 1.2",
+      "number": "4",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-4-proof-of-theorem-12"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 25,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 25,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 169,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unified wrt",
+          "heading": false
+        },
+        {
+          "term": "eichler integrals",
+          "heading": false
+        },
+        {
+          "term": "weight modular",
+          "heading": false
+        },
+        {
+          "term": "hikami",
+          "heading": false
+        },
+        {
+          "term": "bailey",
+          "heading": false
+        },
+        {
+          "term": "witten-reshetikhin-turaev",
+          "heading": false
+        }
+      ],
+      "extract": "BAILEY PAIRS, EICHLER INTEGRALS AND UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANTS JEREMY LOVEJOY, ROBERT OSBURN, AND MATTHIAS STORZER Abstract. In 1999, Lawrence and Zagier expressed the Witten-Reshetikhin-Turaev (WRT) invariant of the Poincar´e homology sphere as the limiting value of the Eichler integral of a weight 3/2 modular form. Habiro’s construction of the unified WRT invariant subsequently recast this result",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2605.15740v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1686,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "begin bmatrix",
+          "heading": false
+        },
+        {
+          "term": "frac widetilde",
+          "heading": false
+        },
+        {
+          "term": "bmatrix end",
+          "heading": false
+        },
+        {
+          "term": "lim tau",
+          "heading": false
+        },
+        {
+          "term": "widetilde phi",
+          "heading": false
+        },
+        {
+          "term": "cdots geq",
+          "heading": false
+        },
+        {
+          "term": "hikami theorem",
+          "heading": false
+        },
+        {
+          "term": "eichler integrals",
+          "heading": false
+        }
+      ],
+      "extract": "In 1999, Lawrence and Zagier made a prescient observation connecting quantum invariants and modular forms [@lz]. To state their result, let $Z_{\\zeta}(\\mathcal{M})$ denote the Witten-Reshetikhin-Turaev (WRT) invariant of a closed and oriented 3-manifold $\\mathcal{M}$ at the root of unity $\\zeta$. Next let $\\bm{p} = (p_1, p_2, p_3)$ be a triple of pairwise coprime positive integers and $P:=p_1 p_2 p_3$. For any",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-bailey-pairs-and-key-identities",
+      "number": "2",
+      "title": "Bailey pairs and key identities",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-preliminaries-and-auxiliary-results",
+      "number": "2.1",
+      "title": "Preliminaries and auxiliary results",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 646,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "beta n-n",
+          "heading": false
+        },
+        {
+          "term": "bailey pair",
+          "heading": false
+        },
+        {
+          "term": "p-n beta",
+          "heading": false
+        },
+        {
+          "term": "keychainlemma",
+          "heading": false
+        },
+        {
+          "term": "cdots geq",
+          "heading": false
+        },
+        {
+          "term": "bmatrix frac",
+          "heading": false
+        },
+        {
+          "term": "frac alpha",
+          "heading": false
+        },
+        {
+          "term": "beta sum",
+          "heading": false
+        }
+      ],
+      "extract": "Recall that a Bailey pair relative to $a$ is a pair of sequences $(\\alpha_n,\\beta_n)_{n \\geq 0}$ satisfying $$\\begin{aligned} \\beta_n &= \\sum_{k=0}^n \\frac{\\alpha_k}{(q)_{n-k}(aq)_{n+k}} \\label{pairdef} \\\\ &= \\frac{1}{(q)_n(aq)_n} \\sum_{k=0}^n \\frac{(q^{-n})_k}{(aq^{n+1})_k}(-1)^kq^{nk -\\binom{k}{2}} \\alpha_k. \\label{pairdefbis} \\end{aligned}$$ The first equation is the original definition [@An1], while the second",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-an-arsenal-of-bailey-pairs",
+      "number": "2.2",
+      "title": "An arsenal of Bailey pairs",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 699,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bailey pairs",
+          "heading": true
+        },
+        {
+          "term": "dcases text",
+          "heading": false
+        },
+        {
+          "term": "dcases frac",
+          "heading": false
+        },
+        {
+          "term": "beta dag",
+          "heading": false
+        },
+        {
+          "term": "alpha dag",
+          "heading": false
+        },
+        {
+          "term": "begin dcases",
+          "heading": false
+        },
+        {
+          "term": "end dcases",
+          "heading": false
+        },
+        {
+          "term": "binom alpha",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#arseBP label=\"arseBP\"} Here we collect all of the Bailey pairs we will use in the proof of Theorem [\\[main\\]](#main){reference-type=\"ref\" reference=\"main\"}. There are eight Bailey pairs that we cite from the literature -- six Bailey pairs relative to $q$ and two Bailey pairs relative to $q^2$. First, we have four Bailey pairs relative to $q$ from Slater's list [@Sl p.463, A(2), A(4), A(6), A(8)]: $$\\label{BP1}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-the-key-results",
+      "number": "2.3",
+      "title": "The key results",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 990,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "beta n-1-n",
+          "heading": false
+        },
+        {
+          "term": "n-1-n frac",
+          "heading": false
+        },
+        {
+          "term": "bailey pair",
+          "heading": false
+        },
+        {
+          "term": "bmatrix frac",
+          "heading": false
+        },
+        {
+          "term": "widehat alpha",
+          "heading": false
+        },
+        {
+          "term": "p-2n",
+          "heading": false
+        },
+        {
+          "term": "begin bmatrix",
+          "heading": false
+        },
+        {
+          "term": "n-n",
+          "heading": false
+        }
+      ],
+      "extract": "Here we state and prove the key results relating ([\\[h1\\]](#h1){reference-type=\"ref\" reference=\"h1\"}), ([\\[h8\\]](#h8){reference-type=\"ref\" reference=\"h8\"}), ([\\[h2\\]](#h2){reference-type=\"ref\" reference=\"h2\"})--([\\[h7\\]](#h7){reference-type=\"ref\" reference=\"h7\"}), ([\\[h9\\]](#h9){reference-type=\"ref\" reference=\"h9\"}) and ([\\[h10\\]](#h10){reference-type=\"ref\" reference=\"h10\"}) to finite polynomial sums at roots of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-incomplete-quadratic-gauss-sums",
+      "number": "3",
+      "title": "Incomplete quadratic Gauss sums",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-31-properties-for-incomplete-quadratic-gauss-sum",
+      "number": "3.1",
+      "title": "Properties for incomplete quadratic Gauss sums",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 526,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac chi",
+          "heading": false
+        },
+        {
+          "term": "frac nonumber",
+          "heading": false
+        },
+        {
+          "term": "frac sum",
+          "heading": false
+        },
+        {
+          "term": "tbc",
+          "heading": false
+        },
+        {
+          "term": "equiv pmod",
+          "heading": false
+        },
+        {
+          "term": "aligned sum",
+          "heading": false
+        },
+        {
+          "term": "ell",
+          "heading": false
+        },
+        {
+          "term": "even modulo",
+          "heading": false
+        }
+      ],
+      "extract": "We begin with a general result on an incomplete quadratic Gauss sum. For simplicity, we write $\\chi = \\chi_{\\bm{p}}^{\\bm{\\ell}}$. Recall that $P:=p_1 p_2 p_3$. ::: lemma []{#chiprop label=\"chiprop\"} Assume that 1. $P \\equiv 2 \\pmod{4}$,\\ 2. if $\\chi(n) \\neq 0$, then $n$ is odd\\ 3. $\\chi$ is even modulo $P$, i.e., $\\chi(P-n) = \\chi(n)$. If $q$ is a primitive $N$th root of unity, then $$2\\sum_{n=0}^{PN}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-32-relations-between-incomplete-quadratic-gauss",
+      "number": "3.2",
+      "title": "Relations between incomplete quadratic Gauss sums",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2074,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mod p3n",
+          "heading": false
+        },
+        {
+          "term": "letting πim",
+          "heading": false
+        },
+        {
+          "term": "qpk",
+          "heading": false
+        },
+        {
+          "term": "jeremy lovejoy",
+          "heading": false
+        },
+        {
+          "term": "unified witten-reshetikhin-turaev",
+          "heading": false
+        },
+        {
+          "term": "matthias storzer",
+          "heading": false
+        },
+        {
+          "term": "eichler integrals",
+          "heading": false
+        },
+        {
+          "term": "robert osburn",
+          "heading": false
+        }
+      ],
+      "extract": "(p1, p2, p3) of pairwise coprime positive integers and ℓ= (ℓ1, ℓ2, ℓ3) ∈Z3 satisfying 0 < ℓj < pj, we define m(ϵ) ∈{0, . . . , 2P −1} such that m(ϵ) ≡P  1 + 3 X j=1 ϵjℓj pj   (mod 2P). (3.2) BAILEY PAIRS, EICHLER INTEGRALS AND UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANTS 15 Note that m(ϵ)2 (mod 2P) is independent of ϵ ∈{±1}3. We write T = T(q) = − X ϵ∈{±1}3 ϵ1ϵ2ϵ3 Tϵ, S = S(q) = − X ϵ∈{±1}3 ϵ1ϵ2ϵ3 Sϵ where Tϵ =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-4-proof-of-theorem-12",
+      "number": "4",
+      "title": "Proof of Theorem 1.2",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1388,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bailey pair",
+          "heading": false
+        },
+        {
+          "term": "jeremy lovejoy",
+          "heading": false
+        },
+        {
+          "term": "matthias storzer",
+          "heading": false
+        },
+        {
+          "term": "eichler integrals",
+          "heading": false
+        },
+        {
+          "term": "robert osburn",
+          "heading": false
+        },
+        {
+          "term": "unified witten-reshetikhin-turaev",
+          "heading": false
+        },
+        {
+          "term": "right-hand side",
+          "heading": false
+        },
+        {
+          "term": "witten-reshetikhin-turaev invariants",
+          "heading": false
+        }
+      ],
+      "extract": "We are now in a position to prove Theorem 1.2. Again, we follow the order in which the Bailey pairs were introduced in Section 2.2. Proof. We begin with the proof of (1.32). By Proposition 3.3, (1.32) is equivalent to −1 2 6(6p+1)N X n=0 χ(n) \u0012 1 − n 6(6p + 1)N \u0013 ζ M n2−(6p−1)2 24(6p+1) N = H(6) p (ζM N ) (4.1) where χ = χ(1,1,2p) (2,3,6p+1) is the odd periodic function given by χ(n) =      1 if n ≡42p + 5, 54p",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 100,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "h6pconj",
+          "heading": false
+        },
+        {
+          "term": "h7pconj",
+          "heading": false
+        },
+        {
+          "term": "support during",
+          "heading": false
+        },
+        {
+          "term": "visit",
+          "heading": false
+        }
+      ],
+      "extract": "The second and third authors were partially funded by the Irish Research Council Advanced Laureate Award IRCLA/2023/1934. The second author would like to thank the Okinawa Institute of Science and Technology for their hospitality and support during his visit from August 28 to September 15, 2023 as part of the TSVP Thematic Program \"Exact Asymptotics: From Fluid Dynamics to Quantum Geometry\\\". It was during this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 810,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bailey lattice",
+          "heading": false
+        },
+        {
+          "term": "bailey pairs",
+          "heading": false
+        },
+        {
+          "term": "misteg ard",
+          "heading": false
+        },
+        {
+          "term": "mock theta",
+          "heading": false
+        },
+        {
+          "term": "unified witten-reshetikhin-turaev",
+          "heading": false
+        },
+        {
+          "term": "london math",
+          "heading": false
+        },
+        {
+          "term": "quantum q-series",
+          "heading": false
+        },
+        {
+          "term": "q-series identities",
+          "heading": false
+        }
+      ],
+      "extract": "[1] A.K. Agarwal, G.E. Andrews and D.M. Bressoud, The Bailey lattice, J. Indian Math. Soc. (N.S.) 51 (1987), 57–73. [2] J. Andersen, W. Misteg˚ard, Resurgence analysis of quantum invariants of Seifert fibered homology spheres, J. Lond. Math. Soc. (2) 105 (2022), no. 2, 709–764. [3] J. Andersen, L. Han, Y. Li, W. Misteg˚ard, D. Sauzin and S. Sun, A proof of Witten’s asymptotic expansion conjecture for WRT invariants",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "bailey pairs",
+      "heading": true
+    },
+    {
+      "term": "bailey lattice",
+      "heading": false
+    },
+    {
+      "term": "bmatrix frac",
+      "heading": false
+    },
+    {
+      "term": "beta frac",
+      "heading": false
+    },
+    {
+      "term": "geq frac",
+      "heading": false
+    },
+    {
+      "term": "alpha frac",
+      "heading": false
+    },
+    {
+      "term": "beta n-n",
+      "heading": false
+    },
+    {
+      "term": "frac sum",
+      "heading": false
+    },
+    {
+      "term": "dcases frac",
+      "heading": false
+    },
+    {
+      "term": "begin bmatrix",
+      "heading": false
+    },
+    {
+      "term": "n-1-n frac",
+      "heading": false
+    },
+    {
+      "term": "eichler integrals",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p25); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 9
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2605.15740v1"
+  }
+}

@@ -1,0 +1,1124 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2109.00379v1",
+  "title": "arxiv-2109.00379v1",
+  "variant": "pdf",
+  "pages": 23,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Motivation",
+      "number": "1.1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-motivation"
+    },
+    {
+      "level": 2,
+      "title": "Torsion and its twisted version",
+      "number": "1.2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-torsion-and-its-twisted-version"
+    },
+    {
+      "level": 2,
+      "title": "Neumann–Zagier matrices and their twisted version",
+      "number": "1.3",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-neumannzagier-matrices-and-their-twisted-vers"
+    },
+    {
+      "level": 2,
+      "title": "The 1-loop invariant and its twisted version",
+      "number": "1.4",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-the-1-loop-invariant-and-its-twisted-version"
+    },
+    {
+      "level": 1,
+      "title": "Proofs: twisted NZ matrices",
+      "number": "2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-2-proofs-twisted-nz-matrices"
+    },
+    {
+      "level": 1,
+      "title": "Examples",
+      "number": "3",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-3-examples"
+    },
+    {
+      "level": 2,
+      "title": "The knot 41",
+      "number": "3.1",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-31-the-knot-41"
+    },
+    {
+      "level": 2,
+      "title": "The knot 63",
+      "number": "3.2",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-32-the-knot-63"
+    },
+    {
+      "level": 1,
+      "title": "Proofs: twisted 1-loop invariant",
+      "number": "4",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-4-proofs-twisted-1-loop-invariant"
+    },
+    {
+      "level": 1,
+      "title": "Examples, continued",
+      "number": "5",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-5-examples-continued"
+    },
+    {
+      "level": 2,
+      "title": "The knot 41",
+      "number": "5.1",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-51-the-knot-41"
+    },
+    {
+      "level": 2,
+      "title": "The knot 63",
+      "number": "5.2",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-52-the-knot-63"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 140,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "neumann zagier",
+          "heading": false
+        },
+        {
+          "term": "zagier matrices",
+          "heading": false
+        },
+        {
+          "term": "deﬁne twisted",
+          "heading": false
+        },
+        {
+          "term": "twisted version",
+          "heading": false
+        },
+        {
+          "term": "ideal triangulation",
+          "heading": false
+        }
+      ],
+      "extract": "TWISTED NEUMANN–ZAGIER MATRICES STAVROS GAROUFALIDIS AND SEOKBEOM YOON Dedicated to Walter Neumann and Don Zagier, with admiration. Abstract. The Neumann–Zagier matrices of an ideal triangulation are integer matrices with symplectic properties whose entries encode the number of tetrahedra that wind around each edge of the triangulation. They can be used as input data for the construction of a number of quantum",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2109.00379v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "Introduction 1",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-motivation",
+      "number": "1.1",
+      "title": "Motivation",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 723,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted loop",
+          "heading": false
+        },
+        {
+          "term": "cyclic covers",
+          "heading": false
+        },
+        {
+          "term": "twisted alexander",
+          "heading": false
+        },
+        {
+          "term": "adjoint twisted",
+          "heading": false
+        },
+        {
+          "term": "loop invariants",
+          "heading": false
+        },
+        {
+          "term": "klv",
+          "heading": false
+        },
+        {
+          "term": "motivation",
+          "heading": true
+        },
+        {
+          "term": "infinite cyclic",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.motivation label=\"sub.motivation\"} Ideal triangulations of 3-manifolds with torus boundary components were introduced by Thurston [@Thurston] as a convenient way to describe and effectively compute [@snappy] complete hyperbolic structures on 3-manifolds. To do so, one assigns a complex number different from 0 or 1 to each tetrahedron and a polynomial equation around each edge of the triangulation. These",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-torsion-and-its-twisted-version",
+      "number": "1.2",
+      "title": "Torsion and its twisted version",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 466,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "torsion",
+          "heading": true
+        },
+        {
+          "term": "torsion tau",
+          "heading": false
+        },
+        {
+          "term": "adjoint torsion",
+          "heading": false
+        },
+        {
+          "term": "twisted alexander",
+          "heading": false
+        },
+        {
+          "term": "mathbbm",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomial",
+          "heading": false
+        },
+        {
+          "term": "key tau",
+          "heading": false
+        },
+        {
+          "term": "tau gamma",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.tt label=\"sub.tt\"} Before discussing twisting matters further, let us recall a key motivating example. A basic invariant of a compact 3-manifold is the order of the torsion of its first homology. The behavior of this invariant for all cyclic covers of a knot complement is determined by a single Laurent polynomial, the Alexander polynomial. Explicitly, we have $$\\label{TDn}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-neumannzagier-matrices-and-their-twisted-vers",
+      "number": "1.3",
+      "title": "Neumann–Zagier matrices and their twisted version",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 7,
+      "labelStart": "3",
+      "labelEnd": "7",
+      "words": 1549,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbf square",
+          "heading": false
+        },
+        {
+          "term": "matrices mathbf",
+          "heading": false
+        },
+        {
+          "term": "equiv mathbf",
+          "heading": false
+        },
+        {
+          "term": "gamma mathbf",
+          "heading": false
+        },
+        {
+          "term": "overline mathbf",
+          "heading": false
+        },
+        {
+          "term": "log mathbf",
+          "heading": false
+        },
+        {
+          "term": "widehat mathbf",
+          "heading": false
+        },
+        {
+          "term": "mathbf sum",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.tNZ label=\"sub.tNZ\"} Having already discussed the torsion and twisted torsion, we now recall some basic facts from ideal triangulations of 3-manifolds and their gluing equations, following [@Thurston; @NZ]. Let $M$ be an oriented hyperbolic 3-manifold with a torus boundary component (often called a one-cusped hyperbolic 3-manifold) equipped with an ideal triangulation $\\mathcal T$. An Euler characteristic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-the-1-loop-invariant-and-its-twisted-version",
+      "number": "1.4",
+      "title": "The 1-loop invariant and its twisted version",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 790,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted loop",
+          "heading": true
+        },
+        {
+          "term": "loop invariant",
+          "heading": true
+        },
+        {
+          "term": "twisted version",
+          "heading": true
+        },
+        {
+          "term": "mathrm diag",
+          "heading": false
+        },
+        {
+          "term": "tau mathrm",
+          "heading": false
+        },
+        {
+          "term": "prod zeta",
+          "heading": false
+        },
+        {
+          "term": "widehat mathbf",
+          "heading": false
+        },
+        {
+          "term": "tau gamma",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.1loopt label=\"sub.1loopt\"} The adjoint Reidemeister torsion has a conjectural description in terms of the 1-loop invariant of [@DG1]. The latter depends on the NZ matrices of an ideal triangulation, its shapes, their flattenings and a peripheral curve $\\gamma$. With the notation of Section [\\[sub.tNZ\\]](#sub.tNZ){reference-type=\"ref\" reference=\"sub.tNZ\"} the *1-loop invariant* is defined by $$\\label{1loop}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-2-proofs-twisted-nz-matrices",
+      "number": "2",
+      "title": "Proofs: twisted NZ matrices",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 12,
+      "labelStart": "8",
+      "labelEnd": "12",
+      "words": 1423,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pmatrix mathbf",
+          "heading": false
+        },
+        {
+          "term": "beta mathbf",
+          "heading": false
+        },
+        {
+          "term": "overline mathbf",
+          "heading": false
+        },
+        {
+          "term": "alpha mathbf",
+          "heading": false
+        },
+        {
+          "term": "mathbf square",
+          "heading": false
+        },
+        {
+          "term": "equiv mathbf",
+          "heading": false
+        },
+        {
+          "term": "cdots mathbf",
+          "heading": false
+        },
+        {
+          "term": "sum mathbf",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.part1 label=\"sec.part1\"} In this section we give proofs of the properties of the twisted NZ matrices, namely the relation to the NZ matrices of cyclic covers (Theorem [\\[thm.NZcyclic\\]](#thm.NZcyclic){reference-type=\"ref\" reference=\"thm.NZcyclic\"}), the symplectic properties (Theorem [\\[thm.sympl\\]](#thm.sympl){reference-type=\"ref\" reference=\"thm.sympl\"}), and the behavior under 2--3 Pachner moves (Theorem",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-3-examples",
+      "number": "3",
+      "title": "Examples",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 42,
+      "summary": null,
+      "keywords": [],
+      "extract": "In this section we explain how to compute the twisted NZ matrices of an ideal triangulation using the methods of SnapPy. As is customary, we do so by the example of the simplest hyperbolic 41 knot, and later by the 63 knot.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-31-the-knot-41",
+      "number": "3.1",
+      "title": "The knot 41",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 728,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "face-pairings",
+          "heading": false
+        },
+        {
+          "term": "abelianization map",
+          "heading": false
+        },
+        {
+          "term": "peripheral torus",
+          "heading": false
+        },
+        {
+          "term": "abt",
+          "heading": false
+        },
+        {
+          "term": "gluing equation",
+          "heading": false
+        },
+        {
+          "term": "triangulation",
+          "heading": false
+        },
+        {
+          "term": "figure",
+          "heading": false
+        },
+        {
+          "term": "labeling",
+          "heading": false
+        }
+      ],
+      "extract": "tetrahedra ∆1 and ∆2. Using the default triangulation of SnapPy for 41 with isometry signature cPcbbbiht BaCB, the gluing equations are e1 : z2 1z′ 1z2 2z′ 2 = 1, e2 : z′ 1(z′′ 1)2z′ 2(z′′ 2)2 = 1 , the corresponding gluing equation matrices are G = \u0012 2 2 0 0 \u0013 , G′ = \u0012 1 1 1 1 \u0013 , G′′ = \u0012 0 0 2 2 \u0013 , and the NZ matrices are A = \u0012 1 1 −1 −1 \u0013 , B = \u0012 −1 −1 1 1 \u0013 with ABT = \u0012 −2 2 2 −2 \u0013 symmetric. We can read the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-32-the-knot-63",
+      "number": "3.2",
+      "title": "The knot 63",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "16",
+      "words": 1035,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "z1z2z4z5z",
+          "heading": false
+        },
+        {
+          "term": "peripheral torus",
+          "heading": false
+        },
+        {
+          "term": "abt",
+          "heading": false
+        },
+        {
+          "term": "abbb",
+          "heading": false
+        }
+      ],
+      "extract": "gLLPQccdefffhggaacv aBBb has six tetrahedra ∆1, . . . , ∆6 with the peripheral torus shown in Figure 6. z3 z5 z5 z6 z1 z2 z4 z2 z4 z1 z5 z6 z3 z5 z3 z1 z6 z4 z2 z4 z6 z3 z1 z2 e3 e2 e4 e6 e5 e1 Figure 6. The triangulation of the peripheral torus of 63. TWISTED NEUMANN–ZAGIER MATRICES 15 The gluing equations of the six edges are e1 : z1z2z3z4z6 = 1, e2 : z′ 1z′ 2(z′′ 2)2z′ 4(z′′ 4)2z′ 6 = 1, e3 : z′′ 1z′ 2z′ 3z′ 5z′′",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-4-proofs-twisted-1-loop-invariant",
+      "number": "4",
+      "title": "Proofs: twisted 1-loop invariant",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 21,
+      "labelStart": "16",
+      "labelEnd": "21",
+      "words": 1880,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "square zeta",
+          "heading": false
+        },
+        {
+          "term": "mathbf square",
+          "heading": false
+        },
+        {
+          "term": "det mathbf",
+          "heading": false
+        },
+        {
+          "term": "mathbf lambda",
+          "heading": false
+        },
+        {
+          "term": "alpha zeta",
+          "heading": false
+        },
+        {
+          "term": "cdots vdots",
+          "heading": false
+        },
+        {
+          "term": "mathrm diag",
+          "heading": false
+        },
+        {
+          "term": "ddots vdots",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec.part2 label=\"sec.part2\"} In this section we give proofs of the properties of the twisted 1-loop invariant. ::: proof *Proof.* (of Theorem [\\[thm.top\\]](#thm.top){reference-type=\"ref\" reference=\"thm.top\"}) We will use the notation of Theorem [\\[thm.NZpachner\\]](#thm.NZpachner){reference-type=\"ref\" reference=\"thm.NZpachner\"} which relates the NZ matrices of two triangulations $\\mathcal T$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-5-examples-continued",
+      "number": "5",
+      "title": "Examples, continued",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 29,
+      "summary": null,
+      "keywords": [],
+      "extract": "5. Examples, continued In this section, which is a continuation of Section 3, we compute the twisted 1-loop invari- ant of an ideal triangulation using the methods of SnapPy.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-011-51-the-knot-41",
+      "number": "5.1",
+      "title": "The knot 41",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 211,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ζ1t ζ2t",
+          "heading": false
+        },
+        {
+          "term": "twisted loop",
+          "heading": false
+        },
+        {
+          "term": "z1z",
+          "heading": false
+        }
+      ],
+      "extract": "Using the same notation, we now give the remaining data, namely the shapes of the com- plete hyperbolic structure and ﬂattenings, which are needed to compute the twisted 1-loop invariant. The solution for the complete structure is z1 = z2 = 1+√−3 2 . Equations (41) and (42) give G(t) diag(ζ) + G′(t) diag(ζ′) + G′′(t) diag(ζ′′) = \u0012 2ζ1t + ζ′ 1t2 ζ′ 2 + 2ζ2t ζ′ 1t + 2ζ′′ 1t2 2ζ′′ 2t + ζ′ 2t2 \u0013 . (67) One easily checks",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-52-the-knot-63",
+      "number": "5.2",
+      "title": "The knot 63",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 395,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ζ2ζ ζ4ζ",
+          "heading": false
+        },
+        {
+          "term": "ζ1t ζ2t",
+          "heading": false
+        },
+        {
+          "term": "ζ3t",
+          "heading": false
+        },
+        {
+          "term": "ζ5t",
+          "heading": false
+        }
+      ],
+      "extract": "triangulation of the 63 knot to compute its twisted 1-loop invariant, following the notation of Section 3.2. The trace ﬁeld of the 63 knot is the number ﬁeld of type [0, 3] and discriminant −11 · 312 given by F = Q[ξ] where ξ ≈1.073 −0.558√−1 satisﬁes ξ6 −ξ5 −ξ4 + 2ξ3 −ξ + 1 = 0. The solution for the complete structure is given exactly (z1, z2, z3, z4, z5, z6) = (−ξ2 + ξ, −ξ2 + 1, −ξ3 + ξ, −ξ2 + 1, −ξ3 + ξ, −ξ2 + ξ)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 37,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "r1a6a3a",
+          "heading": false
+        },
+        {
+          "term": "nrf",
+          "heading": false
+        },
+        {
+          "term": "korea",
+          "heading": false
+        }
+      ],
+      "extract": "The first author wishes to thank Nathan Dunfield for enlightening conversations and for sharing his drawing program of the triangulated cusp of an ideal triangulation. The second author was supported by Basic Science Research Program through the NRF of Korea funded by the Ministry of Education (2020R1A6A3A03037901).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-014-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 540,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "yoshikazu yamaguchi",
+          "heading": false
+        },
+        {
+          "term": "tudor dimofte",
+          "heading": false
+        },
+        {
+          "term": "twisted alexander",
+          "heading": false
+        },
+        {
+          "term": "rinat kashaev",
+          "heading": false
+        },
+        {
+          "term": "nathan dunﬁeld",
+          "heading": false
+        },
+        {
+          "term": "circulant matrices",
+          "heading": false
+        }
+      ],
+      "extract": "[AGK] Jørgen Ellegaard Andersen, Stavros Garoufalidis, and Rinat Kashaev, The volume conjecture for the klv state-integral, Preprint 2021. [CDW] Marc Culler, Nathan Dunﬁeld, and Jeﬀrey Weeks, SnapPy, a computer program for studying the topology of 3-manifolds, Available at http://snappy.computop.org (30/01/2015). [Cho06] Young-Eun Choi, Neumann and Zagier’s symplectic relations, Expo. Math. 24 (2006), no. 1, 39–51.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 3,
+        "items": [
+          "Introduction",
+          "Motivation",
+          "The knot 63 21 Acknowledgments"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "pmatrix mathbf",
+      "heading": false
+    },
+    {
+      "term": "matrices mathbf",
+      "heading": false
+    },
+    {
+      "term": "mathbf square",
+      "heading": false
+    },
+    {
+      "term": "alpha mathbf",
+      "heading": false
+    },
+    {
+      "term": "twisted loop",
+      "heading": true
+    },
+    {
+      "term": "twisted gluing",
+      "heading": false
+    },
+    {
+      "term": "overline mathbf",
+      "heading": false
+    },
+    {
+      "term": "det mathbf",
+      "heading": false
+    },
+    {
+      "term": "twisted torsion",
+      "heading": true
+    },
+    {
+      "term": "gamma mathbf",
+      "heading": false
+    },
+    {
+      "term": "beta mathbf",
+      "heading": false
+    },
+    {
+      "term": "twisted alexander",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "An ideal tetrahedron. A complete hyperbolic structure of M can be described by a special solution of the gluing equations. The latter describe the holonomy of the hyperbolic structure around each edge ei of T , and have the (logarithmic) form",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "2-3 Pachner move",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The triangulation of the peripheral torus of 41. To describe the ideal triangulation eT of the inﬁnite cyclic cover f",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Face-pairings",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The dual 1-complex of E2, where the labeling α(v)j of a vertex v indicates that v is labeled by the j-th tetrahedron",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The triangulation of the peripheral torus of 63",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "The dual 1-skeleton of E2. and",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 15,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 16,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "7 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p22); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 16 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2109.00379v1"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-degree-one-braid-trivial-volume",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:degree-one-braid-trivial-volume",
+  "kind": "lemma",
+  "title": "Braid words of a degree-one element have non-hyperbolic closures",
+  "cites": [
+    "references/kashaev1997"
+  ],
+  "tags": [
+    "photon",
+    "masslessness",
+    "degree-one",
+    "archimedean",
+    "unknot"
+  ],
+  "leanRef": "qou:QOU.StandardModel.Photon.linearVol_eq_zero_of_mem_span",
+  "text": "degree-one-braid-trivial-volume.md",
+  "leanSource": "degree-one-braid-trivial-volume.lean",
+  "provenance": "authored"
+}

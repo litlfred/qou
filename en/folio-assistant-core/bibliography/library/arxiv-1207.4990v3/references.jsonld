@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1207.4990v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Toeplitz matrices and Toeplitz determinants under the impetus of the Ising model. Some history and some recent results",
+      "dcterms:creator": [
+        "Deift, Percy"
+      ],
+      "dcterms:issued": "D:20181030",
+      "dcterms:identifier": "https://arxiv.org/abs/1207.4990",
+      "dcterms:source": "library/arxiv-1207.4990v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1207.4990v3"
+    }
+  ]
+}

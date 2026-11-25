@@ -1,0 +1,803 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1707.00196v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\nMarch 22, 2018\nAbstract\nEvery unitary involutive solution of the quantum Yang-Baxter equation (R-\nmatrix) deﬁnes an extremal character and a representation of the inﬁnite sym-\nmetric group S∞.\nWe give a complete classiﬁcation of all such Yang-Baxter\ncharacters and determine which extremal characters of S∞are of Yang-Baxter\nform.\nCalling two involutive R-matrices equivalent if they have the same character\nand the same dimension, we show that equivalence classes can be parameterized\nby pairs of Young diagrams, and construct an explicit normal form R-matrix for\neach class. Using oper",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Yang-Baxter representations of the\ninﬁnite symmetric group\nGandalf Lechner, Ulrich Pennig, Simon Wood\nSchool of Mathematics, CardiﬀUniversity\narXiv:1707.00196v3  [math.QA]  5 Aug 2019\nMathematics Subject Classiﬁcation: 16T25, 20C32, 46L37",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "R0/∼is in one to one correspondence with pairs of Young diagrams. Classes of R-matrices of dimension d correspond to pairs of Young diagrams with d boxes in total. Our analysis uses the fact that the Sn-representations ρ(n) R , R ∈R0(V ), deﬁne a representation ρR of the inﬁnite symmetric group S∞(the group of all bijections of N that move only ﬁnitely many points) inside the inﬁnite (algebraic) tensor product S n End(V )⊗n. As any inﬁnite discrete group having no normal abelian subgroup of ﬁnite index, S∞admits unitary representations which are not of type I [21], meaning that its irreducible",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/thm-sec-000-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "thm-sec-000-02.md",
+      "narrative": null,
+      "content": "Two R-matrices R, S ∈R0 are equivalent if and only if they have similar partial traces, ptr R ∼= ptr S. Our subfactor approach also completes the characterization of TYB as a subset of T. Using the standard notation for Thoma parameters (recalled in Thm. 2.3), we ﬁnd the following result.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/thm-sec-000-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "thm-sec-000-03.md",
+      "narrative": null,
+      "content": "An extremal character of S∞is a Yang-Baxter character if and only if its Thoma parameters {αi}i, {βj}j satisfy i) Only ﬁnitely many αi, βj are non-zero. ii) P i αi + P j βj = 1. iii) All αi, βj are rational. The Thoma parameters of an R-matrix of dimension d satisfy dαi, dβi ∈N. It is interesting to note that although the Yang-Baxter representations (1.2) have a quite special form, their Thoma parameters form a dense subset of T. Several diﬀerent approaches to characters and representations of S∞exist in the literature, of which we mention here in particular the asymptotic character theory of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "R-matrices and characters of S",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-2-r-matrices-and-characters-of-s.md",
+      "narrative": null,
+      "content": "R-matrices and characters of S∞\nThe inﬁnite symmetric group S∞is the group of all bijections of N that move only\nﬁnitely many points, a countable discrete group with inﬁnite (non-trivial) conjugacy\nclasses. A character of S∞is deﬁned as a positive deﬁnite class function χ : S∞→C\nthat is normalized at the identity, χ(e) = 1. For example, the trivial representation\nhas the constant character 1. The characters of S∞form a simplex, the extreme points\nof which are called extremal characters (or indecomposable characters). An example\nof an extremal character is the Plancherel trace χ(σ) = δσ,e.\nThom",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/thm-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "thm-sec-001-01.md",
+      "narrative": null,
+      "content": "[23] A character χ of S∞is extremal if and only if for any σ, σ′ ∈S∞ with disjoint supports, it holds that χ(σσ′) = χ(σ)χ(σ′). Some elements of S∞will appear repeatedly. We write σi,j = (i, j) for two-cycles, and speciﬁcally σk = σk,k+1 for neighboring transpositions, the standard generators of S∞. General n-cycles will be denoted cn ∈S∞. In case a speciﬁc choice of n-cycle is necessary, we choose cn = σn−1 · · · σ2σ1 = σ1,2σ1,3 · · · σ1,n , (2.1a) σ1,n = σn−1 · · · σ2σ1σ2 · · · σn−1 . (2.1b) In view of the above theorem and the cycle decomposition of permutations, an ex- tremal character χ of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/prop-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "prop-sec-002-01.md",
+      "narrative": null,
+      "content": "Let R ∈R0(V ). Then χR := τ ◦ρR (2.4) is an extremal character of S∞. On an n-cycle cn, n ≥2, it evaluates to χR(cn) = d−n TrV ⊗n(R1 · · · Rn−1), d = dim V. (2.5)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Extremality and Thoma's parameterization",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-21-extremality-and-thomas-parameterization.md",
+      "narrative": null,
+      "content": "We now connect S∞to R-matrices by showing that any R-matrix deﬁnes an extremal\ncharacter and corresponding factor representation of S∞. We will be working with the\ninﬁnite tensor product E0 := N\nn≥1 End V (deﬁned only algebraically at this point),\nwith inclusions ﬁxed by tensoring with idV in the last factor. With the group inclusions\nSn ⊂Sn+1 ⊂S∞deﬁned by letting σ ∈Sn act on N by keeping all j > n ﬁxed, the\nsystem of representations ρ(n)\nR , R ∈R0(V ) is coherent and deﬁnes a ∗-homomorphism\nρR : C[S∞] →E0. The generators σi, i ∈N, are mapped to\nRi := ρR(σi) = 1⊗(i−1) ⊗R ⊗1 ⊗. . . ,\n(2.2)\nwhe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/thm-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "thm-sec-002-02.md",
+      "narrative": null,
+      "content": "[23] Let T denote the collection of all sequences {αi}i∈N, {βi}i∈N of real numbers such that i) αi ≥0 and βi ≥0, ii) αi ≥αi+1 and βi ≥βi+1, iii) P i αi + P j βj ≤1. The pairs of sequences (α, β) ∈T are in bijection with extremal characters of S∞. On an n-cycle, the character χ corresponding to (α, β) ∈T takes the value χ(cn) = X i αn i + (−1)n+1 X i βn i , n ≥2. (2.6) We will call the parameters (α, β) ∈T the Thoma parameters of a character. As a consequence of these results, any R ∈R0 deﬁnes a point (α, β) ∈T. In the following sections, we will be concerned with the problem of identifying the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/cor-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "cor-sec-003-03.md",
+      "narrative": null,
+      "content": "Let (α, β) ∈T be the Thoma parameters of a Yang-Baxter character χR. Then P i αi + P i βi = 1, and only ﬁnitely many αi or βi are non-zero. We can now give a ﬁrst example of an extremal non-Yang-Baxter character, namely the Plancherel trace χ(σ) = δσ,e. By (2.6), the Plancherel trace has Thoma parameters α = β = 0 and therefore violates the condition P i αi + P i βi = 1. Its GNS repre- sentation is the left regular representation, which is too large to be of Yang-Baxter form.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/lem-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 15,
+      "target": "lem-sec-004-03.md",
+      "narrative": null,
+      "content": "i) Let {xi}i and {yj}j be two ﬁnite sequences of positive real numbers such that for all n ∈N, X i x2n+1 i = X j yn j . (3.18) Then the xi, yj are rational. ii) Let {xi}i be a ﬁnite sequence of positive rational numbers such that P i x2n+1 i ∈N for all n ∈N. Then the xi are natural numbers.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/prop-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "prop-sec-003-01.md",
+      "narrative": null,
+      "content": "Let R ∈R0. i) As a group homomorphism, ρR is injective if and only if R̸ = ±1. ii) As an algebra homomorphism, ρR : C[S∞] →E0 is not injective.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/prop-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 15,
+      "target": "prop-sec-004-01.md",
+      "narrative": null,
+      "content": "Let cn ∈S∞be an n-cycle, n ≥2. Then χR(cn) = τ(E(R1)n−1). (3.14)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Faithfulness",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-22-faithfulness.md",
+      "narrative": null,
+      "content": "Faithfulness\nGiven an R-matrix R ∈R0 of dimension d, the homomorphism ρR restricts to a\nrepresentation ρ(n)\nR\nof Sn on V ⊗n, which has dimension dn. This observation expresses\nthat Yang-Baxter representations are small in comparison to the group algebra C[Sn],\nand leads to restrictions on the Thoma parameters of Yang-Baxter characters.\nProposition 2.4. Let R ∈R0.\ni) As a group homomorphism, ρR is injective if and only if R̸ = ±1.\nii) As an algebra homomorphism, ρR : C[S∞] →E0 is not injective.\nProof. i) This is a general property of S∞. Clearly, if R = ±1 then ρR is not injective.\nConversely,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Yang-Baxter subfactors",
+      "pageStart": 8,
+      "pageEnd": 15,
+      "target": "../sections/sec-004-3-yang-baxter-subfactors.md",
+      "narrative": null,
+      "content": "Yang-Baxter subfactors\nThe Thoma parameters of a Yang-Baxter character have further properties, in addition\nto the ones spelled out in Cor. 2.6.\nTo extract these properties, and to derive a\ncharacterization of the equivalence relation ∼, we now switch to a setting involving\nvon Neumann algebras. Speciﬁcally, we will consider subfactors [9, 37] arising from\nthe subgroup\nS>\n∞⊂S∞,\nS>\n∞:= {σ ∈S∞: σ(1) = 1}.\n(3.1)\n8\nGiven an extremal character χ of S∞, we may view it as a tracial state on the group\nC∗-algebra C∗S∞(we denote the state and the character by the same symbol).\nThe GNS data of (C∗S∞, χ)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/thm-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "thm-sec-003-02.md",
+      "narrative": null,
+      "content": "[26] Let χ be an extremal character of S∞with Thoma parameters (α, β) ∈T. Then χ is faithful as a state of the group C∗-algebra C∗S∞if and only if either P i αi + P i βi < 1, or P i αi + P i βi = 1 and inﬁnitely many αi or βi are non-zero. In combination with Prop. 2.4 ii), this immediately implies the following result.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/thm-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 15,
+      "target": "thm-sec-004-02.md",
+      "narrative": null,
+      "content": "Two R-matrices R, S ∈R0 are equivalent if and only if they have similar partial traces, ptr R ∼= ptr S.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/thm-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 15,
+      "target": "thm-sec-004-04.md",
+      "narrative": null,
+      "content": "The Thoma parameters αi, βi of any Yang-Baxter character χR lie in TYB. If R has dimension d, then dαi, dβi ∈N.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/lem-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 20,
+      "target": "lem-sec-006-01.md",
+      "narrative": null,
+      "content": "Let V, W be ﬁnite dimensional Hilbert spaces and X ∈End(V ⊗V ), Y ∈End(W ⊗W). i) ⊞is commutative and associative up to canonical isomorphism. ii) If X and Y are unitary (respectively selfadjoint, involutive, invertible), then X ⊞Y is unitary (respectively selfadjoint, involutive, invertible). iii) If X commutes with the ﬂip (on V ⊗V ) and Y commutes with the ﬂip (on W ⊗W), then X ⊞Y commutes with the ﬂip (on (V ⊕W) ⊗(V ⊕W)). iv) ptr(X ⊞Y ) = (ptr X) ⊕(ptr Y ). In particular, Tr(X ⊞Y ) = Tr X + Tr Y . The same formula holds for the right partial trace.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/lem-sec-006-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 20,
+      "target": "lem-sec-006-04.md",
+      "narrative": null,
+      "content": "now implies the converse, ﬁnishing the proof of Thm. III from the Introduction.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/prop-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 20,
+      "target": "prop-sec-006-02.md",
+      "narrative": null,
+      "content": "Let R ∈R(V ), ˜R ∈R( ˜V ). Then R ⊞˜R ∈R(V ⊕˜V ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/prop-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 20,
+      "target": "prop-sec-006-03.md",
+      "narrative": null,
+      "content": "Let R, ˜R ∈R0 have dimensions d, ˜d. i) The characters of R, ˜R, and R ⊞˜R are related by (cn an n-cycle, n ≥2) χR⊞˜R(cn) = dn (d + ˜d)n χR(cn) + ˜dn (d + ˜d)n χ ˜R(cn) . (4.5) ii) Let (α, β) and (˜α, ˜β) be the Thoma parameters of R and ˜R, respectively. Then the Thoma parameters of R ⊞˜R are the non-increasing arrangements of {ˆαi}i = { d d+ ˜d αk, ˜d d+ ˜d ˜αl, : k, l ∈N} , {ˆβi}i = { d d+ ˜d βk, ˜d d+ ˜d ˜βl, : k, l ∈N} . (4.6)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The structure of R0",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-005-4-the-structure-of-r0.md",
+      "narrative": null,
+      "content": "The structure of R0/∼",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Normal forms of involutive R-matrices",
+      "pageStart": 15,
+      "pageEnd": 20,
+      "target": "../sections/sec-006-41-normal-forms-of-involutive-r-matrices.md",
+      "narrative": null,
+      "content": "Normal forms of involutive R-matrices\nOur next aim is to prove that TYB parameterizes the set of all Yang-Baxter characters,\nthat is, that every (α, β) ∈TYB is realized as the Thoma parameters of some R-matrix.\nWe will follow a procedure which has some analogy to building general group\nrepresentations (of, say, a ﬁnite group) as direct sums of irreducibles. Yang-Baxter\nrepresentations are reducible, but decomposing them gives representations which are\nno longer of Yang-Baxter form. Conversely, taking direct sums of Yang-Baxter repre-\nsentations is not compatible with the Yang-Baxter equation e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/thm-sec-006-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 20,
+      "target": "thm-sec-006-05.md",
+      "narrative": null,
+      "content": "The Yang-Baxter characters of S∞are in one to one correspondence with TYB (Def. 3.6) via Thoma’s formula (2.6).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/lem-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "lem-sec-007-01.md",
+      "narrative": null,
+      "content": "Let R, R′ ∈R0 have rescaled Thoma parameters (a, b) and (a′, b′), re- spectively. Then the rescaled Thoma parameters of R ⊠R′ are the non-increasing arrangements of {ˆaij} = {aia′ j, bib′ j}, {ˆbij} = {aib′ j, bia′ j}. (4.16)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Parameterization by pairs of Young diagrams",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-007-42-parameterization-by-pairs-of-young-diagrams.md",
+      "narrative": null,
+      "content": "Parameterization by pairs of Young diagrams\nThe correspondence in Thm. 4.7 classiﬁes the family of Yang-Baxter characters, but\nit does not classify R0/∼because the dimension of the base space is not recorded\nin the Thoma parameters. However, it is now easy to incorporate the dimension as\nwell: Given R ∈R0 with Thoma parameters (α, β) and dimension d, we switch to the\nrescaled Thoma parameters\nai := dαi,\nbi := dβi.\n(4.13)\nBy Thm. 3.7, the ai, bi are integers summing to d. We can therefore view (a, b) as\nan ordered pair of integer partitions, or, equivalently, Young diagrams. Denoting the\nset of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/lem-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "lem-sec-009-01.md",
+      "narrative": null,
+      "content": "Let λ be a partition of n ∈N. We will identify λ with the corresponding irreducible representation of Sn. On the projection pλ ∈C∗S∞associated to λ the value of ρR∗is given by ρR∗([pλ]) = 1 dn ⟨λ, ρ(n) R ⟩, where ⟨λ, µ⟩denotes the multiplicity of the irreducible representation λ in the repre- sentation µ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/prop-sec-009-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "prop-sec-009-03.md",
+      "narrative": null,
+      "content": "Let R ∈R0(V ). Then the associated K-theory invariant ρR∗: K0(C∗S∞) →Z[1 d] is a ring homomorphism.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Yang-Baxter representations",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-008-5-yang-baxter-representations.md",
+      "narrative": null,
+      "content": "Yang-Baxter representations\nOur basic Def. 1.1 of equivalence of R-matrices refers only to the Sn-representations\nρ(n)\nR .\nWe have seen already that R ∼S implies unitary equivalence of the GNS\nrepresentations πτ ◦ρR ∼= πτ ◦ρS (3.3). Now we investigate the implications of R ∼S\nfor the homomorphisms ρR, ρS.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "R-matrices and K-theory",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "../sections/sec-009-51-r-matrices-and-k-theory.md",
+      "narrative": null,
+      "content": "R-matrices and K-theory\nIn this section we extend the previously deﬁned ρR to a ∗-homomorphism of C∗-\nalgebras, ρR : C∗S∞→E∞, where E∞is the C∗-algebraic counterpart of the alge-\nbra E from Section 3. On K-theory the map ρR will induce a ring homomorphism\nρR∗: K0(C∗S∞) →Z[1\nd] with d = dim(V ). The equivalence relation introduced in\nDef. 1.1 will then translate into the approximate unitary equivalence of the corre-\nsponding ∗-homomorphisms. In fact, when the invariant ρR∗is composed with the\ncanonical inclusion Z[1\nd] ⊂R it is an indecomposable ﬁnite trace on K0(C∗S∞) in\nthe sense of Kerov and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/thm-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "thm-sec-009-02.md",
+      "narrative": null,
+      "content": "Let R, S ∈R0(V ). The following are equivalent: i) R ∼S, ii) ρR∗= ρS∗, iii) ρR ≈u ρS.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/cor-sec-010-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "cor-sec-010-03.md",
+      "narrative": null,
+      "content": "Let R, S ∈R0. i) H+ R(z) · H− R(−z) = 1. ii) H± −R(z) = H∓ R(z). iii) H± R⊞S(z) = H± R(z) · H± S (z).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/lem-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "lem-sec-010-01.md",
+      "narrative": null,
+      "content": "The operation λn is a λ-operation on (R0/∼∪{(∅, ∅)}, ⊞, ⊠).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "R-matrices, K-theory and symmetric functions",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "../sections/sec-010-52-r-matrices-k-theory-and-symmetric-functions.md",
+      "narrative": null,
+      "content": "R-matrices, K-theory and symmetric functions\nBefore discussing the connections between R-matrices, K-theory and symmetric func-\ntions in greater detail, we ﬁrst collect some facts about symmetric functions to ﬁx\nnotation. We refer readers unfamiliar with symmetric functions to Macdonald’s book\n[44].\nThe ring of symmetric functions, Λ, admits numerous free generators. Here, the\nmost important are:\ni) Elementary symmetric functions:\nek =\nX\n1≤i1<i2<···<ik\nxi1xi2 · · · xik,\nk ≥1.\nii) Complete symmetric functions:\nhk =\nX\n1≤i1≤i2≤···≤ik\nxi1xi2 · · · xik,\nk ≥1.\niii) Power sums:\npk =\nX\ni≥1\nxk\ni .\nThe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/thm-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "thm-sec-010-02.md",
+      "narrative": null,
+      "content": "Let R ∈R0(V ) with Thoma parameters (α, β). Then we have ρR∗(θ(ek)) = [(1 ⊗ω) ◦∆(ek)] (α, β)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/lem-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "lem-sec-011-01.md",
+      "narrative": null,
+      "content": "In the notation introduced above, consider the Hilbert space W := V1⊕V2 and the (now possibly inﬁnite dimensional) R-matrix F ⊞−F ∈R0(W). Then ωF ⊞−F A⊕B := O n≥1 TrW ((A ⊕B) · ) ◦ρF ⊞−F : S∞→C (5.8) is an extremal character of S∞. Its α-parameters are the eigenvalues of A, and its β-parameters are the eigenvalues of B.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/prop-sec-011-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "prop-sec-011-02.md",
+      "narrative": null,
+      "content": "Let χ be an extremal S∞-character with Thoma parameters (α, β) satisfying P i(αi +βi) = 1. Then the GNS data (πχ, Hχ, Ωχ) can be described in terms of the previously introduced V, R, and ξ as Ωχ = O n≥1 ξ, Hχ = ρR(C[S∞])Ωχ, πχ = ρR . (5.12)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "R-matrices and product states",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "../sections/sec-011-53-r-matrices-and-product-states.md",
+      "narrative": null,
+      "content": "R-matrices and product states\nOur Yang-Baxter characters are deﬁned by composing the homomorphism ρR : C[S∞] →\nE0 with the unique tracial product state τ = N\nn≥1\nTrV\nd\nof E0 (2.4). In this section, we\n28\nbrieﬂy discuss how this construction extends to a much larger class of extremal char-\nacters when we change τ to a diﬀerent product state on E0: All extremal characters\nwith Thoma parameters summing to 1 can, together with their GNS representations,\nbe expressed in terms of R-matrices and product states. The essential diﬀerence to\nour Yang-Baxter setting is that instead of the canonical trace",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "../sections/sec-012-6-examples.md",
+      "narrative": null,
+      "content": "Examples\nIn this section, we discuss two special classes of involutive R-matrices.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "R-matrices of diagonal type",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "../sections/sec-013-61-r-matrices-of-diagonal-type.md",
+      "narrative": null,
+      "content": "R-matrices of diagonal type\nAs a simple class of examples which exist in any dimension, we consider involutive\nR-matrices of diagonal type. An R-matrix R ∈R0 is said to be diagonal if it is of the\nform R = DF, with F the ﬂip, and for some orthonormal basis {ei}i of V , the matrix\nD ∈End(V ⊗V ) is diagonal in the corresponding tensor basis, i.e.\nD(ei ⊗ej) = λij ei ⊗ej ,\ni, j = 1, . . . , d ,\n(6.1)\nwhere λij ∈C. It is easy to check that such R solve the Yang-Baxter equation. An\nR-matrix is said to be of diagonal type if it is equivalent to a diagonal one.\nThe R-matrix R = DF, R(ei ⊗ej) = λji ej",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/lem-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 36,
+      "target": "lem-sec-014-01.md",
+      "narrative": null,
+      "content": "An R-matrix R ∈R0 is of Temperley-Lieb type if and only if ρ(3) R does not contain the trivial representation of S3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/prop-sec-014-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 36,
+      "target": "prop-sec-014-02.md",
+      "narrative": null,
+      "content": "i) Yang-Baxter representations of the Temperley-Lieb algebra TL(2) with rank r and dimension d exist if and only if d2 −4r = k2 (6.11) for some k ∈N0. Two such representations are equivalent if and only if they have the same dimension and rank. ii) Let R ∈R0 be an involutive R-matrix of Temperley-Lieb type with dimension d and rank r. Then its non-vanishing Thoma parameters are β1 = 1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1707.00196v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Temperley-Lieb R-matrices",
+      "pageStart": 32,
+      "pageEnd": 36,
+      "target": "../sections/sec-014-62-temperley-lieb-r-matrices.md",
+      "narrative": null,
+      "content": "Temperley-Lieb R-matrices\nAs a second class of examples, we consider solutions coming from representations of\nthe Temperley-Lieb algebra [35]. Given an involutive R-matrix R ∈R0, we denote its\nspectral projection onto eigenvalue +1 by P, i.e. P = 1\n2(R + 1). One computes\n1\n8 (R1R2R1 −R2R1R2) =\n\u0012\nP1P2P1 −1\n4P1\n\u0013\n−\n\u0012\nP2P1P2 −1\n4P2\n\u0013\n,\n(6.8)\nand this vanishes by the Yang-Baxter equation. If both terms on the right hand side\nvanish individually,\nP1P2P1 = 1\n4P1 ,\nP2P1P2 = 1\n4P2 ,\n(6.9)\nthen R is said to be of Temperley-Lieb type. This terminology is justiﬁed by the close\nrelation of (6.9) to the de",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

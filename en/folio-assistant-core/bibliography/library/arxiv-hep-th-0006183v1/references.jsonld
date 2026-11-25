@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-hep-th-0006183v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Fine-tuning and the Wilson renormalization group",
+      "dcterms:creator": [
+        "Bonini, M.",
+        "Tricarico, E."
+      ],
+      "dcterms:issued": "D:20210723",
+      "dcterms:identifier": "https://arxiv.org/abs/hep-th/0006183",
+      "dcterms:abstract": "We use the Wilson renormalization group (RG) formulation to solve the ﬁne-tuning proce- dure needed in renormalization schemes breaking the gauge symmetry. To illustrate this method we systematically compute the non-invariant couplings of the ultraviolet action of the SU(2) pure Yang-Mills theory at one-loop order.",
+      "dcterms:source": "library/arxiv-hep-th-0006183v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-hep-th-0006183v1"
+    }
+  ]
+}

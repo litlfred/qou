@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2507.13840v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Quantifying mixed-state entanglement via partial transpose and realignment moments",
+      "dcterms:creator": [
+        "Poetri Sonya Tarabunga1, 2",
+        "Haug3, Tobias"
+      ],
+      "dcterms:identifier": "https://arxiv.org/abs/2507.13840",
+      "dcterms:source": "library/arxiv-2507.13840v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2507.13840v2"
+    }
+  ]
+}

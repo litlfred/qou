@@ -1,0 +1,44 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2302.04022v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2302.04022v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "[]{#sec:Introduction label=\"sec:Introduction\"}\n\nIn this paper all graphs are finite, undirected and simple, and all groups are finite. Let $\\Gamma=(V(\\Gamma),E(\\Gamma))$ be a graph with vertex set $V(\\Gamma)$ and edge set $E(\\Gamma)$. Then all eigenvalues of the adjacency matrix $A(\\Gamma)$ of $\\Gamma$ are real, and they are referred to as the *eigenvalues* of $\\Gamma$. We always arrange these eigenvalues in non-ascending order as $\\lambda_1\\geq \\lambda_2\\geq \\cdots\\geq \\lambda_n$, where $n = |V(\\Gamma)|$ is the order of $\\Gamma$. Whenever we want to stress the dependence of the $i$-th largest",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.04022v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 3,
+      "pageEnd": 27,
+      "target": "../sections/sec-001-2-preliminaries.md",
+      "narrative": null,
+      "content": "[]{#sec:preliminaries label=\"sec:preliminaries\"}\n\nAll definitions in this section can be found in [@Sagan].\n\nIn what follows we use $$\\widehat{G}=\\{\\rho_1,\\rho_2,\\ldots,\\rho_k\\}$$ to denote a complete set of inequivalent (complex) irreducible matrix representations of a group $G$, with the convention that $\\rho_1$ is the trivial representation. For any $\\rho_i \\in \\widehat{G}$, the map $$\\chi_i: g \\mapsto \\mathrm{Trace}(\\rho_i(g)),\\;\\, g \\in G$$ is the *character* of $\\rho_i$, and the ratio $$\\tilde{\\chi}_i(g):=\\frac{\\chi_i(g)}{\\chi_i(e)}$$ is known as the *normalized character* of $\\rho_i$ on",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

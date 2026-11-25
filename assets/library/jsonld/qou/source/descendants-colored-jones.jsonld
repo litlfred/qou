@@ -1,0 +1,59 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/descendants-colored-jones/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "The descendant colored Jones polynomials",
+  "contains": [
+    "library/descendants-colored-jones/sections/sec-front-matter",
+    "library/descendants-colored-jones/sections/sec-000",
+    "library/descendants-colored-jones/sections/sec-001",
+    "library/descendants-colored-jones/sections/sec-002",
+    "library/descendants-colored-jones/sections/sec-003",
+    "library/descendants-colored-jones/sections/sec-004",
+    "library/descendants-colored-jones/sections/sec-005",
+    "library/descendants-colored-jones/sections/sec-006",
+    "library/descendants-colored-jones/sections/sec-007",
+    "library/descendants-colored-jones/sections/sec-008",
+    "library/descendants-colored-jones/sections/sec-009",
+    "library/descendants-colored-jones/sections/sec-010",
+    "library/descendants-colored-jones/sections/sec-011",
+    "library/descendants-colored-jones/sections/sec-012",
+    "library/descendants-colored-jones/sections/sec-013",
+    "library/descendants-colored-jones/sections/sec-014"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "The descendant colored Jones polynomials — We discuss two realizations of the colored Jones polyno- mials of a knot, one appearing in an unnoticed work of the second author in 1994 on quantum\n\n**The descendant colored Jones polynomials**\n\n*Stavros Garoufalidis and Rinat Kashaev*\n\n28 pp, 16 sections.\n\n**Abstract.** We discuss two realizations of the colored Jones polyno- mials of a knot, one appearing in an unnoticed work of the second author in 1994 on quantum R-matrices at roots of unity obtained from solutions of the pentagon identity, and another formulated in terms of a sequence of elements of the Habiro ring appearing in recent work of D. Zagier and the ﬁrst author on the Reﬁned Quantum Modularity Conjecture.\n\n**Outline.** Front matter; Introduction; The descendant colored Jones polynomials of a ; A conjectured matrix-valued invariant from GZ:; Definition of the descendants; Properties of the descendants; A conjecture; Examples; The colored Jones polynomials at roots of unit; R-matrices with a spectral parameter; Proof of the gauge symmetry equations; Knot invariants; An example; A conjecture; Acknowledgements; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "descendants-colored-jones",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "descendants_colored_jones.pdf",
+    "source_sha256": "f00693a5926c074ffad7e37e63032d6f2a20c55598d1b37497760948cb6992fc",
+    "pages": 28,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

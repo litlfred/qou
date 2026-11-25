@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-commutative-qou-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:commutative-qou-remark",
+  "kind": "remark",
+  "title": "The strictly commutative case as the classical limit",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-commutative-qou"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-commutative-qou",
+  "tags": [
+    "commutative-limit",
+    "classical-limit",
+    "frobenius-hopf"
+  ],
+  "text": "commutative-qou-remark.md",
+  "provenance": "authored"
+}

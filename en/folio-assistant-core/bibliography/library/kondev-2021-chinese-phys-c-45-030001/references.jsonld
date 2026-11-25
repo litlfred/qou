@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/kondev-2021-chinese-phys-c-45-030001",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "The NUBASE2020 evaluation of nuclear physics properties",
+      "dcterms:creator": [
+        "updates, View the article online for",
+        "enhancements"
+      ],
+      "dcterms:issued": "D:20210302",
+      "bibo:doi": "10.1088/1674-1137/abddae",
+      "dcterms:identifier": "https://doi.org/10.1088/1674-1137/abddae",
+      "dcterms:source": "library/kondev-2021-chinese-phys-c-45-030001/manifest.jsonld",
+      "dcterms:hasVersion": "library/kondev-2021-chinese-phys-c-45-030001"
+    }
+  ]
+}

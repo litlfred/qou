@@ -1,0 +1,2000 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2304.09377v2",
+  "title": "arxiv-2304.09377v2",
+  "variant": "pdf",
+  "pages": 39,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "How the q-series arise",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-how-the-q-series-arise"
+    },
+    {
+      "level": 2,
+      "title": "The quantum modularity conjecture",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-the-quantum-modularity-conjecture"
+    },
+    {
+      "level": 2,
+      "title": "A q-series G_0(q)",
+      "number": "2.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-a-q-series-g-0q"
+    },
+    {
+      "level": 2,
+      "title": "The index, the state integral and a second q-series G_1(q)",
+      "number": "2.3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-the-index-the-state-integral-and-a-second-q-s"
+    },
+    {
+      "level": 2,
+      "title": "Holomorphic functions in C setminus R",
+      "number": "2.4",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-24-holomorphic-functions-in-c-setminus-r"
+    },
+    {
+      "level": 1,
+      "title": "q-series and perturbative series",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-3-q-series-and-perturbative-series"
+    },
+    {
+      "level": 2,
+      "title": "Asymptotics of holomorphic functions in sectors",
+      "number": "3.1",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-31-asymptotics-of-holomorphic-functions-in-secto"
+    },
+    {
+      "level": 2,
+      "title": "From divergent to convergent power series",
+      "number": "3.2",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-32-from-divergent-to-convergent-power-series"
+    },
+    {
+      "level": 2,
+      "title": "The asymptotics of G_0(q) and G_1(q) at roots of unity",
+      "number": "3.3",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-33-the-asymptotics-of-g-0q-and-g-1q-at-roots-of"
+    },
+    {
+      "level": 2,
+      "title": "The quadratic relation",
+      "number": "3.4",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-34-the-quadratic-relation"
+    },
+    {
+      "level": 2,
+      "title": "Higher level and weight spaces",
+      "number": "3.5",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-35-higher-level-and-weight-spaces"
+    },
+    {
+      "level": 1,
+      "title": "From vector-valued to matrix-valued q-series",
+      "number": "4",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-4-from-vector-valued-to-matrix-valued-q-series"
+    },
+    {
+      "level": 2,
+      "title": "Descendant q-series",
+      "number": "4.1",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-41-descendant-q-series"
+    },
+    {
+      "level": 2,
+      "title": "The asymptotics of the descendants",
+      "number": "4.2",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-42-the-asymptotics-of-the-descendants"
+    },
+    {
+      "level": 2,
+      "title": "The case of the 5_2 knot",
+      "number": "4.3",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-43-the-case-of-the-5-2-knot"
+    },
+    {
+      "level": 1,
+      "title": "The matrix-valued cocycle of a knot",
+      "number": "5",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-5-the-matrix-valued-cocycle-of-a-knot"
+    },
+    {
+      "level": 2,
+      "title": "An equivariant state integral",
+      "number": "5.1",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-51-an-equivariant-state-integral"
+    },
+    {
+      "level": 2,
+      "title": "A matrix-valued cocycle",
+      "number": "5.2",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-52-a-matrix-valued-cocycle"
+    },
+    {
+      "level": 2,
+      "title": "The two cocycles agree",
+      "number": "5.3",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-53-the-two-cocycles-agree"
+    },
+    {
+      "level": 2,
+      "title": "Matrix-valued holomorphic quantum modular forms",
+      "number": "5.4",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-54-matrix-valued-holomorphic-quantum-modular-for"
+    },
+    {
+      "level": 1,
+      "title": "Final remarks",
+      "number": "6",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-6-final-remarks"
+    },
+    {
+      "level": 1,
+      "title": "A Complements and proofs",
+      "number": null,
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-a-complements-and-proofs"
+    },
+    {
+      "level": 2,
+      "title": "A.1 q-series identities",
+      "number": null,
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-a1-q-series-identities"
+    },
+    {
+      "level": 2,
+      "title": "A.2 Asymptotics at roots of unity",
+      "number": null,
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-a2-asymptotics-at-roots-of-unity"
+    },
+    {
+      "level": 2,
+      "title": "A.3 The two matrix-valued cocycles for the 4_1 knot agree",
+      "number": null,
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-a3-the-two-matrix-valued-cocycles-for-the-4-1-kn"
+    },
+    {
+      "level": 2,
+      "title": "A.4 The six q-series for the 5_2 knot",
+      "number": null,
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-a4-the-six-q-series-for-the-5-2-knot"
+    },
+    {
+      "level": 2,
+      "title": "A.5 epsilon-deformation and the factorization of the state",
+      "number": null,
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-a5-epsilon-deformation-and-the-factorization-of"
+    },
+    {
+      "level": 2,
+      "title": "A.6 The twelve q-series for the (-2,3,7) pretzel knot",
+      "number": null,
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-a6-the-twelve-q-series-for-the--237-pretzel-knot"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 255,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum modular",
+          "heading": false
+        },
+        {
+          "term": "matrix-valued",
+          "heading": false
+        },
+        {
+          "term": "kashaev invariant",
+          "heading": false
+        },
+        {
+          "term": "modular forms",
+          "heading": false
+        },
+        {
+          "term": "url",
+          "heading": false
+        },
+        {
+          "term": "mpim-bonn",
+          "heading": false
+        },
+        {
+          "term": "mpg",
+          "heading": false
+        },
+        {
+          "term": "cocycle",
+          "heading": false
+        }
+      ],
+      "extract": "Symmetry, Integrability and Geometry: Methods and Applications SIGMA 19 (2023), 082, 39 pages Knots and Their Related q-Series Stavros GAROUFALIDIS a and Don ZAGIER bc a) International Center for Mathematics, Department of Mathematics, Southern University of Science and Technology, Shenzhen, P.R. China E-mail: stavros@mpim-bonn.mpg.de URL: http://people.mpim-bonn.mpg.de/stavros b) Max Planck Institute for",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2304.09377v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "3",
+      "words": 1417,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "descendant q-series",
+          "heading": false
+        },
+        {
+          "term": "q-series times",
+          "heading": false
+        },
+        {
+          "term": "total d-index",
+          "heading": false
+        },
+        {
+          "term": "pretzel knot",
+          "heading": false
+        },
+        {
+          "term": "πiτ",
+          "heading": false
+        },
+        {
+          "term": "andersen kashaev",
+          "heading": false
+        },
+        {
+          "term": "radial asymptotics",
+          "heading": false
+        },
+        {
+          "term": "asymptotic series",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction In this paper, which is a companion of [32], we want to tell a story about q-series and quantum invariants of knots that seems to us very interesting. The story started 11 years ago with the challenge to compute the asymptotic expansion at q →1 of a q-hypergeometric series that appeared in the evaluation of a tetrahedron quantum spin network. As it turned out, when q = e2πiτ with τ tending to zero on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-how-the-q-series-arise",
+      "number": "2",
+      "title": "How the q-series arise",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 4,
+      "summary": null,
+      "keywords": [],
+      "extract": "How the q-series arise",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-the-quantum-modularity-conjecture",
+      "number": "2.1",
+      "title": "The quantum modularity conjecture",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 473,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "modularity conjecture",
+          "heading": true
+        },
+        {
+          "term": "quantum modularity",
+          "heading": true
+        },
+        {
+          "term": "kashaev invariant",
+          "heading": false
+        },
+        {
+          "term": "volume conjecture",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic volume",
+          "heading": false
+        },
+        {
+          "term": "murakami",
+          "heading": false
+        },
+        {
+          "term": "knot",
+          "heading": false
+        },
+        {
+          "term": "famous",
+          "heading": false
+        }
+      ],
+      "extract": "The quantum modularity conjecture In this section, we tell the rather amusing story of how we purely accidentally found a q-series whose asymptotics near roots of unity agreed with the divergent perturbative series arising from the volume conjecture and the quantum modularity conjecture for the 41 knot, and how a series of further numerical experiments led to the final picture that is described in this paper. A knot",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-a-q-series-g-0q",
+      "number": "2.2",
+      "title": "A q-series G_0(q)",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 439,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-series",
+          "heading": true
+        },
+        {
+          "term": "asymptotic series",
+          "heading": false
+        },
+        {
+          "term": "upper half-plane",
+          "heading": false
+        },
+        {
+          "term": "πiτ",
+          "heading": false
+        },
+        {
+          "term": "occurring",
+          "heading": false
+        },
+        {
+          "term": "dimofte",
+          "heading": false
+        },
+        {
+          "term": "gaiotto",
+          "heading": false
+        },
+        {
+          "term": "gukov",
+          "heading": false
+        }
+      ],
+      "extract": "The surprising discovery that we made, completely by accident, is that there is a close connection between the asymptotic expression occurring here and the radial asymptotics of the function in the unit disk defined by G0(q) = (q; q)∞ ∞ X n=0 (−1)n qn(3n+1)/2 (q; q)3n = 1 −q −2q2 −2q3 −2q4 + q6 + · · · . (2.4) The infinite sum in (2.4) occurred in the work of the first author on the stability of the coefficients of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-the-index-the-state-integral-and-a-second-q-s",
+      "number": "2.3",
+      "title": "The index, the state integral and a second q-series G_1(q)",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 1084,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-series",
+          "heading": true
+        },
+        {
+          "term": "state integral",
+          "heading": true
+        },
+        {
+          "term": "index",
+          "heading": true
+        },
+        {
+          "term": "ind",
+          "heading": false
+        },
+        {
+          "term": "radial asymptotics",
+          "heading": false
+        },
+        {
+          "term": "andersen kashaev",
+          "heading": false
+        },
+        {
+          "term": "power series",
+          "heading": false
+        },
+        {
+          "term": "e2πiτ",
+          "heading": false
+        }
+      ],
+      "extract": "The index, the state integral and a second q-series G1(q) After describing the radial asymptotics of G0(q) at roots of unity, our next step was to look for a connection between the power series G0(q) and the index of 41. The index is an invariant of suitable ideal triangulation introduced in [11, 12]. Necessary and sufficient conditions for its convergence were established in [20] and its topological invariance was",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-holomorphic-functions-in-c-setminus-r",
+      "number": "2.4",
+      "title": "Holomorphic functions in C setminus R",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 198,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "state integral",
+          "heading": false
+        },
+        {
+          "term": "q-series",
+          "heading": false
+        },
+        {
+          "term": "factorized",
+          "heading": false
+        },
+        {
+          "term": "extension",
+          "heading": false
+        }
+      ],
+      "extract": "The relation of the q-series G0 and G1 with the state integral given in equation (2.11) brings out one more aspect to the q-series G0 and G1, namely their extension outside the unit disk |q| > 1. This happens because on the one hand the state integral satisfies the symmetry Z41(τ) = Z41 \u0000τ −1\u0001 , τ ∈C \\ R (which in turn follows from the corresponding symmetry of Faddeev’s quantum dilogarithm), and on the other hand",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-3-q-series-and-perturbative-series",
+      "number": "3",
+      "title": "q-series and perturbative series",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 208,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-series",
+          "heading": true
+        },
+        {
+          "term": "asymptotic expansions",
+          "heading": false
+        },
+        {
+          "term": "series",
+          "heading": true
+        },
+        {
+          "term": "bilinear combinations",
+          "heading": false
+        },
+        {
+          "term": "state-integrals",
+          "heading": false
+        },
+        {
+          "term": "perturbative",
+          "heading": true
+        }
+      ],
+      "extract": "q-series and perturbative series In this section, we discuss three further aspects of our pair (G0(q), G1(q)) of q-series. One is that their asymptotic expansions depend on a sector. This seems to be a property of general q-hypergeometric series not observed before, which is not only theoretically interesting, but also practically so, since to numerically compute asymptotic expansions, we can choose rays with a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-31-asymptotics-of-holomorphic-functions-in-secto",
+      "number": "3.1",
+      "title": "Asymptotics of holomorphic functions in sectors",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 1251,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "πiτ",
+          "heading": false
+        },
+        {
+          "term": "ibφ",
+          "heading": false
+        },
+        {
+          "term": "sectors",
+          "heading": true
+        },
+        {
+          "term": "e2πiτ",
+          "heading": false
+        },
+        {
+          "term": "growth rates",
+          "heading": false
+        },
+        {
+          "term": "real axis",
+          "heading": false
+        },
+        {
+          "term": "imaginary axis",
+          "heading": false
+        },
+        {
+          "term": "optimal truncation",
+          "heading": false
+        }
+      ],
+      "extract": "Asymptotics of holomorphic functions in sectors Since we will be considering functions of q on |q|̸ = 1 as well as functions of τ ∈C \\ R with q = e2πiτ, we will use capital letters for functions F(q) of q with |q|̸ = 1 and small letters for the corresponding functions f(τ) := F \u0000e2πiτ\u0001 of τ ∈C \\ R. For instance, we have g0(τ) = G0 \u0000e2πiτ\u0001 , g1(τ) = G1 \u0000e2πiτ\u0001 , τ ∈C \\ R and Observations 2.1 and 2.4 can be written in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-32-from-divergent-to-convergent-power-series",
+      "number": "3.2",
+      "title": "From divergent to convergent power series",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 628,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "power series",
+          "heading": true
+        },
+        {
+          "term": "convergent power",
+          "heading": true
+        },
+        {
+          "term": "πiu",
+          "heading": false
+        },
+        {
+          "term": "πiw",
+          "heading": false
+        },
+        {
+          "term": "πiv",
+          "heading": false
+        },
+        {
+          "term": "divergent",
+          "heading": true
+        },
+        {
+          "term": "formal power",
+          "heading": false
+        },
+        {
+          "term": "state integral",
+          "heading": false
+        }
+      ],
+      "extract": "From divergent to convergent power series The third interesting corollary of Observations 2.1 and 2.4 is obtained by combining them with equation (2.11) and the fact that Z41(τ) is holomorphic in the cut plane C′, since this leads to startling predictions regarding the factorially divergent formal power series Φ(h) ∈R[[h]]. Specifically, using the factorization of the state integral given in (2.11), the fact that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-33-the-asymptotics-of-g-0q-and-g-1q-at-roots-of",
+      "number": "3.3",
+      "title": "The asymptotics of G_0(q) and G_1(q) at roots of unity",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 485,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "πiε",
+          "heading": false
+        },
+        {
+          "term": "quantum modularity",
+          "heading": false
+        },
+        {
+          "term": "bφα",
+          "heading": false
+        },
+        {
+          "term": "modularity conjecture",
+          "heading": false
+        },
+        {
+          "term": "modularity theorem",
+          "heading": false
+        },
+        {
+          "term": "kashaev invariant",
+          "heading": false
+        },
+        {
+          "term": "asymptotics",
+          "heading": true
+        },
+        {
+          "term": "power series",
+          "heading": false
+        }
+      ],
+      "extract": "Observations 2.1 and 2.4 express the asymptotics of the functions G0(q) and G1(q) at q = 1 in terms of the series bΦ41(h) which appears in the asymptotics of the Kashaev invariant at q = 1. We now extend the above observation to all roots of unity using the series Φ41 α (h) that appear in the quantum modularity theorem of the Kashaev invariant of the 41 knot [32]. Let us briefly recall the latter. Let J: Q →Q ⊂C",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-34-the-quadratic-relation",
+      "number": "3.4",
+      "title": "The quadratic relation",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 15,
+      "labelStart": "12",
+      "labelEnd": "15",
+      "words": 1219,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quadratic relation",
+          "heading": true
+        },
+        {
+          "term": "πiτ",
+          "heading": false
+        },
+        {
+          "term": "volc",
+          "heading": false
+        },
+        {
+          "term": "q-series",
+          "heading": false
+        },
+        {
+          "term": "optimal truncation",
+          "heading": false
+        },
+        {
+          "term": "qeε",
+          "heading": false
+        },
+        {
+          "term": "refined optimal",
+          "heading": false
+        },
+        {
+          "term": "growth rates",
+          "heading": false
+        }
+      ],
+      "extract": "The quadratic relation We now describe some new phenomena that we observed using other knots. The knot 41 was amphicheiral and hence special: in general one should expect an r-tuple of pairs of q-series, one on each half-plane, hence a total of 2r q-series. (We will see in a later Section 5.4 the topological meaning of this number r). However, in the case of the 41 knot, the four q-series are actually two, each",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-35-higher-level-and-weight-spaces",
+      "number": "3.5",
+      "title": "Higher level and weight spaces",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 18,
+      "labelStart": "15",
+      "labelEnd": "18",
+      "words": 1434,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "weight spaces",
+          "heading": true
+        },
+        {
+          "term": "pretzel knot",
+          "heading": false
+        },
+        {
+          "term": "growth rates",
+          "heading": false
+        },
+        {
+          "term": "asymptotic series",
+          "heading": false
+        },
+        {
+          "term": "galois orbits",
+          "heading": false
+        },
+        {
+          "term": "cubic field",
+          "heading": false
+        },
+        {
+          "term": "bφα",
+          "heading": false
+        },
+        {
+          "term": "power series",
+          "heading": false
+        }
+      ],
+      "extract": "Higher level and weight spaces In this section, we describe a new phenomenon, the level of a knot, and examples where the weight spaces have higher multiplicity. For the (−2, 3, 7) pretzel knot, there are 6 pairs of q-series, and the weight spaces are not one-dimensional; there are weights 0, 1 and 2 with dimensions 1, 4 and 1, respectively. The 6 pairs of q-series involve power series in integer powers of q1/2,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-4-from-vector-valued-to-matrix-valued-q-series",
+      "number": "4",
+      "title": "From vector-valued to matrix-valued q-series",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 195,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-series",
+          "heading": true
+        },
+        {
+          "term": "descendants",
+          "heading": false
+        },
+        {
+          "term": "vector-valued",
+          "heading": true
+        },
+        {
+          "term": "matrix-valued",
+          "heading": true
+        }
+      ],
+      "extract": "From vector-valued to matrix-valued q-series So far, we used the state integral of a knot to define a vector of q-series for |q|̸ = 1 whose asymptotics were found to be related to the r-vector of asymptotic series of the knot from our earlier paper [32]. In this section, we report a recent discovery, descendants, which places the vector as the first column of an invertible r by r matrix of q-series for |q|̸ = 1. It",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-41-descendant-q-series",
+      "number": "4.1",
+      "title": "Descendant q-series",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 400,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "descendant",
+          "heading": true
+        },
+        {
+          "term": "q-series",
+          "heading": true
+        },
+        {
+          "term": "vdv",
+          "heading": false
+        },
+        {
+          "term": "πiv",
+          "heading": false
+        },
+        {
+          "term": "mari",
+          "heading": false
+        }
+      ],
+      "extract": "Descendant q-series In this section, we will focus on the 41 knot following the work of the first author, Gu and Mari˜no [22] (with detailed proofs provided in [23, Section 3.1]) but using a slightly different notation. Consider the pair G(m) 0 (q) and G(m) 1 (q) of q-series from [22] for integers m G(m) 0 (q) = ∞ X n=0 (−1)n qn(n+1)/2+mn (q; q)2n , G(m) 1 (q) = ∞ X n=0 (−1)n qn(n+1)/2+mn (q; q)2n 2m + E1(q) + 2 n X",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-42-the-asymptotics-of-the-descendants",
+      "number": "4.2",
+      "title": "The asymptotics of the descendants",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 269,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "asymptotics",
+          "heading": true
+        },
+        {
+          "term": "descendant holomorphic",
+          "heading": false
+        },
+        {
+          "term": "holomorphic blocks",
+          "heading": false
+        },
+        {
+          "term": "looked",
+          "heading": false
+        }
+      ],
+      "extract": "The asymptotics of the descendants In [32], studying the refined quantum modularity conjecture for the 41 knot, we found a 2 by 2 matrix of asymptotic series bΦ(x) = bΦ(x) bΨ(x) ibΦ(−x) −ibΨ(−x) ! , where bΨ(x) = eC/hΨ(x) where Ψ(x) is the series Ψ(x) = ∞ X j=0 Bjxj, Bj = i 4√ 3 2 \u0012 1 72√−3 \u0013j bj j! with bj ∈Q, the first values being given by j 0 1 2 3 4 5 6 bj −1 37 1511 1211729/5 407317963/5 331484358355/7",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-43-the-case-of-the-5-2-knot",
+      "number": "4.3",
+      "title": "The case of the 5_2 knot",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 591,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "descendant state",
+          "heading": false
+        },
+        {
+          "term": "q-difference equation",
+          "heading": false
+        },
+        {
+          "term": "linear q-difference",
+          "heading": false
+        },
+        {
+          "term": "holomorphic function",
+          "heading": false
+        },
+        {
+          "term": "state integrals",
+          "heading": false
+        }
+      ],
+      "extract": "Consider the linear q-difference equation ym(q) −3ym+1(q) + \u00003 −q2+m\u0001 ym+2(q) −ym+3(q) = 0, m ∈Z, (4.5) In [23, Section 3.2], it was shown that it has a fundamental solution sets given by the columns of the following matrix wm(q) = w52 m (q) =    H(m) 0 (q) H(m+1) 0 (q) H(m+2) 0 (q) H(m) 1 (q) H(m+1) 1 (q) H(m+2) 1 (q) H(m) 2 (q) H(m+1) 2 (q) H(m+2) 2 (q)   , m ∈Z, |q|̸ = 1, (4.6) where for |q| < 1 H(m) 0 (q)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-5-the-matrix-valued-cocycle-of-a-knot",
+      "number": "5",
+      "title": "The matrix-valued cocycle of a knot",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 89,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "matrix-valued",
+          "heading": true
+        },
+        {
+          "term": "cocycle",
+          "heading": true
+        },
+        {
+          "term": "piece-wise",
+          "heading": false
+        }
+      ],
+      "extract": "The matrix-valued cocycle of a knot In this section, we extend the observations of the previous sections to matrix-valued analytic functions which naturally give rise to a cocycle on on the set of matrix-valued piece-wise analytic functions on P1(R). What’s more, we conjecture (and in the case of the 41, prove) that this cocycle, restricted to the rational numbers, exactly agrees with the cocycle of our previous",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-51-an-equivariant-state-integral",
+      "number": "5.1",
+      "title": "An equivariant state integral",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 224,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "state-integral",
+          "heading": false
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "torization",
+          "heading": false
+        },
+        {
+          "term": "equivariant",
+          "heading": true
+        },
+        {
+          "term": "observation",
+          "heading": false
+        }
+      ],
+      "extract": "An equivariant state integral We return to the 41 knot. The factorization of the state-integral (2.7) given in equation (2.11) in terms of the pair (g0(τ), g1(τ)) motivates us to consider the following function: Z41(γ; τ) = i 2(˜q/q)1/24\u0000(cτ + d)−1/2g0(τ)g1(γ(τ)) −(cτ + d)1/2g1(τ)g0(γ(τ)) \u0001 (5.1) for an element γ of SL2(Z) and for τ ∈C\\R, where now ˜q denotes e(γτ). A priori, this function is not defined for any",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-52-a-matrix-valued-cocycle",
+      "number": "5.2",
+      "title": "A matrix-valued cocycle",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 347,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "matrix-valued",
+          "heading": true
+        },
+        {
+          "term": "cocycle",
+          "heading": true
+        },
+        {
+          "term": "real line",
+          "heading": false
+        },
+        {
+          "term": "psl",
+          "heading": false
+        },
+        {
+          "term": "coboundary",
+          "heading": false
+        },
+        {
+          "term": "state integral",
+          "heading": false
+        },
+        {
+          "term": "whole",
+          "heading": false
+        }
+      ],
+      "extract": "A matrix-valued cocycle The state integral Z41(τ) is just one component of a 2 × 2 matrix closely related to the ma- trix W0,0(τ) defined in equation (4.3), and similarly the equivariant state integral (5.1), up to elementary factors, becomes just one component of a 2 × 2 matrix-valued function Wγ(τ) = Q(γτ)−1 diag \u0000(cτ + d)−1, 1 \u0001 Q(τ), τ ∈C \\ R. (5.2) Observation 5.1 now generalizes to the statement that the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-53-the-two-cocycles-agree",
+      "number": "5.3",
+      "title": "The two cocycles agree",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 511,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qjz",
+          "heading": false
+        },
+        {
+          "term": "cocycles",
+          "heading": true
+        },
+        {
+          "term": "hab",
+          "heading": false
+        },
+        {
+          "term": "agree",
+          "heading": true
+        },
+        {
+          "term": "state integrals",
+          "heading": false
+        },
+        {
+          "term": "current paper",
+          "heading": false
+        },
+        {
+          "term": "den",
+          "heading": false
+        },
+        {
+          "term": "periodic function",
+          "heading": false
+        }
+      ],
+      "extract": "The two cocycles agree We now show that the cocycle (5.4) and the one from our prior paper [32] agree for the case of the 41 knot. We first recall from [32, Section 7.1] the periodic function J = J(41) on Q defined by J(x) = \u0012J1,1(x) J1,2(x) J2,1(x) J2,2(x) \u0013 , (5.5) where J1,1(x) = 1 √c 4√ 3 X Zc=ζ6 c Y j=1 1 −qjZ 2j/c, J2,1(x) = i √c 4√ 3 X Zc=ζ−1 6 c Y j=1 1 −qjZ 2j/c, J1,2(x) = 1 2√c 4√ 3 X Zc=ζ6 \u0000Zq −Z−1q−1\u0001 c",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-54-matrix-valued-holomorphic-quantum-modular-for",
+      "number": "5.4",
+      "title": "Matrix-valued holomorphic quantum modular forms",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 26,
+      "labelStart": "24",
+      "labelEnd": "26",
+      "words": 1169,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "matrix-valued holomorphic",
+          "heading": true
+        },
+        {
+          "term": "holomorphic quantum",
+          "heading": true
+        },
+        {
+          "term": "quantum modular",
+          "heading": true
+        },
+        {
+          "term": "modular forms",
+          "heading": true
+        },
+        {
+          "term": "matrix-valued functions",
+          "heading": false
+        },
+        {
+          "term": "piecewise analytic",
+          "heading": false
+        },
+        {
+          "term": "completed power",
+          "heading": false
+        },
+        {
+          "term": "pretzel knot",
+          "heading": false
+        }
+      ],
+      "extract": "Matrix-valued holomorphic quantum modular forms We believe that the results we have been describing for the 41 knot will apply to all hyperbolic knots (possibly with the disclaimers given in the introduction to [32] about the behavior of character varieties of general knots). Some part of the story, the matrix of “descendant” functions and the factorization formula (4.8), was carried out for the 52 knot in [22] and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-6-final-remarks",
+      "number": "6",
+      "title": "Final remarks",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "26",
+      "labelEnd": "26",
+      "words": 330,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "analytic continuation",
+          "heading": false
+        },
+        {
+          "term": "periodic functions",
+          "heading": false
+        },
+        {
+          "term": "modular forms",
+          "heading": false
+        },
+        {
+          "term": "resurgence",
+          "heading": false
+        },
+        {
+          "term": "final",
+          "heading": true
+        },
+        {
+          "term": "proposed",
+          "heading": false
+        },
+        {
+          "term": "remarks",
+          "heading": true
+        },
+        {
+          "term": "jacobi",
+          "heading": false
+        }
+      ],
+      "extract": "Final remarks In this paper, we discussed the properties of a 2 by 2 matrix Q of periodic functions on C \\ R associated to the 41 knot (see equation (4.4)). On the other hand, in our companion paper [32], we constructed a 3 by 3 matrix Q+ of periodic functions on Q (see equation (5.5)). Wheeler [51] has found an extension of our 2 by 2 matrix Q (with one boring column (1, 0, 0)t and one interesting row) using the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-a-complements-and-proofs",
+      "number": null,
+      "title": "A Complements and proofs",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "26",
+      "labelEnd": "26",
+      "words": 28,
+      "summary": null,
+      "keywords": [],
+      "extract": "Complements and proofs In this appendix, we provide proofs of some of the observations, in particular regarding the 41 knot, that were made in Sections 2 and 3.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-023-a1-q-series-identities",
+      "number": null,
+      "title": "A.1 q-series identities",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "26",
+      "labelEnd": "27",
+      "words": 243,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qrt",
+          "heading": false
+        },
+        {
+          "term": "identities",
+          "heading": true
+        },
+        {
+          "term": "q-series",
+          "heading": true
+        }
+      ],
+      "extract": "q-series identities We begin by giving the proof of the two identities of equation (2.6), as communicated to us by Sander Zwegers. We will use the identity (A.17) and 1 (q)m(q)n = X r,s,t≥0 r+s=m,s+t=n qrt (q)r(q)s(q)t , (A.1) which may be found for instance in [53], where we abbreviate (q)n = (q; q)n. If we sum over m using (A.17) we find X m,n≥0 (−1)m+n q 1 2 m2+mn+ 1 2 n2+ 1 2 m+ 1 2 n (q)m(q)n = X n≥0 (−1)n q 1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-a2-asymptotics-at-roots-of-unity",
+      "number": null,
+      "title": "A.2 Asymptotics at roots of unity",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": "27",
+      "labelEnd": "28",
+      "words": 556,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "asymptotics",
+          "heading": true
+        },
+        {
+          "term": "local maxima",
+          "heading": false
+        },
+        {
+          "term": "asymptotic expansion",
+          "heading": false
+        },
+        {
+          "term": "roots",
+          "heading": true
+        },
+        {
+          "term": "unity",
+          "heading": true
+        },
+        {
+          "term": "q-series",
+          "heading": false
+        },
+        {
+          "term": "integrand",
+          "heading": false
+        },
+        {
+          "term": "integral",
+          "heading": false
+        }
+      ],
+      "extract": "Asymptotics at roots of unity For the comparison of the results of this paper and those of [32], we need to understand the asymptotics of our q-series near roots of unity. This is not the main theme of the paper and we will not go into detail, but as an indication of the method we prove Observation 2.1 giving the asymptotics (to all orders) of the two q-series G0(q) and G1(q) associated to the 41 knot at q = 1. For",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-a3-the-two-matrix-valued-cocycles-for-the-4-1-kn",
+      "number": null,
+      "title": "A.3 The two matrix-valued cocycles for the 4_1 knot agree",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 32,
+      "labelStart": "28",
+      "labelEnd": "32",
+      "words": 1582,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "descendant state-integrals",
+          "heading": false
+        },
+        {
+          "term": "matrix-valued",
+          "heading": true
+        },
+        {
+          "term": "tweaking function",
+          "heading": false
+        },
+        {
+          "term": "rational numbers",
+          "heading": false
+        },
+        {
+          "term": "num",
+          "heading": false
+        },
+        {
+          "term": "den",
+          "heading": false
+        },
+        {
+          "term": "cocycles",
+          "heading": true
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        }
+      ],
+      "extract": "The two matrix-valued cocycles for the 41 knot agree In this section, we give the proof of Theorem 5.2. Let us begin by explaining the choice of matrix Q(q) of q-series for the 41 knot given in equation (4.4), using the matrix-valued function J on the rational numbers from [32, equation (95)] whose first row is 1, J0(x) and 1 2(qJ1(q) − q−1J−1(q)) when q = e(x), where Jm(q) = ∞ X n=0 (q; q)n \u0000q−1; q−1\u0001 nqmn is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-a4-the-six-q-series-for-the-5-2-knot",
+      "number": null,
+      "title": "A.4 The six q-series for the 5_2 knot",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 32,
+      "labelStart": "32",
+      "labelEnd": "32",
+      "words": 424,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "six q-series",
+          "heading": true
+        },
+        {
+          "term": "e2g",
+          "heading": false
+        },
+        {
+          "term": "q-hypergeometric",
+          "heading": false
+        },
+        {
+          "term": "ε-deformations",
+          "heading": false
+        }
+      ],
+      "extract": "The six q-series of the 52 knot are given by q-hypergeometric sums and their ε-deformations (see (3.11)), and this allows for an efficient recursive computation of their coefficients similar to the one for the 41 knot given in (2.12). Explicitly, the six q-series are given by H+ j (q) = ∞ X m=0 tm(q)p(j) m (q), H− j (q) = ∞ X m=0 Tm(q)P (j) m (q), j = 0, 1, 2 (A.10) with tm(q) = qm(m+1) (q; q)3m , Tm(q) =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-a5-epsilon-deformation-and-the-factorization-of",
+      "number": null,
+      "title": "A.5 epsilon-deformation and the factorization of the state",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 34,
+      "labelStart": "32",
+      "labelEnd": "34",
+      "words": 723,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qeε",
+          "heading": false
+        },
+        {
+          "term": "factorization",
+          "heading": true
+        },
+        {
+          "term": "e2πb",
+          "heading": false
+        },
+        {
+          "term": "qe2πbx",
+          "heading": false
+        },
+        {
+          "term": "state",
+          "heading": true
+        },
+        {
+          "term": "state integral",
+          "heading": false
+        },
+        {
+          "term": "decouples",
+          "heading": false
+        },
+        {
+          "term": "q-series",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we comment further between a connection of the factorization proof of state integrals taken from [27] and the ε-deformations of difference/differential equations. Whereas only finitely many q-series appear in the factorization of a state integral (via the residue theorem), their ε-deformation leads to a sequence of q-series that contains further information, as Wheeler has recently found out [51].",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-a6-the-twelve-q-series-for-the--237-pretzel-knot",
+      "number": null,
+      "title": "A.6 The twelve q-series for the (-2,3,7) pretzel knot",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 37,
+      "labelStart": "34",
+      "labelEnd": "37",
+      "words": 984,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qeε",
+          "heading": false
+        },
+        {
+          "term": "x2m",
+          "heading": false
+        },
+        {
+          "term": "q-series",
+          "heading": true
+        },
+        {
+          "term": "order poles",
+          "heading": false
+        },
+        {
+          "term": "resx",
+          "heading": false
+        },
+        {
+          "term": "state integral",
+          "heading": false
+        },
+        {
+          "term": "contribution",
+          "heading": false
+        },
+        {
+          "term": "series",
+          "heading": false
+        }
+      ],
+      "extract": "In this whole section, let f(x) = Φb(x)2Φb(2x −cb)e−πi(2x−cb)2 denote the integrand of (3.16), which is a meromorphic function with poles at xm/2,n/2 for natural numbers m, n ∈N. These poles are of third order when m and n are even and of first order otherwise. First, we compute the contribution from the third order poles xm,n. Using 2xm,n −cb = x2m,2n, (A.14), (A.15) and the modularity transformation of the eta",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 39,
+      "labelStart": "37",
+      "labelEnd": "39",
+      "words": 1081,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chern simons",
+          "heading": false
+        },
+        {
+          "term": "modern phys",
+          "heading": false
+        },
+        {
+          "term": "theory phys",
+          "heading": false
+        },
+        {
+          "term": "arxiv",
+          "heading": false
+        },
+        {
+          "term": "donaldson thomas",
+          "heading": false
+        },
+        {
+          "term": "quantum modularity",
+          "heading": false
+        },
+        {
+          "term": "quantum topol",
+          "heading": false
+        },
+        {
+          "term": "thomas invariants",
+          "heading": false
+        }
+      ],
+      "extract": "[1] An N., Li Y., On the quantum modularity conjecture for the (−2, 3, 7)-pretzel knot, in preparation. [2] Andersen J.E., Garoufalidis S., Kashaev R., The volume conjecture for the KLV state-integral, in prepara- tion. [3] Andersen J.E., Hansen S.K., Asymptotics of the quantum invariants for surgeries on the figure 8 knot, J. Knot Theory Ramifications 15 (2006), 479–548, arXiv:math.QA/0506456. [4] Andersen J.E.,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "matrix-valued q-series",
+      "heading": true
+    },
+    {
+      "term": "descendant q-series",
+      "heading": true
+    },
+    {
+      "term": "q-series defined",
+      "heading": false
+    },
+    {
+      "term": "six q-series",
+      "heading": true
+    },
+    {
+      "term": "q-series associated",
+      "heading": false
+    },
+    {
+      "term": "asymptotic series",
+      "heading": false
+    },
+    {
+      "term": "quantum knot",
+      "heading": false
+    },
+    {
+      "term": "q-series times",
+      "heading": false
+    },
+    {
+      "term": "kashaev state",
+      "heading": false
+    },
+    {
+      "term": "power series",
+      "heading": true
+    },
+    {
+      "term": "pretzel knot",
+      "heading": true
+    },
+    {
+      "term": "matrix-valued holomorphic",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "A plot of the growth rates Re(iV/(±2πiτ)) of bΦ(±2πiτ) for arg(τ) = πθ with 0 < θ < 1",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "A plot of the growth rates Re(VolC(ρj)/2πiτ) of w(σj)(x) defined in equation (3.13) for j = 1, 2, 3 where arg(τ) = πθ and θ ∈(0, π). The branches cross at 0.19, 0.5, 0.81 and partition the interval [0, 1] in four sectors",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "A plot of the growth rates Re(VolC(ρj)/2πiτ) of w(j)(x) for j = 0, . . . , 5 where arg(τ) = πθ and θ ∈(0, π)",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 30,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 31,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "3 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p37); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 7
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 31 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2304.09377v2"
+  }
+}

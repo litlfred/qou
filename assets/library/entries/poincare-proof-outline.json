@@ -1,0 +1,1298 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "poincare-proof-outline",
+  "blocks": [
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Poincaré Disc Model\n\nDanijela Simié Filip Marié Pierre Boutry\n\nFebruary 6, 2026\n\nAbstract\n\nWe describe formalization of the Poincaré disc model of hyperbolic geometry within the Isabelle/HOL\nproof assistant. The model is defined within the extended complex plane (one dimensional complex projective\nspace CP’), formalized in the AFP entry “Complex Geometry” [6]. Points, lines, congruence of pairs of\npoints, betweenness of triples of points, circles, and isometries are defined within the model. It is shown that\nthe model satisfies all Tarski’s axioms except the Euclid’s axiom. It is shown that it",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Poincaré disc is a model of hyperbolic geometry. That fact has been a mathematical folklore for more than\n100 years. However, up to the best of our knowledge, fully precise, formal proofs of this fact are lacking. In\nthis paper we present a formalization of the Poincaré disc model in Isabelle/HOL, introduce its basic notions\n(h-points, h-lines, h-congruence, h-isometries, h-betweenness) and prove that it models Tarski’s axioms except\nfor Euclid’s axiom. We shown that is satisfies the negation of Euclid’s axiom, and, moreover, the existence of\nlimiting parallels axiom. The model is defined with",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Background theories",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-background-theories.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hyperbolic Functions",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-hyperbolic-functions.md",
+      "narrative": null,
+      "content": "In this section hyperbolic cosine and hyperbolic sine functions are introduced and some of their properties\nneeded for further development are proved.\n\ntheory Hyperbolic-Functions\nimports Complez-Main Complex-Geometry. More-Complex\nbegin\n\nlemma arcosh-eq-iff:\nfixes x y::real\nassumes z > 1 y > 1\nshows arcosh x = arcosh y+— «= y\nby (smt (verit, best) arcosh-less-iff-real arcosh-real-strict-mono assms)\n\nlemma cosh-gt-1 [simp]:\nfixes x ::real\nassumes x > 0\nshows cosh « > 1\nusing assms cosh-real-strict-mono by force\n\nlemma cosh-eq-iff:\nfixes x y::real\nassumes rt > 0y > 0\nshows cosh t = cosh y+ t= y",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tarski axioms",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-tarski-axioms.md",
+      "narrative": null,
+      "content": "In this section we introduce axioms of Tarski [7] trough a series of locales.\n\ntheory Tarski\nimports Main\nbegin\n\nThe first locale assumes all Tarski axioms except for the Euclid’s axiom and the continuity axiom and corresponds\nto absolute geometry.\n\nlocale TarskiAbsolute =\nfixes cong :: 'p => 'p => 'p = 'p => bool\n\nfixes betw :: '‘p => 'p => ‘p => bool\n\nassumes cong-reflexive: cong © y y &\n\nassumes cong-transitive: cong « y zu A cong zy vw —> congzuuvw\n\nassumes cong-identity: conguyzz—>@r=y\n\nassumes segment-construction: 4 z. betw xyz A congyzab\n\nassumes five-segment: «A#y A betwxryz A betwr'",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "H-lines in the Poincaré model",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-h-lines-in-the-poincaré-model.md",
+      "narrative": null,
+      "content": "theory Poincare-Lines\nimports Complex-Geometry. Unit-Circle-Preserving-Moebius Complex-Geometry. Circlines-Angle\nbegin",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definition and basic properties of h-lines",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-definition-and-basic-properties-of-h-lines.md",
+      "narrative": null,
+      "content": "H-lines in the Poincaré model are either line segments passing trough the origin or segments (within the unit\ndisc) of circles that are perpendicular to the unit circle. Algebraically these are circlines that are represented\nby Hermitean matrices of the form\nA B\n(G4):\n\non\nfor A € R, and B € C, and |B|? > A?, where the circline equation is the usual one: z* Hz = 0, for homogenous\ncoordinates z.\n\ndefinition is-poincare-line-cmat :: complex-mat = bool where\n[simp]: is-poincare-line-cmat H <—>\n(let (A, B, C, D) = H\nin hermitean (A, B, C, D) \\ A= D A (emod B)? > (emod A)?)\n\nlift-definition is-poinc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Collinear points",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-006-collinear-points.md",
+      "narrative": null,
+      "content": "Points are collinear if they all belong to an h-line.\n\ndefinition poincare-collinear :: complez-homo set = bool where\npoincare-collinear S <—+ (A p. is-poincare-line p \\ S C circline-set p)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "H-lines and inversion",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-007-h-lines-and-inversion.md",
+      "narrative": null,
+      "content": "Every h-line in the Poincaré model contains the inverse (wrt. the unit circle) of each of its points (note that at\nmost one of them belongs to the unit disc).\n\nlemma is-poincare-line-inverse-point:\nassumes is-poincare-line H u € circline-set H\nshows inversion u € circline-set H\nusing assms\nunfolding is-poincare-line-iff circline-set-def perpendicular-def inversion-def\n\napply simp\nproof (transfer, transfer)\nfix u H\nassume hh: hermitean H A H # mat-zero u # vec-zero and\naa: circline-type-cmat H = — 1 \\ cos-angle-cmat (of-circline-cmat H) unit-circle-cmat = 0 on-circline-cmat-cvec\nHu\n\nobtain A BC",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classification of h-lines into Euclidean segments and circles",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-008-classification-of-h-lines-into-euclidean-segment.md",
+      "narrative": null,
+      "content": "If an h-line contains zero, than it also contains infinity (the inverse point of zero) and is by definition an\nEuclidean line.\n\nlemma is-poincare-line-trough-zero-trough-infty [simp]:\nassumes is-poincare-line | and 0), € circline-set |\nshows cop, € circline-set |\nusing is-poincare-line-inverse-point|OF assms|\nby simp\n\nlemma is-poincare-line-trough-zero-is-line:\nassumes is-poincare-line | and 0), € circline-set |\n\nshows is-line |\n\nusing assms\n\nusing inf-in-circline-set is-poincare-line-trough-zero-trough-infty\nby blast\n\nIf an h-line does not contain zero, than it also does not contain infinity",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Points on h-line",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-009-points-on-h-line.md",
+      "narrative": null,
+      "content": "Each h-line in the Poincaré model contains at least two different points within the unit disc.\n\nFirst we prove an auxiliary lemma.\n\nlemma ex-is-poincare-line-points’:\nassumes 112: il € circline-set H  unit-circle-set\ni2 € circline-set H M unit-circle-set\nil # i2\nassumes a: a € circline-set H a ¢ unit-circle-set\nshows 3 b.b 4 i1 ADA i2 Ab fad bF inversion a A b € circline-set H\nproof—\nhave inversion a ¢ unit-circle-set\nusing <a ¢ unit-circle-set»\nunfolding unit-circle-set-def circline-set-def\nby (metis inversion-id-iff-on-unit-circle inversion-involution mem-Collect-eq)\n\nhave a # inversion a\nus",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "H-line uniqueness",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "../sections/sec-010-h-line-uniqueness.md",
+      "narrative": null,
+      "content": "There is no more than one h-line that contains two different h-points (in the disc).\n\nlemma unique-is-poincare-line:\nassumes in-disc: u € unit-disc v € unit-disc u # v\nassumes pl: is-poincare-line l1 is-poincare-line 12\nassumes on-l: {u, v} C circline-set l1 M circline-set 12\nshows I] = 12\n\n11\nproof—\nhave u # inversion uv # inversion u\nusing in-disc\nusing inversion-noteg-unit-disc[of u v]\nusing inversion-noteq-unit-disclof u ul\nby auto\nthus ?thesis\nusing on-l\nusing unique-circline-set|of u inversion u v| <u # v>\nusing is-poincare-line-inverse-point|of l1 ul\nusing is-poincare-line-inverse-point",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "H-isometries preserve h-lines",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-011-h-isometries-preserve-h-lines.md",
+      "narrative": null,
+      "content": "H-isometries are defined as homographies (actions of Mébius transformations) and antihomographies (compo-\nsitions of actions of Mébius transformations with conjugation) that fix the unit disc (map it onto itself). They\nalso map h-lines onto h-lines\n\nWe prove a bit more general lemma that states that all Mébius transformations that fix the unit circle (not\nnecessary the unit disc) map h-lines onto h-lines\n\n14\nlemma unit-circle-fix-preserve-is-poincare-line [simp]:\nassumes unit-circle-fix M is-poincare-line H\nshows is-poincare-line (moebius-circline M H)\nusing assms\nunfolding is-poincare-line-if",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mapping h-lines to x-axis",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-012-mapping-h-lines-to-x-axis.md",
+      "narrative": null,
+      "content": "Each h-line in the Poincaré model can be mapped onto the x-axis (by a unit-disc preserving Mobius transfor-\nmation).\n\nlemma ez-unit-disc-fix-is-poincare-line-to-x-avis:\nassumes is-poincare-line |\nshows 3 M. unit-disc-fix M A moebius-circline M | = z-axis\nproof—\nfrom assms obtain u v where u # v u € unit-disc v € unit-disc and {u, v} C circline-set |\nusing ez-is-poincare-line-points\nby blast\nthen obtain M where «: unit-disc-fix M moebius-pt M u = 0n moebius-pt M v € positive-x-axis\nusing ex-unit-disc-fix-to-zero-positive-z-azis[of u v]\nby auto\nmoreover\nhence {0;, moebius-pt M v} C circline-set",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Construction of the h-line between the two given points",
+      "pageStart": 17,
+      "pageEnd": 20,
+      "target": "../sections/sec-013-construction-of-the-h-line-between-the-two-given.md",
+      "narrative": null,
+      "content": "Next we show how to construct the (unique) h-line between the two given points in the Poincaré model\n\nGeometrically, h-line can be constructed by finding the inverse point of one of the two points and by constructing\nthe circle (or line) trough it and the two given points.\n\nAlgebraically, for two given points u and v in C, the h-line matrix coefficients can be A = i- (uv — vu) and\nB=i- (v(\\ul? +1) — u(\\v|? + 1)).\n\nWe need to extend this to homogenous coordinates. There are several degenerate cases.\n\n- If {z,w} = {0),, co),} then there is no unique h-line (any line trough zero is an h-line).\n\n-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Correctness of the construction",
+      "pageStart": 20,
+      "pageEnd": 28,
+      "target": "../sections/sec-014-correctness-of-the-construction.md",
+      "narrative": null,
+      "content": "For finite points, our definition matches the classic algebraic definition for points in C (given in ordinary, not\nhomogenous coordinates).\n\nlemma poincare-line-non-homogenous:\nassumes u # Oop, v # On UF VU F inversion Vv\nshows let u’ = to-compler u; vu’ = to-complex v;\nA =i x (u’ * enj vu! — vu’ * enj u’);\nB=i x (v0! * ((emod u')? + 1) — u! * ((emod v')? + 1))\n\n20\nin poincare-line uv = mk-circline A B (cnj B) A\nusing assms\nunfolding unit-disc-def disc-def inversion-def\napply (simp add: Let-def)\nproof (transfer, transfer, safe)\n\nfix ul u2 v1 v2\nassume wv: (ul, u2) # vec-zero (vl, v2) # vec-zer",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Existence of h-lines",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-015-existence-of-h-lines.md",
+      "narrative": null,
+      "content": "There is an h-line trough every point in the Poincaré model\n\nlemma ex-poincare-line-one-point:\nshows 4 I. is-poincare-line | A z € circline-set |\nproof (cases z = 0n)\ncase True\nthus ?thesis\nby (rule-tac c=2-avis in exI) simp\nnext\ncase False\nthus ?thesis\nby (rule-tac «=poincare-line 0; z in exl) auto\nqed\n\nlemma poincare-collinear-singleton [simp]:\nassumes u € unit-disc\nshows poincare-collinear {u}\nusing assms\nusing exz-poincare-line-one-point[of u|\nby (auto simp add: poincare-collinear-def)\n\n28\nThere is an h-line trough every two points in the Poincaré model\n\nlemma ex-poincare-line-two-points:",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Uniqueness of h-lines",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-016-uniqueness-of-h-lines.md",
+      "narrative": null,
+      "content": "The only h-line between two points is the one obtained by the line-construction.\n\nFirst we show this only for two different points inside the disc.\n\nlemma unique-poincare-line:\nassumes in-disc: u # vu € unit-disc v € unit-disc\nassumes on-l: u € circline-set lv € circline-set | is-poincare-line |\nshows | = poincare-line u v\nusing assms\nusing unique-is-poincare-line[of u v | poincare-line u v]\nunfolding circline-set-def\nby auto\n\nThe assumption that the points are inside the disc can be relaxed.\n\nlemma unique-poincare-line-general:\nassumes in-disc: u #4 v u # inversion v\nassumes on-l: u € circlin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some consequences of line uniqueness",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-017-some-consequences-of-line-uniqueness.md",
+      "narrative": null,
+      "content": "H-line uv is the same as the h-line vu.\n\nlemma poincare-line-sym:\nassumes u € unit-disc v € unit-disc u # v\nshows poincare-line u v = poincare-line v u\nusing assms\nusing unique-poincare-line|of u v poincare-line v ul\nby simp\n\nlemma poincare-line-sym-general:\nassumes u # v u # inversion v\nshows poincare-line u v = poincare-line v u\nusing assms\nusing unique-poincare-line-generallof u v poincare-line v u]\nby simp\n\nEach h-line is the h-line constructed out of its two arbitrary different points.\n\nlemma ex-poincare-line-points:\nassumes is-poincare-line H\nshows J wv. u € unit-disc A v € unit-disc \\ u",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Transformations of constructed lines",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "../sections/sec-018-transformations-of-constructed-lines.md",
+      "narrative": null,
+      "content": "Unit dics preserving Mobius transformations preserve the h-line construction\n\nlemma unit-disc-fit-preserve-poincare-line |simp|:\nassumes unit-disc-fix M u € unit-disc v € unit-disc u # v\nshows poincare-line (moebius-pt M u) (moebius-pt M v) = moebius-circline M (poincare-line u v)\nproof (rule unique-poincare-line[symmetric])\nshow moebius-pt M u 4 moebius-pt Mv\nusing <u 4 v)\nby auto\nnext\nshow moebius-pt M u € circline-set (moebius-circline M (poincare-line u v))\nmoebius-pt M v € circline-set (moebius-circline M (poincare-line u v))\nunfolding circline-set-def\nusing mocbius-circline[of M poincare",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Collinear points and h-lines",
+      "pageStart": 32,
+      "pageEnd": 34,
+      "target": "../sections/sec-019-collinear-points-and-h-lines.md",
+      "narrative": null,
+      "content": "lemma poincare-collinear3-poincare-line-general:\nassumes poincare-collinear {a, a1, a2} al # a2 al F inversion a2\nshows a € circline-set (poincare-line al a2)\nusing assms\nusing poincare-collinear-def unique-poincare-line-general\nby auto\n\nlemma poincare-line-poincare-collinear3-general:\nassumes a € circline-set (poincare-line al a2) al # a2\nshows poincare-collinear {a, a1, a2}\nusing assms\nunfolding poincare-collinear-def\nby (rule-tac «=poincare-line a1 a2 in eal, simp)\n\nlemma poincare-collinear3-poincare-lines-equal-general:\nassumes poincare-collinear {a, al, a2} a 4 al a ¥ a2 a F inversion al",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ideal points of h-lines",
+      "pageStart": 34,
+      "pageEnd": 34,
+      "target": "../sections/sec-020-ideal-points-of-h-lines.md",
+      "narrative": null,
+      "content": "Ideal points of an h-line are points where the h-line intersects the unit disc.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Calculation of ideal points",
+      "pageStart": 34,
+      "pageEnd": 39,
+      "target": "../sections/sec-021-calculation-of-ideal-points.md",
+      "narrative": null,
+      "content": "We decided to define ideal points constructively, i.e., we calculate the coordinates of ideal points for a given\nh-line explicitly. Namely, if the h-line is determined by A and B, the two intersection points are\n\nee (-A+i- ViBP - a) .\n\ndefinition calc-ideal-point1-cvec :: complex = complex = complez-vec where\n[simp]: calc-ideal-point1-cvec A B =\n(let diser = Re ((emod B)? — (Re A)*) in\n(Bx(—A — ixsqrt(discr)), (emod B)*))\n\ndefinition calc-ideal-point2-cvec :: complex = complex = compler-vec where\n[simp]: calc-ideal-point2-cvec A B =\n(let diser = Re ((emod B)? — (Re A)*) in\n(Bx(—A + iksgrt(disc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ideal points",
+      "pageStart": 39,
+      "pageEnd": 44,
+      "target": "../sections/sec-022-ideal-points.md",
+      "narrative": null,
+      "content": "lemma calc-ideal-points-cvec-different [simp]:\nassumes (cmod B)? > (cmod A)? is-real A\nshows 7— (calc-ideal-point1-cvec A B %, calc-ideal-point2-cvec A B)\nusing assms\nby (auto) (auto simp add: cmod-def)\n\nlemma calc-ideal-points-different:\nassumes is-poincare-line H\nshows 3 il € (calc-ideal-points H). 4 i2 € (calc-ideal-points H). i1 # i2\nusing assms\nproof (transfer, transfer)\nfix H\nassume hh: hermitean H \\ H # mat-zero is-poincare-line-cmat H\nobtain A B C D where «: H = (A, B, C, D)\nby (cases H, auto)\nhence is-real A using hh hermitean-elems by auto\nthus 5 i1 €calc-ideal-points-cmat-cvec H. 3i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "H-distance in the Poincaré model",
+      "pageStart": 44,
+      "pageEnd": 48,
+      "target": "../sections/sec-023-h-distance-in-the-poincaré-model.md",
+      "narrative": null,
+      "content": "Informally, the h-distance between the two h-points is defined as the absolute value of the logarithm of the cross\nratio between those two points and the two ideal points.\n\nabbreviation Re-cross-ratio where Re-cross-ratio z uv w = Re (to-complez (cross-ratio z u v w))\n\ndefinition calc-poincare-distance :: complex-homo = complex-homo => complex-homo = complez-homo => real where\n[simp]: calc-poincare-distance u il v i2 = abs (In (Re-cross-ratio u il v i2))\n\ndefinition poincare-distance-pred :: complex-homo = complex-homo => real = bool where\n[simp]: poincare-distance-pred u v d <—>\n(u=vAd=0)V (u",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Distance explicit formula",
+      "pageStart": 48,
+      "pageEnd": 54,
+      "target": "../sections/sec-024-distance-explicit-formula.md",
+      "narrative": null,
+      "content": "Instead of the h-distance itself, very frequently its hyperbolic cosine is analyzed.\n\nabbreviation cosh-dist uv = cosh (poincare-distance wu v)\n\nlemma cosh-poincare-distance-cross-ratio-average:\nassumes wu € unit-disc v € unit-disc u # v ideal-points (poincare-line uv) = {i1, i2}\nshows cosh-dist uv =\n((Re-cross-ratio u il v i2) + (Re-cross-ratio v il u i2)) / 2\nproof—\nlet ?cr = cross-ratio u il v i2\nlet ?crRe = Re (to-complex ?cr)\nhave ?cr # oop is-real (to-complex ?cr) ?crRe > 0\nusing distance-cross-ratio-real-positive|OF assms(1—3)] assms(4)\nby simp-all\n\n48\nthen obtain cr where *: cross-rati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Existence and uniqueness of points with a given distance",
+      "pageStart": 54,
+      "pageEnd": 65,
+      "target": "../sections/sec-025-existence-and-uniqueness-of-points-with-a-given.md",
+      "narrative": null,
+      "content": "lemma ez-2-azis-poincare-distance-negative’:\nfixes d :: real\nassumes d > 0\nshows let z = (1 — exp d) / (1 + exp d)\nin is-realz \\ Rez< 0A Rez>-1A\nof-complex z € unit-disc \\ of-complex z € circline-set x-axis A\npoincare-distance 0, (of-complex z) = d\nproof—\nhave exp d > 1\nusing assms\nusing one-le-exp-iff [of d, symmetric]\nby blast\n\nhence / + erp d 4 0\nby linarith\n\nlet ?z = (1 — exp d) / (1 + exp d)\n\nhave ?z < 0\nusing ‘erp d > 1»\nby (simp add: divide-nonpos-nonneg)\n\nmoreover\n\nhave ?z > -1\nusing exp-gt-zero[of d]\nby (smt divide-less-eq-1-neg nonzero-minus-divide-right)\n\nmoreover\n\nhence abs ?z < 1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Triangle inequality",
+      "pageStart": 65,
+      "pageEnd": 67,
+      "target": "../sections/sec-026-triangle-inequality.md",
+      "narrative": null,
+      "content": "lemma poincare-distance-formula-zero-sum:\nassumes u € unit-disc and v € unit-disc\nshows poincare-distance u 0; + poincare-distance 0, v =\n(let u’ = cmod (to-complex u); v' = cmod (to-complez v)\nin arcosh (((1 + uw?) * (1 + 0?) + 4 «ul v’) / ((1 — wu?) * (1 — v”))))\nproof—\nobtain wu’ v’ where wu: u’ = to-complex u v' = to-complex v\nby auto\nhave uv’: u = of-complex u' v = of-complex v'\nusing wv assms inf-or-of-complez|of u] inf-or-of-complez|of v]\nby auto\n\nlet ?u' = cmod u' and ?v' = cmod v’\n\nhave disc: ?u? < 1 ?v” < 1\nusing wnit-disc-cmod-square-lt-1[OF <u € unit-disc>]\nusing unit-disc-cmod-squ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "H-circles in the Poincaré model",
+      "pageStart": 67,
+      "pageEnd": 71,
+      "target": "../sections/sec-027-h-circles-in-the-poincaré-model.md",
+      "narrative": null,
+      "content": "Circles consist of points that are at the same distance from the center.\n\ndefinition poincare-circle :: compler-homo = real = complex-homo set where\npoincare-circle zr = {z’. z' € unit-disc A poincare-distance z z' = r}\n\nEach h-circle in the Poincaré model is represented by an Euclidean circle in the model — the center and radius\nof that euclidean circle are determined by the following formulas.\n\ndefinition poincare-circle-euclidean :: compler-homo => real => euclidean-circle where\npoincare-circle-euclidean zr =\n(let R = (cosh r — 1) / 2;\nz' = to-complezx z;\ncz = 1 — (emod z')?;\nk=cz*R+1\nin (z",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Intersection of circles in special positions",
+      "pageStart": 71,
+      "pageEnd": 74,
+      "target": "../sections/sec-028-intersection-of-circles-in-special-positions.md",
+      "narrative": null,
+      "content": "Two h-circles centered at the x-axis intersect at mutually conjugate points\n\nlemma intersect-poincare-circles-x-axis:\n\n71\nassumes 2: is-real z1 and is-real z2 and rl > 0 and r2 > 0 and\n—1 < Re zl and Re z1 < 1 and —1 < Re 22 and Re z2 < 1 and\nzl # 22\nassumes 21: r1 € poincare-circle (of-complex z1) r1 M poincare-circle (of-complex 22) r2 and\nx2: x2 € poincare-circle (of-complez z1) r1 M poincare-circle (of-complez z2) r2 and\nvl # x2\nshows r1 = conjugate 72\nproof—\nhave in-disc: of-complex z1 € unit-disc of-complex z2 € unit-disc\nusing assms\nby (auto simp add: cmod-eq-Re)\n\nobtain x1’ 22’ where x",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Congruent triangles",
+      "pageStart": 74,
+      "pageEnd": 77,
+      "target": "../sections/sec-029-congruent-triangles.md",
+      "narrative": null,
+      "content": "For every pair of triangles such that its three pairs of sides are pairwise equal there is an h-isometry (a unit disc\npreserving Mobius transform, eventually composed with a conjugation) that maps one triangle onto the other.\n\nlemma unit-disc-fiz-f-congruent-triangles:\nassumes\nin-disc: u € unit-disc v € unit-disc w € unit-disc and\nin-disc’: u' € unit-disc v' € unit-disc w’ € unit-disc and\nd: poincare-distance uv = poincare-distance u’ v!\npoincare-distance v w = poincare-distance v' w’\npoincare-distance uw = poincare-distance u' w’\nshows\n3M. unit-disc-fic-fM \\ Mu=u'AMv=v'AMw=w’'\nproof (casesu=v",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "H-betweenness in the Poincaré model",
+      "pageStart": 77,
+      "pageEnd": 77,
+      "target": "../sections/sec-030-h-betweenness-in-the-poincaré-model.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "H-betwenness expressed by a cross-ratio",
+      "pageStart": 77,
+      "pageEnd": 77,
+      "target": "../sections/sec-031-h-betwenness-expressed-by-a-cross-ratio.md",
+      "narrative": null,
+      "content": "The point v is h-between u and w if the cross-ratio between the pairs u and w and v and inverse of v is real\nand negative.\n\ndefinition poincare-between :: complex-homo = complez-homo = complex-homo = bool where\npoincare-between uv w +<—\nu=vVv=wVv\n(let cr = cross-ratio uv w (inversion v)\nin is-real (to-complex cr) A Re (to-complex cr) < 0)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "H-betwenness is preserved by h-isometries",
+      "pageStart": 77,
+      "pageEnd": 78,
+      "target": "../sections/sec-032-h-betwenness-is-preserved-by-h-isometries.md",
+      "narrative": null,
+      "content": "Since they preserve cross-ratio and inversion, h-isometries (unit disc preserving Mobius transformations and\nconjugation) preserve h-betweeness.\n\nlemma unit-disc-fiz-moebius-preserve-poincare-between [simp]:\nassumes unit-disc-fix M and u € unit-disc and v € unit-disc and w € unit-disc\nshows poincare-between (moebius-pt M u) (moebius-pt M v) (moebius-pt M w) <>\npoincare-between uv w\nproof (cases u =v V v= w)\ncase True\nthus ?thesis\nusing assms\nunfolding poincare-between-def\nby auto\nnext\ncase False\nmoreover\nhence moebius-pt Mu 4 moebius-pt M v A moebius-pt M v 4 moebius-pt M w\nby auto\nmoreover\nha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some elementary properties of h-betwenness",
+      "pageStart": 78,
+      "pageEnd": 78,
+      "target": "../sections/sec-033-some-elementary-properties-of-h-betwenness.md",
+      "narrative": null,
+      "content": "lemma poincare-between-nonstrict [simp]:\nshows poincare-between u u v and poincare-between u vv\nby (simp-all add: poincare-between-def)\n\nlemma poincare-between-sandwich:\nassumes u € unit-disc and v € unit-disc\nassumes poincare-between uv u\nshows u = v\nproof (rule ccontr)\nassume 7— thesis\nthus False\nusing assms\nusing inversion-noteg-unit-disc[of v u]\nusing cross-ratio-1[{of v u inversion v]\nunfolding poincare-between-def Let-def\nby auto\nqed\n\nlemma poincare-between-rev:\nassumes u € unit-disc and v € unit-disc and w € unit-disc\nshows poincare-between u v w <—> poincare-between wv u\nusing assms\nus",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "H-betwenness and h-collinearity",
+      "pageStart": 78,
+      "pageEnd": 79,
+      "target": "../sections/sec-034-h-betwenness-and-h-collinearity.md",
+      "narrative": null,
+      "content": "Three points can be in an h-between relation only when they are h-collinear.\n\nlemma poincare-between-poincare-collinear [simp]:\nassumes in-disc: u € unit-disc v € unit-disc w € unit-disc\nassumes betw: poincare-between uv w\nshows poincare-collinear {u, v, w}\nproof (cases u =v V v= w)\ncase True\nthus ?thesis\nusing assms\nby auto\nnext\ncase False\nhence distinct: distinct [u, v, w, inversion v|\nusing in-disc inversion-notegq-unit-disc[of v v| inversion-noteg-unit-disc|of v u] inversion-noteg-unit-disclof v w]\nusing betw poincare-between-sandwich|of w v|\nby (auto simp add: poincare-between-def Let-def",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "H-betweeness on Euclidean segments",
+      "pageStart": 79,
+      "pageEnd": 86,
+      "target": "../sections/sec-035-h-betweeness-on-euclidean-segments.md",
+      "narrative": null,
+      "content": "If the three points lie on an h-line that is a Euclidean line (e.g., if it contains zero), h-betweenness can be\ncharacterized much simpler than in the definition.\n\nlemma poincare-between-x-axis-u0v:\nassumes is-real u’ and u’ # 0 and uv’ 4 0\nshows poincare-between (of-complez u') On (of-complex v') <—+ is-real v' \\ Re u' * Re v' < 0\nproof—\nhave Re u' 4 0\nusing <is-real uy «u' 4 0»\nusing complex-eq-if-Re-eq\nby auto\nhave nz: of-complez u' # On of-complex v' # On\nby (simp-all add: (u' 4 0) «v' 4 0»)\nhence 0;, 4 of-complex v'\nby metis\n\nlet ?cr = cross-ratio (of-complex u') On (of-complex v') oon\nha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "H-betweenness and h-collinearity",
+      "pageStart": 86,
+      "pageEnd": 87,
+      "target": "../sections/sec-036-h-betweenness-and-h-collinearity.md",
+      "narrative": null,
+      "content": "For three h-collinear points at least one of the three possible h-betweeness relations must hold.\n\nlemma poincare-collinear3-between:\nassumes u € unit-disc and v € unit-disc and w € unit-disc\nassumes poincare-collinear {u, v, w}\nshows poincare-between uv w V poincare-between u wv V poincare-between v uw (is ?P’ uv w)\nproof (cases u=v)\ncase True\nthus ?thesis\nusing assms\nby auto\nnext\ncase False\nhave V w. w € unit-dise A poincare-collinear {u, v, w} —+ ?P' wv w (is ?P uv)\nproof (rule wlog-positive-x-azis[;where P=?P])\nfix x\nassume 2: is-real tr 0 < Rex Rex < 1\nhence z 4 0\nusing complez.expand[of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some properties of betweenness",
+      "pageStart": 87,
+      "pageEnd": 89,
+      "target": "../sections/sec-037-some-properties-of-betweenness.md",
+      "narrative": null,
+      "content": "lemma poincare-between-transitivity:\nassumes a € unit-disc and z € unit-disc and b € unit-disc and y € unit-disc and\npoincare-between a x b and poincare-between a b y\nshows poincare-between x b y\nproof (cases a = b)\ncase True\nthus ?thesis\nusing assms\nusing poincare-between-sandwich by blast\nnext\ncase False\n\n87\nhave V z. V y. poincare-between a x b \\ poincare-between a b y \\ x € unit-disc\nA y € unit-dise —+ poincare-between x b y (is ?P a b)\nproof (rule wlog-positive-x-azis[;where P=?P])\nshow a € unit-disc\nusing assms by simp\nnext\nshow b € unit-disc\nusing assms by simp\nnext\nshow a + b\nusing Fal",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Poincare between - sum distances",
+      "pageStart": 89,
+      "pageEnd": 94,
+      "target": "../sections/sec-038-poincare-between---sum-distances.md",
+      "narrative": null,
+      "content": "Another possible definition of the h-betweenness relation is given in terms of h-distances between pairs of points.\nWe prove it as a characterization equivalent to our cross-ratio based definition.\n\nlemma poincare-between-sum-distances-x-axis-u0v:\n\nassumes of-complez u' € unit-disc of-complex v' € unit-disc\n\nassumes is-real u’ u’ 4 0 v' 4 0\n\nshows poincare-distance (of-complex u') 0; + poincare-distance 0; (of-complex v') = poincare-distance (of-complex\nu’) (of-complex v') —+\n\nis-real v' \\ Re u’ * Re v' < 0 (is ?P wu’ v' <> ?Qu' v’)\n\nproof—\n\nhave Re u' 4 0\n\n89\nusing <is-real uy «u' 4 0»\nusing",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some more properties of h-betweenness.",
+      "pageStart": 94,
+      "pageEnd": 96,
+      "target": "../sections/sec-039-some-more-properties-of-h-betweenness.md",
+      "narrative": null,
+      "content": "Some lemmas proved earlier are proved almost directly using the sum of distances characterization.\n\nlemma unit-disc-fix-moebius-preserve-poincare-between’:\nassumes unit-disc-fix M and u € unit-disc and v € unit-disc and w € unit-disc\nshows poincare-between (moebius-pt M u) (moebius-pt M v) (moebius-pt M w) <>\npoincare-between uv w\nusing assms\nusing poincare-between-sum-distances\nby simp\n\nlemma conjugate-preserve-poincare-between':\nassumes u € unit-disc v € unit-disc w € unit-disc\nshows poincare-between (conjugate u) (conjugate v) (conjugate w) — poincare-between uv w\nusing assms\nusing poincare",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Intersection of h-lines with the x-axis in the Poincaré model",
+      "pageStart": 96,
+      "pageEnd": 96,
+      "target": "../sections/sec-040-intersection-of-h-lines-with-the-x-axis-in-the-p.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Betweeness of x-axis intersection",
+      "pageStart": 96,
+      "pageEnd": 97,
+      "target": "../sections/sec-041-betweeness-of-x-axis-intersection.md",
+      "narrative": null,
+      "content": "The intersection point of the h-line determined by points u and v and the x-axis is between u and v, then u\nand v are in the opposite half-planes (one must be in the upper, and the other one in the lower half-plane).\n\nlemma poincare-between-x-axis-intersection:\nassumes wu € unit-disc and v € unit-disc and z € unit-disc and u # v\nassumes u ¢ circline-set x-azis and v ¢ circline-set t-axis\nassumes 2z € circline-set (poincare-line u v) M circline-set x-axis\nshows poincare-between u z v <—> Arg (to-compler u) « Arg (to-complex v) < 0\nproof—\n\nhave V uv. u € unit-disc \\ v € unit-disc Au Av A\n\nu € ci",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Check if an h-line intersects the x-axis",
+      "pageStart": 97,
+      "pageEnd": 100,
+      "target": "../sections/sec-042-check-if-an-h-line-intersects-the-x-axis.md",
+      "narrative": null,
+      "content": "lemma z-azis-intersection-equation:\nassumes\nH = mk-circline A B C D and\n(A, B, C, D) € hermitean-nonzero\nshows of-complex z € circline-set x-axis M circline-set H <—+\nAxz? + 2xRe Bez + D = 0 A is-real z (is ?lhs <> ?rhs)\nproof—\nhave ?lhs <> Axz* + (B+ cnj B)xzx + D=0 A z= cnjz\nusing assms\nusing circline-equation-x-axis| of z]\nusing circline-cquation|of H A B C D z|\nusing hermitean-elems\nby (auto simp add: power2-eq-square field-simps)\nthus ?thesis\nusing eq-cnj-iff-reallof 2]\nusing hermitean-elems|of A B C D|\nby (simp add: complex-add-cnj complex-eq-if-Re-eq)\nqed\n\nCheck if an h-line intersects",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Check if a Poincaré line intersects the y-axis",
+      "pageStart": 100,
+      "pageEnd": 101,
+      "target": "../sections/sec-043-check-if-a-poincaré-line-intersects-the-y-axis.md",
+      "narrative": null,
+      "content": "definition intersects-y-axis-cmat :: compler-mat = bool where\n[simp]: intersects-y-azis-cmat H = (let (A, B, C, D) = H in A= 0 V (Im B)? > (Re A)?)\n\nlift-definition intersects-y-azis-clmat :: circline-mat = bool is intersects-y-axis-cmat\ndone\n\nlift-definition intersects-y-azis :: circline = bool is intersects-y-axis-clmat\nproof (transfer)\nfix H1 H2\nassume hh: hermitean H1 A H1 4 mat-zero and hermitean H2 \\ H2 4 mat-zero\nobtain Ai B1 C1 D1 A2 B2 C2 D2 where *: H1 = (A1, B1, C1, D1) H2 = (A2, B2, C2, D2)\nby (cases H1, cases H2, auto)\nassume circline-eq-cmat H1 H2\nthen obtain k where k: k 4 0 \\ H",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-044",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Intersection point of a Poincaré line with the x-axis in the unit disc",
+      "pageStart": 101,
+      "pageEnd": 105,
+      "target": "../sections/sec-044-intersection-point-of-a-poincaré-line-with-the-x.md",
+      "narrative": null,
+      "content": "definition calc-z-axis-intersection-cvec :: complex = complex = compler-vec where\n[simp]: calc-x-axis-intersection-cvec A B =\n(let diser = (Re B)? — (Re A)? in\n(—Re(B) + sgn (Re B) * sqrt(discr), A))\n\ndefinition calc-x-azis-intersection-cmat-cvec :: complex-mat = complex-vec where [simp]:\ncalc-z-axis-intersection-cmat-cvec H =\n(let (A, B, C, D) = H in\nif A # 0 then\ncalc-x-axis-intersection-cvec A B\nelse\n(0, 1)\n)\n\nlift-definition calc-x-axis-intersection-clmat-hcoords :: circline-mat = complex-homo-coords is calc-z-axis-intersection-cmat-cvec\nby (auto split: if-split-asm)\n\nlift-definition calc-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-045",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Check if an h-line intersects the positive part of the x-axis",
+      "pageStart": 105,
+      "pageEnd": 108,
+      "target": "../sections/sec-045-check-if-an-h-line-intersects-the-positive-part.md",
+      "narrative": null,
+      "content": "definition intersects-x-axis-positive-cmat :: complez-mat => bool where\n[simp]: intersects-x-axis-positive-cmat H = (let (A, B, C, D) = Hin Re A#0 A Re B/ Re A< -1)\n\nlift-definition intersects-2-axis-positive-clmat :: circline-mat = bool is intersects-x-axis-positive-cmat\ndone\n\nlift-definition intersects-x-axis-positive :: circline = bool is intersects-x-axis-positive-clmat\nproof (transfer)\nfix H1 H2\nassume hh: hermitean H1 A H1 4 mat-zero and hermitean H2 \\ H2 4 mat-zero\nobtain Ai B1 C1 D1 A2 B2 C2 D2 where *: H1 = (A1, B1, C1, D1) H2 = (A2, B2, C2, D2)\nby (cases H1, cases H2, auto)\nassume ci",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-046",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Check if an h-line intersects the positive part of the y-axis",
+      "pageStart": 108,
+      "pageEnd": 110,
+      "target": "../sections/sec-046-check-if-an-h-line-intersects-the-positive-part.md",
+      "narrative": null,
+      "content": "definition intersects-y-axis-positive-cmat :: complex-mat = bool where\n[simp]: intersects-y-axis-positive-cmat H = (let (A, B, C, D) = Hin Re A# 0A ImB/ Re A < -1)\n\nlift-definition intersects-y-azis-positive-clmat :: circline-mat = bool is intersects-y-axis-positive-cmat\ndone\n\nlift-definition intersects-y-azis-positive :: circline = bool is intersects-y-axis-positive-clmat\nproof (transfer)\nfix H1 H2\nassume hh: hermitean H1 A H1 4 mat-zero and hermitean H2 \\ H2 4 mat-zero\nobtain Ai B1 C1 D1 A2 B2 C2 D2 where *: H1 = (A1, B1, C1, D1) H2 = (A2, B2, C2, D2)\nby (cases H1, cases H2, auto)\nassume cir",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-047",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Position of the intersection point in the unit disc",
+      "pageStart": 110,
+      "pageEnd": 112,
+      "target": "../sections/sec-047-position-of-the-intersection-point-in-the-unit-d.md",
+      "narrative": null,
+      "content": "Check if the intersection point of one h-line with the x-axis is located more outward the edge of the disc than\nthe intersection point of another h-line.\n\ndefinition outward-cmat :: compler-mat = complez-mat = bool where\n[simp]: outward-cmat H1 H2 = (let (Al, B1, C1, D1) = H1; (A2, B2, C2, D2) = H2\nin —Re B1/Re Al < —Re B2/Re A2)\nlift-definition outward-clmat :: circline-mat = circline-mat = bool is outward-cmat\ndone\nlift-definition outward :: circline => circline = bool is outward-clmat\napply transfer\napply simp\napply (case-tac circline-mat1, case-tac circline-mat2, case-tac circline-mat3, ca",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-048",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ideal points and x-axis intersection",
+      "pageStart": 112,
+      "pageEnd": 114,
+      "target": "../sections/sec-048-ideal-points-and-x-axis-intersection.md",
+      "narrative": null,
+      "content": "lemma ideal-points-intersects-x-azis:\nassumes is-poincare-line H and ideal-points H = {i1, i2} and H # z-axis\nshows intersects-t-axis H <—> Im (to-complex i1) « Im (to-complez i2) < 0\nusing assms\nproof—\nhave il # i2\nusing assms(1) assms(2) ex-poincare-line-points ideal-points-different(1)\nby blast\n\n112\nhave calc-ideal-points H = {i1, i2}\nusing assms\nusing ideal-points-unique\nby auto\n\nhave V il € calc-ideal-points H.\nV i2 € calc-ideal-points H.\nis-poincare-line H \\ H # x-axis \\ i1 # i2 —+ (Im (to-complex i1) * Im (to-complez i2) < 0 ++\nintersects-x-axis H)\nproof (transfer, transfer, (rule ballI",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-049",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "H-perpendicular h-lines in the Poincaré model",
+      "pageStart": 114,
+      "pageEnd": 124,
+      "target": "../sections/sec-049-h-perpendicular-h-lines-in-the-poincaré-model.md",
+      "narrative": null,
+      "content": "definition perpendicular-to-a-axis-cmat :: complea-mat = bool where\n[simp]: perpendicular-to-z-axis-cmat H +—+ (let (A, B, C, D) = H in is-real B)\n\nlift-definition perpendicular-to-x-axis-clmat :: circline-mat = bool is perpendicular-to-a-axis-cmat\ndone\n\nlift-definition perpendicular-to-z-axis :: circline = bool is perpendicular-to-x-axis-clmat\nby transfer auto\n\nlemma perpendicular-to-x-axis:\nassumes is-poincare-line H\nshows perpendicular-to-z-axis H <—> perpendicular x-axis H\nusing assms\nunfolding perpendicular-def\nproof (transfer, transfer)\nfix H\nassume hh: hermitean H \\ H # mat-zero is-poin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-050",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Poincaré disc model types",
+      "pageStart": 124,
+      "pageEnd": 124,
+      "target": "../sections/sec-050-poincaré-disc-model-types.md",
+      "narrative": null,
+      "content": "In this section we introduce datatypes that represent objects in the Poincaré disc model. The types are defined",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-051",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "H-points",
+      "pageStart": 124,
+      "pageEnd": 124,
+      "target": "../sections/sec-051-h-points.md",
+      "narrative": null,
+      "content": "those types are defined by lifting the functions defined on the carrier type (e.g., h-distance is defined by lifting\nthe distance function defined for elements of CP).\n\ntheory Poincare\nimports Poincare-Lines Poincare-Between Poincare-Distance Poincare-Circles\nbegin\n10.1 H-points\ntypedef p-point = {z. z € unit-disc}\nusing zero-in-unit-disc\nby (rule-tac c=0;, in el, simp)\nsetup-lifting type-definition-p-point\nPoint zero\n\nlift-definition p-zero :: p-point is On\nby (rule zero-in-unit-disc)\n\nConstructing h-points from complex numbers\n\nlift-definition p-of-complex :: complex = p-point is X z. if cmo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-052",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "H-lines",
+      "pageStart": 124,
+      "pageEnd": 125,
+      "target": "../sections/sec-052-h-lines.md",
+      "narrative": null,
+      "content": "typedef p-line = {H. is-poincare-line H}\nby (rule-tac r=2-azis in exI, simp)\n\nsetup-lifting type-definition-p-line\n\nlift-definition p-incident :: p-line = p-point = bool is on-circline\ndone\n\nSet of h-points on an h-line\n\ndefinition p-points :: p-line = p-point set where\np-points | = {p. p-incident | p}\n\n124\nx-axis is an example of an h-line\n\nlift-definition p-z-azis :: p-line is x-axis\nby simp\n\nConstructing the unique h-line from two h-points\n\nlift-definition p-line :: p-point > p-point = p-line is poincare-line\nproof—\nfix uv\nshow is-poincare-line (poincare-line u v)\nproof (cases u # v)\ncase T",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-053",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "H-collinearity",
+      "pageStart": 125,
+      "pageEnd": 125,
+      "target": "../sections/sec-053-h-collinearity.md",
+      "narrative": null,
+      "content": "lift-definition p-collinear :: p-point set = bool is poincare-collinear\ndone",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-054",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "H-isometries",
+      "pageStart": 125,
+      "pageEnd": 126,
+      "target": "../sections/sec-054-h-isometries.md",
+      "narrative": null,
+      "content": "H-isometries are functions that map the unit disc onto itself\n\ntypedef p-isometry = {f. unit-disc-fix-f f}\n\n125\nby (rule-tac c=id in exI, simp add: unit-disc-fix-f-def, rule-tac x=id-moebius in exl, simp)\nsetup-lifting type-definition-p-isometry\nAction of an h-isometry on an h-point\n\nlift-definition p-isometry-pt :: p-isometry = p-point = p-point is X f p. f p\nusing unit-disc-fir-f-unit-disc\nby auto\n\nAction of an h-isometry on an h-line\n\nlift-definition p-isometry-line :: p-isometry = p-line = p-line is X f l. unit-disc-fix-f-circline f |\nproof—\nfix f H\nassume unit-disc-fit-f f is-poincare-lin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-055",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "H-distance and h-congruence",
+      "pageStart": 126,
+      "pageEnd": 127,
+      "target": "../sections/sec-055-h-distance-and-h-congruence.md",
+      "narrative": null,
+      "content": "lift-definition p-dist :: p-point => p-point = real is poincare-distance\ndone\n\ndefinition p-congruent :: p-point = p-point => p-point > p-point = bool where\n[simp]: p-congruent u vu! v' <—+ p-dist uv = p-dist u’ v’\n\nlemma\nassumes p-dist uv = p-dist u’ v’\nassumes p-dist v w = p-dist v' w’\nassumes p-dist u w = p-dist u’ w’\nshows i f. p-isometry-pt fu = u' \\ p-isometry-pt fv = v' A p-isometry-pt fw = w'\nusing assms\napply transfer\nusing unit-disc-fir-f-congruent-triangles\nby auto\n\nWe prove that unit disc equipped with Poincaré distance is a metric space, i.e. an instantiation of metric-space\nlocal",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-056",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "H-betweennes",
+      "pageStart": 127,
+      "pageEnd": 127,
+      "target": "../sections/sec-056-h-betweennes.md",
+      "narrative": null,
+      "content": "lift-definition p-between :: p-point => p-point => p-point => bool is poincare-between\ndone\n\nend",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-057",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Poincaré model satisfies Tarski axioms",
+      "pageStart": 127,
+      "pageEnd": 127,
+      "target": "../sections/sec-057-poincaré-model-satisfies-tarski-axioms.md",
+      "narrative": null,
+      "content": "theory Poincare-Tarski\nimports Poincare Poincare-Lines-Avzis-Intersections Tarski\nbegin",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-058",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pasch axiom",
+      "pageStart": 127,
+      "pageEnd": 138,
+      "target": "../sections/sec-058-pasch-axiom.md",
+      "narrative": null,
+      "content": "lemma Pasch-fun-mono:\nfixes rl r2 :: real\nassumes (0 < rl and rl < r2 and r2 < 1\nshows rl + 1/r1 > r2 + 1/r2\nproof (cases rl = r2)\ncase True\nthus ?thesis\nby simp\nnext\ncase False\nhence r2 — rl > 0\nusing assms\nby simp\n\nhave rl * r2 < 1\nusing assms\nby (smt mult-le-cancel-left1)\nhence 1 / (ri * r2) > 1\nusing assms\nby simp\nhence (r2 — rl) / (ri « r2) > (r2 — rl)\nusing (r2 — rl > 0»\nusing mult-less-cancel-left-pos[of r2 — rl 11 / (r1 * r2)]\nby simp\nhence 1 /ri—1/7r2>r2-r1\nusing assms\nby (simp add: field-simps)\nthus ?thesis\nby simp\n\n127\nqed\nPasch axiom, non-degenerative case.\n\nlemma Pasch-nondeg:\nass",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-059",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Segment construction axiom",
+      "pageStart": 138,
+      "pageEnd": 140,
+      "target": "../sections/sec-059-segment-construction-axiom.md",
+      "narrative": null,
+      "content": "lemma segment-construction:\nassumes «x € unit-disc and y € unit-disc\nassumes a € unit-disc and b € unit-disc\nshows J z. z € unit-disc A poincare-between x y z  poincare-distance y z = poincare-distance a b\nproof—\nobtain d where d: d = poincare-distance a b\nby auto\nhave d > 0\nusing assms\n\n138\nby (simp add: d poincare-distance-ge0)\n\nhave 4 z. z € unit-disc \\ poincare-between x y z /\\ poincare-distance y z = d (is ?P x y)\nproof (cases t = y)\ncase True\nhave 4 z. z € unit-disc \\ poincare-distance « z = d\nproof (rule wlog-zero)\nshow 4 z. z € unit-disc \\ poincare-distance 0, z = d\nusing ex-2z-axis-po",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-060",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Five segment axiom",
+      "pageStart": 140,
+      "pageEnd": 141,
+      "target": "../sections/sec-060-five-segment-axiom.md",
+      "narrative": null,
+      "content": "lemma five-segment-axiom:\nassumes\nin-disc:  € unit-disc y € unit-disc z € unit-disc u € unit-disc and\nin-disc': x' € unit-disc y’ € unit-dise z' € unit-disc u’ € unit-disc and\nx #yand\nbetw: poincare-between x y z poincare-between x’ y' z' and\nxy: poincare-distance x y = poincare-distance x' y’ and\nxu: poincare-distance x u = poincare-distance x’ u' and\nyu: poincare-distance y u = poincare-distance y’ u’ and\nyz: poincare-distance y z = poincare-distance y’ z'\nshows\npoincare-distance z u = poincare-distance z' u'\nproof—\nfrom assms obtain M where\nM: unit-disc-fixz-f MMx=2'Mu=u'My=y’'\nusing unit-d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-061",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Upper dimension axiom",
+      "pageStart": 141,
+      "pageEnd": 143,
+      "target": "../sections/sec-061-upper-dimension-axiom.md",
+      "narrative": null,
+      "content": "lemma upper-dimension-axiom:\nassumes in-disc: x € unit-disc y € unit-disc z € unit-disc u € unit-disc v € unit-disc\nassumes poincare-distance x u = poincare-distance x v\npoincare-distance y u = poincare-distance y v\npoincare-distance z u = poincare-distance z v\nuZxu\nshows poincare-between x y z V poincare-between y z x V poincare-between z x y\nproof (cases z= yVy=zV 4= 2)\ncase True\nthus ?thesis\nusing in-disc\nby auto\nnext\ncase False\nhencex Ayr A#zyF#z\nby auto\nlet ?cong = \\ a b a’ b’. poincare-distance a b = poincare-distance a’ b’\nhave V zuv. z € unit-disc \\ u € unit-disc A v € unit-disc \\\n?con",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-062",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lower dimension axiom",
+      "pageStart": 143,
+      "pageEnd": 143,
+      "target": "../sections/sec-062-lower-dimension-axiom.md",
+      "narrative": null,
+      "content": "lemma lower-dimension-axiom:\nshows J a € unit-disc. 4 b € unit-disc. J c € unit-disc.\n7 poincare-between a b c A 7 poincare-between b c a A — poincare-between c a b\nproof—\nlet ?u = of-compler (1/2) and ?v = of-complex (i/2)\nhave 1: 0; € unit-disc and 2: ?u € unit-disc and 3: ?v € unit-disc\nby simp-all\nhave *: — poincare-collinear {On, ?u, ?v}\nproof (rule ccontr)\nassume — ?thesis\nthen obtain p where is-poincare-line p {0;, ?u, ?v} C circline-set p\nunfolding poincare-collinear-def\nby auto\nmoreover\nhave of-complex (1 / 2) 4 of-complex (i / 2)\nusing of-complez-inj\nby fastforce\nultimately\nhave 0»,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-063",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Negated Euclidean axiom",
+      "pageStart": 143,
+      "pageEnd": 150,
+      "target": "../sections/sec-063-negated-euclidean-axiom.md",
+      "narrative": null,
+      "content": "lemma negated-euclidean-axiom-auz:\nassumes on-circline H (of-complex (1/2 + i/2)) and is-poincare-line H\nassumes intersects-z-axis-positive H\nshows -— intersects-y-axis-positive H\nusing assms\nproof (transfer, transfer)\nfix H\nassume hh: hermitean H \\ H # mat-zero is-poincare-line-cmat H\nobtain A B C D where H = (A, B, C, D)\nby (cases H, auto)\nhence «: is-real A H = (A, B, enj B, A) (cmod B)? > (emod A)?\nusing hermitean-elems|of A B C D] hh\nby auto\n\nassume intersects-x-azis-positive-cmat H\nhence Re A# 0 Re B/ Re A<- 1\nusing *\nby auto\n\nassume on-circline-cmat-cvec H (of-complex-cvec (1 / 2 +i/ 2)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-064",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Continuity axiom",
+      "pageStart": 150,
+      "pageEnd": 157,
+      "target": "../sections/sec-064-continuity-axiom.md",
+      "narrative": null,
+      "content": "The set ¢ is on the left of the set\n\nabbreviation set-order where\nset-order A p W =V x€ unit-disc. V ye unit-disc. y x A wy y —> poincare-between A x y\n\nThe point B is between the sets ¢@ and w\nabbreviation point-between-sets where\n\npoint-between-sets p Bw = ae€ unit-disc. V ye unit-disc. yp x \\ wy y —>+ poincare-between x By\n\nlemma _ continuity:\nassumes J A € unit-disc. set-order A yp w\nshows 4d B € unit-disc. point-between-sets p Bw\nproof (cases (4 20 € unit-disc. p 20) \\ (A yO € unit-disc. w y0))\ncase False\nthus ?thesis\nusing assms by blast\nnext\ncase True\nthen obtain YO where ~ YO YO € unit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-065",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Limiting parallels axiom",
+      "pageStart": 157,
+      "pageEnd": 170,
+      "target": "../sections/sec-065-limiting-parallels-axiom.md",
+      "narrative": null,
+      "content": "Auxiliary definitions\n\ndefinition poincare-on-line where\npoincare-on-line p a b <—+ poincare-collinear {p, a, b}\n\ndefinition poincare-on-ray where\npoincare-on-ray p a b +—> poincare-between a p b V poincare-between a b p\n\ndefinition poincare-in-angle where\npoincare-in-angle pa bc+<—+\nbAaNbACA PF DbHA (A TE unit-disc. poincare-between azc\\«#aA\\ «cA poincare-on-ray p b zx)\n\ndefinition poincare-ray-meets-line where\npoincare-ray-meets-line a b c d <—+ (4 a € unit-disc. poincare-on-ray x a b A poincare-on-line x c d)\n\nAll points on ray are collinear\n\nlemma poincare-on-ray-poincare-collinear:\nassume",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/poincare-proof-outline/blocks/prose-sec-066",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Interpretation of locales",
+      "pageStart": 170,
+      "pageEnd": 175,
+      "target": "../sections/sec-066-interpretation-of-locales.md",
+      "narrative": null,
+      "content": "global-interpretation PoincareTarskiAbsolute: TarskiAbsolute where cong = p-congruent and betw = p-between\ndefines p-on-line = Poincare TarskiAbsolute.on-line and\np-on-ray = Poincare TarskiAbsolute.on-ray and\np-in-angle = PoincareTarskiAbsolute.in-angle and\np-ray-meets-line = Poincare TarskiAbsolute.ray-meets-line\nproof—\nshow TarskiAbsolute p-congruent p-between\nproof\n\n1. Reflexivity of congruence\n\nfix ry\nshow p-congruent © y y ©\nunfolding p-congruent-def\nby transfer (simp add: poincare-distance-sym)\nnext\n\n2. Transitivity of congruence\n\nfix ryzuvw\nshow p-congruent zy zu A p-congruent x y v w —",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

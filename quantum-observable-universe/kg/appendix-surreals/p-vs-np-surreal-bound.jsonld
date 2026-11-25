@@ -1,0 +1,43 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-p-vs-np-surreal-bound",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:p-vs-np-surreal-bound",
+  "kind": "remark",
+  "title": "Surreal bound for P vs NP: Reeb-period transfinite exceeds classical-budget standard",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-p-vs-np-qou",
+    "papers/quantum-observable-universe/blocks/def-q-from-epsilon",
+    "papers/quantum-observable-universe/blocks/def-reeb-epsilon",
+    "papers/quantum-observable-universe/blocks/lem-surreal-squeeze",
+    "papers/quantum-observable-universe/blocks/prop-surreal-rate-calculus",
+    "papers/quantum-observable-universe/blocks/rem-calculus-up-to-epsilon",
+    "papers/quantum-observable-universe/blocks/rem-conway-normal-form"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-p-vs-np-qou",
+  "cites": [
+    "references/conway1976",
+    "references/cook1971",
+    "references/freedman2003"
+  ],
+  "tags": [
+    "p-vs-np",
+    "millennium-problem",
+    "complexity",
+    "surreal",
+    "squeeze",
+    "reeb-period",
+    "classical-limit"
+  ],
+  "text": "p-vs-np-surreal-bound.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-hep-lat-9806003v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Statistical analysis and the equivalent of a Thouless energy in lattice QCD Dirac spectra",
+      "dcterms:creator": [
+        "Guhr1, T.",
+        "Ma1, J.-Z.",
+        "Meyer2, S.",
+        "Wilke1, T."
+      ],
+      "dcterms:issued": "D:20220601",
+      "dcterms:identifier": "https://arxiv.org/abs/hep-lat/9806003",
+      "dcterms:source": "library/arxiv-hep-lat-9806003v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-hep-lat-9806003v2"
+    }
+  ]
+}

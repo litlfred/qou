@@ -1,0 +1,30 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/moffatt1969-jfm-knottedness",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "The degree of knottedness of tangled vortex lines",
+      "dcterms:creator": [
+        "MOFFATT, By H. K."
+      ],
+      "dcterms:issued": "D:20051108",
+      "dcterms:source": "library/moffatt1969-jfm-knottedness/manifest.jsonld",
+      "dcterms:hasVersion": "library/moffatt1969-jfm-knottedness"
+    }
+  ]
+}

@@ -1,0 +1,264 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0907.4143v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-0907.4143v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "\\label{intro} Symbiotic stars (SySs) are usually interacting\nbinaries, composed of a cool star, a hot component and a nebula. The\ncool component is a red giant which is a first giant branch (FGB) or\nan asymptotic giant branch (AGB) star. The hot component is a white\ndwarf (WD), a subdwarf, an accreting low-mass main-sequence star, or\na neutron star \\citep{kw84,mur91}. The peculiar optical spectrum of\nSySs is a very important and interesting phenomenon, and offers some\nexciting observational facts \\citep{k86,ms99,b00,m03}. \\citet{mur97}\nshowed that the majority of the known galactic SySs are de",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0907.4143v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0907.4143v1  [astro-ph.SR]  23 Jul 2009\nSoft and Supersoft X-ray Sources in Symbiotic\nStars1\nChunhua Zhua,b, Guoliang L¨ub, Zhaojun Wanga,b and\nJun Zhang ∗b\naSchool of Science, Xi’an Jiaotong University, Xi’an, 710049, China\nbSchool of Physics, Xinjiang University, Urumqi, 830046, China\nAbstract\nAssuming that soft X-ray sources in symbiotic stars result from strong thermonu-\nclear runaways, and supersoft X-ray sources from weak thermonuclear runaways\nor steady hydrogen burning symbiotic stars, we investigate the Galactic soft and\nsupersoft X-ray sources in symbiotic stars by means of pop",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0907.4143v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The model",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-the-model.md",
+      "narrative": null,
+      "content": "\\label{mod} For binary evolution, we use a rapid binary star\nevolution (BSE) code of \\cite{h02}. Below we describe our algorithm\nfrom several aspects.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0907.4143v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symbiotic stars",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-symbiotic-stars.md",
+      "narrative": null,
+      "content": "SySs are complex binary systems, and can be divided into two\nsubgroups: `ordinary' SySs, which are assumed to burn hydrogen\nsteadily; and symbiotic novae, which experience thermonuclear\nrunaways in their surface hydrogen layers \\citep{ty76,m03}. There\nare many uncertain physical parameters which can affect the\npopulation of SySs. \\citet{lu06} showed that the numbers of SySs and\nthe occurrences of symbiotic novae are greatly affected by the\nalgorithm of common envelope evolution, the terminal velocity of\nstellar wind $v(\\infty)$ and the critical ignition mass $\\Delta\nM_{\\rm crit}^{\\rm WD}$ whic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0907.4143v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "X-ray sources",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-x-ray-sources.md",
+      "narrative": null,
+      "content": "\\cite{v92} explained super-soft X-ray\nemissions by steady nuclear burning of hydrogen accreted onto WD.\nMost of the known SySs are sufficiently bright X-ray sources. As\nmentioned in Introduction, \\cite{mur97} divided X-ray sources into\nSSSs, SSs and relatively hard X-ray resources. It is well known that\nthe SSSs in SySs are hot WDs whose photospheres can produce\nsufficiently hard ($h\\nu\\approx0.2$kev) photons. For SSs in SySs,\n\\cite{jor94}, \\cite{for95} and \\cite{mur97} suggested that they\noriginate from the collision of two stellar winds. During some\nstrong thermonuclear runaways, WD can ejec",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0907.4143v1/blocks/prop-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "prop-sec-004-01.md",
+      "narrative": null,
+      "content": "We carry out binary population synthesis via Monte Carlo simulation technique in order to obtain the properties of SSs and SSSs' population in SySs.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0907.4143v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basic parameters of the Monte Carlo simulation",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-basic-parameters-of-the-monte-carlo-simulation.md",
+      "narrative": null,
+      "content": "We carry out binary population synthesis via Monte Carlo simulation\ntechnique in order to obtain the properties of SSs and SSSs'\npopulation in SySs. For the population synthesis of binary stars,\nthe main input model parameters are: (i) the initial mass function\n(IMF) of the primaries; (ii) the mass-ratio distribution of the\nbinaries; (iii)\n the distribution of orbital separations; (iv) the eccentricity\ndistribution; (v) the metallicity $Z$ of the binary systems.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe take IMF in \\cite{ktg93} as the primary mass distribution. The\nlower and the upper mass cut-offs of the primaries",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0907.4143v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Results",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-005-results.md",
+      "narrative": null,
+      "content": "\\label{res} We construct a set of models in which we vary different\ninput parameters relevant to the population of SSSs and SSs in SySs.\nTable \\ref{tab:case} gives all cases considered in this work. Many\nobservational evidences showed that the terminal velocity of stellar\nwind $v(\\infty)$ increases when a star ascends along the AGB\n\\citep{o02,w03,b05}. In this work, we take $v(\\infty)$ calculated by\nEq. (\\ref{eq:winters}) as the standard terminal velocity of stellar\nwind.\n\n We take $1\\times10^6$ initial binary systems for each case.\nFor every simulation with $1\\times10^6$ binaries, the relativ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0907.4143v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Population of X-ray sources",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "../sections/sec-006-population-of-x-ray-sources.md",
+      "narrative": null,
+      "content": "\\begin{table*}\n\n  \\caption{Different models of the population of SSSs and SSs in\n  SySs. The first column gives case number according to Table\n  \\ref{tab:case}. Columns 2, 3 and 4 give the occurrence rate of SSs which have undergone\n  channel I, II and III, respectively. Column 5 shows the total occurrence rate of SSs.\n  Columns 6, 7 and 8 give the numbers of SSSs which have undergone\n  channel I, II and III, respectively. Column 9 shows the total number of SSSs. In these columns,\n  the numbers in parentheses mean SSSs which originate from weak symbiotic novae.\n  Columns 10, 11 and 12 show the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0907.4143v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Properties of X-ray sources",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-007-properties-of-x-ray-sources.md",
+      "narrative": null,
+      "content": "In this subsection, we describe potentially observable physical\nquantities of SSSs and SSs in SySs.\n\n\\begin{figure*}\n\\begin{tabular}{c@{\\hspace{3pc}}c}\n\\includegraphics[totalheight=4.5in,width=3.2in,angle=-90]{fig1.ps}\\\\\n\\end{tabular}\n\\caption{Number distributions of X-ray sources in the Galactic SySs\nas a function of orbital periods (all numbers are normalized to 1).\nThe solid, dashed and dotted lines represent SSs, SSSs from weak\nsymbiotic novae and from steady hydrogen burning `ordinary' SySs,\nrespectively.\n            }\n\\label{fig:numporb}\n\\end{figure*}\n\n\nFigure \\ref{fig:numporb} gives the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0907.4143v1/blocks/figure-img-p011-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../images/img-p011-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0907.4143v1/blocks/figure-img-p011-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../images/img-p011-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0907.4143v1/blocks/figure-img-p011-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../images/img-p011-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0907.4143v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-008-conclusions.md",
+      "narrative": null,
+      "content": "Conclusions\nAssuming that SSs in SySs result from the violent collisions of the stellar\nwinds during strong symbiotic novae, and SSSs from weak symbiotic novae or\nsteady hydrogen burning SySs, we investigate the Galactic population of SSs\nand SSSs in SySs. The Galactic occurrence rates of SSs and SSSs are from ∼\n2 to 20 yr−1, and ∼2 to 17 yr−1, respectively. The numbers of X-ray sources\nin SySs range from 2390 to 6120. The percentage of the X-ray sources in all\nSySs is between ∼20% and 60%, which is in agreement with the observations.\nIn the present paper we do not model the X-ray spectra emis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

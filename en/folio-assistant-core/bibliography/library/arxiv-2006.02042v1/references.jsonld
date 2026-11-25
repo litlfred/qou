@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2006.02042v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "The Strong AJ Conjecture for the Figure 8 Knot",
+      "dcterms:creator": [
+        "NGUYEN, HOANG-AN",
+        "TRAN, ANH T."
+      ],
+      "dcterms:issued": "D:20220307",
+      "dcterms:identifier": "https://arxiv.org/abs/2006.02042",
+      "dcterms:abstract": "Motivated by the theory of quantum A-ideals of Frohman-Gelca-LoFaro, the theory of q-holonomicity of quantum invariants of Garoufalidis-Le and the AJ conjecture of Garoufalidis, Sikora formulated the strong AJ conjecture which relates the A-ideal and recurrence ideal of a knot in the 3-sphere. This conjecture has been veriﬁed for all torus knots and most of their cables. In this paper, we verify the strong AJ conjecture for the ﬁgure eight knot.",
+      "dcterms:source": "library/arxiv-2006.02042v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2006.02042v1"
+    }
+  ]
+}

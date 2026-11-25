@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-q-alg-9504020v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "A link invariant from quantum dilogarithm",
+      "dcterms:creator": [
+        "Kashaev∗, R.M."
+      ],
+      "dcterms:issued": "D:20181108",
+      "dcterms:identifier": "https://arxiv.org/abs/q-alg/9504020",
+      "dcterms:abstract": "The link invariant, arising from the cyclic quantum dilogarithm via the particular R-matrix construction, is proved to coincide with the invariant of triangulated links in S3 introduced in [14]. The obtained invariant, like Alexander-Conway polynomial, vanishes on disjoint union of links. The R-matrix can be considered as the cyclic analog of the universal R-matrix associated with Uq(sl(2)) algebra. ENSLAPP-L-517/95 ∗On leave from St. Petersburg Branch of the Steklov Mathematical Institute, Fontanka 27, St. Petersburg 191011, RUSSIA †URA 14-36 du CNRS, associ´ee `a l’E.N.S. de Lyon, et `a l’Universit`e de Savoie",
+      "dcterms:source": "library/arxiv-q-alg-9504020v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-q-alg-9504020v1"
+    }
+  ]
+}

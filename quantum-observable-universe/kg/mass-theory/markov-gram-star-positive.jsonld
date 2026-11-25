@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-markov-gram-star-positive",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:markov-gram-star-positive",
+  "kind": "proposition",
+  "title": "The Markov--Gram star form is positive semidefinite; positivity reduces to $y_\\lambda \\ge 0$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-frobenius-gram-matrix",
+    "papers/quantum-observable-universe/blocks/prop-h3-markov-wenzl-weights"
+  ],
+  "tags": [
+    "markov-trace",
+    "gram-matrix",
+    "star-pairing",
+    "hecke-algebra",
+    "convention-d",
+    "trace-convention"
+  ],
+  "leanRef": "qou:QOU.Nuclear.GramSignature.markov_star_nonneg",
+  "text": "markov-gram-star-positive.md",
+  "provenance": "authored"
+}

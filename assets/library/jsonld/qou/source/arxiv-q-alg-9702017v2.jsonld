@@ -1,0 +1,55 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-q-alg-9702017v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Idempotents of Hecke algebras of type A",
+  "contains": [
+    "library/arxiv-q-alg-9702017v2/sections/sec-front-matter",
+    "library/arxiv-q-alg-9702017v2/sections/sec-000",
+    "library/arxiv-q-alg-9702017v2/sections/sec-001",
+    "library/arxiv-q-alg-9702017v2/sections/sec-002",
+    "library/arxiv-q-alg-9702017v2/sections/sec-003",
+    "library/arxiv-q-alg-9702017v2/sections/sec-004",
+    "library/arxiv-q-alg-9702017v2/sections/sec-005"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Idempotents of Hecke algebras of type A — We use a skein-theoretic version of the Hecke algebras of type A to present three-dimensional diagrammatic views of Gyoja’s idempotent el- ements, based\n\n**Idempotents of Hecke algebras of type A**\n\n*A.K. Aiston and H.R. Morton ∗*\n\n40 pp, 7 sections.\n\n**Abstract.** We use a skein-theoretic version of the Hecke algebras of type A to present three-dimensional diagrammatic views of Gyoja’s idempotent el- ements, based closely on the corresponding Young diagram λ. In this context we give straightforward calculations for the eigenvalues fλ and mλ of two natural central elements in the Hecke algebras, namely the full curl and the sum of the Murphy operators. We discuss their calculation also in terms of the framing factor associated to the appropriate irreducible representation of the quantum group, SU(N)q.\n\n**Outline.** Front matter; 1 Introduction; 2 The Hecke algebra and Homfly skein theory; 3 Young diagrams; 4 Idempotents; 5 Framing and the Murphy operators; 6 Connections with the quantum group invariant",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-q-alg-9702017v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "9702017v2.pdf",
+    "source_sha256": "282c911abb2a54e96f0ecf36ce34d3cf9a8f248171e8594c9f05469089920951",
+    "pages": 40,
+    "arxiv": {
+      "id": "q-alg/9702017",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "7 Feb 2019"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

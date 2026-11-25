@@ -1,0 +1,27 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/yanagihara-1980-meromorphic-solutions-difference-equations",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "Meromorphic Solutions of Some Difference Equations",
+      "dcterms:issued": "D:20040312",
+      "dcterms:source": "library/yanagihara-1980-meromorphic-solutions-difference-equations/manifest.jsonld",
+      "dcterms:hasVersion": "library/yanagihara-1980-meromorphic-solutions-difference-equations"
+    }
+  ]
+}

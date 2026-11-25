@@ -1,0 +1,585 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1501.04614v1",
+  "title": "arxiv-1501.04614v1",
+  "variant": "pdf",
+  "pages": 14,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Jones slopes of cable knots",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-jones-slopes-of-cable-knots"
+    },
+    {
+      "level": 1,
+      "title": "Two-fusion knots",
+      "number": "3",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-two-fusion-knots"
+    },
+    {
+      "level": 2,
+      "title": "The highest degree and the Jones slope.",
+      "number": "3.1",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-31-the-highest-degree-and-the-jones-slope"
+    },
+    {
+      "level": 2,
+      "title": "Calculating the linear term",
+      "number": "3.2",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-32-calculating-the-linear-term"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem ??",
+      "number": "3.3",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 108,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "knot cabling",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "slope",
+          "heading": false
+        },
+        {
+          "term": "efstratia",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1501.04614v1 [math.GT] 19 Jan 2015 KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL II EFSTRATIA KALFAGIANNI AND ANH T. TRAN Abstract. We continue our study of the degree of the colored Jones polynomial under knot cabling started in [8]. Under certain hypothesis on this degree, we determine how the Jones slopes and the linear term behave under cabling. As an application we verify Garoufalidis’ Slope",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1501.04614v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "3",
+      "words": 918,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite effie-anh-slope",
+          "heading": false
+        },
+        {
+          "term": "cite ga-slope",
+          "heading": false
+        },
+        {
+          "term": "ref thm-quasi-constant",
+          "heading": false
+        },
+        {
+          "term": "slope conjecture",
+          "heading": false
+        },
+        {
+          "term": "non-alternating knots",
+          "heading": false
+        },
+        {
+          "term": "bdy",
+          "heading": false
+        },
+        {
+          "term": "garoufalidis cite",
+          "heading": false
+        },
+        {
+          "term": "adequate knots",
+          "heading": false
+        }
+      ],
+      "extract": "For a knot $K \\subset S^3$, let $n(K)$ denote a tubular neighborhood of $K$ and let $M_K:=\\overline{ S^3\\setminus n(K)}$ denote the exterior of $K$. Let $\\langle \\mu, \\lambda \\rangle$ be the canonical meridian--longitude basis of $H_1 (\\bdy n(K))$. An element $a/b \\in {\\QQ}\\cup \\{ 1/0\\}$ is called a \\emph{boundary slope} of $K$ if there is a properly embedded essential surface $(S, \\bdy S) \\subset (M_K, \\bdy n(K))$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-jones-slopes-of-cable-knots",
+      "number": "2",
+      "title": "Jones slopes of cable knots",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 7,
+      "labelStart": "3",
+      "labelEnd": "7",
+      "words": 1647,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pmod mbox",
+          "heading": false
+        },
+        {
+          "term": "equiv pmod",
+          "heading": false
+        },
+        {
+          "term": "eqnarray sigma",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        },
+        {
+          "term": "underline subcase",
+          "heading": false
+        },
+        {
+          "term": "bdry slope",
+          "heading": false
+        },
+        {
+          "term": "ref quasi-constant",
+          "heading": false
+        }
+      ],
+      "extract": "Let $K_{p,q}$ be the $(p,q)$-cable of a knot $K$, where $q > 1$. For $n>0$, let $\\CS_n$ be the set of all $k$ such that $$ |k| \\le (n-1)/2 \\quad \\text{and} \\quad k \\in \\begin{cases} \\BZ &\\mbox{if } n \\text{ is odd}, \\\\ \\BZ+\\frac{1}{2} & \\mbox{if } n \\text{ is even}. \\end{cases} $$ By \\cite{Ve}, for $n>0$ we have \\begin{equation} \\label{cables11} J_{K_{p,q}}(n)= v^{pq(n^2-1)/4} \\sum_{k \\in \\CS_n} v^{-pk(qk+1)}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-two-fusion-knots",
+      "number": "3",
+      "title": "Two-fusion knots",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "9",
+      "words": 488,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "smallskip item",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        },
+        {
+          "term": "max frac",
+          "heading": false
+        },
+        {
+          "term": "item conjectures",
+          "heading": false
+        },
+        {
+          "term": "fusion knot",
+          "heading": false
+        },
+        {
+          "term": "slope hold",
+          "heading": false
+        }
+      ],
+      "extract": "The family of 2-fusion knots is a two-parameter family of closed 3-braids denoted by $$\\{ K(m_1, m_2) \\mid m_1, m_2\\in \\ZZ\\}.$$ For the precise definition and description see \\cite {GV, DG}. Note that $K(m_1, m_2)$ is a torus knot if $m_2 \\in \\{-1,0\\}$. In fact, $K(m_1, 0) = T(2, 2m_1 + 1)$ and $K(m_1, -1) = T(2, 2m_1 -3)$. It is known that $K(m_1, m_2)$ is hyperbolic if $m_1 \\notin \\{0, 1\\}$, $m_2 \\notin \\{-1,0\\}$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-31-the-highest-degree-and-the-jones-slope",
+      "number": "3.1",
+      "title": "The highest degree and the Jones slope.",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 331,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "smallskip mbox",
+          "heading": false
+        },
+        {
+          "term": "smallskip frac",
+          "heading": false
+        },
+        {
+          "term": "textbf case",
+          "heading": false
+        },
+        {
+          "term": "integers closest",
+          "heading": false
+        },
+        {
+          "term": "fusion knot",
+          "heading": false
+        }
+      ],
+      "extract": "The quantity $Q(n,k_1,k_2)$ is closely related to $\\delta_K(n)$. According to \\cite{GV} for the 2-fusion knot $K=K(m_1,m_2)$, with $m_2 \\notin \\{-1, 0\\}$, we have the following possibilities: \\vskip 0.04in \\textbf{Case A.} $m_1, m_2 \\ge 1$. Then $$\\delta_K(n) = Q(n,k_1,-k_1),$$ \\noindent where $$c_1=\\frac{1 - m_1 + m_2 + m_2 n}{2 (-1 + m_1 + m_2)},$$ and $k_1$ is of the integers closest to $c_1$ satisfying $k_1 \\le",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-32-calculating-the-linear-term",
+      "number": "3.2",
+      "title": "Calculating the linear term",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 13,
+      "labelStart": "10",
+      "labelEnd": "13",
+      "words": 1522,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "smallskip mbox",
+          "heading": false
+        },
+        {
+          "term": "eqnarray textbf",
+          "heading": false
+        },
+        {
+          "term": "smallskip frac",
+          "heading": false
+        },
+        {
+          "term": "smallskip max",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "eqnarray delta",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{theorem} \\label{prop:b} For the 2-fusion knot $K=K(m_1,m_2)$, with $m_2 \\notin \\{-1,0\\}$, we have $$ b_K(n) = \\begin{cases} \\frac{m_2(1-m_1)}{2(-1+m_1+m_2)} &\\mbox{if } (m_1, m_2) \\in I_1 \\cup I_2, \\smallskip \\\\ 1 + m_1 & \\mbox{if } (m_1, m_2) \\in I_3, \\smallskip \\\\ \\frac{m_1(m_2-1)}{2(1+m_1+m_2)} & \\mbox{if } (m_1, m_2) \\in I_4, \\medskip \\\\ 5/2 + m_1 + 3 m_2 & \\mbox{if } (m_1, m_2) \\in I_5, \\smallskip \\\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 218,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "roland van",
+          "heading": false
+        },
+        {
+          "term": "efstratia kalfagianni",
+          "heading": false
+        },
+        {
+          "term": "der veen",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "e-mail address",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Nathan M. Dunﬁeld and Stavros Garoufalidis, Incompressibility criteria for spun-normal surfaces, Trans. Amer. Math. Soc. 364 (2012), no. 11, 6109–6137. [2] David Futer, Efstratia Kalfagianni, and Jessica S. Purcell, Slopes and colored Jones polynomials of adequate knots, Proc. Amer. Math. Soc. 139 (2011), 1889–1896. [3] Stavros Garoufalidis, The degree of a q-holonomic sequence is a quadratic quasi-polynomial,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "smallskip mbox",
+      "heading": false
+    },
+    {
+      "term": "smallskip frac",
+      "heading": false
+    },
+    {
+      "term": "smallskip max",
+      "heading": false
+    },
+    {
+      "term": "eqnarray textbf",
+      "heading": false
+    },
+    {
+      "term": "jones slope",
+      "heading": true
+    },
+    {
+      "term": "begin eqnarray",
+      "heading": false
+    },
+    {
+      "term": "end eqnarray",
+      "heading": false
+    },
+    {
+      "term": "fusion knot",
+      "heading": false
+    },
+    {
+      "term": "cable knot",
+      "heading": false
+    },
+    {
+      "term": "ref slope",
+      "heading": false
+    },
+    {
+      "term": "pmod mbox",
+      "heading": false
+    },
+    {
+      "term": "knot cabling",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 7,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p13); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 7 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1501.04614v1"
+  }
+}

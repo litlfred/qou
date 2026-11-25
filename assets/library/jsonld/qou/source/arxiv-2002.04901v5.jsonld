@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2002.04901v5/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2002.04901v5",
+  "contains": [
+    "library/arxiv-2002.04901v5/sections/sec-front-matter",
+    "library/arxiv-2002.04901v5/sections/sec-000",
+    "library/arxiv-2002.04901v5/sections/sec-001",
+    "library/arxiv-2002.04901v5/sections/sec-002",
+    "library/arxiv-2002.04901v5/sections/sec-003",
+    "library/arxiv-2002.04901v5/sections/sec-004",
+    "library/arxiv-2002.04901v5/sections/sec-005",
+    "library/arxiv-2002.04901v5/sections/sec-006",
+    "library/arxiv-2002.04901v5/sections/sec-007",
+    "library/arxiv-2002.04901v5/sections/sec-008"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Weak Proregularity, Derived Completion, Adic Flatness, and Prisms — We begin by recalling the role that weak proregularity of an ideal in a commu- tative ring has in derived completion and adic\n\n**Weak Proregularity, Derived Completion, Adic Flatness, and Prisms**\n\n*AND PRISMS*\n\n20 pp, 10 sections.\n\n**Abstract.** We begin by recalling the role that weak proregularity of an ideal in a commu- tative ring has in derived completion and adic ﬂatness. We also introduce the new concepts of idealistic and sequential derived completion, and prove a few results about them, includ- ing the fact that these two concepts agree iﬀthe ideal is weakly proregular. Next we study the local nature of weak proregularity, and its behavior w.r.t. ring quotients. These results allow us to prove our main theorem, which states that weak proregularity occurs in the context of bounded prisms. Prisms belong to the new groundbreaking theory of perfectoid rings, developed by Scholze and his collaborators. Since perfectoid ring theory makes heavy use of derived completion and adic ﬂatness, we anticipate that our results shall help simplify and improve some of the more technical aspects of this theory.\n\n**Outline.** Front matter; 0 Introduction; 1 Idealistic Derived Completion and Torsion; 2 Sequential Derived Completion and Torsion; 3 Weak Proregularity: When Idealistic and Sequ; 4 Weak Proregularity and Adic Flatness; 5 Weak Proregularity and Quotient Rings; 6 The Local Nature of Weak Proregularity; 7 Weak Proregularity and Prisms; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2002.04901&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2002.04901v5",
+    "title_source": "slug",
+    "source_file": "2002.04901v5.pdf",
+    "source_sha256": "f1320c4b872292153272c76a2047a215d3aa89508c7bf47f7297b3c752ad701a",
+    "pages": 20,
+    "arxiv": {
+      "id": "2002.04901",
+      "version": "5",
+      "primary_class": "math.AC",
+      "stamp_date": "7 May 2021"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

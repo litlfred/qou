@@ -1,0 +1,827 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "motivicperiodsandp1minus3pointsv3",
+  "title": "MotivicPeriodsandP1minus3pointsv3.dvi",
+  "variant": "pdf",
+  "pages": 25,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The main theorem and consequences",
+      "number": "3",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-3-the-main-theorem-and-consequences"
+    },
+    {
+      "level": 2,
+      "title": "Transcendence conjectures.",
+      "number": "3.2",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-32-transcendence-conjectures"
+    },
+    {
+      "level": 1,
+      "title": "Roots of unity",
+      "number": "4",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-roots-of-unity"
+    },
+    {
+      "level": 1,
+      "title": "Depth",
+      "number": "5",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-5-depth"
+    },
+    {
+      "level": 1,
+      "title": "Multiple modular values",
+      "number": "6",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-6-multiple-modular-values"
+    },
+    {
+      "level": 1,
+      "title": "−→UΓ −→GΓ −→S −→1",
+      "number": "1",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-1-uγ-gγ-s-1"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": "7",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-007-7-references"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 23,
+      "pageLabel": null,
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-007-7-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 54,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multiple zeta",
+          "heading": false
+        },
+        {
+          "term": "zeta values",
+          "heading": false
+        },
+        {
+          "term": "motivic",
+          "heading": false
+        }
+      ],
+      "extract": "Motivic periods and P1\\{0, 1, ∞} Francis Brown∗ Abstract. This is a review of the theory of the motivic fundamental group of the projective line minus three points, and its relation to multiple zeta values. Mathematics Subject Classiﬁcation (2010). Primary 11M32; Secondary 14C15. Keywords. Belyi’s theorem, multiple zeta values, mixed Tate motives, modular forms.",
+      "extractCut": false,
+      "blocks": [
+        "library/motivicperiodsandp1minus3pointsv3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 5811,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pro-unipotent completion",
+          "heading": false
+        },
+        {
+          "term": "belyi theorem",
+          "heading": false
+        },
+        {
+          "term": "tate motives",
+          "heading": false
+        },
+        {
+          "term": "gdr",
+          "heading": false
+        },
+        {
+          "term": "mixed tate",
+          "heading": false
+        },
+        {
+          "term": "francis brown",
+          "heading": false
+        },
+        {
+          "term": "multiple zeta",
+          "heading": false
+        },
+        {
+          "term": "absolute galois",
+          "heading": false
+        }
+      ],
+      "extract": "The role of the projective line minus three points X = P1\\{0, 1, ∞} in relation to Galois theory can be traced back to Belyi’s theorem [4] (1979): Theorem 1.1. Every smooth projective algebraic curve deﬁned over Q can be realised as a ramiﬁed cover of P1, whose ramiﬁcation locus is contained in {0, 1, ∞}. Belyi deduced that the absolute Galois group of Q acts faithfully on the proﬁnite completion of the fundamental",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-3-the-main-theorem-and-consequences",
+      "number": "3",
+      "title": "The main theorem and consequences",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 519,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "elements σ2n",
+          "heading": false
+        },
+        {
+          "term": "rational associator",
+          "heading": false
+        },
+        {
+          "term": "motivic multiple",
+          "heading": false
+        },
+        {
+          "term": "multiple zeta",
+          "heading": false
+        },
+        {
+          "term": "zeta values",
+          "heading": false
+        }
+      ],
+      "extract": "Theorem 1.5 is a result about linear independence. There is an analogous statement for algebraic independence of motivic multiple zeta values. Deﬁnition 3.0.1. Let X be an alphabet (a set) and let X× denote the free asso- ciative monoid generated by X. Suppose that X has a total ordering <, and extend it to X× lexicographically. An element w ∈X× is said to be a Lyndon word if w < u whenever w = uv and u, v̸ = ∅. For",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-32-transcendence-conjectures",
+      "number": "3.2",
+      "title": "Transcendence conjectures.",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 502,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multiple zeta",
+          "heading": false
+        },
+        {
+          "term": "motivic multiple",
+          "heading": false
+        },
+        {
+          "term": "zeta values",
+          "heading": false
+        },
+        {
+          "term": "q-vector space",
+          "heading": false
+        },
+        {
+          "term": "associator equations",
+          "heading": false
+        },
+        {
+          "term": "zagier",
+          "heading": false
+        },
+        {
+          "term": "conjecture",
+          "heading": false
+        },
+        {
+          "term": "deduced",
+          "heading": false
+        }
+      ],
+      "extract": "Conjecture 3.2. A variant of Grothendieck’s period conjecture states that per : Pm MT (Z) −→C is injective. In particular, its restriction to H is injective also. The last statement, together with theorem 1.5, is equivalent to Conjecture 3.3. (Hoﬀman) The elements ζ(n1, . . . , nr) for ni ∈{2, 3} are a basis for the Q-vector space spanned by multiple zeta values. This in turn implies a conjecture due to Zagier,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-roots-of-unity",
+      "number": "4",
+      "title": "Roots of unity",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 690,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "motivic periods",
+          "heading": false
+        },
+        {
+          "term": "geometric motivic",
+          "heading": false
+        },
+        {
+          "term": "cyclotomic multiple",
+          "heading": false
+        },
+        {
+          "term": "multiple zeta",
+          "heading": false
+        },
+        {
+          "term": "lyn",
+          "heading": false
+        },
+        {
+          "term": "iterated integrals",
+          "heading": false
+        },
+        {
+          "term": "πmot",
+          "heading": false
+        },
+        {
+          "term": "zeta values",
+          "heading": false
+        }
+      ],
+      "extract": "There are a handful of exceptional cases when one knows how to generate certain categories of mixed Tate motives over cyclotomic ﬁelds and write down their pe- riods. These results are due to Deligne [11], inspired by numerical computations due to Broadhurst in 1997 relating to computations of Feynman integrals. Let N ≥2 and let µN be the group of N th roots of unity, and consider P1\\{0, µN, ∞} (4.1) Fix a primitive",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-depth",
+      "number": "5",
+      "title": "Depth",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 772,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "depth",
+          "heading": true
+        },
+        {
+          "term": "depth ﬁltration",
+          "heading": false
+        },
+        {
+          "term": "motivic multiple",
+          "heading": false
+        },
+        {
+          "term": "motivic periods",
+          "heading": false
+        },
+        {
+          "term": "multiple zeta",
+          "heading": false
+        },
+        {
+          "term": "σ2n",
+          "heading": false
+        },
+        {
+          "term": "zeta values",
+          "heading": false
+        },
+        {
+          "term": "modular forms",
+          "heading": false
+        }
+      ],
+      "extract": "Thus an Euler sum of weight N and depth r can be expressed as a polynomial in the above elements, of total weight N and total depth ≤r. 5. Depth The results of the previous section for N = 2, 3, 4, 6, 8 crucially use the fact that the depth ﬁltration is dual to the lower central series of the corresponding motivic Galois group. A fundamental diﬀerence with the case N = 1 is that this fact is false for P1\\{0, 1, ∞},",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-multiple-modular-values",
+      "number": "6",
+      "title": "Multiple modular values",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1099,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "regularised iterated",
+          "heading": false
+        },
+        {
+          "term": "iterated integrals",
+          "heading": false
+        },
+        {
+          "term": "eisenstein series",
+          "heading": false
+        },
+        {
+          "term": "francis brown",
+          "heading": false
+        },
+        {
+          "term": "modular",
+          "heading": true
+        },
+        {
+          "term": "tangential base",
+          "heading": false
+        },
+        {
+          "term": "e2k",
+          "heading": false
+        },
+        {
+          "term": "b2k",
+          "heading": false
+        }
+      ],
+      "extract": "In this ﬁnal paragraph, I want suggest applying the philosophy of §1.4 to iterated integrals on (orbifold) quotients of the upper half plane H = {τ ∈C : Im (τ) > 0} by ﬁnite index subgroups Γ ≤SL2(Z). Iterated integrals of modular forms were ﬁrst studied by Manin [32, 33]. Here, I shall only consider the case Γ = SL2(Z). 20 Francis Brown 6.1. Eichler-Shimura integrals. Denote the space of homogenous poly- nomials of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-1-uγ-gγ-s-1",
+      "number": "1",
+      "title": "−→UΓ −→GΓ −→S −→1",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 582,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multiple zeta",
+          "heading": false
+        },
+        {
+          "term": "multiple modular",
+          "heading": false
+        },
+        {
+          "term": "zeta values",
+          "heading": false
+        },
+        {
+          "term": "mixed hodge",
+          "heading": false
+        },
+        {
+          "term": "modulo products",
+          "heading": false
+        },
+        {
+          "term": "periods",
+          "heading": false
+        },
+        {
+          "term": "motivic",
+          "heading": false
+        },
+        {
+          "term": "coeﬃcients",
+          "heading": false
+        }
+      ],
+      "extract": "where UΓ is pro-unipotent. There is a natural map Γ →GΓ(k) which is Zariski dense, and whose projection onto S(k) is the map ρ. 2. In ‘geometric’ situations, one expects the relative completion to be the Betti realisation of something which is motivic. Indeed, Hain has shown [23], [24] that O(GΓ) carries a mixed Hodge structure in this case. As a result, one can deﬁne Hodge-motivic periods and try to carry out §1.4.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-7-references",
+      "number": "7",
+      "title": "References",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 748,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tate motives",
+          "heading": false
+        },
+        {
+          "term": "lake louise",
+          "heading": false
+        },
+        {
+          "term": "multiple zeta",
+          "heading": false
+        },
+        {
+          "term": "etudes sci",
+          "heading": false
+        },
+        {
+          "term": "motivic multiple",
+          "heading": false
+        },
+        {
+          "term": "galois groups",
+          "heading": false
+        },
+        {
+          "term": "mixed tate",
+          "heading": false
+        },
+        {
+          "term": "ecole norm",
+          "heading": false
+        }
+      ],
+      "extract": "References [1] Y. Andr´e: Une introduction aux motifs, Panoramas et Synth`eses 17, SMF (2004). 24 Francis Brown [2] A. Borel: Stable real cohomology of arithmetic groups, Annales Ecole Normale Sup. 7, No. 4, (1974), 235-272. [3] A. Borel: Cohomologie de SLn et valeurs de fonctions zˆeta aux points entiers, Annali della Scuola Norm. di Pisa, (1976), 613-635, + erratum. [4] Belyi: On Galois Extensions of a Maximal",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "motivic multiple",
+      "heading": false
+    },
+    {
+      "term": "motivic periods",
+      "heading": false
+    },
+    {
+      "term": "multiple zeta",
+      "heading": false
+    },
+    {
+      "term": "motivic fundamental",
+      "heading": false
+    },
+    {
+      "term": "zeta values",
+      "heading": false
+    },
+    {
+      "term": "geometric motivic",
+      "heading": false
+    },
+    {
+      "term": "corresponding motivic",
+      "heading": false
+    },
+    {
+      "term": "motivic version",
+      "heading": false
+    },
+    {
+      "term": "multiple modular",
+      "heading": true
+    },
+    {
+      "term": "francis brown",
+      "heading": false
+    },
+    {
+      "term": "cyclotomic multiple",
+      "heading": false
+    },
+    {
+      "term": "tate motives",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The groupoid xΠy for x, y ∈{0, 1}. The diagram only represents the groupoid structure; the paths shown do not accurately depict the tangential base points",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p23); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 10
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/motivicperiodsandp1minus3pointsv3"
+  }
+}

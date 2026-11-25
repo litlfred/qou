@@ -1,0 +1,2953 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-th-9303139v2",
+  "title": "arxiv-hep-th-9303139v2",
+  "variant": "pdf",
+  "pages": 149,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Ward identities for the simplest matrix models",
+      "number": "2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-ward-identities-for-the-simplest-matrix-models"
+    },
+    {
+      "level": 2,
+      "title": "Ward identites versus equations of motion",
+      "number": "2.1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-21-ward-identites-versus-equations-of-motion"
+    },
+    {
+      "level": 2,
+      "title": "Virasoro constraints for the discrete 1-matrix model",
+      "number": "2.2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-22-virasoro-constraints-for-the-discrete-1-matri"
+    },
+    {
+      "level": 2,
+      "title": "CFT formulation of matrix models",
+      "number": "2.3",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-23-cft-formulation-of-matrix-models"
+    },
+    {
+      "level": 2,
+      "title": "Gross-Newman equation",
+      "number": "2.4",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-24-gross-newman-equation"
+    },
+    {
+      "level": 2,
+      "title": "Ward identities for Generalized Kontsevich Model",
+      "number": "2.5",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-25-ward-identities-for-generalized-kontsevich-mo"
+    },
+    {
+      "level": 2,
+      "title": "Discrete Virasoro constraints for the Gaussian Kontsevich model",
+      "number": "2.6",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-26-discrete-virasoro-constraints-for-the-gaussia"
+    },
+    {
+      "level": 2,
+      "title": "Continuous Virasoro constraints for the $V = \\frac{X^3}{3}$ Kontsevich model",
+      "number": "2.7",
+      "page": 32,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-27-continuous-virasoro-constraints-for-the-v-fra"
+    },
+    {
+      "level": 1,
+      "title": "Eigenvalue models",
+      "number": "3",
+      "page": 46,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-3-eigenvalue-models"
+    },
+    {
+      "level": 2,
+      "title": "What are eigenvalue models",
+      "number": "3.1",
+      "page": 46,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-31-what-are-eigenvalue-models"
+    },
+    {
+      "level": 2,
+      "title": "1-matrix model",
+      "number": "3.2",
+      "page": 47,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-32-1-matrix-model"
+    },
+    {
+      "level": 2,
+      "title": "Itzykson-Zuber and Kontsevich integrals",
+      "number": "3.3",
+      "page": 49,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-33-itzykson-zuber-and-kontsevich-integrals"
+    },
+    {
+      "level": 2,
+      "title": "Conventional Multimatrix models",
+      "number": "3.4",
+      "page": 52,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-013-34-conventional-multimatrix-models"
+    },
+    {
+      "level": 2,
+      "title": "Determinant formulas for eigenvalue models",
+      "number": "3.5",
+      "page": 53,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-014-35-determinant-formulas-for-eigenvalue-models"
+    },
+    {
+      "level": 2,
+      "title": "Orthogonal polinomials",
+      "number": "3.6",
+      "page": 59,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-015-36-orthogonal-polinomials"
+    },
+    {
+      "level": 2,
+      "title": "Scalar-product models in Miwa parametrization",
+      "number": "3.7",
+      "page": 65,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-016-37-scalar-product-models-in-miwa-parametrization"
+    },
+    {
+      "level": 2,
+      "title": "Equivalence of the discrete 1-matrix and Gaussian Kontsevich models",
+      "number": "3.8",
+      "page": 66,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-017-38-equivalence-of-the-discrete-1-matrix-and-gaus"
+    },
+    {
+      "level": 2,
+      "title": "Volume of unitary group",
+      "number": "3.9",
+      "page": 68,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-018-39-volume-of-unitary-group"
+    },
+    {
+      "level": 1,
+      "title": "Integrable structure of eigenvalue models",
+      "number": "4",
+      "page": 70,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-019-4-integrable-structure-of-eigenvalue-models"
+    },
+    {
+      "level": 2,
+      "title": "The concept of integrability",
+      "number": "4.1",
+      "page": 70,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-020-41-the-concept-of-integrability"
+    },
+    {
+      "level": 2,
+      "title": "The notion of $\\tau$-function",
+      "number": "4.2",
+      "page": 75,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-021-42-the-notion-of-tau-function"
+    },
+    {
+      "level": 2,
+      "title": "Basic determinant formula for the free-fermion correlator",
+      "number": "4.4",
+      "page": 83,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-022-44-basic-determinant-formula-for-the-free-fermio"
+    },
+    {
+      "level": 2,
+      "title": "Toda-lattice $\\tau$-function and linear reductions of Toda hierarchy",
+      "number": "4.5",
+      "page": 87,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-023-45-toda-lattice-tau-function-and-linear-reductio"
+    },
+    {
+      "level": 2,
+      "title": "Fermion correlator in Miwa coordinates",
+      "number": "4.6",
+      "page": 92,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-024-46-fermion-correlator-in-miwa-coordinates"
+    },
+    {
+      "level": 2,
+      "title": "Matrix models versus $\\tau$-functions.",
+      "number": "4.7",
+      "page": 99,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-025-47-matrix-models-versus-tau-functions"
+    },
+    {
+      "level": 2,
+      "title": "String equations and general concept of reduction",
+      "number": "4.8",
+      "page": 104,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-026-48-string-equations-and-general-concept-of-reduc"
+    },
+    {
+      "level": 2,
+      "title": "On the theory of GKM",
+      "number": "4.9",
+      "page": 110,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-027-49-on-the-theory-of-gkm"
+    },
+    {
+      "level": 2,
+      "title": "1-Matrix model versus Toda-chain hierarchy",
+      "number": "4.10",
+      "page": 118,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-028-410-1-matrix-model-versus-toda-chain-hierarchy"
+    },
+    {
+      "level": 1,
+      "title": "Continuum limits of discrete matrix models",
+      "number": "5",
+      "page": 121,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-029-5-continuum-limits-of-discrete-matrix-models"
+    },
+    {
+      "level": 2,
+      "title": "What is continuum limit",
+      "number": "5.1",
+      "page": 121,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-030-51-what-is-continuum-limit"
+    },
+    {
+      "level": 2,
+      "title": "From Toda-chain to KdV",
+      "number": "5.2",
+      "page": 124,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-031-52-from-toda-chain-to-kdv"
+    },
+    {
+      "level": 2,
+      "title": "Double-scaling limit of 1-matrix model",
+      "number": "5.3",
+      "page": 126,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-032-53-double-scaling-limit-of-1-matrix-model"
+    },
+    {
+      "level": 2,
+      "title": "From Gaussian to $X^3$ Kontsevich model",
+      "number": "5.4",
+      "page": 134,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-033-54-from-gaussian-to-x3-kontsevich-model"
+    },
+    {
+      "level": 1,
+      "title": "Conclusion",
+      "number": "6",
+      "page": 138,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-034-6-conclusion"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": "7",
+      "page": 140,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-035-7-acknowledgements"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 100,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "matrix models",
+          "heading": false
+        },
+        {
+          "term": "morozov",
+          "heading": false
+        },
+        {
+          "term": "itep-m",
+          "heading": false
+        },
+        {
+          "term": "w-constraints",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-th/9303139v2 5 Apr 1993 ITEP-M2/931 ITFA 93-10 March 1993 A.Morozov INTEGRABILITY AND MATRIX MODELS ABSTRACT The theory of matrix models is reviewed from the point of view of its relation to integrable hierarchies. Discrete 1-matrix, 2-matrix, ”conformal” (multicomponent) and Kontsevich models are considered in some detail, to- gether with the Ward identites (”W-constraints”), determinantal formulas and",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9303139v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-2-ward-identities-for-the-simplest-matrix-models",
+      "number": "2",
+      "title": "Ward identities for the simplest matrix models",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-ward-identites-versus-equations-of-motion",
+      "number": "2.1",
+      "title": "Ward identites versus equations of motion",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-22-virasoro-constraints-for-the-discrete-1-matri",
+      "number": "2.2",
+      "title": "Virasoro constraints for the discrete 1-matrix model",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-004-23-cft-formulation-of-matrix-models",
+      "number": "2.3",
+      "title": "CFT formulation of matrix models",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-24-gross-newman-equation",
+      "number": "2.4",
+      "title": "Gross-Newman equation",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-25-ward-identities-for-generalized-kontsevich-mo",
+      "number": "2.5",
+      "title": "Ward identities for Generalized Kontsevich Model",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-26-discrete-virasoro-constraints-for-the-gaussia",
+      "number": "2.6",
+      "title": "Discrete Virasoro constraints for the Gaussian Kontsevich model",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 32,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 9669,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "virasoro constraints",
+          "heading": true
+        },
+        {
+          "term": "kontsevich model",
+          "heading": true
+        },
+        {
+          "term": "discrete virasoro",
+          "heading": true
+        },
+        {
+          "term": "gaussian kontsevich",
+          "heading": true
+        },
+        {
+          "term": "ltr",
+          "heading": false
+        },
+        {
+          "term": "conformal models",
+          "heading": false
+        },
+        {
+          "term": "screening charges",
+          "heading": false
+        },
+        {
+          "term": "dxe trv",
+          "heading": false
+        }
+      ],
+      "extract": "2.7. Continuous Virasoro constraints for the V = X3 3 Kontsevich model 2.8. ˜W-constraints for the asymmetric 2-matrix model 2.9. ˜W-constraints for generic 2-matrix model 2.10. ˜W-operators in Kontsevich model 3. Eigenvalue models 3.1. What are eigenvalue models 3.2. 1-matrix model 3.3. Itzykson-Zuber and Kontsevich integrals 3.4. Conventional Multimatrix models 3.5. Determinant formulas for eigenvalue models 3.6.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-27-continuous-virasoro-constraints-for-the-v-fra",
+      "number": "2.7",
+      "title": "Continuous Virasoro constraints for the $V = \\frac{X^3}{3}$ Kontsevich model",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 46,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4261,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cal partial",
+          "heading": false
+        },
+        {
+          "term": "cal lambda",
+          "heading": false
+        },
+        {
+          "term": "gamma cal",
+          "heading": false
+        },
+        {
+          "term": "kontsevich model",
+          "heading": true
+        },
+        {
+          "term": "cal frac",
+          "heading": false
+        },
+        {
+          "term": "lambda otimes",
+          "heading": false
+        },
+        {
+          "term": "cal bar",
+          "heading": false
+        },
+        {
+          "term": "lambda tilde",
+          "heading": false
+        }
+      ],
+      "extract": "This example is a little more complicated than that in the previous subsection, and we do not present calculations in full details (see \\cite{MMM} and \\cite{GKM}). Our goal is to demonstrate that the constraints which arise in this model, though still form (Borel subalgebra of) some Virasoro algebra, are $different$ from (\\ref{virdid}). From the point of view of the CFT-formulation the relevant model is that of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-3-eigenvalue-models",
+      "number": "3",
+      "title": "Eigenvalue models",
+      "level": 1,
+      "pageStart": 46,
+      "pageEnd": 46,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "Eigenvalue models",
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-31-what-are-eigenvalue-models",
+      "number": "3.1",
+      "title": "What are eigenvalue models",
+      "level": 2,
+      "pageStart": 46,
+      "pageEnd": 47,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 559,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eigenvalue models",
+          "heading": true
+        },
+        {
+          "term": "integrable hierarchies",
+          "heading": false
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "cite turb",
+          "heading": false
+        },
+        {
+          "term": "matrix models",
+          "heading": false
+        },
+        {
+          "term": "alpha dagger",
+          "heading": false
+        },
+        {
+          "term": "gauge fields",
+          "heading": false
+        },
+        {
+          "term": "wznw model",
+          "heading": false
+        }
+      ],
+      "extract": "\\bigskip Given the present state of knowledge we need to consider in most cases only the narrow class of the \"eigenvalue\" models. These models have the property of being associated with conventional integrable hierarchies (of (multicomponent) KP and Toda type), where integrable flows just commute (instead of forming less trivial closed algebras), and thus with the level-1 Kac-Moody algebras (by artificial tricks,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-32-1-matrix-model",
+      "number": "3.2",
+      "title": "1-matrix model",
+      "level": 2,
+      "pageStart": 47,
+      "pageEnd": 49,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 506,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "delta mid",
+          "heading": false
+        },
+        {
+          "term": "dagger delta",
+          "heading": false
+        },
+        {
+          "term": "mid sum",
+          "heading": false
+        },
+        {
+          "term": "infinitesimal norm",
+          "heading": false
+        },
+        {
+          "term": "matrix model",
+          "heading": true
+        },
+        {
+          "term": "haar measure",
+          "heading": false
+        },
+        {
+          "term": "prod int",
+          "heading": false
+        },
+        {
+          "term": "equiv sum",
+          "heading": false
+        }
+      ],
+      "extract": "Hermitean matrix integrals are usually transformed to the eigenvalue form by separation of angular and eigenvalue variables. As usually, the simplest is the case of the 1-matrix model \\be Z_N\\{t\\} \\equiv c_N\\int_{N\\times N} dH e^{\\sum_{k=0}^{\\infty} t_k {\\rm Tr} H^k}, \\label{1mamo\"} \\ee where this separations does not involve any information about unitary-matrix integrals. Take \\be H = U^{\\dagger}DU, \\label{diag}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-33-itzykson-zuber-and-kontsevich-integrals",
+      "number": "3.3",
+      "title": "Itzykson-Zuber and Kontsevich integrals",
+      "level": 2,
+      "pageStart": 49,
+      "pageEnd": 52,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 784,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gamma hat",
+          "heading": false
+        },
+        {
+          "term": "hat varphi",
+          "heading": false
+        },
+        {
+          "term": "delta hat",
+          "heading": false
+        },
+        {
+          "term": "partial gamma",
+          "heading": false
+        },
+        {
+          "term": "cal lambda",
+          "heading": false
+        },
+        {
+          "term": "det gamma",
+          "heading": false
+        },
+        {
+          "term": "gamma frac",
+          "heading": false
+        },
+        {
+          "term": "delta mid",
+          "heading": false
+        }
+      ],
+      "extract": "Let us proceed now to Kontsevich integral, \\be {\\cal F}_{V,n}\\{ L\\} = \\int_{n\\times n} dX e^{- {\\rm tr} V(X) + {\\rm tr} L X}. \\label{KI'} \\ee We shall see shortly that it in fact depends only on the eigenvalues of the matrix $ L$ (this fact was already used in the previous section), however, this time somewhat more sophisticated unitary matrix integrals will be involved. Substitute $X = U_X^{\\dagger}D_XU_X; \\ \\ L =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-34-conventional-multimatrix-models",
+      "number": "3.4",
+      "title": "Conventional Multimatrix models",
+      "level": 2,
+      "pageStart": 52,
+      "pageEnd": 53,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 324,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alpha prod",
+          "heading": false
+        },
+        {
+          "term": "non-eigenvalue models",
+          "heading": false
+        },
+        {
+          "term": "prod int",
+          "heading": false
+        },
+        {
+          "term": "equiv int",
+          "heading": false
+        },
+        {
+          "term": "multimatrix",
+          "heading": true
+        },
+        {
+          "term": "dagger",
+          "heading": false
+        },
+        {
+          "term": "mumamo",
+          "heading": false
+        },
+        {
+          "term": "mumamoev",
+          "heading": false
+        }
+      ],
+      "extract": "The multimatrix integrals of the form \\be Z_N\\{t^{(\\alpha)}\\} \\equiv \\nn \\\\ \\equiv c_N^{p-1}\\int_{N\\times N} dH^{(1)}...dH^{(p-1)} \\prod_{\\alpha = 1}^{p-1} e^{\\sum_{k=0}^{\\infty}t_k^{(\\alpha)}{\\rm Tr} H_{(\\alpha)}^k} \\prod_{\\alpha = 1}^{p-2} e^{{\\rm Tr}H^{(\\alpha)}H^{(\\alpha+1)}} \\label{mumamo'} \\ee can be rewritten in the eigenvalue form using the same Itzykson-Zuber formula (\\ref{IZ}). Indeed, substituting",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-35-determinant-formulas-for-eigenvalue-models",
+      "number": "3.5",
+      "title": "Determinant formulas for eigenvalue models",
+      "level": 2,
+      "pageStart": 53,
+      "pageEnd": 59,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1776,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bar cal",
+          "heading": false
+        },
+        {
+          "term": "hat bar",
+          "heading": false
+        },
+        {
+          "term": "partial bar",
+          "heading": false
+        },
+        {
+          "term": "alpha hat",
+          "heading": false
+        },
+        {
+          "term": "ldots bar",
+          "heading": false
+        },
+        {
+          "term": "eigenvalue models",
+          "heading": true
+        },
+        {
+          "term": "bar phi",
+          "heading": false
+        },
+        {
+          "term": "bar delta",
+          "heading": false
+        }
+      ],
+      "extract": "We are now prepared to make the crucial step towards understanding of mathematical structure behind eigenvalue models, which distinguishes their partition functions in the entire variety of arbitrary $N$-fold integrals. This structure expresses itself in the form of determinantal formulas, which we are now going to discuss. In the next section 4 these formulas will be identified as examples of $\\tau$-functions of KP",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-36-orthogonal-polinomials",
+      "number": "3.6",
+      "title": "Orthogonal polinomials",
+      "level": 2,
+      "pageStart": 59,
+      "pageEnd": 65,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1734,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "orthogonal polinomials",
+          "heading": true
+        },
+        {
+          "term": "hermite polinomials",
+          "heading": false
+        },
+        {
+          "term": "mid bar",
+          "heading": false
+        },
+        {
+          "term": "bar frac",
+          "heading": false
+        },
+        {
+          "term": "dhd bar",
+          "heading": false
+        },
+        {
+          "term": "alpha bar",
+          "heading": false
+        },
+        {
+          "term": "bar ldots",
+          "heading": false
+        },
+        {
+          "term": "frac langle",
+          "heading": false
+        }
+      ],
+      "extract": "Formalism of orthogonal polinomials was intensively used at the early days of the theory of matrix models. It is applicable to scalar-product eigenvalue models and allows to further transform (diagonalize) the remaining determinants into products. In variance with both reduction from original $N^2$-fold matrix integrals to the eigenvalue problem, which (when possible) reflects a physical phenomenon - decoupling of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-37-scalar-product-models-in-miwa-parametrization",
+      "number": "3.7",
+      "title": "Scalar-product models in Miwa parametrization",
+      "level": 2,
+      "pageStart": 65,
+      "pageEnd": 66,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 455,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "miwa parametrization",
+          "heading": true
+        },
+        {
+          "term": "orthogonal polinomials",
+          "heading": false
+        },
+        {
+          "term": "scalar-product",
+          "heading": true
+        },
+        {
+          "term": "hat gamma",
+          "heading": false
+        },
+        {
+          "term": "delta hat",
+          "heading": false
+        },
+        {
+          "term": "det lambda",
+          "heading": false
+        },
+        {
+          "term": "scalar-product model",
+          "heading": false
+        },
+        {
+          "term": "varphi gamma",
+          "heading": false
+        }
+      ],
+      "extract": "We shall now make the first step towards clarification of the interrelation between the scalar-product and Kontsevich models. We already know that in the latter case the important role is played by representation of time-variables in the form of \\be T_k = \\frac{1}{k} {\\rm tr} \\Lambda ^{-k}, \\label{MiwaT} \\ee with $n\\times n$ matrix $\\Lambda $, which will be further refered to as Miwa parametrization (expressions of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-38-equivalence-of-the-discrete-1-matrix-and-gaus",
+      "number": "3.8",
+      "title": "Equivalence of the discrete 1-matrix and Gaussian Kontsevich models",
+      "level": 2,
+      "pageStart": 66,
+      "pageEnd": 68,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 506,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "orthogonal polinomials",
+          "heading": false
+        },
+        {
+          "term": "frac lambda",
+          "heading": false
+        },
+        {
+          "term": "frac int",
+          "heading": false
+        },
+        {
+          "term": "frac delta",
+          "heading": false
+        },
+        {
+          "term": "int times",
+          "heading": false
+        },
+        {
+          "term": "analytical continuation",
+          "heading": false
+        },
+        {
+          "term": "kontsevich",
+          "heading": true
+        },
+        {
+          "term": "varphi",
+          "heading": false
+        }
+      ],
+      "extract": "Let us take the ordinary 1-matrix model with the $local$ measure $d\\mu_h = e^{U(h)}dh $ to be the scalar-product model, considered in the previous subsection and take Miwa parametrization with upper signs and with $r_k = -\\frac{1}{2}\\delta_{k,2}$ (as we did in the section 2.6). Then $\\hat V(h) = \\sum_k r_kh^k = -\\frac{h^2}{2} = \\frac{(ih)^2}{2}$. The relevant orthogonal polinomials $\\hat Q$ are just Hermite",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-39-volume-of-unitary-group",
+      "number": "3.9",
+      "title": "Volume of unitary group",
+      "level": 2,
+      "pageStart": 68,
+      "pageEnd": 70,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 397,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "prod frac",
+          "heading": false
+        },
+        {
+          "term": "ref volun",
+          "heading": false
+        },
+        {
+          "term": "prod gamma",
+          "heading": false
+        },
+        {
+          "term": "mid",
+          "heading": false
+        },
+        {
+          "term": "int times",
+          "heading": false
+        },
+        {
+          "term": "polinomials",
+          "heading": false
+        },
+        {
+          "term": "unitary",
+          "heading": true
+        },
+        {
+          "term": "gaussian matrix",
+          "heading": false
+        }
+      ],
+      "extract": "Formalism of orthogonal polinomials provides also a simple derivation of eq.(\\ref{volun}) for the volume of unitary group. Consider eq.(\\ref{1mamoev}) with $U(H) = H^2$. Then Gaussian matrix integral can be easily evaluated: \\be c_N\\int_{N\\times N} dH e^{-\\frac{1}{2}{\\rm Tr}H^2} = c_N\\prod_{i=1}^N \\int dH_{ii}e^{-\\frac{1}{2}H_{ii}^2} \\prod_{i<j}^N \\int d^2H_{ij} e^{-\\mid H_{ij}\\mid^2} = (2\\pi)^{N^2/2}, \\nn \\ee while",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-4-integrable-structure-of-eigenvalue-models",
+      "number": "4",
+      "title": "Integrable structure of eigenvalue models",
+      "level": 1,
+      "pageStart": 70,
+      "pageEnd": 70,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 5,
+      "summary": null,
+      "keywords": [],
+      "extract": "Integrable structure of eigenvalue models",
+      "extractCut": false
+    },
+    {
+      "id": "sec-020-41-the-concept-of-integrability",
+      "number": "4.1",
+      "title": "The concept of integrability",
+      "level": 2,
+      "pageStart": 70,
+      "pageEnd": 75,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1908,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "integrability",
+          "heading": true
+        },
+        {
+          "term": "integrable hierarchies",
+          "heading": false
+        },
+        {
+          "term": "free motion",
+          "heading": false
+        },
+        {
+          "term": "cite turb",
+          "heading": false
+        },
+        {
+          "term": "frac partial",
+          "heading": false
+        },
+        {
+          "term": "free particles",
+          "heading": false
+        },
+        {
+          "term": "plain waves",
+          "heading": false
+        },
+        {
+          "term": "psi lambda",
+          "heading": false
+        }
+      ],
+      "extract": "Integrable structure of dynamical system implies that all the dynamical characteristics - solutions of equations of motion for a classical system and functional integrals for a quantum one - can be found exactly. According to this description the notion of integrability is not very concrete, and in fact it evolves with time, including more and more classes of theories into the class of integable systems. Nowadays we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-42-the-notion-of-tau-function",
+      "number": "4.2",
+      "title": "The notion of $\\tau$-function",
+      "level": 2,
+      "pageStart": 75,
+      "pageEnd": 83,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2680,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tau function",
+          "heading": true
+        },
+        {
+          "term": "tilde psi",
+          "heading": false
+        },
+        {
+          "term": "bar tilde",
+          "heading": false
+        },
+        {
+          "term": "free-fermion tau",
+          "heading": false
+        },
+        {
+          "term": "partial psi",
+          "heading": false
+        },
+        {
+          "term": "int tilde",
+          "heading": false
+        },
+        {
+          "term": "tau sim",
+          "heading": false
+        },
+        {
+          "term": "free fermions",
+          "heading": false
+        }
+      ],
+      "extract": "There are several different definitions of $\\tau$-functions, but all of them are particular realizations of the following idea: $\\tau$-function is a generating functional of all the correlation functions in the theory of free particles in 1+1 dimensions. This basic quantity is a kind of \"$det \\ D$\", where \"$D$\" is a time-evolution operator (continuous or discrete) and \"$det$\" is a sort of a product over eigenvalues",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-44-basic-determinant-formula-for-the-free-fermio",
+      "number": "4.4",
+      "title": "Basic determinant formula for the free-fermion correlator",
+      "level": 2,
+      "pageStart": 83,
+      "pageEnd": 87,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 913,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "psi tilde",
+          "heading": false
+        },
+        {
+          "term": "psi mid",
+          "heading": false
+        },
+        {
+          "term": "bar psi",
+          "heading": false
+        },
+        {
+          "term": "geq psi",
+          "heading": false
+        },
+        {
+          "term": "psi sum",
+          "heading": false
+        },
+        {
+          "term": "mid rangle",
+          "heading": false
+        },
+        {
+          "term": "psi left",
+          "heading": false
+        },
+        {
+          "term": "langle mid",
+          "heading": false
+        }
+      ],
+      "extract": "Let us consider the following matrix element: \\be \\tau_N\\{t,\\bar t\\mid G\\} = \\langle N \\mid e^H \\ G \\ e^{\\bar H} \\mid N \\rangle \\label{pretaf} \\ee where \\be \\new \\begin{array}{c} \\psi( z) = \\sum_{n\\in Z}\\psi_n z^n d z^{1/2}; \\ \\ \\ \\tilde\\psi( z) = \\sum_{n\\in Z}\\tilde\\psi_n z^{-n-1}d z^{1/2};\\\\ G = \\exp\\left( \\sum_{m,n\\in Z}{A}_{mn}\\psi_m\\tilde\\psi_n \\right); \\\\ H = \\sum_{k>0} t_kJ_k, \\ \\ \\ \\bar H = \\sum_{k>0} \\bar",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-45-toda-lattice-tau-function-and-linear-reductio",
+      "number": "4.5",
+      "title": "Toda-lattice $\\tau$-function and linear reductions of Toda hierarchy",
+      "level": 2,
+      "pageStart": 87,
+      "pageEnd": 92,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1427,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "toda-lattice tau",
+          "heading": true
+        },
+        {
+          "term": "tau function",
+          "heading": true
+        },
+        {
+          "term": "bar mid",
+          "heading": false
+        },
+        {
+          "term": "hierarchy",
+          "heading": true
+        },
+        {
+          "term": "sum cal",
+          "heading": false
+        },
+        {
+          "term": "m-j",
+          "heading": false
+        },
+        {
+          "term": "det leq",
+          "heading": false
+        },
+        {
+          "term": "label addkptau",
+          "heading": false
+        }
+      ],
+      "extract": "In the previous subsection we derived a formula \\be \\tau_N\\{t,\\bar t\\mid G\\} = \\left.{\\rm Det}\\right._{i,j<0} {\\cal H}_{i+N,j+N} \\label{todatau} \\ee for the basic correlator, which defines \"Toda-lattice $\\tau$-function\". For obvious reasons $\\bar t$ are often refered to as negative-times. $\\tau$-function can be normalized by dividing over the same quantity for all time-variables vanishing, but this is not always",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-46-fermion-correlator-in-miwa-coordinates",
+      "number": "4.6",
+      "title": "Fermion correlator in Miwa coordinates",
+      "level": 2,
+      "pageStart": 92,
+      "pageEnd": 99,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2149,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tilde lambda",
+          "heading": false
+        },
+        {
+          "term": "bar mid",
+          "heading": false
+        },
+        {
+          "term": "mid psi",
+          "heading": false
+        },
+        {
+          "term": "gamma tilde",
+          "heading": false
+        },
+        {
+          "term": "langle mid",
+          "heading": false
+        },
+        {
+          "term": "mid rangle",
+          "heading": false
+        },
+        {
+          "term": "mid frac",
+          "heading": false
+        },
+        {
+          "term": "delta tilde",
+          "heading": false
+        }
+      ],
+      "extract": "Let us now return to original correlator (\\ref{pretaf}) and discuss in a little more details the implications of bosonization identity (\\ref{bosid}). In order not to write down integrals of $J$, we introduce scalar field:\\footnote{ One can consider $\\phi $ as introduced for simplicity of notation, but it should be kept in mind that the scalar-field representation is in fact more fundamental for {\\it generic}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-47-matrix-models-versus-tau-functions",
+      "number": "4.7",
+      "title": "Matrix models versus $\\tau$-functions.",
+      "level": 2,
+      "pageStart": 99,
+      "pageEnd": 104,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1495,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "matrix models",
+          "heading": true
+        },
+        {
+          "term": "tau functions",
+          "heading": true
+        },
+        {
+          "term": "gamma hat",
+          "heading": false
+        },
+        {
+          "term": "varphi gamma",
+          "heading": false
+        },
+        {
+          "term": "integrability theory",
+          "heading": false
+        },
+        {
+          "term": "det leq",
+          "heading": false
+        },
+        {
+          "term": "string equations",
+          "heading": false
+        },
+        {
+          "term": "virasoro",
+          "heading": false
+        }
+      ],
+      "extract": "We are now prepared to return to our main subject and discuss integrability properties of eigenvalue matrix models. The claim is that partition functions of all these models, when considered as functions of time-variables (parametrizing the shapes of potentials) are in fact $\\tau$-functions of (perhaps, multicomponent) Toda-lattice and/or KP type. (Interesting non-eigenvalue models are believed to be related to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-48-string-equations-and-general-concept-of-reduc",
+      "number": "4.8",
+      "title": "String equations and general concept of reduction",
+      "level": 2,
+      "pageStart": 104,
+      "pageEnd": 110,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1762,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "string equations",
+          "heading": true
+        },
+        {
+          "term": "varphi gamma",
+          "heading": false
+        },
+        {
+          "term": "hat varphi",
+          "heading": false
+        },
+        {
+          "term": "gamma lambda",
+          "heading": false
+        },
+        {
+          "term": "partial lambda",
+          "heading": false
+        },
+        {
+          "term": "frac varphi",
+          "heading": false
+        },
+        {
+          "term": "det varphi",
+          "heading": false
+        },
+        {
+          "term": "varphi delta",
+          "heading": false
+        }
+      ],
+      "extract": "The role of string equation is to fix the point $G$ in the universal module space (UMS), associated with the particular matrix model, so that partition function, considered as a function of time variables, will appear as the corresponding $\\tau$-function of a fixed shape. In this sense the idea behind the string equation is exatly the same as reduction of integrable hierarchies. The difference is that {\\it linear}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-49-on-the-theory-of-gkm",
+      "number": "4.9",
+      "title": "On the theory of GKM",
+      "level": 2,
+      "pageStart": 110,
+      "pageEnd": 118,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2943,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gkm theory",
+          "heading": true
+        },
+        {
+          "term": "discretized gkm",
+          "heading": false
+        },
+        {
+          "term": "cite gkm",
+          "heading": false
+        },
+        {
+          "term": "cite krich",
+          "heading": false
+        },
+        {
+          "term": "lgg model",
+          "heading": false
+        },
+        {
+          "term": "lambda varphi",
+          "heading": false
+        },
+        {
+          "term": "ref krich",
+          "heading": false
+        },
+        {
+          "term": "varphi gamma",
+          "heading": false
+        }
+      ],
+      "extract": "We remind that GKM is abbreviation for the Generalized Kontsevich model, This theory is the naturally broad collection of topics for a separate big section in these notes. However, we decided not to include such detailed presentation. This is because GKM theory seems too incomplete now. First, we believe that the natural invariant formulation - of which existing matrix integral is only a specific realization - is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-410-1-matrix-model-versus-toda-chain-hierarchy",
+      "number": "4.10",
+      "title": "1-Matrix model versus Toda-chain hierarchy",
+      "level": 2,
+      "pageStart": 118,
+      "pageEnd": 121,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 810,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mid rangle",
+          "heading": false
+        },
+        {
+          "term": "langle mid",
+          "heading": false
+        },
+        {
+          "term": "partial rangle",
+          "heading": false
+        },
+        {
+          "term": "mid frac",
+          "heading": false
+        },
+        {
+          "term": "matrix model",
+          "heading": true
+        },
+        {
+          "term": "partial phi",
+          "heading": false
+        },
+        {
+          "term": "cite gmmmo",
+          "heading": false
+        },
+        {
+          "term": "orthogonal polinomials",
+          "heading": false
+        }
+      ],
+      "extract": "At the end of this section we use an explicit example of dicrete 1-matrix model \\cite{GMMMO} to illustrate, how a more familiar Lax description of integrable hierarchies arises from determinant formulas. This example will be also usefull in Section 5.3 below, when one of the ways to take double-scaling continuum limit of the 1-matrix model will be discussed. Lax representation appears usually after some coordinate",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-5-continuum-limits-of-discrete-matrix-models",
+      "number": "5",
+      "title": "Continuum limits of discrete matrix models",
+      "level": 1,
+      "pageStart": 121,
+      "pageEnd": 121,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "els",
+      "extractCut": false
+    },
+    {
+      "id": "sec-030-51-what-is-continuum-limit",
+      "number": "5.1",
+      "title": "What is continuum limit",
+      "level": 2,
+      "pageStart": 121,
+      "pageEnd": 124,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1076,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "continuum limit",
+          "heading": true
+        },
+        {
+          "term": "naive continuum",
+          "heading": false
+        },
+        {
+          "term": "continuum theory",
+          "heading": false
+        },
+        {
+          "term": "kontsevich models",
+          "heading": false
+        },
+        {
+          "term": "integrable hierarchies",
+          "heading": false
+        },
+        {
+          "term": "discrete models",
+          "heading": false
+        },
+        {
+          "term": "matrix models",
+          "heading": false
+        },
+        {
+          "term": "lattice theories",
+          "heading": false
+        }
+      ],
+      "extract": "Continuum limit of matrix models is, of course, the crucial issue for their physical applications whenever these models are interpreted as discrete (lattice) approximations to continuum theory. The very first thing to be kept in mind is that it is $not$ the only possible view on matrix models. Another approach considers them as describing $topological$ (and thus also in a certain sense \"discrete\") properties of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-52-from-toda-chain-to-kdv",
+      "number": "5.2",
+      "title": "From Toda-chain to KdV",
+      "level": 2,
+      "pageStart": 124,
+      "pageEnd": 126,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 853,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kdv",
+          "heading": true
+        },
+        {
+          "term": "volterra hierarchy",
+          "heading": false
+        },
+        {
+          "term": "partial epsilon",
+          "heading": false
+        },
+        {
+          "term": "tilde epsilon",
+          "heading": false
+        },
+        {
+          "term": "lowest kdv",
+          "heading": false
+        },
+        {
+          "term": "epsilon cal",
+          "heading": false
+        },
+        {
+          "term": "frac epsilon",
+          "heading": false
+        },
+        {
+          "term": "kdv equation",
+          "heading": false
+        }
+      ],
+      "extract": "We begin with the simplest existing example: continuum limit, in which the lowest equation of the \"Volterra hierarchy\", \\be \\frac{\\partial R_n}{\\partial t} = - R_n(R_{n+1}-R_{n-1}), \\label{lowVolt} \\ee turns into the lowest KdV equation: \\be \\frac{\\partial r}{\\partial T_3} = - \\frac{1}{3}r''' - 2rr'. \\label{lowKdV} \\ee Volterra hierarchy is a reduction of Toda-chain hierarchy, with $R_n = e^{\\phi_n-\\phi_{n-1}}$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-53-double-scaling-limit-of-1-matrix-model",
+      "number": "5.3",
+      "title": "Double-scaling limit of 1-matrix model",
+      "level": 2,
+      "pageStart": 126,
+      "pageEnd": 134,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2392,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "red partial",
+          "heading": false
+        },
+        {
+          "term": "partial n-2k",
+          "heading": false
+        },
+        {
+          "term": "red frac",
+          "heading": false
+        },
+        {
+          "term": "partial tilde",
+          "heading": false
+        },
+        {
+          "term": "virasoro constraints",
+          "heading": false
+        },
+        {
+          "term": "epsilon frac",
+          "heading": false
+        },
+        {
+          "term": "displaystyle frac",
+          "heading": false
+        },
+        {
+          "term": "partial phi",
+          "heading": false
+        }
+      ],
+      "extract": "Now we proceed to discussion of a slightly different approach to continuum limits, which is directly adjusted to the needs of matrix models. The naive idea \\cite{mamo},\\cite{FKN} is to forget about integrability and just look at the Ward identities (Virasoro constraints in the 1-matrix case) and take a continuum limit of these identities. This approach makes close contact with the standard technique of \"loop",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-54-from-gaussian-to-x3-kontsevich-model",
+      "number": "5.4",
+      "title": "From Gaussian to $X^3$ Kontsevich model",
+      "level": 2,
+      "pageStart": 134,
+      "pageEnd": 138,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1153,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cal gamma",
+          "heading": false
+        },
+        {
+          "term": "array cal",
+          "heading": false
+        },
+        {
+          "term": "kontsevich model",
+          "heading": true
+        },
+        {
+          "term": "cal log",
+          "heading": false
+        },
+        {
+          "term": "cal hat",
+          "heading": false
+        },
+        {
+          "term": "beta gamma",
+          "heading": false
+        },
+        {
+          "term": "beta hbox",
+          "heading": false
+        },
+        {
+          "term": "bar cal",
+          "heading": false
+        }
+      ],
+      "extract": "We shall now abandon these complicated matters and give a simple illustration of how the things can work, if expressed in the adequate terms. Namely, as alternative to the sophisticated procedure, involving explicit switch to Kazakov variables and the study of limits of Ward-identites (loop equations), we shall just use the equivalence of the discrete 1-matrix model and Gaussian Kontsevich model, proved in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-6-conclusion",
+      "number": "6",
+      "title": "Conclusion",
+      "level": 1,
+      "pageStart": 138,
+      "pageEnd": 140,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 835,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "terra incognita",
+          "heading": false
+        },
+        {
+          "term": "cite khma",
+          "heading": false
+        },
+        {
+          "term": "models cite",
+          "heading": false
+        },
+        {
+          "term": "integrable hierarchies",
+          "heading": false
+        },
+        {
+          "term": "non-eigenvalue matrix",
+          "heading": false
+        },
+        {
+          "term": "topological gravity",
+          "heading": false
+        },
+        {
+          "term": "string theory",
+          "heading": false
+        },
+        {
+          "term": "localization theory",
+          "heading": false
+        }
+      ],
+      "extract": "We came to the end of our brief review of the facts, that are already known about the relation between matrix models and integrable hierarchies. There are still several topics, which are already discussed in the literature, but not presented in these notes. First of all, we did not discuss the relation between matrix models and theories of topological (Landau-Ginzburg) gravity (LGG). This field is fastly developing",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-7-acknowledgements",
+      "number": "7",
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 140,
+      "pageEnd": 149,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1775,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "preprint itep-m",
+          "heading": false
+        },
+        {
+          "term": "preprint iassns-hep",
+          "heading": false
+        },
+        {
+          "term": "preprint pupt",
+          "heading": false
+        },
+        {
+          "term": "preprint rims",
+          "heading": false
+        },
+        {
+          "term": "preprint itep",
+          "heading": false
+        },
+        {
+          "term": "preprint fian",
+          "heading": false
+        },
+        {
+          "term": "marshakov",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        }
+      ],
+      "extract": "Acknowledgements These notes reﬂect the content of the lectures, given at the University of Amsterdam and NIKHEF in February-March 1993. I am deeply indebted to colleagues at Amsterdam for their patience and attention and especially to Sander Bais for his hospitality and encouragement. It is a pleasure to thank my collaborators and friends, mentioned by names in the end of the Introduction for the lessons that they",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "cal frac",
+      "heading": false
+    },
+    {
+      "term": "mid frac",
+      "heading": false
+    },
+    {
+      "term": "bar frac",
+      "heading": false
+    },
+    {
+      "term": "frac partial",
+      "heading": false
+    },
+    {
+      "term": "frac gamma",
+      "heading": false
+    },
+    {
+      "term": "delta frac",
+      "heading": false
+    },
+    {
+      "term": "det cal",
+      "heading": false
+    },
+    {
+      "term": "frac lambda",
+      "heading": false
+    },
+    {
+      "term": "matrix cal",
+      "heading": false
+    },
+    {
+      "term": "frac tilde",
+      "heading": false
+    },
+    {
+      "term": "array frac",
+      "heading": false
+    },
+    {
+      "term": "kontsevich models",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 53,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 54,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 55,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 56,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 57,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 58,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 59,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 60,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 61,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 62,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 63,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 64,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 65,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 66,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 67,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 68,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 69,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 70,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 71,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 72,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 73,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 74,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 75,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 76,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 77,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 78,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 79,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 80,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 81,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 82,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 83,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 84,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 85,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 86,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 87,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 88,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 89,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 90,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 91,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 92,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 93,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 94,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 95,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 96,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 97,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 98,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 99,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 100,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 101,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 102,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 103,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 104,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 105,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 106,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 107,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 108,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 109,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 110,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 111,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 112,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 113,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 114,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 115,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 116,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 117,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 118,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 119,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 120,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 121,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 122,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 123,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 124,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 125,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 126,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 127,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 128,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 129,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 130,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 131,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 132,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 133,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 134,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 135,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 136,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 137,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 138,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 139,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 140,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 141,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 142,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 143,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 144,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 145,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 146,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 147,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 148,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 149,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 36,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 37,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p2); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 66
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 37 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-th-9303139v2"
+  }
+}

@@ -1,0 +1,767 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "funaba-2014-j-phys-conf-ser-544-012019",
+  "title": "funaba-2014-j-phys-conf-ser-544-012019",
+  "variant": "pdf",
+  "pages": 13,
+  "tocSource": "undetermined",
+  "tocMethod": "font",
+  "toc": [],
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 105,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "möbius band",
+          "heading": false
+        },
+        {
+          "term": "pinto",
+          "heading": false
+        },
+        {
+          "term": "funaba",
+          "heading": false
+        }
+      ],
+      "extract": "Journal of Physics: Conference Series OPEN ACCESS Möbius invariant energy of tori of revolution To cite this article: H Funaba and J O'Hara 2014 J. Phys.: Conf. Ser. 544 012019 View the article online for updates and enhancements. You may also like Phonon modes in a Möbius band Norihiko Nishiguchi and Martin N Wybourne - Electronic states in quantum wires on a Möbius strip J J L R Pinto, J E G Silva and C A S",
+      "extractCut": true,
+      "blocks": [
+        "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/prose-page-001",
+        "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/figure-img-p001-1"
+      ]
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 478,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cliﬀord torus",
+          "heading": false
+        },
+        {
+          "term": "minimum energy",
+          "heading": false
+        },
+        {
+          "term": "willmore conjecture",
+          "heading": false
+        },
+        {
+          "term": "obius invariant",
+          "heading": false
+        },
+        {
+          "term": "obius transformations",
+          "heading": false
+        },
+        {
+          "term": "energy among",
+          "heading": false
+        },
+        {
+          "term": "iop publishing",
+          "heading": false
+        },
+        {
+          "term": "revolution",
+          "heading": false
+        }
+      ],
+      "extract": "M¨obius invariant energy of tori of revolution H. Funaba & J. O’Hara Department of Mathematics and Information Sciences, Tokyo Metropolitan University, 1-1 Minami-Ohsawa, Hachiouji-Shi, Tokyo 192-0397 Japan E-mail: ohara@tmu.ac.jp Abstract. We show that among tori of revolution the Cliﬀord torus gives the minimum value of the M¨obius invariant surface energy deﬁned by Auckly and Sadun. 1. Introduction and main",
+      "extractCut": true,
+      "blocks": [
+        "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/prose-page-002"
+      ]
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 577,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "renormalized potential",
+          "heading": false
+        },
+        {
+          "term": "potential energy",
+          "heading": false
+        },
+        {
+          "term": "revolution",
+          "heading": false
+        },
+        {
+          "term": "obius transformations",
+          "heading": false
+        },
+        {
+          "term": "blows",
+          "heading": false
+        },
+        {
+          "term": "sadun",
+          "heading": false
+        },
+        {
+          "term": "d2y",
+          "heading": false
+        },
+        {
+          "term": "d2x",
+          "heading": false
+        }
+      ],
+      "extract": "that minimizes the energy in the knot type. Let K be a knot and x be a point on it. Deﬁne V (x; K) = lim ε→0 Z K\\Bε(x) dy |x −y|2 −2 ε ! , and E(K) = Z K V (x; K)dx, (1) where Bε(x) is a ball with center x and radius ε. Let us call a process as in the deﬁnition of V (x; K) in (1) the renormalization in this paper. In general, when we are interested in a diverging integral, we ﬁrst restrict the integration to the",
+      "extractCut": true,
+      "blocks": [
+        "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/prose-page-003",
+        "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/thm-page-003-01",
+        "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/cor-page-003-02"
+      ]
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 509,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cos sin",
+          "heading": false
+        },
+        {
+          "term": "minimum energy",
+          "heading": false
+        },
+        {
+          "term": "dist",
+          "heading": false
+        },
+        {
+          "term": "tori",
+          "heading": false
+        },
+        {
+          "term": "distance",
+          "heading": false
+        },
+        {
+          "term": "potential",
+          "heading": false
+        },
+        {
+          "term": "log",
+          "heading": false
+        },
+        {
+          "term": "among",
+          "heading": false
+        }
+      ],
+      "extract": "Proof of Corollary: Since d dRE(TR) = π3(R2 −2) \u0000(R2 −2)2 + 3 R4 log (4/e) \u0001 4R3 (R2 −1)3/2 , the energy takes the minimum value π3(6 log 2 −1)/2 when R = √ 2. □ Problem: (1) Does T√ 2 give the minimum energy among all the embedded tori in R3, hence among all the immersed tori in R3? (2) When we change the power of |x −y| in the denominator in (2) from 4 to any number λ, we obtain a new potential energy Er−λ after",
+      "extractCut": true,
+      "blocks": [
+        "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/prose-page-004"
+      ]
+    },
+    {
+      "id": "page-005",
+      "number": null,
+      "title": "Page 5",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 422,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cos sin",
+          "heading": false
+        },
+        {
+          "term": "dist",
+          "heading": false
+        },
+        {
+          "term": "d2y",
+          "heading": false
+        },
+        {
+          "term": "tan",
+          "heading": false
+        },
+        {
+          "term": "dudv",
+          "heading": false
+        }
+      ],
+      "extract": "Deﬁne b = b(θ) and c = c(t) by c(t) = 2(R + cos α) h 2(R + cos α) −cos α · t2 −sin α · t p 4 −t2 i b = c 4 = (R + cos α) (R −cos(α −2θ)) . (3) Then Dist2 = t2 + c(t) sin2 v 2 = 4 \u0010 cos2 θ + b sin2 v 2 \u0011 . Put V (ε, x) = ZZ Dist≥ε d2y |x −y|2 . Since the area element of T is given by d2y = (R + cos u) dudv, V (ε, x) is given by ZZ Dist≥ε (R + cos u) (2R2 + 2 + 2R (cos α + cos u) −2 sin α sin u −2 (R + cos α) (R + cos",
+      "extractCut": true,
+      "blocks": [
+        "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/prose-page-005"
+      ]
+    },
+    {
+      "id": "page-006",
+      "number": null,
+      "title": "Page 6",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 334,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sin",
+          "heading": false
+        },
+        {
+          "term": "tan",
+          "heading": false
+        },
+        {
+          "term": "cos",
+          "heading": false
+        },
+        {
+          "term": "grey",
+          "heading": false
+        }
+      ],
+      "extract": "v u I1 3I x 4I 2I Figure 1. Parts of the domains of integration of I1 (blue or light grey) and I4 (red or dark grey) near the point x Therefore, I2 is given by I2 = Z ε 0 Z π 2 sin−1 \u0012r ε2−t2 c(t) \u0013 2R + cos α · (2 −t2) −sin α · t √ 4 −t2 (t2 + c(t) sin2 v 2)2 dv dt √ 4 −t2 . By the formula (6) we get I2 = Z ε 0 ( 2R + cos α · (2 −t2) −sin α · t √ 4 −t2 √ 4 −t2 × \" 2t2 + c(t) t3(t2 + c(t)) 3 2 tan−1 p t2 + c(t) t",
+      "extractCut": true,
+      "blocks": [
+        "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/prose-page-006"
+      ]
+    },
+    {
+      "id": "page-007",
+      "number": null,
+      "title": "Page 7",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 399,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cos sin",
+          "heading": false
+        },
+        {
+          "term": "log",
+          "heading": false
+        },
+        {
+          "term": "qcs",
+          "heading": false
+        },
+        {
+          "term": "iop",
+          "heading": false
+        },
+        {
+          "term": "maple",
+          "heading": false
+        }
+      ],
+      "extract": "Expanding the integrand in a series in ε with the help of Maple we obtain I2 = 1 2ε2 Z π 2 0 \u0012 τ cos τ sin3 τ −cos2 τ sin2 τ \u0013 dτ − sin α 4(R + cos α)ε Z π 2 0 \u0012 τ cos τ sin2 τ −cos2 τ sin τ \u0013 dτ + R2 16(R + cos α)2 Z π 2 0 \u0010 τ cos τ sin τ −cos2 τ \u0011 dτ + 1 8(R + cos α)2 Z π 2 0 cos2 τdτ + O(ε). (7) Direct integration shows Z π 2 0 \u0012 τ cos τ sin3 τ −cos2 τ sin2 τ \u0013 dτ = 1 2 \u0014τ + sin τ cos τ −2τ cos2 τ sin2 τ \u0015 π 2 0",
+      "extractCut": true,
+      "blocks": [
+        "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/prose-page-007"
+      ]
+    },
+    {
+      "id": "page-008",
+      "number": null,
+      "title": "Page 8",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 431,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cos sin",
+          "heading": false
+        },
+        {
+          "term": "dvdθ",
+          "heading": false
+        },
+        {
+          "term": "tan",
+          "heading": false
+        },
+        {
+          "term": "qcs",
+          "heading": false
+        },
+        {
+          "term": "iop",
+          "heading": false
+        }
+      ],
+      "extract": "The integral I4 can be obtained from I2 by changing α to −α: I4 = Z 0 −ε Z π 2 sin−1 \u0012r ε2−t2 c(t) \u0013 2R + cos α · (2 −t2) −sin α · t √ 4 −t2 (t2 + c(t) sin2 v 2)2 dt √ 4 −t2 dv = π 8ε2 −(π −4) sin α 8(R + cos α)ε + πR2 64(R + cos α)2 (2 log 2 −1) + π 32(R + cos α)2 + O(ε). Let us next compute I1 and I3. Since u −α ∈[2 sin−1(ε/2), π] θ = π/2 −(u −α)/2 ∈ [0, cos−1(ε/2)]. The integral I1 is given by I1 = 1 8 Z cos−1 ε",
+      "extractCut": true,
+      "blocks": [
+        "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/prose-page-008"
+      ]
+    },
+    {
+      "id": "page-009",
+      "number": null,
+      "title": "Page 9",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 369,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cos sin",
+          "heading": false
+        },
+        {
+          "term": "tan sin",
+          "heading": false
+        },
+        {
+          "term": "cos sinh",
+          "heading": false
+        },
+        {
+          "term": "r2ε",
+          "heading": false
+        },
+        {
+          "term": "i1j",
+          "heading": false
+        }
+      ],
+      "extract": "We have used Maple to expand them in series in ε (the last step of each computation of I1j). I15 = Z cos−1 ε 2 0 1 cos2 θ \u0010 R2 + ((R + cos α) tan θ −sin α)2\u0011 3 2 dθ =   (R + cos α) tan θ −sin α R2(R + cos α) q R2 + ((R + cos α) tan θ −sin α)2   cos−1 ε 2 0 = (R + cos α) √ 4 −ε2 −(sin α)ε R2(R + cos α) q R2ε2 + ((R + cos α) √ 4 −ε2 −(sin α)ε)2 + sin α R2(R + cos α) p R2 + sin2 α = 1 R2(R + cos α) + sin α R2(R +",
+      "extractCut": true,
+      "blocks": [
+        "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/prose-page-009"
+      ]
+    },
+    {
+      "id": "page-010",
+      "number": null,
+      "title": "Page 10",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 404,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cos sin",
+          "heading": false
+        },
+        {
+          "term": "tan sin",
+          "heading": false
+        },
+        {
+          "term": "r2ε",
+          "heading": false
+        },
+        {
+          "term": "qcs",
+          "heading": false
+        },
+        {
+          "term": "iop",
+          "heading": false
+        }
+      ],
+      "extract": "I13 = Z cos−1 ε 2 0 sin θ cos3 θ q R2 + ((R + cos α) tan θ −sin α)2 dθ = sin α R + cos αI12 + 1 (R + cos α)2 \u0014q R2 + ((R + cos α) tan θ −sin α)2 \u0015cos−1 ε 2 0 = sin α R + cos αI12 + r R2ε2 + \u0010 (R + cos α) √ 4 −ε2 −(sin α)ε \u00112 (R + cos α)2ε − p R2 + sin2 α (R + cos α)2 = sin α R + cos αI12 + \u001a 2 (R + cos α)ε − sin α (R + cos α)2 + O (ε) \u001b − p R2 + sin2 α (R + cos α)2 , I14 = Z cos−1 ε 2 0 1 cos4 θ \u0010 R2 + ((R + cos α)",
+      "extractCut": true,
+      "blocks": [
+        "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/prose-page-010"
+      ]
+    },
+    {
+      "id": "page-011",
+      "number": null,
+      "title": "Page 11",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 498,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sinh sin",
+          "heading": false
+        },
+        {
+          "term": "cos",
+          "heading": false
+        },
+        {
+          "term": "r2ε",
+          "heading": false
+        },
+        {
+          "term": "log",
+          "heading": false
+        }
+      ],
+      "extract": "Therefore I1 = π(R + cos α) 16 I11 −π cos α 8 I12 −π sin α 8 I13 + π(R + cos α) 16 I14 −π cos α 8 I15 −π sin α 8 I16 = πR2 32(R + cos α)I12 + π 8ε2 − sin α 8(R + cos α)ε −π(R2 + 4R cos α + 2 cos2 α) 64(R + cos α)2 − π 16R2(R + cos α)2 + π sin2 α 32(R + cos α)2 − π sin α 16R2(R + cos α)2p R2 + sin2 α + π sin α p R2 + sin2 α 32(R + cos α)2 + O(ε) = − πR2 64(R + cos α)2 log \u0012 R2ε2 16(R + cos α)2 \u0013 + πR2 32(R + cos α)2",
+      "extractCut": true,
+      "blocks": [
+        "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/prose-page-011"
+      ]
+    },
+    {
+      "id": "page-012",
+      "number": null,
+      "title": "Page 12",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 422,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hara solanes",
+          "heading": false
+        },
+        {
+          "term": "erλ",
+          "heading": false
+        },
+        {
+          "term": "eos",
+          "heading": false
+        },
+        {
+          "term": "d2x",
+          "heading": false
+        },
+        {
+          "term": "cos",
+          "heading": false
+        },
+        {
+          "term": "log",
+          "heading": false
+        }
+      ],
+      "extract": "Finally, it implies that the renormalized r−4-potential energy of the torus T is given by E(T) = Z T V (x; T) d2x = 2π Z 2π 0 \u0012 πR2 8(R + cos α)2 3 log 2 −π 8 − π 4R2(R + cos α)2 + π(1 + sin2 α) 8(R + cos α)2 + π cos α 4(R + cos α) \u0013 (R + cos α) dα = π2 2 Z π 0 \u0012\u0012 R2 (3 log 2 −1) + 2 −2 R2 \u0013 1 R + cos α \u0013 dα = π2 2 \"\u0012 R2 (3 log 2 −1) + 2 −2 R2 \u0013 2 √ R2 −1 tan−1 r R −1 R + 1 tan α 2 !#π 0 = π3 2 √ R2 −1 \u0012 R2 (3 log 2",
+      "extractCut": true,
+      "blocks": [
+        "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/prose-page-012"
+      ]
+    },
+    {
+      "id": "page-013",
+      "number": null,
+      "title": "Page 13",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 338,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hara solanes",
+          "heading": false
+        },
+        {
+          "term": "erλ",
+          "heading": false
+        },
+        {
+          "term": "georgia international",
+          "heading": false
+        },
+        {
+          "term": "international topology",
+          "heading": false
+        },
+        {
+          "term": "obius invariant",
+          "heading": false
+        },
+        {
+          "term": "international press",
+          "heading": false
+        },
+        {
+          "term": "marques",
+          "heading": false
+        },
+        {
+          "term": "neves",
+          "heading": false
+        }
+      ],
+      "extract": "Now we can deﬁne functionals for knots as follows. Let Nε(K) be an ε-tubular neighbourhood of K. Expand Erλ(∂Nε(K)) and Erλ′(Nε(K)) in series of ε. We conjecture that functionals that can capture global properties of knots appear as a coeﬃcient of ε2-term of Erλ(∂Nε(K)) and as a coeﬃcient of ε4-term of Erλ′(Nε(K)). When K◦is a round circle with radius 1, our main theorem implies Er−4(∂Nε(K◦)) = π3ε 2 √ 1 −ε2 \u00123 log",
+      "extractCut": true,
+      "blocks": [
+        "library/funaba-2014-j-phys-conf-ser-544-012019/blocks/prose-page-013"
+      ]
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "cos sin",
+      "heading": false
+    },
+    {
+      "term": "tan sin",
+      "heading": false
+    },
+    {
+      "term": "cos sinh",
+      "heading": false
+    },
+    {
+      "term": "iop publishing",
+      "heading": false
+    },
+    {
+      "term": "conference series",
+      "heading": false
+    },
+    {
+      "term": "obius energy",
+      "heading": false
+    },
+    {
+      "term": "qcs",
+      "heading": false
+    },
+    {
+      "term": "doi",
+      "heading": false
+    },
+    {
+      "term": "potential energy",
+      "heading": false
+    },
+    {
+      "term": "minimum energy",
+      "heading": false
+    },
+    {
+      "term": "knot energy",
+      "heading": false
+    },
+    {
+      "term": "invariant energy",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Parts of the domains of integration of I1 (blue or light grey) and I4 (red or dark grey) near the point x",
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "not-extracted",
+      "note": "split one section per page; no contents was trusted"
+    },
+    {
+      "kind": "sections",
+      "state": "partial",
+      "count": 13,
+      "note": "one per page, not by heading"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p13); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 13 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/funaba-2014-j-phys-conf-ser-544-012019"
+  }
+}

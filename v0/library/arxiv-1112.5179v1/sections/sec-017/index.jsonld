@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/arxiv-1112.5179v1/sections/sec-017",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Tentacles and vacua",
+  "pageStart": 37,
+  "pageEnd": 42,
+  "contains": [
+    "library/arxiv-1112.5179v1/blocks/prose-sec-017",
+    "library/arxiv-1112.5179v1/blocks/figure-img-p038-1",
+    "library/arxiv-1112.5179v1/blocks/figure-img-p038-2",
+    "library/arxiv-1112.5179v1/blocks/figure-img-p038-3",
+    "library/arxiv-1112.5179v1/blocks/figure-img-p040-1",
+    "library/arxiv-1112.5179v1/blocks/figure-img-p042-1",
+    "library/arxiv-1112.5179v1/blocks/figure-img-p042-3"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1112.5179v1/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1112.5179v1/manifest.jsonld",
+  "provenance": "ingested"
+}

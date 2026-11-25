@@ -1,0 +1,496 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1210.7777v1",
+  "title": "Cottingham formula for the electromagnetic self-energy contribution to Mp − Mn",
+  "variant": "pdf",
+  "pages": 7,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The Cottingham Formula",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-the-cottingham-formula"
+    },
+    {
+      "level": 1,
+      "title": "Concluding Remarks",
+      "number": "4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-4-concluding-remarks"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-003-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 213,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "andré walker-loud",
+          "heading": false
+        },
+        {
+          "term": "cottingham formula",
+          "heading": false
+        },
+        {
+          "term": "electromagnetic self-energy",
+          "heading": false
+        },
+        {
+          "term": "self-energy contribution",
+          "heading": false
+        },
+        {
+          "term": "subtraction function",
+          "heading": false
+        },
+        {
+          "term": "berkeley",
+          "heading": false
+        },
+        {
+          "term": "washington",
+          "heading": false
+        }
+      ],
+      "extract": "Cottingham formula for the electromagnetic self-energy contribution to Mp −Mn André Walker-Loud∗ Lawrence Berkeley National Laboratory, Berkeley, CA 94720, USA Department of Physics, University of California, Berkeley, CA 94720, USA E-mail: awalker-loud@lbl.gov Carl E. Carlson Department of Physics, College of William and Mary, Williamsburg, VA 23187-8795. E-mail: carlson@physics.wm.edu Gerald A. Miller Department",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1210.7777v1/blocks/prose-sec-front-matter",
+        "library/arxiv-1210.7777v1/blocks/prop-sec-front-matter-01",
+        "library/arxiv-1210.7777v1/blocks/prop-sec-front-matter-02"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 262,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lattice qcd",
+          "heading": false
+        },
+        {
+          "term": "δmγ",
+          "heading": false
+        },
+        {
+          "term": "δmmd",
+          "heading": false
+        },
+        {
+          "term": "nucleon mass",
+          "heading": false
+        },
+        {
+          "term": "mass splitting",
+          "heading": false
+        },
+        {
+          "term": "isospin breaking",
+          "heading": false
+        },
+        {
+          "term": "disentangle",
+          "heading": false
+        }
+      ],
+      "extract": "Given only electrostatic forces, a natural prediction is Mp > Mn yet in nature [2] Mp −Mn = −1.29333217(42) MeV. (1.1) Before we knew of QCD, there were many attempts to reconcile this apparent discrepancy, see Ref. [3] for a review. We now know the Standard Model has two sources of isospin breaking: the electromagnetic couplings of the light quarks and their mass parameters. The contributions to the nucleon mass",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-cottingham-formula",
+      "number": "2",
+      "title": "The Cottingham Formula",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 6,
+      "labelStart": "2",
+      "labelEnd": "6",
+      "words": 1565,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cottingham formula",
+          "heading": true
+        },
+        {
+          "term": "δmsub inel",
+          "heading": false
+        },
+        {
+          "term": "andré walker-loud",
+          "heading": false
+        },
+        {
+          "term": "unknown subtraction",
+          "heading": false
+        },
+        {
+          "term": "τel",
+          "heading": false
+        },
+        {
+          "term": "electromagnetic self-energy",
+          "heading": false
+        },
+        {
+          "term": "compton scattering",
+          "heading": false
+        },
+        {
+          "term": "δmγ",
+          "heading": false
+        }
+      ],
+      "extract": "forward Compton scattering tensor. In 1975, Gasser and Leutwyler provided the determination [9] δMγ = 0.76(30) MeV. (1.4) If we instead subtract the lattice QCD determination from experiment, we arrive at δMp−n −δMmd−mu LQCD = 1.24(40) MeV. (1.5) While the central values in these two determinations are quite different, they are only one-sigma discrepant. A more precise determination of either δMγ or δMmd−mu is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-4-concluding-remarks",
+      "number": "4",
+      "title": "Concluding Remarks",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 121,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "precise determination",
+          "heading": false
+        },
+        {
+          "term": "cottingham",
+          "heading": false
+        },
+        {
+          "term": "invalidating",
+          "heading": false
+        },
+        {
+          "term": "oversight",
+          "heading": false
+        }
+      ],
+      "extract": "A precise determination of the electromagnetic self-energy contribution to Mp −Mn remains an outstanding theoretical challenge. We have updated the Cottingham determination of δMγ using modern theoretical knowledge and experimental determinations of the nucleon structure functions, Eq. (3.4). In the process, a technical oversight in the old determination was uncovered invalidating the result. The limiting factor in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 506,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hep-ph",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "nucl-th",
+          "heading": false
+        },
+        {
+          "term": "arxiv",
+          "heading": false
+        },
+        {
+          "term": "arrington",
+          "heading": false
+        },
+        {
+          "term": "nucl",
+          "heading": false
+        },
+        {
+          "term": "lett",
+          "heading": false
+        }
+      ],
+      "extract": "[1] A. Walker-Loud, C. E. Carlson and G. A. Miller, Phys. Rev. Lett. 108, 232301 (2012) [arXiv:1203.0254 [nucl-th]]. [2] P. J. Mohr, B. N. Taylor and D. B. Newell, Rev. Mod. Phys. 80, 633 (2008) [arXiv:0801.0028]; J. Beringer et al. [Particle Data Group Collaboration], Phys. Rev. D 86, 010001 (2012). [3] A. Zee, Phys. Rept. 3, 127 (1972). [4] A. Walker-Loud, PoS LATTICE 2010, 243 (2010) [arXiv:1011.4015];",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "andré walker-loud",
+      "heading": false
+    },
+    {
+      "term": "electromagnetic self-energy",
+      "heading": true
+    },
+    {
+      "term": "self-energy contribution",
+      "heading": false
+    },
+    {
+      "term": "cottingham formula",
+      "heading": true
+    },
+    {
+      "term": "δmγ",
+      "heading": false
+    },
+    {
+      "term": "unknown subtraction",
+      "heading": false
+    },
+    {
+      "term": "precise determination",
+      "heading": false
+    },
+    {
+      "term": "isovector magnetic",
+      "heading": false
+    },
+    {
+      "term": "subtraction function",
+      "heading": false
+    },
+    {
+      "term": "δmsub inel",
+      "heading": false
+    },
+    {
+      "term": "lattice qcd",
+      "heading": false
+    },
+    {
+      "term": "nucleon mass",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The Cottingham Formula intuitively relates the forward Compton Scattering (a) to the O(αf.s.) electromagnetic self-energy (b)",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Analytic structure of scalar functions Ti(ν,Q2) in the complex ν plane for ﬁxed Q2, and the contour used to evaluate them",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p003-1",
+      "file": "images/img-p003-1.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p003-11",
+      "file": "images/img-p003-11.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p004-1",
+      "file": "images/img-p004-1.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 4,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 5,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p7); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 5 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1210.7777v1"
+  }
+}

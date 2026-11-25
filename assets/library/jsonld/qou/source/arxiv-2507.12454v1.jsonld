@@ -1,0 +1,64 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2507.12454v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Cohomology rings of character varieties",
+  "contains": [
+    "library/arxiv-2507.12454v1/sections/sec-front-matter",
+    "library/arxiv-2507.12454v1/sections/sec-000",
+    "library/arxiv-2507.12454v1/sections/sec-001",
+    "library/arxiv-2507.12454v1/sections/sec-002",
+    "library/arxiv-2507.12454v1/sections/sec-003",
+    "library/arxiv-2507.12454v1/sections/sec-004",
+    "library/arxiv-2507.12454v1/sections/sec-005",
+    "library/arxiv-2507.12454v1/sections/sec-006",
+    "library/arxiv-2507.12454v1/sections/sec-007",
+    "library/arxiv-2507.12454v1/sections/sec-008"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Cohomology rings of character varieties — In this talk I give an introduction and present some recent progress towards understanding the cohomology rings of character varieties of Riemann surfaces\n\n**Cohomology rings of character varieties**\n\n*ANTON MELLIT*\n\n23 pp, 10 sections.\n\n**Abstract.** In this talk I give an introduction and present some recent progress towards understanding the cohomology rings of character varieties of Riemann surfaces, such as the proof of the P = W conjecture and the computation of the zero-dimensional COHA. In the case of punctured sphere I present an explicit description relating the cohomology rings to the Hilbert scheme of C2, refining conjectures of Hausel-Letellier-Rodriguez-Villegas and Chuang-Diaconescu-Donagi-Pantev. I explain how the general case should be related to the symplectic geometry of the Hilbert scheme. 1. Classical motivation One way character varieties naturally arise is as follows. Suppose we have a linear ODE (1.1) ∂ ∂t⃗φ(t) = A(t)⃗φ(t) (t ∈C). Here A(t) is an n × n matrix-valued meromorphic function of one complex variable t, and we are looking for vector-valued solutions⃗φ(t). Let t1, . . .\n\n**Outline.** Front matter; 1 Classical motivation; 2 Fricke-Klein example; 3 Setup; 4 What is known?; 5 COHAs/Coulomb branches; 6 Main example; 7 Poisson geometry of Coulomb branches; Acknowledgments; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2507.12454&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2507.12454v1",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "2507.12454v1.pdf",
+    "source_sha256": "156fd9080847b4e75e8a4f4b16558161b49cc0fdbcf7149ff9f35fa90819c152",
+    "pages": 23,
+    "arxiv": {
+      "id": "2507.12454",
+      "version": "1",
+      "primary_class": "math.AG",
+      "stamp_date": "16 Jul 2025"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

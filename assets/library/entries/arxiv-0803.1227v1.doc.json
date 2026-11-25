@@ -1,0 +1,572 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0803.1227v1",
+  "title": "Linear programming bounds for unitary space time codes",
+  "variant": "pdf",
+  "pages": 11,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The linear programming method on homogeneous spaces",
+      "number": null,
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-the-linear-programming-method-on-homogeneous-spa"
+    },
+    {
+      "level": 1,
+      "title": "The case of unitary codes",
+      "number": null,
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-the-case-of-unitary-codes"
+    },
+    {
+      "level": 1,
+      "title": "Analytic bounds of low degree",
+      "number": null,
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-analytic-bounds-of-low-degree"
+    },
+    {
+      "level": 1,
+      "title": "Numerical bounds",
+      "number": null,
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-numerical-bounds"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions",
+      "number": null,
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-conclusions"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 62,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "linear programming",
+          "heading": false
+        },
+        {
+          "term": "diversity",
+          "heading": false
+        },
+        {
+          "term": "codes",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0803.1227v1 [cs.IT] 8 Mar 2008 Linear programming bounds for unitary space time codes Jean Creignou Herv´e Diet October 25, 2018 Abstract The linear programming method is applied to the space Un(C) of uni- tary matrices in order to obtain bounds for codes relative to the diversity sum and the diversity product. Theoretical and numerical results improv- ing previously known bounds are derived.",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-0803.1227v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 415,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unitary codes",
+          "heading": false
+        },
+        {
+          "term": "diversity sum",
+          "heading": false
+        },
+        {
+          "term": "diversity product",
+          "heading": false
+        },
+        {
+          "term": "delsarte",
+          "heading": false
+        },
+        {
+          "term": "programming method",
+          "heading": false
+        },
+        {
+          "term": "code right",
+          "heading": false
+        },
+        {
+          "term": "unitary groups",
+          "heading": false
+        },
+        {
+          "term": "linear programming",
+          "heading": false
+        }
+      ],
+      "extract": "Nowadays breakthrough of wireless communications has provided new and nice problems to the field of coding theory. Indeed strategic issues of MIMO communications has lead to consider coding in Grassmann and Stiefel manifolds, and also in unitary groups [@TSE]. Codes in unitary groups are useful in the context of non-coherent flat Rayleigh channel as shown in [@MARZETTA]. The performance of a unitary space-time code",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-the-linear-programming-method-on-homogeneous-spa",
+      "number": null,
+      "title": "The linear programming method on homogeneous spaces",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 535,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "code subset",
+          "heading": false
+        },
+        {
+          "term": "homogeneous spaces",
+          "heading": true
+        },
+        {
+          "term": "tau",
+          "heading": false
+        },
+        {
+          "term": "aligned sum",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        },
+        {
+          "term": "end aligned",
+          "heading": false
+        },
+        {
+          "term": "programming",
+          "heading": true
+        },
+        {
+          "term": "finite subset",
+          "heading": false
+        }
+      ],
+      "extract": "We briefly describe the linear programming method on homogeneous spaces. For more details we refer to [@LEVEN], [@CS Chapter 9] for a treatment of 2-point homogeneous spaces, and to [@CHRISTINE1] for the prominent case of Grassmann codes. Let $G$ be a compact group acting transitively and continuously on a compact space $X$, and $\\tau : X\\times X \\to Y$ such that $\\tau$ characterizes the orbits of $G$ acting on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-the-case-of-unitary-codes",
+      "number": null,
+      "title": "The case of unitary codes",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 614,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chi lambda",
+          "heading": false
+        },
+        {
+          "term": "lambda succ",
+          "heading": false
+        },
+        {
+          "term": "cos theta",
+          "heading": false
+        },
+        {
+          "term": "polynomials lambda",
+          "heading": false
+        },
+        {
+          "term": "partition lambda",
+          "heading": false
+        },
+        {
+          "term": "conj chi",
+          "heading": false
+        },
+        {
+          "term": "chi otimes",
+          "heading": false
+        },
+        {
+          "term": "sum lambda",
+          "heading": false
+        }
+      ],
+      "extract": "As a particular case we set $G=\\U_n(\\C)\\times \\U_n(\\C)$ and $X=\\U_n(\\C)$. For $g=U\\times V$ and $x=M$ we set $gx=UMV^{-1}$. In this context the orbit of a pair $(x,y)$ is characterized by the eigenvalues $(e^{i\\theta_1},...,e^{i\\theta_n})$ of the unitary matrix $xy^{-1}$. The Peter-Weil theorem gives a decomposition of $L^2(X)$ into irreducible subspaces $$\\label{dec} L^2(X)=\\oplus (V_{\\chi}\\otimes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-analytic-bounds-of-low-degree",
+      "number": null,
+      "title": "Analytic bounds of low degree",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 364,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quad code",
+          "heading": false
+        },
+        {
+          "term": "time code",
+          "heading": false
+        },
+        {
+          "term": "let code",
+          "heading": false
+        },
+        {
+          "term": "funda",
+          "heading": false
+        },
+        {
+          "term": "quad text",
+          "heading": false
+        },
+        {
+          "term": "thm label",
+          "heading": false
+        },
+        {
+          "term": "cos theta",
+          "heading": false
+        },
+        {
+          "term": "frac label",
+          "heading": false
+        }
+      ],
+      "extract": "From the explicit description of the zonal functions [\\[P1\\]](#P1){reference-type=\"eqref\" reference=\"P1\"}, we have deduced convenient polynomials of low degree which verify the positivity property. Using formula ([\\[FUNDA\\]](#FUNDA){reference-type=\"ref\" reference=\"FUNDA\"}) we derive the analytic bounds of Theorems [\\[THM1\\]](#THM1){reference-type=\"ref\" reference=\"THM1\"} and [\\[THM2\\]](#THM2){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-numerical-bounds",
+      "number": null,
+      "title": "Numerical bounds",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 494,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diversity product",
+          "heading": false
+        },
+        {
+          "term": "diversity sum",
+          "heading": false
+        },
+        {
+          "term": "diversity functions",
+          "heading": false
+        },
+        {
+          "term": "bounds",
+          "heading": true
+        },
+        {
+          "term": "programming bounds",
+          "heading": false
+        },
+        {
+          "term": "recite",
+          "heading": false
+        },
+        {
+          "term": "rosen",
+          "heading": false
+        },
+        {
+          "term": "deg2prod",
+          "heading": false
+        }
+      ],
+      "extract": "Numerical programs give accurate approximations of the best linear programming bounds over a large interval of validity, not covered by the bounds proved in Section IV. The following curves plot the linear programming bound on the diversity functions as a function of the cardinality of the code. The programs optimize the choice of a polynomial in the variables $(\\cos\\theta_1,\\dots,\\cos\\theta_n)$, with degree at most",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-conclusions",
+      "number": null,
+      "title": "Conclusions",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 435,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ieee trans",
+          "heading": false
+        },
+        {
+          "term": "programming bounds",
+          "heading": false
+        },
+        {
+          "term": "unitary space-time",
+          "heading": false
+        },
+        {
+          "term": "inform",
+          "heading": false
+        },
+        {
+          "term": "linear programming",
+          "heading": false
+        },
+        {
+          "term": "codes",
+          "heading": false
+        },
+        {
+          "term": "programming method",
+          "heading": false
+        },
+        {
+          "term": "theory vol",
+          "heading": false
+        }
+      ],
+      "extract": "Conclusions In this paper we have developed the linear programming method for the unitary space time codes. We have obtained both numerical and analytic bounds. The 9 results improve previously known bounds. Furthermore the linear programming method allows to deal with non-distance functions as the diversity product di- rectly. Acknowledgment The authors would like to thank Christine Bachoc for her precious advises",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "diversity sum",
+      "heading": false
+    },
+    {
+      "term": "diversity functions",
+      "heading": false
+    },
+    {
+      "term": "diversity product",
+      "heading": false
+    },
+    {
+      "term": "programming bounds",
+      "heading": false
+    },
+    {
+      "term": "unitary codes",
+      "heading": true
+    },
+    {
+      "term": "time code",
+      "heading": false
+    },
+    {
+      "term": "grassmann codes",
+      "heading": false
+    },
+    {
+      "term": "code subset",
+      "heading": false
+    },
+    {
+      "term": "code right",
+      "heading": false
+    },
+    {
+      "term": "quad code",
+      "heading": false
+    },
+    {
+      "term": "let code",
+      "heading": false
+    },
+    {
+      "term": "linear programming",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 6,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 7,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p9); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 7 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0803.1227v1"
+  }
+}

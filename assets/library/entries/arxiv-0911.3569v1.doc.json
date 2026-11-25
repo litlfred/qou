@@ -1,0 +1,1886 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0911.3569v1",
+  "title": "arxiv-0911.3569v1",
+  "variant": "pdf",
+  "pages": 30,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction.",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Stable polynomials.",
+      "number": "2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-stable-polynomials"
+    },
+    {
+      "level": 2,
+      "title": "Examples.",
+      "number": "2.1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-examples"
+    },
+    {
+      "level": 2,
+      "title": "Elementary properties.",
+      "number": "2.2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-elementary-properties"
+    },
+    {
+      "level": 2,
+      "title": "Univariate stable polynomials.",
+      "number": "2.3",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-univariate-stable-polynomials"
+    },
+    {
+      "level": 2,
+      "title": "Multivariate analogues of the HKO and HB Theorems.",
+      "number": "2.4",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-24-multivariate-analogues-of-the-hko-and-hb-theo"
+    },
+    {
+      "level": 1,
+      "title": "Multiaffine stable polynomials.",
+      "number": "3",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-3-multiaffine-stable-polynomials"
+    },
+    {
+      "level": 2,
+      "title": "A criterion for real stability.",
+      "number": "3.1",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-31-a-criterion-for-real-stability"
+    },
+    {
+      "level": 2,
+      "title": "Linear transformations preserving stability – multiaffine case.",
+      "number": "3.2",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-32-linear-transformations-preserving-stability-m"
+    },
+    {
+      "level": 1,
+      "title": "The Grace-Walsh-Szego Coincidence Theorem.",
+      "number": "4",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-4-the-grace-walsh-szego-coincidence-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Reduction to the case of stable polynomials.",
+      "number": "4.1",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-41-reduction-to-the-case-of-stable-polynomials"
+    },
+    {
+      "level": 2,
+      "title": "Partial symmetrization.",
+      "number": "4.2",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-42-partial-symmetrization"
+    },
+    {
+      "level": 2,
+      "title": "Convergence to the polarization.",
+      "number": "4.3",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-43-convergence-to-the-polarization"
+    },
+    {
+      "level": 1,
+      "title": "Polarization arguments and stability preservers.",
+      "number": "5",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-5-polarization-arguments-and-stability-preserver"
+    },
+    {
+      "level": 2,
+      "title": "The real stability criterion revisited.",
+      "number": "5.1",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-51-the-real-stability-criterion-revisited"
+    },
+    {
+      "level": 2,
+      "title": "Linear transformations preserving stability – polynomial case.",
+      "number": "5.2",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-52-linear-transformations-preserving-stability-p"
+    },
+    {
+      "level": 2,
+      "title": "Linear transformations preserving stability – transcendental case.",
+      "number": "5.3",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Johnson's Conjectures.",
+      "number": "6",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-6-johnsons-conjectures"
+    },
+    {
+      "level": 1,
+      "title": "The symmetric exclusion process.",
+      "number": "7",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-7-the-symmetric-exclusion-process"
+    },
+    {
+      "level": 2,
+      "title": "Negative correlation and negative association.",
+      "number": "7.1",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-71-negative-correlation-and-negative-association"
+    },
+    {
+      "level": 2,
+      "title": "A conjecture of Liggett and Pemantle.",
+      "number": "7.2",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-72-a-conjecture-of-liggett-and-pemantle"
+    },
+    {
+      "level": 2,
+      "title": "Further observations.",
+      "number": "7.3",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-73-further-observations"
+    },
+    {
+      "level": 1,
+      "title": "Inequalities for mixed discriminants.",
+      "number": "8",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-8-inequalities-for-mixed-discriminants"
+    },
+    {
+      "level": 1,
+      "title": "Further Directions.",
+      "number": "9",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-9-further-directions"
+    },
+    {
+      "level": 2,
+      "title": "Other circular regions.",
+      "number": "9.1",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-91-other-circular-regions"
+    },
+    {
+      "level": 2,
+      "title": "Applications of Theorem 5.4.",
+      "number": "9.2",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-92-applications-of-theorem-54"
+    },
+    {
+      "level": 2,
+      "title": "A converse to the Grace-Walsh-Szego Theorem.",
+      "number": "9.3",
+      "page": 28,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-93-a-converse-to-the-grace-walsh-szego-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Phase and support theorems.",
+      "number": "9.4",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-94-phase-and-support-theorems"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 123,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "julius borcea",
+          "heading": false
+        },
+        {
+          "term": "multivariate stable",
+          "heading": false
+        },
+        {
+          "term": "memoriam",
+          "heading": false
+        },
+        {
+          "term": "petter",
+          "heading": false
+        }
+      ],
+      "extract": "MULTIVARIATE STABLE POLYNOMIALS: THEORY AND APPLICATIONS DAVID G. WAGNER In memoriam Julius Borcea. Abstract. Univariate polynomials with only real roots – while special – do occur often enough that their properties can lead to interesting conclusions in diverse areas. Due mainly to the recent work of two young mathematicians, Julius Borcea and Petter Br¨and´en, a very successful multivariate generaliza- tion of",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0911.3569v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction.",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 308,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multiaffine stable",
+          "heading": false
+        },
+        {
+          "term": "multivariate generalization",
+          "heading": false
+        },
+        {
+          "term": "stable polynomials",
+          "heading": false
+        },
+        {
+          "term": "der waerden",
+          "heading": false
+        },
+        {
+          "term": "section presents",
+          "heading": false
+        },
+        {
+          "term": "waerden conjecture",
+          "heading": false
+        },
+        {
+          "term": "borcea",
+          "heading": false
+        },
+        {
+          "term": "olya-schur theorem",
+          "heading": false
+        }
+      ],
+      "extract": "I have been asked by the AMS to survey the recent work of Julius Borcea and Petter Br\\\"and\\'en on their multivariate generalization of the theory of univariate polynomials with only real roots, and its applications. It is exciting work -- elementary but subtle, and with spectacular consequences. Borcea and Br\\\"and\\'en take center stage but there are many other actors, many of whom I am unable to mention in this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-stable-polynomials",
+      "number": "2",
+      "title": "Stable polynomials.",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 465,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stable polynomials",
+          "heading": true
+        },
+        {
+          "term": "section presents",
+          "heading": false
+        },
+        {
+          "term": "borcea",
+          "heading": false
+        },
+        {
+          "term": "indeterminates",
+          "heading": false
+        },
+        {
+          "term": "multivariate",
+          "heading": false
+        },
+        {
+          "term": "nonvanishing",
+          "heading": false
+        },
+        {
+          "term": "lack",
+          "heading": false
+        },
+        {
+          "term": "sequence",
+          "heading": false
+        }
+      ],
+      "extract": "we use parts of the forgoing for Borcea and Br¨and´en’s splendid proof of the Grace- Walsh-Szeg˝o Coincidence Theorem. In Section 5, the Grace-Walsh-Szeg˝o Theorem is used to extend the results of Section 3 from multiaﬃne to arbitrary stable polyno- mials. This culminates in an amazing multivariate generalization of the P´olya-Schur Theorem, the proof of which requires the development of a multivariate extension of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-examples",
+      "number": "2.1",
+      "title": "Examples.",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 304,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qxq dagger",
+          "heading": false
+        },
+        {
+          "term": "real stable",
+          "heading": false
+        },
+        {
+          "term": "semidefinite",
+          "heading": false
+        },
+        {
+          "term": "coro",
+          "heading": false
+        },
+        {
+          "term": "overline",
+          "heading": false
+        },
+        {
+          "term": "det",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{prop}[Proposition 2.4 of \\cite{BB1}] For $i\\in[m]$, let $A_i$ be an $n$-by-$n$ matrix and let $x_i$ be an indeterminate, and let $B$ be an $n$-by-$n$ matrix. If $A_i$ is positive semidefinite for all $i\\in[m]$ and $B$ is Hermitian then $$ f(\\x) = \\det(x_1 A_1 + x_2 A_2 + \\cdots + x_m A_m + B) $$ is real stable. \\end{prop} \\begin{proof} Let $\\overline{f}$ denote the coefficientwise complex conjugate of $f$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-elementary-properties",
+      "number": "2.2",
+      "title": "Elementary properties.",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 422,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textup",
+          "heading": false
+        },
+        {
+          "term": "textbf",
+          "heading": false
+        },
+        {
+          "term": "let deg",
+          "heading": false
+        },
+        {
+          "term": "goesto",
+          "heading": false
+        },
+        {
+          "term": "stable",
+          "heading": false
+        },
+        {
+          "term": "begin lemma",
+          "heading": false
+        },
+        {
+          "term": "end lemma",
+          "heading": false
+        },
+        {
+          "term": "mapsto",
+          "heading": false
+        }
+      ],
+      "extract": "The following simple observation often allows multivariate problems to be reduced to univariate ones, as will be seen. \\begin{lemma} A polynomial $f\\in\\CC[\\x]$ is stable if and only if for all $\\a,\\b\\in\\RR^m$ with $\\b>\\zero$, $f(\\a + \\b t)$ is stable in $\\Stab[t]$. \\end{lemma} \\begin{proof} Since $\\HH^{m} = \\{\\a+\\b t:\\ \\a,\\b\\in\\RR^{m},\\ \\b>\\zero,\\ \\mathrm{and}\\ t\\in\\HH\\}$, the result follows. \\end{proof} For",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-univariate-stable-polynomials",
+      "number": "2.3",
+      "title": "Univariate stable polynomials.",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1083,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stable",
+          "heading": true
+        },
+        {
+          "term": "leq theta",
+          "heading": false
+        },
+        {
+          "term": "deg leq",
+          "heading": false
+        },
+        {
+          "term": "cdots leq",
+          "heading": false
+        },
+        {
+          "term": "real stable",
+          "heading": false
+        },
+        {
+          "term": "stable whenever",
+          "heading": false
+        },
+        {
+          "term": "stability preservers",
+          "heading": false
+        },
+        {
+          "term": "ghat",
+          "heading": false
+        }
+      ],
+      "extract": "A nonzero univariate polynomial is real stable if and only if it has only real roots. Let $f$ and $g$ be two such polynomials, let $\\xi_{1}\\leq\\xi_{2}\\leq\\cdots\\leq\\xi_{k}$ be the roots of $f$, and let $\\theta_{1}\\leq\\theta_{2}\\leq\\cdots\\leq\\theta_{\\ell}$ be the roots of $g$. These roots are \\emph{interlaced} if they are ordered so that $\\xi_{1}\\leq\\theta_{1}\\leq\\xi_{2}\\leq\\theta_{2}\\leq\\cdots$ or",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-multivariate-analogues-of-the-hko-and-hb-theo",
+      "number": "2.4",
+      "title": "Multivariate analogues of the HKO and HB Theorems.",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1587,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fhat ghat",
+          "heading": false
+        },
+        {
+          "term": "hko",
+          "heading": true
+        },
+        {
+          "term": "stabr",
+          "heading": false
+        },
+        {
+          "term": "lambda leq",
+          "heading": false
+        },
+        {
+          "term": "stab",
+          "heading": false
+        },
+        {
+          "term": "let lambda",
+          "heading": false
+        },
+        {
+          "term": "textup",
+          "heading": false
+        },
+        {
+          "term": "begin exercise",
+          "heading": false
+        }
+      ],
+      "extract": "By analogy with the univariate HB Theorem, polynomials $f,g\\in\\RR[\\x]$ are said to be in \\emph{proper position}, denoted by $f\\ll g$, when $g+\\i f\\in\\Stab[\\x]$. (As will be seen, this implies that $f,g\\in\\StabR[\\x]$.) Thus, the multivariate analogue of Hermite-Biehler is a \\underline{definition}, not a theorem. \\begin{prop}[Lemma 1.8 and Remark 1.3 of \\cite{BB5}] Let $f,g\\in\\CC[\\x]$.\\\\ \\textup{(a)}\\ If",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-3-multiaffine-stable-polynomials",
+      "number": "3",
+      "title": "Multiaffine stable polynomials.",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 84,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multiaffine",
+          "heading": true
+        },
+        {
+          "term": "euscript",
+          "heading": false
+        },
+        {
+          "term": "polynomials",
+          "heading": true
+        }
+      ],
+      "extract": "A polynomial $f$ is \\emph{multiaffine} if each indeterminate occurs at most to the first power in $f$. For a set $\\EuScript{S}$ of polynomials, let $\\EuScript{S}^\\ma$ denote the set of multiaffine polynomials in $\\EuScript{S}$. For multiaffine $f\\in\\CC[\\x]^{\\ma}$ and $i\\in[m]$ we use the ``ultra-shorthand'' notation $f = f^{i} + x_{i} f_{i}$ in which $f^{i} = f|_{x_{i}=0}$ and $f_{i} = \\partial_{i} f$. This notation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-31-a-criterion-for-real-stability",
+      "number": "3.1",
+      "title": "A criterion for real stability.",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 715,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hij",
+          "heading": false
+        },
+        {
+          "term": "real stable",
+          "heading": false
+        },
+        {
+          "term": "ihk",
+          "heading": false
+        },
+        {
+          "term": "delta",
+          "heading": false
+        },
+        {
+          "term": "showoff",
+          "heading": false
+        },
+        {
+          "term": "showon",
+          "heading": false
+        },
+        {
+          "term": "cdot partial",
+          "heading": false
+        },
+        {
+          "term": "geq",
+          "heading": false
+        }
+      ],
+      "extract": "For $f\\in\\CC[\\x]$ and $\\{i,j\\}\\subseteq[m]$, let $$ \\Delta_{ij}f = \\partial_i f \\cdot \\partial_j f - f \\cdot \\partial_i\\partial_j f. $$ Notice that for $f\\in\\CC[\\x]^\\ma$, $$ \\Delta_{ij}f = f_{i}^{j} f_{j} - f^{j} f_{ij} = \\Wr_{i}[f^{j},f_{j}] = -\\Wr_{i}[f_{j},f^{j}], $$ and $$ \\Delta_{ij}f = f_{i}^{j} f_{j}^{i} - f^{ij} f_{ij}. $$ \\begin{theorem}[Theorem 5.6 of \\cite{B} and Theorem 3 of \\cite{WW}] Let",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-32-linear-transformations-preserving-stability-m",
+      "number": "3.2",
+      "title": "Linear transformations preserving stability – multiaffine case.",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 619,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "maps stab",
+          "heading": false
+        },
+        {
+          "term": "multiaffine",
+          "heading": true
+        },
+        {
+          "term": "real stable",
+          "heading": false
+        },
+        {
+          "term": "stabr",
+          "heading": false
+        },
+        {
+          "term": "either textup",
+          "heading": false
+        },
+        {
+          "term": "goesto",
+          "heading": false
+        },
+        {
+          "term": "linear transformation",
+          "heading": false
+        },
+        {
+          "term": "sum subseteq",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{lemma}[Lieb-Sokal Lemma, Lemma 2.1 of \\cite{BB5}] Let $g(\\x)+yf(\\x)\\in\\Stab[\\x,y]$ be stable and such that $\\deg_i(f)\\leq 1$. Then $g-\\partial_{i}f \\in\\Stab[\\x]$ is stable. \\end{lemma} \\begin{proof} Since $g$ is stable (by specialization to $y=0$), there is nothing to prove if $\\partial_i f\\equiv 0$ identically, so assume otherwise (and hence that $f\\not\\equiv 0$). By permutation we can assume that $i=1$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-4-the-grace-walsh-szego-coincidence-theorem",
+      "number": "4",
+      "title": "The Grace-Walsh-Szego Coincidence Theorem.",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 273,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circular region",
+          "heading": false
+        },
+        {
+          "term": "pol",
+          "heading": false
+        },
+        {
+          "term": "black dots",
+          "heading": false
+        },
+        {
+          "term": "gws",
+          "heading": false
+        },
+        {
+          "term": "leq cdots",
+          "heading": false
+        },
+        {
+          "term": "grace-walsh-szeg",
+          "heading": false
+        }
+      ],
+      "extract": "Let $f\\in\\CC[x]$ be a univariate polynomial of degree at most $m$, and let $\\x=(x_1,...,x_m)$ as usual. For $0\\leq j\\leq m$, the \\emph{$j$-th elementary symmetric function} of $\\x$ is $$ e_j(\\x) = \\sum_{1\\leq i_1<\\cdots< i_j\\leq m} x_{i_1}\\cdots x_{i_j} = \\sum_{S\\subseteq[m]:\\ |S|=j} \\x^{S}. $$ The \\emph{$m$-th polarization} of $f$ is the polynomial obtained as the image of $f$ under the linear transformation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-41-reduction-to-the-case-of-stable-polynomials",
+      "number": "4.1",
+      "title": "Reduction to the case of stable polynomials.",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 407,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circular regions",
+          "heading": false
+        },
+        {
+          "term": "open circular",
+          "heading": false
+        },
+        {
+          "term": "prove gws",
+          "heading": false
+        },
+        {
+          "term": "pol",
+          "heading": false
+        },
+        {
+          "term": "stable",
+          "heading": true
+        },
+        {
+          "term": "either deg",
+          "heading": false
+        },
+        {
+          "term": "phi",
+          "heading": false
+        },
+        {
+          "term": "convex",
+          "heading": false
+        }
+      ],
+      "extract": "First of all, it suffices to prove GWS for open circular regions, since a closed circular region is the intersection of all the open circular regions which contain it. Second, it suffices to show that for any $g\\in\\CC[x]$ of degree at most $m$, if $\\deg(g)=m$ or $\\A$ is convex, and $\\z\\in\\A^m$ is such that $\\Pol_m g(\\z)= 0$, then there exists $z\\in\\A$ such that $g(z)=0$. This implies the stated form of GWS by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-42-partial-symmetrization",
+      "number": "4.2",
+      "title": "Partial symmetrization.",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 219,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lambda leq",
+          "heading": false
+        },
+        {
+          "term": "lambda tau",
+          "heading": false
+        },
+        {
+          "term": "multiaffine",
+          "heading": false
+        },
+        {
+          "term": "circ sigma",
+          "heading": false
+        },
+        {
+          "term": "alpha circ",
+          "heading": false
+        }
+      ],
+      "extract": "The group $\\S(m)$ of all permutations $\\sigma:[m]\\goesto[m]$ acts on $\\CC[\\x]$ by the rule $\\sigma(f)(x_1,...,x_m)=f(x_{\\sigma(1)},...,x_{\\sigma(m)})$. Notice that $$ \\sigma(\\x^\\alpha) = \\prod_{i=1}^m x_{\\sigma(i)}^{\\alpha(i)} = \\prod_{i=1}^m x_i^{\\alpha\\circ\\sigma^{-1}(i)} = \\x^{\\alpha\\circ\\sigma^{-1}}. $$ For $\\{i,j\\}\\subseteq[m]$, let $\\tau_{ij}$ be the transposition that exchanges $i$ and $j$ and fixes all other",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-43-convergence-to-the-polarization",
+      "number": "4.3",
+      "title": "Convergence to the polarization.",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 413,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textup",
+          "heading": false
+        },
+        {
+          "term": "sum subseteq",
+          "heading": false
+        },
+        {
+          "term": "multiaffine",
+          "heading": false
+        },
+        {
+          "term": "pol",
+          "heading": false
+        },
+        {
+          "term": "begin exercise",
+          "heading": false
+        },
+        {
+          "term": "end exercise",
+          "heading": false
+        },
+        {
+          "term": "binom right",
+          "heading": false
+        },
+        {
+          "term": "omega",
+          "heading": false
+        }
+      ],
+      "extract": "Let $0\\not\\equiv f(x)\\in\\Stab[x]$ be a univariate stable polynomial of degree at most $m$:\\ say $f(x) = c(x-\\xi_1)\\cdots(x-\\xi_n)$ in which $c\\neq 0$, $n\\leq m$, and $\\xi_i\\not\\in\\HH$ for all $i\\in[n]$. Then the polynomial $F_0\\in\\CC[\\x]$ defined by $$ F_0(x_1,...,x_m)=c(x_1-\\xi_1)\\cdots(x_n-\\xi_n) $$ is multiaffine and stable, and $F_0(x,...,x)=f(x)$. Let $\\Sigma=(\\{i_k,j_k\\}:\\ k\\in\\NN)$ be a sequence of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-5-polarization-arguments-and-stability-preserver",
+      "number": "5",
+      "title": "Polarization arguments and stability preservers.",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 125,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pol kappa",
+          "heading": false
+        },
+        {
+          "term": "leq kappa",
+          "heading": false
+        },
+        {
+          "term": "emph kappa",
+          "heading": false
+        },
+        {
+          "term": "transformation pol",
+          "heading": false
+        }
+      ],
+      "extract": "For $\\kappa\\in\\NN^m$ and a set $\\S\\subseteq\\CC[\\x]$ of polynomials, let $\\S^{\\leq\\kappa}$ be the set of all $f\\in\\S$ such that $\\deg_i(f)\\leq \\kappa(i)$ for all $i\\in[m]$. Let $$ I(\\kappa) = \\{(i,j):\\ i\\in[m]\\ \\mathrm{and}\\ j\\in[\\kappa(i)]\\} $$ and let $\\u=\\{u_{ij}:\\ (i,j)\\in I(\\kappa)\\}$ be indeterminates. For $f\\in\\CC[\\x]^{\\leq\\kappa}$, Let $\\Pol_{\\kappa(i)}^{(i)} f$ denote the \\emph{$\\kappa(i)$-th polarization of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-51-the-real-stability-criterion-revisited",
+      "number": "5.1",
+      "title": "The real stability criterion revisited.",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 127,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pol kappa",
+          "heading": false
+        },
+        {
+          "term": "leq kappa",
+          "heading": false
+        },
+        {
+          "term": "gws",
+          "heading": false
+        },
+        {
+          "term": "stable",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{prop} Let $\\kappa\\in\\NN^{m}$ and $f\\in\\CC[x]^{\\leq\\kappa}$. Then $\\Pol_\\kappa f$ is stable if and only if $f$ is stable. \\end{prop} \\begin{proof} Diagonalization implies that if $\\Pol_\\kappa f$ is stable then $f$ is stable, so only the converse implication needs proof. Assume that $f$ is stable, and let $z_{ij}\\in\\HH$ for $(i,j)\\in I(\\kappa)$. By induction on $m$, repeated application of GWS shows that there",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-52-linear-transformations-preserving-stability-p",
+      "number": "5.2",
+      "title": "Linear transformations preserving stability – polynomial case.",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 981,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "goesto stab",
+          "heading": false
+        },
+        {
+          "term": "kappa goesto",
+          "heading": false
+        },
+        {
+          "term": "pol kappa",
+          "heading": false
+        },
+        {
+          "term": "overline stab",
+          "heading": false
+        },
+        {
+          "term": "leq kappa",
+          "heading": false
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "maps stab",
+          "heading": false
+        },
+        {
+          "term": "widetilde eta",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{theorem}[Theorem 1.1 of \\cite{BB5}] Let $\\kappa\\in\\NN^m$, and let $T:\\CC[\\x]^{\\leq\\kappa}\\goesto\\CC[\\x]$ be a linear transformation. Then $T$ maps $\\Stab[\\x]^{\\leq\\kappa}$ into $\\Stab[\\x]$ if and only if either\\\\ \\textup{(a)}\\ $T(f) = \\eta(f)\\cdot p$ for some linear functional $\\eta:\\CC[\\x]^{\\leq\\kappa}\\goesto\\CC$ and $p\\in\\Stab[\\x]$, or\\\\ \\textup{(b)}\\ the polynomial $T((\\x+\\y)^\\kappa)$ is stable in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-6-johnsons-conjectures",
+      "number": "6",
+      "title": "Johnson's Conjectures.",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 966,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "leq iota",
+          "heading": false
+        },
+        {
+          "term": "ell det",
+          "heading": false
+        },
+        {
+          "term": "widehat sigma",
+          "heading": false
+        },
+        {
+          "term": "polynomial det",
+          "heading": false
+        },
+        {
+          "term": "sigma n-j",
+          "heading": false
+        },
+        {
+          "term": "frac widehat",
+          "heading": false
+        },
+        {
+          "term": "real stable",
+          "heading": false
+        },
+        {
+          "term": "cdots leq",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\A = (A_{1},\\ldots,A_{k})$ be a $k$-tuple of $n$-by-$n$ matrices. Define the \\emph{mixed determinant} of $\\A$ to be $$ \\Det(\\A) = \\Det(A_{1},\\ldots,A_{k}) = \\sum_{(S_{1},\\ldots,S_{k})} \\prod_{i=1}^{k} \\det A_{i}[S_{i}], $$ in which the sum is over all ordered sequences of $k$ pairwise disjoint subsets of $[n]$ such that $[n]=S_{1}\\cup\\cdots\\cup S_{k}$, and $A_{i}[S_{i}]$ is the principal submatrix of $A_{i}$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-7-the-symmetric-exclusion-process",
+      "number": "7",
+      "title": "The symmetric exclusion process.",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 329,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lambda goesto",
+          "heading": false
+        },
+        {
+          "term": "sites",
+          "heading": false
+        },
+        {
+          "term": "clock",
+          "heading": false
+        },
+        {
+          "term": "let lambda",
+          "heading": false
+        },
+        {
+          "term": "let varphi",
+          "heading": false
+        },
+        {
+          "term": "markov chain",
+          "heading": false
+        },
+        {
+          "term": "occupied",
+          "heading": false
+        },
+        {
+          "term": "vacant",
+          "heading": false
+        }
+      ],
+      "extract": "This section summarizes an application of stable polynomials to probability and statistical mechanics from a 2009 paper of Borcea, Br\\\"and\\'en and Liggett \\cite{BBL}. Let $\\Lambda$ be a set of \\emph{sites}. A symmetric exclusion process (SEP) is a type of Markov chain with state space a subset of $\\{0,1\\}^\\Lambda$. In a state $S:\\Lambda\\goesto\\{0,1\\}$, the sites in $S^{-1}(1)$ are \\emph{occupied} and the sites in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-71-negative-correlation-and-negative-association",
+      "number": "7.1",
+      "title": "Negative correlation and negative association.",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 371,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "distribution varphi",
+          "heading": false
+        },
+        {
+          "term": "omega goesto",
+          "heading": false
+        },
+        {
+          "term": "event",
+          "heading": false
+        },
+        {
+          "term": "textup",
+          "heading": false
+        },
+        {
+          "term": "probability distribution",
+          "heading": false
+        },
+        {
+          "term": "cite bbl",
+          "heading": false
+        },
+        {
+          "term": "emph",
+          "heading": false
+        },
+        {
+          "term": "lambda",
+          "heading": false
+        }
+      ],
+      "extract": "Consider a probability distribution $\\varphi$ on $\\Omega$. An \\emph{event} $\\E$ is any subset of $\\Omega$. The probability of the event $\\E$ is $\\Pr[\\E] = \\sum_{S\\in\\E} \\varphi(S)$. An event $\\E$ is \\emph{increasing} if whenever $S\\leq S'$ in $\\Omega$ and $S\\in\\E$, then $S'\\in\\E$. For example, if $K$ is any subset of $\\Lambda$ and $\\E_{K}$ is the event that all sites in $K$ are occupied, then $\\E_{K}$ is an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-72-a-conjecture-of-liggett-and-pemantle",
+      "number": "7.2",
+      "title": "A conjecture of Liggett and Pemantle.",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 850,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "distribution varphi",
+          "heading": false
+        },
+        {
+          "term": "sep preserves",
+          "heading": false
+        },
+        {
+          "term": "preserves stability",
+          "heading": false
+        },
+        {
+          "term": "liggett",
+          "heading": true
+        },
+        {
+          "term": "stab",
+          "heading": false
+        },
+        {
+          "term": "frac lambda",
+          "heading": false
+        },
+        {
+          "term": "sum lambda",
+          "heading": false
+        },
+        {
+          "term": "semigroup",
+          "heading": false
+        }
+      ],
+      "extract": "In the early 2000s, Liggett and Pemantle arrived independently at the following conjecture, now a theorem. \\begin{theorem}[Theorem 5.2 of \\cite{BBL}] If the initial distribution $\\varphi_0$ of a SEP is deterministic (\\emph{i.e.} concentrated on a single state) then $\\varphi_t$ is NA for all $t\\geq 0$. \\end{theorem} \\begin{proof} This amounts to finding a class $\\Stab$ of probability distributions such that:\\\\ (1)\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-73-further-observations",
+      "number": "7.3",
+      "title": "Further observations.",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 895,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multiaffine real",
+          "heading": false
+        },
+        {
+          "term": "begin coro",
+          "heading": false
+        },
+        {
+          "term": "end coro",
+          "heading": false
+        },
+        {
+          "term": "cite bbl",
+          "heading": false
+        },
+        {
+          "term": "beta lambda",
+          "heading": false
+        },
+        {
+          "term": "distribution varphi",
+          "heading": false
+        },
+        {
+          "term": "real stable",
+          "heading": false
+        },
+        {
+          "term": "hence varphi",
+          "heading": false
+        }
+      ],
+      "extract": "In verifying the hypotheses of the Feder-Mihail Theorem we used the fact that if $f\\in\\StabR[\\x]^{\\ma}$ is multiaffine and real stable, then $\\Delta_{ij}f(\\a)\\geq 0$ for all $\\{i,j\\}\\subseteq E$ and $\\a\\in\\RR^{m}$, by Theorem 3.1. In fact, we only needed the weaker hypothesis that $\\Delta_{ij}f(\\a)\\geq 0$ for all $\\{i,j\\}\\subseteq E$ and $\\a\\in\\RR^{m}$ with $\\a>\\zero$. A multiaffine real polynomial satisfying this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-8-inequalities-for-mixed-discriminants",
+      "number": "8",
+      "title": "Inequalities for mixed discriminants.",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1605,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "geq cap",
+          "heading": false
+        },
+        {
+          "term": "nonnegative reals",
+          "heading": false
+        },
+        {
+          "term": "deg leq",
+          "heading": false
+        },
+        {
+          "term": "nonnegative coefficients",
+          "heading": false
+        },
+        {
+          "term": "der waerden",
+          "heading": false
+        },
+        {
+          "term": "jensen inequality",
+          "heading": false
+        },
+        {
+          "term": "gurvits cite",
+          "heading": false
+        },
+        {
+          "term": "waerden conjecture",
+          "heading": false
+        }
+      ],
+      "extract": "This section summarizes a powerful application of stable polynomials from a 2008 paper of Gurvits \\cite{Gu}. We will use without mention the facts that $\\log$ and $\\exp$ are strictly increasing functions on $(0,\\infty)$. A function $\\rho:I\\goesto\\RR$ defined on an interval $I\\subseteq\\RR$ is \\emph{convex} provided that for all $a_1,a_2\\in I$, $\\rho((a_1+a_2)/2)\\leq (\\rho(a_1)+\\rho(a_2))/2$. It is \\emph{strictly",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-9-further-directions",
+      "number": "9",
+      "title": "Further Directions.",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-023-91-other-circular-regions",
+      "number": "9.1",
+      "title": "Other circular regions.",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 255,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circular regions",
+          "heading": true
+        },
+        {
+          "term": "omega stable",
+          "heading": false
+        },
+        {
+          "term": "kappa goesto",
+          "heading": false
+        },
+        {
+          "term": "hurwitz stable",
+          "heading": false
+        },
+        {
+          "term": "schur stable",
+          "heading": false
+        },
+        {
+          "term": "stable polynomial",
+          "heading": false
+        },
+        {
+          "term": "leq kappa",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\Omega\\subseteq\\CC^m$. A polynomial $f\\in\\CC[\\x]$ is \\emph{$\\Omega$-stable} if either $f\\equiv 0$ identically, or $f(\\z)\\neq 0$ for all $\\z\\in\\Omega$. At this level of generality little can be said. If $\\Omega=\\A_1\\times\\cdots\\times\\A_m$ is a product of open circular regions then there are M\\\"obius transformations $z\\mapsto \\phi_i(z)=(a_i z+b_i)/(c_i z+d_i)$ such that $\\phi_i(\\HH)=\\A_i$ for all $i\\in[m]$. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-92-applications-of-theorem-54",
+      "number": "9.2",
+      "title": "Applications of Theorem 5.4.",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 425,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schur stable",
+          "heading": false
+        },
+        {
+          "term": "schur stability",
+          "heading": false
+        },
+        {
+          "term": "alpha lambda",
+          "heading": false
+        },
+        {
+          "term": "preserves schur",
+          "heading": false
+        },
+        {
+          "term": "epsilon alpha",
+          "heading": false
+        },
+        {
+          "term": "lee-yang circle",
+          "heading": false
+        },
+        {
+          "term": "goesto",
+          "heading": false
+        },
+        {
+          "term": "sum subseteq",
+          "heading": false
+        }
+      ],
+      "extract": "It is natural to consider a multivariate anaogue of the multiplier sequences studied by P\\'olya and Schur. Let $\\lambda:\\NN^m\\goesto\\RR$, and define a linear transformation $T_\\lambda:\\CC[\\x]\\goesto\\CC[\\x]$ by $T_\\lambda(\\x^\\alpha)= \\lambda(\\alpha)\\x^\\alpha$ for all $\\alpha\\in\\NN^m$, and linear extension. For which $\\lambda$ does $T_{\\lambda}$ preserve real stability? The answer:\\ just the ones you get from the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-93-a-converse-to-the-grace-walsh-szego-theorem",
+      "number": "9.3",
+      "title": "A converse to the Grace-Walsh-Szego Theorem.",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 108,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transitive permutation",
+          "heading": false
+        },
+        {
+          "term": "multiaffine",
+          "heading": false
+        },
+        {
+          "term": "sum sigma",
+          "heading": false
+        }
+      ],
+      "extract": "The argument of Sections 4.2 and 4.3 can be used to prove the following. \\begin{exercise} If $f\\in\\Stab[\\x]^\\ma$ is multiaffine and stable then $$ T_{\\S(m)} (f) = \\frac{1}{m!} \\sum_{\\sigma\\in\\S(m)} \\sigma(f) $$ is multiaffine and stable. \\end{exercise} This is in fact equivalent to the GWS Theorem, since for all $f\\in\\CC[\\x]^{\\ma}$, $T_{\\S(m)}f(\\x) = \\Pol_{m} f(x,\\ldots,x)$. For which transitive permutation groups",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-94-phase-and-support-theorems",
+      "number": "9.4",
+      "title": "Phase and support theorems.",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 356,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "two-step axiom",
+          "heading": false
+        },
+        {
+          "term": "support supp",
+          "heading": false
+        },
+        {
+          "term": "jump system",
+          "heading": false
+        },
+        {
+          "term": "sum alpha",
+          "heading": false
+        },
+        {
+          "term": "definite parity",
+          "heading": false
+        },
+        {
+          "term": "nonnegative coefficients",
+          "heading": false
+        },
+        {
+          "term": "real nonnegative",
+          "heading": false
+        }
+      ],
+      "extract": "A polynomial $f\\in\\CC[\\x]$ has \\emph{definite parity} if every monomial $\\x^\\alpha$ occurring in $f$ has total degree of the same parity:\\ all are even, or all are odd. \\begin{theorem}[Theorem 6.2 of \\cite{COSW}] Let $f\\in\\CC[\\x]$ be Hurwitz stable and with definite parity. Then there is a phase $0\\leq \\theta < 2\\pi$ such that $\\mathrm{e}^{-\\i\\theta}f(\\x)$ has only real nonnegative coefficients. \\end{theorem} The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 357,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "olya schur",
+          "heading": false
+        },
+        {
+          "term": "lee yang",
+          "heading": false
+        },
+        {
+          "term": "london math",
+          "heading": false
+        },
+        {
+          "term": "borcea",
+          "heading": false
+        },
+        {
+          "term": "schur programs",
+          "heading": false
+        },
+        {
+          "term": "wagner",
+          "heading": false
+        },
+        {
+          "term": "stable polynomials",
+          "heading": false
+        },
+        {
+          "term": "homogeneous polynomials",
+          "heading": false
+        }
+      ],
+      "extract": "1. J. Borcea and P. Br¨and´en, Applications of stable polynomials to mixed determinants: John- son’s conjectures, unimodality, and symmetrized Fischer products, Duke Math. J. 143 (2008), 205–223. 2. J. Borcea and P. Br¨and´en, Lee–Yang problems and the geometry of multivariate polynomi- als, Lett. Math. Phys. 86 (2008), 53–61. 3. J. Borcea and P. Br¨and´en, P´olya–Schur master theorems for circular domains and their",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "multiaffine stable",
+      "heading": true
+    },
+    {
+      "term": "real stable",
+      "heading": false
+    },
+    {
+      "term": "goesto stab",
+      "heading": false
+    },
+    {
+      "term": "stable polynomials",
+      "heading": true
+    },
+    {
+      "term": "omega stable",
+      "heading": false
+    },
+    {
+      "term": "multivariate stable",
+      "heading": false
+    },
+    {
+      "term": "lambda goesto",
+      "heading": false
+    },
+    {
+      "term": "hurwitz stable",
+      "heading": false
+    },
+    {
+      "term": "schur stable",
+      "heading": false
+    },
+    {
+      "term": "kappa goesto",
+      "heading": false
+    },
+    {
+      "term": "stable whenever",
+      "heading": false
+    },
+    {
+      "term": "lambda leq",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Illustration of the Grace-Walsh-Szeg˝o Theorem",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p012-1",
+      "file": "images/img-p012-1.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 29,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 29,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p29); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 29 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0911.3569v1"
+  }
+}

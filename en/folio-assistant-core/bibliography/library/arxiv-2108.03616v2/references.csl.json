@@ -1,0 +1,23 @@
+[
+  {
+    "id": "arxiv-2108.03616v2",
+    "type": "article-journal",
+    "title": "Circuit imbalance measures and linear programming ∗",
+    "author": [
+      {
+        "family": "Farbod Ekbatani",
+        "given": "Bento Natura"
+      },
+      {
+        "family": "Végh",
+        "given": "László A."
+      }
+    ],
+    "issued": {
+      "raw": "D:20211214"
+    },
+    "URL": "https://arxiv.org/abs/2108.03616",
+    "abstract": "We study properties and applications of various circuit imbalance measures associated with linear spaces. These measures describe possible ratios between nonzero entries of support-minimal nonzero vectors of the space. The fractional circuit imbalance measure turns out to be a crucial parameter in the context of linear programming, and two integer variants can be used to describe integrality properties of associated polyhedra. We give an overview of the properties of these measures, and survey classical and recent applications, in particular, for linear programming algorithms with running time dependence on the constraint matrix only, and for circuit augmentation algorithms. We also present new bounds on the diameter and circuit diameter of polyhedra in terms of the fractional circuit imbalance measure.",
+    "note": "arXiv:2108.03616"
+  }
+]

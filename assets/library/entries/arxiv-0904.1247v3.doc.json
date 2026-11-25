@@ -1,0 +1,2167 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0904.1247v3",
+  "title": "arxiv-0904.1247v3",
+  "variant": "pdf",
+  "pages": 44,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Homotopical algebra of Hecke categories",
+      "number": "1.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-homotopical-algebra-of-hecke-categories"
+    },
+    {
+      "level": 2,
+      "title": "Functional analysis of D-module categories",
+      "number": "1.2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-functional-analysis-of-d-module-categories"
+    },
+    {
+      "level": 2,
+      "title": "Topological field theory",
+      "number": "1.3",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-topological-field-theory"
+    },
+    {
+      "level": 2,
+      "title": "Further discussion",
+      "number": "1.4",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-further-discussion"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgements",
+      "number": "1.5",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-15-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries on -categories",
+      "number": "2",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-2-preliminaries-on--categories"
+    },
+    {
+      "level": 2,
+      "title": "-category basics",
+      "number": "2.1",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-21--category-basics"
+    },
+    {
+      "level": 2,
+      "title": "Monoidal -categories and duals",
+      "number": "2.2",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Centers and traces",
+      "number": "2.3",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-23-centers-and-traces"
+    },
+    {
+      "level": 1,
+      "title": "Rigidity and dualizability",
+      "number": "3",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-3-rigidity-and-dualizability"
+    },
+    {
+      "level": 2,
+      "title": "Semi-rigid categories",
+      "number": "3.1",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-31-semi-rigid-categories"
+    },
+    {
+      "level": 2,
+      "title": "Transposes",
+      "number": "3.2",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-32-transposes"
+    },
+    {
+      "level": 2,
+      "title": "Bar constructions",
+      "number": "3.3",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-33-bar-constructions"
+    },
+    {
+      "level": 2,
+      "title": "Dualizability",
+      "number": "3.4",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-34-dualizability"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries on D-modules",
+      "number": "4",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-4-preliminaries-on-d-modules"
+    },
+    {
+      "level": 2,
+      "title": "D-modules on schemes",
+      "number": "4.1",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-41-d-modules-on-schemes"
+    },
+    {
+      "level": 2,
+      "title": "Coherence, tensor product, and Verdier duality",
+      "number": "4.2",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-42-coherence-tensor-product-and-verdier-duality"
+    },
+    {
+      "level": 2,
+      "title": "D-modules on stacks",
+      "number": "4.3",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-43-d-modules-on-stacks"
+    },
+    {
+      "level": 2,
+      "title": "More on coherence, tensor product, and Verdier duality",
+      "number": "4.4",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-44-more-on-coherence-tensor-product-and-verdier"
+    },
+    {
+      "level": 1,
+      "title": "Integral transforms for D-modules",
+      "number": "5",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-5-integral-transforms-for-d-modules"
+    },
+    {
+      "level": 2,
+      "title": "Functoriality over schemes",
+      "number": "5.1",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-51-functoriality-over-schemes"
+    },
+    {
+      "level": 2,
+      "title": "Functoriality over classifying stacks",
+      "number": "5.2",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-52-functoriality-over-classifying-stacks"
+    },
+    {
+      "level": 1,
+      "title": "Hecke categories and character sheaves",
+      "number": "6",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-6-hecke-categories-and-character-sheaves"
+    },
+    {
+      "level": 2,
+      "title": "Hecke categories",
+      "number": "6.1",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Loop spaces and horocycle correspondences",
+      "number": "6.2",
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-62-loop-spaces-and-horocycle-correspondences"
+    },
+    {
+      "level": 2,
+      "title": "Character sheaves",
+      "number": "6.3",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-63-character-sheaves"
+    },
+    {
+      "level": 1,
+      "title": "Monodromic variant",
+      "number": "7",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-7-monodromic-variant"
+    },
+    {
+      "level": 2,
+      "title": "Monodromic D-modules",
+      "number": "7.1",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-71-monodromic-d-modules"
+    },
+    {
+      "level": 2,
+      "title": "Monodromic Hecke categories",
+      "number": "7.2",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-72-monodromic-hecke-categories"
+    },
+    {
+      "level": 2,
+      "title": "Monodromic Hochschild calculations",
+      "number": "7.3",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-73-monodromic-hochschild-calculations"
+    },
+    {
+      "level": 2,
+      "title": "Character sheaves again",
+      "number": "7.4",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-74-character-sheaves-again"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 372,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hecke categories",
+          "heading": false
+        },
+        {
+          "term": "monodromic variant",
+          "heading": false
+        },
+        {
+          "term": "character sheaves",
+          "heading": false
+        },
+        {
+          "term": "hecke category",
+          "heading": false
+        },
+        {
+          "term": "unipotent character",
+          "heading": false
+        },
+        {
+          "term": "d-modules",
+          "heading": false
+        },
+        {
+          "term": "verdier duality",
+          "heading": false
+        },
+        {
+          "term": "harish",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0904.1247v3 [math.RT] 10 Feb 2015 THE CHARACTER THEORY OF A COMPLEX GROUP DAVID BEN-ZVI AND DAVID NADLER Abstract. We apply the ideas of derived algebraic geometry and topological ﬁeld theory to the representation theory of reductive groups. Our focus is the Hecke category of Borel-equivariant D-modules on the ﬂag variety of a complex reductive group G (equivalently, the category of Harish Chandra bimodules of",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0904.1247v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 1143,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "harish chandra",
+          "heading": false
+        },
+        {
+          "term": "hecke category",
+          "heading": false
+        },
+        {
+          "term": "c-linear categories",
+          "heading": false
+        },
+        {
+          "term": "d-modules",
+          "heading": false
+        },
+        {
+          "term": "unipotent character",
+          "heading": false
+        },
+        {
+          "term": "monodromic variant",
+          "heading": false
+        },
+        {
+          "term": "monoidal category",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        }
+      ],
+      "extract": "1. Introduction Geometric approaches to the representation theory of Lie groups G are intimately linked with the study of D-modules. For example, Harish Chandra established his celebrated regularity results for distributional characters of admissible representations of real reductive groups by showing that they satisfy an adjoint-equivariant regular holonomic system of diﬀerential equations. The resulting D-module",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-homotopical-algebra-of-hecke-categories",
+      "number": "1.1",
+      "title": "Homotopical algebra of Hecke categories",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 7,
+      "labelStart": "3",
+      "labelEnd": "7",
+      "words": 1772,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hecke categories",
+          "heading": true
+        },
+        {
+          "term": "category chg",
+          "heading": false
+        },
+        {
+          "term": "semi-rigid monoidal",
+          "heading": false
+        },
+        {
+          "term": "harish chandra",
+          "heading": false
+        },
+        {
+          "term": "character sheaves",
+          "heading": false
+        },
+        {
+          "term": "unipotent character",
+          "heading": false
+        },
+        {
+          "term": "monoidal trace",
+          "heading": false
+        },
+        {
+          "term": "character sheaf",
+          "heading": false
+        }
+      ],
+      "extract": "in Theorem 1.8, from the perspective of representation theory. We ﬁrst recall two categories of D-modules of fundamental interest in representation theory and of primary focus in this paper. 1.1.1. Hecke categories. Deﬁnition 1.1. 1) The Hecke category is the dg category HG = DG(G/B × G/B) ≃D(B\\G/B) of all B-biequivariant D-modules on G. 2) The monodromic Hecke category is the full dg subcategory e HG ⊂DG(G/N × G/N)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-functional-analysis-of-d-module-categories",
+      "number": "1.2",
+      "title": "Functional analysis of D-module categories",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "9",
+      "words": 1075,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quasicoherent sheaves",
+          "heading": false
+        },
+        {
+          "term": "d-module",
+          "heading": true
+        },
+        {
+          "term": "deligne-mumford stack",
+          "heading": false
+        },
+        {
+          "term": "classifying stack",
+          "heading": false
+        },
+        {
+          "term": "perfect stacks",
+          "heading": false
+        },
+        {
+          "term": "relative deligne-mumford",
+          "heading": false
+        },
+        {
+          "term": "arbitrary stack",
+          "heading": false
+        },
+        {
+          "term": "integral transforms",
+          "heading": false
+        }
+      ],
+      "extract": "formalism of D-module on stacks, as developed in [DrG1, GR], see Section 4. Our main interest is in results relating functors between D-module categories with integral transforms: given varieties X, Y and a D-module K on the product X × Y , one deﬁnes a functor on derived categories of D-modules D(X) / D(Y ) F ✤ / πY ∗(π! XF ⊗K). by pulling back from X to the product X × Y , tensoring with the integral kernel K, and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-topological-field-theory",
+      "number": "1.3",
+      "title": "Topological field theory",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 12,
+      "labelStart": "9",
+      "labelEnd": "12",
+      "words": 2172,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "oriented tft",
+          "heading": false
+        },
+        {
+          "term": "dimensional tft",
+          "heading": false
+        },
+        {
+          "term": "tft valued",
+          "heading": false
+        },
+        {
+          "term": "oriented tfts",
+          "heading": false
+        },
+        {
+          "term": "stc",
+          "heading": false
+        },
+        {
+          "term": "framed bordisms",
+          "heading": false
+        },
+        {
+          "term": "dualizable objects",
+          "heading": false
+        },
+        {
+          "term": "category alg",
+          "heading": false
+        }
+      ],
+      "extract": "of topological ﬁeld theory (TFT). We will not give a formal introduction to TFT but rather remind the reader of its broad outline informally and illustrate it via the example of ﬁnite group gauge theory. We refer to [L3] for a detailed overview of the ∞-categorical setting for TFT (including the ∞-version of n-categories) and the Cobordism Hypothesis. We only use the (∞, 2)-categorical language for motivation and it",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-further-discussion",
+      "number": "1.4",
+      "title": "Further discussion",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 647,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vee lambda",
+          "heading": false
+        },
+        {
+          "term": "mathcal vee",
+          "heading": false
+        },
+        {
+          "term": "mathfrak vee",
+          "heading": false
+        },
+        {
+          "term": "monodromic hecke",
+          "heading": false
+        },
+        {
+          "term": "centralizer vee",
+          "heading": false
+        },
+        {
+          "term": "twisted monodromic",
+          "heading": false
+        },
+        {
+          "term": "langlands duality",
+          "heading": false
+        },
+        {
+          "term": "widetilde mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#families label=\"families\"} We conclude the introduction with a brief discussion of twisted versions of our results and relations with supersymmetric gauge theory. ### Twisted ${\\mathcal D}$-modules and families version The results of this paper have natural analogues in which ${\\mathcal D}$-modules on flag varieties are replaced by twisted ${\\mathcal D}$-modules. The requisite arguments are formally identical,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-15-acknowledgements",
+      "number": "1.5",
+      "title": "Acknowledgements",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 200,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "grants dms",
+          "heading": false
+        },
+        {
+          "term": "nsf grants",
+          "heading": false
+        },
+        {
+          "term": "thank",
+          "heading": false
+        },
+        {
+          "term": "comments",
+          "heading": false
+        },
+        {
+          "term": "discussions",
+          "heading": false
+        },
+        {
+          "term": "reading",
+          "heading": false
+        }
+      ],
+      "extract": "we wish to thank for many patient explanations. We would like to thank Edward Witten for in- valuable extended discussions, in particular on the topic of supersymmetric gauge theories and dimensional reduction. Our work on this project beneﬁted greatly from our collaboration [BFN] with John Francis and many independent discussions with him, as well as from our ongoing col- laboration with Sam Gunningham, who",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-2-preliminaries-on--categories",
+      "number": "2",
+      "title": "Preliminaries on -categories",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 132,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "categories",
+          "heading": true
+        },
+        {
+          "term": "pre-triangulated",
+          "heading": false
+        },
+        {
+          "term": "highlighting",
+          "heading": false
+        },
+        {
+          "term": "bfn",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we summarize relevant technical foundations for homotopical algebra with ∞- categories. It is beyond the scope of this paper to provide a comprehensive discussion of these topics. We will instead focus on highlighting the particular concepts, results and their references that play a role in what follows. Our primary source is [L2]; for a less condensed overview, one could also consult [BFN] and [G].",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-21--category-basics",
+      "number": "2.1",
+      "title": "-category basics",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 18,
+      "labelStart": "14",
+      "labelEnd": "18",
+      "words": 2643,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "operatorname ind",
+          "heading": false
+        },
+        {
+          "term": "ind mathcal",
+          "heading": false
+        },
+        {
+          "term": "presentable infty",
+          "heading": false
+        },
+        {
+          "term": "operatorname vect",
+          "heading": false
+        },
+        {
+          "term": "star vee",
+          "heading": false
+        },
+        {
+          "term": "stable presentable",
+          "heading": false
+        },
+        {
+          "term": "mathcal dualizable",
+          "heading": false
+        },
+        {
+          "term": "cpt diamondsuit",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#infinity label=\"infinity\"} Roughly speaking, an $\\infty$-category (or synonymously $(\\infty, 1)$-category) encodes the notion of a category whose morphisms form topological spaces and whose compositions and associativity properties are defined up to coherent homotopies. The theory of $\\infty$-categories has many alternative formulations (see [@Bergner] for a comparison between the different versions). We will",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-23-centers-and-traces",
+      "number": "2.3",
+      "title": "Centers and traces",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 759,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbf cyc",
+          "heading": false
+        },
+        {
+          "term": "hochschild cosimplicial",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "simeq otimes",
+          "heading": false
+        },
+        {
+          "term": "hom otimes",
+          "heading": false
+        },
+        {
+          "term": "calculates mathop",
+          "heading": false
+        },
+        {
+          "term": "object otimes",
+          "heading": false
+        },
+        {
+          "term": "hochschild simplicial",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#defining centers label=\"defining centers\"} We briefly review the theory of Hochschild (co)homology of associative algebra objects in closed symmetric monoidal $\\infty$-categories, following [@BFN] to which we refer for more details. This is an $\\infty$-categorical version of the approach to topological Hochschild homology developed in [@EKMM; @shipley; @THH]. Let $\\mathcal S$ be a closed symmetric monoidal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-3-rigidity-and-dualizability",
+      "number": "3",
+      "title": "Rigidity and dualizability",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 38,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rigid categories",
+          "heading": false
+        },
+        {
+          "term": "dgcat",
+          "heading": false
+        },
+        {
+          "term": "duals",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#rigid categories label=\"rigid categories\"} In this section, we develop some general properties of monoidal categories with duals. See [@DGcat Section 6] for some related arguments under different hypotheses; for our applications we need to remove the assumption that the unit is compact.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-31-semi-rigid-categories",
+      "number": "3.1",
+      "title": "Semi-rigid categories",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": "20",
+      "labelEnd": "22",
+      "words": 829,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "semi-rigid",
+          "heading": true
+        },
+        {
+          "term": "colim star",
+          "heading": false
+        },
+        {
+          "term": "mathrm colim",
+          "heading": false
+        },
+        {
+          "term": "quasi-proper functors",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "simeq mathop",
+          "heading": false
+        },
+        {
+          "term": "semi-rigid monoidal",
+          "heading": false
+        },
+        {
+          "term": "semi-rigid category",
+          "heading": false
+        }
+      ],
+      "extract": "We continue here in the general setting $St_\\mathbb C$ of stable presentable $\\infty$-categories. Given a monoidal category $A\\in Alg(St_\\mathbb C)$, its multiplication map $\\mu:A\\otimes A\\to A$ can be regarded as a map of $A$-bimodules, or equivalently $A^e=A\\otimes A^{op}$ modules, where the left (respectively, right) $A$-action on $A\\otimes A$ is via the first (respectively, second) factor. We will be interested",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-32-transposes",
+      "number": "3.2",
+      "title": "Transposes",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 24,
+      "labelStart": "22",
+      "labelEnd": "24",
+      "words": 928,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vee star",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "simeq mathop",
+          "heading": false
+        },
+        {
+          "term": "semi-rigid monoidal",
+          "heading": false
+        },
+        {
+          "term": "hom otimes",
+          "heading": false
+        },
+        {
+          "term": "mathrm comod",
+          "heading": false
+        },
+        {
+          "term": "transpose xymatrix",
+          "heading": false
+        },
+        {
+          "term": "aligned mathop",
+          "heading": false
+        }
+      ],
+      "extract": "A semi-rigid monoidal category $A\\in Alg(St_\\mathbb C)$, being compactly generated, is dualizable with dual $A'$. The coevaluation functor, $$\\xymatrix{ \\eta:\\operatorname{Vect}_\\mathbb C\\ar[r] & A'\\otimes A }$$ sends the unit $\\mathbb C$ to the Hom bimodule $[\\mathop{\\mathrm{Hom}}]\\in A'\\otimes A$ which is determined by $$\\mathop{\\mathrm{Hom}}_{A'\\otimes A}(m\\otimes n,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-33-bar-constructions",
+      "number": "3.3",
+      "title": "Bar constructions",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 660,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reversing arrows",
+          "heading": false
+        },
+        {
+          "term": "simeq mathop",
+          "heading": false
+        },
+        {
+          "term": "cosimplicial object",
+          "heading": false
+        },
+        {
+          "term": "simeq otimes",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "semi-cosimplicial object",
+          "heading": false
+        },
+        {
+          "term": "cosimplicial diagram",
+          "heading": false
+        },
+        {
+          "term": "aligned mathop",
+          "heading": false
+        }
+      ],
+      "extract": "Recall that $C_*(A)$ denotes the canonical simplicial resolution of $A$ as an $A$-bimodule, i.e., the monadic bar construction for the algebra $A$. Let $C_*(A)^{tr}$ denote the cosimplicial object obtained by passing to transposes, i.e., the comonadic cobar construction for the coalgebra $(A',\\mu^t)$. Likewise, let $C_*(A)^r$ denote the cosimplicial object obtained by passing to right adjoints, i.e., the comonadic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-34-dualizability",
+      "number": "3.4",
+      "title": "Dualizability",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 27,
+      "labelStart": "25",
+      "labelEnd": "27",
+      "words": 703,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dualizable monoidal",
+          "heading": false
+        },
+        {
+          "term": "morphism eva",
+          "heading": false
+        },
+        {
+          "term": "vectc admits",
+          "heading": false
+        },
+        {
+          "term": "dualizable object",
+          "heading": false
+        },
+        {
+          "term": "morita morphism",
+          "heading": false
+        },
+        {
+          "term": "evaluation morita",
+          "heading": false
+        },
+        {
+          "term": "monoidal category",
+          "heading": false
+        },
+        {
+          "term": "dualizability",
+          "heading": true
+        }
+      ],
+      "extract": "rigid categories as objects in the symmetric monoidal (∞, 2)-category Alg(1)(StC), the Morita 2- category of monoidal categories [L3, Section 4.1]. This interpretation will not require any technical notions of (∞, 2)-category theory — we recall the notion of 2-dualizability as it specializes in our setting to speciﬁc identities formulated for monoidal ∞-categories. A Morita morphism between two (stable presentable)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-4-preliminaries-on-d-modules",
+      "number": "4",
+      "title": "Preliminaries on D-modules",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": "27",
+      "labelEnd": "27",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-015-41-d-modules-on-schemes",
+      "number": "4.1",
+      "title": "D-modules on schemes",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": "27",
+      "labelEnd": "28",
+      "words": 578,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "d-modules",
+          "heading": true
+        },
+        {
+          "term": "schemes",
+          "heading": true
+        },
+        {
+          "term": "drg",
+          "heading": false
+        },
+        {
+          "term": "vectc",
+          "heading": false
+        },
+        {
+          "term": "quasi-proper",
+          "heading": false
+        },
+        {
+          "term": "adjunction",
+          "heading": false
+        },
+        {
+          "term": "base change",
+          "heading": false
+        },
+        {
+          "term": "functors",
+          "heading": false
+        }
+      ],
+      "extract": "[DrG1]. As explained in [DrG1], while this material is well-known at the level of triangulated categories (standard references include Bernstein’s lecture notes [B] and the books by Borel [Bo] and Kashiwara [K] for D-modules on varieties, and Bernstein-Lunts’ book [BL] and Beilinson-Drinfeld’s manuscript [BD, Chapters 1 and 7] for D-modules on stacks), no comprehensive account seems to exist yet at the level of dg",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-42-coherence-tensor-product-and-verdier-duality",
+      "number": "4.2",
+      "title": "Coherence, tensor product, and Verdier duality",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": "28",
+      "labelEnd": "29",
+      "words": 323,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "verdier duality",
+          "heading": true
+        },
+        {
+          "term": "mathcal coh",
+          "heading": false
+        },
+        {
+          "term": "mathcal cpt",
+          "heading": false
+        },
+        {
+          "term": "cpt diamondsuit",
+          "heading": false
+        },
+        {
+          "term": "xymatrix mathcal",
+          "heading": false
+        },
+        {
+          "term": "ind mathcal",
+          "heading": false
+        },
+        {
+          "term": "otimes mathcal",
+          "heading": false
+        },
+        {
+          "term": "xymatrix boxtimes",
+          "heading": false
+        }
+      ],
+      "extract": "A ${\\mathcal D}$-module on a scheme $X$ is coherent if its cohomology sheaves are locally finitely generated ${\\mathcal D}_X$-modules. We denote by $\\mathcal D_{coh}(X)\\subset {\\mathcal D}(X)$ the full subcategory of coherent ${\\mathcal D}$-modules. Coherent ${\\mathcal D}$-modules are precisely the compact objects of ${\\mathcal D}(X)$ and also generate ${\\mathcal D}(X)$, so there is a canonical identification",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-43-d-modules-on-stacks",
+      "number": "4.3",
+      "title": "D-modules on stacks",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": "29",
+      "labelEnd": "29",
+      "words": 285,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "representable morphism",
+          "heading": false
+        },
+        {
+          "term": "smooth covers",
+          "heading": false
+        },
+        {
+          "term": "cech simplicial",
+          "heading": false
+        },
+        {
+          "term": "category mathcal",
+          "heading": false
+        },
+        {
+          "term": "mean quasi-compact",
+          "heading": false
+        },
+        {
+          "term": "pullback along",
+          "heading": false
+        },
+        {
+          "term": "simplicial scheme",
+          "heading": false
+        },
+        {
+          "term": "object mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "Throughout what follows, by a stack, we will always mean a quasi-compact stack over $\\mathbb C$ with affine diagonal. By a representable morphism, we will always mean a quasi-compact schematic morphism. For schemes $X$, the category ${\\mathcal D}(X)$ satisfies smooth descent with respect to $!$-pullbacks. Thus for a stack $X$, one may define the category ${\\mathcal D}(X)$ as a limit over smooth covers. More",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-44-more-on-coherence-tensor-product-and-verdier",
+      "number": "4.4",
+      "title": "More on coherence, tensor product, and Verdier duality",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": "29",
+      "labelEnd": "30",
+      "words": 471,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "verdier duality",
+          "heading": true
+        },
+        {
+          "term": "coherent mathcal",
+          "heading": false
+        },
+        {
+          "term": "mathcal modules",
+          "heading": false
+        },
+        {
+          "term": "stacks characterized",
+          "heading": false
+        },
+        {
+          "term": "hom mathcal",
+          "heading": false
+        },
+        {
+          "term": "sim mathcal",
+          "heading": false
+        },
+        {
+          "term": "coherence",
+          "heading": true
+        },
+        {
+          "term": "compact objects",
+          "heading": false
+        }
+      ],
+      "extract": "Since $f^!$ for a smooth morphism $f:X\\to Y$ preserves coherence, one may define coherent ${\\mathcal D}$-modules on a stack by requiring coherence locally on smooth covers. We denote by $\\mathcal D_{coh}(X)\\subset {\\mathcal D}(X)$ the full subcategory of coherent ${\\mathcal D}$-modules. By [@finiteness Theorem 8.1.1], for any stack $X$, the category ${\\mathcal D}(X)$ is compactly generated and all compact objects",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-5-integral-transforms-for-d-modules",
+      "number": "5",
+      "title": "Integral transforms for D-modules",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": "30",
+      "labelEnd": "31",
+      "words": 230,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mean quasi-compact",
+          "heading": false
+        },
+        {
+          "term": "funl",
+          "heading": false
+        },
+        {
+          "term": "d-modules",
+          "heading": true
+        },
+        {
+          "term": "safe",
+          "heading": false
+        },
+        {
+          "term": "stack",
+          "heading": false
+        }
+      ],
+      "extract": "We continue with our standing assumptions of preceding sections. In particular, by a scheme, we mean a quasi-compact, separated derived scheme. By a stack, we mean a quasi-compact stack with aﬃne diagonal, and by a representable morphism, we mean a quasi-compact schematic morphism. A stack is safe if its de Rham cohomology functor is continuous, and more generally, a morphism is safe if the pushforward of D-modules",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-51-functoriality-over-schemes",
+      "number": "5.1",
+      "title": "Functoriality over schemes",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 32,
+      "labelStart": "31",
+      "labelEnd": "32",
+      "words": 666,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "augmented simplicial",
+          "heading": false
+        },
+        {
+          "term": "safe morphism",
+          "heading": false
+        },
+        {
+          "term": "simplicial category",
+          "heading": false
+        },
+        {
+          "term": "split augmented",
+          "heading": false
+        },
+        {
+          "term": "k-simplices",
+          "heading": false
+        },
+        {
+          "term": "closed embeddings",
+          "heading": false
+        },
+        {
+          "term": "funl",
+          "heading": false
+        },
+        {
+          "term": "appears times",
+          "heading": false
+        }
+      ],
+      "extract": "ﬁt into the theme of the paper and are likely useful elsewhere. Theorem 5.1. For a diagram X1 →Y ←X2 where X1, X2 are stacks and Y a scheme, the canonical map induced by !-pullbacks is an equivalence D(X1) ⊗D(Y ) D(X2) ∼ / D(X1 ×Y X2). Proof. The tensor product of D(Y )-modules can be calculated as the geometric realization of the two-sided bar construction ([L2, 4.3.4]), the simplicial category with k-simplices",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-52-functoriality-over-classifying-stacks",
+      "number": "5.2",
+      "title": "Functoriality over classifying stacks",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 34,
+      "labelStart": "32",
+      "labelEnd": "34",
+      "words": 696,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "augmented cosimplicial",
+          "heading": false
+        },
+        {
+          "term": "stacks",
+          "heading": true
+        },
+        {
+          "term": "cosimplicial category",
+          "heading": false
+        },
+        {
+          "term": "homd",
+          "heading": false
+        },
+        {
+          "term": "smooth diagonal",
+          "heading": false
+        },
+        {
+          "term": "functorial equivalence",
+          "heading": false
+        },
+        {
+          "term": "funl",
+          "heading": false
+        },
+        {
+          "term": "tracing back",
+          "heading": false
+        }
+      ],
+      "extract": "ization of Theorem 5.2 and its corollary realizing linear functors via integrals kernels on the ﬁber product. Unfortunately, results of this nature do not hold in great generality, but we will be content with the case when the base stack Y is the classifying stack BG of an aﬃne group scheme G. What we speciﬁcally use is the restrictive property that the diagonal map of such stacks is smooth. Proposition 5.4. For a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-6-hecke-categories-and-character-sheaves",
+      "number": "6",
+      "title": "Hecke categories and character sheaves",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 38,
+      "labelStart": "34",
+      "labelEnd": "38",
+      "words": 2009,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hecke categories",
+          "heading": true
+        },
+        {
+          "term": "boxtimes mathfrak",
+          "heading": false
+        },
+        {
+          "term": "xymatrix mathcal",
+          "heading": false
+        },
+        {
+          "term": "mathfrak operatorname",
+          "heading": false
+        },
+        {
+          "term": "mathfrak star",
+          "heading": false
+        },
+        {
+          "term": "xymatrix mathop",
+          "heading": false
+        },
+        {
+          "term": "mathfrak otimes",
+          "heading": false
+        },
+        {
+          "term": "mathcal simeq",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#character section label=\"character section\"} In this section, we study the homotopical algebra of Hecke categories arising in representation theory. Our focus is the Hecke category of ${\\mathcal D}$-modules on the double quotient stack $B\\backslash G/B$ of a reductive group $G$ by a Borel subgroup $B\\subset G$, and its unipotent monodromic variant. Our aim is to construct a topological field theory from these",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-62-loop-spaces-and-horocycle-correspondences",
+      "number": "6.2",
+      "title": "Loop spaces and horocycle correspondences",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 39,
+      "labelStart": "38",
+      "labelEnd": "39",
+      "words": 539,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homb bop",
+          "heading": false
+        },
+        {
+          "term": "homa aop",
+          "heading": false
+        },
+        {
+          "term": "cocompletion",
+          "heading": false
+        },
+        {
+          "term": "diagram calculating",
+          "heading": false
+        },
+        {
+          "term": "base change",
+          "heading": false
+        },
+        {
+          "term": "horocycle",
+          "heading": true
+        },
+        {
+          "term": "commutative diagram",
+          "heading": false
+        },
+        {
+          "term": "cosimplicial",
+          "heading": false
+        }
+      ],
+      "extract": "tween Hecke categories and loop spaces. It is an abstraction of the horocycle correspondence from representation theory. We will continue with the assumptions that p : X →Y is proper and X has smooth diagonal δ : X →X × X. Consider the fundamental correspondence LY = Y ×Y ×Y Y LY ×Y X = X ×X×Y X q o ǫ / X ×Y X. where q is a base change of p, and ǫ is a base change δ. Deﬁne the functor F : D(X ×Y X) ǫ! / D(LY ×Y X)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-63-character-sheaves",
+      "number": "6.3",
+      "title": "Character sheaves",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 39,
+      "labelStart": "39",
+      "labelEnd": "39",
+      "words": 170,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "character sheaves",
+          "heading": true
+        },
+        {
+          "term": "chg",
+          "heading": false
+        },
+        {
+          "term": "hecke category",
+          "heading": false
+        },
+        {
+          "term": "unipotent character",
+          "heading": false
+        }
+      ],
+      "extract": "X = BB, Y = BG, for a reductive group G and Borel subgroup B ⊂G. Thus we are studying the Hecke category HG = D(B\\G/B) of Borel bi-equivariant D-modules on G. With this setup, the fundamental correspondence is the horocycle correspondence G/G (G × G/B)/G q o ǫ / B\\G/B. It contains the traditional Springer correspondence as a subspace G/G eG/G ≃B/B o / B\\B/B ≃BB where eG ⊂G × G/B comprises pairs where the group",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-7-monodromic-variant",
+      "number": "7",
+      "title": "Monodromic variant",
+      "level": 1,
+      "pageStart": 39,
+      "pageEnd": 40,
+      "labelStart": "39",
+      "labelEnd": "40",
+      "words": 46,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monodromic",
+          "heading": true
+        },
+        {
+          "term": "monodromic section",
+          "heading": false
+        },
+        {
+          "term": "monodromies",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#monodromic section label=\"monodromic section\"} In this section, we extend our previous results to Hecke categories of monodromic ${\\mathcal D}$-modules. For simplicity, we will only consider unipotent monodromy, though generalizations to arbitrary monodromies should hold. Most of what we state is purely algebraic and could be presented in far greater generality.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-026-71-monodromic-d-modules",
+      "number": "7.1",
+      "title": "Monodromic D-modules",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 40,
+      "labelStart": "40",
+      "labelEnd": "40",
+      "words": 252,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monodromic mathcal",
+          "heading": false
+        },
+        {
+          "term": "semirigid",
+          "heading": false
+        },
+        {
+          "term": "mathcal otimes",
+          "heading": false
+        },
+        {
+          "term": "category mathcal",
+          "heading": false
+        },
+        {
+          "term": "mathcal modules",
+          "heading": false
+        },
+        {
+          "term": "mathfrak vee",
+          "heading": false
+        },
+        {
+          "term": "monoidal category",
+          "heading": false
+        },
+        {
+          "term": "monoidal dual",
+          "heading": false
+        }
+      ],
+      "extract": "Let $X$ be a stack and $\\mathcal A_X\\in {\\mathcal D}(X)$ a commutative algebra object. We refer to objects of the category of $\\mathcal A_X$-modules $${\\mathcal D}_{\\mathcal A_X}(X) := \\mathop{\\mathrm{Mod}}_{\\mathcal A_X}({\\mathcal D}(X))$$ as monodromic ${\\mathcal D}$-modules. A smooth map $\\pi:\\tilde X \\to X$ provides a natural source of such algebras. The Barr-Beck-Lurie theorem applied to the adjunction",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-72-monodromic-hecke-categories",
+      "number": "7.2",
+      "title": "Monodromic Hecke categories",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 41,
+      "labelStart": "40",
+      "labelEnd": "41",
+      "words": 564,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monodromic hecke",
+          "heading": true
+        },
+        {
+          "term": "bimonodromic mathcal",
+          "heading": false
+        },
+        {
+          "term": "tilde mathcal",
+          "heading": false
+        },
+        {
+          "term": "perfect hecke",
+          "heading": false
+        },
+        {
+          "term": "boxtimes mathcal",
+          "heading": false
+        },
+        {
+          "term": "mathcal module",
+          "heading": false
+        },
+        {
+          "term": "mathcal vee",
+          "heading": false
+        },
+        {
+          "term": "hecke category",
+          "heading": false
+        }
+      ],
+      "extract": "Let us return to the setup of a proper map $p:X\\to Y$ of stacks where $X$ has smooth diagonal $\\delta:X\\to X\\times X$. Suppose given $\\mathcal A_X\\in {\\mathcal D}(X)$ a commutative algebra object. Let $j:X \\times_Y X\\to X\\times X$ be the natural map, introduce the commutative algebra object $$\\mathcal A^{(2)}_X = j^! (\\mathcal A_X \\boxtimes \\mathcal A_X) \\in {\\mathcal D}(X \\times_Y X)$$ and the resulting Hecke",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-73-monodromic-hochschild-calculations",
+      "number": "7.3",
+      "title": "Monodromic Hochschild calculations",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 42,
+      "labelStart": "41",
+      "labelEnd": "42",
+      "words": 565,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tilde mathcal",
+          "heading": false
+        },
+        {
+          "term": "tilde epsilon",
+          "heading": false
+        },
+        {
+          "term": "monodromic",
+          "heading": true
+        },
+        {
+          "term": "xymatrix tilde",
+          "heading": false
+        },
+        {
+          "term": "mathcal bullet",
+          "heading": false
+        },
+        {
+          "term": "mathcal vee",
+          "heading": false
+        },
+        {
+          "term": "mathcal times",
+          "heading": false
+        },
+        {
+          "term": "perp mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "We continue with the setup and constructions of the previous section, in particular Theorem [\\[monodromic Hecke\\]](#monodromic Hecke){reference-type=\"ref\" reference=\"monodromic Hecke\"}. Thus suppose $X$ is a stack with smooth diagonal, $Y$ is a stack, and $X\\to Y$ is a proper representable map. Suppose $\\mathcal A_X\\in {\\mathcal D}(X)$ is a commutative algebra object whose underlying object is compact and hence",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-74-character-sheaves-again",
+      "number": "7.4",
+      "title": "Character sheaves again",
+      "level": 2,
+      "pageStart": 42,
+      "pageEnd": 43,
+      "labelStart": "42",
+      "labelEnd": "43",
+      "words": 116,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bimonodromic hecke",
+          "heading": false
+        },
+        {
+          "term": "tilde mathcal",
+          "heading": false
+        },
+        {
+          "term": "char shvs",
+          "heading": false
+        },
+        {
+          "term": "mon char",
+          "heading": false
+        }
+      ],
+      "extract": "Now we apply our previous results to our motivating example when $X=BB$, $Y=BG$, for a reductive group $G$ and Borel subgroup $B\\subset G$. We take $\\tilde X = BN$, for the unipotent radical $N\\subset B$, and take $\\mathcal A_X = \\pi_*\\mathbb C_{BN} \\in {\\mathcal D}(BB)$ where $\\pi:BN\\to BB$ is the natural $H= B/N$ torsor. Thus we are studying the bimonodromic Hecke category $\\tilde \\mathcal H_G$ of unipotent",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 43,
+      "pageEnd": 44,
+      "labelStart": "43",
+      "labelEnd": "44",
+      "words": 1227,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "e-print arxiv",
+          "heading": false
+        },
+        {
+          "term": "duke math",
+          "heading": false
+        },
+        {
+          "term": "geometric langlands",
+          "heading": false
+        },
+        {
+          "term": "koszul duality",
+          "heading": false
+        },
+        {
+          "term": "nadler",
+          "heading": false
+        },
+        {
+          "term": "auser boston",
+          "heading": false
+        },
+        {
+          "term": "ben-zvi",
+          "heading": false
+        },
+        {
+          "term": "character sheaves",
+          "heading": false
+        }
+      ],
+      "extract": "[BDo] J. Baez and J. Dolan, Higher-dimensional algebra and topological quantum ﬁeld theory. J. Math. Phys. 36 (1995), no. 11, 6073–6105. [BB] A. Beilinson and J. Bernstein, A proof of Jantzen conjectures. I. M. Gelfand Seminar, 1–50, Adv. Soviet Math., 16, Part 1, Amer. Math. Soc., Providence, RI, 1993. [BD] A. Beilinson and V. Drinfeld, Quantization of Hitchin Hamiltonians and Hecke Eigensheaves. Preprint,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Transposes"
+        ]
+      },
+      "found_not_listed": {
+        "count": 3,
+        "items": [
+          "2 The monodromic Hecke category is the full dg subcategory",
+          "1 The twisted monodromic Hecke category e",
+          "2 The monoidal center and trace of e"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "monoidal category",
+      "heading": false
+    },
+    {
+      "term": "semi-rigid monoidal",
+      "heading": false
+    },
+    {
+      "term": "category mathcal",
+      "heading": false
+    },
+    {
+      "term": "dualizable monoidal",
+      "heading": false
+    },
+    {
+      "term": "monoidal categories",
+      "heading": true
+    },
+    {
+      "term": "hecke category",
+      "heading": false
+    },
+    {
+      "term": "mathcal otimes",
+      "heading": false
+    },
+    {
+      "term": "mathcal simeq",
+      "heading": false
+    },
+    {
+      "term": "xymatrix mathcal",
+      "heading": false
+    },
+    {
+      "term": "monodromic mathcal",
+      "heading": false
+    },
+    {
+      "term": "mathcal modules",
+      "heading": false
+    },
+    {
+      "term": "object mathcal",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 33,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 32,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p43); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 32 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0904.1247v3"
+  }
+}

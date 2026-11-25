@@ -1,0 +1,139 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1612.07165v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1612.07165v2/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "arXiv:1612.07165v2  [hep-ph]  20 Feb 2017\nUniﬁcation and Local Baryon Number\nPavel Fileviez P´erez1, Sebastian Ohmer2\n1CERCA, Physics Department, Case Western Reserve University,\nRockefeller Bldg. 2076 Adelbert Rd. Cleveland, OH 44106, USA\n2Particle and Astro-Particle Physics Division\nMax-Planck-Institut fuer Kernphysik (MPIK)\nSaupfercheckweg 1, 69117 Heidelberg, Germany\n(Dated: August 9, 2021)\nWe investigate the possibility to ﬁnd an ultraviolet completion of the simple extensions of the Standard Model\nwhere baryon number is a local symmetry. In the context of such theories one can understand",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1612.07165v2/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "• These theories predict generically a cold dark matter\ncandidate which is the lightest neutral ﬁeld in the new\nsector of the theory.\n• One typically has a relation between the matter-\nantimatter and the dark matter asymmetries.\nClearly, these effective theories can provide an ideal frame-\nwork to understand the uniﬁcation of interactions at the low\nscale. In this article we propose a new theory which can help\nus to understand this possibility.\nIII.\nTOWARDS UNIFICATION\nIn the previous section, we have discussed the theories\nwhere baryon number is a local symmetry. Typically, in an\nuniﬁed theor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1612.07165v2/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "A.\nSymmetry Breaking\nThe gauge symmetry SU(4)C ⊗SU(3)L ⊗SU(3)R can be\nbroken in two steps:\n• SU(4)C breaks down to SU(3)C ⊗U(1)B once the\nHiggs Σ ∼\n(15, 1, 1) acquires a vacuum expecta-\ntion value in the T 15\nC direction, ⟨Σ⟩= vC T 15\nC , here\nT 15\nC\n= diag(1, 1, 1, −3)/2\n√\n6. Therefore, one obtains\na low energy theory based on triniﬁcation and the local\nbaryon number, i.e. SU(3)C ⊗SU(3)L ⊗SU(3)R ⊗\nU(1)B. The Baryon number generator will be\nYB = 2\nr\n2\n3T 15\nC .\n(8)\n• The U(1)B gauge boson must acquire mass.\nWe\nachieve it adding a new Higgs, φ ∼(4, 1, 1) which\nvacuum expectation value breaks th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1612.07165v2/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "temperature is thus\nT A\nRH <<\n1\n√\n2yΨ,ηvB .\n(14)\n• Scenario B: In this case the extra colored gauge boson,\nXµ, is the lightest new ﬁeld. Then, we have to require\nthat the following decay channels are open in the early\nUniverse\nφi →Ψ + Ψc + Xµ\ni ,\nφi →η + ηc + Xµ\ni ,\nΨ →(Xµ\ni )∗¯qi,\nηc →Xµ\ni qc\ni .\nThen, the upper bound on the reheating temperature\nreads as\nT B\nRH << gC\nr\n2\n3v2\nC + 1\n4v2\nB .\n(15)\n• Scenario C: In this case φi is the lightest new ﬁeld. The\nfollowing channels have to be open in the early Uni-\nverse\nXµ →φi + SB,\nΨ →¯q + φi,\nη →qc\ni + φi .\nTherefore, the upper bound on the reheatin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1612.07165v2/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "where the masses are given by\nMBL = 2gLV33,\n(26)\nMBR = 2gRV33,\n(27)\nMC =\nq\n2(g2\nL + g2\nR)V33 .\n(28)\nHere V33 is the vacuum expectation value of S3. Addition-\nally, the massless gauge boson corresponding to the resulting\nU(1)B−L symmetry is given by the linear combination\nZµ\nBL = cθ3Cµ\nL + sθ3Cµ\nR\nwith\ntanθ3 = g2\nL\ng2\nR\n,\n(29)\nwhere the B −L gauge coupling is given by\ngBL =\n√\n3\n2\ngLgR\np\ng2\nL + g2\nR\n.\n(30)\nSee Refs. [21–26] for several studies of theories based on\ntriniﬁcation.\nV.\n433 AT COLLIDERS\nWe have discussed above that the gauge theory based on\nSU(4)C ⊗SU(3)L ⊗SU(3)R predicts the existenc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1612.07165v2/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "metry identifying SU(4)C, SU(4)L and SU(4)R. The Stan-\ndard Model fermions are embedded into\nQ ∼(4, ¯4, 1) ,\nQc ∼(¯4, 1, 4) , and\nL ∼(1, 4, ¯4) ,\n(32)\nwhere no new ﬁelds have to be added for anomaly cancel-\nlation.\nThe exotic ﬁelds Ψc and η are embedded into L.\nBaryon number is again enclosed in SU(4)C which is broken\nby (15, 4, ¯4)S. Baryon number and the residual symmetries\nof SU(4)L ⊗SU(4)R are broken by (4, 1, 1)S, (1, 4, 1)S and\n(1, 1, 4)S. To give the Standard Model quarks the measured\nmasses we further have to add at least two scalars (1, 4, ¯4)S.\nHowever, the mass separation of the new",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1612.07165v2/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "[16] R. Foot,\nG. C. Joshi\nand\nH. Lew,\n“Gauged\nBaryon\nand Lepton Numbers,”\nPhys. Rev. D 40 (1989) 2487.\ndoi:10.1103/PhysRevD.40.2487\n[17] C. D. Carone and H. Murayama, Phys. Rev. D 52 (1995) 484\ndoi:10.1103/PhysRevD.52.484 [hep-ph/9501220].\n[18] B. Fornal, A. Rajaraman and T. M. P. Tait, “Baryon Num-\nber as the Fourth Color,” Phys. Rev. D 92 (2015) no.5,\n055022 doi:10.1103/PhysRevD.92.055022 [arXiv:1506.06131\n[hep-ph]].\n[19] J. C. Pati and A. Salam, “Lepton Number as the Fourth\nColor,” Phys. Rev. D 10 (1974) 275 Erratum: [Phys. Rev. D\n11 (1975) 703]. doi:10.1103/PhysRevD.10.275, 10.1103/Phys-\nR",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

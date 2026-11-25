@@ -1,0 +1,582 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-th-9310164v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "arXiv:hep-th/9310164v2  22 Jul 1998\nSPHERICAL CATEGORIES\nJohn W. Barrett & Bruce W. Westbury\n10 August 1993; revised 22 July 1998\nAbstract. This paper is a study of monoidal categories with duals where the ten-\nsor product need not be commutative. The motivating examples are categories of\nrepresentations of Hopf algebras. We introduce the new notion of a spherical cate-\ngory. In the ﬁrst section we prove a coherence theorem for a monoidal category with\nduals following [MacLane 1963]. In the second section we give the deﬁnition of a\nspherical category, and construct a natural quotient which is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "2\nJOHN W. BARRETT & BRUCE W. WESTBURY\nplanar graphs are equivalent under isotopies of the plane whereas in a spherical\ncategory closed planar graphs are equivalent under isotopies of the 2-sphere.\nThe ﬁrst part of the paper gives the deﬁnition of a monoidal category with duals\nand the proof of a coherence theorem. The proof follows the proof of the coherence\ntheorem for monoidal categories in [MacLane 1963]. A monoidal category with duals\ncan be thought of as an abstraction of the category of representations of a Hopf\nalgebra, except that we require each object to be reﬂexive. A coherence theo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "SPHERICAL CATEGORIES\n3\nset of conditions for coherence to hold.\nIn the following deﬁnition it is convenient to regard the distinguished object e as\na functor from the category with one morphism to C. Then λ and ρ can be deﬁned\nto be natural transformations.\nDeﬁnition 1.1. A monoidal category is a category, C, together with a functor\n⊗: C × C →C an object e, and natural transformations\nα: (⊗× 1)⊗→(1 × ⊗)⊗\nλ: e ⊗1 →1\nρ: 1 ⊗e →1\nEach component of each of the natural transformations α, λ and ρ is required to\nbe an isomorphism. This data is also required to be coherent which is equivalent to\nrequir",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "4\nJOHN W. BARRETT & BRUCE W. WESTBURY\n(2) The identity functor 1: C →C is an iterate.\n(3) If F and G are iterates then the functor F ⊗G = F × G ◦⊗is an iterate.\n(4) If F is an iterate then F ∗= F −◦∗is an iterate.\nThe length of α is called the multiplicity of the iterated functor. There is a\ncategory with objects the set of all iterates of ⊗, ∗and e and morphisms all natural\ntransformations.\nDeﬁnition 1.5. Let F, G and H be any three iterated functors. Then we have\nnatural transformations\nα: (F ⊗G) ⊗H →F ⊗(G ⊗H)\nλ: e ⊗F →F\nρ: F ⊗e →F\nγ: (F ∗) ⊗(G∗) →(G ⊗F)∗\nτ: F →F ∗∗\nν: e →e∗\nEach of these is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "SPHERICAL CATEGORIES\n5\nA category with dual data which is coherent is called a category with duals.\nThe following is a coherence theorem, in the sense that this is a ﬁnite set of\nconditions on the data which are necessary and suﬃcient for the data to be coherent.\nTheorem 1.9. A category C with dual data is coherent if, and only if, the following\nconditions are satisﬁed:\n(1) τ(e) is the composite\ne\nν−→e∗\nν∗−1\n−−−→e∗∗\n(2) For each object c, τ(c∗) and τ(c)∗are inverse isomorphisms.\n(3) For any object a, the following diagram commutes\na∗⊗e\n1⊗ν\n−−−−→a∗⊗e∗\nρ(a∗)\ny\nyγ(a,e)\na∗\n−−−−→\nλ∗(a)\n(e ⊗a)∗",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/thm-page-005-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "thm-page-005-01.md",
+      "narrative": null,
+      "content": "A category C with dual data is coherent if, and only if, the following conditions are satisﬁed: (1) τ(e) is the composite e ν−→e∗ ν∗−1 −−−→e∗∗ (2) For each object c, τ(c∗) and τ(c)∗are inverse isomorphisms. (3) For any object a, the following diagram commutes a∗⊗e 1⊗ν −−−−→a∗⊗e∗ ρ(a∗) y yγ(a,e) a∗ −−−−→ λ∗(a) (e ⊗a)∗ (4) For any object a, the following diagram commutes e ⊗a∗ ν⊗1 −−−−→e∗⊗a∗ λ(a∗) y yγ(e,a) a∗ −−−−→ ρ∗(a) (a ⊗e)∗ (5) For all objects a, b and c, the following diagram commutes (c∗⊗b∗) ⊗a∗ γ(c,b)⊗1 −−−−−→(b ⊗c)∗⊗a∗ γ(b⊗c,a) −−−−−→(a ⊗(b ⊗c))∗ α(c∗,b∗,a∗) y yα∗(a,b,c) c∗",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/lem-page-006-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "lem-page-006-01.md",
+      "narrative": null,
+      "content": "Any iterated natural transformation is equal to a reduced iterated natural transformation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/lem-page-006-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "lem-page-006-02.md",
+      "narrative": null,
+      "content": "Any expansion of an instance of γ, τ, or ν (but not their inverses) composed with a central iterate is equal to a central iterate composed with a expan- sion of an instance of γ, τ, or ν.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "6\nJOHN W. BARRETT & BRUCE W. WESTBURY\nNote that the following diagram shows that τ(a)∗∗= τ(a∗∗) for any object a\nfollows from the condition that τ is a natural transformation with each component\nan isomorphism.\na\nτ(a)\n−−−−→\na∗∗\nτ(a)\ny\nyτ ∗∗(a)\na∗∗−−−−→\nτ(a∗∗)\na∗∗∗∗\nThis is implied by condition (2) but not conversely.\nIt is trivial that if the natural transformations are coherent then each of these\ndiagrams commutes. It remains to prove the converse.\nLemma 1.10. Any iterated natural transformation is equal to a reduced iterated\nnatural transformation.\nProof. There are six natural transforma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/lem-page-007-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "lem-page-007-01.md",
+      "narrative": null,
+      "content": "For any iterated functor F, there is a unique reduced iterated functor R and a unique natural transformation R →F which is an iterate of instances of γ, τ and ν.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "SPHERICAL CATEGORIES\n7\nDeﬁnition 1.13. The set of reduced iterated functors is the smallest set of iterated\nfunctors which satisﬁes:\n(1) The iterates e, 1 and ∗are reduced.\n(2) If F and G are reduced then F ⊗G is reduced.\nDeﬁne two iterated functors, F and G, to be equivalent if there is an iterated\nnatural transformation from F to G. This is obviously an equivalence relation.\nDeﬁnition 1.14. The rank r and luminosity, l, of an iterated functor are deﬁned\nrecursively as follows:\n(1) r(e) = 1 and r(1) = 1\n(2) r(F ⊗G) = r(F) + r(G) + 1\n(3) r(F ∗) = r(F)\n(1) l(e) = 0 and l(1) = 0.\n(2) l(F ⊗G) = l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "8\nJOHN W. BARRETT & BRUCE W. WESTBURY\nThe proof of the coherence theorem 1.9 now follows. It is only necessary to con-\nsider reduced iterated natural transformations. A reduced iterated natural transfor-\nmation is said to be directed if it is the product of instances which do not include\nthe inverses of (γ, τ, ν).\nBy the preceding lemma 1.15, each iterated functor is\nequivalent to a reduced iterated functor, and hence to a standard iterated functor,\nby a directed natural transformation.\nBy a standard argument (see [MacLane 1963]), it is suﬃcient to prove the co-\nherence result for directed nat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/lem-page-009-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "lem-page-009-01.md",
+      "narrative": null,
+      "content": "In any pivotal category, for any morphism f: a →b the following composite is f ∗: b∗ ρ−1(b∗) −−−−−→b∗⊗e 1⊗ǫ(a) −−−−→b∗⊗(a ⊗a∗) 1⊗(f⊗1) −−−−−→b∗⊗(b ⊗a∗) α−1(b∗,b,a∗) −−−−−−−−→(b∗⊗b)⊗a∗ (τ(b∗)⊗τ(b))⊗1 −−−−−−−−−−→(b∗∗∗⊗b∗∗)⊗a γ(b∗∗,b∗)⊗1 −−−−−−−→(b∗⊗b∗∗)∗⊗a∗ ǫ∗(b∗)⊗1 −−−−−→e∗⊗a∗ ν−1⊗1 −−−−→e ⊗a∗ λ(a∗) −−−→a∗",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "SPHERICAL CATEGORIES\n9\nDeﬁnition 2.1. A pivotal category is a category with duals together with a mor-\nphism ǫ(c): e →c ⊗c∗for each object c ∈C.\nThe conditions on the components of ǫ are the following:\n(1) For all morphisms, f: a →b, the following diagram commutes\ne\nǫ(a)\n−−−−→a ⊗a∗\nǫ(b)\ny\nyf⊗1\nb ⊗b∗−−−−→\n1⊗f ∗\nb ⊗a∗\n(2) For all objects a, the following composite is the identity map of a∗:\na∗\nλ−1(a∗)\n−−−−−→e ⊗a∗\nǫ(a∗)⊗1\n−−−−−→(a∗⊗a∗∗) ⊗a∗\nα(a∗,a∗∗,a∗)\n−−−−−−−−→a∗⊗(a∗∗⊗a∗)\n1⊗γ(a∗,a)\n−−−−−−→\na∗⊗(a ⊗a∗)∗\n1⊗ǫ(a)∗\n−−−−−→a∗⊗e∗\n1⊗ν−1\n−−−−→a∗⊗e\nρ(a∗)\n−−−→a∗\n(3) For all objects a and b the following",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/rem-page-009-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "rem-page-009-02.md",
+      "narrative": null,
+      "content": "Note also that a pivotal category is closed, in the sense that there are natural isomorphisms, for all a, b and c; Hom(a ⊗b, c) ∼= Hom(b, a∗⊗c) Hom(a, b ⊗c) ∼= Hom(a ⊗c∗, b) Hom(a ⊗b, c) ∼= Hom(a, c ⊗b∗) Hom(a, b ⊗c) ∼= Hom(b∗⊗a, c)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/prose-page-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 10",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/page-010.md",
+      "narrative": null,
+      "content": "10\nJOHN W. BARRETT & BRUCE W. WESTBURY\nM\nFigure 1\nDeﬁnition 2.4. Let a be any object in a pivotal category.\nThen the monoid\nEnd(a) has two trace maps, trL, trR: End(a) →End(e).\nIn a pivotal category\ntrL(f) is deﬁned to be the composite\ne\nǫ(a∗)\n−−−→a∗⊗a∗∗\n1⊗τ −1(a)\n−−−−−−→a∗⊗a\n1⊗f\n−−→a∗⊗a\nτ(a∗)⊗τ(a)\n−−−−−−−→\na∗∗∗⊗a∗∗\nγ(a∗∗,a∗)\n−−−−−−→(a∗⊗a∗∗)∗\nǫ∗(a∗)\n−−−−→e∗\nν−→e\nand trR(f) is deﬁned to be the composite\ne\nǫ(a)\n−−→a ⊗a∗\nf⊗1\n−−→a ⊗a∗\nτ(a)⊗1\n−−−−→a∗∗⊗a∗\nγ(a∗,a)\n−−−−→(a ⊗a∗)∗\nǫ∗(a)\n−−−→e∗\nν−→e\nIn a strict pivotal category these deﬁnitions simplify to:\ntrL(f) = ǫ(a∗)(1 ⊗f)ǫ(a∗)∗\ntrR(f) = ǫ(a)(f ⊗1)ǫ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/ex-page-011-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "ex-page-011-01.md",
+      "narrative": null,
+      "content": "An example of an additive spherical category which cannot be regarded as a category whose objects are ﬁnitely generated free modules is given by taking the free Z[q, q−1, z]-linear category on the category of oriented tangles and then taking the quotient by the well-known skein relation for the HOMFLY polynomial. This is an additive spherical category and for each pair of objects a and b, Hom(a, b) is a ﬁnitely generated free Z[q, q−1, z]-module. However the objects cannot be taken to be ﬁnitely generated modules unless z is a quantum integer. Deﬁnition 2.7. For any two objects a and b there i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/prose-page-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 11",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/page-011.md",
+      "narrative": null,
+      "content": "SPHERICAL CATEGORIES\n11\nExample 2.6. An example of an additive spherical category which cannot be\nregarded as a category whose objects are ﬁnitely generated free modules is given\nby taking the free Z[q, q−1, z]-linear category on the category of oriented tangles\nand then taking the quotient by the well-known skein relation for the HOMFLY\npolynomial. This is an additive spherical category and for each pair of objects a and\nb, Hom(a, b) is a ﬁnitely generated free Z[q, q−1, z]-module. However the objects\ncannot be taken to be ﬁnitely generated modules unless z is a quantum integer.\nDeﬁnition 2.7",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/thm-page-011-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "thm-page-011-02.md",
+      "narrative": null,
+      "content": "Let C be an additive spherical category. Deﬁne the subcategory J to have the same set of objects and morphisms deﬁned by HomJ (c1, c2) = {f ∈HomC(c1, c2) : trL(fg) = 0 for all g ∈HomC(c2, c1)} Then C/J is a non-degenerate additive spherical category.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/ex-page-012-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "ex-page-012-01.md",
+      "narrative": null,
+      "content": "Examples of Hopf algebras which are spherical are: (1) Any involutory Hopf algebra is spherical. The element w can be taken to be 1. (2) Any ribbon Hopf algebra, as deﬁned in [Reshetikhin and Turaev 1990], is spherical. The element w can be taken to be uv−1 where the element u is determined by the quasi-triangular structure and the element v is the ribbon element.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/ex-page-012-04",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "ex-page-012-04.md",
+      "narrative": null,
+      "content": "This is an example of a ﬁnite dimensional Hopf algebra over C which satisﬁes all the conditions for a spherical Hopf algebra except that the left and right traces are distinct. This example is the quantised enveloping algebra of the Borel subalgebra of SL2(C).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/prose-page-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 12",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/page-012.md",
+      "narrative": null,
+      "content": "12\nJOHN W. BARRETT & BRUCE W. WESTBURY\nDeﬁnition 3.1. A spherical Hopf algebra over F consists of a F-module A together\nwith the following data\n(1) a multiplication µ\n(2) a unit η: F →A\n(3) a comultiplication ∆: A →A ⊗A\n(4) a counit ǫ: A →F\n(5) an antipodal map γ: A →A\n(6) an element w ∈A\nThe data (A, µ, η, ∆, ǫ, γ) is required to deﬁne a Hopf algebra. The conditions\non the element w are the following:\n(1) γ2(a) = waw−1 for all a ∈A.\n(2) ∆(w) = w ⊗w.\n(3) γ(w) = w−1.\n(4) ǫ(w) = 1.\n(5) tr(θw) = tr(θw−1) for any left A-module, V , which is ﬁnitely generated and\nprojective as an F-module and for a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/rem-page-012-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "rem-page-012-02.md",
+      "narrative": null,
+      "content": "A Hopf algebra with an element w that satisﬁes the ﬁrst two conditions of deﬁnition 3.1 is spherical if, either w2 = 1, or all modules are self-dual.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/rem-page-012-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "rem-page-012-03.md",
+      "narrative": null,
+      "content": "If A is a Hopf algebra there may exist more than one element w such that (A, w) is a spherical Hopf algebra. However, if w1 is one such element then w2 = gw1 is another such element if and only if g satisﬁes the conditions: (1) g is central (2) g is group-like (3) g is an involution In particular, if A is ﬁnite dimensional over a ﬁeld, the set of g satisfying these conditions form a group of the form Zk 2 for some integer k.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/prop-page-013-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "prop-page-013-01.md",
+      "narrative": null,
+      "content": "If A is a spherical Hopf algebra over F then the category of left A-modules is a spherical category.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/prose-page-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 13",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/page-013.md",
+      "narrative": null,
+      "content": "SPHERICAL CATEGORIES\n13\nLet s be a primitive 2r-th root of unity with r > 1. Let B be the unital algebra\ngenerated by elements X and K subject to the deﬁning relations\nKX = sXK\nK4r = 1\nXr = 0\nThen B is a ﬁnite dimensional algebra and also has a Hopf algebra structure\ndeﬁned by:\n(1) The coproduct, ∆, is deﬁned by ∆(K) = K ⊗K and ∆(X) = X ⊗K +\nK−1 ⊗X\n(2) The augmentation, ǫ, is deﬁned by ǫ(K) = 1 and ǫ(X) = 0\n(3) The antipode, γ, is deﬁned by γ(K) = K−1 and γ(X) = −sX\nThe element w = K2 satisﬁes the conditions\n∆(w) = w ⊗w\nǫ(w) = 1\nγ(w) = w−1\nγ2(b) = wbw−1\nfor all b ∈B\nThe trace condition is not",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/prop-page-014-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "prop-page-014-01.md",
+      "narrative": null,
+      "content": "Let A be a spherical Hopf algebra. Let x be a left A-module. Then End(x), the endomorphism algebra in the non-degenerate quotient, is semi- simple.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/prop-page-014-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "prop-page-014-02.md",
+      "narrative": null,
+      "content": "Let A be a spherical Hopf algebra. Take the non-degenerate quotient of the spherical category of left A-modules. Take J to be a set of objects such that, if End(x) ∼= F then there is a unique a ∈J such that x ∼= a. Then, for each object x in the non-degenerate quotient, there is a natural isomorphism x ∼= M a∈J Hom(x, a) ⊗a.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/prose-page-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 14",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/page-014.md",
+      "narrative": null,
+      "content": "14\nJOHN W. BARRETT & BRUCE W. WESTBURY\nProposition 3.7. Let A be a spherical Hopf algebra. Let x be a left A-module.\nThen End(x), the endomorphism algebra in the non-degenerate quotient, is semi-\nsimple.\nProof. Let EndA(x) be the endomorphism algebra of x in the category of left A-\nmodules. Then we show that the kernel of the map EndA(x) →End(x) contains\nthe nilpotent radical of EndA(x). Since the nilpotent radical is a two-sided ideal it\nis suﬃcient to show that if θ ∈EndA(x) is nilpotent then trL(θ) = 0. However θ\nand ω commute and so θω is also nilpotent. This shows that trL(θ) is the matri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/prose-page-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 15",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/page-015.md",
+      "narrative": null,
+      "content": "SPHERICAL CATEGORIES\n15\nEach V (x, a) can be identiﬁed with Hom(x, a) since Hom(a, b) = 0 if a and b\nare distinct elements of J. This follows from the non-degeneracy condition which\nimplies that if Hom(a, b) = 0 then Hom(b, a) = 0.\nThis shows that the non-degenerate quotient is semisimple and that the set J is a\ncomplete set of inequivalent simple objects. If the Hopf algebra is ﬁnite dimensional\nand semisimple then it is clear that this set is ﬁnite. If the Hopf algebra is ﬁnite\ndimensional but not semisimple then the set J is typically inﬁnite.\nThere are two 3-manifold invariants constructed",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/rem-page-015-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "rem-page-015-01.md",
+      "narrative": null,
+      "content": "Let A be a ﬁnite dimensional spherical Hopf algebra. Then the cate- gory of projective left A-modules is a spherical category. This constructs a spherical subcategory with J ﬁnite but we know of no applications. If A is semisimple this result is superﬂuous and in the example of the quantised enveloping algebra of SL(2) given in [Reshetikhin and Turaev 1991] every indecomposable projective has quantum dimension 0 so that J is empty. The category of projective left A-modules is a subcategory of the spherical cat- egory of left A-modules. Hence to show it is spherical it is suﬃcient to show it is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9310164v2/blocks/prose-page-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 16",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/page-016.md",
+      "narrative": null,
+      "content": "16\nJOHN W. BARRETT & BRUCE W. WESTBURY\nH.H. Andersen and J. Paradowski, Fusion categories arising from semisimple Lie algebras, Comm.\nMath. Phys. 169 (1995), 563–588.\nP.J. Freyd and D.N. Yetter, Braided compact closed categories with applications to low dimen-\nsional topology, Adv. in Math. 77 (1989), 156–182.\nA. Joyal and R. Street, The geometry of tensor calculus I, Adv. in Math. 88 (1991), 55–112.\nG.M. Kelly and M.I. Laplaza, Coherence for compact closed categories, J. Pure Appl. Algebra 19\n(1980), 193–213.\nR.G. Larson and M.E. Sweedler, An associative orthogonal bilinear form for Hopf alge",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

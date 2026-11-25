@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-levi-generalisation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:levi-generalisation",
+  "kind": "remark",
+  "title": "Generalisation beyond strict pseudoconvexity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-q-harmonic-form",
+    "papers/quantum-observable-universe/blocks/rem-c-substrate-via-levi"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-q-harmonic-form",
+  "tags": [
+    "cr-geometry",
+    "levi-form"
+  ],
+  "text": "levi-generalisation.md",
+  "provenance": "authored"
+}

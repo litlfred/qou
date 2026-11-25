@@ -1,0 +1,41 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1508.01458v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Knotty inﬂation and the dimensionality of spacetime",
+      "dcterms:creator": [
+        "Berera, Arjun",
+        "1",
+        "Buniy, ∗Roman V.",
+        "2",
+        "Kephart, † Thomas W.",
+        "3",
+        "Päs, ‡ Heinrich",
+        "4",
+        "§",
+        "Rosa5, João G.",
+        "¶"
+      ],
+      "dcterms:issued": "D:20150806",
+      "dcterms:identifier": "https://arxiv.org/abs/1508.01458",
+      "dcterms:source": "library/arxiv-1508.01458v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1508.01458v1"
+    }
+  ]
+}

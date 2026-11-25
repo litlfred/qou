@@ -1,0 +1,355 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "noniterativeroth2",
+  "title": "noniterativeroth2",
+  "variant": "pdf",
+  "pages": 5,
+  "tocSource": "undetermined",
+  "tocMethod": "regex",
+  "toc": [],
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 414,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arithmetic progressions",
+          "heading": false
+        },
+        {
+          "term": "term progressions",
+          "heading": false
+        },
+        {
+          "term": "roth theorem",
+          "heading": false
+        },
+        {
+          "term": "density increment",
+          "heading": false
+        },
+        {
+          "term": "varnavides",
+          "heading": false
+        },
+        {
+          "term": "quantitative version",
+          "heading": false
+        },
+        {
+          "term": "funded",
+          "heading": false
+        },
+        {
+          "term": "proofs",
+          "heading": false
+        }
+      ],
+      "extract": "A PROOF OF ROTH’S THEOREM ON ARITHMETIC PROGRESSIONS ERNIE CROOT AND OLOF SISASK Abstract. We present a proof of Roth’s theorem that follows a slightly diﬀerent structure to the usual proofs, in that there is not much iteration. Although our proof works using a type of density increment argument (which is typical of most proofs of Roth’s theorem), we do not pass to a progression related to the large Fourier",
+      "extractCut": true,
+      "blocks": [
+        "library/noniterativeroth2/blocks/prose-page-001",
+        "library/noniterativeroth2/blocks/thm-page-001-01"
+      ]
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 295,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "varnavides",
+          "heading": false
+        },
+        {
+          "term": "fpf",
+          "heading": false
+        },
+        {
+          "term": "fourier transform",
+          "heading": false
+        },
+        {
+          "term": "additive characters",
+          "heading": false
+        },
+        {
+          "term": "progressions",
+          "heading": false
+        },
+        {
+          "term": "prime number",
+          "heading": false
+        }
+      ],
+      "extract": "2 ERNIE CROOT AND OLOF SISASK number of Fourier coeﬃcients; and, (2) one has a quantative version of Varnavides’s theorem. This might prove especially useful in certain contexts, because the particular sets on which our method achieves a density increment (via Varnavides) are unrelated to the particular additive characters where the Fourier transform of S is “large”. 1 2. Notation We shall require a modicum of",
+      "extractCut": true,
+      "blocks": [
+        "library/noniterativeroth2/blocks/prose-page-002"
+      ]
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 353,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "term progressions",
+          "heading": false
+        },
+        {
+          "term": "dilate",
+          "heading": false
+        },
+        {
+          "term": "log",
+          "heading": false
+        },
+        {
+          "term": "varnavides",
+          "heading": false
+        }
+      ],
+      "extract": "A PROOF OF ROTH’S THEOREM ON ARITHMETIC PROGRESSIONS 3 Let S ⊂[N] be a set free of three term progressions with |S| = r3(N). Thinking of S as a subset of Fp in the obvious way, we shall write f = 1S : Fp →{0, 1} for the indicator function of S. Let R := {r ∈Fp : | bf(r)| ⩾(2 log log p/ log p)1/2}. By Parseval’s identity, this set of large Fourier coeﬃcients cannot be too big; certainly, |R| ⩽log p/2 log log p. We",
+      "extractCut": true,
+      "blocks": [
+        "library/noniterativeroth2/blocks/prose-page-003"
+      ]
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 253,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arithmetic progression",
+          "heading": false
+        },
+        {
+          "term": "log",
+          "heading": false
+        },
+        {
+          "term": "diction",
+          "heading": false
+        },
+        {
+          "term": "ernie",
+          "heading": false
+        }
+      ],
+      "extract": "4 ERNIE CROOT AND OLOF SISASK [7], whose proof consists of a simple averaging procedure, will help us make use of this information. Lemma 3.1. [2] For any 1 ⩽M ⩽N, and for any set T ′ ⊆[N], we have Λ(T ′) ≫|T ′|/N −r3(M)/M M 2 . We will be using M = ⌊(log p/ log log p)1/8⌋. Now we observe that if |T ′| < 4|S|/3, and N is suﬃciently large, then we would have that |T| < 3|S|/2. Clearly, then, there exists s ∈S such",
+      "extractCut": true,
+      "blocks": [
+        "library/noniterativeroth2/blocks/prose-page-004",
+        "library/noniterativeroth2/blocks/lem-page-004-01"
+      ]
+    },
+    {
+      "id": "page-005",
+      "number": null,
+      "title": "Page 5",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 147,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arithmetic progressions",
+          "heading": false
+        },
+        {
+          "term": "roth theorem",
+          "heading": false
+        },
+        {
+          "term": "london math",
+          "heading": false
+        },
+        {
+          "term": "bristol",
+          "heading": false
+        },
+        {
+          "term": "e-mail address",
+          "heading": false
+        }
+      ],
+      "extract": "A PROOF OF ROTH’S THEOREM ON ARITHMETIC PROGRESSIONS 5 References [1] J. Bourgain, On triples in arithmetic progression, Geom. and Funct. Anal. 9 (1999), 107-156. [2] E. Croot, The structure of critical sets for Fp arithmetic progressions, preprint [3] D.R. Heath-Brown, Integer sets containing no arithmetic progressions, JLMS 35 (1987), 385-394. [4] K.F. Roth, On certain sets of integers, J. London Math. Soc. 28",
+      "extractCut": true,
+      "blocks": [
+        "library/noniterativeroth2/blocks/prose-page-005"
+      ]
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "arithmetic progressions",
+      "heading": false
+    },
+    {
+      "term": "term progressions",
+      "heading": false
+    },
+    {
+      "term": "varnavides theorem",
+      "heading": false
+    },
+    {
+      "term": "ernie croot",
+      "heading": false
+    },
+    {
+      "term": "olof sisask",
+      "heading": false
+    },
+    {
+      "term": "roth theorem",
+      "heading": false
+    },
+    {
+      "term": "density increment",
+      "heading": false
+    },
+    {
+      "term": "log",
+      "heading": false
+    },
+    {
+      "term": "fourier coeﬃcients",
+      "heading": false
+    },
+    {
+      "term": "fourier transform",
+      "heading": false
+    },
+    {
+      "term": "bristol",
+      "heading": false
+    },
+    {
+      "term": "parseval identity",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "not-extracted",
+      "note": "split one section per page; no contents was trusted"
+    },
+    {
+      "kind": "sections",
+      "state": "partial",
+      "count": 5,
+      "note": "one per page, not by heading"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p5); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 5 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/noniterativeroth2"
+  }
+}

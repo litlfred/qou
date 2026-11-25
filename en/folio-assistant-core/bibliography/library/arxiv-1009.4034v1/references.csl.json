@@ -1,0 +1,19 @@
+[
+  {
+    "id": "arxiv-1009.4034v1",
+    "type": "article-journal",
+    "title": "KEROV’S CENTRAL LIMIT THEOREM FOR SCHUR-WEYL MEASURES OF PARAMETER α = 1/2",
+    "author": [
+      {
+        "family": "MÉLIOT",
+        "given": "PIERRE-LOÏC"
+      }
+    ],
+    "issued": {
+      "raw": "D:20211025"
+    },
+    "URL": "https://arxiv.org/abs/1009.4034",
+    "abstract": "In this article, we show that Kerov’s central limit theorem related to the ﬂuctuations of Young diagrams under the Plancherel measure extends to the case of Schur-Weyl measures, which are the probability measures on partitions associated to the representations of the symmetric groups Sn on tensor products of vector spaces V ⊗n (see [Bia01]). The proof is inspired by the one given in [IO02] for the Plancherel measure, and it relies on the combinatorics of the algebra of observables of diagrams; we shall also use Śniady’s theory of cumulants of observables (cf. [Ś06]). Given a ﬁnite group G and a ﬁnite-dimensional complex linear representation V of G, the decomposition in irreducible components V = L λ∈b G mλ Vλ yields a probability measure on the set bG of isomorphism classes of irreducible representations of G: PV h λ ∈bG i = mλ dim Vλ dim V In particular, when G = Sn is the symmetric group of permutations of [[1, n]], a reducible representation of Sn yields a probability measure on the set Pn = bSn of integer partitions of size n. When V = CSn is the (left) regular representation, one obtains the so-called Plancherel measure, which has been extensively studied in the n →∞asymptotic; see for instance [IO02]. In this paper, we focus on the Schur- Weyl measures that correspond to the representations (CN)n ↶Sn, where Sn acts on the right by permutation of the letters of the simple tensors: (v1 ⊗v2 ⊗· · · ⊗vn) · σ = vσ(1) ⊗vσ(2) ⊗· · · ⊗vσ(n) By Schur-Weyl reciprocity, the probability measure on partitions associated to this representation is also a probability measure on irreducible representations of GL(N, C). The ﬁrst order asymptotic of these measures when n1/2 ≃cN and n goes to inﬁnity has been determined by P. Biane in [Bia01]; we shall recall this in §1, and by using the Robinson-Schensted-Knuth correspondence, we will also give a “combinatorial model” for these probability measures. The asymptotics of the Plancherel measures on partitions correspond to the case",
+    "note": "arXiv:1009.4034"
+  }
+]

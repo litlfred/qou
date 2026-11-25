@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/lean-substrate-numerics.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/lean-substrate-numerics",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "lean-substrate-numerics",
+      "title": "QOU Substrate Numerics Skill",
+      "description": "Numerical bracket lemmas for the QOU substrate constant `substrate_q ≈ 1.1097` and its derived quantities (`Real.sqrt substrate_q`, `q^(±1/2)`).  Acts as the canonical entry point whenever a Lean goal mentions `Real.sqrt substrate_q`, `substrate_q ^ (1/2 : ℝ)`, or related half-power expressions.",
+      "instructionsPath": "skills/local/lean-substrate-numerics.md",
+      "instructionLines": 128,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

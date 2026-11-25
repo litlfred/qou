@@ -1,0 +1,879 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1312.3086v1",
+  "title": "Quantum repeater with Rydberg blocked atomic ensembles in ﬁber-coupled cavities",
+  "variant": "pdf",
+  "pages": 10,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The model",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-the-model"
+    },
+    {
+      "level": 1,
+      "title": "The scheme",
+      "number": "3",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-the-scheme"
+    },
+    {
+      "level": 2,
+      "title": "The different steps of the scheme",
+      "number": "3.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-31-the-different-steps-of-the-scheme"
+    },
+    {
+      "level": 2,
+      "title": "Error detection and prevention",
+      "number": "3.2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-32-error-detection-and-prevention"
+    },
+    {
+      "level": 1,
+      "title": "A physical implementation",
+      "number": "4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-4-a-physical-implementation"
+    },
+    {
+      "level": 1,
+      "title": "Discussion",
+      "number": "5",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-5-discussion"
+    },
+    {
+      "level": 1,
+      "title": "Conclusion",
+      "number": "6",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-6-conclusion"
+    },
+    {
+      "level": 1,
+      "title": "Derivation of the expression of the average number of steps in entanglement generation",
+      "number": "A",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-a-derivation-of-the-expression-of-the-average-nu"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 159,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rydberg blocked",
+          "heading": false
+        },
+        {
+          "term": "blocked atomic",
+          "heading": false
+        },
+        {
+          "term": "entanglement generation",
+          "heading": false
+        },
+        {
+          "term": "quantum repeater",
+          "heading": false
+        },
+        {
+          "term": "cavities",
+          "heading": false
+        },
+        {
+          "term": "optical",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1312.3086v1 [quant-ph] 11 Dec 2013 Quantum repeater with Rydberg blocked atomic ensembles in ﬁber-coupled cavities E. Brion, F. Carlier, V. M. Akulin Laboratoire Aimé Cotton, CNRS / Univ. Paris-Sud / ENS-Cachan, Bât. 505, Campus d’Orsay, 91405 Orsay, France. K. Moelmer Lundbeck Foundation Theoretical Center for Quantum System Research, Department of Physics and Astronomy, University of Aarhus, Ny Munkegade,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1312.3086v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 996,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rydberg blockade",
+          "heading": false
+        },
+        {
+          "term": "cavity photon",
+          "heading": false
+        },
+        {
+          "term": "rangle leftrightarrow",
+          "heading": false
+        },
+        {
+          "term": "rydberg excitation",
+          "heading": false
+        },
+        {
+          "term": "subnodes left",
+          "heading": false
+        },
+        {
+          "term": "neighboring cavities",
+          "heading": false
+        },
+        {
+          "term": "rangle right",
+          "heading": false
+        },
+        {
+          "term": "optical fibers",
+          "heading": false
+        }
+      ],
+      "extract": "A possible route towards scalable quantum computers and quantum communication networks combines small quantum processor nodes which communicate via the exchange of moving information carriers, the so-called *flying qubits*, which will typically be photons. The direct exchange of a photon, either through free space or a fiber, between a pair of nodes does not have unit success probability, and to safely communicate",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-model",
+      "number": "2",
+      "title": "The model",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 1080,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cavity photon",
+          "heading": false
+        },
+        {
+          "term": "neighboring cavities",
+          "heading": false
+        },
+        {
+          "term": "state n0l",
+          "heading": false
+        },
+        {
+          "term": "collective state",
+          "heading": false
+        },
+        {
+          "term": "coupling strength",
+          "heading": false
+        },
+        {
+          "term": "optical ﬁbers",
+          "heading": false
+        },
+        {
+          "term": "symmetric collective",
+          "heading": false
+        },
+        {
+          "term": "n0a",
+          "heading": false
+        }
+      ],
+      "extract": "THE MODEL Our quantum repeater setup consists of N atomic en- sembles placed in cavities which are linked by optical ﬁbers (see Fig. 1a). Neighboring cavities are separated by the distance L0. The atomic level structure is represented in Fig. 1b. All the atoms are initially prepared in the “reservoir” state |s⟩, and the atoms have, in addition, six metastable states denoted by |0L⟩, |1L⟩, |0R⟩, |1R⟩, |0A⟩, |1A⟩,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-the-scheme",
+      "number": "3",
+      "title": "The scheme",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 74,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "scheme",
+          "heading": true
+        },
+        {
+          "term": "formance",
+          "heading": false
+        },
+        {
+          "term": "immune",
+          "heading": false
+        }
+      ],
+      "extract": "THE SCHEME In this section, we describe how to entangle two remote nodes using the model we presented in the previous sec- tion. First, we brieﬂy sketch the diﬀerent steps of our scheme in the ideal case without losses. Then, we show how to make our method immune to photon loss and spontaneous emission from the Rydberg level. Finally, we analyze the eﬀects of other possible errors on the per- formance of our",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-31-the-different-steps-of-the-scheme",
+      "number": "3.1",
+      "title": "The different steps of the scheme",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 1214,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rangle dashrightarrow",
+          "heading": false
+        },
+        {
+          "term": "textrm vac",
+          "heading": false
+        },
+        {
+          "term": "dashrightarrow left",
+          "heading": false
+        },
+        {
+          "term": "sqrt dashrightarrow",
+          "heading": false
+        },
+        {
+          "term": "vac right",
+          "heading": false
+        },
+        {
+          "term": "textrm pulse",
+          "heading": false
+        },
+        {
+          "term": "rangle overset",
+          "heading": false
+        },
+        {
+          "term": "rangle otimes",
+          "heading": false
+        }
+      ],
+      "extract": "Initially, all the cavities are empty and all ensemble atoms are in the reservoir state $\\left|s\\ldots s\\right\\rangle$. The first step consists in entangling pairs of neighboring subnodes $\\left(R_{k},L_{k+1}\\right)$ (see Fig. [\\[Fig1\\]](#Fig1){reference-type=\"ref\" reference=\"Fig1\"}c). To this end, one applies the sequence of operations given in Table [1](#EntanglementGeneration){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-32-error-detection-and-prevention",
+      "number": "3.2",
+      "title": "Error detection and prevention",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 1194,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "subnodes left",
+          "heading": false
+        },
+        {
+          "term": "neighboring subnodes",
+          "heading": false
+        },
+        {
+          "term": "textrm ion",
+          "heading": false
+        },
+        {
+          "term": "entanglement generation",
+          "heading": false
+        },
+        {
+          "term": "entanglement swapping",
+          "heading": false
+        },
+        {
+          "term": "rangle leftrightarrow",
+          "heading": false
+        },
+        {
+          "term": "ion approx",
+          "heading": false
+        },
+        {
+          "term": "textrm att",
+          "heading": false
+        }
+      ],
+      "extract": "So far, we did not take into account errors and losses. Fiber loss and spontaneous emission from the Rydberg level may corrupt the state in quite the same way since they both represent the loss of an excitation. We now investigate the influence of such errors on the different steps of our scheme. If a photon loss occurs during the transfer through the fiber or if a Rydberg excited atom spontaneously decays to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-4-a-physical-implementation",
+      "number": "4",
+      "title": "A physical implementation",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 991,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mbox mhz",
+          "heading": false
+        },
+        {
+          "term": "times mhz",
+          "heading": false
+        },
+        {
+          "term": "rangle right",
+          "heading": false
+        },
+        {
+          "term": "rangle left",
+          "heading": false
+        },
+        {
+          "term": "rangle leftrightarrow",
+          "heading": false
+        },
+        {
+          "term": "rangle equiv",
+          "heading": false
+        },
+        {
+          "term": "varphi right",
+          "heading": false
+        },
+        {
+          "term": "hbar sim",
+          "heading": false
+        }
+      ],
+      "extract": "::: figure* ::: centering ![image](Fig2){width=\"14cm\"} ::: ::: In this section, we suggest a physical implementation of our scheme with ensembles of Cs atoms, placed in linear cavities. Fig. [\\[Fig2\\]](#Fig2){reference-type=\"ref\" reference=\"Fig2\"} presents a possible choice for the internal states used in our protocol. The reservoir state $\\left|s\\right\\rangle$ and the subnode states $\\left|0_{L,A,R}\\right\\rangle",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-5-discussion",
+      "number": "5",
+      "title": "Discussion",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 458,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "retrieval efficiency",
+          "heading": false
+        },
+        {
+          "term": "rydberg blockade",
+          "heading": false
+        },
+        {
+          "term": "photonic detections",
+          "heading": false
+        },
+        {
+          "term": "remote nodes",
+          "heading": false
+        },
+        {
+          "term": "zmhz",
+          "heading": false
+        },
+        {
+          "term": "hhhls",
+          "heading": false
+        },
+        {
+          "term": "protocol",
+          "heading": false
+        },
+        {
+          "term": "average time",
+          "heading": false
+        }
+      ],
+      "extract": "We now summarize the main differences between our scheme and the most recent works on the subject [@ZMHZ10; @HHHLS10]. As noted in [@ZMHZ10; @HHHLS10], the use of Rydberg blocked ensembles allows one to perform entanglement swapping via deterministic manipulations and not through probabilistic photonic detections. The main originality of our proposal is that we also completely got rid of photonic detections during",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-6-conclusion",
+      "number": "6",
+      "title": "Conclusion",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 182,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "atomic ensemble",
+          "heading": false
+        },
+        {
+          "term": "entanglement generation",
+          "heading": false
+        },
+        {
+          "term": "cavities",
+          "heading": false
+        },
+        {
+          "term": "rydberg",
+          "heading": false
+        },
+        {
+          "term": "neighboring",
+          "heading": false
+        },
+        {
+          "term": "fibers",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper we proposed a quantum repeater scenario based on Rydberg blocked ensembles placed in cavities which are linked by optical fibers. Entanglement generation between two neighboring nodes is performed in a heralded way by the transmission of a photon whose polarization is entangled with the state of the first atomic ensemble, followed by its absorption by the neighboring atomic ensemble. Photon losses and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-a-derivation-of-the-expression-of-the-average-nu",
+      "number": "A",
+      "title": "Derivation of the expression of the average number of steps in entanglement generation",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 1058,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "entanglement generation",
+          "heading": true
+        },
+        {
+          "term": "brion",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "zoller",
+          "heading": false
+        },
+        {
+          "term": "lukin",
+          "heading": false
+        },
+        {
+          "term": "nmax",
+          "heading": false
+        },
+        {
+          "term": "cirac",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        }
+      ],
+      "extract": "average number of steps in entanglement generation As described in Sec. III, the entanglement generation procedure is performed in two steps. During each of these steps, K = N/2 subnodes are entangled by pairs. A pair of subnodes is correctly entangled with the probability P0. Let us ﬁrst compute the probability pK (n) that K pairs are correctly entangled within exactly n repetitions. This means that, within the (n",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "right subnodes",
+      "heading": false
+    },
+    {
+      "term": "subnodes left",
+      "heading": false
+    },
+    {
+      "term": "cavity photon",
+      "heading": false
+    },
+    {
+      "term": "rydberg blockade",
+      "heading": false
+    },
+    {
+      "term": "neighboring subnodes",
+      "heading": false
+    },
+    {
+      "term": "rydberg state",
+      "heading": false
+    },
+    {
+      "term": "collective rydberg",
+      "heading": false
+    },
+    {
+      "term": "rydberg blocked",
+      "heading": false
+    },
+    {
+      "term": "rydberg excitation",
+      "heading": false
+    },
+    {
+      "term": "rydberg excited",
+      "heading": false
+    },
+    {
+      "term": "rydberg atom",
+      "heading": false
+    },
+    {
+      "term": "rydberg level",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "(Color online) a) The physical set-up for our quantum repeater",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Physical implementation of our scheme with Cs atoms. The ﬁgure shows the states |jl⟩j=0,1;l=L,R,A , |ϕ+,−,A⟩and",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "(Color online) Logarithm of the average time required for entangling two remote nodes over the distance L",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "(Color online) a) Generic behaviour of the probability pK (n) for K = 1000 and three diﬀerent values of P0 = 0.1, 0.2, 0.3. The probability is a peaked curve around",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "(Color online) Comparison of ¯n (P0, N)and 2nmax",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p007-1",
+      "file": "images/img-p007-1.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-2",
+      "file": "images/img-p007-2.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-3",
+      "file": "images/img-p007-3.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-4",
+      "file": "images/img-p007-4.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-5",
+      "file": "images/img-p007-5.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p009-1",
+      "file": "images/img-p009-1.png",
+      "page": 9,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p009-2",
+      "file": "images/img-p009-2.png",
+      "page": 9,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p009-3",
+      "file": "images/img-p009-3.png",
+      "page": 9,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 10,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 8
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 10 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1312.3086v1"
+  }
+}

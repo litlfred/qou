@@ -1,0 +1,606 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1712.04887v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "BLOCH GROUPS, ALGEBRAIC K-THEORY,\nUNITS, AND NAHM’S CONJECTURE\nFRANK CALEGARI, STAVROS GAROUFALIDIS, AND DON ZAGIER\nAbstract. Given an element of the Bloch group of a number ﬁeld F and a natural num-\nber n, we construct an explicit unit in the ﬁeld Fn = F(e2πi/n), well-deﬁned up to n-th\npowers of nonzero elements of Fn. The construction uses the cyclic quantum dilogarithm,\nand under the identiﬁcation of the Bloch group of F with the K-group K3(F) gives (up to\nan unidentiﬁed invertible scalar) a formula for a certain abstract Chern class from K3(F).\nThe units we deﬁne are conjectured to coincid",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "[]{#sec.intro label=\"sec.intro\"}\n\nThe purpose of the paper is to associate to an element $\\xi$ of the Bloch group of a number field $F$ and a primitive $n$th root of unity $\\zeta$ an explicit $S$-unit (where $S$ is independent of $\\zeta$ and can often be taken to be trivial) $R_\\zeta(\\xi)$ in the cyclotomic extension $F_n=F(\\zeta)$, well-defined up to $n$-th powers of nonzero elements of $F_n$. Our construction uses the cyclic quantum dilogarithm and is shown to agree, up to an unidentified invertible scalar, with the abstract Chern class map on $K_3(F)$ if the latter is identified with the Bl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bloch groups and associated units",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-11-bloch-groups-and-associated-units.md",
+      "narrative": null,
+      "content": "[]{#sub.intro.bloch label=\"sub.intro.bloch\"}\n\nWe first recall the definition of the classical Bloch group, as introduced in [@Bloch]. Let $Z(F)$ denote the free abelian group on $\\mathbf P^1(F)=F\\cup\\{\\infty\\}$, i.e. the group of formal finite combinations $\\xi=\\sum_i n_i [X_i]$ with $n_i\\in\\mathbf Z$ and $X_i\\in\\mathbf P^1(F)$.\n\n::: definition\n[]{#def.BF label=\"def.BF\"} The *Bloch group* of a field $F$ is the quotient $$\\label{defBF}\nB(F)=A(F)/C(F)\\,,$$ where $A(F)$ is the kernel of the map\n\n$$\\label{defd}\nd:\\,Z(F)\\;\\longrightarrow\\;\\mbox{\\small$\\bigwedge^2$}F^{\\times}\\,, \\qquad [X]\\;\\mapsto\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algebraic K-groups and associated units",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-12-algebraic-k-groups-and-associated-units.md",
+      "narrative": null,
+      "content": "\\label{sub.intro.Ktheory} \n\nA second main theme of the paper concerns the relation to the algebraic \n$K$-theory of fields. The group $B(F)$ was introduced by Bloch as a concrete \nmodel for the abstract \\hbox{$K$-group} $K_3(F)$. It was proved by \nSuslin~\\cite{Suslintwo} that, if $F$ is a number field, then \n(up to \\hbox{2-torsion}) $K_3(F)$ is an extension of~$B(F)$ by the roots \nof unity in~$F$, and in this case one also knows by results of\nBorel and Suslin--Merkurjev~\\cite{SuslinTorsion}, \\cite{Suslin}, \\cite{Weibel} \nthat $K_3(F)$ has the structure\n\\be\n\\label{K3F} \nK_3(F) \\;\\cong\\; \\Z^{r_2(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motivation from quantum topology",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-14-motivation-from-quantum-topology.md",
+      "narrative": null,
+      "content": "\\label{sec.motivation}\n\nIn this subsection --- which will not be used anywhere else in this paper --- we\n\ndiscuss the empirical discoveries that led us to conjecture the results presented here.\nA much more detailed discussion of these ideas and of the experimental results\ncan be found in~\\cite{GZ:quantum} (Introduction, Sections~1, 5 and~9, and~Appendix).\n\nThe story has its origin in Quantum Topology and one of its most prized problems, the \nVolume Conjecture of Kashaev, which relates the Jones polynomial of a hyperbolic knot \nwith hyperbolic geometry. More precisely, the Volume Conjecture~\\ci",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Plan of the paper",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-15-plan-of-the-paper.md",
+      "narrative": null,
+      "content": "[]{#sub.plan label=\"sub.plan\"}\n\nIn Section [\\[sec.PR\\]](#sec.PR){reference-type=\"ref\" reference=\"sec.PR\"}, we begin with some preliminaries on the Bloch group. We then recall the cyclic quantum dilogarithm and use it, together with some basic facts about Kummer extensions, to define the map $R_\\zeta$. The fact that the map $R_\\zeta$ satisfies the 5-term relation follows from some state-sum identities of Kashaev--Mangazeev--Stroganov [@KMS], reviewed in Section [\\[sub.5term\\]](#sub.5term){reference-type=\"ref\" reference=\"sub.5term\"}. The remaining statements of Theorem [\\[thm.R\\]](#thm.R){refere",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The maps Pz and Rz",
+      "pageStart": 8,
+      "pageEnd": 14,
+      "target": "../sections/sec-005-2-the-maps-pz-and-rz.md",
+      "narrative": null,
+      "content": "[]{#sec.PR label=\"sec.PR\"}\n\n## Preliminaries on the Bloch group\n\nIn this section, we compare our definition to that of Suslin [@Suslintwo §1], and give an alternate presentation of $B(F)$ as a subquotient of $\\mathbf Z[F^{\\times} \\setminus 1]$.\n\n::: definition\n[]{#def.BFsuslin label=\"def.BFsuslin\"} Suslin's *Bloch group* of a field $F$ is the quotient $$\\widetilde{B}(F)=\\widetilde{A}(F)/\\widetilde{C}(F)\\,,$$ where $\\widetilde{Z}(F) = \\mathbf Z[F^{\\times} \\setminus 1]$, $\\widetilde{A}(F)$ is the kernel of the map $$d: \\widetilde{Z}(F)\\;\\longrightarrow\\;\\mbox{\\small$\\bigwedge^2$}F^{\\times}, \\qqu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Compatibilities",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-006-24-compatibilities.md",
+      "narrative": null,
+      "content": "[]{#sub.primepowers label=\"sub.primepowers\"}\n\nIn this section, we discuss the compatibility of the map $R_\\zeta$ with respect to $n$, and in particular we compare $R_{\\zeta}$ to $R_{\\zeta^q}$ for any divisor $q$ of $n$. This will be important in Section [\\[sec.cRcompare\\]](#sec.cRcompare){reference-type=\"ref\" reference=\"sec.cRcompare\"}, where we consider the relation of our map and the Chern class in $K$-theory. We also discuss the compatibility of $R_{\\zeta}$ with respect to a change of field.\n\n::: lemma\n[]{#lemma:compatibility label=\"lemma:compatibility\"} Let $(n,w_F)=1$ and $\\zeta=\\zeta_n$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The 5-term relation",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-007-25-the-5-term-relation.md",
+      "narrative": null,
+      "content": "[]{#sub.5term label=\"sub.5term\"}\n\nIn this section, we use a result of Kashaev, Mangazeev and Stroganov to show that the map $R_\\zeta$ satisfies the $5$-term relation, and consequently descends to a map of the group $B(F;\\mathbf Z/n\\mathbf Z)$.\n\n::: theorem\n[]{#thm.5term label=\"thm.5term\"} Let $F$ be a field and $F_n=F(\\zeta)$, where $\\zeta$ is a root of unity of order $n$ prime to $w_F$ and to the characteristic prime of $F$. Then the map $R_\\zeta$ vanishes on the subgroup $C(F) \\subset A(F;\\mathbf Z/n\\mathbf Z) \\subset Z(F)$ generated by the $5$-term relation, and therefore induces a map $$B(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An eigenspace computation",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-008-26-an-eigenspace-computation.md",
+      "narrative": null,
+      "content": "[]{#sub.eigenspace label=\"sub.eigenspace\"}\n\nAs in Section [\\[sub.intro.bloch\\]](#sub.intro.bloch){reference-type=\"ref\" reference=\"sub.intro.bloch\"}, we write $G=\\mathrm{Gal}(F_n/F)$, identified with a subgroup of $(\\mathbf Z/n\\mathbf Z)^\\times$ via the map $\\chi$ of Equation [\\[eq.chi\\]](#eq.chi){reference-type=\"eqref\" reference=\"eq.chi\"}. Since $F_n^\\times/F_n^{\\times n}$ is an $n$-torsion $G$-module, the $\\chi^{-1}$ eigenspace makes sense and is given by $$\\left(F_n^\\times/F_n^{\\times n}\\right)^{\\chi^{-1}}=\n\\{ x \\in F_n^\\times/F_n^{\\times n} \\, | \\sigma x = x^{\\chi(\\sigma^{-1})} \\,,\n\\text{fo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chern Classes for algebraic K-theory",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-009-3-chern-classes-for-algebraic-k-theory.md",
+      "narrative": null,
+      "content": "[]{#sec.chern label=\"sec.chern\"}\n\nIn this section, we will define the Chern class map [\\[eq.cmap\\]](#eq.cmap){reference-type=\"eqref\" reference=\"eq.cmap\"}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definitions",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-010-31-definitions.md",
+      "narrative": null,
+      "content": "[]{#sub.definitions.chern label=\"sub.definitions.chern\"}\n\nIn the following discussion, certain isomorphisms will depend on a choice of some primitive $n$th root of unity $\\zeta$. In order to make this clear, we shall write (in this section only) either $=_{\\zeta}$ or $=$ to denote isomorphisms which respectively do or do not depend on such a choice. Let $F$ be a number field, and let $\\mathcal{O}:=\\mathcal{O}_F$ denote the ring of integers of $F$. The Tate twist $\\mathbf Z_p(1)$ is defined to be the projective limit $\\projlim \\mu_{p^n}$ of the $p^n$th roots of unity over all $n$, and $\\mathbf",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The relation between étale cohomology and Galois cohomology",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-011-32-the-relation-between-étale-cohomology-and-gal.md",
+      "narrative": null,
+      "content": "[]{#section:relations label=\"section:relations\"}\n\nThere are isomorphisms that can be found in Sections 5.2 and 5.4 of [@Weibel] $$\\label{useful}\nK_{2m-1}(F) \\otimes \\mathbf Z_p \\simeq K_{2m-1}(\\mathcal{O}_F[1/p]) \\simeq \nK_{2m-1}(\\mathcal{O}_F) \\otimes \\mathbf Z_p$$ for $m > 1$. These isomorphisms are also reflected in the following isomorphism between étale cohomology groups and Galois cohomology groups: $$H^1_{\\text{\\'{e}t}}(\\mathcal{O}_F[1/p],\\mathbf Z_p(m) ) \\simeq H^1(F,\\mathbf Z_p(m) )$$ for $m \\ge 2$. In particular, we may also view the Chern class maps considered above as morphisms $$c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Upgrading from S-units to units",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-012-34-upgrading-from-s-units-to-units.md",
+      "narrative": null,
+      "content": "[]{#sub.updrading2 label=\"sub.updrading2\"}\n\nWe give the following slight improvement on Lemma [\\[lemma:avoidS\\]](#lemma:avoidS){reference-type=\"ref\" reference=\"lemma:avoidS\"}.\n\n::: lemma\n[]{#lemma:avoidS2 label=\"lemma:avoidS2\"} Suppose that any prime divisor $p$ of $n$ is odd and divides neither the discriminant of $F$ nor the order of $K_2(\\mathcal{O}_F)$. Then the image of $c_\\zeta$ on $K_3(F)/nK_3(F)$ may be realized by an element of $\\mathcal{O}^{\\times}_n$.\n:::\n\n::: proof\n*Proof.* By Lemma [\\[lem.mab\\]](#lem.mab){reference-type=\"ref\" reference=\"lem.mab\"}, it suffices to consider the case",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 1.5",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-013-35-proof-of-theorem-15.md",
+      "narrative": null,
+      "content": "[]{#sub.thm.c label=\"sub.thm.c\"}\n\nWe have all the ingredients to give a proof of Theorem [\\[thm.c\\]](#thm.c){reference-type=\"ref\" reference=\"thm.c\"}. Fix an odd natural number $n$ and a primitive $n$th root of unity $\\zeta$. Consider the Chern class map $$c_\\zeta: K_3(F)/nK_3(F) \\to \n\\left(F_n^{\\times}/F_n^{\\times n}\\right)^{\\chi^{-1}} \\,.$$ from [\\[eq.cnv1\\]](#eq.cnv1){reference-type=\"eqref\" reference=\"eq.cnv1\"}. When $n$ is either square-free or if any prime $p^2 | n$ is coprime to $w_2(F)$, the above map is injective by Lemma [\\[lemma:sahinj2\\]](#lemma:sahinj2){reference-type=\"ref\" referenc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Reduction to finite fields",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/sec-014-4-reduction-to-finite-fields.md",
+      "narrative": null,
+      "content": "[]{#sec.ff label=\"sec.ff\"}\n\nAs we will see in Section [\\[sec.cRcompare\\]](#sec.cRcompare){reference-type=\"ref\" reference=\"sec.cRcompare\"}, the comparison of the maps $c_{\\zeta}$ and $R_{\\zeta}$ and the proof of Theorem [\\[thm.cR\\]](#thm.cR){reference-type=\"ref\" reference=\"thm.cR\"} require a reduction of both maps to the case of finite fields. In this section, we review the local Chern classes and the Bloch groups of finite fields, and introduce local (finite field) versions of the maps $c_\\zeta$ and $R_\\zeta$. We will be considering the case that $n$ is a prime power $p^m$, and will denote by",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Local Chern class maps",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-015-41-local-chern-class-maps.md",
+      "narrative": null,
+      "content": "[]{#sub.localchern label=\"sub.localchern\"}\n\nLet $\\mathfrak{q}$ be a prime of norm $q \\equiv -1 \\;\\text{\\rm mod}\\;n$ in $\\mathcal{O}_F$. We work with these primes for several (related) reasons. The first is that the groups $K_3(\\mathbf F_q)$ we consider below have order $q^2 - 1$, and so to see interesting classes in $K_3(F)/n K_3(F)$ we require that $q^2 -1$ be divisible by $n$, and this necessitates choosing $q \\equiv \\pm 1 \\bmod n$. On the other hand, if $q \\equiv 1 \\bmod n$, then $\\mathbf F_q$ contains the $n$th roots of unity, which we generally need to avoid in our construction. The reaso",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Bloch group of Fq",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "../sections/sec-016-42-the-bloch-group-of-fq.md",
+      "narrative": null,
+      "content": "[]{#section:hh label=\"section:hh\"}\n\nIn order to make our maps explicit, we must relate the Chern class map to the Bloch group. Let $p > 2$ and $q > 2$ be odd primes such that $q \\equiv -1 \\;\\text{\\rm mod}\\;n$, where $n=p^m$. For a finite field $\\mathbf F_q$, the group $\\mathbf F^{\\times}_q$ is cyclic, so $\\bigwedge^2 \\mathbf F^{\\times}_q$ is a 2-torsion group. Hence the Bloch group $B(\\mathbf F_q)$ coincides with the pre-Bloch group after tensoring with $\\mathbf F_p$, where the pre-Bloch group is defined as the quotient of the free abelian group on $\\mathbf{P}^1(\\mathbf F_q)$ by the $5$-term r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/lem-sec-018-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "lem-sec-018-01.md",
+      "narrative": null,
+      "content": "Let p > 2 and n = pm. Suppose that q ≡−1 mod n and q̸ ≡−1 mod pn. The prime q splits completely in Q(ζ + ζ−1). Let Fq denote the residue ﬁeld at one of the primes above q. Then the map K3(Q(ζ + ζ−1)) ⊗Zp →B(Fq) ⊗Zp is an isomorphism.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/lem-sec-018-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "lem-sec-018-03.md",
+      "narrative": null,
+      "content": "For n an odd prime power, R¢(nc) = ¢7 € (Q(0)*/Q(C)*\")*\"* for some 7 € Zp.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/lem-sec-018-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "lem-sec-018-04.md",
+      "narrative": null,
+      "content": "7 - C’ is not a perfect pth power for any i.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparison between the maps cz and Rz",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-017-5-comparison-between-the-maps-cz-and-rz.md",
+      "narrative": null,
+      "content": "The main goal of this section, carried out in the ﬁrst subsection, is to prove Theorem 1.6.\nThe main result here is Theorem 5.2, which says that that our mod n local regulator map Rζ,q\ngives an isomorphism from B(Fq) ⊗Z/nZ to F×\nq2 ⊗Z/nZ for any prime power n and prime\nq ≡−1 (mod n). This implies in particular the existence of a curious “mod-p-q dilogarithm\nmap” from Fq to Z/nZ, and in Section 5.2, we digress brieﬂy to give an explicit formula\nfor this map. In the ﬁnal subsection, we describe the expected properties of the Chern class\nmap that would imply the conjectural equality (13) and henc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 1.6",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "../sections/sec-018-51-proof-of-theorem-16.md",
+      "narrative": null,
+      "content": "primitive nth root of unity. For a prime q ≡−1 mod n that splits completely in F, and for\na corresponding prime q above q, let Rζ,q denote the map B(OF/q) = B(Fq) →F×\nq2/F×n\nq2 .\nWe have two maps we wish to compare. One of them is\ncζ : B(F)/nB(F) →\n\u0000F ×\nn /F ×n\nn\n\u0001χ−1\n.\nBecause B(F) is a ﬁnitely generated abelian group, we may represent the generators of the\nimage by S-units for some ﬁxed S (at this point possibly depending on n) and consider the\nmap\ncζ : B(F)/nB(F) →(OF(ζ)[1/S]×/OF(ζ)[1/S]×n)χ−1 ,→\nM\nF×\nq2/F×n\nq2 ≃\nM\nB(Fq),\n26\nFRANK CALEGARI, STAVROS GAROUFALIDIS, AND DON ZAGIER\nwhere the ﬁna",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/thm-sec-018-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "thm-sec-018-02.md",
+      "narrative": null,
+      "content": "Let n be an odd prime power and q ≡−1 mod n. Then the map Rζ,q : B(Fq) ⊗Z/nZ →F× q2 ⊗Z/nZ is an isomorphism, where ζ is an nth root of unity.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Digression: the modpq dilogarithm",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "target": "../sections/sec-019-52-digression-the-modpq-dilogarithm.md",
+      "narrative": null,
+      "content": "[]{#modpqdilog label=\"modpqdilog\"}\n\nLet $q$ be prime, and $q + 1 \\equiv 0 \\;\\text{\\rm mod}\\;n$ with $n$ a power of $p$ as before. For convenience of exposition, assume that $p > 3$ so that $D_{\\zeta}(1)$ is a perfect $n$th power. Fix an $n$th root of unity $\\zeta$ in $\\mathbf F_{q^2}$. Then there is a trivialization $\\log_{\\zeta}: \\mathbf F^{\\times}_{q^2} \\otimes \\mathbf Z/n\\mathbf Z\\simeq \\mathbf Z/n\\mathbf Z$ sending $\\zeta$ to $1$. The isomorphism $B(\\mathbf F_q) \\otimes \\mathbf Z_p\n\\simeq \\mathbf Z/n\\mathbf Z$ of Theorem [\\[theorem:modpq\\]](#theorem:modpq){reference-type=\"ref\" reference=\"t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Chern class map on n-torsion in Qzeta",
+      "pageStart": 28,
+      "pageEnd": 31,
+      "target": "../sections/sec-020-53-the-chern-class-map-on-n-torsion-in-qzeta.md",
+      "narrative": null,
+      "content": "[]{#subsection:speculative label=\"subsection:speculative\"}\n\nThe following section contains a speculative digression and is not used elsewhere in the paper. We have proved that the maps $c_\\zeta$ and $R_\\zeta$ agree up to an invertible element of $\\mathbf Z^{\\times}_p$. To determine the value of this ratio, we need to compute the images of specific elements of the Bloch group. More specifically, as explained in the introduction, we need the two statements [\\[CompRz\\]](#CompRz){reference-type=\"eqref\" reference=\"CompRz\"} and [\\[Compcz\\]](#Compcz){reference-type=\"eqref\" reference=\"Compcz\"}. The fi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The connecting homomorphism to K-theory",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "../sections/sec-021-6-the-connecting-homomorphism-to-k-theory.md",
+      "narrative": null,
+      "content": "[]{#sec.K2F label=\"sec.K2F\"}\n\nIn this section, we give a proof of Theorem [\\[thm.K2\\]](#thm.K2){reference-type=\"ref\" reference=\"thm.K2\"}. Assume that $F$ is a field of characteristic prime to $p$ which does not contain a $p$th root of unity. Recall that $Z(F)$ is the free abelian group on $F \\smallsetminus\\{0,1\\}$ and $C(F)$ the subgroup generated by the $5$-term relation.\n\n::: definition\nLet $A(F;\\mathbf Z/n\\mathbf Z)$ be the kernel of the map $$d: Z(F) \\;\\longrightarrow\\;\\mbox{\\small$\\bigwedge^2$}F^{\\times} \\otimes \\mathbf Z/n\\mathbf Z\\,, \\qquad \n[X] \\mapsto X \\wedge (1-X) \\,.$$ The étale Bl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Nahm's conjecture and the asymptotics of Nahm sums at roots of unity",
+      "pageStart": 33,
+      "pageEnd": 37,
+      "target": "../sections/sec-022-7-nahms-conjecture-and-the-asymptotics-of-nahm-s.md",
+      "narrative": null,
+      "content": "[]{#sec.nahm label=\"sec.nahm\"}\n\nIn Section [\\[sub.intro.nahm\\]](#sub.intro.nahm){reference-type=\"ref\" reference=\"sub.intro.nahm\"} of the introduction, we saw that the $S$-units constructed in this paper from elements of the Bloch group appear naturally (although in general only conjecturally) in connection with the asymptotic properties of the Kashaev invariant of knots and its Galois twists. A second place where these units appear is in the radial asymptotics of so-called Nahm sums. This was shown in [@GZ:asymptotics] and is quoted (in a simplified form) in Theorem [\\[thm.nahmEM\\]](#thm.nahmE",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Application to the calculation of Rz",
+      "pageStart": 37,
+      "pageEnd": 40,
+      "target": "../sections/sec-023-72-application-to-the-calculation-of-rz.md",
+      "narrative": null,
+      "content": "[]{#sub.ag label=\"sub.ag\"}\n\nIn this subsection, we apply Theorem [\\[thm.nahmEM\\]](#thm.nahmEM){reference-type=\"ref\" reference=\"thm.nahmEM\"} and its corollary to a specific Nahm sum to prove equation [\\[CompRz\\]](#CompRz){reference-type=\"eqref\" reference=\"CompRz\"} in the introduction.\n\n::: theorem\n[]{#thm.eta label=\"thm.eta\"} Let $n$ be odd and $\\eta_\\zeta$ be the $n$-torsion element in $B(\\mathbf Q(\\zeta)^{+})$ defined by [\\[eq.etaz\\]](#eq.etaz){reference-type=\"eqref\" reference=\"eq.etaz\"}, where $\\zeta$ is a primitive $n$th root of unity. Then $R_\\zeta(\\eta_\\zeta) \\;=\\; \\zeta^2\\,$.\n:::\n\n::: pr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Application to Nahm's conjecture",
+      "pageStart": 40,
+      "pageEnd": 41,
+      "target": "../sections/sec-024-73-application-to-nahms-conjecture.md",
+      "narrative": null,
+      "content": "[]{#sub.nahmconj label=\"sub.nahmconj\"}\n\nIn this final subsection, we give an application of the asymptotic Theorem [\\[thm.nahmEM\\]](#thm.nahmEM){reference-type=\"ref\" reference=\"thm.nahmEM\"} and Theorem [\\[thm.R\\]](#thm.R){reference-type=\"ref\" reference=\"thm.R\"} to proving one direction of Nahm's conjecture about the modularity of Nahm sums. The notations and assumptions are as before, but for convenience we repeat them here.\n\nLet $A\\in M_r(\\mathbf Q)$ be a positive definite symmetric matrix, $B\\in\\mathbf Q^r$, and $C\\in\\mathbf Q$.\n\nWe denote $X^A=(X_1,\\dots,X_r)$ denote the unique solution in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 41,
+      "pageEnd": 41,
+      "target": "../sections/sec-025-acknowledgements.md",
+      "narrative": null,
+      "content": "F.C. was supported in part by grants DMS-1701703 and DMS-2001097 of the US National Science Foundation.\n\nThe authors would like to thank Kevin Hutchinson for pointing out that the original version of Theorem [\\[thm.eta\\]](#thm.eta){reference-type=\"ref\" reference=\"thm.eta\"} was numerically off by a factor of $8$. A careful reexamination of the argument ultimately chased this error to the original statement of Theorem [\\[thm.nahmEM\\]](#thm.nahmEM){reference-type=\"ref\" reference=\"thm.nahmEM\"} being given for $f_{A,B,C} = q^C f_{A,B}$ rather than $f_{A,B}$, leading to the inclusion of a spurious r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1712.04887v3/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 41,
+      "pageEnd": 43,
+      "target": "../sections/sec-026-references.md",
+      "narrative": null,
+      "content": "[1] George Andrews. On the general Rogers-Ramanujan theorem. American Mathematical Society, Provi-\ndence, R.I., 1974. Memiors of the American Mathematical Society, No. 152.\n[2] Spencer Bloch. Higher regulators, algebraic K-theory, and zeta functions of elliptic curves, volume 11\nof CRM Monograph Series. American Mathematical Society, Providence, RI, 2000.\n[3] Tudor Dimofte, Davide Gaiotto, and Sergei Gukov. 3-Manifolds and 3d indices. Adv. Theor. Math.\nPhys., 17(5):975–1076, 2013.\n[4] Tudor Dimofte, Davide Gaiotto, and Sergei Gukov. Gauge theories labelled by three-manifolds. Comm.\nMath. Phys.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1789 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0707.3799v3",
+  "title": "Equivariant Satake category and Kostant-Whittaker reduction",
+  "variant": "pdf",
+  "pages": 32,
+  "tocSource": "inferred",
+  "tocMethod": "contents",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Notation and statements of the results",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-notation-and-statements-of-the-results"
+    },
+    {
+      "level": 2,
+      "title": "Notation",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.55,
+      "evidence": [
+        "contents",
+        "number"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Asymptotic ˇg-modules",
+      "number": "2.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-002-22-asymptotic-ˇg-modules"
+    },
+    {
+      "level": 2,
+      "title": "Kostant functor κℏ",
+      "number": "2.3",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-003-23-kostant-functor-κℏ"
+    },
+    {
+      "level": 2,
+      "title": "Equivariant cohomology of GrG",
+      "number": "2.4",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.55,
+      "evidence": [
+        "contents",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-004-24-equivariant-cohomology-of-grg"
+    },
+    {
+      "level": 2,
+      "title": "Equivariant homology and quantum Toda lattice",
+      "number": "2.5",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-005-25-equivariant-homology-and-quantum-toda-lattice"
+    },
+    {
+      "level": 2,
+      "title": "Quasiclassical limit",
+      "number": "2.6",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-006-26-quasiclassical-limit"
+    },
+    {
+      "level": 2,
+      "title": "Equivalences",
+      "number": "2.7",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-007-27-equivalences"
+    },
+    {
+      "level": 1,
+      "title": "Topology",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-008-3-topology"
+    },
+    {
+      "level": 2,
+      "title": "Canonical filtration on H• T×Gm(GrG, F)",
+      "number": "3.2",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.55,
+      "evidence": [
+        "contents",
+        "number"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Levi-equivariant cohomology",
+      "number": "3.3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-009-33-levi-equivariant-cohomology"
+    },
+    {
+      "level": 2,
+      "title": "Transitivity for a pair of Levi subgroups",
+      "number": "3.4",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-010-34-transitivity-for-a-pair-of-levi-subgroups"
+    },
+    {
+      "level": 2,
+      "title": "Tensor structure on equivariant cohomology",
+      "number": "3.5",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-011-35-tensor-structure-on-equivariant-cohomology"
+    },
+    {
+      "level": 1,
+      "title": "Algebra",
+      "number": "4",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-012-4-algebra"
+    },
+    {
+      "level": 2,
+      "title": "Some properties of the Kostant functor κℏ",
+      "number": "4.1",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-013-41-some-properties-of-the-kostant-functor-κℏ"
+    },
+    {
+      "level": 2,
+      "title": "De-symmetrized Kostant functor κℏ",
+      "number": "4.2",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-014-42-de-symmetrized-kostant-functor-κℏ"
+    },
+    {
+      "level": 2,
+      "title": "Canonical filtration on φ(V )",
+      "number": "4.3",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-015-43-canonical-filtration-on-φv"
+    },
+    {
+      "level": 2,
+      "title": "Whittaker modules for Levi subalgebras",
+      "number": "4.4",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-016-44-whittaker-modules-for-levi-subalgebras"
+    },
+    {
+      "level": 2,
+      "title": "Transitivity for a pair of Levi subgroups",
+      "number": "4.5",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-017-45-transitivity-for-a-pair-of-levi-subgroups"
+    },
+    {
+      "level": 2,
+      "title": "Tensor structure on Kostant functor",
+      "number": "4.6",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.55,
+      "evidence": [
+        "contents",
+        "number"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Quasiclassical limit of ϕ(V )",
+      "number": "4.7",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-018-47-quasiclassical-limit-of-ϕv"
+    },
+    {
+      "level": 2,
+      "title": "Equivariant cohomology for G = PGL(2)",
+      "number": "5.1",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.55,
+      "evidence": [
+        "contents",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-019-51-equivariant-cohomology-for-g-pgl2"
+    },
+    {
+      "level": 2,
+      "title": "G = PGL(2)",
+      "number": null,
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.75,
+      "evidence": [
+        "contents",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-020-g-pgl2"
+    },
+    {
+      "level": 2,
+      "title": "Kostant functor for ˇG = SL(2)",
+      "number": "5.3",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-021-53-kostant-functor-for-ˇg-sl2"
+    },
+    {
+      "level": 2,
+      "title": "Generic splitting of the canonical filtration on Kostant functor for ˇG = SL(2)",
+      "number": "5.4",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-022-54-generic-splitting-of-the-canonical-filtration"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 392,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kostant functor",
+          "heading": false
+        },
+        {
+          "term": "equivariant cohomology",
+          "heading": false
+        },
+        {
+          "term": "equivariant homology",
+          "heading": false
+        },
+        {
+          "term": "roman bezrukavnikov",
+          "heading": false
+        },
+        {
+          "term": "levi subgroups",
+          "heading": false
+        },
+        {
+          "term": "equivariant derived",
+          "heading": false
+        },
+        {
+          "term": "affine grassmannian",
+          "heading": false
+        },
+        {
+          "term": "kostant-whittaker reduction",
+          "heading": false
+        }
+      ],
+      "extract": "EQUIVARIANT SATAKE CATEGORY AND KOSTANT-WHITTAKER REDUCTION ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG To Victor Ginzburg on his birthday Contents 1. Introduction 2 2. Notation and statements of the results 3 2.1. Notation 3 2.2. Asymptotic ˇg-modules 4 2.3. Kostant functor κℏ 4 2.4. Equivariant cohomology of GrG 5 2.5. Equivariant homology and quantum Toda lattice 5 2.6. Quasiclassical limit 6 2.7. Equivalences 7",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0707.3799v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 645,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rtimes mathbb",
+          "heading": false
+        },
+        {
+          "term": "satake category",
+          "heading": false
+        },
+        {
+          "term": "global equivariant",
+          "heading": false
+        },
+        {
+          "term": "equivariant cohomology",
+          "heading": false
+        },
+        {
+          "term": "harish-chandra bimodules",
+          "heading": false
+        },
+        {
+          "term": "langlands dual",
+          "heading": false
+        },
+        {
+          "term": "todath",
+          "heading": false
+        },
+        {
+          "term": "equivariant derived",
+          "heading": false
+        }
+      ],
+      "extract": "Let $G$ be a semi-simple algebraic group over an algebraically closed characteristic zero field $\\mathsf k$. The fundamental object of the geometric Langlands duality theory is the so-called *Satake category ${Perv_{{\\bf G_O}}(\\Gr)}$*. The latter is defined as the category of perverse sheaves on the affine (loop) Grassmannian $\\Gr$ equivariant with respect to the group of regular loops ${\\bf G_O}$. It turns out that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-notation-and-statements-of-the-results",
+      "number": "2",
+      "title": "Notation and statements of the results",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 263,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "check mathfrak",
+          "heading": false
+        },
+        {
+          "term": "subset check",
+          "heading": false
+        },
+        {
+          "term": "perverse constructible",
+          "heading": false
+        },
+        {
+          "term": "stackrel sim",
+          "heading": false
+        },
+        {
+          "term": "constructible sheaves",
+          "heading": false
+        },
+        {
+          "term": "frak",
+          "heading": false
+        },
+        {
+          "term": "sim longrightarrow",
+          "heading": false
+        },
+        {
+          "term": "rtimes mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "## Notation $\\mathsf k$ is an algebraically closed characteristic zero coefficient field. Let $G$ be a semisimple complex algebraic group, ${\\bf G_O}=G(\\BC[[t]]),\\ {\\bf G_F}=G(\\BC((t)))$. The affine Grassmannian $\\Gr=\\Gr_G={\\bf G_F}/{\\bf G_O}$ carries the category $Perv_{\\bf G_O}(\\Gr)$ of ${\\bf G_O}$-equivariant perverse constructible sheaves. It is equipped with the convolution monoidal structure, and is tensor",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-22-asymptotic-ˇg-modules",
+      "number": "2.2",
+      "title": "Asymptotic ˇg-modules",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 215,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hbar otimes",
+          "heading": false
+        },
+        {
+          "term": "hbar acts",
+          "heading": false
+        },
+        {
+          "term": "otimes mathsf",
+          "heading": false
+        },
+        {
+          "term": "check mathfrak",
+          "heading": false
+        },
+        {
+          "term": "harish-chandra bimodules",
+          "heading": false
+        },
+        {
+          "term": "full subcategory",
+          "heading": false
+        },
+        {
+          "term": "agm",
+          "heading": false
+        },
+        {
+          "term": "graded",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#agm label=\"agm\"} Let $U=U(\\check{\\mathfrak g}{})$ be the enveloping algebra, and let $U_\\hbar$ be the \"graded enveloping\\\" algebra, i.e. the graded $\\mathsf k[\\hbar]$-algebra generated by ${\\frak g}$ with relations $xy-yx = \\hbar [x,y]$ for $x,y \\in \\check{\\mathfrak g}{}$ (thus $U_\\hbar$ is obtained from $U$ by the standard Rees construction which produces a graded algebra from a filtered one); the adjoint",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-23-kostant-functor-κℏ",
+      "number": "2.3",
+      "title": "Kostant functor κℏ",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 415,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kappa hbar",
+          "heading": false
+        },
+        {
+          "term": "hbar otimes",
+          "heading": false
+        },
+        {
+          "term": "hbar harish-chandra",
+          "heading": false
+        },
+        {
+          "term": "subset hbar",
+          "heading": false
+        },
+        {
+          "term": "check mathfrak",
+          "heading": false
+        },
+        {
+          "term": "blowup operatorname",
+          "heading": false
+        },
+        {
+          "term": "kostant",
+          "heading": true
+        },
+        {
+          "term": "harish-chandra bimodule",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Kostant label=\"Kostant\"} We now proceed to define a functor ${\\kappa_\\hbar}:\\HC_\\hbar\\to QCoh^{{\\mathbb G}_m}((\\check{\\mathfrak t}{}^*/W)^2\\times {\\mathbb A}^1)$. Let $\\psi:U_\\hbar (\\check{\\mathfrak n}{}_-)\\to\\mathsf k[\\hbar]$ be a homomorphism such that $\\psi(f_\\alpha)=1$ for any simple root $\\alpha$, and a root generator $f_\\alpha\\in\\check{\\mathfrak n}{}_-\\subset U_\\hbar(\\check{\\mathfrak n}{}_-)$. Define",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-24-equivariant-cohomology-of-grg",
+      "number": "2.4",
+      "title": "Equivariant cohomology of GrG",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 225,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rtimes mathbb",
+          "heading": false
+        },
+        {
+          "term": "bullet mathbb",
+          "heading": false
+        },
+        {
+          "term": "check mathfrak",
+          "heading": false
+        },
+        {
+          "term": "mathfrak delta",
+          "heading": false
+        },
+        {
+          "term": "free cohh",
+          "heading": false
+        },
+        {
+          "term": "mathfrak times",
+          "heading": false
+        },
+        {
+          "term": "cohomology",
+          "heading": true
+        },
+        {
+          "term": "hbar",
+          "heading": false
+        }
+      ],
+      "extract": "Note that $H^\\bullet_{{\\bf G_O}\\rtimes{{\\mathbb G}_m}}(\\Gr_G)= H^\\bullet_{{{\\mathbb G}_m}}({\\bf G_O}\\backslash{\\bf G_F}/{\\bf G_O})$, whence two morphisms $pr_1^*, pr_2^*:\\ {\\mathcal O}({\\frak t}/W)=H^\\bullet_{\\bf G_O}(pt)\\to H^\\bullet_{{\\bf G_O}\\rtimes {{\\mathbb G}_m}}(\\Gr_G)$. We also have a morphism $pr^*:\\ \\mathsf k[\\hbar]=H^\\bullet_{{\\mathbb G}_m}(pt)\\to H^\\bullet_{{\\bf G_O}\\rtimes {{\\mathbb G}_m}}(\\Gr_G)$. :::",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-25-equivariant-homology-and-quantum-toda-lattice",
+      "number": "2.5",
+      "title": "Equivariant homology and quantum Toda lattice",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 268,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cald hbar",
+          "heading": false
+        },
+        {
+          "term": "toda lattice",
+          "heading": true
+        },
+        {
+          "term": "quantum toda",
+          "heading": true
+        },
+        {
+          "term": "hbar differential",
+          "heading": false
+        },
+        {
+          "term": "check mathfrak",
+          "heading": false
+        },
+        {
+          "term": "check times",
+          "heading": false
+        },
+        {
+          "term": "cdot check",
+          "heading": false
+        },
+        {
+          "term": "quantized toda",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\CalD_\\hbar({\\check{G}})$ stand for the sheaf of $\\hbar$-differential operators on ${\\check{G}}$: its global sections is the smash product of $U_\\hbar$ and $\\CO({\\check{G}})$. The action of $\\check{\\mathfrak n}{}_-$ by the left-invariant (resp. right-invariant) vector fields on ${\\check{G}}$ gives rise to the homomorphism $\\sfl$ (resp. $\\sr$): $U_\\hbar(\\check{\\mathfrak n}{}_-)\\to\\CalD_\\hbar({\\check{G}})$. Let",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-26-quasiclassical-limit",
+      "number": "2.6",
+      "title": "Quasiclassical limit",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 447,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coh check",
+          "heading": false
+        },
+        {
+          "term": "check mathfrak",
+          "heading": false
+        },
+        {
+          "term": "coh mathbb",
+          "heading": false
+        },
+        {
+          "term": "free coh",
+          "heading": false
+        },
+        {
+          "term": "check times",
+          "heading": false
+        },
+        {
+          "term": "coherent sheaf",
+          "heading": false
+        },
+        {
+          "term": "functor kappa",
+          "heading": false
+        },
+        {
+          "term": "tangent bundle",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#quasic label=\"quasic\"} Recall that the fiber of $N_XZ$ over $0\\in{\\mathbb A}^1$ is the normal cone to $Z$ in $X$. In particular, the fiber of $N_{(\\check{\\mathfrak t}{}^*/W)^2}\\Delta$ over $0\\in{\\mathbb A}^1$ is the total space of the tangent bundle $\\bT(\\check{\\mathfrak t}{}^*/W)$. Thus, Theorem [\\[normocon\\]](#normocon){reference-type=\"ref\" reference=\"normocon\"} implies the canonical isomorphism",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-27-equivalences",
+      "number": "2.7",
+      "title": "Equivalences",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 370,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "check perf",
+          "heading": false
+        },
+        {
+          "term": "equivariant hbar",
+          "heading": false
+        },
+        {
+          "term": "check mathfrak",
+          "heading": false
+        },
+        {
+          "term": "differential graded",
+          "heading": false
+        },
+        {
+          "term": "satake category",
+          "heading": false
+        },
+        {
+          "term": "harish-chandra bimodule",
+          "heading": false
+        },
+        {
+          "term": "triangulated category",
+          "heading": false
+        },
+        {
+          "term": "graded algebras",
+          "heading": false
+        }
+      ],
+      "extract": "To a differential graded algebra $A$ one can associate the triangulated category $D(A)$ of differential graded modules localized by quasi-isomorphism; and a full triangulated subcategory $D_{perf}(A)\\subset D(A)$ of perfect complexes. Thus $D_{perf}(A)$ is the full subcategory in the latter category consisting of perfect complexes (i.e. generated by the free module under cones and direct summands). Given an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-3-topology",
+      "number": "3",
+      "title": "Topology",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 1388,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frak times",
+          "heading": false
+        },
+        {
+          "term": "frak delta",
+          "heading": false
+        },
+        {
+          "term": "aff times",
+          "heading": false
+        },
+        {
+          "term": "rtimes mathbb",
+          "heading": false
+        },
+        {
+          "term": "aff gamma",
+          "heading": false
+        },
+        {
+          "term": "bullet times",
+          "heading": false
+        },
+        {
+          "term": "otimes bullet",
+          "heading": false
+        },
+        {
+          "term": "cohomology bullet",
+          "heading": false
+        }
+      ],
+      "extract": "## Proof of Theorem [\\[normocon\\]](#normocon){reference-type=\"ref\" reference=\"normocon\"} a\\) First we construct the morphism $\\alpha:\\ {\\mathcal O}(N_{\\check{\\mathfrak t}{}^*/W\\times \\check{\\mathfrak t}{}^*/W}\\Delta)\\to H^\\bullet_{{\\bf G_O}\\rtimes {{\\mathbb G}_m}}(\\Gr)$. Recall that $H^\\bullet_{{\\bf G_O}\\rtimes{{\\mathbb G}_m}}(\\Gr)= H^\\bullet_{{{\\mathbb G}_m}}({\\bf G_O}\\backslash{\\bf G_F}/{\\bf G_O})$, whence two",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-33-levi-equivariant-cohomology",
+      "number": "3.3",
+      "title": "Levi-equivariant cohomology",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 310,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rtimes mathbb",
+          "heading": false
+        },
+        {
+          "term": "imath lambda",
+          "heading": false
+        },
+        {
+          "term": "bullet times",
+          "heading": false
+        },
+        {
+          "term": "frak times",
+          "heading": false
+        },
+        {
+          "term": "oft lambda",
+          "heading": false
+        },
+        {
+          "term": "levi subgroup",
+          "heading": false
+        },
+        {
+          "term": "bigoplus lambda",
+          "heading": false
+        },
+        {
+          "term": "canonical filtration",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#levi label=\"levi\"} Let $T\\subset L\\subset G$ be a Levi subgroup. We denote by $P_L$ (resp. $P^-_L$) the parabolic subgroup generated by $L$ and the positive (resp. negative) Borel subgroup $B$ (resp. $B_-$). We denote by $W_L\\subset W$ the Weyl group of $L$. We denote by $\\pi_L$ the projection from ${\\frak t}/W_L$ to ${\\frak t}/W$. We denote by $X^+_L$ the set of highest weights of irreducible",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-34-transitivity-for-a-pair-of-levi-subgroups",
+      "number": "3.4",
+      "title": "Transitivity for a pair of Levi subgroups",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 244,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rtimes mathbb",
+          "heading": false
+        },
+        {
+          "term": "filtration bullet",
+          "heading": false
+        },
+        {
+          "term": "operatorname top",
+          "heading": false
+        },
+        {
+          "term": "frak times",
+          "heading": false
+        },
+        {
+          "term": "isomorphism operatorname",
+          "heading": false
+        },
+        {
+          "term": "stackrel sim",
+          "heading": false
+        },
+        {
+          "term": "sim longrightarrow",
+          "heading": false
+        },
+        {
+          "term": "check subset",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#toppair label=\"toppair\"} We have a canonical isomorphism $^{\\operatorname{top}}\\Xi_L:\\ gr(\\pi_L,\\Id,\\Id)^*H^\\bullet_{{\\bf G_O}\\rtimes{{\\mathbb G}_m}}(\\Gr_G,S(V)) {\\stackrel{\\sim}{\\longrightarrow}}(\\Id,\\pi_L,\\Id)_* H^\\bullet_{L({\\mathbf O})\\rtimes{{\\mathbb G}_m}}(\\Gr_L,S_L(V|_{\\check{L}{}}))$. In the RHS we have the restriction of ${\\mathcal O}({\\frak t}/W_L\\times{\\frak t}/W_L\\times{\\mathbb A}^1)$-module",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-35-tensor-structure-on-equivariant-cohomology",
+      "number": "3.5",
+      "title": "Tensor structure on equivariant cohomology",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 14,
+      "labelStart": "11",
+      "labelEnd": "14",
+      "words": 1098,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rtimes mathbb",
+          "heading": false
+        },
+        {
+          "term": "frak times",
+          "heading": false
+        },
+        {
+          "term": "mathbb bullet",
+          "heading": false
+        },
+        {
+          "term": "mathbb backslash",
+          "heading": false
+        },
+        {
+          "term": "otimes lambda",
+          "heading": false
+        },
+        {
+          "term": "otimes phi",
+          "heading": false
+        },
+        {
+          "term": "star operatorname",
+          "heading": false
+        },
+        {
+          "term": "otimes gen",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#tenscoh label=\"tenscoh\"} A ${\\bf G_O}\\rtimes{{\\mathbb G}_m}$-equivariant sheaf $\\CF$ on $\\Gr_G$ will be viewed as a sheaf on the stack ${\\bf G_O}\\rtimes{{\\mathbb G}_m}\\backslash{\\bf G_F}\\rtimes{{\\mathbb G}_m}/{\\bf G_O}\\rtimes{{\\mathbb G}_m}$. Given two such sheaves $\\CF_1,\\CF_2$ we define $\\CF_1\\boxtimes_{{\\bf G_O}\\rtimes{{\\mathbb G}_m}}\\CF_2$ as the descent of $\\CF_1\\boxtimes\\CF_2$ from $$\\left({\\bf",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-4-algebra",
+      "number": "4",
+      "title": "Algebra",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-013-41-some-properties-of-the-kostant-functor-κℏ",
+      "number": "4.1",
+      "title": "Some properties of the Kostant functor κℏ",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 490,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kappa hbar",
+          "heading": false
+        },
+        {
+          "term": "hbar harish-chandra",
+          "heading": false
+        },
+        {
+          "term": "hbar otimes",
+          "heading": false
+        },
+        {
+          "term": "kappa coh",
+          "heading": false
+        },
+        {
+          "term": "free hbar",
+          "heading": false
+        },
+        {
+          "term": "harish-chandra bimodules",
+          "heading": false
+        },
+        {
+          "term": "check mathfrak",
+          "heading": false
+        },
+        {
+          "term": "functors kappa",
+          "heading": false
+        }
+      ],
+      "extract": "The following properties of the Kostant functor will play an important role in the proof of the main results. ::: lem []{#propKons label=\"propKons\"} a) The functors $\\kappa,\\, {\\kappa_\\hbar}$ are exact. b\\) The functors $\\kappa|_{Coh_{fr}^{{\\check{G}}\\times {{\\mathbb G}_m}}(\\check{\\mathfrak g}{}^*)}$, ${\\kappa_\\hbar}|_{\\HC_\\hbar^{fr}}$ are full embeddings. ::: *Proof* is essentially due to B. Kostant, cf. [@K1]. a\\)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-42-de-symmetrized-kostant-functor-κℏ",
+      "number": "4.2",
+      "title": "De-symmetrized Kostant functor κℏ",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 461,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hbar mathsf",
+          "heading": false
+        },
+        {
+          "term": "hbar otimes",
+          "heading": false
+        },
+        {
+          "term": "hbar rho",
+          "heading": false
+        },
+        {
+          "term": "hbar stackrel",
+          "heading": false
+        },
+        {
+          "term": "varkappa hbar",
+          "heading": false
+        },
+        {
+          "term": "hbar harish-chandra",
+          "heading": false
+        },
+        {
+          "term": "hbar module",
+          "heading": false
+        },
+        {
+          "term": "check mathfrak",
+          "heading": false
+        }
+      ],
+      "extract": "We denote by $\\pi$ the projection $\\check{\\mathfrak t}{}^*\\to\\check{\\mathfrak t}{}^*/W$, and we denote by $(\\pi,\\Id,\\Id)$ the projection $\\check{\\mathfrak t}{}^*\\times(\\check{\\mathfrak t}{}^*/W)\\times{\\mathbb A}^1 \\to\\check{\\mathfrak t}{}^*/W\\times\\check{\\mathfrak t}{}^*/W\\times{\\mathbb A}^1$. For $V\\in Rep({\\check{G}})$ we are going to describe $(\\pi,\\Id,\\Id)^*\\phi(V)\\in Coh(\\check{\\mathfrak",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-43-canonical-filtration-on-φv",
+      "number": "4.3",
+      "title": "Canonical filtration on φ(V )",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 202,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "canonical filtration",
+          "heading": true
+        },
+        {
+          "term": "associated graded",
+          "heading": false
+        },
+        {
+          "term": "module",
+          "heading": false
+        }
+      ],
+      "extract": "V ) ⊗Uℏ(ˇn−) ψ. Note that Mℏ(−ρ) ⊗V has a canonical filtration with associated graded L λ Mℏ(λ −ρ) ⊗ λV , where λ is a weight of ˇt, and λV is the corresponding weight space of V ; furthermore, Mℏ(λ −ρ) = Uℏ⊗Uℏ(ˇb) k[ℏ][ˇt](λ −ρ), and k[ℏ][ˇt](λ −ρ) is a Uℏ(ˇb)-module which factors through the Uℏ(ˇt) = k[ℏ][ˇt]-module where t ∈ˇt acts by multiplication by t + ℏλ(t) −ℏρ(t). It follows that φ(V ) has a canonical",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-44-whittaker-modules-for-levi-subalgebras",
+      "number": "4.4",
+      "title": "Whittaker modules for Levi subalgebras",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 432,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "whittaker",
+          "heading": true
+        },
+        {
+          "term": "uℏk",
+          "heading": false
+        },
+        {
+          "term": "canonical filtration",
+          "heading": false
+        },
+        {
+          "term": "canonical isomorphism",
+          "heading": false
+        },
+        {
+          "term": "associated graded",
+          "heading": false
+        },
+        {
+          "term": "module",
+          "heading": false
+        },
+        {
+          "term": "subalgebra",
+          "heading": false
+        },
+        {
+          "term": "resp",
+          "heading": false
+        }
+      ],
+      "extract": "with the Lie algebra ˇt ⊂ˇl ⊂ˇg. We denote by ˇpL (resp. ˇp− L) the parabolic subalgebra generated by ˇl and the positive (resp. negative) Borel subalgebra ˇb (resp. ˇb−). We denote by πL the projection from ˇt∗/WL to ˇt∗/W. Lemma 7. For V ∈Rep( ˇG), the O(ˇt∗/WL × ˇt∗/W × A1)-module (πL, Id, Id)∗ϕ(V ) carries a canonical filtration F • L such that the associated graded is equipped with a canonical isomorphism algΞL",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-45-transitivity-for-a-pair-of-levi-subgroups",
+      "number": "4.5",
+      "title": "Transitivity for a pair of Levi subgroups",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 19,
+      "labelStart": "17",
+      "labelEnd": "19",
+      "words": 759,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "algξl",
+          "heading": false
+        },
+        {
+          "term": "grf",
+          "heading": false
+        },
+        {
+          "term": "canonical isomorphism",
+          "heading": false
+        },
+        {
+          "term": "save bit",
+          "heading": false
+        },
+        {
+          "term": "levi",
+          "heading": true
+        },
+        {
+          "term": "arguing like",
+          "heading": false
+        },
+        {
+          "term": "obtain canonical",
+          "heading": false
+        },
+        {
+          "term": "filtration",
+          "heading": false
+        }
+      ],
+      "extract": "algΞL : gr(πL, Id, Id)∗ϕ(V ) ∼ −→(Id, πL, Id)∗ϕL(V |ˇL). In the RHS we have the restriction of O(ˇt∗/WL ×ˇt∗/WL ×A1)-module ϕL(V |ˇL) to O(ˇt∗/WL ×ˇt∗/W ×A1). To save a bit of notation in what follows we will write simply algΞL : gr(πL, Id, Id)∗ϕ(V ) ∼ −→ϕL(V |ˇL). If ˇT ⊂ ˇL′ ⊂ ˇL is another Levi subgroup, then we denote by πL L′ the projection from ˇt∗/WL′ to ˇt∗/WL. Note that the filtration F • L′ on (πL′, Id,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-47-quasiclassical-limit-of-ϕv",
+      "number": "4.7",
+      "title": "Quasiclassical limit of ϕ(V )",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": "19",
+      "labelEnd": "19",
+      "words": 266,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "check mathfrak",
+          "heading": false
+        },
+        {
+          "term": "hbar otimes",
+          "heading": false
+        },
+        {
+          "term": "mathfrak times",
+          "heading": false
+        },
+        {
+          "term": "mathfrak delta",
+          "heading": false
+        },
+        {
+          "term": "tilde otimes",
+          "heading": false
+        },
+        {
+          "term": "underline ldots",
+          "heading": false
+        },
+        {
+          "term": "quasic",
+          "heading": false
+        },
+        {
+          "term": "universal centralizer",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#secr label=\"secr\"} For $V\\in Rep({\\check{G}})$, Lemma [\\[Mit\\]](#Mit){reference-type=\"ref\" reference=\"Mit\"} implies that the ${\\mathcal O}(\\check{\\mathfrak t}{}^*/W)$-bimodule $\\phi(V)$ is supported at the diagonal $\\Delta\\subset\\check{\\mathfrak t}{}^*/W\\times\\check{\\mathfrak t}{}^*/W$. It follows that the action of ${\\mathcal O}(\\check{\\mathfrak t}{}^*/W\\times\\check{\\mathfrak t}{}^*/W\\times{\\mathbb A}^1)$ on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-51-equivariant-cohomology-for-g-pgl2",
+      "number": "5.1",
+      "title": "Equivariant cohomology for G = PGL(2)",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 329,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "grn",
+          "heading": false
+        },
+        {
+          "term": "subscheme defined",
+          "heading": false
+        },
+        {
+          "term": "pgl",
+          "heading": true
+        },
+        {
+          "term": "grg",
+          "heading": false
+        },
+        {
+          "term": "cohomology",
+          "heading": true
+        }
+      ],
+      "extract": "cohomology for G = PGL(2). Let us describe H• GO⋊Gm(GrG, S(V )) in the case G = PGL(2). Then ˇG is isomorphic to SL(2). For a positive integer n let Vn be the n + 1-dimensional irreducible SL(2)- module. Let Grn be the closure of the n-dimensional GO-orbit in GrG. It is known that Grn is rationally smooth, so we are interested in H• GO⋊Gm(Grn) as a module over H• GO⋊Gm(Gr). The non-equivariant cohomology H•(Grn) is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-g-pgl2",
+      "number": null,
+      "title": "G = PGL(2)",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 433,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "grn",
+          "heading": false
+        },
+        {
+          "term": "canonical filtration",
+          "heading": false
+        },
+        {
+          "term": "poincar dual",
+          "heading": false
+        },
+        {
+          "term": "fundamental class",
+          "heading": false
+        },
+        {
+          "term": "pgl",
+          "heading": true
+        },
+        {
+          "term": "cohomology",
+          "heading": false
+        },
+        {
+          "term": "stands",
+          "heading": false
+        }
+      ],
+      "extract": "= PGL(2). Recall the canonical filtration on H• T×Gm(Grn) (see 3.2). We will compare the identification (see Lemma 1) of the associated graded with Ln i=−n(Id, π, Id)∗O(Γi) ⊗ iVn with the identification (see Lemma 10) H• T×Gm(Grn) ∼= O \u0000(π, Id, Id)−1(An) \u0001 . To this end we recall some basic facts about the cohomology of Grn. For i = −n, −n + 2, . . . , n −2, n, let vi ∈Hi+n(Grn) stand for the (Poincar´e dual of the)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-53-kostant-functor-for-ˇg-sl2",
+      "number": "5.3",
+      "title": "Kostant functor for ˇG = SL(2)",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 176,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "module",
+          "heading": false
+        },
+        {
+          "term": "centralizer",
+          "heading": false
+        },
+        {
+          "term": "kostant-whittaker",
+          "heading": false
+        },
+        {
+          "term": "satake",
+          "heading": false
+        }
+      ],
+      "extract": "the Lie algebra ˇg = sl2 and Cartan subalgebra ˇt ⊂ˇg. Lemma 11. The O(ˇt∗/W ×ˇt∗/W × A1)-module ϕ(Vn) = κℏ(Uℏ⊗Vn) is isomorphic to O(An). Proof : According to Lemma 9, the restriction of ϕ(Vn) to ℏ= 0 is isomorphic to the O(T(ˇt∗/W))-module Vn ⊗O(ˇt∗/W), that is Vn viewed as a module over the universal centralizer. Further restricting it to 0 ∈ˇt∗/W we obtain Vn viewed as a module over EQUIVARIANT SATAKE CATEGORY",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-54-generic-splitting-of-the-canonical-filtration",
+      "number": "5.4",
+      "title": "Generic splitting of the canonical filtration on Kostant functor for ˇG = SL(2)",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 32,
+      "labelStart": "21",
+      "labelEnd": null,
+      "words": 5863,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rtimes mathbb",
+          "heading": false
+        },
+        {
+          "term": "check perf",
+          "heading": false
+        },
+        {
+          "term": "functor perf",
+          "heading": false
+        },
+        {
+          "term": "cong perf",
+          "heading": false
+        },
+        {
+          "term": "ext bullet",
+          "heading": false
+        },
+        {
+          "term": "hbar otimes",
+          "heading": false
+        },
+        {
+          "term": "frak times",
+          "heading": false
+        },
+        {
+          "term": "hbar circ",
+          "heading": false
+        }
+      ],
+      "extract": "Recall the canonical filtration on $\\varphi(V_n)$ (see [\\[canon\\]](#canon){reference-type=\"ref\" reference=\"canon\"}). We will compare the identification (see Lemma [\\[Mit\\]](#Mit){reference-type=\"ref\" reference=\"Mit\"}) of the associated graded with $\\bigoplus_{i=-n}^n(Id,\\pi,\\Id)_*{\\mathcal O}(\\Gamma_i)\\otimes\\ _iV_n$ with the identification (see Lemma [\\[alg\\]](#alg){reference-type=\"ref\" reference=\"alg\"})",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 5,
+        "items": [
+          "Notation",
+          "Equivariant cohomology of GrG",
+          "Canonical filtration on H• T×Gm(GrG, F)",
+          "Tensor structure on Kostant functor",
+          "Equivariant cohomology for G = PGL(2)"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "check mathfrak",
+      "heading": false
+    },
+    {
+      "term": "rtimes mathbb",
+      "heading": false
+    },
+    {
+      "term": "equivariant hbar",
+      "heading": false
+    },
+    {
+      "term": "hbar mathsf",
+      "heading": false
+    },
+    {
+      "term": "hbar otimes",
+      "heading": false
+    },
+    {
+      "term": "hbar harish-chandra",
+      "heading": false
+    },
+    {
+      "term": "hbar module",
+      "heading": false
+    },
+    {
+      "term": "check times",
+      "heading": false
+    },
+    {
+      "term": "graded hbar",
+      "heading": false
+    },
+    {
+      "term": "bullet mathbb",
+      "heading": false
+    },
+    {
+      "term": "kappa hbar",
+      "heading": false
+    },
+    {
+      "term": "hbar stackrel",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 26,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 24,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p1); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 24 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0707.3799v3"
+  }
+}

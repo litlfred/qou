@@ -1,0 +1,559 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "022201-1-online",
+  "blocks": [
+    {
+      "id": "library/022201-1-online/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/022201-1-online/blocks/figure-img-p001-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/022201-1-online/blocks/figure-img-p001-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/022201-1-online/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "\nView\nOnline \nExport\nCitation\nRESEARCH ARTICLE | FEBRUARY 01 2021\nEfficient algorithms for approximating quantum partition\nfunctions\nRyan L. Mann  \n ; Tyler Helmuth \nJ. Math. Phys. 62, 022201 (2021)\nhttps://doi.org/10.1063/5.0013689\nArticles You May Be Interested In\nRenormalization group transformations near the critical point: Some rigorous results\nJ. Math. Phys. (November 2011)\nLoss and recovery of Gibbsianness for X Y models in external fields\nJ. Math. Phys. (December 2008)\nLocality and nonlocality of classical restrictions of quantum spin systems with applications to quantum\nlarge devia",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/022201-1-online/blocks/figure-img-p002-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../images/img-p002-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/022201-1-online/blocks/figure-img-p002-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../images/img-p002-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/022201-1-online/blocks/figure-img-p002-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../images/img-p002-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/022201-1-online/blocks/figure-img-p002-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../images/img-p002-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/022201-1-online/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "AFFILIATIONS",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-affiliations.md",
+      "narrative": null,
+      "content": "School of Mathematics, University of Bristol, Bristol BS8 1UG, United Kingdom\na)Author to whom correspondence should be addressed: mail@ryanmann.org. URL: http://www.ryanmann.org.\nb)Electronic mail: tyler.helmuth@durham.ac.uk. URL: http://www.tylerhelmuth.net.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/022201-1-online/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "ABSTRACT",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-abstract.md",
+      "narrative": null,
+      "content": "We establish a polynomial-time approximation algorithm for partition functions of quantum spin models at high temperature. Our algorithm\nis based on the quantum cluster expansion of Netoˇcný and Redig and the cluster expansion approach to designing algorithms due to Helmuth,\nPerkins, and Regts. Similar results have previously been obtained by related methods, and our main contribution is a simple and slightly\nsharper analysis for the case of pairwise interactions on bounded-degree graphs.\n© 2021 Author(s). All article content, except where otherwise noted, is licensed under a Creative Commons",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/022201-1-online/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "INTRODUCTION",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-i-introduction.md",
+      "narrative": null,
+      "content": "Classical algorithms for approximating partition functions of quantum models that make use of cluster expansions have occurred in two\nrecent papers.1,2 In this paper, we provide a simple and concise exposition of how to construct such algorithms, with the intent of making the\ntechnique accessible to a wide audience.\nA quantum spin system is modelled by a hypergraph G = (X, E). At each vertex x of G, there is a d-dimensional Hilbert space Hx with d <\n∞. The Hilbert space on the hypergraph is given by HG ∶= ⊗x∈XHx. An interaction Φ assigns a self-adjoint operator Φ(e) on He ∶= ⊗x∈eHx\nto each hyp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/022201-1-online/blocks/thm-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "thm-sec-002-01.md",
+      "narrative": null,
+      "content": "Fix Δ ∈Z+. There is a fully polynomial-time approximation scheme for the partition function ZG(β) for all graphs G of maximum degree at most Δ and all complex numbers β such that ∣β∣≤ e4Δ. Our algorithm is based on combining the abstract cluster expansion for quantum spin systems of Netoˇcný and Redig3 with the algo- rithmic framework of Helmuth, Perkins, and Regts.4 The condition ∣β∣= O( 1 Δ) is optimal under the complexity-theoretic assumption that RP (randomized polynomial time) is not equal to NP (non-deterministic polynomial time) due to the results on the hardness of approximate counting",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/022201-1-online/blocks/cor-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "cor-sec-004-02.md",
+      "narrative": null,
+      "content": "The partition function ZG(β) admits the following cluster expansion: log(ZG(β)) ∶= ∑ Γ∈GC φ(HΓ)∏ γ∈Γ wγ. For algorithms, an important quantity is the truncated cluster expansion for log(ZG(β)), Tm(ZG(β)) ∶= ∑ Γ∈GC ∥Γ∥<m φ(HΓ)∏ γ∈Γ wγ, where ∥Γ∥∶= ∑γ∈Γ∥γ∥.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/022201-1-online/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "The partition function ZG(β) admits the following abstract polymer model representation: ZG(β) = ∑ Γ∈G ∏ γ∈Γ wγ, where wγ ∶= (−β)∥γ∥ ∥γ∥!∏e∈Eγmγ(e)! Tr ⎡⎢⎢⎢⎢⎣ ∑ σ∈S∥γ∥ ∥γ∥ ∏ i=1 Φ(γσ(i)) ⎤⎥⎥⎥⎥⎦ .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/022201-1-online/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "THE ABSTRACT CLUSTER EXPANSION",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-003-ii-the-abstract-cluster-expansion.md",
+      "narrative": null,
+      "content": "The cluster expansion is a powerful tool from mathematical physics that allows one to express, via power series expansions, perturbations\nof a well-understood reference model. When the perturbations are sufficiently small, the power series expansions are convergent and allow\none to draw many conclusions regarding correlation decay, zero-freeness, and other related properties. This method was originally introduced\nby Mayer in the study of imperfect gases19 but has since been greatly abstracted and simplified. The formulation we use is due to Kotecký and\nPreiss.20\nAn abstract polymer model is a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/022201-1-online/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "THE QUANTUM CLUSTER EXPANSION",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-iii-the-quantum-cluster-expansion.md",
+      "narrative": null,
+      "content": "In this section, we shall show how the partition function of a quantum spin system admits an abstract polymer representation and hence\nan abstract cluster expansion. We return to the more general setting of hypergraphs for the remainder of this section.\nConsider a quantum spin system modeled by the hypergraph G = (X, E) with interaction Φ, where at each vertex x of G, there is a\nd-dimensional Hilbert space Hx with d < ∞. Recall that Φ assigns a self-adjoint operator Φ(e) on He ∶= ⊗x∈eHx to each hyperedge e of G.\nDefine a polymer γ in this model to be a multiset (Eγ, mγ) of hyperedges Eγ ⊆E wit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/022201-1-online/blocks/lem-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "lem-sec-005-01.md",
+      "narrative": null,
+      "content": "Fix Δ ∈Z+. Let G = (V, E) be a graph of maximum degree at most Δ, and let β be a complex number such that ∣β∣≤ e4Δ. The cluster expansion for log(ZG(β)) converges absolutely, ZG(β) ≠0, and for m ∈Z+, ∣Tm(ZG(β)) −log(ZG(β))∣≤∣V∣e−m. We prove Lemma 10 in Appendix B. This lemma implies that to obtain an multiplicative ϵ-approximation to ZG(β), it is sufficient to compute Tm(ZG(β)) to order m = log(∣V(G)∣/ϵ). We shall proceed by establishing an algorithm for computing Tm(ZG(β)) in time exp(O(m)) ⋅∣V(G)∣O(1). Helmuth, Perkins, and Regts4 showed that such an algorithm exists, given the following thr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/022201-1-online/blocks/lem-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "lem-sec-005-02.md",
+      "narrative": null,
+      "content": "Fix Δ ∈Z+, and let G = (V, E) be a graph of maximum degree at most Δ. The clusters of size at most m can be listed in time exp(O(m)) ⋅∣V∣O(1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/022201-1-online/blocks/lem-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "lem-sec-005-03.md",
+      "narrative": null,
+      "content": "The Ursell function φ(H) can be computed in time exp(O(∣V(H)∣)).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/022201-1-online/blocks/lem-sec-005-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "lem-sec-005-04.md",
+      "narrative": null,
+      "content": "The weight wγ of a polymer γ can be computed in time exp(O(∥γ∥)). We prove Lemma 11 in Appendix B.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/022201-1-online/blocks/lem-sec-005-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "lem-sec-005-05.md",
+      "narrative": null,
+      "content": "Fix Δ ∈Z+, and let G = (V, E) be a graph of maximum degree at most Δ. The truncated cluster expansion Tm(ZG(β)) can be computed in time exp(O(m)) ⋅∣V(G)∣O(1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/022201-1-online/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "APPROXIMATION ALGORITHM",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-005-iv-approximation-algorithm.md",
+      "narrative": null,
+      "content": "We now establish our approximation algorithm. First, we show that the truncated cluster expansion provides a good approximation to\nlog(ZG(β)). Netoˇcný and Redig3 provided a sufficient condition for the convergence of the quantum cluster expansion based on the formalism\nof Kotecký and Preiss.20 In the following lemma, we follow their analysis in the setting of bounded-degree graphs. In particular, we obtain\nconvergence criteria based on the maximum degree alone.\nLemma 4. Fix Δ ∈Z+. Let G = (V, E) be a graph of maximum degree at most Δ, and let β be a complex number such that ∣β∣≤\n1\ne4Δ. The\ncl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/022201-1-online/blocks/lem-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "restatement",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "lem-sec-008-01.md",
+      "narrative": null,
+      "content": "The partition function ZG(β) admits the following abstract polymer model representation: ZG(β) = ∑ Γ∈G ∏ γ∈Γ wγ, where wγ ∶= (−β)∥γ∥ ∥γ∥!∏e∈Eγmγ(e)! Tr ⎡⎢⎢⎢⎢⎣ ∑ σ∈S∥γ∥ ∥γ∥ ∏ i=1 Φ(γσ(i)) ⎤⎥⎥⎥⎥⎦ .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/022201-1-online/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "CONCLUSION & OUTLOOK",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-006-v-conclusion-outlook.md",
+      "narrative": null,
+      "content": "We have discussed how classical algorithms based on cluster expansion methods apply to quantum spin systems at high temperature.\nOur focus has been on conveying the simplicity of the method, which has appeared previously in other forms.1,2 We note that it may be\npossible to use the Markov chain polymer approach of Ref. 25 to obtain an algorithm with an improved runtime.\nFor discrete classical spin systems, expansion methods have also been used at low temperatures, i.e., when β ≫1.4,26–29 It would be inter-\nesting to adapt these methods to quantum systems, e.g., by developing algorithms based o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/022201-1-online/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "ACKNOWLEDGMENTS",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-007-acknowledgments.md",
+      "narrative": null,
+      "content": "We thank Michael Bremner, Adrian Chapman, Ashley Montanaro, and Will Perkins for helpful discussions. R.L.M. was supported by the\nQuantERA ERA-NET Cofund in Quantum Technologies implemented within the European Union’s Horizon 2020 Programme (QuantAlgo\nproject) and EPSRC Grant Nos. EP/L021005/1 and EP/R043957/1. T.H. was supported by EPSRC Grant No. EP/P003656/1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/022201-1-online/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "PROOF OF LEMMA 2",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-008-appendix-a-proof-of-lemma-2.md",
+      "narrative": null,
+      "content": "Lemma 2 (restatement).\nThe partition function ZG(β) admits the following abstract polymer model representation:\nZG(β) = ∑\nΓ∈G\n∏\nγ∈Γ\nwγ,\nwhere\nwγ ∶=\n(−β)∥γ∥\n∥γ∥!∏e∈Eγmγ(e)! Tr\n⎡⎢⎢⎢⎢⎣\n∑\nσ∈S∥γ∥\n∥γ∥\n∏\ni=1\nΦ(γσ(i))\n⎤⎥⎥⎥⎥⎦\n.\nProof. Our proof follows the work of Netoˇcný and Redig.3 By definition,\nZG(β) = Tr[e−βHG]\n=\n∞\n∑\nn=0\n(−β)n\nn!\nTr\n⎡⎢⎢⎢⎢⎣\n⎛\n⎝∑\ne∈E(G)\nΦ(e)⎞\n⎠\nn⎤⎥⎥⎥⎥⎦\n=\n∞\n∑\nn=0\n(−β)n\nn!\n∑\ne1,...,en∈E(G)\nTr[\nn\n∏\ni=1\nΦ(ei)].\nWe shall now rewrite the inner sum as a product over disjoint objects. Let S = (ei)n\ni=1 denote any sequence of hyperedges, and let GS be the\ngraph with vertex set [n] and edges",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/022201-1-online/blocks/lem-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "lem-sec-009-01.md",
+      "narrative": null,
+      "content": "(restatement). Fix Δ ∈Z+. Let G = (V, E) be a graph of maximum degree at most Δ, and let β be a complex number such that ∣β∣≤ e4Δ. The cluster expansion for log(ZG(β)) converges absolutely, ZG(β) ≠0, and for m ∈Z+, ∣Tm(ZG(β)) −log(ZG(β))∣≤∣V∣e−m.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/022201-1-online/blocks/lem-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "restatement",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "lem-sec-009-02.md",
+      "narrative": null,
+      "content": "The weight wγ of a polymer γ can be computed in time exp(O(∥γ∥)).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/022201-1-online/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "PROOF OF LEMMA 4 AND LEMMA 7",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-009-appendix-b-proof-of-lemma-4-and-lemma-7.md",
+      "narrative": null,
+      "content": "Lemma 4. (restatement).\nFix Δ ∈Z+. Let G = (V, E) be a graph of maximum degree at most Δ, and let β be a complex number such that\n∣β∣≤\n1\ne4Δ. The cluster expansion for log(ZG(β)) converges absolutely, ZG(β) ≠0, and for m ∈Z+,\n∣Tm(ZG(β)) −log(ZG(β))∣≤∣V∣e−m.\nProof. For convenience, we normalize the trace so that Tr(I) = 1. Note that this is equivalent to a rescaling of the partition function by\na multiplicative factor. We introduce a polymer γx to every vertex x in G consisting of only that vertex. We define γx to be incompatible with\nJ. Math. Phys. 62, 022201 (2021); doi: 10.1063/5.0013689\n62,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/022201-1-online/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "DATA AVAILABILITY",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-010-data-availability.md",
+      "narrative": null,
+      "content": "No new data were created during this study.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/022201-1-online/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "REFERENCES",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-011-references.md",
+      "narrative": null,
+      "content": "1A. W. Harrow, S. Mehraban, and M. Soleimanifar, in Proceedings of the 52nd Annual ACM SIGACT Symposium on Theory of Computing (ACM, 2020), pp. 378–386;\narXiv:1910.09071.\n2T. Kuwahara, K. Kato, and F. G. Brandão, Phys. Rev. Lett. 124, 220601 (2020); arXiv:1910.09425.\n3K. Netoˇcný and F. Redig, J. Stat. Phys. 117, 521 (2004); arXiv:math-ph/0404018.\n4T. Helmuth, W. Perkins, and G. Regts, Probab. Theory Relat. Fields 176, 851 (2020); arXiv:1806.11548.\n5A. Sly and N. Sun, in 53rd Annual IEEE Symposium on Foundations of Computer Science (FOCS) (IEEE, 2012), pp. 361–369; arXiv:1203.2602.\n6A. Galanis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

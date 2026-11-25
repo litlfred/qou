@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-reeb-primes-as-orbits",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:reeb-primes-as-orbits",
+  "kind": "remark",
+  "title": "From arithmetic time to prime orbits",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-q-reeb-flow",
+    "papers/quantum-observable-universe/blocks/def-recursive-brane-tower"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-categorical-q-reeb-flow",
+  "tags": [
+    "exposition",
+    "reeb-flow",
+    "prime-orbits",
+    "classical-limit"
+  ],
+  "text": "reeb-primes-as-orbits.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,1033 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1309.0865v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "\\label{sec-intro}\n\n\nLet us recall the history of the Hecke algebra from the perspectives of algebraization and categorification.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Hecke algebra by generators and relations",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-11-the-hecke-algebra-by-generators-and-relations.md",
+      "narrative": null,
+      "content": "Let $G$ be a split finite reductive group over a finite field $\\mathbb{F}_q$, and let $B \\subset G$ be a Borel subgroup.  A fundamental object in representation theory is the Hecke algebra\n\\[\n\\mathrm{Fun}_{B \\times B}(G, \\mathbb{C})\n\\]\nof $B$-biinvariant complex valued functions on $G$, with multiplication given by convolution. This algebra first emerged when studying the irreducible complex characters of $G$, but has gone on to play an essential role in many (at times unexpected) branches of representation theory.\n\nIwahori \\cite{Iwahori} made the crucial observation that the Hecke algebra adm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1309.0865v1  [math.QA]  3 Sep 2013\nSOERGEL CALCULUS\nBEN ELIAS AND GEORDIE WILLIAMSON\nTo Mikhail Khovanov and Rapha¨el Rouquier, who taught us generators and relations.\nABSTRACT. The monoidal category of Soergel bimodules is an incarnation of the\nHecke category, a fundamental object in representation theory. We present this cat-\negory by generators and relations, using the language of planar diagrammatics. We\nshow that Libedinsky’s light leaves give a basis for morphism spaces and give a new\nproof of Soergel’s classiﬁcation of the indecomposable Soergel bimodules.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Hecke category",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-12-the-hecke-category.md",
+      "narrative": null,
+      "content": "Beginning with the seminal work \\cite{KaL1} of Kazhdan and Lusztig it was realised that the Hecke algebra admits a categorification, which has come to be known as the Hecke category. \n According to Grothendieck's function-sheaf dictionary, the algebra of $B$-biinvariant functions on $G$ should be categorified by some version of $B$-biequivariant sheaves on $G$. For concreteness, we now suppose that $G$ is a complex reductive group with Borel subgroup $B$ and maximal torus $T \\subset G$. The Hecke category (in its simplest geometric incarnation) is the additive subcategory of semi-simple comple",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Soergel bimodules",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-13-soergel-bimodules.md",
+      "narrative": null,
+      "content": "Just as Iwahori gave an intrinsic construction of the Hecke algebra so too would Soergel give one of the Hecke category.\n\nLet $\\hg$ denote the Lie algebra of $T$ and $R$ the regular functions on $\\hg$, graded so that $\\hg^*$ is in degree two. We have a canonical identification of equivariant cohomology groups\n(the ``Borel isomorphism'') \\[ R = H^{\\bullet}_T(\\pt) = H^{\\bullet}_B(\\pt). \\] In particular, the hypercohomology of any object in $ D^b_{B \\times B}(G, \\CM)$ is naturally a graded module\nover $H^{\\bullet}_{B \\times B}(\\pt) = R \\otimes_{\\CM} R$. Because $R$ is commutative, we may regard a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Soergel bimodules by generators and relations",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-14-soergel-bimodules-by-generators-and-relations.md",
+      "narrative": null,
+      "content": "A \\emph{Bott-Samelson bimodule} is a bimodule of the form $B_{\\un{w}} \\define B_s \\ot_R B_t \\ot_R \\cdots \\ot_R B_u$ for an expression $\\un{w}=st\\dots u$. They form a full\nmonoidal subcategory of $R-\\Bim$, which we denote $\\BSBim$. By definition, any Soergel bimodule is a direct sum of shifts of summands of bimodules in $\\BSBim$. Said another way, the\ncategory of Soergel bimodules $\\SBim$ is the Karoubi envelope of (the additive, graded envelope of) $\\BSBim$. The upshot is that in order to describe the category of Soergel bimodules it\nis enough to describe the monoidal category of Bott-Samelson",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "One color relations:",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-141-one-color-relations.md",
+      "narrative": null,
+      "content": "It was pointed out in \\cite{EKh} that most of the one color relations can be concisely encoded in the statement that $B_s$ is a Frobenius object in the\ncategory of $R$-bimodules. The trivalent vertices give the multiplication and comultiplication, whilst the dots provide the unit and counit. The Frobenius biadjunction of $B_s$ with itself arises from certain cups and caps, which are constructed from trivalent vertices and dots. The axioms governing Frobenius objects guarantees that any diagram involving one color is isotopy invariant. The one-color relations not involving polynomials are then",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two color relations:",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-006-142-two-color-relations.md",
+      "narrative": null,
+      "content": "Two color graphs and Soergel bimodules for the dihedral group are explored in detail in \\cite{EDihedral}. Essentially, morphisms between Bott-Samelson bimodules in rank 2 are governed by the Temperley-Lieb algebra at a root of unity, a fact related to the (quantum) geometric Satake equivalence for $\\mathfrak{sl}_2$.\n\nThe first important two color relation is the cyclicity of the $2m_{st}$-valent vertex. (There is a subtlety here if the Cartan matrix is not symmetric, which we ignore in the introduction.) This allows us to consider all morphisms as isotopy classes of diagrams. The second relati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Three color or ``Zamolodchikov'' relations:",
+      "pageStart": 8,
+      "pageEnd": 11,
+      "target": "../sections/sec-007-143-three-color-or-zamolodchikov-relations.md",
+      "narrative": null,
+      "content": "\\label{threecolorintro} There is one relation for each finite parabolic subgroup of rank 3, generalizing the so-called\nZamolodchikov tetrahedron equation. We feel this interesting topic deserves some introduction of its own. In braided monoidal categories a\nfundamental role is played by the Yang-Baxter equation or braid relation, which guarantees that one obtains an action of the braid group on the tensor powers of any object. In the setting\nof braided monoidal 2-categories, the role of the Yang-Baxter equation is played by the Yang-Baxter isomorphism, and the consistency relation between thes",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Consequences for the structure of Soergel bimodules",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-008-15-consequences-for-the-structure-of-soergel-bim.md",
+      "narrative": null,
+      "content": "Let $\\DC$ denote the diagrammatic category defined by generators and relations in the previous section. In order to prove that this category is equivalent to $\\BSBim$, we construct a basis\nfor morphisms in $\\DC$, which is sent to a basis for morphisms in $\\BSBim$. In \\cite{Lib}, Libedinsky constructed a combinatorial basis for the morphism space between two Bott-Samelson\nbimodules, which he called the \\emph{light leaves} basis. His construction involves the technique of localization, which we will also explore diagrammatically in this paper.\n\nLet $\\un{x}$ be an expression and $\\eb$ a subexpres",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Organization of the paper",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-009-16-organization-of-the-paper.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Hecke Algebra",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-010-2-the-hecke-algebra.md",
+      "narrative": null,
+      "content": "bimodules.\nSection 2: We recall the Hecke algebra, Kazhdan-Lusztig basis and Deod-\nhar’s defect formula.\nSection 3: We deﬁne standard and Soergel bimodules, state Soergel’s cate-\ngoriﬁcation theorem and discuss realizations and localization.\nPart 2: In the next two sections, we deﬁne the diagrammatic categories.\nSection 4: We deﬁne the diagrammatic presentation of standard modules.\nSection 5: We recall results of [Elib] and deﬁne the diagrammatic category\nof Soergel bimodules.\nPart 3: In the last two sections we study the diagrammatic categories and prove\nthe equivalence to Soergel bimodules.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-011-17-acknowledgements.md",
+      "narrative": null,
+      "content": "Both authors would like to thank Mikhail Khovanov for encouraging and supporting their collaboration. The second author would like to thank Nicolas Libedinsky and Rapha\\\"el Rouquier for emphasising the importance of generators and relations, and Jean Michel for help speeding up his programs.\n\n \n\\part{Background on the Hecke algebra and Soergel bimodules}\n\n\\label{pt:background}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basic definitions",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-012-21-basic-definitions.md",
+      "narrative": null,
+      "content": "\\label{subsec-basicdefinition}\n\n\nLet $(W,S)$ be a Coxeter system and let $e \\in W$ denote the identity. That is, $W$ is the group generated by $S$ subject to the relations:\n\\begin{equation} s^2=e   \n\\qquad \\text{for all $s \\in S$,}\\end{equation}\n\\begin{equation} \\ubr{sts\\ldots}{m_{st}} = \\ubr{tst\\ldots}{m_{st}}\n\\label{braidreln} \n\\qquad \\text{for all $s \\ne t \\in S$.}\n\\end{equation}\nThe numbers $m_{st} = m_{ts}$ associated to each pair of simple reflections determine the group $W$, and must satisfy $m_{st} \\in \\{2,3,4,\\ldots\\}$ or $m_{st}=\\infty$. When $m_{st}=\\infty$, the\nso-called \\emph{brai",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Kazhdan-Lusztig basis",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-013-22-the-kazhdan-lusztig-basis.md",
+      "narrative": null,
+      "content": "\\label{subsec-KLbasis}\n\n\nThe Hecke algebra is equipped with a $\\Z$-linear \\emph{bar involution}, denoted $h \\mapsto \\overline{h}$ and\nuniquely specified as an algebra homomorphism by $v \\mapsto v^{-1}$ and $H_s \\mapsto H_s^{-1}$. A simple\ncalculation shows that $H_s + v = H_s^{-1}+v^{-1}$, so that the element $\\un{H}_s = H_s+v$ is bar-invariant.\n\n\\begin{thm}(Kazhdan-Lusztig \\cite{KaL1}) There exists a unique basis $\\{\\un{H}_w\\}_{w \\in W}$ of $\\HB$ as a $\\Zvv$-module, called the \\emph{Kazhdan-Lusztig basis}, which satisfies:\n\\begin{itemize}\n\\item $\\overline{\\un{H}_w}=\\un{H}_w$;\n\\item $\\un{H}_w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The presentation in the Kazhdan-Lusztig generators",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-014-23-the-presentation-in-the-kazhdan-lusztig-gener.md",
+      "narrative": null,
+      "content": "\\label{subsec-KLpresentation}\n\n\nAs the elements $H_s$ generate $\\HB$, so too do the elements $\\un{H}_s$. The corresponding relations are slightly more complicated:\n\\begin{equation} \\un{H}_s^2 = \\un{H}_s (v+v^{-1}), \\label{rank1hecke} \\end{equation}\n\\begin{equation} \\ubr{\\un{H}_s\\un{H}_t\\un{H}_s\\ldots}{k+1} = \\sum_d  c_{k,d} \\un{H}_{\\ubr{sts\\ldots}{d+1}} \\ \\mathrm{ for }\\ 1 \\le k+1 \\le m_{st}.  \\label{rank2hecke} \\end{equation}\nThe first relation corresponds to \\eqref{rank1heckestd}.\nThe second relation expresses a product of generators in terms of the Kazhdan-Lusztig basis within a given dihed",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The standard trace and the defect formula",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-015-24-the-standard-trace-and-the-defect-formula.md",
+      "narrative": null,
+      "content": "\\label{subsec-defectformula}\n\n\nA \\emph{trace} on $\\HB$ is a $\\Zvv$-linear map $\\e \\co \\HB \\to \\Zvv$ satisfying $\\e(hh') = \\e(h'h)$ for all $h,h' \\in \\HB$. A straightforward calculation shows that the map $\\e(\\sum c_w\nH_w) = c_e$ is a trace, called the \\emph{standard trace}. There is a nice combinatorial formula for the standard trace of a product $\\un{H}_{\\un{w}}$, known\nas the \\emph{defect formula}, which we now discuss.\n\nA \\emph{subsequence} of $\\un{w} = s_1s_2\\dots s_m$ is a sequence $\\pi_1 \\pi_2 \\dots \\pi_m$ such that $\\pi_i \\in \\{ e, s_i \\}$ for all $1 \\le i \\le m$. Instead of working wit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Soergel Bimodules",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-016-3-soergel-bimodules.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Realizations of Coxeter systems",
+      "pageStart": 18,
+      "pageEnd": 22,
+      "target": "../sections/sec-017-31-realizations-of-coxeter-systems.md",
+      "narrative": null,
+      "content": "\\label{subsec-realization}\n\n\nFor both Soergel's construction of Soergel bimodules, and for our construction of a diagrammatic category by generators and relations, the starting point will be the data of a realization\nof a Coxeter system.\n\n\\begin{defn} \\label{defn:realization} Let $\\Bbbk$ be a commutative ring. A \\emph{realization} of $(W,S)$ over $\\Bbbk$ is a free, finite rank $\\Bbbk$-module $\\hg$, together with subsets $\\{ \\a_s^\\vee \\; | \\; s \\in S\\} \\subset \\hg$ and $\\{ \\a_s \\; | \\; s \\in S\\} \\subset \\hg^* = \\Hom_{\\Bbbk}(\\hg,\\Bbbk)$, satisfying:\n\\begin{enumerate}\n\\item $\\langle \\alpha_s^\\vee",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Technicalities",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-018-32-technicalities.md",
+      "narrative": null,
+      "content": "It is important to remember the key dichotomy in this paper: we will discuss two separate categories ``at once.\" Fix a realization of $(W,S)$, and consider the ring $R$ defined above. In\nthis chapter we will introduce Soergel's monoidal category $\\SBim$, which is a full subcategory of $R-\\Bim$. In chapter \\ref{sec-diagsbim} we will define a diagrammatic category $\\DC$ by\ngenerators and relations, whose morphism spaces will be enriched in $R-\\Bim$. One will need to make some assumptions on the realization in order for either category to ``behave well\" (i.e.\nin order for the Soergel Categorifica",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Demazure operators",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-019-33-demazure-operators.md",
+      "narrative": null,
+      "content": "\\label{subsec-polys}\n\n\nFix $s \\in S$. We will extend the map $\\langle \\a_s^\\vee, \\cdot \\rangle \\co \\hg^* \\to \\Bbbk$ to the \\emph{Demazure operator} $\\pa_s \\co R \\to R^s(-2)$, by the formula \n\\[\n\\pa_s(f) = \\frac{f - s(f)}{\\a_s}.\n\\]\nThe numerator and denominator are both $s$-antiinvariant, so that the fraction, assuming it is well-defined, should lie in the subring $R^s$ of $s$-invariants.\nClearly this map makes sense for $f \\in \\hg^*$, and agrees with $\\langle \\a_s^\\vee, \\cdot \\rangle$. Let us demonstrate that it makes sense in general.\n\nSuppose that $\\d$ is an element of $\\hg^*$ such that $\\la",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Soergel bimodules and standard bimodules",
+      "pageStart": 24,
+      "pageEnd": 27,
+      "target": "../sections/sec-020-34-soergel-bimodules-and-standard-bimodules.md",
+      "narrative": null,
+      "content": "\\label{subsec-soergelandstandard}\n\nIn this section we give an introduction to Soergel bimodules and standard bimodules, following Soergel's ``classical'' treatment of the subject \\cite{Soe3}.\n\nFor $s \\in S$, let $B_s$ denote the $R$-bimodule $R \\ot_{R^s} R (1)$, given by restriction followed by induction and a grading shift. Henceforth, $\\ot$ will denote the tensor product over $R$, while $\\ot_s$ will denote the tensor product over $R^s$.\n\nGiven a sequence $\\un{w} = s_1s_2 \\dots s_d$ the corresponding \\emph{Bott-Samelson bimodule} is the tensor product\n\\[\nB_{\\un{w}} \\define B_{s_1} \\ot B_{s_2}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Categorification",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "../sections/sec-021-35-categorification.md",
+      "narrative": null,
+      "content": "\\label{subsec-SoergelCatfn}\n\n\nWe denote the split Grothendieck group of an additive category by $[\\CC]$. That is, $[\\CC]$ is the abelian group generated by symbols $[M]$ for all objects $M \\in \\CC$ subject\nto the relations $[M] = [M'] + [M'']$ whenever $M \\cong M' \\oplus M''$ in $\\CC$. When $\\CC$ is monoidal, $[\\CC]$ has the structure of a ring via $[M][M'] = [M\\otimes M']$. If in addition\n$\\CC$ is graded with grading shift functor $M \\mapsto M(1)$, then $[\\CC]$ has the structure of a $\\Zvv$-algebra via $v[M] \\define [M(1)]$.\n\nThe following is \\emph{Soergel's categorification theorem} \\cite[Sa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Localization",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "../sections/sec-022-36-localization.md",
+      "narrative": null,
+      "content": "As $\\Bbbk$ is a domain, so is $R$. Let $Q$ denote the fraction field of $R$, which is an (ungraded) field living over $\\Bbbk$. One can extend any $R$-module to a $Q$-module in the usual\nway. We have already shown in general that any tensor product of standard and Soergel bimodules is free as a left (or right) $R$-module, and that morphism spaces are torsion-free.\nTherefore, extension of scalars from $R$ to $Q$ on the left (or right) will yield a free $Q$-module, and will act faithfully on morphisms.\n\n\\begin{lem}\\label{localizationononeside} For any $\\un{w} = s_1s_2 \\dots s_d$ one has an isomor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Diagrammatics for Standard Bimodules",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../sections/sec-023-4-diagrammatics-for-standard-bimodules.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Diagrammatic definition",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "../sections/sec-024-41-diagrammatic-definition.md",
+      "narrative": null,
+      "content": "\\label{subsec-StdDiagDef}\n\n\nWe assume that the reader is familiar with diagrammatics for monoidal categories with biadjunctions. An introductions to the topic may be found in \\cite{Lauda}.\n\nFix $(W,S)$. In the paper \\cite{EWFenn}, we give a diagrammatic monoidal presentation for the 2-groupoid of $W$ over $\\Bbbk$. As we have seen, this is equivalent to the category $\\StdBim_0$. We recall that definition, beefing it up to add polynomials and obtain the 2-groupoid of $W$ over $R$, which is equivalent to $\\StdBim$. We introduce it in a way which will aid our definition of Soergel diagrammatics in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rex moves and rex graphs",
+      "pageStart": 34,
+      "pageEnd": 37,
+      "target": "../sections/sec-025-42-rex-moves-and-rex-graphs.md",
+      "narrative": null,
+      "content": "\\label{subsec-RexMoves}\n\n\nThe terminology of this section is ad hoc, and non-standard. This is due to ignorance, not malice.\n\nFor each $w \\in W$, let $\\G_w$ denote the set of all reduced expressions for $w$. This can be given the structure of a connected graph, the \\emph{rex graph},  where two reduced expressions are connected by an edge if they differ by a single application of a braid relation \\eqref{braidreln}. The edge itself can be labelled by the pair $\\{s,t\\}$ corresponding to the braid\nrelation; in other words, the edges are labelled by finitary rank 2 subsets of $S$. We shall only dis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Diagrammatics for Soergel Bimodules",
+      "pageStart": 37,
+      "pageEnd": 37,
+      "target": "../sections/sec-026-5-diagrammatics-for-soergel-bimodules.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generators and relations",
+      "pageStart": 37,
+      "pageEnd": 42,
+      "target": "../sections/sec-027-51-generators-and-relations.md",
+      "narrative": null,
+      "content": "\\begin{defn} A \\emph{Soergel graph} is a type of graph with boundary (see Definition \\ref{defn: graph}). The only decorations are boxes labelled by homogeneous $f \\in R$. The vertices in this graph are of 3 types (see Figure \\ref{thegenerators}):\n\n\\begin{itemize} \\item Univalent vertices (dots). These have degree $+1$. \\item Trivalent vertices, where all three adjoining edges have the same color. These have degree $-1$. \\item\n$2m$-valent vertices, where the adjoining edges alternate in color between two elements $s \\ne t \\in S$, and $m_{st}=m<\\infty$. These have degree $0$. \\end{itemize}\n\nThe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Jones-Wenzl morphisms",
+      "pageStart": 42,
+      "pageEnd": 45,
+      "target": "../sections/sec-028-52-jones-wenzl-morphisms.md",
+      "narrative": null,
+      "content": "\\label{subsec-JW}\n\n\nPresenting the Bott-Samelson category in rank $2$ is the topic of \\cite{EDihedral}. The calculations and proofs are too long to duplicate or fully discuss in this paper. If the reader is\nwilling to accept the Jones-Wenzl morphisms as black boxes\\footnote{no pun intended!}, satisfying the properties stated in this section and the next, then the reader need not consult\n\\cite{EDihedral}. We assume the reader is familiar with quantum numbers and Temperley-Lieb algebras; background can be found in \\cite{EDihedral}.\n\nFix $m<\\infty$. Consider the Temperley-Lieb algebra $TL$ over $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prop-sec-029-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 46,
+      "target": "prop-sec-029-01.md",
+      "narrative": null,
+      "content": "This deﬁnition gives a well-deﬁned functor.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The functor to bimodules",
+      "pageStart": 45,
+      "pageEnd": 46,
+      "target": "../sections/sec-029-53-the-functor-to-bimodules.md",
+      "narrative": null,
+      "content": "tivity holds. This ensures that ∆s ∈R ⊗Rs R is well-deﬁned (see section 3.3).\nDeﬁnition 5.12. Let F be the k-linear monoidal functor from D to BSBim deﬁned as\nfollows. The object x is sent to Bx. The images of the dots and trivalent vertices were\ngiven in the introduction, and correspond to the four structure maps of a Frobenius\nextension. In the introduction, one of the dots was sent to 1 7→1\n2(αs ⊗1 + 1 ⊗αs), but\nthis should be 1 7→∆s in general; whenever 1\n2 exists, these two expressions are equal.\nThe bimodule image of the 2m-valent vertex is given explicitly in [Elib], though in a\nconvolu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/cor-sec-030-08",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 53,
+      "target": "cor-sec-030-08.md",
+      "narrative": null,
+      "content": "Std is full. SOERGEL CALCULUS",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/lem-sec-030-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 53,
+      "target": "lem-sec-030-07.md",
+      "narrative": null,
+      "content": "Every morphism in Kar(DQ) is a linear combination of graphs for which: • The only dots appearing are boundary dots. • There is a single polynomial in the leftmost region, and no other connected compo- nents without boundary. • There are no trivalent vertices. • There are no solid 2m-valent vertices, only dashed 2m-valent vertices.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prop-sec-030-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 53,
+      "target": "prop-sec-030-04.md",
+      "narrative": null,
+      "content": "The reﬂection indices behave like standard modules with respect to polynomials. In other words, we have (4.1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prop-sec-030-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 53,
+      "target": "prop-sec-030-05.md",
+      "narrative": null,
+      "content": "The dashed cups and caps are redundant, being equal to the following maps. The only relations necessary are (5.19) and (5.20). (5.25) = = αs αs",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prop-sec-030-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 53,
+      "target": "prop-sec-030-06.md",
+      "narrative": null,
+      "content": "The functor Std is well-deﬁned, and is an equivalence of categories. SOERGEL CALCULUS This proposition implies all of Theorem 5.16 except for the connection to StdBim. We have already showed that Std is essentially surjective, because Kar(DQ) is addi- tively generated by reﬂection indices. We need to check that Std is well-deﬁned, full and faithful. Proof that Std is well-deﬁned. We have already checked the isotopy relations in StdBim, because of (5.21) and (5.27). We have also checked polynomial-sliding. Relation (4.3) follows as below (we used δ = αs 2 , but any δ will work). = = ( + ( = ( +",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Localization",
+      "pageStart": 46,
+      "pageEnd": 53,
+      "target": "../sections/sec-030-54-localization.md",
+      "narrative": null,
+      "content": "technique, which we will discuss in the section after next.\n□\n5.4. Localization.\nDeﬁnition 5.14. Let DQ denote the localization of D at Q, which is to say that we\nallow boxes labelled by f ∈Q in the leftmost region, and require that they multiply\nas in Q. Let FQ denote the functor DQ →BSBimQ which extends F under base\nchange.\nBecause of arguments akin to Lemma 3.20, this is the same as the category which\nallows boxes labelled by f ∈Q in any region, and allows f ∈Qs to slide across a line\ncolored s.\nThe bimodule Bs is equipped with short exact sequences (3.4) and (3.5) which split\nafter localiz",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/rem-sec-030-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 53,
+      "target": "rem-sec-030-02.md",
+      "narrative": null,
+      "content": "If one is familiar with the geometric underpinning of Soergel bimod- ules, then it should not be terribly off-putting that these maps are not cyclic. One expects cyclicity whenever one analyzes convolution between perverse sheaves, be- cause the procedure of taking the biadjoint of a sheaf is a functor. Soergel bimodules are the equivariant (derived) global sections of the semisimple perverse sheaves on the ﬂag variety, and taking global sections is a well-behaved functor on this semisim- ple category, so that cyclicity happens to be preserved. However, taking global sec- tions of non-semisimp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/rem-sec-030-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 53,
+      "target": "rem-sec-030-03.md",
+      "narrative": null,
+      "content": "If deﬁning this diagrammatic category over R instead of Q, one should add (5.23) to the list of relations. The new bivalent vertices give rise to an idempotent αs , which is comple- mentary to the idempotent αs which already existed in DQ. Therefore, Bs,Q ∼= Qs(1) ⊕Q(1). (We include the gradings for those who wish to use the homogeneous fraction ﬁeld rather than the full fraction ﬁeld. Remember that Q ∼= Q(2) so that the grading lives in Z/2 Z.) By convention we tend to include αs in the projection map, rather than the inclusion map. (5.24) = + αs αs We can take a line and either “break” it or",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/thm-sec-030-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 46,
+      "pageEnd": 53,
+      "target": "thm-sec-030-01.md",
+      "narrative": null,
+      "content": "Assume Demazure Surjectivity. This diagrammatic category is equivalent to the Karoubi envelope of DQ. It is also equivalent to Dstd Q , and to StdBimQ. Unfortunately, Kar(DQ) is not cyclic! It is worse than that the rotation of one bi- valent vertex is not the other. The bivalent vertex itself is not invariant under 360 degree twisting, being off by a sign. Any morphism with an even number of biva- lent vertices will be cyclic (i.e. invariant under 360 degree twists), but this still does not imply that twisting by 180 degrees is equal to rotation by 180 degrees, because bivalent vertices do no",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Computation using localization",
+      "pageStart": 53,
+      "pageEnd": 55,
+      "target": "../sections/sec-031-55-computation-using-localization.md",
+      "narrative": null,
+      "content": "\\label{subsec-compute}\n\n\nEach object $B_{\\un{x}}$ in $\\DC$ splits in $\\Kar(\\DC_Q)$ as the sum of $Q_\\eb$ over all subsequences $\\eb$ of ${\\un{x}}$. Here, $Q_\\eb$ denotes the object which is the tensor product of $Q_{{\\un{x}}_k}$\nwhen $\\eb_k=1$ and $\\1$ when $\\eb_k=0$. Given a graph expressing a morphism from a sequence $B_{\\un{x}}$ of length $d$ to a sequence $B_{{\\un{x}}'}$ of length $d'$, we can localize to obtain a $2^{d'} \\times 2^d$ matrix of maps\nbetween reflection sequences. Since Hom spaces between standard bimodules are always either rank 1 or 0, this matrix is actually populated with",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Unbalanced realizations",
+      "pageStart": 55,
+      "pageEnd": 57,
+      "target": "../sections/sec-032-56-unbalanced-realizations.md",
+      "narrative": null,
+      "content": "\\label{nonbalanced}\n\n\nNow we discuss the diagrammatic alterations which must be made to accommodate the case of non-balanced realizations. This was discussed for dihedral groups in the appendix to\n\\cite{EDihedral}, where two separate diagrammatic conventions are proposed to deal with the new bookkeeping required. We follow the second suggested convention from that appendix.\n\nFix a dihedral parabolic subgroup with $m=m_{st} < \\infty$. Relation \\eqref{dot2m} implies that there is a close connection between $2m$-valent vertices and two-colored Jones-Wenzl\nprojectors. However, this begs the questi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Libedinsky's Light Leaves",
+      "pageStart": 57,
+      "pageEnd": 57,
+      "target": "../sections/sec-033-6-libedinskys-light-leaves.md",
+      "narrative": null,
+      "content": "\\label{sec-LLL}\n\n\nIn this section, we investigate Libedinsky's ``light leaves'' maps \\cite{Lib} from a diagrammatic perspective, and prove (modulo the arguments in the next chapter) that ``double leaves\"\nform a cellular basis for $\\DC$.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Diagrammatics for light leaves",
+      "pageStart": 57,
+      "pageEnd": 60,
+      "target": "../sections/sec-034-61-diagrammatics-for-light-leaves.md",
+      "narrative": null,
+      "content": "\\label{subsec-LibedDiag}\n\n\nFix a rex ${\\un{w}}$. We want to find a basis of diagrams for the space of morphisms $B_{\\un{x}} \\to B_{\\un{w}}$ modulo ``lower terms.\" Here, lower terms are morphisms which induce the\nzero map to the unique standard summand $Q_w \\sumset B_{\\un{w}}$ after localization. This basis will be parametrized by subsequences $\\eb$ of $\\un{x}$ which express $w$. Libedinsky\nassociates a morphism $\\LL_{{\\un{w}},\\eb}$ to $\\eb$, although this choice is not canonical. In fact, there are many valid choices for what each $\\LL_{{\\un{w}},\\eb}$ can be, and selecting\none morphism for eac",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Localizing light leaves",
+      "pageStart": 60,
+      "pageEnd": 62,
+      "target": "../sections/sec-035-62-localizing-light-leaves.md",
+      "narrative": null,
+      "content": "Let us fix a light leaves map $\\LL_{{\\un{x}},\\eb}$, with $\\eb$ expressing $w$. Let ${\\un{w}}$ be the target of the map. Now consider what happens after the passage $\\DC \\to \\Kar(\\DC_Q)$. The target $B_{\\un{w}}$ splits up into standard summands, with a unique summand isomorphic to $Q_w$. For each subsequence $\\fb$ of ${\\un{x}}$ which also expresses $w$ we have a summand $Q_\\fb \\sumset B_{\\un{w}}$ isomorphic to $Q_w$, and this is sent by $\\LL_{{\\un{w}},\\eb}$ into the unique summand $Q_w \\sumset B_{\\un{w}}$ with some coefficient $p^\\eb_\\fb \\in Q$. For the conventions used to calculate this coeffi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Double leaves",
+      "pageStart": 62,
+      "pageEnd": 64,
+      "target": "../sections/sec-036-63-double-leaves.md",
+      "narrative": null,
+      "content": "The previous section was essentially a discussion of maps $B_{\\un{w}} \\to Q_w$ for some $w$. Let us use this to discuss maps $B_{\\un{w}} \\to B_{\\un{y}}$ for arbitrary expressions ${\\un{w}}$ and ${\\un{y}}$.\n\nConsider a light leaves map $\\LL_{{\\un{x}},\\eb} \\co B_{\\un{x}} \\to B_{\\un{w}}$ where ${\\un{w}}$ is a rex for $w$. Flipping this diagram upside-down, we get a map $\\oLL_{{\\un{x}},\\eb} \\co\nB_{\\un{w}} \\to B_{\\un{x}}$. By the results of the previous section, $\\oLL_{{\\un{w}},\\eb}$ behaves nicely after localization, giving a nonzero map $Q_{{\\un{w}}} \\to Q_\\fb$ only when $\\fb\n\\le \\eb$. The coeffi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cellularity",
+      "pageStart": 64,
+      "pageEnd": 65,
+      "target": "../sections/sec-037-64-cellularity.md",
+      "narrative": null,
+      "content": "We assume Theorem \\ref{homspacetheorem}, so that Hom spaces are free left $R$-modules and localization is injective on Hom spaces.\n\n\\begin{claim} For any $w \\in W$, let $\\XC_w$ be the set of maps in $\\DC$ which, after localization, induce the zero map on every $Q_w$ summand of their source object. Then $\\XC_w$ is a\n2-sided ideal in $\\DC$. \\end{claim}\n\n\\begin{proof} Left to the reader. \\end{proof}\n\n\\begin{claim} The light leaves map $\\LLL_{w,\\eb,\\fb}$ will be in $\\XC_v$ for any $v \\nleq w$. \\end{claim}\n\n\\begin{proof} This follows from Bruhat upper-triangularity. \\end{proof}\n\nFor any $I \\subset",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The diagrammatic character",
+      "pageStart": 65,
+      "pageEnd": 69,
+      "target": "../sections/sec-038-65-the-diagrammatic-character.md",
+      "narrative": null,
+      "content": "Recall that for any ideal $I \\subset W$ in the Bruhat order we have a (cellular) ideal $\\LLL_I$ in $\\DC$. For any coideal $J$ (i.e. $W \\setminus J$ is an ideal) we consider the quotient category\n\\[\n\\DC^J \\define \\DC/\\LLL_{W \\setminus J}.\n\\]\nA basis for morphisms in $\\DC^J$ is given by double leaves maps which do not factor through $W \\setminus J$. If $w$ is a minimal element in $J$ then the images of $B_{\\un{w}}$ in $\\DC^J$ for any rex $\\un{w}$ are canonically isomorphic. (The difference of any two morphisms $B_{\\un{w}} \\rightrightarrows B_{\\un{w}'}$ corresponding to rex moves $\\un{w} \\rightri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The equivalence to bimodules",
+      "pageStart": 69,
+      "pageEnd": 69,
+      "target": "../sections/sec-039-67-the-equivalence-to-bimodules.md",
+      "narrative": null,
+      "content": "In this section we assume that $\\hg$ is a Soergel realization over a field $\\Bbbk$. In this section we prove that our diagrammatic category is equivalent to Soergel bimodules.\n\nBy Corollary \\ref{cor:homto[B]} the map $\\HB \\to [\\DC] : \\un{H}_s \\mapsto [B_s]$ is a homomorphism. By taking the graded ranks of Hom spaces in $\\DC$ we obtain a pairing on $[\\DC]$ which induces a semi-linear pairing $( - , - )_{\\DC}$ on $\\HB$ by pull-back. It is obvious from the diagrammatic description of $\\DC$ that $B_s$ is self-biadjoint in $\\DC$, so $\\un{H}_s$ is self-biadjoint in this pairing. It follows that $( -",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Double Leaves Span",
+      "pageStart": 69,
+      "pageEnd": 70,
+      "target": "../sections/sec-040-7-double-leaves-span.md",
+      "narrative": null,
+      "content": "\\label{sec-LLLproof}\n\n\nThis chapter contains a diagrammatic proof that light leaves form a spanning set for Hom spaces. It is somewhat involved, and a key role is played by the recursive combinatorial structure of light leaves maps.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Negative-positive decompositions",
+      "pageStart": 70,
+      "pageEnd": 72,
+      "target": "../sections/sec-041-71-negative-positive-decompositions.md",
+      "narrative": null,
+      "content": "\\label{subsec-negpos}\n\n\nFor the rest of this chapter we will be interested in embedded graphs, not isotopy classes thereof. We will abusively use the term \\emph{Soergel graph} to refer to a graph embedded without\nhorizontal tangent lines, so that no two vertices share the same $y$-coordinate. This kind of graph can be written as the product of the generators in the introduction, tensored with\nidentity maps. Recall that those generators were the bottom boundary dot, the top boundary dot, the trivalent split, the trivalent merge, the $2m$-valent vertex viewed as a map with $m$ inputs and $m$\nout",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Modulo lower terms",
+      "pageStart": 72,
+      "pageEnd": 73,
+      "target": "../sections/sec-042-72-modulo-lower-terms.md",
+      "narrative": null,
+      "content": "\\label{subsec-modulolower}\n\n\nLet us fix an element $w \\in W$ with a reduced expression ${\\un{w}}$. Let $I_{\\un{w}}$ denote the right ideal (bottom ideal, if you think diagrammatically) consisting of linear cominations of diagrams with arbitrary source $\\un{x}$, fixed target $\\un{w}$ and which are strictly positive on top. We have already shown that this is the same as the ideal generated by all the top boundary dots. The elements of this ideal are the so-called \\emph{lower terms} (with respect to $\\un{w}$).\nIn the absence of localization, taking the quotient by $I_{\\un{w}}$ is the best way to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Reduction to working modulo lower terms",
+      "pageStart": 73,
+      "pageEnd": 73,
+      "target": "../sections/sec-043-73-reduction-to-working-modulo-lower-terms.md",
+      "narrative": null,
+      "content": "\\label{subsec-reduction1}\n\n\n\\begin{proof}[Proof of Theorem \\ref{homspacetheorem} assuming Proposition \\ref{LLabasismlt}] Fix sequences ${\\un{x}}$ and ${\\un{y}}$ and a morphism $\\phi \\co {\\un{x}} \\to {\\un{y}}$. We want to write $\\phi$ as\nan $R$-linear combination of diagrams of the form $\\oLL_{{\\un{y}},\\fb} \\LL_{{\\un{x}},\\eb}$ where the subsequences express a common element $w \\in W$.\n\nThe identity map of ${\\un{x}}$ has a negative-positive decomposition where every term factors through a reduced expression, by Lemma \\ref{rexesonlyplz}. We only need to work with one diagram at\na time, so without",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1309.0865v1/blocks/prose-sec-044",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The grand induction",
+      "pageStart": 73,
+      "pageEnd": 83,
+      "target": "../sections/sec-044-74-the-grand-induction.md",
+      "narrative": null,
+      "content": "\\label{subsec-hereitis}\n\n\nNow comes the crux of the argument, a giant induction on maxwidth to prove Proposition \\ref{LLabasismlt}. This entire section represents the proof.\n\nFix a rex ${\\un{w}}$ for $w$. Let $X_{{\\un{x}}}$ denote the set of all possible maps which are valid constructions of $\\LL_{{\\un{x}},\\eb}$ with target ${\\un{w}}$, but which also have polynomials in any\nregion. We omit ${\\un{w}}$ from the notation $X_{\\un{x}}$ because, as noted, the choice of reduced expression giving the final target does not matter, because the canonical isomorphisms between Hom spaces modulo lower terms",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

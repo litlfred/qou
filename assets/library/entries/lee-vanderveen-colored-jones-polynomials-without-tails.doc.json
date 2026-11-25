@@ -1,0 +1,454 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "lee-vanderveen-colored-jones-polynomials-without-tails",
+  "title": "lee-vanderveen-colored-jones-polynomials-without-tails",
+  "variant": "pdf",
+  "pages": 5,
+  "tocSource": "undetermined",
+  "tocMethod": "regex",
+  "toc": [],
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 461,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "manx knots",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "der veen",
+          "heading": false
+        },
+        {
+          "term": "tails",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst coeﬃcient",
+          "heading": false
+        },
+        {
+          "term": "van der",
+          "heading": false
+        },
+        {
+          "term": "knot invariant",
+          "heading": false
+        }
+      ],
+      "extract": "COLORED JONES POLYNOMIALS WITHOUT TAILS CHRISTINE RUEY SHAN LEE AND ROLAND VAN DER VEEN Abstract. We exhibit an inﬁnite family of knots with the property that the ﬁrst coeﬃcient of the n-colored Jones polynomial grows linearly with n. This shows that the concept of stability and tail seen in the colored Jones polynomials of alternating knots does not generalize naively. 1. Introduction The colored Jones polynomials",
+      "extractCut": true,
+      "blocks": [
+        "library/lee-vanderveen-colored-jones-polynomials-without-tails/blocks/prose-page-001",
+        "library/lee-vanderveen-colored-jones-polynomials-without-tails/blocks/figure-img-p001-1"
+      ]
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 572,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "knotted trivalent",
+          "heading": false
+        },
+        {
+          "term": "trivalent graphs",
+          "heading": false
+        },
+        {
+          "term": "framed graph",
+          "heading": false
+        },
+        {
+          "term": "ktg",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "framing change",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "unzip",
+          "heading": false
+        }
+      ],
+      "extract": "C. LEE AND R. VAN DER VEEN 2. Colored Jones polynomial The colored Jones polynomial is usually considered as a knot invariant but from our point of view it is more natural to consider its extension to knotted framed graphs. A good thing about this deﬁnition of the colored Jones polynomial is that it is less dependent on knot diagrams and a little more eﬃcient for computations. The technical reason behind its success",
+      "extractCut": true,
+      "blocks": [
+        "library/lee-vanderveen-colored-jones-polynomials-without-tails/blocks/prose-page-002"
+      ]
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 569,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ktg",
+          "heading": false
+        },
+        {
+          "term": "framing change",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "four edges",
+          "heading": false
+        },
+        {
+          "term": "unzip",
+          "heading": false
+        },
+        {
+          "term": "half twists",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "theta graph",
+          "heading": false
+        }
+      ],
+      "extract": "COLORED JONES POLYNOMIALS WITHOUT TAILS The colored Jones polynomial of any KTG can now be deﬁned by the following three equations. (1) ⟨F e ±(Γ), σ⟩= f(σ(e))±1⟨Γ, σ⟩ Here F e ±(Γ) means the result after applying framing change to edge e of the KTG Γ. (2) ⟨U e(Γ), σ′⟩= ⟨Γ, σ⟩ X σ(e) Oσ(e) θ(σ(e), σ(b), σ(d)) The two colorings σ and σ′ agree on all edges except that U e(Γ) does not have edge e. The four edges in Γ",
+      "extractCut": true,
+      "blocks": [
+        "library/lee-vanderveen-colored-jones-polynomials-without-tails/blocks/prose-page-003"
+      ]
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 703,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "manx pretzel",
+          "heading": false
+        },
+        {
+          "term": "manx knots",
+          "heading": false
+        },
+        {
+          "term": "cody armond",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "der veen",
+          "heading": false
+        },
+        {
+          "term": "tail",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        }
+      ],
+      "extract": "C. LEE AND R. VAN DER VEEN Here the writhe is given by Wr(r, s, t, u) = r −s + t −u and P = {(a, b, c, d) ∈[0, 1]4 : |a −b| ≤c ≤a + b}. 3. The lack of tail Using the formulas for the building blocks we may determine the degree δ(a, b, c, d) of each term in the state sum. It is an explicit piecewise quadratic function on the polytope nP. From our assumptions it follows that: δ(a + 1, b, c, d) < δ(a, b, c, d) and δ(a,",
+      "extractCut": true,
+      "blocks": [
+        "library/lee-vanderveen-colored-jones-polynomials-without-tails/blocks/prose-page-004",
+        "library/lee-vanderveen-colored-jones-polynomials-without-tails/blocks/thm-page-004-01"
+      ]
+    },
+    {
+      "id": "page-005",
+      "number": null,
+      "title": "Page 5",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 177,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "christine ruey",
+          "heading": false
+        },
+        {
+          "term": "ruey shan",
+          "heading": false
+        },
+        {
+          "term": "der veen",
+          "heading": false
+        },
+        {
+          "term": "roland van",
+          "heading": false
+        },
+        {
+          "term": "shan lee",
+          "heading": false
+        },
+        {
+          "term": "knotted trivalent",
+          "heading": false
+        },
+        {
+          "term": "trivalent graphs",
+          "heading": false
+        }
+      ],
+      "extract": "COLORED JONES POLYNOMIALS WITHOUT TAILS [11] Vaughan Jones. Hecke algebra representations of braid groups and link polynomials. Ann. of Math. (2), 126(2):335– 388, 1987. [12] Christine Ruey Shan Lee. A trivial tail homology for non A-adequate links. Algebr. Geom. Topol., 2018. to appear. [13] Christine Ruey Shan Lee and Roland van der Veen. Slopes for pretzel knots. New York Journal of Mathematics, 22:1339–1364,",
+      "extractCut": true,
+      "blocks": [
+        "library/lee-vanderveen-colored-jones-polynomials-without-tails/blocks/prose-page-005"
+      ]
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "colored jones",
+      "heading": false
+    },
+    {
+      "term": "manx knots",
+      "heading": true
+    },
+    {
+      "term": "manx pretzel",
+      "heading": false
+    },
+    {
+      "term": "der veen",
+      "heading": false
+    },
+    {
+      "term": "jones polynomial",
+      "heading": false
+    },
+    {
+      "term": "montesinos knots",
+      "heading": false
+    },
+    {
+      "term": "christine ruey",
+      "heading": false
+    },
+    {
+      "term": "ruey shan",
+      "heading": false
+    },
+    {
+      "term": "van der",
+      "heading": false
+    },
+    {
+      "term": "shan lee",
+      "heading": false
+    },
+    {
+      "term": "roland van",
+      "heading": false
+    },
+    {
+      "term": "knotted trivalent",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The family of knots C(r, s, t, u) where r, s, t, u denote the number of crossings in each twist region. We have drawn the Manx knot C(5, −3, 5, −3). To make the diagram zero framed we drew 16 = r −s + t −u additional negative curls",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Operations on Knotted Trivalent Graphs: framing change F e",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Starting from a theta graph (left), we ﬁrst apply the A-move to both vertices, and again on one of the newly created vertices. Next change the framing on many edges. The numbers on each edge indicate the number of half twists present",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "not-extracted",
+      "note": "split one section per page; no contents was trusted"
+    },
+    {
+      "kind": "sections",
+      "state": "partial",
+      "count": 5,
+      "note": "one per page, not by heading"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 1,
+      "note": "3 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p4); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 5 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/lee-vanderveen-colored-jones-polynomials-without-tails"
+  }
+}

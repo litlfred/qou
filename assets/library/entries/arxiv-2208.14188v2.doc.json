@@ -1,0 +1,1598 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2208.14188v2",
+  "title": "Resurgence in complex Chern-Simons theory at generic levels",
+  "variant": "pdf",
+  "pages": 46,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Resurgent structure of complex Chern-Simons theory at generic level",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-resurgent-structure-of-complex-chern-simons-th"
+    },
+    {
+      "level": 2,
+      "title": "Perturbative complex Chern-Simons theory at generic level",
+      "number": "2.1",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-perturbative-complex-chern-simons-theory-at-g"
+    },
+    {
+      "level": 2,
+      "title": "Resurgent structure of complex Chern-Simons theory",
+      "number": "2.2",
+      "page": 10,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-resurgent-structure-of-complex-chern-simons-t"
+    },
+    {
+      "level": 2,
+      "title": "Stokes constants and BPS invariants",
+      "number": "2.3",
+      "page": 15,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-stokes-constants-and-bps-invariants"
+    },
+    {
+      "level": 1,
+      "title": "Figure eight",
+      "number": "3",
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-3-figure-eight"
+    },
+    {
+      "level": 2,
+      "title": "Asymptotic series",
+      "number": "3.1",
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-31-asymptotic-series"
+    },
+    {
+      "level": 2,
+      "title": "Holomorphic blocks",
+      "number": "3.2",
+      "page": 19,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-32-holomorphic-blocks"
+    },
+    {
+      "level": 2,
+      "title": "Resurgent structure",
+      "number": "3.3",
+      "page": 21,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-33-resurgent-structure"
+    },
+    {
+      "level": 1,
+      "title": "Three twists",
+      "number": "4",
+      "page": 24,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-4-three-twists"
+    },
+    {
+      "level": 2,
+      "title": "Asymptotic series",
+      "number": "4.1",
+      "page": 24,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-41-asymptotic-series"
+    },
+    {
+      "level": 2,
+      "title": "Holomorphic blocks",
+      "number": "4.2",
+      "page": 30,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-42-holomorphic-blocks"
+    },
+    {
+      "level": 2,
+      "title": "Resurgent structure",
+      "number": "4.3",
+      "page": 32,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-43-resurgent-structure"
+    },
+    {
+      "level": 1,
+      "title": "Conclusion and discussion",
+      "number": "5",
+      "page": 34,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-5-conclusion-and-discussion"
+    },
+    {
+      "level": 1,
+      "title": "A Tetrahedron partition function at level k",
+      "number": null,
+      "page": 38,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-a-tetrahedron-partition-function-at-level-k"
+    },
+    {
+      "level": 2,
+      "title": "A.1 Fundamental properties",
+      "number": null,
+      "page": 39,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-a1-fundamental-properties"
+    },
+    {
+      "level": 2,
+      "title": "A.2 Zeros and poles",
+      "number": null,
+      "page": 39,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-a2-zeros-and-poles"
+    },
+    {
+      "level": 2,
+      "title": "A.3 Integral identities",
+      "number": null,
+      "page": 40,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-a3-integral-identities"
+    },
+    {
+      "level": 2,
+      "title": "A.4 Semi-classical limit",
+      "number": null,
+      "page": 40,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-a4-semi-classical-limit"
+    },
+    {
+      "level": 1,
+      "title": "B Power series of state integrals at different levels",
+      "number": null,
+      "page": 40,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-b-power-series-of-state-integrals-at-different-l"
+    },
+    {
+      "level": 2,
+      "title": "B.1 Knot 41",
+      "number": null,
+      "page": 40,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-b1-knot-41"
+    },
+    {
+      "level": 2,
+      "title": "B.2 Knot 52",
+      "number": null,
+      "page": 42,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-b2-knot-52"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "0",
+      "labelEnd": "1",
+      "words": 150,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "resurgent structure",
+          "heading": false
+        },
+        {
+          "term": "asymptotic series",
+          "heading": false
+        },
+        {
+          "term": "resurgence",
+          "heading": false
+        },
+        {
+          "term": "holonomy",
+          "heading": false
+        },
+        {
+          "term": "chern-simons",
+          "heading": false
+        }
+      ],
+      "extract": "Prepared for submission to JHEP KIAS-P22064 Resurgence in complex Chern-Simons theory at generic levels Zhihao Duana Jie Gub aKorea Institute for Advanced Study 85 Hoegiro, Dongdaemun-gu, Seoul 02455, Korea bSchool of Phyiscs and Shing-Tung Yau Center Southeast University, Nanjing 210096, China E-mail: xduanz@kias.re.kr, eij.ug.phys@gmail.com Abstract: In this note we study the resurgent structure of sl(2, C)",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2208.14188v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 1007,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite dimofte",
+          "heading": false
+        },
+        {
+          "term": "cite garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "series varphi",
+          "heading": false
+        },
+        {
+          "term": "non-abelian flat",
+          "heading": false
+        },
+        {
+          "term": "stokes automorphisms",
+          "heading": false
+        },
+        {
+          "term": "stokes constants",
+          "heading": false
+        },
+        {
+          "term": "cite gukov",
+          "heading": false
+        },
+        {
+          "term": "cite witten",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sc:intr} Complex Chern-Simons theory remains an active field of research that links up many fields in both physics and mathematics. From the physics side, $sl(2,\\IC)$ Chern-Simons theory was first considered in \\cite{Witten:1988hc} as a means to describe three dimensional quantum gravity on Lorentzian spacetime with positive cosmological constant. Later a beautiful connection was revealed between $sl(N,\\IC)$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-resurgent-structure-of-complex-chern-simons-th",
+      "number": "2",
+      "title": "Resurgent structure of complex Chern-Simons theory at generic level",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 9,
+      "summary": null,
+      "keywords": [],
+      "extract": "Resurgent structure of complex Chern-Simons theory at generic level",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-perturbative-complex-chern-simons-theory-at-g",
+      "number": "2.1",
+      "title": "Perturbative complex Chern-Simons theory at generic level",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 10,
+      "labelStart": "3",
+      "labelEnd": "9",
+      "words": 2495,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "align pmb",
+          "heading": false
+        },
+        {
+          "term": "sigma pmb",
+          "heading": false
+        },
+        {
+          "term": "delta pmb",
+          "heading": false
+        },
+        {
+          "term": "pmb zeta",
+          "heading": false
+        },
+        {
+          "term": "frac pmb",
+          "heading": false
+        },
+        {
+          "term": "pmb prod",
+          "heading": false
+        },
+        {
+          "term": "pmb exp",
+          "heading": false
+        },
+        {
+          "term": "sum pmb",
+          "heading": false
+        }
+      ],
+      "extract": "The $sl(2,\\IC)$ Chern-Simons theory on a three manifold $M$ has action \\begin{equation} I_{k,s} = t S_{\\text{CS}}(A) + \\tilde{t} S_{\\text{CS}}(\\overline{A}) \\end{equation} where $S_{\\text{CS}}(A)$ is the three dimensional Chern-Simons action \\begin{equation} S_{\\text{CS}}(A) = \\frac{1}{4\\pi}\\int_M \\Tr (A\\wedge\\rd A + \\frac{2}{3}A\\wedge A\\wedge A), \\end{equation} $A$ is a connection of the $sl(2,\\IC)$ bundle over",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-resurgent-structure-of-complex-chern-simons-t",
+      "number": "2.2",
+      "title": "Resurgent structure of complex Chern-Simons theory",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 15,
+      "labelStart": "9",
+      "labelEnd": "14",
+      "words": 1976,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chern-simons theory",
+          "heading": true
+        },
+        {
+          "term": "resurgent structure",
+          "heading": true
+        },
+        {
+          "term": "stokes ray",
+          "heading": false
+        },
+        {
+          "term": "stokes discontinuity",
+          "heading": false
+        },
+        {
+          "term": "complex chern-simons",
+          "heading": true
+        },
+        {
+          "term": "trans-series phi",
+          "heading": false
+        },
+        {
+          "term": "trans-series begin",
+          "heading": false
+        },
+        {
+          "term": "stokes automorphisms",
+          "heading": false
+        }
+      ],
+      "extract": "The power series $\\varphi_{\\gamma}^{(k,\\s_*)}(u,n;\\tau)$ are asymptotic. To make sense of them, we need to apply the resurgence theory \\cite{Ecalle,Mitschi:2016fxp} (see reviews \\cite{Marino:2012zq,Dorigoni:2014hea,Aniceto:2018bis} by physicists). Generically in physics perturbation series are asymptotic. The coefficients grow factorially due to the proliferation of Feynman diagrams\\footnote{Renormalons can also",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-stokes-constants-and-bps-invariants",
+      "number": "2.3",
+      "title": "Stokes constants and BPS invariants",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 276,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bps invariants",
+          "heading": true
+        },
+        {
+          "term": "stokes",
+          "heading": true
+        },
+        {
+          "term": "cite dimofte",
+          "heading": false
+        },
+        {
+          "term": "stokes automorphisms",
+          "heading": false
+        },
+        {
+          "term": "text rot",
+          "heading": false
+        },
+        {
+          "term": "bps states",
+          "heading": false
+        },
+        {
+          "term": "ind text",
+          "heading": false
+        },
+        {
+          "term": "d-3d correspondence",
+          "heading": false
+        }
+      ],
+      "extract": "An interesting discovery concerning the Stokes constants extracted from the Stokes automorphisms $\\mf{S}_{\\pm}^{(k=1)}(\\tx,\\tq)$ was made in \\cite{Garoufalidis:2020xec,Garoufalidis:2020nut}: they were identified with the BPS invariants of the 3d SCFT $T_2[M]$ related to the $sl(2,\\IC)$ Chern-Simons theory on $M= S^3\\backslash K$ by the 3d-3d correspondence \\cite{Dimofte:2011ju}. In particular, the entries of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-figure-eight",
+      "number": "3",
+      "title": "Figure eight",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "Figure eight",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-31-asymptotic-series",
+      "number": "3.1",
+      "title": "Asymptotic series",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 19,
+      "labelStart": "15",
+      "labelEnd": "18",
+      "words": 1053,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "align chi",
+          "heading": false
+        },
+        {
+          "term": "zeta theta",
+          "heading": false
+        },
+        {
+          "term": "varphi knot",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "end align",
+          "heading": false
+        },
+        {
+          "term": "zeta m-j",
+          "heading": false
+        },
+        {
+          "term": "frac eta",
+          "heading": false
+        },
+        {
+          "term": "equation chi",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sc:41.asymp} The state integral of figure eight knot at level $k$ is already given as a one-dimensional integral in \\cite{Andersen:2016ugz} \\begin{align} \\chi^{(k)}_{\\knot{4}_1}(\\mu,n;\\tau) = &\\frac{\\eta_k}{k}\\sum_{m\\in \\IZ_k}\\int_{\\IR+\\ri\\imag(c_\\bb)-\\ri|\\mu|-\\ri 0}\\rd \\sigma \\mc{Z}^{(k)}_\\bb[\\Delta](\\sigma-\\mu,m-n) \\mc{Z}^{(k)}_\\bb[\\Delta](\\sigma,m)\\nn &\\phantom{==}\\times(-1)^m",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-32-holomorphic-blocks",
+      "number": "3.2",
+      "title": "Holomorphic blocks",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 723,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "holomorphic blocks",
+          "heading": true
+        },
+        {
+          "term": "descendant holomorphic",
+          "heading": false
+        },
+        {
+          "term": "descendant state",
+          "heading": false
+        },
+        {
+          "term": "align chi",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "begin subequations",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "cite garoufalidis",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sc:41.blocks} One happy fact of state integral model of knot $\\knot{4}_1$ at level 1 is that when $\\imag{\\bb}\\neq 0$, it can be evaluated by summing over residues and it factorises to products of $q$- and $\\tq$-series \\cite{Garoufalidis:2013rca}, i.e., the holomorphic blocks \\cite{Beem:2012mb}. In addition, variants known as the descendants of the state integral can be written, which also enjoys",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-33-resurgent-structure",
+      "number": "3.3",
+      "title": "Resurgent structure",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 24,
+      "labelStart": "20",
+      "labelEnd": "23",
+      "words": 1294,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phi knot",
+          "heading": false
+        },
+        {
+          "term": "borel resummation",
+          "heading": false
+        },
+        {
+          "term": "times multirow",
+          "heading": false
+        },
+        {
+          "term": "stokes automorphisms",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "borel plane",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "stokes constants",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sc:41.lvlk} \\begin{figure} \\centering \\includegraphics[height=6cm]{fig8_regions_m_peacock} \\caption{Singular points of the Borel transform of the vector of trans-series of the $sl(2,\\IC)$ Chern-Simons theory at level $k=1$ on the complement of the knot $\\knot{4}_1$.} \\label{fg:sing.k1.41} \\end{figure} We collect the trans-series associated to the geometric and conjugate flat connections in a vector",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-4-three-twists",
+      "number": "4",
+      "title": "Three twists",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "Three twists",
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-41-asymptotic-series",
+      "number": "4.1",
+      "title": "Asymptotic series",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 30,
+      "labelStart": "23",
+      "labelEnd": "29",
+      "words": 1949,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "align chi",
+          "heading": false
+        },
+        {
+          "term": "zeta theta",
+          "heading": false
+        },
+        {
+          "term": "varphi knot",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "end align",
+          "heading": false
+        },
+        {
+          "term": "zeta m-j",
+          "heading": false
+        },
+        {
+          "term": "frac eta",
+          "heading": false
+        },
+        {
+          "term": "equation chi",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sc:41.asymp} The state integral of figure eight knot at level $k$ is already given as a one-dimensional integral in \\cite{Andersen:2016ugz} \\begin{align} \\chi^{(k)}_{\\knot{4}_1}(\\mu,n;\\tau) = &\\frac{\\eta_k}{k}\\sum_{m\\in \\IZ_k}\\int_{\\IR+\\ri\\imag(c_\\bb)-\\ri|\\mu|-\\ri 0}\\rd \\sigma \\mc{Z}^{(k)}_\\bb[\\Delta](\\sigma-\\mu,m-n) \\mc{Z}^{(k)}_\\bb[\\Delta](\\sigma,m)\\nn &\\phantom{==}\\times(-1)^m",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-42-holomorphic-blocks",
+      "number": "4.2",
+      "title": "Holomorphic blocks",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 32,
+      "labelStart": "29",
+      "labelEnd": "31",
+      "words": 502,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "holomorphic blocks",
+          "heading": true
+        },
+        {
+          "term": "descendant holomorphic",
+          "heading": false
+        },
+        {
+          "term": "descendant state",
+          "heading": false
+        },
+        {
+          "term": "πik",
+          "heading": false
+        },
+        {
+          "term": "state integral",
+          "heading": false
+        },
+        {
+          "term": "contour",
+          "heading": false
+        }
+      ],
+      "extract": "Holomorphic blocks As in the example of knot 41, here we introduce descendants of the state integral and demonstrate their property of factorisation into holomorphic blocks. The descendant state integral for the knot 52 takes the form, χ(k) 52;r,s(µ, n; b) =(ηk)3 k X m∈Zk Z C dσZ(k) b [∆](σ, m)Z(k) b [∆](σ + µ, m + n)Z(k) b [∆](σ −µ, m −n) × (−1)ne πi k (−(σ+µ−cb)2−(σ−µ−cb)2−µ2+(m+n)2+(m−n)2+n2) ×e 2πi k",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-43-resurgent-structure",
+      "number": "4.3",
+      "title": "Resurgent structure",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 34,
+      "labelStart": "31",
+      "labelEnd": "33",
+      "words": 1100,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phi knot",
+          "heading": false
+        },
+        {
+          "term": "borel resummation",
+          "heading": false
+        },
+        {
+          "term": "times multirow",
+          "heading": false
+        },
+        {
+          "term": "stokes automorphisms",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "borel plane",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "stokes constants",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sc:41.lvlk} \\begin{figure} \\centering \\includegraphics[height=6cm]{fig8_regions_m_peacock} \\caption{Singular points of the Borel transform of the vector of trans-series of the $sl(2,\\IC)$ Chern-Simons theory at level $k=1$ on the complement of the knot $\\knot{4}_1$.} \\label{fg:sing.k1.41} \\end{figure} We collect the trans-series associated to the geometric and conjugate flat connections in a vector",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-5-conclusion-and-discussion",
+      "number": "5",
+      "title": "Conclusion and discussion",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 38,
+      "labelStart": "33",
+      "labelEnd": "37",
+      "words": 1464,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "series varphi",
+          "heading": false
+        },
+        {
+          "term": "resurgent structures",
+          "heading": false
+        },
+        {
+          "term": "cite dimofte",
+          "heading": false
+        },
+        {
+          "term": "cite ito",
+          "heading": false
+        },
+        {
+          "term": "dual scft",
+          "heading": false
+        },
+        {
+          "term": "stokes constants",
+          "heading": false
+        },
+        {
+          "term": "xec",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sc:con} In this short note we study the resurgent properties of the $sl(2,\\IC)$ Chern-Simons state integral model on knot complemnets $S^3\\backslash \\knot{4}_1$, $S^3\\backslash \\knot{5}_2$ at generic level $k\\geq 1$. When the level $k$ increases, the saddle point expansion of the $sl(2,\\IC)$ Chern-Simons state integral becomes increasingly more complicated. But there are several interesting universal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-a-tetrahedron-partition-function-at-level-k",
+      "number": null,
+      "title": "A Tetrahedron partition function at level k",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 39,
+      "labelStart": "37",
+      "labelEnd": "38",
+      "words": 187,
+      "summary": null,
+      "keywords": [],
+      "extract": "Tetrahedron partition function at level k The partition function of sl(2, C) Chern-Simons theory at level k on an ideal tetrahedron is given by Z(k) b [∆](µ, n) = Y (r,s)∈Γ(k;n) Φb(cb −1 k(µ + ibr + ib−1s)) (A.1) where Γ(k; n) = {(r, s) ∈Z2 | 0 ≤r, s < k, r −s ≡n(mod k)} (A.2) and cb = i 2(b+b−1). Φb(x) is Faddeev’s quantum dilogarithm. This deﬁnes a meromorphic function of µ ∈C for each n ∈Zk, and it is deﬁned for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-a1-fundamental-properties",
+      "number": null,
+      "title": "A.1 Fundamental properties",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 39,
+      "labelStart": "38",
+      "labelEnd": "38",
+      "words": 127,
+      "summary": null,
+      "keywords": [],
+      "extract": "Fundamental properties • Inversion relation Z(k) b [∆](cb + x, n)Z(k) b [∆](cb −x, −n) = (−1)ne πi k (x2−n2)η−1 k , (A.5) where ηk = eπi(k+2c2 bk−1)/6. (A.6) Note that this implies the special value Z(k) b [∆](cb, 0)2 = η−1 k . (A.7) • Quasi-periodicity (Faddeev’s diﬀerence equations). For x, b ∈C, Im(b)̸ = 0, n ∈Z Z(k) b [∆] \u0000x −ib±1, n ± 1 \u0001 = Z(k) b [∆](x, n) \u00001 −q±x−1 ± \u0001−1 Z(k) b [∆] \u0000x + ib±1, n ∓1 \u0001 = Z(k) b",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-a2-zeros-and-poles",
+      "number": null,
+      "title": "A.2 Zeros and poles",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 40,
+      "labelStart": "38",
+      "labelEnd": "39",
+      "words": 73,
+      "summary": null,
+      "keywords": [],
+      "extract": "Zeros and poles For Im(b) > 0, the tetrahedron partition function Z(k) b [∆](x, n) has zeros ( x = 2cb + ib−1l + ib m n = l −m (mod k) (A.10) and poles ( x = −ib−1l −ib m n = m −l (mod k) (A.11) for l, m ∈Z≥0, and the residue is k 2πb−1 (q; q)∞ (˜q; ˜q)∞ 1 (q; q)m 1 (˜q−1; ˜q−1)l . (A.12) – 38 –",
+      "extractCut": false
+    },
+    {
+      "id": "sec-017-a3-integral-identities",
+      "number": null,
+      "title": "A.3 Integral identities",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 40,
+      "labelStart": "39",
+      "labelEnd": "39",
+      "words": 38,
+      "summary": null,
+      "keywords": [],
+      "extract": "Integral identities The tetrahedron partition function has the following property of Fourier transformation, 1 k X n∈Zk Z R+cb duZ(k) b [∆](u, n)e 2πi k (uw−nm) = Z(k) b [∆](w, m)(−1)me−πi k ((w−cb)2−m2)+ πi 12 (k+8c2 bk−1). (A.13)",
+      "extractCut": false
+    },
+    {
+      "id": "sec-018-a4-semi-classical-limit",
+      "number": null,
+      "title": "A.4 Semi-classical limit",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 40,
+      "labelStart": "39",
+      "labelEnd": "39",
+      "words": 104,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "πib",
+          "heading": false
+        },
+        {
+          "term": "semi-classical",
+          "heading": true
+        },
+        {
+          "term": "double scaling",
+          "heading": false
+        }
+      ],
+      "extract": "Semi-classical limit In the double scaling limit b →0, µ →∞, bµ ﬁxed (A.14) the tetrahedron partition function has the asymptotic expansion log Z(k) b [∆](µ, m) = ∞ X ℓ=0 (2πib2)ℓ−1 ℓ! X j∈Zk Bℓ(j/k) Li2−ℓ \u0010 e 2πi k (j+m)e−2πbµ k \u0011 . (A.15) Alternatively, deﬁne D(k) b (u, m) = Z(k) b [∆](cb − √ ku, m). (A.16) In the double scaling limit b →0, u →∞, bu ﬁxed, (A.17) it has the asymptotic expansion log D(k) b (u, m) =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-b-power-series-of-state-integrals-at-different-l",
+      "number": null,
+      "title": "B Power series of state integrals at different levels",
+      "level": 1,
+      "pageStart": 40,
+      "pageEnd": 40,
+      "labelStart": "39",
+      "labelEnd": "39",
+      "words": 8,
+      "summary": null,
+      "keywords": [],
+      "extract": "Power series of state integrals at diﬀerent levels",
+      "extractCut": false
+    },
+    {
+      "id": "sec-020-b1-knot-41",
+      "number": null,
+      "title": "B.1 Knot 41",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 42,
+      "labelStart": "39",
+      "labelEnd": "41",
+      "words": 551,
+      "summary": null,
+      "keywords": [],
+      "extract": "Knot 41 At level k = 2, the power series are (ω(k=2,σj) 41 (x))−1ϕ(k=2,σj) 41 (x; τ 2πi) = 1 + a(σj) 1 (x)τ + a(σj) 2 (x)τ 2 + a(σj) 3 (x)τ + O(τ 4), (B.1) – 39 – where a(σj) 1 (x) is given in (3.21) and some additional coeﬃcients are a(σj) 2 (x) =(1 + 12x + 46x2 −576x3 + 1413x4 + 1608x5 + 202x6 + 7788x7 + 3258x8 −34572x9 + 1094x10 + 27816x11 −3555x12 + 27816x13 + 1094x14 −34572x15 + 3258x16 + 7788x17 + 202x18 +",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-b2-knot-52",
+      "number": null,
+      "title": "B.2 Knot 52",
+      "level": 2,
+      "pageStart": 42,
+      "pageEnd": 46,
+      "labelStart": "41",
+      "labelEnd": "45",
+      "words": 1820,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hep-th",
+          "heading": false
+        },
+        {
+          "term": "arxiv",
+          "heading": false
+        },
+        {
+          "term": "acta math",
+          "heading": false
+        },
+        {
+          "term": "chern-simons theory",
+          "heading": false
+        },
+        {
+          "term": "complex chern-simons",
+          "heading": false
+        },
+        {
+          "term": "marino",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "gauge theories",
+          "heading": false
+        }
+      ],
+      "extract": "Knot 52 At level k = 2, the power series are (ω(k=2,σj) 52 (x))−1ϕ(k=2,σj) 52 (x; τ 2πi) = 1 + a(σj) 1 τ + a(σj) 2 τ 2 + O(τ 3), (B.6) where a(σj) 1 =(1 + 6x + 14x2 −30x3 −245x4 −216x5 + 944x6 + 1428x7 −1231x8 −2346x9 + 1326x10 + 3042x11 −1873x12 −6168x13 −3400x14 −2556x15 −3935x16 −4950x17 −5474x18 −4950x19 −3935x20 −2556x21 −3400x22 −6168x23 −1873x24 + 3042x25 + 1326x26 −2346x27 −1231x28 + 1428x29 + 944x30 −216x31",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Introduction"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "frac tau",
+      "heading": false
+    },
+    {
+      "term": "varphi knot",
+      "heading": false
+    },
+    {
+      "term": "cite garoufalidis",
+      "heading": false
+    },
+    {
+      "term": "tau right",
+      "heading": false
+    },
+    {
+      "term": "xec begin",
+      "heading": false
+    },
+    {
+      "term": "trans-series begin",
+      "heading": false
+    },
+    {
+      "term": "cite dimofte",
+      "heading": false
+    },
+    {
+      "term": "align pmb",
+      "heading": false
+    },
+    {
+      "term": "trans-series phi",
+      "heading": false
+    },
+    {
+      "term": "sigma pmb",
+      "heading": false
+    },
+    {
+      "term": "trans-series eqref",
+      "heading": false
+    },
+    {
+      "term": "equation pmb",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "0",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 22,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "23",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 25,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 29,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "29",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 31,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "31",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 33,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "33",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 35,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 36,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 37,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 38,
+      "label": "37",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 39,
+      "label": "38",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 40,
+      "label": "39",
+      "source": "printed",
+      "confidence": 1
+    },
+    {
+      "physical": 41,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 42,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 43,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 44,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 45,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 46,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Demonstration of resurgent structure",
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Singular points of the Borel transform of the vector of trans-series of the sl(2, C) Chern-Simons theory at level k = 1 on the complement of the knot 41",
+      "page": 21,
+      "pageLabel": "20",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The distribution of poles of the Pad´e approximant for (a) : ϕ(k=2,σ1)",
+      "page": 23,
+      "pageLabel": "22",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The distribution of poles of the Pad´e approximant for (a) : ϕ(k=2,σ1)",
+      "page": 23,
+      "pageLabel": "22",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "We perform the numerical Borel resummation for Φ(k=2)",
+      "page": 24,
+      "pageLabel": "23",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "We perform numerical Borel resummation for Φ(k=2)",
+      "page": 25,
+      "pageLabel": "24",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "We perform numerical Borel resummation for Φ(k=3)",
+      "page": 26,
+      "pageLabel": "25",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4",
+      "title": "We perform numerical Borel resummation for Φ(k=3)",
+      "page": 27,
+      "pageLabel": "26",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "5",
+      "title": "We perform numerical Borel resummation for Φ(k=3)",
+      "page": 28,
+      "pageLabel": "27",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Singular points of the Borel transform of the vector of trans-series of the sl(2, C) Chern-Simons theory at level k = 1 on the complement of the knot 52",
+      "page": 32,
+      "pageLabel": "31",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6b",
+      "title": "The relative error is still much smaller than a ˜x±1 correction, although it does not preclude a potential ˜q−1 correction. The latter, however, is not possible. Fig. 6b indicates that Φ(k=2,σ2)",
+      "page": 34,
+      "pageLabel": "33",
+      "confidence": 0.7,
+      "evidence": [
+        "referenced"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The distribution of poles of the Pad´e approximant for (a) : Φ(k=2,σ1)",
+      "page": 35,
+      "pageLabel": "34",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "6",
+      "title": "We perform the numerical Borel resummation for Φ(k=2)",
+      "page": 36,
+      "pageLabel": "35",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "7",
+      "title": "We perform the numerical Borel resummation for Φ(k=2)",
+      "page": 37,
+      "pageLabel": "36",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 22,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 23,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "7 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "7 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p42); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 20
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 23 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2208.14188v2"
+  }
+}

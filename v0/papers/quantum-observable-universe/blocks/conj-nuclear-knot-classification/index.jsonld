@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-nuclear-knot-classification",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:nuclear-knot-classification",
+  "kind": "conjecture",
+  "title": "Nuclear knot classification: braid closure type determines binding scale",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-hecke-mass-element"
+  ],
+  "tags": [
+    "knot-classification",
+    "hyperbolic",
+    "figure-eight",
+    "borromean",
+    "binding-scale"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.nuclear_knot_classification",
+  "text": "nuclear-knot-classification.md",
+  "leanSource": "nuclear-knot-classification.lean",
+  "provenance": "authored"
+}

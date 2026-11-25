@@ -1,0 +1,762 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2602.15276v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Compact Q-balls and Q-shells within a CPN Skyrme-Faddeev type model",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-compact-q-balls-and-q-shells-within-a-cpn-skyrme.md",
+      "narrative": null,
+      "content": "E. L. Cola¸co,1, ∗P. Klimas,1, † L. R. Livramento,2, 3, ‡ N. Sawado,4, § and S. Yanai5, ¶\n1Departamento de F´ısica, Universidade Federal de Santa Catarina,\nCampus Trindade, 88040-900, Florian´opolis-SC, Brazil\n2Instituto de F´ısica de S˜ao Carlos,\nUniversidade de S˜ao Paulo, 13560-970, S˜ao Carlos-SP, Brazil\n3Institute of Theoretical Physics, Jagiellonian University, Lojasiewicza 11, Krak´ow, Poland\n4Department of Physics and Astronomy, Tokyo University of Science, Noda, Chiba 278-8510, Japan\n5Department of Natural Sciences, National Institute of Technology,\nToyota College, Toyota, Aichi 471-8",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-introduction.md",
+      "narrative": null,
+      "content": "Scalar fields play a crucial role in theoretical physics. They are extensively employed for modeling physical matter across a diverse range of contexts, from fundamental fields such as the Higgs field [@PhysRevLett.13.508] to effective descriptions like the order parameter field in the Landau-Ginzburg model [@Ginzburg:1950sr]. Depending on the inherent complexity of the physical phenomenon under investigation, scalar fields can be represented by straightforward real-valued functions or by more intricate structures, such as multiple complex-valued fields defined on complex projective spaces ($C",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The extended Skyrme-Faddeev model with potential",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-the-extended-skyrme-faddeev-model-with-potential.md",
+      "narrative": null,
+      "content": "THE EXTENDED SKYRME-FADDEEV MODEL WITH POTENTIAL",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Lagrangian and Euler-Lagrange equations",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-the-lagrangian-and-euler-lagrange-equations.md",
+      "narrative": null,
+      "content": "The Extended Skyrme-Faddeev (ESF) model augmented by a potential, defined on a $CP^N$ target space, is conveniently formulated using the principal variable $X$ [@Ferreira:1998zx]. The Lagrangian density is expressed by derivative terms containing $L_{\\mu}\\equiv X^{-1}\\partial_{\\mu}X$, as well as a non-derivative potential term $V(X)$. We examine a model whose Lagrangian density, $\\mathcal{L}$, comprises five terms: a potential term, $\\mathcal{L}_0$; a standard quadratic term, $\\mathcal{L}_2$; a (quartic) Skyrme term, $\\mathcal{L}_4^{(S)}$; and two additional quartic terms, $\\mathcal{L}_{4}^{(1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Radial reduction",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-radial-reduction.md",
+      "narrative": null,
+      "content": "Following the methodology established in [@Klimas:2017eft], we consider an odd number of scalar fields, specifically $N=2l+1$. For convenience, the field index $i=1, 2, \\ldots, N$ is replaced by the corresponding angular momentum index $m=-l, \\ldots, l$. We introduce spherical coordinates $(r, \\theta, \\phi)$ and apply the following ansatz for the field components $u_m(t, r, \\theta, \\phi)$: $$u_m(t,r,\\theta,\\phi):=\\sqrt{\\frac{4\\pi}{2l+1}}f(r)Y_{lm}(\\theta,\\phi)e^{i\\omega t}.\\label{ansatz}$$ In this definition, $Y_{lm}(\\theta, \\phi)$ represents the spherical harmonics, $f(r)$ is a non-negative r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Energy density",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-energy-density.md",
+      "narrative": null,
+      "content": "A crucial prerequisite for constructing physically meaningful solutions is ensuring the positive definiteness of the energy density. Given that the Lagrangian for this model comprises multiple terms connected by various coupling constants, it is essential to guarantee a non-negative energy density across all configurations before proceeding to the derivation of solutions for specific parameter values. Consequently, the focus of the following section is a detailed analysis of the model's energy density.\n\nThe dimensionless Hamiltonian density, $\\widetilde{\\cal H} := r_0^4{\\cal H}$, is convention",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/figure-img-p011-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../images/img-p011-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Noether currents",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-006-noether-currents.md",
+      "narrative": null,
+      "content": "[]{#sec3 label=\"sec3\"}\n\nA primary concern when studying Q-balls is to ensure the stability of their solutions. Given the non-topological nature of Q-balls, their stability must be generated by a mechanism other than topology. Consequently, this section focuses on the model's global symmetry, as it is responsible for the existence of the conserved Noether charges that are crucial for determining stability.\n\nThe stability of Q-balls, a class of non-topological solitons, is critically dependent upon the relationship between their energy ($E$) and their conserved Noether charge ($Q$), typically ex",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Compactons",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-007-compactons.md",
+      "narrative": null,
+      "content": "[]{#sec4 label=\"sec4\"}\n\nIn [@Klimas:2017eft], the authors demonstrated that the $\\mathbb{C}P^N$ model, utilizing the potential defined in Equation [\\[potencjal\\]](#potencjal){reference-type=\"eqref\" reference=\"potencjal\"}, yields compact solutions for odd values of $N$. This implies that the field solutions possess a finite spatial size, characterized by a specific outer radius, $R_{\\text{out}}$. At this radius, the field solution and its first derivative smoothly approach a vacuum state (i.e., they approach zero). Beyond this boundary ($r > R_{\\text{out}}$), the field is identically zero, mean",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Expansion at the compacton boundary",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-008-expansion-at-the-compacton-boundary.md",
+      "narrative": null,
+      "content": "In the vicinity of the external compacton radius, $R_{\\text{out}}$, the field values approach the vacuum state of zero. Consequently, the behavior of the radial function is governed by the quadratic terms in the Lagrangian. It is therefore anticipated that the leading-order behavior of the compacton's radial function will be quadratic, mirroring the characteristics observed in the previously examined ${C}P^N$ model [@Klimas:2017eft]. To analyze the behavior for $r < R_{\\text{out}}$, we substitute the following power series expansion into the field equation, imposing the condition $f(r)=0$ for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Expansion at the center",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-009-expansion-at-the-center.md",
+      "narrative": null,
+      "content": "Expansion at the center\nTo obtain a solution for the radial function f(r), we assume it can be expressed as a power\nseries expansion around the center, r = 0:\nf(r) =\n∞\nX\nk=0\nakrk.\n(IV.4)\nBy substituting this series into the field equation (II.23) and expanding the equation into a power\nseries in r, we can solve for the coefficients, ak. This is achieved by setting each coefficient of the\nresulting series to zero, which allows us to determine the unique values of the ak coefficients that\nsatisfy the field equation. For our calculations, we will focus on the first few coefficients, ak, as\nthey d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Q-ball case: N=1, (l=0)",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-010-q-ball-case-n1-l0.md",
+      "narrative": null,
+      "content": "Unlike the CP N model, which lacks quartic terms, the ESF model yields more than one solution\nfor the coefficients ak. Upon substituting the power series expansion from Equation (IV.4) into the\nradial equation (II.14) and expanding the resulting expression in powers of r, we obtain:\n−l(l + 1)\nr2\na0 −l(l + 1) −2\nr\na1 + O(1) = 0.\n(IV.5)\nThe singular terms, which are proportional to r−2 and r−1, must be eliminated to ensure a finite\nsolution. This is achieved by an appropriate selection of the coefficients a0 and a1.\nThe first case, l = 0, represents a direct generalization of previously studied",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Q-ball case: N=3, (l=1)",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-011-q-ball-case-n3-l1.md",
+      "narrative": null,
+      "content": "For Q-balls with l = 1 (corresponding to N = 3), the coefficient a0 must be zero, while a1 is a\nfree constant. The coefficient a2 is determined by the following expression:\na2 =\neµ2\n32\n\u0010\n1 + κ (2 −5βe2 −6γe2) a2\n1\n\u0011\n(IV.8)\nThe explicit dependence of a2 on a1 arises exclusively from the quartic terms present in the model’s\nLagrangian. A detailed analysis of these specific types of solutions is presented in the forthcoming\nsection.\n3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Q-shell case: N=5,7,9,…, (l=2,3,4,…)",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-012-q-shell-case-n579-l234.md",
+      "narrative": null,
+      "content": "Assuming sgn(f) = +1 and substituting the power series expansion (IV.4) with the boundary\nconditions a0 = a1 = 0 (consistent with N ≥3 solutions) into the radial equation (II.14), we obtain\nthe following expansion around r = 0:\n−\n\u0010\na2\n\u0000l2 + l −6\n\u0001\n+ ˜µ2\n8\n\u0011\n+ (l −3)(l + 4)a3r +\n\u0010\nω2a2 + (l −4)(l + 5)a4\n\u0011\nr2+\n+\n\u0010\nω2a3 + (l −5)(l + 6)a5\n\u0011\nr3 + O(r4) = 0.\nTo satisfy this equation, every coefficient must vanish. When l = 2 (i.e., N = 5), the constant\nterm simplifies to −˜µ2\n8 , which cannot be canceled (since ˜µ̸ = 0). Thus, the radial equation cannot\nbe satisfied for l = 2. Furthermore, for value",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Numerical solutions",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/sec-013-numerical-solutions.md",
+      "narrative": null,
+      "content": "In this section, we present several numerical solutions for Q-balls and Q-shells within the ESF model. The parameter space for the coupling constants is extensive, and a detailed investigation of all possible cases would be exceptionally time-consuming and exceeds the primary scope of this paper. Our objective here is to showcase some novel solutions that arise specifically due to the presence of quartic terms. We will also thoroughly examine the resulting relationship between energy and Noether charge, which is the key characteristic defining the stability of these solutions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Shooting method",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-014-shooting-method.md",
+      "narrative": null,
+      "content": "Shooting method\nTo determine the radial profile function, we numerically integrate the radial equation (II.14),\nstarting from either the center (r = 0) or the inner radius (r = Rin). The resulting numerical\nsolution is dependent on a single free parameter: a0 for l = 0, a1 for l = 1, or Rin for l ≥2. By\nselecting an appropriate value for this parameter, the radial function can simultaneously satisfy\nthe external compacton boundary conditions, f(Rout) = 0 and f′(Rout) = 0.\nIt is important to note that the numerical value of the parameter ω is significant. As with\nthe CP N model, not all values",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/figure-img-p018-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/figure-img-p018-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/figure-img-p018-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "CP1 Q-balls",
+      "pageStart": 18,
+      "pageEnd": 22,
+      "target": "../sections/sec-015-cp1-q-balls.md",
+      "narrative": null,
+      "content": "When the leading behavior of the radial function f(r) in the vicinity of the origin (r = 0) is\ndescribed by a parabolic function, f(r) = a0 +a2r2 +. . ., we can search for compact Q-balls similar\nto the established CP 1 Q-balls discussed in [36]. This approach is particularly relevant as the model\napproaches the limit 1/e2 →0, β →0, and γ →0. However, being interested in a wider range\nof coupling constants, we analyze several cases, including those with non-trivial parameter values\nwhere the quartic terms play an active role. Given the extensive size of the complete parameter\nspace, a detailed",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/figure-img-p019-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../images/img-p019-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/figure-img-p021-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../images/img-p021-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/figure-img-p022-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/figure-img-p022-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/figure-img-p022-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../images/img-p022-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "CP3 Q-balls",
+      "pageStart": 22,
+      "pageEnd": 24,
+      "target": "../sections/sec-016-cp3-q-balls.md",
+      "narrative": null,
+      "content": "In this section, we present some compact Q-ball solutions for the CP 3 case (corresponding to\nl = 1 or N = 3). The radial solution for these Q-balls exhibits a dominant linear behavior at the\ncenter, specifically f(r) = a1r + a2r2 + . . ., where the coefficient a2 is determined by Equation\n(IV.8).\nThe Q-ball solution presented in FIG. 6(a) is qualitatively similar to those found in the CP N\nmodel with a sharp potential, where the initial contribution from the quartic term to the energy\ndensity is small. However, increasing the coupling constant (κ) for the quartic terms significantly\nmodifies",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/figure-img-p023-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../images/img-p023-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/figure-img-p023-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../images/img-p023-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/figure-img-p023-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../images/img-p023-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/figure-img-p023-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../images/img-p023-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/figure-img-p023-5",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../images/img-p023-5.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/figure-img-p023-6",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../images/img-p023-6.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/figure-img-p024-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../images/img-p024-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/figure-img-p024-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../images/img-p024-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/figure-img-p024-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../images/img-p024-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Q-shells",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-017-q-shells.md",
+      "narrative": null,
+      "content": "The Q-shell solutions are characterized by an internal vacuum region and possess an expansion around the inner radius, $R_{\\text{in}}$, given by: $$f(r)=b_2(r-R_{\\rm in})^2-b_3(r-R_{\\rm in})^3+b_4(r-R_{\\rm in})^4+\\ldots$$ where the coefficients $b_2$, $b_3$, and $b_4$ are determined by Equations [\\[eq:b2\\]](#eq:b2){reference-type=\"eqref\" reference=\"eq:b2\"}-[\\[eq:b4\\]](#eq:b4){reference-type=\"eqref\" reference=\"eq:b4\"}, with the external radius $R_{\\text{out}}$ formally replaced by the internal radius $R_{\\text{in}}$.\n\n<figure id=\"fig:CP5\">\n\n<figcaption><span class=\"math inline\"><em>C</em><em>P<",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/figure-img-p025-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../images/img-p025-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/figure-img-p025-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../images/img-p025-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/figure-img-p025-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../images/img-p025-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Energy, Noether charge and radius of the compactons for l=0,1,2,5",
+      "pageStart": 25,
+      "pageEnd": 39,
+      "target": "../sections/sec-018-energy-noether-charge-and-radius-of-the-compacto.md",
+      "narrative": null,
+      "content": "The solutions of the ordinary differential equation [\\[eq:radial\\]](#eq:radial){reference-type=\"eqref\" reference=\"eq:radial\"} were obtained using a shooting method combined with a fourth-order explicit Runge--Kutta method with step size $\\Delta r = 10^{-4}$. The radial coordinate $r$ was restricted to the interval $[R_{\\text{in}}, R_{\\text{out}}]$, with compacton width $R \\equiv R_{\\text{out}} - R_{\\text{in}} \\leq 20$. For fixed coupling constants and $\\omega$, the solutions are obtained by varying a single shooting parameter $p(0)$, defined as $f(0)$ for $l=0$, $f'(0)$ for $l=1$, and $R_{\\tex",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary and remarks",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "../sections/sec-019-summary-and-remarks.md",
+      "narrative": null,
+      "content": "This paper successfully generalizes the compact Q-ball type solutions for scalar field models possessing a ${C}P^N$ target space. Specifically, we have investigated the extended Skyrme-Faddeev (ESF) model, which augments the traditional Skyrme-Faddeev framework with the inclusion of a potential and quartic interaction terms. The main objective of this study was to analyze the influence of these quartic terms on the properties of compact Q-balls.\n\nSimilar to our previous results for models without quartic terms, we found two qualitatively distinct types of solutions: Q-balls and Q-shells. These",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2602.15276v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgmets",
+      "pageStart": 40,
+      "pageEnd": 44,
+      "target": "../sections/sec-020-acknowledgmets.md",
+      "narrative": null,
+      "content": "This study was financed in part by the Coordena¸c˜ao de Aperfei¸coamento de Pessoal de N´ıvel\nSuperior – Brasil (CAPES) – Finance Code 001. N.S. was supported in part by JSPS KAKENHI\nGrant No.\nJP23K02794.\nL.R.L. is supported by the grant 2025/20538-2, S˜ao Paulo Research\nFoundation (FAPESP).\nAppendix A\nMany simplifications follow directly from the addition theorem for spherical harmonics:\nPl(cos γ) =\n4π\n2l + 1\nl\nX\nm=−l\nY ∗\nlm(θ′, ϕ′)Ylm(θ, ϕ),\nwhere cos γ = cos θ cos θ′ + sin θ sin θ′ cos(ϕ −ϕ′). In particular, when θ = θ′ and ϕ = ϕ′ (which\nimplies γ = 0), this equality yields\nl\nX\nm=−l\n(l −m)!",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1139 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-th-9408113v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction.",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-0-introduction.md",
+      "narrative": null,
+      "content": "In this paper we consider mainly the properties of dilogarithm related to the so-called\naccessibility problem, representation theory of Virasoro and Kac-Moody algebras, and\nConformal Field Theory (CFT). The remarkable and mysterious dilogarithm [Za2], [Za3]\nwill be the main hero of our paper, but we start with deﬁnition and list some applications\nof more general and may be even more amazing functions:\npolylogarithm and hyperlogarithm.\nDeﬁnition 1 (G. Leibnitz, 1696; L. Euler, 1768). The polylogarithm function Lik(x)\nis deﬁned for 0 < x < 1 by\nLik(x) :=\n∞\nn=1\nxn\nnk\n(0.1)\n2\nAnatol N. Kirillov\nan",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-th/9408113v2  25 Aug 1994\nDILOGARITHM IDENTITIES\nANATOL N. KIRILLOV\nDepartment of Mathematical Sciences, University of Tokyo,\nKomaba, Meguro-ku, Tokyo 153, Japan\nand\nSteklov Mathematical Institute,\nFontanka 27, St.Petersburg, 191011, Russia\nABSTRACT\nWe study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial\nand representation-theoretic points of view. We prove that a lot of dilogarithm identities (hypothetically\nall!)\ncan be obtained by using the ﬁve-term relation only.\nAmong those the Coxeter, Lewin, Loxton\nand Browkin ones are contained. Ac",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ubiquity of polylogarithms.",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-01-ubiquity-of-polylogarithms.md",
+      "narrative": null,
+      "content": "The polylogarithm and hyperlogarithm have many intriguing properties and have ap-\npeared in various branches of mathematics and physics. We mention the following ones:\n— volumes of polytopes in hyperbolic and spheric geometry (N. Lobachevsky (1836),\nL. Schl¨aﬂi (1852), H. Coxeter (1935), G. Kneser (1936), . . .)\n— volumes of 3-dim hyperbolic manifolds (S. Kojima, J. Milnor, W. Neumann, T. Yoshida,\nD. Zagier, ...)\n— combinatorial formula for characteristic classes (I.M. Gel’fand, R. MacPherson,\nA. Gabrielov, M. Losik, ...)\n— cohomology of GLn(C) (A. Borel, J. Dupont, D. Quillen, A. Suslin, . .",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/prop-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 10,
+      "target": "prop-sec-002-02.md",
+      "narrative": null,
+      "content": "For z ∈C ∪{∞}, we have i) D(z) + D(1 −z) = 0, D(z) + D(1/z) = 0, D(z) = D(z), ii) D(zn) = n n−1 X k=0 D \u0012 exp \u00122πki n \u0013 z \u0013 , iii) (Five-term relation) If z, w ∈C \\ [0, 1], then D(z) + D(w) = D(zw) + D \u0012z(1 −w) 1 −zw \u0013 + D \u0012w(1 −z) 1 −zw \u0013 . There is a geometric interpretation of the number D(z) and consequently of Cl2(t) = D(eit). Namely, for a complex number z , the volume of the asymptotic simplex with vertices 0, 1, z and ∞in 3-dimensional hyperbolic space is equal to |D(z)|. Some formulae for the Wigner-Bloch dilogarithm can be interpreted as relations between the volumes of corresponding",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dilogarithm.",
+      "pageStart": 3,
+      "pageEnd": 10,
+      "target": "../sections/sec-002-02-dilogarithm.md",
+      "narrative": null,
+      "content": "0.2. Dilogarithm.\nThe main subject of this paper is the dilogarithm identities. More exactly, we are study\nthe relations of the following type\nN\ni=1\nL(xi) = cπ2\n6 ,\n(0.3)\nwhere L(x) is the Rogers dilogarithm, all xi are assumed to be the algebraic and c is a\nrational number. The main problems we are interested in are the following:\ni) how to ﬁnd/classify the relations of type (0.3),\nii) how one can prove a dilogarithm identity.\nBoth problems have the deep connections with algebraic K-theory, representation the-\nory of inﬁnite dimensional algebras, combinatorics and mathematical physics.\nThe ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/thm-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Cf. [Ro], Section 4",
+      "pageStart": 3,
+      "pageEnd": 10,
+      "target": "thm-sec-002-01.md",
+      "narrative": null,
+      "content": "Let f(x) be a function of class C3((0, 1)) which satisﬁes the relations (1.3) and (1.4). Then we have f(x) = L(x). Dilogarithm identities 1.1.3. Single–valued dilogarithm. We continue the function L(x) to all real axis R = R1 ∪{±∞} by the following rules L(x) = π2 3 −L(x−1), if x > 1, L(x) = L \u0012 1 −x \u0013 −π2 6 , if x < 0, (1.5) L(0) = 0, L(1) = π2 6 , L(+∞) = π2 3 , L(−∞) = −π2 6 . Important remark. The continuation of Rogers’ dilogarithm function constructed in this way satisﬁes the functional equation (1.3), but does not satisfy in general the ﬁve-term relation (1.4). Namely, one can check LHS",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Accessible dilogarithm relations.",
+      "pageStart": 10,
+      "pageEnd": 23,
+      "target": "../sections/sec-003-12-accessible-dilogarithm-relations.md",
+      "narrative": null,
+      "content": "1.2.1. Accessibility of Coxeter’s and Lewin’s identities.\nIt is easy to see from (1.3) and (1.7) that\nL(1) = π2\n6 , L(−1) = −π2\n12, L(1\n2) = π2\n12,\n(L.Euler, 1768);\n(1.10)\nL(1\n2(\n√\n5 −1)) = π2\n10,\nL(1\n2(3 −\n√\n5)) = π2\n15,\n(J.Landen, 1780).\nProof. Let us put ρ := 1\n2(\n√\n5 −1). It is clear that ρ2 + ρ = 1. So we have L(ρ2) =\nL(1 −ρ) = L(1) −L(ρ). Now we use the Abel formula (1.7)\nL(ρ2) = 2L(ρ) −2L\n\u0012\nρ\n1 + ρ\n\u0013\n= 2L(ρ) −2L(ρ2).\nConsequently, 3L(ρ2) = 2L(ρ). But as we already saw,\nL(1) = L(ρ) + L(ρ2) = 5\n3L(ρ).\nThis proves the part of (1.10) due to J. Landen.\nThe results of Euler and Landen in equa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 23,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "The following single–variable functional equations (1.13), (1.14) and (1.15) are accessible from the functional equation (1.4) L \u0012 −z7 1 −z 1 + z \u0013 = 2L(z2(1 −z)) + L \u0012 −z3 1 −z2 \u0013 + 2L \u0012 z3 1 + z \u0013 (1.13) + L(−z(1 −z2)) + 7 4L(z4) −9 4L(z2) + 1 2L \u0012 z 1 −z 1 + z \u0013 −1 2L \u0012 −z 1 + z 1 −z \u0013 ; L(−z6(1 −z)3) = 2L(−z(1 −z)(1 −z2)) + L \u0012 − z4 (1 −z)(1 + z)2 \u0013 (1.14) + 3L(−z2(1 −z)) + 4L(z(1 −z)) + L \u0012 −z2 1 −z \u0013 + 4L(z2) −2L(z); L \u0012 − z9 (1 + z)3 \u0013 = L(−z(1 −z)(1 −z2)) + 2L \u0012 − z4 (1 −z)(1 + z)2 \u0013 (1.15) + 3L \u0012 −z3 1 + z \u0013 + 4L \u0012 −z2 1 + z \u0013 + L(−z(1 + z)) + 3L(z2) + 2L(z).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/cor-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "cor-sec-004-02.md",
+      "narrative": null,
+      "content": "We have s(j, n, r) = c(n) r −24h(r,n) j + 6Z+, where c(n) r = (n2 −1)r n + r , h(n,r) j = n(n2 −1) · j(j + 2) r + n , 0 ≤j ≤r + n −2 are the central charge and conformal dimensions of the SU(n) level r WZNW primary ﬁelds, respectively. Sketch of a proof of Theorem 2. We are going to show that the dilogarithm identity (1.28) follows from the functional equation (1.4) and the well-known results (F. Newman, 1847) ReL(eiθ) = π2B2 \u0012 θ 2π \u0013 , ReL \u0012 eiθ 2 cos θ \u0013 = −π2B2 \u0012 θ π + 1 \u0013 . (1.29) (Hint: take x := e2iθ in the Abel duplication formula (1.7) and use functional equation for the modiﬁed Bernou",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dilogarithm identities and conformal weights.",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "../sections/sec-004-13-dilogarithm-identities-and-conformal-weights.md",
+      "narrative": null,
+      "content": "Let us consider the following dilogarithm sum\nn−1\nX\nk=1\nr\nX\nm=1\nL\n\u0012\nsin kϕ · sin(n −k)ϕ\nsin(m + k)ϕ · sin(m + n −k)ϕ\n\u0013\n:= π2\n6 s(j, n, r),\nwhere ϕ = (j + 1)π\nn + r , 0 ≤2j ≤n + r −2 and g.c.d. (j + 1, n + r) = 1.\n24\nAnatol N. Kirillov\nTheorem 2 (A.N. Kirillov [Kir7]). 1. We have\ns(j, n, r) = 6(r + n)\n[ n−1\n2\n]\nX\nk=0\n{1\n6 −B2 ((n −1 −2k)θ)} −1\n4{2n2 + 1 + 3(−1)n},\n(1.28)\nwhere\nθ = j + 1\nn + r,\nand\nB2(x) = −1\nπ2\n∞\nX\nk=1\ncos 2kπx\nk2\nis the second modiﬁed Bernoulli\npolynomial.\n2. (Level - rank duality)\ns(j, n, r) + s(j, r, n) = nr −1\nCorollary 1. We have\ns(j, n, r) = c(n)\nr\n−24h(r,n)\nj\n+ 6Z+,\nwher",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/rem-sec-004-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "rem-sec-004-03.md",
+      "narrative": null,
+      "content": "One can show that the ﬁve-term relation (1.4) follows from the nine-term relation (1.30). Namely, let us take x := a = b and y := bc in (1.30) (a, b, c ∈R). Then (1.30) is reduced to the relation L(xy) = L(x) + L(y) + L \u0012 −x1 −y 1 −x \u0013 + L \u0012 −y 1 −x 1 −y \u0013 , which is a form of the ﬁve-term relation due to C. Hill (see e.g. [Le1]). Hint: using the Landen result Re \u0012 L(x) + L \u0012 −x 1 −x \u0013\u0013 = 0, replace the terms L(a) and L(b) in RHS of (1.6) on −L \u0012 −a 1 −a \u0013 and −L \u0012 −b 1 −b \u0013 correspondently. It is easy to check that −a 1 −a = −x1 −y 1 −x and −b 1 −b = −y 1 −x 1 −y .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/thm-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "A.N. Kirillov [Kir7]",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "thm-sec-004-01.md",
+      "narrative": null,
+      "content": "1. We have s(j, n, r) = 6(r + n) [ n−1 ] X k=0 {1 6 −B2 ((n −1 −2k)θ)} −1 4{2n2 + 1 + 3(−1)n}, (1.28) where θ = j + 1 n + r, and B2(x) = −1 π2 ∞ X k=1 cos 2kπx k2 is the second modiﬁed Bernoulli polynomial. 2. (Level - rank duality) s(j, n, r) + s(j, r, n) = nr −1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/cor-sec-005-06",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "of Theorem 4",
+      "pageStart": 26,
+      "pageEnd": 31,
+      "target": "cor-sec-005-06.md",
+      "narrative": null,
+      "content": "If r is an odd positive integer, then N(j, r) is an integer for any admissible value of j (i.e. g.c.d. (j + 1, r + 2) = 1). Anatol N. Kirillov",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/cor-sec-005-07",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "of Theorem 6",
+      "pageStart": 26,
+      "pageEnd": 31,
+      "target": "cor-sec-005-07.md",
+      "narrative": null,
+      "content": "We have (r ≡1(mod 2)) i) N(2, r) = 2(r −1) − hr i , if r ≥3, ii) N(3, r) = 9r −1 −4 hr i −1, if r ≥7.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/ex-sec-005-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 31,
+      "target": "ex-sec-005-01.md",
+      "narrative": null,
+      "content": "Assume r = 3 and j = 1, then we have ϕ = 2π 5 and f1 = f2 = \u0012 2 sec 2π \u00132 = ρ−2 = 3 + √ ; 1 −f1 = −ρ−1. First of all, πid1 = log f1 −2 log(1 −f1) = −2πi. Thus, d1 = d2 = −2. Further, using the fact Q2 = 1 −Q2 1 = f1 −1, one can ﬁnd y = 1 πi {log(1 −f1) + 2 log(1 −f2) + 3 log Q2} = 3 πi(log(1 −f1) −log(f1 −1)) = 3. Consequently, π2 6 c0(ϕ) = 2(L(f1) + πi log(1 −f1)) = 2(π2 3 −L(ρ2) −πi 2 log f1 + πi log(f1 −1) −π2) = 2π2 \u00121 3 −1 15 −1 \u0013 = −44 5 L(1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Kuniba-Nakanishi’s dilogarithm conjecture.",
+      "pageStart": 26,
+      "pageEnd": 31,
+      "target": "../sections/sec-005-14-kuniba-nakanishis-dilogarithm-conjecture.md",
+      "narrative": null,
+      "content": "Recall that the dilogarithm function is deﬁned by\nLi2(z) =\n∞\nX\nn=1\nzn\nn2 ,\n(|z| < 1).\nBy using the integral representation\nLi2(z) = −\nZ z\n0\nlog(1 −t)\nt\ndt,\n(1.32)\nLi2(z) can be analytically continued as a multivalued complex function to the complex\nplane cut along the real axis from 1 to +∞. In the sequel the principal branch of diloga-\nrithm which can be deﬁned by taking the principal branch of logarithm function\n−π < Im(log(z)) = arg(z) ≤π\nin the previous integral is used. The integration contour in (1.32) does not pass through\nthe branch cut of log z. Let us consider also the principal bran",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/thm-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 31,
+      "target": "thm-sec-005-02.md",
+      "narrative": null,
+      "content": "Let r be an odd positive integer and j be an integer such that 0 ≤2j + (−1)j+1 ≤r. Then N(r −j, r) = N(j, r) + j(−1)j−1 r + (−1)j+1 . To obtain an additional information about the numbers N(j, r) let us introduce a function bj(r) := j2(r −1) −j3 −j \u0014 r j + 1 \u0015 −N(j, r), where [x] is the integer part of a real number x.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/thm-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 31,
+      "target": "thm-sec-005-03.md",
+      "narrative": null,
+      "content": "Let r and j be the positive integers such that r ≥2j + (−1)j+1 and r ≡1(mod 2). Then bj(r) is an integer depending only on the residue of r modulo j + 1. If r ≡s(mod j + 1) and 0 ≤s ≤j, let us denote by ebj(s) the ”stable value” of the function bj(r). Thus for a given positive integer j we reduced a problem of computing the inﬁnite family of numbers N(j, r), r ≥2j + 1, to that for ﬁnite collection of quantities ebj(s), 0 ≤s ≤j, only.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/thm-sec-005-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 31,
+      "target": "thm-sec-005-04.md",
+      "narrative": null,
+      "content": "i) (Duality) If 0 ≤s ≤j −3, then ebj(s) + ebj(j −3 −s) = \u0012 j \u0013 − \u0012 j \u0013 , ii) ebj(j) = ebj(j −2) = \u0012 j \u0013 . In principle, using the identity (1.16) it is possible to compute the functions ebj(s) ex- actly (and consequently, to ﬁnd the remainder term N(j, r) in Kuniba-Nakanishi’s dilog- arithm sum c0(ϕ)). We give here only partial results concerning the computation of the numbers ebj(s).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/thm-sec-005-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 31,
+      "target": "thm-sec-005-05.md",
+      "narrative": null,
+      "content": "i) ebj(0) = − \"\u0012j −1 \u00132# , ii) ebj(1) = \u00142j \u0015 \u00142j + 2 \u0015 −j(j −1) , iii) ebj(2) = 2 \u0014j \u0015 \u00143j + 3 \u0015 − \"\u0012j −1 \u00132# . On the other hand (r ≡1(mod 2)), iv) b1(r) = 0, v) b2(r) = 0, if r ≥3, vi) b3(r) = 1, if r ≥7.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/thm-sec-005-08",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 31,
+      "target": "thm-sec-005-08.md",
+      "narrative": null,
+      "content": "We have (i) s(0, k + 1, p) := ck = 3(p + 1 −k) p + k + 1 , k ≥1, (1.38) (ii) s(l, k + 1, p) = ck −6k l(l + 2) p + k + 1 + 6Z, (1.39) If k = 1 one can obtain an exact formula for the remainder term in (1.39) (see [Kir7] or Exercise 11). Dilogarithm identities",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Exercises to Section 1.",
+      "pageStart": 31,
+      "pageEnd": 34,
+      "target": "../sections/sec-006-16-exercises-to-section-1.md",
+      "narrative": null,
+      "content": "1.6. Exercises to Section 1.\n1. Using the integral representation (1.1) for the Euler dilogarithm Li2(x), prove the\nsimple single-variable functional equations\ni) Li2(z) + Li2(−z) = 1\n2Li2(z2),\nii) Li2(z) + Li2(−z) = Li −2(1) −log z log(1 −z),\n(L. Euler, 1768),\niii) Li2(−z) + Li2\n\u0012\n−1\nz\n\u0013\n= 2Li2(−1) −1\n2 log2(z).\n2. Prove the following ﬁve-term, two-variable functional equations\ni) Li2\n\u0014\nx\n1 −x ·\ny\n1 −y\n\u0015\n= Li2\n\u0014\nx\n1 −y\n\u0015\n+Li2\n\u0014\ny\n1 −x\n\u0015\n−Li2(x)−Li2(y)−log(1−x) log(1−y),\n(W. Spence, 1809; N. Abel, 1830)\nii) Li2(x) −Li2(y) + Li2\n\u0010y\nx\n\u0011\n+ Li2\n\u00141 −x\n1 −y\n\u0015\n−Li2\n\u0014y(1 −x)\nx(1 −y)\n\u0015\n= Li2(1) −log x",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/conj-sec-007-09",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 53,
+      "target": "conj-sec-007-09.md",
+      "narrative": null,
+      "content": "Polynomials K(l) (Nl−m,m),(lN )(q) are unimodal. Let us consider a simple example with l = 2, N = m = 4. One can compute the Kostka polynomial K(4,4),(24)(q) by using the Theorem 10. Namely, there exist three conﬁgurations 0, c = 1 + 1 + 1 + 1 −4 = 0, , c = 3 + 1 + 1 + 1 −4 = 2, 0, c = 3 + 3 + 1 + 1 −4 = 4. Anatol N. Kirillov Consequently, K(4,4),(24)(q) = 1 + q2 + q4 and this is a non-unimodal polynomial, whereas the level 2 Kostka polynomial K(2) (4,4),(24)(q) = q4 is the unimodal one. D. (Polynomial analog of Gordon-Andrews’ identities). Let us remind the basic facts about the minimal serie",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/cor-sec-007-08",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": " L. Lewin, B. Richmond, G. Szekeres, A.N. Kirillov, N. Reshetikhin ",
+      "pageStart": 34,
+      "pageEnd": 53,
+      "target": "cor-sec-007-08.md",
+      "narrative": null,
+      "content": "k X n=1 L         sin π k + 2 sin (n + 1)π k + 2     2   = 3k k + 2 · π2 6 . The interesting applications of the Corollary 4 to the study of thermodynamic proper- ties of the XXX model one can ﬁnd in [KR1] and [BR]. Dilogarithm identities Exercises to Section 2.1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/ex-sec-007-07",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 53,
+      "target": "ex-sec-007-07.md",
+      "narrative": null,
+      "content": "A2,6,3 = { (3, 2, 1), (4, 1, 1), (6), (5, 1), (4, 2), (3, 3) }, B2,6,3 = { (16), (2, 14), (22, 12), (23), (5, 1), (6) }, C2,6,3 = { (4, 12), (32), (3, 2, 1), (4, 2), (5, 1), (6) }, D2,6,3 = { (3, 1, 1, 1), (4, 1, 1), (3, 2, 1), (2, 2, 2), (3, 3), (4, 2) }. The next step (S. Ramanujan, G. Hardy, G. Meinardus, G. Andrews, B. Richmond, G. Szekeres, TBA (Thermodynamic Bethe’s Ansatz, Al. Zamolodchikov, ...) ...) is to examine the asymptotic behavior of the numbers #|Ck,n,a| and #|Bk,n,a| as n →∞. It is well known from the theory of partitions (see e.g. [An1]) that if we introduce the partition fun",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/lem-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Classical identities",
+      "pageStart": 34,
+      "pageEnd": 53,
+      "target": "lem-sec-007-01.md",
+      "narrative": null,
+      "content": "i) (q-binomial theorem) (qx; q)n = n X k=1 (−1)kqk(k+1)xk \u0014 n k \u0015 q , (2.5) ii) (Euler identity) (qx; q)n = n X k=0 \u0014 n k \u0015 q xkqk (xq; q)k , (2.6) iii) (Cauchy identity) n X k=−n xkq 2 k(k+1) \u0014 2n n + k \u0015 q = n Y k=1 (1 + xqk)(1 + x−1qk−1). (2.7)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/lem-sec-007-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 53,
+      "target": "lem-sec-007-02.md",
+      "narrative": null,
+      "content": "Given N ∈N, a ∈C, then N X m=−N xmqam2 (q)N−m(q)N+m = N X l=0 ql2 (q)N−l l X n=0 xnq(a−1)n2 (q)l−n(q)l+n . (2.8) The statements of Lemma 1 are well-known (see e.g. [An1] or [GR]). Let us prove the",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/lem-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 53,
+      "target": "lem-sec-007-03.md",
+      "narrative": null,
+      "content": "For this purpose let us take n := N −m, x := q2m in (2.6) and multiply the both sides of Euler’s identity (2.6) on (q)−1 2m. We get (q)−1 n+m = X k \u0014 n −m k \u0015 q qk2+2km (q)k+2m . (2.9) Now let us substitute the expression for (q)−1 n+m from (2.9) to the LHS of (2.8): LHS(2.8) = X m xmqam2 (q)N−m X k qk2+2mk(q)N−m (q)k+2m(q)k(q)N−m−k = X m,k q(m+k)2 (q)N−m−k · xmq(a−1)m2 (q)k(q)k+2m . Finally, let us take l := m + k in the last expression. Now let us return back to a proving of (2.4). For this purpose we apply Lemma 2 to the RHS of (2.4): RHS(2.4) = X m (xq 2 )mq 2 (2k+3)m2 (q)N−m(q)N+m = X n1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/lem-sec-007-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 53,
+      "target": "lem-sec-007-04.md",
+      "narrative": null,
+      "content": "X n #|Ak,n,a|qn = LHS of Gordon −Andrews′ identity, X n #|Bk,n,a|qn = RHS of Gordon −Andrews′ identity.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dilogarithm and partitions.",
+      "pageStart": 34,
+      "pageEnd": 53,
+      "target": "../sections/sec-007-21-dilogarithm-and-partitions.md",
+      "narrative": null,
+      "content": "2.1.1. Rogers-Ramanujan and Gordon-Andrews identities\nTheorem C. Let a be an integer, 1 ≤a ≤k + 1. Then\ni) (Gordon-Andrews)\nX\nn1,...,nk\nqN2\n1 +...+N2\nk+Na+...+Nk\n(q)n1 . . . (q)nk\n=\nY\nn̸≡0, ±a mod (2k+3)\n(1 −qn)−1 =\n(2.1.a)\n= (q)−1\n∞\nX\nm∈Z\n(−1)mq\n1\n2 [m(m+1)(2k+3)−am],\n(2.1.b)\nii) (G¨ollnitz-Gordon-Andrews)\nX\nn1,...,nk\n(−q; q2)N1qN2\n1 +N2\n2 +···+N2\nk+Na+...+Nk\n(q2; q2)n1 . . . (q2; q2)nk\n=\nY\nn̸ ≡2(mod 4)\nn̸ ≡0, ±(2a −1) (mod 4k + 4)\n(1 −qn)−1,\n(2.2)\nDilogarithm identities\n35\nwhere Ni = ni + . . . + nk, (q)n := (q; q)n and (x; q)n = (1 −x)(1 −qx) · · ·(1 −qn−1x).\nThe Rogers-Ramanujan identities",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/rem-sec-007-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 53,
+      "target": "rem-sec-007-06.md",
+      "narrative": null,
+      "content": "Bijection Ak,n,a ↔Ck,n,a is obvious; bijection Ck,n,a ↔Dk,n,a was con- structed by W. Burge (see e.g. [Bur]). Further information can be found in Exercise 7.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/rem-sec-007-11",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 53,
+      "target": "rem-sec-007-11.md",
+      "narrative": null,
+      "content": "It seems plausible that for given integers p′ > p ≥2, N ≥1 and r, the polynomials B(N) p,p′;r,s(q) have the nonnegative coeﬃcients for all s, 1 ≤s ≤p′ −1, if and only if r satisﬁes the inequalities 0 ≤r ≤p. For example, B(9) 4,9;0,1(q) = q4(1 + q4)(1 + q3 + q6)1 −q7 1 −q . However, one can prove that lim N→∞B(N) p,p′;r,s(q) = 0, if r = 0 or p and 1 ≤s ≤p′ −1. • It is an interesting task to ﬁnd a natural representation of the ”restricted Hecke algebra” eHN(q), q = exp \u00122πi p′ \u0013 , p′ ≡1(mod 2) (see e.g. [GW]), in the linear space generated by the ﬁnite set a n Rp′,s(N −B, B; p, r; n). • Another",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/thm-sec-007-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 53,
+      "target": "thm-sec-007-05.md",
+      "narrative": null,
+      "content": "(A. Garsia and S. Milne [GM], W. Burge [Bur]). There exist the natural bijections Ak,n,a ←→Bk,n,a ←→Ck,n,a ←→Dk,n,a. From Theorem D there follows a combinatorial proof of the Gordon-Andrews identity.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/thm-sec-007-10",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[ABBBFV]",
+      "pageStart": 34,
+      "pageEnd": 53,
+      "target": "thm-sec-007-10.md",
+      "narrative": null,
+      "content": "Assume that 1 ≤r < p and 1 ≤2s ≤p′. Then B(N) p,p′;r,s(q) = Dp′,s(N −B, B; p, r; q), where B = \u0014N + s −r −d(p, p′) \u0015 .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/thm-sec-007-12",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 53,
+      "target": "thm-sec-007-12.md",
+      "narrative": null,
+      "content": "* (A.N. Kirillov). We have the following equivalent expressions for the RHS(7) (we use the notation from Exercise 7, A,B,C,D. Note also, that in our case r = 1 and we assume that 0 ≤s ≤l + 1): B(N) 2,2l+3;1,s(q) = = X (m1,...,ml)∈Zl + qN2 1 +···+N2 l +Ns+···+Nl lY k=1 \u0014 Pk(m; s, N) + mk mk \u0015 q (8) = X m q2m X ν⊢m q2n(ν)−Qs−1(ν) lY k=1 \u0014 N −max(k + 1 −s, 0) −2Qk(ν) + mk(ν) mk(ν) \u0015 q , * After ﬁnishing this work, I was informed by A. Kato about the recent preprint of Y.- H. Quano [Q1] which contains the proof of Theorem 9. Also in [Q1] a polynomial analog of Bressoud’s identity (10) is given. An",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/thm-sec-007-13",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "G. Andrews [An2]",
+      "pageStart": 34,
+      "pageEnd": 53,
+      "target": "thm-sec-007-13.md",
+      "narrative": null,
+      "content": "(Bailey’s lemma). Let the sequences α = {αn} and β = {βn} form a Bailey pair. If α′ = {α′ n} and β′ = {β′ n} are deﬁned by α′ n := (ρ1)n(ρ2)n (aq/ρ1)n(aq/ρ2)n (aq/ρ1ρ2)nαn, β′ n := n X k=0 (ρ1)k(ρ2)k(aq/ρ1ρ2)n−k (q)n−k(aq/ρ1)k(aq/ρ2)k (aq/ρ1ρ2)kβk, then α′ and β′ also form a Bailey pair. A proof can be found in [An3]. • Prove the following corollary of Bailey’s lemma: X k≥0 akqk2βk = (aq)∞ ∞ X k=0 akqk2αk, (13) for any Bailey pair α = {αn} and β = {βn}. Hint: take the limit n, ρ1, ρ2 →∞in the Bailey pair deﬁning relation β′ n = n X k=0 α′ k (q)n−k(aq)n+k . More generally, prove that if α = {αn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/conj-sec-008-04",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "Goncharov",
+      "pageStart": 53,
+      "pageEnd": 60,
+      "target": "conj-sec-008-04.md",
+      "narrative": null,
+      "content": "i) (Week form). If α ∈D(R) and L(α) ≡0 (mod π2), then λ(α) = 0. Anatol N. Kirillov ii) (Strong form). If α ∈D(R) and L(α) ≡0 (mod π2), then α is a linear combination of ﬁve-term elements of the form (2.22) (i.e. the map L is injective on the whole Bloch group B(R)). In other words, if we have a dilogarithm identity X i L(xi) = cπ2 6 , with c ∈Q and xi ∈Q ∩R, then (hypothetically) we must have i) (week form) λ( X i [xi]) = 0; ii) (strong form) the relation X i L(xi) = cπ2 6 is a linear combination over Q of the ﬁve-term relations (1.4) with real-algebraic arguments. Let us say now a few words a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/cor-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 53,
+      "pageEnd": 60,
+      "target": "cor-sec-008-02.md",
+      "narrative": null,
+      "content": "The constant term of ch(V (kΛ0)) with respect to z is equal to CT[ch(kΛ0)] = (q)r−1 ∞ X n∈(na i ) q 2 n(Ar−1⊗A−1 k−1)nt Y i,a (q)na j , (2.21) where summation is taken over the sequences of nonnegative integers n = (na i ), 1 ≤a ≤r −1, 1 ≤i ≤k −1, such that k−1 X i=1 ina i ≡0 (mod k), 1 ≤a ≤r −1. For r = 2 the formula (2.21) is exactly the result of Lepowsky and Primc [LP] (see also [FeSt], [DKKMM], [KMM]). Analogously, for any weight λ = (λ1 ≥λ2 ≥· · · ≥λr−1 ≥0), one can ﬁnd the coeﬃcient before zλ in the Laurent series (chV k r )(z). The result is given by the RHS(2.21) under the following c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dilogarithm and characters of the aﬃne Kac-Moody algebras.",
+      "pageStart": 53,
+      "pageEnd": 60,
+      "target": "../sections/sec-008-22-dilogarithm-and-characters-of-the-aﬃne-kac-mo.md",
+      "narrative": null,
+      "content": "Theorem E (Kac-Wakimoto [KW2]). Let chV k\nr be the character of level k represen-\ntation V (kΛ0) of the aﬃne Kac-Moody Lie algebra c\nslr. Then\nlim\nq→1(1 −q) log chV k\nr = π2\n6\n(r2 −1)k\nr + k\n.\nTheorem 10. We have\nch(V (kΛ0)) =\nX\nλ∈Zr−1\n+\nΘk\nλ(z)ck\nλ(q),\nwhere\nΘk\nλ(z) := Θk\nλ(z1, . . ., zr−1) =\nX\nm∈Zr−1\nzkm+λq\n1\n2 kmAr−1mt+mAr−1λt,\n(2.19)\nck\nλ(q) =\n1\n(q)r−1\n∞\nX\nn=(na\ni )\nq\n1\n2 n(Ar−1⊗T −1\nk−1)nt\nQ\na,i(q)na\ni\n,\nk ≥2;\nc(1)\nλ (q) =\nδλ,0\n(q)r−1\n∞\n(2.20)\nand summation in (2.20) is taken over the sequences of nonnegative integers n = (na\ni ),\n1 ≤a ≤r −1, 1 ≤i ≤k −1 under the following constraints\nk−1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/rem-sec-008-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 53,
+      "pageEnd": 60,
+      "target": "rem-sec-008-05.md",
+      "narrative": null,
+      "content": "In the paper [FzSz2], Section 5.2, for a totally real ﬁeld of algebraic numbers F, a very interesting construction of elements in Kind (F) (the indecomposable part of K3(F), i.e. the cokernel of the product map K1(F)⊗3 →K3(F)) using the relative group K2 of projective line over F modulo two points and the solutions of the Bether-ansatz-like system of algebraic equations is given.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/thm-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Kac-Wakimoto [KW2]",
+      "pageStart": 53,
+      "pageEnd": 60,
+      "target": "thm-sec-008-01.md",
+      "narrative": null,
+      "content": "Let chV k r be the character of level k represen- tation V (kΛ0) of the aﬃne Kac-Moody Lie algebra c slr. Then lim q→1(1 −q) log chV k r = π2 (r2 −1)k r + k .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/thm-sec-008-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[FrSz2]",
+      "pageStart": 53,
+      "pageEnd": 60,
+      "target": "thm-sec-008-03.md",
+      "narrative": null,
+      "content": "Let F be a totally real number ﬁeld and mp be the maximal number m ≥0 such that F contains Q(ζpm)+. Then i) The symbols ∆pmp generate the Bloch group B(F). ii) The symbol ∆k+2 generates the group B′(Q(ζk+2)+). iii) For a totally real number ﬁeld F the homomorphisms L : B(F) →R/(Zπ2) and L′ : B′(F) →R/(Zπ2 6 ) are injective. A proof of Theorem F uses the identity (1.16), with j = 0, and the description of the Bloch group B(F) of a totally real number ﬁeld, which is due to Merkuriev and Suslin [MS], and Levine [Lv]. According to this description, the group B(F) is cyclic of order b(F) = 1 Y p pm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/conj-sec-009-09",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 60,
+      "pageEnd": 79,
+      "target": "conj-sec-009-09.md",
+      "narrative": null,
+      "content": "Let A = kAo be the level k vacuum representation of the affine Lie algebra sl,. Then",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/cor-sec-009-06",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "of Theorem 13",
+      "pageStart": 60,
+      "pageEnd": 79,
+      "target": "cor-sec-009-06.md",
+      "narrative": null,
+      "content": "Let λ = (λ1, λ2) be a partition, |λ| ≡0 (mod 2), and b2Λ0 λ (q) be the branching function for the level 2 vacuum representation 2Λ0 of the aﬃne Lie algebra c sl2. Then b2Λ0 λ (q) = lim N→∞q−NKλN,µN (q), where λN = (λ1 + 2N, λ2 + 2N) and µN = (2M), M = 1 2|λ| + 2N. Finally, let us generalize the identity (2.44)µ to the higher levels.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/cor-sec-009-08",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "of Theorem 14",
+      "pageStart": 60,
+      "pageEnd": 79,
+      "target": "cor-sec-009-08.md",
+      "narrative": null,
+      "content": "Let λ = (λ1, λ2) be a partition, |λ| ≡0 (mod 2k), and bkΛ0 λ (q) be the branching function for the level k vacuum representation kΛ0 of the aﬃne Lie algebra c sl2. Then lim N→∞q−k(N2−N)KλN,µN (q) = bkΛ0 λ (q), where λN := (λ1 + kN, λ2 + kN) and µN = (kM), M := M(N) = 1 k|λ| + 2N. Let us remind that, by deﬁnition, the partition (kM) is the one consisting of M parts all equal to k.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/prop-sec-009-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "Hook-formula",
+      "pageStart": 60,
+      "pageEnd": 79,
+      "target": "prop-sec-009-03.md",
+      "narrative": null,
+      "content": "Let λ ⊢n be a partition of natural number n. Then we have Kλ,(1n)(q) = qn(λ′) (q)n Y x∈λ \u0010 1 −qh(x)\u0011, (2.32) where h(x) := λi + λ′ j −i −j + 1 is the hook-length corresponding to the box x = (i, j) ∈λ. Before stating the next result about Kostka polynomials, let us explain some notation. Namely, let STY(λ, µ) be a set of all (semi)standard Young tableaux of shape λ and weight (or content, or evolution) µ. It is well-known (see e.g. [Ma]) that #|STY(λ, µ)| = dim Vλ(µ), i.e. the number of (semi)standard Young tableaux of shape λ and weight µ is equal to the dimension of weight µ subspace of the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/prop-sec-009-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "Lascoux-Sch¨utzenberger [LS]",
+      "pageStart": 60,
+      "pageEnd": 79,
+      "target": "prop-sec-009-04.md",
+      "narrative": null,
+      "content": "If λ and µ are partitions, then Kλ,µ(q) = X T ∈STY(λ,µ) qc(T ). In the remaining part of this section we are going to explain a new combinatorial formula for Kostka polynomial Kλ,µ(q) coming from the Bethe ansatz technique (see e.g. [Kir2], [Kir3]). From the representation theoretic point of view, Bethe’s ansatz method for the gener- alized Heisenberg magnet gives a very powerful and convenient algorithm for decomposing the tensor product of some special representations of semi-simple Lie algebra g into irre- ducible parts (see e.g. [KR2], [Ku]). In the case of the Lie algebra gln, the Bethe a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connection with crystal basis.",
+      "pageStart": 60,
+      "pageEnd": 79,
+      "target": "../sections/sec-009-24-connection-with-crystal-basis.md",
+      "narrative": null,
+      "content": "2.4.1. Level 1 vacuum representation Λ0 of the aﬃne Lie algebra c\nsln.\nTheorem 11. Let µ = (µ1, . . ., µn) be a composition. Then\nX\nλ, l(λ)≤n\nKλ,µ · Kλ, (1|λ|)(q) = qn(µ′)\n\u0014\n|µ|\nµ1, . . ., µn\n\u0015\nq\n,\n(2.28)\nwhere\n\u0014\nN\nm1, . . ., mn\n\u0015\nq\n:=\n(q)N\n(q)m1 . . . (q)mn\nis the q-analog of multinomial coeﬃcient (N = m1 + · · · + mn).\nLet us explain notation. Here\ni) Kλ,µ is the so-called Kostka number, which is equal to the number of (semi)standard\nYoung tableaux of shape λ and weight µ, or, equivalently, to the dimension of weight µ\nsubspace Vλ(µ) of the irreducible highest weight λ representation Vλ of t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/rem-sec-009-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 60,
+      "pageEnd": 79,
+      "target": "rem-sec-009-01.md",
+      "narrative": null,
+      "content": "The identity (2.28) is implicitly contained in the Terada preprint [Te]. The proof given in [Te] is based on a study of the cohomology groups of the variety of N-stable ﬂags. Our proof is pure algebraic and based on the theory of symmetric functions. Later B. Leclerc and J.-Y. Thibon gave almost the same proof (unpublished). It is possible to give a pure combinatorial proof of (2.28) using the properties of the Robinson-Schensted correspondence. Finally, the identity (2.28) can be extracted from [DJKMO1].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/rem-sec-009-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 60,
+      "pageEnd": 79,
+      "target": "rem-sec-009-02.md",
+      "narrative": null,
+      "content": "It is interesting to compare the formula (2.31) with the following result of V. Kac ([Kac], (14.12.10)): for the inﬁnite rank aﬃne algebra of type A∞ dimqL(Λs1 + Λs2 + · · · + Λsn) = (q)n∞ Y 1≤i<j≤n (1 −qsi−sj+j−i), where s1 ≥s2 ≥· · · ≥sn are arbitrary integers. Anatol N. Kirillov 2.4.2. Kostka-Foulkes polynomials. We start with reminding some basic properties of the Kostka polynomials (see e.g. [Ma], [Kir3]).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/rem-sec-009-10",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 60,
+      "pageEnd": 79,
+      "target": "rem-sec-009-10.md",
+      "narrative": null,
+      "content": "There exists an interesting connection between the Milne polynomials ([MI11], [M12], [Gal])",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/rem-sec-009-11",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 60,
+      "pageEnd": 79,
+      "target": "rem-sec-009-11.md",
+      "narrative": null,
+      "content": "Let b be the image of b in the Bloch group B(F). It is an interesting problem to ﬁnd an eﬀective criteria when b ∈B(F)tor. Dilogarithm identities",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/thm-sec-009-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 60,
+      "pageEnd": 79,
+      "target": "thm-sec-009-05.md",
+      "narrative": null,
+      "content": "Let µ = (µ1, µ2) be the length two composition, |µ| = 2N. Then X λ, l(λ)≤2 Kλ,µKλ,(2N)(q) = X m   N µ1 −m , µ2 −m , m   q · q 2 m2q 2 (n(µ′)−N). (2.44)µ Let us deduce from Theorem 13 some combinatorial applications. First of all, it is clear that Kλ,µ = 1 if λ ⪰µ with respect to the dominant order (see e.g. [Ma]) and Kλ,µ = 0 otherwise. Hence (λ = (λ1 ≥λ2)), Kλ,(2N)(q) = RHS(2.44)(λ1,λ2) −RHS(2.44)(λ1+1,λ2−1). (2.45) Using (2.45), one can ﬁnd N X l=0 q−l 1 −q2l+1 1 −q K(N+l,N−l),(2N )(q2) (2.46) = qN2−2N X k qk2    X l≥0 ′ (ql + q−l)ql2 \" N −k N −k −l # q2    \u0014 N k \u0015 q2 . The next Le",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/thm-sec-009-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 60,
+      "pageEnd": 79,
+      "target": "thm-sec-009-07.md",
+      "narrative": null,
+      "content": "X l(λ)≤2 Kλ,µKλ,(kN)(q) (2.49) = X m=(m1,m2,...,mk−1)∈Zk−1 + q k n(µ′)−k−1 Nq mAk−1mt k2   N µ1 −m1 k , µ2 −mk−1 k , 1 k (mAk−1)a   q .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/cor-sec-010-07",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "Five term relation for quantum dilogarithm",
+      "pageStart": 79,
+      "pageEnd": 89,
+      "target": "cor-sec-010-07.md",
+      "narrative": null,
+      "content": "H(Li2(a; q), Li2(b; q)) = H(Li2(b; q), H(Li2(−ba; q), Li2(a; q))) (2.65) = H(H(Li2(b; q), Li2(−ba; q)), Li2(a; q)). Exercises to Section 2.5. A (Weyl algebra and q-exponential a function). 1. Let us consider a function ϕ(a) ϕ(a) := eq2(−qa) = X n≥0 (−qa)2 (q2; q2)n = j≥0 (1 + q2j+1a) . Dilogarithm identities Show that i) ϕ(qa) = (1 + a)ϕ(q−1a); ii) If a and b satisfy the Weyl relation ab = q2ba, then ϕ(b)ϕ(a) = ϕ(a + b), (1) ϕ(a)ϕ(b) = ϕ(b)ϕ(a + qb), (2a) = ϕ(a + b + qba), (2b) = ϕ(b)ϕ(qba)ϕ(a), (2c) Hint: use the relations (2.57)-(2.61).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/cor-sec-010-08",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "of Lemma A1, with n = 2",
+      "pageStart": 79,
+      "pageEnd": 89,
+      "target": "cor-sec-010-08.md",
+      "narrative": null,
+      "content": "We have 1 −(α1 −β1)x2(1 −β2x1) (1 −β1x2)(1 −α1x1) = − (α1 −β1)(α1 −β2) (1 −β1x2)(1 −α1x1)(α1α2 −β1β2(1 −t)), (A1) 1 −β1(1 −β2x2)(1 −α2x1) (α2 −β2)(1 −β1x1) = α1(α2 −β1) (1 −β1x1)(α1α2 −β1β2(1 −t)). (A2) Dilogarithm identities",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/lem-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 79,
+      "pageEnd": 89,
+      "target": "lem-sec-010-01.md",
+      "narrative": null,
+      "content": "We have i) Li2(x; q) = log(eq(x)), ii) Li2(x; q) + Li2(x; q−1) = −log(1 −x).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/lem-sec-010-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 79,
+      "pageEnd": 89,
+      "target": "lem-sec-010-03.md",
+      "narrative": null,
+      "content": "Assume that variables a and b satisfy the Weyl relation ab = qab. Then we have i) eq(b)eq(a) = eq(a + b), (2.57) ii) eq(a)eq(b) = eq(b −ba)eq(a) (2.58) = eq(a + b −ba) (2.59) = eq(b)eq(−ba)eq(a) (2.60) = eq(b)eq(a −ba) (2.61)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/lem-sec-010-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 79,
+      "pageEnd": 89,
+      "target": "lem-sec-010-04.md",
+      "narrative": null,
+      "content": "Under the assumptions of Lemma 9, we have i) (a; q)n · (b; q)n = (a + b −qnba; q)n, (2.62) ii) (b; q)n · (a; q)n = (a + b −ba; q)n. (2.63)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/prop-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "Euler-Maclaurin’s summation formula",
+      "pageStart": 79,
+      "pageEnd": 89,
+      "target": "prop-sec-010-02.md",
+      "narrative": null,
+      "content": "If f ∈C2n([M, N]), M and N integers, then N X m=M f(m) = Z N M f(t)dt + 1 2(f(N) + f(M)) + n X k=1 B2k (2k)! n f (2k−1)(N) −f (2k−1)(M) o − Z N M B2n(t) (2n)! f (2n)(t)dt. (2.55) Here Bk are the Bernoulli numbers and Bk(t) are the Bernoulli polynomials which are deﬁned by zetz ez −1 = X k≥0 Bk(t) k! zk, Bk := Bk(0). Bn(t) is the so-called modiﬁed Bernoulli polynomial: Bn(t) = Bn({t}), where {t} := t−[t] is the fractional part of a real number t. As a simple corollary of the Euler-Maclauren summation formula, one can obtain",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/prop-sec-010-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "Functional equations for quantum dilogarithm",
+      "pageStart": 79,
+      "pageEnd": 89,
+      "target": "prop-sec-010-06.md",
+      "narrative": null,
+      "content": "We have (ab = qba) i) H(Li2(a; q), Li2(b; q)) = Li2(a + b −ab; q), (2.64) ii) H(Li2(b; q), Li2(a; q)) = Li2(a + b; q).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum dilogarithm.",
+      "pageStart": 79,
+      "pageEnd": 89,
+      "target": "../sections/sec-010-25-quantum-dilogarithm.md",
+      "narrative": null,
+      "content": "2.5. Quantum dilogarithm.\nLet us remind that the Euler dilogarithm Li2(x) is deﬁned for 0 ≤x ≤1 by\nLi2(x) =\nX\nn≥1\nxn\nn2 .\nDeﬁnition 9 (q-analog of Euler’s dilogarithm or quantum dilogarithm).\nQuantum\ndilogarithm Li2(x; q) is the following formal series\nLi2(x; q) =\nX\nn≥1\nxn\nn(1 −qn).\n(2.52)\nBefore stating the basic properties of the quantum dilogarithm, let us remind the\ndeﬁnition of the two q-exponential functions (see e.g. [GR], Appendix II)\neq(x) =\nX\nn≥0\nxn\n(q)n\n=\n1\n(x)∞\n,\n(2.53)\nEq(x) =\nX\nn≥0\nq\nn(n−1)\n2\nxn\n(q)n\n= (−x)∞.\nHere we use the standard q-analysis notation:\n(x)∞:= (x; q)∞=\nY\nn≥0\n(1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/thm-sec-010-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "L.D. Faddeev and R.M. Kashaev, [FK]",
+      "pageStart": 79,
+      "pageEnd": 89,
+      "target": "thm-sec-010-05.md",
+      "narrative": null,
+      "content": "The ﬁve term or ”pentagon” relation (ab = qba) eq(a)eq(b) = eq(b)eq(−ba)eq(a) (2.60) is a quantum analog of the Rogers ﬁve-term relation (1.4) or (2.56), i.e. an appropriate limit q →1 in (2.60) reduces the last to the relation (2.56). Let us rewrite the relations (2.57), (2.59) and (2.60) using the quantum dilogarithm. For this purpose we need the Baker-Campbell-Hausdorﬀseries. Namely, for any Lie algebra with Lie bracket [·, ·], let us denote by H(x, y) its Campbell-Hausdorﬀseries, i.e. ex · ey = eH(x,y), H(x, y) = x + y + 1 2[x, y] + 1 12 {[x, [x, y]] + [y, [y, x]]} + 1 24[xyyx] + 144 {9[xx",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References*",
+      "pageStart": 89,
+      "pageEnd": 95,
+      "target": "../sections/sec-011-references.md",
+      "narrative": null,
+      "content": "References*\n[A] K. Aomoto. Addition theorem of Abel type for hyper-logarithms. Nagoya Math. J.,\n1982, v.88, 55-71.\n[AL] D. Acreman and J.H. Loxton. Asymptotic analysis of Ramanujan pairs. Aequat. Math.,\n1986, v.30, 106-117.\n[An1] G. Andrews. The theory of partitions. Addison-Wesley Publishing Company, 1976.\n[An2] G. Andrews. Multiple series Rogers-Ramanujan type identities. Paciﬁc J. Math., 1984,\nv.114, 267-283.\n[An3] G. Andrews. q-series: their development and application in analysis, number theory,\ncombinatorics, physics, and computer algebra. Regional conference series in mathe-\nmatics, ISS",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9408113v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "K.Lloyd), London Math. Soc., Lecture Note Series, No.82, Cambridge University",
+      "pageStart": 95,
+      "pageEnd": 96,
+      "target": "../sections/sec-012-e-klloyd-london-math-soc-lecture-note-series-no8.md",
+      "narrative": null,
+      "content": "Press, Cambridge, 1983, 187-199.\n[Stn2] R.P. Stanley. The stable behavior of some characters of SL(n, C). Linear and Multil.\nAlgebra, 1984, v.16, 3-27.\n[Stm] J.R. Stembridge. Hall-Littlewood polynomials, plane partitions and the Rogers-Rama-\nnujan identities. Trans Amer. Math. Soc., 1990, v.319, 469-498.\n[Su] A.A. Suslin. K3 of a ﬁeld and the Bloch group. Proc. of the Steklov Inst. of Math.,\n1991, v.4, 217-239.\n[Te] I. Terada.\nA generalization of the length symmetry and variety of N-stable ﬂags.\nPreprint, 1993, 26p.\n[Tr1] M. Terhoeven. Lift of dilogarithm to partition identities. Preprint Bonn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

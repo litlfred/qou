@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/the-period-matrix-of-bring-s-curve-1hik02mwva/sections/sec-009",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "so that \\ 2niq",
+  "pageStart": 20,
+  "pageEnd": 22,
+  "contains": [
+    "library/the-period-matrix-of-bring-s-curve-1hik02mwva/blocks/prose-sec-009"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/the-period-matrix-of-bring-s-curve-1hik02mwva/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/the-period-matrix-of-bring-s-curve-1hik02mwva/manifest.jsonld",
+  "provenance": "ingested"
+}

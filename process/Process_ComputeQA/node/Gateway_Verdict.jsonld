@@ -1,0 +1,28 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Gateway_Verdict.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/process/Process_ComputeQA/node/Gateway_Verdict",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/ProcessNode",
+      "name": "Worst verdict?",
+      "nodeKind": "exclusive",
+      "bpmnType": "bpmn:ExclusiveGateway",
+      "partOf": "https://litlfred.github.io/qou/process/Process_ComputeQA",
+      "inLane": "https://litlfred.github.io/qou/process/Process_ComputeQA/lane/Lane_Pipeline",
+      "requires": [],
+      "touchesWorkPlan": false,
+      "relaxable": true,
+      "incoming": [
+        "https://litlfred.github.io/qou/process/Process_ComputeQA#flow/Flow_3"
+      ],
+      "outgoing": [
+        "https://litlfred.github.io/qou/process/Process_ComputeQA#flow/Flow_Green",
+        "https://litlfred.github.io/qou/process/Process_ComputeQA#flow/Flow_Red",
+        "https://litlfred.github.io/qou/process/Process_ComputeQA#flow/Flow_Unknown"
+      ],
+      "inSubgraph": "https://litlfred.github.io/qou/directory/processes"
+    }
+  ]
+}

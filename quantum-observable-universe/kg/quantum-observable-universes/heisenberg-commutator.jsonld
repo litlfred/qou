@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-heisenberg-commutator",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:heisenberg-commutator",
+  "kind": "remark",
+  "title": "Heisenberg commutator and the Reeb fibre",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-heisenberg-commutator",
+    "papers/quantum-observable-universe/blocks/def-q-deformed-commutator"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-heisenberg-commutator",
+  "cites": [
+    "references/heisenberg1958"
+  ],
+  "tags": [
+    "heisenberg",
+    "uncertainty",
+    "reeb",
+    "fibre-coordinate"
+  ],
+  "text": "heisenberg-commutator.md",
+  "provenance": "authored"
+}

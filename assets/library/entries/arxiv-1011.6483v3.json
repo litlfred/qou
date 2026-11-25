@@ -1,0 +1,386 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1011.6483v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1011.6483v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1011.6483v3  [math.QA]  31 May 2012\nDERIVED HIGHER HOCHSCHILD HOMOLOGY,\nTOPOLOGICAL CHIRAL HOMOLOGY AND FACTORIZATION\nALGEBRAS\nGR´EGORY GINOT, THOMAS TRADLER, AND MAHMOUD ZEINALIAN\nAbstract. We study the higher Hochschild chain functor, factorization alge-\nbras and their relationship with topological chiral homology. To this end, we\nemphasize that the higher Hochschild complex is a (∞, 1)-functor sSet∞×\nCDGA∞where sSet∞and CDGA∞are the (∞, 1)-categories of simplicial\nsets and commutative diﬀerential graded algebras, and give an axiomatic char-\nacterization of this functor. From the axiom",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.6483v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 6,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "In this paper, we study the higher Hochschild chain[^1] complex $CH^{{\\scriptstyle\\bullet}}_{X_\\bullet}(A)$, functorially assigned to a simplicial set $X_\\bullet$ (or a topological space), and a commutative differential graded algebra (CDGA) $A$, from an axiomatic point of view. Recently, motivated by topological quantum field theories, several concepts integrating (higher) categories of spaces or manifolds with those of algebras of different types have arisen. We also study the relationship between higher Hochschild chains, factorization algebras [@CG; @Co], topological chiral homology [@L-TF",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.6483v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminary definitions and notation",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-2-preliminary-definitions-and-notation.md",
+      "narrative": null,
+      "content": "In this section we recall some standard definitions and constructions.\n\n**Conventions:**\n\n1.  We fix a ground field $k$ of characteristic zero. The $(\\infty,1)$-category of differential graded $k$-modules (*i.e.* complexes) will be denoted $k\\textit{-}Mod_\\infty$.\n\n2.  The (naïve) categories of simplicial sets and of commutative differential graded algebras will be respectively denoted by $sSet$ and $CDGA$. The category of commutative graded algebra will be denoted $CGA$. Unless otherwise stated, all algebras will be assumed to be *unital*.\n\n3.  We will simply refer to commutative differential",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.6483v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Simplicial sets",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-21-simplicial-sets.md",
+      "narrative": null,
+      "content": "[]{#S:Delta label=\"S:Delta\"} Denote by $\\Delta$ the category whose objects are the ordered sets $[k]=\\{0,1,\\dots,k\\}$, and morphisms $f:[k]\\to [l]$ are non-decreasing maps $f(i)\\geq f(j)$ for $i>j$. In particular, we have the morphisms $\\delta_i:[k-1]\\to[k], i=0,\\dots, k$, which are injections that miss $i$ and we have surjections $\\sigma_j:[k+1]\\to [k], i=0,\\dots,k$, which send $j$ and $j+1$ to $j$.\n\nA *simplicial set* is by definition a contravariant functor from $\\Delta$ to the category of sets $\\mathcal Sets$ or written as a formula, $Y_{\\scriptstyle\\bullet}:\\Delta^{op}\\to\\mathcal Sets$. D",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.6483v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Commutative Differential Graded Algebras",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-22-commutative-differential-graded-algebras.md",
+      "narrative": null,
+      "content": "[]{#S:CDGA label=\"S:CDGA\"} We let $CDGA$ be the category of commutative differential graded algebras (over the characteristic zero field $k$). We do not assume the underlying chain complexes of our algebras to be bounded since in practice, it happens that one has to consider the Hochschild chains of de Rham forms on a space, which is generally $\\mathbb Z$-graded. We follow the approach of [@ToVe Chapter 1.1] and [@Hi] for the model category properties of $CDGA$ and modules over CDGAs. Recall from [@Ho Section 2.3], that there is a standard cofibrantly generated closed model category structure",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.6483v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dwyer-Kan localization and (,1)-categories",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-004-23-dwyer-kan-localization-and-1-categories.md",
+      "narrative": null,
+      "content": "[]{#S:DKL label=\"S:DKL\"} The $(\\infty,1)$-categories that we are concerned about in this paper arise from model categories structures via the Dwyer-Kan localization turning them into simplicial categories. Indeed simplicial categories are model for $(\\infty,1)$-categories [@Be1]. We now explain briefly how one gets $(\\infty,1)$-categories out of model categories such as those considered in Section [\\[S:Delta\\]](#S:Delta){reference-type=\"ref\" reference=\"S:Delta\"}, [\\[S:CDGA\\]](#S:CDGA){reference-type=\"ref\" reference=\"S:CDGA\"} above.\n\nFollowing [@Re; @L-TFT], by an $(\\infty,1)$-category we mean",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.6483v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Derived higher Hochschild functor",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-005-3-derived-higher-hochschild-functor.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.6483v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Naive axiomatic approach to higher Hochschild homology",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "../sections/sec-006-31-naive-axiomatic-approach-to-higher-hochschild.md",
+      "narrative": null,
+      "content": "[]{#S:NaiveHH label=\"S:NaiveHH\"}\n\nWe first recall the standard construction of chain complexes computing higher Hochschild homology (also called Hochschild homology over spaces) following [@P; @GTZ]. The higher Hochschild complex is a functor $CH: sSet \\times CDGA \\to CDGA$. This functor is defined as follows: the tensor products $A\\otimes B$ of two CDGAs has an natural structure of CDGA(in other words, $CDGA$ has a symmetric monoidal structure canonically induced by the underlying tensor product of chain complexes). Furthermore, the multiplication $A\\otimes A\\to A$ is an algebra homomorphism",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.6483v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Higher Hochschild as an (, 1)-functor",
+      "pageStart": 15,
+      "pageEnd": 22,
+      "target": "../sections/sec-007-32-higher-hochschild-as-an-1-functor.md",
+      "narrative": null,
+      "content": "[]{#S:inftyfunctor label=\"S:inftyfunctor\"}\n\nIn this section we deal with axioms for the theory of higher Hochschild *chains* instead of mere homology. That is, we upgrade the previous section, in particular Corollary [\\[C:Homologyfunctor\\]](#C:Homologyfunctor){reference-type=\"ref\" reference=\"C:Homologyfunctor\"}, to the setting of derived categories, or more precisely $(\\infty,1)$-categories. Said otherwise, we replace the category of simplicial sets by its homotopical analogue: the $(\\infty, 1)$-category of simplicial sets denoted $sSet_\\infty$ and we replace the category of commutative differ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.6483v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pointed simplicial sets and modules",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "../sections/sec-008-33-pointed-simplicial-sets-and-modules.md",
+      "narrative": null,
+      "content": "·[]{#SS:modules label=\"SS:modules\"} In this section we quickly explain how to add an $A$-module $M$ to the story developed in Section [\\[S:inftyfunctor\\]](#S:inftyfunctor){reference-type=\"ref\" reference=\"S:inftyfunctor\"}.\n\nLet $A$ be a CDGA and recall from Example [\\[E:Amod\\]](#E:Amod){reference-type=\"ref\" reference=\"E:Amod\"} the $(\\infty,1)$-category $A\\textit{-}Mod_\\infty$ induced by the (model category) $A\\textit{-}Mod$ of $A$-modules. Similarly, the model category of pointed simplicial sets yields the $(\\infty,1)$-category ${sSet_\\infty}_*$ of pointed simplicial sets (Example [\\[E:hsset\\]]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.6483v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Factorization algebras and derived Hochschild functor over spaces",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "../sections/sec-009-4-factorization-algebras-and-derived-hochschild.md",
+      "narrative": null,
+      "content": "[]{#S:factor-alg label=\"S:factor-alg\"} The main goal of this section is to prove that Hochschild chains are a special kind of *factorization algebras* in the sense of [@CG] (allowing to compute it using covers or CW-decomposition).\n\n## The Hochschild $(\\infty,1)$-functor in $\\Top$\n\nThe Quillen equivalence between the model categories of simplicial sets and topological spaces induces an equivalence $\\hTop \\stackrel{S_\\infty}\\longrightarrow sSet_\\infty$ of $(\\infty,1)$-categories (Example [\\[E:hsset\\]](#E:hsset){reference-type=\"ref\" reference=\"E:hsset\"}). Here $S_\\infty$ is the $(\\infty,1)$-func",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.6483v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(Pre)Factorization algebras",
+      "pageStart": 28,
+      "pageEnd": 37,
+      "target": "../sections/sec-010-42-prefactorization-algebras.md",
+      "narrative": null,
+      "content": "[]{#S:Factorization label=\"S:Factorization\"}\n\nWe now explain a relationship between factorization algebras (as defined by Costello and Gwilliam [@CG; @Co]) and Higher Hochschild chains.\n\nLet $A$ be a CDGA and $X$ be a topological space. We denote $Op(X)$ the set of open subsets of $X$. For every open subset $V$ of $X$ and a family of disjoint open subsets $U_1,\\dots, U_n \\subset V$, there is a canonical morphism of CDGAs $$\\mu_{U_1,\\dots, U_n,V}: CH_{U_1}^{{\\scriptstyle\\bullet}}(A) \\otimes \\cdots \\otimes CH_{U_n}^{{\\scriptstyle\\bullet}}(A) \\to \\big(CH_{V}^{{\\scriptstyle\\bullet}}(A)\\big)^{\\otim",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.6483v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Locally constant factorization algebras and En-algebras",
+      "pageStart": 37,
+      "pageEnd": 40,
+      "target": "../sections/sec-011-43-locally-constant-factorization-algebras-and-e.md",
+      "narrative": null,
+      "content": "If $\\mathcal{A}$ is a locally constant factorization algebra on $M\\times D^{n-m}$, pushforward along the natural projection ${\\pi_1}: M\\times D^{m-n}\\to M$ induces a factorization algebra ${\\pi_1}_*(\\mathcal{A})$ on $M$, which is locally constant. Given a monoidal $(\\infty,1)$-category $\\mathcal{C}$ and a manifold $X$, we denote by **$Fac_X^{lc}(\\mathcal{C})$ the (sub)category of locally constant factorization algebra** on $X$ taking value in $\\mathcal{C}$.\n\nWe recall the following Proposition which is essentially due to Lurie [@L-VI] and Costello [@Co].\n\n::: proposition\n[]{#P:Fac=En label=\"P:",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.6483v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relationship with topological chiral homology",
+      "pageStart": 40,
+      "pageEnd": 40,
+      "target": "../sections/sec-012-5-relationship-with-topological-chiral-homology.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.6483v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Review of topological chiral homology à la Lurie",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "../sections/sec-013-51-review-of-topological-chiral-homology-à-la-lu.md",
+      "narrative": null,
+      "content": "[]{#S:ReviewTCH label=\"S:ReviewTCH\"}\n\nLet $A$ be an $E_n$-algebra and $M$ a manifold of dimension $m$ which is *(stably) $n$-framed*, that is a manifold of dimension $m$ equipped with a framing of $M\\times D^{n-m}$. The **topological chiral homology** of $M$ with coefficients in $A$ was defined in [@L-TFT; @L-VI] and [@Francis] and will be denoted $\\int_{M} A$. Note that the above definition *does* depend on the framing in general, even though it is not explicit in the notation[^1]. Further $\\int_M A$ is an $E_{n-m}$-algebra in general, see [@L-TFT; @L-VI]. We refer to the aforementioned refer",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.6483v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Locality axiom and the equivalence of topological chiral homology with higher Hochschild functor for CDGAs",
+      "pageStart": 43,
+      "pageEnd": 47,
+      "target": "../sections/sec-014-52-locality-axiom-and-the-equivalence-of-topolog.md",
+      "narrative": null,
+      "content": "[]{#S:locality label=\"S:locality\"}\n\nIn view of Proposition [\\[P:TCHpushout\\]](#P:TCHpushout){reference-type=\"ref\" reference=\"P:TCHpushout\"} and Theorem [\\[T:derivedfunctor\\]](#T:derivedfunctor){reference-type=\"ref\" reference=\"T:derivedfunctor\"}, Morse theory (or any triangulation) suggests the following result, which is the main result of this section.\n\n::: theorem\n[]{#T:TCH=CH label=\"T:TCH=CH\"} Let $M$ be a manifold of dimension $m$ endowed with a framing of $M \\times D^k$ and $A$ be a differential graded commutative algebra viewed as an $E_{m+k}$-algebra. Then, the topological chiral homolog",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.6483v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relation with the Blob complex",
+      "pageStart": 47,
+      "pageEnd": 49,
+      "target": "../sections/sec-015-53-relation-with-the-blob-complex.md",
+      "narrative": null,
+      "content": "[]{#S:blob label=\"S:blob\"}\n\nIt is asserted in [@MW Example 6.2.10] that the **Blob complex** of Morrison-Walker is equivalent to *an unoriented variant of* topological chiral homology. We briefly explain here how to deduce this equivalence from the proof of Theorem [\\[T:TCH=CH\\]](#T:TCH=CH){reference-type=\"ref\" reference=\"T:TCH=CH\"} and several statements from [@MW]. The main difference with § [\\[S:ReviewTCH\\]](#S:ReviewTCH){reference-type=\"ref\" reference=\"S:ReviewTCH\"} and § [\\[S:locality\\]](#S:locality){reference-type=\"ref\" reference=\"S:locality\"} to keep in mind is that we no longer assume",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.6483v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Topological chiral homology as a factorization algebra",
+      "pageStart": 49,
+      "pageEnd": 55,
+      "target": "../sections/sec-016-54-topological-chiral-homology-as-a-factorizatio.md",
+      "narrative": null,
+      "content": "[]{#S:TCH=Fact label=\"S:TCH=Fact\"} In this section we give a precise relationship between factorization algebras, topological chiral homology for (stably) framed manifolds, and $E_n$-algebras.\n\n### Topological chiral homology and factorization algebras for $n$-framed manifolds\n\nFor any manifold $M$ of dimension $m$ which is $n$-framed (*i.e.* $M\\times D^{n-m}$ is framed) and $E_n$-algebra $A$, we can consider the topological chiral homology $\\int_M A$ as well as $\\int_U A$ for every open subset $U$ in $M$ (equipped with the induced framing). Further, if $U_1,\\dots, U_k$ are pairwise disjoint o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.6483v3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some applications",
+      "pageStart": 55,
+      "pageEnd": 59,
+      "target": "../sections/sec-017-55-some-applications.md",
+      "narrative": null,
+      "content": "[]{#SS:applications label=\"SS:applications\"}\n\n### Another construction of topological chiral homology for framed manifolds\n\nLet $M$ be an $m$-dimensional manifold which is $n$-framed. Given an $E_n$-algebra $A$, we can define the topological chiral homology $\\int_M A$ of $M$ with values in $A$. By Proposition [\\[P:TCHisFact\\]](#P:TCHisFact){reference-type=\"ref\" reference=\"P:TCHisFact\"} and Theorem [\\[T:HF=TCH\\]](#T:HF=TCH){reference-type=\"ref\" reference=\"T:HF=TCH\"}, $\\int_M A$ is the factorization homology of a factorization algebra on $M\\times D^{n-m}$. We explain how to construct this factor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1011.6483v3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 59,
+      "pageEnd": 60,
+      "target": "../sections/sec-018-references.md",
+      "narrative": null,
+      "content": "References\n[1] R. Andrade, From Manifolds to invariants of En-algebras, Thesis, MIT (2010).\n[2] D. Ayala, J. Francis, H.-L. Tanaka, Factorization homology for stratiﬁed manifolds, in\npreparation\n[3] A. Beilinson, V. Drinfeld, Chiral algebras, American Mathematical Society Colloquium\nPublications, 51. American Mathematical Society, Providence, RI, 2004\n[4] C. Berger, B. Fresse, Combinatorial operad actions on cochains, Math. Proc. Cambridge\nPhilos. Soc. 137 (2004), 135-174.\n[5] J. Bergner, Three models for the homotopy theory of homotopy theories, Topology 46\n(2007), 397–436.\n[6] J. Bergner, Co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

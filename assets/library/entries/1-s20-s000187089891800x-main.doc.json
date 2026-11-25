@@ -1,0 +1,634 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "1-s20-s000187089891800x-main",
+  "title": "Spherical Categories",
+  "variant": "pdf",
+  "pages": 19,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "INTRODUCTION",
+      "number": null,
+      "page": 1,
+      "pageLabel": "357",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "MONOIDAL CATEGORIES WITH DUALS",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "358",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-monoidal-categories-with-duals"
+    },
+    {
+      "level": 1,
+      "title": "SPHERICAL CATEGORIES",
+      "number": "2",
+      "page": 9,
+      "pageLabel": "365",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-spherical-categories"
+    },
+    {
+      "level": 2,
+      "title": "FIG. 1",
+      "number": null,
+      "page": 11,
+      "pageLabel": "367",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-fig-1"
+    },
+    {
+      "level": 1,
+      "title": "SPHERICAL HOPF ALGEBRAS",
+      "number": "3",
+      "page": 14,
+      "pageLabel": "370",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-3-spherical-hopf-algebras"
+    },
+    {
+      "level": 1,
+      "title": "REFERENCES",
+      "number": null,
+      "page": 18,
+      "pageLabel": "374",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "357",
+      "labelEnd": "357",
+      "words": 174,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spherical hopf",
+          "heading": false
+        },
+        {
+          "term": "united kingdom",
+          "heading": false
+        },
+        {
+          "term": "spherical category",
+          "heading": false
+        },
+        {
+          "term": "hopf algebras",
+          "heading": false
+        },
+        {
+          "term": "nottingham",
+          "heading": false
+        },
+        {
+          "term": "warwick",
+          "heading": false
+        }
+      ],
+      "extract": "Advances in Mathematics 143, 357\u0015375 (1999) Spherical Categories John W. Barrett School of Mathematical Sciences, University of Nottingham, University Park, Nottingham NG7 2RD, United Kingdom E-mail: jwb\u0014maths.nott.ac.uk and Bruce W. Westbury Mathematics Institute, University of Warwick, Coventry CV4 7AL, United Kingdom E-mail: bww\u0014maths.warwick.ac.uk This paper is a study of monoidal categories with duals where the",
+      "extractCut": true,
+      "blocks": [
+        "library/1-s20-s000187089891800x-main/blocks/prose-sec-front-matter",
+        "library/1-s20-s000187089891800x-main/blocks/figure-img-p001-1"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "INTRODUCTION",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "357",
+      "labelEnd": "358",
+      "words": 591,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spherical hopf",
+          "heading": false
+        },
+        {
+          "term": "spherical category",
+          "heading": false
+        },
+        {
+          "term": "pivotal category",
+          "heading": false
+        },
+        {
+          "term": "spherical categories",
+          "heading": false
+        },
+        {
+          "term": "additive spherical",
+          "heading": false
+        },
+        {
+          "term": "hopf algebras",
+          "heading": false
+        },
+        {
+          "term": "monoidal category",
+          "heading": false
+        },
+        {
+          "term": "planar graphs",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper we introduce the notion of a spherical category. The moti- vation for this and the main application is to generalise the Turaev\u0015Viro state sum model invariant of a closed piecewise-linear 3-manifold. This application is discussed separately in [13]. A spherical category is defined to be a pivotal category which satisfies an extra condition, which states that two trace maps are equal. The universal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-monoidal-categories-with-duals",
+      "number": "1",
+      "title": "MONOIDAL CATEGORIES WITH DUALS",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 9,
+      "labelStart": "358",
+      "labelEnd": "365",
+      "words": 2193,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monoidal categories",
+          "heading": true
+        },
+        {
+          "term": "iterated functor",
+          "heading": false
+        },
+        {
+          "term": "reduced iterated",
+          "heading": false
+        },
+        {
+          "term": "iterated natural",
+          "heading": false
+        },
+        {
+          "term": "central iterates",
+          "heading": false
+        },
+        {
+          "term": "duals",
+          "heading": true
+        },
+        {
+          "term": "standard iterated",
+          "heading": false
+        },
+        {
+          "term": "strict duals",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we study monoidal categories with duals. Examples are finitely generated free modules over a commutative ring. In these examples the tensor product is commutative, but we do not require this. The motivating examples of monoidal categories with duals are the categories of representations of Hopf algebras. These categories have a contravariant functor given by the contragradient dual but are not",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-spherical-categories",
+      "number": "2",
+      "title": "SPHERICAL CATEGORIES",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "365",
+      "labelEnd": "366",
+      "words": 118,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pivotal category",
+          "heading": false
+        },
+        {
+          "term": "strict pivotal",
+          "heading": false
+        },
+        {
+          "term": "spherical",
+          "heading": true
+        }
+      ],
+      "extract": "In this section we introduce spherical categories. A pivotal category is a category with duals and with some additional structure and a spherical category is a pivotal category in which the additional structure satisfies an extra condition. Strict pivotal categories are discussed in [3], where it is shown that the category of oriented planar graphs up to isotopy with labelled edges and with a distinguished edge at",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-fig-1",
+      "number": null,
+      "title": "FIG. 1",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 14,
+      "labelStart": "366",
+      "labelEnd": "370",
+      "words": 1153,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wwww",
+          "heading": false
+        },
+        {
+          "term": "pivotal category",
+          "heading": false
+        },
+        {
+          "term": "additive spherical",
+          "heading": false
+        },
+        {
+          "term": "trl",
+          "heading": false
+        },
+        {
+          "term": "additive monoidal",
+          "heading": false
+        },
+        {
+          "term": "spherical categories",
+          "heading": false
+        },
+        {
+          "term": "www",
+          "heading": false
+        },
+        {
+          "term": "trr",
+          "heading": false
+        }
+      ],
+      "extract": "to the left. This isotopy moves the loop in Fig. 1 past the point at infinity. Taken together with planar isotopies, such an operation on planar graphs generates all the isotopies on the sphere. It follows that the evaluation in a spherical category of a closed graph with labelled edges and with a dis- tinguished edge at each vertex is invariant under isotopies of the sphere S 2. Definition 2.1. A pivotal category",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-spherical-hopf-algebras",
+      "number": "3",
+      "title": "SPHERICAL HOPF ALGEBRAS",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 18,
+      "labelStart": "370",
+      "labelEnd": "374",
+      "words": 1698,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spherical hopf",
+          "heading": true
+        },
+        {
+          "term": "hopf algebras",
+          "heading": true
+        },
+        {
+          "term": "spherical category",
+          "heading": false
+        },
+        {
+          "term": "spherical subcategory",
+          "heading": false
+        },
+        {
+          "term": "dimensional hopf",
+          "heading": false
+        },
+        {
+          "term": "left a-modules",
+          "heading": false
+        },
+        {
+          "term": "non-degenerate quotient",
+          "heading": false
+        },
+        {
+          "term": "semisimple quotient",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we introduce spherical Hopf algebras. These are defined to be Hopf algebras with some additional structure which implies that the category of finitely generated modules is a spherical category. Definition 3.1. A spherical Hopf algebra over F consists of F-module A together with the following data (1) a multiplication + (2) a unit ': F \u0014 A (3) a comultiplication 2: A \u0014A\u0017A (4) a counit =: A \u0014 F (5) an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-references",
+      "number": null,
+      "title": "REFERENCES",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "374",
+      "labelEnd": "375",
+      "words": 252,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mac lane",
+          "heading": false
+        },
+        {
+          "term": "closed categories",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "math",
+          "heading": false
+        },
+        {
+          "term": "turaev",
+          "heading": false
+        },
+        {
+          "term": "comm",
+          "heading": false
+        },
+        {
+          "term": "compact closed",
+          "heading": false
+        }
+      ],
+      "extract": "1. H. H. Andersen, Tensor products of quantized tilting modules, Comm. Math. Phys. 149 (1992), 149\u0015159. 2. H. H. Andersen and J. Paradowski, Fusion categories arising from semisimple Lie algebras, Comm. Math. Phys. 169 (1995), 563\u0015588. 3. P. J. Freyd and D. N. Yetter, Braided compact closed categories with applications to low dimensional topology, Adv. Math. 77 (1989), 156\u0015182. 4. A. Joyal and R. Street, The",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "spherical category",
+      "heading": false
+    },
+    {
+      "term": "spherical hopf",
+      "heading": true
+    },
+    {
+      "term": "pivotal category",
+      "heading": false
+    },
+    {
+      "term": "spherical categories",
+      "heading": true
+    },
+    {
+      "term": "monoidal category",
+      "heading": false
+    },
+    {
+      "term": "additive spherical",
+      "heading": false
+    },
+    {
+      "term": "spherical subcategory",
+      "heading": false
+    },
+    {
+      "term": "strict pivotal",
+      "heading": false
+    },
+    {
+      "term": "strict duals",
+      "heading": false
+    },
+    {
+      "term": "spherical sub",
+      "heading": false
+    },
+    {
+      "term": "introduce spherical",
+      "heading": false
+    },
+    {
+      "term": "hopf algebras",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "357",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "358",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "359",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "360",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "361",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "362",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "363",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "364",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "365",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "366",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "367",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "368",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "369",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "370",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "371",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "372",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "373",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "374",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "375",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-1",
+      "file": "images/img-p006-1.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-1",
+      "file": "images/img-p011-1.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 6,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 7,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p18); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 7 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/1-s20-s000187089891800x-main"
+  }
+}

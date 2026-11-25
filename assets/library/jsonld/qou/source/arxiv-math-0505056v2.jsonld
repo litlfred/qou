@@ -1,0 +1,63 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0505056v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Matrix factorizations and link homology II",
+  "contains": [
+    "library/arxiv-math-0505056v2/sections/sec-front-matter",
+    "library/arxiv-math-0505056v2/sections/sec-000",
+    "library/arxiv-math-0505056v2/sections/sec-001"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Matrix factorizations and link homology II — To a presentation of an oriented link as the closure of a braid we assign a complex of bigraded vector spaces.\n\n**Matrix factorizations and link homology II**\n\n*Mikhail Khovanov and Lev Rozansky*\n\n37 pp, 3 sections.\n\n**Abstract.** To a presentation of an oriented link as the closure of a braid we assign a complex of bigraded vector spaces. The Euler characteristic of this complex (and of its triply-graded cohomology groups) is the HOMFLYPT polynomial of the link. We show that the dimension of each cohomology group is a link invariant. 1 Matrix factorizations with a parameter In the paper [KR] we constructed, for each n > 0, a bigraded cohomology theory of links in R3 whose Euler characteristic is a certain one-variable specialization (qn, q) of the HOMFLYPT polynomial [HOMFLY], [PT]. The n = 0 specialization is the Alexander polynomial, equal to the Euler char- acteristic of the knot homology theory discovered by Ozsv´ath, Rasmussen and Szab´o [OS], [R1]. The approach in [KR] fails for n = 0, assigning trivial groups to any link. In this sequel to [KR] we assume that the reader is familiar with that paper.\n\n**Outline.** Front matter; Matrix factorizations with a parameter; Proofs",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0505056&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0505056v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0505056v2.pdf",
+    "source_sha256": "1b6580406c3d35b59f8fb18e5fba40460fe574cab85d94edf705c6c4bb2d0cbe",
+    "pages": 37,
+    "arxiv": {
+      "id": "math/0505056",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "31 Jan 2006"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

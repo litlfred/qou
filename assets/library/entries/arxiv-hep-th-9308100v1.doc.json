@@ -1,0 +1,918 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-th-9308100v1",
+  "title": "Gedanken Experiments Involving Black Holes",
+  "variant": "pdf",
+  "pages": 22,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "ABSTRACT",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-abstract"
+    },
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-001-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Experiments in Rindler Space",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-2-experiments-in-rindler-space"
+    },
+    {
+      "level": 1,
+      "title": "Experiments Outside Black Holes",
+      "number": "3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-3-experiments-outside-black-holes"
+    },
+    {
+      "level": 1,
+      "title": "Experiments Performed Inside Black Holes",
+      "number": "4",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-4-experiments-performed-inside-black-holes"
+    },
+    {
+      "level": 1,
+      "title": "Information Retention Time",
+      "number": "5",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-5-information-retention-time"
+    },
+    {
+      "level": 1,
+      "title": "Experiments Involving Time Reversal",
+      "number": "6",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-6-experiments-involving-time-reversal"
+    },
+    {
+      "level": 1,
+      "title": "Summary",
+      "number": "7",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-007-7-summary"
+    },
+    {
+      "level": 1,
+      "title": "REFERENCES",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-008-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 27,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stanford",
+          "heading": false
+        },
+        {
+          "term": "arus",
+          "heading": false
+        },
+        {
+          "term": "hep-th",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-th/9308100v1 20 Aug 1993 SU-ITP-93-19 August 1993 hep-th/9308100 Gedanken Experiments Involving Black Holes Leonard Susskind, ⋆and L´arus Thorlacius, † Department of Physics Stanford University, Stanford, CA 94305-4060",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-hep-th-9308100v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-abstract",
+      "number": null,
+      "title": "ABSTRACT",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 94,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stretched horizon",
+          "heading": false
+        },
+        {
+          "term": "outside observers",
+          "heading": false
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "dormouse",
+          "heading": false
+        }
+      ],
+      "extract": "Analysis of several gedanken experiments indicates that black hole complementarity cannot be ruled out on the basis of known physical principles. Experiments designed by outside observers to disprove the existence of a quantum-mechanical stretched horizon require knowledge of Planck-scale eﬀects for their analysis. Observers who fall through the event horizon after sampling the Hawking radiation cannot discover",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 944,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "event horizon",
+          "heading": false
+        },
+        {
+          "term": "hawking radiation",
+          "heading": false
+        },
+        {
+          "term": "stretched horizon",
+          "heading": false
+        },
+        {
+          "term": "distant observer",
+          "heading": false
+        },
+        {
+          "term": "hole complementarity",
+          "heading": false
+        },
+        {
+          "term": "gedanken experiments",
+          "heading": false
+        },
+        {
+          "term": "outside observers",
+          "heading": false
+        }
+      ],
+      "extract": "One of the most interesting open questions in theoretical physics is whether the unitary evolution of states in quantum theory is violated by gravitational eﬀects [1]. The debate has centered on the process of black hole formation and evaporation, where, at the semi- classical level, almost no information about the initial quantum state of the infalling matter appears to be carried by the ﬁnal outgoing Hawking",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-experiments-in-rindler-space",
+      "number": "2",
+      "title": "Experiments in Rindler Space",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 10,
+      "labelStart": "4",
+      "labelEnd": "10",
+      "words": 1690,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rindler space",
+          "heading": true
+        },
+        {
+          "term": "rindler observer",
+          "heading": false
+        },
+        {
+          "term": "rindler horizon",
+          "heading": false
+        },
+        {
+          "term": "stretched horizon",
+          "heading": false
+        },
+        {
+          "term": "rindler time",
+          "heading": false
+        },
+        {
+          "term": "rindler coordinates",
+          "heading": false
+        },
+        {
+          "term": "minkowski observer",
+          "heading": false
+        },
+        {
+          "term": "event horizon",
+          "heading": false
+        }
+      ],
+      "extract": "Before considering ﬁnite mass black holes it is instructive to consider the simpler geom- etry of Rindler space which can be viewed as the exterior region close to the horizon in the limit of inﬁnite black hole mass. It is also isomorphic to the region of ﬂat four-dimensional Minkowski space deﬁned by |z| > |t|, z > 0, shown in Figure 1. We introduce Rindler coordinates R, ω as follows, t = R sinh ω , z = R cosh ω .",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-experiments-outside-black-holes",
+      "number": "3",
+      "title": "Experiments Outside Black Holes",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 13,
+      "labelStart": "10",
+      "labelEnd": "13",
+      "words": 1040,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stretched horizon",
+          "heading": false
+        },
+        {
+          "term": "black holes",
+          "heading": true
+        },
+        {
+          "term": "event horizon",
+          "heading": false
+        },
+        {
+          "term": "global event",
+          "heading": false
+        },
+        {
+          "term": "infalling matter",
+          "heading": false
+        },
+        {
+          "term": "proper acceleration",
+          "heading": false
+        },
+        {
+          "term": "ﬂat spacetime",
+          "heading": false
+        },
+        {
+          "term": "gedanken experiments",
+          "heading": false
+        }
+      ],
+      "extract": "The event horizon of Rindler space can be viewed as a black hole event horizon in the limit of inﬁnite mass. Any attempt by external observers to determine the physical presence of an information storing membrane outside a black hole event horizon will run into planckian obstacles just as in Rindler space. The discussion of the gedanken experiments of the previous section carries over to this case as the reader can",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-experiments-performed-inside-black-holes",
+      "number": "4",
+      "title": "Experiments Performed Inside Black Holes",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 17,
+      "labelStart": "13",
+      "labelEnd": "17",
+      "words": 1361,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hawking radiation",
+          "heading": false
+        },
+        {
+          "term": "event horizon",
+          "heading": false
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "experiments performed",
+          "heading": true
+        },
+        {
+          "term": "stretched horizon",
+          "heading": false
+        },
+        {
+          "term": "hawking spin",
+          "heading": false
+        },
+        {
+          "term": "infalling spin",
+          "heading": false
+        },
+        {
+          "term": "outgoing hawking",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we shall consider a class of experiments which explore quantum corre- lations between events on both sides of the event horizon. In particular, we are interested in contradictions which arise from the apparent duplication of quantum information. If the Hawking radiation is to faithfully encode the infalling information, while the infalling matter crosses the event horizon without disruption, one",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-information-retention-time",
+      "number": "5",
+      "title": "Information Retention Time",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 19,
+      "labelStart": "17",
+      "labelEnd": "19",
+      "words": 524,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "information retention",
+          "heading": true
+        },
+        {
+          "term": "retention time",
+          "heading": true
+        },
+        {
+          "term": "thermal entropy",
+          "heading": false
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "grained entropy",
+          "heading": false
+        },
+        {
+          "term": "emitted photons",
+          "heading": false
+        },
+        {
+          "term": "radiation",
+          "heading": false
+        },
+        {
+          "term": "smax",
+          "heading": false
+        }
+      ],
+      "extract": "We wish to deﬁne a measure of the “lifetime” of information stored in a thermalized system, K, such as a black hole stretched horizon or a thermal cavity. Suppose at time t = 0, the system K is in some pure state ψ which is a typical member of a thermal ensemble with energy E and temperature T. Furthermore, let N(E) be the number of possible states at energy E. To begin with, the system has zero ﬁne grained entropy",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-6-experiments-involving-time-reversal",
+      "number": "6",
+      "title": "Experiments Involving Time Reversal",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 659,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "thermal radiation",
+          "heading": false
+        },
+        {
+          "term": "diﬀuse cloud",
+          "heading": false
+        },
+        {
+          "term": "incoming s-wave",
+          "heading": false
+        },
+        {
+          "term": "semi-classical approximation",
+          "heading": false
+        },
+        {
+          "term": "planck scale",
+          "heading": false
+        },
+        {
+          "term": "time reversed",
+          "heading": false
+        },
+        {
+          "term": "stretched horizon",
+          "heading": false
+        }
+      ],
+      "extract": "The time reversal of the formation and evaporation of a black hole has been a subject of controversy. Confusion about white holes and CPT easily arises when one contemplates information loss. This confusion is straightforwardly resolved in a theory with a quantum mechanical stretched horizon. Let us consider a black hole formed from the collapse of a diﬀuse cloud of elephants. The evaporation products consist of an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-7-summary",
+      "number": "7",
+      "title": "Summary",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": "20",
+      "labelEnd": "22",
+      "words": 458,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stretched horizon",
+          "heading": false
+        },
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "event horizon",
+          "heading": false
+        },
+        {
+          "term": "hole complementarity",
+          "heading": false
+        },
+        {
+          "term": "observer",
+          "heading": false
+        },
+        {
+          "term": "baryon number",
+          "heading": false
+        },
+        {
+          "term": "number violation",
+          "heading": false
+        },
+        {
+          "term": "stored",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper we have analysed a number of gedanken experiments to illustrate the consistency of the following two hypotheses: 1) To an outside observer all information falling onto a black hole is stored and ther- malized on the stretched horizon until it is radiated during evaporation. The thermalization involves processes which wash out baryon number. 2) To an infalling observer no exceptional phenomenon such as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-references",
+      "number": null,
+      "title": "REFERENCES",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 190,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black holes",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "university preprint",
+          "heading": false
+        },
+        {
+          "term": "hepth",
+          "heading": false
+        }
+      ],
+      "extract": "1. S. W. Hawking, Comm. Math. Phys. 43 (1975), 199, Phys. Rev. D14 (1976), 2460. 2. L. Susskind, L. Thorlacius, and J. Uglum, The Stretched Horizon and Black Hole Complementarity, Stanford University preprint, SU-ITP-93-15, hepth/9306069, June 1993, to appear in Phys. Rev. D. 3. J. Preskill, private communication at the ITP, UC Santa Barbara Conference on “Quantum Aspects of Black Holes”, June 21-26, 1993. 4. G. ’t",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "stretched horizon",
+      "heading": true
+    },
+    {
+      "term": "black hole",
+      "heading": true
+    },
+    {
+      "term": "event horizon",
+      "heading": true
+    },
+    {
+      "term": "rindler horizon",
+      "heading": true
+    },
+    {
+      "term": "hawking radiation",
+      "heading": true
+    },
+    {
+      "term": "hole complementarity",
+      "heading": false
+    },
+    {
+      "term": "rindler observer",
+      "heading": false
+    },
+    {
+      "term": "gedanken experiments",
+      "heading": false
+    },
+    {
+      "term": "outside observer",
+      "heading": false
+    },
+    {
+      "term": "quantum-mechanical stretched",
+      "heading": false
+    },
+    {
+      "term": "thermal radiation",
+      "heading": false
+    },
+    {
+      "term": "falling observer",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Rindler space as a wedge of Minkowski space: surfaces of constant Rindler time are straight lines through the origin while surfaces of ﬁxed Rindler position are hyperbolas. There is a future (past) event horizon at z−t=0 (z+t=0)",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "To approach the stretched horizon and return, an observer must undergo Planck scale acceleration",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Location of horizons in a collapse geometry. The dashed line represents the global event horizon",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "A gedanken experiment involving correlations on both sides of the event horizon",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "A gedanken experiment in which an observer O measures information in Hawking radiation before falling into the black hole. A spin a has previously crossed the horizon and is measured by apparatus A. A message is sent from A to O before O hits the singularity",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 10,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "7 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p22); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 10 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-th-9308100v1"
+  }
+}

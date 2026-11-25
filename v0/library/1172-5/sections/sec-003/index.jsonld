@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/1172-5/sections/sec-003",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "VOLUME CONJECTURE FOR CLOSED THREE-MANIFOLDS",
+  "pageStart": 8,
+  "pageEnd": 10,
+  "contains": [
+    "library/1172-5/blocks/prose-sec-003",
+    "library/1172-5/blocks/conj-sec-003-01",
+    "library/1172-5/blocks/conj-sec-003-02",
+    "library/1172-5/blocks/rem-sec-003-03",
+    "library/1172-5/blocks/rem-sec-003-04",
+    "library/1172-5/blocks/rem-sec-003-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1172-5/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1172-5/manifest.jsonld",
+  "provenance": "ingested"
+}

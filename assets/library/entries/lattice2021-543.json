@@ -1,0 +1,330 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "lattice2021-543",
+  "blocks": [
+    {
+      "id": "library/lattice2021-543/blocks/prop-sec-front-matter-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "prop-sec-front-matter-01.md",
+      "narrative": null,
+      "content": "PoS(LATTICE2021)543 The neutron-proton mass diﬀerence Simone Romiti푎,푏,∗ 푎Dipartimento di Matematica e Fisica, Università degli Studi Roma Tre, Rome, Italy 푏Istituto Nazionale di Fisica Nucleare, Sezione di Roma Tre, Rome, Italy E-mail: simone.romiti@uniroma3.it We present a lattice calculation of the mass diﬀerence between neutron and proton, for which we ﬁnd 푀푛−푀푝= 1.73(69) MeV .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/lattice2021-543/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "PoS(LATTICE2021)543\nThe neutron-proton mass diﬀerence\nSimone Romiti푎,푏,∗\n푎Dipartimento di Matematica e Fisica, Università degli Studi Roma Tre,\nRome, Italy\n푏Istituto Nazionale di Fisica Nucleare, Sezione di Roma Tre, Rome, Italy\nE-mail: simone.romiti@uniroma3.it\nWe present a lattice calculation of the mass diﬀerence between neutron and proton, for which\nwe ﬁnd 푀푛−푀푝= 1.73(69) MeV . This is obtained at 1st order in the QED coupling 훼EM and\nin the mass diﬀerence between 푢and 푑quarks\nˆ푚푑−ˆ푚푢\nΛQCD . We adopt a purely hadronic scheme to\nrenormalize the theory and provide a prescription to separate",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lattice2021-543/blocks/prop-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "prop-sec-001-01.md",
+      "narrative": null,
+      "content": "Introduction Today many lattice QCD calculations have reached the 푂(1%) precision level [1], requiring to include the Isospin Breaking (IB) Eﬀects.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/lattice2021-543/blocks/prop-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "prop-sec-001-02.md",
+      "narrative": null,
+      "content": "2 PoS(LATTICE2021)543 푀푛−푀푝in Lattice QCD+QED at LO in IB Simone Romiti On the lattice we use a mixed action approach as in [6].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/lattice2021-543/blocks/prop-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "prop-sec-001-03.md",
+      "narrative": null,
+      "content": "3 PoS(LATTICE2021)543 푀푛−푀푝in Lattice QCD+QED at LO in IB Simone Romiti",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/lattice2021-543/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "QCD+QED at LO",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-qcdqed-at-lo.md",
+      "narrative": null,
+      "content": "Simone Romiti",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lattice2021-543/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-introduction.md",
+      "narrative": null,
+      "content": "Introduction\nToday many lattice QCD calculations have reached the 푂(1%) precision level [1], requiring to\ninclude the Isospin Breaking (IB) Eﬀects. The leading terms of the latter come from the ∼푂(1%)\ncorrections of 푂( ˆ훼EM) (QED) and 푂( ˆ푚푑−ˆ푚푢\nΛQCD ) (strong IB or QCD). These can be taken into account\nsimulating 푢and 푑quarks with diﬀerent masses and including QED in the action [2, 3]. However,\na convenient approach consists in expanding the path integral with respect to the isospin symmetry\nbreaking parameters. In this setup, any observable in the full theory (QCD+QED) is the sum of\nits isos",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lattice2021-543/blocks/prop-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "prop-sec-002-01.md",
+      "narrative": null,
+      "content": "(12) 4 PoS(LATTICE2021)543 푀푛−푀푝in Lattice QCD+QED at LO in IB Simone Romiti Finally the IB correction to 푀Ω−is: Δ푀Ω−= −Δ푚푠[ΩM 1 + ΩM 2 + ΩM 3 ] + Δ푚(푐푟) 푠 [ΩC 1 + ΩC 2 + ΩC 3 ] + 푞2 푠[Ωself 1 + Ωself 2 + Ωself 3 + Ωexch 3 + Ωexch 2 + Ωexch 1 ] + Õ 푓∈(푠푒푎) 푞푓푞푠 h Ωloop 1 푓 + Ωloop 2 푓 + Ωloop 3 푓 i + [isosymm. vac. pol. diag.] .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/lattice2021-543/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "LIBEs in the hadronic spectrum",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-libes-in-the-hadronic-spectrum.md",
+      "narrative": null,
+      "content": "The LIBEs in the hadronic spectrum can be drawn from Feynman diagrams. For mesons the\nexplicit expressions are provided in [6]. For baryons the drawing convention is analogous to [4]:\n¯ΔM퐶(1)\n푁= −\n+\n,\n...\n.\n,\n(5)\n¯ΔC퐶(1)\n푁= −\n+\n,\n...\n.\n,\n(6)\n¯Δself퐶(1)\n푁= −\n−\n+\n+\n,\n...\n.\n,\n(7)\n¯Δexch퐶(1)\n푁= −\n+\n,\n...\n.\n,\n(8)\n¯Δloop퐶(1 푓)\n푁\n= −\n+\n,\n...\n.\n.\n(9)\nThe dots “...” are a shorthand to denote the other diagrams trivially obtained considering the\ninsertions on the other legs. The index 푖= 1, 2, 3 in ¯Δ푥퐶(푖)\n푁corresponds to the quark propagator\nwith the insertion of the current generating the slope (excep",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lattice2021-543/blocks/prop-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "prop-sec-003-01.md",
+      "narrative": null,
+      "content": "(17) 5 PoS(LATTICE2021)543 푀푛−푀푝in Lattice QCD+QED at LO in IB Simone Romiti 0.00000 0.00002 0.00004 0.00006 0.00008 0.00010 0.00012 (a/L)3 0.0012 0.0014 0.0016 0.0018 a∆M(EMC) K+ 1 (L) FVEs on QED mass correction Residual ∼(1/L3) dependence ﬁt Points at ﬁnite L Universal QED FVEs removed 0.00000 0.00002 0.00004 0.00006 0.00008 0.00010 0.00012 (a/L)3 0.0006 0.0008 0.0010 0.0012 a∆M(EMC) Ω− 1 (L) FVEs on QED mass correction Residual ∼(1/L3) dependence ﬁt Points at ﬁnite L Universal QED FVEs removed Figure 1: EMC corrections for the 퐾+ and Ω−obtained from the 1st of the 2 simulated values of 푎푚푠",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/lattice2021-543/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Counterterms and separation between QCD and QED",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-counterterms-and-separation-between-qcd-and-qed.md",
+      "narrative": null,
+      "content": "Counterterms and separation between QCD and QED\nIn tmQCD the inclusion of QED introduces counterterms to the critical and physical masses.\nIn this work the former are tuned from the inﬁnite volume limit of the PCAC Ward Identity (WI)\nintegrated over the 3 spatial directions. Our values of 푎푚푐푟\n0 have been already tuned to get maximal\ntwist in absence of IB [16]. Here we require to preserve maximal twist (and hence the 푂(푎)\nimprovement [17]) also at 푂(푒2). Therefore, for each ﬂavor, we ﬁnd the bare counterterms 푎Δ푚푓\nfrom a ﬁt to a constant of the following condition in its plateau region:\n0 = Δ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lattice2021-543/blocks/prop-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "prop-sec-004-01.md",
+      "narrative": null,
+      "content": "7 PoS(LATTICE2021)543 푀푛−푀푝in Lattice QCD+QED at LO in IB Simone Romiti The isosymmetric limit of hadronic masses 푀퐻are found from the large time behavior of ®푝= ®0 correlators with 푀(0) 퐻as the ground state.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/lattice2021-543/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Details of simulation and analysis",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-details-of-simulation-and-analysis.md",
+      "narrative": null,
+      "content": "Details of simulation and analysis\nOur correlators are evaluated over the 푁푓= 2 + 1 + 1 ETMC gauge conﬁgurations [7] with\ntwisted mass quarks at maximal twist. We adopt a unitary setup in the light sector, and a mixed action\napproach for the strange and charm quarks which in the valence are regularized as Osterwalder-\nSeyler fermions [18]. In tab. (1) are reported the ensembles details. The statistical uncertainty on\nour observables was propagated using the jackknife re-sampling technique with 15 jackknifes for\neach ensemble. Gaussian smearing was applied to quark ﬁelds according to [4], with",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lattice2021-543/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "8 PoS(LATTICE2021)543 푀푛−푀푝in Lattice QCD+QED at LO in IB Simone Romiti 0.00 0.01 0.02 0.03 0.04 0.05 rℓ−r(exp) ℓ 1.0 1.1 1.2 1.3 (Mn + Mp)/2 (GeV) (L, rℓ, a) extrapolation : χ2 d.o.f. = 0.89(37) β = 1.90 , L = ∞ β = 1.95 , L = ∞ β = 2.10 , L = ∞ experiment L < ∞ 0.00 0.01 0.02 0.03 0.04 0.05 rℓ−r(exp) ℓ 0 1 2 3 4 5 (Mn −Mp) (MeV) (L, rℓ, a) extrapolation : χ2 d.o.f. = 0.74(51) β = 1.90 , L = ∞ β = 1.95 , L = ∞ β = 2.10 , L = ∞ experiment L < ∞ Figure 2: Extrapolation of (푀푛+ 푀푝)/2 (left panel) and 푀푛−푀푝(right panel).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/lattice2021-543/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Nucleons spectrum",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-nucleons-spectrum.md",
+      "narrative": null,
+      "content": "Nucleons spectrum\nThe masses of nucleons are found for each ensemble, summing the isosymmetric part 푀푁to\nthe IB corrections given in eqs. (10) and (11). We ﬁt 푀푛and 푀푝according to the following ansatz\ninspired by ChPT [25]:\n푀푛/푝(퐿, 푟ℓ, 푎) = 퐴푛/푝\n\"\n1 + 훼EM\n푐(푛/푝)\n3\n퐿3\n+ 푐(푛/푝)\n푎\n푎2 + 푐(푛/푝)\nℓ\n푟ℓ+ 푐(푛/푝)\n3/2\n푟3/2\nℓ\n#\n,\n(22)\nwhere the coeﬃcients 퐴푛/푝, ... are free parameters of the ﬁt. Similarly, The mass diﬀerence\n푀푛−푀푝is found from eq. (12), and ﬁtted with a simple polynomial ansatz:\n(푀푛−푀푝)(퐿, 푟ℓ, 푎) = 퐴\nh\n1 + 훼EM\n푐3\n퐿3 + 푐푎푎2 + 푐ℓ푟ℓ\ni\n,\n(23)\nwhere the coeﬃcients 퐴, ..., are free parameters of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lattice2021-543/blocks/prop-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "prop-sec-006-01.md",
+      "narrative": null,
+      "content": "For 9 PoS(LATTICE2021)543 푀푛−푀푝in Lattice QCD+QED at LO in IB Simone Romiti 0.00 0.01 0.02 0.03 0.04 0.05 rℓ−r(exp) ℓ 1 2 3 4 5 (Mn −Mp)(QCD) (MeV) (L, rℓ, a) extrapolation : χ2 d.o.f. = 1.12(55) β = 1.90 , L = ∞ β = 1.95 , L = ∞ β = 2.10 , L = ∞ L < ∞ 0.00 0.01 0.02 0.03 0.04 0.05 rℓ−r(exp) ℓ −2.5 −2.0 −1.5 −1.0 −0.5 (Mn −Mp)(QED) (MeV) (L, rℓ, a) extrapolation : χ2 d.o.f. = 1.08(56) β = 1.90 , L = ∞ β = 1.95 , L = ∞ β = 2.10 , L = ∞ L < ∞ Figure 3: The same as ﬁg.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/lattice2021-543/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary and outlook",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-006-summary-and-outlook.md",
+      "narrative": null,
+      "content": "Summary and outlook\nIn this work we’ve discussed the inclusion of LIBEs eﬀects in the nucleons spectrum, ﬁnding\ntheir masses and the diﬀerence 푀푛−푀푝.\nThe 푂(훼EM) and 푂( ˆ푚푑−ˆ푚푢\nΛQCD ) corrections have been taken into account using the RM123\nmethod. Critical masses were ﬁxed by the PCAC Ward Identity in order to preserve the maximal\ntwist condition at LO. The physical masses are tuned using an hadronic scheme and the lattice\nspacing is ﬁxed through 푀Ω−.\nWe worked in the electroquenched approximation and neglected QCD disconnected diagrams.\nAt our level of precision these are expected to be suppr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lattice2021-543/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-007-acknowledgements.md",
+      "narrative": null,
+      "content": "Acknowledgements\nThe numerical simulations were carried out on the CINECA Tier-0 supercomputer MARCONI.\nI gratefully acknowledge the CPU time provided by PRACE under the project Pra10-2693 “QED\ncorrections to meson decay rates in Lattice QCD” and by CINECA under the speciﬁc initiative\nINFN-LQCD123. I am also grateful to V. Lubicz, S. Simula, F. Sanﬁlippo, G. Martinelli and C.\nTarantino for their support and fruitful discussions during the evolution of this project.\nReferences\n[1] G. Colangelo, S. Dürr, A. Jüttner, L. Lellouch, H. Leutwyler, V. Lubicz et al., Review of\nlattice results concernin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

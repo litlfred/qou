@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1501.04614v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "KNOT CABLING AND THE DEGREE OF THE COLORED JONES",
+      "dcterms:creator": [
+        "II, POLYNOMIAL"
+      ],
+      "dcterms:issued": "D:20211110",
+      "dcterms:identifier": "https://arxiv.org/abs/1501.04614",
+      "dcterms:abstract": "We continue our study of the degree of the colored Jones polynomial under knot cabling started in [8]. Under certain hypothesis on this degree, we determine how the Jones slopes and the linear term behave under cabling. As an application we verify Garoufalidis’ Slope Conjecture and a conjecture of [8] for cables of a two-parameter family of closed 3-braids called 2-fusion knots.",
+      "dcterms:source": "library/arxiv-1501.04614v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1501.04614v1"
+    }
+  ]
+}

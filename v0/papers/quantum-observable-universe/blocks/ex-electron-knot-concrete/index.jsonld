@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-electron-knot-concrete",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:electron-knot-concrete",
+  "kind": "example",
+  "title": "The electron as the Hopf link on $\\Sigma_4$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-electron-knot",
+    "papers/quantum-observable-universe/blocks/ex-brings-surface-concrete"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-electron-knot",
+  "tags": [
+    "electron",
+    "hopf-link",
+    "link",
+    "example"
+  ],
+  "text": "electron-knot-example.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,89 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2008.05806v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Sum rule for the Compton amplitude and implications for the proton-neutron mass difference",
+  "contains": [
+    "library/arxiv-2008.05806v2/sections/sec-front-matter",
+    "library/arxiv-2008.05806v2/sections/sec-000",
+    "library/arxiv-2008.05806v2/sections/sec-001",
+    "library/arxiv-2008.05806v2/sections/sec-002",
+    "library/arxiv-2008.05806v2/sections/sec-003",
+    "library/arxiv-2008.05806v2/sections/sec-004",
+    "library/arxiv-2008.05806v2/sections/sec-005",
+    "library/arxiv-2008.05806v2/sections/sec-006",
+    "library/arxiv-2008.05806v2/sections/sec-007",
+    "library/arxiv-2008.05806v2/sections/sec-008",
+    "library/arxiv-2008.05806v2/sections/sec-009",
+    "library/arxiv-2008.05806v2/sections/sec-010",
+    "library/arxiv-2008.05806v2/sections/sec-011",
+    "library/arxiv-2008.05806v2/sections/sec-012",
+    "library/arxiv-2008.05806v2/sections/sec-013",
+    "library/arxiv-2008.05806v2/sections/sec-014",
+    "library/arxiv-2008.05806v2/sections/sec-015",
+    "library/arxiv-2008.05806v2/sections/sec-016",
+    "library/arxiv-2008.05806v2/sections/sec-017",
+    "library/arxiv-2008.05806v2/sections/sec-018",
+    "library/arxiv-2008.05806v2/sections/sec-019",
+    "library/arxiv-2008.05806v2/sections/sec-020",
+    "library/arxiv-2008.05806v2/sections/sec-021",
+    "library/arxiv-2008.05806v2/sections/sec-022",
+    "library/arxiv-2008.05806v2/sections/sec-023",
+    "library/arxiv-2008.05806v2/sections/sec-024",
+    "library/arxiv-2008.05806v2/sections/sec-025",
+    "library/arxiv-2008.05806v2/sections/sec-026",
+    "library/arxiv-2008.05806v2/sections/sec-027",
+    "library/arxiv-2008.05806v2/sections/sec-028",
+    "library/arxiv-2008.05806v2/sections/sec-029",
+    "library/arxiv-2008.05806v2/sections/sec-030",
+    "library/arxiv-2008.05806v2/sections/sec-031",
+    "library/arxiv-2008.05806v2/sections/sec-032"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Sum rule for the Compton amplitude and implications for the proton-neutron mass difference — The Cottingham formula expresses the lead- ing contribution of the electromagnetic interaction to the\n\n**Sum rule for the Compton amplitude and implications for the proton-neutron mass difference**\n\n*J. Gasser1, H. Leutwyler1, A. Rusetsky2*\n\n26 pp, 34 sections.\n\n**Abstract.** The Cottingham formula expresses the lead- ing contribution of the electromagnetic interaction to the proton-neutron mass diﬀerence as an integral over the forward Compton amplitude. Since quarks and glu- ons reggeize, the dispersive representation of this ampli- tude requires a subtraction. We assume that the asymp- totic behaviour is dominated by Reggeon exchange. This leads to a sum rule that expresses the subtraction function in terms of measurable quantities. The evalua- tion of this sum rule leads to mp−n QED = 0.58 ± 0.16 MeV.\n\n**Outline.** Front matter; 1 Introduction; 2 Lorentz invariance, kinematic zeros; 3 Dispersion relations; 4 Reggeon dominance; 5 Sum rule for the subtraction function; 6 Wick rotation; 7 Decomposition of the mass shift; 8 Operator product expansion; 9 Leading Wilson coefficients; 10 Difference between proton and neutron; 11 Perturbation theory; 12 Moments of the structure functions; 13 Prediction for the constant C; 14 Renormalization; 15 Subleading divergence; 16 Input used for the structure functions; 17 Polarizabilities S(0)",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-2008.05806v2",
+    "title_source": "editorial",
+    "title_from": "structure.json metadata.title_correction.title",
+    "title_verified": true,
+    "title_correction": {
+      "title": "Sum rule for the Compton amplitude and implications for the proton-neutron mass difference",
+      "basis": "Printed title on page 1 (J. Gasser, H. Leutwyler, A. Rusetsky); the extracted title used the ff ligature",
+      "extracted_title": "Sum rule for the Compton amplitude and implications for the proton-neutron mass diﬀerence",
+      "corrected_on": "2026-11-18",
+      "extracted": "Sum rule for the Compton amplitude and implications for the proton-neutron mass difference"
+    },
+    "source_file": "2008.05806v2.pdf",
+    "source_sha256": "4e1f9af118ba81b1700f474223c52a27cfb78ee2f1b542398e6d1f683e451617",
+    "pages": 26,
+    "arxiv": {
+      "id": "2008.05806",
+      "version": "2",
+      "primary_class": "hep-ph",
+      "stamp_date": "9 Dec 2020"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

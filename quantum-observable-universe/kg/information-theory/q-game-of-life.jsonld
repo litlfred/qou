@@ -1,0 +1,45 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-q-game-of-life",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:q-game-of-life",
+  "kind": "proposition",
+  "title": "The quantum Game of Life (q-GoL) as a Toffoli-defined substrate automaton",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-toffoli-q-and",
+    "papers/quantum-observable-universe/blocks/prop-toffoli-lp-stability",
+    "papers/quantum-observable-universe/blocks/def-information-speed-of-light"
+  ],
+  "cites": [
+    "references/aharonov2003",
+    "references/bennett1973",
+    "references/fredkin1982",
+    "references/pena2022",
+    "references/shi2002",
+    "references/toffoli1980"
+  ],
+  "tags": [
+    "q-GoL",
+    "toffoli",
+    "cellular-automaton",
+    "reversible-computation",
+    "quantum-circuit",
+    "q-AND",
+    "conway",
+    "hadamard",
+    "planck-time"
+  ],
+  "leanRef": "qou:QOU.Information.qGameOfLife",
+  "text": "q-game-of-life.md",
+  "leanSource": "q-game-of-life.lean",
+  "provenance": "authored"
+}

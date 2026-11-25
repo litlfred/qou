@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2104.06067v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "On irreducible characters of the Iwahori-Hecke algebra in type A",
+      "dcterms:creator": [
+        "A, TYPE"
+      ],
+      "dcterms:issued": "D:20210413",
+      "dcterms:identifier": "https://arxiv.org/abs/2104.06067",
+      "dcterms:abstract": "We use vertex operators to compute irreducible characters of the Iwahori-Hecke algebra of type A. Two general formulas are given for the irreducible characters in terms of those of the symmetric groups or the Iwahori-Hecke algebras in lower degrees. Explicit formulas are derived for the irreducible characters labeled by hooks and two-row partitions. Using duality, we also formulate a determinant type Murnaghan-Nakayama formula and give another proof of Ram’s combinatorial Murnaghan-Nakayama formula. As applications, we study super-characters of the Iwahori-Hecke algebra as well as the bitrace of the regular representation and provide a simple proof of the Halverson-Luduc-Ram formula.",
+      "dcterms:source": "library/arxiv-2104.06067v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2104.06067v1"
+    }
+  ]
+}

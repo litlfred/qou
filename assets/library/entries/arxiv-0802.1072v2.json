@@ -1,0 +1,158 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0802.1072v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-0802.1072v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Three basic theorems",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-three-basic-theorems.md",
+      "narrative": null,
+      "content": "[]{#S:Three basic theorems label=\"S:Three basic theorems\"}\n\nIn this section we present the basic lemmas and theorems about links that are closed three-braids. Initially, we will use the classical presentation for the braid group $B_3$: $$\\label{E:classical presentation}\n<\\sigma_1,\\sigma_2; \\sigma_1\\sigma_2\\sigma_1 = \\sigma_2\\sigma_1\\sigma_2>$$ In the presentation ([\\[E:classical presentation\\]](#E:classical presentation){reference-type=\"ref\" reference=\"E:classical presentation\"}) the generator $\\sigma_i$ is a positive interchange of strands $i$ and $i+1$, where $i=1$ or $2$.\n\nBefore we can sta",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0802.1072v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0802.1072v2  [math.GT]  14 May 2008\nA note on closed 3-braids ∗\nJoan S. Birman† and William W. Menasco‡\nMay 13, 2008\nDedicated to the memory of Xiao-Song Lin\nAbstract\nThis is a review article about knots and links of braid index 3. Its goal is to gather together,\nin one place, some of the tools that are special to knots and links of braid index 3, in a form\nthat could be useful for those who have a need to calculate, and need to know precisely all the\nexceptional cases.\nKnots and links which are closed 3-braids are a very special class. Like 2-bridge knots and links, they\nare simple enou",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0802.1072v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Solving the conjugacy problem in B3",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-solving-the-conjugacy-problem-in-b3.md",
+      "narrative": null,
+      "content": "[]{#S:conjugacy label=\"S:conjugacy\"}\n\nAs noted above, to use Theorem [\\[T:topological\\]](#T:topological){reference-type=\"ref\" reference=\"T:topological\"} the reader will need definitive tests for deciding (i) when two 3-braids are conjugate; (ii) when a conjugacy class is one of the exceptional ones which admits a non-degenerate flype; and (iii) when a conjugacy class contains $\\sigma_1^k\\sigma_2^{\\pm 1}$ for some $k$. In this section we discuss (i).\n\nThe conjugacy problem in $B_3$ was solved long ago by O. Schreier [@Sc], making use of the fact that $B_3$ is a free product with amalgamations o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0802.1072v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The band presentation",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-the-band-presentation.md",
+      "narrative": null,
+      "content": "The *band presentation* of $B_3$ uses a cyclically ordered set of generators which includes the generators of ([\\[E:classical presentation\\]](#E:classical presentation){reference-type=\"ref\" reference=\"E:classical presentation\"}): $$\\label{E:BKL presentation}\n<a_1, a_2, a_3 \\ | \\  a_2a_1 = a_3a_2 = a_1a_3> , \\  {\\rm where}  \\  a_1=\\sigma_1, \\ \\ a_2 = \\sigma_2, \\ \\ a_3 = \\sigma_1^{-1}\\sigma_2\\sigma_1.$$ In terms of the new generators, a 3-braid $L$ admits a flype (see ([\\[E:flype-admissible form\\]](#E:flype-admissible form){reference-type=\"ref\" reference=\"E:flype-admissible form\"})) if its conju",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0802.1072v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The word problem:",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-the-word-problem.md",
+      "narrative": null,
+      "content": "Xu's solution to the word problem builds directly on the analogous ideas in the work of Garside [@Ga]. Choose any word $W$ in the symbols $a_1,a_2,a_3$ and their inverses, representing an element $\\beta\\in B_3$. Using ([\\[E:BKL presentation\\]](#E:BKL presentation){reference-type=\"ref\" reference=\"E:BKL presentation\"})(i), all inverses of generators can be traded for powers of $\\delta^{-1}$. Using ([\\[E:BKL presentation\\]](#E:BKL presentation){reference-type=\"ref\" reference=\"E:BKL presentation\"})(ii), all powers of $\\delta$ may be collected, say, at the left, so that one may rewrite $W$ in the f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0802.1072v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The conjugacy problem for 3-braids",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-the-conjugacy-problem-for-3-braids.md",
+      "narrative": null,
+      "content": "[]{#SS:the conjugacy problem label=\"SS:the conjugacy problem\"} The conjugacy problem is close-by. The *summit set* of $W$, denoted SS($W)$, is the subset of those elements in the conjugacy class of $W$ which, when represented by words in normal form, have maximal power. It is, by definition, invariant under conjugation by powers of $\\delta$. Even more, it must be finite, for the following reasons. The defining relations in the band presentation preserve the algebraic sum of the exponents of an element in $B_3$, and conjugation does too. Therefore the algebraic sum is a class invariant, and fro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0802.1072v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Using Theorems 1,2, and 3",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-using-theorems-12-and-3.md",
+      "narrative": null,
+      "content": "{\\bf Theorems 1 and 2}. \\ \\ We need two more results before we can make Theorems~\\ref{T:topological} and \\ref{T:invertibility}  into results that can be used computationally.  First, we need to be able to recognize when the closure of a 3-braid has braid index less than 3. Table I  gives the Xu symbols $\\Sigma^\\star(W)$  in the cases when the closed braid associated to $W$ has braid index less than 3.  Using it, we can decide when a closed 3-braid is a link of braid index 3, by computing its Xu-invariant and verifying whether it is or is not the symbol for a  3-braid of braid index less than 3",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0802.1072v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some open questions and a survey of known results about links of braid index 3",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "../sections/sec-006-some-open-questions-and-a-survey-of-known-result.md",
+      "narrative": null,
+      "content": "[]{#S:known and unknown label=\"S:known and unknown\"} In this section we survey the literature and discuss some unknown properties of knots and links of braid index 3. Our choices are guided by what we know best, and by our wish to illustrate ways in which Theorems 1,2 and 3 have been and might be useful.\n\n1.  We made inquiries, but were unable to find a computer program that implements Xu's solution to the conjugacy problem in $B_3$. If anyone is interested, it would be useful to have such a program, if it is freely available to researchers.\n\n2.  In our judgment, the most striking feature of c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

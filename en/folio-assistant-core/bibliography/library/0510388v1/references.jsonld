@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/0510388v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "Electrodynamics and the Gauss linking integral on the 3-sphere and in hyperbolic 3-space",
+      "dcterms:creator": [
+        "DeTurck, Dennis",
+        "Gluck, Herman"
+      ],
+      "dcterms:issued": "D:20051017",
+      "dcterms:source": "library/0510388v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/0510388v1"
+    }
+  ]
+}

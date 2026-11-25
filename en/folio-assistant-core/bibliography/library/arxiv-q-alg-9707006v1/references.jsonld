@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-q-alg-9707006v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Drinfeld twist for quantum su(2) in the adjoint representation",
+      "dcterms:creator": [
+        "Chryssomalakos∗, Chryssomalis"
+      ],
+      "dcterms:issued": "D:20210521",
+      "dcterms:identifier": "https://arxiv.org/abs/q-alg/9707006",
+      "dcterms:abstract": "We give a detailed description of the adjoint representation of Drinfeld’s twist element, as well as of its coproduct, for suq(2). We also discuss, as applications, the computation of the universal R-matrix in this representation and the problem of symmetrization of identical-particle states with quantum su(2) symmetry. ∗e-mail address: chryss@stp.dias.ie",
+      "dcterms:source": "library/arxiv-q-alg-9707006v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-q-alg-9707006v1"
+    }
+  ]
+}

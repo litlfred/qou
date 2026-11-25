@@ -1,0 +1,623 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0409393v1",
+  "title": "arxiv-math-0409393v1",
+  "variant": "pdf",
+  "pages": 26,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction and general conventions",
+      "number": "1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction-and-general-conventions"
+    },
+    {
+      "level": 1,
+      "title": "Local analytic classification",
+      "number": "2",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-local-analytic-classification"
+    },
+    {
+      "level": 1,
+      "title": "Algebraic summation",
+      "number": "3",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-algebraic-summation"
+    },
+    {
+      "level": 1,
+      "title": "The q-Gevrey filtration on the Stokes sheaf",
+      "number": "4",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-the-q-gevrey-filtration-on-the-stokes-sheaf"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 25,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 422,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stokes sheaf",
+          "heading": false
+        },
+        {
+          "term": "alg ebrique",
+          "heading": false
+        },
+        {
+          "term": "faisceau",
+          "heading": false
+        },
+        {
+          "term": "q-gevrey",
+          "heading": false
+        },
+        {
+          "term": "sauloy",
+          "heading": false
+        },
+        {
+          "term": "irregular linear",
+          "heading": false
+        },
+        {
+          "term": "analytic classiﬁcation",
+          "heading": false
+        },
+        {
+          "term": "zhang",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0409393v1 [math.QA] 21 Sep 2004 ALGEBRAIC CONSTRUCTION OF THE STOKES SHEAF FOR IRREGULAR LINEAR q-DIFFERENCE EQUATIONS by Jacques Sauloy Abstract. — The local analytic classiﬁcation of irregular linear q-diﬀerence equa- tions has recently been obtained by J.-P. Ramis, J. Sauloy and C. Zhang. Their description involves a q-analog of the Stokes sheaf and theorems of Malgrange-Sibuya type and is based on a",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0409393v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction-and-general-conventions",
+      "number": "1",
+      "title": "Introduction and general conventions",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1843,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gevrey filtration",
+          "heading": false
+        },
+        {
+          "term": "jean-pierre ramis",
+          "heading": false
+        },
+        {
+          "term": "ring mathbf",
+          "heading": false
+        },
+        {
+          "term": "fractions mathbf",
+          "heading": false
+        },
+        {
+          "term": "q-malgrange-sibuya",
+          "heading": false
+        },
+        {
+          "term": "stokes sheaf",
+          "heading": false
+        },
+        {
+          "term": "irregular difference",
+          "heading": false
+        },
+        {
+          "term": "sigma theta",
+          "heading": false
+        }
+      ],
+      "extract": "## Introduction This paper deals with Birkhoff's program of 1941 ([@Birkhoff3], see also [@Birkhoff1]) towards the local analytic classification of $q$-difference equations and some extensions stated by J.-P. Ramis in 1990 ([@RamisJPRTraum]).\\ A full treatment of the Birkhoff program including the case of irregular $q$-difference equations is being given in [@RSZ]. The method used there closely follows the analytic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-local-analytic-classification",
+      "number": "2",
+      "title": "Local analytic classification",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4161,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "times mathbf",
+          "heading": false
+        },
+        {
+          "term": "field mathbf",
+          "heading": false
+        },
+        {
+          "term": "underset leq",
+          "heading": false
+        },
+        {
+          "term": "subcategory mathcal",
+          "heading": false
+        },
+        {
+          "term": "underset def",
+          "heading": false
+        },
+        {
+          "term": "fuchsian modules",
+          "heading": false
+        },
+        {
+          "term": "forme-canonique",
+          "heading": false
+        },
+        {
+          "term": "ldots end",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#section:classification label=\"section:classification\"} ## Devissage of irregular equation ([@JSGAL],[@JSFIL]) {#subsection:devissage} ### Fuchsian and tamely irregular modules For a $q$-difference module $M$ over any of the fields ${{\\mathbf C}(z)}$, ${{\\mathbf C}(\\{z\\})}$, ${{\\mathbf C}((z))}$, it is possible to define its Newton polygon at $0$, or, equivalently, the slopes of $M$, which we write in descending",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-algebraic-summation",
+      "number": "3",
+      "title": "Algebraic summation",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3167,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "covering mathfrak",
+          "heading": false
+        },
+        {
+          "term": "psi phi",
+          "heading": false
+        },
+        {
+          "term": "sheaf lambda",
+          "heading": false
+        },
+        {
+          "term": "allowed divisors",
+          "heading": false
+        },
+        {
+          "term": "mathbf",
+          "heading": false
+        },
+        {
+          "term": "bon-recouvrement",
+          "heading": false
+        },
+        {
+          "term": "forme-canonique-diagonale",
+          "heading": false
+        },
+        {
+          "term": "rwg",
+          "heading": false
+        }
+      ],
+      "extract": "## The algorithm We keep the notations $M_{0}$, $A_{0}$, $A_{U}$ of [\\[equation:forme-canonique\\]](#equation:forme-canonique){reference-type=\"ref\" reference=\"equation:forme-canonique\"} and [\\[equation:forme-canonique-diagonale\\]](#equation:forme-canonique-diagonale){reference-type=\"ref\" reference=\"equation:forme-canonique-diagonale\"} and the corresponding conventions from section",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-the-q-gevrey-filtration-on-the-stokes-sheaf",
+      "number": "4",
+      "title": "The q-Gevrey filtration on the Stokes sheaf",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 949,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stokes sheaf",
+          "heading": true
+        },
+        {
+          "term": "sheaf lambda",
+          "heading": false
+        },
+        {
+          "term": "filtration",
+          "heading": true
+        },
+        {
+          "term": "rightarrow lambda",
+          "heading": false
+        },
+        {
+          "term": "underline hom",
+          "heading": false
+        },
+        {
+          "term": "devissage",
+          "heading": false
+        },
+        {
+          "term": "module underline",
+          "heading": false
+        },
+        {
+          "term": "lie bundle",
+          "heading": false
+        }
+      ],
+      "extract": "The sources of inspiration for the contents of this chapter are [@RamisGevrey], [@BV], [@MLR], [@Varadarajan] and [@Deligne86]. ## The filtration for the Stokes sheaf of a tamely irregular module We stick to the conventions of section [\\[subsection:devissage\\]](#subsection:devissage){reference-type=\"ref\" reference=\"subsection:devissage\"}, in particular, the notations of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 675,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-diﬀ erences",
+          "heading": false
+        },
+        {
+          "term": "aux q-diﬀ",
+          "heading": false
+        },
+        {
+          "term": "q-diﬀerence equations",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential equations",
+          "heading": false
+        },
+        {
+          "term": "sauloy",
+          "heading": false
+        },
+        {
+          "term": "meromorphic diﬀerential",
+          "heading": false
+        },
+        {
+          "term": "van der",
+          "heading": false
+        },
+        {
+          "term": "der put",
+          "heading": false
+        }
+      ],
+      "extract": "erations provide a local isomorphism of the sheaves of Lie algebras, so that λI(M) is a vector bundle. Last, these isomorphisms preserve the ﬁltrations by levels of ﬂatness. Remark 4.5. — One should also note that the mapping X 7→FD(U)X deﬁnes an isomorphism from the space of solutions of A0 holomorphic over (UD, 0) to the same space for AU. This means that their sheaves of solutions are locally isomorphic. Since",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "stokes sheaf",
+      "heading": true
+    },
+    {
+      "term": "mathbf linear",
+      "heading": false
+    },
+    {
+      "term": "field mathbf",
+      "heading": false
+    },
+    {
+      "term": "ring mathbf",
+      "heading": false
+    },
+    {
+      "term": "fractions mathbf",
+      "heading": false
+    },
+    {
+      "term": "irregular module",
+      "heading": false
+    },
+    {
+      "term": "times mathbf",
+      "heading": false
+    },
+    {
+      "term": "devissage",
+      "heading": false
+    },
+    {
+      "term": "sheaf lambda",
+      "heading": false
+    },
+    {
+      "term": "gevrey filtration",
+      "heading": false
+    },
+    {
+      "term": "irregular difference",
+      "heading": false
+    },
+    {
+      "term": "rwg",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 5,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 6,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p25); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 6 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0409393v1"
+  }
+}

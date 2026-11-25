@@ -1,0 +1,837 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-th-9711057v2",
+  "title": "arxiv-hep-th-9711057v2",
+  "variant": "pdf",
+  "pages": 12,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Random-matrix theory for finite quark masses",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-random-matrix-theory-for-finite-quark-masses"
+    },
+    {
+      "level": 2,
+      "title": "Formulation of the model",
+      "number": "2.1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-21-formulation-of-the-model"
+    },
+    {
+      "level": 2,
+      "title": "Construction of orthogonal polynomials",
+      "number": "2.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-22-construction-of-orthogonal-polynomials"
+    },
+    {
+      "level": 2,
+      "title": "A duality of matrix ensembles",
+      "number": "2.3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-23-a-duality-of-matrix-ensembles"
+    },
+    {
+      "level": 1,
+      "title": "Calculation of observables",
+      "number": "3",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-3-calculation-of-observables"
+    },
+    {
+      "level": 2,
+      "title": "Microscopic spectral correlators and density",
+      "number": "3.1",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-31-microscopic-spectral-correlators-and-density"
+    },
+    {
+      "level": 2,
+      "title": "Distribution of the smallest eigenvalue",
+      "number": "3.2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-32-distribution-of-the-smallest-eigenvalue"
+    },
+    {
+      "level": 1,
+      "title": "Discussion",
+      "number": "4",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-4-discussion"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-acknowledgments"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 112,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "microscopic spectral",
+          "heading": false
+        },
+        {
+          "term": "microscopic spectrum",
+          "heading": false
+        },
+        {
+          "term": "qcd dirac",
+          "heading": false
+        },
+        {
+          "term": "quark masses",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-th/9711057v2 30 Apr 1998 The microscopic spectrum of the QCD Dirac operator with ﬁnite quark masses T. Wilke1, T. Guhr1, and T. Wettig2 1Max Planck Institut f¨ur Kernphysik, Postfach 103980, D-69029 Heidelberg, Germany 2Institut f¨ur Theoretische Physik, Technische Universit¨at M¨unchen, D-85747 Garching, Germany (November 10, 1997) We compute the microscopic spectrum of the QCD Dirac operator in the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9711057v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 1372,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "random-matrix model",
+          "heading": false
+        },
+        {
+          "term": "dirac eigenvalues",
+          "heading": false
+        },
+        {
+          "term": "chiral condensate",
+          "heading": false
+        },
+        {
+          "term": "quark mass",
+          "heading": false
+        },
+        {
+          "term": "dirac operator",
+          "heading": false
+        },
+        {
+          "term": "microscopic spectral",
+          "heading": false
+        },
+        {
+          "term": "cite leut",
+          "heading": false
+        },
+        {
+          "term": "cite verb",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec1} The low-lying eigenvalues of the QCD Dirac operator are of great importance for the understanding of the spontaneous breaking of chiral symmetry in QCD. In Euclidean space, the Dirac operator reads $i\\slash D=i\\slash\\partial+g(\\lambda^a/2)\\slash A^a$, where $g$ is the coupling constant, $\\lambda^a$ are the generators of SU($N$)-color, and $A_\\mu^a$ are the gauge fields. The corresponding eigenvalue",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-random-matrix-theory-for-finite-quark-masses",
+      "number": "2",
+      "title": "Random-matrix theory for finite quark masses",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 61,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "random-matrix",
+          "heading": true
+        },
+        {
+          "term": "ref sec",
+          "heading": false
+        },
+        {
+          "term": "quark",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{sec2} In Sec.~\\ref{sec21}, we formulate the chiral random-matrix model by introducing the probability density function and the partition function in the presence of finite quark masses. In Sec.~\\ref{sec22}, we construct the orthogonal polynomials of the model. An alternative construction is presented in Sec.~\\ref{sec23} which is based on a certain duality between models in different matrix spaces.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-formulation-of-the-model",
+      "number": "2.1",
+      "title": "Formulation of the model",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 624,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "prod det",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        },
+        {
+          "term": "dagger",
+          "heading": false
+        },
+        {
+          "term": "radial coordinates",
+          "heading": false
+        },
+        {
+          "term": "quark masses",
+          "heading": false
+        },
+        {
+          "term": "microscopic limit",
+          "heading": false
+        },
+        {
+          "term": "probability density",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec21} The statistical properties of the random-matrix model for the massive Dirac operator with $N_f$ flavors and dynamical quark masses $M_f$ ($f=1,\\ldots,N_f$) which was introduced above are given by the probability density function \\begin{equation} P_N^{(N_f)}(W,M) \\ = \\ \\frac{1}{\\widetilde{Z}_N^{(N_f)}(M)} \\, \\prod_{f=1}^{N_f}\\det(WW^\\dagger+M_f^2) \\exp(-N\\Sigma^2{{\\rm tr}\\,} WW^\\dagger) \\label{pdf}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-construction-of-orthogonal-polynomials",
+      "number": "2.2",
+      "title": "Construction of orthogonal polynomials",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 565,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ref polcf",
+          "heading": false
+        },
+        {
+          "term": "cite bate",
+          "heading": false
+        },
+        {
+          "term": "cite jack96c",
+          "heading": false
+        },
+        {
+          "term": "qquad vdots",
+          "heading": false
+        },
+        {
+          "term": "frac prod",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "polynomials",
+          "heading": true
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec22} The polynomials $p_n^{(N_f)}(x,M)$ can be constructed by applying a standard formula~\\cite{Bate51} in the theory of orthogonal polynomials. In our case, it reads \\begin{equation} p_n^{(N_f)}(x,M) \\ = \\ \\frac{1}{Z_n^{(N_f)}(M)} \\int d[X] \\Delta_n^2(X) \\prod_{i=1}^n w^{(N_f)} (x_i,M) (x-x_i) \\ . \\label{poly} \\end{equation} This is an integral over $n$ variables $x_i$ ($i=1,\\ldots,n$). We notice that $n$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-a-duality-of-matrix-ensembles",
+      "number": "2.3",
+      "title": "A duality of matrix ensembles",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 810,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ref xdef",
+          "heading": false
+        },
+        {
+          "term": "cite guhr97a",
+          "heading": false
+        },
+        {
+          "term": "frac alpha",
+          "heading": false
+        },
+        {
+          "term": "ref partf",
+          "heading": false
+        },
+        {
+          "term": "cite guhr96b",
+          "heading": false
+        },
+        {
+          "term": "det left",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        },
+        {
+          "term": "prod det",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec23} In this section, we present an alternative derivation of the orthogonal polynomials $p_n^{(N_f)}(x,M)$ and of the partition function $Z_N^{(N_f)}(M)$. It employs a certain kind of duality between matrix ensembles and is therefore of conceptual interest. On the practical side, this method advantageously yields all normalizations, particularly the function $C_n^{(N_f)}(M)$ and the partition function",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-calculation-of-observables",
+      "number": "3",
+      "title": "Calculation of observables",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 28,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "microscopic spectral",
+          "heading": false
+        },
+        {
+          "term": "ref sec",
+          "heading": false
+        },
+        {
+          "term": "correlators",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec3} The microscopic spectral correlators, in particular the microscopic spectral density, are computed in Sec.~\\ref{sec31}. In Sec.~\\ref{sec32}, we derive the distribution of the smallest eigenvalue.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-31-microscopic-spectral-correlators-and-density",
+      "number": "3.1",
+      "title": "Microscopic spectral correlators and density",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 1117,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "microscopic spectral",
+          "heading": true
+        },
+        {
+          "term": "vdots lambda",
+          "heading": false
+        },
+        {
+          "term": "lambda prime",
+          "heading": false
+        },
+        {
+          "term": "spectral density",
+          "heading": true
+        },
+        {
+          "term": "lambda frac",
+          "heading": false
+        },
+        {
+          "term": "ref mddn",
+          "heading": false
+        },
+        {
+          "term": "sqrt lambda",
+          "heading": false
+        },
+        {
+          "term": "lambda sigma",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec31} To calculate the spectral correlations, we insert the polynomials $p_n^{(N_f)}(x,M)$ in Eq.~(\\ref{kernel}) for the kernel $K_N^{(N_f)}(x,y,M)$. The microscopic limit is obtained according to Eq.~(\\ref{eq1.1}) by rescaling energies and quark masses by $2N\\Sigma$. We define $\\lambda=2N\\Sigma \\sqrt{x}$ and $m_f=2N\\Sigma M_f$. In the limit $N\\to\\infty$, we want both $\\lambda$ and $m_f$ to be of order",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-32-distribution-of-the-smallest-eigenvalue",
+      "number": "3.2",
+      "title": "Distribution of the smallest eigenvalue",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 805,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "smallest eigenvalue",
+          "heading": true
+        },
+        {
+          "term": "frac lambda",
+          "heading": false
+        },
+        {
+          "term": "lambda prime",
+          "heading": false
+        },
+        {
+          "term": "sqrt lambda",
+          "heading": false
+        },
+        {
+          "term": "ref cnfm",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "microscopic scale",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec32} In lattice simulations, the performance of an algorithm is frequently determined by the magnitude of the smallest eigenvalue. It is therefore of interest to compute an analytical result for the distribution of the smallest eigenvalue, $P^{(N_f)}(\\lambda_{\\rm min},m)$, in the framework of RMT. This is the subject of this section. The RMT result should be universal and identical with that of full QCD",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-4-discussion",
+      "number": "4",
+      "title": "Discussion",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 609,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "microscopic quantities",
+          "heading": false
+        },
+        {
+          "term": "cite berb97a",
+          "heading": false
+        },
+        {
+          "term": "analytical information",
+          "heading": false
+        },
+        {
+          "term": "microscopic spectral",
+          "heading": false
+        },
+        {
+          "term": "smallest eigenvalue",
+          "heading": false
+        },
+        {
+          "term": "lattice algorithms",
+          "heading": false
+        },
+        {
+          "term": "chiral limit",
+          "heading": false
+        },
+        {
+          "term": "rmt",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec4} We have computed the microscopic spectrum of the massive QCD Dirac operator, including the microscopic spectral density and the distribution of the smallest eigenvalue, for an arbitrary number of flavors, arbitrary quark masses, and arbitrary topological charge. Our results generalize the previously known results for the microscopic correlations in the chiral limit \\cite{Verb93}. The distribution of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "12",
+      "words": 449,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bibitem",
+          "heading": false
+        },
+        {
+          "term": "verbaarschot",
+          "heading": false
+        },
+        {
+          "term": "short dashes",
+          "heading": false
+        },
+        {
+          "term": "long dashes",
+          "heading": false
+        },
+        {
+          "term": "centerline psfig",
+          "heading": false
+        },
+        {
+          "term": "nucl",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "psfig figure",
+          "heading": false
+        }
+      ],
+      "extract": "It is a pleasure to thank P.H. Damgaard, J.J.M. Verbaarschot, and H.A. Weidenm\\\"uller for stimulating discussions. T. Wettig acknowledges the hospitality of the MPI Heidelberg. This work was supported in part by DFG grant We 655/11-2. \\begin{references} \\bibitem{Bank80} T. Banks and A. Casher, Nucl. Phys. B 169 (1980) 103. \\bibitem{Shur93} E.V. Shuryak and J.J.M. Verbaarschot, Nucl. Phys. A 560 (1993) 306.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "microscopic spectral",
+      "heading": true
+    },
+    {
+      "term": "microscopic limit",
+      "heading": true
+    },
+    {
+      "term": "lambda sigma",
+      "heading": false
+    },
+    {
+      "term": "microscopic spectrum",
+      "heading": false
+    },
+    {
+      "term": "microscopic quantities",
+      "heading": false
+    },
+    {
+      "term": "frac lambda",
+      "heading": false
+    },
+    {
+      "term": "lambda prime",
+      "heading": false
+    },
+    {
+      "term": "microscopic scale",
+      "heading": false
+    },
+    {
+      "term": "spectral density",
+      "heading": true
+    },
+    {
+      "term": "chiral random-matrix",
+      "heading": false
+    },
+    {
+      "term": "frac prod",
+      "heading": false
+    },
+    {
+      "term": "quark masses",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Microscopic spectral density for two degenerate ﬂavors of rescaled mass m = 5 (solid line), in the chiral limit (short dashes), and in the quenched approximation (long dashes)",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Distribution of the smallest eigenvalue for two degenerate ﬂavors of rescaled mass m = 5 (solid line), in the chiral limit (short dashes), and in the quenched approximation (long dashes)",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 10,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "2 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-th-9711057v2"
+  }
+}

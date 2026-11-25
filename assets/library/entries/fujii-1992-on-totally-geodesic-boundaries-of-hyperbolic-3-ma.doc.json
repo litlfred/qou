@@ -1,0 +1,437 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma",
+  "title": "fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma",
+  "variant": "pdf",
+  "pages": 14,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "An ideal tetrahedral decomposition of a hyperbolic 3-manifold with two torus cusps.",
+      "number": "1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-an-ideal-tetrahedral-decomposition-of-a-hyperb"
+    },
+    {
+      "level": 2,
+      "title": "UdC",
+      "number": "F",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-f-udc"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 721,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "geodesic boundary",
+          "heading": false
+        },
+        {
+          "term": "geodesic boundaries",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic dehn",
+          "heading": false
+        },
+        {
+          "term": "cusp torus",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifold",
+          "heading": false
+        },
+        {
+          "term": "dehn surgery",
+          "heading": false
+        },
+        {
+          "term": "complete hyperbolic",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic surfaces",
+          "heading": false
+        }
+      ],
+      "extract": "M. FUJJI KODAI MATH. J. 15 (1992), 244-257 ON TOTALLY GEODESIC BOUNDARIES OF HYPERBOLIC 3-MANIFOLDS By MICHIHIKO FUJII Introduction. By a hyperbolic manifold, we will mean a Riemannian manifold with con- stant sectional curvature —1. In this paper, we study complete oriented hy- perbolic 3-manifolds each of which has a totally geodesic boundary. A totally geodesic boundary of such a 3-manifold becomes a hyperbolic",
+      "extractCut": true,
+      "blocks": [
+        "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-an-ideal-tetrahedral-decomposition-of-a-hyperb",
+      "number": "1",
+      "title": "An ideal tetrahedral decomposition of a hyperbolic 3-manifold with two torus cusps.",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1671,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ideal tetrahedral",
+          "heading": true
+        },
+        {
+          "term": "hyperbolic manifold",
+          "heading": true
+        },
+        {
+          "term": "torus cusps",
+          "heading": true
+        },
+        {
+          "term": "michihiko fuji",
+          "heading": false
+        },
+        {
+          "term": "toral ends",
+          "heading": false
+        },
+        {
+          "term": "framed toral",
+          "heading": false
+        },
+        {
+          "term": "ideal polyhedron",
+          "heading": false
+        },
+        {
+          "term": "toral end",
+          "heading": false
+        }
+      ],
+      "extract": "two torus cusps. In this section, we construct a 3-manifold M which has a complete hyperbolic structure with one torus cusp and connected totally geodesic boundary Σ of genus 2 and then concretely find out an ideal tetrahedral decomposition of the double DM of M along dM (there exists at least one such a decomposition by [2]). Let S be an ideal tetrahedron in the hyperbolic 3-space H 3. Namely, 5 is a geodesic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-f-udc",
+      "number": "F",
+      "title": "UdC",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1582,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyperbolic dehn",
+          "heading": false
+        },
+        {
+          "term": "geodesic boundaries",
+          "heading": false
+        },
+        {
+          "term": "dehn surgery",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifolds",
+          "heading": false
+        },
+        {
+          "term": "geodesic boundary",
+          "heading": false
+        },
+        {
+          "term": "toral end",
+          "heading": false
+        },
+        {
+          "term": "torus cusp",
+          "heading": false
+        },
+        {
+          "term": "complete hyperbolic",
+          "heading": false
+        }
+      ],
+      "extract": "2 — 1)ZS4Z86 = 0 , TOTALLY GEODESIC BOUNDARIES OF HYPERBOLIC 3-MANIFOLDS fιι>:=Zt(zi,—ΐ){zu—ί)—(zl,— ΐ){zSi—l)zt,zti=O, fii /i. fu fu fu /l. Λ. Λ. fvL J23 fu /., /,. /.T /28 /2ί / . . 253 a — 1 > 3 3 = 0 , 1)—Ui- 3i —1)=0, — 1)220*24 = M 1 = 0 , = 2 β(2 2 β—l)2 2i(2 β = 24(25—1 = (Z26 — l)(2sβ— 6—1)284 2 —1)(2 8 6 — l ) 2 s β = 0 . From the definitions of //s, for any z in a certain open neighborhood (7 of the",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [
+      "figure 1.1"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "hyperbolic dehn",
+      "heading": false
+    },
+    {
+      "term": "toral ends",
+      "heading": false
+    },
+    {
+      "term": "geodesic boundaries",
+      "heading": false
+    },
+    {
+      "term": "geodesic boundary",
+      "heading": true
+    },
+    {
+      "term": "cusp torus",
+      "heading": true
+    },
+    {
+      "term": "toral end",
+      "heading": false
+    },
+    {
+      "term": "dehn surgery",
+      "heading": false
+    },
+    {
+      "term": "framed toral",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic manifold",
+      "heading": true
+    },
+    {
+      "term": "complete hyperbolic",
+      "heading": false
+    },
+    {
+      "term": "michihiko fujπ",
+      "heading": false
+    },
+    {
+      "term": "hyperbolic structure",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1.2",
+      "title": "The vertices O are ideal ones. All boundary faces of this polyhedron are all totally geodesic. All dihedral angles are π/2. Right-angled sixteen quadrilaterals with two ideal vertices are isometric to each other. The totally geodesic boundary Σ of M consists of the two right-angled octagons",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1.3",
+      "title": "GlueΛ toC;, B[ to",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.1",
+      "title": "The cusp torus corresponding to S\\ developed on complex plane with the oriented base ri, τ2 for the lattice A drawn in",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.2",
+      "title": "The fundamental domain for the flat torus",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 2,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 3,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "4 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p10); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 3 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-ma"
+  }
+}

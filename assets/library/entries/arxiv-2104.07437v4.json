@@ -1,0 +1,481 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2104.07437v4",
+  "blocks": [
+    {
+      "id": "library/arxiv-2104.07437v4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Prepared for submission to JHEP\nPeacock patterns and new integer\ninvariants in topological string theory\nJie Gua,b and Marcos Mari˜noa\naD´epartement de Physique Th´eorique et Section de Math´ematiques\nUniversit´e de Gen`eve, Gen`eve, CH-1211 Switzerland\nbShing-Tung Yau Center and School of Physics\nSoutheast University, Nanjing 210096, China\nE-mail: Jie.Gu@unige.ch, Marcos.Marino@unige.ch\nAbstract: Topological string theory near the conifold point of a Calabi–Yau threefold gives\nrise to factorially divergent power series which encode the all-genus enumerative information.\nThese series lead to i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.07437v4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "One of the most fruitful applications of supersymmetry to geometry is the possibility to define and compute enumerative invariants \nbased on the counting of BPS states. This idea goes back to Witten's index \\cite{witten-index} and has led to many important developments, \nlike the Gopakumar--Vafa invariants of Calabi--Yau threefolds \\cite{gv} or the DGG index of three-dimensional \nmanifolds \\cite{dgg-index}. More recently, through the study of their wall-crossing properties \\cite{KS-wall}, \nit has been understood that BPS invariants can be formulated in a more analytic framework, based e.g. on",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.07437v4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Defining the new invariants",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-2-defining-the-new-invariants.md",
+      "narrative": null,
+      "content": "Deﬁning the new invariants",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.07437v4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Perturbative series in topological string theory",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-21-perturbative-series-in-topological-string-the.md",
+      "narrative": null,
+      "content": "In this section, $X$ will be a CY threefold, compact or non-compact. \nWe will denote by $\\boldsymbol{T}=(T_1, \\cdots, T_r)$ its complexified K\\\"ahler moduli. In the case of toric CY threefolds, K\\\"ahler moduli can be of two types: ``true\" moduli, denoted by $\\bt$, or mass parameters $\\bm=(m_1, \\cdots, m_s)$ (see e.g. \\cite{hkp}). In topological string theory, the basic \nobjects are the genus $g$ free energies $F_g (\\bT)$, which can be regarded as generating functions of \nGromov--Witten invariants at genus $g$:\n\n\\be\n\\label{gw-series}\nF_g(\\bT)= \\sum_{\\bd} N_{g, \\bd}\\, \\re^{-\\bd \\cdot \\bT}. \n\\ee",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.07437v4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Resurgence and Stokes constants",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-22-resurgence-and-stokes-constants.md",
+      "narrative": null,
+      "content": "\\label{sc:resurg}\n\nFormal power series with factorial growth lead, under some assumptions, to a universal mathematical structure \ndescribed by the theory of resurgence, see ~\\cite{abs,msauzin} for a formal description and \\cite{mmbook,mmlargen} for applications \nin gauge and string theory. This mathematical structure involves a family of numerical data called Stokes constants. \nWhen the perturbative series under consideration \nare topological invariants of some underlying geometric object, the corresponding Stokes constants lead to \nnumerical, topological invariants. Surprisingly, these \ninvar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.07437v4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stokes constants in topological string theory",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-23-stokes-constants-in-topological-string-theory.md",
+      "narrative": null,
+      "content": "\\label{sc:S-topo}\n\nThe Stokes constants defined above can be finite or infinite in number, depending on the cardinality of the set $\\Omega$ which labels the basic trans-series of the model. \nThey are, in general, complex numbers. In the case of asymptotic series associated to \nirregular singularities of non-linear ODEs, like the Painlev\\'e equations, there is an infinite number of Stokes constants, and they are transcendental numbers. In many examples of linear ODEs, the Stokes constants are a finite set of integers. However, there is a third category of examples involving {\\it infinitely many",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.07437v4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-005-3-examples.md",
+      "narrative": null,
+      "content": "Examples\nWe will now present some non-trivial examples of the above construction, focusing on the case\nof toric CY manifolds3. A very useful tool in the determination of the Stokes constants deﬁned",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.07437v4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The TS/ST correspondence",
+      "pageStart": 11,
+      "pageEnd": 15,
+      "target": "../sections/sec-006-31-the-tsst-correspondence.md",
+      "narrative": null,
+      "content": "\\label{tsst-subsec}\n\nThe simplest case of the TS/ST correspondence corresponds to the case of toric CYs $X$ with one  \nsingle true modulus, and we will only consider this type of \nexamples in this paper. In this case, the mirror curve $\\Sigma_X$ has genus one. As shown in \n\\cite{ghm}, there is a canonical way to obtain an operator on $L^2(\\IR)$, \n$\\rho_X$, by Weyl quantization of this curve. The mass parameters of $X$ become parameters of the operator $\\rho_X$. \nThe quantization procedure introduces a Planck constant $\\hbar \\in \\IR_{>0}$. It can be shown that, for \nappropriate values of the ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.07437v4/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Local F0",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-007-32-local-f0.md",
+      "narrative": null,
+      "content": "by results in the 4d limit of the theory [78], it has been suggested that q-Painlev´e equations could\nplay such a rˆole [79], but a complete description is still lacking. Recently, and following the same\nphilosophy, [80] obtained a “wave equation” in the case of the resolved conifold. Connections\nbetween partition functions in the 4d case and integrable equations have been also studied in\n[81–83].\n3.2\nLocal F0\nThe ﬁrst example we consider is the canonical bundle over the Hirzebruch surface F0 = P1 × P1,\nwhich is also called the local F0 geometry,\nX = O(−2, −2) →P1 × P1.\n(3.11)\nThis geometry is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.07437v4/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The first resurgent structure",
+      "pageStart": 16,
+      "pageEnd": 20,
+      "target": "../sections/sec-008-321-the-first-resurgent-structure.md",
+      "narrative": null,
+      "content": "By using the free energies \\eqref{eq:CF0-F0}--\\eqref{eq:CF2-F0} we can construct the first asymptotic series for $N=1$ by\n\n\\eqref{phiN}\n\\begin{equation}\n  \\Phi_{0;1}(g_s) = \\re^{\\CV_{\\IF_0}/g_s}\\varphi_{0;1}(g_s),\n\\end{equation}\nwhere\n\\begin{equation}\n  \\CV_{\\IF_0} = \\frac{2C}{\\pi^2},\n\\end{equation}\nand\n\\begin{equation}\n  \\varphi_{0;1}(g_s) =\n  1+\\frac{\\pi^2}{24}g_s + \\frac{73\\pi^4}{1152}g_s^2 +\\frac{13541 \\pi ^6\n   g_s^3}{414720}+\\frac{855509 \\pi ^8 g_s^4}{39813120}+\\frac{150067879 \\pi ^{10}\n   g_s^5}{6688604160} +\\ldots.\n\\end{equation}\nSince we are only concerned with $N=1$, we will suppress",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.07437v4/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spectral trace and its factorisation",
+      "pageStart": 20,
+      "pageEnd": 24,
+      "target": "../sections/sec-009-322-spectral-trace-and-its-factorisation.md",
+      "narrative": null,
+      "content": "\\label{sc:block-F0}\n\nAccording to the TS/ST correspondence \\cite{ghm,cgm}, we should\npromote the mirror curve \\eqref{eq:mirrorF0} to the difference\noperator\n\n\\begin{equation}\n  \\CO_{\\IF_0}(m_{\\IF_0}) = \\re^{\\ms{x}} + m_{\\IF_0} \\re^{-\\ms{x}} +\n  \\re^{\\ms{y}} + \\re^{-\\ms{y}},\n\\end{equation}\n\nwhere $\\ms{x}$ and $\\ms{y}$ are Heisenberg operators, satisfying the commutation\nrelation\n\\begin{equation}\n  [\\ms{x}, \\ms{y}] = \\ri\\hbar.\n\\end{equation}\nThen the inverse operator $\\rho_{\\IF_0} = \\CO_{\\IF_0}^{-1}$ is of\ntrace class \\cite{kama} and its Fredholm determinant as well as\nfermionic spectral traces",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.07437v4/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Radial asymptotic analysis",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-010-323-radial-asymptotic-analysis.md",
+      "narrative": null,
+      "content": "One of the important lessons we learned from \\cite{ggm1,ggm2} is that\nit is often helpful to study the asymptotic behavior of the\nanti-holomorphic blocks\\footnote{In \\cite{ggm1,ggm2} one studies the asymptotics of\n  holomorphic blocks in the opposite limit $\\bb^2\\rightarrow 0$, which corresponds to the semiclassical regime.} in the limit\n$g_s \\propto -\\bb^{-2} \\rightarrow 0$ along a ray\n$\\re^{\\ri\\theta}\\IR_+$, which depends crucially on the angle $\\theta$.\nOftentimes, it is possible to promote these radial asymptotic behavior\nof anti-holomorphic blocks to exact representations of them in terms",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.07437v4/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relation to q-Painlevé",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "../sections/sec-011-324-relation-to-q-painlevé.md",
+      "narrative": null,
+      "content": "Relation to q-Painlev´e\nIn [79], it has been conjectured that the spectral determinant of local F0 satisﬁes a q-deformed\nPainlev´e equation, which is a diﬀerence equation involving the mass parameter ξ. This leads to\nq-diﬀerence equations for the spectral traces. Since we have an explicit expression for the ﬁrst\ntrace in terms of q-hypergeometric functions given by (3.55), it is natural that the q-Painlev´e\nequation maps to the q-diﬀerence equation satisﬁed by the q-hypergeometric function. We will\nnow explicitly show that this is the case.\n– 24 –\nIn the notation used above, the q-diﬀerence eq",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.07437v4/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Local P2",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-012-33-local-p2.md",
+      "narrative": null,
+      "content": "satisﬁes the following q-diﬀerence equation9\nz(c −abqz)D2\nqΦ +\n\u00121 −c\n1 −q + (1 −a)(1 −b) −(1 −abq)\n1 −q\nz\n\u0013\nDqΦ −(1 −a)(1 −b)\n(1 −q)2\nΦ = 0,\n(3.94)\nwhere\nDf(z) = f(z) −f(zq)\n(1 −q)z\n.\n(3.95)\nIt is easy to see that, when a = b = −1, c = q, the equation (3.94) becomes (3.91), after setting\nq →˜q.\n3.3\nLocal P2\nThe next example we consider is the canonical bundle over the surface P2, which is also called\nthe local P2 geometry,\nX = O(−3) →P2.\n(3.96)\nThis geometry is also toric and it is described by the toric diagram in Fig. 6. There is one\ntrue K¨ahler modulus corresponding to the internal vertex",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.07437v4/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The first resurgent structure",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "../sections/sec-013-331-the-first-resurgent-structure.md",
+      "narrative": null,
+      "content": "The ﬁrst resurgent structure\nFrom the free energies Fg(λ) we assemble the series for N = 1\nΦ0;1(gs) = exp\n\u0012VP2\ngs\n\u0013\nϕ0;1(gs),\n(3.100)\nwith\nVP2 = 3V\n4π2\n(3.101)\nand\nϕ0;1(gs) = 1 −π2gs\n6\n√\n3 + π4g2\ns\n216 + 59π6g3\ns\n19440\n√\n3 −251π8g4\ns\n1399680 −23687π10g5\ns\n58786560\n√\n3 + 785699π12g6\ns\n31744742400 + . . . . (3.102)\nThe resurgent structure of Φ0;1(gs) is very simple. The Borel transform bΦ0;1(ζ) has inﬁnitely\nmany singularities along the imaginary axis located at\nin,\nn ∈Z̸=0,\n(3.103)\nas illustrated in Fig. 7. They correspond to the asymptotic series in the same family as Φ0;1(gs)\nΦ0,n;1(gs) = Φ0;",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.07437v4/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The second resurgent structure",
+      "pageStart": 30,
+      "pageEnd": 34,
+      "target": "../sections/sec-014-332-the-second-resurgent-structure.md",
+      "narrative": null,
+      "content": "We can use the conifold free energies\n\nto construct the formal power\nseries $\\Phi_{0;2}(g_s)$ at $N=2$. Instead we will consider the\nfollowing normalised series\\footnote{The fact that the normalised\n  series has no exponential factor indicates that the leading\n  contribution to $\\Phi_{0;2}(g_s)\\sim Z_2(\\hbar)$ is indeed\n  $\\exp(2\\CV_{\\IP^2}/g_s)$ as predicted by \\eqref{vc-cy}.}\n  \n\\begin{equation}\n\\ba\n  \\Phi'_{0;2}(g_s) &= 1 +\n  \\frac{8\\pi^2g_s}{9\\sqrt{3}}\\frac{\\Phi_{0;2}(g_s)}{\\Phi_{0;1}(g_s)^2}= \\sum_{n \\ge 0} a_n g_s^n\\\\\n  &\n  =1+ \\frac{8\\pi^2g_s}{9 \\sqrt{3}}\n  +\\frac{16\\pi^4g_s^2}{81} + \\f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.07437v4/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Second spectral trace and its factorisation",
+      "pageStart": 34,
+      "pageEnd": 38,
+      "target": "../sections/sec-015-333-second-spectral-trace-and-its-factorisation.md",
+      "narrative": null,
+      "content": "\\label{sc:block-P2}\n\nThe TS/ST correspondence allows us to write down an integral\nrepresentation of the second trace. In principle the second bosonic\ntrace $\\tr\\rho_{\\IP^2}^2$ involves a double integral of a product of\nthe integral kernel \\eqref{eq:iker-P2}, but it was shown in\n\\cite{kama} that it can be converted into a\none-dimensional integral.  Using the result of the first trace\n\\eqref{eq:tr1-P2}, this translates into the following integral\nrepresentation of the normalised second trace\n\n\\begin{equation}\n  \\tr' \\rho_{\\IP^2}^2 =\n  \\sqrt{3}\\bb\\frac{\\fad(-\\frac{\\ri\\bb}{6}-\\frac{\\ri\\bb^{-1}}{2}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.07437v4/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Radial asymptotic analysis for the second trace",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "../sections/sec-016-334-radial-asymptotic-analysis-for-the-second-tr.md",
+      "narrative": null,
+      "content": "\\label{sc:rasym-P2}\n\nWe study here the representation of the anti-holomorphic blocks in\nterms of Borel resummation of asymptotic series.\nIn general, we find\n\\begin{equation}\n  \\ri\\sqrt{3}\n  \\begin{pmatrix}\n    \\wt{H}_0(\\tq)\\\\\n    -\\frac{27}{4\\pi^2g_s^2}q^{1/3}\\wt{H}_1(\\tq)\n  \\end{pmatrix}\n  =\n  M_R(q) s_R\n  \\begin{pmatrix}\n    \\Phi_{0;2}\\\\\n    -\\frac{1}{3}q^{1/6}\\Phi_{1;2}\n  \\end{pmatrix}(g_s)\n  \\label{eq:rasym-P2}\n\\end{equation}\nwith\n\\begin{equation}\n  M_R(q) =   \\begin{pmatrix}\n    1 & M^{R}_{01}(q)\\\\\n    0 & M^{R}_{11}(q)\n  \\end{pmatrix}\n\\end{equation}\n\nwhere $M_{01}^R(q), M_{11}^R(q)$ are",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.07437v4/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "../sections/sec-017-4-conclusions.md",
+      "narrative": null,
+      "content": "\\label{sec-conclude}\nIn this paper we have identified an infinite family of asymptotic power series arising naturally in topological string theory, \nby considering the conifold free energies and ``quantizing\" the flat coordinates. We have argued that these series are the analogues of conventional perturbative expansions in the coupling constant in finite rank gauge theories. \nWe have conjectured that the resurgent structure of these series are encoded in ``peacock patterns\", namely, infinite towers of singularities \nin the Borel plane with {\\it integer} Stokes constants. The latter can then be",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.07437v4/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Quantum dilogarithm and q-series",
+      "pageStart": 41,
+      "pageEnd": 41,
+      "target": "../sections/sec-018-a-quantum-dilogarithm-and-q-series.md",
+      "narrative": null,
+      "content": "Quantum dilogarithm and q-series\nA.1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.07437v4/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.1 Faddeev's non-compact quantum dilogarithm",
+      "pageStart": 41,
+      "pageEnd": 43,
+      "target": "../sections/sec-019-a1-faddeevs-non-compact-quantum-dilogarithm.md",
+      "narrative": null,
+      "content": "The quantum dilogarithm Φb(x) is deﬁned in the strip |Imz| < |Im cb| as [96, 97]\nΦb(x) = exp\n\u0012Z\nR+iϵ\ne−2ixz\n4 sinh(zb) sinh(zb−1)\ndz\nz\n\u0013\n,\n(A.1)\nwhich can be analytically continued to all values of b with b2̸ ∈R≤0. When Im b2 > 0, the\nintegral can be evaluated explicitly and one ﬁnds\nΦb(x) =\n(e2πb(x+cb); q)∞\n(e2πb−1(x−cb); ˜q)∞\n,\n(A.2)\nwhere\nq = e2πib2,\n˜q = e−2πib−2,\nIm(b2) > 0\n(A.3)\nand\ncb = i\n2\n\u0000b + b−1\u0001\n.\n(A.4)\nFrom this inﬁnite product representation, one ﬁnds that Φb(x) is a meromorphic function of x\nwith\npoles: xm,n = cb + imb + inb−1,\nzeros: −cb −imb −inb−1 ,\nm, n ∈N.\n(A.5)\n– 40 –\nThe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.07437v4/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.2 Compact quantum dilogarithm",
+      "pageStart": 43,
+      "pageEnd": 43,
+      "target": "../sections/sec-020-a2-compact-quantum-dilogarithm.md",
+      "narrative": null,
+      "content": "Compact quantum dilogarithm\nThe compact quantum dilogarithm is deﬁned by [97]\n(qx; q)∞=\nY\nn≥1\n(1 −xqn) ,\n|q| < 1,\n(A.17)\nand is an entire function of x. It has an asymptotic expansion around q a root of unity. The\nexpansion around q = 1 is given by\nlog(qx; q)∞=\nX\nn≥0\nBn(1)ℏn−1\nn!\nLi2−n(x),\n(A.18)\nwhere\nq = eℏ,\n(A.19)\nand Bn(z) is the Bernoulli polynomial, deﬁned by the generating function\nezt\net −1 =\nX\nn≥0\nBn(z)tn−1\nn! .\n(A.20)\nIn general, for arbitrary s ∈Z and x̸ = 1, one has\nlog(qsx; q)∞=\n∞\nX\nn=0\nℏn−1 Bn(s)\nn!\nLi2−n(x).\n(A.21)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.07437v4/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.3 q-series",
+      "pageStart": 43,
+      "pageEnd": 44,
+      "target": "../sections/sec-021-a3-q-series.md",
+      "narrative": null,
+      "content": "q-series\nThe q-hypergeometric function is deﬁned by\nr+1φs\n\u0012a0, a1, · · · , ar\nb1, b2, · · · , bs; q, z\n\u0013\n=\n∞\nX\nn=0\n(a0; q)n(a1; q)n · · · (ar; q)n\n(q; q)n(b1; q)n · · · (bs; q)n\n\u0010\n(−1)nq(n\n2)\u0011s−r\nzn.\n(A.22)\n– 42 –\nHeine’s ﬁrst transformation for the (2, 1) q-hypergeometric series reads\n2φ1\n\u0012a,\nb\nc ; q, z\n\u0013\n= (b; q)∞(az; q)∞\n(c; q)∞(z; q)∞\n2φ1\n\u0012c/b,\nz\naz\n; q, b\n\u0013\n.\n(A.23)\nThe q-Appell function Φ(1)(a; b, b′; c; q; x, y) is deﬁned by\nΦ(1)(a; b, b′; c; q; x, y) =\nX\nm,n≥0\n(a; q)m+n(b; q)m(b′; q)n\n(q; q)m(q; q)n(c; q)m+n\nxmyn.\n(A.24)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.07437v4/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B Fast algorithm for the second resurgent structure of local P2",
+      "pageStart": 44,
+      "pageEnd": 45,
+      "target": "../sections/sec-022-b-fast-algorithm-for-the-second-resurgent-struct.md",
+      "narrative": null,
+      "content": "Fast algorithm for the second resurgent structure of local P2\nIn this section we present a fast algorithm to compute the asymptotic series Φ0;2(gs) for the\ngeometry of local P2.\nWe ﬁnd from (3.171) that the series Φ0;2(gs) appears in the asymptotic analysis of the\nanti-holomorphic block eH0(˜q) given by (3.165a). This is actually also true for the partial anti-\nholomorphic block\neHpart\n0\n(˜q) = 3φ2\n\u0012 wa, wa, ˜q\nw−1\na ˜q, w−1\na ˜q; ˜q, w−1\na ˜q\n\u0013\n−3φ2\n\u0012 wa, wa, ˜q\nw−1\na ˜q, w−1\na ˜q; ˜q, ˜q\n\u0013\n.\n(B.1)\nWe show that it is possible to extract the series Φ0;2(gs) from this partial anti-holomorphic b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2104.07437v4/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "C Hunter-Guerrieri algorithm",
+      "pageStart": 45,
+      "pageEnd": 52,
+      "target": "../sections/sec-023-c-hunter-guerrieri-algorithm.md",
+      "narrative": null,
+      "content": "Hunter-Guerrieri algorithm\nThe Hunter-Guerrieri algorithm [87] is concerned with the following problem. Let p(ζ) be a\nfunction analytic at the origin which has the following expansion\np(ζ) =\n∞\nX\nn=0\npnζn.\n(C.1)\nLet us suppose that the singularities of p(ζ) which are closest to the origin are located at ζω and\nζ∗\nω, which are complex conjugate to each other. Suppose that, at these two singular points, p(ζ)\nhas the following expansion\np(ζω + ξ) =(−ξ/ζω)−νr(ξ) + regular,\n(C.2a)\np(ζ∗\nω + ξ) =(−ξ/ζ∗\nω)−νr∗(ξ) + regular,\nν̸ ∈Z,\n(C.2b)\n– 44 –\nwhere\nr(ξ) =\n∞\nX\nk=0\nbkξk\n(C.3)\nDarboux’ theorem [98, 99]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

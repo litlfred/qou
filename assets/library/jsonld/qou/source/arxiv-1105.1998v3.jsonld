@@ -1,0 +1,62 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1105.1998v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1105.1998v3",
+  "contains": [
+    "library/arxiv-1105.1998v3/sections/sec-front-matter",
+    "library/arxiv-1105.1998v3/sections/sec-000",
+    "library/arxiv-1105.1998v3/sections/sec-001",
+    "library/arxiv-1105.1998v3/sections/sec-002",
+    "library/arxiv-1105.1998v3/sections/sec-003",
+    "library/arxiv-1105.1998v3/sections/sec-004",
+    "library/arxiv-1105.1998v3/sections/sec-005",
+    "library/arxiv-1105.1998v3/sections/sec-006",
+    "library/arxiv-1105.1998v3/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "A Connection Formula of the Hahn-Exton q-Bessel Function — We show a connection formula of the Hahn–Exton q-Bessel function around the origin and the infinity.\n\n**A Connection Formula of the Hahn-Exton q-Bessel Function**\n\n*SIGMA 7 (2011), 115, 11 pages*\n\n11 pp, 9 sections.\n\n**Abstract.** We show a connection formula of the Hahn–Exton q-Bessel function around the origin and the infinity. We introduce the q-Borel transformation and the q-Laplace transformation following C. Zhang to obtain the connection formula. We consider the limit p →1−of the connection formula.\n\n**Outline.** Front matter; 1 Introduction; 2 The connection formula; 2.1 The theta function of Jacobi; 2.2 The Hahn-Exton q-Bessel function; 2.3 The p-Borel transformation and the p-Lapla; 3 The limit of the connection formula; 3.1 Limit of the connection formula; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1105.1998&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1105.1998v3",
+    "title_source": "slug",
+    "source_file": "1105.1998v3.pdf",
+    "source_sha256": "daf3bffad8eb2749fdfcc69cde5ee683ab90c9a7f3007930e1b37b8d0da9e59a",
+    "pages": 11,
+    "arxiv": {
+      "id": "1105.1998",
+      "version": "3",
+      "primary_class": "math.CA",
+      "stamp_date": "16 Dec 2011"
+    },
+    "doi": "10.3842/SIGMA.2011.115",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

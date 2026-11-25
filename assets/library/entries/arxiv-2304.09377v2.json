@@ -1,0 +1,799 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2304.09377v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\nIn this paper, which is a companion of [32], we want to tell a story about q-series and quantum\ninvariants of knots that seems to us very interesting. The story started 11 years ago with the\nchallenge to compute the asymptotic expansion at q →1 of a q-hypergeometric series that\nappeared in the evaluation of a tetrahedron quantum spin network. As it turned out, when\nq = e2πiτ with τ tending to zero on the positive imaginary axis, the asymptotics were oscillatory\n(with approximate oscillation 0.32306), and after some experimentation, it was found that the\noscillation was given by th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Symmetry, Integrability and Geometry: Methods and Applications\nSIGMA 19 (2023), 082, 39 pages\nKnots and Their Related q-Series\nStavros GAROUFALIDIS a and Don ZAGIER bc\na) International Center for Mathematics, Department of Mathematics,\nSouthern University of Science and Technology, Shenzhen, P.R. China\nE-mail: stavros@mpim-bonn.mpg.de\nURL: http://people.mpim-bonn.mpg.de/stavros\nb) Max Planck Institute for Mathematics, Bonn, Germany\nE-mail: dbz@mpim-bonn.mpg.de\nURL: http://people.mpim-bonn.mpg.de/zagier\nc) International Centre for Theoretical Physics, Trieste, Italy\nReceived April 25, 2023, in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "How the q-series arise",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-how-the-q-series-arise.md",
+      "narrative": null,
+      "content": "How the q-series arise",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The quantum modularity conjecture",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-21-the-quantum-modularity-conjecture.md",
+      "narrative": null,
+      "content": "The quantum modularity conjecture\nIn this section, we tell the rather amusing story of how we purely accidentally found a q-series\nwhose asymptotics near roots of unity agreed with the divergent perturbative series arising from\nthe volume conjecture and the quantum modularity conjecture for the 41 knot, and how a series\nof further numerical experiments led to the final picture that is described in this paper.\nA knot K has two famous quantum invariants, the (colored) Jones polynomial JK\nN (q) ∈\nZ\n\u0002\nq, q−1\u0003\nand the Kashaev invariant ⟨K⟩N ∈Q for N ∈N. (Both definitions will be omitted since\nthey",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A q-series G_0(q)",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-22-a-q-series-g-0q.md",
+      "narrative": null,
+      "content": "The surprising discovery that we made, completely by accident, is that there is a close connection\nbetween the asymptotic expression occurring here and the radial asymptotics of the function in\nthe unit disk defined by\nG0(q) = (q; q)∞\n∞\nX\nn=0\n(−1)n qn(3n+1)/2\n(q; q)3n\n= 1 −q −2q2 −2q3 −2q4 + q6 + · · · .\n(2.4)\nThe infinite sum in (2.4) occurred in the work of the first author on the stability of the coefficients\nof the evaluation of the regular quantum spin network [21, Section 7], and in the course of\na numerical investigation of its asymptotics as q →1 we discovered empirically the following",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prop-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "prop-sec-004-02.md",
+      "narrative": null,
+      "content": "Nonetheless, when we performed experiments no relation between the series Ind41(q) and G0(q)2 was observed.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The index, the state integral and a second q-series G_1(q)",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-23-the-index-the-state-integral-and-a-second-q-s.md",
+      "narrative": null,
+      "content": "The index, the state integral and a second q-series G1(q)\nAfter describing the radial asymptotics of G0(q) at roots of unity, our next step was to look\nfor a connection between the power series G0(q) and the index of 41. The index is an invariant\nof suitable ideal triangulation introduced in [11, 12]. Necessary and sufficient conditions for its\nconvergence were established in [20] and its topological invariance was proven in [25], leading\nin particular to an invariant IndK(q) for any knot K\n\u0000in equation (2) of [25], this invariant was\ndenoted by Itot\nK (q)\n\u0001\n. The index is defined as a sum ove",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/thm-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[27]",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "thm-sec-004-01.md",
+      "narrative": null,
+      "content": "When Im(τ) > 0, we have 2i(˜q/q)1/24Z41(τ) = τ 1/2G1(q)G0(˜q) −τ −1/2G0(q)G1(˜q), (2.11) where q = e2πiτ and ˜q = e−2πi/τ. The coefficients of G0(q) and G1(q) can be computed easily using that G0(q) = ∞ X m=0 Tm(q), G1(q) = ∞ X m=0 Rm(q)Tm(q), (2.12) where Tm(q) and Rm(q) are given by the recursion Tm(q) = − qm (1 −qm)2 Tm−1(q), Rm(q) = Rm−1(q) + 21 + qm 1 −qm with initial conditions T0(1) = 1 and R0(q) = E1(q). For instance, we find G1(q) = 1 −7q −14q2 −8q3 −2q4 + 30q5 + 43q6 + 95q7 + 109q8 + 137q9 + 133q10 + 118q11 + 20q12 −64q13 −232q14 −468q15 −714q16 −1010q17 −1324q18 −1632q19 −1878q20 +",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Holomorphic functions in C setminus R",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-24-holomorphic-functions-in-c-setminus-r.md",
+      "narrative": null,
+      "content": "The relation of the q-series G0 and G1 with the state integral given in equation (2.11) brings out\none more aspect to the q-series G0 and G1, namely their extension outside the unit disk |q| > 1.\nThis happens because on the one hand the state integral satisfies the symmetry\nZ41(τ) = Z41\n\u0000τ −1\u0001\n,\nτ ∈C \\ R\n(which in turn follows from the corresponding symmetry of Faddeev’s quantum dilogarithm),\nand on the other hand the state integral is factorized in terms of explicit q-hypergeometric\nseries, which are guaranteed to be convergent when |q|̸ = 1. Indeed, the summand in last part\nof equation (2.6)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "q-series and perturbative series",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-006-3-q-series-and-perturbative-series.md",
+      "narrative": null,
+      "content": "q-series and perturbative series\nIn this section, we discuss three further aspects of our pair (G0(q), G1(q)) of q-series. One is\nthat their asymptotic expansions depend on a sector. This seems to be a property of general\nq-hypergeometric series not observed before, which is not only theoretically interesting, but also\npractically so, since to numerically compute asymptotic expansions, we can choose rays with\na single dominant asymptotics, making the numerical computation much easier. From that point\nof view, the numerical asymptotics when q ∈[0, 1) tends to 1 is a very resonant situation.\nA s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotics of holomorphic functions in sectors",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-007-31-asymptotics-of-holomorphic-functions-in-secto.md",
+      "narrative": null,
+      "content": "Asymptotics of holomorphic functions in sectors\nSince we will be considering functions of q on |q|̸ = 1 as well as functions of τ ∈C \\ R with\nq = e2πiτ, we will use capital letters for functions F(q) of q with |q|̸ = 1 and small letters for the\ncorresponding functions f(τ) := F\n\u0000e2πiτ\u0001\nof τ ∈C \\ R. For instance, we have\ng0(τ) = G0\n\u0000e2πiτ\u0001\n,\ng1(τ) = G1\n\u0000e2πiτ\u0001\n,\nτ ∈C \\ R\nand Observations 2.1 and 2.4 can be written in the form\ng0(τ) ∼√τ\n\u0000bΦ(2πiτ) −ibΦ(−2πiτ)\n\u0001\n,\ng1(τ) ∼\n1\n√τ\n\u0000bΦ(2πiτ) + ibΦ(−2πiτ)\n\u0001\n(3.1)\nas τ ∈C \\ R goes to 0 in a cone in the interior of the upper half-plane. We emphasize here",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From divergent to convergent power series",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-008-32-from-divergent-to-convergent-power-series.md",
+      "narrative": null,
+      "content": "From divergent to convergent power series\nThe third interesting corollary of Observations 2.1 and 2.4 is obtained by combining them with\nequation (2.11) and the fact that Z41(τ) is holomorphic in the cut plane C′, since this leads\nto startling predictions regarding the factorially divergent formal power series Φ(h) ∈R[[h]].\nSpecifically, using the factorization of the state integral given in (2.11), the fact that each w(σj)(τ)\nis a linear combination of the functions τ −1/2g0(τ) and τ 1/2g1, and the fact that g0 and g1 are\n1-periodic, we can re-express the state integral in terms of w as follo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The asymptotics of G_0(q) and G_1(q) at roots of unity",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-009-33-the-asymptotics-of-g-0q-and-g-1q-at-roots-of.md",
+      "narrative": null,
+      "content": "Observations 2.1 and 2.4 express the asymptotics of the functions G0(q) and G1(q) at q = 1 in\nterms of the series bΦ41(h) which appears in the asymptotics of the Kashaev invariant at q = 1.\nWe now extend the above observation to all roots of unity using the series Φ41\nα (h) that appear\nin the quantum modularity theorem of the Kashaev invariant of the 41 knot [32]. Let us briefly\nrecall the latter. Let\nJ: Q →Q ⊂C\ndenote the extension of the Kashaev invariant of 41 [41] to Q where J(−1/N) = ⟨K⟩N. The\nquantum modularity theorem for the 41 knot asserts that for every matrix γ =\n\u0000 a b\nc d\n\u0001\n∈SL2(Z)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The quadratic relation",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "../sections/sec-010-34-the-quadratic-relation.md",
+      "narrative": null,
+      "content": "The quadratic relation\nWe now describe some new phenomena that we observed using other knots. The knot 41 was\namphicheiral and hence special: in general one should expect an r-tuple of pairs of q-series, one\non each half-plane, hence a total of 2r q-series. (We will see in a later Section 5.4 the topological\nmeaning of this number r). However, in the case of the 41 knot, the four q-series are actually\ntwo, each appearing twice, due to the amphicheirality of the 41 knot. On the other hand, the\nfactorization integral for the 52 knot and for the (−2, 3, 7) pretzel knot gives a total of 6 and 12\nq",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Higher level and weight spaces",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "../sections/sec-011-35-higher-level-and-weight-spaces.md",
+      "narrative": null,
+      "content": "Higher level and weight spaces\nIn this section, we describe a new phenomenon, the level of a knot, and examples where the\nweight spaces have higher multiplicity. For the (−2, 3, 7) pretzel knot, there are 6 pairs of q-series,\nand the weight spaces are not one-dimensional; there are weights 0, 1 and 2 with dimensions 1, 4\nand 1, respectively. The 6 pairs of q-series involve power series in integer powers of q1/2, meaning\nlevel N = 2, and so we should introduce the level of a knot, presumably the same as the one\ncoming from the periodicity of the degree of the colored Jones polynomial [18, 19].",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From vector-valued to matrix-valued q-series",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-012-4-from-vector-valued-to-matrix-valued-q-series.md",
+      "narrative": null,
+      "content": "From vector-valued to matrix-valued q-series\nSo far, we used the state integral of a knot to define a vector of q-series for |q|̸ = 1 whose\nasymptotics were found to be related to the r-vector of asymptotic series of the knot from our\nearlier paper [32]. In this section, we report a recent discovery, descendants, which places the\nvector as the first column of an invertible r by r matrix of q-series for |q|̸ = 1. It turns out\nthat asymptotic series [32], q-series and state integrals [22, 23] all have descendants. We will\nexplain the notion of descendants in Section 4.1 for the 41 knot, where th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Descendant q-series",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-013-41-descendant-q-series.md",
+      "narrative": null,
+      "content": "Descendant q-series\nIn this section, we will focus on the 41 knot following the work of the first author, Gu and\nMari˜no [22] (with detailed proofs provided in [23, Section 3.1]) but using a slightly different\nnotation. Consider the pair G(m)\n0\n(q) and G(m)\n1\n(q) of q-series from [22] for integers m\nG(m)\n0\n(q) =\n∞\nX\nn=0\n(−1)n qn(n+1)/2+mn\n(q; q)2n\n,\nG(m)\n1\n(q) =\n∞\nX\nn=0\n(−1)n qn(n+1)/2+mn\n(q; q)2n\n \n2m + E1(q) + 2\nn\nX\nj=1\n1 + qj\n1 −qj\n!\n,\nfor |q| < 1 and extended to |q| > 1 by G(m)\nj\n\u0000q−1\u0001\n= (−1)jG(m)\nj\n(q). Observe that G(0)\nj (q) = Gj(q)\nfor j = 0, 1, with G0(q) and G1(q) given in (2.6) and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/thm-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[23]",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "thm-sec-013-01.md",
+      "narrative": null,
+      "content": "The matrix wm(q) is a fundamental solution of the linear q-difference equation ym+1(q) −(2 −qm)ym(q) + ym−1(q) = 0, m ∈Z. (4.1) It has constant determinant det(wm(q)) = 2 (4.2) and satisfies the symmetry and orthogonality properties wm \u0000q−1\u0001 = w−m(q) \u00121 −1 \u0013 , 2wm(q) \u00120 \u0013 wm \u0000q−1\u0001T = \u0012 0 −1 \u0013 for all integers m and for |q|̸ = 1. The descendant series G(m) j (q) arise from a factorization of the “descendant state integral” Z41,m,m′(τ) = Z R+i0 Φ√τ(v)2e−πiv2+2π(mτ 1/2−m′τ −1/2)vdv, m, m′ ∈Z introduced in [22]. This is a holomorphic function of τ ∈C′ that coincides with Z41(τ) when m = m′ = 0 and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The asymptotics of the descendants",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-014-42-the-asymptotics-of-the-descendants.md",
+      "narrative": null,
+      "content": "The asymptotics of the descendants\nIn [32], studying the refined quantum modularity conjecture for the 41 knot, we found a 2 by 2\nmatrix of asymptotic series\nbΦ(x) =\n \nbΦ(x)\nbΨ(x)\nibΦ(−x)\n−ibΨ(−x)\n!\n,\nwhere bΨ(x) = eC/hΨ(x) where Ψ(x) is the series\nΨ(x) =\n∞\nX\nj=0\nBjxj,\nBj = i\n4√\n3\n2\n\u0012\n1\n72√−3\n\u0013j bj\nj!\nwith bj ∈Q, the first values being given by\nj\n0\n1\n2\n3\n4\n5\n6\nbj\n−1\n37\n1511\n1211729/5\n407317963/5\n331484358355/7\n1471507944921541/35\nNaturally, we looked into the asymptotics of its descendant holomorphic blocks.\nSince any\nthree consecutive are related by the recursion (4.1), so are their asymptoti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The case of the 5_2 knot",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-015-43-the-case-of-the-5-2-knot.md",
+      "narrative": null,
+      "content": "Consider the linear q-difference equation\nym(q) −3ym+1(q) +\n\u00003 −q2+m\u0001\nym+2(q) −ym+3(q) = 0,\nm ∈Z,\n(4.5)\nIn [23, Section 3.2], it was shown that it has a fundamental solution sets given by the columns\nof the following matrix\nwm(q) = w52\nm (q) =\n\n\n\nH(m)\n0\n(q)\nH(m+1)\n0\n(q)\nH(m+2)\n0\n(q)\nH(m)\n1\n(q)\nH(m+1)\n1\n(q)\nH(m+2)\n1\n(q)\nH(m)\n2\n(q)\nH(m+1)\n2\n(q)\nH(m+2)\n2\n(q)\n\n\n,\nm ∈Z,\n|q|̸ = 1,\n(4.6)\nwhere for |q| < 1\nH(m)\n0\n(q) =\n∞\nX\nn=0\nqn(n+1)+nm\n(q; q)3n\n,\nH(m)\n1\n(q) =\n∞\nX\nn=0\nqn(n+1)+nm\n(q; q)3n\n\u00001 + 2n + m −3E(n)\n1\n(q)\n\u0001\n,\nH(m)\n2\n(q) =\n∞\nX\nn=0\nqn(n+1)+nm\n(q; q)3n\n\u0012\n(1 + 2n + m −3E(n)\n1\n(q))2 −3E(n)\n2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/thm-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[23]",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "thm-sec-015-01.md",
+      "narrative": null,
+      "content": "The function wm(q) defined by (4.6) is a fundamental solution of the linear q-difference equation (4.5) that has constant determinant det(wm(q)) = 2, satisfies the orthogonality property 2wm−1(q)    w−m−1 \u0000q−1\u0001T =   3 −qm   (4.7) as well as 2wm(q)    wℓ \u0000q−1\u0001T ∈SL \u00003, Z \u0002 q±\u0003\u0001 for all integers m, ℓand for |q|̸ = 1. The series H(m)(q) for |q|̸ = 1 appear in the factorization of the descendant state integral of the 52 knot Z52,m,m′(τ) = Z R+i0 Φ√τ(v)3e−2πiv2+2π(mτ 1/2−m′τ −1/2)vdv, m, m′ ∈Z, τ ∈C′ of [22]. It is a holomorphic function of τ ∈C′ that coincides with Z52(τ) when m = m′ =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The matrix-valued cocycle of a knot",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-016-5-the-matrix-valued-cocycle-of-a-knot.md",
+      "narrative": null,
+      "content": "The matrix-valued cocycle of a knot\nIn this section, we extend the observations of the previous sections to matrix-valued analytic\nfunctions which naturally give rise to a cocycle on on the set of matrix-valued piece-wise analytic\nfunctions on P1(R). What’s more, we conjecture (and in the case of the 41, prove) that this\ncocycle, restricted to the rational numbers, exactly agrees with the cocycle of our previous\nwork [32], which naturally binds the two works together and naturally leads to the concept of\na matrix-valued holomorphic quantum modular form.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An equivariant state integral",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-017-51-an-equivariant-state-integral.md",
+      "narrative": null,
+      "content": "An equivariant state integral\nWe return to the 41 knot. The factorization of the state-integral (2.7) given in equation (2.11)\nin terms of the pair (g0(τ), g1(τ)) motivates us to consider the following function:\nZ41(γ; τ) = i\n2(˜q/q)1/24\u0000(cτ + d)−1/2g0(τ)g1(γ(τ)) −(cτ + d)1/2g1(τ)g0(γ(τ))\n\u0001\n(5.1)\nfor an element γ of SL2(Z) and for τ ∈C\\R, where now ˜q denotes e(γτ). A priori, this function\nis not defined for any real value of the argument. However, experimentally (by looking at the\nasymptotics of the function as we approach real points vertically) we found the following.\nObservation 5.1. For e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A matrix-valued cocycle",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-018-52-a-matrix-valued-cocycle.md",
+      "narrative": null,
+      "content": "A matrix-valued cocycle\nThe state integral Z41(τ) is just one component of a 2 × 2 matrix closely related to the ma-\ntrix W0,0(τ) defined in equation (4.3), and similarly the equivariant state integral (5.1), up to\nelementary factors, becomes just one component of a 2 × 2 matrix-valued function\nWγ(τ) = Q(γτ)−1 diag\n\u0000(cτ + d)−1, 1\n\u0001\nQ(τ),\nτ ∈C \\ R.\n(5.2)\nObservation 5.1 now generalizes to the statement that the function Wγ extends holomorphically\nfrom the upper and lower half-planes to Cγ. Its restriction to C\\R is a matrix-valued holomorphic\ncocycle there, meaning that it satisfies\nWγγ′(τ) = W",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The two cocycles agree",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-019-53-the-two-cocycles-agree.md",
+      "narrative": null,
+      "content": "The two cocycles agree\nWe now show that the cocycle (5.4) and the one from our prior paper [32] agree for the case of\nthe 41 knot.\nWe first recall from [32, Section 7.1] the periodic function J = J(41) on Q defined by\nJ(x) =\n\u0012J1,1(x)\nJ1,2(x)\nJ2,1(x)\nJ2,2(x)\n\u0013\n,\n(5.5)\nwhere\nJ1,1(x) =\n1\n√c\n4√\n3\nX\nZc=ζ6\nc\nY\nj=1\n\n1 −qjZ\n\n2j/c,\nJ2,1(x) =\ni\n√c\n4√\n3\nX\nZc=ζ−1\n6\nc\nY\nj=1\n\n1 −qjZ\n\n2j/c,\nJ1,2(x) =\n1\n2√c\n4√\n3\nX\nZc=ζ6\n\u0000Zq −Z−1q−1\u0001\nc\nY\nj=1\n\n1 −qjZ\n\n2j/c,\nJ2,2(x) =\ni\n2√c\n4√\n3\nX\nZc=ζ−1\n6\n\u0000Zq −Z−1q−1\u0001\nc\nY\nj=1\n\n1 −qjZ\n\n2j/c\n(5.6)\nwith q = e(x) and c = denom(x) being the denominator of x. (Actually, the periodic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/thm-sec-019-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "thm-sec-019-01.md",
+      "narrative": null,
+      "content": "The cocycles W R and W Hab coincide. Because SL2(Z) is generated by S = \u0000 0 −1 \u0001 and T = \u0000 1 1 0 1 \u0001 , and both of the functions under consideration are cocycles and are trivial on T, and because both are continuous on R \\ {0}, it is enough to prove the equality W Hab S (x) = WS(x) for x ∈Q∗.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Matrix-valued holomorphic quantum modular forms",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "../sections/sec-020-54-matrix-valued-holomorphic-quantum-modular-for.md",
+      "narrative": null,
+      "content": "Matrix-valued holomorphic quantum modular forms\nWe believe that the results we have been describing for the 41 knot will apply to all hyperbolic\nknots (possibly with the disclaimers given in the introduction to [32] about the behavior of\ncharacter varieties of general knots). Some part of the story, the matrix of “descendant” functions\nand the factorization formula (4.8), was carried out for the 52 knot in [22] and described in\nSection 4.3, and another part, the asymptotics (analogue of Observation 4.1) was carried out\nfor the same knot in [30]. For the (−2, 3, 7)-pretzel knot, only a part of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Final remarks",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-021-6-final-remarks.md",
+      "narrative": null,
+      "content": "Final remarks\nIn this paper, we discussed the properties of a 2 by 2 matrix Q of periodic functions on C \\ R\nassociated to the 41 knot (see equation (4.4)). On the other hand, in our companion paper [32],\nwe constructed a 3 by 3 matrix Q+ of periodic functions on Q (see equation (5.5)). Wheeler [51]\nhas found an extension of our 2 by 2 matrix Q (with one boring column (1, 0, 0)t and one\ninteresting row) using the ε-deformation series (2.8).\nAnother aspect of the matrix Q of q-series associated to a knot appears to be in connection\nto the resurgence, i.e., analytic continuation, of the the fact",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Complements and proofs",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-022-a-complements-and-proofs.md",
+      "narrative": null,
+      "content": "Complements and proofs\nIn this appendix, we provide proofs of some of the observations, in particular regarding the 41\nknot, that were made in Sections 2 and 3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.1 q-series identities",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-023-a1-q-series-identities.md",
+      "narrative": null,
+      "content": "q-series identities\nWe begin by giving the proof of the two identities of equation (2.6), as communicated to us by\nSander Zwegers. We will use the identity (A.17) and\n1\n(q)m(q)n\n=\nX\nr,s,t≥0\nr+s=m,s+t=n\nqrt\n(q)r(q)s(q)t\n,\n(A.1)\nwhich may be found for instance in [53], where we abbreviate (q)n = (q; q)n. If we sum over m\nusing (A.17) we find\nX\nm,n≥0\n(−1)m+n q\n1\n2 m2+mn+ 1\n2 n2+ 1\n2 m+ 1\n2 n\n(q)m(q)n\n=\nX\nn≥0\n(−1)n q\n1\n2 n2+ 1\n2 n\n(q)n\n(qn+1)∞= (q; q)∞\nX\nn≥0\n(−1)n q\n1\n2 n2+ 1\n2 n\n(q)2n\n.\nEquation (A.1) with m = n gives\n1\n(q)2n\n=\nX\nr,s,t≥0\nr+s=n,s+t=n\nqrt\n(q)r(q)s(q)t\n=\nX\nr,s≥0\nr+s=n\nqr2\n(q)2r(q)s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.2 Asymptotics at roots of unity",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-024-a2-asymptotics-at-roots-of-unity.md",
+      "narrative": null,
+      "content": "Asymptotics at roots of unity\nFor the comparison of the results of this paper and those of [32], we need to understand the\nasymptotics of our q-series near roots of unity. This is not the main theme of the paper and we\nwill not go into detail, but as an indication of the method we prove Observation 2.1 giving the\nasymptotics (to all orders) of the two q-series G0(q) and G1(q) associated to the 41 knot at q = 1.\nFor this purpose we will use the formula for G0(q) given in the second part of equation (2.6).\nTo find the asymptotics of G0(q), we use the “Meinardus trick” as explained in [53, pp. 54",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/lem-sec-025-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 32,
+      "target": "lem-sec-025-01.md",
+      "narrative": null,
+      "content": "1. Up to a prefactor, for every α ∈Q with α > 0, we have Z41(α) = e−C/(MN)J1,1(−1/α)J2,1(α) −eC/(MN)J1,1(α)J2,1 \u0000−α−1\u0001 . (A.8)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prop-sec-025-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 32,
+      "target": "prop-sec-025-02.md",
+      "narrative": null,
+      "content": "As was observed in [26], when M = 1 we can choose P = 1 and Q = 0 and then P1/N and G1,N are independent of θ+ M and given by P1/N \u0000z+, θ+ N \u0001 = 1 √−3 (1 −z+)1+3/(2N) \u00001 −θ+ N \u00012DζN \u0000θ+ N \u00012 and G1,N \u0000θ+ N \u0001 = 1 √ N N−1 X k=0 1 \u0000ζNθ+ N; ζN \u0001 k \u0000ζ−1 N \u0000θ+ N \u0001−1; ζ−1 N \u0001 k .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.3 The two matrix-valued cocycles for the 4_1 knot agree",
+      "pageStart": 28,
+      "pageEnd": 32,
+      "target": "../sections/sec-025-a3-the-two-matrix-valued-cocycles-for-the-4-1-kn.md",
+      "narrative": null,
+      "content": "The two matrix-valued cocycles for the 41 knot agree\nIn this section, we give the proof of Theorem 5.2. Let us begin by explaining the choice of\nmatrix Q(q) of q-series for the 41 knot given in equation (4.4), using the matrix-valued function J\non the rational numbers from [32, equation (95)] whose first row is 1, J0(x) and 1\n2(qJ1(q) −\nq−1J−1(q)) when q = e(x), where\nJm(q) =\n∞\nX\nn=0\n(q; q)n\n\u0000q−1; q−1\u0001\nnqmn\nis a sequence of elements of the Habiro ring for integers m that satisfies the linear q-difference\nequation\nJm+1(q) −(2 −qm)Jm(q) + Jm−1(q) = 1,\nm ∈Z.\n(A.2)\nIt follows that the first row of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/lem-sec-027-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 34,
+      "target": "lem-sec-027-02.md",
+      "narrative": null,
+      "content": "4. We have (qeε; q)m = (q; q)m · (q; q)∞ (qeε; q)∞ · exp",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.4 The six q-series for the 5_2 knot",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../sections/sec-026-a4-the-six-q-series-for-the-5-2-knot.md",
+      "narrative": null,
+      "content": "The six q-series of the 52 knot are given by q-hypergeometric sums and their ε-deformations\n(see (3.11)), and this allows for an efficient recursive computation of their coefficients similar to\nthe one for the 41 knot given in (2.12). Explicitly, the six q-series are given by\nH+\nj (q) =\n∞\nX\nm=0\ntm(q)p(j)\nm (q),\nH−\nj (q) =\n∞\nX\nm=0\nTm(q)P (j)\nm (q),\nj = 0, 1, 2\n(A.10)\nwith\ntm(q) = qm(m+1)\n(q; q)3m\n,\nTm(q) = (−1)mqm(m+1)/2\n(q; q)3m\n,\n(A.11)\nand\np(0)\nm (q) = 1,\np(1)\nm (q) = 1 + 3E1(q)\n4\n+\nm\nX\nj=1\n2 + qj\n1 −qj ,\np(2)\nm (q) = p(1)\nm (q)2 −3 + E2(q)\n24\n+\nm\nX\nj=1\n3qj\n(1 −qj)2 ,\nP (0)\nm (q) = 1,\nP (1)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.5 epsilon-deformation and the factorization of the state",
+      "pageStart": 32,
+      "pageEnd": 34,
+      "target": "../sections/sec-027-a5-epsilon-deformation-and-the-factorization-of.md",
+      "narrative": null,
+      "content": "In this section, we comment further between a connection of the factorization proof of state\nintegrals taken from [27] and the ε-deformations of difference/differential equations. Whereas\nonly finitely many q-series appear in the factorization of a state integral (via the residue theorem),\ntheir ε-deformation leads to a sequence of q-series that contains further information, as Wheeler\nhas recently found out [51]. Consider the one-dimensional state integral\nΨA,A+ e\nA(τ) =\nZ\nR+iε\nΦ√τ(x)A+ e\nAe−Aπix2dx,\nz ∈C′\nfrom [27] (which was denoted IA,A+ e\nA(√z) in ibid) for positive integers A, ˜A > 0. Le",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/rem-sec-026-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "rem-sec-026-01.md",
+      "narrative": null,
+      "content": "2. Our notation \u0000p(0) m , p(1) m , p(2) m \u0001 , \u0000P (0) m , P (1) m , P (2) m \u0001 , \u0000H+ 0 , H+ 1 , H+ \u0001 , (H− 0 , H− 1 , H− 2 ) coincide with the quantities denoted (p3,m, p2,m, p1,m), \u0000P1,m, 1 2P2,m, −P3,m \u0001 , \u0000g3, g2, g1+ 1 6E2g3 \u0001 , \u0000G1, 1 2G2, −G3 −1 6E2G1 \u0001 in [27, Section 1.4]. Our formula (3.9) matches with [27, Corollary 1.8] using the above translation of notation combined with the quasi-modularity property E2(eτ) = τ 2E2(τ) −6iτ π of E2(τ) := E2 \u0000e2πiτ\u0001 (see [7, Proposition 6]). Note also that if we define the functions E1(q) and E2(q) for |q| > 1 by Ek(q) = −Ek \u0000q−1\u0001 (k = 1, 2), then Tm(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/thm-sec-027-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 34,
+      "target": "thm-sec-027-01.md",
+      "narrative": null,
+      "content": "3 ([27]). For τ ∈C \\ R, we have ΨA,A+ e A(τ) = 2πie πiA \u0012q ˜q \u0013 A × Resx=0 \u0012 FA, e A(q, ε)F e A,A(˜q, ˜ε)eiA ε˜ε 4π (qeε; q)A+ e A ∞ (˜qe−˜ε; ˜q)A+ e A ∞ (e˜ε/2 −e−˜ε/2)A+ e A \u0013 , where FA, e A(q, ε) = ∞ X m=0 (−1)Am qA m(m+1) eAε(m+ 1 2 ) (qeε; q)A+ e A m . We can think of FA, e A(q, ε) as a function of a Jacobi variable ε, or as a power series in ε with coefficients rational functions in q that can be computed by expanding (qeε; q)m as a power series in ε. To do so, recall the q-series E(m) ℓ (q) [27, equation (29)] E(m) ℓ (q) = ∞ X s=1 sℓ−1 qs(m+1) 1 −qs = X s≥1,n>m sℓ−1qsn = X s≥1 σ(m) ℓ−1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prop-sec-028-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 37,
+      "target": "prop-sec-028-01.md",
+      "narrative": null,
+      "content": "The series H+ k (q) and H− k (q) for |q| < 1 and k = 0, 1, 2 are defined, respectively, by (qeε; q)2 ∞ \u0000qe2ε; q \u0001 ∞ (q; q)3∞ ∞ X m=0 qm(2m+1)eε(4m+1) (qeε; q)2m \u0000qe2ε; q \u0001 2m = H+ 0 (q) + εH+ 1 (q) + ε2 \u0012 H+ 2 (q) + 1 3E2(q)H+ 0 (q) \u0013 + O(ε)3, (q; q)3 ∞ (qe−ε; q)2∞ \u0000qe−2ε; q \u0001 ∞ ∞ X n=0 qn(n+1)eε(2n+1) (qeε; q)2n \u0000qe2ε; q \u0001 2n = H− 0 (q) + εH− 1 (q) + ε2 \u0012 H− 2 (q) + \u00121 2 −1 3E2(q) \u0013 H− 0 (q) \u0013 + O(ε)3, where H+ j (q) = ∞ X m=0 tm(q)p(j) m (q), H− j (q) = ∞ X m=0 Tm(q)P (j) m (q), j = 0, 1, 2 with tm(q) = qm(2m+1) (q; q)2m(q; q)2m , Tn(q) = qn(n+1) (q; q)2n(q; q)2n , (not to be confused with (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.6 The twelve q-series for the (-2,3,7) pretzel knot",
+      "pageStart": 34,
+      "pageEnd": 37,
+      "target": "../sections/sec-028-a6-the-twelve-q-series-for-the--237-pretzel-knot.md",
+      "narrative": null,
+      "content": "In this whole section, let\nf(x) = Φb(x)2Φb(2x −cb)e−πi(2x−cb)2\ndenote the integrand of (3.16), which is a meromorphic function with poles at xm/2,n/2 for\nnatural numbers m, n ∈N. These poles are of third order when m and n are even and of first\norder otherwise. First, we compute the contribution from the third order poles xm,n. Using\n2xm,n −cb = x2m,2n, (A.14), (A.15) and the modularity transformation of the eta function\n(q; q)∞\n(˜q; ˜q)∞\n= e\nπi\n4\n\u0012 ˜q\nq\n\u0013 1\n24\nb−1,\nit follows that\nf(x + xm,n) = e−πi(2x+x2m,2n)2Φb(x + xm,n)2Φb(2x + x2m,2n)\n= e\n5πi\n4\nei ε˜ε\nπ\nb3(1 −e−˜ε)2\u00001 −e−2˜ε\u0001F(q, ε) ˜F(˜q",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/rem-sec-028-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 37,
+      "target": "rem-sec-028-02.md",
+      "narrative": null,
+      "content": "5. Despite appearances, H+ 0 (q)(q; q)2 ∞ \u0000as well as H− 0 (q)(q; q)2 ∞as the other 10 q-series \u0001 is a rank 3 Nahm sum. Indeed, use (q; q)2 ∞Tm(q) = qm(2m+1) (q; q)m \u0000qm+1; q \u0001 ∞ \u0000q2m+1; q \u0001 ∞ together with the identity (qx; q)∞= ∞ X k=0 (−1)k q k(k+1) xk (q; q)k (A.17) to obtain that (q; q)2 ∞H+ 0 (q) = X k,l,m (−1)k+l q 2 (k2+l2+4m2+2km+4lm)+ 1 2 (k+l+2m) (q; q)k(q; q)l(q; q)m . Acknowledgements The authors would like to thank Tudor Dimofte, Gie Gu, Rinat Kashaev, Marcos Mari˜no and Sander Zwegers for their input and the anonymous referees for a careful reading of the manuscript.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2304.09377v2/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 37,
+      "pageEnd": 39,
+      "target": "../sections/sec-029-references.md",
+      "narrative": null,
+      "content": "[1] An N., Li Y., On the quantum modularity conjecture for the (−2, 3, 7)-pretzel knot, in preparation.\n[2] Andersen J.E., Garoufalidis S., Kashaev R., The volume conjecture for the KLV state-integral, in prepara-\ntion.\n[3] Andersen J.E., Hansen S.K., Asymptotics of the quantum invariants for surgeries on the figure 8 knot,\nJ. Knot Theory Ramifications 15 (2006), 479–548, arXiv:math.QA/0506456.\n[4] Andersen J.E., Kashaev R., A TQFT from quantum Teichm¨uller theory, Comm. Math. Phys. 330 (2014),\n887–934, arXiv:1109.6295.\n[5] Beem C., Dimofte T., Pasquetti S., Holomorphic blocks in three dimensi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

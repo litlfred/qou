@@ -1,0 +1,520 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "1-s20-s0097316524000426-main",
+  "title": "Proof of a conjecture of Ballantine and Merca on truncated sums of 6-regular partitions",
+  "variant": "pdf",
+  "pages": 10,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Proof of a conjecture of Ballantine and Merca on truncated sums of 6-regular partitions",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-proof-of-a-conjecture-of-ballantine-and-merca-on"
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Proofs of Theorem 1.3 and Corollary 1.4",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-proofs-of-theorem-13-and-corollary-14"
+    },
+    {
+      "level": 2,
+      "title": "Declaration of competing interest",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-declaration-of-competing-interest"
+    },
+    {
+      "level": 2,
+      "title": "Data availability",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-data-availability"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-acknowledgments"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 23,
+      "summary": null,
+      "keywords": [],
+      "extract": "Journal of Combinatorial Theory, Series A 206 (2024) 105903 Contents lists available at ScienceDirect Journal of Combinatorial Theory, Series A journal homepage: www.elsevier.com/locate/jcta",
+      "extractCut": false,
+      "blocks": [
+        "library/1-s20-s0097316524000426-main/blocks/prose-sec-front-matter",
+        "library/1-s20-s0097316524000426-main/blocks/figure-img-p001-1",
+        "library/1-s20-s0097316524000426-main/blocks/figure-img-p001-2"
+      ]
+    },
+    {
+      "id": "sec-000-proof-of-a-conjecture-of-ballantine-and-merca-on",
+      "number": null,
+      "title": "Proof of a conjecture of Ballantine and Merca on truncated sums of 6-regular partitions",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 145,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "regular partitions",
+          "heading": true
+        },
+        {
+          "term": "truncated sums",
+          "heading": true
+        },
+        {
+          "term": "merca",
+          "heading": true
+        },
+        {
+          "term": "ballantine",
+          "heading": true
+        },
+        {
+          "term": "suzhou",
+          "heading": false
+        }
+      ],
+      "extract": "truncated sums of 6-regular partitions pene Olivia X.M. Yao School of Mathematical Sciences, Suzhou University of Science and Technology, Suzhou, 215009, Jiangsu Province, PR China ARTICLE INFO ABSTRACT Article history: In 2012, Andrews and Merca proved a truncated theorem on Received 27 December 2023 Euler’s pentagonal number theorem. Their work has opened Accepted 29 March 2024 . : . up a new study of truncated",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 646,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "merca",
+          "heading": false
+        },
+        {
+          "term": "euler pentagonal",
+          "heading": false
+        },
+        {
+          "term": "yao journal",
+          "heading": false
+        },
+        {
+          "term": "pentagonal number",
+          "heading": false
+        },
+        {
+          "term": "truncated versions",
+          "heading": false
+        },
+        {
+          "term": "inequalities involving",
+          "heading": false
+        },
+        {
+          "term": "inﬁnite families",
+          "heading": false
+        },
+        {
+          "term": "ballantine",
+          "heading": false
+        }
+      ],
+      "extract": "Recall that a partition of a positive integer n is an integer sequence A = (Aj, Ag, .--, Ax) such that Ay > Ag > ++: > Ap > Oand Ay + AQ +--+: +Az_ =n. The numbers A; are called parts of A [1]. Let p(n) denote the number of partitions of n. As usual, set p(0) = 1 and p(x) = 0 when z is not a nonnegative integer. Euler found that the generating function for p(n) is E-mail address: yaoxiangmei@163.com. https:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-proofs-of-theorem-13-and-corollary-14",
+      "number": "2",
+      "title": "Proofs of Theorem 1.3 and Corollary 1.4",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 9,
+      "labelStart": "3",
+      "labelEnd": "9",
+      "words": 1644,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "yao journal",
+          "heading": false
+        },
+        {
+          "term": "jqj",
+          "heading": false
+        },
+        {
+          "term": "nonnegative integer",
+          "heading": false
+        },
+        {
+          "term": "q2j",
+          "heading": false
+        },
+        {
+          "term": "combinatorial theory",
+          "heading": false
+        },
+        {
+          "term": "maple",
+          "heading": false
+        },
+        {
+          "term": "completes",
+          "heading": false
+        },
+        {
+          "term": "series",
+          "heading": false
+        }
+      ],
+      "extract": "In order to prove Conjecture 1.1, we need a formula of p3(n) due to Cayley [5], where p3(n) denotes the number of partitions of n into parts not exceeding 3. The generating function of p3(n) is 4 O.X.M. Yao / Journal of Combinatorial Theory, Series A 206 (2024) 105903 ∞ \u0002 n=0 p3(n)qn = 1 (1 −q)(1 −q2)(1 −q3). (2.1) It is well-known that if n is a nonnegative integer, then p3(n) = \u0011(n + 3)2 12 \u0012 , (2.2) where < N >",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-declaration-of-competing-interest",
+      "number": null,
+      "title": "Declaration of competing interest",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 26,
+      "summary": null,
+      "keywords": [],
+      "extract": "The author declares that she has no known competing ﬁnancial interests or personal relationships that could have appeared to inﬂuence the work reported in this paper.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-004-data-availability",
+      "number": null,
+      "title": "Data availability",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 24,
+      "summary": null,
+      "keywords": [],
+      "extract": "No data was used for the research described in the article. 10 O.X.M. Yao / Journal of Combinatorial Theory, Series A 206 (2024) 105903",
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 25,
+      "summary": null,
+      "keywords": [],
+      "extract": "This work was supported by the National Science Foundation of China (no. 12371334) and the Natural Science Foundation of Jiangsu Province of China (no. BK20221383).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-references",
+      "number": null,
+      "title": "References",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 323,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "truncated theta",
+          "heading": false
+        },
+        {
+          "term": "truncated jacobi",
+          "heading": false
+        },
+        {
+          "term": "merca",
+          "heading": false
+        },
+        {
+          "term": "truncated sums",
+          "heading": false
+        },
+        {
+          "term": "comb",
+          "heading": false
+        },
+        {
+          "term": "cienc",
+          "heading": false
+        },
+        {
+          "term": "exactas",
+          "heading": false
+        },
+        {
+          "term": "yee",
+          "heading": false
+        }
+      ],
+      "extract": "[1] G.E. Andrews, The Theory of Partitions, Addison-Wesley, Reading, Mass, 1976, reprinted, Cam- bridge University Press, 1998. [2] G.E. Andrews, M. Merca, The truncated pentagonal number theorem, J. Comb. Theory, Ser. A 119 (2012) 1639–1643. [3] G.E. Andrews, M. Merca, Truncated theta series and a problem of Guo and Zeng, J. Comb. Theory, Ser. A 154 (2018) 610–619. [4] C. Ballantine, M. Merca, 6-regular partitions:",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "yao journal",
+      "heading": false
+    },
+    {
+      "term": "merca",
+      "heading": true
+    },
+    {
+      "term": "truncated series",
+      "heading": false
+    },
+    {
+      "term": "truncated sums",
+      "heading": true
+    },
+    {
+      "term": "truncated versions",
+      "heading": false
+    },
+    {
+      "term": "truncated theta",
+      "heading": false
+    },
+    {
+      "term": "truncated jacobi",
+      "heading": false
+    },
+    {
+      "term": "euler pentagonal",
+      "heading": false
+    },
+    {
+      "term": "regular partitions",
+      "heading": true
+    },
+    {
+      "term": "pentagonal number",
+      "heading": false
+    },
+    {
+      "term": "ballantine",
+      "heading": true
+    },
+    {
+      "term": "combinatorial theory",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-2",
+      "file": "images/img-p001-2.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p10); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/1-s20-s0097316524000426-main"
+  }
+}

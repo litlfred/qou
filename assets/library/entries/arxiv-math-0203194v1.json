@@ -1,0 +1,2588 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0203194v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0203194v1  [math.NT]  19 Mar 2002\nPeriod mappings and diﬀerential\nequations. From C to Cp\nTˆohoku-Hokkaidˆo lectures in Arithmetic Geometry\nYves Andr´e\n(with appendices by F. Kato and N. Tsuzuki)\nContents\nChapter I.\nAnalytic aspects of p-adic periods.\n9\n(Analysis)\n1.\nAnalytic continuation; topological point of view.\n10\n2.\nAnalytic continuation; algebraic approach.\n21\n3.\nThe tale of F(1\n2, 1\n2, 1; z).\n35\n4.\nAbelian periods as algebraic integrals.\n43\n5.\nPeriods as solutions of the Gauss-Manin connection.\n52\nChapter II.\nIntroduction to the theory of p-adic period mappings.\n65\n(Geometry",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Purpose of this book.",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-000-purpose-of-this-book.md",
+      "narrative": null,
+      "content": "This book stems from lectures given at the Universities of T\\={o}hoku\nand Hokkaid\\={o}.  \n\nIts main purpose is to introduce the reader to $p$-adic analytic\ngeometry and to the theory of $p$-adic analytic functions and\ndifferential equations, by focusing on the theme of {\\it period\nmappings}. Of course, this approach is not meant to replace more\nsystematic expositions of $p$-adic analysis or geometry found in a\nnumber of good treatises, but to complement them.\n\n It is our general rule, in this book, to follow as closely as possible\nthe complex theory, and to go back and forth between the comple",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Contents of this book.",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "../sections/sec-001-contents-of-this-book.md",
+      "narrative": null,
+      "content": "{\\it Chapter I} is preparatory. It deals with the problems of analytic\ncontinuation --- with emphasis on the case of solutions of differential\nequations --- and periods of abelian integrals, in the $p$-adic context.\n\n\\medskip Multivalued complex-analytic functions can be handled in two\ndifferent, but essentially \nequivalent, ways:\n\n$1)$ in a geometric way using Riemann surfaces, coverings and paths; \n\n$2)$ as limits of algebraic functions; this less orthodox way leads to a more\nGalois-theoretic viewpoint on analytic continuation.\n\n\\medskip  Both ways are practicable in the $p$-adic context, bu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "On the style.",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-002-on-the-style.md",
+      "narrative": null,
+      "content": "\\medskip\n\nThe first chapter is rather down-to-earth. It has kept\nsomething of the informal style of lecture notes, and this also holds to\na lesser extent for the second chapter; the level is inhomogeneous, the\npace may sometimes be brisk, proofs are often omitted and replaced by\nreferences.  In contrast, the last and longest chapter is devoted to a\nsystematic exposition of new material.\n\nWe hope that our constant function-theoretic viewpoint brings some unity\nto the exposition, throughout the chapters.  We have tried to keep them\n(and even the sections) as logically independent as possible. Th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Analytic continuation; topological point of view.",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-003-1-analytic-continuation-topological-point-of-vie.md",
+      "narrative": null,
+      "content": "\\label{sec-1}\n\n\\begin{abst}\n Thanks to Berkovich's presentation of $p$-adic analytic geometry, it is\n possible to make sense of the familiar monodromy principle in the\n exotic world of $p$-adic manifolds. Its application is however more\n limited than in the classical case, because (1) sheaves of solutions of\n linear differential equations \n are usually not locally constant, and (2) many spaces (for instance, \n annuli) are simply connected.\n\\end{abst}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Monodromy principle.",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-004-11-the-monodromy-principle.md",
+      "narrative": null,
+      "content": "Let $S$ be a topological space, and $\\mathcal{F}$ an abelian sheaf on $S$.\nFor an open set $U\\subseteq S$ and a section $f\\in\\Gamma(U,\\mathcal{F})$, the \nsupport of $f$ is the subset $\\Supp(f)=\\{u\\in U\\ |\\ f_u\\neq 0\\}$, \nwhich is easily seen to be closed in $U$.\n\n\\begin{dfn}\\label{dfn-unique-cont}\nWe say that the sheaf $\\mathcal{F}$ satisfies the {\\it principle of unique\ncontinuation} if for any open set $U\\subseteq S$ and any section \n$f\\in\\Gamma(U,\\mathcal{F})$ the support $\\Supp(f)$ is open in $U$.\n\\end{dfn}\n\nNote that the principle of unique continuation is a local property.\n\n\\begin{lem}\\l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rigid geometry and the problem of unique continuation.",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-005-12-rigid-geometry-and-the-problem-of-unique-cont.md",
+      "narrative": null,
+      "content": "\\label{subsection-rigid-and-unique-cont}\n\\begin{para}\n For $p$ a prime number, let $\\Q_p$ denote as usual the\n completion of $\\Q$ for the $p$-adic absolute value\n $|\\;\\;|_p$ : $|p^n\\frac{a}{b}|_p = p^{-n}$ if the rational integers $a,\n b$ are prime \n to $p$. This ultrametric absolute value extends in a unique way to each\n finite extension of $\\Q_p$. These finite extensions are locally\n compact and totally disconnected. They are all complete, but ``the''\n algebraic closure $\\ovl{\\Q}_p$ of $\\Q_p$ itself is not complete. Its\n completion, denoted by $\\C_p$, turns out to be algebraically\n closed, a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Berkovich geometry and the principle of monodromy",
+      "pageStart": 17,
+      "pageEnd": 20,
+      "target": "../sections/sec-006-13-berkovich-geometry-and-the-principle-of-monod.md",
+      "narrative": null,
+      "content": "\\begin{para}\n Rigid analytic spaces are endowed with a \n Grothendieck generalized topology, and their\n structure sheaf is a sheaf with respect to this topology. Hence\n it cannot be said to satisfy the principle of\n unique continuation in the strict sense of \\defref{dfn-unique-cont}.\n Moreover, there is no non-trivial path in such spaces.  Therefore,\n rigid geometry is not a suitable setting for discussing $p$-adic \n analytic continuation in an intuitive way.\n\n In contrast, Berkovich's viewpoint on $p$-adic geometry does \n not suffer from these drawbacks: Berkovich's\n analytic spaces are genuin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Topological coverings and 'etale coverings.",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-007-14-topological-coverings-and-etale-coverings.md",
+      "narrative": null,
+      "content": "\\label{sub-top-cov-et-cov}\n\\begin{para}\\label{para-complex-vs-padic}\n Complex manifolds are locally contractible,\n and have universal coverings.  There is no need to distinguish between\n topological\n coverings and \\'etale coverings (finite or infinite).\n\n In $p$-adic rigid geometry, the situation is more complicated. It is\n natural to call\n topological covering any morphism $f: Y \\rightarrow X$ such that there is\n an admissible\n cover $(X_i)$ of $X$ and an admissible cover $(Y_{ij})$ of $f^{-1}(X_i)$\n with disjoint $Y_{ij}$\n isomorphic to $(X_i)$ via  $f$. Indeed, such topological coverings\n c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connections with locally constant sheaves of solutions.",
+      "pageStart": 21,
+      "pageEnd": 25,
+      "target": "../sections/sec-008-15-connections-with-locally-constant-sheaves-of.md",
+      "narrative": null,
+      "content": "\\label{sub-connection}\n\\begin{para}\n Let us briefly recall the complex situation. Let $S$ be a complex\n connected manifold, $(\\mathcal{M},\\nabla)$ a vector bundle of rank $r$\n with integrable connection on $S$. The classical Cauchy theorem shows\n that for any $s \\in S$, the solution space\n $(\\mathcal{M}\\otimes\\mathcal{O}_{S,s})^{\\nabla}$ at $s$ has dimension\n $r$. Analytic continuation along paths gives rise to a homomorphism\n $\\pi_1^{\\mathrm{top}}(S,{s}) \\rightarrow\n \\Aut_{\\C}((\\mathcal{M}\\otimes\\mathcal{O}_{S,s})^{\\nabla})$ (the\n \\emph{monodromy}). The sheaf of germs of solutions\n $\\mathcal{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Analytic continuation; algebraic approach.",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-009-2-analytic-continuation-algebraic-approach.md",
+      "narrative": null,
+      "content": "\\begin{abst}\n An equivalent, but more algebraic, approach to analytic continuation\n consists in interpreting complex analytic multivalued functions as\n limits of algebraic functions.\n Since the concept of topological coverings and that of \\'etale coverings\n do not coincide in the $p$-adic setting, the algebraic approach \n leads in that case to a theory quite different \n from that of the previous section.  It turns out to be well-suited to\n the function-theoretic study of so-called unit-root $F$-isocrystals, and induces\n us to revisit two fundamental notions due to Dwork: Frobenius structure",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Limits of rational functions.",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-010-21-limits-of-rational-functions.md",
+      "narrative": null,
+      "content": "\\label{subsec-limit-rational}\n\n\\begin{para}\\label{para-complex-approx}\n{\\itshape Over $\\C$.\\ }\n Let us briefly survey the complex analytic situation.\n Let $S$ be a connected complex analytic curve, and $U$ an open set\n of $S$ (not necessarily connected) which is holomorphically convex; \n \\index{holomorphically convex@holomorphically convex}\n \\ie $S\\setminus U$ has no compact connected component.\n Then $\\OO(S)$ is dense in $\\OO(U)$ for the topology of uniform\n convergence on every compact set.\n We denote this situation by $\\OO(U)=\\widehat{\\OO(S)^U}$\n (\\cf \\eg \\cite[13]{qadsdr}).\n\n Moreover, if",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Limits of algebraic functions; complex case.",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-011-22-limits-of-algebraic-functions-complex-case.md",
+      "narrative": null,
+      "content": "Let $S$ be a Riemann surface coming from a complex affine algebraic\ncurve $S^{\\mathrm{alg}}$, smooth and connected.\nLet $\\til{S}$ be the universal covering of $S$\n(here we tacitly fix a base point $s\\in S$).\nWe endow $\\OO(\\til{S})$ with the topology of uniform convergence on\nevery compact; note that the group $\\pi_1(S)$ acts (continuously) on\n$\\OO(\\til{S})$.\n\nOn the other hand, let $\\OO(S^{\\mathrm{alg}})^{\\mathrm{et}}$ be the\nmaximal unramified integral extension of $\\OO(S^{\\mathrm{alg}})$.\nElements in $\\OO(S^{\\mathrm{alg}})^{\\mathrm{et}}$ can be regarded as\nunramified algebraic functions on $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Limits of algebraic functions; $p$-adic case.",
+      "pageStart": 27,
+      "pageEnd": 33,
+      "target": "../sections/sec-012-23-limits-of-algebraic-functions-p-adic-case.md",
+      "narrative": null,
+      "content": "\\label{subsection-remedy}\n\\begin{para}\n In the $p$-adic situation, we have seen that there are ``much more''\n \\'etale coverings than topological coverings. For instance, the unit disk\n $\\matheur{D}=\\matheur{D}(0,1^+)$ is simply-connected, but admits many\n non-trivial finite \\'etale coverings, \\eg the Artin-Schreier covering\n $\\matheur{D}\\rightarrow \\matheur{D}, \\;y\\mapsto z=y^p-y$.\n \n\\propref{pro-gabber} suggests to replace, in the $p$-adic case, the ring \n $\\mathcal{O}(\\til{S})$, which is often too\n small, by some kind of completion of $\\mathcal{O}(S)^{\\mathrm{et}}= \\varinjlim\n \\mathcal{O}(S'",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(Overconvergence and Frobenius) Dwork's derivation of the $p$-adic Gamma function and exponential sums.",
+      "pageStart": 33,
+      "pageEnd": 39,
+      "target": "../sections/sec-013-26-overconvergence-and-frobenius-dworks-derivati.md",
+      "narrative": null,
+      "content": "\\label{subsection-deriv-of-gamma}\n\n\\begin{para}\n We come back to the situation of\n \\examref{exa-dwork-exp}.  For any $\\alpha \\in {\\Z}_p$, let us consider\n $M_{\\alpha}^{\\dagger}:= z^{\\alpha}e^{\\pi z}\\mathcal{H}^{\\dagger}(S)$\n endowed with the derivation $z\\frac{d}{dz}$. A simple computation shows\n that\n \\begin{equation*}\n  z^{\\alpha}e^{\\pi z}z^{k+1}\\equiv\n   -\\frac{\\alpha + k}{\\pi}z^{\\alpha}e^{\\pi z}z^k \n \\end{equation*}\n in $M_{\\alpha}^{\\dagger}/z\\frac{d}{dz}M_{\\alpha}^{\\dagger}$, from which\n one deduces that this cokernel has dimension $1$ over $K$ and is\n generated by $[z^{\\alpha}e^{\\pi z}]$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dwork's hypergeometric function.",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "../sections/sec-014-31-dworks-hypergeometric-function.md",
+      "narrative": null,
+      "content": "\\label{sub-dwork-hyper}\n\nLet us consider the Legendre pencil of elliptic\ncurves with parameter $z\\neq 0,1,\\infty$, given in inhomogeneous coordinates by\n\\begin{equation*}\n y^2=x(x-1)(x-z).\n\\end{equation*}\nAs a scheme over ${\\Z}[z,\\frac{1}{{2z(1-z)}}]$, we denote it by $X$. The\nfirst de Rham cohomology module $\\mathrm{H}^1_{\\mathrm{dR}}(X)$ is free\nof rank $2$ over ${\\Z}[z,\\frac{1}{{2z(1-z)}}]$, and endowed with the\nGauss-Manin connection $\\nabla$ (derivation with respect to the\nparameter $z$); it is generated by the class $\\omega$ of $\\frac{dx}{y}$,\nand $\\nabla(\\frac{d}{dz})(\\omega)$. The cano",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The ordinary unit-root $F$-crystal.",
+      "pageStart": 40,
+      "pageEnd": 41,
+      "target": "../sections/sec-015-32-the-ordinary-unit-root-f-crystal.md",
+      "narrative": null,
+      "content": "\\label{sub-ordinary-unit-root}\n\nOn completing $\\widehat{{\\Z}_p^{\\mathrm{ur}}}[z,\\frac{1}{{2z(1-z)}}]$\n$p$-adically, $(\\mathrm{H}^1_{\\mathrm{dR}}(X), \\nabla)$ gives rise to an\noverconvergent $F$-crystal $(\\mathcal{H}, \\nabla, F)$. We do not discuss\nhere the construction of the Frobenius structure, which is a general\n$p$-adic feature of Gauss-Manin connections. In fact, various analytic\nor geometric constructions are available, but in our present case, the\nFrobenius structure can be made quite explicit, \\cf \\cite{pc}.\n\n\\medskip\nLet us introduce a few notations:\n\\begin{itemize}\n \\item $\\mathcal{R",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Analytic continuation: a pr'ecis.",
+      "pageStart": 41,
+      "pageEnd": 43,
+      "target": "../sections/sec-016-33-analytic-continuation-a-precis.md",
+      "narrative": null,
+      "content": "\\label{sub-analytic-cont}\n\n\\begin{para}\n We have seen that Dwork's hypergeometric function extends to an analytic\n function on the whole of $S_{\\mathrm{nss}}$. Some of its special values\n have been computed.  Let us mention \\cite{thfwpp}, \\cite{anjsasvogphf}\n \\begin{enumerate}\n \\item $f_p(1)=1$ (Koblitz),\n \\item if $p \\equiv 1\\pmod{4}$,\n       \\[\n       f_p(-1) =\n       (-1)^\\frac{p-1}{4}\\frac{\\Gamma_p(1/4)^2}{\\Gamma_p(1/2)} =\n       \\frac{\\Gamma_p(1/4)}{\\Gamma_p(1/2)\\Gamma_p(3/4)} \\quad\\text{ (Young).}\n       \\]\n \\end{enumerate}\n (the condition $p \\equiv 1\\pmod{4}$ ensures that $-1$ is an\n or",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Tate and Dwork-Serre-Tate parameters.",
+      "pageStart": 43,
+      "pageEnd": 44,
+      "target": "../sections/sec-017-34-the-tate-and-dwork-serre-tate-parameters.md",
+      "narrative": null,
+      "content": "\\label{sub-serre-tate-para}\n\n\\begin{para}\\label{para-tate-para}\n It turns out that the formal group\n ${\\widehat{X}}_{(\\widehat{\\mathcal{R}_{\\mathrm{ord}}^{\\mathrm{et}}})}$\n of $X$ over $\\widehat{\\mathcal{R}_{\\mathrm{ord}}^{\\mathrm{et}}}$ is\n isomorphic to ${\\widehat{\\G}}_m$ (\\cf~\\cite[I]{fgade}). Any such\n isomorphism transforms the canonical differential\n $\\omega_{\\mathrm{can}}$ on ${\\widehat{\\G}}_m$ into\n $\\Theta \\frac{dx}{y}$, for a suitable element $\\Theta \\in\n \\widehat{\\mathcal{R}_{\\mathrm{ord}}^{\\mathrm{et}}}$ well-defined up to\n multiplication by an element of ${\\Z}_p^{\\times}$. It is p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/figure-img-p044-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 44,
+      "target": "../images/img-p044-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Complex counterpart: the supersingular locus.",
+      "pageStart": 44,
+      "pageEnd": 47,
+      "target": "../sections/sec-018-35-complex-counterpart-the-supersingular-locus.md",
+      "narrative": null,
+      "content": "\\label{sub-complex-supersing}\n\n Let us now revert things and try to understand the complex situation\n from the $p$-adic viewpoint!\n\n Let $\\matheur{D}^+$ and $\\matheur{D}^-$ be the (complex-conjugate)\n connected components of $\\matheur{D}(\\frac{1}{2},\\frac{3}{2}^-)\\setminus\n \\bigl(\\matheur{D}(\\frac{-1}{4},\\frac{3}{4}^+) \\cup\n \\matheur{D}(\\frac{5}{4},\\frac{3}{4}^+)\\bigr)$. Let $S$ \n be the complement of $\\matheur{D}^+ \\cup \\matheur{D}^-$ in the complex plane.\n Note that $S$ is closed and arcwise connected, and that\n $\\pi_1^{\\mathrm{top}}(S)$ \n is a free group with two generators $\\gamma^+,\\gamma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Abelian periods as algebraic integrals.",
+      "pageStart": 47,
+      "pageEnd": 47,
+      "target": "../sections/sec-019-4-abelian-periods-as-algebraic-integrals.md",
+      "narrative": null,
+      "content": "\\begin{abst}\n We discuss periods of abelian varieties. Their $p$-adic counterparts \n live naturally in Fontaine's ring $\\matheur{B}_{\\mathrm{dR}}$. We present \n Colmez' construction of abelian $p$-adic periods, which relies on \n $p$-adic integration and reflects as closely as possible the complex\n picture.\n \n\n\n\n\n We also deal with the concrete evaluation of elliptic $p$-adic periods.\n\\end{abst}\n\n\n\\subsection{Over $\\C$.}\\label{sub-complex-integ}\n\nLet $A$ be an abelian variety over $\\C$ of dimension $g$, \nand $\\omega_1,\\ldots,\\omega_g$ a basis of invariant differential forms.\n\n\n\n\n\n\nLet $\\Lambda$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Over the $p$-adics; prolegomena",
+      "pageStart": 47,
+      "pageEnd": 51,
+      "target": "../sections/sec-020-42-over-the-p-adics-prolegomena.md",
+      "narrative": null,
+      "content": "\\label{sub-prolegomena}\n\nIf we try to translate this into the $p$-adic setting, one has to face\nat once the problem: what is \\emph{integration over a loop}?\n\n\\begin{para}\\label{para-padic-int-1}\n One tentative way is via Berkovich's theory, where loops do exist.  Let us for\n instance consider the Legendre elliptic curve $X_z$. Viewed as a\n $p$-adic space, for $z \\in \\matheur{D}(0,1^-)\\setminus \\lbrace 0 \\rbrace$\n ($p\\neq 2$), this is a Tate curve: $X_z^{\\mathrm{an}} \\simeq\n {\\C}_p^{\\times}/q^{\\Z}$. The canonical differential\n $\\omega_{\\mathrm{can}}$ inherited from ${\\C}_p^{\\times}$ and\n $\\frac",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Colmez' construction of abelian $p$-adic periods.",
+      "pageStart": 51,
+      "pageEnd": 52,
+      "target": "../sections/sec-021-44-colmez-construction-of-abelian-p-adic-periods.md",
+      "narrative": null,
+      "content": "Let $A$ be an abelian variety defined over a $p$-adic local field\n$K$. The Fontaine-Messing $p$-adic period pairing is a pairing\n\n\\begin{equation*}\n\\int^{(p)}\\;:\\;\\mathrm{H}^1_{\\mathrm{dR}}(A) \\otimes T_p(A_{\\ovl{K}})\n \\longrightarrow \\matheur{B}^+_{\\mathrm{dR}}\n\\end{equation*}\nwhere $T_p(A_{\\ovl{K}}) = \\varprojlim \\Ker([p^n]: A_{\\ovl{K}}\\rightarrow\nA_{\\ovl{K}})$ is the Tate module (a ${\\Z}_p$-module of rank $2\\dim A$\nwith $\\Gal({\\ovl{K}}/K)$-action).\n\nWe present Colmez' construction, which is parallel to \\ref{sub-complex-integ}.\n\nLet $\\omega$ be a differential form on $A$ of second kind, and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some computations of elliptic $p$-adic periods.",
+      "pageStart": 52,
+      "pageEnd": 53,
+      "target": "../sections/sec-022-45-some-computations-of-elliptic-p-adic-periods.md",
+      "narrative": null,
+      "content": "\\label{sub-computation}\n\n\\begin{para}{\\itshape Tate elliptic curves.\\ }\nIn this case, $T_p(A_{\\ovl{K}})$ sits in an exact sequence \n\\begin{equation*}\n 0\\rightarrow {\\Z}_p(1)\\rightarrow T_p(A_{\\ovl{K}}) \\rightarrow\n  {\\Z}_p \\rightarrow 0.\n\\end{equation*}\nLet us take for $\\gamma_1$ the image of $(2i\\pi)_p \\in {\\Z}_p(1)$ in\n$T_p(A_{\\ovl{K}})$, and for $\\gamma_2$ any lifting of $1 \\in {\\Z}_p$.\nFor concreteness, let $A=X_z$ be in Legendre form as in\n\\ref{para-padic-int-1}.  Let $\\eta \\in \\mathrm{H}^1_{\\mathrm{dR}}$\nsatisfy $\\an{\\omega,\\eta}=1$ (\\eg $\\frac{xdx}{4y}$).  We set\n$\\omega^{(p)}_i=\\int^{(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Periods of CM elliptic curves and values of the Gamma function.",
+      "pageStart": 53,
+      "pageEnd": 56,
+      "target": "../sections/sec-023-46-periods-of-cm-elliptic-curves-and-values-of-t.md",
+      "narrative": null,
+      "content": "\\begin{para}\n The case of an elliptic curve $A$ with \\emph{supersingular reduction} is\n more delicate.  If $A$ does not have complex multiplication (CM), one\n can show, using \\cite[A.2.2]{alraec}, that the four basic periods\n $\\omega^{(p)}_1,\\omega^{(p)}_2,\\eta^{(p)}_1,\\eta^{(p)}_2$ are\n algebraically independent over ${\\ovl{\\Q}}_p$, so that one cannot\n expect ``formulas'' for the periods. \n\n  On the other hand, it is well-known that the complex\n periods of an elliptic curve with complex multiplication can be\n expressed in terms of special values of the $\\Gamma$ function. So one\n may ask for a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Periods as solutions of the Gauss-Manin connection.",
+      "pageStart": 56,
+      "pageEnd": 56,
+      "target": "../sections/sec-024-5-periods-as-solutions-of-the-gauss-manin-connec.md",
+      "narrative": null,
+      "content": "\\begin{abst}\n The variation of the periods in a family of complex algebraic varieties\n is controlled by the Picard-Fuchs differential equation. We discuss the\n p-adic situation, present Dwork's general viewpoint on p-adic\n periods. We then discuss the question of the existence of an arithmetic\n structure on the space of solutions, which would give an intrinsic\n meaning to the period modulo $\\ovl{\\Q}^\\times$. We present such an\n arithmetic structure (analogous to the Betti lattices in the complex\n situation) in the case of abelian varieties with either multiplicative\n reduction or supersingular",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stokes.",
+      "pageStart": 56,
+      "pageEnd": 66,
+      "target": "../sections/sec-025-51-stokes.md",
+      "narrative": null,
+      "content": "We come back to the basic question of the meaning of \\emph{integration\nover a loop}, already discussed in \\subsecref{sub-prolegomena}.  A\ndifferent approach is based on the Stokes lemma: integrating \\emph{exact}\ndifferentials on a loop gives zero. This is the approach favored by\nK. Aomoto in the complex case and by B. Dwork in the $p$-adic case.\n\n\\begin{para}\n In order to see how this idea can be implemented, let us consider the\n Hankel expression for the gamma function\n \\begin{equation*}\n  \\frac{1}{\\Gamma(1-\\alpha)} = \\frac{1}{2i\\pi}\n   \\int_{\\gamma} x^{\\alpha}e^x\\frac{dx}{x}\n \\end{equation*}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion and vista.",
+      "pageStart": 66,
+      "pageEnd": 69,
+      "target": "../sections/sec-026-54-conclusion-and-vista.md",
+      "narrative": null,
+      "content": "We have seen many instances of the following scenario: some familiar\nnotion or phenomenon from the complex realm shows itself in two\ndifferent aspects; each of these aspects has a natural $p$-adic\ncounterpart; these counterparts are not complementary aspects of the\nsame $p$-adic entity, but belong to totally different theories.  \n\nIn II, we shall see that the theory of $p$-adic period mappings is a privileged\nfield where this semantic splitting process integrates into an\nharmonious picture, where the complementarity between the $p$-adic\ncounterparts is restored at a deeper level.\n\nThe $p$-adic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A survey of moduli and period mappings over $\\mathbb{C}$.",
+      "pageStart": 69,
+      "pageEnd": 70,
+      "target": "../sections/sec-027-6-a-survey-of-moduli-and-period-mappings-over-ma.md",
+      "narrative": null,
+      "content": "\\label{sec:1}\n\n\\begin{abst}\nReview of moduli, Shimura varieties, \nHodge structures, period mappings, period domains, Gauss-Manin connections.\n\\end{abst}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Moduli spaces.",
+      "pageStart": 70,
+      "pageEnd": 72,
+      "target": "../sections/sec-028-61-moduli-spaces.md",
+      "narrative": null,
+      "content": "\\label{sub:1.1}\n\n\\begin{para}\\label{para:1.1.1} The term ``moduli'' was\n coined by Riemann to describe the continuous essential\n parameters of smooth complex compact curves of a given genus $g$. The use\n of this term has been extended to many classification problems in \n analytic or algebraic\n geometry: typically, a classification problem consists of a discrete \n part (the dimension, and other\n numerical invariants...) and a continuous part (the moduli). \n\n One can distinguish between local and global moduli spaces: \n\n\\begin{enumerate}\n \\item local moduli are the parameters of the most general",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Period mappings.",
+      "pageStart": 72,
+      "pageEnd": 76,
+      "target": "../sections/sec-029-62-period-mappings.md",
+      "narrative": null,
+      "content": "\\label{sub:1.2} \n\n\\begin{para}\\label{para:1.2.1}\n In the case of curves, the construction of period mappings belongs to\n the nineteenth\n century. The idea is to study the deformations of a curve by looking at\n the variation of its periods.  Let $f:{\\udl{X}}\\rightarrow S$ be an\n algebraic family of projective smooth (connected) curves of genus $g$\n over $\\C$. Let $\\tilde S$ be the universal covering of $S$. Then the\n homology groups $\\mathrm{H}_1(-,{\\Z})$ of the fibers form a constant\n local system on $\\tilde S$. Let us choose a symplectic basis\n $\\gamma_1^+,\\gamma_1^-,\\ldots ,\\gamma_g^+, \\gamm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries on $p$-divisible groups.",
+      "pageStart": 76,
+      "pageEnd": 76,
+      "target": "../sections/sec-030-7-preliminaries-on-p-divisible-groups.md",
+      "narrative": null,
+      "content": "\\label{sec:2}\n\n\\begin{abst}\n Definitions and basic theorems about $p$-divisible groups,\n quasi-isogenies, liftings and deformations.\n\\end{abst}\n\\end{para}\n\n\n\\subsection{$p$-divisible groups and quasi-isogenies.}\\label{sub:2.1}\n\n\\begin{para}\\label{para:2.1.1} We begin with four definitions. Let $S$ be a scheme. Let\n$\\Lambda$ and $\\Lambda'$ be commutative group schemes over $S$.  \n\nA\nhomomorphism $f:\\Lambda \\rightarrow \\Lambda'$ is called an {\\it isogeny}\nif it is an (f.p.p.f.) epimorphism with finite locally free kernel.\n\n\nLet $p$ be a prime number. $\\Lambda$ is a {\\it $p$-divisible group}\n(or",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two theorems on $p$-divisible groups.",
+      "pageStart": 76,
+      "pageEnd": 79,
+      "target": "../sections/sec-031-72-two-theorems-on-p-divisible-groups.md",
+      "narrative": null,
+      "content": "\\label{sub:2.2} \n\n\\begin{para}\\label{para:2.2.1}\n A considerable amount of work has been\n devoted to $p$-divisible groups and their \n applications to the $p$-adic study of abelian varieties and their local\n moduli. Among the pioneers, let us mention: Barsotti, Tate, Serre,\n Grothendieck, Lubin, Messing...\n\n\n In the sequel, we shall outline the main concepts and results of the\n Rapoport-Zink theory of period mappings for $p$-divisible groups,\n emphasizing the analogy with the complex case. We refer to their book\n \\cite{psfpg} for details and proofs. We shall also emphasize the\n relation to diff",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A stroll in the crystalline world.",
+      "pageStart": 79,
+      "pageEnd": 79,
+      "target": "../sections/sec-032-8-a-stroll-in-the-crystalline-world.md",
+      "narrative": null,
+      "content": "\\label{sec:3}\n\n\\begin{abst}\n Review of Dieudonn\\'e modules, crystals, Grothendieck-Messing theory,\n convergent isocrystals.\n\\end{abst}\n\\end{para}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From Dieudonn'e modules to crystals.",
+      "pageStart": 79,
+      "pageEnd": 80,
+      "target": "../sections/sec-033-81-from-dieudonne-modules-to-crystals.md",
+      "narrative": null,
+      "content": "\\label{sub:3.1}\n\n\\begin{para}\\label{para:3.1.1}\n At first, Dieudonn\\'e theory presents itself as an analogue of Lie\n theory for formal Lie groups over a perfect field $k$ of characteristic\n $p>0$. In practice, its scope is limited to the case of {\\it\n commutative} formal Lie groups (in which case the classical counterpart\n is not very substantial). The theory extends to the case of\n $p$-divisible groups over $k$.\n\n\n Let $W$ be the Witt ring of $k$, with its Frobenius automorphism\n $\\sigma$. The theory associates to any \n $p$-divisible group $\\Lambda$ over $k$ a {\\it Dieudonn\\'e module}, \\ie a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Dieudonn'e crystal of a $p$-divisible group.",
+      "pageStart": 80,
+      "pageEnd": 81,
+      "target": "../sections/sec-034-82-the-dieudonne-crystal-of-a-p-divisible-group.md",
+      "narrative": null,
+      "content": "\\label{sub:3.2}\n\n\\begin{para}\\label{para:3.2.1} Let $\\mathfrak{v}$ be a finite extension of\n $W$ of degree $e$. We assume that $e<p$, and that $\\varpi$ is a \n uniformizing parameter of $\\mathfrak{v}$ such that $\\sigma$ extends to \n $\\mathfrak{v}$ by setting $\\sigma(\\varpi)=\\varpi$.\n\n\nLet $S$ be in $\\Nil_\\mathfrak{v}$. An\n$S$-divided power thickening\n$T_0\\hookrightarrow T$ is given by\n\\begin{enumerate}\n \\item an $S$-scheme $T_0$,\n \\item a $\\mathfrak{v}$-scheme $T$ on which $p$ is locally nilpotent,\n \\item a closed immersion $T_0\\hookrightarrow T$ over $\\mathfrak{v}$,\n \\item a collection of maps",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Hodge filtration.",
+      "pageStart": 81,
+      "pageEnd": 82,
+      "target": "../sections/sec-035-83-the-hodge-filtration.md",
+      "narrative": null,
+      "content": "\\label{sub:3.3}\n\n\\begin{para}\\label{para:3.3.1}\n Let $\\Lambda^\\vee$ be the (Serre) dual of $\\Lambda$ (the $\\liminj$ of\n the Cartier duals of the $\\Lambda[p^n]$'s). There is a canonical,\n locally split, exact sequence of $\\mathcal{O}_S$-modules\n \\begin{equation*}\n  0\\rightarrow F^1\\rightarrow {\\D}(\\Lambda)_S\\rightarrow\n   \\Lie \\Lambda^\\vee\\rightarrow 0\n \\end{equation*}\n where $F^1=\\CoLie \\Lambda=\\omega_\\Lambda$ may be identified with the\n module of invariant differentials on the formal Lie group\n $\\hat\\Lambda$. In case $\\Lambda$ is the $p$-divisible group attached to\n an abelian $S$-scheme $\\ud",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Crystals and connections.",
+      "pageStart": 82,
+      "pageEnd": 83,
+      "target": "../sections/sec-036-84-crystals-and-connections.md",
+      "narrative": null,
+      "content": "\\label{sub:3.4} \n\n\\begin{para}\\label{para:3.4.1}\n We have already encountered the terms ``$F$-crystal'', ``unit-root\n $F$-crystal'' in I.\\ref{para:f-cris}, \\ref{para-unit-root} in the more\n down-to-earth context of \n connections. This comes as follows. Assume for simplicity that $S_0$ is\n affine of characteristic $p$ and lifts to a formally smooth $p$-adic\n affine formal scheme $\\mathcal{S}$ over $\\mathfrak{v}=W$.  Then there\n is an equivalence of categories between finite locally free crystals on\n $(S_0/W)_{\\mathrm{cris}}$ and finite locally free\n $\\mathcal{O}(\\mathcal{S})$-modules with integ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Interlude : analytic spaces associated with formal schemes and tubes.",
+      "pageStart": 83,
+      "pageEnd": 84,
+      "target": "../sections/sec-037-85-interlude-analytic-spaces-associated-with-for.md",
+      "narrative": null,
+      "content": "\\label{sub:3.5}\n\n\\begin{para}\\label{para:3.5.1} Let us first review the Raynaud-Berthelot\nconstruction of the analytic space attached to a  \n$\\mathfrak{v}$-formal scheme $\\mathfrak{X}$. It will be convenient for\nlater purpose to formulate the construction in the frame of Berkovich\nspaces rather than rigid geometry (we refer to \\cite[1.6]{ecfnas} for the\ntranslation).\n\n\nAs in \\ref{para:2.2.5}, we assume that $\\mathfrak{X}$ is adic, locally\nnoetherian; moreover, we assume that \n${\\mathfrak{X}}_{\\mathrm{red}}=\\Spec(\\mathcal{O}_{\\mathfrak{X}}/\\mathcal{J})$ is a\nseparated $k$-scheme locally of fini",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Convergent isocrystals.",
+      "pageStart": 84,
+      "pageEnd": 87,
+      "target": "../sections/sec-038-86-convergent-isocrystals.md",
+      "narrative": null,
+      "content": "\\label{sub:3.6}     \n\n\\begin{para}\\label{para:3.6.1} Let $S_0$ be a separated $k$-scheme of finite\n type, and $S_0\\hookrightarrow \\mathfrak{Y}$ a closed immersion into a\n flat $p$-adic formal $\\mathfrak{v}$-scheme that is formally smooth in a\n neighborhood of $S_0$. Let $E$ be a vector bundle on the tube\n $]S_0[_{\\mathfrak{Y}}$. An integrable connection $\\nabla$ on $E$ is\n {\\it convergent} if its Taylor series\n \\begin{equation*}\n  \\epsilon(1\\otimes e) =\n   \\sum_{n_1,\\ldots,n_d\\geq 0}\n   \\biggl(\\nabla\\Bigl(\\frac{\\partial }{\\partial t_1}\\Bigr)^{n_1}\\ldots\n   \\nabla\\Bigl(\\frac{\\partial }{\\partial",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Moduli problems for $p$-divisible groups.",
+      "pageStart": 87,
+      "pageEnd": 87,
+      "target": "../sections/sec-039-9-moduli-problems-for-p-divisible-groups.md",
+      "narrative": null,
+      "content": "83\n4. Moduli problems for p-divisible groups.\nAbstract:\nReview of moduli spaces of p-divisible groups quasi-isogenous to a",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples.",
+      "pageStart": 87,
+      "pageEnd": 89,
+      "target": "../sections/sec-040-92-examples.md",
+      "narrative": null,
+      "content": "\\label{sub:4.2}\n We take $\\ovl{\\Lambda} ={\\ovl{A}}[p^\\infty]$, the $p$-primary\n torsion of an {\\it elliptic curve ${\\ovl{A}}$ over ${\\ovl{\\F}}_p$} ($h=2$).\n\n\\begin{para}\\label{para:4.2.1}\n {\\it The ordinary case}, \\ie ${\\ovl{A}}[p]({\\ovl{\\F}}_p)\\neq 0$. \n\n Then $\\ovl{\\Lambda}\\cong\\hat {\\G}_m \\oplus {\\Q}_p/{\\Z}_p$, and\n $J=({\\G_m}_{{\\Q}_p})^2$. For any $(\\Lambda,\\rho)$ in $\\mathfrak{M}(S)$,\n the separable rank of $\\Ker[p]$ is constant (due to the quasi-isogeny\n $\\rho$). Therefore $\\Lambda$ is an extension \n \\begin{equation*}\n  \\hat{\\Lambda}\\rightarrow \\Lambda\\rightarrow \\Lambda^{\\mathrm{et}}.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Decorated variants.",
+      "pageStart": 89,
+      "pageEnd": 92,
+      "target": "../sections/sec-041-93-decorated-variants.md",
+      "narrative": null,
+      "content": "\\label{sub:4.3} \n\n\\begin{para}\\label{para:4.3.1} Just as in the complex case\n \\ref{para:1.1.4}, it is useful to consider variants or the moduli\n problem \\ref{sub:4.1} for ``decorated'' $p$-divisible groups, with prescribed\n endomorphisms and/or polarization.\n\n\nInstead of\nthe $\\Q$-algebra $B$ of \\ref{para:1.1.4}, we shall consider a finite-dimensional semi-simple $\\Q_p$-algebra $B_p$, since\nthe category of $p$-divisible groups up to isogeny is\n$\\Q_p$-linear. Let $V_p$ be a $B_p$-module\nof finite type, and let $G_{\\Q_p}$ be the group of \n$B_p$-linear endomorphisms of $V_p$.\n\\par\\noindent  Let $\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetric domains via stability theory.",
+      "pageStart": 92,
+      "pageEnd": 92,
+      "target": "../sections/sec-042-102-symmetric-domains-via-stability-theory.md",
+      "narrative": null,
+      "content": "5.2.1. In the p-adic case, one cannot deﬁne symmetric spaces by a positivity\ncondition as in 1.2.3, 1.2.4. One uses instead the Hilbert-Mumford notion of\nsemi-stability, following an idea of M. van der Put and H. Voskuil [vdPV92].\n5.2.2. We set J′ = J ∩Gder\nCp . This is again the group of Qp-points of an\nalgebraic group over Qp. Let T ∼= (GmQp)j be a maximal Qp-split torus in\nJ′. The semi-stable locus of D∨with respect to T-action is the open subset\nof points x ∈D∨such that there is a T-invariant function of P(W) which\ndoes not vanish on x.\nOne can check whether x is semi-stable with respect t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples.",
+      "pageStart": 92,
+      "pageEnd": 94,
+      "target": "../sections/sec-043-103-examples.md",
+      "narrative": null,
+      "content": "5.3.1. In our three basic examples, we have GCp = GL2, D∨= P1.\nIn example 4.2.1, J′ ⊂J = (Gm)2 is the one-dimensional torus T with\nelements (z−1, z). Its action on a point x is by z2-scaling; the limit point x0\nis always 0, except if x = ∞. The only non-semi-stable point is ∞, hence\nD = A1.\nIn example 4.2.2, J′ = SL1(Bp) ⊂J = B×\np . There is no non-trivial\nQp-split torus in J′, hence D = D∨= P1.\n5.3.2. We now turn to example 4.3.4. In this example, J = GL2(Qp) and\nJ′ = SL2(Qp). All maximal Qp-split tori are conjugate g−1Tg of the above\nT. Therefore, D = P1 \\ S ∞.g is the Drinfeld space over Cp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-044",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The $p$-adic period mapping and the Gauss-Manin connection.",
+      "pageStart": 94,
+      "pageEnd": 94,
+      "target": "../sections/sec-044-11-the-p-adic-period-mapping-and-the-gauss-manin.md",
+      "narrative": null,
+      "content": "\\label{sec:6}\n\n\\begin{abst}\n Rapoport-Zink's period mapping as classifying map for the Hodge\n filtration in the Dieudonn\\'e module. Basic properties: equivariance,\n \\'etaleness. Its relation to the Gauss-Manin connection. Examples and\n formulas.\n\\end{abst}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-045",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Construction.",
+      "pageStart": 94,
+      "pageEnd": 94,
+      "target": "../sections/sec-045-111-construction.md",
+      "narrative": null,
+      "content": "\\label{sub:6.1} \n\n\\begin{para}\\label{para:6.1.1} The construction of the $p$-adic period\n mapping is parallel to the complex case: one \n attaches to a point $s\\in \\mathcal{M}$ representing a pair $(\\Lambda,\n \\rho)$ the point $\\mathcal{P}(s)$ of $\\mathcal{D}^\\vee$ \nwhich parametrizes the notch $F^1$ of the Hodge filtration of the\n Dieudonn\\'e module of $\\Lambda$. The idea of the construction is\n already present in Grothendieck's talk\n \\cite{grothendieck70:_group_barsot_tate}.\n\\end{para}\n\n\\begin{para}\\label{para:6.1.2} More precisely, notation being as in\n \\ref{para:4.1.1}--\\ref{para:4.3.1}, let",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-046",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Properties.",
+      "pageStart": 94,
+      "pageEnd": 95,
+      "target": "../sections/sec-046-112-properties.md",
+      "narrative": null,
+      "content": "\\label{sub:6.2}  \n\n\\begin{thm}\\label{thm:6.2.1} The period mapping $\\mathcal{P}$ is etale. Its image lies in the period domain $\\mathcal{D}$. \n\n\n\\end{thm}\nThe first assertion reduces, via an infinitesimal criterion of\netaleness, to the ``essential surjectivity part'' of the\nGrothendieck-Messing theorem (\\ref{thm:3.3.3}), in the case of an ideal\nof square zero, \\cf \\cite[5.17]{psfpg}.  It corresponds to what is called\nthe ``local Torelli property'' in the complex case.\n\n\nThe second assertion is a\nconsequence of a theorem of B. Totaro on the equivalence of semi-stability and ``weak admissibility",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-047",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples and formulas.",
+      "pageStart": 95,
+      "pageEnd": 99,
+      "target": "../sections/sec-047-113-examples-and-formulas.md",
+      "narrative": null,
+      "content": "\\label{sub:6.3} \n\n\\begin{para}\\label{para:6.3.1} We start with example \\ref{para:4.1.1}\n ($p$-divisible groups of elliptic curves with ordinary reduction).\n The extension\n \\begin{equation*}\n  1\\rightarrow {\\hat\\G_m}\\rightarrow \\Lambda\\rightarrow \\Q_p/\\Z_p\\rightarrow 1\n \\end{equation*}\n parametrized by $q\\in 1+pW$ gives rise, by contravariance, to an\n extension of Dieudonn\\'e modules (\\cf \\ref{para:3.1.1}) \n \\begin{equation*}\n  0\\rightarrow W\\rightarrow \\D(\\Lambda)\\rightarrow W(-1)\\rightarrow 0\n \\end{equation*}\n which splits canonically due to the rigidity of Dieudonn\\'e crystals:\n $\\D(\\Lambda)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-048",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "De Jong's viewpoint on $p$-adic period mappings.",
+      "pageStart": 99,
+      "pageEnd": 101,
+      "target": "../sections/sec-048-114-de-jongs-viewpoint-on-p-adic-period-mappings.md",
+      "narrative": null,
+      "content": "\\label{sub:6.4}\n\n J. de Jong \\cite{efgonas} has proposed an interpretation of the\n period mapping which clarifies a lot the nature of its fibers. We\n briefly present this interpretation under the following mild simplifying\n assumption:\n\n\\begin{itemize}\n \\item[$\\ast$] that there is a family of \n affinoid domains $(X_i)$ of $\\mathcal{M}^0$ such that the\n $\\mathcal{P}(X_i)$ (which are finite unions of affinoid domains in\n $\\mathcal{D}$ since\n $\\mathcal{P}$ is etale) form an admissible covering of $\\mathcal{D}$. \n\\end{itemize}\n\nThis assumption is fulfilled in our three basic examples (but not\nalwa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-049",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The uniformization theorem.",
+      "pageStart": 101,
+      "pageEnd": 103,
+      "target": "../sections/sec-049-122-the-uniformization-theorem.md",
+      "narrative": null,
+      "content": "\\label{sub:7.2}\n\n\\begin{para}\\label{para:7.2.1}\n One fixes a point of $\\Sh(\\ovl{\\F}_p)$, hence a\n $\\ovl{\\F}_p$-abelian variety $\\ovl{A}$ up to prime to $p$ isogeny with\n $\\mathcal{B}$-action, principal $\\ast$-polarization, and level\n structure. We consider the $p$-divisible group\n $\\ovl{\\Lambda}={\\ovl{A}}[p^\\infty]$ (with $\\mathcal{B}_p$-action,\n principal \n $\\ast$-polarization, level structure). We denote by $\\ovl{G}$ the\n $\\Q$-group of self-quasi-isogenies of ${\\ovl{A}}$ respecting the\n additional structure. It is clear that $\\ovl{G}(\\Q_p)\\subset J$; on the\n other hand $\\ovl{G}(\\A_f^p)\\subse",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-050",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Global uniformization",
+      "pageStart": 103,
+      "pageEnd": 103,
+      "target": "../sections/sec-050-123-global-uniformization.md",
+      "narrative": null,
+      "content": "\\label{sub:7.3}\n\nWe say that there is {\\it global uniformization}\nin case $S$ is (the analytification of) a whole connected component of\nthe Shimura variety $\\Sh$. This occurs when the reduction mod $p$ of\nthe decorated abelian varieties $A$ parametrized by $\\Sh$ form a \n{\\it single isogeny class}. \n\nIn the situation of global uniformization, the group $\\ovl{G}$ of\nself-quasi-isogenies of ${\\ovl{A}}$ (with decoration) is an\n{\\it inner form of $G$}.\n\nIn view of our analogy \\ref{para:4.3.5}, this situation can be expected to be\nclosest to the complex case (in the notation of \\ref{para:1.2.4}, th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-051",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Example: the Cerednik-Drinfeld uniformization of Shimura curves at a critical prime.",
+      "pageStart": 103,
+      "pageEnd": 107,
+      "target": "../sections/sec-051-124-example-the-cerednik-drinfeld-uniformization.md",
+      "narrative": null,
+      "content": "\\label{sub:7.4}\n\n\\begin{para}\\label{para:7.4.1}\n The first historical example of global uniformization in the above\n sense is the \\v{C}erednik uniformization of ``Shimura\n curves'' (modular curves for fake elliptic curves) at a critical prime\n $p$, \\cf \\cite{uoacbdsopwcq}.  \\v{C}erednik's method was\n of group-theoretic nature and did not involve formal groups. A modular\n proof was subsequently proposed by Drinfeld \\cite{copsr} (\\cf also\n \\cite[III]{updcds}). For examples, and related topics, we refer to\n \\cite{van89:_les_shimur}, \\cite{van92:_discr_mumfor}, \\cite{van92:_unifor}.\n\\end{para}\n\n\\b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-052",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Other examples of global $p$-adic uniformization.",
+      "pageStart": 107,
+      "pageEnd": 110,
+      "target": "../sections/sec-052-125-other-examples-of-global-p-adic-uniformizati.md",
+      "narrative": null,
+      "content": "\\label{sub:7.5}\n\n\\begin{para}\\label{para:7.5.1}\n Shimura's paper \\cite{shimura67:_const} deals not only with quaternion algebra\n over $\\Q$, but also with quaternion algebras $B/E$ over a totally real\n number field $E$. When $B$ {\\it splits at a single real place,} he\n constructs curves ${\\mathcal{X}^+(N)}$ and ${\\mathcal{X}^\\ast}$\n satisfying properties similar to (a),(b),(c) of \\ref{para:7.4.2}.\n\n\n In this context, $N$ may be an arbitrary ideal of $\\mathcal{O}_E$,\n $\\Q(\\zeta_N)$ has to be replaced by the ray class field with conductor\n $N.\\infty$, and the condition $N(g)>0$ means that the red",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-053",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Application of the theory of $p$-adic Betti lattices.",
+      "pageStart": 110,
+      "pageEnd": 113,
+      "target": "../sections/sec-053-126-application-of-the-theory-of-p-adic-betti-la.md",
+      "narrative": null,
+      "content": "\\label{sub:7.6}\n\n\\begin{para}\\label{para:7.6.1}\n We consider more closely the Gauss-Manin connection\n $(\\mathcal{H},\\nabla_{\\mathrm{GM}})$ in the case of Shimura curves.\n\n\n We begin with the case $E=\\Q$ as in \\ref{sub:7.4}.  Then $\\mathcal{H}$\n is a vector bundle of rank $4$, and the $B$-action on $\\mathcal{H}$\n obtained by functoriality of De Rham cohomology commutes with\n $\\nabla_{\\mathrm{GM}}$.\n\n Let us choose an imaginary quadratic field $F=\\Q(\\sqrt{-d})$ inside\n $B$. Then $(\\mathcal{H},\\nabla_{\\mathrm{GM}})\\otimes F$ splits into two parts:\n $(\\mathcal{H},\\nabla_{\\mathrm{GM}})_+\\oplus\n (\\m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-054",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion.",
+      "pageStart": 113,
+      "pageEnd": 115,
+      "target": "../sections/sec-054-127-conclusion.md",
+      "narrative": null,
+      "content": "\\label{sub:7.7}\n\n Roughly speaking, the period mapping $\\mathcal{P}$ attaches to\neach member of an algebraic family of algebraic complex varieties (with\nadditional structure) a point in some flag space, which encodes the\nHodge filtration in the cohomology of this variety. This mapping can be\nexpressed in terms of quotients of solutions of the fuchsian\ndifferential equation (Picard-Fuchs/Gauss-Manin) which controls the\nvariation of the cohomology.\n\n\nWe have described the theory of period mappings for $p$-divisible groups\nin somewhat similar terms.\n\n\\bigskip\n Sometimes, it is possible to go thro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-055",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "'Etale coverings and fundamental groups in $p$-adic geometry.",
+      "pageStart": 115,
+      "pageEnd": 116,
+      "target": "../sections/sec-055-13-etale-coverings-and-fundamental-groups-in-p-a.md",
+      "narrative": null,
+      "content": "\\label{sec::1}\n\n\\markboth{\\thechapter. $p$-ADIC ORBIFOLDS AND MONODROMY.}\n{\\thesection. \\'ETALE COVERINGS AND FUNDAMENTAL GROUPS.}\n\n\\begin{abst}\n In this section, inspired by De Jong's work \\cite{efgonas}, we discuss various\n kinds of finite or infinite \\'etale coverings in non-archimedean\n analytic geometry, and the associated fundamental groups.\n The temperate fundamental group of a $p$-adic manifold encapsulates\n information on the bad reduction properties of all its finite etale\n coverings.\n\\end{abst}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-056",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "More on the topological fundamental group.",
+      "pageStart": 116,
+      "pageEnd": 118,
+      "target": "../sections/sec-056-131-more-on-the-topological-fundamental-group.md",
+      "narrative": null,
+      "content": "\\label{sub::1.1} \n\n\\begin{para}\\label{para::1.1.1}\n We shall work throughout in the context of Berkovich analytic geometry,\n over a fixed complete ultrametric field $(K,|\\;|)$.\n\n What has been said about Berkovich spaces in I.\\ref{sec-1} remains true\n in this broader context (\\ie without any further restriction on\n $K$). \n\n More precisely, we shall work with {\\it paracompact strictly\n $K$-analytic spaces} in the sense of \\cite{ecfnas}. We recall that these\n form a category equivalent to the category of quasi-separated rigid\n spaces over $K$ having an admissible covering of finite type.\n\n The m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-057",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "'Etale versus topological coverings (again).",
+      "pageStart": 118,
+      "pageEnd": 121,
+      "target": "../sections/sec-057-132-etale-versus-topological-coverings-again.md",
+      "narrative": null,
+      "content": "\\label{sub::1.2}  \n\n\\begin{para}\\label{para::1.2.1}\n Let $S$ be a connected $K$-manifold. Let $S' \\xrightarrow{f} S$ be a\n finite \\'etale morphism ($S'$ is then a $K$-manifold).  Its degree $n$ may be\n defined as the rank of the locally free $\\mathcal{O}_S$-module\n $f_\\ast\\mathcal{O}_{S'}$. Assume that $K$ is algebraically closed. Then\n one has the formula \n\n \\begin{equation*}\n  n=\\sum_{y\\in f^{-1}(x)}[\\mathscr{H}(y):\\mathscr{H}(x)]\n \\end{equation*}\n where $\\mathscr{H}(x)$ stands for the residue field of\n the point $x$ (if $S=\\matheur{M}(\\mathcal{A})$ is affinoid and\n $x$ corresponds to the bo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-058",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Existence of 'etale paths.",
+      "pageStart": 121,
+      "pageEnd": 123,
+      "target": "../sections/sec-058-133-existence-of-etale-paths.md",
+      "narrative": null,
+      "content": "\\label{sub::1.3}  \n \n\\begin{para}\\label{para::1.3.1} Let us fix a geometric point $\\ovl{s}$ of\n $S$. We consider the fiber functor \n \\begin{equation*}\n  F^{\\mathrm{et}}_{S,\\ovl{s}}=F^{\\mathrm{et}}_{\\ovl{s}} :\n   \\Cov^{\\mathrm{et}}_S \\longrightarrow \\Sets,\\;\\; S' \\mapsto\n   \\{\\text{geometric points $\\ovl{s}'$ of $S'$ above $\\ovl{s}$}\\}\n \\end{equation*}\nand its restrictions\n\n\\begin{equation*}\n F^{\\mathrm{alg}}_{S,\\ovl{s}}=F^{\\mathrm{alg}}_{\\ovl{s}}:\n \\Cov^{\\mathrm{alg}}_S\\longrightarrow \\Sets,\n\\end{equation*}\n(considered in \\cite{sga1}) and\n\\begin{equation*}\n F^{\\mathrm{top}}_{S,\\ovl{s}}=F^{\\mat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/ex-sec-059-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 123,
+      "pageEnd": 129,
+      "target": "ex-sec-059-01.md",
+      "narrative": null,
+      "content": "the logarithm (\\ref{exs::1.2.5}. (i)) is a Galois \\'etale covering of $(\\A^1_{\\C_p})^{\\mathrm{an}}$ with group $\\mu_{p^\\infty}\\cong \\Q_p/\\Z_p$.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-059",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The formalism of fundamental groups.",
+      "pageStart": 123,
+      "pageEnd": 129,
+      "target": "../sections/sec-059-134-the-formalism-of-fundamental-groups.md",
+      "narrative": null,
+      "content": "\\label{sub::1.4}  \n \n\\begin{para}\\label{para::1.4.1} Let $\\Cov^\\bullet_S$ be a full\n subcategory of $\\Cov^{\\mathrm{et}}_S$ which is {\\it stable under taking\n connected components, fiber products} (over $S$) {\\it and quotients}\n (in the sense of \\ref{lem::1.2.7}.). Examples:  $\\Cov^{\\mathrm{et}}_S$,\n $\\Cov^{\\mathrm{top}}_S$, $\\Cov^{\\mathrm{alg}}_S$.\n\n We denote by $F^\\bullet_{S,\\ovl{s}}=F^\\bullet_{\\ovl{s}}$ the\n restriction of $F^{\\mathrm{et}}_{\\ovl{s}}$ to $\\Cov^\\bullet_S$, and set \n\n \\begin{equation*}\n  \\pi_1^{\\bullet}(S,\\ovl{s}) = \\Aut F^\\bullet_{\\ovl{s}}\n \\end{equation*}\n topologized by con",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-060",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Example: Ramero's locally algebraic 'etale fundamental group.",
+      "pageStart": 129,
+      "pageEnd": 130,
+      "target": "../sections/sec-060-135-example-rameros-locally-algebraic-etale-fund.md",
+      "narrative": null,
+      "content": "\\label{sub::1.5}\n\n\\begin{para}\\label{para::1.5.1}\n When $S$ is countable at infinity, L. Ramero has introduced an\n interesting category $\\Cov^{\\mathrm{loc.alg}}_S$ of \\'etale coverings, called\n `locally algebraic', which generalize the logarithmic covering of\n $\\A^1$, and which are intimately connected with the local study of\n meromorphic differential equations around singularities \\cite[4]{ramero98}.\n\n An \\'etale covering is locally algebraic if the preimage of every {\\it\n compact subdomain} $W\\subset S$ is a disjoint union $\\coprod W_i$ of\n subdomains $W_i$ which are finite \\'etale over $W$.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-061",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Temperate fundamental groups.",
+      "pageStart": 130,
+      "pageEnd": 130,
+      "target": "../sections/sec-061-14-temperate-fundamental-groups.md",
+      "narrative": null,
+      "content": "\\label{sec::2}\n\n\\begin{abst}\nWe introduce the notion of temperate \\'etale\ncovering. Such coverings are essentially built from (possibly infinite)\ntopological coverings of finite \\'etale coverings; they are classified\nby temperate fundamental groups, which seem to be the right\nnon-archimedean equivalents of fundamental groups of complex\nmanifolds. These groups are not discrete, but nevertheless often possess\nmany infinite discrete quotients.\n\\end{abst}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-062",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Temperate 'etale coverings and temperate fundamental groups.",
+      "pageStart": 130,
+      "pageEnd": 137,
+      "target": "../sections/sec-062-141-temperate-etale-coverings-and-temperate-fund.md",
+      "narrative": null,
+      "content": "\\label{sub::2.1}\n\n\\medskip In the archimedean context, the categories\n$\\Cov^{\\mathrm{et}}_S$ and $\\Cov^{\\mathrm{top}}_S$ coincide; in the\nnon-archimedean situation, in contrast, $\\Cov^{\\mathrm{top}}_S$ is ``too\nsmall'' (for instance, it consists of disjoint unions of copies of $S$\nif $S$ has dimension one and tree-like reduction, \\eg if $S$ is an\nannulus), while  $\\Cov^{\\mathrm{et}}_S$ is ``too big'' (for $S=\\P^1$, it\ncontains many non-trivial objects).\n\nWe introduce an intermediate category, which seems to be a closer\nanalogue of the category of unramified coverings in the \narchimedean contex",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-063",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Interlude: tangential base-points.",
+      "pageStart": 137,
+      "pageEnd": 139,
+      "target": "../sections/sec-063-142-interlude-tangential-base-points.md",
+      "narrative": null,
+      "content": "\\label{sub::2.2}\n\n\\begin{para}\\label{para::2.2.1} Instead of basing fundamental groups at\n geometric points, it is sometimes more convenient\\footnote{for instance\n in the study of Galois actions on fundamental groups.} to base them at \n tangent vectors at points at infinity. \n\n P. Deligne has explained the construction for affine algebraic curves in \n characteristic zero, for topological, algebraic (= profinite) and other\n kinds of fundamental groups \\cite{lgfdldpmtp}. In the profinite case, these\n tangential base-points amount to genuine geometric generic points,\n corresponding to embeddings",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-064",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Description of some temperate fundamental groups.",
+      "pageStart": 139,
+      "pageEnd": 145,
+      "target": "../sections/sec-064-143-description-of-some-temperate-fundamental-gr.md",
+      "narrative": null,
+      "content": "\\label{sub::2.3}\n\n In this subsection, we assume that $K$ is {\\it\n algebraically closed of characteristic $0$} (typically $K=\\C_p$).\n\n\\begin{para}\\label{para::2.3.1} It follows from \\ref{pro::2.1.5}\n (together with \\ref{para::1.4.1}) \n that $\\P^1$ and $\\A^1$ have trivial temperate fundamental\n groups\\footnote{in contrast, recall that $\\A^1$ has non-trivial\n locally-algebraic fundamental group, and that $\\P^1$ has trivial\n locally-algebraic fundamental group but non-trivial \\'etale fundamental\n group.}.\n\nLet us next examine $\\G_m=\\P^1\\setminus\\{0,\\infty\\}$. We have\n$\\pi_1^{\\mathrm{top}}(\\G_m,1)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-065",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Local and global monodromy of $p$-adic differential equations.",
+      "pageStart": 145,
+      "pageEnd": 145,
+      "target": "../sections/sec-065-15-local-and-global-monodromy-of-p-adic-differen.md",
+      "narrative": null,
+      "content": "\\label{sec::3}\n\n\\markboth{\\thechapter. $p$-ADIC ORBIFOLDS AND MONODROMY.}\n{\\thesection. LOCAL AND GLOBAL MONODROMY.}\n\n\\begin{abst}\nWe briefly review and compare the theory of singularities of ordinary\nlinear differential equations in the formal, complex and $p$-adic\ncontexts. We then outline the Christol-Mebkhout theory of $p$-adic\nslopes of differential modules over annuli. There is a close relation\nwith Galois representations of local fields of characteristic $p$,\nexpressed by Crew's $p$-adic local monodromy conjecture, which has been\nrecently proved \\cite{andre01:_filtr_hasse_arf}. Complica",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-066",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction.",
+      "pageStart": 145,
+      "pageEnd": 148,
+      "target": "../sections/sec-066-151-introduction.md",
+      "narrative": null,
+      "content": "\\label{sub::3.1}\n\n\\begin{para}\\label{para::3.1.1} Let us briefly review some well-known facts\n about singularities of ordinary linear differential equations. For\n concreteness, we consider a differential equation   \n\n \\begin{equation}\n  \\alpha_\\mu(z) \\partial^\\mu y + \\cdots + \\alpha_0 (z)\n   y =0,\\;\\; \\partial=z\\frac{d}{dz}, \\tag{$\\ast$}\n \\end{equation}\n with polynomial coefficients $\\alpha_i(z)$, and concentrate on\n phenomena at infinity.\n\\end{para}\n\n\\begin{para}\\label{para::3.1.2}  We begin the discussion with the formal\n setting. One defines the formal Newton polygon at $\\infty$,\n $\\widehat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-067",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Local monodromy of $p$-adic differential equations. Outline of Christol-Mebkhout theory.",
+      "pageStart": 148,
+      "pageEnd": 150,
+      "target": "../sections/sec-067-152-local-monodromy-of-p-adic-differential-equat.md",
+      "narrative": null,
+      "content": "\\label{sub::3.2}\n\n\\begin{para}\\label{para::3.2.1} Let $K$ be a complete subfield of\n $\\C_p$. We assume for simplicity that the restriction of the $p$-adic \nvaluation to $K$ is discrete. \n\nThe Robba $K$-algebra at `infinity' is \n \\begin{equation*}\n\\mathcal{R}=\\mathcal{R}_{z,K}= \\{K\\text{-analytic functions on some }\n \\mathcal{C}(]1,r[)\\}.\n\\end{equation*}\n Endowed with $\\partial = zd/dz$, this is a differential (integral)\n $K$-algebra. Although it is not simple as a differential algebra (there\n are many non-trivial differential ideals), it has the following useful\n property, which often allows o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-068",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Local monodromy of $p$-adic differential equations and Galois representations.",
+      "pageStart": 150,
+      "pageEnd": 152,
+      "target": "../sections/sec-068-153-local-monodromy-of-p-adic-differential-equat.md",
+      "narrative": null,
+      "content": "\\label{sub::3.3}\n\n\\begin{para}\\label{para::3.3.1} The differential sub-$K$-algebra \n \\begin{equation*}\n  \\mathcal{E}^{\\dag} = \\{\\text{bounded $K$-analytic functions on some }\n   \\mathcal{C}(]1,r[)\\}\n \\end{equation*} \n of bounded functions in $\\mathcal{R}$ is actually a field. With the\n $p$-adic sup-norm, it is even a henselian field, with residue field\n $k((\\frac{1}{z}))$ (where $k$ stands for the residue field of $K$).\n Hence any Galois extension $k((\\frac{1}{z'}))/k((\\frac{1}{z}))$ gives\n rise to an unramified Galois extension\n $\\mathcal{E}^\\dagger_{z',K'}/\\mathcal{E}^\\dagger_{z,K}$ (and, fu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-069",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A non-archimedean Riemann-Hilbert equivalence.",
+      "pageStart": 152,
+      "pageEnd": 156,
+      "target": "../sections/sec-069-154-a-non-archimedean-riemann-hilbert-equivalenc.md",
+      "narrative": null,
+      "content": "\\label{sub::3.4} \n\n\\begin{para}\\label{para::3.4.1} Let us return to a general ordinary linear\n differential equation with polynomial or analytic coefficients \n\n \\begin{equation}\n  \\alpha_\\mu(z) \\partial^\\mu y + \\cdots + \\alpha_0 (z) y = 0\n  \\;\\text{ on $S\\subset \\A^1$, with $\\partial=z\\frac{d}{dz}$}.\\tag{$\\ast$}\n \\end{equation}\n\n In the $p$-adic case, contrary to the complex situation, there\n does {\\it not} exist, in general, any \\'etale covering $S'\\to S$ such\n that $(\\ast)$ has a full set of solutions in $\\mathcal{O}_{S'}$.\n \n \\medskip\\noindent {\\it Example}: $\\partial^2 y =0, \\;S \\supset\n \\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-070",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples and applications.",
+      "pageStart": 156,
+      "pageEnd": 162,
+      "target": "../sections/sec-070-155-examples-and-applications.md",
+      "narrative": null,
+      "content": "\\label{sub::3.5} \n\n\\begin{para}\\label{para::3.5.1} For any full subcategory $\\Cov^\\bullet_S$ of\n $\\Cov^{\\mathrm{et}}_S$ which is stable under \n taking connected components, fiber products  and quotients, we have seen\n that there is a natural continuous homomorphism \n \\begin{equation*}\n  \\pi_1^{\\mathrm{et}}(S, \\ovl{s})\\to \\pi_1^\\bullet(S, \\ovl{s}) \n \\end{equation*}\n with dense image (\\ref{cor::1.4.8}). Any discrete representation\n of $ \\pi_1^\\bullet(S, \\ovl{s})$ gives rise to a \n discrete representation of $ \\pi_1^{\\mathrm{et}}(S, \\ovl{s})$ with the\n same coimage. It follows that the \\'etale Ri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-071",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Non-archimedean orbifolds, uniformizing differential equations and period mappings.",
+      "pageStart": 162,
+      "pageEnd": 162,
+      "target": "../sections/sec-071-16-non-archimedean-orbifolds-uniformizing-differ.md",
+      "narrative": null,
+      "content": "\\label{sec::4}\n\n\\markboth{\\thechapter. $p$-ADIC ORBIFOLDS AND MONODROMY.}\n{\\thesection. NON-ARCHIMEDEAN ORBIFOLDS.}\n\n\\begin{abst}\nWe review the complex case, and then define and study non-archimedean\norbifolds, their associated orbifold fundamental groups, and\nuniformizing differential equations.\n\\end{abst}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-072",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Review of complex orbifolds.",
+      "pageStart": 162,
+      "pageEnd": 165,
+      "target": "../sections/sec-072-161-review-of-complex-orbifolds.md",
+      "narrative": null,
+      "content": "\\label{sub::4.1}\n\n\\begin{para}\\label{para::4.1.1} There are several variants of the notion \n of complex orbifold. We follow \\cite{calip} and see orbifolds \n as being locally quotients of a complex manifold by a finite group \n acting faithfully. More precisely, a {\\it complex orbifold} \n $\\mathcal{S}=(\\ovl{S}, (Z_i,e_i))$ consists in \n \\begin{itemize}\n  \\renewcommand{\\labelitemi}{\\normalfont\\bfseries\\textendash}\n  \\item a normal analytic space $\\ovl{S}$,\n  \\item a locally finite collection of irreducible (Weil) divisors\n\t$(Z_i)$,\n  \\item a positive integer\\footnote{in other variants, one also a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-073",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Orbifold fundamental groups.",
+      "pageStart": 165,
+      "pageEnd": 166,
+      "target": "../sections/sec-073-162-orbifold-fundamental-groups.md",
+      "narrative": null,
+      "content": "\\label{sub::4.2}\n\n\\begin{para}\\label{para::4.2.1} Another important application of orbifolds is\n the Galois theory of {\\it ramified} coverings.   \n\n  Let $\\mathcal{S}=(\\ovl{S}, (Z_i,e_i))$ be a uniformizable connected\norbifold. We denote by $\\tilde{\\mathcal{S}}$ the universal\norbifold-covering (which is a simply-connected complex manifold,\ntogether with a (ramified) covering morphism $\\tilde{\\mathcal{S}}\\to\n\\ovl{S}$). We fix a base-point $s$ of $S =\\ovl{S}\\setminus \\,(\\bigcup\nZ_i\\cup\\ovl{S}^{\\mathrm{sing}})$, and a point $\\tilde s$ of $\\tilde{\\mathcal{S}}$\nabove $s$. Then the pair $(\\tilde{\\ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-074",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Uniformizing differential equations.",
+      "pageStart": 166,
+      "pageEnd": 167,
+      "target": "../sections/sec-074-163-uniformizing-differential-equations.md",
+      "narrative": null,
+      "content": "\\label{sub::4.3}\n\n\\begin{para}\\label{para::4.3.1} We follow the exposition in \\cite[4,\n 5.2]{fde} and \\cite[4]{aeoaafg}. We now assume that $\\ovl{S}$ is a \ncomplex smooth projective {\\it curve}. Then $Z=\\{\\zeta_0,\\ldots\n ,\\zeta_n\\}$ is just a finite set of points and $S=\\ovl{S}\\setminus Z$.\n\n We assume that $\\mathcal{S}$ is uniformizable. By Riemann's\n uniformization theorem, the universal orbifold-covering\n $\\tilde{\\mathcal{S}}$ is then isomorphic to either\n $\\P^1, \\A^1$ or the open unit disk $\\matheur{D}$.  We fix such an\n isomorphism\\footnote{in some cases, it will be more \n convenient to w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-075",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Non-archimedean orbifolds.",
+      "pageStart": 167,
+      "pageEnd": 170,
+      "target": "../sections/sec-075-164-non-archimedean-orbifolds.md",
+      "narrative": null,
+      "content": "\\label{sub::4.4}\n\n\\begin{para}\\label{para::4.4.1} We now work over a complete non-archimedean\n field $K$. The definition of orbifolds is parallel to the one \n which we have selected in the complex situation. Being mainly interested\n in orbifolds which are quotients of \n manifolds by finite groups, it is natural to replace everywhere \\'etale\n (= topological) coverings in the complex case by {\\it temperate}\n \\'etale coverings in the non-archimedean context.\n\n \\medskip\\noindent A {\\it $K$-orbifold} $\\;\\mathcal{S}=(\\ovl{S},\n (Z_i,e_i))$ consists in \n \\begin{itemize}\n  \\renewcommand{\\labelitemi}{\\n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-076",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Non-archimedean orbifold fundamental groups.",
+      "pageStart": 170,
+      "pageEnd": 179,
+      "target": "../sections/sec-076-165-non-archimedean-orbifold-fundamental-groups.md",
+      "narrative": null,
+      "content": "\\label{sub::4.5}\n\n\\medskip From now on, we assume that $K$ is {\\it algebraically closed of\ncharacteristic zero}. \n\n\\begin{para}\\label{para::4.5.1}  Let $\\mathcal{S}=(\\ovl{S}, (Z_i,e_i))$\n be a uniformizable connected orbifold.\n\nAs we have seen in \\ref{para::4.4.4}, the restriction above $S$ of an\n orbifold-covering is a temperate \\'etale covering. This gives \nrise to a restriction functor \n\\begin{equation*}\n   \\Cov_\\mathcal{S} \\longrightarrow \\Cov_S^{\\mathrm{temp}}.\n\\end{equation*}\n\\end{para}\n\n\\begin{pro}\\label{pro::4.5.2} This functor is fully faithful. Its image\n consists of those temperate",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-077",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Review of Schwarz triangle groups.",
+      "pageStart": 179,
+      "pageEnd": 183,
+      "target": "../sections/sec-077-171-review-of-schwarz-triangle-groups.md",
+      "narrative": null,
+      "content": "\\label{sub::5.1}\n\n\\begin{para}\\label{para::5.1.1} A {\\it Schwarz orbifold} is a complex orbifold\n of the form \n \\begin{equation*}\n  \\mathcal{S}(e_0,e_1,e_\\infty)=(\\P^1; (0,\n   e_0), (1,e_1), (\\infty, e_{\\infty})).\n \\end{equation*}\n It is uniformizable. The universal orbifold-covering is $\\P^1, \\A^1$ or \n the open unit disk $\\matheur{D}$ according to whether $\\sum  \\frac{1}{e_i}$ is\n $>1,\\;=1,\\;$ or $<1$ respectively.\n\n \\noindent We fix a base-point $\\ovl{s}$ (which can be a tangential\n base-point).\n \n\\medskip\\noindent The {\\it Schwarz triangle group\\footnote{in conformity\n with the previous ch",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-078",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mumford-Schwarz orbifolds.",
+      "pageStart": 183,
+      "pageEnd": 186,
+      "target": "../sections/sec-078-173-mumford-schwarz-orbifolds.md",
+      "narrative": null,
+      "content": "\\label{sub::5.3}\n\n\\begin{para}\\label{para::5.3.1} Our aim is to give a more geometric\n description of $p$-adic triangle groups, independent of the theory of\n monodromy of $p$-adic differential equations. This involves the notion\n of Mumford-Schwarz orbifold.\n\\end{para}\n\n\\begin{dfn}\\label{def::5.3.2} A Mumford-Schwarz orbifold is a $p$-adic\n Schwarz orbifold such that there exists a finite \nGalois global orbifold chart $\\ovl{S}' \\to \\P^1$, $\\ovl{S}'$ being a\n Mumford curve.  \n\\hfill\\break In other\nwords, it is the orbifold quotient of a Mumford curve $\\ovl{S}'$ by a\n finite group of automorphis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-079",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Arithmetic triangle groups. Review of Takeuchi's list.",
+      "pageStart": 186,
+      "pageEnd": 188,
+      "target": "../sections/sec-079-174-arithmetic-triangle-groups-review-of-takeuch.md",
+      "narrative": null,
+      "content": "\\label{sub::5.4}\n\n\\begin{para}\\label{para::5.4.1} (Cocompact) arithmetic triangle groups\n are hyperbolic triangle groups which are {\\it commensurable with the\n unit groups of quaternion algebras $B$ over number fields}.\n\n In order to make this definition more precise, let us first place\n ourselves in greater generality. Let $E$ be a number field, and let $B$\n be a quaternion algebra over $E$. Let $V$ be a finite set of places of\n $E$ containing the places at infinity and at least one place (possibly\n infinite) where $B$ is unramified. Let us define\n \\begin{equation*}\n  G_{(V)} = \\prod \\,B_v^\\t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-080",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Arithmetic $p$-adic triangle groups. A $p$-adic analogue of Takeuchi's list.",
+      "pageStart": 188,
+      "pageEnd": 192,
+      "target": "../sections/sec-080-175-arithmetic-p-adic-triangle-groups-a-p-adic-a.md",
+      "narrative": null,
+      "content": "\\label{sub::5.5} \n\n\\begin{para}\\label{para::5.5.1} Arithmetic $p$-adic triangle groups are\n hyperbolic $p$-adic triangle groups which are {\\it commensurable with\n the $p$-unit groups of quaternion algebras $\\ovl{B}$ over number\n fields}.\\footnote{In fact, these were the first $p$-adic triangle groups\n to be constructed \\cite{poaptg}, and the existence of non-arithmetic\n hyperbolic $p$-adic triangle groups remained unclear for a while, before\n Kato's construction.}\n \n \\medskip Let now $V$ be the set of $p$-adic and infinite places of\n $E$. It follows from the discussion of \\ref{para::5.4.1} tha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-081",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "On special values of hypergeometric functions attached to arithmetic $p$-adic triangle groups.",
+      "pageStart": 192,
+      "pageEnd": 194,
+      "target": "../sections/sec-081-176-on-special-values-of-hypergeometric-function.md",
+      "narrative": null,
+      "content": "\\label{sub::5.6}  \n\n\\begin{para}\\label{para::5.6.1} Let $a,b,c$ be rational numbers such that\n $c>a+b$. Then the hypergeometric series ${}_2F_1(a,b;c;z)$ \n converges at $1$ and takes the value (Gauss' formula) \n \\begin{equation*}\n  {}_2F_1(a,b;c;1)= \\frac{\\Gamma(c)\\Gamma(c-a-b)}{\\Gamma(c-a)\\Gamma(c-b)}\\;.\n \\end{equation*}   \n\n\\noindent If one considers ${}_2F_1(a,b;c;z)$ as a multivalued analytic\nfunction on $\\P^1\\setminus\\{0,1,\\infty\\}$, the \nvalues at $1$ form a finitely generated subgroup of $\\C$; they generate\na $\\ovl{\\Q}$-subspace of $\\C$ of dimension $\\leq 2$,\nnamely:  \n\\begin{equation*}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/figure-img-p194-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 194,
+      "pageEnd": 194,
+      "target": "../images/img-p194-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/figure-img-p194-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 194,
+      "pageEnd": 194,
+      "target": "../images/img-p194-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-082",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Escher's triangle group $\\Delta(2,4,6)$.",
+      "pageStart": 194,
+      "pageEnd": 195,
+      "target": "../sections/sec-082-181-eschers-triangle-group-delta246.md",
+      "narrative": null,
+      "content": "\\label{sub::6.1}\n\n\\begin{para}\\label{para::6.1.1} This is the symmetry group of the\n black-and-white tesselation of the unit disk by hyperbolic \n triangles with angles $(\\frac{\\pi}{2}, \\frac{\\pi}{4}, \\frac{\\pi}{6})$\n\n\n\\begin{figure}[h]\n \\begin{picture}(300,170)(0,0)\n  \\put(0,0){\\includegraphics[scale=0.43,clip]{fig3-6a1.eps}}\n  \\put(170,0){\\includegraphics[scale=0.6,clip]{fig3-6a2.eps}}\n \\end{picture}\n \\caption{}\n\\end{figure}\n\n M.C. Escher has engraved several celebrated variants of this Schwarz\n tesselation (``cirkel-limiet'', angels and \n demons), {\\it cf}  \\cite{escher71:_m} \\footnote{he ha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-083",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some Shimura curves attached to $D_{2.3}$.",
+      "pageStart": 195,
+      "pageEnd": 200,
+      "target": "../sections/sec-083-182-some-shimura-curves-attached-to-d-23.md",
+      "narrative": null,
+      "content": "\\label{sub::6.2}\n\n\\begin{para}\\label{para::6.2.1} The $\\Q$-subalgebra of $M_2(\\Q (\\sqrt\n {-1}, \\sqrt 2, \\sqrt 3))$ generated by the matrices $A$ and $B$ \n is the quaternion algebra $B=B_{2.3}$ over $\\Q$ with discriminant\n $6$. This quaternion algebra is unique up to \n isomorphism and admits standard generators $i,j$ and relations \n $i^2=-1,\\;j^2=3,\\;ij=-ji$.  \n\n \\noindent It follows that $\\Delta(2,4,6)$ is a subgroup of\n $B_{2.3}^\\times/\\Q^\\times$. According to \\cite{ccoatg}, \n $\\Delta(2,4,6)$, $\\Delta(3,4,4)$, $\\Delta(2,6,6)$ and $\\Delta(3,6,6)$\n are the only cocompact triangle \n groups which",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/figure-img-p197-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 197,
+      "pageEnd": 197,
+      "target": "../images/img-p197-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/figure-img-p197-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 197,
+      "pageEnd": 197,
+      "target": "../images/img-p197-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-084",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Triadic uniformization.",
+      "pageStart": 200,
+      "pageEnd": 202,
+      "target": "../sections/sec-084-183-triadic-uniformization.md",
+      "narrative": null,
+      "content": "\\label{sub::6.3}\n\n\\begin{para}\\label{para::6.3.1} The Shimura curve $\\mathcal{X}^+(2)$ has good\n reduction at any prime $p\\neq 2,3$. As for the critical primes $2$ and\n $3$, the situation for $p=3$ is easier to describe than for $p=2$,\n since $3$ does not divide the level (II.\\ref{sub:7.4}). \n\n For the triadic \\v{C}erednik-Drinfeld uniformization, the relevant\n quaternion algebra is the Hamilton definite quaternion algebra\n $\\ovl{B}=B_{2.\\infty}$ over $\\Q$ with basis $(1,i,j,ij)$ and relations\n $i^2=j^2=-1, ij=-ji$. A maximal order (unique up to conjugation, {\\it\n cf.} \\cite[5.11]{adadq}) cons",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-085",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The non-archimedean triangle groups $\\Delta_3(2,4,6), \\Delta_2(2,4,6)$ and Herrlich's tree.",
+      "pageStart": 202,
+      "pageEnd": 208,
+      "target": "../sections/sec-085-184-the-non-archimedean-triangle-groups-delta-32.md",
+      "narrative": null,
+      "content": "\\label{sub::6.4}\n\n\\begin{para}\\label{para::6.4.1} Our aim here is to explore the combinatorics\n of the finitely  \n generated groups $\\Delta_3(2,4,6)$ and $ \\Delta_2(2,4,6)$. \n\n\\noindent It follows from the above considerations that\n $\\Delta_3(2,4,6)$ sits in an exact sequence \n\\begin{equation*}\n1\\to \\an{\\gamma_1,\\gamma_2,\\gamma_3}=\\Gamma_3^+(2)\\to \\Delta_3(2,4,6)\\to\n \\mathfrak{S}_4\\times \\Z/2\\Z =\\Aut(\\mathcal{X}^+(2))\\to 1.\n\\end{equation*} \n \\noindent This extension is described by the outer action of\n $\\mathfrak{S}_4\\times \\Z/2\\Z$ on  $\\an{\\gamma_1,\\gamma_2,\\gamma_3}$. \n Similarly, $\\Delta_2(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/figure-img-p206-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 206,
+      "pageEnd": 206,
+      "target": "../images/img-p206-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/conj-sec-086-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 208,
+      "pageEnd": 211,
+      "target": "conj-sec-086-01.md",
+      "narrative": null,
+      "content": "\\ref{coj-no-complex-multi} predicts that $\\Gamma_3(\\frac{1}{4})$ is a transcendental number. \\end{para}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-086",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A triadic analogue of Gauss' formula, and special values of $F(\\frac{1}{24}, \\frac{7}{24},\\frac{5}{6}; z)$ at CM points.",
+      "pageStart": 208,
+      "pageEnd": 211,
+      "target": "../sections/sec-086-186-a-triadic-analogue-of-gauss-formula-and-spec.md",
+      "narrative": null,
+      "content": "\\label{sub::6.6}\n\n\n\\begin{para}\\label{para::6.6.1} For our hypergeometric function, Gauss'\n formula reads\n \\begin{equation*}\n  F\\Bigl(\\frac{1}{24}, \\frac{7}{24},\\frac{5}{6};1\\Bigr)=\n \\frac{\\Gamma(\\frac{5}{6})\\Gamma(\\frac{1}{2})}\n {\\Gamma(\\frac{19}{24})\\Gamma(\\frac{13}{24})}.\n \\end{equation*}\n\n\\noindent If one considers $F(\\frac{1}{24}, \\frac{7}{24},\\frac{5}{6};\n z)$ as a multivalued analytic function on\n $\\P^1\\setminus\\{0,1,\\infty\\}$, the values at $1$ generate a\n $\\ovl{\\Q}$-subspace of $\\C$ of dimension $\\leq 2$, namely:  \n\\begin{equation*}\n \\frac{\\Gamma(\\frac{5}{6})\\Gamma(\\frac{1}{2})}\n  {\\G",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-087",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction.",
+      "pageStart": 211,
+      "pageEnd": 213,
+      "target": "../sections/sec-087-a-introduction.md",
+      "narrative": null,
+      "content": "In this appendix, K always denotes a complete ﬁeld with respect to a\nnon-archimedean valuation | · |: K →R≥0. The norm | · | is almost always\nassumed to be non-trivial, unless otherwise stated.\nLet us assume for a while that K is algebraically closed. We view the\nﬁeld K as an aﬃne space, as we do in complex analysis; K is a metrized\nspace with the metric induced from the valuation | · |. We can then follow\nthe lines of classical complex analysis and deﬁne convergence of power series,\nTaylor and Laurent expansions, etc...\nFor instance let us deﬁne “holomorphic” functions to be K-valued func-\nti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/rem-sec-087-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 211,
+      "pageEnd": 213,
+      "target": "rem-sec-087-01.md",
+      "narrative": null,
+      "content": "Although the rigid analysis seems to provide the reasonable topological and analytical framework, one must not expect it to be as nice as the complex case. Firstly, in classical complex analysis, when we expand a holomorphic function centered at a point inside its region of convergence, the resulting Taylor expansion may have a diﬀerent region of convergence",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/ex-sec-088-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "Projective Space",
+      "pageStart": 213,
+      "pageEnd": 216,
+      "target": "ex-sec-088-02.md",
+      "narrative": null,
+      "content": "The projective space Pn(K) has the nat- ural rigid analytic structure. Here we limit ourselves to demonstrate it only in the case n = 1, and leave the general case to the reader. Let (X : Y ) be the homogeneous coordinate in P1(K) and set z = X/Y . Set U+ = {(X : Y ) | |X| ≤|Y |} and U−= {(X : Y ) | |X| ≥|Y |} . Then U+ is isomorphic to the closed disk {z ∈K | |z| ≤1} (the Southern Hemisphere with the equator) , and U−to {z ∈K ∪{∞} | |z| ≥1} (the Northern Hemisphere with the equator). The intersection U+ ∩U−is thus A. RAPID COURSE IN p-ADIC ANALYSIS. isomorphic to the circle {z ∈K | |z| = 1}.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/lem-sec-088-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 213,
+      "pageEnd": 216,
+      "target": "lem-sec-088-01.md",
+      "narrative": null,
+      "content": "(1) If R and S are rational subdomains in Spm(A), then so is R ∩S. (2) If R1 is a rational subdomain in Spm(A), and R2 is a rational sub- domain in R1, then R2 is a rational subdomain in Spm(A).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-088",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rigid analytic spaces.",
+      "pageStart": 213,
+      "pageEnd": 216,
+      "target": "../sections/sec-088-b-rigid-analytic-spaces.md",
+      "narrative": null,
+      "content": "209\nthan the original one. This is a important method of analytic continuation.\nBut in the non-archimedean case, this never happens (cf. [Gou97, 4.4]).\nSecondly, the topological framework given as above is still not powerful\nenough to handle paths. So it is hopeless to treat, for example, fundamental\ngroups and monodromy in an intuitive way as in the classical complex case.\nThis diﬃculty is, in fact, remedied by Berkovich’ theory which we shall see\nlater on.\n2. Rigid analytic spaces.\nLet K be as in the previous section; we do not assume in general that\nK is algebraically closed.\nAs mentioned a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/ex-sec-089-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 216,
+      "pageEnd": 220,
+      "target": "ex-sec-089-03.md",
+      "narrative": null,
+      "content": "Let us assume in this example that K is algebraically closed. We consider the admissible covering D1 = U1 ∪U2 of the unit disk D1 = SpmK{T} given by U1 = {z ∈K | |z| ≤|π|} = SpmK \b T π",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prop-sec-089-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 216,
+      "pageEnd": 220,
+      "target": "prop-sec-089-02.md",
+      "narrative": null,
+      "content": "The map RedX is continuous with respect to the Zariski topology of X and the G-topology of X; it maps X surjectively onto the set of all closed points of X.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prop-sec-089-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 216,
+      "pageEnd": 220,
+      "target": "prop-sec-089-04.md",
+      "narrative": null,
+      "content": "The functor Rig maps admissible formal blow-up’s of ad- missible formal schemes to isomorphisms of rigid analytic spaces.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-089",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relation with Formal Geometry.",
+      "pageStart": 216,
+      "pageEnd": 220,
+      "target": "../sections/sec-089-c-relation-with-formal-geometry.md",
+      "narrative": null,
+      "content": "In this section we need to consider the valuation ring R of K.\nLet\nus denote by m the maximal ideal of R, and ﬁx a topological generator\n0̸ = π ∈m. The residue ﬁeld R/m is denoted by k.\nLet A be an aﬃnoid algebra over K. The spectral semi-norm on A is\nthe function | · |sup : A →R≥0 deﬁned, for any f ∈A, by\n|f|sup =\nsup\nx∈Spm(A)\n|f(x)|.\nIt is known that for any representation α: K{t1, . . . , tn}/I\n∼\n→A, we have\n|f|sup ≤|f|α for every f ∈A (cf. [BGR84, 6.2.1]).\nTheorem 3.1 (Maximal modulus principle). For an aﬃnoid algebra A and\nan element f ∈A, there exists a point x ∈Spm(A) such that |f(x)| =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/thm-sec-089-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Maximal modulus principle",
+      "pageStart": 216,
+      "pageEnd": 220,
+      "target": "thm-sec-089-01.md",
+      "narrative": null,
+      "content": "For an aﬃnoid algebra A and an element f ∈A, there exists a point x ∈Spm(A) such that |f(x)| = |f|sup. We refer [BGR84, 6.2.1] for the proof. Given an aﬃnoid algebra A over K, we introduce the following notation: A◦ = {f ∈A | |f|sup ≤1}, A◦◦ = {f ∈A | |f|sup < 1}, A = A◦/A◦◦; A◦is a R-subalgebra of A, and A◦◦is an ideal of it. For instance, K◦= R, K◦◦= m, and K = k.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/thm-sec-089-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Raynaud 1972",
+      "pageStart": 216,
+      "pageEnd": 220,
+      "target": "thm-sec-089-05.md",
+      "narrative": null,
+      "content": "The functor gives the equivalence of the following categories, (i) the category of quasi-compact admissible formal R-schemes, localized by admissible formal blow-up’s, (ii) the category of quasi-compact and quasi-separated rigid analytic spaces over K. The reader ﬁnds a nice comprehensive account of the proof of this the- orem in [BL93].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/cor-sec-090-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 220,
+      "pageEnd": 222,
+      "target": "cor-sec-090-03.md",
+      "narrative": null,
+      "content": "The Grothendieck topology of the projective line P1,an K is gen- erated by standard domains.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/cor-sec-090-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 220,
+      "pageEnd": 222,
+      "target": "cor-sec-090-05.md",
+      "narrative": null,
+      "content": "Every connected open subanalytic space(4) in P1,an K is simply connected.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/lem-sec-090-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 220,
+      "pageEnd": 222,
+      "target": "lem-sec-090-01.md",
+      "narrative": null,
+      "content": "Let X be a connect rigid analytic space X. (1) The space X is simply connected if and only if every locally constant sheaf of sets, with respect to the Grothendieck topology, is constant. (2) If there exists an admissible covering {Xi}i∈N of X such that (a) every Xi is simply connected, and (b) Xi ⊆Xi+1 for all i, then X is simply connected.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prop-sec-090-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 220,
+      "pageEnd": 222,
+      "target": "prop-sec-090-02.md",
+      "narrative": null,
+      "content": "Every rational subdomain in D is a ﬁnite union of standard domains. (Hence standard domains generate the Grothendieck topology of D.)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prop-sec-090-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 220,
+      "pageEnd": 222,
+      "target": "prop-sec-090-04.md",
+      "narrative": null,
+      "content": "Standard domains are connected. Moreover, every con- nected rational subdomain in P1,an K is simply connected.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-090",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Topology of Rigid Analytic Space.",
+      "pageStart": 220,
+      "pageEnd": 222,
+      "target": "../sections/sec-090-d-topology-of-rigid-analytic-space.md",
+      "narrative": null,
+      "content": "In this section, we assume, for simplicity, that K is algebraically closed.\nDeﬁnition 4.1.\n(1) A rigid analytic space X is said to be quasi-compact\nif every admissible covering of X has a ﬁnite admissible reﬁnement.\n(2) A rigid analytic space X is said to be connected if there is no admis-\nsible covering {Ui}i∈I of X such that\n[\ni∈I1\nUi ∩\n[\ni∈I2\nUi = ∅and\n[\ni∈I1\nUi̸ = ∅̸ =\n[\ni∈I2\nUi\nfor some non-empty subsets I1, I2 ⊆I with I = I1 ⊔I2.\nSince admissible coverings of aﬃnoids are ﬁxed as ﬁnite, every aﬃnoid\nis quasi-compact. So, we see that a rigid analytic space is quasi-compact\nif and only if i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/rem-sec-090-07",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 220,
+      "pageEnd": 222,
+      "target": "rem-sec-090-07.md",
+      "narrative": null,
+      "content": "By the corollary, we know, for example, that the space Gan K = K× is simply connected. But, on the other hand, it is easy to see that the map K× →K× by x 7→xn is an analytic morphism. As far as the charac- teristic of K does not divide n, we are tempted to think of this morphisms also as an analytic covering. But it is not. Certainly, this morphism induces isomorphisms between stalks of the structure sheaf, but there is no admis- sible covering which trivializes this morphism! This kind of morphisms is said to be ´etale; analytic coverings are ´etale, but not vice versa. Simply connected analy",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/thm-sec-090-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 220,
+      "pageEnd": 222,
+      "target": "thm-sec-090-06.md",
+      "narrative": null,
+      "content": "Let X be a quasi-compact rigid analytic space over K which has the irreducible and smooth analytic reduction. Then X is simply con- nected. For the proof, see [vdP87].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/ex-sec-091-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 222,
+      "pageEnd": 225,
+      "target": "ex-sec-091-01.md",
+      "narrative": null,
+      "content": "Let us consider the usual absolute-value norm | · |∞on Z. The spectrum M(Z) consists of the following points: (i) | · |∞,ǫ: = | · |ǫ ∞(0 < ǫ ≤1). (ii) The p-adic norm | · |p,ǫ: with |p|p,ǫ = ǫ (0 < ǫ ≤1). (iii) The semi-norm | · |p induced from the trivial norm on Z/pZ. (iv) The trivial norm | · |0. As a topological space, M(Z) is a tree with end points | · |p and | · |∞. Each of these points is connected by a single edge with | · |0. On the Berkovich’ spectrum, the aﬃnoid subdomains (incl. rational sub- domains) are deﬁned in the similar way to rigid analysis. Thus one can deﬁne the structure",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-091",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Berkovich' approach to non-archimedean analysis",
+      "pageStart": 222,
+      "pageEnd": 225,
+      "target": "../sections/sec-091-e-berkovich-approach-to-non-archimedean-analysis.md",
+      "narrative": null,
+      "content": "Berkovich’ viewpoint provides an innovative approach to topological\nproblems of p-adic geometry and analysis, which is much closer to the famil-\niar intuition derived from the complex context [Ber90](5). His analysis, in\nfact, generalizes, or properly speaking, “completes” the rigid analysis. This\nsituation is, according to what he says in the introduction of his book, some-\nhow analogous to that of R completing Q. The standard archimedean metric\nspace Q is totally disconnected. The rigid analytic viewpoint corresponds,\nto some extent, to regarding every rational interval {r ∈Q | a ≤r ≤b} as\n(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/thm-sec-091-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 222,
+      "pageEnd": 225,
+      "target": "thm-sec-091-02.md",
+      "narrative": null,
+      "content": "This functor is fully-faithful, and preserves ﬁber products. APPENDIX B Overview of theory of p-adic uniformization. By F. Kato In this appendix we always denote by K, R, and π a complete discrete valuation ﬁeld, its valuation ring, and a prime element of R, respectively. We assume that the residue ﬁeld k = R/πR is ﬁnite and consists of q ele- ments. The Mumford-Kurihara-Mustaﬁn uniformization is a procedure to construct nice analytic (and in many cases algebraic) varieties by taking discrete Schottky-type quotients of a certain p-adic analogue of symmetric space, so-called Drinfeld symmetric",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/ex-sec-092-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "n = 1 case",
+      "pageStart": 225,
+      "pageEnd": 226,
+      "target": "ex-sec-092-01.md",
+      "narrative": null,
+      "content": "In n = 1 case, the vertices adjacent to a ﬁx vertex Λ are in one-to-one correspondence with the set of all k-rational points of the projective line P1 k; in particular, each vertex has exactly q + 1 adjacent vertices. Moreover, it can be seen that the simplicial complex ∆= ∆1 is a tree. The following picture shows how it looks like in case q = 2: r r ❍❍r ✟ ✟ r ✟✟r ❍ ❍ r r ✟✟r r ❍ ❍ r ♣♣♣♣♣♣ ♣♣♣♣♣♣ ♣♣♣ ♣♣♣ ♣♣♣♣♣♣ ♣♣♣ ♣♣♣ ♣♣♣♣♣♣ In general, the geometrical realization |∆| of ∆is known to be a con- tractible topological space.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/ex-sec-092-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "n = 2 case",
+      "pageStart": 225,
+      "pageEnd": 226,
+      "target": "ex-sec-092-02.md",
+      "narrative": null,
+      "content": "Already in case n = 2, the structure of ∆= ∆2 is fairly complicated. For a ﬁxed vertex Λ, the set of all vertices adjacent of Λ is divided in two; one for those corresponding to q2 + q + 1 k-rational points in P2 k and the other for those corresponding to q2 + q + 1 k-rational lines in P2 k. So it is convenient to consider the surface B which is obtained by blowing-up of P2 k at every k-rational points. Two vertices adjacent to Λ forms with Λ a 2-simplex if and only if the corresponding lines in B intersect.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-092",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bruhat-Tits building.",
+      "pageStart": 225,
+      "pageEnd": 226,
+      "target": "../sections/sec-092-f-bruhat-tits-building.md",
+      "narrative": null,
+      "content": "First we survey the construction of a certain simplicial complex, called\nBruhat-Tits building (attached to PGL(n + 1, K)), which will be closely\nrelated with the Drinfeld symmetric space. Let n be a positive integer and V\nan n+1 dimensional vector space over K. A lattice in V is a ﬁnitely generated\nR-submodule of V which spans V over K. Every lattice is therefore a free\nR-module of rank n + 1. Let e∆0 be the set of all lattices in V . We say\nthat two lattices M1 and M2 are similar if there exists λ ∈K× such that\nM1 = λM2. The similarity is obviously an equivalence relation. We denote\nby ∆0 the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/ex-sec-093-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 226,
+      "pageEnd": 230,
+      "target": "ex-sec-093-02.md",
+      "narrative": null,
+      "content": "Let us consider bΩin n = 2. The closed ﬁber bΩ0 consists of countably many components which are all isomorphic to the surface B considered in 1.3. In each component every k-rational line is a double curve in bΩ0, and every k-rational point is a triple point. Structure of Ω. First we note that, as a point set, we have an equality Ω= Pn,an K \\ [ H∈H H, where H is the set of all K-rational hyperplanes.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/lem-sec-093-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 226,
+      "pageEnd": 230,
+      "target": "lem-sec-093-01.md",
+      "narrative": null,
+      "content": "The operation ∨is associative and commutative. The proof is straightforward, and left to the reader. By the lemma, we can extend the construction to any ﬁnite subcomplex of ∆. More precisely, for a ﬁnite subcomplex S, we take the joins of all vertices in S; the resulting R-scheme is denoted by P(S). The scheme P(S) is a regular projective scheme over R having the following properties: (i) The generic ﬁber is canonically isomorphic to P(V ). (ii) The closed ﬁber is a reduced normal crossing of non-singular rational varieties of which the dual graph coincides with S. We want to do this for a gen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prop-sec-093-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 226,
+      "pageEnd": 230,
+      "target": "prop-sec-093-03.md",
+      "narrative": null,
+      "content": "The topological space of similarlity classes of norms on V over K is PGL(n + 1, K)-equivaliantly homeomorphic to the topological realization |∆| of the Bruhat-Tits building ∆. The homeomorphism is given as follows: To any lattice M we need to associate a norm αM. For a non-zero x ∈V , the set {a ∈K | ax ∈M} is a fractional ideal of R, and hence is of form (πm). We then deﬁne αM(x) = qm for non-zero x ∈V , and αM(0) = 0. It is easily veriﬁed that αM is a norm. The similarity class of αM depends only on the similarity class of M. Thus we get a mapping from ∆0 to the set of similarity classes of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-093",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Drinfeld symmetric space.",
+      "pageStart": 226,
+      "pageEnd": 230,
+      "target": "../sections/sec-093-g-drinfeld-symmetric-space.md",
+      "narrative": null,
+      "content": "To each lattice M in V we associate an R-scheme\nP(M): = Proj(SymRM).\nObviously the scheme P(M) depends only on the similarity class; so we\nshould write as P(Λ), where Λ = [M]. The scheme P(M) is isomorphic to\nPn\nR; but the isomorphism cannot be taken canonically, while there exists the\n2. DRINFELD SYMMETRIC SPACE.\n223\ncanonical isomorphism V ∼= P(M) ⊗R K due to the canonical isomorphism\nM ⊗R K ∼= V . So we get a bijection:\n∆0\n∼\n−→\n\u001a\n(P, φ)\nP ∼\n→Pn\nR,\nφ: P ⊗R K ∼\n→P(V )\n\u001b\n/ ∼,\nwhere (P1, φ1) ∼(P2, φ2) if and only if there exists an R-isomorphism\nΦ: P1\n∼\n→P2 which makes the diagram\nP1 ⊗R K\nΦ⊗RK",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-094",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Uniformization.",
+      "pageStart": 230,
+      "pageEnd": 231,
+      "target": "../sections/sec-094-h-uniformization.md",
+      "narrative": null,
+      "content": "B. OVERVIEW OF THEORY OF p-ADIC UNIFORMIZATION.\nfor 0 < t < 1.\n3. Uniformization.\nRecall that, once we ﬁx a K-basis of V , the group PGL(n+1, K) canon-\nically acts on the Bruhat-Tits building ∆and the Drinfeld symmetric space\nΩ. We shall consider discrete groups in PGL(n + 1, K) and the quotients of\n∆and Ωby them. A subgroup Γ ∈PGL(n + 1, K) is said to be hyperbolic\nif it acts on ∆discretely and freely.\nTo a hyperbolic subgroup Γ we associate a convex subcomplex ∆Γ of\n∆by the following recipe: In general, a convex subcomplex generated by\nvertices of form \" n\nX\ni=0\nR · πσiYi\n#\n,\nσi ∈Z,\n0 ≤i ≤n,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/thm-sec-094-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Mustaﬁn [Mus78], Kurihara [Kur80]",
+      "pageStart": 230,
+      "pageEnd": 231,
+      "target": "thm-sec-094-01.md",
+      "narrative": null,
+      "content": "Let Γ be a normal hyperbolic subgroup of PGL(n + 1, K) and ∆Γ as above. Then there exists, unique up to isomorphisms, a rigid analytic space XΓ, smooth, proper and of ﬁnite type over K, and a topological covering map p: Ω(∆Γ) →XΓ such that (i) p ◦γ = p for any γ ∈Γ, (ii) for x, y ∈Ω(∆Γ), p(x) = p(y) if and only if x = γ(y) for some γ ∈Γ. In the references, this theorem has been stated in terms of formal schemes; viz. they took quotients of bΩ(∆Γ) to get a formal scheme b XΓ ﬂat and for- mally of ﬁnite type over R. We have an admissible covering of XΓ induced from that of Ω(∆Γ); in terms of for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-095",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples.",
+      "pageStart": 231,
+      "pageEnd": 232,
+      "target": "../sections/sec-095-i-examples.md",
+      "narrative": null,
+      "content": "227\nAlgebraicity. In n = 1 case the rigid analytic curve XΓ is algebraizable\nfor any Γ ([Mu72b]). In higher dimensions, we know the following suﬃcient\ncondition: Let Γ be a torsion-free uniform lattice in PGL(n + 1, K), viz. a\ndiscrete co-compact subgroup of ﬁnite co-volume without elements of ﬁnite\norder. Then, since it is ﬁnite co-volume, we have ∆Γ = ∆. Hence in this\ncase, we are going to take a quotient of the Drinfeld symmetric space Ω.\nTheorem 3.2 (loc. cit.). If Γ is a torsion-free uniform lattice, then the quo-\ntient rigid analytic variety XΓ can be algebraizable to a non-singular pro-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/thm-sec-095-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "loc. cit.",
+      "pageStart": 231,
+      "pageEnd": 232,
+      "target": "thm-sec-095-01.md",
+      "narrative": null,
+      "content": "If Γ is a torsion-free uniform lattice, then the quo- tient rigid analytic variety XΓ can be algebraizable to a non-singular pro- jective variety having the ample canonical class. In terms of formal scheme, this means that the relative canonical sheaf of b XΓ/SpfR is ample. 4. Examples. Tate curve. Let T be the maxial torus consisting of all invertible diagonal matrices. We take n elements qi ∈K× (1 ≤i ≤n) with |qi| < 1 and set q0 = 1. Deﬁne Γ ⊂T to be the set of all diagonal matrices with (i, i)-entry an integer power of qi for 0 ≤i ≤n. Then Γ is a normal hyperbolic subgroup of PGL(n + 1, K)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/thm-sec-095-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Mumford [Mu72b]",
+      "pageStart": 231,
+      "pageEnd": 232,
+      "target": "thm-sec-095-02.md",
+      "narrative": null,
+      "content": "Let X be a smooth and proper rigid analytic curve over K, and suppose X admits a formal model with k-split multiplicative reduction. Then X is isomorphic to XΓ for a unique Γ. Surface case. In higher dimension it becomes extremely diﬃcult to ﬁnd normal hyperbolic groups; but there are several known examples of torsion- free uniform lattices. Let Γ is a torsion-free uniform lattice, and N the number of Γ-orbits in the vertex set ∆0. Mumford [Mu79] calculated the several numerical invariants of the quotient surface XΓ: (i) χ(OXΓ) = N(q −1)2(q + 1)/3. (ii) (c1,XΓ)2 = 3c2,XΓ = 3N(q −1)2(q + 1). (i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-096",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mumford's fake projective plane.",
+      "pageStart": 232,
+      "pageEnd": 235,
+      "target": "../sections/sec-096-j-mumfords-fake-projective-plane.md",
+      "narrative": null,
+      "content": "Our example of p-adically uniformizable Shimura surface is constructed\nby means of some division algebra D. Th following construction is inspired\nby the Mumford’s oroginal paper [Mu79].\nLet ζ = ζ7 be a primitive 7th-root of unity, and set L: = Q(ζ); L is a\ncyclic extension of Q of degree 6 having an intermediate quadratic extension\nK : = Q(λ) (∼= Q(√−7)), where λ = ζ + ζ2 + ζ4. The Galois group of L/K\nis generated by the Frobenius map σ: ζ 7→ζ2, and that of K/Q is generated\nby the complex conjugation z 7→z. Note that the prime 2 decomposes on\nK, more explicitly, 2 = λλ gives the prime factoriz",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/thm-sec-096-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 232,
+      "pageEnd": 235,
+      "target": "thm-sec-096-01.md",
+      "narrative": null,
+      "content": "The canonical model ShC of the Shimura variety obtained by the data as above has exactly three geometrically connected components deﬁned over Q(ζ7). Moreover, for any connected component S, its base change S ⊗Q(ζ7) Q2(ζ7) is isomorphic to the Mumford’s fake projective plane [Mu79] tensored by Q2(ζ7). More precisely, the associated rigid analytic space to ShC ⊗E Eλ is iso- morphic to Ω/Γ with Γ = I(Q) \\ (J(Q2) × C2) ⊂J(Q2) ∼= PGL(3, Q2), where I(Q) is considered as a subgroup of I(Af) ∼= J(Q2) × G(A2 f ). The proof of the theorem is in [Kat98], where two more fake projective planes are discusse",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-097",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weakly admissible filtered isocrystals.",
+      "pageStart": 235,
+      "pageEnd": 236,
+      "target": "../sections/sec-097-k-weakly-admissible-filtered-isocrystals.md",
+      "narrative": null,
+      "content": "We recall J.-M. Fontaine’s deﬁnition of weakly admissible ﬁltered F-\nisocrystals [Fon79].\n1.1. Let p be a prime number, k a perfect ﬁeld of characteristic p, K0 an\nabsolutely unramiﬁed discrete valuation ﬁeld of mixed characteristics (0, p)\nwith residue ﬁeld k, K0 an algebraic closure of K0, and σ the Frobenius\nautomorphism on K0.\nDeﬁnition 1.2. (1) An F-isocrystal over k, (we simply say “isocrystal”),\nis a ﬁnite dimensional K0-vector space V with a bijective σ-linear endo-\nmorphism Φ : V →V . We denote the category of isocrystals over k by\nIsoc(K0).\n(2) For a totally ramiﬁed ﬁnite extension K",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-098",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Filtered isocrystals with $G$-structure.",
+      "pageStart": 236,
+      "pageEnd": 237,
+      "target": "../sections/sec-098-l-filtered-isocrystals-with-g-structure.md",
+      "narrative": null,
+      "content": "2.1. Let G be a linear algebraic group over Qp and denote by RepQp(G)\nthe category of ﬁnite dimensional Qp-rational representations of G.\nAn\nexact faithful ⊗-functor RepQp(G) →Isoc(K0) is called an isocrystal with\nG-structure over K0.\nLet b ∈G(K0). Then, the functor\nRepQp(G) →Isoc(K0)\nassociated to b, deﬁned by V 7→(V ⊗K0, b(id ⊗σ)), is an isocrystal with\nG-structure over K0. [Kot85] Two elements b and b′ in G(K0) are conjugate\nif and only if there is an element g ∈G(K0) such that gbσ(g)−1 = b′. In\nthis case, g deﬁnes an isomorphism between the isocrystals with G-structure\nassociated to b and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/lem-sec-099-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 237,
+      "pageEnd": 256,
+      "target": "lem-sec-099-02.md",
+      "narrative": null,
+      "content": "If µ(ξ, α, L) is Mumford’s numerical invariant of ξ ∈Fλ for a one-parameter subgroup α of J over Qp, then µ(ξ, α, L) = −(ξ, α) −(ν, α). C. p-ADIC SYMMETRIC DOMAINS AND TOTARO’S THEOREM Next, let G be arbitrary, V a faithfully representation of G, and consider the invariant norm on G induced from the above norm by the natural immer- sion G →GL(V ). The Mumford’s numerical invariant of weakly admissible points is non-negative for any one-parameter subgroup of J(GL(V )). Hence it is so for any one-parameter subgroup of J, and the weak admissibility implies the semistability. To see the converse,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/prose-sec-099",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Totaro's theorem.",
+      "pageStart": 237,
+      "pageEnd": 256,
+      "target": "../sections/sec-099-m-totaros-theorem.md",
+      "narrative": null,
+      "content": "233\nslope grading of the isocrystal (V ⊗K0, b(id ⊗σ)). (The sign of our ν is\ndiﬀerent from the one in [Kot85].) For a suitable positive integer s, sν is\nregarded as a one-parameter subgroup of G over K0.\nDeﬁnition 2.3. A σ-conjugacy class ¯b of G(K0) is decent if there is an\nelement b ∈¯b such that\n(bσ)s = sν(p)σs\nfor some positive integer s.\nOne knows that, for a decent σ-conjugacy class ¯b, b and ν as above are\ndeﬁned over Qps. If G is connected and k is algebraically closed, then any\nσ-conjugacy class is decent. [Kot85]\n2.4. Let K be a totally ramiﬁed ﬁnite extension of K0 in K0. For a one-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/thm-sec-099-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 237,
+      "pageEnd": 256,
+      "target": "thm-sec-099-01.md",
+      "narrative": null,
+      "content": "[Tot96] Suppose that G is connected and reductive. For any ﬁnite extension K of ˘E, we have Fwa λ,b(K) = Fss λ ˘E(L)(K). We shall sketch Totaro’s proof. First, let G = GL(n) and let us consider the invariant norm induced by the pairing (α, β) = X i,j ij dimK0 gri F. αgrj F. β(Kn) for one-parameter subgroups ⊗Q, α, β of GL(n) over K. If one puts µα(V ) = ( X i i dimK gri F. α(V ⊗K))/ dim V , then one has (α, β) = Z (µα(F j β) −µα(V )) dimK F j βdj + µα(V )µβ(V ) dim V. So, (ξ, b) is weakly admissible if and only if (ξ, α) + (ν, α) ≤0 for any one-parameter subgroup α of GL(n) over K0 with the ﬁl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/thm-sec-099-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 237,
+      "pageEnd": 256,
+      "target": "thm-sec-099-03.md",
+      "narrative": null,
+      "content": "[RZ96] The set Fwa λ,b of weakly admissible points with respect to b in Fλ(Cp) is an admissible open subset of Fλ ˘E as a rigid analytic space. Now we sketch the proof of the theorem in [RZ96]. By [Kot85] one may assume that the σ-conjugacy class of b is decent with the decent equation (bσ)s = sν(p)σs as in 2.3. Let V be a faithful representation in RepQp(G), Vs = V ⊗Qps, and Φs = b(id⊗σ). Then (V ⊗K0, b(id⊗σ)) = (Vs, Φs)⊗QpsK0. Put Vs = ⊕ λ Vs,j to be the isotypical decomposition for Φs. The functor R 7→{V ′ ⊂Vs⊗QpsR | V ′ is a direct summand with V ′ = ⊕ j V ′∩(Vs,j⊗QpsR)} on the category of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/figure-img-p253-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 253,
+      "pageEnd": 253,
+      "target": "../images/img-p253-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0203194v1/blocks/figure-img-p254-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 254,
+      "pageEnd": 254,
+      "target": "../images/img-p254-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

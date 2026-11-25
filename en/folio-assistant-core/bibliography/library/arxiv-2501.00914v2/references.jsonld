@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2501.00914v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "L-spaces and knot traces",
+      "dcterms:creator": [
+        "BALDWIN, JOHN A.",
+        "SIVEK, STEVEN"
+      ],
+      "dcterms:identifier": "https://arxiv.org/abs/2501.00914",
+      "dcterms:abstract": "There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries. We study a 4-dimensional version of this question: which knots are determined by which of their traces? We prove several results that are in stark contrast with what is known about characterizing surgeries, most notably that the 0-trace detects every L-space knot. Our proof combines tools in Heegaard Floer homology with results about surface homeomorphisms and their dynamics. We also consider nonzero traces, proving for instance that each positive torus knot is determined by its n-trace for any n ≤0, whereas no non-positive integer is known to be a characterizing slope for any positive torus knot besides the right-handed trefoil.",
+      "dcterms:source": "library/arxiv-2501.00914v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2501.00914v2"
+    }
+  ]
+}

@@ -1,0 +1,975 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1705.01853v2",
+  "title": "Line Operators in the Standard Model",
+  "variant": "pdf",
+  "pages": 18,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "A Review of Line Operators",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-2-a-review-of-line-operators"
+    },
+    {
+      "level": 3,
+      "title": "An Example: $SU(N)$ vs $SU(N)/{\\bf Z}_N$",
+      "number": null,
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-an-example-sun-vs-sunbf-z-n"
+    },
+    {
+      "level": 3,
+      "title": "How Does the Dynamics Differ?",
+      "number": null,
+      "page": 7,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-how-does-the-dynamics-differ"
+    },
+    {
+      "level": 1,
+      "title": "Line Operators in the Standard Model",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-3-line-operators-in-the-standard-model"
+    },
+    {
+      "level": 2,
+      "title": "Theta Angles",
+      "number": "3.1",
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-31-theta-angles"
+    },
+    {
+      "level": 2,
+      "title": "Time Reversal Invariant States",
+      "number": null,
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-time-reversal-invariant-states"
+    },
+    {
+      "level": 2,
+      "title": "The Effect of Global Anomalies",
+      "number": null,
+      "page": 13,
+      "pageLabel": "12",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-the-effect-of-global-anomalies"
+    },
+    {
+      "level": 2,
+      "title": "Electroweak Symmetry Breaking",
+      "number": "3.2",
+      "page": 13,
+      "pageLabel": "12",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-32-electroweak-symmetry-breaking"
+    },
+    {
+      "level": 1,
+      "title": "Summary",
+      "number": "4",
+      "page": 15,
+      "pageLabel": "14",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-4-summary"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 16,
+      "pageLabel": "15",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-acknowledgements"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": "3",
+      "words": 1059,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "line operators",
+          "heading": false
+        },
+        {
+          "term": "gauge sector",
+          "heading": false
+        },
+        {
+          "term": "theta angles",
+          "heading": false
+        },
+        {
+          "term": "gauge group",
+          "heading": false
+        },
+        {
+          "term": "θ-angle",
+          "heading": false
+        },
+        {
+          "term": "electroweak symmetry",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "symmetry breaking",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1705.01853v2 [hep-th] 12 Jun 2017 Preprint typeset in JHEP style - HYPER VERSION Line Operators in the Standard Model David Tong Department of Applied Mathematics and Theoretical Physics, University of Cambridge, UK d.tong@damtp.cam.ac.uk Abstract: There is an ambiguity in the gauge group of the Standard Model. The group is G = SU(3) × SU(2) × U(1)/Γ, where Γ is a subgroup of Z6 which cannot be determined by",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1705.01853v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-2-a-review-of-line-operators",
+      "number": "2",
+      "title": "A Review of Line Operators",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 713,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "line operators",
+          "heading": true
+        },
+        {
+          "term": "hooft line",
+          "heading": false
+        },
+        {
+          "term": "wilson lines",
+          "heading": false
+        },
+        {
+          "term": "lattice lambda",
+          "heading": false
+        },
+        {
+          "term": "tilde gamma",
+          "heading": false
+        },
+        {
+          "term": "dirac quantisation",
+          "heading": false
+        },
+        {
+          "term": "lambda times",
+          "heading": false
+        },
+        {
+          "term": "group tilde",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{reviewsec} We start by reviewing the properties of line operators, described in \\cite{ast}, that we will later need. \\para Wilson lines are operators which describe the insertion of an infinitely massive, electrically charged particle sitting at the origin of space \\cite{wilson}. They are labelled by representations $R$ of the gauge group $G$, and given by \\be W_R = {\\rm Tr}_R \\,{\\cal P}\\exp\\left(i\\int dt\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-an-example-sun-vs-sunbf-z-n",
+      "number": null,
+      "title": "An Example: $SU(N)$ vs $SU(N)/{\\bf Z}_N$",
+      "level": 3,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 442,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "line operators",
+          "heading": false
+        },
+        {
+          "term": "magnetic line",
+          "heading": false
+        },
+        {
+          "term": "ref su3lines",
+          "heading": false
+        },
+        {
+          "term": "rightarrow theta",
+          "heading": false
+        },
+        {
+          "term": "electric line",
+          "heading": false
+        },
+        {
+          "term": "eqn diracq",
+          "heading": false
+        },
+        {
+          "term": "theta angle",
+          "heading": false
+        },
+        {
+          "term": "operators generated",
+          "heading": false
+        }
+      ],
+      "extract": "For $g=su(N)$, the centre of the group is $Z(SU(N)) = {\\bf Z}_N$. When the gauge group is $G=S(N)$, all electric line operators are allowed; that is $z^e=0,1,2,\\ldots, N-1$. In contrast, the magnetic line operators are restricted to lie on the magnetic root lattice, meaning that $z^m=0$. The resulting set of line operators for $SU(3)$ are shown in Figure \\ref{su3lines}a, plotted in the $(z^e,z^m)$ lattice. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-how-does-the-dynamics-differ",
+      "number": null,
+      "title": "How Does the Dynamics Differ?",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 200,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gauge symmetry",
+          "heading": false
+        },
+        {
+          "term": "compactified",
+          "heading": false
+        },
+        {
+          "term": "yang-mills",
+          "heading": false
+        },
+        {
+          "term": "monopoles",
+          "heading": false
+        },
+        {
+          "term": "dynamics",
+          "heading": true
+        },
+        {
+          "term": "differ",
+          "heading": true
+        }
+      ],
+      "extract": "In four-dimensional Minkowski spacetime, ${\\bf R}^{3,1}$, the difference between Yang-Mills with gauge group $SU(N)$ and $SU(N)/{\\bf Z}_N$ is rather formal. In particular, any local observer is blind to the distinction. Nonetheless, the different line operators mean that there are subtle differences between the two theories. This appears, for example, after confinement. In either theory, the confining phase can be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-line-operators-in-the-standard-model",
+      "number": "3",
+      "title": "Line Operators in the Standard Model",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 11,
+      "labelStart": "7",
+      "labelEnd": "10",
+      "words": 1247,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "line operators",
+          "heading": true
+        },
+        {
+          "term": "para underline",
+          "heading": false
+        },
+        {
+          "term": "magnetic charges",
+          "heading": false
+        },
+        {
+          "term": "electric charges",
+          "heading": false
+        },
+        {
+          "term": "abelian magnetic",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": true
+        },
+        {
+          "term": "underline gamma",
+          "heading": false
+        },
+        {
+          "term": "wilson lines",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we extend the analysis of \\cite{ast} to the non-connected gauge group \\be G = \\frac{U(1)_{\\tilde{Y}} \\times SU(2) \\times SU(3)}{\\Gamma}\\nn\\ee where $\\Gamma \\subseteq {\\bf Z}_6$. The quotient group $\\Gamma$ lies in the centres of $SU(2)$ and $SU(3)$, combined with a suitable $U(1)_{\\tilde{Y}}$ rotation. The quotient $\\Gamma={\\bf Z}_6$ is generated by \\be \\xi = e^{2\\pi i q/6} \\otimes \\eta \\otimes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-31-theta-angles",
+      "number": "3.1",
+      "title": "Theta Angles",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 564,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theta angles",
+          "heading": true
+        },
+        {
+          "term": "theta tilde",
+          "heading": false
+        },
+        {
+          "term": "abelian theta",
+          "heading": false
+        },
+        {
+          "term": "frac theta",
+          "heading": false
+        },
+        {
+          "term": "theta terms",
+          "heading": false
+        },
+        {
+          "term": "line operators",
+          "heading": false
+        },
+        {
+          "term": "para",
+          "heading": false
+        },
+        {
+          "term": "gauge field",
+          "heading": false
+        }
+      ],
+      "extract": "We can now ask how the spectrum of line operators changes as we vary the $\\theta$-angles. A priori, there are three such angles, one for each factor of the gauge group. We call these $\\theta_{\\tilde{Y}}$, $\\theta_2$ and $\\theta_3$. Within the framework discussed in this paper it makes sense to ask how the line operators vary under each of these. \\para Before we proceed, it is worth reviewing the role of theta angles",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-time-reversal-invariant-states",
+      "number": null,
+      "title": "Time Reversal Invariant States",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 224,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "time reversal",
+          "heading": true
+        },
+        {
+          "term": "reversal invariant",
+          "heading": true
+        },
+        {
+          "term": "tilde theta",
+          "heading": false
+        },
+        {
+          "term": "theta angles",
+          "heading": false
+        },
+        {
+          "term": "item theta",
+          "heading": false
+        },
+        {
+          "term": "para underline",
+          "heading": false
+        }
+      ],
+      "extract": "It is interesting to ask: for which values of the $\\theta$ angles does the theory respect time reversal invariance or, equivalently, CP? There are eight possibilities, two for each factor of the gauge group. \\para \\underline{$\\Gamma= {\\bf 1}$:}\\ \\ All theta angles have periodicity $2\\pi$. It is well known that $\\theta_2,\\theta_3$ and $\\tilde{\\theta}$ can each take values 0 or $\\pi$. \\para \\underline{$\\Gamma= {\\bf",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-the-effect-of-global-anomalies",
+      "number": null,
+      "title": "The Effect of Global Anomalies",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 269,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tilde theta",
+          "heading": false
+        },
+        {
+          "term": "theta alpha",
+          "heading": false
+        },
+        {
+          "term": "rotated away",
+          "heading": false
+        },
+        {
+          "term": "theta rightarrow",
+          "heading": false
+        },
+        {
+          "term": "anomalies",
+          "heading": true
+        },
+        {
+          "term": "global",
+          "heading": true
+        },
+        {
+          "term": "linear combination",
+          "heading": false
+        }
+      ],
+      "extract": "The chiral nature of the Standard Model means that the theta angle $\\theta_2$ can be rotated away. Here we review this argument. In fact, as we will see, a more careful statement is that a linear combination of $\\theta_2$ and $\\tilde{\\theta}$ can be removed. \\para In general, theta angles can be rotated away if the theory admits a continuous global symmetry which suffers a mixed anomaly with the gauge symmetry. This",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-32-electroweak-symmetry-breaking",
+      "number": "3.2",
+      "title": "Electroweak Symmetry Breaking",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 689,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnetic charge",
+          "heading": false
+        },
+        {
+          "term": "para underline",
+          "heading": false
+        },
+        {
+          "term": "hooft line",
+          "heading": false
+        },
+        {
+          "term": "minimum magnetic",
+          "heading": false
+        },
+        {
+          "term": "electric charge",
+          "heading": false
+        },
+        {
+          "term": "symmetry breaking",
+          "heading": true
+        },
+        {
+          "term": "theta tilde",
+          "heading": false
+        },
+        {
+          "term": "wilson line",
+          "heading": false
+        }
+      ],
+      "extract": "Let's now see what becomes of our line operators after electroweak symmetry breaking. The Higgs field $H$ lies in the $({\\bf 2},{\\bf 1})_3$ representation and condenses, breaking $U(1)_{\\tilde{Y}}\\times SU(2)\\rightarrow U(1)_{em}$ of electromagnetism. We will denote the electric charges of $U(1)_{em}$ as $Q$ and the magnetic charges as $G$. We choose to normalise electric charges such that the electron has $Q=-1$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-4-summary",
+      "number": "4",
+      "title": "Summary",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 479,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "black hole",
+          "heading": false
+        },
+        {
+          "term": "form black",
+          "heading": false
+        },
+        {
+          "term": "line operators",
+          "heading": false
+        },
+        {
+          "term": "para",
+          "heading": false
+        },
+        {
+          "term": "gauge group",
+          "heading": false
+        },
+        {
+          "term": "magnetic",
+          "heading": false
+        },
+        {
+          "term": "fluxes",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        }
+      ],
+      "extract": "The global structure of the Standard Model gauge group depends on the choice of quotient $\\Gamma$. The differences in these theories described above are rather formal in nature. Just because a line operator exists in a theory does not mean that it is available to experimenters. It is clearly interesting to better understand the physical implications of the different choices of $\\Gamma$ to see if they may reveal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": "15",
+      "labelEnd": "17",
+      "words": 479,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magnetic monopoles",
+          "heading": false
+        },
+        {
+          "term": "wilson hooft",
+          "heading": false
+        },
+        {
+          "term": "four-dimensional gauge",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "hep-th",
+          "heading": false
+        },
+        {
+          "term": "gauge theories",
+          "heading": false
+        },
+        {
+          "term": "hooft operators",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        }
+      ],
+      "extract": "My thanks to Bobby Acharya, Nick Dorey, Zohar Komargodski, Tony Padilla and John Terning for useful discussions. This work was supported by STFC grant ST/L000385/1 and by the European Research Council under the European Union’s Seventh Framework Programme (FP7/2007-2013), ERC grant agreement STG 279943, Strongly Coupled Systems. I am a Wolfson Royal Society Research Merit Award holder. 15 References [1] O. Aharony,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Introduction"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "theta tilde",
+      "heading": false
+    },
+    {
+      "term": "magnetic line",
+      "heading": false
+    },
+    {
+      "term": "line operators",
+      "heading": true
+    },
+    {
+      "term": "electric line",
+      "heading": false
+    },
+    {
+      "term": "para underline",
+      "heading": false
+    },
+    {
+      "term": "rightarrow theta",
+      "heading": false
+    },
+    {
+      "term": "theta angles",
+      "heading": true
+    },
+    {
+      "term": "wilson line",
+      "heading": false
+    },
+    {
+      "term": "magnetic charge",
+      "heading": false
+    },
+    {
+      "term": "abelian theta",
+      "heading": false
+    },
+    {
+      "term": "hooft line",
+      "heading": false
+    },
+    {
+      "term": "frac theta",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The spectrum of line operators for: a) SU(3); b) SU(3)/Z3 at θ = 0; c) SU(3)/Z3 at θ = 2π; d) SU(3)/Z3 at θ = 4π",
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Γ = 1. The Abelian lines are generated by (q, g) = (1, 0) and (0, 1)",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Γ = Z2. The Abelian lines are generated by (q, g) = (2, 0) and (0, 1)",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Γ = Z3. The Abelian lines are generated by (q, g) = (3, 0) and (0, 1)",
+      "page": 10,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Γ = Z6. The Abelian lines are generated by (q, g) = (6, 0) and (0, 1)",
+      "page": 10,
+      "pageLabel": "9",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "5 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p16); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1705.01853v2"
+  }
+}

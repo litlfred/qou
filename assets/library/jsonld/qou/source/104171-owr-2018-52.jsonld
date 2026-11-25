@@ -1,0 +1,62 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/104171-owr-2018-52/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "../52/Report-52_2018.dvi",
+  "contains": [
+    "library/104171-owr-2018-52/sections/sec-front-matter",
+    "library/104171-owr-2018-52/sections/sec-000",
+    "library/104171-owr-2018-52/sections/sec-001",
+    "library/104171-owr-2018-52/sections/sec-002",
+    "library/104171-owr-2018-52/sections/sec-003",
+    "library/104171-owr-2018-52/sections/sec-004",
+    "library/104171-owr-2018-52/sections/sec-005",
+    "library/104171-owr-2018-52/sections/sec-006",
+    "library/104171-owr-2018-52/sections/sec-007",
+    "library/104171-owr-2018-52/sections/sec-008",
+    "library/104171-owr-2018-52/sections/sec-009",
+    "library/104171-owr-2018-52/sections/sec-010",
+    "library/104171-owr-2018-52/sections/sec-011",
+    "library/104171-owr-2018-52/sections/sec-012",
+    "library/104171-owr-2018-52/sections/sec-013",
+    "library/104171-owr-2018-52/sections/sec-014",
+    "library/104171-owr-2018-52/sections/sec-015",
+    "library/104171-owr-2018-52/sections/sec-016",
+    "library/104171-owr-2018-52/sections/sec-017",
+    "library/104171-owr-2018-52/sections/sec-018"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Enveloping Algebras and Geometric Representation Theory (Oberwolfach Report No. 52/2018) — The workshop brought together experts investigating algebraic Lie theory from the geometric and categorical\n\n**Enveloping Algebras and Geometric Representation Theory (Oberwolfach Report No. 52/2018)**\n\n*Enveloping Algebras and Geometric Representation Theory*\n\n66 pp, 20 sections.\n\n**Abstract.** The workshop brought together experts investigating algebraic Lie theory from the geometric and categorical viewpoints. Mathematics Subject Classiﬁcation (2010): 17B35, 17B37, 20G15.\n\n**Outline.** Front matter; Enveloping Algebras and Geometric Representati; The nearby cycles formalism for parity sheaves; Center of G1T -modules and cohomology of aﬃne ; Harish-Chandra bimodules over quantized symple; Diﬀerential operators on G/U and the Gelfand-G; Macdonald polynomials and decomposition number; Representations of sl(∞) arising from categori; Semiinﬁnite highest weight and ǫ-stratiﬁed cat; Cuspidal D-modules and generalized quantum Ham; Generalized Lakshmibai-Seshadri galleries; Semisimpliﬁcation of representation categories; On the pure cohomology of multiplicative quive; Finkelberg-Nakajima construction; Nilpotent Slodowy slices and collapsing levels; Quiver varieties and crystals in symmetrizable; Satake equivalence; Supports for linear degenerations of ﬂag varie",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "104171-owr-2018-52",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "10.4171-owr-2018-52.pdf",
+    "source_sha256": "b33ed36eaa470877bc6cfb5b45b1019564f568925ea9d94e8dc7ee355879976e",
+    "pages": 66,
+    "arxiv": null,
+    "doi": "10.4171/OWR/2018/52",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

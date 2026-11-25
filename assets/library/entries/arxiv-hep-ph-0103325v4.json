@@ -1,0 +1,196 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-ph-0103325v4",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-ph-0103325v4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Quantum groups and quantum or $q$-deformed\nalgebras   \\cite{dr-j,frt}, whose basic mathematical aspects and\ndiverse quantum physical applications are intensively studied\nfor about a decade and half, will belong to most important\nand perspective tools of research in the 3rd millenium, too.\n\nIn this talk, meant as a mini-review, we concentrate on two examples\nof applying $q$-algebras to phenomenology of hadrons.  Within the\nfirst one initiated in   \\cite{ga-ser} and developed in subsequent\npapers, the $q$-analogs $U_q(su_n)$ of the Lie algebras of groups\n$SU_n$ are adopted for hadronic flavor sy",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0103325v4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Vector mesons: $q$-deformation vs mixing",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-2-vector-mesons-q-deformation-vs-mixing.md",
+      "narrative": null,
+      "content": "We use (see    \\cite{ga-ser,ga-bre,ga-uzh})  Gelfand-Tsetlin basis\nvectors for meson states from $(n^2\\!-\\!1)$-plet of '$n$-flavor'\n$U_q(u_n)$ embedded into $\\{(n\\!+\\!1)^2\\!-\\!1\\}$-plet of\n'dynamical' $U_q(u_{n+1});\\ $ construct mass operator $\\hat {M_n}$,\ninvariant under the 'isospin+hypercharge' $q$-algebra $U_q(u_2)$,\nfrom the generators of dynamical algebra $U_q(u_{n+1})$\n(e.g., $\\hat {M_3} = M_0{\\bf 1}+{\\gamma}_3 A_{34}A_{43}\n+{\\delta}_3 A_{43}A_{34}$);  calculate expressions for masses\n$m_{V_i}\\equiv\\langle V_i|\\hat{M_3}|V_i\\rangle $ -\nthese involve $M_0$, the parameters $\\gamma_3, {\\del",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0103325v4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-ph/0103325v4  16 Oct 2002\n1\nQuantum algebras in phenomenological description of particle properties\nA.M. Gavrilika ∗\naBogolyubov Institute for Theoretical Physics,\n03143, Kiev, Ukraine\nQuantum and q-deformed algebras ﬁnd their application not only in mathematical physics and ﬁeld theoretical\ncontext, but also in phenomenology of particle properties. We describe (i) the use of quantum algebras Uq(sun)\ncorresponding to Lie algebras of the groups SUn, taken for ﬂavor symmetries of hadrons, in deriving new high-\naccuracy hadron mass sum rules, and (ii) the use of (multimode) q-oscillator",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0103325v4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Octet baryon mass sum rules: best candidates from $q$-deformation",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-3-octet-baryon-mass-sum-rules-best-candidates-fr.md",
+      "narrative": null,
+      "content": "Using $U_q(su_n)$, the $q$-deformed mass relation\n\\begin{eqnarray}\n\\vspace{-0.6mm}\n   {} & [2]M_N+\\frac{[2] M_{\\Xi}}{[2]-1} = [3] M_{\\Lambda }\n+ \\Bigl ( \\frac{[2]^2}{[2]-1}-[3]  \\Bigr )\n          M_{\\Sigma }                            \\nonumber \\\\\n  {} &  +\\frac{A_q}{B_q}\\left( M_{\\Xi } + [2] M_N -\n   [2]M_{\\Sigma } - M_{\\Lambda } \\right)             \\label{(8)}\n \\end{eqnarray}\nwas obtained  \\cite{ga-bre,ga-uzh} where $A_q$, $B_q$ are certain\npolynomials of $[2]_q$ with non-overlapping sets of zeros.\nThis $q$-analog  yields, as three particular cases, the familiar\nGell-Mann - Okubo mass relati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0103325v4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mass sum rules for decuplet baryons: the $q$-analog matches empirical masses",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-4-mass-sum-rules-for-decuplet-baryons-the-q-anal.md",
+      "narrative": null,
+      "content": "In the case of $SU(3)$-decuplet baryons ${\\frac32}^+$,\n1st order symmetry breaking yields         \\cite{8-fold}\nequal spacing rule (ESR) for isoplet members\nin ${\\bf 10}$-plet. Empirically,\n$M_{\\Sigma^*}{-}M_{\\Delta},$ $ M_{\\Xi^*}{-}M_{\\Sigma^*}$ and\n$M_{\\Omega}{-}M_{\\Xi^*}$ show sensible deviation from ESR:\n$152.6~MeV\\leftrightarrow 148.8~MeV\\leftrightarrow 139.0~MeV$.\nThe other mass relation known long ago     \\cite{oku-ko},\n\\begin{equation}\n(M_{\\Sigma^{*}}-M_{\\Delta}+M_{\\Omega}-M_{\\Xi^{*}})/2\n= M_{\\Xi^{*}}-M_{\\Sigma^{*}} ,                            \\label{(13)}\n\\end{equation}\naccounts 1st",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0103325v4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Highly nonlinear $SU(3)$-breaking effects in baryon masses",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-5-highly-nonlinear-su3-breaking-effects-in-baryo.md",
+      "narrative": null,
+      "content": "Formula (15) involves {\\it highly nonlinear dependence} of mass on\nhypercharge (for decuplet, $Y$ alone causes $SU(3)$-breaking).\nSince for the $q$-number $[N]_q$ we have\n$[N]_q=q^{N-1}+q^{N-3}+\\ldots +q^{-N+3}+q^{-N+1}$ ($N$ terms),\nthis shows exponential $Y$-dependence of masses. Such\nhigh nonlinearity makes (14) and (15) radically different from\nthe result (13) of traditional treatment accounting linear and\nquadratic effects in $Y$.\n\nFor octet baryon masses, {\\em nonpolynomiality}\nin $SU(3)$-breaking effectively accounted by the model was\nexplicitly shown in     \\cite{ga-io}.\nFor this, one",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0103325v4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Using the Hopf-algebra structure",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-005-6-using-the-hopf-algebra-structure.md",
+      "narrative": null,
+      "content": "As demonstrated, our approach supplies a plenty of $q$-analogs\n(with different pairs $A_q,B_q$) of the form (8).\nA completely different, as regards (8), version of\n$q$-deformed analog can be derived    \\cite{ga-io}\nusing for the symmetry breaking term in mass operator a component\nof $q$-{\\em tensor operator}. This implies usage of the Hopf algebra\nstructure (comultiplication, antipode) of the quantum algebras\n$U_q(su_n)$, through the $q$-tensor operators $(V_1,V_2,V_3)$ resp.\n$(V_{\\bar{1}},V_{\\bar{2}},V_{\\bar{3}})$ formed from elements of\n$U_q(su_4)$ and transforming as ${{\\bf 3}}$ resp. ${{\\b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0103325v4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mass relations from anyonic realization of $U_q(su_N)$",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-006-8-mass-relations-from-anyonic-realization-of-u-q.md",
+      "narrative": null,
+      "content": "Necessary setting adopted from   \\cite{ler-sci} includes\nlattice angle functions $\\theta_{\\gamma}({\\bf x},{\\bf y})$ and\n$\\theta_{\\delta}({\\bf x},{\\bf y})$ for the two opposite\n($\\gamma$- and $\\delta$- ) types of cuts and the related definition\nof ordering of sites on the lattice (${\\bf x} > {\\bf y}$ or\n$ {\\bf y} > {\\bf x}$). Accordingly, the two types of statistical operator,\n$K_i({\\bf x}_{\\gamma})$ and $K_i({\\bf x}_{\\delta})$,\nare formed using $N$ sorts of lattice fermions\n$c_i({\\bf x})$, $\\ c_i^{\\dagger}({\\bf x})$, $\\ i=1,...,N,$\nobeying usual (lattice) anticommutation relations (ARs), as\n\\b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0103325v4/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algebras of $q$-oscillators, $q$-Bose gas and two-pion (two-kaon) correlations",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-007-9-algebras-of-q-oscillators-q-bose-gas-and-two-p.md",
+      "narrative": null,
+      "content": "The model of ideal gas of $q$-bosons based on the algebra of\n$q$-deformed oscillators either of Biedenharn-Macfarlane (BM)\ntype      \\cite{BM}  or  Arik-Coon (AC) type      \\cite{AC},\nwas recently utilized within the approach aimed to describe\n       \\cite{AGI,AGI2}  unusual properties of 2-particle correlations\nof identical pions or kaons produced in heavy ion collisions.\nThe approach yields clear predictions based on explicit expressions\nfor the intercept $\\lambda$ (dependent on temperature, particle mass,\npair mean momentum, {\\it and the deformation parameter} $q$).\n\nTo obtain needed observ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-ph-0103325v4/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outlook",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-008-10-outlook.md",
+      "narrative": null,
+      "content": "A question naturally arises: does there exist\nmore intimate connection  between the two\ndiscussed applications - of the quantum algebras $U_q(su_n)$\ntaken as flavor symmetries, on one hand, and of the algebras\nof $q$-deformed oscillators corresponding to discretized momenta\nof (correlated) pairs of pions or kaons as produced in\nrelativistic heavy ion collisions, on the other hand?\nThe value of $q$-parameter (given by $2 \\theta_{\\scr C}$)\nshared by the two applications in case of octet hadrons\ngives a guess for possible physical reason for such a connection\n(recall also the well-known fact that",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

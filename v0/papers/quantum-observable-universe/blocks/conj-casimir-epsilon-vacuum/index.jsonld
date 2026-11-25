@@ -1,0 +1,45 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-casimir-epsilon-vacuum",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:casimir-epsilon-vacuum",
+  "kind": "conjecture",
+  "title": "Casimir force as $\\mathrm{st}$-image of $\\varepsilon$-vacuum density gradient",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-vacuum-epsilon",
+    "papers/quantum-observable-universe/blocks/conj-archimedean-stpart",
+    "papers/quantum-observable-universe/blocks/def-standard-part-functor",
+    "papers/quantum-observable-universe/blocks/conj-hoefsmit-scattering-pipeline",
+    "papers/quantum-observable-universe/blocks/def-quantum-planck-constant"
+  ],
+  "cites": [
+    "references/casimir1948",
+    "references/mohideen1998",
+    "references/lamoreaux1997",
+    "references/robinson1966"
+  ],
+  "tags": [
+    "tier:P",
+    "surreal-numbers",
+    "vacuum",
+    "casimir-effect",
+    "unknot",
+    "regularisation",
+    "infinitesimal",
+    "boundary-condition",
+    "conditional-on-class",
+    "open-problem"
+  ],
+  "leanRef": "qou:QOU.Observations.CasimirEpsilonVacuum",
+  "text": "casimir-epsilon-vacuum.md",
+  "provenance": "authored"
+}

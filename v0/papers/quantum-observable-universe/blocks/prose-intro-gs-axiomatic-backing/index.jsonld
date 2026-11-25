@@ -1,0 +1,18 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prose-intro-gs-axiomatic-backing",
+  "@type": [
+    "folio-assistant-core:Prose",
+    "doco:Section"
+  ],
+  "label": "prose:intro-gs-axiomatic-backing",
+  "kind": "prose",
+  "text": "intro-gs-axiomatic-backing.md",
+  "provenance": "authored"
+}

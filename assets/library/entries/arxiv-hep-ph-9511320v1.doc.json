@@ -1,0 +1,1136 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-ph-9511320v1",
+  "title": "Chiral Lagrangians for Baryons Coupled to Massive Spin-1 Fields",
+  "variant": "pdf",
+  "pages": 26,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Effective Lagrangian of Goldstones, Baryons and Spin--1 Fields",
+      "number": "2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-effective-lagrangian-of-goldstones-baryons-and"
+    },
+    {
+      "level": 2,
+      "title": "Addition of Spin--1 Fields: Tensor Field Formulation",
+      "number": "2.1",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-21-addition-of-spin--1-fields-tensor-field-formu"
+    },
+    {
+      "level": 2,
+      "title": "Addition of Spin--1 Fields: Vector Field Formulation",
+      "number": "2.2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-22-addition-of-spin--1-fields-vector-field-formu"
+    },
+    {
+      "level": 2,
+      "title": "Equivalence for Spin--1 Pole Contributions",
+      "number": "2.3",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-23-equivalence-for-spin--1-pole-contributions"
+    },
+    {
+      "level": 1,
+      "title": "Electromagnetic Form Factors for the Baryon Octet",
+      "number": "3",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-3-electromagnetic-form-factors-for-the-baryon-oc"
+    },
+    {
+      "level": 2,
+      "title": "Basic Definitions",
+      "number": "3.1",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-31-basic-definitions"
+    },
+    {
+      "level": 2,
+      "title": "Vector Meson Contribution to the Electromagnetic Form Factors",
+      "number": "3.2",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-32-vector-meson-contribution-to-the-electromagne"
+    },
+    {
+      "level": 1,
+      "title": "Vector Meson Contribution to Pion--Nucleon Scattering",
+      "number": "4",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-4-vector-meson-contribution-to-pion--nucleon-sca"
+    },
+    {
+      "level": 1,
+      "title": "Loops with massive particles",
+      "number": "5",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-5-loops-with-massive-particles"
+    },
+    {
+      "level": 1,
+      "title": "Short Summary",
+      "number": "6",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-6-short-summary"
+    },
+    {
+      "level": 1,
+      "title": "Construction Principles",
+      "number": "A",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-a-construction-principles"
+    },
+    {
+      "level": 1,
+      "title": "On the Equivalence from Dual Transformations",
+      "number": "B",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-b-on-the-equivalence-from-dual-transformations"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 136,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "massive spin",
+          "heading": false
+        },
+        {
+          "term": "pion nucleon",
+          "heading": false
+        },
+        {
+          "term": "spin ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "formal equivalence",
+          "heading": false
+        },
+        {
+          "term": "nußallee",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-ph/9511320v1 15 Nov 1995 TK 95 31 CHIRAL LAGRANGIANS FOR BARYONS COUPLED TO MASSIVE SPIN–1 FIELDS ⋆ B. Borasoy a 1 , Ulf-G. Meißner a 2 aInstitut f¨ur Theoretische Kernphysik, Universit¨at Bonn Nußallee 14–16, D-53115 Bonn, Germany Abstract We analyze the eﬀective low–energy ﬁeld theory of Goldstone bosons and baryons chirally coupled to massive spin–1 ﬁelds. We use the electromagnetic baryon form factors",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-ph-9511320v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": "5",
+      "words": 1414,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rho meson",
+          "heading": false
+        },
+        {
+          "term": "meson exchange",
+          "heading": false
+        },
+        {
+          "term": "channel meson",
+          "heading": false
+        },
+        {
+          "term": "meson sector",
+          "heading": false
+        },
+        {
+          "term": "goldstone boson--baryon",
+          "heading": false
+        },
+        {
+          "term": "baryon sector",
+          "heading": false
+        },
+        {
+          "term": "resonance exchange",
+          "heading": false
+        },
+        {
+          "term": "baryon chpt",
+          "heading": false
+        }
+      ],
+      "extract": "Over the last years, there has been considerable activity in the formulation of effective chiral Lagrangians including baryons, see e.g. [@gss; @jm; @dobo; @bkkm] or the recent review [@bkmrev]. Beyond leading order, such effective Lagrangians contain coefficients not fixed by symmetry, the so--called low--energy constants (LECs) [@wein79; @gl84]. In general, these LECs should be determined from phenomenology.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-effective-lagrangian-of-goldstones-baryons-and",
+      "number": "2",
+      "title": "Effective Lagrangian of Goldstones, Baryons and Spin--1 Fields",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 480,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cal phi",
+          "heading": false
+        },
+        {
+          "term": "baryons",
+          "heading": true
+        },
+        {
+          "term": "goldstone boson--baryon",
+          "heading": false
+        },
+        {
+          "term": "label cova",
+          "heading": false
+        },
+        {
+          "term": "lagrangian",
+          "heading": true
+        },
+        {
+          "term": "eff",
+          "heading": false
+        },
+        {
+          "term": "effective",
+          "heading": true
+        },
+        {
+          "term": "covariant derivative",
+          "heading": false
+        }
+      ],
+      "extract": "To perform the calculations, we make use of the effective Goldstone boson--baryon Lagrangian. Our notation is identical to the one used in [@bkmz] and we compile here only some necessary definitions. Denoting by $\\phi$ the pseudoscalar Goldstone fields ($\\pi, K, \\eta$) and by $B$ the baryon octet ($N,\\Lambda,\\Sigma,\\Xi$), the effective Lagrangian takes the form (to one loop accuracy) $${\\cal L}_{\\rm eff} = {\\cal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-addition-of-spin--1-fields-tensor-field-formu",
+      "number": "2.1",
+      "title": "Addition of Spin--1 Fields: Tensor Field Formulation",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 885,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spin fields",
+          "heading": true
+        },
+        {
+          "term": "tensor field",
+          "heading": true
+        },
+        {
+          "term": "rho sigma",
+          "heading": false
+        },
+        {
+          "term": "field formulation",
+          "heading": true
+        },
+        {
+          "term": "sefft",
+          "heading": false
+        },
+        {
+          "term": "gamma rho",
+          "heading": false
+        },
+        {
+          "term": "sigma lambda",
+          "heading": false
+        },
+        {
+          "term": "massive spin",
+          "heading": false
+        }
+      ],
+      "extract": "First, let us discuss the chiral couplings of spin--1 fields to the Goldstone bosons in the tensor field formulation. We use the notation of Refs.[@reso; @reso1] and only write down the necessary definitions for our extension to include baryons. Representing massive spin--1 fields by an antisymmetric tensor is quite common in e.g. supergravity theories. One of the main advantages in the hadron sector is that there",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-addition-of-spin--1-fields-vector-field-formu",
+      "number": "2.2",
+      "title": "Addition of Spin--1 Fields: Vector Field Formulation",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 11,
+      "labelStart": "8",
+      "labelEnd": "11",
+      "words": 718,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rho sigma",
+          "heading": false
+        },
+        {
+          "term": "field formulation",
+          "heading": true
+        },
+        {
+          "term": "vector field",
+          "heading": true
+        },
+        {
+          "term": "lambda rho",
+          "heading": false
+        },
+        {
+          "term": "piv",
+          "heading": false
+        },
+        {
+          "term": "massive yang--mills",
+          "heading": false
+        },
+        {
+          "term": "sigma dagger",
+          "heading": false
+        },
+        {
+          "term": "tensor field",
+          "heading": false
+        }
+      ],
+      "extract": "We now consider the three vector $V_\\mu$ representing the three degrees of freedom of a massive spin--1 vector field (the generalization to axials is straightforward). We do not assign any particular microscopic dynamics to this vector field, like it is e.g the case in the hidden symmetry [@bky] or the massive Yang--Mills approaches [@ulfpr]. $V_\\mu$ is assumed to have the standard transformation properties of any",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-equivalence-for-spin--1-pole-contributions",
+      "number": "2.3",
+      "title": "Equivalence for Spin--1 Pole Contributions",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 329,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "seffv",
+          "heading": false
+        },
+        {
+          "term": "sefft",
+          "heading": false
+        },
+        {
+          "term": "relat",
+          "heading": false
+        },
+        {
+          "term": "effective actions",
+          "heading": false
+        },
+        {
+          "term": "cal phi",
+          "heading": false
+        },
+        {
+          "term": "bigr",
+          "heading": false
+        },
+        {
+          "term": "bigl",
+          "heading": false
+        },
+        {
+          "term": "pin",
+          "heading": false
+        }
+      ],
+      "extract": "We are now in the position to establish in steps the equivalenve between the effective Lagrangians ${\\cal L}_{B\\phi W}^{(1)}$ and ${\\cal L}_{B\\phi V}^{(1)}$. Comparing the effective actions, Eqs.([\\[sefft\\]](#sefft){reference-type=\"ref\" reference=\"sefft\"},[\\[seffv\\]](#seffv){reference-type=\"ref\" reference=\"seffv\"}), and making use of the first relation in Eq.([\\[relat\\]](#relat){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-electromagnetic-form-factors-for-the-baryon-oc",
+      "number": "3",
+      "title": "Electromagnetic Form Factors for the Baryon Octet",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 56,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "octet",
+          "heading": true
+        },
+        {
+          "term": "baryon",
+          "heading": true
+        },
+        {
+          "term": "electromagnetic",
+          "heading": true
+        }
+      ],
+      "extract": "In this section, we want to establish the equivalence between the tensor and the vector field formulation by calculating the vector meson contribution to the electromagnetic form factors of the baryon octet. This is analogous to the pion form factor calculation performed in Ref.[@reso1]. First, we will give some basic definitions and then establish the equivalence.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-31-basic-definitions",
+      "number": "3.1",
+      "title": "Basic Definitions",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 273,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "biggl",
+          "heading": false
+        },
+        {
+          "term": "biggr",
+          "heading": false
+        },
+        {
+          "term": "bar",
+          "heading": false
+        },
+        {
+          "term": "pauli",
+          "heading": false
+        },
+        {
+          "term": "form factors",
+          "heading": false
+        }
+      ],
+      "extract": "Consider an electromagnetic external vector source, $$v_\\mu = - e \\, A_\\mu \\, Q \\, \\, \\, , \\label{vem}$$ where $e > 0$ is the unit charge, $A_\\mu$ denotes the photon field and $Q= (1/3) \\,$ diag$(2,-1,-1)$ is the quark charge matrix. We also have for the chiral connection $\\Gamma_\\mu = -i v_\\mu +{\\cal O}(\\phi^2)$. In the tensor formulation, the antisymmetric currents $J_{\\mu \\nu}$ simplify to $$J^{\\mu \\nu} =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-32-vector-meson-contribution-to-the-electromagne",
+      "number": "3.2",
+      "title": "Vector Meson Contribution to the Electromagnetic Form Factors",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": "13",
+      "labelEnd": "15",
+      "words": 748,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vector meson",
+          "heading": true
+        },
+        {
+          "term": "frac t-m",
+          "heading": false
+        },
+        {
+          "term": "meson contribution",
+          "heading": true
+        },
+        {
+          "term": "fft",
+          "heading": false
+        },
+        {
+          "term": "biggl sqrt",
+          "heading": false
+        },
+        {
+          "term": "biggr frac",
+          "heading": false
+        },
+        {
+          "term": "form factors",
+          "heading": true
+        },
+        {
+          "term": "electromagnetic form",
+          "heading": true
+        }
+      ],
+      "extract": "We now calculate the vector meson contribution to the form factors $F_{1,2}^\\pm (t)$. A full chiral calculation would also involve the one loop contributions for the isovector form factors, these are e.g. given in Refs.[@gss; @bkkm]. For our purpose, these terms are of no relevance and are thus neglected here. Consider first the tensor field formulation. From the effective action,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-4-vector-meson-contribution-to-pion--nucleon-sca",
+      "number": "4",
+      "title": "Vector Meson Contribution to Pion--Nucleon Scattering",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 554,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "biggl bigl",
+          "heading": false
+        },
+        {
+          "term": "cal",
+          "heading": false
+        },
+        {
+          "term": "nonumber frac",
+          "heading": false
+        },
+        {
+          "term": "localff",
+          "heading": false
+        },
+        {
+          "term": "weinberg term",
+          "heading": false
+        },
+        {
+          "term": "vector mesons",
+          "heading": false
+        },
+        {
+          "term": "bigr",
+          "heading": false
+        },
+        {
+          "term": "pit",
+          "heading": false
+        }
+      ],
+      "extract": "Consider the vector meson contribution to the elastic Goldstone boson--baryon scattering amplitude, in particular $T( \\pi(q) + N(p) \\to \\pi(q') + N(p') )$, cf. Fig.1b. We will evaluate this for the vector and the tensor field formulations. In doing so, we make use of momentum conservation, $p+q = p' + q'$, the fact that the baryons are on--shell, $$( p\\!\\!\\!/ -m) \\,u(p) = \\, 0 \\,= \\, \\bar{u}(p') \\, ( p\\!\\!\\!/ ' -m)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-5-loops-with-massive-particles",
+      "number": "5",
+      "title": "Loops with massive particles",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": "16",
+      "labelEnd": "18",
+      "words": 521,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "p'-p",
+          "heading": false
+        },
+        {
+          "term": "shaded areas",
+          "heading": false
+        },
+        {
+          "term": "subleading orders",
+          "heading": false
+        },
+        {
+          "term": "loops",
+          "heading": true
+        },
+        {
+          "term": "anomalous magnetic",
+          "heading": false
+        },
+        {
+          "term": "external sources",
+          "heading": false
+        },
+        {
+          "term": "vector formulation",
+          "heading": false
+        },
+        {
+          "term": "weinberg term",
+          "heading": false
+        }
+      ],
+      "extract": "Up to now, we have only considered tree graphs. However, it is well--known that in the relativistic formulation of baryon CHPT, loops can contribute below the chiral dimension one would expect (as detailed by Gasser et al. in Ref.[@gss]). Therefore, for the single vector-exchange graphs we consider, we have to be more careful. These general diagrams for Goldstone boson--baryon scattering (in forward direction) or",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-6-short-summary",
+      "number": "6",
+      "title": "Short Summary",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 340,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "next--to--leading order",
+          "heading": false
+        },
+        {
+          "term": "massive spin",
+          "heading": false
+        },
+        {
+          "term": "spin fields",
+          "heading": false
+        },
+        {
+          "term": "so--called",
+          "heading": false
+        },
+        {
+          "term": "vector field",
+          "heading": false
+        },
+        {
+          "term": "electromagnetic form",
+          "heading": false
+        },
+        {
+          "term": "goldstone",
+          "heading": false
+        },
+        {
+          "term": "summary",
+          "heading": true
+        }
+      ],
+      "extract": "In this paper, we have considered the coupling of massive spin--1 fields to the effective field theory of the Goldstone bosons and the ground state baryon octet. The corresponding Lagrangian is parametrized beyond leading order in terms of so--called low--energy constants. These can be estimated by $s$--channel baryonic and $t$--channel mesonic excitations. For the latter type of contributions, massive spin--1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-a-construction-principles",
+      "number": "A",
+      "title": "Construction Principles",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 22,
+      "labelStart": "19",
+      "labelEnd": "22",
+      "words": 966,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tensor vµν",
+          "heading": false
+        },
+        {
+          "term": "wµν",
+          "heading": false
+        },
+        {
+          "term": "covariant derivatives",
+          "heading": false
+        },
+        {
+          "term": "baryon ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "ﬁeld formulation",
+          "heading": false
+        },
+        {
+          "term": "antisymmetric tensor",
+          "heading": false
+        },
+        {
+          "term": "vector meson",
+          "heading": false
+        },
+        {
+          "term": "σµν",
+          "heading": false
+        }
+      ],
+      "extract": "Construction Principles Here, we collect a few useful formulae which are needed to construct the eﬀective Lagrangians L(1) BφW and L(1) BφV . To the order we are working, we can make use of the equation of motion for the baryon ﬁelds derived from L(1) Bφ iγµ[Dµ, B] −mB + 1 2Dγµγ5{uµ, B} + 1 2Fγµγ5[uµ, B] = 0 . (A.1) In fact, only the chiral–covariant kinetic and the mass terms will be of rele- vance to the order we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-b-on-the-equivalence-from-dual-transformations",
+      "number": "B",
+      "title": "On the Equivalence from Dual Transformations",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 26,
+      "labelStart": "22",
+      "labelEnd": "26",
+      "words": 1405,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ﬁeld wµν",
+          "heading": false
+        },
+        {
+          "term": "eir d4x",
+          "heading": false
+        },
+        {
+          "term": "ulf-g",
+          "heading": false
+        },
+        {
+          "term": "meißner",
+          "heading": false
+        },
+        {
+          "term": "vµν",
+          "heading": false
+        },
+        {
+          "term": "tensor ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "ﬁeld formulation",
+          "heading": false
+        },
+        {
+          "term": "antisymmetric tensor",
+          "heading": false
+        }
+      ],
+      "extract": "On the Equivalence from Dual Transformations Here, we wish to critically examine the approach of Ref.[13], were it was ar- gued that the equivalence between the tensor and vector ﬁeld formulations can be shown formally by using path integral methods and a set of dual trans- formations as motivated by e.g. Refs.[26],[27]. The starting point of Ref.[13] is the generating functional in the presence of Goldstone bosons",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "tensor formulation",
+      "heading": true
+    },
+    {
+      "term": "vector meson",
+      "heading": true
+    },
+    {
+      "term": "rho meson",
+      "heading": false
+    },
+    {
+      "term": "meson lagrangian",
+      "heading": false
+    },
+    {
+      "term": "field formulation",
+      "heading": true
+    },
+    {
+      "term": "effective goldstone",
+      "heading": false
+    },
+    {
+      "term": "meson exchange",
+      "heading": true
+    },
+    {
+      "term": "massive spin",
+      "heading": false
+    },
+    {
+      "term": "antisymmetric tensor",
+      "heading": false
+    },
+    {
+      "term": "tensor vµν",
+      "heading": false
+    },
+    {
+      "term": "cal frac",
+      "heading": false
+    },
+    {
+      "term": "cal phi",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The two–pion nucleon seagull (Weinberg term). (a) shows the fundamental Feynman diagram (from the chiral covariant derivative) and (b) represents its generation via t–channel ρ–meson exchange. Solid and dashed lines denote the octet baryons and Goldstones, respectively",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The shaded areas denote the whole class of multi–loop diagrams. To be precise, these are Goldstone boson loops. The blob on the right side does only contain Goldstones and external sources and thus there is a consistent power counting, i.e the n–loop insertions on that vertex are obviously suppresse",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Momentum ﬂow in the V φφ–vertex",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 13,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 14,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "3 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p22); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 5
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 14 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-ph-9511320v1"
+  }
+}

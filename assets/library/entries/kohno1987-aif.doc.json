@@ -1,0 +1,569 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "kohno1987-aif",
+  "title": "Monodromy representations of braid groups and Yang-Baxter equations",
+  "variant": "pdf",
+  "pages": 23,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "MONODROMY REPRESENTATIONS OF BRAID GROUPS AND YANG-BAXTER EQUATIONS",
+      "number": null,
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-monodromy-representations-of-braid-groups-and-ya"
+    },
+    {
+      "level": 1,
+      "title": "INTRODUCTION",
+      "number": null,
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-001-introduction"
+    },
+    {
+      "level": 1,
+      "title": "MONODROMY OF INTEGRABLE CONNECTIONS ARISING FROM CLASSICAL YANG-BAXTER EQUATIONS",
+      "number": "1",
+      "page": 4,
+      "pageLabel": "141",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-1-monodromy-of-integrable-connections-arising-fr"
+    },
+    {
+      "level": 2,
+      "title": "Construction of connections.",
+      "number": "1.1",
+      "page": 4,
+      "pageLabel": "141",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-11-construction-of-connections"
+    },
+    {
+      "level": 1,
+      "title": "MONODROMY OF /i-POINT FUNCTIONS IN TWO DIMENSIONAL CONFORMAL FIELD THEORY",
+      "number": "2",
+      "page": 13,
+      "pageLabel": "150",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-2-monodromy-of-i-point-functions-in-two-dimensio"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 106,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "institut fourier",
+          "heading": false
+        },
+        {
+          "term": "annales",
+          "heading": false
+        },
+        {
+          "term": "impression",
+          "heading": false
+        },
+        {
+          "term": "toute",
+          "heading": false
+        }
+      ],
+      "extract": "ANNALES DE L’INSTITUT FOURIER TOSHITAKE KOHNO Monodromy representations of braid groups and Yang-Baxter equations Annales de l’institut Fourier, tome 37, no 4 (1987), p. 139-160 <http://www.numdam.org/item?id=AIF_1987__37_4_139_0> © Annales de l’institut Fourier, 1987, tous droits réservés. L’accès aux archives de la revue « Annales de l’institut Fourier » (http://annalif.ujf-grenoble.fr/) implique l’accord avec les",
+      "extractCut": true,
+      "blocks": [
+        "library/kohno1987-aif/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-monodromy-representations-of-braid-groups-and-ya",
+      "number": null,
+      "title": "MONODROMY REPRESENTATIONS OF BRAID GROUPS AND YANG-BAXTER EQUATIONS",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 9,
+      "summary": null,
+      "keywords": [],
+      "extract": "OF BRAID GROUPS AND YANG-BAXTER EQUATIONS by Toshitake KOHNO",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-introduction",
+      "number": null,
+      "title": "INTRODUCTION",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": "141",
+      "words": 647,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monodromy representations",
+          "heading": false
+        },
+        {
+          "term": "dimensional conformal",
+          "heading": false
+        },
+        {
+          "term": "yang-baxter equations",
+          "heading": false
+        },
+        {
+          "term": "braid groups",
+          "heading": false
+        },
+        {
+          "term": "conformal field",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        },
+        {
+          "term": "n-point functions",
+          "heading": false
+        },
+        {
+          "term": "simple lie",
+          "heading": false
+        }
+      ],
+      "extract": "The purpose of this paper is to give a description of the monodromy of integrable connections over the configuration space arising from classical Yang-Baxter equations. These monodromy representations define a series of linear representations of the braid groups 9 : B,, -> End (W®\") with one parameter, associated to any finite dimensional complex simple Lie algebra 9 and its finite dimensional irreducible",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-1-monodromy-of-integrable-connections-arising-fr",
+      "number": "1",
+      "title": "MONODROMY OF INTEGRABLE CONNECTIONS ARISING FROM CLASSICAL YANG-BAXTER EQUATIONS",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "141",
+      "labelEnd": "141",
+      "words": 4,
+      "summary": null,
+      "keywords": [],
+      "extract": "FROM CLASSICAL YANG-BAXTER EQUATIONS",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-11-construction-of-connections",
+      "number": "1.1",
+      "title": "Construction of connections.",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 13,
+      "labelStart": "141",
+      "labelEnd": "150",
+      "words": 2780,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pure braid",
+          "heading": false
+        },
+        {
+          "term": "diagonalizable",
+          "heading": false
+        },
+        {
+          "term": "universal expression",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        },
+        {
+          "term": "assertion",
+          "heading": false
+        },
+        {
+          "term": "natural homomorphism",
+          "heading": false
+        },
+        {
+          "term": "fibration",
+          "heading": false
+        }
+      ],
+      "extract": "Let Q be a simple finite dimensional complex Lie algebra and let {I^,} be an orthonormal basis of 9 with respect to the Cartan-Killing form. We put t = £,I, ® I, which may also be expressed as ( = ^(AQ-0(8)1-1®Q). Here Q is the Casimir operator I^Ip.Ip in the universal enveloping algebra U(Q) and A : U((0 -^ U(g) ® U(g) stands for the comultiplication as a Hopf algebra. Associated with a simple Lie algebra 9 and its",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-2-monodromy-of-i-point-functions-in-two-dimensio",
+      "number": "2",
+      "title": "MONODROMY OF /i-POINT FUNCTIONS IN TWO DIMENSIONAL CONFORMAL FIELD THEORY",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 23,
+      "labelStart": "150",
+      "labelEnd": "160",
+      "words": 2845,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conformal field",
+          "heading": true
+        },
+        {
+          "term": "toshitake kohno",
+          "heading": false
+        },
+        {
+          "term": "dimensional conformal",
+          "heading": true
+        },
+        {
+          "term": "monodromy",
+          "heading": true
+        },
+        {
+          "term": "n-point functions",
+          "heading": false
+        },
+        {
+          "term": "field theory",
+          "heading": true
+        },
+        {
+          "term": "primary field",
+          "heading": false
+        },
+        {
+          "term": "monodromy representation",
+          "heading": false
+        }
+      ],
+      "extract": "IN TWO DIMENSIONAL CONFORMAL FIELD THEORY 2.1. Review of A(^) model due to Tsuchiya and Kanie. In this section we recall briefly the operator formalism of the two dimensional conformal field theory on P1 with gauge symmetry of type A^ following a recent work of Tsuchiya and Kanie [22]. Integrable highest weight modules. — Let 9 = $I(2,C) and let g be the affine Lie algebra of type A^ which is defined by the",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [
+      "figure 1"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "toshitake kohno",
+      "heading": false
+    },
+    {
+      "term": "monodromy representations",
+      "heading": true
+    },
+    {
+      "term": "braid groups",
+      "heading": true
+    },
+    {
+      "term": "pure braid",
+      "heading": false
+    },
+    {
+      "term": "yang-baxter equations",
+      "heading": true
+    },
+    {
+      "term": "n-point functions",
+      "heading": false
+    },
+    {
+      "term": "lie algebra",
+      "heading": false
+    },
+    {
+      "term": "dimensional conformal",
+      "heading": true
+    },
+    {
+      "term": "classical yang-baxter",
+      "heading": true
+    },
+    {
+      "term": "irreducible representations",
+      "heading": false
+    },
+    {
+      "term": "simple lie",
+      "heading": false
+    },
+    {
+      "term": "conformal field",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": "140",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "141",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "142",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "143",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "144",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "145",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "146",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "147",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "148",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "149",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "150",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "151",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "152",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "153",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "154",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "155",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "156",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "157",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 21,
+      "label": "158",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "159",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "160",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "",
+      "page": 19,
+      "pageLabel": "156",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "",
+      "page": 21,
+      "pageLabel": "158",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 5,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 6,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "2 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p13); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 6 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/kohno1987-aif"
+  }
+}

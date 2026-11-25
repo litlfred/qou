@@ -1,0 +1,82 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/gambaudo-ghys-braids-signatures-2005/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "smf_bull_133_19.dvi",
+  "contains": [
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-001",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-002",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-003",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-004",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-005",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-006",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-007",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-008",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-009",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-010",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-011",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-012",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-013",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-014",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-015",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-016",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-017",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-018",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-019",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-020",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-021",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-022",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-023",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-024",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-025",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-026",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-027",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-028",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-029",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-030",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-031",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-032",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-033",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-034",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-035",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-036",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-037",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-038",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-039",
+    "library/gambaudo-ghys-braids-signatures-2005/sections/page-040"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Braids and signatures — — A braid deﬁnes a link which has a signature. This deﬁnes a map from the braid group to the integers which is not a homomorphism.\n\n**Braids and signatures**\n\n*BRAIDS AND SIGNATURES*\n\n40 pp, 40 sections.\n\n**Abstract.** — A braid deﬁnes a link which has a signature. This deﬁnes a map from the braid group to the integers which is not a homomorphism. We relate the homomorphism defect of this map to Meyer cocycle and Maslov class. We give some information about the global geometry of the gordian metric space. R´esum´e (Tresses et signatures). — Une tresse d´eﬁnit un entrelacs qui poss`ede une signature. Ceci d´eﬁnit une application du groupe des tresses vers les entiers qui n’est pas un homomorphisme. Nous relions le d´efaut d’homomorphisme de cette application au cocycle de Meyer et `a la classe de Maslov. Nous donnons quelques informations sur la g´eom´etrie globale de l’espace m´etrique gordien.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12; Page 13; Page 14; Page 15; Page 16; Page 17; Page 18",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "gambaudo-ghys-braids-signatures-2005",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "gambaudo-ghys-braids-signatures-2005.pdf",
+    "source_sha256": "647f4c28cab7428df2cf6f0a1f8275c0b55fdec2dcbe3b349c92e93331e0109b",
+    "pages": 40,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

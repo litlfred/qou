@@ -1,0 +1,1179 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "witten1989-cmp-jones",
+  "title": "witten1989-cmp-jones",
+  "variant": "pdf",
+  "pages": 50,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "The Chern-Simons Action",
+      "number": "1",
+      "page": 3,
+      "pageLabel": "353",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-the-chern-simons-action"
+    },
+    {
+      "level": 3,
+      "title": "(Wy-+exp(2πit",
+      "number": null,
+      "page": 15,
+      "pageLabel": "365",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-wy-exp2πit"
+    },
+    {
+      "level": 1,
+      "title": "Canonical Quantization",
+      "number": "3",
+      "page": 16,
+      "pageLabel": "366",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-canonical-quantization"
+    },
+    {
+      "level": 1,
+      "title": "Calculability",
+      "number": "4",
+      "page": 24,
+      "pageLabel": "374",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-calculability"
+    },
+    {
+      "level": 2,
+      "title": "JJ+P",
+      "number": null,
+      "page": 29,
+      "pageLabel": "379",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-jjp"
+    },
+    {
+      "level": 3,
+      "title": "; C)+βZ(S",
+      "number": null,
+      "page": 29,
+      "pageLabel": "379",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-cβzs"
+    },
+    {
+      "level": 3,
+      "title": "V^ΣK/VJ.",
+      "number": "K",
+      "page": 35,
+      "pageLabel": "385",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-k-vσkvj"
+    },
+    {
+      "level": 3,
+      "title": "Since we already know the partition function of S 2 xS",
+      "number": "3",
+      "page": 38,
+      "pageLabel": "388",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-3-since-we-already-know-the-partition-function-o"
+    },
+    {
+      "level": 3,
+      "title": "Z(S*) = (TST",
+      "number": null,
+      "page": 40,
+      "pageLabel": "390",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-zs-tst"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 47,
+      "pageLabel": "397",
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-009-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "353",
+      "words": 1110,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "donaldson theory",
+          "heading": false
+        },
+        {
+          "term": "gromov theories",
+          "heading": false
+        },
+        {
+          "term": "covariant quantum",
+          "heading": false
+        },
+        {
+          "term": "field theories",
+          "heading": false
+        },
+        {
+          "term": "conformal field",
+          "heading": false
+        },
+        {
+          "term": "knot theory",
+          "heading": false
+        },
+        {
+          "term": "general covariance",
+          "heading": false
+        },
+        {
+          "term": "knot polynomials",
+          "heading": false
+        }
+      ],
+      "extract": "Communications in Commun. Math. Phys. 121, 351-399 (1989) Mathematical Physics © Springer-Verlag 1989 Quantum Field Theory and the Jones Polynomial Edward Witten ** School of Natural Sciences, Institute for Advanced Study, Olden Lane, Princeton, NJ 08540, USA Abstract. It is shown that 2+1 dimensional quantum Yang-Mills theory, with an action consisting purely of the Chern-Simons term, is exactly soluble and gives a",
+      "extractCut": true,
+      "blocks": [
+        "library/witten1989-cmp-jones/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-the-chern-simons-action",
+      "number": "1",
+      "title": "The Chern-Simons Action",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 15,
+      "labelStart": "353",
+      "labelEnd": "365",
+      "words": 5775,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chern-simons action",
+          "heading": true
+        },
+        {
+          "term": "self-linking integral",
+          "heading": false
+        },
+        {
+          "term": "self-linking number",
+          "heading": false
+        },
+        {
+          "term": "fiat connection",
+          "heading": false
+        },
+        {
+          "term": "stationary phase",
+          "heading": false
+        },
+        {
+          "term": "canonical framing",
+          "heading": false
+        },
+        {
+          "term": "flat connection",
+          "heading": false
+        },
+        {
+          "term": "chern-simons invariant",
+          "heading": false
+        }
+      ],
+      "extract": "We have been urged [1] to try to interpret the Jones polynomial in terms of three dimensional Yang-Mills theory. So we begin on an oriented three manifold M with a compact simple gauge group G. We pick a G bundle E, which may as well be trivial, and on E we place a connection /if, which can be viewed as a Lie algebra valued one form (a runs over a basis of the Lie algebra, and / is tangent to M). An infinitesimal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-wy-exp2πit",
+      "number": null,
+      "title": "(Wy-+exp(2πit",
+      "level": 3,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "365",
+      "labelEnd": "366",
+      "words": 546,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fractional statistics",
+          "heading": false
+        },
+        {
+          "term": "wilson lines",
+          "heading": false
+        },
+        {
+          "term": "chern-simons theory",
+          "heading": false
+        },
+        {
+          "term": "conformal field",
+          "heading": false
+        },
+        {
+          "term": "rational conformal",
+          "heading": false
+        },
+        {
+          "term": "theory requires",
+          "heading": false
+        },
+        {
+          "term": "framing",
+          "heading": false
+        },
+        {
+          "term": "monodromies",
+          "heading": false
+        }
+      ],
+      "extract": "(nllk)) <^F>. (2.32) The nonabelian analog of that result will be derived in Sect. 5.1; the transform- ation law in the non-abelian case is <^>->exp(2πzf ' Λ) <^>, (2.33) where h is the conformal weight of a certain primary field in 1 + 1 dimensional current algebra. This result, though it may seem rather technical, is a key ingredient enabling the Chern-Simons theory to work. It means that although we need to pick",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-canonical-quantization",
+      "number": "3",
+      "title": "Canonical Quantization",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 24,
+      "labelStart": "366",
+      "labelEnd": "374",
+      "words": 4639,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "canonical quantization",
+          "heading": true
+        },
+        {
+          "term": "physical hubert",
+          "heading": false
+        },
+        {
+          "term": "hubert space",
+          "heading": false
+        },
+        {
+          "term": "quantum hubert",
+          "heading": false
+        },
+        {
+          "term": "flat bundles",
+          "heading": false
+        },
+        {
+          "term": "flat connections",
+          "heading": false
+        },
+        {
+          "term": "conformal blocks",
+          "heading": false
+        },
+        {
+          "term": "wilson lines",
+          "heading": false
+        }
+      ],
+      "extract": "The basic strategy for solving the Yang-Mills theory with Chern-Simons action on an arbitrary three manifold Mis to develop a machinery for chopping Min pieces, solving the problem on the pieces, and gluing things back together. So to begin with we consider a three manifold M, perhaps with Wilson lines, as in Fig. 4a. We \"cut\" M along a Riemann surface Σ. Near the cut, M looks like Σ x R*, and our first step in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-calculability",
+      "number": "4",
+      "title": "Calculability",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 29,
+      "labelStart": "374",
+      "labelEnd": "379",
+      "words": 2071,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unknotted circles",
+          "heading": false
+        },
+        {
+          "term": "feynman path",
+          "heading": false
+        },
+        {
+          "term": "physical hubert",
+          "heading": false
+        },
+        {
+          "term": "ffl",
+          "heading": false
+        },
+        {
+          "term": "hubert space",
+          "heading": false
+        },
+        {
+          "term": "path integral",
+          "heading": false
+        },
+        {
+          "term": "wilson lines",
+          "heading": false
+        },
+        {
+          "term": "complicated piece",
+          "heading": false
+        }
+      ],
+      "extract": "Our considerations so far may have seemed somewhat abstract, and we would now like to show that in fact these considerations can actually be used to calculate things. As an introduction to the requisite ideas, we will first deduce a certain theoretical principle that is of great importance in its own right. Consider, as in Fig. 5 a, a three manifold M which is the connected sum of two three manifolds Mγ and M2,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-jjp",
+      "number": null,
+      "title": "JJ+P",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": "379",
+      "labelEnd": "379",
+      "words": 60,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unknotted",
+          "heading": false
+        },
+        {
+          "term": "dotted",
+          "heading": false
+        },
+        {
+          "term": "pictures",
+          "heading": false
+        }
+      ],
+      "extract": "+ = 0 Fig. 10. A special case of the use of Fig. 8. The idea is that the three pictures are identical outside of the dotted lines, and look like figure (4.11) inside them and unknotted circles in the N dimensional representation of SU(N) as Z(S 3; CV), then (4.11) amounts in this case to the assertion that γ)",
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-cβzs",
+      "number": null,
+      "title": "; C)+βZ(S",
+      "level": 3,
+      "pageStart": 29,
+      "pageEnd": 35,
+      "labelStart": "379",
+      "labelEnd": "385",
+      "words": 2754,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "physical hubert",
+          "heading": false
+        },
+        {
+          "term": "wilson line",
+          "heading": false
+        },
+        {
+          "term": "hubert space",
+          "heading": false
+        },
+        {
+          "term": "standard framing",
+          "heading": false
+        },
+        {
+          "term": "solid torus",
+          "heading": false
+        },
+        {
+          "term": "verlinde basis",
+          "heading": false
+        },
+        {
+          "term": "verlinde showed",
+          "heading": false
+        },
+        {
+          "term": "conformal weight",
+          "heading": false
+        }
+      ],
+      "extract": "3; (4.12) Together with (4.7), 10 this implies that the expectation value of an unknotted Wilson line in the N dimensional representation of SU(N) is (4.13) Presently we will make this formula completely explicit by computing α, /?, and γ in terms of the fundamental quantum field theory parameters N and k. The induction sketched above expresses any knot expectation value as a rational function of α, β and γ (a ratio",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-k-vσkvj",
+      "number": "K",
+      "title": "V^ΣK/VJ.",
+      "level": 3,
+      "pageStart": 35,
+      "pageEnd": 38,
+      "labelStart": "385",
+      "labelEnd": "388",
+      "words": 1760,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "physical hubert",
+          "heading": false
+        },
+        {
+          "term": "wilson line",
+          "heading": false
+        },
+        {
+          "term": "hubert space",
+          "heading": false
+        },
+        {
+          "term": "extra wilson",
+          "heading": false
+        },
+        {
+          "term": "generalized surgery",
+          "heading": false
+        },
+        {
+          "term": "tubular neighborhood",
+          "heading": false
+        },
+        {
+          "term": "concrete surgeries",
+          "heading": false
+        },
+        {
+          "term": "solid torus",
+          "heading": false
+        }
+      ],
+      "extract": "(4.25) j In the space spanned by the ι;ί5 there is a natural inner product, defined by the tensor gtj which is one if Rt is the dual oΐRj and zero otherwise. We may sometimes use this metric to raise and lower indices, letting Ktj = ΣgmjKi™- m We can now get a much more concrete description of the behavior of the quantum field theory partition function under surgery. In discussing surgery, we began with a three",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-3-since-we-already-know-the-partition-function-o",
+      "number": "3",
+      "title": "Since we already know the partition function of S 2 xS",
+      "level": 3,
+      "pageStart": 38,
+      "pageEnd": 40,
+      "labelStart": "388",
+      "labelEnd": "390",
+      "words": 934,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "solid tori",
+          "heading": false
+        },
+        {
+          "term": "solid torus",
+          "heading": false
+        },
+        {
+          "term": "partition function",
+          "heading": true
+        },
+        {
+          "term": "identical solid",
+          "heading": false
+        },
+        {
+          "term": "modular transformation",
+          "heading": false
+        },
+        {
+          "term": "wilson line",
+          "heading": false
+        },
+        {
+          "term": "tubular neighborhood",
+          "heading": false
+        },
+        {
+          "term": "modular group",
+          "heading": false
+        }
+      ],
+      "extract": "already know the partition function of S 2 xS l, we will try to interpret S 3 as a manifold obtained by surgery on S 2 x S 1. This is readily done. We consider the circle C in S 2 x S 1 indicated in Fig. 1 5 a. A tubular neighborhood of C is a torus Σ; we pick a basis of H l (Σ\\ Z) consisting of cycles a and b indicated in the figure. Now we wish to make a particular surgery associated with a very special",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-zs-tst",
+      "number": null,
+      "title": "Z(S*) = (TST",
+      "level": 3,
+      "pageStart": 40,
+      "pageEnd": 47,
+      "labelStart": "390",
+      "labelEnd": "397",
+      "words": 3493,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wilson lines",
+          "heading": false
+        },
+        {
+          "term": "verlinde conjecture",
+          "heading": false
+        },
+        {
+          "term": "verlinde algebra",
+          "heading": false
+        },
+        {
+          "term": "hubert space",
+          "heading": false
+        },
+        {
+          "term": "connected sum",
+          "heading": false
+        },
+        {
+          "term": "standard surgery",
+          "heading": false
+        },
+        {
+          "term": "dimensional theory",
+          "heading": false
+        },
+        {
+          "term": "unknotted",
+          "heading": false
+        }
+      ],
+      "extract": "m)w (4.40) This may readily be evaluated. In the Verlinde basis, Γis a diagonal matrix with T ΌΪ = £ 2πί( Λ'-< / 24 ) . v.-y fa. is the conformal weight of the primary field in the representation Rt and c is the central charge for current algebra with symmetry group G at level k. Since hQ = 0, if we replace (4.38) by (4.40) the partition function transforms as Z-»Z exp (2πi(n-m) . (4.41) Though we have obtained this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-references",
+      "number": null,
+      "title": "References",
+      "level": 2,
+      "pageStart": 47,
+      "pageEnd": 50,
+      "labelStart": "397",
+      "labelEnd": null,
+      "words": 902,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "preprint hep",
+          "heading": false
+        },
+        {
+          "term": "ias preprint",
+          "heading": false
+        },
+        {
+          "term": "oxford preprint",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "conformal field",
+          "heading": false
+        },
+        {
+          "term": "pure math",
+          "heading": false
+        },
+        {
+          "term": "nucl",
+          "heading": false
+        },
+        {
+          "term": "templeton",
+          "heading": false
+        }
+      ],
+      "extract": "1. Atiyah, M.F.: New invariants of three and four dimensional manifolds. In: The mathemati- cal heritage of Hermann Weyl. Proc. Symp. Pure Math., vol. 48. Wells R. (ed.). Providence, RI: American Mathematical Society 1988, pp. 285-299 2. Donaldson, S.: An application of gauge theory to the topology of four manifolds. J. Diff. Geom. 18, 269 (1983), Polynomial invariants for smooth four-manifolds. Oxford preprint 3.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [
+      "figure 3",
+      "figure 4",
+      "figure 5",
+      "figure 7"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "wilson lines",
+      "heading": false
+    },
+    {
+      "term": "quantum hubert",
+      "heading": false
+    },
+    {
+      "term": "physical hubert",
+      "heading": false
+    },
+    {
+      "term": "unknotted wilson",
+      "heading": false
+    },
+    {
+      "term": "hubert space",
+      "heading": false
+    },
+    {
+      "term": "field theory",
+      "heading": false
+    },
+    {
+      "term": "dimensional theory",
+      "heading": false
+    },
+    {
+      "term": "conformal field",
+      "heading": false
+    },
+    {
+      "term": "jones theory",
+      "heading": false
+    },
+    {
+      "term": "extra wilson",
+      "heading": false
+    },
+    {
+      "term": "gauge field",
+      "heading": false
+    },
+    {
+      "term": "jones knot",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "352",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "353",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "354",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "355",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "356",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "357",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "358",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "359",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "360",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "361",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "362",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "363",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "364",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "365",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "366",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "367",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "368",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "369",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "370",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "371",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "372",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "373",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "374",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "375",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "376",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "377",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "378",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "379",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "380",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "381",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "382",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "383",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "384",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "385",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "386",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "387",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "388",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "389",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "390",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "391",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "392",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "393",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "394",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "395",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "396",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "397",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "398",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "399",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "A knot in three dimensional space",
+      "page": 2,
+      "pageLabel": "352",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Several linked but non-intersecting oriented knots in a three manifold M. Such a collection of knots is called a \"link\"",
+      "page": 5,
+      "pageLabel": "355",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "A three sphere with 3 unlinked and unknotted circles Ch associated with representations Rλ ...R^. The figure can be cut in",
+      "page": 26,
+      "pageLabel": "376",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7c",
+      "title": "Once ψ1 and ψ2 are obtained in this way, (4.9) has the obvious consequence",
+      "page": 28,
+      "pageLabel": "378",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "A recursion relation for links",
+      "page": 29,
+      "pageLabel": "379",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "A plane projection of a knot, with four crossings",
+      "page": 29,
+      "pageLabel": "379",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "A special case of the use of Fig. 8. The idea is that the three pictures are identical outside of the dotted lines, and look like figure (4.11) inside them",
+      "page": 29,
+      "pageLabel": "379",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15b",
+      "title": "Carrying out the same surgery as before turns S",
+      "page": 41,
+      "pageLabel": "391",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 10,
+      "note": "contents from inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11
+    },
+    {
+      "kind": "figures",
+      "state": "none",
+      "count": 0,
+      "note": "8 caption(s) read off the pages"
+    },
+    {
+      "kind": "tables",
+      "state": "none",
+      "count": 0,
+      "note": "backend pdfplumber 0.11.10; 49 dropped as prose cut into columns (a word cut at a quarter or more of the cell boundaries)"
+    },
+    {
+      "kind": "references",
+      "state": "found",
+      "count": 39
+    },
+    {
+      "kind": "glossary",
+      "state": "not-extracted",
+      "note": "the instance declares no glossary directory to hold the scheme"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1,
+      "note": "called from the text; also kept: 41 foot-of-page line(s) no mark calls, 3 mark(s) with no note found"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/witten1989-cmp-jones"
+  }
+}

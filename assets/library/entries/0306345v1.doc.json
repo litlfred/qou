@@ -1,0 +1,772 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "0306345v1",
+  "title": "agt-3-17.dvi",
+  "variant": "pdf",
+  "pages": 20,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Habiro’s formula for ω",
+      "number": "1",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-1-habiros-formula-for-ω"
+    },
+    {
+      "level": 1,
+      "title": "A proof using orthogonal polynomials",
+      "number": "2",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-2-a-proof-using-orthogonal-polynomials"
+    },
+    {
+      "level": 1,
+      "title": "Graphical calculus and a formula for ωp",
+      "number": "3",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-3-graphical-calculus-and-a-formula-for-ωp"
+    },
+    {
+      "level": 1,
+      "title": "Another formula for the coeﬃcients of ωp",
+      "number": "4",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-4-another-formula-for-the-coeﬃcients-of-ωp"
+    },
+    {
+      "level": 1,
+      "title": "The colored Jones polynomial of twist knots",
+      "number": "5",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-5-the-colored-jones-polynomial-of-twist-knots"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 20,
+      "pageLabel": null,
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-006-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 106,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "habiro",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "skein theory",
+          "heading": false
+        },
+        {
+          "term": "twist knots",
+          "heading": false
+        }
+      ],
+      "extract": "ISSN 1472-2739 (on-line) 1472-2747 (printed) 537 Algebraic & Geometric Topology ATG Volume 3 (2003) 537–556 Published: 16 June 2003 Skein-theoretical derivation of some formulas of Habiro Gregor Masbaum Abstract We use skein theory to compute the coeﬃcients of certain power series considered by Habiro in his theory of sl2 invariants of integral homol- ogy 3-spheres. Habiro originally derived these formulas using the",
+      "extractCut": true,
+      "blocks": [
+        "library/0306345v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 627,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "habiro original",
+          "heading": false
+        },
+        {
+          "term": "habiro invariant",
+          "heading": false
+        },
+        {
+          "term": "homology spheres",
+          "heading": false
+        },
+        {
+          "term": "kauﬀman bracket",
+          "heading": false
+        },
+        {
+          "term": "xeven",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "skein elements",
+          "heading": false
+        },
+        {
+          "term": "skein theory",
+          "heading": false
+        }
+      ],
+      "extract": "In a talk at the Mittag-Leﬄer Institute in May 1999, K. Habiro announced a new approach to computing the colored Jones polynomial of knots and quantum sl2 invariants of integral homology 3-spheres. For an exposition, see his paper [H2] (some results are already announced in [H1]). His invariant for homology spheres recovers both the sl2 Reshetikhin-Turaev invariants at roots of unity, and Ohtsuki’s power series",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-habiros-formula-for-ω",
+      "number": "1",
+      "title": "Habiro’s formula for ω",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 680,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "habiro",
+          "heading": true
+        },
+        {
+          "term": "every bev",
+          "heading": false
+        },
+        {
+          "term": "kauﬀman bracket",
+          "heading": false
+        },
+        {
+          "term": "ωtqf",
+          "heading": false
+        },
+        {
+          "term": "bhmv",
+          "heading": false
+        },
+        {
+          "term": "skein module",
+          "heading": false
+        },
+        {
+          "term": "λ2i",
+          "heading": false
+        },
+        {
+          "term": "submodule generated",
+          "heading": false
+        }
+      ],
+      "extract": "Habiro’s formula for ω We use the notations of [H1] and of [BHMV1]. In particular, we write a = A2, {n} = an −a−n, [n] = an −a−n a −a−1 and deﬁne {n}! and [n]! in the usual way. Recall that the Kauﬀman bracket skein module, K(M), of an oriented 3- manifold M is the free Z[A±]-module generated by isotopy classes of banded links (= disjointly embedded annuli) in M modulo the submodule generated by the Kauﬀman",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-a-proof-using-orthogonal-polynomials",
+      "number": "2",
+      "title": "A proof using orthogonal polynomials",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1011,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tz2t",
+          "heading": false
+        },
+        {
+          "term": "µ2n",
+          "heading": false
+        },
+        {
+          "term": "a4n a8n",
+          "heading": false
+        },
+        {
+          "term": "orthogonal polynomials",
+          "heading": true
+        },
+        {
+          "term": "a6n",
+          "heading": false
+        },
+        {
+          "term": "gregor masbaum",
+          "heading": false
+        },
+        {
+          "term": "recursion formula",
+          "heading": false
+        },
+        {
+          "term": "µ2nµn",
+          "heading": false
+        }
+      ],
+      "extract": "A proof using orthogonal polynomials Habiro’s proof of Theorem 1.1 uses the relationship with the quantum group Uqsl2. Here is another proof, using the method of orthogonal polynomials as in [BHMV1]. Testing with the Sn-basis, we see that (8) holds if and only if cn,−= ⟨t−1Sn⟩ ⟨Rn, Sn⟩. Thus, it is clear that an ω−satisfying (8) exists, and to compute its coeﬃcients, we just need to compute ⟨t−1Sn⟩. As in [BHMV1],",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-graphical-calculus-and-a-formula-for-ωp",
+      "number": "3",
+      "title": "Graphical calculus and a formula for ωp",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 829,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "internal colors",
+          "heading": false
+        },
+        {
+          "term": "banded trivalent",
+          "heading": false
+        },
+        {
+          "term": "gregor masbaum",
+          "heading": false
+        },
+        {
+          "term": "kauﬀman bracket",
+          "heading": false
+        },
+        {
+          "term": "circling",
+          "heading": false
+        },
+        {
+          "term": "graphical",
+          "heading": true
+        },
+        {
+          "term": "admissible",
+          "heading": false
+        },
+        {
+          "term": "jones-wenzl",
+          "heading": false
+        }
+      ],
+      "extract": "Graphical calculus and a formula for ωp Let us write ω = ω+ and put ωp = ∞ X n=0 cn,pRn . (23) Note that the coeﬃcients cn,p are well-deﬁned (because Rn divides Rn+1 and therefore the coeﬃcients Ck n,m in the product expansion RnRm = P k Ck n,mRk are zero if n or m is bigger than k.) We have ⟨ωp, x⟩= ⟨tp(x)⟩ (24) for every even x. (This follows from (6) since circling with ωp is the same as circling with p parallel",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-another-formula-for-the-coeﬃcients-of-ωp",
+      "number": "4",
+      "title": "Another formula for the coeﬃcients of ωp",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 998,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "habiro formula",
+          "heading": false
+        },
+        {
+          "term": "skein-theoretical derivation",
+          "heading": false
+        },
+        {
+          "term": "nan",
+          "heading": false
+        },
+        {
+          "term": "µ2n",
+          "heading": false
+        },
+        {
+          "term": "coeﬃcients",
+          "heading": true
+        },
+        {
+          "term": "laurent polynomial",
+          "heading": false
+        },
+        {
+          "term": "geometric topology",
+          "heading": false
+        },
+        {
+          "term": "a2j",
+          "heading": false
+        }
+      ],
+      "extract": "Another formula for the coeﬃcients of ωp Following Habiro, we introduce the polynomials R′ n = ({n}!)−1Rn and write ωp = ∞ X n=0 c′ n,pR′ n , (34) where c′ n,p = {n}! cn,p . The aim of this section is to show that c′ n,p is a Laurent polynomial, i.e. that c′ n,p ∈Z[A±]. This fact was shown by Habiro [H3] using the quantum group Uqsl2. Observe that by (9) and (7), we already know this fact for p = ±1: c′ n,1 =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-the-colored-jones-polynomial-of-twist-knots",
+      "number": "5",
+      "title": "The colored Jones polynomial of twist knots",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 618,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored jones",
+          "heading": true
+        },
+        {
+          "term": "twist knots",
+          "heading": true
+        },
+        {
+          "term": "jones polynomial",
+          "heading": true
+        },
+        {
+          "term": "fkp",
+          "heading": false
+        },
+        {
+          "term": "left-handed trefoil",
+          "heading": false
+        },
+        {
+          "term": "gregor masbaum",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure eight",
+          "heading": false
+        },
+        {
+          "term": "e2n",
+          "heading": false
+        }
+      ],
+      "extract": "The colored Jones polynomial of twist knots In this last section, we illustrate one use of ωp, namely to give a formula for the colored Jones polynomial of twist knots (see Figure 3) in terms of the coeﬃcients c′ n,p. The results of this section are known to K. Habiro and T.Q.T. Le. ··· p full twists Figure 3: The twist knot Kp. (Here p ∈Z.) For p = 1, Kp is a left-handed trefoil, and for p = −1, Kp is the ﬁgure",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 277,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kauﬀman bracket",
+          "heading": false
+        },
+        {
+          "term": "masbaum",
+          "heading": false
+        },
+        {
+          "term": "jussieu",
+          "heading": false
+        },
+        {
+          "term": "vogel",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "bhmv",
+          "heading": false
+        },
+        {
+          "term": "habegger",
+          "heading": false
+        },
+        {
+          "term": "blanchet",
+          "heading": false
+        }
+      ],
+      "extract": "[A] H. Abchir. TQFT invariants at inﬁnity for the Whitehead manifold. In: Knots in Hellas ’98, Proceedings of the International Conference on Knot Theory and Its Ramiﬁcations, World Scientiﬁc, Series on Knots and Everything, Vol. 24. [BHMV1] C. Blanchet, N. Habegger, G. Masbaum, P. Vogel. Three- manifold invariants derived from the Kauﬀman bracket, Topology 31 (1992), 685-699 [BHMV2] C. Blanchet, N. Habegger, G.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "gregor masbaum",
+      "heading": false
+    },
+    {
+      "term": "habiro formula",
+      "heading": true
+    },
+    {
+      "term": "following habiro",
+      "heading": false
+    },
+    {
+      "term": "habiro original",
+      "heading": false
+    },
+    {
+      "term": "habiro invariant",
+      "heading": false
+    },
+    {
+      "term": "kauﬀman bracket",
+      "heading": true
+    },
+    {
+      "term": "skein-theoretical derivation",
+      "heading": false
+    },
+    {
+      "term": "geometric topology",
+      "heading": false
+    },
+    {
+      "term": "algebraic geometric",
+      "heading": false
+    },
+    {
+      "term": "colored jones",
+      "heading": true
+    },
+    {
+      "term": "twist knots",
+      "heading": true
+    },
+    {
+      "term": "bhmv",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The Kauﬀman bracket relations. (Recall a = A2.)",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "How to expand colored edges and vertices. The boxes stand for appropriate Jones-Wenzl idempotents",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The twist knot Kp. (Here p ∈Z.) For p = 1, Kp is a left-handed trefoil, and for p = −1, Kp is the ﬁgure eight knot",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "A surgery description of the twist knot Kp with zero framing",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "4 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p20); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/0306345v1"
+  }
+}

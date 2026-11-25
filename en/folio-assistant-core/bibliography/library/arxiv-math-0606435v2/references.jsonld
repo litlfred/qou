@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-0606435v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "arXiv:math/0606435v2 [math.GT] 10 Oct 2007",
+      "dcterms:creator": [
+        "REPRESENTATIONS, AND OTHER LINK BRAID"
+      ],
+      "dcterms:issued": "D:20130820",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0606435",
+      "dcterms:abstract": "We show that 3-braid links with given (non-zero) Alexander or Jones polynomial are ﬁnitely many, and can be effectively determined. We classify among closed 3-braids strongly quasi-positive and ﬁbered ones, and show that 3-braid links have a unique incompressible Seifert surface. We also classify the positive braid words with Morton-Williams-Franks bound 3 and show that closed positive braids of braid index 3 are closed positive 3-braids. For closed braids on more strings, we study the alternating links occurring. In particular we classify those of braid index 4, and show that their Morton-Williams-Franks inequality is exact. Finally, we use the Burau representation to obtain new braid index criteria, including an efﬁcient 4-braid test.",
+      "dcterms:source": "library/arxiv-math-0606435v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-0606435v2"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/download-3/sections/sec-012",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Local Computation of^2n~\\-",
+  "pageStart": 19,
+  "pageEnd": 20,
+  "contains": [
+    "library/download-3/blocks/prose-sec-012",
+    "library/download-3/blocks/thm-sec-012-01",
+    "library/download-3/blocks/rem-sec-012-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/download-3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/download-3/manifest.jsonld",
+  "provenance": "ingested"
+}

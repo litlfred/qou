@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/production-vs-exploratory-discipline.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/production-vs-exploratory-discipline",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "production-vs-exploratory-discipline",
+      "title": "Production vs exploratory vs numerology — the bright-line guide",
+      "description": "Distinguish PRODUCTION (canonical-only, no fits) from EXPLORATORY (empirical-fit probes OK as shape-hints) from NUMEROLOGY (post-hoc fits to known constants). The CAL-4 / empirical-fit antipattern is the single most common review-churn source in this repo: agents repeatedly promote empirical fits into production scripts, cheat-sheet \"closed\" status, dashboards, and named LAMBDA_* constants without categorical derivation. This skill is the bright-line guide for which output goes where, the 13-driver categorical-menu, and the §Rule-14 escalation path for off-menu coefficients.",
+      "instructionsPath": "skills/local/production-vs-exploratory-discipline.md",
+      "instructionLines": 678,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

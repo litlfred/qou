@@ -1,0 +1,961 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2311.05446v3",
+  "title": "New Brunn--Minkowski and functional inequalities via convexity of entropy",
+  "variant": "pdf",
+  "pages": 32,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Improved Brunn–Minkowski inequalities",
+      "number": "1.1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-improved-brunnminkowski-inequalities"
+    },
+    {
+      "level": 2,
+      "title": "Weighted Brunn–Minkowski inequalities for star bodies",
+      "number": "1.2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-weighted-brunnminkowski-inequalities-for-star"
+    },
+    {
+      "level": 2,
+      "title": "Towards the best possible exponent in the entropy inequality",
+      "number": "1.3",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-towards-the-best-possible-exponent-in-the-ent"
+    },
+    {
+      "level": 2,
+      "title": "Functional Inequalities",
+      "number": "1.4",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-functional-inequalities"
+    },
+    {
+      "level": 2,
+      "title": "Some notation and conventions:",
+      "number": null,
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-some-notation-and-conventions"
+    },
+    {
+      "level": 1,
+      "title": "Optimal transport, entropy, and an overview of our method",
+      "number": "2",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-2-optimal-transport-entropy-and-an-overview-of-o"
+    },
+    {
+      "level": 1,
+      "title": "Dimensional convexity properties of relative entropy for log-concave measures with homogeneous potential",
+      "number": "3",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-3-dimensional-convexity-properties-of-relative-e"
+    },
+    {
+      "level": 1,
+      "title": "Dimensional convexity properties of the Gaussian relative entropy",
+      "number": "4",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-4-dimensional-convexity-properties-of-the-gaussi"
+    },
+    {
+      "level": 1,
+      "title": "Applications to functional inequalities",
+      "number": "5",
+      "page": 25,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-5-applications-to-functional-inequalities"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 159,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "brunn minkowski",
+          "heading": false
+        },
+        {
+          "term": "convexity properties",
+          "heading": false
+        },
+        {
+          "term": "relative entropy",
+          "heading": false
+        },
+        {
+          "term": "log-concave",
+          "heading": false
+        },
+        {
+          "term": "rotem",
+          "heading": false
+        }
+      ],
+      "extract": "NEW BRUNN–MINKOWSKI AND FUNCTIONAL INEQUALITIES VIA CONVEXITY OF ENTROPY GAUTAM AISHWARYA AND LIRAN ROTEM Abstract. We study the connection between the concavity properties of a measure ν and the convexity properties of the associated relative entropy D(·∥ν) along optimal transport. As a corollary we prove a new dimensional Brunn–Minkowski inequality for centered star-shaped bod- ies, when the measure ν is",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2311.05446v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-improved-brunnminkowski-inequalities",
+      "number": "1.1",
+      "title": "Improved Brunn–Minkowski inequalities",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 930,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "brunnminkowski inequality",
+          "heading": false
+        },
+        {
+          "term": "borell theorem",
+          "heading": false
+        },
+        {
+          "term": "log-concave measure",
+          "heading": false
+        },
+        {
+          "term": "exponent frac",
+          "heading": false
+        },
+        {
+          "term": "lebesgue measure",
+          "heading": false
+        },
+        {
+          "term": "even log-concave",
+          "heading": false
+        },
+        {
+          "term": "dbm",
+          "heading": false
+        },
+        {
+          "term": "subseteq mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\nu$ be a Borel measure on $\\mathbb{R}^{n}$. We say that $\\nu$ satisfies a Brunn--Minkowski inequality with exponent $a$ if for all Borel sets $K_{0}, K_{1} \\subseteq\\mathbb{R}^{n}$ satisfying $\\nu(K_{0}),\\nu(K_{1})>0$ and every $0\\le t \\le1$ we have $$\\label{eq:BM} \\nu\\left((1-t)K_{0}+ t K_{1}\\right)\\ge\\left((1-t)\\nu(K_{0})^{a}+ t \\nu(K_{1})^{a}\\right)^{1/a}.$$ Here $(1-t)K_{0} +t K_{1}=\\left\\{ (1-t) x+ t y:\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-weighted-brunnminkowski-inequalities-for-star",
+      "number": "1.2",
+      "title": "Weighted Brunn–Minkowski inequalities for star bodies",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 791,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "main-bm intro",
+          "heading": false
+        },
+        {
+          "term": "vert textnormal",
+          "heading": false
+        },
+        {
+          "term": "cdot textnormal",
+          "heading": false
+        },
+        {
+          "term": "main-entropy",
+          "heading": false
+        },
+        {
+          "term": "textnormal support",
+          "heading": false
+        },
+        {
+          "term": "int textnormal",
+          "heading": false
+        },
+        {
+          "term": "textnormal vol",
+          "heading": false
+        },
+        {
+          "term": "brunnminkowski type",
+          "heading": false
+        }
+      ],
+      "extract": "Despite the difficulties mentioned above when dealing with non-convex sets, in this paper we prove the following theorem: ::: thm []{#thm:main-BM intro label=\"thm:main-BM intro\"}Let $V:\\mathbb{R}^{n}\\to[0,\\infty)$ be a $p$-homogeneous convex function for $1<p<\\infty$, and let $\\nu$ be a measure with density $\\frac{\\mathrm{d}\\nu}{\\mathrm{d}x}$ proportional to $e^{-V}$. Let $K_{0},K_{1}\\subseteq\\mathbb{R}^{n}$ be star",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-towards-the-best-possible-exponent-in-the-ent",
+      "number": "1.3",
+      "title": "Towards the best possible exponent in the entropy inequality",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 577,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac textnormal",
+          "heading": false
+        },
+        {
+          "term": "qstn",
+          "heading": false
+        },
+        {
+          "term": "gaussianentintro",
+          "heading": false
+        },
+        {
+          "term": "displacement interpolation",
+          "heading": false
+        },
+        {
+          "term": "vert gamma",
+          "heading": false
+        },
+        {
+          "term": "main-bm intro",
+          "heading": false
+        },
+        {
+          "term": "inequality",
+          "heading": true
+        },
+        {
+          "term": "log-concave probability",
+          "heading": false
+        }
+      ],
+      "extract": "As mentioned, Theorem [\\[thm:main-BM intro\\]](#thm:main-BM intro){reference-type=\"ref\" reference=\"thm:main-BM intro\"} implies the Kolesnikov-Livshyts inequality [\\[eq:gassian-BM-2n\\]](#eq:gassian-BM-2n){reference-type=\"eqref\" reference=\"eq:gassian-BM-2n\"}, but not the result of Eskenazis--Moschidis with the optimal exponent $\\frac{1}{n}$. Since this result is known to be true, one can hope for a version of Theorem",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-functional-inequalities",
+      "number": "1.4",
+      "title": "Functional Inequalities",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 714,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "functional inequalities",
+          "heading": true
+        },
+        {
+          "term": "vert gamma",
+          "heading": false
+        },
+        {
+          "term": "hwiintro",
+          "heading": false
+        },
+        {
+          "term": "hwi inequality",
+          "heading": false
+        },
+        {
+          "term": "cdot vert",
+          "heading": false
+        },
+        {
+          "term": "original hwi",
+          "heading": false
+        },
+        {
+          "term": "log-concave measures",
+          "heading": false
+        },
+        {
+          "term": "log-concave probability",
+          "heading": false
+        }
+      ],
+      "extract": "While we cannot answer Question [\\[qstn: poincare\\]](#qstn: poincare){reference-type=\"ref\" reference=\"qstn: poincare\"} in full generality, the case where $\\mu_0$ or $\\mu_1$ is $\\gamma$ itself does suffice to prove several fundamental functional inequalities. The HWI inequality, originally introduced by Otto and Villani in [@OttoVillani00], asserts a relationship between the three elemental quantities--- $D(\\cdot",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-some-notation-and-conventions",
+      "number": null,
+      "title": "Some notation and conventions:",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 234,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "borel probability",
+          "heading": false
+        },
+        {
+          "term": "lebesgue measure",
+          "heading": false
+        },
+        {
+          "term": "textnormal",
+          "heading": false
+        },
+        {
+          "term": "function satisfying",
+          "heading": false
+        },
+        {
+          "term": "measurable",
+          "heading": false
+        },
+        {
+          "term": "vert",
+          "heading": false
+        }
+      ],
+      "extract": "- The standard Euclidean norm on $\\mathbb{R}^n$ is denoted by $\\vert \\cdot \\vert$ . - Let $K \\subseteq \\mathbb{R}^n$ be a measurable subset. We denote by $\\mathcal{P}(K)$ the space of all Borel probability measures on $K$, $\\mathcal{P}_{2}(K)$ all Borel probability measures on $K$ with finite second moments, and $\\mathcal{P}_{ac}(K)$ the space of Borel probability measures on $K$ absolutely continuous with respect",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-2-optimal-transport-entropy-and-an-overview-of-o",
+      "number": "2",
+      "title": "Optimal transport, entropy, and an overview of our method",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2051,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "optimal transport",
+          "heading": true
+        },
+        {
+          "term": "vert textnormal",
+          "heading": false
+        },
+        {
+          "term": "measure textnormal",
+          "heading": false
+        },
+        {
+          "term": "displacement concavity",
+          "heading": false
+        },
+        {
+          "term": "log textnormal",
+          "heading": false
+        },
+        {
+          "term": "displacement concave",
+          "heading": false
+        },
+        {
+          "term": "frac textnormal",
+          "heading": false
+        },
+        {
+          "term": "displacement convexity",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: overview label=\"sec: overview\"} While the general problem of optimal transport can be posed in a much more abstract setting, we will focus on the setup relevant for our purpose, namely the optimal transport problem in $\\mathbb{R}^n$ with quadratic cost. For details beyond the short treatment we present below, the reader is referred to the excellent textbook [@Villani03], especially Chapters 2 and 5. For",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-3-dimensional-convexity-properties-of-relative-e",
+      "number": "3",
+      "title": "Dimensional convexity properties of relative entropy for log-concave measures with homogeneous potential",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2116,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rangle textnormal",
+          "heading": false
+        },
+        {
+          "term": "int textnormal",
+          "heading": false
+        },
+        {
+          "term": "frac textnormal",
+          "heading": false
+        },
+        {
+          "term": "textnormal mathcal",
+          "heading": false
+        },
+        {
+          "term": "log textnormal",
+          "heading": false
+        },
+        {
+          "term": "displacement concavity",
+          "heading": false
+        },
+        {
+          "term": "nabla theta",
+          "heading": false
+        },
+        {
+          "term": "cdot nabla",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: dimconhomo label=\"sec: dimconhomo\"} In this section, we fix a measure $\\nu$ of the form $\\textnormal{ d}\\nu = e^{-V} \\textnormal{ d}x$, where $V: \\mathbb{R}^n \\to \\mathbb{R}\\cup \\{ + \\infty \\}$ is a convex function. We will break down the proof of the main result of this section into several lemmas, for the convenience of the reader who may wish to generalize our results. The relative entropy with respect",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-4-dimensional-convexity-properties-of-the-gaussi",
+      "number": "4",
+      "title": "Dimensional convexity properties of the Gaussian relative entropy",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2246,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vert textnormal",
+          "heading": false
+        },
+        {
+          "term": "int textnormal",
+          "heading": false
+        },
+        {
+          "term": "theta textnormal",
+          "heading": false
+        },
+        {
+          "term": "nabla vert",
+          "heading": false
+        },
+        {
+          "term": "textnormal gamma",
+          "heading": false
+        },
+        {
+          "term": "rangle textnormal",
+          "heading": false
+        },
+        {
+          "term": "frac textnormal",
+          "heading": false
+        },
+        {
+          "term": "rho textnormal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: gaussian label=\"sec: gaussian\"} In this section, we will differentiate the relative entropy $D(\\cdot \\Vert \\nu)$, where $\\textnormal{ d}\\nu = e^{-V} \\textnormal{ d}x$, directly along displacement interpolations without decomposing it into two parts as in the previous section. While we focus on the Gaussian measure, $\\nu = \\gamma$, we will introduce the relevant setup for a general $\\nu$. In this direction,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-5-applications-to-functional-inequalities",
+      "number": "5",
+      "title": "Applications to functional inequalities",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1888,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vert textnormal",
+          "heading": false
+        },
+        {
+          "term": "textnormal gamma",
+          "heading": false
+        },
+        {
+          "term": "hwi inequality",
+          "heading": false
+        },
+        {
+          "term": "frac textnormal",
+          "heading": false
+        },
+        {
+          "term": "vert nabla",
+          "heading": false
+        },
+        {
+          "term": "textnormal left",
+          "heading": false
+        },
+        {
+          "term": "frac mathscr",
+          "heading": false
+        },
+        {
+          "term": "int vert",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec: gaussianapp label=\"sec: gaussianapp\"} In this section, we present some applications of the second part of Proposition [\\[prop: oneendgaussian\\]](#prop: oneendgaussian){reference-type=\"ref\" reference=\"prop: oneendgaussian\"}, that is, the $(2,n)$-convexity of $D(\\mu_{t} \\Vert \\gamma)$ when one endpoint of the geodesic segment $\\{ \\mu_{t} \\}_{t \\in [0,1]}$ is an even strongly log-concave probability measure,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 32,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1284,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "brunn-minkowski inequality",
+          "heading": false
+        },
+        {
+          "term": "dominique bakry",
+          "heading": false
+        },
+        {
+          "term": "dimensional brunn-minkowski",
+          "heading": false
+        },
+        {
+          "term": "liran rotem",
+          "heading": false
+        },
+        {
+          "term": "technion israel",
+          "heading": false
+        },
+        {
+          "term": "edric villani",
+          "heading": false
+        },
+        {
+          "term": "sobolev inequality",
+          "heading": false
+        },
+        {
+          "term": "alexandros eskenazis",
+          "heading": false
+        }
+      ],
+      "extract": "1. Luigi Ambrosio, Nicola Gigli, and Giuseppe Savar´e, Gradient flows in metric spaces and in the space of probability measures, second ed., Lectures in Mathematics ETH Z¨urich, Birkh¨auser Verlag, Basel, 2008. MR 2401600 2. Efe Aras and Thomas A. Courtade, Sharp maximum-entropy comparisons, 2021 IEEE International Symposium on Information Theory (ISIT), IEEE, 2021, pp. 1504–1509. 3. D. Bakry and Michel ´Emery,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "vert textnormal",
+      "heading": false
+    },
+    {
+      "term": "measure textnormal",
+      "heading": false
+    },
+    {
+      "term": "frac textnormal",
+      "heading": false
+    },
+    {
+      "term": "cdot textnormal",
+      "heading": false
+    },
+    {
+      "term": "int textnormal",
+      "heading": false
+    },
+    {
+      "term": "textnormal gamma",
+      "heading": false
+    },
+    {
+      "term": "textnormal right",
+      "heading": false
+    },
+    {
+      "term": "textnormal left",
+      "heading": false
+    },
+    {
+      "term": "theta textnormal",
+      "heading": false
+    },
+    {
+      "term": "textnormal mathcal",
+      "heading": false
+    },
+    {
+      "term": "log textnormal",
+      "heading": false
+    },
+    {
+      "term": "rangle textnormal",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p29); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2311.05446v3"
+  }
+}

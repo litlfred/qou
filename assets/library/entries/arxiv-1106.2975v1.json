@@ -1,0 +1,156 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1106.2975v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1106.2975v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "The Polyanalytic Ginibre Ensembles\nAntti Haimi and Håkan Hedenmalm\nAbstract. For integers n, q = 1, 2, 3, . . ., let Poln,q denote the C-linear space of\npolynomials in z and ¯z, of degree ≤n −1 in z and of degree ≤q −1 in ¯z. We\nsupply Poln,q with the inner product structure of\nL2 \u0010\nC, e−m|z|2dA\n\u0011\n,\nwhere dA(z) = dxdy\nπ\n, z = x + iy;\nthe resulting Hilbert space is denoted by Polm,n,q. Here, it is assumed that m\nis a positive real. We let Km,n,q denote the reproducing kernel of Polm,n,q, and\nstudy the associated determinantal process, in the limit as m, n →+∞while\nn = m + O(1); the number q, th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1106.2975v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 8,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "We will write use standard notation, such as $\\partial X$ and $\\mathrm{int}(X)$ for the boundary and the interior of a subset $X$ of the complex plane ${\\mathbb C}$. The complex conjugate of a complex number $z$ is usually written as $\\bar z$. We write ${\\mathbb R}$ for the real line, ${\\mathbb D}:=\\{z\\in{\\mathbb C}:|z|<1\\}$ for the open unit disk, and ${\\mathbb D}^e:=\\{z\\in{\\mathbb C}:|z|>1\\}$ for the open exterior (punctured) disk. The characteristic function of a set $E$ is written $1_E$. We write $${\\mathrm d}A(z)=\\pi^{-1}{\\mathrm d}x {\\mathrm d}y,\\quad\\text{where}\\,\\,\\,\nz=x+{\\mathrm i}y\\i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1106.2975v1/blocks/figure-img-p006-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1106.2975v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Polyanalytic Bargmann-Fock spaces",
+      "pageStart": 8,
+      "pageEnd": 14,
+      "target": "../sections/sec-001-2-polyanalytic-bargmann-fock-spaces.md",
+      "narrative": null,
+      "content": "[]{#sec-polybargmann label=\"sec-polybargmann\"}\n\nWe will consider the Bargmann-Fock space $A^2_{m,q}({\\mathbb C})$ of poly-analytic functions of degree $\\le q-1$, i.e., functions of the form $$f(z) = \\sum_{r=0}^{q-1} \\bar{z}^r f_r(z),$$ where all the components $f_r$ are entire, subject to the norm integrability condition $$\\|f\\|^2_{A^2_{m,q}({\\mathbb C})}:=\n\\|f\\|^2_{L^2({\\mathbb C},\\mathrm e^{-m|z|^2})}\n=\\int_{{\\mathbb C}} |f(z)|^2 \\mathrm e^{-m|z|^2} {\\mathrm d}A(z)<+\\infty.$$ Here, as always, $m>0$. We note that $A^2_{1,1}({\\mathbb C})$ is the standard Bargmann-Fock space. As before, let $\\m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1106.2975v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Berezin density asymptotics for an exterior point",
+      "pageStart": 14,
+      "pageEnd": 21,
+      "target": "../sections/sec-002-3-berezin-density-asymptotics-for-an-exterior-po.md",
+      "narrative": null,
+      "content": "We show that the Berezin measures have the convergence ${\\mathrm d}B^{\\langle z\\rangle}_{m,n,q}\\to{\\mathrm d}\\omega_z$ for $z\\in{\\mathbb D}^e$ as $m,n\\to+\\infty$ while $n=m+\\mathrm{O}(1)$. Here, $\\omega_z$ is harmonic measure with respect to the point $z$ and the exterior disk $\\mathbb{D}^e$.\n\nWe first study the concentration of the Berezin measure to neighborhoods of the closed unit disk $\\bar{\\mathbb D}$. We recall the standard notation ${\\mathbb D}(z_0,\\rho)$ for the open disk of radius $\\rho$ centered at $z_0$.\n\n::: lem\nSuppose $z\\in{\\mathbb D}^e$ and that $\\rho>1$. Then $$\\int_{{\\mathbb C",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1106.2975v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Poly-Bargmann transforms",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-003-4-poly-bargmann-transforms.md",
+      "narrative": null,
+      "content": "In this section, we discuss the poly-Bargmann transforms, a generalization of the classical Bargmann transform, which are needed later when we analyze the Berezin density at a boundary point. The poly-Bargmann transforms appeared in Vasilevski's paper [@vas], where the basic properties were presented.\n\nWe denote by $H_j$ the $j$-th Hermite polynomial with respect to the Gaussian weight $\\mathrm e^{-\\frac12t^2}$ (\"probabilistic Hermite polynomials\"). The generating function identity $$\\mathrm e^{tz-\\frac12z^2} = \\sum_{j=0}^{+\\infty} H_j(t)\\frac{z^j}{j!}$$ allows us to write $$\\frac{1}{(2\\pi)^{1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1106.2975v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Reproducing kernel and Berezin density asymptotics for a boundary point",
+      "pageStart": 23,
+      "pageEnd": 30,
+      "target": "../sections/sec-004-5-reproducing-kernel-and-berezin-density-asympto.md",
+      "narrative": null,
+      "content": "In this section, we will calculate the limit of the blow-up berezin transform $\\hat{\\berd}^{\\langle z\\rangle}_{m,n,q}$ at a boundary point $z$, that is, $|z|=1$. There is no loss of generality to take $z=1$. Our strategy is to investigate the blow-up of the reproducing kernel of the space of analytic polynomials $\\mathrm{Pol}_{m,n,1}$ (with $q=1$) first, and then use this information together with poly-Bargmann transform to lift the the asymptotics to the context of the general polyanalytic spaces $\\mathrm{Pol}_{m,n,q}$.\n\nThe following improvement of the central limit theorem will be needed. L",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1106.2975v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-005-references.md",
+      "narrative": null,
+      "content": "[1] L. Abreu, Sampling and interpolation in Bargmann-Fock spaces of polyanalytic functions,\nAppl. Comp. Harm. Anal. 29 (2010), 287–302.\n[2] Y. Ameur, H. Hedenmalm, N. Makarov, Berezin transform in polynomial Bergman spaces,\nComm. Pure Appl. Math. 63 (2010) no. 12, 1533–1584.\n[3] Y. Ameur, H. Hedenmalm, N. Makarov, Fluctuations of eigenvalues of random normal\nmatrices, Duke Math. J., to appear.\n[4] G. W. Anderson, A. Guionnet, O. Zeitouni, An introduction to random matrices. Cam-\nbridge Studies in Advanced Mathematics, 118. Cambridge University Press, Cam-\nbridge, 2010.\n[5] N. Askour, A. Intiss",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

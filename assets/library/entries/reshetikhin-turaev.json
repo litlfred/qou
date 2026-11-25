@@ -1,0 +1,482 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "reshetikhin-turaev",
+  "blocks": [
+    {
+      "id": "library/reshetikhin-turaev/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The present paper is intended to generalize the Jones polynomial of links and the \nrelated Jones-Conway and Kauffman polynomials to the case of graphs in R 3. \nOriginally the Jones polynomial was defined for links of circles in R 3 via an \nastonishing use of yon Neumann algebras (see [Jo]). Later on it was understood \nthat this and related polynomials may be constructed using the quantum \nR-matrices (see, for instance, [Tul]). This approach enables one to construct \nsimilar invariants for coloured links, i.e. links each of whose components is \nprovided with a module over a fixed algebra (see I",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/reshetikhin-turaev/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Commun. Math. Phys. 127, 1-26 (1990) \nCommunications in \nMathematical \nPhysics \n\u000e9 Springer-Verlag 1990 \nRibbon Graphs and Their Invariants Derived \nfrom Quantum Groups \nN. Yu. Reshetikhin and V. G. Turaev \nL.O.M.I., Fontanka 27, SU-191011 Leningrad, USSR \nAbstract. The generalization of Jones polynomial of links to the case of graphs \nin R 3 is presented. It is constructed as the functor from the category of graphs to \nthe category of representations of the quantum group.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/reshetikhin-turaev/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Compact Braided Categories",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-2-compact-braided-categories.md",
+      "narrative": null,
+      "content": "2.1. Monoidal Categories (see [Ma, JS]). A monoidal category C = (C o, | \nI, a, r, •) \nconsists of a category Co, a covariant functor (the tensor product) \n| : C o x Co-~C o, an object I of Co, and natural isomorphisms \na = avvw : (U | V) | W--* U |174 \nW), \nr=rv: V| \nE=dv:I| \nRibbon Graphs Derived from Their Invariants \n3 \nt~ \n(where U, V, W are arbitrary objects of Co) so that the following two diagrams \ncommute: \n)/(u|174174 \n((U| V)| W)| \nU|174174 \n(2.1.1) \nJ,| \n(u|174174 \n~ > u|174174 \n(U| \nV \n> U@(I| V) \n~| ~'-~. \n///~ | \n(2.1.2) \nU| \nThe diagram (2.1.1) is called the pentagon for associ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/reshetikhin-turaev/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quasitriangular and Ribbon Hopf Algebras",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-3-quasitriangular-and-ribbon-hopf-algebras.md",
+      "narrative": null,
+      "content": "3.1. Quasitriangular HopfAlgebras (see [Dr]). Let A be a Hopf algebra with the \ncomultiplication A, counit ~ and antipodal mapping s. Let R be an invertible \nelement \nof \nA |174 \nDenote \nthe \npermutation \nhomomorphism \na|174 \n: A|174 \nby P. The pair (A, R) is called a quasitriangular Hopf \nRibbon Graphs Derived from Their Invariants \nalgebra if for any a ~ A, \nA'(a)=RA(a)R -~ , \n(A | \n(R) -- R 13R23, \n(id a| \n(R) = R 13R12. \n(3.1.1) \n(3.1.2) \n(3.1.3) \nHere A'= Po A, R12 ~- R@ I s A | \nRls =Od@ P)(R~2), R23 =-1 | \nNote that ifR \nis a (finite) sum ~ ai| \nwith @, fli ~ A, then R, 2 = ~ ~|174 \n1,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/reshetikhin-turaev/blocks/rem-sec-002-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "rem-sec-002-01.md",
+      "narrative": null,
+      "content": "One may more generally define topological quasitriangular Hopf algebras so that the comultiplication A takes values not in A| but rather in its certain completion A~A. One also has to assume that R ~ AQA. The properties of quasitriangular Hopf algebras mentioned above may be extended to the topological case (cf. [Dr]). 3.2. Category RepA. With each algebra A one associates the category RepA of its finite dimensional linear representations. The objects of RepA are left A-modules finitely generated over the ground field. The morphisms of RepA are A-linear homomorphisms. Note that the action of A",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/reshetikhin-turaev/blocks/rem-sec-002-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "rem-sec-002-02.md",
+      "narrative": null,
+      "content": "All objects of Rep A are reflexive up to a canonical isomorphism. Indeed, Qwv(a) = Ov(sZ(a)) = UvQv(a)Uv 1, where we have identified the vector spaces V\"\" and Ribbon Graphs Derived from Their Invariants V and where Uv = Or(U). Therefore, the composition of the canonical identification V~ V and the homomorphism x~--~Uv ~x:V--+ V is an A-isomorphism. 3.3. Ribbon Hopf Algebras. Let (A, R) be a quasitriangular Hopf algebra with the comultiplication A, counit e and antipode s. Put u = UA ~ A. We call the triple (A, R, a central element v e A) a ribbon Hopf algebra if v 2 =- us(u), s(v) = v, e(v) =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/reshetikhin-turaev/blocks/rem-sec-002-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "rem-sec-002-04.md",
+      "narrative": null,
+      "content": "If(A, R, w) is a ribbon Hopf algebra then w e A C A, so that v = Ew for some EEA, E#I. In view of (3.3.3) E generates a two-dimensional Hopf subalgebra, say,/~ of A with the basis { 1, E}. Clearly, .4 = A | E in the class of Hopf algebras.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/reshetikhin-turaev/blocks/thm-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "thm-sec-002-03.md",
+      "narrative": null,
+      "content": "(A, R, v) is a ribbon Hopf algebra containing A as a Hopf subatgebra.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/reshetikhin-turaev/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Coloured Ribbon Graphs",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-4-coloured-ribbon-graphs.md",
+      "narrative": null,
+      "content": "4.1. Bands and Annuli. A band is the image of the square [0, 1] x [0, 1] under its \n(smooth) imbedding in R 3. The images of the segments [0,1] x 0 and [0, I] x 1 \nunder this imbedding are called bases of the band. The image of the segment (1/2) \nx [0, 1] is called the core of the band. \nAn annulus is the image of the cylinder S 1 • [0,1] under an imbedding in R 3. \nThe image of the circle S 1 x (1/2) under this imbedding is called the core of the \nannulus. \n4.2. Ribbon Graphs. Let k, ~ be non-negative integers. A ribbon (k, ~)-graph is an \noriented surface S imbedded in R 2 x [0,1] and decomp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/reshetikhin-turaev/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "I vl vl vl",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-004-i-vl-vl-vl.md",
+      "narrative": null,
+      "content": "9 \n(d) S meets RZx {0,1} exactly in bases of certain type 2 bands and the \ncollection of these bases is the collection of segments \n{[i_~ \n. \n1 \n~,l+~] x0x0[i=l .... ,k}tu{[j-\u000188188 \n(4.2.1) \n(e) the remaining bases of type 2 bands are contained in the bases of type 1 \nbands. \nThe surface S is called the surface of the graph. The type 1 bands are called \ncoupons, the type 2 bands are called ribbons. Those ribbons which are incident to \nthe segments (4.2.1) are called border ribbons. Some examples of ribbon graphs are \ngiven in Figs. 1-3. \nNote that the choice of orientation for S is equivalent",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/reshetikhin-turaev/blocks/lem-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "lem-sec-005-02.md",
+      "narrative": null,
+      "content": "The graphs {r-~v, ~-~v, r '~v, Xv, w, Xv.wIV, W~A(A)} and {F(f tl, tl')ltl, t l' ~ N(A), f ~ HomA(V(q), V(~'))} generate HCDR(A). This lemma follows from the obvious fact that each graph (considered up to isotopy) may be drawn so that it lies in a standard position with respect to some square lattice in the plane of the picture. The words \"standard position\" mean that in each square of the lattice the picture looks as in Fig. 2. Following the lines of group theory we may consider relations between generators. The following lemma provides us with a \"generating set\" of relations which meansn tha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/reshetikhin-turaev/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Main Theorem",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-005-5-the-main-theorem.md",
+      "narrative": null,
+      "content": "5.1. Theorem. Let (A, R, v) be a ribbon Hopf algebra over the field I. There exists a \nunique covariant functor F = F A : HCDR(A)~ RepDA which has the following \nproperties: \n(i) F preserves the tensor product; \n(ii) For any A-module V of finite dimension over I the functor F transforms the \nobject (V,e) into V ~, where VI=V and V-I=VV; \n(aft) F transforms the CDR-graphs r'. v, r v, Xv, w (see Fig. 2) respectively in \nthe canonical pairing \nin the pairing \n(x, y)~-~(x, y) = x(y): W x V-+I, \n(y, x)~-,(x, v- luy) : V| W--,I , \nand in the homomorphism \nxNy~ S fliyNeix : V| W--~ W| V, \nwhere \nR= ~",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/reshetikhin-turaev/blocks/thm-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "thm-sec-005-01.md",
+      "narrative": null,
+      "content": "Let (A, R, v) be a ribbon Hopf algebra over the field I. There exists a unique covariant functor F = F A : HCDR(A)~ RepDA which has the following properties: (i) F preserves the tensor product; (ii) For any A-module V of finite dimension over I the functor F transforms the object (V,e) into V ~, where VI=V and V-I=VV; (aft) F transforms the CDR-graphs r'. v, r v, Xv, w (see Fig. 2) respectively in the canonical pairing in the pairing (x, y)~-~(x, y) = x(y): W x V-+I, (y, x)~-,(x, v- luy) : V| W--,I , and in the homomorphism xNy~ S fliyNeix : V| W--~ W| V, where R= ~ ~i|174 i (5.1.1) (5.~.2) (5",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/reshetikhin-turaev/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lemma. Figure 8 presents a generating set of relations for the generators of",
+      "pageStart": 13,
+      "pageEnd": 17,
+      "target": "../sections/sec-006-53-lemma-figure-8-presents-a-generating-set-of-r.md",
+      "narrative": null,
+      "content": "HCDR(A) given by Lemma 5.2. \nNote that all the relations Rel~-Rel~3 of Fig. 8 may be written purely \nalgebraically. For example, the first relation Rel~ means that \n(~v| Iv) ~ (Iv| \n= Iv. \n14 \nRet I \nRet 2 \nRets \nRat 7 \nRet 9 \nRet e \nRe111 \nN. Yu. Reshetikhin and V. G. Turaev \nReL~ \nRet~ \nRei 6 \nRB[IO \nRibbon Graphs Derived from Their Invariants \nFig. 8 \nRe112 \nW1 Wb \nW~ \nW b \nV 1 V a \n15 \nThe main point in the proof of Lemma 5.3 is to show that if two isotropic \ngraphs are expressed via our generators then these two expressions are equivalent \nmodulo our relations. In the case of graphs with",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/reshetikhin-turaev/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Applications and Generalizations of Theorem 5.1",
+      "pageStart": 17,
+      "pageEnd": 20,
+      "target": "../sections/sec-007-6-applications-and-generalizations-of-theorem-51.md",
+      "narrative": null,
+      "content": "6. Applications and Generalizations of Theorem 5.1 \n6.1. Isotopy lnvariants of Coloured Links. A link in R 3 is a finite set of disjoint \noriented smooth circles imbedded in R 3. The circles are called the components of \nthe link. Fix a ribbon Hopf algebra A. An A-colouring of the link is a function \nassociating with each component an A-module of finite dimension over the ground \nfield. A link is called framed if each component is provided with an integer. As \nusual, one introduces the isotopy relation for coloured framed links [Re2]. \nEach framed link L determines a ribbon (0, 0)-graph FL, co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/reshetikhin-turaev/blocks/thm-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 20,
+      "target": "thm-sec-007-01.md",
+      "narrative": null,
+      "content": "(An extension of Theorem 5.1). Let (A,R,v) be a ribbon I-Iopf algebra. Assume that for each A-module V we have fixed two invertible A-linear operators 0~, 0 v : V--,V. There exists a unique eovariant functor Fo:CDR(A) ~Rep[] A which has the following properties: (i) on the subcategory HCDR(A) of CDR(A) Fo equals F; (ii) Fo preserves the tensor product; (iii) for any A-module V Vo(J~)=O ~ and Fo(Jv)=Ov. We give here a construction of F o. Note that an arbitrary CDR-graph T with k bottom ends and E top ends may be uniquely represented in the form (11@... | ~) o ig o (It | Q/k), where iF is a hom",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/reshetikhin-turaev/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-008-7-examples.md",
+      "narrative": null,
+      "content": "7.1. Algebra Uh15. The theory of quantum groups developed in [Dr1, J] gives \nnontrivial examples of (topological) ribbon Hopf algebras. We mean the quantized \nuniversal enveloping algebras of simple Lie algebras, called also briefly quantized \nLie algebras. \nLet 15 be a simple Lie algebra. The quantized Lie algebra Uh15 is the associative \nalgebra over the ring of formal power series ll2~h~ generated (as an algebra \ncomplete in the h-adic topology) by elements H~, X~ +, X~-, i= 1 .... , r = rank 15 \nsubject to the following relations: \n[Hi, Hj] = O, \n[Hi, X f- ] = +__ (c~io~j)X f , \n(Xi ) Xj (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/reshetikhin-turaev/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "V~ ~Va|",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-009-f-v-va.md",
+      "narrative": null,
+      "content": "~, \ng: Va| \n~. \nSuch homomorphisms bijeetive!y correspond to elements of W~ u (respectively \n(Wff\")*). There are rather explicit parametrizations of the elements of Wff\". In the \ncase IB = sl, the simplest parametrization is given by the Young tableaux. \n7.3. Homomorphism w a. Let V a be the finite dimensional i.h.w, representation of \nU = Uh~ with the highest weight. Let (Va) Y be the dual representation (3.2./). Put \n;~* = - wo()0, where wo is the element of the Well group of maximal length with \nrespect to the Bruhat order. There is an U-linear isomorphism \nw~ : (W) v--, W*, \nThus for any a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/reshetikhin-turaev/blocks/rem-sec-009-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "rem-sec-009-01.md",
+      "narrative": null,
+      "content": "The homomorphisms {w).} suggest the extension L~h~ of Uh~ , generated by a certain element w subject to relations Hiw = _ wHo(i), _ (~) wX{ w- 1 = X~oq + -W-, q = e h ' Ribbon Graphs Derived from Their Invariants where 0 is the non-trivial involution of the Dynkin diagram. The formulas A(w) = R- I(W(~W) , 8(W) = 1, S(W) = blW- 1 make 0 a Hopf algebra containing U as a Hopf subalgebra. One may show that (W@W)R=R2a(w@w), wu=S(u)w. Using these formulas it is not difficult to show that (U, R, w 2) is a ribbon Hopf algebra. According to results of Sect. 3.3 the element v given by (7.1.1) and w 2 ar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/reshetikhin-turaev/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "R=exp(~H|",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/sec-010-rexph.md",
+      "narrative": null,
+      "content": ".h(h:) s (t) \nX e hn(H| \n| \n+)n@(x -)n \nIt is not difficult to compute the matrix elements of R j~j2 = (0J~| 0J2)R in the weight \nbasis: \njlJ2 Jl \nJ2 __ \n(Rjzj2]ml +n, m2-neJ~ \n~aJl \nR \n(e,,l| \nY,~",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/reshetikhin-turaev/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Jm~,,~",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/sec-011-jm.md",
+      "narrative": null,
+      "content": ",,~+,\"~'~m2-,\" \nn \nHere the non-zero matrix elements may be expressed as follows: \nilnlm 2 \n-- (j __q-1)n ([Jl --/111]! []1 -I-m1 -l-HI' []2 + m2\"l' [J2 \"-[-/'I-- rn2] .I~ i/2",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/reshetikhin-turaev/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "In]q!",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-012-inq.md",
+      "narrative": null,
+      "content": "\\U,-m,-n]! \nU1-}-ml]! [J2+m2-n] \n! [j2--m2] \n?1 \nX q2- (n 1 - n2 + 2n) \nThe tensor product V jl | V j2 is decomposable into the direct sum of irreducible \nsummands V j by the formula (7.2.1) where all multiplicity spaces are 1-dimen- \n24",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/reshetikhin-turaev/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "N. Yu. Reshetikhin and V. G. Turaev sional for [Jl-Jfl <-_J<Ja +J2 and are equal to zero for other j. In other words vJ~@vJ2=",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-013-24-n-yu-reshetikhin-and-v-g-turaev-sional-for-jl.md",
+      "narrative": null,
+      "content": "sional for [Jl-Jfl <-_J<Ja +J2 and are equal to zero for other j. In other words \nvJ~@vJ2= \n@ \nV j. \n(7.4.1) \nIJl - J21 <- J <=J~ + J2 \n2j = 2ji + 2jz(mod 2) \nTherefore, the Vhslz-colouring of 3-valent ribbon graphs is extremely similar. It \nsuffices to associate with each ribbon and integer or half-integer j and with each \ncoupon a complex number. Of course, the invariant F of the graph may be non- \nzero only if for every coupon the'colours j~, Jz,J of the adjacent ribbons satisfy the \ninequalities I J1 -J21 ~J --<Jl +J2, 2j = 2j~ + 2j2(2 ). \nThe modules V j are self-dual: (VJ)V~ V j. This im",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/reshetikhin-turaev/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "[j+m]![j_m]l[jl_ml]l[jz_m2]lUl +j2_j]![2j+ l ] ~1/2",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-014-2-jmj-mljl-mlljz-m2lul-j2-j2j-l-12.md",
+      "narrative": null,
+      "content": "[j+m]![j_m]l[jl_ml]l[jz_m2]lUl +j2_j]![2j+ l ] ~1/2 \nX [[Jl -~- ml]! [J2 + m2]! [Jl --J2 +J]! [J2--Jl +J] ! [J2 +J2 +J + 1]!3 \n• 2 (1-)rq \u000189 \n[jl +mt +r]l [j2 +j-ml-r]! \nr \n[r]! [j-m-r]! [jl-mt-r]! [_jz-j +mx +r]!\" \nThese numbers are called q-3j-symbols (see [KR, K]). They constitute the \ntransformation matrix for (7.4.1): for IJ~ - J2[ < J < J~ + J2 and m = - j, ..., j, we have \n\n9 \nV JlJ2J ] j~ \nJ2 \ne~= \nF. \n[m~m2mJe,,,~e,,~ \n9 \n-j~ <=m~ <=j~, \n2ml = 2ji(2) \nFor UhSI2, \nh \nhm \ni \n_-~j(i+1)( \nl)j_mbm,_m,e \n2 \nlMmm, -- e \n7.5. Remark. In this paper we have constructed a functorF : HCDR(A)--+R",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/reshetikhin-turaev/blocks/rem-sec-014-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "rem-sec-014-01.md",
+      "narrative": null,
+      "content": "In this paper we have constructed a functorF : HCDR(A)--+RepD A. Let p:RepDA~RepA be the standard projection (see Sect. 2.3). Let w be the forgetting functor which transforms each A-module into the underlying vector space. Let C(A) be the image of Rep(A) under r This is a \"generalized Tannakian category\" (cf. [D]). The commutativity and associativity morphisms in C(A) are induced by the corresponding morphisms in Rep(A). For this it is convenient to Ribbon Graphs Derived from Their Invariants choose in RepA a \"multiplicative bases\" consisting of finite dimensional irredu- cible A-modules {V~}x",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/reshetikhin-turaev/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-015-references.md",
+      "narrative": null,
+      "content": "1. [Br] Breliariaer, M.R., Moody, R.V., Patera, J.: Tables of dominant weight multiplicities for \nrepresentation of simple Lie groups. New York: Dekker 1984 \n2. FD] Deling, P., Milne, J.S.: Tannakian Categories in Hodge cicles, motives and simura \nvarieties. Lecture Notes in Mathematics, vol. 900. Berlin, Heidelberg, New York: Springer \n1982 \n3. [Drl] Drinfeld, V.G.: Proceedings of the International Congress of Mathematicians, vol. 1, \np. 798-820. Berkeley, California: New York: Academic Press 1986 \n4. [Dr2] Drinfeld, V.G.: Quasicommutative Hopf algebras. Algebra and Anal. 1, (1989) \n5. [FRT]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

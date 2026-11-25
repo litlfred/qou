@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-0611181v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Proof of the volume conjecture for Whitehead chains",
+      "dcterms:creator": [
+        "Veen, Roland van der"
+      ],
+      "dcterms:issued": "D:20211203",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0611181",
+      "dcterms:abstract": "We prove the volume conjecture for an inﬁnite family of links called White- head chains that generalizes both the Whitehead link and the Borromean rings.",
+      "dcterms:source": "library/arxiv-math-0611181v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-0611181v2"
+    }
+  ]
+}

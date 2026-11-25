@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-hep-th-9506138v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Black Hole Complementarity vs. Locality",
+      "dcterms:creator": [
+        "Lárus Thorlacius, b",
+        "Uglumc, John"
+      ],
+      "dcterms:issued": "D:20241126",
+      "dcterms:identifier": "https://arxiv.org/abs/hep-th/9506138",
+      "dcterms:source": "library/arxiv-hep-th-9506138v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-hep-th-9506138v1"
+    }
+  ]
+}

@@ -1,0 +1,2801 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1511.00400v2",
+  "title": "Reidemeister torsion, hyperbolic three-manifolds, and character varieties",
+  "variant": "pdf",
+  "pages": 55,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Combinatorial and analytic torsions",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-combinatorial-and-analytic-torsions"
+    },
+    {
+      "level": 2,
+      "title": "Combinatorial torsion",
+      "number": "2.1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-combinatorial-torsion"
+    },
+    {
+      "level": 3,
+      "title": "Torsion of a chain complex",
+      "number": "2.1.1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-211-torsion-of-a-chain-complex"
+    },
+    {
+      "level": 3,
+      "title": "Twisted chain complexes",
+      "number": "2.1.2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-212-twisted-chain-complexes"
+    },
+    {
+      "level": 2,
+      "title": "Geometric properties of combinatorial torsion",
+      "number": "2.2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-22-geometric-properties-of-combinatorial-torsion"
+    },
+    {
+      "level": 3,
+      "title": "Mayer-Vietoris",
+      "number": "2.2.1",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-221-mayer-vietoris"
+    },
+    {
+      "level": 3,
+      "title": "Polynomials",
+      "number": "2.2.2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-222-polynomials"
+    },
+    {
+      "level": 3,
+      "title": "Examples",
+      "number": "2.2.3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-223-examples"
+    },
+    {
+      "level": 2,
+      "title": "Analytic torsion",
+      "number": "2.3",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-23-analytic-torsion"
+    },
+    {
+      "level": 1,
+      "title": "Torsion of hyperbolic three-manifold with representations in SL2(C)",
+      "number": "3",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-3-torsion-of-hyperbolic-three-manifold-with-repr"
+    },
+    {
+      "level": 2,
+      "title": "Torsions from lifts of the holonomy representation",
+      "number": "3.1",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-31-torsions-from-lifts-of-the-holonomy-represent"
+    },
+    {
+      "level": 3,
+      "title": "Lifts of the holonomy",
+      "number": "3.1.1",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Torsions for closed 3-manifolds",
+      "number": "3.1.2",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-312-torsions-for-closed-3-manifolds"
+    },
+    {
+      "level": 3,
+      "title": "Cusped hyperbolic 3-manifolds",
+      "number": "3.1.3",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-313-cusped-hyperbolic-3-manifolds"
+    },
+    {
+      "level": 3,
+      "title": "The twisted polynomial",
+      "number": "3.1.4",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-314-the-twisted-polynomial"
+    },
+    {
+      "level": 2,
+      "title": "Torsion on the variety of characters",
+      "number": "3.2",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-32-torsion-on-the-variety-of-characters"
+    },
+    {
+      "level": 3,
+      "title": "The distinguished curve of characters",
+      "number": "3.2.1",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-321-the-distinguished-curve-of-characters"
+    },
+    {
+      "level": 3,
+      "title": "Torsion on the distinguished curve of characters",
+      "number": "3.2.2",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-322-torsion-on-the-distinguished-curve-of-charac"
+    },
+    {
+      "level": 3,
+      "title": "Dehn filling space",
+      "number": "3.2.3",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-323-dehn-filling-space"
+    },
+    {
+      "level": 3,
+      "title": "Torsion for Dehn fillings",
+      "number": "3.2.4",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-324-torsion-for-dehn-fillings"
+    },
+    {
+      "level": 3,
+      "title": "Branched coverings on the figure eight",
+      "number": "3.2.5",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-325-branched-coverings-on-the-figure-eight"
+    },
+    {
+      "level": 1,
+      "title": "Torsions for higher dimensional representations of hyperbolic three-manifolds",
+      "number": "4",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-4-torsions-for-higher-dimensional-representation"
+    },
+    {
+      "level": 2,
+      "title": "Representations of SL2(C)",
+      "number": "4.1",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-41-representations-of-sl2c"
+    },
+    {
+      "level": 2,
+      "title": "Higher torsions for closed manifolds",
+      "number": "4.2",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-42-higher-torsions-for-closed-manifolds"
+    },
+    {
+      "level": 2,
+      "title": "Functions on the variety of characters",
+      "number": "4.3",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-43-functions-on-the-variety-of-characters"
+    },
+    {
+      "level": 3,
+      "title": "Generic cohomology on the distinguished component",
+      "number": "4.3.1",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-431-generic-cohomology-on-the-distinguished-comp"
+    },
+    {
+      "level": 3,
+      "title": "Higher torsions on the variety of characters",
+      "number": "4.3.2",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-432-higher-torsions-on-the-variety-of-characters"
+    },
+    {
+      "level": 2,
+      "title": "Evaluation at the holonomy",
+      "number": "4.4",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-44-evaluation-at-the-holonomy"
+    },
+    {
+      "level": 3,
+      "title": "Cohomolgy at the character of the holonomy",
+      "number": "4.4.1",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-441-cohomolgy-at-the-character-of-the-holonomy"
+    },
+    {
+      "level": 3,
+      "title": "Torsion at the characters of the holonomy",
+      "number": "4.4.2",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-442-torsion-at-the-characters-of-the-holonomy"
+    },
+    {
+      "level": 3,
+      "title": "Dehn filling",
+      "number": "4.4.3",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-443-dehn-filling"
+    },
+    {
+      "level": 2,
+      "title": "Quantum invariants",
+      "number": "4.5",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-45-quantum-invariants"
+    },
+    {
+      "level": 1,
+      "title": "Representations in PSLn+1(C) and the adjoint",
+      "number": "5",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-5-representations-in-psln1c-and-the-adjoint"
+    },
+    {
+      "level": 2,
+      "title": "Local parameters and change of curve",
+      "number": "5.1",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-51-local-parameters-and-change-of-curve"
+    },
+    {
+      "level": 2,
+      "title": "An example",
+      "number": "5.2",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-52-an-example"
+    },
+    {
+      "level": 3,
+      "title": "Computations for X(M3,PSL2(C))",
+      "number": "5.2.1",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-521-computations-for-xm3psl2c"
+    },
+    {
+      "level": 3,
+      "title": "Computations for X(M3,PSL3(C))",
+      "number": "5.2.2",
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-522-computations-for-xm3psl3c"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A Not approximating the trivial representation",
+      "number": null,
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-appendix-a-not-approximating-the-trivial-represe"
+    },
+    {
+      "level": 1,
+      "title": "Appendix B Cohomology on the variety or characters",
+      "number": null,
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-appendix-b-cohomology-on-the-variety-or-characte"
+    },
+    {
+      "level": 2,
+      "title": "B.1 The complete structure",
+      "number": null,
+      "page": 46,
+      "pageLabel": "46",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-b1-the-complete-structure"
+    },
+    {
+      "level": 3,
+      "title": "B.1.1 The finite volume case",
+      "number": null,
+      "page": 46,
+      "pageLabel": "46",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-b11-the-finite-volume-case"
+    },
+    {
+      "level": 3,
+      "title": "B.1.2 A basis in cohomology",
+      "number": null,
+      "page": 48,
+      "pageLabel": "48",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-b12-a-basis-in-cohomology"
+    },
+    {
+      "level": 2,
+      "title": "B.2 Generic representations in the distinguished component.",
+      "number": null,
+      "page": 49,
+      "pageLabel": "49",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-b2-generic-representations-in-the-distinguished"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 1413,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "higher torsions",
+          "heading": false
+        },
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        },
+        {
+          "term": "combinatorial torsion",
+          "heading": false
+        },
+        {
+          "term": "dehn ﬁlling",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic three-manifolds",
+          "heading": false
+        },
+        {
+          "term": "distinguished curve",
+          "heading": false
+        },
+        {
+          "term": "distinguished component",
+          "heading": false
+        },
+        {
+          "term": "psln",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1511.00400v2 [math.GT] 26 May 2016 Reidemeister torsion, hyperbolic three-manifolds, and character varieties Joan Porti∗ November 6, 2018 Abstract This is a survey on Reidemeister torsion for hyperbolic three-manifolds of ﬁnite volume. Torsions are viewed as topological invariants and also as functions on the variety of representations in SL2(C). In both cases, the torsions may also be computed after composing",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1511.00400v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 965,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "torsionsl",
+          "heading": false
+        },
+        {
+          "term": "combandanl",
+          "heading": false
+        },
+        {
+          "term": "repsandtors",
+          "heading": false
+        },
+        {
+          "term": "mathrm psl",
+          "heading": false
+        },
+        {
+          "term": "combinatorial torsion",
+          "heading": false
+        },
+        {
+          "term": "analytic torsion",
+          "heading": false
+        },
+        {
+          "term": "tor2cusped",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic three-manifolds",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:intro label=\"sec:intro\"} The goal of this paper is to survey some results on Reidemeister torsions of orientable, hyperbolic three-manifolds of finite volume. Torsions are viewed as invariants of hyperbolic manifolds and also as functions on the variety of $\\mathrm{SL}_2(\\mathbb{C})$-characters. The paper uses combinatorial torsion, though some relevant developments described here are proved using analytic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-combinatorial-and-analytic-torsions",
+      "number": "2",
+      "title": "Combinatorial and analytic torsions",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 41,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "combandanl",
+          "heading": false
+        },
+        {
+          "term": "overviews",
+          "heading": false
+        },
+        {
+          "term": "recalls",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:combandanl label=\"sec:combandanl\"} This section overviews the definition and main properties of combinatorial torsion, as they are used later in some proofs. It also recalls briefly the definition of analytic torsion, as it is used in many relevant results.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-combinatorial-torsion",
+      "number": "2.1",
+      "title": "Combinatorial torsion",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 68,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "torsion",
+          "heading": true
+        },
+        {
+          "term": "comb",
+          "heading": false
+        },
+        {
+          "term": "convention",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:comb label=\"sec:comb\"} For a detailed definition of combinatorial torsion see [@Turaev86; @Milnor66; @Massuyeau; @Nicolaescu]. This section follows mainly [@Memoirs], in particular its convention with the power $(-1)^{i+1}$ instead of $(-1)^{i}$ for the alternated product. (See Remark [\\[rem:convention\\]](#rem:convention){reference-type=\"ref\" reference=\"rem:convention\"} on this convention.) The definition is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-211-torsion-of-a-chain-complex",
+      "number": "2.1.1",
+      "title": "Torsion of a chain complex",
+      "level": 3,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 585,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sqcup tilde",
+          "heading": false
+        },
+        {
+          "term": "operatorname tor",
+          "heading": false
+        },
+        {
+          "term": "chain complex",
+          "heading": true
+        },
+        {
+          "term": "torsion",
+          "heading": true
+        },
+        {
+          "term": "xrightarrow partial",
+          "heading": false
+        },
+        {
+          "term": "cochain complex",
+          "heading": false
+        },
+        {
+          "term": "label eqn",
+          "heading": false
+        },
+        {
+          "term": "tilde subset",
+          "heading": false
+        }
+      ],
+      "extract": "Let $F$ be a field and $C_*=(C_*,\\partial)$ a chain complex of finite dimensional $F$-vector spaces: $$C_d\\xrightarrow{\\partial} C_{d-1} \\xrightarrow{\\partial}\\cdots \\xrightarrow{\\partial} C_0.$$ The subspaces of boundaries and cycles are denoted by $B_i=\\operatorname{Im}(C_{i+1} \\xrightarrow{\\partial} C_i)$ and $Z_i=\\ker(C_{i} \\xrightarrow{\\partial} C_{i-1} )$ respectively, the homology is denoted by by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-212-twisted-chain-complexes",
+      "number": "2.1.2",
+      "title": "Twisted chain complexes",
+      "level": 3,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 724,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "otimes rho",
+          "heading": false
+        },
+        {
+          "term": "operatorname tor",
+          "heading": false
+        },
+        {
+          "term": "star otimes",
+          "heading": false
+        },
+        {
+          "term": "dim rho",
+          "heading": false
+        },
+        {
+          "term": "otimes gamma",
+          "heading": false
+        },
+        {
+          "term": "cocomplex",
+          "heading": false
+        },
+        {
+          "term": "rem",
+          "heading": false
+        },
+        {
+          "term": "complexes",
+          "heading": true
+        }
+      ],
+      "extract": "Let $K$ be a finite CW-complex. This paper is mostly interested in 3-manifolds but also in surfaces and in $S^1$, for which there is a canonical choice of PL-structure. Let $$\\rho \\colon \\pi_1 K \\to \\mathrm{SL}_n(F)$$ be a representation of its fundamental group. Consider the chain complex of vector spaces $$C_*(K;\\rho):= F^n\\otimes_{\\rho} C_* (\\widetilde K;\\mathbb{Z})$$ where $C_* (\\widetilde K;\\mathbb{Z})$ denotes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-22-geometric-properties-of-combinatorial-torsion",
+      "number": "2.2",
+      "title": "Geometric properties of combinatorial torsion",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 59,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "torsion",
+          "heading": true
+        },
+        {
+          "term": "mayer-vietoris",
+          "heading": false
+        },
+        {
+          "term": "paste",
+          "heading": false
+        }
+      ],
+      "extract": "This subsection recalls the basic properties of combinatorial torsion, the main one being Mayer-Vietoris, useful for cut and paste. Bundles over $S^1$ are also considered, in particular instead of just the torsion it is more convenient to consider the twisted Alexander polynomial, which is a torsion by [@Kitano96]. The subsection finishes with examples.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-221-mayer-vietoris",
+      "number": "2.2.1",
+      "title": "Mayer-Vietoris",
+      "level": 3,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 217,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "operatorname tor",
+          "heading": false
+        },
+        {
+          "term": "rho colon",
+          "heading": false
+        },
+        {
+          "term": "maptorus",
+          "heading": false
+        },
+        {
+          "term": "let rho",
+          "heading": false
+        },
+        {
+          "term": "mayer-vietoris",
+          "heading": true
+        },
+        {
+          "term": "cw-complex",
+          "heading": false
+        },
+        {
+          "term": "subcomplexes",
+          "heading": false
+        },
+        {
+          "term": "cap",
+          "heading": false
+        }
+      ],
+      "extract": "Let $K$ be a CW-complex, with subcomplexes $K_1,\\ K_2\\subset K$ so that $K=K_1\\cup K_2$. Let $\\rho\\colon\\pi_1K\\to \\mathrm{SL}_n(F)$ be a representation. Consider the diagram of inclusions $$\\xymatrix{ K_1\\cap K_2 \\ar[d]^{i_2} \\ar[r]^{i_1} & K_1 \\ar[d]^{j_1} \\\\ K_2 \\ar[r]^{j_2} & K. }$$ There is a Mayer-Vietoris exact sequence in homology with twisted coefficients, if the representations on $\\pi_1K_1$, $\\pi_1K_ 2$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-222-polynomials",
+      "number": "2.2.2",
+      "title": "Polynomials",
+      "level": 3,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 501,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rho colon",
+          "heading": false
+        },
+        {
+          "term": "phi operatorname",
+          "heading": false
+        },
+        {
+          "term": "mathcal rho",
+          "heading": false
+        },
+        {
+          "term": "operatorname tor",
+          "heading": false
+        },
+        {
+          "term": "rho otimes",
+          "heading": false
+        },
+        {
+          "term": "twisted alexander",
+          "heading": false
+        },
+        {
+          "term": "representation rho",
+          "heading": false
+        },
+        {
+          "term": "delta mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#subsection:polynomial label=\"subsection:polynomial\"} Here some properties of twisted Alexander polynomials viewed as torsions are briefly discussed, since they are convenient for describing some results of Reidemeister torsion. See the recent surveys [@Morifuji15; @FV11] fore more details on twisted Alexander polynomials. Start with a surjective morphism $\\phi\\colon\\pi_1 K\\to \\mathbb{Z}$. Instead of a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-223-examples",
+      "number": "2.2.3",
+      "title": "Examples",
+      "level": 3,
+      "pageStart": 10,
+      "pageEnd": 14,
+      "labelStart": "10",
+      "labelEnd": "14",
+      "words": 1858,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "operatorname tor",
+          "heading": false
+        },
+        {
+          "term": "omega operatorname",
+          "heading": false
+        },
+        {
+          "term": "maptorus",
+          "heading": false
+        },
+        {
+          "term": "wedge operatorname",
+          "heading": false
+        },
+        {
+          "term": "operatorname vol",
+          "heading": false
+        },
+        {
+          "term": "rho colon",
+          "heading": false
+        },
+        {
+          "term": "mid vert",
+          "heading": false
+        },
+        {
+          "term": "dot sigma",
+          "heading": false
+        }
+      ],
+      "extract": "The first examples below can be found in many references, for instance [@Nicolaescu Chapter 2]. ::: example []{#ex:circle label=\"ex:circle\"} Consider the circle $S^1$. A representation $\\rho$ of its fundamental group $\\pi_1 S^1\\cong\\mathbb{Z}$ is determined by the image of its generator, that we denote by $A\\in\\mathrm{SL}_n(F)$. Notice that the homology and cohomology of $S^1$ twisted by $\\rho$ is determined by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-23-analytic-torsion",
+      "number": "2.3",
+      "title": "Analytic torsion",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 474,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "analytic torsion",
+          "heading": true
+        },
+        {
+          "term": "operatorname tor",
+          "heading": false
+        },
+        {
+          "term": "rho colon",
+          "heading": false
+        },
+        {
+          "term": "assume rho",
+          "heading": false
+        },
+        {
+          "term": "muller",
+          "heading": false
+        },
+        {
+          "term": "fried",
+          "heading": false
+        },
+        {
+          "term": "müller",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifold",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:analytic label=\"sec:analytic\"} Consider now a smooth compact manifold $M$ and a representation $$\\rho\\colon\\pi_1M\\to \\mathrm{SL}_n(\\mathbb{R}).$$ The manifold $M$ has a unique $\\mathcal C^1$-triangulation, so one can view it as a CW-complex and compute its torsion. Consider the associated flat bundle $$\\label{eqn:flabundle} E_\\rho=\\widetilde M\\times \\mathbb{R}^n/\\pi_1M,$$ where $\\pi_1M$ acts on the universal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-3-torsion-of-hyperbolic-three-manifold-with-repr",
+      "number": "3",
+      "title": "Torsion of hyperbolic three-manifold with representations in SL2(C)",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 105,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "torsion",
+          "heading": true
+        },
+        {
+          "term": "torsionsl",
+          "heading": false
+        },
+        {
+          "term": "acyclic",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:torsionSL2 label=\"sec:torsionSL2\"} This section is devoted to the torsion of orientable hyperbolic 3-manifolds, using the representations in $\\mathrm{SL}_2(\\mathbb{C})$ obtained as a lift of the holonomy representation (the choice of the lifts depends on the choice of a spin structure). It starts with closed manifolds, for which this representation is acyclic. Then it considers manifolds of finite volume",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-31-torsions-from-lifts-of-the-holonomy-represent",
+      "number": "3.1",
+      "title": "Torsions from lifts of the holonomy representation",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 513,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "holonomy representation",
+          "heading": true
+        },
+        {
+          "term": "varrho sigma",
+          "heading": false
+        },
+        {
+          "term": "sigma vert",
+          "heading": false
+        },
+        {
+          "term": "spin structures",
+          "heading": false
+        },
+        {
+          "term": "sigma colon",
+          "heading": false
+        },
+        {
+          "term": "lifts",
+          "heading": true
+        },
+        {
+          "term": "mathrm psl",
+          "heading": false
+        },
+        {
+          "term": "natural bijection",
+          "heading": false
+        }
+      ],
+      "extract": "Let $M^3$ be a closed, orientable hyperbolic 3-manifold. Its holonomy representations is unique up to conjugation: $$\\operatorname{hol}\\colon \\pi_1 M^3\\to \\operatorname{Isom}^+(\\mathbb H^3)\\cong \\operatorname{PSL}_2(\\mathbb{C}).$$ To get a natural representation in a linear group one can lift the holonomy to $\\mathrm{SL}_2(\\mathbb{C})$. Such a lift always exists [@Culler86] and it depends naturally on a choice of a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-312-torsions-for-closed-3-manifolds",
+      "number": "3.1.2",
+      "title": "Torsions for closed 3-manifolds",
+      "level": 3,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 566,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vert tau",
+          "heading": false
+        },
+        {
+          "term": "varrho sigma",
+          "heading": false
+        },
+        {
+          "term": "strong acyclicity",
+          "heading": false
+        },
+        {
+          "term": "spin manifold",
+          "heading": false
+        },
+        {
+          "term": "log vert",
+          "heading": false
+        },
+        {
+          "term": "tor2closed",
+          "heading": false
+        },
+        {
+          "term": "structure sigma",
+          "heading": false
+        },
+        {
+          "term": "mutation",
+          "heading": false
+        }
+      ],
+      "extract": "The following theorem is a particular case of Raghunathan's. With other cohomology results, it is discussed in Appendix [\\[sec:cohomology\\]](#sec:cohomology){reference-type=\"ref\" reference=\"sec:cohomology\"}. In particular the following theorem is stated in Corollary [\\[cor:acyclc\\]](#cor:acyclc){reference-type=\"ref\" reference=\"cor:acyclc\"}. ::: thm []{#thm:RaghunathanClosed label=\"thm:RaghunathanClosed\"} Let $M^3$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-313-cusped-hyperbolic-3-manifolds",
+      "number": "3.1.3",
+      "title": "Cusped hyperbolic 3-manifolds",
+      "level": 3,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 236,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "varrho sigma",
+          "heading": false
+        },
+        {
+          "term": "dimhm",
+          "heading": false
+        },
+        {
+          "term": "tor2closed",
+          "heading": false
+        },
+        {
+          "term": "mfp",
+          "heading": false
+        },
+        {
+          "term": "single cusp",
+          "heading": false
+        },
+        {
+          "term": "cusped",
+          "heading": true
+        },
+        {
+          "term": "tor2cusped",
+          "heading": false
+        },
+        {
+          "term": "defn",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#section:cusped label=\"section:cusped\"} In this subsection, $M^3$ denotes a finite volume hyperbolic manifold, i.e. a manifold whose ends are cusps. ::: assumption Assume that $M^3$ has a single cusp. ::: This is done not only to simplify notation, but because with more cusps some further issues need to be discussed [@MFP14]. Again one has: ::: thm Let $M^3$ be a closed, orientable, hyperbolic 3-manifold with one",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-314-the-twisted-polynomial",
+      "number": "3.1.4",
+      "title": "The twisted polynomial",
+      "level": 3,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": "19",
+      "labelEnd": "19",
+      "words": 280,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "knot mathcal",
+          "heading": false
+        },
+        {
+          "term": "delta mathcal",
+          "heading": false
+        },
+        {
+          "term": "deg delta",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic knot",
+          "heading": false
+        },
+        {
+          "term": "polynomial",
+          "heading": true
+        },
+        {
+          "term": "dunfield",
+          "heading": false
+        },
+        {
+          "term": "friedl",
+          "heading": false
+        },
+        {
+          "term": "minimal genus",
+          "heading": false
+        }
+      ],
+      "extract": "It is relevant to mention the twisted polynomial for hyperbolic knot exteriors corresponding to a lift of the holonomy $\\varrho$ constructed by Dunfield, Friedl, and Jackson in [@DFJ12]. Given a hyperbolic knot ${\\mathcal K}\\subset S^3$, choose the spin structure on $M^3=S^3-{\\mathcal K}$ such that the trace of the meridian is $+2$ (the trace of the longitude is always -2 by [@Calegari06], see also [@MFP12 Corollary",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-32-torsion-on-the-variety-of-characters",
+      "number": "3.2",
+      "title": "Torsion on the variety of characters",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": "19",
+      "labelEnd": "19",
+      "words": 46,
+      "summary": null,
+      "keywords": [],
+      "extract": "Let $M^3$ be a hyperbolic, oriented manifold with one cusp. A relevant difference with the closed case is the fact that the holonomy of $M^3$ can be deformed in the variety of representations (to holonomies of non-complete structures).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-016-321-the-distinguished-curve-of-characters",
+      "number": "3.2.1",
+      "title": "The distinguished curve of characters",
+      "level": 3,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 392,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm psl",
+          "heading": false
+        },
+        {
+          "term": "dehnfilling",
+          "heading": false
+        },
+        {
+          "term": "characters",
+          "heading": true
+        },
+        {
+          "term": "distinguished",
+          "heading": true
+        },
+        {
+          "term": "distinguished component",
+          "heading": false
+        },
+        {
+          "term": "dehn filling",
+          "heading": false
+        },
+        {
+          "term": "affine algebraic",
+          "heading": false
+        },
+        {
+          "term": "thurstonbook",
+          "heading": false
+        }
+      ],
+      "extract": "The variety of $\\mathrm{SL}_2(\\mathbb{C})$-representations of $M^3$ is the set $$\\hom(\\pi_1M^3,\\mathrm{SL}_2(\\mathbb{C})),$$ which it is an affine algebraic set: if a generating set of $\\pi_1M^3$ has $k$ elements, then $\\hom(\\pi_1M^3,\\mathrm{SL}_2(\\mathbb{C}))$ embeds in $\\mathrm{SL}_2(\\mathbb{C})^k\\subset \\mathbb{C}^{4 k}$, by mapping a representation to the image of its generators. The algebraic equations are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-322-torsion-on-the-distinguished-curve-of-charac",
+      "number": "3.2.2",
+      "title": "Torsion on the distinguished curve of characters",
+      "level": 3,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": "20",
+      "labelEnd": "22",
+      "words": 680,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chi rho",
+          "heading": false
+        },
+        {
+          "term": "rho textrm",
+          "heading": false
+        },
+        {
+          "term": "mathbb rho",
+          "heading": false
+        },
+        {
+          "term": "acyclicorbit",
+          "heading": false
+        },
+        {
+          "term": "character chi",
+          "heading": false
+        },
+        {
+          "term": "trivial character",
+          "heading": false
+        },
+        {
+          "term": "partial tilde",
+          "heading": false
+        },
+        {
+          "term": "torsion",
+          "heading": true
+        }
+      ],
+      "extract": "We say that a character $\\chi\\in X(M^3)$ is trivial if it takes values in $\\{\\pm 2\\}$, i.e. it is a lift or the trivial character in $\\mathrm{PSL}_2(\\mathbb{C})$. An irreducible character is the character of a unique conjugacy class of representations. A reducible character can correspond to more conjugacy classes, but if the character is non-trivial, then either all representations with this character are acyclic,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-323-dehn-filling-space",
+      "number": "3.2.3",
+      "title": "Dehn filling space",
+      "level": 3,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 659,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dehn filling",
+          "heading": true
+        },
+        {
+          "term": "frac operatorname",
+          "heading": false
+        },
+        {
+          "term": "holonomy varrho",
+          "heading": false
+        },
+        {
+          "term": "operatorname vol",
+          "heading": false
+        },
+        {
+          "term": "varrho sigma",
+          "heading": false
+        },
+        {
+          "term": "filling coefficients",
+          "heading": false
+        },
+        {
+          "term": "label eqn",
+          "heading": false
+        },
+        {
+          "term": "peripheral torus",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:Dehnfilling label=\"sec:Dehnfilling\"} Again let $M^3$ be an oriented, finite volume hyperbolic manifold with one cusp. Consider the peripheral torus $T^2$, which is the boundary of a compact core of $M^3$. Choose a frame on the peripheral torus $T^2$, i.e. two simple closed curves that generate $\\pi_1 T^2$, denote this frame by $\\{m,l\\}$. The notation suggests that the canonical choice for a knot exterior is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-324-torsion-for-dehn-fillings",
+      "number": "3.2.4",
+      "title": "Torsion for Dehn fillings",
+      "level": 3,
+      "pageStart": 23,
+      "pageEnd": 25,
+      "labelStart": "23",
+      "labelEnd": "25",
+      "words": 660,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vert tau",
+          "heading": false
+        },
+        {
+          "term": "frac vert",
+          "heading": false
+        },
+        {
+          "term": "right vert",
+          "heading": false
+        },
+        {
+          "term": "left vert",
+          "heading": false
+        },
+        {
+          "term": "pmatrix lambda",
+          "heading": false
+        },
+        {
+          "term": "differentspin",
+          "heading": false
+        },
+        {
+          "term": "frac mathbb",
+          "heading": false
+        },
+        {
+          "term": "label eqn",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\vert p\\vert +\\vert q\\vert$ be sufficiently large and let $\\sigma$ be a spin structure on $M^3$ extensible to $M_{p/q}^3$. Let $\\rho_{p/q,\\sigma}$ denote the lift of the holonomy of the restriction to $M^3$ of the hyperbolic structure on $M_{p/q}^3$, and $\\chi_{p/q,\\sigma}$ the corresponding character. Let $\\lambda_{p/q}$ denote the complex length of the soul of the filling torus. There is a surgery formula:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-325-branched-coverings-on-the-figure-eight",
+      "number": "3.2.5",
+      "title": "Branched coverings on the figure eight",
+      "level": 3,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 433,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vert operatorname",
+          "heading": false
+        },
+        {
+          "term": "log vert",
+          "heading": false
+        },
+        {
+          "term": "operatorname tor",
+          "heading": false
+        },
+        {
+          "term": "branched",
+          "heading": true
+        },
+        {
+          "term": "figure eight",
+          "heading": true
+        },
+        {
+          "term": "frac log",
+          "heading": false
+        },
+        {
+          "term": "fox",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sssection:branched label=\"sssection:branched\"} We next consider another family of examples. We consider it only for the figure eight knot, but it generalizes to other manifolds. Consider $M_ n^3$ the n-th cyclic branched covering of $S^3$, branched along the figure eight knot. It is hyperbolic for $n\\geq 4$. Its torsion may be computed by means of the twisted Alexander polynomial, by using the formula à la Fox,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-4-torsions-for-higher-dimensional-representation",
+      "number": "4",
+      "title": "Torsions for higher dimensional representations of hyperbolic three-manifolds",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "26",
+      "labelEnd": "26",
+      "words": 25,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "repsandtors",
+          "heading": false
+        },
+        {
+          "term": "torsions",
+          "heading": true
+        },
+        {
+          "term": "three-manifolds",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sec:repsandtors label=\"sec:repsandtors\"} This section is devoted to further Reidemeister torsions naturally associated to hyperbolic three-manifolds, those obtained by using the (finite dimensional and linear) representations of $\\mathrm{SL}_2(\\mathbb{C})$.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-022-41-representations-of-sl2c",
+      "number": "4.1",
+      "title": "Representations of SL2(C)",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "26",
+      "labelEnd": "27",
+      "words": 444,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "operatorname sym",
+          "heading": false
+        },
+        {
+          "term": "sym colon",
+          "heading": false
+        },
+        {
+          "term": "varrho sigma",
+          "heading": false
+        },
+        {
+          "term": "representation operatorname",
+          "heading": false
+        },
+        {
+          "term": "overline operatorname",
+          "heading": false
+        },
+        {
+          "term": "colon mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathrm psl",
+          "heading": false
+        },
+        {
+          "term": "infinitesimal deformations",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#section:reps label=\"section:reps\"} Let $V_{k+1}$ be the space of degree $k$ homogeneous polynomials in two variables: $$V_{k+1}:=\\{ P\\in \\mathbb{C}[X,Y]\\mid P \\textrm{ is homogeneous of degree } k\\}.$$ The group $\\mathrm{SL}_2(\\mathbb{C})$ acts naturally on $V_{k+1}$ by precomposition on polynomials: $$\\begin{array}{ccl} \\mathrm{SL}_2(\\mathbb{C})\\times V_{k+1} & \\to & V_{k+1} \\\\ (A, P) & \\mapsto & P\\circ A^t",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-42-higher-torsions-for-closed-manifolds",
+      "number": "4.2",
+      "title": "Higher torsions for closed manifolds",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 29,
+      "labelStart": "27",
+      "labelEnd": "29",
+      "words": 664,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "varrho sigma",
+          "heading": false
+        },
+        {
+          "term": "torsions",
+          "heading": true
+        },
+        {
+          "term": "muller",
+          "heading": false
+        },
+        {
+          "term": "vert tau",
+          "heading": false
+        },
+        {
+          "term": "overline tau",
+          "heading": false
+        },
+        {
+          "term": "operatorname sym",
+          "heading": false
+        },
+        {
+          "term": "operatorname tor",
+          "heading": false
+        },
+        {
+          "term": "sign indeterminacy",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sect:higher label=\"sect:higher\"} From Theorem [\\[thm:rig\\]](#thm:rig){reference-type=\"ref\" reference=\"thm:rig\"}, we can define torsions. ::: definition Let $M^3$ be a closed oriented hyperbolic three-manifold, with spin structure $\\sigma$, and let $\\varrho_\\sigma^{k_1,k_2}= \\operatorname{Sym}^{k_1,k_2}\\circ \\varrho_\\sigma$ be as in [\\[eqn:varrho\\]](#eqn:varrho){reference-type=\"eqref\" reference=\"eqn:varrho\"}. For",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-43-functions-on-the-variety-of-characters",
+      "number": "4.3",
+      "title": "Functions on the variety of characters",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": "29",
+      "labelEnd": "29",
+      "words": 36,
+      "summary": null,
+      "keywords": [],
+      "extract": "In this subsection $M^3$ denotes an orientable hyperbolic 3-manifold of finite volume, with a single cusp. The subsection discusses the torsion as function on the variety of characters.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-025-431-generic-cohomology-on-the-distinguished-comp",
+      "number": "4.3.1",
+      "title": "Generic cohomology on the distinguished component",
+      "level": 3,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": "29",
+      "labelEnd": "30",
+      "words": 596,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chi rho",
+          "heading": false
+        },
+        {
+          "term": "character chi",
+          "heading": false
+        },
+        {
+          "term": "cohomology",
+          "heading": true
+        },
+        {
+          "term": "representation rho",
+          "heading": false
+        },
+        {
+          "term": "operatorname sym",
+          "heading": false
+        },
+        {
+          "term": "generic",
+          "heading": true
+        },
+        {
+          "term": "left chi",
+          "heading": false
+        },
+        {
+          "term": "mathbb otherwise",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:genericfunctions label=\"sec:genericfunctions\"} Some cohomology preliminaries are required before defining the torsion of $\\operatorname{Sym}^{k_1,k_2}$ as function on $X_0(M^3)$. To simplify, use the notation $$\\rho^{k_1,k_2}:=\\operatorname{Sym}^{k_1,k_2}\\circ\\rho$$ for any representation $\\rho\\colon\\pi_1M^3\\to \\mathrm{SL}_2(\\mathbb{C})$. ::: definition []{#def:exceptional label=\"def:exceptional\"} A",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-432-higher-torsions-on-the-variety-of-characters",
+      "number": "4.3.2",
+      "title": "Higher torsions on the variety of characters",
+      "level": 3,
+      "pageStart": 30,
+      "pageEnd": 32,
+      "labelStart": "30",
+      "labelEnd": "32",
+      "words": 1063,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "overline theta",
+          "heading": false
+        },
+        {
+          "term": "chi rho",
+          "heading": false
+        },
+        {
+          "term": "theta right",
+          "heading": false
+        },
+        {
+          "term": "operatorname sym",
+          "heading": false
+        },
+        {
+          "term": "mathbb left",
+          "heading": false
+        },
+        {
+          "term": "cong mathbb",
+          "heading": false
+        },
+        {
+          "term": "operatorname tor",
+          "heading": false
+        },
+        {
+          "term": "cap gamma",
+          "heading": false
+        }
+      ],
+      "extract": "Again assume that $M^3$ is an oriented hyperbolic 3-manifold of finite volume with a single cusp. We define the Reidemeister torsion on the distinguished curve of characters $X_0(M^3)$. ::: definition For $k_1$ or $k_2$ odd, with $k_1\\neq k_2$, and for $\\chi_\\rho\\in X_0(M^3)- \\mathrm{E}^{k_1,k_2}$, where $\\mathrm{E}^{k_1,k_2}$ is as in Definition [\\[def:exceptional\\]](#def:exceptional){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-44-evaluation-at-the-holonomy",
+      "number": "4.4",
+      "title": "Evaluation at the holonomy",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 32,
+      "labelStart": "32",
+      "labelEnd": "32",
+      "words": 4,
+      "summary": null,
+      "keywords": [],
+      "extract": "Evaluation at the holonomy",
+      "extractCut": false
+    },
+    {
+      "id": "sec-028-441-cohomolgy-at-the-character-of-the-holonomy",
+      "number": "4.4.1",
+      "title": "Cohomolgy at the character of the holonomy",
+      "level": 3,
+      "pageStart": 32,
+      "pageEnd": 33,
+      "labelStart": "32",
+      "labelEnd": "33",
+      "words": 234,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "varrho colon",
+          "heading": false
+        },
+        {
+          "term": "let varrho",
+          "heading": false
+        },
+        {
+          "term": "cap gamma",
+          "heading": false
+        },
+        {
+          "term": "holonomy",
+          "heading": true
+        },
+        {
+          "term": "dimatvarrho",
+          "heading": false
+        },
+        {
+          "term": "basis complete",
+          "heading": false
+        },
+        {
+          "term": "neq",
+          "heading": false
+        }
+      ],
+      "extract": "In order to evaluate the torsion functions at the lift of the holonomy, some results on the cohomology for this representation are required. Again the proofs are postponed to Appendix [\\[sec:cohomology\\]](#sec:cohomology){reference-type=\"ref\" reference=\"sec:cohomology\"}. ::: thm []{#prop:dimatvarrho label=\"prop:dimatvarrho\"} Let $\\varrho\\colon\\pi_1 M^3\\to\\mathrm{SL}_2(\\mathbb{C})$ be a lift of the holonomy. (a) If",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-442-torsion-at-the-characters-of-the-holonomy",
+      "number": "4.4.2",
+      "title": "Torsion at the characters of the holonomy",
+      "level": 3,
+      "pageStart": 33,
+      "pageEnd": 34,
+      "labelStart": "33",
+      "labelEnd": "34",
+      "words": 295,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chi varrho",
+          "heading": false
+        },
+        {
+          "term": "vert mathbb",
+          "heading": false
+        },
+        {
+          "term": "neq gamma",
+          "heading": false
+        },
+        {
+          "term": "ratiocurves",
+          "heading": false
+        },
+        {
+          "term": "cuspsh",
+          "heading": false
+        },
+        {
+          "term": "dimatvarrho",
+          "heading": false
+        },
+        {
+          "term": "mfp",
+          "heading": false
+        },
+        {
+          "term": "right vert",
+          "heading": false
+        }
+      ],
+      "extract": "::: prop []{#prop:propslift label=\"prop:propslift\"} Let $\\chi_\\varrho$ be the character of a lift $\\varrho$ of the holonomy representation (a) []{#item:oddnonzero label=\"item:oddnonzero\"} When $k_1+ k_2$ is odd, $\\mathbb{T}_M^{k_1,k_2}(\\chi_\\varrho)\\neq 0$. In particular, when $k$ is odd, $\\mathbb{T}_M^{k}(\\chi_\\varrho)\\neq 0$. (b) []{#item:k1k2odd label=\"item:k1k2odd\"} When $k_1\\neq k_2$ are both odd,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-443-dehn-filling",
+      "number": "4.4.3",
+      "title": "Dehn filling",
+      "level": 3,
+      "pageStart": 34,
+      "pageEnd": 35,
+      "labelStart": "34",
+      "labelEnd": "35",
+      "words": 264,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vert tau",
+          "heading": false
+        },
+        {
+          "term": "dehn filling",
+          "heading": true
+        },
+        {
+          "term": "chi varrho",
+          "heading": false
+        },
+        {
+          "term": "ratiocurves",
+          "heading": false
+        },
+        {
+          "term": "propslift",
+          "heading": false
+        },
+        {
+          "term": "neq frac",
+          "heading": false
+        },
+        {
+          "term": "denseh",
+          "heading": false
+        },
+        {
+          "term": "overline lambda",
+          "heading": false
+        }
+      ],
+      "extract": "The following is a generalization to other representations of the formula for Dehn filling in Proposition [\\[prop:SF\\]](#prop:SF){reference-type=\"ref\" reference=\"prop:SF\"}. In particular the same context and notation is used. ::: prop []{#prop:SFh label=\"prop:SFh\"} Let $M^3$ be as above. For $\\vert p\\vert +\\vert q\\vert$ sufficiently large: (a) For $k_1$ or $k_2$ odd, $$\\tau^{k_1,k_2}(M_{p/q}^3,\\sigma)=",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-45-quantum-invariants",
+      "number": "4.5",
+      "title": "Quantum invariants",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 36,
+      "labelStart": "35",
+      "labelEnd": "36",
+      "words": 490,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chi varrho",
+          "heading": false
+        },
+        {
+          "term": "mathbb mathcal",
+          "heading": false
+        },
+        {
+          "term": "knot mathcal",
+          "heading": false
+        },
+        {
+          "term": "enhanced neumann-zagier",
+          "heading": false
+        },
+        {
+          "term": "neumann-zagier datum",
+          "heading": false
+        },
+        {
+          "term": "chern-simons invariant",
+          "heading": false
+        },
+        {
+          "term": "murakami",
+          "heading": false
+        },
+        {
+          "term": "torsion",
+          "heading": false
+        }
+      ],
+      "extract": "When $(k_1,k_2)=(2,0)$, $\\operatorname{Sym}^2$ is the adjoint representation and its torsion occurs in the volume conjecture. The role of the torsion in the expansion of the path integral is already mentioned in the work of Witten [@Witten89] and Bar-Natan Witten [@BNW91]. Of course the work of Kashaev [@Kashaev97] and Murakami-Murakami [@MM01] play a key role in the conjecture. For a knot $\\mathcal K$, let",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-5-representations-in-psln1c-and-the-adjoint",
+      "number": "5",
+      "title": "Representations in PSLn+1(C) and the adjoint",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 39,
+      "labelStart": "36",
+      "labelEnd": "39",
+      "words": 1037,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm psl",
+          "heading": false
+        },
+        {
+          "term": "chi varrho",
+          "heading": false
+        },
+        {
+          "term": "zar chi",
+          "heading": false
+        },
+        {
+          "term": "chi rho",
+          "heading": false
+        },
+        {
+          "term": "varphi operatorname",
+          "heading": false
+        },
+        {
+          "term": "operatorname sym",
+          "heading": false
+        },
+        {
+          "term": "gamma colon",
+          "heading": false
+        },
+        {
+          "term": "kitayamaterashima",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:adj label=\"sec:adj\"} In [@Memoirs] I considered the torsion corresponding to the adjoint representation as a function on the variety of characters in $\\mathrm{SL}_2(\\mathbb{C})$, in fact $\\mathrm{PSL}_2(\\mathbb{C})$. Kitayama and Terashima [@KitayamaTerashima15] considered the analog for $\\mathrm{PSL}_{n+1}(\\mathbb{C})$, i.e. the torsion for the adjoint representation. Along the section $M^3$ denotes an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-51-local-parameters-and-change-of-curve",
+      "number": "5.1",
+      "title": "Local parameters and change of curve",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 41,
+      "labelStart": "39",
+      "labelEnd": "41",
+      "words": 1129,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kronecker pairing",
+          "heading": false
+        },
+        {
+          "term": "gamma peripheral",
+          "heading": false
+        },
+        {
+          "term": "dot rho",
+          "heading": false
+        },
+        {
+          "term": "log rho",
+          "heading": false
+        },
+        {
+          "term": "chi rho",
+          "heading": false
+        },
+        {
+          "term": "chi varrho",
+          "heading": false
+        },
+        {
+          "term": "chamber regular",
+          "heading": false
+        },
+        {
+          "term": "pairing langle",
+          "heading": false
+        }
+      ],
+      "extract": "Consider $\\mathfrak{h}\\subset \\mathfrak{sl}_{n+1}(\\mathbb{C})$ the Cartan subalgebra of diagonal matrices, in particular a diagonal matrix in $\\mathrm{PSL}_{n+1}(\\mathbb{C})$ lies in $\\exp \\mathfrak{h}$. For a generic character $\\chi\\in X_0(M^3,\\mathrm{PSL}_{n+1}(\\mathbb{C}))$, one would like to consider in a neighborhood $U$ of $\\chi$: $$\\label{eqn:log} \\begin{array}{rcl} \\log_\\gamma\\colon U\\subset",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-52-an-example",
+      "number": "5.2",
+      "title": "An example",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 42,
+      "labelStart": "41",
+      "labelEnd": "42",
+      "words": 185,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ﬁgure eight",
+          "heading": false
+        },
+        {
+          "term": "xirr",
+          "heading": false
+        },
+        {
+          "term": "psln",
+          "heading": false
+        },
+        {
+          "term": "sln",
+          "heading": false
+        },
+        {
+          "term": "eight knot",
+          "heading": false
+        }
+      ],
+      "extract": "An example Let me use Proposition 5.9 to compute TM,γ for the ﬁgure eight knot for PSL2(C) and PSL3(C). For PSL2(C) this is done in [82], but I recall it here for completeness. 41 Let Γ = π1M denote the fundamental group of the ﬁgure eight knot exterior. The presentation Γ = ⟨a,b,m ∣mam−1 = ab, mbm−1 = bab⟩ corresponds to the fact that it is ﬁbered over the circle, with ﬁbre a punctured torus, whose fundamental",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-521-computations-for-xm3psl2c",
+      "number": "5.2.1",
+      "title": "Computations for X(M3,PSL2(C))",
+      "level": 3,
+      "pageStart": 42,
+      "pageEnd": 43,
+      "labelStart": "42",
+      "labelEnd": "43",
+      "words": 287,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "α1α",
+          "heading": false
+        },
+        {
+          "term": "fricke-klein theorem",
+          "heading": false
+        },
+        {
+          "term": "psl",
+          "heading": true
+        },
+        {
+          "term": "tid",
+          "heading": false
+        }
+      ],
+      "extract": "Computations for X(M 3,PSL2(C)) By Fricke-Klein theorem, the variety of characters X(F 2,SL2(C)) is isomorphic to C3. More precisely, deﬁning α1(ρ) = tr(ρ(a)), α2(ρ) = tr(ρ(b)), α3(ρ) = tr(ρ(ab)). Fricke-Klein theorem asserts that (α1,α2,α3) are global coordinates of X(F 2,SL2(C)). Using the relations of traces, ∀A,B ∈SL2(C): tr(A−1) = tr(A), tr(AB) = tr(AB−1) −tr(A)tr(B), we may deduce: φ∗(α1) = α3 , φ∗(α2) = α2α3",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-522-computations-for-xm3psl3c",
+      "number": "5.2.2",
+      "title": "Computations for X(M3,PSL3(C))",
+      "level": 3,
+      "pageStart": 43,
+      "pageEnd": 44,
+      "labelStart": "43",
+      "labelEnd": "44",
+      "words": 348,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "β1β",
+          "heading": false
+        },
+        {
+          "term": "psl",
+          "heading": true
+        },
+        {
+          "term": "α1α",
+          "heading": false
+        },
+        {
+          "term": "rid",
+          "heading": false
+        }
+      ],
+      "extract": "Computations for X(M 3,PSL3(C)) By a theorem of Lawton [56] and Will [101]: X(F2,SL3(C)) is a double branched covering of C8 with coordinates β1(ρ) = tr(ρ(a)) β2(ρ) = tr(ρ(a−1)) β3(ρ) = tr(ρ(b)) β4(ρ) = tr(ρ(b−1)) β5(ρ) = tr(ρ(ab)) β6(ρ) = tr(ρ(b−1a−1)) β7(ρ) = tr(ρ(a−1b)) β8(ρ) = tr(ρ(ab−1)) and the trace of l = [a,b] and its inverse, ϑl±1, are a degree two extension of the coordinates β1,... ,β8, and ϑl and ϑl−1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-appendix-a-not-approximating-the-trivial-represe",
+      "number": null,
+      "title": "Appendix A Not approximating the trivial representation",
+      "level": 1,
+      "pageStart": 44,
+      "pageEnd": 45,
+      "labelStart": "44",
+      "labelEnd": "45",
+      "words": 563,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm psl",
+          "heading": false
+        },
+        {
+          "term": "chi rho",
+          "heading": false
+        },
+        {
+          "term": "pmatrix lambda",
+          "heading": false
+        },
+        {
+          "term": "mathbb oplus",
+          "heading": false
+        },
+        {
+          "term": "trivial character",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "lambda phi",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:notapprox label=\"sec:notapprox\"} For a manifold $M^3$ there are components of $X(M^3,\\mathrm{PSL}_2(\\mathbb{C}))$ that consist of characters of abelian representations. When $b_1(M^3)=1$ those components are curves, and their union is denoted by $$X^{ab}(M^3,\\mathrm{PSL}_2(\\mathbb{C})).$$ The number of components of $X^{ab}(M^3,\\mathrm{PSL}_2(\\mathbb{C}))$ depends on the torsion of $H_1(M^3;\\mathbb{Z})$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-appendix-b-cohomology-on-the-variety-or-characte",
+      "number": null,
+      "title": "Appendix B Cohomology on the variety or characters",
+      "level": 1,
+      "pageStart": 45,
+      "pageEnd": 46,
+      "labelStart": "45",
+      "labelEnd": "46",
+      "words": 27,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cohomology",
+          "heading": true
+        },
+        {
+          "term": "sect",
+          "heading": false
+        },
+        {
+          "term": "appendix",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sec:cohomology label=\"sec:cohomology\"} The aim of this appendix is to provide references and proofs for the result in cohomology of Section [\\[sect:higher\\]](#sect:higher){reference-type=\"ref\" reference=\"sect:higher\"}.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-039-b1-the-complete-structure",
+      "number": null,
+      "title": "B.1 The complete structure",
+      "level": 2,
+      "pageStart": 46,
+      "pageEnd": 46,
+      "labelStart": "46",
+      "labelEnd": "46",
+      "words": 256,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "strong acyclicity",
+          "heading": false
+        },
+        {
+          "term": "varrho",
+          "heading": false
+        },
+        {
+          "term": "flabundle",
+          "heading": false
+        },
+        {
+          "term": "mathrm hol",
+          "heading": false
+        },
+        {
+          "term": "omega rangle",
+          "heading": false
+        },
+        {
+          "term": "widetilde mathrm",
+          "heading": false
+        },
+        {
+          "term": "label eqn",
+          "heading": false
+        },
+        {
+          "term": "derham",
+          "heading": false
+        }
+      ],
+      "extract": "Let $M^3$ be a hyperbolic orientable 3-manifold and $$\\varrho=\\widetilde{\\mathrm{hol}}\\colon\\pi_1M�\\to\\mathrm{SL}_2(\\mathbb{C})$$ a lift of its holonomy. As before denote by $$\\label{eqn:rhok1k2} \\varrho^{k_1,k_2}:= \\operatorname{Sym}^{k_1,k_2}\\circ \\varrho \\colon\\pi_1 M^3\\to \\mathrm{SL}_{(k_1+1)(k_2+1)}(\\mathbb{C}).$$ Let $$\\label{eqn:Ek1k2} E_{k_1,k_2}= \\widetilde M \\times_{\\varrho^{k_1,k_2}}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-b11-the-finite-volume-case",
+      "number": null,
+      "title": "B.1.1 The finite volume case",
+      "level": 3,
+      "pageStart": 46,
+      "pageEnd": 48,
+      "labelStart": "46",
+      "labelEnd": "48",
+      "words": 519,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "varrho",
+          "heading": false
+        },
+        {
+          "term": "strong acyclicity",
+          "heading": false
+        },
+        {
+          "term": "cong mathbb",
+          "heading": false
+        },
+        {
+          "term": "poincaré duality",
+          "heading": false
+        },
+        {
+          "term": "peripheral torus",
+          "heading": false
+        },
+        {
+          "term": "operatorname sym",
+          "heading": false
+        },
+        {
+          "term": "finite volume",
+          "heading": true
+        },
+        {
+          "term": "textrm",
+          "heading": false
+        }
+      ],
+      "extract": "We next discuss the consequences in the finite volume case of Theorem [\\[thm:strong_acyclicity\\]](#thm:strong_acyclicity){reference-type=\"ref\" reference=\"thm:strong_acyclicity\"}. The following corollary does not assume finite volume. ::: cor []{#cor:notL2 label=\"cor:notL2\"} Let $M^3$ be an orientable hyperbolic 3-manifold and $\\widetilde{\\mathrm{hol}}$ a lift of its holonomy. For $k_1\\neq k_2$ every closed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-b12-a-basis-in-cohomology",
+      "number": null,
+      "title": "B.1.2 A basis in cohomology",
+      "level": 3,
+      "pageStart": 48,
+      "pageEnd": 49,
+      "labelStart": "48",
+      "labelEnd": "49",
+      "words": 514,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "varrho",
+          "heading": false
+        },
+        {
+          "term": "cap colon",
+          "heading": false
+        },
+        {
+          "term": "otimes tilde",
+          "heading": false
+        },
+        {
+          "term": "bar eta",
+          "heading": false
+        },
+        {
+          "term": "operatorname sym",
+          "heading": false
+        },
+        {
+          "term": "cap product",
+          "heading": false
+        },
+        {
+          "term": "inv",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        }
+      ],
+      "extract": "To describe a basis for $H_i(M^3; \\varrho^{k_1,k_2})$ when $i=1,2$, recall the cap product defined in Equation [\\[eqn:cap\\]](#eqn:cap){reference-type=\"eqref\" reference=\"eqn:cap\"}. $$\\cap\\colon H^0(T^2; \\varrho^{k_1,k_2})\\times H_i(T^2; \\mathbb{C})\\to H_i(T^2; \\varrho^{k_1,k_2}).$$ Let $i\\colon T^2\\to M^3$ denote the inclusion, and $i_*\\colon H_j(T^2;\\varrho^{k_1,k_2} )\\to H_j(M^3;\\varrho^{k_1,k_2} )$, the induced",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-b2-generic-representations-in-the-distinguished",
+      "number": null,
+      "title": "B.2 Generic representations in the distinguished component.",
+      "level": 2,
+      "pageStart": 49,
+      "pageEnd": 55,
+      "labelStart": "49",
+      "labelEnd": "55",
+      "words": 3179,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "joan porti",
+          "heading": false
+        },
+        {
+          "term": "teruaki kitano",
+          "heading": false
+        },
+        {
+          "term": "pere menal-ferrer",
+          "heading": false
+        },
+        {
+          "term": "reidemeister torsion",
+          "heading": false
+        },
+        {
+          "term": "symk",
+          "heading": false
+        },
+        {
+          "term": "michael heusener",
+          "heading": false
+        },
+        {
+          "term": "arxiv e-prints",
+          "heading": false
+        },
+        {
+          "term": "werner uller",
+          "heading": false
+        }
+      ],
+      "extract": "Generic representations in the distinguished compo- nent. Next comes the proof of genericity results used in Paragraph 4.3.1. Recall the notation ρk1,k2 ∶= Symk1,k2 ρ. Recall also that a character χ ∈X0(M 3) is called (k1,k2)-exceptional if there exists a representation ρ ∈hom(π1M 3,SL2(C)) with character χρ = χ such that H0(M 3;ρk1,k2) ≠0. The set of (k1,k2)-exceptional characters is denoted by Ek1,k2. Lemma B.9.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 3,
+        "items": [
+          "November 6,",
+          "Introduction",
+          "of torsions by coverings, that yields sequences of coverings M 3 n →M 3 so that ∣τ(M 3 n,σ)∣grows with the exponential of the volume of M"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "vert operatorname",
+      "heading": false
+    },
+    {
+      "term": "mathbb rho",
+      "heading": false
+    },
+    {
+      "term": "chi varrho",
+      "heading": false
+    },
+    {
+      "term": "operatorname psl",
+      "heading": false
+    },
+    {
+      "term": "operatorname tor",
+      "heading": false
+    },
+    {
+      "term": "holonomy varrho",
+      "heading": false
+    },
+    {
+      "term": "varrho colon",
+      "heading": false
+    },
+    {
+      "term": "varrho sigma",
+      "heading": false
+    },
+    {
+      "term": "representation operatorname",
+      "heading": false
+    },
+    {
+      "term": "operatorname sym",
+      "heading": false
+    },
+    {
+      "term": "frac operatorname",
+      "heading": false
+    },
+    {
+      "term": "overline operatorname",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 44,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 44,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p49); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 44 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1511.00400v2"
+  }
+}

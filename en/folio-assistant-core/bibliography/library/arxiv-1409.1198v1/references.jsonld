@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1409.1198v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "TRACE AS AN ALTERNATIVE DECATEGORIFICATION FUNCTOR",
+      "dcterms:creator": [
+        "ANNA BELIAKOVA, ZAUR GULIYEV, KAZUO HABIRO",
+        "LAUDA, AARON D."
+      ],
+      "dcterms:issued": "D:20140903",
+      "dcterms:identifier": "https://arxiv.org/abs/1409.1198",
+      "dcterms:abstract": "Categoriﬁcation is a process of lifting structures to a higher categorical level. The original structure can then be recovered by means of the so-called “decategoriﬁcation” functor. Algebras are typically categoriﬁed to additive categories with additional structure and decategoriﬁcation is usually given by the (split) Grothendieck group. In this article we study an alternative decategoriﬁcation functor given by the trace or the zeroth Hochschild–Mitchell homology. We show that this form of decategoriﬁcation endows any 2-representation of the categoriﬁed quantum sln with an action of the current algebra U(sln[t]) on its center.",
+      "dcterms:source": "library/arxiv-1409.1198v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1409.1198v1"
+    }
+  ]
+}

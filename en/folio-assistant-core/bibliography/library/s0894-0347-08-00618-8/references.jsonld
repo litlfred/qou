@@ -1,0 +1,30 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/s0894-0347-08-00618-8",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "AMERICAN MATHEMATICAL SOCIETY S 0894-0347(08)00618-8",
+      "dcterms:creator": [
+        "Article electronically published on September 19, 2008"
+      ],
+      "dcterms:issued": "D:20090114",
+      "dcterms:source": "library/s0894-0347-08-00618-8/manifest.jsonld",
+      "dcterms:hasVersion": "library/s0894-0347-08-00618-8"
+    }
+  ]
+}

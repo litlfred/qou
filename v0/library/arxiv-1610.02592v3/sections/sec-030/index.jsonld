@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/arxiv-1610.02592v3/sections/sec-030",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Topological classification",
+  "pageStart": 161,
+  "pageEnd": 165,
+  "contains": [
+    "library/arxiv-1610.02592v3/blocks/prose-sec-030",
+    "library/arxiv-1610.02592v3/blocks/figure-img-p162-1",
+    "library/arxiv-1610.02592v3/blocks/figure-img-p162-2",
+    "library/arxiv-1610.02592v3/blocks/figure-img-p162-3"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.02592v3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1610.02592v3/manifest.jsonld",
+  "provenance": "ingested"
+}

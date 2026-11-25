@@ -1,0 +1,841 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1604.02688v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "THE 3D-INDEX AND NORMAL SURFACES\nSTAVROS GAROUFALIDIS, CRAIG D. HODGSON, NEIL R. HOFFMAN,\nAND J. HYAM RUBINSTEIN\nAbstract. Dimofte, Gaiotto and Gukov introduced a powerful invariant, the 3D-index,\nassociated to a suitable ideal triangulation of a 3-manifold with torus boundary components.\nThe 3D-index is a collection of formal power series in q1/2 with integer coeﬃcients. Our goal\nis to explain how the 3D-index is a generating series of normal surfaces associated to the\nideal triangulation. This shows a connection of the 3D-index with classical normal surface\ntheory, and fulﬁlls a dream of con",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Recently, the physicists Dimofte, Gaiotto and Gukov \\cite{DGG1,DGG2}\nintroduced a powerful new invariant for a compact orientable 3-manifold $M$ \nwith non-empty boundary $\\bd M$ consisting of tori, called the \n\\emph{3D-index}. This invariant arises from a gauge theory with $N=2$ \nsupersymmetry under a low energy limit, and seems to contain a great deal \nof information about the geometry and topology of the manifold. The \n3D-index is a collection of $q$-series, i.e. formal Laurent series in \n$q^{1/2}$, defined as an infinite sum over integer weights attached to \nthe edges of a chosen ideal tria",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-acknowledgements.md",
+      "narrative": null,
+      "content": "The first author is partially supported by National Science Foundation \nGrant DMS-14-06419. The last three authors are partially supported by \nAustralian Research Council Discovery Grant DP130103694. The authors \nwish to thank Tudor Dimofte and Henry Segerman for useful discussions \nrelated to this paper.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The tetrahedral index",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-2-the-tetrahedral-index.md",
+      "narrative": null,
+      "content": "The index for a triangulation is built up from the \\emph{tetrahedron index}  \n$\\ID \\colon \\mathbb{Z}^2\\rightarrow \\mathbb{Z}[[q^\\frac{1}{2}]]$, defined \nfor $m,e \\in \\Z$ by\n\\be\n\\ID(m,e)(q)=\\sum^{\\infty}_{n=\\max\\{0,-e\\}}(-1)^n \n\\frac{q^{\\frac{1}{2}n(n+1)-(n+\\frac{1}{2}e)m}}{(q)_n(q)_{n+e}}\n\\label{ID_def}\n\\ee\nwhere $(q)_n=\\Pi_{i=1}^{n}(1-q^i)$ is the $q$-Pochhammer symbol \n(by convention $(q)_0=1$). The index coincides with the coefficients \nof $z^e$ in the generating function\n\\be\nI(m,q,z)=\\sum_{e \\in \\Z}  \\ID(m,e)(q) z^e \n= \\frac{(q^{-\\frac{m}{2}+1} \n\\, z^{-1};q)_\\infty}{(q^{-\\frac{m}{2}} \\,z;q",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Notation and conventions for triangulated 3-manifolds",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-3-notation-and-conventions-for-triangulated-3-ma.md",
+      "narrative": null,
+      "content": "In this paper, we will observe the following conventions and notation. \n\nLet $M$ be a compact orientable 3-manifold with boundary consisting of \n$r$ tori. Let $\\tri$ be an ideal triangulation of $\\text{int} M$ with \n$n$ ideal tetrahedra $\\sigma_j$, (i.e. tetrahedra with their vertices \nremoved). Then there are also $n$ edge classes, since $\\chi(M)=0$.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gluing equations",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-31-gluing-equations.md",
+      "narrative": null,
+      "content": "\\label{gluing_eqn_sect}\n\nWe now briefly describe how to encode the combinatorics of a triangulation \ncontained in Thurston's gluing equations (compare  \\cite[Chapter 4]{Th}), \nwhile also including notation for normal disks in a tetrahedron. \nFirst, in each tetrahedron there are three pairs of opposite edges, which \nare disjoint from the three quadrilateral disks from normal surface theory. \nWe label these quadrilaterals by the pair of edges they face, as in \nRegina \\cite{regina}; Figure \\ref{fig:edgesAndQuad} shows the quads\n$q_A=q_{A:01:23}$, $q_A'=q_{A:02:13}$, $q_A''=q_{A:03:12}$ in a tetra",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalised angle structures",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-005-32-generalised-angle-structures.md",
+      "narrative": null,
+      "content": "\\label{angle_struct_sect}\n\nConsidering the imaginary parts of above gluing equations allows us to \ndefine an angle structure on the triangulation. If we define $\\quads$ \nto be the set of quad types in a triangulation $\\T$, then a \n\\emph{generalised angle structure} on $\\T$ is a function \n$\\alpha : \\quads \\to \\R$ which assigns an ``angle'' \n$\\alpha(q) \\in \\R$ to the pair of edges opposite a quad $q$\nand satisfies the set of equations:  \n\\be \n\\label{ang_struct1}\n\\alpha(q_j) + \\alpha(q_j')+ \\alpha(q_j'') = \n\\pi \\mbox{ for } j\\in\\{1,\\ldots, n\\} \\ee\nand\n\\be \n\\label{ang_struct2}\n\\sum_j \\left(a_{i,j}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The 3D-index of an ideal triangulation",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-006-4-the-3d-index-of-an-ideal-triangulation.md",
+      "narrative": null,
+      "content": "Using the notation from the previous section, we now give a definition of \nthe 3D-index of an ideal triangulation $\\tri$ as formulated \nin \\cite[section 4.7]{GHRS}. \n\nGiven $\\kk =(k_1, \\ldots, k_n)\\in \\Z^n$, we can assign an integer weight \n$k_i$ to the $i$th edge class. Effectively, this also gives a weight on \neach edge of each tetrahedron $\\sigma_j$ in $\\CT$.\nLet $a_j(\\kk), b_j(\\kk), c_j(\\kk)$ be the sums of weights assigned to \nthe pair of edges in  tetrahedron $j$ opposite quads $q_j, q_j',q_j''$ \nrespectively. Note that these coefficients are precisely the entries in \nthe linear combinat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dependence on the choice of triangulation",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-007-5-dependence-on-the-choice-of-triangulation.md",
+      "narrative": null,
+      "content": "Physics predicts that the 3D-index as defined above should give a \n{\\em topological invariant} of the underlying manifold $M$, but this is not \nknown in general.  \n\nThe first difficulty is that the summation in (\\ref{JD_index_eq}) need not \neven converge (as a formal power series) for all ideal triangulations $\\tri$. \nBut the good triangulations can be characterised using normal surface theory.\n\nGiven a triangulation $\\tri$ of a 3-manifold $M$, an embedded surface \n$S \\subset M$ is a {\\em normal surface} if it intersects each tetrahedron \nin a finite collection of disjoint normal quadrilateral",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some Q-normal surface theory",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-008-6-some-q-normal-surface-theory.md",
+      "narrative": null,
+      "content": "In this section we discuss surfaces in general position with respect to\nan ideal triangulation. This discussion is similar to the one of Haken\nwho studied and encoded normal surfaces in general position with respect\nto a triangulation of a closed 3-manifold. A major difference is that amongst surfaces \nin general position with respect to an ideal triangulation is the class of embedded\nspun normal surfaces (a concept introduced by Thurston, \\cite{Th,Wa}), \nwhich intersect each tetrahedron \nin a finite number of quadrilaterals, and a possibly infinite number of triangles.\nAlso, just as in the cl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Construction of spun normal surfaces",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-009-61-construction-of-spun-normal-surfaces.md",
+      "narrative": null,
+      "content": "\\label{spun_normal_construction}\n\nNext we give a brief exposition of the construction of a spun normal surface\nfrom solutions to the Q-matching equations following \\cite{DuGa} and \n\\cite{Ti}. (This approach goes back to lectures of W. Thurston and was used \nby J. Weeks in SnapPea.)\n\nFor a spun normal surface, there is a fixed pattern of normal arcs in each \nideal triangle, consisting  of three infinite families of parallel arcs \n(one at each corner). Further there is a well-defined ``middle'' interval \nin each edge of the triangle separating two of these families. The union \nof these three int",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometric generators for Q-normal classes",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "../sections/sec-010-62-geometric-generators-for-q-normal-classes.md",
+      "narrative": null,
+      "content": "The work of Kang-Rubinstein \\cite[Theorem 2.1]{KR1} (also see \nLuo-Tillmann \\cite[\\sect2]{LT}) shows that the space \n$\\tilde N(\\T;\\R) \\subset \\R^{7n}$  of all {\\em closed normal classes} \nsatisfying Haken's matching equations (including, for example, the \nboundary tori) has a basis given by {\\em edge solutions} $\\tilde E_i$ and \n{\\em tetrahedron solutions} $\\tilde T_j$ where $1\\le i ,j \\le n$. \nThese project to {\\em edge solutions} $E_i$ and {\\em tetrahedron solutions} \n$T_j$ under the map which forgets triangular coordinates, giving the image $N(\\T;\\R) \\subset \\R^{3n}$. Define $Q_0(\\T;\\R)$ as",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Combinatorics of ideal triangulations and integer normal surface theory",
+      "pageStart": 16,
+      "pageEnd": 19,
+      "target": "../sections/sec-011-7-combinatorics-of-ideal-triangulations-and-inte.md",
+      "narrative": null,
+      "content": "\\label{ZNST}\n\nThe work of Kang-Rubinstein and Luo-Tillmann, described above, shows that \nthe edge solutions and tetrahedral solutions \nspan the real vector space $N(\\T;\\R) \\subset \\R^{3n}$ of closed normal \nclasses, and that these together with the \nperipheral curve solutions span the real vector space \n$Q(\\T;\\R) \\subset \\R^{3n}$ of all $Q$-normal classes.\nHowever, over the integers the situation is more subtle --- the integer \nlinear combinations of edge and tetrahedral solutions generally give only \na finite index submodule of $N(\\T;\\Z)$ and the integer linear combinations \nof edge, tetrahed",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometric generators for integer Q-normal classes",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-012-71-geometric-generators-for-integer-q-normal-cla.md",
+      "narrative": null,
+      "content": "\\label{subsect:gen_q_normal}\n\nNext we describe explicit generators for $N(\\T;\\Z)$. First, recall that \n$Q_0(\\T;\\Z) = \\EE +\\TT$ is generated by the edge solutions and tetrahedral \nsolutions described by Kang-Rubinstein \\cite{KR1}. \nIt follows from Theorem \\ref{ZQNT_struct_thm} and the previous  remark that \n$$\nN(\\T;\\Z)/Q_0(\\T;\\Z) \\cong \\Im H_0 \\cong H^1(\\hat M; \\Z/2\\Z).\n$$\n\nGiven a mod 2 class  \n$a \\in \\Im H_0 = \\Im ( H_2(M;\\Z/2\\Z) \\to H_2(M,\\bd M;\\Z/2\\Z))$, we can \nconstruct a closed normal class  $S_0\\in N(\\T;\\Z)$ with $[S_0]_2=a$ and \n$[\\bd S_0]=0$ as follows. \nChoose a simplicial 1-cocycle",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The 3D-index via normal surfaces",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-013-8-the-3d-index-via-normal-surfaces.md",
+      "narrative": null,
+      "content": "\\label{sect:index_via_normal_surfaces}\n\nWe first extend the tetrahedral index $J_\\Delta$ to a function\n$J: \\Z^{3n} \\to \\Z((q^{1/2}))$ by defining \n\\be\nJ(a_1, b_1, c_1, a_2, b_2, c_2, \\ldots , a_n, b_n, c_n) = \n\\prod_{j=1}^n \\JD(a_j,b_j,c_j),\n\\ee\nand for each $Q$-normal class $S \\in Q(\\T;\\Z)$ we define\n\\be\nI(S)= (-q^{1/2})^{-\\chi(S)}  J(S),\n\\ee\nwhere $\\chi$ is the formal Euler characteristic.\nThen  $I(S)$ is unchanged by adding tetrahedral solutions:\nif $S^* = S + \\sum_j m_j T_j$ with $m_j \\in \\Z$ then\n$J(S)=(-q^{1/2})^{\\sum_j m_j} J(S^*)$ and \n$-\\chi(S)= -\\chi(S^*)-\\sum_j m_j ,$\nso $I(S)=I(S^*",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Convergence of the index sum",
+      "pageStart": 21,
+      "pageEnd": 24,
+      "target": "../sections/sec-014-81-convergence-of-the-index-sum.md",
+      "narrative": null,
+      "content": "To understand the convergence of the index sum (as a formal Laurent series) \nwe need to examine the lowest degree of the terms in this sum.  Given any \ncoset $[S]=S+ \\TT$, we can choose its ``minimal non-negative coset \nrepresentative'' $S^*$. Explicitly,\ngiven \n$$\nS=(a_1, b_1, c_1, a_2, b_2, c_2, \\ldots , a_n, b_n, c_n) \\in  Q(\\T;\\Z)\n$$\nwe have\n$$\nS^*=(a^*_1, b^*_1, c^*_1, a^*_2, b^*_2, c^*_2, \\ldots , a^*_n, b^*_n, c^*_n),\n$$\nwhere \n$(a_j^*,b_j^*,c_j^*)=(a_j-m_j,b_j-m_j,c_j-m_j)$ and $m_j=\\min\\{a_j,b_j,c_j\\}$.\n\nNow $J(S^*)$ has leading term $q^{\\frac{1}{2} \\delta(S^*)}$ of degree \n$\\frac{1}{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Non 1-efficient ideal triangulations",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-015-82-non-1-efficient-ideal-triangulations.md",
+      "narrative": null,
+      "content": "When the triangulation $\\T$ is not 1-efficient, it turns out that the \nseries $I_\\T^a(b)$ may converge for some $b \\ne {\\bf 0}$\neven when the series $I_\\T^0(0)$ diverges.  See Example \\ref{toroidal_ex} \nbelow. The following result gives an obstruction to convergence.\n\n\\begin{lemma} \nAssume that an ideal triangulation $\\T$ contains a Q-normal class \n$S \\in Q(\\T;\\Z_+)$ with $[S]_2=a$ and $\\bd S$ satisfying $[\\bd S]=b$,\nand there is a closed normal surface $0 \\ne S' \\in N(\\T;\\Z_+)$ such that \n$S'$ is embedded and $-\\chi(S')+ 2\\delta(S,S') \\le 0$.\nThen the index sum for $I_\\T^a(b)$ diverges.\n\\end{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariance under 2-3 and 0-2 moves",
+      "pageStart": 25,
+      "pageEnd": 27,
+      "target": "../sections/sec-016-9-invariance-under-2-3-and-0-2-moves.md",
+      "narrative": null,
+      "content": "The arguments of \\cite{GHRS} extend easily to prove the following. \n\n\\begin{thm} \nLet $\\CT$ be an ideal triangulation of $M$ and let $\\tilde \\CT$ be obtained \nfrom $\\CT$  by a 2-3 move. Then for all $a,b$ as above,\n$I_{\\CT}^a(b)=I_{\\tilde\\CT}^a(b)$ provided both sides are defined.\n\\end{thm} \n\n\\begin{proof} \nWe follow the argument from \\cite[Theorem A.1]{GHRS}, indicating the main \nchanges needed in the current setting. Consider a 2-3 move from $\\CT$ to \n$\\tilde \\CT$; this occurs in a bipyramid consisting of $2$ tetrahedra in \n$\\CT$ which are replaced by 3 tetrahedra sharing an edge of order 3",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalised normal surfaces",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/sec-017-10-generalised-normal-surfaces.md",
+      "narrative": null,
+      "content": "\\label{gen_normal_surfaces}\n\n{\\em Embedded normal surfaces} were introduced by Kneser \\cite{Kn} in 1929. \nIn the 1950s and 1960s, Haken \\cite{Ha1,Ha2,Ha3} extensively developed the \ntheory of normal surfaces (via handle decompositions and also via \ntriangulations) and applied this to basic algorithmic questions in topology.  \nThe solutions to Haken's matching equations include {\\em branched} and \n{\\em immersed} normal surfaces, which are the result of gluing together \nfinitely many normal disks in tetrahedra of a triangulation of a closed \nmanifold or  an ideal triangulation of a compact manif",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalised normal and spun normal surfaces",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "../sections/sec-018-101-generalised-normal-and-spun-normal-surfaces.md",
+      "narrative": null,
+      "content": "Firstly, we discuss normal curve theory (with real coefficients) \non the 2-sphere equipped with its four simplex triangulation as the boundary \nof a tetrahedron $\\Delta^3$. We just recall the key points \n(see \\cite[Section 3.2]{Ma2} for a detailed exposition).  \n\n\\begin{itemize}\n\\item \nThere are $12$ normal arc types in $\\partial \\Delta^3$ and so normal \ncurves are defined by non-negative integer vectors in $\\R^{12}$ satisfying \n$6$ matching equations. \nIt is easy to see that edge weights of normal curves determine the numbers \nof normal arcs and there are six independent edge weights. \nHence",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Degrees of index terms",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-019-102-degrees-of-index-terms.md",
+      "narrative": null,
+      "content": "Recall, from equation (\\ref{index_deg_surface}), that the $q^{1/2}$-degree \nof a term $I([S])$  in the $q$-series for the 3D-index is given by the \nexpression \n$$\nd(S)=d(S^*) =-\\chi(S^*) +\\delta(S^*),\n$$\nwhere $S^*$ is the minimal positive coset representative for $[S]=S+\\TT$. \nThen $S^*$ is a normal class with at most two quadrilateral types in each \ntetrahedron, and \n$$\nd(S^*)=-\\chi(S^*) +\\sum_i p_iq_i,\n$$\nwhere $p_i,q_i\\ge0$ are the numbers of quadrilaterals for $S^*$ in the \n$ith$ tetrahedron, and $\\chi(S^*)$ denotes the formal Euler characteristic \nof $S^*$.\n\n\\begin{lemma} \n\\label{deg_for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Normalisation and barriers",
+      "pageStart": 30,
+      "pageEnd": 35,
+      "target": "../sections/sec-020-103-normalisation-and-barriers.md",
+      "narrative": null,
+      "content": "\\label{barriers}\n\nThere is a well-known procedure going back to Kneser \\cite{Kn} for \n`normalisation' of an embedded closed surface $S$ in a triangulation $\\T$ \nof a manifold $M$. We can assume initially that the surface $S$ is \ntransverse to the triangulation.There are five basic moves: \n\n\\begin{enumerate}\n\\item \nCompress $S$ along an embedded disk $D$ in the interior of a tetrahedron \n$\\D$, which meets $S$ in $C=\\partial D$, where  either $C$ is essential in \n$S$ or a disk bounded by $C$ in $S$ meets $\\partial \\D$. \n\\item \nIsotope a disk $D^\\prime$ of intersection of $S$ with a tetrahedron a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some examples",
+      "pageStart": 35,
+      "pageEnd": 35,
+      "target": "../sections/sec-021-11-some-examples.md",
+      "narrative": null,
+      "content": "In this section we give some examples of index computations for ideal \ntriangulations with 2 tetrahedra, taken from the census\nof triangulations described in Section \\ref{PachnerGraph} below.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Solid torus",
+      "pageStart": 35,
+      "pageEnd": 35,
+      "target": "../sections/sec-022-111-solid-torus.md",
+      "narrative": null,
+      "content": "\\label{solid_torus_ex}\n\nThe (open) solid torus has a 1-efficient triangulation $\\T$  by 2 \ntetrahedra with isomorphism signature `cMcabbgds', \nand gluing equation/holonomy coefficient matrix (from SnapPy) given by:\n$$\\begin{bmatrix} 2 & 1 & 2 & 2 & 2 & 2 \\\\ 0 & 1 & 0 & 0&0&0\\\\\n0 & 1 & 0 & 0 & -1 & 0\\\\ 0 & 1 & 0 & 0 & 0& 2\n\\end{bmatrix}$$\n(Here the peripheral curves $\\mu,\\lambda$ correspond to the meridian and \nlongitude for the unknot in $S^3$.)\nSumming over integer weights $k$ on edge 2 gives the 3D-index \n\\begin{align*}\nI_\\T(x \\mu + y \\lambda) & =\\sum_{k \\in \\Z} q^k \\JD(0,k+x+y,0)\\JD(0,-x,2y",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Trefoil complement",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "../sections/sec-023-112-trefoil-complement.md",
+      "narrative": null,
+      "content": "\\label{trefoil_ex}\n\nThe right-handed trefoil complement (`L103001' in SnapPy) has a \n2-tetrahedron triangulation $\\T$ with gluing equation/holonomy coefficients \ngiven by:\n$$\n\\begin{bmatrix} 1 & 2 & 2 & 2 & 1 & 2 \\\\ 1 & 0 & 0 & 0&1&0\\\\\n0 & 0 & -1 & 1 & 0 & 0\\\\ 1 & 0 & -4 & 4 & -1 & 0\n\\end{bmatrix}\n$$\n\nHence, summing over edge 2, the 3D-index is\n\\begin{align*}\nI_\\T(x \\mu + y \\lambda) &= \\sum_{k \\in \\Z} \\JD(k+y,0,-x-4y)\\JD(x+4y,k-y,0) \\\\\n&=\\sum_k q^k \\ID(x+4y,k+y)(-q^{1/2})^{-x-4y}\\ID(x+4y,k-x-5y) \\\\\n&= \\sum_{k'} q^{k'} (-q^{1/2})^{-x-6y} \\ID(m,k') \\ID(m,k'-x-6y) \\\\\n&= \\sum (-q^{1/2})^{-x-6y} \\d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A toroidal example",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-024-114-a-toroidal-example.md",
+      "narrative": null,
+      "content": "\\label{toroidal_ex}\n\nThe 2-tetrahedron ideal triangulation $\\T$ with isomorphism signature\n`cPcbbbdei' is not 1-efficient.  In fact it gives a manifold containing an \nincompressible torus which splits the manifold in \ntwo Seifert fibres pieces $SFS[D^2(2,1)(3,1)]$ and $SFS[A^2(2,1)]$. The \ngluing equation/holonomy coefficients (from SnapPy) are given by:\n$$\n\\begin{bmatrix} 1 & 1 & 0 & 1 & 0 & 1 \\\\ 1 & 1 & 2 & 1&2&1\\\\\n0 & -1 & 0 & 1 & 0 & 0\\\\ 0 & 0 & 2 & 0 & 0& 0\n\\end{bmatrix}\n$$\n\nHence, summing over edge 1,  the 3D-index is given by\n$$\nI_\\T(x \\mu + y\\lambda ) =\\sum_{k \\in \\Z} q^k \\JD(k,k-x,2y)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "m009",
+      "pageStart": 37,
+      "pageEnd": 39,
+      "target": "../sections/sec-025-115-m009.md",
+      "narrative": null,
+      "content": "The manifold $X=m009$ is the first orientable cusped manifold in the \nSnapPea census with non-peripheral $\\Z/2\\Z$ homology. It has a \ntriangulation using 3 tetrahedra with\ngluing equation/holonomy coefficients $E_0,E_1,E_2,M,L$ (from SnapPy) \ngiven by:\n$$\n\\begin{bmatrix} \n2 & 0 & 0 & 2 & 1 & 0 & 2 & 1 & 0\\\\\n0 & 2 & 0 & 0 & 0 & 2 &  0 & 0 & 2\\\\\n0 & 0 & 2 & 0 & 1 & 0 & 0 & 1 & 0\\\\\n0 & -1& 1 & 0 & 1 & -1& 0 & 0 & -1\\\\\n-1 & 0 & 0 & 1 & 0 & 0 & -2 & 0 & 1\n\\end{bmatrix}\n$$\n\nand the tetrahedral solutions $T_0,T_1,T_2$ have coefficients\n$$\n\\begin{bmatrix} \n1 & 1 & 1 & 0 & 0 & 0 & 0 & 0 & 0\\\\\n0 & 0 & 0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Notes on connectedness of the 1-efficient Pachner Graph",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "../sections/sec-026-12-notes-on-connectedness-of-the-1-efficient-pac.md",
+      "narrative": null,
+      "content": "\\label{PachnerGraph}\n\nIn this section we study the \\emph{Pachner graph} for a compact orientable \n3-manifold $M$ with non-empty boundary consisting of tori. \nThis is a graph where each vertex corresponds to an ideal triangulation \n(up to the equivalence of relabelling) of the manifold $M$,\n with an edge connecting two vertices if their corresponding triangulations \ncan be obtained from one another via 2-3 or 3-2 \n Pachner moves (as shown in Figures \\ref{fig:twoThreeBipyramid} and \n\\ref{fig:twoThreeBoundary}.)\n We give some general results, then describe a census of all ideal \ntriangulations wi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A census of ideal triangulations",
+      "pageStart": 41,
+      "pageEnd": 42,
+      "target": "../sections/sec-027-121-a-census-of-ideal-triangulations.md",
+      "narrative": null,
+      "content": "These examples were obtained by first compiling a list of all ideal \ntriangulations with at most six tetrahedra using Regina's {\\tt tricensus} \nfunction. Then it was determined if these triangulations were solid tori. \nOf the remaining triangulations, we then (i) determined their irreducibility \nand (ii) checked for incompressible tori and Klein bottles. The first \ncondition was checked using a light adaptation of Regina's \n{\\tt isThreeSphere} function and the second determined using Regina's \n{\\tt isSolidTorus} and a new function {\\tt isT2xI} (see \\cite{regina}). \nThe latter function is simil",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two tetrahedron ideal triangulations",
+      "pageStart": 42,
+      "pageEnd": 44,
+      "target": "../sections/sec-028-122-two-tetrahedron-ideal-triangulations.md",
+      "narrative": null,
+      "content": "Up to relabelling, there are 10 triangulations of orientable cusped \n3-manifolds that decompose into two tetrahedra, and these 10 triangulations \ncorrespond to seven manifolds up to homeomorphism. The relevant data are \npresented in Table \\ref{tab:twoTetCensus}.\n\n\\begin{table}[ht]\n\\begin{tabular}{|c|c|c|}\n\\hline\nsignature & name & 1-efficient\\\\\n\\hline\n\\hline\ncMcabbgds & {\\bf $S^1\\times D^2$} & Yes\\\\\n\\hline\ncMcabbgij &$S^1\\times D^2$ & Yes\\\\\n\\hline\ncMcabbgik &$S^1\\times D^2$ & Yes\\\\\n\\hline\n\\hline\ncPcbbbalm &{\\bf $SFS[D^2(3,1)(3,1)]$} & Yes\\\\\n\\hline\n\\hline\ncPcbbbali &{\\bf $SFS[D^2(3,1)(3,2)]$} &",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Angle Structures, 1-efficiency and Pachner moves",
+      "pageStart": 44,
+      "pageEnd": 45,
+      "target": "../sections/sec-029-123-angle-structures-1-efficiency-and-pachner-mo.md",
+      "narrative": null,
+      "content": "A natural question is how are various properties of triangulations related \nby Pachner moves. Throughout this section, $\\T_n$ will be a triangulation \nwith $n$ tetrahedra, $f$ will be a face in this triangulation that \nidentifies two distinct tetrahedra $t_{f,1}$ and $t_{f,2}$, and $\\T_{n+1,f}$ \nwill be the result of performing a 2-3 move along the face $f$. If we call \nthe pairs of edges incident to $f$ in the bi-pyramid defined by $t_{f,1}$ \nand $t_{f,2}$, the \\emph{belt of $f$}, then we can make the following \nobservation that is well-known to the experts. We include it because it \npromotes",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connected components of normal surfaces",
+      "pageStart": 45,
+      "pageEnd": 50,
+      "target": "../sections/sec-030-124-connected-components-of-normal-surfaces.md",
+      "narrative": null,
+      "content": "In Figure \\ref{fig:twoThreeBipyramid}, there are two bipyramids related by \na 2-3 move, one with two tetrahedra which we call $\\BTwo$ and one with \nthree tetrahedra which we call $\\BThree$. We will also think of these as \nsubsets of two triangulations related by a 2-3 move, $\\T_n$ and $\\T_{n+1,f}$ \nwhere $f$ is face identified in $\\BTwo$. In this discussion, we assume that \nthe exterior faces of $\\BTwo$ are not identified. However, if the exterior \nfaces of $\\BTwo$ are identified (and therefore $\\BThree$), then some of \nthese pieces might not appear as subsets of embedded normal surfaces.\n\nIf",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prop-sec-031-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 50,
+      "pageEnd": 51,
+      "target": "prop-sec-031-01.md",
+      "narrative": null,
+      "content": "2. Let T be an ideal triangulation of a compact manifold M with boundary consisting of tori. Then there exist generalised angle structures on T with vanishing peripheral rotational holonomy.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. Generalised angle structures and the Euler characteristic",
+      "pageStart": 50,
+      "pageEnd": 51,
+      "target": "../sections/sec-031-appendix-a-generalised-angle-structures-and-the.md",
+      "narrative": null,
+      "content": "The relationship between angle structures and geometric structures is often described by\nsaying that a generalised angle structure is a solution to the “linear part” of Thurston’s gluing\nequations (see [Thu77, §4]). However, often this simpliﬁcation involves only considering the\nedge equations, as in [LT08]. For the discussion below, we will pay special attention to the\ncompleteness conditions coming from the holonomies of the peripheral curves.\nTHE 3D-INDEX AND NORMAL SURFACES\n51\nLet T be an ideal triangulation with n tetrahedra of a compact, orientable manifold 3-\nmanifold M with boundary co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/cor-sec-032-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 55,
+      "target": "cor-sec-032-03.md",
+      "narrative": null,
+      "content": "5. Let T be an ideal triangulation of a cusped 3-manifold M, and let α : □→R be a generalised angle structure on T with vanishing peripheral rotational holonomy. Then the Euler characteristic of any embedded spun normal surface S ∈Q(T; R) is given by χ(S) = − X q α(q)xq π . (38) Deﬁnition A.6. For a general Q-normal class S ∈Q(T; R) we take the formula (34) as the deﬁnition of the formal Euler characteristic of S. This is a linear function χ : Q(T; R) →R.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/cor-sec-032-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 55,
+      "target": "cor-sec-032-05.md",
+      "narrative": null,
+      "content": "8. Each peripheral curve solution has vanishing formal Euler characteristic. Hence χ X i xiEi + X i yjTj + X k (pkMk + qkLk) ! = − X i 2xi − X j yj, (39) since χ(Ei) = −2 and χ(Tj) = −1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/ex-sec-032-07",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 55,
+      "target": "ex-sec-032-07.md",
+      "narrative": null,
+      "content": "10. For the ﬁgure eight knot complement with its triangulation given in Ex- ample 4.1, the angle structure equations have general solution of the form α = (α0 + t1α1 + t2α2 + t3α3)π, with ti ∈R where α0 = (−1, 2, 0, 1, 0, 0), α1 = (2, −2, 0, −1, 0, 1), α2 = (1, −1, 0, −1, 1, 0), α3 = (1, −2, 1, 0, 0, 0). This gives rotational holonomies for the meridian and longitude ρα(M) = (−1 + t1 + t2 + t3)π and ρα(L) = (2 −4t1 −2t2)π. Now there is an embedded spun normal once punctured Klein bottle with quad coordinates K = (0, 0, 2, 0, 1, 0) with boundary ∂K = 4µ + 1λ. The general formula (34) for the Eu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prop-sec-032-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 55,
+      "target": "prop-sec-032-01.md",
+      "narrative": null,
+      "content": "3. Let T be an ideal triangulation of a cusped 3-manifold M, and let α : □→R be a generalised angle structure on T. Then the Euler characteristic of any embedded spun normal surface S ∈Q(T; R) is given by χ(S) = − X q α(q)xq π + ρα(∂S) 2π , (34) where the sum is over all normal classes q in T, xq is the normal coordinate of q, α(q) ∈R denotes the angle assigned to the two edges facing q, and ρα(∂S) denotes the sum of the rotational holonomies of the boundary components of S, oriented as in [∂S]. This result follows from a combinatorial version of the Gauss-Bonnet theorem, as used by Thurston i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prop-sec-032-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 55,
+      "target": "prop-sec-032-02.md",
+      "narrative": null,
+      "content": "4 (Combinatorial Gauss-Bonnet). Let S be a compact surface with a ﬁnite cell decomposition C equipped with a formal angle structure. Then the Euler characteristic of S is given by χ(S) = X P χP + kg(∂S) 2π , (37) summed over all polygons P, where χP is deﬁned by (35) and where kg(∂S) denotes the total geodesic curvature of ∂S. THE 3D-INDEX AND NORMAL SURFACES Proof of Proposition A.3. Let S be a (non-compact) embedded spun normal surface in T and choose a compact subsurface S0 consisting of all quads and a ﬁnite number of normal triangles such that S \\S0 is a collection of annuli spiralling ou",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prop-sec-032-09",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 55,
+      "target": "prop-sec-032-09.md",
+      "narrative": null,
+      "content": "12. Let T be an ideal triangulation of a compact manifold M with boundary consisting of tori. Then there exist a strict angle structure on T with vanishing peripheral rotational holonomy if and only if there exists no Q-normal class 0̸ = Q ∈Q(T; R+) with χ(S) ≥0 if and only if 0̸ = Q ∈Q(T; R+) implies χ(S) < 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.1. Euler characteristic from generalised angle structures",
+      "pageStart": 51,
+      "pageEnd": 55,
+      "target": "../sections/sec-032-a1-euler-characteristic-from-generalised-angle-s.md",
+      "narrative": null,
+      "content": "shows how to compute the Euler characteristic of an embedded spun normal surface using\n52 STAVROS GAROUFALIDIS, CRAIG D. HODGSON, NEIL R. HOFFMAN, AND J. HYAM RUBINSTEIN\nany generalised angle structure. This result is well-known for closed normal surfaces; see for\nexample [LT08, Lemma 15].\nProposition A.3. Let T be an ideal triangulation of a cusped 3-manifold M, and let α :\n□→R be a generalised angle structure on T. Then the Euler characteristic of any embedded\nspun normal surface S ∈Q(T; R) is given by\nχ(S) = −\nX\nq\nα(q)xq\nπ\n+ ρα(∂S)\n2π\n,\n(34)\nwhere the sum is over all normal classes q in T,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/rem-sec-032-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 55,
+      "target": "rem-sec-032-04.md",
+      "narrative": null,
+      "content": "7. The independence of choice of angle structure follows directly from [LT08,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/rem-sec-032-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 55,
+      "target": "rem-sec-032-06.md",
+      "narrative": null,
+      "content": "9. We could also use the formula (39) to deﬁne the formal Euler characteristic of a general Q-normal class S ∈Q(T; R).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/thm-sec-032-08",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 55,
+      "target": "thm-sec-032-08.md",
+      "narrative": null,
+      "content": "11 (Farkas’ Lemma). If A is a real m × n matrix and b ∈Rm, and · the standard Euclidean inner product on Rm, then the following holds: {x ∈Rn | Ax = b, x > 0} is non-empty if and only if for all z ∈Rm such that ATz̸ = 0 and ATz ≥0, z · b > 0. Here x ≥0 (respectively x > 0) indicates that all coordinates of x are non-negative (re- spectively positive). THE 3D-INDEX AND NORMAL SURFACES By using Farkas’ Lemma, we can mimic the above argument for Theorem A.2 to get necessary and suﬃcient conditions for the existence of strict angle structures with vanishing peripheral rotational holonomy.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1604.02688v1/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 55,
+      "pageEnd": 57,
+      "target": "../sections/sec-033-references.md",
+      "narrative": null,
+      "content": "[Bac]\nDavid Bachman, Normalizing topologically minimal surfaces ii: Disks, arXiv:1210.4574, Preprint\n2012.\n[Ber91]\nJohn Berge, The knots in D2 × S1 which have nontrivial Dehn surgeries that yield D2 × S1,\nTopology Appl. 38 (1991), no. 1, 1–19.\n[BP97]\nRiccardo Benedetti and Carlo Petronio, Branched standard spines of 3-manifolds, Lecture Notes\nin Mathematics, vol. 1653, Springer-Verlag, Berlin, 1997.\n[Bur]\nBenjamin Burton, Regina, software for 3-manifold topology and normal surface theory, http:\n//regina.sourceforge.net (30/01/2015).\n[Bur11]\nBenjamin A. Burton, The Pachner graph and the simpliﬁ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

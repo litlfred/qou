@@ -1,0 +1,53 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/18/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "rivin.tex.12/15/95",
+  "contains": [
+    "library/18/sections/sec-front-matter",
+    "library/18/sections/sec-000",
+    "library/18/sections/sec-001",
+    "library/18/sections/sec-002",
+    "library/18/sections/sec-003",
+    "library/18/sections/sec-004",
+    "library/18/sections/sec-005",
+    "library/18/sections/sec-006",
+    "library/18/sections/sec-007",
+    "library/18/sections/sec-008",
+    "library/18/sections/sec-009"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Combinatorial scalar curvature and rigidity of ball packings — 11 sections: Front matter; Introduction; Conformal simplices\n\n**Combinatorial scalar curvature and rigidity of ball packings**\n\n*COMBINATORIAL SCALAR CURVATURE*\n\n10 pp, 11 sections.\n\n**Outline.** Front matter; Introduction; 1 Conformal simplices; 2 Another coordinate system; 3 Hyperbolic conformal simplices; 4 The space of conformal simplices; 5 Conformal deformation space of singular Eucl; 6 Applications to ball packing; 7 Remarks and questions; Acknowledgements; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "18",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "18.pdf",
+    "source_sha256": "0b7bf055085cb04b2eaefba8cfe88575a60e1f3db4a68c657331832d8130ba0f",
+    "pages": 10,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-full-pole-structure-mass-trace",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:full-pole-structure-mass-trace",
+  "kind": "proposition",
+  "title": "Cyclotomic expansion of the cleared mass trace",
+  "cites": [
+    "references/habiro2004cyclotomic",
+    "references/habiro2008",
+    "references/jones1987"
+  ],
+  "tags": [
+    "habiro-ring",
+    "cyclotomic-completion",
+    "markov-trace",
+    "root-of-unity",
+    "mass"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.HabiroCompletion",
+  "text": "full-pole-structure-mass-trace.md",
+  "leanSource": "full-pole-structure-mass-trace.lean",
+  "provenance": "authored"
+}

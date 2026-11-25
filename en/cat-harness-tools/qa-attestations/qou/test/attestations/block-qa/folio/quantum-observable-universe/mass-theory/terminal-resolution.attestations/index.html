@@ -1,0 +1,2393 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/terminal-resolution.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../../../assets/navbar/rail-z5d68l1i4q.js" defer></script><script src="../../../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../../../.." data-fa-to-root="../../../../../../../../../../..">{"data":"rail-z5d68l1i4q","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/terminal-resolution.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/terminal-resolution.attestations</h1>
+<p class="m">A <a href="../../../../../../../../">qa-attestations</a> node held by <a href="../../../../../../../">qou</a>, at <code>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/terminal-resolution.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>block-qa</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;block&quot;,
+  &quot;id&quot;: &quot;folio/quantum-observable-universe/mass-theory/terminal-resolution&quot;,
+  &quot;path&quot;: &quot;folio/quantum-observable-universe/mass-theory/terminal-resolution&quot;
+}</pre></dd>
+<dt>criteria</dt><dd><pre>{
+  &quot;voice-scholarly-default&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fcaaf4eda828&quot;,
+        &quot;ts&quot;: &quot;30b19a331e57&quot;,
+        &quot;lean&quot;: &quot;0f49b494967c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;voice-ai-slop&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;fcaaf4eda828&quot;,
+        &quot;ts&quot;: &quot;30b19a331e57&quot;,
+        &quot;lean&quot;: &quot;0f49b494967c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;voice-statement-no-interpretation&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;72aba46badfa&quot;,
+        &quot;ts&quot;: &quot;30b19a331e57&quot;,
+        &quot;lean&quot;: &quot;0f49b494967c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b4ea040723a1332bd55c196ec3957bef43bc0abd&quot;,
+      &quot;notes&quot;: &quot;Statement is a bare mathematical claim.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9e7158a63eb4&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;2de9828ffe25&quot;,
+        &quot;lean_statement&quot;: &quot;be5ed55922a3&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:05:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f1ead9299155ba6893f15d236efac210917e9880&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;The italic statement (i)-(ii) is a bare claim, but the block then carries a &#39;Scope.&#39; paragraph (&#39;a change of variables, not a prediction&#39;, &#39;the dressed quark masses can always be chosen to fit&#39;, the flavor-split commentary). That is interpretation inside the proposition block; clarity-stmt-pure asks for it in a follow-on remark interpreting prop:terminal-resolution. The content is accurate and honest; only its placement is at issue.&quot;,
+      &quot;notes&quot;: &quot;Not fixed (QA does not edit content). Proposed: move the Scope paragraph to a rem: block with interprets: prop:terminal-resolution.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-qa-fixes-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:57:04.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4eeb377d54fa519b6fb38d549a47b08bd48561ae&quot;,
+      &quot;evidence&quot;: &quot;Full re-read after the QA round on #8897 (Scope moved to rem:terminal-resolution-scope; hypotheses stated; bijection). Resolved: the Scope and Convention paragraphs moved to rem:terminal-resolution-scope; the statement keeps only the hypotheses, the convention-C frame as a hypothesis, and claims (i), (ii).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;df85ca0b9cd707f7e4e793afb1c901254ac9ccee&quot;,
+      &quot;evidence&quot;: &quot;Independent re-QA of #8897 at df85ca0b9c. Prior minor resolved: the Scope and Convention paragraphs moved to rem:terminal-resolution-scope (which carries interprets: prop:terminal-resolution). The statement now carries hypotheses, the formula and parts (i)-(ii) only; &#39;in its convention-C frame&#39; is a scope hypothesis, not interpretation.&quot;
+    }
+  ],
+  &quot;fit-section-chapter&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;72aba46badfa&quot;,
+        &quot;ts&quot;: &quot;30b19a331e57&quot;,
+        &quot;lean&quot;: &quot;0f49b494967c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b4ea040723a1332bd55c196ec3957bef43bc0abd&quot;,
+      &quot;notes&quot;: &quot;The block content is well-aligned with the chapter scope.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic closure confirming rigorous empirical findings explicitly within continuous analytic bounds.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;72aba46badfa&quot;,
+        &quot;ts&quot;: &quot;30b19a331e57&quot;,
+        &quot;lean&quot;: &quot;0f49b494967c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9e7158a63eb4&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;2de9828ffe25&quot;,
+        &quot;lean_statement&quot;: &quot;be5ed55922a3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:05:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f1ead9299155ba6893f15d236efac210917e9880&quot;,
+      &quot;evidence&quot;: &quot;Pair Skein nucleon identities sit in mass-theory next to lem:pair-skein-mass-formula, which is the only block they use. Fits the chapter.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;df85ca0b9cd707f7e4e793afb1c901254ac9ccee&quot;,
+      &quot;evidence&quot;: &quot;Independent re-QA of #8897 at df85ca0b9c. Pair Skein nucleon identities sit in mass-theory beside lem:pair-skein-mass-formula, the only block they use; the scope remark follows directly in the same section.&quot;
+    }
+  ],
+  &quot;wall-side-statement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;72aba46badfa&quot;,
+        &quot;ts&quot;: &quot;30b19a331e57&quot;,
+        &quot;lean&quot;: &quot;0f49b494967c&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b4ea040723a1332bd55c196ec3957bef43bc0abd&quot;,
+      &quot;notes&quot;: &quot;Substrate statement contains archimedean constructs.&quot;,
+      &quot;evidence&quot;: &quot;Substrate statement contains archimedean constructs.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;739c7c17635e&quot;,
+        &quot;ts&quot;: &quot;3e692178b44f&quot;,
+        &quot;lean&quot;: &quot;57b2cc494f6f&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;claude-fable-5-1&quot;,
+        &quot;agent_date&quot;: &quot;2026-09-03T05:15:30Z&quot;,
+        &quot;agent_skill&quot;: &quot;local/dispatch-agent&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-09-03T05:15:30Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e71ba7a90360c4c6aee91f9e189fb7580a99db79&quot;,
+      &quot;notes&quot;: &quot;PASS: archimedean-regime CODATA-comparison table (predicted-spectra consolidation, §7c R specialisation declared in .ts/.lean); MeV/keV tokens match regime; prior templated fail was wrong.&quot;,
+      &quot;evidence&quot;: &quot;Regime: ARCHIMEDEAN. The block is a numeric predicted-spectra / CODATA-comparison table: folio/quantum-observable-universe/mass-theory/mass-theory.ts places it (line 1227) in the section &#39;Open problems: mass-tower structure and crystal basis&#39; whose header comment (line 1221) says &#39;Consolidated from predicted-spectra&#39;, the chapter docstring (lines 6-20) lists &#39;archimedean, and physical faces ... mass predictions, binding energy&#39;, both its uses[] target rem:skein-mass-relation and its proof prf:terminal-resolution live in observations/ (an enumerated archimedean chapter), terminal-resolution.ts line 5 carries the AGENTS.md §7c note &#39;Lean sibling: archimedean specialisation over R&#39;, and terminal-resolution.lean line 30 declares &#39;Ground ring: R (archimedean realisation)&#39; with substrate_q : R := 1.1097 (line 41) and codata_*_MeV literals (lines 51-54), exactly the §7c row &#39;CODATA / experimental value -&gt; R&#39; (AGENTS.md line 3950). Archimedean tokens in the .md statement: line 1 keV residuals (&#39;6.9 keV&#39;, &#39;1 keV&#39;) and the named (non-numeric) q_0; line 3 column headers &#39;QOU Result (MeV)&#39; / &#39;CODATA (MeV)&#39;; lines 5-8 MeV values 938.272 / 939.565 / 1875.613 / 2.224 vs CODATA; lines 14-15 dressed quark masses mu_u ~ 311.10, mu_d ~ 312.39 MeV. No Real.*, no numeric q value, no order hypothesis appears. These tokens are exactly what an archimedean comparison-boundary statement must carry, so the statement matches its regime (criterion PASS branch: &#39;correctly archimedean ... or matches its chapter regime&#39;); the statement itself says the MeV rows are the ratio &#39;rendered against the m_e unit&#39; and is unambiguously evaluated at q_0, so no WARN-level regime mixing. Per §4d (AGENTS.md lines 3671-3675) the .ts note does not render, but the pass rests on regime match, not on a banner. The prior 2026-07-07 fail (&#39;Substrate statement contains archimedean constructs.&#39;) mis-assigned the regime as substrate and named no token; it is not correct for this block.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;06aead937a83&quot;,
+        &quot;ts&quot;: &quot;a0e648381433&quot;,
+        &quot;lean&quot;: &quot;657e7494e3cb&quot;,
+        &quot;lean_statement&quot;: &quot;4c92fe595ae9&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T12:46:49.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1fc598b8a74908495e5c4348cf4ab75f4e008986&quot;,
+      &quot;evidence&quot;: &quot;Read at 1fc598b8a7. The added sentence (proton/neutron rows take M_N as input via mu-bar ~ M_N/3, so they reproduce rather than predict it) keeps the block in its declared archimedean CODATA-comparison regime; MeV/keV tokens match. No wall crossing introduced.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9e7158a63eb4&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;2de9828ffe25&quot;,
+        &quot;lean_statement&quot;: &quot;be5ed55922a3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:05:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f1ead9299155ba6893f15d236efac210917e9880&quot;,
+      &quot;evidence&quot;: &quot;Statement (i)-(ii) is a pair of identities in q over the field of the formula; no numerical q, no MeV, no CODATA value. Measured masses appear only in the Scope paragraph as the comparison boundary. Convention-C frame is declared, not hidden. No wall crossing.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;df85ca0b9cd707f7e4e793afb1c901254ac9ccee&quot;,
+      &quot;evidence&quot;: &quot;Independent re-QA of #8897 at df85ca0b9c. Purely algebraic identities over a generic field; no q0, no measured value; categorical/algebraic side of the wall.&quot;
+    }
+  ],
+  &quot;wall-side-proof&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;72aba46badfa&quot;,
+        &quot;ts&quot;: &quot;30b19a331e57&quot;,
+        &quot;lean&quot;: &quot;0f49b494967c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b4ea040723a1332bd55c196ec3957bef43bc0abd&quot;,
+      &quot;notes&quot;: &quot;Proof machinery matches the statement regime.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9e7158a63eb4&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;2de9828ffe25&quot;,
+        &quot;lean_statement&quot;: &quot;be5ed55922a3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:05:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f1ead9299155ba6893f15d236efac210917e9880&quot;,
+      &quot;evidence&quot;: &quot;Proof is algebra in q (substitution, cancellation, 2x2 determinant, Cramer). Lean sibling works over a generic Field K with q = s^2; lean-direct -DautoImplicit=false exit 0, axioms propext/Classical.choice/Quot.sound only.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;df85ca0b9cd707f7e4e793afb1c901254ac9ccee&quot;,
+      &quot;evidence&quot;: &quot;Independent re-QA of #8897 at df85ca0b9c. Proof (prf:terminal-resolution and the Lean) uses only field arithmetic; no archimedean step.&quot;
+    }
+  ],
+  &quot;proof-narrative-lean-equiv&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;739c7c17635e&quot;,
+        &quot;ts&quot;: &quot;3e692178b44f&quot;,
+        &quot;lean&quot;: &quot;657e7494e3cb&quot;,
+        &quot;lean_statement&quot;: &quot;4c92fe595ae9&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:sidecar-review-2026-11-15&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-15T21:57:28.032Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b2b349f3607b14633db66340b2e643563a868ddf&quot;,
+      &quot;evidence&quot;: &quot;S↔L: the ref `QOU.Experimental.TerminalResolution` resolves (sibling first) to a structure whose field `all_agree` is the claimed CODATA agreement (sibling lean:154-166); nothing constructs it. The library twin is a `def TerminalResolution … : Prop` that is never asserted (lean/QOU/Experimental/terminal_resolution.lean:51-53, \&quot;honestly *not asserted*\&quot;). The md&#39;s table values are claimed values taken as definitions: `qou_proton_MeV : ℝ := 938.272` etc. are \&quot;**placeholder pinned to the CODATA literal**, and every `*_bound` below is the **tautology** `|x − x| ≤ 0.001`\&quot; (sibling lean:67-69, 82-86). The sibling docstring still claims \&quot;All four rows match CODATA to sub-keV precision\&quot; (lean:17), which the ts caveat retracts (ts:10-16). It uses a stale `substrate_q : ℝ := 1.1097` (lean:41) against q₀ ≈ 1.10998. The md&#39;s \&quot;isospin splitting … −0.53 % residual\&quot; (md:1) has no Lean. The md statement is itself a data comparison (\&quot;CODATA (MeV)\&quot; column, md:3-8), and the ts concedes the formula-column route and the proof route \&quot;are not shown here to agree\&quot; (md:16). No proof block in this unit.&quot;,
+      &quot;notes&quot;: &quot;Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: lean&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;06aead937a83&quot;,
+        &quot;ts&quot;: &quot;a0e648381433&quot;,
+        &quot;lean&quot;: &quot;657e7494e3cb&quot;,
+        &quot;lean_statement&quot;: &quot;4c92fe595ae9&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T12:46:49.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;1fc598b8a74908495e5c4348cf4ab75f4e008986&quot;,
+      &quot;evidence&quot;: &quot;Re-read at 1fc598b8a7 (Lean unchanged by this PR). The md now says the p/n rows reproduce the M_N input, which narrows the claim, but the Lean ref QOU.Experimental.TerminalResolution is still a structure nobody constructs, the library twin Prop is never asserted, and the table values are CODATA literals taken as definitions. The md&#39;s isospin-splitting residual has no Lean. Same failure as the 2026-11-15 entry.&quot;,
+      &quot;notes&quot;: &quot;Pre-existing on main; not introduced by this PR.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9e7158a63eb4&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;2de9828ffe25&quot;,
+        &quot;lean_statement&quot;: &quot;be5ed55922a3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-restate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:41:49.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;82236be144e3afe6c18c41fdb9b26ac9e405e0d0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block (issue #8893). Matches: pairSkein s a b = (q a + q^-1 b)/(s+s^-1) with q = s^2 is the pair Skein formula; protonMass/neutronMass are the .md sums.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9e7158a63eb4&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;2de9828ffe25&quot;,
+        &quot;lean_statement&quot;: &quot;be5ed55922a3&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:05:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f1ead9299155ba6893f15d236efac210917e9880&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;Lean matches (i) exactly (neutron_sub_proton, no hypotheses) and matches the determinant numerator (det_eq) and the inverse formulas (up_eq/down_eq). Two gaps against (ii): (1) the .md says &#39;each pair (m_p, m_n) comes from exactly one pair (mu_u, mu_d)&#39; and the Scope paragraph rests on &#39;can always be chosen to fit&#39;, i.e. existence/surjectivity; terminal_resolution states only uniqueness (injectivity), and up_eq/down_eq hold only for (m_p, m_n) already in the image. Surjectivity is true over a field and a few lines to prove, but it is not stated. (2) Lean carries hypotheses the .md does not state: s != 0, s + s^-1 != 0 and (3 : K) != 0 besides [2]_q != 0. Harmless for q &gt; 0 real, but the .md&#39;s &#39;whenever [2]_q != 0&#39; is not the Lean&#39;s condition (fails in characteristic 3).&quot;,
+      &quot;notes&quot;: &quot;Independent review; supersedes the authoring agent&#39;s pass. Proposed: add a surjectivity lemma (define mu_u, mu_d by the inverse formulas and check protonMass/neutronMass) and state the extra nonvanishing conditions in the .md.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-qa-fixes-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:57:04.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4eeb377d54fa519b6fb38d549a47b08bd48561ae&quot;,
+      &quot;evidence&quot;: &quot;Full re-read after the QA round on #8897 (Scope moved to rem:terminal-resolution-scope; hypotheses stated; bijection). Resolved: the .md now states the hypotheses the Lean uses (char not 3, s and s+s^-1 nonzero, [2]_q nonzero) and claims a bijection; Lean proves injective and the new surjective theorem, and terminal_resolution bundles (i), injectivity and surjectivity. lean -DautoImplicit=false -s 65536 exit 0; axioms propext, Classical.choice, Quot.sound.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;df85ca0b9cd707f7e4e793afb1c901254ac9ccee&quot;,
+      &quot;evidence&quot;: &quot;Independent re-QA of #8897 at df85ca0b9c. Prior minor resolved. The .md now states the hypotheses (char not 3, q^{1/2} != 0, q^{1/2}+q^{-1/2} != 0, [2]_q != 0) and claims a bijection; Lean `terminal_resolution` takes exactly hs, hD, h2, h3 over a generic field and bundles (i) neutron_sub_proton, injectivity and the new `surjective`. Determinant in (ii) matches det_eq up to the stated common factor. Lean sibling lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms surjective/terminal_resolution/injective/det_eq = [propext, Classical.choice, Quot.sound].&quot;
+    }
+  ],
+  &quot;proof-rater-strategy-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;proof-rater-goal-plausibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;proof-rater-novelty&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;proof-statement-integrity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9e7158a63eb4&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;2de9828ffe25&quot;,
+        &quot;lean_statement&quot;: &quot;be5ed55922a3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-restate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:41:49.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;82236be144e3afe6c18c41fdb9b26ac9e405e0d0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block (issue #8893). Lean QOU.MassTheory.PairSkeinNucleon.terminal_resolution states (i) the splitting identity and (ii) injectivity of the nucleon map; the .md statement is the same two claims. Determinant and explicit inverse are separate theorems (det_eq, up_eq, down_eq). lean -DautoImplicit=false -s 65536: exit 0; #print axioms: propext, Classical.choice, Quot.sound only.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-qa-fixes-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:57:04.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4eeb377d54fa519b6fb38d549a47b08bd48561ae&quot;,
+      &quot;evidence&quot;: &quot;Full re-read after the QA round on #8897 (Scope moved to rem:terminal-resolution-scope; hypotheses stated; bijection). Statement (i)+(ii) matches terminal_resolution&#39;s three conjuncts.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;df85ca0b9cd707f7e4e793afb1c901254ac9ccee&quot;,
+      &quot;evidence&quot;: &quot;Independent re-QA of #8897 at df85ca0b9c. Lean proves the stated propositions, not weaker ones: (i) unconditional identity, (ii) injective and surjective under the four stated nonvanishing hypotheses. Lean sibling lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms surjective/terminal_resolution/injective/det_eq = [propext, Classical.choice, Quot.sound].&quot;
+    }
+  ],
+  &quot;proof-no-self-assuming-projection&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9e7158a63eb4&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;2de9828ffe25&quot;,
+        &quot;lean_statement&quot;: &quot;be5ed55922a3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-restate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:41:49.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;82236be144e3afe6c18c41fdb9b26ac9e405e0d0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block (issue #8893). No class or hypothesis carries the conclusion; hypotheses are only s, s+s^-1, [2]_q, 3 nonzero.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;df85ca0b9cd707f7e4e793afb1c901254ac9ccee&quot;,
+      &quot;evidence&quot;: &quot;Independent re-QA of #8897 at df85ca0b9c. Conclusions are derived by unfold/ring/field_simp and mul_div_cancel; no class or structure field projected.&quot;
+    }
+  ],
+  &quot;proof-no-trivial-true&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9e7158a63eb4&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;2de9828ffe25&quot;,
+        &quot;lean_statement&quot;: &quot;be5ed55922a3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-restate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:41:49.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;82236be144e3afe6c18c41fdb9b26ac9e405e0d0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block (issue #8893). No True conclusion; both parts are falsifiable identities in K.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;df85ca0b9cd707f7e4e793afb1c901254ac9ccee&quot;,
+      &quot;evidence&quot;: &quot;Independent re-QA of #8897 at df85ca0b9c. No `: True`, no tautology; each conjunct is a falsifiable field identity or existence statement.&quot;
+    }
+  ],
+  &quot;proof-no-false-premise&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9e7158a63eb4&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;2de9828ffe25&quot;,
+        &quot;lean_statement&quot;: &quot;be5ed55922a3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-restate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:41:49.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;82236be144e3afe6c18c41fdb9b26ac9e405e0d0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block (issue #8893). Hypotheses hold e.g. over Q at s = 2.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;df85ca0b9cd707f7e4e793afb1c901254ac9ccee&quot;,
+      &quot;evidence&quot;: &quot;Independent re-QA of #8897 at df85ca0b9c. Hypotheses are jointly satisfiable (e.g. K = Q, s = 1: s+s^-1 = 2, [2]_q = 2, 3 != 0), so the theorem is not vacuous.&quot;
+    }
+  ],
+  &quot;proof-no-unused-hypotheses&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9e7158a63eb4&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;2de9828ffe25&quot;,
+        &quot;lean_statement&quot;: &quot;be5ed55922a3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-restate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:41:49.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;82236be144e3afe6c18c41fdb9b26ac9e405e0d0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block (issue #8893). hs, hD, h2, h3 are each used in up_eq/down_eq (nonvanishing of denominators).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;df85ca0b9cd707f7e4e793afb1c901254ac9ccee&quot;,
+      &quot;evidence&quot;: &quot;Independent re-QA of #8897 at df85ca0b9c. hs feeds det_eq via s^2 != 0; hD cancels the (s+s^-1) factor; h2 and h3 make the determinant 3[2]_q^2 invertible. Part (i) needs none and states so in the docstring.&quot;
+    }
+  ],
+  &quot;proof-no-decide-masking&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9e7158a63eb4&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;2de9828ffe25&quot;,
+        &quot;lean_statement&quot;: &quot;be5ed55922a3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-restate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:41:49.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;82236be144e3afe6c18c41fdb9b26ac9e405e0d0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block (issue #8893). No decide/native_decide.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;df85ca0b9cd707f7e4e793afb1c901254ac9ccee&quot;,
+      &quot;evidence&quot;: &quot;Independent re-QA of #8897 at df85ca0b9c. No decide / native_decide.&quot;
+    }
+  ],
+  &quot;da-false-claim&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;72aba46badfa&quot;,
+        &quot;ts&quot;: &quot;30b19a331e57&quot;,
+        &quot;lean&quot;: &quot;0f49b494967c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f3d72fed878bb395c3da0a8557bada5ec408ece0&quot;,
+      &quot;notes&quot;: &quot;No false claims identified in &#39;Terminal Resolution of Hadronic Mass&#39;: the formalization compiles successfully without errors.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;terminal-resolution.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic closure confirming rigorous empirical findings explicitly within continuous analytic bounds.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;df85ca0b9cd707f7e4e793afb1c901254ac9ccee&quot;,
+      &quot;evidence&quot;: &quot;Independent re-QA of #8897 at df85ca0b9c. Rechecked: D m_p = (3q+q^-1)mu_u + 2q^-1 mu_d, D m_n = 2q mu_u + (q+3q^-1) mu_d; difference ([2]_q)(mu_d-mu_u)/D; det 3q^2+6+3q^-2 = 3[2]_q^2. Correct.&quot;
+    }
+  ],
+  &quot;da-vacuous&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;72aba46badfa&quot;,
+        &quot;ts&quot;: &quot;30b19a331e57&quot;,
+        &quot;lean&quot;: &quot;0f49b494967c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f3d72fed878bb395c3da0a8557bada5ec408ece0&quot;,
+      &quot;notes&quot;: &quot;No vacuous proofs detected. Sibling Lean file compiles sorry-free, verifying non-vacuity.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;terminal-resolution.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic closure confirming rigorous empirical findings explicitly within continuous analytic bounds.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;df85ca0b9cd707f7e4e793afb1c901254ac9ccee&quot;,
+      &quot;evidence&quot;: &quot;Independent re-QA of #8897 at df85ca0b9c. Elementary but honest: the content is the invertibility that shows the old CODATA table could test nothing; not vacuous.&quot;
+    }
+  ],
+  &quot;da-circular&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;72aba46badfa&quot;,
+        &quot;ts&quot;: &quot;30b19a331e57&quot;,
+        &quot;lean&quot;: &quot;0f49b494967c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f3d72fed878bb395c3da0a8557bada5ec408ece0&quot;,
+      &quot;notes&quot;: &quot;No circular reasoning or self-assuming definitions detected in &#39;Terminal Resolution of Hadronic Mass&#39;.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;terminal-resolution.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic closure confirming rigorous empirical findings explicitly within continuous analytic bounds.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;df85ca0b9cd707f7e4e793afb1c901254ac9ccee&quot;,
+      &quot;evidence&quot;: &quot;Independent re-QA of #8897 at df85ca0b9c. No measured nucleon mass is an input; the July pass on the former CODATA-matching statement is superseded.&quot;
+    }
+  ],
+  &quot;da-overclaim&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;72aba46badfa&quot;,
+        &quot;ts&quot;: &quot;30b19a331e57&quot;,
+        &quot;lean&quot;: &quot;0f49b494967c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f3d72fed878bb395c3da0a8557bada5ec408ece0&quot;,
+      &quot;notes&quot;: &quot;No overclaims: the scope of &#39;Terminal Resolution of Hadronic Mass&#39; is appropriately qualified.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic closure confirming rigorous empirical findings explicitly within continuous analytic bounds.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9e7158a63eb4&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;2de9828ffe25&quot;,
+        &quot;lean_statement&quot;: &quot;be5ed55922a3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-restate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:41:49.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;82236be144e3afe6c18c41fdb9b26ac9e405e0d0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block (issue #8893). The block now claims only the algebraic identities and states that matching CODATA tests nothing; the convention-C scope is stated.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-qa-fixes-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:57:04.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4eeb377d54fa519b6fb38d549a47b08bd48561ae&quot;,
+      &quot;evidence&quot;: &quot;Full re-read after the QA round on #8897 (Scope moved to rem:terminal-resolution-scope; hypotheses stated; bijection). Claims only the two algebraic facts, under stated hypotheses.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;df85ca0b9cd707f7e4e793afb1c901254ac9ccee&quot;,
+      &quot;evidence&quot;: &quot;Independent re-QA of #8897 at df85ca0b9c. Claims only the splitting identity and bijectivity; no CODATA or predictive claim in the statement.&quot;
+    }
+  ],
+  &quot;da-hidden-dof&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;72aba46badfa&quot;,
+        &quot;ts&quot;: &quot;30b19a331e57&quot;,
+        &quot;lean&quot;: &quot;0f49b494967c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f3d72fed878bb395c3da0a8557bada5ec408ece0&quot;,
+      &quot;notes&quot;: &quot;No hidden degrees of freedom or unstated parameters are introduced in &#39;Terminal Resolution of Hadronic Mass&#39;.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;terminal-resolution.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic closure confirming rigorous empirical findings explicitly within continuous analytic bounds.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9e7158a63eb4&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;2de9828ffe25&quot;,
+        &quot;lean_statement&quot;: &quot;be5ed55922a3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-restate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:41:49.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;82236be144e3afe6c18c41fdb9b26ac9e405e0d0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block (issue #8893). The two dressed quark masses are named as free inputs; that is the point of part (ii).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;df85ca0b9cd707f7e4e793afb1c901254ac9ccee&quot;,
+      &quot;evidence&quot;: &quot;Independent re-QA of #8897 at df85ca0b9c. No fitted constant; the block&#39;s own part (ii) states that the two dressed masses are free and can reproduce any (m_p, m_n).&quot;
+    }
+  ],
+  &quot;da-non-sequitur&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;72aba46badfa&quot;,
+        &quot;ts&quot;: &quot;30b19a331e57&quot;,
+        &quot;lean&quot;: &quot;0f49b494967c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f3d72fed878bb395c3da0a8557bada5ec408ece0&quot;,
+      &quot;notes&quot;: &quot;The argument flow in &#39;Terminal Resolution of Hadronic Mass&#39; is logically sound, mapping onto the cited dependencies.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;terminal-resolution.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic closure confirming rigorous empirical findings explicitly within continuous analytic bounds.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;df85ca0b9cd707f7e4e793afb1c901254ac9ccee&quot;,
+      &quot;evidence&quot;: &quot;Independent re-QA of #8897 at df85ca0b9c. Bijection follows from the invertible determinant; stated hypotheses are exactly those used.&quot;
+    }
+  ],
+  &quot;da-lean-narrative-divergence&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;72aba46badfa&quot;,
+        &quot;ts&quot;: &quot;30b19a331e57&quot;,
+        &quot;lean&quot;: &quot;0f49b494967c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f3d72fed878bb395c3da0a8557bada5ec408ece0&quot;,
+      &quot;notes&quot;: &quot;Lean sibling corresponds directly to the narrative claim in &#39;Terminal Resolution of Hadronic Mass&#39;.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic closure confirming rigorous empirical findings explicitly within continuous analytic bounds.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;df85ca0b9cd707f7e4e793afb1c901254ac9ccee&quot;,
+      &quot;evidence&quot;: &quot;Independent re-QA of #8897 at df85ca0b9c. Lean and .md now state the same hypotheses and the same bijection; see proof-narrative-lean-equiv.&quot;
+    }
+  ],
+  &quot;da-citation-misuse&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;72aba46badfa&quot;,
+        &quot;ts&quot;: &quot;30b19a331e57&quot;,
+        &quot;lean&quot;: &quot;0f49b494967c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f3d72fed878bb395c3da0a8557bada5ec408ece0&quot;,
+      &quot;notes&quot;: &quot;No citations are present in &#39;Terminal Resolution of Hadronic Mass&#39;, hence no citation misuse is possible.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;terminal-resolution.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic closure confirming rigorous empirical findings explicitly within continuous analytic bounds.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;df85ca0b9cd707f7e4e793afb1c901254ac9ccee&quot;,
+      &quot;evidence&quot;: &quot;Independent re-QA of #8897 at df85ca0b9c. Only lem:pair-skein-mass-formula is cited, and it is in uses[].&quot;
+    }
+  ],
+  &quot;da-definitional-ambiguity&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;72aba46badfa&quot;,
+        &quot;ts&quot;: &quot;30b19a331e57&quot;,
+        &quot;lean&quot;: &quot;0f49b494967c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f3d72fed878bb395c3da0a8557bada5ec408ece0&quot;,
+      &quot;notes&quot;: &quot;Key terms and symbols in &#39;Terminal Resolution of Hadronic Mass&#39; are mathematically defined and unambiguous.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;terminal-resolution.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic closure confirming rigorous empirical findings explicitly within continuous analytic bounds.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;df85ca0b9cd707f7e4e793afb1c901254ac9ccee&quot;,
+      &quot;evidence&quot;: &quot;Independent re-QA of #8897 at df85ca0b9c. S_ab, mu_u, mu_d and [2]_q are defined in the statement.&quot;
+    }
+  ],
+  &quot;da-empirical-fragility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;72aba46badfa&quot;,
+        &quot;ts&quot;: &quot;30b19a331e57&quot;,
+        &quot;lean&quot;: &quot;0f49b494967c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f3d72fed878bb395c3da0a8557bada5ec408ece0&quot;,
+      &quot;notes&quot;: &quot;The empirical claims in &#39;Terminal Resolution of Hadronic Mass&#39; are structurally anchored to the QOU mass framework and are stable.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;terminal-resolution.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic closure confirming rigorous empirical findings explicitly within continuous analytic bounds.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9e7158a63eb4&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;2de9828ffe25&quot;,
+        &quot;lean_statement&quot;: &quot;be5ed55922a3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-restate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:41:49.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;82236be144e3afe6c18c41fdb9b26ac9e405e0d0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block (issue #8893). No empirical value in the statement or proof.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;df85ca0b9cd707f7e4e793afb1c901254ac9ccee&quot;,
+      &quot;evidence&quot;: &quot;Independent re-QA of #8897 at df85ca0b9c. No measured value or q0 appears; identities hold for every q in the stated field.&quot;
+    }
+  ],
+  &quot;da-physical-implausibility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;72aba46badfa&quot;,
+        &quot;ts&quot;: &quot;30b19a331e57&quot;,
+        &quot;lean&quot;: &quot;0f49b494967c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f3d72fed878bb395c3da0a8557bada5ec408ece0&quot;,
+      &quot;notes&quot;: &quot;The physical concepts described in &#39;Terminal Resolution of Hadronic Mass&#39; are consistent with quantum observable mechanics.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;terminal-resolution.ts:1&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic closure confirming rigorous empirical findings explicitly within continuous analytic bounds.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;df85ca0b9cd707f7e4e793afb1c901254ac9ccee&quot;,
+      &quot;evidence&quot;: &quot;Independent re-QA of #8897 at df85ca0b9c. No physical claim; convention-C scope is flagged in the statement and in the remark.&quot;
+    }
+  ],
+  &quot;da-reproducibility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;72aba46badfa&quot;,
+        &quot;ts&quot;: &quot;30b19a331e57&quot;,
+        &quot;lean&quot;: &quot;0f49b494967c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f3d72fed878bb395c3da0a8557bada5ec408ece0&quot;,
+      &quot;notes&quot;: &quot;Lean file compiles successfully, confirming reproducibility.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic closure confirming rigorous empirical findings explicitly within continuous analytic bounds.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;df85ca0b9cd707f7e4e793afb1c901254ac9ccee&quot;,
+      &quot;evidence&quot;: &quot;Independent re-QA of #8897 at df85ca0b9c. Lean reproduces it; Lean sibling lean-direct -DautoImplicit=false -s 65536 exit 0; #print axioms surjective/terminal_resolution/injective/det_eq = [propext, Classical.choice, Quot.sound].&quot;
+    }
+  ],
+  &quot;da-referee-verdict&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;72aba46badfa&quot;,
+        &quot;ts&quot;: &quot;30b19a331e57&quot;,
+        &quot;lean&quot;: &quot;0f49b494967c&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f3d72fed878bb395c3da0a8557bada5ec408ece0&quot;,
+      &quot;notes&quot;: &quot;Referee verdict: clean.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;verdict&quot;: &quot;clean&quot;,
+      &quot;referee_argument&quot;: &quot;No significant objections; the mathematical claims in &#39;Terminal Resolution of Hadronic Mass&#39; are consistent.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic closure confirming rigorous empirical findings explicitly within continuous analytic bounds.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;df85ca0b9cd707f7e4e793afb1c901254ac9ccee&quot;,
+      &quot;evidence&quot;: &quot;Independent re-QA of #8897 at df85ca0b9c. Accept: a small, correct, honestly scoped result that replaces a by-construction CODATA table. Convention-C frame noted as open re-derivation (convention D canonical per owner ruling).&quot;
+    }
+  ],
+  &quot;milnor-amalgamated-flow&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Rewrote prose sections of mass-theory_seq47.md to enforce H1-H8 and milnor-brevity. Preserved all math blocks and original section markers. Ensured linear flow, minimal technical clutter, and short declarative sentences.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;milnor-editor&quot;,
+        &quot;version&quot;: &quot;v1&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07T14:26:56.891130Z&quot;
+      },
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;72aba46badfa&quot;,
+        &quot;ts&quot;: &quot;30b19a331e57&quot;,
+        &quot;lean&quot;: &quot;0f49b494967c&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9e7158a63eb4&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;2de9828ffe25&quot;,
+        &quot;lean_statement&quot;: &quot;be5ed55922a3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:05:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f1ead9299155ba6893f15d236efac210917e9880&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block: statement, two parts, scope, convention, in that order; short declarative sentences; symbols ([2]_q, S_ab, mu_u, mu_d) introduced before use.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;df85ca0b9cd707f7e4e793afb1c901254ac9ccee&quot;,
+      &quot;evidence&quot;: &quot;Independent re-QA of #8897 at df85ca0b9c. Hypotheses, formula, then (i) and (ii) in one short statement; reads in order.&quot;
+    }
+  ],
+  &quot;expo-milnor-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Looks good. Heuristically verified.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:16:30.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;715a9a708c210d840f41c621cb20b53301cf19b6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-19&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;df85ca0b9cd707f7e4e793afb1c901254ac9ccee&quot;,
+      &quot;evidence&quot;: &quot;Independent re-QA of #8897 at df85ca0b9c. Clear: hypotheses, formula, two numbered parts.&quot;
+    }
+  ],
+  &quot;milnor-brevity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound analytic closure confirming rigorous empirical findings explicitly within continuous analytic bounds.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T14:44:01.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;75a0dce6b115a03df670446666aaceb8b27cc78a&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;df85ca0b9cd707f7e4e793afb1c901254ac9ccee&quot;,
+      &quot;evidence&quot;: &quot;Independent re-QA of #8897 at df85ca0b9c. Short; no surplus prose after the scope paragraphs moved out.&quot;
+    }
+  ],
+  &quot;voice-branch-jargon&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-08-08T08:19:18Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/branch-jargon-sweep&quot;,
+        &quot;agent_skill&quot;: &quot;local/one-voice-audit&quot;
+      }
+    }
+  ],
+  &quot;trap-negation-contrast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;739c7c17635e&quot;,
+        &quot;ts&quot;: &quot;3e692178b44f&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:26:17.881Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;&#39;Absolute nucleon mass in MeV is not itself a framework prediction&#39;; &#39;neither is derived here&#39;; &#39;The two routes are not shown here to agree.&#39;&quot;,
+      &quot;notes&quot;: &quot;False-positive class: all three are scope/temporal status statements, and the first is the required implementation of the 2026-08-11 absolute-mass excision. This block handles the excision correctly - the strongest disclosure in the batch.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9e7158a63eb4&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;2de9828ffe25&quot;,
+        &quot;lean_statement&quot;: &quot;be5ed55922a3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-restate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:41:49.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;82236be144e3afe6c18c41fdb9b26ac9e405e0d0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block (issue #8893). &#39;a change of variables, not a prediction&#39; states the scope result proved in part (ii); it is the claim, not a rhetorical pivot.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-qa-fixes-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:57:04.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4eeb377d54fa519b6fb38d549a47b08bd48561ae&quot;,
+      &quot;evidence&quot;: &quot;Full re-read after the QA round on #8897 (Scope moved to rem:terminal-resolution-scope; hypotheses stated; bijection). No instance.&quot;
+    }
+  ],
+  &quot;trap-rhetorical-pivot&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;739c7c17635e&quot;,
+        &quot;ts&quot;: &quot;3e692178b44f&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:26:17.925Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;Full read (238w, prop) with the whole table recomputed. Internal arithmetic is exact: 938.272 + 939.565 - 2.224 = 1875.613 reproduces the deuteron row to all shown digits; 939.565 - 938.272 = 1.293 MeV and 0.53 pct of it is 6.86 keV, matching the stated &#39;-0.53 pct residual - about 6.9 keV&#39;; 2.225 - 2.224 = 1 keV matches &#39;the binding row sits 1 keV from CODATA&#39;. CODATA cross-check: m_D = 1875.61294 and B_d = 2.22457 MeV, so both CODATA column entries round correctly.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9e7158a63eb4&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;2de9828ffe25&quot;,
+        &quot;lean_statement&quot;: &quot;be5ed55922a3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-restate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:41:49.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;82236be144e3afe6c18c41fdb9b26ac9e405e0d0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block (issue #8893). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-qa-fixes-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:57:04.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4eeb377d54fa519b6fb38d549a47b08bd48561ae&quot;,
+      &quot;evidence&quot;: &quot;Full re-read after the QA round on #8897 (Scope moved to rem:terminal-resolution-scope; hypotheses stated; bijection). No instance.&quot;
+    }
+  ],
+  &quot;trap-em-dash&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;739c7c17635e&quot;,
+        &quot;ts&quot;: &quot;3e692178b44f&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:26:17.968Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;1 spaced em-dash in 238 words, a true parenthetical.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9e7158a63eb4&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;2de9828ffe25&quot;,
+        &quot;lean_statement&quot;: &quot;be5ed55922a3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-restate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:41:49.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;82236be144e3afe6c18c41fdb9b26ac9e405e0d0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block (issue #8893). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-qa-fixes-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:57:04.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4eeb377d54fa519b6fb38d549a47b08bd48561ae&quot;,
+      &quot;evidence&quot;: &quot;Full re-read after the QA round on #8897 (Scope moved to rem:terminal-resolution-scope; hypotheses stated; bijection). No instance.&quot;
+    }
+  ],
+  &quot;trap-triples&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;739c7c17635e&quot;,
+        &quot;ts&quot;: &quot;3e692178b44f&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:26:18.008Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;Full read (238w, prop) with the whole table recomputed. Internal arithmetic is exact: 938.272 + 939.565 - 2.224 = 1875.613 reproduces the deuteron row to all shown digits; 939.565 - 938.272 = 1.293 MeV and 0.53 pct of it is 6.86 keV, matching the stated &#39;-0.53 pct residual - about 6.9 keV&#39;; 2.225 - 2.224 = 1 keV matches &#39;the binding row sits 1 keV from CODATA&#39;. CODATA cross-check: m_D = 1875.61294 and B_d = 2.22457 MeV, so both CODATA column entries round correctly.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9e7158a63eb4&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;2de9828ffe25&quot;,
+        &quot;lean_statement&quot;: &quot;be5ed55922a3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-restate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:41:49.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;82236be144e3afe6c18c41fdb9b26ac9e405e0d0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block (issue #8893). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-qa-fixes-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:57:04.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4eeb377d54fa519b6fb38d549a47b08bd48561ae&quot;,
+      &quot;evidence&quot;: &quot;Full re-read after the QA round on #8897 (Scope moved to rem:terminal-resolution-scope; hypotheses stated; bijection). No instance.&quot;
+    }
+  ],
+  &quot;trap-closing-aphorism&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;739c7c17635e&quot;,
+        &quot;ts&quot;: &quot;3e692178b44f&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:26:18.048Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;Full read (238w, prop) with the whole table recomputed. Internal arithmetic is exact: 938.272 + 939.565 - 2.224 = 1875.613 reproduces the deuteron row to all shown digits; 939.565 - 938.272 = 1.293 MeV and 0.53 pct of it is 6.86 keV, matching the stated &#39;-0.53 pct residual - about 6.9 keV&#39;; 2.225 - 2.224 = 1 keV matches &#39;the binding row sits 1 keV from CODATA&#39;. CODATA cross-check: m_D = 1875.61294 and B_d = 2.22457 MeV, so both CODATA column entries round correctly.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9e7158a63eb4&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;2de9828ffe25&quot;,
+        &quot;lean_statement&quot;: &quot;be5ed55922a3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-restate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:41:49.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;82236be144e3afe6c18c41fdb9b26ac9e405e0d0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block (issue #8893). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-qa-fixes-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:57:04.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4eeb377d54fa519b6fb38d549a47b08bd48561ae&quot;,
+      &quot;evidence&quot;: &quot;Full re-read after the QA round on #8897 (Scope moved to rem:terminal-resolution-scope; hypotheses stated; bijection). No instance.&quot;
+    }
+  ],
+  &quot;trap-meta-commentary&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;739c7c17635e&quot;,
+        &quot;ts&quot;: &quot;3e692178b44f&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:26:18.090Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;Full read (238w, prop) with the whole table recomputed. Internal arithmetic is exact: 938.272 + 939.565 - 2.224 = 1875.613 reproduces the deuteron row to all shown digits; 939.565 - 938.272 = 1.293 MeV and 0.53 pct of it is 6.86 keV, matching the stated &#39;-0.53 pct residual - about 6.9 keV&#39;; 2.225 - 2.224 = 1 keV matches &#39;the binding row sits 1 keV from CODATA&#39;. CODATA cross-check: m_D = 1875.61294 and B_d = 2.22457 MeV, so both CODATA column entries round correctly.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9e7158a63eb4&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;2de9828ffe25&quot;,
+        &quot;lean_statement&quot;: &quot;be5ed55922a3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-restate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:41:49.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;82236be144e3afe6c18c41fdb9b26ac9e405e0d0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block (issue #8893). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-qa-fixes-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:57:04.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4eeb377d54fa519b6fb38d549a47b08bd48561ae&quot;,
+      &quot;evidence&quot;: &quot;Full re-read after the QA round on #8897 (Scope moved to rem:terminal-resolution-scope; hypotheses stated; bijection). No instance.&quot;
+    }
+  ],
+  &quot;trap-thesis-restatement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;739c7c17635e&quot;,
+        &quot;ts&quot;: &quot;3e692178b44f&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:26:18.129Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;Full read (238w, prop) with the whole table recomputed. Internal arithmetic is exact: 938.272 + 939.565 - 2.224 = 1875.613 reproduces the deuteron row to all shown digits; 939.565 - 938.272 = 1.293 MeV and 0.53 pct of it is 6.86 keV, matching the stated &#39;-0.53 pct residual - about 6.9 keV&#39;; 2.225 - 2.224 = 1 keV matches &#39;the binding row sits 1 keV from CODATA&#39;. CODATA cross-check: m_D = 1875.61294 and B_d = 2.22457 MeV, so both CODATA column entries round correctly.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9e7158a63eb4&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;2de9828ffe25&quot;,
+        &quot;lean_statement&quot;: &quot;be5ed55922a3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-restate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:41:49.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;82236be144e3afe6c18c41fdb9b26ac9e405e0d0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block (issue #8893). The Scope paragraph draws a consequence of (ii); it does not restate (i) or (ii).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-qa-fixes-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:57:04.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4eeb377d54fa519b6fb38d549a47b08bd48561ae&quot;,
+      &quot;evidence&quot;: &quot;Full re-read after the QA round on #8897 (Scope moved to rem:terminal-resolution-scope; hypotheses stated; bijection). No instance.&quot;
+    }
+  ],
+  &quot;trap-performed-warmth&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;739c7c17635e&quot;,
+        &quot;ts&quot;: &quot;3e692178b44f&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:26:18.185Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;Full read (238w, prop) with the whole table recomputed. Internal arithmetic is exact: 938.272 + 939.565 - 2.224 = 1875.613 reproduces the deuteron row to all shown digits; 939.565 - 938.272 = 1.293 MeV and 0.53 pct of it is 6.86 keV, matching the stated &#39;-0.53 pct residual - about 6.9 keV&#39;; 2.225 - 2.224 = 1 keV matches &#39;the binding row sits 1 keV from CODATA&#39;. CODATA cross-check: m_D = 1875.61294 and B_d = 2.22457 MeV, so both CODATA column entries round correctly.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9e7158a63eb4&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;2de9828ffe25&quot;,
+        &quot;lean_statement&quot;: &quot;be5ed55922a3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-restate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:41:49.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;82236be144e3afe6c18c41fdb9b26ac9e405e0d0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block (issue #8893). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-qa-fixes-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:57:04.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4eeb377d54fa519b6fb38d549a47b08bd48561ae&quot;,
+      &quot;evidence&quot;: &quot;Full re-read after the QA round on #8897 (Scope moved to rem:terminal-resolution-scope; hypotheses stated; bijection). No instance.&quot;
+    }
+  ],
+  &quot;trap-superlative&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;739c7c17635e&quot;,
+        &quot;ts&quot;: &quot;3e692178b44f&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:26:18.226Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;No inflated accuracy claims; the table&#39;s CODATA-matching rows are explicitly disclaimed as m_e-scaled renderings rather than predictions.&quot;,
+      &quot;notes&quot;: &quot;FLAG for the report: the opening term &#39;neutrino vacuum drag&#39; is used with no definition, citation or cross-reference anywhere in the block, and &#39;pure strong-force binding energy&#39; is unqualified. The dressed quark masses mu_u = 311.10 and mu_d = 312.39 MeV likewise carry no witness.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9e7158a63eb4&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;2de9828ffe25&quot;,
+        &quot;lean_statement&quot;: &quot;be5ed55922a3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-restate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:41:49.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;82236be144e3afe6c18c41fdb9b26ac9e405e0d0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block (issue #8893). No intensifiers; &#39;exactly one&#39; is the content of the invertibility theorem.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-qa-fixes-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:57:04.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4eeb377d54fa519b6fb38d549a47b08bd48561ae&quot;,
+      &quot;evidence&quot;: &quot;Full re-read after the QA round on #8897 (Scope moved to rem:terminal-resolution-scope; hypotheses stated; bijection). No instance.&quot;
+    }
+  ],
+  &quot;trap-nonspeakable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;739c7c17635e&quot;,
+        &quot;ts&quot;: &quot;3e692178b44f&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f02&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:26:18.269Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0&quot;,
+      &quot;evidence&quot;: &quot;Full read (238w, prop) with the whole table recomputed. Internal arithmetic is exact: 938.272 + 939.565 - 2.224 = 1875.613 reproduces the deuteron row to all shown digits; 939.565 - 938.272 = 1.293 MeV and 0.53 pct of it is 6.86 keV, matching the stated &#39;-0.53 pct residual - about 6.9 keV&#39;; 2.225 - 2.224 = 1 keV matches &#39;the binding row sits 1 keV from CODATA&#39;. CODATA cross-check: m_D = 1875.61294 and B_d = 2.22457 MeV, so both CODATA column entries round correctly.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9e7158a63eb4&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;2de9828ffe25&quot;,
+        &quot;lean_statement&quot;: &quot;be5ed55922a3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-restate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:41:49.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;82236be144e3afe6c18c41fdb9b26ac9e405e0d0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block (issue #8893). No instance.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-qa-fixes-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:57:04.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4eeb377d54fa519b6fb38d549a47b08bd48561ae&quot;,
+      &quot;evidence&quot;: &quot;Full re-read after the QA round on #8897 (Scope moved to rem:terminal-resolution-scope; hypotheses stated; bijection). No instance.&quot;
+    }
+  ],
+  &quot;wall-base-ring-minimal&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;9e7158a63eb4&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;2de9828ffe25&quot;,
+        &quot;lean_statement&quot;: &quot;be5ed55922a3&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-restate-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:41:49.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;82236be144e3afe6c18c41fdb9b26ac9e405e0d0&quot;,
+      &quot;evidence&quot;: &quot;Full read of the restated block (issue #8893). Generic field K; Field is needed for the inverses q^-1 and the division by s + s^-1. No R, no ordering, no sqrt (q = s^2).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:terminal-resolution-qa-fixes-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T16:57:04.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;4eeb377d54fa519b6fb38d549a47b08bd48561ae&quot;,
+      &quot;evidence&quot;: &quot;Full re-read after the QA round on #8897 (Scope moved to rem:terminal-resolution-scope; hypotheses stated; bijection). Generic field K; Field is needed for q^-1 and the division by s + s^-1.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;e01a2b9ca98f&quot;,
+        &quot;ts&quot;: &quot;c47985e60ead&quot;,
+        &quot;lean&quot;: &quot;deaf0648333e&quot;,
+        &quot;lean_statement&quot;: &quot;a15b68957019&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:qa-refresh-2026-11-21&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-21T17:30:00.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;df85ca0b9cd707f7e4e793afb1c901254ac9ccee&quot;,
+      &quot;evidence&quot;: &quot;Independent re-QA of #8897 at df85ca0b9c. Generic `[Field K]` (AGENTS.md section 7c); the square root avoided via q = s^2; characteristic-not-3 carried as hypothesis (3:K) != 0. No real-number construct.&quot;
+    }
+  ]
+}</pre></dd>
+</dl>
+</main>
+</body>
+</html>

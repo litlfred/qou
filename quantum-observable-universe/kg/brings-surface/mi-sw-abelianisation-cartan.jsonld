@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-mi-sw-abelianisation-cartan",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:mi-sw-abelianisation-cartan",
+  "kind": "lemma",
+  "title": "Cartan reduction recovers the SW differential",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-brings-smoothness",
+    "papers/quantum-observable-universe/blocks/rem-weight-space-decomposition",
+    "papers/quantum-observable-universe/blocks/rem-color-bundles"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-mi-sw-abelianisation-cartan"
+  ],
+  "tags": [
+    "seiberg-witten",
+    "abelianisation",
+    "cartan-reduction",
+    "exceptional-divisor",
+    "spectral-curve"
+  ],
+  "leanRef": "qou:QOU.MassTheory.mi_sw_cartan_reduction",
+  "text": "mi-sw-abelianisation-cartan.md",
+  "provenance": "authored"
+}

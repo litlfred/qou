@@ -1,0 +1,72 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1010.5321v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Formulas on hyperbolic volume ∗",
+  "contains": [
+    "library/arxiv-1010.5321v3/sections/sec-front-matter",
+    "library/arxiv-1010.5321v3/sections/sec-000",
+    "library/arxiv-1010.5321v3/sections/sec-001",
+    "library/arxiv-1010.5321v3/sections/sec-002",
+    "library/arxiv-1010.5321v3/sections/sec-003",
+    "library/arxiv-1010.5321v3/sections/sec-004",
+    "library/arxiv-1010.5321v3/sections/sec-005",
+    "library/arxiv-1010.5321v3/sections/sec-006",
+    "library/arxiv-1010.5321v3/sections/sec-007",
+    "library/arxiv-1010.5321v3/sections/sec-008",
+    "library/arxiv-1010.5321v3/sections/sec-009",
+    "library/arxiv-1010.5321v3/sections/sec-010",
+    "library/arxiv-1010.5321v3/sections/sec-011",
+    "library/arxiv-1010.5321v3/sections/sec-012",
+    "library/arxiv-1010.5321v3/sections/sec-013",
+    "library/arxiv-1010.5321v3/sections/sec-014",
+    "library/arxiv-1010.5321v3/sections/sec-015"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Formulas on hyperbolic volume ∗ — This paper collects some important formulas on hyperbolic volume.\n\n**Formulas on hyperbolic volume ∗**\n\n*Budapest University of Technology and Economics*\n\n16 pp, 17 sections.\n\n**Abstract.** This paper collects some important formulas on hyperbolic volume. To determine con- crete values of volume function is a very hard question requiring the knowledge of various methods. Our goal to give a non-elementary integral on the volume of the orthosceme (obtain it without using the Schl¨aﬂi diﬀerential formula), using edge-lengthes as the only parameters.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Notation; 2 General formulas; 2.1 Coordinate system based on paracycles (hor; 2.2 Volume in the Poincare half-space model; 2.3 Hyperbolic orthogonal coordinate system; 2.4 Coordinate system based on spherical hyper; 2.5 Volume in the projective model; 3 The three dimensional case; 3.1 Formulas of J. Bolyai; 3.2 Formulas of N.I.Lobachevsky; 3.3 Once more again on the volume of the ortho; 3.3.1 The 3-dimensional case; 3.3.2 The case of dimension two; 3.3.3 The case of dimension n; 3.4 Further results on concrete volumes",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1010.5321&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1010.5321v3",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1010.5321v3.pdf",
+    "source_sha256": "c6bb20926b1f291fe66fc82b10be9d6a8b51f3b44034d4fd9d111bd4c3767a31",
+    "pages": 16,
+    "arxiv": {
+      "id": "1010.5321",
+      "version": "3",
+      "primary_class": "math.MG",
+      "stamp_date": "16 Nov 2010"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-glossary-categorical-q-torsion-leaf",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:glossary-categorical-q-torsion-leaf",
+  "kind": "remark",
+  "title": "Categorical q-torsion leaf",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-q-reeb-flow"
+  ],
+  "tags": [
+    "glossary",
+    "torsion",
+    "q-deformation",
+    "category-theory"
+  ],
+  "defines": [
+    "categorical-q-torsion-leaf"
+  ],
+  "leanRef": "qou:QOU.CategoricalQTorsionLeaf",
+  "text": "glossary-categorical-q-torsion-leaf.md",
+  "leanSource": "glossary-categorical-q-torsion-leaf.lean",
+  "provenance": "authored"
+}

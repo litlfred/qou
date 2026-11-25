@@ -1,0 +1,853 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-th-9212088v1",
+  "title": "arxiv-hep-th-9212088v1",
+  "variant": "pdf",
+  "pages": 18,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Abstract",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-abstract"
+    },
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-001-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Random matrix model",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-2-random-matrix-model"
+    },
+    {
+      "level": 1,
+      "title": "Calculation of the partition function",
+      "number": "3",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-3-calculation-of-the-partition-function"
+    },
+    {
+      "level": 1,
+      "title": "Sum rules for one and two ﬂavors",
+      "number": "4",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-4-sum-rules-for-one-and-two-ﬂavors"
+    },
+    {
+      "level": 1,
+      "title": "Sum rules in the instanton liquid",
+      "number": "5",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-5-sum-rules-in-the-instanton-liquid"
+    },
+    {
+      "level": 1,
+      "title": "Discussion and conclusions",
+      "number": "6",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-6-discussion-and-conclusions"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-007-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A",
+      "number": null,
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-008-appendix-a"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-009-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 32,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "suny-ntg",
+          "heading": false
+        },
+        {
+          "term": "suny",
+          "heading": false
+        },
+        {
+          "term": "shuryak",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-th/9212088v1 14 Dec 1992 SUNY-NTG-92/45 Random matrix theory and spectral sum rules for the Dirac operator in QCD1 E.V. Shuryak and J.J.M. Verbaarschot Department of Physics SUNY, Stony Brook, New York 11794",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-hep-th-9212088v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-abstract",
+      "number": null,
+      "title": "Abstract",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 147,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sum rules",
+          "heading": false
+        },
+        {
+          "term": "suny-ntg",
+          "heading": false
+        },
+        {
+          "term": "weidenm",
+          "heading": false
+        },
+        {
+          "term": "smilga",
+          "heading": false
+        }
+      ],
+      "extract": "We construct a random matrix model that, in the large N limit, reduces to the low energy limit of the QCD partition function put forward by Leutwyler and Smilga. This equivalence holds for an arbitrary number of ﬂavors and any value of the QCD vacuum angle. In this model, moments of the inverse squares of the eigenvalues of the Dirac operator obey sum rules, which we conjecture to be universal. In other words, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 423,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qcd partition",
+          "heading": false
+        },
+        {
+          "term": "sum rules",
+          "heading": false
+        },
+        {
+          "term": "spectral density",
+          "heading": false
+        },
+        {
+          "term": "thermodynamic limit",
+          "heading": false
+        },
+        {
+          "term": "partition function",
+          "heading": false
+        },
+        {
+          "term": "chiral symmetry",
+          "heading": false
+        },
+        {
+          "term": "write down",
+          "heading": false
+        },
+        {
+          "term": "smilga",
+          "heading": false
+        }
+      ],
+      "extract": "Since our main understanding of nonperturbative phenomena in QCD comes from numerical simulations analytical results in this direction are most welcome [1, 2]. In particular the issue of quark conﬁnement has not been resolved. What is better known [3] is the mechanism of chiral symmetry breaking. In the chiral limit the QCD partition function is invariant under SU(Nf)×SU(Nf)×U(1), whereas the axial U(1) symmetry is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-random-matrix-model",
+      "number": "2",
+      "title": "Random matrix model",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": "3",
+      "labelEnd": "6",
+      "words": 1013,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zero modes",
+          "heading": false
+        },
+        {
+          "term": "qcd partition",
+          "heading": false
+        },
+        {
+          "term": "ﬁeld conﬁgurations",
+          "heading": false
+        },
+        {
+          "term": "overlap matrix",
+          "heading": false
+        },
+        {
+          "term": "instanton liquid",
+          "heading": false
+        },
+        {
+          "term": "spectral density",
+          "heading": false
+        },
+        {
+          "term": "zero eigenvalues",
+          "heading": false
+        },
+        {
+          "term": "continuum spectral",
+          "heading": false
+        }
+      ],
+      "extract": "was inspired by the semiclassical approximation to the QCD partition function where instantons are the main degrees of freedom [10, 11, 12]. Therefore, it is natural to check the validity of these sum rules for an instanton liquid model [13] of the QCD vacuum, a task which is carried out in section 5. Concluding remarks are made in section 6. Finally, in appendix A sum rules for a ﬁnite number of degrees of freedom",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-calculation-of-the-partition-function",
+      "number": "3",
+      "title": "Calculation of the partition function",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 9,
+      "labelStart": "6",
+      "labelEnd": "9",
+      "words": 1160,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "partition function",
+          "heading": true
+        },
+        {
+          "term": "saddle point",
+          "heading": false
+        },
+        {
+          "term": "phase exp",
+          "heading": false
+        },
+        {
+          "term": "integration variables",
+          "heading": false
+        },
+        {
+          "term": "factor exp",
+          "heading": false
+        },
+        {
+          "term": "nonzero modes",
+          "heading": false
+        },
+        {
+          "term": "point approximation",
+          "heading": false
+        },
+        {
+          "term": "order contribution",
+          "heading": false
+        }
+      ],
+      "extract": "In order to evaluate the partition function (2.2) the determinant is written as an integral over Grassmann variables Y f det mf iT iT † mf ! = Z Y f DψfDφf exp X f ψf∗ φf∗ ! mf iT iT † mf ! ψf φf ! , (3.1) where the measure of the Grassmann integration is as usual Dψf = Y i dψf i dψf∗ i , (3.2) and the conjugation ∗is the conjugation of the second kind (i.e., ψ∗∗= −ψ) [9]. The integral over T is gaussian and can be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-sum-rules-for-one-and-two-ﬂavors",
+      "number": "4",
+      "title": "Sum rules for one and two ﬂavors",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 12,
+      "labelStart": "9",
+      "labelEnd": "12",
+      "words": 1050,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sum rules",
+          "heading": true
+        },
+        {
+          "term": "ﬂavors",
+          "heading": true
+        },
+        {
+          "term": "microscopic spectral",
+          "heading": false
+        },
+        {
+          "term": "spectral density",
+          "heading": false
+        },
+        {
+          "term": "znf",
+          "heading": false
+        },
+        {
+          "term": "massless partition",
+          "heading": false
+        },
+        {
+          "term": "topological charge",
+          "heading": false
+        },
+        {
+          "term": "bessel function",
+          "heading": false
+        }
+      ],
+      "extract": "Sum rules for moments of the inverse squares of the eigenvalues of the Dirac operator can be derived for an arbitrary number of ﬂavors and for any value of the total topological charge [2]. In this section we only present a derivation for the simplest two cases of one ﬂavor and of two ﬂavors with equal masses. Proofs of the general results can be found in [2]. For Nf = 1 there is no integration and the result for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-sum-rules-in-the-instanton-liquid",
+      "number": "5",
+      "title": "Sum rules in the instanton liquid",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 335,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "instanton liquid",
+          "heading": true
+        },
+        {
+          "term": "sth",
+          "heading": false
+        },
+        {
+          "term": "streamline",
+          "heading": false
+        },
+        {
+          "term": "theoretical values",
+          "heading": false
+        },
+        {
+          "term": "row",
+          "heading": false
+        },
+        {
+          "term": "conﬁgurations",
+          "heading": false
+        },
+        {
+          "term": "rules",
+          "heading": true
+        }
+      ],
+      "extract": "The partition function (2.1) can be approximated semiclassically by a liquid of in- stantons. Instead of averaging over all gauge ﬁeld conﬁgurations, we average over the collective coordinates of the instantons only, whereas 1-loop quantum ﬂuctuations about the instantons are included in the measure. The action in (2.1) is the instanton action, which also includes the interaction between instantons. We use the so",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-6-discussion-and-conclusions",
+      "number": "6",
+      "title": "Discussion and conclusions",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 364,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chiral random",
+          "heading": false
+        },
+        {
+          "term": "random matrix",
+          "heading": false
+        },
+        {
+          "term": "gaussian random",
+          "heading": false
+        },
+        {
+          "term": "overlap matrix",
+          "heading": false
+        },
+        {
+          "term": "microscopic level",
+          "heading": false
+        },
+        {
+          "term": "spectral density",
+          "heading": false
+        },
+        {
+          "term": "matrix ensemble",
+          "heading": false
+        },
+        {
+          "term": "matrix theory",
+          "heading": false
+        }
+      ],
+      "extract": "The main conclusion of this work is that the low energy chiral limit of the QCD partition function as derived by Leutwyler and Smilga coincides with a large N limit of a random matrix theory. Therefore all conclusions of [2] also pertain to the chiral random matrix theory proposed in section 2. The random matrix theory resembles the partition function of a gas of instantons. The main diﬀerence is that instead of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 45,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "livermore",
+          "heading": false
+        },
+        {
+          "term": "de-fg-88er",
+          "heading": false
+        },
+        {
+          "term": "nowak",
+          "heading": false
+        }
+      ],
+      "extract": "The reported work was partially supported by the US DOE grant DE-FG-88ER40388. We acknowledge the NERSC at Lawrence Livermore where most of the computations presented in this paper were performed. We would like to thank A. Smilga, M.A. Nowak and I. Zahed for useful discussions.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-appendix-a",
+      "number": null,
+      "title": "Appendix A",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "16",
+      "words": 295,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sum rules",
+          "heading": false
+        },
+        {
+          "term": "partition function",
+          "heading": false
+        },
+        {
+          "term": "dσd",
+          "heading": false
+        },
+        {
+          "term": "m2n2σ",
+          "heading": false
+        },
+        {
+          "term": "pre-exponential",
+          "heading": false
+        }
+      ],
+      "extract": "In this appendix we derive the sum rules (4.12) and (4.13) for one ﬂavor without relying on a saddle point approximation. For N+ = N−= N/2 and Nf = 1 the partition function simpliﬁes to Z = Z dσd¯σ(σ + i¯σ −m) N 2 (σ −i¯σ −m) N 2 exp(−N 2λ2(σ + i¯σ)(σ −i¯σ)), (A.1) where an irrelevant overall constant has been suppressed. At ﬁnite N the pre-exponential factors can be expanded as a binomial series which provides us",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": "16",
+      "labelEnd": "18",
+      "words": 385,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "verbaarschot",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "shuryak",
+          "heading": false
+        },
+        {
+          "term": "nucl",
+          "heading": false
+        },
+        {
+          "term": "diakonov",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "sth",
+          "heading": false
+        },
+        {
+          "term": "nowak",
+          "heading": false
+        }
+      ],
+      "extract": "[1] P. van Baal, Nucl. Phys. B351 (1991) 183. [2] H. Leutwyler and A. Smilga, Phys. Rev. D (1992) (in press). [3] G. ’t Hooft, Phys. Rep. 142, 357 (1986). [4] P. D. Vecchia and G. Veneziano, Nucl. Phys. B171 (1980) 253. [5] J. Gasser and H. Leutwyler, Phys. Lett. B188 (1987) 477. [6] T. Banks and A. Casher, Nucl. Phys. B169 (1980) 103. [7] R. Balian, Nuov. Cim. 57 (1968) 183. [8] K. Efetov, Adv. in Phys. 32 (1983)",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "sum rules",
+      "heading": true
+    },
+    {
+      "term": "qcd partition",
+      "heading": false
+    },
+    {
+      "term": "partition function",
+      "heading": true
+    },
+    {
+      "term": "spectral density",
+      "heading": false
+    },
+    {
+      "term": "massless partition",
+      "heading": false
+    },
+    {
+      "term": "microscopic spectral",
+      "heading": false
+    },
+    {
+      "term": "instanton liquid",
+      "heading": true
+    },
+    {
+      "term": "rules hold",
+      "heading": false
+    },
+    {
+      "term": "qcd vacuum",
+      "heading": false
+    },
+    {
+      "term": "overlap matrix",
+      "heading": false
+    },
+    {
+      "term": "chiral condensate",
+      "heading": false
+    },
+    {
+      "term": "zero modes",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Numerical results for the spectral properties of the Dirac operator in the gauge ﬁeld of a liquid of instantons. From the comparison of the 3rd and 4th, the 5th and 6th and the 7th and 8th rows we conclude that the Leutwyler-Smilga sum rules are observed by this model. For the deﬁnition and further",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 10,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p16); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-th-9212088v1"
+  }
+}

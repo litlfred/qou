@@ -1,0 +1,791 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2109.04664v4",
+  "title": "arxiv-2109.04664v4",
+  "variant": "pdf",
+  "pages": 27,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-preliminaries"
+    },
+    {
+      "level": 1,
+      "title": "Summation",
+      "number": "3",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-summation"
+    },
+    {
+      "level": 1,
+      "title": "Integration",
+      "number": "4",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-integration"
+    },
+    {
+      "level": 1,
+      "title": "Topological interpretations",
+      "number": "5",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-5-topological-interpretations"
+    },
+    {
+      "level": 2,
+      "title": "Representations",
+      "number": "5.1",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-51-representations"
+    },
+    {
+      "level": 2,
+      "title": "Adjoint Reidemeister torsion",
+      "number": "5.2",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": "sec-006-52-adjoint-reidemeister-torsion"
+    },
+    {
+      "level": 2,
+      "title": "Chern--Simons invariant",
+      "number": "5.3",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Proofs of lemmas",
+      "number": "6",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-6-proofs-of-lemmas"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 93,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "asymptotic behavior",
+          "heading": false
+        },
+        {
+          "term": "toshie",
+          "heading": false
+        },
+        {
+          "term": "anh",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:2109.04664v4 [math.GT] 16 Aug 2022 ON THE ASYMPTOTIC BEHAVIOR OF THE COLORED JONES POLYNOMIAL OF THE FIGURE-EIGHT KNOT ASSOCIATED WITH A REAL NUMBER HITOSHI MURAKAMI AND ANH T. TRAN Dedicated to the memory of Toshie Takata Abstract. We study the asymptotic behavior of the N-dimensional colored Jones polynomial evaluated at exp(ξ/N) for a real number ξ greater than a certain constant. We prove that, from the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2109.04664v4/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1415,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sqrt operatorname",
+          "heading": false
+        },
+        {
+          "term": "operatorname arccosh",
+          "heading": false
+        },
+        {
+          "term": "frac operatorname",
+          "heading": false
+        },
+        {
+          "term": "murakami yokota",
+          "heading": false
+        },
+        {
+          "term": "operatorname left",
+          "heading": false
+        },
+        {
+          "term": "operatorname vol",
+          "heading": false
+        },
+        {
+          "term": "sqrt right",
+          "heading": false
+        },
+        {
+          "term": "setminus right",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:introduction label=\"sec:introduction\"} Let $N\\ge2$ be an integer. In [@Kashaev:MODPLA95], R. Kashaev introduced a link invariant $\\langle K\\rangle_{N}$ for a knot $K$ in the three-sphere $S^3$ by using the so-called quantum dilogarithm. In [@Kashaev:LETMP97], he studied its asymptotic behavior when $N\\to\\infty$ for several hyperbolic knots and conjectured that it would determine its hyperbolic volume for any",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 946,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sqrt theta",
+          "heading": false
+        },
+        {
+          "term": "theta frac",
+          "heading": false
+        },
+        {
+          "term": "cos theta",
+          "heading": false
+        },
+        {
+          "term": "int theta",
+          "heading": false
+        },
+        {
+          "term": "sqrt mathcal",
+          "heading": false
+        },
+        {
+          "term": "sin theta",
+          "heading": false
+        },
+        {
+          "term": "theta left",
+          "heading": false
+        },
+        {
+          "term": "sqrt mid",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we first introduce the colored Jones polynomial, and then we define a quantum dilogarithm, and variants of the logarithm and the dilogarithm. We also describe some of their properties. For a knot $K$ in the three-sphere $S^3$, we denote by $J_N(K;q)$ the colored Jones polynomial of $K$ associated with the $N$-dimensional irreducible representation of the Lie algebra $\\frak{sl}(2;\\mathbb{C})$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-summation",
+      "number": "3",
+      "title": "Summation",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1266,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "exp left",
+          "heading": false
+        },
+        {
+          "term": "operatorname arccosh",
+          "heading": false
+        },
+        {
+          "term": "times left",
+          "heading": false
+        },
+        {
+          "term": "left sum",
+          "heading": false
+        },
+        {
+          "term": "cosh",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "jones sum",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we use the quantum dilogarithm $T_N(z)$ to express $J_N(E;e^{\\xi/N})$ without the product of a sequence. Since the figure-eight knot $E$ is amphicheiral, its colored Jones polynomial is symmetric, that is, $J_{N}(E;q)=J_{N}(E;q^{-1})$. So we have $J_{N}(E;e^{\\xi/N})=J_{N}(E;e^{-\\xi/N})$ and we do not need to consider the case where $\\xi<0$. Recall that we choose a positive real number $\\theta$ so",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-integration",
+      "number": "4",
+      "title": "Integration",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1815,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "poisson psi",
+          "heading": false
+        },
+        {
+          "term": "frac varphi",
+          "heading": false
+        },
+        {
+          "term": "int varphi",
+          "heading": false
+        },
+        {
+          "term": "region psi",
+          "heading": false
+        },
+        {
+          "term": "sum varphi",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "varepsilon right",
+          "heading": false
+        },
+        {
+          "term": "sin theta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:integration label=\"sec:integration\"} In this section, we use the Poisson summation formula (see [@Ohtsuki:QT2016 Proposition 4.2]) to change the summation in [\\[eq:J_summation\\]](#eq:J_summation){reference-type=\"eqref\" reference=\"eq:J_summation\"} into an integration. Then by using the saddle point method (see also [@Ohtsuki:QT2016 Proposition 3.2]) to prove Theorem",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-topological-interpretations",
+      "number": "5",
+      "title": "Topological interpretations",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 12,
+      "summary": null,
+      "keywords": [],
+      "extract": "[]{#sec:CST label=\"sec:CST\"} In this section we give topological interpretations for $T(\\xi)$ and $S(\\xi)$.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-51-representations",
+      "number": "5.1",
+      "title": "Representations",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 124,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "riley",
+          "heading": false
+        },
+        {
+          "term": "eta",
+          "heading": false
+        }
+      ],
+      "extract": "Let $X$ be the complement of the open tubular neighborhood of $E\\subset S^3$. The fundamental group $\\pi_1(X)$ is presented as $$\\langle x,y \\mid wx=yw \\rangle,$$ with $w:=xy^{-1}x^{-1}y$. Let $\\rho$ be a non-Abelian representation of $\\pi_1(X)$ to $\\rm{SL}(2;\\mathbb{C})$ given by $$\\label{eq:presentation_F_2} \\rho(x) = \\begin{pmatrix}e^{\\xi/2}&1\\\\0&e^{-\\xi/2}\\end{pmatrix}, \\quad \\rho(y) =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-52-adjoint-reidemeister-torsion",
+      "number": "5.2",
+      "title": "Adjoint Reidemeister torsion",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 407,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pmatrix sqrt",
+          "heading": false
+        },
+        {
+          "term": "rho colon",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "sqrt beta",
+          "heading": false
+        },
+        {
+          "term": "sqrt alpha",
+          "heading": false
+        },
+        {
+          "term": "representation rho",
+          "heading": false
+        },
+        {
+          "term": "rho associated",
+          "heading": false
+        }
+      ],
+      "extract": "For a representation $\\rho\\colon\\pi_1(X)\\to\\rm{SL}(2;\\mathbb{C})$, one can consider the cochain complex $C^{\\ast}(X;\\mathfrak{sl}(2;\\mathbb{C})_{\\rho}):=\\operatorname{Hom}_{\\mathbb{Z}[\\pi_1(X)]}(C_{\\ast}(\\tilde{X};\\mathbb{Z}),\\mathfrak{sl}(2;\\mathbb{C}))$ twisted by the adjoint action of $\\rho$. Here $\\tilde{X}$ is the universal cover of $X$, $\\pi_1(X)$ acts on $\\tilde{X}$ as the deck transformation, and the Lie",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-6-proofs-of-lemmas",
+      "number": "6",
+      "title": "Proofs of lemmas",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4443,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sinh",
+          "heading": false
+        },
+        {
+          "term": "hitoshi murakami",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure-eight knot",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "cos",
+          "heading": false
+        },
+        {
+          "term": "segment connecting",
+          "heading": false
+        },
+        {
+          "term": "orient upward",
+          "heading": false
+        },
+        {
+          "term": "acta math",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we give proofs of lemmas used in this paper. Proof of Lemma 2.1. Putting x := y eθ√−1, the integral becomes Z C0 exp \u0010 (2z −1)y eθ√−1\u0011 y sinh(y eθ√−1) sinh(γy eθ√−1) dy. Noting that sinh(as) ∼ s→∞ 1 2eas and that sinh(as) ∼ s→−∞−1 2e−as for a complex number a with Re(a) > 0, we have exp \u0010 (2z −1)y eθ√−1\u0011 y sinh(y eθ√−1) sinh(γy eθ√−1) ∼ y→∞ 1 y exp \u0010 (2z −2 −γ)eθ√−1y \u0011 and exp \u0010 (2z −1)y eθ√−1\u0011 y",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "sqrt operatorname",
+      "heading": false
+    },
+    {
+      "term": "frac sinh",
+      "heading": false
+    },
+    {
+      "term": "operatorname left",
+      "heading": false
+    },
+    {
+      "term": "sqrt right",
+      "heading": false
+    },
+    {
+      "term": "frac varphi",
+      "heading": false
+    },
+    {
+      "term": "operatorname arccosh",
+      "heading": false
+    },
+    {
+      "term": "pmatrix sqrt",
+      "heading": false
+    },
+    {
+      "term": "sqrt theta",
+      "heading": false
+    },
+    {
+      "term": "invariant operatorname",
+      "heading": false
+    },
+    {
+      "term": "sqrt int",
+      "heading": false
+    },
+    {
+      "term": "exp left",
+      "heading": false
+    },
+    {
+      "term": "sqrt mid",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The parallelogram is the boundary of P, the circle is the boundary of Nδ0, the red region is D−, and the green region is",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p16); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 6
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2109.04664v4"
+  }
+}

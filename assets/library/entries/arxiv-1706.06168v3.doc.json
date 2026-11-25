@@ -1,0 +1,1989 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1706.06168v3",
+  "title": "arxiv-1706.06168v3",
+  "variant": "pdf",
+  "pages": 36,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "Notation",
+      "number": "2.1",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-notation"
+    },
+    {
+      "level": 2,
+      "title": "Homogeneous Polynomials",
+      "number": "2.2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-homogeneous-polynomials"
+    },
+    {
+      "level": 1,
+      "title": "Homogeneous Polynomials as Representations",
+      "number": "3",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-3-homogeneous-polynomials-as-representations"
+    },
+    {
+      "level": 2,
+      "title": "The Action of SL2(C)",
+      "number": "3.1",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-31-the-action-of-sl2c"
+    },
+    {
+      "level": 2,
+      "title": "An Important Invariant Map, and Apolarity",
+      "number": "3.2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-32-an-important-invariant-map-and-apolarity"
+    },
+    {
+      "level": 2,
+      "title": "The Symbol of an Operator",
+      "number": "3.3",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-33-the-symbol-of-an-operator"
+    },
+    {
+      "level": 1,
+      "title": "Polynomial Stability Theory",
+      "number": "4",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-4-polynomial-stability-theory"
+    },
+    {
+      "level": 2,
+      "title": "Polar Derivatives",
+      "number": "4.1",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-41-polar-derivatives"
+    },
+    {
+      "level": 2,
+      "title": "Projective Convexity and Laguerre's Theorem",
+      "number": "4.2",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-42-projective-convexity-and-laguerres-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Real Stable Polynomials",
+      "number": "4.3",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-43-real-stable-polynomials"
+    },
+    {
+      "level": 1,
+      "title": "Grace's Theorem",
+      "number": "5",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-5-graces-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Other Regions",
+      "number": "5.1",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-51-other-regions"
+    },
+    {
+      "level": 2,
+      "title": "Evaluation Symbols",
+      "number": "5.2",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-52-evaluation-symbols"
+    },
+    {
+      "level": 1,
+      "title": "Stability Properties of Complex Linear Operators",
+      "number": "6",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-6-stability-properties-of-complex-linear-operato"
+    },
+    {
+      "level": 2,
+      "title": "Weak Stability Preservation",
+      "number": "6.1",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-61-weak-stability-preservation"
+    },
+    {
+      "level": 2,
+      "title": "Strong Stability Preservation",
+      "number": "6.2",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-62-strong-stability-preservation"
+    },
+    {
+      "level": 2,
+      "title": "Deriving the Complex Borcea-Brändén Characterization",
+      "number": "6.3",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-63-deriving-the-complex-borcea-brändén-character"
+    },
+    {
+      "level": 1,
+      "title": "Stability Properties of Real Linear Operators",
+      "number": "7",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-7-stability-properties-of-real-linear-operators"
+    },
+    {
+      "level": 2,
+      "title": "Weak Real Stability Preservation",
+      "number": "7.1",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-71-weak-real-stability-preservation"
+    },
+    {
+      "level": 2,
+      "title": "Strong Real Stability Preservation",
+      "number": "7.2",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-72-strong-real-stability-preservation"
+    },
+    {
+      "level": 2,
+      "title": "Deriving the Real Borcea-Brändén Characterization",
+      "number": "7.3",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-73-deriving-the-real-borcea-brändén-characteriza"
+    },
+    {
+      "level": 2,
+      "title": "Ray and Interval Stability",
+      "number": "7.4",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-74-ray-and-interval-stability"
+    },
+    {
+      "level": 1,
+      "title": "A Tensor Product Decomposition of SL2(C) Representations",
+      "number": null,
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-a-tensor-product-decomposition-of-sl2c-represent"
+    },
+    {
+      "level": 2,
+      "title": "A.1 Decomposition of V(n) tensor V(m)",
+      "number": null,
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-a1-decomposition-of-vn-tensor-vm"
+    },
+    {
+      "level": 2,
+      "title": "A.2 Decomposition of V(lambda) tensor V(mu)",
+      "number": null,
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "B The Grace-Walsh-Szego Coincidence Theorem",
+      "number": null,
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-b-the-grace-walsh-szego-coincidence-theorem"
+    },
+    {
+      "level": 2,
+      "title": "B.1 Polarization and Projection",
+      "number": null,
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-b1-polarization-and-projection"
+    },
+    {
+      "level": 2,
+      "title": "B.2 The Coincidence Theorem",
+      "number": null,
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-b2-the-coincidence-theorem"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 122,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "borcea-br",
+          "heading": false
+        },
+        {
+          "term": "representation theoretic",
+          "heading": false
+        },
+        {
+          "term": "uniﬁcation",
+          "heading": false
+        },
+        {
+          "term": "linear operators",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1706.06168v3 [math.CV] 6 Aug 2021 A Representation Theoretic Explanation of the Borcea-Br¨and´en Characterization Jonathan Leake August 9, 2021 Abstract In 2009, Borcea and Br¨and´en characterized all linear operators on multivariate polynomials which preserve the property of being non-vanishing (stable) on products of prescribed open circular regions. We give a representation theoretic interpretation of their",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1706.06168v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 5,
+      "labelStart": "1",
+      "labelEnd": "5",
+      "words": 2898,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cops graces",
+          "heading": false
+        },
+        {
+          "term": "rops graces",
+          "heading": false
+        },
+        {
+          "term": "jops graces",
+          "heading": false
+        },
+        {
+          "term": "graces sect",
+          "heading": false
+        },
+        {
+          "term": "jops subsect",
+          "heading": false
+        },
+        {
+          "term": "graces thm",
+          "heading": false
+        },
+        {
+          "term": "borcea-brändén characterizations",
+          "heading": false
+        },
+        {
+          "term": "graces cor",
+          "heading": false
+        }
+      ],
+      "extract": "In 1914, Pólya and Schur [@polya1914zwei] characterized the set of diagonal linear operators on polynomials which preserve real-rootedness. Since this seminal paper, much work has been done in extending this characterization to other classes of linear operators. This program in essence came to a close in 2009 with a paper of Borcea and Brändén [@bb1], which gave a complete characterization of linear operators on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "Preliminaries",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-notation",
+      "number": "2.1",
+      "title": "Notation",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 258,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homogeneous polynomials",
+          "heading": false
+        },
+        {
+          "term": "call polynomials",
+          "heading": false
+        },
+        {
+          "term": "multi-aﬃne",
+          "heading": false
+        },
+        {
+          "term": "notation",
+          "heading": true
+        }
+      ],
+      "extract": "more detail the notation and consequences related to the use of homogeneous polynomials in place of usual univariate and mutlivariate polynomials. Then, we state a number of basic stability results in the language of homogeneous polynomials. 2.1 Notation Let [n] := {1, 2, . . ., n} and (1m) := (1, . . . , 1) ∈Nm 0 . For λ = (λ1, . . . , λm) ∈Nm 0 , we deﬁne: Cλ[x1, . . . , xm] := \b f ∈C[x1, . . . , xm] : degxk(f)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-homogeneous-polynomials",
+      "number": "2.2",
+      "title": "Homogeneous Polynomials",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 790,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homogeneous polynomials",
+          "heading": true
+        },
+        {
+          "term": "hmg lambda",
+          "heading": false
+        },
+        {
+          "term": "mathrm hmg",
+          "heading": false
+        },
+        {
+          "term": "top-degree monic",
+          "heading": false
+        },
+        {
+          "term": "mathbb lambda",
+          "heading": false
+        },
+        {
+          "term": "homog subsect",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "split mathop",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#homog_subsect label=\"homog_subsect\"} The usual degree-$n$ homogenization of a polynomial $f \\in \\mathbb{C}^n[x]$ is defined on monomials as follows and is extended linearly. $$\\begin{split} \\mathop{\\mathrm{Hmg}}_n : \\mathbb{C}^n[x] &\\rightarrow V(n) \\\\ x^k &\\mapsto x^ky^{n-k} \\end{split}$$ More generally, for $\\lambda \\in \\mathbb{N}_0^m$ the *degree-$\\lambda$ homogenization* is defined on monomials as follows",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-homogeneous-polynomials-as-representations",
+      "number": "3",
+      "title": "Homogeneous Polynomials as Representations",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 163,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reps sect",
+          "heading": false
+        },
+        {
+          "term": "fulton2013reptheory",
+          "heading": false
+        },
+        {
+          "term": "representation theory",
+          "heading": false
+        },
+        {
+          "term": "explicate",
+          "heading": false
+        },
+        {
+          "term": "stability-preserving",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#reps_sect label=\"reps_sect\"} In this section, we will discuss some basic representation theory of $\\mathop{\\mathrm{SL}}_2(\\mathbb{C})$ and show how the apolarity form and the notion of the symbol of an operator arise naturally in the representation theoretic context. Most of the representation theory we use in this section is very basic. There are a number of references which discuss the theory in full detail,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-31-the-action-of-sl2c",
+      "number": "3.1",
+      "title": "The Action of SL2(C)",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 526,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "boxtimes cdots",
+          "heading": false
+        },
+        {
+          "term": "phi binom",
+          "heading": false
+        },
+        {
+          "term": "symb subsect",
+          "heading": false
+        },
+        {
+          "term": "action subsect",
+          "heading": false
+        },
+        {
+          "term": "cdots otimes",
+          "heading": false
+        },
+        {
+          "term": "phi acts",
+          "heading": false
+        },
+        {
+          "term": "binom alpha",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#SL_action_subsect label=\"SL_action_subsect\"} Given $(\\alpha:\\beta) \\in \\mathbb{CP}^1$ and $\\phi \\in \\mathop{\\mathrm{SL}}_2(\\mathbb{C})$, we define the usual action of $\\mathop{\\mathrm{SL}}_2(\\mathbb{C})$ on $\\mathbb{CP}^1$ via $\\phi \\cdot (\\alpha:\\beta) := \\phi \\binom{\\alpha}{\\beta}$. That is, $\\phi$ acts by matrix multiplication on the vector $\\binom{\\alpha}{\\beta}$. Equivalently, $\\phi$ acts as its",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-32-an-important-invariant-map-and-apolarity",
+      "number": "3.2",
+      "title": "An Important Invariant Map, and Apolarity",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 714,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "apolarity",
+          "heading": true
+        },
+        {
+          "term": "otimes partial",
+          "heading": false
+        },
+        {
+          "term": "transvectant map",
+          "heading": false
+        },
+        {
+          "term": "apolarity form",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "partial x-c",
+          "heading": false
+        },
+        {
+          "term": "uform def",
+          "heading": false
+        },
+        {
+          "term": "graces thm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#inv_maps_subsect label=\"inv_maps_subsect\"} To aide in our investigation of inner tensor products of $\\mathop{\\mathrm{SL}}_2(\\mathbb{C})$ representations, we now define an important $\\mathop{\\mathrm{SL}}_2(\\mathbb{C})$-invariant linear map, denoted by $D$. This map has a long history in invariant theory, and we touch on this below. ::: proposition []{#Dmap_prop label=\"Dmap_prop\"} The linear map $D := (\\partial_x",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-33-the-symbol-of-an-operator",
+      "number": "3.3",
+      "title": "The Symbol of an Operator",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 768,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symb subsect",
+          "heading": false
+        },
+        {
+          "term": "mathrm symb",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "binom lambda",
+          "heading": false
+        },
+        {
+          "term": "alpha lambda",
+          "heading": false
+        },
+        {
+          "term": "lambda sqcup",
+          "heading": false
+        },
+        {
+          "term": "symb lemma",
+          "heading": false
+        },
+        {
+          "term": "cstab subsect",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#symb_subsect label=\"symb_subsect\"} Given representations $V(\\lambda)$ and $V(\\alpha)$ (for $\\lambda \\in \\mathbb{N}_0^m$ and $\\alpha \\in \\mathbb{N}_0^l$) of $(\\mathop{\\mathrm{SL}}_2(\\mathbb{C}))^m$ and $(\\mathop{\\mathrm{SL}}_2(\\mathbb{C}))^l$ respectively, the space of linear maps between $V(\\lambda)$ and $V(\\alpha)$ can be viewed as a representation of $(\\mathop{\\mathrm{SL}}_2(\\mathbb{C}))^{m+l}$ in a standard",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-4-polynomial-stability-theory",
+      "number": "4",
+      "title": "Polynomial Stability Theory",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 251,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rops deriv",
+          "heading": false
+        },
+        {
+          "term": "cops deriv",
+          "heading": false
+        },
+        {
+          "term": "deriv subsect",
+          "heading": false
+        },
+        {
+          "term": "stability",
+          "heading": true
+        },
+        {
+          "term": "rops thm",
+          "heading": false
+        },
+        {
+          "term": "stability preservation",
+          "heading": false
+        },
+        {
+          "term": "omega stability",
+          "heading": false
+        },
+        {
+          "term": "weak stability",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#stability_sect label=\"stability_sect\"} Given $\\lambda \\in \\mathbb{N}_0^m$, a polynomial $p(x_1,y_1,\\ldots,x_m,y_m) \\in V(\\lambda)$ is said to be *stable* if it doesn't vanish in $\\mathcal{H}_+^m \\subset (\\mathbb{CP}^1)^m$. More generally, $p$ is said to be *$\\Omega$-stable* if it doesn't vanish in $\\Omega$. As above, we say $p$ is *weakly $\\Omega$-stable* if possibly $p \\equiv 0$. Most all results related to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-41-polar-derivatives",
+      "number": "4.1",
+      "title": "Polar Derivatives",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 496,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polar",
+          "heading": true
+        },
+        {
+          "term": "polar derivative",
+          "heading": false
+        },
+        {
+          "term": "derivative phi",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathrm hmg",
+          "heading": false
+        },
+        {
+          "term": "laguerre prop",
+          "heading": false
+        },
+        {
+          "term": "ordinary derivative",
+          "heading": false
+        },
+        {
+          "term": "phi depends",
+          "heading": false
+        }
+      ],
+      "extract": "A crucial tool of classical stability theory is the polar derivative. In particular, this notion leads to Laguerre's theorem (Proposition [\\[laguerre_prop\\]](#laguerre_prop){reference-type=\"ref\" reference=\"laguerre_prop\"}), which is the main lemma toward Grace's theorem. By passing to homogeneous polynomials the polar derivative becomes conceptually simpler, and this in turn sheds further light on the general",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-42-projective-convexity-and-laguerres-theorem",
+      "number": "4.2",
+      "title": "Projective Convexity and Laguerre's Theorem",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 654,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "laguerre theorem",
+          "heading": true
+        },
+        {
+          "term": "circular regions",
+          "heading": false
+        },
+        {
+          "term": "convex regions",
+          "heading": false
+        },
+        {
+          "term": "proj conv",
+          "heading": false
+        },
+        {
+          "term": "projective convexity",
+          "heading": true
+        },
+        {
+          "term": "phi cdot",
+          "heading": false
+        },
+        {
+          "term": "conv subsect",
+          "heading": false
+        },
+        {
+          "term": "subseteq mathbb",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#proj_conv_subsect label=\"proj_conv_subsect\"} Circular regions play a key role in Grace's theorem and its corollaries. The main reason for this is Laguerre's theorem, which essentially says that polar derivatives with respect to points of a circular region preserve stability for that circular region. This theorem in turn relies on the Gauss-Lucas theorem, which deals with convex regions. A *circular region* in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-43-real-stable-polynomials",
+      "number": "4.3",
+      "title": "Real Stable Polynomials",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 978,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "real stable",
+          "heading": true
+        },
+        {
+          "term": "rops sect",
+          "heading": false
+        },
+        {
+          "term": "rops thm",
+          "heading": false
+        },
+        {
+          "term": "top-degree monic",
+          "heading": false
+        },
+        {
+          "term": "hermite-biehler theorem",
+          "heading": false
+        },
+        {
+          "term": "mathcal stable",
+          "heading": false
+        },
+        {
+          "term": "cops thm",
+          "heading": false
+        },
+        {
+          "term": "real stability",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#stab_subsect label=\"stab_subsect\"} We now give a number of classical real stability results, along with a few results from [@bb1] and [@bb2]. Additionally, we state these results for homogeneous polynomials in $V_\\mathbb{R}(\\lambda)$, taking roots at infinity into account. The results of this section will come in to play mainly in §[\\[Rops_sect\\]](#Rops_sect){reference-type=\"ref\" reference=\"Rops_sect\"}, where we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-5-graces-theorem",
+      "number": "5",
+      "title": "Grace's Theorem",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 373,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "grace theorem",
+          "heading": true
+        },
+        {
+          "term": "otimes partial",
+          "heading": false
+        },
+        {
+          "term": "alpha partial",
+          "heading": false
+        },
+        {
+          "term": "alpha lambda",
+          "heading": false
+        },
+        {
+          "term": "lambda delta",
+          "heading": false
+        },
+        {
+          "term": "graces sect",
+          "heading": false
+        },
+        {
+          "term": "graces thm",
+          "heading": false
+        },
+        {
+          "term": "widetilde stable",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#graces_sect label=\"graces_sect\"} We now prove the multivariate homogeneous Grace's theorem for some specific projectively convex regions and then derive a few important corollaries. These corollaries will be almost immediate once Grace's theorem has been proven, and yet will quickly yield stronger results regarding linear operators in the next section. In the usual proof of the classical univariate Grace's",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-51-other-regions",
+      "number": "5.1",
+      "title": "Other Regions",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 1366,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "proj conv",
+          "heading": false
+        },
+        {
+          "term": "conv characterization",
+          "heading": false
+        },
+        {
+          "term": "conv open",
+          "heading": false
+        },
+        {
+          "term": "circular regions",
+          "heading": false
+        },
+        {
+          "term": "circ cup",
+          "heading": false
+        },
+        {
+          "term": "grace pairs",
+          "heading": false
+        },
+        {
+          "term": "mathbb stable",
+          "heading": false
+        },
+        {
+          "term": "circ partial",
+          "heading": false
+        }
+      ],
+      "extract": "We now generalize the above theorem to other regions via $\\mathop{\\mathrm{SL}}_2(\\mathbb{C})$ action and topological considerations. Theorem [\\[grace_pairs_thm\\]](#grace_pairs_thm){reference-type=\"ref\" reference=\"grace_pairs_thm\"} can then be considered our most general form of Grace's theorem. First though, we define two new notions in order to simplify the rest of this section. ::: definition []{#grace_pair_def",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-52-evaluation-symbols",
+      "number": "5.2",
+      "title": "Evaluation Symbols",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 590,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "evaluation symbols",
+          "heading": true
+        },
+        {
+          "term": "mathrm symb",
+          "heading": false
+        },
+        {
+          "term": "cstab subsect",
+          "heading": false
+        },
+        {
+          "term": "str cstab",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "symb lemma",
+          "heading": false
+        },
+        {
+          "term": "grace pair",
+          "heading": false
+        },
+        {
+          "term": "disjoint grace",
+          "heading": false
+        }
+      ],
+      "extract": "One way to interpret the stability properties of a given polynomial is via the stability-preservation properties of a particular type of linear operator: the evaluation map. That is, the map which evaluates a polynomial $p(x,y)$ at $(a,b) \\neq (0,0)$ preserves strong $\\{(a:b)\\}$-stability, where $\\{(a:b)\\}$ is a subset of $\\mathbb{CP}^1$ consisting of a single point. Further, given $\\lambda \\in \\mathbb{N}_0^m$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-6-stability-properties-of-complex-linear-operato",
+      "number": "6",
+      "title": "Stability Properties of Complex Linear Operators",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 213,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stability",
+          "heading": true
+        },
+        {
+          "term": "omega stability",
+          "heading": false
+        },
+        {
+          "term": "stability preservation",
+          "heading": false
+        },
+        {
+          "term": "linear operators",
+          "heading": true
+        },
+        {
+          "term": "stability preserving",
+          "heading": false
+        },
+        {
+          "term": "weak omega",
+          "heading": false
+        },
+        {
+          "term": "strong stability",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Cops_sect label=\"Cops_sect\"} In [@bb1], Borcea and Brändén were concerned with classifying the class of weak $\\Omega$-stability preserving operators, where $\\Omega$ is some product of open circular regions. What they found is that an operator preserves weak $\\Omega$-stability if a particular associated polynomial (what they called the symbol) is $\\Omega$-stable. However, the \"only if\" direction does not",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-61-weak-stability-preservation",
+      "number": "6.1",
+      "title": "Weak Stability Preservation",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 318,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stability",
+          "heading": true
+        },
+        {
+          "term": "cops thm",
+          "heading": false
+        },
+        {
+          "term": "mathcal stability",
+          "heading": false
+        },
+        {
+          "term": "mathcal stable",
+          "heading": false
+        },
+        {
+          "term": "mathrm symb",
+          "heading": false
+        },
+        {
+          "term": "strong stability",
+          "heading": false
+        },
+        {
+          "term": "stability-preserving linear",
+          "heading": false
+        },
+        {
+          "term": "weak mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "Borcea and Brändén define the following symbol: $$\\mathop{\\mathrm{Symb}}_{BB}(T) := T[(x+z)^\\lambda] = \\sum_{\\mu \\leq \\lambda} \\binom{\\lambda}{\\mu} z^{\\lambda-\\mu} T(x^\\mu)$$ They then obtain the following characterization of stability-preserving linear operators. ::: BB_Cops_thm **Theorem [\\[BB_Cops_thm\\]](#BB_Cops_thm){reference-type=\"ref\" reference=\"BB_Cops_thm\"} 1** (Borcea-Brändén). *Fix $\\lambda \\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-62-strong-stability-preservation",
+      "number": "6.2",
+      "title": "Strong Stability Preservation",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 22,
+      "labelStart": "19",
+      "labelEnd": "22",
+      "words": 2059,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cops graces",
+          "heading": false
+        },
+        {
+          "term": "mathrm symb",
+          "heading": false
+        },
+        {
+          "term": "stability preservation",
+          "heading": true
+        },
+        {
+          "term": "cops prop",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "symb def",
+          "heading": false
+        },
+        {
+          "term": "mathrm maxroot",
+          "heading": false
+        },
+        {
+          "term": "mathrm minroot",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#str_Cstab_subsect label=\"str_Cstab_subsect\"} We now state one of our main characterization results, the strong stability preservation characterization. We then derive the Borcea-Brändén characterization as a corollary. ::: theorem []{#Cops_graces label=\"Cops_graces\"} Fix $\\lambda \\in \\mathbb{N}_0^m$, $\\alpha \\in \\mathbb{N}_0^l$, a linear operator $T \\in \\mathop{\\mathrm{Hom}}(V(\\lambda),V(\\alpha))$, any disjoint",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-63-deriving-the-complex-borcea-brändén-character",
+      "number": "6.3",
+      "title": "Deriving the Complex Borcea-Brändén Characterization",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 1032,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "borcea-brändén characterization",
+          "heading": true
+        },
+        {
+          "term": "cops graces",
+          "heading": false
+        },
+        {
+          "term": "naive cbb",
+          "heading": false
+        },
+        {
+          "term": "cbb cor",
+          "heading": false
+        },
+        {
+          "term": "cops deriv",
+          "heading": false
+        },
+        {
+          "term": "cops thm",
+          "heading": false
+        },
+        {
+          "term": "mathrm symb",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Cops_deriv_subsect label=\"Cops_deriv_subsect\"} As mentioned above, we hope to obtain the Borcea-Brändén characterization from our strong stability characterization given in Theorem [\\[Cops_graces\\]](#Cops_graces){reference-type=\"ref\" reference=\"Cops_graces\"}. To this end, we state two corollaries to Theorem [\\[Cops_graces\\]](#Cops_graces){reference-type=\"ref\" reference=\"Cops_graces\"}, which look (naively) as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-7-stability-properties-of-real-linear-operators",
+      "number": "7",
+      "title": "Stability Properties of Real Linear Operators",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 206,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "real stability",
+          "heading": true
+        },
+        {
+          "term": "linear operators",
+          "heading": true
+        },
+        {
+          "term": "stability preservation",
+          "heading": false
+        },
+        {
+          "term": "stability preserving",
+          "heading": false
+        },
+        {
+          "term": "rops sect",
+          "heading": false
+        },
+        {
+          "term": "weak real",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Rops_sect label=\"Rops_sect\"} Borcea and Brändén also classified the class of weak real stability preserving linear operators. As in the complex case, they showed that weak real stability preservation of a linear operator $T$ is almost equivalent to real stability of the associated symbol $\\mathop{\\mathrm{Symb}}_{BB}(T)$. We have to say \"almost equivalent\" here because there are certain weak real stability",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-71-weak-real-stability-preservation",
+      "number": "7.1",
+      "title": "Weak Real Stability Preservation",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": "24",
+      "labelEnd": "24",
+      "words": 254,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "real stability",
+          "heading": true
+        },
+        {
+          "term": "weak real",
+          "heading": true
+        },
+        {
+          "term": "rops thm",
+          "heading": false
+        },
+        {
+          "term": "mathrm symb",
+          "heading": false
+        },
+        {
+          "term": "mathcal stable",
+          "heading": false
+        },
+        {
+          "term": "stability preserving",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "stable polynomials",
+          "heading": false
+        }
+      ],
+      "extract": "Borcea and Brändén obtain the following characterization of weak real stability preserving linear operators. Recall the notion of *proper position* (denoted by $\\ll$) given in Definition [\\[pp_def\\]](#pp_def){reference-type=\"ref\" reference=\"pp_def\"}. ::: BB_Rops_thm **Theorem [\\[BB_Rops_thm\\]](#BB_Rops_thm){reference-type=\"ref\" reference=\"BB_Rops_thm\"} 1** (Borcea-Brändén). *Fix $\\lambda \\in \\mathbb{N}_0^m$ and any",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-72-strong-real-stability-preservation",
+      "number": "7.2",
+      "title": "Strong Real Stability Preservation",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 542,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "real stability",
+          "heading": true
+        },
+        {
+          "term": "rops graces",
+          "heading": false
+        },
+        {
+          "term": "cops graces",
+          "heading": false
+        },
+        {
+          "term": "strong real",
+          "heading": true
+        },
+        {
+          "term": "mathcal stable",
+          "heading": false
+        },
+        {
+          "term": "overline mathcal",
+          "heading": false
+        },
+        {
+          "term": "mathrm symb",
+          "heading": false
+        },
+        {
+          "term": "symb lemma",
+          "heading": false
+        }
+      ],
+      "extract": "We state and prove our strong real stability preservation characterization here, and then derive the Borcea-Brändén characterization as a corollary. The proof here takes a bit more work than in the complex case, and will rely on many of the real stability results discussed in §[\\[stab_subsect\\]](#stab_subsect){reference-type=\"ref\" reference=\"stab_subsect\"}. This extra work is essentially taken from the proof of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-73-deriving-the-real-borcea-brändén-characteriza",
+      "number": "7.3",
+      "title": "Deriving the Real Borcea-Brändén Characterization",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 668,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rops graces",
+          "heading": false
+        },
+        {
+          "term": "cops graces",
+          "heading": false
+        },
+        {
+          "term": "rops deriv",
+          "heading": false
+        },
+        {
+          "term": "rops thm",
+          "heading": false
+        },
+        {
+          "term": "mathcal stable",
+          "heading": false
+        },
+        {
+          "term": "clink",
+          "heading": false
+        },
+        {
+          "term": "real stable",
+          "heading": false
+        },
+        {
+          "term": "stability characterization",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Rops_deriv_subsect label=\"Rops_deriv_subsect\"} As in the complex case, we now obtain the Borcea-Brändén weak real stability characterization as a corollary to our strong real stability characterization given in Theorem [\\[Rops_graces\\]](#Rops_graces){reference-type=\"ref\" reference=\"Rops_graces\"}. To this end, we start by giving a sort of real stability version of Lemma",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-74-ray-and-interval-stability",
+      "number": "7.4",
+      "title": "Ray and Interval Stability",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 31,
+      "labelStart": "26",
+      "labelEnd": "31",
+      "words": 2537,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jops graces",
+          "heading": false
+        },
+        {
+          "term": "cops graces",
+          "heading": false
+        },
+        {
+          "term": "jops subsect",
+          "heading": false
+        },
+        {
+          "term": "rooted polynomials",
+          "heading": false
+        },
+        {
+          "term": "nonzero rooted",
+          "heading": false
+        },
+        {
+          "term": "real-rooted polynomials",
+          "heading": false
+        },
+        {
+          "term": "maps rooted",
+          "heading": false
+        },
+        {
+          "term": "mathrm symb",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Jops_subsect label=\"Jops_subsect\"} We now apply the above results to projectively convex regions of the form $\\mathcal{H}_+\\cup J^c$, where $J \\subset \\overline{\\mathbb{R}}$ is some connected set. From this, we obtain a classification of operators which both preserve strong $J$-rootedness and weak real-rootedness (a polynomial $p \\in V(n)$ is $J$-rooted if all its roots lie in $J$). This of course does not",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-a-tensor-product-decomposition-of-sl2c-represent",
+      "number": null,
+      "title": "A Tensor Product Decomposition of SL2(C) Representations",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 31,
+      "labelStart": "31",
+      "labelEnd": "31",
+      "words": 248,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "irreducible representations",
+          "heading": false
+        },
+        {
+          "term": "tensor",
+          "heading": true
+        },
+        {
+          "term": "inner tensor",
+          "heading": false
+        },
+        {
+          "term": "tensor products",
+          "heading": false
+        },
+        {
+          "term": "decomposition",
+          "heading": true
+        }
+      ],
+      "extract": "Tensor Product Decomposition of SL2(C) Representations In this appendix, we discuss in detail the decomposition of inner tensor products of SL2(C) and (SL2(C))m representations. The results given here are for the most part standard, and they are typically presented via the theory of Lie groups and algebras (e.g., in [FH13] and [Hum12]). Here though, we discuss these results in terms of the polynomial spaces V (n)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-a1-decomposition-of-vn-tensor-vm",
+      "number": null,
+      "title": "A.1 Decomposition of V(n) tensor V(m)",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 34,
+      "labelStart": "31",
+      "labelEnd": "34",
+      "words": 1449,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rth transvectant",
+          "heading": false
+        },
+        {
+          "term": "transvectant map",
+          "heading": false
+        },
+        {
+          "term": "nth transvectant",
+          "heading": false
+        },
+        {
+          "term": "apolarity form",
+          "heading": false
+        },
+        {
+          "term": "g-invariant map",
+          "heading": false
+        },
+        {
+          "term": "tensor",
+          "heading": true
+        },
+        {
+          "term": "decomposition",
+          "heading": true
+        },
+        {
+          "term": "irreducible components",
+          "heading": false
+        }
+      ],
+      "extract": "Fix n, m ∈N0. We now consider the representation of SL2(C) given by the inner tensor product, V (n)⊗V (m). The importance of the tensor product comes from the fact that it relates to consideration of SL2(C)-invariant bilinear forms like the apolarity form. In particular, the decomposition of the tensor product as a sum of irreducible representations (Proposition A.7) will show us exactly how the D map (see",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-b-the-grace-walsh-szego-coincidence-theorem",
+      "number": null,
+      "title": "B The Grace-Walsh-Szego Coincidence Theorem",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 34,
+      "labelStart": "34",
+      "labelEnd": "34",
+      "words": 90,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coincidence theorem",
+          "heading": true
+        },
+        {
+          "term": "grace-walsh-szeg coincidence",
+          "heading": false
+        },
+        {
+          "term": "symn",
+          "heading": false
+        }
+      ],
+      "extract": "The Grace-Walsh-Szeg˝o Coincidence Theorem A classical result in the representation theory of SL2(C) is the fact that V (n) ∼= Symn(V (1)). Here, Symn(V (1)) denotes the set of symmetric tensors in V (1)⊗n, or alternatively, the set of symmetric elements in V (1n). That is, there is some SL2(C)-invariant injection from V (n) to V (1)⊗n, and by our conceptual the- sis this map should transfer stability information.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-b1-polarization-and-projection",
+      "number": null,
+      "title": "B.1 Polarization and Projection",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 35,
+      "labelStart": "34",
+      "labelEnd": "35",
+      "words": 788,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polarization",
+          "heading": true
+        },
+        {
+          "term": "apolarity form",
+          "heading": false
+        },
+        {
+          "term": "homogeneous polynomials",
+          "heading": false
+        },
+        {
+          "term": "hmg",
+          "heading": false
+        },
+        {
+          "term": "projection map",
+          "heading": false
+        },
+        {
+          "term": "stability information",
+          "heading": false
+        },
+        {
+          "term": "m-invariant",
+          "heading": false
+        },
+        {
+          "term": "representation theoretic",
+          "heading": false
+        }
+      ],
+      "extract": "Polarization and Projection For polynomials of degree m ≤n, the degree-n polarization map is deﬁned on monomials as follows and is extended linearly. Π↑ n : Cn[x] →C(1n)[x1, . . . , xn] xk 7→1 n! X σ∈Sn k Y j=1 xσ(j) This deﬁnition can be extended to homogeneous polynomials in V (n) by composing with Hmg−1 n and Hmg(1n). The map Π↑ n has a left inverse Π↓ n, called the projection map, which we deﬁne as follows. Π↓ n",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-b2-the-coincidence-theorem",
+      "number": null,
+      "title": "B.2 The Coincidence Theorem",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 36,
+      "labelStart": "35",
+      "labelEnd": "36",
+      "words": 778,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coincidence theorem",
+          "heading": true
+        },
+        {
+          "term": "symb",
+          "heading": false
+        },
+        {
+          "term": "grace theorem",
+          "heading": false
+        },
+        {
+          "term": "grace pair",
+          "heading": false
+        },
+        {
+          "term": "evaluation symbol",
+          "heading": false
+        },
+        {
+          "term": "symbol lemma",
+          "heading": false
+        },
+        {
+          "term": "cλm",
+          "heading": false
+        },
+        {
+          "term": "grace-walsh-szeg",
+          "heading": false
+        }
+      ],
+      "extract": "The Coincidence Theorem The Grace-Walsh-Szeg˝o coincidence theorem has strong ties to Grace’s theorem, and most books and surveys on the subject state the two results side by side. Some books (e.g., [RS02]) even go so far as to demonstrate their equivalence, perhaps with other results involving typical polynomial convolutions. Here, we will state and prove the general multivariate version of the theorem in terms of",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "cops graces",
+      "heading": false
+    },
+    {
+      "term": "mathop mathrm",
+      "heading": false
+    },
+    {
+      "term": "mathrm symb",
+      "heading": false
+    },
+    {
+      "term": "mathbb stable",
+      "heading": false
+    },
+    {
+      "term": "symb subsect",
+      "heading": false
+    },
+    {
+      "term": "mathbb lambda",
+      "heading": false
+    },
+    {
+      "term": "rops graces",
+      "heading": false
+    },
+    {
+      "term": "symbol mathop",
+      "heading": false
+    },
+    {
+      "term": "stability characterization",
+      "heading": false
+    },
+    {
+      "term": "stable polynomials",
+      "heading": true
+    },
+    {
+      "term": "cdot mathop",
+      "heading": false
+    },
+    {
+      "term": "symb lemma",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 30,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 30,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 30 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1706.06168v3"
+  }
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "arxiv-2203.06568v4",
+    "type": "article-journal",
+    "title": "Semideﬁnite programming bounds for binary codes from a split Terwilliger algebra",
+    "author": [
+      {
+        "family": "Pin-Chieh Tseng",
+        "given": "Ching-Yi Lai"
+      },
+      {
+        "family": "Yu",
+        "given": "Wei-Hsuan"
+      }
+    ],
+    "issued": {
+      "raw": "D:20230612"
+    },
+    "URL": "https://arxiv.org/abs/2203.06568",
+    "abstract": "We study the upper bounds for A(n, d), the maximum size of codewords with length n and Hamming distance at least d. Schrijver studied the Terwilliger algebra of the Hamming scheme and proposed a semideﬁnite program to bound A(n, d). We derive more sophisticated matrix inequalities based on a split Terwilliger algebra to improve Schrijver’s semideﬁnite programming bounds on A(n, d). In particular, we improve the semideﬁnite programming bounds on A(18, 4) to 6551. I. INTRODUCTION In coding theory, one of the classical problems is to determine A(n, d), the maximum size of a binary (n, d) code with length n and minimum distance at least d. The (Hamming) distance distribution of a code is considered since the MacWilliams identities provide a linear relation between the distance distribution and its transform [MS77]. With this linear relation, the maximum possible size of a code can be formulated as a linear programming problem. Delsarte showed that the transform of the distance distribution is nonnegative and used linear programming techniques to derive upper bounds on A(n, d) [Del73]. Schrijver considered the distance relations among triplets of codewords and derived positive-semideﬁnite relations based on the Terwilliger algebra of Hamming scheme [Sch05]. Thus one can formulate a semideﬁnite program (SDP) on the maximum possible size of a code and derive a semideﬁnite programming bound on the size of a binary code. Several linear programming upper bounds on A(n, d) are improved since Schrijver’s semideﬁnite constraints imply Delsarte’s linear inequalities [Sch05] by diagonalizing certain positive semideﬁnite matrices derived from Schrijver’s semideﬁnite constraints in the Bose-Mesner algebra. This method was later extended to nonbinary codes by Gijswijt, Schrijver, and Tanaka [GST06]. Gijswijt, Mittelmann, and Schrijver further studied the distance relations among quadruples of codewords and generalized Schrijver’s SDP [GMS12], called quadruple SDP, which improved many",
+    "note": "arXiv:2203.06568"
+  }
+]

@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-topological-mass-transient-localisation",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:topological-mass-transient-localisation",
+  "kind": "lemma",
+  "title": "Transient terms are bounded by exceptional-divisor contributions",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-brane-boundary",
+    "papers/quantum-observable-universe/blocks/lem-topological-mass-eigenspace-decomp"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-topological-mass-transient-localisation"
+  ],
+  "tags": [
+    "transient",
+    "exceptional-divisor",
+    "blow-up",
+    "central-extension"
+  ],
+  "leanRef": "qou:QOU.LiftingDescent.tm_transient_localisation",
+  "text": "topological-mass-transient-localisation.md",
+  "provenance": "authored"
+}

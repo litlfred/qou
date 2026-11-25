@@ -1,0 +1,24 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/directory/xbot-relaxation-ckpt.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/directory/xbot-relaxation-ckpt",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Subgraph",
+      "name": "xbot-relaxation-ckpt",
+      "path": "xbot-relaxation-ckpt/",
+      "contentSource": {
+        "kind": "family",
+        "branch": "cat/qou/xbot-relaxation-ckpt/",
+        "keyFrom": "xbot-relaxation-<source-key>, where source-key is the branch-cache source key of the probe's import cone: the probe file, the evaluator it execs (rev_e_infinity_edge_limit_probe.py) and tools/qou-substrate/python/qou_substrate",
+        "declaredIn": "storage"
+      },
+      "holdsGraph": [
+        "https://litlfred.github.io/cat-harness/v0/ns/graphTypology/xbot-relaxation-ckpt"
+      ],
+      "description": "Stage and call checkpoints of computations/deltalambda/rev_e_infinity_xbot_relaxation_probe.py, a ~200-minute probe run inside a 120-minute harness window, stored so a killed run resumes in any container. One orphan branch per git state of the probe's import cone (the probe, the evaluator it execs, and qou_substrate; the probe refuses the store if any other module from the checkout is loaded); inside it, content-addressed JSONL shards of record name -> the probe's own record, where each record name carries a SHA-256 of the probe source up to that stage, the committed evaluator, the q0 string, mp.dps and every REV_XBOT* override. mpf values are exact `_mpf_` tuples (hex mantissa), never a float. Before 2026-11-22 the records were per-file JSON under ~/.cache/qou/xbot-relaxation-ckpt, which is still the fallback when a file in the cone is dirty (no source key, so the branch store is off). Read and written through the shared layer (scripts/lib/branch-cache.sh, computations/_branch_cache.py); it restores by default but seeds origin only when QOU_XBOT_CKPT_CACHE_PUSH=1. `xbot-relaxation-ckpt/` is where a member is mounted; nothing is tracked there. The kind is `typologies/xbot-relaxation-ckpt.json`.",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/xbot-relaxation-ckpt"
+    }
+  ]
+}

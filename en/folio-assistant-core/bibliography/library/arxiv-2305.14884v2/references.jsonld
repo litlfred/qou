@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2305.14884v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "PERTURBATIVE INVARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS",
+      "dcterms:creator": [
+        "STAVROS GAROUFALIDIS, MATTHIAS STORZER",
+        "WHEELER, CAMPBELL"
+      ],
+      "dcterms:issued": "D:20230712",
+      "dcterms:identifier": "https://arxiv.org/abs/2305.14884",
+      "dcterms:abstract": "We prove that a formal power series associated to an ideally triangu lated cusped hyperbolic 3-manifold (together with some further choices) is a top ological invariant. This formal power series is conjectured to agree to all orders in pertu rbation theory with two important topological invariants of hyperbolic knots, namely the Ka shaev invariant and the Andersen–Kashaev invariant (also known as the state-integral) o f Teichm¨ uller TQFT.",
+      "dcterms:source": "library/arxiv-2305.14884v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2305.14884v2"
+    }
+  ]
+}

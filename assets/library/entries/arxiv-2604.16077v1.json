@@ -1,0 +1,424 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2604.16077v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2604.16077v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "2\n1.1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2604.16077v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main result",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-11-main-result.md",
+      "narrative": null,
+      "content": "\\label{QHIintro1} In this paper we compute the real part of the semi-classical limit of the sequence of {\\it quantum hyperbolic invariants} (or \\textit{QHI}) associated to the (oriented) complement $M:=S^3 \\setminus K$ of the figure-eight knot $K:=4_1$. We notably obtain exponential growth of the invariants, with rate equal to the hyperbolic volume ${\\rm Vol}(M)/2\\pi$, or subexponential growth, depending on a choice of parameters of the QHI.  \\smallskip\n\nLet us state our main result. Denote by $\\lambda_K$ the canonical longitude of $K$, and by $X_{hyp}(M)$ the  irreducible component of the $PS",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2604.16077v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INVARIANTS:\nTHE FIGURE EIGHT KNOT COMPLEMENT\nST´EPHANE BASEILHAC1, FATHI BEN ARIBI2\n1 IMAG, Univ Montpellier, CNRS, France\n2 Sorbonne Universit´e, Universit´e Paris Cit´e, CNRS, IMJ-PRG, F-75005 Paris, France\n1 stephane.baseilhac@umontpellier.fr , 2 fathi.ben-aribi@imj-prg.fr\nAbstract. We compute the real part of the semi-classical limit of the sequence of quantum\nhyperbolic invariants (QHI) of the ﬁgure-eight knot complement M. We show that it is rigid,\nin the sense that it does not depend on the choice of holonomy representation of M, and\nit is either",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2604.16077v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Triangulation-version of Theorem",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-12-triangulation-version-of-theorem.md",
+      "narrative": null,
+      "content": "\\label{QHIintro2} Again denote $M:=S^3 \\setminus 4_1$, the figure-eight knot complement. Let $(T,b)$ be its usual geometric triangulation with two tetrahedra $U$ and $V$, and with a \\textit{branching} $b$ (i.e. an orientation of edges without cycles) as shown in Figure \\ref{Teight}.\n\n\\begin{figure}[ht]\n\t\\begin{center}\n\t\t\\includegraphics[width=8cm]{Teight.eps}\n\t\t\\caption{\\label{Teight} The face and edge identifications of a geometric branched ideal triangulation of the figure eight knot complement.}\n\t\\end{center}\n\\end{figure}\n\nFor the following notations, see Section \\ref{QGVsec} for details. D",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2604.16077v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Structure of the proof of Theorem",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-13-structure-of-the-proof-of-theorem.md",
+      "narrative": null,
+      "content": "\\label{sec:sketchproof} Let us denote by $PM(N)$ (for \\textit{positive monomial}) the set of complex-valued functions of $N$ of the form $$\\exp\\left (O_{N\\to \\infty}(1) + \\log(N) O_{N\\to \\infty}(1)\\right ).$$\nIn other words, a function $f(N)$ is in $PM(N)$ if there exist constants $C, C'>0$ and $\\alpha,\\beta \\in \\R$ such that\n$$ C N^\\alpha \\leqslant \\vert f(N)\\vert \\leqslant C' N^\\beta$$\nfor any $N$ large enough. \nConsequently, it satisfies $\\lim_{N\\ra +\\infty} \\textstyle \\frac{2\\pi}{N}\\Log \\left \\vert f(N) \\right \\vert = 0$.\n\nThe following basic lemma will be used several times in this paper.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2604.16077v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometric setup",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-2-geometric-setup.md",
+      "narrative": null,
+      "content": "\\label{NOTA} \nWe introduce in Sections \\ref{QGVsec} and \\ref{LOGW} the material required to define the reduced QHI state sums associated to the geometric ideal triangulations of cusped manifolds which support a branching.  The case of the figure-eight knot complement is developed in Section \\ref{4_1}. The generalization to arbitrary ({\\it i.e.}, not necessarily branched) geometric ideal triangulations, possibly with some flat tetrahedra (see Definition \\ref{defgeomtri}), is described in \\cite{AGT,NA}. Though any cusped manifold has a geometric ideal triangulation (see Section \\ref{sec:tri_GV})",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2604.16077v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The quantum gluing varieties",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-005-21-the-quantum-gluing-varieties.md",
+      "narrative": null,
+      "content": "\\label{QGVsec} These form the parameter spaces of the QHI state sum formulas. \n\n\n\\subsubsection{Quantum $3$-simplices} (see \\cite{AGT}, Section 3)\\label{sec:q3Delta} A {\\it quantum $3$-simplex} is a tuple $(\\Delta,b,\\bw)$ where:\n\\begin{itemize}\n\\item $(\\Delta,b)$ is an oriented tetrahedron with ordered vertices, say $v_0,\\ldots,v_3$. The letter ``$b$'' denotes the system of edge orientations, called {\\it branching}, which encodes the vertex ordering and is defined by the rule: an edge with endpoints $v_i$ and $v_j$ points towards $v_j$ if $j>i$. \n\n\\noindent We call $(\\Delta,b)$ a {\\it branched",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2604.16077v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gluing varieties and the holonomy map",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-212-gluing-varieties-and-the-holonomy-map.md",
+      "narrative": null,
+      "content": "\\label{sec:tri_GV} In this section we explain how the structures carried by quantum $3$-simplices can be globalized on ideal triangulations.\n\\smallskip\n\nLet $M$ be a cusped manifold, i.e. an oriented non-compact $3$-manifold admitting a complete hyperbolic metric of finite volume. We denote by $\\bar{M}$ the compact manifold with interior $M$; $\\partial \\bar{M}$ is a union of $p$ tori. \n\nLet  $T$ be an ideal triangulation of $M$, i.e. a gluing by simplicial face pairings of tetrahedra with truncated (``ideal'') vertices, homeomorphic to $M$. \n\nDenote by $\\Delta^1,\\ldots,\\Delta^n$ the tetrahedra",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2604.16077v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weights",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-007-22-weights.md",
+      "narrative": null,
+      "content": "\\label{LOGW} The structure of the set of systems of edge colors $d$ compatible with a point $w\\in G(T,b)$ follows from Neumann's theory of flattenings \\cite{N,N0}. This set is a disjoint union of affine spaces over $\\mz$-lattices determined by two pairs of cohomology classes on $M$ and $\\partial \\bar M$, that we call bulk weights and log weights. We refer to \\cite[Section 4C]{AGT} for a complete description of these lattices; examples are given in \\cite[Section 6.4]{AGT0}, \\cite[Section 9]{AGT}, and \\cite[Section 9]{NA} (in \\cite[Definition 1.7]{NA} we called the log weight \\eqref{formulelkapp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2604.16077v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Log weights and boundary weights",
+      "pageStart": 13,
+      "pageEnd": 18,
+      "target": "../sections/sec-008-221-log-weights-and-boundary-weights.md",
+      "narrative": null,
+      "content": "\\label{sec:landbweights} As usual denote by $\\bar M$ the compact manifold with interior $M$; so $\\partial \\bar M$ is a disjoint union of $c$ tori. Recall the holonomy map \\eqref{defholmapSept24}. \n\\smallskip\n\nIt is well-known that, besides the holonomy $\\rho_w$, a point $w\\in G(T,b)$ determines a group homomorphism \n\\begin{equation}\\label{dilationdef}\n\\fonc{\\delta_w}{H_1(\\partial \\bar M; \\mz)}{\\mc^*}{\\gamma}{\\delta_{w}(\\gamma).}\n\\end{equation}\nThus we have a map $\\delta\\colon G(T,b)\\ra H^1(\\partial \\bar M; \\mc^*)$, $w\\mapsto \\delta_w$. We  call $\\delta$ the {\\it dilation factor}. The scalar $\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2604.16077v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The logarithmic limit set",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-009-24-the-logarithmic-limit-set.md",
+      "narrative": null,
+      "content": "\\label{ASYWEIGHTS} Recall the spaces $G_{hyp,N}(T,b)$ and ${}_NX_{hyp}(M)$, where $N\\geq 3$ is odd (see Section \\ref{GhypN}); we saw that when $M=S^3\\setminus 4_1$ these spaces are respectively the solution set of the equations \\eqref{eqGN}, and (up to birational isomorphism) the plane curve whose points are  pairs $(\\kappa_\\bw(\\mu_K),\\kappa_\\bw(\\lambda_K))$ as in \\eqref{compbord}. Here we introduce a ``limit'' of the tower of spaces $\\{G_{hyp,N}(T,b)\\}_N$, that will be used in Section \\ref{sec:class_int}. It is related in a natural way (via holonomy maps) to a tropical curve associated to the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2604.16077v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The QHI",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-010-3-the-qhi.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2604.16077v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Functions in the QHI state sums",
+      "pageStart": 20,
+      "pageEnd": 31,
+      "target": "../sections/sec-011-31-functions-in-the-qhi-state-sums.md",
+      "narrative": null,
+      "content": "\\label{FUNCNOT}  Consider the rational functions $\\omega_N(.,.|n)$, $n\\in \\mn$, defined on the curve $\\mathcal{F}_N :=\\{(x,y)\\in \\mc^2\\vert \\ x^N+y^N=1\\}$ by\n\\begin{equation}\\label{functomegadef}\n\\omega_N(x,y|0)=1\\ ,\\ \\omega_N(x,y|n)=\\prod_{j=1}^n \\frac{y}{1-x\\zeta^{j}}\\ {\\rm if} \\ n\\geq 1.\n\\end{equation}\nSince $(1-x)(1-x\\zeta)\\ldots (1-x\\zeta^{N-1}) = 1-x^N=y^N$, we have\n$$\\omega_N(x,y|N+n) = \\omega_N(x,y|n).$$\nThese functions are closely related to Faddeev's \\cite{Fad,FKV} {\\it non compact quantum dilogarithm} $\\Phi_\\rmb$, and therefore to the classical Euler dilogarithm ${\\rm Li_2}$. The fu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2604.16077v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The QHI of cusped manifolds",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "../sections/sec-012-33-the-qhi-of-cusped-manifolds.md",
+      "narrative": null,
+      "content": "\\label{sec:QHIcusped} The aim of this section is to introduce some general features of the QHI, provide links to the literature (thus explaining notations), and to explain the splitting formula of the QHI into the symmetry defects and the reduced QHI. We refer to \\cite{GT} for the definition of the QHI of cusped manifolds by means of state sums over geometric branched ideal triangulations, and to \\cite{AGT} for the general situation of non necessarily branched triangulations. The QHI of cusped manifolds used in this paper are those of \\cite[Theorem 1.1]{AGT}, in the case where the bulk weights",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2604.16077v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Integral representation",
+      "pageStart": 33,
+      "pageEnd": 34,
+      "target": "../sections/sec-013-35-integral-representation.md",
+      "narrative": null,
+      "content": "\\label{INTREPEST} As we are going to consider the functions in \\eqref{form1} when $N\\rightarrow +\\infty$, we re-introduce now the hidden dependence on $N$ in the notations, thus letting $(\\bu_N)_N:=((\\bu_{0,N},\\bu_{1,N},\\bu_{2,N}))_N$ be a sequence of triples of quantum shape parameters on $\\Delta^0$ as in Section \\ref{4_1}. Contrary to the more general situation considered in Section \\ref{ASYWEIGHTS}, here we assume that $\\bu_{k,N}^N$ is constant. Thus, as in \\eqref{qshapeuvoct25} we write \\begin{equation}\\label{recapuvarmars25} \\bu_{k,N} = \\exp(\\bl_{k,N}),\\ \\bl_{k,N}:= \\frac{1}{N}(\\Log(u_{k}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2604.16077v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some logarithmic limits of log-parameters",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "../sections/sec-014-36-some-logarithmic-limits-of-log-parameters.md",
+      "narrative": null,
+      "content": "\\label{loglimmars25} In this section we focus on the peculiar logarithmic limits of log-parameters \\eqref{deflimlkmars26} selected by the two situations (a)-(b) of Theorem \\ref{asyinvteo}. These log-parameters have the form \\eqref{recapuvarmars25} (at least for $N$ large enough); that is, they have constant shape parameters $u_k\\in \\mc_*$ and constant edge colors $a_k\\in\\mz$. In this situation, and assuming \\eqref{situation2}, as usual we put, for $k\\in\\{0,1\\}$:\n$$\\bl_{k,\\infty}^\\bu := \\lim_{N\\ra +\\infty} \\bl_{k,N}.$$\nThe edge colors $a_0,a_1,a_2$ solve the linear system \\eqref{tetrel41}-\\eqre",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2604.16077v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotics of classical integrals on a vertical contour",
+      "pageStart": 35,
+      "pageEnd": 35,
+      "target": "../sections/sec-015-4-asymptotics-of-classical-integrals-on-a-vertic.md",
+      "narrative": null,
+      "content": "\\label{sec:SPM}\n\nThe analysis of the integral on the RHS of \\eqref{int1},  with the logarithmic limits $\\bl_{0,\\infty}$, $\\bl_{1,\\infty}$ specified by Lemma \\ref{rem:reduction:sigma:integral}, will be done in Section \\ref{sec:rect:contour}. Here, as a warm-up situation we focus on simpler integrals $I_{\\pm,N}(\\bl_{0,\\infty},\\bl_{1,\\infty})$, that we call ``classical'' integrals, with integrands given by an exponential term taken from the asymptotics of the integrand in \\eqref{int1} as $N\\to +\\infty$. These classical integrals are defined in Section \\ref{sec:class_int}; there, we provide also m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2604.16077v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classical integrals and their critical sets",
+      "pageStart": 35,
+      "pageEnd": 37,
+      "target": "../sections/sec-016-41-classical-integrals-and-their-critical-sets.md",
+      "narrative": null,
+      "content": "\\label{sec:class_int} Recall the contour $C_N$ from  \\eqref{choiceCN}. By the assumption \\eqref{situation2}, when $z\\in C_N$ both cases $0< \\mathfrak{I}(\\bl_{0,\\infty}+z) < 2\\pi$ and $-2\\pi < \\mathfrak{I}(\\bl_{0,\\infty}+z) < 0$ may happen. If $0< \\mathfrak{I}(\\bl_{0,\\infty}+z) < 2\\pi$, then $\\hat S_N(\\bl_{0,\\infty}+z)$ is given by the formulas \\eqref{intrepS}-\\eqref{defShat}, and Lemma \\ref{estimatehatS} yields\n\\begin{equation}\\label{equiv1}\n\\hat S_N(\\bl_{0,\\infty} + z)= e^{\\frac{N}{2i\\pi} {\\rm Li}_2(e^{\\bl_{0,\\infty} + z})}\\mathcal{O}_{N\\ra \\infty}(1).\n\\end{equation}\nIf $-2\\pi < \\mathfrak{I}(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2604.16077v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The saddle-point method",
+      "pageStart": 37,
+      "pageEnd": 39,
+      "target": "../sections/sec-017-42-the-saddle-point-method.md",
+      "narrative": null,
+      "content": "\\label{sub:SPM:PV} Let $\\lambda$ denote a piecewise continuously differentiable path contained in an open\nset $\\Delta \\subset \\mathbb{C}$, and let $z \\mapsto g(z)$ and $z \\mapsto f(z)$ denote two holomorphic functions on $\\Delta$.\nWe consider the asymptotics of the integral\n\\begin{equation}\\label{intIndec25}\nI_n := \\int_{\\lambda} g(z) e^{n (-i) f(z)} dz\\quad , \\ n\\to +\\infty.\n\\end{equation}\nLet us recall a concise version of the one-dimensional saddle point method theorem (see also \\cite{O'Sul}). Note that usually the condition (iii) below is written as a maximum of the real part of the potent",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2604.16077v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The limit in case (a)",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "../sections/sec-018-44-the-limit-in-case-a.md",
+      "narrative": null,
+      "content": "\\label{sub:SPM:a} Recall \\eqref{l0inftymars25}-\\eqref{l1inftymars25} and \\eqref{defL+-modif}-\\eqref{notInjui25}. In case (a) we have $\\bl_{0,\\infty}=-2i\\pi$ and $\\bl_{1,\\infty}=i\\pi$, so\n\\begin{equation}\\label{defL+-modifcasea}\n\\left\\lbrace\n\t\\begin{array}{ll}\n\t\tf_-(z)= \\mathcal{L}_-(z;-2i\\pi,i\\pi) := {\\rm Li}_2(e^{z})+z^2 - i\\pi z,& \n\t\t\\\\\n\t\tf_+(z) = \\mathcal{L}_+(z;-2i\\pi,i\\pi) := {\\rm Li}_2(e^{z})+z^2 +i\\pi  z.\n\t\t\\end{array}\\right.\n\\end{equation}\n\nWe will prove, using Proposition \\ref{prop:SPM:PV} for $I_{n,-}$, that\n\\begin{equation}\\label{asyIjui25}\n\\lim_{n\\ra +\\infty}  \\dfrac{1}{n}\\Log \\lef",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2604.16077v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The limit in case (b)",
+      "pageStart": 41,
+      "pageEnd": 47,
+      "target": "../sections/sec-019-45-the-limit-in-case-b.md",
+      "narrative": null,
+      "content": "\\label{sub:SPM:b}\nFor case (b) we have $\\bl_{0,\\infty}=-2i\\pi$ and $\\bl_{1,\\infty}=2i\\pi$. Hence\n\\begin{equation}\\label{defL+-modifcaseb}\n\t\\left\\lbrace\n\t\\begin{array}{ll}\n\t\tf_-(z)= \\mathcal{L}_-(z;-2i\\pi,2i\\pi) := {\\rm Li}_2(e^{z})+z^2 - 2i\\pi z,& \n\t\t\\\\\n\t\tf_+(z) = \\mathcal{L}_+(z;-2i\\pi,2i\\pi) := {\\rm Li}_2(e^{z})+z^2.& \n\t\\end{array}\\right.\n\\end{equation}\n\nWe will again use Proposition \\ref{prop:SPM:PV} to prove that $I_{n,-}$ and $I_{n,+}$ are \nof the form\n\\begin{equation}\\label{asyIjui25c}\nI_{n,-} = \\dfrac{\\text{Constant}_-}{\\sqrt{N}}(e^{i r_+ N}+o_{N\\to\\infty}(1)), \\ \\\nI_{n,+} = \\dfrac{\\tex",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2604.16077v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotics of the quantum integral",
+      "pageStart": 47,
+      "pageEnd": 66,
+      "target": "../sections/sec-020-5-asymptotics-of-the-quantum-integral.md",
+      "narrative": null,
+      "content": "\\label{sec:rect:contour}\n\nRecall that in Section \\ref{sec:SPM} we defined the functions\n\\begin{itemize}\n\\item (case (a), function $f_-$) $\\mathcal{L}_-(z;-2i\\pi,i\\pi) = {\\rm Li}_2(e^{z})+z^2 - i\\pi z$,\n\\item (case (a), function $f_+$)  $\\mathcal{L}_+(z;-2i\\pi,i\\pi) = {\\rm Li}_2(e^{z})+z^2 +i\\pi  z$,\n\\item (case (b), function $f_-$) $\\mathcal{L}_-(z;-2i\\pi,2i\\pi) = {\\rm Li}_2(e^{z})+z^2 - 2i\\pi z$,\n\\item (case (b), function $f_+$) $ \\mathcal{L}_+(z;-2i\\pi,2i\\pi) = {\\rm Li}_2(e^{z})+z^2$,\n\\end{itemize}\nand we studied the asymptotics of the integrals $\\textstyle \\int_{[is_N^-,2i\\pi-is_N^+]} e^{\\f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

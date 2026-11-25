@@ -1,0 +1,2238 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1601.02479v5",
+  "title": "arxiv-1601.02479v5",
+  "variant": "pdf",
+  "pages": 64,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Background",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-background"
+    },
+    {
+      "level": 2,
+      "title": "Absolute versus relative Donaldson–Thomas theory",
+      "number": "1.2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-absolute-versus-relative-donaldsonthomas-theo"
+    },
+    {
+      "level": 2,
+      "title": "Cohomological integrality",
+      "number": "1.3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-cohomological-integrality"
+    },
+    {
+      "level": 2,
+      "title": "Cohomological wall-crossing",
+      "number": "1.4",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-cohomological-wall-crossing"
+    },
+    {
+      "level": 2,
+      "title": "The perverse filtration",
+      "number": "1.5",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-15-the-perverse-filtration"
+    },
+    {
+      "level": 2,
+      "title": "Main results for cohomological Hall algebras",
+      "number": "1.6",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-16-main-results-for-cohomological-hall-algebras"
+    },
+    {
+      "level": 2,
+      "title": "The BPS Lie algebra",
+      "number": "1.7",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-17-the-bps-lie-algebra"
+    },
+    {
+      "level": 2,
+      "title": "Structure of the paper",
+      "number": "1.8",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-18-structure-of-the-paper"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgements",
+      "number": "1.9",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-19-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "Hodge theory and equivariant vanishing cycles",
+      "number": "2",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-2-hodge-theory-and-equivariant-vanishing-cycles"
+    },
+    {
+      "level": 2,
+      "title": "Monodromic mixed Hodge modules",
+      "number": "2.1",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-21-monodromic-mixed-hodge-modules"
+    },
+    {
+      "level": 2,
+      "title": "Equivariant vanishing cycles",
+      "number": "2.2",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-22-equivariant-vanishing-cycles"
+    },
+    {
+      "level": 1,
+      "title": "Moduli spaces of quiver representations",
+      "number": "3",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-3-moduli-spaces-of-quiver-representations"
+    },
+    {
+      "level": 2,
+      "title": "Basic notions",
+      "number": "3.1",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-31-basic-notions"
+    },
+    {
+      "level": 2,
+      "title": "Monoidal products",
+      "number": "3.2",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-32-monoidal-products"
+    },
+    {
+      "level": 2,
+      "title": "Framed moduli spaces",
+      "number": "3.3",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-33-framed-moduli-spaces"
+    },
+    {
+      "level": 2,
+      "title": "Jacobi algebras and potentials",
+      "number": "3.4",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-34-jacobi-algebras-and-potentials"
+    },
+    {
+      "level": 1,
+      "title": "Cohomological Donaldson–Thomas invariants",
+      "number": "4",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-4-cohomological-donaldsonthomas-invariants"
+    },
+    {
+      "level": 2,
+      "title": "Approximation of p`39`42`\"613A``45`47`\"603Ad by proper maps",
+      "number": "4.1",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The integrality isomorphism — Theorem A",
+      "number": "4.2",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-42-the-integrality-isomorphism-theorem-a"
+    },
+    {
+      "level": 2,
+      "title": "The cohomological wall crossing isomorphism — Theorem B",
+      "number": "4.3",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-43-the-cohomological-wall-crossing-isomorphism-t"
+    },
+    {
+      "level": 1,
+      "title": "Cohomological Hall algebras",
+      "number": "5",
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-5-cohomological-hall-algebras"
+    },
+    {
+      "level": 2,
+      "title": "The relative cohomological Hall algebra",
+      "number": "5.1",
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-51-the-relative-cohomological-hall-algebra"
+    },
+    {
+      "level": 2,
+      "title": "The absolute cohomological Hall algebra",
+      "number": "5.2",
+      "page": 47,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-52-the-absolute-cohomological-hall-algebra"
+    },
+    {
+      "level": 2,
+      "title": "The ambient perverse filtration",
+      "number": "5.3",
+      "page": 48,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-53-the-ambient-perverse-filtration"
+    },
+    {
+      "level": 1,
+      "title": "Structural results for cohomological Hall algebras",
+      "number": "6",
+      "page": 50,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-6-structural-results-for-cohomological-hall-alge"
+    },
+    {
+      "level": 2,
+      "title": "Symmetric monoidal structures, revisited",
+      "number": "6.1",
+      "page": 50,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-61-symmetric-monoidal-structures-revisited"
+    },
+    {
+      "level": 2,
+      "title": "The perverse associated graded Hopf algebra",
+      "number": "6.2",
+      "page": 53,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-62-the-perverse-associated-graded-hopf-algebra"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem C and construction of the BPS Lie algebra",
+      "number": "6.3",
+      "page": 56,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-63-proof-of-theorem-c-and-construction-of-the-bp"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem D",
+      "number": "6.4",
+      "page": 60,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-64-proof-of-theorem-d"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 63,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 407,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cohomological hall",
+          "heading": false
+        },
+        {
+          "term": "cohomological donaldson",
+          "heading": false
+        },
+        {
+          "term": "hall alge",
+          "heading": false
+        },
+        {
+          "term": "donaldson thomas",
+          "heading": false
+        },
+        {
+          "term": "hall algebras",
+          "heading": false
+        },
+        {
+          "term": "associated cohomological",
+          "heading": false
+        },
+        {
+          "term": "sven meinhardt",
+          "heading": false
+        },
+        {
+          "term": "perverse ﬁltration",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1601.02479v5 [math.RT] 6 Mar 2020 COHOMOLOGICAL DONALDSON–THOMAS THEORY OF A QUIVER WITH POTENTIAL AND QUANTUM ENVELOPING ALGEBRAS BEN DAVISON AND SVEN MEINHARDT Abstract. This paper concerns the cohomological aspects of Donaldson– Thomas theory for Jacobi algebras and the associated cohomological Hall alge- bra, introduced by Kontsevich and Soibelman. We prove the Hodge-theoretic categoriﬁcation of the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1601.02479v5/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "1. Introduction",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-background",
+      "number": "1.1",
+      "title": "Background",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 988,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "upmu upzeta",
+          "heading": false
+        },
+        {
+          "term": "upzeta mathop",
+          "heading": false
+        },
+        {
+          "term": "uplambda upmu",
+          "heading": false
+        },
+        {
+          "term": "mathfrak upzeta",
+          "heading": false
+        },
+        {
+          "term": "upzeta semistable",
+          "heading": false
+        },
+        {
+          "term": "mathcal upmu",
+          "heading": false
+        },
+        {
+          "term": "upzeta graded",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "The critical cohomological Hall algebra $\\mathop{\\mathrm{H}}(\\mathcal{A}_{B,W})$ associated to a noncommutative smooth algebra $B$ and potential $W\\in B/[B,B]_{\\mathop{\\mathrm{vect}}}$ was introduced by Kontsevich and Soibelman in [@KS2] as a way of categorifying the theory of Donaldson--Thomas invariants. The meaning of \"critical\" here is that the Hall algebra is built out of the hypercohomology of the sheaf of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-absolute-versus-relative-donaldsonthomas-theo",
+      "number": "1.2",
+      "title": "Absolute versus relative Donaldson–Thomas theory",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 1143,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "upmu upzeta",
+          "heading": false
+        },
+        {
+          "term": "upzeta mathop",
+          "heading": false
+        },
+        {
+          "term": "uplambda upmu",
+          "heading": false
+        },
+        {
+          "term": "mathfrak upzeta",
+          "heading": false
+        },
+        {
+          "term": "mathcal upzeta",
+          "heading": false
+        },
+        {
+          "term": "dim upzeta",
+          "heading": false
+        },
+        {
+          "term": "upzeta right",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#abvsrel label=\"abvsrel\"} For the Donaldson--Thomas theory and cohomological Hall algebras associated to quivers, a vital role is always played by the grading by $\\mathbb{N}^{Q_0}$, the semigroup of dimension vectors, which should be seen as a weight space decomposition in the language of Lie algebras and quantum groups. As an illustration, consider the case in which we forget about potentials and stability",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-cohomological-integrality",
+      "number": "1.3",
+      "title": "Cohomological integrality",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 8,
+      "labelStart": "5",
+      "labelEnd": "8",
+      "words": 1164,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "upmu upzeta",
+          "heading": false
+        },
+        {
+          "term": "upzeta mathop",
+          "heading": false
+        },
+        {
+          "term": "mathbf upzeta",
+          "heading": false
+        },
+        {
+          "term": "mathcal upzeta",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "upzeta semistable",
+          "heading": false
+        },
+        {
+          "term": "uplambda upmu",
+          "heading": false
+        },
+        {
+          "term": "mathrm mmhm",
+          "heading": false
+        }
+      ],
+      "extract": "Now that we have introduced the relative version of Donaldson--Thomas theory, we can state the first main result of this paper, a cohomological refinement of the integrality conjecture. ::: thmx []{#ThmA label=\"ThmA\"} Let $Q,W$ be a quiver with potential, let $\\upmu\\in (-\\infty,\\infty]$ be a slope, and let $\\upzeta$ be a $\\upmu$-generic stability condition. Let",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-cohomological-wall-crossing",
+      "number": "1.4",
+      "title": "Cohomological wall-crossing",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 300,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "upphi mathop",
+          "heading": false
+        },
+        {
+          "term": "mathcal mathop",
+          "heading": false
+        },
+        {
+          "term": "mathfrak mathop",
+          "heading": false
+        },
+        {
+          "term": "xrightarrow upmu",
+          "heading": false
+        },
+        {
+          "term": "mathrm mathbf",
+          "heading": false
+        },
+        {
+          "term": "infty mathop",
+          "heading": false
+        },
+        {
+          "term": "mathrm mmhm",
+          "heading": false
+        }
+      ],
+      "extract": "Our second main result is a (relative) cohomological lift of the following incarnation of the wall crossing formula, with $\\int$ denoting the Kontsevich--Soibelman integration map: $$\\label{WCI} \\int[\\mathfrak{M}^{\\mathcal{S}},\\upphi_{\\mathop{\\mathrm{Tr}}(W)}]=\\prod_{\\infty\\xrightarrow{\\upmu}-\\infty}\\int[\\mathfrak{M}^{\\upzeta\\mathop{\\mathrm{-ss}},\\mathcal{S}}_{\\upmu},\\upphi_{\\mathop{\\mathrm{Tr}}(W)}].$$ This is an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-15-the-perverse-filtration",
+      "number": "1.5",
+      "title": "The perverse filtration",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 260,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "upzeta mathop",
+          "heading": false
+        },
+        {
+          "term": "mathbf upzeta",
+          "heading": false
+        },
+        {
+          "term": "upmu upzeta",
+          "heading": false
+        },
+        {
+          "term": "mathcal upzeta",
+          "heading": false
+        },
+        {
+          "term": "upzeta semistable",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "upzeta mathbb",
+          "heading": false
+        },
+        {
+          "term": "upphi mathop",
+          "heading": false
+        }
+      ],
+      "extract": "An advantage of considering constructions relative to the base $\\mathcal{M}_{\\upmu}^{\\upzeta\\mathop{\\mathrm{-ss}}}$ instead of $\\Uplambda_{\\upmu}^{\\upzeta}$ is that it leads naturally to the introduction of the perverse filtration on $\\mathop{\\mathrm{H}}(\\mathcal{A}_{W,\\upmu}^{\\upzeta,\\mathcal{S}})$. Let $\\mathbf{f}\\in\\mathbb{N}^{Q_0}$ be a framing vector, and let",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-16-main-results-for-cohomological-hall-algebras",
+      "number": "1.6",
+      "title": "Main results for cohomological Hall algebras",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 12,
+      "labelStart": "9",
+      "labelEnd": "12",
+      "words": 1249,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "upmu upzeta",
+          "heading": false
+        },
+        {
+          "term": "upzeta mathop",
+          "heading": false
+        },
+        {
+          "term": "mathcal upmu",
+          "heading": false
+        },
+        {
+          "term": "mathbf upzeta",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "bps upzeta",
+          "heading": false
+        },
+        {
+          "term": "uplambda upmu",
+          "heading": false
+        },
+        {
+          "term": "coha mathop",
+          "heading": false
+        }
+      ],
+      "extract": "Assume that the stability condition $\\upzeta$ is generic. The object $\\mathop{\\mathrm{H}}(\\mathcal{A}^{\\upzeta,\\mathcal{S}}_{W,\\upmu})$ is a unital algebra in the category of $\\Uplambda_{\\upmu}^{\\upzeta}$-graded monodromic mixed Hodge structures, which corresponds to a monoid in the category $\\mathcal{D}(\\mathop{\\mathrm{MMHM}}(\\Uplambda_{\\upmu}^{\\upzeta}))$. The monoidal product in this category is defined by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-17-the-bps-lie-algebra",
+      "number": "1.7",
+      "title": "The BPS Lie algebra",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 236,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bps lie",
+          "heading": true
+        },
+        {
+          "term": "upmu upzeta",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": true
+        },
+        {
+          "term": "mathrm mathcal",
+          "heading": false
+        },
+        {
+          "term": "mathfrak mathrm",
+          "heading": false
+        },
+        {
+          "term": "uppsi",
+          "heading": false
+        },
+        {
+          "term": "bps invariants",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#BPSLA label=\"BPSLA\"} One of the main contributions of the current paper, and a direct corollary of the above structural theorems, is the definition of the BPS Lie algebra. This is a natural Lie algebra, for any choice of $Q,W,\\upmu,\\mathcal{S},\\uppsi$ and $\\upmu$-generic stability condition $\\upzeta$, the characteristic function of which recovers the (refined) BPS invariants for this data. Part of Theorem",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-18-structure-of-the-paper",
+      "number": "1.8",
+      "title": "Structure of the paper",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 320,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cwcfsec",
+          "heading": false
+        },
+        {
+          "term": "qea",
+          "heading": false
+        },
+        {
+          "term": "integrality isomorphism",
+          "heading": false
+        },
+        {
+          "term": "integrality theorem",
+          "heading": false
+        },
+        {
+          "term": "thma",
+          "heading": false
+        },
+        {
+          "term": "calabi--yau variety",
+          "heading": false
+        },
+        {
+          "term": "strongpbw",
+          "heading": false
+        },
+        {
+          "term": "cwct",
+          "heading": false
+        }
+      ],
+      "extract": "The paper is broken roughly into three parts: there is the introduction above, a second part which goes up to Section [\\[cwcfSec\\]](#cwcfSec){reference-type=\"ref\" reference=\"cwcfSec\"}, and then a third part. The purpose of the second part is to prove the cohomological integrality theorem (Theorem [\\[ThmA\\]](#ThmA){reference-type=\"ref\" reference=\"ThmA\"}) and the cohomological wall crossing theorem (Theorem",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-19-acknowledgements",
+      "number": "1.9",
+      "title": "Acknowledgements",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 141,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "research council",
+          "heading": false
+        },
+        {
+          "term": "european research",
+          "heading": false
+        },
+        {
+          "term": "tamás",
+          "heading": false
+        },
+        {
+          "term": "davison",
+          "heading": false
+        },
+        {
+          "term": "davesh",
+          "heading": false
+        }
+      ],
+      "extract": "During the writing of this paper, Ben Davison was a postdoctoral researcher at EPFL, supported by the Advanced Grant \"Arithmetic and physics of Higgs moduli spaces\" No. 320593 of the European Research Council. During the extensive redrafting of the paper he was supported by the University of Glasgow and the University of Edinburgh, partly supported by a Royal Society University Research Fellowship, and by the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-2-hodge-theory-and-equivariant-vanishing-cycles",
+      "number": "2",
+      "title": "Hodge theory and equivariant vanishing cycles",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-011-21-monodromic-mixed-hodge-modules",
+      "number": "2.1",
+      "title": "Monodromic mixed Hodge modules",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 20,
+      "labelStart": "13",
+      "labelEnd": "20",
+      "words": 3710,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mixed hodge",
+          "heading": true
+        },
+        {
+          "term": "monodromic mixed",
+          "heading": true
+        },
+        {
+          "term": "hodge modules",
+          "heading": true
+        },
+        {
+          "term": "upphi mathop",
+          "heading": false
+        },
+        {
+          "term": "mon upphi",
+          "heading": false
+        },
+        {
+          "term": "boxtimes upphi",
+          "heading": false
+        },
+        {
+          "term": "mathrm mhm",
+          "heading": false
+        },
+        {
+          "term": "upnu mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#MMHMs label=\"MMHMs\"} Let $X$ be a complex variety. Then we define as in [@Saito89; @Saito90] the category $\\mathop{\\mathrm{MHM}}(X)$ of mixed Hodge modules on $X$. See [@Saito1] for an overview of the theory. There is an exact functor $\\mathop{\\mathrm{rat}}_X\\colon \\mathcal{D}(\\mathop{\\mathrm{MHM}}(X))\\rightarrow\\mathcal{D}(\\mathop{\\mathrm{Perv}}(X))$ which takes a complex of mixed Hodge modules $\\mathcal{F}$ to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-22-equivariant-vanishing-cycles",
+      "number": "2.2",
+      "title": "Equivariant vanishing cycles",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 25,
+      "labelStart": "20",
+      "labelEnd": "25",
+      "words": 2104,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "upphi mathop",
+          "heading": false
+        },
+        {
+          "term": "mathrm mon",
+          "heading": false
+        },
+        {
+          "term": "upphi mathbb",
+          "heading": false
+        },
+        {
+          "term": "upsilon upphi",
+          "heading": false
+        },
+        {
+          "term": "mathbf upphi",
+          "heading": false
+        },
+        {
+          "term": "colonequals mathop",
+          "heading": false
+        },
+        {
+          "term": "upphi overline",
+          "heading": false
+        },
+        {
+          "term": "mon mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#TotCon label=\"TotCon\"} We do not propose here to write down a full six functor and vanishing cycles functor formalism for equivariant monodromic mixed Hodge modules via a theory of monodromic mixed Hodge modules on stacks. Instead we mimic the constructions of [@BL94] and Totaro's approximation [@To99] of the Chow ring of classifying spaces by finite-dimensional algebraic approximations to produce only the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-3-moduli-spaces-of-quiver-representations",
+      "number": "3",
+      "title": "Moduli spaces of quiver representations",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": "25",
+      "labelEnd": "25",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-014-31-basic-notions",
+      "number": "3.1",
+      "title": "Basic notions",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 28,
+      "labelStart": "25",
+      "labelEnd": "28",
+      "words": 1533,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "upzeta mathop",
+          "heading": false
+        },
+        {
+          "term": "upmu upzeta",
+          "heading": false
+        },
+        {
+          "term": "mathbf upzeta",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathfrak upzeta",
+          "heading": false
+        },
+        {
+          "term": "upzeta semistable",
+          "heading": false
+        },
+        {
+          "term": "mathcal upzeta",
+          "heading": false
+        },
+        {
+          "term": "uplambda upmu",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Bassection label=\"Bassection\"}We will use the notations and conventions from [@DaMe4], which we briefly recall. Let $Q=(Q_0,Q_1,s,t)$ denote a quiver, that is, a pair of finite sets $Q_0$ and $Q_1$, and a pair of maps $s\\colon Q_1\\rightarrow Q_0$ and $t\\colon Q_1\\rightarrow Q_0$, taking an arrow to its source and target, respectively. Denote by $\\mathbb{C} Q$ the free path category of $Q$ over $\\mathbb{C}$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-32-monoidal-products",
+      "number": "3.2",
+      "title": "Monoidal products",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 32,
+      "labelStart": "28",
+      "labelEnd": "32",
+      "words": 1555,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boxtimes mathop",
+          "heading": false
+        },
+        {
+          "term": "upzeta mathop",
+          "heading": false
+        },
+        {
+          "term": "upmu upzeta",
+          "heading": false
+        },
+        {
+          "term": "mathrm mmhm",
+          "heading": false
+        },
+        {
+          "term": "mathbf boxtimes",
+          "heading": false
+        },
+        {
+          "term": "boxtimes oplus",
+          "heading": false
+        },
+        {
+          "term": "boxtimes mathcal",
+          "heading": false
+        },
+        {
+          "term": "sym boxtimes",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#prodss label=\"prodss\"} In this section we define and introduce the first properties of the categorification of the quantum torus from refined DT theory. ::: definition []{#lfDef label=\"lfDef\"} Let $\\mathcal{F}\\in\\mathcal{D}(\\mathop{\\mathrm{MMHM}}(X))$ for $X$ a scheme. We say that $\\mathcal{F}$ is *locally finite* if for each $Z\\in \\uppi\\hspace{0.05em}_0(X)$ 1. for each $n\\in\\mathbb{Z}$, the element",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-33-framed-moduli-spaces",
+      "number": "3.3",
+      "title": "Framed moduli spaces",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 32,
+      "labelStart": "32",
+      "labelEnd": "32",
+      "words": 302,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "upmu upzeta",
+          "heading": false
+        },
+        {
+          "term": "mathbf upzeta",
+          "heading": false
+        },
+        {
+          "term": "upzeta mathop",
+          "heading": false
+        },
+        {
+          "term": "mathcal upzeta",
+          "heading": false
+        },
+        {
+          "term": "uplambda upmu",
+          "heading": false
+        },
+        {
+          "term": "picking upzeta",
+          "heading": false
+        },
+        {
+          "term": "mathrm mathbf",
+          "heading": false
+        },
+        {
+          "term": "mathbf semistable",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#framedSec label=\"framedSec\"} Framed moduli spaces will play a central role in what follows. Their cohomology provides an approximation to the cohomology of $\\mathfrak{M}^{\\upzeta\\mathop{\\mathrm{-ss}}}$, in a way which we will make precise in Section [\\[cohaDT\\]](#cohaDT){reference-type=\"ref\" reference=\"cohaDT\"}. Let $\\mathbf{f}\\in\\mathbb{N}^{Q_0}$ be a dimension vector (called the framing vector). We form a new",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-34-jacobi-algebras-and-potentials",
+      "number": "3.4",
+      "title": "Jacobi algebras and potentials",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 34,
+      "labelStart": "32",
+      "labelEnd": "34",
+      "words": 725,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "upmu upzeta",
+          "heading": false
+        },
+        {
+          "term": "upzeta mathop",
+          "heading": false
+        },
+        {
+          "term": "upphi mathop",
+          "heading": false
+        },
+        {
+          "term": "mathbf upzeta",
+          "heading": false
+        },
+        {
+          "term": "boxtimes upphi",
+          "heading": false
+        },
+        {
+          "term": "mathcal upzeta",
+          "heading": false
+        },
+        {
+          "term": "upzeta colon",
+          "heading": false
+        },
+        {
+          "term": "upzeta rightarrow",
+          "heading": false
+        }
+      ],
+      "extract": "Let $W\\in\\mathbb{C} Q/[\\mathbb{C}Q,\\mathbb{C}Q]$ be a finite linear combination of equivalence classes of cyclic words in $\\mathbb{C} Q$. Such a $W$ is called a *potential*. A potential $W$ induces a function $\\mathfrak{Tr}(W)$ on $\\mathfrak{M}$, defined as follows. Firstly, assume that $W$ lifts to a single cyclic word $c=a_r\\ldots a_0$ in $\\mathbb{C} Q$. Then a $\\mathbb{C}Q$-module $F$ determines an endomorphism",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-4-cohomological-donaldsonthomas-invariants",
+      "number": "4",
+      "title": "Cohomological Donaldson–Thomas invariants",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 37,
+      "labelStart": "34",
+      "labelEnd": "37",
+      "words": 1585,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "upzeta upphi",
+          "heading": false
+        },
+        {
+          "term": "upzeta mathop",
+          "heading": false
+        },
+        {
+          "term": "mathbf upzeta",
+          "heading": false
+        },
+        {
+          "term": "mathfrak upzeta",
+          "heading": false
+        },
+        {
+          "term": "mathcal upzeta",
+          "heading": false
+        },
+        {
+          "term": "mathbf uppi",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathbb upzeta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#CoDTSec label=\"CoDTSec\"} ## Approximation of $p^{\\upzeta}_{\\mathop{\\mathrm{\\mathbf{d}}}}$ by proper maps {#cohaDT} Recall from ([\\[pdef\\]](#pdef){reference-type=\"ref\" reference=\"pdef\"}) (and the remark following it) the morphism $$p^{\\upzeta}_{\\mathop{\\mathrm{\\mathbf{d}}}}\\colon",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-42-the-integrality-isomorphism-theorem-a",
+      "number": "4.2",
+      "title": "The integrality isomorphism — Theorem A",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 40,
+      "labelStart": "37",
+      "labelEnd": "40",
+      "words": 1182,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "upmu upzeta",
+          "heading": false
+        },
+        {
+          "term": "upzeta mathop",
+          "heading": false
+        },
+        {
+          "term": "mathbf upzeta",
+          "heading": false
+        },
+        {
+          "term": "bps upzeta",
+          "heading": false
+        },
+        {
+          "term": "mathcal upzeta",
+          "heading": false
+        },
+        {
+          "term": "upzeta colonequals",
+          "heading": false
+        },
+        {
+          "term": "mathfrak upzeta",
+          "heading": false
+        },
+        {
+          "term": "upphi mathop",
+          "heading": false
+        }
+      ],
+      "extract": "Assume that $\\upzeta$ is a $\\upmu$-generic Bridgeland stability condition. As in [@DaMe4] and the introduction, for $\\mathop{\\mathrm{\\mathbf{d}}}\\in\\Uplambda_{\\upmu}^{\\upzeta}\\setminus \\{0\\}$ we define the following elements of $\\mathop{\\mathrm{MMHM}}(\\mathcal{M}^{\\upzeta\\mathop{\\mathrm{-ss}}}_{\\mathop{\\mathrm{\\mathbf{d}}}})$ and $\\mathcal{D}^{b}(\\mathop{\\mathrm{MMHM}}(\\mathop{\\mathrm{pt}}))$, respectively",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-43-the-cohomological-wall-crossing-isomorphism-t",
+      "number": "4.3",
+      "title": "The cohomological wall crossing isomorphism — Theorem B",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 43,
+      "labelStart": "40",
+      "labelEnd": "43",
+      "words": 1447,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "upzeta mathop",
+          "heading": false
+        },
+        {
+          "term": "upmu upzeta",
+          "heading": false
+        },
+        {
+          "term": "mathbf upzeta",
+          "heading": false
+        },
+        {
+          "term": "mathfrak upzeta",
+          "heading": false
+        },
+        {
+          "term": "upzeta overline",
+          "heading": false
+        },
+        {
+          "term": "upzeta upphi",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "upzeta colonequals",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#cwcfSec label=\"cwcfSec\"} In this section we prove Theorem [\\[CWCT\\]](#CWCT){reference-type=\"ref\" reference=\"CWCT\"}, which is a categorification of the motivic wall crossing formula ([\\[WCI\\]](#WCI){reference-type=\"ref\" reference=\"WCI\"}). In Section [\\[CWCF\\]](#CWCF){reference-type=\"ref\" reference=\"CWCF\"} we will prove that this isomorphism can be realised in terms of multiplication in the cohomological Hall",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-5-cohomological-hall-algebras",
+      "number": "5",
+      "title": "Cohomological Hall algebras",
+      "level": 1,
+      "pageStart": 43,
+      "pageEnd": 43,
+      "labelStart": "43",
+      "labelEnd": "43",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-022-51-the-relative-cohomological-hall-algebra",
+      "number": "5.1",
+      "title": "The relative cohomological Hall algebra",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 47,
+      "labelStart": "43",
+      "labelEnd": null,
+      "words": 1456,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "upzeta mathop",
+          "heading": false
+        },
+        {
+          "term": "upmu upzeta",
+          "heading": false
+        },
+        {
+          "term": "mathbf upzeta",
+          "heading": false
+        },
+        {
+          "term": "upphi mathop",
+          "heading": false
+        },
+        {
+          "term": "mathfrak upzeta",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathcal upzeta",
+          "heading": false
+        },
+        {
+          "term": "boxtimes mathop",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#relc label=\"relc\"} In this section we define the relative cohomological Hall algebra $\\mathop{\\mathrm{\\mathcal{H}}}(\\mathop{\\mathrm{\\mathcal{A}}}_{W,\\upmu}^{\\upzeta})$. For now we will not assume that the stability condition $\\upzeta\\in\\mathbb{H}_+^{Q_0}$ is generic. The underlying cohomologically graded monodromic mixed Hodge module of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-52-the-absolute-cohomological-hall-algebra",
+      "number": "5.2",
+      "title": "The absolute cohomological Hall algebra",
+      "level": 2,
+      "pageStart": 47,
+      "pageEnd": 48,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 395,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "upzeta mathop",
+          "heading": false
+        },
+        {
+          "term": "mathbf upzeta",
+          "heading": false
+        },
+        {
+          "term": "blacksquare mathop",
+          "heading": false
+        },
+        {
+          "term": "upphi mathop",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "upmu upzeta",
+          "heading": false
+        },
+        {
+          "term": "mathfrak upzeta",
+          "heading": false
+        },
+        {
+          "term": "mon blacksquare",
+          "heading": false
+        }
+      ],
+      "extract": "We start to complete Remark [\\[absRem\\]](#absRem){reference-type=\"ref\" reference=\"absRem\"} by recalling the definition of the cohomological algebra structure on $\\mathop{\\mathrm{H}}(\\mathcal{A}^{\\upzeta,\\mathcal{S}}_{W,\\upmu})$ from [@KS2]. Extending ([\\[XNdef\\]](#XNdef){reference-type=\"ref\" reference=\"XNdef\"}, [\\[XXNdef\\]](#XXNdef){reference-type=\"ref\" reference=\"XXNdef\"}) we set $$\\begin{aligned}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-53-the-ambient-perverse-filtration",
+      "number": "5.3",
+      "title": "The ambient perverse filtration",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 50,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1355,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "upzeta mathop",
+          "heading": false
+        },
+        {
+          "term": "mathbf upzeta",
+          "heading": false
+        },
+        {
+          "term": "upzeta upphi",
+          "heading": false
+        },
+        {
+          "term": "upmu upzeta",
+          "heading": false
+        },
+        {
+          "term": "perverse filtration",
+          "heading": true
+        },
+        {
+          "term": "mathcal upzeta",
+          "heading": false
+        },
+        {
+          "term": "mathfrak upzeta",
+          "heading": false
+        },
+        {
+          "term": "mathbf uppi",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#PervSec label=\"PervSec\"} For $\\mathbf{f},\\mathop{\\mathrm{\\mathbf{d}}}\\in \\mathbb{N}^{Q_0}$ set $$\\upgamma(\\mathbf{f},\\mathop{\\mathrm{\\mathbf{d}}})=(\\mathop{\\mathrm{\\mathbf{d}}},\\mathop{\\mathrm{\\mathbf{d}}})/2-\\mathbf{f}\\cdot\\mathop{\\mathrm{\\mathbf{d}}}.$$ Since $\\mathcal{M}_{\\mathbf{f},\\mathop{\\mathrm{\\mathbf{d}}}}^{\\upzeta}$ is smooth, and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-6-structural-results-for-cohomological-hall-alge",
+      "number": "6",
+      "title": "Structural results for cohomological Hall algebras",
+      "level": 1,
+      "pageStart": 50,
+      "pageEnd": 50,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-026-61-symmetric-monoidal-structures-revisited",
+      "number": "6.1",
+      "title": "Symmetric monoidal structures, revisited",
+      "level": 2,
+      "pageStart": 50,
+      "pageEnd": 53,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1288,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "upzeta mathop",
+          "heading": false
+        },
+        {
+          "term": "upmu upzeta",
+          "heading": false
+        },
+        {
+          "term": "mathbf upzeta",
+          "heading": false
+        },
+        {
+          "term": "boxtimes mathop",
+          "heading": false
+        },
+        {
+          "term": "uplambda upmu",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathcal upzeta",
+          "heading": false
+        },
+        {
+          "term": "uptau mathbf",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#lc_signs label=\"lc_signs\"} Let $\\upzeta\\in \\mathbb{H}_+^{Q_0}$ be a stability condition, and let $\\upmu\\in(-\\infty,\\infty)$ be a slope. We assume that $\\upzeta$ is $\\upmu$-generic. We define $X^{\\upzeta\\mathop{\\mathrm{-ss}}}_{\\mathop{\\mathrm{\\mathbf{d}}},N}$ and $X^{\\upzeta\\mathop{\\mathrm{-ss}}}_{\\mathop{\\mathrm{\\mathbf{d}}}',\\mathop{\\mathrm{\\mathbf{d}}}'',N}$ as in ([\\[XNdef\\]](#XNdef){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-62-the-perverse-associated-graded-hopf-algebra",
+      "number": "6.2",
+      "title": "The perverse associated graded Hopf algebra",
+      "level": 2,
+      "pageStart": 53,
+      "pageEnd": 56,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1181,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "upzeta mathop",
+          "heading": false
+        },
+        {
+          "term": "mathbf upzeta",
+          "heading": false
+        },
+        {
+          "term": "mathfrak upzeta",
+          "heading": false
+        },
+        {
+          "term": "boxtimes upzeta",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathcal upzeta",
+          "heading": false
+        },
+        {
+          "term": "upphi mathop",
+          "heading": false
+        },
+        {
+          "term": "lvert mathop",
+          "heading": false
+        }
+      ],
+      "extract": "Next we describe the localised comultiplication in a little more detail, for further details see [@Da13]. Consider the proper map $s_{\\mathop{\\mathrm{\\mathbf{d}}}',\\mathop{\\mathrm{\\mathbf{d}}}''}\\colon \\mathfrak{M}_{\\mathop{\\mathrm{\\mathbf{d}}}',\\mathop{\\mathrm{\\mathbf{d}}}''}^{\\upzeta\\mathop{\\mathrm{-ss}}}\\rightarrow\\mathfrak{M}_{\\mathop{\\mathrm{\\mathbf{d}}}}^{\\upzeta\\mathop{\\mathrm{-ss}}}$ defined as in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-63-proof-of-theorem-c-and-construction-of-the-bp",
+      "number": "6.3",
+      "title": "Proof of Theorem C and construction of the BPS Lie algebra",
+      "level": 2,
+      "pageStart": 56,
+      "pageEnd": 60,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1940,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "upmu upzeta",
+          "heading": false
+        },
+        {
+          "term": "upzeta mathop",
+          "heading": false
+        },
+        {
+          "term": "upeta upmu",
+          "heading": false
+        },
+        {
+          "term": "mathbf upzeta",
+          "heading": false
+        },
+        {
+          "term": "mathfrak upzeta",
+          "heading": false
+        },
+        {
+          "term": "bps upzeta",
+          "heading": false
+        },
+        {
+          "term": "mathcal upzeta",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#ThmCproof label=\"ThmCproof\"} We start with a couple of technical lemmas for the proofs in this section. ::: lemma []{#Tech1 label=\"Tech1\"} Let $\\mathcal{F},\\mathcal{G}\\in\\mathop{\\mathrm{MMHM}}(X)$. Then $f\\colon \\mathcal{F}\\rightarrow \\mathcal{G}$ is an isomorphism if and only if $f_x$ is an isomorphism for every closed point $x\\in X$. ::: ::: proof *Proof.* One implication is trivial, so we assume that $f_x$ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-64-proof-of-theorem-d",
+      "number": "6.4",
+      "title": "Proof of Theorem D",
+      "level": 2,
+      "pageStart": 60,
+      "pageEnd": 63,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1017,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "harder narasimhan",
+          "heading": false
+        },
+        {
+          "term": "narasimhan type",
+          "heading": false
+        },
+        {
+          "term": "vir",
+          "heading": false
+        },
+        {
+          "term": "mixed hodge",
+          "heading": false
+        },
+        {
+          "term": "bracketed superscripts",
+          "heading": false
+        },
+        {
+          "term": "hodge modules",
+          "heading": false
+        },
+        {
+          "term": "split inclusions",
+          "heading": false
+        },
+        {
+          "term": "ﬁltration",
+          "heading": false
+        }
+      ],
+      "extract": "6.4. Proof of Theorem D. We ﬁnish by proving Theorem D. Fix a generic sta- bility condition ζ. By Corollary 4.11 there are canonical split inclusions H(BC*)vir ⊗BPSζ W,µ →H \u0010 pζ µ,∗ICζ W,µ \u0011 COHAS AND QUANTUM ENVELOPING ALGEBRAS 61 giving rise to canonical split inclusions H(BC*)vir⊗qζ µ,∗BPSζ W,µ →qζ µ,∗H \u0010 pζ µ,∗ICζ W,µ \u0011 and thus split inclusions ι′ µ : H(BC*)vir ⊗qζ µ,∗BPSζ W,µ֒ →H \u0010 qζ µ,∗pζ µ,∗ICζ W,µ \u0011 by the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 63,
+      "pageEnd": 64,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 931,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mixed hodge",
+          "heading": false
+        },
+        {
+          "term": "donaldson thomas",
+          "heading": false
+        },
+        {
+          "term": "sch urmann",
+          "heading": false
+        },
+        {
+          "term": "motivic donaldson",
+          "heading": false
+        },
+        {
+          "term": "hodge modules",
+          "heading": false
+        },
+        {
+          "term": "davison",
+          "heading": false
+        },
+        {
+          "term": "math ematics",
+          "heading": false
+        },
+        {
+          "term": "hodge structures",
+          "heading": false
+        }
+      ],
+      "extract": "[1] The Stacks Project. http://stacks.math.columbia.edu/. [2] M. Atiyah and R. Bott. The Yang-Mills equations over Riemann surfaces. Philos. Trans. Roy. Soc. London, 308:523–615, 1983. [3] A. Beilinson, J. Bernstein, and P. Deligne. Faisceaux pervers. Ast´erisque, 100, 1983. [4] J. Bernstein and V. Lunts. Equivariant Sheaves and Functors, volume 1578. Springer, 1994. [5] C. Brav, V. Bussi, D. Dupont, D. Joyce, and",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Background"
+        ]
+      },
+      "found_not_listed": {
+        "count": 1,
+        "items": [
+          "6.3 Proof of Theorem C and construction of the BPS Lie algebra. We"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "upzeta mathop",
+      "heading": false
+    },
+    {
+      "term": "upmu upzeta",
+      "heading": false
+    },
+    {
+      "term": "mathbf upzeta",
+      "heading": false
+    },
+    {
+      "term": "mathop mathrm",
+      "heading": false
+    },
+    {
+      "term": "upzeta upphi",
+      "heading": false
+    },
+    {
+      "term": "mathcal upzeta",
+      "heading": false
+    },
+    {
+      "term": "boxtimes upzeta",
+      "heading": false
+    },
+    {
+      "term": "mathfrak upzeta",
+      "heading": false
+    },
+    {
+      "term": "upzeta colonequals",
+      "heading": false
+    },
+    {
+      "term": "mathbb upzeta",
+      "heading": false
+    },
+    {
+      "term": "uplambda upzeta",
+      "heading": false
+    },
+    {
+      "term": "upzeta uppi",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 53,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 54,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 55,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 56,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 57,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 58,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 59,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 60,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 61,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 62,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 63,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 64,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 32,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 32,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p63); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 9
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 32 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1601.02479v5"
+  }
+}

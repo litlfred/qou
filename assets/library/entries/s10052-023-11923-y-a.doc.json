@@ -1,0 +1,1274 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "s10052-023-11923-y-a",
+  "title": "Three generations of colored fermions with family symmetry from Cayley–Dickson sedenions",
+  "variant": "pdf",
+  "pages": 13,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Three generations of colored fermions with S3 family symmetry from Cayley–Dickson sedenions",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-three-generations-of-colored-fermions-with-s3-fa"
+    },
+    {
+      "level": 2,
+      "title": "Abstract",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-abstract"
+    },
+    {
+      "level": 2,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Normed division algebras",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-2-normed-division-algebras"
+    },
+    {
+      "level": 2,
+      "title": "One generation of electrocolor states from mathbbCotimesmathbbO",
+      "number": "3",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-3-one-generation-of-electrocolor-states-from-mat"
+    },
+    {
+      "level": 2,
+      "title": "The Cayley–Dickson construction and the algebra of sedenions",
+      "number": "4",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-4-the-cayleydickson-construction-and-the-algebra"
+    },
+    {
+      "level": 3,
+      "title": "Octonion subalgebras inside the sedenions",
+      "number": "4.1",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-41-octonion-subalgebras-inside-the-sedenions"
+    },
+    {
+      "level": 3,
+      "title": "The left multiplication algebra of mathbbCotimesmathbbS",
+      "number": "4.2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-42-the-left-multiplication-algebra-of-mathbbcoti"
+    },
+    {
+      "level": 3,
+      "title": "Automorphisms of sedenions",
+      "number": "4.3",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-43-automorphisms-of-sedenions"
+    },
+    {
+      "level": 2,
+      "title": "Three generations of color states from mathbbCotimesmathbbS",
+      "number": "5",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-5-three-generations-of-color-states-from-mathbbc"
+    },
+    {
+      "level": 3,
+      "title": "Why not sedenions?",
+      "number": "5.1",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-51-why-not-sedenions"
+    },
+    {
+      "level": 3,
+      "title": "One generation of electrocolor states from mathbbCotimesmathbbS",
+      "number": "5.2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-52-one-generation-of-electrocolor-states-from-ma"
+    },
+    {
+      "level": 3,
+      "title": "Two additional generations from an S3 automorphism",
+      "number": "5.3",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-53-two-additional-generations-from-an-s3-automor"
+    },
+    {
+      "level": 3,
+      "title": "SU(3)C color symmetries of three generations",
+      "number": "5.4",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-54-su3c-color-symmetries-of-three-generations"
+    },
+    {
+      "level": 3,
+      "title": "Linear dependence of minimal ideal states",
+      "number": "5.5",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-55-linear-dependence-of-minimal-ideal-states"
+    },
+    {
+      "level": 2,
+      "title": "Outlook",
+      "number": "6",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-6-outlook"
+    },
+    {
+      "level": 2,
+      "title": "Discussion",
+      "number": "7",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-7-discussion"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-acknowledgements"
+    },
+    {
+      "level": 2,
+      "title": "Appendix A: Sedenion multiplication table",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-appendix-a-sedenion-multiplication-table"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 12,
+      "summary": null,
+      "keywords": [],
+      "extract": "Eur. Phys. J. C (2023) 83:747 https://doi.org/10.1140/epjc/s10052-023-11923-y Regular Article - Theoretical Physics",
+      "extractCut": false,
+      "blocks": [
+        "library/s10052-023-11923-y-a/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-three-generations-of-colored-fermions-with-s3-fa",
+      "number": null,
+      "title": "Three generations of colored fermions with S3 family symmetry from Cayley–Dickson sedenions",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 54,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dickson",
+          "heading": true
+        },
+        {
+          "term": "sedenions",
+          "heading": true
+        },
+        {
+          "term": "suzhou",
+          "heading": false
+        }
+      ],
+      "extract": "from Cayley–Dickson sedenions Niels Gresnigta , Liam Gourlay, Abhinav Varma Department of Physics, Xi’an Jiaotong-Liverpool University, 111 Ren’ai Rd., Dushu Lake Science and Education Innovation District, Suzhou Industrial Park, Suzhou 215123, People’s Republic of China Received: 19 June 2023 / Accepted: 9 August 2023 / Published online: 24 August 2023 © The Author(s) 2023",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-abstract",
+      "number": null,
+      "title": "Abstract",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 155,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "genera tions",
+          "heading": false
+        },
+        {
+          "term": "sedenions",
+          "heading": false
+        },
+        {
+          "term": "obscurity",
+          "heading": false
+        },
+        {
+          "term": "substantiate",
+          "heading": false
+        },
+        {
+          "term": "generations",
+          "heading": false
+        }
+      ],
+      "extract": "An algebraic representation of three genera- tions of fermions with SU(3)C color symmetry based on the Cayley–Dickson algebra of sedenions S is constructed. Recent constructions based on division algebras convinc- ingly describe a single generation of leptons and quarks with Standard Model gauge symmetries. Nonetheless, an alge- braic origin for the existence of exactly three generations has proven difﬁcult to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "3",
+      "words": 1353,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "single generation",
+          "heading": false
+        },
+        {
+          "term": "normed division",
+          "heading": false
+        },
+        {
+          "term": "division algebras",
+          "heading": false
+        },
+        {
+          "term": "division algebraic",
+          "heading": false
+        },
+        {
+          "term": "grand uniﬁed",
+          "heading": false
+        },
+        {
+          "term": "alge braic",
+          "heading": false
+        },
+        {
+          "term": "genera tions",
+          "heading": false
+        },
+        {
+          "term": "clifford algebras",
+          "heading": false
+        }
+      ],
+      "extract": "Despite its great practical success in colliders and other experiments, there are several unexplained features of the Standard Model of particle physics (SM) which lack a deeper theoretical motivation. These include, among others, a derivation of the SM gauge group from ﬁrst principles, an explanation for why some representations of the SM gauge group correspond to particle multiplets whereas others do not, and an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-2-normed-division-algebras",
+      "number": "2",
+      "title": "Normed division algebras",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 1205,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "normed division",
+          "heading": true
+        },
+        {
+          "term": "lib lia",
+          "heading": false
+        },
+        {
+          "term": "q2j q3k",
+          "heading": false
+        },
+        {
+          "term": "associative multiplication",
+          "heading": false
+        },
+        {
+          "term": "division algebra",
+          "heading": false
+        },
+        {
+          "term": "fano plane",
+          "heading": false
+        },
+        {
+          "term": "clifford algebra",
+          "heading": false
+        },
+        {
+          "term": "octonion",
+          "heading": false
+        }
+      ],
+      "extract": "An algebra A over a ﬁeld K is a vector space over K (where the scalars used in scalar multiplication come from the ﬁeld K), equipped with a bilinear product A×A →A, that allows for multiplication of algebra elements. A division algebra is an algebra over a ﬁeld where division is always well-deﬁned, except by zero. A normed division algebra has the additional property that it is also a normed vector space, with the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-one-generation-of-electrocolor-states-from-mat",
+      "number": "3",
+      "title": "One generation of electrocolor states from mathbbCotimesmathbbO",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 539,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "witt basis",
+          "heading": false
+        },
+        {
+          "term": "minimal ideals",
+          "heading": false
+        },
+        {
+          "term": "left ideals",
+          "heading": false
+        },
+        {
+          "term": "states",
+          "heading": true
+        },
+        {
+          "term": "unitary symmetries",
+          "heading": false
+        },
+        {
+          "term": "left multiplication",
+          "heading": false
+        },
+        {
+          "term": "generation",
+          "heading": true
+        },
+        {
+          "term": "multiplication algebra",
+          "heading": false
+        }
+      ],
+      "extract": "Let e1 := Li1, . . . , e6 := Li6 be a generating basis (over C6) for Cℓ(6) associated with the left multiplication algebra of the complex octonions, satisfying e2 i = −1, eie j = −e jei. Deﬁne the Witt basis α† 1 = 1 2(e1 + ie5), α1 = 1 2(−e1 + ie5), α† 2 = 1 2(e2 + ie6), α2 = 1 2(−e2 + ie6), α† 3 = 1 2(e3 + ie7), α3 = 1 2(−e3 + ie7). Here † corresponds to the composition of complex and octo- nion conjugation. This",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-4-the-cayleydickson-construction-and-the-algebra",
+      "number": "4",
+      "title": "The Cayley–Dickson construction and the algebra of sedenions",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 376,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sedenions",
+          "heading": true
+        },
+        {
+          "term": "imaginary units",
+          "heading": false
+        },
+        {
+          "term": "algebra",
+          "heading": true
+        },
+        {
+          "term": "zero divisors",
+          "heading": false
+        },
+        {
+          "term": "orthonormal basis",
+          "heading": false
+        },
+        {
+          "term": "process",
+          "heading": false
+        },
+        {
+          "term": "division",
+          "heading": false
+        }
+      ],
+      "extract": "sedenions The CD process is an iterative construction that generates at each stage an algebra (with involution) of dimension twice that of the previous. Each algebra is constructed as a direct sum of the previous algebra, so that C = R⊕Ri where i is the complex structure introduced in the process. Similarly, H = C⊕CJ, where i, J and i J are identiﬁed with the quaternion imaginary bases I, J, K, and similarly O = H",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-41-octonion-subalgebras-inside-the-sedenions",
+      "number": "4.1",
+      "title": "Octonion subalgebras inside the sedenions",
+      "level": 3,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 562,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "octonion subalgebras",
+          "heading": true
+        },
+        {
+          "term": "common intersection",
+          "heading": false
+        },
+        {
+          "term": "imaginary unit",
+          "heading": false
+        },
+        {
+          "term": "seven",
+          "heading": false
+        },
+        {
+          "term": "complex structure",
+          "heading": false
+        },
+        {
+          "term": "generates",
+          "heading": false
+        },
+        {
+          "term": "contain",
+          "heading": false
+        }
+      ],
+      "extract": "Let us now use {e0, e1, . . . , en2−1} to denote an orthonormal basis for An, so that A1 = C : {e0, e1}, e1 = i, A2 = H : {e0, e1, e2, e3}, e1 = i = I, e2 = J, e3 = K A3 = O : {e0, e1, . . . , e7}, e1 = i = I = i1, . . . , e7 = i7 A4 = S : {e0, e1, . . . , e15}, e1 = i = I = i1 = s1, . . . , e15 = s15 Consider A2 = H with basis {e0, e1, e2, e3}. Then there are three subalgebras isomorphic to C within H, each con-",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-42-the-left-multiplication-algebra-of-mathbbcoti",
+      "number": "4.2",
+      "title": "The left multiplication algebra of mathbbCotimesmathbbS",
+      "level": 3,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 621,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lib lia",
+          "heading": false
+        },
+        {
+          "term": "left multiplication",
+          "heading": true
+        },
+        {
+          "term": "sedenion left",
+          "heading": false
+        },
+        {
+          "term": "sedenion basis",
+          "heading": false
+        },
+        {
+          "term": "eiw",
+          "heading": false
+        },
+        {
+          "term": "generating basis",
+          "heading": false
+        },
+        {
+          "term": "left action",
+          "heading": false
+        },
+        {
+          "term": "basis elements",
+          "heading": false
+        }
+      ],
+      "extract": "Despite the algebra S being non-associative and non- alternative, just as for O, we can consider the left actions of S on itself as linear operators generating an associative algebra. 4 Note that this is a new feature that appears with S. There are three new, (that is excluding the original H with basis {e0, e1, e2, e3} used to generate O) H subalgebras of O that do no contain e4. For S there are no new O that do",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-43-automorphisms-of-sedenions",
+      "number": "4.3",
+      "title": "Automorphisms of sedenions",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 565,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "automorphisms",
+          "heading": true
+        },
+        {
+          "term": "sedenion units",
+          "heading": false
+        },
+        {
+          "term": "original octonion",
+          "heading": false
+        },
+        {
+          "term": "aut",
+          "heading": false
+        },
+        {
+          "term": "quaternion",
+          "heading": false
+        },
+        {
+          "term": "derivation",
+          "heading": false
+        },
+        {
+          "term": "although",
+          "heading": false
+        }
+      ],
+      "extract": "Schafer [37] showed that for CD algebras An with n ≥4 (A0 = R), the derivation algebra der(An) consists of deriva- tions of the form a+bu →aD+(bD)u, where a, b ∈An−1, u is the new anticommuting imaginary unit introduced in the CD construction of An from An−1, and D is a derivation of An−1. Brown [38] demonstrated that if θ ∈Aut(An−1), then θ′ : a + bu →aθ + (bθ)u, (18) ϵ : a + bu →a −bu, (19) ψ : a + bu →1 4[a +",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-5-three-generations-of-color-states-from-mathbbc",
+      "number": "5",
+      "title": "Three generations of color states from mathbbCotimesmathbbS",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-51-why-not-sedenions",
+      "number": "5.1",
+      "title": "Why not sedenions?",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 495,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "generations",
+          "heading": false
+        },
+        {
+          "term": "single generation",
+          "heading": false
+        },
+        {
+          "term": "con struct",
+          "heading": false
+        },
+        {
+          "term": "single copy",
+          "heading": false
+        },
+        {
+          "term": "division algebras",
+          "heading": false
+        },
+        {
+          "term": "ladder operators",
+          "heading": false
+        },
+        {
+          "term": "left multiplication",
+          "heading": false
+        },
+        {
+          "term": "left action",
+          "heading": false
+        }
+      ],
+      "extract": "Since one generation of electrocolor states are efﬁciently rep- resented starting from C ⊗O, one might ask if S (or rather C ⊗S) is an appropriate larger algebraic structure capable of describing three generations. Not being a division algebra is not grounds to disqualify S, for we point out that neither 123 C⊗O nor Cℓ(6) generated as the left multiplication algebra are themselves division algebras. Furthermore, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-52-one-generation-of-electrocolor-states-from-ma",
+      "number": "5.2",
+      "title": "One generation of electrocolor states from mathbbCotimesmathbbS",
+      "level": 3,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 524,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ω1ω",
+          "heading": false
+        },
+        {
+          "term": "a1ω",
+          "heading": false
+        },
+        {
+          "term": "ladder operators",
+          "heading": false
+        },
+        {
+          "term": "aiw",
+          "heading": false
+        },
+        {
+          "term": "states",
+          "heading": true
+        },
+        {
+          "term": "generation",
+          "heading": true
+        }
+      ],
+      "extract": "We proceed by ﬁrst constructing a single generation with unbroken SU(3)C × U(1) symmetry from C ⊗S. Consider- ing the three octonion subalgebras O1, O2, O3 of S deﬁned above: O1 : {e0, e1, e4, e5, e8, e9, e12, e13}, O2 : {e0, e2, e4, e6, e8, e10, e12, e14}, O3 : {e0, e3, e4, e7, e8, e11, e12, e15}. For each Oi subalgebra, we deﬁne a single pair of raising and lowering operators as follows: A† 1 ≡ 1 2 √ 2 (e1 + ie5 +",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-53-two-additional-generations-from-an-s3-automor",
+      "number": "5.3",
+      "title": "Two additional generations from an S3 automorphism",
+      "level": 3,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 774,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ω2ω",
+          "heading": false
+        },
+        {
+          "term": "ω3ω",
+          "heading": false
+        },
+        {
+          "term": "ladder operators",
+          "heading": false
+        },
+        {
+          "term": "generations",
+          "heading": true
+        },
+        {
+          "term": "automorphism",
+          "heading": true
+        },
+        {
+          "term": "electrocolor states",
+          "heading": false
+        },
+        {
+          "term": "iei",
+          "heading": false
+        },
+        {
+          "term": "aei",
+          "heading": false
+        }
+      ],
+      "extract": "Having constructed one generation of electrocolor states, we now proceed to apply ψ to the ladder operators eqns. (30)– (34), and subsequently the basis states of the minimal left ideals, in order to generate two additional generations. The ﬁrst thing to check is that the S3 automorphisms of S carry over the automorphisms of the left multiplication alge- bra Cℓ(8). Given the generating basis e0, . . . , e8 for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-54-su3c-color-symmetries-of-three-generations",
+      "number": "5.4",
+      "title": "SU(3)C color symmetries of three generations",
+      "level": 3,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 555,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ladder operators",
+          "heading": false
+        },
+        {
+          "term": "generations",
+          "heading": true
+        },
+        {
+          "term": "anticommutation relations",
+          "heading": false
+        },
+        {
+          "term": "generation model",
+          "heading": false
+        },
+        {
+          "term": "correct electric",
+          "heading": false
+        },
+        {
+          "term": "operators belonging",
+          "heading": false
+        },
+        {
+          "term": "electric charge",
+          "heading": false
+        },
+        {
+          "term": "standard fermionic",
+          "heading": false
+        }
+      ],
+      "extract": "Although the ladder operators belonging to a ﬁxed gener- ation satisfy the standard fermionic anticommutation rela- tions, ladder operators belonging to different generations do not. That is {Ai, B j}w̸ = 0, {Bi, C j}w̸ = 0, {Ci, A j}w̸ = 0, whenever i̸ = j, and likewise for the remaining anticom- mutation relations. This is not unexpected, for if all eighteen ladder operators were to satisfy the standard fermionic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-55-linear-dependence-of-minimal-ideal-states",
+      "number": "5.5",
+      "title": "Linear dependence of minimal ideal states",
+      "level": 3,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 224,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "down-type quarks",
+          "heading": false
+        },
+        {
+          "term": "minimal",
+          "heading": true
+        },
+        {
+          "term": "anti",
+          "heading": false
+        },
+        {
+          "term": "overlap",
+          "heading": false
+        },
+        {
+          "term": "generations",
+          "heading": false
+        },
+        {
+          "term": "present algebraic",
+          "heading": false
+        }
+      ],
+      "extract": "Although we have been able to construct three pairs of min- imal ideals to represent three generations of fermions, these minimal ideals are not linearly independent. Indeed, one might expect a certain degree of overlap of the minimal ide- als, given the condition Eq. (52) above. We propose (as in [34] and [14]) that the inevitable overlap ofthethreegenerationscouldformabasisforincludingquark mixing and neutrino",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-6-outlook",
+      "number": "6",
+      "title": "Outlook",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 586,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sedenion model",
+          "heading": false
+        },
+        {
+          "term": "spacetime symmetries",
+          "heading": false
+        },
+        {
+          "term": "dimensional spacetime",
+          "heading": false
+        },
+        {
+          "term": "generations",
+          "heading": false
+        },
+        {
+          "term": "right actions",
+          "heading": false
+        },
+        {
+          "term": "structure inside",
+          "heading": false
+        },
+        {
+          "term": "choosing complex",
+          "heading": false
+        },
+        {
+          "term": "presented here",
+          "heading": false
+        }
+      ],
+      "extract": "The model presented here is clearly far from complete as our focus has been restricted to the SU(3)C color gauge sym- metry, and we have not considered the remaining internal symmetries nor the spacetime symmetries. One way to include chiral SU(2)L states it is via a copy of Cℓ(4) [46]. In [5] it is shown that the right actions of C ⊗H together with the right actions of the Cℓ(6) nilpo- tents ω and ω† generate the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-7-discussion",
+      "number": "7",
+      "title": "Discussion",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 347,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "electrocolor states",
+          "heading": false
+        },
+        {
+          "term": "additional generations",
+          "heading": false
+        },
+        {
+          "term": "division algebras",
+          "heading": false
+        },
+        {
+          "term": "witt basis",
+          "heading": false
+        },
+        {
+          "term": "octonion",
+          "heading": false
+        },
+        {
+          "term": "sedenions",
+          "heading": false
+        },
+        {
+          "term": "multiplication algebra",
+          "heading": false
+        },
+        {
+          "term": "color",
+          "heading": false
+        }
+      ],
+      "extract": "We have argued that the CD algebra S provides a suitable algebraic structure to describe three generations. Our focus has been restricted to the SU(3)C color gauge symmetry. Three intersecting O subalgebras of S are used to construct a Witt basis for Cℓ(6). Two minimal left ideals are then use to represent one generation of electrocolor states. Subsequently, the S3 automorphism of order three of S is then applied to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 196,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "commons licence",
+          "heading": false
+        },
+        {
+          "term": "creative commons",
+          "heading": false
+        },
+        {
+          "term": "article creative",
+          "heading": false
+        },
+        {
+          "term": "deposited",
+          "heading": false
+        },
+        {
+          "term": "scoap",
+          "heading": false
+        },
+        {
+          "term": "credit",
+          "heading": false
+        }
+      ],
+      "extract": "insightful discussions and detailed feedback on an earlier draft of this work. Data Availability Statement This manuscript has no associated data or the data will not be deposited. [Authors’ comment: This is a theoretical study and there is no additional data to be deposited.] Open Access This article is licensed under a Creative Commons Attri- bution 4.0 International License, which permits use, sharing,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-appendix-a-sedenion-multiplication-table",
+      "number": null,
+      "title": "Appendix A: Sedenion multiplication table",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 16,
+      "summary": null,
+      "keywords": [],
+      "extract": "The multiplication table for the Cayley–Dickson sedenions in terms of the indices (i ≡ei) (Table 1).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-019-references",
+      "number": null,
+      "title": "References",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 1389,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cayley dickson",
+          "heading": false
+        },
+        {
+          "term": "arxiv preprint",
+          "heading": false
+        },
+        {
+          "term": "clifford algebras",
+          "heading": false
+        },
+        {
+          "term": "exceptional jordan",
+          "heading": false
+        },
+        {
+          "term": "minimal s3-invariant",
+          "heading": false
+        },
+        {
+          "term": "division algebras",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "s3-invariant extension",
+          "heading": false
+        }
+      ],
+      "extract": "1. M. Günaydin, F. Gürsey, Quark structure and octonions. J. Math. Phys. 14(11), 1651–1667 (1973) 2. G. Dixon, Derivation of the standard model. Il Nuovo Cimento B (1971–1996) 105(3), 349–364 (1990) 3. G. Dixon, Division algebras: family replication. J. Math. Phys. 45(10), 3878–3882 (2004) 4. G.M. Dixon, Division Algebras: Octonions Quaternions Complex Numbers and the Algebraic Design of Physics, vol. 290 (Springer",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "octonion subalgebras",
+      "heading": true
+    },
+    {
+      "term": "additional generations",
+      "heading": true
+    },
+    {
+      "term": "sedenion left",
+      "heading": false
+    },
+    {
+      "term": "sedenion basis",
+      "heading": false
+    },
+    {
+      "term": "division algebra",
+      "heading": false
+    },
+    {
+      "term": "sedenion model",
+      "heading": false
+    },
+    {
+      "term": "left ideals",
+      "heading": false
+    },
+    {
+      "term": "minimal ideals",
+      "heading": false
+    },
+    {
+      "term": "different generations",
+      "heading": false
+    },
+    {
+      "term": "octonion units",
+      "heading": false
+    },
+    {
+      "term": "octonion elements",
+      "heading": false
+    },
+    {
+      "term": "complex sedenions",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "images": [
+    {
+      "id": "img-p003-1",
+      "file": "images/img-p003-1.png",
+      "page": 3,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 20,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 21,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p12); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 6
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 21 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/s10052-023-11923-y-a"
+  }
+}

@@ -1,0 +1,1140 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1108.3035v2",
+  "title": "Random Matrix Theory for the Hermitian Wilson Dirac Operator and the chGUE – GUE Transition",
+  "variant": "pdf",
+  "pages": 27,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The Random Matrix Model",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-the-random-matrix-model"
+    },
+    {
+      "level": 1,
+      "title": "The eigenvalue picture",
+      "number": "3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-the-eigenvalue-picture"
+    },
+    {
+      "level": 1,
+      "title": "All density correlation functions for finite-N",
+      "number": "4",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-all-density-correlation-functions-for-finite-n"
+    },
+    {
+      "level": 1,
+      "title": "The microscopic weakly non-chiral large-N limit",
+      "number": "5",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-the-microscopic-weakly-non-chiral-large-n-limi"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions",
+      "number": "6",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-6-conclusions"
+    },
+    {
+      "level": 1,
+      "title": "A Equivalence to the partition function of WchPT",
+      "number": null,
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-a-equivalence-to-the-partition-function-of-wchpt"
+    },
+    {
+      "level": 2,
+      "title": "A.1 Alternative representation of Nf=1 WchPT",
+      "number": null,
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-a1-alternative-representation-of-nf1-wchpt"
+    },
+    {
+      "level": 1,
+      "title": "B Consistency checks of the partition function and factorisation",
+      "number": null,
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-b-consistency-checks-of-the-partition-function-a"
+    },
+    {
+      "level": 2,
+      "title": "B.1 The GUE limit a1 for =0",
+      "number": null,
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-b1-the-gue-limit-a1-for-0"
+    },
+    {
+      "level": 2,
+      "title": "B.2 The chGUE limit a0 and factorisation",
+      "number": null,
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-b2-the-chgue-limit-a0-and-factorisation"
+    },
+    {
+      "level": 1,
+      "title": "C Skew-orthogonal polynomials",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-c-skew-orthogonal-polynomials"
+    },
+    {
+      "level": 2,
+      "title": "C.1 Expectation value of a single characteristic polynomial",
+      "number": null,
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-c1-expectation-value-of-a-single-characteristic"
+    },
+    {
+      "level": 2,
+      "title": "C.2 The odd polynomials R2j+1(x)",
+      "number": null,
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-c2-the-odd-polynomials-r2j1x"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 219,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hermitian wilson",
+          "heading": false
+        },
+        {
+          "term": "chgue",
+          "heading": false
+        },
+        {
+          "term": "gaussian unitary",
+          "heading": false
+        },
+        {
+          "term": "unitary ensemble",
+          "heading": false
+        },
+        {
+          "term": "non-chiral",
+          "heading": false
+        },
+        {
+          "term": "bielefeld",
+          "heading": false
+        },
+        {
+          "term": "nagoya",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1108.3035v2 [math-ph] 2 Nov 2011 Random Matrix Theory for the Hermitian Wilson Dirac Operator and the chGUE – GUE Transition Gernot Akemann1 and Taro Nagao2 1Department of Physics, Bielefeld University, Postfach 100131, D-33501 Bielefeld, Germany 2Graduate School of Mathematics, Nagoya University, Chikusa-ku, Nagoya 464-8602, Japan Abstract We introduce a random two-matrix model interpolating between a chiral",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1108.3035v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 1131,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rmt approach",
+          "heading": false
+        },
+        {
+          "term": "two-matrix model",
+          "heading": false
+        },
+        {
+          "term": "wilson dirac",
+          "heading": false
+        },
+        {
+          "term": "epsilon regime",
+          "heading": false
+        },
+        {
+          "term": "hermitian wilson",
+          "heading": false
+        },
+        {
+          "term": "chgue",
+          "heading": false
+        },
+        {
+          "term": "skew-orthogonal polynomials",
+          "heading": false
+        },
+        {
+          "term": "wchpt",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction The application of random matrix theory (RMT) to Quantum Chromodynamics (QCD) ﬁrst intro- duced in [1] has become much more sophisticated in the recent past. Starting from a Gaussian RMT with Nf massless ﬂavours [1, 2], the so-called chiral Gaussian unitary ensemble (chGUE), several milestones have been taken from which we mention only a few, see [3] for recent reviews and more ref- erences. After the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-random-matrix-model",
+      "number": "2",
+      "title": "The Random Matrix Model",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 1096,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "matrix model",
+          "heading": true
+        },
+        {
+          "term": "m11n",
+          "heading": false
+        },
+        {
+          "term": "hermitian wilson",
+          "heading": false
+        },
+        {
+          "term": "chiral rmt",
+          "heading": false
+        },
+        {
+          "term": "wilson dirac",
+          "heading": false
+        },
+        {
+          "term": "chgue",
+          "heading": false
+        },
+        {
+          "term": "large-n limit",
+          "heading": false
+        },
+        {
+          "term": "wchpt",
+          "heading": false
+        }
+      ],
+      "extract": "The Random Matrix Model In this section we ﬁrst introduce our matrix model and explain why it describes the transition between the diﬀerent symmetry classes of random matrices from the chGUE to the GUE. Then we point out the relation to the related Wilson chiral RMT previously introduced in [20] as well as to WchPT in the epsilon regime. We want to compute the eigenvalue density correlation functions of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-the-eigenvalue-picture",
+      "number": "3",
+      "title": "The eigenvalue picture",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 9,
+      "labelStart": "5",
+      "labelEnd": "9",
+      "words": 1551,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "udu m11n",
+          "heading": false
+        },
+        {
+          "term": "ddj exp",
+          "heading": false
+        },
+        {
+          "term": "x1m",
+          "heading": false
+        },
+        {
+          "term": "hciz formula",
+          "heading": false
+        },
+        {
+          "term": "vandermonde determinants",
+          "heading": false
+        },
+        {
+          "term": "eigenvalue",
+          "heading": true
+        },
+        {
+          "term": "erf",
+          "heading": false
+        },
+        {
+          "term": "exn",
+          "heading": false
+        }
+      ],
+      "extract": "The eigenvalue picture In this section we will derive an eigenvalue representation of our partition function eq. (2.3). It can be obtained by the following change of variables from H to /D5, H = /D5 − \u0012 m11n W W † −m11n+ν \u0013 , (3.1) then diagonalising /D5 and W, using the HCIZ formula, and then ﬁnally integrating out the W- eigenvalues. 1In [20, 21] all matrix elements are rescaled by √ N to have compact support at N",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-all-density-correlation-functions-for-finite-n",
+      "number": "4",
+      "title": "All density correlation functions for finite-N",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 15,
+      "labelStart": "9",
+      "labelEnd": "15",
+      "words": 2178,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "density correlation",
+          "heading": true
+        },
+        {
+          "term": "chgue density",
+          "heading": false
+        },
+        {
+          "term": "r2j",
+          "heading": false
+        },
+        {
+          "term": "correlation functions",
+          "heading": true
+        },
+        {
+          "term": "iar",
+          "heading": false
+        },
+        {
+          "term": "quenched density",
+          "heading": false
+        },
+        {
+          "term": "skew-orthogonal polynomials",
+          "heading": false
+        },
+        {
+          "term": "ias",
+          "heading": false
+        }
+      ],
+      "extract": "All density correlation functions for ﬁnite-N The partition function eq. (3.17) is very much reminiscent of the one for the GUE-GOE transition in [28], apart from the diﬀerent function F(x) inside the Pfaﬃan. We can therefore apply the general method of solving this two-matrix model developed in [32] for general weight functions, which applies equally to eq. (3.18) with ν = 1. From now on we will restrict ourselves",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-the-microscopic-weakly-non-chiral-large-n-limi",
+      "number": "5",
+      "title": "The microscopic weakly non-chiral large-N limit",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 18,
+      "labelStart": "15",
+      "labelEnd": "18",
+      "words": 1321,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "large-n limit",
+          "heading": true
+        },
+        {
+          "term": "microscopic",
+          "heading": true
+        },
+        {
+          "term": "microscopic density",
+          "heading": false
+        },
+        {
+          "term": "polynomials r2j",
+          "heading": false
+        },
+        {
+          "term": "limiting density",
+          "heading": false
+        },
+        {
+          "term": "non-chiral",
+          "heading": true
+        },
+        {
+          "term": "erf",
+          "heading": false
+        },
+        {
+          "term": "ρchgue",
+          "heading": false
+        }
+      ],
+      "extract": "The microscopic weakly non-chiral large-N limit The microscopic large-N limit is deﬁned by the following rescaling of variables ˆx ≡ √ 2n x , ˆa ≡1 2 √ 2n a . (5.1) These variables are then to be identiﬁed with the variables in WchPT as given in eq. (2.9). Here we send the eigenvalues to zero and n →∞such that ˆx remains ﬁnite, hence we are in the vicinity of the origin. The masses m and z are rescaled likewise.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-conclusions",
+      "number": "6",
+      "title": "Conclusions",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 626,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "k-point density",
+          "heading": false
+        },
+        {
+          "term": "niels bohr",
+          "heading": false
+        },
+        {
+          "term": "two-matrix model",
+          "heading": false
+        },
+        {
+          "term": "density correlation",
+          "heading": false
+        },
+        {
+          "term": "pfaﬃan",
+          "heading": false
+        },
+        {
+          "term": "gaussian integrals",
+          "heading": false
+        },
+        {
+          "term": "chgue",
+          "heading": false
+        },
+        {
+          "term": "skew-orthogonal",
+          "heading": false
+        }
+      ],
+      "extract": "Conclusions In this paper we have introduced a parameter dependent Gaussian random two-matrix model that interpolates between the chGUE (a = 0) and the GUE (a = 1) symmetry class (possibly shifted by a constant matrix). At the same time this model describes the spectral properties of the Hermitian Wilson Dirac operator when we take the microscopic weakly non-chiral limit at the origin. Here the rescaled parameter ˆa",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-a-equivalence-to-the-partition-function-of-wchpt",
+      "number": null,
+      "title": "A Equivalence to the partition function of WchPT",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 402,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wchpt",
+          "heading": true
+        },
+        {
+          "term": "partition function",
+          "heading": true
+        },
+        {
+          "term": "grassmann variables",
+          "heading": false
+        },
+        {
+          "term": "epsilon regime",
+          "heading": false
+        },
+        {
+          "term": "integrating out",
+          "heading": false
+        },
+        {
+          "term": "det",
+          "heading": false
+        }
+      ],
+      "extract": "Equivalence to the partition function of WchPT In this appendix we show the equivalence of our matrix model in the microscopic limit to WchPT in the epsilon regime, as it was displayed in eq. (2.7). For non-degenerate parameters we have Z(Nf ) ν ∼ Z dAdBdWdΩ Nf Y f=1 det \u0014 (zf + mf)11n + A W + Ω W † + Ω† (zf −mf)11n+ν + B \u0015 e − 1 2(1−a2)Tr(W W †) ×e− 1 4a2 Tr(A2+B2+2ΩΩ†) . (A.1) Deﬁning z± f ≡zf±mf we now express",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-a1-alternative-representation-of-nf1-wchpt",
+      "number": null,
+      "title": "A.1 Alternative representation of Nf=1 WchPT",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 251,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "iˆz sin",
+          "heading": false
+        },
+        {
+          "term": "wchpt",
+          "heading": true
+        },
+        {
+          "term": "eiθν",
+          "heading": false
+        },
+        {
+          "term": "det",
+          "heading": false
+        }
+      ],
+      "extract": "Alternative representation of Nf = 1 WchPT Finally we would like to make the equivalence between the Nf = 1 ﬂavour partition function for the large-N limit of our even polynomials R2n(x) explicit. The reason why we present this check in detail is that we require a slightly diﬀerent form from the one given in [20] eq. (13), or in [21] eq. (151) (for ˆz = 0 there): Z(Nf =1) ν ( ˆm, ˆz, ˆa) = e−2ˆa2 Z π −π dθ 2π eiθν",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-b-consistency-checks-of-the-partition-function-a",
+      "number": null,
+      "title": "B Consistency checks of the partition function and factorisation",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 66,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "consistency checks",
+          "heading": true
+        },
+        {
+          "term": "partition function",
+          "heading": true
+        },
+        {
+          "term": "factorisation",
+          "heading": true
+        }
+      ],
+      "extract": "Consistency checks of the partition function and factorisation In this appendix we perform a few consistency checks of the eigenvalue representation of the partition function eq. (3.15). For simplicity we will set m = 0 and Nf = 0 here. The antisymmetric weight eq. (3.16) thus reduces to F(x)|m=0 = 2 e x2(1−a2) 8a2 erf \u0010x √ 1 −a2 2 √ 2a2 \u0011 . (B.1) B.1",
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-b1-the-gue-limit-a1-for-0",
+      "number": null,
+      "title": "B.1 The GUE limit a1 for =0",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 159,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gue",
+          "heading": true
+        },
+        {
+          "term": "ddj",
+          "heading": false
+        },
+        {
+          "term": "error-function",
+          "heading": false
+        }
+      ],
+      "extract": "On the level of the distribution eq. (2.2) it is clear that the matrix W gets suppressed for a →1. After reducing to eigenvalues the same result should come out. Here we will look at the simplest case only, that is ν = 0. We can insert the simpliﬁcation eq. (B.1) into eq. (3.17) at ν = 0. Noting that in the limit a →1 the exponential factor in eq. (B.1) reduces to unity, we can use the following result of [28] (see",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-b2-the-chgue-limit-a0-and-factorisation",
+      "number": null,
+      "title": "B.2 The chGUE limit a0 and factorisation",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 838,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chgue",
+          "heading": true
+        },
+        {
+          "term": "bea cal",
+          "heading": false
+        },
+        {
+          "term": "infty prod",
+          "heading": false
+        },
+        {
+          "term": "frac cal",
+          "heading": false
+        },
+        {
+          "term": "vandermonde determinant",
+          "heading": false
+        },
+        {
+          "term": "int infty",
+          "heading": false
+        },
+        {
+          "term": "frac big",
+          "heading": false
+        },
+        {
+          "term": "ldots varphi",
+          "heading": false
+        }
+      ],
+      "extract": "Here we would like to perform a more detailed check. As it was shown in \\cite{ADSV} in the large-$N$ limit the spectral density of the Hermitian Wilson Dirac operator behaves like the density of a {\\it finite} GUE-matrix of size $\\nu\\times\\nu$ plus the microscopic chGUE density. We therefore expect that our general partition function will factorise in the limit $a\\to0$ into a finite GUE times a second chGUE",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-c-skew-orthogonal-polynomials",
+      "number": null,
+      "title": "C Skew-orthogonal polynomials",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 332,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "skew-orthogonal polynomials",
+          "heading": true
+        },
+        {
+          "term": "polynomials r2j",
+          "heading": false
+        },
+        {
+          "term": "vandermonde determinant",
+          "heading": false
+        },
+        {
+          "term": "monic polynomials",
+          "heading": false
+        },
+        {
+          "term": "s2n",
+          "heading": false
+        },
+        {
+          "term": "s2l",
+          "heading": false
+        },
+        {
+          "term": "φ2n",
+          "heading": false
+        }
+      ],
+      "extract": "Skew-orthogonal polynomials In this appendix we compute the skew-orthogonal polynomials given in eqs. (4.6) for ν = 0. We ﬁrst recall that the expectation value of a single characteristic polynomial (or equivalently the Nf = 1 partition function) gives the even polynomials R2j where we follow the argument of [38]. This expectation value is computed using the supersymmetric method in the next subsection C.1. Based on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-c1-expectation-value-of-a-single-characteristic",
+      "number": null,
+      "title": "C.1 Expectation value of a single characteristic polynomial",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 481,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "iat",
+          "heading": false
+        },
+        {
+          "term": "expectation value",
+          "heading": true
+        },
+        {
+          "term": "single characteristic",
+          "heading": true
+        },
+        {
+          "term": "characteristic polynomial",
+          "heading": true
+        },
+        {
+          "term": "ﬂavour partition",
+          "heading": false
+        },
+        {
+          "term": "d2ηd2ψ",
+          "heading": false
+        },
+        {
+          "term": "det",
+          "heading": false
+        },
+        {
+          "term": "sizes",
+          "heading": false
+        }
+      ],
+      "extract": "Expectation value of a single characteristic polynomial We now compute the expectation value of a single characteristic polynomial eq. (C.5) using the supersymmetric method for ﬁnite-N. As we have shown already this yields the subset of the even skew-orthogonal polynomials R2n(x) from which the odd polynomials are constructed. At the same time this also gives the one ﬂavour partition function, which we can compare",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-c2-the-odd-polynomials-r2j1x",
+      "number": null,
+      "title": "C.2 The odd polynomials R2j+1(x)",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 27,
+      "labelStart": "24",
+      "labelEnd": "27",
+      "words": 1509,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polynomials r2j",
+          "heading": true
+        },
+        {
+          "term": "r2l",
+          "heading": false
+        },
+        {
+          "term": "damgaard",
+          "heading": false
+        },
+        {
+          "term": "hep-lat",
+          "heading": false
+        },
+        {
+          "term": "verbaarschot",
+          "heading": false
+        },
+        {
+          "term": "akemann",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "hep-th",
+          "heading": false
+        }
+      ],
+      "extract": "The odd polynomials R2j+1(x) In this subsection we construct the odd set of skew orthogonal polynomials directly from the even ones by diﬀerentiation. Instead we could have computed the R2j+1(x) again from the supersymmetric method as in the previous subsection, using the relation [38] R2n+1(x) = ⟨det[x −/D5](x + Tr /D5)⟩2n. Based on our result above eq. (C.10) for ν = 0 R2n(x) = ⟨det[x −/D5]⟩2n we deﬁne R2j+1(x) ≡",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "chgue density",
+      "heading": true
+    },
+    {
+      "term": "polynomials r2j",
+      "heading": true
+    },
+    {
+      "term": "r2l r2j",
+      "heading": false
+    },
+    {
+      "term": "skew-orthogonal polynomials",
+      "heading": true
+    },
+    {
+      "term": "microscopic density",
+      "heading": true
+    },
+    {
+      "term": "microscopic large-n",
+      "heading": true
+    },
+    {
+      "term": "large-n limit",
+      "heading": true
+    },
+    {
+      "term": "quenched density",
+      "heading": true
+    },
+    {
+      "term": "density correlation",
+      "heading": true
+    },
+    {
+      "term": "quenched partition",
+      "heading": false
+    },
+    {
+      "term": "eigenvalue density",
+      "heading": false
+    },
+    {
+      "term": "spectral density",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Example for the ν = 0 quenched density at ﬁnite n = 4 at diﬀerent masses: m = 0.4 (top left plots) and m = 1 (top right plots): the top black curves correspond to the shifted chGUE density eq. (4.29) at a = 0 (which is clipped for m = 1) ending at a sharp cutoﬀfor m > 0, see eq. (4.30)",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Example for the ν = 1 quenched density at ﬁnite n = 4 at diﬀerent masses: m = 0 (left plots) and m = 1 (right plots). Because for m = 0 the density is still symmetric we only plot the positive eigenvalues. The black curves correspond to the (shifted) chGUE density at a = 0. It can be nicely seen how",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The microscopic density eq. (5.8) for ˆm = 1 (top left plots) and ˆm = 3 (top right plots) at various values of ˆa = 0.1 (middle blue curves) and ˆa = 0.25 (lower red curves). For comparison we also show the corresponding chGUE density (ˆa = 0) eq. (5.11) shifted as in eq. (4.30) (top black curves)",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The microscopic density eq. (5.12) for ˆm = 0 (left plots) and ˆm = 3 (right plots) at various values of ˆa = 0.3 (red curves), ˆa = 0.1 (blue curves), and ˆa = 0 (black curves) for comparison. For the chGUE-GUE transition at ˆm = 0 the density is still symmetric and we only display ˆx > 0. For ˆm >",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 14,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 15,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "4 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p24); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 12
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 15 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1108.3035v2"
+  }
+}

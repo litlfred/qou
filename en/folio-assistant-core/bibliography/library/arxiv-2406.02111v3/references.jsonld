@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2406.02111v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Categorical Quantum Volume Operator",
+      "dcterms:creator": [
+        "Alexander Hahn, 1, ∗Sebastian Murk ,2, † Sukhbinder Singh,3, ‡",
+        "Brennen, Gavin K."
+      ],
+      "dcterms:issued": "D:20240830",
+      "dcterms:identifier": "https://arxiv.org/abs/2406.02111",
+      "dcterms:source": "library/arxiv-2406.02111v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2406.02111v3"
+    }
+  ]
+}

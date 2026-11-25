@@ -1,0 +1,51 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p02/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "ant-v14-n7-s-p02",
+  "contains": [
+    "library/ant-v14-n7-s-p02/sections/sec-front-matter",
+    "library/ant-v14-n7-s-p02/sections/sec-000",
+    "library/ant-v14-n7-s-p02/sections/sec-001",
+    "library/ant-v14-n7-s-p02/sections/sec-002",
+    "library/ant-v14-n7-s-p02/sections/sec-003",
+    "library/ant-v14-n7-s-p02/sections/sec-004",
+    "library/ant-v14-n7-s-p02/sections/sec-005",
+    "library/ant-v14-n7-s-p02/sections/sec-006",
+    "library/ant-v14-n7-s-p02/sections/sec-007",
+    "library/ant-v14-n7-s-p02/sections/sec-008"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values — 10 sections: Front matter; Introduction; Preliminaries\n\n**Pro-unipotent harmonic actions and dynamical properties of p-adic cyclotomic multiple zeta values**\n\n*David Jarossay*\n\n36 pp, 10 sections.\n\n**Outline.** Front matter; 0 Introduction; 1 Preliminaries; 2 Iteration of the harmonic Frobenius of integ; 3 Iteration of the harmonic Frobenius of serie; 4 Comparison between equations on integrals an; 5 Iteration of the Frobenius on P1 \\ S; Appendix: A Poisson bracket corresponding to t; Acknowledgments; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "ant-v14-n7-s-p02",
+    "title_source": "slug",
+    "source_file": "ant-v14-n7-s-p02.pdf",
+    "source_sha256": "fd2121feb180b282799f1a1431a615f74282d18722ead65c105dfa197fcd9a82",
+    "pages": 36,
+    "arxiv": null,
+    "doi": "10.2140/ant.2020.14.1711",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

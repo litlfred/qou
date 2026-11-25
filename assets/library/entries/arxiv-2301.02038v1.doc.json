@@ -1,0 +1,1080 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2301.02038v1",
+  "title": "arxiv-2301.02038v1",
+  "variant": "pdf",
+  "pages": 26,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Geometry of PDEs",
+      "number": "1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-geometry-of-pdes"
+    },
+    {
+      "level": 2,
+      "title": "jet spaces",
+      "number": "1.1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-11-jet-spaces"
+    },
+    {
+      "level": 2,
+      "title": "the Cartan distribution",
+      "number": "1.2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-12-the-cartan-distribution"
+    },
+    {
+      "level": 2,
+      "title": "diffieties",
+      "number": "1.3",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-13-diffieties"
+    },
+    {
+      "level": 1,
+      "title": "Cohomology of PDEs",
+      "number": "2",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-2-cohomology-of-pdes"
+    },
+    {
+      "level": 2,
+      "title": "horizontal cohomology",
+      "number": "2.1",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-21-horizontal-cohomology"
+    },
+    {
+      "level": 2,
+      "title": "interpreting horizontal cohomologies",
+      "number": "2.2",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-22-interpreting-horizontal-cohomologies"
+    },
+    {
+      "level": 2,
+      "title": "algebraic structures on horizontal cohomologies",
+      "number": "2.3",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-23-algebraic-structures-on-horizontal-cohomologi"
+    },
+    {
+      "level": 1,
+      "title": "Homotopy of PDEs",
+      "number": "3",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-3-homotopy-of-pdes"
+    },
+    {
+      "level": 2,
+      "title": "homotopy algebras",
+      "number": "3.1",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-31-homotopy-algebras"
+    },
+    {
+      "level": 2,
+      "title": "the LR-algebra of secondary vector fields",
+      "number": "3.2",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-32-the-lr-algebra-of-secondary-vector-fields"
+    },
+    {
+      "level": 2,
+      "title": "the A-algebra of secondary differential operators",
+      "number": "3.3",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-33-the-a-algebra-of-secondary-differential-opera"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 203,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "secondary calculus",
+          "heading": false
+        },
+        {
+          "term": "vinogradov",
+          "heading": false
+        },
+        {
+          "term": "alexandre",
+          "heading": false
+        },
+        {
+          "term": "pdes",
+          "heading": false
+        },
+        {
+          "term": "coordinate free",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:2301.02038v1 [math.DG] 5 Jan 2023 Contemporary Mathematics Vinogradov’s Cohomological Geometry of Partial Diﬀerential Equations Fabrizio Pugliese, Giovanni Sparano, and Luca Vitagliano to the memory of our teacher and colleague Alexandre Mikhailovich Vinogradov Abstract. Secondary Calculus is a formal replacement for diﬀerential cal- culus on the space of solutions of a system of possibly non-linear partial",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2301.02038v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "4",
+      "words": 1218,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "emph diffiety",
+          "heading": false
+        },
+        {
+          "term": "horizontal cohomologies",
+          "heading": false
+        },
+        {
+          "term": "emph secondary",
+          "heading": false
+        },
+        {
+          "term": "secondary calculus",
+          "heading": false
+        },
+        {
+          "term": "emph differential",
+          "heading": false
+        },
+        {
+          "term": "pdes",
+          "heading": false
+        },
+        {
+          "term": "pde",
+          "heading": false
+        },
+        {
+          "term": "horizontal cohomology",
+          "heading": false
+        }
+      ],
+      "extract": "Systems of algebraic equations can be encoded geometrically in an algebraic variety. This apparently harmless observation is the starting point for the development of such a successful branch of modern Mathematics as Algebraic Geometry. One of the leading principles behind most of the mathematical work of Alexandre M. Vinogradov is that Partial Differential Equations (PDEs) should be treated in a similar way.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-geometry-of-pdes",
+      "number": "1",
+      "title": "Geometry of PDEs",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 69,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pdes",
+          "heading": true
+        },
+        {
+          "term": "pdes imposed",
+          "heading": false
+        },
+        {
+          "term": "diffiety",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{Sec:Geom} In this section we show that a system of, generically non-linear, PDEs can be encoded into a geometric object: a \\emph{diffiety}. We will work in the rather general setting of a PDEs imposed on submanifolds $N$ of a fixed dimension $n$ in a manifold $P$ (see \\cite{klv86}), in contrast with most of the literature where only PDEs imposed on sections of a fibration (or a fiber bundle) are considered.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-11-jet-spaces",
+      "number": "1.1",
+      "title": "jet spaces",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 1055,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jet",
+          "heading": true
+        },
+        {
+          "term": "emph jet",
+          "heading": false
+        },
+        {
+          "term": "jet prolongation",
+          "heading": false
+        },
+        {
+          "term": "jet coordinates",
+          "heading": false
+        },
+        {
+          "term": "jet space",
+          "heading": false
+        },
+        {
+          "term": "alpha partial",
+          "heading": false
+        },
+        {
+          "term": "hookrightarrow infty",
+          "heading": false
+        },
+        {
+          "term": "tilde alpha",
+          "heading": false
+        }
+      ],
+      "extract": "Let $n,m$ be non-negative integers, and let $P$ be a manifold of dimension $n + m$. We begin providing an intrinsic definition of \\emph{derivatives} of an $n$-dimensional submanifold $N \\subseteq P$. In the following, $n$ should be interpreted as the number of \\emph{independent variables}, $m$ as the number of \\emph{dependent variables}, and $P$ as the space parameterizing both independent and dependent variables.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-12-the-cartan-distribution",
+      "number": "1.2",
+      "title": "the Cartan distribution",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": null,
+      "words": 1026,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cartan distribution",
+          "heading": true
+        },
+        {
+          "term": "jet prolongation",
+          "heading": false
+        },
+        {
+          "term": "mathfrak mathscr",
+          "heading": false
+        },
+        {
+          "term": "mathscr gamma",
+          "heading": false
+        },
+        {
+          "term": "infty jet",
+          "heading": false
+        },
+        {
+          "term": "chi alpha",
+          "heading": false
+        },
+        {
+          "term": "jet space",
+          "heading": false
+        },
+        {
+          "term": "emph cartan",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{Sec:CD} The main geometric structure on jet spaces is the \\emph{Cartan distribution}. There are several equivalent ways to define it. The one we present here will be also useful in defining the prolongation of a PDE in the next subsection. We begin noticing that a section of the fibration $J^1 (P, n) \\to J^0 (P, n) \\cong P$ can be interpreted as an $n$-dimensional distribution on $P$. Now, for every $1 \\leq k",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-13-diffieties",
+      "number": "1.3",
+      "title": "diffieties",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": "10",
+      "words": 1277,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pde mathscr",
+          "heading": false
+        },
+        {
+          "term": "prolongation mathscr",
+          "heading": false
+        },
+        {
+          "term": "mathscr subseteq",
+          "heading": false
+        },
+        {
+          "term": "emph prolongation",
+          "heading": false
+        },
+        {
+          "term": "ell mathscr",
+          "heading": false
+        },
+        {
+          "term": "alpha mathscr",
+          "heading": false
+        },
+        {
+          "term": "infty prolongation",
+          "heading": false
+        },
+        {
+          "term": "restriction mathscr",
+          "heading": false
+        }
+      ],
+      "extract": "We now use jets to define PDEs and present their geometric portraits: diffieties. Let $P$ be a manifold of dimension $n + m$. \\begin{definition}\\label{def:PDE} A \\emph{system of $k$-th order partial differential equations imposed on $n$-dimensional submanifolds of $P$}, or simply a \\emph{PDE}, is a closed submanifold $\\mathscr E_0 \\subseteq J^k (P, n)$ of the $k$-jet space. A \\emph{solution} of a PDE $\\mathscr E_0",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-2-cohomology-of-pdes",
+      "number": "2",
+      "title": "Cohomology of PDEs",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-21-horizontal-cohomology",
+      "number": "2.1",
+      "title": "horizontal cohomology",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "12",
+      "words": 798,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bullet mathscr",
+          "heading": false
+        },
+        {
+          "term": "mathscr omega",
+          "heading": false
+        },
+        {
+          "term": "algebroid mathscr",
+          "heading": false
+        },
+        {
+          "term": "mathscr ast",
+          "heading": false
+        },
+        {
+          "term": "overline bullet",
+          "heading": false
+        },
+        {
+          "term": "horizontal cohomology",
+          "heading": true
+        },
+        {
+          "term": "wedge bullet",
+          "heading": false
+        },
+        {
+          "term": "longrightarrow mathscr",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{Sec:hor_cohom} In this section we attach a cochain complex to every diffiety $(\\mathscr E, \\mathscr C)$. The associated cohomology is called the \\emph{horizontal cohomology} of $\\mathscr E$ and it contains important coordinate free information on $\\mathscr E_0$. Let $(\\mathscr E, \\mathscr C)$ be a diffiety. By involutivity, the vector subbundle $\\mathscr C \\to \\mathscr E$ of the tangent bundle $T \\mathscr E$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-22-interpreting-horizontal-cohomologies",
+      "number": "2.2",
+      "title": "interpreting horizontal cohomologies",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 15,
+      "labelStart": "12",
+      "labelEnd": "15",
+      "words": 1340,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "horizontal cohomologies",
+          "heading": true
+        },
+        {
+          "term": "mathscr ast",
+          "heading": false
+        },
+        {
+          "term": "wedge mathscr",
+          "heading": false
+        },
+        {
+          "term": "mathscr omega",
+          "heading": false
+        },
+        {
+          "term": "mathscr infty",
+          "heading": false
+        },
+        {
+          "term": "pde mathscr",
+          "heading": false
+        },
+        {
+          "term": "mathfrak mathscr",
+          "heading": false
+        },
+        {
+          "term": "mathscr partial",
+          "heading": false
+        }
+      ],
+      "extract": "Some of the horizontal cohomologies have nice interpretations, sometimes informal, sometimes more precise. In this subsection we illustrate some of them. We begin with horizontal cohomology with trivial coefficients. \\begin{example}[Constrained Variational Principles]\\label{exmpl:var_prin} Top horizontal cohomologies with trivial coefficients $\\overline H{}^n (\\mathscr E)$ can be (informally) interpreted as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-23-algebraic-structures-on-horizontal-cohomologi",
+      "number": "2.3",
+      "title": "algebraic structures on horizontal cohomologies",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 18,
+      "labelStart": "15",
+      "labelEnd": "18",
+      "words": 1406,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bullet mathscr",
+          "heading": false
+        },
+        {
+          "term": "wedge mathscr",
+          "heading": false
+        },
+        {
+          "term": "mathscr omega",
+          "heading": false
+        },
+        {
+          "term": "boldsymbol omega",
+          "heading": false
+        },
+        {
+          "term": "mathscr ast",
+          "heading": false
+        },
+        {
+          "term": "pde mathscr",
+          "heading": false
+        },
+        {
+          "term": "supseteq mathscr",
+          "heading": false
+        },
+        {
+          "term": "overline bullet",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{Subsec:LR} Examples \\ref{exmpl:var_prin} and \\ref{exmpl:cons_law} suggest that the horizontal cohomology $\\overline H{}^\\bullet (\\mathscr E)$ should be interpreted as ``smooth functions on the space of solutions of the PDE $\\mathscr E_0$''. For this reason we also denote it \\[ \\boldsymbol C^\\infty := \\overline H{}^\\bullet (\\mathscr E) \\] and call it \\emph{secondary functions} adopting a terminology by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-3-homotopy-of-pdes",
+      "number": "3",
+      "title": "Homotopy of PDEs",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 30,
+      "summary": null,
+      "keywords": [],
+      "extract": "\\label{Sec:Homot} In this section we quickly illustrate the latest developments on Vinogradov's ideas about Secondary Calculus. They are not due to Vinogradov himself but they are definitely inspired by his work.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-31-homotopy-algebras",
+      "number": "3.1",
+      "title": "homotopy algebras",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 981,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sym bullet",
+          "heading": false
+        },
+        {
+          "term": "mathfrak big",
+          "heading": false
+        },
+        {
+          "term": "homotopy algebras",
+          "heading": true
+        },
+        {
+          "term": "aligned mathfrak",
+          "heading": false
+        },
+        {
+          "term": "cohomology bullet",
+          "heading": false
+        },
+        {
+          "term": "maps mathfrak",
+          "heading": false
+        },
+        {
+          "term": "mathfrak induces",
+          "heading": false
+        },
+        {
+          "term": "sequence mathfrak",
+          "heading": false
+        }
+      ],
+      "extract": "In this subsection, we recall the definitions of those homotopy algebras that we will need in the rest of the paper. Roughly, a homotopy algebra of a certain type (associative, Lie, etc.) is a graded vector space equipped with operations satisfying the algebra axioms only up to a coherent system of \\emph{higher homotopies}. Homotopy algebras appear when cohomology and homotopy interact with algebraic structures",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-32-the-lr-algebra-of-secondary-vector-fields",
+      "number": "3.2",
+      "title": "the LR-algebra of secondary vector fields",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": "20",
+      "labelEnd": "22",
+      "words": 732,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "overline bullet",
+          "heading": false
+        },
+        {
+          "term": "mathfrak overline",
+          "heading": false
+        },
+        {
+          "term": "omega bullet",
+          "heading": false
+        },
+        {
+          "term": "cochains overline",
+          "heading": false
+        },
+        {
+          "term": "overline big",
+          "heading": false
+        },
+        {
+          "term": "boldsymbol mathfrak",
+          "heading": false
+        },
+        {
+          "term": "mathscr",
+          "heading": false
+        },
+        {
+          "term": "boldsymbol infty",
+          "heading": false
+        }
+      ],
+      "extract": "Let $(\\mathscr E, \\mathscr C)$ be a diffiety. According to Theorem \\ref{theor:LR} the pair $(\\boldsymbol C^\\infty, \\boldsymbol{\\mathfrak X})$ is a graded Lie-Rinehart algebra. Recall that $\\boldsymbol C^\\infty = \\overline H{}^\\bullet (\\mathscr E) = H^\\bullet (\\overline \\Omega (\\mathscr E), \\overline d)$ and $\\boldsymbol{\\mathfrak X} = \\overline H{}^\\bullet (\\mathscr E, \\mathscr V) = H^\\bullet(\\overline",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-33-the-a-algebra-of-secondary-differential-opera",
+      "number": "3.3",
+      "title": "the A-algebra of secondary differential operators",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 25,
+      "labelStart": "22",
+      "labelEnd": "25",
+      "words": 1413,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "secondary differential",
+          "heading": true
+        },
+        {
+          "term": "secondary dos",
+          "heading": false
+        },
+        {
+          "term": "graded dos",
+          "heading": false
+        },
+        {
+          "term": "algebroid mathscr",
+          "heading": false
+        },
+        {
+          "term": "transverse dos",
+          "heading": false
+        },
+        {
+          "term": "differential operators",
+          "heading": true
+        },
+        {
+          "term": "boldsymbol mathfrak",
+          "heading": false
+        },
+        {
+          "term": "manifold mathscr",
+          "heading": false
+        }
+      ],
+      "extract": "In this final subsection we discuss \\emph{secondary scalar differential operators}. In order to define them we follow the recipe presented at the end of Section \\ref{Sec:Homol}. Let $(\\mathscr E, \\mathscr C)$ be a diffiety. The construction $\\Phi$ for which we want to find a replacement on the space of solutions of $\\mathscr E_0$ is ``\\emph{scalar differential operators}'', i.e.{} linear differential operators from",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": null,
+      "words": 743,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "giovanni paolo",
+          "heading": false
+        },
+        {
+          "term": "e-print",
+          "heading": false
+        },
+        {
+          "term": "homotopy lie-rinehart",
+          "heading": false
+        },
+        {
+          "term": "università degli",
+          "heading": false
+        },
+        {
+          "term": "degli studi",
+          "heading": false
+        },
+        {
+          "term": "vitagliano",
+          "heading": false
+        },
+        {
+          "term": "secondary calculus",
+          "heading": false
+        },
+        {
+          "term": "diﬀerentiable stacks",
+          "heading": false
+        }
+      ],
+      "extract": "[1] K. Behrend, and P. Xu, Diﬀerentiable stacks and gerbes, J. Sympl. Geom. 9 (2011), 285–341; e-print: arXiv:math/0605694. [2] A. V. Bocharov et al., Symmetries and conservation laws for diﬀerential equations of mathe- matical physics, Transl. Math. Mon. 182, Amer. Math. Soc., Providence, 1999. [3] B. Güneysu, and M. J. Pﬂaum, The proﬁnite dimensional manifold structure of formal solution spaces of formally",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 2,
+        "items": [
+          "jet spaces",
+          "diﬃeties"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 1,
+        "items": [
+          "VINOGRADOV’S COHOMOLOGICAL GEOMETRY OF PDES: listed p3, found p5"
+        ]
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "bullet mathscr",
+      "heading": false
+    },
+    {
+      "term": "mathscr infty",
+      "heading": false
+    },
+    {
+      "term": "pde mathscr",
+      "heading": false
+    },
+    {
+      "term": "mathfrak mathscr",
+      "heading": false
+    },
+    {
+      "term": "mathscr omega",
+      "heading": false
+    },
+    {
+      "term": "mathscr ast",
+      "heading": false
+    },
+    {
+      "term": "prolongation mathscr",
+      "heading": false
+    },
+    {
+      "term": "wedge mathscr",
+      "heading": false
+    },
+    {
+      "term": "mathscr subseteq",
+      "heading": false
+    },
+    {
+      "term": "mathscr partial",
+      "heading": false
+    },
+    {
+      "term": "submanifold mathscr",
+      "heading": false
+    },
+    {
+      "term": "mathscr gamma",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 14,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 15,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p25); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 15 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2301.02038v1"
+  }
+}

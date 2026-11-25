@@ -1,0 +1,60 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1302.0342v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Tying knots in light ﬁelds",
+  "contains": [
+    "library/arxiv-1302.0342v1/sections/page-001",
+    "library/arxiv-1302.0342v1/sections/page-002",
+    "library/arxiv-1302.0342v1/sections/page-003",
+    "library/arxiv-1302.0342v1/sections/page-004",
+    "library/arxiv-1302.0342v1/sections/page-005"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Tying knots in light ﬁelds — 5 sections: Page 1; Page 2; Page 3\n\n**Tying knots in light ﬁelds**\n\n*Hridesh Kedia,1, ∗Iwo Bialynicki-Birula,2 Daniel Peralta-Salas,3 and William T.M. Irvine1*\n\n5 pp, 5 sections.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1302.0342&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1302.0342v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1302.0342v1.pdf",
+    "source_sha256": "ec2ca6ba7896456d896716824fe40854ea931f164b9a710f98f1cc9d8edb93ca",
+    "pages": 5,
+    "arxiv": {
+      "id": "1302.0342",
+      "version": "1",
+      "primary_class": "math-ph",
+      "stamp_date": "2 Feb 2013"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

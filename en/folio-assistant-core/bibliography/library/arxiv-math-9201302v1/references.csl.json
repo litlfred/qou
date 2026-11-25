@@ -1,0 +1,19 @@
+[
+  {
+    "id": "arxiv-math-9201302v1",
+    "type": "article-journal",
+    "title": "The Quantum G_2 Link Invariant",
+    "author": [
+      {
+        "family": "October 7",
+        "given": "1991"
+      }
+    ],
+    "issued": {
+      "raw": "D:20181103"
+    },
+    "URL": "https://arxiv.org/abs/math/9201302",
+    "abstract": "We derive an inductive, combinatorial deﬁnition of a polynomial-valued regular isotopy invariant of links and tangled graphs. We show that the invariant equals the Reshetikhin-Turaev invariant corre- sponding to the exceptional simple Lie algebra G2. It is therefore related to G2 in the same way that the HOMFLY polynomial is related to An and the Kauﬀman polynomial is related to Bn, Cn, and Dn. We give parallel constructions for the other rank 2 Lie algebras and present some combinatorial conjectures motivated by the new inductive deﬁnitions. This paper is divided into two parts. In the ﬁrst part we derive from ﬁrst principles some variants of the link invariant known as the Jones polynomial. In the second part we show that these invariants are the same known invariants constructed using rank 2 Lie algebras, and we discuss some of their properties. Invariants of links and graphs The simplest known deﬁnition of the Jones polynomial is the Kauﬀman bracket [8], which in this paper will be denoted by ⟨·⟩A1 and will be called the A1 bracket. The A1 bracket is given by the following recursive rules: | 〉A1 = −(q 1/2+q -1/2)| 〉A1 | 〉A1 = −q 1/4| 〉A1 − q -1/4| 〉A1 The goal of this part of the paper is to derive deﬁnitions of the following three variants of the Jones polynomial: Theorem 1.1. There is an invariant for regular isotopy of projections of links and tangled trivalent graphs called ⟨·⟩G2 which is given by the following recursive rules: | 〉G2 = a| 〉G2 | 〉G2 = 0 | 〉G2 = b| 〉G2 | 〉G2 = c| 〉G2 | 〉G2 = d1(| 〉G2 + | 〉G2) + d2(| 〉G2 + | 〉G2) | 〉G2 = e1(| 〉G2 + | 〉G2 + | 〉G2 + | 〉G2 + | 〉G2) + e2(| 〉G2 + | 〉G2 + | 〉G2 + | 〉G2 + | 〉G2) | 〉G2 = f1| 〉G2 + g1| 〉G2 + f2| 〉G2 + g2| 〉G2 ∗Supported by a National Science Foundation graduate fellowship in mathematics and a Sloan Foundation graduate fellowship in mathematics. 1",
+    "note": "arXiv:math/9201302"
+  }
+]

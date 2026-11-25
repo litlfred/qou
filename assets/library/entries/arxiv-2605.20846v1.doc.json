@@ -1,0 +1,2232 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2605.20846v1",
+  "title": "Topological Field Theories and the Algebraic Structures of the Two-Sphere",
+  "variant": "pdf",
+  "pages": 99,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Generators",
+      "number": null,
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-generators"
+    },
+    {
+      "level": 1,
+      "title": "Commutative Frobenius Relations",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-commutative-frobenius-relations"
+    },
+    {
+      "level": 2,
+      "title": "Outline of Strategy",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-outline-of-strategy"
+    },
+    {
+      "level": 2,
+      "title": "Existence and Spherical Morse Functions",
+      "number": null,
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-existence-and-spherical-morse-functions"
+    },
+    {
+      "level": 2,
+      "title": "Spherical Morse Functions",
+      "number": null,
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-spherical-morse-functions"
+    },
+    {
+      "level": 2,
+      "title": "Local Models of Excellent Morse Failures",
+      "number": null,
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-local-models-of-excellent-morse-failures"
+    },
+    {
+      "level": 2,
+      "title": "Sufficiency of Commutative Frobenius Relations Among CF Generators",
+      "number": null,
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-sufficiency-of-commutative-frobenius-relations-a"
+    },
+    {
+      "level": 1,
+      "title": "Prime Relations",
+      "number": null,
+      "page": 46,
+      "pageLabel": "46",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-prime-relations"
+    },
+    {
+      "level": 2,
+      "title": "No Internal Relations",
+      "number": null,
+      "page": 46,
+      "pageLabel": "46",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-no-internal-relations"
+    },
+    {
+      "level": 2,
+      "title": "External Prime Relations",
+      "number": null,
+      "page": 49,
+      "pageLabel": "49",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-external-prime-relations"
+    },
+    {
+      "level": 2,
+      "title": "Sufficiency of External Relations",
+      "number": null,
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-sufficiency-of-external-relations"
+    },
+    {
+      "level": 2,
+      "title": "Necessity of Legs Relations",
+      "number": null,
+      "page": 60,
+      "pageLabel": "60",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-necessity-of-legs-relations"
+    },
+    {
+      "level": 1,
+      "title": "Passing through TFTs",
+      "number": null,
+      "page": 70,
+      "pageLabel": "70",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-passing-through-tfts"
+    },
+    {
+      "level": 2,
+      "title": "P and L Monoids",
+      "number": null,
+      "page": 70,
+      "pageLabel": "70",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-p-and-l-monoids"
+    },
+    {
+      "level": 2,
+      "title": "Relations to J-Algebras",
+      "number": null,
+      "page": 74,
+      "pageLabel": "74",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-relations-to-j-algebras"
+    },
+    {
+      "level": 2,
+      "title": "The -operad L",
+      "number": null,
+      "page": 78,
+      "pageLabel": "78",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-the--operad-l"
+    },
+    {
+      "level": 1,
+      "title": "Appendix: Definitions and Common Results",
+      "number": null,
+      "page": 90,
+      "pageLabel": "90",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-appendix-definitions-and-common-results"
+    },
+    {
+      "level": 2,
+      "title": "Presentations of a Category",
+      "number": null,
+      "page": 90,
+      "pageLabel": "90",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-presentations-of-a-category"
+    },
+    {
+      "level": 2,
+      "title": "Towards",
+      "number": null,
+      "page": 92,
+      "pageLabel": "92",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-towards"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 636,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "legs relations",
+          "heading": false
+        },
+        {
+          "term": "prime relations",
+          "heading": false
+        },
+        {
+          "term": "prime structures",
+          "heading": false
+        },
+        {
+          "term": "frobenius relations",
+          "heading": false
+        },
+        {
+          "term": "commutative frobenius",
+          "heading": false
+        },
+        {
+          "term": "spherical morse",
+          "heading": false
+        },
+        {
+          "term": "monoids",
+          "heading": false
+        },
+        {
+          "term": "l-monoids",
+          "heading": false
+        }
+      ],
+      "extract": "Topological Field Theories and the Algebraic Structures of the Two-Sphere Chris Li May 21, 2026 Abstract We give two presentations for bordisms of S2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the algebraic structures on S2. After passing through topological field theories, we define two kinds of monoids which we call P-monoids and L-monoids. In addition to both being commutative Frobenius",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2605.20846v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 13,
+      "labelStart": "3",
+      "labelEnd": "13",
+      "words": 4121,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "category cob",
+          "heading": false
+        },
+        {
+          "term": "commutative frobenius",
+          "heading": false
+        },
+        {
+          "term": "legs relations",
+          "heading": false
+        },
+        {
+          "term": "prime relations",
+          "heading": false
+        },
+        {
+          "term": "kneser-milnor prime",
+          "heading": false
+        },
+        {
+          "term": "dimensional tft",
+          "heading": false
+        },
+        {
+          "term": "bordism category",
+          "heading": false
+        },
+        {
+          "term": "frobenius object",
+          "heading": false
+        }
+      ],
+      "extract": "Motivations One of the greatest scientific achievements in the 20th century is the development of quantum field theories, which model the interaction of elementary particles with great precision through quantum fields. Quantum fields are , roughly speaking, classes of functions ϕ : M →C where M is a manifold representing the underlying space- time. Unfortunately, developing a mathematically rigorous definition of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-generators",
+      "number": null,
+      "title": "Generators",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 22,
+      "labelStart": "13",
+      "labelEnd": "22",
+      "words": 3118,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "category cob",
+          "heading": false
+        },
+        {
+          "term": "outgoing boundaries",
+          "heading": false
+        },
+        {
+          "term": "incoming sphere",
+          "heading": false
+        },
+        {
+          "term": "incoming components",
+          "heading": false
+        },
+        {
+          "term": "bound outgoing",
+          "heading": false
+        },
+        {
+          "term": "outgoing time",
+          "heading": false
+        },
+        {
+          "term": "oriented prime",
+          "heading": false
+        },
+        {
+          "term": "prime factors",
+          "heading": false
+        }
+      ],
+      "extract": "There are two approaches to presenting the content. One could either employ the full power of abstraction, in terms of presentations of categories outlined in Appendix A.1, or appeal to intuition carried over from presentations of groups. We will try to accomplish both. The readers are encouraged to refresh their memories on the rigorous setup of quotient categories, generators and relations, and presentations of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-commutative-frobenius-relations",
+      "number": null,
+      "title": "Commutative Frobenius Relations",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "Relations",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-outline-of-strategy",
+      "number": null,
+      "title": "Outline of Strategy",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 26,
+      "labelStart": "22",
+      "labelEnd": "26",
+      "words": 2046,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "prime morse",
+          "heading": false
+        },
+        {
+          "term": "operatorname cob",
+          "heading": false
+        },
+        {
+          "term": "morse datum",
+          "heading": false
+        },
+        {
+          "term": "prime decompositions",
+          "heading": false
+        },
+        {
+          "term": "prime bordism",
+          "heading": false
+        },
+        {
+          "term": "textit prime",
+          "heading": false
+        },
+        {
+          "term": "prime compositions",
+          "heading": false
+        },
+        {
+          "term": "waist relations",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:outlineofstrat} \\begin{defn} \\label{defn:3d Morse Datum} Let $M$ be a compact oriented connected 3 manifold with boundary $X_-$ and $X_+$ of codimension $1$. A \\textit{prime Morse datum} is a pair $f:M\\to \\mathbb{R}$ and an ordered tuple $b=(b_0<b_1<\\dots <b_m) \\in \\mathbb{R}^{m+1}$ such that \\begin{enumerate} \\item $X_- = f^{-1}(b_0)$ and $X_+ = f^{-1}(b_m)$ are the sets of minimum resp maximum of $f$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-existence-and-spherical-morse-functions",
+      "number": null,
+      "title": "Existence and Spherical Morse Functions",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 32,
+      "labelStart": "26",
+      "labelEnd": "32",
+      "words": 2272,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spherical morse",
+          "heading": true
+        },
+        {
+          "term": "morse functions",
+          "heading": true
+        },
+        {
+          "term": "admissible morse",
+          "heading": false
+        },
+        {
+          "term": "cerf path",
+          "heading": false
+        },
+        {
+          "term": "birth-death singularities",
+          "heading": false
+        },
+        {
+          "term": "centering incfig",
+          "heading": false
+        },
+        {
+          "term": "pants decomposition",
+          "heading": false
+        },
+        {
+          "term": "circ vee",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:existenceandsphericalMorse} \\begin{defn} \\label{defn:good} Let $M$ be a compact oriented manifold possibly with boundary $\\partial M$ and $f:M\\to \\mathbb{R}$ a Morse function. We say that $f$ is \\begin{itemize} \\item ``admissible'' if $f : M \\to \\left[ a,b \\right] $ such that $a$ and $b$ are regular values and $\\partial M = f^{-1}(a) \\cup f^{-1}(b)$; \\item ``excellent'' if all critical values are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-spherical-morse-functions",
+      "number": null,
+      "title": "Spherical Morse Functions",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 38,
+      "labelStart": "32",
+      "labelEnd": "38",
+      "words": 2166,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "operatorname cob",
+          "heading": false
+        },
+        {
+          "term": "spherical morse",
+          "heading": true
+        },
+        {
+          "term": "hom csp",
+          "heading": false
+        },
+        {
+          "term": "sqcup inc",
+          "heading": false
+        },
+        {
+          "term": "category csp",
+          "heading": false
+        },
+        {
+          "term": "amalg inc",
+          "heading": false
+        },
+        {
+          "term": "sqcup out",
+          "heading": false
+        },
+        {
+          "term": "coprod inc",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Cob2Cob3Iso} Before we proceed to show that the commutative Frobenius relations are sufficient among CF generators, it is necessary to examine their Morse theory. We will prove in this section that there is an isomorphism between the categories $\\operatorname{Cob}( 3)_{S^2,CF} $ and $\\operatorname{Cob}( 2)$ in theorem \\ref{thm:Cob2Cob3CFIso}. Furthermore we show that $G_1 $ and $G_2 $ are both minimal in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-local-models-of-excellent-morse-failures",
+      "number": null,
+      "title": "Local Models of Excellent Morse Failures",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 41,
+      "labelStart": "38",
+      "labelEnd": "41",
+      "words": 1409,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "local models",
+          "heading": true
+        },
+        {
+          "term": "excellent morse",
+          "heading": true
+        },
+        {
+          "term": "local failure",
+          "heading": false
+        },
+        {
+          "term": "failure type",
+          "heading": false
+        },
+        {
+          "term": "index critical",
+          "heading": false
+        },
+        {
+          "term": "critical points",
+          "heading": false
+        },
+        {
+          "term": "morse functions",
+          "heading": false
+        },
+        {
+          "term": "critical values",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:localmodels} Proposition \\ref{prop:CFcommFrob} gives the existence of commutative Frobenius relations among CF generators. We would like to know if they are sufficient-- namely, are there other necessary relations if one wants to give a presentation of the category $\\operatorname{Cob}( 3)_{S^2,CF} $? This section introduces a tool which we call \\textit{local models of failures}, which the next section",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-sufficiency-of-commutative-frobenius-relations-a",
+      "number": null,
+      "title": "Sufficiency of Commutative Frobenius Relations Among CF Generators",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 46,
+      "labelStart": "41",
+      "labelEnd": "46",
+      "words": 2006,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "operatorname cob",
+          "heading": false
+        },
+        {
+          "term": "commutative frobenius",
+          "heading": true
+        },
+        {
+          "term": "frobenius relations",
+          "heading": true
+        },
+        {
+          "term": "excellent morse",
+          "heading": false
+        },
+        {
+          "term": "tau epsilon",
+          "heading": false
+        },
+        {
+          "term": "spherical morse",
+          "heading": false
+        },
+        {
+          "term": "morse decompositions",
+          "heading": false
+        },
+        {
+          "term": "local failure",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:sufficient} Recall that there is a \\textit{silly functor} defined in \\ref{defn:Sillyfunctor}, \\[ S: \\operatorname{Cob}( 2) \\to \\operatorname{Cob}( 3)_{S^2, CF} \\] sending disjoint unions of $n$-copies of $S^1$ to disjoint unions of $n$-copies of $S^2$, and the genus $g$ bordism \\[ [\\Sigma_g \\setminus int( \\sqcup^{n_{inc}+n_{out}}D^2)]: \\sqcup^{n_{inc}}S^1 \\to \\sqcup^{n_{out}}S^1 \\] to the bordism \\[",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-prime-relations",
+      "number": null,
+      "title": "Prime Relations",
+      "level": 1,
+      "pageStart": 46,
+      "pageEnd": 46,
+      "labelStart": "46",
+      "labelEnd": "46",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-no-internal-relations",
+      "number": null,
+      "title": "No Internal Relations",
+      "level": 2,
+      "pageStart": 46,
+      "pageEnd": 49,
+      "labelStart": "46",
+      "labelEnd": "49",
+      "words": 1438,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "internal relations",
+          "heading": true
+        },
+        {
+          "term": "setminus operatorname",
+          "heading": false
+        },
+        {
+          "term": "operatorname int",
+          "heading": false
+        },
+        {
+          "term": "circ times",
+          "heading": false
+        },
+        {
+          "term": "outgoing ball",
+          "heading": false
+        },
+        {
+          "term": "prime endomorphism",
+          "heading": false
+        },
+        {
+          "term": "cong times",
+          "heading": false
+        },
+        {
+          "term": "admissible morse",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:no internal relations} Let $p^{\\times \\times} =\\left[ p \\setminus \\operatorname{int}(D^3 \\sqcup D^3) \\right] \\in P$ be a prime endomorphism. We say a relation is \\textit{internal }to $p^{\\times \\times} $ if there exists a composition of CF generators and $P$ generators such that the composition is again $p^{\\times \\times} $, other than the trivial composition $p^{\\times \\times} = id_{S^2} \\circ p^{\\times",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-external-prime-relations",
+      "number": null,
+      "title": "External Prime Relations",
+      "level": 2,
+      "pageStart": 49,
+      "pageEnd": 54,
+      "labelStart": "49",
+      "labelEnd": "54",
+      "words": 1689,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "prime relations",
+          "heading": true
+        },
+        {
+          "term": "sqcup circ",
+          "heading": false
+        },
+        {
+          "term": "circ times",
+          "heading": false
+        },
+        {
+          "term": "circ vee",
+          "heading": false
+        },
+        {
+          "term": "emptyset sqcup",
+          "heading": false
+        },
+        {
+          "term": "setminus operatorname",
+          "heading": false
+        },
+        {
+          "term": "legs relations",
+          "heading": false
+        },
+        {
+          "term": "beta sqcup",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec: external prime relations} \\begin{prop} \\label{primecommutativity} (Prime Commutativity) Let $p^{\\times \\times}_1 , p^{\\times \\times}_2 \\in P$ be prime endomorphisms. Then \\[ p^{\\times \\times}_1 \\circ p^{\\times \\times}_2 = p^{\\times \\times}_2 \\circ p^{\\times \\times}_1 .\\] \\end{prop} \\begin{figure}[ht] \\centering \\incfig{primecommutativity} \\caption[Prime endomorphism commutativity]{Prime endomorphism",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-sufficiency-of-external-relations",
+      "number": null,
+      "title": "Sufficiency of External Relations",
+      "level": 2,
+      "pageStart": 54,
+      "pageEnd": 60,
+      "labelStart": "54",
+      "labelEnd": "60",
+      "words": 2377,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "otimes circ",
+          "heading": false
+        },
+        {
+          "term": "inc circ",
+          "heading": false
+        },
+        {
+          "term": "circ rho",
+          "heading": false
+        },
+        {
+          "term": "circ times",
+          "heading": false
+        },
+        {
+          "term": "circ left",
+          "heading": false
+        },
+        {
+          "term": "overline circ",
+          "heading": false
+        },
+        {
+          "term": "circ dots",
+          "heading": false
+        },
+        {
+          "term": "circ alpha",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:external sufficient} Equipped with prime commutativity, legs and waist relations, co-legs and co-waist relations, we are ready to state a sufficiency theorem among $G_2 $ generators. \\begin{thm} \\label{mainthmG2} $\\operatorname{Cob}( 3)_{S^2} $ has a presentation with $G_2$ generators under commutative Frobenius relations, prime commutativity, legs and waist relations, and co-legs and co-waist relations.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-necessity-of-legs-relations",
+      "number": null,
+      "title": "Necessity of Legs Relations",
+      "level": 2,
+      "pageStart": 60,
+      "pageEnd": 70,
+      "labelStart": "60",
+      "labelEnd": "70",
+      "words": 2874,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "legs relations",
+          "heading": true
+        },
+        {
+          "term": "emptyset circ",
+          "heading": false
+        },
+        {
+          "term": "sqcup circ",
+          "heading": false
+        },
+        {
+          "term": "circ vee",
+          "heading": false
+        },
+        {
+          "term": "circ times",
+          "heading": false
+        },
+        {
+          "term": "emptyset otimes",
+          "heading": false
+        },
+        {
+          "term": "associativity circ",
+          "heading": false
+        },
+        {
+          "term": "circ rho",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:legsnecessary} This section exhibits all coherence data. See notation \\ref{coherencenotations}. The reader is urged to reference the graphical summary of the proofs whenever possible. \\begin{mycom} \\textbf{(Important comment)} Before we prove that some of the prime relations of $P$ are redundant, we need to make an important observation. There is an important geometric relation which shall play a role in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-passing-through-tfts",
+      "number": null,
+      "title": "Passing through TFTs",
+      "level": 1,
+      "pageStart": 70,
+      "pageEnd": 70,
+      "labelStart": "70",
+      "labelEnd": "70",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-014-p-and-l-monoids",
+      "number": null,
+      "title": "P and L Monoids",
+      "level": 2,
+      "pageStart": 70,
+      "pageEnd": 74,
+      "labelStart": "70",
+      "labelEnd": "74",
+      "words": 1851,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "monoids",
+          "heading": true
+        },
+        {
+          "term": "frobenius monoid",
+          "heading": false
+        },
+        {
+          "term": "operatorname cob",
+          "heading": false
+        },
+        {
+          "term": "prime endomorphisms",
+          "heading": false
+        },
+        {
+          "term": "lambda circ",
+          "heading": false
+        },
+        {
+          "term": "circ vee",
+          "heading": false
+        },
+        {
+          "term": "operatorname vect",
+          "heading": false
+        },
+        {
+          "term": "oriented prime",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:PLmonoids} Inspired by the list of relations which define the $G_1$ and $G_2$ presentations of $\\operatorname{Cob}(3)_{S^2}$, we define the following monoids in symmetric monoidal categories, in anticipation that they will come from a 3d TFT. \\begin{defn} \\label{defn:Sketch, P/L monoids} (Sketch, P/L monoids) Let $(A, 1, m, tr, m^\\vee)$ be a commutative Frobenius monoid in a symmetric monoidal category",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-relations-to-j-algebras",
+      "number": null,
+      "title": "Relations to J-Algebras",
+      "level": 2,
+      "pageStart": 74,
+      "pageEnd": 78,
+      "labelStart": "74",
+      "labelEnd": "78",
+      "words": 1611,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "amalg sigma",
+          "heading": false
+        },
+        {
+          "term": "phi cyl",
+          "heading": false
+        },
+        {
+          "term": "partial amalg",
+          "heading": false
+        },
+        {
+          "term": "overset omega",
+          "heading": false
+        },
+        {
+          "term": "overset alpha",
+          "heading": false
+        },
+        {
+          "term": "dots overset",
+          "heading": false
+        },
+        {
+          "term": "overset rho",
+          "heading": false
+        },
+        {
+          "term": "operatorname diff",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Jalg} \\begin{defn} \\label{defn:Trace of Surgery} (Trace of Surgery) Let $M$ be an oriented $n$-manifold and $0\\leq k\\leq n$. Let $\\phi : S^{k-1} \\times D^{n-k} \\hookrightarrow M$ be an embedding along which a $k$-handle is attached. The resulting manifold is \\[ M' = M \\cup_{\\phi } (D^k \\times D^{n-k}) .\\] The \\textit{trace} of this handle attachment is the $(n+1)$-dimensional cobordism $W$ from $M$ to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-the--operad-l",
+      "number": null,
+      "title": "The -operad L",
+      "level": 2,
+      "pageStart": 78,
+      "pageEnd": 90,
+      "labelStart": "78",
+      "labelEnd": "90",
+      "words": 4788,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "operad",
+          "heading": true
+        },
+        {
+          "term": "operatorname bdiff",
+          "heading": false
+        },
+        {
+          "term": "operatorname bord",
+          "heading": false
+        },
+        {
+          "term": "bord otimes",
+          "heading": false
+        },
+        {
+          "term": "infty operad",
+          "heading": false
+        },
+        {
+          "term": "operad mathbb",
+          "heading": false
+        },
+        {
+          "term": "omega bord",
+          "heading": false
+        },
+        {
+          "term": "sub-operad operatorname",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:infoperad} We now shift gears to the $(\\infty,1)$-categorical setting. In this exploratory section, we aim to define an $\\infty$-operad $\\mathbb{L}^\\otimes $ and conjecture it as equivalent to the connected part of the $\\infty$-endomorphism operad $\\operatorname{End}_{\\Omega^2 \\text{Bord}_3^{fr}}^\\otimes (S^2) $. There is also an oriented version of the proposal. We will do this in steps: first we will",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-appendix-definitions-and-common-results",
+      "number": null,
+      "title": "Appendix: Definitions and Common Results",
+      "level": 1,
+      "pageStart": 90,
+      "pageEnd": 90,
+      "labelStart": "90",
+      "labelEnd": "90",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "Common Results",
+      "extractCut": false
+    },
+    {
+      "id": "sec-018-presentations-of-a-category",
+      "number": null,
+      "title": "Presentations of a Category",
+      "level": 2,
+      "pageStart": 90,
+      "pageEnd": 92,
+      "labelStart": "90",
+      "labelEnd": "92",
+      "words": 1231,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "binary relations",
+          "heading": false
+        },
+        {
+          "term": "presentations",
+          "heading": true
+        },
+        {
+          "term": "least congruence",
+          "heading": false
+        },
+        {
+          "term": "congruence containing",
+          "heading": false
+        },
+        {
+          "term": "category",
+          "heading": true
+        },
+        {
+          "term": "quotient category",
+          "heading": false
+        },
+        {
+          "term": "homs",
+          "heading": false
+        },
+        {
+          "term": "write fra",
+          "heading": false
+        }
+      ],
+      "extract": "Presentations of a Category Definition A.1.1. (Free Category) Let G be a directed graph. The free category F(G) has objects the vertices of G and morphisms all composable arrows. The empty path is the identity of a vertex. Definition A.1.2. (Binary Relation) Let C be a category and a, b ∈obj(C). A bi- nary relation Ra,b on HomC(a, b) is a subset Ra,b ⊂HomC(a, b) × HomC(a, b). We write fRa,bg if (f, g) ∈Ra,b. We say",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-towards",
+      "number": null,
+      "title": "Towards",
+      "level": 2,
+      "pageStart": 92,
+      "pageEnd": 99,
+      "labelStart": "92",
+      "labelEnd": "99",
+      "words": 1895,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "simplicial nerve",
+          "heading": false
+        },
+        {
+          "term": "topological nerve",
+          "heading": false
+        },
+        {
+          "term": "simplicial category",
+          "heading": false
+        },
+        {
+          "term": "ordinary nerve",
+          "heading": false
+        },
+        {
+          "term": "simplicial categories",
+          "heading": false
+        },
+        {
+          "term": "jacob lurie",
+          "heading": false
+        },
+        {
+          "term": "segal spaces",
+          "heading": false
+        },
+        {
+          "term": "simplicial maps",
+          "heading": false
+        }
+      ],
+      "extract": "Towards ∞ Definition A.2.1. ((∞, 1)-category) An (∞, 1)-category is a complete Segal space X•. That is, a simplicial object in topological spaces satisfying completeness and the Segal condition. See [Lur08] for details about completeness and Segal condition. See [Zha13, section 2] for a comparison between the different settings of complete Segal spaces. Here we specialize to the setting of topological spaces and",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 2,
+        "items": [
+          "2 M is diffeomorphic to either S3 or #r \u0000",
+          "4 S is the gluing sphere of"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "operatorname cob",
+      "heading": false
+    },
+    {
+      "term": "prime morse",
+      "heading": true
+    },
+    {
+      "term": "prime circ",
+      "heading": false
+    },
+    {
+      "term": "sqcup circ",
+      "heading": false
+    },
+    {
+      "term": "category cob",
+      "heading": false
+    },
+    {
+      "term": "times operatorname",
+      "heading": false
+    },
+    {
+      "term": "prime bordism",
+      "heading": true
+    },
+    {
+      "term": "setminus operatorname",
+      "heading": false
+    },
+    {
+      "term": "prime relations",
+      "heading": true
+    },
+    {
+      "term": "operatorname int",
+      "heading": false
+    },
+    {
+      "term": "frobenius relations",
+      "heading": true
+    },
+    {
+      "term": "commutative frobenius",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 61,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 67,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 69,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 71,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 72,
+      "label": "72",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 73,
+      "label": "73",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 74,
+      "label": "74",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 75,
+      "label": "75",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 76,
+      "label": "76",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 77,
+      "label": "77",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 78,
+      "label": "78",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 79,
+      "label": "79",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 80,
+      "label": "80",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 81,
+      "label": "81",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 82,
+      "label": "82",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 83,
+      "label": "83",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 84,
+      "label": "84",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 85,
+      "label": "85",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 86,
+      "label": "86",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 87,
+      "label": "87",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 88,
+      "label": "88",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 89,
+      "label": "89",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 90,
+      "label": "90",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 91,
+      "label": "91",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 92,
+      "label": "92",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 93,
+      "label": "93",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 94,
+      "label": "94",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 95,
+      "label": "95",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 96,
+      "label": "96",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 97,
+      "label": "97",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 98,
+      "label": "98",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 99,
+      "label": "99",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1.1",
+      "title": "The commutative Frobenius generators of Cob(2)",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1.2",
+      "title": "A list of generating morphisms",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1.3",
+      "title": "The “legs relations” for the G2 presentation of Cob(3)S2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1.4",
+      "title": "A path from f0 to f1 using 3 prime relations, then 2 commutative Frobenius relations, then 2 prime relations. Note that each black dot is a Morse data which induces some composition. The prime relations is a pair of Morse data separated by more than 1 singularities, while a commutative Frobenius rel",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.1",
+      "title": "A sketch of how G2 generates a generic bordism [M] where M ’s prime factors are P1, . . . , Pm. Note that this picture is “sideways” as we usually associate the “time” direction as going up. In this case, time goes from left to right",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.2",
+      "title": "A sketch of how G1 generates a generic bordism [M] where M ’s prime factors are",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.3",
+      "title": "Notations 2.0.10. Given the two remarks 2.0.8 and 2.0.9, we shall remove S2 × S1",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.4",
+      "title": "Bijection between G1 and G2 generators. Figure (a) shows that all prime units",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.1",
+      "title": "The birth and death of a pair of critical points of index (0, 1) and (2, 3). The first equality, when read from left to right, shows the death of critical points of indices 0 and 1. One can imagine pushing the left cone up until the bottom tip is level with the crouch of the pair of pants, then smoo",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.2",
+      "title": "(a) Associativity of multiplication. (b) Coassociativity of comultiplication",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.3",
+      "title": "Frobenius relation",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.4",
+      "title": "The local picture of the regular surface f −1(r) after the birth of a pair of critical points c1,2 of index 1 and 2, where f(c1) < r < f(c2). Notice that this surface has genus at least 1, hence is not spherical",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.5",
+      "title": "Two different decompositions of S2 × S1. Figure (a) is the usual “pants” decomposition which resembles the pants decomposition of a torus in 2-dimensions. A regular surface f −1(r), for any r between the index 2 and 1 critical values, is the disjoint union",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.6",
+      "title": "The Kirby graphics for a path at fpants : S2 × S1 which fails to remain spherical as it exchanges the index 1 and 2 critical points. After the exchange the Morse function",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.7",
+      "title": "An example of a Reeb graph Rf associated to a Morse function f. Here f :",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.8",
+      "title": "A local model of the birth of a pair of critical points",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.9",
+      "title": "The tilting torus. The figure on the left is the standard embedding of the 2-torus. As one rotates the torus, the critical values of the index 1 critical points move towards each other, ultimately coinciding as depicted in the right figure. The critical level set is depicted as the two dashed circle",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3.10",
+      "title": "The behavior of Morse data under the isomorphism S : Cob(2) →Cob(3)S2",
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.1",
+      "title": "Classifications of spherical regular surface in a prime endomorphism. The shaded",
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.2",
+      "title": "Classifications of spherical regular surface in a prime unit. The shaded sphere is",
+      "page": 49,
+      "pageLabel": "49",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.3",
+      "title": "Prime endomorphism commutativity. Geometrically turning the left hand side upside down. Equivalently one can post-compose the Morse function by x 7→−x",
+      "page": 50,
+      "pageLabel": "50",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.4",
+      "title": "A cartoon for legs and waist relations. All manifolds depicted are diffeomorphic,",
+      "page": 51,
+      "pageLabel": "51",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.5",
+      "title": "Legs relations for p×L ⊂G1",
+      "page": 52,
+      "pageLabel": "52",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.6",
+      "title": "Redundancy of L legs relations",
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.7",
+      "title": "Pulling aside a map out of 1⊗",
+      "page": 57,
+      "pageLabel": "57",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.8",
+      "title": "The only if direction of lemma 4.4.2",
+      "page": 62,
+      "pageLabel": "62",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.9",
+      "title": "Redundancy of G2 waist relations",
+      "page": 63,
+      "pageLabel": "63",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.10",
+      "title": "Redundancy of prime commutativity. Note that the final figure is symmetric under the exchange of p××",
+      "page": 68,
+      "pageLabel": "68",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.11",
+      "title": "Redundancy of cowaist relations",
+      "page": 69,
+      "pageLabel": "69",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5.1",
+      "title": "(a) An example of the star graph G in the spike ball operad. In this particular case, G has | α−1(j) | +1 = 3 half edges, and Ij = {1, 2} labelled vertices. (b) illustrate the particular bordism [M] ∈BDiff(M)represented by G and the connect sum configuration f",
+      "page": 85,
+      "pageLabel": "85",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5.2",
+      "title": "A simple spike ball example. (a) gives the graph G. (b) provides a visualization for the bordism represented by G and a connect sum configuration f",
+      "page": 88,
+      "pageLabel": "88",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 20,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 21,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "31 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p92); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 16
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 21 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2605.20846v1"
+  }
+}

@@ -1,0 +1,444 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-ph-9612303v1",
+  "title": "The q-deformed quark model : quantum isospin and q-hadrons",
+  "variant": "pdf",
+  "pages": 9,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The quantum isospin group and its possible relevance to physics",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-the-quantum-isospin-group-and-its-possible-rel"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions and outlook",
+      "number": "6",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-6-conclusions-and-outlook"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-003-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "1",
+      "words": 129,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "teorica",
+          "heading": false
+        },
+        {
+          "term": "unam",
+          "heading": false
+        },
+        {
+          "term": "exico",
+          "heading": false
+        },
+        {
+          "term": "quark model",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-ph/9612303v1 9 Dec 1996 Preprint IFUNAM FT96-13 December 1996 hep-ph/9612303n The q-deformed quark model : quantum isospin and q-hadrons M. Klein-Kreisler and M. Ruiz-Altaba† Instituto de F´ısica Universidad Nacional Aut´onoma de M´exico A.P. 20-364, 01000 M´exico D.F. We consider the possibility that the SU(2) isospin symmetry, exact in strong inter- actions but only approximate in nature, is in fact a",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-ph-9612303v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 365,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "strong interactions",
+          "heading": false
+        },
+        {
+          "term": "quantum groups",
+          "heading": false
+        },
+        {
+          "term": "isospin",
+          "heading": false
+        },
+        {
+          "term": "hadrons",
+          "heading": false
+        },
+        {
+          "term": "pions",
+          "heading": false
+        },
+        {
+          "term": "beautiful",
+          "heading": false
+        },
+        {
+          "term": "predictions",
+          "heading": false
+        },
+        {
+          "term": "devoted",
+          "heading": false
+        }
+      ],
+      "extract": "One of the most beautiful and old ideas in particle physics is the isospin invariance of strong interactions, discovered by Heisenberg. It constitutes one of the keystones of the quark model, which later became current algebra and eventually ‘t Hooft’s standard model of strong interactions, namely quantum chromodynamics. Its success in a variety of predictions makes it a fundamental conceptual tool for the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-quantum-isospin-group-and-its-possible-rel",
+      "number": "2",
+      "title": "The quantum isospin group and its possible relevance to physics",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 8,
+      "labelStart": "1",
+      "labelEnd": "7",
+      "words": 1990,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "udu duu",
+          "heading": false
+        },
+        {
+          "term": "duu uud",
+          "heading": false
+        },
+        {
+          "term": "udd dud",
+          "heading": false
+        },
+        {
+          "term": "dud ddu",
+          "heading": false
+        },
+        {
+          "term": "quark model",
+          "heading": false
+        },
+        {
+          "term": "neutral pion",
+          "heading": false
+        },
+        {
+          "term": "quarks inside",
+          "heading": false
+        },
+        {
+          "term": "magnetic moments",
+          "heading": false
+        }
+      ],
+      "extract": "Given the SU(2) algebra, it is possible to q-deform it to obtain the quantum group Uq(sℓ(2)), with generators I+, I−and Iz, subject to the commutation relations [I3, I±] = ±I± , [I+, I−] = qI3 −q−I3 q −q−1 (2.1) 1 In the limit q →1, one recovers the usual SU(2) with the help of L’Hospital’s rule. Let us point out the well-known but crucial fact that the mere commutation relations (2.1) constitute only, per se, a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-6-conclusions-and-outlook",
+      "number": "6",
+      "title": "Conclusions and outlook",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 363,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-isospin",
+          "heading": false
+        },
+        {
+          "term": "quark model",
+          "heading": false
+        },
+        {
+          "term": "mass diﬀerence",
+          "heading": false
+        },
+        {
+          "term": "q-deformed",
+          "heading": false
+        },
+        {
+          "term": "nucleons",
+          "heading": false
+        },
+        {
+          "term": "believe",
+          "heading": false
+        },
+        {
+          "term": "come",
+          "heading": false
+        },
+        {
+          "term": "parameter",
+          "heading": false
+        }
+      ],
+      "extract": "As noted in section 2 above, we have restricted ourselves to static predictions of the (q-deformed) quark model. They are satisfactory for the nucleons but not so for the pions. We can ﬁt the parameter q from the magnetic moments of the nucleons, and recover their masses in the usual way. It may be that the π0 is not amenable to such a simple picture, exceptionally rather than generically. After all, it is the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 121,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "lett",
+          "heading": false
+        },
+        {
+          "term": "polychronakos",
+          "heading": false
+        }
+      ],
+      "extract": "[1] M. Jimbo, The quantum group Uq(sℓ(2)) and its representations, Springer (1992) Tokyo. [2] A. Polychronakos, Mod. Phys. Lett. A5 (1990) 2325 . [3] G. Fiore and P. Schupp , Nucl. Phys. B470 (1996) 211. [4] J.Wess, O. Ogievetskii, M. Pillin, W.B. Schimdke and B. Zumino, Proceedings of the 22nd Intl. Conf. on Diﬀerential Geometry Methods in Theoretical Physics, World Scientiﬁc (1993) Singapore; ; H. Ruegg and V.N.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "q-deformed quark",
+      "heading": false
+    },
+    {
+      "term": "quark model",
+      "heading": false
+    },
+    {
+      "term": "usual quark",
+      "heading": false
+    },
+    {
+      "term": "mass diﬀerence",
+      "heading": false
+    },
+    {
+      "term": "isospin symmetry",
+      "heading": false
+    },
+    {
+      "term": "magnetic moments",
+      "heading": false
+    },
+    {
+      "term": "mass formulae",
+      "heading": false
+    },
+    {
+      "term": "q-isospin",
+      "heading": false
+    },
+    {
+      "term": "udu duu",
+      "heading": false
+    },
+    {
+      "term": "quarks inside",
+      "heading": false
+    },
+    {
+      "term": "duu uud",
+      "heading": false
+    },
+    {
+      "term": "udd dud",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 4,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 5,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p9); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 5 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-ph-9612303v1"
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-ph-0605041v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-ph-0605041v2/blocks/cor-sec-front-matter-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 15,
+      "target": "cor-sec-front-matter-02.md",
+      "narrative": null,
+      "content": "Let ρ ∈[0, ∞)P. If there exists a µ ∈[0, ∞)P such that ργ0 h µγ0 + Y γ≁γ0 γ̸=γ0 \u00001 + µγ \u0001i ≤µγ0 , (improved Dobrushin) (3.5) for all γ0 ∈P, then the series Πγ0(ρ) converges for such ρ and satisﬁes ργ0 Πγ0(ρ) ≤µγ0. Our condition (3.2) coincides with (3.5) for triangle-free graphs G (ex. trees, Zd), and it is maximally better for complete (“triangle-full”) graphs. This and other examples will be analyzed below. Summing up, available convergence conditions are of the form ργ0 ϕγ0(µ) ≤µγ0 (3.6) with ϕγ0(µ) =                  exp hP γ≁γ0 µγ i (Koteck´y-Preiss) Q γ≁γ0 \u00001 + µγ \u0001 (Dob",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-ph-0605041v2/blocks/prop-sec-front-matter-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 15,
+      "target": "prop-sec-front-matter-03.md",
+      "narrative": null,
+      "content": "Suppose 0 ≤λ ≤1 and let us denote RCD = n (ρ, µ) ∈[0, ∞)∞× [0, ∞)∞",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-ph-0605041v2/blocks/prop-sec-front-matter-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 15,
+      "target": "prop-sec-front-matter-05.md",
+      "narrative": null,
+      "content": "X G∈CG (−1)|E(G)| = (−1)|V|−1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-ph-0605041v2/blocks/prop-sec-front-matter-07",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 15,
+      "target": "prop-sec-front-matter-07.md",
+      "narrative": null,
+      "content": "Let G = (P, E) be a polymer system and assume there exist functions cn : Pn+1 → [0, ∞), for n ∈N, invariant under permutations of the last n arguments such that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-ph-0605041v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 15,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math-ph/0605041v2  16 Oct 2006\nCluster expansion for abstract polymer models.\nNew bounds from an old approach\nRoberto Fern´andez1 and Aldo Procacci1,2\n1Labo. de Maths Raphael SALEM, UMR 6085 CNRS-Univ. de Rouen, Avenue de l’Universit´e,\nBP.12, 76801 Saint Etienne du Rouvray, France\n2 Dep. Matem´atica-ICEx, Universidade Federal de Minas Gerais, CP 702, Belo Horizonte MG\n30.161-970, Brazil\nemail: 1Roberto.Fernandez@univ-rouen.fr; 2aldo@mat.ufmg.br\nWe revisit the classical approach to cluster expansions, based on tree graphs, and estab-\nlish a new convergence condition that improves those b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0605041v2/blocks/rem-sec-front-matter-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 15,
+      "target": "rem-sec-front-matter-06.md",
+      "narrative": null,
+      "content": "As the number of Penrose trees grows with the disappearance of triangle diagrams, the value of Π (resp. the region of convergence of the cluster expansion) for a given graph G is bounded above by (resp. contains) that of a tree where each vertex has a degree larger or equal than that at G. Furthermore, the latter is bounded above (resp. contains) that of a homogeneous tree with branching rates equal to the maximal rate.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-ph-0605041v2/blocks/thm-sec-front-matter-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 15,
+      "target": "thm-sec-front-matter-01.md",
+      "narrative": null,
+      "content": "Let ρ ∈[0, ∞)P. If there exists a µ ∈[0, ∞)P such that ργ0 ΞN ∗ γ0(µ) ≤µγ0 , ∀γ0 ∈P , (3.2) then the series Πγ0(ρ) [deﬁned in (2.7)] converges for such ρ and satisﬁes ργ0 Πγ0(ρ) ≤µγ0. The inequality ΞN ∗ γ0(µ) ≤ Y γ≁γ0 \u00001 + µγ \u0001 (3.3) shows that condition (3.2) is an improvement over Dobrushin’s condition —which in turns is an improvement over Koteck´y-Preiss’ condition. The improvement comes from the fact that only monomials involving mutually compatible polymers are allowed in the left-hand side. Such im- provement comes, therefore, from two sources: (I1) In ΞN ∗ γ0 there are no monomials in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-ph-0605041v2/blocks/thm-sec-front-matter-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 15,
+      "target": "thm-sec-front-matter-04.md",
+      "narrative": null,
+      "content": "Let ρ ∈[0, ∞)P be ﬁxed and let Tρ be a map of the form (3.12)/(3.7). Assume there exists µ ∈[0, ∞)P satisfying (3.6), that is, Tρ(µ) ≤µ . (3.13) Then: (i) There exists ρ∗∈[0, ∞)P such that T n ρ (ρ) ր ρ∗and T(ρ∗) = ρ∗. (ii) For each n ∈N, ρ Π ≤ρ∗≤T n+1 ρ (µ) ≤T n ρ (µ) ≤µ . (3.14) The deepest statement in this theorem is the ﬁrst inequality in (3.14). The rest of the theorem follows from the fact that for all choices (3.7) of ϕ the map Tρ is monotonicity-preserving and satisﬁes ρ ≤Tρ(ρ) ≤Tρ(µ) ≤µ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-ph-0605041v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-000-acknowledgements.md",
+      "narrative": null,
+      "content": "We are indebted to the two referees for detailed and constructive criticism that prompted us to a substantial rewriting of the introductory sections and a clearer layout of our proof. We are thankful to Benedetto Scoppola, Roman Kotecký and Alan Sokal for long and fruitful discussions which led us to a number of notions that have enriched our presentation (in particular, partitionability of complexes of edges, log-convexity of convergence regions and the fixed-point character of $\\bfrhost$). The authors thank Warwick University and the Università di Roma \"Tor Vergata\" (AP) for hospitality duri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0605041v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-001-references.md",
+      "narrative": null,
+      "content": "[1] A. Bovier and M. Zahradnk (2000): A simple inductive approach to the problem of convergence of cluster\nexpansions of polymer models. J. Statist. Phys. 100, 765–78.\n[2] D. C. Brydges (1984): A short cluster in cluster expansions. In Critical Phenomena, Random Systems, Gauge\nTheories, Osterwalder, K. and Stora, R. (eds.), Elsevier, 129–83.\n[3] J. C. Butcher (1987): The Numerical Analysis of Ordinary Diﬀerential Equations. Runge-Kutta and General\nLinear Methods, Wiley-Interscience Publication.\n[4] C. Cammarota (1982): Decay of correlations for inﬁnite range interactions in unbounded spin syst",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

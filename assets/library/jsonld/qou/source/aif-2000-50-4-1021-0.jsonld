@@ -1,0 +1,83 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/aif-2000-50-4-1021-0/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Systèmes aux q-différences singuliers réguliers : classification, matrice de connexion et monodromie",
+  "contains": [
+    "library/aif-2000-50-4-1021-0/sections/sec-front-matter",
+    "library/aif-2000-50-4-1021-0/sections/sec-000",
+    "library/aif-2000-50-4-1021-0/sections/sec-001",
+    "library/aif-2000-50-4-1021-0/sections/sec-002",
+    "library/aif-2000-50-4-1021-0/sections/sec-003",
+    "library/aif-2000-50-4-1021-0/sections/sec-004",
+    "library/aif-2000-50-4-1021-0/sections/sec-005",
+    "library/aif-2000-50-4-1021-0/sections/sec-006",
+    "library/aif-2000-50-4-1021-0/sections/sec-007",
+    "library/aif-2000-50-4-1021-0/sections/sec-008",
+    "library/aif-2000-50-4-1021-0/sections/sec-009",
+    "library/aif-2000-50-4-1021-0/sections/sec-010",
+    "library/aif-2000-50-4-1021-0/sections/sec-011",
+    "library/aif-2000-50-4-1021-0/sections/sec-012",
+    "library/aif-2000-50-4-1021-0/sections/sec-013",
+    "library/aif-2000-50-4-1021-0/sections/sec-014",
+    "library/aif-2000-50-4-1021-0/sections/sec-015",
+    "library/aif-2000-50-4-1021-0/sections/sec-016",
+    "library/aif-2000-50-4-1021-0/sections/sec-017",
+    "library/aif-2000-50-4-1021-0/sections/sec-018",
+    "library/aif-2000-50-4-1021-0/sections/sec-019",
+    "library/aif-2000-50-4-1021-0/sections/sec-020",
+    "library/aif-2000-50-4-1021-0/sections/sec-021",
+    "library/aif-2000-50-4-1021-0/sections/sec-022",
+    "library/aif-2000-50-4-1021-0/sections/sec-023",
+    "library/aif-2000-50-4-1021-0/sections/sec-024",
+    "library/aif-2000-50-4-1021-0/sections/sec-025",
+    "library/aif-2000-50-4-1021-0/sections/sec-026",
+    "library/aif-2000-50-4-1021-0/sections/sec-027",
+    "library/aif-2000-50-4-1021-0/sections/sec-028",
+    "library/aif-2000-50-4-1021-0/sections/sec-029",
+    "library/aif-2000-50-4-1021-0/sections/sec-030",
+    "library/aif-2000-50-4-1021-0/sections/sec-031",
+    "library/aif-2000-50-4-1021-0/sections/sec-032",
+    "library/aif-2000-50-4-1021-0/sections/sec-033",
+    "library/aif-2000-50-4-1021-0/sections/sec-034",
+    "library/aif-2000-50-4-1021-0/sections/sec-035",
+    "library/aif-2000-50-4-1021-0/sections/sec-036",
+    "library/aif-2000-50-4-1021-0/sections/sec-037",
+    "library/aif-2000-50-4-1021-0/sections/sec-038",
+    "library/aif-2000-50-4-1021-0/sections/sec-039"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Systèmes aux q-différences singuliers réguliers : classification, matrice de connexion et monodromie — 41 sections: Front matter; Comportement de la matrice de conn; Introduction et notations\n\n**Systèmes aux q-différences singuliers réguliers : classification, matrice de connexion et monodromie**\n\n*JACQUES SAULOY*\n\n52 pp, 41 sections.\n\n**Outline.** Front matter; 4 Comportement de la matrice de connexion lors; 0 Introduction et notations; 0.1 Résolution locale; 0.2 Classification; 0.3 Confluence des solutions; 0.4 Confluence et monodromie; 1.1 Solutions fondamentales en 0; 1.1.1 On se ramène au cas fuchsien non résonna; 1.1.2 Cas d'un système à coefficients constant; 1.1.3 Cas d'un système fuchsien non résonnant; 1.1.4 Synthèse; 1.2 Non-unicité des solutions canoniques; 1.3 Caractérisation des systèmes singuliers ré; 1.3.1 Un algorithme de réduction; 1.3.2 Caractérisation des systèmes singuliers ; 2 Matrice de connexion et classification; 2.1 Caractérisation globale des systèmes singu",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "aif-2000-50-4-1021-0",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "AIF_2000__50_4_1021_0.pdf",
+    "source_sha256": "a7ca398590a266d8753d1b7ccbcb80c47bb38d937e3a86113aade5f13342e4dc",
+    "pages": 52,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

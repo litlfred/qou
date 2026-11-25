@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/arxiv-1109.3255v2/sections/sec-011",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Lagrangians fibered over paths",
+  "pageStart": 25,
+  "pageEnd": 32,
+  "contains": [
+    "library/arxiv-1109.3255v2/blocks/prose-sec-011",
+    "library/arxiv-1109.3255v2/blocks/figure-img-p027-1",
+    "library/arxiv-1109.3255v2/blocks/figure-img-p028-1",
+    "library/arxiv-1109.3255v2/blocks/figure-img-p032-1"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1109.3255v2/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1109.3255v2/manifest.jsonld",
+  "provenance": "ingested"
+}

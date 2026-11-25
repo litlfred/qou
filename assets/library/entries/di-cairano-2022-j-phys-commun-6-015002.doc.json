@@ -1,0 +1,967 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "di-cairano-2022-j-phys-commun-6-015002",
+  "title": "On the derivation of a Nonlinear Generalized Langevin Equation",
+  "variant": "pdf",
+  "pages": 12,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "State-of-art",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-state-of-art"
+    },
+    {
+      "level": 2,
+      "title": "Introduction to the problem",
+      "number": "1.2",
+      "page": 3,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-introduction-to-the-problem"
+    },
+    {
+      "level": 3,
+      "title": "Criticism",
+      "number": "1.2.1",
+      "page": 4,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-121-criticism"
+    },
+    {
+      "level": 2,
+      "title": "Notation",
+      "number": "1.3",
+      "page": 5,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-13-notation"
+    },
+    {
+      "level": 1,
+      "title": "Formal derivation of a nonlinear GLE",
+      "number": "2",
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-2-formal-derivation-of-a-nonlinear-gle"
+    },
+    {
+      "level": 2,
+      "title": "General setting: study of the equilibrium map",
+      "number": "2.1",
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-21-general-setting-study-of-the-equilibrium-map"
+    },
+    {
+      "level": 3,
+      "title": "Examples of a possible equilibrium map.",
+      "number": "2.1.1",
+      "page": 7,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-211-examples-of-a-possible-equilibrium-map"
+    },
+    {
+      "level": 2,
+      "title": "Generalization of the equilibrium map",
+      "number": "2.2",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-22-generalization-of-the-equilibrium-map"
+    },
+    {
+      "level": 2,
+      "title": "Alternative derivation",
+      "number": "2.3",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-23-alternative-derivation"
+    },
+    {
+      "level": 1,
+      "title": "Conclusion",
+      "number": "3",
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-3-conclusion"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "Data availability statement",
+      "number": null,
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-data-availability-statement"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 352,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "generalized langevin",
+          "heading": false
+        },
+        {
+          "term": "langevin equation",
+          "heading": false
+        },
+        {
+          "term": "heat bath",
+          "heading": false
+        },
+        {
+          "term": "cairano",
+          "heading": false
+        },
+        {
+          "term": "equilibrium map",
+          "heading": false
+        },
+        {
+          "term": "nonlinear generalized",
+          "heading": false
+        },
+        {
+          "term": "gle",
+          "heading": false
+        },
+        {
+          "term": "zwanzig",
+          "heading": false
+        }
+      ],
+      "extract": "Journal of Physics Communications PAPER • OPEN ACCESS On the derivation of a Nonlinear Generalized Langevin Equation To cite this article: Loris Di Cairano 2022 J. Phys. Commun. 6 015002 View the article online for updates and enhancements. You may also like A study of non-linear Langevin dynamics under non-Gaussian noise with quartic cumulant Chandan Jana - Langevin equation in systems with also negative",
+      "extractCut": true,
+      "blocks": [
+        "library/di-cairano-2022-j-phys-commun-6-015002/blocks/prose-sec-front-matter",
+        "library/di-cairano-2022-j-phys-commun-6-015002/blocks/figure-img-p001-1",
+        "library/di-cairano-2022-j-phys-commun-6-015002/blocks/figure-img-p001-2",
+        "library/di-cairano-2022-j-phys-commun-6-015002/blocks/figure-img-p002-1"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-state-of-art",
+      "number": "1.1",
+      "title": "State-of-art",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 820,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "friction function",
+          "heading": false
+        },
+        {
+          "term": "gle",
+          "heading": false
+        },
+        {
+          "term": "langevin equation",
+          "heading": false
+        },
+        {
+          "term": "environment",
+          "heading": false
+        },
+        {
+          "term": "zwanzig",
+          "heading": false
+        },
+        {
+          "term": "equilibrium map",
+          "heading": false
+        },
+        {
+          "term": "noise terms",
+          "heading": false
+        },
+        {
+          "term": "time dependence",
+          "heading": false
+        }
+      ],
+      "extract": "The generalized Langevin equation (GLE) is an important mathematical tool for investigating a wide class of both quantum and classical diffusive phenomena [1] and it is an extension of the Langevin equation [2]. The major advantage of GLE-based approaches is the reduction of the number of degrees of freedom which describe the system-environment interactions. For example, in case of a particle moving in a given",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-introduction-to-the-problem",
+      "number": "1.2",
+      "title": "Introduction to the problem",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 690,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "heat bath",
+          "heading": false
+        },
+        {
+          "term": "zwanzig",
+          "heading": false
+        },
+        {
+          "term": "heavy particle",
+          "heading": false
+        },
+        {
+          "term": "exp",
+          "heading": false
+        },
+        {
+          "term": "hamiltonian",
+          "heading": false
+        },
+        {
+          "term": "matrix",
+          "heading": false
+        },
+        {
+          "term": "equation",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we revisit and formalize the theoretical derivation of a GLE introduced by Zwanzig [31] putting in evidence what are the main inconsistencies and giving an insight about how to overcome them. The physical system that Zwanzig considered is composed by a subsystem that we call heavy particle described by the variable X ≔(Q, P) where Q is the generalized coordinate and P the conjugated momentum and a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-121-criticism",
+      "number": "1.2.1",
+      "title": "Criticism",
+      "level": 3,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 933,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "friction matrix",
+          "heading": false
+        },
+        {
+          "term": "friction function",
+          "heading": false
+        },
+        {
+          "term": "zwanzig derivation",
+          "heading": false
+        },
+        {
+          "term": "heat bath",
+          "heading": false
+        },
+        {
+          "term": "oscillation frequencies",
+          "heading": false
+        },
+        {
+          "term": "fdr",
+          "heading": false
+        },
+        {
+          "term": "langevin equation",
+          "heading": false
+        },
+        {
+          "term": "bath particles",
+          "heading": false
+        }
+      ],
+      "extract": "We now explain our main criticism to the Zwanzig’s derivation showing that the deﬁnitions (8) and (9) provided by Zwanzig yield a FDR which is inconsistent with the standard deﬁnition [3]. The main reason of this inconsistency can be better explained by means of the following argument. In writing the Hamiltonian for two interacting systems, all the information about the nature of the interaction is contained in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-13-notation",
+      "number": "1.3",
+      "title": "Notation",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 807,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "heat bath",
+          "heading": false
+        },
+        {
+          "term": "bath degrees",
+          "heading": false
+        },
+        {
+          "term": "bath solution",
+          "heading": false
+        },
+        {
+          "term": "heavy particle",
+          "heading": false
+        },
+        {
+          "term": "conjugated coordinates",
+          "heading": false
+        },
+        {
+          "term": "gle",
+          "heading": false
+        },
+        {
+          "term": "external force",
+          "heading": false
+        },
+        {
+          "term": "position vector",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we formalize the derivation introduced in the previous section. We consider a Hamiltonian function describing a classical physical system composed bya heat bath (P) interacting with a heavy particle (Z). The heat bath consists of N particles with mass m = 1 smaller than the heavier particle mass M. We assume that the system is embedded in the three dimensional physical space R? so that the phase",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-2-formal-derivation-of-a-nonlinear-gle",
+      "number": "2",
+      "title": "Formal derivation of a nonlinear GLE",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 103,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gle",
+          "heading": true
+        },
+        {
+          "term": "nonlinear",
+          "heading": true
+        },
+        {
+          "term": "noise",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, inspired by the work of Zwanzig, we will derive a nonlinear GLE and deﬁne the kernel matrix and noise term in such a way to be able (i) to recover the standard deﬁnition of FDR, (ii) to deﬁne a continuum limit without any ulterior adjustments. In the section 2.1, we show that, by choosing a suitable potential function, one can always recast the starting Hamiltonian into an Hamiltonian of the same",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-21-general-setting-study-of-the-equilibrium-map",
+      "number": "2.1",
+      "title": "General setting: study of the equilibrium map",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 440,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "equilibrium map",
+          "heading": true
+        },
+        {
+          "term": "heat bath",
+          "heading": false
+        },
+        {
+          "term": "bath particle",
+          "heading": false
+        },
+        {
+          "term": "interaction potential",
+          "heading": false
+        },
+        {
+          "term": "generic interaction",
+          "heading": false
+        },
+        {
+          "term": "general",
+          "heading": true
+        }
+      ],
+      "extract": "Let us ﬁrst clarify the role and the physical meaning of the map a :i 3 3    . First of all, we note that each element of the set a X i i N 1 { ( )}= plays the role of an equilibrium conﬁguration of the respective heat bath particle for any ﬁxed X 3  Î . In fact, one can demonstrate [33] that such equilibrium map can be always derived once that a generic interaction potential is given. In practice, given any",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-211-examples-of-a-possible-equilibrium-map",
+      "number": "2.1.1",
+      "title": "Examples of a possible equilibrium map.",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 784,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "equilibrium map",
+          "heading": true
+        },
+        {
+          "term": "heat bath",
+          "heading": false
+        },
+        {
+          "term": "bath particles",
+          "heading": false
+        },
+        {
+          "term": "mutual interaction",
+          "heading": false
+        },
+        {
+          "term": "potential function",
+          "heading": false
+        },
+        {
+          "term": "sgn",
+          "heading": false
+        },
+        {
+          "term": "parameters",
+          "heading": false
+        },
+        {
+          "term": "read",
+          "heading": false
+        }
+      ],
+      "extract": "Let us consider a Lennard-Jones-like interaction potential of the form     Q X X q X q , 4 , 25 LJ i N i i i i i i i 1 12 ⎜ ⎟ ⎜ ⎟ ⎡ ⎣ ⎢⎛ ⎝ ⎞ ⎠ ⎛ ⎝ ⎞ ⎠ ⎤ ⎦ ⎥ ( ) ≔ ( ) å h s s - - - =   V where the parameters ,i i  s h Î have the dimension of an energy and a length, respectively; lastly, i  Î  are dimensionless parameters. Note that we do not consider any mutual interaction between the heat bath particles.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-22-generalization-of-the-equilibrium-map",
+      "number": "2.2",
+      "title": "Generalization of the equilibrium map",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 307,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "equilibrium",
+          "heading": true
+        },
+        {
+          "term": "posing",
+          "heading": false
+        },
+        {
+          "term": "position-dependent",
+          "heading": false
+        },
+        {
+          "term": "dependence",
+          "heading": false
+        }
+      ],
+      "extract": "In order to make our derivation as general as possible, we assume to have n heavy particle position-dependent functions, X fI I n 1 { ( )} = , such that each ai map can be written as a sum of these functions weighted with different parameters i I,  h Î which, in turn, represent the interaction strength. Thus, we have: a X X f , 31 i I n i I I 1 , ( ) ≔ ( ) ( ) å h = Essentially, the main trick is to separate, in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-23-alternative-derivation",
+      "number": "2.3",
+      "title": "Alternative derivation",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 11,
+      "labelStart": "7",
+      "labelEnd": "10",
+      "words": 1584,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "heat bath",
+          "heading": false
+        },
+        {
+          "term": "iop publishing",
+          "heading": false
+        },
+        {
+          "term": "noise vector",
+          "heading": false
+        },
+        {
+          "term": "exploiting equation",
+          "heading": false
+        },
+        {
+          "term": "noise term",
+          "heading": false
+        },
+        {
+          "term": "stochastic differential",
+          "heading": false
+        },
+        {
+          "term": "kernel matrix",
+          "heading": false
+        },
+        {
+          "term": "nonlinear differential",
+          "heading": false
+        }
+      ],
+      "extract": "2.3. Alternative derivation The system of Hamilton’s equations of motion (22) based on the Hamiltonian (33) written as a system of second order differential equations reads: X a X K Q a X X t t t t V t , 34 X X t T ẗ ( ) ( ( )) ( ( ) ( ( ))) ( ( )) ( ) ( ) ( ) =  - -  Q K Q a X t t t . 35̈ ( ) ( ( ) ( ( ))) ( ) = - - We note that equation (35) is linear in the heat bath-variables Q, this allows us to apply the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-3-conclusion",
+      "number": "3",
+      "title": "Conclusion",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 226,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "heavy particle",
+          "heading": false
+        },
+        {
+          "term": "zwanzig",
+          "heading": false
+        },
+        {
+          "term": "kernel matrix",
+          "heading": false
+        },
+        {
+          "term": "kernel function",
+          "heading": false
+        },
+        {
+          "term": "heat",
+          "heading": false
+        },
+        {
+          "term": "nonlinear",
+          "heading": false
+        }
+      ],
+      "extract": "We have showed that in order to obtain a kernel matrix which contains the parameters of the interactions and, thereby, that admits a thermodynamics limit as proposed by Zwanzig, we have to pay attention to the definition of equilibrium map a which plays a fundamental role. In fact, its mathematical structure needs to be specified somehow so to distinguish the contributions given by the interaction parameters and the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 58,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "data science",
+          "heading": false
+        },
+        {
+          "term": "advises",
+          "heading": false
+        },
+        {
+          "term": "calandrini",
+          "heading": false
+        }
+      ],
+      "extract": "We wish to thank Prof. Benjamin Stamm and Dr. Vania Calandrini for important suggestions, advises and for a careful reading of this work. We thank the anonymous Reviewers for their constructive criticisms and precious suggestions. This work was supported by the Jülich-Aachen Research Alliance Center for Simulation and Data Science (JARA-CSD) School for Simulation and Data Science (SSD).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-012-data-availability-statement",
+      "number": null,
+      "title": "Data availability statement",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 24,
+      "summary": null,
+      "keywords": [],
+      "extract": "All data that support the ﬁndings of this study are included within the article (and any supplementary ﬁles). ORCID iDs Loris Di Cairano https://orcid.org/0000-0001-5859-4188",
+      "extractCut": false
+    },
+    {
+      "id": "sec-013-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 475,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "metzler",
+          "heading": false
+        },
+        {
+          "term": "kubo rep",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "physica",
+          "heading": false
+        },
+        {
+          "term": "chem",
+          "heading": false
+        },
+        {
+          "term": "langevin",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "prog",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Cortés E, West B J and Lindenberg K 1985 J. Chem. Phys. 82 2708–17 [2] Langevin P 1908 Compt. Rendus 146 530–3 [3] Kubo R 1966 Rep. Prog. Phys. 29 255 [4] Di Cairano L, Stamm B and Calandrini V 2021 Biophys. J. 120 4722–37 [5] Jeon J H, Monne H M S, Javanainen M and Metzler R 2012 Phys. Rev. Lett. 109 188103 [6] Javanainen M, Hammaren H, Monticelli L, Jeon J H, Miettinen M S, Martinez-Seara H, Metzler R and",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 10,
+      "items": [
+        "p3: pdf-labels 3, printed 2",
+        "p4: pdf-labels 4, printed 3",
+        "p5: pdf-labels 5, printed 4",
+        "p6: pdf-labels 6, printed 5",
+        "p7: pdf-labels 7, printed 6",
+        "p8: pdf-labels 8, printed 7",
+        "p9: pdf-labels 9, printed 8",
+        "p10: pdf-labels 10, printed 9",
+        "p11: pdf-labels 11, printed 10",
+        "p12: pdf-labels 12, printed 11"
+      ]
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "heat bath",
+      "heading": false
+    },
+    {
+      "term": "zwanzig derivation",
+      "heading": false
+    },
+    {
+      "term": "bath particle",
+      "heading": false
+    },
+    {
+      "term": "bath system",
+      "heading": false
+    },
+    {
+      "term": "nonlinear gle",
+      "heading": true
+    },
+    {
+      "term": "equilibrium map",
+      "heading": true
+    },
+    {
+      "term": "langevin equation",
+      "heading": false
+    },
+    {
+      "term": "equilibrium conﬁguration",
+      "heading": false
+    },
+    {
+      "term": "bath degrees",
+      "heading": false
+    },
+    {
+      "term": "bath solution",
+      "heading": false
+    },
+    {
+      "term": "heavy particle",
+      "heading": false
+    },
+    {
+      "term": "noise vector",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p001-2",
+      "file": "images/img-p001-2.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p002-1",
+      "file": "images/img-p002-1.png",
+      "page": 2,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 14,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 15,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p12); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 15 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/di-cairano-2022-j-phys-commun-6-015002"
+  }
+}

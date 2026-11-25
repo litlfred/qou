@@ -1,0 +1,131 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "6gtx-j455",
+  "blocks": [
+    {
+      "id": "library/6gtx-j455/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/6gtx-j455/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ultraviolet Completion of the Big Bang in Quadratic Gravity",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-ultraviolet-completion-of-the-big-bang-in-quadra.md",
+      "narrative": null,
+      "content": "Ruolin Liu ,1,2,3,* Jerome Quintin ,4,5,6,2,3,† and Niayesh Afshordi\n1,2,3,‡\n1Department of Physics and Astronomy, University of Waterloo, Waterloo, Ontario N2L 3G1, Canada\n2Perimeter Institute for Theoretical Physics, Waterloo, Ontario N2L 2Y5, Canada\n3Waterloo Centre for Astrophysics, University of Waterloo, Waterloo, Ontario N2L 3G1, Canada\n4École de technologie sup´erieure, Universit´e du Qu´ebec, Montr´eal, Quebec H3C 1K3, Canada\n5Department of Physics, McGill University, Montr´eal, Quebec H3A 2T8, Canada\n6Department of Applied Mathematics, University of Waterloo, Waterloo, Ontario N2L 3G",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/6gtx-j455/blocks/figure-img-p004-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/6gtx-j455/blocks/figure-img-p004-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/6gtx-j455/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-acknowledgments.md",
+      "narrative": null,
+      "content": "like\nto\nthank\nLuca\nBuoninfante, Dražen Glavan, Anamaria Hell, Roberto\nFIG. 3.\nConstraints on the QQG parameters λtH and N from the\nobservationals bounds on ns, r, and As combined. The dark and\npale green regions amount to 1σ and 2σ confidence intervals,\nrespectively.\nFIG. 2.\nPlot of the scalar spectral index ns vs the tensor-to-\nscalar ratio r for Starobinsky inflation (in black), contrasted with\nour QQG model in color for different values of the coupling λtH.\nThe purple and dashed contours correspond to a combination of\nCMB (Planck18 þ ACT þ SPT þ Lensing þ BK) and BAO\n(DESI) observational co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/6gtx-j455/blocks/figure-img-p005-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/6gtx-j455/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Data availability",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-data-availability.md",
+      "narrative": null,
+      "content": "this article are not publicly available. The data are available\nfrom the authors upon reasonable request.\n[1] C. P. Burgess, Living Rev. Relativity 7, 5 (2004).\n[2] We use the mostly positive metric signature. We contract\ntensor indices with the metric gμν, whose determinant is g\nand Ricci scalar R. Finally, we use natural units, and MPl\ndenotes the reduced Planck mass.\n[3] G. ’t Hooft and M. J. G. Veltman, Ann. Inst. Henri Poincare\nA 20, 69 (1974), https://www.numdam.org/item/AIHPA_\n1974__20_1_69_0/.\n[4] S. M. Christensen and M. J. Duff, Nucl. Phys. B170, 480\n(1980).\n[5] M. H. Goroff and A. S",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

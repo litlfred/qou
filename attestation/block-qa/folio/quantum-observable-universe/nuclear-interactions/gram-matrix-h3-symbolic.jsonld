@@ -1,0 +1,16 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/attestation/block-qa/folio/quantum-observable-universe/nuclear-interactions/gram-matrix-h3-symbolic.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/attestation/block-qa/folio/quantum-observable-universe/nuclear-interactions/gram-matrix-h3-symbolic",
+      "@type": "https://litlfred.github.io/cat-harness/v0/ns/QaAttestation",
+      "title": "block-qa attestation: block folio/quantum-observable-universe/nuclear-interactions/gram-matrix-h3-symbolic",
+      "description": "The block-qa judgements recorded for block folio/quantum-observable-universe/nuclear-interactions/gram-matrix-h3-symbolic (folio/quantum-observable-universe/nuclear-interactions/gram-matrix-h3-symbolic), each pinned to the hash it attested.",
+      "sourceKind": "block-qa",
+      "sourcePath": "test/attestations/block-qa/folio/quantum-observable-universe/nuclear-interactions/gram-matrix-h3-symbolic.attestations.json",
+      "inSubgraph": "https://litlfred.github.io/qou/directory/attestations"
+    }
+  ]
+}

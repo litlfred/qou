@@ -1,0 +1,77 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1103.4815v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Four Equivalent Versions of Non-Abelian Gerbes",
+  "contains": [
+    "library/arxiv-1103.4815v3/sections/sec-front-matter",
+    "library/arxiv-1103.4815v3/sections/sec-000",
+    "library/arxiv-1103.4815v3/sections/sec-001",
+    "library/arxiv-1103.4815v3/sections/sec-002",
+    "library/arxiv-1103.4815v3/sections/sec-003",
+    "library/arxiv-1103.4815v3/sections/sec-004",
+    "library/arxiv-1103.4815v3/sections/sec-005",
+    "library/arxiv-1103.4815v3/sections/sec-006",
+    "library/arxiv-1103.4815v3/sections/sec-007",
+    "library/arxiv-1103.4815v3/sections/sec-008",
+    "library/arxiv-1103.4815v3/sections/sec-009",
+    "library/arxiv-1103.4815v3/sections/sec-010",
+    "library/arxiv-1103.4815v3/sections/sec-011",
+    "library/arxiv-1103.4815v3/sections/sec-012",
+    "library/arxiv-1103.4815v3/sections/sec-013",
+    "library/arxiv-1103.4815v3/sections/sec-014",
+    "library/arxiv-1103.4815v3/sections/sec-015",
+    "library/arxiv-1103.4815v3/sections/sec-016",
+    "library/arxiv-1103.4815v3/sections/sec-017",
+    "library/arxiv-1103.4815v3/sections/sec-018",
+    "library/arxiv-1103.4815v3/sections/sec-019",
+    "library/arxiv-1103.4815v3/sections/sec-020"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Four Equivalent Versions of Non-Abelian Gerbes — We recall and partially improve four versions of smooth, non-abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal 2-bundles.\n\n**Four Equivalent Versions of Non-Abelian Gerbes**\n\n*Thomas Nikolaus a and Konrad Waldorf b*\n\n65 pp, 22 sections.\n\n**Abstract.** We recall and partially improve four versions of smooth, non-abelian gerbes: ˇCech cocycles, classifying maps, bundle gerbes, and principal 2-bundles. We prove that all these four ver- sions are equivalent, and so establish new relations between interesting recent developments. Prominent partial results that we prove are a bijection between the continuous and smooth non- abelian cohomology, and an explicit equivalence between bundle gerbes and principal 2-bundles as 2-stacks.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 2.1 Lie Groupoids and Groupoid Actions on Mani; 2.2 Principal Groupoid Bundles; 2.3 Anafunctors; 2.4 Lie 2-Groups and crossed Modules; 3 Version I: Groupoid-valued Cohomology; 4 Version II: Classifying Maps; 5 Version III: Groupoid Bundle Gerbes; 5.1 Definition via the Plus Construction; 5.2 Properties of Groupoid Bundle Gerbes; 5.3 Classification by Cech Cohomology; 6 Version IV: Principal 2-Bundles; 6.1 Definition of Principal 2-Bundles; 6.2 Properties of Principal 2-Bundles; 7 Equivalence between Bundle Gerbes and 2-Bund; 7.1 From Principal 2-Bundles to Bundle Gerbes",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1103.4815&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1103.4815v3",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1103.4815v3.pdf",
+    "source_sha256": "28647b02ea1441e38e2dd7192885b9b64840b290b7f43aafeb1c48e27206ed23",
+    "pages": 65,
+    "arxiv": {
+      "id": "1103.4815",
+      "version": "3",
+      "primary_class": "math.DG",
+      "stamp_date": "17 Jul 2013"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

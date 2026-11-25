@@ -1,0 +1,30 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/deligne-mostow-1986",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "Monodromy of hypergeometric functions and non-lattice integral monodromy",
+      "dcterms:creator": [
+        "DELIGNE, PIERRE"
+      ],
+      "dcterms:issued": "D:20260116",
+      "dcterms:source": "library/deligne-mostow-1986/manifest.jsonld",
+      "dcterms:hasVersion": "library/deligne-mostow-1986"
+    }
+  ]
+}

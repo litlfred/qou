@@ -1,0 +1,2436 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2012.00062v3",
+  "title": "PEACOCK PATTERNS AND RESURGENCE IN COMPLEX CHERN-SIMONS THEORY",
+  "variant": "pdf",
+  "pages": 68,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Chern–Simons theory with compact and complex gauge group",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-chernsimons-theory-with-compact-and-complex-g"
+    },
+    {
+      "level": 2,
+      "title": "Resurgence and the Stokes automorphism",
+      "number": "1.2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-resurgence-and-the-stokes-automorphism"
+    },
+    {
+      "level": 2,
+      "title": "A q-holonomic module of the partition function and its descendants",
+      "number": "1.3",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-a-q-holonomic-module-of-the-partition-functio"
+    },
+    {
+      "level": 2,
+      "title": "Perturbative series and their resurgence",
+      "number": "1.4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-perturbative-series-and-their-resurgence"
+    },
+    {
+      "level": 2,
+      "title": "Disclaimers",
+      "number": "1.5",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-15-disclaimers"
+    },
+    {
+      "level": 2,
+      "title": "Further directions",
+      "number": "1.6",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-16-further-directions"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "Borel resummation and Stokes automorphisms",
+      "number": "2",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-2-borel-resummation-and-stokes-automorphisms"
+    },
+    {
+      "level": 2,
+      "title": "Borel resummation",
+      "number": "2.1",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Stokes automorphism",
+      "number": "2.2",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-22-stokes-automorphism"
+    },
+    {
+      "level": 1,
+      "title": "A summary of the story when u=0",
+      "number": "3",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-3-a-summary-of-the-story-when-u0"
+    },
+    {
+      "level": 2,
+      "title": "The 41 knot when u=0",
+      "number": "3.1",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-31-the-41-knot-when-u0"
+    },
+    {
+      "level": 2,
+      "title": "The 52 knot when u=0",
+      "number": "3.2",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-32-the-52-knot-when-u0"
+    },
+    {
+      "level": 1,
+      "title": "Holonomic and elliptic functions inside and outside the unit disk",
+      "number": "4",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-4-holonomic-and-elliptic-functions-inside-and-ou"
+    },
+    {
+      "level": 1,
+      "title": "The 41 knot",
+      "number": "5",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-5-the-41-knot"
+    },
+    {
+      "level": 2,
+      "title": "Asymptotic series",
+      "number": "5.1",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-51-asymptotic-series"
+    },
+    {
+      "level": 2,
+      "title": "Holomorphic blocks",
+      "number": "5.2",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-52-holomorphic-blocks"
+    },
+    {
+      "level": 2,
+      "title": "Taylor series expansion at u=0",
+      "number": "5.3",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-53-taylor-series-expansion-at-u0"
+    },
+    {
+      "level": 2,
+      "title": "Stokes matrices near u=0",
+      "number": "5.4",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-54-stokes-matrices-near-u0"
+    },
+    {
+      "level": 2,
+      "title": "The Borel resummations of the asymptotic series",
+      "number": "5.5",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-55-the-borel-resummations-of-the-asymptotic-seri"
+    },
+    {
+      "level": 2,
+      "title": "Stokes matrices for real u",
+      "number": "5.6",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-56-stokes-matrices-for-real-u"
+    },
+    {
+      "level": 2,
+      "title": "Numerical verification",
+      "number": "5.7",
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-57-numerical-verification"
+    },
+    {
+      "level": 1,
+      "title": "The 52 knot",
+      "number": "6",
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-6-the-52-knot"
+    },
+    {
+      "level": 2,
+      "title": "Asymptotic series",
+      "number": "6.1",
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-61-asymptotic-series"
+    },
+    {
+      "level": 2,
+      "title": "Holomorphic blocks",
+      "number": "6.2",
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-62-holomorphic-blocks"
+    },
+    {
+      "level": 2,
+      "title": "Taylor series expansion at u=0",
+      "number": "6.3",
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-63-taylor-series-expansion-at-u0"
+    },
+    {
+      "level": 2,
+      "title": "Stokes matrices near u=0",
+      "number": "6.4",
+      "page": 57,
+      "pageLabel": "57",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-54-stokes-matrices-near-u0"
+    },
+    {
+      "level": 2,
+      "title": "The Borel resummations of the asymptotic series",
+      "number": "6.5",
+      "page": 60,
+      "pageLabel": "60",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-65-the-borel-resummations-of-the-asymptotic-seri"
+    },
+    {
+      "level": 2,
+      "title": "Numerical verification",
+      "number": "6.6",
+      "page": 61,
+      "pageLabel": "61",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-66-numerical-verification"
+    },
+    {
+      "level": 1,
+      "title": "One-dimensional state-integrals and their descendants",
+      "number": "7",
+      "page": 62,
+      "pageLabel": "62",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-7-one-dimensional-state-integrals-and-their-desc"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 65,
+      "pageLabel": "65",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 439,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stokes automorphism",
+          "heading": false
+        },
+        {
+          "term": "stokes matrices",
+          "heading": false
+        },
+        {
+          "term": "borel resummations",
+          "heading": false
+        },
+        {
+          "term": "marcos mariño",
+          "heading": false
+        },
+        {
+          "term": "perturbative series",
+          "heading": false
+        },
+        {
+          "term": "numerical veriﬁcation",
+          "heading": false
+        },
+        {
+          "term": "holomorphic blocks",
+          "heading": false
+        },
+        {
+          "term": "asymptotic series",
+          "heading": false
+        }
+      ],
+      "extract": "PEACOCK PATTERNS AND RESURGENCE IN COMPLEX CHERN-SIMONS THEORY STAVROS GAROUFALIDIS, JIE GU, AND MARCOS MARIÑO Abstract. The partition function of complex Chern-Simons theory on a 3-manifold with torus boundary reduces to a ﬁnite dimensional state-integral which is a holomorphic function of a complexiﬁed Planck’s constant τ in the complex cut plane and an entire function of a complex parameter u. This gives rise to",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2012.00062v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "1. Introduction",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-chernsimons-theory-with-compact-and-complex-g",
+      "number": "1.1",
+      "title": "Chern–Simons theory with compact and complex gauge group",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 532,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "complex gauge",
+          "heading": true
+        },
+        {
+          "term": "compact gauge",
+          "heading": true
+        },
+        {
+          "term": "gauge theory",
+          "heading": true
+        },
+        {
+          "term": "chern--simons gauge",
+          "heading": false
+        },
+        {
+          "term": "gauge group",
+          "heading": true
+        },
+        {
+          "term": "cite witten-jones",
+          "heading": false
+        },
+        {
+          "term": "faddeev quantum",
+          "heading": false
+        },
+        {
+          "term": "torus boundary",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.intro} Chern--Simons gauge theory, introduced by Witten in his seminal paper~\\cite{witten-jones} as a quantum field theory proposal of the Jones polynomial~\\cite{Jones}, remains one of the most fascinating quantum field theories. It gives a powerful framework to study the quantum topology of knots and three-manifolds, and at the same time it provides a rich yet tractable model to explore general aspects",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-resurgence-and-the-stokes-automorphism",
+      "number": "1.2",
+      "title": "Resurgence and the Stokes automorphism",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 414,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stokes",
+          "heading": true
+        },
+        {
+          "term": "stokes rays",
+          "heading": false
+        },
+        {
+          "term": "resurgence",
+          "heading": true
+        },
+        {
+          "term": "stokes automorphisms",
+          "heading": false
+        },
+        {
+          "term": "borel plane",
+          "heading": false
+        },
+        {
+          "term": "chern--simons theory",
+          "heading": false
+        },
+        {
+          "term": "mmreview",
+          "heading": false
+        },
+        {
+          "term": "perturbative series",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.wall} The global function $Z_M(u;\\tau)$ gives rise to a vector $\\Phi(x;\\tau)$ of perturbative series in $\\tau$ whose coefficients are meromorphic functions of $u$. These series are typically factorially divergent and a key question is a description of the analytic continuation of their Borel transform in Borel plane, their trans-series and their Stokes automorphisms. This is a typical question in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-a-q-holonomic-module-of-the-partition-functio",
+      "number": "1.3",
+      "title": "A q-holonomic module of the partition function and its descendants",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 845,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eqref zm-desc",
+          "heading": false
+        },
+        {
+          "term": "eqref wortho",
+          "heading": false
+        },
+        {
+          "term": "descendant state-integrals",
+          "heading": false
+        },
+        {
+          "term": "partition function",
+          "heading": true
+        },
+        {
+          "term": "factorization eqref",
+          "heading": false
+        },
+        {
+          "term": "begin itemize",
+          "heading": false
+        },
+        {
+          "term": "end itemize",
+          "heading": false
+        },
+        {
+          "term": "itemize item",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.results} In this section we discuss a $q$-holonomic module associated to the partition function and its descendants. This module and its fundamental solutions are crucial to our exact computation of the Stokes matrices in Section~\\ref{sub.pert} below. One advantage of introducing this module before we discuss resurgence of perturbative series is that the former has been established mathematically in many",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-perturbative-series-and-their-resurgence",
+      "number": "1.4",
+      "title": "Perturbative series and their resurgence",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 1037,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ahat polynomial",
+          "heading": false
+        },
+        {
+          "term": "stackrel cdot",
+          "heading": false
+        },
+        {
+          "term": "text rot",
+          "heading": false
+        },
+        {
+          "term": "stokes matrices",
+          "heading": false
+        },
+        {
+          "term": "ind text",
+          "heading": false
+        },
+        {
+          "term": "eqref abrelx",
+          "heading": false
+        },
+        {
+          "term": "borel resummation",
+          "heading": false
+        },
+        {
+          "term": "stokes matrix",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.pert} We now discuss the resurgence properties of the asymptotic expansion of the state-integral $Z_M(u;\\tau)$. Once we fix an integral presentation of $Z_M(u;\\tau)$, the critical points of the integrand are described by an affine curve $S$ defined by a polynomial equation \\begin{equation} \\label{S} S: p(x,y)=0 \\,. \\end{equation} We denote by $\\calP$ the labeling set of the branches $y=y_\\s(x)$ of $S$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-15-disclaimers",
+      "number": "1.5",
+      "title": "Disclaimers",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 581,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "disclaimers",
+          "heading": true
+        },
+        {
+          "term": "times calp",
+          "heading": false
+        },
+        {
+          "term": "calp matrices",
+          "heading": false
+        },
+        {
+          "term": "eqref wortho",
+          "heading": false
+        },
+        {
+          "term": "eqref zm-desc",
+          "heading": false
+        },
+        {
+          "term": "holonomic module",
+          "heading": false
+        },
+        {
+          "term": "diagonal matrix",
+          "heading": false
+        },
+        {
+          "term": "holomorphic blocks",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.disclaimers} We end this introduction with some comments and disclaimers. The first is that that there is no canonical labeling of holomorphic blocks by $\\calP$. Instead, the holomorphic blocks $B(x;q)$ is an $r \\times 1$ vector, $M_R$ are $r \\times \\calP$ matrices for all $R$, $W_m(x;q)$ are $r \\times r$ matrices and $\\ms{S}$ are $\\calP \\times \\calP$ matrices and where $r$ is the cardinality of $\\calP$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-16-further-directions",
+      "number": "1.6",
+      "title": "Further directions",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 192,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite klmvw",
+          "heading": false
+        },
+        {
+          "term": "seiberg--witten curve",
+          "heading": false
+        },
+        {
+          "term": "peacock patterns",
+          "heading": false
+        },
+        {
+          "term": "exponentiated variables",
+          "heading": false
+        },
+        {
+          "term": "bps invariants",
+          "heading": false
+        },
+        {
+          "term": "blm",
+          "heading": false
+        },
+        {
+          "term": "gmn",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.problems} In this short section we make some comments about future directions. The factorization of the state-integral~\\eqref{Zfacx} and its descendant version~\\eqref{ZM-desc} into a matrix points towards a TQFT in 4 dimensions where the vector space associated to a 3-manifold is labeled by $\\calP$. In another direction, as shown in \\cite{klmvw,gmn2}, in $\\mathcal{N}=2$ theories in four dimensions, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 71,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jorgen",
+          "heading": false
+        },
+        {
+          "term": "european",
+          "heading": false
+        },
+        {
+          "term": "erc-syg",
+          "heading": false
+        }
+      ],
+      "extract": "The authors would like to thank Jorgen Andersen, Maxim Kontsevich, Pietro Longhi and Don Zagier for enlightening conversations. The work of J.G. has been supported in part by the NCCR 51NF40-182902 ``The Mathematics of Physics'' (SwissMAP). The work of M.M. has been supported in part by the ERC-SyG project ``Recursive and Exact New Quantum Theory\" (ReNewQuantum), which received funding from the European Research",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-2-borel-resummation-and-stokes-automorphisms",
+      "number": "2",
+      "title": "Borel resummation and Stokes automorphisms",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 321,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "borel resummation",
+          "heading": true
+        },
+        {
+          "term": "arg tau",
+          "heading": false
+        },
+        {
+          "term": "theta arg",
+          "heading": false
+        },
+        {
+          "term": "stokes ray",
+          "heading": false
+        },
+        {
+          "term": "rho theta",
+          "heading": false
+        },
+        {
+          "term": "stokes automorphism",
+          "heading": false
+        },
+        {
+          "term": "zeta",
+          "heading": false
+        },
+        {
+          "term": "divergent series",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec.borel} \\subsection{Borel resummation} \\label{sub.borel} In this section we briefly review the process of Borel resummation of a factorially divergent series, its Laplace integral along rays and the corresponding Stokes automorphism across a Stokes ray. The material in this section is classical and well-known and is explained in detail in the books~\\cite{Costin:asymptotics,Miller:applied,msauzin}, and in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-22-stokes-automorphism",
+      "number": "2.2",
+      "title": "Stokes automorphism",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "12",
+      "words": 698,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mfs theta",
+          "heading": false
+        },
+        {
+          "term": "stokes",
+          "heading": true
+        },
+        {
+          "term": "matrices cals",
+          "heading": false
+        },
+        {
+          "term": "lap theta",
+          "heading": false
+        },
+        {
+          "term": "rightarrow theta",
+          "heading": false
+        },
+        {
+          "term": "stokes ray",
+          "heading": false
+        },
+        {
+          "term": "corresponding stokes",
+          "heading": false
+        },
+        {
+          "term": "label lap",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.stokes} We will specialize our discussion to the series of interest, namely to the Borel transform $\\wh{\\Phi}(x;\\zeta)$ of the vector of series $\\Phi(x;\\tau)$. The singularities of $\\Phi(x;\\tau)$ are conjectured to be in the set~\\eqref{Phising} that generates a set of Stokes rays whose complement is a countable union of open cones in Borel plane. When $\\th$ is in a fixed such cone $C$, the Laplace",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-3-a-summary-of-the-story-when-u0",
+      "number": "3",
+      "title": "A summary of the story when u=0",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 22,
+      "summary": null,
+      "keywords": [],
+      "extract": "In this section we recall brieﬂy the results from [GGMn] for our two sample hyperbolic knots, the 41 and the 52 knot.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-011-31-the-41-knot-when-u0",
+      "number": "3.1",
+      "title": "The 41 knot when u=0",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 17,
+      "labelStart": "12",
+      "labelEnd": "17",
+      "words": 1921,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sii iii",
+          "heading": false
+        },
+        {
+          "term": "peacock patterns",
+          "heading": false
+        },
+        {
+          "term": "descendant state-integrals",
+          "heading": false
+        },
+        {
+          "term": "borel summed",
+          "heading": false
+        },
+        {
+          "term": "marcos mariño",
+          "heading": false
+        },
+        {
+          "term": "miv",
+          "heading": false
+        },
+        {
+          "term": "stokes matrices",
+          "heading": false
+        },
+        {
+          "term": "borel plane",
+          "heading": false
+        }
+      ],
+      "extract": "Z41(0; τ) = Z R+i0 Φb(v)2 e−πiv2dv . (37) The critical points of the integrand are the logarithms of the solutions ξ1 = e2πi/6 and ξ2 = e−2πi/6 of the polynomial equation (1 −y)(1 −y−1) = 1 . (38) The labeling set P = {σ1, σ2}, where σ1 corresponds to the geometric representation of the 41 and σ2 to the complex conjugate of the geometric representation. Observe that ξ1 (resp., ξ2) lie in the trace ﬁeld Q(√−3)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-32-the-52-knot-when-u0",
+      "number": "3.2",
+      "title": "The 52 knot when u=0",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 24,
+      "labelStart": "17",
+      "labelEnd": "24",
+      "words": 2266,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "marcos mariño",
+          "heading": false
+        },
+        {
+          "term": "descendant state-integrals",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "stokes matrices",
+          "heading": false
+        },
+        {
+          "term": "knot",
+          "heading": true
+        },
+        {
+          "term": "miv",
+          "heading": false
+        },
+        {
+          "term": "holomorphic functions",
+          "heading": false
+        },
+        {
+          "term": "ϕσj",
+          "heading": false
+        }
+      ],
+      "extract": "Z52(0; τ) = Z R+i0 Φb(v)3 e−2πiv2dv . (72) The critical points of the integrand are the logarithms of the solutions ξ1 ≈0.78492+1.30714i, ξ2 ≈0.78492 −1.30714i and ξ3 ≈0.43016 of the polynomial equation (1 −y)3 = y2 . (73) 18 STAVROS GAROUFALIDIS, JIE GU, AND MARCOS MARIÑO The trace ﬁeld of the 52 knot is Q(ξ1), the cubic ﬁeld of discriminant −23, which has three complex embeddings labeled by σj for j = 1, 2, 3",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-4-holonomic-and-elliptic-functions-inside-and-ou",
+      "number": "4",
+      "title": "Holonomic and elliptic functions inside and outside the unit disk",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 540,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eqref ebx",
+          "heading": false
+        },
+        {
+          "term": "label ebx",
+          "heading": false
+        },
+        {
+          "term": "ebx follows",
+          "heading": false
+        },
+        {
+          "term": "r-s",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "end align",
+          "heading": false
+        },
+        {
+          "term": "tau",
+          "heading": false
+        },
+        {
+          "term": "theta function",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec.elliptic} An important property for the functions of a complex variable $q$ in our paper (such as the holomorphic blocks considered below) is that they can be defined both inside ($|q|<1$) and outside ($|q|>1$) the unit disk, in such a way that they have the same annihilator ideal. Recall that if $L$ and $M$ denote the operators that act on functions $f(x;q)$ by $(L f)(x;q)=f(qx;q)$ and $(M f)(x;q)=x",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-5-the-41-knot",
+      "number": "5",
+      "title": "The 41 knot",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": "25",
+      "labelEnd": "25",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-015-51-asymptotic-series",
+      "number": "5.1",
+      "title": "Asymptotic series",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 27,
+      "labelStart": "25",
+      "labelEnd": "27",
+      "words": 661,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eqref critb",
+          "heading": false
+        },
+        {
+          "term": "delta varphi",
+          "heading": false
+        },
+        {
+          "term": "eqref crit",
+          "heading": false
+        },
+        {
+          "term": "equation eqref",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        },
+        {
+          "term": "tau",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.41asy} Our starting point will be the state-integral for the $\\knot{4}_1$ knot~\\cite[Eqn.38]{AK} (after removing a prefactor that depends on $u$ alone) \\begin{equation} \\label{Z41x} Z_{\\knot{4}_1}(u;\\tau) = \\re^{-2 \\pi \\ri u^2} \\int_{\\BR+\\ri 0} \\Phi_\\bb(v) \\, \\Phi_\\bb(u+v) \\, \\re^{-\\pi \\ri (v^2+4uv)} \\rd v \\,. \\end{equation} The above state-integral (and all the subsequent ones) is a holomorphic function",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-52-holomorphic-blocks",
+      "number": "5.2",
+      "title": "Holomorphic blocks",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 32,
+      "labelStart": "27",
+      "labelEnd": "32",
+      "words": 1874,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ahat knot",
+          "heading": false
+        },
+        {
+          "term": "eqref rec41m",
+          "heading": false
+        },
+        {
+          "term": "eqref rec41x",
+          "heading": false
+        },
+        {
+          "term": "ahat polynomial",
+          "heading": false
+        },
+        {
+          "term": "descendant state-integral",
+          "heading": false
+        },
+        {
+          "term": "bhat knot",
+          "heading": false
+        },
+        {
+          "term": "cali knot",
+          "heading": false
+        },
+        {
+          "term": "eqref z410-desc",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.41holo} In this section we give the definition of the holomorphic blocks (and their descendants) which factorize the state-integral (and its descendants), and discuss their analytic properties, and their linear $q$-difference equations. Note that in this section, as well as in Section~\\ref{sub.41near1}, all the statements are theorems, whose proofs we provide. Motivated by the state-integral",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-53-taylor-series-expansion-at-u0",
+      "number": "5.3",
+      "title": "Taylor series expansion at u=0",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 36,
+      "labelStart": "32",
+      "labelEnd": "36",
+      "words": 1394,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "taylor expansion",
+          "heading": true
+        },
+        {
+          "term": "eqref x-desc-fac",
+          "heading": false
+        },
+        {
+          "term": "taylor series",
+          "heading": true
+        },
+        {
+          "term": "begin subequations",
+          "heading": false
+        },
+        {
+          "term": "end subequations",
+          "heading": false
+        },
+        {
+          "term": "descendant holomorphic",
+          "heading": false
+        },
+        {
+          "term": "descendant state-integral",
+          "heading": false
+        },
+        {
+          "term": "infty phi",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.41near1} The descendant state-integral is a meromophic function of $u$ which is analytic at $u=0$ and factorizes in terms of descendant holomorphic blocks~\\eqref{41x-desc-fac}. In this section we compute the Taylor series of the holomorphic blocks and of the state-integral at $u=0$ and show how the factorization of the descendant state-integral \\eqref{41x-desc-fac} reproduces~\\eqref{410-desc-fac}. We",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-54-stokes-matrices-near-u0",
+      "number": "5.4",
+      "title": "Stokes matrices near u=0",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 39,
+      "labelStart": "36",
+      "labelEnd": "39",
+      "words": 1023,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stokes matrices",
+          "heading": true
+        },
+        {
+          "term": "pmatrix cdot",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "begin subequations",
+          "heading": false
+        },
+        {
+          "term": "leavevmode begin",
+          "heading": false
+        },
+        {
+          "term": "fig borelplane",
+          "heading": false
+        },
+        {
+          "term": "cite beem",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.41stokes} In this section we conjecture a formula for the Stokes matrices of the asymptotic series $\\varphi(x;\\tau)$. When we turn on the non-vanising deformation parameter $u$, the resurgent structure discussed in Section~\\ref{sub.41x=1} undergoes significant changes. Compared to Figure~\\ref{fig:sings-u0-41} there are many more singular points in the Borel plane whose positions depend on $u$ in addition",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-55-the-borel-resummations-of-the-asymptotic-seri",
+      "number": "5.5",
+      "title": "The Borel resummations of the asymptotic series",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 41,
+      "labelStart": "39",
+      "labelEnd": "41",
+      "words": 679,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "borel resummations",
+          "heading": true
+        },
+        {
+          "term": "pmatrix delta",
+          "heading": false
+        },
+        {
+          "term": "xphi end",
+          "heading": false
+        },
+        {
+          "term": "delta varphi",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "eqref x-desc-fac",
+          "heading": false
+        },
+        {
+          "term": "asymptotic series",
+          "heading": true
+        },
+        {
+          "term": "eqref phi",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.borel41} In this section we explain how Conjecture~\\ref{conj.41M} identifies the Borel resummations of the factorially divergent series $\\Phi(x;\\tau)$ with the descendant state-integrals, thus lifting the Borel resummation to holomorphic functions on the cut-plane $\\BC'$. This is interesting theoretically, but also practically in the numerical computation of Borel resummations. After multiplying the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-56-stokes-matrices-for-real-u",
+      "number": "5.6",
+      "title": "Stokes matrices for real u",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 43,
+      "labelStart": "41",
+      "labelEnd": "43",
+      "words": 837,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pmatrix mfs",
+          "heading": false
+        },
+        {
+          "term": "stokes matrices",
+          "heading": true
+        },
+        {
+          "term": "mfs rightarrow",
+          "heading": false
+        },
+        {
+          "term": "cdot mfs",
+          "heading": false
+        },
+        {
+          "term": "mfs iii",
+          "heading": false
+        },
+        {
+          "term": "equation mfs",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.41stokesp} In Section~\\ref{sub.41stokes} we only considered the resurgent structure for $x$ near $1$, or equivalently, $u=\\log x $ near $0$. When $x$ is arbitrary, the resurgent structure of the vector $\\Phi_\\s(x;\\tau)$ could be very different. According to the Picard--Lefschetz theory (for review, see for instance \\cite{Witten:2010cx}), when a set of asymptotic series originates from a (path) integral,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-57-numerical-verification",
+      "number": "5.7",
+      "title": "Numerical verification",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 45,
+      "labelStart": "43",
+      "labelEnd": "45",
+      "words": 949,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "resurgent data",
+          "heading": false
+        },
+        {
+          "term": "borel-padé",
+          "heading": false
+        },
+        {
+          "term": "numerical",
+          "heading": true
+        },
+        {
+          "term": "siv",
+          "heading": false
+        },
+        {
+          "term": "siii",
+          "heading": false
+        },
+        {
+          "term": "numerical computation",
+          "heading": false
+        },
+        {
+          "term": "hand side",
+          "heading": false
+        },
+        {
+          "term": "half plane",
+          "heading": false
+        }
+      ],
+      "extract": "jecture 19. This involves, on the one hand, a numerical computation of the asymptotics of the holomorphic blocks and on the other hand, a numerical computation of the Borel re- summation by the Laplace integral of a Padé approximation. Taking the two computations into account, we found out numerically, integers appearing at two exponentially small scales, namely ˜q and ˜x, and guessing these integers eventually led",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-6-the-52-knot",
+      "number": "6",
+      "title": "The 52 knot",
+      "level": 1,
+      "pageStart": 45,
+      "pageEnd": 45,
+      "labelStart": "45",
+      "labelEnd": "45",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-023-61-asymptotic-series",
+      "number": "6.1",
+      "title": "Asymptotic series",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 47,
+      "labelStart": "45",
+      "labelEnd": "47",
+      "words": 622,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eqref critb",
+          "heading": false
+        },
+        {
+          "term": "delta varphi",
+          "heading": false
+        },
+        {
+          "term": "eqref crit",
+          "heading": false
+        },
+        {
+          "term": "equation eqref",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        },
+        {
+          "term": "tau",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.41asy} Our starting point will be the state-integral for the $\\knot{4}_1$ knot~\\cite[Eqn.38]{AK} (after removing a prefactor that depends on $u$ alone) \\begin{equation} \\label{Z41x} Z_{\\knot{4}_1}(u;\\tau) = \\re^{-2 \\pi \\ri u^2} \\int_{\\BR+\\ri 0} \\Phi_\\bb(v) \\, \\Phi_\\bb(u+v) \\, \\re^{-\\pi \\ri (v^2+4uv)} \\rd v \\,. \\end{equation} The above state-integral (and all the subsequent ones) is a holomorphic function",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-62-holomorphic-blocks",
+      "number": "6.2",
+      "title": "Holomorphic blocks",
+      "level": 2,
+      "pageStart": 47,
+      "pageEnd": 54,
+      "labelStart": "47",
+      "labelEnd": "54",
+      "words": 2673,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ahat knot",
+          "heading": false
+        },
+        {
+          "term": "eqref rec41m",
+          "heading": false
+        },
+        {
+          "term": "eqref rec41x",
+          "heading": false
+        },
+        {
+          "term": "ahat polynomial",
+          "heading": false
+        },
+        {
+          "term": "descendant state-integral",
+          "heading": false
+        },
+        {
+          "term": "bhat knot",
+          "heading": false
+        },
+        {
+          "term": "cali knot",
+          "heading": false
+        },
+        {
+          "term": "eqref z410-desc",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.41holo} In this section we give the definition of the holomorphic blocks (and their descendants) which factorize the state-integral (and its descendants), and discuss their analytic properties, and their linear $q$-difference equations. Note that in this section, as well as in Section~\\ref{sub.41near1}, all the statements are theorems, whose proofs we provide. Motivated by the state-integral",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-63-taylor-series-expansion-at-u0",
+      "number": "6.3",
+      "title": "Taylor series expansion at u=0",
+      "level": 2,
+      "pageStart": 54,
+      "pageEnd": 56,
+      "labelStart": "54",
+      "labelEnd": "56",
+      "words": 773,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eφn",
+          "heading": false
+        },
+        {
+          "term": "recursion relation",
+          "heading": false
+        },
+        {
+          "term": "holomorphic blocks",
+          "heading": false
+        },
+        {
+          "term": "hand side",
+          "heading": false
+        },
+        {
+          "term": "coeﬃcients satisfy",
+          "heading": false
+        },
+        {
+          "term": "right hand",
+          "heading": false
+        },
+        {
+          "term": "descendant",
+          "heading": false
+        }
+      ],
+      "extract": "the descendant holomorphic blocks and descendant state-integral of the 52 knots at u = 0. Using the deﬁnition of H(x, y, z; q) and (161a)–(161b), we ﬁnd Am(eu; q) = (q; q)2 ∞ ∞ X n=0 qn(n+1)+nm (q; q)3 n φn(u)φn(−u) = (q; q)2 ∞ \u0010 α(m) 0 (q) + u2α(m) 2 (q) + O(u3) \u0011 (284) where α(m) 0 (q) = H+ 0,m(q), (285) α(m) 2 (q) = ∞ X n=0 qn(n+1)+nm (q; q)3 n (−E(n) 2 (q)), (286) and Cm(e−u; q) = Bm(eu; q) = (1 −e−u)−2(q; q)−2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-64-stokes-matrices-near-u0",
+      "number": "6.4",
+      "title": "Stokes matrices near u=0",
+      "level": 2,
+      "pageStart": 56,
+      "pageEnd": 60,
+      "labelStart": "56",
+      "labelEnd": "60",
+      "words": 1251,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stokes matrices",
+          "heading": true
+        },
+        {
+          "term": "pmatrix cdot",
+          "heading": false
+        },
+        {
+          "term": "begin pmatrix",
+          "heading": false
+        },
+        {
+          "term": "end pmatrix",
+          "heading": false
+        },
+        {
+          "term": "begin subequations",
+          "heading": false
+        },
+        {
+          "term": "leavevmode begin",
+          "heading": false
+        },
+        {
+          "term": "fig borelplane",
+          "heading": false
+        },
+        {
+          "term": "cite beem",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub.41stokes} In this section we conjecture a formula for the Stokes matrices of the asymptotic series $\\varphi(x;\\tau)$. When we turn on the non-vanising deformation parameter $u$, the resurgent structure discussed in Section~\\ref{sub.41x=1} undergoes significant changes. Compared to Figure~\\ref{fig:sings-u0-41} there are many more singular points in the Borel plane whose positions depend on $u$ in addition",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-65-the-borel-resummations-of-the-asymptotic-seri",
+      "number": "6.5",
+      "title": "The Borel resummations of the asymptotic series",
+      "level": 2,
+      "pageStart": 60,
+      "pageEnd": 61,
+      "labelStart": "60",
+      "labelEnd": "61",
+      "words": 406,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "borel-padé resummation",
+          "heading": false
+        },
+        {
+          "term": "borel",
+          "heading": true
+        },
+        {
+          "term": "sii",
+          "heading": false
+        },
+        {
+          "term": "hand side",
+          "heading": false
+        },
+        {
+          "term": "right hand",
+          "heading": false
+        },
+        {
+          "term": "series",
+          "heading": true
+        }
+      ],
+      "extract": "knot, Conjecture 26 identiﬁes the Borel resummations of the factorially divergent series Φ(x; τ) with the descendant state-integrals, thus lifting the Borel resummation to holomor- phic functions on the cut-plane C′. Corollary 27. (of Conjecture 26) We have sI(Φ)(x; τ) =   0 1 1 0 1 0 −1 0 0  W−1(˜x; ˜q−1)∆(τ)B(x; q) , (317a) sII(Φ)(x; τ) =   0 1 0 0 1 1 −1 0 0  W−1(˜x−1; ˜q−1)∆(τ)B(x; q) , (317b) sIII(Φ)(x;",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-66-numerical-verification",
+      "number": "6.6",
+      "title": "Numerical verification",
+      "level": 2,
+      "pageStart": 61,
+      "pageEnd": 62,
+      "labelStart": "61",
+      "labelEnd": "62",
+      "words": 609,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mii",
+          "heading": false
+        },
+        {
+          "term": "resurgent data",
+          "heading": false
+        },
+        {
+          "term": "numerical",
+          "heading": true
+        },
+        {
+          "term": "half plane",
+          "heading": false
+        },
+        {
+          "term": "test",
+          "heading": false
+        },
+        {
+          "term": "resummation",
+          "heading": false
+        },
+        {
+          "term": "hand side",
+          "heading": false
+        }
+      ],
+      "extract": "jecture 26, which involves a richer resurgent structure than that of the 41 knot. We found ample numerical evidence for the resurgent data (304a)–(304d). These numerical tests are parallel to those performed for knot 41, so we will be sketchy here. Besides, we will mostly focus on τ in the upper half plane, while the lower half plane is similar. The ﬁrst test is the analysis of radial asymptotics of the left hand",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-7-one-dimensional-state-integrals-and-their-desc",
+      "number": "7",
+      "title": "One-dimensional state-integrals and their descendants",
+      "level": 1,
+      "pageStart": 62,
+      "pageEnd": 65,
+      "labelStart": "62",
+      "labelEnd": "65",
+      "words": 948,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eqref ebx",
+          "heading": false
+        },
+        {
+          "term": "state-integrals",
+          "heading": true
+        },
+        {
+          "term": "descendants",
+          "heading": true
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "equation label",
+          "heading": false
+        },
+        {
+          "term": "bhat",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec.onedim} In a sense, the results of our paper are not about the asymptotics and resurgence of complex Chern--Simons theory, but rather involve power series and $q$-difference equations that arise from $K_2$-Lagrangians (clearly advocated in Kontsevich's talks~\\cite{kontsevich-talk}), or from symplectic matrices (advocated in~\\cite[Sec.7]{GZ:kashaev}). The connection with complex Chern--Simons theory comes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 65,
+      "pageEnd": 68,
+      "labelStart": "65",
+      "labelEnd": "68",
+      "words": 1638,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "marcos mariño",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "jorgen ellegaard",
+          "heading": false
+        },
+        {
+          "term": "theory phys",
+          "heading": false
+        },
+        {
+          "term": "tudor dimofte",
+          "heading": false
+        },
+        {
+          "term": "ricardo schiappa",
+          "heading": false
+        },
+        {
+          "term": "sergei gukov",
+          "heading": false
+        },
+        {
+          "term": "nuclear phys",
+          "heading": false
+        }
+      ],
+      "extract": "References [ABS19] Inês Aniceto, Gökçe Başar, and Ricardo Schiappa, A primer on resurgent transseries and their asymptotics, Phys. Rep. 809 (2019), 1–135. [AK] Jorgen Ellegaard Andersen and Rinat Kashaev, A new formulation of the Teichmüller TQFT, arXiv:1305.4291, Preprint 2013. [AK14] , A TQFT from Quantum Teichmüller theory, Comm. Math. Phys. 330 (2014), no. 3, 887–934. [AK18] Jorgen Ellegaard Andersen and Rinat",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Disclaimers"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "frac tau",
+      "heading": false
+    },
+    {
+      "term": "tau plane",
+      "heading": false
+    },
+    {
+      "term": "tau right",
+      "heading": false
+    },
+    {
+      "term": "equation eqref",
+      "heading": false
+    },
+    {
+      "term": "state-integral knot",
+      "heading": false
+    },
+    {
+      "term": "begin equation",
+      "heading": false
+    },
+    {
+      "term": "descendant holomorphic",
+      "heading": false
+    },
+    {
+      "term": "end equation",
+      "heading": false
+    },
+    {
+      "term": "eqref phi",
+      "heading": false
+    },
+    {
+      "term": "begin pmatrix",
+      "heading": false
+    },
+    {
+      "term": "knot cite",
+      "heading": false
+    },
+    {
+      "term": "arg tau",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 67,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "A peacock arrangement of Stokes rays in the complex Borel plane. 1.3. A q-holonomic module of the partition function and its descendants. In this section we discuss a q-holonomic module associated to the partition function and its descendants. This module and its fundamental solutions are crucial to",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The singularities in the Borel plane for the series ϕσj(0; τ) for j = 1, 2 of knot 41",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Four diﬀerent sectors in the τ-plane for Φ(0; τ) of knot 41",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The singularities in the Borel plane for the series ϕσj(0; τ) for j = 1, 2, 3 of knot 52",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Four diﬀerent sectors in the τ-plane for Φ(0; τ) of knot 52 and the line L that divides the τ-plane",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The singularities in the Borel plane for the series ϕσj(x; τ) with j = 1, 2 of knot 41 where x is close to 1. The shortest vertical spacing between singularities is 2πi, and the horizontal spacing between neighboring singularities in each cluster is log x",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Four diﬀerent sectors in the τ-plane for Φ(u; τ) of knot 41 with u close to zero",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "The singularities in the Borel plane for the series ϕσj(u; τ) with",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Four diﬀerent sectors in the τ-plane for Φ(u; τ) of knot 41 with",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Numerical tests of holomorphic lifts of Borel sums of asymptotic series for knot 41. We perform the Borel-Padé resummation on Φ(x; τ) with 280 terms at x = 6/5 and τ in four diﬀerent regions, and compute the relative diﬀerence between them and the right hand side of (201a)–(201d), which we denote by",
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "The singularities in the Borel plane for the series ϕσj(u; τ) with j = 1, 2, 3 of knot 52 where u is close to zero",
+      "page": 56,
+      "pageLabel": "56",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Four diﬀerent sectors (and additional two auxiliary regions) in the τ-plane for Φ(u; τ) of knot 52 with u close to zero",
+      "page": 57,
+      "pageLabel": "57",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Numerical tests of holomorphic lifts of Borel sums of asymptotic series for knot 52. We perform the Borel-Padé resummation on Φ(x; τ) with 180 terms at x = 6/5 and τ in regions I, II, and compute the relative diﬀerence between them and the right hand side of (317a)–(317b), which we denote by PR(x; τ",
+      "page": 61,
+      "pageLabel": "61",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 32,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 32,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "11 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "2 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p65); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 14
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 32 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2012.00062v3"
+  }
+}

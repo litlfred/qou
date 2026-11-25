@@ -1,0 +1,309 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0403224v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0403224v1/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "arXiv:math/0403224v1  [math.GT]  14 Mar 2004\nDIFFERENCE EQUATION OF THE COLORED JONES\nPOLYNOMIAL FOR TORUS KNOT\nKAZUHIRO HIKAMI\nA. We prove that the N-colored Jones polynomial for the torus\nknot Ts,t satisﬁes the second order diﬀerence equation, which reduces to\nthe ﬁrst order diﬀerence equation for a case of T2,2m+1. We show that\nthe A-polynomial of the torus knot can be derived from the diﬀerence\nequation. Also constructed is a q-hypergeometric type expression of the\ncolored Jones polynomial for T2,2m+1.\n1. I\nThe N-colored Jones polynomial JK(N) is one of the quantum invari",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0403224v1/blocks/prop-page-002-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": " [17]",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "prop-page-002-02.md",
+      "narrative": null,
+      "content": "The N-colored Jones polynomial for the torus knot Ts,t is computed as JTs,t(N) = q 4 st(1−N2) q N 2 −q−N N−1 2X r=−N−1 \u0010 qstr2−(s+t)r+ 1 2 −qstr2−(s−t)r−1 2\u0011 (5)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0403224v1/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "2\nKAZUHIRO HIKAMI\n2. CJP\nThe Alexander polynomial ∆K(A) for the torus knot K = Ts,t is known\nto be (see e.g. Ref. 14)\n∆Ts,t(A) = (A1/2 −A−1/2)(Ast/2 −A−st/2)\n(As/2 −A−s/2)(At/2 −A−t/2)\n(1)\nWe see that an inverse of the Alexander polynomial is expanded in A →∞\nas\nA1/2 −A−1/2\n∆Ts,t(A)\n=\n∞\nX\nn=0\nχ2st(n) A−n/2\n(2)\nwhere χ2st(n) is the periodic function with modulus 2 s t [11];\nn\nmod 2 s t\ns t −s −t\ns t −t + s\ns t + t −s\ns t + s + t\nothers\nχ2st(n)\n1\n−1\n−1\n1\n0\nUsing this periodic function, we deﬁne the function Ks,t(N) by\nKs,t(N) = q\n1\n4 N\u00002(st−s−t)−stN\u0001 stN\nX\nk=0\nχ2st(s t N −k) q",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0403224v1/blocks/thm-page-002-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "thm-page-002-01.md",
+      "narrative": null,
+      "content": "The N-colored Jones polynomial for the torus knot Ts,t is given by JTs,t(N) = q 2 (s−1)(t−1)(1−N) 1 −q−N Ks,t(N) (4) As we have deﬁned the function Ks,t(N) from an expansion of the Alexan- der polynomial, this theorem reveals a connection between the colored Jones polynomial and the Alexander polynomial for a case of the torus knot. It should be noted that a relationship between these polynomials is known for arbitrary knot K based on a slightly diﬀerent expansion as the Melvin– Morton conjecture [16,19], which was proved in Ref. 2. To prove Theorem 1, we use a previously known result for the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0403224v1/blocks/prop-page-003-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "prop-page-003-01.md",
+      "narrative": null,
+      "content": "Let the function Ks,t(N) be deﬁned by eq. (3). Then it satis- ﬁes the following diﬀerence equation; Ks,t(N) = 1 −qs(1−N)−1 −qt(1−N)−1 + q(s+t)(1−N) + qst(2−N)−s−t Ks,t(N −2) (6)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0403224v1/blocks/prop-page-003-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "see e.g. Ref. 9",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "prop-page-003-03.md",
+      "narrative": null,
+      "content": "The function K2,2m+1(N) satisﬁes the diﬀer- ence equation of the ﬁrst order, K2,2m+1(N) = 1 −q1−2N −q2m(1−N)−N K2,2m+1(N −1) (8)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0403224v1/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "DIFFERENCE EQUATION OF THE COLORED JONES POLYNOMIAL FOR TORUS KNOT3\nProof of Theorem 1. We ﬁrst prove for a case of N being even. We have\nstN\nX\nk=0\nχ2st(s t N −k) q\nk2−(st−s−t)2\n4st\n=\nstN\nX\nk=0\nχ2st(k) q\nk2−(st−s−t)2\n4st\n=\nN\n2 −1\nX\nk=0\n\u0010\nqk(stk+st−s−t) −q(sk+s−1)(tk+1) −q(sk+1)(tk+t−1) + q(k+1)(stk+s−1)\u0011\n=\nN\n2 −1\nX\nk=−N\n2\n\u0010\nqk(stk+st−s−t) −q(sk+s−1)(tk+1)\u0011\nIn the second equality, we have substituted a non-zero value of the periodic\nfunction χ2st(k). In the last equality, we have replaced k with −k −1 in both\nthe third and the fourth terms in a parenthesis. By further replacing k with\nk −1\n2 in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0403224v1/blocks/thm-page-003-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "thm-page-003-02.md",
+      "narrative": null,
+      "content": "The N-colored Jones polynomial for the torus knot Ts,t fulﬁlls a recursion relation of the second order; JTs,t(N) = q 2 (s−1)(t−1)(1−N) 1 −q−N \u0010 1 −qs(1−N)−1 −qt(1−N)−1 + q(s+t)(1−N)\u0011 + 1 −q2−N 1 −q−N qst(1−N)−1 JTs,t(N −2) (7) We should note that this diﬀerence equation can be directly derived by use of Morton’s expression (5). A beneﬁt of our expression (4) is in reduc- ing the diﬀerence equation (7) into the ﬁrst order diﬀerence equation in a case of T2,2m+1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0403224v1/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "4\nKAZUHIRO HIKAMI\nThis proposition simpliﬁes the diﬀerence equation of the colored Jones\npolynomial JK(N) for K = T2,2m+1 as follows;\nTheorem 6. The N-colored Jones polynomial for the torus knot T2,2m+1\nsolves the diﬀerence equation of the ﬁrst order;\nJT2,2m+1(N) = qm(1−N) 1 −q1−2N\n1 −q−N −qm−(2m+1)N 1 −q1−N\n1 −q−N JT2,2m+1(N −1)\n(9)\nThis recursion relation coincides with a result in Ref. 5 for the trefoil\nm = 1 (we need to replace q with q−1). We remark that in Ref. 7 by a dif-\nferent approach proposed was the diﬀerence equation of the colored Jones\npolynomial for the torus knot T2,2m+1, whic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0403224v1/blocks/thm-page-004-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "thm-page-004-01.md",
+      "narrative": null,
+      "content": "The N-colored Jones polynomial for the torus knot T2,2m+1 solves the diﬀerence equation of the ﬁrst order; JT2,2m+1(N) = qm(1−N) 1 −q1−2N 1 −q−N −qm−(2m+1)N 1 −q1−N 1 −q−N JT2,2m+1(N −1) (9) This recursion relation coincides with a result in Ref. 5 for the trefoil m = 1 (we need to replace q with q−1). We remark that in Ref. 7 by a dif- ferent approach proposed was the diﬀerence equation of the colored Jones polynomial for the torus knot T2,2m+1, which is much involved. 3. A-P In Ref. 5 the “AJ conjecture” is proposed; the homogeneous diﬀerence equation of the colored Jones polynomial",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0403224v1/blocks/thm-page-004-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "thm-page-004-02.md",
+      "narrative": null,
+      "content": "AJ conjecture (10) proposed in Ref. 5 is true for the torus knots K = Ts,t. 4. q-HFCJP At the end of this article, we comment on an explicit form of the colored Jones polynomial for the torus knot. Recalling a result of Ref. 9, we see that the colored Jones polynomial for the torus knot T2,2m+1 can be written in a form of the q-hypergeometric function.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0403224v1/blocks/prop-page-005-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "prop-page-005-02.md",
+      "narrative": null,
+      "content": "The N-colored Jones polynomial for the torus knot T2,2m+1 is given by JT2,2m+1(N) = qm(1−N) ∞ X km≥···≥k2≥k1≥0 (q1−N)km q−Nkm  m−1 Y i=1 qki(ki+1−2N) \" ki+1 ki # q  (14) We see that the colored Jones polynomial for the trefoil m = 1 coincides with results in Refs. 8,13. It should be remarked that in Ref. 15 constructed was the colored Jones polynomial for the twist knot, which gives a diﬀerent expression of the colored Jones polynomial for the trefoil. By applying a twisting formula given in Ref. 15, we have another expression of the colored Jones polynomial in the form of cyclot",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0403224v1/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "DIFFERENCE EQUATION OF THE COLORED JONES POLYNOMIAL FOR TORUS KNOT5\nHereafter we use a standard notation of the q-product and the q-binomial\ncoeﬃcient (see e.g. Ref. 1);\n(x)n = (x; q)n =\nn\nY\nk=1\n(1 −x qk−1)\n\"\nn\nm\n#\nq\n=\n(q)n\n(q)n−m (q)m\nTheorem 8 ( [9]). Let the function H2,2m+1(x) be deﬁned by\nH2,2m+1(x) =\n∞\nX\nkm≥···≥k2≥k1≥0\n(x)km+1 xkm\n\nm−1\nY\ni=1\nqki(ki+1) x2ki\n\"\nki+1\nki\n#\nq\n\n(11)\nfor |q| < 1 and |x| < 1. Then we have\nH2,2m+1(x) =\n∞\nX\nn=0\nχ8m+4(n) q\nn2−(2m−1)2\n8(2m+1) x\nn−(2m−1)\n2\n(12)\nand it satisﬁes\nH2,2m+1(x) = 1 −q x2 −q2m x2m+1 H2,2m+1(q x)\n(13)\nFor m = 1 case, see also Ref",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0403224v1/blocks/thm-page-005-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": " [9]",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "thm-page-005-01.md",
+      "narrative": null,
+      "content": "Let the function H2,2m+1(x) be deﬁned by H2,2m+1(x) = ∞ X km≥···≥k2≥k1≥0 (x)km+1 xkm  m−1 Y i=1 qki(ki+1) x2ki \" ki+1 ki # q  (11) for |q| < 1 and |x| < 1. Then we have H2,2m+1(x) = ∞ X n=0 χ8m+4(n) q n2−(2m−1)2 8(2m+1) x n−(2m−1) (12) and it satisﬁes H2,2m+1(x) = 1 −q x2 −q2m x2m+1 H2,2m+1(q x) (13) For m = 1 case, see also Ref. 1 [Chap. 2, p. 29] and Ref. 22. With an expression (11), we can take a limit x →q−N; an inﬁnite sum terminates into a ﬁnite sum due to (q−N)k = 0 for k > N. Comparing eq. (8) with eq. (13) we obtain the colored Jones polynomial for the torus knot T2,2m+1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0403224v1/blocks/prop-page-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "prop-page-006-01.md",
+      "narrative": null,
+      "content": "The N-colored Jones polynomial for the torus knot T2,2m+1 is written as JT2,2m+1(N) = qm (1−N2) ∞ X km≥···≥k2≥k1≥0 (q1−N)km (q1+N)km (q)km ×  m−1 Y i=1 q(ki−km)(ki−km−1) \" ki+1 ki # q  (15) For the torus knot Ts,t with s, t > 2, we do not know a general expression of the colored Jones polynomial in terms of the q-hypergeometric function; based on Refs. 10,11, we only have JT3,4(N) = q3(1−N) ∞ X n=0 (q1−N)n q−2Nn ×  ⌊(n−1)/2⌋ X k=0 q2k(k+1−N)+N \" n 2 k + 1 # q + ⌊n/2⌋ X k=0 q2k(k+1−N) \" n + 1 2 k + 1 # q  (16) A The author would like to thank S. Garou",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0403224v1/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "6\nKAZUHIRO HIKAMI\nProposition 10. The N-colored Jones polynomial for the torus knot T2,2m+1\nis written as\nJT2,2m+1(N) = qm (1−N2)\n∞\nX\nkm≥···≥k2≥k1≥0\n(q1−N)km (q1+N)km\n(q)km\n×\n\nm−1\nY\ni=1\nq(ki−km)(ki−km−1)\n\"\nki+1\nki\n#\nq\n\n(15)\nFor the torus knot Ts,t with s, t > 2, we do not know a general expression\nof the colored Jones polynomial in terms of the q-hypergeometric function;\nbased on Refs. 10,11, we only have\nJT3,4(N) = q3(1−N)\n∞\nX\nn=0\n(q1−N)n q−2Nn\n×\n\n⌊(n−1)/2⌋\nX\nk=0\nq2k(k+1−N)+N\n\"\nn\n2 k + 1\n#\nq\n+\n⌊n/2⌋\nX\nk=0\nq2k(k+1−N)\n\"\nn + 1\n2 k + 1\n#\nq\n\n(16)\nA\nThe a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0403224v1/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "DIFFERENCE EQUATION OF THE COLORED JONES POLYNOMIAL FOR TORUS KNOT7\n[13] T. T. Q. Le, Quantum invariants of 3-manifolds: Integrality, splitting, and perturba-\ntive expansion, Topology Appl. 127, 125–152 (2003).\n[14] R. Lickorish, An Introduction to Knot Theory, Springer, New York, 1997.\n[15] G. Masbaum, Skein-theoretical derivation of some formulas of Habiro, Alg. Geom.\nTopol. 3, 537–556 (2003).\n[16] P. M. Melvin and H. R. Morton, The coloured Jones function, Commun. Math. Phys.\n169, 501–520 (1995).\n[17] H. R. Morton, The coloured Jones function and Alexander polynomial for torus knots,\nProc.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

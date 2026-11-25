@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-bsd-rank-zero",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-bsd-rank-zero",
+  "kind": "remark",
+  "title": "$r_q = 0$ is forced by the QOU observability axioms",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-mordell-weil",
+    "papers/quantum-observable-universe/blocks/prop-color-elliptic"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-q-birch-swinnerton-dyer",
+  "tags": [
+    "birch-swinnerton-dyer",
+    "mordell-weil",
+    "observability",
+    "su2",
+    "categorical"
+  ],
+  "text": "q-bsd-rank-zero.md",
+  "provenance": "authored"
+}

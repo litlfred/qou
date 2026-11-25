@@ -1,0 +1,918 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0905.0591v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "In 1928 Alexander introduced a polynomial invariant for knots and links which quickly got referred  to as the Alexander polynomial.\nHis definition was later recast in terms of Reidemeister torsion by Milnor \\cite{Mi62}\nand it was extended by Turaev \\cite{Tu75,Tu86} to an invariant of 3-manifolds.\nMore precisely, to a 3-manifold with empty or toroidal boundary $N$ we can associate its Alexander polynomial $\\Delta_N$\nwhich lies in the group ring $\\Z[H]$, where $H$ is the maximal abelian quotient of $H_1(N;\\Z)$.\nThe Alexander polynomial of knots, links and 3-manifolds in general is closely relate",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0905.0591v3  [math.GT]  5 Feb 2010\nA SURVEY OF TWISTED ALEXANDER POLYNOMIALS\nSTEFAN FRIEDL AND STEFANO VIDUSSI",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definition and basic properties",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-definition-and-basic-properties.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted Reidemeister torsion",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-21-twisted-reidemeister-torsion.md",
+      "narrative": null,
+      "content": "\\label{section:twitorsion}\\label{section:twitau}\n\n\nLet $N$ be a 3--manifold with empty or toroidal boundary, $F$ a torsion--free abelian group\nand $\\alpha:\\pi_1(N)\\to \\mbox{GL}(k,R[F])$  a representation. Recall that we denote by $Q(R[F])$ the quotient field of $R[F]$.\n\nWe endow $N$ with a finite CW--structure.\nWe denote the universal cover of $N$ by $\\tilde{N}$.\nRecall that there exists a canonical left $\\pi_1(N)$--action on the universal cover $\\tilde{N}$ given by deck transformations. We\nconsider the cellular chain complex $C_*(\\tilde{N})$ as a right $\\mathbb{Z}[\\pi_1(N)]$-module by definin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Computation of twisted Reidemeister torsion",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-22-computation-of-twisted-reidemeister-torsion.md",
+      "narrative": null,
+      "content": "\\label{section:comptau}\n\nLet $N$ be a 3--manifold with empty or toroidal boundary,  $\\psi:\\pi_1(N)\\to F$ a non--trivial homomorphism to a free abelian group $F$\nand $\\gamma:\\pi_1(N)\\to \\mbox{GL}(k,R)$  a representation.\nIn this section we will give an algorithm for computing $\\tau(N,\\gamma \\otimes \\psi)$ which is based on ideas of Turaev\n(cf. in particular \\cite[Theorem~2.2]{Tu01}).\n\n\nWe will first consider the case  that $N$ is closed.  We write $\\pi=\\pi_1(N)$.\nWe endow $N$ with  a CW--structure with one 0--cell, $n$ 1--cells, $n$ 2--cells and one $3$--cell.\nIt is well--known that such a CW--",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Torsion invariants",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-23-torsion-invariants.md",
+      "narrative": null,
+      "content": "\\label{section:torsioninvariants}\nLet $S$ be a Noetherian unique factorization domain\n(henceforth UFD). Examples of Noetherian UFD's are given by $\\mathbb{Z}$ and by fields,\nfurthermore if $R$ is a Noetherian UFD and $F$ a free abelian group, then $R[F]$ is again a Noetherian UFD.\n\nFor a finitely generated\n$S$-module $A$ we can find a presentation\n$$\nS^r \\xrightarrow{P} S^s \\to A \\to 0\n$$\nsince $S$ is Noetherian. Let $i\\ge 0$ and suppose $s-i\\le r$. We\ndefine $E_i(A)$, \\emph{the $i$-th elementary ideal} of $A$, to be\nthe ideal in $S$ generated by all $(s-i)\\times (s-i)$ minors of\n$P$ if $s-i>0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted Alexander invariants",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-005-24-twisted-alexander-invariants.md",
+      "narrative": null,
+      "content": "\\label{section:twialex}\nLet $N$ be a 3-manifold and let $\\alpha:\\pi_1(N)\\to \\mbox{GL}(k,R[F])$ be a representation with $R$ a Noetherian UFD.\nSimilarly to Section \\ref{section:twitau} we\ndefine the $R[F]$--chain complex $C_*(\\tilde{N})\\otimes_{\\mathbb{Z}[\\pi_1(N)]}R[F]^k$.\n For $i\\ge 0$, we define \\emph{the $i$-th twisted Alexander module of $(N,\\alpha)$} to be the $R[F]$--module\n$$\nH_i(N;R[F]^k) \\mathrel{\\mathop:}= H_i(C_*(\\tilde{N})\\otimes_{\\mathbb{Z}[\\pi_1(N)]}R[F]^k).\n$$\nwhere $\\pi_1(N)$ acts on $R[F]^k$ by $\\alpha$.\n Since $N$ is compact and $R[F]$\nis Noetherian these modules are finitely",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Computation of twisted Alexander polynomials",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-006-25-computation-of-twisted-alexander-polynomials.md",
+      "narrative": null,
+      "content": "\\label{section:compdelta}\n\nLet $N$ be a 3--manifold with empty or toroidal boundary, and  ${\\alpha}:\\pi_1(N)\\to \\mbox{GL}(k,R[F])$  a  representation with $R$ a Noetherian UFD\nand $F$ a free abelian group.\nGiven a finite presentation for $\\pi_1(N)$ the polynomials $\\Delta_{N,1}^{\\alpha}\\in R[F]$ and $\\Delta_{N,0}^{\\alpha}\\in R[F]$ can be computed\nefficiently using Fox calculus (cf. e.g. \\cite[p.~98]{CF77} and \\cite{KL99a}). We point out that\nbecause we view $C_*(\\tilde{N})$ as a \\emph{right} module over $\\mathbb{Z}[\\pi_1(N)]$ we need a slightly\ndifferent definition of Fox derivatives than the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basic properties of twisted invariants",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-007-3-basic-properties-of-twisted-invariants.md",
+      "narrative": null,
+      "content": "\\label{section:basics}\n\nIn this section we summarize various basic algebraic properties of twisted Reidemeister torsion and twisted Alexander polynomials.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relationship between twisted invariants",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-008-31-relationship-between-twisted-invariants.md",
+      "narrative": null,
+      "content": "The following proposition is \\cite[Theorem~4.7]{Tu01}.\n\n\\begin{proposition}\\label{prop:deltataualpha}\nLet $N$ be a 3--manifold with empty or toroidal boundary and let\n$\\alpha:\\pi_1(N)\\to \\mbox{GL}(k,R[F])$  a  representation where $R$ is a Noetherian UFD and $F$ a free abelian group. If $\\Delta_{N,i}^{\\alpha} \\ne 0$\nfor $i=0,1,2$, then\n\\[ \\tau(N,{\\alpha} )\\doteq  \\prod_{i=0}^2 \\big(\\Delta^{{\\alpha}}_{N,i}\\big)^{(-1)^{i+1}}.\\]\n\\end{proposition}\n\nThe following is a mild extension of \\cite[Proposition~2.5]{FK06}, \\cite[Lemmas~6.2~and~6.3]{FK08a} and \\cite[Theorem~6.7]{FK08a}.\nMost of the ideas go",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted invariants for conjugate representations",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-009-32-twisted-invariants-for-conjugate-representati.md",
+      "narrative": null,
+      "content": "Given a group $\\pi$ we say that two representations $\\gamma_1,\\gamma_2:\\pi \\to \\mbox{GL}(k,R)$ are \\emph{conjugate} if there exists\n$P\\in \\mbox{GL}(k,R)$ such that $\\gamma_1(g)=P\\gamma_2(g)P^{-1}$ for all $g\\in \\pi$.\nWe recall the following elementary lemma.\n\n\\begin{lemma}\\label{lem:equ:rep}\nLet $N$ be a 3--manifold with empty or toroidal boundary and let $\\psi:\\pi_1(N)\\to F$ a non--trivial homomorphism to a free abelian group.\nIf $\\gamma_1$ and $\\gamma_2$ are conjugate representations of $\\pi_1(N)$,\nthen\n\\[ \\tau(N,\\gamma_1\\otimes \\psi)\\doteq \\tau(N,\\gamma_2\\otimes \\psi),\\]\nif  $R$ is furtherm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Change of variables",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-010-33-change-of-variables.md",
+      "narrative": null,
+      "content": "In this section we will show how to reduce the number of variables in twisted Alexander polynomials, in particular\nthis discussion will show how to obtain one--variable twisted Alexander polynomials from multi--variable twisted Alexander polynomials.\n\nThroughout this section let $N$ be a 3--manifold with empty or toroidal boundary, let\n$\\psi:\\pi_1(N)\\to F$ be a non--trivial homomorphism to a free abelian group $F$\nand let $\\gamma:\\pi_1(N)\\to \\mbox{GL}(k,R)$ be a  representation.\nFurthermore let $\\phi:F\\to H$ also be a homomorphism to a  free abelian group such that $\\phi\\circ \\psi$ is non--tri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Duality for twisted invariants",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-011-34-duality-for-twisted-invariants.md",
+      "narrative": null,
+      "content": "\\label{section:duality}\n\nLet   $R$ be a ring with a (possibly trivial) involution $r\\mapsto \\overline{r}$.\nLet $F$ be a free abelian group, with its natural involution. We extend the involution on $R$ to the group ring $R[F]$ and the quotient field $Q(R[F])$ in the usual way.\nWe equip $R[F]^k$ with the\nstandard hermitian inner product $\\langle v ,w \\rangle=v^t\\overline{w}$ (where we view elements in $R[F]^k$\nas column vectors).\n\nLet $N$ be a 3--manifold with empty or toroidal boundary\nand let $\\alpha:\\pi_1(N)\\to \\mbox{GL}(k,R[F])$ a representation.\nWe denote by  $\\overline{\\alpha} : \\pi_1(N) \\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Shapiro's lemma for twisted invariants",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-012-35-shapiros-lemma-for-twisted-invariants.md",
+      "narrative": null,
+      "content": "Let $N$ be a 3--manifold with empty or toroidal boundary.\nLet $p:\\hat{N}\\to N$ be a finite cover of degree $d$.\nLet $F$ be a free abelian group and let $\\hat{\\alpha}:\\pi_1(\\hat{N})\\to \\mbox{GL}(k,R[F])$ a representation.\n\n Now consider  the $R[F]^k$--module\n \\[ \\mathbb{Z}[\\pi_1({N})]\\otimes_{\\mathbb{Z}[\\pi_1(\\hat{N})]} R[F]^k.\\]\n If $g_1,\\dots,g_d$ are representatives of $\\pi_1(N)/\\pi_1(\\hat{N})$ and if $e_1,\\dots,e_k$ is the canonical basis of $R[F]^k$,\n then it is straightforward to see that the above $R[F]$--module is a free $R[F]$--module with basis $g_i\\otimes e_j, i=1,\\dots,d, j=1,\\dots,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted invariants of knots and links",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-013-36-twisted-invariants-of-knots-and-links.md",
+      "narrative": null,
+      "content": "Let $L=L_1\\cup\\dots \\cup L_m\\subset S^3$ be an ordered oriented link.\nRecall that given a representation $\\gamma:\\pi_1(S^3\\setminus \\nu L)\\to \\mbox{GL}(k,R)$ with $R$ a Noetherian UFD we can consider the\ntwisted Alexander polynomial $\\Delta_L^\\gamma$ as an element in the Laurent polynomial ring\n$R[t_1^{\\pm 1},\\dots,t_m^{\\pm 1}]$ and we\n write $\\Delta^\\gamma_{L,i}(t_1,\\dots,t_m)=\\Delta^\\gamma_{L,i}\\in R[t_1^{\\pm 1},\\dots,t_m^{\\pm 1}]$.\n\n Given  $\\epsilon_j \\in \\{ \\pm 1\\}$ for $j=1,\\dots,m$ we denote by\n$L^\\epsilon$ the link $\\epsilon_1 L_1,\\dots,\\epsilon_m  L_m$, i.e. the oriented link obtained",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Distinguishing knots and links",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-014-4-distinguishing-knots-and-links.md",
+      "narrative": null,
+      "content": "\\label{section:dist}\n\n\nIn this section we will restrict ourselves to twisted Alexander polynomials of knots and links.\nRecall that given an oriented knot $K\\subset S^3$ the \\emph{reverse} $\\overline{K}$ is given by reversing the orientation.\nGiven a knot $K\\subset S^3$ we denote by $K^*$ its \\emph{mirror image}, i.e. the result of reflecting $K$ in  $S^2\\subset S^3$.\nThe mirror image is also sometimes referred to as the \\emph{obverse}.\n\nTwisted Alexander invariants have so far been surprisingly little used to distinguish a knot from its mirror image or from its reverse\n(cf. \\cite{KL99b} though",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted Alexander polynomials and concordance",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-015-5-twisted-alexander-polynomials-and-concordance.md",
+      "narrative": null,
+      "content": "\\label{section:conc}\n\nWe first recall the relevant definitions.\nLet $L=L_1\\cup \\dots \\cup L_m\\subset S^3$ be an oriented $m$--component link.\nWe say that $L$ is (topologically) \\emph{slice} if the components bound $m$ disjointly embedded locally flat disks in $D^4$.\nGiven two ordered oriented $m$--component links $K=K_1\\cup \\dots \\cup K_m\\subset S^3$ and $L=L_1\\cup \\dots \\cup L_m\\subset S^3$\nwe say that $K$ and $L$ are \\emph{concordant} if there exist $m$ disjointly embedded locally flat cylinders $C_1,\\dots,C_m$ in $S^3\\times [0,1]$\nsuch that $\\partial C_i=K_i\\times 0\\, \\cup \\, -L_i\\times 1$.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted Alexander polynomials of zero–surgeries",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-016-51-twisted-alexander-polynomials-of-zerosurgerie.md",
+      "narrative": null,
+      "content": "\\label{section:zerosurgery}\n\nGiven a knot $K\\subset S^3$ the zero--framed surgery $N_K$ of $S^3$ along $K$ is defined to be\n\\[ N_K =S^3\\setminus \\nu K \\cup_{T} S^1\\times D^2\\]\nwhere $T=\\partial (S^3\\setminus \\nu K)$ and $T$ is glued to $S^1\\times D^2$ by gluing the meridian to $S^1\\times \\mbox{pt}$.\nThe inclusion map induces an isomorphism $\\mathbb{Z}\\cong H_1(S^3\\setminus \\nu K;\\mathbb{Z})\\xrightarrow{\\cong} H_1(N_K;\\mathbb{Z})$.\nIt is well--known that understanding the zero--framed surgery $N_K$\nis the key to determining whether $K$ is slice or not\n(cf. e.g. \\cite{COT03}, \\cite[Proposition~3",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted Alexander polynomials and knot concordance",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-017-52-twisted-alexander-polynomials-and-knot-concor.md",
+      "narrative": null,
+      "content": "\\label{section:slice}\n\nThe first significant result in the study of slice knots is due to\nFox and Milnor \\cite{FM66} who showed that if $K$ is a slice knot, then $\\Delta_K \\doteq f(t)f(t^{-1})$ for some $f(t)\\in \\mathbb{Z}[t^{\\pm 1}]$.\n\nIn this section we will give an exposition and a slight generalization of the Kirk--Livingston \\cite{KL99a} sliceness obstruction theorem, which generalizes the Fox--Milnor condition. Note that we will state this obstruction using a slightly different setup, but Theorem \\ref{thm:slice} is\nalready contained in \\cite{KL99a} and \\cite{HKL08}.\n\nLet $K$ be a knot, a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ribbon knots and doubly slice knots",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-018-53-ribbon-knots-and-doubly-slice-knots.md",
+      "narrative": null,
+      "content": "\\label{section:ds}\n\n\nA knot $K$ is called \\emph{homotopy ribbon} if there exists a slice disk $D$ such that\n$\\pi_1(N_K)\\to \\pi_1(D^4\\setminus \\nu D)$ is surjective. Note that if a knot is ribbon, then it is also homotopy ribbon.\nIt is an open conjecture whether every knot that is slice is also homotopy ribbon.\n\nLet $K\\subset S^3$ be a knot. Recall that there exists a non--singular hermitian pairing\n\\[ \\lambda:H_1(N_K;\\mathbb{Z}[t^{\\pm 1}])\\times H_1(N_K;\\mathbb{Z}[t^{\\pm 1}])\\to \\mathbb{Q}(t)/\\mathbb{Z}[t^{\\pm 1}] \\] which is referred to as the \\emph{Blanchfield pairing}.\nWe say that $M\\subset",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted invariants and slice links",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-019-54-twisted-invariants-and-slice-links.md",
+      "narrative": null,
+      "content": "\\label{section:slicelinks} \\label{section:linkslice}\n\n\nKawauchi \\cite[Theorems~A~and~B]{Ka78} showed that if $L$ is a slice link with more than one component, then the ordinary Alexander module  is necessarily non--torsion,\nin particular the corresponding Reidemeister torsion is zero.\nWe will follow an idea of Turaev \\cite[Section~5.1]{Tu86} to define a (twisted) invariant for links even if the (twisted) Alexander module is non--torsion.\nThis invariant will then give rise to a sliceness obstruction for links. We refer throughout this section to \\cite{CF10} and \\cite{Tu86} for details.\n\nLet $L\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted Alexander polynomials, the Thurston norm and fibered manifolds",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/sec-020-6-twisted-alexander-polynomials-the-thurston-nor.md",
+      "narrative": null,
+      "content": "manifolds",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted Alexander polynomials and fibered manifolds",
+      "pageStart": 18,
+      "pageEnd": 21,
+      "target": "../sections/sec-021-61-twisted-alexander-polynomials-and-fibered-man.md",
+      "narrative": null,
+      "content": "\\label{section:fib}\nLet $\\phi\\in H^1(N;\\mathbb{Z}) = \\mbox{Hom}(\\pi_1(N),\\mathbb{Z})$ be non--trivial. We say\n\\emph{$(N,\\phi)$ fibers over $S^{1}$}\n if there exists\n a fibration $p:N\\to S^1$ such that the induced map $p_*:\\pi_1(N)\\to \\pi_1(S^1)=\\mathbb{Z}$ coincides with $\\phi$. If\n$K$ is a fibered knot, then it is a classical result of Neuwirth that\n$\\Delta_K$ is monic and that $\\deg(\\Delta_K)=2 \\, \\mbox{genus}(K)$. Similarly, twisted Alexander polynomials provide necessary conditions to the fiberability of a pair $(N,\\phi)$.\n\n\nIn order to state the fibering obstructions for a pair $(N,\\phi)$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted Alexander polynomials and the Thurston norm",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-022-62-twisted-alexander-polynomials-and-the-thursto.md",
+      "narrative": null,
+      "content": "\\label{section:genus}\n\nIt is a classical result of Alexander that given a knot $K\\subset S^3$ the following inequality holds:\n \\[ 2\\mbox{genus}(K) \\geq \\deg(\\Delta_K).  \\]\nThis result was first generalized to general 3--manifolds by McMullen \\cite{McM02}\nand then to twisted Alexander polynomials in \\cite{FK06}.\nThe following theorem is \\cite[Theorem~1.1]{FK06}.\nThe proof builds partly on ideas of Turaev's in \\cite{Tu02b}.\n\n\n\\begin{theorem} \\label{thm:lowerboundphi} Let $N$ be a 3--manifold whose boundary is empty or consists of tori.\nLet $\\phi \\in H^1(N;\\mathbb{Z})$ be non--trivial and let $\\g",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Normalized twisted Reidemeister torsion and the free genus of a knot",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-023-63-normalized-twisted-reidemeister-torsion-and-t.md",
+      "narrative": null,
+      "content": "\\label{section:normalized}\n\nLet $K\\subset S^3$ a knot and let $\\gamma:\\pi_1(S^3\\sm \\nu K)\\to \\mbox{GL}(k,R)$ be a representation with $R$ a Noetherian UFD.\nLet $\\epsilon=\\det(\\gamma(\\mu))$ where $\\mu$ denotes a meridian of $K$.\nKitayama \\cite{Kiy08a} introduced an invariant $\\tilde{\\Delta}_{K,\\gamma}\\in Q(R(\\epsilon^{\\frac{1}{2}})[t^{\\pm \\frac{1}{2}}])$ which is a normalized version of the twisted Reidemeister torsion $\\tau(K,\\gamma)$, i.e.  $\\tau(K,\\gamma)$ has no indeterminacy and up to multiplication by an element of the form $\\epsilon^r t^{\\frac{s}{2}}$ it is a representative of the twiste",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted invariants of knots and special representations",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-024-7-twisted-invariants-of-knots-and-special-repres.md",
+      "narrative": null,
+      "content": "\\label{section:twodim}\n\nGiven a knot $K\\subset S^3$ the representations which have been studied most are the 2--dimensional complex representations  and the metabelian representations.\nIt is therefore natural to consider special properties of twisted Alexander polynomials corresponding to such  representations.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Parabolic representations",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-025-71-parabolic-representations.md",
+      "narrative": null,
+      "content": "\\label{section:specialknots}\n\n\nLet $K\\subset S^3$ be a knot. A representation\n$\\gamma:\\pi_1(S^3\\setminus \\nu K)\\to \\mbox{SL}(2,\\mathbb{C})$ is called \\emph{parabolic}\nif the\nimage of any meridian is a matrix with trace 2. Note that Thurston \\cite{Th87} showed that\ngiven a hyperbolic knot $K$   the discrete faithful representation\n$\\pi_1(S^3\\setminus \\nu K) \\to \\mbox{PSL}(2,\\mathbb{C})$ lifts to a\nparabolic representation $\\gamma : \\pi_1(S^3\\setminus \\nu K) \\to \\mbox{SL}(2,\\mathbb{C})$.\nThe twisted Reidemeister torsion corresponding to this canonical representation has been surprisingly little",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted Alexander polynomials and the space of 2–dimensional representations",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-026-72-twisted-alexander-polynomials-and-the-space-o.md",
+      "narrative": null,
+      "content": "It is a natural question to study the behavior of twisted Alexander polynomials under a change of representation.\nRecall that given a group $\\pi$ we say that two representations $\\alpha,\\beta:\\pi\\to \\mbox{GL}(k,R)$ are\n\\emph{conjugate} if there exists $P\\in \\mbox{GL}(k,R)$ with $\\alpha(g)=P\\beta(g)P^{-1}$ for all $g\\in \\pi$.\nBy Lemma \\ref{lem:equ:rep} we can view  Alexander polynomials as function on the set of conjugacy classes of representations.\n\nLet $K$ be a 2--bridge knot. Riley \\cite{Ri84}\n(cf. also \\cite[Proposition~3]{DHY09}) showed that\nconjugacy classes of representations $\\pi_1(S^3\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted invariants of hyperbolic knots and links",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-027-73-twisted-invariants-of-hyperbolic-knots-and-li.md",
+      "narrative": null,
+      "content": "Let $L\\subset S^3$ be a hyperbolic link. Then the corresponding representation $\\pi_1(S^3\\sm \\nu L)\\to PSL(2,\\C)$ lifts\nto a canonical representation $\\g_{can}:\\pi_1(S^3\\sm \\nu L)\\to SL(2,\\C)$ and\nit induces the adjoint representation $\\g_{adj}: \\pi_1(S^3\\sm \\nu L)\\to PSL(2,\\C)\\to \\aut(sl(2,\\C))\\cong \\mbox{SL}(3,\\C)$.\n\nThe corresponding invariant $\\tau(L,\\g_{adj})$ has been studied in great detail by Dubois and Yamaguchi \\cite{DY09}.\nIn particular it is shown that $\\tau(L,\\g_{adj})$ is a symmetric non-zero polynomial (the non-vanishing result builds on work\nof Porti \\cite{Po97}). Furthermore t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Metabelian representations",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-028-74-metabelian-representations.md",
+      "narrative": null,
+      "content": "Given a group $G$ the\nderived series of $G$ is defined  inductively  by $G^{(0)}=G$ and $G^{(i+1)}=[G^{(i)},G^{(i)}]$.\nA representation of a group $G$ is called metabelian if it factors through $G/G^{(2)}$.\nNote that if $K$ is a knot, then the metabelian quotient $\\pi_1(S^3\\setminus \\nu K)/\\pi_1(S^3\\setminus \\nu K)^{(2)}$ is well--known to be determined by the Alexander module of $K$\n(cf. e.g. \\cite[Section~2]{BF08}).\nMetabelian representations and metabelian quotients of knot groups have been studied extensively, we refer to \\cite{Fo62,Fo70}, \\cite{Hat79}, \\cite{Fr04},  \\cite{Je08} and \\cite{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Miscellaneous applications of twisted Reidemeister torsion to knot theory",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-029-8-miscellaneous-applications-of-twisted-reidemei.md",
+      "narrative": null,
+      "content": "\\label{section:misc}\n\nIn this section we will summarize various  applications of twisted Alexander polynomials to the study of knots and links.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A Partial order on knots",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-030-81-a-partial-order-on-knots.md",
+      "narrative": null,
+      "content": "\\label{section:po}\n\nGiven a knot $K$ we write $\\pi_1(S^3\\sm \\nu K)\\mathrel{\\mathop:}=\\pi_1(S^3\\setminus K)$.\n For two prime\nknots $K_1$ and $K_2$ one defines $K_1 \\geq K_2$ if there exists a surjective group homomorphism\n$\\varphi:\\pi_1(K_1)\\to \\pi_1(K_2)$.\nThe relation $``\\geq\"$ defines a partial order on the set of prime knots (cf. \\cite{KS05a}). Its study is often related to a well--known conjecture of J. Simon, that posits that for a given $K_1$, the set of knots $K_2$ s.t. $K_1 \\geq K_2$ is finite.\n\nKitano, Suzuki and Wada \\cite{KSW05} prove the following theorem\nwhich generalizes a result",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Periodic and freely periodic knots",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-031-82-periodic-and-freely-periodic-knots.md",
+      "narrative": null,
+      "content": "\\label{section:periodic}\n\nA knot $K\\subset S^3$ is called \\emph{periodic of period $q$}, if there exists a smooth transformation of $S^3$ of order $q$ which leaves $K$ invariant and such that the fixed point set is a circle $A$ disjoint from $K$.\nNote that $A\\subset S^3$ is the trivial knot by the Smith conjecture. We refer to \\cite[Section~10.1]{Ka96} for more details on periodic knots.\n\nNow assume that $K\\subset S^3$ is a periodic knot of period $q$ with $A$ the fixed point set of $f:S^3\\to S^3$.\nNote that $S^3/f$ is diffeomorphic to $S^3$. We denote by $\\pi$ the projection map $S^3\\to S^3/f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Zeroes of twisted Alexander polynomials and non–abelian representations",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-032-83-zeroes-of-twisted-alexander-polynomials-and-n.md",
+      "narrative": null,
+      "content": "Let $N$ be a 3--manifold with one boundary component and $b_1(N)=1$.\nPut differently, let  $N$ be the complement of a knot in a rational homology sphere.\nLet $\\alpha:\\pi_1(N)\\to \\mathbb{C}^*=\\mbox{GL}(1,\\mathbb{C})$ be a one--dimensional representation.\nNote that $\\alpha$ necessarily factors through a representation\n$H_1(N;\\mathbb{Z})\\to \\mbox{GL}(1,\\mathbb{C})$ which we also denote by $\\alpha$.\nHeusener and Porti \\cite{HP05} ask when the abelian representation\n\\[ \\begin{array}{rcl} \\rho_{\\alpha}: \\pi_1(N) &\\to & \\mbox{PSL}(2,\\mathbb{C}) \\\\\n g&\\mapsto &\\pm \\begin{pmatrix} \\alpha(g)^{1/2} &0 \\\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Seifert fibered surgeries",
+      "pageStart": 28,
+      "pageEnd": 28,
+      "target": "../sections/sec-033-84-seifert-fibered-surgeries.md",
+      "narrative": null,
+      "content": "\\label{section:sfs}\n\nIn \\cite[Section~3]{Kiy09} Kitayama gives a surgery formula for twisted Reidemeister torsion.\nFurthermore in \\cite[Lemma~4.3]{Kiy09} a formula for the Reidemeister torsion of a Seifert fibered space is given.\nBy studying a suitable invariant derived from twisted Reidemeister torsion\nan obstruction for a Dehn surgery on a knot to equal a specific Seifert fibered space are given.\nThese obstructions generalize Kadokami's obstructions given in \\cite{Ka06} and \\cite{Ka07}.\nFinally Kitayama applies these methods to show  that\nthere exists no Dehn surgery on the Kinoshita--Terasa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Homology of cyclic covers",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-034-85-homology-of-cyclic-covers.md",
+      "narrative": null,
+      "content": "\\label{section:cycliccovers}\n\nLet $K\\subset S^3$ be a knot. We denote by $H\\mathrel{\\mathop:}=H_1(S^3\\setminus \\nu K;\\mathbb{Z}[t^{\\pm 1}])$ its Alexander module. Given $n\\in \\mathbb{N}$ we denote by $L_n$ the  $n$--fold cyclic branched cover of $K$.\nRecall that we have a canonical isomorphism $H/(t^n-1)\\cong H_1(L_n)$.\nPut differently, the Alexander module determines the homology of the branched covers. In the same vein,  the following formula due to Fox (\\cite{Fo56} and see also \\cite{Go78})\nshows  that the Alexander polynomial determines the size of the homology of a branched cover:\n\\begin{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Alexander polynomials for links in R P3",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/sec-035-86-alexander-polynomials-for-links-in-r-p3.md",
+      "narrative": null,
+      "content": "\\label{section:rp}\n\nGiven a link $L\\subset \\mathbb{R}  P^3$ Huynh and Le \\cite[Section~5.3.2]{HL08} use Reidemeister torsion corresponding to abelian representations\nto define an invariant $\\nabla_L(t)$ which lies in general in $\\mathbb{Z}[t^{\\pm 1}, (t-t^{-1})^{-1}]$ and has no indeterminacy.\nFurthermore they show in \\cite[Theorem~5.7]{HL08} the surprising fact that this invariant satisfies in fact a skein relation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted Alexander polynomials of CW–complexes and groups",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../sections/sec-036-9-twisted-alexander-polynomials-of-cwcomplexes-a.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definitions and basic properties",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-037-91-definitions-and-basic-properties.md",
+      "narrative": null,
+      "content": "\\label{section:generalprop}\n\nLet $X$ be a  CW--complex  with finitely many cells in each dimension.\nAssume we are given a  non--trivial homomorphism $\\psi:\\pi_1(X)\\to F$ to a torsion--free abelian group and a  representation\n$\\gamma:\\pi_1(X)\\to \\mbox{GL}(k,R)$ where $R$ is a Noetherian UFD.\nAs in Section \\ref{section:twialex} we can define the twisted Alexander modules\n\\[ H_i(X;R[F]^k)=H_i(C_*(\\tilde{X};\\mathbb{Z})\\otimes_{\\mathbb{Z}[\\pi_1(X)]} R[F]^k)\\]\nwhere $\\pi_1(X)$ acts on $C_*(\\tilde{X};\\mathbb{Z})$ by deck transformations and on $R[F]^k$ by $\\gamma\\otimes \\psi$.\nThese modules are finit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted Alexander polynomials of groups",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "../sections/sec-038-92-twisted-alexander-polynomials-of-groups.md",
+      "narrative": null,
+      "content": "The twisted Alexander polynomial  has been calculated  by Morifuji \\cite[Theorem~1.1]{Mo01} for the braid groups $B_n$ with   $\\psi:B_n\\to \\mathbb{Z}$ the abelianization map\nand together with the Burau representation. Morifuji \\cite[Theorem~1.2]{Mo01} also proves a symmetry theorem for twisted Alexander polynomials\nof braid groups for  Jones representations corresponding to dual Young diagrams.\n\nIn \\cite{Suz04} Suzuki shows that the twisted Alexander polynomial of the braid group $B_4$ corresponding to the abelianization $\\phi:B_4\\to \\mathbb{Z}$ and the Lawrence--Krammer representation is triv",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Plane algebraic curves",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "../sections/sec-039-93-plane-algebraic-curves.md",
+      "narrative": null,
+      "content": "\\label{section:cf}\n\nLet $\\mathcal{C}\\subset \\mathbb{C}^2$  be an affine algebraic curve. Denote by $P_1,\\dots,P_k$ the set of singularities and denote\nby $L_1,\\dots,L_k$ the links at the singularities and let $L_\\infty$ be the link at infinity\n(we refer to \\cite{CF07} for details).\nNote that $\\mathbb{C}^2\\setminus \\nu \\mathcal{C}$ is homotopy equivalent to a finite CW--complex.\nBy Section \\ref{section:generalprop}  we can therefore consider the twisted Alexander polynomial of $\\mathbb{C}^2\\setminus \\nu \\mathcal{C}$.\nNow let  $\\gamma:\\pi_1(\\mathbb{C}^2\\setminus \\nu \\mathcal{C})\\to \\mbox{GL}(k,\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Alexander polynomials and representations over non–commutative rings",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-040-10-alexander-polynomials-and-representations-ove.md",
+      "narrative": null,
+      "content": "\\label{section:ho}\n\nIn the previous sections we only considered finite dimensional representations over commutative rings.\nOne possible approach to studying invariants corresponding to infinite dimensional representations\nis to use the theory of $L^2$--invariants. We refer to \\cite{Lu02} for the definition of various $L^2$--invariants  and for some applications to low--dimensional topology.\nEven though $L^2$--invariants are a powerful tool they have not yet been systematically studied for links and 3--manifolds.\nWe refer to the work of Li and Zhang \\cite{LZ06a,LZ06b} for some initial work.\nWe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Non–commutative Alexander polynomials",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "../sections/sec-041-101-noncommutative-alexander-polynomials.md",
+      "narrative": null,
+      "content": "\\label{sec:phicompatible}\n\n\n\nLet $\\mathbb{K}$ be a (skew) field and $\\gamma:\\mathbb{K}\\to \\mathbb{K}$ a ring homomorphism. Denote by $\\mathbb{K}[t^{\\pm 1}]$ the corresponding skew Laurent\npolynomial ring over $\\mathbb{K}$. The elements in $\\mathbb{K}[t^{\\pm 1}]$ are formal sums\n$\\sum_{i=-r}^s a_it^i$ with $a_i\\in \\mathbb{K}$ and multiplication in $\\mathbb{K}[t^{\\pm 1}]$ is given by the rule\n$t^ia=\\gamma^i(a)t^i$ for any $a\\in \\mathbb{K}$.\n\n\n\nLet $N$ be a 3--manifold and let $\\phi \\in H^1(N;\\mathbb{Z})$ be non--trivial.\nFollowing Turaev \\cite{Tu02b} we call a ring homomorphism $\\varphi:\\mathbb{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Higher order Alexander polynomials",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "../sections/sec-042-102-higher-order-alexander-polynomials.md",
+      "narrative": null,
+      "content": "We now recall the construction of what are arguably the most interesting examples of $\\phi$--compatible homomorphisms from $\\pi_1(N)$ to a non--commutative Laurent polynomial ring.\nThe ideas of this section are due to Cochran and Harvey.\n\n\\begin{theorem}\\label{thm:tfa}\nLet $\\gamma$ be a torsion--free solvable group and let $\\mathbb{F}$ be a commutative field. Then the\nfollowing hold.\n\\begin{enumerate}\n\\item  $\\mathbb{F}[\\Gamma]$  is an Ore domain, in particular it embeds in its classical right ring of\nquotients $\\mathbb{K}(\\Gamma)$.\n\\item $\\mathbb{K}(\\Gamma)$ is flat over $\\mathbb{F}[\\Gamma]$.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparing different –compatible maps",
+      "pageStart": 33,
+      "pageEnd": 34,
+      "target": "../sections/sec-043-103-comparing-different-compatible-maps.md",
+      "narrative": null,
+      "content": "\\label{section:comparison}\n\n\n\\noindent We now recall a definition from \\cite{Ha06}.\n\n\\begin{definition}\nLet $N$ be a 3--manifold with empty or toroidal boundary.\nWe write $\\pi=\\pi_1(N)$. Let $\\phi:\\pi\\to \\mathbb{Z}$ an epimorphism. Furthermore let $\\varphi_1:\\pi \\to\n\\gamma_1$ and $\\varphi_2:\\pi \\to \\gamma_2$ be epimorphisms to torsion--free solvable groups $\\gamma_1$\nand $\\gamma_2$. We call $(\\varphi_1,\\varphi_2,\\phi)$ an {\\em admissible triple} for $\\pi$ if there\nexist epimorphisms $\\varphi_{2}^1:\\gamma_1\\to \\gamma_2$  and $\\phi_2:\\gamma_2\\to\n\\mathbb{Z}$ such that $\\varphi_2=\\varphi_{2}^1\\cir",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-044",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Miscellaneous applications of higher order Alexander polynomials",
+      "pageStart": 34,
+      "pageEnd": 34,
+      "target": "../sections/sec-044-104-miscellaneous-applications-of-higher-order-a.md",
+      "narrative": null,
+      "content": "In this section we quickly summarize various applications of higher order Alexander polynomials and related invariants to various aspects of low--dimensional topology:\n\\begin{enumerate}\n\\item Leidy \\cite{Lei06} studied the relationship between higher order Alexander modules and non--commutative Blanchfield pairings.\n\\item Leidy and Maxim (\\cite{LM06} and \\cite{LM08}) studied  higher order Alexander polynomials of plane curve complements.\n\\item Cochran and Taehee Kim \\cite{CT08} showed that given a knot with genus greater than one, the higher order\nAlexander polynomials do not determine the con",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-045",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Open questions and problems",
+      "pageStart": 34,
+      "pageEnd": 36,
+      "target": "../sections/sec-045-11-open-questions-and-problems.md",
+      "narrative": null,
+      "content": "\\label{section:question}\n\nWe conclude this survey paper with a list of open questions and problems.\n\n\\begin{enumerate}\n\\item Using elementary ideals one can define the twisted $k$--th Alexander polynomial, generalizing the $k$--th Alexander polynomial of a knot $K\\subset S^3$.\nWhat information do these invariants contain?\n\\item  Let $K\\subset S^3$ a knot and let $\\gamma:\\pi_1(S^3\\setminus \\nu K)\\to \\mbox{SL}(k,R)$ be a representation, where $R$ is a Noetherian UFD with possibly trivial involution.\nDoes it follow that $\\Delta_K^\\gamma$ is reciprocal, i.e. does it hold that $\\Delta_K^\\gamma \\dot",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0591v3/blocks/prose-sec-046",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 36,
+      "pageEnd": 42,
+      "target": "../sections/sec-046-references.md",
+      "narrative": null,
+      "content": "[Ag08]\nI. Agol, Criteria for virtual ﬁbering, Journal of Topology 1: 269-284 (2008)\n[Al28]\nJ.W. Alexander, Topological invariants of knots and links, Trans. Amer. Math. Soc. 30 (1928),\nno. 2, 275–306\n[Bl57]\nR. Blanchﬁeld, Intersection theory of manifolds with operators with applications to knot theory,\nAnn. of Math. (2) 65: 340–356 (1957)\n[BF08]\nH. Boden and S. Friedl, Metabelian SL(n, C) representations of knot groups, Pac. J. Math, Vol.\n238, 7–25 (2008)\n[Bu67]\nG. Burde, Darstellungen von Knotengruppen, Math. Ann. 173 (1967) 24–33\n[CG86]\nA. Casson and C. Gordon, Cobordism of classical knots,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

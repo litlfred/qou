@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2111.12409v4",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "On the generalisation of Roth’s theorem",
+      "dcterms:creator": [
+        "Dolce, Paolo"
+      ],
+      "dcterms:issued": "D:20230515",
+      "dcterms:identifier": "https://arxiv.org/abs/2111.12409",
+      "dcterms:abstract": "We present two generalisations of Roth’s approximation theorem on proper adelic curves, assuming some technical conditions on the behavior of the logarithmic absolute values. We illustrate how tightening such assumptions makes our inequalities stronger. As special cases we recover Corvaja’s results [Cor97] for ﬁelds admitting a product formula, and Vojta’s ones [Voj21] for arithmetic function ﬁelds. 0",
+      "dcterms:source": "library/arxiv-2111.12409v4/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2111.12409v4"
+    }
+  ]
+}

@@ -1,0 +1,420 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1908.07065v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1908.07065v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Prepared for submission to JHEP\nNon-perturbative approaches to the quantum\nSeiberg–Witten curve\nAlba Grassia, Jie Gub and Marcos Mari˜nob\naSimons Center for Geometry and Physics,\nSUNY, Stony Brook, NY, 1194-3636, USA\nb D´epartement de Physique Th´eorique et Section de Math´ematiques,\nUniversit´e de Gen`eve, Gen`eve, CH-1211 Switzerland\nE-mail: agrassi@scgp.stonybrook.edu, jie.gu@unige.ch,\nmarcos.marino@unige.ch\nAbstract: We study various non-perturbative approaches to the quantization of the Seiberg–\nWitten curve of N = 2, SU(2) super Yang–Mills theory, which is closely related to the modiﬁed",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1908.07065v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "In recent years, many interesting and surprising relations have been\nobtained between quantum mechanical systems, on one hand, and\nsupersymmetric gauge theories and topological strings, on the other\nhand. One example of such a relation is the gauge/Bethe correspondence\nof \\cite{ns}, which connects quantum integrable systems to instanton\ncalculus in gauge theory. A second example is the \ntopological string/spectral theory (TS/ST) correspondence, which\nprovides explicit predictions for the spectral determinants of quantum\nmirror curves \\cite{ghm,cgm,mmrev}. Finally, the study of BPS states\nin su",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1908.07065v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The all-orders WKB method",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-2-the-all-orders-wkb-method.md",
+      "narrative": null,
+      "content": "\\label{wkb}\n\n\nOur first approach to the quantum SW curve will be based on the\nso-called exact WKB method, see for example\n\\cite{voros,voros-quartic,ddpham,in-exactwkb}.  We will now summarize\nthe basic ingredients of the theory.\n\n\nThe Schr\\\"odinger equation for a non-relativistic particle in a\npotential $V(x)$ and with energy $E$ reads as follows:\n\n\\be\n\\label{schrodinger}\n-\\hbar^2 \\psi''(x) + (V(x)-E) \\psi(x)=0. \n\\ee\n\nThe standard WKB method produces asymptotic expansions in $\\hbar$ for\nthe solutions to this equation.  Let us consider the following ansatz\nfor the wavefunction,\n\n\\begin{equation",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1908.07065v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum periods from TBA equations",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-3-quantum-periods-from-tba-equations.md",
+      "narrative": null,
+      "content": "\\label{tbagmn}\n\nIn this section we study the TBA equations which control the analytic\nproperties of the quantum periods of the modified Mathieu equation. We set\n$\\Lambda=1$ throughout the section.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1908.07065v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Review of the TBA equations of Gaiotto–Moore–Neitzke",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-31-review-of-the-tba-equations-of-gaiottomoorene.md",
+      "narrative": null,
+      "content": "The TBA equations we will obtain are conformal limits \\cite{oper} of\nthe integral equations proposed by Gaiotto--Moore--Neitzke (GMN) in\n\\cite{gmn} to describe the hyperK\\\"ahler metric on the Coulomb branch\nof $\\CN=2$ theories compactified on $\\IR^3 \\times \\IS^1_R$, where $R$\nis the compactification radius. We will now review some basic aspects\nof these equations which will be useful in the following.  The basic\ningredients in these equations are the central charges of the $\\CN=2$\nsupersymmetric gauge theory\n \n\\begin{equation}\n  Z(\\bs{u})=\\left(\\bs{a},  \\bs{a}_D \\right), \n\\end{equation}\n\nwhere",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1908.07065v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "TBA equations for the modified Mathieu equation",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-32-tba-equations-for-the-modified-mathieu-equati.md",
+      "narrative": null,
+      "content": "\\label{sc:SW-TBA}\n\nBuilding on \\cite{oper, ims}, we expect to have a general\ncorrespondence between the mathematical description of BPS states in \\cite{gmn,gmn2}, and the ``resurgent\"\nproperties of the quantum periods associated to the corresponding SW curve. As noted in \\cite{oper}, this correspondence involves the conformal limit of the \nTBA equations of \\cite{gmn}, which is given by\n\n\\begin{equation}\n  R\\to 0 \\ , \\quad \\zeta \\to 0\\ ,\\quad  \\zeta/R\\;\\; \\text{finite} \\ .\n\\end{equation}\n\nIn this correspondence, the classical limit of the WKB periods\n$\\Pi_\\gamma ^{(0)}$ corresponds to the centr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1908.07065v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Strong coupling region",
+      "pageStart": 11,
+      "pageEnd": 15,
+      "target": "../sections/sec-005-321-strong-coupling-region.md",
+      "narrative": null,
+      "content": "We start with the region $\\CW$ inside the curve of marginal\nstability. The\nspectrum consists of one monopole with charge\n \n\\begin{equation}\n  \\gamma_m=(0,1)\n\\end{equation}\n \nand one dyon with charge\n \n\\begin{equation}\n  \\gamma_d=(1,1), \n\\end{equation}\n \nsee \\cite{sw,fb,selfdual} (we follow the conventions in \\cite{fb}). We\nalso have the corresponding antiparticles, carrying opposite\ncharges. Then, the only nonzero coefficients in (\\ref{su2tba}) are\n \n\\begin{equation}\n  c_e(\\gamma_m)=c_e(\\gamma_d)=-1, \\qquad c_m(\\gamma_d)=1.\n\\end{equation}\n \nTherefore, the equations (\\ref{su2tba}) read\n \n\\begin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1908.07065v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weak coupling region",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "../sections/sec-006-322-weak-coupling-region.md",
+      "narrative": null,
+      "content": "Let us now consider the region outside the curve of marginal\nstability. The spectrum consists of dyons with charge $\\pm \\gamma_n$,\nwhere\n\n\\begin{equation}\n  \\gamma_n= (n,1), \\qquad n \\in \\IZ, \n\\end{equation}\n\nand $W$ boson with charges $\\pm \\gamma_e$, where\n\n\\begin{equation}\n  \\gamma_e=(1,0). \n\\end{equation}\n\nFrom (\\ref{cem}) we conclude that\n\n\\begin{equation}\n  c_e(\\gamma_n)=-1\n\\end{equation}\n\nand\n\n\\begin{equation}\n  c_m(\\gamma_n)=n, \\qquad c_m(\\gamma_e)=2, \n\\end{equation}\n\nwhere we used the fact that \n\n\\begin{equation}\n\\Omega(\\gamma_e;u)=2\n\\end{equation}\n\nin the weak coupling region.\n\nAs in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1908.07065v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Solving the TBA equations in the strong coupling region",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-007-33-solving-the-tba-equations-in-the-strong-coupl.md",
+      "narrative": null,
+      "content": "\\label{tbau0}\n\nAs we have argued, Borel sums of quantum periods are solutions to the TBA\nequations \\eqref{eq:cTBA-1},\\eqref{eq:cTBA-2}. In principle the\nresummed quantum periods can be computed from these TBA equations\nby using the dictionaries \\eqref{eq:TBA-dict-1} and\n\\eqref{eq:TBA-dict-2}. In practice, however, these equations are\ndifficult to use. First of all, one needs information on the boundary\nconditions at strong coupling in order to solve the equations. In\naddition, the standard tools to solve these equations numerically\nconverge very slowly.\n\nLet us first consider the simplest exam",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1908.07065v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum periods from instanton calculus",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-008-4-quantum-periods-from-instanton-calculus.md",
+      "narrative": null,
+      "content": "\\label{res}\n\nInstanton calculus \\cite{n,ns} leads to a resummation of the quantum\nperiods of the modified Mathieu equation \\eqref{QP}, as pointed out in\n\\cite{mirmor}. This produces exact functions of $\\hbar$ which we will\ndenote by\n\\begin{equation}\n  \\Pi_{A,B}^{\\rm ex}  (E,\\hbar).\n\\end{equation}\n\nIn this section we explain this resummation in detail and we compare\nit to the Borel resummation obtained in the context of the exact WKB\nmethod.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1908.07065v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Review of instanton calculus",
+      "pageStart": 21,
+      "pageEnd": 25,
+      "target": "../sections/sec-009-41-review-of-instanton-calculus.md",
+      "narrative": null,
+      "content": "\\label{ic}\n\nLet us first review some basic ingredients of instanton calculus in\nthe 4d $N=2$ SYM with gauge group $G=SU(N)$ \\cite{n,no2,ns,\n  Flume:2002az, bfmt}.\n\nWe denote a partition (or  Young tableaux) by\n\\be Y=(y_1, y_2, \\cdots),\\ee \n its transposed by\n\\be Y^t=(y_1^t, y_2^t, \\cdots),\\ee\nand a vector of Young tableaux as\n\\begin{equation}\n  \\label{Y-vec}\n  \\boldsymbol{Y}=(Y_1, \\cdots, Y_N). \n\\end{equation}\n\nIt is useful to  define\n\n\\begin{equation}\n  h_Y(s)=y_i-j, \\qquad v_Y(s)= y^t_j-i, \n\\end{equation}\nwhere $ s=(i,j) $ is a  box (not necessarily in the\npartition $Y$). We will also use",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1908.07065v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparison to Borel resummation",
+      "pageStart": 25,
+      "pageEnd": 29,
+      "target": "../sections/sec-010-42-comparison-to-borel-resummation.md",
+      "narrative": null,
+      "content": "\\label{bo}\n\nWe now have two different approaches to the calculation of (resummed)\nquantum periods: on the one hand, we have the Borel resummation of the\nall-orders WKB expansion in $\\hbar^2$, which is also calculated by the\nTBA equations of section \\ref{tbagmn}. On the other hand, instanton\ncalculus gives a different resummation, based on a convergent\nexpansion in $\\Lambda$, as a function of $\\hbar$. An obvious question\nis: what is the precise relation between these two resummations? Since\nboth lead to the same asymptotic expansion in powers of $\\hbar$, we\nexpect that they will differ in non-p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1908.07065v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Fredholm determinant from topological string theory",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-011-5-the-fredholm-determinant-from-topological-stri.md",
+      "narrative": null,
+      "content": "\\label{tssst}\n\n\nLet $\\mO$ be an operator on $L^2(\\IR)$ such that $\\mO^{-1}$ is of trace class. Then, $\\mO$ has a discrete spectrum $\\{E_n\\}_{n\\geq 0}$, and its Fredholm determinant \n\n\\be\n\\label{fdm} \\Xi(E)={\\rm det}\\left(1-E \\mO^{-1} \\right) =\\prod_{n\\geq0}\\left({1-{E \\over E_n}}\\right)\n \\ee\n\nis an entire function of $E$ whose zeros give the spectrum of $\\mO$: $\\Xi(E_n)=0$ (see e.g. \\cite{simon-paper} for these and other properties of Fredholm determinants). \n\nThe Fredholm determinant contains very rich information about the spectral properties of $\\mO$. For example, the spectral traces, defin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1908.07065v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A closed formula and its derivation",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-012-51-a-closed-formula-and-its-derivation.md",
+      "narrative": null,
+      "content": "\\label{deri}\n\nBy using the approach of \\cite{ghm,gm3} we find the following expression \nfor the spectral determinant of \\eqref{eq:schrodinger}\\footnote{While presenting these \nresults at the conference {\\it Irregular singularities in Quantum Field Theory} (http://irregular.rd.ciencias.ulisboa.pt/conference),   \t\nS. Lukyanov informed us that he had independently derived this result \\cite{PCL} by using completely different methods. }\n\n\\be \n\\label{sd}\\Xi(E)=A (\\hbar) \\left( \\sinh\\left(\\frac{ \\Pi_A^{\\rm ex}(E, \\hbar)}{2 \\hbar }\\right) \\right)^{-1} \\cosh\\left({1 \\over 2\\hbar} \\Pi_B^{\\rm ex}(E, \\hba",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1908.07065v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tests of our formula",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "../sections/sec-013-52-tests-of-our-formula.md",
+      "narrative": null,
+      "content": "We will now test the expression (\\ref{sd}) in several ways. \n\nA first simple test is that the zeros of $\\Xi(E)$ give the correct spectrum of the modified Mathieu operator. This should be expected \nfrom the general results of \\cite{gm3}, but it is instructive to check it explicitly. \nThe zeros correspond to the vanishing of the $\\cosh$ in (\\ref{sd}), and by using \n(\\ref{abpe}) we find,\n\n\\be \n\\label{eqref} \\partial_{a}F_{\\rm NS}(a,\\hbar)= \\hbar  \\pi  \\left( n+{1\\over 2} \\right), \n\\ee\n\nwhich is the exact quantization condition obtained from the conjecture in \\cite{ns}, subsequently proved in \\cit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1908.07065v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparison to Zamolodchikov's TBA equation",
+      "pageStart": 33,
+      "pageEnd": 36,
+      "target": "../sections/sec-014-53-comparison-to-zamolodchikovs-tba-equation.md",
+      "narrative": null,
+      "content": "\\label{comp-zamo}\nAn additional test of our formula (\\ref{sd}) comes from a comparison\nwith \\cite{post-zamo}.  Inspired by the ODE/IM correspondence\n\\cite{dt,ddt}, Zamolodchikov found in \\cite{post-zamo} a TBA equation\nwhich computes precisely the spectral determinant \\eqref{sd}. Let us\nstate the main result of \\cite{post-zamo}, referring to Appendix\n\\ref{appendixzamo} for more details. Let $\\epsilon(\\theta, P)$ be a\nsolution of the TBA equation \\eqref{eq:cTBA-0} but with the boundary\ncondition at $\\theta \\rightarrow -\\infty$ given by\n\n\\begin{equation}\n  \\label{zamobc}\\epsilon (\\theta,P) \\sim",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1908.07065v3/blocks/prop-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "prop-sec-015-01.md",
+      "narrative": null,
+      "content": "It was observed by many authors \\cite{Lukyanov:2011wd, PCL, nok} that the movable poles of Painlev\\'e $\\rm III_3$ are somehow related to Mathieu functions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1908.07065v3/blocks/prop-sec-015-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "prop-sec-015-02.md",
+      "narrative": null,
+      "content": "In particular in \\cite{ sciarappa2}, based on \\cite{bgt}, it was observed that the zeros of the Painlev\\'e $\\rm III_3$ $\\tau$ function compute the spectrum of modified Mathieu (with a suitable dictionary).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1908.07065v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "On the modified Mathieu operator and Painlevé III3",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-015-6-on-the-modified-mathieu-operator-and-painlevé.md",
+      "narrative": null,
+      "content": "\\label{mathieu-painleve}\n\nIt was observed by many authors \\cite{Lukyanov:2011wd, PCL, nok} that\nthe movable poles of Painlev\\'e $\\rm III_3$ are somehow related to\nMathieu functions. In particular in \\cite{ sciarappa2}, based on\n\\cite{bgt}, it was observed that the zeros of the Painlev\\'e\n$\\rm III_3$ $\\tau$ function compute the spectrum of modified Mathieu\n(with a suitable dictionary).  From the view point of the TS/ST\ncorrespondence \\cite{ghm} this connection comes naturally since both\nsystems arise as limiting cases of this duality.  In particular, the\nmodified Mathieu operator arises in the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1908.07065v3/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "../sections/sec-016-7-conclusions.md",
+      "narrative": null,
+      "content": "\\label{concl}\n\nIn this paper we have used non-perturbative techniques inspired by\nsupersymmetric gauge theory and topological string theory to study the\nquantization of the Seiberg--Witten curve of $\\CN=2$, $SU(2)$ super\nYang--Mills theory, which gives the modified Mathieu operator. On the\none hand, building upon \\cite{gmn, gmn2, oper, ims}, we have obtained\nintegral equations for the Borel resummation of the quantum periods\nobtained with the all-orders WKB method. These equations predict as\nwell the resurgent structure of these periods, and in particular their\nStokes discontinuities. The resu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1908.07065v3/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A The four dimensional SU(N) spectral determinant",
+      "pageStart": 38,
+      "pageEnd": 40,
+      "target": "../sections/sec-017-a-the-four-dimensional-sun-spectral-determinant.md",
+      "narrative": null,
+      "content": "The four dimensional SU(N) spectral determinant\nIn this Appendix we explain how the exact formula (5.6) can be extended to the family of\noperators studied in [18]. These operators have the form,\nHN = ΛN \u0000ep + e−p\u0001\n+\nN−1\nX\nk=0\n(−1)kxN−khk,\n[x, p] = iℏ,\n(A.1)\nwhere N ≥2 is a positive integer and we set h0 = 1, h1 = 0.\nThey can be regarded as\ndeformations of the standard non-relativistic Schr¨odinger operators with a polynomial potential.\nWhen N is even, they have a discrete spectrum and their inverses are of trace class. When\nN is odd, one can perform a standard analytic continuation and obtain",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1908.07065v3/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B Zamolodchikov's TBA equation for the modified Mathieu equation",
+      "pageStart": 40,
+      "pageEnd": 47,
+      "target": "../sections/sec-018-b-zamolodchikovs-tba-equation-for-the-modified-m.md",
+      "narrative": null,
+      "content": "In [116] Zamolodchikov considered the thermodynamic TBA ansatz for the sinh-Gordon model.\nThis model depends on the parameter b ∈C, and we introduce\nQ = b + 1\nb,\n(B.1)\nas well as\np =\nb2\n1 + b2 ,\na = 1 −2p = 1 −b2\n1 + b2 .\n(B.2)\nThe TBA equation for this theory is given by\nϵ(θ) = mR cosh(θ) −(φ ⋆L) (θ),\n(B.3)\n– 39 –\nIn this equation, R is the radius of the circle where the theory lives, m is the mass of the particle\nin the spectrum,\nL(θ) = log\n\u0010\n1 + e−ϵ(θ)\u0011\n,\n(B.4)\nand\nφ(θ) = 1\n2π\n\u0012\n1\ncosh(θ −iπa/2) +\n1\ncosh(θ + iπa/2)\n\u0013\n= 1\n2π\n4 sin(πp) cosh(θ)\ncosh(2θ) −cos(2πp).\n(B.5)\nThe ⋆in (B.3) denotes,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

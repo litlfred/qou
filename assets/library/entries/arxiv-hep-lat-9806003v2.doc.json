@@ -1,0 +1,1343 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-lat-9806003v2",
+  "title": "arxiv-hep-lat-9806003v2",
+  "variant": "pdf",
+  "pages": 26,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Complete Dirac spectra in SU(2) gauge theory",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-complete-dirac-spectra-in-su2-gauge-theory"
+    },
+    {
+      "level": 1,
+      "title": "Data analysis",
+      "number": "3",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-data-analysis"
+    },
+    {
+      "level": 2,
+      "title": "Unfolding",
+      "number": "3.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-31-unfolding"
+    },
+    {
+      "level": 3,
+      "title": "Ensemble unfolding",
+      "number": "3.1.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-311-ensemble-unfolding"
+    },
+    {
+      "level": 3,
+      "title": "Configuration unfolding",
+      "number": "3.1.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-312-configuration-unfolding"
+    },
+    {
+      "level": 3,
+      "title": "Windowing",
+      "number": "3.1.3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-313-windowing"
+    },
+    {
+      "level": 2,
+      "title": "Nearest Neighbor Spacing Distribution",
+      "number": "3.2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-32-nearest-neighbor-spacing-distribution"
+    },
+    {
+      "level": 2,
+      "title": "Two--Point Spectral Correlations",
+      "number": "3.3",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-33-two--point-spectral-correlations"
+    },
+    {
+      "level": 2,
+      "title": "Higher Order Spectral Correlations",
+      "number": "3.4",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-34-higher-order-spectral-correlations"
+    },
+    {
+      "level": 2,
+      "title": "Qualitative discussion of the deviations for configuration unfolding",
+      "number": "3.5",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-35-qualitative-discussion-of-the-deviations-for"
+    },
+    {
+      "level": 1,
+      "title": "Summary and discussion",
+      "number": "4",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-4-summary-and-discussion"
+    },
+    {
+      "level": 2,
+      "title": "Summary",
+      "number": "4.1",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Discussion",
+      "number": "4.2",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-acknowledgments"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 223,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "thouless energy",
+          "heading": false
+        },
+        {
+          "term": "disordered systems",
+          "heading": false
+        },
+        {
+          "term": "qcd dirac",
+          "heading": false
+        },
+        {
+          "term": "spectral ﬂuctuations",
+          "heading": false
+        },
+        {
+          "term": "rmt",
+          "heading": false
+        },
+        {
+          "term": "kaiserslautern",
+          "heading": false
+        },
+        {
+          "term": "universal scale",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-lat/9806003v2 2 Dec 1998 Statistical analysis and the equivalent of a Thouless energy in lattice QCD Dirac spectra T. Guhr1, J.-Z. Ma1, S. Meyer2 and T. Wilke1 1Max Planck Institut f¨ur Kernphysik, Postfach 103980, D-69029 Heidelberg, Germany 2Fachbereich Physik, Universit¨at Kaiserslautern, Theoretische Physik, D-67663 Kaiserslautern, Germany (October 15, 2018) Random Matrix Theory (RMT) is a powerful",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-lat-9806003v2/blocks/prose-sec-front-matter",
+        "library/arxiv-hep-lat-9806003v2/blocks/prop-sec-front-matter-01"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 865,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rmt behavior",
+          "heading": false
+        },
+        {
+          "term": "spectral fluctuations",
+          "heading": false
+        },
+        {
+          "term": "bulk region",
+          "heading": false
+        },
+        {
+          "term": "microscopic region",
+          "heading": false
+        },
+        {
+          "term": "disordered systems",
+          "heading": false
+        },
+        {
+          "term": "qcd spectra",
+          "heading": false
+        },
+        {
+          "term": "spectral correlations",
+          "heading": false
+        },
+        {
+          "term": "thouless energy",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec1} It is now well established that Random Matrix Theory (RMT) accurately models spectral fluctuations in an abundant variety of different systems, such as chaotic, disordered and many--body systems, see the review in Ref.~\\cite{guhr97}. In recent years, RMT has in addition been successfully introduced into the study of certain aspects of Quantum Chromodynamics (QCD). The interest focuses on the spectral",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-complete-dirac-spectra-in-su2-gauge-theory",
+      "number": "2",
+      "title": "Complete Dirac spectra in SU(2) gauge theory",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 386,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gauge theory",
+          "heading": true
+        },
+        {
+          "term": "cite kalk",
+          "heading": false
+        },
+        {
+          "term": "slash",
+          "heading": false
+        },
+        {
+          "term": "cite mbb",
+          "heading": false
+        },
+        {
+          "term": "distinct eigenvalues",
+          "heading": false
+        },
+        {
+          "term": "spectra",
+          "heading": true
+        },
+        {
+          "term": "dirac",
+          "heading": true
+        },
+        {
+          "term": "gauge field",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec2} The computation of large ensembles of complete spectra of the Euclidean Dirac operator for staggered fermions in SU(2) gauge theory has recently been performed Ref.\\cite{MBB98} expanding the numerical work of \\cite{Kalk95}. In lattice gauge theory simulations one generates a sequence of gauge field configurations distributed according to the Boltzmann weight. On each of the gauge field configurations",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-data-analysis",
+      "number": "3",
+      "title": "Data analysis",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 113,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "thouless energy",
+          "heading": false
+        },
+        {
+          "term": "ref sec",
+          "heading": false
+        },
+        {
+          "term": "data",
+          "heading": true
+        },
+        {
+          "term": "three--point",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec3} In this section we give a detailed analysis of the data introduced in the previous section in the bulk of the spectrum. We start with a description of the numerical unfolding approaches and their properties in Sec.~\\ref{sec31}. After a short discussion of the nearest neighbor distribution in Sec.~\\ref{sec32}, we present data for spectral two--point correlations at large scales in Sec.~\\ref{sec33}. From",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-31-unfolding",
+      "number": "3.1",
+      "title": "Unfolding",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 246,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unfolding",
+          "heading": true
+        },
+        {
+          "term": "lambda prime",
+          "heading": false
+        },
+        {
+          "term": "level spacing",
+          "heading": false
+        },
+        {
+          "term": "level density",
+          "heading": false
+        },
+        {
+          "term": "ave",
+          "heading": false
+        },
+        {
+          "term": "fluctuating",
+          "heading": false
+        },
+        {
+          "term": "mean level",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec31} As RMT is capable of making predictions for the fluctuations on the scale of the mean level spacing, one has to remove the influence of the level density by unfolding the spectra. The cumulative spectral function \\begin{equation} N(\\lambda)= \\int_{-\\infty}^\\lambda d\\lambda^\\prime \\sum_{i=1}^{V/2}\\delta(\\lambda^\\prime-\\lambda_i)\\;, \\label{staircase} \\end{equation} is the number of levels below or at the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-311-ensemble-unfolding",
+      "number": "3.1.1",
+      "title": "Ensemble unfolding",
+      "level": 3,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 519,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "averaged staircase",
+          "heading": false
+        },
+        {
+          "term": "ensemble",
+          "heading": true
+        },
+        {
+          "term": "ensemble average",
+          "heading": false
+        },
+        {
+          "term": "unfolding",
+          "heading": true
+        },
+        {
+          "term": "staircase function",
+          "heading": false
+        },
+        {
+          "term": "delta lambda",
+          "heading": false
+        },
+        {
+          "term": "spectral average",
+          "heading": false
+        },
+        {
+          "term": "running average",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec311} In RMT one deals with an ensemble of matrices, where the matrix elements of each member are chosen randomly. Spectral observables predicted by RMT are calculated as an average over the ensemble. This ensemble average is denoted by a bar $\\overline{(\\ldots)}$. But observables can also be calculated as spectral average, i.e. one performs a running average over overlapping intervals $[\\alpha,\\alpha+L]$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-312-configuration-unfolding",
+      "number": "3.1.2",
+      "title": "Configuration unfolding",
+      "level": 3,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 875,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unfolding",
+          "heading": true
+        },
+        {
+          "term": "averaging interval",
+          "heading": false
+        },
+        {
+          "term": "ensemble average",
+          "heading": false
+        },
+        {
+          "term": "local unfolding",
+          "heading": false
+        },
+        {
+          "term": "width delta",
+          "heading": false
+        },
+        {
+          "term": "configuration",
+          "heading": true
+        },
+        {
+          "term": "eigenvalue lambda",
+          "heading": false
+        },
+        {
+          "term": "spectral average",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec312} We now unfold each configuration separately. Observables are then calculated for each configuration by running spectral average. Thereafter we average over the ensemble. The basic characteristics are already obtained for one single configuration, though the statistics is considerably improved by ensemble averaging. This is in the same spirit as it was done in spectra of nuclei \\cite{bohigas83} and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-313-windowing",
+      "number": "3.1.3",
+      "title": "Windowing",
+      "level": 3,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 305,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unfolding procedures",
+          "heading": false
+        },
+        {
+          "term": "global variations",
+          "heading": false
+        },
+        {
+          "term": "delta lambda",
+          "heading": false
+        },
+        {
+          "term": "spectral density",
+          "heading": false
+        },
+        {
+          "term": "removed too",
+          "heading": false
+        },
+        {
+          "term": "window",
+          "heading": false
+        },
+        {
+          "term": "interval",
+          "heading": false
+        },
+        {
+          "term": "spectra",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec313} Ideally, an unfolding procedure should only remove the global variations of the spectral density, i.e. in our case the overall behavior seen in Fig.~\\ref{stair}. For reasons which will become clearer later, it is difficult to numerically distinguish the global variations from the local fluctuations. This is in particular the case for data of large lattice size. In other words, we might have removed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-32-nearest-neighbor-spacing-distribution",
+      "number": "3.2",
+      "title": "Nearest Neighbor Spacing Distribution",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 166,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spacing distribution",
+          "heading": true
+        },
+        {
+          "term": "neighbor",
+          "heading": true
+        },
+        {
+          "term": "gse",
+          "heading": false
+        },
+        {
+          "term": "nearest",
+          "heading": true
+        },
+        {
+          "term": "lattice",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec32} The nearest neighbor spacing distribution $P(s)$ probes the fluctuations on short scales in the spectra. It is the probability of finding the distance $s$ between adjacent level on the unfolded scale. It contains all correlations of order $k\\ge 2$. In the case of completely uncorrelated levels which is referred to as Poisson regularity~\\cite{guhr97}, it is given by $P(s)=\\exp(-s)$. In the case of GSE",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-33-two--point-spectral-correlations",
+      "number": "3.3",
+      "title": "Two--Point Spectral Correlations",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 848,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "two--point",
+          "heading": true
+        },
+        {
+          "term": "ref enssig",
+          "heading": false
+        },
+        {
+          "term": "rmt predictions",
+          "heading": false
+        },
+        {
+          "term": "two--point cluster",
+          "heading": false
+        },
+        {
+          "term": "ensemble unfolding",
+          "heading": false
+        },
+        {
+          "term": "polynomial unfolding",
+          "heading": false
+        },
+        {
+          "term": "number variance",
+          "heading": false
+        },
+        {
+          "term": "ref ensscl",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec33} In an interval of length $L$ in units of the mean level spacing, the mean number of eigenvalues should be equal to $L$, see Eq.~(\\ref{meannumber}). The variance of this number is defined by \\cite{Mehta} \\begin{equation} \\Sigma^2(L)=\\overline{\\langle(L-n_{\\alpha}(L))^2\\rangle} \\ . \\label{sigma} \\end{equation} Thus, an interval of length $L$ contains on average $L\\pm\\sqrt{\\Sigma^2(L)}$ levels. For",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-34-higher-order-spectral-correlations",
+      "number": "3.4",
+      "title": "Higher Order Spectral Correlations",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 603,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "int l-r",
+          "heading": false
+        },
+        {
+          "term": "rmt predictions",
+          "heading": false
+        },
+        {
+          "term": "three--point correlation",
+          "heading": false
+        },
+        {
+          "term": "equation gamma",
+          "heading": false
+        },
+        {
+          "term": "nonumber int",
+          "heading": false
+        },
+        {
+          "term": "systematic deviation",
+          "heading": false
+        },
+        {
+          "term": "four--point",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec34} The wealth of data allows us to go beyond a previous analysis~\\cite{halasz97} of higher moments of the eigenvalue partition, \\begin{equation} \\mu_k(L)=\\overline{\\langle(L-n_{\\alpha}(L))^k\\rangle}\\;. \\label{moments} \\end{equation} We notice that $\\mu_2(L)=\\Sigma^2(L)$. The skewness and the excess \\cite{Mehta} are defined by \\begin{equation} \\gamma_1(L)=\\mu_3(L)\\mu_2(L)^{-3/2} \\label{skew} \\end{equation}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-35-qualitative-discussion-of-the-deviations-for",
+      "number": "3.5",
+      "title": "Qualitative discussion of the deviations for configuration unfolding",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 1689,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unfolding",
+          "heading": true
+        },
+        {
+          "term": "ensemble unfolding",
+          "heading": false
+        },
+        {
+          "term": "deviations",
+          "heading": true
+        },
+        {
+          "term": "lattice artifacts",
+          "heading": false
+        },
+        {
+          "term": "thouless energy",
+          "heading": false
+        },
+        {
+          "term": "ref consig",
+          "heading": false
+        },
+        {
+          "term": "configuration",
+          "heading": true
+        },
+        {
+          "term": "both approaches",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec35} Using ensemble unfolding, we find deviations from RMT behavior, which scale with the square root of the volume according to the theoretical predictions. But as we unfold each configuration separately this effect vanishes. There are still deviations left but none of them show a $\\sqrt{V}$ scaling law. Moreover, we have a dependence of the results on the unfolding approach. Concerning local and Gaussian",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-4-summary-and-discussion",
+      "number": "4",
+      "title": "Summary and discussion",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "12",
+      "words": 1563,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rmt sim",
+          "heading": false
+        },
+        {
+          "term": "rmt behavior",
+          "heading": false
+        },
+        {
+          "term": "spreading width",
+          "heading": false
+        },
+        {
+          "term": "disordered systems",
+          "heading": false
+        },
+        {
+          "term": "thouless energy",
+          "heading": false
+        },
+        {
+          "term": "ref thou",
+          "heading": false
+        },
+        {
+          "term": "thou end",
+          "heading": false
+        },
+        {
+          "term": "label thou",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec4} After summarizing our results in Sec.~\\ref{sec41}, we discuss our findings in Sec.~\\ref{sec42}. \\subsection{Summary} \\label{sec41} We presented a detailed analysis of statistical properties of complete eigenvalue spectra for staggered fermions for SU(2) lattice gauge theory for various couplings and lattice volumes. Unfolding the data posed certain difficulties which are not encountered in other",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 26,
+      "labelStart": "12",
+      "labelEnd": null,
+      "words": 2108,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "centerline psfig",
+          "heading": false
+        },
+        {
+          "term": "bibitem verbaar",
+          "heading": false
+        },
+        {
+          "term": "bibitem halasz",
+          "heading": false
+        },
+        {
+          "term": "bibitem thou",
+          "heading": false
+        },
+        {
+          "term": "minipage hfill",
+          "heading": false
+        },
+        {
+          "term": "minipage caption",
+          "heading": false
+        },
+        {
+          "term": "figure psfig",
+          "heading": false
+        },
+        {
+          "term": "begin minipage",
+          "heading": false
+        }
+      ],
+      "extract": "It is a pleasure to thank M.E. Berbenni-Bitsch for her help in generating the data sets. We are grateful to C. Mejia, H.J.Pirner, A. Sch\\\"afer, H.A. Weidenm\\\"uller and T. Wettig for enlightening discussions. We thank H.L. Harney and H. Alt for supplying the data set of Ref.~\\cite{graef92} for test purposes. T.G. acknowledges support from the Heisenberg foundation. S.M. thanks the MPI f\\\"ur Kernphysik for the",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "ensemble unfolding",
+      "heading": true
+    },
+    {
+      "term": "configuration unfolding",
+      "heading": true
+    },
+    {
+      "term": "rmt predictions",
+      "heading": true
+    },
+    {
+      "term": "rmt behavior",
+      "heading": true
+    },
+    {
+      "term": "unfolding approach",
+      "heading": true
+    },
+    {
+      "term": "unfolding approaches",
+      "heading": false
+    },
+    {
+      "term": "numerical unfolding",
+      "heading": false
+    },
+    {
+      "term": "ensemble average",
+      "heading": false
+    },
+    {
+      "term": "unfolding procedures",
+      "heading": false
+    },
+    {
+      "term": "local unfolding",
+      "heading": true
+    },
+    {
+      "term": "polynomial unfolding",
+      "heading": true
+    },
+    {
+      "term": "scale lambda",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Average level density ¯ρ(λ) for β = 2.4 and β = 2.5 (left plot) and integrated average level density",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Diﬀerence between the integrated level density",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Value of the quantity L −",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Nearest neighbor distribution, solid line is the Wigner surmise and the bars represent the lattice data",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Integrated two–point functions number variance Σ2(L), spectral rigidity ∆3(L) for small L on a 164-lattice. The solid line represent the RMT predictions and the dots the data. On this scale the presented data points do not depend on unfolding. Note the diﬀerence in the scale of the L axes between ∆3",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The two–point correlation function X2(r)(left) and the cluster function Y2(r) (right) as a function of r, compared with the GSE predictions. The result is independent of the unfolding approach",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Deviations from RMT predictions for diﬀerent lattices sizes V and gauge couplings β. Shown are diﬀerent regions of the spectrum as indicated in the upper left part of the plots",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Deviation from the RMT predictions rescaled with the square root of the volume, to be compared with Fig. 7. The",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Deviations of the spectral rigidity ∆3(L) and number variance Σ2(L) from the RMT-predictions on a 164-lattice for large L. From top to bottom the results for polynomial with degree n = 3, Gaussian and local unfolding with averaging interval length k = 100 are shown. Note the diﬀerent scale on the ab",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Comparison between RMT and lattice data by unfolding each conﬁguration separately with a polynomial",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Integrated three–point and four–point function, skewness γ1(L) and excess γ2(L), respectively, as deﬁned in Eqs.(21)-(24)",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "The three–point correlation function X3(s1, s2)(left) and the cluster function Y3(s1, s2)(right) as a function of s2 for diﬀerent values of s1 = 0.70, 1.40 and 2.55 (from top to bottom), compared with the GSE predictions. As in Fig. 6 the results are independent of the unfolding approach",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "Diﬀerence between the ﬁtted polynom like staircase function and the real staircase function for one arbitrarily chosen conﬁguration (upper part). The lower part shows the diﬀerence between the staircase found by ensemble averaging and a polynom ﬁt to it. The degrees of the polynomials are n = 4, 5",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "Square of the Fourier transform of the oscillation shown in Fig. 13, but for d(N(λ) −Npoly(λ))/dλ instead of N(λ) −Npoly(λ), as given by Eq.(29)",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "Number variance Σ2(L) and spectral rigidity ∆3(L) for polynomial unfolding with the withdraw of the long wave length oscillations, as explained in the text. In each plot the data corresponds from top to bottom to a cut of fcut = 0, 1.5·(2a), 3.0 · (2a), 7.0 · (2a) and 10.0 · (2a), respectively",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "16",
+      "title": "Possible scenarios for the spectral rigidity. Plotted are the linear Poisson behavior and the logarithmic increase of the Gaussian ensembles (GE) as predicted by RMT, respectively. ’A’ correspond to a saturation due to shortest periodic orbits and ’B’ to linear increase due the scale set by a Thoule",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 15,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 14,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "16 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 14 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-lat-9806003v2"
+  }
+}

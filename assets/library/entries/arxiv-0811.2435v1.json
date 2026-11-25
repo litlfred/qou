@@ -1,0 +1,975 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0811.2435v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0811.2435v1  [math.AG]  16 Nov 2008\nStability structures, motivic\nDonaldson-Thomas invariants and cluster\ntransformations\nMaxim Kontsevich, Yan Soibelman\nNovember 26, 2024\nContents\n1\nIntroduction\n3\n1.1\nCounting problems for 3-dimensional Calabi-Yau varieties . . .\n3\n1.2\nNon-commutative varieties with polarization . . . . . . . . . .\n5\n1.3\nDonaldson-Thomas invariants for non-commutative 3d Calabi-\nYau varieties . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n9\n1.4\nMultiplicative wall-crossing formula . . . . . . . . . . . . . . .\n10\n1.5\nSome analogies and speculations . . . . . .",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Introduction",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Counting problems for 3-dimensional Calabi-Yau varieties",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-counting-problems-for-3-dimensional-calabi-yau-v.md",
+      "narrative": null,
+      "content": "Let $X$ be a compact complex $3$-dimensional Kähler manifold such that $c_1(T_X)=0\\in Pic(X)$ (hence by Yau theorem $X$ admits a Calabi-Yau metric). We can associate with $X$ several moduli spaces which have the virtual dimension zero:\n\na\\) moduli of holomorphic curves in $X$ with fixed genus and degree;\n\nb\\) moduli of holomorphic vector bundles on $X$ (or, more generally, of coherent sheaves) with a fixed Chern character;\n\nc\\) moduli of special Lagrangian submanifolds[^1] with a fixed homology class endowed with a $U(1)$ local system.\n\nIn order to have a well-defined virtual number of points",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Non-commutative varieties with polarization",
+      "pageStart": 5,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-non-commutative-varieties-with-polarization.md",
+      "narrative": null,
+      "content": "All $\\A$-categories in this paper will be ind-constructible. This roughly means that their spaces of objects are countable inductive limits of constructible sets (for more details see Section 3). We define a *non-commutative proper algebraic variety over a base field $\\k$* as an $Ext$-finite ind-constructible $\\k$-linear triangulated $\\A$-category $\\CC$. For two objects $E$ and $F$ we denote by $\\op{Hom}^{\\bullet}(E,F)$ the complex of morphisms and by $\\op{Ext}^{\\bullet}(E,F)$ its cohomology.\n\nHere are few examples of such categories.\n\n::: exa\na\\) $\\A$-version of $D^b(X)$, the bounded derived",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Donaldson-Thomas invariants for non-commutative 3d Calabi-Yau varieties",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-donaldson-thomas-invariants-for-non-commutative.md",
+      "narrative": null,
+      "content": "Recall that a non-commutative Calabi-Yau variety of dimension $d$ (a.k.a Calabi-Yau category of dimension $d$) is given by an $Ext$-finite triangulated $\\A$-category ${\\cal C}$ which carries a functorial non-degenerate pairing $$(\\bullet, \\bullet): \\op{Hom}^\\bullet_{\\CC}(E,F)\\otimes \\op{Hom}^\\bullet_{\\CC}(F,E)\\to \\k[-d]$$ (see e.g. [@KoSo3], [@So1], [@Laz]), such that the polylinear forms $(m_n(f_0,\\dots,f_n),f_{n+1})$ defined on $\\otimes_{0\\le i\\le n+1}\\op{Hom}^\\bullet_{\\CC}(E_i,E_{i+1})$ by higher compositions $m_n$ are cyclically invariant. We will discuss mainly the case $d=3$ and assume t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Multiplicative wall-crossing formula",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "../sections/sec-004-multiplicative-wall-crossing-formula.md",
+      "narrative": null,
+      "content": "The wall-crossing formulas for the numerical Donaldson-Thomas invariants do not depend on their origin and can be expressed in terms of graded Lie algebras. This is explained in Section 2. Our main application is the case of $3d$ Calabi-Yau categories. Let us recall that if ${\\cal C}$ is an $Ext$-finite Calabi-Yau category of the odd dimension $d$ (e.g. $d=3$) then the Euler form\n\n$$\\chi:K_0(\\CC)\\otimes K_0(\\CC)\\to \\Z,\\,\\,\\,\\,\\chi(E,F):=\\sum_{n\\in \\Z} (-1)^n \\dim \\, \\op{Ext}^n(E,F)$$ is skew-symmetric. In this case we also assume that if $\\CC$ is endowed with polarization, then a skew-symmetri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some analogies and speculations",
+      "pageStart": 15,
+      "pageEnd": 17,
+      "target": "../sections/sec-005-some-analogies-and-speculations.md",
+      "narrative": null,
+      "content": "The above formulas for symplectomorphisms are partially motivated by [@KoSo1], Section 10, where similar formulas appeared in a different problem. Both formulas involve Hamiltonian vector fields associated with the dilogarithm function. The problem discussed in [@KoSo1] was the reconstruction of the rigid analytic K3 surface from its skeleton, which is a sphere $S^2$ equipped with an integral affine structure, singular at a finite set of points. The group which is very similar to the pro-nilpotent group $G_V$ was introduced in the loc. cit. where we assigned symplectomorphisms to edges of a ce",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "About the content of the paper",
+      "pageStart": 17,
+      "pageEnd": 20,
+      "target": "../sections/sec-006-about-the-content-of-the-paper.md",
+      "narrative": null,
+      "content": "In Section 2 we work out in detail the approach to the invariants $\\Omega(\\gamma)$ and the wall-crossing formula sketched in the Introduction in the framework of graded Lie algebras. It is based on the notion of stability data which admits two equivalent descriptions: in terms of a collection of elements $a(\\gamma)$ of a graded Lie algebra $\\g=\\oplus_{\\gamma\\in \\Gamma}\\g_{\\gamma}$ and in terms of a collection of group elements $A_V$ which satisfy the \"Factorization Property\\\". The latter says that $A_{V_1}A_{V_2}=A_{V}$ for any strict sector $V$ and its decomposition into two sectors $V_1,V_2$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stability conditions for graded Lie algebras",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-007-stability-conditions-for-graded-lie-algebras.md",
+      "narrative": null,
+      "content": "Stability conditions for graded Lie algebras",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stability data",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-008-stability-data.md",
+      "narrative": null,
+      "content": "Let us fix a free abelian group $\\Gamma$ of finite rank, and a graded Lie algebra $\\g=\\oplus_{\\gamma\\in \\Gamma}\\g_{\\gamma}$ over $\\Q$.[^1]\n\n::: defn\nStability data on $\\g$ is a pair $\\sigma=(Z,a)$ such that:\n\n1\\) $Z: \\Gamma\\to \\R^2\\simeq \\C$ is a homomorphism of abelian groups called the central charge;\n\n2\\) $a=(a(\\gamma))_{\\gamma\\in \\Gamma\\setminus \\{0\\}}$ is a collection of elements $a(\\gamma)\\in \\g_{\\gamma}$,\n\nsatisfying the following\n\n**Support Property**:\n\nPick a norm $\\parallel\\bullet\\parallel$ on the vector space $\\Gamma_{\\R}=\\Gamma\\otimes_{\\Z}\\R$. Then there exists $C>0$ such that for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Reformulation of the stability data",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "../sections/sec-009-reformulation-of-the-stability-data.md",
+      "narrative": null,
+      "content": "In what follows we will consider various cones in $\\Gamma_{\\R}$ and in $\\R^2$ i.e. subsets, which are closed under addition and multiplication by a positive real number. We assume that the vertex of the cone (i.e. the zero of the vector space) does not belong to the cone. We will call a cone *strict* if it is non-empty and does not contain a straight line. In particular, all strict cones on the plane (we will call them strict sectors) are sectors, which are smaller than 180 degrees (not necessarily closed or open). We allow the sector to be degenerate (which means that it is a ray with the ver",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Topology and the wall-crossing formula",
+      "pageStart": 25,
+      "pageEnd": 30,
+      "target": "../sections/sec-010-topology-and-the-wall-crossing-formula.md",
+      "narrative": null,
+      "content": "Here we are going to introduce a Hausdorff topology on the set of stability data in such a way that the forgetting map $$Stab(\\g)\\to \\op{Hom}(\\Gamma,\\C)\\simeq \\C^n,\\,\\, (Z,a)\\mapsto Z$$ will be a local homeomorphism. In particular $Stab(\\g)$ carries a structure of a complex manifold (in general with an uncountable number of components, each of which is paracompact). In order to define the topology we define the notion of a continuous family of points in $Stab(\\g)$.\n\nLet $X$ be a topological space, $x_0\\in X$ be a point, and $(Z_x,a_x)\\in Stab(\\g)$ be a family parametrized by $X$.\n\n::: defn\nWe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Crossing the wall of second kind",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "../sections/sec-011-crossing-the-wall-of-second-kind.md",
+      "narrative": null,
+      "content": "Here we will interpret the parallel transport in a different way, introducing a wall of another kind. We use the notation from the previous section. In particular, we fix the quadratic form $Q_0$ and the connected component $U$ of the set $\\{Z\\in \\op{Hom}(\\Gamma,\\C)|\\,\\, (Q_{0})_{|\\op{Ker} Z}<0\\}$.\n\nFor a given primitive $\\gamma\\in \\Gamma\\setminus \\{0\\}$ we introduce the set ${\\cal W}_{\\gamma}^{Q_0}=\\{Z\\in U|\\,Z(\\gamma)\\in \\R_{>0}\\}$. It is a hypersurface in $U$. We call it a *wall of second kind* associated with $\\gamma$. We call the union $\\cup_{\\gamma}{\\cal W}_{\\gamma}^{Q_0}$ the *wall of s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariants () and the dilogarithm",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "../sections/sec-012-invariants-and-the-dilogarithm.md",
+      "narrative": null,
+      "content": "Let $\\Gamma$ be a free abelian group of finite rank $n$ as before, endowed with a skew-symmetric integer-valued bilinear form $\\langle \\bullet, \\bullet\\rangle : \\Gamma \\times \\Gamma\\to \\Z$. Recall the Lie algebra $\\g_{\\Gamma}=\\g_{\\Gamma,\\langle \\bullet,\\bullet \\rangle}=\\oplus_{\\gamma\\in \\Gamma}\\Q\\cdot e_{\\gamma}$ with the Lie bracket $$[e_{\\gamma_1},e_{\\gamma_2}]=(-1)^{\\langle \\gamma_1, \\gamma_2\\rangle}\\langle \\gamma_1, \\gamma_2\\rangle e_{\\gamma_1+\\gamma_2}\\,\\,.$$ Let us introduce a commutative associative product on $\\g_{\\Gamma}$ by the formula $$e_{\\gamma_1}e_{\\gamma_2}=(-1)^{\\langle \\gamma_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symplectic double torus",
+      "pageStart": 33,
+      "pageEnd": 35,
+      "target": "../sections/sec-013-symplectic-double-torus.md",
+      "narrative": null,
+      "content": "If the skew-symmetric bilinear form on $\\Gamma$ is degenerate, then the action of $\\g_{\\Gamma}$ on ${\\mathbb T}_{\\Gamma}$ is not exact. In order to remedy the problem we can embed $(\\Gamma, \\langle\\bullet,\\bullet\\rangle)$ into a larger symplectic lattice. A possible choice is $\\Gamma\\oplus \\Gamma^{\\vee}$, where $\\Gamma^{\\vee}=\\op{Hom}(\\Gamma,\\Z)$. The corresponding non-degenerate bilinear form is $$\\langle(\\gamma_1,\\nu_1),(\\gamma_2,\\nu_2)\\rangle=\\langle \\gamma_1,\\gamma_2\\rangle+\\nu_2(\\gamma_1)-\\nu_1(\\gamma_2)\\,\\,.$$\n\nLet us choose a basis $e_i, 1\\le i\\le n=\\op{rk}\\Gamma$ of $\\Gamma$. It gives",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Complex integrable systems and stability data",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "../sections/sec-014-complex-integrable-systems-and-stability-data.md",
+      "narrative": null,
+      "content": "In this section we explain how complex integrable systems (with some additional structures) give rise to stability data in the graded Lie algebra $\\mathfrak{g}_\\Gamma$ associated with a symplectic lattice. In particular, Seiberg-Witten differential can be interpreted as the central charge for a complex integrable system, while the BPS degeneracies are interpreted via our \"numerical\\\" Donaldson-Thomas invariants as the number of certain gradient trees on the base of a complex integrable system.\n\nRecall that a *complex integrable system* is a holomorphic map $\\pi:X\\to B$ where $(X,\\omega^{2,0}_X",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relation with the works of Joyce, and of Bridgeland and Toledano-Laredo",
+      "pageStart": 38,
+      "pageEnd": 43,
+      "target": "../sections/sec-015-relation-with-the-works-of-joyce-and-of-bridgela.md",
+      "narrative": null,
+      "content": "Let $\\g, \\Gamma$ be as in Section 2.1. We assume that the ground field is $\\C$. Suppose that $C\\subset \\Gamma_{\\R}$ is a strict convex cone. We are interested in such stability data $(Z,a)$ that $\\op{Supp}a\\subset C\\cup (-C)$. We define $D$ as an open subset of $\\op{Hom}(\\Gamma, \\C)$ which consists of additive maps such that $C\\cap \\Gamma$ is mapped into the upper-half plane ${\\cal{H}}_+=\\{\nz\\in \\C\\,|\\,\\op{Im}(z)>0\\}$. We interpret $D$ as an open subset of $Stab(\\g)$. Every $\\alpha\\in C\\cap {\\Gamma}$ gives rise to an invertible function (coordinate) $z_{\\alpha}\\in {\\cal O}(D)^{\\times}$ such th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stability data on gl(n)",
+      "pageStart": 43,
+      "pageEnd": 45,
+      "target": "../sections/sec-016-stability-data-on-gln.md",
+      "narrative": null,
+      "content": "Let $\\g={\\mathfrak{gl}}(n,\\Q)$ be the Lie algebra of the general linear group. We consider it as a $\\Gamma$-graded Lie algebra $\\g=\\oplus_{\\gamma \\in \\Gamma}\\g_{\\gamma}$, where $$\\Gamma=\\{(k_1,\\dots,k_n)|\\,\\,k_i\\in \\Z, \\sum_{1\\le i\\le n}k_i=0\\}$$ is the root lattice. We endow $\\g$ with the Cartan involution $\\eta$. Algebra $\\g$ has the standard basis $E_{ij}\\in \\g_{\\gamma_{ij}}$ consisting of matrices with the single non-zero entry at the place $(i,j)$ equal to $1$. Then $\\eta(E_{ij})=-E_{ji}$. In what follows we are going to consider symmetric (with respect to $\\eta$) stability data on $\\g$.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ind-constructible categories and stability structures",
+      "pageStart": 45,
+      "pageEnd": 48,
+      "target": "../sections/sec-017-ind-constructible-categories-and-stability-struc.md",
+      "narrative": null,
+      "content": "## Ind-constructible categories\n\nHere we introduce an ind-constructible version of the notion of a (triangulated) $\\A$-category. Let $\\k$ be a field, $\\overline{\\k}$ be its algebraic closure. By a variety over $\\k$ (not necessarily irreducible) we mean a reduced separated scheme of finite type over $\\k$. Recall the following definition.\n\n::: defn\nLet $S$ be a variety over $\\k$. A subset $X\\subset S(\\kk)$ is called constructible over $\\k$ if it belongs to the Boolean algebra generated by $\\kk$-points of open (equivalently closed) subschemes of $S$.\n:::\n\nEquivalently, a constructible set is the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stack of objects",
+      "pageStart": 48,
+      "pageEnd": 53,
+      "target": "../sections/sec-018-stack-of-objects.md",
+      "narrative": null,
+      "content": "In this section we assume that the ground field $\\k$ is perfect, i.e. the $\\kk$ is a Galois field over $\\k$. Our goal in this section is to explain how to associate with an ind-constructible $\\A$-category $\\CC$ over $\\k$ an ordinary $\\k$-linear $\\A$-category $\\CC(\\k)$, in such a way that ind-constructible equivalences will induce the usual equivalences. For any field extension $\\k'\\supset \\k$ (e.g. for $\\k'=\\k$) one can define $\\A$-category $\\CC^{naive}(\\k')$ to be the small $\\k'$-linear category with the set of objects given by $(Ob(\\CC))(\\k')$ and obvious morphisms and compositions. This is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ind-constructible Calabi-Yau categories and potentials",
+      "pageStart": 53,
+      "pageEnd": 56,
+      "target": "../sections/sec-019-ind-constructible-calabi-yau-categories-and-pote.md",
+      "narrative": null,
+      "content": "Let $\\k$ be a field of characteristic zero. Recall that a Calabi-Yau category of dimension $d$ is a weakly unital $\\k$-linear triangulated $\\A$-category ${\\CC}$ (see [@KoSo2], [@KoSo3], [@So1]), such that for any two objects $E,F$ the $\\Z$-graded vector space $\\op{Hom}^\\bullet(E,F)=\\oplus_{n\\in \\Z}\\op{Hom}^n(E,F)$ is finite-dimensional (hence the space $\\op{Ext}^\\bullet(E,F)$ is also finite-dimensional) and moreover:\n\n1\\) We are given a non-degenerate pairing $$(\\bullet, \\bullet): \\op{Hom}^{\\bullet}(E,F)\\otimes \\op{Hom}^{\\bullet}(F,E)\\to \\k[-d]\\,\\,,$$ which is symmetric with respect to interch",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Topology on the space of stability structures",
+      "pageStart": 56,
+      "pageEnd": 60,
+      "target": "../sections/sec-020-topology-on-the-space-of-stability-structures.md",
+      "narrative": null,
+      "content": "Let $\\CC$ be an ind-constructible weakly unital $\\A$-category over a field $\\k$ of arbitrary characteristic. Let $\\op{cl}: Ob(\\CC)\\to \\Gamma\\simeq \\Z^n$ be a map of ind-constructible sets (where $\\Gamma$ is considered as a countable set of points) such that the induced map $Ob(\\CC)(\\overline{\\k})\\to \\Gamma$ factorizes through a group homomorphism $\\op{cl}_{\\overline{\\k}}: K_0(\\CC(\\overline{\\k}))\\to \\Gamma$. It is easy to see that for any field extension $\\k^{\\prime}\\supset \\k$ we obtain a homomorphism $\\op{cl}_{\\overline{\\k}^{\\prime}}: K_0(\\CC(\\overline{\\k}^{\\prime}))\\to \\Gamma$.\n\nIn the case",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motivic functions and motivic Milnor fiber",
+      "pageStart": 60,
+      "pageEnd": 60,
+      "target": "../sections/sec-021-motivic-functions-and-motivic-milnor-fiber.md",
+      "narrative": null,
+      "content": "Motivic functions and motivic Milnor ﬁber",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Recollection on motivic functions",
+      "pageStart": 60,
+      "pageEnd": 62,
+      "target": "../sections/sec-022-recollection-on-motivic-functions.md",
+      "narrative": null,
+      "content": "Recall (see [@DeLo1]) that for any constructible set $X$ over $\\k$ one can define an abelian group $Mot(X)$ of motivic functions as the group generated by symbols $[\\pi:S\\to X]:=[S\\to X]$ where $\\pi$ is a morphism of constructible sets, subject to the relations $$[(S_1\\sqcup S_2)\\to X]=[S_1\\to X]+[S_2\\to X]\\,\\,.$$ For any constructible morphism $f:X\\to Y$ we have two homomorphisms of groups:\n\n1\\) $f_{!}: Mot(X)\\to Mot(Y)$, such that $[\\pi:S\\to X]\\mapsto [f\\circ \\pi:S\\to X]$;\n\n2\\) $f^{\\ast}: Mot(Y)\\to Mot(X)$, such that $[S^{\\prime}\\to Y]\\mapsto [S^{\\prime}\\times_YX\\to X]$.\n\nMoreover, $Mot(X)$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motivic functions in the equivariant setting",
+      "pageStart": 62,
+      "pageEnd": 65,
+      "target": "../sections/sec-023-motivic-functions-in-the-equivariant-setting.md",
+      "narrative": null,
+      "content": "Here we give a short exposition of the generalization of the theory of motivic functions in the equivariant setting (essentially due to Joyce [@Jo4], here we use slightly different terms).\n\nLet $X$ be a constructible set over a field $\\k$ and $G$ be an affine algebraic group acting on $X$, in the sense that $G(\\kk)$ acts on $X(\\kk)$ and there exists a $G$-variety $S$ over $\\k$ with a constructible equivariant identification $X(\\kk)\\simeq S(\\kk)$.\n\nWe define the group $Mot^G(X)$ of $G$-equivariant motivic functions as abelian group generated by $G$-equivariant constructible maps $[Y\\to X]$ modu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motivic Milnor fiber",
+      "pageStart": 65,
+      "pageEnd": 69,
+      "target": "../sections/sec-024-motivic-milnor-fiber.md",
+      "narrative": null,
+      "content": "Let $M$ be a complex manifold, $x_0\\in M$. Recall, that for a germ $f$ of an analytic function at $x_0$ such that $f(x_0)=0$ one can define its *Milnor fiber* $MF_{x_0}(f)$, which is a locally trivial $C^{\\infty}$-bundle over $S^1$ of manifolds with the boundary (defined only up to a diffeomorphism): $$\\{z\\in M|\\,\\,dist(z,x_0)\\le\\varepsilon_1, |f(z)|=\\varepsilon_2\\}\\to S^1=\\R/2\\pi\\Z\\,\\,,$$ where $z\\mapsto \\op{Arg}\\,f(z)$. Here $dist$ is any smooth metric on $M$ near $x_0$, and there exists a constant $C=C(f,dist)$ and a positive integer $N=N(f)$ such that for $0<\\varepsilon_1\\le C$ and $0<\\var",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An integral identity",
+      "pageStart": 69,
+      "pageEnd": 73,
+      "target": "../sections/sec-025-an-integral-identity.md",
+      "narrative": null,
+      "content": "In this section we are going to discuss the identity which will be crucial in the proof of the main theorem of Section 6.\n\nLet $\\k$ be a field of characteristic zero, and $V_1,V_2,V_3$ be finite-dimensional $\\k$-vector spaces.\n\n::: conj\nLet $W$ be a formal series on the product $V_1\\times V_2\\times V_3$ of three vector spaces, depending in a constructible way on finitely many extra parameters, such that $W(0,0,0)=0$ and $W$ has degree zero with respect to the diagonal action of the multiplicative group ${\\bf G}_m$ with the weights $(1,-1,0)$. We denote by $\\widehat{W}$ the ${\\bf G}_m$-equivari",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Equivalence relation on motivic functions",
+      "pageStart": 73,
+      "pageEnd": 75,
+      "target": "../sections/sec-026-equivalence-relation-on-motivic-functions.md",
+      "narrative": null,
+      "content": "We start with a motivation for this section. There are many examples of pairs of constructible sets (or even varieties) $X_1,X_2$ over a field $\\k$ such that their classes $[X_1]$ and $[X_2]$ in $Mot(Spec(\\k))$ are different (or at least not obviously coincide), but $X_1$ and $X_2$ coincide in each realization described in Section 4.1 (i)-(vi) (e.g. when $X_1,X_2$ are isogeneous abelian varieties). In particular we will be interested in the case when $X_l,l=1,2$ are affine quadrics given by the equations $\\sum_{1\\le i\\le n}a_{i,l}x_i^2=1$, such that they have equal determinants: $\\prod_{1\\le i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Numerical realization of motivic functions",
+      "pageStart": 75,
+      "pageEnd": 77,
+      "target": "../sections/sec-027-numerical-realization-of-motivic-functions.md",
+      "narrative": null,
+      "content": "This section is not used in further consideration, its goal is only to show that the abstractly defined ring $\\overline{{\\cal M}}^{G,\\mu}(X)$ can be realized as certain ring of functions with numerical values.\n\nLet $Z$ be a scheme of finite type over a finite field $\\k\\simeq{\\bf F}_q$ endowed with an action of the group $\\mu_n$ of roots of $1$ such that $n<p=char \\, {\\bf F}_q$. We choose a prime $l\\ne p$. Let us define $Y$ as the quotient $(Z\\times ({\\bf A}^1_{\\k}\\setminus \\{0\\}))/\\mu_n$ with respect to the diagonal action of $\\mu_n$. Then we have a morphism $$\\pi: Y\\to {\\bf A}^1_{\\k}\\setminus",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Orientation data on odd Calabi-Yau categories",
+      "pageStart": 77,
+      "pageEnd": 77,
+      "target": "../sections/sec-028-orientation-data-on-odd-calabi-yau-categories.md",
+      "narrative": null,
+      "content": "Considerations of this section are reminiscent of those in Quantum Field Theory when one tries to define determinants for the Gaussian integral in a free theory.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Remarks on the motivic Milnor fiber of a quadratic form",
+      "pageStart": 77,
+      "pageEnd": 80,
+      "target": "../sections/sec-029-remarks-on-the-motivic-milnor-fiber-of-a-quadrat.md",
+      "narrative": null,
+      "content": "Although the theory of motivic Milnor fiber was defined over a field of characteristic zero, an essential part of considerations below has meaning over an arbitrary field $\\k, char\\,\\k\\ne 2$ if we replace the notion of motivic Milnor fiber by its $l$-adic version.\n\nLet now $V$ be a $\\k$-vector space endowed with a non-degenerate quadratic form $Q$. We define an element $${I}(Q)=(1-MF_0(Q)){\\mathbb L}^{-{1\\over{2}}\\dim V}\\in {\\cal M}^{\\mu}(Spec(\\k))[{\\mathbb L}^{\\pm 1/2}]\\,\\,,$$ where ${\\mathbb L}^{1/2}$ is a formal symbol which satisfies the relation $({\\mathbb L}^{1/2})^2={\\mathbb L}$, and $Q",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Orientation data",
+      "pageStart": 80,
+      "pageEnd": 83,
+      "target": "../sections/sec-030-orientation-data.md",
+      "narrative": null,
+      "content": "Let $\\CC$ be an ind-constructible $\\k$-linear $3$-dimensional Calabi-Yau category.[^1] Then we have a natural ind-constructible super line bundle ${\\cal D}$ over $Ob(\\CC)$ with the fiber over $E$ given by ${\\cal D}_E=\\op{sdet}(\\op{Ext}^{\\bullet}(E,E))$. It follows that on the ind-constructible stack of exact triangles $E_1\\to E_2\\to E_3$ we have an isomorphism of the pull-backed line bundles which fiberwise reads as $${\\cal D}_{E_2}\\otimes {\\cal D}_{E_1}^{-1}\\otimes {\\cal D}_{E_3}^{-1}\\simeq (\\op{sdet}(\\op{Ext}^{\\bullet}(E_1,E_3)))^{\\otimes 2}\\,\\,.$$ Let us explain this isomorphism. The multip",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Orientation data from a splitting of bifunctors",
+      "pageStart": 83,
+      "pageEnd": 84,
+      "target": "../sections/sec-031-orientation-data-from-a-splitting-of-bifunctors.md",
+      "narrative": null,
+      "content": "Let $\\cal C$ be a triangulated ind-constructive category over a field $\\k$. We will assume that all functors, bifunctors etc. respect this structure. In this section we are going to discuss a special framework in which orientation data is easy to construct.\n\nLet $F:\\CC\\times \\CC^{op}\\to Perf(Spec(\\k))$ be a biadditive bifunctor and $d$ be an integer. We define the *dual bifunctor of degree $d$* as a bifunctor $F^{\\vee}=F^{\\vee,d}$ given by $$F^{\\vee}(E_2,E_1):=F(E_1,E_2)^{\\ast}[-d]\\,\\,.$$ Clearly $F\\mapsto F^{\\vee}$ is an involution.\n\n::: defn\nA self-duality structure on $F$ of degree $d$ is a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motivic Donaldson-Thomas invariants",
+      "pageStart": 84,
+      "pageEnd": 84,
+      "target": "../sections/sec-032-motivic-donaldson-thomas-invariants.md",
+      "narrative": null,
+      "content": "Motivic Donaldson-Thomas invariants",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motivic Hall algebra and stability data",
+      "pageStart": 84,
+      "pageEnd": 92,
+      "target": "../sections/sec-033-motivic-hall-algebra-and-stability-data.md",
+      "narrative": null,
+      "content": "In this section the field $\\k$ can have arbitrary characteristic.\n\nLet $\\CC$ be an ind-constructible triangulated $\\A$-category over a field $\\k$. We are going to describe a motivic generalization of the derived Hall algebras from [@To].\n\nAs usual, we have a constructible countable decomposition $Ob(\\CC)=\\sqcup_{i\\in I}Y_i$ with group $GL(N_i)$ acting on $Y_i$. Let us consider a $Mot(Spec(\\k))$-module $\\oplus_i Mot_{st}(Y_i,GL(N_i))$ (see section 4.2) and extend it by adding negative powers ${\\mathbb L}^n, n<0$ of the motive of the affine line ${\\mathbb L}$. We denote the resulting $Mot(Spec(\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motivic weights and stability data on motivic quantum tori",
+      "pageStart": 92,
+      "pageEnd": 95,
+      "target": "../sections/sec-034-motivic-weights-and-stability-data-on-motivic-qu.md",
+      "narrative": null,
+      "content": "Let $\\CC$ be a $3$-dimensional ind-constructible Calabi-Yau category over a field of characteristic zero (see Section 3.3). In this section we are going to define motivic Donaldson-Thomas invariants associated with a constructible stability condition and an orientation data on $\\CC$.\n\n*Step 1*.\n\nLet us define the ring $${D}^{\\mu}={\\cal M}^{\\mu}(Spec(\\k))[{\\mathbb L}^{-1}, {\\mathbb L}^{1/2},  ([GL(n)]^{-1})_{n\\geqslant 1}]\\,\\,,$$ where the ring ${\\cal M}^{\\mu}(Spec(\\k))$ was defined in 4.3, and ${\\mathbb L}=[{\\bf A}^1_{\\k}]$ is the motive of the affine line. The element ${\\mathbb L}^{1/2}$ is a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From motivic Hall algebra to motivic quantum torus",
+      "pageStart": 95,
+      "pageEnd": 102,
+      "target": "../sections/sec-035-from-motivic-hall-algebra-to-motivic-quantum-tor.md",
+      "narrative": null,
+      "content": "Assume that $\\CC$ is an ind-constructible $3d$ Calabi-Yau category endowed with polarization and orientation data $\\sqrt{\\cal D}$. The Hall algebra of $\\CC$ is graded by the corresponding lattice $\\Gamma$: $H(\\CC)=\\oplus_{\\gamma\\in \\Gamma}H(\\CC)_{\\gamma}$. Main result of this section is the following theorem.\n\n::: thm\nThe map $\\Phi: H(\\CC)\\to {\\cal R}_{\\Gamma}$ given by the formula $$\\Phi(\\nu)=(\\nu,w)\\hat{e}_{\\gamma}, \\,\\,\\,\\nu\\in H(\\CC)_{\\gamma}$$ is a homomorphism of $\\Gamma$-graded $\\Q$-algebras. Here $w$ is the motivic weight and $(\\bullet,\\bullet)$ is the pairing between motivic measures",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 102,
+      "pageEnd": 105,
+      "target": "../sections/sec-036-examples.md",
+      "narrative": null,
+      "content": "1\\) Assume that a $3$-dimensional Calabi-Yau category $\\CC$ is generated by one spherical object $E$ defined over $\\k$. Therefore $R:=\\op{Ext}^{\\bullet}(E,E)\\simeq H^{\\bullet}(S^3,\\k)$. In this case we take $\\Gamma=K_0(\\CC(\\kk))\\simeq \\Z\\cdot \\op{cl}_{\\kk}(E)$, and the skew-symmetric form on $\\Gamma$ is trivial. In order to choose an orientation data, let us fix a basis $r_0=1,r_3$ in the algebra $R$ (the subscript indicates the degree). Consider $R$ as a bimodule over itself and denote this bimodule by $M$. The corresponding to $1,r_3$ bimodule basis will be denoted by $1_M,r_{3,M}$. Then we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "D0-D6 BPS bound states: an example related to the MacMahon function",
+      "pageStart": 105,
+      "pageEnd": 109,
+      "target": "../sections/sec-037-d0-d6-bps-bound-states-an-example-related-to-the.md",
+      "narrative": null,
+      "content": "Let $X$ be a compact $3d$ Calabi-Yau manifold over $\\k$, such that $H^1(X,{\\cal O}_X)=0$. We denote by $\\CC^{(0,6)}$ the ind-constructible triangulated category generated by the structure sheaf ${\\cal O}_X$ and torsion sheaves ${\\cal O}_x, x\\in X$.[^1] This category has a $t$-structure with the heart consisting of coherent sheaves on $X$ which are trivial vector bundles outside of a finite set. Then ${\\cal O}_X$ is the only spherical object in $\\CC^{(0,6)}$. We choose $\\Gamma=\\Z\\gamma_1\\oplus \\Z\\gamma_2$, which is the image of $K_0(\\CC^{(0,6)})$ under the Chern class in the quotient of the Cho",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quasi-classical limit and integrality conjecture",
+      "pageStart": 109,
+      "pageEnd": 109,
+      "target": "../sections/sec-038-quasi-classical-limit-and-integrality-conjecture.md",
+      "narrative": null,
+      "content": "Quasi-classical limit and integrality conjec-\nture",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quasi-classical limit, numerical DT-invariants",
+      "pageStart": 109,
+      "pageEnd": 112,
+      "target": "../sections/sec-039-quasi-classical-limit-numerical-dt-invariants.md",
+      "narrative": null,
+      "content": "The elements $A_{V,q}\\in {\\cal R}_{V,q}$ corresponding to $A_V^{mot}$ are series in $\\hat{e}_{\\gamma},\\gamma\\in \\Gamma$ with coefficients which are rational functions in $q^{1/2}$. They can have poles as $q^n=1$ for some $n\\geqslant 1$. Hence it is not clear how to take the quasi-classical limit as $q^{1/2}\\to -1$ (this corresponds to the taking of Euler characteristic of the corresponding motives).\n\nLet us assume that the skew-symmetric form on $\\Gamma$ is non-degenerate (otherwise we can replace $\\Gamma$ by the symplectic lattice $\\Gamma\\oplus \\Gamma^{\\vee}$). The element $A_{V,q}$ defines a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Deformation invariance and intermediate Jacobian",
+      "pageStart": 112,
+      "pageEnd": 115,
+      "target": "../sections/sec-040-deformation-invariance-and-intermediate-jacobian.md",
+      "narrative": null,
+      "content": "We also expect the following (not very precise) conjecture to be true as well.\n\n::: conj\nThe collection $(\\Omega(\\gamma))_{\\gamma \\in \\Gamma}$ is invariant with respect to the \"polarization preserving\\\" deformations of $\\CC$, in the case when $\\CC$ is homologically smooth in the sense of [@KoSo3].\n:::\n\nThe motivation for the last Conjecture is the deformation invariance of the virtual fundamental class in the \"classical\\\" Donaldson-Thomas theory. Recall that homologically smooth $Ext$-finite categories can be thought as non-commutative analogs of smooth proper schemes. Hence, we can expect tha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Absence of poles in the series AVHall",
+      "pageStart": 115,
+      "pageEnd": 120,
+      "target": "../sections/sec-041-absence-of-poles-in-the-series-avhall.md",
+      "narrative": null,
+      "content": "Here we are going to discuss a stronger version of the Conjecture 5.\n\n::: conj\nLet $\\overline{D^+}:=\\overline{{\\cal M}^{\\mu}}(Spec(\\k))[{\\mathbb L}^{-1/2}]$ be the ring of equivalence classes of motivic functions. Then the automorphism of the motivic quantum torus given by $x\\mapsto A_V^{mot}x(A_V^{mot})^{-1}$ preserves the subring $\\prod_{\\gamma\\in C(V)\\cap \\Gamma}\\overline{D^+}\\hat{e}_{\\gamma}$ for all strict sectors $V\\subset \\R^2$.\n:::\n\nIt is enough to check the conjecture for all $x=\\hat{e}_{\\gamma}, \\gamma\\in \\Gamma$. Moreover, because of Factorization Property it is enough to consider t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Reduction to the case of category of modules",
+      "pageStart": 120,
+      "pageEnd": 125,
+      "target": "../sections/sec-042-reduction-to-the-case-of-category-of-modules.md",
+      "narrative": null,
+      "content": "Here we present two special cases when the conjecture holds.\n\n1\\) Assume that the abelian category ${\\cal A}(\\kk)$ contains only one[^1] (up to an isomorphism) simple object $E\\ne 0$, and this object is defined over the field $\\k$. Hence $\\op{Ext}^0_{\\CC(\\k)}(E,E)\\simeq \\k$. We also assume that $\\A$-algebra $\\op{Hom}^\\bullet(E,E)$ is minimal, i.e. $m_1=0$, and hence $\\op{Hom}^\\bullet(E,E)=\\op\n{Ext}^\\bullet(E,E)$.\n\n::: prp\nThe category ${\\cal A}(\\k)$ is equivalent to the category $B-mod^{f,cont}$ of continuous finite-dimensional representations of a finitely generated topological algebra $B$.\n:",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Evidence for the integrality conjecture",
+      "pageStart": 125,
+      "pageEnd": 128,
+      "target": "../sections/sec-043-evidence-for-the-integrality-conjecture.md",
+      "narrative": null,
+      "content": "In this section we present arguments in favor of the integrality of the \"numerical\\\" DT-invariants $\\Omega(\\gamma)$. Recall that if $E$ is an object of a $\\k$-linear triangulated category, then we say that $E$ is a Schur object if $$\\op{Ext}^{<0}(E,E)=0,\\,\\,\\,\\op{Ext}^0(E,E)\\simeq \\k\\cdot id_E\\,\\,.$$\n\nLet us assume now that $\\CC$ is an ind-constructible $3d$ Calabi-Yau category generated by a Schur object $E\\in \\CC(\\k)$ in the sense that the category $\\CC(\\overline{\\k})$ consists of finite extensions of the shifts $E[i], i\\in \\Z$. In this case $K_0(\\CC(\\overline{\\k}))\\simeq \\Z\\cdot \\op{cl}_{\\k",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-044",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Donaldson-Thomas invariants and cluster transformations",
+      "pageStart": 128,
+      "pageEnd": 128,
+      "target": "../sections/sec-044-donaldson-thomas-invariants-and-cluster-transfor.md",
+      "narrative": null,
+      "content": "transformations",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-045",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spherical collections and mutations",
+      "pageStart": 128,
+      "pageEnd": 136,
+      "target": "../sections/sec-045-spherical-collections-and-mutations.md",
+      "narrative": null,
+      "content": "Let ${\\cal C}$ be a $3$-dimensional ind-constructible Calabi-Yau category over a field $\\k$ of characteristic zero. Assume that it is endowed with a finite collection of spherical generators ${\\cal E}=\\{E_i\\}_{i\\in I}$ of ${\\cal C}$ defined over $\\k$. Then $\\op{Ext}_{\\cal C(\\k)}^\\bullet(E_i,E_i)$ is isomorphic to $H^{\\bullet}(S^3,\\k ), \\,\\,i\\in I$. The matrix of the Euler form (taken with the *minus* sign) $$a_{ij}:=-\\chi\\left(\\op{Ext}_{\\cal C(\\k)}^{\\bullet}(E_i,E_j)\\right)$$ is integer and skew-symmetric. In fact, the ind-constructible category ${\\cal C}$ can be canonically reconstructed from",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-046",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Orientation data for cluster collections",
+      "pageStart": 136,
+      "pageEnd": 137,
+      "target": "../sections/sec-046-orientation-data-for-cluster-collections.md",
+      "narrative": null,
+      "content": "Let ${\\cal E}=(E_i)_{i\\in I}$ be a cluster collection. We set $R:=R_{\\cal E}= \\op{Ext}^\\bullet(E,E)$, where $E=\\oplus_{i\\in I}E_i$. Then $R$ is an $\\A$-algebra. We denote by $M:=M_{\\cal E}$ the algebra $R$ considered as $R$-bimodule. Using the truncation functors $\\tau_{\\leqslant i}$ and $\\tau_{\\geqslant i}$ we define a sub-bimodule $M_{\\geqslant 2}=\\tau_{\\geqslant 2}M$ as well as a quotient bimodule $M/M_{\\geqslant 2}$, which is isomorphic to $M_{\\leqslant 1}=\\tau_{\\leqslant 1}M$. Then we can deform the extension $M_{\\geqslant 2}\\to M\\to M_{\\leqslant 1}$ into the direct sum of bimodules $M_{\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-047",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum DT-invariants for quivers",
+      "pageStart": 137,
+      "pageEnd": 137,
+      "target": "../sections/sec-047-quantum-dt-invariants-for-quivers.md",
+      "narrative": null,
+      "content": "For any $\\sigma\\in U_{{\\cal E}}$ (recall domain $U_{{\\cal E}}$ introduced at the end of Section 8.1) we have the corresponding element $A_V^{\\op{Hall}}$, where $V$ is any strict sector containing all $Z(E_i), i\\in I$. The element $A_V^{\\op{Hall}}$ does not depend on $\\sigma$. Moreover, this element depends only on the gauge equivalence class of the corresponding potential. The associated element $A_{V,q}:=A_{{\\cal E},q}$ of the quantum torus ${\\cal R}_{V,q}$ depends (for a *generic* potential) on the matrix $(a_{ij})$ only.\n\nLet us associate with our quiver $Q$ the quantum torus ${\\cal R}_{Q,q",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-048",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quivers and cluster transformations",
+      "pageStart": 137,
+      "pageEnd": 143,
+      "target": "../sections/sec-048-quivers-and-cluster-transformations.md",
+      "narrative": null,
+      "content": "The formal power series ${\\bf E}_Q$ in $\\hat{e}_i,\\,\\,i\\in I$ defined in the previous section satisfy a number of remarkable properties.\n\n1\\) If $|I|=1$ then $Q$ is a quiver with one vertex $i$. We have $${\\bf E}_Q={\\bf E}(\\hat{e}_i)\\,\\,,$$ where ${\\bf E}$ is the quantum dilogarithm function.\n\n2\\) Let $I=I_1\\sqcup I_2$ , and we assume that $a_{i_1,i_2}<0$ for any $i_1\\in I_1, i_2\\in I_2$. Then we have two subquivers $Q_1$ and $Q_2$ of $Q$ with the sets of vertices $I_1$ and $I_2$ correspondingly, and all the arrows connecting $Q_1$ and $Q_2$ go only in the direction from $Q_2$ to $Q_1$ (i.e. t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0811.2435v1/blocks/prose-sec-049",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 143,
+      "pageEnd": 148,
+      "target": "../sections/sec-049-references.md",
+      "narrative": null,
+      "content": "[1] A. Bayer, Polynomial Bridgeland stability conditions and the large vol-\nume limit, arXiv:0712.1083.\n[2] K. Behrend, Donaldson-Thomas invariants via microlocal geometry,\nmath/0507523.\n[3] K. Behrend, A. Dhillon, On the Motive of the Stack of Bundles,\nmath/0512640.\n[4] K. Behrend, B. Fantechi, Symmetric obstruction theories and Hilbert\nschemes of points on threefolds, math/0512556.\n[5] E. Bierstone, P. Milman, Functoriality in resolution of singularities,\nArXiv:math/0702375.\n[6] F. Bittner, The universal Euler characteristic for varieties of charac-\nteristic zero, math. AG/0111062.\n[7] A. Bo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

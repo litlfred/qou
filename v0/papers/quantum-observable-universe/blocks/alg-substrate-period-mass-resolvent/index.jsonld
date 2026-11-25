@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/alg-substrate-period-mass-resolvent",
+  "@type": [
+    "folio-assistant-core:Algorithm",
+    "doco:Section"
+  ],
+  "label": "alg:substrate-period-mass-resolvent",
+  "kind": "algorithm",
+  "title": "Archimedean Substrate Period, Borromean Ratio, and Inhomogeneous Lepton-Resolvent Evaluation ($\\mathcal{L}_1$)",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-mass-identity",
+    "papers/quantum-observable-universe/blocks/prop-mass-identity-unique",
+    "papers/quantum-observable-universe/blocks/thm-knot-mass-formula-unified",
+    "papers/quantum-observable-universe/blocks/def-three-calibration-discipline",
+    "papers/quantum-observable-universe/blocks/prop-borromean-markov-trace-closed-form"
+  ],
+  "cites": [
+    "references/martelli2016",
+    "references/codata2022"
+  ],
+  "tags": [
+    "mba",
+    "substrate-period",
+    "borromean-ratio",
+    "lepton-resolvent",
+    "calibration-discipline"
+  ],
+  "leanRef": "qou:QOU.Observations.InhomogeneousLeptonLoopResolvent.tauFigureEight_closed_form",
+  "text": "substrate-period-mass-resolvent.md",
+  "provenance": "authored"
+}

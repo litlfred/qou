@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-alpha-em-categorical-trace-ratio",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:alpha-em-categorical-trace-ratio",
+  "kind": "proposition",
+  "title": "Algebraic identity: $\\alpha_{EM} = h^2 / [q \\cdot \\delta^{\\mathrm{top}}_q(T_{2,9}) \\cdot \\delta^{\\mathrm{top}}_q(T_{3,5})]$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-torus-knot-top-channel-decoration",
+    "papers/quantum-observable-universe/blocks/prop-em-coupling-projection",
+    "papers/quantum-observable-universe/blocks/prop-force-carrier-bring-uniqueness"
+  ],
+  "tags": [
+    "alpha-em",
+    "fine-structure",
+    "categorical-trace-ratio",
+    "delta-q",
+    "force-carrier",
+    "algebraic-identity",
+    "bring-complex"
+  ],
+  "leanRef": "qou:QOU.MassTheory.ArchimedeanUniverse.alpha_em_categorical_trace_ratio",
+  "text": "alpha-em-categorical-trace-ratio.md",
+  "leanSource": "alpha-em-categorical-trace-ratio.lean",
+  "provenance": "authored"
+}

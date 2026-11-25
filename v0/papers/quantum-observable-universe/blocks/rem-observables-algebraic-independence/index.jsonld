@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-observables-algebraic-independence",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:observables-algebraic-independence",
+  "kind": "remark",
+  "title": "Observational signatures if the QOU volumes are algebraically independent",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-implications-algebraic-independence"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-hyperbolic-volume-transcendence",
+  "cites": [
+    "references/yekutieli2010"
+  ],
+  "tags": [
+    "transcendence",
+    "falsifiability",
+    "lattice-qcd",
+    "proton-decay",
+    "observations"
+  ],
+  "text": "observables-algebraic-independence.md",
+  "provenance": "authored"
+}

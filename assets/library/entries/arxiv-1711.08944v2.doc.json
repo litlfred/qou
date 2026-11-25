@@ -1,0 +1,406 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1711.08944v2",
+  "title": "The second largest eigenvalues of some Cayley graphs on alternating groups ∗",
+  "variant": "pdf",
+  "pages": 12,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The second largest eigenvalue of AGn",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-the-second-largest-eigenvalue-of-agn"
+    },
+    {
+      "level": 1,
+      "title": "The second largest eigenvalues of EAGn and CAGn",
+      "number": "3",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-the-second-largest-eigenvalues-of-eagn-and-cag"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 146,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cayley graphs",
+          "heading": false
+        },
+        {
+          "term": "alternating group",
+          "heading": false
+        },
+        {
+          "term": "largest eigenvalues",
+          "heading": false
+        },
+        {
+          "term": "xinjiang",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1711.08944v2 [math.CO] 12 Dec 2018 The second largest eigenvalues of some Cayley graphs on alternating groups∗ Xueyi Huang, Qiongxiang Huang† College of Mathematics and Systems Science, Xinjiang University, Urumqi, Xinjiang 830046, P. R. China Abstract Let An denote the alternating group of degree n with n ≥3. The al- ternating group graph AGn, extended alternating group graph EAGn and complete alternating",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1711.08944v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 1069,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cdots cup",
+          "heading": false
+        },
+        {
+          "term": "equ",
+          "heading": false
+        },
+        {
+          "term": "geq lambda",
+          "heading": false
+        },
+        {
+          "term": "leq sqrt",
+          "heading": false
+        },
+        {
+          "term": "frac sum",
+          "heading": false
+        },
+        {
+          "term": "perp mathbf",
+          "heading": false
+        },
+        {
+          "term": "aligned frac",
+          "heading": false
+        },
+        {
+          "term": "neighbors",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s-1 label=\"s-1\"} Let $G=(V(G),E(G))$ be a simple undirected graph of order $n$. The *adjacency matrix* of $G$, denoted by $A(G)$, is the $n\\times n$ matrix with entries $a_{uv}=1$ if $\\{u,v\\}\\in E(G)$ and $a_{uv}=0$ otherwise. The eigenvalues of $A(G)$ are denoted by $\\lambda_1(G)\\geq \\lambda_2(G)\\geq \\cdots\\geq \\lambda_n(G)$, which are also called the *eigenvalues* of $G$. For $v\\in V(G)$, we denote by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-second-largest-eigenvalue-of-agn",
+      "number": "2",
+      "title": "The second largest eigenvalue of AGn",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 7,
+      "labelStart": "3",
+      "labelEnd": "7",
+      "words": 1836,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "graph eag",
+          "heading": false
+        },
+        {
+          "term": "eag mathrm",
+          "heading": false
+        },
+        {
+          "term": "cag mathrm",
+          "heading": false
+        },
+        {
+          "term": "let eag",
+          "heading": false
+        },
+        {
+          "term": "cag corresponding",
+          "heading": false
+        },
+        {
+          "term": "largest eigenvalue",
+          "heading": true
+        },
+        {
+          "term": "ddots vdots",
+          "heading": false
+        },
+        {
+          "term": "cdots vdots",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s-3 label=\"s-3\"} Recall that the complete alternating group graph is defined as $CAG_n=\\mathrm{Cay}(A_n,T_3)$, where $T_3=\\{(i,j,k),(i,k,j)\\mid 1\\leq i<j<k\\leq n\\}$ is the set of all $3$-cycles in $S_n$. In this section, we mainly focus on determining the second largest eigenvalue of $CAG_n$. The main idea is to find some suitable equitable partition so that we can decompose the edge set of $CAG_n$ into that of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-the-second-largest-eigenvalues-of-eagn-and-cag",
+      "number": "3",
+      "title": "The second largest eigenvalues of EAGn and CAGn",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 12,
+      "labelStart": "7",
+      "labelEnd": "12",
+      "words": 2329,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "graph eag",
+          "heading": false
+        },
+        {
+          "term": "eag mathrm",
+          "heading": false
+        },
+        {
+          "term": "cag mathrm",
+          "heading": false
+        },
+        {
+          "term": "let eag",
+          "heading": false
+        },
+        {
+          "term": "cag corresponding",
+          "heading": false
+        },
+        {
+          "term": "ddots vdots",
+          "heading": false
+        },
+        {
+          "term": "cdots vdots",
+          "heading": false
+        },
+        {
+          "term": "largest eigenvalues",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#s-3 label=\"s-3\"} Recall that the complete alternating group graph is defined as $CAG_n=\\mathrm{Cay}(A_n,T_3)$, where $T_3=\\{(i,j,k),(i,k,j)\\mid 1\\leq i<j<k\\leq n\\}$ is the set of all $3$-cycles in $S_n$. In this section, we mainly focus on determining the second largest eigenvalue of $CAG_n$. The main idea is to find some suitable equitable partition so that we can decompose the edge set of $CAG_n$ into that of",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "graph eag",
+      "heading": false
+    },
+    {
+      "term": "graph cag",
+      "heading": false
+    },
+    {
+      "term": "eag mathrm",
+      "heading": false
+    },
+    {
+      "term": "let eag",
+      "heading": false
+    },
+    {
+      "term": "because eag",
+      "heading": false
+    },
+    {
+      "term": "eag corresponding",
+      "heading": false
+    },
+    {
+      "term": "cdots vdots",
+      "heading": false
+    },
+    {
+      "term": "lambda leq",
+      "heading": false
+    },
+    {
+      "term": "ddots vdots",
+      "heading": false
+    },
+    {
+      "term": "mid leq",
+      "heading": false
+    },
+    {
+      "term": "cdots cup",
+      "heading": false
+    },
+    {
+      "term": "binom neighbors",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 3,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 4,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 4 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1711.08944v2"
+  }
+}

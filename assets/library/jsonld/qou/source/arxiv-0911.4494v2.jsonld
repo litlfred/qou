@@ -1,0 +1,64 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0911.4494v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "The geometry of Markov traces",
+  "contains": [
+    "library/arxiv-0911.4494v2/sections/sec-front-matter",
+    "library/arxiv-0911.4494v2/sections/sec-000",
+    "library/arxiv-0911.4494v2/sections/sec-001",
+    "library/arxiv-0911.4494v2/sections/sec-002",
+    "library/arxiv-0911.4494v2/sections/sec-003",
+    "library/arxiv-0911.4494v2/sections/sec-004",
+    "library/arxiv-0911.4494v2/sections/sec-005",
+    "library/arxiv-0911.4494v2/sections/sec-006",
+    "library/arxiv-0911.4494v2/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "The geometry of Markov traces — We give a geometric interpretation of the Jones-Ocneanu trace on the Hecke algebra, using the equivariant cohomology of sheaves on SLn.\n\n**The geometry of Markov traces**\n\n*Ben Webster*\n\n14 pp, 9 sections.\n\n**Abstract.** We give a geometric interpretation of the Jones-Ocneanu trace on the Hecke algebra, using the equivariant cohomology of sheaves on SLn. This construction makes sense for all simple algebraic groups, so we obtain a gener- alization of the Jones-Ocneanu trace to Hecke algebras of other types. We give a geometric expansion of this trace in terms of the irreducible characters of the Hecke algebra, and conclude that it agrees with a trace deﬁned independently by Gomi. Based on our proof, we also prove that certain simple perverse sheaves on a reductive algebraic group G are equivariantly formal for the conjugation action of a Borel B, or equivalently, that the Hochschild homology of any Soergel bimodule is free, as the authors had previously conjectured. This construction is closely tied to knot homology.\n\n**Outline.** Front matter; 1 Introduction; Acknowledgments; 2 Hecke algebras; 3 Hecke algebras and geometry; 4 A categorified trace; 5 Character sheaves and character expansions; 6 Character sheaves and Molien series; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0911.4494&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0911.4494v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0911.4494v2.pdf",
+    "source_sha256": "1ba1c79686b12d984c69492e90a923ed7ca108d283c813d9b5d1a78791349226",
+    "pages": 14,
+    "arxiv": {
+      "id": "0911.4494",
+      "version": "2",
+      "primary_class": "math.AG",
+      "stamp_date": "8 Jul 2010"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

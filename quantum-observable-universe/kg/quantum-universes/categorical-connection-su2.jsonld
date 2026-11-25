@@ -1,0 +1,29 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/ex-categorical-connection-su2",
+  "@type": [
+    "folio-assistant-core:Example",
+    "doco:Section"
+  ],
+  "label": "ex:categorical-connection-su2",
+  "kind": "example",
+  "title": "Categorical connection as Maurer--Cartan form on $\\mathrm{SU}(2)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-quantum-universe-su2",
+    "papers/quantum-observable-universe/blocks/def-categorical-connection"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-categorical-connection",
+  "tags": [
+    "su2",
+    "connection",
+    "maurer-cartan"
+  ],
+  "text": "categorical-connection-su2.md",
+  "provenance": "authored"
+}

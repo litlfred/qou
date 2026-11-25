@@ -1,0 +1,1211 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1603.07827v1",
+  "title": "Braiding With Majorana Fermions",
+  "variant": "pdf",
+  "pages": 15,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "ABSTRACT",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-abstract"
+    },
+    {
+      "level": 1,
+      "title": "INTRODUCTION",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-001-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "BRAIDS",
+      "number": "2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-2-braids"
+    },
+    {
+      "level": 1,
+      "title": "FERMIONS, MAJORANA FERMIONS AND BRAIDING",
+      "number": "3",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-3-fermions-majorana-fermions-and-braiding"
+    },
+    {
+      "level": 1,
+      "title": "(1 + I + J + IJ)(1 + I)",
+      "number": "2",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-2-1-i-j-ij1-i"
+    },
+    {
+      "level": 1,
+      "title": "(1 + I + J + IJ + I + I2 + JI + IJI)",
+      "number": "2",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-2-1-i-j-ij-i-i2-ji-iji"
+    },
+    {
+      "level": 1,
+      "title": "(1 + I + J + IJ + I −1 −IJ + J)",
+      "number": "2",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-2-1-i-j-ij-i-1-ij-j"
+    },
+    {
+      "level": 1,
+      "title": "BRAIDING OPERATORS AND UNIVERSAL QUANTUM GATES",
+      "number": "4",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-4-braiding-operators-and-universal-quantum-gates"
+    },
+    {
+      "level": 2,
+      "title": "Universal Gates",
+      "number": "4.1",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-41-universal-gates"
+    },
+    {
+      "level": 2,
+      "title": "Majorana Fermions Generate Universal Braiding Gates",
+      "number": "4.2",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-42-majorana-fermions-generate-universal-braiding"
+    },
+    {
+      "level": 1,
+      "title": "SU(2) REPRESENTATIONS OF THE ARTIN BRAID GROUP",
+      "number": "5",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-010-5-su2-representations-of-the-artin-braid-group"
+    },
+    {
+      "level": 1,
+      "title": "REFERENCES",
+      "number": null,
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-011-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 60,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "baltimore",
+          "heading": false
+        },
+        {
+          "term": "computer science",
+          "heading": false
+        },
+        {
+          "term": "illinois",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1603.07827v1 [cond-mat.str-el] 25 Mar 2016 Braiding With Majorana Fermions Louis H. Kauﬀmana and Samuel J. Lomonaco Jr.2b a Department of Mathematics, Statistics and Computer Science (m/c 249), 851 South Morgan Street, University of Illinois at Chicago, Chicago, Illinois 60607-7045, USA b Department of Computer Science and Electrical Engineering, University of Maryland Baltimore County, 1000 Hilltop Circle,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1603.07827v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-abstract",
+      "number": null,
+      "title": "ABSTRACT",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-1-introduction",
+      "number": "1",
+      "title": "INTRODUCTION",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1140,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "majorana fermions",
+          "heading": false
+        },
+        {
+          "term": "majorana operators",
+          "heading": false
+        },
+        {
+          "term": "artin braid",
+          "heading": false
+        },
+        {
+          "term": "recoupling transformations",
+          "heading": false
+        },
+        {
+          "term": "particles labeled",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": false
+        },
+        {
+          "term": "hall eﬀect",
+          "heading": false
+        },
+        {
+          "term": "phase gates",
+          "heading": false
+        }
+      ],
+      "extract": "fermions. In particular we study the remarkable unitary braid group representations associated with Majorana fermions. Keywords: braiding, fermions, majorana fermions, quantum process, quantum computing. 1. INTRODUCTION In this paper we study a Cliﬀord algebra generalization of the quaternions and its relationship with braid group representations related to Majorana fermions. The Fibonacci model for topological",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-braids",
+      "number": "2",
+      "title": "BRAIDS",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 641,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braids",
+          "heading": true
+        },
+        {
+          "term": "artin braid",
+          "heading": false
+        },
+        {
+          "term": "sisj sjsi",
+          "heading": false
+        },
+        {
+          "term": "bottom strands",
+          "heading": false
+        },
+        {
+          "term": "top strands",
+          "heading": false
+        },
+        {
+          "term": "braid generators",
+          "heading": false
+        },
+        {
+          "term": "braid groups",
+          "heading": false
+        },
+        {
+          "term": "sisi",
+          "heading": false
+        }
+      ],
+      "extract": "A braid is an embedding of a collection of strands that have their ends in two rows of points that are set one above the other with respect to a choice of vertical. The strands are not individually knotted and they are disjoint from one another. See Figure 2, and Figure 3 for illustrations of braids and moves on braids. Braids can be multiplied by attaching the bottom row of one braid to the top row of the other",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-fermions-majorana-fermions-and-braiding",
+      "number": "3",
+      "title": "FERMIONS, MAJORANA FERMIONS AND BRAIDING",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 993,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "majorana fermions",
+          "heading": true
+        },
+        {
+          "term": "braiding",
+          "heading": true
+        },
+        {
+          "term": "majorana particles",
+          "heading": false
+        },
+        {
+          "term": "braiding operators",
+          "heading": false
+        },
+        {
+          "term": "fermion algebra",
+          "heading": false
+        },
+        {
+          "term": "cliﬀord algebra",
+          "heading": false
+        },
+        {
+          "term": "braiding relation",
+          "heading": false
+        },
+        {
+          "term": "artin braid",
+          "heading": false
+        }
+      ],
+      "extract": "Fermion Algebra. Recall fermion algebra. One has fermion annihilation operators ψ and their conjugate creation operators ψ†. One has ψ2 = 0 = (ψ†)2. There is a fundamental commutation relation ψψ† + ψ†ψ = 1. If you have more than one of them say ψ and φ, then they anti-commute: ψφ = −φψ. The Majorana fermions c satisfy c† = c so that they are their own anti-particles. There is a lot of interest in these as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-2-1-i-j-ij1-i",
+      "number": "2",
+      "title": "(1 + I + J + IJ)(1 + I)",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3,
+      "summary": null,
+      "keywords": [],
+      "extract": "= (1/2 √",
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-2-1-i-j-ij-i-i2-ji-iji",
+      "number": "2",
+      "title": "(1 + I + J + IJ + I + I2 + JI + IJI)",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3,
+      "summary": null,
+      "keywords": [],
+      "extract": "= (1/2 √",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-2-1-i-j-ij-i-1-ij-j",
+      "number": "2",
+      "title": "(1 + I + J + IJ + I −1 −IJ + J)",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 450,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "majorana fermions",
+          "heading": false
+        },
+        {
+          "term": "topological interpretation",
+          "heading": false
+        },
+        {
+          "term": "phase change",
+          "heading": false
+        },
+        {
+          "term": "braiding",
+          "heading": false
+        },
+        {
+          "term": "bab",
+          "heading": false
+        },
+        {
+          "term": "electrons",
+          "heading": false
+        },
+        {
+          "term": "belt",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": false
+        }
+      ],
+      "extract": "= (1/ √ 2)(I + J). The same form of computation yields BAB = (1/ √ 2)(J + I). And so ABA = BAB. and so a natural braid group representation arises from the Majorana fermions. These braiding operators can be seen to act on the vector space over the complex numbers that is spanned by the fermions x, y, z. To see how this works, consider s = 1 + yx √ 2 , T (p) = sps−1 = (1 + yx √ 2 )p(1 −yx √ 2 ), and verify that T (x)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-4-braiding-operators-and-universal-quantum-gates",
+      "number": "4",
+      "title": "BRAIDING OPERATORS AND UNIVERSAL QUANTUM GATES",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 322,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braiding",
+          "heading": true
+        },
+        {
+          "term": "yang-baxter equation",
+          "heading": false
+        },
+        {
+          "term": "fold tensor",
+          "heading": false
+        },
+        {
+          "term": "tensor product",
+          "heading": false
+        },
+        {
+          "term": "quantum",
+          "heading": true
+        },
+        {
+          "term": "gate",
+          "heading": false
+        },
+        {
+          "term": "unitary",
+          "heading": false
+        },
+        {
+          "term": "vector space",
+          "heading": false
+        }
+      ],
+      "extract": "A key concept in the construction of quantum link invariants is the association of a Yang-Baxter operator R to each elementary crossing in a link diagram. The operator R is a linear mapping R: V ⊗V −→V ⊗V deﬁned on the 2-fold tensor product of a vector space V, generalizing the permutation of the factors (i.e., generalizing a swap gate when V represents one qubit). Such transformations are not necessarily unitary in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-41-universal-gates",
+      "number": "4.1",
+      "title": "Universal Gates",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 290,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "two-qubit gate",
+          "heading": false
+        },
+        {
+          "term": "unitary transformations",
+          "heading": false
+        },
+        {
+          "term": "universal",
+          "heading": true
+        },
+        {
+          "term": "cnot",
+          "heading": false
+        },
+        {
+          "term": "local unitary",
+          "heading": false
+        },
+        {
+          "term": "entangling",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst qubit",
+          "heading": false
+        }
+      ],
+      "extract": "A two-qubit gate G is a unitary linear mapping G : V ⊗V −→V where V is a two complex dimensional vector space. We say that the gate G is universal for quantum computation (or just universal) if G together with local unitary transformations (unitary transformations from V to V ) generates all unitary transformations of the complex vector space of dimension 2n to itself. It is well-known29 that CNOT is a universal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-42-majorana-fermions-generate-universal-braiding",
+      "number": "4.2",
+      "title": "Majorana Fermions Generate Universal Braiding Gates",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 140,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "majorana fermions",
+          "heading": true
+        },
+        {
+          "term": "single qubit",
+          "heading": false
+        },
+        {
+          "term": "gates",
+          "heading": true
+        }
+      ],
+      "extract": "Recall that in Section 3 we showed how to construct braid group representations. Let Tk : Vn −→Vn deﬁned by Tk(v) = skvs−1 k be deﬁned as in Section 3. Note that s−1 k = 1 √ 2(1 −ck+1ck). It is then easy to verify that Tk(ck) = ck+1, Tk(ck+1) = −ck and that Tk is the identity otherwise. For universality, take n = 4 and regard each Tk as operating on V ⊗V where V is a single qubit space. Then the braiding operators",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-5-su2-representations-of-the-artin-braid-group",
+      "number": "5",
+      "title": "SU(2) REPRESENTATIONS OF THE ARTIN BRAID GROUP",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1901,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braid group",
+          "heading": true
+        },
+        {
+          "term": "ghg hgh",
+          "heading": false
+        },
+        {
+          "term": "pure quaternion",
+          "heading": false
+        },
+        {
+          "term": "unit quaternions",
+          "heading": false
+        },
+        {
+          "term": "three-strand braid",
+          "heading": false
+        },
+        {
+          "term": "length quaternion",
+          "heading": false
+        },
+        {
+          "term": "majorana operators",
+          "heading": false
+        },
+        {
+          "term": "quaternion multiplication",
+          "heading": false
+        }
+      ],
+      "extract": "The purpose of this section is to determine all the representations of the three strand Artin braid group B3 to the special unitary group SU(2) and concomitantly to the unitary group U(2). One regards the groups SU(2) and U(2) as acting on a single qubit, and so U(2) is usually regarded as the group of local unitary transformations in a quantum information setting. If one is looking for a coherent way to represent",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-references",
+      "number": null,
+      "title": "REFERENCES",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 773,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spie proceedings",
+          "heading": false
+        },
+        {
+          "term": "lomonaco",
+          "heading": false
+        },
+        {
+          "term": "quantum entanglement",
+          "heading": false
+        },
+        {
+          "term": "kauﬀman",
+          "heading": false
+        },
+        {
+          "term": "topological entanglement",
+          "heading": false
+        },
+        {
+          "term": "donkor",
+          "heading": false
+        },
+        {
+          "term": "quantum information",
+          "heading": false
+        },
+        {
+          "term": "quantum gates",
+          "heading": false
+        }
+      ],
+      "extract": "1. R.J. Baxter. Exactly Solved Models in Statistical Mechanics. Acad. Press (1982). 2. C. W. J. Beenakker, Search for Majorana fermions in superconductors, arXiv: 1112.1950. 3. N. E. Bonesteel, L. Hormozi, G. Zikos and S. H. Simon, Braid topologies for quantum computation, Phys. Rev. Lett. 95 (2005), no. 14, 140503, 4 pp. quant-ph/0505665. 4. S. H. Simon, N. E. Bonesteel, M. H. Freedman, N. Petrovic and L. Hormozi,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "majorana fermions",
+      "heading": true
+    },
+    {
+      "term": "majorana operators",
+      "heading": false
+    },
+    {
+      "term": "majorana particles",
+      "heading": false
+    },
+    {
+      "term": "majorana representation",
+      "heading": false
+    },
+    {
+      "term": "artin braid",
+      "heading": true
+    },
+    {
+      "term": "braiding operators",
+      "heading": true
+    },
+    {
+      "term": "cliﬀord braiding",
+      "heading": false
+    },
+    {
+      "term": "braid group",
+      "heading": true
+    },
+    {
+      "term": "braiding generator",
+      "heading": false
+    },
+    {
+      "term": "braiding relation",
+      "heading": false
+    },
+    {
+      "term": "braiding theorem",
+      "heading": false
+    },
+    {
+      "term": "topological quantum",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Braiding Anyons",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Braid Generators",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Borromean Rings as a Braid Closure",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Braiding Action on a Pair of Fermions",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The Yang-Baxter equation",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "label": "Table 1",
+      "caption": "",
+      "pages": [
+        14,
+        15
+      ],
+      "columns": [
+        {
+          "titles": "1."
+        },
+        {
+          "titles": "R.J. Baxter. Exactly Solved Models in Statistical Mechanics. Acad. Press (1982)."
+        }
+      ],
+      "rows": [
+        [
+          "2.",
+          "C. W. J. Beenakker, Search for Majorana fermions in superconductors, arXiv: 1112.1950."
+        ],
+        [
+          "3.",
+          "N. E. Bonesteel, L. Hormozi, G. Zikos and S. H. Simon, Braid topologies for quantum computation, Phys."
+        ],
+        [
+          "",
+          "Rev. Lett. 95 (2005), no. 14, 140503,4 pp. quant-ph/0505665."
+        ],
+        [
+          "4.",
+          "S.H.Simon,N.E.Bonesteel,M.H.Freedman,N.PetrovicandL.Hormozi,Topologicalquantumcomputing"
+        ],
+        [
+          "",
+          "with only one mobile quasiparticle, Phys. Rev. Lett. 96 (2006), no. 7, 070503,4 pp., quant-ph/0509175."
+        ],
+        [
+          "5.",
+          "J. L. Brylinski and R. Brylinski, Universal quantum gates, in Mathematics of Quantum Computation,"
+        ],
+        [
+          "",
+          "Chapman & Hall/CRC Press, Boca Raton, Florida, 2002 (edited by R. Brylinski and G. Chen)."
+        ],
+        [
+          "6.",
+          "Chen, G., L. Kauffman, and S. Lomonaco, (eds.), ”Mathematics in Quantum Computation and"
+        ],
+        [
+          "",
+          "Quantum Technology,” Chapman & Hall/CRC , (2007)."
+        ],
+        [
+          "7.",
+          "E.Fradkin and P. Fendley, Realizing non-abelianstatistics in time-reversalinvariantsystems, Theory Sem-"
+        ],
+        [
+          "",
+          "inar, Physics Department, UIUC, 4/25/2005."
+        ],
+        [
+          "8.",
+          "D. A. Ivanov, Non-abelian statistics of half-quantum vortices in p-wave superconductors, Phys. Rev. Lett."
+        ],
+        [
+          "",
+          "86, 268 (2001)."
+        ],
+        [
+          "9.",
+          "L.H.Kauffman,Temperley-Lieb RecouplingTheory andInvariants ofThree-Manifolds, PrincetonUniversity"
+        ],
+        [
+          "",
+          "Press, Annals Studies 114 (1994)."
+        ],
+        [
+          "10.",
+          "L.H.Kauffman,KnotsandPhysics,WorldScientificPublishers(1991),SecondEdition(1993),ThirdEdition"
+        ],
+        [
+          "",
+          "(2002), Fourth Edition (2012)."
+        ],
+        [
+          "11.",
+          "L. H. Kauffman, Knot logic and topological quantum computing with Majorana fermions, in “Logic and"
+        ],
+        [
+          "",
+          "Algebraic Structures in Quantum Computing”, edited by Chubb, Eskadarian and Harizanov, Cambridge"
+        ],
+        [
+          "",
+          "University Press (2016), pp. 223-335."
+        ],
+        [
+          "12.",
+          "L.H.KauffmanandS.J.LomonacoJr.,Quantumentanglementandtopologicalentanglement,NewJournal"
+        ],
+        [
+          "",
+          "of Physics 4 (2002), 73.1–73.18(http://www.njp.org/)."
+        ],
+        [
+          "13.",
+          "L. H. Kauffman, Teleportation Topology, quant-ph/0407224, (in the Proceedings of the 2004 Byelorus"
+        ],
+        [
+          "",
+          "Conference on Quantum Optics), Opt. Spectrosc. 9, 2005, 227-232."
+        ],
+        [
+          "14.",
+          "L.H. Kauffman and S. J. Lomonaco Jr., Entanglement Criteria - Quantum and Topological, in Quantum"
+        ],
+        [
+          "",
+          "Information and Computation - Spie Proceedings, 21-22 April, 2003, Orlando, FL, Donkor, Pinch and"
+        ],
+        [
+          "",
+          "Brandt (eds.), Volume 5105,pp. 51–58."
+        ],
+        [
+          "15.",
+          "L. H. Kauffman and S. J. Lomonaco Jr., Quantum knots, in Quantum Information and Computation II,"
+        ],
+        [
+          "",
+          "Proceedings of Spie, 12 -14 April 2004 (2004), ed. by Donkor Pirich and Brandt, pp. 268-284."
+        ],
+        [
+          "16.",
+          "S. J. Lomonaco and L. H. Kauffman, Quantum Knots and Mosaics, Journal of Quantum Information"
+        ],
+        [
+          "",
+          "Processing,Vol. 7, Nos. 2-3, (2008), pp. 85 - 115. http://arxiv.org/abs/0805.0339"
+        ],
+        [
+          "17.",
+          "S. J. Lomonacoand L. H. Kauffman, Quantum knots and lattices, or a blueprint for quantum systems that"
+        ],
+        [
+          "",
+          "do rope tricks. Quantum information science and its contributions to mathematics, 209276,Proc. Sympos."
+        ],
+        [
+          "",
+          "Appl. Math., 68, Amer. Math. Soc., Providence,RI, 2010."
+        ],
+        [
+          "18.",
+          "S. J. Lomonaco and L. H. Kauffman, Quantizing braids and other mathematical structures: the general"
+        ],
+        [
+          "",
+          "quantization procedure. In Brandt, Donkor, Pirich, editors, Quantum Information and Comnputation IX -"
+        ],
+        [
+          "",
+          "Spie Proceedings, April 2011, Vol. 8057, of Proceedings of Spie, pp. 805702-1to 805702-14,SPIE 2011."
+        ],
+        [
+          "19.",
+          "L.H.KauffmanandS.J.Lomonaco,Quantizingknotsgroupsandgraphs.InBrandt,Donkor,Pirich,editors,"
+        ],
+        [
+          "",
+          "Quantum Information and Comnputation IX - Spie Proceedings, April 2011, Vol. 8057, of Proceedings of"
+        ],
+        [
+          "",
+          "Spie, pp. 80570T-1to 80570T-15,SPIE 2011."
+        ],
+        [
+          "20.",
+          "L. H. Kauffman and S. J. Lomonaco, Braiding Operators are Universal Quantum Gates, New Journal of"
+        ],
+        [
+          "",
+          "Physics 6 (2004) 134, pp. 1-39."
+        ],
+        [
+          "21.",
+          "Kauffman, Louis H.; Lomonaco, Samuel J., Jr. q-deformed spin networks, knot polynomials and anyonic"
+        ],
+        [
+          "",
+          "topological quantum computation. J. Knot Theory Ramifications 16 (2007), no. 3, 267–332."
+        ],
+        [
+          "22.",
+          "L. H. Kauffman and S. J. Lomonaco Jr., Spin Networks and Quantum Computation, in “LIe Theory and"
+        ],
+        [
+          "",
+          "Its Applications in Physics VII” eds. H. D. Doebner and V. K. Dobrev, Heron Press, Sofia (2008), pp. 225"
+        ],
+        [
+          "",
+          "- 239."
+        ],
+        [
+          "23.",
+          "L. H. Kauffman, Quantum computing and the Jones polynomial, math.QA/0105255, in Quantum Compu-"
+        ],
+        [
+          "",
+          "tation and Information, S. Lomonaco, Jr. (ed.), AMS CONM/305,2002, pp. 101–137."
+        ],
+        [
+          "24.",
+          "L. H. Kauffman and S. J. Lomonaco Jr., Quantum entanglement and topological entanglement. New J."
+        ],
+        [
+          "",
+          "Phys. 4 (2002), 73.173.18."
+        ],
+        [
+          "25.",
+          "L. H. Kauffman and S. J. Lomonaco Jr., The Fibonacci Model and the Temperley-Lieb Algebra. it Inter-"
+        ],
+        [
+          "",
+          "national J. Modern Phys. B, Vol. 22, No. 29 (2008), 5065-5080."
+        ],
+        [
+          "26.",
+          "V. Mourik,K.Zuo, S. M. Frolov,S. R. Plissard,E.P.A.M. Bakkers,L.P.Kouwenhuven,Signatures ofMajo-"
+        ],
+        [
+          "",
+          "rana fermions in hybred superconductor-semiconductor devices, arXiv: 1204.2792."
+        ],
+        [
+          "27.",
+          "A.Kitaev,Anyonsinanexactlysolvedmodelandbeyond,Ann.Physics321(2006),no.1,2111.arXiv.cond-"
+        ],
+        [
+          "",
+          "mat/0506438 v1 17 June 2005."
+        ],
+        [
+          "28.",
+          "E. Majorana,A symmetric theory of electrons and positrons, I Nuovo Cimento,14 (1937), pp. 171-184."
+        ],
+        [
+          "29.",
+          "M.A.NielsenandI.L.Chuang,“QuantumComputationandQuantumInformation,”CambrigeUniversity"
+        ],
+        [
+          "",
+          "Press, Cambridge (2000)."
+        ],
+        [
+          "30.",
+          "F.Wilczek,FractionalStatisticsandAnyonSuperconductivity,WorldScientificPublishingCompany(1990)."
+        ]
+      ],
+      "narratives": {},
+      "csv": "tables/table-1.csv"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 12,
+      "note": "contents from inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 13
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "note": "0 kept (0 raster, 0 vector); 5 vector render(s) not yet inspected; 5 caption(s) read off the pages"
+    },
+    {
+      "kind": "tables",
+      "state": "found",
+      "count": 1,
+      "note": "drafts; backend pdfplumber 0.11.10; 4 candidate(s) dropped: under two columns or no row under the header; 8 dropped as prose cut into columns (a word cut at a quarter or more of the cell boundaries)"
+    },
+    {
+      "kind": "references",
+      "state": "found",
+      "count": 30
+    },
+    {
+      "kind": "glossary",
+      "state": "not-extracted",
+      "note": "the instance declares no glossary directory to hold the scheme"
+    },
+    {
+      "kind": "footnotes",
+      "state": "partial",
+      "note": "no footnote linked to a mark; 266 mark(s) with no note found, kept for a reader to judge"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 13 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1603.07827v1"
+  }
+}

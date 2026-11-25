@@ -1,0 +1,2085 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2604.16077v1",
+  "title": "Volume Conjecture and quantum hyperbolic invariants: the figure eight knot complement",
+  "variant": "pdf",
+  "pages": 66,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Main result",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-11-main-result"
+    },
+    {
+      "level": 2,
+      "title": "Triangulation-version of Theorem",
+      "number": "1.2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-12-triangulation-version-of-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Structure of the proof of Theorem",
+      "number": "1.3",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-13-structure-of-the-proof-of-theorem"
+    },
+    {
+      "level": 1,
+      "title": "Geometric setup",
+      "number": "2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-2-geometric-setup"
+    },
+    {
+      "level": 2,
+      "title": "The quantum gluing varieties",
+      "number": "2.1",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-21-the-quantum-gluing-varieties"
+    },
+    {
+      "level": 3,
+      "title": "Quantum $3$-simplices",
+      "number": "2.1.1",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Gluing varieties and the holonomy map",
+      "number": "2.1.2",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-212-gluing-varieties-and-the-holonomy-map"
+    },
+    {
+      "level": 2,
+      "title": "Weights",
+      "number": "2.2",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-22-weights"
+    },
+    {
+      "level": 3,
+      "title": "Log weights and boundary weights",
+      "number": "2.2.1",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-221-log-weights-and-boundary-weights"
+    },
+    {
+      "level": 3,
+      "title": "The spaces $G_{hyp,N}(T,b)$ and ${}_NX_{hyp}(M)$",
+      "number": "2.2.2",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The case of the figure-eight knot complement",
+      "number": "2.3",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The logarithmic limit set",
+      "number": "2.4",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-24-the-logarithmic-limit-set"
+    },
+    {
+      "level": 1,
+      "title": "The QHI",
+      "number": "3",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-3-the-qhi"
+    },
+    {
+      "level": 2,
+      "title": "Functions in the QHI state sums",
+      "number": "3.1",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-31-functions-in-the-qhi-state-sums"
+    },
+    {
+      "level": 2,
+      "title": "Asymptotics of $\\hat{S}_N(z)$ and $g_N(z)$",
+      "number": "3.2",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The QHI of cusped manifolds",
+      "number": "3.3",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-33-the-qhi-of-cusped-manifolds"
+    },
+    {
+      "level": 3,
+      "title": "The case of $M=S^3\\setminus 4_1$",
+      "number": "3.3.1",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The QHI state sum of $M=S^3\\setminus 4_1$",
+      "number": "3.4",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Integral representation",
+      "number": "3.5",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-013-35-integral-representation"
+    },
+    {
+      "level": 2,
+      "title": "Some logarithmic limits of log-parameters",
+      "number": "3.6",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-014-36-some-logarithmic-limits-of-log-parameters"
+    },
+    {
+      "level": 1,
+      "title": "Asymptotics of classical integrals on a vertical contour",
+      "number": "4",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-015-4-asymptotics-of-classical-integrals-on-a-vertic"
+    },
+    {
+      "level": 2,
+      "title": "Classical integrals and their critical sets",
+      "number": "4.1",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-016-41-classical-integrals-and-their-critical-sets"
+    },
+    {
+      "level": 2,
+      "title": "The saddle-point method",
+      "number": "4.2",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-017-42-the-saddle-point-method"
+    },
+    {
+      "level": 2,
+      "title": "Asymptotics of integrals $\\textstyle \\int e^{\\scriptscriptstyle{\\frac{N}{2\\pi} {\\rm Cl}_2(t)}}dt$",
+      "number": "4.3",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Along $[\\pi,2\\pi]+2k\\pi$, $k\\in \\mathbb{Z}$.",
+      "number": "4.3.1",
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Along $[0,s_N^-]$",
+      "number": "4.3.2",
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The limit in case (a)",
+      "number": "4.4",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-018-44-the-limit-in-case-a"
+    },
+    {
+      "level": 3,
+      "title": "Case (a), integral $I_{n,-}$",
+      "number": "4.4.1",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Case (a), integral $I_{n,+}$",
+      "number": "4.4.2",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The limit in case (b)",
+      "number": "4.5",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-019-45-the-limit-in-case-b"
+    },
+    {
+      "level": 3,
+      "title": "Case (b), integral $I_{n,+}$",
+      "number": "4.5.1",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Case (b), integral $I_{n,-}$",
+      "number": "4.5.2",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Asymptotics of the quantum integral",
+      "number": "5",
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-020-5-asymptotics-of-the-quantum-integral"
+    },
+    {
+      "level": 1,
+      "title": "The QHI of $S^3\\setminus K$ vs. the Kashaev invariant $\\langle K\\rangle_N$",
+      "number": "A",
+      "page": 63,
+      "pageLabel": "63",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 158,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qhi",
+          "heading": false
+        },
+        {
+          "term": "imj-prg",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic invariants",
+          "heading": false
+        },
+        {
+          "term": "fathi",
+          "heading": false
+        },
+        {
+          "term": "quantum hyperbolic",
+          "heading": false
+        }
+      ],
+      "extract": "VOLUME CONJECTURE AND QUANTUM HYPERBOLIC INVARIANTS: THE FIGURE EIGHT KNOT COMPLEMENT ST´EPHANE BASEILHAC1, FATHI BEN ARIBI2 1 IMAG, Univ Montpellier, CNRS, France 2 Sorbonne Universit´e, Universit´e Paris Cit´e, CNRS, IMJ-PRG, F-75005 Paris, France 1 stephane.baseilhac@umontpellier.fr , 2 fathi.ben-aribi@imj-prg.fr Abstract. We compute the real part of the semi-classical limit of the sequence of quantum hyperbolic",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2604.16077v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "2 1.1.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-main-result",
+      "number": "1.1",
+      "title": "Main result",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 5,
+      "labelStart": "1",
+      "labelEnd": "5",
+      "words": 2227,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textit qhi",
+          "heading": false
+        },
+        {
+          "term": "qhi asymptotics",
+          "heading": false
+        },
+        {
+          "term": "reduced qhi",
+          "heading": false
+        },
+        {
+          "term": "ref asyinvteo",
+          "heading": false
+        },
+        {
+          "term": "ref qgvsec",
+          "heading": false
+        },
+        {
+          "term": "ref logw",
+          "heading": false
+        },
+        {
+          "term": "semi-classical limit",
+          "heading": false
+        },
+        {
+          "term": "cite agt",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{QHIintro1} In this paper we compute the real part of the semi-classical limit of the sequence of {\\it quantum hyperbolic invariants} (or \\textit{QHI}) associated to the (oriented) complement $M:=S^3 \\setminus K$ of the figure-eight knot $K:=4_1$. We notably obtain exponential growth of the invariants, with rate equal to the hyperbolic volume ${\\rm Vol}(M)/2\\pi$, or subexponential growth, depending on a choice",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-triangulation-version-of-theorem",
+      "number": "1.2",
+      "title": "Triangulation-version of Theorem",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 438,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ref asyinvteo",
+          "heading": false
+        },
+        {
+          "term": "log vert",
+          "heading": false
+        },
+        {
+          "term": "teight",
+          "heading": false
+        },
+        {
+          "term": "compatibility conditions",
+          "heading": false
+        },
+        {
+          "term": "certain compatibility",
+          "heading": false
+        },
+        {
+          "term": "infty frac",
+          "heading": false
+        },
+        {
+          "term": "rho",
+          "heading": false
+        },
+        {
+          "term": "smallskip",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{QHIintro2} Again denote $M:=S^3 \\setminus 4_1$, the figure-eight knot complement. Let $(T,b)$ be its usual geometric triangulation with two tetrahedra $U$ and $V$, and with a \\textit{branching} $b$ (i.e. an orientation of edges without cycles) as shown in Figure \\ref{Teight}. \\begin{figure}[ht] \\begin{center} \\includegraphics[width=8cm]{Teight.eps} \\caption{\\label{Teight} The face and edge identifications of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-structure-of-the-proof-of-theorem",
+      "number": "1.3",
+      "title": "Structure of the proof of Theorem",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "8",
+      "words": 1243,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vert leqslant",
+          "heading": false
+        },
+        {
+          "term": "vert frac",
+          "heading": false
+        },
+        {
+          "term": "infty textstyle",
+          "heading": false
+        },
+        {
+          "term": "textstyle coth",
+          "heading": false
+        },
+        {
+          "term": "vert sigma",
+          "heading": false
+        },
+        {
+          "term": "vert int",
+          "heading": false
+        },
+        {
+          "term": "right vert",
+          "heading": false
+        },
+        {
+          "term": "left vert",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:sketchproof} Let us denote by $PM(N)$ (for \\textit{positive monomial}) the set of complex-valued functions of $N$ of the form $$\\exp\\left (O_{N\\to \\infty}(1) + \\log(N) O_{N\\to \\infty}(1)\\right ).$$ In other words, a function $f(N)$ is in $PM(N)$ if there exist constants $C, C'>0$ and $\\alpha,\\beta \\in \\R$ such that $$ C N^\\alpha \\leqslant \\vert f(N)\\vert \\leqslant C' N^\\beta$$ for any $N$ large enough.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-2-geometric-setup",
+      "number": "2",
+      "title": "Geometric setup",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 180,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "geometric",
+          "heading": true
+        },
+        {
+          "term": "ideal triangulations",
+          "heading": false
+        },
+        {
+          "term": "branched",
+          "heading": false
+        },
+        {
+          "term": "section ref",
+          "heading": false
+        },
+        {
+          "term": "cusped",
+          "heading": false
+        },
+        {
+          "term": "reduced",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{NOTA} We introduce in Sections \\ref{QGVsec} and \\ref{LOGW} the material required to define the reduced QHI state sums associated to the geometric ideal triangulations of cusped manifolds which support a branching. The case of the figure-eight knot complement is developed in Section \\ref{4_1}. The generalization to arbitrary ({\\it i.e.}, not necessarily branched) geometric ideal triangulations, possibly with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-21-the-quantum-gluing-varieties",
+      "number": "2.1",
+      "title": "The quantum gluing varieties",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 529,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shape parameter",
+          "heading": false
+        },
+        {
+          "term": "permutations parametrizes",
+          "heading": false
+        },
+        {
+          "term": "quantum simplex",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        },
+        {
+          "term": "opposite edges",
+          "heading": false
+        },
+        {
+          "term": "coldef",
+          "heading": false
+        },
+        {
+          "term": "equation label",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{QGVsec} These form the parameter spaces of the QHI state sum formulas. \\subsubsection{Quantum $3$-simplices} (see \\cite{AGT}, Section 3)\\label{sec:q3Delta} A {\\it quantum $3$-simplex} is a tuple $(\\Delta,b,\\bw)$ where: \\begin{itemize} \\item $(\\Delta,b)$ is an oriented tetrahedron with ordered vertices, say $v_0,\\ldots,v_3$. The letter ``$b$'' denotes the system of edge orientations, called {\\it branching},",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-212-gluing-varieties-and-the-holonomy-map",
+      "number": "2.1.2",
+      "title": "Gluing varieties and the holonomy map",
+      "level": 3,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "12",
+      "words": 1389,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rho hyp",
+          "heading": false
+        },
+        {
+          "term": "eqref tetcol",
+          "heading": false
+        },
+        {
+          "term": "point hyp",
+          "heading": false
+        },
+        {
+          "term": "tetrahedron delta",
+          "heading": false
+        },
+        {
+          "term": "eqref edgerel",
+          "heading": false
+        },
+        {
+          "term": "begin defi",
+          "heading": false
+        },
+        {
+          "term": "end defi",
+          "heading": false
+        },
+        {
+          "term": "pseudo-developing map",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:tri_GV} In this section we explain how the structures carried by quantum $3$-simplices can be globalized on ideal triangulations. \\smallskip Let $M$ be a cusped manifold, i.e. an oriented non-compact $3$-manifold admitting a complete hyperbolic metric of finite volume. We denote by $\\bar{M}$ the compact manifold with interior $M$; $\\partial \\bar{M}$ is a union of $p$ tori. Let $T$ be an ideal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-22-weights",
+      "number": "2.2",
+      "title": "Weights",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 117,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "weights",
+          "heading": true
+        },
+        {
+          "term": "edge colors",
+          "heading": false
+        },
+        {
+          "term": "agt",
+          "heading": false
+        },
+        {
+          "term": "formulelkappa",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{LOGW} The structure of the set of systems of edge colors $d$ compatible with a point $w\\in G(T,b)$ follows from Neumann's theory of flattenings \\cite{N,N0}. This set is a disjoint union of affine spaces over $\\mz$-lattices determined by two pairs of cohomology classes on $M$ and $\\partial \\bar M$, that we call bulk weights and log weights. We refer to \\cite[Section 4C]{AGT} for a complete description of these",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-221-log-weights-and-boundary-weights",
+      "number": "2.2.1",
+      "title": "Log weights and boundary weights",
+      "level": 3,
+      "pageStart": 13,
+      "pageEnd": 18,
+      "labelStart": "13",
+      "labelEnd": "18",
+      "words": 3132,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colon hyp",
+          "heading": false
+        },
+        {
+          "term": "rho hyp",
+          "heading": false
+        },
+        {
+          "term": "tilde hyp",
+          "heading": false
+        },
+        {
+          "term": "delta hyp",
+          "heading": false
+        },
+        {
+          "term": "point hyp",
+          "heading": false
+        },
+        {
+          "term": "eqref formulelkappa",
+          "heading": false
+        },
+        {
+          "term": "hol colon",
+          "heading": false
+        },
+        {
+          "term": "partial bar",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:landbweights} As usual denote by $\\bar M$ the compact manifold with interior $M$; so $\\partial \\bar M$ is a disjoint union of $c$ tori. Recall the holonomy map \\eqref{defholmapSept24}. \\smallskip It is well-known that, besides the holonomy $\\rho_w$, a point $w\\in G(T,b)$ determines a group homomorphism \\begin{equation}\\label{dilationdef} \\fonc{\\delta_w}{H_1(\\partial \\bar M;",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-24-the-logarithmic-limit-set",
+      "number": "2.4",
+      "title": "The logarithmic limit set",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 1308,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tilde hyp",
+          "heading": false
+        },
+        {
+          "term": "theta vert",
+          "heading": false
+        },
+        {
+          "term": "colon hyp",
+          "heading": false
+        },
+        {
+          "term": "log vert",
+          "heading": false
+        },
+        {
+          "term": "spaces hyp",
+          "heading": false
+        },
+        {
+          "term": "kappa infty",
+          "heading": false
+        },
+        {
+          "term": "cdot vert",
+          "heading": false
+        },
+        {
+          "term": "infty arg",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{ASYWEIGHTS} Recall the spaces $G_{hyp,N}(T,b)$ and ${}_NX_{hyp}(M)$, where $N\\geq 3$ is odd (see Section \\ref{GhypN}); we saw that when $M=S^3\\setminus 4_1$ these spaces are respectively the solution set of the equations \\eqref{eqGN}, and (up to birational isomorphism) the plane curve whose points are pairs $(\\kappa_\\bw(\\mu_K),\\kappa_\\bw(\\lambda_K))$ as in \\eqref{compbord}. Here we introduce a ``limit'' of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-3-the-qhi",
+      "number": "3",
+      "title": "The QHI",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-011-31-functions-in-the-qhi-state-sums",
+      "number": "3.1",
+      "title": "Functions in the QHI state sums",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 31,
+      "labelStart": "20",
+      "labelEnd": "31",
+      "words": 4793,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textstyle vert",
+          "heading": false
+        },
+        {
+          "term": "vert dfrac",
+          "heading": false
+        },
+        {
+          "term": "textstyle frac",
+          "heading": false
+        },
+        {
+          "term": "textstyle delta",
+          "heading": false
+        },
+        {
+          "term": "vert mathfrak",
+          "heading": false
+        },
+        {
+          "term": "log vert",
+          "heading": false
+        },
+        {
+          "term": "vert leq",
+          "heading": false
+        },
+        {
+          "term": "vert psi",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{FUNCNOT} Consider the rational functions $\\omega_N(.,.|n)$, $n\\in \\mn$, defined on the curve $\\mathcal{F}_N :=\\{(x,y)\\in \\mc^2\\vert \\ x^N+y^N=1\\}$ by \\begin{equation}\\label{functomegadef} \\omega_N(x,y|0)=1\\ ,\\ \\omega_N(x,y|n)=\\prod_{j=1}^n \\frac{y}{1-x\\zeta^{j}}\\ {\\rm if} \\ n\\geq 1. \\end{equation} Since $(1-x)(1-x\\zeta)\\ldots (1-x\\zeta^{N-1}) = 1-x^N=y^N$, we have $$\\omega_N(x,y|N+n) = \\omega_N(x,y|n).$$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-33-the-qhi-of-cusped-manifolds",
+      "number": "3.3",
+      "title": "The QHI of cusped manifolds",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 33,
+      "labelStart": "31",
+      "labelEnd": "33",
+      "words": 1451,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qhi",
+          "heading": true
+        },
+        {
+          "term": "qhi state",
+          "heading": false
+        },
+        {
+          "term": "reduced qhi",
+          "heading": false
+        },
+        {
+          "term": "eqref splithnteo",
+          "heading": false
+        },
+        {
+          "term": "weight kappa",
+          "heading": false
+        },
+        {
+          "term": "mathfrak psi",
+          "heading": false
+        },
+        {
+          "term": "eqref h2class",
+          "heading": false
+        },
+        {
+          "term": "vert beta",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:QHIcusped} The aim of this section is to introduce some general features of the QHI, provide links to the literature (thus explaining notations), and to explain the splitting formula of the QHI into the symmetry defects and the reduced QHI. We refer to \\cite{GT} for the definition of the QHI of cusped manifolds by means of state sums over geometric branched ideal triangulations, and to \\cite{AGT} for the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-35-integral-representation",
+      "number": "3.5",
+      "title": "Integral representation",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 34,
+      "labelStart": "33",
+      "labelEnd": "34",
+      "words": 391,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac hat",
+          "heading": false
+        },
+        {
+          "term": "textstyle",
+          "heading": false
+        },
+        {
+          "term": "coth",
+          "heading": false
+        },
+        {
+          "term": "choicecn",
+          "heading": false
+        },
+        {
+          "term": "simple poles",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        },
+        {
+          "term": "formula eqref",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{INTREPEST} As we are going to consider the functions in \\eqref{form1} when $N\\rightarrow +\\infty$, we re-introduce now the hidden dependence on $N$ in the notations, thus letting $(\\bu_N)_N:=((\\bu_{0,N},\\bu_{1,N},\\bu_{2,N}))_N$ be a sequence of triples of quantum shape parameters on $\\Delta^0$ as in Section \\ref{4_1}. Contrary to the more general situation considered in Section \\ref{ASYWEIGHTS}, here we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-36-some-logarithmic-limits-of-log-parameters",
+      "number": "3.6",
+      "title": "Some logarithmic limits of log-parameters",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 35,
+      "labelStart": "34",
+      "labelEnd": "35",
+      "words": 351,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eqref standardf",
+          "heading": false
+        },
+        {
+          "term": "eqref l0inftymars",
+          "heading": false
+        },
+        {
+          "term": "eqref l1inftymars",
+          "heading": false
+        },
+        {
+          "term": "textstyle lim",
+          "heading": false
+        },
+        {
+          "term": "log-parameters",
+          "heading": true
+        },
+        {
+          "term": "eqref situation",
+          "heading": false
+        },
+        {
+          "term": "ref asyinvteo",
+          "heading": false
+        },
+        {
+          "term": "equations eqref",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{loglimmars25} In this section we focus on the peculiar logarithmic limits of log-parameters \\eqref{deflimlkmars26} selected by the two situations (a)-(b) of Theorem \\ref{asyinvteo}. These log-parameters have the form \\eqref{recapuvarmars25} (at least for $N$ large enough); that is, they have constant shape parameters $u_k\\in \\mc_*$ and constant edge colors $a_k\\in\\mz$. In this situation, and assuming",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-4-asymptotics-of-classical-integrals-on-a-vertic",
+      "number": "4",
+      "title": "Asymptotics of classical integrals on a vertical contour",
+      "level": 1,
+      "pageStart": 35,
+      "pageEnd": 35,
+      "labelStart": "35",
+      "labelEnd": "35",
+      "words": 150,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "classical integrals",
+          "heading": true
+        },
+        {
+          "term": "ref lemcritpts",
+          "heading": false
+        },
+        {
+          "term": "spm",
+          "heading": false
+        },
+        {
+          "term": "logarithmic limits",
+          "heading": false
+        },
+        {
+          "term": "ref sec",
+          "heading": false
+        },
+        {
+          "term": "ref rem",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:SPM} The analysis of the integral on the RHS of \\eqref{int1}, with the logarithmic limits $\\bl_{0,\\infty}$, $\\bl_{1,\\infty}$ specified by Lemma \\ref{rem:reduction:sigma:integral}, will be done in Section \\ref{sec:rect:contour}. Here, as a warm-up situation we focus on simpler integrals $I_{\\pm,N}(\\bl_{0,\\infty},\\bl_{1,\\infty})$, that we call ``classical'' integrals, with integrands given by an exponential",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-41-classical-integrals-and-their-critical-sets",
+      "number": "4.1",
+      "title": "Classical integrals and their critical sets",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 37,
+      "labelStart": "35",
+      "labelEnd": "37",
+      "words": 836,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kappa infty",
+          "heading": false
+        },
+        {
+          "term": "infty frac",
+          "heading": false
+        },
+        {
+          "term": "imposes mathfrak",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "end array",
+          "heading": false
+        },
+        {
+          "term": "equation eqref",
+          "heading": false
+        },
+        {
+          "term": "lbrace begin",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:class_int} Recall the contour $C_N$ from \\eqref{choiceCN}. By the assumption \\eqref{situation2}, when $z\\in C_N$ both cases $0< \\mathfrak{I}(\\bl_{0,\\infty}+z) < 2\\pi$ and $-2\\pi < \\mathfrak{I}(\\bl_{0,\\infty}+z) < 0$ may happen. If $0< \\mathfrak{I}(\\bl_{0,\\infty}+z) < 2\\pi$, then $\\hat S_N(\\bl_{0,\\infty}+z)$ is given by the formulas \\eqref{intrepS}-\\eqref{defShat}, and Lemma \\ref{estimatehatS} yields",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-42-the-saddle-point-method",
+      "number": "4.2",
+      "title": "The saddle-point method",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 39,
+      "labelStart": "37",
+      "labelEnd": "39",
+      "words": 954,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "log vert",
+          "heading": false
+        },
+        {
+          "term": "leqslant dfrac",
+          "heading": false
+        },
+        {
+          "term": "dfrac sqrt",
+          "heading": false
+        },
+        {
+          "term": "vert sin",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "log left",
+          "heading": false
+        },
+        {
+          "term": "alpha frac",
+          "heading": false
+        },
+        {
+          "term": "cdot frac",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub:SPM:PV} Let $\\lambda$ denote a piecewise continuously differentiable path contained in an open set $\\Delta \\subset \\mathbb{C}$, and let $z \\mapsto g(z)$ and $z \\mapsto f(z)$ denote two holomorphic functions on $\\Delta$. We consider the asymptotics of the integral \\begin{equation}\\label{intIndec25} I_n := \\int_{\\lambda} g(z) e^{n (-i) f(z)} dz\\quad , \\ n\\to +\\infty. \\end{equation} Let us recall a concise",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-44-the-limit-in-case-a",
+      "number": "4.4",
+      "title": "The limit in case (a)",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 41,
+      "labelStart": "39",
+      "labelEnd": "41",
+      "words": 961,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "node huge",
+          "heading": false
+        },
+        {
+          "term": "color blue",
+          "heading": false
+        },
+        {
+          "term": "vert dfrac",
+          "heading": false
+        },
+        {
+          "term": "node infty",
+          "heading": false
+        },
+        {
+          "term": "vert int",
+          "heading": false
+        },
+        {
+          "term": "dfrac log",
+          "heading": false
+        },
+        {
+          "term": "color red",
+          "heading": false
+        },
+        {
+          "term": "right vert",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub:SPM:a} Recall \\eqref{l0inftymars25}-\\eqref{l1inftymars25} and \\eqref{defL+-modif}-\\eqref{notInjui25}. In case (a) we have $\\bl_{0,\\infty}=-2i\\pi$ and $\\bl_{1,\\infty}=i\\pi$, so \\begin{equation}\\label{defL+-modifcasea} \\left\\lbrace \\begin{array}{ll} f_-(z)= \\mathcal{L}_-(z;-2i\\pi,i\\pi) := {\\rm Li}_2(e^{z})+z^2 - i\\pi z,& \\\\ f_+(z) = \\mathcal{L}_+(z;-2i\\pi,i\\pi) := {\\rm Li}_2(e^{z})+z^2 +i\\pi z.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-45-the-limit-in-case-b",
+      "number": "4.5",
+      "title": "The limit in case (b)",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 47,
+      "labelStart": "41",
+      "labelEnd": "47",
+      "words": 2750,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fill blue",
+          "heading": false
+        },
+        {
+          "term": "fill gray",
+          "heading": false
+        },
+        {
+          "term": "color blue",
+          "heading": false
+        },
+        {
+          "term": "fill red",
+          "heading": false
+        },
+        {
+          "term": "node color",
+          "heading": false
+        },
+        {
+          "term": "color violet",
+          "heading": false
+        },
+        {
+          "term": "color black",
+          "heading": false
+        },
+        {
+          "term": "pi-i eta",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sub:SPM:b} For case (b) we have $\\bl_{0,\\infty}=-2i\\pi$ and $\\bl_{1,\\infty}=2i\\pi$. Hence \\begin{equation}\\label{defL+-modifcaseb} \\left\\lbrace \\begin{array}{ll} f_-(z)= \\mathcal{L}_-(z;-2i\\pi,2i\\pi) := {\\rm Li}_2(e^{z})+z^2 - 2i\\pi z,& \\\\ f_+(z) = \\mathcal{L}_+(z;-2i\\pi,2i\\pi) := {\\rm Li}_2(e^{z})+z^2.& \\end{array}\\right. \\end{equation} We will again use Proposition \\ref{prop:SPM:PV} to prove that $I_{n,-}$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-5-asymptotics-of-the-quantum-integral",
+      "number": "5",
+      "title": "Asymptotics of the quantum integral",
+      "level": 1,
+      "pageStart": 47,
+      "pageEnd": 66,
+      "labelStart": "47",
+      "labelEnd": "66",
+      "words": 10198,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textstyle vert",
+          "heading": false
+        },
+        {
+          "term": "node textstyle",
+          "heading": false
+        },
+        {
+          "term": "textstyle coth",
+          "heading": false
+        },
+        {
+          "term": "color teal",
+          "heading": false
+        },
+        {
+          "term": "textstyle eta",
+          "heading": false
+        },
+        {
+          "term": "textstyle mathfrak",
+          "heading": false
+        },
+        {
+          "term": "textstyle frac",
+          "heading": false
+        },
+        {
+          "term": "infty textstyle",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:rect:contour} Recall that in Section \\ref{sec:SPM} we defined the functions \\begin{itemize} \\item (case (a), function $f_-$) $\\mathcal{L}_-(z;-2i\\pi,i\\pi) = {\\rm Li}_2(e^{z})+z^2 - i\\pi z$, \\item (case (a), function $f_+$) $\\mathcal{L}_+(z;-2i\\pi,i\\pi) = {\\rm Li}_2(e^{z})+z^2 +i\\pi z$, \\item (case (b), function $f_-$) $\\mathcal{L}_-(z;-2i\\pi,2i\\pi) = {\\rm Li}_2(e^{z})+z^2 - 2i\\pi z$, \\item (case (b),",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 2,
+        "items": [
+          "Main result",
+          "Weights"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 1,
+        "items": [
+          "The QHI state sum of M = S3 \\: listed p41, found p33"
+        ]
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "textstyle vert",
+      "heading": false
+    },
+    {
+      "term": "infty textstyle",
+      "heading": false
+    },
+    {
+      "term": "log vert",
+      "heading": false
+    },
+    {
+      "term": "frac vert",
+      "heading": false
+    },
+    {
+      "term": "vert dfrac",
+      "heading": false
+    },
+    {
+      "term": "vert mathfrak",
+      "heading": false
+    },
+    {
+      "term": "vert rho",
+      "heading": false
+    },
+    {
+      "term": "vert int",
+      "heading": false
+    },
+    {
+      "term": "right vert",
+      "heading": false
+    },
+    {
+      "term": "left vert",
+      "heading": false
+    },
+    {
+      "term": "node textstyle",
+      "heading": false
+    },
+    {
+      "term": "textstyle delta",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The face and edge identiﬁcations of a geometric branched ideal triangulation of the ﬁgure eight knot complement",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The domain U and the sets UM,α,k,K,c. (iii) The sequence of functions exp( 1",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The deformed contour C∞= Cs−",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The deformed contour (in dashed blue) through zones where ℑf+ < 0 and the point a (in red) where ℑf+ = 0",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The deformed contour C′ Asymptotics on C′",
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The contour CN and its subcontours C+",
+      "page": 48,
+      "pageLabel": "48",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "The deformed contour of Figure 5 with the shifted cuts Step 3: Deformed contour in case (b), integral IN,+(2iπ)",
+      "page": 56,
+      "pageLabel": "56",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "The deformed contour of Figure 4 with the shifted cuts",
+      "page": 57,
+      "pageLabel": "57",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "The small contour Ca, which avoids the shifted cut L1 Let us compute asymptotics of the integral IN,+(2iπ) on the subcontours C−",
+      "page": 57,
+      "pageLabel": "57",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 35,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 22,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 22 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2604.16077v1"
+  }
+}

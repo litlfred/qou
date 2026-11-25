@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/bib-verification/reference/yekutieli2015.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../assets/navbar/rail-b3q7n3gmz4.js" defer></script><script src="../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../.." data-fa-to-root="../../../../../../../../..">{"data":"rail-b3q7n3gmz4","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/bib-verification/reference/yekutieli2015.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/bib-verification/reference/yekutieli2015.attestations</h1>
+<p class="m">A <a href="../../../../../../">qa-attestations</a> node held by <a href="../../../../../">qou</a>, at <code>test/attestations/bib-verification/reference/yekutieli2015.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>bib-verification</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;reference&quot;,
+  &quot;id&quot;: &quot;yekutieli2015&quot;,
+  &quot;path&quot;: null
+}</pre></dd>
+<dt>verifications</dt><dd><pre>[
+  {
+    &quot;position&quot;: 31,
+    &quot;entry&quot;: {
+      &quot;id&quot;: &quot;yekutieli2015&quot;,
+      &quot;status&quot;: &quot;verified-clean&quot;,
+      &quot;verified_at&quot;: &quot;2026-05-19T15:48:00Z&quot;,
+      &quot;verified_by&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;model&quot;: &quot;claude-opus-4-7&quot;
+      },
+      &quot;fixes_applied&quot;: 11,
+      &quot;fix_commit&quot;: &quot;(this commit)&quot;,
+      &quot;note&quot;: &quot;Yekutieli, \&quot;Nonabelian Multiplicative Integration on Surfaces\&quot;, World Scientific 2015. 11 bare-URL Refs upgraded with title+publisher form. No local PDF (publisher paywalled). Partial. | PDF verified: &#39;Nonabelian Multiplicative Integration on Surfaces&#39; by Amnon Yekutieli, arXiv:1007.1250. Title verbatim matches references.ts.&quot;,
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;uploads/yekutieli2015.pdf&quot;
+      },
+      &quot;local_pdf&quot;: &quot;uploads/yekutieli2015.pdf&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;undetermined&quot;,
+        &quot;rationale&quot;: &quot;BROKEN SOURCE JOIN: the named file does not exist; the real source is library/arxiv-1007.1250v4/1007.1250v4.pdf, already a separate unreviewed ledger row. Identity unconfirmable here. KEY-OVERLOAD DEFECT, the largest citation-hygiene finding in this slice: this single id is cited across the Lean tree with SIX mutually incompatible DOIs (only one of which matches the registered entry; the strings are enumerated in the triage summary). The distinct-DOI sites are brings-surface/local-cohomology-group.lean:17, brings-surface/topological-charge-quantization.lean:15 and :38, quantum-observable-universes/rigid-dualizing-complex.lean:45/52/60, information-theory/mass-energy-equivalence.lean:21 and :58, information-theory/quantum-entropy.lean:39 and :47, mass-theory/knot-factor-frobenius-pairing.lean:32, quantum-observable-universes/substrate-self-duality.lean:71, and mass-theory/tau-all-orders-bridge.lean:7 (bare arXiv id). One id cannot be six different works. MISCITED CLAIM: quantum-observable-universes/rigid-dualizing-complex.lean:51-52 cites this id at &#39;Theorem 4.2&#39; for the full construction of a RIGID DUALIZING COMPLEX. That is not the subject of the work the id names (nonabelian multiplicative integration on surfaces); rigid dualizing complexes are a separate line of work by the same author. quantum-entropy.lean:39/47 likewise attaches a monograph-series DOI unrelated to the registered one. By contrast the nonabelian-Stokes uses are on-topic and read as load-bearing: mass-endomorphism/mass-identity-C-proof.md:4 and :19, mass-endomorphism/topological-mass-holonomy-proof.md:24, lifting-and-descent/descent-physical.md:4, mass-endomorphism/mass-identity-C.md:1.&quot;,
+        &quot;keyResults&quot;: [],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;new-remark&quot;,
+            &quot;rationale&quot;: &quot;The rigid-dualizing-complex citation is the clearest wrong-source case: a Theorem 4.2 about rigid dualizing complexes is attributed to a work on nonabelian multiplicative integration. Record the discrepancy and split the overloaded id before any further block cites it.&quot;,
+            &quot;target&quot;: &quot;folio/quantum-observable-universe/quantum-observable-universes/rigid-dualizing-complex.lean&quot;,
+            &quot;bean&quot;: &quot;qou-30vq&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-08T23:34:05.459Z&quot;
+      }
+    }
+  },
+  {
+    &quot;position&quot;: 209,
+    &quot;verifier&quot;: &quot;unknown&quot;,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/arxiv-1007.1250v4/1007.1250v4.pdf&quot;
+      },
+      &quot;id&quot;: &quot;yekutieli2015&quot;,
+      &quot;status&quot;: &quot;unreviewed&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;core&quot;,
+        &quot;rationale&quot;: &quot;JOIN CONFIRMED against the document&#39;s front matter — and this is the most heavily cited reference in the slice (~90 sites), genuinely core to the mass-identity chain. But it carries THREE defects, two of them claim-level. (1) MISCITED SOURCE — `rigid-dualizing-complex.lean`. Lines 45, 51, 52 and 60 cite this id — three of them naming &#39;Theorem 4.2&#39; — for the EXISTENCE OF A RIGID DUALIZING COMPLEX and Van den Bergh duality. `grep -i dualizing` over the full extracted text of this document returns ZERO hits. The document is differential geometry (Lie crossed modules, kites, nonabelian Stokes); rigid dualizing complexes belong to a different research line by the same author. The theorem being invoked is not in this document. Corroborating signal: those same lines carry an identifier that is NOT the one registered for this key and that resolves to a book by that author, i.e. the site is pointing at a different work which has no `ref()` entry of its own. Note also that `rigid_dualizing_exists` is discharged by an explicitly trivial witness (&#39;all Prop fields = True&#39;), so the citation is doing the rhetorical work of suggesting a real theorem behind a vacuous proof. (2) WRONG LOCATOR — `topological-mass-eigenspace-decomp-proof.md:38` cites &#39;[Proposition 5.3, yekutieli2015]&#39; for &#39;additivity of the nonabelian multiplicative integral over orthogonal direct sums&#39;. The document has no Proposition 5.3; it has Proposition 5.3.3 (three-level numbering), which concerns a Lie quasi crossed module with additive feedback and its connection–curvature pairs — not additivity over orthogonal direct sums. Scope-(a): as read, the document does not supply that statement at that locator. (3) SIX DIFFERENT IDENTIFIERS FOR ONE KEY across the 27 identifier-bearing citation sites: the registered one at 18 sites, and five others at 4, 2, 1, 1 and 1 sites respectively. Nine sites point somewhere other than the registered work. WHAT IS SOLID: the nonabelian-Stokes citations (`nonabelian_stokes_surface_boundary_stokes.lean`, `mass-identity-C.lean`, `topological-charge-quantization.lean`, `NonAbelianStokes.lean`) match the document&#39;s actual main results — the 2-dimensional nonabelian Stokes theorem generalising Schlesinger&#39;s, and the 3-dimensional nonabelian Stokes theorem its abstract calls &#39;a totally new result&#39;.&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;Abstract; 2-d nonabelian Stokes theorem; 3-d nonabelian Stokes theorem&quot;,
+            &quot;statement&quot;: &quot;A twisted 2-dimensional nonabelian multiplicative integral over kites in a pointed manifold, valued in the second Lie group of a Lie crossed module, satisfying a 2-dimensional nonabelian Stokes theorem (generalising Schlesinger&#39;s) and a 3-dimensional nonabelian Stokes theorem.&quot;,
+            &quot;useForFolio&quot;: &quot;The genuine load-bearing content behind the mass-identity / holonomy chain; the citations that name Stokes are correct.&quot;,
+            &quot;targets&quot;: [
+              &quot;def:mass-identity&quot;,
+              &quot;prop:topological-mass-holonomy&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Prop. 5.3.3 (the only 5.3-prefixed result in the document)&quot;,
+            &quot;statement&quot;: &quot;For a Lie quasi crossed module with additive feedback over X, f*(α) and Lie(Θ_G)(α) relate as stated for connection–curvature pairs.&quot;,
+            &quot;useForFolio&quot;: &quot;Establishes that the cited &#39;Proposition 5.3&#39; locator does not exist and that 5.3.3 is not an orthogonal-direct-sum additivity statement.&quot;,
+            &quot;targets&quot;: [
+              &quot;prop:topological-mass-eigenspace-decomp&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;new-remark&quot;,
+            &quot;rationale&quot;: &quot;rigid-dualizing-complex.lean attributes a rigid-dualizing-complex existence theorem to a document that contains no dualizing-complex content. Either identify and register the correct source (the work the site&#39;s own identifier already points at) under its own key, or drop the attribution — the current state pairs a wrong citation with a trivially-witnessed theorem.&quot;,
+            &quot;target&quot;: &quot;def:rigid-dualizing-complex&quot;,
+            &quot;bean&quot;: &quot;qou-8p52&quot;
+          },
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;Correct or remove the &#39;[Proposition 5.3, yekutieli2015]&#39; locator; the document&#39;s numbering is three-level and 5.3.3 says something else.&quot;,
+            &quot;target&quot;: &quot;prop:topological-mass-eigenspace-decomp&quot;,
+            &quot;bean&quot;: &quot;qou-ki4u&quot;
+          },
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;Normalise the nine citation sites carrying one of the five non-registered identifiers, splitting off any that genuinely mean a different work of the same author into their own ref() entries.&quot;,
+            &quot;target&quot;: &quot;folio/schema/references.ts&quot;,
+            &quot;bean&quot;: &quot;qou-dptz&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-08T23:34:05.459Z&quot;,
+        &quot;source_sha&quot;: &quot;541ba4fb3068&quot;
+      }
+    }
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

@@ -1,0 +1,723 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "lattice2021-543",
+  "title": "The neutron-proton mass difference",
+  "variant": "pdf",
+  "pages": 12,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-introduction"
+    },
+    {
+      "level": 1,
+      "title": "QCD+QED at LO",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-qcdqed-at-lo"
+    },
+    {
+      "level": 2,
+      "title": "LIBEs in the hadronic spectrum",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-libes-in-the-hadronic-spectrum"
+    },
+    {
+      "level": 1,
+      "title": "Counterterms and separation between QCD and QED",
+      "number": null,
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-counterterms-and-separation-between-qcd-and-qed"
+    },
+    {
+      "level": 1,
+      "title": "Details of simulation and analysis",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-details-of-simulation-and-analysis"
+    },
+    {
+      "level": 1,
+      "title": "Nucleons spectrum",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-nucleons-spectrum"
+    },
+    {
+      "level": 1,
+      "title": "Summary and outlook",
+      "number": null,
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-summary-and-outlook"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-acknowledgements"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 169,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "roma tre",
+          "heading": false
+        },
+        {
+          "term": "mass diﬀerence",
+          "heading": false
+        },
+        {
+          "term": "fisica",
+          "heading": false
+        },
+        {
+          "term": "rome",
+          "heading": false
+        },
+        {
+          "term": "simone",
+          "heading": false
+        },
+        {
+          "term": "pos",
+          "heading": false
+        }
+      ],
+      "extract": "PoS(LATTICE2021)543 The neutron-proton mass diﬀerence Simone Romiti푎,푏,∗ 푎Dipartimento di Matematica e Fisica, Università degli Studi Roma Tre, Rome, Italy 푏Istituto Nazionale di Fisica Nucleare, Sezione di Roma Tre, Rome, Italy E-mail: simone.romiti@uniroma3.it We present a lattice calculation of the mass diﬀerence between neutron and proton, for which we ﬁnd 푀푛−푀푝= 1.73(69) MeV . This is obtained at 1st order in",
+      "extractCut": true,
+      "blocks": [
+        "library/lattice2021-543/blocks/prose-sec-front-matter",
+        "library/lattice2021-543/blocks/prop-sec-front-matter-01"
+      ]
+    },
+    {
+      "id": "sec-000-qcdqed-at-lo",
+      "number": null,
+      "title": "QCD+QED at LO",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "Simone Romiti",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 994,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qcd qed",
+          "heading": false
+        },
+        {
+          "term": "lattice qcd",
+          "heading": false
+        },
+        {
+          "term": "푀푝in lattice",
+          "heading": false
+        },
+        {
+          "term": "simone romiti",
+          "heading": false
+        },
+        {
+          "term": "δ푚푢푑",
+          "heading": false
+        },
+        {
+          "term": "mass corrections",
+          "heading": false
+        },
+        {
+          "term": "isospin breaking",
+          "heading": false
+        },
+        {
+          "term": "훼em",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction Today many lattice QCD calculations have reached the 푂(1%) precision level [1], requiring to include the Isospin Breaking (IB) Eﬀects. The leading terms of the latter come from the ∼푂(1%) corrections of 푂( ˆ훼EM) (QED) and 푂( ˆ푚푑−ˆ푚푢 ΛQCD ) (strong IB or QCD). These can be taken into account simulating 푢and 푑quarks with diﬀerent masses and including QED in the action [2, 3]. However, a convenient",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-libes-in-the-hadronic-spectrum",
+      "number": null,
+      "title": "LIBEs in the hadronic spectrum",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 551,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "libes",
+          "heading": true
+        },
+        {
+          "term": "푠푒푎",
+          "heading": false
+        },
+        {
+          "term": "isosymm",
+          "heading": false
+        },
+        {
+          "term": "ωexch",
+          "heading": false
+        },
+        {
+          "term": "ωself",
+          "heading": false
+        },
+        {
+          "term": "ωloop",
+          "heading": false
+        },
+        {
+          "term": "vac",
+          "heading": false
+        },
+        {
+          "term": "pol",
+          "heading": false
+        }
+      ],
+      "extract": "The LIBEs in the hadronic spectrum can be drawn from Feynman diagrams. For mesons the explicit expressions are provided in [6]. For baryons the drawing convention is analogous to [4]: ¯ΔM퐶(1) 푁= − + , ... . , (5) ¯ΔC퐶(1) 푁= − + , ... . , (6) ¯Δself퐶(1) 푁= − − + + , ... . , (7) ¯Δexch퐶(1) 푁= − + , ... . , (8) ¯Δloop퐶(1 푓) 푁 = − + , ... . . (9) The dots “...” are a shorthand to denote the other diagrams trivially",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-counterterms-and-separation-between-qcd-and-qed",
+      "number": null,
+      "title": "Counterterms and separation between QCD and QED",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 1075,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qcd qed",
+          "heading": true
+        },
+        {
+          "term": "qed fves",
+          "heading": false
+        },
+        {
+          "term": "emc corrections",
+          "heading": false
+        },
+        {
+          "term": "counterterms",
+          "heading": true
+        },
+        {
+          "term": "fves removed",
+          "heading": false
+        },
+        {
+          "term": "mass counterterms",
+          "heading": false
+        },
+        {
+          "term": "separation",
+          "heading": true
+        },
+        {
+          "term": "universal qed",
+          "heading": false
+        }
+      ],
+      "extract": "Counterterms and separation between QCD and QED In tmQCD the inclusion of QED introduces counterterms to the critical and physical masses. In this work the former are tuned from the inﬁnite volume limit of the PCAC Ward Identity (WI) integrated over the 3 spatial directions. Our values of 푎푚푐푟 0 have been already tuned to get maximal twist in absence of IB [16]. Here we require to preserve maximal twist (and hence",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-details-of-simulation-and-analysis",
+      "number": null,
+      "title": "Details of simulation and analysis",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 459,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "isoqcd physical",
+          "heading": false
+        },
+        {
+          "term": "fves",
+          "heading": false
+        },
+        {
+          "term": "maximal twist",
+          "heading": false
+        },
+        {
+          "term": "correlators",
+          "heading": false
+        },
+        {
+          "term": "physical point",
+          "heading": false
+        },
+        {
+          "term": "plateau",
+          "heading": false
+        },
+        {
+          "term": "simulation",
+          "heading": true
+        },
+        {
+          "term": "ﬁtted",
+          "heading": false
+        }
+      ],
+      "extract": "Details of simulation and analysis Our correlators are evaluated over the 푁푓= 2 + 1 + 1 ETMC gauge conﬁgurations [7] with twisted mass quarks at maximal twist. We adopt a unitary setup in the light sector, and a mixed action approach for the strange and charm quarks which in the valence are regularized as Osterwalder- Seyler fermions [18]. In tab. (1) are reported the ensembles details. The statistical uncertainty",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-nucleons-spectrum",
+      "number": null,
+      "title": "Nucleons spectrum",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 456,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "훼em",
+          "heading": false
+        },
+        {
+          "term": "nucleons",
+          "heading": true
+        },
+        {
+          "term": "extrapolation",
+          "heading": false
+        },
+        {
+          "term": "gev",
+          "heading": false
+        },
+        {
+          "term": "mev",
+          "heading": false
+        },
+        {
+          "term": "free parameters",
+          "heading": false
+        },
+        {
+          "term": "panel",
+          "heading": false
+        },
+        {
+          "term": "qed",
+          "heading": false
+        }
+      ],
+      "extract": "Nucleons spectrum The masses of nucleons are found for each ensemble, summing the isosymmetric part 푀푁to the IB corrections given in eqs. (10) and (11). We ﬁt 푀푛and 푀푝according to the following ansatz inspired by ChPT [25]: 푀푛/푝(퐿, 푟ℓ, 푎) = 퐴푛/푝 \" 1 + 훼EM 푐(푛/푝) 3 퐿3 + 푐(푛/푝) 푎 푎2 + 푐(푛/푝) ℓ 푟ℓ+ 푐(푛/푝) 3/2 푟3/2 ℓ # , (22) where the coeﬃcients 퐴푛/푝, ... are free parameters of the ﬁt. Similarly, The mass diﬀerence",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-summary-and-outlook",
+      "number": null,
+      "title": "Summary and outlook",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 327,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "radiative corrections",
+          "heading": false
+        },
+        {
+          "term": "outlook",
+          "heading": true
+        },
+        {
+          "term": "qcd",
+          "heading": false
+        },
+        {
+          "term": "extrapolation",
+          "heading": false
+        },
+        {
+          "term": "qed",
+          "heading": false
+        },
+        {
+          "term": "summary",
+          "heading": true
+        },
+        {
+          "term": "masses",
+          "heading": false
+        }
+      ],
+      "extract": "Summary and outlook In this work we’ve discussed the inclusion of LIBEs eﬀects in the nucleons spectrum, ﬁnding their masses and the diﬀerence 푀푛−푀푝. The 푂(훼EM) and 푂( ˆ푚푑−ˆ푚푢 ΛQCD ) corrections have been taken into account using the RM123 method. Critical masses were ﬁxed by the PCAC Ward Identity in order to preserve the maximal twist condition at LO. The physical masses are tuned using an hadronic scheme and the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "12",
+      "words": 727,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lattice qcd",
+          "heading": false
+        },
+        {
+          "term": "푀푝in lattice",
+          "heading": false
+        },
+        {
+          "term": "simone romiti",
+          "heading": false
+        },
+        {
+          "term": "mass lattice",
+          "heading": false
+        },
+        {
+          "term": "meson masses",
+          "heading": false
+        },
+        {
+          "term": "qcd qed",
+          "heading": false
+        },
+        {
+          "term": "physical review",
+          "heading": false
+        },
+        {
+          "term": "physical journal",
+          "heading": false
+        }
+      ],
+      "extract": "Acknowledgements The numerical simulations were carried out on the CINECA Tier-0 supercomputer MARCONI. I gratefully acknowledge the CPU time provided by PRACE under the project Pra10-2693 “QED corrections to meson decay rates in Lattice QCD” and by CINECA under the speciﬁc initiative INFN-LQCD123. I am also grateful to V. Lubicz, S. Simula, F. Sanﬁlippo, G. Martinelli and C. Tarantino for their support and fruitful",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "qcd qed",
+      "heading": true
+    },
+    {
+      "term": "simone romiti",
+      "heading": false
+    },
+    {
+      "term": "qed fves",
+      "heading": true
+    },
+    {
+      "term": "푀푝in lattice",
+      "heading": false
+    },
+    {
+      "term": "qed mass",
+      "heading": false
+    },
+    {
+      "term": "isoqcd fves",
+      "heading": false
+    },
+    {
+      "term": "mass counterterms",
+      "heading": false
+    },
+    {
+      "term": "universal qed",
+      "heading": true
+    },
+    {
+      "term": "physical masses",
+      "heading": false
+    },
+    {
+      "term": "mass corrections",
+      "heading": false
+    },
+    {
+      "term": "mass diﬀerence",
+      "heading": false
+    },
+    {
+      "term": "qcd disconnected",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "EMC corrections for the 퐾+ and Ω−obtained from the 1st of the 2 simulated values of 푎푚푠, for the A40.XX ensembles. The blue points are the EMC corrections in lattice units at ﬁnite volume. The green points are the values after the correction of the universal QED FVEs. The green band is a ﬁt of the l",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Parameters of the ensembles used in this work. The space-time volume is reported in the format",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Extrapolation of (푀푛+ 푀푝)/2 (left panel) and 푀푛−푀푝(right panel). Grey points are the values at ﬁnite volume. The colored points and lines correspond to the limit 퐿→∞. The red curves are",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The same as ﬁg. (2) but for (푀푛−푀푝)QCD and (푀푛−푀푝)QED",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 8,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "3 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p10); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/lattice2021-543"
+  }
+}

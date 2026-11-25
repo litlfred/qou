@@ -1,0 +1,85 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2506.10206v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Analytic Dilogarithm Identities",
+  "contains": [
+    "library/arxiv-2506.10206v2/sections/sec-front-matter",
+    "library/arxiv-2506.10206v2/sections/sec-000",
+    "library/arxiv-2506.10206v2/sections/sec-001",
+    "library/arxiv-2506.10206v2/sections/sec-002",
+    "library/arxiv-2506.10206v2/sections/sec-003",
+    "library/arxiv-2506.10206v2/sections/sec-004",
+    "library/arxiv-2506.10206v2/sections/sec-005",
+    "library/arxiv-2506.10206v2/sections/sec-006",
+    "library/arxiv-2506.10206v2/sections/sec-007",
+    "library/arxiv-2506.10206v2/sections/sec-008",
+    "library/arxiv-2506.10206v2/sections/sec-009",
+    "library/arxiv-2506.10206v2/sections/sec-010",
+    "library/arxiv-2506.10206v2/sections/sec-011",
+    "library/arxiv-2506.10206v2/sections/sec-012",
+    "library/arxiv-2506.10206v2/sections/sec-013",
+    "library/arxiv-2506.10206v2/sections/sec-014",
+    "library/arxiv-2506.10206v2/sections/sec-015",
+    "library/arxiv-2506.10206v2/sections/sec-016",
+    "library/arxiv-2506.10206v2/sections/sec-017",
+    "library/arxiv-2506.10206v2/sections/sec-018",
+    "library/arxiv-2506.10206v2/sections/sec-019",
+    "library/arxiv-2506.10206v2/sections/sec-020",
+    "library/arxiv-2506.10206v2/sections/sec-021",
+    "library/arxiv-2506.10206v2/sections/sec-022",
+    "library/arxiv-2506.10206v2/sections/sec-023",
+    "library/arxiv-2506.10206v2/sections/sec-024",
+    "library/arxiv-2506.10206v2/sections/sec-025",
+    "library/arxiv-2506.10206v2/sections/sec-026",
+    "library/arxiv-2506.10206v2/sections/sec-027",
+    "library/arxiv-2506.10206v2/sections/sec-028",
+    "library/arxiv-2506.10206v2/sections/sec-029"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Analytic Dilogarithm Identities — We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured dilogarithm relations\n\n**Analytic Dilogarithm Identities**\n\n*Cetin Hakimoglu-Brown*\n\n40 pp, 31 sections.\n\n**Abstract.** We introduce dilogarithm identities through a beta integral-based technique that we apply to provide analytic proofs of previously conjectured dilogarithm relations, solving open problems given by both Bytsko and Campbell, and that we further apply to construct and prove new ladder relations with quartic and sextic bases. We also apply our method to introduce and prove two-term Li2-relations and ladder-like identities with arguments in algebraic number fields such as Q( √ 2), Q( √ 3), Q( √ 5), and Q(√−7). Moreover, single-term dilogarithm evaluations are introduced and derived.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Preliminaries; 2 Sextic integrals and dilogarithm identities; 3 Applications; 3.1 A full solution to a problem due to Sun; 3.2 On an identity attributed to Lima; 3.3 Zagier's four-term identity; 3.4 Identities related of an evaluation for th; 3.5 A series of convergence rate $\\frac{1}{243; 4 Elliptic ${}_{4}F_{3}$-series; 5 Hypergeometric series for $\\pi^2$; 6 A proof of Campbell's conjecture; 6.1 Related dilogarithm identities; 7 Higher-order fields; 7.1 A two-term ladder identity for the Plastic; 8 Applications of Roger's identity; 9 Derivation of the Loxton--Lewin $\\frac{\\pi}{",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2506.10206&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2506.10206v2",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "2506.10206v2.pdf",
+    "source_sha256": "d0631a9abd9b1da35ba729381b8abcf5811d472139f359e25e2a527f70d99c1b",
+    "pages": 40,
+    "arxiv": {
+      "id": "2506.10206",
+      "version": "2",
+      "primary_class": "math.NT",
+      "stamp_date": "19 Jun 2025"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

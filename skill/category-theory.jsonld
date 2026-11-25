@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/category-theory.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/category-theory",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "category-theory",
+      "title": "Category Theory Formalization",
+      "description": "Category Theory formalization skill — handles diagram chasing, universal properties, functorial translation, and whiskering in Lean 4.  Integrates with Mathlib's typeclass-centric category theory and provides tactic strategies for commutativity proofs.",
+      "instructionsPath": "skills/local/category-theory.md",
+      "instructionLines": 434,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

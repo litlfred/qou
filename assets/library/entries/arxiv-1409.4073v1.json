@@ -1,0 +1,421 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1409.4073v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1409.4073v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "If $G$ is an affine group scheme over a field $k$, classical Tannaka's reconstruction problem consists in reconstructing the group $G$ from $\\mathop{\\mathrm{\\textup{Rep}}}^{G}k$, its category of finite representations: if $F\\colon\\mathop{\\mathrm{\\textup{Rep}}}^{G}k\\arr\\mathop{\\mathrm{\\textup{Vect}}}k$ is the forgetful functor then $G$ is canonically isomorphic to the sheaf of automorphisms of $F$ (opportunely defined, see [@Deligne1982 Proposition 2.8]). More generally one can recover the stack $\\mathop{\\mathrm{\\textup{B}}}G$ of $G$-torsors by looking at fiber functors. Given a ring $A$ denote",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.4073v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1409.4073v1  [math.AG]  14 Sep 2014\nSHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION\nFABIO TONINI\nAbstract. We introduce “sheaﬁﬁcation” functors from categories of (lax monoidal) linear\nfunctors to categories of quasi-coherent sheaves (of algebras) of stacks. They generalize the\nhomogeneous sheaﬁﬁcation of graded modules for projective schemes and have applications\nin the theory of non-abelian Galois covers and of Cox rings and homogeneous sheaﬁﬁcation\nfunctors. Moreover, using this theory, we prove a non-neutral form of Tannaka’s reconstruction,\nextending the classical correspondenc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.4073v1/blocks/prop-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 9,
+      "target": "prop-sec-003-01.md",
+      "narrative": null,
+      "content": "If X admits an fpqc (resp. smooth, étale) atlas then the restriction QCoh X −→ QCoh Xﬂ(resp. QCoh Xsm, QCoh Xet) is an equivalence of categories. If f : X −→X is an fpqc atlas then f ∗: QCoh X −→QCoh X is faithful and it induces an equivalence QCohX −→ QCoh(R ⇒X). SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION We see that if X is pseudo-algebraic then QCoh X is equivalent to an R-linear abelian category, namely QCoh(R ⇒X). Moreover if α: F −→G is a map of quasi-coherent sheaves then Ker(α) is deﬁned by taking Ker(α|Xﬂ) ∈QCoh Xﬂ, which is just given by Ker(α|Xﬂ)(Spec B ξ −→X) = Ker(α(ξ):",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.4073v1/blocks/prop-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 9,
+      "target": "prop-sec-003-02.md",
+      "narrative": null,
+      "content": "Let f : Y −→X be a map of ﬁbered categories. Then fp is a right adjoint of f ∗and, if Y′ Y X ′ X g′ g f f ′ is a 2-cartesian diagram of ﬁbered categories, there is an isomorphism of functors g∗fp −→f ′ pg′∗: Mod OY −→Mod OX ′ If f is aﬃne then fp(QCoh Y) ⊆QCoh X and (fp)| QCoh Y : QCoh Y −→QCoh X is right adjoint to f ∗: QCoh X −→QCoh Y.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.4073v1/blocks/prop-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 9,
+      "target": "prop-sec-003-03.md",
+      "narrative": null,
+      "content": "Let f : Y −→X be a quasi-compact and quasi-separated map of pseudo- algebraic ﬁbered categories. Then the composition QCoh Y fp −→Mod OX −→Mod(OX )|Xﬂ has values in QCoh Xﬂ. The induced map f∗: QCoh Y −→QCohX is a right adjoint of SHEAFIFICATION FUNCTORS AND TANNAKA’S RECONSTRUCTION f ∗: QCoh X −→QCoh Y. If Y′ Y X ′ X g′ g f f ′ is a 2-cartesian diagram of ﬁbered categories with X ′ pseudo-algebraic then Y′ is pseudo-algebraic, f ′ is quasi-compact and quasi-separated and there is a natural transformation of functors g∗f∗−→f ′ ∗g′∗: QCoh X −→QCoh Y′ which is an isomorphism if g is ﬂat.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.4073v1/blocks/prop-sec-003-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 9,
+      "target": "prop-sec-003-05.md",
+      "narrative": null,
+      "content": "Let A be an R-algebra. Then the push-forward map QCoh XA −→QCoh X extends naturally to an equivalence QCoh XA −→QCohA X.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.4073v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Notation",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-notation.md",
+      "narrative": null,
+      "content": "In this paper we work over a base commutative, associative ring $R$ with unity. If not stated otherwise a fiber category will be a category fibered in groupoids over $\\mathop{\\mathrm{\\textup{Aff}}}/R$, the category of affine schemes over $\\mathop{\\mathrm{\\textup{Spec}}}R$, or, equivalently, the opposite of the category of $R$-algebras. A scheme or an algebraic space $X$ over $\\mathop{\\mathrm{\\textup{Spec}}}R$ will be thought of as the fibered category of maps from an affine scheme to $X$, denoted by $\\mathop{\\mathrm{\\textup{Aff}}}/X$. A map or morphism of fibered categories is a functor over $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.4073v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-acknowledgements.md",
+      "narrative": null,
+      "content": "I would like to thank Jarod Alper, David Rydh, Daniel Schäppi, Mattia Talpo and Angelo\nVistoli for the useful conversations I had with them and all the suggestions they gave me.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.4073v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries on sheaves and fibered categories",
+      "pageStart": 5,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-1-preliminaries-on-sheaves-and-fibered-categorie.md",
+      "narrative": null,
+      "content": "Preliminaries on sheaves and fibered categories\nLet π: X −→Aﬀ/R be a ﬁbered category. There is a functor of rings OX : X op −→(Sets)\ndeﬁned by OX (ξ) = H0(Oπ(ξ)), so that (X, OX ) is a ringed category. A presheaf of OX -modules\non X is a functor F : X op −→(Sets) together with an H0(Oπ(ξ))-module structure on F(ξ)\nfor all ξ ∈X such that, if ξ −→η is a map on X, then the map F(η) −→F(ξ) is H0(Oπ(η))-\nlinear. Morphism of presheaves of OX -modules are natural transformations respecting the module\nstructures. We denote by Mod OX the category of presheaves of OX -modules.\nSHEAFIFICATION FUNCTORS AN",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.4073v1/blocks/rem-sec-003-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 9,
+      "target": "rem-sec-003-04.md",
+      "narrative": null,
+      "content": "There are set-theoretic problems in considering global sections of presheaves and therefore push-forwards, because Mod OX is in general not locally small. The common way to solve this problem is to use Grothendieck universes. Take a universe U and deﬁne rings inside U, so that Aﬀ/R is small (with respect to a bigger universe). Fibered categories should then be required to be small too. In this situation it is easy to show that Mod OX is locally small and therefore global sections and push-forwards are well deﬁned. With this approach we have to be careful in considering (big) rings deﬁned start",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.4073v1/blocks/rem-sec-003-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 9,
+      "target": "rem-sec-003-06.md",
+      "narrative": null,
+      "content": "If F, G ∈QCohA X then F ⊗OX G does not correspond to the tensor product in QCoh XA: F ⊗OX G has two distinct A-module structures. Under the equivalence QCoh XA −→ QCohA X the tensor product of F and G, that we will denote by F ⊗OXA G, is given by U 7−→F(U) ⊗H0(OU ) G(U)/⟨ax ⊗y −x ⊗ay | x ∈F(U), y ∈G(U)⟩ Deﬁnition 1.12. A locally free sheaf E (of rank n) over X is a quasi-coherent sheaf such that E(Spec B −→X) is a ﬁnitely generated projective B-module (of rank n) for all maps Spec B −→X. We denote by Loc X the subcategory of QCoh X of locally free sheaves.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.4073v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sheafification functors.",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-004-2-sheafification-functors.md",
+      "narrative": null,
+      "content": "In this section we define and describe particular functors that generalize sheafification functors for affine schemes or projective schemes. The idea is to interpret the category of modules or graded modules respectively as a category of $R$-linear functors. More precisely:\n\n::: defn\nGiven a fibered category $\\stX$ over a ring $R$, an $R$-algebra $A$ and a subcategory $\\shD$ of $\\mathop{\\mathrm{\\textup{QCoh}}}\\stX$ we define $\\L_{R}(\\shD,A)$ as the category of contravariant $R$-linear functors $\\Gamma\\colon\\shD\\arr\\mathop{\\mathrm{\\textup{Mod}}}A$ and natural transformations as arrows. We defin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.4073v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sheafifying R-linear functors.",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "../sections/sec-005-21-sheafifying-r-linear-functors.md",
+      "narrative": null,
+      "content": "In this section we want to explicitly describe sheafification functors for small subcategories of $\\mathop{\\mathrm{\\textup{QCoh}}}\\stX$. In particular we fix a *small* (and non empty) subcategory $\\shC$ of $\\mathop{\\mathrm{\\textup{QCoh}}}\\stX$.\n\nIn the construction of the sheafification functors we will make use of the coend construction in the settings of categories enriched over categories of modules over a ring. The general theory simplifies considerably in this context and we will also apply such construction only in particular cases. In the following remark we collect all the properties w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.4073v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sheafifying R-linear monoidal functors.",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-006-22-sheafifying-r-linear-monoidal-functors.md",
+      "narrative": null,
+      "content": "In this section we show how \"ring structures\" on a quasi-coherent sheaf over $\\stX$ correspond to \"monoidal\" structures on the corresponding Yoneda functor.\n\nWe start setting up some definitions:\n\n::: defn\n[]{#def: pseudo monoidal commutativi associative label=\"def: pseudo monoidal commutativi associative\"} Let $\\catC$ and $\\catD$ be $R$-linear symmetric monoidal categories. A (contravariant) *pseudo-monoidal* functor $\\Omega\\colon\\catC\\arr\\catD$ is an $R$-linear (and contravariant) functor together with a natural transformation $$\\iota_{V,W}^{\\Omega}\\colon\\Omega_{V}\\otimes\\Omega_{W}\\arr\\Omega",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.4073v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Yoneda embeddings.",
+      "pageStart": 16,
+      "pageEnd": 26,
+      "target": "../sections/sec-007-3-yoneda-embeddings.md",
+      "narrative": null,
+      "content": "In this section we address the problem of when the Yoneda functor $\\mathop{\\mathrm{\\textup{QCoh}}}_{A}\\stX\\arr\\L_{R}(\\shC,A)$ is fully faithful and describe its essential image. This will led us to the notion of generating category and left exactness for functors in $\\L_{R}(\\shC,A)$.\n\nWe fix an $R$-algebra $A$ and a fibered category $\\stX$. We assume that our fibered category $\\stX$ is pseudo-algebraic, that is we assume there exists a representable map $X\\arr\\stX$ from a scheme which is an fpqc covering. We also fix a small subcategory $\\shC$ of $\\mathop{\\mathrm{\\textup{QCoh}}}\\stX$.\n\n::: def",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.4073v1/blocks/prop-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "prop-sec-008-02.md",
+      "narrative": null,
+      "content": "If the regular representation R[G] is a ﬁltered direct limit of modules Bi ∈ ModG R which are ﬁnitely presented as R-modules then {B∨ i }i∈I generates ModG R.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.4073v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Group schemes and representations.",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-008-4-group-schemes-and-representations.md",
+      "narrative": null,
+      "content": "Group schemes and representations.\nLet G be a ﬂat and aﬃne group scheme over R. In this section we want to interpret the\nresults obtained in the case X = BR G, the stack of G-torsors for the fpqc topology, which is a\nquasi-compact fpqc stack with aﬃne diagonal.\nIf A is an R-algebra, by standard theory we have that QCohA BR G is the category ModG A\nof G-comodules over A. Recall that the regular representation R[G] of G is by deﬁnition the G-\ncomodule p∗OG. By deﬁnition it comes equipped with a morphism of R-algebras ε: R[G] −→R\ninduced by the unit section of G.\nRemark 4.1. If M ∈ModG A then the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.4073v1/blocks/rem-sec-008-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "rem-sec-008-01.md",
+      "narrative": null,
+      "content": "If M ∈ModG A then the composition (M ⊗R R[G])G −→M ⊗R R[G] idM⊗ε −−−−→M is an isomorphism. This follows from [Jan87, 3.4] applied to G = H. We start with a criterion to ﬁnd a set of generators for QCoh BR G.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.4073v1/blocks/rem-sec-008-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "rem-sec-008-03.md",
+      "narrative": null,
+      "content": "The class GR of ﬂat, aﬃne group schemes G over R such that R[G] is a direct limit of modules in Loc(BR G) is stable by arbitrary products and projective limits. Moreover by construction contains all groups which are ﬂat, ﬁnite and ﬁnitely presented over R, i.e. R[G] ∈ Loc(BR G), and thus all proﬁnite groups. Since any G-comodule is the union of the sub G- comodules which are ﬁnitely generated R-modules (see [Jan87, 2.13]), we see that GR contains all ﬂat groups deﬁned over a Dedekind domain or a ﬁeld, such as GLr, SLr and all diagonalizable groups. Proposition 4.2 tells us that if G ∈GR then B",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.4073v1/blocks/rem-sec-008-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "rem-sec-008-04.md",
+      "narrative": null,
+      "content": "If G is linearly reductive then any short exact sequence in LocG R splits. Indeed if M −→N is surjective then HomG R(N, M) −→HomG R(N, N) is surjective, yielding a G-equivariant section N −→M.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.4073v1/blocks/thm-sec-008-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "thm-sec-008-05.md",
+      "narrative": null,
+      "content": "If BR G has the resolution property then the functors ModG A −→QAddG A, QRingsG A −→QPMonG A, QAlgG A −→QMonG A which maps M to the functor (−⊗R M)G : LocG R −→Mod A are well deﬁned, fully faithful and have essential image the subcategory of functors which are left exact on short exact sequences in LocG R. In particular they are equivalences if G is a linearly reductive group.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1409.4073v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tannaka reconstruction for stacks with the resolution property.",
+      "pageStart": 27,
+      "pageEnd": 35,
+      "target": "../sections/sec-009-5-tannaka-reconstruction-for-stacks-with-the-res.md",
+      "narrative": null,
+      "content": "::: defn\nA (contravariant) monoidal functor $\\Omega\\colon\\catC\\arr\\catD$ between symmetric monoidal categories is called *strong* if the maps $$\\Omega_{V}\\otimes\\Omega_{W}\\arr\\Omega_{V\\otimes W}$$ are isomorphisms for all $V,W\\in\\catC$ and the map $J\\arr F_{I}$ is an isomorphism, where $I$ and $J$ are the unities of $\\catC$ and $\\catD$ respectively.\n:::\n\nIn this section we want to understand what sheaves of algebras correspond to strong monoidal functors in the equivalence of [\\[thm:fundamental for sheaf of algebras and monoidal functors\\]](#thm:fundamental for sheaf of algebras and monoidal f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1409.4073v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 35,
+      "pageEnd": 35,
+      "target": "../sections/sec-010-references.md",
+      "narrative": null,
+      "content": "[BC12]\nMartin Brandenburg and Alexandru Chirvasitu, Tensor functors between categories of quasi-coherent\nsheaves, arxiv:1202.5147 (2012), 21.\n[Bha14]\nBhargav Bhatt, Algebraization and Tannaka duality, arxiv:1404.7483 (2014), 35.\n[Bra14]\nMartin Brandenburg, Tensor categorical foundations of algebraic geometry, Ph.D. thesis, 2014, p. 251.\n[Bro13]\nMichael Broshi, G-torsors over a Dedekind scheme, Journal of Pure and Applied Algebra 217 (2013),\nno. 1, 11–19.\n[CLS11]\nDavid A. Cox, John B. Little, and Henry K. Schenck, Toric Varieties, American Mathematical Society,\n2011.\n[DM82]\nPierre Deligne and J",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

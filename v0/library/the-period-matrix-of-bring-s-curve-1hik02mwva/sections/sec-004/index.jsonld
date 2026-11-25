@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/the-period-matrix-of-bring-s-curve-1hik02mwva/sections/sec-004",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Thus if dw is the differential in H projects to a differential on the elliptic curve with modulus µ, its periods are",
+  "pageStart": 7,
+  "pageEnd": 7,
+  "contains": [
+    "library/the-period-matrix-of-bring-s-curve-1hik02mwva/blocks/prose-sec-004"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/the-period-matrix-of-bring-s-curve-1hik02mwva/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/the-period-matrix-of-bring-s-curve-1hik02mwva/manifest.jsonld",
+  "provenance": "ingested"
+}

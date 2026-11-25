@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/markdown-render-check.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/markdown-render-check",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "markdown-render-check",
+      "title": "Markdown Render Check",
+      "instructionsPath": "skills/local/markdown-render-check.md",
+      "instructionLines": 212,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

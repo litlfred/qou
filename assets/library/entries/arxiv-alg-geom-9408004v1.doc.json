@@ -1,0 +1,1571 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-alg-geom-9408004v1",
+  "title": "Cubics, Integrable Systems, and Calabi-Yau Threefolds",
+  "variant": "pdf",
+  "pages": 28,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "REFERENCES",
+      "number": null,
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-026-references"
+    },
+    {
+      "level": 2,
+      "title": "Tian: Smoothness of the universal deformation space of compact Calabi-Yau manifolds and its Petersson-Weil metric, in Math-",
+      "number": "G",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-027-g-tian-smoothness-of-the-universal-deformation-s"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-front-matter-page-1",
+      "number": null,
+      "title": "Front matter (page 1)",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 325,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calabi-yau threefolds",
+          "heading": false
+        },
+        {
+          "term": "cubics",
+          "heading": false
+        },
+        {
+          "term": "abelian varieties",
+          "heading": false
+        },
+        {
+          "term": "michigan",
+          "heading": false
+        },
+        {
+          "term": "period map",
+          "heading": false
+        },
+        {
+          "term": "integrable",
+          "heading": false
+        },
+        {
+          "term": "yukawa",
+          "heading": false
+        },
+        {
+          "term": "total space",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:alg-geom/9408004v1 9 Aug 1994 CUBICS, INTEGRABLE SYSTEMS, AND CALABI-YAU THREEFOLDS Ron Donagi1 University of Pennsylvania and Eyal Markman2 University of Michigan To Professor Hirzebruch, on his 65th birthday §0. Introduction In this work we construct an analytically completely integrable Hamil- tonian system which is canonically associated to any family of Calabi-Yau threefolds. The base of this system is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-front-matter-page-2",
+      "number": null,
+      "title": "Front matter (page 2)",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 464,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lagrangian ﬁbration",
+          "heading": false
+        },
+        {
+          "term": "lagrangian structure",
+          "heading": false
+        },
+        {
+          "term": "integrable system",
+          "heading": false
+        },
+        {
+          "term": "ﬁbers",
+          "heading": false
+        },
+        {
+          "term": "z-linear",
+          "heading": false
+        },
+        {
+          "term": "tori",
+          "heading": false
+        },
+        {
+          "term": "mirror",
+          "heading": false
+        },
+        {
+          "term": "trans",
+          "heading": false
+        }
+      ],
+      "extract": "The last section is entirely speculative. We muse on the role which the CY integrable system might play in the mirror conjecture: we would like to separate the conjecture into a formal part, which deals with a ‘mirror trans- form’ for objects consisting of an integrable system together with certain La- grangian multisections and other lists of data, and a geometric, Torelli-like part, saying that a CY family can be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-front-matter-page-3",
+      "number": null,
+      "title": "Front matter (page 3)",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 436,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "abelian varieties",
+          "heading": false
+        },
+        {
+          "term": "hamiltonian vector",
+          "heading": false
+        },
+        {
+          "term": "hamiltonian system",
+          "heading": false
+        },
+        {
+          "term": "tangent space",
+          "heading": false
+        },
+        {
+          "term": "acihs",
+          "heading": false
+        },
+        {
+          "term": "sym2v",
+          "heading": false
+        },
+        {
+          "term": "classifying map",
+          "heading": false
+        },
+        {
+          "term": "ﬁbers",
+          "heading": false
+        }
+      ],
+      "extract": "Hamiltonian vector ﬁelds which are tangent to the Xu and integrate to give the angle variables (ϕ1, · · · , ϕn) : Xu ∼→Rn/(2πZ)n. The latter give the aﬃne structure on the ﬁbers. A completely integrable Hamiltonian system (CIHS) on the 2n-dimensional symplectic manifold (X , σ) is an ODE (given, say, by a vector ﬁeld v) which possesses n independent integrals u1, · · ·, un in involution (i.e. they Poisson-commute).",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-front-matter-page-4",
+      "number": null,
+      "title": "Front matter (page 4)",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 286,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "λ2tx",
+          "heading": false
+        },
+        {
+          "term": "λ2v",
+          "heading": false
+        },
+        {
+          "term": "sym2v",
+          "heading": false
+        },
+        {
+          "term": "sym3v",
+          "heading": false
+        },
+        {
+          "term": "cubic",
+          "heading": false
+        }
+      ],
+      "extract": "plectic form σ induces an isomorphism (3) i = σ−1 : V∗ ∼→TU. We reﬁne our question by considering pairs consisting of the family π : X → U together with the isomorphism i, and asking for the existence of σ which is compatible with both. Our ﬁrst answer is: Theorem 1. (Inﬁnitesimal cubic condition) Consider a family π : X →U of polarized abelian varieties with classifying map q : U →Ag and vertical bundle V, together",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-front-matter-page-5",
+      "number": null,
+      "title": "Front matter (page 5)",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 431,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "classifying map",
+          "heading": false
+        },
+        {
+          "term": "sym3v",
+          "heading": false
+        },
+        {
+          "term": "sym2v",
+          "heading": false
+        },
+        {
+          "term": "abelian varieties",
+          "heading": false
+        },
+        {
+          "term": "polarization",
+          "heading": false
+        },
+        {
+          "term": "local solutions",
+          "heading": false
+        },
+        {
+          "term": "ﬁber",
+          "heading": false
+        },
+        {
+          "term": "pullback",
+          "heading": false
+        }
+      ],
+      "extract": "comes from the diﬀerential of the classifying map q, and β is part of the (exact) Koszul complex 0 →Sym3V α→V ⊗Sym2V β→Λ2V ⊗V →· · · . We conclude that the desired 2-vector σ−1 exists locally if and only if dq ◦i = (1 ⊗dq)(i) ∈V ⊗Sym2V comes, via α, from a section of Sym3V. The global existence of σ will follow by patching local solutions, once we know uniqueness. For this, let σ1, σ2 be two local solutions. Then σ1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-front-matter-page-6",
+      "number": null,
+      "title": "Front matter (page 6)",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 404,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aﬃne structure",
+          "heading": false
+        },
+        {
+          "term": "sym2v",
+          "heading": false
+        },
+        {
+          "term": "lagrangian bases",
+          "heading": false
+        },
+        {
+          "term": "lagrangian basis",
+          "heading": false
+        },
+        {
+          "term": "period map",
+          "heading": false
+        },
+        {
+          "term": "abelian varieties",
+          "heading": false
+        },
+        {
+          "term": "vertical bundle",
+          "heading": false
+        },
+        {
+          "term": "marked",
+          "heading": false
+        }
+      ],
+      "extract": "Xu gives a symplectic structure on H1(Xu, Z), so the natural thing to do is to choose a Lagrangian basis γ1(u), · · ·, γg(u), i.e. a basis of a continuously varying Lagrangian subspace. On the other hand, the choice of a marking of the family π, i.e. a lifting of q to a period map p : U →Hg, is equivalent to the choice of a dual pair γ1, · · · , γg and γg+1, · · · , γ2g of Lagrangian bases. Combining this with (1),",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-front-matter-page-7",
+      "number": null,
+      "title": "Front matter (page 7)",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 384,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mixed partials",
+          "heading": false
+        },
+        {
+          "term": "aﬃne structure",
+          "heading": false
+        },
+        {
+          "term": "symplectic structure",
+          "heading": false
+        },
+        {
+          "term": "grangian",
+          "heading": false
+        },
+        {
+          "term": "trivialization",
+          "heading": false
+        },
+        {
+          "term": "lagrangian",
+          "heading": false
+        },
+        {
+          "term": "isomorphism",
+          "heading": false
+        }
+      ],
+      "extract": "Proof. Note that the trivialization (4) takes α to the isomorphism i of (3), and dp goes to dq of (2). The “only if” therefore follows from Theorem 1. Conversely, we start with the standard symplectic structure on the cotan- gent bundle T ∗U. Via the aﬃne structure α and the trivialization (4), we get a symplectic structure σ on the vertical bundle V. The projection to U is Lagrangian with respect to σ as is the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-front-matter-page-8",
+      "number": null,
+      "title": "Front matter (page 8)",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 463,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cubic condition",
+          "heading": false
+        },
+        {
+          "term": "complex tori",
+          "heading": false
+        },
+        {
+          "term": "sym2v",
+          "heading": false
+        },
+        {
+          "term": "symmetry condition",
+          "heading": false
+        },
+        {
+          "term": "poisson structure",
+          "heading": false
+        },
+        {
+          "term": "abelian varieties",
+          "heading": false
+        },
+        {
+          "term": "ﬂows",
+          "heading": false
+        },
+        {
+          "term": "quadrics",
+          "heading": false
+        }
+      ],
+      "extract": "(3) Much of the above extends to Lagrangian structures on families of complex tori. The new feature is that p lands in V ⊗V , instead of Sym2V , so we can write p = p+ + p−, with p+ symmetric, p−skew symmetric. The result is that in order to have a Lagrangian structure, p−must be locally constant on U, while p+ satisﬁes a cubic condition as above. In particular, everything goes through with no changes for families",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-front-matter-page-9",
+      "number": null,
+      "title": "Front matter (page 9)",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 341,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lagrangian structure",
+          "heading": false
+        },
+        {
+          "term": "calabi-yau",
+          "heading": false
+        },
+        {
+          "term": "hodge",
+          "heading": false
+        },
+        {
+          "term": "sheaf",
+          "heading": false
+        },
+        {
+          "term": "symplectic",
+          "heading": false
+        },
+        {
+          "term": "system",
+          "heading": false
+        },
+        {
+          "term": "holomorphic",
+          "heading": false
+        },
+        {
+          "term": "cubic",
+          "heading": false
+        }
+      ],
+      "extract": "of a g-dimensional family of two-forms on the family for which the ﬁbration is Lagrangian, locally near each point of the base U. (Only one of these, up to homothety, extends to a Lagrangian structure on the entire family.) Jacobi’s system has been extended to higher rank by Adams, Harnad and Hurtubise [AHH] and by Beauville [B]. This system as well as Hitchin’s [H] are special cases of the spectral system",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-front-matter-page-10",
+      "number": null,
+      "title": "Front matter (page 10)",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 334,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "holo morphic",
+          "heading": false
+        },
+        {
+          "term": "intermediate jacobian",
+          "heading": false
+        },
+        {
+          "term": "identiﬁed",
+          "heading": false
+        },
+        {
+          "term": "holomorphic",
+          "heading": false
+        },
+        {
+          "term": "isomorphism",
+          "heading": false
+        },
+        {
+          "term": "map",
+          "heading": false
+        }
+      ],
+      "extract": "transversality) and an element w ∈Hp,q moves in the direction of Bp(v, w). The Hp,q can be described as spaces of harmonic (p, q)-forms on X (thus giving the inclusion Hp,q֒ →H3(X, C)), or as the sheaf cohomology groups Hq(X, Ωp X). In the case of a CY threefold X, we have: (i) H3,0 = H0(ωX) is the one-dimensional complex vector space of holo- morphic gauges. (ii) H2,1 = H1(Ω2) is isomorphic to H1(TX). More",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-front-matter-page-11",
+      "number": null,
+      "title": "Front matter (page 11)",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 416,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bundle",
+          "heading": false
+        },
+        {
+          "term": "subspace",
+          "heading": false
+        },
+        {
+          "term": "parameter",
+          "heading": false
+        },
+        {
+          "term": "underlying",
+          "heading": false
+        },
+        {
+          "term": "map",
+          "heading": false
+        },
+        {
+          "term": "ﬁxed",
+          "heading": false
+        },
+        {
+          "term": "quotient",
+          "heading": false
+        }
+      ],
+      "extract": "that M is smooth with tangent space H1(TXt) at t. Typically such families might consist of all CYs in some open subset of M, together with some “level” structure. We fatten the family by adding the holomorphic gauge: let ρ : f M →M be the C∗-bundle over M underlying the line bundle χ∗ωX/M, so a point of f M is given by a pair (X, s) with X ∈M and s ∈H0(ωX)\\(0). There is a pullback family eχ : f X → f M, where f X :=",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-front-matter-page-12",
+      "number": null,
+      "title": "Front matter (page 12)",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 433,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "period map",
+          "heading": false
+        },
+        {
+          "term": "sym3t",
+          "heading": false
+        },
+        {
+          "term": "symplectic form",
+          "heading": false
+        },
+        {
+          "term": "standard symplectic",
+          "heading": false
+        },
+        {
+          "term": "aﬃne structure",
+          "heading": false
+        },
+        {
+          "term": "cubic",
+          "heading": false
+        },
+        {
+          "term": "hodge",
+          "heading": false
+        },
+        {
+          "term": "step",
+          "heading": false
+        }
+      ],
+      "extract": "Griﬃths’ transversality now says that the derivative, a, is in F 2H3. It clearly depends only on ﬁrst-order data, i.e. on the tangent vector to f M along (Xt, st) at t = 0. This produces the map T(X,s) f M →F 2H3(X, C) with the desired properties. Step II. We want a non-degenerate 2-form σ on f J making π Lagrangian. By Theorem 1, this is equivalent to ﬁnding a cubic ˜c on T f M satisfying ⌋˜c = d˜p ◦i, where ˜p is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-front-matter-page-13",
+      "number": null,
+      "title": "Front matter (page 13)",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 323,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lagrangian structure",
+          "heading": false
+        },
+        {
+          "term": "symplectic form",
+          "heading": false
+        },
+        {
+          "term": "hamiltonians",
+          "heading": false
+        },
+        {
+          "term": "pidqi",
+          "heading": false
+        },
+        {
+          "term": "descended",
+          "heading": false
+        }
+      ],
+      "extract": "that the 1-form ξ on f M which corresponds to the section R γ of T ∗f M is closed. Consider the function g : f M →C given by g(X, s) := Z γ s. We claim ξ = dg. Indeed, if a ∈T(X,s) f M is the tangent vector to the 1-parameter family (Xt, st) then we have, as in Step I: st = s0 + ta (mod t2). and therefore < dg, a > = (∂/∂t)|t=0 g(Xt, st) = (∂/∂t)|t=0 R γ st = R γ a =< ξ, a > . Q.E.D Remark. In order to obtain the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-front-matter-page-14",
+      "number": null,
+      "title": "Front matter (page 14)",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "14",
+      "labelEnd": "14",
+      "words": 482,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "contact structure",
+          "heading": false
+        },
+        {
+          "term": "symplectic structure",
+          "heading": false
+        },
+        {
+          "term": "symplectiﬁcation",
+          "heading": false
+        },
+        {
+          "term": "symplectic form",
+          "heading": false
+        },
+        {
+          "term": "descends",
+          "heading": false
+        },
+        {
+          "term": "ﬁbers",
+          "heading": false
+        },
+        {
+          "term": "homogeneous",
+          "heading": false
+        }
+      ],
+      "extract": "A ﬁrst guess for an antidiﬀerential τ of σ might be simply ˜τ (pulled back by i, but we suppress this), but ˜τ is not invariant under translations: if the cycle γ corresponds, as in Step III of the proof of Theorem 3, to a 1-form ξ on f M, then translating by γ changes ˜τ by addition of π∗ξ, where π : V →f M is the projection. To correct this discrepancy, we consider the tautological function f ∈Γ(OV) whose value at",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-front-matter-page-15",
+      "number": null,
+      "title": "Front matter (page 15)",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 323,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "relative cycle",
+          "heading": false
+        },
+        {
+          "term": "tautological relative",
+          "heading": false
+        },
+        {
+          "term": "homologous",
+          "heading": false
+        },
+        {
+          "term": "relative form",
+          "heading": false
+        },
+        {
+          "term": "r3χ",
+          "heading": false
+        }
+      ],
+      "extract": "(2) The tautological relative 3-form s on f X over f M induces a relative 1-form on f J over f M. We note that our 1-form τ on f J is a lift of this tautological relative 1-form. Lemma 3. The Hamiltonians ˜ti = R γi s (cf. remark after Theorem 3) are equal (up to sign) to the action variables for f J , given by (1). Proof. The 3-cycle γi in X determines a 1-cycle, say Γi, in J(X). The action variables (1) are given",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-front-matter-page-16",
+      "number": null,
+      "title": "Front matter (page 16)",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 454,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "null-homologous cycles",
+          "heading": false
+        },
+        {
+          "term": "normal func",
+          "heading": false
+        },
+        {
+          "term": "normal function",
+          "heading": false
+        },
+        {
+          "term": "isotropic",
+          "heading": false
+        },
+        {
+          "term": "multivalued",
+          "heading": false
+        },
+        {
+          "term": "abel-jacobi",
+          "heading": false
+        },
+        {
+          "term": "chains",
+          "heading": false
+        },
+        {
+          "term": "pullback",
+          "heading": false
+        }
+      ],
+      "extract": "where ∇is the Gauss-Manin connection on H3. This condition is inde- pendent of the choice of ν, by Griﬃths transversality. It is automatically satisﬁed by the Abel-Jacobi image of a family of relative 1-cycles, cf. [G2]. More generally, we can consider multivalued 1-cycles and normal func- tions: a map B →M gives a pullback family of CYs over B, and we can consider a family of relative, null-homologous 1-cycles in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-front-matter-page-17",
+      "number": null,
+      "title": "Front matter (page 17)",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 409,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "normal function",
+          "heading": false
+        },
+        {
+          "term": "contact distribution",
+          "heading": false
+        },
+        {
+          "term": "contact structure",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential equation",
+          "heading": false
+        },
+        {
+          "term": "lift",
+          "heading": false
+        },
+        {
+          "term": "vanishing",
+          "heading": false
+        },
+        {
+          "term": "subspace",
+          "heading": false
+        }
+      ],
+      "extract": "hand, the (Poincar´e dual of) Cb is of type (2, 2) with respect to this complex structure, so the second term vanishes identically. As in the proof of Theo- rem 3, we then conclude that dg = ξ, as required. Q.E.D Remarks. The proof shows that Theorem 4 can be strengthened in two directions: (1) Let τ = ˜τ −df be the 1-form on ˜ J constructed in Lemma 2, satisfying dτ = σ. (The function f is given by formula (6).)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-front-matter-page-18",
+      "number": null,
+      "title": "Front matter (page 18)",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 364,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "relative deligne",
+          "heading": false
+        },
+        {
+          "term": "abel-jacobi map",
+          "heading": false
+        },
+        {
+          "term": "deligne group",
+          "heading": false
+        },
+        {
+          "term": "pic",
+          "heading": false
+        },
+        {
+          "term": "isotropic",
+          "heading": false
+        },
+        {
+          "term": "normal functions",
+          "heading": false
+        },
+        {
+          "term": "ﬁber",
+          "heading": false
+        }
+      ],
+      "extract": "B →S (where S comes with a map i : S → f M, and the ﬁber Bs is an abelian subvariety of the torus J(Xi(s))). We conclude: Corollary. The total space of any family of abelian subvarieties of f J is isotropic. The generalized Hodge conjecture says that ν(B) is actually contained in ν(A0( f X / f M)), but this is not known. At ﬁrst sight it also seems plausible that a maximal ν(B), as well as each component of ν(A0( f",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-front-matter-page-19",
+      "number": null,
+      "title": "Front matter (page 19)",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": "19",
+      "labelEnd": "19",
+      "words": 317,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "local sections",
+          "heading": false
+        },
+        {
+          "term": "cycles",
+          "heading": false
+        },
+        {
+          "term": "collection",
+          "heading": false
+        },
+        {
+          "term": "component",
+          "heading": false
+        },
+        {
+          "term": "generic",
+          "heading": false
+        },
+        {
+          "term": "constant",
+          "heading": false
+        },
+        {
+          "term": "connected",
+          "heading": false
+        }
+      ],
+      "extract": "Proof. Each component of D (respectively eD) is locally isomorphic to J (respec- tively f J . In order to extend σ, τ, κ we need a collection of local sections of D (and eD) with the properties: (1) For each t ∈M and each component of D(Xt), there is a local section deﬁned near t and passing through this component. (2) The diﬀerence of any two local sections in the same component is an integral manifold for σ, τ, κ.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-front-matter-page-20",
+      "number": null,
+      "title": "Front matter (page 20)",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 404,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "yukawa cubic",
+          "heading": false
+        },
+        {
+          "term": "ahler cone",
+          "heading": false
+        },
+        {
+          "term": "cubic form",
+          "heading": false
+        },
+        {
+          "term": "qdk",
+          "heading": false
+        },
+        {
+          "term": "a-model",
+          "heading": false
+        },
+        {
+          "term": "b-model",
+          "heading": false
+        },
+        {
+          "term": "partition function",
+          "heading": false
+        },
+        {
+          "term": "isotropic",
+          "heading": false
+        }
+      ],
+      "extract": "natural quasi-symplectic structures, i.e. closed 2-forms which in general will be degenerate. The ﬁbers of the projections of f J or eD to f M are Lagrangian, i.e. maximal isotropic with respect to the 2-form (but of dimension greater than dim f M, because of the degeneracy). All normal functions, or Abel- Jacobi images of families of k-cycles, are isotropic. For the details, see [DM]. §3. Mirrors. To a given family",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-front-matter-page-21",
+      "number": null,
+      "title": "Front matter (page 21)",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 344,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "a-model",
+          "heading": false
+        },
+        {
+          "term": "b-model",
+          "heading": false
+        },
+        {
+          "term": "cft",
+          "heading": false
+        },
+        {
+          "term": "mirror",
+          "heading": false
+        },
+        {
+          "term": "partition functions",
+          "heading": false
+        },
+        {
+          "term": "predictions",
+          "heading": false
+        },
+        {
+          "term": "conjecture",
+          "heading": false
+        },
+        {
+          "term": "families",
+          "heading": false
+        }
+      ],
+      "extract": "and s is normalized by the condition Z γ0 s0 = 1. Physicists believe [Gep] that either the A-model or B-model construc- tions set up bijections between CFTs and CY families. This, together with the existence of an internal symmetry of CFT which interchanges A and B variables, led [Di,LVW] to the mirror conjecture, which says that each CY family X →M, perhaps with some extra data, determines another family X ′ →M′",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-front-matter-page-22",
+      "number": null,
+      "title": "Front matter (page 22)",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 388,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mirror symmetry",
+          "heading": false
+        },
+        {
+          "term": "abstract system",
+          "heading": false
+        },
+        {
+          "term": "torelli",
+          "heading": false
+        },
+        {
+          "term": "acihs",
+          "heading": false
+        },
+        {
+          "term": "calabi-yaus",
+          "heading": false
+        },
+        {
+          "term": "failures",
+          "heading": false
+        },
+        {
+          "term": "schottky",
+          "heading": false
+        },
+        {
+          "term": "partition functions",
+          "heading": false
+        }
+      ],
+      "extract": "part (of either base or ﬁbers), respectively. This suggests that the rela- tion between the two ACIHS attached to mirror-symmetric CY families might be expressible directly as some sort of Fourier transform. (ii) The mirror map, t of (11), as constructed in [CdOGP], [Mo], etc., is given by ti = ˜ti/˜t0, i = 1, · · ·, h2,1, where ˜ti are the action coordinates for the ACIHS, for an appropriate choice of Lagrangian",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-front-matter-page-23",
+      "number": null,
+      "title": "Front matter (page 23)",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 475,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "yukawa cubic",
+          "heading": false
+        },
+        {
+          "term": "normal functions",
+          "heading": false
+        },
+        {
+          "term": "b-model",
+          "heading": false
+        },
+        {
+          "term": "above data",
+          "heading": false
+        },
+        {
+          "term": "aﬃne structure",
+          "heading": false
+        },
+        {
+          "term": "symplectic form",
+          "heading": false
+        },
+        {
+          "term": "axioms",
+          "heading": false
+        },
+        {
+          "term": "ﬁbers",
+          "heading": false
+        }
+      ],
+      "extract": "(i) An analytically completely integrable Hamiltonian system eD → f M, which is an extension of another ACIHS f J →f M by a lattice H1,1(Z). (ii) An indeﬁnite (“Lorentzian”) polarization on the torus ﬁbers of f J →f M and a (symmetric, cubic, Z-valued) intersection product on H1,1(Z). (iii) A C∗-action on eD lifting an action of C∗on f M. (iv) A 1-form τ on eD, homogeneous of weight 1 with respect to the C∗- action,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-front-matter-page-24",
+      "number": null,
+      "title": "Front matter (page 24)",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": "24",
+      "labelEnd": "24",
+      "words": 418,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rational curves",
+          "heading": false
+        },
+        {
+          "term": "gλg",
+          "heading": false
+        },
+        {
+          "term": "normal function",
+          "heading": false
+        },
+        {
+          "term": "bcov",
+          "heading": false
+        },
+        {
+          "term": "partition function",
+          "heading": false
+        },
+        {
+          "term": "weight function",
+          "heading": false
+        },
+        {
+          "term": "accounting",
+          "heading": false
+        },
+        {
+          "term": "genera",
+          "heading": false
+        }
+      ],
+      "extract": "(i) Which normal functions in eD arise from eﬀective curves? (ii) Which of these arise from irreducible curves? (iii) Which of these arise from rational curves? We note that a given normal function ν might arise from many diﬀerent curves. The simplest example is that of complete intersection curves: a given family of such curves is parametrized by a (usually positive dimensional) projective space on each CY in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-front-matter-page-25",
+      "number": null,
+      "title": "Front matter (page 25)",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": "25",
+      "labelEnd": "25",
+      "words": 360,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "koszul cohomology",
+          "heading": false
+        },
+        {
+          "term": "normal function",
+          "heading": false
+        },
+        {
+          "term": "lives",
+          "heading": false
+        },
+        {
+          "term": "gauss-manin",
+          "heading": false
+        },
+        {
+          "term": "quadrics",
+          "heading": false
+        },
+        {
+          "term": "cohomology group",
+          "heading": false
+        },
+        {
+          "term": "lift",
+          "heading": false
+        }
+      ],
+      "extract": "such that for each nef class k we have wk = X {ν|ϕ(ν)=k} wν, or Nk,g = X {ν|ϕ(ν)=k} Nν,g, or equivalently: F = X Nν,gqϕ(ν)λg−1. The point is that we want a formula for the wν in terms of ν alone, without knowledge of the actual curves on X whose Abel-Jacobi image is ν. We do not know whether such a formula exists. But if it does, it is likely to involve only the inﬁnitesimal invariant δν, associated to a normal",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-front-matter-page-26",
+      "number": null,
+      "title": "Front matter (page 26)",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "26",
+      "labelEnd": "26",
+      "words": 344,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arnol",
+          "heading": false
+        },
+        {
+          "term": "ﬂows",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "calabi-yau",
+          "heading": false
+        },
+        {
+          "term": "sym",
+          "heading": false
+        },
+        {
+          "term": "hamiltonian",
+          "heading": false
+        },
+        {
+          "term": "math",
+          "heading": false
+        },
+        {
+          "term": "recover",
+          "heading": false
+        }
+      ],
+      "extract": "direction, of the Yukawa cubic c ∈Sym3(H2,1)∗. Summarizing, the Koszul complex in our case can be identiﬁed with the complex (H2,1) Y ukawa → ⊗2(H2,1)∗→ 2∧(H2,1)∗. We conclude that δν is in R2, where Rd is the dth graded piece of the Ja- cobian ring of c : R• := S•/J •, where S• = Sym•(V ∗) and J • ⊂S• is the Jacobian ideal, generated by the partials of c. The problem of recon- structing the curves on X with given",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-references",
+      "number": null,
+      "title": "REFERENCES",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 28,
+      "labelStart": "26",
+      "labelEnd": "28",
+      "words": 526,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "griﬃths inﬁnitesimal",
+          "heading": false
+        },
+        {
+          "term": "inﬁnitesimal invariant",
+          "heading": false
+        },
+        {
+          "term": "compositio math",
+          "heading": false
+        },
+        {
+          "term": "nuclear phys",
+          "heading": false
+        },
+        {
+          "term": "integrable systems",
+          "heading": false
+        },
+        {
+          "term": "markman",
+          "heading": false
+        },
+        {
+          "term": "dynamical systems",
+          "heading": false
+        },
+        {
+          "term": "arnol",
+          "heading": false
+        }
+      ],
+      "extract": "[AG] V.I. Arnol’d and A.B. Givental’: Symplectic Geometry. In: Arnol’d, V.I., Novikov, S.P. (eds.) Dynamical systems IV (EMS, vol. 4), Springer (1988), 1-136. [AHH] M.R. Adams, J. Harnad, J. Hurtubise: Isospectral Hamiltonian ﬂows in ﬁnite and inﬁnite dimensions, II. Integration of ﬂows. Commun. Math. Phys. 134 (1990), 555-585. [B] A. Beauville: Jacobiennes des courbes spectrales et syst`emes hamil- toniens",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-g-tian-smoothness-of-the-universal-deformation-s",
+      "number": "G",
+      "title": "Tian: Smoothness of the universal deformation space of compact Calabi-Yau manifolds and its Petersson-Weil metric, in Math-",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 28,
+      "labelStart": "28",
+      "labelEnd": "28",
+      "words": 49,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calabi-yau",
+          "heading": true
+        },
+        {
+          "term": "math",
+          "heading": true
+        },
+        {
+          "term": "manifolds",
+          "heading": true
+        }
+      ],
+      "extract": "pact Calabi-Yau manifolds and its Petersson-Weil metric, in Math- ematical Aspects of String Theory (S.T. Yau, ed.), World Scientiﬁc, Singapore (1987), 629-646. [To] A. Todorov: The Weil-Petersson geometry of the moduli space of SU(n ≥3) (Calabi-Yau) manifolds, I, Comm. Math. Phys. 126 (1989), 325-346. e-mail addresses: donagi@math.upenn.edu, markman@math.lsa.umich.edu 28",
+      "extractCut": false
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "lagrangian structure",
+      "heading": false
+    },
+    {
+      "term": "symplectic structure",
+      "heading": false
+    },
+    {
+      "term": "yukawa cubic",
+      "heading": false
+    },
+    {
+      "term": "griﬃths inﬁnitesimal",
+      "heading": false
+    },
+    {
+      "term": "cubic form",
+      "heading": false
+    },
+    {
+      "term": "lagrangian ﬁbration",
+      "heading": false
+    },
+    {
+      "term": "hodge structure",
+      "heading": false
+    },
+    {
+      "term": "aﬃne structure",
+      "heading": false
+    },
+    {
+      "term": "cubic condition",
+      "heading": false
+    },
+    {
+      "term": "lagrangian basis",
+      "heading": false
+    },
+    {
+      "term": "abel-jacobi map",
+      "heading": false
+    },
+    {
+      "term": "admits lagrangian",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 2,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 28,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p26); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 28 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-alg-geom-9408004v1"
+  }
+}

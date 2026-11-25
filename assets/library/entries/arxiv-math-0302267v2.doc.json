@@ -1,0 +1,1185 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0302267v2",
+  "title": "Groupes fondamentaux motiviques de Tate mixte",
+  "variant": "pdf",
+  "pages": 84,
+  "tocSource": "inferred",
+  "tocMethod": "contents",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Bibliographie",
+      "number": null,
+      "page": null,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "contents",
+        "body",
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-bibliographie"
+    },
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "0",
+      "page": 4,
+      "pageLabel": "2",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-001-0-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Motifs de Tate mixte sur l’anneau des S-entiers de k",
+      "number": "1",
+      "page": 6,
+      "pageLabel": "4",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-002-1-motifs-de-tate-mixte-sur-lanneau-des-s-entiers"
+    },
+    {
+      "level": 1,
+      "title": "Le point de vue tannakien",
+      "number": "2",
+      "page": 16,
+      "pageLabel": "14",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-003-2-le-point-de-vue-tannakien"
+    },
+    {
+      "level": 1,
+      "title": "Cohomologie et groupe fondamental",
+      "number": "3",
+      "page": 28,
+      "pageLabel": "26",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-004-3-cohomologie-et-groupe-fondamental"
+    },
+    {
+      "level": 1,
+      "title": "Le groupe fondamental unipotent motivique d’une vari´et´e rationnelle",
+      "number": "4",
+      "page": 43,
+      "pageLabel": "41",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-005-4-le-groupe-fondamental-unipotent-motivique-dune"
+    },
+    {
+      "level": 1,
+      "title": "Le groupe fondamental motivique du compl´ement, dans P1, de 0, ∞et µN",
+      "number": "5",
+      "page": 53,
+      "pageLabel": "51",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-006-5-le-groupe-fondamental-motivique-du-complement"
+    },
+    {
+      "level": 1,
+      "title": "Profondeur",
+      "number": "6",
+      "page": 70,
+      "pageLabel": "68",
+      "confidence": 0.95,
+      "evidence": [
+        "contents",
+        "body",
+        "style",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-007-6-profondeur"
+    },
+    {
+      "level": 1,
+      "title": "Appendice. Rappels sur les groupes alg´ebriques unipotents",
+      "number": null,
+      "page": 79,
+      "pageLabel": "77",
+      "confidence": 0.5,
+      "evidence": [
+        "contents"
+      ],
+      "source": "inferred",
+      "section": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 203,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fondamental motivique",
+          "heading": false
+        },
+        {
+          "term": "groupe fondamental",
+          "heading": false
+        },
+        {
+          "term": "tate mixte",
+          "heading": false
+        },
+        {
+          "term": "mixte sur",
+          "heading": false
+        },
+        {
+          "term": "sur anneau",
+          "heading": false
+        },
+        {
+          "term": "anneau des",
+          "heading": false
+        },
+        {
+          "term": "une vari",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0302267v2 [math.NT] 27 Feb 2003 Groupes fondamentaux motiviques de Tate mixte P. Deligne et A. B. Goncharov∗ R´esum´e. Nous d´eﬁnissons la cat´egorie des motifs de Tate mixte sur l’anneau des S-entiers d’un corps de nombres, et le groupe fondamental motivique (rendu unipotent) d’une vari´et´e unira- tionnelle sur un corps de nombres. Nous consid´erons plus en d´etail le groupe fondamental motivique de la",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0302267v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-bibliographie",
+      "number": null,
+      "title": "Bibliographie",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "1",
+      "words": 3,
+      "summary": null,
+      "keywords": [],
+      "extract": "Bibliographie 82 i",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-0-introduction",
+      "number": "0",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 459,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cat egorie",
+          "heading": false
+        },
+        {
+          "term": "mixte sur",
+          "heading": false
+        },
+        {
+          "term": "sur une",
+          "heading": false
+        },
+        {
+          "term": "egorie tannakienne",
+          "heading": false
+        },
+        {
+          "term": "des motifs",
+          "heading": false
+        },
+        {
+          "term": "tate mixte",
+          "heading": false
+        },
+        {
+          "term": "les groupes",
+          "heading": false
+        },
+        {
+          "term": "commutative dans",
+          "heading": false
+        }
+      ],
+      "extract": "Si k est un corps de nombres, on dispose d’une cat´egorie tannakienne MT(k) des motifs de Tate mixte sur k, pour laquelle les groupes d’extensions de Q(0) par Q(n) ont la relation d´esir´ee avec les groupes de K-th´eorie de k. C’est le coeur d’une t-structure sur une sous- cat´egorie de la cat´egorie triangul´ee motivique de Levine (1998) ou Voevodsky (2000). La conjecture d’annulation de Beilinson-Soul´e est vraie",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-1-motifs-de-tate-mixte-sur-lanneau-des-s-entiers",
+      "number": "1",
+      "title": "Motifs de Tate mixte sur l’anneau des S-entiers de k",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 15,
+      "labelStart": "3",
+      "labelEnd": "13",
+      "words": 3212,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "egorie triangul",
+          "heading": false
+        },
+        {
+          "term": "mˆeme sous-quotient",
+          "heading": false
+        },
+        {
+          "term": "cat egorie",
+          "heading": false
+        },
+        {
+          "term": "une cat",
+          "heading": false
+        },
+        {
+          "term": "motifs",
+          "heading": true
+        },
+        {
+          "term": "dans",
+          "heading": false
+        },
+        {
+          "term": "sur",
+          "heading": true
+        },
+        {
+          "term": "des",
+          "heading": true
+        }
+      ],
+      "extract": "1.1. Soit k un corps. Nombre de r´esultats cit´es d´ependant de la r´esolution des singularit´es, nous supposons k de caract´eristique 0. Hanamura (1995), Levine (1998) et Voevodsky (2000) ont chacun d´eﬁni une cat´egorie triangul´ee de motifs sur k, et Levine (1998) VI 2.5.5 construit une ´equivalence entre sa cat´egorie triangul´ee et celle de Voevodsky. Cette derni`ere sera pour nous la plus commode. Nous la",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-2-le-point-de-vue-tannakien",
+      "number": "2",
+      "title": "Le point de vue tannakien",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 28,
+      "labelStart": "13",
+      "labelEnd": "26",
+      "words": 3460,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "est une",
+          "heading": false
+        },
+        {
+          "term": "par grw",
+          "heading": false
+        },
+        {
+          "term": "pour une",
+          "heading": false
+        },
+        {
+          "term": "une ﬁltration",
+          "heading": false
+        },
+        {
+          "term": "foncteur ﬁbre",
+          "heading": false
+        },
+        {
+          "term": "elle est",
+          "heading": false
+        },
+        {
+          "term": "egorie des",
+          "heading": false
+        },
+        {
+          "term": "muni une",
+          "heading": false
+        }
+      ],
+      "extract": "2.1. Soient k un corps de nombres et S un ensemble ﬁni de places ﬁnies de k. Le foncteur ω, d´eduit du foncteur gradu´e ω∗de 1.1 par oubli de la graduation, est un foncteur ﬁbre de la cat´egorie `a produit tensoriel MT(OS) d´eﬁnie en 1.6. Cette cat´egorie est donc tannakienne, et si Gω est le sch´ema en groupe des automorphismes du ⊗-foncteur ω, le foncteur ω induit une ´equivalence de MT(OS) avec la cat´egorie des",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-cohomologie-et-groupe-fondamental",
+      "number": "3",
+      "title": "Cohomologie et groupe fondamental",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 43,
+      "labelStart": "26",
+      "labelEnd": "41",
+      "words": 4662,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "est une",
+          "heading": false
+        },
+        {
+          "term": "par les",
+          "heading": false
+        },
+        {
+          "term": "des chemins",
+          "heading": false
+        },
+        {
+          "term": "est universel",
+          "heading": false
+        },
+        {
+          "term": "syst eme",
+          "heading": false
+        },
+        {
+          "term": "cat egorie",
+          "heading": false
+        },
+        {
+          "term": "les mˆemes",
+          "heading": false
+        },
+        {
+          "term": "parmi les",
+          "heading": false
+        }
+      ],
+      "extract": "3.1. Soit X un espace topologique s´epar´e et connexe. On note bPa l’ensemble des classes d’homotopie de chemins de a `a b, et δγ la composition des chemins cPb × bPa →cPa. Noter l’ordre des facteurs, choisi pour que si V est un syst`eme local sur X et que γv ∈Vb denote le transport de v ∈Va le long de γ ∈bPa, on ait (δγ)v = δ(γv). Nous ferons sur X les hypoth`eses (a) (b) (c) suivantes. (a) La th´eorie classique du",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-4-le-groupe-fondamental-unipotent-motivique-dune",
+      "number": "4",
+      "title": "Le groupe fondamental unipotent motivique d’une vari´et´e rationnelle",
+      "level": 1,
+      "pageStart": 43,
+      "pageEnd": 53,
+      "labelStart": "41",
+      "labelEnd": "51",
+      "words": 3226,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ema est",
+          "heading": false
+        },
+        {
+          "term": "est dans",
+          "heading": false
+        },
+        {
+          "term": "est motivique",
+          "heading": false
+        },
+        {
+          "term": "est une",
+          "heading": false
+        },
+        {
+          "term": "ema ferm",
+          "heading": false
+        },
+        {
+          "term": "sch ema",
+          "heading": false
+        },
+        {
+          "term": "est donc",
+          "heading": false
+        },
+        {
+          "term": "chemins motivique",
+          "heading": false
+        }
+      ],
+      "extract": "4.1. Soient k un corps de nombres, P une droite projective sur k, X le compl´ement d’un ensemble ﬁni S de points rationnels et x, y ∈X(k). Dans Deligne (1989) §13, nous avons d´eﬁni un “espace de (classes d’homotopie de) chemins motivique” not´e Py,x. Sous les hypoth`eses ci-dessus, et apr`es oubli de l’aspect cristallin de loc. cit., c’est un sch´ema aﬃne en la cat´egorie tannakienne RH+ℓde 2.15. Nous le noterons",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-5-le-groupe-fondamental-motivique-du-complement",
+      "number": "5",
+      "title": "Le groupe fondamental motivique du compl´ement, dans P1, de 0, ∞et µN",
+      "level": 1,
+      "pageStart": 53,
+      "pageEnd": 70,
+      "labelStart": "51",
+      "labelEnd": "68",
+      "words": 5162,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "est une",
+          "heading": false
+        },
+        {
+          "term": "dans",
+          "heading": true
+        },
+        {
+          "term": "que pour",
+          "heading": false
+        },
+        {
+          "term": "par dch",
+          "heading": false
+        },
+        {
+          "term": "groupe",
+          "heading": true
+        },
+        {
+          "term": "que les",
+          "heading": false
+        },
+        {
+          "term": "elle est",
+          "heading": false
+        },
+        {
+          "term": "groupe des",
+          "heading": false
+        }
+      ],
+      "extract": "5.1. Soient N un entier >1, k engendré sur Q par une racine primitive N**™° de lunité et O l’anneau de ses entiers. I] est commode de ne pas supposer que k soit le sous-corps Q(exp(27i/N)) de C. Notons Ax, ou simplement A la droite affine type sur k et posons A* = A—{0} = Speck[u, u~+]. Soit X le complément dans A* de l’ensemble pay := pun (k) des racines Ni*™es de lunité. S’il y a ambiguité sur N, on écrira plutot",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-6-profondeur",
+      "number": "6",
+      "title": "Profondeur",
+      "level": 1,
+      "pageStart": 70,
+      "pageEnd": 84,
+      "labelStart": "68",
+      "labelEnd": "82",
+      "words": 4546,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alg ebre",
+          "heading": false
+        },
+        {
+          "term": "est alg",
+          "heading": false
+        },
+        {
+          "term": "est dans",
+          "heading": false
+        },
+        {
+          "term": "ebre des",
+          "heading": false
+        },
+        {
+          "term": "cog ebre",
+          "heading": false
+        },
+        {
+          "term": "est une",
+          "heading": false
+        },
+        {
+          "term": "ﬁltration par",
+          "heading": false
+        },
+        {
+          "term": "est caract",
+          "heading": false
+        }
+      ],
+      "extract": "6.1. Avec les notations de 5.1, pour tout point base x, l’inclusion de X dans A∗induit un morphisme du groupe fondamental motivique de X dans celui, Q(1), de A∗. On d´eﬁnit la ﬁltration par la profondeur D de π1(X, x) par D0π1(X, x) := π1(X, x) (6.1.1) D1π1(X, x) := Ker(π1(X, x) →π1(A∗, x) et, pour n ≥1, Dnπ1(X, x) :=le ni`eme groupe de la s´erie centrale descendante de D1π1(X, x). On ﬁltre de mˆeme les alg`ebres de",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 1,
+        "items": [
+          "1 Motifs de Tate mixte sur l’anneau des S-entiers d’un corps de nombres."
+        ]
+      },
+      "page_mismatch": {
+        "count": 1,
+        "items": [
+          "Appendice. Rappels sur les groupes alg´ebriques unipotents: listed p79, found p77"
+        ]
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 4,
+      "items": [
+        "p28: printed 26, contents 25",
+        "p43: printed 41, contents 40",
+        "p53: printed 51, contents 50",
+        "p70: printed 68, contents 67"
+      ]
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "est dans",
+      "heading": false
+    },
+    {
+      "term": "est pour",
+      "heading": false
+    },
+    {
+      "term": "est une",
+      "heading": false
+    },
+    {
+      "term": "que est",
+      "heading": false
+    },
+    {
+      "term": "sur une",
+      "heading": false
+    },
+    {
+      "term": "pour les",
+      "heading": false
+    },
+    {
+      "term": "groupe est",
+      "heading": false
+    },
+    {
+      "term": "par sur",
+      "heading": false
+    },
+    {
+      "term": "ema est",
+      "heading": false
+    },
+    {
+      "term": "est alg",
+      "heading": false
+    },
+    {
+      "term": "est motivique",
+      "heading": false
+    },
+    {
+      "term": "ebre des",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 67,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 69,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 71,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 72,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 73,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 74,
+      "label": "72",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 75,
+      "label": "73",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 76,
+      "label": "74",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 77,
+      "label": "75",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 78,
+      "label": "76",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 79,
+      "label": "77",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 80,
+      "label": "78",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 81,
+      "label": "79",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 82,
+      "label": "80",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 83,
+      "label": "81",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 84,
+      "label": "82",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p2); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0302267v2"
+  }
+}

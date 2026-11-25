@@ -1,0 +1,2130 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2104.01786v1",
+  "title": "Spin(11, 3), particles and octonions",
+  "variant": "pdf",
+  "pages": 27,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Spin(7) and octonions",
+      "number": "2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-spin7-and-octonions"
+    },
+    {
+      "level": 2,
+      "title": "Octonions",
+      "number": "2.1",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-21-octonions"
+    },
+    {
+      "level": 2,
+      "title": "Clifford algebra Cliff7",
+      "number": "2.2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-clifford-algebra-cliff7"
+    },
+    {
+      "level": 2,
+      "title": "Lie algebra so(7)",
+      "number": "2.3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-lie-algebra-so7"
+    },
+    {
+      "level": 2,
+      "title": "Complex structure",
+      "number": "2.4",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-24-complex-structure"
+    },
+    {
+      "level": 2,
+      "title": "A different complex structure",
+      "number": "2.5",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-25-a-different-complex-structure"
+    },
+    {
+      "level": 2,
+      "title": "Parametrisation",
+      "number": "2.6",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-26-parametrisation"
+    },
+    {
+      "level": 2,
+      "title": "The group of automorphisms of the octonions",
+      "number": "2.7",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-27-the-group-of-automorphisms-of-the-octonions"
+    },
+    {
+      "level": 2,
+      "title": "The group SU(3)",
+      "number": "2.8",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-28-the-group-su3"
+    },
+    {
+      "level": 1,
+      "title": "Spin(4,3) and the split octonions",
+      "number": "3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-3-spin43-and-the-split-octonions"
+    },
+    {
+      "level": 2,
+      "title": "Split octonions",
+      "number": "3.1",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The Clifford algebra Cliff4,3",
+      "number": "3.2",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-32-the-clifford-algebra-cliff43"
+    },
+    {
+      "level": 2,
+      "title": "Lie algebra so(4,3)",
+      "number": "3.3",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-33-lie-algebra-so43"
+    },
+    {
+      "level": 2,
+      "title": "Complex structures",
+      "number": "3.4",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-34-complex-structures"
+    },
+    {
+      "level": 2,
+      "title": "Decomposition of under so(3)so(1,3)",
+      "number": "3.5",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-35-decomposition-of-under-so3so13"
+    },
+    {
+      "level": 2,
+      "title": "Parametrisation",
+      "number": "3.6",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-36-parametrisation"
+    },
+    {
+      "level": 2,
+      "title": "Some useful formulas",
+      "number": "3.7",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-37-some-useful-formulas"
+    },
+    {
+      "level": 2,
+      "title": "The split 2",
+      "number": "3.8",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "The octonionic model for Spin(11,3)",
+      "number": "4",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-4-the-octonionic-model-for-spin113"
+    },
+    {
+      "level": 2,
+      "title": "Yet another magic square",
+      "number": "4.1",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-41-yet-another-magic-square"
+    },
+    {
+      "level": 2,
+      "title": "Lie algebra",
+      "number": "4.2",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-42-lie-algebra"
+    },
+    {
+      "level": 2,
+      "title": "Invariant pairing",
+      "number": "4.3",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-43-invariant-pairing"
+    },
+    {
+      "level": 1,
+      "title": "The left/right symmetric models",
+      "number": "5",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-5-the-leftright-symmetric-models"
+    },
+    {
+      "level": 2,
+      "title": "Spinor fields",
+      "number": "5.1",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-51-spinor-fields"
+    },
+    {
+      "level": 2,
+      "title": "Bi-doublet Higgs field",
+      "number": "5.2",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-52-bi-doublet-higgs-field"
+    },
+    {
+      "level": 2,
+      "title": "Two Higgs in the adjoint",
+      "number": "5.3",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-53-two-higgs-in-the-adjoint"
+    },
+    {
+      "level": 2,
+      "title": "Two Higgs fields in the fundamental",
+      "number": "5.4",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-54-two-higgs-fields-in-the-fundamental"
+    },
+    {
+      "level": 2,
+      "title": "A model with only fundamental Higgs fields",
+      "number": "5.5",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-55-a-model-with-only-fundamental-higgs-fields"
+    },
+    {
+      "level": 1,
+      "title": "Dictionary",
+      "number": "6",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-6-dictionary"
+    },
+    {
+      "level": 2,
+      "title": "Two commuting complex structures on O",
+      "number": "6.1",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-61-two-commuting-complex-structures-on-o"
+    },
+    {
+      "level": 2,
+      "title": "Identification with particles",
+      "number": "6.2",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-62-identification-with-particles"
+    },
+    {
+      "level": 1,
+      "title": "Mass terms",
+      "number": "7",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-7-mass-terms"
+    },
+    {
+      "level": 2,
+      "title": "Projection onto 3 R11,3",
+      "number": "7.1",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-71-projection-onto-3-r113"
+    },
+    {
+      "level": 2,
+      "title": "SU(3)U(1) and Lorentz invariant pairing",
+      "number": "7.2",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-72-su3u1-and-lorentz-invariant-pairing"
+    },
+    {
+      "level": 2,
+      "title": "Evaluating the mass terms",
+      "number": "7.3",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-73-evaluating-the-mass-terms"
+    },
+    {
+      "level": 1,
+      "title": "Discussion",
+      "number": "8",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-8-discussion"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 330,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spin",
+          "heading": false
+        },
+        {
+          "term": "unit imaginary",
+          "heading": false
+        },
+        {
+          "term": "choosing unit",
+          "heading": false
+        },
+        {
+          "term": "timelike",
+          "heading": false
+        },
+        {
+          "term": "lorentz",
+          "heading": false
+        },
+        {
+          "term": "equips",
+          "heading": false
+        },
+        {
+          "term": "complex structures",
+          "heading": false
+        },
+        {
+          "term": "higgs",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:2104.01786v1 [hep-th] 5 Apr 2021 Spin(11, 3), particles and octonions Kirill Krasnov School of Mathematical Sciences, University of Nottingham, NG7 2RD, UK April 2021 Abstract The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of a single real 64-dimensional semi- spinor representation S+ of the group Spin(11, 3). We",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2104.01786v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 6,
+      "labelStart": "1",
+      "labelEnd": "6",
+      "words": 2869,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "octonion tilde",
+          "heading": false
+        },
+        {
+          "term": "octonions mathbb",
+          "heading": false
+        },
+        {
+          "term": "semi-spinor representation",
+          "heading": false
+        },
+        {
+          "term": "lorentz spinor",
+          "heading": false
+        },
+        {
+          "term": "pati-salam group",
+          "heading": false
+        },
+        {
+          "term": "imaginary octonion",
+          "heading": false
+        },
+        {
+          "term": "split octonions",
+          "heading": false
+        },
+        {
+          "term": "otimes tilde",
+          "heading": false
+        }
+      ],
+      "extract": "The suggestion that octonions may provide a useful language for describing elementary particles is almost as old as the Standard Model (SM) itself, see [@Gunaydin:1973rs] and references therein.[^1] Thus, it was observed early on that the 8-dimensional space of octonions, after a complex structure is chosen, splits as ${\\mathbb O}={\\mathbb C}\\oplus{\\mathbb C}^3$, with the first factor naturally corresponding to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-21-octonions",
+      "number": "2.1",
+      "title": "Octonions",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 226,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "octonions",
+          "heading": true
+        },
+        {
+          "term": "spin",
+          "heading": false
+        },
+        {
+          "term": "octonionic",
+          "heading": false
+        },
+        {
+          "term": "complex structure",
+          "heading": false
+        },
+        {
+          "term": "lorentz",
+          "heading": false
+        },
+        {
+          "term": "mass terms",
+          "heading": false
+        }
+      ],
+      "extract": "Spin(7) is naturally the octonions O. We also explain here how a natural complex structure J on O arise from a choice of a unit imaginary octonion, and how the subgroups SU(3) and U(1) of Spin(7) arise in the process. We repeat similar analysis for Spin(4, 3) in Section 3. The novelty here is that a new type of complex structure arises, one related to a timelike unit octonion. The commutant of this complex structure",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-spin7-and-octonions",
+      "number": "2",
+      "title": "Spin(7) and octonions",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 340,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "octonions",
+          "heading": true
+        },
+        {
+          "term": "imaginary octonions",
+          "heading": false
+        },
+        {
+          "term": "spin",
+          "heading": true
+        },
+        {
+          "term": "x1e",
+          "heading": false
+        },
+        {
+          "term": "norm",
+          "heading": false
+        },
+        {
+          "term": "subgroups",
+          "heading": false
+        }
+      ],
+      "extract": "Spin(7) and octonions 2.1 Octonions Octonions, see e.g., [23], are objects that can be represented as linear combinations of the unit octonions 1, e1, . . . , e7 x = x0 + x1e1 + . . . + x7e7, x0, x1, . . . , x7 ∈R. (4) The conjugation is again the operation that ﬂips the signs of all the imaginary coeﬃcients x = x0 −x1e1 −. . . −x7e7, (5) and we have |x|2 = xx = (x0)2 + (x1)2 + . . . + (x7)2 ≡|x|2. (6) For later",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-clifford-algebra-cliff7",
+      "number": "2.2",
+      "title": "Clifford algebra Cliff7",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 197,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "algebra cliﬀ",
+          "heading": false
+        },
+        {
+          "term": "cliﬀord algebra",
+          "heading": false
+        },
+        {
+          "term": "anti-symmetric",
+          "heading": false
+        },
+        {
+          "term": "octonion",
+          "heading": false
+        }
+      ],
+      "extract": "Cliﬀord algebra Cliﬀ7 Octonions give rise to a very convenient model for the Cliﬀord algebra Cliﬀ7. Indeed, we can identify Cliﬀ7 = Im(O). (10) To realise this identiﬁcation, we consider the endomorphisms of O given by the operators Ei := Lei (11) of left multiplication by an imaginary octonion. These operators anti-commute and square to minus the identity EiEj + EjEi = −2δij. (12) Thus, the generate the Cliﬀord",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-lie-algebra-so7",
+      "number": "2.3",
+      "title": "Lie algebra so(7)",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 102,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lie algebra",
+          "heading": true
+        },
+        {
+          "term": "γ-matrices",
+          "heading": false
+        },
+        {
+          "term": "xso",
+          "heading": false
+        }
+      ],
+      "extract": "Lie algebra so(7) With 8×8 matrices Ei giving the γ-matrices in 7 dimensions, the Lie algebra so(7) is generated by the commutators of γ-matrices, or simply by the products of pairs of distinct Ei Xso(7) = X i<j ωijEiEj. (14) The matrix Xso(7) is also anti-symmetric. This, in particular, implies that under the Lie algebra action x →Xx the norm squared xTx is preserved. Given the explicit form (13) of the Cliﬀord",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-complex-structure",
+      "number": "2.4",
+      "title": "Complex structure",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 202,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "complex structure",
+          "heading": true
+        },
+        {
+          "term": "mathfrak",
+          "heading": false
+        },
+        {
+          "term": "eigenspace",
+          "heading": false
+        },
+        {
+          "term": "commutes",
+          "heading": false
+        }
+      ],
+      "extract": "Any of the Clifford generators $E^i$ squares to minus the identity, and so is a complex structure on ${\\mathbb O}$. Thus, a choice of a unit $u\\in{\\rm Im}({\\mathbb O})$ gives rise to the complex structure $J := L_u$. Our octonion multiplication encoded in ([\\[C\\]](#C){reference-type=\"ref\" reference=\"C\"}) is such that $e^4$ is treated as a preferred element, and so we choose $u=e^4$ and $J= E^4$. It is interesting to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-25-a-different-complex-structure",
+      "number": "2.5",
+      "title": "A different complex structure",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 282,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "complex structure",
+          "heading": true
+        },
+        {
+          "term": "mathfrak",
+          "heading": false
+        },
+        {
+          "term": "imaginary octonion",
+          "heading": false
+        },
+        {
+          "term": "commutant",
+          "heading": false
+        },
+        {
+          "term": "unit imaginary",
+          "heading": false
+        },
+        {
+          "term": "different",
+          "heading": true
+        },
+        {
+          "term": "mathbb",
+          "heading": false
+        },
+        {
+          "term": "rho",
+          "heading": false
+        }
+      ],
+      "extract": "There is a different choice of the complex structure on ${\\mathbb O}$, which is also parametrised by a unit imaginary octonion. This leads to a different but very interesting commutant in ${\\mathfrak so}(7)$. This has been described in [@Krasnov:2019auj]. Instead of using the operator $L_u$ of left multiplication by a unit imaginary octonion, one can use the complex structure $J':= R_u$ given by the operator of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-26-parametrisation",
+      "number": "2.6",
+      "title": "Parametrisation",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 266,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rangle bar",
+          "heading": false
+        },
+        {
+          "term": "o-formulas langle",
+          "heading": false
+        },
+        {
+          "term": "bar right",
+          "heading": false
+        },
+        {
+          "term": "parametrisation",
+          "heading": true
+        },
+        {
+          "term": "nonumber langle",
+          "heading": false
+        },
+        {
+          "term": "rangle frac",
+          "heading": false
+        },
+        {
+          "term": "label o-formulas",
+          "heading": false
+        }
+      ],
+      "extract": "For later purposes, we now give a parametrisation of an octonion by its $(1,0)$ and $(0,1)$ coordinates. The $(1,0)$ coordinates of eigenvalue of $E^4$ of $-{\\rm i\\,}$ are given by $$\\begin{aligned} L:= x_0-{\\rm i\\,}x_4, \\quad Q_i = x_i -{\\rm i\\,}x_{i+4}, \\end{aligned}$$ where we introduced suggestive names. An octonion $x$ with coordinates $x_0,x_1,\\ldots, x_7$ is then parametrised as $$\\begin{aligned} x_0 =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-27-the-group-of-automorphisms-of-the-octonions",
+      "number": "2.7",
+      "title": "The group of automorphisms of the octonions",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 155,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "octonions",
+          "heading": true
+        },
+        {
+          "term": "eijk",
+          "heading": false
+        },
+        {
+          "term": "automorphisms",
+          "heading": true
+        }
+      ],
+      "extract": "The group of automorphisms of the octonions The group G2 of automorphisms of the octonions is the subgroup of SO(7) that preserves the 3-form in (9), and thus the cross-product. The 3-form (9) can be written as C = − X i<j<k ⟨I, EiEjEjI⟩eijk, (20) 9 where the notation is that eijk = ei ∧ej ∧ek. This shows that the stabiliser of C in so(7) is given by the transformations that ﬁx the spinor corresponding to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-28-the-group-su3",
+      "number": "2.8",
+      "title": "The group SU(3)",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 319,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "group",
+          "heading": true
+        },
+        {
+          "term": "octonions",
+          "heading": false
+        },
+        {
+          "term": "complex plane",
+          "heading": false
+        },
+        {
+          "term": "automorphisms",
+          "heading": false
+        },
+        {
+          "term": "spin",
+          "heading": false
+        },
+        {
+          "term": "subgroup",
+          "heading": false
+        }
+      ],
+      "extract": "The group SU(3) The special unitary group in 3 dimensions can be seen to arise in this context in many diﬀerent ways. First, we can see it arising as the subgroup of Spin(7) that preserves two orthogonal spinors. If we take these to be I, u = e4, the subgroup that preserves I is G2. Imposing the condition that u is stabilised as well imposes 6 additional conditions wi4 = 0, and produces the Lie algebra su(3). A",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-3-spin43-and-the-split-octonions",
+      "number": "3",
+      "title": "Spin(4,3) and the split octonions",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 289,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "split octonions",
+          "heading": true
+        },
+        {
+          "term": "usual octonions",
+          "heading": false
+        },
+        {
+          "term": "cross-product",
+          "heading": false
+        },
+        {
+          "term": "quadratic form",
+          "heading": false
+        },
+        {
+          "term": "letter",
+          "heading": false
+        },
+        {
+          "term": "spin",
+          "heading": true
+        }
+      ],
+      "extract": "Spin(4, 3) and the split octonions 3.1 Split octonions Split octonions ˜O are similarly generated by the identity and seven imaginary octonions y = y0 + y1˜e1 + . . . + y7˜e7. (22) To distinguish the split from the usual octonions we will denote them either with a letter with a tilde, or use letter y (with an index if necessary) rather than x. The unit split octonions satisfy (˜e5,6,7)2 = −1, (˜e1,2,3,4)2 = 1. (23)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-32-the-clifford-algebra-cliff43",
+      "number": "3.2",
+      "title": "The Clifford algebra Cliff4,3",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 222,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "algebra cliﬀ",
+          "heading": false
+        },
+        {
+          "term": "cliﬀord algebra",
+          "heading": false
+        },
+        {
+          "term": "jth",
+          "heading": false
+        },
+        {
+          "term": "ηij",
+          "heading": false
+        }
+      ],
+      "extract": "The Cliﬀord algebra Cliﬀ4,3 Operators ˜Ei := L˜ei of left multiplication by a unit split imaginary octonion generate the Cliﬀord algebra Cliﬀ4,3 Cliﬀ4,3 = Im(˜O). (27) We can represent them explicitly as the following 8 × 8 matrices ˜E1 = S12 + S38 −S47 + S56 (28) ˜E2 = S13 −S28 + S46 + S57 ˜E3 = S14 + S27 −S36 + S58 ˜E4 = S15 −S26 −S37 −S48 ˜E5 = −E16 + E25 + E34 −E78 ˜E6 = −E17 −E24 + E35 + E68 ˜E7 = −E18 + E23 +",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-33-lie-algebra-so43",
+      "number": "3.3",
+      "title": "Lie algebra so(4,3)",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 76,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lie algebra",
+          "heading": true
+        },
+        {
+          "term": "xso",
+          "heading": false
+        },
+        {
+          "term": "quadratic form",
+          "heading": false
+        }
+      ],
+      "extract": "Lie algebra so(4, 3) Forming the products of pairs of distinct Cliﬀord generators we get the representation of a general Lie algebra in terms of 8 × 8 matrices Xso(4,3) = X i<j ˜ωij ˜Ei ˜Ej. (30) These matrices no longer have a deﬁnite symmetry. Instead, the invariance of the quadratic form (25) can be written as the property XT so(4,3)τ + τXso(4,3) = 0. (31) Here τ is the matrix of the quadratic form (25).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-013-34-complex-structures",
+      "number": "3.4",
+      "title": "Complex structures",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 359,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cliﬀord generators",
+          "heading": false
+        },
+        {
+          "term": "complex",
+          "heading": true
+        },
+        {
+          "term": "complex structure",
+          "heading": false
+        },
+        {
+          "term": "timelike",
+          "heading": false
+        },
+        {
+          "term": "quadratic form",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst factor",
+          "heading": false
+        },
+        {
+          "term": "linear combination",
+          "heading": false
+        }
+      ],
+      "extract": "Complex structures We now enter into a less familiar part of the discussion. It is clear that any of the 3 Cliﬀord generators ˜E5,6,7 (or any unit vector constructed as their linear combination) can serve as a complex structure on ˜O. This complex structure identiﬁes ˜O = C4. What commutes with it in so(4, 3) is the subalgebra so(4, 2). But this is not the complex structure that is of interest to us in relation to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-35-decomposition-of-under-so3so13",
+      "number": "3.5",
+      "title": "Decomposition of under so(3)so(1,3)",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 494,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "component spinor",
+          "heading": false
+        },
+        {
+          "term": "xso",
+          "heading": false
+        },
+        {
+          "term": "spinor representation",
+          "heading": false
+        },
+        {
+          "term": "lorentz group",
+          "heading": false
+        },
+        {
+          "term": "split octonions",
+          "heading": false
+        },
+        {
+          "term": "complex conjugate",
+          "heading": false
+        },
+        {
+          "term": "spin",
+          "heading": false
+        }
+      ],
+      "extract": "The split octonions ˜O form the spinor representation of Spin(4, 3). When we restrict to Spin(3)× Spin(1, 3), we expect the spinor to transform as spinor with respect to both of the factors. It is nevertheless very interesting to see how this happens explicitly. The (1, 0) coordinates on ˜O for the complex structure ˜J are given by w0 := 1 2(y0 + i y4), wi := 1 2(yi + i yi+4), (35) where the index i = 1, 2, 3 and we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-36-parametrisation",
+      "number": "3.6",
+      "title": "Parametrisation",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 539,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "component lorentz",
+          "heading": false
+        },
+        {
+          "term": "component spinors",
+          "heading": false
+        },
+        {
+          "term": "parametrisation",
+          "heading": true
+        },
+        {
+          "term": "invariant pairing",
+          "heading": false
+        },
+        {
+          "term": "avoid confusion",
+          "heading": false
+        },
+        {
+          "term": "complex conjugate",
+          "heading": false
+        },
+        {
+          "term": "spell out",
+          "heading": false
+        },
+        {
+          "term": "complex conjugation",
+          "heading": false
+        }
+      ],
+      "extract": "Parametrisation It will help if we develop the notation a bit further. We have seen that a Spin(4, 3) spinor y ∈˜O splits into its (1, 0), (0, 1) components y = ˜P+y + ˜P−y := y+ + y−, (45) where ˜P± = 1 2(I ± i ˜J) (46) are the projectors. The split octonion y+ transforms as a 2-component Lorentz and SU(2) spinors, and y−transforms as a 2-component Lorentz spinor of the opposite chirality, and again as a SU(2)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-37-some-useful-formulas",
+      "number": "3.7",
+      "title": "Some useful formulas",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 409,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phi tilde",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "array end",
+          "heading": false
+        },
+        {
+          "term": "tilde rangle",
+          "heading": false
+        },
+        {
+          "term": "ot-formulas langle",
+          "heading": false
+        },
+        {
+          "term": "times mathfrak",
+          "heading": false
+        },
+        {
+          "term": "label ot-formulas",
+          "heading": false
+        }
+      ],
+      "extract": "Here we list some useful pairings that can be computed using the particle-friendly parametrisation developed in the previous subsection. We will give them in their version analogous to ([\\[y12\\]](#y12){reference-type=\"ref\" reference=\"y12\"}), with two different spinors. First, we have $$\\begin{aligned} \\label{Ot-formulas-1} - \\langle y_1, \\tilde{E}^1\\tilde{E}^2 \\tilde{E}^3 y_2 \\rangle = \\langle y_1, \\tilde{J} y_2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-4-the-octonionic-model-for-spin113",
+      "number": "4",
+      "title": "The octonionic model for Spin(11,3)",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 49,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "octonionic model",
+          "heading": true
+        },
+        {
+          "term": "spin",
+          "heading": true
+        },
+        {
+          "term": "pseudo",
+          "heading": false
+        }
+      ],
+      "extract": "The octonionic model for Spin(11, 3) We now put the O, ˜O building blocks together, and construct an octonionic model for the group Spin(11, 3). The construction we are to describe applies to a more general set of pseudo- orthogonal groups, and so we give it in full generality.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-018-41-yet-another-magic-square",
+      "number": "4.1",
+      "title": "Yet another magic square",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 350,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "magic square",
+          "heading": true
+        },
+        {
+          "term": "tilde mathbb",
+          "heading": false
+        },
+        {
+          "term": "mathbb otimes",
+          "heading": false
+        },
+        {
+          "term": "mathbb hline",
+          "heading": false
+        },
+        {
+          "term": "ccc mathbb",
+          "heading": false
+        },
+        {
+          "term": "tabular ccc",
+          "heading": false
+        },
+        {
+          "term": "barton",
+          "heading": false
+        },
+        {
+          "term": "mba",
+          "heading": false
+        }
+      ],
+      "extract": "There is an octonionic model for the exceptional Lie groups, which is obtained by considering $3\\times 3$ matrices with entries in ${\\mathbb X}\\otimes{\\mathbb Y}$, where ${\\mathbb X},{\\mathbb Y}$ are division algebras, see [@Barton:2000ki]. This leads to what in the literature is known as the \\\"magic square\\\" construction. These authors also describe the $2\\times 2$ matrix version of the magic square. This gives a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-42-lie-algebra",
+      "number": "4.2",
+      "title": "Lie algebra",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 219,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lie algebra",
+          "heading": true
+        },
+        {
+          "term": "γ-matrices",
+          "heading": false
+        },
+        {
+          "term": "explicit description",
+          "heading": false
+        },
+        {
+          "term": "aijei",
+          "heading": false
+        }
+      ],
+      "extract": "as the algebra of 2 × 2 matrices with entries in X ⊗Y. The corresponding γ-matrices are then 4 × 4 such matrices. So, giving a model for the Cliﬀord algebra requires one higher level of complexity. This can be done, but is not relevant for our purposes. We refer to [20] for details. 4.2 Lie algebra Taking the commutators of the Γ-matrices (1), or simply the products of distinct Γ-matrices, we get the following",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-43-invariant-pairing",
+      "number": "4.3",
+      "title": "Invariant pairing",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 253,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "otimes tilde",
+          "heading": false
+        },
+        {
+          "term": "tau tilde",
+          "heading": false
+        },
+        {
+          "term": "tilde omega",
+          "heading": false
+        },
+        {
+          "term": "tilde mathbb",
+          "heading": false
+        },
+        {
+          "term": "invariant pairing",
+          "heading": true
+        },
+        {
+          "term": "psi rangle",
+          "heading": false
+        },
+        {
+          "term": "langle psi",
+          "heading": false
+        },
+        {
+          "term": "aligned langle",
+          "heading": false
+        }
+      ],
+      "extract": "There is no ${\\mathfrak so}(11,3)$ invariant pairing on the space of semi-spinors $S_+$. This is because the matrices appearing in ([\\[lie-11-3\\]](#lie-11-3){reference-type=\"ref\" reference=\"lie-11-3\"}) have different symmetry properties. The first two terms are anti-symmetric (in appropriate sense) $$\\begin{aligned} (\\omega_{ij} E^i E^j)^T = \\omega_{ij} E^j E^i = - \\omega_{ij} E^i E^j, \\end{aligned}$$ and, using",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-5-the-leftright-symmetric-models",
+      "number": "5",
+      "title": "The left/right symmetric models",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 37,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "left-right",
+          "heading": false
+        },
+        {
+          "term": "diluzio",
+          "heading": false
+        },
+        {
+          "term": "mda",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:left-right label=\"sec:left-right\"} We now interrupt our representation theoretic discussion to review the left/right symmetric extensions of the SM, as these are most closely related to our formalism. We follow [@DiLuzio:2011mda], see in particular Section 1.3.1.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-022-51-spinor-fields",
+      "number": "5.1",
+      "title": "Spinor fields",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 112,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quad bar",
+          "heading": false
+        },
+        {
+          "term": "bar left",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "end array",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        }
+      ],
+      "extract": "It is convenient to organise the fermionic fields into the following multiplets $$\\begin{aligned} \\label{fermions} Q^i = \\left( \\begin{array}{c} u^i \\\\ d^i \\end{array}\\right), \\quad L = \\left( \\begin{array}{c} \\nu \\\\ e \\end{array}\\right), \\quad \\bar{Q}^i = \\left( \\begin{array}{ccc} \\bar{d}^i \\\\ -\\bar{u}^i \\end{array}\\right), \\quad \\bar{L} = \\left( \\begin{array}{c} \\bar{e} \\\\ -\\bar{\\nu} \\end{array}\\right).",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-52-bi-doublet-higgs-field",
+      "number": "5.2",
+      "title": "Bi-doublet Higgs field",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 237,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "higgs field",
+          "heading": true
+        },
+        {
+          "term": "tilde phi",
+          "heading": false
+        },
+        {
+          "term": "epsilon phi",
+          "heading": false
+        },
+        {
+          "term": "phi bar",
+          "heading": false
+        },
+        {
+          "term": "phi dagger",
+          "heading": false
+        },
+        {
+          "term": "phi left",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        }
+      ],
+      "extract": "Most (but not all, see below) versions of the left/right symmetric model require a Higgs field in the bi-doublet representation $$\\begin{aligned} \\label{Phi} \\Phi = (1,2,2,0), \\qquad \\Phi \\to U_L \\Phi U_R^\\dagger. \\end{aligned}$$ Out of the components of $\\Phi^*$ of the complex conjugate matrix one can construct another matrix $$\\begin{aligned} \\label{epsilon} \\tilde{\\Phi} = \\epsilon \\Phi^* \\epsilon^T, \\qquad",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-53-two-higgs-in-the-adjoint",
+      "number": "5.3",
+      "title": "Two Higgs in the adjoint",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 293,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adjoint higgs",
+          "heading": true
+        },
+        {
+          "term": "aligned delta",
+          "heading": false
+        },
+        {
+          "term": "delta dagger",
+          "heading": false
+        },
+        {
+          "term": "higgs fields",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        },
+        {
+          "term": "end aligned",
+          "heading": false
+        },
+        {
+          "term": "seesaw mechanism",
+          "heading": false
+        },
+        {
+          "term": "qquad delta",
+          "heading": false
+        }
+      ],
+      "extract": "As we already said, the Higgs field $\\Phi$ cannot break the ${\\rm U}(1)_{B-L}$ symmetry. One thus needs additional Higgs fields. The option that currently seems preferred in the literature goes under the name of the minimal left/right symmetric model, see e.g. [@Maiezza:2016ybz]. It introduces two more Higgs fields in the adjoint of each ${\\rm SU}(2)_{L,R}$. It also requires neutrinos to be Majorana particles, and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-54-two-higgs-fields-in-the-fundamental",
+      "number": "5.4",
+      "title": "Two Higgs fields in the fundamental",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 131,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "higgs fields",
+          "heading": true
+        },
+        {
+          "term": "phi-vev",
+          "heading": false
+        },
+        {
+          "term": "chi left",
+          "heading": false
+        },
+        {
+          "term": "qquad chi",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        }
+      ],
+      "extract": "Another option is to add two Higgs fields in the fundamental representations of ${\\rm SU}(2)_{L,R}$. This is the original left/right symmetric model studied in [@Senjanovic:1978ev]. But there is no natural realisation of the seesaw mechanism. Let us introduce the two Higgs fields $\\chi_{L,R}$ transforming as under $G_{\\rm LR}$ as $$\\begin{aligned} \\chi_L = (2,1,+1), \\qquad \\chi_R=(1,2,+1). \\end{aligned}$$ There",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-55-a-model-with-only-fundamental-higgs-fields",
+      "number": "5.5",
+      "title": "A model with only fundamental Higgs fields",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 84,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "higgs",
+          "heading": true
+        },
+        {
+          "term": "fund-h-vev",
+          "heading": false
+        },
+        {
+          "term": "yukawa-type",
+          "heading": false
+        }
+      ],
+      "extract": "There is also a version of the model with Higgs in the fundamental representations that does not introduce the bi-fundamental Higgs $\\Phi$, see e.g. [@Hall:2018let]. Indeed, the two VEV's ([\\[fund-H-vev\\]](#fund-H-vev){reference-type=\"ref\" reference=\"fund-H-vev\"}) are sufficient to break ${\\rm SU}(2)_{L}\\times{\\rm SU}(2)_R\\times {\\rm U}(1)_{B-L}$ down to the electromagnetic ${\\rm U}(1)_{EM}$. The drawback of this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-6-dictionary",
+      "number": "6",
+      "title": "Dictionary",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 24,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dictionary",
+          "heading": true
+        },
+        {
+          "term": "fermions",
+          "heading": false
+        },
+        {
+          "term": "organised",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:dictionary label=\"sec:dictionary\"} We are now ready to provide an explicit dictionary between elementary particles, organised as in ([\\[fermions\\]](#fermions){reference-type=\"ref\" reference=\"fermions\"}), and elements of ${\\mathbb O}\\times\\tilde{{\\mathbb O}}$.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-028-61-two-commuting-complex-structures-on-o",
+      "number": "6.1",
+      "title": "Two commuting complex structures on O",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 254,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "times tilde",
+          "heading": false
+        },
+        {
+          "term": "tilde mathbb",
+          "heading": false
+        },
+        {
+          "term": "oplus mathfrak",
+          "heading": false
+        },
+        {
+          "term": "subset mathfrak",
+          "heading": false
+        },
+        {
+          "term": "complex structures",
+          "heading": true
+        },
+        {
+          "term": "commutant",
+          "heading": false
+        },
+        {
+          "term": "glr",
+          "heading": false
+        },
+        {
+          "term": "spin",
+          "heading": false
+        }
+      ],
+      "extract": "We have already introduced the complex structures $J,\\tilde{J}$ on ${\\mathbb O},\\tilde{{\\mathbb O}}$ in sections [\\[sec:spin7\\]](#sec:spin7){reference-type=\"ref\" reference=\"sec:spin7\"}, [\\[sec:spin43\\]](#sec:spin43){reference-type=\"ref\" reference=\"sec:spin43\"}. They extend to two commuting complex structures on ${\\mathbb O}\\times \\tilde{{\\mathbb O}}$. Let us describe the commutant of $J,\\tilde{J}$ acting on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-62-identification-with-particles",
+      "number": "6.2",
+      "title": "Identification with particles",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 553,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "s-split",
+          "heading": false
+        },
+        {
+          "term": "ijk tilde",
+          "heading": false
+        },
+        {
+          "term": "tilde mathbb",
+          "heading": false
+        },
+        {
+          "term": "otimes tilde",
+          "heading": false
+        },
+        {
+          "term": "tilde right",
+          "heading": false
+        },
+        {
+          "term": "times tilde",
+          "heading": false
+        },
+        {
+          "term": "lorentz spinors",
+          "heading": false
+        },
+        {
+          "term": "epsilon ijk",
+          "heading": false
+        }
+      ],
+      "extract": "The complex structure $J$ splits ${\\mathbb O}$ into its $(1,0),(0,1)$ subspaces, each of them being a copy of ${\\mathbb C}^4$. Moreover, there is a preferred copy of ${\\mathbb C}$, arising as the one spanned by ${\\mathbb I}, u \\in {\\mathbb O}$. This is where leptons will live. Similarly, the complex structure $\\tilde{J}$ splits $\\tilde{{\\mathbb O}}$ into its $(1,0), (0,1)$ subspaces. We know that each of these",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-7-mass-terms",
+      "number": "7",
+      "title": "Mass terms",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 182,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "psi rangle",
+          "heading": false
+        },
+        {
+          "term": "langle psi",
+          "heading": false
+        },
+        {
+          "term": "tilde psi",
+          "heading": false
+        },
+        {
+          "term": "otimes psi",
+          "heading": false
+        },
+        {
+          "term": "gamma psi",
+          "heading": false
+        },
+        {
+          "term": "mathbb psi",
+          "heading": false
+        },
+        {
+          "term": "nonumber langle",
+          "heading": false
+        },
+        {
+          "term": "quad langle",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:mass label=\"sec:mass\"} We now put the formalism developed to some use. We search for a \\\"Higgs\\\" field that can break the ${\\rm Spin}(11,3)$ symmetry, and also be used to write mass terms for the semi-spinor $S_+={\\mathbb O}\\otimes\\tilde{{\\mathbb O}}$. We thus need a field that lives in the tensor product of the representation $S_+$ with itself. We have the following decomposition of this tensor product",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-71-projection-onto-3-r113",
+      "number": "7.1",
+      "title": "Projection onto 3 R11,3",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 79,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ekψ",
+          "heading": false
+        },
+        {
+          "term": "γ-matrices",
+          "heading": false
+        },
+        {
+          "term": "eijk",
+          "heading": false
+        }
+      ],
+      "extract": "Three copies of Γ-matrices can be inserted between two S+ states and produce a so(11, 3) invariant expression. The diﬀerent arising components are ⟨⟨Ψ, Γx1x2x3Ψ⟩⟩= ⟨⟨Ψ, Lx1Lx2Lx3 ⊗IΨ⟩⟩, ⟨⟨Ψ, Γy1y2y3Ψ⟩⟩= −⟨⟨Ψ, I ⊗Ly1Ly2Ly3Ψ⟩⟩, (90) ⟨⟨Ψ, Γx1x2y1Ψ⟩⟩= ⟨⟨Ψ, Lx1Lx2 ⊗Ly1Ψ⟩⟩, ⟨⟨Ψ, Γx1y1y2Ψ⟩⟩= −⟨⟨Ψ, Lx1 ⊗Ly1Ly2Ψ⟩⟩. 22 This means we have the following expression for the projection S+ × S+ →Λ3R11,3 ⟨⟨Ψ, ΓΓΓΨ⟩⟩= ⟨⟨Ψ, EiEjEk",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-72-su3u1-and-lorentz-invariant-pairing",
+      "number": "7.2",
+      "title": "SU(3)U(1) and Lorentz invariant pairing",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 270,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "psi rangle",
+          "heading": false
+        },
+        {
+          "term": "langle psi",
+          "heading": false
+        },
+        {
+          "term": "tilde psi",
+          "heading": false
+        },
+        {
+          "term": "otimes tilde",
+          "heading": false
+        },
+        {
+          "term": "aligned omega",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        },
+        {
+          "term": "end aligned",
+          "heading": false
+        },
+        {
+          "term": "invariant",
+          "heading": true
+        }
+      ],
+      "extract": "We now select among the 364 terms in ([\\[364-rep\\]](#364-rep){reference-type=\"ref\" reference=\"364-rep\"}) those that are ${\\rm SU}(3)$, ${\\rm U}(1)_{EM}$ and Lorentz invariant. We have the ${\\rm SU}(3)$ invariant 3-forms in ${\\mathbb R}^6\\subset{\\rm Im}({\\mathbb O})$. These arise as the real and imaginary parts of an ${\\rm SU}(3)$ invariant $(3,0)$ form $$\\begin{aligned} \\Omega := ( e^1 - {\\rm i\\,}e^5)(e^2-{\\rm",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-73-evaluating-the-mass-terms",
+      "number": "7.3",
+      "title": "Evaluating the mass terms",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 345,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "array bar",
+          "heading": false
+        },
+        {
+          "term": "o-formulas",
+          "heading": false
+        },
+        {
+          "term": "ot-formulas",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        },
+        {
+          "term": "phi bar",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "end array",
+          "heading": false
+        },
+        {
+          "term": "aligned phi",
+          "heading": false
+        }
+      ],
+      "extract": "We now evaluate ([\\[mass\\]](#mass){reference-type=\"ref\" reference=\"mass\"}) on the particle states. Every element of ${\\mathbb O}$ splits into 8 different states $L,\\bar{L}, Q_i,\\bar{Q}_i$, and we have computed the relevant pairings in this basis in ([\\[O-formulas-1\\]](#O-formulas-1){reference-type=\"ref\" reference=\"O-formulas-1\"}), ([\\[O-formulas-2\\]](#O-formulas-2){reference-type=\"ref\" reference=\"O-formulas-2\"}),",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-8-discussion",
+      "number": "8",
+      "title": "Discussion",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 27,
+      "labelStart": "24",
+      "labelEnd": "27",
+      "words": 1798,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "higgs mechanism",
+          "heading": false
+        },
+        {
+          "term": "semi-spinor representation",
+          "heading": false
+        },
+        {
+          "term": "lorentz groups",
+          "heading": false
+        },
+        {
+          "term": "tilde mathbb",
+          "heading": false
+        },
+        {
+          "term": "symmetry breaking",
+          "heading": false
+        },
+        {
+          "term": "usual higgs",
+          "heading": false
+        },
+        {
+          "term": "s-split",
+          "heading": false
+        },
+        {
+          "term": "lr-lorentz",
+          "heading": false
+        }
+      ],
+      "extract": "We have developed a very efficient formalism that describes the semi-spinor representation of ${\\rm Spin}(11,3)$ as the direct product of the usual ${\\mathbb O}$ and split $\\tilde{{\\mathbb O}}$ octonions. This is likely the most efficient description of this group, as is in particular manifested by the very simple description ([\\[lie-11-3\\]](#lie-11-3){reference-type=\"ref\" reference=\"lie-11-3\"}) of the Lie algebra",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "lorentz spin",
+      "heading": false
+    },
+    {
+      "term": "mathbb tilde",
+      "heading": false
+    },
+    {
+      "term": "octonions tilde",
+      "heading": false
+    },
+    {
+      "term": "times tilde",
+      "heading": false
+    },
+    {
+      "term": "tilde right",
+      "heading": false
+    },
+    {
+      "term": "otimes tilde",
+      "heading": false
+    },
+    {
+      "term": "split tilde",
+      "heading": false
+    },
+    {
+      "term": "rangle tilde",
+      "heading": false
+    },
+    {
+      "term": "begin aligned",
+      "heading": false
+    },
+    {
+      "term": "aligned left",
+      "heading": false
+    },
+    {
+      "term": "end aligned",
+      "heading": false
+    },
+    {
+      "term": "phi tilde",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 37,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 36,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 36 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2104.01786v1"
+  }
+}

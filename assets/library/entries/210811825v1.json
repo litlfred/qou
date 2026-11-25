@@ -1,0 +1,1809 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "210811825v1",
+  "blocks": [
+    {
+      "id": "library/210811825v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 11,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Properties of Eigenvalues on Riemann\nSurfaces with Large Symmetry Groups\nby\nJoseph Cook\nA Doctoral Thesis\nSubmitted in partial fulﬁllment of the requirements\nfor the award of\nDoctor of Philosophy of Loughborough University\nDecember 2, 2018\nc⃝by Joseph Cook, 2018\nAbstract\nOn compact Riemann surfaces, the Laplacian ∆has a discrete, non-negative spectrum of\neigenvalues {λi} of ﬁnite multiplicity. The spectrum is intrinsically linked to the geometry\nof the surface. In this work, we consider surfaces of constant negative curvature with a\nlarge symmetry group. It is not possible to explicitly calcul",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/210811825v1/blocks/conj-sec-000-10",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 35,
+      "target": "conj-sec-000-10.md",
+      "narrative": null,
+      "content": "The metric g0 on P gives equality in Equation (1.5), that is λ1(P, g0)Area((P, g0)) = 16π. As part of their investigation into this conjecture, the authors reduce a spectral prob- lem on S2 to a mixed boundary problem on the semicircle. Of particular interest is the fact that the two problems in Figure 1.5 are isospectral under an exchange of Dirich- let and Neumann conditions. This phenomenon, known as “Dirichlet-Neumann swap isospectrality”, is investigated further in [40], where the authors explain how to construct an isospectral domain. It was encountered in this work during the investigat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 11,
+      "pageEnd": 35,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Paris, February 1809\nThe court of Napoleon Bonaparte ﬁlls with the sound of a Haydn melody, as our performer\nteases a curious rotating glass cylinder with felt-covered rods. The performer is Ernst\nChladni, the “father of acoustics”. Upon ﬁnishing his concert, he proceeds to demonstrate\nhis experiments with acoustics to the emperor. These involve bowing a ﬁxed plate at\ndiﬀerent frequencies, and observing how the patterns made by sand on the plate change as\nthe frequency increases. The patterns that he recorded on a square plate were documented\nin his seminal work, Akusik.\nWhilst the music of th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/210811825v1/blocks/rem-sec-000-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 35,
+      "target": "rem-sec-000-02.md",
+      "narrative": null,
+      "content": "For compact Riemann surfaces of constant curvature, the uniformization theorem (introduced in Section 2.2.1) enables us to normalize the Gaussian curvature to K = ±1 or K = 0, depending respectively on whether the surface is positively or negatively curved, or ﬂat. On surfaces of constant negative curvature, the Gauss-Bonnet theorem then implies Area(S) = 4π(g −1), where g is the genus of the surface. Napoleon showed great foresight in his comment regarding the study of curved surfaces. He was (inadvertently, one supposes) predicting an arena for the study of: the Helmholtz wave equation ∇2A −",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/rem-sec-000-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 35,
+      "target": "rem-sec-000-05.md",
+      "narrative": null,
+      "content": "Again, we are most interested in the case where p = 2, since W k, 2(Ω) is a separable Hilbert space with inner product ⟨φ, ψ⟩W k, 2 = X 0≤|α|≤k ⟨Dαφ, Dαψ⟩L2. The variational characterization of the Laplacian (and its associated eigenvalue prob- lems) is concerned with the validity of the formula ⟨∆φ, f⟩L2 = D[φ, f], where the φ is typically an eigenfunction, and the quantity on the right is the Dirichlet integral D[f, h] := ⟨D1f, D1h⟩L2 for f, h ∈W 1, 2(Ω) in the case when we consider a closed or Neumann problem and f, h ∈ W 1, 2 (Ω) when we consider a Dirichlet problem. D1 denotes the ﬁrst we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/rem-sec-000-08",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 35,
+      "target": "rem-sec-000-08.md",
+      "narrative": null,
+      "content": "In this work, we use Theorem 1.22 in Section 3.3 to produce an upper bound on the second positive eigenvalue of the Bolza surface. We do not actually use its sister theorem at any point, but include it for completion. The eigenvalues in the spectrum of the Laplacian on a compact Riemann surface are known to have ﬁnite multiplicity; it is a reasonable question to ask what this multiplicity is, and and whether it is possible to bound the multiplicity for a given eigenvalue ei- ther from below or above. We will see in Section 2.4 that the multiplicities of a compact Riemann surface are connected",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/rem-sec-000-13",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 35,
+      "target": "rem-sec-000-13.md",
+      "narrative": null,
+      "content": "Both of these theorems are consistent with the numerical calculations of eigenvalues listed in Table C.1. We observed in the numerics that there are 3 eigenvalues roughly equal to 3.84 and 4 eigenvalues roughly equal to 5.35. The Klein quartic The Klein quartic, also called Klein’s curve, has the largest automorphism group of all compact Riemann surfaces of genus 3. Klein studied the quotient of the hyperbolic plane by Fuchsian groups, that is, discrete subgroups of PSL2(R). He found the group Γ(7) = PSL2(Z7) to be of particular interest, and highlighted some of its special properties [48]. Si",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/thm-sec-000-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Gauss-Bonnet",
+      "pageStart": 11,
+      "pageEnd": 35,
+      "target": "thm-sec-000-01.md",
+      "narrative": null,
+      "content": "Let S be a compact Riemann surface without boundary, with Gaussian curvature K. Then Z S K dA = 2πχ(S), where dA is the area measure of S, and χ(S) is its Euler characteristic. χ(S) is another topological invariant, and can be calculated from the genus g using the formula χ(S) = 2 −2g.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/thm-sec-000-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Faber-Krahn inequality",
+      "pageStart": 11,
+      "pageEnd": 35,
+      "target": "thm-sec-000-03.md",
+      "narrative": null,
+      "content": "Let Ωbe an open domain in a hyperbolic surface S, and D be a disk in hyperbolic space (more information on such disks is given in Section 2.3.1). If Ωsatisﬁes the isoperimetric inequality, then A(Ω) = A(D) =⇒λ1(Ω) ≥λ1(D), where λ1 is the ﬁrst Dirichlet eigenvalue. To prove the Faber-Krahn inequality, the levels sets of eigenfunctions on an open domain are radially symmetrized so that the ﬁrst Dirichlet eigenvalue can be compared to that of a geodesic disk with equal area. This theorem can be stated more generally for n-dimensional manifolds satisfying an equivalent isoperimetric property; deta",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/thm-sec-000-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Cheeger’s inequality, [17]",
+      "pageStart": 11,
+      "pageEnd": 35,
+      "target": "thm-sec-000-04.md",
+      "narrative": null,
+      "content": "For Ω⊂S as above, we have λ1(Ω) ≥h2(Ω) . We will also be interested in creating upper bounds on eigenvalues. In his classic trea- tise on acoustics [69], Rayleigh gave a variational characterization of the ﬁrst eigenvalue for the Dirichlet problem. This involves taking the gradient of a function. We stated earlier that the eigenfunctions of the Laplacian on a compact Riemann surface S form an orthonormal basis of L2(S). Recall that L2(S) is the space of square integrable functions on S, that is, a function f on S is in L2(S) if Z S |f|2dS ≤∞. where dS is the Riemannian measure on S. L2(S) is s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/thm-sec-000-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Max-min",
+      "pageStart": 11,
+      "pageEnd": 35,
+      "target": "thm-sec-000-06.md",
+      "narrative": null,
+      "content": "Let M be a smooth, connected, compact manifold, possibly with boundary ∂M. For the Neumann eigenvalue problem on M, or closed eigenvalue problem where ∂M = ∅, we have λk = sup Vk inf{R(f) | f̸ = 0, f ⊥Vk}, where Vk runs through the k-dimensional subspaces of W 1, 2(M). We consider the (k −1)-dimensional subspaces of W 1, 2 (M) for the Dirichlet eigenvalue problem on M.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/thm-sec-000-07",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Min-max",
+      "pageStart": 11,
+      "pageEnd": 35,
+      "target": "thm-sec-000-07.md",
+      "narrative": null,
+      "content": "Let M be as above. For the Neumann eigenvalue problem on M, or closed eigenvalue problem where ∂M = ∅, we have λk = inf Vk sup{R(f) | f̸ = 0, f ∈Vk}, where Vk runs through the (k + 1)-dimensional subspaces of W 1, 2(M). We consider the k-dimensional subspaces of W 1, 2 (M) for the Dirichlet eigenvalue problem on M.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/thm-sec-000-09",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 35,
+      "target": "thm-sec-000-09.md",
+      "narrative": null,
+      "content": "Let S be a closed surface. If χ(S) < 0, then m1(S) < 5 −χ(S).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/thm-sec-000-11",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 35,
+      "target": "thm-sec-000-11.md",
+      "narrative": null,
+      "content": "The dimension of the ﬁrst eigenspace of ∆(B) is 3. This result was stated by Jenni in [42] after being proved in his thesis [41]. Upon careful inspection, a gap was found in this proof, relating to the analysis of 3 and 4 dimensional irreducible representations. In this work, we give a proof, utilizing the entire automorphism group as opposed to a smaller subgroup. We give the associated irreducible representation explicitly. The proof relies on a conjecture, for which numerical evidence is given in Appendix C. We also suggest how this conjecture may be proved in future work. We also prove",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/thm-sec-000-12",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 35,
+      "target": "thm-sec-000-12.md",
+      "narrative": null,
+      "content": "The dimension of the second eigenspace of ∆(B) is 4.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/thm-sec-000-14",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Hurwitz’s automorphism theorem, [36]",
+      "pageStart": 11,
+      "pageEnd": 35,
+      "target": "thm-sec-000-14.md",
+      "narrative": null,
+      "content": "The number of automor- phisms (not including reﬂections) of a compact Riemann surface of genus g > 1 cannot exceed 84(g −1). We see that for genus 3, this bound is 168. The symmetry group of the Klein quartic is therefore maximal. Any surface that achieves this bound is referred to as a Hurwitz surface. A Hurwitz surface does not occur for every single genus g > 1; the next Hur- witz surface is the Macbeath surface of genus 7, which has 504 orientation preserving isometries [55]. The group is isomorphic to the simple group PSL2(Z8) [55] and is further investigated in [83]. This surface is also",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/figure-img-p029-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../images/img-p029-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/figure-img-p029-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 29,
+      "target": "../images/img-p029-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/figure-img-p031-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../images/img-p031-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/ex-sec-002-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 43,
+      "target": "ex-sec-002-01.md",
+      "narrative": null,
+      "content": "∆Ω, that is, the Laplacian acting on Ω, is deﬁned on C∞ 0 (Ω), and satisﬁes Dirichlet boundary conditions trivially due to the property of compact support. Note that it is also a non-negative operator since for φ ∈C∞ 0 (Ω), an integration by parts shows that (φ, ∆φ) = ∥∇φ∥2 ≥0. C∞ 0 (Ω) is dense in L2(Ω), so (∆Ω, C∞ 0 (Ω)) is densely deﬁned on L2(Ω). Using Theo- rem 2.13, we will create an extension of P Ω D = (∆Ω, C∞ 0 (Ω)) to deﬁne ∆Ω D on L2(Ω). Being densely deﬁned is an essential property for deﬁning the adjoint of an unbounded operator. For our unbounded, densely deﬁned operator A, we wa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/ex-sec-002-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 43,
+      "target": "ex-sec-002-03.md",
+      "narrative": null,
+      "content": "For our study of the Dirichlet Laplacian, we will introduce a sesquilinear form QΩ D such that D(QΩ D) := D(P Ω D) and for φ ∈W 1, 2 , QΩ D[φ] := (φ, ∆φ) = ∥∇φ∥2. Deﬁnition 2.10 (Adjoint of a sesquilinear form) The adjoint q∗of q is deﬁned as D(q∗) := D(q), q∗(φ, ψ) := q(ψ, φ). q is symmetric if q∗= q. Now let q be a symmetric, densely deﬁned sesquilinear form that is bounded from below. As before, q is closable if it has a closed extension, that is, if for all {ψn}n∈N ⊂ D(q), D(q) ∋ψn n→∞ −−−→0 q[ψn −ψk] n, k→∞ −−−−→0 imply q[ψn] n→∞ −−−→0, then q has closure ¯q deﬁned as D(¯q) := n ψ ∈H | ∃{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/ex-sec-002-04",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 43,
+      "target": "ex-sec-002-04.md",
+      "narrative": null,
+      "content": "The form QΩ D is not closed on C∞ 0 , but note that the norm ∥φ∥2 QΩ D = QΩ D[φ] + (|α| + 1)∥u∥2 is the norm on the Sobolev space W 1, 2 (Ω) (compare Deﬁnition 1.18). The domain of the closure ˜QΩ D = QΩ D is therefore W 1, 2 (Ω), and for φ ∈W 1, 2 (Ω), ˜QΩ D[φ] = ∥∇φ∥2, where we interpret ∇φ in a distributional sense. From the sesquilinear form q, we wish to induce an operator Aq that is self-adjoint and bounded from below. The correspondence is as follows. Suppose we have Aq as above. Then ˙q[ψ] := (ψ, Aqψ), D( ˙q) := D(Aq) is densely deﬁned, symmetric and bounded from below. It is closable,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/ex-sec-002-07",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 43,
+      "target": "ex-sec-002-07.md",
+      "narrative": null,
+      "content": "Using Theorem 2.12 and Theorem 2.13, we are now ready to deﬁne ∆Ω D on L2(Ω) as a self-adjoint extension of P Ω D via the quadratic form ˜QΩ D. The deﬁnition in the Representation Theorem gives us D(∆Ω D) = \b ψ ∈W 1, 2 (Ω) | ∃η ∈L2(Ω) s.t. ∀φ ∈W 1, 2 (Ω), (∇φ, ∇ψ) = (φ, η)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/ex-sec-002-08",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 43,
+      "target": "ex-sec-002-08.md",
+      "narrative": null,
+      "content": "The resolvent operator for the Dirichlet Laplacian, ρ(−1) = (∆Ω D + 1)−1 is a bounded map ρ(−1) : L2(Ω) →W 1, 2 (Ω). Deﬁnition 2.17 (Spectrum) The spectrum of A is the complement σ(A) := C \\ ρ(A).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/ex-sec-002-12",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 43,
+      "target": "ex-sec-002-12.md",
+      "narrative": null,
+      "content": "We have seen that ρ(−1) is bounded from L2(Ω) to W 1,2 0 (Ω). By the Rellich-Kondrachov embedding theorem, W 1,2 0 (Ω) has a compact embedding into L2(Ω), since Ωis compact, as is the surface S for which it is a subset. The following theorem guarantees that any complex number in the spectrum of a compact operator is an eigenvalue.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/prop-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 43,
+      "target": "prop-sec-002-02.md",
+      "narrative": null,
+      "content": "A∗is always closed, regardless of whether or not A is. To see this, we can look at an alternative deﬁnition of the adjoint, taking advantage of the fact that we can describe an operator by its graph. For A∗, gr(A∗) = R(gr(A)⊥), where R acts like a rotation on H × H, namely R(u1, u2) = (u2, −u1). Deﬁnition 2.6 (Symmetric operator) A is symmetric if it is densely deﬁned and its adjoint A∗is an extension of A. An easy consequence of Proposition 2.5 is that if A is symmetric, then it is closable. The preceding deﬁnitions have laid the groundwork for us to deﬁne self-adjointness for unbounded opera",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/prop-sec-002-10",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 43,
+      "target": "prop-sec-002-10.md",
+      "narrative": null,
+      "content": "Let A be bounded operator on a Hilbert space H. Then the following are equivalent [64]: (i) A is compact; (ii) A is the norm limit of a sequence of ﬁnite rank operators; (iii) for any weakly convergent sequence un ⇀u, Aun →u strongly; (iv) for any ﬁnite orthonormal system (en), Aen →0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Background",
+      "pageStart": 35,
+      "pageEnd": 35,
+      "target": "../sections/sec-001-background.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/210811825v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spectral theory",
+      "pageStart": 35,
+      "pageEnd": 43,
+      "target": "../sections/sec-002-spectral-theory.md",
+      "narrative": null,
+      "content": "Spectral theory\nThe Laplace-Beltrami operator ∆, on a Riemannian manifold M, is given in local coor-\ndinates by the formula\n∆= −\nn\nX\ni, k=1\n1\n√g\n∂\n∂xi\n√ggik ∂\n∂xk\n,\nwhere gik is the metric tensor, g its determinant, and gik are the components of the dual\nmetric on the cotangent bundle of M.\nThere exists an orthonormal basis {φi | i ∈N0} in L2(M) consisting of eigenfunctions\n∆φi = λiφi\n(2.1)\nsuch that\n0 = λ0 < λ1 ≤λ2 ≤. . .\n(2.2)\nform an ascending sequence with ∞as the only accumulation point. We understand\nEquation (2.1) in terms of the weak derivative.\nThe sequence in Equation (2.2) is called",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/210811825v1/blocks/rem-sec-002-09",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 43,
+      "target": "rem-sec-002-09.md",
+      "narrative": null,
+      "content": "We are interested in the discrete spectrum σdis, which is the set of isolated eigenvalues of ﬁnite multiplicity, that is σdis(A) = {λ ∈C | ∃ψ ∈D(A), ∥ψ∥= 1, Aψ = λψ}. If λ ∈σdis(A), then its multiplicity is given by dim(ker(A −λ)) < ∞. Now that we have deﬁned the resolvent operator, we just need to show that it is compact, and then we can apply the spectral theorem for compact, self-adjoint operators. First, we deﬁne what it means to be a compact operator. Deﬁnition 2.19 (Compact operator) A bounded operator A is compact if for a bounded sequence (un)n∈N, (Aun)n contains a converging sub-seque",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/thm-sec-002-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Representation theorem, [45]",
+      "pageStart": 35,
+      "pageEnd": 43,
+      "target": "thm-sec-002-05.md",
+      "narrative": null,
+      "content": "Let q be densely deﬁned, symmetric, closed, and bounded from below in H. Then D(Aq) := {ψ ∈D(q) | ∃η ∈H s.t. ∀φ ∈D(q), q(φ, ψ) = (φ, η)} , Aqψ := η is self-adjoint and bounded from below. D(q) is called the form domain of the operator Aq.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/thm-sec-002-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Friedrichs extension",
+      "pageStart": 35,
+      "pageEnd": 43,
+      "target": "thm-sec-002-06.md",
+      "narrative": null,
+      "content": "Let A be a symmetric operator, bounded from below. Let qA be the sesquilinear form such that qA[ψ] := (ψ, Aψ), and D(qA) := D(A) is densely deﬁned, symmetric and bounded from below. If qA is closable, we take the closure ˜qA := qA. Finally, we can associate to ˜qA the self-adjoint linear operator A˜q via Theorem 2.12.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/thm-sec-002-11",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Rellich-Kondrachov embedding theorem",
+      "pageStart": 35,
+      "pageEnd": 43,
+      "target": "thm-sec-002-11.md",
+      "narrative": null,
+      "content": "Let Ωbe a bounded do- main of a compact Riemann surface S. The the embedding W 1, 2(Ω) ⊂L2(Ω) is compact.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/thm-sec-002-13",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Fredholm alternative",
+      "pageStart": 35,
+      "pageEnd": 43,
+      "target": "thm-sec-002-13.md",
+      "narrative": null,
+      "content": "Let A be a compact operator. For z0̸ = 0, (i) either (z0 −A)−1 exists and is a bijection H →H, (ii) or z0 is an eigenvalue of ﬁnite multiplicity. Therefore, the spectrum of the compact resolvent ρ(−1) consists of σdis ∪{0}, and its eigenvalues have ﬁnite multiplicity. Moreover the only accumulation point of its spectrum is zero. The upshot of Theorem 2.23 is that we can “invert” the property of a compact resolvent ρ(z) of A to get information about what we are really interested in - the spectrum of A. In particular, A has a purely discrete spectrum that has ∞as its only accumulation point. To",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/thm-sec-002-14",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 43,
+      "target": "thm-sec-002-14.md",
+      "narrative": null,
+      "content": "If A is compact and self-adjoint, then it admits an orthonormal eigen- basis (un, λn) with λn →0. 2.2 Hyperbolic geometry We now want to look at the Laplacian in two speciﬁc models of hyperbolic geometry. First, we will consider the Poincaré disk model. This is the setting through which we view the Riemann surfaces. Next, we will consider the Laplacian in geodesic polar coordinates on the Poincaré upper half plane, H. Harmonic analysis on H will give us a method to calculate the eigenvalues of hyperbolic disks. As a result, we can then use the Faber- Krahn inequality as a comparison tool for D",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hyperbolic geometry",
+      "pageStart": 43,
+      "pageEnd": 47,
+      "target": "../sections/sec-003-hyperbolic-geometry.md",
+      "narrative": null,
+      "content": "H = {z ∈C | ℑz > 0},\nwith metric\nds2\nH = y−2 \u0000dx2 + dy2\u0001\n.\nThe Laplacian with this metric takes the form\n∆H = −y2\n\u0012 ∂2\n∂x2 + ∂2\n∂y2\n\u0013\n.\nThe distance function is\nρ(z, w) = log\n\u0012|z −w| + |z −w|\n|z −w| −|z −w|\n\u0013\n.\nGeodesics in H are semicircles and half lines perpendicular to the real line. The isometries\nof hyperbolic space are given by Möbius transformations\nt : z 7→az + b\ncz + d,\nsuch that a, b, c, d ∈R and ad−bc = 1. With these conditions, a Möbius transformation\nt determines a matrix of the form\n \na\nb\nc\nd\n!\n,\nup to a sign.\nSince the identity transformation can be given by a = d = ±1 (and\nb =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/210811825v1/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Koebe, Poincaré",
+      "pageStart": 43,
+      "pageEnd": 47,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "For any smooth Riemannian metric on a surface, there exists a conformally equivalent metric of constant curvature. We can use a global rescaling to restrict ourselves to curvatures of +1, 0, and −1. Then we have the following",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/thm-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Hopf",
+      "pageStart": 43,
+      "pageEnd": 47,
+      "target": "thm-sec-003-02.md",
+      "narrative": null,
+      "content": "Up to isometry, the only smooth, complete, simply connected surfaces of constant curvature are S2, R2, and H2. The complex analogue of this is that every simply connected Riemann surface is holo- morphically equivalent to C ∪∞, C or H. Since Fuchsian groups act discontinuously, a fundamental domain F will share a border with a ﬁnite number of translates of itself in the associated tessellation. If Γ is a Fuchsian group of the ﬁrst kind, its fundamental domain can be chosen to be a convex polygon given by D(w) = {z ∈H | ρ(z, w) < ρ(z, γw) ∀γ ∈Γ, γ̸ = I}, for w ∈H not ﬁxed by such a γ, where I i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/thm-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 47,
+      "target": "thm-sec-003-03.md",
+      "narrative": null,
+      "content": "For any right angled hyperbolic triangle, the following hold: cosh(c) = cot(α) cot(β), cos(α) = cosh(a) sin(β), where c is the hypotenuse, a is the side with opposite angle α, and b is the side with opposite angle β. The hyperbolic side lengths for the (2, 3, 7) triangle are: a = arccosh",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Harmonic analysis on H",
+      "pageStart": 47,
+      "pageEnd": 52,
+      "target": "../sections/sec-004-harmonic-analysis-on-h.md",
+      "narrative": null,
+      "content": "Harmonic analysis on H\n2.3.1\nDisks\nHere we take “disk” to mean a general disk in hyperbolic space rather than the Poincaré\ndisk model. Due to the radial symmetry of the disk, it is possible to give an explicit\nformula for the eigenfunctions. From these, we can calculate the eigenvalues of the disk\nand use them to bound the eigenvalues of a domain in our surface from below. First,\nwe introduce a more convenient polar co-ordinate system, known as the geodesic polar\nco-ordinates. Recall the diﬀerent forms that a group action in Isom+(H) can take (for\nexample, reﬂection or rotation matrices). An e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/210811825v1/blocks/rem-sec-004-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 47,
+      "pageEnd": 52,
+      "target": "rem-sec-004-01.md",
+      "narrative": null,
+      "content": "Note that Cw is diﬀeomorphic to a annulus Ωof constant width ρ, with two boundary components of length w. In particular, for such an annulus, we have the following formulae for its area and the length of its boundary: A(Ω) =2l sinh(ρ), l(∂Ω) =2l cosh(ρ), where again, l is the length of the core geodesic, and ρ is the constant distance from the core geodesic to the boundary. With respect to the Fermi coordinates, C has the metric ds2 = dρ2 + l2 cosh2 ρ 4π2 dθ2. The Laplacian on C is given by ∆= − \u0012 d2 dρ2 + tanh ρ d dρ + 4π2 l2 cosh2(ρ) d2 dθ2 \u0013 . There is a fundamental system of even and odd e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/lem-sec-005-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 53,
+      "target": "lem-sec-005-03.md",
+      "narrative": null,
+      "content": "The Laplace operator commutes with the group of isometries of the surface (see, for example, [14]). For a isometry φ : S →S of a compact Riemann surface S, and an eigenfunction of the Laplacian f : S →R with eigenvalue λ, this means ∆(f ◦φ) = (∆f) ◦φ = (λf) ◦φ = λ(f ◦φ). Consider the eigenspaces of the Laplacian Ei = Ei(S) = {φi ∈L2(S) | ∆φi = λiφi}. We can use the Peter-Weyl theorem along with the invariance of the Laplacian under isometries to decompose the eigenspace Ei as a direct sum of eigenspaces of irreducible representations (these can appear more than once). Huber showed that for eve",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Representation theory",
+      "pageStart": 52,
+      "pageEnd": 53,
+      "target": "../sections/sec-005-representation-theory.md",
+      "narrative": null,
+      "content": "Representation theory\nDeﬁnition 2.36 (Representation) Let V be an n-dimensional vector space over C.\nThen GL(V ) denotes the the group of isomorphisms V →V . If V has a ﬁnite basis of\nvectors {e1, . . . , en}, then each linear map a : V →V is deﬁned by an n × n matrix (aij)\nsuch that\na(ej) =\nn\nX\ni=j\naijei.\nA representation of a ﬁnite group G is a group homomorphism\nρ : G →GL(V ).\nFor each g, h ∈G, we have a map ρ(g) : V →V such that\n(i) ρ(gh) = ρ(g)ρ(h),\n(ii) ρ(1) = 1,\n(iii) ρ(g−1) = ρ(g)−1.\nDenote by dim(V ) the dimension of the representation. A sub-representation of ρ is\na sub-vector space",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/210811825v1/blocks/rem-sec-005-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 52,
+      "pageEnd": 53,
+      "target": "rem-sec-005-01.md",
+      "narrative": null,
+      "content": "We will not always include a subscript when talking about characters; it will depend on the context. Characters take a constant value on each conjugacy class. They will be used in the next section, where we introduce a general version of Selberg’s trace formula that uses a character to restrict to a particular irreducible representation. In Chapter 3 and Chapter 4, we look at the irreducible representations of the isometry groups of speciﬁc surfaces. We use these to investigate the orthonormal basis of eigen- functions of L2(Γ \\ H); our ﬁrst step towards achieving this is the Peter-Weyl theore",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/thm-sec-005-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Peter-Weyl Theorem, taken from [49]",
+      "pageStart": 52,
+      "pageEnd": 53,
+      "target": "thm-sec-005-02.md",
+      "narrative": null,
+      "content": "Let H be the Hilbert space of square integrable functions over G, that is L2(G). Let ρ be a unitary representation of G that acts on H as ρ(h)f(g) = f(h−1g). Then L2(G) decomposes as an orthogonal direct sum of unitary irreducible representations of G, where the multiplicity of a representation is equal to its degree. We have L2(G) = M ρ E ⊕dim(Eρ) ρ , where the sum runs over the total spaces Eρ of the representations ρ. Next, we have the following property of the Laplacian:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Selberg's trace formula",
+      "pageStart": 53,
+      "pageEnd": 60,
+      "target": "../sections/sec-006-selbergs-trace-formula.md",
+      "narrative": null,
+      "content": "We start by following the basic presentation of the trace formula given in [10, 38, 56].\nRecall that a hyperbolic surface S can be represented as a quotient of the hyperbolic\nplane by a Fuchsian group that only has hyperbolic elements (with the exception of the\n43\nidentity), that is, S ∼= Γ \\ H. The space of square integrable functions on S comes from\nthe functions f ∈L2(H) that are invariant under the action of an isometry\nTγ(z)f = f(γ−1z) = f(z),\nγ ∈Γ,\nand are square integrable over any fundamental domain FΓ of Γ (recall Deﬁnition 2.26).\nWe obtain the Hilbert space L2(Γ \\ H) by deﬁning the o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/210811825v1/blocks/rem-sec-006-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 53,
+      "pageEnd": 60,
+      "target": "rem-sec-006-02.md",
+      "narrative": null,
+      "content": "In this presentation, we have given little attention to the convergence of the various series and integrals considered - the ﬁner details can be found in [56]. The relation between eigenfunctions of the Laplacian and of the invariant integral operators depends on k being smooth, and of compact support, on H (or Γ\\H). It is more common to specify conditions on the spectral function h(t), since this function, along with its Fourier transform, appear in Selberg’s trace formula below. In particular, we require the following conditions: (i) h is analytic on |ℑ(t)| ≤σ for some σ > 1 2; (ii) h(t) = h",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/thm-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 53,
+      "pageEnd": 60,
+      "target": "thm-sec-006-01.md",
+      "narrative": null,
+      "content": "The invariant integral operators commute with the Laplace operator. This commutative property gives a relation between eigenfunctions of the Laplacian and those of the invariant integral operators; in particular, if f is a solution to (∆f −λf) = 0, where λ = 1 2 + t2, then it is also a solution to Lf = h(t)f, where h(t) can be computed from k(z, w) using the Selberg/Harish-Chandra transform [38]: q(v) = Z ∞ v k(u)(u −v)−1 2du, g(r) =2q \u0012\u0010 sinh \u0010r \u0011\u00112\u0013 , h(t) = Z ∞ −∞ eirtg(r)dr. To study the spectrum of the Laplacian on Γ \\ H, note that the point pair invariant on H × H induces a point pair in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/thm-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Selberg’s trace formula, [74]",
+      "pageStart": 53,
+      "pageEnd": 60,
+      "target": "thm-sec-006-03.md",
+      "narrative": null,
+      "content": "Let h(t) be as above, and let g(t) be its Fourier transform. Let S be a compact Riemann surface. Then ∞ X j=0 h(tj) = Area(S) 4π Z ∞ −∞ h(t) tanh(πt)tdt + X [γ] ∞ X n=1 lγg(nlγ) 2 sinh(nlγ/2). One interesting application of this theorem is to prove Weyl’s law, the famous formula that describes the asymptotic properties of Laplace eigenvalues. We deﬁne the set of eigenvalues below a certain value as N(λ) = #j{λj ≤λ}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/thm-sec-006-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Weyl’s law, [82]",
+      "pageStart": 53,
+      "pageEnd": 60,
+      "target": "thm-sec-006-04.md",
+      "narrative": null,
+      "content": "Let S be a compact Riemann surface. Then N(λ) ∼Area(S) 4π λ, λ →∞. This can be proved by using the heat kernel h(t) = e−βt2 with Fourier transform g(s) = e−s2/2β √4πβ in Selberg’s trace formula, where β > 0. In particular, with λj = t2 j + 1 4, we take the limit lim β→0 ∞ X j=0 e−βλj, and the result follows from a Tauberian theorem of Wiener-Ikehara (see Theorem 9.4.7 in [13]). If one has information about the irreducible representations of the automorphism group of a surface, one can consider a more general version of Selberg’s trace formula, given in [9]. The advantage of this is that one ca",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/thm-sec-006-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": " [9]",
+      "pageStart": 53,
+      "pageEnd": 60,
+      "target": "thm-sec-006-05.md",
+      "narrative": null,
+      "content": "Let M be the set T ∈Γ such that T does not have a cusp of [Γ+] as a ﬁxed point. Let I denote the identity action, and MI = M ∪[I]. Let F be a fundamental domain for Γ\\H. For each non-elliptic T ∈M, there exists a hyperbolic element or glide reﬂection T0 ∈Z(T) such that the inﬁnite cyclic group [T0] = {T n 0 | n ∈Z} has index 1, 2, or 4 in Z(T). Then for each admissible h(t) we have X T∈MI Z Γ\\H χ(T)k(z, Tz)dµz = Area(F) 4π Z ∞ −∞ h(t) tanh(πt)tdt + X T∈M non−ell log N(T0) [ZΓ(T) : [T0]] χ(T)g(log N(T)) N(T) 2 −sgn(det T)N(T)−1 + X T∈M elliptic χ(T) 2|ZΓ(T)| sin(θ(T)) Z ∞ −∞ exp(−2θ(T)t) 1 + ex",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetry group of the Bolza surface",
+      "pageStart": 60,
+      "pageEnd": 61,
+      "target": "../sections/sec-007-symmetry-group-of-the-bolza-surface.md",
+      "narrative": null,
+      "content": "Symmetry group of the Bolza surface\nIn his thesis, Jenni [41] lists the generators of the group of isometries, and the relations\nbetween them. The whole isometry group is generated by 4 actions, which are shown in\nFigure 3.1:\n• R - rotation of order 8 around the origin (centre of the Bolza surface) that maps\nQi 7→Qi+1 (modulo 8), and preserves P1 and P2;\n• S - reﬂection in the real line that maps Qi 7→Q9−i, and preserves P1 and P2;\n• T - reﬂection that switches the centre point with the outmost, that is, maps P1 7→P2\nand preserves the Qis;\n• U - rotation of order 3 around the centre of a (4, 4",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/210811825v1/blocks/rem-sec-007-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 60,
+      "pageEnd": 61,
+      "target": "rem-sec-007-01.md",
+      "narrative": null,
+      "content": "R and U are orientation preserving actions, whereas S and T are ori- entation reversing. Therefore the orientation preserving elements of Isom(B), denoted Isom+(B), will have the form Ri(ST)jU l. The orientation reversing elements will take the form either RiSU l or RiTU l.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/prop-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 61,
+      "pageEnd": 65,
+      "target": "prop-sec-008-02.md",
+      "narrative": null,
+      "content": "The centre of the isometry group is R4.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Bolza Surface",
+      "pageStart": 61,
+      "pageEnd": 65,
+      "target": "../sections/sec-008-the-bolza-surface.md",
+      "narrative": null,
+      "content": "P2\nP2\nP2\nP2\nP2\nP2\nP2\nP2\nQ7\nQ6\nQ2\nP1\nQ3\nQ8\nQ1\nQ5\nQ4\nCalculations in GAP [26] show that the relations given in Satz 32 of Jenni’s thesis give\na ﬁnitely presented group of order 12. This implies that there is a problem with at least\none of his relations. After scrutinizing the actions of R, S, T, and U on the tessellation\nregular octagons, we oﬀer the following corrected theorem:\nTheorem 3.3 (Correction to Satz 32 in [41]) The generators of the Bolza surface\nsatisfy the following relations:\nR8 = S2 = T 2 = U 3 = RSRS = STST = RTR3T = e,\nUR = R7U 2, U 2R = STU, US = SU 2, UT = RSU,\nwhere e is the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/210811825v1/blocks/rem-sec-008-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 61,
+      "pageEnd": 65,
+      "target": "rem-sec-008-03.md",
+      "narrative": null,
+      "content": "Recall the side lengths of (2, 3, 8) triangles calculated in Section 2.2.3, and the comment in the introduction regarding the systoles of the Bolza surface. From Figure 3.3, we can see that the systole of the Bolza surface consists of four “medium length” (2, 3, 8) triangle sides, that is, s(B) = 4 arccosh",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/thm-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Correction to Satz 32 in [41]",
+      "pageStart": 61,
+      "pageEnd": 65,
+      "target": "thm-sec-008-01.md",
+      "narrative": null,
+      "content": "The generators of the Bolza surface satisfy the following relations: R8 = S2 = T 2 = U 3 = RSRS = STST = RTR3T = e, UR = R7U 2, U 2R = STU, US = SU 2, UT = RSU, where e is the trivial (identity) action.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Length spectrum of the Bolza surface",
+      "pageStart": 65,
+      "pageEnd": 66,
+      "target": "../sections/sec-009-length-spectrum-of-the-bolza-surface.md",
+      "narrative": null,
+      "content": "Length spectrum of the Bolza surface\nAn expression for the lengths of primitive geodesics of the Bolza surface in terms of\nalgebraic numbers has been given in [2]. We have seen the form of the generators in the\nintroduction; an equivalent form is given by\ngk =\n \ncosh\n\u0000 l0\n2\n\u0001\nexp\n\u0000i\n\u0000 kπ\n4\n\u0001\u0001\nsinh\n\u0000 l0\n2\n\u0001\nexp\n\u0000−i\n\u0000 kπ\n4\n\u0001\u0001\nsinh\n\u0000 l0\n2\n\u0001\ncosh\n\u0000 l0\n2\n\u0001\n!\n,\nk = 0, . . . , 3,\nwhere\ncosh\n\u0012l0\n2\n\u0013\n= cot\n\u0010π\n8\n\u0011\n= 1 +\n√\n2\ndescribes the length of the ﬁrst geodesic.\nIn fact, the periodic orbit matrices for all\ngeodesics in the spectrum take a similar form:\ng =\n \nα\nβ\nβ∗\nα∗\n!\n,\nwhere\nα = a +\n√\n2b\nand\nβ =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/210811825v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Upper bounds on eigenvalues of the Bolza surface",
+      "pageStart": 66,
+      "pageEnd": 74,
+      "target": "../sections/sec-010-upper-bounds-on-eigenvalues-of-the-bolza-surface.md",
+      "narrative": null,
+      "content": "Upper bounds on eigenvalues of the Bolza surface\nWe use the Rayleigh quotient (Theorem 1.20) to give upper bounds on the ﬁrst two\ndistinct positive eigenvalues of ∆(B). We have calculated these numerically and listed\nthem in Table C.1; in particular, the ﬁrst and second positive eigenvalues are roughly\nequal to 3.84 and 5.35 respectively. Since the Rayleigh quotient is an equality for the\nﬁrst eigenfunction, the closer the test function is to the ﬁrst eigenfunction, the better the\nbound will be. Rather than simply trying to guess a function, we can use the calculation\nfor χ8 in Section 3.4 to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/210811825v1/blocks/rem-sec-010-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 66,
+      "pageEnd": 74,
+      "target": "rem-sec-010-01.md",
+      "narrative": null,
+      "content": "Why is it suﬃcient to only consider two test functions? There are three functions corresponding to the ﬁrst eigenvalue on the entire surface, but here we have re- stricted ourselves to a fundamental domain Ωof a subgroup of the isometry group Isom(B). By reﬂection, we can extend an eigenfunction on this domain to one on the entire sur- face (see Remark 3.11). In particular, when we reﬂect the domain along its “free” edges, that is, the edges with a Neumann boundary condition, we get a larger region with closed Dirichlet boundary. It is well known that the ﬁrst Dirichlet eigenvalue of a connect",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/rem-sec-010-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 66,
+      "pageEnd": 74,
+      "target": "rem-sec-010-02.md",
+      "narrative": null,
+      "content": "Whilst this is an accurate bound for the integral in Equation (3.1), we have lost some overall accuracy through the propagation of error through division and squaring",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/conj-sec-011-04",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 74,
+      "pageEnd": 95,
+      "target": "conj-sec-011-04.md",
+      "narrative": null,
+      "content": "Let Ωbe the annulus described above (alternatively, the right angled pentagon with boundary conditions as in Figure 3.16). Then λ1(Ω) > 4.15.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/cor-sec-011-08",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 74,
+      "pageEnd": 95,
+      "target": "cor-sec-011-08.md",
+      "narrative": null,
+      "content": "Let (M, g) be as above, and assume ∂M̸ = ∅. Assume there exists a strictly positive function w ∈C∞(M) with (−∆+ λ)w ≤0 in M. Then there is no Dirichlet eigenvalue in [0, λ] in M.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/cor-sec-011-09",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 74,
+      "pageEnd": 95,
+      "target": "cor-sec-011-09.md",
+      "narrative": null,
+      "content": "Let (M, g) be as above, and assume ∂M̸ = ∅. Assume there exists a function w ∈C∞(M) that is positive on the interior of M and non-negative on M, satisfying (−∆+ λ)w ≤0 in M. Then there is no Dirichlet eigenvalue in [0, λ) in M.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/ex-sec-011-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "Z2",
+      "pageStart": 74,
+      "pageEnd": 95,
+      "target": "ex-sec-011-02.md",
+      "narrative": null,
+      "content": "Z2 is the isometry group of a kite K with only one line of symmetry, generated by a single reﬂection S. Figure 3.5: Kite K with one line of symmetry s Z2 has two irreducible representations, M1 and M2, both one dimensional. M1 is the trivial representation, where S1 takes the value 1. On M2, S2 takes the value −1. A fundamental domain for Z2 acting on K is one of two scalene triangles (for example, the one shaded in Figure 3.5). We look at a vector valued function f that takes value v̸ = 0 on the shaded region, and see how it is aﬀected by the group action. Since both irreducible representatio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/lem-sec-011-07",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 74,
+      "pageEnd": 95,
+      "target": "lem-sec-011-07.md",
+      "narrative": null,
+      "content": "The trivial representation does not appear in E1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/prop-sec-011-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "18, Proposition 1.1",
+      "pageStart": 74,
+      "pageEnd": 95,
+      "target": "prop-sec-011-06.md",
+      "narrative": null,
+      "content": "For Neumann boundary problems, the number of nodal domains of the eigenfunction corresponding to the ﬁrst positive eigenvalue is 2. For Dirichlet boundary problem problems, the number of nodal domains of the eigenfunction corresponding to the second positive eigenvalue is 2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "First eigenspace of the Bolza surface",
+      "pageStart": 74,
+      "pageEnd": 95,
+      "target": "../sections/sec-011-first-eigenspace-of-the-bolza-surface.md",
+      "narrative": null,
+      "content": "First eigenspace of the Bolza surface\nTheorem 3.9 The dimension of the ﬁrst eigenspace E1 of ∆is 3, and the irreducible\nrepresentation appearing in this eigenspace is χ8.\n64\nIn order to calculate the dimension of the ﬁrst eigenspace, we must use the irreducible\nrepresentations of Isom(B) to create boundary value problems on the surface. Then, using\nthe Faber-Krahn inequality, we can determine which irreducible representations appear\nin E1 (counting multiplicity).\nSince we can describe the isometry group as a ﬁnitely presented group on 4 elements,\nsatisfying a set of relations, we can use GAP [",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/210811825v1/blocks/rem-sec-011-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 74,
+      "pageEnd": 95,
+      "target": "rem-sec-011-03.md",
+      "narrative": null,
+      "content": "This technique was used in [41, 42] in precisely the same manner as we intend to use it, and was also used in [43] to investigate the relationship between geodesics on a hyperbolic surface, and the nodal lines of Laplace eigenfunctions. Given a surface S with isometry group Isom(S), and a fundamental domain Ωfor the action of a subgroup of Isom(S), it allows us to extend an eigenfunction f of the mixed boundary problem on Ω, to one on the whole surface S. The following sketched proof comes from [43]. For the Dirichlet case, let f = 0 on a geodesic boundary edge B ∈∂Ω. Since the Laplacian commu",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/rem-sec-011-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 74,
+      "pageEnd": 95,
+      "target": "rem-sec-011-05.md",
+      "narrative": null,
+      "content": "There is strong numerical evidence to support this conjecture. Table C.2 shows the eigenvalues of Ωwith boundary conditions as in Figure 3.16, calculated using FreeFEM++ (the corresponding code is also given in Appendix C). One can see that the ﬁrst positive eigenvalue is approximately 5.35, and can compare this with the spectrum of B given in Table C.1, where the same eigenvalue appears with multiplicity 4. Unfor- tunately, we were not able to prove this conjecture rigorously, but in Section 3.4.1, we outline a method that could be used to produce the relevant bound. The truth of this conject",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/rem-sec-011-10",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 74,
+      "pageEnd": 95,
+      "target": "rem-sec-011-10.md",
+      "narrative": null,
+      "content": "The proof of Conjecture 3.12 now amounts to showing that the test func- tion w(p, t) is positive inQ. One could perhaps do this by approximating the hyperge- ometric functions by polynomials in p, which are easier to analyze. Here, care must be taken to ensure that the first and second derivatives are approximated well enough such | (hat the qpproximating function is still sub-harmonic over Q. One can see from Fig- ure 3.19 that the test function w is only just positive inside Q, so finding a sufficiently",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/rem-sec-011-11",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 74,
+      "pageEnd": 95,
+      "target": "rem-sec-011-11.md",
+      "narrative": null,
+      "content": "At one point, we thought it would be possible to prove Confeeture3-42—l",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/thm-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 74,
+      "pageEnd": 95,
+      "target": "thm-sec-011-01.md",
+      "narrative": null,
+      "content": "The dimension of the ﬁrst eigenspace E1 of ∆is 3, and the irreducible representation appearing in this eigenspace is χ8. In order to calculate the dimension of the ﬁrst eigenspace, we must use the irreducible representations of Isom(B) to create boundary value problems on the surface. Then, using the Faber-Krahn inequality, we can determine which irreducible representations appear in E1 (counting multiplicity). Since we can describe the isometry group as a ﬁnitely presented group on 4 elements, satisfying a set of relations, we can use GAP [26] to obtain information about the repre- sentation",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/lem-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 95,
+      "pageEnd": 98,
+      "target": "lem-sec-012-01.md",
+      "narrative": null,
+      "content": "The dimension of E2 is a multiple of 4.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Second eigenspace of Bolza surface",
+      "pageStart": 95,
+      "pageEnd": 98,
+      "target": "../sections/sec-012-second-eigenspace-of-bolza-surface.md",
+      "narrative": null,
+      "content": "Second eigenspace of Bolza surface\nHaving calculated lower bounds for the eigenvalues of each irreducible representation, we\nhave done the bulk of the work to make a statement about the second eigenspace, E2.\nWe begin with the following\nLemma 3.21 The dimension of E2 is a multiple of 4.\nProof:\nRecall our upper bound on λ2 in Section 3.3. The only irreducible representations\nthat can appear in this eigenspace are χ8 and the four dimensional ones. To rule out χ8,\nwe will return to Proposition 3.14. The eigenfunction corresponding to the second positive\neigenvalue of the domain in Figure 3.13 has",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/210811825v1/blocks/thm-sec-012-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 95,
+      "pageEnd": 98,
+      "target": "thm-sec-012-02.md",
+      "narrative": null,
+      "content": "The dimension of E2(B) is 4.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Klein Quartic",
+      "pageStart": 98,
+      "pageEnd": 98,
+      "target": "../sections/sec-013-the-klein-quartic.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/210811825v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Systole of the Klein quartic",
+      "pageStart": 98,
+      "pageEnd": 100,
+      "target": "../sections/sec-014-systole-of-the-klein-quartic.md",
+      "narrative": null,
+      "content": "Systole of the Klein quartic\nThe systole of the Klein quartic is described in Klein’s original paper [48] on the prop-\nerties of the quartic curve, and is expounded upon in [44,80]. We will use K to denote\nthe surface. Consider a tessellation of K by heptagons (these can be barycentrically sub-\ndivided into 14 (2, 3, 7) triangles, see Figure 4.2). Starting with the central heptagon,\njoin the midpoints of two adjoining edges with a geodesic. Extend this geodesic in both\ndirections until it meets the boundary of the fundamental 14-gon. On its way, it passes\nthrough the midpoints of a further 3 a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/210811825v1/blocks/rem-sec-014-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 98,
+      "pageEnd": 100,
+      "target": "rem-sec-014-01.md",
+      "narrative": null,
+      "content": "Note that there is more than one way to calculate a closed formula for the systole; [72] came up with 8 arccosh \u00123 2 −2 sin2 \u0010π \u0011\u0013 ≈3.93594624883. Figure 4.2: Geodesics of length equal to the systole",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/rem-sec-014-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 98,
+      "pageEnd": 100,
+      "target": "rem-sec-014-02.md",
+      "narrative": null,
+      "content": "Numerical calculations of the other values in the geodesic length spectrum of the Klein quartic are given in the doctoral thesis of Vogeler [81], along with multiplicities. Vogeler also gives similar length spectra calculations for many other Hurwitz surfaces, including the Macbeath surface mentioned in the introduction to this work.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/figure-img-p100-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 100,
+      "pageEnd": 100,
+      "target": "../images/img-p100-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fenchel-Nielsen parameters of the Klein quartic",
+      "pageStart": 100,
+      "pageEnd": 103,
+      "target": "../sections/sec-015-fenchel-nielsen-parameters-of-the-klein-quartic.md",
+      "narrative": null,
+      "content": "Fenchel-Nielsen parameters of the Klein quartic\nTo discuss Fenchel-Nielsen parameters, we ﬁrst need to introduce the notion of a pants\ndecomposition. A pair of pants (sometimes called a Y-piece) is the simplest hyperbolic\nsurface; topologically, it is a sphere with three disks removed. A compact Riemann surface\nof genus g ≥2 can be decomposed into pairs of pants by cutting along 3g −3 simple,\nclosed, non-intersecting geodesics. These geodesics form the boundaries of each pair of\npants. A pair of pants has a speciﬁc geometry; we can form them by gluing together two\nright-angled (hyperbolic) hex",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/210811825v1/blocks/cor-sec-016-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 103,
+      "pageEnd": 108,
+      "target": "cor-sec-016-03.md",
+      "narrative": null,
+      "content": "The eigenspace corresponding to the ﬁrst positive eigenvalue of the Klein quartic is either 6, 7, or 8 dimensional.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/lem-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 103,
+      "pageEnd": 108,
+      "target": "lem-sec-016-01.md",
+      "narrative": null,
+      "content": "E1 of the Klein quartic is not one dimensional.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/lem-sec-016-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 103,
+      "pageEnd": 108,
+      "target": "lem-sec-016-02.md",
+      "narrative": null,
+      "content": "The multiplicity of λ1 is less than or equal to 10.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spectral theory of the Klein quartic",
+      "pageStart": 103,
+      "pageEnd": 108,
+      "target": "../sections/sec-016-spectral-theory-of-the-klein-quartic.md",
+      "narrative": null,
+      "content": "Spectral theory of the Klein quartic\nThe symmetry group of the Klein quartic comes from the 336 (2, 3, 7) triangles that\ntessellate the surface. We saw the presentation of such a group in the hyperbolic ge-\nometry section; since there are side associations on our surface, we have the following\npresentation:\n⟨a, b, c | a2 = b2 = c2 = (ab)2 = (ac)7 = (bc)3 = (abc)8 = e⟩,\nwhere the lengths of a, b and c are given in Section 2.2. As with the Bolza surface, we\ncan use this presentation in GAP to get information about the structure of the group,\nand more importantly, its irreducible representations",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/210811825v1/blocks/rem-sec-016-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 103,
+      "pageEnd": 108,
+      "target": "rem-sec-016-04.md",
+      "narrative": null,
+      "content": "The inferred multiplicities from the numerical calculations of eigenvalues, shown in Table D.1, support this corollary. In particular, they suggest that the ﬁrst eigenspace is 8 dimensional. Chapter 5",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/conj-sec-017-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 108,
+      "pageEnd": 111,
+      "target": "conj-sec-017-01.md",
+      "narrative": null,
+      "content": "Among all compact Riemann surfaces of genus 2 with constant nega- tive curvature, the Bolza surface globally maximizes the ﬁrst positive eigenvalue in the spectrum of the Laplace-Beltrami operator. It is thought that by analyzing the nodal lines of eigenfunctions relating to χ8 under perturbations in Teichmüller space, one would be able to show that the Bolza surface is a local maximum for λ1. One would then be able to use this as a building block for proving that it is a global maximum. In Chapter 4, we aimed to analyze the Klein quartic in much the same way as the Bolza surface, to prove res",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/conj-sec-017-02",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 108,
+      "pageEnd": 111,
+      "target": "conj-sec-017-02.md",
+      "narrative": null,
+      "content": "Among all compact Riemann surfaces of genus 3 with constant nega- tive curvature, the Klein quartic globally maximizes the ﬁrst positive eigenvalue in the spectrum of the Laplace-Beltrami operator. In Appendix D we have carried out numerical experiments to support this conjecture. We calculated the spectrum of the surface denoted M3 in [72], which maximizes the systole length for genus 3 surfaces, and found it to have a smaller value of λ1 than the Klein quartic. Likewise, we investigated the Fermat quartic, and found that its ﬁrst positive eigenvalue is smaller than that of the Klein quartic.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/conj-sec-017-03",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 108,
+      "pageEnd": 111,
+      "target": "conj-sec-017-03.md",
+      "narrative": null,
+      "content": "For n ≥2, among all compact Riemann surfaces of genus n with con- stant negative curvature, the surface with the largest automorphism group globally maxi- mizes the ﬁrst positive eigenvalue in the spectrum of the Laplace-Beltrami operator. However, this assumes that there is a unique surface that maximizes the automorphism group. If we restrict our attention to Hurwitz surfaces, we can conjecture that the Macbeath surface in genus 7 has this maximization property. Unfortunately, in the next genus that admits a Hurwitz surface, that is, genus 14, there is a triple of non-isomorphic Hurwitz surf",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Concluding Remarks",
+      "pageStart": 108,
+      "pageEnd": 111,
+      "target": "../sections/sec-017-concluding-remarks.md",
+      "narrative": null,
+      "content": "The spectral theory of Riemann surfaces has been a popular and fruitful ﬁeld of study for\nmany years, and is still an active area of research. The main body of this work documented\nthe investigation of the Laplace spectra of two speciﬁc surfaces: the Bolza surface and\nthe Klein quartic. These are of particular interest because they have maximal symmetry\namong all compact Riemann surfaces with constant negative curvature, of genus 2 and 3\nrespectively. In particular, the Klein quartic is a Hurwitz surface.\nIn Chapter 3, we used the representation theory of its automorphism group to show\nthat th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/210811825v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "GAP Code for Bolza Surface",
+      "pageStart": 111,
+      "pageEnd": 115,
+      "target": "../sections/sec-018-gap-code-for-bolza-surface.md",
+      "narrative": null,
+      "content": "The following output gives details of the isometry group of the Bolza surface, computed\nby the computer algebra package GAP [26]. We ﬁrst deﬁne the group as a free group on\nthe 4 generators introduced in Section 3.1 with the relevant relations. We conﬁrm that\nthe order of this group is 96, and the “StructureDescription” command tells us that it is\nisomorphic to GL2(Z3) ⋊Z2.\nRepresentatives of each conjugacy class of Isom(B) are given by the command “Con-\njugacyClasses”. Each row of the character table tell us the value of one of the characters\non each of the 13 conjugacy classes of the group,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/210811825v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "GAP Code for Klein Quartic",
+      "pageStart": 115,
+      "pageEnd": 118,
+      "target": "../sections/sec-019-gap-code-for-klein-quartic.md",
+      "narrative": null,
+      "content": "[Ld\n\nThe GAP code in this appendix has the same format as that in Appendix A; please refer\nto the commentary there in order to interpret this code.\n\ngap> f:=FreeGroup(\"a\",\"b\",\"c\");\n\n<free group on the generators [ a, b, c |>\n\ngap> g:=f/[f.172,f.272,f£.372,(f.1*f.2)72,(f.2*f.3)73,(f.1*f.3)77,(f.1*f.2ef.3)>8]\n\n<fp group on the generators [ a, b, c |>\n\ngap> Order(g);\n\n336\n\ngap> StructureDescription(g);\n\n\"PSL(3 ,2):C2\"\n\ngap> ConjugacyClasses(g);\n\n[ <identity ...>°G, b°G, bxc*G, axbxckax(cxaxb)*2*(c#a)*2*0°G,\naxckas(cxaxb)*2*(cxa)*2*c7G, cxa°G, becxa*G, (axbx(cxa)*2*c)*2°G,\nbx(ckaxb*cxa)~2xb*c7G |",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/210811825v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FreeFEM++ Code for Genus 2",
+      "pageStart": 118,
+      "pageEnd": 130,
+      "target": "../sections/sec-020-freefem-code-for-genus-2.md",
+      "narrative": null,
+      "content": "The following box contains the FreeFEM-++ code for the{Balza surface. It contains basic\ncomments, but for more information about the various solvers and finite element spaces\navailable in the software, please consult the manual [32].\n\nint n = 30; //number of modes\n\nint nev=100; //number of eigenvalues to be calculated\nstring fnm = \"bolza_surface_30n_100nev.txt\"; //file name for saving\n\nreal r = 0.4550898605622276; //radius of circle\nreal c = 1.09868411346781; //centre of circle on x-axis\n\nborder Gl (t—5*pi/4,3*pi/4) { x<ctr*cos(t); y=r«esin(t);};\n\nborder G2 (t=5«pi/4,3*pi/4) { x=cos(pi/4)*(ct+",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/210811825v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FreeFEM++ Code for Genus 3",
+      "pageStart": 130,
+      "pageEnd": 144,
+      "target": "../sections/sec-021-freefem-code-for-genus-3.md",
+      "narrative": null,
+      "content": "LT\n\nSimilarly to Appendix C, here we give the FreeFEM++ codes for particular surfaces of\ngenus 3. We start with the Klein quartic:\n\nint n=30;\nint nev=100;\n\nstring fnm=\"klein_quartic—Eigenvalues—n30—nev100.txt\"; //file name for saving\n\nreal cx = 1.031969722;\nreal r = 0.254875473;\n\nreal s=0.7770942488589633;\nreal x06=s*cos(5*pi/7);\nreal y06=s*sin(5*pi/7);\n\nreal x03=s*cos(2*pi/7);\nreal y03=s*sin(2*pi/7);\nreal x05=s*cos(4*pi/7);\n\nreal y05=s*sin(4*pi/7);\n\nreal s*cos(9*pi/7);\nreal s*sin(9*pi/7);\nreal x07=s*cos(6*pi/7);\nreal x12=s*cos(11l*pi/7);\n11*pi/7);\n8*pi/7);\n8*pi/7);\n\nreal\nreal\n\nreal\n\nreal xl4=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/210811825v1/blocks/rem-sec-021-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 130,
+      "pageEnd": 144,
+      "target": "rem-sec-021-01.md",
+      "narrative": null,
+      "content": "1 The observant reader will recognize 2 in Table D.3 - it is roughly equal to the first positive eigenvalue of the Bolza surface! Moreover, it appears to habe the same",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/figure-img-p144-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 144,
+      "pageEnd": 144,
+      "target": "../images/img-p144-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "FreeFEM++ Code for Genus 4",
+      "pageStart": 144,
+      "pageEnd": 150,
+      "target": "../sections/sec-022-freefem-code-for-genus-4.md",
+      "narrative": null,
+      "content": "Figure E.1: Fundamental polygon for Bring’s surface\nThe most symmetric surface of genus 4 is Bring’s surface (also referred to as Bring’s\ncurve) [71].\nIt can be obtained by associating the sides of a hyperbolic icosagon of\narea 12π, as shown in Figure E.1. Similarly to the Bolza surface and Klein quartic, we\nconjecture that because it has maximal symmetry among hyperbolic surfaces of genus 4,\nit also maximizes the ﬁrst positive eigenvalue of the Laplace-Beltrami operator among\nsurfaces of this class. In this appendix, we provide a ﬁnite element code for computing the\nﬁrst 100 eigenvalues of Br",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/210811825v1/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mathematica Code for Bolza Surface",
+      "pageStart": 150,
+      "pageEnd": 153,
+      "target": "../sections/sec-023-mathematica-code-for-bolza-surface.md",
+      "narrative": null,
+      "content": "The following block of code helps us to choose the optimal value of L to deﬁne the\nspectral function h(t) in Section 3.4.\nWe ﬁrst deﬁne “lemult” as the ordered list of\nlengths of geodesics in the length spectrum, using the formula in Section 3.2, along with\ntheir multiplicities. Note that only the multiplicity of the ﬁrst length in the spectrum is\nprecise; all others have been calculated numerically. Also note that whilst the multiplicity\nof the systole of the Bolza surface is 12, here we are concerned about moving along the\ngeodesic in both a positive and negative direction, so we double the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/210811825v1/blocks/conj-sec-024-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 153,
+      "pageEnd": 163,
+      "target": "conj-sec-024-01.md",
+      "narrative": null,
+      "content": "1 Let Ω0 be the symmetric half-cylinder with core geodesic α of length l(α) = 2 arccosh",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Alternative approach to proving Conjecture 3.12",
+      "pageStart": 153,
+      "pageEnd": 163,
+      "target": "../sections/sec-024-alternative-approach-to-proving-conjecture-312.md",
+      "narrative": null,
+      "content": "Conjecture 3.12\nIn this appendix, we outline another method that could be used to prove Conjecture 3.12.\nAs in Section 3.4.1, consider the annulus Ωin Figure 3.18 with Dirichlet boundary con-\nditions. In particular, we can take Ωto be a subspace of a hyperbolic cylinder with α as\nits core geodesic. We have a Dirichlet boundary condition on α, so one method that we\ncould use to bound λ1(Ω) would be to compare it to the ﬁrst eigenvalue of the symmetric\nhalf cylinder with core geodesic α, having the same area as Ω, that is, π. Here we make\nthe following conjecture, which is essentially a Faber-Kr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/210811825v1/blocks/rem-sec-024-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 153,
+      "pageEnd": 163,
+      "target": "rem-sec-024-02.md",
+      "narrative": null,
+      "content": "2 Recall from Lemma 2.35 that annuli in hyperbolic cylinders satisfy an isoperimetric inequality. This is a similar hypothesis to that in the classical Faber-Krahn inequality (compare Theorem 1.14), so it may be possible to prove Conjecture G.1 in a similar way. If we assume Conjecture G.1 holds, we consider the ﬁrst odd eigenfunction on Ω0, that is, φ(s) = sinh(l(α)) 2F1 \u00121 + s , 2 −s ; 3 2; −sinh2(l(α)) \u0013 as a function of t, with s = 1 2 + it. The corresponding eigenvalue λ = s(1 −s) is obtained by taking the ﬁrst zero of φ(s). This eigenfunction is odd on a symmetric cylinder of area 2π wit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/210811825v1/blocks/thm-sec-024-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 153,
+      "pageEnd": 163,
+      "target": "thm-sec-024-03.md",
+      "narrative": null,
+      "content": "3 Suppose we have g ∈C2[0, x0] such that g ≥0 on [0, x0], g > 0 on (0, x0), and \u0012 −g′′(x) g(x) − λ cos2(x) \u0013 ≥0 (G.2) on [0, x0]. Then f ∈C2[0, x0] that is a solution to Equation (G.1), that is, f solves −f ′′(x) − λ cos2(x)f(x) = 0, f(0) = 0, f ′(0) = 1, has no zero in (0, x0).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

@@ -1,0 +1,303 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-nucl-th-0409040v2",
+  "title": "On the correlation between the binding energies of the triton and the alpha-particle",
+  "variant": "pdf",
+  "pages": 7,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 6,
+      "labelStart": "1",
+      "labelEnd": "6",
+      "words": 2946,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "α-particle binding",
+          "heading": false
+        },
+        {
+          "term": "triton binding",
+          "heading": false
+        },
+        {
+          "term": "tjon line",
+          "heading": false
+        },
+        {
+          "term": "four-nucleon force",
+          "heading": false
+        },
+        {
+          "term": "three-body system",
+          "heading": false
+        },
+        {
+          "term": "three-body parameter",
+          "heading": false
+        },
+        {
+          "term": "binding energies",
+          "heading": false
+        },
+        {
+          "term": "binding energy",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:nucl-th/0409040v2 22 Nov 2004 FZJ-IKP-TH-2005-15, HISKP-TH-04/19, INT-PUB 04-24 On the correlation between the binding energies of the triton and the α-particle L. Platter∗ Forschungszentrum J¨ulich, Institut f¨ur Kernphysik, D-52425 J¨ulich, Germany and Helmholtz-Institut f¨ur Strahlen- und Kernphysik (Theorie), Universit¨at Bonn, Nußallee 14-16, D-53115 Bonn, Germany H.-W. Hammer† Institute for Nuclear",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-nucl-th-0409040v2/blocks/prose-sec-front-matter",
+        "library/arxiv-nucl-th-0409040v2/blocks/prop-sec-front-matter-01",
+        "library/arxiv-nucl-th-0409040v2/blocks/prop-sec-front-matter-02"
+      ]
+    },
+    {
+      "id": "sec-000-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 344,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nucl-th",
+          "heading": false
+        },
+        {
+          "term": "van kolck",
+          "heading": false
+        },
+        {
+          "term": "ockle",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "meißner",
+          "heading": false
+        },
+        {
+          "term": "hammer",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "nogga",
+          "heading": false
+        }
+      ],
+      "extract": "We thank A. Nogga for valuable discussions and comments on the manuscript. L. Plat- ter thanks the INT in Seattle for its hospitality during completion of this work. This research was supported in part by the German Academic Exchange Service (DAAD), the US Department of Energy under grant DE-FG02-00ER41132, and the Deutsche Forschungs- gemeinschaft through funds provided to the SFB/TR 16. [1] V. Eﬁmov, Sov. J. Nucl.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "α-particle binding",
+      "heading": true
+    },
+    {
+      "term": "tjon line",
+      "heading": true
+    },
+    {
+      "term": "triton binding",
+      "heading": true
+    },
+    {
+      "term": "four-nucleon force",
+      "heading": false
+    },
+    {
+      "term": "binding energy",
+      "heading": false
+    },
+    {
+      "term": "three-body system",
+      "heading": false
+    },
+    {
+      "term": "nucl-th",
+      "heading": false
+    },
+    {
+      "term": "three-body parameter",
+      "heading": false
+    },
+    {
+      "term": "binding energies",
+      "heading": true
+    },
+    {
+      "term": "three-body coupling",
+      "heading": false
+    },
+    {
+      "term": "four-body force",
+      "heading": false
+    },
+    {
+      "term": "s-wave scattering",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The correlation between the binding energies of the triton and the α-particle (the Tjon line). The lower (upper) line shows our leading order result using as and Bd (as and at) as two-body input. The grey dots and triangles show various calculations using phenomenological potentials without or inclu",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 2,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 2,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 2 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-nucl-th-0409040v2"
+  }
+}

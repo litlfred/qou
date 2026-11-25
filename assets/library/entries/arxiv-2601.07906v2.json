@@ -1,0 +1,652 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2601.07906v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "March 2026\nA universal sum over topologies in 3d gravity\nAlexandre Belin1,2, Scott Collier3,4, Lorenz Eberhardt5, Diego Liska6,7, Boris\nPost8\n1Dipartimento di Fisica, Universit`a di Milano-Bicocca I-20126 Milano, Italy\n2INFN, sezione di Milano-Bicocca, I-20126 Milano, Italy\n3Department of Physics, Syracuse University, Syracuse, NY, 13244, USA\n4Institute for Quantum & Information Sciences, Syracuse University, Syracuse, NY, 13244,\nUSA\n5Institute for Theoretical Physics, University of Amsterdam, Amsterdam, 1098XH, NL\n6Department of Theoretical Physics, University of Geneva, 1211 Geneva, Switzerl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 4,
+      "pageEnd": 10,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "\\label{sec:intro}\n\n\nThe gravitational path integral continues to be an enigmatic yet essential tool in understanding aspects of holography. Low-dimensional models have served as valuable laboratories for uncovering some of its more intricate features. From these models, much evidence has been gathered in favour of the idea that the path integral for pure Einstein gravity can be understood as performing a \\emph{statistical} average over the data that define the dual conformal field theory. Developing this idea in three-dimensional gravity has become an active direction of current research, but",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The statistical bootstrap",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-001-the-statistical-bootstrap.md",
+      "narrative": null,
+      "content": "\\label{sec:2}\n\nThe goal of this section is to define a statistical theory that models compact irrational CFT$_2$'s with a pure Einstein gravity dual at large central charge $c$ \\cite{Hartman:2014oaa}. Such CFT$_2$'s have no extended chiral algebra beyond Virasoro symmetry, so we will organize the spectrum of $(L_0,\\bar L_0)$ into Virasoro primaries and descendants. The descendant states are fixed by symmetry, so they should not be treated as random variables. On the other hand, the conformal primaries will be treated statistically. \n\nLet us imagine there exists a probability distribution $\\mu(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Kinematic constraints",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-002-kinematic-constraints.md",
+      "narrative": null,
+      "content": "First, we state the constraints that we will impose on each member of the ensemble---that is, not just on average. For each $i$, we demand the spin $J_i$ to be an integer, as is appropriate for a bosonic CFT$_2$. Note that although this is a natural property to demand, it was not imposed in the original ensemble of \\cite{Chandra:2022bqq}. In our case, spin quantization will follow as a special case of the stronger constraint of crossing symmetry and modular invariance that we impose in section \\ref{sec:crossing}. \n\nNext, the OPE coefficients must satisfy the following properties under complex",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Crossing symmetry and modular invariance",
+      "pageStart": 13,
+      "pageEnd": 16,
+      "target": "../sections/sec-003-crossing-symmetry-and-modular-invariance.md",
+      "narrative": null,
+      "content": "\\label{sec:crossing}\nThe next set of consistency conditions that we impose on the ensemble are modular invariance of the torus partition function and crossing symmetry of all higher-genus partition functions. We will impose these constraints on the average, instead of on each member of the ensemble. That is, we demand that\n\\begin{equation}\\label{eq:crossinginvariance}\n    \\overline{Z\\!\\left[\\Sigma_g;\\gamma\\!\\cdot \\Omega,\\gamma\\!\\cdot\\bar\\Omega\\right]} = \\overline{Z\\!\\left[\\Sigma_g; \\Omega, \\bar\\Omega\\right]} \\quad \\text{for all }\\gamma\\in \\text{MCG}(\\Sigma_g) \\text{ and } g\\geq 1.\n\\end{equatio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Typicality and index contractions",
+      "pageStart": 16,
+      "pageEnd": 21,
+      "target": "../sections/sec-004-typicality-and-index-contractions.md",
+      "narrative": null,
+      "content": "\\label{sec:typicality}\nIn the previous subsection, we have stated the requirements of crossing symmetry and modular invariance on the moments of CFT data, which were clearly based on the same requirements as in the regular CFT bootstrap. Now we will state an additional assumption on the ensemble, to which we refer as \\emph{typicality}, which has its origin in the theory of quantum chaos.\n\nIn chaotic many-body quantum systems, the Eigenstate Thermalization Hypothesis (ETH) is a statistical ansatz to model the matrix elements of simple operators $\\mathcal{O}_{ij} = \\bra{E_i}\\mathcal{O}\\ket{E_j}$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spectral statistics",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-005-spectral-statistics.md",
+      "narrative": null,
+      "content": "\\label{sec:spectral_statistics}\n\nIn the previous subsections, we have described the constraints imposed by crossing symmetry and typicality on the ensemble. We will now make one further assumption on our ensemble, again motivated by the theory of quantum chaos. Namely, we will assume that, to a good approximation, we can ignore the effects of non-trivial spectral statistics, treating $\\rho(h,\\bar h)$ fully classically. \n\nIn chaotic many-body quantum systems, which are characterized by a ramp in the spectral form factor after the Thouless time \\cite{Altland:2020ccq,Saad:2018bqo,Cotler:2016fpe},",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summing over handlebodies",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-006-summing-over-handlebodies.md",
+      "narrative": null,
+      "content": "\\label{sec:3}\n\n\n\n\nIn this section, we will start to build up the ensemble from the boundary. As we proceed, we will start to recover the gravitational sum over 3-manifolds. Here we will only be concerned with the constraints of crossing symmetry and modular invariance, leaving the additional assumption of typicality for section \\ref{sec:minimal completion}. The simplest class of topologies that, when summed over, solve crossing and modular invariance are the handlebody topologies, which we study in this section.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The mapping class group",
+      "pageStart": 22,
+      "pageEnd": 24,
+      "target": "../sections/sec-007-the-mapping-class-group.md",
+      "narrative": null,
+      "content": "In general, a 3-dimensional handlebody $M$ of genus $g$ is defined by gluing $g$ 1-handles to a 3-ball. Its boundary is a genus-$g$ Riemann surface $\\Sigma_g$, with a collection of $3g-3$ non-intersecting closed curves that bound disks in $M$. These essential curves are also called contractible cycles, or meridians. An example at genus 2 is shown below:\n\\begin{equation}\\label{eq:genus2handlebody}\n\\tikzset{every picture/.style={line width=0.8pt}}\n\\begin{tikzpicture}\n[x=0.75pt,y=0.75pt,yscale=-1.4,xscale=1.4,baseline={([yshift=-0.5ex]current bounding box.center)}]\n\n\n\\draw  [draw opacity=0][fill=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Handlebodies as conformal blocks",
+      "pageStart": 24,
+      "pageEnd": 27,
+      "target": "../sections/sec-008-handlebodies-as-conformal-blocks.md",
+      "narrative": null,
+      "content": "Let us now discuss how handlebodies contribute to the path integral of 3d gravity. As explained in \\cite{Collier:2023fwi}, 3d gravity with a negative cosmological constant on a hyperbolic 3-manifold is related to two copies of Virasoro TQFT (VTQFT). The gravitational partition function is just the product \n\\begin{equation}\\label{eq:grav_to_VTQFT}\n    Z_\\text{grav}[M;\\Omega,\\bar\\Omega] = Z_{\\text{Vir}}[M;\\Omega]Z^*_{\\text{Vir}}[M;\\bar\\Omega].\n\\end{equation}\nHere $\\Omega,\\bar\\Omega$ are complex structure moduli fixed at the conformal boundary. For a genus-$g$ handlebody $M^{\\mathcal{C}}$ with co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fixed-P partition functions",
+      "pageStart": 27,
+      "pageEnd": 34,
+      "target": "../sections/sec-009-fixed-p-partition-functions.md",
+      "narrative": null,
+      "content": "\\label{sec:fixedP}\nInstead of working with the `canonical' partition functions, with fixed values of the complex structure moduli at the asymptotic boundary, in Virasoro TQFT it is useful to define the corresponding `fixed-$P$' partition function $Z^{\\,\\mathcal{C}}_{\\text{Vir}}[M;\\boldsymbol{P}]$. We define it by stripping off the non-degenerate blocks and including a normalization factor:\n\\begin{equation}\\label{eq:fixed_P}\n    Z_{\\text{Vir}}[M;\\Omega] = \\int_0^\\infty \\d^{3g-3} P \\,\\rho^{\\,\\mathcal{C}}_g(\\boldsymbol{P}) \\,Z^{\\,\\mathcal{C}}_{\\text{Vir}}[M;\\boldsymbol{P}] \\,\\mathcal{F}_g^{\\,\\mat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The handlebody sum is crossing symmetric",
+      "pageStart": 34,
+      "pageEnd": 41,
+      "target": "../sections/sec-010-the-handlebody-sum-is-crossing-symmetric.md",
+      "narrative": null,
+      "content": "\\label{sec:3.3}\n\nNow that we have reviewed the topology of handlebodies and their description in Virasoro TQFT, we will study the sum over handlebodies and its implications for the statistics of OPE coefficients. This handlebody sum is the simplest sum over a subset of topologies that is compatible with crossing symmetry.\n\nCrossing symmetry is most clear on the level of the canonical partition function. Namely, by the previous section, the handlebody sum is just a sum over mapping class group images of some `seed’ vacuum block:\\vspace{1mm} \\begin{equation}\\label{eq:handlebodysum3}\n        \\ove",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Minimal completion of the handlebody sum",
+      "pageStart": 41,
+      "pageEnd": 41,
+      "target": "../sections/sec-011-minimal-completion-of-the-handlebody-sum.md",
+      "narrative": null,
+      "content": "\\label{sec:minimal completion}\n\nAlthough the sum over handlebodies solves the constraints of crossing symmetry and modular invariance (and consequently spin quantization and OPE selection rules), there are still constraints imposed in section \\ref{sec:2} that are not satisfied by the handlebody sum alone.\nIn this section, we will iteratively construct a complete set of topologies that does solve our constraints in a minimal way. \n\nThe inclusion of these additional topologies can be systematized by introducing three basic surgery operations that can be applied to a given `seed' topology. By ite",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Handlebodies are not sufficient",
+      "pageStart": 41,
+      "pageEnd": 46,
+      "target": "../sections/sec-012-handlebodies-are-not-sufficient.md",
+      "narrative": null,
+      "content": "\\label{subsec:gravitational machine 1}\nBefore introducing the gravitational machine in its full generality, we will just point out two examples of conditions imposed in section \\ref{sec:2} that fail to be satisfied by the handlebody sum alone, showing that the handlebody sum is indeed insufficient.\n\n\n\\paragraph{Consistency between higher and lower genus.}\nIn section \\ref{sec:3.3} we have seen that the handlebody sum at genus $g$ contains information about the handlebody sum at lower genus. For example, at genus 2 the sum over handlebodies (in the sunset channel) contains as a subsum the elemen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The gravitational machine",
+      "pageStart": 46,
+      "pageEnd": 52,
+      "target": "../sections/sec-013-the-gravitational-machine.md",
+      "narrative": null,
+      "content": "\\label{subsec:general gravitational machine}\n\nThe examples discussed above suggest a general procedure that systematically constructs a minimal set of 3-manifolds that should be summed over in the bulk, in order to satisfy the constraints imposed in section \\ref{sec:2} on the moments of the CFT data. In this section, we will introduce this algorithm---the gravitational machine---in full generality. It will generalize both the Dehn surgery and the $\\Omega$-loop computations of the previous section and works for manifolds with arbitrary number of boundary components of any genus $g\\geq 1$. We wi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The gravitational machine is hyperbolic",
+      "pageStart": 52,
+      "pageEnd": 58,
+      "target": "../sections/sec-014-the-gravitational-machine-is-hyperbolic.md",
+      "narrative": null,
+      "content": "\\label{subsec:machine is hyperbolic}\nIn this section, we prove one of the important results of this paper: \nthat the gravitational machine maps hyperbolic manifolds to hyperbolic manifolds.  \nThis will follow from a rather nice interaction between topology and the conditions imposed on the statistical ensemble. It will turn out that the conditions \\ref{cond:no Omega loops 2}, \\ref{cond:no parallel rings 2} and \\ref{cond:no Wilson line self gluing} on the gluing are precisely what is topologically needed to stay in the class of hyperbolic manifolds. The following section is somewhat mathematica",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "What 3-manifolds are generated?",
+      "pageStart": 58,
+      "pageEnd": 62,
+      "target": "../sections/sec-015-what-3-manifolds-are-generated.md",
+      "narrative": null,
+      "content": "\\label{subsec:what 3-manifolds are generated}\nAt this point, we constructed a minimal set of manifolds $\\mathcal{M}$ compatible with the statistical bootstrap, and we saw that this set only contains hyperbolic manifolds. This is remarkable, because it implies that in a statistical ensemble that is fully consistent with crossing symmetry and typicality (but without spectral correlations), it suffices to sum over \\emph{on-shell} topologies only. This leads to two natural follow-up questions: first, does $\\mathcal{M}$ contain non-handlebodies? And second, are \\emph{all} hyperbolic manifolds with",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The gravitational machine at work",
+      "pageStart": 62,
+      "pageEnd": 63,
+      "target": "../sections/sec-016-the-gravitational-machine-at-work.md",
+      "narrative": null,
+      "content": "\\label{sec:5}\nIn the previous section, we have seen that the topologies generated by the action of the gravitational machine on handlebodies are not always themselves handlebodies, and so we learn that consistency of the boundary statistical ensemble with crossing symmetry and typicality requires topologies that go beyond the handlebody sum.\nIn this section, we discuss in detail a number of examples of non-handlebodies generated by the gravitational machine, directly in quantum gravity using Virasoro TQFT, and explore their consequences for the boundary ensemble.\n\nFirst, we show that the machi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Euclidean wormholes",
+      "pageStart": 63,
+      "pageEnd": 64,
+      "target": "../sections/sec-017-euclidean-wormholes.md",
+      "narrative": null,
+      "content": "\\label{subsec:Euclidean wormhole}\nThe most standard example of a hyperbolic non-handlebody geometry is the Euclidean Maldacena-Maoz wormhole \\cite{Maldacena:2004rf}. Its boundary is a pair of Riemann surfaces of genus $g$ and $n$ punctures (we assume that $2g-2+n>0$). In the case that the moduli of both boundaries agree, it is simple to write down the hyperbolic metric:\n\\be \n\\d s^2_{\\Sigma_{g,n}}=\\d \\rho^2+\\cosh^2 \\rho \\, \\d s_{\\Sigma_{g,n}}^2\\ ,\n\\ee\nwhere $\\d s_{\\Sigma_{g,n}}^2$ denotes the hyperbolic metric of $\\Sigma_{g,n}$. If the boundary moduli are not the same, we have a quasi-Fuchsian",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Twisted I-bundles",
+      "pageStart": 64,
+      "pageEnd": 65,
+      "target": "../sections/sec-018-twisted-i-bundles.md",
+      "narrative": null,
+      "content": "\\label{subsec:twisted I bundles}\nAnother class of well-studied hyperbolic 3-manifolds are so-called twisted $I$-bundles, which were studied in \\cite{Yin:2007at, Maxfield:2016mwh} as an example of non-handlebody saddlepoints of the gravitational path integral in 3d gravity. Let us discuss the simplest of those. Consider the Maldacena-Maoz wormhole $\\Sigma_2 \\times I$. We choose the moduli of the genus-2 surface $\\Sigma_2$, such that it admits an orientation reversing fixed-point free diffeomorphism $\\Phi: \\Sigma_2 \\to \\Sigma_2$ with the quotient being the non-orientable surface of Euler charact",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Handlebody-knots",
+      "pageStart": 65,
+      "pageEnd": 73,
+      "target": "../sections/sec-019-handlebody-knots.md",
+      "narrative": null,
+      "content": "\\label{subsec:handlebody-knots}\n\nAs a third class of examples of non-handlebodies generated by the machine, we study \\emph{handlebody-knots}.\nA genus-$g$ handlebody-knot is the 3-manifold obtained by removing a genus-$g$ handlebody from $\\mathrm{S}^3$. These manifolds can be represented using knotted trivalent graphs; they are generalizations of regular knots, now including trivalent vertices. A handlebody-knot is said to be trivial if the manifold, that is the complement of the knot in S$^3$, is itself a handlebody. The simplest example of a non-trivial genus-2 handlebody-knot has four crossi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discussion",
+      "pageStart": 73,
+      "pageEnd": 79,
+      "target": "../sections/sec-020-discussion.md",
+      "narrative": null,
+      "content": "\\label{sec:discussion}\n\n\n\nIn this paper we formulated a set of constraints that any consistent ensemble of 2d CFT data --- defined by a collection of statistical moments of the structure constants and density of primary states --- must obey. These requirements combine the rigid CFT bootstrap constraints on the CFT data, together with internal consistency of the statistical description, including typicality at high energies. Applied to the dual description of pure AdS$_3$ quantum gravity, these constraints give predictions for the set of topologies that must appear in the gravitational path int",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "3-manifold technology",
+      "pageStart": 79,
+      "pageEnd": 79,
+      "target": "../sections/sec-021-3-manifold-technology.md",
+      "narrative": null,
+      "content": "3-manifold technology\nIn this appendix, we explain a few concepts in the theory of hyperbolic 3-manifolds\nthat are relevant to our computations in 3d gravity. We refer to [11] for many other\nrelevant tools and concepts of hyperbolic 3-manifolds, as well as appendix A of [131].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "(In)compressible surfaces in 3-manifolds",
+      "pageStart": 79,
+      "pageEnd": 81,
+      "target": "../sections/sec-022-incompressible-surfaces-in-3-manifolds.md",
+      "narrative": null,
+      "content": "(In)compressible surfaces in 3-manifolds\nBulk incompressible surfaces.\nLet S be a properly embedded orientable sur-\nface in a 3-manifold M. If S has a boundary, we also assume that ∂S ⊂∂M. A\ncompressing disk D ⊂M for S is a disk with ∂D = D ∩S such that ∂D does not\nbound a disk in S. The action of ‘pinching’ along the disk D is called a compression,\nand it transforms S into a new simpler surface, e.g. compressing along a meridian\nturns the torus into a (marked) 2-sphere. A properly embedded connected surface\nS with Euler characteristic χ(S) ⩽0 is called compressible if it has a compressing\ndis",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Wirtinger presentation of fundamental groups",
+      "pageStart": 81,
+      "pageEnd": 85,
+      "target": "../sections/sec-023-wirtinger-presentation-of-fundamental-groups.md",
+      "narrative": null,
+      "content": "Wirtinger presentation of fundamental groups\nWe often make use of the fundamental group of 3-manifolds. There is a systematic\nalgorithm to compute these for complements of Wilson line networks known as the\nWirtinger presentation. We refer for further background to [98, chapter 9].\nSuppose we consider the complement of a network of Wilson lines in S3. Al-\nternatively, we could also thicken the Wilson lines and consider a knotted genus-g\nboundary, but we will continue to think of network of Wilson lines. Choose a pro-\njection to the plane and endow all arcs with orientations. For concreteness, w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tricolorability and handlebodyness",
+      "pageStart": 85,
+      "pageEnd": 87,
+      "target": "../sections/sec-024-tricolorability-and-handlebodyness.md",
+      "narrative": null,
+      "content": "Tricolorability and handlebodyness\nComputing the fundamental group and applying the Whitehead algorithm is a sys-\ntematic way to check whether two handlebody-knots are equivalent, as long as the\nfundamental group only has one relation. There is another simpler test to distinguish\nhandlebody-knots. In the main text, we used the fundamental group as an invariant\nas discussed in appendix A.2 for the handlebody-knot 52. The goal of this section is\nto present a much simpler criterion for detecting non-trivial handlebody-knots. This\ntest is a generalization of tricolorability for classical knots.\nTr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The fundamental group of the gravitational machine",
+      "pageStart": 87,
+      "pageEnd": 87,
+      "target": "../sections/sec-025-the-fundamental-group-of-the-gravitational-machi.md",
+      "narrative": null,
+      "content": "The fundamental group of the gravitational machine\nIn this appendix, we further discuss the group theoretic description of the fundamen-\ntal groups produced by the machine. In particular, we prove the theorems used in\nsection 4.3 to show that all fundamental groups of the 3-manifolds produced by the\nmachine do not have Z × Z subgroups. This requires us to introduce some elements\nof Bass-Serre theory, which turns out to be a very useful tool. Here, we give a brief\nintroduction to the subject, with [95] being the standard reference. We begin in B.1\nwith examples that motivate and explain the mai",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "What is Bass-Serre theory?",
+      "pageStart": 87,
+      "pageEnd": 89,
+      "target": "../sections/sec-026-what-is-bass-serre-theory.md",
+      "narrative": null,
+      "content": "What is Bass-Serre theory?\nThe idea behind Bass-Serre theory is to characterize a group G through its action on\na tree (a connected graph without loops). By studying this action, one can describe\nthe group as built from simpler groups, glued together using amalgamated products\nand HNN extensions. The structure of the group and its tree is encoded by a graph of\ngroups, which consists of a finite graph, not necessarily a tree, together with a group\nassigned to each vertex and each edge and so-called boundary maps. To construct\nthe graph of groups, one considers the quotient of the tree by the gr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Groups acting on trees",
+      "pageStart": 89,
+      "pageEnd": 91,
+      "target": "../sections/sec-027-groups-acting-on-trees.md",
+      "narrative": null,
+      "content": "Groups acting on trees\nThe motivation for studying Bass-Serre theory is that the fundamental groups gen-\nerated by the gravitational machine are described using amalgamated products and\nHNN extensions. In this setting, the machine provides a graph of groups, and our\ngoal is to reconstruct the associated group from this graph. We also want to build\na tree on which this group acts. The passage from a graph of groups to a tree with\na group action is the content of the Fundamental Theorem of Bass-Serre theory.\nThis theorem is explained in the next section; here, we provide the formal definitions\nn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fundamental theorem of Bass-Serre theory",
+      "pageStart": 91,
+      "pageEnd": 93,
+      "target": "../sections/sec-028-fundamental-theorem-of-bass-serre-theory.md",
+      "narrative": null,
+      "content": "Fundamental theorem of Bass-Serre theory\nThe main observation of Bass-Serre theory is that one can recover both the tree T\nas well as the original group G acting on it from the corresponding graph of groups\nΓ. Thus, the data of a graph of groups is equivalent to the tree with a group action.\nWe already saw how to construct the graph of groups of Γ from G acting on T.\nWe will in the following explain how to go in the other direction and reconstruct G\nand the tree T from Γ. In the literature, the group G is commonly referred to as the\nfundamental group of the graph of groups, and it is denoted b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Application to the gravitational machine",
+      "pageStart": 93,
+      "pageEnd": 98,
+      "target": "../sections/sec-029-application-to-the-gravitational-machine.md",
+      "narrative": null,
+      "content": "Application to the gravitational machine\nThe fundamental groups of the gravitational machine are changed by gluing opera-\ntions along 2-punctured spheres (or cylinders). By repeatedly applying this gluing,\nthe fundamental group of the resulting manifolds can be precisely described using\n– 93 –\ngraph of groups where all the vertex groups are free groups (since these correspond to\nhandlebodies) and all the edge groups are Z (since we are gluing along 2-punctured\nspheres). By the condition a), all boundary monomorphisms ∂±\ne are injective, so the\ngraphs of groups are well defined. The main purpos",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "VTQFT technology",
+      "pageStart": 98,
+      "pageEnd": 98,
+      "target": "../sections/sec-030-vtqft-technology.md",
+      "narrative": null,
+      "content": "VTQFT technology",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Virasoro TQFT identities",
+      "pageStart": 98,
+      "pageEnd": 106,
+      "target": "../sections/sec-031-virasoro-tqft-identities.md",
+      "narrative": null,
+      "content": "Virasoro TQFT identities\nHere we collect some Virasoro TQFT manipulations and identities that are useful for\nthe computations that appear in the main text. All equalities should be understood\nto hold at the level of the VTQFT partition functions, and may be applied as local\nmanipulations within a bigger network of Wilson lines.\nBraiding.\nBraiding of Wilson lines produces a phase:\n1\n3\n2\n= B1\n23\n1\n3\n2\n= eπi(h2+h3−h1)\n1\n3\n2\n.\n(C.1)\nThe opposite braiding involves the opposite phase. Configurations with opposite\npatterns of over- and under-crossings are related by complex conjugation.\nFictitious id",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2601.07906v2/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Kirby calculus",
+      "pageStart": 106,
+      "pageEnd": 117,
+      "target": "../sections/sec-032-kirby-calculus.md",
+      "narrative": null,
+      "content": "Kirby calculus\nWe can think of many of the above VTQFT identities as arising from a homeomor-\nphism of 3-manifolds M ∼= M ′, since ZVir is a topological invariant. The main tool\nthat is used in topology to find homeomorphisms between 3-manifolds is known as\n‘Kirby calculus’. Here, we present some basic aspects of Kirby calculus relevant to\nthe Virasoro TQFT. For a more detailed review of this topic, we recommend the\nfollowing literature [145–147].\nThe Lickorish–Wallace theorem [148, 149] states that any closed, connected,\norientable 3-manifold can be obtained by integer Dehn surgery on the com",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

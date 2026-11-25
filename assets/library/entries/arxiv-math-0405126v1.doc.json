@@ -1,0 +1,392 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0405126v1",
+  "title": "ASYMPTOTIC BEHAVIORS OF THE COLORED JONES POLYNOMIALS OF A TORUS KNOT",
+  "variant": "pdf",
+  "pages": 7,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Statement of the result",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-statement-of-the-result"
+    },
+    {
+      "level": 1,
+      "title": "Proof",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-proof"
+    },
+    {
+      "level": 1,
+      "title": "Comments",
+      "number": "3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-comments"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 523,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kashaev conjecture",
+          "heading": false
+        },
+        {
+          "term": "gromov norm",
+          "heading": false
+        },
+        {
+          "term": "torus knot",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure-eight knot",
+          "heading": false
+        },
+        {
+          "term": "chern simons",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "dehn surgeries",
+          "heading": false
+        },
+        {
+          "term": "asymptotic behaviors",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0405126v1 [math.GT] 7 May 2004 ASYMPTOTIC BEHAVIORS OF THE COLORED JONES POLYNOMIALS OF A TORUS KNOT HITOSHI MURAKAMI Abstract. We study the asymptotic behaviors of the colored Jones polyno- mials of torus knots. Contrary to the works by R. Kashaev, O. Tirkkonen, Y. Yokota, and the author, they do not seem to give the volumes or the Chern–Simons invariants of the three-manifolds obtained by Dehn",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0405126v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-statement-of-the-result",
+      "number": "1",
+      "title": "Statement of the result",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 260,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sqrt right",
+          "heading": false
+        },
+        {
+          "term": "abr",
+          "heading": false
+        },
+        {
+          "term": "infty sim",
+          "heading": false
+        },
+        {
+          "term": "varepsilon",
+          "heading": false
+        },
+        {
+          "term": "tirkkonen",
+          "heading": false
+        },
+        {
+          "term": "underset",
+          "heading": false
+        }
+      ],
+      "extract": "Let $T(a,b)$ be the $(a,b)$-torus knot for coprime integers $a$ and $b$ ($a>1$, $b>1$). Then its colored Jones polynomial $J_N\\bigl(T(a,b);t\\bigr)$ is given as follows [@Morton:MATPC95]. $$J_N\\bigl(T(a,b);t\\bigr) = \\frac{t^{-ab(N^2-1)/4}}{t^{N/2}-t^{-N/2}} \\sum_{\\varepsilon=\\pm1} \\sum_{k=-(N-1)/2}^{(N-1)/2} \\varepsilon t^{abk^2+k(a+\\varepsilon{b})+\\varepsilon/2}.$$ We will show the following theorem. ::: thm []{#thm",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-proof",
+      "number": "2",
+      "title": "Proof",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 5,
+      "labelStart": "2",
+      "labelEnd": "5",
+      "words": 1020,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac sinh",
+          "heading": false
+        },
+        {
+          "term": "dfrac abr",
+          "heading": false
+        },
+        {
+          "term": "abr right",
+          "heading": false
+        },
+        {
+          "term": "sqrt bigr",
+          "heading": false
+        },
+        {
+          "term": "sqrt left",
+          "heading": false
+        },
+        {
+          "term": "varphi sqrt",
+          "heading": false
+        },
+        {
+          "term": "sim frac",
+          "heading": false
+        },
+        {
+          "term": "infty sim",
+          "heading": false
+        }
+      ],
+      "extract": "When $t=e^{2\\pi{r}\\sqrt{-1}/N}$ for $r\\in\\mathbb{C}\\setminus{\\mathbb{Z}}$, $J_N\\left(T(a,b);e^{2\\pi{r}\\sqrt{-1}/N}\\right)$ can be given by the following integral form [@Kashaev/Tirkkonen:ZAPNS200 Lemma 1]. $$J_N\\left(T(a,b),e^{2\\pi{r}\\sqrt{-1}/N}\\right) = \\Phi_{a,b,r}(N) \\int_{C} e^{Nf_{a,b,r}(z)} \\tau_{a,b}(z) dz.$$ Here $$\\begin{aligned} \\Phi_{a,b,r}(N) &:=g_{a,b,r}\\sqrt{N}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-comments",
+      "number": "3",
+      "title": "Comments",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 891,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "coloured jones",
+          "heading": false
+        },
+        {
+          "term": "torus knot",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "e2πr",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure-eight knot",
+          "heading": false
+        },
+        {
+          "term": "alexander polynomial",
+          "heading": false
+        },
+        {
+          "term": "bdl",
+          "heading": false
+        }
+      ],
+      "extract": "Here are a couple of probably inaccurate comments about the relation of the limit of the colored Jones polynomials of a torus knot and its Alexander polynomial. Comment 3.1. The Melvin–Morton–Rozansky conjecture proved by D. Bar-Natan and S. Garoufalidis [1], which was proposed by P. Melvin and H. Morton [15] and ‘proved’ non-rigorously by L. Rozansky [22], tells that if we expand the colored Jones polynomial of a",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "kashaev tirkkonen",
+      "heading": false
+    },
+    {
+      "term": "colored jones",
+      "heading": false
+    },
+    {
+      "term": "abr right",
+      "heading": false
+    },
+    {
+      "term": "torus knot",
+      "heading": false
+    },
+    {
+      "term": "sqrt bigr",
+      "heading": false
+    },
+    {
+      "term": "sqrt left",
+      "heading": false
+    },
+    {
+      "term": "kashaev conjecture",
+      "heading": false
+    },
+    {
+      "term": "dfrac abr",
+      "heading": false
+    },
+    {
+      "term": "ﬁgure-eight knot",
+      "heading": false
+    },
+    {
+      "term": "jones polynomial",
+      "heading": false
+    },
+    {
+      "term": "kashaev invariant",
+      "heading": false
+    },
+    {
+      "term": "e2πr",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 3,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 4,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p5); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 4 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0405126v1"
+  }
+}

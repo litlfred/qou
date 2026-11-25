@@ -1,0 +1,418 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1901.01312v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1901.01312v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Leptons and quarks are identiﬁed with representations of the gauge group U(1)Y × SU(2)L ×\nSU(3)C in the Standard Model (SM) of particle physics.\nDespite its success in accurately\ndescribing and predicting experimental observations, this gauge group lacks a theoretical basis.\nWhy has Nature chosen these gauge groups from an inﬁnite set of Lie groups, and why do only\nsome representations correspond to physical states? A second shortcoming of the SM is the lack\nof gravity, or equivalently, its uniﬁcation with General Relativity (GR).\nPreon models attempt do explain SM structure by proposing that",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1901.01312v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Braided fermions from Hurwitz algebras\nNiels G Gresnigt\nXi’an Jiaotong-Liverpool University, Department of Mathematical Sciences. 111 Ren’ai Road,\nDushu Lake Science and Education Innovation District, Suzhou Industrial Park, Suzhou,\n215123, P.R. China\nE-mail: niels.gresnigt@xjtlu.edu.cn\nAbstract.\nSome curious structural similarities between a recent braid- and Hurwitz algebraic\ndescription of the unbroken internal symmetries for a single generations of Standard Model\nfermions were recently identiﬁed. The non-trivial braid groups that can be represented using\nthe four normed division algebras a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1901.01312v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hurwitz algebras",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-hurwitz-algebras.md",
+      "narrative": null,
+      "content": "from a split algebra basis in a tensor product of Hurwitz algebras, say C ⊗O, one can deﬁne\nprojection operators corresponding to primitive idempotents. These reduce C ⊗O spinors into\northogonal subspaces, each of which transforms correctly as a generation of leptons and quarks\nunder SU(3)C ⊗U(1)Y . In similar constructions by Furey and Stoica, the basis states of minimal\nleft ideals of the Cliﬀord algebra Cℓ(6) are shown to transform like a single generation of fermions\nunder the unbroken symmetries SU(3)C ⊗U(1)EM [15, 16].\nUnlike Lie and Cliﬀord algebras, of which there are inﬁnitely many, t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1901.01312v1/blocks/figure-img-p003-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1901.01312v1/blocks/figure-img-p003-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1901.01312v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Clifford and Lie algebras from Hurwitz algebras",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-21-clifford-and-lie-algebras-from-hurwitz-algebr.md",
+      "narrative": null,
+      "content": "Unlike Lie and Clifford algebras, there are only a finite number of Hurwitz algebras[^1]. These algebras are very generative. Given a Hurwitz algebra identified with a spinor space, one acts on this spinor space with the algebra itself, from the left, right, or from both sides. Sometimes this does not make a difference, and sometimes it does. Considering all the repeated nested actions generate the adjoint algebras, which are specific Clifford algebras. The bivectors of a Clifford algebra close under commutation, providing a representation of the Lie algebra that preserves the metric of the as",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1901.01312v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Unbroken fermion symmetries from Hurwitz algebras",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-003-3-unbroken-fermion-symmetries-from-hurwitz-algeb.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1901.01312v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Primitive idempotents and orthogonal subspaces",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-31-primitive-idempotents-and-orthogonal-subspace.md",
+      "narrative": null,
+      "content": "The extensive works of Dixon [@dixon2013division; @dixon1990derivation; @dixon2010division] focus on deriving the SM from tensor products of Hurwitz algebra. The approach is to reduce spinor spaces of Hurwitz algebras (as well as their associated action algebras) into sets of orthogonal subspaces. This is achieved by finding projection operators within the algebras, corresponding to primitive idempotents obtained from a resolution of the identity. In the case of $\\mathbb{C}\\otimes\\mathbb{O}$ the projectors can be used to split the algebra into four orthogonal subspaces, each a $SU(3)$ multiple",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1901.01312v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Minimal left ideals of $C\\ell(6)$",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-005-32-minimal-left-ideals-of-cell6.md",
+      "narrative": null,
+      "content": "The goal of identifying SM structure from tensor products of Hurwitz algebras is not unique to Dixon. More recently, Furey and Stoica have likewise looked at $\\mathbb{C}\\otimes\\mathbb{O}$, and its associated left action algebra $C\\ell(6)$, to identify unbroken SM symmetries [@furey2016standard; @stoica2018leptons]. However, in their works the implementation of $C\\ell(6)$ is significantly different. In particular, the spinors representing fermions in this scheme correspond to basis states of the minimal left ideals of $C\\ell(6)$.\n\nUnder a change of basis (induced by a projector), the generating",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1901.01312v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Representation of fermions as three strand ribbon braids",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-006-4-representation-of-fermions-as-three-strand-rib.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1901.01312v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Helon model",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-007-41-the-helon-model.md",
+      "narrative": null,
+      "content": "Bilson-Thompson's Helon model maps the simplest ribbon braids, consisting of three twisted ribbons (called helons) and two crossings to the first generation of SM fermions [@Bilson-Thompson2005]. Quantized electric charges of $\\pm e/3$ are represented by integral twists of $\\pm 2\\pi$ on the ribbons of the braids. These ribbons are combined into triplets by connecting the tops and bottoms of three ribbons to a parallel disk. The color charges of quarks are accounted for by the permutations of twists on certain braids, and simple topological processes are identified with the electroweak interact",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1901.01312v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Braid group representations from Clifford algebras",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-008-42-braid-group-representations-from-clifford-alg.md",
+      "narrative": null,
+      "content": "The Artin braid group on $n$ strands is denoted by $B_n$ and is generated by elementary braids $\\left\\lbrace \\sigma_1,...,\\sigma_{n-1}\\right\\rbrace$ subject to the relations $$\\begin{aligned}\n\\label{braidrelations}\n\\sigma_i \\sigma_j=\\sigma_j\\sigma_i,\\;\\textrm{whenever}\\; \\vert i-j \\vert > 1,\\quad \\sigma_i\\sigma_{i+1}\\sigma_i=\\sigma_{i+1}\\sigma_i \\sigma_{i+1},\\;\\textrm{for}\\; i=1,....,n-2.\n\\end{aligned}$$ The braid groups $B_n$ are an extension of the symmetric groups $S_n$ with the condition that the square of each generator being equal to one lifted. It can be shown that Clifford algebras adm",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1901.01312v1/blocks/figure-img-p005-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../images/img-p005-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1901.01312v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Braid group representations from Hurwitz algebras",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-009-43-braid-group-representations-from-hurwitz-alge.md",
+      "narrative": null,
+      "content": "Using known isomorphisms between division algebras and Clifford algebras, one can investigate the braid content of (hyper)complex division algebras. The complex number algebra $\\mathbb{C}$ is isomorphic to the real Clifford algebras $C\\ell(0,1)\\cong C\\ell^+(2,0)$, where the $+$ indicates the even subalgebra of a Clifford algebra. A representation of $B_2$ in terms of $\\mathbb{C}$ is given by $$\\begin{aligned}\n\\label{complexgenerators}\n\\sigma_1=\\frac{1}{\\sqrt{2}}(1+i),\\qquad \\sigma_1^{-1}=\\frac{1}{\\sqrt{2}}(1-i),\n\\end{aligned}$$ This representation is not faithful, with the order of the single",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1901.01312v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relating Hurwitz algebras to the Helon model",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-010-5-relating-hurwitz-algebras-to-the-helon-model.md",
+      "narrative": null,
+      "content": "Considering the edges of each ribbon in the Helon model, one can identify this twisting with a braid in $B_2$. This braid group is represented, albeit not faithfully, by $\\mathbb{C}$. Likewise, the braiding of three ribbons gives a braid in $B_3$. Because the ribbons are connected together at the top and bottom to a parallel disk, the relevant braid group is actually the circular version $B_3^c$. This is precisely the braid group that can be represented (again, not faithfully) using $\\mathbb{H}$, or a quaternionic subalgebra of $\\mathbb{O}$. The braid groups that can be represented using the H",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1901.01312v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Helon braids as the basis states of minimal left ideals of $C\\ell(6)$",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-011-51-helon-braids-as-the-basis-states-of-minimal-l.md",
+      "narrative": null,
+      "content": "[]{#braidedbasiststates label=\"braidedbasiststates\"}\n\nIn [@Bilson-Thompson2009] it was shown that braiding of ribbons and twisting of ribbons within three strand ribbon braids are interchangeable, and that any orientable[^1] ribbon braid can always be written as a vector $[a,b,c]$ where $a,b,c$ are all integers or all half integers, specifying the number of twists on each ribbon. This vector is a topological invariant. In particular, the generators of $B^c_3$ can be written as twist vectors as follows: $$\\begin{aligned}\n\\label{braidgenerators}\n\\sigma_1\\rightarrow \\left[ 1/2,1/2,-1/2\\right] ,\\q",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1901.01312v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Extending the connections between the braid and Hurwitz algebraic models",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-012-6-extending-the-connections-between-the-braid-an.md",
+      "narrative": null,
+      "content": "We now turn to some more speculative ideas to see if the connections between the braid- and Hurwitz algebraic description of SM symmetries can be further extended. In particular we are interested in investigating what the lack of faithfulness of the $\\mathbb{C}$ and $\\mathbb{H}$ representations of braid groups corresponds to physically, as well as trying to extend both the braid- and Hurwitz algebraic models to exactly three generations.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1901.01312v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Electric charge structure of fermions from the $\\mathbb{C}$ representation of $B_2$",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-013-61-electric-charge-structure-of-fermions-from-th.md",
+      "narrative": null,
+      "content": "One speculative idea is that the lack of faithfulness of the representations of the braid groups $B_2$ and $B_3^c$ using $\\mathbb{C}$ and $\\mathbb{H}$ respectively naturally places a restriction on the number of distinct braided physical states that can be represented. The Helon model has no mechanism in place to restrict the number of allowable physical states. One could add more twisting to the ribbons and increase the complexity of braiding without limit, to get an infinite number of distinct states. Indeed, the model has been extended to a infinite number of generations [@Bilson-Thompson20",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1901.01312v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Equivalence classes of braids from $\\mathbb{H}$",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-014-62-equivalence-classes-of-braids-from-mathbbh.md",
+      "narrative": null,
+      "content": "The braid generators in ([\\[quaterniongenerators\\]](#quaterniongenerators){reference-type=\"ref\" reference=\"quaterniongenerators\"}) and their products correspond to unit quaternions, which we write as $a+bI+cJ+dK$ with $a^2+b^2+c^2+d^2=1$. It is not difficult to show that any even product of braid generators is of the form $$\\begin{aligned}\n\\label{Hequivalence}\nb_n\\mapsto a+bI+cJ+dK,\\quad \\textrm{where} \\quad a,b,c,d\\in \\left\\lbrace 0, \\pm \\frac{1}{2}, \\pm 1 \\right\\rbrace. \n\\end{aligned}$$ This gives $2\\times 4+2^4=24$ possibilities, but includes braids that lead to charge mixing, such as $\\sig",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1901.01312v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From one generation to exactly three",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-015-63-from-one-generation-to-exactly-three.md",
+      "narrative": null,
+      "content": "There are several possibilities for extending the braid- and Hurwitz algebraic description from a single generation to exactly three generations. The algebra $C\\ell(6)$ is large enough to represent three generations of fermions that transform as required under the unbroken symmetries [@furey2014generations]. It is however not yet clear how this three generation model relates to the single generation model based on minimal ideals.\n\nA possible answer may be provided by consider the exceptional Jordan algebra. Jordan algebras arose from Jordan's 1932 attempt to reformulate quantum mechanics by id",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1901.01312v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discussion",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-016-7-discussion.md",
+      "narrative": null,
+      "content": "There exist several curious structural similarities between recent braid- and Hurwitz algebraic descriptions of a single generation of fermions. Clifford algebras that are isomorphic to complex numbers and quaternions admit precisely those braid group representations from which the Helon model is contructed [@gresnigt2017quantum2]. Furthermore, the ribbon braids representing fermions in that model coincide exactly with the states that span the minimal left ideals of the adjoint algebra of the complex octonions, shown by Furey to describe one generation of leptons and quarks with unbroken $SU(3",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1901.01312v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-017-references.md",
+      "narrative": null,
+      "content": "[1] Haim Harari. A Schematic Model of Quarks and Leptons. Physics Letters B, 86(1):83–86, 1979.\n[2] Michael A Shupe. A Composite Model of Leptons and Quarks. Physics Letters B, 86(1):87–92, 1979.\n[3] Sundance O Bilson-Thompson. A topological model of composite preons. Preprint hep-ph/0503213, 2005.\n[4] Robert J Finkelstein.\nThe elementary particles as quantum knots in electroweak theory.\nInternational\nJournal of Modern Physics A, 22(24):4467–80, 2007.\n[5] Robert J Finkelstein. A knot model suggested by the standard electroweak theory. International Journal\nof Modern Physics A, 20(28):6487–94,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

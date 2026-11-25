@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/sections/sec-017",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Let M be a homology 3-sphere. Then )~2(M) E 3Z.",
+  "pageStart": 19,
+  "pageEnd": 19,
+  "contains": [
+    "library/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/blocks/prose-sec-017"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3/manifest.jsonld",
+  "provenance": "ingested"
+}

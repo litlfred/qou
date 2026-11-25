@@ -1,0 +1,383 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2208.12678v4",
+  "blocks": [
+    {
+      "id": "library/arxiv-2208.12678v4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The problem of finding a surface of minimal area bounded by a fixed closed curve, also known as \\textit{Plateau's problem}, has captivated mathematicians for over two centuries. A relevant extension to this problem is when the boundary possesses its own energy and is allowed to deform. Since most experimental realizations of Plateau's problem involve films formed by dipping closed loops of wire in soapy water, it is natural to consider boundary curves with elastic energy, defined as the integral of squared curvature. This problem, known now as the \\textit{Euler-Plateau} problem has received co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.12678v4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "STATIONARY CURVES UNDER THE M¨OBIUS-PLATEAU ENERGY\nMAX LIPTON AND GOKUL G. NAIR\nAbstract. Plateau problems with elastic boundary energies have been of recent theoretical and applied\ninterest. However, strong assumptions have to be made to avoid self-intersections of the boundary curve\nduring energy minimization. We introduce a class of Plateau problems for boundaries with self-repulsive\nenergies that obviates self-contact in energy minimization problems. For the self-repulsive energy, we choose\nthe M¨obius Energy introduced by O’Hara due to its myriad regularity properties shown by Freedman et",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.12678v4/blocks/lem-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "[FHW94] Lemma 1.2",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "lem-sec-002-01.md",
+      "narrative": null,
+      "content": "Let γ : X →R3 be a rectifiable curve in R3 parametrized by arc length. If EM[γ] is finite, then γ is C bi-Lipschitz with constant C depending only on EM[γ]. Furthermore, C →1 as EM[γ] →0. As noted in [FHW94], the M¨obius energy enjoys a property akin to absolute continuity: subarcs of a curve with finite M¨obius energy can be chosen to have arbitrarily small energy provided that their length is sufficiently small. Since the M¨obius energy is small, the (inverse) intrinsic and extrinsic distances are close in L2, and so the subarcs are close to being isometrically embedded in R3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2208.12678v4/blocks/lem-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "[FHW94] Corollary 1.3",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "lem-sec-002-02.md",
+      "narrative": null,
+      "content": "With γ as above such that EM[γ] is finite, we have that for any ε > 0, there exists δ = δ(ε, γ) > 0 such that γ is a (1 + ε) bi-Lipschitz embedding on subarcs of γ with length less than δ. The (1 + ε) bi-Lipschitz property in the prior lemma is a weaker notion of an isometric embedding. In proving the existence of minimizers for the M¨obius-Plateau energy, we will need to ensure that arc length is preserved in the limit of a minimizing sequence. Were we afforded the luxury of our curves being isometric embeddings of fixed length, length preservation in the limit would trivially follow. In gene",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2208.12678v4/blocks/lem-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "[FHW94] Lemma 4.2",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "lem-sec-002-03.md",
+      "narrative": null,
+      "content": "Let γi : R/LiZ →R3 be a sequence of rectifiable simple closed curves of uniformly bounded energy, EM. Assume that the curves are all parametrized by arc-length and that L = limi→∞Li > 0 exists. If γi(0) is a bounded sequence of points, then there is a subsequence γik of γi which converges uniformly to a rectifiable simple curve γ : R/LZ →R3. Moreover, EM is sequentially lower semicontinuous under this convergence, i.e., EM[γ] ≤lim inf ik→∞EM[γik]",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2208.12678v4/blocks/lem-sec-002-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "lem-sec-002-05.md",
+      "narrative": null,
+      "content": "Let γ ∈A, then inf u∈Dγ Area(u) = inf u∈Dγ e(u)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2208.12678v4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Energy Minimization",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-3-energy-minimization.md",
+      "narrative": null,
+      "content": "properties and lower semicontinuity of the energy and establish the existence of disk-like energy minimizing\nconfigurations for simple closed curves in a given irreducible knot type. In Section 4 we turn our attention\nto helicoidal solutions of the Euler-Lagrange equations.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.12678v4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Problem Formulation",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-2-problem-formulation.md",
+      "narrative": null,
+      "content": "Denote the closed unit disk by D ⊂R2 and let γ : ∂D →R3 be a rectifiable simple closed curve. We\ndefine the M¨obius energy [O’H03, FHW94] as\nEM[γ] =\nZZ\n∂D×∂D\n\"\n1\n|γ(y) −γ(x)|2 −\n1\nD(γ(y), γ(x))2\n#\n|˙γ(x)| |˙γ(y)| dydx,\n(1)\nwhere D(γ(x), γ(y)) denotes the geodesic distance between γ(x) and γ(y) along the curve γ. The M¨obius\nenergy blows up in self intersections, so the gradient descent will not encounter boundary catastrophes, an\nissue which can occur in Euler-Plateau problems requiring strong assumptions to avoid [BY01]. Furthermore,\nminimizers of the M¨obius energy enjoy nice regularity prop",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.12678v4/blocks/thm-sec-002-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[FHW94] Theorem 4.3",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "thm-sec-002-04.md",
+      "narrative": null,
+      "content": "Let K be an irreducible knot. There exists a simple loop γK : R/LZ → R3 with knot-type K such that EM[γK] ≤EM[γ] for any other simple closed loop γ : R/LZ →R3 of the same knot-type. We begin the proof of existence by considering a minimizing sequence of E, {γk} ⊂A i.e., lim k→∞E[γk] = inf γ∈A E[γ]. This gives us a uniform bound on EM[γk], therefore, from Lemma 4 we have a subsequence (for which we will use the same labelling) that converges uniformly to a simple closed C0,1 curve γ∞: ∂D →R3. Furthermore, by applying the remark after Theorem 5 we can conclude that γ∞has the same knot-type K, ev",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2208.12678v4/blocks/thm-sec-002-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "thm-sec-002-06.md",
+      "narrative": null,
+      "content": "Given a rectifiable simple closed curve Γ ⊂R3, there exists a map u : D →R3 such that (1) u : ∂D →Γ is monotone and onto. (2) u ∈C0(D) ∩W 1,2(D) (3) The image of u minimizes area among all maps from disks with boundary Γ. Applying Theorem 7 to each of the simple closed curves γk(∂D) k = 1, 2, ..., ∞and using Lemma 6, we get a sequence of Plateau solutions uk ∈Dγk. That is, for all k, e(uk) = Area(uk) = inf u∈Dγk Area(u) = EP [γk]. We can then rewrite (5), the inequality we seek to prove, as e(u∞) ≤lim inf k→∞e(uk). (6) The issue we must address is that the Plateau solutions uk might not conver",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2208.12678v4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Equicontinuity at the Boundary",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-32-equicontinuity-at-the-boundary.md",
+      "narrative": null,
+      "content": "We first prove the following simple lemma,\n\\begin{lemma}\\label{lemma:diameter-convergence}\n    Suppose $\\left\\{\\mu_k:[a,b]\\rightarrow\\RR^3\\right\\}$ is a sequence of continuous curves that converges uniformly to $\\mu_\\infty$. Then the diameters of the images converge: $\\mathrm{diam}(\\mu_k([a,b]))\\rightarrow\\mathrm{diam}(\\mu_\\infty([a,b]))$.\n\\end{lemma}\n\\begin{proof}\n    Let $\\varepsilon>0$ and choose $N$ large such that $\\norm{\\mu_k-\\mu_\\infty}_{C^0}<\\frac{\\varepsilon}{2}$ for $k>N$. Let $x,y\\in[a,b]$ such that $\\abs{\\mu_\\infty(x)-\\mu_\\infty(y)}=\\mathrm{diam}(\\mu_\\infty([a,b]))$. From uniform c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.12678v4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Convergence in the Interior",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-33-convergence-in-the-interior.md",
+      "narrative": null,
+      "content": "Since $\\mathrm{e}(u_k)$ is uniformly bounded, we have from compactness that after passing to a subsequence, $u_k\\rightharpoonup u_*$ weakly in $W^{1,2}(D,\\RR^3)$ for some $u_*$, not necessarily equal to $u_\\infty$, and \n\\begin{align*}\n    \\mathrm{e}(u_*)\\leq\\liminf_{j \\to \\infty}\\mathrm{e}(u_j).\n\\end{align*}\nFurthermore, from Proposition~\\ref{prop:equicontinuity}, $\\{u_j\\}$ is equicontinuous on $\\partial D$ and by Arzela-Ascoli, a subsequence $\\{u_j\\}$ (not relabelled) converges uniformly on $\\partial D$. Since each $u_j$ is harmonic, we have from the maximum principle that \n\\begin{align*}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.12678v4/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 11,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "The intersection of the contour lines for \\eqref{ribbonvar} and \\eqref{ribbondiff} was found to be $(A,B) \\approx (0.810515,0.818991)$, which corresponds to a width of $B - A \\approx 0.008476$.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2208.12678v4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Necessary Conditions of Möbius-Plateau Critical Helix Pairs",
+      "pageStart": 6,
+      "pageEnd": 11,
+      "target": "../sections/sec-005-4-necessary-conditions-of-möbius-plateau-critica.md",
+      "narrative": null,
+      "content": "\\label{sec:stationary-helix-pairs}\n\nIn this section, we alter the problem slightly to consider the M\\\"obius energy of links, where $\\gamma_1, \\gamma_2: \\R \\to \\R^3$ are disjoint locally rectifiable curves. The M\\\"obius energy of the link is defined as \n\\begin{align}\n\\label{mobiuslink}\nE_M(\\gamma_1, \\gamma_2) = \\int_{\\R \\times \\R} \\frac{ |\\dot{\\gamma_1}(u)| | \\dot{\\gamma_2}(v) | dudv}{|\\gamma_1(u) - \\gamma_2(v)|^2}.\n\\end{align}\nIn the link case, we do not subtract an intrinsic distance term in the integrand, as it is not needed for the integral to converge. At a given point $\\gamma_1(u)$, the $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.12678v4/blocks/figure-img-p008-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2208.12678v4/blocks/figure-img-p008-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2208.12678v4/blocks/figure-img-p010-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../images/img-p010-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2208.12678v4/blocks/figure-img-p011-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../images/img-p011-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2208.12678v4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-5-acknowledgements.md",
+      "narrative": null,
+      "content": "The authors would like to thank Xin Zhou for his numerous helpful discussions about this work, in particular making the initial suggestion to investigate the M\\\"obius-Plateau energy. The authors would also like to thank Steven Strogatz and Tobias Colding for their continued support.\n\\\\\n\\\\\n\\noindent This work is partially funded by an NSF RTG grant titled Dynamics, Probability and PDEs in Pure and Applied Mathematics, DMS-1645643. Max Lipton is supported by an NSF Postdoctoral Fellowship, DMS-2303384.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.12678v4/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. Estimating the negative contribution",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-007-appendix-a-estimating-the-negative-contribution.md",
+      "narrative": null,
+      "content": "Suppose cos(ωv) ≥0, and since by assumption A + B −2AB > 0, we have\nA2 −A + B2 −B + (A + B −2AB) cos(ωv) + v2 ≥A2 −A + B2 −B + v2\n≥−1\n2 + v2.\nThe last inequality follows from the fact that\ninf\nA+B<2\n0<A<B\nA2 −A + B2 −B = −1\n2.\n(18)\nTherefore, a necessary condition for the integrand to be negative whilst cos(ωv) > 0 is for v ≤1\n4.\nWith a direct calculation or with a computer algebra system, one obtains the Macularin series of the\nintegrand in (15) expanded at v = 0:\nA2 −A + B2 −B + (A + B −2AB) cos(ωv) + v2\n(A2 −2AB cos(ωv) + B2 + v2)2\n=\n1\n(B −A)2 −2 + (A + B + 2AB)ω2\n2(B −A)4\nv2 + O(v4).\n(19)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2208.12678v4/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-008-references.md",
+      "narrative": null,
+      "content": "[BV18]\nSimon Blatt and Nicole Vorderobermeier, On the analyticity of critical points of the M¨obius energy, Calculus of\nVariations and Partial Differential Equations 58 (2018), no. 1, 16.\n[BY01]\nFelicia Bernatzki and Rugang Ye, Minimal surfaces with an elastic boundary, Annals of Global Analysis and\nGeometry 19 (2001), no. 1, 1–9.\n[CF14]\nYi-chao Chen and Eliot Fried, Stability and bifurcation of a soap film spanning a flexible loop, Journal of Elasticity\n116 (2014), 75–100.\n[CM11]\nTobias H Colding and William P Minicozzi, A course in minimal surfaces, vol. 121, American Mathematical Soc.,\n2011",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

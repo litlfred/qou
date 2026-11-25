@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/bib-verification/reference/arxiv-2304.12545v1.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../assets/navbar/rail-hfsr9wme8z.js" defer></script><script src="../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../.." data-fa-to-root="../../../../../../../../..">{"data":"rail-hfsr9wme8z","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/bib-verification/reference/arxiv-2304.12545v1.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/bib-verification/reference/arxiv-2304.12545v1.attestations</h1>
+<p class="m">A <a href="../../../../../../">qa-attestations</a> node held by <a href="../../../../../">qou</a>, at <code>test/attestations/bib-verification/reference/arxiv-2304.12545v1.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>bib-verification</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;reference&quot;,
+  &quot;id&quot;: &quot;arxiv-2304.12545v1&quot;,
+  &quot;path&quot;: null
+}</pre></dd>
+<dt>verifications</dt><dd><pre>[
+  {
+    &quot;position&quot;: 296,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/arxiv-2304.12545v1/2304.12545v1.pdf&quot;
+      },
+      &quot;id&quot;: &quot;arxiv-2304.12545v1&quot;,
+      &quot;status&quot;: &quot;unreviewed&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;core&quot;,
+        &quot;rationale&quot;: &quot;The corpus opened a live derivation route on 2026-08-07 (docs/audits/2026-08-07-extended-bloch-group-fixes-the-normalization-fit.md, beans qou-78pt / qou-l2t2) whose central claim is verbatim &#39;Neumann&#39;s extended Bloch group is the canonical resolution of exactly that ambiguity&#39; — the branch-of-logarithm ambiguity that made the Markov-normalization route a fit. Corpus-grep for that route&#39;s source: references.ts registers neumann-zagier1985 (the 1985 volumes paper) and nothing else by Neumann; there is NO registered source for the extended Bloch group at all, and grep for &#39;extended Bloch&#39; finds only that audit, a companion audit, one coordination doc, and QOU/QBeta/BlochFiveTerm.lean. So a route the corpus is actively building on has zero bibliography backing. This document&#39;s §3 is exactly that missing statement: I read pp.7-9 and it gives the Bloch group B(F) as ker(d: Z[F] -&gt; Lambda^2 F^x) modulo the 5-term relation, the extended Bloch group with the lifted 5-term relation on pairs (u,v) with e^u = 1 - e^v, and the extended regulator into C/4pi^2 Z whose imaginary and real parts are volume and Chern-Simons. §4 additionally gives the half-symplectic completion of the Neumann-Zagier matrix H = (A B), which is the structure behind the det J_NZ(B_3) object the corpus&#39;s 1-loop witness uses. Honest scope caveat: this is a SURVEY, so it is an authoritative statement plus a pointer, not the original theorem; the primary sources for the extended Bloch group are cited inside it as its [30] (Neumann) and [21,39] (Zickert, Goette) and those should be registered too if the route matures. I am rating it core because the corpus demonstrably should be citing an extended-Bloch-group source right now and cites none.&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;§3, pp. 8-9&quot;,
+            &quot;statement&quot;: &quot;The extended Bloch group is generated by pairs (u,v) with e^u = 1 - e^v modulo a lifted 5-term relation, and carries an extended regulator to C/4pi^2 Z given by L(u,v) = Li_2-type term + uv/2 - pi^2/6, whose value is the complexified volume Vol + i CS.&quot;,
+            &quot;useForFolio&quot;: &quot;Supplies the published statement that the branch/framing ambiguity of a complex multiplicative invariant has a canonical lift — the assertion docs/audits/2026-08-07-extended-bloch-group-fixes-the-normalization-fit.md makes with no source. It also gives the additive-over-ideal-tetrahedra form the audit&#39;s extensivity argument relies on.&quot;,
+            &quot;targets&quot;: [
+              &quot;def:quantum-bloch-group&quot;,
+              &quot;conj:borromean-bloch-group-element&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;§4, eq. (11)-(12)&quot;,
+            &quot;statement&quot;: &quot;The Neumann-Zagier matrix H = (A B) formed from edge and peripheral equations is half-symplectic over Z, and this follows from the Neumann chain complex 0 -&gt; C_0 -&gt; C_1 -&gt; J -&gt; C_1 -&gt; C_0 -&gt; 0.&quot;,
+            &quot;useForFolio&quot;: &quot;The corpus consumes det J_NZ(B_3) in its 1-loop / Borromean witness but has only neumann-zagier1985 registered; the integral (not merely rational) symplectic refinement stated here is the property that determinant computation actually needs.&quot;,
+            &quot;targets&quot;: [
+              &quot;conj:borromean-bloch-group-element&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;add-reference&quot;,
+            &quot;rationale&quot;: &quot;The 2026-08-07 extended-Bloch-group route has no registered source for its central object; this survey is the citable statement of it.&quot;,
+            &quot;target&quot;: &quot;def:quantum-bloch-group&quot;,
+            &quot;bean&quot;: &quot;qou-djld&quot;
+          },
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;def:quantum-bloch-group and conj:borromean-bloch-group-element both state Bloch-group/regulator facts (5-term relation, Beilinson regulator = Bloch-Wigner dilogarithm, volume as regulator evaluation) without a source for the extended/lifted version now being used downstream.&quot;,
+            &quot;target&quot;: &quot;conj:borromean-bloch-group-element&quot;,
+            &quot;bean&quot;: &quot;qou-6n93&quot;
+          },
+          {
+            &quot;action&quot;: &quot;new-remark&quot;,
+            &quot;rationale&quot;: &quot;The corpus should record explicitly that the extended Bloch group, not the ordinary one, is what resolves the branch ambiguity — and that the primary sources cited inside this survey (Neumann; Zickert; Goette) still need registering before any Lean statement leans on the lifted 5-term relation.&quot;,
+            &quot;target&quot;: &quot;def:quantum-bloch-group&quot;,
+            &quot;bean&quot;: &quot;qou-k9fc&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-08T23:34:05.459Z&quot;,
+        &quot;source_sha&quot;: &quot;bfc3c2be395b&quot;
+      },
+      &quot;note&quot;: &quot;Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \&quot;held but uncitable\&quot;; the join already existed on the references.ts side.&quot;,
+      &quot;verified_at&quot;: &quot;2026-09-03T04:37:40Z&quot;,
+      &quot;verified_by&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;model&quot;: &quot;claude-opus-5&quot;
+      }
+    }
+  },
+  {
+    &quot;position&quot;: 297,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/arxiv-2304.12545v1/2304.12545v1.pdf&quot;
+      },
+      &quot;id&quot;: &quot;arxiv-2304.12545v1&quot;,
+      &quot;status&quot;: &quot;unreviewed&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;supporting&quot;,
+        &quot;rationale&quot;: &quot;A survey of Walter Neumann&#39;s work on triangulation combinatorics and its K-theoretic interactions: gluing equations, volumes and Dehn surgeries, the Bloch group and the extended Bloch group, the symplectic properties of NZ data, quantisation of the NZ Lagrangian, and number-theoretic connections. Three separate corpus items sit on this material: conj:borromean-bloch-group-element (a K_3(C)/Bloch-group class with regulator 8G), prop:depth-2-identification-bloch-suslin (Bloch group, Suslin&#39;s isomorphism, archimedean evaluation of Li_2^q), and def:quantum-bloch-group. Supporting rather than core: it is a survey, and the theorems it recounts are Neumann-Zagier 1985 and Neumann&#39;s own papers, both of which the corpus can and partly does cite directly. Its distinctive value is that it puts the extended Bloch group (home of the complex volume) and the quantisation of the NZ Lagrangian (the kinematical kernel of the state integral) in one place, which is precisely the bridge between the corpus&#39;s two currently-disjoint faces. IMPORTANT: this is NOT the existing ref garoufalidis-zagier2023, which is arXiv:2304.09377 &#39;Knots and their related q-series&#39; -- the two arXiv ids are adjacent and easy to confuse.&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;Sect. 3 (The Bloch group and the extended Bloch group)&quot;,
+            &quot;statement&quot;: &quot;Construction of the extended Bloch group and the chain complex in which it sits, as the home of the complex-volume invariant.&quot;,
+            &quot;useForFolio&quot;: &quot;The natural citation for the corpus&#39;s 8G regulator claim and for the group in which the corpus&#39;s fraktur-V = Vol + i CS analogy actually lives; conj:borromean-bloch-group-element currently asserts a K_3(C) class without pointing at the extended-Bloch construction.&quot;,
+            &quot;targets&quot;: [
+              &quot;conj:borromean-bloch-group-element&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Sect. 5 (Quantization)&quot;,
+            &quot;statement&quot;: &quot;Quantisation of the shape and Ptolemy variables of an ideal triangulation, in which the kinematical kernel is the quantisation of the Neumann-Zagier Lagrangian, described also via cluster X- and A-coordinates.&quot;,
+            &quot;useForFolio&quot;: &quot;Connects the corpus&#39;s NZ/1-loop side (computations/one_loop_torsion.py, det J_NZ) to its state-integral / Phi_b side in a single statement; the folio currently treats these as separate programmes.&quot;,
+            &quot;targets&quot;: [
+              &quot;def:quantum-bloch-group&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;add-reference&quot;,
+            &quot;rationale&quot;: &quot;No ref() entry, and the closest existing key (garoufalidis-zagier2023) is a different paper with an adjacent arXiv id; minting a distinct id and noting the near-collision in its note field prevents a mis-keyed citation later.&quot;,
+            &quot;target&quot;: &quot;conj:borromean-bloch-group-element&quot;,
+            &quot;bean&quot;: &quot;qou-0xpf&quot;
+          },
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;conj:borromean-bloch-group-element asserts a nontrivial Bloch-group / K_3(C) class with regulator 8G; the extended-Bloch-group construction it relies on has no citation in the block.&quot;,
+            &quot;target&quot;: &quot;conj:borromean-bloch-group-element&quot;,
+            &quot;bean&quot;: &quot;qou-uea1&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-08T23:34:05.459Z&quot;,
+        &quot;source_sha&quot;: &quot;bfc3c2be395b&quot;
+      },
+      &quot;note&quot;: &quot;Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \&quot;held but uncitable\&quot;; the join already existed on the references.ts side.&quot;,
+      &quot;verified_at&quot;: &quot;2026-09-03T04:37:40Z&quot;,
+      &quot;verified_by&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;model&quot;: &quot;claude-opus-5&quot;
+      }
+    }
+  },
+  {
+    &quot;position&quot;: 350,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/celebratio-mathematica-neumann-hyperbolic-3-manifolds/Celebratio Mathematica — Neumann — Hyperbolic 3-Manifolds.pdf&quot;
+      },
+      &quot;id&quot;: &quot;arxiv-2304.12545v1&quot;,
+      &quot;status&quot;: &quot;unreviewed&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;supporting&quot;,
+        &quot;rationale&quot;: &quot;DUPLICATE. This is a browser capture of the Celebratio Mathematica web page hosting the same survey as library/arxiv-2304.12545v1/2304.12545v1.pdf and library/hyperbolicandneumann/HyperbolicAndNeumann.pdf -- identical title, authors, section list and body, wrapped in site navigation chrome. Its assessment is therefore the assessment recorded against library/arxiv-2304.12545v1/2304.12545v1.pdf: a survey of Neumann&#39;s triangulation/K-theory work bearing on conj:borromean-bloch-group-element, prop:depth-2-identification-bloch-suslin and def:quantum-bloch-group. Recorded separately only so this upload has a row; it must resolve to the SAME ref() id as the other two copies and must not mint a second entry. The triplication itself is an uploads-hygiene finding, not a citation finding.&quot;,
+        &quot;keyResults&quot;: [],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;no-action&quot;,
+            &quot;rationale&quot;: &quot;Same work as library/arxiv-2304.12545v1/2304.12545v1.pdf; the add-reference and cite-in-block work items are recorded there. This copy needs only to be joined to that id.&quot;,
+            &quot;target&quot;: &quot;conj:borromean-bloch-group-element&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-08T23:34:05.459Z&quot;,
+        &quot;source_sha&quot;: &quot;9e541693c60c&quot;
+      },
+      &quot;note&quot;: &quot;Bib key backfilled from duplicate copy of arxiv-2304.12545v1, which carries this key. The row carried `id: null`, which read as \&quot;held but uncitable\&quot;; the join already existed on the references.ts side.&quot;,
+      &quot;verified_at&quot;: &quot;2026-09-03T04:37:40Z&quot;,
+      &quot;verified_by&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;model&quot;: &quot;claude-opus-5&quot;
+      }
+    }
+  },
+  {
+    &quot;position&quot;: 356,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/hyperbolicandneumann/HyperbolicAndNeumann.pdf&quot;
+      },
+      &quot;id&quot;: &quot;arxiv-2304.12545v1&quot;,
+      &quot;status&quot;: &quot;unreviewed&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;supporting&quot;,
+        &quot;rationale&quot;: &quot;DUPLICATE. Byte-for-byte different file but the same document as library/arxiv-2304.12545v1/2304.12545v1.pdf: extracted text differs only by the arXiv stamp line (63786 vs 63829 characters), same title, authors, six-section table of contents and closing affiliations. Its assessment is the one recorded against library/arxiv-2304.12545v1/2304.12545v1.pdf Recorded separately only so this upload has a row; it must resolve to the SAME ref() id and must not mint a second entry.&quot;,
+        &quot;keyResults&quot;: [],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;no-action&quot;,
+            &quot;rationale&quot;: &quot;Same work as library/arxiv-2304.12545v1/2304.12545v1.pdf; the add-reference and cite-in-block work items are recorded there. This copy needs only to be joined to that id.&quot;,
+            &quot;target&quot;: &quot;conj:borromean-bloch-group-element&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-08T23:34:05.459Z&quot;,
+        &quot;source_sha&quot;: &quot;3d66fe4c64bd&quot;
+      },
+      &quot;note&quot;: &quot;Bib key backfilled from duplicate copy of arxiv-2304.12545v1, which carries this key. The row carried `id: null`, which read as \&quot;held but uncitable\&quot;; the join already existed on the references.ts side.&quot;,
+      &quot;verified_at&quot;: &quot;2026-09-03T04:37:40Z&quot;,
+      &quot;verified_by&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;model&quot;: &quot;claude-opus-5&quot;
+      }
+    }
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

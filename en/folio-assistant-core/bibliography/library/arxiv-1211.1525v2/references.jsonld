@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1211.1525v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "PARTIAL TRANSPOSE OF RANDOM QUANTUM STATES: EXACT FORMULAS AND MEANDERS",
+      "dcterms:creator": [
+        "FUKUDA, MOTOHISA",
+        "ŚNIADY, PIOTR"
+      ],
+      "dcterms:issued": "D:20181103",
+      "dcterms:identifier": "https://arxiv.org/abs/1211.1525",
+      "dcterms:abstract": "We investigate the asymptotic behavior of the empirical eigenvalues distribution of the partial transpose of a random quantum state. The limiting distribution was previously investigated via Wishart random matrices indirectly (by approximating the matrix of trace 1 by the Wishart matrix of random trace) and shown to be the semicircular distribution or the free difference of two free Poisson distributions, de- pending on how dimensions of the concerned spaces grow. Our use of Wishart matrices gives exact combinatorial formulas for the moments of the partial transpose of the random state. We ﬁnd three natural asymp- totic regimes in terms of geodesics on the permutation groups. Two of them correspond to the above two cases; the third one turns out to be a new matrix model for the meander polynomials. Moreover, we prove the convergence to the semicircular distribution together with its extreme eigenvalues under weaker assumptions, and show large deviation bound for the latter.",
+      "dcterms:source": "library/arxiv-1211.1525v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1211.1525v2"
+    }
+  ]
+}

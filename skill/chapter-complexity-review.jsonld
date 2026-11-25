@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/chapter-complexity-review.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/chapter-complexity-review",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "chapter-complexity-review",
+      "title": "Chapter Complexity Review",
+      "description": "Analyse a chapter's internal dependency graph to find backward edges (blocks that reference something defined later), compute graph energy, and suggest section/block reorderings that minimise complexity. Uses Graphviz for visualisation and brute-force permutation search for optimal section ordering.",
+      "instructionsPath": "skills/local/chapter-complexity-review.md",
+      "instructionLines": 225,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

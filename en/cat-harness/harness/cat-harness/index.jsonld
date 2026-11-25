@@ -1,0 +1,41 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/"
+  },
+  "@id": "https://litlfred.github.io/qou/en/cat-harness/harness/cat-harness/",
+  "url": "https://litlfred.github.io/qou/en/cat-harness/harness/cat-harness/",
+  "@type": "WebPage",
+  "name": "C@T Harness on Quantum Observable Universe",
+  "about": {
+    "@id": "https://litlfred.github.io/cat-harness/",
+    "@type": "SoftwareSourceCode",
+    "identifier": "cat-harness",
+    "name": "C@T Harness",
+    "description": "computable adjudication and agentic test harness\n\ncaaat-harness\n\nca&at-harness\n\n.c&at-harness\n\n c@t-harness",
+    "version": "0.1.0",
+    "codeRepository": "https://github.com/litlfred/cat-harness",
+    "isBasedOn": [
+      {
+        "@id": "https://litlfred.github.io/bootstrap/"
+      }
+    ],
+    "additionalProperty": {
+      "@type": "PropertyValue",
+      "name": "pinnedCommit",
+      "value": "dc97a6bc1aa3643e9dbf8213574225decb7e0e73"
+    },
+    "keywords": [
+      "docs"
+    ]
+  },
+  "isPartOf": {
+    "@id": "https://litlfred.github.io/qou/",
+    "name": "Quantum Observable Universe"
+  },
+  "significantLink": [
+    "https://litlfred.github.io/folio-assistant/#harness-cat-harness",
+    "https://github.com/litlfred/cat-harness/tree/dc97a6bc1aa3643e9dbf8213574225decb7e0e73",
+    "https://github.com/litlfred/cat-harness/blob/dc97a6bc1aa3643e9dbf8213574225decb7e0e73/README.md",
+    "https://github.com/litlfred/cat-harness/blob/dc97a6bc1aa3643e9dbf8213574225decb7e0e73/AGENTS.md"
+  ]
+}

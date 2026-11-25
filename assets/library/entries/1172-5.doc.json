@@ -1,0 +1,486 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "1172-5",
+  "title": "1172-5",
+  "variant": "pdf",
+  "pages": 10,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "THE",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "71",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-2-the"
+    },
+    {
+      "level": 1,
+      "title": "AN OPTIMISTIC LIMIT",
+      "number": "3",
+      "page": 3,
+      "pageLabel": "72",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-3-an-optimistic-limit"
+    },
+    {
+      "level": 1,
+      "title": "DEHN SURGERY ALONG THE FIGURE-EIGHT KNOT",
+      "number": "4",
+      "page": 4,
+      "pageLabel": "73",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-4-dehn-surgery-along-the-figure-eight-knot"
+    },
+    {
+      "level": 1,
+      "title": "VOLUME CONJECTURE FOR CLOSED THREE-MANIFOLDS",
+      "number": "5",
+      "page": 8,
+      "pageLabel": "77",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-5-volume-conjecture-for-closed-three-manifolds"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "70",
+      "labelEnd": "71",
+      "words": 342,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm turaev",
+          "heading": false
+        },
+        {
+          "term": "closed three-manifolds",
+          "heading": false
+        },
+        {
+          "term": "volume conjecture",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "three-manifolds obtained",
+          "heading": false
+        },
+        {
+          "term": "n-th root",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "link invariant",
+          "heading": false
+        }
+      ],
+      "extract": "OPTIMISTIC CALCULATIONS ABOUT THE $\\mathrm{W}\\mathrm{I}\\mathrm{T}\\mathrm{T}\\mathrm{E}\\mathrm{N}-\\mathrm{R}\\mathrm{E}\\mathrm{s}\\mathrm{H}\\mathrm{E}\\mathrm{T}\\mathrm{I}\\mathrm{K}\\mathrm{H}\\mathrm{I}\\mathrm{N}$-TURAEV INVARIANTS OF CLOSED THREE-MANIFOLDS OBTAINED FROM THE FIGURE-EIGHT KNOT BY INTEGRAL DEHN SURGERIES 東京工業大学大学院理工学研究科 村上斉(HITOSHI MURAKAMI) ABSTRACT. I calculate optimistically asymptotic behaviors of the",
+      "extractCut": true,
+      "blocks": [
+        "library/1172-5/blocks/prose-sec-front-matter",
+        "library/1172-5/blocks/conj-sec-front-matter-01"
+      ]
+    },
+    {
+      "id": "sec-000-2-the",
+      "number": "2",
+      "title": "THE",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "71",
+      "labelEnd": "72",
+      "words": 400,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm turaev",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "iota",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure-eight knot",
+          "heading": false
+        },
+        {
+          "term": "chern-simons invariants",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "n-m",
+          "heading": false
+        },
+        {
+          "term": "workshop",
+          "heading": false
+        }
+      ],
+      "extract": "rithms of the WRT invariants of closed three-manifolds obtained from the ﬁgure- eight knot by Dehn surgeries with integral coeﬃcients. I will follow Kashaev’s calculation in [2] formally and optimistically, and deduce an analytic function with integer parameter corresponding to the surgery coeﬃcient. The function turns out to describe not only the (simplicial) volume but also the Chern-Simons invariant of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-3-an-optimistic-limit",
+      "number": "3",
+      "title": "AN OPTIMISTIC LIMIT",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "72",
+      "labelEnd": "73",
+      "words": 483,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "optimistic limit",
+          "heading": true
+        },
+        {
+          "term": "sqrt log",
+          "heading": false
+        },
+        {
+          "term": "frac log",
+          "heading": false
+        },
+        {
+          "term": "frac partial",
+          "heading": false
+        },
+        {
+          "term": "partial tilde",
+          "heading": false
+        },
+        {
+          "term": "zeta",
+          "heading": false
+        },
+        {
+          "term": "lim frac",
+          "heading": false
+        },
+        {
+          "term": "sum leq",
+          "heading": false
+        }
+      ],
+      "extract": "Suppose that we are given a function $S(N)$ of $N$ by the following summation. (3.1) $S(N)=P(N)n2 \\sum_{n_{1},,..,n_{k}}.q^{Q+}L\\prod_{a=1}(q\\alpha)_{l_{a}}\\epsilon_{a}$ , where $P(N)$ is a function of $N$ with polynomial growth, $\\epsilon_{a}=\\pm 1,$ $l_{a}$ and $L$ are linear functions of $n_{1},$ $n_{2},$ $\\ldots,$ $n_{k}$ (they do not depend on $N$ but may have constant terms), $Q= \\sum_{1\\leq i\\leq j\\leq",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-4-dehn-surgery-along-the-figure-eight-knot",
+      "number": "4",
+      "title": "DEHN SURGERY ALONG THE FIGURE-EIGHT KNOT",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 8,
+      "labelStart": "73",
+      "labelEnd": "77",
+      "words": 934,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "overline zeta",
+          "heading": false
+        },
+        {
+          "term": "mathrm sqrt",
+          "heading": false
+        },
+        {
+          "term": "zeta infty",
+          "heading": false
+        },
+        {
+          "term": "parrow infty",
+          "heading": false
+        },
+        {
+          "term": "overline omega",
+          "heading": false
+        },
+        {
+          "term": "cross sqrt",
+          "heading": false
+        },
+        {
+          "term": "lim parrow",
+          "heading": false
+        },
+        {
+          "term": "sqrt log",
+          "heading": false
+        }
+      ],
+      "extract": "Put $k:=2,$ $n_{1}:=n,$ $n_{2}:=m,$ $z:=z_{1},$ $w:=z_{2},$ $Q:=pn^{2}/4-mn,$ $L:=-n/2$ , $\\alpha:=4,$ $l_{1}:=n,$ $\\epsilon_{1}$ $:=1,$ $l_{2}:=n-1,$ $\\epsilon_{2}:=-1,$ $l_{3}$ $:=n+m,$ $\\epsilon_{3}:=1,$ $l_{4}:=n-m-1$ , and $\\epsilon_{4}:=-1$ in (3.1). Note that $x_{1}=z,$ $x_{2}=z,$ $x_{3}=zw,$ $x_{4}=zw^{-1},$ $r_{11}=p/4$ , $r_{12}=-1,$ $r_{22}=0,$ $l_{11}=1,$ $l_{12}=0,$ $l_{21}=1,$ $l_{22}=0,$ $l_{31}=1,$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-5-volume-conjecture-for-closed-three-manifolds",
+      "number": "5",
+      "title": "VOLUME CONJECTURE FOR CLOSED THREE-MANIFOLDS",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "77",
+      "labelEnd": "79",
+      "words": 549,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "volume conjecture",
+          "heading": true
+        },
+        {
+          "term": "sqrt mathrm",
+          "heading": false
+        },
+        {
+          "term": "kashaev conjecture",
+          "heading": false
+        },
+        {
+          "term": "frac partial",
+          "heading": false
+        },
+        {
+          "term": "ﬁgure-eight knot",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic knots",
+          "heading": false
+        },
+        {
+          "term": "murakami",
+          "heading": false
+        },
+        {
+          "term": "closed three-manifold",
+          "heading": false
+        }
+      ],
+      "extract": "Now I propose a very ambiguous conjecture. Conjecture 5.1 (Volume conjecture for closed three-manifolds). For any closed three-manifold $M$ $N arrow\\infty 0-\\lim\\frac{2\\pi\\sqrt{-1}\\log\\tau N(M)}{N}=\\mathrm{C}\\mathrm{S}(M)+\\sqrt{-1}\\mathrm{V}_{0}1(M)$ , where $\\mathrm{V}\\mathrm{o}\\mathrm{l}(M):=v_{3}||M||$ with $||M||$ the simplicial volume of $M$ . A weaker but more precise conjecture is Conjecture 5.2. For an",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "zeta mathrm",
+      "heading": false
+    },
+    {
+      "term": "mathrm sqrt",
+      "heading": false
+    },
+    {
+      "term": "infty mathrm",
+      "heading": false
+    },
+    {
+      "term": "mathrm turaev",
+      "heading": false
+    },
+    {
+      "term": "frac zeta",
+      "heading": false
+    },
+    {
+      "term": "log zeta",
+      "heading": false
+    },
+    {
+      "term": "frac partial",
+      "heading": false
+    },
+    {
+      "term": "overline zeta",
+      "heading": false
+    },
+    {
+      "term": "cross sqrt",
+      "heading": false
+    },
+    {
+      "term": "lim frac",
+      "heading": false
+    },
+    {
+      "term": "ﬁgure-eight knot",
+      "heading": false
+    },
+    {
+      "term": "sum frac",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "72",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "73",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "74",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "75",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "76",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "77",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "78",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "79",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 4,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 5,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p8); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 5 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/1172-5"
+  }
+}

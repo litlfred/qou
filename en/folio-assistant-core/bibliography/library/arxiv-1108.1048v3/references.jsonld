@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1108.1048v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "CONSTRUCTION OF IRREDUCIBLE REPRESENTATIONS OVER KHOVANOV-LAUDA-ROUQUIER ALGEBRAS",
+      "dcterms:creator": [
+        "TYPE, OF FINITE CLASSICAL"
+      ],
+      "dcterms:issued": "D:20181031",
+      "dcterms:identifier": "https://arxiv.org/abs/1108.1048",
+      "dcterms:abstract": "We give an explicit construction of irreducible modules over Khovanov-Lauda- Rouquier algebras R and their cyclotomic quotients Rλ for ﬁnite classical types using a crystal basis theoretic approach. More precisely, for each element v of the crystal B(∞) (resp. B(λ)), we ﬁrst construct certain modules ∆(a; k) labeled by the adapted string a of v. We then prove that the head of the induced module Ind \u0000∆(a; 1)⊠· · ·⊠∆(a; n) \u0001 is irreducible and that every irreducible R-module (resp. Rλ-module) can be realized as the irreducible head of one of the induced modules Ind(∆(a; 1) ⊠· · · ⊠∆(a; n)). Moreover, we show that our construction is compatible with the crystal structure on B(∞) (resp. B(λ)).",
+      "dcterms:source": "library/arxiv-1108.1048v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1108.1048v3"
+    }
+  ]
+}

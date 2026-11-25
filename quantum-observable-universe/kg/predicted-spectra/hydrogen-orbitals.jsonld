@@ -1,0 +1,34 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-hydrogen-orbitals",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:hydrogen-orbitals",
+  "kind": "remark",
+  "title": "Hydrogen orbitals: the electron word around the Borromean anchor",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/ex-hydrogen-knot-structure",
+    "papers/quantum-observable-universe/blocks/conj-hydrogen-shell-writhe"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-hydrogen-shell-writhe",
+  "tags": [
+    "hydrogen",
+    "orbital",
+    "shell",
+    "subshell",
+    "braid-word",
+    "writhe",
+    "borromean",
+    "electron-cloud"
+  ],
+  "text": "hydrogen-orbitals.md",
+  "provenance": "authored"
+}

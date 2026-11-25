@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-0004133v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "From Finite Sets to Feynman Diagrams",
+      "dcterms:creator": [
+        "Baez, John C.",
+        "Dolan, James"
+      ],
+      "dcterms:issued": "D:20241126",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0004133",
+      "dcterms:abstract": "‘Categoriﬁcation’ is the process of replacing equations by isomor- phisms. We describe some of the ways a thoroughgoing emphasis on categoriﬁcation can simplify and unify mathematics. We begin with elementary arithmetic, where the category of ﬁnite sets serves as a categoriﬁed version of the set of natural numbers, with disjoint union and Cartesian product playing the role of addition and multiplication. We sketch how categorifying the integers leads naturally to the inﬁ- nite loop space Ω∞S∞, and how categorifying the positive rationals leads naturally to a notion of the ‘homotopy cardinality’ of a tame space. Then we show how categorifying formal power series leads to Joyal’s esp`eces des structures, or ‘structure types’. We also describe a useful generalization of structure types called ‘stuﬀtypes’. There is an inner product of stuﬀtypes that makes the category of stuﬀtypes into a categoriﬁed version of the Hilbert space of the quantized har- monic oscillator. We conclude by sketching how this idea gives a nice explanation of the combinatorics of Feynman diagrams.",
+      "dcterms:source": "library/arxiv-math-0004133v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-0004133v1"
+    }
+  ]
+}

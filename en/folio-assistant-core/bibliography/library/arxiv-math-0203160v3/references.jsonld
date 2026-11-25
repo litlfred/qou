@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-0203160v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "arXiv:math/0203160v3 [math.QA] 28 Oct 2002",
+      "dcterms:creator": [
+        "Dieng, Momar"
+      ],
+      "dcterms:issued": "D:20211124",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0203160",
+      "dcterms:abstract": "We analyze in detail projective modules over two-dimensional noncom- mutative tori and complex structures on these modules.We concentrate our attention on properties of holomorphic vectors in these modules; the theory of these vectors generalizes the theory of theta-functions. The pa- per is self-contained; it can be used also as an introduction to the theory of noncommutative spaces with simplest space of this kind thoroughly analyzed as a basic example.",
+      "dcterms:source": "library/arxiv-math-0203160v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-0203160v3"
+    }
+  ]
+}

@@ -1,0 +1,961 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1011.1343v1",
+  "title": "carbon12.eps",
+  "variant": "pdf",
+  "pages": 19,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "The early days at Stony Brook",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-the-early-days-at-stony-brook"
+    },
+    {
+      "level": 1,
+      "title": "A first step: Studying pion-nucleon scattering in chiral perturbation theory",
+      "number": "2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-a-first-step-studying-pion-nucleon-scattering"
+    },
+    {
+      "level": 1,
+      "title": "Flashback: The Texas revolution",
+      "number": "3",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-flashback-the-texas-revolution"
+    },
+    {
+      "level": 1,
+      "title": "The chiral theory of nuclear forces as a precision tool",
+      "number": "4",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-the-chiral-theory-of-nuclear-forces-as-a-preci"
+    },
+    {
+      "level": 2,
+      "title": "The nucleon-nucleon interaction",
+      "number": "4.1",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-41-the-nucleon-nucleon-interaction"
+    },
+    {
+      "level": 2,
+      "title": "Three-nucleon interactions",
+      "number": "4.2",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-42-three-nucleon-interactions"
+    },
+    {
+      "level": 2,
+      "title": "The nuclear matter problem",
+      "number": "4.3",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-43-the-nuclear-matter-problem"
+    },
+    {
+      "level": 2,
+      "title": "Back to square one - meson-exchange currents",
+      "number": "4.4",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-44-back-to-square-one---meson-exchange-currents"
+    },
+    {
+      "level": 1,
+      "title": "Flash forward: Combining nuclear EFT with lattice simulations",
+      "number": "5",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-5-flash-forward-combining-nuclear-eft-with-latti"
+    },
+    {
+      "level": 1,
+      "title": "Some final words",
+      "number": "6",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-6-some-final-words"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 76,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gerry brown",
+          "heading": false
+        },
+        {
+          "term": "nuclear forces",
+          "heading": false
+        },
+        {
+          "term": "jülich",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1011.1343v1 [nucl-th] 5 Nov 2010 Chiral symmetry, nuclear forces and all that Ulf-G. Meißner HISKP and Bethe Center for Theoretical Physics Universität Bonn, D-53115 Bonn, Germany and Institut für Kernphysik, Institute for Advanced Simulation and JCHP Forschungszentrum Jülich, D-52425 Jülich, Germany Dedicated to Gerry Brown on the occasion of his 85th birthday These are personal recollections of how Gerry",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1011.1343v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-the-early-days-at-stony-brook",
+      "number": "1",
+      "title": "The early days at Stony Brook",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 835,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stony brook",
+          "heading": true
+        },
+        {
+          "term": "gerry group",
+          "heading": false
+        },
+        {
+          "term": "chiral bag",
+          "heading": false
+        },
+        {
+          "term": "little bag",
+          "heading": false
+        },
+        {
+          "term": "bag model",
+          "heading": false
+        },
+        {
+          "term": "meson-exchange current",
+          "heading": false
+        },
+        {
+          "term": "nuclear interactions",
+          "heading": false
+        },
+        {
+          "term": "isoscalar rho",
+          "heading": false
+        }
+      ],
+      "extract": "I first met Gerry on the occasion of the Erice school in 1981, where he and Mannque Rho were giving quite interesting lectures on the chiral bag model and related issues. At that point, I was close to finishing my diploma thesis under the supervision of Manfred Gari at Bochum, working on two-meson exchange currents in the framework of unitary transformations. More specifically, the goal was to find out the relative",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-a-first-step-studying-pion-nucleon-scattering",
+      "number": "2",
+      "title": "A first step: Studying pion-nucleon scattering in chiral perturbation theory",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 742,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pion-nucleon scattering",
+          "heading": true
+        },
+        {
+          "term": "chiral perturbation",
+          "heading": true
+        },
+        {
+          "term": "resonance saturation",
+          "heading": false
+        },
+        {
+          "term": "norbert kaiser",
+          "heading": false
+        },
+        {
+          "term": "perturbation theory",
+          "heading": true
+        },
+        {
+          "term": "mandelstam triangle",
+          "heading": false
+        },
+        {
+          "term": "center includegraphics",
+          "heading": false
+        },
+        {
+          "term": "center caption",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{figure}[t] \\begin{center} \\includegraphics[width=3cm,angle=270]{ci.eps} \\end{center} \\caption{\\label{fig:ci} The LECs $c_i$ (circles) in pion-nucleon scattering (left), the two-nucleon (NN) interaction (center) and the three-nucleon (NNN) interaction (right). } \\end{figure} During my stay as a Heisenberg fellow at Bern, I was lucky to learn chiral perturbation theory (CHPT) from J\\\"urg Gasser and Heiri",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-flashback-the-texas-revolution",
+      "number": "3",
+      "title": "Flashback: The Texas revolution",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 984,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nuclear forces",
+          "heading": false
+        },
+        {
+          "term": "phenomenological lagrangians",
+          "heading": false
+        },
+        {
+          "term": "effective potential",
+          "heading": false
+        },
+        {
+          "term": "power counting",
+          "heading": false
+        },
+        {
+          "term": "bira van",
+          "heading": false
+        },
+        {
+          "term": "pion mass",
+          "heading": false
+        },
+        {
+          "term": "contact interactions",
+          "heading": false
+        },
+        {
+          "term": "nucleon mass",
+          "heading": false
+        }
+      ],
+      "extract": "Already in the early nineties a decisive step towards a systematic theory of the nuclear forces had been done. This was initiated by a series of papers by Steven Weinberg, who had already pioneered the use of effective chiral Lagrangians decades earlier under the nowadays somewhat strange-reading title \"Phenomenological Lagrangians\" [@Weinberg:1978kz]. In that marvelous paper the idea of the power counting was",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-the-chiral-theory-of-nuclear-forces-as-a-preci",
+      "number": "4",
+      "title": "The chiral theory of nuclear forces as a precision tool",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-004-41-the-nucleon-nucleon-interaction",
+      "number": "4.1",
+      "title": "The nucleon-nucleon interaction",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 945,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "texas potential",
+          "heading": false
+        },
+        {
+          "term": "bonn potential",
+          "heading": false
+        },
+        {
+          "term": "two-pion exchange",
+          "heading": false
+        },
+        {
+          "term": "dark shaded",
+          "heading": false
+        },
+        {
+          "term": "chiral potential",
+          "heading": false
+        },
+        {
+          "term": "epelbaum",
+          "heading": false
+        },
+        {
+          "term": "stony brook",
+          "heading": false
+        },
+        {
+          "term": "diploma thesis",
+          "heading": false
+        }
+      ],
+      "extract": "When I was still at Bonn filling in for the vacant chair of Max Huber, then rector of Bonn University, I met a few times with Karl Holinde of the IKP Jülich. Karl had become famous for his work on the Bonn potential and was hired by Josef Speth at Jülich in 1984, which gave Karl a fantastic home base to continue his work. We talked about the chiral potential of the Texas group, and he was clearly interested but also",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-42-three-nucleon-interactions",
+      "number": "4.2",
+      "title": "Three-nucleon interactions",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 690,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fujita-miyazawa force",
+          "heading": false
+        },
+        {
+          "term": "two-pion exchange",
+          "heading": false
+        },
+        {
+          "term": "contact interaction",
+          "heading": false
+        },
+        {
+          "term": "ncsm",
+          "heading": false
+        },
+        {
+          "term": "chiral symmetry",
+          "heading": false
+        },
+        {
+          "term": "navrátil",
+          "heading": false
+        },
+        {
+          "term": "nnn",
+          "heading": false
+        },
+        {
+          "term": "three-nucleon",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sec:three label=\"sec:three\"} One of the biggest advantages of the chiral Lagrangian approach to the nuclear force problem - as stressed early in Weinberg's papers - is the consistent derivation of the 3- and 4-nucleon forces and also the meson-exchange currents (that is, the response to electroweak probes). It is worth mentioning that decades earlier Gerry was aware of the role of chiral symmetry in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-43-the-nuclear-matter-problem",
+      "number": "4.3",
+      "title": "The nuclear matter problem",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 619,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nuclear matter",
+          "heading": true
+        },
+        {
+          "term": "saturation properties",
+          "heading": false
+        },
+        {
+          "term": "binding energy",
+          "heading": false
+        },
+        {
+          "term": "off mev",
+          "heading": false
+        },
+        {
+          "term": "nucmat",
+          "heading": false
+        },
+        {
+          "term": "chiral eft",
+          "heading": false
+        },
+        {
+          "term": "right panel",
+          "heading": false
+        },
+        {
+          "term": "left panel",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:nucmat label=\"sec:nucmat\"} Another important question in nuclear physics is to understand the saturation properties of nuclear matter - an idealized infinite system of nucleons in which all Coulomb effects are switched off. From the properties of heavy nuclei using some sophisticated mass formula, one can extrapolate to nuclear matter - and determine its saturation properties. The binding energy per nucleon",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-44-back-to-square-one---meson-exchange-currents",
+      "number": "4.4",
+      "title": "Back to square one - meson-exchange currents",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 427,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rocco schiavilla",
+          "heading": false
+        },
+        {
+          "term": "labeled n3lo",
+          "heading": false
+        },
+        {
+          "term": "nuclear eft",
+          "heading": false
+        },
+        {
+          "term": "currents",
+          "heading": true
+        },
+        {
+          "term": "chiral nuclear",
+          "heading": false
+        },
+        {
+          "term": "meson-exchange",
+          "heading": true
+        },
+        {
+          "term": "capture",
+          "heading": false
+        },
+        {
+          "term": "curve labeled",
+          "heading": false
+        }
+      ],
+      "extract": "<figure id=\"fig:MEX\"> <div class=\"center\"> <embed src=\"Fig4.eps\" style=\"width:13cm\" /> </div> <figcaption><span id=\"fig:MEX\" label=\"fig:MEX\"></span> Predictions for the <span class=\"math inline\"><em>n</em></span>-<span class=\"math inline\"><em>d</em></span> and <span class=\"math inline\"><em>n</em></span>-<span class=\"math inline\"><sup>3</sup><em>H</em><em>e</em></span> capture reactions. Chiral EFT: the curve labeled",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-5-flash-forward-combining-nuclear-eft-with-latti",
+      "number": "5",
+      "title": "Flash forward: Combining nuclear EFT with lattice simulations",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 812,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nuclear lattice",
+          "heading": true
+        },
+        {
+          "term": "cpu time",
+          "heading": false
+        },
+        {
+          "term": "required cpu",
+          "heading": false
+        },
+        {
+          "term": "dean lee",
+          "heading": false
+        },
+        {
+          "term": "nuclear forces",
+          "heading": false
+        },
+        {
+          "term": "lattice spacing",
+          "heading": false
+        },
+        {
+          "term": "lattice sites",
+          "heading": false
+        },
+        {
+          "term": "storage",
+          "heading": false
+        }
+      ],
+      "extract": "<figure id=\"fig:nuclat\"> <embed src=\"phasediagram.eps\" style=\"width:60.0%\" /> <embed src=\"NuclLatt.eps\" style=\"width:35.0%\" /> <figcaption><span id=\"fig:nuclat\" label=\"fig:nuclat\"></span> Left panel: Euclidean space-time lattice with point-like nucleons on the lattice sites and a typical lattice spacing of <span class=\"math inline\"><em>a</em> = 2</span> fm. Right panel: Nuclear phase diagram as accessible by lattice",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-6-some-final-words",
+      "number": "6",
+      "title": "Some final words",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1150,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nuclear physics",
+          "heading": false
+        },
+        {
+          "term": "gerry",
+          "heading": false
+        },
+        {
+          "term": "beane",
+          "heading": false
+        },
+        {
+          "term": "qcd",
+          "heading": false
+        },
+        {
+          "term": "thank",
+          "heading": false
+        },
+        {
+          "term": "few",
+          "heading": false
+        }
+      ],
+      "extract": "The chiral effective Lagrangian of QCD offers a tool to systematically investigate the structure of the nucleon and the nuclear interactions with high accuracy - it appears that we are now on the right track to achieve what could only be dreamed about a few decades ago - see the discussion in Sec. 1. Nuclear physics will no longer be based on model-building and phenomenological approaches, although still quite a bit",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "chiral nuclear",
+      "heading": true
+    },
+    {
+      "term": "nuclear forces",
+      "heading": true
+    },
+    {
+      "term": "nuclear eft",
+      "heading": true
+    },
+    {
+      "term": "nuclear interactions",
+      "heading": false
+    },
+    {
+      "term": "nuclear matter",
+      "heading": true
+    },
+    {
+      "term": "nuclear physics",
+      "heading": false
+    },
+    {
+      "term": "chiral effective",
+      "heading": false
+    },
+    {
+      "term": "nuclear lattice",
+      "heading": true
+    },
+    {
+      "term": "chiral potential",
+      "heading": false
+    },
+    {
+      "term": "gerry group",
+      "heading": false
+    },
+    {
+      "term": "nuclear many-body",
+      "heading": false
+    },
+    {
+      "term": "gerry brown",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The LECs ci (circles) in pion-nucleon scattering (left), the two-nucleon (NN) interaction (center) and the three-nucleon (NNN) interaction (right)",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Mandelstam plane. The Mandelstam triangle is the inside of the thick lines",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Resonance saturation for the dimension two (circles) and three (squares) LECs",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Contributions to the eﬀective potential of the 2N, 3N and 4N forces based on Weinberg’s power counting. Here, LO denotes leading order, NLO next-toleading order and so on. Dimension one, two and three pion-nucleon interactions are denoted by small circles, big circles and ﬁlled boxes, respectively",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Left: np S-waves at NLO (grid), N2LO (light shaded) and N3LO (dark shaded). Right: Diﬀerential cross section and vector analyzing power for np scattering at",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Topologies of the leading contributions to the chiral 3NF. From left to right: Two-pion exchange, one-pion-exchange and 6N contact interaction",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Spectra of light nuclei using chiral NN and chiral NN+NNN forces in a NCSM calculation compared to the data",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Left panel: Binding energy per particle of nuclear matter as a function of the",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Predictions for the n-d and n-3He capture reactions. Chiral EFT: the curve labeled N3LO(S-L) includes pion loop corrections contact terms, while the curve labeled N3LO(LECs) includes in addition contributions from (higher order) pion exchanges and non-minimal contact currents. Pre-EFT approaches: SN",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Left panel: Euclidean space-time lattice with point-like nucleons on the lattice sites and a typical lattice spacing of a = 2 fm. Right panel: Nuclear phase diagram as accessible by lattice QCD and by nuclear lattice EFT. Figure courtesy of Dean Lee",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Ground-state energy of 12C as a function of Euclidean time",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 10,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "11 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1011.1343v1"
+  }
+}

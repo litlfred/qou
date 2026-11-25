@@ -1,0 +1,102 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1512.04993v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Complexity, action, and black holes",
+  "contains": [
+    "library/arxiv-1512.04993v2/sections/sec-front-matter",
+    "library/arxiv-1512.04993v2/sections/sec-000",
+    "library/arxiv-1512.04993v2/sections/sec-001",
+    "library/arxiv-1512.04993v2/sections/sec-002",
+    "library/arxiv-1512.04993v2/sections/sec-003",
+    "library/arxiv-1512.04993v2/sections/sec-004",
+    "library/arxiv-1512.04993v2/sections/sec-005",
+    "library/arxiv-1512.04993v2/sections/sec-006",
+    "library/arxiv-1512.04993v2/sections/sec-007",
+    "library/arxiv-1512.04993v2/sections/sec-008",
+    "library/arxiv-1512.04993v2/sections/sec-009",
+    "library/arxiv-1512.04993v2/sections/sec-010",
+    "library/arxiv-1512.04993v2/sections/sec-011",
+    "library/arxiv-1512.04993v2/sections/sec-012",
+    "library/arxiv-1512.04993v2/sections/sec-013",
+    "library/arxiv-1512.04993v2/sections/sec-014",
+    "library/arxiv-1512.04993v2/sections/sec-015",
+    "library/arxiv-1512.04993v2/sections/sec-016",
+    "library/arxiv-1512.04993v2/sections/sec-017",
+    "library/arxiv-1512.04993v2/sections/sec-018",
+    "library/arxiv-1512.04993v2/sections/sec-019",
+    "library/arxiv-1512.04993v2/sections/sec-020",
+    "library/arxiv-1512.04993v2/sections/sec-021",
+    "library/arxiv-1512.04993v2/sections/sec-022",
+    "library/arxiv-1512.04993v2/sections/sec-023",
+    "library/arxiv-1512.04993v2/sections/sec-024",
+    "library/arxiv-1512.04993v2/sections/sec-025",
+    "library/arxiv-1512.04993v2/sections/sec-026",
+    "library/arxiv-1512.04993v2/sections/sec-027",
+    "library/arxiv-1512.04993v2/sections/sec-028",
+    "library/arxiv-1512.04993v2/sections/sec-029",
+    "library/arxiv-1512.04993v2/sections/sec-030",
+    "library/arxiv-1512.04993v2/sections/sec-031",
+    "library/arxiv-1512.04993v2/sections/sec-032",
+    "library/arxiv-1512.04993v2/sections/sec-033",
+    "library/arxiv-1512.04993v2/sections/sec-034",
+    "library/arxiv-1512.04993v2/sections/sec-035",
+    "library/arxiv-1512.04993v2/sections/sec-036",
+    "library/arxiv-1512.04993v2/sections/sec-037",
+    "library/arxiv-1512.04993v2/sections/sec-038",
+    "library/arxiv-1512.04993v2/sections/sec-039",
+    "library/arxiv-1512.04993v2/sections/sec-040",
+    "library/arxiv-1512.04993v2/sections/sec-041",
+    "library/arxiv-1512.04993v2/sections/sec-042",
+    "library/arxiv-1512.04993v2/sections/sec-043",
+    "library/arxiv-1512.04993v2/sections/sec-044",
+    "library/arxiv-1512.04993v2/sections/sec-045"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Complexity, action, and black holes — Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a\n\n**Complexity, action, and black holes**\n\n*Adam R. Browna, Daniel A. Robertsb, Leonard Susskinda*\n\n70 pp, 47 sections.\n\n**Abstract.** Our earlier paper “Complexity Equals Action” conjectured that the quantum computational complexity of a holographic state is given by the classical action of a region in the bulk (the “Wheeler-DeWitt” patch). We provide calculations for the results quoted in that paper, explain how it ﬁts into a broader (tensor) network of ideas, and elaborate on the hypothesis that black holes are the fastest computers in nature. arXiv:1512.04993v2 [hep-th] 10 May 2016\n\n**Outline.** Front matter; 1 Introduction; 1.1 Complexity equals action; 2 Bounds on information storage and processing; 2.2 Bounds on information scrambling or chaos; 2.3 Bounds on quantum evolution; 2.4 Complexity; 2.5 Conjectured complexity growth bound; 2.6 Bound on complexity growth with a conserve; 3 Action growth of black holes; 3.1 Action of an uncharged black hole; 3.2 Action of a charged black hole; 3.3 Action of a rotating BTZ black hole; 4 Testing our conjectures with black holes; 4.1 Neutral static black holes; 4.2 Rotating BTZ black holes; 4.3 Small charged black holes; 4.4 Intermediate and large charged black holes",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1512.04993&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1512.04993v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1512.04993v2.pdf",
+    "source_sha256": "b8047bc3d3815406ddc69a4c17fe8d9f80a16c0dc235e5dbeb242259e451d8d3",
+    "pages": 70,
+    "arxiv": {
+      "id": "1512.04993",
+      "version": "2",
+      "primary_class": "hep-th",
+      "stamp_date": "10 May 2016"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

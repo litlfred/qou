@@ -1,0 +1,2617 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2207.07246v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Path Integral Quantum Monte Carlo Method for Light Nuclei\nby\nRong Chen\nA Dissertation Presented in Partial Fulﬁllment\nof the Requirements for the Degree\nDoctor of Philosophy\nApproved July 2020 by the\nGraduate Supervisory Committee:\nKevin E. Schmidt, Chair\nRicardo O. Alarc´on\nOliver Beckstein\nJoseph R. Comfort\nIgor A. Shovkovy\nARIZONA STATE UNIVERSITY\nAugust 2020\narXiv:2207.07246v2  [nucl-th]  18 Jul 2022",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "ABSTRACT",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-abstract.md",
+      "narrative": null,
+      "content": "I describe the ﬁrst continuous space nuclear path integral quantum Monte Carlo\nmethod, and calculate the ground state properties of light nuclei including Deuteron,\nTriton, Helium-3 and Helium-4, using both local chiral interaction up to next-to-\nnext-to-leading-order and the Argonne v′\n6 interaction. Compared with diﬀusion based\nquantum Monte Carlo methods such as Green’s function Monte Carlo and auxiliary\nﬁeld diﬀusion Monte Carlo, path integral quantum Monte Carlo has the advantage\nthat it can directly calculate the expectation value of operators without tradeoﬀ,\nwhether they commute with t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "ACKNOWLEDGEMENTS",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-acknowledgements.md",
+      "narrative": null,
+      "content": "I am grateful to my advisor prof. Kevin E. Schmidt not only for his transcendental\ntolerance, extraordinary patience, sagacious guidance, but also for his kindly accepting\nme at the stage I was at and assigning me an awesome PhD project which enlightened\nmy life. From him I learned not only delicate and creative physics ideas, but more\nimportantly, the hardcore independent American spirit. To me he is the high seas\nCaesar who always tries to train me to be like captain Jack Sparrow who adventures\non the seven seas under any whimsical conditions with the Black Pearl. It was destiny\nthat lead me",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "LIST OF TABLES",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-list-of-tables.md",
+      "narrative": null,
+      "content": "Table\nPage\n4.1\nPIMC Results for the Ground State Energy of Light Nuclei Based on\nthe AV6’ Interaction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n87\n4.2\nPIMC Results for the Ground State Energy of Light Nuclei Based on\nthe Local Chiral N2LO Interaction.. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .\n87\n4.3\nPIMC Results for the RMS Radii of Light Nuclei Based on the AV6’\nInteraction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 95\n4.4\nPIMC Results for RMS Radii",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "LIST OF FIGURES",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-003-list-of-figures.md",
+      "narrative": null,
+      "content": "Figure\nPage\n1.1\nIllustration of a GFMC Walker and a PIMC Walker . . . . . . . . . . . . . . . . . .\n11\n2.1\nComparison Between PIMC and DMC 4-Particle Calculations for One-\nparticle Number Density ρ(r) Using 3 Diﬀerent Trial Wave Function\nand with Malﬂiet-Tjon Interaction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18\n2.2\nRadial Functions of the AV6’ and the Chiral N2LO Interaction . . . . . . . . 22\n2.3\nSingle-particle Orbital States |sK\ni ⟩nljmj . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 30\n2.4\nSingle-particle Orbital States of 16O(0+, 0) . . . . . . .",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prop-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "prop-sec-007-01.md",
+      "narrative": null,
+      "content": "Lattice QCD methods ([@davies2002lattice]) are working toward calculating the nucleon many-body problem from quark and gluons degrees of freedom, however the current simulations are not capable of a system beyond two nucleons ([@BEANE2008; @savage2015nuclear]).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "CHAPTER",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-chapter.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "INTRODUCTION",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-005-1-introduction.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Background",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-006-11-background.md",
+      "narrative": null,
+      "content": "[]{#secBackground label=\"secBackground\"}\n\nIn nuclear physics, most of the questions simply cannot be convincingly answered without answering the following two perhaps ultimate questions in the first place:\n\n1.  What is the interaction between nucleons?\n\n2.  How to solve the many-body problem?\n\nIn fact, these two questions are more like big challenges than problems or troubles. Today, in the beginning of the second decade of the century, which is nearly a century since Erwin Schrödinger in 1925 wrote down the equation $i \\hbar \\dot{\\Psi} = H \\Psi$ that rules the quantum world, with discoveries",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Evolution of the Nucleon-Nucleon Interaction",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-007-111-evolution-of-the-nucleon-nucleon-interaction.md",
+      "narrative": null,
+      "content": "In regards to the first question, what is the interaction between nucleons? We already know that nucleons are made of quarks and gluons, and quantum chromodynamics (QCD) ([@Wilczek73a; @Polizer73a]) describes the strong interaction between quarks and gluons within the framework of quantum field theory (QFT) by using the QCD Lagrangian. The interactions between quarks are made by exchanging the gluons which are the 'messengers'. Nucleons, i.e. protons and neutrons are actually the bound states of quarks and gluons. Consequently, in principle we should calculate the interaction between nucleons",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Meson exchange theory",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-008-meson-exchange-theory.md",
+      "narrative": null,
+      "content": "The earliest version of nucleon-nucleon (NN) interaction is the Yukawa potential ([@Yukawa1935]) which is $V_{\\text{Yukawa}}(r)= -g^2 \\;\\frac{e^{- mr}}{r}$ where $g$ is the coupling constant, $m$ is the mass of the meson and $r$ is the distance between two nucleons. Yukawa theory was pioneering in the 1930s because it first predicted that the interactions between nucleons are made by exchanging a new particle called a meson. The interaction range $r$ between nucleons, which is about 1 fm, can determine the mass of the meson by the uncertainty principle $r \\approx 1/m$ so $m\\approx 200$ MeV. An",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chiral effective field theory",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-009-chiral-effective-field-theory.md",
+      "narrative": null,
+      "content": "Since the 1990s, the importance of NN interactions derived from chiral effective field theory (ChEFT) has been realized by more and more people. The idea of ChEFT was proposed in 1979 by Steven Weinberg ([@WEINBERG1979327]) and after his proposal about how to treat the nuclear interaction at the chiral limit ([@WEINBERG1990288; @WEINBERG19913]) ChEFT has been rapidly developed in nuclear physics ([@Epelbaum2009a; @MACHLEIDT20111]). The nuclear interactions derived from ChEFT are connected with the fundamental theory of QCD by the broken chiral symmetry. This is an example of 'symmetry dictates",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Methods of Solving the Many-Body Problem",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-010-112-methods-of-solving-the-many-body-problem.md",
+      "narrative": null,
+      "content": "Methods of Solving the Many-Body Problem",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Phenomenological approaches",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-011-phenomenological-approaches.md",
+      "narrative": null,
+      "content": "For the second main question: how do we solve for the many-body problem given the interactions between the particles? There are some approaches developed in the past several decades. Some of them are based on mean field theory and the phenomenological NN interactions. For example, models based on non-relativistic mean field like Skyrme-Hartree-Fock ([@SKYRME1958615]), Gogny-Hartree-Fock ([@Gogny1980PRC]) models[^1], relativistic mean field theory (RMF) ([@Reinhard_1989; @RING1996193]), etc. In those methods, for bulk matter people assume that the each particle is in the mean field of the other",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "First principle approaches",
+      "pageStart": 16,
+      "pageEnd": 20,
+      "target": "../sections/sec-012-first-principle-approaches.md",
+      "narrative": null,
+      "content": "First principle, or *ab initio* calculations are referring to those methods which are aiming at directly solving the Schrödinger equation of the system. The no-core shell-model (NCSM) ([@Navr_til_2009; @BARRETT2013131]), coupled cluster theory ([@Hagen_2014]), and quantum Monte Carlo method (QMC) ([@CarlsonRMP15a]) are by far the three most successful and most mentioned methods. Each of them have their own advantages in their ability to approach specific problems.\n\nNCSM is basically a method for solving for the eigenvalues of the Hamiltonian matrix in the time-independent Schrödinger equation,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motivation",
+      "pageStart": 20,
+      "pageEnd": 23,
+      "target": "../sections/sec-013-12-motivation.md",
+      "narrative": null,
+      "content": "All the current continuous space nuclear QMC calculations (such as GFMC and AFDMC) are performed within the framework of DMC. Due to the nature of DMC, when we perform ground state calculations, the operators will typically be sandwiched between the trial wave function $\\Psi_T$ and the ground state wave function $\\Phi_0$. Therefore, DMC based methods can accurately calculate the ground state expectation values of the operators which commute with the Hamiltonian, e.g., the ground state energy $E_0$ itself. However, if the operators do not commute with the Hamiltonian, the ground state expectati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p021-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../images/img-p021-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p021-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../images/img-p021-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outline",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-014-13-outline.md",
+      "narrative": null,
+      "content": "The dissertation is organized as follows.\n\nIn chapter [1](#ChapPIMC){reference-type=\"ref\" reference=\"ChapPIMC\"}, I introduce the framework of PIMC first, then I introduce the detailed form of the Hamiltonian we used and its model (Hilbert) space, the trial wave function, the short-time approximation of the propagator and the time step error structure of our calculation. After writing down the details of all the calculations and equations which are suitable for PIMC simulations first, I then describe how the path is calculated and efficiently updated. Particularly, I describe how the path is ef",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "PATH INTEGRAL QUANTUM MONTE CARLO",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../sections/sec-015-2-path-integral-quantum-monte-carlo.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Theoretical Framework",
+      "pageStart": 24,
+      "pageEnd": 29,
+      "target": "../sections/sec-016-21-theoretical-framework.md",
+      "narrative": null,
+      "content": "[]{#TheoFrame label=\"TheoFrame\"} PIMC directly calculates the expectation value of an operator $\\langle \\hat{O} \\rangle$ as $$\\langle \\hat{O} \\rangle= \\frac{  \\langle \\Psi_T| e^{-H \\tau_1}  \\hat{O} e^{-H \\tau_2 } | \\Psi_T \\rangle  }\n{\\langle \\Psi_T| e^{-H \\tau} | \\Psi_T \\rangle}, \\label{PIMCopexp}$$ where $\\tau_i$ is an imaginary time and the total imaginary time $\\tau=\\tau_1+\\tau_2$. $\\Psi_T$ is a trial wave function and it can serve as the initial state of the system. $H$ is the Hamiltonian of the system, $$H=T+V, \\label{HTV}$$ where $T$ and $V$ are kinetic and potential energy operators. Si",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hamiltonian",
+      "pageStart": 29,
+      "pageEnd": 33,
+      "target": "../sections/sec-017-22-hamiltonian.md",
+      "narrative": null,
+      "content": "[]{#secHamilton label=\"secHamilton\"}\n\nIn this work, the Hamiltonian $H$ of our light nuclei calculations is non-relativistic. It can be written as, $$H = \\sum_{i=1}^A \\frac{\\bm{p}_i^2}{2m}  + \\sum_{i<j}V_{ij}, \\label{PIMCHamilton}$$ where $A$ is total number of nucleons in the system, $\\bm{p}_i=-i\\hbar \\nabla_i$ is the momentum of particle $i$ in real space. The complete two body interaction for a given $ij$ pair of particles, $V_{ij}$, is composed of the nucleon-nucleon interaction $V^{NN}_{ij}$ and the electric magnetic force $V^{EM}_{ij}$, $$V_{ij}=V_{ij}^{NN}+V^{EM}_{ij}.\\label{Vij}$$\n\nBy",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Model Space",
+      "pageStart": 33,
+      "pageEnd": 35,
+      "target": "../sections/sec-018-23-model-space.md",
+      "narrative": null,
+      "content": "[]{#secModSpace label=\"secModSpace\"}\n\nThe interaction used in this work will not change the total number of $Z$ protons and $A-Z$ neutrons[^1], so the number of possible isospin states is $\\binom {A}{Z}$. However the tensor part $S_{ij}$ can flip spin, so the possible number of spin states is $2^A$. Therefore, as stated before, the total number of spin-isospin basis states is, $$N_{\\rm{tot}}= \\binom {A}{Z} \\times 2^A = \\frac{A!}{Z!(Z-A)!} \\times 2^A.\n\\label{Nbasistotal}$$\n\nTake $^4$He as an example, it has $N_{\\rm{tot}}=6 \\times 16=96$ spin-isospin basis states. In other words, our Hilbert spa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Wave Function",
+      "pageStart": 35,
+      "pageEnd": 42,
+      "target": "../sections/sec-019-24-wave-function.md",
+      "narrative": null,
+      "content": "From Eq.([\\[PIMCopexp\\]](#PIMCopexp){reference-type=\"ref\" reference=\"PIMCopexp\"}) we know that an initial trial wave function $\\Psi_T$ is needed. Like all QMC calculations, the closer the trial wave function $\\Psi_T$ is to the ground state, the faster and the lower variance the calculation will become. In fact, obtaining a high quality trial wave function is always an important task for QMC.\n\nThe state of the trial wave function $| \\Psi_T \\rangle$ in this work takes the following form ([@CarlsonRMP15a]), $$|\\Psi_T \\rangle = \\mathcal{F} |\\Phi \\rangle, \\label{PsiTstateF}$$ where $| \\Phi \\rangle$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p040-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 40,
+      "target": "../images/img-p040-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p040-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 40,
+      "target": "../images/img-p040-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p040-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 40,
+      "target": "../images/img-p040-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p040-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 40,
+      "target": "../images/img-p040-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p040-5",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 40,
+      "target": "../images/img-p040-5.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p041-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 41,
+      "target": "../images/img-p041-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p041-13",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 41,
+      "target": "../images/img-p041-13.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p041-5",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 41,
+      "target": "../images/img-p041-5.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p041-9",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 41,
+      "target": "../images/img-p041-9.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Propagator",
+      "pageStart": 42,
+      "pageEnd": 45,
+      "target": "../sections/sec-020-25-propagator.md",
+      "narrative": null,
+      "content": "[]{#propagator label=\"propagator\"} Efficiently sampling the imaginary time propagator $e^{-H \\Delta \\tau}$ by using a short-time approximated propagator $U(\\Delta \\tau)$ is important for PIMC. Due to the fact that the local chiral N$^2$LO interaction contains the spin-orbit term $v_{LS}(r_{ij})$ in Eq.([\\[vlsrij\\]](#vlsrij){reference-type=\"ref\" reference=\"vlsrij\"}), the approximated short-time propagator $U(\\Delta \\tau)$ for $e^{-H \\Delta \\tau}$ is calculated as, $$\\begin{aligned}\nU(\\Delta \\tau) & \\equiv\ne^{-\\frac{\\mathcal{V}^\\dagger}{2} \\Delta \\tau }\n\\mathcal{G}\ne^{-T \\Delta \\tau} e^{-\\frac{\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Time Step Error Structure",
+      "pageStart": 45,
+      "pageEnd": 47,
+      "target": "../sections/sec-021-26-time-step-error-structure.md",
+      "narrative": null,
+      "content": "[]{#secErrEst label=\"secErrEst\"} For the AV6' interaction, there are only the first 6 operators in Eq.([\\[AV6\\'\\]](#AV6'){reference-type=\"ref\" reference=\"AV6'\"}), so $\\mathcal{G}$ is 1, and Eq.([\\[propagatorN2LOVTV\\]](#propagatorN2LOVTV){reference-type=\"ref\" reference=\"propagatorN2LOVTV\"}) becomes the high-accuracy Trotter formula[^1] ([@Feynman1948RMP; @SchmidtLee95a]) which has $\\mathcal{O}(\\Delta \\tau)^3$ accuracy and can be denoted as $U_S(\\Delta \\tau)$, $$U_S(\\Delta \\tau) \\equiv\ne^{-\\frac{\\mathcal{V}^\\dagger}{2} \\Delta \\tau }\ne^{-T \\Delta \\tau} e^{-\\frac{\\mathcal{V}}{2} \\Delta \\tau }\n= e^",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Computational Details",
+      "pageStart": 47,
+      "pageEnd": 47,
+      "target": "../sections/sec-022-27-computational-details.md",
+      "narrative": null,
+      "content": "Computational Details",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Recast",
+      "pageStart": 47,
+      "pageEnd": 50,
+      "target": "../sections/sec-023-271-recast.md",
+      "narrative": null,
+      "content": "[]{#Recast label=\"Recast\"}\n\nWe need to recast Eq.([\\[PIMCopexpdetailshorttime\\]](#PIMCopexpdetailshorttime){reference-type=\"ref\" reference=\"PIMCopexpdetailshorttime\"}) into a form that is suitable for PIMC calculations. We set the total time $\\tau$ as $\\tau=\\tau_1+\\tau_2=N \\Delta \\tau$, and we insert $N$ short-time propagators $U(\\Delta \\tau)$ in Eq.([\\[PIMCopexpdetailshorttime\\]](#PIMCopexpdetailshorttime){reference-type=\"ref\" reference=\"PIMCopexpdetailshorttime\"}) as well as inserting corresponding identity operators in Eqs.([\\[identityRS\\]](#identityRS){reference-type=\"ref\" reference=\"ident",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Path Diagrams",
+      "pageStart": 50,
+      "pageEnd": 53,
+      "target": "../sections/sec-024-272-path-diagrams.md",
+      "narrative": null,
+      "content": "[]{#secPathDiagrams label=\"secPathDiagrams\"}\n\nFunction $f(\\mathcal{R})_{lr}$ corresponds to the denominator of Eq.([\\[Oraw\\]](#Oraw){reference-type=\"ref\" reference=\"Oraw\"}) and it does not depend on where the operator $\\hat{O}$ is placed,\n\n::: flalign\nf()\\_lr &= \\_S_0,S_N \\^l_T\\| R_0 S_0 R_0 S_0 \\| \\[U()\\]\\^N \\| R_N S_N R\\_N S\\_N \\| \\^r_T \\\n& = f\\^V\\_lr() g\\^F() . []{#fRlr label=\"fRlr\"}\n:::\n\nFunction $g(\\mathcal{R})_{lr}$ corresponds to the numerator of Eq.([\\[Oraw\\]](#Oraw){reference-type=\"ref\" reference=\"Oraw\"}), and it depends on $\\hat{O}_M$ defined in Eq.([\\[Orawreduce\\]](#Orawreduce){refe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p051-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 51,
+      "target": "../images/img-p051-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p051-18",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 51,
+      "target": "../images/img-p051-18.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p051-19",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 51,
+      "target": "../images/img-p051-19.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p051-20",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 51,
+      "target": "../images/img-p051-20.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p051-21",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 51,
+      "target": "../images/img-p051-21.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p051-22",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 51,
+      "target": "../images/img-p051-22.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p051-23",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 51,
+      "target": "../images/img-p051-23.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p051-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 51,
+      "target": "../images/img-p051-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p051-5",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 51,
+      "target": "../images/img-p051-5.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Calculating the Path",
+      "pageStart": 53,
+      "pageEnd": 57,
+      "target": "../sections/sec-025-273-calculating-the-path.md",
+      "narrative": null,
+      "content": "[]{#secCalcPath label=\"secCalcPath\"}\n\nIn order to write down the expressions for $f^V_{lr}(\\mathcal{R})$ and $g^V_{lr,M}(\\mathcal{R})$, as illustrated in Fig. [\\[PIMCbeads\\]](#PIMCbeads){reference-type=\"ref\" reference=\"PIMCbeads\"}, we define states $| \\psi^r_M (\\mathcal{R}) \\rangle$ and $| \\psi^l_M (\\mathcal{R})\\rangle$ along the path for computational convenience. Following the computation rule described in chapter. [\\[secPathDiagrams\\]](#secPathDiagrams){reference-type=\"ref\" reference=\"secPathDiagrams\"}, the states $| \\psi^r_M (\\mathcal{R}) \\rangle$ and $| \\psi^l_M (\\mathcal{R})\\rangle$ are",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p057-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 57,
+      "target": "../images/img-p057-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p057-10",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 57,
+      "target": "../images/img-p057-10.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p057-11",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 57,
+      "target": "../images/img-p057-11.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p057-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 57,
+      "target": "../images/img-p057-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p057-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 57,
+      "target": "../images/img-p057-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p057-6",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 57,
+      "target": "../images/img-p057-6.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p057-8",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 57,
+      "target": "../images/img-p057-8.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p057-9",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 57,
+      "target": "../images/img-p057-9.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Calculating the Samples",
+      "pageStart": 57,
+      "pageEnd": 59,
+      "target": "../sections/sec-026-274-calculating-the-samples.md",
+      "narrative": null,
+      "content": "The reason to recast Eq.([\\[PIMCopexpdetailshorttimeapprox\\]](#PIMCopexpdetailshorttimeapprox){reference-type=\"ref\" reference=\"PIMCopexpdetailshorttimeapprox\"}) into the form of Eq.([\\[OABP\\]](#OABP){reference-type=\"ref\" reference=\"OABP\"}) is because once we have the detailed form of Eq.([\\[PlrR\\]](#PlrR){reference-type=\"ref\" reference=\"PlrR\"}), the normalized probability distribution $P_{lr}(\\mathcal{R})$, we can sample it by using suitable algorithms. And then after we take enough uncorrelated samples of $A_{lr} (\\mathcal{R})$ and $B_{lr}(\\mathcal{R})$ in Eq.([\\[OABP\\]](#OABP){reference-type",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sign Problem",
+      "pageStart": 59,
+      "pageEnd": 61,
+      "target": "../sections/sec-027-28-sign-problem.md",
+      "narrative": null,
+      "content": "[]{#secSignProblem label=\"secSignProblem\"}\n\nSince wave functions for fermions are antisymmetric under interchange of the particles, they necessarily can change sign. Except for a few special cases where the Monte Carlo sampling can be arranged so that sign changes for two types of fermions occur together, fermion quantum Monte Carlo has a sign or phase problem ([@Umrigar2007PRL; @Alhassid1994PRL; @LiZiXiang2019a]). This means that for a long enough path it is possible to propagate from a region where the wave function is positive to one where it is negative (or has a different phase). In such",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "MONTE CARLO ALGORITHMS",
+      "pageStart": 61,
+      "pageEnd": 61,
+      "target": "../sections/sec-028-3-monte-carlo-algorithms.md",
+      "narrative": null,
+      "content": "In this chapter, we introduce how we sample the probability distribution Plr(R) in\nEq.(2.92) and also our algorithm for performing the other parts of the PIMC calcula-\ntions, the sampling is based on a Markov chain process (Ceperley (1995); Hammond",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Metropolis Algorithm",
+      "pageStart": 61,
+      "pageEnd": 64,
+      "target": "../sections/sec-029-31-metropolis-algorithm.md",
+      "narrative": null,
+      "content": "[]{#MarkovChian label=\"MarkovChian\"}\n\nIn general, for a normalized probability distribution $\\pi(s)$ such that $\\sum_s \\pi(s)=1$, $\\langle F \\rangle$ the expectation value of function $F(s)$ is, $$\\langle F \\rangle = \\sum_s F(s) \\pi(s),\n\\label{Fave}$$ where the letter $s$ means a set of variables which can describe a state. In the Monte Carlo method, if we can sample $n$ states which effectively explore the state space of $\\pi(s)$ and are distributed according to $\\pi(s)$, denoting those states as $\\{s_0,s_1,s_2...,s_n\\} \\in s$, then the expectation value $\\langle F \\rangle$ can be calculated",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Methods of Sampling",
+      "pageStart": 64,
+      "pageEnd": 66,
+      "target": "../sections/sec-030-32-methods-of-sampling.md",
+      "narrative": null,
+      "content": "[]{#secSamplingMethod label=\"secSamplingMethod\"}\n\nIn this section, we apply the Monte Carlo method described in section [\\[MarkovChian\\]](#MarkovChian){reference-type=\"ref\" reference=\"MarkovChian\"} to our PIMC algorithm. The $P_{lr} (\\mathcal{R})$ in Eq.([\\[PlrR\\]](#PlrR){reference-type=\"ref\" reference=\"PlrR\"}) is exactly the $\\pi(s)$ in section [\\[MarkovChian\\]](#MarkovChian){reference-type=\"ref\" reference=\"MarkovChian\"}. State $s$ in $\\pi(s)$ means a particular choice of {$l,r,\\mathcal{R}$}, and $\\sum_s$ in Eq.([\\[Fave\\]](#Fave){reference-type=\"ref\" reference=\"Fave\"}) is the same as $\\sum_l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Single-Bead Sampling",
+      "pageStart": 66,
+      "pageEnd": 69,
+      "target": "../sections/sec-031-321-single-bead-sampling.md",
+      "narrative": null,
+      "content": "[]{#Sample1bead label=\"Sample1bead\"}\n\nFrom $\\mathcal{R}=\\{ R_0, ..., R_K, ..., R_N \\}$, we can propose to move just one bead, bead $K$, we move $R_K$ to $R_K'$, then $\\mathcal{R}'=\\{ R_0, ..., R_K', ..., R_N \\}$. This is single bead sampling.\n\nFor the $K = 0$ or $N$ case, the $g^F(\\mathcal{R}')$ in Eq.([\\[gF\\]](#gF){reference-type=\"ref\" reference=\"gF\"}) becomes, $$\\begin{aligned}\ng^F(\\mathcal{R}')|_{R_0 \\rightarrow R_0'} &= G^f_{0', 1} \\prod_{I=1}^{N-1} G^f_{I, I+1} , \\label{gFRnew1bead0} \\\\\ng^F(\\mathcal{R}')|_{R_N \\rightarrow R_N'} &= G^f_{N-1, N'} \\prod_{I=0}^{N-2} G^f_{I, I+1} , \\label{gFRn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Multi-level Sampling",
+      "pageStart": 69,
+      "pageEnd": 77,
+      "target": "../sections/sec-032-322-multi-level-sampling.md",
+      "narrative": null,
+      "content": "[]{#secMultibeadSample label=\"secMultibeadSample\"}\n\nDue to the disadvantage of single bead sampling, for a given amount of computation time, we have to sample multiple beads at a time instead of just one in order to make the sampling efficient. For example, if we propose to move $u$ portion of the $N$ beads, so about $uN$ beads will be proposed to move at a time, and the acceptance rate is $a$. Then in order for all the $N$ beads to be moved, we need at least $1/(ua)$ trials. For each trial, in order to calculate acceptance rate $A(s\\rightarrow s')$, we need to do $uN$ updates for either $\\phi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Regular Sampling",
+      "pageStart": 77,
+      "pageEnd": 80,
+      "target": "../sections/sec-033-323-regular-sampling.md",
+      "narrative": null,
+      "content": "[]{#secregularsampling label=\"secregularsampling\"}\n\nIn section [\\[Sample1bead\\]](#Sample1bead){reference-type=\"ref\" reference=\"Sample1bead\"} and section [\\[secMultibeadSample\\]](#secMultibeadSample){reference-type=\"ref\" reference=\"secMultibeadSample\"}, we showed how to sample the free particle propagator for single bead and multiple beads. We proposed the transition probabilities $T_{l'r'}(\\mathcal{R} \\rightarrow \\mathcal{R}')$ according to the free particle propagator part $g^F(\\mathcal{R}')$, so we have Eq.([\\[gtnewgtold\\]](#gtnewgtold){reference-type=\"ref\" reference=\"gtnewgtold\"}) which is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Directional Importance Sampling",
+      "pageStart": 80,
+      "pageEnd": 87,
+      "target": "../sections/sec-034-324-directional-importance-sampling.md",
+      "narrative": null,
+      "content": "[]{#secimpsampling label=\"secimpsampling\"}\n\nIn this section, we discuss a special case of the importance sampling method. Sometimes, the proposed transition probability $T(s\\rightarrow s')$ has a certain symmetry along $n$ directions in the state space, so there are always $n$ unique states $s'_1,s'_2,...,s'_n$ which share the same proposed transition probability $T(s\\rightarrow s'_i)$, $$T(s\\rightarrow s'_1) = T(s\\rightarrow s'_2) = ... =T(s\\rightarrow s'_n).\n \\label{Timpnew}$$ So, from the current state $s$, there is the same chance of proposing any of the states from $s'_1$ to $s'_n$. Simil",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p081-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 81,
+      "pageEnd": 81,
+      "target": "../images/img-p081-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p081-10",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 81,
+      "pageEnd": 81,
+      "target": "../images/img-p081-10.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p081-11",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 81,
+      "pageEnd": 81,
+      "target": "../images/img-p081-11.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p081-12",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 81,
+      "pageEnd": 81,
+      "target": "../images/img-p081-12.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p081-13",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 81,
+      "pageEnd": 81,
+      "target": "../images/img-p081-13.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p081-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 81,
+      "pageEnd": 81,
+      "target": "../images/img-p081-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p081-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 81,
+      "pageEnd": 81,
+      "target": "../images/img-p081-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p081-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 81,
+      "pageEnd": 81,
+      "target": "../images/img-p081-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p081-5",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 81,
+      "pageEnd": 81,
+      "target": "../images/img-p081-5.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p081-6",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 81,
+      "pageEnd": 81,
+      "target": "../images/img-p081-6.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p081-7",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 81,
+      "pageEnd": 81,
+      "target": "../images/img-p081-7.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p081-8",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 81,
+      "pageEnd": 81,
+      "target": "../images/img-p081-8.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p081-9",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 81,
+      "pageEnd": 81,
+      "target": "../images/img-p081-9.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p086-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 86,
+      "pageEnd": 86,
+      "target": "../images/img-p086-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p086-10",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 86,
+      "pageEnd": 86,
+      "target": "../images/img-p086-10.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p086-11",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 86,
+      "pageEnd": 86,
+      "target": "../images/img-p086-11.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p086-12",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 86,
+      "pageEnd": 86,
+      "target": "../images/img-p086-12.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p086-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 86,
+      "pageEnd": 86,
+      "target": "../images/img-p086-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p086-5",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 86,
+      "pageEnd": 86,
+      "target": "../images/img-p086-5.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p086-6",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 86,
+      "pageEnd": 86,
+      "target": "../images/img-p086-6.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p086-7",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 86,
+      "pageEnd": 86,
+      "target": "../images/img-p086-7.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p086-8",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 86,
+      "pageEnd": 86,
+      "target": "../images/img-p086-8.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p086-9",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 86,
+      "pageEnd": 86,
+      "target": "../images/img-p086-9.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p087-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 87,
+      "pageEnd": 87,
+      "target": "../images/img-p087-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p087-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 87,
+      "pageEnd": 87,
+      "target": "../images/img-p087-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p087-5",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 87,
+      "pageEnd": 87,
+      "target": "../images/img-p087-5.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p087-6",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 87,
+      "pageEnd": 87,
+      "target": "../images/img-p087-6.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p087-7",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 87,
+      "pageEnd": 87,
+      "target": "../images/img-p087-7.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p087-8",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 87,
+      "pageEnd": 87,
+      "target": "../images/img-p087-8.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Path Updating Strategy",
+      "pageStart": 87,
+      "pageEnd": 88,
+      "target": "../sections/sec-035-33-path-updating-strategy.md",
+      "narrative": null,
+      "content": "[]{#secUpdateStrat label=\"secUpdateStrat\"}\n\nIn each type of sampling, after we judge whether to accept the new $l$ and $r$ order in the trial wave function or not, we mark the order after judgement as $l$ and $r$. In order to make the computation fast, as illustrated in Fig. [1](#PIMCpathstore){reference-type=\"ref\" reference=\"PIMCpathstore\"} by the blue and yellow bands with texture, we store all the states from $| \\psi^r_0 (\\mathcal{R}) \\rangle$ to $| \\psi^r_N (\\mathcal{R}) \\rangle$ and $| \\psi^l_0 (\\mathcal{R}) \\rangle$ to $| \\psi^l_N (\\mathcal{R}) \\rangle$, by storing all the coefficients f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sampling Strategies",
+      "pageStart": 88,
+      "pageEnd": 90,
+      "target": "../sections/sec-036-34-sampling-strategies.md",
+      "narrative": null,
+      "content": "[]{#secSampStrat label=\"secSampStrat\"}\n\nWe have tested all the algorithms described in this chapter. We have also tested the bisection method ([@Ceperley95a]), as well as the reptation Monte Carlo method ([@Baroni99a; @Baroni10a]) for our calculation. For our light nuclei PIMC calculation, as pointed out in section [\\[secMultibeadSample\\]](#secMultibeadSample){reference-type=\"ref\" reference=\"secMultibeadSample\"}, we did not find any advantage for bisection over the multi-level sampling method. The reptation method basically samples the spatial configuration of the path by adding some beads at",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "GROUND STATE CALCULATIONS OF LIGHT NUCLEI",
+      "pageStart": 90,
+      "pageEnd": 90,
+      "target": "../sections/sec-037-4-ground-state-calculations-of-light-nuclei.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ground State Energies",
+      "pageStart": 90,
+      "pageEnd": 90,
+      "target": "../sections/sec-038-41-ground-state-energies.md",
+      "narrative": null,
+      "content": "Ground State Energies",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preparations",
+      "pageStart": 90,
+      "pageEnd": 91,
+      "target": "../sections/sec-039-411-preparations.md",
+      "narrative": null,
+      "content": "Preparations\nThe exact PIMC expectation value of operator ˆO is calculated by Eq.(2.3) and\ntherefore Eq.(2.11), and we need to choose a proper total imaginary time τ and time\nstep ∆τ to project out the ground state |Φ0⟩. In this section, we discuss the choice of\nτ and ∆τ and use 4He as an example.\nFrom Eq.(2.6) we can see that, the residual amount of excited states depends on\nthe ratio ai/a0 and the factor e−(Ei−E0)τ1. We have to make sure that the coeﬃcient of\nthe ﬁrst excited state |Φ1⟩is negligible compared with the ground state |Φ0⟩.\nThe experimental ground state energy E0 of 4He is about",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prop-sec-040-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 91,
+      "pageEnd": 98,
+      "target": "prop-sec-040-01.md",
+      "narrative": null,
+      "content": "We also listed the experimental value of the binding energies ([@WiringaPieper02a; @Lee2020FiP; @wiki:NBE]) for comparison.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Calculations",
+      "pageStart": 91,
+      "pageEnd": 98,
+      "target": "../sections/sec-040-412-calculations.md",
+      "narrative": null,
+      "content": "[]{#secResultCalc label=\"secResultCalc\"} The calculation of the ground state energy $E_0$ can be recast into the form of Eq.([\\[OABP\\]](#OABP){reference-type=\"ref\" reference=\"OABP\"}) as discussed in section [\\[Recast\\]](#Recast){reference-type=\"ref\" reference=\"Recast\"}, with the operator $\\hat{O}$ being the Hamiltonian $H=T+V$. And we calculate the ground state energy $E_0$ by $$E_0 (\\Delta \\tau)\n= \\frac{\n\\frac{1}{2}  Re  \\left\\{  \\langle \\Psi_T| H [U(\\Delta \\tau)]^N  | \\Psi_T \\rangle\n +\n \\langle \\Psi_T|  [U(\\Delta \\tau)]^N H | \\Psi_T \\rangle\n \\right\\}\n }\n{  Re \\langle \\Psi_T| [U(\\Delta \\tau)]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Verifications",
+      "pageStart": 98,
+      "pageEnd": 103,
+      "target": "../sections/sec-041-413-verifications.md",
+      "narrative": null,
+      "content": "[]{#secVerify label=\"secVerify\"}\n\nIn order to further support our conclusion that $\\tau=0.2\\textrm{ MeV}^{-1}$ indeed projected out the ground state and therefore our PIMC results are reliable, we calculate the potential $V=V^{NN}+V^{EM}$ along all the beads on the path. This is a typical quantity to calculate in PIMC calculations ([@Schmidt2000JCP]). The calculation is done in the same way as introduced in section [\\[Recast\\]](#Recast){reference-type=\"ref\" reference=\"Recast\"}. We just need to use the potential operator $V$ as the operator $\\hat{O}$, and we place the $V$ at each imaginary time",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Radii",
+      "pageStart": 103,
+      "pageEnd": 105,
+      "target": "../sections/sec-042-42-radii.md",
+      "narrative": null,
+      "content": "The root mean square (rms) radius $r_m$ can be interpreted as the average distance between any one of the particles and the system's center of mass. The label of the nucleon does not matter, so we can just take nucleon number 1 as reference. The operator can be written as[^1], $$\\begin{aligned}\n\\hat{r}_m = \\left| \\hat{\\bm{r}}_1 - \\frac{1}{A}\\sum_{j=1}^A \\hat{\\bm{r}}_j \\right|,\n\\end{aligned}$$ and we calculate $\\langle {r}_m^2 \\rangle$ for its ground state expectation value as\n\n::: flalign\n\\_m\\^2 &= Re \\_0 \\| \\_0 \\\n&= Re \\_T\\| e\\^-H \\...e\\^-H e\\^-H \\...e\\^-H \\| \\_T . []{#rmdef label=\"rmdef\"}\n::",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Density Distributions",
+      "pageStart": 105,
+      "pageEnd": 110,
+      "target": "../sections/sec-043-43-density-distributions.md",
+      "narrative": null,
+      "content": "The ground state of $^4$He is an angular momentum $J=0$ state and is spherically symmetric. We can use the one-particle number density $\\rho(r)$ to describe the probability density for one particle to be at distance $r$ from the nuclei's center of mass. With this convention we normalize it as $$\\int 4 \\pi r^2 \\rho(r) dr = 1 .$$ The distribution $\\rho(r)$ can be extracted from high energy electron-nucleus scattering experiments, and is related with the electric form factor by Fourier transform ([@Xuzizong2009book; @Lynn2019ann]). The label of a particle does not matter, so we can just take part",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prop-sec-044-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 110,
+      "pageEnd": 116,
+      "target": "prop-sec-044-01.md",
+      "narrative": null,
+      "content": "We calculate our response functions in the center of mass frame first because it can give lower variance compare with lab frame.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-044",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Euclidean Response Functions",
+      "pageStart": 110,
+      "pageEnd": 116,
+      "target": "../sections/sec-044-44-euclidean-response-functions.md",
+      "narrative": null,
+      "content": "[]{#SECresponse label=\"SECresponse\"}\n\nResponse functions are important quantities ([@Carlson92a; @Benhar1994book; @Carlson94a; @Carlson02a; @sick2003meson; @Lovato13a; @Lovato15a]) and the related operators do not commute with $H$. Using PIMC to calculate the response functions thus has a natural advantage over diffusion methods.\n\nIn an electron-nucleus scattering experiment, the response of a weakly coupled external probe can be written as the function $S(k,\\omega)$ which can be expanded in the energy eigenstates ([@Carlson94a]), as $$\\begin{aligned}\nS(k,\\omega)=\\frac{\\sum_n \\langle \\Phi_0 |",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p113-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 113,
+      "pageEnd": 113,
+      "target": "../images/img-p113-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p113-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 113,
+      "pageEnd": 113,
+      "target": "../images/img-p113-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p113-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 113,
+      "pageEnd": 113,
+      "target": "../images/img-p113-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p113-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 113,
+      "pageEnd": 113,
+      "target": "../images/img-p113-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p113-5",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 113,
+      "pageEnd": 113,
+      "target": "../images/img-p113-5.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p113-6",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 113,
+      "pageEnd": 113,
+      "target": "../images/img-p113-6.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p113-8",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 113,
+      "pageEnd": 113,
+      "target": "../images/img-p113-8.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-045",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Parallel Scalability of the Code",
+      "pageStart": 116,
+      "pageEnd": 118,
+      "target": "../sections/sec-045-45-parallel-scalability-of-the-code.md",
+      "narrative": null,
+      "content": "<figure id=\"figscaling\">\n<embed src=\"Figures/scaling.eps\" />\n<figcaption>The scaling efficiency of our PIMC code. It is based on sampling <span class=\"math inline\">4 × 10<sup>5</sup></span> samples of <span class=\"math inline\"><sup>4</sup></span>He for <span class=\"math inline\"><em>τ</em> = 0.3 MeV<sup>−1</sup></span> with <span class=\"math inline\"><em>Δ</em><em>τ</em> = 2 × 10<sup>−4</sup> MeV<sup>−1</sup></span>.</figcaption>\n</figure>\n\nOur code is parallel and uses the Message Passing Interface (MPI). Each CPU core is assigned the same amount of blocks of steps. At every about 125 steps, al",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-046",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "CONCLUSION",
+      "pageStart": 118,
+      "pageEnd": 118,
+      "target": "../sections/sec-046-5-conclusion.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-047",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary",
+      "pageStart": 118,
+      "pageEnd": 119,
+      "target": "../sections/sec-047-51-summary.md",
+      "narrative": null,
+      "content": "[]{#summary label=\"summary\"}\n\nThis work is mainly to answer one of the questions in section [\\[secBackground\\]](#secBackground){reference-type=\"ref\" reference=\"secBackground\"}: how to solve the many-body problem? Our answer is, using the path integral quantum Monte Carlo method. In nuclear physics, although continuous space light nuclei calculations for $A\\leq 4$ have been studied before by GFMC ([@Carlson88a; @WiringaPieper02a]), this is the first work using PIMC. The code is now publicly available and open source ([@CRgitrepov6pimc1]).\n\nBy using multiple sampling algorithms, multi-level samp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-048",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outlook",
+      "pageStart": 119,
+      "pageEnd": 121,
+      "target": "../sections/sec-048-52-outlook.md",
+      "narrative": null,
+      "content": "We hope our $^4$He calculation may be served as a benchmark test for future PIMC calculations of larger nuclei.\nThe reason to do larger nuclei is because we can first test how good the nucleon-nucleon interaction is, then we can try to predict the properties of neutron rich nuclei which are most likely generated in supernovae,\nor in the laboratories\\footnote{Such as the Facility for Rare Isotope Beams (FRIB) at Michigan State University.}.\nHowever, larger nuclei PIMC calculations will be more complicated and computational expensive than the light nuclei calculations presented in this work.\nWe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-049",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "REFERENCES",
+      "pageStart": 121,
+      "pageEnd": 130,
+      "target": "../sections/sec-049-references.md",
+      "narrative": null,
+      "content": "Abramowitz, M. and I. A. Stegun, Handbook of Mathematical Functions with Formulas,\nGraphs, and Mathematical Tables (Dover, New York, 1964), ninth dover printing,\ntenth gpo printing edn.\nAlhassid, Y., D. J. Dean, S. E. Koonin, G. Lang and W. E. Ormand,“Practical solution\nto the Monte Carlo sign problem: Realistic calculations of 54Fe”, Physical Review\nLetters 72, 613–616, URL https://link.aps.org/doi/10.1103/PhysRevLett.72.\n613 (1994).\nAnderson, J. B.,“Fixed-node quantum Monte Carlo”, International Reviews in Physical\nChemistry 14, 1, 85–112, URL https://doi.org/10.1080/01442359509353305\n(1995)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-050",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "APPENDIX",
+      "pageStart": 130,
+      "pageEnd": 132,
+      "target": "../sections/sec-050-appendix.md",
+      "narrative": null,
+      "content": "VARIATIONAL MONTE CARLO BRIEF\n120\nThe time-independent Schr¨odinger equation can be written as Hψ0 = E0ψ0 if the\nsystem is at its lowest energy E0 with wave function ψ0. We are interested in the\nground state energy E0 because a system will naturally go to its lowest energy state\nψ0. The question is how to ﬁnd ψ0 and E0.\nVariational Monte Carlo(VMC), based on a trial wave function ψT (usually not\nnormalized) with parameters, provides a way to ﬁnd the upper limit of E0. Its foundation\nis\nEvar ≡⟨ψT|H|ψT⟩\n⟨ψT|ψT⟩\n≡\nZ HψT(R)\nψT(R) |ψT(R)|2dR\nZ\n|ψT(R)|2dR\n≡\nZ\nEL(R)p(R)dR ≥E0,\n(A.1)\nwhere the local e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-051",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B DIFFUSION MONTE CARLO BRIEF",
+      "pageStart": 132,
+      "pageEnd": 133,
+      "target": "../sections/sec-051-b-diffusion-monte-carlo-brief.md",
+      "narrative": null,
+      "content": "DIFFUSION MONTE CARLO BRIEF\n122\nDiﬀusion quantum Monte Carlo (DMC) method (Negele and Orland (1998); Kalos\nand Whitlock (2008); Hammond et al. (1994); Apaja (2009)) is based on the time-\ndependent Green’s function. Beginning with a trial wave function which is non-\northogonal to the true ground state, by treating the imaginary time as a real number,\nit provides a way to project out the true ground state wave function through diﬀusion\nand branching process. Unlike VMC which uses trail wave function with adjustable\nparameters, DMC is able to numerically ﬁnd the true ground state wave function an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-052",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.1 Time-Dependent Green's Function",
+      "pageStart": 133,
+      "pageEnd": 134,
+      "target": "../sections/sec-052-b1-time-dependent-greens-function.md",
+      "narrative": null,
+      "content": "The solution of the time-dependent Schr¨odinger equation i ∂Ψ(x,t)\n∂t\n= HΨ(x, t) in\nnatural units can be written as the superposition of the eigenstates Φk(x) with time\nevolution,\nΨ(x, t) =\n∞\nX\ni=0\nakΦk(x)e−iEkt.\n(B.1)\nIn Monte Carlo method, we care more about the energy shifted Schr¨odinger\nequation,\ni∂φ(x, t)\n∂t\n= (H −ET)φ(x, t),\n(B.2)\nand the solution can be written as\nφ(x, t) =\n∞\nX\nk=0\nckΦk(x)e−i(Ek−ET )t,\n(B.3)\nwhere ck = ⟨Φk|φ(t = 0)⟩are the coeﬃcients which only depend on the initial condition.\nIn DMC, we want to ﬁnd connections between Eq.(B.2) and the diﬀusion equation.\nIn order to do",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-053",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.2 Diffusion Monte Carlo",
+      "pageStart": 134,
+      "pageEnd": 135,
+      "target": "../sections/sec-053-b2-diffusion-monte-carlo.md",
+      "narrative": null,
+      "content": "Diﬀusion Monte Carlo\nThe exact Green’s function is usually hard to obtain. But we can use short-time\napproximation to obtain an approximated analytic Green’s function. The Green’s\nfunction tells us how to make the conﬁgurations (walkers) evolve into the desired\ndistribution.\n124",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-054",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Theoretical foundation",
+      "pageStart": 135,
+      "pageEnd": 136,
+      "target": "../sections/sec-054-theoretical-foundation.md",
+      "narrative": null,
+      "content": "Let us begin with a system of N particles with mass m. The energy shifted imaginary\ntime Schr¨odinger equation is\n∂φ(x, τ)\n∂τ\n= D∇2φ(x, τ) + (ET −V (x))φ(x, τ),\n(B.13)\nwhere D = ℏ2/2m is called the diﬀusion constant, which is 1/2 in atomic unit. One\ncan see from Eq.(B.13) that, if (ET −V (x))φ(x, τ) = 0, we have a diﬀusion equation\n∂φ(x, τ)\n∂τ\n= D∇2φ(x, τ).\n(B.14)\nIf D∇2φ(x, τ) = 0, we have a rate equation which can be simulated by the branching\nprocess,\n∂φ(x, τ)\n∂τ\n= (ET −V (x))φ(x, τ).\n(B.15)\nBy using short-time approximation, we can decompose the operator of the Green’s\nfunction G into a di",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-055",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Interpretation",
+      "pageStart": 136,
+      "pageEnd": 137,
+      "target": "../sections/sec-055-interpretation.md",
+      "narrative": null,
+      "content": "A walker means a conﬁguration, x, for the N-particle system. If M walkers are dis-\ntributed according φ, the number of them around the conﬁguration x + dx is Mφ(x).\nIn other words the normalized probability (density) for a walker to be around x + dx\nis φ(x). Notice that now φ means a distribution, so it must be non-negative.\nAssuming there are M (1) walkers in the ﬁrst generation, denoted as x(1), x(2),\n..., x(M(1)), and are distributed according to φ. For a short-time τ, we move each\nconﬁguration according to P(y, x) and branch them according to the weight W(y, x).\nThe number of walkers aroun",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-056",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.3 Diffusion Monte Carlo with Importance Sampling",
+      "pageStart": 137,
+      "pageEnd": 137,
+      "target": "../sections/sec-056-b3-diffusion-monte-carlo-with-importance-samplin.md",
+      "narrative": null,
+      "content": "Diﬀusion Monte Carlo with Importance Sampling\nDMC with constant short-time step without importance sampling is seldom used.\nBecause the walkers may explore regions in which the short-time approximation is\npoor. When this happens, the branch term e−[\nV (x)+V (y)\n2\n−ET]τ can become abnormally\nlarge, and more and more walkers (conﬁgurations) will sink into such regions, the\nwalkers will not evolve into the desired distribution, and the variance of estimators\ncan be too big. Therefore we have to use importance sampling to guide the movement\nof walkers and thus reduce the variance.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-057",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Theoretical foundation",
+      "pageStart": 137,
+      "pageEnd": 139,
+      "target": "../sections/sec-057-theoretical-foundation.md",
+      "narrative": null,
+      "content": "We use an analytical function ΨT(x) as the importance sampling function for the\nN-particle system. We deﬁne a new distribution function f(x, τ),\nf(x, τ) ≡ΨT(x)φ(x, τ).\n(B.25)\nThe key is, we want to ﬁnd the short-time Green’s function for the distribution f(x, τ),\nsuch that after many time steps, the distribution will evolve into ΨTΨ0(not Ψ0), which\nwill be convenient for further calculations.\nBy multiplying ΨT(x) to both sides of Eq.(B.13), we have Fokker-Planck equation,\n∂f\n∂τ = DΨT∇2φ + [ET −V (x)]f\n=\n\u0002\nD∇2f −D\nN\nX\ni=1\n∇i · (fFiQ)\n\u0003\n|\n{z\n}\ndrifting\n+ [ET −EL(x)]f\n|\n{z\n}\nbranching\n,\n(B.26)\n12",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-058",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Time step error estimating",
+      "pageStart": 139,
+      "pageEnd": 140,
+      "target": "../sections/sec-058-time-step-error-estimating.md",
+      "narrative": null,
+      "content": "If all the conﬁgurations are taken from the ﬁnal distribution\nf(x) =\nΨTΨ0\nR\nΨTΨ0dx,\n(B.38)\nthe expectation value of the local energy EL then becomes\n⟨EL⟩=\nZ HΨT\nΨT\nf(x)dx =\nR\nΨ0HΨTdx\nR\nΨTΨ0dx\n= ⟨Ψ0|H|ΨT⟩\n⟨Ψ0|ΨT⟩\n= E0.\n(B.39)\nClearly, the local energy serves as the estimator for the ground state energy E0, and\n⟨EL⟩is called the variational estimator.\nHowever, the Green’s function we use is short-time approximated, so time-step\nerror is always there. We need to do extrapolation. Just say the local energy ⟨EL⟩,\n129\nwhat equation do we use to extrapolate the true E0? A closer look at Eq.(B.18) rev",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-059",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Approximated pure estimator p",
+      "pageStart": 140,
+      "pageEnd": 141,
+      "target": "../sections/sec-059-approximated-pure-estimator-p.md",
+      "narrative": null,
+      "content": "Let us denote an operator as A(x) in the coordinate space which does not commute\nwith the Hamiltonian. Just consider the ground state, now we have three Monte Carlo\nestimators for the expectation value of A(x). Namely the pure estimator Ap, the\nvariational estimator Av and mixed estimator Am (Hammond et al. (1994)),\nAp =\nR\nΨ0A(x)Ψ0dx\nR\nΨ2\n0dx\n,\n(B.43)\nAv =\nR\nΨTA(x)ΨTdx\nR\nΨ2\nTdx\n,\n(B.44)\nAm =\nR\nΨ0A(x)ΨTdx\nR\nΨ0ΨTdx\n.\n(B.45)\nWe deﬁne a function ∆(x) ≡Ψ0(x) −ΨT(x), and rewrite Am and Av by functional\nTaylor expansion series in ∆. Now we have\nAm = Ap +\nZ\ndxΨ0[Ap −A(x)]∆+ O(∆2),\n(B.46)\nAv = Ap + 2\nZ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-060",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.4 Diffusion Monte Carlo Algorithm",
+      "pageStart": 141,
+      "pageEnd": 143,
+      "target": "../sections/sec-060-b4-diffusion-monte-carlo-algorithm.md",
+      "narrative": null,
+      "content": "Diﬀusion Monte Carlo Algorithm\nThe algorithm for N-particle system as illustrated by Fig. B.1 mainly consists the\nfollowing steps (Hammond et al. (1994); Apaja (2009)).\nN particles\ndrift\nN particles\nN particles\nbranch\nN particles\ndrift\nN particles\nN particles\nbranch\n…\nN particles\ndrift\nN particles\nN particles\nprepare the initial  (!) walkers/configurations  according to a reasonable distribution by VMC\nMth Step\nCompaction and form the new  (\") walkers(configurations)\nbranch\nGo to the next step/generation\nFigure B.1: The illustration of the parallel DMC algorithm. Each walker means a\ncomputer c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-061",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "C AUXILIARY FIELD DIFFUSION MONTE CARLO BRIEF",
+      "pageStart": 143,
+      "pageEnd": 144,
+      "target": "../sections/sec-061-c-auxiliary-field-diffusion-monte-carlo-brief.md",
+      "narrative": null,
+      "content": "AUXILIARY FIELD DIFFUSION MONTE CARLO BRIEF\n133",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-062",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "C.1 Formalism",
+      "pageStart": 144,
+      "pageEnd": 145,
+      "target": "../sections/sec-062-c1-formalism.md",
+      "narrative": null,
+      "content": "Formalism\nDMC with or without importance sampling mentioned previously, can be taken\nas a special case of AFDMC (Schmidt and Fantoni (1999); Gandolﬁ(2007); Carlson\net al. (2015)). In general, in DMC simulations, the evolution of a state can be cast\ninto such a form,\n|Ψ(t + δt)⟩=\nZ\ndXP(X)T(X)|Ψ(t)⟩,\n(C.1)\nwhere X are a series of variables called auxiliary ﬁelds. Note that X are not necessarily\ncoordinates. P(X) is the normalized probability density. T(X) is an operator acting\non |Ψ(t)⟩, it basically tells us how to move the walkers which form the state |Ψ(t)⟩.\nAs δt →0, we expect that the propa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-063",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "C.2 Hubbard-Stratonovich Transformation",
+      "pageStart": 145,
+      "pageEnd": 147,
+      "target": "../sections/sec-063-c2-hubbard-stratonovich-transformation.md",
+      "narrative": null,
+      "content": "Hubbard-Stratonovich Transformation\nThe key of AFDMC is to reduce the quadratic dependence of operators to linear,\nwith the Hubbard-Stratonovich transformation,\ne\nO2\n2 =\n1\n√\n2π\nZ\ndxe−x2\n2 exO,\n(C.16)\nsuch that the interaction between nucleons can be conveniently cast into the form of\nDMC.\nIf possible, we can ﬁnd ways to write a Hamiltonian into N operators with quadratic\ndependence, that is\nH = 1\n2\nN\nX\nj=1\nλjO2\nj,\n(C.17)\n135\nand then the DMC propagator(neglecting O(δt2)) can be written as\ne−(H−ET )δt =\nZ\ndx1...dxN\n|\n{z\n}\ndX\n1\n(2π)N/2e−1\n2\nPN\nj=1 x2\nj\n|\n{z\n}\nP(X)\ne−i PN\nj=1 xj√\nλjδtOjeET δt\n|\n{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-064",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "C.3 AFDMC and the Standard DMC with Importance Sampling",
+      "pageStart": 147,
+      "pageEnd": 148,
+      "target": "../sections/sec-064-c3-afdmc-and-the-standard-dmc-with-importance-sa.md",
+      "narrative": null,
+      "content": "Let us consider the Hamiltonian\n\nA 3 2\nPha\nH= I 4V 2\na TV CR), (6.27)\nj=l a=l\nthe approximated propagator e~(4—\") after Hubbard-Stratonovich transformation is\nweight\na 1 Fei [25 Wk) Byer\ne7 Li Da \"a dt .-[V(R V8 TY rj Roe 2 ET RPiaLja Woe eV (R)-Erlt | (C.28)\nven T(X)\n—_e_o\n\ndX P(X)\n\nFor the importance sampling case,\n. _ , [ot Ur|pjal RS)\niV Ait(03) = VT TERS)\n\n[ot p\\q(¥r|RS)\n~'V in” (Ur RS)\n\n725t Oj.(Ur|RS)\n\nene C.29\nand therefore the sampled auxiliary field xj. are\n_ HOt Oja(Vr|RS) (C30)\n\nXia = Xjo + m “m (WS) ”\n\nthe new walker | R/S’) with weight e~'@:(%:5i)—27l9t is moved by the translatio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-065",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "C.4 Quadratic Form of the AV6' Interaction",
+      "pageStart": 148,
+      "pageEnd": 149,
+      "target": "../sections/sec-065-c4-quadratic-form-of-the-av6-interaction.md",
+      "narrative": null,
+      "content": "The Hamiltonian with the AV6’ interaction for A-particle system can be written as\nH =\nX\niα\np2\niα\n2m +\nX\ni<j\nvc(rij) + 1\n2\nX\niα,jβ\nCσ\niα,jβσiασjβ\n+ 1\n2\nX\niα,jβ,γ\nCστ\niα,jβ(σiατiγ)(σjβτjγ) + 1\n2\nX\niγ,jγ\nCτ\ni,jτiγτjγ\n(C.33)\nwhere the matrices are deﬁned as\nCσ\niα,jβ = vσ(rij)δαβ + vt(rij)(3ˆα · ˆrij ˆβ · ˆrij −δαβ),\nCστ\niα,jβ = vστ(rij)δαβ + vtτ(rij)(3ˆα · ˆrij ˆβ · ˆrij −δαβ),\nCτ\ni,j = vτ(rij).\n(C.34)\nHere α, β, γ refer to x, y and z components and ˆα, ˆβ refer to the corresponding unit\nvector, and their nth eigenvectors and eigenvalues can be written as\nX\njβ\nCσ\niα,jβψσ(n)\njβ\n= λσ\nnψσ(n)\niα ,\nX\nj",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-066",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "C.5 Trial Wave Function",
+      "pageStart": 149,
+      "pageEnd": 150,
+      "target": "../sections/sec-066-c5-trial-wave-function.md",
+      "narrative": null,
+      "content": "Trial Wave Function\nThe trial wave function used in AFDMC for the N-particle system has the following\nform,\nψT(R, S) = ΦS(R)ΦA(R, S),\n(C.38)\nwhere R ≡(r1, ..., rN) are the spatial coordinates and S ≡(s1, ..., sN) are the spin-\nisospin part of the system. For example si can be written as\nsi =\n\n\n\nai\nbi\nci\ndi\n\n\n= ai|p ↑⟩+ bi|p ↓⟩+ ci|n ↑⟩+ di|n ↓⟩,\n(C.39)\nwhere ai, bi, ci and di are complex coeﬃcients for each basis.\nThe ΦS(R) is composed of the Jastrow two-particle correlation functions and is\ngiven by\nΨS(R) =\nY\ni<j\nfJ(rij),\n(C.40)\nwhere fJ is taken from the scalar component of the correla",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-067",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "D AV6' LINEARIZING TRICK",
+      "pageStart": 150,
+      "pageEnd": 153,
+      "target": "../sections/sec-067-d-av6-linearizing-trick.md",
+      "narrative": null,
+      "content": "140\nHere I follow the note written by my advisor, and present how the six AV6’\noperators in the propagator are linearized. First of all, notice that for non-negative\ninteger n,\nhP6\np=1 vp(rij)Op\nij\nin\ncan still be express by the linear combination of the\nsame 6 operators (just with diﬀerent coeﬃcients in front of the each operator). The 6\noperators form a group. This is the foundation.\nWe then follow my advisor’s way of labeling the order of the operators. For a given\nij pair, label them 1 and 2, we wish to calculate the AV6’ propagator linear in the 6\nof its operators such that,\ne−[vc+vσ⃗σ1·⃗",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-068",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "E ADDITIONAL CALCULATIONS OF THE RESPONSE FUNCTIONS",
+      "pageStart": 153,
+      "pageEnd": 154,
+      "target": "../sections/sec-068-e-additional-calculations-of-the-response-functi.md",
+      "narrative": null,
+      "content": "ADDITIONAL CALCULATIONS OF THE RESPONSE FUNCTIONS\n143",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p154-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 154,
+      "pageEnd": 154,
+      "target": "../images/img-p154-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p154-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 154,
+      "pageEnd": 154,
+      "target": "../images/img-p154-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p154-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 154,
+      "pageEnd": 154,
+      "target": "../images/img-p154-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/figure-img-p154-4",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 154,
+      "pageEnd": 154,
+      "target": "../images/img-p154-4.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-069",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "E.1 Angle Averaged Euclidean Response Functions",
+      "pageStart": 154,
+      "pageEnd": 163,
+      "target": "../sections/sec-069-e1-angle-averaged-euclidean-response-functions.md",
+      "narrative": null,
+      "content": "Angle Averaged Euclidean Response Functions\nFor any operator ˆO which is independent of the momentum k, e.g., ˆO can be e−Hτ\nor e−V τ deﬁned in Eq.(4.48), we show how to take the angle average of momentum k\nin calculating\nR\nρ†(k) ˆOρ(k)dΩ/4π in the response functions.\nIn order to proceed, we ﬁrst set up the coordinates as shown in Fig. E.1. The polar\nangle is θ, the azimuthal angle is ϕ, and dΩ= sin θdθdϕ. The length of k is k, its unit\nvector is ˆk, the x, y and z components of ˆk are\nˆkx = sin θ cos ϕ,\n(E.1)\nˆky = sin θ sin ϕ,\n(E.2)\nˆkz = cos θ.\n(E.3)\nThe vector between particle j and i is d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prop-sec-070-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 163,
+      "pageEnd": 165,
+      "target": "prop-sec-070-01.md",
+      "narrative": null,
+      "content": "We calculate our response functions in the center of mass frame ﬁrst because it will give lower variance compared with absolute coordinate (laboratory frame).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-070",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "E.2 Euclidean Response Functions in Different Coordinates",
+      "pageStart": 163,
+      "pageEnd": 165,
+      "target": "../sections/sec-070-e2-euclidean-response-functions-in-different-coo.md",
+      "narrative": null,
+      "content": "Euclidean Response Functions in Diﬀerent Coordinates\nIn all the ρ(k), we can choose ri to be particle i’s absolute position, we can also\nchoose ri to be particle i’s relative position in the center of mass frame. The response\nfunctions calculated using the center of mass ri multiply by a factor of e−k2τ/2M will\nbe those calculated using the absolute coordinate ri, where M = Am is the total mass\nof system. This can be explained by decomposing the separable Hamiltonian into the\ncenter of mass part HCM = P 2/2M, where P = PA\ni=1 pi is the total momentum, and\na relative part Hrel ﬁrst (Messiah (20",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2207.07246v2/blocks/prose-sec-071",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "BIOGRAPHICAL SKETCH",
+      "pageStart": 165,
+      "pageEnd": 165,
+      "target": "../sections/sec-071-biographical-sketch.md",
+      "narrative": null,
+      "content": "Born in Shanghai, China on Feb 22, 1987, Rong Chen received his bachelor’s degree\nfrom Shanghai University in June, 2009. With postgraduate recommendation, he was\ndirectly admitted by Shanghai Jiao Tong University as a master degree student in\nAugust 2009, where he worked with prof. Lie-Wen Chen on various topics of inﬁnite\nnuclear matter with isospin-dependent phenomenological nucleon-nucleon eﬀective\ninteractions. He received the Master of Science degree in June 2012 from Shanghai\nJiao Tong University. In August 2012, he entered Arizona State University to pursue\nhis PhD degree, and he worke",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-interface-knot-markov-z",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:interface-knot-markov-z",
+  "kind": "proposition",
+  "title": "Interface-knot contribution to canonical-atom Markov trace equals the Markov parameter z exactly",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-jones-markov-trace"
+  ],
+  "cites": [
+    "references/jones1987",
+    "references/markov1936"
+  ],
+  "tags": [
+    "markov-trace",
+    "markov-axiom",
+    "interface-knot",
+    "atomic-braid",
+    "canonical-derivation",
+    "z-parameter"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.interface_knot_markov_z",
+  "text": "interface-knot-markov-z.md",
+  "leanSource": "interface-knot-markov-z.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,215 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0607416v6",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0607416v6/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "\\label{s1}\n\nSome of the main challenges in the theory of distribution of zeros of \npolynomials and transcendental entire functions concern the description of \nlinear operators that preserve certain prescribed (``good'') properties.\nNotwithstanding their fundamental character, most of these problems are \nin fact still open as they turn out to be surprisingly difficult in full\ngenerality. Two outstanding questions among these are the following: let \n$\\Om\\subseteq\\bC$ be an appropriate set of interest and denote by $\\pi(\\Om)$\nthe class of all (complex or real) univariate polynomials whose zeros l",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0607416v6/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0607416v6  [math.CV]  27 Jul 2008\nP´OLYA-SCHUR MASTER THEOREMS FOR CIRCULAR\nDOMAINS AND THEIR BOUNDARIES\nJULIUS BORCEA AND PETTER BR¨AND´EN\nAbstract. We characterize all linear operators on ﬁnite or inﬁnite-dimensio-\nnal polynomial spaces that preserve the property of having the zero set inside\na prescribed region Ω⊆C for arbitrary closed circular domains Ω(i.e., images\nof the closed unit disk under a M¨obius transformation) and their boundaries.\nThis provides a natural framework for dealing with several long-standing fun-\ndamental problems, which we solve in a uniﬁed way. In partic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0607416v6/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main Results",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-main-results.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0607416v6/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hyperbolicity and Stability Preservers",
+      "pageStart": 3,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-21-hyperbolicity-and-stability-preservers.md",
+      "narrative": null,
+      "content": "\\label{ss21}\n\nTo formulate the complete answers to Problems~\\ref{pb1}--\\ref{pb2} for $\\RR$ \nand \nthe half-plane $\\{z \\in \\CC: \\Im(z) \\leq 0\\}$  we need to introduce some \nnotation.\nAs in \\cite{BBS} -- and following the commonly used terminology in \ne.g.~the theory of partial differential equations \\cite{ABG} -- we call a \nnon-zero univariate polynomial with real \ncoefficients {\\em hyperbolic} if all its zeros are real. Such a polynomial\nis said to be {\\em strictly hyperbolic} if in addition \nall its zeros are distinct. \nA univariate polynomial \n$f(z)$ with complex coefficients is called {\\em s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0607416v6/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preservers of Polynomials with Zeros in a Closed Circular Domain or Its Boundary",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-22-preservers-of-polynomials-with-zeros-in-a-clo.md",
+      "narrative": null,
+      "content": "\\label{ss22}\n\nRecall that a M\\\"obius transformation is a bijective conformal map of the \nextended complex plane, i.e., \na map $\\Phi : \\CC\\cup \\{\\infty\\} \\rightarrow \\CC \\cup \\{\\infty\\}$ given by  \n\\begin{equation}\\label{mobius}\n\\Phi(z)= \\frac {az+b}{cz+d}, \\quad a,b,c,d \\in \\CC,\\, ad-bc \\neq 0. \n\\end{equation}\nThe inverse of $\\Phi$ is then given by \n$$ \n \\Phi^{-1}(z)= \\frac{dz-b}{-cz+a}. \n$$\n\n\\begin{definition}\\label{def-circ}\nLet $H=\\{z \\in \\CC : \\Im(z) >0\\}$ and \n$\\overline{H}=\\{z \\in \\CC : \\Im(z) \\ge 0\\}$. An {\\em open circular domain} is \nthe image \nof $H$ under a  M\\\"obius transformation,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0607416v6/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proofs of the Main Results",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-3-proofs-of-the-main-results.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0607416v6/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hyperbolic and Stable Polynomials",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "../sections/sec-005-31-hyperbolic-and-stable-polynomials.md",
+      "narrative": null,
+      "content": "\\label{ss31}\n\nIf the zeros of two hyperbolic polynomials $f,g\\in\\HH_1(\\bR)$ interlace then \nthe {\\em Wronskian} \n$W[f,g]:=f'g-fg'$ is either non-negative or non-positive on the whole real \naxis $\\RR$. \n\n\\begin{definition}\\label{def-pp}\nGiven $f,g \\in \\HH_1(\\bR)$ we say that $f$ and $g$ \nare in {\\em proper position}, denoted $f \\ll g$, if the zeros of $f$ and $g$ \ninterlace and $W[f,g] \\leq 0$. \n\\end{definition}\n\nFor technical reasons we also say that the zeros of the polynomial $0$ \ninterlace the zeros of any (non-zero) hyperbolic polynomial and write \n$0 \\ll f$ and $f \\ll 0$. Note \nthat if $f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0607416v6/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Transcendental Characterization",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "../sections/sec-006-32-the-transcendental-characterization.md",
+      "narrative": null,
+      "content": "\\label{ss32}\n\nWe will need the following lemma due to \nSz\\'asz, see \\cite[Lemma 3]{szasz}. \n\\begin{lemma}[Sz\\'asz]\\label{szasz} \nLet $m,n\\in\\bN$ with $m\\le n$ and $f(z)=\\sum_{k=m}^{n}c_kz^k\\in\\bC[z]$. If\n$f(z)\\in\\HH_1(\\CC)$ and $c_mc_n \\neq 0$ then for any $r\\ge 0$ one has  \n$$\n|f(z)| \\leq |c_m|r^m\\exp \\left(r\\frac{|c_{m+1}|}{|c_m|}\n+3r^2\\frac{|c_{m+1}|^2}{|c_m|^2}+3r^2\\frac{|c_{m+2}|}{|c_m|}\\right) \n$$\nwhenever $|z| \\leq r$. \n\\end{lemma} \n\nFor $k,n \\in \\NN$ let $(n)_k = k!\\binom n k = n(n-1)\\cdots (n-k+1)$ if \n$k \\leq n$ and $(n)_k =0$ if $n<k$ denote as usual the Pochhammer symbol.  \n\n\\begin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0607416v6/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Closed Circular Domains and Their Boundaries",
+      "pageStart": 17,
+      "pageEnd": 20,
+      "target": "../sections/sec-007-33-closed-circular-domains-and-their-boundaries.md",
+      "narrative": null,
+      "content": "\\label{ss33}\n\nRecall Definitions~\\ref{def1} and~\\ref{def-circ}, Notation~\\ref{not-sets} and \nthe linear operators\n$\\phi_n$ introduced in Notation~\\ref{not-fi}. In particular, an $H$-stable \npolynomial in the sense of Definition~\\ref{def-circ} is precisely a stable\npolynomial in the sense of Definition~\\ref{def1}.\n\n\\begin{lemma}\\label{save}\nLet $T : \\CC_n[z] \\rightarrow \\CC_m[z]$ be a linear operator and suppose $m$ \nis minimal, i.e., $m= \\max\\{\\deg T(f): f \\in \\CC_n[z]\\}$. Let further \n$C=\\Phi^{-1}(H)$ be an open circular domain, where $\\Phi$ is a M\\\"obius \ntransformation as in \\eqref{mobius},",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0607416v6/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Open Problems",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-008-4-open-problems.md",
+      "narrative": null,
+      "content": "\\label{s4}\n\nAs we already noted in \\S \\ref{s1}, Problems \\ref{pb1} and \\ref{pb2} have a\nlong and distinguished history. In this paper we completely solved them for\na particularly relevant type of sets, namely all closed circular domains and \ntheir boundaries. Among the most interesting remaining cases that are \ncurrently under investigation we mention:\n\\begin{enumerate}\n\\item[(a)] $\\Omega$ is an open circular domain, \n\\item[(b)] $\\Omega$ is a sector or a double sector, \n\\item[(c)] $\\Omega$ is a strip, \n\\item[(d)] $\\Omega$ is a half-line,\n\\item[(e)] $\\Om$ is an interval. \n\\end{enumerate}\n\nLet u",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0607416v6/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-009-references.md",
+      "narrative": null,
+      "content": "[1] A. Aleman, D. Beliaev, H. Hedenmalm, Real zero polynomials and P´olya-Schur type theorems,\nJ. Anal. Math. 94 (2004), 49–60.\n[2] M. F. Atiyah, R. Bott, L. G˙arding, Lacunas for hyperbolic diﬀerential operators with constant\ncoeﬃcients I, Acta Math. 124 (1970), 109–189.\n[3] J. Borcea, P. Br¨and´en, Multivariate P´olya-Schur classiﬁcation problems in the Weyl algebra,\narXiv:math/0606360.\n[4] J. Borcea, P. Br¨and´en, Applications of stable polynomials to mixed determinants: Johnson’s\nconjectures, unimodality and symmetrized Fischer products, Duke Math. J. 143 (2008), 205–\n223.\n[5] J. Borcea, P",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1207.6711v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1207.6711v1",
+  "contains": [
+    "library/arxiv-1207.6711v1/sections/sec-front-matter",
+    "library/arxiv-1207.6711v1/sections/sec-000",
+    "library/arxiv-1207.6711v1/sections/sec-001",
+    "library/arxiv-1207.6711v1/sections/sec-002",
+    "library/arxiv-1207.6711v1/sections/sec-003",
+    "library/arxiv-1207.6711v1/sections/sec-004",
+    "library/arxiv-1207.6711v1/sections/sec-005",
+    "library/arxiv-1207.6711v1/sections/sec-006",
+    "library/arxiv-1207.6711v1/sections/sec-007",
+    "library/arxiv-1207.6711v1/sections/sec-008",
+    "library/arxiv-1207.6711v1/sections/sec-009",
+    "library/arxiv-1207.6711v1/sections/sec-010",
+    "library/arxiv-1207.6711v1/sections/sec-011",
+    "library/arxiv-1207.6711v1/sections/sec-012",
+    "library/arxiv-1207.6711v1/sections/sec-013",
+    "library/arxiv-1207.6711v1/sections/sec-014",
+    "library/arxiv-1207.6711v1/sections/sec-015",
+    "library/arxiv-1207.6711v1/sections/sec-016",
+    "library/arxiv-1207.6711v1/sections/sec-017",
+    "library/arxiv-1207.6711v1/sections/sec-018",
+    "library/arxiv-1207.6711v1/sections/sec-019",
+    "library/arxiv-1207.6711v1/sections/sec-020",
+    "library/arxiv-1207.6711v1/sections/sec-021",
+    "library/arxiv-1207.6711v1/sections/sec-022",
+    "library/arxiv-1207.6711v1/sections/sec-023",
+    "library/arxiv-1207.6711v1/sections/sec-024",
+    "library/arxiv-1207.6711v1/sections/sec-025",
+    "library/arxiv-1207.6711v1/sections/sec-026",
+    "library/arxiv-1207.6711v1/sections/sec-027",
+    "library/arxiv-1207.6711v1/sections/sec-028",
+    "library/arxiv-1207.6711v1/sections/sec-029",
+    "library/arxiv-1207.6711v1/sections/sec-030",
+    "library/arxiv-1207.6711v1/sections/sec-031",
+    "library/arxiv-1207.6711v1/sections/sec-032",
+    "library/arxiv-1207.6711v1/sections/sec-033",
+    "library/arxiv-1207.6711v1/sections/sec-034",
+    "library/arxiv-1207.6711v1/sections/sec-035",
+    "library/arxiv-1207.6711v1/sections/sec-036",
+    "library/arxiv-1207.6711v1/sections/sec-037",
+    "library/arxiv-1207.6711v1/sections/sec-038",
+    "library/arxiv-1207.6711v1/sections/sec-039",
+    "library/arxiv-1207.6711v1/sections/sec-040",
+    "library/arxiv-1207.6711v1/sections/sec-041",
+    "library/arxiv-1207.6711v1/sections/sec-042"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "GLUING EQUATIONS FOR PGL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — In [11] we parametrized boundary-unipotent representations of a 3-manifold group into SL(n, C) using Ptolemy coordinates, which were\n\n**GLUING EQUATIONS FOR PGL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS**\n\n*STAVROS GAROUFALIDIS, MATTHIAS GOERNER, AND CHRISTIAN K. ZICKERT*\n\n47 pp, 44 sections.\n\n**Abstract.** In [11] we parametrized boundary-unipotent representations of a 3-manifold group into SL(n, C) using Ptolemy coordinates, which were inspired by A-coordinates on higher Teichm¨uller space due to Fock and Goncharov. In this paper, we parametrize rep- resentations into PGL(n, C) using shape coordinates which are a 3-dimensional analogue of Fock and Goncharov’s X-coordinates. These coordinates satisfy equations generalizing Thurston’s gluing equations. These equations are of Neumann-Zagier type and satisfy sym- plectic relations with applications in quantum topology. We also explore a duality between the Ptolemy coordinates and the shape coordinates.\n\n**Outline.** Front matter; 1.1 Thurston's gluing equations; 1 Introduction; 1.2 Our main results; 1.3 Computations and applications; 1.4 Overview of the Paper; 1.5 Acknowledgement; 2 Concrete triangulations; 2.1 Face pairing permutations; 3 Thurston's gluing equations; 3.1 Symplectic properties of the gluing equati; 4 Generalized gluing equations; 4.1 Simplex coordinates; 4.2 Symmetries of a simplex; 4.3 Shape assignments; 4.4 Gluing equations for oriented triangulatio; 4.5 The pullback of a shape assignment under a; 4.6 Gluing equations for general concrete tria",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1207.6711&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1207.6711v1",
+    "title_source": "slug",
+    "source_file": "1207.6711v1.pdf",
+    "source_sha256": "320c4301ac66fff15d69ef60bc2e445788ba75b3189a1f5581211e805b5e6188",
+    "pages": 47,
+    "arxiv": {
+      "id": "1207.6711",
+      "version": "1",
+      "primary_class": "math.GT",
+      "stamp_date": "28 Jul 2012"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

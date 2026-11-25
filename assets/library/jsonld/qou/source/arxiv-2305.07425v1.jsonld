@@ -1,0 +1,68 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2305.07425v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2305.07425v1",
+  "contains": [
+    "library/arxiv-2305.07425v1/sections/sec-front-matter",
+    "library/arxiv-2305.07425v1/sections/sec-000",
+    "library/arxiv-2305.07425v1/sections/sec-001",
+    "library/arxiv-2305.07425v1/sections/sec-002",
+    "library/arxiv-2305.07425v1/sections/sec-003",
+    "library/arxiv-2305.07425v1/sections/sec-004",
+    "library/arxiv-2305.07425v1/sections/sec-005",
+    "library/arxiv-2305.07425v1/sections/sec-006",
+    "library/arxiv-2305.07425v1/sections/sec-007",
+    "library/arxiv-2305.07425v1/sections/sec-008",
+    "library/arxiv-2305.07425v1/sections/sec-009",
+    "library/arxiv-2305.07425v1/sections/sec-010",
+    "library/arxiv-2305.07425v1/sections/sec-011",
+    "library/arxiv-2305.07425v1/sections/sec-012",
+    "library/arxiv-2305.07425v1/sections/sec-013"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS — The set of equivalence classes of cobounded actions of a group G on diﬀerent hyperbolic metric spaces carries a natural partial order.\n\n**LARGEST HYPERBOLIC ACTIONS OF 3–MANIFOLD GROUPS**\n\n*CAROLYNABBOTT, HOANG THANH NGUYEN, AND ALEXANDER J. RASMUSSEN*\n\n20 pp, 15 sections.\n\n**Abstract.** The set of equivalence classes of cobounded actions of a group G on diﬀerent hyperbolic metric spaces carries a natural partial order. Following Abbott–Balasubramanya– Osin, the group G is H–accessible if the resulting poset has a largest element. In this paper, we prove that every non-geometric 3-manifold has a ﬁnite cover with H–inaccessible fundamental group and give conditions under which the fundamental group of the original manifold is H– inaccessible. We also prove that every Croke-Kleiner admissible group (a class of graphs of groups that generalizes fundamental groups of 3–dimensional graph manifolds) has a ﬁnite index subgroup that is H–inaccessible.\n\n**Outline.** Front matter; 1 Introduction; 1.1 Acknowledgments; 2 Preliminaries; 2.1 H–accessibility; 2.2 Projection axioms; 2.3 Croke-Kleiner admissible groups; 3 Croke-Kleiner admissible groups and H–inacce; 3.1 Construction of group actions; 4 H–accessibility of 3-manifold groups; 4.1 Seifert fibered manifolds; 4.2 H–accessibility of non-elementary graph ma; 4.3 Theorem 1.1; 4.4 H–accessibility of finitely generated 3-ma; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2305.07425&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2305.07425v1",
+    "title_source": "slug",
+    "source_file": "2305.07425v1.pdf",
+    "source_sha256": "2f7d2ac5818b6af4df9a1e8a59a370236de653084ad1e143a0b0ee7349b96639",
+    "pages": 20,
+    "arxiv": {
+      "id": "2305.07425",
+      "version": "1",
+      "primary_class": "math.GT",
+      "stamp_date": "12 May 2023"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

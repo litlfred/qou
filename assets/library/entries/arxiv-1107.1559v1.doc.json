@@ -1,0 +1,586 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1107.1559v1",
+  "title": "Quaternion-Octonion SU (3) Flavor Symmetry",
+  "variant": "pdf",
+  "pages": 12,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Quaternionic representation of isospin SU(2) group",
+      "number": "2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-quaternionic-representation-of-isospin-su2-gro"
+    },
+    {
+      "level": 1,
+      "title": "Octonions and Gelmann Matrices",
+      "number": "3",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-octonions-and-gelmann-matrices"
+    },
+    {
+      "level": 1,
+      "title": "Octonion Formulation of SU(3) Flavor Group",
+      "number": "4",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-octonion-formulation-of-su3-flavor-group"
+    },
+    {
+      "level": 1,
+      "title": "Commutation relations for Octonion Valued Shift Operators",
+      "number": "5",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-commutation-relations-for-octonion-valued-shif"
+    },
+    {
+      "level": 1,
+      "title": "Discussion and Conclusion",
+      "number": "6",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-6-discussion-and-conclusion"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 164,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "negi",
+          "heading": false
+        },
+        {
+          "term": "bisht",
+          "heading": false
+        },
+        {
+          "term": "yahoo",
+          "heading": false
+        },
+        {
+          "term": "reconsidered",
+          "heading": false
+        },
+        {
+          "term": "octonion",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1107.1559v1 [physics.gen-ph] 8 Jul 2011 Quaternion-Octonion SU(3) Flavor Symmetry Pushpa(1), P. S. Bisht(1,2), Tianjun Li(2) and O. P. S. Negi(1) October 22, 2018 (1) Department of Physics, Kumaun University, S. S. J. Campus, Almora-263601 (Uttarakhand) India (2) Institute of Theoretical Physics, Chinese Academy of Sciences, P. O. Box 2735, Beijing 100080, P. R. China Email - pushpakalauni60@yahoo.co.in",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1107.1559v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 353,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "octonion reformulation",
+          "heading": false
+        },
+        {
+          "term": "cite key",
+          "heading": false
+        },
+        {
+          "term": "flavor group",
+          "heading": false
+        },
+        {
+          "term": "quaternionic formulation",
+          "heading": false
+        },
+        {
+          "term": "quaternions",
+          "heading": false
+        },
+        {
+          "term": "complex numbers",
+          "heading": false
+        },
+        {
+          "term": "color",
+          "heading": false
+        },
+        {
+          "term": "octonionic",
+          "heading": false
+        }
+      ],
+      "extract": "\\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ According to celebrated Hurwitz theorem \\cite{key-1} there exits four - division algebra consisting of $\\mathbb{R}$ (real numbers), $\\mathbb{C}$ (complex numbers), $\\mathbb{H}$ (quaternions) and $\\mathcal{O}$ (octonions). All four algebras are alternative with antisymmetric associators. Quaternions were very first example of hyper complex numbers introduced by Hamilton \\cite{key-2,key-3}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-quaternionic-representation-of-isospin-su2-gro",
+      "number": "2",
+      "title": "Quaternionic representation of isospin SU(2) group",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 708,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "psi shortmid",
+          "heading": false
+        },
+        {
+          "term": "eqnarray psi",
+          "heading": false
+        },
+        {
+          "term": "psi left",
+          "heading": false
+        },
+        {
+          "term": "align left",
+          "heading": false
+        },
+        {
+          "term": "right rangle",
+          "heading": false
+        },
+        {
+          "term": "shortmid overline",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        },
+        {
+          "term": "rangle frac",
+          "heading": false
+        }
+      ],
+      "extract": "Let us consider the standard Lie algebra in terms of the quaternions by adopting the basic formula of the isotopic formalism for nucleons. Accordingly we may write a spinors $\\psi_{a}$ and $\\psi_{b}$ as\\begin{eqnarray} \\psi & = & \\left(\\begin{array}{c} \\psi_{a}\\\\ \\psi_{b}\\end{array}\\right);\\label{eq:1}\\end{eqnarray} whereas the adjoint spinor is described as \\begin{eqnarray} \\overline{\\psi} & = &",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-octonions-and-gelmann-matrices",
+      "number": "3",
+      "title": "Octonions and Gelmann Matrices",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 239,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mann lambda",
+          "heading": false
+        },
+        {
+          "term": "frac lambda",
+          "heading": false
+        },
+        {
+          "term": "gell mann",
+          "heading": false
+        },
+        {
+          "term": "lambda right",
+          "heading": false
+        },
+        {
+          "term": "lambda matrices",
+          "heading": false
+        },
+        {
+          "term": "octonion units",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "end align",
+          "heading": false
+        }
+      ],
+      "extract": "Octonions describe the widest normed algebra after the algebra of real numbers, complex numbers and quaternions. The octonions are non associative and non commutative normed division algebra over the algebra of real numbers. A set of octets $(e_{0},\\, e_{1},\\, e_{2},\\, e_{3},\\, e_{4},\\, e_{5},\\, e_{6},\\, e_{7})$ are known as the octonion basis elements and satisfy the following multiplication rules \\begin{align}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-octonion-formulation-of-su3-flavor-group",
+      "number": "4",
+      "title": "Octonion Formulation of SU(3) Flavor Group",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 599,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac lambda",
+          "heading": false
+        },
+        {
+          "term": "lambda right",
+          "heading": false
+        },
+        {
+          "term": "spin connects",
+          "heading": false
+        },
+        {
+          "term": "align begin",
+          "heading": false
+        },
+        {
+          "term": "isotopic spin",
+          "heading": false
+        },
+        {
+          "term": "end align",
+          "heading": false
+        },
+        {
+          "term": "frac left",
+          "heading": false
+        },
+        {
+          "term": "spin algebra",
+          "heading": false
+        }
+      ],
+      "extract": "The Lie algebra of $SU(3)$ exhibits most of the features of the larger Lie algebras. The elements of $SU(3)$ group may be obtained in terms of $3\\times3$ Hermitian Gell Mann $\\lambda$ Hermitian matrices related to octonions where first three matrices describe the familiar isotopic spin generators from the $SU(2)$ subgroup of $SU(3)$. These generators connect up $(u)$ and down quarks $(d)$. The fourth and fifth",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-commutation-relations-for-octonion-valued-shif",
+      "number": "5",
+      "title": "Commutation relations for Octonion Valued Shift Operators",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 484,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "align left",
+          "heading": false
+        },
+        {
+          "term": "nonumber left",
+          "heading": false
+        },
+        {
+          "term": "dagger nonumber",
+          "heading": false
+        },
+        {
+          "term": "frac left",
+          "heading": false
+        },
+        {
+          "term": "commutation relations",
+          "heading": true
+        },
+        {
+          "term": "align begin",
+          "heading": false
+        },
+        {
+          "term": "end align",
+          "heading": false
+        },
+        {
+          "term": "sqrt right",
+          "heading": false
+        }
+      ],
+      "extract": "The $I$, $U$ and $V$ - spin algebras are closed. Let us obtain the commutation relations of shift operators $I_{\\pm},\\, U_{\\pm},\\, V_{\\pm}$ \\cite{key-16} for $SU(3)$ group.Using equations (\\ref{eq:24}), (\\ref{eq:25}),(\\ref{eq:34}) and (\\ref{eq:35}),we get \\begin{align} \\left[U_{3},\\, U_{\\pm}\\right]=\\pm\\left[\\frac{i}{2}\\left(e_{6}\\pm ie_{7}\\right)\\right]= & \\pm U_{\\pm};\\nonumber \\\\ \\left[V_{3},\\,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-discussion-and-conclusion",
+      "number": "6",
+      "title": "Discussion and Conclusion",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 609,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "flavor group",
+          "heading": false
+        },
+        {
+          "term": "normed algebras",
+          "heading": false
+        },
+        {
+          "term": "octonions",
+          "heading": false
+        },
+        {
+          "term": "thankful",
+          "heading": false
+        },
+        {
+          "term": "hadrons",
+          "heading": false
+        },
+        {
+          "term": "quaternions",
+          "heading": false
+        },
+        {
+          "term": "multiplets",
+          "heading": false
+        },
+        {
+          "term": "pauli",
+          "heading": false
+        }
+      ],
+      "extract": "In the foregoing analysis, we have described the resemblance between real Lie algebra $SU(2)$ and the quaternion formalism of isospin $SU((2)$ group by using the isomorphism between quaternion basis elements and Pauli matrices .On the same footing, we have established the connection between octonion basis elements and Gell Mann $\\lambda$ matrices of $SU(3)$ flavor group. Accordingly, we have discussed the various",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "align left",
+      "heading": false
+    },
+    {
+      "term": "align begin",
+      "heading": false
+    },
+    {
+      "term": "end align",
+      "heading": false
+    },
+    {
+      "term": "left right",
+      "heading": false
+    },
+    {
+      "term": "right frac",
+      "heading": false
+    },
+    {
+      "term": "nonumber left",
+      "heading": false
+    },
+    {
+      "term": "lambda right",
+      "heading": false
+    },
+    {
+      "term": "spin multiplets",
+      "heading": false
+    },
+    {
+      "term": "right rangle",
+      "heading": false
+    },
+    {
+      "term": "sqrt right",
+      "heading": false
+    },
+    {
+      "term": "begin eqnarray",
+      "heading": false
+    },
+    {
+      "term": "psi left",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 6,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 7,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 7 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1107.1559v1"
+  }
+}

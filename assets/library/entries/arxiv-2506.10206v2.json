@@ -1,0 +1,595 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2506.10206v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Higher logarithm functions are of fundamental importance in many areas of both physics and mathematics, and the dilogarithm function $\\operatorname{Li}_{2}$ may be seen as the most basic and fundamental function of this form. Polylogarithms arise in deep areas of number theory and quantum theory, and the study of higher logarithm functions in its own right provides one of the core topics concerning special functions. Zagier [@Zagier2007] built on the pioneering work of Nahm et al. [@Nahm1995; @Nahm2007; @Nahm1994; @NahmRecknagelTerhoeven1993] in ways that relate the use of higher $K$-groups an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:2506.10206v2  [math.NT]  19 Jun 2025\nAnalytic dilogarithm identities\nCetin Hakimoglu-Brown\nAbstract\nWe introduce dilogarithm identities through a beta integral-based technique that we\napply to provide analytic proofs of previously conjectured dilogarithm relations, solving\nopen problems given by both Bytsko and Campbell, and that we further apply to\nconstruct and prove new ladder relations with quartic and sextic bases. We also apply\nour method to introduce and prove two-term Li2-relations and ladder-like identities\nwith arguments in algebraic number fields such as Q(\n√\n2), Q(\n√\n3), Q(\n√",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-11-preliminaries.md",
+      "narrative": null,
+      "content": "The *$\\Gamma$-function* is among the most fundamental and ubiquitous special functions and may be defined via the Euler integral $\\Gamma(x) := \\int_{0}^{\\infty} u^{x-1} e^{-u} \\, du$ for $\\Re(x) > 0$ [@Rainville1960 §2]. The *beta integral* is of basic importance as a special function, in much the same way as the $\\Gamma$-function, and may be defined so that $$\\label{betadefinition}\n B(p, q) := \\int_{0}^{1} t^{p-1} (1-t)^{q-1} \\, dt$$ for $\\Re(p) > 0$ and $\\Re(q) > 0$ [@Rainville1960 §2.16], so that $$\\label{betaevaluate}\n B(p, q) = \\frac{ \\Gamma(p) \\Gamma(q) }{ \\Gamma(p + q)},$$ again for $\\R",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sextic integrals and dilogarithm identities",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-2-sextic-integrals-and-dilogarithm-identities.md",
+      "narrative": null,
+      "content": "[]{#sectionsextic label=\"sectionsextic\"} One of the main tools to be applied in this paper is given by the functional equations involved in Theorem [\\[maintheorem\\]](#maintheorem){reference-type=\"ref\" reference=\"maintheorem\"} below. For our derivation of this Theorem, we require the integral identities such that $$\\label{integrandforsum1}\n \\int_{0}^{h} \\frac{(1 - y)^c y^d}{1 + g^2 (1 - y)^a y^b} \\, dg = (1 - y)^{c - \\frac{a}{2}} y^{d - \\frac{b}{2}} \n \\operatorname{arctan}\\left( h (1 - y)^{\\frac{a}{2}} y^{\\frac{b}{2}} \\right)$$ for $\\Re\\left( \\frac{ \\left( 1 - y \\right)^{-a/2} y^{-b/2} }{h} \\ri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Applications",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-3-applications.md",
+      "narrative": null,
+      "content": "Using Theorem [\\[maintheorem\\]](#maintheorem){reference-type=\"ref\" reference=\"maintheorem\"}, we derive evaluations for accelerated ${}_{4}F_{3}$-series and dilogarithm identities, as below.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A full solution to a problem due to Sun",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-31-a-full-solution-to-a-problem-due-to-sun.md",
+      "narrative": null,
+      "content": "As it turns out, the $u = \\frac{1}{\\sqrt{3}}$ case Theorem [\\[maintheorem\\]](#maintheorem){reference-type=\"ref\" reference=\"maintheorem\"} can be used to formulate a full solution to a problem due to Sun [@Sun2021; @Sun2015] that was partially solved by Campbell [@Campbell2023], as later explained.\n\n::: theorem\n[]{#theoremSunCampbell label=\"theoremSunCampbell\"} The closed-form evaluation $$8 \\operatorname{Li}_2\\left(2-\\sqrt{3}\\right)-\\operatorname{Li}_2\\left(4 \\sqrt{3} - 7 \\right) \n = \\frac{5 \\pi ^2}{12}+\\ln \\left(2-\\sqrt{3}\\right) \\ln \\left(2+\\sqrt{3}\\right)$$ holds true.\n:::\n\n::: proof\n*Proof.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "On an identity attributed to Lima",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-32-on-an-identity-attributed-to-lima.md",
+      "narrative": null,
+      "content": "The $u = \n \\sqrt{2}$ case of Theorem [\\[maintheorem\\]](#maintheorem){reference-type=\"ref\" reference=\"maintheorem\"}, we obtain, from the $A$-value involved in Theorem [\\[maintheorem\\]](#maintheorem){reference-type=\"ref\" reference=\"maintheorem\"} together with the duplication formula in [\\[duplicationformula\\]](#duplicationformula){reference-type=\"eqref\" reference=\"duplicationformula\"}, that $$\\begin{gathered}\n \\operatorname{Li}_2\\left(-i\\left(1 + \\sqrt{2}\\right)\\right) - \\operatorname{Li}_2\\left(-i\\left(-1 + \\sqrt{2}\\right)\\right) = \\\\ \n \\frac{1}{2} \\operatorname{Li}_2\\left(-3 - 2 \\sqrt{2}\\right",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Zagier's four-term identity",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-33-zagiers-four-term-identity.md",
+      "narrative": null,
+      "content": "Setting $u = \\frac{4}{3}$ in Theorem [\\[maintheorem\\]](#maintheorem){reference-type=\"ref\" reference=\"maintheorem\"}, it is possible, as below, to derive Zagier's four-term identity such that $$\\label{Zagierfour}\n 3 L\\left(-\\frac{1}{6}\\right) - L\\left(\\frac{1}{8}\\right) + L \\left(\\frac{1}{9}\\right) + L \\left(\\frac{1}{28}\\right) = -\\frac{\\pi^2}{12}.$$ Using Theorem [\\[maintheorem\\]](#maintheorem){reference-type=\"ref\" reference=\"maintheorem\"}, we provide a sketch of a proof of the Zagier identity in [\\[Zagierfour\\]](#Zagierfour){reference-type=\"eqref\" reference=\"Zagierfour\"}. On the left-hand side",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Identities related of an evaluation for the inverse tangent integral",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-007-34-identities-related-of-an-evaluation-for-the-i.md",
+      "narrative": null,
+      "content": "Setting $u= i\\sqrt{3}$ it is possible to derive a relation between $\\mathbb{Q}(\\sqrt{13})$ and $\\mathbb{Q}(\\sqrt{3})$ that gives a fast series for $\\rm{Cl}_2\\big(\\tfrac{\\pi}3\\big)$ that bypasses the summation of the multiple angle formula.\n\nFor the right-hand side, we obtain $$\\label{equivalentTi}\n \\Im \\left(\\operatorname{Li}_2\\left(\\frac{i}{\\sqrt{3}}\\right) \n - \\operatorname{Li}_2\\left(\\frac{-i}{\\sqrt{3}}\\right)\\right)= \\frac{5}{3} \\, \\Im\\operatorname{Li}_2\\left(\\frac{1 + i\\sqrt{3}}{2}\\right) - \\frac{\\pi \\ln(3)}{6},$$ noting that the left-hand side of [\\[equivalentTi\\]](#equivalentTi){referen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A series of convergence rate $\\frac{1}{243}$",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-008-35-a-series-of-convergence-rate-frac1243.md",
+      "narrative": null,
+      "content": "The $u = \n 2$ case of Theorem [\\[maintheorem\\]](#maintheorem){reference-type=\"ref\" reference=\"maintheorem\"} yields the ${}_{4}F_{3}$-evaluation such that $$\\begin{gathered}\n \\sum_{n=0}^{\\infty} \\left( \\frac{1}{243} \\right)^{n} \n \\left[ \\begin{matrix} \\frac{1}{2}, \\frac{1}{2}, 1 \n \\vspace{1mm} \\\\ \n \\frac{5}{6}, \\frac{7}{6}, \\frac{3}{2} \\end{matrix} \\right]_{n} \n = \\frac{9 \\operatorname{Li}_2\\left(\\frac{1}{4}\\right)}{4}-\\frac{3 \\pi ^2}{4}+\\frac{9 \\ln^2(2)}{2}-\\frac{9 \\ln ^2(3)}{8} + \\\\ \n \\frac{9}{2} \\operatorname{arctan}^{2}\\left(\\frac{1}{\\sqrt{2}}\\right) + \n 9 \\operatorname{arctan}\\left(\\frac{1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Elliptic ${}_{4}F_{3}$-series",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-009-4-elliptic-4f-3-series.md",
+      "narrative": null,
+      "content": "In view of how we have applied ${}_{4}F_{3}$-functions of the form $${}_{4}F_{3}\\!\\!\\left[ \\begin{matrix} \n 1, 1, \\frac{1}{2}, \\frac{1}{2} \\vspace{1mm}\\\\ \n b_1, b_2, b_3 \\end{matrix} \\ \\Bigg| \\ z \\right],$$ this leads us to consider similar applications of ${}_{4}F_{3}$-functions of the form $$\\label{alternativehypergeometric}\n {}_{4}F_{3}\\!\\!\\left[ \\begin{matrix} \n 1, \\frac{1}{2}, \\frac{1}{2}, \\frac{1}{2} \\vspace{1mm}\\\\ \n b_1, b_2, b_3 \\end{matrix} \\ \\Bigg| \\ z \\right].$$ However, the partial fraction decomposition-based methods applied above are not applicable with the use of hypergeometric",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hypergeometric series for $\\pi^2$",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-010-5-hypergeometric-series-for-pi2.md",
+      "narrative": null,
+      "content": "In this section, a sextic analogue of our previous hypergeometric series is used to derive a new series $\\pi^{2}$ . We begin with the relation $$\\begin{gathered}\n \\int_{0}^{1} \\int_{0}^{g} \\frac{\\arctan\\left(g \\sqrt{y} (1-y)\\right)}{y} \\, dg \\, dy = \\\\\n \\int_{0}^{1} \\left( \\frac{\\ln\\left(g^2 y (1 - y)^2 + 1\\right)}{2 (y - 1) y^{3/2}} + \n \\frac{g \\operatorname{arctan}\\left(g (1 - y) \\sqrt{y}\\right)}{y} \\right) \\, dy, \n\\end{gathered}$$ and we find that the right-hand side may be written as $$\\frac{2g^2}{3} \\sum_{n=0}^{\\infty} \\left( \\frac{-4g^2}{27} \\right)^{n} \n \\frac{1}{n+1} \n \\left[ \\begin{ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A proof of Campbell's conjecture",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-011-6-a-proof-of-campbells-conjecture.md",
+      "narrative": null,
+      "content": "To solve an open problem recently given by Campbell [@Campbell2025], we begin with the following dilogarithm identity that we have obtained through our beta integral-based method.\n\n::: theorem\n[]{#generalforCampbell label=\"generalforCampbell\"} For complex $u$, let $\\mathcal{L}(u)$ denote the three-term dilogarithm combination $$\\operatorname{Li}_{2}\\left( \\frac{ 2-\\sqrt{4 - \n 3 u} \\sqrt{u}-u }{2} \\right) + \\operatorname{Li}_{2}\\left( \\frac{2+\\sqrt{4-3 u} \\sqrt{u}-u}{2} \\right) + \n \\operatorname{Li}_{2}(u)$$ and let $\\mathcal{E}(u)$ denote the elementary expression $$\\begin{gathered}\n \\frac{1}{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Related dilogarithm identities",
+      "pageStart": 18,
+      "pageEnd": 21,
+      "target": "../sections/sec-012-61-related-dilogarithm-identities.md",
+      "narrative": null,
+      "content": "In this section, we provide some further dilogarithm identities that we have obtained following a similar approach, relative to the material given above, and we encourage further explorations based on this material. To begin with, we consider some identities that are related to Theorem [\\[generalforCampbell\\]](#generalforCampbell){reference-type=\"ref\" reference=\"generalforCampbell\"} and that may be derived in a similar way, relative to Theorem [\\[generalforCampbell\\]](#generalforCampbell){reference-type=\"ref\" reference=\"generalforCampbell\"}.\n\n::: theorem\n[]{#previously8p1 label=\"previously8p1\"",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Higher-order fields",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/sec-013-7-higher-order-fields.md",
+      "narrative": null,
+      "content": "The algebraic arguments of the dilogarithmic expressions involved in the preceding sections were rational or in quadratic or quartic algebraic number fields. This leads us to turn our attention toward higher-order algebraic number fields.\n\n::: example\nSetting $u = r + i\\sqrt{1-r^{2}}$, this leads us to apply the circle property above and [\\[previously7p5\\]](#previously7p5){reference-type=\"eqref\" reference=\"previously7p5\"}. Accordingly, we have to solve $$\\begin{aligned}\n \\frac{1}{2} = \\Re \\left( \\frac{1}{2} \\left( -i \\sqrt{1 - r^2} - \n \\sqrt{(r + i \\sqrt{1 - r^2}) (-3 i \\sqrt{1 - r^2} - 3r + 4",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A two-term ladder identity for the Plastic Ratio/Constant",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-014-71-a-two-term-ladder-identity-for-the-plastic-ra.md",
+      "narrative": null,
+      "content": "We will derive a two-term cubic dilogarithm ladder identity where both terms are real. These are uncommon, compared to three-term and above series or series with 2 or more complex terms. Let: $$\\begin{aligned}\n- \\operatorname{Li}_2((1-z)^2) + \\frac{\\pi^2}{6} - 2 \\ln(1-z) \\left( \\ln(2-z) + \\ln z \\right) = \\operatorname{Li}_2(2z - z^2)\\\\\n\\operatorname{Li}_2(2-z) + \\operatorname{Li}_2(z) = \\frac{1}{2} \\operatorname{Li}_2(2z - z^2) + \\frac{\\pi^2}{4}\\\\\n\\operatorname{Li}_2(z) = \\operatorname{Li}_2\\left(\\frac{z-1}{z}\\right) + \\frac{1}{2} \\ln^2 \\left( \\frac{z}{1-z} \\right) - \\frac{1}{2} \\ln^2(1-z) + \\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Applications of Roger's identity",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "../sections/sec-015-8-applications-of-rogers-identity.md",
+      "narrative": null,
+      "content": "Our below applications of Roger's identity are useful in the construction of new dilogarithm ladder relations, as we later demonstrate.\n\n::: lemma\n[]{#previously10p1 label=\"previously10p1\"} The equality of $$\\begin{gathered}\n 3 \\operatorname{Li}_2\\left(\\frac{-2u^2 + 3u + \\sqrt{-u (3u - 4)}}{4u - 2u^2}\\right) + \n 3 \\operatorname{Li}_2\\left(\\frac{-2u^2 + 3u - \\sqrt{-u (3u - 4)}}{4u - 2u^2}\\right) + \\\\ \n 3 \\operatorname{Li}_2(u) + 3 \\operatorname{Li}_2((u - 1)^2) \n\\end{gathered}$$ and $$\\begin{gathered}\n \\text{ {\\footnotesize $ - \\frac{3}{2} \\ln^2\\left(\\frac{2}{u - \\sqrt{(4 - 3u) u} - 2}\\right)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Derivation of the Loxton--Lewin $\\frac{\\pi}{9}$-identities",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-016-9-derivation-of-the-loxton--lewin-fracpi9-identi.md",
+      "narrative": null,
+      "content": "In this section, we derive an elementary proof to the trio of three and four-term Loxton-Lewin dilogarithm $\\frac{\\pi}{9}$-identities. For reference, the three-term is identity given by, where $h = \\frac{1}{2} \\sec\\left(\\frac{\\pi}{9}\\right)$: $$\\begin{aligned}\n \\left( \\operatorname{Li}_2(h) + \\frac{1}{2} \\ln(h) \\ln(1 - h) \\right) \n + \\left( \\operatorname{Li}_2(h^2) + \\frac{1}{2} \\ln(h^2) \\ln(1 - h^2) \\right) - \\\\ \n \\frac{1}{3} \\left( \\operatorname{Li}_2(h^3) + \\frac{1}{2} \\ln(h^3) \\ln(1 - h^3) \\right)=7\\pi^2/54, \n\\end{aligned}$$ Using the latter identity in Theorem [\\[previously8p1\\]](#previou",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Derivation of the Loxton-Lewin four-term $\\frac{\\pi}{9}$-identities",
+      "pageStart": 27,
+      "pageEnd": 29,
+      "target": "../sections/sec-017-91-derivation-of-the-loxton-lewin-four-term-frac.md",
+      "narrative": null,
+      "content": "To derive a four-term dilogarithm involving $2\\cos\\big(\\frac{4\\pi}{9}\\big)$ as the base, we apply Theorem [\\[previouslymaster\\]](#previouslymaster){reference-type=\"ref\" reference=\"previouslymaster\"} and set $$\\frac{\\sqrt{u (4-3u)}}{2 u^2 - 3 u} = i \\sqrt{3}.$$ This has the solution $u=1 - \\frac{2}{\\sqrt{3}} \\sin\\left(\\frac{4\\pi}{9}\\right)$ within the unit circle, so Theorem [\\[previouslymaster\\]](#previouslymaster){reference-type=\"ref\" reference=\"previouslymaster\"} can be applied. The radius, in this case, is $r=\\sqrt{\\frac{u}{u - 1}} = 2\\cos\\left(\\frac{4\\pi}{9}\\right)$. Consequently, we obtai",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two-term complex identities of the imaginary part",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "../sections/sec-018-10-two-term-complex-identities-of-the-imaginary.md",
+      "narrative": null,
+      "content": "Similar to two-term real dilogarithms, two-term dilogarithms of only the imaginary part appear to be uncommon. Common examples of two-term identities of the complex part include $\\operatorname{Li}_2\\left(\\frac{1}{2} - \\frac{i}{2}\\right) = -i G + \\frac{5\\pi^2}{96} - \\frac{\\ln^2 2}{8} + \\frac{i \\pi \\ln 2}{8}$.\n\n::: example\nUsing Theorem [\\[previouslymaster\\]](#previouslymaster){reference-type=\"ref\" reference=\"previouslymaster\"}, set $$\\frac{2 u^2 - 3 u - \\sqrt{u (-3 u + 4)}}{2 (u - 1)^2} = -u$$ The solution is given by $u^3-u-1=0$ (the Plastic constant cubic as before), where the complex root in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Miscellaneous results",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../sections/sec-019-11-miscellaneous-results.md",
+      "narrative": null,
+      "content": "Through the use of the Landen identity in [\\[Landenformula\\]](#Landenformula){reference-type=\"eqref\" reference=\"Landenformula\"}, and by solving for $u$ and $z$, this leads to: $$\\begin{aligned}\n\\frac{-2u^2 + 3u + \\sqrt{-u (3u - 4)}}{4u - 2u^2} = z,\n\\frac{-2u^2 + 3u - \\sqrt{-u (3u - 4)}}{4u - 2u^2} = \\frac{z}{z - 1}\n\\end{aligned}$$ The solutions to $u^3 - 4 u^2 + 3 u + 1 = 0$ correspond to the same root structure as trigonometric values of multiples of $\\frac{\\pi}{7}$. The valid solution $u=2\\cos (\\frac{3\\pi}{7})+1$ proves one of the Watson two-term identities through some additional manipulati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A cubic single-term identity",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../sections/sec-020-111-a-cubic-single-term-identity.md",
+      "narrative": null,
+      "content": "Using Lemma [\\[previously10p2\\]](#previously10p2){reference-type=\"ref\" reference=\"previously10p2\"}, set: $$\\begin{aligned}\n\\frac{(u-1) \\left(2 u^3 - 4 u^2 + 3 u - \\sqrt{u(4 - 3 u)}\\right)}{2 \\left(u^4 - 3 u^3 + 4 u^2 - 2 u + 1\\right)} = z\n\\\\\n\\frac{2 u^2 - 3 u - \\sqrt{u(4 - 3 u)}}{2 (u-1)^2} = 1 - z\n\\end{aligned}$$ The solution $u=r_1$ is the real root of $u^3 - 2 u^2 + u + 1=0$. And $z=1/r_2$, where $r_2$ is the complex root located in the fourth quadrant. Consequently, we obtain that $$\\begin{aligned}\n2 \\ln\\left(\\frac{r_2 - 1}{r_2}\\right) \\ln\\left(\\frac{(r_1 - 1) r_2^2}{2 r_1 r_2 + r_1}\\right",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A sextic two-term identity",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "../sections/sec-021-112-a-sextic-two-term-identity.md",
+      "narrative": null,
+      "content": "Using Lemma [\\[previously10p4\\]](#previously10p4){reference-type=\"ref\" reference=\"previously10p4\"}, we set $k=\\frac{1}{2}\\sec \\frac{2\\pi}{7}$, and this allows the application of Watson's formula for $\\operatorname{Li}_2(k) - \\operatorname{Li}_2(k^2)$, so that $$\\frac{-2k^2 + k - \\sqrt{-3k^2 + 2k + 1} + 1}{2 - 2k^2}=r_2, \\frac{-2k^2 + k + \\sqrt{-3k^2 + 2k + 1} + 1}{2 - 2k^2}=r_1,$$ where $r_2 = -0.42812..., r_1=1.87316...$ Or exactly, $x^6 - 4 x^5 + 5 x^4 - 2 x^3 + x^2 - x - 1 =0$. Using Roger's L-function, we have that $$\\frac{\\pi^2}{7} = \n \\operatorname{Li}_2\\left(\\frac{1}{r_1}\\right) + \\oper",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A modified Watson $\\frac{\\pi}{7}$-dilogarithm identity",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "../sections/sec-022-115-a-modified-watson-fracpi7-dilogarithm-identi.md",
+      "narrative": null,
+      "content": "Bytsko [@Bytsko1999] also found a variant of Watson's $\\frac{\\pi}{7}$-identities. Bytsko proved this variant through elementary manipulations from the classic Watson $\\frac{\\pi}{7}$-identities. It can also be proved using Lemma [\\[previously10p5\\]](#previously10p5){reference-type=\"ref\" reference=\"previously10p5\"}. In this direction, we begin by setting $$\\frac{-u^3 + 5u^2 - 5u}{2(u - 1)^2} = \\frac{1}{2}.$$ The solution is $u = 2 - \\frac{1}{2} \\sec\\left(\\frac{3\\pi}{7}\\right)$, which gives the modified two-term identity, through an appropriate substitution.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "8th-degree single-term identity",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "../sections/sec-023-116-8th-degree-single-term-identity.md",
+      "narrative": null,
+      "content": "Using Lemma [\\[previously10p5\\]](#previously10p5){reference-type=\"ref\" reference=\"previously10p5\"}, we solve (letting $u=1-y$) the equality such that $$\\frac{y^3 + 2 y^2 + \\sqrt{-3 y^2 + 2 y + 1} (-y^2 + y + 1) - 2 y - 1}{2 y^2} = \\frac{z}{z - 1}, \\quad \\frac{1}{y(y - 1)} = z.$$ The single-term identity is as follows: $$\\begin{aligned}\n2 \\operatorname{Li}_2\\left(\\frac{y}{y - 1}\\right)\n+ \\frac{\\pi^2}{3}\n+ \\frac{3}{2} \\ln^2\\left(\\frac{w}{y}\\right)\n- \\ln\\left(\\frac{w}{y^2}\\right) \\ln\\left(-\\frac{w}{y^2} + \\frac{y + 1}{y^2}\\right)\\\\\n+ \\frac{1}{2} \\ln^2\\left(\\frac{1}{y} - 1\\right)\n+ \\frac{1}{2} \\ln",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "New Ladders",
+      "pageStart": 33,
+      "pageEnd": 34,
+      "target": "../sections/sec-024-12-new-ladders.md",
+      "narrative": null,
+      "content": "We derive a three-term ladder identity, given in [\\[previously8p8\\]](#previously8p8){reference-type=\"eqref\" reference=\"previously8p8\"} below, with arguments in $\\mathbb{Q}(\\sqrt{-7})$, and this ladder relation appears to be new. We also introduce a derivation of the Lewin-Loxtin ladders using an elementary analytic approach, which, to the best of our knowledge, is the first derivation of its kind. But finding new ladder relations is difficult, as computer searches and other methods have exhausted the known options.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A three-term ladder relation",
+      "pageStart": 34,
+      "pageEnd": 34,
+      "target": "../sections/sec-025-121-a-three-term-ladder-relation.md",
+      "narrative": null,
+      "content": "[]{#subsection3ladder label=\"subsection3ladder\"} We can rewrite Theorem [\\[previouslymaster\\]](#previouslymaster){reference-type=\"ref\" reference=\"previouslymaster\"} so that the three-term dilogarithm combination $$\\begin{gathered}\n \\operatorname{Li}_2\\left(\\frac{2u^2 - 3u - \\sqrt{u(4-3u)}}{2(u - 1)u}\\right) - \\\\ \n \\operatorname{Li}_2\\left(\\frac{2u^2 - 3u - \\sqrt{u(4 - 3u)}}{2(u - 1)^2}\\right) \n + \\operatorname{Li}_2\\left(\\frac{u}{u - 1}\\right) \n\\end{gathered}$$ admits the closed form $$- \\frac{1}{2} \\ln^2\\left(\\frac{2u^2 - 3u + \\sqrt{u(4 - 3u)}}{-2(u - 1)^2}\\right) - \\frac{\\pi^2}{6}\n + \\frac{3",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Five-term ladder relations, part 1",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "../sections/sec-026-122-five-term-ladder-relations-part-1.md",
+      "narrative": null,
+      "content": "[]{#section5term1 label=\"section5term1\"} In this section we derive identities are are not as trivially verifiable as the above example. Some well-known dilogarithm bases include the basis such that $$u^6-3u^4-4u^3-3u^2+1=0$$ due to Lewin [@Lewin1991text], the basis such that $$u^6-u^5 - \n u^3-u+1=0$$ due to Abouzahra and Lewin [@AbouzahraLewin1985]. These bases motivate the following dilogarithm identities. Since the sextic polynomial in Theorem [\\[firstformatladder\\]](#firstformatladder){reference-type=\"ref\" reference=\"firstformatladder\"} is symmetric, we obtain a reduction to a cubic polynom",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A six-term ladder relation",
+      "pageStart": 35,
+      "pageEnd": 37,
+      "target": "../sections/sec-027-123-a-six-term-ladder-relation.md",
+      "narrative": null,
+      "content": "An analogue of our approach from Section [\\[section5term1\\]](#section5term1){reference-type=\"ref\" reference=\"section5term1\"} leads us to construct and prove a new six-term ladder relation, as below.\n\n::: theorem\n[]{#theoremnew6term label=\"theoremnew6term\"} Let $h$ denote the unique root in the interval $(0, 1)$ of $x^6-3 x^5+5 x^4-8 x^3+5 x^2-3 x+1 = 0$. Then the ladder relation $$\\begin{gathered}\n \\operatorname{Li}_2\\left(h^8\\right) + 3 \\operatorname{Li}_2\\left(h^6\\right) - \n 8 \\operatorname{Li}_2\\left(h^4\\right) - 8 \\operatorname{Li}_2\\left(h^3\\right) + \n 3 \\operatorname{Li}_2\\left(h^2\\right",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Using the ``radius method'' to derive new ladders",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "../sections/sec-028-124-using-the-radius-method-to-derive-new-ladder.md",
+      "narrative": null,
+      "content": "The radius method, as described earlier to derive analytic proofs of the trio of $\\frac{\\pi}{9}$ identities, can be applied here as well. We apply the five-term dilogarithm identity involved in the proof of Theorem [\\[theoremnew6term\\]](#theoremnew6term){reference-type=\"ref\" reference=\"theoremnew6term\"}, setting $$\\frac{\\sqrt{4-3u^2}}{ u^2 - 2} = -i \\sqrt{3}$$\\\nThe radius is $r = \\sqrt{\\frac{u - 1}{u + 1}} \\quad \\text{proof:} \\quad r^2 = \\frac{(u - 1)^2}{u^2 - 1} = \\frac{u - 1}{u + 1}$. Explicitly, we have that $$\\label{radiusfornewladder1}\n r=\\frac{1}{4} \\left( -1 + \\sqrt{33} - \\sqrt{2 \\left(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2506.10206v2/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 38,
+      "pageEnd": 40,
+      "target": "../sections/sec-029-acknowledgements.md",
+      "narrative": null,
+      "content": "The author thanks John Maxwell Campbell for help with the exposition in this paper and\nfor help with the typesetting and formatting for this paper.\nReferences\n[1] M. ABOUZAHRA and L. LEWIN, The polylogarithm in algebraic number fields, J.\nNumber Theory, 21 (1985), pp. 214–244.\n[2] M. ABOUZAHRA, L. LEWIN and H. N. XIAO, Polylogarithms in the field of omega (a\nroot of a given cubic): functional equations and ladders, Aequationes Math., 33 (1987),\npp. 23–45.\n[3] K. ADEGOKE and R. FRONTCZAK, A series of Ramanujan, two-term dilogarithm\nidentities and some Lucas series, J. Class. Anal., 24 (2024), p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

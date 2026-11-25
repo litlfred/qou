@@ -1,0 +1,1238 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1304.2934v4",
+  "blocks": [
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "MOD-φ CONVERGENCE, I:\nNORMALITY ZONES AND PRECISE DEVIATIONS\nVALENTIN FÉRAY, PIERRE-LOÏC MÉLIOT, AND ASHKAN NIKEGHBALI\nABSTRACT. In this paper, we use the framework of mod-φ convergence to prove pre-\ncise large or moderate deviations for quite general sequences of real valued random\nvariables (Xn)n∈N, which can be lattice or non-lattice distributed. We establish precise\nestimates of the ﬂuctuations P[Xn ∈tnB], instead of the usual estimates for the rate of\nexponential decay log(P[Xn ∈tnB]). Our approach provides us with a systematic way\nto characterise the normality zone, that is the zone in w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "\\subsection{Mod-\\texorpdfstring{$\\phi$}{phi} convergence}\nThe notion of mod-$\\phi$ convergence has been studied in the articles \\cite{JKN11,DKN11,KN10,KN12,BKN09}, in connection with problems from number theory, random matrix theory and  probability theory. The main idea was to look for a natural renormalization of the characteristic functions of random variables which do not converge in law (instead of a renormalization of the random variables themselves). After this renormalization, the sequence of characteristic functions converges to some non-trivial limiting function. Here is the definiti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Theoretical results",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-12-theoretical-results.md",
+      "narrative": null,
+      "content": "The goal of this paper is to prove that the framework of mod-$\\phi$ convergence as described in Definition~\\ref{def:modphi} is suitable to obtain {\\em precise}  large and moderate deviation results for the sequence $(X_n)_{n \\in \\N}$\n(throughout the paper, we call {\\em precise deviation result} an equivalent of the deviation probability itself and not on its logarithm). Namely, our results are the following.\\vspace{2mm}\n\n\\begin{itemize}\n\\item We give equivalents for the quantity $\\proba[X_n \\ge t_n x]$, where $x$ is a fixed positive real number (see  Theorem~\\ref{thm:mainlattice} for a lattice",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Applications",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-13-applications.md",
+      "narrative": null,
+      "content": "\\label{subsec:applications}\nAfter proving our abstract results, we provide a large set of (new) examples where these results can be applied. \nWe have thus devoted the second half of the paper to examples, from a variety of different areas.\\bigskip\n\nSection \\ref{sec:firstexamples} contains examples where the moment generating function is explicit,\nor given as a path integral of an explicit function.\n\n\n\nFirst, in Section \\ref{subsec:arithmetic},\nwe recover results of Radziwill \\cite{Rad09} on precise large deviations for additive arithmetic functions,\nby carefully recalling the principle of the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Forthcoming works",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-14-forthcoming-works.md",
+      "narrative": null,
+      "content": "As an intermediate step for our deviation estimates,\nwe give Berry-Esseen estimates for random variables \nthat converge mod-$\\phi$ (Proposition \\ref{prop:berryesseen}).\nThese estimates are optimal for this setting,\nthough they can be improved in some special cases,\nsuch as sums of independent or weakly dependent variables.\nIn a companion paper \\cite{FMN14}, we establish optimal \nBerry-Esseen bounds in these cases,\nproviding a mod-$\\phi$ alternative to Stein's method.\n\n\n\n\n\\medskip\n\nIn another direction, in \\cite{Multidim},\nwe extend some results of this paper to a multi-dimensional framework.\nT",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discussion on our hypotheses",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-15-discussion-on-our-hypotheses.md",
+      "narrative": null,
+      "content": "\\label{subsec:discussion_hypotheses}\nThe following remarks explain the role of each hypothesis of Definition~\\ref{def:modphi}. As we shall see later, some assumptions can be removed in some of our results (\\emph{e.g.}, the infinite-divisibility of the reference law), but Definition \\ref{def:modphi} provides a coherent setting where all the techniques presented in the paper do apply without further verification. \n\n\\begin{remark}[Analyticity]\nThe existence of the relevant moment generating function on a strip is crucial in our proof, as we consider in Section \\ref{sec:nonlattice} the Fourier tra",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-acknowledgements.md",
+      "narrative": null,
+      "content": "The authors would like to thank Martin Wahl for his input at the beginning of this project and for sharing with us his ideas. We would also like to address special thanks to Andrew Barbour, Reda Chhaibi and Kenny Maples for many fruitful discussions which helped us improve some of our arguments.\n\\bigskip\n\\bigskip",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-006-2-preliminaries.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basic examples of mod-convergence",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-007-21-basic-examples-of-mod-convergence.md",
+      "narrative": null,
+      "content": "\\label{subsec:basicexamples}\nLet us give a few examples of mod-$\\phi$ convergence, which will guide our intuition throughout the paper. In these examples, it will be useful sometimes to precise the speed of convergence in Definition \\ref{def:modphi}.\n\n\\begin{definition}\nWe say that the sequence of random variables $(X_{n})_{n \\in \\N}$ converges mod-$\\phi$ at speed $O((t_{n})^{-v})$ if the difference of the two sides of Equation \\eqref{eq:modphi} can be bounded by $C_{K}\\,(t_{n})^{-v}$ for any $z$ in a given compact subset $K$ of $\\mathcal{S}_{(c,d)}$. We use the analogue definition with the $o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Legendre-Fenchel transforms",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-008-22-legendre-fenchel-transforms.md",
+      "narrative": null,
+      "content": "We now present the definition and some properties of the Legendre-Fenchel transform, a classical tool in large deviation theory (see \\emph{e.g.} \\cite[Section 2.2]{DZ98}) that we shall use a lot in this paper. The Legendre-Fenchel transform is the following operation on (convex) functions:\n\\begin{definition}\nThe Legendre-Fenchel transform of a function $\\eta$ is defined by:\n$$F(x)=\\sup_{h \\in \\R}\\,( hx-\\eta(h)).$$\nThis is an involution on convex lower semi-continuous functions. \n\\end{definition}\\medskip\n\nAssume that $\\eta$ is the logarithm of the moment generating series of a random variable.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gaussian integrals",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-009-23-gaussian-integrals.md",
+      "narrative": null,
+      "content": "Some computations involving the Gaussian density are used several times throughout the paper, so we decided to present them together here.\n\n\\begin{lemma}[Gaussian integrals]\\label{lem:gaussintegral}~\n\\begin{enumerate}\n\\item \\label{item:gaussmoment} moments: $$\\frac{1}{\\sqrt{2\\pi}}\\int_\\R \\E^{-\\frac{x^2}{2}}\\,x^{2m}\\,dx=(2m-1)!!=(2m-1)(2m-3)\\cdots 3\\,1,$$ and the odd moments vanish.\\vspace{2mm}\n\\item \\label{item:gaussfourier} Fourier transform: with $g(x)=\\frac{\\E^{-\\frac{x^2}{2}}}{\\sqrt{2\\pi}}$, one has\n$$g^*(\\zeta)=\\int_\\R g(x)\\,\\E^{\\I x\\zeta}\\,dx=\\E^{-\\frac{\\zeta^2}{2}}.$$\nMore generally, wi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fluctuations in the case of lattice distributions",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-010-3-fluctuations-in-the-case-of-lattice-distributi.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lattice and non-lattice distributions",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-011-31-lattice-and-non-lattice-distributions.md",
+      "narrative": null,
+      "content": "If $\\phi$ is an infinitely divisible distribution, recall that its characteristic function writes uniquely as\n\\begin{equation}\n\\int_{\\R} \\E^{\\I u x }\\,\\phi(dx)=\\exp\\left(\\I m u - \\frac{\\sigma^2 u^2}{2}+\\int_{\\R \\setminus \\{0\\}} \\left(\\E^{\\I u x}-1-\\frac{\\I u x}{1+x^2}\\right)\\Pi(dx)\\right),\\label{eq:levykhintchine}\n\\end{equation}\nwhere $\\Pi$ is the L\\'evy measure of $\\phi$, and is required to integrate $1 \\wedge x^2$ (see \\cite[Chapter 13]{Kal97}). If $\\sigma^2>0$, then $\\phi$ has a normal component and its support \n$$\\supp(\\phi)=\\big(\\text{smallest closed subset $S$ of $\\R$ with }\\phi(S)=1\\big",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Deviations at the scale O(tn)",
+      "pageStart": 16,
+      "pageEnd": 21,
+      "target": "../sections/sec-012-32-deviations-at-the-scale-otn.md",
+      "narrative": null,
+      "content": "\\begin{lemma}\\label{lem:fourier}\nLet $X$ be a $\\Z$-valued random variable whose generating function $\\varphi_{X}(z)=\\esper[\\E^{zX}]$ converges absolutely in the strip $\\mathcal{S}_{(c,d)}$, with $c < 0 <d$. For $k \\in \\Z$,\n\\begin{align*}\n\\forall h \\in (c,d),\\,\\,\\,\\proba[X=k]&=\\frac{1}{2\\pi}\\int_{-\\pi}^{\\pi} \\E^{-k(h+\\I u)}\\,\\varphi_{X}(h + \\I u)\\,du;\\\\\n\\forall h \\in (0,d),\\,\\,\\,\\proba[X\\geq k]&=\\frac{1}{2\\pi}\\int_{-\\pi}^{\\pi} \\frac{\\E^{-k(h+\\I u)}}{1-\\E^{-(h+ \\I u)}}\\,\\varphi_{X}(h + \\I u)\\,du.\n\\end{align*}\n\\end{lemma}\n\n\\begin{proof}\nSince $$\\varphi_{X}(h+\\I u )=\\sum_{k \\in \\Z} \\proba[X=k]\\,\\E",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Central limit theorem at the scales o(tn) and o(tn23)",
+      "pageStart": 21,
+      "pageEnd": 25,
+      "target": "../sections/sec-013-33-central-limit-theorem-at-the-scales-otn-and-o.md",
+      "narrative": null,
+      "content": "The previous paragraph has described in the lattice case the fluctuations of $(X_n)_{n \\in \\N}$ in the regime $O(t_n)$, with a result akin to large deviations. In this section, we establish in the same setting an extended central limit theorem, for fluctuations of order up to $o(t_n)$. In particular, for fluctuations of order $o((t_n)^{2/3})$, we obtain the usual central limit theorem. Hence, we describe the panorama of fluctuations drawn on Figure \\ref{fig:panoramalattice}.\n\n\\begin{center}\n\\begin{figure}[ht]\n\\begin{tikzpicture}\n\\draw (-0.5,1.5) node {order of fluctuations};\n\\draw (2.3,0) node",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Fluctuations in the non-lattice case",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-014-4-fluctuations-in-the-non-lattice-case.md",
+      "narrative": null,
+      "content": "\\label{sec:nonlattice}\nIn this section we prove the analogues of Theorems \\ref{thm:mainlattice} and \\ref{thm:cltlattice} when $\\phi$ is not lattice-distributed; hence, by Proposition \\ref{prop:latticeandnonlattice}, $|\\E^{\\eta(\\I u)}|<1$ for any $u\\neq 0$. In this setting, assuming $\\phi$ absolutely continuous w.r.t.~the Lebesgue measure, there is a formula equivalent to the one given in Lemma \\ref{lem:fourier}, namely,\n\\begin{equation}\\proba[X\\geq x]=\\lim_{R \\to \\infty}\\left(\\frac{1}{2\\pi}\\int_{-R}^{R} \\frac{\\E^{-x(h+\\I u)}}{h+\\I u}\\,\\varphi_{X}(h+\\I u)\\,du\\right)\\label{eq:notuseful}\n\\end{equ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Berry-Esseen estimates",
+      "pageStart": 26,
+      "pageEnd": 29,
+      "target": "../sections/sec-015-41-berry-esseen-estimates.md",
+      "narrative": null,
+      "content": "As explained above, we start by establishing some Berry-Esseen estimates in the setting of mod-$\\phi$ convergence.\n\n\\begin{proposition}[Berry-Esseen expansion]\\label{prop:berryesseen}\nWe place ourselves under the assumptions of Definition \\ref{def:modphi}, with $\\phi$ non-lattice infinitely divisible law, and the strip $\\mathcal{S}_{(c,d)}$ that contains $0$. Denote \n$$g(y)=\\frac{1}{\\sqrt{2\\pi}}\\,\\E^{-y^{2}/2}$$\nthe density of a standard Gaussian variable, and $F_{n}(x)=\\proba[X_{n}\\leq t_{n}\\eta'(0)+\\sqrt{t_{n}\\eta''(0)}\\,x]$. One has\n$$F_{n}(x)=\\int_{-\\infty}^{x} \\left(1+\\frac{\\psi'(0)}{\\sqr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/lem-sec-016-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "lem-sec-016-05.md",
+      "narrative": null,
+      "content": "Let (Xn)n∈N be a sequence of random variables that converges mod-φ with pa- rameters (tn)n∈N and limiting function ψ, on a strip S(c,d) that does not necessarily contain 0. For h ∈(c, d), we make the exponential change of measure Q[dy] = ehy ϕXn(h) P[Xn ∈dy], and denote eXn a random variable following this law. The sequence ( eXn)n∈N converges mod-eφ, where eφ is the inﬁnitely divisible distribution with characteristic function eη(z+h)−η(h). The parameters of this new mod-convergence are again (tn)n∈N, and the limiting function is eψ(z) = ψ(z + h) ψ(h) . The new mod-eφ convergence occurs in th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Deviations at scale O(tn)",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-016-42-deviations-at-scale-otn.md",
+      "narrative": null,
+      "content": "4.2. Deviations at scale O(tn).\nTheorem 4.3. Suppose φ non-lattice, and consider as before a sequence (Xn)n∈N that con-\nverges mod-φ on a band S(c,d) with c < 0 < d. If x ∈(η′(0), η′(d)), then\nP[Xn ≥tnx] = exp(−tnF(x))\nh\np\n2πtnη′′(h)\nψ(h) (1 + o(1))\nwhere as usual h is deﬁned by the implicit equation η′(h) = x.\nRemark 4.4. By applying the result to (−Xn)n∈N, one gets similarly\nP[Xn ≤tnx] = exp(−tnF(x))\n|h|\np\n2πtnη′′(h)\nψ(h) (1 + o(1))\nfor x ∈(η′(c), η′(0)), with h deﬁned by the implicit equation η′(h) = x.\nRemark 4.5. Theorem 4.3 should be compared with [Hwa96, Theorem 1], which studies\nanothe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/rem-sec-016-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "rem-sec-016-02.md",
+      "narrative": null,
+      "content": "By applying the result to (−Xn)n∈N, one gets similarly P[Xn ≤tnx] = exp(−tnF(x)) |h| p 2πtnη′′(h) ψ(h) (1 + o(1)) for x ∈(η′(c), η′(0)), with h deﬁned by the implicit equation η′(h) = x.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/rem-sec-016-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "rem-sec-016-03.md",
+      "narrative": null,
+      "content": "Theorem 4.3 should be compared with [Hwa96, Theorem 1], which studies another regime of deviations in the mod-φ setting, namely, when h goes to zero (or equivalently, x →η′(0)). We shall also look at this regime in our Theorem 4.8.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/rem-sec-016-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "rem-sec-016-04.md",
+      "narrative": null,
+      "content": "The main difference between Theorems 3.4 and 4.3 is the replacement of the factor ψ(h)/(1 −e−h) by ψ(h)/h; the same happens with Bahadur-Rao’s estimates when going from lattice distributions to non-lattice distributions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/thm-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "thm-sec-016-01.md",
+      "narrative": null,
+      "content": "Suppose φ non-lattice, and consider as before a sequence (Xn)n∈N that con- verges mod-φ on a band S(c,d) with c < 0 < d. If x ∈(η′(0), η′(d)), then P[Xn ≥tnx] = exp(−tnF(x)) h p 2πtnη′′(h) ψ(h) (1 + o(1)) where as usual h is deﬁned by the implicit equation η′(h) = x.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/cor-sec-017-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 35,
+      "target": "cor-sec-017-05.md",
+      "narrative": null,
+      "content": "If y = o((tn)1/4), then one has P \u0002 Xn ≥tnη′(0) + q tnη′′(0) y \u0003 = (1 + o(1)) y √ 2π e−y2 2 exp \u0012 η′′′(0) 6 (η′′(0))3/2 y3 √tn \u0013 . (18) More generally, if y = o((tn)1/2−1/m), then one has P \u0002 Xn ≥tnη′(0) + q tnη′′(0) y \u0003 = (1 + o(1)) y √ 2π exp",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/lem-sec-017-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 35,
+      "target": "lem-sec-017-02.md",
+      "narrative": null,
+      "content": "Consider a non-constant inﬁnitely divisible law φ, of type non-lattice, with a convergent moment generating function in a strip S(c,d) with c < 0 < d. We also assume that φ is absolutely continuous w.r.t. the Lebesgue measure. Then, there exists a constant D > 0 only depending on φ, and an interval (−ε, ε) ⊂(c, d), such that for all h ∈(−ε, ε), and all δ small enough, qδ = max u∈R\\(−δ,δ) | exp(η(h + iu) −η(h))| ≤1 −D δ2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prop-sec-017-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 35,
+      "target": "prop-sec-017-06.md",
+      "narrative": null,
+      "content": "Let (Xn)n∈N be a sequence that converges mod-φ with parameters tn, where φ is either a non-constant lattice distribution, or a non-lattice distribution that is absolutely continuous with respect to the Lebesgue measure. We assume lim n→∞ tn (log n)3 = +∞. Then, lim sup n→∞ Xn −tnη′(0) p 2η′′(0) tn log n ≤1 almost surely. MOD-φ CONVERGENCE, I",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Central limit theorem at the scales o(tn) and o(tn23)",
+      "pageStart": 30,
+      "pageEnd": 35,
+      "target": "../sections/sec-017-43-central-limit-theorem-at-the-scales-otn-and-o.md",
+      "narrative": null,
+      "content": "one can also prove from the hypotheses of mod-convergence an extended central limit\ntheorem:\nTheorem 4.8. Consider a sequence (Xn)n∈N that converges mod-φ with limiting distribu-\ntion ψ and parameters tn, where φ is a non-lattice inﬁnitely divisible law that is absolutely\ncontinuous w.r.t. Lebesgue measure. Let y = o((tn)1/6). Then,\nP\n\u0014\nXn ≥tnη′(0) +\nq\ntnη′′(0) y\n\u0015\n= P[NR(0, 1) ≥y] (1 + o(1)) .\nOn the other hand, assume y ≫1 and y = o((tn)1/2). If x = η′(0) +\np\nη′′(0)/tn y and h is\nthe solution of η′(h) = x, then\nP\n\u0014\nXn ≥tnη′(0) +\nq\ntnη′′(0) y\n\u0015\n=\ne−tn F(x)\nh\np\n2πtn η′′(h) (1 + o(1)) = e−tn F(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/rem-sec-017-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 35,
+      "target": "rem-sec-017-03.md",
+      "narrative": null,
+      "content": "One can give a sufﬁcient condition on the Lévy-Khintchine representation of φ to ensure the absolute continuity with respect to the Lebesgue measure; cf. [SH04, Chapter 4, Theorem 4.23]. Hence, it is the case if σ2 > 0, or if σ2 = 0 and if the absolutely continuous part of the Lévy measure Π has inﬁnite mass.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/rem-sec-017-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 35,
+      "target": "rem-sec-017-04.md",
+      "narrative": null,
+      "content": "Let us explain why we need to add the assumption of absolute continuity with respect to Lebesgue measure, which is a strictly stronger hypothesis than being non-lattice. The hypotheses on the inﬁnitely divisible law φ imply that it has ﬁnite vari- ance, and therefore, that the Lévy-Khintchine representation of the Fourier transform given by Equation (2) can be replaced by a Kolmogorov representation. This represen- tation actually holds for the complex moment generating function (see [SH04, Chapter 4, Theorem 7.7]): η(z) = mz + σ2 Z R ezx −1 −zx x2 K(dx) where K is a probability measure on R,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/thm-sec-017-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 35,
+      "target": "thm-sec-017-01.md",
+      "narrative": null,
+      "content": "Consider a sequence (Xn)n∈N that converges mod-φ with limiting distribu- tion ψ and parameters tn, where φ is a non-lattice inﬁnitely divisible law that is absolutely continuous w.r.t. Lebesgue measure. Let y = o((tn)1/6). Then, P \u0014 Xn ≥tnη′(0) + q tnη′′(0) y \u0015 = P[NR(0, 1) ≥y] (1 + o(1)) . On the other hand, assume y ≫1 and y = o((tn)1/2). If x = η′(0) + p η′′(0)/tn y and h is the solution of η′(h) = x, then P \u0014 Xn ≥tnη′(0) + q tnη′′(0) y \u0015 = e−tn F(x) h p 2πtn η′′(h) (1 + o(1)) = e−tn F(x) y √ 2π (1 + o(1)) . MOD-φ CONVERGENCE, I As in the proof of Theorem 3.9, we need to control the modulus",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Normality zones for mod-phi and mod-Gaussian sequences",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "../sections/sec-018-44-normality-zones-for-mod-phi-and-mod-gaussian.md",
+      "narrative": null,
+      "content": "quence of random variables that converges mod-φ (we do not assume φ non-lattice for\nthe moment). Then we have seen that\nYn = Xn −tnη′(0)\np\ntnη′′(0)\nsatisﬁes a central limit theorem: for all ﬁxed y,\nlim\nn→∞\nP[Yn ≥y]\n(2π)−1/2 R ∞\ny e−s2\n2 ds\n= 1.\n(20)\nThe question that we address here is the question of the normality zone: we want to\nidentify the maximal scale un such that Equation (20) holds for y = o(un). The results\nof the previous Sections allows to identify this scale and to describe what happens for\ny = O(un).\nSuppose that φ is a lattice distribution, or a non-lattice distribution that is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discussion and refinements",
+      "pageStart": 36,
+      "pageEnd": 38,
+      "target": "../sections/sec-019-45-discussion-and-refinements.md",
+      "narrative": null,
+      "content": "\\subsubsection{Bahadur-Rao theorem and Cramér-Petrov expansion}\nWe consider here the case of a sum $S_n=Y_1+\\cdots+Y_n$ of i.i.d.~random variables\nsuch that $Y=Y_1$ has an infinitely divisible distribution of Levy exponent $\\eta$.\nThen $S_n$ {\\em converges mod-$Y$} with parameters $n$ and limiting function $\\psi=1$;\nsee Example \\ref{ex:sumiid}. In this case, Theorems \\ref{thm:mainnonlattice} and \\ref{thm:mainlattice}\ncorrespond to Bahadur-Rao estimates   \n$$\\proba[S_n \\geq n\\,x] \\simeq \\begin{cases}\\frac{\\exp(-n\\,F(x))}{(1-\\E^{-h})\\sqrt{2\\pi n \\,\\eta''(h)}}\n    &\\!\\!\\!\\text{in the lattice case",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An extended deviation result from bounds on cumulants",
+      "pageStart": 38,
+      "pageEnd": 38,
+      "target": "../sections/sec-020-5-an-extended-deviation-result-from-bounds-on-cu.md",
+      "narrative": null,
+      "content": "\\label{sec:cumulantechnic}\nIn this section, we discuss a particular case of mod-Gaussian variables, that arises from bounds on cumulants. We will see that in this case the deviation result given in Theorem \\ref{thm:mainnonlattice} is still valid at a scale larger than $t_n$; see Proposition \\ref{prop:largedeviationscumulants}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bounds on cumulants and mod-Gaussian convergence",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "../sections/sec-021-51-bounds-on-cumulants-and-mod-gaussian-converge.md",
+      "narrative": null,
+      "content": "\\label{subsec:modgaussfromcumulants}\nLet $(S_{n})_{n \\in \\N}$ be a sequence of real-valued centered random variables that admit moments of all order, and such that  \n\\begin{equation}\n    |\\kappa^{(r)}(S_{n})| \\leq (Cr)^{r}\\,\\alphan (\\betan)^r\n    \\label{eq:superbound}\n\\end{equation}\nfor all $r \\geq 2$ and for some sequences $(\\alphan)_{n \\to \\infty} \\to +\\infty$ and $(\\beta_n)_{n\\in \\N}$ arbitrary. Assume moreover that there exists an integer $v \\geq 3$ such that \\vspace{2mm}\n\\begin{enumerate}\n\\item $\\kappa^{(r)}(S_{n})=0$ for all $3 \\leq r < v$ and all $n \\in \\N$;\\vspace{2mm}\n\\item we have th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Precise deviations for random variables with control on cumulants",
+      "pageStart": 39,
+      "pageEnd": 43,
+      "target": "../sections/sec-022-52-precise-deviations-for-random-variables-with.md",
+      "narrative": null,
+      "content": "\\label{subsec:deviationscumulant}\nWe use the same hypotheses as in the previous subsection, and without loss of generality, we suppose that $v=3$. Then, the sequence of random variables\n$$X_n=\\frac{S_{n}}{\\betan\\,(\\alphan)^{1/3}}$$ \nconver\\-ges mod-Gaussian with parameters $(\\alphan)^{1/3}\\,\\sigma^{2}$ and limiting function $\\psi(z)=\\exp(Lz^{3}/6)$ (here, we may have $L=0$). So, one can apply the previous theorems to estimate the tail of the distribution of $S_n$.\nIn particular, $X_n/\\sqrt{t_n} = S_n/(\\betan \\sigma \\sqrt{\\alphan})$ satisfies a central limit theorem\nwith a normality zone of siz",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Link with the Cramér-Petrov expansion",
+      "pageStart": 43,
+      "pageEnd": 44,
+      "target": "../sections/sec-023-53-link-with-the-cramér-petrov-expansion.md",
+      "narrative": null,
+      "content": "Proposition \\ref{prop:largedeviationscumulants} hints at a possible expansion of the fluctuations up to any order $T=o((\\alphan)^{1-\\eps})$, and indeed, it is a particular case of the results given by Rudzkis, Saulis and Statulevi\\v{c}ius in \\cite{RSS78,SS91}, see in particular \\cite[Lemma 2.3]{SS91}. Suppose that\n$$|\\kappa^{(r)}(S_{n})|\\leq (Cr)^{r}\\,\\alphan\\,(\\betan)^{r}\\quad;\\quad \\kappa^{(r)}(S_{n})=K(r)\\,\\alphan\\,(\\betan)^{r}\\,(1+O((\\alphan)^{-1}))$$\nthe second estimate holding for any $r \\leq v$; we denote $\\sigma^{2}=K(2)$. In this setting, one can push the expansion up to order $o((\\al",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A precise version of the Ellis-Gärtner theorem",
+      "pageStart": 44,
+      "pageEnd": 45,
+      "target": "../sections/sec-024-6-a-precise-version-of-the-ellis-gärtner-theorem.md",
+      "narrative": null,
+      "content": "\\label{sec:precisellis}\n\nIn the classical theory of large deviations, asymptotic results are formulated not only for the probabilities of tails $\\proba[X_{n}\\geq t_{n}x]$, but more generally for probabilities\n$$\\proba[X_{n} \\in t_{n}B]\\quad \\text{with $B$ arbitrary Borelian subset of $\\R$}.$$\nIn particular, under some technical assumptions on the generating series (that look like, but are somehow weaker than mod-convergence),  Ellis-G\\\"artner theorem provides some asymptotic upper and lower bounds for $\\log(\\proba[X_{n} \\in t_{n}B])$, these bounds relying on a limiting condition on $(t_n)^{-1}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Technical preliminaries",
+      "pageStart": 45,
+      "pageEnd": 46,
+      "target": "../sections/sec-025-61-technical-preliminaries.md",
+      "narrative": null,
+      "content": "In this section, we make the following assumptions:\\vspace{2mm}\n\\begin{enumerate}\n\\item The random variables $X_{n}$ satisfy the hypotheses of Definition \\ref{def:modphi} with $c=+\\infty$ (in particular, $\\psi$ is entire on $\\C$). \\vspace{2mm}\n\\item The Legendre-Fenchel transform $F$ is essentially smooth, that is to say that it takes finite values on a non-empty closed interval $I_{F}$ and that $\\lim F'(x)=\\lim h = \\pm \\infty$ when $x$ goes to a bound of the interval $I_{F}$ (\\emph{cf.} \\cite[Definition 2.3.5]{DZ98}). \\vspace{2mm}\n\\end{enumerate}\nThe latter point is verified if $\\phi$ is a Ga",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A precise upper bound",
+      "pageStart": 46,
+      "pageEnd": 47,
+      "target": "../sections/sec-026-62-a-precise-upper-bound.md",
+      "narrative": null,
+      "content": "\\begin{theorem}\\label{thm:superellis}\nLet $B$ be a Borelian subset of $\\R$.\\vspace{2mm}\n\\begin{enumerate}\n\\item\\label{item:admissible} If $B$ is admissible, then\n$$\\limsup_{n \\to \\infty} \\big(\\sqrt{2\\pi t_{n}}\\,\\exp(t_{n}F(B))\\,\\proba[X_{n} \\in t_{n} B] \\big) \\leq \\begin{cases}\n&\\sum_{a \\in B_{\\min}} \\frac{\\psi(h(a))}{(1-\\E^{-|h(a)|})\\,\\sqrt{\\eta''(h(a))}}\\\\\n&\\sum_{a \\in B_{\\min}} \\frac{\\psi(h(a))}{|h(a)|\\,\\sqrt{\\eta''(h(a))}}\n\\end{cases}$$\nthe distinction of cases corresponding to $\\phi$ lattice or non-lattice distributed. The sum on the right-hand side consists in one or two terms --- it is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A precise lower bound",
+      "pageStart": 47,
+      "pageEnd": 48,
+      "target": "../sections/sec-027-63-a-precise-lower-bound.md",
+      "narrative": null,
+      "content": "One can then ask for an asymptotic lower bound on $\\proba[X_{n} \\in t_{n} B]$, and in view of the classical theory of large deviations, this lower bound should be related to open sets and to the exponent $F(B^{\\mathrm{o}})$. Unfortunately, the result takes a less interesting form than Theorem \\ref{thm:superellis}. If $B$ is a Borelian subset of $\\R$, denote $B^{\\delta}$ the union of the open intervals $(x,x+\\kappa)$ of width $\\kappa \\geq \\delta$ that are included into $B$. The interior $O=B^{\\mathrm{o}}$ is a disjoint union of a countable collection of open intervals, and also the increasing u",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples with an explicit generating function",
+      "pageStart": 48,
+      "pageEnd": 48,
+      "target": "../sections/sec-028-7-examples-with-an-explicit-generating-function.md",
+      "narrative": null,
+      "content": "\\label{sec:firstexamples}\n\nThe general results of Sections \\ref{sec:lattice} and \\ref{sec:precisellis} can be applied in many contexts, and the main difficulty is then to prove for each case that one has indeed the estimate on the Laplace transform given by Definition \\ref{def:modphi}. Therefore, the development of techniques to obtain mod-$\\phi$ estimates is an important part of the work. Such an estimate can sometimes be established from an explicit expression of the Laplace transform (hence of the characteristic function); we give several examples of this kind in Section \\ref{subsec:explici",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mod-convergence from an explicit formula for the Laplace transform",
+      "pageStart": 48,
+      "pageEnd": 50,
+      "target": "../sections/sec-029-71-mod-convergence-from-an-explicit-formula-for.md",
+      "narrative": null,
+      "content": "\\label{subsec:explicit}\nExamples where mod-convergence is proved using an explicit formula for the Laplace transform were already given in Section \\ref{subsec:basicexamples}. We provide here two additional examples of mod-Gaussian convergence that can be obtained by this method.\n\n\\begin{example}\n    \\label{ex:zeros_randomfunction}\nLet $f(z)=\\sum_{n=0}^\\infty a_n\\,z^n$ be a random analytic function, where the coefficients $a_n$ are independent standard complex Gaussian variables. The random function $f$ has almost surely its radius of convergence equal to $1$, and its set of zeroes $\\mathcal{Z}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Additive arithmetic functions of random integers",
+      "pageStart": 50,
+      "pageEnd": 55,
+      "target": "../sections/sec-030-72-additive-arithmetic-functions-of-random-integ.md",
+      "narrative": null,
+      "content": "\\label{subsec:arithmetic} In this paragraph, we sometimes write $\\log(\\log n) = \\log_2 n$, which is negligible in comparison to $\\log n$ as $n$ goes to infinity. \n\n\n\\subsubsection{Number of prime divisors, counted without multiplicities}\nDenote $\\mathbb{P}$ the set of prime numbers, $\\omega(k)$ the number of distinct prime divisors of an integer $k$, and $\\omega_{n}$ the random variable $\\omega(k)$ with $k$ random integer uniformly chosen in $[n]:=\\{1,2,\\ldots,n\\}$. The random variable $\\omega_{n}$ satisfies the Erd\\\"os-Kac central limit theorem (\\emph{cf.} \\cite{EK40}):\n$$\\frac{\\omega_{n}-\\lo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Number of cycles in weighted probability measure",
+      "pageStart": 55,
+      "pageEnd": 58,
+      "target": "../sections/sec-031-73-number-of-cycles-in-weighted-probability-meas.md",
+      "narrative": null,
+      "content": "\\label{subsec:cycles}\n\n\nWe consider here the number of cycles of random permutations under the so-called weighted probability measure.\nThis example was already considered in \\cite{NZ13} and we follow the presentation of this article.\n\\bigskip\n\nDenote $X_{n}(\\sigma)$ the number of disjoint cycles (including fixed points) of a permutation $\\sigma$  in the symmetric group $\\mathfrak{S}(n)$. We write $C_j(\\sigma)$ for the number of cycles of length $j$ in the decomposition of $\\sigma$ as a product of disjoint cycles; thus, $X_{n}(\\sigma) =\\sum_{j=1}^n C_j(\\sigma)$ and $n = \\sum_{j=1}^n j\\,C_j(\\sig",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rises in random permutations",
+      "pageStart": 58,
+      "pageEnd": 61,
+      "target": "../sections/sec-032-74-rises-in-random-permutations.md",
+      "narrative": null,
+      "content": "\\label{subsec:rises}\nAs illustrated in the previous section,\nthe methods of singularity analysis and the \\emph{transfer theorems} between the singularities of a generating series and the asymptotic behavior of its coefficients (see \\emph{e.g.} \\cite[Chapter VI]{FSe09})\ncan be use to prove mod-$\\phi$ convergence\n(this is not surprising as they can be used to establish the related concept of {\\em quasi-powers},\nsee Section~\\ref{Subsect:QP}).\nWe examine here another example where we do not have strictly speaking mod-$\\phi$ convergence \nsince the reference law is not infinitely divisible,\nbut wher",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Characteristic polynomials of random matrices in a compact Lie group",
+      "pageStart": 61,
+      "pageEnd": 64,
+      "target": "../sections/sec-033-75-characteristic-polynomials-of-random-matrices.md",
+      "narrative": null,
+      "content": "\\label{subsec:rmtpol}\nIntroduce the classical compact Lie groups of type $\\mathrm{A}$, $\\mathrm{C}$, $\\mathrm{D}$:\n\\begin{align*}\n\\mathrm{U}(n)&=\\{g \\in \\mathrm{GL}(n,\\C)\\,\\,|\\,\\,gg^{\\dagger}=g^{\\dagger}g=I_{n}\\}\\qquad\\qquad\\quad\\,\\,\\,\\,\\,\\,\\text{(unitary group)}\\\\\n\\mathrm{USp}(n)&=\\{g \\in \\mathrm{GL}(n,\\mathbb{H})\\,\\,|\\,\\,gg^{\\star}=g^{\\star}g=I_{n}\\}\\qquad\\qquad\\quad\\,\\,\\,\\,\\,\\text{(compact symplectic group)}\\\\\n\\mathrm{SO}(2n)&=\\{g \\in \\mathrm{GL}(2n,\\R)\\,\\,|\\,\\,gg^{t}=g^{t}g=I_{2n} \\,\\,;\\,\\,\\det g =1\\}\\quad\\text{(special orthogonal group)}\n\\end{align*}\nwhere for compact symplectic groups $g",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mod-Gaussian convergence from a factorization of the probability generating function",
+      "pageStart": 64,
+      "pageEnd": 64,
+      "target": "../sections/sec-034-8-mod-gaussian-convergence-from-a-factorization.md",
+      "narrative": null,
+      "content": "OF THE PROBABILITY GENERATING FUNCTION\nLet (Xn)n∈N be a sequence of bounded random variables with nonnegative integer\nvalues such that σ2\nn := Var(Xn) tends to inﬁnity. Denote Pn(t) = E[tXn] the probability\ngenerating function of Xn. Each Pn(t) is a polynomial in t. Then, it is known that a\nsufﬁcient condition so that Xn is asymptotically Gaussian is that Pn(t) has negative\nreal roots (see references below). In this section, we prove that if the third cumulant\nL3\nn := κ(3)(Xn) also tends to inﬁnity such that Ln = o(σn), then a suitable renormalized\nversion of Xn converges in the mod-Gaussian s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Background: central limit theorem from location of zeros",
+      "pageStart": 64,
+      "pageEnd": 64,
+      "target": "../sections/sec-035-81-background-central-limit-theorem-from-locatio.md",
+      "narrative": null,
+      "content": "The idea of proving central limit theorem by looking at the zeros of the probability generating function originates from an article of Harper \\cite{HarperCLTBlocks}. Harper was interested in the number of blocks of a random set-partition, which will be our main example below. The argument was then generalized by Haigh \\cite{HaighTCLZeros}. Hwang and Steyaert \\cite[Lemma 4]{HwangSteyaertCLTZeros} refined Haigh's result by giving a bound on the speed of convergence towards the normal distribution. Finally, let us mention a recent work of Lebowitz, Pittel, Ruelle and Speer~\\cite{Lebowitz2014centr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mod-Gaussian convergence from non-negative factorizations",
+      "pageStart": 64,
+      "pageEnd": 67,
+      "target": "../sections/sec-036-82-mod-gaussian-convergence-from-non-negative-fa.md",
+      "narrative": null,
+      "content": "We will prove the following statement, which is stronger than what was announced.\n\\begin{theorem}\nLet $(X_n)_{n \\in \\N}$ be a sequence of bounded random variables with non-negative integer values, with mean $\\mu_n$, variance $\\sigma_n^2$ and third cumulant $L_n^3$. Suppose that the probability generating function $P_n(t)$ of $X_n$ can be factorized as\n\\begin{equation}\n    P_n(t) = \\prod_{1 \\le j \\le k_n} P_{n,j}(t), \n    \\label{eq:factorizationPGF}\n\\end{equation}\nwhere \\vspace{2mm}    \n\\begin{itemize}\n    \\item $(k_n)_{n \\in \\N}$ is a sequence of positive integers;\\vspace{2mm}\n    \\item each $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two examples: uniform permutations and uniform set-partitions",
+      "pageStart": 67,
+      "pageEnd": 68,
+      "target": "../sections/sec-037-83-two-examples-uniform-permutations-and-uniform.md",
+      "narrative": null,
+      "content": "\\label{subsec:twoexamples}\nThe first example that fills in this framework is the number of disjoint cycles $X_n$ of a uniform random permutation in $\\mathfrak{S}(n)$. As mod-convergence of $X_n$ has already been discussed in this article (Example \\ref{ex:cycle}), we will skip details. Using Feller's coupling, it is easily seen that\n\\[P_n(t)= \\prod_{i=1}^{n} \\frac{t+i-1}{1+i-1}.\\]\nMoreover, a straight-forward computation yields $\\mu_n=H_n+O(1)$, $\\sigma^2_n=H_n+O(1)$ and $L^3_n=H_n+O(1)$, where $H_n$ is the $n$-th harmonic number as in Example \\ref{ex:cycle}. Theorem \\ref{thm:modgaussianfromzer",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Third cumulant of the number of blocks in uniform set-partitions",
+      "pageStart": 68,
+      "pageEnd": 69,
+      "target": "../sections/sec-038-84-third-cumulant-of-the-number-of-blocks-in-uni.md",
+      "narrative": null,
+      "content": "Fix $n \\ge 0$. Let $B_n$ be the number of set-partitions of $[n]$, known as the $n$-th Bell number. Dobinski's formula states that $B_n=\\E^{-1} \\sum_{k =0}^\\infty k^n/k!$, which allows us to consider a random variable $M$ with the following distribution:\n\\[\\proba[M=k] = \\frac{1}{\\E B_n} \\frac{k^n}{k!}.\\]\nAn easy observation, useful below, is that $\\esper[M^r]=B_{n+r}/B_n$. As above, we denote $X_n$ the number of blocks in a uniform set-partition of size $[n]$. We also consider a Poisson variable $P$ of parameter $1$, independent from $X_n$.\nStam \\cite{StamRandomPartition} proved the following",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dependency graphs and mod-Gaussian convergence",
+      "pageStart": 69,
+      "pageEnd": 70,
+      "target": "../sections/sec-039-9-dependency-graphs-and-mod-gaussian-convergence.md",
+      "narrative": null,
+      "content": "\\label{sec:depgraph}\n\nDependency graphs are a classical tool in the literature to prove convergence in distribution towards a Gaussian law of the sum of {\\em partly} dependent random variables. They are used in various domains, such as random graphs~\\cite[pages 147-152]{JLR00}, random polytopes~\\cite{BV07}, patterns in random permutations~\\cite{Bona10}. As dependency graphs give a natural framework to deal in a uniform way with different kinds of objects, a natural question is the following:  when we have a dependency graph with good properties, can we obtain more precise or other results than",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The theory of dependency graphs",
+      "pageStart": 70,
+      "pageEnd": 72,
+      "target": "../sections/sec-040-91-the-theory-of-dependency-graphs.md",
+      "narrative": null,
+      "content": "\\label{subsec:dependencygraphs}\nLet us consider a variable $X$, which writes as a sum\n$$X=\\sum_{\\alpha \\in V} \\,Y_\\alpha$$\nof random variables $Y_\\alpha$ indexed by a set $V$.\n\n\\begin{definition}\nA graph $G$ with vertex set $V$ is called a {\\em dependency graph} for the family of random variables $\\{Y_\\alpha,\\,\\, \\alpha \\in V\\}$ if the following property is satisfied:\\vspace{2mm}\n\\begin{quote}\nIf $V_1$ and $V_2$ are disjoint subsets of $V$ such that there are no edges in $G$ with one extremity in $V_1$ and one in $V_2$, then the sets of random variables $\\{Y_\\alpha\\}_{\\alpha \\in V_1}$ and $\\{Y",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Joint cumulants",
+      "pageStart": 72,
+      "pageEnd": 73,
+      "target": "../sections/sec-041-92-joint-cumulants.md",
+      "narrative": null,
+      "content": "There exists a multivariate version of cumulants, called joint cumulants, that we shall use to prove Theorem~\\ref{thm:dependencygraphsrefined}. We present in this paragraph its definition and basic properties. Most of this material can be found in Leonov's and Shiryaev's paper~\\cite{LS59} (see also \\cite[Proposition 6.16]{JLR00}).\n\\medskip\n\n\n\\subsubsection{Preliminaries: set-partitions}\nWe denote by $[n]$ the set $\\{1,\\dots,n\\}$. Recall from Section \\ref{subsec:twoexamples} that a {\\em set partition} of $[n]$ is a (non-ordered) family of non-empty disjoint subsets of $S$ (called parts of the p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Useful combinatorial lemmas",
+      "pageStart": 73,
+      "pageEnd": 76,
+      "target": "../sections/sec-042-93-useful-combinatorial-lemmas.md",
+      "narrative": null,
+      "content": "We start our proof of Theorem \\ref{thm:dependencygraphsrefined} by stating a few lemmas on graphs and spanning trees.\n\n\n\\subsubsection{A functional on graphs}\nIn this section, we consider graphs $H$ with multiple edges and loops. We use the standard notation $V(H)$ and $E(H)$ for their vertex and edge sets. For a graph $H$ and a set partition $\\pi$ of $V(H)$, we denote $\\pi \\perp H$ when the following holds: for any edge $\\{i,j\\} \\in E(H)$, the elements $i$ and $j$ lie in different parts of $\\pi$ (in this case we use the notation $i \\nsim_\\pi j$). We introduce the following functional on graph",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of the bound on cumulants",
+      "pageStart": 76,
+      "pageEnd": 78,
+      "target": "../sections/sec-043-94-proof-of-the-bound-on-cumulants.md",
+      "narrative": null,
+      "content": "Recall that we want to find a bound for $\\kappa^{(r)}(X)$. As $X$ writes $X=\\sum_{\\alpha \\in V} Y_{\\alpha}$, we may use joint cumulants and expand by multilinearity:\n\\begin{equation}\\label{eq:expcumulant}\n    \\kappa^{(r)}(X) =\n\\sum_{\\alpha_1,\\dots,\\alpha_r}\n\\kappa(Y_{\\alpha_1},\\dots,Y_{\\alpha_r}).\n\\end{equation}\nThe sum runs over lists of $r$ elements in $V$, that is vertices of the dependency graph $G$. The proof consists in bounding each summand $\\kappa(Y_{\\alpha_1},\\dots,Y_{\\alpha_r})$, with a bound depending on the induced subgraph $G[\\alpha_1,\\dots,\\alpha_r]$.\n\n\n\\subsubsection{Bringing te",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-044",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sums of random variables with a sparse dependency graph",
+      "pageStart": 78,
+      "pageEnd": 80,
+      "target": "../sections/sec-044-95-sums-of-random-variables-with-a-sparse-depend.md",
+      "narrative": null,
+      "content": "An immediate application of Theorem \\ref{thm:dependencygraphsrefined} is the following general result on sums of weakly dependent random variables, to be compared with \\cite[\\S2.3]{Pen02}. Let $X_n=\\sum_{i=1}^{N_n} Y_i$ be a sum of random variables, where the $Y_i$'s have a dependency graph of degree $D_n-1$, and satisfy $\\|Y_i\\|_\\infty \\leq A$ for some $A \\geq 0$ (independent of $i$). We also assume that $X_n$ is not deterministic, so that its variance is non-zero.\n\n\\begin{theorem}\\label{thm:modgaussiangeneralsparsegraph}\nWe assume that the dependency graph of $(Y_i)_{1\\leq i \\leq N_n}$ is sp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-045",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Subgraph count statistics in Erdös-Rényi random graphs",
+      "pageStart": 80,
+      "pageEnd": 81,
+      "target": "../sections/sec-045-10-subgraph-count-statistics-in-erdös-rényi-rand.md",
+      "narrative": null,
+      "content": "\\label{sec:erdosrenyi}\nIn this section, we consider Erd\\\"os-R\\'enyi model $\\Gamma(n,p_n)$ of random graphs. A random graph $\\Gamma$ with this distribution is described as follows. Its vertex set is $[n]$ and for each pair $\\{i,j\\} \\subset [n]$  with $i \\neq j$, there is an edge between $i$ and $j$ with probability $p_n$. Moreover, all these events are independent. We are then interested in the following random variables, called {\\em subgraph count statistics}. If $\\gamma$ is a fixed graph of size $k$, then $\\SubGraph_\\gamma$ is the number of copies of $\\gamma$ {\\em contained} in the graph $\\Ga",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-046",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A bound on cumulants",
+      "pageStart": 81,
+      "pageEnd": 83,
+      "target": "../sections/sec-046-101-a-bound-on-cumulants.md",
+      "narrative": null,
+      "content": "\\subsubsection{Subgraph count statistics}\nIn the following we denote $\\arr(n,k)$ the set of \\emph{arrangements} in $[n]$ of length $k$, \\emph{i.e.}, lists of $k$ distinct elements in $[n]$. \nThe cardinality of $\\arr(n,k)$ is  the falling factorial \n$n\\fall{k}=n(n-1) \\cdots (n-k+1)$.\nLet $A=(a_1,\\dots,a_k)$ be an arrangement in $[n]$ of length $k$, and $\\gamma$ be a fixed graph with vertex set $[k]$. Recall that $\\Gamma=\\Gamma(n,p_{n})$ is a random Erd\\\"os-R\\'enyi graph on $[n]$. We denote $\\delta_\\gamma(A)$ the following random variable:\n\\begin{equation}\\delta_\\gamma(A) = \\begin{cases}\n     1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-047",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Polynomiality of cumulants",
+      "pageStart": 83,
+      "pageEnd": 85,
+      "target": "../sections/sec-047-102-polynomiality-of-cumulants.md",
+      "narrative": null,
+      "content": "\\subsubsection{Dealing with several arrangements}\nConsider a list $(A^1,\\dots,A^r)$ of arrangements. We associate to this data two graphs  (unless said explicitly, we always consider loopless simple graphs, and $V(G)$ and $E(G)$ denote respectively the edge and vertex sets of a graph $G$):\\vspace{2mm}\n\\begin{itemize}\n \\item the graph $G_\\AA$ has vertex set\n   $$V_{\\Bbbk}=V(G_{\\AA})= \\{ (t,i) \\,\\,|\\,\\, 1 \\le i \\le r, 1 \\le t \\le k_i \\}$$\nand an edge between $(t,i)$ and $(s,j)$ if and only if $a^i_t=a^j_s$. It is always a disjoint union of cliques. If the $A^i$'s are arrangements, then the graph",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-048",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Moderate deviations for subgraph count statistics",
+      "pageStart": 85,
+      "pageEnd": 88,
+      "target": "../sections/sec-048-103-moderate-deviations-for-subgraph-count-stati.md",
+      "narrative": null,
+      "content": "\\subsubsection{End of the proof of Theorem \\ref{thm:moddevgraphs}}\nWe would like to apply Proposition \\ref{prop:largedeviationscumulants} to the sequence $S_n=\\SubGraph_\\gamma-\\esper[\\SubGraph_\\gamma]$ with $\\alphan=n^2$ and $\\betan=n^{k-2}$. Let us check that $S_n$ indeed fulfills the hypothesis.\\vspace{2mm}\n\\begin{enumerate}\n\\item The uniform bound $|\\kappa^{(r)}(S_n)| \\leq (C r)^r \\alphan (\\betan)^r$, where $C$ does not depend on $n$,  corresponds to Proposition~\\ref{prop:boundcumulantsubgraph}; we may even choose $C=2k^4$.\\vspace{2mm}\n\\item We also have to check the speed of convergence:\n\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-049",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Random character values from central measures on partitions",
+      "pageStart": 88,
+      "pageEnd": 91,
+      "target": "../sections/sec-049-11-random-character-values-from-central-measures.md",
+      "narrative": null,
+      "content": "\\label{sec:central}\nOur Theorem~\\ref{thm:dependencygraphsrefined} can also be used to study certain models of random integer partitions. Recall that if $G$ is a finite group and if $\\tau$ is a function $G \\to \\C$ with $\\tau(e_{G})=1$ and $\\tau(gh)=\\tau(hg)$ (such a function is called a \\emph{trace} on $G$), then $\\tau$ can be expanded uniquely as a linear combination of normalized irreducible characters:\n$$\\tau=\\sum_{\\lambda \\in \\widehat{G}} \\,\\proba_{\\tau}[\\lambda]\\,\\widehat{\\chi}^{\\lambda},$$\nwhere $\\widehat{G}$ is the (finite) set of isomorphism classes of irreducible representations of $G$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-050",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 91,
+      "pageEnd": 93,
+      "target": "../sections/sec-050-111-preliminaries.md",
+      "narrative": null,
+      "content": "11.1.1. Non-commutative probability theory. The originality of this section is that, al-\nthough the problem is formulated in a classical probability space, it is natural to work\nin the setting of non-commutative probability theory.\nDeﬁnition 11.7. A non-commutative probability space is a complex unital ⋆-algebra A\nwith some linear functional ϕ : A →C such that ϕ(1) = 1 and, for any a ∈A , ϕ(a⋆a) ≥0.\nThis generalizes the notion of probability space: elements of A should be thought as\nrandom variables, while ϕ should be thought as the expectation. The difference is that,\nunlike random variables",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-051",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bounds and limits of the cumulants",
+      "pageStart": 93,
+      "pageEnd": 96,
+      "target": "../sections/sec-051-112-bounds-and-limits-of-the-cumulants.md",
+      "narrative": null,
+      "content": "\\label{subsec:boundcumulantchmu} \n\n\\subsubsection{The dependency graph for random character values} If $k=|\\mu|$, we are interested in the non-commutative random variables\n$$\\varSigma_{\\mu,n}=\\sum_{A \\in \\arr(n,k)} \\rho_{\\mu}(A) \\in \\C\\sym(n).$$\nAgain, to control the cumulants, we shall exhibit a dependency graph for the families of random variables $\\{\\rho_{\\mu}(A)\\}_{A \\in \\arr(n,k)}$.\n\nDue to the multiplicative form of Equation \\eqref{eq:def_tau_omega}, if $I$ and $J$ have disjoint subsets of $[n]$, the subalgebras $\\C\\sym(I)$ and $\\C\\sym(J)$ are tensor independent (here, $\\sym(I)$ denotes",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-052",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotics of the random character values and partitions",
+      "pageStart": 96,
+      "pageEnd": 100,
+      "target": "../sections/sec-052-113-asymptotics-of-the-random-character-values-a.md",
+      "narrative": null,
+      "content": "\\label{subsec:asymptoticrcv}\nFix an integer $k \\ge 2$, and consider the random variable\n$$V_{n,k}=n^{2/3}\\,(\\SubGraph_{\\rho}-p_{k}(\\omega)),$$ \nwhere $\\rho$ is a $k$-cycle. If $p_{2k-1}(\\omega)-(p_{k}(\\omega))^{2}>0$, then the previous results show that  \n$$\\esper[\\E^{zV_{n,k}}]=\\exp\\left(\\frac{n^{1/3}}{2}\\,\\sigma^2\\,z^2 + \\frac{1}{6} \\,L \\,z^3\\right)\n(1+o(1))\\!,$$ \nwhere $\\sigma$ and $L$ are the quantities given in the statement of Theorem~\\ref{thm:modgaussianrcv}.\nThis ends the proof of Theorem \\ref{thm:modgaussianrcv} and Corollary \\ref{cor:moderatedeviationcharacter}. Note that the speed o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1304.2934v4/blocks/prose-sec-053",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 100,
+      "pageEnd": 103,
+      "target": "../sections/sec-053-references.md",
+      "narrative": null,
+      "content": "[ABT03]\nR. Arratia, A. D. Barbour, and S. Tavaré. Logarithmic Combinatorial Structures: a Probabilistic\nApproach. EMS Monographs in Mathematics. European Mathematical Society, 2003.\n[Bax82]\nR. J. Baxter. Exactly solved models in statistical mechanics. Academic Press, 1982.\n[BDJ99]\nJ. Baik, P. Deift, and K. Johansson. On the distribution of the length of the longest increasing\nsubsequence of random permutations. J. Amer. Math. Soc., 12:1119–1178, 1999.\n[Bin86]\nN. H. Bingham. Variants on the Law of the iterated logarithm. Bull. London Math. Soc.,\n18(5):433–467, 1986.\n[BKN13]\nA. D. Barbour, E. Ko",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

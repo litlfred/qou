@@ -1,0 +1,478 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0203160v3",
+  "title": "arxiv-math-0203160v3",
+  "variant": "pdf",
+  "pages": 13,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Projective modules and their tensor products.",
+      "number": "2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-projective-modules-and-their-tensor-products"
+    },
+    {
+      "level": 1,
+      "title": "Connections and complex structures.",
+      "number": "3",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-connections-and-complex-structures"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-acknowledgments"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 67,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dieng",
+          "heading": false
+        },
+        {
+          "term": "theta-functions",
+          "heading": false
+        },
+        {
+          "term": "noncom",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0203160v3 [math.QA] 28 Oct 2002 Diﬀerential and complex geometry of two-dimensional noncommutative tori Momar Dieng Albert Schwarz∗ Department of Mathematics University of California Davis, CA 95616 Abstract We analyze in detail projective modules over two-dimensional noncom- mutative tori and complex structures on these modules.We concentrate our attention on properties of holomorphic vectors in these",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0203160v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 540,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "prime theta",
+          "heading": false
+        },
+        {
+          "term": "bimodule cal",
+          "heading": false
+        },
+        {
+          "term": "noncommutative tori",
+          "heading": false
+        },
+        {
+          "term": "theta modules",
+          "heading": false
+        },
+        {
+          "term": "two-dimensional noncommutative",
+          "heading": false
+        },
+        {
+          "term": "left theta",
+          "heading": false
+        },
+        {
+          "term": "noncommutative torus",
+          "heading": false
+        },
+        {
+          "term": "basic modules",
+          "heading": false
+        }
+      ],
+      "extract": "Differential geometry of noncommutative spaces, in particular, of noncommutative tori was developed by A. Connes [@Co1], [@Co2]. More detailed analysis of differential geometry of noncommutative tori was performed in [@Co3], [@Co4],[@Ri1], [@Ri2], [@Sc1], [@Sc2],[@Ko2]. Partly, the interest to this subject was motivated by the applications to string/M-theory found in [@Co4] (see [@Ko3] for review). Complex geometry",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-projective-modules-and-their-tensor-products",
+      "number": "2",
+      "title": "Projective modules and their tensor products.",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1246,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theta k-l",
+          "heading": false
+        },
+        {
+          "term": "theta prime",
+          "heading": false
+        },
+        {
+          "term": "frac k-l",
+          "heading": false
+        },
+        {
+          "term": "right theta",
+          "heading": false
+        },
+        {
+          "term": "left theta",
+          "heading": false
+        },
+        {
+          "term": "theta module",
+          "heading": false
+        },
+        {
+          "term": "theta alpha",
+          "heading": false
+        },
+        {
+          "term": "theta otimes",
+          "heading": false
+        }
+      ],
+      "extract": "One can define the algebra $T_{\\theta }^{d}$ of smooth functions on $d$ -dimensional noncommutative torus as an algebra of formal linear combinations $f=\\sum C_{\\overrightarrow{n}}U_{\\overrightarrow{n}}$ where $\\overrightarrow{n}\\in \\mathbb Z^{d}$ and $C_{\\overrightarrow{n}}$ are complex numbers tending to zero at infinity faster then any power and the multiplication is governed by the rule",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-connections-and-complex-structures",
+      "number": "3",
+      "title": "Connections and complex structures.",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1003,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nabla theta",
+          "heading": false
+        },
+        {
+          "term": "theta prime",
+          "heading": false
+        },
+        {
+          "term": "cal prime",
+          "heading": false
+        },
+        {
+          "term": "nabla alpha",
+          "heading": false
+        },
+        {
+          "term": "prime beta",
+          "heading": false
+        },
+        {
+          "term": "varphi prime",
+          "heading": false
+        },
+        {
+          "term": "overline nabla",
+          "heading": false
+        },
+        {
+          "term": "lambda nabla",
+          "heading": false
+        }
+      ],
+      "extract": "One can define a connection on a right $T_{\\theta }^{d}$-module $E$ as a set of ${\\mathbb C}$-linear operators $\\nabla _{1},...,\\nabla _{d}$ obeying Leibniz rule: $$\\nabla _{\\alpha }(ea)=\\nabla _{\\alpha }e\\cdot a+e\\cdot \\delta _{\\alpha }a\\label{con}$$ where $e\\in E,a\\in T_{\\theta }^{d}$ and the derivatives $\\delta _{\\alpha }a$ are specified by the formula $\\delta _{\\alpha }U_{\\overrightarrow{n}}=2\\pi",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1153,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "noncommutative tori",
+          "heading": false
+        },
+        {
+          "term": "qez",
+          "heading": false
+        },
+        {
+          "term": "noncommutative geometry",
+          "heading": false
+        },
+        {
+          "term": "rieﬀel",
+          "heading": false
+        },
+        {
+          "term": "schwarz",
+          "heading": false
+        },
+        {
+          "term": "manin",
+          "heading": false
+        },
+        {
+          "term": "tata lectures",
+          "heading": false
+        },
+        {
+          "term": "birkh auser",
+          "heading": false
+        }
+      ],
+      "extract": "We would like to thank Yu. Manin for his interest in our work, and for informa- tion that our results could be useful in number theory (Yu. Manin has explained the relation of our results to number theory in his recent preprint [11]). One of authors (A. Sch.) appreciates the hospitality of IHES and ESI where a part of this work was done. References [1] A. Connes. C∗–alg`ebres et g´eom´etrie diﬀ´erentielle. C. R.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "prime theta",
+      "heading": false
+    },
+    {
+      "term": "theta k-l",
+      "heading": false
+    },
+    {
+      "term": "theta modules",
+      "heading": false
+    },
+    {
+      "term": "cal prime",
+      "heading": false
+    },
+    {
+      "term": "underset theta",
+      "heading": false
+    },
+    {
+      "term": "theta alpha",
+      "heading": false
+    },
+    {
+      "term": "nabla theta",
+      "heading": false
+    },
+    {
+      "term": "right theta",
+      "heading": false
+    },
+    {
+      "term": "left theta",
+      "heading": false
+    },
+    {
+      "term": "frac theta",
+      "heading": false
+    },
+    {
+      "term": "theta otimes",
+      "heading": false
+    },
+    {
+      "term": "bimodule cal",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 4,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 5,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p8); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 5 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0203160v3"
+  }
+}

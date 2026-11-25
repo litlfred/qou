@@ -1,0 +1,1098 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2011.12932v2",
+  "title": "arxiv-2011.12932v2",
+  "variant": "pdf",
+  "pages": 26,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Historical overview",
+      "number": "2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-historical-overview"
+    },
+    {
+      "level": 2,
+      "title": "Definition of TQFT",
+      "number": null,
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-definition-of-tqft"
+    },
+    {
+      "level": 2,
+      "title": "Semisimple constructions",
+      "number": null,
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-semisimple-constructions"
+    },
+    {
+      "level": 2,
+      "title": "Early non-semisimple constructions",
+      "number": null,
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-early-non-semisimple-constructions"
+    },
+    {
+      "level": 2,
+      "title": "Renormalized non-semisimple constructions",
+      "number": null,
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-renormalized-non-semisimple-constructions"
+    },
+    {
+      "level": 1,
+      "title": "Turaev's notion of modular category",
+      "number": "3",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-3-turaevs-notion-of-modular-category"
+    },
+    {
+      "level": 1,
+      "title": "Semisimple quantum invariants and TQFTs",
+      "number": "4",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-4-semisimple-quantum-invariants-and-tqfts"
+    },
+    {
+      "level": 1,
+      "title": "T-modular categories from small quantum sl(2)",
+      "number": "5",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-5-t-modular-categories-from-small-quantum-sl2"
+    },
+    {
+      "level": 1,
+      "title": "Lyubashenko's notion of modular category",
+      "number": "6",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-6-lyubashenkos-notion-of-modular-category"
+    },
+    {
+      "level": 1,
+      "title": "Non-semisimple quantum invariants and TQFTs",
+      "number": "7",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-7-non-semisimple-quantum-invariants-and-tqfts"
+    },
+    {
+      "level": 1,
+      "title": "L-modular categories from small quantum sl(2)",
+      "number": "8",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-8-l-modular-categories-from-small-quantum-sl2"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. Ends",
+      "number": null,
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-appendix-a-ends"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 24,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 97,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "modular categories",
+          "heading": false
+        },
+        {
+          "term": "tqfts",
+          "heading": false
+        },
+        {
+          "term": "vladimir",
+          "heading": false
+        },
+        {
+          "term": "lineage",
+          "heading": false
+        }
+      ],
+      "extract": "MODULAR CATEGORIES AND TQFTS BEYOND SEMISIMPLICITY CHRISTIAN BLANCHET AND MARCO DE RENZI Abstract. Vladimir Turaev discovered in the early years of quantum topol- ogy that the notion of modular category was an appropriate structure for build- ing 3-dimensional Topological Quantum Field Theories (TQFTs for short) con- taining invariants of links in 3-manifolds such as Witten–Reshetikhin–Turaev ones. In recent years,",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2011.12932v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 386,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "modular categories",
+          "heading": false
+        },
+        {
+          "term": "modular category",
+          "heading": false
+        },
+        {
+          "term": "quantum field",
+          "heading": false
+        },
+        {
+          "term": "quantum topology",
+          "heading": false
+        },
+        {
+          "term": "turaev",
+          "heading": false
+        },
+        {
+          "term": "quantum group",
+          "heading": false
+        },
+        {
+          "term": "field theory",
+          "heading": false
+        },
+        {
+          "term": "mapping class",
+          "heading": false
+        }
+      ],
+      "extract": "After the work of Vaughan Jones \\cite{J85} and Edward Witten \\cite{W88,W89}, Vladimir Turaev played a key role in the foundation of quantum topology. Together with Nikolai Reshetikhin \\cite{RT91}, they were the first to obtain a mathematically rigorous construction of Witten's invariants of 3-dimensional manifolds. Turaev showed that the relevant algebraic structure underlying their approach was that of a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-historical-overview",
+      "number": "2",
+      "title": "Historical overview",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-definition-of-tqft",
+      "number": null,
+      "title": "Definition of TQFT",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 206,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tqft",
+          "heading": true
+        },
+        {
+          "term": "cobordisms",
+          "heading": false
+        },
+        {
+          "term": "textit",
+          "heading": false
+        },
+        {
+          "term": "disjoint union",
+          "heading": false
+        },
+        {
+          "term": "symmetric monoidal",
+          "heading": false
+        },
+        {
+          "term": "sigma",
+          "heading": false
+        }
+      ],
+      "extract": "A popular axiomatization of the notion of TQFT was proposed by Micheal Atiyah \\cite{A88}, who was inspired by a similar definition of Graeme Segal \\cite{S88} for the concept of a Conformal Field Theory (CFT for short). Paraphrasing Atiyah, a TQFT in dimension 3 can be defined as a symmetric monoidal functor from a category of 3-dimensional cobordisms to the category of vector spaces. In this definition, cobordism",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-semisimple-constructions",
+      "number": null,
+      "title": "Semisimple constructions",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 442,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "turaev approach",
+          "heading": false
+        },
+        {
+          "term": "topological invariants",
+          "heading": false
+        },
+        {
+          "term": "finite-dimensional ribbon",
+          "heading": false
+        },
+        {
+          "term": "ribbon hopf",
+          "heading": false
+        },
+        {
+          "term": "hopf algebras",
+          "heading": false
+        },
+        {
+          "term": "manifold invariants",
+          "heading": false
+        },
+        {
+          "term": "calc",
+          "heading": false
+        },
+        {
+          "term": "modular category",
+          "heading": false
+        }
+      ],
+      "extract": "In his seminal work \\cite{W88}, Witten defined topological invariants of closed oriented 3-manifolds in terms of Chern--Simons gauge theory, and he predicted that these invariants could be understood as part of a TQFT. Furthermore, he explained in \\cite{W89} that his construction actually provides a quantum field theoretical interpretation for the mysterious Jones polynomial \\cite{J85}, a topological invariant of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-early-non-semisimple-constructions",
+      "number": null,
+      "title": "Early non-semisimple constructions",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 675,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rml calc",
+          "heading": false
+        },
+        {
+          "term": "rmv calc",
+          "heading": false
+        },
+        {
+          "term": "non-semisimple",
+          "heading": true
+        },
+        {
+          "term": "bar calc",
+          "heading": false
+        },
+        {
+          "term": "category calc",
+          "heading": false
+        },
+        {
+          "term": "non-semisimple modular",
+          "heading": false
+        },
+        {
+          "term": "lyubashenko invariant",
+          "heading": false
+        },
+        {
+          "term": "bar fsl",
+          "heading": false
+        }
+      ],
+      "extract": "Reshetikhin and Turaev's work immediately sparked a wide interest in the newly born field of quantum topology, and some natural questions quickly emerged. First of all, is it possible to figure out the relevant combinatorics for elements of ribbon Hopf algebras arising from the construction of \\cite{RT90} without relying on their representation theory? Answering this question required learning how to deal with Hopf",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-renormalized-non-semisimple-constructions",
+      "number": null,
+      "title": "Renormalized non-semisimple constructions",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 914,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-semisimple constructions",
+          "heading": true
+        },
+        {
+          "term": "lyubashenko mapping",
+          "heading": false
+        },
+        {
+          "term": "textit admissible",
+          "heading": false
+        },
+        {
+          "term": "cgp invariant",
+          "heading": false
+        },
+        {
+          "term": "so-called textit",
+          "heading": false
+        },
+        {
+          "term": "category calc",
+          "heading": false
+        },
+        {
+          "term": "bar fsl",
+          "heading": false
+        },
+        {
+          "term": "modular categories",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{SS:renormalized_non-semisimple} A key ingredient that was missing from these early attempts at non-semisimple constructions was the theory of \\textit{modified traces} developed by Geer and Patureau together with many collaborators, among which Turaev \\cite{GPT07}, Kujawa \\cite{GKP10}, and Virelizier \\cite{GPV11}. Indeed, one way to explain the problems we face when trying to generalize Turaev's TQFT",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-3-turaevs-notion-of-modular-category",
+      "number": "3",
+      "title": "Turaev's notion of modular category",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 688,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "category calc",
+          "heading": false
+        },
+        {
+          "term": "pic graphical",
+          "heading": false
+        },
+        {
+          "term": "graphical rep",
+          "heading": false
+        },
+        {
+          "term": "ribbon category",
+          "heading": false
+        },
+        {
+          "term": "ribbon fusion",
+          "heading": false
+        },
+        {
+          "term": "müger center",
+          "heading": false
+        },
+        {
+          "term": "enumerate item",
+          "heading": false
+        },
+        {
+          "term": "lcoev",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{S:T-mod_cat} Using the language of \\cite{EGNO15}, a \\textit{T-modular category} (T for Turaev) is a ribbon fusion category whose S-matrix is invertible. The definition originally appeared in \\cite[Sec.~II.1.2]{T94} in a slightly more general form, but the version reported here has since become rather standard (compare with \\cite{BK01,TV17}). In order to better grasp this notion, let us proceed to unpack the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-4-semisimple-quantum-invariants-and-tqfts",
+      "number": "4",
+      "title": "Semisimple quantum invariants and TQFTs",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 946,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rmv calc",
+          "heading": false
+        },
+        {
+          "term": "calr calc",
+          "heading": false
+        },
+        {
+          "term": "functor calc",
+          "heading": false
+        },
+        {
+          "term": "dim calc",
+          "heading": false
+        },
+        {
+          "term": "calc left",
+          "heading": false
+        },
+        {
+          "term": "cald delta",
+          "heading": false
+        },
+        {
+          "term": "ribbon graphs",
+          "heading": false
+        },
+        {
+          "term": "textit categorical",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{S:TQFT_sem-sim} The diagrammatic interpretation for morphisms of ribbon categories which was discussed earlier highlights the fundamental interplay between algebra and topology arising in this context. In fact, it is a result of Turaev that certain topological gadgets called \\textit{ribbon graphs} provide the relevant topological structure underlying Penrose graphical notation \\cite[Thm.~I.2.5]{T94}. Indeed,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-5-t-modular-categories-from-small-quantum-sl2",
+      "number": "5",
+      "title": "T-modular categories from small quantum sl(2)",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1630,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "leqs frac",
+          "heading": false
+        },
+        {
+          "term": "rmv calc",
+          "heading": false
+        },
+        {
+          "term": "bar calc",
+          "heading": false
+        },
+        {
+          "term": "mid leqs",
+          "heading": false
+        },
+        {
+          "term": "tilde calc",
+          "heading": false
+        },
+        {
+          "term": "integer leqs",
+          "heading": false
+        },
+        {
+          "term": "bar fsl",
+          "heading": false
+        },
+        {
+          "term": "category calc",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{S:sl_2_sem-sim} The Witten--Reshetikhin--Turaev TQFT was first constructed from the restricted quantum group of $\\fsl_2$ at even roots of unity. A careful exposition can be found in \\cite{T94}, while a popular alternative construction, based on Jones--Kauffman skein theory, can be found in \\cite{BHMV95}. This skein construction also produces TQFTs when the quantum parameter is an odd root of unity. Referring",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-6-lyubashenkos-notion-of-modular-category",
+      "number": "6",
+      "title": "Lyubashenko's notion of modular category",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1450,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calc otimes",
+          "heading": false
+        },
+        {
+          "term": "category calc",
+          "heading": false
+        },
+        {
+          "term": "lyubashenko",
+          "heading": true
+        },
+        {
+          "term": "end calc",
+          "heading": false
+        },
+        {
+          "term": "times calc",
+          "heading": false
+        },
+        {
+          "term": "coend call",
+          "heading": false
+        },
+        {
+          "term": "pic hopf",
+          "heading": false
+        },
+        {
+          "term": "prop coend",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{S:L-mod_cat} An \\textit{L-modular category} (L for Lyubashenko) can be defined as a finite ribbon category whose Müger center is trivial. Remark that this is not the original definition of Lyubashenko, but it is equivalent to it. This is a consequence of a result of Shimizu \\cite{S16}, who compared several notions of non-degeneracy for the braiding of a finite ribbon category, proving the equivalence of four",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-7-non-semisimple-quantum-invariants-and-tqfts",
+      "number": "7",
+      "title": "Non-semisimple quantum invariants and TQFTs",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1072,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rmv calc",
+          "heading": false
+        },
+        {
+          "term": "calr calc",
+          "heading": false
+        },
+        {
+          "term": "rml calc",
+          "heading": false
+        },
+        {
+          "term": "cong calc",
+          "heading": false
+        },
+        {
+          "term": "calr lambda",
+          "heading": false
+        },
+        {
+          "term": "textit blue",
+          "heading": false
+        },
+        {
+          "term": "cald delta",
+          "heading": false
+        },
+        {
+          "term": "invariant rml",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{S:TQFT_non-sem-sim} Using the coend $\\calL$ and the integral $\\Lambda$, it is possible to develop a diagrammatic calculus which steps outside of the framework provided by the Reshetikhin--Turaev functor. This time, the topological gadgets underlying this graphical notation are called \\textit{bichrome graphs}. Very roughly speaking, bichrome graphs are ribbon graphs whose edges can be of two kinds, either",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-8-l-modular-categories-from-small-quantum-sl2",
+      "number": "8",
+      "title": "L-modular categories from small quantum sl(2)",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 867,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "leqs r-n",
+          "heading": false
+        },
+        {
+          "term": "rmv calc",
+          "heading": false
+        },
+        {
+          "term": "bar fsl",
+          "heading": false
+        },
+        {
+          "term": "cases leqs",
+          "heading": false
+        },
+        {
+          "term": "rml calc",
+          "heading": false
+        },
+        {
+          "term": "calc mods",
+          "heading": false
+        },
+        {
+          "term": "category calc",
+          "heading": false
+        },
+        {
+          "term": "non-sem-sim prime",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{S:sl_2_non-sem-sim} The small quantum group $\\bar{U}_q \\fsl_2$ introduced in Section \\ref{S:sl_2_sem-sim} is factorizable. This is proved in \\cite[Ex.~3.4.3]{M95} by looking directly at the M-matrix $M \\in \\bar{U}_q \\fsl_2 \\otimes \\bar{U}_q \\fsl_2$, which is given by \\[ M := \\frac{1}{r} \\sum_{a,b,c,d=0}^{r-1} \\frac{\\{ 1 \\}^{a+b}}{[a]![b]!} q^{\\frac{a(a-1)+b(b-1)}{2} - 2 cd - (b+c)(b-d)} F^b K^c E^a \\otimes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-appendix-a-ends",
+      "number": null,
+      "title": "Appendix A. Ends",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1502,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dinatural transformation",
+          "heading": false
+        },
+        {
+          "term": "h-module morphism",
+          "heading": false
+        },
+        {
+          "term": "every h-module",
+          "heading": false
+        },
+        {
+          "term": "idx",
+          "heading": false
+        },
+        {
+          "term": "idh",
+          "heading": false
+        },
+        {
+          "term": "idy",
+          "heading": false
+        },
+        {
+          "term": "braided hopf",
+          "heading": false
+        },
+        {
+          "term": "every object",
+          "heading": false
+        }
+      ],
+      "extract": "Let us consider the functor K : C × Cop →C determined by (X, Y ) 7→X ⊗Y ∗. A dinatural transformation of target K is given by an object U ∈C equipped with a family {dX : U →X ⊗X∗}X∈C of morphisms of C satisfying (f ⊗idX∗) ◦dX = (idY ⊗f ∗) ◦dY for every morphism f : X →Y of C, see [47, Sec. IX.4]. The end of K is the universal dinatural transformation of target K, which means it is an object E ∈C with a dinatural",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1385,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-semisimple tqfts",
+          "heading": false
+        },
+        {
+          "term": "hennings invariants",
+          "heading": false
+        },
+        {
+          "term": "unrolled quantum",
+          "heading": false
+        },
+        {
+          "term": "patureau-mirand",
+          "heading": false
+        },
+        {
+          "term": "modern phys",
+          "heading": false
+        },
+        {
+          "term": "renzi",
+          "heading": false
+        },
+        {
+          "term": "gainutdinov",
+          "heading": false
+        },
+        {
+          "term": "geer",
+          "heading": false
+        }
+      ],
+      "extract": "[1] H. Andersen, Tensor products of quantized tilting modules, Comm. Math. Phys. 149 (1992), No. 1, 149–159. [2] J. Andersen, Asymptotic Faithfulness of the Quantum SU(n) Representations of the Mapping Class Groups, Ann. of Math. (2) 163 (2006), No. 1, 347–368; arXiv:math/0204084 [math.QA]. [3] M. Atiyah, Topological Quantum Field Theories, Publ. Math. Inst. Hautes Études Sci. 68 (1988), 175–186. [4] A. Beliakova,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "rmv calc",
+      "heading": false
+    },
+    {
+      "term": "category calc",
+      "heading": false
+    },
+    {
+      "term": "bar calc",
+      "heading": false
+    },
+    {
+      "term": "calc otimes",
+      "heading": false
+    },
+    {
+      "term": "rml calc",
+      "heading": false
+    },
+    {
+      "term": "cong calc",
+      "heading": false
+    },
+    {
+      "term": "calr calc",
+      "heading": false
+    },
+    {
+      "term": "calc left",
+      "heading": false
+    },
+    {
+      "term": "end calc",
+      "heading": false
+    },
+    {
+      "term": "calc mods",
+      "heading": false
+    },
+    {
+      "term": "functor calc",
+      "heading": false
+    },
+    {
+      "term": "dim calc",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 14,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 15,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p24); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 13
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 15 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2011.12932v2"
+  }
+}

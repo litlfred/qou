@@ -1,0 +1,83 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2311.14221v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2311.14221v2",
+  "contains": [
+    "library/arxiv-2311.14221v2/sections/sec-front-matter",
+    "library/arxiv-2311.14221v2/sections/sec-000",
+    "library/arxiv-2311.14221v2/sections/sec-001",
+    "library/arxiv-2311.14221v2/sections/sec-002",
+    "library/arxiv-2311.14221v2/sections/sec-003",
+    "library/arxiv-2311.14221v2/sections/sec-004",
+    "library/arxiv-2311.14221v2/sections/sec-005",
+    "library/arxiv-2311.14221v2/sections/sec-006",
+    "library/arxiv-2311.14221v2/sections/sec-007",
+    "library/arxiv-2311.14221v2/sections/sec-008",
+    "library/arxiv-2311.14221v2/sections/sec-009",
+    "library/arxiv-2311.14221v2/sections/sec-010",
+    "library/arxiv-2311.14221v2/sections/sec-011",
+    "library/arxiv-2311.14221v2/sections/sec-012",
+    "library/arxiv-2311.14221v2/sections/sec-013",
+    "library/arxiv-2311.14221v2/sections/sec-014",
+    "library/arxiv-2311.14221v2/sections/sec-015",
+    "library/arxiv-2311.14221v2/sections/sec-016",
+    "library/arxiv-2311.14221v2/sections/sec-017",
+    "library/arxiv-2311.14221v2/sections/sec-018",
+    "library/arxiv-2311.14221v2/sections/sec-019",
+    "library/arxiv-2311.14221v2/sections/sec-020",
+    "library/arxiv-2311.14221v2/sections/sec-021",
+    "library/arxiv-2311.14221v2/sections/sec-022",
+    "library/arxiv-2311.14221v2/sections/sec-023",
+    "library/arxiv-2311.14221v2/sections/sec-024",
+    "library/arxiv-2311.14221v2/sections/sec-025",
+    "library/arxiv-2311.14221v2/sections/sec-026",
+    "library/arxiv-2311.14221v2/sections/sec-027",
+    "library/arxiv-2311.14221v2/sections/sec-028"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS — The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B →C is an exact\n\n**FIBRE FUNCTORS AND RECONSTRUCTION OF HOPF ALGEBRAS**\n\n*SIMON LENTNER AND MARTÍN MOMBELLI*\n\n48 pp, 30 sections.\n\n**Abstract.** The main objective of the present paper is to present a ver- sion of the Tannaka-Krein type reconstruction Theorems: If F : B →C is an exact faithful monoidal functor of tensor categories, one would like to realize B as category of representations of a braided Hopf alge- bra H(F) in C. We prove that this is the case iﬀB has the additional structure of a monoidal C-module category compatible with F, which equivalently means that F admits a monoidal section. For Hopf alge- bras, this reduces to a version of the Radford projection theorem. The Hopf algebra is constructed through the relative coend for module cate- gories. We expect this basic result to have a wide range of applications, in particular in the absence of ﬁbre functors, and we give some applica- tions. One particular motivation was the logarithmic Kazhdan-Lusztig conjecture.\n\n**Outline.** Front matter; Introduction; Background; Our approach; Acknowledgments; 1 Preliminaries; 2 Representations of tensor categories; 2.1 Finite tensor categories; 2.2 Module categories over tensor categories; 2.3 The internal Hom; 3 The (co)end for module categories; 3.1 Existence of (co)ends; 4 Hopf algebras in braided tensor categories; 4.2 Yetter-Drinfeld modules; 5 Monoidal module categories; 5.1 Sections of monoidal functors; 5.2 Some natural module transformations; 6 Fiber functors and reconstruction results",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://creativecommons.org/licenses/by/4.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://creativecommons.org/licenses/by/4.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2311.14221&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2311.14221v2",
+    "title_source": "slug",
+    "source_file": "2311.14221v2.pdf",
+    "source_sha256": "5aa4126bbb6df6ebde6299aff731b0ddccee756132b98f560c850996d73c3d6e",
+    "pages": 48,
+    "arxiv": {
+      "id": "2311.14221",
+      "version": "2",
+      "primary_class": "math.QA",
+      "stamp_date": "16 May 2024"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

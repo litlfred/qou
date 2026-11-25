@@ -1,0 +1,137 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-lat-0003021v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-lat-0003021v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-lat/0003021v3  19 May 2000\nLow-lying Eigenvalues of the QCD Dirac Operator\nat Finite Temperature\nP.H. Damgaarda, U.M. Hellerb, R. Niclasena and K. Rummukainenc,d\naThe Niels Bohr Institute and cNORDITA\nBlegdamsvej 17\nDK-2100 Copenhagen, Denmark\nbCSIT\nFlorida State University\nTallahassee, FL 32306-4130, USA\ndHelsinki Institute of Physics,\nP.O.Box 9, 00014 University of Helsinki, Finland\nOctober 29, 2018\nAbstract\nWe compute the low-lying spectrum of the staggered Dirac operator above and below the ﬁnite\ntemperature phase transition in both quenched QCD and in dynamical four ﬂavor QCD. I",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-lat-0003021v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The correlations of Dirac operator eigenvalues in QCD and related \ntheories have been shown to have a fascinating relation to Random Matrix\nTheory. There are two very different domains of interest here. One is\nthe so-called ``bulk'' of the eigenvalue spectrum of the Dirac operator,\nfar from both the infrared and the ultraviolet ends. The other is the\nso-called ``hard edge'' at $\\lambda \\sim 0, ~i.e.$ the infrared end of the \nspectrum in theories with spontaneous breaking of chiral symmetry. The\nrelevance of Random Matrix Theory in describing eigenvalue correlations\nof the Dirac operator in the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-lat-0003021v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quenched QCD at high temperature",
+      "pageStart": 4,
+      "pageEnd": 9,
+      "target": "../sections/sec-001-2-quenched-qcd-at-high-temperature.md",
+      "narrative": null,
+      "content": "\\label{quenched}\n\nFor our quenched finite temperature Monte Carlo\nsimulations we have used lattices\nwith temporal extent $N_t=4$ and up to three spatial volumes: $8^3$,\n$12^3$ and $16^3$.  For $N_t=4$ the deconfinement phase transition for\nSU(3) pure gauge theory with Wilson action\nhas been very accurately determined,\noccurring at lattice gauge coupling $\\beta_c=5.6925(2)$~\\cite{T_c}.\nIt has for long been assumed that the chiral phase transition of the\nquenched theory occurs at exactly this deconfinement phase transition\npoint of the pure gauge theory, but this has recently been challenged \n\\c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-lat-0003021v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "QCD with four dynamical fermions at high temperature",
+      "pageStart": 9,
+      "pageEnd": 14,
+      "target": "../sections/sec-002-3-qcd-with-four-dynamical-fermions-at-high-tempe.md",
+      "narrative": null,
+      "content": "\\label{dynamical}\n\nFor our dynamical simulations we chose to work with $n_f=4$ flavors.\nFour is the ``natural'' number of flavors for staggered fermions\nin the continuum limit, and an efficient exact simulation algorithm\ncan be used, the Hybrid Monte Carlo algorithm. In addition, the\nfour flavor theory is known to have a rather strong first order finite\ntemperature phase transition~\\cite{Brown}. Therefore, tunnelings\ninto the low temperature phase are strongly suppressed already on\nrather small systems and at temperatures quite close to $T_c$.\n\n\\noi\nWe made dynamical simulations with quark mas",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-lat-0003021v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Random Matrix Theory",
+      "pageStart": 14,
+      "pageEnd": 19,
+      "target": "../sections/sec-003-4-random-matrix-theory.md",
+      "narrative": null,
+      "content": "\\label{RMT}\n\nWe have just shown our lattice gauge theory data for the spectrum of the\nDirac operator below, around, and above $T_c$, and compared it with\nsome of the analytical formulas of Random Matrix Theory in the limit\nwhere the size of these matrices $N$ goes to infinity. It is of interest\nto see how a simple {\\em model} of a chiral phase transition in Random\nMatrix Theory behaves at finite $N$, as some external parameter (mimicking\ntemperature $T$) is changed. The model we shall focus on here\nwas proposed by Jackson and Verbaarschot in the first of Ref.~\\cite{JV}\nand has also been studie",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-lat-0003021v3/blocks/prop-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "prop-sec-004-01.md",
+      "narrative": null,
+      "content": "In the quenched case we do not see the accumulation of small Dirac operator eigenvalues around $\\lambda=0$ that was observed with overlap fermions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-lat-0003021v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "../sections/sec-004-5-conclusions.md",
+      "narrative": null,
+      "content": "The purpose of this study has been to find the extent to which Random\nMatrix Theory may be able to describe low-lying eigenvalue distributions and\ncorrelations between low-lying\neigenvalues of the staggered Dirac operator at finite\ntemperature. We have also been interested in testing the quenched theory\nwith staggered fermions in the light of recent results with overlap\nfermions \\cite{EHKN_fT}, which indicated that the chiral \nfinite-temperature phase transition in the quenched theory may be more\nsubtle than previously expected. In the quenched case we do not see the\naccumulation of small Dira",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-0706.2213v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "NON–ABELIAN REIDEMEISTER TORSION FOR TWIST KNOTS",
+      "dcterms:creator": [
+        "JÉR ÔME DUBOIS, VU HUYNH",
+        "YAMAGUCHI, YOSHIKAZU"
+      ],
+      "dcterms:issued": "D:20210726",
+      "dcterms:identifier": "https://arxiv.org/abs/0706.2213",
+      "dcterms:abstract": "This paper gives an explicit formula for the SL 2(C)−non–abelian Reidemeister torsion as deﬁned in [Dub06] in the case of twist knots. For hyperbolic twist knots, we also prove that the non–abelian Reidemeister torsion at the holonomy representation can be expressed as a rational function evaluated at the cusp shape of the knot.",
+      "dcterms:source": "library/arxiv-0706.2213v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-0706.2213v3"
+    }
+  ]
+}

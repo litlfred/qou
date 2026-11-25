@@ -1,0 +1,39 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2608.15898v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Universality and Kinematic Dependence of Hadronization Effects in DIS Global Event Shapes",
+      "dcterms:creator": [
+        "Boughezal, Radja",
+        "1",
+        "Cao, ∗Haotian",
+        "1",
+        "2",
+        "Kang, † Zhong-Bo",
+        "3",
+        "4",
+        "2",
+        "‡"
+      ],
+      "dcterms:identifier": "https://arxiv.org/abs/2608.15898",
+      "dcterms:source": "library/arxiv-2608.15898v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2608.15898v1"
+    }
+  ]
+}

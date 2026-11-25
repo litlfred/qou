@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1501.01574v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "KNOT CABLING AND THE DEGREE OF THE COLORED JONES POLYNOMIAL",
+      "dcterms:creator": [
+        "KALFAGIANNI, EFSTRATIA",
+        "TRAN, ANH T."
+      ],
+      "dcterms:issued": "D:20150907",
+      "dcterms:identifier": "https://arxiv.org/abs/1501.01574",
+      "dcterms:abstract": "We study the behavior of the degree of the colored Jones polynomial and the boundary slopes of knots under the operation of cabling. We show that, under certain hypothesis on this degree, if a knot K satisﬁes the Slope Conjecture then a (p, q)-cable of K satisﬁes the conjecture, provided that p/q is not a Jones slope of K. As an application we prove the Slope Conjecture for iterated cables of adequate knots and for iterated torus knots. Furthermore we show that, for these knots, the degree of the colored Jones polynomial also determines the topology of a surface that satisﬁes the Slope Conjecture. We also state a conjecture suggesting a topological interpretation of the linear terms of the degree of the colored Jones polynomial (Conjecture 5.1), and we prove it for the following classes of knots: iterated torus knots and iterated cables of adequate knots, iterated cables of several non-alternating knots with up to nine crossings, pretzel knots of type (−2, 3, p) and their cables, and two-fusion knots.",
+      "dcterms:source": "library/arxiv-1501.01574v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1501.01574v3"
+    }
+  ]
+}

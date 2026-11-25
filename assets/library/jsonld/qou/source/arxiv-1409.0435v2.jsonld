@@ -1,0 +1,66 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1409.0435v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Asymptotics for Toeplitz determinants: perturbation of symbols with a gap",
+  "contains": [
+    "library/arxiv-1409.0435v2/sections/sec-front-matter",
+    "library/arxiv-1409.0435v2/sections/sec-000",
+    "library/arxiv-1409.0435v2/sections/sec-001",
+    "library/arxiv-1409.0435v2/sections/sec-002",
+    "library/arxiv-1409.0435v2/sections/sec-003",
+    "library/arxiv-1409.0435v2/sections/sec-004",
+    "library/arxiv-1409.0435v2/sections/sec-005",
+    "library/arxiv-1409.0435v2/sections/sec-006",
+    "library/arxiv-1409.0435v2/sections/sec-007",
+    "library/arxiv-1409.0435v2/sections/sec-008",
+    "library/arxiv-1409.0435v2/sections/sec-009"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Asymptotics for Toeplitz determinants: perturbation of symbols with a gap — We study the determinants of Toeplitz matrices as the size of the matrices tends to inﬁnity, in the particular case where\n\n**Asymptotics for Toeplitz determinants: perturbation of symbols with a gap**\n\n*Christophe Charlier∗and Tom Claeys∗*\n\n28 pp, 14 sections.\n\n**Abstract.** We study the determinants of Toeplitz matrices as the size of the matrices tends to inﬁnity, in the particular case where the symbol has two jump discontinuities and tends to zero on an arc of the unit circle at a suﬃciently fast rate. We generalize an asymptotic expansion by Widom [22], which was known for symbols supported on an arc. We highlight applications of our results in the Circular Unitary Ensemble and in the study of Fredholm determinants associated to the sine kernel.\n\n**Outline.** Abstract; Introduction; 2 I′; 2 K′; 0 (2(−ζ); 2 W(z)σ3,; 2 W(z)σ3 1; 1 We get; 12 (0) = sin θ0; 2 (if W = 0),; 12 (0) + R12(0)P (∞); 2 O(n1/2),; Acknowledgements; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1409.0435&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1409.0435v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1409.0435v2.pdf",
+    "source_sha256": "0c6abbb9c5a720d99c94bd059f63fe790b12d001453b7b2b13923ea406193a9b",
+    "pages": 28,
+    "arxiv": {
+      "id": "1409.0435",
+      "version": "2",
+      "primary_class": "math-ph",
+      "stamp_date": "25 Feb 2015"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

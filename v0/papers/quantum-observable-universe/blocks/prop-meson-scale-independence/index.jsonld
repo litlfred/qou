@@ -1,0 +1,38 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-meson-scale-independence",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:meson-scale-independence",
+  "kind": "proposition",
+  "title": "The meson mass scale $m_\\pi$ is independent of $(m_\\mathfrak{e}, q_0)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-meson",
+    "papers/quantum-observable-universe/blocks/prop-frobenius-lepton-meson-bridge",
+    "papers/quantum-observable-universe/blocks/prop-hoefsmit-binding-amplitude"
+  ],
+  "cites": [
+    "references/jones1987",
+    "references/wenzl1988c"
+  ],
+  "tags": [
+    "meson",
+    "pion",
+    "independence",
+    "hopf-link",
+    "sdp",
+    "calibration"
+  ],
+  "leanRef": "qou:QOU.ParticleInteractions.meson_scale_independence",
+  "text": "meson-scale-independence.md",
+  "leanSource": "meson-scale-independence.lean",
+  "provenance": "authored"
+}

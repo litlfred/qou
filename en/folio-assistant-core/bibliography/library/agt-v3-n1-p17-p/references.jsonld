@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/agt-v3-n1-p17-p",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "Skein-theoretical derivation of some formulas of Habiro",
+      "dcterms:creator": [
+        "Masbaum, Gregor"
+      ],
+      "dcterms:issued": "D:19103061",
+      "dcterms:abstract": "We use skein theory to compute the coeﬃcients of certain power series considered by Habiro in his theory of sl2 invariants of integral homol- ogy 3-spheres. Habiro originally derived these formulas using the quantum group Uqsl2. As an application, we give a formula for the colored Jones polynomial of twist knots, generalizing formulas of Habiro and Le for the trefoil and the ﬁgure eight knot.",
+      "dcterms:source": "library/agt-v3-n1-p17-p/manifest.jsonld",
+      "dcterms:hasVersion": "library/agt-v3-n1-p17-p"
+    }
+  ]
+}

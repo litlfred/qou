@@ -1,0 +1,4552 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1105.2919v1",
+  "title": "Chiral eﬀective ﬁeld theory and nuclear forces",
+  "variant": "pdf",
+  "pages": 93,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction and historical perspective",
+      "number": "1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction-and-historical-perspective"
+    },
+    {
+      "level": 1,
+      "title": "Effective field theory for low-energy QCD",
+      "number": "2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-effective-field-theory-for-low-energy-qcd"
+    },
+    {
+      "level": 2,
+      "title": "Symmetries of low-energy QCD",
+      "number": "2.1",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-symmetries-of-low-energy-qcd"
+    },
+    {
+      "level": 3,
+      "title": "Chiral symmetry",
+      "number": "2.1.1",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-211-chiral-symmetry"
+    },
+    {
+      "level": 3,
+      "title": "Explicit symmetry breaking",
+      "number": "2.1.2",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-212-explicit-symmetry-breaking"
+    },
+    {
+      "level": 3,
+      "title": "Spontaneous symmetry breaking",
+      "number": "2.1.3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-213-spontaneous-symmetry-breaking"
+    },
+    {
+      "level": 2,
+      "title": "Chiral effective Lagrangians",
+      "number": "2.2",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-22-chiral-effective-lagrangians"
+    },
+    {
+      "level": 3,
+      "title": "Relativistic formulation",
+      "number": "2.2.1",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-221-relativistic-formulation"
+    },
+    {
+      "level": 3,
+      "title": "Heavy baryon formalism",
+      "number": "2.2.2",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-222-heavy-baryon-formalism"
+    },
+    {
+      "level": 2,
+      "title": "Nucleon contact Lagrangians",
+      "number": "2.3",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-23-nucleon-contact-lagrangians"
+    },
+    {
+      "level": 2,
+      "title": "Summary: Effective Lagrangians organized by interaction index",
+      "number": "2.4",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-24-summary-effective-lagrangians-organized-by-in"
+    },
+    {
+      "level": 1,
+      "title": "Nuclear forces from EFT: Overview",
+      "number": "3",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-3-nuclear-forces-from-eft-overview"
+    },
+    {
+      "level": 2,
+      "title": "Chiral perturbation theory and power counting",
+      "number": "3.1",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-31-chiral-perturbation-theory-and-power-counting"
+    },
+    {
+      "level": 2,
+      "title": "The hierarchy of nuclear forces",
+      "number": "3.2",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-32-the-hierarchy-of-nuclear-forces"
+    },
+    {
+      "level": 1,
+      "title": "Two-nucleon interactions",
+      "number": "4",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-4-two-nucleon-interactions"
+    },
+    {
+      "level": 2,
+      "title": "Pion-exchange contributions in ChPT",
+      "number": "4.1",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-41-pion-exchange-contributions-in-chpt"
+    },
+    {
+      "level": 3,
+      "title": "One-pion exchange",
+      "number": "4.1.1",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-411-one-pion-exchange"
+    },
+    {
+      "level": 3,
+      "title": "Two-pion exchange",
+      "number": "4.1.2",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-412-two-pion-exchange"
+    },
+    {
+      "level": 3,
+      "title": "Three-pion exchange",
+      "number": "4.1.3",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-413-three-pion-exchange"
+    },
+    {
+      "level": 2,
+      "title": "Perturbative NN scattering in peripheral partial waves",
+      "number": "4.2",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-42-perturbative-nn-scattering-in-peripheral-part"
+    },
+    {
+      "level": 2,
+      "title": "NN contact terms",
+      "number": "4.3",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-43-nn-contact-terms"
+    },
+    {
+      "level": 3,
+      "title": "Zeroth order (LO)",
+      "number": "4.3.1",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-431-zeroth-order-lo"
+    },
+    {
+      "level": 3,
+      "title": "Second order (NLO)",
+      "number": "4.3.2",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-432-second-order-nlo"
+    },
+    {
+      "level": 3,
+      "title": "Fourth order (N3LO)",
+      "number": "4.3.3",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-433-fourth-order-n3lo"
+    },
+    {
+      "level": 2,
+      "title": "Definition of NN potential",
+      "number": "4.4",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-44-definition-of-nn-potential"
+    },
+    {
+      "level": 2,
+      "title": "Renormalization",
+      "number": "4.5",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-45-renormalization"
+    },
+    {
+      "level": 3,
+      "title": "Regularization and non-perturbative renormalization",
+      "number": "4.5.1",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-451-regularization-and-non-perturbative-renormal"
+    },
+    {
+      "level": 3,
+      "title": "Renormalization beyond leading order",
+      "number": "4.5.2",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-452-renormalization-beyond-leading-order"
+    },
+    {
+      "level": 3,
+      "title": "Back to the beginnings",
+      "number": "4.5.3",
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-453-back-to-the-beginnings"
+    },
+    {
+      "level": 3,
+      "title": "Concluding the renormalization issue",
+      "number": "4.5.4",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-454-concluding-the-renormalization-issue"
+    },
+    {
+      "level": 2,
+      "title": "Constructing quantitative chiral NN potentials",
+      "number": "4.6",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-46-constructing-quantitative-chiral-nn-potential"
+    },
+    {
+      "level": 3,
+      "title": "What order?",
+      "number": "4.6.1",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-461-what-order"
+    },
+    {
+      "level": 3,
+      "title": "Charge-dependence",
+      "number": "4.6.2",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-462-charge-dependence"
+    },
+    {
+      "level": 3,
+      "title": "A quantitative NN potential at N3LO",
+      "number": "4.6.3",
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-463-a-quantitative-nn-potential-at-n3lo"
+    },
+    {
+      "level": 1,
+      "title": "Nuclear many-body forces",
+      "number": "5",
+      "page": 50,
+      "pageLabel": "50",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-5-nuclear-many-body-forces"
+    },
+    {
+      "level": 2,
+      "title": "Three-nucleon forces",
+      "number": "5.1",
+      "page": 51,
+      "pageLabel": "51",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-51-three-nucleon-forces"
+    },
+    {
+      "level": 3,
+      "title": "Next-to-leading order",
+      "number": "5.1.1",
+      "page": 51,
+      "pageLabel": "51",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-511-next-to-leading-order"
+    },
+    {
+      "level": 3,
+      "title": "Next-to-next-to-leading order",
+      "number": "5.1.2",
+      "page": 51,
+      "pageLabel": "51",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-512-next-to-next-to-leading-order"
+    },
+    {
+      "level": 3,
+      "title": "Next-to-next-to-next-to-leading order",
+      "number": "5.1.3",
+      "page": 52,
+      "pageLabel": "52",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-513-next-to-next-to-next-to-leading-order"
+    },
+    {
+      "level": 3,
+      "title": "The 3NF at N4LO",
+      "number": "5.1.4",
+      "page": 53,
+      "pageLabel": "53",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-514-the-3nf-at-n4lo"
+    },
+    {
+      "level": 3,
+      "title": "3NF summary",
+      "number": "5.1.5",
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-515-3nf-summary"
+    },
+    {
+      "level": 2,
+      "title": "Four-nucleon forces",
+      "number": "5.2",
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-041-52-four-nucleon-forces"
+    },
+    {
+      "level": 1,
+      "title": "Introducing -isobar degrees of freedom",
+      "number": "6",
+      "page": 55,
+      "pageLabel": "55",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-042-6-introducing--isobar-degrees-of-freedom"
+    },
+    {
+      "level": 1,
+      "title": "Conclusions",
+      "number": "7",
+      "page": 58,
+      "pageLabel": "58",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-043-7-conclusions"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A Notation, conventions, and Feynman rules",
+      "number": null,
+      "page": 59,
+      "pageLabel": "59",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-044-appendix-a-notation-conventions-and-feynman-rule"
+    },
+    {
+      "level": 2,
+      "title": "Appendix A.1 Notation and conventions",
+      "number": null,
+      "page": 59,
+      "pageLabel": "59",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-045-appendix-a1-notation-and-conventions"
+    },
+    {
+      "level": 2,
+      "title": "Appendix A.2 Feynman rules",
+      "number": null,
+      "page": 61,
+      "pageLabel": "61",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-046-appendix-a2-feynman-rules"
+    },
+    {
+      "level": 3,
+      "title": "Appendix A.2.1 Leading order",
+      "number": null,
+      "page": 62,
+      "pageLabel": "62",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-047-appendix-a21-leading-order"
+    },
+    {
+      "level": 3,
+      "title": "Appendix A.2.2 Next-to-leading order",
+      "number": null,
+      "page": 63,
+      "pageLabel": "63",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-048-appendix-a22-next-to-leading-order"
+    },
+    {
+      "level": 1,
+      "title": "Appendix B Two-pion exchange contributions to the 2NF at NLO",
+      "number": null,
+      "page": 63,
+      "pageLabel": "63",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-049-appendix-b-two-pion-exchange-contributions-to-th"
+    },
+    {
+      "level": 2,
+      "title": "Appendix B.1 Triangle diagrams",
+      "number": null,
+      "page": 63,
+      "pageLabel": "63",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-050-appendix-b1-triangle-diagrams"
+    },
+    {
+      "level": 3,
+      "title": "Appendix B.1.1 The triangles in covariant perturbation theory",
+      "number": null,
+      "page": 63,
+      "pageLabel": "63",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-051-appendix-b11-the-triangles-in-covariant-perturba"
+    },
+    {
+      "level": 3,
+      "title": "Appendix B.1.2 Dimensional regularization of the triangles",
+      "number": null,
+      "page": 66,
+      "pageLabel": "66",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-052-appendix-b12-dimensional-regularization-of-the-t"
+    },
+    {
+      "level": 2,
+      "title": "Appendix B.2 Football diagram",
+      "number": null,
+      "page": 68,
+      "pageLabel": "68",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-053-appendix-b2-football-diagram"
+    },
+    {
+      "level": 3,
+      "title": "Appendix B.2.1 The football in covariant perturbation theory",
+      "number": null,
+      "page": 68,
+      "pageLabel": "68",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-054-appendix-b21-the-football-in-covariant-perturbat"
+    },
+    {
+      "level": 3,
+      "title": "Appendix B.2.2 The proper calculation of the football in time-ordered perturbation theory",
+      "number": null,
+      "page": 70,
+      "pageLabel": "70",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-055-appendix-b22-the-proper-calculation-of-the-footb"
+    },
+    {
+      "level": 3,
+      "title": "Appendix B.2.3 Dimensional regularization of the football",
+      "number": null,
+      "page": 71,
+      "pageLabel": "71",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-056-appendix-b23-dimensional-regularization-of-the-f"
+    },
+    {
+      "level": 2,
+      "title": "Appendix B.3 Box and crossed box diagrams",
+      "number": null,
+      "page": 72,
+      "pageLabel": "72",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-057-appendix-b3-box-and-crossed-box-diagrams"
+    },
+    {
+      "level": 2,
+      "title": "Appendix B.4 Summary of 2PE contributions at NLO",
+      "number": null,
+      "page": 77,
+      "pageLabel": "77",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-058-appendix-b4-summary-of-2pe-contributions-at-nlo"
+    },
+    {
+      "level": 1,
+      "title": "Appendix C Two-pion exchange contributions to the 2NF at NNLO",
+      "number": null,
+      "page": 77,
+      "pageLabel": "77",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-059-appendix-c-two-pion-exchange-contributions-to-th"
+    },
+    {
+      "level": 1,
+      "title": "Appendix D Two-pion exchange contributions to the 2NF at N3LO",
+      "number": null,
+      "page": 79,
+      "pageLabel": "79",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-060-appendix-d-two-pion-exchange-contributions-to-th"
+    },
+    {
+      "level": 2,
+      "title": "Appendix D.1 One-loop diagrams",
+      "number": null,
+      "page": 79,
+      "pageLabel": "79",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-061-appendix-d1-one-loop-diagrams"
+    },
+    {
+      "level": 3,
+      "title": "Appendix D.1.1 ci2 contributions.",
+      "number": null,
+      "page": 79,
+      "pageLabel": "79",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-062-appendix-d11-ci2-contributions"
+    },
+    {
+      "level": 3,
+      "title": "Appendix D.1.2 ci/MN contributions.",
+      "number": null,
+      "page": 79,
+      "pageLabel": "79",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-063-appendix-d12-cimn-contributions"
+    },
+    {
+      "level": 3,
+      "title": "Appendix D.1.3 1/MN2 corrections.",
+      "number": null,
+      "page": 80,
+      "pageLabel": "80",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-064-appendix-d13-1mn2-corrections"
+    },
+    {
+      "level": 2,
+      "title": "Appendix D.2 Two-loop contributions.",
+      "number": null,
+      "page": 80,
+      "pageLabel": "80",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-065-appendix-d2-two-loop-contributions"
+    },
+    {
+      "level": 2,
+      "title": "Appendix D.3 Impact of individual N3LO contributions on peripheral phase shifts",
+      "number": null,
+      "page": 82,
+      "pageLabel": "82",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-066-appendix-d3-impact-of-individual-n3lo-contributi"
+    },
+    {
+      "level": 1,
+      "title": "Appendix E Fourth order NN contact potential: Partial wave decomposition",
+      "number": null,
+      "page": 83,
+      "pageLabel": "83",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-067-appendix-e-fourth-order-nn-contact-potential-par"
+    },
+    {
+      "level": 1,
+      "title": "Appendix F Parameters of N3LO NN potentials",
+      "number": null,
+      "page": 85,
+      "pageLabel": "85",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-068-appendix-f-parameters-of-n3lo-nn-potentials"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": "4",
+      "words": 2283,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nuclear forces",
+          "heading": false
+        },
+        {
+          "term": "two-pion exchange",
+          "heading": false
+        },
+        {
+          "term": "exchange contributions",
+          "heading": false
+        },
+        {
+          "term": "chiral eﬀective",
+          "heading": false
+        },
+        {
+          "term": "eﬀective lagrangians",
+          "heading": false
+        },
+        {
+          "term": "chiral perturbation",
+          "heading": false
+        },
+        {
+          "term": "eﬀective ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "low-energy qcd",
+          "heading": false
+        }
+      ],
+      "extract": "Chiral eﬀective ﬁeld theory and nuclear forces R. Machleidta,∗, D. R. Entemb aDepartment of Physics, University of Idaho, Moscow, Idaho 83844, USA bGrupo de Fisica Nuclear and IUFFyM, University of Salamanca, E-37008 Salamanca, Spain Abstract We review how nuclear forces emerge from low-energy QCD via chiral eﬀective ﬁeld theory. The presentation is accessible to the non-specialist. At the same time, we also provide",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1105.2919v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction-and-historical-perspective",
+      "number": "1",
+      "title": "Introduction and historical perspective",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 1836,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "noalign smallskip",
+          "heading": false
+        },
+        {
+          "term": "hline noalign",
+          "heading": false
+        },
+        {
+          "term": "nuclear forces",
+          "heading": false
+        },
+        {
+          "term": "cite wei",
+          "heading": false
+        },
+        {
+          "term": "nuclear physicists",
+          "heading": false
+        },
+        {
+          "term": "multi-pion exchange",
+          "heading": false
+        },
+        {
+          "term": "weinberg cite",
+          "heading": false
+        },
+        {
+          "term": "nuclear interactions",
+          "heading": false
+        }
+      ],
+      "extract": "The theory of nuclear forces has a long history (cf.\\ Table~\\ref{tab_hist}). Based upon the seminal idea by Yukawa~\\cite{Yuk35}, first field-theoretic attempts to derive the nucleon-nucleon ($NN$) interaction focused on pion exchange. While the one-pion exchange turned out to be very useful in explaining $NN$ scattering data and, in particular, the properties of the deuteron~\\cite{Sup56}, multi-pion exchange was",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-effective-field-theory-for-low-energy-qcd",
+      "number": "2",
+      "title": "Effective field theory for low-energy QCD",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 641,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qcd",
+          "heading": true
+        },
+        {
+          "term": "lattice qcd",
+          "heading": false
+        },
+        {
+          "term": "soft scale",
+          "heading": false
+        },
+        {
+          "term": "low-energy",
+          "heading": true
+        },
+        {
+          "term": "pion mass",
+          "heading": false
+        },
+        {
+          "term": "field theory",
+          "heading": true
+        },
+        {
+          "term": "hard scale",
+          "heading": false
+        },
+        {
+          "term": "nuclear physics",
+          "heading": false
+        }
+      ],
+      "extract": "Quantum chromodynamics (QCD) is the theory of strong interactions. It deals with quarks, gluons and their interactions and is part of the Standard Model of Particle Physics. QCD is a non-Abelian gauge field theory with color $SU(3)$ the underlying gauge group. The non-Abelian nature of the theory has dramatic consequences. While the interaction between colored objects is weak at short distances or high momentum",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-symmetries-of-low-energy-qcd",
+      "number": "2.1",
+      "title": "Symmetries of low-energy QCD",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 106,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symmetry breakings",
+          "heading": false
+        },
+        {
+          "term": "symmetries",
+          "heading": true
+        },
+        {
+          "term": "low-energy",
+          "heading": true
+        }
+      ],
+      "extract": "3. Construct the most general Lagrangian consistent with those symmetries and symmetry breakings. 4. Design an organizational scheme that can distinguish between more and less important contributions: a low-momentum expansion. 5. Guided by the expansion, calculate Feynman diagrams for the problem under consideration to the desired accuracy. In the following (sub)sections, we will elaborate on these steps, one by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-211-chiral-symmetry",
+      "number": "2.1.1",
+      "title": "Chiral symmetry",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "9",
+      "words": 840,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "equation cal",
+          "heading": false
+        },
+        {
+          "term": "frac cal",
+          "heading": false
+        },
+        {
+          "term": "epsilon ijk",
+          "heading": false
+        },
+        {
+          "term": "frac tau",
+          "heading": false
+        },
+        {
+          "term": "tau right",
+          "heading": false
+        },
+        {
+          "term": "array right",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "mbox mev",
+          "heading": false
+        }
+      ],
+      "extract": "The QCD Lagrangian reads \\begin{equation} {\\cal L}_{\\rm QCD} = \\bar{q} (i \\gamma^\\mu {\\cal D}_\\mu - {\\cal M})q - \\frac14 {\\cal G}_{\\mu\\nu,a} {\\cal G}^{\\mu\\nu}_{a} \\label{eq_LQCD} \\end{equation} with the gauge-covariant derivative \\begin{equation} {\\cal D}_\\mu = \\partial_\\mu -ig\\frac{\\lambda_a}{2} {\\cal A}_{\\mu,a} \\end{equation} and the gluon field strength tensor\\footnote{For $SU(N)$ group indices, we use Latin",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-212-explicit-symmetry-breaking",
+      "number": "2.1.2",
+      "title": "Explicit symmetry breaking",
+      "level": 3,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 166,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "array right",
+          "heading": false
+        },
+        {
+          "term": "begin array",
+          "heading": false
+        },
+        {
+          "term": "non-vanishing quark",
+          "heading": false
+        },
+        {
+          "term": "quark masses",
+          "heading": false
+        },
+        {
+          "term": "end array",
+          "heading": false
+        },
+        {
+          "term": "chiral symmetry",
+          "heading": false
+        }
+      ],
+      "extract": "The mass term $- \\bar{q}{\\cal M}q$ in the QCD Lagrangian Eq.~(\\ref{eq_LQCD}) breaks chiral symmetry explicitly. To better see this, let's rewrite ${\\cal M}$ for the two-flavor case, \\begin{eqnarray} {\\cal M} & = & \\left( \\begin{array}{cc} m_u & 0 \\\\ 0 & m_d \\end{array} \\right) \\nonumber \\\\ & = & \\frac12 (m_u+m_d) \\left( \\begin{array}{cc} 1 & 0 \\\\ 0 & 1 \\end{array} \\right) + \\frac12 (m_u-m_d) \\left( \\begin{array}{cc}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-213-spontaneous-symmetry-breaking",
+      "number": "2.1.3",
+      "title": "Spontaneous symmetry breaking",
+      "level": 3,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 385,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symmetry breaking",
+          "heading": true
+        },
+        {
+          "term": "degenerate hadron",
+          "heading": false
+        },
+        {
+          "term": "rho meson",
+          "heading": false
+        },
+        {
+          "term": "goldstone bosons",
+          "heading": false
+        },
+        {
+          "term": "broken generators",
+          "heading": false
+        },
+        {
+          "term": "hadron spectrum",
+          "heading": false
+        },
+        {
+          "term": "parity",
+          "heading": false
+        },
+        {
+          "term": "explicit symmetry",
+          "heading": false
+        }
+      ],
+      "extract": "A (continuous) symmetry is said to be {\\it spontaneously broken} if a symmetry of the Lagrangian is not realized in the ground state of the system. There is evidence that the (approximate) chiral symmetry of the QCD Lagrangian is spontaneously broken---for dynamical reasons of nonperturbative origin which are not fully understood at this time. The most plausible evidence comes from the hadron spectrum. Since the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-22-chiral-effective-lagrangians",
+      "number": "2.2",
+      "title": "Chiral effective Lagrangians",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-221-relativistic-formulation",
+      "number": "2.2.1",
+      "title": "Relativistic formulation",
+      "level": 3,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "10",
+      "labelEnd": "12",
+      "words": 1176,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mbox boldmath",
+          "heading": false
+        },
+        {
+          "term": "boldmath tau",
+          "heading": false
+        },
+        {
+          "term": "cdot mbox",
+          "heading": false
+        },
+        {
+          "term": "dagger partial",
+          "heading": false
+        },
+        {
+          "term": "equation cal",
+          "heading": false
+        },
+        {
+          "term": "dagger right",
+          "heading": false
+        },
+        {
+          "term": "ccwz formalism",
+          "heading": false
+        },
+        {
+          "term": "pion fields",
+          "heading": false
+        }
+      ],
+      "extract": "The next step in our EFT program is to build the most general Lagrangian consistent with the (broken) symmetries discussed above. An elegant formalism for the construction of such Lagrangians was developed by Callan, Coleman, Wess, and Zumino (CCWZ)~\\cite{CCWZ} who worked out the group-theoretical foundations of non-linear realizations of chiral symmetry.\\footnote{An accessible introduction into the rather involved",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-222-heavy-baryon-formalism",
+      "number": "2.2.2",
+      "title": "Heavy baryon formalism",
+      "level": 3,
+      "pageStart": 12,
+      "pageEnd": 15,
+      "labelStart": "12",
+      "labelEnd": "15",
+      "words": 1257,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "heavy baryon",
+          "heading": true
+        },
+        {
+          "term": "mbox boldmath",
+          "heading": false
+        },
+        {
+          "term": "boldmath tau",
+          "heading": false
+        },
+        {
+          "term": "vec nabla",
+          "heading": false
+        },
+        {
+          "term": "cdot vec",
+          "heading": false
+        },
+        {
+          "term": "frac vec",
+          "heading": false
+        },
+        {
+          "term": "vec sigma",
+          "heading": false
+        },
+        {
+          "term": "widehat cal",
+          "heading": false
+        }
+      ],
+      "extract": "The relativistic treatment of baryons in chiral perturbation theory leads to problems. The reason for the problems is the fact that the time-derivative of a relativistic baryon field generates a factor $E\\approx M$ (where $M$ denotes the baryon mass) which is not small as compared to the chiral-symmetry breaking scale $\\Lambda_\\chi \\approx 1$ GeV; in fact, $M_N/\\Lambda_\\chi \\approx 1$. Note also that the nucleon",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-23-nucleon-contact-lagrangians",
+      "number": "2.3",
+      "title": "Nucleon contact Lagrangians",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 348,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "contact lagrangians",
+          "heading": true
+        },
+        {
+          "term": "vec nabla",
+          "heading": false
+        },
+        {
+          "term": "bar vec",
+          "heading": false
+        },
+        {
+          "term": "overline vec",
+          "heading": false
+        },
+        {
+          "term": "lnn widehat",
+          "heading": false
+        },
+        {
+          "term": "vec sigma",
+          "heading": false
+        },
+        {
+          "term": "nabla cdot",
+          "heading": false
+        },
+        {
+          "term": "times vec",
+          "heading": false
+        }
+      ],
+      "extract": "Two-nucleon contact interactions consist of four nucleon fields (four nucleon legs) and no meson fields. Such terms are needed to renormalize loop integrals, to make results reasonably independent of regulators, and to parametrize the unresolved short-distance dynamics of the nuclear force. For more on the role of contact terms, see Section~\\ref{sec_ct}. Because of parity, nucleon contact interactions come only in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-24-summary-effective-lagrangians-organized-by-in",
+      "number": "2.4",
+      "title": "Summary: Effective Lagrangians organized by interaction index",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 414,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mbox boldmath",
+          "heading": false
+        },
+        {
+          "term": "boldmath tau",
+          "heading": false
+        },
+        {
+          "term": "nabla mbox",
+          "heading": false
+        },
+        {
+          "term": "vec nabla",
+          "heading": false
+        },
+        {
+          "term": "bar mbox",
+          "heading": false
+        },
+        {
+          "term": "cdot vec",
+          "heading": false
+        },
+        {
+          "term": "partial mbox",
+          "heading": false
+        },
+        {
+          "term": "widehat cal",
+          "heading": false
+        }
+      ],
+      "extract": "To summarize, the effective Lagrangian needed to derive nuclear forces includes the following parts: \\begin{equation} {\\cal L_{\\rm eff}} = {\\cal L}_{\\pi\\pi} + {\\cal L}_{\\pi N} + {\\cal L}_{NN} + \\ldots , \\end{equation} where the ellipsis stands for terms that involve two nucleons plus pions and three or more nucleons with or without pions, relevant for nuclear many-body forces (cf.\\ last two terms of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-3-nuclear-forces-from-eft-overview",
+      "number": "3",
+      "title": "Nuclear forces from EFT: Overview",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 73,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "feynman diagrams",
+          "heading": false
+        },
+        {
+          "term": "eft",
+          "heading": true
+        },
+        {
+          "term": "overview",
+          "heading": true
+        }
+      ],
+      "extract": "In the beginning of Section 2, we listed the steps we have to take for carrying out the EFT program of a derivation of nuclear forces. So far, we discussed steps one to three. What is left are steps four (low- momentum expansion) and ﬁve (Feynman diagrams). In this section, we will say more about the expansion we are using and give an overview of the Feynman diagrams that arise order by order.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-012-31-chiral-perturbation-theory-and-power-counting",
+      "number": "3.1",
+      "title": "Chiral perturbation theory and power counting",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": "16",
+      "labelEnd": "18",
+      "words": 1102,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "power counting",
+          "heading": true
+        },
+        {
+          "term": "nuw",
+          "heading": false
+        },
+        {
+          "term": "perturbation theory",
+          "heading": true
+        },
+        {
+          "term": "dirac delta",
+          "heading": false
+        },
+        {
+          "term": "connected pieces",
+          "heading": false
+        },
+        {
+          "term": "nucleon",
+          "heading": false
+        },
+        {
+          "term": "power formula",
+          "heading": false
+        },
+        {
+          "term": "sum delta",
+          "heading": false
+        }
+      ],
+      "extract": "Effective Lagrangians have infinitely many terms, and an unlimited number of Feynman graphs can be calculated from them. Therefore, we need a scheme that makes the theory manageable and calculable. This scheme which tells us how to distinguish between large (important) and small (unimportant) contributions is chiral perturbation theory (ChPT). In ChPT, graphs are analyzed in terms of powers of small external momenta",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-32-the-hierarchy-of-nuclear-forces",
+      "number": "3.2",
+      "title": "The hierarchy of nuclear forces",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 751,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nuclear forces",
+          "heading": true
+        },
+        {
+          "term": "intermediate-range attraction",
+          "heading": false
+        },
+        {
+          "term": "intermediate-range interaction",
+          "heading": false
+        },
+        {
+          "term": "two-nucleon force",
+          "heading": false
+        },
+        {
+          "term": "hierarchy",
+          "heading": true
+        },
+        {
+          "term": "cite kol",
+          "heading": false
+        },
+        {
+          "term": "spin-orbit term",
+          "heading": false
+        },
+        {
+          "term": "contact terms",
+          "heading": false
+        }
+      ],
+      "extract": "Chiral perturbation theory and power counting imply that nuclear forces emerge as a hierarchy controlled by the power $\\nu$, Fig.~\\ref{fig_hi}. In lowest order, better known as leading order (LO, $\\nu = 0$), the $NN$ amplitude is made up by two momentum-independent contact terms ($\\sim Q^0$), represented by the four-nucleon-leg graph with a small-dot vertex shown in the first row of Fig.~\\ref{fig_hi}, and static",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-4-two-nucleon-interactions",
+      "number": "4",
+      "title": "Two-nucleon interactions",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 50,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "manynf",
+          "heading": false
+        },
+        {
+          "term": "pion-exchange",
+          "heading": false
+        },
+        {
+          "term": "talking",
+          "heading": false
+        }
+      ],
+      "extract": "The last section was just an overview. In this section, we will fill in all the details involved in the ChPT development of the $NN$ interaction; and 3NF and 4NF will be discussed in Section~\\ref{sec_manyNF}. We start by talking about the various pion-exchange contributions.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-015-411-one-pion-exchange",
+      "number": "4.1.1",
+      "title": "One-pion exchange",
+      "level": 3,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 35,
+      "summary": null,
+      "keywords": [],
+      "extract": "Diagram (a) represents the leading-order, while graphs (b)-(i) contribute to renormalization. Notation as in Fig. 1. Diagrams that result from interchange of nucleon lines and/or time reversal are not shown. about the various pion-exchange contributions.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-016-41-pion-exchange-contributions-in-chpt",
+      "number": "4.1",
+      "title": "Pion-exchange contributions in ChPT",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 655,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pion-exchange contributions",
+          "heading": true
+        },
+        {
+          "term": "goldberger-treiman discrepancy",
+          "heading": false
+        },
+        {
+          "term": "one-loop graphs",
+          "heading": false
+        },
+        {
+          "term": "v1π",
+          "heading": false
+        },
+        {
+          "term": "one-pion exchange",
+          "heading": false
+        },
+        {
+          "term": "v2π",
+          "heading": false
+        },
+        {
+          "term": "renormalize",
+          "heading": false
+        },
+        {
+          "term": "box diagrams",
+          "heading": false
+        }
+      ],
+      "extract": "Based upon the eﬀective pion Lagrangians of Section 2.2, we will now derive the pion-exchange contri- butions to the NN interaction order by order. As noted before, there are inﬁnitely many pion-exchange contributions to the NN interaction and, thus, we need to get organized. First, we arrange the various pion-exchange contributions according to the number of pions being exchanged between the two nucleons: Vπ = V1π",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-412-two-pion-exchange",
+      "number": "4.1.2",
+      "title": "Two-pion exchange",
+      "level": 3,
+      "pageStart": 21,
+      "pageEnd": 25,
+      "labelStart": "21",
+      "labelEnd": "25",
+      "words": 1944,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "two-pion exchange",
+          "heading": true
+        },
+        {
+          "term": "mπw ew4a",
+          "heading": false
+        },
+        {
+          "term": "π-exchange contributions",
+          "heading": false
+        },
+        {
+          "term": "leading two-pion",
+          "heading": false
+        },
+        {
+          "term": "munich group",
+          "heading": false
+        },
+        {
+          "term": "football diagrams",
+          "heading": false
+        },
+        {
+          "term": "one-loop graphs",
+          "heading": false
+        },
+        {
+          "term": "planar box",
+          "heading": false
+        }
+      ],
+      "extract": "The exchange of two or more pions always involves loop diagrams, which implies that we are faced with a non-trivial problem. To conduct such calculations, a scheme of ﬁeld-theoretic perturbation theory as well as regularization and renormalization methods for dealing with divergent loop integrals must be adopted. Ord´o˜nez, Ray, and van Kolck [53, 54], who were the ﬁrst to calculate chiral 2π-exchange to NNLO, used",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-413-three-pion-exchange",
+      "number": "4.1.3",
+      "title": "Three-pion exchange",
+      "level": 3,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 292,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "three-pion exchange",
+          "heading": true
+        },
+        {
+          "term": "widehat cal",
+          "heading": false
+        },
+        {
+          "term": "lagrangian widehat",
+          "heading": false
+        },
+        {
+          "term": "cal delta",
+          "heading": false
+        },
+        {
+          "term": "ref fig",
+          "heading": false
+        },
+        {
+          "term": "parameter alpha",
+          "heading": false
+        },
+        {
+          "term": "leading",
+          "heading": false
+        },
+        {
+          "term": "negligible",
+          "heading": false
+        }
+      ],
+      "extract": "Since the exchange of three pions involves two loops, three-pion exchange (3PE) starts at order four (N$^3$LO). Two loops generate $\\nu=4$ and, therefore, at this order, all vertices have to be from the leading order Lagrangian $\\widehat{\\cal L}^{\\Delta=0}$, Eq.~(\\ref{eq_LD0}). One can distinguish between three groups of diagrams, namely, diagrams proportional to $g_A^2$ (first and second row of Fig.~\\ref{fig_3pe}),",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-42-perturbative-nn-scattering-in-peripheral-part",
+      "number": "4.2",
+      "title": "Perturbative NN scattering in peripheral partial waves",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 31,
+      "labelStart": "26",
+      "labelEnd": "31",
+      "words": 2494,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "partial waves",
+          "heading": true
+        },
+        {
+          "term": "peripheral partial",
+          "heading": true
+        },
+        {
+          "term": "peripheral perturbative",
+          "heading": true
+        },
+        {
+          "term": "frac vec",
+          "heading": false
+        },
+        {
+          "term": "hline noalign",
+          "heading": false
+        },
+        {
+          "term": "peripheral phase",
+          "heading": false
+        },
+        {
+          "term": "app n3lo",
+          "heading": false
+        },
+        {
+          "term": "noalign smallskip",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{table}[t] \\caption{Hadron masses and low-energy constants (LECs). $m_{\\pi^\\pm}$ and $m_{\\pi^0}$ denote the charged- and neutral-pion masses, and $M_p$ and $M_n$ are the proton and neutron masses, respectively, in units of MeV. $g_A$ is the axial-vector coupling constant (dimensionless) and $f_\\pi$ the pion decay constant (in units of MeV). The $c_i$ belong to the dimension-two $\\pi N$ Lagrangian,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-43-nn-contact-terms",
+      "number": "4.3",
+      "title": "NN contact terms",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 32,
+      "labelStart": "31",
+      "labelEnd": "32",
+      "words": 559,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "contact terms",
+          "heading": true
+        },
+        {
+          "term": "heavy meson",
+          "heading": false
+        },
+        {
+          "term": "nuclear force",
+          "heading": false
+        },
+        {
+          "term": "partial waves",
+          "heading": false
+        },
+        {
+          "term": "m2ω",
+          "heading": false
+        },
+        {
+          "term": "partial-wave decomposition",
+          "heading": false
+        },
+        {
+          "term": "lower partial",
+          "heading": false
+        },
+        {
+          "term": "cos",
+          "heading": false
+        }
+      ],
+      "extract": "The successful test of the chiral pion-exchange contributions in peripheral partial waves in the previous section has shown that we got the long- and intermediate-range parts of the nuclear force right. However, for a “complete” nuclear force, we have to describe correctly all partial waves, including the lower ones. In fact, in calculations of NN observables at low energies (cross sections, analyzing powers, etc.),",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-431-zeroth-order-lo",
+      "number": "4.3.1",
+      "title": "Zeroth order (LO)",
+      "level": 3,
+      "pageStart": 32,
+      "pageEnd": 32,
+      "labelStart": "32",
+      "labelEnd": "32",
+      "words": 66,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vec sigma",
+          "heading": false
+        },
+        {
+          "term": "widehat cal",
+          "heading": false
+        },
+        {
+          "term": "lnn",
+          "heading": false
+        }
+      ],
+      "extract": "The contact Lagrangian $\\widehat{\\cal L}^{(0)}_{NN}$, Eq.~(\\ref{eq_LNN0}), which is part of $\\widehat{\\cal L}^{\\Delta=0}$, Eq.~(\\ref{eq_LD0}), leads to the following $NN$ contact potential, \\begin{equation} V_{\\rm ct}^{(0)}(\\vec{p'},\\vec{p}) = C_S + C_T \\, \\vec{\\sigma}_1 \\cdot \\vec{\\sigma}_2 \\, , \\label{eq_ct0} \\end{equation} and, in terms of partial waves, we have \\be V_{\\rm ct}^{(0)}(^1 S_0) &=& \\widetilde{C}_{^1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-432-second-order-nlo",
+      "number": "4.3.2",
+      "title": "Second order (NLO)",
+      "level": 3,
+      "pageStart": 32,
+      "pageEnd": 33,
+      "labelStart": "32",
+      "labelEnd": "33",
+      "words": 328,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cdot vec",
+          "heading": false
+        },
+        {
+          "term": "vec sigma",
+          "heading": false
+        },
+        {
+          "term": "nonumber left",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        },
+        {
+          "term": "widehat cal",
+          "heading": false
+        },
+        {
+          "term": "contact potential",
+          "heading": false
+        },
+        {
+          "term": "lagrangian widehat",
+          "heading": false
+        }
+      ],
+      "extract": "The contact Lagrangian $\\widehat{\\cal L}^{(2)}_{NN}$, Eq.~(\\ref{eq_LNN2}), which is part of $\\widehat{\\cal L}^{\\Delta=2}$, Eq.~(\\ref{eq_LD2}), generates the following $NN$ contact potential \\be V_{\\rm ct}^{(2)}(\\vec{p'},\\vec{p}) &=& C_1 \\, q^2 + C_2 \\, k^2 \\nonumber \\\\ &+& \\left( C_3 \\, q^2 + C_4 \\, k^2 \\right) \\vec{\\sigma}_1 \\cdot \\vec{\\sigma}_2 \\nonumber \\\\ &+& C_5 \\left( -i \\vec{S} \\cdot (\\vec{q} \\times \\vec{k})",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-433-fourth-order-n3lo",
+      "number": "4.3.3",
+      "title": "Fourth order (N3LO)",
+      "level": 3,
+      "pageStart": 33,
+      "pageEnd": 34,
+      "labelStart": "33",
+      "labelEnd": "34",
+      "words": 99,
+      "summary": null,
+      "keywords": [],
+      "extract": "The contact potential of order four reads V (4) ct (⃗p′,⃗p) = D1 q4 + D2 k4 + D3 q2k2 + D4 (⃗q ×⃗k)2 + \u0010 D5 q4 + D6 k4 + D7 q2k2 + D8 (⃗q ×⃗k)2\u0011⃗ σ1 ·⃗σ2 + \u0000D9 q2 + D10 k2\u0001 \u0010 −i⃗S · (⃗q ×⃗k) \u0011 + \u0000D11 q2 + D12 k2\u0001 (⃗σ1 ·⃗q) (⃗σ2 ·⃗q) + \u0000D13 q2 + D14 k2\u0001 (⃗σ1 ·⃗k) (⃗σ2 ·⃗k) + D15 \u0010⃗ σ1 · (⃗q ×⃗k)⃗σ2 · (⃗q ×⃗k) \u0011 . (4.43) The rather lengthy partial-wave expressions of this order are relegated to Appendix E. 33",
+      "extractCut": false
+    },
+    {
+      "id": "sec-024-44-definition-of-nn-potential",
+      "number": "4.4",
+      "title": "Definition of NN potential",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 36,
+      "labelStart": "34",
+      "labelEnd": "36",
+      "words": 1074,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "v1π",
+          "heading": false
+        },
+        {
+          "term": "potential",
+          "heading": true
+        },
+        {
+          "term": "two-nucleon scattering",
+          "heading": false
+        },
+        {
+          "term": "bbs equation",
+          "heading": false
+        },
+        {
+          "term": "vct",
+          "heading": false
+        },
+        {
+          "term": "partial waves",
+          "heading": false
+        },
+        {
+          "term": "relativistic",
+          "heading": false
+        },
+        {
+          "term": "contact terms",
+          "heading": false
+        }
+      ],
+      "extract": "We have now rounded up everything needed for a realistic nuclear force—long, intermediate, and short ranged components—and so we can ﬁnally proceed to the lower partial waves. However, here we encounter another problem. The two-nucleon system at low angular momentum, particularly, in S waves, is character- ized by the presence of a shallow bound state (the deuteron) and large scattering lengths. Thus, perturbation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-45-renormalization",
+      "number": "4.5",
+      "title": "Renormalization",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 36,
+      "labelStart": "36",
+      "labelEnd": "36",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-026-451-regularization-and-non-perturbative-renormal",
+      "number": "4.5.1",
+      "title": "Regularization and non-perturbative renormalization",
+      "level": 3,
+      "pageStart": 36,
+      "pageEnd": 37,
+      "labelStart": "36",
+      "labelEnd": "37",
+      "words": 1060,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite ksw",
+          "heading": false
+        },
+        {
+          "term": "cite ntk",
+          "heading": false
+        },
+        {
+          "term": "weinberg counting",
+          "heading": false
+        },
+        {
+          "term": "renormalization",
+          "heading": true
+        },
+        {
+          "term": "cutoff independence",
+          "heading": false
+        },
+        {
+          "term": "equation widehat",
+          "heading": false
+        },
+        {
+          "term": "partial waves",
+          "heading": false
+        },
+        {
+          "term": "cutoff parameter",
+          "heading": false
+        }
+      ],
+      "extract": "Iteration of $\\widehat V$ in the LS equation, Eq.~(\\ref{eq_LS}), requires cutting $\\widehat V$ off for high momenta to avoid infinities. This is consistent with the fact that ChPT is a low-momentum expansion which is valid only for momenta $Q \\ll \\Lambda_\\chi \\approx 1$ GeV. Therefore, the potential $\\widehat V$ is multiplied with the regulator function $f(p',p)$, \\begin{equation} {\\widehat V}(\\vec{ p}~',{\\vec p})",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-452-renormalization-beyond-leading-order",
+      "number": "4.5.2",
+      "title": "Renormalization beyond leading order",
+      "level": 3,
+      "pageStart": 37,
+      "pageEnd": 38,
+      "labelStart": "37",
+      "labelEnd": "38",
+      "words": 729,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite ntk",
+          "heading": false
+        },
+        {
+          "term": "renormalization",
+          "heading": true
+        },
+        {
+          "term": "wound integral",
+          "heading": false
+        },
+        {
+          "term": "partial waves",
+          "heading": false
+        },
+        {
+          "term": "many-body problems",
+          "heading": false
+        },
+        {
+          "term": "renormalization procedure",
+          "heading": false
+        },
+        {
+          "term": "counter term",
+          "heading": false
+        },
+        {
+          "term": "angular momentum",
+          "heading": false
+        }
+      ],
+      "extract": "As shown below, for a quantitative chiral $NN$ potential one needs to advance all the way to N$^3$LO. Thus, the renormalization issue needs to be discussed beyond LO. Naively, the most perfect renormalization procedure is the one where the cutoff parameter $\\Lambda$ is carried to infinity while stable results are maintained. This was done successfully at LO in the work by Nogga {\\it et al.}~\\cite{NTK05} described",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-453-back-to-the-beginnings",
+      "number": "4.5.3",
+      "title": "Back to the beginnings",
+      "level": 3,
+      "pageStart": 38,
+      "pageEnd": 39,
+      "labelStart": "38",
+      "labelEnd": "39",
+      "words": 744,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cutoff lambda",
+          "heading": false
+        },
+        {
+          "term": "high-momentum states",
+          "heading": false
+        },
+        {
+          "term": "cite egm",
+          "heading": false
+        },
+        {
+          "term": "pdf vspace",
+          "heading": false
+        },
+        {
+          "term": "centering vspace",
+          "heading": false
+        },
+        {
+          "term": "phase shifts",
+          "heading": false
+        },
+        {
+          "term": "lambda chi",
+          "heading": false
+        },
+        {
+          "term": "long-range behavior",
+          "heading": false
+        }
+      ],
+      "extract": "The various problems with the renormalization procedures discussed above may have a simple common reason: An EFT that has validity only for momenta $Q < \\Lambda_\\chi$ is applied such that momenta $Q \\gg \\Lambda_\\chi$ are heavily involved (because the regulator cutoff $\\Lambda \\rightarrow \\infty$). A recent paper by Epelbaum and Gegelia~\\cite{EG09} illustrates the point: The authors construct an exactly solvable",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-454-concluding-the-renormalization-issue",
+      "number": "4.5.4",
+      "title": "Concluding the renormalization issue",
+      "level": 3,
+      "pageStart": 39,
+      "pageEnd": 41,
+      "labelStart": "39",
+      "labelEnd": "41",
+      "words": 645,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soft cutoffs",
+          "heading": false
+        },
+        {
+          "term": "cutoff independence",
+          "heading": false
+        },
+        {
+          "term": "weinberg counting",
+          "heading": false
+        },
+        {
+          "term": "regulator independence",
+          "heading": false
+        },
+        {
+          "term": "counting scheme",
+          "heading": false
+        },
+        {
+          "term": "power counting",
+          "heading": false
+        },
+        {
+          "term": "renormalization",
+          "heading": true
+        },
+        {
+          "term": "egm",
+          "heading": false
+        }
+      ],
+      "extract": "Crucial for an EFT are regulator independence (within the range of validity of the EFT) and a power counting scheme that allows for order-by-order improvement with decreasing truncation error. The purpose of renormalization is to achieve this regulator independence while maintaining a functional power counting scheme. After the comprehensive tries and errors of the past, it appears that there are two renormalization",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-46-constructing-quantitative-chiral-nn-potential",
+      "number": "4.6",
+      "title": "Constructing quantitative chiral NN potentials",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 41,
+      "labelStart": "41",
+      "labelEnd": "41",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-031-461-what-order",
+      "number": "4.6.1",
+      "title": "What order?",
+      "level": 3,
+      "pageStart": 41,
+      "pageEnd": 42,
+      "labelStart": "41",
+      "labelEnd": "42",
+      "words": 872,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "partial waves",
+          "heading": false
+        },
+        {
+          "term": "n3lo",
+          "heading": false
+        },
+        {
+          "term": "high-precision",
+          "heading": false
+        },
+        {
+          "term": "nnlo",
+          "heading": false
+        },
+        {
+          "term": "substantial improvements",
+          "heading": false
+        },
+        {
+          "term": "contact terms",
+          "heading": false
+        },
+        {
+          "term": "nlo",
+          "heading": false
+        },
+        {
+          "term": "phase shifts",
+          "heading": false
+        }
+      ],
+      "extract": "As discussed, the NN potential can be calculated up to various orders, cf. Eqs. (4.54)-(4.57), and the accuracy increases as the order increases. That triggers the obvious question: To what order do we have to go for an accuracy that we would perceive as necessary and suﬃcient for, e. g., reliable microscopic nuclear structure calculations? We had a ﬁrst look at the order by order evolvement in Section 4.2 where we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-462-charge-dependence",
+      "number": "4.6.2",
+      "title": "Charge-dependence",
+      "level": 3,
+      "pageStart": 42,
+      "pageEnd": 47,
+      "labelStart": "42",
+      "labelEnd": "47",
+      "words": 2427,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cib eﬀect",
+          "heading": false
+        },
+        {
+          "term": "charge-dependence",
+          "heading": true
+        },
+        {
+          "term": "non-derivative csb",
+          "heading": false
+        },
+        {
+          "term": "csb splitting",
+          "heading": false
+        },
+        {
+          "term": "cib contact",
+          "heading": false
+        },
+        {
+          "term": "pion-mass splitting",
+          "heading": false
+        },
+        {
+          "term": "n3lo potentials",
+          "heading": false
+        },
+        {
+          "term": "pion-mass diﬀerence",
+          "heading": false
+        }
+      ],
+      "extract": "So far we considered only neutron-proton scattering. However, as stressed repeatedly by the Nijmegen group [139, 176], for a precise reproduction of the NN data, i.e., the np and the pp data, it is crucial to take charge-dependence into account and to construct separate np, pp, and nn potentials which diﬀer by the subtleties of charge-dependence. By deﬁnition, charge independence (or isospin symmetry) is invariance",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-463-a-quantitative-nn-potential-at-n3lo",
+      "number": "4.6.3",
+      "title": "A quantitative NN potential at N3LO",
+      "level": 3,
+      "pageStart": 47,
+      "pageEnd": 50,
+      "labelStart": "47",
+      "labelEnd": "50",
+      "words": 1483,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n3lo potential",
+          "heading": true
+        },
+        {
+          "term": "idaho n3lo",
+          "heading": false
+        },
+        {
+          "term": "deuteron wave",
+          "heading": false
+        },
+        {
+          "term": "deuteron radius",
+          "heading": false
+        },
+        {
+          "term": "phase shifts",
+          "heading": false
+        },
+        {
+          "term": "juelich",
+          "heading": false
+        },
+        {
+          "term": "non-derivative contact",
+          "heading": false
+        },
+        {
+          "term": "partial waves",
+          "heading": false
+        }
+      ],
+      "extract": "After previous sections have thoroughly prepared the terrain, we will now present a quantitative NN potential at N3LO, including details of construction and results. We choose the Idaho N3LO potential [68] as example. The isospin symmetric part of the chiral NN potential at N3LO is deﬁned in Eq. (4.57) and the isospin violating terms were discussed in the previous section. Numerous parameters are involved which can",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-5-nuclear-many-body-forces",
+      "number": "5",
+      "title": "Nuclear many-body forces",
+      "level": 1,
+      "pageStart": 50,
+      "pageEnd": 51,
+      "labelStart": "50",
+      "labelEnd": "51",
+      "words": 148,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "forces",
+          "heading": true
+        },
+        {
+          "term": "nuclear",
+          "heading": true
+        },
+        {
+          "term": "nuclear structure",
+          "heading": false
+        },
+        {
+          "term": "nfs",
+          "heading": false
+        }
+      ],
+      "extract": "The chiral 2NF discussed in the previous section has been applied in microscopic calculations of nuclear structure with, in general, a great deal of success [75–88]. However, from high-precision studies conducted in the 1990s, it is well known that certain few-nucleon reactions and nuclear structure issues require 3NFs for their microscopic explanation. Outstanding examples are the Ay puzzle of N-d scattering [198,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-51-three-nucleon-forces",
+      "number": "5.1",
+      "title": "Three-nucleon forces",
+      "level": 2,
+      "pageStart": 51,
+      "pageEnd": 51,
+      "labelStart": "51",
+      "labelEnd": "51",
+      "words": 63,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nu3nf",
+          "heading": false
+        },
+        {
+          "term": "forces",
+          "heading": true
+        },
+        {
+          "term": "kolck",
+          "heading": false
+        }
+      ],
+      "extract": "Nuclear three-body forces in ChPT were initially discussed by Weinberg~\\cite{Wei92} and the 3NF at NNLO was first derived by van Kolck~\\cite{Kol94}. For a 3NF, we have $A=3$ and $C=1$ and, thus, Eq.~(\\ref{eq_nu}) implies \\begin{equation} \\nu = 2 + 2L + \\sum_i \\Delta_i \\,. \\label{eq_nu3nf} \\end{equation} We will use this equation to analyze 3NF contributions order by order.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-036-511-next-to-leading-order",
+      "number": "5.1.1",
+      "title": "Next-to-leading order",
+      "level": 3,
+      "pageStart": 51,
+      "pageEnd": 51,
+      "labelStart": "51",
+      "labelEnd": "51",
+      "words": 226,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nlo",
+          "heading": false
+        },
+        {
+          "term": "cite wei",
+          "heading": false
+        },
+        {
+          "term": "weinberg cite",
+          "heading": false
+        },
+        {
+          "term": "time-derivative",
+          "heading": false
+        },
+        {
+          "term": "ref fig",
+          "heading": false
+        },
+        {
+          "term": "nnlo",
+          "heading": false
+        },
+        {
+          "term": "topologies",
+          "heading": false
+        },
+        {
+          "term": "vspace",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{figure}[t]\\centering \\vspace*{-0.5cm} \\scalebox{1.0}{\\includegraphics{diag_3nf_nlo.pdf}} \\vspace*{-0.75cm} \\caption{Three-nucleon force diagrams at NLO. Notation as in Fig.~\\ref{fig_hi}.} \\label{fig_3nf_nlo} \\end{figure} The lowest possible power is obviously $\\nu=2$ (NLO), which is obtained for no loops ($L=0$) and only leading vertices ($\\sum_i \\Delta_i = 0$). We display typical graphs in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-512-next-to-next-to-leading-order",
+      "number": "5.1.2",
+      "title": "Next-to-next-to-leading order",
+      "level": 3,
+      "pageStart": 51,
+      "pageEnd": 52,
+      "labelStart": "51",
+      "labelEnd": "52",
+      "words": 800,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cdot vec",
+          "heading": false
+        },
+        {
+          "term": "cite epe02b",
+          "heading": false
+        },
+        {
+          "term": "vec sigma",
+          "heading": false
+        },
+        {
+          "term": "cite nav",
+          "heading": false
+        },
+        {
+          "term": "boldmath tau",
+          "heading": false
+        },
+        {
+          "term": "mbox boldmath",
+          "heading": false
+        },
+        {
+          "term": "cite nog",
+          "heading": false
+        },
+        {
+          "term": "nuclei cite",
+          "heading": false
+        }
+      ],
+      "extract": "The power $\\nu=3$ (NNLO) is obtained when there are no loops ($L=0$) and $\\sum_i \\Delta_i = 1$, i.e., $\\Delta_i=1$ for one vertex while $\\Delta_i=0$ for all other vertices. There are three topologies which fulfill this condition, known as the two-pion exchange (2PE), 1PE, and contact graphs~\\cite{Kol94,Epe02b} (Fig.~\\ref{fig_3nf_nnlo}). Using the subleading vertices Eqs.~(\\ref{eq_V2_3}) and (\\ref{eq_V2_4}), it is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-513-next-to-next-to-next-to-leading-order",
+      "number": "5.1.3",
+      "title": "Next-to-next-to-next-to-leading order",
+      "level": 3,
+      "pageStart": 52,
+      "pageEnd": 53,
+      "labelStart": "52",
+      "labelEnd": "53",
+      "words": 539,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "drift corrections",
+          "heading": false
+        },
+        {
+          "term": "non-vanishing corrections",
+          "heading": false
+        },
+        {
+          "term": "cite rob",
+          "heading": false
+        },
+        {
+          "term": "ulich group",
+          "heading": false
+        },
+        {
+          "term": "ref fig",
+          "heading": false
+        },
+        {
+          "term": "leading vertices",
+          "heading": false
+        },
+        {
+          "term": "nnlo",
+          "heading": false
+        },
+        {
+          "term": "topologies",
+          "heading": false
+        }
+      ],
+      "extract": "According to Eq.~(\\ref{eq_nu3nf}), the value $\\nu=4$, which corresponds to N$^3$LO, is obtained for the following classes of diagrams. \\paragraph{3NF loop diagrams at N$^3$LO} For this group of graphs, we have $L=1$ and, therefore, all $\\Delta_i$ have to be zero to ensure $\\nu=4$. Thus, these one-loop 3NF diagrams can include only leading vertices, the parameters of which are fixed from $\\pi N$ and $NN$ analysis. We",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-514-the-3nf-at-n4lo",
+      "number": "5.1.4",
+      "title": "The 3NF at N4LO",
+      "level": 3,
+      "pageStart": 53,
+      "pageEnd": 54,
+      "labelStart": "53",
+      "labelEnd": "54",
+      "words": 275,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n4lo",
+          "heading": true
+        },
+        {
+          "term": "tree diagrams",
+          "heading": false
+        },
+        {
+          "term": "ref fig",
+          "heading": false
+        },
+        {
+          "term": "sub-leading",
+          "heading": false
+        },
+        {
+          "term": "kaiser",
+          "heading": false
+        },
+        {
+          "term": "n3lo",
+          "heading": false
+        },
+        {
+          "term": "vertex",
+          "heading": false
+        },
+        {
+          "term": "vspace",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{figure}[t]\\centering \\vspace*{-0.5cm} \\scalebox{1.0}{\\includegraphics{diag_3nf_n4loc.pdf}} \\vspace*{-0.75cm} \\caption{Sub-leading one-loop 3NF diagrams which appear at N$^4$LO. Notation as in Fig.~\\ref{fig_hi}.} \\label{fig_3nf_n4lo} \\end{figure} The obvious step to take is to proceed to the next order, N$^4$LO or $\\nu=5$. Some of the tree diagrams that appear at this order were mentioned already: the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-515-3nf-summary",
+      "number": "5.1.5",
+      "title": "3NF summary",
+      "level": 3,
+      "pageStart": 54,
+      "pageEnd": 54,
+      "labelStart": "54",
+      "labelEnd": "54",
+      "words": 100,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sizable contributions",
+          "heading": false
+        },
+        {
+          "term": "unresolved",
+          "heading": false
+        },
+        {
+          "term": "outstanding",
+          "heading": false
+        }
+      ],
+      "extract": "To make a complicated story short, this is the bottom line concerning 3NF~\\cite{ME10}: \\begin{itemize} \\item The leading chiral 3NF (that appears at NNLO) is sizable, improves predictions, but also leaves unresolved problems. Therefore, additional {\\it sizable} 3NF contributions are needed. \\item The chiral 3NF at N$^3$LO involves only leading vertices and most likely does {\\it not} produce sizable contributions.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-52-four-nucleon-forces",
+      "number": "5.2",
+      "title": "Four-nucleon forces",
+      "level": 2,
+      "pageStart": 54,
+      "pageEnd": 55,
+      "labelStart": "54",
+      "labelEnd": "55",
+      "words": 358,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "four-nucleon",
+          "heading": true
+        },
+        {
+          "term": "four-nucleon force",
+          "heading": false
+        },
+        {
+          "term": "iterative diagrams",
+          "heading": false
+        },
+        {
+          "term": "cite epe",
+          "heading": false
+        },
+        {
+          "term": "pdf vspace",
+          "heading": false
+        },
+        {
+          "term": "n3lo",
+          "heading": false
+        },
+        {
+          "term": "nlo",
+          "heading": false
+        },
+        {
+          "term": "ref fig",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{figure}[t]\\centering \\vspace*{-0.5cm} \\scalebox{1.1}{\\includegraphics{diag_4nf_nlo.pdf}} \\vspace*{-0.75cm} \\caption{Disconnected four-nucleon force diagrams at NLO, which cancel against the recoil corrections from corresponding iterative diagrams.} \\label{fig_4nf_nlo} \\end{figure} Formally, the lowest order four-nucleon force (4NF) occurs for two separately interacting nucleon pairs with leading vertices and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-6-introducing--isobar-degrees-of-freedom",
+      "number": "6",
+      "title": "Introducing -isobar degrees of freedom",
+      "level": 1,
+      "pageStart": 55,
+      "pageEnd": 58,
+      "labelStart": "55",
+      "labelEnd": "58",
+      "words": 1261,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "isobar degrees",
+          "heading": true
+        },
+        {
+          "term": "delta isobar",
+          "heading": false
+        },
+        {
+          "term": "cite kem",
+          "heading": false
+        },
+        {
+          "term": "cite kgw",
+          "heading": false
+        },
+        {
+          "term": "delta less",
+          "heading": false
+        },
+        {
+          "term": "delta contributions",
+          "heading": false
+        },
+        {
+          "term": "cite ekm",
+          "heading": false
+        },
+        {
+          "term": "delta full",
+          "heading": false
+        }
+      ],
+      "extract": "\\begin{figure}[t]\\centering \\vspace*{-0.5cm} \\scalebox{0.55}{\\includegraphics{diagD.pdf}} \\vspace*{-1.0cm} \\caption{Chiral 2NF without and with $\\Delta$-isobar degrees of freedom. Arrows indicate the shift of strength when explicit $\\Delta$'s are added to the theory. Note that the $\\Delta$-full theory consists of the diagrams involving $\\Delta$'s {\\it plus} the $\\Delta$-less ones. Double lines represent",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-7-conclusions",
+      "number": "7",
+      "title": "Conclusions",
+      "level": 1,
+      "pageStart": 58,
+      "pageEnd": 59,
+      "labelStart": "58",
+      "labelEnd": "59",
+      "words": 457,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nuclear forces",
+          "heading": false
+        },
+        {
+          "term": "few-nucleon forces",
+          "heading": false
+        },
+        {
+          "term": "nuclear many-body",
+          "heading": false
+        },
+        {
+          "term": "beyond n3lo",
+          "heading": false
+        },
+        {
+          "term": "nuclear structure",
+          "heading": false
+        },
+        {
+          "term": "two-nucleon force",
+          "heading": false
+        },
+        {
+          "term": "shell model",
+          "heading": false
+        },
+        {
+          "term": "nnlo",
+          "heading": false
+        }
+      ],
+      "extract": "The past 15 years have seen great progress in our understanding of nuclear forces in terms of low-energy QCD. Key to this development was the realization that low-energy QCD is equivalent to an eﬀective ﬁeld theory (EFT) which allows for a perturbative expansion that has become know as chiral perturbation theory (ChPT). In this framework, two- and many-body forces emerge on an equal footing and the empirical fact",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-appendix-a-notation-conventions-and-feynman-rule",
+      "number": null,
+      "title": "Appendix A Notation, conventions, and Feynman rules",
+      "level": 1,
+      "pageStart": 59,
+      "pageEnd": 59,
+      "labelStart": "59",
+      "labelEnd": "59",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-045-appendix-a1-notation-and-conventions",
+      "number": null,
+      "title": "Appendix A.1 Notation and conventions",
+      "level": 2,
+      "pageStart": 59,
+      "pageEnd": 61,
+      "labelStart": "59",
+      "labelEnd": "61",
+      "words": 931,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "σiσj σjσi",
+          "heading": false
+        },
+        {
+          "term": "nucleon ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "dirac matrices",
+          "heading": false
+        },
+        {
+          "term": "pauli matrices",
+          "heading": false
+        },
+        {
+          "term": "gµν",
+          "heading": false
+        },
+        {
+          "term": "coordinate labels",
+          "heading": false
+        },
+        {
+          "term": "ϵijk",
+          "heading": false
+        },
+        {
+          "term": "pion ﬁelds",
+          "heading": false
+        }
+      ],
+      "extract": "The contravariant space-time four-vector is given by xµ = (t,⃗x) (A.1) and the four-momentum vector reads pµ = (E,⃗p) . (A.2) We use units such that ℏ= c = 1. Greek indices µ, ν, etc. run over the four space-time coordinate labels 0, 1, 2, 3, with x0 = t the time coordinate. Latin indices i, j, k, and so on run over the three space coordinate labels 1, 2, 3. The metric is diagonal with gµν = gµν =     1 0 −1 −1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-appendix-a2-feynman-rules",
+      "number": null,
+      "title": "Appendix A.2 Feynman rules",
+      "level": 2,
+      "pageStart": 61,
+      "pageEnd": 62,
+      "labelStart": "61",
+      "labelEnd": "62",
+      "words": 164,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "covariant perturbation",
+          "heading": false
+        },
+        {
+          "term": "outgoing pion",
+          "heading": false
+        },
+        {
+          "term": "feynman",
+          "heading": true
+        },
+        {
+          "term": "perturbation theory",
+          "heading": false
+        },
+        {
+          "term": "four-momentum",
+          "heading": false
+        }
+      ],
+      "extract": "The basic formalism underlying the Feynman rules is the Dyson expansion of the S-matrix [cf. e. g., Eq. (6.1.1) of Ref. [225]]. Since we are applying covariant perturbation theory, we assume HI = −LI (where HI denotes the interaction Hamiltonian density and LI the interaction Lagrangian density) and use the usual covariant Feynman propagators. From a procedural point of view, this is acceptable for the derivative",
+      "extractCut": true
+    },
+    {
+      "id": "sec-047-appendix-a21-leading-order",
+      "number": null,
+      "title": "Appendix A.2.1 Leading order",
+      "level": 3,
+      "pageStart": 62,
+      "pageEnd": 63,
+      "labelStart": "62",
+      "labelEnd": "63",
+      "words": 253,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "heavy baryon",
+          "heading": false
+        },
+        {
+          "term": "nucleon propagator",
+          "heading": false
+        },
+        {
+          "term": "leading order",
+          "heading": true
+        },
+        {
+          "term": "baryon version",
+          "heading": false
+        }
+      ],
+      "extract": "The relativistic version of the leading order πN Lagrangian has been given in Eq. (2.41). We consider the axial-vector (AV) and the Weinberg-Tomozawa (WT) couplings, which involve one and two pion ﬁelds, respectively. The relativistic AV interaction Lagrangian is given by LAV = −gA 2fπ ¯Ψ γµ γ5 τ Ψ · ∂µπ . (A.37) For simple Lagrangians like this one, the vertex is just i times the Lagrangian stripped oﬀthe ﬁelds",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-appendix-a22-next-to-leading-order",
+      "number": null,
+      "title": "Appendix A.2.2 Next-to-leading order",
+      "level": 3,
+      "pageStart": 63,
+      "pageEnd": 63,
+      "labelStart": "63",
+      "labelEnd": "63",
+      "words": 180,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vertices eqs",
+          "heading": false
+        },
+        {
+          "term": "dimension-two",
+          "heading": false
+        },
+        {
+          "term": "two-pion",
+          "heading": false
+        }
+      ],
+      "extract": "The “ﬁxed” part of the dimension-two HB Lagrangian is given in Eq. (2.56). It leads to a nucleon kinetic energy correction −i⃗p 2 2MN , (A.48) and produces the one-pion vertex (q out) gA 4MNfπ τ a⃗σ · (⃗p +⃗p ′) q0 (A.49) and the two-pion vertex (q1 in, q2 out) − 1 8MNf 2π ϵabc τ c (⃗p +⃗p ′) · (⃗q1 +⃗q2) . (A.50) The vertices Eqs. (A.49) and (A.50) are the ﬁrst relativistic corrections of the vertices Eqs. (A.40)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-049-appendix-b-two-pion-exchange-contributions-to-th",
+      "number": null,
+      "title": "Appendix B Two-pion exchange contributions to the 2NF at NLO",
+      "level": 1,
+      "pageStart": 63,
+      "pageEnd": 63,
+      "labelStart": "63",
+      "labelEnd": "63",
+      "words": 27,
+      "summary": null,
+      "keywords": [],
+      "extract": "An overview of the 2PE diagrams that contribute at NLO was shown in Fig. 3. We will now evaluate the various groups of diagrams one by one.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-050-appendix-b1-triangle-diagrams",
+      "number": null,
+      "title": "Appendix B.1 Triangle diagrams",
+      "level": 2,
+      "pageStart": 63,
+      "pageEnd": 63,
+      "labelStart": "63",
+      "labelEnd": "63",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-051-appendix-b11-the-triangles-in-covariant-perturba",
+      "number": null,
+      "title": "Appendix B.1.1 The triangles in covariant perturbation theory",
+      "level": 3,
+      "pageStart": 63,
+      "pageEnd": 66,
+      "labelStart": "63",
+      "labelEnd": "66",
+      "words": 1112,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "m2π",
+          "heading": false
+        },
+        {
+          "term": "d4l",
+          "heading": false
+        },
+        {
+          "term": "ϵabcτ",
+          "heading": false
+        },
+        {
+          "term": "nlo triangle",
+          "heading": false
+        },
+        {
+          "term": "γµu",
+          "heading": false
+        },
+        {
+          "term": "γνγ",
+          "heading": false
+        },
+        {
+          "term": "triangle diagrams",
+          "heading": false
+        },
+        {
+          "term": "d3l",
+          "heading": false
+        }
+      ],
+      "extract": "The triangle diagrams are shown in Fig. B.1. The contributions from diagram (a) and (b) will be denoted by Va and Vb, respectively. According to relativistic Feynman rules, one obtains Va = i g2 A 16f 4π Z d4l (2π)4 (2lµ + qµ)ϵabcτ c 1 ¯u1(⃗p ′)γµu1(⃗p) i (l + q)2 −m2π + iϵ × × i l2 −m2π + iϵ ¯u2(−⃗p ′)(−lν)τ b 2γνγ5 i(k/N + MN) k2 N −M 2 N + iϵ(lρ + qρ)τ a 2 γργ5u2(−⃗p) , (B.1) Vb = i g2 A 16f 4π Z d4l (2π)4 (2lµ +",
+      "extractCut": true
+    },
+    {
+      "id": "sec-052-appendix-b12-dimensional-regularization-of-the-t",
+      "number": null,
+      "title": "Appendix B.1.2 Dimensional regularization of the triangles",
+      "level": 3,
+      "pageStart": 66,
+      "pageEnd": 68,
+      "labelStart": "66",
+      "labelEnd": "68",
+      "words": 1331,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "m2π q2x",
+          "heading": false
+        },
+        {
+          "term": "dimensional regularization",
+          "heading": true
+        },
+        {
+          "term": "integration variable",
+          "heading": false
+        },
+        {
+          "term": "momentum integral",
+          "heading": false
+        },
+        {
+          "term": "d3l",
+          "heading": false
+        },
+        {
+          "term": "dimensionless",
+          "heading": false
+        },
+        {
+          "term": "integrand",
+          "heading": false
+        },
+        {
+          "term": "four-dimensional",
+          "heading": false
+        }
+      ],
+      "extract": "The integral is divergent and, therefore, requires regularization. In Ref. [54], this is done by introducing a Gaussian cutoﬀfunction exp(−⃗l2/Λ2) which, however, makes the results dependent on the cutoﬀparameter Λ. To avoid such cutoﬀdependence, we will use dimensional regularization which was ﬁrst introduced by ’t Hooft and Veltman in 1972 [227].6 For this it is convenient to go back to Eq. (B.14) and apply a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-053-appendix-b2-football-diagram",
+      "number": null,
+      "title": "Appendix B.2 Football diagram",
+      "level": 2,
+      "pageStart": 68,
+      "pageEnd": 68,
+      "labelStart": "68",
+      "labelEnd": "68",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-054-appendix-b21-the-football-in-covariant-perturbat",
+      "number": null,
+      "title": "Appendix B.2.1 The football in covariant perturbation theory",
+      "level": 3,
+      "pageStart": 68,
+      "pageEnd": 70,
+      "labelStart": "68",
+      "labelEnd": "70",
+      "words": 418,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "football",
+          "heading": true
+        },
+        {
+          "term": "football diagram",
+          "heading": false
+        },
+        {
+          "term": "m2π",
+          "heading": false
+        },
+        {
+          "term": "d4l",
+          "heading": false
+        },
+        {
+          "term": "d3l",
+          "heading": false
+        }
+      ],
+      "extract": "The football diagram is shown in Fig. B.2. In the HB formalism, one obtains V = i 1 2 1 16f 4π Z d4l (2π)4 (2l0 + q0)ϵabcτ c 1 i (l + q)2 −m2π + iϵ i l2 −m2π + iϵ(2l0 + q0)ϵbadτ d 2 , (B.40) 68 l l + q b a µ ν (Ep ,⃗p) (Ep , −⃗p) (Ep ,⃗p ′) (Ep , −⃗p ′) Figure B.2: Two-pion exchange football diagram at NLO. where the factor 1 2 is a combinatoric factor and q = (0,⃗p ′ −⃗p). Using ϵabcτ c 1ϵbadτ d 2 = −2 τ 1 · τ 2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-055-appendix-b22-the-proper-calculation-of-the-footb",
+      "number": null,
+      "title": "Appendix B.2.2 The proper calculation of the football in time-ordered perturbation theory",
+      "level": 3,
+      "pageStart": 70,
+      "pageEnd": 71,
+      "labelStart": "70",
+      "labelEnd": "71",
+      "words": 804,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "d3l",
+          "heading": false
+        },
+        {
+          "term": "vork",
+          "heading": false
+        },
+        {
+          "term": "δaa",
+          "heading": false
+        },
+        {
+          "term": "d3k",
+          "heading": false
+        },
+        {
+          "term": "topt",
+          "heading": false
+        },
+        {
+          "term": "contact terms",
+          "heading": false
+        },
+        {
+          "term": "m2π",
+          "heading": false
+        },
+        {
+          "term": "interaction hamiltonian",
+          "heading": false
+        }
+      ],
+      "extract": "We will explain now the reason for the discrepancy between Eqs. (B.44) and (B.45). In covariant PT theory one assumes for the interaction Hamiltonian density HI = −LI. This is strictly speaking not correct for derivative coupling, because in that case one has HI = −LI + additional noncovariant terms. For relatively simple cases of derivative coupling, the additional terms are of the contact type. Now, in covariant",
+      "extractCut": true
+    },
+    {
+      "id": "sec-056-appendix-b23-dimensional-regularization-of-the-f",
+      "number": null,
+      "title": "Appendix B.2.3 Dimensional regularization of the football",
+      "level": 3,
+      "pageStart": 71,
+      "pageEnd": 72,
+      "labelStart": "71",
+      "labelEnd": "72",
+      "words": 539,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "m2π q2x",
+          "heading": false
+        },
+        {
+          "term": "football",
+          "heading": true
+        },
+        {
+          "term": "d4l",
+          "heading": false
+        },
+        {
+          "term": "d3l",
+          "heading": false
+        }
+      ],
+      "extract": "We start from Eq. (B.41), V = i τ 1 · τ 2 1 4f 4π Z d4l (2π)4 1 (l + q)2 −m2π + iϵ (l0)2 l2 −m2π + iϵ , (B.58) and apply the Feynman trick Eq. (B.19), V = −τ 1 · τ 2 1 4f 4π Z 1 0 dx Z d4l i(2π)4 (l0)2 [l2 + (2lq + q2)x −m2π + iϵ]2 . (B.59) Using the residue theorem for the l0 integration, we obtain V = −τ 1 · τ 2 1 4f 4π Z 1 0 dx Z dl0 d3l i(2π)4 (l0)2 (l0 −l0 1)2(l0 + l0 1)2 = τ 1 · τ 2 1 4f 4π Z 1 0 dx Z d3l",
+      "extractCut": true
+    },
+    {
+      "id": "sec-057-appendix-b3-box-and-crossed-box-diagrams",
+      "number": null,
+      "title": "Appendix B.3 Box and crossed box diagrams",
+      "level": 2,
+      "pageStart": 72,
+      "pageEnd": 77,
+      "labelStart": "72",
+      "labelEnd": "77",
+      "words": 2073,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "m2π q2x",
+          "heading": false
+        },
+        {
+          "term": "crossed box",
+          "heading": true
+        },
+        {
+          "term": "box diagrams",
+          "heading": true
+        },
+        {
+          "term": "planar box",
+          "heading": false
+        },
+        {
+          "term": "nucleon poles",
+          "heading": false
+        },
+        {
+          "term": "pion poles",
+          "heading": false
+        },
+        {
+          "term": "d4l",
+          "heading": false
+        },
+        {
+          "term": "δmn",
+          "heading": false
+        }
+      ],
+      "extract": "The planar box (pb) and crossed box (cb) diagrams together with our notation are shown in Fig. B.3 and the corresponding amplitudes are given by V pb = i g4 A 16f 4π Z d4l (2π)4 i q2 1 −m2π + iϵ i q2 2 −m2π + iϵ × ×¯u1(⃗p ′)(−qν 2)τ b 1γνγ5 i(/kN1 + MN) k2 N1 −M 2 N + iϵqµ 1 τ a 1 γµγ5u1(⃗p) × ×¯u2(−⃗p ′)qτ 2τ b 2γτγ5 i(/kN2 + MN) k2 N2 −M 2 N + iϵ(−qρ 1)τ a 2 γργ5u2(−⃗p) , (B.68) V cb = i g4 A 16f 4π Z d4l (2π)4 i",
+      "extractCut": true
+    },
+    {
+      "id": "sec-058-appendix-b4-summary-of-2pe-contributions-at-nlo",
+      "number": null,
+      "title": "Appendix B.4 Summary of 2PE contributions at NLO",
+      "level": 2,
+      "pageStart": 77,
+      "pageEnd": 77,
+      "labelStart": "77",
+      "labelEnd": "77",
+      "words": 220,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "π2f",
+          "heading": false
+        },
+        {
+          "term": "nlo",
+          "heading": true
+        },
+        {
+          "term": "ms-scheme",
+          "heading": false
+        },
+        {
+          "term": "football",
+          "heading": false
+        }
+      ],
+      "extract": "Adding up all 2PE contributions at NLO, namely, the box and crossed boxes Eqs. (B.107) and (B.108), the triangles Eq. (B.39), and the football Eq. (B.67), we obtain WC = − 1 384π2f 4π \u001a\u0014 4m2 π(5g4 A −4g2 A −1) + q2(23g4 A −10g2 A −1) + 48g4 Am4 π w2 \u0015 L(q) + \u0002 6m2 π(15g4 A −6g2 A −1) + q2(23g4 A −10g2 A −1) \u0003 ln \u0010mπ λ \u0011 +4m2 π(4g4 A + g2 A + 1) + q2 6 (5g4 A + 26g2 A + 5) \u001b (B.109) VT = −1 q2 VS = − 3g4 A 64π2f 4π \u0014",
+      "extractCut": true
+    },
+    {
+      "id": "sec-059-appendix-c-two-pion-exchange-contributions-to-th",
+      "number": null,
+      "title": "Appendix C Two-pion exchange contributions to the 2NF at NNLO",
+      "level": 1,
+      "pageStart": 77,
+      "pageEnd": 79,
+      "labelStart": "77",
+      "labelEnd": "79",
+      "words": 943,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "m2π q2x",
+          "heading": false
+        },
+        {
+          "term": "πmn",
+          "heading": false
+        },
+        {
+          "term": "nnlo",
+          "heading": true
+        },
+        {
+          "term": "v1π",
+          "heading": false
+        },
+        {
+          "term": "kbw",
+          "heading": false
+        },
+        {
+          "term": "munich group",
+          "heading": false
+        },
+        {
+          "term": "nlo diagrams",
+          "heading": false
+        },
+        {
+          "term": "q4x",
+          "heading": false
+        }
+      ],
+      "extract": "Two-pion exchange diagrams that contribute at NNLO were shown in Fig. 4. These diagrams diﬀer from the NLO diagrams, Fig. 3, by one insertion from the dimension-two Lagrangian, the vertices of which are given in Appendix A.2.2. There are two kinds of second order vertices: The relativistic corrections of the leading order Lagrangian, which are proportional to 1/MN, Eqs. (A.48)-(A.50), and new contact interactions",
+      "extractCut": true
+    },
+    {
+      "id": "sec-060-appendix-d-two-pion-exchange-contributions-to-th",
+      "number": null,
+      "title": "Appendix D Two-pion exchange contributions to the 2NF at N3LO",
+      "level": 1,
+      "pageStart": 79,
+      "pageEnd": 79,
+      "labelStart": "79",
+      "labelEnd": "79",
+      "words": 19,
+      "summary": null,
+      "keywords": [],
+      "extract": "The fourth order 2PE contributions consist of two classes: the one-loop (Fig. 5) and the two-loop diagrams (Fig. 6).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-061-appendix-d1-one-loop-diagrams",
+      "number": null,
+      "title": "Appendix D.1 One-loop diagrams",
+      "level": 2,
+      "pageStart": 79,
+      "pageEnd": 79,
+      "labelStart": "79",
+      "labelEnd": "79",
+      "words": 21,
+      "summary": null,
+      "keywords": [],
+      "extract": "This large pool of diagrams can be analyzed in a systematic way by introducing the following well-deﬁned subdivisions. Appendix D.1.1. c2",
+      "extractCut": false
+    },
+    {
+      "id": "sec-062-appendix-d11-ci2-contributions",
+      "number": null,
+      "title": "Appendix D.1.1 ci2 contributions.",
+      "level": 3,
+      "pageStart": 79,
+      "pageEnd": 79,
+      "labelStart": "79",
+      "labelEnd": "79",
+      "words": 75,
+      "summary": null,
+      "keywords": [],
+      "extract": "The only contribution of this kind comes from the football diagram with both vertices proportional to ci (ﬁrst row of Fig. 5). One obtains [60]: VC = 3L(q) 16π2f 4π \u0014\u0010c2 6 w2 + c3 ew2 −4c1m2 π \u00112 + c2 2 45w4 \u0015 , (D.1) WT = −1 q2 WS = c2 4w2L(q) 96π2f 4π , (D.2) with L(q) and w deﬁned in Eq. (B.37) and ew ≡ p 2m2π + q2 . (D.3)",
+      "extractCut": false
+    },
+    {
+      "id": "sec-063-appendix-d12-cimn-contributions",
+      "number": null,
+      "title": "Appendix D.1.2 ci/MN contributions.",
+      "level": 3,
+      "pageStart": 79,
+      "pageEnd": 80,
+      "labelStart": "79",
+      "labelEnd": "80",
+      "words": 157,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "w2l",
+          "heading": false
+        },
+        {
+          "term": "vls",
+          "heading": false
+        },
+        {
+          "term": "wls",
+          "heading": false
+        }
+      ],
+      "extract": "This class consists of diagrams with one vertex proportional to ci and one 1/MN correction. A few graphs that are representative for this class are shown in the second row of Fig. 5. Symbols with a large solid dot and an open circle denote 1/MN corrections of vertices proportional to ci. They are part of bL∆=2, Eq. (2.67). The result for this group of diagrams is [60]: VC = − g2 A L(q) 32π2MNf 4π \u0002 (c2 −6c3)q4 +",
+      "extractCut": true
+    },
+    {
+      "id": "sec-064-appendix-d13-1mn2-corrections",
+      "number": null,
+      "title": "Appendix D.1.3 1/MN2 corrections.",
+      "level": 3,
+      "pageStart": 80,
+      "pageEnd": 80,
+      "labelStart": "80",
+      "labelEnd": "80",
+      "words": 287,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "π2m",
+          "heading": false
+        },
+        {
+          "term": "corrections",
+          "heading": true
+        },
+        {
+          "term": "vσl",
+          "heading": false
+        }
+      ],
+      "extract": "N corrections. These are relativistic 1/M 2 N corrections of the leading order 2π exchange diagrams. Typical examples for this large class are shown in row 3–6 of Fig. 5. This time, there is no correction from the iterated 1PE, Eq. (4.25) or Eq. (4.26), since the expansion of the factor M 2 N/Ep does not create a term proportional to 1/M 2 N. The total result for this class is [61], VC = − g4 A 32π2M 2 Nf 4π \" L(q)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-065-appendix-d2-two-loop-contributions",
+      "number": null,
+      "title": "Appendix D.2 Two-loop contributions.",
+      "level": 2,
+      "pageStart": 80,
+      "pageEnd": 82,
+      "labelStart": "80",
+      "labelEnd": "82",
+      "words": 950,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "two-loop",
+          "heading": true
+        },
+        {
+          "term": "phase shifts",
+          "heading": false
+        },
+        {
+          "term": "contributions",
+          "heading": true
+        },
+        {
+          "term": "m2π",
+          "heading": false
+        },
+        {
+          "term": "π2f",
+          "heading": false
+        },
+        {
+          "term": "n2lo",
+          "heading": false
+        },
+        {
+          "term": "ew2a",
+          "heading": false
+        },
+        {
+          "term": "deg",
+          "heading": false
+        }
+      ],
+      "extract": "The two-loop contributions are quite involved. In Fig. 6, we attempt a graphical representation of this class. The gray disk stands for all one-loop πN graphs which are shown in some detail in the lower part of the ﬁgure. Not all of the numerous graphs are displayed. Some of the missing ones are obtained by permutation of the vertices along the nucleon line, others by inverting initial and ﬁnal states. Vertices",
+      "extractCut": true
+    },
+    {
+      "id": "sec-066-appendix-d3-impact-of-individual-n3lo-contributi",
+      "number": null,
+      "title": "Appendix D.3 Impact of individual N3LO contributions on peripheral phase shifts",
+      "level": 2,
+      "pageStart": 82,
+      "pageEnd": 83,
+      "labelStart": "82",
+      "labelEnd": "83",
+      "words": 553,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phase shifts",
+          "heading": true
+        },
+        {
+          "term": "n3lo",
+          "heading": true
+        },
+        {
+          "term": "two-loop contributions",
+          "heading": false
+        },
+        {
+          "term": "partial waves",
+          "heading": false
+        },
+        {
+          "term": "curve plus",
+          "heading": false
+        },
+        {
+          "term": "peripheral",
+          "heading": true
+        },
+        {
+          "term": "previous curve",
+          "heading": false
+        },
+        {
+          "term": "individual",
+          "heading": true
+        }
+      ],
+      "extract": "The fourth order is obviously very diverse. Here, we will show how the individual fourth-order con- tributions impact NN phase shifts in peripheral partial waves. For this purpose, we display in Fig. D.1 phase shifts for four important peripheral partial waves, namely, 1F3, 3F3, 3F4, and 3G5. In each frame, the following curves are shown: 82 (1) NNLO (“N2LO”). (2) The previous curve plus the c2 i graph, ﬁrst row of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-067-appendix-e-fourth-order-nn-contact-potential-par",
+      "number": null,
+      "title": "Appendix E Fourth order NN contact potential: Partial wave decomposition",
+      "level": 1,
+      "pageStart": 83,
+      "pageEnd": 85,
+      "labelStart": "83",
+      "labelEnd": "85",
+      "words": 892,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "d1p d3s",
+          "heading": false
+        },
+        {
+          "term": "bd3s d1p",
+          "heading": false
+        },
+        {
+          "term": "d3p f2p",
+          "heading": false
+        },
+        {
+          "term": "d3d",
+          "heading": false
+        }
+      ],
+      "extract": "The contact potential of order four, Eq. (4.43), decomposes into partial-waves as follows V (4) ct (1S0) = bD1S0(p′4 + p4) + D1S0p′2p2 V (4) ct (3P0) = D3P0(p′3p + p′p3) V (4) ct (1P1) = D1P1(p′3p + p′p3) V (4) ct (3P1) = D3P1(p′3p + p′p3) V (4) ct (3S1) = bD3S1(p′4 + p4) + D3S1p′2p2 V (4) ct (3D1) = D3D1p′2p2 V (4) ct (3S1 −3 D1) = bD3S1−3D1p4 + D3S1−3D1p′2p2 V (4) ct (3D1 −3 S1) = bD3S1−3D1p′4 + D3S1−3D1p′2p2 83 V",
+      "extractCut": true
+    },
+    {
+      "id": "sec-068-appendix-f-parameters-of-n3lo-nn-potentials",
+      "number": null,
+      "title": "Appendix F Parameters of N3LO NN potentials",
+      "level": 1,
+      "pageStart": 85,
+      "pageEnd": 93,
+      "labelStart": "85",
+      "labelEnd": "93",
+      "words": 5132,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n3lo potentials",
+          "heading": true
+        },
+        {
+          "term": "van kolck",
+          "heading": false
+        },
+        {
+          "term": "idaho n3lo",
+          "heading": false
+        },
+        {
+          "term": "ruiz arriola",
+          "heading": false
+        },
+        {
+          "term": "pavon valderrama",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "partial-wave parameters",
+          "heading": false
+        }
+      ],
+      "extract": "This appendix provides detailed information on parameters involved in the Idaho N3LO NN poten- tials [68]. The πN LECs were shown already in Table 2 (column ‘NN potential’). In Table F.1, the LECs are listed, which are associated with the contact terms, Eqs. (4.38), (4.40), and (4.43), and, in Table F.2, the contact LECs are given in terms of partial-wave parameters. Notice that through Eqs. (4.39), (4.42), and",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 2,
+        "items": [
+          "Preprint submitted to Physics Reports [published: Phys. Rep. 503 (2011) 1-75] November 26,",
+          "1/M 2 N corrections"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "n3lo contributions",
+      "heading": true
+    },
+    {
+      "term": "nlo diagrams",
+      "heading": true
+    },
+    {
+      "term": "n3lo potential",
+      "heading": true
+    },
+    {
+      "term": "contact potential",
+      "heading": true
+    },
+    {
+      "term": "contact lagrangian",
+      "heading": false
+    },
+    {
+      "term": "nnlo cite",
+      "heading": false
+    },
+    {
+      "term": "order n3lo",
+      "heading": true
+    },
+    {
+      "term": "nucleon contact",
+      "heading": true
+    },
+    {
+      "term": "m2π q2x",
+      "heading": false
+    },
+    {
+      "term": "nuclear force",
+      "heading": false
+    },
+    {
+      "term": "contact interaction",
+      "heading": false
+    },
+    {
+      "term": "exchange contributions",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 63,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 64,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 67,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 69,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 71,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 72,
+      "label": "72",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 73,
+      "label": "73",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 74,
+      "label": "74",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 75,
+      "label": "75",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 76,
+      "label": "76",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 77,
+      "label": "77",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 78,
+      "label": "78",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 79,
+      "label": "79",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 80,
+      "label": "80",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 81,
+      "label": "81",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 82,
+      "label": "82",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 83,
+      "label": "83",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 84,
+      "label": "84",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 85,
+      "label": "85",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 86,
+      "label": "86",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 87,
+      "label": "87",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 88,
+      "label": "88",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 89,
+      "label": "89",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 90,
+      "label": "90",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 91,
+      "label": "91",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 92,
+      "label": "92",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 93,
+      "label": "93",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "The Theory of Nuclear Forces: Seven Decades of Struggle",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Hierarchy of nuclear forces in ChPT. Solid lines represent nucleons and dashed lines pions. Small dots, large solid dots, solid squares, and solid diamonds denote vertices of index ∆= 0, 1, 2, and 4, respectively. Further explanations are given in the text",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "One-pion exchange contributions",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Leading two-pion exchange contributions to the NN interaction. Notation as in Fig. 1",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Two-pion exchange contributions to the NN interaction at order three in small momenta (NNLO). Basic notation as in Fig. 1. Large solid dots denote vertices from the Lagrangian b",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "One-loop 2π-exchange contributions to the NN interaction at order four. Notation as in Fig. 4. Moreover, symbols with a large solid dot and an open circle denote 1/MN corrections of vertices proportional to ci. Symbols with two open circles mark relativistic 1/M2",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Two-loop 2π-exchange contributions at order four. Basic notation as in Fig. 1. The oval stands for all one-loop πN graphs some of which are shown in the lower part of the ﬁgure. The solid square represents vertices proportional to the LECs di introduced in L(3)",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Leading three-pion exchange contributions to the NN interaction. Notation as in Fig. 1. Diagrams that result from interchange of nucleon lines and/or time reversal are not shown",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Hadron masses and low-energy constants (LECs)",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "F-wave phase shifts of neutron-proton scattering for laboratory kinetic energies below 300 MeV. We show the predictions from chiral pion exchange to leading order (LO), next-to-leading order (NLO), next-to-next-to-leading order (NNLO), and next-to-next-to-next-to-leading order (N3LO). Note that in 3",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Same as Fig. 8, but for G waves",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "F-wave phase shifts of neutron-proton scattering for laboratory kinetic energies below 300 MeV. We show the results from one-pion-exchange (1PE), and oneplus two-pion exchange as predicted by ChPT at next-to-next-to-next-to-leading order (N3LO) and by the Bonn Full Model [20] (Bonn). Note that the “",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Same as Fig. 10, but for G waves",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "Phase shifts of np scattering as calculated from NN potentials at diﬀerent orders of ChPT. The black dotted line is LO(500), the blue dashed is NLO(550/700) [172], the green dash-dotted NNLO(600/700) [172], and the red solid N3LO(500) [68], where the numbers in parentheses denote the cutoﬀs in MeV",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "Same as Fig. 12, but J = 2 phase shifts and J ≤2 mixing parameters are shown",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "Columns three and four show the χ2/datum for the reproduction of the 1999 np database [173] (subdivided into energy intervals) by families of np potentials at NLO and NNLO constructed by the Juelich group [172]. The χ2/datum is stated in terms of ranges which result from a variation of the cutoﬀpara",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "4",
+      "title": "Number of parameters needed for ﬁtting the np data in phase-shift analysis and by a high-precision NN potential versus the total number of NN contact terms of EFT based potentials to diﬀerent orders",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "5",
+      "title": "Isospin breaking contributions to the NN interaction",
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "6",
+      "title": "Columns three to ﬁve display the χ2/datum for the reproduction of the 1999 np database [173] (subdivided into energy intervals) by various np potentials. For the chiral potentials, the χ2/datum is stated in terms of ranges which result from a variation of the cutoﬀparameters used in the regulator fu",
+      "page": 46,
+      "pageLabel": "46",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "7",
+      "title": "Same as Table 6 but for pp",
+      "page": 46,
+      "pageLabel": "46",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "Neutron-proton phase parameters as described by various chiral potentials at N3LO. The (red) solid and the dashed curves are calculated from Idaho N3LO potentials [68] with Λ = 500 and 600 MeV, respectively; while the (green) dash-dotted and the dotted curves are based upon Juelich N3LO potentials [",
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "Same as Fig. 14 but J = 2 phase shifts and J ≤2 mixing parameters are shown",
+      "page": 48,
+      "pageLabel": "48",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "8",
+      "title": "Scattering lengths (a) and eﬀective ranges (r) in units of fm. (aC",
+      "page": 49,
+      "pageLabel": "49",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "9",
+      "title": "Deuteron properties as predicted by various NN potentials are compared to empirical information. (Deuteron binding energy Bd, asymptotic S state AS, asymptotic D/S state η, deuteron radius rd, quadrupole moment Q, D-state probability PD; the calculated rd and Q are without meson-exchange current con",
+      "page": 49,
+      "pageLabel": "49",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "16",
+      "title": "Deuteron wave functions: the family of larger curves are S-waves, the smaller ones D-waves. The thick colored lines represent the wave functions derived from chiral NN potentials at order N3LO (red solid: Idaho(500) [68], green dashed: Juelich(550/600) [171])",
+      "page": 50,
+      "pageLabel": "50",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "17",
+      "title": "Three-nucleon force diagrams at NLO. Notation as in Fig. 1",
+      "page": 51,
+      "pageLabel": "51",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "18",
+      "title": "The three-nucleon force at NNLO. From left to right: 2PE, 1PE, and contact diagrams. Notation as in Fig. 1",
+      "page": 52,
+      "pageLabel": "52",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "19",
+      "title": "Leading one-loop 3NF diagrams at N3LO. We show one representative example for each of ﬁve topologies, which are: (a) 2PE, (b) 1PE-2PE, (c) ring, (d) contact-1PE, (e) contact-2PE. Notation as in Fig. 1",
+      "page": 53,
+      "pageLabel": "53",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "20",
+      "title": "Sub-leading one-loop 3NF diagrams which appear at N4LO. Notation as in Fig. 1",
+      "page": 53,
+      "pageLabel": "53",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "21",
+      "title": "Disconnected four-nucleon force diagrams at NLO, which cancel against the recoil corrections from corresponding iterative diagrams",
+      "page": 54,
+      "pageLabel": "54",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "22",
+      "title": "Leading four-nucleon force at N3LO",
+      "page": 55,
+      "pageLabel": "55",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "23",
+      "title": "Chiral 2NF without and with ∆-isobar degrees of freedom. Arrows indicate the shift of strength when explicit ∆’s are added to the theory. Note that the ∆-full theory consists of the diagrams involving ∆’s plus the ∆-less ones. Double lines represent ∆-isobars; remaining notation as in Fig. 1",
+      "page": 56,
+      "pageLabel": "56",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "24",
+      "title": "The 3NF without and with ∆-isobar degrees of freedom. Arrows indicate the shift of strength when explicit ∆’s are added to the theory. Note that the ∆-full theory consists of the diagrams involving ∆’s plus the ∆-less ones. Double lines represent ∆-isobars; remaining notation as in Fig. 1",
+      "page": 57,
+      "pageLabel": "57",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 69,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 70,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "24 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "9 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p85); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 26
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 70 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1105.2919v1"
+  }
+}

@@ -1,0 +1,937 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2607.03827v1",
+  "title": "Affine cellular algebras and asymptotic algebras",
+  "variant": "pdf",
+  "pages": 32,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Determinants for affine Cellular Algebras",
+      "number": "2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-determinants-for-affine-cellular-algebras"
+    },
+    {
+      "level": 1,
+      "title": "Homomorphisms between affine cell ideals.",
+      "number": "3",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-homomorphisms-between-affine-cell-ideals"
+    },
+    {
+      "level": 1,
+      "title": "The asymptotic algebra of an affine cellular algebra",
+      "number": "4",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-the-asymptotic-algebra-of-an-affine-cellular-a"
+    },
+    {
+      "level": 1,
+      "title": "Properties of the embedding into the asymptotic algebra",
+      "number": "5",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-properties-of-the-embedding-into-the-asymptoti"
+    },
+    {
+      "level": 1,
+      "title": "Examples and methods",
+      "number": "6",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-6-examples-and-methods"
+    },
+    {
+      "level": 2,
+      "title": "An explicit example",
+      "number": "6.1",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-61-an-explicit-example"
+    },
+    {
+      "level": 2,
+      "title": "Extended affine Hecke algebra of type A",
+      "number": "6.2",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-62-extended-affine-hecke-algebra-of-type-a"
+    },
+    {
+      "level": 2,
+      "title": "Gram determinants and Jucys Murphy elements",
+      "number": "6.3",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-63-gram-determinants-and-jucys-murphy-elements"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 121,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "affine cellular",
+          "heading": false
+        },
+        {
+          "term": "cellular algebras",
+          "heading": false
+        },
+        {
+          "term": "cell modules",
+          "heading": false
+        },
+        {
+          "term": "asymptotic algebras",
+          "heading": false
+        }
+      ],
+      "extract": "AFFINE CELLULAR ALGEBRAS AND ASYMPTOTIC ALGEBRAS PAULA A.A.B. CARVALHO, STEFFEN KOENIG, AND CHRISTIAN LOMP Abstract. The theory of affine cellular algebras A is extended to incorporate their asymptotic algebras ˆA, clarifying unexpected differences between classical and affine situations and comparing with Lusztig’s asymptotic Hecke algebras. The main new results are about a double centraliser property between A and",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2607.03827v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": "5",
+      "words": 1721,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cell subquotients",
+          "heading": false
+        },
+        {
+          "term": "affine cellular",
+          "heading": false
+        },
+        {
+          "term": "affine quasi-hereditary",
+          "heading": false
+        },
+        {
+          "term": "swich matrices",
+          "heading": false
+        },
+        {
+          "term": "swich matrix",
+          "heading": false
+        },
+        {
+          "term": "cellular algebras",
+          "heading": false
+        },
+        {
+          "term": "cite kxaffine",
+          "heading": false
+        },
+        {
+          "term": "cell ideals",
+          "heading": false
+        }
+      ],
+      "extract": "The aim of this article is to clarify new and sometimes unexpected structures of affine cellular algebras and properties of embeddings into asymptotic algebras, to illustrate these structures and properties by examples and to put them into the context of algebraic Lie theory. This continues and builds upon \\cite{KXaffine} and \\cite{CKLS}. Plenty of finite dimensional algebras arising in algebraic Lie theory have",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-determinants-for-affine-cellular-algebras",
+      "number": "2",
+      "title": "Determinants for affine Cellular Algebras",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "5",
+      "labelEnd": null,
+      "words": 1364,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "affine cellular",
+          "heading": true
+        },
+        {
+          "term": "cellular algebras",
+          "heading": true
+        },
+        {
+          "term": "affine cell",
+          "heading": false
+        },
+        {
+          "term": "emph cell",
+          "heading": false
+        },
+        {
+          "term": "delta otimes",
+          "heading": false
+        },
+        {
+          "term": "overline psi",
+          "heading": false
+        },
+        {
+          "term": "cell module",
+          "heading": false
+        },
+        {
+          "term": "cell ideal",
+          "heading": false
+        }
+      ],
+      "extract": "Throughout this text let $k$ denote a commutative Noetherian domain. We recall the definition of an affine cell ideal of a $k$-algebra, introduced in \\cite{KXaffine}, and then collect basic properties of determinants of swich matrices. These determinants will play crucial roles in assumptions and proofs of main results. \\begin{definition} Let $A$ be a unitary $k$-algebra with a $k$-involution $i$ on $A$. A two-sided",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-homomorphisms-between-affine-cell-ideals",
+      "number": "3",
+      "title": "Homomorphisms between affine cell ideals.",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": "13",
+      "words": 2793,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "affine cell",
+          "heading": true
+        },
+        {
+          "term": "array ccc",
+          "heading": false
+        },
+        {
+          "term": "affine cellular",
+          "heading": false
+        },
+        {
+          "term": "overline delta",
+          "heading": false
+        },
+        {
+          "term": "cell modules",
+          "heading": false
+        },
+        {
+          "term": "delta otimes",
+          "heading": false
+        },
+        {
+          "term": "cell ideal",
+          "heading": false
+        },
+        {
+          "term": "alpha overline",
+          "heading": false
+        }
+      ],
+      "extract": "The purpose of this section is to show that for affine cellular algebras, whose determinants are not zero-divisors and whose cell ideals are idempotent, there are no non-zero homomorphisms between different cell modules. In particular, Theorem \\ref{TheoremE} will be established. At the end of the section, two explicit examples of affine cellular algebras will be discussed in detail. First, some motivation for the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-the-asymptotic-algebra-of-an-affine-cellular-a",
+      "number": "4",
+      "title": "The asymptotic algebra of an affine cellular algebra",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 17,
+      "labelStart": "13",
+      "labelEnd": "17",
+      "words": 1474,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "affine cellular",
+          "heading": true
+        },
+        {
+          "term": "cellular algebra",
+          "heading": true
+        },
+        {
+          "term": "asymptotic algebra",
+          "heading": true
+        },
+        {
+          "term": "delta oplus",
+          "heading": false
+        },
+        {
+          "term": "cong delta",
+          "heading": false
+        },
+        {
+          "term": "cdots oplus",
+          "heading": false
+        },
+        {
+          "term": "affine cell",
+          "heading": false
+        },
+        {
+          "term": "cong mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, the asymptotic algebra of an affine cellular algebra and the embedding of an affine cellular algebra into its asymptotic algebra will be described in detail. Moreover, the asymptotic algebra will be constructed as endomorphism ring in a double centraliser property. This proves Theorems A and D. Let $A$ be an affine cellular algebra with cell chain \\begin{equation}\\label{notation:cellchain} 0=J_0",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-properties-of-the-embedding-into-the-asymptoti",
+      "number": "5",
+      "title": "Properties of the embedding into the asymptotic algebra",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 22,
+      "labelStart": "17",
+      "labelEnd": "22",
+      "words": 2772,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "asym module",
+          "heading": false
+        },
+        {
+          "term": "hom asym",
+          "heading": false
+        },
+        {
+          "term": "left asym",
+          "heading": false
+        },
+        {
+          "term": "algebra asym",
+          "heading": false
+        },
+        {
+          "term": "asym times",
+          "heading": false
+        },
+        {
+          "term": "asym mathrm",
+          "heading": false
+        },
+        {
+          "term": "asym linear",
+          "heading": false
+        },
+        {
+          "term": "widetilde psi",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we will provide further information related with the embedding into the asymptotic algebra by considering the restriction functor associated to the embedding $A\\to \\asym$. Moreover we will derive a geometric property of the embedding. This enhances in particular Theorems \\ref{TheoremB} and \\ref{TheoremC}. Throughout this section, $A$ is an affine cellular algebra with cell chain $\\{J_i : 1\\leq i \\leq",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-examples-and-methods",
+      "number": "6",
+      "title": "Examples and methods",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 31,
+      "summary": null,
+      "keywords": [],
+      "extract": "This section aims at relating the general theory of affine cellular algebras to classes of examples occurring in applications, in particular to algebraic Lie theory. This will happen in several respects.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-61-an-explicit-example",
+      "number": "6.1",
+      "title": "An explicit example",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 26,
+      "labelStart": "22",
+      "labelEnd": "26",
+      "words": 1299,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cts eta",
+          "heading": false
+        },
+        {
+          "term": "eta tsts",
+          "heading": false
+        },
+        {
+          "term": "tsts hline",
+          "heading": false
+        },
+        {
+          "term": "tts eta",
+          "heading": false
+        },
+        {
+          "term": "cst eta",
+          "heading": false
+        },
+        {
+          "term": "tst eta",
+          "heading": false
+        },
+        {
+          "term": "array hline",
+          "heading": false
+        },
+        {
+          "term": "tsts mapsto",
+          "heading": false
+        }
+      ],
+      "extract": "\\newcommand{\\gs}{s_1} \\newcommand{\\gt}{s_2} \\newcommand{\\Cs}{C_{\\gs}} \\newcommand{\\Ct}{C_{\\gt}} \\newcommand{\\Cst}{C_{\\gs\\gt}} \\newcommand{\\Cts}{C_{\\gt\\gs}} \\newcommand{\\Csts}{C_{\\gs\\gt\\gs}} \\newcommand{\\Ts}{t_{\\gs}} \\newcommand{\\Tt}{t_{\\gt}} \\newcommand{\\Tst}{t_{\\gs\\gt}} \\newcommand{\\Tts}{t_{\\gt\\gs}} \\newcommand{\\Tsts}{t_{\\gs\\gt\\gs}} This section starts by providing a concrete example of the Hecke algebra $H$ of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-62-extended-affine-hecke-algebra-of-type-a",
+      "number": "6.2",
+      "title": "Extended affine Hecke algebra of type A",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 29,
+      "labelStart": "26",
+      "labelEnd": "29",
+      "words": 1498,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "affine hecke",
+          "heading": true
+        },
+        {
+          "term": "extended affine",
+          "heading": true
+        },
+        {
+          "term": "hecke algebra",
+          "heading": true
+        },
+        {
+          "term": "psi alpha",
+          "heading": false
+        },
+        {
+          "term": "equation varphi",
+          "heading": false
+        },
+        {
+          "term": "lusztig embedding",
+          "heading": false
+        },
+        {
+          "term": "overline alpha",
+          "heading": false
+        },
+        {
+          "term": "affine cell",
+          "heading": false
+        }
+      ],
+      "extract": "An extended affine Hecke algebra $H$ of type $A_{n-1}$ is an affine cellular algebras, as shown in \\cite[Section 5]{KXaffine}. We will briefly revise its affine cellular structure. Let $W$ be an extended Weyl group of type $A_n$ (with Coxeter system $(W,S)$) and let $\\{C_w:w\\in W\\}$ be the Kazhdan-Lusztig basis for the Hecke algebra $H$ of $W$ over $R=\\Z[q^{\\pm 1/2}]$ as in \\cite{KazhdanLusztig}. Then",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-63-gram-determinants-and-jucys-murphy-elements",
+      "number": "6.3",
+      "title": "Gram determinants and Jucys Murphy elements",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 31,
+      "labelStart": "29",
+      "labelEnd": "31",
+      "words": 962,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gram determinants",
+          "heading": true
+        },
+        {
+          "term": "bib mathas",
+          "heading": false
+        },
+        {
+          "term": "bib brown",
+          "heading": false
+        },
+        {
+          "term": "author mathas",
+          "heading": false
+        },
+        {
+          "term": "title affine",
+          "heading": false
+        },
+        {
+          "term": "author koenig",
+          "heading": false
+        },
+        {
+          "term": "title seminormal",
+          "heading": false
+        },
+        {
+          "term": "author kleshchev",
+          "heading": false
+        }
+      ],
+      "extract": "In the case of extended affine Hecke algebras of type $A$, no determinant of a swich matrix is a zero-divisor, by Lemma \\ref{lemma:phic-injective} and Proposition \\ref{embeddingscoincide}. Thus the assumptions in our main theorems are satisfied for this class of algebras. For other classes of algebras these assumptions are known to be satisfied as well. We are going to provide some references to methods used and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 32,
+      "labelStart": "31",
+      "labelEnd": null,
+      "words": 579,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "affine cellular",
+          "heading": false
+        },
+        {
+          "term": "cellular algebras",
+          "heading": false
+        },
+        {
+          "term": "campo alegre",
+          "heading": false
+        },
+        {
+          "term": "rua campo",
+          "heading": false
+        },
+        {
+          "term": "steffen koenig",
+          "heading": false
+        },
+        {
+          "term": "affine cellularity",
+          "heading": false
+        },
+        {
+          "term": "khovanov-lauda-rouquier algebras",
+          "heading": false
+        },
+        {
+          "term": "iwahori-hecke algebras",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Michael Francis Atiyah and Ian Grant Macdonald, Introduction to commutative algebra, Addison-Wesley Publishing Co., Reading, Mass.-London-Don Mills, Ont., 1969. [2] Paul Baum and Victor Nistor, Periodic cyclic homology of Iwahori-Hecke algebras, K-Theory 27 (2002), no. 4, 329– 357. [3] William C. Brown, Matrices over commutative rings, Monographs and Textbooks in Pure and Applied Mathematics, vol. 169, Marcel",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Introduction"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "affine cellular",
+      "heading": true
+    },
+    {
+      "term": "affine cell",
+      "heading": true
+    },
+    {
+      "term": "cellular algebras",
+      "heading": true
+    },
+    {
+      "term": "affine hecke",
+      "heading": true
+    },
+    {
+      "term": "psi alpha",
+      "heading": false
+    },
+    {
+      "term": "affine rings",
+      "heading": false
+    },
+    {
+      "term": "psi left",
+      "heading": false
+    },
+    {
+      "term": "cell chain",
+      "heading": false
+    },
+    {
+      "term": "cell ideals",
+      "heading": true
+    },
+    {
+      "term": "overline psi",
+      "heading": false
+    },
+    {
+      "term": "cell modules",
+      "heading": false
+    },
+    {
+      "term": "cite kxaffine",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Multiplication table for the KL-basis element of the Hecke algebra of Σ3",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 10,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p31); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2607.03827v1"
+  }
+}

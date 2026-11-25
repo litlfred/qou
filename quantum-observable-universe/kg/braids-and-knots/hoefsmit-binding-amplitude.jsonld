@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-hoefsmit-binding-amplitude",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:hoefsmit-binding-amplitude",
+  "kind": "proposition",
+  "title": "Hoefsmit binding amplitude $b^2 = [3]_q / [2]_q^2$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-frobenius-lepton-meson-bridge"
+  ],
+  "cites": [
+    "references/wenzl1988c"
+  ],
+  "tags": [
+    "hoefsmit",
+    "binding-amplitude",
+    "meson",
+    "pion-decay",
+    "q-integer",
+    "lepton-meson-bridge"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.hoefsmit_b_sq_eq_q3_over_q2sq",
+  "text": "hoefsmit-binding-amplitude.md",
+  "leanSource": "hoefsmit-binding-amplitude.lean",
+  "provenance": "authored"
+}

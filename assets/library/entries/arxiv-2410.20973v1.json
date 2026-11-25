@@ -1,0 +1,575 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2410.20973v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:2410.20973v1  [math.GT]  28 Oct 2024\nSUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS\nVERONICA FANTINI AND CAMPBELL WHEELER\nTo Maxim Kontsevich, on the occasion of his 60th birthday\nAbstract. We prove conjectures of Garoufalidis-Gu-Mari˜no [9] that perturbative series\nassociated with the hyperbolic knots 41 and 52 are resurgent and Borel summable. In the\nprocess, we give an algorithm that can be used to explicitly compute the Borel–Laplace\nresummation as a combination of state integrals of Andersen–Kashaev [1]. This gives a\ncomplete description of the resurgent structure in these exam",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The volume of a hyperbolic knot $K\\subset S^3$ has a natural perturbative deformation constructed from the quantum dilogarithm~\\cite{Hikami:stateint}. This deformation is a formal power series\n\\be\n  \\Phi_{K}(\\hbar)\n  \\=\n  \\exp\\Big(\\frac{\\mathrm{Vol}(S^3\\backslash K)}{\\hbar}\\Big)\\frac{\\hbar^{3/2}}{\\sqrt{\\delta}}(1+A_1\\hbar+\\cdots)\n\\ee\nwhere $\\delta$ and $A_k$ are elements in the trace field of $K$. This formal power series $\\Phi_{K}$ is conjectured to agree to all orders with the asymptotic series of the Kashaev invariant of $K$---expected to exist as part of Kashaev's volume conjecture~\\cite{K",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Deforming the volume of a three-manifold",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-11-deforming-the-volume-of-a-three-manifold.md",
+      "narrative": null,
+      "content": "In this paper, we will consider a two parameter family of examples of asymptotic series similar to those that would come from a knot. These examples were considered in~\\cite{GK:qser}. In particular, for some $A,B\\in\\BZ_{>0}$ with~$A\\neq B$, we will consider the function\n\\be\\label{eq:V}\n  V:\\Sigma\\rightarrow\\BC/\\BZ\n  \\qquad\\text{such that}\\qquad\n  V(z,m)\\=B\\frac{\\Li_{2}(\\e(z))}{(2\\pi i)^2}+\\frac{B}{24}+\\frac{A}{2}z(z+1)+mz\\,,\n\\ee\nwhere $\\e(z)=\\exp(2\\pi iz)$ and $\\Sigma$ is the associated Riemann surface. In particular, $\\Sigma$ is defined by taking points $p=(z,m)$ where $z\\in\\BC\\backslash(\\BZ-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "State integrals",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-12-state-integrals.md",
+      "narrative": null,
+      "content": "We are interested in the resurgent and summability properties of the series $\\Phi_{\\Xi}(\\hbar)$, which was defined in terms of the quantum dilogarithm $\\Psi(z,\\hbar)$ in Equation~\\eqref{eq:def.phi}. The latter was shown to be resurgent and Borel--Laplace summable to a function given in terms of Faddeev's quantum dilogarithm $\\Phi(z;\\tau)$ (see~\\cite{GK:resQD,andersen.mero}). The function $\\Phi(z;\\tau)$ is a meromorphic function of $(z,\\tau)\\in\\BC\\times(\\BC\\backslash\\BR_{\\leq0})$ with poles located on a cone $z\\in\\BZ_{\\geq0}+\\tau\\BZ_{\\geq0}$ and zeros located on the opposite cone $z\\in\\BZ_{<0}+",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proving Borel–Laplace summability",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "../sections/sec-003-13-proving-borellaplace-summability.md",
+      "narrative": null,
+      "content": "\\label{sec:BL-intro}\nStarting with a Gevrey-1 formal power series, the process of resurgence requires convergence and then analytic continuation of the series's Borel transform~\\cite{EcalleI,diverg-resurg-i}. \n\nRecall that the Borel transform $\\calB$ is defined as the formal inverse of the Laplace transform\n\\be\\label{eq:laplace}\n\\calL^\\vartheta(\\phi):=\\int_0^{e^{i\\vartheta}\\infty} e^{-\\z/\\hbar} \\phi(\\z) \\, d\\z\\,,\n\\ee\nwhere $\\vartheta\\in [0,2\\pi)$. \nMore precisely, the Borel transform maps Gevrey-1 formal series to convergent power series in a neighbourhood of the origin \n\\be\\label{eq:borel}\n\\c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-acknowledgements.md",
+      "narrative": null,
+      "content": "The authors wish to thank Jørgen Andersen, Bertrand Eynard, Stavros Garoufalidis, Jie Gu, Maxim Kontsevich, Marcos Mariño. The work of V.F. and C.W. has been carried out at Institut des Hautes Études Scientifiques and we thank the institute for fantastic working conditions.\nThis paper is a result of the ERC-SyG project, Recursive and Exact New Quantum Theory (ReNewQuantum), which received funding from the European Research Council (ERC) under the European Union's Horizon 2020 research and innovation program under grant agreement No 810573. C.W. has been supported by the Huawei Young Talents Pr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From thimbles to state integrals",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-2-from-thimbles-to-state-integrals.md",
+      "narrative": null,
+      "content": "\\label{sec:geometry}\n\nTo begin with, we must understand the homology theory that governs the thimbles associated to the function $V$ and the state integrals $\\calI_{m,\\ell}$. All of the topology is concentrated near $z\\in\\BR$ in the coordinates used in Equation~\\eqref{eq:V}. There are logarithmic branch cuts at $z\\in\\BZ$ thus the first homology of $\\Sigma$ is not finitely generated. However, for a given $\\vartheta\\in (-\\pi/2,\\pi/2)\\cup(\\pi/2,3\\pi/2)$, we are only interested in a finitely generated subgroup. These groups can be described and depend on $\\vartheta$ but allows for a decomposition",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Existence of thimbles",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-21-existence-of-thimbles.md",
+      "narrative": null,
+      "content": "To effectively understand the structure of thimbles associated to $V$, we will use two descriptions of $\\Sigma$ and $V$. In particular, we choose branch cuts in the upper half plane to define a function $\\Lambda$ (see Figure~\\ref{fig:branchcut}).\n\\begin{figure}[ht]\n\\begin{tikzpicture}\n\\draw[<->,thick] (-3,-1.5) -- (-3,1.5);\n\\draw[<->,thick] (-4.5,0) -- (-1.5,0);\n\\draw[red,snake it] (-3,0) -- (-3,-1.5);\n\\draw[red,snake it] (-2,0) -- (-2,-1.5);\n\\draw[red,snake it] (-3.5,0) -- (-3.5,-1.5);\n\\draw[red,snake it] (-2.5,0) -- (-2.5,-1.5);\n\\draw[red,snake it] (-4,0) -- (-4,-1.5);\n\n.. controls (-3.555,-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A relative homology for state integrals contours",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-007-22-a-relative-homology-for-state-integrals-conto.md",
+      "narrative": null,
+      "content": "In this section, we define the homology $H_\\bullet(\\Sigma,D_{\\infty,\\theta})$ relative to a region $D_{\\infty,\\theta}$. The first relative homology group $H_1(\\Sigma,D_{\\infty,\\theta})$ contains lifts of the state integral contours $\\calJ_{\\ell,\\tau}$ to $\\Sigma$ and the thimbles $\\calC_{p_0,\\vartheta}$. First, we construct a finite dimensional homology $H_\\bullet(X_{\\epsilon,M},D_{\\infty,\\theta})$ defined for a compact surface $X_{\\epsilon,M}\\subset\\Sigma$. Then, $H_\\bullet(\\Sigma,D_{\\infty,\\theta})$ will be defined via the limits $\\epsilon\\to0$ and $M\\to\\infty$.\n\n\n\\subsubsection{The surface",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A state integral basis",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-008-23-a-state-integral-basis.md",
+      "narrative": null,
+      "content": "\\label{sec:state_int_basis}\n\nLet $\\tilde{\\calJ}_{\\ell,m,\\tau}$ be the lift of $\\calJ_{\\ell,\\tau}$ to the $m$-th sheet of $\\Sigma$ in the $z_+$ coordinates. The following proposition shows that such classes generate the homology $H_1(\\Sigma,D_{\\infty,\\theta})$ of Equation~\\eqref{eq:full_H}.\n\\begin{proposition}\\label{prop:base_homology}\nLet $\\epsilon, M>0$. A subset of the state integral contours $\\tilde{\\calJ}_{\\ell,m,\\tau}$ for $|\\ell|<M$ and $m\\in\\{0,\\dots,A-1\\}$ define a basis for $H_1(X_{\\epsilon,M},D_{\\infty,\\theta})$, where $\\theta=\\arg(-1/\\tau)\\in(0,2\\pi)$. \n\\end{proposition}\n\\begin{proo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Asymptotics of state integrals",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-009-3-asymptotics-of-state-integrals.md",
+      "narrative": null,
+      "content": "\\label{sec:asymp_state_int}\nWe will now describe an algorithm to construct a combination of state integrals for each $e^{i\\vartheta}\\in\\BC\\backslash\\calS(V_0)$. This will be a locally constant assignment and have uniform asymptotics given by the saddle point approximation at a critical point $p_0$ for all $\\arg(-1/\\tau)=\\theta\\in[\\vartheta-\\tfrac{\\pi}{2},\\vartheta+\\tfrac{\\pi}{2}]$. When $\\vartheta$ crosses the Stokes rays, the algorithm will produce different combinations of state integrals. This gives an explicit method that can be used to compute Stokes constants. We will use the algorithm t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A steepest descent algorithm",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-010-31-a-steepest-descent-algorithm.md",
+      "narrative": null,
+      "content": "\\label{sec:alg}\nFix a critical point $p_0\\in\\Sigma$ with a lift of the critical value $V_0\\in\\BC$ and $\\vartheta\\in\\arg(\\BC\\backslash\\calS(V_{0}))\\cap(\\tfrac{\\pi}{2},\\tfrac{3\\pi}{2})$. This determines the steepest descent contour~$\\calC_{p_0,\\vartheta}$ and constants $\\epsilon,M>0$ so that all points $p\\notin W_{\\epsilon,M}$ satisfy $[\\gamma_{p,\\theta}]=0$ (see Corollary~\\ref{cor:half.thimb.stateint.zero}). Let $W=W_{\\epsilon,M}$ and consider the set\n\\be\n\\calZ\\;:=\\;\\{p\\in W\\;|\\;\\Re(e^{-i\\vartheta}(V_0-V(p)))\\in\\cos(2\\pi\\vartheta)\\BZ\\}\\,.\n\\ee\nWe can identify $\\calZ$ with $\\big[e^{-i\\vartheta}(V",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 1.4",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "../sections/sec-011-32-proof-of-theorem-14.md",
+      "narrative": null,
+      "content": "theorem.\nThe main idea is to compute the asymptotics of the function Ip0,V0,ϑ(τ) for\n20\nVERONICA FANTINI AND CAMPBELL WHEELER\narg(−1/τ) = θ ∈(−π\n2 + ϑ, π\n2 + ϑ). We will state this in the following theorem, which is\nessentially equivalent to Theorem 1.4.\nTheorem 3.4. If [a, b] ⊆arg(C\\S(V0)) ∩( π\n2, 3π\n2 ), ϑ ∈[a, b], arg(−1/τ) = θ ∈(a −π\n2, b −π\n2)\nand |τ| →∞, then there exists constants C = C(a, b), ε = ε(a, b) > 0\n|e(−V0τ)Ip0,V0,ϑ(τ) −Φ(K)\nΞ (−2πi/τ)| < C ε−K K! |τ|−K ,\n(63)\nwhere Φ(K)\nΞ (ℏ) is the truncation of the series ΦΞ(ℏ) to O(ℏK).\nProof. Firstly, as we vary arg(−1/τ) = θ ∈(ϑ −π\n2, ϑ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/thm-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "thm-sec-011-01.md",
+      "narrative": null,
+      "content": "If [a, b] ⊆arg(C\\S(V0)) ∩( π 2, 3π 2 ), ϑ ∈[a, b], arg(−1/τ) = θ ∈(a −π 2, b −π 2) and |τ| →∞, then there exists constants C = C(a, b), ε = ε(a, b) > 0 |e(−V0τ)Ip0,V0,ϑ(τ) −Φ(K) Ξ (−2πi/τ)| < C ε−K K! |τ|−K , (63) where Φ(K) Ξ (ℏ) is the truncation of the series ΦΞ(ℏ) to O(ℏK).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 21,
+      "pageEnd": 27,
+      "target": "../sections/sec-012-4-examples.md",
+      "narrative": null,
+      "content": "\\label{sec:ex}\n\nWe now go though two explicit examples. One is associated to the figure eight knot $4_1$, where $(A,B)=(1,2)$ and the other is for $(A,B)=(4,1)$. The first was studied in~\\cite{GGM:I} and full conjectural answers were given for the resurgent structures. We will prove the exact formulas given in~\\cite{GGM:I} are correct by applying our method to compute the Borel--Laplace resummation. A similar analysis for the example $(A,B)=(4,1)$ was carried out in~\\cite{Wh:thesis}. Here again conjectural formulas were given and we will also prove them.\n\n\n\\subsection{\\texorpdfstring{The $4_1$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The case of (A,B)=(4,1)",
+      "pageStart": 27,
+      "pageEnd": 36,
+      "target": "../sections/sec-013-42-the-case-of-ab41.md",
+      "narrative": null,
+      "content": "with the algorithm described in Section 3.1.\nWe will see that this exactly matches the\nnumerical predictions of [24, Example 39]. The critical points for the function V and their\ncritical values are listed below\n7To really prove this, one needs to make a full matrix equation by taking another choice of n in Equa-\ntion (75), which has exactly the same Stokes automorphisms as discussed in the Section 1.3.\n28\nVERONICA FANTINI AND CAMPBELL WHEELER\nTable 1:\np1\n(−0.5 −0.0317451i, 0)\nV1\n−0.435753\np2\n(0.0512932i, −2)\nV2\n0.0127913\np3\n(−0.212516 −0.009774i, −1)\nV3\n−0.0801858 + 0.0248584i\np4\n(0.212516 −0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/cor-sec-014-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "cor-sec-014-02.md",
+      "narrative": null,
+      "content": "2. The matrix bΦj(ℏ) for Equation (25) is invertible.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/lem-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "lem-sec-014-01.md",
+      "narrative": null,
+      "content": "1. For P(z) = (−z)A −(1 −z)B with A, B ∈Z>0 with A̸ = B there are no solutions to the equations P(z) = P(z′) = 0 . (97)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. Critical points and independence of state integrals",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-014-appendix-a-critical-points-and-independence-of-s.md",
+      "narrative": null,
+      "content": "In this appendix we prove that the critical points of the function V (z) are non-degenerate\naway from the branch points.\nLemma A.1. For P(z) = (−z)A −(1 −z)B with A, B ∈Z>0 with A̸ = B there are no\nsolutions to the equations\nP(z) = P(z′) = 0 .\n(97)\nProof. We prove this by contradiction. Suppose there exists a degenerate critical point x0\nso that\n(−x0)A −(1 −x0)B = P(x0) = 0 = P ′(x0) = (−x0)A A\nx0\n+ (1 −x0)B\nB\n1 −x0\n.\n(98)\nThis would imply that\nx0 =\nA\nA −B ,\n(99)\nwhich would in turn imply that\n(−1)A\nAA\n(A −B)A = (−1)B\nBB\n(A −B)B .\n(100)\nWe can clear the greatest common divisor deﬁning A = A0(A",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/lem-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 39,
+      "target": "lem-sec-016-01.md",
+      "narrative": null,
+      "content": "1. Suppose that Im(τ) > 0 and ε ∈R>0. Then as τ →i∞with ﬁxed argument and z is bounded away from the half lines {z | Im((z + Z≥0)τ) = 0, and Im(z) ≤0} by ε with θ = arg(−1/τ) ∈(0, π) there exists a constant C > 0 such that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix B. Faddeev's dilogarithm",
+      "pageStart": 37,
+      "pageEnd": 37,
+      "target": "../sections/sec-015-appendix-b-faddeevs-dilogarithm.md",
+      "narrative": null,
+      "content": "This appendix is dedicated to a description and proof of the asymptotics of Faddeev’s\nquantum dilogarithm given in the introduction (in particular, Theorem 1.2).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.1. Asymptotics of the Pochhammer symbol",
+      "pageStart": 37,
+      "pageEnd": 39,
+      "target": "../sections/sec-016-b1-asymptotics-of-the-pochhammer-symbol.md",
+      "narrative": null,
+      "content": "symbol give rise to a particular branch of the dilogarithm for each argument of τ. The zeros\nor poles then line up along the branch cuts deﬁning this principle branch. For θ ∈[0, 2π)\ndeﬁne Lθ : C\\(Z + eiθR≤0) →C to be the holomorphic function such that\nLθ(z) =\nZ\nz+eiθR≥0\nZ\nw+eiθR≥0\ne(ζ)\n1 −e(ζ) dζ dw .\n(103)\nThis function Lθ(z) gives a particular branch of the multivalued function z 7→Li2(e(z))/(2πi)2\nfor each θ and if θ ∈(0, π) and Im(z) > 0 then Lθ(z) = Li2(e(z))/(2πi)2 for the principle\nbranch of Li2. The domain of Lθ is pictured in Figure 30. This function also satisﬁes\ndk+2\ndzk+2Lθ(z) = (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/rem-sec-016-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 39,
+      "target": "rem-sec-016-02.md",
+      "narrative": null,
+      "content": "2. An easy way to see that Lθ is the correct branching of the multivalued function Li2(e(z))/(2πi)2 is that the zeros of (e(z); e(−1/τ))∞accumulate to the lines {z | Im((z + Z≥0)τ) = 0, and Im(z) ≤0} in the limit as τ tends to inﬁnity.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/lem-sec-017-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "lem-sec-017-01.md",
+      "narrative": null,
+      "content": "3. Suppose that Im(τ) > 0 and ε ∈R>0. Then as τ →i∞with ﬁxed argument and z is bounded away from the half lines C\\Cθ and is bounded away from at least one of the lines Im((z + 1)τ) = 0 and Im((z + 1)τ) by ε with θ = arg(−1/τ) ∈(0, π) there exists a constant C ∈R>0 such that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.2. Asymptotics of Faddeev's dilogarithm for Im(tau)=/=0",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "../sections/sec-017-b2-asymptotics-of-faddeevs-dilogarithm-for-imtau.md",
+      "narrative": null,
+      "content": "deev’s quantum dilogarithm, which in the upper half plane has the expression\nΦ(z; τ) =\n(qe(z); q)∞\n(e(z/τ); eq)∞\n.\n(116)\nTo understand the asymptotics of this function we need to consider a diﬀerent branch of the\ndilogarithm function again. For θ ∈(0, 2π) deﬁne the domain Cθ = C\\\n\u0000(Z≥0 + eiθR≤0) ∪\n(Z<0 + eiθR≥0)\n\u0001\ndepicted in Figure 1. Then deﬁne Dθ : Cθ →C to be\nDθ(z) =\nZ eiθ/2∞\nz\nZ eiθ/2∞\nw\ne(ζ)\n1 −e(ζ) dζ dw ,\n(117)\nwhere the contours are contained in Cθ. Using this function we have the following asymp-\ntotics of Φ(z; τ) in the upper half plane.\nLemma B.3. Suppose that Im(τ) > 0 and ε ∈R>0.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/rem-sec-017-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "rem-sec-017-02.md",
+      "narrative": null,
+      "content": "4. The previous remark about the function Lθ also applies to the quantum dilogarithm. An easy way to see that Dθ is the correct branching of the multivalued function Li2(e(z))/(2πi)2 is that the zeros and poles of Φ(zτ; τ) accumulate to the lines C\\Cθ in the limit as τ tends to inﬁnity. Here the most important point is that this domain remains connected for all θ ∈(0, 2π), which was not true for the lone Pochhammer symbol.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/cor-sec-018-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "cor-sec-018-03.md",
+      "narrative": null,
+      "content": "7. If Im(z) > 0 and −arg(z) + π/2 < arg(τ) < arg(z + 1) + π/2, Im(z) < 0 and −π/2 −arg(z + 1) < arg(τ) < −arg(z) −π/2, or z ∈(−1, 0) and τ ∈C\\R≤0, then Φ(zτ; τ) is the Borel–Laplace resummation of its asymptotics.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/lem-sec-018-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "lem-sec-018-01.md",
+      "narrative": null,
+      "content": "5. Suppose that τ ∈C\\R≤0 and ε ∈R>0. Then as τ →∞with ﬁxed argument bounded by ε and z bounded away from Cθ by ε with θ = arg(−1/τ) ∈(π −ε, π + ε) there exists a constant C ∈R>0 such that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B.3. Asymptotics of Faddeev's dilogarithm for Im(tau) near 0",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "../sections/sec-018-b3-asymptotics-of-faddeevs-dilogarithm-for-imtau.md",
+      "narrative": null,
+      "content": "asymptotics as we cross the real numbers we use the following equality for Im(z + τ) > 0\nand Im(z/τ) > 0 along with Re(−√τ −1/√τ) < Re(z/√τ) < 0\nΦ(z; τ) =\n(qe(z); q)∞\n(e(z/τ); eq)∞\n= exp\n\u0010\n∞\nX\nk=1\ne(kz)\nk(q−k −1) −e(kz/τ)\nk(eqk −1)\n\u0011\n= exp\n\u0010 Z\ni√τR+ε√τ\ne((z + 1 + τ)w/τ)\n(e(w) −1)(e(w/τ) −1)\ndw\nw\n\u0011\n,\n(122)\nfor some small ε > 0. The various regions where the expression for Φ(τz; τ) as τ tends to\ninﬁnity are depicted in Figure 32.\nSUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS\n41\nThe asymptotics of Faddeev’s quantum dilogarithm in the lower half plane can be carried out\nby a completely simil",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/thm-sec-018-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "thm-sec-018-02.md",
+      "narrative": null,
+      "content": "6. Suppose that τ ∈C\\R≤0 and ε ∈R>0. Then as |τ| →∞with ﬁxed argument and z bounded away from Cθ by ε with θ = arg(−1/τ) ∈(0, 2π) there exists a constant C ∈R>0 such that",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2410.20973v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 43,
+      "pageEnd": 44,
+      "target": "../sections/sec-019-references.md",
+      "narrative": null,
+      "content": "References\n[1] Jørgen Andersen and Rinat Kashaev. A TQFT from quantum Teichm¨uller theory. Communications in\nMathematical Physics, 330:887–934, 2014.\n[2] Jørgen\nEllegaard\nAndersen.\nResurgence\nanalysis\nof\nmeromorphic\ntransforms.\nPreprint\n2020,\narXiv:2011.01110.\n[3] Ovidiu Costin and Stavros Garoufalidis. Resurgence of the Kontsevich-Zagier series. Annales de l’Institut\nFourier, 61(3):1225–1258, 2011.\n[4] Tudor Dimofte and Stavros Garoufalidis. The quantum content of the gluing equations. Geometry &\nTopology, 17(3):1253–1315, 2013.\n[5] J. ´Ecalle. Les fonctions r´esurgentes. Tome I, volume 5 of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

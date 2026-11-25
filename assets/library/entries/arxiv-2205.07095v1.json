@@ -1,0 +1,234 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2205.07095v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2205.07095v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction.",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The first mathematically rigorous studies of infinite statistical systems were the works of Bogolyubov [@Bog46] in the canonical ensemble and Ruelle [@Ru63; @Ru69] in the grand canonical ensemble. In the monograph [@Bog46] Bogolyubov developed a theory of expansions in degrees of density, which, although not yet rigorously mathematically justified, but was based on the fundamental principles of statistical mechanics and included all known at that time expressions of Ursel-Mayer theory on the basis of his derived integro-differential equations for $m$ -particle distribution functions. Really ri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.07095v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:2205.07095v1  [math-ph]  14 May 2022\nVirial Expansions for Correlation Functions in\nCanonical Ensemble\nA. L. Rebenko\nInstitute of Mathematics, Ukrainian National Academy of Sciences, Kyiv, Ukraine.\nAbstract\nThe inﬁnite set of coupled integral nonlinear equations for correlation func-\ntions in the case of classical canonical ensemble is considered. Some kind\nof graph expansions of correlation functions in the density parameter are\nconstructed. Existing of unique solutions for small value of density and\nhigh temperature is discussed.\nKeywords: 2-connected graphs, Kirkwood-Salzburg equation",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.07095v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "On some mathematical concepts",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-on-some-mathematical-concepts.md",
+      "narrative": null,
+      "content": "On some mathematical concepts",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.07095v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Configuration spaces and Lebesgue-Poisson measure.",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-21-configuration-spaces-and-lebesgue-poisson-mea.md",
+      "narrative": null,
+      "content": "Let $\\sigma$ be a Lebesgue measure in $\\Bbb R^d$. *Configuration space* $\\Gamma\\;: = \\; \\Gamma_{\\Bbb R^d}$ consists of all locally finite subsets of the space $\\Bbb R^d$. This definition is quite natural from the point of view of physics, because an infinite number of particles cannot be in a bounded volume.\n\nDenote the set of all finite configurations of the space $\\Gamma$ by $\\Gamma_0$, and by $\\Gamma^{(n)}$ configuration space with a fixed number of points.\n\nIf all such configurations are in some bounded set $\\Lambda\\subset\\Bbb R^d$, then the corresponding space will be $\\Gamma^{(n)}_\\Lambd",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.07095v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algebra of generating functionals.",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-22-algebra-of-generating-functionals.md",
+      "narrative": null,
+      "content": "For any function $\\psi\\in C_0(\\Gamma_0)$ define *generating functional* : $$\\begin{aligned}\n\\label{GFf}\n\\widetilde{F}_\\psi(j)&\\;=\\;\\sum_{N=0}^{\\infty}\\frac{1}{N!}\\int_{\\Bbb R^{dN}}(dx)^{N}j(x_1)\\cdots j(x_N)\\psi(x_1,\\ldots, x_N)=\\notag \\\\\n&\\;=\\;\\int_{\\Gamma_0}e(j;\\gamma)\\psi(\\gamma)\\lambda_\\sigma(d\\gamma),\n\\end{aligned}$$ where functional $e(j;\\gamma)$ is defined by the formula $$\\begin{aligned}\n\\label{I-lam4}\ne(j;\\gamma):=\\;&\\begin{cases}\n 1,\\;&\\gamma=\\emptyset,\\\\\n  \\prod_{x\\in\\gamma}j(x),\n\\;&\\gamma\\in\\Gamma_0\\setminus\\{\\emptyset\\},\n  \\end{cases}\n\\end{aligned}$$\n\nand $j\\in C_0(\\Bbb R^d)$ is b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.07095v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Description of the system of interacting particles in the canonical ensemble.",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-3-description-of-the-system-of-interacting-parti.md",
+      "narrative": null,
+      "content": "Description of the system of interacting particles in the canon-\nical ensemble.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.07095v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Interaction between particles",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-005-31-interaction-between-particles.md",
+      "narrative": null,
+      "content": "We consider the 2-particle interaction, which is described by the potential $V_2(x,y)=\\phi(|x-y|),\\;\\phi(0)=+\\infty$. For any configuration $\\gamma\\in\\Gamma_0$ an interaction energy is $$\\label{U}\nU(\\gamma)=U_{\\phi}(\\gamma):=\\sum_{\\{x,y\\}\\subset\\gamma}\\phi(|x-y|),$$ and interaction $W(\\eta; \\gamma)$ between particles of configuration $\\eta\\in\\Gamma_0$ with particles of configuration $\\gamma\\in\\Gamma_0$ is $$\\label{W}\nW(\\eta; \\gamma):=\\sum_{\\substack{x\\in\\eta \\\\\ny\\in\\gamma}}\\phi(|x-y|).$$\n\nWe impose the following conditions on the potential of interaction:\n\n**(A)**: 1. *Stability:* $$\\label{stU",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.07095v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Derivation of equations for correlation functions.",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-006-32-derivation-of-equations-for-correlation-funct.md",
+      "narrative": null,
+      "content": "The correlation functions of the canonical ensemble of the system $N$ of particles in some limited volume $\\Lambda$ in configuration $\\eta=\\{x_1,\\ldots, x_m\\}$ are determined by the sequence\n\n$$\\begin{aligned}\n\\label{corfCA-2}\n\\rho^{(N)}_{\\Lambda}(\\eta)\\;:=\\;\\begin{cases}\n & 1,\\;\\;\\text{at}\\; \\eta = \\emptyset,\\\\\n & \\varrho=\\frac{N}{V}\\;\\;\\text{at}\\;\\; |\\eta|=1, V=\\sigma(\\Lambda),\\\\\n & 0,\\;\\text{at};|\\eta|=m\\;>\\; N,\n  \\end{cases}\n\\end{aligned}$$ and for $2\\leq m\\leq N$, $$\\label{corfCA-3}\n\\rho^{(N)}_{\\Lambda}(\\eta)\\;:=\\;\\frac{1}{Z_\\Lambda(\\beta, N)}\\int_{\\Gamma^{(N-m)}_\\Lambda}\\frac{d\\gamma}{(N",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.07095v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Construction of expansion for correlation functions in the density parameter .",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-007-4-construction-of-expansion-for-correlation-func.md",
+      "narrative": null,
+      "content": "Solution of the equation [\\[limeq\\]](#limeq){reference-type=\"eqref\" reference=\"limeq\"} by the iteration method (Ruelle operator method [@Ru69]) or by the Minlos-Poghosyan method [@MP77] (about the connection between these methods see [@Re2021]) leads to the series in the parameter $\\varrho a(\\varrho)$. So, in fact, these equations are nonlinear, because $a(\\varrho)$ depends on all correlation functions (see [\\[limeq\\]](#limeq){reference-type=\"eqref\" reference=\"limeq\"} and [\\[ratioPF1\\]](#ratioPF1){reference-type=\"eqref\" reference=\"ratioPF1\"}). In this section, we construct expansion in the par",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.07095v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Solution of equations for correlation functions.",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-008-41-solution-of-equations-for-correlation-functio.md",
+      "narrative": null,
+      "content": "Rewrite the equation [\\[limeq\\]](#limeq){reference-type=\"eqref\" reference=\"limeq\"}, [\\[ratioPF1\\]](#ratioPF1){reference-type=\"eqref\" reference=\"ratioPF1\"} as follows:\n\n$$\\label{limeq-1}\n \\widetilde{Q}(\\rho_j)\\rho_j(\\eta)\\;=\\;\\varrho  e^{-\\beta W(x_1; \\eta^{(\\hat{x}_1)})}\n j(x_1)\\int_{\\Gamma_0}K(x_1;\\xi)\\rho_j(\\eta^{(\\hat{x}_1)}\\cup\\xi)\\lambda_{\\sigma}(d\\xi),$$ $$\\label{ratioPF1-1}\n \\widetilde{Q}(\\rho_j)\\;=\\;\\int_{\\Gamma_0}K(x_1;\\xi)\\rho_j(\\xi)\\lambda_{\\sigma}(d\\xi),$$ where, following [@MP77], a continuous positive function $j: \\Bbb R^d \\rightarrow \\Bbb R_+$ is introduced and $\\rho (\\eta)$ bec",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.07095v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Graphic interpretation of solutions.",
+      "pageStart": 10,
+      "pageEnd": 13,
+      "target": "../sections/sec-009-42-graphic-interpretation-of-solutions.md",
+      "narrative": null,
+      "content": "As in the case of the Kirkwood-Salzburg equations for a large canonical ensemble (see details in [@Re2021]) the analytical expression of the kernel $T (\\eta|\\gamma)$ can be given as contributions of forest-graphs. The number $N (m | n), m = |\\eta|, n = |\\gamma|$ all forest graphs can be calculated by solving the following recurrent equation: $$\\label{Numberforests-vir}\nN(m|n)=\\sum_{k=0}^n {n \\choose k}N(m+k-1|n-k)+\\sum_{k=1}^n {n \\choose k}N(m|n-k)\\sum_{l=1}^k {k \\choose l}N(l|k-l).$$ If we reject the nonlinear term, the recurrent equation can be solved exactly: $N (m | n) = m (m + n)^{n-1}$ (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2205.07095v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion on the convergence of the expansion.",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-010-43-conclusion-on-the-convergence-of-the-expansio.md",
+      "narrative": null,
+      "content": "Conclusion on the convergence of the expansion.\nExistence of a unique solution of the nonlinear equation (3.29) as an oper-\nator equation in the Banach space Eξ was proved in [15]. In a recent work\nof Jansen [5] a generalized version of Groeneveld’s convergence criterion for\nthe virial expansion and generating functionals for weighted 2-connected\ngraphs was proven. In fact, the present paper turned out to be very close\nto article [5], and here one can apply the criteria for the convergence of\nexpansions. Therefore, we do not yet discuss this issue in this preliminary\npublication. Although perh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

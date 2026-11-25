@@ -1,0 +1,813 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "9305356",
+  "title": "Introduction to Left-Right Symmetric Models",
+  "variant": "pdf",
+  "pages": 13,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Abstract",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-abstract"
+    },
+    {
+      "level": 1,
+      "title": "Motivation and Basic Ingredients",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-1-motivation-and-basic-ingredients"
+    },
+    {
+      "level": 2,
+      "title": "Motivation",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Motivation For LR-Symmetric Models:",
+      "number": null,
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-motivation-for-lr-symmetric-models"
+    },
+    {
+      "level": 2,
+      "title": "Basic Multiplets and Interactions",
+      "number": "2.1",
+      "page": 5,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-21-basic-multiplets-and-interactions"
+    },
+    {
+      "level": 3,
+      "title": "WfR(x)",
+      "number": null,
+      "page": 6,
+      "pageLabel": "5",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-wfrx"
+    },
+    {
+      "level": 1,
+      "title": "Spontaneous Symmetry Breaking",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-3-spontaneous-symmetry-breaking"
+    },
+    {
+      "level": 2,
+      "title": "(AL,R)o = yl2",
+      "number": null,
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-alro-yl2"
+    },
+    {
+      "level": 2,
+      "title": "Quark Mixing",
+      "number": "4.2",
+      "page": 9,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-42-quark-mixing"
+    },
+    {
+      "level": 1,
+      "title": "Lepton Sector",
+      "number": "5",
+      "page": 10,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-5-lepton-sector"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgement",
+      "number": null,
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": 0.8,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-009-acknowledgement"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 12,
+      "pageLabel": "11",
+      "confidence": 0.8,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-010-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 20,
+      "summary": null,
+      "keywords": [],
+      "extract": "UWThPh-1993-10 March 31, 1993 Introduction to Left-Right Symmetric Models* W. Grimus Institute for Theoretical Physics Boltzmanngasse 5 A-1090 Vienna, Austria",
+      "extractCut": false,
+      "blocks": [
+        "library/9305356/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-abstract",
+      "number": null,
+      "title": "Abstract",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "1",
+      "words": 49,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "corfu",
+          "heading": false
+        },
+        {
+          "term": "grangian",
+          "heading": false
+        },
+        {
+          "term": "left-right",
+          "heading": false
+        }
+      ],
+      "extract": "We motivate left-right symmetric models by the possibility of spontaneous parity breaking. Th,;n we describe the multiplets and the La.grangian of such models. Finally we discuss lower bounds on the right-handed scale. *) Lectc:re given at.the 4th Hellenic School on Elementary Particle Physics, Corfu, 2- 20 September 1992. 1",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-1-motivation-and-basic-ingredients",
+      "number": "1",
+      "title": "Motivation and Basic Ingredients",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 239,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "neutrino masses",
+          "heading": false
+        },
+        {
+          "term": "motivation",
+          "heading": true
+        },
+        {
+          "term": "multiplets",
+          "heading": false
+        },
+        {
+          "term": "ingredients",
+          "heading": true
+        },
+        {
+          "term": "gauge",
+          "heading": false
+        },
+        {
+          "term": "breaking",
+          "heading": false
+        }
+      ],
+      "extract": "Motivation and Basic Ingredients 1.1 Motivation The standard model (SM) [1] is up to now in excellent agreement with all experiments and its radiative corrections beyond QED are about to being tested in the uear future (see the contribution of C. Verzegnassi to these proceedings). Thus at the moment there is no compelling reason to go beyond the SM. However, to be able to judge the meaning and importance of tests of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-motivation-for-lr-symmetric-models",
+      "number": null,
+      "title": "Motivation For LR-Symmetric Models:",
+      "level": 3,
+      "pageStart": 2,
+      "pageEnd": 5,
+      "labelStart": "1",
+      "labelEnd": "4",
+      "words": 1260,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lr-symmetric models",
+          "heading": true
+        },
+        {
+          "term": "r-handed neutrino",
+          "heading": false
+        },
+        {
+          "term": "electric charges",
+          "heading": false
+        },
+        {
+          "term": "equ",
+          "heading": false
+        },
+        {
+          "term": "lepton sector",
+          "heading": false
+        },
+        {
+          "term": "fermion sector",
+          "heading": false
+        },
+        {
+          "term": "handed fields",
+          "heading": false
+        },
+        {
+          "term": "irreducible multiplet",
+          "heading": false
+        }
+      ],
+      "extract": "i) Their gauge group is a. very simple extension of the SM gauge group and therefore the discussion of LR-symmetric models is interesting in itself without needing further moti- vation. ii) Spontaneous breaking of P (and also C P) is possible but it requires R-handed neutrino degrees of freedom. iii) These additional neutrino multiplets give rise to Majora.na masses and allow for scenarios such that the neutrino",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-21-basic-multiplets-and-interactions",
+      "number": "2.1",
+      "title": "Basic Multiplets and Interactions",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 426,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multiplets",
+          "heading": true
+        },
+        {
+          "term": "lr-symmetric models",
+          "heading": false
+        },
+        {
+          "term": "fermion sector",
+          "heading": false
+        },
+        {
+          "term": "equs",
+          "heading": false
+        },
+        {
+          "term": "parity transformation",
+          "heading": false
+        },
+        {
+          "term": "equ",
+          "heading": false
+        },
+        {
+          "term": "flavour",
+          "heading": false
+        },
+        {
+          "term": "gluons",
+          "heading": false
+        }
+      ],
+      "extract": "Basic Multiplets and Interactions In the last section we have established that LR-symmetric models are characterized by the gauge group G = SU(2)L X SU(2)R X U(1)B-L· (10) Thus irreducible representations of G can be denoted by the triplet ( d£, dR, Y) where d£, dR denote the dimensions ofrepresentations of SU(2)L and SU(2)R, respectively. The fermion doublets are given by quarks: leptons: Q£(2, 1, 1/3), QR(1, 2,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-wfrx",
+      "number": null,
+      "title": "WfR(x)",
+      "level": 3,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": "5",
+      "labelEnd": "7",
+      "words": 451,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lr-symmetric models",
+          "heading": false
+        },
+        {
+          "term": "minimal lr-symmetric",
+          "heading": false
+        },
+        {
+          "term": "higgs sector",
+          "heading": false
+        },
+        {
+          "term": "higgs potential",
+          "heading": false
+        },
+        {
+          "term": "interesting models",
+          "heading": false
+        },
+        {
+          "term": "triplets",
+          "heading": false
+        },
+        {
+          "term": "multiplets",
+          "heading": false
+        },
+        {
+          "term": "simplest case",
+          "heading": false
+        }
+      ],
+      "extract": "~ E(fl )~v~ L(x), W(x) ~ c(fl )B~(x), 1/JL,R(x) ~ v\" 0' n RLI 'PR,L X. ¢(x) _, q,t(xJ (18) with c(fl) = 1 for f1 = 0 and -1 for f1 = 1, 2, 3. The unitary matrices vl,R act in flavour space. T!te parts of the Lagrangian density which we have already discussed are not automatically inv<triant under (18) but P requires (v'r)tr v\"' - r 1 R 1/.J L- 1/.!' (v\"lt... v\" _ .d R '-'¢ L - '-'¢· (19) The condition on the gauge",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-spontaneous-symmetry-breaking",
+      "number": "3",
+      "title": "Spontaneous Symmetry Breaking",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 38,
+      "summary": null,
+      "keywords": [],
+      "extract": "Spontaneous Symmetry Breaking Assuming that the Higgs potential has an electric charge conserving minimum we obtain the VEVs (see (17) and (26)) 1 ( v 0 ) (¢)o = vf2 0 w ' 1 ( 0 0 )",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-alro-yl2",
+      "number": null,
+      "title": "(AL,R)o = yl2",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 329,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gauge bosons",
+          "heading": false
+        },
+        {
+          "term": "mixing",
+          "heading": false
+        },
+        {
+          "term": "higgs",
+          "heading": false
+        },
+        {
+          "term": "charged",
+          "heading": false
+        },
+        {
+          "term": "mass",
+          "heading": false
+        },
+        {
+          "term": "effects",
+          "heading": false
+        },
+        {
+          "term": "cos",
+          "heading": false
+        }
+      ],
+      "extract": "U£,R O · (31) In the following we will always assume the order of magnitude relations (32) Taking into account only the effects of uR one easily checks that uR breaks SU(2)R x U(l)s-L to U(l)y generated by the SM hypercharge Y = 2T3R + B- L. (33) Thus we obtain the breaking scheme SU(2)L X SU(2)R X U(l)L-B X P ':!; SU(2)L X U(l)y \"'.';' U(l)w,• (34) At the intermediate stage one has an extended SM with the two Higgs",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-42-quark-mixing",
+      "number": "4.2",
+      "title": "Quark Mixing",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 309,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mixing",
+          "heading": true
+        },
+        {
+          "term": "quark",
+          "heading": true
+        },
+        {
+          "term": "quark mass",
+          "heading": false
+        },
+        {
+          "term": "mass matrices",
+          "heading": false
+        },
+        {
+          "term": "charged current",
+          "heading": false
+        },
+        {
+          "term": "manifest",
+          "heading": false
+        }
+      ],
+      "extract": "Quark Mixing The quark mass matrices are determined by ly((¢) 0 ) and they are given by M. = Jz(vfq + w\"L\\q), Defining mass eigenstates uL,R, dL,R by with QL,R = ( ~~) L,R and unitary matrices u~:~ the mass matrices are diagonalized by M. diag (m.,mc,mt) = U~tM.U]i Md = diag ( md, m, mb) = utt MdU~. (38) (39) (40) Since in LR-symmetric models there are L and R sectors there are also two mixing (K M) matrices }. u•t",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-5-lepton-sector",
+      "number": "5",
+      "title": "Lepton Sector",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 725,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lr-symmetric models",
+          "heading": false
+        },
+        {
+          "term": "r-handed scale",
+          "heading": false
+        },
+        {
+          "term": "minimal lr-symmetric",
+          "heading": false
+        },
+        {
+          "term": "majorana neutrinos",
+          "heading": false
+        },
+        {
+          "term": "neutrino masses",
+          "heading": false
+        },
+        {
+          "term": "lepton",
+          "heading": true
+        },
+        {
+          "term": "seesaw mechanism",
+          "heading": false
+        },
+        {
+          "term": "charged lepton",
+          "heading": false
+        }
+      ],
+      "extract": "Lepton Sector Neutrino masses and mixing have special features in LR-symmetric models which warrant a discussion in a separate section. The charged lepton mass matrix is given in analogy to the down quarks but the corresponding neutrino matrix ( 46) is only the 3 x 3 \"Dirac part\" of the 6 x 6 Major ana mass matrix in the three family case (for reviews on neutrino physics see e.g. [18)). The reason is that the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-acknowledgement",
+      "number": null,
+      "title": "Acknowledgement",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 14,
+      "summary": null,
+      "keywords": [],
+      "extract": "The author thanks the organizers for the hospitable and relaxed atmosphere at this meeting.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 407,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mohapatra",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "senjanovic",
+          "heading": false
+        },
+        {
+          "term": "nucl",
+          "heading": false
+        },
+        {
+          "term": "frere",
+          "heading": false
+        },
+        {
+          "term": "lett",
+          "heading": false
+        },
+        {
+          "term": "maalampi",
+          "heading": false
+        }
+      ],
+      "extract": "[1] S.L. Glashow, Nucl. Phys. 22 (1961) 579; S. Weinberg, Phys. Rev. Lett. 19 (1967) 1264; A. Salam, in proc. 8th Nobel Symposium, Aspeniisgarden, 1968, ed. N. Svartholm ( Almqvist and Wiksell, Stockholm, 1968). [2] .J.C. Pati and A. Salam, Phys. Rev. D10 (1975) 275; R.N. Mohapatra and J.C. Pati, Phys. Rev. Dll (1975) 566 and 2558. [3] R.N. Mohapatra and G. Senjanovic, Phys. Rev. Lett. 44 (1980) 912; Phys. Rev. D23",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "lr-symmetric models",
+      "heading": true
+    },
+    {
+      "term": "minimal lr-symmetric",
+      "heading": false
+    },
+    {
+      "term": "r-handed neutrino",
+      "heading": false
+    },
+    {
+      "term": "neutrino masses",
+      "heading": false
+    },
+    {
+      "term": "charged lepton",
+      "heading": false
+    },
+    {
+      "term": "r-handed scale",
+      "heading": false
+    },
+    {
+      "term": "lepton sector",
+      "heading": true
+    },
+    {
+      "term": "parity breaking",
+      "heading": false
+    },
+    {
+      "term": "gauge boson",
+      "heading": false
+    },
+    {
+      "term": "interesting models",
+      "heading": false
+    },
+    {
+      "term": "higgs sector",
+      "heading": false
+    },
+    {
+      "term": "symmetric models",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 12,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p12); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/9305356"
+  }
+}

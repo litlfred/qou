@@ -1,0 +1,120 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-q-alg-9504020v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-q-alg-9504020v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:q-alg/9504020v1  24 Apr 1995\nA Link Invariant from Quantum Dilogarithm\nR.M. Kashaev∗\nLaboratoire de Physique Th´eorique enslapp†\nENSLyon, 46 All´ee d’Italie,\n69007 Lyon, FRANCE\nE-mail: rkashaev@enslapp.ens-lyon.fr\nApril 1995\nAbstract\nThe link invariant, arising from the cyclic quantum dilogarithm via the\nparticular R-matrix construction, is proved to coincide with the invariant\nof triangulated links in S3 introduced in [14]. The obtained invariant, like\nAlexander-Conway polynomial, vanishes on disjoint union of links. The\nR-matrix can be considered as the cyclic analog of the universal R",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504020v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Solutions to the Yang-Baxter equation (YBE) [@Y; @B1] play important role both in the theory of solvable two-dimensional models of statistical mechanics and field theory (for a review see [@B2; @F]), and in the theory of braid groups and links [@Jo1]. Algebraically YBE is deeply related with quantum groups [@D1].\n\nRecently, Rogers' dilogarithm identity [@R] attracted much attention in connection with solvable models and 3d mathematics, see [@DS] and references therein. In [@FK] quantum generalization of the dilogarithm function has been suggested. Remarkably, quantized dilogarithm identity, li",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504020v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The $R$-Matrix",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-2-the-r-matrix.md",
+      "narrative": null,
+      "content": "[]{#sec1 label=\"sec1\"}\n\nFirst introduce the necessary notations. Let $\\omega$ be some primitive $N$-th root of unity for some $N\\ge 2$. For any non-negative integer $n<N$ define the symbol: $$(\\omega)_n=\\cases{1, &if $n=0$;\\cr\n              \\prod_{j=1}^n(1-\\omega^j), &$0<n<N$,\\cr}$$ Under complex conjugation we have the following properties: $$(\\omega)_n^*=(\\omega^*)_n,\\quad \\omega^*\\omega=1.$$ It will be convenient to use the \"theta\"-function, defined on integers: $$\\theta(n)=\\cases{1, &$0\\le n< N$;\\cr\n                 0,&otherwise,\\cr}\\quad n\\in Z.$$ For any $n\\in Z$ denote by $[n]$ the core",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504020v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariants of Links in Three-Sphere",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-3-invariants-of-links-in-three-sphere.md",
+      "narrative": null,
+      "content": "[]{#sec2 label=\"sec2\"}\n\nLet link $L$ in $S^3$ is given by a two-strand tangle. Consider some non-singular (i.e. with only simple intersection points) planar projection of this tangle. Denote by $V,E,F$ the sets of vertices, edges, and faces, respectively, in the planar graph. We will write $v\\in f$, for some vertex $v$ and face $f$ if $v$ lies in the boundary of $f$. There are two distinguished elements $e_1$ and $e_2$ in $E$, corresponding to the two strands of the tangle, and one distinguished element $f_0$ in $F$, corresponding to the outer region in the plane. Define the following two maps",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504020v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Three-Dimensional Description",
+      "pageStart": 5,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-4-three-dimensional-description.md",
+      "narrative": null,
+      "content": "[]{#sec3 label=\"sec3\"}\n\nIn this section we establish the connection of the link invariant constructed in Sect. [\\[sec2\\]](#sec2){reference-type=\"ref\" reference=\"sec2\"} with the invariant of triangulated links of [@K], related in turn to cyclic quantum dilogarithm [@FK]. First, remind the necessary formulas from [@K] in slightly different notations.\n\nWe will assume that the integer $N$ is odd, and the square root of $\\omega$ will be thought to be taken as an $N$-th root of unity: $$\\omega^{1/2}=\\omega^{(N+1)/2}.$$ For complex $x,y,z$, satisfying the Fermat equation $$x^N+y^N=z^N,\\label{Fermat}$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-q-alg-9504020v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-004-5-summary.md",
+      "narrative": null,
+      "content": "According to [@K], cyclic quantum dilogarithm leads to invariants of triangulated links in triangulated three-manifolds. It was conjectured that these invariants are independent of triangulations used. The $R$-matrix derivation, presented in this paper (Sect.[\\[sec2\\]](#sec2){reference-type=\"ref\" reference=\"sec2\"}), proves the conjecture for the case of three-sphere. The essential part of the proof is the realization of the $R$-matrix ([\\[R-matrix\\]](#R-matrix){reference-type=\"ref\" reference=\"R-matrix\"}) as a three-dimensional partition function ([\\[partfun\\]](#partfun){reference-type=\"ref\" re",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

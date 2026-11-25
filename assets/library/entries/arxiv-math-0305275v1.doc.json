@@ -1,0 +1,801 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0305275v1",
+  "title": "Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds",
+  "variant": "pdf",
+  "pages": 38,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "General definitions",
+      "number": null,
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-general-definitions"
+    },
+    {
+      "level": 1,
+      "title": "The straightening",
+      "number": null,
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-the-straightening"
+    },
+    {
+      "level": 1,
+      "title": "Volume of representations",
+      "number": null,
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-volume-of-representations"
+    },
+    {
+      "level": 1,
+      "title": "Comparison with simplicial volume",
+      "number": null,
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-comparison-with-simplicial-volume"
+    },
+    {
+      "level": 1,
+      "title": "Rigidity of representations",
+      "number": null,
+      "page": 21,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-rigidity-of-representations"
+    },
+    {
+      "level": 1,
+      "title": "Corollaries",
+      "number": null,
+      "page": 34,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-corollaries"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 206,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyperbolic volume",
+          "heading": false
+        },
+        {
+          "term": "fundamental group",
+          "heading": false
+        },
+        {
+          "term": "ρ-equivariant",
+          "heading": false
+        },
+        {
+          "term": "francaviglia",
+          "heading": false
+        },
+        {
+          "term": "stefano",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0305275v1 [math.GT] 19 May 2003 Hyperbolic volume of representations of fundamental groups of cusped 3-manifolds Stefano Francaviglia12 September 14, 2021 Abstract Let W be a compact manifold and let ρ be a representation of its fundamental group into PSL(2, C). Then the volume of ρ is deﬁned by taking any ρ-equivariant map from the universal cover f W to H3 and then by integrating the pull-back of the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0305275v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 709,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ensuremath mathbb",
+          "heading": false
+        },
+        {
+          "term": "ensuremath varphi",
+          "heading": false
+        },
+        {
+          "term": "pseudo-developing maps",
+          "heading": false
+        },
+        {
+          "term": "pseudo-developing map",
+          "heading": false
+        },
+        {
+          "term": "vsd",
+          "heading": false
+        },
+        {
+          "term": "representation rho",
+          "heading": false
+        },
+        {
+          "term": "non-compact manifolds",
+          "heading": false
+        },
+        {
+          "term": "let rho",
+          "heading": false
+        }
+      ],
+      "extract": "Let $W$ be a compact manifold and let $\\rho$ be a representation of its fundamental group into PSL$(2,\\ensuremath{\\mathbb C})\\simeq$ Isom$^+(\\ensuremath{\\mathbb H}^3)$. The volume of $\\rho$ is defined by taking any $\\rho$-equivariant map from the universal cover $\\widetilde{W}$ to $\\ensuremath{\\mathbb H}^3$ and then by integrating the pull-back of the hyperbolic volume form on a fundamental domain. This volume does",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-general-definitions",
+      "number": null,
+      "title": "General definitions",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1331,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ensuremath widetilde",
+          "heading": false
+        },
+        {
+          "term": "ensuremath widehat",
+          "heading": false
+        },
+        {
+          "term": "ensuremath mathbb",
+          "heading": false
+        },
+        {
+          "term": "partial ensuremath",
+          "heading": false
+        },
+        {
+          "term": "ensuremath overline",
+          "heading": false
+        },
+        {
+          "term": "called ensuremath",
+          "heading": false
+        },
+        {
+          "term": "widetilde times",
+          "heading": false
+        },
+        {
+          "term": "pseudo-developing map",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s uno label=\"s uno\"} We fix here the class of manifolds we consider, namely the class of ideally triangulated cusped manifolds. Since we work with cusped manifolds, we want to fix a structure on the cusps. ::: defitit Cusped manifold An orientable manifold $M$ is called *cusped manifold* if it is diffeomorphic to the interior of a compact manifold with boundary $\\ensuremath{\\overline{M}}$. A *cusp* of $M$ is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-the-straightening",
+      "number": null,
+      "title": "The straightening",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1221,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ensuremath widehat",
+          "heading": false
+        },
+        {
+          "term": "ensuremath widetilde",
+          "heading": false
+        },
+        {
+          "term": "ensuremath varphi",
+          "heading": false
+        },
+        {
+          "term": "straightening",
+          "heading": true
+        },
+        {
+          "term": "ensuremath mathbb",
+          "heading": false
+        },
+        {
+          "term": "ensuremath overline",
+          "heading": false
+        },
+        {
+          "term": "map ensuremath",
+          "heading": false
+        },
+        {
+          "term": "cal ensuremath",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s due label=\"s due\"} A straightening of a pseudo-developing map $D$ is a map that agrees with $D$ on the ideal points and that maps each tetrahedron to a straight one. The straightening is useful to calculate the hyperbolic volume associated to a pseudo-developing map (see Section [\\[s 3\\]](#s 3){reference-type=\"ref\" reference=\"s 3\"}). A particular case is when the manifold $M$ is complete hyperbolic, because in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-volume-of-representations",
+      "number": null,
+      "title": "Volume of representations",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2253,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "strvol ensuremath",
+          "heading": false
+        },
+        {
+          "term": "ensuremath widetilde",
+          "heading": false
+        },
+        {
+          "term": "ensuremath cal",
+          "heading": false
+        },
+        {
+          "term": "ensuremath overline",
+          "heading": false
+        },
+        {
+          "term": "ensuremath mathbb",
+          "heading": false
+        },
+        {
+          "term": "pseudo-developing map",
+          "heading": false
+        },
+        {
+          "term": "pseudo-developing maps",
+          "heading": false
+        },
+        {
+          "term": "let ensuremath",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s 3 label=\"s 3\"} For this section we fix an ideally triangulated manifold $M$ and a representation $\\rho:\\pi_1(M)\\to{\\rm Isom}^+(\\ensuremath{\\mathbb H}^3)$. In this section we recall the notion of volume of an equivariant map from $\\widetilde{M}$ to $\\ensuremath{\\mathbb H}^3$. We prove that if we restrict to the class of pseudo-developing maps, then the volume of $\\rho$ is well-defined. Namely the volume does",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-comparison-with-simplicial-volume",
+      "number": null,
+      "title": "Comparison with simplicial volume",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2010,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ensuremath overline",
+          "heading": false
+        },
+        {
+          "term": "ensuremath widetilde",
+          "heading": false
+        },
+        {
+          "term": "partial ensuremath",
+          "heading": false
+        },
+        {
+          "term": "oplus ensuremath",
+          "heading": false
+        },
+        {
+          "term": "ensuremath mathbb",
+          "heading": false
+        },
+        {
+          "term": "lambda ensuremath",
+          "heading": false
+        },
+        {
+          "term": "ensuremath widehat",
+          "heading": false
+        },
+        {
+          "term": "call ensuremath",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s qua label=\"s qua\"} Here we generalize the argument used to prove Theorem [\\[t vsd\\]](#t vsd){reference-type=\"ref\" reference=\"t vsd\"} to compare ${\\rm vol}(\\rho)$ with the simplicial volume of $M$, obtaining exactly the expected inequality. Let $||(\\overline M,\\partial \\overline M)||$ be the simplicial volume of $\\overline M$ relative to the boundary (see [@BP], [@G], [@Ku], [@Th1] for more details), and let",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-rigidity-of-representations",
+      "number": null,
+      "title": "Rigidity of representations",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4468,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ensuremath varepsilon",
+          "heading": false
+        },
+        {
+          "term": "ensuremath mathfrak",
+          "heading": false
+        },
+        {
+          "term": "ensuremath mathbb",
+          "heading": false
+        },
+        {
+          "term": "ensuremath widehat",
+          "heading": false
+        },
+        {
+          "term": "ensuremath overline",
+          "heading": false
+        },
+        {
+          "term": "ensuremath varphi",
+          "heading": false
+        },
+        {
+          "term": "cal ensuremath",
+          "heading": false
+        },
+        {
+          "term": "nnp label",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s r label=\"s r\"} This section is completely devoted to proving the following: ::: teo []{#t ug label=\"t ug\"} Let M be a non-compact, complete, orientable hyperbolic $3$-manifold of finite volume. Let $\\Gamma\\cong\\pi_1(M)$ be the sub-group of ${\\rm PSL}(2,\\ensuremath{\\mathbb C})$ such that $M=\\ensuremath{\\mathbb H}^3/\\Gamma$. Let $\\rho:\\Gamma\\to$ PSL$(2,\\ensuremath{\\mathbb C})$ be a representation. If $|{\\rm",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-corollaries",
+      "number": null,
+      "title": "Corollaries",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 38,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1342,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hyperbolicity equations",
+          "heading": false
+        },
+        {
+          "term": "triangulation tau",
+          "heading": false
+        },
+        {
+          "term": "pseudo-developing map",
+          "heading": false
+        },
+        {
+          "term": "begin teo",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic manifold",
+          "heading": false
+        },
+        {
+          "term": "end teo",
+          "heading": false
+        },
+        {
+          "term": "gamma cong",
+          "heading": false
+        },
+        {
+          "term": "geometric solution",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s cor} In this section we prove some corollaries that can be useful for studying hyperbolic $3$-manifolds. First we show how from Theorem~\\ref{t ug} one gets a proof of Mostow's rigidity for non-compact manifolds (see~\\cite{P} and~\\cite{BCS} for a more general statement and a different proof). \\begin{teo}[Mostow's rigidity for non-compact manifold]\\label{t mstw} Let $f:M\\to N$ be a proper map between two",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "ensuremath widetilde",
+      "heading": false
+    },
+    {
+      "term": "ensuremath overline",
+      "heading": false
+    },
+    {
+      "term": "ensuremath mathbb",
+      "heading": false
+    },
+    {
+      "term": "strvol ensuremath",
+      "heading": false
+    },
+    {
+      "term": "map ensuremath",
+      "heading": false
+    },
+    {
+      "term": "ensuremath widehat",
+      "heading": false
+    },
+    {
+      "term": "partial ensuremath",
+      "heading": false
+    },
+    {
+      "term": "circ ensuremath",
+      "heading": false
+    },
+    {
+      "term": "times ensuremath",
+      "heading": false
+    },
+    {
+      "term": "ensuremath varphi",
+      "heading": false
+    },
+    {
+      "term": "let ensuremath",
+      "heading": false
+    },
+    {
+      "term": "cal ensuremath",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0305275v1"
+  }
+}

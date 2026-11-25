@@ -1,0 +1,760 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "the-period-matrix-of-bring-s-curve-1hik02mwva",
+  "title": "The period matrix of Bring’s curve",
+  "variant": "pdf",
+  "pages": 22,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Hι(B",
+      "number": null,
+      "page": 4,
+      "pageLabel": "182",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-hιb"
+    },
+    {
+      "level": 1,
+      "title": "This means that under an integral change of basis Ω",
+      "number": null,
+      "page": 4,
+      "pageLabel": "182",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-this-means-that-under-an-integral-change-of-basi"
+    },
+    {
+      "level": 1,
+      "title": "cac~",
+      "number": "0",
+      "page": 5,
+      "pageLabel": "183",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-0-cac"
+    },
+    {
+      "level": 1,
+      "title": "cac~ ι 0\\ fcbc-",
+      "number": "0",
+      "page": 5,
+      "pageLabel": "183",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "B does not admit more automorphisms, we obtain",
+      "number": null,
+      "page": 7,
+      "pageLabel": "185",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-b-does-not-admit-more-automorphisms-we-obtain"
+    },
+    {
+      "level": 2,
+      "title": "Thus if dw is the differential in H projects to a differential on the elliptic curve with modulus µ, its periods are",
+      "number": null,
+      "page": 7,
+      "pageLabel": "185",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-thus-if-dw-is-the-differential-in-h-projects-to"
+    },
+    {
+      "level": 2,
+      "title": "We may now complete dw to a basis of differentials on B us-",
+      "number": null,
+      "page": 7,
+      "pageLabel": "185",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-we-may-now-complete-dw-to-a-basis-of-differentia"
+    },
+    {
+      "level": 2,
+      "title": "'- 1 + /VΓΓ",
+      "number": null,
+      "page": 9,
+      "pageLabel": "187",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-006---1-vγγ"
+    },
+    {
+      "level": 3,
+      "title": "We then set",
+      "number": null,
+      "page": 16,
+      "pageLabel": "194",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-we-then-set"
+    },
+    {
+      "level": 1,
+      "title": "so that we can write oi Λ r o r roi . Λ r o r . Λ r o i r o n",
+      "number": "195",
+      "page": 17,
+      "pageLabel": "195",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-195-so-that-we-can-write-oi-λ-r-o-r-roi-λ-r-o-r"
+    },
+    {
+      "level": 2,
+      "title": "so that \\ 2niq",
+      "number": "5",
+      "page": 20,
+      "pageLabel": "198",
+      "confidence": 0.6,
+      "evidence": [
+        "style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-5-so-that-2niq"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": "179",
+      "labelEnd": "182",
+      "words": 1080,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gonzalo riera",
+          "heading": false
+        },
+        {
+          "term": "bring curve",
+          "heading": false
+        },
+        {
+          "term": "riemann surface",
+          "heading": false
+        },
+        {
+          "term": "riemann matrix",
+          "heading": false
+        },
+        {
+          "term": "genus four",
+          "heading": false
+        },
+        {
+          "term": "rodriguez",
+          "heading": false
+        },
+        {
+          "term": "intersection matrix",
+          "heading": false
+        },
+        {
+          "term": "rubi",
+          "heading": false
+        }
+      ],
+      "extract": "PACIFIC JOURNAL OF MATHEMATICS Vol. 154, No. 1, 1992 THE PERIOD MATRIX OF BRING'S CURVE GONZALO RlERA AND RUBI E. RODRIGUEZ In genus four there is only one Riemann surface admitting the symmetric group of order five as group of automorphisms: we compute its Riemann matrix. On the other hand, we show that there is a one complex parameter family of Jacobians admitting the same group of automorphisms and using the",
+      "extractCut": true,
+      "blocks": [
+        "library/the-period-matrix-of-bring-s-curve-1hik02mwva/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-hιb",
+      "number": null,
+      "title": "Hι(B",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "182",
+      "labelEnd": "182",
+      "words": 222,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "repre sentation",
+          "heading": false
+        },
+        {
+          "term": "detc",
+          "heading": false
+        },
+        {
+          "term": "a'ca",
+          "heading": false
+        }
+      ],
+      "extract": "Hι(B - 1 0 - 1 0 - 1 0 - 1 0 0 0 1 0 0 0 1 - 0 0 0 0 0 0 0 1 0 ,Z) 0\\ - 1 0 - 1 0 - 1 0 - 1 / c ( ( ( c c c via the matrices )\\ ) ) ) ) ) ) • We have C = - C, detC = + 1 , A'CA = C, B'CB = C and A 5 = / , B 2 = / , {AB) 4 = / , so that they give an integer valued representation of the group <9$. (We do not know why these matrices have only 0, 1, — 1 as entries as it happens in all known examples.) What we need at",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-this-means-that-under-an-integral-change-of-basi",
+      "number": null,
+      "title": "This means that under an integral change of basis Ω",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "182",
+      "labelEnd": "183",
+      "words": 191,
+      "summary": null,
+      "keywords": [],
+      "extract": ", for instance, Ω = / 2 1 2 0 1 1 1 1 - 1 - 1 - 2 - 1 - 1 0 - 2 0 - 2 - 1 - 1 1 0 1 - 1 1 2 - 1 1 1 1 1 - 1 2 1 0 0 0 0 - 1 - 1 0 - 1 - 2 - 2 - 1 0 - 1 - 1 - 1 - 1 0 1 1 0 - 1 0\\ - 1 1 0 1 - 1 - 1 - 2/ THE PERIOD MATRIX OF BRING'S CURVE 183 the matriceszyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA A, B, C transform into Here c = ( 4 1 - 1 ^ 1 1 4 1 - 1 - 1 1 4 1 \\\\ - 1 1 4) with c ι = 4- / 2 - 1 1 - 1\\ - 1 2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-0-cac",
+      "number": "0",
+      "title": "cac~",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "183",
+      "labelEnd": "185",
+      "words": 608,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cac",
+          "heading": true
+        },
+        {
+          "term": "bring half",
+          "heading": false
+        },
+        {
+          "term": "bring curve",
+          "heading": false
+        },
+        {
+          "term": "spγo",
+          "heading": false
+        },
+        {
+          "term": "point τ'c",
+          "heading": false
+        },
+        {
+          "term": "half plane",
+          "heading": false
+        },
+        {
+          "term": "siegeγs space",
+          "heading": false
+        }
+      ],
+      "extract": "cac~ ι 0\\ fcbc- 1 0\\ ( 0 I\\ a)> { 0 b ) ' {- I θj Notice that Ω Λ is unimodular (with integer entries), and that cac~ ι = (a')~ ι and cbc~ ι = {b')- χ. In order to study the action of S% on SiegeΓs space, we embed <5% in Sp(8, Z) by sending a and β respectively to - i, and denote the image group by SpJ?s; we also embed Γo(5) in Sp(8, Z) by sending / m π \\ / m / nc w \\p q) \\pc~ ι qi and denote the image group by Sp",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-b-does-not-admit-more-automorphisms-we-obtain",
+      "number": null,
+      "title": "B does not admit more automorphisms, we obtain",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "185",
+      "labelEnd": "185",
+      "words": 201,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "automorphisms",
+          "heading": true
+        },
+        {
+          "term": "projects",
+          "heading": false
+        },
+        {
+          "term": "automor",
+          "heading": false
+        },
+        {
+          "term": "riemann",
+          "heading": false
+        }
+      ],
+      "extract": "where λ: <9$ - > <9$ is an automorphism of <5% . Since every automor- phism of J?5 is interior, there is some h in ^ such that Ah- \\ M commutes with all matrices Ag then it follows from Lemma 1 that M = Ahγ with γ e S pΓ0(5). 3. The Riemann matrix. We now compute the values of the complex number τ so that the matrix τ- c is the period matrix of Bring's curve; it is the only value modulo ΓQ(5) that comes from a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-thus-if-dw-is-the-differential-in-h-projects-to",
+      "number": null,
+      "title": "Thus if dw is the differential in H projects to a differential on the elliptic curve with modulus µ, its periods are",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "185",
+      "labelEnd": "185",
+      "words": 29,
+      "summary": null,
+      "keywords": [],
+      "extract": "ι>°(B, C) invariant by βa that projects to a differential on the elliptic curve with modulus µ, its periods are 1, 1, 1, 1, µ, µ, µ, µ .",
+      "extractCut": false
+    },
+    {
+      "id": "sec-005-we-may-now-complete-dw-to-a-basis-of-differentia",
+      "number": null,
+      "title": "We may now complete dw to a basis of differentials on B us-",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "185",
+      "labelEnd": "187",
+      "words": 494,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "handle projects",
+          "heading": false
+        },
+        {
+          "term": "period matrix",
+          "heading": false
+        },
+        {
+          "term": "basis",
+          "heading": true
+        },
+        {
+          "term": "branched",
+          "heading": false
+        },
+        {
+          "term": "curve",
+          "heading": false
+        }
+      ],
+      "extract": "ing a* dw , a 2* dw , a 3* dw , and since we know the action of a on homology via cac~ ι and α, we can compute the period matrix Z = (µ / 5).c. But there is among all possible quotients of B another interesting elliptic curve, namely 5/ ((24)(35), (25)(34)) = E2. Starting from the same marked sphere with four tori, E2 is obtained by identifying pairs of opposite handles, that is, if a canonical pair of curves on a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006---1-vγγ",
+      "number": null,
+      "title": "'- 1 + /VΓΓ",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 16,
+      "labelStart": "187",
+      "labelEnd": "194",
+      "words": 1713,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schottky relation",
+          "heading": false
+        },
+        {
+          "term": "bring curve",
+          "heading": false
+        },
+        {
+          "term": "half plane",
+          "heading": false
+        },
+        {
+          "term": "exact sequence",
+          "heading": false
+        },
+        {
+          "term": "discrete groups",
+          "heading": false
+        }
+      ],
+      "extract": "187 - • o ! FIGURE 2 The toruszyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA E\\ is then obtained from this last equation by the iden- tification (z, w) <- + (- z, - w), while the torus Eι is obtained by the other identification (z, w) <- + (—z, w). The first torus is therefore given by 145 Λ u - f 5 x 421 ;(5τ 0) = - 29 3x5 2 5 and the second torus by 100w - [A x2940 v λ 25 j(τ 0) = ~γ. Finally we have to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-we-then-set",
+      "number": null,
+      "title": "We then set",
+      "level": 3,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "194",
+      "labelEnd": "195",
+      "words": 10,
+      "summary": null,
+      "keywords": [],
+      "extract": "= d [j] THE PERIOD MATRIX OF BRING'S CURVE 195",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-195-so-that-we-can-write-oi-λ-r-o-r-roi-λ-r-o-r",
+      "number": "195",
+      "title": "so that we can write oi Λ r o r roi . Λ r o r . Λ r o i r o n",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 20,
+      "labelStart": "195",
+      "labelEnd": "198",
+      "words": 488,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "roi",
+          "heading": true
+        },
+        {
+          "term": "gonzalo riera",
+          "heading": false
+        },
+        {
+          "term": "πιτ",
+          "heading": false
+        },
+        {
+          "term": "differential form",
+          "heading": false
+        },
+        {
+          "term": "rubi",
+          "heading": false
+        },
+        {
+          "term": "rodriguez",
+          "heading": false
+        },
+        {
+          "term": "zeros",
+          "heading": false
+        }
+      ],
+      "extract": "oi Λ r o r roi . Λ r o r . Λ r o i r o n i\\ 1/2 oi 3 roi j i i 3 r n Λ roi 3 roi\\ 2 We examine now the behaviour of the differential form of 4th de- greezyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBA f(τ)(dτ) 4 under the generators of Γ o(5). These generators are W «>zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFE m + ι so that we may present this group by Since f(τ) has an expansion with only even powers of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-5-so-that-2niq",
+      "number": "5",
+      "title": "so that \\ 2niq",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": "198",
+      "labelEnd": "200",
+      "words": 544,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "addison wesley",
+          "heading": false
+        },
+        {
+          "term": "chile",
+          "heading": false
+        },
+        {
+          "term": "bring curve",
+          "heading": false
+        },
+        {
+          "term": "niq",
+          "heading": true
+        },
+        {
+          "term": "casilla",
+          "heading": false
+        },
+        {
+          "term": "schottky relation",
+          "heading": false
+        },
+        {
+          "term": "santiago",
+          "heading": false
+        },
+        {
+          "term": "rubi",
+          "heading": false
+        }
+      ],
+      "extract": "\\ 2niq 40 proving that the differential form has a simple pole there. At - j we use the transformation β(τ) = τ/ (- 5τ + 1) so that = VΪ^- 5τϋ 0 [?] H) (5τ), and similar formulas for # [}]»»/ [}]• The expansion A(τ) = ϋ 0 0 0 0 ϋ 0 0 0 0 1/2 1/2 gives, using the local parameter p = q 2 = e = q 2 = e 2πiτ proving that it has a pole of order 2 there. At - 5 , - 3 , - 3 similar expansions show that there are poles of",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "bring curve",
+      "heading": false
+    },
+    {
+      "term": "gonzalo riera",
+      "heading": false
+    },
+    {
+      "term": "bring half",
+      "heading": false
+    },
+    {
+      "term": "period matrix",
+      "heading": false
+    },
+    {
+      "term": "elliptic curve",
+      "heading": true
+    },
+    {
+      "term": "klein curve",
+      "heading": false
+    },
+    {
+      "term": "riemann matrix",
+      "heading": false
+    },
+    {
+      "term": "schottky relation",
+      "heading": false
+    },
+    {
+      "term": "rubi",
+      "heading": false
+    },
+    {
+      "term": "rodriguez",
+      "heading": false
+    },
+    {
+      "term": "riemann surface",
+      "heading": false
+    },
+    {
+      "term": "homology basis",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "179",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "180",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "181",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "182",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "183",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "184",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "185",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "186",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "187",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "188",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "189",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "190",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "191",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "192",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "193",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "194",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "195",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "196",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "197",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "198",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "199",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "200",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/the-period-matrix-of-bring-s-curve-1hik02mwva"
+  }
+}

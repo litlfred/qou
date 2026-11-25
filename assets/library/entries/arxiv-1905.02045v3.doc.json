@@ -1,0 +1,1194 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1905.02045v3",
+  "title": "arxiv-1905.02045v3",
+  "variant": "pdf",
+  "pages": 39,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Outline of the paper and sketch of the proofs",
+      "number": "1.1",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-outline-of-the-paper-and-sketch-of-the-proofs"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgment",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-acknowledgment"
+    },
+    {
+      "level": 1,
+      "title": "Notation",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-notation"
+    },
+    {
+      "level": 1,
+      "title": "Two reciprocity formulae for the q-Pochhammer symbol",
+      "number": "2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-2-two-reciprocity-formulae-for-the-q-pochhammer"
+    },
+    {
+      "level": 2,
+      "title": "Abel-Plana's summation formula",
+      "number": "2.1",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "First reciprocity formula for the q-Pochhammer symbol",
+      "number": "2.2",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-22-first-reciprocity-formula-for-the-q-pochhamme"
+    },
+    {
+      "level": 2,
+      "title": "Sums of cotangents",
+      "number": "2.3",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-23-sums-of-cotangents"
+    },
+    {
+      "level": 2,
+      "title": "Second reciprocity formula for the q-Pochhammer symbol",
+      "number": "2.4",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-24-second-reciprocity-formula-for-the-q-pochhamm"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem ??",
+      "number": "3",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-3-proof-of-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Lemma ??",
+      "number": "3.1",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-32-proof-of-lemma"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Lemma ??",
+      "number": "3.2",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-32-proof-of-lemma"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorems ??",
+      "number": "4",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-4-proof-of-theorems"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem ??",
+      "number": "5",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-5-proof-of-theorem"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 125,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zagier conjecture",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic knots",
+          "heading": false
+        },
+        {
+          "term": "modularity",
+          "heading": false
+        },
+        {
+          "term": "drappeau",
+          "heading": false
+        }
+      ],
+      "extract": "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM INVARIANTS OF HYPERBOLIC KNOTS S. BETTIN AND S. DRAPPEAU Abstract. We obtain an exact modularity relation for the q-Pochhammer symbol. Using this formula, we show that Zagier’s modularity conjecture for a knot K essentially reduces to the arithmeticity conjecture for K. In particular, we show that Zagier’s conjecture holds for hyperbolic knots K̸ = 72 with at most seven",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1905.02045v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 6,
+      "labelStart": "1",
+      "labelEnd": "6",
+      "words": 2512,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aftergroup egroup",
+          "heading": false
+        },
+        {
+          "term": "bgroup originalleft",
+          "heading": false
+        },
+        {
+          "term": "egroup originalright",
+          "heading": false
+        },
+        {
+          "term": "mathclose bgroup",
+          "heading": false
+        },
+        {
+          "term": "mathchoice mathopen",
+          "heading": false
+        },
+        {
+          "term": "operatorname mathchoice",
+          "heading": false
+        },
+        {
+          "term": "alpha aftergroup",
+          "heading": false
+        },
+        {
+          "term": "overline aftergroup",
+          "heading": false
+        }
+      ],
+      "extract": "Among knot invariants, the colored Jones polynomials $\\{J_{K,n}\\}_{n\\geq2}$ and the Kashaev invariants $\\{\\langle K\\rangle_N\\}_{N\\geq 2}$ are of particular interest, by their relation to quantum field theory, and the geometry of hyperbolic manifolds [@Witten1994; @MurakamiMurakami2001]. We refer to *e.g.* [@MurakamiMurakami2001; @Yokota2011] for their definitions; by [@MurakamiMurakami2001], the two invariants are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-outline-of-the-paper-and-sketch-of-the-proofs",
+      "number": "1.1",
+      "title": "Outline of the paper and sketch of the proofs",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 822,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aftergroup egroup",
+          "heading": false
+        },
+        {
+          "term": "bgroup originalleft",
+          "heading": false
+        },
+        {
+          "term": "egroup originalright",
+          "heading": false
+        },
+        {
+          "term": "mathchoice mathopen",
+          "heading": false
+        },
+        {
+          "term": "mathclose bgroup",
+          "heading": false
+        },
+        {
+          "term": "operatorname mathchoice",
+          "heading": false
+        },
+        {
+          "term": "alpha aftergroup",
+          "heading": false
+        },
+        {
+          "term": "ifthenelse equal",
+          "heading": false
+        }
+      ],
+      "extract": "Theorem [\\[th:1\\]](#th:1){reference-type=\"ref\" reference=\"th:1\"} and Theorem [\\[th:2\\]](#th:2){reference-type=\"ref\" reference=\"th:2\"} are both based on two new relations for the $q$-Pochhammer symbol, given in Theorems [\\[th:Ir\\]](#th:Ir){reference-type=\"ref\" reference=\"th:Ir\"} (cf. [\\[eq:mro\\]](#eq:mro){reference-type=\"eqref\" reference=\"eq:mro\"}) and [\\[thp\\]](#thp){reference-type=\"ref\" reference=\"thp\"}. These",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-acknowledgment",
+      "number": null,
+      "title": "Acknowledgment",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 116,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aix-marseille university",
+          "heading": false
+        },
+        {
+          "term": "visit",
+          "heading": false
+        },
+        {
+          "term": "bettin",
+          "heading": false
+        }
+      ],
+      "extract": "This paper was partially written during a visit of of S. Bettin at the Aix-Marseille University, a visit of S. Drappeau at the University of Genova, and a visit of both authors at ICTP Trieste. The authors thank these Institution for the hospitality and Aix-Marseille University, INdAM and ICTP for the financial support for these visits. The authors wish to thank Don Zagier for useful discussions, Brian Conrey for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-notation",
+      "number": null,
+      "title": "Notation",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 76,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lfloor rfloor",
+          "heading": false
+        },
+        {
+          "term": "textnormal",
+          "heading": false
+        },
+        {
+          "term": "mathbf",
+          "heading": false
+        }
+      ],
+      "extract": "Given $D\\subset \\mathbb{R}$ and $f:D\\to\\mathbb{R}$, we write $\\|f\\|_{\\infty, D}:=\\sup_{t\\in D}|f(t)|$. Also, given $t\\in\\mathbb{R}$, we write $\\|t\\|:=\\textnormal{dist}(t,\\mathbb{Z})$ and $\\{t\\}:=t-\\lfloor t\\rfloor$, where $\\lfloor t\\rfloor$ is the integer part of $t$. Given a property $P$, we define ${\\mathbf 1}_{P}$ (or ${\\mathbf 1}(P)$) to be $1$ if the property $P$ is satisfied and $0$ otherwise. All the implicit",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-2-two-reciprocity-formulae-for-the-q-pochhammer",
+      "number": "2",
+      "title": "Two reciprocity formulae for the q-Pochhammer symbol",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 393,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aftergroup egroup",
+          "heading": false
+        },
+        {
+          "term": "bgroup originalleft",
+          "heading": false
+        },
+        {
+          "term": "egroup originalright",
+          "heading": false
+        },
+        {
+          "term": "mathchoice mathopen",
+          "heading": false
+        },
+        {
+          "term": "mathclose bgroup",
+          "heading": false
+        },
+        {
+          "term": "operatorname mathchoice",
+          "heading": false
+        },
+        {
+          "term": "ell ifthenelse",
+          "heading": false
+        },
+        {
+          "term": "alpha aftergroup",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#repsec label=\"repsec\"} ## Abel-Plana's summation formula Our argument is based on the Abel-Plana summation formula. We denote by $\\gamma_\\varepsilon$ the following integration contour. <figure id=\"fig:contour\"> </figure> ::: lemma []{#lem:abelplana label=\"lem:abelplana\"} Let $\\alpha, \\beta,\\beta'\\in\\mathbb{R}$ with $\\alpha \\leq \\beta<\\beta'$. Let $f$ be an analytic function on a neighborhood of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-22-first-reciprocity-formula-for-the-q-pochhamme",
+      "number": "2.2",
+      "title": "First reciprocity formula for the q-Pochhammer symbol",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 14,
+      "labelStart": "9",
+      "labelEnd": "14",
+      "words": 2254,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aftergroup egroup",
+          "heading": false
+        },
+        {
+          "term": "bgroup originalleft",
+          "heading": false
+        },
+        {
+          "term": "egroup originalright",
+          "heading": false
+        },
+        {
+          "term": "mathclose bgroup",
+          "heading": false
+        },
+        {
+          "term": "mathchoice mathopen",
+          "heading": false
+        },
+        {
+          "term": "kappa ifthenelse",
+          "heading": false
+        },
+        {
+          "term": "operatorname mathchoice",
+          "heading": false
+        },
+        {
+          "term": "overline aftergroup",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#ss:1rf label=\"ss:1rf\"} We fix the notations as follows. Let $N, d\\geq 1$ be coprime. Let $\\alpha = p/q$ in reduced form, and $\\gamma = \\mathopen{}\\mathclose\\bgroup\\originalleft( \\begin{smallmatrix} p & -\\overline{q} \\\\ q & \\overline{p} \\end{smallmatrix} \\aftergroup\\egroup\\originalright)$ for some $(\\overline{p}, \\overline{q})$ satisfying $p\\overline{p} + q\\overline{q} = 1$. Throughout the rest of Section",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-23-sums-of-cotangents",
+      "number": "2.3",
+      "title": "Sums of cotangents",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 19,
+      "labelStart": "14",
+      "labelEnd": "19",
+      "words": 2279,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aftergroup egroup",
+          "heading": false
+        },
+        {
+          "term": "bgroup originalleft",
+          "heading": false
+        },
+        {
+          "term": "egroup originalright",
+          "heading": false
+        },
+        {
+          "term": "mathclose bgroup",
+          "heading": false
+        },
+        {
+          "term": "mathopen mathclose",
+          "heading": false
+        },
+        {
+          "term": "mathchoice mathopen",
+          "heading": false
+        },
+        {
+          "term": "operatorname mathchoice",
+          "heading": false
+        },
+        {
+          "term": "tan ineq",
+          "heading": false
+        }
+      ],
+      "extract": "In this section and the next, we introduce the following extension of the Landau $O$-symbol. Let $D_1\\subset D_2\\subset \\mathbb{C}$ be two sets given by the context, and $g: D_2 \\to \\mathbb{R}_+$. We will write $$f(z) = \\mathcal{O}_{(p_1, p_2, \\dotsc)}^z(g(z)) \\qquad (z\\in D_1)\\label{eq:def-Oh}$$ whenever, for any fixed choice of the parameters $p_1, p_2, \\dotsc$, there exists a function $\\varphi$ holomorphic on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-24-second-reciprocity-formula-for-the-q-pochhamm",
+      "number": "2.4",
+      "title": "Second reciprocity formula for the q-Pochhammer symbol",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": "19",
+      "labelEnd": "21",
+      "words": 804,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aftergroup egroup",
+          "heading": false
+        },
+        {
+          "term": "bgroup originalleft",
+          "heading": false
+        },
+        {
+          "term": "egroup originalright",
+          "heading": false
+        },
+        {
+          "term": "mathclose bgroup",
+          "heading": false
+        },
+        {
+          "term": "originalright mathopen",
+          "heading": false
+        },
+        {
+          "term": "originalleft log",
+          "heading": false
+        },
+        {
+          "term": "originalleft lfloor",
+          "heading": false
+        },
+        {
+          "term": "originalright rfloor",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:recip2-poch label=\"sec:recip2-poch\"} ::: theorem []{#thp label=\"thp\"} Let $4\\leq h< k$ with $(h,k)=1$ and $r_0\\in \\{0, \\dotsc, h-1\\}$. Let $0\\leq r<k$ with $r\\equiv r_0~\\mathchoice{\\mathopen{}\\mathclose\\bgroup\\originalleft( \\textnormal{mod}~h\\aftergroup\\egroup\\originalright)}{(\\textnormal{mod}~h)}{(\\textnormal{mod}~h)}{(\\textnormal{mod}~h)}$. We have $$\\begin{aligned} \\frac{(\\ifthenelse{\\equal{-{\\overline",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-3-proof-of-theorem",
+      "number": "3",
+      "title": "Proof of Theorem ??",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 31,
+      "labelStart": "21",
+      "labelEnd": "31",
+      "words": 3671,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boldsymbol mathchoice",
+          "heading": false
+        },
+        {
+          "term": "aftergroup egroup",
+          "heading": false
+        },
+        {
+          "term": "bgroup originalleft",
+          "heading": false
+        },
+        {
+          "term": "egroup originalright",
+          "heading": false
+        },
+        {
+          "term": "mathclose bgroup",
+          "heading": false
+        },
+        {
+          "term": "mathchoice mathopen",
+          "heading": false
+        },
+        {
+          "term": "boldsymbol lambda",
+          "heading": false
+        },
+        {
+          "term": "boldsymbol overline",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#pmt1 label=\"pmt1\"} Throughout the rest of the section, $K$ will denote any hyperbolic knot $K\\neq 7_2$ with at most $7$ crossings. We will use the same notation as in Section [\\[ss:1rf\\]](#ss:1rf){reference-type=\"ref\" reference=\"ss:1rf\"}. In particular, all error terms will be allowed to depend on $d$ and $\\gamma$. For $n\\in\\mathbb{N}_{\\geq 0}$ and $\\alpha=\\frac hk\\in\\mathbb{Q}$, with $(h,k)=1$, we let",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-32-proof-of-lemma",
+      "number": "3.2",
+      "title": "Proof of Lemma ??",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 34,
+      "labelStart": "31",
+      "labelEnd": "34",
+      "words": 1405,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exp vol",
+          "heading": false
+        },
+        {
+          "term": "hess",
+          "heading": false
+        },
+        {
+          "term": "idt",
+          "heading": false
+        },
+        {
+          "term": "lemma",
+          "heading": true
+        },
+        {
+          "term": "det",
+          "heading": false
+        },
+        {
+          "term": "satisﬁes",
+          "heading": false
+        }
+      ],
+      "extract": "Remark 8. We have L(λ) = −L(1−λ) for λ ∈[0, 1) and f(z) = f(1−z) for z ∈(C\\R)∪(0, 1). In particular we can write the conjugates of Φr(λ) and gd(λ) given in (3.4) and (2.16) ((2.14) if λ = 0) as Φr(λ) = exp \u0012 −k qd \u0010 L(1 −λ) + πi 12 \u0011 −πid 12kq + E∗ r (λ, d/k) \u0013 E∗ r (λ, d/k) := 1 2f \u0010q −⟨pr⟩+ λ q \u0011 + q X g=1 i Z ∞ 0 \u0012 f(q−g+λ q −idt k ) e(−gp−r q )e2πt −1 − f(q−g+λ q + idt k ) e( gp−r q )e2πt −1 \u0013 dt, (λ̸ = 0) and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-4-proof-of-theorems",
+      "number": "4",
+      "title": "Proof of Theorems ??",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 35,
+      "labelStart": "34",
+      "labelEnd": "35",
+      "words": 656,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "emx",
+          "heading": false
+        },
+        {
+          "term": "enx",
+          "heading": false
+        },
+        {
+          "term": "exp",
+          "heading": false
+        }
+      ],
+      "extract": "We proceed in a similar way as in the proof of Theorem 1. For x = h/k, with (h, k) = 1 and 1 ≤h < k, we write J41(x) as in (3.2) and we divide the sum into congruence classes modulo h, that is we write J41(h/k) = k 3−m 2 X 0≤s≤h−1 J41(h/k; s) (4.1) where, for 0 ≤s ≤h −1, we write J41(h/k; s) = X 0≤r<k, r≡s (mod h) |[h/k]r|2. (4.2) with [·]r as in (3.1). We apply Theorem 7, which for 0 ≤s < h, s ≡r (mod h), gives",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-5-proof-of-theorem",
+      "number": "5",
+      "title": "Proof of Theorem ??",
+      "level": 1,
+      "pageStart": 35,
+      "pageEnd": 38,
+      "labelStart": "35",
+      "labelEnd": "38",
+      "words": 1215,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "log v2n",
+          "heading": false
+        },
+        {
+          "term": "b2n",
+          "heading": false
+        },
+        {
+          "term": "partial quotients",
+          "heading": false
+        },
+        {
+          "term": "drappeau",
+          "heading": false
+        },
+        {
+          "term": "bettin",
+          "heading": false
+        },
+        {
+          "term": "theorem",
+          "heading": true
+        },
+        {
+          "term": "fractions",
+          "heading": false
+        },
+        {
+          "term": "letting",
+          "heading": false
+        }
+      ],
+      "extract": "Before starting, we state some basic properties of continued fractions (see [26] for a ref- erence). Given h/k ∈Q ∩(0, 1) with h, k ∈N, (h, k) = 1, we denote by [0; b1, . . . , br] the continued fraction expansion of h/k. Then for 0 ≤s ≤r the convergents of h/k are the fractions [0; b1, . . . , bs] = us vs with (us, vs) = 1 (as usual u0/v0 = 0/1, v−1 := 0, u−1 := 1); the vs are called the partial quotients. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 39,
+      "labelStart": "38",
+      "labelEnd": "39",
+      "words": 965,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ramanujan math",
+          "heading": false
+        },
+        {
+          "term": "kashaev invariant",
+          "heading": false
+        },
+        {
+          "term": "bettin",
+          "heading": false
+        },
+        {
+          "term": "hyperbolic knots",
+          "heading": false
+        },
+        {
+          "term": "quantum modularity",
+          "heading": false
+        },
+        {
+          "term": "volume conjecture",
+          "heading": false
+        },
+        {
+          "term": "quantum topology",
+          "heading": false
+        },
+        {
+          "term": "theory ramiﬁcations",
+          "heading": false
+        }
+      ],
+      "extract": "[1] N. H. Abel. Œuvres compl`etes. Tome I. ´Editions Jacques Gabay, Sceaux, 1992. Edited and with a preface by L. Sylow and S. Lie, Reprint of the second (1881) edition. [2] J. E. Andersen and S. K. Hansen. Asymptotics of the quantum invariants for surgeries on the ﬁgure 8 knot. J. Knot Theory Ramiﬁcations, 15(4):479–548, 2006. [3] L. B´aez-Duarte. A strengthening of the Nyman-Beurling criterion for the Riemann",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "aftergroup egroup",
+      "heading": false
+    },
+    {
+      "term": "bgroup originalleft",
+      "heading": false
+    },
+    {
+      "term": "egroup originalright",
+      "heading": false
+    },
+    {
+      "term": "mathclose bgroup",
+      "heading": false
+    },
+    {
+      "term": "originalright mathopen",
+      "heading": false
+    },
+    {
+      "term": "mathchoice mathopen",
+      "heading": false
+    },
+    {
+      "term": "originalleft operatorname",
+      "heading": false
+    },
+    {
+      "term": "originalleft log",
+      "heading": false
+    },
+    {
+      "term": "originalright big",
+      "heading": false
+    },
+    {
+      "term": "overline aftergroup",
+      "heading": false
+    },
+    {
+      "term": "alpha aftergroup",
+      "heading": false
+    },
+    {
+      "term": "originalright leq",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Global graph of H41 and H∗",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Graph of H41 and H∗",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Parameters of the Kashaev invariants",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Values of νK",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p006-1",
+      "file": "images/img-p006-1.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-2",
+      "file": "images/img-p006-2.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-3",
+      "file": "images/img-p006-3.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-4",
+      "file": "images/img-p006-4.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 15,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 14,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p38); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 10
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 14 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1905.02045v3"
+  }
+}

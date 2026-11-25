@@ -1,0 +1,707 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0706.3688v1",
+  "title": "arxiv-0706.3688v1",
+  "variant": "pdf",
+  "pages": 13,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The order zero condition and irreducible pairs (A,J)",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-the-order-zero-condition-and-irreducible-pairs"
+    },
+    {
+      "level": 2,
+      "title": "The case Z(AC)=C",
+      "number": "2.1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-the-case-zacc"
+    },
+    {
+      "level": 2,
+      "title": "The case Z(AC)=CC",
+      "number": "2.2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-the-case-zaccc"
+    },
+    {
+      "level": 1,
+      "title": "Z/2-grading",
+      "number": "3",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-3-z2-grading"
+    },
+    {
+      "level": 1,
+      "title": "The subalgebra and the order one condition",
+      "number": "4",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-4-the-subalgebra-and-the-order-one-condition"
+    },
+    {
+      "level": 1,
+      "title": "Conclusion",
+      "number": "5",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-5-conclusion"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 179,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "k-theoretic dimension",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite noncommutative",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "begging",
+          "heading": false
+        },
+        {
+          "term": "raison",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0706.3688v1 [hep-th] 25 Jun 2007 WHY THE STANDARD MODEL ALI H. CHAMSEDDINE AND ALAIN CONNES Abstract. The Standard Model is based on the gauge invariance principle with gauge group U(1) × SU(2) × SU(3) and suitable representations for fermions and bosons, which are begging for a conceptual understanding. We propose a purely gravitational explanation: space-time has a ﬁne structure given as a product of a four",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0706.3688v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 822,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "k-theoretic dimension",
+          "heading": false
+        },
+        {
+          "term": "einstein gravity",
+          "heading": false
+        },
+        {
+          "term": "involutive algebra",
+          "heading": false
+        },
+        {
+          "term": "dimension modulo",
+          "heading": false
+        },
+        {
+          "term": "grading",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "spectral action",
+          "heading": false
+        },
+        {
+          "term": "delivers",
+          "heading": false
+        }
+      ],
+      "extract": "The Standard Model is based on the gauge invariance principle with gauge group G = U(1) × SU(2) × SU(3) and suitable representations for fermions and bosons. It involves additional scalar ﬁelds, the Higgs ﬁelds and a number of key mechanisms such as V−A, spontaneous symmetry breaking etc... While the values of the hypercharges can be inferred from the condition of cancelation of anomalies, there is no conceptual",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-order-zero-condition-and-irreducible-pairs",
+      "number": "2",
+      "title": "The order zero condition and irreducible pairs (A,J)",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 549,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "projection ejej",
+          "heading": false
+        },
+        {
+          "term": "irreducible pairs",
+          "heading": true
+        },
+        {
+          "term": "je1j",
+          "heading": false
+        },
+        {
+          "term": "minimal projections",
+          "heading": false
+        },
+        {
+          "term": "jej",
+          "heading": false
+        },
+        {
+          "term": "e1e",
+          "heading": false
+        },
+        {
+          "term": "assume conditions",
+          "heading": false
+        },
+        {
+          "term": "irreducibility",
+          "heading": false
+        }
+      ],
+      "extract": "2. The order zero condition and irreducible pairs (A, J) We start with a ﬁnite dimensional Hilbert space H endowed with an antiunitary oper- ator J such that J2 = 1. For any operator x in H we let, (2.1) x0 = Jx∗J−1 . We look for involutive algebras A of operators in H such that (cf. (1.1)), (2.2) [x, y0] = 0 , ∀x, y ∈A . and that the following two conditions hold: (1) The action of A has a separating vector2 (2)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-the-case-zacc",
+      "number": "2.1",
+      "title": "The case Z(AC)=C",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 875,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "antilinear involution",
+          "heading": false
+        },
+        {
+          "term": "ebe",
+          "heading": false
+        },
+        {
+          "term": "minimal projection",
+          "heading": false
+        },
+        {
+          "term": "unitary equivalence",
+          "heading": false
+        },
+        {
+          "term": "left multiplication",
+          "heading": false
+        },
+        {
+          "term": "hilbert space",
+          "heading": false
+        },
+        {
+          "term": "simple algebra",
+          "heading": false
+        },
+        {
+          "term": "complex conjugation",
+          "heading": false
+        }
+      ],
+      "extract": "We assume Z(AC) = C. Then (cf. [14]) there exists k ∈N such that AC = Mk(C) as an involutive algebra over C. Moreover the algebra homomorphism (2.6) AC ⊗A0 C →L(H) , β(x ⊗y) = xy0 , ∀x, y ∈AC , is injective since AC ⊗A0 C ∼Mk2(C) is a simple algebra. Lemma 2.4. The representation β of AC ⊗A0 C in H of (2.6) is irreducible. Proof. Since AC ⊗A0 C ∼Mk2(C), the representation β is a multiple of the unique representation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-the-case-zaccc",
+      "number": "2.2",
+      "title": "The case Z(AC)=CC",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 678,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "antilinear isometry",
+          "heading": false
+        },
+        {
+          "term": "antilinear involution",
+          "heading": false
+        },
+        {
+          "term": "k1k",
+          "heading": false
+        },
+        {
+          "term": "involutive algebra",
+          "heading": false
+        },
+        {
+          "term": "irreducible representation",
+          "heading": false
+        },
+        {
+          "term": "twice square",
+          "heading": false
+        },
+        {
+          "term": "endc",
+          "heading": false
+        },
+        {
+          "term": "homc",
+          "heading": false
+        }
+      ],
+      "extract": "We assume Z(AC) = C⊕C. Then there exists kj ∈N such that AC = Mk1(C)⊕Mk2(C) as an involutive algebra over C. We let ej be the minimal projections ej ∈Z(AC) with ej corresponding to the component Mkj(C). Lemma 2.7. (1) The representation β of AC ⊗A0 C in H of (2.6) is the direct sum of two irreducible representations in the decomposition (2.10) H = e1H ⊕e2H = H1 ⊕H2 , β = β1 ⊕β2. (2) The representation β1 (resp β2)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-3-z2-grading",
+      "number": "3",
+      "title": "Z/2-grading",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 708,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "grading",
+          "heading": true
+        },
+        {
+          "term": "homc",
+          "heading": false
+        },
+        {
+          "term": "γ1γ",
+          "heading": false
+        },
+        {
+          "term": "vector space",
+          "heading": false
+        },
+        {
+          "term": "graded",
+          "heading": false
+        },
+        {
+          "term": "gets",
+          "heading": false
+        },
+        {
+          "term": "complex vector",
+          "heading": false
+        },
+        {
+          "term": "amounts",
+          "heading": false
+        }
+      ],
+      "extract": "In the set-up of spectral triples one assumes that in the even case the Hilbert space is Z/2-graded i.e. endowed with a grading operator γ, γ2 = 1, γ = γ∗. This grading should be compatible with a Z/2-grading of the algebra A which amounts to asking that γAγ−1 = A. One then has [γ, a] = 0 for any a ∈Aev the even part of A. Lemma 3.1. In the case Z(AC) = C of Proposition 2.5, let γ be a Z/2-grading of H such that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-4-the-subalgebra-and-the-order-one-condition",
+      "number": "4",
+      "title": "The subalgebra and the order one condition",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 11,
+      "labelStart": "8",
+      "labelEnd": "11",
+      "words": 1243,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aev",
+          "heading": false
+        },
+        {
+          "term": "oﬀdiagonal dirac",
+          "heading": false
+        },
+        {
+          "term": "fulﬁlls dimr",
+          "heading": false
+        },
+        {
+          "term": "unimodular inner",
+          "heading": false
+        },
+        {
+          "term": "dirac operator",
+          "heading": false
+        },
+        {
+          "term": "involutive sub",
+          "heading": false
+        },
+        {
+          "term": "dimension fulﬁlls",
+          "heading": false
+        },
+        {
+          "term": "inner ﬂuctuations",
+          "heading": false
+        }
+      ],
+      "extract": "We take (A, H, J, γ) from the above discussion, i.e. (3.1) and Proposition 3.2. The center of our algebra Z(A) is non-trivial and in that way the corresponding space is not connected. We look for “Dirac operators” D which connect non-trivially the two pieces (we call them “oﬀ-diagonal”) i.e. operators such that: (4.1) [D, Z(A)]̸ = {0}. The main requirement on such operators is the order one condition (1.2). We now",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-5-conclusion",
+      "number": "5",
+      "title": "Conclusion",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 534,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "k-theoretic dimension",
+          "heading": false
+        },
+        {
+          "term": "noncommutative geometry",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        },
+        {
+          "term": "uniﬁcation",
+          "heading": false
+        },
+        {
+          "term": "spectral action",
+          "heading": false
+        },
+        {
+          "term": "fermions",
+          "heading": false
+        },
+        {
+          "term": "advantages",
+          "heading": false
+        },
+        {
+          "term": "classiﬁcation",
+          "heading": false
+        }
+      ],
+      "extract": "The fermion doubling problem requires (cf. [2], [11]) crossing the ordinary 4-dimensional continuum by a space of K-theoretic dimension 6. We have shown in this paper that the classiﬁcation of the ﬁnite noncommutative geometries of K-theoretic dimension 6 singles out the algebras which are real forms of Mk(C) ⊕Mk(C) acting in the Hilbert space of dimension 2k2 by left multiplication, together with a speciﬁc",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 282,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "noncommutative geometry",
+          "heading": false
+        },
+        {
+          "term": "connes",
+          "heading": false
+        },
+        {
+          "term": "chamseddine",
+          "heading": false
+        },
+        {
+          "term": "neutrino mixing",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "spectral action",
+          "heading": false
+        },
+        {
+          "term": "standard model",
+          "heading": false
+        }
+      ],
+      "extract": "[1] M.F. Atiyah. Geometry of Yang-Mills ﬁelds. Accad. Naz. dei Lincei, Scuola Norm. Sup., Pisa, 1979 [2] John Barrett, ”The Lorentzian Version of the Noncommutative Geometry Model of Particle Physics”, J. Math. Phys. 48: 012303 (2007). [3] A. Chamseddine, A. Connes, Universal Formula for Noncommutative Geometry Actions: Uniﬁ- cation of Gravity and the Standard Model, Phys. Rev. Lett. 77, 486804871 (1996). [4] A.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "k-theoretic dimension",
+      "heading": false
+    },
+    {
+      "term": "involutive algebra",
+      "heading": false
+    },
+    {
+      "term": "antilinear isometry",
+      "heading": false
+    },
+    {
+      "term": "alain connes",
+      "heading": false
+    },
+    {
+      "term": "antilinear involution",
+      "heading": false
+    },
+    {
+      "term": "noncommutative geometry",
+      "heading": false
+    },
+    {
+      "term": "dimension fulﬁlls",
+      "heading": false
+    },
+    {
+      "term": "standard model",
+      "heading": false
+    },
+    {
+      "term": "unique involutive",
+      "heading": false
+    },
+    {
+      "term": "involutive subalgebra",
+      "heading": false
+    },
+    {
+      "term": "spectral action",
+      "heading": false
+    },
+    {
+      "term": "chamseddine",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 8,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p12); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 4
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0706.3688v1"
+  }
+}

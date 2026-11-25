@@ -1,0 +1,53 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s-p05/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "ant-v14-n7-s-p05",
+  "contains": [
+    "library/ant-v14-n7-s-p05/sections/sec-front-matter",
+    "library/ant-v14-n7-s-p05/sections/sec-000",
+    "library/ant-v14-n7-s-p05/sections/sec-001",
+    "library/ant-v14-n7-s-p05/sections/sec-002",
+    "library/ant-v14-n7-s-p05/sections/sec-003",
+    "library/ant-v14-n7-s-p05/sections/sec-004",
+    "library/ant-v14-n7-s-p05/sections/sec-005",
+    "library/ant-v14-n7-s-p05/sections/sec-006",
+    "library/ant-v14-n7-s-p05/sections/sec-007",
+    "library/ant-v14-n7-s-p05/sections/sec-008",
+    "library/ant-v14-n7-s-p05/sections/sec-009",
+    "library/ant-v14-n7-s-p05/sections/sec-010"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Motivic Gauss–Bonnet formulas — 12 sections: Front matter; Introduction; X+ ∈SH(k) is dualizable. In partic\n\n**Motivic Gauss–Bonnet formulas**\n\n*Marc Levine and Arpon Raksit*\n\n52 pp, 12 sections.\n\n**Outline.** Front matter; 1 Introduction; T X+ ∈SH(k) is dualizable. In particular, we c; 2 Duality and Euler characteristics; 3 SL-oriented motivic spectra; 4 Projective pushforward in twisted cohomology; 5 Motivic Gauss–Bonnet; 6 SL-oriented cohomology theories; 7 Comparison isomorphisms; 8 Applications; Acknowledgements; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "ant-v14-n7-s-p05",
+    "title_source": "slug",
+    "source_file": "ant-v14-n7-s-p05.pdf",
+    "source_sha256": "1c8e94ff62a8d9208b6ce94a7f6a29b20f66dbfa7e3470a7abd1ab9c73eeba1e",
+    "pages": 52,
+    "arxiv": null,
+    "doi": "10.2140/ant.2020.14.1801",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

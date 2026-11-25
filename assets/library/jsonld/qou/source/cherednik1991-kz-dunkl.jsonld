@@ -1,0 +1,62 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/cherednik1991-kz-dunkl/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "cherednik1991-kz-dunkl",
+  "contains": [
+    "library/cherednik1991-kz-dunkl/sections/page-001",
+    "library/cherednik1991-kz-dunkl/sections/page-002",
+    "library/cherednik1991-kz-dunkl/sections/page-003",
+    "library/cherednik1991-kz-dunkl/sections/page-004",
+    "library/cherednik1991-kz-dunkl/sections/page-005",
+    "library/cherednik1991-kz-dunkl/sections/page-006",
+    "library/cherednik1991-kz-dunkl/sections/page-007",
+    "library/cherednik1991-kz-dunkl/sections/page-008",
+    "library/cherednik1991-kz-dunkl/sections/page-009",
+    "library/cherednik1991-kz-dunkl/sections/page-010",
+    "library/cherednik1991-kz-dunkl/sections/page-011",
+    "library/cherednik1991-kz-dunkl/sections/page-012",
+    "library/cherednik1991-kz-dunkl/sections/page-013",
+    "library/cherednik1991-kz-dunkl/sections/page-014",
+    "library/cherednik1991-kz-dunkl/sections/page-015",
+    "library/cherednik1991-kz-dunkl/sections/page-016",
+    "library/cherednik1991-kz-dunkl/sections/page-017",
+    "library/cherednik1991-kz-dunkl/sections/page-018",
+    "library/cherednik1991-kz-dunkl/sections/page-019",
+    "library/cherednik1991-kz-dunkl/sections/page-020",
+    "library/cherednik1991-kz-dunkl/sections/page-021"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "A unification of Knizhnik-Zamolodchikov and Dunkl operators via affine Hecke algebras — 21 sections: Page 1; Page 2; Page 3\n\n**A unification of Knizhnik-Zamolodchikov and Dunkl operators via affine Hecke algebras**\n\n21 pp, 21 sections.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12; Page 13; Page 14; Page 15; Page 16; Page 17; Page 18",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "cherednik1991-kz-dunkl",
+    "title_source": "slug",
+    "source_file": "cherednik1991-kz-dunkl.pdf",
+    "source_sha256": "cae9cf747bb98a46442420931d357237c5adfd86ac6f4073e2a417bf5d0f4e30",
+    "pages": 21,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0305275v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0305275v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Let $W$ be a compact manifold and let $\\rho$ be a representation of its fundamental group into PSL$(2,\\ensuremath{\\mathbb C})\\simeq$ Isom$^+(\\ensuremath{\\mathbb H}^3)$. The volume of $\\rho$ is defined by taking any $\\rho$-equivariant map from the universal cover $\\widetilde{W}$ to $\\ensuremath{\\mathbb H}^3$ and then by integrating the pull-back of the hyperbolic volume form on a fundamental domain. This volume does not depend on the choice of the equivariant map because two equivariant maps are always equivariantly homotopic and the cohomology-class of the pull-back of the volume form is invar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0305275v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0305275v1  [math.GT]  19 May 2003\nHyperbolic volume of representations of fundamental\ngroups of cusped 3-manifolds\nStefano Francaviglia12\nSeptember 14, 2021\nAbstract\nLet W be a compact manifold and let ρ be a representation of its\nfundamental group into PSL(2, C). Then the volume of ρ is deﬁned\nby taking any ρ-equivariant map from the universal cover f\nW to H3\nand then by integrating the pull-back of the hyperbolic volume form\non a fundamental domain. It turns out that such a volume does not\ndepend on the choice of the equivariant map. Dunﬁeld extended this\nconstruction to the case",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0305275v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "General definitions",
+      "pageStart": 3,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-general-definitions.md",
+      "narrative": null,
+      "content": "[]{#s uno label=\"s uno\"} We fix here the class of manifolds we consider, namely the class of ideally triangulated cusped manifolds. Since we work with cusped manifolds, we want to fix a structure on the cusps.\n\n::: defitit\nCusped manifold An orientable manifold $M$ is called *cusped manifold* if it is diffeomorphic to the interior of a compact manifold with boundary $\\ensuremath{\\overline{M}}$. A *cusp* of $M$ is a closed regular neighborhood of a component of $\\partial\n \\overline M$. In the following we require $M$ to have dimension $3$ and $\\partial \\overline M$ to be a union of tori, so eac",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0305275v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The straightening",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-the-straightening.md",
+      "narrative": null,
+      "content": "[]{#s due label=\"s due\"}\n\nA straightening of a pseudo-developing map $D$ is a map that agrees with $D$ on the ideal points and that maps each tetrahedron to a straight one. The straightening is useful to calculate the hyperbolic volume associated to a pseudo-developing map (see Section [\\[s 3\\]](#s 3){reference-type=\"ref\" reference=\"s 3\"}). A particular case is when the manifold $M$ is complete hyperbolic, because in this case the straightening descends to a map from $M$ to itself. Here we prove that such a map is onto.\n\nLet $\\Delta\\subset\\ensuremath{\\mathbb H}^3$ be an oriented geodesic ideal",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0305275v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Volume of representations",
+      "pageStart": 9,
+      "pageEnd": 15,
+      "target": "../sections/sec-003-volume-of-representations.md",
+      "narrative": null,
+      "content": "[]{#s 3 label=\"s 3\"}\n\nFor this section we fix an ideally triangulated manifold $M$ and a representation $\\rho:\\pi_1(M)\\to{\\rm Isom}^+(\\ensuremath{\\mathbb H}^3)$.\n\nIn this section we recall the notion of volume of an equivariant map from $\\widetilde{M}$ to $\\ensuremath{\\mathbb H}^3$. We prove that if we restrict to the class of pseudo-developing maps, then the volume of $\\rho$ is well-defined. Namely the volume does not depend neither on the pseudo-developing map nor on the product structure of the cusps. Such a volume can be calculated using a straightening of any pseudo-developing map and it",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0305275v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparison with simplicial volume",
+      "pageStart": 15,
+      "pageEnd": 21,
+      "target": "../sections/sec-004-comparison-with-simplicial-volume.md",
+      "narrative": null,
+      "content": "[]{#s qua label=\"s qua\"}\n\nHere we generalize the argument used to prove Theorem [\\[t vsd\\]](#t vsd){reference-type=\"ref\" reference=\"t vsd\"} to compare ${\\rm vol}(\\rho)$ with the simplicial volume of $M$, obtaining exactly the expected inequality.\n\nLet $||(\\overline M,\\partial \\overline M)||$ be the simplicial volume of $\\overline M$ relative to the boundary (see [@BP], [@G], [@Ku], [@Th1] for more details), and let $v_3$ be the volume of a regular straight ideal tetrahedron of $\\ensuremath{\\mathbb H}^3$.\n\n::: teo\n[]{#t sv label=\"t sv\"} For any representation $\\rho:\\pi_1(M)\\to$ Isom$^+(\\ensurem",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0305275v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rigidity of representations",
+      "pageStart": 21,
+      "pageEnd": 34,
+      "target": "../sections/sec-005-rigidity-of-representations.md",
+      "narrative": null,
+      "content": "[]{#s r label=\"s r\"} This section is completely devoted to proving the following:\n\n::: teo\n[]{#t ug label=\"t ug\"} Let M be a non-compact, complete, orientable hyperbolic $3$-manifold of finite volume. Let $\\Gamma\\cong\\pi_1(M)$ be the sub-group of ${\\rm PSL}(2,\\ensuremath{\\mathbb C})$ such that $M=\\ensuremath{\\mathbb H}^3/\\Gamma$. Let $\\rho:\\Gamma\\to$ PSL$(2,\\ensuremath{\\mathbb C})$ be a representation. If $|{\\rm vol}(\\rho)|={\\rm vol}(M)$ then $\\rho$ is discrete and faithful. More precisely there exists $\\ensuremath{\\varphi}\\in{\\rm PSL}(2,\\ensuremath{\\mathbb C})$ such that for any $\\gamma\\in\\Ga",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0305275v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Corollaries",
+      "pageStart": 34,
+      "pageEnd": 38,
+      "target": "../sections/sec-006-corollaries.md",
+      "narrative": null,
+      "content": "\\label{s cor}\n\nIn this section we prove some corollaries that can be useful \nfor studying hyperbolic $3$-manifolds.\n\n\n\nFirst we show how\nfrom Theorem~\\ref{t ug} one gets a proof of Mostow's rigidity\nfor non-compact manifolds (see~\\cite{P} and~\\cite{BCS} for a more\ngeneral statement and a different proof).\n\n\\begin{teo}[Mostow's rigidity for non-compact manifold]\\label{t mstw}\nLet $f:M\\to N$ be a proper map between two orientable non-compact,\ncomplete hyperbolic $3$-manifolds of finite volume. Suppose that\n\\vol(M)={\\rm deg}(f)\\vol(N).\nThen $f$ is properly homotopic to a locally isometric coverin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

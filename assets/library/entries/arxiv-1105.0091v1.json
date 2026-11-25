@@ -1,0 +1,158 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1105.0091v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1105.0091v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "E-mail: meliot@phare.normalesup.org\nAbstract In this paper, we review the representation theory of the inﬁnite\nsymmetric group, and we extend the works of Kerov and Vershik by proving\nthat the irreducible characters of S∞always satisfy a central limit theorem.\nHence, for any point of the Thoma simplex, the corresponding measures on\nthe levels Yn of the Young graph have a property of gaussian concentration.\nBy using the Robinson-Schensted-Knuth algorithm and the theory of Pitman\noperators, we relate these results to the properties of certain random per-\nmutations obtained by riﬄe shuﬄes, and to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1105.0091v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Representation theory of the infinite symmetric group",
+      "pageStart": 4,
+      "pageEnd": 12,
+      "target": "../sections/sec-000-1-representation-theory-of-the-infinite-symmetri.md",
+      "narrative": null,
+      "content": "In this first paragraph, we recall the representation theory of the infinite symmetric group, and a basic tool that we will use throughout the paper, namely, the Hopf algebra of symmetric functions (later, we shall also need the algebras of quasi-symmetric and free quasi-symmetric functions).\n\n## Representation theory of the symmetric groups $\\mathfrak{S}_{n}$\n\nTo begin with, let us recall the representation theory of the finite symmetric groups $\\mathfrak{S}_{n}=\\mathfrak{S}(\\left[\\!\\left[1,n\\right]\\!\\right])$. If $\\sigma \\in \\mathfrak{S}_{n}$ is a permutation, it can be written uniquely as a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1105.0091v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quasi-symmetric functions and a link with random permutations",
+      "pageStart": 12,
+      "pageEnd": 22,
+      "target": "../sections/sec-001-2-quasi-symmetric-functions-and-a-link-with-rand.md",
+      "narrative": null,
+      "content": "[]{#randompermutation label=\"randompermutation\"} In this section, we shall explain how the coherent systems of measures on $\\mathfrak{Y}$ are related to models of random permutations that can be defined by using generalized riffle shuffles in the sense of [@Stan01; @Ful02].\n\n## The Hopf algebras $\\mathbf{QSym}$ and $\\mathbf{FQSym}$ {#fqsym}\n\nTo begin with, we have to present two new combinatorial Hopf algebras, namely, $\\mathbf{QSym}$ and $\\mathbf{FQSym}$. In the following, $X=\\{x_{1},x_{2},\\ldots\\}$ is an infinite ordered alphabet, but this time with non-commuting letters. The algebra $\\mathb",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1105.0091v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Observables of Young diagrams and their cumulants",
+      "pageStart": 22,
+      "pageEnd": 31,
+      "target": "../sections/sec-002-3-observables-of-young-diagrams-and-their-cumula.md",
+      "narrative": null,
+      "content": "[]{#obs label=\"obs\"} For the asymptotic analysis of Young diagrams, we are basically going to use a method of moments, but we have to define precisely what we mean by the moments of a partition. We shall essentially follow [@IO02], and [@Sni06b; @FM10] for the combinatorics of cumulants.\n\n## Polynomial functions on Young diagrams {#polfunc}\n\nIf $\\lambda$ is a partition, we associate to it two finite alphabets $A(\\lambda)$ and $B(\\lambda)$ called the **Frobenius coordinates**: $$\\begin{aligned}\nA(\\lambda)&=\\left\\{\\lambda_{1}-\\frac{1}{2},\\lambda_{2}-\\frac{3}{2},\\ldots,\\lambda_{d}-\\frac{2d-1}{2}\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1105.0091v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Kerov-Vershik law of large numbers",
+      "pageStart": 31,
+      "pageEnd": 36,
+      "target": "../sections/sec-003-4-kerov-vershik-law-of-large-numbers.md",
+      "narrative": null,
+      "content": "[]{#largenumbers label=\"largenumbers\"} In this section, we recall the results of Kerov and Vershik; although nothing is new here, we shall introduce the important concept of a (random) probability measure associated to a (random) diagram, that will later prove useful for the analysis of the fluctuations of the rows and columns, see §[\\[gaussrow\\]](#gaussrow){reference-type=\"ref\" reference=\"gaussrow\"}.\n\n## Law of large numbers for the irreducible characters\n\nGiven an irreducible character $\\chi^{\\omega}$, we replace it on $\\mathfrak{S}_{n}$ by the random function $\\chi^{\\lambda}$, where $\\lambd",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1105.0091v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Central limit theorems for characters and for partitions",
+      "pageStart": 36,
+      "pageEnd": 42,
+      "target": "../sections/sec-004-5-central-limit-theorems-for-characters-and-for.md",
+      "narrative": null,
+      "content": "[]{#clt label=\"clt\"} In the previous paragraph, it was shown that all the coherent systems of measures $(\\mathbb{P}_{n,\\omega})_{n \\in \\mathbb{N}}$ have a property of concentration, that can be seen at the level of characters or directly for the geometry of the random partitions. In this section, we shall prove that the concentration is always gaussian, which is quite a striking fact. However, the geometric version of our central limit theorem will be a little less precise than the algebraic one: indeed, one cannot study with our method of moments the fluctuations of rows or columns correspond",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1105.0091v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pitman operators and a link with conditioned random walks and brownian matrices",
+      "pageStart": 42,
+      "pageEnd": 57,
+      "target": "../sections/sec-005-6-pitman-operators-and-a-link-with-conditioned-r.md",
+      "narrative": null,
+      "content": "[]{#oconnell label=\"oconnell\"} In the previous paragraphs, we have shown that the rows and columns of a partition $\\lambda$ of law $\\mathbb{P}_{n,\\omega}$ have limit frequencies $\\alpha_{i}$ and $\\beta_{j}$, and gaussian fluctuations when gathered for equal coordinates of the point $\\omega$ of the Thoma simplex. To treat the case of equal parameters, we shall use O'Connell's theory ([@OC03]) that relates the Robinson-Schensted algorithm to an operation on multidimensional paths, and therefore random tableaux coming from $\\omega$-shuffles to random walks conditioned to stay in a Weyl chamber. T",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1105.0091v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Jones-Ocneanu traces of Hecke algebras and (q,t)-Plancherel measures",
+      "pageStart": 57,
+      "pageEnd": 70,
+      "target": "../sections/sec-006-7-jones-ocneanu-traces-of-hecke-algebras-and-qt.md",
+      "narrative": null,
+      "content": "[]{#qtplancherel label=\"qtplancherel\"} In this last section, we return to the \"algebraic\" study of the probability measures $\\mathbb{P}_{n,\\omega}$, and we introduce new observables in $\\mathscr{O}$ related to the representation theory of the Hecke algebras $\\mathscr{H}(\\mathfrak{S}_{n})$, that are deformations of the symmetric group algebras $\\mathbb{C}\\mathfrak{S}_{n}$. We then determine their asymptotic behaviour under the probability measures $\\mathbb{P}_{n,\\omega}$, thereby proving a $q$-analog of Theorem [\\[mainalg\\]](#mainalg){reference-type=\"ref\" reference=\"mainalg\"}. Finally, we study",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

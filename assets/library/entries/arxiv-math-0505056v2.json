@@ -1,0 +1,63 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0505056v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0505056v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Matrix factorizations with a parameter",
+      "pageStart": 1,
+      "pageEnd": 12,
+      "target": "../sections/sec-000-matrix-factorizations-with-a-parameter.md",
+      "narrative": null,
+      "content": "[]{#section-one label=\"section-one\"}\n\nIn the paper \\[KR\\] we constructed, for each $n>0,$ a bigraded cohomology theory of links in $\\R^3$ whose Euler characteristic is a certain one-variable specialization $(q^n,q)$ of the HOMFLYPT polynomial \\[HOMFLY\\], \\[PT\\]. The $n=0$ specialization is the Alexander polynomial, equal to the Euler characteristic of the knot homology theory discovered by Ozsváth, Rasmussen and Szabó \\[OS\\], \\[R1\\]. The approach in \\[KR\\] fails for $n=0,$ assigning trivial groups to any link.\n\nIn this sequel to \\[KR\\] we assume that the reader is familiar with that paper. Rec",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0505056v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0505056v2  [math.QA]  31 Jan 2006\nMatrix factorizations and link homology II\nMikhail Khovanov and Lev Rozansky\nMay 4, 2005\nAbstract\nTo a presentation of an oriented link as the closure of a braid we\nassign a complex of bigraded vector spaces. The Euler characteristic\nof this complex (and of its triply-graded cohomology groups) is the\nHOMFLYPT polynomial of the link. We show that the dimension of\neach cohomology group is a link invariant.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0505056v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proofs",
+      "pageStart": 12,
+      "pageEnd": 37,
+      "target": "../sections/sec-001-proofs.md",
+      "narrative": null,
+      "content": "[]{#sec-proofs label=\"sec-proofs\"}\n\n**1. Product factorizations, graph homology and Koszul complexes.**\n\nGiven a polynomial ring $R$ and a pair of elements $a_1,b_1\\in R,$ we denote by $(a_1,b_1)$ the factorization $$R \\stackrel{a_1}{\\lra} R \\stackrel{b_1}{\\lra} R.$$ Given a finite set of such pairs $(a_i,b_i), 1\\le i\\le n,$ we denote by $(\\mathbf{a}, \\mathbf{b})$ their tensor product (over $R$): $$({\\mathbf a}, {\\mathbf b}) \\define \\otimes_{i} (a_i,b_i), \\hspace{0.3in} \n {\\mathbf a}=(a_1, \\dots, a_n), \\hspace{0.1in} {\\mathbf b}=(b_1, \\dots, b_n).$$ We will also write $(\\mathbf{a}, \\mathbf{b})",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

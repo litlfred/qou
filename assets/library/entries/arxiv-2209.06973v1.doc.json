@@ -1,0 +1,1210 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2209.06973v1",
+  "title": "arxiv-2209.06973v1",
+  "variant": "pdf",
+  "pages": 66,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "State models",
+      "number": "2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-state-models"
+    },
+    {
+      "level": 1,
+      "title": "Graphs and colorings for state-sums of the colored Jones polynomial",
+      "number": "3",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-graphs-and-colorings-for-state-sums-of-the-col"
+    },
+    {
+      "level": 1,
+      "title": "The flow lemma",
+      "number": "4",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-the-flow-lemma"
+    },
+    {
+      "level": 1,
+      "title": "The R-matrix state model",
+      "number": "5",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-the-r-matrix-state-model"
+    },
+    {
+      "level": 1,
+      "title": "Proving the Garoufalidis-Loebl state-sum",
+      "number": "6",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-6-proving-the-garoufalidis-loebl-state-sum"
+    },
+    {
+      "level": 1,
+      "title": "Evaluation of the Garoufalidis-Loebl state-sum",
+      "number": "7",
+      "page": 38,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-7-evaluation-of-the-garoufalidis-loebl-state-sum"
+    },
+    {
+      "level": 1,
+      "title": "Working with cyclic ordering",
+      "number": "8",
+      "page": 47,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-8-working-with-cyclic-ordering"
+    },
+    {
+      "level": 1,
+      "title": "Weaving links",
+      "number": "9",
+      "page": 51,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-9-weaving-links"
+    },
+    {
+      "level": 1,
+      "title": "Vertex ordering by braids",
+      "number": "10",
+      "page": 58,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-10-vertex-ordering-by-braids"
+    },
+    {
+      "level": 1,
+      "title": "Questions and projects",
+      "number": "11",
+      "page": 64,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-11-questions-and-projects"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 187,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arc-graph",
+          "heading": false
+        },
+        {
+          "term": "mishra",
+          "heading": false
+        },
+        {
+          "term": "loebl",
+          "heading": false
+        },
+        {
+          "term": "state-sum",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "state models",
+          "heading": false
+        }
+      ],
+      "extract": "On the geometry of two state models for the colored Jones polynomial September 16, 2022 Uwe Kaiser, Boise State University, ukaiser@boisestate.edu Rama Mishra, IISER Pune,r.mishra@iiserpune.ac Abstract Using the ﬂow property of the R-matrix deﬁning the colored Jones polynomial, we establish a natural bijection between the set of states on the part arc-graph of a link projection and the set of states on a",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2209.06973v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 562,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "state-sum formula",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "state models",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "loebl",
+          "heading": false
+        },
+        {
+          "term": "walks",
+          "heading": false
+        },
+        {
+          "term": "arc-graph",
+          "heading": false
+        },
+        {
+          "term": "ribbon functor",
+          "heading": false
+        }
+      ],
+      "extract": "This article is the result of a long-going effort to understand a state-sum formula of Garoufalidis and Loebl for the colored Jones polynomial of a knot. This formula was proven in [@GL] from the state-sum formula for the classical Jones polynomial and a cabling formula, which had been observed in [@Li]. From the proof given in [@GL] it is not obvious to us that the resulting state model is the *same* as the one",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-state-models",
+      "number": "2",
+      "title": "State models",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 793,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "state models",
+          "heading": true
+        },
+        {
+          "term": "rightarrow textrm",
+          "heading": false
+        },
+        {
+          "term": "sum textrm",
+          "heading": false
+        },
+        {
+          "term": "supset mathcal",
+          "heading": false
+        },
+        {
+          "term": "edge coloring",
+          "heading": false
+        },
+        {
+          "term": "edge-colorings",
+          "heading": false
+        },
+        {
+          "term": "let mathfrak",
+          "heading": false
+        },
+        {
+          "term": "flows",
+          "heading": false
+        }
+      ],
+      "extract": "We will consider *vertex models* as defined in [@J], see also [@T]. ::: defn Let $\\mathfrak{G}$ be a set of (possibly in some way decorated) finite graphs and let $\\mathcal{R}$ be an integral domain (usually $\\mathcal{R}=\\mathbb{Z}[t^{\\pm \\frac{1}{D}}]$ for some natural number $D$). A *state model* on $\\mathfrak{G}$ assigns to each graph $G=(V,E)\\in \\mathfrak{G}$ ($V$ is the vertex set, $E$ is the edge set) a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-graphs-and-colorings-for-state-sums-of-the-col",
+      "number": "3",
+      "title": "Graphs and colorings for state-sums of the colored Jones polynomial",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3034,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "overcrossing arc",
+          "heading": false
+        },
+        {
+          "term": "incoming chord",
+          "heading": false
+        },
+        {
+          "term": "outgoing chord",
+          "heading": false
+        },
+        {
+          "term": "chord graph",
+          "heading": false
+        },
+        {
+          "term": "overcrossing circle",
+          "heading": false
+        },
+        {
+          "term": "incoming red",
+          "heading": false
+        },
+        {
+          "term": "incoming blue",
+          "heading": false
+        },
+        {
+          "term": "arc-graph mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "We will first consider *part arc-graphs* and *arc-graphs* following [@GL], which are defined from Morse projections $\\mathcal{K}$. We will also introduce a third type of graph representation (and the corresponding colorings), which we call chord graphs, closely related to the chord diagrams in Vassiliev theory. In the following sections we will restrict to closed braid diagrams. A *Morse projection* $\\mathcal{K}$ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-the-flow-lemma",
+      "number": "4",
+      "title": "The flow lemma",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 918,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "flow lemma",
+          "heading": true
+        },
+        {
+          "term": "overcrossing arc",
+          "heading": false
+        },
+        {
+          "term": "overcrossing arcs",
+          "heading": false
+        },
+        {
+          "term": "ell leq",
+          "heading": false
+        },
+        {
+          "term": "flow condition",
+          "heading": false
+        },
+        {
+          "term": "ell geq",
+          "heading": false
+        },
+        {
+          "term": "arc graph",
+          "heading": false
+        },
+        {
+          "term": "fat vertices",
+          "heading": false
+        }
+      ],
+      "extract": "::: lem []{#lem: flow lemma label=\"lem: flow lemma\"} Let $\\mathcal{K}$ be the Morse projection of a link. Then there is a natural bijection $\\phi_{\\pm }$ from the set of $\\mathbb{Z}$-flows on $G_{\\pm}\\mathcal{K}$ to the set of $\\mathbb{Z}$-flows of $P\\mathcal{K}$. For $(+)$ it assigns the color of a blue edge of $G\\mathcal{K}$ to the color of the part arc of $P\\mathcal{K}$ following the transition, and assigns the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-the-r-matrix-state-model",
+      "number": "5",
+      "title": "The R-matrix state model",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1925,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "framed unknot",
+          "heading": false
+        },
+        {
+          "term": "framed link",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "arc colors",
+          "heading": false
+        },
+        {
+          "term": "overcrossing circles",
+          "heading": false
+        },
+        {
+          "term": "sum leq",
+          "heading": false
+        },
+        {
+          "term": "v-v",
+          "heading": false
+        },
+        {
+          "term": "vertex contribution",
+          "heading": false
+        }
+      ],
+      "extract": "We review and reformulate the state model for the framed colored Jones polynomial $J_n$ as defined in [@G]. Recall that $n$ labels the $(n+1)$-dimensional standard irreducible representation of $\\textrm{sl}(2,\\mathbb{C})$, or the corresponding type **1** $U_q(\\textrm{sl}(2,\\mathbb{C})$-module, see [@J], 5.2. Our normalization will coincide with [@GL] so that $n=1$ corresponds to the trivial $2$-dimensional",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-proving-the-garoufalidis-loebl-state-sum",
+      "number": "6",
+      "title": "Proving the Garoufalidis-Loebl state-sum",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 38,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4700,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "state-sum",
+          "heading": true
+        },
+        {
+          "term": "overcrossing arc",
+          "heading": false
+        },
+        {
+          "term": "overcrossing arcs",
+          "heading": false
+        },
+        {
+          "term": "chord graph",
+          "heading": false
+        },
+        {
+          "term": "state-sum contribution",
+          "heading": false
+        },
+        {
+          "term": "frac varepsilon",
+          "heading": false
+        },
+        {
+          "term": "varepsilon cdot",
+          "heading": false
+        },
+        {
+          "term": "signed chord",
+          "heading": false
+        }
+      ],
+      "extract": "We will now rewrite the usual state-sum contributions as described in [@G] into the Garoufalidis Loebl state-sum contributions using the above identities and the flow Lemma. There two important steps: The first will be to transform the formulas in the last section into formulas for the $(+)$-model (increasing colors on overcrossing arcs at overcrossings). The second is to rewrite the two functions $f_{\\pm }$ into a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-7-evaluation-of-the-garoufalidis-loebl-state-sum",
+      "number": "7",
+      "title": "Evaluation of the Garoufalidis-Loebl state-sum",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 47,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2883,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "overcrossing arc",
+          "heading": false
+        },
+        {
+          "term": "overcrossing arcs",
+          "heading": false
+        },
+        {
+          "term": "textrm rot",
+          "heading": false
+        },
+        {
+          "term": "mathfrak tau",
+          "heading": false
+        },
+        {
+          "term": "ell tau",
+          "heading": false
+        },
+        {
+          "term": "arc sigma",
+          "heading": false
+        },
+        {
+          "term": "overcrossing circles",
+          "heading": false
+        },
+        {
+          "term": "arc color",
+          "heading": false
+        }
+      ],
+      "extract": "Note that the arc-graphs are *abstract* enhanced graphs representing the data necessary to calculate the state-sum [\\[eq=main formula\\]](#eq=main formula){reference-type=\"eqref\" reference=\"eq=main formula\"}. For explicit computations it will be helpful to present the data in non-geometritc way so that it can easily be implemented as an algorithm. Suppose that $G\\mathcal{K}$ is defined from a Morse projection",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-8-working-with-cyclic-ordering",
+      "number": "8",
+      "title": "Working with cyclic ordering",
+      "level": 1,
+      "pageStart": 47,
+      "pageEnd": 51,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1295,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ldots mathfrak",
+          "heading": false
+        },
+        {
+          "term": "underline mathfrak",
+          "heading": false
+        },
+        {
+          "term": "beta mathfrak",
+          "heading": false
+        },
+        {
+          "term": "overcrossing arcs",
+          "heading": false
+        },
+        {
+          "term": "leq mathbf",
+          "heading": false
+        },
+        {
+          "term": "red colors",
+          "heading": false
+        },
+        {
+          "term": "overcrossing arc",
+          "heading": false
+        },
+        {
+          "term": "contributing states",
+          "heading": false
+        }
+      ],
+      "extract": "In the following we assume that our projection $\\mathcal{K}$ is based and we consider the cyclic ordering with respect to the basing. This defines a bijection $V\\leftrightarrow \\underline{\\mathfrak{c}-1}$ with $\\mathfrak{c}$ denoting the number of crossings. The base vertex on the first component is labelled $0$ by the order because it is deleted in reduced graphs. We will usually identify vertices with their order",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-9-weaving-links",
+      "number": "9",
+      "title": "Weaving links",
+      "level": 1,
+      "pageStart": 51,
+      "pageEnd": 58,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1315,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "weaving links",
+          "heading": true
+        },
+        {
+          "term": "ell textrm",
+          "heading": false
+        },
+        {
+          "term": "underline ell",
+          "heading": false
+        },
+        {
+          "term": "ell braid",
+          "heading": false
+        },
+        {
+          "term": "cdots ell",
+          "heading": false
+        },
+        {
+          "term": "mod ell",
+          "heading": false
+        },
+        {
+          "term": "contributing states",
+          "heading": false
+        },
+        {
+          "term": "ell geq",
+          "heading": false
+        }
+      ],
+      "extract": "Recall our notation for $a$ a positive integer, $\\underline{a}:=\\{0,1,\\ldots ,a-1\\}$. In this section we consider only braids with zero writhe and three strands. In this case the framed and unframed colored Jones polynomial coincide. The colored Jones polynomial will take values in $\\mathbb{Z}[t^{\\pm 1/2}]$, in fact in $\\mathbb{Z}[t^{\\pm 1}]$ in the case of knots or $n$ even. For $\\mathfrak{s}=3$ we have: $$\\delta",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-10-vertex-ordering-by-braids",
+      "number": "10",
+      "title": "Vertex ordering by braids",
+      "level": 1,
+      "pageStart": 58,
+      "pageEnd": 64,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1989,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "overcrossing arc",
+          "heading": false
+        },
+        {
+          "term": "vertex ordering",
+          "heading": true
+        },
+        {
+          "term": "beta sigma",
+          "heading": false
+        },
+        {
+          "term": "alpha sigma",
+          "heading": false
+        },
+        {
+          "term": "eta sigma",
+          "heading": false
+        },
+        {
+          "term": "rho sigma",
+          "heading": false
+        },
+        {
+          "term": "interchanging sigma",
+          "heading": false
+        },
+        {
+          "term": "cdots sigma",
+          "heading": false
+        }
+      ],
+      "extract": "In the previous section we used symmetry and did appeal to the geometry of the projections in order to find the formulas for the jump map (and thereby colored Jones polynomial). ::: defn A *braid word* for an $m$-braid is a *reduced word*: $$\\beta =\\sigma_{\\eta_1}^{\\epsilon_1}\\sigma_{\\eta_2}^{\\epsilon_2}\\cdots \\sigma_{\\eta_{\\mathfrak{b} }}^{\\epsilon_{\\mathfrak{b}}}$$ representing an element in the free group",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-11-questions-and-projects",
+      "number": "11",
+      "title": "Questions and projects",
+      "level": 1,
+      "pageStart": 64,
+      "pageEnd": 66,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 802,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "state models",
+          "heading": false
+        },
+        {
+          "term": "jones function",
+          "heading": false
+        },
+        {
+          "term": "noncommutative state",
+          "heading": false
+        },
+        {
+          "term": "knot invariants",
+          "heading": false
+        },
+        {
+          "term": "loebl",
+          "heading": false
+        },
+        {
+          "term": "arc graph",
+          "heading": false
+        }
+      ],
+      "extract": "Questions and projects (1) The colored Jones polynomials of alternating links has been studied in [5] using so called centered states. It should be interesting to translate this work into the state model considered here. (2) Use the ﬂow lemma to derive state-sum formulas for sl(n, C)-invariants, and for colored Jones polynomials of links with components colored by dis- tinct representations. (3) Translate the state",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "overcrossing arc",
+      "heading": false
+    },
+    {
+      "term": "overcrossing arcs",
+      "heading": false
+    },
+    {
+      "term": "arc-graph mathcal",
+      "heading": false
+    },
+    {
+      "term": "ell textrm",
+      "heading": false
+    },
+    {
+      "term": "arc colorings",
+      "heading": false
+    },
+    {
+      "term": "corresponding overcrossing",
+      "heading": false
+    },
+    {
+      "term": "arc colors",
+      "heading": false
+    },
+    {
+      "term": "overcrossing circles",
+      "heading": false
+    },
+    {
+      "term": "arc sigma",
+      "heading": false
+    },
+    {
+      "term": "arc graph",
+      "heading": false
+    },
+    {
+      "term": "ell mathfrak",
+      "heading": false
+    },
+    {
+      "term": "ell braid",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 53,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 54,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 55,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 56,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 57,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 58,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 59,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 60,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 61,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 62,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 63,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 64,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 65,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 66,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p64); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2209.06973v1"
+  }
+}

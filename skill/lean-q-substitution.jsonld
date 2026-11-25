@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/lean-q-substitution.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/lean-q-substitution",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "lean-q-substitution",
+      "title": "QOU `q + q⁻¹` Substitution Skill",
+      "description": "Discharge QOU substrate-window polynomial inequalities in `q` and `q⁻¹` using the universal `s := q + q⁻¹` substitution and the AM-GM rewrite `q + q⁻¹ - 2 = (q - 1)² / q`.  Standard tactic ladder for `qIntReal`, `qFactReal`, and Hecke-eigenvalue bounds on the substrate interval `q ∈ (1, 3/2)`.",
+      "instructionsPath": "skills/local/lean-q-substitution.md",
+      "instructionLines": 145,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

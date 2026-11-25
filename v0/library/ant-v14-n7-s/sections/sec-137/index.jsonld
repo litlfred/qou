@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/ant-v14-n7-s/sections/sec-137",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Method of proof: an overview",
+  "pageStart": 252,
+  "pageEnd": 255,
+  "contains": [
+    "library/ant-v14-n7-s/blocks/prose-sec-137"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/ant-v14-n7-s/manifest.jsonld",
+  "provenance": "ingested"
+}

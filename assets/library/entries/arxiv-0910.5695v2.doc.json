@@ -1,0 +1,1783 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0910.5695v2",
+  "title": "arxiv-0910.5695v2",
+  "variant": "pdf",
+  "pages": 43,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Terminology and notation conventions",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-terminology-and-notation-conventions"
+    },
+    {
+      "level": 1,
+      "title": "The tensor category Rep(St)",
+      "number": "2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-the-tensor-category-repst"
+    },
+    {
+      "level": 2,
+      "title": "Motivation",
+      "number": "2.1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-21-motivation"
+    },
+    {
+      "level": 2,
+      "title": "Definition of Rep(St; F)",
+      "number": "2.2",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-22-definition-of-repst-f"
+    },
+    {
+      "level": 2,
+      "title": "2.3.",
+      "number": null,
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-23"
+    },
+    {
+      "level": 1,
+      "title": "Indecomposable objects in Rep(St)",
+      "number": "3",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-3-indecomposable-objects-in-repst"
+    },
+    {
+      "level": 2,
+      "title": "Classification of indecomposable objects of Rep(St)",
+      "number": "3.1",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-31-classification-of-indecomposable-objects-of-r"
+    },
+    {
+      "level": 2,
+      "title": "Lifting objects",
+      "number": "3.2",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-32-lifting-objects"
+    },
+    {
+      "level": 2,
+      "title": "On Rep(St; F) for generic t",
+      "number": "3.3",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-33-on-repst-f-for-generic-t"
+    },
+    {
+      "level": 2,
+      "title": "The interpolation functor Rep(Sd; F)Rep(Sd; F)",
+      "number": "3.4",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-34-the-interpolation-functor-repsd-frepsd-f"
+    },
+    {
+      "level": 2,
+      "title": "Dimensions",
+      "number": "3.5",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-35-dimensions"
+    },
+    {
+      "level": 1,
+      "title": "Endomorphisms of the identity functor",
+      "number": "4",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-4-endomorphisms-of-the-identity-functor"
+    },
+    {
+      "level": 2,
+      "title": "Interpolating sums of r-cycles",
+      "number": "4.1",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-41-interpolating-sums-of-r-cycles"
+    },
+    {
+      "level": 2,
+      "title": "Frobenius' formula",
+      "number": "4.2",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-42-frobenius-formula"
+    },
+    {
+      "level": 1,
+      "title": "Blocks",
+      "number": "5",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-5-blocks"
+    },
+    {
+      "level": 2,
+      "title": "Blocks in additive categories",
+      "number": "5.1",
+      "page": 27,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-51-blocks-in-additive-categories"
+    },
+    {
+      "level": 2,
+      "title": "5.2.",
+      "number": null,
+      "page": 28,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-52"
+    },
+    {
+      "level": 2,
+      "title": "On the equivalence relation t",
+      "number": "5.3",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-53-on-the-equivalence-relation-t"
+    },
+    {
+      "level": 2,
+      "title": "The functor -L()",
+      "number": "5.4",
+      "page": 31,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Proof of result on blocks",
+      "number": "5.5",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-55-proof-of-result-on-blocks"
+    },
+    {
+      "level": 1,
+      "title": "Description of a non-semisimple block",
+      "number": "6",
+      "page": 37,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-6-description-of-a-non-semisimple-block"
+    },
+    {
+      "level": 2,
+      "title": "The nontrivial block in Rep(S0; F)",
+      "number": "6.1",
+      "page": 37,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-61-the-nontrivial-block-in-reps0-f"
+    },
+    {
+      "level": 2,
+      "title": "Comparison of non-semisimple blocks in Rep(Sd; F).",
+      "number": "6.2",
+      "page": 39,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-62-comparison-of-non-semisimple-blocks-in-repsd"
+    },
+    {
+      "level": 2,
+      "title": "Description of blocks via Martin",
+      "number": "6.3",
+      "page": 40,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-63-description-of-blocks-via-martin"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. On lifting idempotents",
+      "number": null,
+      "page": 41,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-appendix-a-on-lifting-idempotents"
+    },
+    {
+      "level": 1,
+      "title": "references",
+      "number": null,
+      "page": 41,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-references"
+    },
+    {
+      "level": 2,
+      "title": "References",
+      "number": null,
+      "page": 42,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 19,
+      "summary": null,
+      "keywords": [],
+      "extract": "ON BLOCKS OF DELIGNE’S CATEGORY Rep(St). JONATHAN COMES AND VICTOR OSTRIK Abstract. We describe blocks in Deligne’s category Rep(St).",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-0910.5695v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 631,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "underline operatorname",
+          "heading": false
+        },
+        {
+          "term": "category underline",
+          "heading": false
+        },
+        {
+          "term": "operatorname rep",
+          "heading": false
+        },
+        {
+          "term": "del théorème",
+          "heading": false
+        },
+        {
+          "term": "non-semisimple blocks",
+          "heading": false
+        },
+        {
+          "term": "tensor category",
+          "heading": false
+        },
+        {
+          "term": "additive categories",
+          "heading": false
+        },
+        {
+          "term": "identity functor",
+          "heading": false
+        }
+      ],
+      "extract": "Let $F$ be a field of characteristic zero and $t\\in F$. Recently P. Deligne introduced the tensor category $\\underline{\\operatorname{Re}}\\!\\operatorname{p}(S_t)$ which in a certain precise sense interpolates the categories $\\operatorname{Rep}(S_d)$ of $F-$linear representations of the symmetric groups $S_d$, see [@Del07]. In general, the category $\\underline{\\operatorname{Re}}\\!\\operatorname{p}(S_t)$ is additive but",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-terminology-and-notation-conventions",
+      "number": "1.1",
+      "title": "Terminology and notation conventions",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 269,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lambda leq",
+          "heading": false
+        },
+        {
+          "term": "diagrams lambda",
+          "heading": false
+        },
+        {
+          "term": "write lambda",
+          "heading": false
+        },
+        {
+          "term": "lambda denote",
+          "heading": false
+        },
+        {
+          "term": "sum lambda",
+          "heading": false
+        },
+        {
+          "term": "let lambda",
+          "heading": false
+        },
+        {
+          "term": "young diagram",
+          "heading": false
+        },
+        {
+          "term": "tensor category",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#notation label=\"notation\"} Let $F$ be a field. A *tensor category* is an $F$-linear[^1] category $\\mathcal{T}$ along with an $F$-linear bifunctor $\\otimes:\\mathcal{T}\\times\\mathcal{T}\\to\\mathcal{T}$ and associativity, commutativity, and unit constraints satisfying the triangle, pentagon, and hexagon axioms (see [@MR1797619]). Moreover, we require our tensor categories to be rigid with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-the-tensor-category-repst",
+      "number": "2",
+      "title": "The tensor category Rep(St)",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-21-motivation",
+      "number": "2.1",
+      "title": "Motivation",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1943,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boldmath mbox",
+          "heading": false
+        },
+        {
+          "term": "underline operatorname",
+          "heading": false
+        },
+        {
+          "term": "includegraphics diss",
+          "heading": false
+        },
+        {
+          "term": "boldmath qquad",
+          "heading": false
+        },
+        {
+          "term": "operatorname rep",
+          "heading": false
+        },
+        {
+          "term": "category operatorname",
+          "heading": false
+        },
+        {
+          "term": "operatorname hom",
+          "heading": false
+        },
+        {
+          "term": "hfill rotatebox",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#motivation label=\"motivation\"} Let $d$ be a nonnegative integer, and let $F$ be a field of characteristic zero. Let us consider the tensor category $\\operatorname{Rep}(S_d; F)$ of finite dimensional representations over $F$ of the symmetric group $S_d$. Note that we take $S_0$ to be the trivial group whose one element is the identity permutation of the empty set. Let $V_d$ denote the natural $d$-dimensional",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-22-definition-of-repst-f",
+      "number": "2.2",
+      "title": "Definition of Rep(St; F)",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1276,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rep",
+          "heading": true
+        },
+        {
+          "term": "category rep",
+          "heading": false
+        },
+        {
+          "term": "fpn",
+          "heading": false
+        },
+        {
+          "term": "let rep",
+          "heading": false
+        },
+        {
+          "term": "karoubian envelopes",
+          "heading": false
+        },
+        {
+          "term": "morphism idn",
+          "heading": false
+        },
+        {
+          "term": "deligne category",
+          "heading": false
+        },
+        {
+          "term": "tensor category",
+          "heading": false
+        }
+      ],
+      "extract": "Rep(St; F) for arbitrary t ∈F following [Del07, §8] (so our deﬁnition is diﬀerent from the one given in [Del07, §2]). To construct Rep(St; F) we will ﬁrst use par- titions to construct the smaller category Rep0(St; F). We then obtain Rep(St; F) from Rep0(St; F) using the process of Karoubiﬁcation. As in the previous section, assume d is a nonnegative integer and that F is a ﬁeld of characteristic zero. Let Rep0(Sd;",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-23",
+      "number": null,
+      "title": "2.3.",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 198,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "connected components",
+          "heading": false
+        },
+        {
+          "term": "ℓis",
+          "heading": false
+        },
+        {
+          "term": "rep",
+          "heading": false
+        },
+        {
+          "term": "endrep",
+          "heading": false
+        }
+      ],
+      "extract": "We close this section by examining the trace of a morphism in Rep0(St; F). First, notice that tr : EndRep0(St;F )([n]) →F is an F-linear map. Furthermore, if π : [n] →[n] is a partition diagram (not equal to id0) then, by the deﬁnition of trace (see [Del07, 3.3]), tr (π) = tℓwhere ℓis the number of connected components in the diagram Clearly ℓis also the number of connected components in the following trace diagram",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-3-indecomposable-objects-in-repst",
+      "number": "3",
+      "title": "Indecomposable objects in Rep(St)",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 5,
+      "summary": null,
+      "keywords": [],
+      "extract": "3. Indecomposable objects in Rep(St)",
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-31-classification-of-indecomposable-objects-of-r",
+      "number": "3.1",
+      "title": "Classification of indecomposable objects of Rep(St)",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1796,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "indecomposable objects",
+          "heading": true
+        },
+        {
+          "term": "proprep",
+          "heading": false
+        },
+        {
+          "term": "underline operatorname",
+          "heading": false
+        },
+        {
+          "term": "primitive idempotent",
+          "heading": false
+        },
+        {
+          "term": "zeta cong",
+          "heading": false
+        },
+        {
+          "term": "idempotent lambda",
+          "heading": false
+        },
+        {
+          "term": "includegraphics diss",
+          "heading": false
+        },
+        {
+          "term": "classify primitive",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#indecomposSt label=\"indecomposSt\"} In this section we will classify indecomposable objects in $\\underline{\\operatorname{Re}}\\!\\operatorname{p}(S_t; F)$ for arbitrary $t\\in F$. To do so, we first classify primitive idempotents in partition algebras. The following lemma will be useful in that endeavor. ::: lemma []{#ees label=\"ees\"} For $n>1$ let $\\zeta$ denote the following idempotent in $FP_n(t)$:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-32-lifting-objects",
+      "number": "3.2",
+      "title": "Lifting objects",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1377,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lifting objects",
+          "heading": true
+        },
+        {
+          "term": "fpn",
+          "heading": false
+        },
+        {
+          "term": "primitive idempotent",
+          "heading": false
+        },
+        {
+          "term": "ksn",
+          "heading": false
+        },
+        {
+          "term": "fsn",
+          "heading": false
+        },
+        {
+          "term": "victor ostrik",
+          "heading": false
+        },
+        {
+          "term": "idempotent corresponding",
+          "heading": false
+        },
+        {
+          "term": "jonathan comes",
+          "heading": false
+        }
+      ],
+      "extract": "is an indeterminate. In this section we use the process of lifting idempotents (see appendix A) to lift objects in Rep(St; F) to objects in Rep(ST ; K). We then prove some useful properties of these lifted objects. In the next section we will show that Rep(ST ; K) is semisimple (see Corollary 3.17), and hence uncomplicated from 16 JONATHAN COMES AND VICTOR OSTRIK our point of view. The process of lifting objects",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-33-on-repst-f-for-generic-t",
+      "number": "3.3",
+      "title": "On Rep(St; F) for generic t",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1075,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rep",
+          "heading": true
+        },
+        {
+          "term": "fpn",
+          "heading": false
+        },
+        {
+          "term": "semisimple algebra",
+          "heading": false
+        },
+        {
+          "term": "nonnegative integer",
+          "heading": false
+        },
+        {
+          "term": "homrep",
+          "heading": false
+        },
+        {
+          "term": "ordered basis",
+          "heading": false
+        },
+        {
+          "term": "algebraic integer",
+          "heading": false
+        },
+        {
+          "term": "nilpotent",
+          "heading": false
+        }
+      ],
+      "extract": "is semisimple for “generic” values of t. Deligne showed that Rep(St; F) is not semisimple if and only if t is a nonnegative integer (see [Del07]). That result will follow from our description of the blocks in Rep(St; F) (see Corollary 5.23). For now we conﬁne ourselves to prove a weaker result (see Theorem 3.15) which allows us to conclude that Rep(ST ; K) is semisimple (see Corollary 3.17). The following well-known",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-34-the-interpolation-functor-repsd-frepsd-f",
+      "number": "3.4",
+      "title": "The interpolation functor Rep(Sd; F)Rep(Sd; F)",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 689,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rep",
+          "heading": true
+        },
+        {
+          "term": "negligible morphisms",
+          "heading": false
+        },
+        {
+          "term": "category rep",
+          "heading": false
+        },
+        {
+          "term": "nonzero negligible",
+          "heading": false
+        },
+        {
+          "term": "functor",
+          "heading": true
+        },
+        {
+          "term": "tensor functor",
+          "heading": false
+        },
+        {
+          "term": "idc",
+          "heading": false
+        },
+        {
+          "term": "nonnegative integer",
+          "heading": false
+        }
+      ],
+      "extract": "tion we assume d is a nonnegative integer. In this section we will describe following [Del07, §6] how Rep(Sd; F) “interpolates” the category Rep(Sd; F). More precisely, 20 JONATHAN COMES AND VICTOR OSTRIK we will show Rep(Sd; F) is equivalent to the quotient of Rep(St; F) by the so-called “negligible morphisms.” To start, let us deﬁne the interpolation functor. Deﬁnition 3.18. F : Rep(Sd; F) →Rep(Sd; F) is the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-35-dimensions",
+      "number": "3.5",
+      "title": "Dimensions",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 574,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "grid marking",
+          "heading": false
+        },
+        {
+          "term": "includegraphics diss",
+          "heading": false
+        },
+        {
+          "term": "times grid",
+          "heading": false
+        },
+        {
+          "term": "underline operatorname",
+          "heading": false
+        },
+        {
+          "term": "lambda i-i",
+          "heading": false
+        },
+        {
+          "term": "dim underline",
+          "heading": false
+        },
+        {
+          "term": "rotatebox box",
+          "heading": false
+        },
+        {
+          "term": "operatorname rep",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#dim label=\"dim\"} In this section we study a hook length formula which gives the dimension of indecomposable objects in $\\underline{\\operatorname{Re}}\\!\\operatorname{p}(S_T; K)$. Let us start by defining the hook length formula. ::: definition []{#hookpoly label=\"hookpoly\"} The *hook length* of a fixed box in a Young diagram $\\lambda$ is the number of boxes in $\\lambda$ which are either directly below or directly",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-4-endomorphisms-of-the-identity-functor",
+      "number": "4",
+      "title": "Endomorphisms of the identity functor",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 471,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "grid marking",
+          "heading": false
+        },
+        {
+          "term": "ith row",
+          "heading": false
+        },
+        {
+          "term": "ith column",
+          "heading": false
+        },
+        {
+          "term": "column box",
+          "heading": false
+        },
+        {
+          "term": "right corner",
+          "heading": false
+        },
+        {
+          "term": "identity functor",
+          "heading": true
+        },
+        {
+          "term": "hook length",
+          "heading": false
+        },
+        {
+          "term": "left corner",
+          "heading": false
+        }
+      ],
+      "extract": "Deﬁnition 4.1. Let Ωr,d ∈FSd denote the sum of all r-cycles in Sd. Since Ωr,d is in the center of FSd, the action of Ωr,d on V ⊗n d gives an element of EndSd(V ⊗n n(d) denote the unique element of FPn(d) with f(Cr The ﬁrst goal of this section is to deﬁne elements of FPn(t) for arbitrary t ∈F which agree with the deﬁnition of Cr n(t) when t is a suﬃciently large integer. We are able to do this because, as we will",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-41-interpolating-sums-of-r-cycles",
+      "number": "4.1",
+      "title": "Interpolating sums of r-cycles",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1806,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mbox boldmath",
+          "heading": false
+        },
+        {
+          "term": "boldmath mapsto",
+          "heading": false
+        },
+        {
+          "term": "sum mbox",
+          "heading": false
+        },
+        {
+          "term": "r-a",
+          "heading": false
+        },
+        {
+          "term": "integer geq",
+          "heading": false
+        },
+        {
+          "term": "limits b-a",
+          "heading": false
+        },
+        {
+          "term": "nonnegative integer",
+          "heading": false
+        },
+        {
+          "term": "underline operatorname",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we define morphisms in $\\underline{\\operatorname{Re}}\\!\\operatorname{p}_0(S_t; F)$ which \"interpolate\\\" the action of the sum of all $r$-cycles on representations of symmetric groups. To begin, let $r$ and $d$ be positive integers with $r\\leq d$. ::: definition []{#sums label=\"sums\"} Let $\\Omega_{r, d}\\in FS_d$ denote the sum of all $r$-cycles in $S_d$. ::: Since $\\Omega_{r, d}$ is in the center of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-5-blocks",
+      "number": "5",
+      "title": "Blocks",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 100,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fro",
+          "heading": false
+        },
+        {
+          "term": "mac",
+          "heading": false
+        },
+        {
+          "term": "scalar",
+          "heading": false
+        }
+      ],
+      "extract": "27 (Deﬁnition 4.1), acts on the simple Sd-module corresponding to λ by the scalar (4.7) ξλ r,k := 1 r k X i=0 (µi + k −1)(µi + k −2) · · · (µi + k −r) Y 0≤j≤k j̸=i µi −µj −r µi −µj where k is any positive integer such that λk+1 = 0. The result of Theorem 4.8 ﬁrst appeared in [Fro68]. A modern proof of Theorem 4.8 is outlined in [FH91, exercise 4.17], (see also [Mac95, Example 7 in section I.7]). We close this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-42-frobenius-formula",
+      "number": "4.2",
+      "title": "Frobenius' formula",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 214,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fsn",
+          "heading": false
+        },
+        {
+          "term": "fpn",
+          "heading": false
+        },
+        {
+          "term": "integer",
+          "heading": false
+        },
+        {
+          "term": "idempotent",
+          "heading": false
+        }
+      ],
+      "extract": "Proposition 4.9. Fix t ∈F, a positive integer r, and a Young diagram λ. Suppose that L(λ) = ([n], e) in Rep(St, F). If k is a positive integer such that λk+1 = 0, then (ωr n(t) −ξλ(t) r,k )me = 0 for some positive integer m. Proof. By Theorem 3.7 we may assume n = |λ|. Let ξ and m be as in Proposition 4.7, so that (ωr n(t) −ξ)me = 0. Applying the quotient map ψ : FPn(t) ↠FSn (Lemma 3.1(2)) to this equation yields",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-51-blocks-in-additive-categories",
+      "number": "5.1",
+      "title": "Blocks in additive categories",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 232,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "indecomposable objects",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "additive",
+          "heading": true
+        },
+        {
+          "term": "block",
+          "heading": false
+        },
+        {
+          "term": "equi",
+          "heading": false
+        }
+      ],
+      "extract": "category. Consider the weakest equivalence relation on the set of isomorphism classes of indecomposable objects in A where two indecomposable objects are equi- valent whenever there exists a nonzero morphism between them. We call the equiv- alence classes in this relation blocks∗. We will also use the term block to refer to a full subcategory of A whose objects are direct sums of indecomposable objects in a single",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-52",
+      "number": null,
+      "title": "5.2.",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 518,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rep",
+          "heading": false
+        },
+        {
+          "term": "fpn",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "same block",
+          "heading": false
+        },
+        {
+          "term": "morphism",
+          "heading": false
+        },
+        {
+          "term": "equivalence",
+          "heading": false
+        }
+      ],
+      "extract": "Then µλ(7) = (3, 1, 0, −3, −4, −5, . . .) and µλ′(7) = (−3, 3, 1, 0, −4, −5, . . .). Hence λ 7∼λ′. 2 Clearly, for each t ∈F, t∼deﬁnes an equivalence relation on the set of all Young diagrams, and hence on the indecomposable objects in Rep(St; F) (see Theorem 3.7). The main goal of section 5 is devoted to the proof of the following theorem. Theorem 5.3. L(λ) and L(λ′) are in the same block of Rep(St; F) if and only",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-53-on-the-equivalence-relation-t",
+      "number": "5.3",
+      "title": "On the equivalence relation t",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2627,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gensim",
+          "heading": false
+        },
+        {
+          "term": "stackrel sim",
+          "heading": false
+        },
+        {
+          "term": "nontrivial stackrel",
+          "heading": false
+        },
+        {
+          "term": "lambda i-i",
+          "heading": false
+        },
+        {
+          "term": "diagram lambda",
+          "heading": false
+        },
+        {
+          "term": "trivial stackrel",
+          "heading": false
+        },
+        {
+          "term": "sim equivalence",
+          "heading": false
+        },
+        {
+          "term": "young diagram",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we prove some elementary properties of the equivalence relation $\\stackrel{t}{\\sim}$ and give examples. We say a $\\stackrel{t}{\\sim}$-equivalence class is *trivial* if it contains only one Young diagram. Soon we will see that the $\\stackrel{t}{\\sim}$-equivalence classes are all trivial unless $t$ is a nonnegative integer (see Corollary [\\[gensim\\]](#gensim){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-55-proof-of-result-on-blocks",
+      "number": "5.5",
+      "title": "Proof of result on blocks",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 37,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1254,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "underline operatorname",
+          "heading": false
+        },
+        {
+          "term": "operatorname lift",
+          "heading": false
+        },
+        {
+          "term": "liftprop",
+          "heading": false
+        },
+        {
+          "term": "lambda stackrel",
+          "heading": false
+        },
+        {
+          "term": "liftdec",
+          "heading": false
+        },
+        {
+          "term": "dim operatorname",
+          "heading": false
+        },
+        {
+          "term": "operatorname hom",
+          "heading": false
+        },
+        {
+          "term": "oneboxlemma",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#secblocks label=\"secblocks\"} In this section we give a proof of Theorem [\\[blocksinSt\\]](#blocksinSt){reference-type=\"ref\" reference=\"blocksinSt\"}. To start, given a Young diagram $\\lambda$ we will describe how $\\operatorname{Lift}_t(L(\\lambda))$ decomposes as a sum of indecomposable objects in $\\underline{\\operatorname{Re}}\\!\\operatorname{p}(S_T; K)$ (see Lemma [\\[liftdec\\]](#liftdec){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-6-description-of-a-non-semisimple-block",
+      "number": "6",
+      "title": "Description of a non-semisimple block",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 37,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 34,
+      "summary": null,
+      "keywords": [],
+      "extract": "6. Description of a non-semisimple block In this section we give a complete description of nontrivial blocks in Rep(Sd; F) for all d ∈Z≥0. In particular, we prove that all nontrivial blocks are equivalent",
+      "extractCut": false
+    },
+    {
+      "id": "sec-021-61-the-nontrivial-block-in-reps0-f",
+      "number": "6.1",
+      "title": "The nontrivial block in Rep(S0; F)",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 39,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1089,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nontrivial block",
+          "heading": true
+        },
+        {
+          "term": "rep",
+          "heading": true
+        },
+        {
+          "term": "fpn",
+          "heading": false
+        },
+        {
+          "term": "fsn",
+          "heading": false
+        },
+        {
+          "term": "σxn",
+          "heading": false
+        },
+        {
+          "term": "some transposition",
+          "heading": false
+        },
+        {
+          "term": "indecomposable objects",
+          "heading": false
+        },
+        {
+          "term": "sgn",
+          "heading": false
+        }
+      ],
+      "extract": "Next, we show that for ﬁxed d ∈Z≥0, the nontrivial blocks in Rep(Sd; F) are all equivalent. We then state a conjecture which would allow us to compare blocks in Rep(Sd; F) with those in Rep(Sd−1; F) using a “restriction functor.” Finally, we use Martin’s results on the partition algebras to give a complete description of nontrivial blocks. 6.1. The nontrivial block in Rep(S0; F). In this section we give a complete",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-62-comparison-of-non-semisimple-blocks-in-repsd",
+      "number": "6.2",
+      "title": "Comparison of non-semisimple blocks in Rep(Sd; F).",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 40,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 493,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "underline operatorname",
+          "heading": false
+        },
+        {
+          "term": "operatorname proj",
+          "heading": false
+        },
+        {
+          "term": "operatorname inc",
+          "heading": false
+        },
+        {
+          "term": "circ operatorname",
+          "heading": false
+        },
+        {
+          "term": "operatorname lift",
+          "heading": false
+        },
+        {
+          "term": "operatorname res",
+          "heading": false
+        },
+        {
+          "term": "proj mathcal",
+          "heading": false
+        },
+        {
+          "term": "non-semisimple blocks",
+          "heading": true
+        }
+      ],
+      "extract": "In this section we show that for fixed $d\\in\\mathbb{Z}_{\\geq0}$, the non-semisimple blocks in $\\underline{\\operatorname{Re}}\\!\\operatorname{p}(S_d; F)$ are all equivalent as additive categories. Thereafter we conjecture that a restriction functor induces an equivalence of categories between certain non-semisimple blocks in $\\underline{\\operatorname{Re}}\\!\\operatorname{p}(S_d; F)$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-63-description-of-blocks-via-martin",
+      "number": "6.3",
+      "title": "Description of blocks via Martin",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 41,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 481,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cong hookrightarrow",
+          "heading": false
+        },
+        {
+          "term": "underline operatorname",
+          "heading": false
+        },
+        {
+          "term": "operatorname hom",
+          "heading": false
+        },
+        {
+          "term": "twoheadrightarrow",
+          "heading": false
+        },
+        {
+          "term": "geq lambda",
+          "heading": false
+        },
+        {
+          "term": "dimstuff",
+          "heading": false
+        },
+        {
+          "term": "blocksfixd",
+          "heading": false
+        },
+        {
+          "term": "nontrivial block",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we give a general description of the nontrivial blocks based on the results of Martin. We start by reviewing the main result in [@MR1399030]. Assume $d\\not=0$ and let $\\lambda^{(0)}\\subset\\lambda^{(1)}\\subset\\cdots$ denote the Young diagrams associated to a fixed nontrivial block in $\\underline{\\operatorname{Re}}\\!\\operatorname{p}(S_d; F)$. For each $m\\geq|\\lambda^{(n)}|$, let $E_m^{(n)}$ denote the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-appendix-a-on-lifting-idempotents",
+      "number": null,
+      "title": "Appendix A. On lifting idempotents",
+      "level": 1,
+      "pageStart": 41,
+      "pageEnd": 42,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 552,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lifting idempotents",
+          "heading": true
+        },
+        {
+          "term": "quotient map",
+          "heading": false
+        },
+        {
+          "term": "appendix",
+          "heading": true
+        },
+        {
+          "term": "invertible",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst statement",
+          "heading": false
+        },
+        {
+          "term": "unit",
+          "heading": false
+        },
+        {
+          "term": "conjugate",
+          "heading": false
+        },
+        {
+          "term": "lemma",
+          "heading": false
+        }
+      ],
+      "extract": "As we were unable to ﬁnd an appropriate reference, in this appendix we give standard proofs of well-known results on lifting idempotents. Assume F is a ﬁeld, u is an indeterminate, and A is a free F[[u]]-algebra of ﬁnite rank. Finally, for a ∈A, let ¯a denote the image of a under the quotient map A →A/Au. In this appendix we will show that any idempotent in the F-algebra A/Au can be lifted to an idempotent in A.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-references",
+      "number": null,
+      "title": "references",
+      "level": 1,
+      "pageStart": 42,
+      "pageEnd": 43,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 347,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "paul martin",
+          "heading": false
+        },
+        {
+          "term": "tata inst",
+          "heading": false
+        },
+        {
+          "term": "statistical mechanics",
+          "heading": false
+        },
+        {
+          "term": "temperley-lieb algebras",
+          "heading": false
+        },
+        {
+          "term": "university press",
+          "heading": false
+        },
+        {
+          "term": "partition algebras",
+          "heading": false
+        },
+        {
+          "term": "e-mail address",
+          "heading": false
+        },
+        {
+          "term": "mar",
+          "heading": false
+        }
+      ],
+      "extract": "[Ben91] D. J. Benson. Representations and cohomology. I, volume 30 of Cambridge Studies in Ad- vanced Mathematics. Cambridge University Press, Cambridge, 1991. Basic representation theory of ﬁnite groups and associative algebras. [BK01] Bojko Bakalov and Alexander Kirillov, Jr. Lectures on tensor categories and modular functors, volume 21 of University Lecture Series. American Mathematical Society, Prov- idence, RI,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "underline operatorname",
+      "heading": false
+    },
+    {
+      "term": "operatorname rep",
+      "heading": false
+    },
+    {
+      "term": "category operatorname",
+      "heading": false
+    },
+    {
+      "term": "let operatorname",
+      "heading": false
+    },
+    {
+      "term": "operatorname lift",
+      "heading": false
+    },
+    {
+      "term": "dim operatorname",
+      "heading": false
+    },
+    {
+      "term": "circ operatorname",
+      "heading": false
+    },
+    {
+      "term": "operatorname hom",
+      "heading": false
+    },
+    {
+      "term": "operatorname inc",
+      "heading": false
+    },
+    {
+      "term": "operatorname proj",
+      "heading": false
+    },
+    {
+      "term": "operatorname res",
+      "heading": false
+    },
+    {
+      "term": "end underline",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 28,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 27,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p42); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 7
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 27 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0910.5695v2"
+  }
+}

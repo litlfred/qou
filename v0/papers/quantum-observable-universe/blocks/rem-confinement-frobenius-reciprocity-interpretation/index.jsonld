@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-confinement-frobenius-reciprocity-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:confinement-frobenius-reciprocity-interpretation",
+  "kind": "remark",
+  "title": "Master formula: ingredients, corollaries, computational protocol",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-confinement-frobenius-reciprocity",
+    "papers/quantum-observable-universe/blocks/conj-knot-factor-frobenius-pairing",
+    "papers/quantum-observable-universe/blocks/prop-mass-coefficient-shadow-price",
+    "papers/quantum-observable-universe/blocks/rem-yekutieli-stokes",
+    "papers/quantum-observable-universe/blocks/prop-confinement-operator-selection"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/conj-confinement-frobenius-reciprocity",
+  "tags": [
+    "frobenius-pairing",
+    "lp-duality",
+    "shadow-price",
+    "bound-state",
+    "axial-coupling",
+    "computational-protocol"
+  ],
+  "text": "confinement-frobenius-reciprocity-interpretation.md",
+  "provenance": "authored"
+}

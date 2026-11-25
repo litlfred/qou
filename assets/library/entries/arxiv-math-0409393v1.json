@@ -1,0 +1,120 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0409393v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0409393v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0409393v1  [math.QA]  21 Sep 2004\nALGEBRAIC CONSTRUCTION OF THE STOKES SHEAF\nFOR IRREGULAR LINEAR q-DIFFERENCE EQUATIONS\nby\nJacques Sauloy\nAbstract. —\nThe local analytic classiﬁcation of irregular linear q-diﬀerence equa-\ntions has recently been obtained by J.-P. Ramis, J. Sauloy and C. Zhang.\nTheir\ndescription involves a q-analog of the Stokes sheaf and theorems of Malgrange-Sibuya\ntype and is based on a discrete summation process due to C. Zhang. We show here\nanother road to some of these results by algebraic means and we describe the q-Gevrey\ndevissage of the q-Stokes sheaf by ho",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0409393v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction and general conventions",
+      "pageStart": 2,
+      "pageEnd": 6,
+      "target": "../sections/sec-000-1-introduction-and-general-conventions.md",
+      "narrative": null,
+      "content": "## Introduction\n\nThis paper deals with Birkhoff's program of 1941 ([@Birkhoff3], see also [@Birkhoff1]) towards the local analytic classification of $q$-difference equations and some extensions stated by J.-P. Ramis in 1990 ([@RamisJPRTraum]).\\\nA full treatment of the Birkhoff program including the case of irregular $q$-difference equations is being given in [@RSZ]. The method used there closely follows the analytic procedure developed in the last decades by B. Malgrange, Y. Sibuya, J.-P. Ramis,...for the \"classical\" case, i.e., the case of differential equations: adequate asymptotics, $q$-Sto",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0409393v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Local analytic classification",
+      "pageStart": 6,
+      "pageEnd": 15,
+      "target": "../sections/sec-001-2-local-analytic-classification.md",
+      "narrative": null,
+      "content": "[]{#section:classification label=\"section:classification\"}\n\n## Devissage of irregular equation ([@JSGAL],[@JSFIL]) {#subsection:devissage}\n\n### Fuchsian and tamely irregular modules\n\nFor a $q$-difference module $M$ over any of the fields ${{\\mathbf C}(z)}$, ${{\\mathbf C}(\\{z\\})}$, ${{\\mathbf C}((z))}$, it is possible to define its Newton polygon at $0$, or, equivalently, the slopes of $M$, which we write in descending order : $\\mu_{1} > \\cdots > \\mu_{k} \\in {\\mathbf Q}$, and their multiplicities $r_{1},\\ldots,r_{k} \\in {\\mathbf N}^{*}$. The module $M$ is said to be pure of slope $\\mu_{1}$ if $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0409393v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algebraic summation",
+      "pageStart": 15,
+      "pageEnd": 22,
+      "target": "../sections/sec-002-3-algebraic-summation.md",
+      "narrative": null,
+      "content": "## The algorithm\n\nWe keep the notations $M_{0}$, $A_{0}$, $A_{U}$ of [\\[equation:forme-canonique\\]](#equation:forme-canonique){reference-type=\"ref\" reference=\"equation:forme-canonique\"} and [\\[equation:forme-canonique-diagonale\\]](#equation:forme-canonique-diagonale){reference-type=\"ref\" reference=\"equation:forme-canonique-diagonale\"} and the corresponding conventions from section [\\[subsection:devissage\\]](#subsection:devissage){reference-type=\"ref\" reference=\"subsection:devissage\"}. Also, we shall, for $1 \\leq i < j \\leq k$, use the abreviation: $\\mu_{i,j} = \\mu_{i} - \\mu_{j} \\in {\\mathbf N}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0409393v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The q-Gevrey filtration on the Stokes sheaf",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "../sections/sec-003-4-the-q-gevrey-filtration-on-the-stokes-sheaf.md",
+      "narrative": null,
+      "content": "The sources of inspiration for the contents of this chapter are [@RamisGevrey], [@BV], [@MLR], [@Varadarajan] and [@Deligne86].\n\n## The filtration for the Stokes sheaf of a tamely irregular module\n\nWe stick to the conventions of section [\\[subsection:devissage\\]](#subsection:devissage){reference-type=\"ref\" reference=\"subsection:devissage\"}, in particular, the notations of [\\[equation:forme-canonique\\]](#equation:forme-canonique){reference-type=\"ref\" reference=\"equation:forme-canonique\"} and [\\[equation:forme-canonique-diagonale\\]](#equation:forme-canonique-diagonale){reference-type=\"ref\" refer",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0409393v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-004-references.md",
+      "narrative": null,
+      "content": "erations provide a local isomorphism of the sheaves of Lie algebras, so that λI(M) is\na vector bundle. Last, these isomorphisms preserve the ﬁltrations by levels of ﬂatness.\nRemark 4.5. — One should also note that the mapping X 7→FD(U)X deﬁnes an\nisomorphism from the space of solutions of A0 holomorphic over (UD, 0) to the same\nspace for AU. This means that their sheaves of solutions are locally isomorphic. Since\nthe former is a vector bundle, so is the latter. This yields an explicit way of associating\na vector bundle with an arbitrary module with integral slopes (for arbitrary slopes, see\n[2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

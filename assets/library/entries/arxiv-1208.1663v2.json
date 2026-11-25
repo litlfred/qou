@@ -1,0 +1,604 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1208.1663v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "THE 3D INDEX OF AN IDEAL TRIANGULATION AND ANGLE\nSTRUCTURES\nSTAVROS GAROUFALIDIS\nWith an appendix by Sander Zwegers\nAbstract. The 3D index of Dimofte-Gaiotto-Gukov a partially deﬁned function on the\nset of ideal triangulations of 3-manifolds with r torii boundary components. For a ﬁxed 2r\ntuple of integers, the index takes values in the set of q-series with integer coeﬃcients.\nOur goal is to give an axiomatic deﬁnition of the tetrahedron index, and a proof that\nthe domain of the 3D index consists precisely of the set of ideal triangulations that support\nan index structure. The latter is a gene",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "[]{#sec.intro label=\"sec.intro\"}\n\nIn a series of papers [@DGG1; @DGG2], Dimofte-Gaiotto-Gukov studied topological gauge theories using as input an ideal triangulation $\\mathcal T$ of a 3-manifold $M$. These gauge theories\n\nplay an important role in\n\n-   Chern-Simons perturbation theory (that fits well with the earlier work on quantum Riemann surfaces of [@D1] and the later work on the perturbative invariants of [@DG]),\n\n-   categorification and Khovanov Homology, that fits with the earlier work [@Witten-fivebranes].\n\nAlthough the gauge theory depends on the ideal triangulation $\\mathcal T$, an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Index structures, angle structures and the 3D index",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-2-index-structures-angle-structures-and-the-3d-i.md",
+      "narrative": null,
+      "content": "[]{#sec.results label=\"sec.results\"}\n\n## Index structures {#sub.index}\n\nConsider two $r \\times s$ matrices $\\mathbf A$ and $\\mathbf B$ with integer entries and a column vector $v \\in \\mathbb Z^r$, and let $\\mathbf M=(\\mathbf A | \\mathbf B | v)$.\n\n::: definition\n[]{#def.strictindex label=\"def.strictindex\"} (a) We say that $\\mathbf M$ supports an *index structure* if the rank of $(\\mathbf A | \\mathbf B)$ is $r$ and for every $Q: \\{1,\\dots,s\\}\\to\\{1,2,3\\}$ there exists $(\\alpha,\\beta,\\gamma) \\in \\mathbb Q^{3s}$ that satisfies $$\\label{eq.index.structure}\n\\mathbf A \\alpha+ \\mathbf B \\gamma= \\nu, \\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Angle structures",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-22-angle-structures.md",
+      "narrative": null,
+      "content": "[]{#sub.angle label=\"sub.angle\"}\n\nIn this section we define the 3D index of an ideal triangulation. A *generalized angle structure* on a combinatorial ideal tetrahedron $\\Delta$ is an assignment of real numbers (called *angles*) at each edge of $\\Delta$ such that the sum of the three angles around each vertex is $1$.[^1] It is easy to see that opposite edges are assigned the same angle, thus a generalized angle structure is determined by a triple $(\\alpha,\\beta,\\gamma)\n\\in \\mathbb R^3$ that satisfies $\\alpha+\\beta+\\gamma=1$; see Figure [1](#fig.angles){reference-type=\"ref\" reference=\"fig.angle",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Neumann-Zagier matrices",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-23-the-neumann-zagier-matrices.md",
+      "narrative": null,
+      "content": "[]{#sub.NZ label=\"sub.NZ\"}\n\nFix is an oriented ideal triangulation $\\mathcal T$ with $N$ tetrahedra of a 3-manifold $M$ with torii boundary components. Sssign variables $Z_i,Z'_i,Z''_i$ at the opposite edges of each tetrahedron $\\Delta_i$ respecting its orientation as in Figure [1](#fig.tetZZZ){reference-type=\"ref\" reference=\"fig.tetZZZ\"}.\n\n<figure id=\"fig.tetZZZ\">\n<div class=\"center\">\n<embed src=\"draws/tetrahedronZZZ.pdf\" />\n</div>\n<figcaption>Shapes of a tetrahedron.</figcaption>\n</figure>\n\nThen we can read off matrices $N\\times N$ matrices $\\bar{\\mathbf A}$, $\\bar{\\mathbf B}$ and $\\bar{\\mat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "On the topological invariance of the index",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-24-on-the-topological-invariance-of-the-index.md",
+      "narrative": null,
+      "content": "[]{#sub.invariance label=\"sub.invariance\"}\n\nPhysics predicts that when defined, the 3D index $I_{\\mathcal T}$ depends only on the underlying 3-manifold $M$. Recall that [@HRS] prove that every hyperbolic 3-manifold $M$ that satisfies $$\\label{eq.H12}\nH_1(M,\\mathbb Z/2)\\to H_1(M,\\partial M,\\mathbb Z/2) \\qquad \\text{is the zero map}$$ (eg. a hyperbolic link complement) admits an ideal triangulation with a strict angle structure, and conversely if $M$ has an ideal triangulation with a strict angle structure, then $M$ is irreducible, atoroidal and every boundary component of $M$ is a torus [@LT].",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Axioms for the tetrahedron index",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-005-3-axioms-for-the-tetrahedron-index.md",
+      "narrative": null,
+      "content": "[]{#sec.axioms label=\"sec.axioms\"}\n\nIn this section we discuss an axiomatic approach to the tetrahedron index. Let $\\mathbb Z((q^{1/2}))$ (resp., $\\mathbb Z[[q^{1/2}]]$) denote the ring of series of the form $$f(q)=\\sum_{n \\in \\frac{1}{2}\\mathbb Z} a_{n} q^{n}$$ where there exists $n_0=n_0(f)$ such that $a_n=0$ for all $n < n_0$ (resp., $n < 0$). For $f(q) \\in \\mathbb Z((q^{1/2}))$, its *degree* $\\delta(f(q))$ is the largest half-integer (or infinity) such that $f(q) \\in q^{d(f)}\\mathbb Z[[q^{1/2}]]$. We will say that $f(q) \\in \\mathbb Z((q^{1/2}))$ is $q$-*positive* if $\\delta(f(q)) \\geq 0$.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Properties of a tetrahedron index",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-006-4-properties-of-a-tetrahedron-index.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Part (d) of Theorem 3.2",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-007-41-part-d-of-theorem-32.md",
+      "narrative": null,
+      "content": "[]{#sub.partd label=\"sub.partd\"}\n\nConsider a function $f(m,e)$ of two discrete integer variables $e,m$ which satisfies Equations [\\[eq.rec1\\]](#eq.rec1){reference-type=\"eqref\" reference=\"eq.rec1\"} and [\\[eq.rec2\\]](#eq.rec2){reference-type=\"ref\" reference=\"eq.rec2\"}. An application of the `HolonomicFunctions.m` computer algebra package [@Kou] implies that $f(m,e)$ also satisfies equations [\\[eq.rec1a\\]](#eq.rec1a){reference-type=\"eqref\" reference=\"eq.rec1a\"} and [\\[eq.rec2a\\]](#eq.rec2a){reference-type=\"eqref\" reference=\"eq.rec2a\"}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The rank of V: part (a) of Theorem 3.2",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-008-42-the-rank-of-v-part-a-of-theorem-32.md",
+      "narrative": null,
+      "content": "[]{#sub.rankV label=\"sub.rankV\"}\n\nAn application of the `HolonomicFunctions.m` computer algebra package [@Kou] implies that the linear $q$-difference operators corresponding to the recursions of Equations [\\[eq.rec1\\]](#eq.rec1){reference-type=\"eqref\" reference=\"eq.rec1\"} and [\\[eq.rec2\\]](#eq.rec2){reference-type=\"eqref\" reference=\"eq.rec2\"} is a Gröbner basis and the corresponding module has rank $2$. Said differently, $f(m,e)$ is a unique $\\mathbb Z[q^{\\pm 1/2}]$ linear combination of $A$ and $B$ where $A=f(0,0)$ and $B=f(0,1)$.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The rank of V+: part (b) of Theorem 3.2",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-009-43-the-rank-of-v-part-b-of-theorem-32.md",
+      "narrative": null,
+      "content": "[]{#sub.rankV+ label=\"sub.rankV+\"}\n\nConsider a function $f(m,e)$ of two discrete integer variables $e,m$ which satisfies Equations [\\[eq.rec1\\]](#eq.rec1){reference-type=\"eqref\" reference=\"eq.rec1\"} and [\\[eq.rec2\\]](#eq.rec2){reference-type=\"ref\" reference=\"eq.rec2\"}. Section [\\[sub.partd\\]](#sub.partd){reference-type=\"ref\" reference=\"sub.partd\"} implies that $f(0,e)$ satisfies the 3-term recursion $$\\label{eq.recI2}\nf(0, e) - (2 - q^{e-1}) f(0, e - 1) + f(0, e - 2)=0$$ for all integers $e$. It follows that for every integer $e$, $f(0,e)$ is a $\\mathbb Z[q^{\\pm 1}]$-linear combination of $A$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of triality: part (c) of Theorem 3.2",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-010-44-proof-of-triality-part-c-of-theorem-32.md",
+      "narrative": null,
+      "content": "[]{#sub.prop.S3 label=\"sub.prop.S3\"}\n\nIn this section we prove part (c) of Theorem [\\[thm.1\\]](#thm.1){reference-type=\"ref\" reference=\"thm.1\"}. Equation [\\[eq.Z3\\]](#eq.Z3){reference-type=\"eqref\" reference=\"eq.Z3\"} concerns the following $\\mathbb Z/3$-action on $V$.\n\n::: definition\n[]{#def.Sf label=\"def.Sf\"} Consider the action $f \\mapsto Sf$ on a function $f: \\mathbb Z^2 \\longrightarrow\\mathbb Z((q^{1/2}))$ given by: $$\\label{eq.Sf}\nSf(m,e)=(-q^{\\frac{1}{2}})^{-e} f(e,-e-m) \\,.$$\n:::\n\n::: proposition\n[]{#prop.S3 label=\"prop.S3\"} (a) We have: $S^3=Id$. (b) If $f \\in V$, then $Sf=f$, and of cou",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The degree of I",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-011-46-the-degree-of-i.md",
+      "narrative": null,
+      "content": "[]{#sub.degDI label=\"sub.degDI\"}\n\n::: proof\n*Proof.* (of Lemma [\\[lem.degID\\]](#lem.degID){reference-type=\"ref\" reference=\"lem.degID\"}) Consider the fan $F$ of $\\mathbb R^2$ with rays $(1,0)$, $(0,1)$ and $(1,-1)$. Observe that the linear transformation $(m,e)\\mapsto(e,-e-m)$ (which appears in Definition [\\[def.Sf\\]](#def.Sf){reference-type=\"ref\" reference=\"def.Sf\"}) rotates the three cones of the fan $F$, and preserves the piece-wise quadratic polynomial that appears in Lemma [\\[lem.degID\\]](#lem.degID){reference-type=\"ref\" reference=\"lem.degID\"}. Since $I_{\\Delta}\\in V$ (by Section [\\[sub.is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 3.7",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-012-47-proof-of-theorem-37.md",
+      "narrative": null,
+      "content": "[]{#sub.thm.2 label=\"sub.thm.2\"}\n\nFirst we show that $I_{\\Delta}$ satisfies the required equations:\n\n-   $I_{\\Delta}\\in V$ from Section [\\[sub.isindex\\]](#sub.isindex){reference-type=\"ref\" reference=\"sub.isindex\"}. Lemma [\\[lem.degID\\]](#lem.degID){reference-type=\"ref\" reference=\"lem.degID\"} and Equation [\\[eq.degID\\]](#eq.degID){reference-type=\"eqref\" reference=\"eq.degID\"} manifestly imply that $\\delta(I_{\\Delta}(m,e)) \\geq 0$ for all integers $m$ and $e$. Thus, $I_{\\Delta}\\in V_+$. Moreover, $I_{\\Delta}(0,0)=1+O(q)$.\n\n-   $I_{\\Delta}$ satisfies the pentagon identity from Section [\\[sub.penta",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/lem-sec-014-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "lem-sec-014-01.md",
+      "narrative": null,
+      "content": "Suppose C is a closed cone in Rr and p : C −→R is a polynomial that satisﬁes p(nx) ≥cxn for n > 0, x ∈C \\ {0} and cx > 0. Then, there exists c > 0 and c′ > 0 such that p(x) ≥c|x| for all x ∈C with |x| ≥c′.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Convergence of the 3D index",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-013-5-convergence-of-the-3d-index.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 2.4",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-014-51-proof-of-theorem-24.md",
+      "narrative": null,
+      "content": "known lemma due to Farkas [30].\nLemma 5.1. Fix ﬁnite collections A = {a1, . . . , ar} and B = {b1, . . . , bs} of vectors in RN.\nThe following are equivalent:\n(a) there does not exist v̸ = 0 such that ai · v ≥0 for i = 1, . . . , r and bj · v = 0 for\nj = 1, . . . , s.\n(b) A ∪B span RN and there exist αi > 0 for i = 1, . . . , r and γj ∈R for j = 1, . . . , s\nsuch that 0 = P\ni αiai + P\nj γjbj.\nProof. (a) is equivalent to\n(c) there does not exist v̸ = 0 such that ai · v ≥0 for i = 1, . . . , r and bj · v ≥0 for\nj = 1, . . . , s and (−bj) · v ≥0 for j = 1, . . . , s.\n(c) implies (b). Let C denote",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An independent proof of convergence for strict index structures",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-015-52-an-independent-proof-of-convergence-for-stric.md",
+      "narrative": null,
+      "content": "[]{#sub.independent.strict label=\"sub.independent.strict\"}\n\nTheorem [\\[thm.IMconv\\]](#thm.IMconv){reference-type=\"ref\" reference=\"thm.IMconv\"} implies that $I_{\\mathbf M}$ converges when $\\mathbf M$ admits a strict index structure. In this section we give an independent proof of this fact without using the restriction of the summand of the index to a ray.\n\n::: proposition\n[]{#prop.IMconv.strict label=\"prop.IMconv.strict\"} If $\\mathbf M$ supports a strict index structure, then $I_{\\mathbf M}(m,e)(q) \\in \\mathbb Z((q^{1/2}))$ is convergent for all $m,e \\in \\mathbb Z^s$.\n:::\n\nThe proof of proposi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invariance of the 3D index under 23 moves and 20 moves",
+      "pageStart": 18,
+      "pageEnd": 21,
+      "target": "../sections/sec-016-6-invariance-of-the-3d-index-under-23-moves-and.md",
+      "narrative": null,
+      "content": "[]{#sec.23 label=\"sec.23\"}\n\n## Invariance under the $3\\to 2$ move {#sub.3-2}\n\nConsider two ideal triangulations $\\mathcal T$ and $\\widetilde{\\mathcal T}$ with $N$ and $N+1$ tetrahedra, respectively, related by a $2-3$ move shown in Figure [1](#fig.23too){reference-type=\"ref\" reference=\"fig.23too\"}.\n\n<figure id=\"fig.23too\">\n<div class=\"center\">\n<embed src=\"draws/23.pdf\" />\n</div>\n<figcaption>A <span class=\"math inline\">2 − 3</span> move.</figcaption>\n</figure>\n\nThe above figure matches the conventions of [@DG Sec.3.6]. For a variable, matrix or vector $f$ associated to $\\mathcal T$, we will den",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An ideal triangulation of m136",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/sec-017-63-an-ideal-triangulation-of-m136.md",
+      "narrative": null,
+      "content": "[]{#sub.m136 label=\"sub.m136\"}\n\nLet $\\mathcal T$ denote the ideal triangulation [@HRS Ex.7.7] of the 1-cusped census manifold `m136` using 7 tetrahedra. Its gluing equation matrices around the edges are given by:\n\n$$\\begin{aligned}\n\\bar{\\mathbf A} &=\\left(\n\\begin{array}{ccccccc}\n 1 & 0 & 0 & 0 & 1 & 1 & 1 \\\\\n 0 & 0 & 0 & 1 & 0 & 1 & 0 \\\\\n 0 & 0 & 1 & 0 & 0 & 0 & 0 \\\\\n 0 & 1 & 0 & 0 & 0 & 0 & 0 \\\\\n 1 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n 0 & 1 & 1 & 1 & 0 & 0 & 1 \\\\\n 0 & 0 & 0 & 0 & 1 & 0 & 0 \\\\\n \n \n\\end{array}\n\\right), &\n\\bar{\\mathbf B} &=\n\\left(\n\\begin{array}{ccccccc}\n 0 & 0 & 0 & 1 & 0 & 0 & 1 \\\\\n 1 &",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An ideal triangulation of m064",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-018-64-an-ideal-triangulation-of-m064.md",
+      "narrative": null,
+      "content": "[]{#sub.m064 label=\"sub.m064\"}\n\nThere is an explicit triangulation of `m064` that uses 7 ideal tetrahedra, communicated to us by Henry Segerman. Its gluing equation matrices are given by\n\n$$\\begin{aligned}\n\\bar{\\mathbf A} &=\\left(\n\\begin{array}{ccccccc}\n 2 & 0 & 1 & 0 & 0 & 0 & 0 \\\\\n 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n 0 & 0 & 0 & 1 & 0 & 0 & 0 \\\\\n 0 & 2 & 1 & 1 & 1 & 1 & 0 \\\\\n 0 & 0 & 0 & 0 & 0 & 0 & 0 \\\\\n 0 & 0 & 0 & 0 & 0 & 0 & 1 \\\\\n 0 & 0 & 0 & 0 & 1 & 1 & 1 \\\\\n\n\n \\end{array}\n\\right), &\n\\bar{\\mathbf B} &=\n\\left(\n\\begin{array}{ccccccc}\n 0 & 2 & 0 & 0 & 0 & 0 & 1 \\\\\n 2 & 0 & 0 & 1 & 0 & 0 & 0 \\\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An ideal triangulation with no index structure",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-019-65-an-ideal-triangulation-with-no-index-structur.md",
+      "narrative": null,
+      "content": "[]{#sub.noindex label=\"sub.noindex\"}\n\nConsider an ideal triangulation $\\mathcal T$ which contains an edge $e$ and a tetrahedron $\\Delta_1$ such that goes around $e$ five times with shapes $Z$, $Z'$, $Z'$, $Z''$ and $Z''$. Suppose that no other tetrahedron touches $e$. Then the equation for a generalized angle structure around $e$ reads $$\\alpha+ 2 \\beta+ 2 \\gamma=2, \\qquad \\alpha+ \\beta+ \\gamma=1$$ This forces $\\alpha=0$ so no generalized angle structure has $\\alpha>0$. Note that the corresponding gluing equations around the edge $e$ reads $$z (z')^2 (z'')^2 = 1, \\qquad z z' z'' =-1, \\qquad z'",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/lem-sec-022-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "lem-sec-022-01.md",
+      "narrative": null,
+      "content": "1. For |q| < 1 we have: (x)∞ = X n xn (q)n |x| < 1 (xq)∞ = X n (−1)nq 2 n(n+1)xn (q)n (xy)∞ (x)∞ = X n (y)nxn (q)n |x| < 1 (xy)∞ (x)∞(y)∞ = X r,s qrsxrys (q)r(q)s |x| < 1, |y| < 1 (xq)∞(yq)∞ (xyq)∞ = X r,s (−1)r+sq 2 (r−s)2+ 1 2 (r+s)xrys (q)r(q)s |xyq| < 1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgment",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/sec-020-67-acknowledgment.md",
+      "narrative": null,
+      "content": "The author wishes to thank Greg Blekherman, Nathan Dunfield, Christoph Koutschan, Henry Segerman and Josephine Yu for enlightening conversations. The author wishes to especially thank Tudor Dimofte for explaining the 3D index, and for his generous sharing of his ideas.\n\nThe work was initiated during a Clay Conference in Oxford, UK. The author wishes to thank the Clay Institute and Oxford University for their hospitality.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. I satisfies the pentagon identity",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/sec-021-appendix-a-i-satisfies-the-pentagon-identity.md",
+      "narrative": null,
+      "content": "by Sander Zwegers\nThere are several proofs of the key pentagon identity of the tetrahedron index I∆. The\nproofs may use an integral representation of the quantum dilogarithm, or q-holonomic re-\ncursion relations, or algebraic identities of generating series of q-series of Nahm type [10].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.1. A generating series proof of the pentagon identity",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "../sections/sec-022-a1-a-generating-series-proof-of-the-pentagon-ide.md",
+      "narrative": null,
+      "content": "prove that I∆satisﬁes the pentagon identity using generating series. We will abbreviate\nthe Pochhammer symbol\n(x; q)∞=\n∞\nY\nn=0\n(1 −xqn)\nby (x)∞= (x; q)∞. The proof\n• starts from an associativity identity\n(z1z2)∞\n(z1)∞(z2)∞\n· (x1z−1\n1 q)∞(x2z−1\n2 q)∞\n(x1x2z−1\n1 z−1\n2 q)∞\n= (x1z−1\n1 q)∞\n(z1)∞\n· (x2z−1\n2 q)∞\n(z2)∞\n·\n(z1z2)∞\n(x1x2z−1\n1 z−1\n2 q)∞\nthat uses 4 additional variables {x1, x2, z1, z2} in addition to the 4 variables\n{m1, m2, e1, e2},\n• extracts coeﬃcients with respect to (z1, z2) and\n• specializes (x1, x2) = (q−m1, q−m2). This last part is not algebraic and requires to\nshow convergence. T",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/rem-sec-022-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "rem-sec-022-02.md",
+      "narrative": null,
+      "content": "2. The identities of Lemma A.1 also hold in the ring Z((x, y, q)). Observe that Fe(x) is an analytic function of (x, q) when |q| < 1 and x ∈C. With |q| < 1 and |y| < 1, Lemma A.1 gives X e Fe(x)ye = X n (−1)nq 2 n2+ 1 2 nxn (q)n X e ye (q)n+e = (y)∞ X n (−1)nq 2 n2+ 1 2 n(xy−1)n (q)n = (xy−1q)∞ (y)∞ . Thus, the generating function of the left hand side of Equation (A.2) is X e1,e2 qe1e2Fe1(qe2x1)Fe2(qe1x2)ze1 1 ze2 = X n1,n2 (−1)n1+n2q 2 n2 1+ 1 2 n2 2+ 1 2 n1+ 1 2 n2xn1 1 xn2 (q)n1(q)n2 X e1,e2 qe1e2+n2e1+n1e2ze1 1 ze2 (q)n1+e1(q)n2+e2 = (z1z2)∞ (z1)∞(z2)∞ X n1,n2 (−1)n1+n2q 2 (n1−n2)2+ 1 2 n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/rem-sec-022-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 26,
+      "target": "rem-sec-022-03.md",
+      "narrative": null,
+      "content": "2 implies that they also hold in the ring Z((x1, x2, z1, z2, q)). Extracting the coeﬃcient of ze1 1 ze2 2 from the above concludes the proof of Equation (A.2). □",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.2. A second proof of the pentagon identity",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-023-a2-a-second-proof-of-the-pentagon-identity.md",
+      "narrative": null,
+      "content": "of the pentagon identity using\n1\n(q)m(q)n\n=\nX\nr,s,t\nr+s=m\ns+t=n\nqrt\n(q)r(q)s(q)t\n,\nqmn\n(q)m(q)n\n=\nX\nr,s,t\nr+s=m\ns+t=n\n(−1)sq\n1\n2 s2−1\n2 s\n(q)r(q)s(q)t\n=\nX\ns\n(−1)sq\n1\n2 s2−1\n2 s\n(q)m−s(q)n−s(q)s\n.\n(A.3)\nThe ﬁrst identity is well-known [29, Eqn.(13)], and the second follows from the ﬁrst by\nreplacing q by q−1 and multiplying both sides by (−1)m+nq−1\n2 (m−n)2−1\n2 (m+n).\nUsing these equations, we will show here that\nqe1e2 (−1)n1+n2q\n1\n2 n2\n1+ 1\n2 n2\n2+ 1\n2 n1+ 1\n2 n2+e2n1+e1n2\n(q)n1(q)n2(q)n1+e1(q)n2+e2\n=\nX\nr1,r2,r3,e3\nr1+r3+e3=n1\nr2+r3+e3=n2\n(−1)r1+r2+r3q\n1\n2 r2\n1+ 1\n2 r2\n2+ 1\n2 r2\n3+ 1\n2 r1+ 1\n2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/lem-sec-024-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "lem-sec-024-01.md",
+      "narrative": null,
+      "content": "1. We get X e I(m, e)(q)xe = X n,e (−1)nq 2 n(n+1)−(n+ 1 2 e)mxe (q)n(q)n+e = X n,e (−1)nq 2 n(n+1) \u0000q−m 2 x−1\u0001n \u0000q−m 2 x \u0001e (q)n(q)e = (q−m 2 +1x−1)∞ (q−m 2 x)∞ . Each of the recursion relations (3.1a), (3.1b), (3.3a) and (3.3b) is equivalent to the corre- sponding relation (B.3a)-(B.3d) for the generating series L(m, x, q) (B.3a) (−1 + q−m 2 x−1)L(m, x, q) + L(m + 1, q m 2 x, q) = 0 (B.3b) (1 −q−m 2 x−1)L(m, x, q) + L(m −1, q m 2 x, q) = 0 STAVROS GAROUFALIDIS (B.3c) (1 + x2 −(q m 2 + q−m 2 ))L(m, x, q) + xq m 2 L(m, qx, q) = 0 (B.3d) L(m−2, x, q)−(L(m−1, q 2x, q)+L(m−1, q−1 2x, q)−q1−mL(m−1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix B. The tetrahedron index and the quantum dilogarithm",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-024-appendix-b-the-tetrahedron-index-and-the-quantum.md",
+      "narrative": null,
+      "content": "Gukov-Gaiotto-Dimofte came up with the beautiful formula (1.2)for the tetrahedron in-\ndex from a Fourier transform of the quantum dilogarithm. For completeness, we include\nthis relation here, taken from [5]. The quantum dilogarithm of Faddeev and Kashaev is a\nfundamental building block of quantum topology [8, 14, 13]. The q-series version of this\nanalytic function is given by\n(B.1)\nL(m, x, q) = (q−m\n2 +1x−1)∞\n(q−m\n2 x)∞\n∈Z((x))[[q1/2]]\nWe claim that\n(B.2)\nX\ne\nI(m, e)(q)xe = L(m, x, q) .\nTo prove this, use the deﬁnition of I(m, e), shift e to e −n and use the ﬁrst two identities of\nLemma A.1. W",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1208.1663v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-025-references.md",
+      "narrative": null,
+      "content": "[1] Michel Brion and Mich`ele Vergne. Residue formulae, vector partition functions and lattice points in\nrational polytopes. J. Amer. Math. Soc., 10(4):797–833, 1997.\n[2] Benjamin A. Burton. Regina:\nNormal surface and 3-manifold topology software. http://regina.\nsourceforge.net.\n[3] Patrick J. Callahan, Martin V. Hildebrand, and Jeﬀrey R. Weeks. A census of cusped hyperbolic 3-\nmanifolds. Math. Comp., 68(225):321–332, 1999.\n[4] Tudor Dimofte. Quantum Riemann surfaces in Chern-Simons theory. Adv. Theor. Math. Phys.,\n17(3):479–599, 2013.\n[5] Tudor Dimofte, Davide Gaiotto, and Sergei Gukov. 3-man",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

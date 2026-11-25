@@ -1,0 +1,70 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2105.09342v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "A Unitary Matrix Model for q-deformed Plancherel Growth",
+  "contains": [
+    "library/arxiv-2105.09342v1/sections/sec-front-matter",
+    "library/arxiv-2105.09342v1/sections/sec-000",
+    "library/arxiv-2105.09342v1/sections/sec-001",
+    "library/arxiv-2105.09342v1/sections/sec-002",
+    "library/arxiv-2105.09342v1/sections/sec-003",
+    "library/arxiv-2105.09342v1/sections/sec-004",
+    "library/arxiv-2105.09342v1/sections/sec-005",
+    "library/arxiv-2105.09342v1/sections/sec-006",
+    "library/arxiv-2105.09342v1/sections/sec-007",
+    "library/arxiv-2105.09342v1/sections/sec-008",
+    "library/arxiv-2105.09342v1/sections/sec-009",
+    "library/arxiv-2105.09342v1/sections/sec-010",
+    "library/arxiv-2105.09342v1/sections/sec-011",
+    "library/arxiv-2105.09342v1/sections/sec-012",
+    "library/arxiv-2105.09342v1/sections/sec-013",
+    "library/arxiv-2105.09342v1/sections/sec-014"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "A Unitary Matrix Model for q-deformed Plancherel Growth — In this paper we construct a unitary matrix model that captures the asymptotic growth of Young diagrams under q-deformed Plancherel measure.\n\n**A Unitary Matrix Model for q-deformed Plancherel Growth**\n\n*Suvankar Duttaa, Debangshu Mukherjeeb, Neetua, Sanhita Parihara*\n\n31 pp, 16 sections.\n\n**Abstract.** In this paper we construct a unitary matrix model that captures the asymptotic growth of Young diagrams under q-deformed Plancherel measure. The matrix model is a q analog of Gross-Witten-Wadia (GWW) matrix model. In the large N limit the model exhibits a third order phase transition between no-gap and gapped phases, which is a q-deformed version of the GWW phase transition. We show that the no-gap phase of this matrix model captures the asymptotic growth of Young diagrams equipped with q-deformed Plancherel measure. The no-gap solutions also satisﬁes a diﬀerential equation which is the q-analogue of the automodel equation. We further provide a droplet description for these growing Young diagrams. Quantising these droplets we identify the Young diagrams with coherent states in the Hilbert space.\n\n**Outline.** Front matter; 1 Introduction; 2 q-deformed Plancherel growth; 3 A unitary matrix model for q-deformed Planch; 3.1 Solution class 1: No-gap solution; 3.2 q-deformed automodel class; 3.3 The unitary matrix model from the droplet ; 4 Asymptotic analysis of q-deformed Plancherel; 5 The Hilbert space; 5.1 Moments of Young diagrams and conserved ch; 6 Conclusion; Appendix A q analog of GWW phase transition; Appendix B Explicit computation of the partiti; Appendix C Calculation of automodel density fo; Appendix C.1 Computing Hconst(h), H(h) and Hse; Appendix D Droplet quantisation",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2105.09342&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2105.09342v1",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "2105.09342v1.pdf",
+    "source_sha256": "57ae12327da7b9a10608fe57ddb8ac5c02bff552aee0fd71dd66b04b04a7dc7c",
+    "pages": 31,
+    "arxiv": {
+      "id": "2105.09342",
+      "version": "1",
+      "primary_class": "hep-th",
+      "stamp_date": "19 May 2021"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

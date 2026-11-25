@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-quantum-gauge-group-category",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:quantum-gauge-group-category",
+  "kind": "remark",
+  "title": "Quantum gauge group: category-theoretic perspective",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-quantum-gauge-group"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-quantum-gauge-group",
+  "tags": [
+    "tannaka-krein",
+    "hopf-algebra",
+    "category-theory"
+  ],
+  "text": "quantum-gauge-group-category.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-crystal-r-matrix-sub-lemma",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:crystal-r-matrix-sub-lemma",
+  "kind": "proposition",
+  "title": "Crystal R-matrix Sub-lemma 2.1: pole order of the seminormal diagonal entry",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-alpha-shift-torus-knot"
+  ],
+  "cites": [
+    "references/mathas1999",
+    "references/hoefsmit1974",
+    "references/wenzl1988",
+    "references/brundankleshchev2009",
+    "references/kashiwara1991"
+  ],
+  "tags": [
+    "crystal-r-matrix",
+    "sub-lemma-2-1",
+    "operator-valued",
+    "pole-order",
+    "axial-distance",
+    "hecke-branching"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.CrystalRMatrix.seminormalDiag_of_le_neg_one",
+  "text": "crystal-r-matrix-sub-lemma.md",
+  "leanSource": "crystal-r-matrix-sub-lemma.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-phi-q-aj-machinery-identification-details",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:phi-q-aj-machinery-identification-details",
+  "kind": "remark",
+  "title": "$\\Phi_q$/AJ identification — full AJ statement, significance, and Lean structure",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-phi-q-aj-machinery-identification"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-phi-q-aj-machinery-identification",
+  "cites": [
+    "references/garoufalidis-wheeler-modular"
+  ],
+  "tags": [
+    "aj-conjecture",
+    "faddeev-dilogarithm",
+    "rogers-dilogarithm",
+    "quantum-a-polynomial",
+    "stochastic-mechanics"
+  ],
+  "text": "phi-q-aj-machinery-identification-details.md",
+  "provenance": "authored"
+}

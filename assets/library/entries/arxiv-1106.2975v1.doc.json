@@ -1,0 +1,737 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1106.2975v1",
+  "title": "The Polyanalytic Ginibre Ensembles",
+  "variant": "pdf",
+  "pages": 31,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Polyanalytic Bargmann-Fock spaces",
+      "number": "2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-polyanalytic-bargmann-fock-spaces"
+    },
+    {
+      "level": 1,
+      "title": "Berezin density asymptotics for an exterior point",
+      "number": "3",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-berezin-density-asymptotics-for-an-exterior-po"
+    },
+    {
+      "level": 1,
+      "title": "Poly-Bargmann transforms",
+      "number": "4",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-poly-bargmann-transforms"
+    },
+    {
+      "level": 1,
+      "title": "Reproducing kernel and Berezin density asymptotics for a boundary point",
+      "number": "5",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-reproducing-kernel-and-berezin-density-asympto"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 459,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polyanalytic ginibre",
+          "heading": false
+        },
+        {
+          "term": "ginibre ensembles",
+          "heading": false
+        },
+        {
+          "term": "berezin measure",
+          "heading": false
+        },
+        {
+          "term": "interior points",
+          "heading": false
+        },
+        {
+          "term": "boundary points",
+          "heading": false
+        },
+        {
+          "term": "blow-up",
+          "heading": false
+        },
+        {
+          "term": "determinantal",
+          "heading": false
+        },
+        {
+          "term": "process",
+          "heading": false
+        }
+      ],
+      "extract": "The Polyanalytic Ginibre Ensembles Antti Haimi and Håkan Hedenmalm Abstract. For integers n, q = 1, 2, 3, . . ., let Poln,q denote the C-linear space of polynomials in z and ¯z, of degree ≤n −1 in z and of degree ≤q −1 in ¯z. We supply Poln,q with the inner product structure of L2 \u0010 C, e−m|z|2dA \u0011 , where dA(z) = dxdy π , z = x + iy; the resulting Hilbert space is denoted by Polm,n,q. Here, it is assumed that m is a",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1106.2975v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 8,
+      "labelStart": "2",
+      "labelEnd": "8",
+      "words": 3020,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "blow-up berezin",
+          "heading": false
+        },
+        {
+          "term": "polyanalytic ginibre",
+          "heading": false
+        },
+        {
+          "term": "berd langle",
+          "heading": false
+        },
+        {
+          "term": "berezin density",
+          "heading": false
+        },
+        {
+          "term": "berezin measure",
+          "heading": false
+        },
+        {
+          "term": "hat berd",
+          "heading": false
+        },
+        {
+          "term": "ginibre process",
+          "heading": false
+        },
+        {
+          "term": "quad berd",
+          "heading": false
+        }
+      ],
+      "extract": "We will write use standard notation, such as $\\partial X$ and $\\mathrm{int}(X)$ for the boundary and the interior of a subset $X$ of the complex plane ${\\mathbb C}$. The complex conjugate of a complex number $z$ is usually written as $\\bar z$. We write ${\\mathbb R}$ for the real line, ${\\mathbb D}:=\\{z\\in{\\mathbb C}:|z|<1\\}$ for the open unit disk, and ${\\mathbb D}^e:=\\{z\\in{\\mathbb C}:|z|>1\\}$ for the open exterior",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-polyanalytic-bargmann-fock-spaces",
+      "number": "2",
+      "title": "Polyanalytic Bargmann-Fock spaces",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 14,
+      "labelStart": "8",
+      "labelEnd": "14",
+      "words": 2230,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm z-w",
+          "heading": false
+        },
+        {
+          "term": "mathrm pol",
+          "heading": false
+        },
+        {
+          "term": "mathrm frac12m",
+          "heading": false
+        },
+        {
+          "term": "berd langle",
+          "heading": false
+        },
+        {
+          "term": "mathrm zeta",
+          "heading": false
+        },
+        {
+          "term": "tau mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathrm frac",
+          "heading": false
+        },
+        {
+          "term": "bar mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec-polybargmann label=\"sec-polybargmann\"} We will consider the Bargmann-Fock space $A^2_{m,q}({\\mathbb C})$ of poly-analytic functions of degree $\\le q-1$, i.e., functions of the form $$f(z) = \\sum_{r=0}^{q-1} \\bar{z}^r f_r(z),$$ where all the components $f_r$ are entire, subject to the norm integrability condition $$\\|f\\|^2_{A^2_{m,q}({\\mathbb C})}:= \\|f\\|^2_{L^2({\\mathbb C},\\mathrm e^{-m|z|^2})}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-berezin-density-asymptotics-for-an-exterior-po",
+      "number": "3",
+      "title": "Berezin density asymptotics for an exterior point",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 21,
+      "labelStart": "14",
+      "labelEnd": "21",
+      "words": 2176,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "berezin density",
+          "heading": true
+        },
+        {
+          "term": "rho mathrm",
+          "heading": false
+        },
+        {
+          "term": "operatorname mathrm",
+          "heading": false
+        },
+        {
+          "term": "n-r frac",
+          "heading": false
+        },
+        {
+          "term": "big mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathbb berd",
+          "heading": false
+        },
+        {
+          "term": "laguerreestimaatti",
+          "heading": false
+        },
+        {
+          "term": "mathrm zeta",
+          "heading": false
+        }
+      ],
+      "extract": "We show that the Berezin measures have the convergence ${\\mathrm d}B^{\\langle z\\rangle}_{m,n,q}\\to{\\mathrm d}\\omega_z$ for $z\\in{\\mathbb D}^e$ as $m,n\\to+\\infty$ while $n=m+\\mathrm{O}(1)$. Here, $\\omega_z$ is harmonic measure with respect to the point $z$ and the exterior disk $\\mathbb{D}^e$. We first study the concentration of the Berezin measure to neighborhoods of the closed unit disk $\\bar{\\mathbb D}$. We recall",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-poly-bargmann-transforms",
+      "number": "4",
+      "title": "Poly-Bargmann transforms",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 23,
+      "labelStart": "21",
+      "labelEnd": "23",
+      "words": 1027,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac12z frac14t",
+          "heading": false
+        },
+        {
+          "term": "poly-bargmann transforms",
+          "heading": true
+        },
+        {
+          "term": "frac14t mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathrm pol",
+          "heading": false
+        },
+        {
+          "term": "bar r-j",
+          "heading": false
+        },
+        {
+          "term": "mathbf bigg",
+          "heading": false
+        },
+        {
+          "term": "t-z bar",
+          "heading": false
+        },
+        {
+          "term": "ominus mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we discuss the poly-Bargmann transforms, a generalization of the classical Bargmann transform, which are needed later when we analyze the Berezin density at a boundary point. The poly-Bargmann transforms appeared in Vasilevski's paper [@vas], where the basic properties were presented. We denote by $H_j$ the $j$-th Hermite polynomial with respect to the Gaussian weight $\\mathrm e^{-\\frac12t^2}$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-reproducing-kernel-and-berezin-density-asympto",
+      "number": "5",
+      "title": "Reproducing kernel and Berezin density asymptotics for a boundary point",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 30,
+      "labelStart": "23",
+      "labelEnd": "30",
+      "words": 2359,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reproducing kernel",
+          "heading": true
+        },
+        {
+          "term": "mathrm pol",
+          "heading": false
+        },
+        {
+          "term": "frac12t mathrm",
+          "heading": false
+        },
+        {
+          "term": "pol langle",
+          "heading": false
+        },
+        {
+          "term": "berezin density",
+          "heading": true
+        },
+        {
+          "term": "bar eta",
+          "heading": false
+        },
+        {
+          "term": "eta frac14t",
+          "heading": false
+        },
+        {
+          "term": "bar mathbf",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we will calculate the limit of the blow-up berezin transform $\\hat{\\berd}^{\\langle z\\rangle}_{m,n,q}$ at a boundary point $z$, that is, $|z|=1$. There is no loss of generality to take $z=1$. Our strategy is to investigate the blow-up of the reproducing kernel of the space of analytic polynomials $\\mathrm{Pol}_{m,n,1}$ (with $q=1$) first, and then use this information together with poly-Bargmann",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": "30",
+      "labelEnd": "31",
+      "words": 532,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "courant institute",
+          "heading": false
+        },
+        {
+          "term": "determinantal processes",
+          "heading": false
+        },
+        {
+          "term": "courant lecture",
+          "heading": false
+        },
+        {
+          "term": "hedenmalm",
+          "heading": false
+        },
+        {
+          "term": "makarov",
+          "heading": false
+        },
+        {
+          "term": "royal institute",
+          "heading": false
+        },
+        {
+          "term": "laplacian growth",
+          "heading": false
+        },
+        {
+          "term": "random matrices",
+          "heading": false
+        }
+      ],
+      "extract": "[1] L. Abreu, Sampling and interpolation in Bargmann-Fock spaces of polyanalytic functions, Appl. Comp. Harm. Anal. 29 (2010), 287–302. [2] Y. Ameur, H. Hedenmalm, N. Makarov, Berezin transform in polynomial Bergman spaces, Comm. Pure Appl. Math. 63 (2010) no. 12, 1533–1584. [3] Y. Ameur, H. Hedenmalm, N. Makarov, Fluctuations of eigenvalues of random normal matrices, Duke Math. J., to appear. [4] G. W. Anderson, A.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mathrm pol",
+      "heading": false
+    },
+    {
+      "term": "bar mathrm",
+      "heading": false
+    },
+    {
+      "term": "big mathrm",
+      "heading": false
+    },
+    {
+      "term": "gathered mathrm",
+      "heading": false
+    },
+    {
+      "term": "mathbb mathrm",
+      "heading": false
+    },
+    {
+      "term": "blow-up berezin",
+      "heading": false
+    },
+    {
+      "term": "bigg mathrm",
+      "heading": false
+    },
+    {
+      "term": "frac mathrm",
+      "heading": false
+    },
+    {
+      "term": "mathrm langle",
+      "heading": false
+    },
+    {
+      "term": "mathbb berd",
+      "heading": false
+    },
+    {
+      "term": "mathrm int",
+      "heading": false
+    },
+    {
+      "term": "frac14t mathrm",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1.1",
+      "title": "The polyanalytic Ginibre process with the kernel Km,n,q with m = n = 61 and q = 3. The simulation is based on the algorithm by Hough, Krishnapur, Peres, and Virág [15]",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p006-1",
+      "file": "images/img-p006-1.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 6,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 7,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p30); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 7 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1106.2975v1"
+  }
+}

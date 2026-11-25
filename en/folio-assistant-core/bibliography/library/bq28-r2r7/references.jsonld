@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/bq28-r2r7",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Classical and Quantum Algorithms for Characters of the Symmetric Group",
+      "dcterms:creator": [
+        "Classical",
+        "Quantum Algorithms for Characters of the Symmetric Group"
+      ],
+      "dcterms:issued": "D:20250805",
+      "bibo:doi": "10.1103/bq28-r2r7",
+      "dcterms:identifier": "https://doi.org/10.1103/bq28-r2r7",
+      "dcterms:source": "library/bq28-r2r7/manifest.jsonld",
+      "dcterms:hasVersion": "library/bq28-r2r7"
+    }
+  ]
+}

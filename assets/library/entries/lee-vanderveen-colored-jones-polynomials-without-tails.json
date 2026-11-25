@@ -1,0 +1,135 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "lee-vanderveen-colored-jones-polynomials-without-tails",
+  "blocks": [
+    {
+      "id": "library/lee-vanderveen-colored-jones-polynomials-without-tails/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/lee-vanderveen-colored-jones-polynomials-without-tails/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "COLORED JONES POLYNOMIALS WITHOUT TAILS\nCHRISTINE RUEY SHAN LEE AND ROLAND VAN DER VEEN\nAbstract. We exhibit an inﬁnite family of knots with the property that the ﬁrst coeﬃcient of the\nn-colored Jones polynomial grows linearly with n. This shows that the concept of stability and tail\nseen in the colored Jones polynomials of alternating knots does not generalize naively.\n1. Introduction\nThe colored Jones polynomials are a well known knot invariant with many connections to other\nparts of mathematics [11, 16].\nIt is the Reshetikhin-Turaev knot invariant corresponding to the\nn-dimensional represen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lee-vanderveen-colored-jones-polynomials-without-tails/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "C. LEE AND R. VAN DER VEEN\n2. Colored Jones polynomial\nThe colored Jones polynomial is usually considered as a knot invariant but from our point of view it\nis more natural to consider its extension to knotted framed graphs. A good thing about this deﬁnition\nof the colored Jones polynomial is that it is less dependent on knot diagrams and a little more eﬃcient\nfor computations. The technical reason behind its success is that we diagonalize the R-matrix.\nDeﬁnition 2.1. Knotted trivalent graphs (KTG)\n(1) A framed graph is a 1-dimensional simplicial complex Γ together with an embedding Γ →Σ\nof Γ i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lee-vanderveen-colored-jones-polynomials-without-tails/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "COLORED JONES POLYNOMIALS WITHOUT TAILS\nThe colored Jones polynomial of any KTG can now be deﬁned by the following three equations.\n(1)\n⟨F e\n±(Γ), σ⟩= f(σ(e))±1⟨Γ, σ⟩\nHere F e\n±(Γ) means the result after applying framing change to edge e of the KTG Γ.\n(2)\n⟨U e(Γ), σ′⟩= ⟨Γ, σ⟩\nX\nσ(e)\nOσ(e)\nθ(σ(e), σ(b), σ(d))\nThe two colorings σ and σ′ agree on all edges except that U e(Γ) does not have edge e. The four edges\nin Γ adjacent to e must have the same colors as b and d in U e(Γ). Also, the summation is over all\npossible values of color of the missing edge σ(e). Most values yield zero because the fac",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lee-vanderveen-colored-jones-polynomials-without-tails/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "C. LEE AND R. VAN DER VEEN\nHere the writhe is given by Wr(r, s, t, u) = r −s + t −u and\nP = {(a, b, c, d) ∈[0, 1]4 : |a −b| ≤c ≤a + b}.\n3. The lack of tail\nUsing the formulas for the building blocks we may determine the degree δ(a, b, c, d) of each term in\nthe state sum. It is an explicit piecewise quadratic function on the polytope nP. From our assumptions\nit follows that:\nδ(a + 1, b, c, d) < δ(a, b, c, d) and δ(a, b, c + 1, d) < δ(a, b, c, d) < δ(a, b, c, d −1).\nTherefore all terms of highest degree satisfy b = a + c and d = 0 with 0 ≤a, c ≤a + c ≤n. Explicitly\nthe degree is δ(a, a + c, c, 0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/lee-vanderveen-colored-jones-polynomials-without-tails/blocks/thm-page-004-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "thm-page-004-01.md",
+      "narrative": null,
+      "content": "If u ≤−3 then C(5, −3, 5, u) is a Manx knot. More precisely, the leading coeﬃcient of JC(5,−3,5,u),n+1(v) is ⌊n/2⌋. The same techniques will also show that the pretzel knot P(5, −3, 5) is Manx but this appears to be the only Manx pretzel knot [9]. We expect that many more Manx knots exist but not in the family C(r, s, t, u) we considered. All Montesinos Manx knots seem to derive from the unique Manx pretzel P(5, −3, 5). Although our Manx knots do not stabilize in the ordinary sense they may still be c-stable. This more general notion of stability was introduced in Garoufalidis-Vuong [7] and al",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/lee-vanderveen-colored-jones-polynomials-without-tails/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "COLORED JONES POLYNOMIALS WITHOUT TAILS\n[11] Vaughan Jones. Hecke algebra representations of braid groups and link polynomials. Ann. of Math. (2), 126(2):335–\n388, 1987.\n[12] Christine Ruey Shan Lee. A trivial tail homology for non A-adequate links. Algebr. Geom. Topol., 2018. to appear.\n[13] Christine Ruey Shan Lee and Roland van der Veen. Slopes for pretzel knots. New York Journal of Mathematics,\n22:1339–1364, 2016.\n[14] Xudong Leng, Zhiqing Yang, and Ximin Liu. The slope conjecture for a family of Montesinos knots. Preprint, Arxiv\n1710.07101, 2017.\n[15] Dylan P. Thurston. The algebra of kno",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

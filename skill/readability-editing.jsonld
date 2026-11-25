@@ -1,0 +1,18 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/readability-editing.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/readability-editing",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "readability-editing",
+      "title": "Migration Notice",
+      "instructionsPath": "skills/local/readability-editing.md",
+      "instructionLines": 4,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

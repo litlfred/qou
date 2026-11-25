@@ -1,0 +1,65 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-th-9308100v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Gedanken Experiments Involving Black Holes",
+  "contains": [
+    "library/arxiv-hep-th-9308100v1/sections/sec-front-matter",
+    "library/arxiv-hep-th-9308100v1/sections/sec-000",
+    "library/arxiv-hep-th-9308100v1/sections/sec-001",
+    "library/arxiv-hep-th-9308100v1/sections/sec-002",
+    "library/arxiv-hep-th-9308100v1/sections/sec-003",
+    "library/arxiv-hep-th-9308100v1/sections/sec-004",
+    "library/arxiv-hep-th-9308100v1/sections/sec-005",
+    "library/arxiv-hep-th-9308100v1/sections/sec-006",
+    "library/arxiv-hep-th-9308100v1/sections/sec-007",
+    "library/arxiv-hep-th-9308100v1/sections/sec-008"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Gedanken Experiments Involving Black Holes — Analysis of several gedanken experiments indicates that black hole complementarity cannot be ruled out on the basis of known physical principles.\n\n**Gedanken Experiments Involving Black Holes**\n\n*Leonard Susskind*\n\n22 pp, 10 sections.\n\n**Abstract.** Analysis of several gedanken experiments indicates that black hole complementarity cannot be ruled out on the basis of known physical principles. Experiments designed by outside observers to disprove the existence of a quantum-mechanical stretched horizon require knowledge of Planck-scale eﬀects for their analysis. Observers who fall through the event horizon after sampling the Hawking radiation cannot discover duplicate information inside the black hole before hitting the singularity. Experiments by outside observers to detect baryon number violation will yield signiﬁcant eﬀects well outside the stretched horizon. PACS categories: 04.60.+n, 12.25.+e, 97.60.Lf ⋆susskind@dormouse.stanford.edu † larus@dormouse.stanford.edu 1\n\n**Outline.** Front matter; ABSTRACT; 1 Introduction; 2 Experiments in Rindler Space; 3 Experiments Outside Black Holes; 4 Experiments Performed Inside Black Holes; 5 Information Retention Time; 6 Experiments Involving Time Reversal; 7 Summary; REFERENCES",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-th/9308100&metadataPrefix=arXiv), submitted 1993-08-20, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-hep-th-9308100v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "9308100v1.pdf",
+    "source_sha256": "032c25faa757b650c462af1f847f2bdfbe4c5a4b066c1770dc108f30aafbbb7b",
+    "pages": 22,
+    "arxiv": {
+      "id": "hep-th/9308100",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "20 Aug 1993"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

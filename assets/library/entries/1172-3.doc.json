@@ -1,0 +1,417 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "1172-3",
+  "title": "1172-3",
+  "variant": "pdf",
+  "pages": 10,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "RESULTS",
+      "number": "3",
+      "page": 2,
+      "pageLabel": "35",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-3-results"
+    },
+    {
+      "level": 1,
+      "title": "THE KAUFFMAN BRACKET SKEIN MODULE OF THE SOLID TORUS",
+      "number": "4",
+      "page": 4,
+      "pageLabel": "37",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-4-the-kauffman-bracket-skein-module-of-the-solid"
+    },
+    {
+      "level": 1,
+      "title": "THE TWISTING ELEMENT",
+      "number": "6",
+      "page": 7,
+      "pageLabel": "40",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-6-the-twisting-element"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "34",
+      "labelEnd": "35",
+      "words": 360,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kauﬀman bracket",
+          "heading": false
+        },
+        {
+          "term": "bracket skein",
+          "heading": false
+        },
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "kazuo habiro",
+          "heading": false
+        },
+        {
+          "term": "skein module",
+          "heading": false
+        },
+        {
+          "term": "mathrm",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "jones polynomials",
+          "heading": false
+        }
+      ],
+      "extract": "ON THE COLORED JONES POLYNOMIALS OF SOME SIMPLE LINKS KAZUO HABIRO 葉白和夫 東京大学数理科学研究科 1. INTRODUCTION This note is a report on my talk given at the workshop “Recent Progress Towards the Volume Conjecture” which was held at Inter- national Institute for Advanced Studies in March, 2000, and was sup- ported by Research Institute for Mathematical Sciences, Kyoto Univer- sity. I wish to thank the participants for",
+      "extractCut": true,
+      "blocks": [
+        "library/1172-3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-3-results",
+      "number": "3",
+      "title": "RESULTS",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "35",
+      "labelEnd": "37",
+      "words": 167,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "n-i",
+          "heading": false
+        },
+        {
+          "term": "rangle sum",
+          "heading": false
+        },
+        {
+          "term": "a-a",
+          "heading": false
+        },
+        {
+          "term": "m-i",
+          "heading": false
+        },
+        {
+          "term": "mathrm",
+          "heading": false
+        },
+        {
+          "term": "copyright",
+          "heading": false
+        }
+      ],
+      "extract": "Here we list our results of calculations. In the following the links are assumed to be framed with framings zero. ON THE COLORED JONES POLYNOMIALS OF SOME SIMPLE LINKS $3_{l}$ $-3_{1}$ $\\mathit{4}_{1}$ FIGURE 1 $w_{-}$ $w_{+}$ \\copyright FIGURE 2 Let $3_{1}$ denote the trefoil knots with negative crossings (and hence of positive signature), and let $-3_{1}$ denote the mirror image of $3_{1}$ . Let $4_{1}$ denote the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-4-the-kauffman-bracket-skein-module-of-the-solid",
+      "number": "4",
+      "title": "THE KAUFFMAN BRACKET SKEIN MODULE OF THE SOLID TORUS",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": "37",
+      "labelEnd": "40",
+      "words": 522,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rangle mathrm",
+          "heading": false
+        },
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "otimes mathrm",
+          "heading": false
+        },
+        {
+          "term": "map langle",
+          "heading": false
+        },
+        {
+          "term": "ldots otimes",
+          "heading": false
+        },
+        {
+          "term": "bhmv",
+          "heading": false
+        },
+        {
+          "term": "a-i",
+          "heading": false
+        },
+        {
+          "term": "orthogonal basis",
+          "heading": false
+        }
+      ],
+      "extract": "We use the Kauﬀman bracket skein module $B=B(V)$ of the solid torus $V=S^{1}\\cross D^{2}$ . For details, see [BHMV]. We use the familiar commutative $\\mathrm{Z}[A, A^{-}1]$-algebra structure of $B$ . $B$ is a polynomial algebra $\\mathrm{Z}[A, A^{-1}][z]$ , where $z$ is represented by the framed knot $K$ in $V$ which winds just once along the core of $V$ . Let $B^{\\mathrm{e}\\mathrm{v}\\mathrm{e}\\mathrm{n}}$ denote the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-6-the-twisting-element",
+      "number": "6",
+      "title": "THE TWISTING ELEMENT",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 10,
+      "labelStart": "40",
+      "labelEnd": "43",
+      "words": 641,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm langle",
+          "heading": false
+        },
+        {
+          "term": "arrow mathrm",
+          "heading": false
+        },
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "otimes mathrm",
+          "heading": false
+        },
+        {
+          "term": "kazuo habiro",
+          "heading": false
+        },
+        {
+          "term": "rangle sum",
+          "heading": false
+        },
+        {
+          "term": "a-a",
+          "heading": false
+        },
+        {
+          "term": "omega sum",
+          "heading": false
+        }
+      ],
+      "extract": "Let $k=\\mathrm{Q}(A)$ denote the quotient ﬁeld of $\\mathrm{Z}[A, A^{-}1]$ . Let $B_{k}=$ $B\\otimes \\mathrm{z}[A,A^{-1}\\mathrm{J}k$ . We set $R_{n}’=R_{n}/[n]!\\in B_{k}$ . Let $B’$ denote the $\\mathrm{Z}[A, A^{-1}]-$ submodule of $B_{k}$ generated by $\\{R_{n}^{J}\\}n\\geq 0$ . It is actually a $\\mathrm{Z}[A, A^{-1}]-$ subalgebra of $B_{k}$ . Set $I_{n}=R_{n}’B’\\subset B’$ . Let $\\hat{B}’$ denote the projective limit",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "rangle mathrm",
+      "heading": false
+    },
+    {
+      "term": "mathrm langle",
+      "heading": false
+    },
+    {
+      "term": "otimes mathrm",
+      "heading": false
+    },
+    {
+      "term": "arrow mathrm",
+      "heading": false
+    },
+    {
+      "term": "mathrm denote",
+      "heading": false
+    },
+    {
+      "term": "let mathrm",
+      "heading": false
+    },
+    {
+      "term": "circ mathrm",
+      "heading": false
+    },
+    {
+      "term": "rangle sum",
+      "heading": false
+    },
+    {
+      "term": "kazuo habiro",
+      "heading": false
+    },
+    {
+      "term": "map langle",
+      "heading": false
+    },
+    {
+      "term": "framed links",
+      "heading": false
+    },
+    {
+      "term": "a-a",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 3,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 4,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p7); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 4 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/1172-3"
+  }
+}

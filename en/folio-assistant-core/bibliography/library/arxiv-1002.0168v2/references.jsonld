@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1002.0168v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Non-cyclotomic fusion categories Introduction",
+      "dcterms:creator": [
+        "Morrison, Scott"
+      ],
+      "dcterms:issued": "D:20181102",
+      "dcterms:identifier": "https://arxiv.org/abs/1002.0168",
+      "dcterms:abstract": "Etingof, Nikshych and Ostrik ask in [7, §2] if every fusion category can be completely deﬁned over a cyclotomic ﬁeld. We show that this is not the case: in particular one of the fusion categories coming from the Haagerup subfactor [1] and one coming from the newly constructed extended Haagerup subfactor [2] can not be completely deﬁned over a cyclotomic ﬁeld. On the other hand, we show that the Drinfel’d center of the even part of the Haagerup subfactor is completely deﬁned over a cyclotomic ﬁeld. We identify the minimal ﬁeld of deﬁnition for each of these fusion categories, compute the Galois groups, and identify their Galois conjugates.",
+      "dcterms:source": "library/arxiv-1002.0168v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1002.0168v2"
+    }
+  ]
+}

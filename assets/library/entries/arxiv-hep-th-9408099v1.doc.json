@@ -1,0 +1,2183 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-hep-th-9408099v1",
+  "title": "Monopoles, duality and chiral symmetry breaking in N=2 supersymmetric QCD",
+  "variant": "pdf",
+  "pages": 88,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "1",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "A warm-up example: QED with matter",
+      "number": "2",
+      "page": 7,
+      "pageLabel": "6",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-a-warm-up-example-qed-with-matter"
+    },
+    {
+      "level": 2,
+      "title": "QED",
+      "number": "2.1",
+      "page": 7,
+      "pageLabel": "6",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The classical moduli space",
+      "number": "2.2",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-22-the-classical-moduli-space"
+    },
+    {
+      "level": 2,
+      "title": "The quantum moduli space",
+      "number": "2.3",
+      "page": 8,
+      "pageLabel": "7",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-23-the-quantum-moduli-space"
+    },
+    {
+      "level": 2,
+      "title": "BPS-saturated states",
+      "number": "2.4",
+      "page": 10,
+      "pageLabel": "9",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-24-bps-saturated-states"
+    },
+    {
+      "level": 1,
+      "title": "Classical moduli space of QCD with matter",
+      "number": "3",
+      "page": 11,
+      "pageLabel": "10",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-3-classical-moduli-space-of-qcd-with-matter"
+    },
+    {
+      "level": 1,
+      "title": "A ﬁrst look at the quantum theory",
+      "number": "4",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-4-a-ﬁrst-look-at-the-quantum-theory"
+    },
+    {
+      "level": 2,
+      "title": "Symmetries of the quantum theory",
+      "number": "4.1",
+      "page": 14,
+      "pageLabel": "13",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-41-symmetries-of-the-quantum-theory"
+    },
+    {
+      "level": 2,
+      "title": "A ﬁrst look at the quantum moduli space",
+      "number": "4.2",
+      "page": 15,
+      "pageLabel": "14",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-42-a-ﬁrst-look-at-the-quantum-moduli-space"
+    },
+    {
+      "level": 1,
+      "title": "BPS-saturated states",
+      "number": "5",
+      "page": 17,
+      "pageLabel": "16",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-5-bps-saturated-states"
+    },
+    {
+      "level": 1,
+      "title": "Duality",
+      "number": "6",
+      "page": 20,
+      "pageLabel": "19",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-010-6-duality"
+    },
+    {
+      "level": 1,
+      "title": "Low energy theory near the singularities",
+      "number": "8",
+      "page": 28,
+      "pageLabel": "27",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-011-8-low-energy-theory-near-the-singularities"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries for determining the metric",
+      "number": "11",
+      "page": 37,
+      "pageLabel": "36",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-012-11-preliminaries-for-determining-the-metric"
+    },
+    {
+      "level": 2,
+      "title": "Some convenient facts",
+      "number": "11.2",
+      "page": 39,
+      "pageLabel": "38",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-013-112-some-convenient-facts"
+    },
+    {
+      "level": 2,
+      "title": "General structure of the curve",
+      "number": "11.3",
+      "page": 43,
+      "pageLabel": "42",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-014-113-general-structure-of-the-curve"
+    },
+    {
+      "level": 1,
+      "title": "Masses, periods and residues",
+      "number": "15",
+      "page": 52,
+      "pageLabel": "51",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-015-15-masses-periods-and-residues"
+    },
+    {
+      "level": 1,
+      "title": "Structure of the scale invariant theories",
+      "number": "16",
+      "page": 56,
+      "pageLabel": "55",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-016-16-structure-of-the-scale-invariant-theories"
+    },
+    {
+      "level": 2,
+      "title": "The massless case",
+      "number": "16.1",
+      "page": 57,
+      "pageLabel": "56",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-017-161-the-massless-case"
+    },
+    {
+      "level": 1,
+      "title": "The Theory Of The Residues",
+      "number": "17",
+      "page": 70,
+      "pageLabel": "69",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-018-17-the-theory-of-the-residues"
+    },
+    {
+      "level": 2,
+      "title": "The Meaning Of The Residues",
+      "number": "17.1",
+      "page": 71,
+      "pageLabel": "70",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-019-171-the-meaning-of-the-residues"
+    },
+    {
+      "level": 2,
+      "title": "The Cohomology Of X",
+      "number": "17.2",
+      "page": 73,
+      "pageLabel": "72",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-020-172-the-cohomology-of-x"
+    },
+    {
+      "level": 2,
+      "title": "Finding the Curves",
+      "number": "17.3",
+      "page": 75,
+      "pageLabel": "74",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-021-173-finding-the-curves"
+    },
+    {
+      "level": 2,
+      "title": "Determination Of The Equation For Nf = 4",
+      "number": "17.4",
+      "page": 81,
+      "pageLabel": "80",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-022-174-determination-of-the-equation-for-nf-4"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 87,
+      "pageLabel": "86",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-023-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 88,
+      "pageLabel": "87",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-024-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "1",
+      "words": 161,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "advanced study",
+          "heading": false
+        },
+        {
+          "term": "symmetry breaking",
+          "heading": false
+        },
+        {
+          "term": "monopoles",
+          "heading": false
+        },
+        {
+          "term": "chiral symmetry",
+          "heading": false
+        },
+        {
+          "term": "usa",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:hep-th/9408099v1 17 Aug 1994 hep-th/9408099, RU-94-60, IASSNS-HEP-94/55 Monopoles, Duality and Chiral Symmetry Breaking in N=2 Supersymmetric QCD N. Seiberg Department of Physics and Astronomy Rutgers University, Piscataway, NJ 08855-0849, USA and Institute for Advanced Study Princeton, NJ 08540, USA and E. Witten Institute for Advanced Study Princeton, NJ 08540, USA We study four dimensional N = 2",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-hep-th-9408099v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 7,
+      "labelStart": "1",
+      "labelEnd": "6",
+      "words": 1973,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gauge theories",
+          "heading": false
+        },
+        {
+          "term": "magnetic monopoles",
+          "heading": false
+        },
+        {
+          "term": "phase transitions",
+          "heading": false
+        },
+        {
+          "term": "gauge symmetry",
+          "heading": false
+        },
+        {
+          "term": "ﬁeld theories",
+          "heading": false
+        },
+        {
+          "term": "quantum moduli",
+          "heading": false
+        },
+        {
+          "term": "bare mass",
+          "heading": false
+        },
+        {
+          "term": "moduli space",
+          "heading": false
+        }
+      ],
+      "extract": "The holomorphic properties of supersymmetric ﬁeld theories [1-3] can be a powerful tool in deriving exact results about them [3-6]. In N = 1 theories in four dimensions, the superpotential and the coeﬃcients of the gauge kinetic terms are holomorphic and are constrained by these considerations. In four-dimensional N = 2 theories, the Kahler potential is also constrained by holomorphy [7] and therefore it can be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-a-warm-up-example-qed-with-matter",
+      "number": "2",
+      "title": "A warm-up example: QED with matter",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 339,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "electric charge",
+          "heading": false
+        },
+        {
+          "term": "qed",
+          "heading": true
+        },
+        {
+          "term": "hypermultiplets",
+          "heading": false
+        },
+        {
+          "term": "supersymmetry",
+          "heading": false
+        },
+        {
+          "term": "chiral",
+          "heading": false
+        },
+        {
+          "term": "neutral",
+          "heading": false
+        }
+      ],
+      "extract": "2.1. QED For background, we ﬁrst consider abelian gauge theories with N = 2 supersymmetry and charged matter hypermultiplets - that is, the N = 2 analog of ordinary QED. The “photon,” Aµ is accompanied by its N = 2 superpartners – two neutral Weyl spinors λ and ψ that are often called “photinos,” and a complex neutral scalar a. They form an irreducible N = 2 representation that can be decomposed as a sum of two N =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-22-the-classical-moduli-space",
+      "number": "2.2",
+      "title": "The classical moduli space",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 262,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "moduli space",
+          "heading": true
+        },
+        {
+          "term": "ﬂat directions",
+          "heading": false
+        },
+        {
+          "term": "global symmetry",
+          "heading": false
+        },
+        {
+          "term": "gauge symmetry",
+          "heading": false
+        }
+      ],
+      "extract": "The classical moduli space of this theory has a branch with non-zero a. Along this ﬂat direction the gauge symmetry is unbroken and all the M particles acquire a mass. Since the photon is massless, we will refer to this branch of the moduli space as the Coulomb branch. For k ≥2 and mi = 0 there are also ﬂat directions where M is non-zero. Along these directions the U(1) gauge symmetry is broken and therefore we will",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-23-the-quantum-moduli-space",
+      "number": "2.3",
+      "title": "The quantum moduli space",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "7",
+      "labelEnd": "9",
+      "words": 362,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coulomb branch",
+          "heading": false
+        },
+        {
+          "term": "higgs branch",
+          "heading": false
+        },
+        {
+          "term": "moduli space",
+          "heading": true
+        },
+        {
+          "term": "massless",
+          "heading": false
+        },
+        {
+          "term": "metric",
+          "heading": false
+        },
+        {
+          "term": "electrons",
+          "heading": false
+        },
+        {
+          "term": "corrected",
+          "heading": false
+        },
+        {
+          "term": "gauge",
+          "heading": false
+        }
+      ],
+      "extract": "Quantum mechanically, this theory is probably not well-deﬁned because it is not asymptotically free. However, it is often the case that such a theory is embedded in a 7 larger theory which is asymptotically free. In [9], we have encountered such a theory with k = 1 as the low energy limit of an asymptotically free SU(2) gauge theory. Below we will see more examples. The metric on the Higgs branch cannot be corrected",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-24-bps-saturated-states",
+      "number": "2.4",
+      "title": "BPS-saturated states",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 522,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nea nmad",
+          "heading": false
+        },
+        {
+          "term": "conserved charges",
+          "heading": false
+        },
+        {
+          "term": "states",
+          "heading": true
+        },
+        {
+          "term": "electrons",
+          "heading": false
+        },
+        {
+          "term": "broken",
+          "heading": false
+        },
+        {
+          "term": "linear combination",
+          "heading": false
+        },
+        {
+          "term": "quantum numbers",
+          "heading": false
+        },
+        {
+          "term": "breaking",
+          "heading": false
+        }
+      ],
+      "extract": "The N = 2 algebra has “large” representations with 16 states and “small” ones with only four states. As explained in [13], the masses of particles in small representations are determined by their quantum numbers. Indeed, in terms of the central extension Z in the N = 2 supersymmetry algebra, the mass of a particle in a small representation is M = √ 2|Z|. The N = 2 algebra requires that Z is a linear combination of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-classical-moduli-space-of-qcd-with-matter",
+      "number": "3",
+      "title": "Classical moduli space of QCD with matter",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 14,
+      "labelStart": "10",
+      "labelEnd": "13",
+      "words": 1043,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "higgs branches",
+          "heading": false
+        },
+        {
+          "term": "chiral superﬁelds",
+          "heading": false
+        },
+        {
+          "term": "coulomb branch",
+          "heading": false
+        },
+        {
+          "term": "gauge multiplets",
+          "heading": false
+        },
+        {
+          "term": "gauge symmetry",
+          "heading": false
+        },
+        {
+          "term": "ﬂat directions",
+          "heading": false
+        },
+        {
+          "term": "squarks",
+          "heading": false
+        },
+        {
+          "term": "gauge group",
+          "heading": false
+        }
+      ],
+      "extract": "We now turn to QCD with an SU(2) gauge group. The gluons are accompanied by Dirac fermions and complex scalars φ in the adjoint representation of the gauge group. We also add Nf hypermultiplets of quarks in the fundamental representation. (We will also consider the case of a single hypermultiplet in the adjoint representation, this being the N = 4 theory.) As in the previous section, each hypermultiplet contains a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-4-a-ﬁrst-look-at-the-quantum-theory",
+      "number": "4",
+      "title": "A ﬁrst look at the quantum theory",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-41-symmetries-of-the-quantum-theory",
+      "number": "4.1",
+      "title": "Symmetries of the quantum theory",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 276,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "global symmetry",
+          "heading": false
+        },
+        {
+          "term": "eqi",
+          "heading": false
+        },
+        {
+          "term": "e2iπ",
+          "heading": false
+        },
+        {
+          "term": "squarks",
+          "heading": false
+        }
+      ],
+      "extract": "Now we consider the quantum modiﬁcations to the symmetry structure. Since the one-loop beta function of the theory is proportional to 4 −Nf (higher order perturba- tive corrections to it vanish), we limit ourselves to Nf = 0, 1, 2, 3 where the theory is asymptotically free and to Nf = 4 where the theory will turn out to be scale invariant. The global U(1)R and the “parity” Z2 ⊂O(2Nf) are anomalous. For Nf > 0, a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-42-a-ﬁrst-look-at-the-quantum-moduli-space",
+      "number": "4.2",
+      "title": "A ﬁrst look at the quantum moduli space",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 17,
+      "labelStart": "14",
+      "labelEnd": "16",
+      "words": 883,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum moduli",
+          "heading": true
+        },
+        {
+          "term": "instanton corrections",
+          "heading": false
+        },
+        {
+          "term": "odd parity",
+          "heading": false
+        },
+        {
+          "term": "moduli space",
+          "heading": true
+        },
+        {
+          "term": "coulomb branch",
+          "heading": false
+        },
+        {
+          "term": "instanton factor",
+          "heading": false
+        },
+        {
+          "term": "assigning charge",
+          "heading": false
+        },
+        {
+          "term": "gauge symmetry",
+          "heading": false
+        }
+      ],
+      "extract": "We now begin the analysis of the quantum moduli space. The ﬁrst basic fact is that for large ﬁelds, the theory is weakly coupled and the quantum moduli space is well approximated by the classical moduli space. Consider ﬁrst the Higgs branches. The SO(2Nf) × SU(2)/SO(2Nf −4) × SU(2) × SU(2) structure should persist quantum mechanically. This structure admits a unique hyper-Kahler metric up to a constant multiple (and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-5-bps-saturated-states",
+      "number": "5",
+      "title": "BPS-saturated states",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 20,
+      "labelStart": "16",
+      "labelEnd": "19",
+      "words": 1228,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bps-saturated states",
+          "heading": true
+        },
+        {
+          "term": "electric charge",
+          "heading": false
+        },
+        {
+          "term": "magnetic charge",
+          "heading": false
+        },
+        {
+          "term": "charge rotations",
+          "heading": false
+        },
+        {
+          "term": "charge operator",
+          "heading": false
+        },
+        {
+          "term": "hypermultiplets",
+          "heading": false
+        },
+        {
+          "term": "spinor representation",
+          "heading": false
+        },
+        {
+          "term": "bare mass",
+          "heading": false
+        }
+      ],
+      "extract": "As we explained in our discussion of QED, a special role is played by the BPS-saturated states which are in “small” representations of the N = 2 algebra and are frequently the only stable states in the spectrum. Since on the Higgs branches the gauge group is completely broken, there are no electric and magnetic charges that can appear as central charges in the N = 2 algebra. The only 16 central charge could be a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-6-duality",
+      "number": "6",
+      "title": "Duality",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 28,
+      "labelStart": "19",
+      "labelEnd": "27",
+      "words": 3334,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "massless states",
+          "heading": false
+        },
+        {
+          "term": "massless particles",
+          "heading": false
+        },
+        {
+          "term": "bps-saturated states",
+          "heading": false
+        },
+        {
+          "term": "massless ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "magnetic monopole",
+          "heading": false
+        },
+        {
+          "term": "becomes massless",
+          "heading": false
+        },
+        {
+          "term": "bps-saturated one-particle",
+          "heading": false
+        },
+        {
+          "term": "magnetic charges",
+          "heading": false
+        }
+      ],
+      "extract": "As in the pure gauge theory [9], we can perform SL(2, Z) duality transformation on the low energy ﬁelds. Although they are non-local on the photon ﬁeld Aµ, they act simply on (aD, a). Several new issues appear when matter ﬁelds are present. 19 First, consider the situation of one massive quark with mass mNf and examine what happens when a approaches mNf / √ 2 where one of the elementary quarks becomes mass- less. As",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-8-low-energy-theory-near-the-singularities",
+      "number": "8",
+      "title": "Low energy theory near the singularities",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 37,
+      "labelStart": "27",
+      "labelEnd": "36",
+      "words": 3698,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "energy theory",
+          "heading": true
+        },
+        {
+          "term": "theory near",
+          "heading": true
+        },
+        {
+          "term": "singularities",
+          "heading": true
+        },
+        {
+          "term": "monopole ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "massless particles",
+          "heading": false
+        },
+        {
+          "term": "monopoles condense",
+          "heading": false
+        },
+        {
+          "term": "light ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "four massless",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we study the low energy eﬀective ﬁeld theory near the singularities. For simplicity, we will focus on the massless theories. It is straightforward to extend our 27 considerations to the massive ones. The light states near all the singularities are a photon multiplet and some charged ﬁelds. Using the duality transformation, the low energy theory near any of the singularities is an abelian gauge theory",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-11-preliminaries-for-determining-the-metric",
+      "number": "11",
+      "title": "Preliminaries for determining the metric",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 39,
+      "labelStart": "36",
+      "labelEnd": "38",
+      "words": 646,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "integer-valued matrices",
+          "heading": false
+        },
+        {
+          "term": "electric charge",
+          "heading": false
+        },
+        {
+          "term": "modular curve",
+          "heading": false
+        },
+        {
+          "term": "symmetry acting",
+          "heading": false
+        },
+        {
+          "term": "duality symmetry",
+          "heading": false
+        },
+        {
+          "term": "conventions",
+          "heading": false
+        },
+        {
+          "term": "energy limit",
+          "heading": false
+        },
+        {
+          "term": "monodromy",
+          "heading": false
+        }
+      ],
+      "extract": "In the remainder of this paper we will ﬁnd the exact solution for the low energy eﬀective action, metric on moduli space, and particle masses for the various theories. The basic 36 idea, as in [9], involves introducing a suitable family of elliptic curves, and interpreting (aD, a) as periods of an appropriate family of meromorphic one-forms. 11.1. Nf = 0 It is appropriate to start ﬁrst by reconsidering the Nf = 0",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-112-some-convenient-facts",
+      "number": "11.2",
+      "title": "Some convenient facts",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 43,
+      "labelStart": "38",
+      "labelEnd": "42",
+      "words": 1230,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "branch points",
+          "heading": false
+        },
+        {
+          "term": "monodromy near",
+          "heading": false
+        },
+        {
+          "term": "magnetic monopoles",
+          "heading": false
+        },
+        {
+          "term": "monodromy around",
+          "heading": false
+        },
+        {
+          "term": "points coincide",
+          "heading": false
+        },
+        {
+          "term": "cubic curve",
+          "heading": false
+        },
+        {
+          "term": "monodromies",
+          "heading": false
+        },
+        {
+          "term": "nes",
+          "heading": false
+        }
+      ],
+      "extract": "To prove that (11.7) is the modular curve of Γ0(4) is a fairly simple exercise using the addition law on a cubic curve.5 For our purposes, it will be more helpful to simply work out the singularities and the monodromies of the family. 5 Γ0(4) parametrizes elliptic curves with a cyclic subgroup of order four. Such a subgroup is generated by the points P± with coordinates x = Λ2/2, y = ± 1 2Λ2√ Λ2 −u; this follows",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-113-general-structure-of-the-curve",
+      "number": "11.3",
+      "title": "General structure of the curve",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 52,
+      "labelStart": "42",
+      "labelEnd": "51",
+      "words": 3585,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "curve",
+          "heading": true
+        },
+        {
+          "term": "instanton amplitude",
+          "heading": false
+        },
+        {
+          "term": "massless particles",
+          "heading": false
+        },
+        {
+          "term": "bare masses",
+          "heading": false
+        },
+        {
+          "term": "monodromy conjugate",
+          "heading": false
+        },
+        {
+          "term": "monodromies conjugate",
+          "heading": false
+        },
+        {
+          "term": "cubic term",
+          "heading": false
+        },
+        {
+          "term": "massive theory",
+          "heading": false
+        }
+      ],
+      "extract": "In trying to generalize (11.7) to Nf > 0, it is useful to ﬁrst extract some properties of the Nf = 0 curve that we will try to generalize: (1) The family is of the form y2 = F(x, u, Λ), where F is a polynomial in x, u, and Λ that is at most cubic in x and u. (2) The part of F(x, u, Λ) that is cubic in x and u is F0 = x2(x −u). (3) If one assigns the U(1)R charges 4 to u and x, 2 to Λ, and 6 to y, then the family is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-15-masses-periods-and-residues",
+      "number": "15",
+      "title": "Masses, periods and residues",
+      "level": 1,
+      "pageStart": 52,
+      "pageEnd": 56,
+      "labelStart": "51",
+      "labelEnd": "55",
+      "words": 1702,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bare masses",
+          "heading": false
+        },
+        {
+          "term": "residues",
+          "heading": true
+        },
+        {
+          "term": "monodromies",
+          "heading": false
+        },
+        {
+          "term": "contours",
+          "heading": false
+        },
+        {
+          "term": "jumping",
+          "heading": false
+        },
+        {
+          "term": "complex conjugation",
+          "heading": false
+        },
+        {
+          "term": "bps-saturated",
+          "heading": false
+        },
+        {
+          "term": "loops around",
+          "heading": false
+        }
+      ],
+      "extract": "As in [9], the particle masses and the low energy metric and couplings are now de- termined by equating a and aD with periods of a certain meromorphic one-form λ on the curve E. λ has two characteristics: (i) λ may have poles but (as long as the monodromies are in SL(2, Z)) its residues vanish; (ii) to achieve positivity of the metric on the quantum moduli space, its derivative with respect to u is proportional to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-16-structure-of-the-scale-invariant-theories",
+      "number": "16",
+      "title": "Structure of the scale invariant theories",
+      "level": 1,
+      "pageStart": 56,
+      "pageEnd": 57,
+      "labelStart": "55",
+      "labelEnd": "56",
+      "words": 397,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bare masses",
+          "heading": false
+        },
+        {
+          "term": "theories",
+          "heading": true
+        },
+        {
+          "term": "analyze",
+          "heading": false
+        },
+        {
+          "term": "invariant",
+          "heading": true
+        },
+        {
+          "term": "coeﬃcients",
+          "heading": false
+        },
+        {
+          "term": "real",
+          "heading": false
+        },
+        {
+          "term": "scale",
+          "heading": true
+        }
+      ],
+      "extract": "In this section, we will analyze the Nf = 4 and N = 4 theories. In the absence of bare masses, those theories are conformally invariant. In the presence of N = 2-invariant bare masses, their properties (or at least the properties that we can analyze) are much richer. 8 This equation has the following interpretation. The curve (15.5) is real for real u, that is, the coeﬃcients in the equation are real. There are two",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-161-the-massless-case",
+      "number": "16.1",
+      "title": "The massless case",
+      "level": 2,
+      "pageStart": 57,
+      "pageEnd": 70,
+      "labelStart": "56",
+      "labelEnd": "69",
+      "words": 4520,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "massless",
+          "heading": true
+        },
+        {
+          "term": "weak coupling",
+          "heading": false
+        },
+        {
+          "term": "massless elementary",
+          "heading": false
+        },
+        {
+          "term": "half-lattice points",
+          "heading": false
+        },
+        {
+          "term": "cubic curve",
+          "heading": false
+        },
+        {
+          "term": "elementary hypermultiplet",
+          "heading": false
+        },
+        {
+          "term": "scaling limits",
+          "heading": false
+        },
+        {
+          "term": "massless particles",
+          "heading": false
+        }
+      ],
+      "extract": "The ﬁrst step is to ﬁnd the right family of curves for the conformally invariant case, that is when the bare masses are zero. In this case, the classical formulas a = \u001a 1 2 √ 2u, for Nf = 4 √ 2u for N = 4, aD = τa (16.2) are exact. So we wish to ﬁnd a curve y2 = F(x, u, τ) such that the diﬀerential form ω = ( √ 2 8π dx y for Nf = 4 √ 2 4π dx y for N = 4, (16.3) 9 Holomorphy of F is needed in order for the coeﬃcient",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-17-the-theory-of-the-residues",
+      "number": "17",
+      "title": "The Theory Of The Residues",
+      "level": 1,
+      "pageStart": 70,
+      "pageEnd": 71,
+      "labelStart": "69",
+      "labelEnd": "70",
+      "words": 422,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "residues",
+          "heading": true
+        },
+        {
+          "term": "machinery",
+          "heading": false
+        },
+        {
+          "term": "exploited",
+          "heading": false
+        },
+        {
+          "term": "renormalization group",
+          "heading": false
+        },
+        {
+          "term": "present section",
+          "heading": false
+        },
+        {
+          "term": "veriﬁed",
+          "heading": false
+        },
+        {
+          "term": "theory",
+          "heading": true
+        },
+        {
+          "term": "derivation",
+          "heading": false
+        }
+      ],
+      "extract": "One important diﬀerence between the mathematical structure of the N = 2 theories with matter considered in this paper and the “pure gauge theory” studied in [9] is that in the presence of matter the monodromies do not simply transform (aD, a) linearly, by SL(2, Z) transformations; a and aD also pick up additive constants under monodromy. As we explained in section 15, these constants can be detected as the residues",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-171-the-meaning-of-the-residues",
+      "number": "17.1",
+      "title": "The Meaning Of The Residues",
+      "level": 2,
+      "pageStart": 71,
+      "pageEnd": 73,
+      "labelStart": "70",
+      "labelEnd": "72",
+      "words": 686,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "residues",
+          "heading": true
+        },
+        {
+          "term": "cohomology class",
+          "heading": false
+        },
+        {
+          "term": "periods",
+          "heading": false
+        },
+        {
+          "term": "one-form",
+          "heading": false
+        },
+        {
+          "term": "obeying",
+          "heading": false
+        },
+        {
+          "term": "inﬁnity",
+          "heading": false
+        },
+        {
+          "term": "meaning",
+          "heading": true
+        },
+        {
+          "term": "perhaps",
+          "heading": false
+        }
+      ],
+      "extract": "The Nf = 4 theory is controlled by a curve y2 = F(x, u, mi, τ) and a diﬀerential form λ obeying dλ du = ω + exact form in x (17.2) with ω = √ 2 8π dx y . (17.3) For N = 4 the structure is the same, except that 8π is replaced by 4π. F should be such that the residues of λ are linear in the quark bare masses. This is a severe restriction on F; we will see that it determines F uniquely (up to the usual changes of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-172-the-cohomology-of-x",
+      "number": "17.2",
+      "title": "The Cohomology Of X",
+      "level": 2,
+      "pageStart": 73,
+      "pageEnd": 75,
+      "labelStart": "72",
+      "labelEnd": "74",
+      "words": 849,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cohomology",
+          "heading": true
+        },
+        {
+          "term": "seven dimensional",
+          "heading": false
+        },
+        {
+          "term": "cohomology class",
+          "heading": false
+        },
+        {
+          "term": "residue vanishes",
+          "heading": false
+        },
+        {
+          "term": "eiu",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential forms",
+          "heading": false
+        },
+        {
+          "term": "singularity",
+          "heading": false
+        },
+        {
+          "term": "odd",
+          "heading": false
+        }
+      ],
+      "extract": "It will be useful to know something about the cohomology of the complex manifold X described by the equation y2 = F(x, u) = (x −e1u)(x −e2u)(x −e3u) + lower order terms. (17.13) It is helpful to compactify X, which will be needed anyway to do the calculation just mentioned. We do this by introducing another variable v and making the equation homo- geneous. First we extend F to a polynomial F(x, u, v) homogeneous of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-173-finding-the-curves",
+      "number": "17.3",
+      "title": "Finding the Curves",
+      "level": 2,
+      "pageStart": 75,
+      "pageEnd": 81,
+      "labelStart": "74",
+      "labelEnd": "80",
+      "words": 2101,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "triality permutes",
+          "heading": false
+        },
+        {
+          "term": "double cover",
+          "heading": false
+        },
+        {
+          "term": "intersection pairings",
+          "heading": false
+        },
+        {
+          "term": "chirality spinor",
+          "heading": false
+        },
+        {
+          "term": "sign changes",
+          "heading": false
+        },
+        {
+          "term": "masses transform",
+          "heading": false
+        },
+        {
+          "term": "expansion coeﬃcients",
+          "heading": false
+        },
+        {
+          "term": "weyl transformation",
+          "heading": false
+        }
+      ],
+      "extract": "Now we would like to ﬁnd a suitable set of curves Ca on which λ will have poles. In this section we set v = 1 and work on the uncompactiﬁed manifold X given by y2 = F(x, u). To guess what the Ca may be, let us look back to some of the models treated earlier, for instance the massive Nf = 2 theory. In equation (15.3), we found an explicit formula for λ in this theory; it had poles at x = ±1 8Λ2 2 y = ± i 8Λ2 2(m1 ±",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-174-determination-of-the-equation-for-nf-4",
+      "number": "17.4",
+      "title": "Determination Of The Equation For Nf = 4",
+      "level": 2,
+      "pageStart": 81,
+      "pageEnd": 87,
+      "labelStart": "80",
+      "labelEnd": "86",
+      "words": 1881,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "α2β",
+          "heading": false
+        },
+        {
+          "term": "e1u",
+          "heading": false
+        },
+        {
+          "term": "desired residues",
+          "heading": false
+        },
+        {
+          "term": "e1eu",
+          "heading": false
+        },
+        {
+          "term": "mass-deformed theory",
+          "heading": false
+        },
+        {
+          "term": "triality",
+          "heading": false
+        },
+        {
+          "term": "e2eu",
+          "heading": false
+        },
+        {
+          "term": "e3eu",
+          "heading": false
+        }
+      ],
+      "extract": "We have ﬁnally assembled the tools to determine the precise function F in our equa- tions y2 = F(x, u). First we do this for the theory with Nf = 4. We will determine the expansion of ω in terms of the C(i)a for some given i; we may as well pick i = 1. (The expansions in terms of the C(j)a for j̸ = 1 are then determined by the above triality formulas.) By requiring that ω = −1 √ 2 P a ma[C(1)a], F will be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 87,
+      "pageEnd": 88,
+      "labelStart": "86",
+      "labelEnd": "87",
+      "words": 53,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "de-fg",
+          "heading": false
+        },
+        {
+          "term": "leigh",
+          "heading": false
+        },
+        {
+          "term": "plesser",
+          "heading": false
+        }
+      ],
+      "extract": "We would like to thank T. Banks, K. Intriligator, R. Leigh, G. Moore, R. Plesser and S. Shenker for useful discussions and P. Deligne for explanations that made possible the analysis in section 17. This work was supported in part by DOE grant #DE-FG05- 90ER40559 and in part by NSF grant #PHY92-45317. 86",
+      "extractCut": false
+    },
+    {
+      "id": "sec-024-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 88,
+      "pageEnd": 88,
+      "labelStart": "87",
+      "labelEnd": "87",
+      "words": 374,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "nucl",
+          "heading": false
+        },
+        {
+          "term": "seiberg",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "hep-th",
+          "heading": false
+        },
+        {
+          "term": "olive",
+          "heading": false
+        },
+        {
+          "term": "rabinovici",
+          "heading": false
+        },
+        {
+          "term": "lett",
+          "heading": false
+        }
+      ],
+      "extract": "[1] M.A. Shifman and A.I. Vainshtein, Nucl. Phys. B277 (1986) 456; Nucl. Phys. B359 (1991) 571. [2] D. Amati, K. Konishi, Y. Meurice, G.C. Rossi and G. Veneziano, Phys. Rep. 162 (1988) 169 and references therein. [3] N. Seiberg, Phys. Lett. 318B (1993) 469. [4] N. Seiberg, Phys. Rev. D49 (1994) 6857, hep-th/9402044. [5] K. Intriligator, R. Leigh and N. Seiberg, Phys. Rev. D50 (1994) 1092, hep-th/9403198. [6] V.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "massless monopoles",
+      "heading": false
+    },
+    {
+      "term": "massless theory",
+      "heading": false
+    },
+    {
+      "term": "gauge symmetry",
+      "heading": false
+    },
+    {
+      "term": "four massless",
+      "heading": false
+    },
+    {
+      "term": "massless ﬁelds",
+      "heading": false
+    },
+    {
+      "term": "massless particles",
+      "heading": false
+    },
+    {
+      "term": "massless states",
+      "heading": false
+    },
+    {
+      "term": "massless quarks",
+      "heading": false
+    },
+    {
+      "term": "massless multiplet",
+      "heading": false
+    },
+    {
+      "term": "global symmetry",
+      "heading": false
+    },
+    {
+      "term": "bare masses",
+      "heading": false
+    },
+    {
+      "term": "magnetic monopoles",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 67,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 69,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 71,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 72,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 73,
+      "label": "72",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 74,
+      "label": "73",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 75,
+      "label": "74",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 76,
+      "label": "75",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 77,
+      "label": "76",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 78,
+      "label": "77",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 79,
+      "label": "78",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 80,
+      "label": "79",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 81,
+      "label": "80",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 82,
+      "label": "81",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 83,
+      "label": "82",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 84,
+      "label": "83",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 85,
+      "label": "84",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 86,
+      "label": "85",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 87,
+      "label": "86",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 88,
+      "label": "87",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 26,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 26,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p88); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 22
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 26 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-hep-th-9408099v1"
+  }
+}

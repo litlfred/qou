@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/pjm-v161-n1-p02-p/sections/sec-001",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "it",
+  "pageStart": 22,
+  "pageEnd": 32,
+  "contains": [
+    "library/pjm-v161-n1-p02-p/blocks/prose-sec-001",
+    "library/pjm-v161-n1-p02-p/blocks/lem-sec-001-01",
+    "library/pjm-v161-n1-p02-p/blocks/prop-sec-001-02",
+    "library/pjm-v161-n1-p02-p/blocks/lem-sec-001-03",
+    "library/pjm-v161-n1-p02-p/blocks/lem-sec-001-04",
+    "library/pjm-v161-n1-p02-p/blocks/lem-sec-001-05"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/pjm-v161-n1-p02-p/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/pjm-v161-n1-p02-p/manifest.jsonld",
+  "provenance": "ingested"
+}

@@ -1,0 +1,943 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-9806163v1",
+  "title": "Weights of Markov traces on Hecke algebras",
+  "variant": "pdf",
+  "pages": 23,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Preliminaries and Notation",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-preliminaries-and-notation"
+    },
+    {
+      "level": 2,
+      "title": "Partitions and Standard Tableaux",
+      "number": "1.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-11-partitions-and-standard-tableaux"
+    },
+    {
+      "level": 2,
+      "title": "Schur Functions",
+      "number": "1.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-12-schur-functions"
+    },
+    {
+      "level": 2,
+      "title": "The Braid Group",
+      "number": "1.3",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-13-the-braid-group"
+    },
+    {
+      "level": 1,
+      "title": "Hecke Algebra of type $B_n$",
+      "number": "2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-2-hecke-algebra-of-type-b-n"
+    },
+    {
+      "level": 1,
+      "title": "Representations of the Hecke algebra of type $B$ onto a Reduced Hecke Algebra of type $A$",
+      "number": "3",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-3-representations-of-the-hecke-algebra-of-type-b"
+    },
+    {
+      "level": 2,
+      "title": "The Hecke Algebra of type $A$",
+      "number": "3.1",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-31-the-hecke-algebra-of-type-a"
+    },
+    {
+      "level": 2,
+      "title": "A Homomorphism of $H_n(q,-q^{r_1+m})$ onto a reduced algebra of $H_{n+f}(q)$",
+      "number": "3.2",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-32-a-homomorphism-of-h-nq-qr-1m-onto-a-reduced-a"
+    },
+    {
+      "level": 1,
+      "title": "Markov Traces on the Hecke Algebra of type $B$",
+      "number": "4",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-4-markov-traces-on-the-hecke-algebra-of-type-b"
+    },
+    {
+      "level": 1,
+      "title": "The Weight Formula",
+      "number": "5",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-5-the-weight-formula"
+    },
+    {
+      "level": 1,
+      "title": "Markov Trace for the Hecke algebra of type D",
+      "number": "6",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-6-markov-trace-for-the-hecke-algebra-of-type-d"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 746,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "reduced hecke",
+          "heading": false
+        },
+        {
+          "term": "markov trace",
+          "heading": false
+        },
+        {
+          "term": "type onto",
+          "heading": false
+        },
+        {
+          "term": "coset representatives",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": false
+        },
+        {
+          "term": "lambropolou",
+          "heading": false
+        },
+        {
+          "term": "weight formula",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/9806163v1 [math.CO] 30 Jun 1998 Weights of Markov Traces on Hecke Algebras∗ R.C. Orellana November 16, 2021 Abstract We compute the weights, i.e. the values at the minimal idempotents, for the Markov trace on the Hecke algebra of type Bn and type Dn. In order to prove the weight formula, we deﬁne representations of the Hecke algebra of type B onto a reduced Hecke Algebra of type A. To compute the weights",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-9806163v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-preliminaries-and-notation",
+      "number": "1",
+      "title": "Preliminaries and Notation",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 300,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vector vec",
+          "heading": false
+        },
+        {
+          "term": "weight vector",
+          "heading": false
+        },
+        {
+          "term": "simple modules",
+          "heading": false
+        },
+        {
+          "term": "bigoplus",
+          "heading": false
+        },
+        {
+          "term": "vertex corresponding",
+          "heading": false
+        }
+      ],
+      "extract": "Let $F$ be a field of characteristic $0$. The algebra of $n\\times n$ matrices over $F$ is denoted by $M_n(F)=M_n$. Let $A\\subset B$ be an inclusion of semisimple algebras. Then $A=\\bigoplus_{i=1}^m A_i$ and $B=\\bigoplus_{j=1}^lB_j$, with $A_i\\cong M_{a_i}$, $B_j\\cong M_{b_j}$ and $a_i,\\ b_j\\in \\mathbb{N}$. Since a simple $B_j$ module is also an $A$ module, it can be decomposed into a direct sum of simple $A$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-partitions-and-standard-tableaux",
+      "number": "1.1",
+      "title": "Partitions and Standard Tableaux",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 756,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "standard tableaux",
+          "heading": true
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "alpha boxes",
+          "heading": false
+        },
+        {
+          "term": "alpha leq",
+          "heading": false
+        },
+        {
+          "term": "shape alpha",
+          "heading": false
+        },
+        {
+          "term": "alpha geq",
+          "heading": false
+        },
+        {
+          "term": "alpha subset",
+          "heading": false
+        },
+        {
+          "term": "appropriate boxes",
+          "heading": false
+        }
+      ],
+      "extract": "A *partition* of $n$ is a sequence of positive numbers $\\alpha=(\\alpha_1,\\ldots, \\alpha_k)$ such that $\\alpha_1\\geq \\alpha_2\\geq \\ldots \\geq \\alpha_k \\geq 0$ and $n=|\\alpha|=\\alpha_1+\\alpha_2+\\ldots +\\alpha_k$. The $\\alpha_i$'s are called the *parts* of $\\alpha$, and the number of nonzero parts of $\\alpha$ is called the *length* of $\\alpha$, denoted by $l(\\alpha)$. If we say $l(\\alpha)\\leq r_1$, then we we will mean",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-schur-functions",
+      "number": "1.2",
+      "title": "Schur Functions",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 361,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chi alpha",
+          "heading": false
+        },
+        {
+          "term": "alpha delta",
+          "heading": false
+        },
+        {
+          "term": "schur",
+          "heading": true
+        },
+        {
+          "term": "slr",
+          "heading": false
+        },
+        {
+          "term": "prod leq",
+          "heading": false
+        },
+        {
+          "term": "j-i",
+          "heading": false
+        },
+        {
+          "term": "schur function",
+          "heading": false
+        }
+      ],
+      "extract": "For details and proofs on the results mentioned in this subsection we refer the reader to [@mc] Ch.I, sec. 3. Suppose $x_1,x_2,\\ldots x_r$ is a finite set of variables. For some partition $\\alpha$ we set $x^{\\alpha}=x_1^{\\alpha_1}\\ldots x_r^{\\alpha_r}$. Let $\\delta=[r-1,r-2,\\ldots,1,0]$. We define the following determinant. $$a_{\\alpha+\\delta}=\\det(x_i^{\\lambda_j+r-j})$$ This determinant is divisible in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-the-braid-group",
+      "number": "1.3",
+      "title": "The Braid Group",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 394,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sigma tilde",
+          "heading": false
+        },
+        {
+          "term": "delta tilde",
+          "heading": false
+        },
+        {
+          "term": "tilde rho",
+          "heading": false
+        },
+        {
+          "term": "full-twist delta",
+          "heading": false
+        },
+        {
+          "term": "ldots tilde",
+          "heading": false
+        },
+        {
+          "term": "sigma mbox",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": true
+        },
+        {
+          "term": "mathcal",
+          "heading": false
+        }
+      ],
+      "extract": ".1in []{#sec-prelim label=\"sec-prelim\"} The braid group of type $A$, $\\mathcal{B}_n(A)$, can be defined algebraically by generators $\\tilde{\\sigma}_1,\\tilde{\\sigma}_2, \\ldots, \\tilde{\\sigma}_{n-1}$ and relations $$\\tilde{\\sigma}_i\\tilde{\\sigma}_j=\\tilde{\\sigma}_j\\tilde{\\sigma}_i \\ \\ \\ \\ \\mbox{if $\\ |i-j|>1$}, \\label{eq:BR1}$$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-2-hecke-algebra-of-type-b-n",
+      "number": "2",
+      "title": "Hecke Algebra of type $B_n$",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "9",
+      "words": 615,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ldots n-k",
+          "heading": false
+        },
+        {
+          "term": "mathbb mathcal",
+          "heading": false
+        },
+        {
+          "term": "coset representatives",
+          "heading": false
+        },
+        {
+          "term": "beta",
+          "heading": false
+        },
+        {
+          "term": "hecke",
+          "heading": true
+        },
+        {
+          "term": "alpha",
+          "heading": false
+        },
+        {
+          "term": "defining relations",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": false
+        }
+      ],
+      "extract": "In this context, we will mean by the Hecke algebra $H_n(q,Q)$ of type $B_n$ the free complex algebra with 1 and generators $t, g_1, g_2, \\ldots, g_{n-1}$ and parameters $q,Q \\in \\mathbb{C}$ with defining relations 1. $g_{i}g_{i+1}g_{i}=g_{i+1}g_{i}g_{i+1}$ for $i=1,2, \\ldots, n-2$; 2. $g_{i}g_{j}= g_{j}g_{i}$, whenever $\\mid i-j \\mid \\geq 2$; 3. $g_i^2 = (q-1)g_i +q$ for $i=1,2, \\ldots, n-1$; 4. $t^2 = (Q-1)t +Q$;",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-representations-of-the-hecke-algebra-of-type-b",
+      "number": "3",
+      "title": "Representations of the Hecke algebra of type $B$ onto a Reduced Hecke Algebra of type $A$",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 9,
+      "summary": null,
+      "keywords": [],
+      "extract": "Representations of the Hecke algebra of type B onto",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-31-the-hecke-algebra-of-type-a",
+      "number": "3.1",
+      "title": "The Hecke Algebra of type $A$",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 693,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "standard tableau",
+          "heading": false
+        },
+        {
+          "term": "tableau obtained",
+          "heading": false
+        },
+        {
+          "term": "tilde",
+          "heading": false
+        },
+        {
+          "term": "cong bigoplus",
+          "heading": false
+        },
+        {
+          "term": "full-twist",
+          "heading": false
+        },
+        {
+          "term": "ftr",
+          "heading": false
+        },
+        {
+          "term": "vdash",
+          "heading": false
+        },
+        {
+          "term": "box containing",
+          "heading": false
+        }
+      ],
+      "extract": "By the Hecke algebra of type $A_{n-1}$, $H_n(q)$, we mean the free complex algebra with generators $\\tilde{g}_1$, ..., $\\tilde{g}_{n-1}$ and 1 with parameter $q\\in \\mathbb{C}$ and defining relations 1. $\\tilde{g}_{i}\\tilde{g}_{i+1}\\tilde{g}_{i}=\\tilde{g}_{i+1}\\tilde{g}_{i}\\tilde{g}_{i+1}$ for $i=1,2, \\ldots, n-2$; 2. $\\tilde{g}_{i}\\tilde{g}_{j}= \\tilde{g}_{j}\\tilde{g}_{i}$, whenever $\\mid i-j \\mid \\geq 2$; 3.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-32-a-homomorphism-of-h-nq-qr-1m-onto-a-reduced-a",
+      "number": "3.2",
+      "title": "A Homomorphism of $H_n(q,-q^{r_1+m})$ onto a reduced algebra of $H_{n+f}(q)$",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 14,
+      "labelStart": "10",
+      "labelEnd": "14",
+      "words": 1865,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lambda vdash",
+          "heading": false
+        },
+        {
+          "term": "alpha lambda",
+          "heading": false
+        },
+        {
+          "term": "gamma lambda",
+          "heading": false
+        },
+        {
+          "term": "tilde rho",
+          "heading": false
+        },
+        {
+          "term": "lambda delta",
+          "heading": false
+        },
+        {
+          "term": "lambda otimes",
+          "heading": false
+        },
+        {
+          "term": "ftr",
+          "heading": false
+        },
+        {
+          "term": "bigoplus lambda",
+          "heading": false
+        }
+      ],
+      "extract": "In ([@w1], Cor. 2.3) Wenzl defined a special set of minimal idempotents of $H_f(q)$ indexed by the standard tableaux. The sum of these idempotents is 1. These minimal idempotents are well-defined whenever $H_f(q)$ is semisimple. If $p\\in H_f(q)$ is an idempotent then the *reduced algebra* of $H_f(q)$ is $pH_f(q)p:= \\{pap\\, |\\, a\\in H_f(q)\\}$. Let $\\lambda\\vdash f$ and $t^{\\lambda}$ be a standard tableau of shape",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-4-markov-traces-on-the-hecke-algebra-of-type-b",
+      "number": "4",
+      "title": "Markov Traces on the Hecke Algebra of type $B$",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "16",
+      "words": 695,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "markov",
+          "heading": true
+        },
+        {
+          "term": "markov trace",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": true
+        },
+        {
+          "term": "longrightarrow mathbb",
+          "heading": false
+        },
+        {
+          "term": "trace function",
+          "heading": false
+        },
+        {
+          "term": "coset representative",
+          "heading": false
+        },
+        {
+          "term": "ldots",
+          "heading": false
+        },
+        {
+          "term": "double coset",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we give the necessary background on Markov traces. We refer the reader to [@gl] or [@g] for the details. A *trace* function on $H_{\\infty}(q,Q)$ is a $\\mathbb{C}(q,Q)$-linear map $\\phi:H_{\\infty}(q,Q)\\longrightarrow \\mathbb{C}(q,Q)$ such that $\\phi (hh')=\\phi (h'h)$ for all $h,h' \\in H_{\\infty}(q,Q)$. This definition is in fact valid for any associative algebra over a commutative ground ring. In the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-5-the-weight-formula",
+      "number": "5",
+      "title": "The Weight Formula",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 21,
+      "labelStart": "16",
+      "labelEnd": "21",
+      "words": 2004,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "markov trace",
+          "heading": false
+        },
+        {
+          "term": "lambda otimes",
+          "heading": false
+        },
+        {
+          "term": "lambda tau",
+          "heading": false
+        },
+        {
+          "term": "algebra lambda",
+          "heading": false
+        },
+        {
+          "term": "markov property",
+          "heading": false
+        },
+        {
+          "term": "define markov",
+          "heading": false
+        },
+        {
+          "term": "conditional expectation",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we define for every pair of partitions, $(\\alpha, \\beta)$, a rational function in $q$ and $Q$, $W_{(\\alpha,\\beta)}(q,Q)$. We will show that this function is a weight for the Markov trace defined by Geck and Lambropolou [@gl] for the Hecke algebra of type $B$. If we denote the weights by $\\omega_{(\\alpha,\\beta)}$ then the Markov trace, $tr$, can be written as follows:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-6-markov-trace-for-the-hecke-algebra-of-type-d",
+      "number": "6",
+      "title": "Markov Trace for the Hecke algebra of type D",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 23,
+      "labelStart": "21",
+      "labelEnd": "23",
+      "words": 773,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hecke algebra",
+          "heading": true
+        },
+        {
+          "term": "markov trace",
+          "heading": true
+        },
+        {
+          "term": "type",
+          "heading": true
+        },
+        {
+          "term": "meinolf",
+          "heading": false
+        },
+        {
+          "term": "hoefsmit",
+          "heading": false
+        },
+        {
+          "term": "geck",
+          "heading": false
+        },
+        {
+          "term": "gigi",
+          "heading": false
+        },
+        {
+          "term": "wenzl",
+          "heading": false
+        }
+      ],
+      "extract": "Markov Trace for the Hecke algebra of type D The easiest way to study Markov traces on the Hecke algebras of type D is by embedding these algebras into those for type B, and then applying the results for type B. As observed by Hoefsmit [H], in order to obtain an embedding of HD n (q) into HB n (q, Q) we have to set the parameter Q equal to 1. Notice that in this case we have t2 = 1. The Hecke algebra of type D is",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "alpha ldots",
+      "heading": false
+    },
+    {
+      "term": "alpha beta",
+      "heading": false
+    },
+    {
+      "term": "ldots tilde",
+      "heading": false
+    },
+    {
+      "term": "alpha lambda",
+      "heading": false
+    },
+    {
+      "term": "alpha delta",
+      "heading": false
+    },
+    {
+      "term": "hecke algebra",
+      "heading": true
+    },
+    {
+      "term": "alpha subset",
+      "heading": false
+    },
+    {
+      "term": "partition alpha",
+      "heading": false
+    },
+    {
+      "term": "alpha boxes",
+      "heading": false
+    },
+    {
+      "term": "alpha leq",
+      "heading": false
+    },
+    {
+      "term": "markov trace",
+      "heading": true
+    },
+    {
+      "term": "alpha geq",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p21); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-9806163v1"
+  }
+}

@@ -1,0 +1,346 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-ph-0010012v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-ph-0010012v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "This is a short survey of some results of P. Bleher, J. Neuheisel, B. Shiffman and the author on random polynomials and their generalizations to holomorphic (and almost-holomorphic) sections of ample line bundles, mainly following [@BSZ1; @BSZ2; @BSZ3; @N; @SZ1; @SZ2; @SZ3; @SZ4; @Ze1; @Ze2]. Motivation to study random polynomials and their generalizations in geometry comes from several sources:\n\n-   Classical Analysis: Value distribution theory of polynomials and analytic functions is a classical topic. Computable examples may exhibit non-generic patterns of zeros (or other values) and one wo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0010012v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math-ph/0010012v1  10 Oct 2000\nFrom random polynomials to symplectic geometry\nSteve Zelditch\nAbstract. We review some recent results on random polynomials and their generalizations in complex\nand symplectic geometry. The main theme is the universality of statistics of zeros and critical points of\n(generalized) polynomials of degree N on length scales of order\nD\n√\nN (complex case), resp.\nD\nN (real case).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0010012v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mathematical Tools",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-2-mathematical-tools.md",
+      "narrative": null,
+      "content": "We give a quick summary of some basic tools and methods that are used below. We will concentrate on general ideas and refer to [@SZ1; @SZ2; @BSZ3] for detailed expositions.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0010012v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Vector spaces of large dimension",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-002-21-vector-spaces-of-large-dimension.md",
+      "narrative": null,
+      "content": "In defining our ensembles of polynomials, we will be dealing with a sequence $( {\\mathcal H}_N, \\langle, \\rangle_N)$ of Hilbert spaces of increasing dimension $d_N = dim {\\mathcal H}_N$, where $N$ is the 'degree of the polynomial', a large integral (semiclassical) parameter. The dimension is given by a (Hilbert) polynomial of the form $d_N \\sim a_0 N^m$ in the complex case (with $m = dim_{{\\mathbb C}} M$) and by a function of polynomial growth $d_N \\sim  a_0 N^{m - 1}$ in the real case (with $m = \\mbox{dim}_{{\\mathbb R}} M$).\n\nIn our applications, the spaces ${\\mathcal H}_N$ will be one of the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0010012v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spherical harmonics and real eigenfunctions",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-003-211-spherical-harmonics-and-real-eigenfunctions.md",
+      "narrative": null,
+      "content": "We denote by $\\Delta$ the standard Laplacian on $S^m$ and by ${\\mathcal H}_N (S^m)$ the space of spherical harmonics of degree $N$ on $S^m.$ They are the eigenfunctions of $\\Delta$ of eigenvalue $\\lambda_{m,N} = N ( N + m - 1)$ and form a real vector space of dimension $d_{m, N} = \\frac{2N + m -1}{N + m -1}\n\\left( \\begin{array}{l} N + m -1 \\\\ \\\\ m -1 \\end{array} \\right)$.\n\nMore generally, we may consider the Laplacian $\\Delta$ of any compact Riemannian manifold $(M, g)$. In place of spherical harmonics of degree $N$, we partition the spectrum of $\\sqrt{\\Delta}$ into intervals $[N  \\log N, (N+",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0010012v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Holomorphic sections of positive line bundles",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-004-212-holomorphic-sections-of-positive-line-bundle.md",
+      "narrative": null,
+      "content": "For any Kähler manifold $(M,\\omega)$ of complex dimension $m$ there exists a holomorphic hermitian line bundle $(L, h) \\to (M, \\omega)$ whose Ricci curvature $Ric(h) = \\omega$. $L$ is called *positive* since it posseses a metric of positive curvature, i.e. $\\omega(X, JY)$ defines a Riemannian metric. We denote by $L^N$ the $N$th power of $L$ and by $H^0(M, L^N)$ the space of holomorphic sections. Its dimension $d_N = dim H^0(M, L^N)$ is given by the Hilbert polynomial $d_N = \\frac{c_1(L)^m}{m!}\nN^m + \\cdots$ for sufficiently large $N$, where $\\cdots$ represent the lower order terms. We equip $",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0010012v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Almost holomorphic sections",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-005-213-almost-holomorphic-sections.md",
+      "narrative": null,
+      "content": "Symplectic almost-complex manifolds $(M, J, \\omega)$ possess a similar but analytically more complicated geometric quantization as spaces $H^0_J(M, L^N)$ of 'almost-holomorphic' sections. They are defined by a $\\bar{D}$ complex over the $S^1$-bundle $X$ due to Boutet de Monvel -Guillemin [@BG]. What we need to know about these spaces is that their orthogonal projectors $\\Pi_N$ have the same scaling asymptotics as in the complex case, if one works in suitable (Heisenberg) coordinates [@SZ2].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0010012v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gaussian measures and spherical measures",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-006-22-gaussian-measures-and-spherical-measures.md",
+      "narrative": null,
+      "content": "We will restrict attention to two related ensembles:\n\n-   *Gaussian ensembles*: We fix an orthonormal basis $\\{f_j\\}$ of ${\\mathcal H}_N$ and write functions as orthonormal sums $f = \\sum_{j = 1}^{d_N} c_j f_j$. We then define the (complex) Gaussian measure by $$\\gamma = e^{- ||f||^2} {\\mathcal D}f,\\;\\; \\mbox{i.e.} \\;\\; \\gamma = e^{- |c|^2} dc.$$ More generally we fix a symmetric matrix $\\Delta$ on ${\\mathbb C}^{d_N}$ with positive (semi-)definite imaginary part and define: $$\\gamma_\\Delta= \\frac{e^{- \\langle\\Delta^{-1}\n    c,c\\rangle}}{(2\\pi)^{p/2}\\det\\Delta}\n    dc\\,,\\label{gaussian}$$ Gauss",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0010012v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sequences of random polynomials",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-007-23-sequences-of-random-polynomials.md",
+      "narrative": null,
+      "content": "We are often interested in sequences of polynomials $\\{s_N\\}$ chosen independently and at random from ${\\mathcal H}_N$ from either a Gaussian or spherical ensemble. We thereform form the product probability space $({\\mathcal H}_{\\infty}, \\mu_{\\infty})$, defined by $${\\mathcal H}_{\\infty} = {\\mathcal H}_1 \\times {\\mathcal H}_2 \\times \\cdots \\times {\\mathcal H}_N \\times \\cdots,\\;\\;\\; \\mu_{\\infty} = \\times_{N = 1}^{\\infty} \\mu_N, \\;\\; (\\mu_N = \\gamma_N\\;\n\\mbox{or}\\; \\nu_N).$$ When we say that a sequence of polynomials $\\{s_N\\}$ of increasing degerees does something almost surely, we mean that the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0010012v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Distribution of zeros and critical points",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-008-3-distribution-of-zeros-and-critical-points.md",
+      "narrative": null,
+      "content": "We now state some results on the zeros and critical points of random generalized polynomials. Let $(s_1, \\dots, s_k) \\in H^0(M, L^N)^k$ or let $(s_1, \\dots, s_k) \\in {\\mathcal H}_N^k$ in the real case. When $k = 1$ we omit the subscript. We will use the following notation.\n\n-   $Z_s = \\{x : s(x) = 0\\}$ denotes the zero set of $s$, and $|Z_s|$ denotes the $m - k$-submanifold Riemannian volume density induced by $\\omega$ in the complex case or by $g$ in the real case. We further denote by $||Z_s||$ the mass of $|Z_s|$ and define the probability measures $\\tilde{Z}_s = \\frac{|Z_s|}{||Z_s||}.$ Whe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0010012v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Statement of results",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-009-31-statement-of-results.md",
+      "narrative": null,
+      "content": "We have results on several levels: expected values, almost sure behaviour, and scaling asymptotics. The following theorems are valid on any complex or almost-complex symplectic manifold $(M, \\omega)$, equipped with a hermitian complex line bundle of curvature $\\omega.$\n\n::: theo\nIn the complex case, the density of zeros, resp. critical points, satisfies:\n\n-   [@SZ1] Complex zeros: $K^N_{1,k}(z) dV = \\omega^k + O(\\frac{1}{N}).$\n\n-   [@SZ3] Complex critical points: There exists a universal constant $\\gamma_m$ depending only on the dimension such that $K^{crit, N}_1(z) dV = \\gamma_m \\frac{\\omega^",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0010012v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Almost sure distribution of zeros",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-010-32-almost-sure-distribution-of-zeros.md",
+      "narrative": null,
+      "content": "A deeper question on distribution of zeros is whether sequences of individual sections tend to have equidistributed zeros.\n\n::: theo\nWe have:\n\n-   [@SZ1] For a random sequence in the complex codimension $k$ case, $\\{s_N\\}$, $\\tilde{Z}_{s_N} \\to \\omega^k$ almost surely.\n\n-   [@N] For a random sequence of spherical harmonics on $S^m, m \\geq 6$, we have $\\tilde{Z}_{s_N} \\to dvol$ almost surely. The same is true in (Cesaro) mean for dimensions $< 6.$\n:::",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0010012v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Universality and scaling of correlations",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-011-33-universality-and-scaling-of-correlations.md",
+      "narrative": null,
+      "content": "The next level of results concerns the statistics of zeros and critical points on the length scale $\\frac{D}{\\sqrt{N}}$ (complex case) or $\\frac{D}{N}$ (real case). For brevity we only describe the results in the complex case. Upon magnifying a small ball $B_{\\frac{D}{\\sqrt{N}}}(z_0)$ around an arbitrary point $z_0$ of this radius, one loses track of the specifics of the geometrical setting and obtains universal limiting correlations. More precisely, such a universal limit occurs if one chooses the coordinates properly.\n\n::: theo\n[]{#usls label=\"usls\"} Scaling limits of correlations of zeros a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0010012v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Step One: Relating correlations and joint probability distributions",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-012-331-step-one-relating-correlations-and-joint-pro.md",
+      "narrative": null,
+      "content": "Following an idea due originally to Kac and Rice in the case of real polynomials of one variable, we express the correlation measures in terms of the joint probability distribution of the random variables $s(z^1),\\dots,s(z^n),\n\\nabla s(z^1),\\dots,\\nabla s(z^n)$. This JPD is defined by $$\\widetilde{\\mathbf D}_{z}^N:=\n\\widetilde D_{n}^N(x,\\xi,z)dxd\\xi=(J_z)_*\\nu_N\\,,\n\\;\\;J_{z}(s) = (s(z), \\nabla s(z)),$$ i.e. it is the push-forward of the Gaussian measure $\\gamma_N$ under the linear jet map $J(z)$.\n\nThe desired expression for correlations in terms of the JPD is given by the following generalizat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0010012v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Step two: scaling asymptotics of the JPD",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-013-332-step-two-scaling-asymptotics-of-the-jpd.md",
+      "narrative": null,
+      "content": "The JPD is a (generalized) Gaussian measure on the complex vector space of 1-jets: $\\widetilde{\\mathbf D}_{z}^N=\\gamma_{\\Delta^N(z)}\\,,$ where the covariance matrix $\\Delta^N(z) = \\left(\n\\begin{array}{cc}\nA & B \\\\\nB^* & C\n\\end{array}\\right)$ is given in terms of the Szegö kernel and its covariant derivatives, as follows: $$\\begin{array}{ll} A = \\big( A^{p}_{p'}\\big) =\\frac{1}{d_N}\\Pi_N(z^p,0;z^{p'},0)\\,, & \nB = \\big(B^{p}_{p'q'}\\big)= \\frac{1}{d_N}\n\\overline{\\nabla}^2_{q'}\\Pi_N(z^p,0;z^{p'},0)\\,, \\\\ & \\\\\nC = \\big(C^{pq}_{p'q'}\\big) = \n \\frac{1}{d_N}\n\\nabla^1_q\\overline{\\nabla}^2_{q'}\\Pi_N(z^p,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0010012v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hole probabilities",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-014-34-hole-probabilities.md",
+      "narrative": null,
+      "content": "Another application of the scaling applications is to 'hole probabilities', i.e. the probability that a ball $B_{r}(z_0)$ of radius $r$ around a point $z_0 \\in M$ is zero-free. The following result combines our scaling asymptotics and Sodin's reformulation (and substantial simplification) of Offord's large deviations results on hole probabilities for entire analytic functions in the plane [@O; @So]. It is based on the Poincare-Lelong formula, so at this time of writing it has only been proved for one holomorphic section, and no comparable results have been proved for random spherical harmonics",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0010012v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum ergodicity and random waves",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-015-4-quantum-ergodicity-and-random-waves.md",
+      "narrative": null,
+      "content": "We end with a brief discussion of the connection between random polynomials and quantum chaos.\nThe intutitive idea that quantum chaotic eigenfunctions should resemble ‘Gaussian random waves’ seems to\nhave been ﬁrst suggested by M. V. Berry [B]. A precise formulation of this random wave model and some\nnumerical results are given in [ABST] [HR].\nRandom spherical harmonics on Sm, or random combinations of eigenfunctions of Laplacians on gen-\neral compact Riemannian manifolds as described above, provide a rather diﬀerent random wave model for\nquantum chaotic eigenfunctions. To motivate the model,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-ph-0010012v1/blocks/thm-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "thm-sec-015-01.md",
+      "narrative": null,
+      "content": "([Ze1], Lemma (2.15)) Let {ϕNj} be a random orthonormal basis of spherical harmonics of S2. Then: E(S2(N)) = 1 N [ vol(S∗S2) R S∗S2 |σave A (ζ) −¯ σA|2dµ(ζ)] + O(1/N 2). The optimist may conjecture a similar rate for quantum chaotic eigenfunctions. In [Ze1] it is further proved that almost all orthonormal bases of spherical harmonics are quantum ergodic, and this was improved to quantum unique ergodicity by VanderKam [V]. On the level of quantum mixing, however, random spherical harmonics do not provide a good model, but random combinations of Laplace eigefunctions on generic Riemannian manifo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

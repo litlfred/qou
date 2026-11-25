@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/conj-weak-symmetric-normalization",
+  "@type": [
+    "folio-assistant-sci:Conjecture",
+    "doco:Section"
+  ],
+  "label": "conj:weak-symmetric-normalization",
+  "kind": "conjecture",
+  "title": "Weak-sector symmetric-channel Plancherel normalization $\\mathcal{N}_{\\rm sym}(q)$",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/conj-gram-determinant-plancherel-ratio",
+    "papers/quantum-observable-universe/blocks/prop-weak-spectral-completeness",
+    "papers/quantum-observable-universe/blocks/conj-electroweak-higgs-torus-link-triplet"
+  ],
+  "tags": [
+    "plancherel",
+    "weak-coupling",
+    "symmetric-channel",
+    "wedderburn",
+    "n-sym",
+    "nv-1",
+    "categorical-normalization"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.weak_symmetric_normalization",
+  "text": "weak-symmetric-normalization.md",
+  "leanSource": "weak-symmetric-normalization.lean",
+  "provenance": "authored"
+}

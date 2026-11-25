@@ -1,0 +1,581 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "yuasa-rims-kokyuroku-2163-05",
+  "title": "yuasa-rims-kokyuroku-2163-05",
+  "variant": "pdf",
+  "pages": 11,
+  "tocSource": "none",
+  "tocMethod": null,
+  "toc": [],
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 464,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "one-row colored",
+          "heading": false
+        },
+        {
+          "term": "linear skein",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "skein theory",
+          "heading": false
+        },
+        {
+          "term": "kuperberg linear",
+          "heading": false
+        },
+        {
+          "term": "skein relation",
+          "heading": false
+        },
+        {
+          "term": "alternating knots",
+          "heading": false
+        },
+        {
+          "term": "slz",
+          "heading": false
+        }
+      ],
+      "extract": "Twist formulas for one-row colored A» webs and sl; tails of (2, 2m)-torus links Wataru Yuasa Research Institute for Mathematical Sciences, Kyoto University 1 Introduction The author made tools to calculate the quantum invariant of knots and links obtained from sl3 by using the Kuperberg’s linear skein theory. In this article, we will introduce one of these tools, a full twist formula, which is useful to compute",
+      "extractCut": true,
+      "blocks": [
+        "library/yuasa-rims-kokyuroku-2163-05/blocks/prose-page-001"
+      ]
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 404,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "one-row colored",
+          "heading": false
+        },
+        {
+          "term": "false theta",
+          "heading": false
+        },
+        {
+          "term": "tail",
+          "heading": false
+        },
+        {
+          "term": "theta series",
+          "heading": false
+        },
+        {
+          "term": "slz",
+          "heading": false
+        },
+        {
+          "term": "kup",
+          "heading": false
+        },
+        {
+          "term": "tangled",
+          "heading": false
+        },
+        {
+          "term": "web",
+          "heading": false
+        }
+      ],
+      "extract": "1) in [AD11], for T(2, 2m) in [Haj16], for a pretzel knot P(2k +1, 2, 21+ 1) in [EH17], for knots with small crossing numbers in [KO16], [BO17], and [GL15]. Especially, the tail of T(2, 2m + 1) is given by the theta series and one of T(2,2m) is the false theta series. One can consider a tail for the one-row colored slz colored Jones polynomial {Tero (K)}. We call it the one-row colored sl; tail of A’. As a case",
+      "extractCut": true,
+      "blocks": [
+        "library/yuasa-rims-kokyuroku-2163-05/blocks/prose-page-002",
+        "library/yuasa-rims-kokyuroku-2163-05/blocks/def-page-002-01"
+      ]
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 245,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "web space",
+          "heading": false
+        },
+        {
+          "term": "temperley-lieb category",
+          "heading": false
+        },
+        {
+          "term": "clasp",
+          "heading": false
+        },
+        {
+          "term": "webs",
+          "heading": false
+        },
+        {
+          "term": "projector",
+          "heading": false
+        }
+      ],
+      "extract": "e | s) oe ; ( e An element in W(e; D) is called web and an element in G(¢; D) without crossings which has no internal 0-, 2-, 4-gons a basis web. Any web is described as the sum of basis webs. The Ag skein relation realize the Reidemeister moves (R1) — (R4), that is, we can show that webs represent diagrams in the left side and right side is the same web in W(D;c). (R1) S (R3) RO QS (R4) ZX Le Bohs. We review a",
+      "extractCut": true,
+      "blocks": [
+        "library/yuasa-rims-kokyuroku-2163-05/blocks/prose-page-003",
+        "library/yuasa-rims-kokyuroku-2163-05/blocks/def-page-003-01"
+      ]
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 215,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bottom edge",
+          "heading": false
+        },
+        {
+          "term": "top edge",
+          "heading": false
+        },
+        {
+          "term": "clasp",
+          "heading": false
+        },
+        {
+          "term": "tensor product",
+          "heading": false
+        }
+      ],
+      "extract": "Loe d)e/b ee 1) =|Le tbe] Figure 2.1: the composition and the tensor product in TL” We identify an object a with length n as a map n > {+,—} by using the order on n. A map @U 6 means that the domain n Cc J of the map @ is identified with the top edge [0,1] x {0} and 8 identified with the bottom edge (0, 1] x {1}. ¢ The composition GF € G(aLl7; D) of F € G(@U8; D) and G € G(8U7; D) is given by gluing the top edge of",
+      "extractCut": true,
+      "blocks": [
+        "library/yuasa-rims-kokyuroku-2163-05/blocks/prose-page-004"
+      ]
+    },
+    {
+      "id": "page-005",
+      "number": null,
+      "title": "Page 5",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 134,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "specifying direction",
+          "heading": false
+        },
+        {
+          "term": "webs",
+          "heading": false
+        },
+        {
+          "term": "stair-step",
+          "heading": false
+        }
+      ],
+      "extract": "Lemma 2.3. ie - tt 3 cts =(-¢6)\"™ ae aes = (-4\")\"\" ae . 1 =q? [ [ 1 =q 3 , The “stair-step” and “triangle” webs appear in the above are defined by the following. These webs also appear in [Kim06, Kim07, Yual7, FS20]. m Definition 2.4. For positive integers n and m, » as nis defined by Specifying a direction on an edge the box. m = - poe and m-1l 1 =n aN n for m>1. m-1 1 around the box determine the all directions of",
+      "extractCut": true,
+      "blocks": [
+        "library/yuasa-rims-kokyuroku-2163-05/blocks/prose-page-005",
+        "library/yuasa-rims-kokyuroku-2163-05/blocks/lem-page-005-01",
+        "library/yuasa-rims-kokyuroku-2163-05/blocks/def-page-005-02",
+        "library/yuasa-rims-kokyuroku-2163-05/blocks/def-page-005-03"
+      ]
+    },
+    {
+      "id": "page-006",
+      "number": null,
+      "title": "Page 6",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 294,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "one-row colored",
+          "heading": false
+        },
+        {
+          "term": "twist formulas",
+          "heading": false
+        },
+        {
+          "term": "full twist",
+          "heading": false
+        }
+      ],
+      "extract": "3 Twist formula and q-binomial coefficient In this section, we show new twist formulas derived from a combinatorial method related to the generating function of lattice paths. We firstly explain this method which is used in the proof of full twist formulas in [Yua17]. Let us consider a set of web {o,(k,1) | 0 < k,l <n} such that 1. o,,(k, 1) is basis web if k +1 =n, 2. on(k,l) = X(k, on(k+ 1,1) +Y(k, Don(k,t+ 1),",
+      "extractCut": true,
+      "blocks": [
+        "library/yuasa-rims-kokyuroku-2163-05/blocks/prose-page-006",
+        "library/yuasa-rims-kokyuroku-2163-05/blocks/prop-page-006-01"
+      ]
+    },
+    {
+      "id": "page-007",
+      "number": null,
+      "title": "Page 7",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 117,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "m-full twist",
+          "heading": false
+        },
+        {
+          "term": "one-row colored",
+          "heading": false
+        },
+        {
+          "term": "webs",
+          "heading": false
+        }
+      ],
+      "extract": "d=min{s,t} and 6 = |s — ¢]. DG =F ai emay( s d _ —2d(d-+6)—d salae reel =q 3 > qd T\\ ka0 (Dera \\k s s k+s—d In [Yua20], the author obtained a full twist formula for one-row colored parallel Ag webs by setting n = d = min{s,t} and ifd=s, ifd=t. These Ay webs also satisfy the condition of Proposition 3.1. Thus, one can obtain the followings. Theorem 3.3 (full twist formula for one-row colored parallel A, webs",
+      "extractCut": true,
+      "blocks": [
+        "library/yuasa-rims-kokyuroku-2163-05/blocks/prose-page-007",
+        "library/yuasa-rims-kokyuroku-2163-05/blocks/thm-page-007-01",
+        "library/yuasa-rims-kokyuroku-2163-05/blocks/thm-page-007-02"
+      ]
+    },
+    {
+      "id": "page-008",
+      "number": null,
+      "title": "Page 8",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 305,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "one-row colored",
+          "heading": false
+        },
+        {
+          "term": "full twists",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "web",
+          "heading": false
+        },
+        {
+          "term": "framing",
+          "heading": false
+        },
+        {
+          "term": "boxes",
+          "heading": false
+        }
+      ],
+      "extract": "m-tuple of integers, kg = d = min{s,t}, and 6 = |s — t}. t t met Lae Ar _ qu 3 Fol ko+8)—2mko > V J 8 m full twists 8 ko zhi 2--2km20 t km +(t—ko) t where an 2k; ko —kn (D)ko-+6 ko C(k) = ht Bi (Bit 5)+ 2h: gk km 0 ) (aints (Rs bs sla Fn) and ki, = ki — kiq1 for? =0,1,...,m—1. Theorem 3.5 (parallel m-full twist formula). Let k = (ki,...,km) be an m-tuple of integers, ko = d = min{s,t}, and 6 = |s — tl]. t—d+km At c",
+      "extractCut": true,
+      "blocks": [
+        "library/yuasa-rims-kokyuroku-2163-05/blocks/prose-page-008",
+        "library/yuasa-rims-kokyuroku-2163-05/blocks/thm-page-008-01",
+        "library/yuasa-rims-kokyuroku-2163-05/blocks/def-page-008-02",
+        "library/yuasa-rims-kokyuroku-2163-05/blocks/rem-page-008-03"
+      ]
+    },
+    {
+      "id": "page-009",
+      "number": null,
+      "title": "Page 9",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 296,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "one-row colored",
+          "heading": false
+        },
+        {
+          "term": "colored sls",
+          "heading": false
+        },
+        {
+          "term": "tail",
+          "heading": false
+        },
+        {
+          "term": "torus link",
+          "heading": false
+        },
+        {
+          "term": "doo",
+          "heading": false
+        },
+        {
+          "term": "din",
+          "heading": false
+        },
+        {
+          "term": "grant-in-aid",
+          "heading": false
+        }
+      ],
+      "extract": "Definition 4.3 (the one-row colored s[3 tail of a link). The one-row colored sls colored Jones polynomial {FB (D}n of a link L is zero stable if there exists a formal power series T;*(q) in Z[{q]] such that TQ — FS(@ € a Zlldl] for all n. Then, we call 7;\"(q) a tail of {HS (Q}n or the one-row colored sl3 tail of L. A (2,2m)-torus link is obtained by taking a closure of the m full twist two strands. Thus, one can",
+      "extractCut": true,
+      "blocks": [
+        "library/yuasa-rims-kokyuroku-2163-05/blocks/prose-page-009",
+        "library/yuasa-rims-kokyuroku-2163-05/blocks/def-page-009-01",
+        "library/yuasa-rims-kokyuroku-2163-05/blocks/thm-page-009-02",
+        "library/yuasa-rims-kokyuroku-2163-05/blocks/thm-page-009-03"
+      ]
+    },
+    {
+      "id": "page-010",
+      "number": null,
+      "title": "Page 10",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 365,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "antun milas",
+          "heading": false
+        },
+        {
+          "term": "thao vuong",
+          "heading": false
+        },
+        {
+          "term": "mustafa hajij",
+          "heading": false
+        },
+        {
+          "term": "kathrin bringmann",
+          "heading": false
+        },
+        {
+          "term": "false theta",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        }
+      ],
+      "extract": "[Arm13] [BKM19] [BM15] [BM17] [BO17 [CM14] [CM17] [DL06] [DLO7| [EH17] [FS20] [GL15] [GMV13] [GV17] [Haj16] [Kim06] Cody Armond, The head and tail conjecture for alternating knots, Algebr. Geom. Topol. 13 (2013), no. 5, 2809-2826. MR 3116304 Kathrin Bringmann, Jonas Kaszian, and Antun Milas, Higher depth quantum modular forms, multiple Eichler integrals, and sl3 false theta functions, Res. Math. Sci. 6 (2019), no.",
+      "extractCut": true,
+      "blocks": [
+        "library/yuasa-rims-kokyuroku-2163-05/blocks/prose-page-010"
+      ]
+    },
+    {
+      "id": "page-011",
+      "number": null,
+      "title": "Page 11",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 271,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theory ramifications",
+          "heading": false
+        },
+        {
+          "term": "kup",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "yual",
+          "heading": false
+        },
+        {
+          "term": "mathematical sciences",
+          "heading": false
+        },
+        {
+          "term": "quantum link",
+          "heading": false
+        },
+        {
+          "term": "knot theory",
+          "heading": false
+        }
+      ],
+      "extract": "[Kim07] [KO16] [Kup94] [Kup96] [Law03] [Le00] [Lic97] [OY97] [Yual7] [Yual8] [Yua20] , Jones-Wenzl idempotents for rank 2 simple Lie algebras, Osaka J. Math. 44 (2007), no. 3, 691-722. MR 2360947 Adam Keilthy and Robert Osburn, Rogers-Ramanujan type identities for alter- nating knots, J. Number Theory 161 (2016), 255-280. MR 3435728 Greg Kuperberg, The quantum G2 link invariant, Internat. J. Math. 5 (1994), no. 1,",
+      "extractCut": true,
+      "blocks": [
+        "library/yuasa-rims-kokyuroku-2163-05/blocks/prose-page-011"
+      ]
+    }
+  ],
+  "checks": {},
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "one-row colored",
+      "heading": false
+    },
+    {
+      "term": "colored jones",
+      "heading": false
+    },
+    {
+      "term": "colored sls",
+      "heading": false
+    },
+    {
+      "term": "colored anti-parallel",
+      "heading": false
+    },
+    {
+      "term": "slz colored",
+      "heading": false
+    },
+    {
+      "term": "colored parallel",
+      "heading": false
+    },
+    {
+      "term": "web space",
+      "heading": false
+    },
+    {
+      "term": "full twist",
+      "heading": false
+    },
+    {
+      "term": "m-full twist",
+      "heading": false
+    },
+    {
+      "term": "webs",
+      "heading": false
+    },
+    {
+      "term": "twist formulas",
+      "heading": false
+    },
+    {
+      "term": "tail",
+      "heading": false
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "not-extracted",
+      "note": "split one section per page; no contents was trusted"
+    },
+    {
+      "kind": "sections",
+      "state": "partial",
+      "count": 11,
+      "note": "one per page, not by heading"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p9); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/yuasa-rims-kokyuroku-2163-05"
+  }
+}

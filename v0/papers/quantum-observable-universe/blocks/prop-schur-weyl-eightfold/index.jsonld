@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-schur-weyl-eightfold",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:schur-weyl-eightfold",
+  "kind": "proposition",
+  "title": "Eightfold-way multiplets via quantum Schur--Weyl duality",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-a2-from-three-strands"
+  ],
+  "leanRef": "qou:MathlibExt.RowCapObstruction.weyl_dim_alt_eq_zero_iff",
+  "text": "schur-weyl-eightfold.md",
+  "provenance": "authored"
+}

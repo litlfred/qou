@@ -1,0 +1,61 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-2102.00255v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-2102.00255v1",
+  "contains": [
+    "library/arxiv-2102.00255v1/sections/sec-front-matter",
+    "library/arxiv-2102.00255v1/sections/sec-000",
+    "library/arxiv-2102.00255v1/sections/sec-001",
+    "library/arxiv-2102.00255v1/sections/sec-002",
+    "library/arxiv-2102.00255v1/sections/sec-003",
+    "library/arxiv-2102.00255v1/sections/sec-004",
+    "library/arxiv-2102.00255v1/sections/sec-005",
+    "library/arxiv-2102.00255v1/sections/sec-006"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "RIGIDITY, RESIDUES AND DUALITY: OVERVIEW AND RECENT PROGRESS — In this article we explain the theory of rigid residue complexes in commutative algebra and algebraic geometry, summarizing the\n\n**RIGIDITY, RESIDUES AND DUALITY: OVERVIEW AND RECENT PROGRESS**\n\n*AMNON YEKUTIELI*\n\n20 pp, 8 sections.\n\n**Abstract.** In this article we explain the theory of rigid residue complexes in commutative algebra and algebraic geometry, summarizing the background, recent results and antic- ipated future results. Unlike all previous approaches to Grothendieck Duality, the rigid approach concentrates on the construction of rigid residue complexes over rings, and their intricate yet robust properties. The geometrization, i.e. the passage to rigid residue complexes on schemes and Deligne-Mumford (DM) stacks, by gluing, is fairly easy. In the geometric part of the theory, the main results are the Rigid Residue Theorem and the Rigid Duality Theorem for proper maps between schemes, and for tame proper maps between DM stacks.\n\n**Outline.** Front matter; 0 Introduction; 1 The Squaring Operation and Rigid Complexes o; 2 Rigid Dualizing Complexes over Rings; 3 Rigid Residue Complexes over Rings; 4 Rigidity, Residues and Duality for Schemes; 5 Rigidity, Residues and Duality for DM Stacks; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:2102.00255&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-2102.00255v1",
+    "title_source": "slug",
+    "source_file": "2102.00255v1.pdf",
+    "source_sha256": "b63df73a9d0e1534e21b005f4dc5e6f0adb8eebc5a4297df275bf82b52caaee8",
+    "pages": 20,
+    "arxiv": {
+      "id": "2102.00255",
+      "version": "1",
+      "primary_class": "math.AG",
+      "stamp_date": "30 Jan 2021"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

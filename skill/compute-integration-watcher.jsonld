@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/compute-integration-watcher.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/compute-integration-watcher",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "compute-integration-watcher",
+      "title": "Compute Integration Watcher",
+      "description": "Cross-layer wiring auditor — watches for newly-landed mathematical improvements (Lean proofs, propositions, lemmas, axiom→theorem upgrades, witness data) on `origin/main` AND on open PRs, and checks whether each one has been wired into the production compute chain. Complements `local/compute-audit` (which scans for performance/correctness antipatterns inside scripts).  Runs in two modes: REACTIVE (watch new commits / PR events) and IDLE-SWEEP (walk all existing content blocks and audit wiring).",
+      "instructionsPath": "skills/local/compute-integration-watcher.md",
+      "instructionLines": 470,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

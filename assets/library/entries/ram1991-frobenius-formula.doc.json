@@ -1,0 +1,1282 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "ram1991-frobenius-formula",
+  "title": "ram1991-frobenius-formula",
+  "variant": "pdf",
+  "pages": 28,
+  "tocSource": "none",
+  "tocMethod": null,
+  "toc": [],
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 343,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "san diego",
+          "heading": false
+        },
+        {
+          "term": "irreducible characters",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "combinatorial rule",
+          "heading": false
+        },
+        {
+          "term": "symmetric group",
+          "heading": false
+        },
+        {
+          "term": "full centralizer",
+          "heading": false
+        },
+        {
+          "term": "quantum group",
+          "heading": false
+        },
+        {
+          "term": "yang-baxter equation",
+          "heading": false
+        }
+      ],
+      "extract": "Invent. math. 106, 461-488 (1991) Inventiones nventiones mathematicae © Springer-Verlag 1991 A Frobenius formula for the characters of the Hecke algebras Arun Ram* University of California, San Diego, Department of Mathematics, La Jolla, CA 92093, USA Oblatum 10-XII-1990 Summary. This paper uses the theory of quantum groups and the quantum Yang-Baxter equation as a guide in order to produce a method of computing the",
+      "extractCut": true,
+      "blocks": [
+        "library/ram1991-frobenius-formula/blocks/prose-page-001"
+      ]
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 565,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "hall-littlewood symmetric",
+          "heading": false
+        },
+        {
+          "term": "combinatorial rule",
+          "heading": false
+        },
+        {
+          "term": "irreducible characters",
+          "heading": false
+        },
+        {
+          "term": "symmetric group",
+          "heading": false
+        },
+        {
+          "term": "symmetric functions",
+          "heading": false
+        },
+        {
+          "term": "kronecker products",
+          "heading": false
+        },
+        {
+          "term": "sect",
+          "heading": false
+        }
+      ],
+      "extract": "462 A. Ram In 1986, Jimbo [Ji] recognized that there exists a similar duality between the quantum group U,(gl(n)) and the Hecke algebras of type A. Guided by this observation, we develop a “Frobenius” formula and a combinatorial rule for computing the characters of the Hecke algebras. The presentation given in this paper allows one to avoid the quantum group completely. The derivation of the combinatorial rule shows",
+      "extractCut": true,
+      "blocks": [
+        "library/ram1991-frobenius-formula/blocks/prose-page-002"
+      ]
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 456,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "simple transpositions",
+          "heading": false
+        },
+        {
+          "term": "conjugacy class",
+          "heading": false
+        },
+        {
+          "term": "sisi",
+          "heading": false
+        },
+        {
+          "term": "cycle type",
+          "heading": false
+        },
+        {
+          "term": "same conjugacy",
+          "heading": false
+        },
+        {
+          "term": "symmetric group",
+          "heading": false
+        },
+        {
+          "term": "permutation",
+          "heading": false
+        },
+        {
+          "term": "partition",
+          "heading": false
+        }
+      ],
+      "extract": "A Frobenius formula for the characters of the Hecke algebras 463 Let f be a positive integer. A composition of f, cFf, is a sequence of positive integers c =(c,,C,...,¢,), such that )';c; =f. As in the case of partitions the c; are called the parts of the composition c. The partition A(c) given by arranging the parts of c in decreasing order is called the shape of c. The symmetric group, Sr The symmetric group S,",
+      "extractCut": true,
+      "blocks": [
+        "library/ram1991-frobenius-formula/blocks/prose-page-003"
+      ]
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 405,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum yang-baxter",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "bou",
+          "heading": false
+        },
+        {
+          "term": "yang-baxter equation",
+          "heading": false
+        },
+        {
+          "term": "quantum groups",
+          "heading": false
+        },
+        {
+          "term": "reciprocity",
+          "heading": false
+        },
+        {
+          "term": "jimbo",
+          "heading": false
+        },
+        {
+          "term": "rational functions",
+          "heading": false
+        }
+      ],
+      "extract": "464 A. Ram To each minimal idempotent pe CS, there is one and only one At f such that p. A partition of unity is a set of minimal idempotents {p/}, Arf, SiS d,(p}z, = p}) such that pp? = 0 unless A = pandi=jand1=),) ip}. The Hecke algebra Hy Let €(q) be the field of rational functions in the variable q. The Hecke algebra H, is the C(q) algebra given by generators 1, 91, g2,..-,gy-1 and relations (B1) 99j= 99",
+      "extractCut": true,
+      "blocks": [
+        "library/ram1991-frobenius-formula/blocks/prose-page-004",
+        "library/ram1991-frobenius-formula/blocks/rem-page-004-01"
+      ]
+    },
+    {
+      "id": "page-005",
+      "number": null,
+      "title": "Page 5",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 284,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qybe",
+          "heading": false
+        },
+        {
+          "term": "universal r-matrix",
+          "heading": false
+        },
+        {
+          "term": "pki",
+          "heading": false
+        },
+        {
+          "term": "zev",
+          "heading": false
+        }
+      ],
+      "extract": "A Frobenius formula for the characters of the Hecke algebras 465 Define « = U,(sI(n)) to be the associative algebra over C(q) defined by gener- ators k;, k>!, X*, X7, 1 <i<n, and the relations: kikp i =kptk;=1, kik; = kjk; , kX} kph = qt? x}, k? — kp? eb) [x*, X7] =6,-—+, , j J q—q 1 X#X#=x}xX#, |i-jl22, (XP XF —Q tq yXEXFXE + XP(XFP=0, fait, where a; = 2, aj; = — 1ifj =i+1, and a, =0 if |i—j| = 2. sf becomes a Hopf",
+      "extractCut": true,
+      "blocks": [
+        "library/ram1991-frobenius-formula/blocks/prose-page-005"
+      ]
+    },
+    {
+      "id": "page-006",
+      "number": null,
+      "title": "Page 6",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 458,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "double centralizer",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "centralizer theory",
+          "heading": false
+        },
+        {
+          "term": "irreducible representations",
+          "heading": false
+        },
+        {
+          "term": "jimbo",
+          "heading": false
+        },
+        {
+          "term": "matrix",
+          "heading": false
+        },
+        {
+          "term": "elements",
+          "heading": false
+        }
+      ],
+      "extract": "466 A. Ram Since .of is a Hopf algebra the tensor representation (p ®/, V®/) is well defined for every f2 1. Let & be the universal R-matrix and let R, = p(T), where T is as in (2.4). The form of the matrix R, is well known [Ji2] and i is given by R, = Yau ® Ex t+ Y @— Ey ® Ey + 9\"? (Ey ® Ey + Ej ®@ Ey) - i<j For each 1 <i <f— 1, define R;e End(V®/) as R,=1®@...@1@R, @1®...@1, R appearing as the matrix in the ith",
+      "extractCut": true,
+      "blocks": [
+        "library/ram1991-frobenius-formula/blocks/prose-page-006",
+        "library/ram1991-frobenius-formula/blocks/thm-page-006-01",
+        "library/ram1991-frobenius-formula/blocks/rem-page-006-02"
+      ]
+    },
+    {
+      "id": "page-007",
+      "number": null,
+      "title": "Page 7",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 427,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n-composition",
+          "heading": false
+        },
+        {
+          "term": "word",
+          "heading": false
+        },
+        {
+          "term": "alphabet",
+          "heading": false
+        },
+        {
+          "term": "letters",
+          "heading": false
+        },
+        {
+          "term": "length",
+          "heading": false
+        },
+        {
+          "term": "action",
+          "heading": false
+        },
+        {
+          "term": "operator",
+          "heading": false
+        }
+      ],
+      "extract": "A Frobenius formula for the characters of the Hecke algebras 467 3 The action of H, on VS For the remainder of this paper fix positive integers f and n with n > f. An n-composition of fis a sequence of nonnegative integers c = (cy, C2,..-5 Cn), c; 20, such that c; +c, +...+¢, =f. Note that an n-composition of f is not a true composition of f since we allow c; = 0. Let x1, X2,..., X, be n independent (commuting)",
+      "extractCut": true,
+      "blocks": [
+        "library/ram1991-frobenius-formula/blocks/prose-page-007",
+        "library/ram1991-frobenius-formula/blocks/prop-page-007-01"
+      ]
+    },
+    {
+      "id": "page-008",
+      "number": null,
+      "title": "Page 8",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 374,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n-composition",
+          "heading": false
+        },
+        {
+          "term": "idempotent",
+          "heading": false
+        },
+        {
+          "term": "words",
+          "heading": false
+        },
+        {
+          "term": "action",
+          "heading": false
+        },
+        {
+          "term": "lemma",
+          "heading": false
+        },
+        {
+          "term": "operator",
+          "heading": false
+        },
+        {
+          "term": "trace",
+          "heading": false
+        }
+      ],
+      "extract": "468 A. Ram The action above was obtained by rewriting the solutions of the quantum Yang-Baxter equation. M. Jimbo [Ji] observed that this gives a representation of the Hecke algebra. Note that the action of g;, and therefore of H,, commutes with the action of D and of E, for each n-composition c of f, since all words in the expansion of wg; have the same content as w. Since the words of length f form a basis of V®F,",
+      "extractCut": true,
+      "blocks": [
+        "library/ram1991-frobenius-formula/blocks/prose-page-008",
+        "library/ram1991-frobenius-formula/blocks/lem-page-008-01",
+        "library/ram1991-frobenius-formula/blocks/lem-page-008-02",
+        "library/ram1991-frobenius-formula/blocks/lem-page-008-03"
+      ]
+    },
+    {
+      "id": "page-009",
+      "number": null,
+      "title": "Page 9",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 318,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schur function",
+          "heading": false
+        },
+        {
+          "term": "irreducible representation",
+          "heading": false
+        },
+        {
+          "term": "cul",
+          "heading": false
+        },
+        {
+          "term": "ponding",
+          "heading": false
+        },
+        {
+          "term": "corres",
+          "heading": false
+        }
+      ],
+      "extract": "A Frobenius formula for the characters of the Hecke algebras 469 Proof. Let d, be the dimension of the irreducible representation of CS, corres- ponding to J. Using (1.2) we have that 1 tr(Dp,) = q, TP) 1 d, A = >> a) tr(Do) . df dy, Bile te Do) Since both %8,(0) and tr(Do) are constant on conjugacy classes C, in S,, tr(Dp,) = ah (Hw) trDy,)|Cul = Y 7 wee ub where y? is given by (1.1). Thus, by [Mac, (7.6)], tr(Dp,)",
+      "extractCut": true,
+      "blocks": [
+        "library/ram1991-frobenius-formula/blocks/prose-page-009",
+        "library/ram1991-frobenius-formula/blocks/thm-page-009-01"
+      ]
+    },
+    {
+      "id": "page-010",
+      "number": null,
+      "title": "Page 10",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 328,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dwt",
+          "heading": false
+        },
+        {
+          "term": "young symmetrizers",
+          "heading": false
+        },
+        {
+          "term": "constructs partition",
+          "heading": false
+        },
+        {
+          "term": "minimal idempotents",
+          "heading": false
+        },
+        {
+          "term": "dvj",
+          "heading": false
+        }
+      ],
+      "extract": "470 A. Ram Remark. Some possible choices for the partition of unity in the proof of the above theorem can be given explicitly. [Wz1] constructs a partition of unity in H, with the property that at q = 1 it reduces to the partition of unity given by the Young orthogonal minimal idempotents of S,. [Gy] constructs a partition of unity in H, with the property that at q = 1 it is the partition of unity in CS, given by",
+      "extractCut": true,
+      "blocks": [
+        "library/ram1991-frobenius-formula/blocks/prose-page-010",
+        "library/ram1991-frobenius-formula/blocks/rem-page-010-01",
+        "library/ram1991-frobenius-formula/blocks/thm-page-010-02"
+      ]
+    },
+    {
+      "id": "page-011",
+      "number": null,
+      "title": "Page 11",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 300,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alphabet",
+          "heading": false
+        },
+        {
+          "term": "commuting variables",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "iwal",
+          "heading": false
+        },
+        {
+          "term": "iwil",
+          "heading": false
+        }
+      ],
+      "extract": "A Frobenius formula for the characters of the Hecke algebras 471 (4.2) Proposition. For any composition cF f, tr(DT,,) = [] tr(DT,,) . Proof. It is sufficient to prove that for permutations péS,, and céS,,,r1 tro =f, tr(DT, x) = tr(DT,) tr(DT,) . By direct computation, since 7, acts only on the first r, letters of a word w and 7, acts only on the remaining letters of w, Y DWT, xolw = XY Dwi W2Thxalwiwe wiw2=W Iwil =",
+      "extractCut": true,
+      "blocks": [
+        "library/ram1991-frobenius-formula/blocks/prose-page-011",
+        "library/ram1991-frobenius-formula/blocks/prop-page-011-01",
+        "library/ram1991-frobenius-formula/blocks/rem-page-011-02"
+      ]
+    },
+    {
+      "id": "page-012",
+      "number": null,
+      "title": "Page 12",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 263,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schur functions",
+          "heading": false
+        },
+        {
+          "term": "alphabet",
+          "heading": false
+        },
+        {
+          "term": "symmetric function",
+          "heading": false
+        },
+        {
+          "term": "symmetric group",
+          "heading": false
+        }
+      ],
+      "extract": "472 A. Ram For each r20 define the homogeneous symmetric function h,(X) to be the coefficient of t” in Q(Xt), ie. Q(Xt) = z, A(X)t\" . (4.4) For a partition w= (141, H2,..., Hy) define h,(X) = hy, (X)hy,(X) . : hy, (X) : For any partition A = (A,, A2,...), the Schur function s,(X) in the alphabet X can be given by 8,(X) = det(hy,-i+(X))isijsn> where n = ¢(A), and h,(X) = 0 for any r <0. Let X, Y be two alphabets. The",
+      "extractCut": true,
+      "blocks": [
+        "library/ram1991-frobenius-formula/blocks/prose-page-012"
+      ]
+    },
+    {
+      "id": "page-013",
+      "number": null,
+      "title": "Page 13",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 203,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vertical strip",
+          "heading": false
+        },
+        {
+          "term": "hall-littlewood symmetric",
+          "heading": false
+        },
+        {
+          "term": "mac",
+          "heading": false
+        },
+        {
+          "term": "chapter iii",
+          "heading": false
+        }
+      ],
+      "extract": "A Frobenius formula for the characters of the Hecke algebras 473 The following expansions of Q(X Y(1 — t)) follow from the expansions in [Mac, Chapter I, §4]. AX YUL — 9) =F sal (y(1 —9) = YA(X(1 — d)m,(Y) (4.10) a = 5 20), A where A? is given by (1.1). Chapter III of [Mac] is devoted to the study of Hall-Littlewood symmetric functions. In particular the Hall-Littlewood symmetric function q,(x1,..., Xn} t) is",
+      "extractCut": true,
+      "blocks": [
+        "library/ram1991-frobenius-formula/blocks/prose-page-013",
+        "library/ram1991-frobenius-formula/blocks/lem-page-013-01"
+      ]
+    },
+    {
+      "id": "page-014",
+      "number": null,
+      "title": "Page 14",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 223,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wef",
+          "heading": false
+        },
+        {
+          "term": "qyx",
+          "heading": false
+        },
+        {
+          "term": "q-l",
+          "heading": false
+        }
+      ],
+      "extract": "474 A. Ram There are only two cases when 4/(k) is a vertical strip: either 2 = (1/~*k) or A= (1S-*-(k + 1). So if s,(1 — t) + 0, 4 = (14~™m) for some m. Sts-mm(1—)= Ye say(t)Sas-mmiaa(— 2) () <(-\"m) = Sais-mmysom(— f) + Ss-mmyjim—1(— 8) =(- 9m t(-ofmt =(1-(-9f™. 0 (4.13) Theorem. Let X = x; + X2 +...+-X,. Then, in d-ring notation, for r = 1, (a) tr(DT,,) = Yq’ “(gq — 1 'm,(X) , Her r (b) tr(DT,,) =—1-4,(X; 4\"), q-1",
+      "extractCut": true,
+      "blocks": [
+        "library/ram1991-frobenius-formula/blocks/prose-page-014",
+        "library/ram1991-frobenius-formula/blocks/thm-page-014-01"
+      ]
+    },
+    {
+      "id": "page-015",
+      "number": null,
+      "title": "Page 15",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 218,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frobenius formula",
+          "heading": false
+        },
+        {
+          "term": "schur function",
+          "heading": false
+        },
+        {
+          "term": "qty",
+          "heading": false
+        },
+        {
+          "term": "gale",
+          "heading": false
+        }
+      ],
+      "extract": "A Frobenius formula for the characters of the Hecke algebras 475 and the expansions in (4.10) give Edo aby’ = 5 WUKay(t =~) r20 1 _ =o x 5u(X)sy(qy(1 — q7*)) 1 — ¥ A(X -4qo\")a'y\" ~q-1 r=0 ! Tha = 47\") = X)gr gale, ANAT (c) and (d) follow from the last two expressions respectively by comparing coeffic- ients of y\" with the left hand side. Using Lemma 4.12, Ls )sy(qy(l — q7')) = x, py 5y(X)gl#!ylHs,(1 — q7*) r>Ourr Y",
+      "extractCut": true,
+      "blocks": [
+        "library/ram1991-frobenius-formula/blocks/prose-page-015",
+        "library/ram1991-frobenius-formula/blocks/thm-page-015-01"
+      ]
+    },
+    {
+      "id": "page-016",
+      "number": null,
+      "title": "Page 16",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 341,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "irreducible characters",
+          "heading": false
+        },
+        {
+          "term": "linear combination",
+          "heading": false
+        },
+        {
+          "term": "cff",
+          "heading": false
+        },
+        {
+          "term": "crf",
+          "heading": false
+        },
+        {
+          "term": "ube",
+          "heading": false
+        }
+      ],
+      "extract": "476 A. Ram Proof. The theorem follows immediately from Theorem 3.8 and Theorem 4.13(a). O 5 Formulas for the irreducible characters of H, (5.1) Theorem. For each T,, o€S,, there exists a Z[q] linear combination Co= >) Gort, » ube 4g,€Z[q], such that x(T,) = x(cz) for all characters x of Hy. Proof. Let c be a composition of f and let yw be the partition of f determined by rearranging the parts of c in decreasing",
+      "extractCut": true,
+      "blocks": [
+        "library/ram1991-frobenius-formula/blocks/prose-page-016",
+        "library/ram1991-frobenius-formula/blocks/thm-page-016-01"
+      ]
+    },
+    {
+      "id": "page-017",
+      "number": null,
+      "title": "Page 17",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 324,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "irreducible character",
+          "heading": false
+        },
+        {
+          "term": "linear combination",
+          "heading": false
+        },
+        {
+          "term": "symmetric functions",
+          "heading": false
+        },
+        {
+          "term": "hecke",
+          "heading": false
+        },
+        {
+          "term": "partition",
+          "heading": false
+        },
+        {
+          "term": "values",
+          "heading": false
+        }
+      ],
+      "extract": "A Frobenius formula for the characters of the Hecke algebras 477 The following corollary is an immediate consequence of Theorem 5.1. (5.2) Corollary. Any character of H; is determined by its values on the elements T,,, abs. Since H, is semisimple and its irreducible components are indexed by partitions of f, every character of Hy must be a linear combination of the irreducible characters 7, Af, of H,. This implies",
+      "extractCut": true,
+      "blocks": [
+        "library/ram1991-frobenius-formula/blocks/prose-page-017",
+        "library/ram1991-frobenius-formula/blocks/cor-page-017-01",
+        "library/ram1991-frobenius-formula/blocks/thm-page-017-02"
+      ]
+    },
+    {
+      "id": "page-018",
+      "number": null,
+      "title": "Page 18",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 229,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "irreducible character",
+          "heading": false
+        },
+        {
+          "term": "gah",
+          "heading": false
+        },
+        {
+          "term": "ove",
+          "heading": false
+        },
+        {
+          "term": "rao",
+          "heading": false
+        }
+      ],
+      "extract": "478 A. Ram By the expansion Pu(X) = ¥ x8,(w)si(X) a and (5.3), h,(X(1 — ))Is,ox) = ee YS ab B,(0 Ne é*eomcn)) si(X)m,(¥) -yHe — 1) 4,0) 4\") The result follows from Theorem 4.13(f) and the Frobenius formula. 0 Remark. For each permutation 7 €S, define t() = (t,,..., t) to be the cycle type of x and for each n+ f define a class function ®\": S, > Z[q] by o“@ Ta\" =) Ce The usual inner product on class functions is given",
+      "extractCut": true,
+      "blocks": [
+        "library/ram1991-frobenius-formula/blocks/prose-page-018",
+        "library/ram1991-frobenius-formula/blocks/rem-page-018-01",
+        "library/ram1991-frobenius-formula/blocks/thm-page-018-02"
+      ]
+    },
+    {
+      "id": "page-019",
+      "number": null,
+      "title": "Page 19",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 250,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "irreducible characters",
+          "heading": false
+        },
+        {
+          "term": "combinatorial rule",
+          "heading": false
+        },
+        {
+          "term": "frobenius formula",
+          "heading": false
+        }
+      ],
+      "extract": "A Frobenius formula for the characters of the Hecke algebras 479 Then, by Theorem 4.13(f) and the Frobenius formula, q Sf 7a) YX a -~q'\\(- qt)\" cyaas-mmKyp « Oo y(T, aoe WE) = Gayo 2 6 A combinatorial rule for computing the irreducible characters of the Hecke algebras In this section we rewrite the formula 1 Lf _ _ x(F,) -Gop@ XY (a *G = NV eaas-mmKoy (6.1) m=1 v from Theorem 5.5 to derive a combinatorial rule for",
+      "extractCut": true,
+      "blocks": [
+        "library/ram1991-frobenius-formula/blocks/prose-page-019",
+        "library/ram1991-frobenius-formula/blocks/lem-page-019-01",
+        "library/ram1991-frobenius-formula/blocks/thm-page-019-02"
+      ]
+    },
+    {
+      "id": "page-020",
+      "number": null,
+      "title": "Page 20",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 419,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hatched boxes",
+          "heading": false
+        },
+        {
+          "term": "horizontal strip",
+          "heading": false
+        },
+        {
+          "term": "vertical strip",
+          "heading": false
+        },
+        {
+          "term": "boxes form",
+          "heading": false
+        },
+        {
+          "term": "skew diagram",
+          "heading": false
+        },
+        {
+          "term": "nonnegative integers",
+          "heading": false
+        },
+        {
+          "term": "hook",
+          "heading": false
+        }
+      ],
+      "extract": "480 A. Ram where the sum is over all sequences of nonnegative integers (m) = (m,, m2,..., mM) such that m, > 0, )};m; =m and m; S p;. Then f » (— Doman tg — 1) (hy ® Scs-mmy) m=1 k -¥ D (= Hg\" 4g = Vs m,) U Pre €ni—mi + m=1 (m) Since |u| = f we can write this in the form 3 y(- yeoman £(@= Durning TL = 1g ln Cu; — mi m=1 (m) k =P (— erm g™ 1g = 1)sae-mm,) IT = 1 din Pm: Sni— mi > (m) i=2 where the last sum is over",
+      "extractCut": true,
+      "blocks": [
+        "library/ram1991-frobenius-formula/blocks/prose-page-020"
+      ]
+    },
+    {
+      "id": "page-021",
+      "number": null,
+      "title": "Page 21",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 390,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vertical strip",
+          "heading": false
+        },
+        {
+          "term": "horizontal strip",
+          "heading": false
+        },
+        {
+          "term": "vertical boxes",
+          "heading": false
+        },
+        {
+          "term": "vertical box",
+          "heading": false
+        },
+        {
+          "term": "vertical application",
+          "heading": false
+        },
+        {
+          "term": "box contributes",
+          "heading": false
+        },
+        {
+          "term": "hook minus",
+          "heading": false
+        },
+        {
+          "term": "contributes weight",
+          "heading": false
+        }
+      ],
+      "extract": "A Frobenius formula for the characters of the Hecke algebras 481 application of yu; — m; boxes in a vertical strip. In the same fashion the product Sa°(— IMO ™G”™ hn, Cn; —m; is a Sum of Schur functions obtained similarly except that each horizontal box contributes a weight of q and each vertical box contributes a weight of — 1 to the resulting Schur function. Observe that the result of an application of m; boxes in",
+      "extractCut": true,
+      "blocks": [
+        "library/ram1991-frobenius-formula/blocks/prose-page-021"
+      ]
+    },
+    {
+      "id": "page-022",
+      "number": null,
+      "title": "Page 22",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 312,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "strict tableaux",
+          "heading": false
+        },
+        {
+          "term": "strips",
+          "heading": false
+        },
+        {
+          "term": "hook",
+          "heading": false
+        },
+        {
+          "term": "shape",
+          "heading": false
+        },
+        {
+          "term": "mla",
+          "heading": false
+        }
+      ],
+      "extract": "482 A. Ram Li MLA Se m- 1 In this case the strip has exactly one component receiving a weight of # cols — 1(__ 1)# rows — 1! _ 1) q (q-). : In this way we rewrite the sum in (6.1) in the form 1 @oy™ y wt(T)sals, » where the sum is over all tableaux T of shape 4 arising from applications of strips of lengths y; and wt(T) is given by wt(T) = ll q# 60's im hook~1(__ 1)# rows inhook~1(g _ 1) | (6.6) hook components of T",
+      "extractCut": true,
+      "blocks": [
+        "library/ram1991-frobenius-formula/blocks/prose-page-022",
+        "library/ram1991-frobenius-formula/blocks/thm-page-022-01"
+      ]
+    },
+    {
+      "id": "page-023",
+      "number": null,
+      "title": "Page 23",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 387,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ocneanu trace",
+          "heading": false
+        },
+        {
+          "term": "irreducible characters",
+          "heading": false
+        },
+        {
+          "term": "frobenius formula",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "wybourne",
+          "heading": false
+        },
+        {
+          "term": "vershik-kerov",
+          "heading": false
+        },
+        {
+          "term": "king",
+          "heading": false
+        }
+      ],
+      "extract": "A Frobenius formula for the characters of the Hecke algebras 483 7 Work of King-Wybourne and Vershik-Kerov After the preparation of the preliminary version of this manuscript other work concerning characters of the Hecke algebra has come to our attention. It is clear that the Frobenius formula for the characters of the Hecke algebra, our Theorem 4.14, has also been discovered independently by Vershik-Kerov and King-",
+      "extractCut": true,
+      "blocks": [
+        "library/ram1991-frobenius-formula/blocks/prose-page-023",
+        "library/ram1991-frobenius-formula/blocks/thm-page-023-01",
+        "library/ram1991-frobenius-formula/blocks/lem-page-023-02"
+      ]
+    },
+    {
+      "id": "page-024",
+      "number": null,
+      "title": "Page 24",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 317,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frobenius formula",
+          "heading": false
+        },
+        {
+          "term": "w-z",
+          "heading": false
+        },
+        {
+          "term": "alphabet",
+          "heading": false
+        },
+        {
+          "term": "kerov",
+          "heading": false
+        },
+        {
+          "term": "characters",
+          "heading": false
+        },
+        {
+          "term": "reference",
+          "heading": false
+        }
+      ],
+      "extract": "484 A. Ram Now, w-Z _ w-—zq-1l _ _ h, i =n it). \"h,(z — W) = q7\"Sp(z — w) . (A q*) l-q 4 q \"hy ) =F \"Se ) Then using the addition formula for Schur functions and duality we have that h,(z — w) = YX S—1)(Z)(— 1) sci) (w) : k=0 s(w) = 1, say(w) = 1, and s(4.(w) = 0 for k > 1 giving r-1 hz — W) = Spy(2) — W5y—a)(2) = 2\" — wal? = (2 — wat? Substituting w = 1 — q + z we have shown that T WZ -1)\\_ ore tert 4 ) a The lemma",
+      "extractCut": true,
+      "blocks": [
+        "library/ram1991-frobenius-formula/blocks/prose-page-024"
+      ]
+    },
+    {
+      "id": "page-025",
+      "number": null,
+      "title": "Page 25",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 150,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "special cases",
+          "heading": false
+        },
+        {
+          "term": "tables",
+          "heading": false
+        },
+        {
+          "term": "hook",
+          "heading": false
+        }
+      ],
+      "extract": "A Frobenius formula for the characters of the Hecke algebras 485 8 Tables and formulas for special cases The following special cases follow immediately from Theorem 6.7. For all f => 1 and all wr Sf, 9 (E,) =(— ©, (8.1) Yu 2 (L,,) = qf eu) (8.2) For all f= 1 and all AF-S, A 0 if A is not a hook , rN) = ta iyiomgn-t, if Za (1S-™m) (8.3) The following are tables of VG) for Hy, up to f= 6. H2(q): A\\u (1?) (2) (1?) 1 -1",
+      "extractCut": true,
+      "blocks": [
+        "library/ram1991-frobenius-formula/blocks/prose-page-025"
+      ]
+    },
+    {
+      "id": "page-026",
+      "number": null,
+      "title": "Page 26",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 168,
+      "summary": null,
+      "keywords": [],
+      "extract": "486 A. Ram Hs(q): A\\u | (1°) | 219) | 27) (317) (32) (41) (5) as) fa -1 1 1 -1 -1 1 (213) 14 q-3 |2-2q 2-4 2q-1 q-1 —q (271) | 5 2g-3 |q?-2q+2 |1-29 -@t+q-1l\\q 0 (317) |6 3q-3 |q?—4qt+1 | q?-2qH+1 — 2q? + 24 -@t+q |@ (32) 5 3q—2 | 2q?-2q+1 | q?-2q g@-qta -q 0 (41) |4 |3q—1 | 2q?—29 2q’-4 g — 24? g-4q -¢ (5) 1 |q g v g g q He(q): A\\u (1°) (21*) | (2717) (2°) (1) 1 -1 1 -1 (214) 5 q-4 | -2q4+3 3q —2 (2717) 9 3q-—6 |",
+      "extractCut": true,
+      "blocks": [
+        "library/ram1991-frobenius-formula/blocks/prose-page-026"
+      ]
+    },
+    {
+      "id": "page-027",
+      "number": null,
+      "title": "Page 27",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 224,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "g-g",
+          "heading": false
+        },
+        {
+          "term": "algébres",
+          "heading": false
+        },
+        {
+          "term": "bou",
+          "heading": false
+        }
+      ],
+      "extract": "A Frobenius formula for the characters of the Hecke algebras 487 A\\u (19) (321) (417) (1°) 1 -1 -1 (214) |3-4q 2q-2 q-2 (2717) |3—3q —q? +3q-—2 2q-1 (2°) 1—2q -g@+q-1 q G19) Jq?—3q+3 | — 29? +4q-1 ~q?+2q-1 (321) | 2g? — 6g +2 | 2q? — 6q? + 6q — 2) — 297 + 2q (417) | 3q?—3q +1 | q? —4q? + 24 g- 29? +q (3?) q? —2q g-gt+q -¢ (42) | 3q — 34 2g? — 34’ + 4 q? — 29? (51) 3q? -—q 2g? — 2q 2q3 — q? 6) g g @ A\\u (3?) (42)",
+      "extractCut": true,
+      "blocks": [
+        "library/ram1991-frobenius-formula/blocks/prose-page-027"
+      ]
+    },
+    {
+      "id": "page-028",
+      "number": null,
+      "title": "Page 28",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 28,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 401,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uber die",
+          "heading": false
+        },
+        {
+          "term": "berlin heidelberg",
+          "heading": false
+        },
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "sitzungsber",
+          "heading": false
+        },
+        {
+          "term": "fyhlmo",
+          "heading": false
+        },
+        {
+          "term": "reprinted",
+          "heading": false
+        },
+        {
+          "term": "wybourne",
+          "heading": false
+        },
+        {
+          "term": "preuss",
+          "heading": false
+        }
+      ],
+      "extract": "488 A. Ram [FYHLMO] Freyd, P., Yetter, D., Hoste, J., Lickorish, W.B.R., Millet, K., Ocneanu, A.: A new [Fr] [G-R] [Gy] (H] (il [Ji2] [Jo] [K] [KW1] [KW2] [Mac] [0] [Sct] [Sc2] [VK1] [VK2] [Wz] [W22] polynomial invariant of knots and links. Bull. Am. Math. Soc. 12, 239-246 (1985) Frobenius, F.G.: Uber die Charactere der symmetrischen Gruppe. Sitzungsber. K. Preuss. Akad. Wisse. Berlin, 516-534 (1900); reprinted in:",
+      "extractCut": true,
+      "blocks": [
+        "library/ram1991-frobenius-formula/blocks/prose-page-028"
+      ]
+    }
+  ],
+  "checks": {},
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "hecke algebras",
+      "heading": false
+    },
+    {
+      "term": "irreducible characters",
+      "heading": false
+    },
+    {
+      "term": "frobenius formula",
+      "heading": false
+    },
+    {
+      "term": "frobenius type",
+      "heading": false
+    },
+    {
+      "term": "hall-littlewood symmetric",
+      "heading": false
+    },
+    {
+      "term": "schur functions",
+      "heading": false
+    },
+    {
+      "term": "irreducible representation",
+      "heading": false
+    },
+    {
+      "term": "vertical strip",
+      "heading": false
+    },
+    {
+      "term": "symmetric group",
+      "heading": false
+    },
+    {
+      "term": "horizontal strip",
+      "heading": false
+    },
+    {
+      "term": "monomial symmetric",
+      "heading": false
+    },
+    {
+      "term": "form strip",
+      "heading": false
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "not-extracted",
+      "note": "split one section per page; no contents was trusted"
+    },
+    {
+      "kind": "sections",
+      "state": "partial",
+      "count": 28,
+      "note": "one per page, not by heading"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p27); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 28 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/ram1991-frobenius-formula"
+  }
+}

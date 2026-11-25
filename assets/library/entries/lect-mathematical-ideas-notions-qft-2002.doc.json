@@ -1,0 +1,4010 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "lect-mathematical-ideas-notions-qft-2002",
+  "title": "lect.dvi",
+  "variant": "pdf",
+  "pages": 78,
+  "tocSource": "none",
+  "tocMethod": null,
+  "toc": [],
+  "sections": [
+    {
+      "id": "page-001",
+      "number": null,
+      "title": "Page 1",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 369,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "newton equation",
+          "heading": false
+        },
+        {
+          "term": "action principle",
+          "heading": false
+        },
+        {
+          "term": "motion",
+          "heading": false
+        },
+        {
+          "term": "variational problem",
+          "heading": false
+        },
+        {
+          "term": "extremal",
+          "heading": false
+        },
+        {
+          "term": "least action",
+          "heading": false
+        },
+        {
+          "term": "classical mechanics",
+          "heading": false
+        },
+        {
+          "term": "potential energy",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 1. GENERALITIES ON QUANTUM FIELD THEORY 1.1. Classical mechanics. In classical mechanics, we study the motion of a par- ticle. This motion is described by a (vector) function of one variable, gq = q(t), representing the position of the particle as a function of time. This function must satisfy the Newton equation of motion, g=-U'(q), where U the potential",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-001",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-001-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-001-02"
+      ]
+    },
+    {
+      "id": "page-002",
+      "number": null,
+      "title": "Page 2",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 569,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "classical field",
+          "heading": false
+        },
+        {
+          "term": "classical equations",
+          "heading": false
+        },
+        {
+          "term": "motion",
+          "heading": false
+        },
+        {
+          "term": "brownian",
+          "heading": false
+        },
+        {
+          "term": "membrane",
+          "heading": false
+        },
+        {
+          "term": "quantum particles",
+          "heading": false
+        },
+        {
+          "term": "later time",
+          "heading": false
+        },
+        {
+          "term": "field theory",
+          "heading": false
+        }
+      ],
+      "extract": "2 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 1.2. Classical field theory. In classical field theory, the situation is similar. In this case, we should think not of a single particle, but of a “continuum of particles” (e.g. a string, a membrane, a jet of fluid); so the motion is described by a classical field — a (vector) function ¢(z,t) depending on both space and time coordinates (a € R?, ¢ € R).",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-002",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-002-01"
+      ]
+    },
+    {
+      "id": "page-003",
+      "number": null,
+      "title": "Page 3",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 502,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "brownian particle",
+          "heading": false
+        },
+        {
+          "term": "quantum particle",
+          "heading": false
+        },
+        {
+          "term": "lebesgue measure",
+          "heading": false
+        },
+        {
+          "term": "integra tion",
+          "heading": false
+        },
+        {
+          "term": "correlation functions",
+          "heading": false
+        },
+        {
+          "term": "quantum mechanics",
+          "heading": false
+        },
+        {
+          "term": "quantum field",
+          "heading": false
+        },
+        {
+          "term": "field theory",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 3 Remark. This discussion assumes that the extremum of S$ at q is actually a minimum, which we know is not always the case. All the information we can hope to get about such a process is contained in the correlation functions < qj, (t1)..- qi, (tn) >, which by definition are the expectation values of the products of random variables q;, (t1)... qi, (tn) (more",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-003",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-003-01"
+      ]
+    },
+    {
+      "id": "page-004",
+      "number": null,
+      "title": "Page 4",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 506,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "steepest descent",
+          "heading": false
+        },
+        {
+          "term": "descent formula",
+          "heading": false
+        },
+        {
+          "term": "stationary phase",
+          "heading": false
+        },
+        {
+          "term": "taylor expansion",
+          "heading": false
+        },
+        {
+          "term": "smooth function",
+          "heading": false
+        },
+        {
+          "term": "decaying",
+          "heading": false
+        },
+        {
+          "term": "integrals",
+          "heading": false
+        },
+        {
+          "term": "same integral",
+          "heading": false
+        }
+      ],
+      "extract": "4 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY exist and come to correct and interesting conclusions (both physical and mathe- matical). Therefore, making sense of such integrals is an interesting problem for mathematicians, and will be one of our main occupation during the course.” 2. THE STEEPEST DESCENT AND STATIONARY PHASE FORMULAS Now, let us forget for a moment that the integrals (1,2,3) are infinite",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-004",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/thm-page-004-01"
+      ]
+    },
+    {
+      "id": "page-005",
+      "number": null,
+      "title": "Page 5",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 373,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fresnel integral",
+          "heading": false
+        },
+        {
+          "term": "poisson integral",
+          "heading": false
+        },
+        {
+          "term": "stationary phase",
+          "heading": false
+        },
+        {
+          "term": "localized around",
+          "heading": false
+        },
+        {
+          "term": "phase formula",
+          "heading": false
+        },
+        {
+          "term": "real case",
+          "heading": false
+        },
+        {
+          "term": "taylor",
+          "heading": false
+        },
+        {
+          "term": "smooth",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 5 so it is computed from the well known Poisson integral: con / e” = dy = V2n. —00 The theorem is proved. Oo 2.2. Stationary phase formula. This theorem has the following imaginary ana- log, called the stationary phase formula. Theorem 2.2. Assume that f has a unique critical point c € (a,b), with f\"(c) £0, and g vanishes with all derivatives at a,b. Then b /",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-005",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/thm-page-005-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-005-02"
+      ]
+    },
+    {
+      "id": "page-006",
+      "number": null,
+      "title": "Page 6",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 431,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "borel summation",
+          "heading": false
+        },
+        {
+          "term": "taylor expansion",
+          "heading": false
+        },
+        {
+          "term": "quantum field",
+          "heading": false
+        },
+        {
+          "term": "field theory",
+          "heading": false
+        },
+        {
+          "term": "perturbation",
+          "heading": false
+        },
+        {
+          "term": "series",
+          "heading": false
+        },
+        {
+          "term": "application",
+          "heading": false
+        }
+      ],
+      "extract": "6 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY It is clear that this sequence has superexponential growth, so the radius of conver- gence of the series is zero. Remark. In fact, the non-analyticity of I(h) is related to the fact that the integral defining I(h) is divergent for h < 0. Let us now discuss the question: to what extent does the asymptotic expansion of the function I(h) (which we can find using",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-006",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-006-01"
+      ]
+    },
+    {
+      "id": "page-007",
+      "number": null,
+      "title": "Page 7",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 401,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multidimensional versions",
+          "heading": false
+        },
+        {
+          "term": "symmetric bilinear",
+          "heading": false
+        },
+        {
+          "term": "bilinear form",
+          "heading": false
+        },
+        {
+          "term": "smooth function",
+          "heading": false
+        },
+        {
+          "term": "volume element",
+          "heading": false
+        },
+        {
+          "term": "box",
+          "heading": false
+        },
+        {
+          "term": "real vector",
+          "heading": false
+        },
+        {
+          "term": "minimum",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 7 2.5. Multidimensional versions of steepest descent and stationary phase. Theorems 2.1,2.2 have multidimensional analogs. To formulate them, let V be a real vector space of dimension d with a fixed volume element dx, and let f,g be smooth functions in a closed box BC V. Theorem 2.3. Assume that f has global minimum on B at a unique interior point c, such that",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-007",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/thm-page-007-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/thm-page-007-02",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-007-03"
+      ]
+    },
+    {
+      "id": "page-008",
+      "number": null,
+      "title": "Page 8",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 341,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pairings",
+          "heading": false
+        },
+        {
+          "term": "odd",
+          "heading": false
+        },
+        {
+          "term": "integrals",
+          "heading": false
+        },
+        {
+          "term": "points",
+          "heading": false
+        },
+        {
+          "term": "calculation",
+          "heading": false
+        },
+        {
+          "term": "clear",
+          "heading": false
+        },
+        {
+          "term": "pair",
+          "heading": false
+        }
+      ],
+      "extract": "8 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY proof of equation 8 (which we gave in the 1-dimensional case), we see that the calculation of A; reduces to calculation of integrals of the form P(x)e~ BO)? dar, V where P is a polynomial and B is a positive definite bilinear form (in fact, B(v, u) = (O,0y5)(c)). But such integrals can be exactly evaluated. Namely, it is sufficient to consider the case when P",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-008",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/thm-page-008-01"
+      ]
+    },
+    {
+      "id": "page-009",
+      "number": null,
+      "title": "Page 9",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 480,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "feynman diagrams",
+          "heading": false
+        },
+        {
+          "term": "quantum field",
+          "heading": false
+        },
+        {
+          "term": "graphs",
+          "heading": false
+        },
+        {
+          "term": "finite number",
+          "heading": false
+        },
+        {
+          "term": "field theory",
+          "heading": false
+        },
+        {
+          "term": "vertex",
+          "heading": false
+        },
+        {
+          "term": "internal",
+          "heading": false
+        },
+        {
+          "term": "vertices",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 9 variable (check it!), so we can choose a coordinate system in such a way that B(a,x) = aj +--+ 23, and C(x) = 21. Therefore, it is sufficient to assume that d=1, and ¢(#) = a. In this case, the theorem says that [- ake /2 dy = (ony which is easily obtained from the definition of the Gamma function by change of variable y = x? /2. Oo Examples. 2n)4/2 [er",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-009"
+      ]
+    },
+    {
+      "id": "page-010",
+      "number": null,
+      "title": "Page 10",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 207,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pel",
+          "heading": false
+        },
+        {
+          "term": "amplitude",
+          "heading": false
+        },
+        {
+          "term": "edges",
+          "heading": false
+        },
+        {
+          "term": "bers",
+          "heading": false
+        },
+        {
+          "term": "vertices",
+          "heading": false
+        }
+      ],
+      "extract": "10 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 3. Take the contraction of the tensors along edges of T, using the bilinear form B-'. This will produce a number, called the amplitude of [ and denoted Fr(fi,---, én). Remark. If [ is not connected, then Fp is defined to be the product of num- bers obtained from the connected components. Also, the amplitude of the empty diagram is defined to be 1. Theorem",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-010",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-010-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/thm-page-010-02",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-010-03",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-010-04"
+      ]
+    },
+    {
+      "id": "page-011",
+      "number": null,
+      "title": "Page 11",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 499,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "valent vertices",
+          "heading": false
+        },
+        {
+          "term": "correlation function",
+          "heading": false
+        },
+        {
+          "term": "feynman theorem",
+          "heading": false
+        },
+        {
+          "term": "free theory",
+          "heading": false
+        },
+        {
+          "term": "field theory",
+          "heading": false
+        },
+        {
+          "term": "expectation value",
+          "heading": false
+        },
+        {
+          "term": "graphs",
+          "heading": false
+        },
+        {
+          "term": "quantum field",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 11 give nonzero amplitudes do not have internal vertices, and thus reduce to graphs corresponding to pairings o. Let us now make some comments about the terminology. In quantum field theory, the function < ¢,...€n > is called the N-point correlation function, and graphs T are called Feynman diagrams. The form B~! which is put on the edges is called the",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-011",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-011-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/thm-page-011-02"
+      ]
+    },
+    {
+      "id": "page-012",
+      "number": null,
+      "title": "Page 12",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 265,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "flower valent",
+          "heading": false
+        },
+        {
+          "term": "outgoing edges",
+          "heading": false
+        },
+        {
+          "term": "ends",
+          "heading": false
+        },
+        {
+          "term": "fig",
+          "heading": false
+        },
+        {
+          "term": "factor",
+          "heading": false
+        },
+        {
+          "term": "theorem",
+          "heading": false
+        }
+      ],
+      "extract": "12 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY g = —ht, By = £, Bo = 0, By = 0. Thus, Theorem 3.3 implies Theorem 3.2 (note that the factor N! in the denominator is accounted for by the fact that in Theorem 3.3 we consider unlabeled, rather than labeled, 1-valent vertices — convince yourself of this!). 3.4. Proof of Feynman’s theorem. Now we will prove Theorem 3.3. Let us make a change of variable y = x/",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-012"
+      ]
+    },
+    {
+      "id": "page-013",
+      "number": null,
+      "title": "Page 13",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 123,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ficure",
+          "heading": false
+        },
+        {
+          "term": "graph",
+          "heading": false
+        },
+        {
+          "term": "i-valent",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 13 Figure 5. The set T for 7 = (0,0,0,2,1,0,0,...) (the set of white circles) obtain a certain (unoriented) graph T =I, (see Fig. 6). Moreover, it is easy to see that the number F(c) is nothing but the amplitude Fp. It is clear that any graph [ with n,; i-valent vertices for each i can be obtained in this way. However, the same graph can be obtained many times,",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-013"
+      ]
+    },
+    {
+      "id": "page-014",
+      "number": null,
+      "title": "Page 14",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 389,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "same flower",
+          "heading": false
+        },
+        {
+          "term": "teg",
+          "heading": false
+        },
+        {
+          "term": "connected diagrams",
+          "heading": false
+        },
+        {
+          "term": "kin",
+          "heading": false
+        },
+        {
+          "term": "pairings",
+          "heading": false
+        },
+        {
+          "term": "aut",
+          "heading": false
+        },
+        {
+          "term": "edges",
+          "heading": false
+        },
+        {
+          "term": "permutations",
+          "heading": false
+        }
+      ],
+      "extract": "14 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY For this purpose, we will consider the group G of permutations of T, which preserves “flowers” (i.e. endpoints of any two edges outgoing from the same flower end up again in the same flower). This group involves 1) permutations of “flowers” with a given valency; 2) permutation of the i edges inside each i-valent “flower” . More precisely, the group G is the",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-014",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/ex-page-014-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/thm-page-014-02"
+      ]
+    },
+    {
+      "id": "page-015",
+      "number": null,
+      "title": "Page 15",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 439,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "loop expansion",
+          "heading": false
+        },
+        {
+          "term": "jaut",
+          "heading": false
+        },
+        {
+          "term": "disjoint union",
+          "heading": false
+        },
+        {
+          "term": "graphs",
+          "heading": false
+        },
+        {
+          "term": "trees",
+          "heading": false
+        },
+        {
+          "term": "coefficient",
+          "heading": false
+        },
+        {
+          "term": "diagrams",
+          "heading": false
+        },
+        {
+          "term": "connected",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 15 Remark. We agree that the empty graph is not connected. Proof. For any graphs [;, T, let [;T'2 stand for the disjoint union of Ty and TPs, and for any graph I let [” denote the disjoint union of n copies of [. Then every graph can be uniquely written as re see re, where I’; are connected non-isomorphic graphs. Moreover, it is clear that Fr,r, = Fr, Fr,,",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-015",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-015-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/thm-page-015-02"
+      ]
+    },
+    {
+      "id": "page-016",
+      "number": null,
+      "title": "Page 16",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 521,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "external vertices",
+          "heading": false
+        },
+        {
+          "term": "trees",
+          "heading": false
+        },
+        {
+          "term": "marked vertex",
+          "heading": false
+        },
+        {
+          "term": "counting",
+          "heading": false
+        },
+        {
+          "term": "combinatorial proof",
+          "heading": false
+        },
+        {
+          "term": "critical point",
+          "heading": false
+        },
+        {
+          "term": "cayley",
+          "heading": false
+        },
+        {
+          "term": "summing",
+          "heading": false
+        }
+      ],
+      "extract": "16 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY Physicists call the expression (In(Z/Zo))o the classical (or tree) approxima- tion to the quantum mechanical quantity hln(Z/Zp), and the sum (In(Z/Z))o + A(In(Z/Zo))1 the one loop approximation. Similarly one defines higher loop approx- imations. Note that the classical approximation is obtained by finding the critical point and value of the classical action",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-016"
+      ]
+    },
+    {
+      "id": "page-017",
+      "number": null,
+      "title": "Page 17",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 290,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "labeled trees",
+          "heading": false
+        },
+        {
+          "term": "oni",
+          "heading": false
+        },
+        {
+          "term": "gel",
+          "heading": false
+        },
+        {
+          "term": "valent",
+          "heading": false
+        },
+        {
+          "term": "vertices",
+          "heading": false
+        },
+        {
+          "term": "taylor",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 17 In other words, let f(z) be the function inverse to re~* near « = 0. Then we have % = f(g). Thus, let us find the Taylor expansion of f. This is given by the following classical result. Proposition 3.6. One has 19=S a\" n>1 Proof. Let f(g) = Dndt ang”. Then =f Way bf Pe raee) = \"Oni F grtl Oni we—)ntt 1 cue! 2 nr-l 7 nn? _ nn? Qri an (n—D! (n—2)! (n—-1)! Now",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-017",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/cor-page-017-01"
+      ]
+    },
+    {
+      "id": "page-018",
+      "number": null,
+      "title": "Page 18",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 328,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "labeled trees",
+          "heading": false
+        },
+        {
+          "term": "oriented trees",
+          "heading": false
+        },
+        {
+          "term": "sources",
+          "heading": false
+        },
+        {
+          "term": "unoriented",
+          "heading": false
+        },
+        {
+          "term": "count",
+          "heading": false
+        },
+        {
+          "term": "effective",
+          "heading": false
+        },
+        {
+          "term": "vertices",
+          "heading": false
+        }
+      ],
+      "extract": "18 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY Corollary 3.8. The number of trivalent labeled trees with m = 2k vertices is (2k — 3)\" BEE, 3.10. Counting oriented trees. Feynman calculus can be used to count not only non-oriented, but also oriented graphs. For example, suppose we want to count labeled oriented trees, whose vertices are either sources or sinks (see Fig. 7). In this case, it is easy to see",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-018",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/cor-page-018-01"
+      ]
+    },
+    {
+      "id": "page-019",
+      "number": null,
+      "title": "Page 19",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 273,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "external edges",
+          "heading": false
+        },
+        {
+          "term": "connected graph",
+          "heading": false
+        },
+        {
+          "term": "particle irreducible",
+          "heading": false
+        },
+        {
+          "term": "effective action",
+          "heading": false
+        },
+        {
+          "term": "internal vertex",
+          "heading": false
+        },
+        {
+          "term": "internal vertices",
+          "heading": false
+        },
+        {
+          "term": "called particle",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 19 (i.e. the classical answer for the effective action is the quantum answer for the original one), then we can regard the quantum theory for the action S as solved. In other words, the problem of solving the quantum theory attached to S (i.e. finding the corresponding integrals) essentially reduces to the problem of computing the effective action Seg. We will",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-019",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/def-page-019-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-019-02"
+      ]
+    },
+    {
+      "id": "page-020",
+      "number": null,
+      "title": "Page 20",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 308,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "particle irreducible",
+          "heading": false
+        },
+        {
+          "term": "irreducible graphs",
+          "heading": false
+        },
+        {
+          "term": "external edges",
+          "heading": false
+        },
+        {
+          "term": "skeleton",
+          "heading": false
+        },
+        {
+          "term": "tree",
+          "heading": false
+        },
+        {
+          "term": "bridges",
+          "heading": false
+        },
+        {
+          "term": "effective action",
+          "heading": false
+        }
+      ],
+      "extract": "20 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY Theorem 3.10. The effective action Seg is given by the formula Supa) = 22) _ > F 2 W i>0 where po(r)+1 By(a.2,....0) = TT 9i\") Paar terete): TEG1—irr(n,N) where x, € V* is defined by x,(y) := B(a,y) Thus, Ser = S +hS; + h?S. +.. The expressions h/S; are called the j-loop corrections to the effective action. This theorem allows physicists to worry only about",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-020",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/thm-page-020-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/lem-page-020-02"
+      ]
+    },
+    {
+      "id": "page-021",
+      "number": null,
+      "title": "Page 21",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 472,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "legendre transform",
+          "heading": false
+        },
+        {
+          "term": "seg",
+          "heading": false
+        },
+        {
+          "term": "irreducible graphs",
+          "heading": false
+        },
+        {
+          "term": "critical value",
+          "heading": false
+        },
+        {
+          "term": "critical point",
+          "heading": false
+        },
+        {
+          "term": "effective action",
+          "heading": false
+        },
+        {
+          "term": "particle irreducible",
+          "heading": false
+        },
+        {
+          "term": "diffeomorphism",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 21 3.12. 1-particle irreducible graphs and the Legendre transform. Recall the notion of Legendre transform. Let f be a smooth function on a vector space Y, such that the map Y > Y* given by a > df(a) is a diffeomorphism. Then one can define the Legendre transform of f as follows. For p € Y%*, let xo(p) be the critical point of the function (p,x) — f(a) (i.e. the",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-021",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/ex-page-021-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prop-page-021-02"
+      ]
+    },
+    {
+      "id": "page-022",
+      "number": null,
+      "title": "Page 22",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 396,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fat flowers",
+          "heading": false
+        },
+        {
+          "term": "fat i-valent",
+          "heading": false
+        },
+        {
+          "term": "valent flower",
+          "heading": false
+        },
+        {
+          "term": "fattening",
+          "heading": false
+        },
+        {
+          "term": "oriented surface",
+          "heading": false
+        },
+        {
+          "term": "graph",
+          "heading": false
+        },
+        {
+          "term": "intervals",
+          "heading": false
+        },
+        {
+          "term": "feynman theorem",
+          "heading": false
+        }
+      ],
+      "extract": "22 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY Thus, before we proceed further, we need to do some 2-dimensional combinatorial topology. 4.1. Fat graphs. Recall from the proof of Feynman’s theorem that given a finite collection of flowers and a pairing o on the set T of endpoints of their edges, we can obtain a graph T, by connecting (or gluing) the points which fall in the same pair. Now, given an",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-022"
+      ]
+    },
+    {
+      "id": "page-023",
+      "number": null,
+      "title": "Page 23",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 194,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fat graph",
+          "heading": false
+        },
+        {
+          "term": "nonzero iff",
+          "heading": false
+        },
+        {
+          "term": "contraction",
+          "heading": false
+        },
+        {
+          "term": "m-valent",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 23 T, g=0 Ty g=0 SE FIGuRE 11. Gluing a fat graph from fat flowers Proof. Let e; be the standard basis of C% , and e* the dual basis. Then the tensor Tr(A™) can be written as N Tr(A™) = > (ci, ® eF, @ ei, @ €F, @ +++ @Ei,, @ ej,, AP”). One can visualize each monomial in this sum as a labeling of the angle points Py, Q1,---5Pm; Qm on the boundary of a fat",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-023",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/cor-page-023-01"
+      ]
+    },
+    {
+      "id": "page-024",
+      "number": null,
+      "title": "Page 24",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 446,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fat flowers",
+          "heading": false
+        },
+        {
+          "term": "fat graphs",
+          "heading": false
+        },
+        {
+          "term": "connected fat",
+          "heading": false
+        },
+        {
+          "term": "teg",
+          "heading": false
+        },
+        {
+          "term": "genus zero",
+          "heading": false
+        },
+        {
+          "term": "symmetric matrices",
+          "heading": false
+        },
+        {
+          "term": "real symmetric",
+          "heading": false
+        },
+        {
+          "term": "feynman diagram",
+          "heading": false
+        }
+      ],
+      "extract": "24 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY Proof, Let Grat(n) = T] Sn, * ([]Z/iZ)\"*. This group acts on T, so that T, = Tyo, for any g € Gat (since cyclic permutations of edges of a flower extend to its fattening). Moreover, the group acts transitively on the set of o giving a fixed fat graph T,, and the stabilizer of any o is Aut([,). This implies the result. Oo Now for any compact surface x with",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-024",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/thm-page-024-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/thm-page-024-02",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-024-03",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-024-04"
+      ]
+    },
+    {
+      "id": "page-025",
+      "number": null,
+      "title": "Page 25",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 361,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted fat",
+          "heading": false
+        },
+        {
+          "term": "fat graphs",
+          "heading": false
+        },
+        {
+          "term": "connected twisted",
+          "heading": false
+        },
+        {
+          "term": "inzy",
+          "heading": false
+        },
+        {
+          "term": "por",
+          "heading": false
+        },
+        {
+          "term": "genus",
+          "heading": false
+        },
+        {
+          "term": "aut",
+          "heading": false
+        },
+        {
+          "term": "cuts",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 25 allow gluing with a twist of the ribbon by 180°. Fat graphs thus obtained will be called twisted fat graphs. That means, a twisted fat graph is a surface with boundary (possibly not orientable), together with a partition into fat flowers, and orientations on each of them (which may or may not match at the cuts, see Fig.13). FiGurE 13. Twisted-fat graph Now",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-025",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/thm-page-025-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/thm-page-025-02"
+      ]
+    },
+    {
+      "id": "page-026",
+      "number": null,
+      "title": "Page 26",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 541,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "m-gon",
+          "heading": false
+        },
+        {
+          "term": "adjacent sides",
+          "heading": false
+        },
+        {
+          "term": "glue surface",
+          "heading": false
+        },
+        {
+          "term": "hermitian matrices",
+          "heading": false
+        },
+        {
+          "term": "counting problem",
+          "heading": false
+        },
+        {
+          "term": "midpoints",
+          "heading": false
+        },
+        {
+          "term": "complex hermitian",
+          "heading": false
+        },
+        {
+          "term": "gon",
+          "heading": false
+        }
+      ],
+      "extract": "26 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY representation of Sp(2N). Compare to the case of real symmetric matrices, where the relevant representation is S?V for O(N), and the case of complex Hermitian matrices, where it is V ® V* for GL(N). 4.4. Application to a counting problem. Matrix integrals are so rich that even the simplest possible example reduces to a nontrivial counting problem. Namely,",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-026",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/thm-page-026-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/cor-page-026-02",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/cor-page-026-03"
+      ]
+    },
+    {
+      "id": "page-027",
+      "number": null,
+      "title": "Page 27",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 199,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "semicircle law",
+          "heading": false
+        },
+        {
+          "term": "wigner",
+          "heading": false
+        },
+        {
+          "term": "trf",
+          "heading": false
+        },
+        {
+          "term": "gluings",
+          "heading": false
+        },
+        {
+          "term": "weierstrass",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 27 FIGURE 14. Pairing of sides of a 6-gon. FIGURE 15 [eT FIGURE 16 face the problem of connecting the two sets of 2k and 21 sides without intersections. This shows that the number of gluings D,,, satisfies the recursion Dm= YS. DyDi k+l=m-1 In other words, the generating function )> D,,z™” = 1+x+--- satisfies the equation f—1=af?. This implies that f = Lviei",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-027",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/thm-page-027-01"
+      ]
+    },
+    {
+      "id": "page-028",
+      "number": null,
+      "title": "Page 28",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 28,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 353,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hermite polynomials",
+          "heading": false
+        },
+        {
+          "term": "suffices",
+          "heading": false
+        },
+        {
+          "term": "iii",
+          "heading": false
+        },
+        {
+          "term": "operator",
+          "heading": false
+        },
+        {
+          "term": "quantum",
+          "heading": false
+        },
+        {
+          "term": "hand",
+          "heading": false
+        }
+      ],
+      "extract": "28 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY Thus, it suffices to check the result if f(z) = 2?™. In this case, by Corollary 4.8, the left hand side is C;,. On the other hand, an elementary computation yields x Ps a?™\\/4 — 2? = Cm, which implies the theorem. Oo 4.5. Hermite polynomials. The proof + of Theorem 4.7 given below uses Hermite polynomials. So let us recall their properties. Hermite’s",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-028",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/thm-page-028-01"
+      ]
+    },
+    {
+      "id": "page-029",
+      "number": null,
+      "title": "Page 29",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 327,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "enp",
+          "heading": false
+        },
+        {
+          "term": "fone",
+          "heading": false
+        },
+        {
+          "term": "ptt",
+          "heading": false
+        },
+        {
+          "term": "fda",
+          "heading": false
+        },
+        {
+          "term": "tio",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 29 To prove this identity, let us integrate the product of three generating functions. By (i), we have 1 [ a? 2(tu+tu+uv) Lf to.t)Flou) flere Fda = ctettotee), vi Je Extracting the coefficient of t”u\"v?*, we get the result. im 4.6. Proof of Theorem 4.7. We need to compute the integral | Tr(a eA GA. bn To do this, we note that the integrand is invariant with",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-029"
+      ]
+    },
+    {
+      "id": "page-030",
+      "number": null,
+      "title": "Page 30",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 30,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 398,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cell complex",
+          "heading": false
+        },
+        {
+          "term": "contractible finite",
+          "heading": false
+        },
+        {
+          "term": "euler characteristic",
+          "heading": false
+        },
+        {
+          "term": "cohomological dimension",
+          "heading": false
+        },
+        {
+          "term": "finite group",
+          "heading": false
+        },
+        {
+          "term": "finite dimensional",
+          "heading": false
+        },
+        {
+          "term": "moduli space",
+          "heading": false
+        },
+        {
+          "term": "notions",
+          "heading": false
+        }
+      ],
+      "extract": "30 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY where y; = i A; (x)2e-®\" da are the squared norms of the Hermite polynomials. Applying this for m = 0 and awing Jm by Jo, we find Info =2\" > 4 ~ | 2?\" H;(2)?e~* dx j=o 1d Using Theorem 4.10 (iii) and (v), we find: 7; = 2¢i!\\/7, and hence N-1 domo _ y= ™ Hog(@) _ 2 Inf Jo ale ee DREG—mI° =0 k=0 Now, using (iv), we get Im| J 2nd! 5 2k jl mm/-Jo = | La AIRE (G —",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-030"
+      ]
+    },
+    {
+      "id": "page-031",
+      "number": null,
+      "title": "Page 31",
+      "level": 1,
+      "pageStart": 31,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 586,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "euler characteristic",
+          "heading": false
+        },
+        {
+          "term": "finite index",
+          "heading": false
+        },
+        {
+          "term": "torsion free",
+          "heading": false
+        },
+        {
+          "term": "finite group",
+          "heading": false
+        },
+        {
+          "term": "wall",
+          "heading": false
+        },
+        {
+          "term": "rational number",
+          "heading": false
+        },
+        {
+          "term": "cells",
+          "heading": false
+        },
+        {
+          "term": "subgroup",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 31 X(T) := X(-1)' dim H'(L, Q is equal to 3\\(—1)'n;(Y/T), where n;(Y/T) denotes the number of cells in Y/T’ of dimension i. This setting, however, is very restrictive, since it allows only groups of finite cohomological dimension, and in particular excludes all non-trivial finite groups. So let us consider a more general setting: assume that some finite index",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-031",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/ex-page-031-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/ex-page-031-02",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/ex-page-031-03"
+      ]
+    },
+    {
+      "id": "page-032",
+      "number": null,
+      "title": "Page 32",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 32,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 630,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "teichmiiller space",
+          "heading": false
+        },
+        {
+          "term": "marked point",
+          "heading": false
+        },
+        {
+          "term": "simplicial complex",
+          "heading": false
+        },
+        {
+          "term": "arc systems",
+          "heading": false
+        },
+        {
+          "term": "moduli space",
+          "heading": false
+        },
+        {
+          "term": "contractible",
+          "heading": false
+        },
+        {
+          "term": "euler characteristic",
+          "heading": false
+        },
+        {
+          "term": "orbifold",
+          "heading": false
+        }
+      ],
+      "extract": "32 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY It turns out that there exists a contractible finite dimensional cell complex Y , to be constructed below, on which QT acts cellularly with finitely many cell orbits. Thus, the Euler characteristic of Ty in the sense of Wall is well defined. Theorem 5.1. (Harer-Zagier) x(T}) = —Bog/2g, where B, are the Bernoulli numbers, defined by the generating function",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-032",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/thm-page-032-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-032-02",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-032-03",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/ex-page-032-04"
+      ]
+    },
+    {
+      "id": "page-033",
+      "number": null,
+      "title": "Page 33",
+      "level": 1,
+      "pageStart": 33,
+      "pageEnd": 33,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 167,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arc systems",
+          "heading": false
+        },
+        {
+          "term": "simplices",
+          "heading": false
+        },
+        {
+          "term": "fills",
+          "heading": false
+        },
+        {
+          "term": "throw",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 33 recall that PSL2(Z) is generated by S,U such that $? = U® = 1. The action of S,U on T is defined as follows: S is reflection with flip with respect to a side of the triangle Ap centered at to (Fig.20), and U is rotation by 27/3 around to. Bo By By FIGURE 17. Three arc systems. This example shows that the action of TY on A is not properly discontinuous, and",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-033"
+      ]
+    },
+    {
+      "id": "page-034",
+      "number": null,
+      "title": "Page 34",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 463,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "filling arc",
+          "heading": false
+        },
+        {
+          "term": "arc systems",
+          "heading": false
+        },
+        {
+          "term": "cellular decomposition",
+          "heading": false
+        },
+        {
+          "term": "teichmiiller space",
+          "heading": false
+        },
+        {
+          "term": "aco",
+          "heading": false
+        },
+        {
+          "term": "cell",
+          "heading": false
+        },
+        {
+          "term": "poincare dual",
+          "heading": false
+        },
+        {
+          "term": "stabilizers",
+          "heading": false
+        }
+      ],
+      "extract": "34 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY ails FIGURE 20. Reflection with a flip. the property of not filling up © is obviously stable under taking an arc subsystem. Thus, A \\A,o is an open subset of A. In the example above, it is the complex A with 0-dimensional simplices removed. The following theorem shows that A \\ Aq. is in fact a combinatorial model for the Teichmiiller space Tj, with the action",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-034",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/thm-page-034-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-034-02",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-034-03",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/ex-page-034-04"
+      ]
+    },
+    {
+      "id": "page-035",
+      "number": null,
+      "title": "Page 35",
+      "level": 1,
+      "pageStart": 35,
+      "pageEnd": 35,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 304,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "filling arc",
+          "heading": false
+        },
+        {
+          "term": "enumerating filling",
+          "heading": false
+        },
+        {
+          "term": "arc system",
+          "heading": false
+        },
+        {
+          "term": "consequtive edges",
+          "heading": false
+        },
+        {
+          "term": "gluings",
+          "heading": false
+        },
+        {
+          "term": "satisfies condition",
+          "heading": false
+        },
+        {
+          "term": "glued",
+          "heading": false
+        },
+        {
+          "term": "iff",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 35 unique 2-cell) according to a pairing of its sides preserving orientation. (Note that S can be reconstructed as (S*)*). This allows us to link the problem of enumerating filling arc systems with the problem of counting such gluings, which was solved using matrix integrals. Namely, the problem of enumerating filling arc systems is essentially solved modulo one",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-035",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/lem-page-035-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prop-page-035-02"
+      ]
+    },
+    {
+      "id": "page-036",
+      "number": null,
+      "title": "Page 36",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 36,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 532,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "consequtive edges",
+          "heading": false
+        },
+        {
+          "term": "obtain gon",
+          "heading": false
+        },
+        {
+          "term": "gluing",
+          "heading": false
+        },
+        {
+          "term": "increasing order",
+          "heading": false
+        },
+        {
+          "term": "glued",
+          "heading": false
+        },
+        {
+          "term": "satisfies condition",
+          "heading": false
+        },
+        {
+          "term": "labeled",
+          "heading": false
+        },
+        {
+          "term": "glue",
+          "heading": false
+        }
+      ],
+      "extract": "36 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 5.5. Computation of ¥,,(—1)r tage. Now it remains to compute the sum on the right hand side. To do this, we will need to link Ag(n) with €g(n), which has already been computed. This is accomplished by the following lemma. Lemma 5.5. One has ext) = (72) nol = a tig(n) = > (\") dg (n — i). i Proof. Proof of the first equation. Let o be a gluing of a 2n-gon A",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-036",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/lem-page-036-01"
+      ]
+    },
+    {
+      "id": "page-037",
+      "number": null,
+      "title": "Page 37",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 37,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 291,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ajz",
+          "heading": false
+        },
+        {
+          "term": "etn",
+          "heading": false
+        },
+        {
+          "term": "pel",
+          "heading": false
+        },
+        {
+          "term": "polynomiality",
+          "heading": false
+        },
+        {
+          "term": "win",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 37 Lemma 5.6. Let <(n), u(n), A(n), n > 0, be sequences satisfying the equations etn) = (7?) win =a a n(n) = > (\") Mn =i). a Assume also that e(n) = (\") f(n), where f is a polynomial such that f(0) = 0. Then (0) = 0, A(n) has finitely many nonzero values, and Y\\(—1)\"—!X(n)/2n = f'(0). Proof. Let us first consider any sequences é(n), p(n), and A(n) linked by the",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-037",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/lem-page-037-01"
+      ]
+    },
+    {
+      "id": "page-038",
+      "number": null,
+      "title": "Page 38",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 38,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 452,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "matrix integrals",
+          "heading": false
+        },
+        {
+          "term": "bole",
+          "heading": false
+        },
+        {
+          "term": "tua",
+          "heading": false
+        },
+        {
+          "term": "l1l",
+          "heading": false
+        },
+        {
+          "term": "planar",
+          "heading": false
+        }
+      ],
+      "extract": "38 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY But So a?—-'(1—2)?—'dz is a beta integral, and it equals (p—1)!?/(2p—1)!. Thus, the above integral equals Dpsa(-1)P ta? /p = In(1 + a), as desired. o Now we finish the proof of the theorem. Recall that using matrix integrals we have proved the formula Oo eh Deamon By) (,2,) 9 Let us set g =n -—p. Then expression (14) sakes the form (15) PP, ( a=(N)S Le a (7 )",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-038"
+      ]
+    },
+    {
+      "id": "page-039",
+      "number": null,
+      "title": "Page 39",
+      "level": 1,
+      "pageStart": 39,
+      "pageEnd": 39,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 400,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "planar gluings",
+          "heading": false
+        },
+        {
+          "term": "flowers",
+          "heading": false
+        },
+        {
+          "term": "fat",
+          "heading": false
+        },
+        {
+          "term": "brezin",
+          "heading": false
+        },
+        {
+          "term": "itzykson",
+          "heading": false
+        },
+        {
+          "term": "zuber",
+          "heading": false
+        },
+        {
+          "term": "parisi",
+          "heading": false
+        },
+        {
+          "term": "matrix integral",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 39 Let Zy(h) = Zn(h/N). We have seen that lim > = Woo, N-00 where W,, is given by summation over planar fat graphs: we=STe A ee eh »» jAut(P)| a €G.(n)[0] In particular, the coefficient of [] g?‘ is (up to a power of h) the number of (ori- entation preserving) gluings of a fat graph of genus zero out of a collection of fat flowers containing n,; i-valent flowers",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-039",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/thm-page-039-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prop-page-039-02"
+      ]
+    },
+    {
+      "id": "page-040",
+      "number": null,
+      "title": "Page 40",
+      "level": 1,
+      "pageStart": 40,
+      "pageEnd": 40,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 525,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "steepest descent",
+          "heading": false
+        },
+        {
+          "term": "descent formula",
+          "heading": false
+        },
+        {
+          "term": "integral equation",
+          "heading": false
+        },
+        {
+          "term": "unit circle",
+          "heading": false
+        },
+        {
+          "term": "runs through",
+          "heading": false
+        },
+        {
+          "term": "deift",
+          "heading": false
+        },
+        {
+          "term": "integrand",
+          "heading": false
+        },
+        {
+          "term": "interval",
+          "heading": false
+        }
+      ],
+      "extract": "40 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY The proposition says, essentially, that the integrand has a sufficiently sharp max- imum, so that the leading behavior of the integral can be computed by the steepest descent formula. We note that we cannot apply the steepest descent formula with- out explanations, since the integral is over a space whose dimension grows as the perturbation parameter 1/N goes",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-040",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prop-page-040-01"
+      ]
+    },
+    {
+      "id": "page-041",
+      "number": null,
+      "title": "Page 41",
+      "level": 1,
+      "pageStart": 41,
+      "pageEnd": 41,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 324,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum mechanics",
+          "heading": false
+        },
+        {
+          "term": "dimensional spacetime",
+          "heading": false
+        },
+        {
+          "term": "quantum objects",
+          "heading": false
+        },
+        {
+          "term": "quantum field",
+          "heading": false
+        },
+        {
+          "term": "field theory",
+          "heading": false
+        },
+        {
+          "term": "substituting",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 41 Now f(y, g) is found as the jump of F: fQ.9) = “5 + Aga? + 2gy?) \\/4a2 — 4. It remains s find a in terms of g. We have yF(y) > 1, y > ow (as f f(a, g)dt = 1), hence zG(z) + 1/a, z 4 00. This yields 1/a = a + 12ga°, 12ga* +a? -1=0. This allows one to determine a uniquely: _ (+14812)? — Lip 24g , Now let us calculate E(g). It follows from the above that 2a 1 a=",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-041"
+      ]
+    },
+    {
+      "id": "page-042",
+      "number": null,
+      "title": "Page 42",
+      "level": 1,
+      "pageStart": 42,
+      "pageEnd": 42,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 481,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wick rotation",
+          "heading": false
+        },
+        {
+          "term": "path integrals",
+          "heading": false
+        },
+        {
+          "term": "real exponential",
+          "heading": false
+        },
+        {
+          "term": "quantum mechanics",
+          "heading": false
+        },
+        {
+          "term": "quantum field",
+          "heading": false
+        },
+        {
+          "term": "field theory",
+          "heading": false
+        },
+        {
+          "term": "einstein",
+          "heading": false
+        },
+        {
+          "term": "frequency",
+          "heading": false
+        }
+      ],
+      "extract": "42 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 7.1. The path integral in quantum mechanics. Let U(q) be a smooth function on the real line (the potential). We will assume that U(0) = 0, U'(0) = 0, and U\"(0) = m?, where m > 0. Remark. In quantum field theory the parameter m in the potential is called the mass parameter. To be more precise, in classical mechanics it has the meaning of frequency w of",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-042",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-042-01"
+      ]
+    },
+    {
+      "id": "page-043",
+      "number": null,
+      "title": "Page 43",
+      "level": 1,
+      "pageStart": 43,
+      "pageEnd": 43,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 528,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "euclidean correlation",
+          "heading": false
+        },
+        {
+          "term": "correlation functions",
+          "heading": false
+        },
+        {
+          "term": "feynman diagrams",
+          "heading": false
+        },
+        {
+          "term": "analytic continuation",
+          "heading": false
+        },
+        {
+          "term": "field theory",
+          "heading": false
+        },
+        {
+          "term": "finite dimensional",
+          "heading": false
+        },
+        {
+          "term": "amplitudes",
+          "heading": false
+        },
+        {
+          "term": "dimensional case",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 43 Definition 7.1. The function GY (t,,..., tn) (ti € R) is the analytic continuation of the function G® (81, .+;8n) from the point (t1,...,tn) to the point (ét1,...,itn) along the path e(t1,...,tn),0<0< 7/2. Of course, this definition will only make sense if we define the function GF (ty, ..., tr) and show that it admits the required analytic continuation. This",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-043",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/def-page-043-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-043-02"
+      ]
+    },
+    {
+      "id": "page-044",
+      "number": null,
+      "title": "Page 44",
+      "level": 1,
+      "pageStart": 44,
+      "pageEnd": 44,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 454,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "external edge",
+          "heading": false
+        },
+        {
+          "term": "wick rotation",
+          "heading": false
+        },
+        {
+          "term": "edge connecting",
+          "heading": false
+        },
+        {
+          "term": "linear combinations",
+          "heading": false
+        },
+        {
+          "term": "internal",
+          "heading": false
+        },
+        {
+          "term": "higher terms",
+          "heading": false
+        },
+        {
+          "term": "cubic",
+          "heading": false
+        },
+        {
+          "term": "assign",
+          "heading": false
+        }
+      ],
+      "extract": "44 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY did not make a Wick rotation, we would deal with the operator A’ = —d?/dt? —m?, whose spectrum is [—m?, +00), i.e. contains 0, so that the operator is not invertible in the naive sense. To make sense of the cubic and higher terms in the action as tensors, consider the decomposition of U in the (asymptotic) Taylor series at 2 = 0: U(x) = m?a2?/2+ ye n>3",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-044",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/def-page-044-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-044-02",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/ex-page-044-03"
+      ]
+    },
+    {
+      "id": "page-045",
+      "number": null,
+      "title": "Page 45",
+      "level": 1,
+      "pageStart": 45,
+      "pageEnd": 45,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 382,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "feynman diagrams",
+          "heading": false
+        },
+        {
+          "term": "correlation functions",
+          "heading": false
+        },
+        {
+          "term": "dimensional particle",
+          "heading": false
+        },
+        {
+          "term": "quantum field",
+          "heading": false
+        },
+        {
+          "term": "loop",
+          "heading": false
+        },
+        {
+          "term": "field theory",
+          "heading": false
+        },
+        {
+          "term": "green",
+          "heading": false
+        },
+        {
+          "term": "quadratic",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 45 Proposition 7.3. (Wick’s theorem) One has Gn(ti,...,tn) =0 ifn is odd, and Gor (t, tox) = h® So TI @@i-tow). cel i€{1,....2k}/o In particular, Go(t1,t2) = hG(t; — tz). In other words, Go(t;,t2) is (proportional to) the Green’s function. Motivated by this, physicists often refer to correlation functions of a quantum field theory as Green’s functions. th tg",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-045",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prop-page-045-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/ex-page-045-02",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-045-03"
+      ]
+    },
+    {
+      "id": "page-046",
+      "number": null,
+      "title": "Page 46",
+      "level": 1,
+      "pageStart": 46,
+      "pageEnd": 46,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 349,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "clustering property",
+          "heading": false
+        },
+        {
+          "term": "connected green",
+          "heading": false
+        },
+        {
+          "term": "green functions",
+          "heading": false
+        },
+        {
+          "term": "connected feynman",
+          "heading": false
+        },
+        {
+          "term": "trp",
+          "heading": false
+        },
+        {
+          "term": "feynman diagrams",
+          "heading": false
+        },
+        {
+          "term": "correlation functions",
+          "heading": false
+        },
+        {
+          "term": "internal vertex",
+          "heading": false
+        }
+      ],
+      "extract": "46 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 7.4, Connected Green’s functions. Let G¢(t1,...,tn) be the connected Green’s functions, defined by the sum of the same amplitudes as Gn(t1,...,tn) but taken over connected Feynman diagrams only. It is clear that Gn(ti, stn) = YS [1 Sis, (tis € Si). {1,...n}J=SiU...US, For example, Go (ti, t2) = GS(t1, to) + Gf (ti) Gf (t2), etc. Thus, to know the correla-",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-046",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/ex-page-046-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/ex-page-046-02",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-046-03"
+      ]
+    },
+    {
+      "id": "page-047",
+      "number": null,
+      "title": "Page 47",
+      "level": 1,
+      "pageStart": 47,
+      "pageEnd": 47,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 414,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "connected green",
+          "heading": false
+        },
+        {
+          "term": "green functions",
+          "heading": false
+        },
+        {
+          "term": "finite dimensional",
+          "heading": false
+        },
+        {
+          "term": "dimensional case",
+          "heading": false
+        },
+        {
+          "term": "loop case",
+          "heading": false
+        },
+        {
+          "term": "generating function",
+          "heading": false
+        },
+        {
+          "term": "partition function",
+          "heading": false
+        },
+        {
+          "term": "knowledge",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 47 7.6. The partition function. Let J(t)dt be a compactly supported measure on the real line. Consider the “partition function with external current J”, which is the formal expression Z(J) = =Spla)+(a) e n q- Then we have a formal equality ZI) _ yt Fay = Le ae, Salloseste I) Il) which, as before, we will use as definition of Z(J)/Z(0). So the knowledge of",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-047",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prop-page-047-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-047-02",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-047-03",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prop-page-047-04",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/ex-page-047-05"
+      ]
+    },
+    {
+      "id": "page-048",
+      "number": null,
+      "title": "Page 48",
+      "level": 1,
+      "pageStart": 48,
+      "pageEnd": 48,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 406,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "amputated particle",
+          "heading": false
+        },
+        {
+          "term": "irreducible green",
+          "heading": false
+        },
+        {
+          "term": "green functions",
+          "heading": false
+        },
+        {
+          "term": "usual green",
+          "heading": false
+        },
+        {
+          "term": "glp",
+          "heading": false
+        },
+        {
+          "term": "legendre transform",
+          "heading": false
+        },
+        {
+          "term": "generating function",
+          "heading": false
+        },
+        {
+          "term": "ser",
+          "heading": false
+        }
+      ],
+      "extract": "48 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY Thus, the function q; is continuously glued from two solutions g;,q_ of the non- linear differential equation g = m?q + gq?/6 on (—00, 0] and [0,00), with jump of derivative at 0 equal to —a. The solutions g,,q— are required to decay at infinity, so they must be solutions of zero energy (E = qy.”/2—U(q4) = 0). Thus, by the standard formula for solutions of",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-048",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prop-page-048-01"
+      ]
+    },
+    {
+      "id": "page-049",
+      "number": null,
+      "title": "Page 49",
+      "level": 1,
+      "pageStart": 49,
+      "pageEnd": 49,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 545,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "external edges",
+          "heading": false
+        },
+        {
+          "term": "feynman diagram",
+          "heading": false
+        },
+        {
+          "term": "momentum space",
+          "heading": false
+        },
+        {
+          "term": "tree diagrams",
+          "heading": false
+        },
+        {
+          "term": "integrations",
+          "heading": false
+        },
+        {
+          "term": "internal",
+          "heading": false
+        },
+        {
+          "term": "variables",
+          "heading": false
+        },
+        {
+          "term": "field theory",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 49 7.8. Momentum space integration. We saw that the amplitude of a Feynman diagram is given by an integral over the space of dimension equal to the number of internal vertices. This is sometimes inconvenient, since even for tree diagrams such integrals can be rather complicated. However, it turns out that if one passes to Fourier transforms then Feynman",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-049",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-049-01"
+      ]
+    },
+    {
+      "id": "page-050",
+      "number": null,
+      "title": "Page 50",
+      "level": 1,
+      "pageStart": 50,
+      "pageEnd": 50,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 338,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "momentum space",
+          "heading": false
+        },
+        {
+          "term": "fourier transform",
+          "heading": false
+        },
+        {
+          "term": "wick",
+          "heading": false
+        },
+        {
+          "term": "field theory",
+          "heading": false
+        },
+        {
+          "term": "external",
+          "heading": false
+        },
+        {
+          "term": "connected",
+          "heading": false
+        },
+        {
+          "term": "point function",
+          "heading": false
+        }
+      ],
+      "extract": "50 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY Proposition 7.7. The Fourier transform of the function Fp (6t,,.-.; 5t, ) is Fr(F1, wy En). Hence, the Fourier transform of the connected Green’s functions is 18 J. (Bh, E, nw Fr(E E (18) Ge (E,, «5. En) = > JA] r(Zy,...,En). TEG$,(n) The proof of the proposition is straightforward. To illustrate the proposition, consider an example. Example 1. The connected",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-050",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prop-page-050-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/ex-page-050-02",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/ex-page-050-03"
+      ]
+    },
+    {
+      "id": "page-051",
+      "number": null,
+      "title": "Page 51",
+      "level": 1,
+      "pageStart": 51,
+      "pageEnd": 51,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 447,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "green function",
+          "heading": false
+        },
+        {
+          "term": "minkowski setting",
+          "heading": false
+        },
+        {
+          "term": "e-m",
+          "heading": false
+        },
+        {
+          "term": "correlation functions",
+          "heading": false
+        },
+        {
+          "term": "circle",
+          "heading": false
+        },
+        {
+          "term": "dropped",
+          "heading": false
+        },
+        {
+          "term": "feynman",
+          "heading": false
+        },
+        {
+          "term": "replaced",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 51 where G is the Green’s function. When we do analytic continuation back to the Minkowski setting, we must replace in the correlation functions the time variable t with et, where @ varies from 0 and 7/2. In particular, the Green’s function G(t) must be replaced by G(e%t). So we must. consider —i0 404) pi -i few \"8 —_* [ae teM dt = \" [awe dt = e-209 2 + m2\" As @",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-051"
+      ]
+    },
+    {
+      "id": "page-052",
+      "number": null,
+      "title": "Page 52",
+      "level": 1,
+      "pageStart": 52,
+      "pageEnd": 52,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 482,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circle valued",
+          "heading": false
+        },
+        {
+          "term": "massless case",
+          "heading": false
+        },
+        {
+          "term": "sinh",
+          "heading": false
+        },
+        {
+          "term": "correlation functions",
+          "heading": false
+        },
+        {
+          "term": "failure",
+          "heading": false
+        },
+        {
+          "term": "divergences",
+          "heading": false
+        },
+        {
+          "term": "consider now",
+          "heading": false
+        },
+        {
+          "term": "integrand",
+          "heading": false
+        }
+      ],
+      "extract": "52 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY where M = 1+ a(—d?/dt? + m3)-!. This determinant may be computed by look- ing at the eigenvalues. Namely, the eigenfunctions of —d?/dt? + m2 in the space C™(R/LZ) are ?7'\"*/\", with eigenvalues Aare m3. So, a we aE + ms det M = [[ (+ neZ Hence, using the Euler product formula for sinh(z), we get Zmoa,L — Sinh(moL/2) Zino,0,t sinh(mL/2) Remark. More informally",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-052",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-052-01"
+      ]
+    },
+    {
+      "id": "page-053",
+      "number": null,
+      "title": "Page 53",
+      "level": 1,
+      "pageStart": 53,
+      "pageEnd": 53,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 552,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "differential equation",
+          "heading": false
+        },
+        {
+          "term": "circle",
+          "heading": false
+        },
+        {
+          "term": "degree zero",
+          "heading": false
+        },
+        {
+          "term": "zero maps",
+          "heading": false
+        },
+        {
+          "term": "invert",
+          "heading": false
+        },
+        {
+          "term": "quadratic form",
+          "heading": false
+        },
+        {
+          "term": "integration",
+          "heading": false
+        },
+        {
+          "term": "feynman",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 53 analogy, by completing the square we would get eRe B (XS pia(ts).X P5 ats) — gh LD mivjG(tity)/2r? _ AL. c; pepjlti—t|/2r° where B(q,q) = f @’dt. Thus, it is natural to define the correlators by the formula < cipiatts)/r eipnalte)/\" = eh Lig; pipsltits|/27? We note that this theory, unlike the line-valued one, does satisfy the clustering property. Indeed, if",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-053"
+      ]
+    },
+    {
+      "id": "page-054",
+      "number": null,
+      "title": "Page 54",
+      "level": 1,
+      "pageStart": 54,
+      "pageEnd": 54,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 427,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lagrangian language",
+          "heading": false
+        },
+        {
+          "term": "hamiltonian language",
+          "heading": false
+        },
+        {
+          "term": "classical mechanics",
+          "heading": false
+        },
+        {
+          "term": "hamilton equations",
+          "heading": false
+        },
+        {
+          "term": "extremals",
+          "heading": false
+        },
+        {
+          "term": "action functional",
+          "heading": false
+        },
+        {
+          "term": "riemannian",
+          "heading": false
+        },
+        {
+          "term": "motion",
+          "heading": false
+        }
+      ],
+      "extract": "54 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY simply in rescaling of the integrand by the factor ¢27! > PitiN/L—-2°' N2/AL | Thus, the integral over all maps should be defined by the formula < eli g(ts)/7 eipng(tn)/7 2i(D pit) N/L—20? 1? N? /AL se (Cres prvslti—ty|+(E jts)?/E) Uw & : = 72 N2 RL Une €2r2 Introduce the elliptic theta-function O(u,T) = SS e2miuN—TN? /2 NeZ Then the last formula (for t; >...",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-054"
+      ]
+    },
+    {
+      "id": "page-055",
+      "number": null,
+      "title": "Page 55",
+      "level": 1,
+      "pageStart": 55,
+      "pageEnd": 55,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 505,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hamilton equations",
+          "heading": false
+        },
+        {
+          "term": "legendre transform",
+          "heading": false
+        },
+        {
+          "term": "poisson brackets",
+          "heading": false
+        },
+        {
+          "term": "opi",
+          "heading": false
+        },
+        {
+          "term": "local coordinates",
+          "heading": false
+        },
+        {
+          "term": "coordinate system",
+          "heading": false
+        },
+        {
+          "term": "grangian",
+          "heading": false
+        },
+        {
+          "term": "hamiltonian",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 55 Definition 8.1. The Hamiltonian (or energy function) of the system with La- grangian £ is the function H : T*X — R, which is the Legendre transform of £ along fibers; that is, H(q,p) = po — L(q, vo), where vo is the (unique) critical point of pu — L(q,v). The manifold T*X is called the phase space (or space of states). The variable p is called the momentum",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-055",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/def-page-055-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-055-02",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prop-page-055-03"
+      ]
+    },
+    {
+      "id": "page-056",
+      "number": null,
+      "title": "Page 56",
+      "level": 1,
+      "pageStart": 56,
+      "pageEnd": 56,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 466,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schrédinger equation",
+          "heading": false
+        },
+        {
+          "term": "hamilton equation",
+          "heading": false
+        },
+        {
+          "term": "quantum mechanics",
+          "heading": false
+        },
+        {
+          "term": "poisson brackets",
+          "heading": false
+        },
+        {
+          "term": "quantum analog",
+          "heading": false
+        },
+        {
+          "term": "classical hamiltonian",
+          "heading": false
+        },
+        {
+          "term": "observable",
+          "heading": false
+        },
+        {
+          "term": "quantization",
+          "heading": false
+        }
+      ],
+      "extract": "56 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY real functions f € C°(T*X), by quantum observables f, which are (unbounded) self-adjoint operators on H (not commuting with each other, in general). Then the (expected) value of an observable A at a state ~ € H of unit norm is by definition (w, Ay). The operators f should linearly depend on f. More importantly, they should depend on a positive real parameter",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-056",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/ex-page-056-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-056-02",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-056-03"
+      ]
+    },
+    {
+      "id": "page-057",
+      "number": null,
+      "title": "Page 57",
+      "level": 1,
+      "pageStart": 57,
+      "pageEnd": 57,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 483,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "feynman-kac formula",
+          "heading": false
+        },
+        {
+          "term": "itn",
+          "heading": false
+        },
+        {
+          "term": "quantum mechanics",
+          "heading": false
+        },
+        {
+          "term": "correlation function",
+          "heading": false
+        },
+        {
+          "term": "path integrals",
+          "heading": false
+        },
+        {
+          "term": "ables",
+          "heading": false
+        },
+        {
+          "term": "circle",
+          "heading": false
+        },
+        {
+          "term": "physicists",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 57 and we have (W(t), AY) = (0), A4(0)). The two sides of this equation represent two pictures of quantum mechanics: Heisen- berg’s (observables change, states don’t), and Schrédinger’s (states change, observ- ables don’t). The equation expresses the equivalence of the two pictures. 8.3. Feynman-Kac formula. Let us consider a 1-duimensional particle with po-",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-057",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-057-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-057-02",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/thm-page-057-03",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/thm-page-057-04",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-057-05",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/ex-page-057-06"
+      ]
+    },
+    {
+      "id": "page-058",
+      "number": null,
+      "title": "Page 58",
+      "level": 1,
+      "pageStart": 58,
+      "pageEnd": 58,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 375,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "feynman-kac formula",
+          "heading": false
+        },
+        {
+          "term": "ata",
+          "heading": false
+        },
+        {
+          "term": "eigenvectors",
+          "heading": false
+        },
+        {
+          "term": "hamiltonian",
+          "heading": false
+        },
+        {
+          "term": "eigenvalues",
+          "heading": false
+        },
+        {
+          "term": "quadratic",
+          "heading": false
+        },
+        {
+          "term": "trace",
+          "heading": false
+        }
+      ],
+      "extract": "58 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY ZL = Tamh(L]y\" On the other hand, A is the Hamiltonian of the quantum har- monic oscillator: 3 3 ~ 1d qd A=--— 424. 2 dq? + 2 The eigenvectors of this operator are well known: they are H;,(x)e , where Hy, are the Hermite polynomials (k > 0), and the eigenvalues are k + 1/2 (see Theorem 4.10). Hence, a? /2 . 1 ‘Hi — ,-L/2 —3L/2 _ ZHam — e“E/2 4 3h / += aap as",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-058",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-058-01"
+      ]
+    },
+    {
+      "id": "page-059",
+      "number": null,
+      "title": "Page 59",
+      "level": 1,
+      "pageStart": 59,
+      "pageEnd": 59,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 451,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "feynman-kac formula",
+          "heading": false
+        },
+        {
+          "term": "lowest eigenvector",
+          "heading": false
+        },
+        {
+          "term": "free theory",
+          "heading": false
+        },
+        {
+          "term": "formal parameters",
+          "heading": false
+        },
+        {
+          "term": "potential",
+          "heading": false
+        },
+        {
+          "term": "means",
+          "heading": false
+        },
+        {
+          "term": "sum",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 59 8.5. Proof of the Feynman-Kac formula (general case). Now we consider an arbitrary potential U = m?q?/2 + V(q), where V(q) = Yoys3 9nq\"/k!. For simplicity we will assume that h = 1 and coefficients g; as formal parameters (this does not cause a loss of generality, as this situation can be achieved by rescaling). Let: us first consider the case of partition",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-059"
+      ]
+    },
+    {
+      "id": "page-060",
+      "number": null,
+      "title": "Page 60",
+      "level": 1,
+      "pageStart": 60,
+      "pageEnd": 60,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 422,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "feynman-kac formula",
+          "heading": false
+        },
+        {
+          "term": "nontrivial maps",
+          "heading": false
+        },
+        {
+          "term": "lagrangian setting",
+          "heading": false
+        },
+        {
+          "term": "ere",
+          "heading": false
+        },
+        {
+          "term": "circle",
+          "heading": false
+        },
+        {
+          "term": "formula holds",
+          "heading": false
+        },
+        {
+          "term": "instantons",
+          "heading": false
+        },
+        {
+          "term": "quantum field",
+          "heading": false
+        }
+      ],
+      "extract": "60 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY (This is the reflection, in the Hamiltonian setting, of the difficulties related to the growth of the Green’s function at infinity, which we encountered in the Lagrangian setting). Consider now the case g: R + S' = R/2zrZ. In this case, we have the same Hamiltonian but acting in the space H. := L?(S1). The eigenvectors of this operator are eN4/\", with",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-060",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-060-01"
+      ]
+    },
+    {
+      "id": "page-061",
+      "number": null,
+      "title": "Page 61",
+      "level": 1,
+      "pageStart": 61,
+      "pageEnd": 61,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 657,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "supervector spaces",
+          "heading": false
+        },
+        {
+          "term": "exterior powers",
+          "heading": false
+        },
+        {
+          "term": "graded vector",
+          "heading": false
+        },
+        {
+          "term": "superspace",
+          "heading": false
+        },
+        {
+          "term": "symmetric powers",
+          "heading": false
+        },
+        {
+          "term": "iiv",
+          "heading": false
+        },
+        {
+          "term": "supermanifolds",
+          "heading": false
+        },
+        {
+          "term": "fermionic",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 61 9. FERMIONIC INTEGRALS 9.1. Bosons and fermions. In physics there exist two kinds of particles — bosons and fermions. So far we have dealt with bosons only, but many important par- ticles are fermions: e.g., electron, proton, etc. Thus it is important to adapt our techniques to the fermionic case. In quantum theory, the difference between bosons and fermions",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-061"
+      ]
+    },
+    {
+      "id": "page-062",
+      "number": null,
+      "title": "Page 62",
+      "level": 1,
+      "pageStart": 62,
+      "pageEnd": 62,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 520,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "supermanifold",
+          "heading": false
+        },
+        {
+          "term": "supervector space",
+          "heading": false
+        },
+        {
+          "term": "foi",
+          "heading": false
+        },
+        {
+          "term": "superdomain",
+          "heading": false
+        },
+        {
+          "term": "supersense",
+          "heading": false
+        },
+        {
+          "term": "smooth functions",
+          "heading": false
+        },
+        {
+          "term": "sheaf",
+          "heading": false
+        },
+        {
+          "term": "dim",
+          "heading": false
+        }
+      ],
+      "extract": "62 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY and &,...,m are linear coordinates on Vi, then O(V) = k[z1,..., tn, €1, ++) &m], with defining relations Uj@ i = Bij, Ti Ep = Cp Ti, Es = —Eskp Note that this algebra is itself a (generally, infinite dimensional) supervector space, and is commutative in the supersense. Also, if V,W are two superspaces, then O(V @W) = O(V) ®O(W), where the tensor product of",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-062",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/def-page-062-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-062-02"
+      ]
+    },
+    {
+      "id": "page-063",
+      "number": null,
+      "title": "Page 63",
+      "level": 1,
+      "pageStart": 63,
+      "pageEnd": 63,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 558,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "supermanifolds",
+          "heading": false
+        },
+        {
+          "term": "vector bundles",
+          "heading": false
+        },
+        {
+          "term": "superdomains",
+          "heading": false
+        },
+        {
+          "term": "berezinian",
+          "heading": false
+        },
+        {
+          "term": "filtered",
+          "heading": false
+        },
+        {
+          "term": "integration",
+          "heading": false
+        },
+        {
+          "term": "supported",
+          "heading": false
+        },
+        {
+          "term": "category",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 63 9.4. Supermanifolds and vector bundles. Let Mo be a manifold, and E be a vector bundle on My. Then we can define the supermanifold M := Tot(ILE), the total space of EF with changed parity. Namely, the reduced manifold of M is Mo, and the structure sheaf Cf? is the sheaf of sections of AE*. This defines a functor S: BUN + SMAN, from the category of manifolds",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-063",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prop-page-063-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-063-02",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/def-page-063-03"
+      ]
+    },
+    {
+      "id": "page-064",
+      "number": null,
+      "title": "Page 64",
+      "level": 1,
+      "pageStart": 64,
+      "pageEnd": 64,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 448,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "berezinian",
+          "heading": false
+        },
+        {
+          "term": "ftop",
+          "heading": false
+        },
+        {
+          "term": "bera",
+          "heading": false
+        },
+        {
+          "term": "ber",
+          "heading": false
+        },
+        {
+          "term": "det",
+          "heading": false
+        },
+        {
+          "term": "odd elements",
+          "heading": false
+        },
+        {
+          "term": "ago",
+          "heading": false
+        },
+        {
+          "term": "factorization",
+          "heading": false
+        }
+      ],
+      "extract": "64 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY It is clear that this quantity depends only on dv and not on dup and dv; sepa- rately. Thus, f f(v)dv is defined as the integral of the suitably normalized top coefficient of f (expanded with respect to some homogeneous basis of AV,\"). To write it in coordinates, let £1,...,€m be a linear system of coordinates on V such that dv = Spite (such coordinate",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-064",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/def-page-064-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-064-02",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prop-page-064-03"
+      ]
+    },
+    {
+      "id": "page-065",
+      "number": null,
+      "title": "Page 65",
+      "level": 1,
+      "pageStart": 65,
+      "pageEnd": 65,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 512,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "berezinian",
+          "heading": false
+        },
+        {
+          "term": "berezin",
+          "heading": false
+        },
+        {
+          "term": "oni",
+          "heading": false
+        },
+        {
+          "term": "supertrace",
+          "heading": false
+        },
+        {
+          "term": "str",
+          "heading": false
+        },
+        {
+          "term": "usual trace",
+          "heading": false
+        },
+        {
+          "term": "formula",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 65 The additive analog of Berezinian is supertrace. Namely, for A as above, sTrA = TrAj; — TrAgs. It is the correct superanalogue of the usual trace, as it satisfies the equation sTr(AB) = sTr(BA) (while the usual trace does not). The connection between the supertrace and the Berezinian is given by the formula Ber(e4) = &™A), Exercise. Prove this formula. 9.7.",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-065",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/thm-page-065-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-065-02"
+      ]
+    },
+    {
+      "id": "page-066",
+      "number": null,
+      "title": "Page 66",
+      "level": 1,
+      "pageStart": 66,
+      "pageEnd": 66,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 534,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pfaffian",
+          "heading": false
+        },
+        {
+          "term": "skewsymmetric",
+          "heading": false
+        },
+        {
+          "term": "gaussian integrals",
+          "heading": false
+        },
+        {
+          "term": "bilinear form",
+          "heading": false
+        },
+        {
+          "term": "skew-symmetric",
+          "heading": false
+        },
+        {
+          "term": "unimodular",
+          "heading": false
+        },
+        {
+          "term": "gas",
+          "heading": false
+        },
+        {
+          "term": "volume element",
+          "heading": false
+        }
+      ],
+      "extract": "66 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 9.8. Integration on supermanifolds. Now we will define densities on super- manifolds. Let M be a supermanifold, and {U,} be an open cover of M together with isomorphisms fy : Ua > U!,, where U!, is a superdomain in R\"”. Let Gas? faUaNnUg) > fa(Ua Ug) be the transition map fafz’- Then a density s on M is a choice of an element sq € Cf7(Ua) for each a, such",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-066",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-066-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prop-page-066-02"
+      ]
+    },
+    {
+      "id": "page-067",
+      "number": null,
+      "title": "Page 67",
+      "level": 1,
+      "pageStart": 67,
+      "pageEnd": 67,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 485,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "odd space",
+          "heading": false
+        },
+        {
+          "term": "aen",
+          "heading": false
+        },
+        {
+          "term": "regarded",
+          "heading": false
+        },
+        {
+          "term": "det",
+          "heading": false
+        },
+        {
+          "term": "basis",
+          "heading": false
+        },
+        {
+          "term": "smooth",
+          "heading": false
+        },
+        {
+          "term": "coordinates",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 67 Proof. The integral equals 478, which is Pf(B). oO midé ? Example. Let V is a finite dimensional odd vector space, and Y = V @ V*. The space Y has a canonical volume element dudv*, defined as follows: if e1,...,e€m be a basis of V and e?, ...,e% is the dual basis of V* then dudu* = e; Aej... Aen Aen. Let dy = (dvdv*)~' be the corresponding supervolume",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-067",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/ex-page-067-01",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/thm-page-067-02"
+      ]
+    },
+    {
+      "id": "page-068",
+      "number": null,
+      "title": "Page 68",
+      "level": 1,
+      "pageStart": 68,
+      "pageEnd": 68,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 563,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "odd outgoing",
+          "heading": false
+        },
+        {
+          "term": "outgoing edges",
+          "heading": false
+        },
+        {
+          "term": "even outgoing",
+          "heading": false
+        },
+        {
+          "term": "flower",
+          "heading": false
+        },
+        {
+          "term": "fermionic loops",
+          "heading": false
+        },
+        {
+          "term": "feynman diagrams",
+          "heading": false
+        },
+        {
+          "term": "both odd",
+          "heading": false
+        },
+        {
+          "term": "pairing",
+          "heading": false
+        }
+      ],
+      "extract": "68 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY involving both odd and even variables, e.g. x£)£ (the so called “Yukawa term”). We will consider the integral A=] & (v0).--€n (Yo) At (01) ---Ap (ore 5()/*dw. Vv (where vo,v; are the even and odd components of v). Then this integral has an expansion in fi written in terms of Feynman diagrams. Since v has both odd and even part, these diagrams will contain",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-068",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-068-01"
+      ]
+    },
+    {
+      "id": "page-069",
+      "number": null,
+      "title": "Page 69",
+      "level": 1,
+      "pageStart": 69,
+      "pageEnd": 69,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 618,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fermionic case",
+          "heading": false
+        },
+        {
+          "term": "bosonic case",
+          "heading": false
+        },
+        {
+          "term": "lagrangian setting",
+          "heading": false
+        },
+        {
+          "term": "quantum mechanics",
+          "heading": false
+        },
+        {
+          "term": "feynman diagrams",
+          "heading": false
+        },
+        {
+          "term": "unreasonable",
+          "heading": false
+        },
+        {
+          "term": "quantum theory",
+          "heading": false
+        },
+        {
+          "term": "measure theory",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 69 (—1)\", where r is the number of fermionic loops (i.e. each fermionic loop contributes a minus sign). 10.2. Fermionic quantum mechanics. Let us now pass from finite dimensional fermionic integrals to quantum mechanics, i.e. integrals over fermionic functions of one (even) real variable t. Let us first discuss fermionic classical mechanics, in the Lagrangian",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-069",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-069-01"
+      ]
+    },
+    {
+      "id": "page-070",
+      "number": null,
+      "title": "Page 70",
+      "level": 1,
+      "pageStart": 70,
+      "pageEnd": 70,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 535,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "clustering property",
+          "heading": false
+        },
+        {
+          "term": "massive case",
+          "heading": false
+        },
+        {
+          "term": "field theory",
+          "heading": false
+        },
+        {
+          "term": "quantum field",
+          "heading": false
+        },
+        {
+          "term": "correlation functions",
+          "heading": false
+        },
+        {
+          "term": "wick",
+          "heading": false
+        },
+        {
+          "term": "massless",
+          "heading": false
+        },
+        {
+          "term": "fermionic",
+          "heading": false
+        }
+      ],
+      "extract": "70 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY the Wick formula. That is, for distinct ¢;, < W(t1)...W(ten) >= (2n — 1)!!(¢/2)\"sign(c), where o is the permutation that orders ¢; in the decreasing order. If at least two points coincide, the correlation function is zero. Thus we see that the correlation functions are invariant under Diff;(R). In other words, using physical terminology, we have a topological",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-070",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-070-01"
+      ]
+    },
+    {
+      "id": "page-071",
+      "number": null,
+      "title": "Page 71",
+      "level": 1,
+      "pageStart": 71,
+      "pageEnd": 71,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 640,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "poisson bracket",
+          "heading": false
+        },
+        {
+          "term": "hamiltonian picture",
+          "heading": false
+        },
+        {
+          "term": "fermionic case",
+          "heading": false
+        },
+        {
+          "term": "bosonic case",
+          "heading": false
+        },
+        {
+          "term": "hermitian form",
+          "heading": false
+        },
+        {
+          "term": "super hilbert",
+          "heading": false
+        },
+        {
+          "term": "legendre transform",
+          "heading": false
+        },
+        {
+          "term": "velocity variables",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 71 Now suppose H = Ho © H, is a Z/2-graded complex vector space. Definition 10.1. (i) A Hermitian form on H is an even sesquilinear form (,), such that (x,y) = (y,x) for even x,y, and (2,y) = —(y, 2) for odd a, y. (ii) A Hermitian form is positive definite if (,2) > 0 for even « # 0, and —i(x,2) > 0 for odd x 4 0. A super Hilbert space is a superspace with a",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-071",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/def-page-071-01"
+      ]
+    },
+    {
+      "id": "page-072",
+      "number": null,
+      "title": "Page 72",
+      "level": 1,
+      "pageStart": 72,
+      "pageEnd": 72,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 634,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum observables",
+          "heading": false
+        },
+        {
+          "term": "clifford algebra",
+          "heading": false
+        },
+        {
+          "term": "bosonic case",
+          "heading": false
+        },
+        {
+          "term": "unique irreducible",
+          "heading": false
+        },
+        {
+          "term": "fermionic case",
+          "heading": false
+        },
+        {
+          "term": "dimv",
+          "heading": false
+        },
+        {
+          "term": "unitary representation",
+          "heading": false
+        },
+        {
+          "term": "even case",
+          "heading": false
+        }
+      ],
+      "extract": "72 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY Now let us turn to quantum theory. In the bosonic case the algebra of quantum observables is a noncommutative deformation of the algebra C°(Y) in which the relation {a,b} = (a,b) is replaced with its quantum analog ab — ba = i(a,b) (up to the Planck constant factor which we will now ignore). In particular, the subalgebra of polynomial observables is the Weyl",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-072",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/def-page-072-01"
+      ]
+    },
+    {
+      "id": "page-073",
+      "number": null,
+      "title": "Page 73",
+      "level": 1,
+      "pageStart": 73,
+      "pageEnd": 73,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 482,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "light cone",
+          "heading": false
+        },
+        {
+          "term": "feynman-kac formula",
+          "heading": false
+        },
+        {
+          "term": "minkowski space",
+          "heading": false
+        },
+        {
+          "term": "free theory",
+          "heading": false
+        },
+        {
+          "term": "field theories",
+          "heading": false
+        },
+        {
+          "term": "quantum field",
+          "heading": false
+        },
+        {
+          "term": "str",
+          "heading": false
+        },
+        {
+          "term": "partition function",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 73 vectors of this basis. Then H = SF mj(&jO; — O58) = J mj (26j0; - 1). j j This shows that if dimV is even then the partition function on the circle of length L for our theory is Z =sTr(e£#) = Ile\" — emit) j If the dimension of V is odd then the partition function is zero. Now we would like to consider the fermionic analog of the Feynman-Kac formula. For",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-073",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/thm-page-073-01"
+      ]
+    },
+    {
+      "id": "page-074",
+      "number": null,
+      "title": "Page 74",
+      "level": 1,
+      "pageStart": 74,
+      "pageEnd": 74,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 542,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wick rotation",
+          "heading": false
+        },
+        {
+          "term": "minkowski space",
+          "heading": false
+        },
+        {
+          "term": "euler-lagrange equation",
+          "heading": false
+        },
+        {
+          "term": "euclidean space",
+          "heading": false
+        },
+        {
+          "term": "quantum mechanics",
+          "heading": false
+        },
+        {
+          "term": "time axis",
+          "heading": false
+        },
+        {
+          "term": "definite",
+          "heading": false
+        },
+        {
+          "term": "quantum theory",
+          "heading": false
+        }
+      ],
+      "extract": "74 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY is denoted by SO,(1,d— 1); it is the connected component of the identity of the group SO(1,d— 1) (which has two connected components). Often (e.g. when doing Hamiltonian field theory) it is necessary to split V in an orthogonal direct sum V = V, @ R of space and time. In this decomposition, the space V, is required to be spacelike (i.e. negative definite),",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-074"
+      ]
+    },
+    {
+      "id": "page-075",
+      "number": null,
+      "title": "Page 75",
+      "level": 1,
+      "pageStart": 75,
+      "pageEnd": 75,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 529,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "green function",
+          "heading": false
+        },
+        {
+          "term": "quantum mechanics",
+          "heading": false
+        },
+        {
+          "term": "wick formula",
+          "heading": false
+        },
+        {
+          "term": "imr",
+          "heading": false
+        },
+        {
+          "term": "fourier transform",
+          "heading": false
+        },
+        {
+          "term": "quantum field",
+          "heading": false
+        },
+        {
+          "term": "higher correlation",
+          "heading": false
+        },
+        {
+          "term": "field theory",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 75 these functions are elementary for odd d). There exists a unique up to scaling solution, which decays at infinity, namely, g = Cr* (Jaca (imr) + i4J_sa(imr)), (dF 2). For d = 2, this expression is zero, and one should instead take the limit of the right hand side divided by d— 2 as d > 2 (which will generate a logarithmic factor Inr). The normalizing constant",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-075",
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/rem-page-075-01"
+      ]
+    },
+    {
+      "id": "page-076",
+      "number": null,
+      "title": "Page 76",
+      "level": 1,
+      "pageStart": 76,
+      "pageEnd": 76,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 623,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spinor representation",
+          "heading": false
+        },
+        {
+          "term": "fermionic field",
+          "heading": false
+        },
+        {
+          "term": "real representation",
+          "heading": false
+        },
+        {
+          "term": "double cover",
+          "heading": false
+        },
+        {
+          "term": "scalar valued",
+          "heading": false
+        },
+        {
+          "term": "spin",
+          "heading": false
+        },
+        {
+          "term": "field theory",
+          "heading": false
+        },
+        {
+          "term": "inner product",
+          "heading": false
+        }
+      ],
+      "extract": "76 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY first order equations. Clearly, it is impossible to define such an operator so that the Lagrangian is SO,(V)-invariant, if ~ is a scalar valued (odd) function on V. Thus, a fermionic field in field theory of dimension d > 1 cannot be scalar valued, but rather must take values in a real representation S of SO,(V), such that there exists a nonzero intertwining",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-076"
+      ]
+    },
+    {
+      "id": "page-077",
+      "number": null,
+      "title": "Page 77",
+      "level": 1,
+      "pageStart": 77,
+      "pageEnd": 77,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 478,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "minkowski space",
+          "heading": false
+        },
+        {
+          "term": "spinor representation",
+          "heading": false
+        },
+        {
+          "term": "kinetic term",
+          "heading": false
+        },
+        {
+          "term": "real structure",
+          "heading": false
+        },
+        {
+          "term": "mass term",
+          "heading": false
+        },
+        {
+          "term": "quantum field",
+          "heading": false
+        },
+        {
+          "term": "field theory",
+          "heading": false
+        },
+        {
+          "term": "fermions",
+          "heading": false
+        }
+      ],
+      "extract": "MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY 77 in the Minkowski setting, we will require in that case that Y is real. First of all, let us see what we need in order to write the “kinetic term” (1, Dy). Clearly, to define such a term (so that it is nonzero), we need an invariant nondegenerate pairing (, ) between Y and Y’ such that the for any v € V, the bilinear form (z,T(v)y) on Y is symmetric. Let us",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-077"
+      ]
+    },
+    {
+      "id": "page-078",
+      "number": null,
+      "title": "Page 78",
+      "level": 1,
+      "pageStart": 78,
+      "pageEnd": 78,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 216,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wick rotation",
+          "heading": false
+        },
+        {
+          "term": "fourier transform",
+          "heading": false
+        },
+        {
+          "term": "green function",
+          "heading": false
+        },
+        {
+          "term": "mtm",
+          "heading": false
+        },
+        {
+          "term": "invert",
+          "heading": false
+        }
+      ],
+      "extract": "78 MATHEMATICAL IDEAS AND NOTIONS OF QUANTUM FIELD THEORY invert the operator D— M. As usual, this cannot be done because of a singularity, and we have to consider the Wick rotation. The Wick rotation produces the Euclidean Lagrangian £ = 3((v, Dew)+(v, My)) (note that the i in the kinetic term is hidden in the definition of the Euclidean Dirac operator). We invert Dz + M, to obtain the Euclidean Green’s function.",
+      "extractCut": true,
+      "blocks": [
+        "library/lect-mathematical-ideas-notions-qft-2002/blocks/prose-page-078"
+      ]
+    }
+  ],
+  "checks": {},
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mathematical ideas",
+      "heading": false
+    },
+    {
+      "term": "quantum field",
+      "heading": false
+    },
+    {
+      "term": "quantum theory",
+      "heading": false
+    },
+    {
+      "term": "quantum mechanics",
+      "heading": false
+    },
+    {
+      "term": "fermionic quantum",
+      "heading": false
+    },
+    {
+      "term": "quantum particle",
+      "heading": false
+    },
+    {
+      "term": "classical field",
+      "heading": false
+    },
+    {
+      "term": "potential field",
+      "heading": false
+    },
+    {
+      "term": "mathematical point",
+      "heading": false
+    },
+    {
+      "term": "field equations",
+      "heading": false
+    },
+    {
+      "term": "corresponding quantum",
+      "heading": false
+    },
+    {
+      "term": "notions",
+      "heading": false
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "not-extracted",
+      "note": "split one section per page; no contents was trusted"
+    },
+    {
+      "kind": "sections",
+      "state": "partial",
+      "count": 78,
+      "note": "one per page, not by heading"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 78 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/lect-mathematical-ideas-notions-qft-2002"
+  }
+}

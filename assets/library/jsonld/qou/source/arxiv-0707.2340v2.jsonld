@@ -1,0 +1,76 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0707.2340v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-0707.2340v2",
+  "contains": [
+    "library/arxiv-0707.2340v2/sections/sec-front-matter",
+    "library/arxiv-0707.2340v2/sections/sec-000",
+    "library/arxiv-0707.2340v2/sections/sec-001",
+    "library/arxiv-0707.2340v2/sections/sec-002",
+    "library/arxiv-0707.2340v2/sections/sec-003",
+    "library/arxiv-0707.2340v2/sections/sec-004",
+    "library/arxiv-0707.2340v2/sections/sec-005",
+    "library/arxiv-0707.2340v2/sections/sec-006",
+    "library/arxiv-0707.2340v2/sections/sec-007",
+    "library/arxiv-0707.2340v2/sections/sec-008",
+    "library/arxiv-0707.2340v2/sections/sec-009",
+    "library/arxiv-0707.2340v2/sections/sec-010",
+    "library/arxiv-0707.2340v2/sections/sec-011",
+    "library/arxiv-0707.2340v2/sections/sec-012",
+    "library/arxiv-0707.2340v2/sections/sec-013",
+    "library/arxiv-0707.2340v2/sections/sec-014",
+    "library/arxiv-0707.2340v2/sections/sec-015",
+    "library/arxiv-0707.2340v2/sections/sec-016",
+    "library/arxiv-0707.2340v2/sections/sec-017",
+    "library/arxiv-0707.2340v2/sections/sec-018",
+    "library/arxiv-0707.2340v2/sections/sec-019",
+    "library/arxiv-0707.2340v2/sections/sec-020",
+    "library/arxiv-0707.2340v2/sections/sec-021"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS — We introduce the class of strongly Rayleigh probability measures by means of geometric properties of their generating polynomials that amount to\n\n**NEGATIVE DEPENDENCE AND THE GEOMETRY OF POLYNOMIALS**\n\n*JULIUS BORCEA, PETTER BRÄNDÉN, AND THOMAS M. LIGGETT*\n\n47 pp, 23 sections.\n\n**Abstract.** We introduce the class of strongly Rayleigh probability measures by means of geometric properties of their generating polynomials that amount to the stability of the latter. This class covers important models such as de- terminantal measures (e.g. product measures, uniform random spanning tree measures) and distributions for symmetric exclusion processes. We show that strongly Rayleigh measures enjoy all virtues of negative dependence and we also prove a series of conjectures due to Liggett, Pemantle, and Wagner, re- spectively. Moreover, we extend Lyons’ recent results on determinantal mea- sures and we construct counterexamples to several conjectures of Pemantle and Wagner on negative dependence and ultra log-concave rank sequences.\n\n**Outline.** Front matter; 1 Introduction; 2 A Plethora of Negative Dependence Properties; 2.1 Negative Dependence Concepts; 2.2 Strongly Rayleigh Measures; 2.3 Symmetric Homogenization; 2.4 Measures on countably infinite sets; 2.5 Towards a Theory of Negative Dependence: P; 3 Negative Dependence in Mathematics and Physi; 3.1 Real Stable Polynomials and Transcendental; 3.2 Hadamard-Fischer Inequalities and GKK-Matr; 3.3 Determinantal Probability Measures; 3.4 Graphs, Laplacians, Spanning Trees and the; 3.5 Interacting Particle Systems and Exclusion; 4 Negative Dependence Theory for Strongly Rayl; 4.1 Symmetric Homogenization via Gårding Hyper; 4.2 Stability Implies Negative Association; 4.3 Stochastic Domination and Truncations",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0707.2340&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0707.2340v2",
+    "title_source": "slug",
+    "source_file": "0707.2340v2.pdf",
+    "source_sha256": "bf0f91277a5874ffca7c63af3dbfb4a97dde8c977aa4c061cefbca8fddedb301",
+    "pages": 47,
+    "arxiv": {
+      "id": "0707.2340",
+      "version": "2",
+      "primary_class": "math.PR",
+      "stamp_date": "27 Jul 2008"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

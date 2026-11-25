@@ -1,0 +1,1110 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "s40879-023-00706-0",
+  "blocks": [
+    {
+      "id": "library/s40879-023-00706-0/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bring's curve: old and new",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-brings-curve-old-and-new.md",
+      "narrative": null,
+      "content": "Harry W. Braden1\n· Linden Disney-Hogg1\nReceived: 8 September 2022 / Revised: 9 November 2022 / Accepted: 16 October 2023 /\nPublished online: 18 December 2023\n© The Author(s) 2023",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Abstract",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-001-abstract.md",
+      "narrative": null,
+      "content": "Bring’s curve, the unique Riemann surface of genus 4 with automorphism group S5,\nhas many exceptional properties. We review, give new proofs of, and extend a number\nof these including giving the complete realisation of the automorphism group for a\nplane curve model, identifying a new elliptic quotient of the curve and the modular\ncurve X0(50), providing a complete description of the orbit decomposition of the theta\ncharacteristics, and identifying the unique invariant characteristic with the divisor\nof the Szeg˝o kernel. In achieving this we have used modern computational tools in\nSagemath, Ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-1-introduction.md",
+      "narrative": null,
+      "content": "Bring’s curve, a genus 4 Riemann surface ﬁrst introduced by Erland Bring in 1786 in\nrelation to solutions of the quintic equation, is the unique genus 4 curve with automor-\nphism group S5, the largest possible group for curves of this genus. This automorphism\ngroup acts transitively on the Weierstrass points of the curve, which are all weight 1, a\nThe research of LDH is supported by a UK Engineering and Physical Sciences Research Council\n(EPSRC) studentship.\nB Harry W. Braden\nhwb@ed.ac.uk\nLinden Disney-Hogg\nA.L.Disney-hogg@sms.ed.ac.uk\n1\nSchool of Mathematics and Maxwell Institute for Mathemat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "European Journal of Mathematics (2024) 10:3\nhttps://doi.org/10.1007/s40879-023-00706-0\nRESEARCH ARTICLE",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Defining equations and elementary properties",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-2-defining-equations-and-elementary-properties.md",
+      "narrative": null,
+      "content": "2 Deﬁning equations and elementary properties\nIn this section we shall introduce Bring’s curve describing its basic properties, its\nperiod matrix and its automorphisms. We begin with two descriptions: one as a model\nin P4 and the second as a plane curve. In particular we shall construct the birational\nmap between these models, which we believe new. Such a map enables us to concretely\ntranslate calculations from one model to another and will be helpful later in Sect.4\nwhen we look at quotients of the curve.\nDeﬁnition 2.1 Bring’s curve B is deﬁned in P4 by the (homogeneous) equations1\nHk ..=\n5\n\u0002",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/rem-sec-003-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "rem-sec-003-01.md",
+      "narrative": null,
+      "content": "In the above deﬁnition we have implicitly taken P4 = CP4, and indeed this will be our deﬁnition throughout. At various junctures we will however highlight the number ﬁelds within C that are relevant ﬁelds of deﬁnition for morphisms of the curve, or geometrically important points on the curve. For many calculations a plane model of a curve in P2 is useful. One of the main tools we will utilise in this paper is the Riemann surfaces module of SageMath [64] which requires such a model. As such we introduce the following. Deﬁnition 2.3 The Hulek–Craig (HC) model of Bring’s curve is the (singular) p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "[8]",
+      "pageStart": 4,
+      "pageEnd": 11,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "The genus of Bring’s curve is g = 4 and we have the ordered basis of (unnormalised) differentials on B v1 = (y3 −x)dx ∂y f (x, y) , v2 = (y2x −1)dx ∂y f (x, y) , v3 = (y −x2)dx ∂y f (x, y) , v4 = y(x2 −y)dx ∂y f (x, y) .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prop-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "[8]",
+      "pageStart": 4,
+      "pageEnd": 11,
+      "target": "prop-sec-004-03.md",
+      "narrative": null,
+      "content": "The canonical divisor class on Bring’s curve B is [KB] = [a + 2b + 3c]. Proof This may be shown analytically or (as given in the accompanying note- book) entirely using computer algebra. To show this analytically we use div(dx) = −2(4c + d) + RF.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prop-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 11,
+      "target": "prop-sec-004-04.md",
+      "narrative": null,
+      "content": "The HC-model (2) is a model of Bring’s curve (1). Proof We will prove this by explicitly constructing the birational transform. To do so we make use of the proof of [22, Theorem 3], where the author considers a particular Clebsch hexagon,3 constructs a pencil of plane sextics from this, and ﬁnds Bring’s 3 For the purposes of this deﬁnition a hexagon is a set of six points in P2 no three of which are collinear, called the vertices. A Brianchon point of a hexagon is a non-vertex point through which three edges (the lines joining two distinct vertices) pass. A Clebsch hexagon is a hexagon with te",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basic properties",
+      "pageStart": 4,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-21-basic-properties.md",
+      "narrative": null,
+      "content": "Towards proving the birational equivalence of the two models given for Bring’s curve\nwe begin with some basic properties of the curve. We introduce afﬁne coordinates\n(x, y) = (X/Z, Y/Z) such that the HC-model is 0 = f (x, y) = F(x, y, 1).2 Then\nResy( f (x, y), ∂y f (x, y)) = x4(x5 −1)2(256x10 −837x5 + 3456). Investigation of\nthe vanishing of this resultant leads to the following.\nLemma 2.4 ([8]) The only singular points in the HC-model of the curve are Vk =\n[ζ k : ζ 2k : 1] for k = 0, . . . , 4, where ζ = exp(2πi/5), and V5 = [1 : 0 : 0].\nWe shall return these points in due course; each of the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/rem-sec-004-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 11,
+      "target": "rem-sec-004-02.md",
+      "narrative": null,
+      "content": "Note that because a singular curve and its normalisation have the same geometric genus, we still expect to have four independent differentials in the HC- model. These differentials, while independent as holomorphic differentials, do satisfy an algebraic relation, namely Q: v1v2 + v3v4 = 0. (3) It is a famous result that Q ∼= P1× P1 [65], and as we will subsequently want an explicit form of the isomorphism we shall write it down. Namely we have the map Q →P1× P1 given by ϕ : P1× P1 →Q ⊂P3, ϕ([u : v], [z : w]) = [uz : vw : vz : −uw] ..= [v1 : v2 : v3 : v4]. (4) The inverse map ϕ−1 : Q →P1× P1 is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The period matrix",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "../sections/sec-005-22-the-period-matrix.md",
+      "narrative": null,
+      "content": "2.2 The period matrix\nWe record now a result from the literature. Recall that given a choice of a basis of\ndifferentials {ωi} on a curve and a choice of homology basis {ai, b j} on the same curve\nsuch that the intersection pairing is given by ai ◦b j = δi j (we call such a homology\nbasis canonical), we deﬁne the associated period matrix (also called the matrix of\nperiods) to be the g ×2 g block matrix \n = (A | B) where\nAi j =\n\u0016\na j\nωi,\nBi j =\n\u0016\nb j\nωi.\nIt is the case that A will always be invertible, and we can then deﬁne the associated\nRiemann matrix to be τ = A−1B.\nTheorem 2.10 ([29, 54]) De",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/thm-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[29, 54]",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "thm-sec-005-01.md",
+      "narrative": null,
+      "content": "Deﬁne the matrices M, MS by M = ⎛ ⎜⎜⎝ −1 −1 −1 −1 ⎞ ⎟⎟⎠, MS = ⎛ ⎜⎜⎝ −1 −1 −1 −1 −1 −1 −1 −1 −1 −1 −1 −1 ⎞ ⎟⎟⎠. A Riemann matrix for Bring’s curve is given by τB = τ0M, where the complex number τ0 is given by the conditions j(τ0) = −293 ×5 , j(5τ0) = −25 2 , with j the elliptic- j function on the upper half plane. Then τ0 = −0.5 + 0.186676i (6.d.p). Further, there exists a symplectic transformation such that τB = τ0MS. Proof This is known, and has been proven in multiple different ways. We summarise these and highlight a numerical approach. 1. This was ﬁrst shown in [54], but the equations for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prop-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "[67]",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "prop-sec-006-01.md",
+      "narrative": null,
+      "content": "Aut(B) = S5. This is the maximal possible automorphism group for a genus 4 surface, and Bring’s curve is the only curve to achieve it. Wiman’s proof was enumerative and produced equations for the curves with a given automorphism group. He had previously dealt with the hyperelliptic curves and their automorphism groups and for non-hyperelliptic curves C of genus 4 he began with the canonical embedding of the curve in P3 which meant that their automorphisms could be taken to be collineations, and so forming a subgroup of PGL4(C). Wiman’s approach then used the fact (see [33, IV.5.2.2]) that the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prop-sec-006-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "prop-sec-006-03.md",
+      "narrative": null,
+      "content": "The map U : (x, y) → \u0019 −y5 + x3y −3xy2 + 1 (y −x2)(y3 −x) , −y2x −1 y3 −x \u001a is an automorphism of the HC-model, and together with R and S generates the entire automorphism group S5. 11 A variation on this pencil has been used to explain why Bring’s curve is uniquely deﬁned as an A5- invariantcurveofgenus4,butthereisa1-parameterfamilyofdimension4 A5-invariantprincipallypolarised abelian varieties, deforming Jac B [48, 69]. The paper [51] gives further interesting representation theoretic perspectives on Bring’s curve. 12 For λ = 17/180 the curve is of genus 0; for λ = 1/10 the curve is reducibl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The automorphism group",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "../sections/sec-006-23-the-automorphism-group.md",
+      "narrative": null,
+      "content": "As previously noted, the P4-model of Bring’s curve shows that the automorphism\ngroup Aut(B) contains S5. Hurwitz’s theorem on the automorphism group G =\nAut(C) of a curve of genus g ⩾2 yields that |G| ∈{84(g −1), 48(g −1),\n40(g −1), . . .} and that if p is a prime where p | |G|, then p ∈{2, . . . , g, g + 1,\n2 g + 1}. For genus 4 this means p ∈{2, 3, 5} and so the maximal automorphism\ngroup of a genus 4 curve has order strictly less than 84(g −1). In 1895, Wiman\nshowed10\nProposition 2.11 ([67]) Aut(B) = S5. This is the maximal possible automorphism\ngroup for a genus 4 surface, and Bring’s curv",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/thm-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[22]",
+      "pageStart": 14,
+      "pageEnd": 17,
+      "target": "thm-sec-006-02.md",
+      "narrative": null,
+      "content": "The A5 subgroup of Aut(B) can be realised as a group of collineations in the HC-model, that is, can be realised as a subgroup of PGL3(C).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prop-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "[67]",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "prop-sec-007-01.md",
+      "narrative": null,
+      "content": "There are only three orbits orbits of points of size less than 120 on B and these have sizes 24, 30, and 60 respectively. Proof By [27, III.7.7] we know the stabilizer of a point must be a cyclic group. The cyclic subgroups of S5 are C2, C3, C4, C5, C6; the corresponding orbits would thus be of (respective) sizes 60, 40, 30, 24 or 20. To obtain Wiman’s result we must show that C3 does not ﬁx a point on Bring’s curve. Using Riemann–Hurwitz we have 3 = 120(g −1) + 30a60 + 40a40 + 45a30 + 48a24 + 50a20 where ak ⩾0 is the number of S5 orbits of size k. There are no solutions to this for g ⩾1. For",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometric points",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-007-3-geometric-points.md",
+      "narrative": null,
+      "content": "We now have a good understanding of how the automorphism group acts on the curve,\nand so before looking at quotient Riemann surfaces in Sect.4 we want to ﬁrst consider\norbits of points that have geometric signiﬁcance on the curve. These points will have\nimportant connections to the function theory of the curve; they are also related to\nphysical aspects of Euclidean realisations (i.e. can be immersed in Euclidean 3-space)\nof the curve. Such orbits are characterised by the following result from Wiman.\nProposition 3.1 ([67]) There are only three orbits orbits of points of size less than 120\non B",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/figure-img-p018-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/figure-img-p018-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prop-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "[24]",
+      "pageStart": 19,
+      "pageEnd": 22,
+      "target": "prop-sec-008-01.md",
+      "narrative": null,
+      "content": "Bring’s curve has 60 Weierstrass points, on which Aut(B) acts transitively. Letting {α, β, γ } be the roots of the cubic x3 + 2x2 + 3x + 4, these are given in the P4-model by Wi jk where, for example, W345 = [1 : 1 : α : β : γ ]. Proof Edge, working in the P4-model, identiﬁes the Weierstrass points with the 60 intersections of the curve with the ten planes i j = {xi = x j}. To do this, Edge quotes [67] to show that these intersection points are stalls,14 i.e. inﬂection points of certain linear series, and for the canonical embedding these are exactly the Weierstrass points [2, p.37]. Simple al",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prop-sec-008-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 22,
+      "target": "prop-sec-008-04.md",
+      "narrative": null,
+      "content": "Deﬁne the points P345, P′ 345 corresponding to the Weierstrass point W345 (and similarly for the other Weierstrass points) by P345 = \u000e δ′ : δ : (−43α2 −113α −92)β/112 −(13α2 −27α −20)/28 : (43α2 + 25α −4)β/112 + (13α2 + 3α −24)/28 : 1 \u000f P′ 345 = \u000e δ : δ′ : (−43α2 −113α −92)β/112 −(13α2 −27α −20)/28 : (43α2 + 25α −4)β/112 + (13α2 + 3α −24)/28 : 1 \u000f . Here α, β were deﬁned in Proposition 3.3 and δ, δ′ are the roots of x2 −",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weierstrass points",
+      "pageStart": 19,
+      "pageEnd": 22,
+      "target": "../sections/sec-008-31-weierstrass-points.md",
+      "narrative": null,
+      "content": "3.1 Weierstrass points\nWe recall the deﬁnition of an important class of points.\nDeﬁnition 3.2 ([50, Proposition 12.6, Theorem 12.7]) A Weierstrass point on a curve\nX of genus g with canonical embedding Xc ⊆Pg−1 is a point P satisfying one of the\nfollowing equivalent conditions:\n1. there exists a hyperplane H ⊂Pg−1 such that H ∩Xc has multiplicity at least g\nat P,\n2. there exists a holomorphic differential on X vanishing at P with order ⩾g,\n3. there exists a meromorphic function on X with poles just at P of order ⩽g, and\n4. the Wronskian determinant given by Wr(P) = det\n\u0017 diω j\ndzi\n\u0018\ni, j=0,...",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/rem-sec-008-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 22,
+      "target": "rem-sec-008-03.md",
+      "narrative": null,
+      "content": "As we have an explicit birational map from our plane model to our canon- ical embedding of the curve, we can get the explicit forms of the Weierstrass points in the HC-model using Edge’s identiﬁcation of the Weierstrass points in the P4-model. If one does not have this information, it is still possible to calculate the Weierstrass points using Sage and some educated guesswork. Using computer algebra, and the characterisation of Weierstrass points as zeros of the Wronskian determinant, one can check that in the HC-model the Weierstrass points have base coordinates at the 60 roots of the polynom",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/rem-sec-008-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 22,
+      "target": "rem-sec-008-05.md",
+      "narrative": null,
+      "content": "We are able to verify the results in Proposition 3.6 using the Abel–Jacobi map implemented in the Sage [17]; see the notebooks.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/thm-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[44, Theorem 15]",
+      "pageStart": 19,
+      "pageEnd": 22,
+      "target": "thm-sec-008-02.md",
+      "narrative": null,
+      "content": "If X is a Riemann surface of genus g > 2 with g3−g Weierstrass points on which Aut(X) acts transitively then either • g = 4 and X is Bring’s curve, or • g = 3 and X is Klein’s curve, or • g = 3 and Aut(X) ∼= S4.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prop-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "prop-sec-009-01.md",
+      "narrative": null,
+      "content": "The face-centres are exactly the points ﬁxed by an order-5 auto- morphism of the curve. They are given in the P4-model by the permutations of [1 : ζ : ζ 2 : ζ 3 : ζ 4]. The corresponding points in the normalisation B of the HC-model are the desingularizations of Vk, together with a, b, c, d, and • [−2ζ 3 −2ζ 2 : ζ 3 + ζ 2 −1 : 1] = [ √ 5 + 1 : − √ 5/2 −3/2 : 1] = [2 j : j′ −2 : 1], • [−2ζ 3 −2 : −2ζ 3 −ζ −1 : 1], • [−2ζ 2 −2ζ : −ζ 3 + ζ + 1 : 1], • [2ζ 3 + 2ζ 2 + 2ζ : ζ 3 + 2ζ 2 + 2ζ + 1 : 1], • [−2ζ 2 −2 : ζ 3 −ζ 2 + ζ : 1], 16 The osculating plane at a point P on a curve is the limiting plan",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prop-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "prop-sec-009-02.md",
+      "narrative": null,
+      "content": "The vertices are exactly the points ﬁxed by an order-4 auto- mor- phism of the curve. They are given in the P4-model by the permutations of [1 : i : −1 : −i : 0]. We could use our birational map as above to give the vertices in HC coordinates, but these are not very illuminating. For example, that vertex [1 : i : −1 : −i : 0] maps to [X : Y : Z] = \u000e (3ζ 3 −ζ 2 + 2ζ + 1)i + 3ζ 3 + 3ζ 2 + 5 : (2ζ 3 + 2ζ + 1)i + 2ζ 3 + 2ζ 2 + 2 : 1 \u000f though [1 : −1 : i : −i : 0] maps to [1 : (−1 + i)/2 : (−1 + i)/2].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Vertices and face-centres",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-009-32-vertices-and-face-centres.md",
+      "narrative": null,
+      "content": "Using [8, Figure 2] we are able to link the Petrie polygon to the R&R model of the\ncurve, and this gives us a concrete expression for the remaining geometric points.\nProposition 3.8 The face-centres are exactly the points ﬁxed by an order-5 auto-\nmorphism of the curve. They are given in the P4-model by the permutations of\n[1 : ζ : ζ 2 : ζ 3 : ζ 4]. The corresponding points in the normalisation B of the HC-model\nare the desingularizations of Vk, together with a, b, c, d, and\n• [−2ζ 3 −2ζ 2 : ζ 3 + ζ 2 −1 : 1] = [\n√\n5 + 1 : −\n√\n5/2 −3/2 : 1] = [2 j : j′ −2 : 1],\n• [−2ζ 3 −2 : −2ζ 3 −ζ −1 : 1],\n•",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quotients by subgroups",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-010-4-quotients-by-subgroups.md",
+      "narrative": null,
+      "content": "Both [54] and [66] consider the quotient of B by the action of subgroups of S5. In this\nsection we shall study the various quotients of Bring’s curve of non-zero genus and\nthe relations between them, both clarifying and extending previous work. In Sect.4.1\nwe will use the Riemann–Hurwitz theorem to describe possible quotients. In Sect.4.2\nwe shall note the various relationships we expect between the quotients just on group\ntheoretic grounds, while in Sects.4.3–4.5 we turn to their explicit construction. In\nso doing we discover a number of curious isomorphisms beyond those expected. In\nSect.4.6",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prop-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "prop-sec-011-01.md",
+      "narrative": null,
+      "content": "The data of the quotients of B by subgroups ⟨σ⟩⩽S5 is summarised by the following table: σ",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Genera of quotients",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-011-41-genera-of-quotients.md",
+      "narrative": null,
+      "content": "Our ﬁrst step is to know the topology of the quotients we are going to ﬁnd. To this\nend, we give the following result.\nProposition 4.1 The data of the quotients of B by subgroups ⟨σ⟩⩽S5 is summarised\nby the following table:\nσ\nExample\n|cl(σ)|\n|Fix(σ)|\nFixed Points\nNS5(⟨σ⟩)/⟨σ⟩\ng(B/⟨σ⟩)\n(12)\n–\n10\n6\nEdges\nS3\n1\n(123)\nRS\n20\n0\n–\nV4\n2\n(12)(34)\nR\n15\n2\nVertices\nV4\n2\n(1234)\nU\n30\n2\nVertices\nC2\n1\n(123)(45)\n–\n20\n0\n–\nC2\n0\n(12345)\nS\n24\n4\nFace-centres\nC4\n0\nHere cl(σ) is the conjugacy class of σ, Fix(σ) = {P ∈B | σ(P) = P}.\nProof As conjugate elements yield isomorphic quotients we need only to give one σ\nper c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relations between quotients",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-012-42-relations-between-quotients.md",
+      "narrative": null,
+      "content": "We now consider the various relationships we might expect between the quotient\ncurves of Bring’s curve. Recall (again from Riemann–Hurwitz) that if C is a curve\nof genus g ⩾2 and H ⩽Aut(C) is such that |H| > 4(g −1), a so called ‘large\nautomorphism group’, then the genus of the quotient curve gC/H = 0. For Bring’s\ncurve we are therefore interested in subgroups of S5 of order less than or equal to\n12, and as we have seen the quotient by a 5-cycle leads to genus 0 we may exclude\nsubgroups containing such. The relevant conjugacy classes of subgroups are then17\n(a) ⟨(12)(34)⟩∼= C2, ⟨(12), (34)⟩∼=",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quotients by a 4- and 2,2-cycle",
+      "pageStart": 26,
+      "pageEnd": 30,
+      "target": "../sections/sec-013-43-quotients-by-a-4--and-22-cycle.md",
+      "narrative": null,
+      "content": "Armed with the knowledge of the genus of the quotients we expect we shall now write\nthem explicitly. We will begin with the 2,2-cycle corresponding to U 2 with the 4-cycle\nU arising in the discussion. Recall that we have\nBring’s curve: old and new\nPage 27 of 46\n3\nU 2 : [X : Y : Z] →[X : Z : Y],\nψ(U 2) = (12)(34).\nThe normaliser of ⟨(12)(34)⟩in S5 is NS5(⟨(12)(34)⟩) = ⟨(12), (1324)⟩∼= D8. As\nwe remarked earlier, NS5(⟨(12)(34)⟩)/⟨(12)(34)⟩∼= V4 are symmetries which remain\nwhen we go to the quotient B/⟨U 2⟩and we expect the quotient genus 2 curve to\nhave (at least) this V4 symmetry group. One of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quotients by a 3-cycle",
+      "pageStart": 30,
+      "pageEnd": 32,
+      "target": "../sections/sec-014-44-quotients-by-a-3-cycle.md",
+      "narrative": null,
+      "content": "We may utilise the same methods illustrated above for the 2,2-cycles to calculate\nthe quotient of Bring’s curve by a 3-cycle. We will work with the 3-cycle (345)\nfor purely aesthetic reasons. Now the normaliser of ⟨(345)⟩in S5 is NS5(⟨345⟩) =\n⟨(12), (34), (345)⟩∼= D12 and we expect the quotient genus 2 curve B/⟨(345)⟩to have\nD12/C3 ∼= V4 symmetry group. Again one of these involutions, which we will later see\nto be (34),23 is the hyperelliptic involution on the curve and so further quotienting by\nthis symmetry gives P1. Quotienting by the other two involutions again yields elliptic\ncurves we sh",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quotients by a transposition",
+      "pageStart": 32,
+      "pageEnd": 35,
+      "target": "../sections/sec-015-45-quotients-by-a-transposition.md",
+      "narrative": null,
+      "content": "The strategy of quotienting from the P4-model using semi-invariants from the previous\nsections can also be used to calculate the quotient of Bring’s curve by a transposition.\nWe take semi-invariants\n(s1, s2, s3, s4)T =\n⎛\n⎜⎜⎝\n1\n1\n0\n0\n1\n−1\n0\n0\n0\n0\n1\n1\n0\n0\n1\n−1\n⎞\n⎟⎟⎠(x1, x2, x3, x4)T,\nand in terms of these variables the deﬁning equations of Bring’s curve become\nH2 = 1\n2 (s2\n1 + s2\n2) + s2\n3 + s2\n4 + (s1 + s3 + s4)2,\nH3 = 1\n4 (s3\n1 + 3s1s2\n2) + s3\n3 + s3\n4 −(s1 + s3 + s4)3.\nTaking invariants [s : t : u : v] = [s1 : s2\n2 : s3 : s4] and eliminating t yields the elliptic\ncurve\nE2 : 4s3 + 8s2u + 7su2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/rem-sec-015-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 35,
+      "target": "rem-sec-015-01.md",
+      "narrative": null,
+      "content": "This calculation may be veriﬁed numerically, as shown in the notebooks.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/rem-sec-015-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 35,
+      "target": "rem-sec-015-02.md",
+      "narrative": null,
+      "content": "Note that when we call (345) an automorphism of the elliptic curve, we have to think about it only in the category of projective varieties with morphisms given by rational maps. To consider the group structure on an elliptic curve E we need to also give a base point O ∈E which acts as the additive identity. A morphism from pair (E, O) →(E′, O′) must map O →O′. If we denote the group of automorphisms of E as a projective variety as Aut(E), and the group of O-ﬁxing automorphisms as Aut O(E), then we have short exact sequence 0 →TE →Aut(E) →Aut O(E) →0, where TE is the group of translations of E.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prop-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "[54, Section 4], [66, Corollary 5.5]",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "prop-sec-016-01.md",
+      "narrative": null,
+      "content": "The C-isogeny class of the Jaco- bian of Bring’s curve is E4 3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prop-sec-016-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "[29]",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "prop-sec-016-02.md",
+      "narrative": null,
+      "content": "The Jacobian of Bring’s curve is isomorphic as a complex torus to E3 2 ×E1. Proof The proof in [29] is very general, considering Jacobians whose period matrix is invariant under Sn for any n. The isomorphism from the period matrix given in [54] is C #1 τ M$ \u0019D 0 0 E \u001a = #1, τ diag(5, 5, 5, 1)$ 27 The isogeny classes 450b and 50b merge over Q[ √ −15].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summarising",
+      "pageStart": 35,
+      "pageEnd": 38,
+      "target": "../sections/sec-016-46-summarising.md",
+      "narrative": null,
+      "content": "4.6 Summarising\nWe can collect the information of the quotients we have seen into Fig. 3. Solid arrows\nrepresent a covering map coming from a quotient, whereas ‘squiggly’ arrows indicate\nisomorphisms that are unexplained by group theory alone.\nThis corresponds to the quotients by the following groups in Fig. 4, where an arrow\nnow indicates that a source group is normal in the target, whereas a dashed line just\nindicates that a group is a subgroup. The label used corresponds to the list in Sect.4.2,\nexcept where that label is ambiguous and the exact group must be speciﬁed.\nFinally, we recall fr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/figure-img-p036-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 36,
+      "target": "../images/img-p036-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/ex-sec-017-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 38,
+      "target": "ex-sec-017-02.md",
+      "narrative": null,
+      "content": "It is a computational exercise to verify KB ∼",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/lem-sec-017-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 38,
+      "target": "lem-sec-017-01.md",
+      "narrative": null,
+      "content": "Call a theta characteristic odd/even based on the parity of its index of speciality. Then on a Riemann surface of genus g there are 2g−1(2g −1) odd theta characteristics and 2g−1(2g + 1) even theta characteristics. There are many equivalent deﬁnitions of parity for a theta characteristic, and while the above is not computationally the easiest, it is one of the easier to state. The paper [26] provides a nice overview of these and their connections.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Theta characteristics",
+      "pageStart": 38,
+      "pageEnd": 38,
+      "target": "../sections/sec-017-5-theta-characteristics.md",
+      "narrative": null,
+      "content": "We now investigate the theta characteristics of Bring’s curve, which in [3] were shown\nto be equivalent to spin structures, and as such we will use the terms interchangeably.\nThese are objects which have been studied greatly in a variety of contexts in algebraic\ngeometry, number theory, and even string theory, though in this paper we will not\ndiscuss these applications and focus on calculation. Among other results we shall\nidentify the unique invariant spin structure of Bring’s curve.\nFor completeness we recall the main deﬁnition that we shall use in this paper.\nDeﬁnition 5.1 A theta character",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Abel–Jacobi and the Riemann constant vector",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "../sections/sec-018-51-abeljacobi-and-the-riemann-constant-vector.md",
+      "narrative": null,
+      "content": "We will now take a detour to lay out some notation and deﬁnitions in preparation for\nlater.\nBring’s curve: old and new\nPage 39 of 46\n3\nDeﬁnition 5.4 The Abel–Jacobi map on a Riemann surface C with basis of differentials\n{ω j}, based at Q ∈C, is given by\n(AQ(P)) j =\n\u0016 P\nQ\nω j.\nThis is well deﬁned up to periods on the curve. Letting τ be the Riemann matrix of C,\nthe Riemann Constant Vector (RCV) based at Q is given by\n(KQ) j = −1 + τ j j\n2\n+\ng\n\u0002\nk̸= j\n&\nak\nωk(P)(AQ(P)) j.\nThe RCV is related to the canonical divisor by 2KQ ≡AQ(KC). Indeed, [16]\nshows how to ﬁnd KQ from this relation given the the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/thm-sec-018-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[28]",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "thm-sec-018-01.md",
+      "narrative": null,
+      "content": "KQ = AQ(\u001bS), and as such \u001bS is a theta characteristic. The deﬁnition of the RCV also requires that the differentials are normalised with respect to the homology basis taken {a j, b j} such that ' a j ωi = δi j. As such hidden in the above result is the fact that the Szeg˝o kernel divisor is homology dependent, because the RCV is.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/cor-sec-019-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "cor-sec-019-02.md",
+      "narrative": null,
+      "content": "The orbit decomposition of odd theta characteristics on Bring’s curve is 120 = 20 + 20 + 20 + 60. (20) Proof The characteristics coming from the tritangent planes are T (1) α jk = \u0002 i=1 i̸= j,k Wi jk, T (2) i jk = Wi jk + O+ i jk + O− i jk.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prop-sec-019-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "[25]",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "prop-sec-019-01.md",
+      "narrative": null,
+      "content": "The 120 tritangent planes on Bring’s curve split into two classes, 60 in each class; (i) those where all three contact points are Weierstrass points, and (ii) those where only one contact points is a Weierstrass point. Planes in the ﬁrst and second class respectively have equations (recalling notation from Sect. 3.1) (1) α jk ..= \u001bx j β −xk γ = 0",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tritangent planes and odd characteristics",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "../sections/sec-019-52-tritangent-planes-and-odd-characteristics.md",
+      "narrative": null,
+      "content": "Recall that when we consider the canonical embedding of a curve in Pg−1, the inter-\nsection with a hyperplane gives an effective element of the canonical divisor class of\nthe curve, as it corresponds to the zero-locus of a differential on the curve. A tritangent\nplane is a plane that intersects the curve tangentially in three points. If a hyperplane\nis tangent at each intersection (i.e. the intersection is of order 2) then this naturally\nconstructs an effective theta divisor on the curve, and moreover every such theta char-\nacteristic θ gives a hyperplane [13]. For any sextic that is the inter",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/rem-sec-019-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "rem-sec-019-03.md",
+      "narrative": null,
+      "content": "While we were able to proceed analytically here characterising the orbits of the odd characteristics using the work of earlier authors who had identiﬁed the tritangent planes of the curve we also may obtain the orbit structure numerically using Sage. Given a homology representation of the automorphism group, the algorithm to compute the orbits is exact, but the current implementation in Sage requires ﬂoating point arithmetic to calculate this representation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/cor-sec-020-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "cor-sec-020-02.md",
+      "narrative": null,
+      "content": "Bring’s curve has a unique theta characteristic invariant under the action of the automorphism group, which is also the theta characteristic invariant under the A5 subgroup found in [11]. The existence of the unique invariant theta characteristic was known in [8], but it had not been identiﬁed. This we rectify with the following result.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prop-sec-020-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "prop-sec-020-04.md",
+      "narrative": null,
+      "content": "The divisors L, L′ satisfy the properties described in [11], namely \u001b ∼3(L′ −L) + L, KB ∼L + L′, 0 ∼5(L′ −L). Proof This is straightforward veriﬁcation from the deﬁnitions. 29 Under the action of S, the orbit decompositions are 120 = 24×5 and 136 = 1 + 27×5. 30 The ﬁnal part of the proof in that paper, showing invariance under the order-2 generator of PSL2(F7), is in our opinion incomplete; Kallel (private correspondence) believes our reasoning correct. The theorem remains correct nevertheless, as one can check using their methodology that invariance under the order-7 generator is enough to sp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prop-sec-020-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "prop-sec-020-05.md",
+      "narrative": null,
+      "content": "In the homology basis of [54], the RCV satisﬁes Ka = 1 10 (3, 2, −2, −3) + Im(τ0)(1, −2, −2, 1)i = Aa(\u001b). As such, in the R&R homology basis, the unique invariant theta characteristic is the divisor (class) of the Szeg˝o kernel, i.e. \u001b = \u001bS. Proof The ﬁrst equality is shown analytically in [8]. The second is shown numerically in the corresponding notebooks, using the Abel–Jacobi map developed by Disney- Hogg [17]. To verify the RCV, we implemented the methodology of [16] using the theta function in Sage developed by Bruin and Ganjian [9]. While these calculations are numerical in nature, the c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Even characteristics",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "../sections/sec-020-53-even-characteristics.md",
+      "narrative": null,
+      "content": "In the previous subsection, we were able to fully characterise the odd theta character-\nistics on Bring’s curve without too much difﬁculty through the use of existing work\ngiving the stalls of the canonical embedding. The story for even characteristics is dif-\nferent, as the line bundle corresponding to a generic even theta characteristic has no\nsections, which is an obstacle to their study [62]. In [19] the authors were able to use\nthe Scorza correspondence to calculate the orbit decomposition of even spin structures\non Klein’s curve, but at the time of writing the theory of the Scorza map ha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/thm-sec-020-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "thm-sec-020-01.md",
+      "narrative": null,
+      "content": "The orbit decomposition of even theta characteristics on Bring’s curve is 136 = 1 + 5 + 5 + 5 + 10 + 10 + 10 + 30 + 30 + 30. (21)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/thm-sec-020-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "thm-sec-020-03.md",
+      "narrative": null,
+      "content": "Thethetacharacteristic\u001b(deﬁnedinExample5.3)istheuniqueinvari- ant theta characteristic in on Bring’s curve. Proof We ﬁrst consider the action of S on a, b, c, d. We have a ..= [0 : 0 : 1] ≃[2t3 : t : 1] S−→[2t3 : ζt : ζ −1] = [2ζt3 : ζ 2t : 1] = [2(ζ 2t)3 : ζ 2t : 1] = [2ϵ3 : ϵ : 1], b ..= [0 : 1 : 0] ≃[2t2 : 1/t : 1] S−→[2t2 : ζ/t : ζ −1] = [2ζt2 : ζ 2/t : 1] Page 42 of 46 H.W. Braden, L. Disney-Hogg = [2(t/ζ 2)2 : ζ 2/t : 1], c ..= [1 : 0 : 0]2 ≃[1 : t : t4] S−→[1 : ζt : ζ −1t4] = [1 : ζt : (ζt)4], d ..= [1 : 0 : 0]1 ≃[1 : t4 : t] S−→[1 : ζt4 : ζ −1t] = [1 : (ζ −1t)4 : ζ −1t]. Thus a, b, c a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prop-sec-021-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 43,
+      "pageEnd": 44,
+      "target": "prop-sec-021-01.md",
+      "narrative": null,
+      "content": "(b) Constructed an explicit transform (6) between the period matrix of Weber and that of R&R. (c) Provided a complete realisation of the automorphism group of the curve in the HC-model (Propositions 2.12 and 2.13) and the canonical model (9), (10). (d) Uniﬁed the functional, algebraic and geometric pictures of the distinguished orbits on the curve (those of size 24, 30, and 60) by explicitly identifying these points (Propositions3.3,3.8,3.9)andidentifyingthedivisorsoftheholomorphicdifferen- tials and meromorphic functions associated to the Weierstrass points (Proposition 3.6). (e) Completed th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusion",
+      "pageStart": 43,
+      "pageEnd": 44,
+      "target": "../sections/sec-021-6-conclusion.md",
+      "narrative": null,
+      "content": "We have now seen that Bring’s curve has many interesting properties and appears in\na number of quite different settings; with this background now established we can\nsummarise the main new results of the paper. We have:\n(a) Constructed an explicit birational map between the HC- and P4-model of the curve,\nProposition 2.9.\n(b) Constructed an explicit transform (6) between the period matrix of Weber and that\nof R&R.\n(c) Provided a complete realisation of the automorphism group of the curve in the\nHC-model (Propositions 2.12 and 2.13) and the canonical model (9), (10).\n(d) Uniﬁed the functional, al",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 44,
+      "pageEnd": 44,
+      "target": "../sections/sec-022-acknowledgements.md",
+      "narrative": null,
+      "content": "Data availability Throughout this paper reference has been made to Jupyter notebooks where demonstra-\ntions of calculations are provided. These are available at https://github.com/DisneyHogg/Brings_Curve.\nOpenAccess ThisarticleislicensedunderaCreativeCommonsAttribution4.0InternationalLicense,which\npermits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give\nappropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence,\nand indicate if changes were made. The images or other third party material in this",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/s40879-023-00706-0/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 44,
+      "pageEnd": 46,
+      "target": "../sections/sec-023-references.md",
+      "narrative": null,
+      "content": "1. Adamchik, V., Jeffrey, D.J.: Polynomial transformations of Tschirnhaus, Bring and Jarrard. ACM\nSIGSAM Bull. 37(3), 90–94 (2003)\n2. Arbarello, E., Cornalba, M., Grifﬁths, P.A., Harris, J.: Geometry of Algebraic Curves. Vol. I.\nGrundlehren der Mathematischen Wissenschaften, vol. 267. Springer, New York (1985)\n3. Atiyah, M.F.: Riemann surfaces and spin structures. Ann. Sci. Éc. Norm. Super. 4(1), 47–62 (1971)\n4. Baker, A., Wüstholz, G.: Logarithmic Forms and Diophantine Geometry. New Mathematical Mono-\ngraphs, vol. 9. Cambridge University Press, Cambridge (2007)\n5. Bell, A.M.: Hilbert Modular",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

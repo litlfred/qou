@@ -1,0 +1,291 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-cond-mat-9811142v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-cond-mat-9811142v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Random matrix ensembles for quantum Hamiltonians are defined in terms of the constraint imposed on the general Hermitian matrix representing the Hamiltonian by time reversal symmetry and spin-rotation invariance (when relevant). This leads to ten distinct random matrix ensembles [@Zi97]. The corresponding eigenvalue probability density function (p.d.f.) can be computed exactly when the independent elements are chosen to have a Gaussian distribution. One then finds that the ten distinct random matrix ensembles belong to one of six different eigenvalue p.d.f.'s. These are $$\\begin{aligned}\n\\labe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-9811142v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:cond-mat/9811142v1  [cond-mat.mes-hall]  10 Nov 1998\nCorrelations for the orthogonal-unitary\nand symplectic-unitary transitions at\nthe hard and soft edges\nP.J. Forrester†, T. Nagao∗and G. Honner†\n†Department of Mathematics, University of Melbourne,\nParkville, Victoria 3052, Australia\n∗Department of Physics, Faculty of Science, Osaka University,\nToyonaka, Osaka 560, Japan\nAbstract\nFor the orthogonal-unitary and symplectic-unitary transitions in random matrix the-\nory, the general parameter dependent distribution between two sets of eigenvalues with\ntwo diﬀerent parameter values can be exp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-9811142v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Revision of the formalism",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-2-revision-of-the-formalism.md",
+      "narrative": null,
+      "content": "At the special coupling $\\beta = 2$, the Fokker-Planck equation ([\\[1.4\\]](#1.4){reference-type=\"ref\" reference=\"1.4\"}) with $W$ given by ([\\[1.5\\]](#1.5){reference-type=\"ref\" reference=\"1.5\"}) or ([\\[1.7\\]](#1.7){reference-type=\"ref\" reference=\"1.7\"}) can be transformed into an imaginary-time Schrödinger equation for $N$ independent fermions (see e.g. [@Fo98]). As such the exact $N$-body Green function $G(\\{x_{j}^{(0)}\\}, \\{x_{j}\\}; \\tau)$ can be written as a determinant involving the corresponding single particle Green functions. In terms of the new variable $y_{j} = x_{j}$ in ([\\[1.1\\]](#1.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-9811142v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Alternative formulas and inter-relationships",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-21-alternative-formulas-and-inter-relationships.md",
+      "narrative": null,
+      "content": "As first noted in [@NF98], substitution of ([\\[2.m\\]](#2.m){reference-type=\"ref\" reference=\"2.m\"}) in ([\\[2.o\\]](#2.o){reference-type=\"ref\" reference=\"2.o\"}) and use of ([\\[2.l\\]](#2.l){reference-type=\"ref\" reference=\"2.l\"}) implies the decomposition $$\\begin{aligned}\n\\label{2.1c}\nS(x,y;\\tau_x,\\tau_y) = S_1(x,y;\\tau_x,\\tau_y) +  S_2(x,y;\\tau_x,\\tau_y)\n\\end{aligned}$$ where $$\\begin{aligned}\n\\label{2.1d} \n S_1(x,y;\\tau_x,\\tau_y) & = &\n \\sqrt{w(x) w(y)} \\sum_{\\nu = 0}^{N-1}\n  \\frac{C_{\\nu}(x) C_{\\nu}(y)e^{-\\gamma_\\nu(\\tau_x-\\tau_y)}}{h_{\\nu}}\n\\\\\n\\label{2.1e}\nS_2(x,y;\\tau_x,\\tau_y) & = &  \\sqrt{w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-9811142v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Laguerre ensemble",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-3-the-laguerre-ensemble.md",
+      "narrative": null,
+      "content": "For the Laguerre ensemble the weight function $w(x)$ and constants $\\gamma_{k}$ are given by ([\\[2.5\\]](#2.5){reference-type=\"ref\" reference=\"2.5\"}), while the monic orthogonal polynomials and corresponding normalization have the explicit form $$\\begin{aligned}\n\\label{3.1}\nC_n(x) = n! (-1)^n L_n^a(x), \\quad h_n = \\Gamma(n+1) \\Gamma(n+a+1).\n\\end{aligned}$$ This applies independent of the particular initial condition (orthogonal symmetry ($\\beta = 1$) or symplectic symmetry ($\\beta = 4$)). However, the skew orthogonal polynomials $R_{k}(x;\\tau)$ and the quantities $\\beta_{jk}$ depend on the init",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-9811142v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The thermodynamic limit",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "../sections/sec-004-311-the-thermodynamic-limit.md",
+      "narrative": null,
+      "content": "In the neighbourhood of the spectrum edge at the origin, we will show that after introducing the scaled coordinates and parameters $X$ and $t$ according to $$\\begin{aligned}\nx  = \\frac{X}{4N} \\, \\quad \\quad \\tau = \\frac{t}{2N} \n\\label{3.9}\n\\end{aligned}$$ (the numerical factors $1/4$ and $1/2$ are chosen for convenience), the distribution functions have a well defined large $N$ limit. In particular, the scaled distribution function ([\\[2.c\\]](#2.c){reference-type=\"ref\" reference=\"2.c\"}), to be denoted $\\rho_{(n+m)}^{\\rm hard}$, is given by $$\\begin{aligned}\n\\label{n.1}\n\\lefteqn{\\rho_{(n+m)}^{\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-9811142v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The thermodynamic limit",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "../sections/sec-005-321-the-thermodynamic-limit.md",
+      "narrative": null,
+      "content": "Although the scaled distribution function is still given by (3.11), the required scaling\nof the elements of the quaternion determinant (2.24) diﬀers slightly from the formulas\n(3.12)–(3.15) appropriate with β = 1 initial conditions. In particular (3.14) and (3.15)\nshould now read\n˜Ihard\n4\n(X, Y ; tX, tY )\n:=\nlim\nN→∞\n\u0010 1\n4N\n\u00112 ˜I\n\u0010 X\n4N , Y\n4N ; tX\n2N , tY\n2N\n\u0011\n(3.43)\nDhard\n4\n(X, Y ; tX, tY )\n:=\nlim\nN→∞D\n\u0010 X\n4N , Y\n4N ; tX\n2N , tY\n2N\n\u0011\n(3.44)\nwhile (3.12) and (3.13) remain the same, except that the subscripts 1 on the right hand\nsides should be replaced by 4.\n15\nAsymptotics of S(x, y; τx, τy)\nF",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-9811142v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gaussian ensemble",
+      "pageStart": 18,
+      "pageEnd": 25,
+      "target": "../sections/sec-006-4-gaussian-ensemble.md",
+      "narrative": null,
+      "content": "For the Gaussian ensemble, we see from ([\\[2.4\\]](#2.4){reference-type=\"ref\" reference=\"2.4\"}) that the corresponding monic orthogonal polynomials and normalization are $$\\begin{aligned}\nC_{n}(x) = 2^{-n}\\, H_{n}(y), \\quad \\quad h_{n} = 2^{-n}\\, \\pi^{1/4}\\, n! \\, .\n\\label{4.1}\n\\end{aligned}$$ The skew orthogonal polynomials for both $\\beta = 1$ and $\\beta = 4$ initial conditions at $\\tau = 0$ are known in terms of the $C_{n}(x)$ (see e.g. [@MM91]). Using these expansions, the general formula ([\\[2.i\\]](#2.i){reference-type=\"ref\" reference=\"2.i\"}) then gives $$\\begin{aligned}\nR_{2m}(x;\\tau) e^{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-9811142v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discussion",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-007-5-discussion.md",
+      "narrative": null,
+      "content": "## Connection with $\\beta = 2$ initial conditions\n\nWe have calculated exact formulas for the dynamical distribution function ([\\[2.c\\]](#2.c){reference-type=\"ref\" reference=\"2.c\"}) in the case of $\\beta = 1$ and $\\beta = 4$ initial conditions, with the final state corresponding to a $\\beta = 2$ equilibrium. If in these formulas we take the limit $t_{X},\nt_{Y} \\rightarrow \\infty$ with $t_{X} - t_{Y}$ fixed, then we would expect no memory of the initial state to be retained, but rather the distribution functions corresponding to a $\\beta = 2$ initial condition (i.e. the equilibrium state) to res",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-9811142v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connection between the soft and hard edges",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-008-52-connection-between-the-soft-and-hard-edges.md",
+      "narrative": null,
+      "content": "For the hard edge distribution function of the Laguerre ensemble at $\\beta = 2$ and $\\tau = 0$, it is known that by taking the limit $a \\rightarrow \\infty$ and introducing new scaled coordinates, the distribution function of the soft edge of the Gaussian ensemble results [@Fo93]. Specifically, the new scaled variable $x$ is related to the scaled variable $X$ of the hard edge by $$\\begin{aligned}\nX = a^{2} - 2\\, a\\, (a/2)^{1/3} \\, x\n\\label{5.9}\n\\end{aligned}$$ and the distribution functions are related by $$\\begin{aligned}\n& & \\lim_{a \\rightarrow \\infty} \\left(-2a(a/2)^{1/3}\\right)^{n}\n\\rho_{(n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-9811142v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connection with the bulk",
+      "pageStart": 27,
+      "pageEnd": 32,
+      "target": "../sections/sec-009-53-connection-with-the-bulk.md",
+      "narrative": null,
+      "content": "It is known \\cite{Fo93} \nthat after appropriate scaling of the variables, the static\ndistributions at the \nhard and soft edges tend to the bulk distributions at large\ndistances from the edge of the system. The required scaling is\n\\beqa\nX \\mapsto \\alpha + 2\\pi \\sqrt{\\alpha}\\, \\rho x\\,  , \\quad \\quad\nX \\mapsto  -\\left(\\alpha + \\pi \\rho x /\\sqrt{\\alpha} \\right) \\,  ,\n\\label{5.15}\n\\eeqa\nwith \n$\\alpha \\rightarrow \\infty$, for the hard and soft edges respectively. Here we\nwill show that this feature persists for the dynamical distributions.\n\nConsider \nfirst the hard edge with $\\beta =2$ initial cond",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-9811142v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Empirical density of eigenvalues at the soft edge",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "../sections/sec-010-55-empirical-density-of-eigenvalues-at-the-soft.md",
+      "narrative": null,
+      "content": "The dynamical distribution functions at the soft edge calculated in Section 4 can be realized by parameter dependent random matrices of the type ([\\[1.3\\]](#1.3){reference-type=\"ref\" reference=\"1.3\"}). Thus we can numerically construct random matrices and empirically compute eigenvalue distributions for comparison against the theoretical prediction. The simplest distribution to compute empirically is the density (one-point function). Here we will undertake such a calculation for the orthogonal to unitary transition at the soft edge.\n\nAs deduced from ([\\[2.s\\]](#2.s){reference-type=\"ref\" refere",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-9811142v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Distribution functions in the initial state",
+      "pageStart": 33,
+      "pageEnd": 34,
+      "target": "../sections/sec-011-56-distribution-functions-in-the-initial-state.md",
+      "narrative": null,
+      "content": "With $m=0$ and $\\tau_1 \\to 0$ the dynamical distribution ([\\[1.7\\'\\]](#1.7'){reference-type=\"ref\" reference=\"1.7'\"}) reduces to the $n$-point distribution function in the initial state. At $\\beta = 1$ the formulas ([\\[2.s\\]](#2.s){reference-type=\"ref\" reference=\"2.s\"}), ([\\[2.1f\\]](#2.1f){reference-type=\"ref\" reference=\"2.1f\"}), ([\\[2.1g\\]](#2.1g){reference-type=\"ref\" reference=\"2.1g\"}) and ([\\[2.1h\\]](#2.1h){reference-type=\"ref\" reference=\"2.1h\"}) reclaim the well known [@MM91; @FP95; @NF95; @TW98] general formula $$\\label{5.in}\n\\rho_{(n)}(x_1,\\dots,x_n) =\n{\\rm Tdet} \\left [ \\begin{array}{cc}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-9811142v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgement",
+      "pageStart": 34,
+      "pageEnd": 34,
+      "target": "../sections/sec-012-acknowledgement.md",
+      "narrative": null,
+      "content": "The financial support of the ARC is acknowledged.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-cond-mat-9811142v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A",
+      "pageStart": 34,
+      "pageEnd": 37,
+      "target": "../sections/sec-013-appendix-a.md",
+      "narrative": null,
+      "content": "In the case τx = τy = 0, the formula (3.9) for S2 at β = 1 reads\nS2(x, y; 0, 0) =\nq\nw(y)\n\u0010ΦN−2(x; 0)\nrN/2−1(0) −\nq\nw(x)CN−1(x)\nhN−1\n\u0011\u0010\nCN−1(y)−(N−1)RN−2(y)\n\u0011\n. (A.1)\n34\nUse of the explicit formulas (3.1) and (3.2) gives\nCN−1(y) −(N −1)RN−2(y) = −(N −1)!\n\u0010\nLa\nN−1(y) −d\ndyLa\nN−1(y)\n\u0011\n= (N −1)! d\ndyLa\nN(y),\n(A.2)\nwhere the second equality follows from an appropriate Laguerre polynomial identity [13].\nFor the x-dependent factor in (A.1), we require an explicit formula for ΦN−2(x; 0).\nNow (2.31) substituted in (2.16) gives\nΦk(x; 0) =\nZ\nsgn(x −y)\nq\nw(y)Rk(y).\nMaking use of the explicit formulas (3.2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

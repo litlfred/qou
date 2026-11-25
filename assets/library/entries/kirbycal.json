@@ -1,0 +1,628 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "kirbycal",
+  "blocks": [
+    {
+      "id": "library/kirbycal/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "Inventiones math. 45, 35- 56 (1978) \nmathematicae \n\u000e9 by Springer-Verlag 197 \nA Calculus for Framed Links in S 3 \nRobion Kirby* \nUniversity of California, Department of Mathematics, Berkeley, Ca. 94720, USA \nDedicated to Arnold Kas \nw 1. A framed link L in S 3 is a finite, disjoint collection of smoothly imbedded \ncircles, 71 ..... 7r, knotted or unknotted, with an integer ~i (the framing) associated \nwith each circle. If F is a Seifert surface for a knot K in L, then the zero framing of \nthe normal bundle of K is derived from the normal vector to K pointing inward \nalong F and the normal vect",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kirbycal/blocks/ex-page-002-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "ex-page-002-01.md",
+      "narrative": null,
+      "content": "(•3 -3)-twists (4, ~3 Fig. 1.1 According to the orientations we have subtracted 71 from if2\" There are ~bl -3 full twists because the zero framing for the (right-handed) trefoil knot would be drawn with -3 full twists. Call two framed links L 1 and L2 g-equivalent if we can obtain L 2 from L1 by a sequence of operations one and two; we write L1 7 L2. The name boundary equivalent is justified as follows:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kirbycal/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "36 \nR. Kirby \nThis corresponds in ML to sliding thej th handle over the ith handle via the band \nb. To compute the framing tkj of 7j, it is helpful to study the intersection form on \nHz(ML; Z). If we orient each 7k, they determine a basis F for H2(ML; Z), denoted by \n~x .... ,7,. The matrix AL of the intersection form with respect to F has the framings \n~k down the diagonal and a~j is the algebraic linking number of the oriented 7~ with \nthe oriented y). Operation two corresponds to either adding ~ to or subtracting 7~ \nfrom ~ depending on whether or not the orientations on ~ and 7j correspond",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kirbycal/blocks/thm-page-002-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "thm-page-002-02.md",
+      "narrative": null,
+      "content": "Given two framed links L1 and L2, then LI \"~ L2 <=> ~ML, is diffeomor- phic to 3ML~ (preserving orientations).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kirbycal/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "A Calculus for Framed Links in S 3 \nBy adding copies of -t-CP 2 to ML,, we can arrange that index (N)=0 (this \nchanges L 1 by~l; we still call the result L1). N bounds an oriented, connected 5- \nmanifold W 5. \n8Mr., x [1,2] \nT |2 \nf \n1 \nFig. 2.1 \nLet f: W 5 ~ [1, 23 be a Morse function for which f- 1(i) =ML,, i= 1, 2, and \nf[ ~ML, x [1, 2] is projection. As is true in any dimension, we may cancel the critical \npoints of index 0 and 5 since W 5 is connected. \nPick e >0 so that there is one critical point of index 1 in f-1([1, 1 +e]). Then \nf- 1(1 + 5) = ML, # S 1 x S 3. But we may achieve this",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kirbycal/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "38 \nR. Kirby \nWe want to compare, for f0 and fl, the descending 2-manifolds of the critical \npoints intersected with 8 M, i.e., the framed links which determine M. To do this, \nwe will find a nice arc connecting fo and fl in the space o~ of DIFF functions, of M \nto [-K, K], a procedure pioneered by Cerf. \nFollowing [Cerf] or [H-W], o~ has a natural stratification o~ = ~o u ~-~ w \no ~2 u ..., where o ~ is a stratum of codimension i. o ~~ is the set of Morse func- \ntions with distinct ctitical values, o~ consists of two pieces, if) and ~ \n:~,~2 \nis the set of Morse functions with distinct critic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kirbycal/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "A Calcuius for Framed Links in S 3 \n39 \nwhere the integers give the index of the critical point. (The lower left birth point is \nthe graphic of the example above.) \nOur first step is to cancel the critical points of index 0 and 4 by deforming f in ~- \nrel fo and fa. For this we need some lemmas from [Cerf]. \nTriangle Lemma [Cerf, p. 78]: Consider the graphics in Figure 3.2. \nFig. 3.2 \nWe may change f, rel f0 and fl, so that its graphic changes from the first to the \nsecond if the indices satisfy il = i2 = i3 < 2; i.e., we can push the second arc up over \nthe crossing point. We can change from",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kirbycal/blocks/prose-page-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 6",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/page-006.md",
+      "narrative": null,
+      "content": "40 \nR. Kirby \nIndependent Trajectories Principle [Cerf, p. 255], [H-W, p. 64]: Given two \nparts of a graphic, suppose that the ascending and descending manifolds of the \ncritical points of one part do not intersect those from the other part. Then we may \ndeform one part relative to the other. \nExamples. If i 1 <i2 then we can deform as in Figure 3.5. \ni 2 \ni2 \ni 1 \nJ \nFig. 3.5 \nWe can add one more feature to the graphic, a dotted vertical line between (t, u) \nand (t, u'), when u > u', the critical points p and p' associated with u and u' by ft have \nthe same index, and the descending manifolds",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kirbycal/blocks/prop-page-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "prop-page-007-01.md",
+      "narrative": null,
+      "content": "The following change in graphics is possible: T +1 _~- i+1 I i Fig. 3.8",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kirbycal/blocks/prose-page-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 7",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/page-007.md",
+      "narrative": null,
+      "content": "A Calculus for Framed Links in S 3 \n41 \ni 1 \ni 2 \ni 1 \n12 \ni 1 \n-/- \nFig. 3.7 \nProposition. The following change in graphics is possible: \nT \n+1 \n_~- \ni+1 \nI \ni \nFig. 3.8 \nProof. This is well known, but not stated explicitly in [Cerf] or [H-W]. The (i + 1)- \nhandle geometrically cancels the/-handle in a neighborhood of the birth point. By \neasy deformation, we can move the vertical line left under this neighborhood, and \nthen cancel the (i + 1)- and/-handles in the neighborhood, achieving the graphic on \nthe right. \nNow we proceed to change f so that its new graphic has no critical points of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kirbycal/blocks/prose-page-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 8",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/page-008.md",
+      "narrative": null,
+      "content": "42 \nR. Kirby \nFig. 3.9 \nIt is easy to arrange the critical points of index 0 as in Figure 3.9, and then to \nmove the critical points of index 1 above those of index 0, by the sequence of \ngraphics in Figure 3.10. \n1 \nBeak \nlemma \n1 \nindepen- \ndent \nt raj ect - \nones \nprmciple \n1 \n0 \nFig. 3.10 \nStep 2. We remove the innermost critical point of index zero. \no \n0 \n2 \nO \n1 \n1 \n1 \nIII \nFig. 3.11. I-III",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kirbycal/blocks/prose-page-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 9",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/page-009.md",
+      "narrative": null,
+      "content": "A Calculus for Framed Links in S 3 \n43 \n2 \nIV \n0 \nVI \nFig. 3.11. IV-VII \nVII \nIn Figure 3.11, I represents the typical difficulty in removing the innermost \nindex zero critical point; we cannot immediately apply the dovetail lemma. In II we \nintroduce a cancelling pair of 1 and 2-handles. This can be done so that the \ndescending 1-manifold of the new critical point of index 1 intersects the ascending \n4-manifold of the critical point of index 0 in exactly one point; thus the new index 1 \ncritical point can be used to cancel the index 0 critical point. We do just that at time \nt in IV and V aft",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kirbycal/blocks/prose-page-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 10",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/page-010.md",
+      "narrative": null,
+      "content": "44 \nR. Kirby \nWe restrict attention to the smallest value of t for which two index 1 critical \npoints have equal values. \nAs noted in the above proposition, we may remove the vertical arrow and then \ninterchange the two beaks as in Figure 3.13. \nFig. 3.13 \nBy iterating this simple process we may change Figure 3.12 to Figure 3.14. \nFig. 3.14 \nNow move the outermost birth and death points just off the edges. \nFi~ 3.15 \nLet D t denote the descending one-manifold of this index one critical point of f. \nWe have arranged that D t always reachs 0 M 4. If we connect the end points of Dr by \nan arc Et",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kirbycal/blocks/prose-page-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 11",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/page-011.md",
+      "narrative": null,
+      "content": "A Calculus for Framed Links in S a \n45 \nfunction on M t #~ S 2 x S 2 will have the critical point of index 1 replaced by a critical \npoint of index 2. \nNote that the same comments hold if we are dealing with the ascending one- \nmanifold of an index 3 critical point, as we shall be after applying Figures 3.12-15, \ninverted, to the index 3 critical points. \nThis surgery must be continuous with respect to t, which means that we must \nchoose Et continuously. At t = 0, the critical point of index 2 which cancels our \nindex 1 critical point has a descending 2-manifold; its boundary is a circle, part",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kirbycal/blocks/prose-page-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 12",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/page-012.md",
+      "narrative": null,
+      "content": "46 \nR. Kirby \nFig. 3.16 \nw 4. Given L 1 and L2, suppose we guess that OML, = t3Mt~. Knowing from the \ntheorem that we would then have L 1 -y L2, it becomes plausible to try to prove that \nt3ML, = OML: by proving that L1 \"~ L2- When trying to show two framed links are ~- \nequivalent, it is cumbersome to use only (91 and (92; some shortcuts are needed. \nHere is the principle one, called a K-move in [-F-R]. \nProposition 1A. If L and L' are identical except for the parts shown in Figure 4.1, \nthen L,-~ L'. Here 7o is an unknot with framing - 1 which disappears in E, and the \no \nbox denotes a full",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kirbycal/blocks/prose-page-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 13",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/page-013.md",
+      "narrative": null,
+      "content": "A Calculus for Framed Links in S 3 \n47 \nNote that Propositions 1A \nequivalence in Figure 4.2. \nn-1 \n-1 \nand 1B imply \nand \nfor one vertical strand the O- \nI n+l \n+1 \nFig. 4.2 \nProof We prove only Proposition 1A in the following special case, Figure 4.3. \nFig. 4.3 \nWe push off two copies of 70 and add one to each vertical strand ((~02) and then \neliminate 70 ((90, see Figure 4.4. (One can verify that this does not depend on the \norientations; the rule is to follow what the linking matrix indicates.) \nII \n~2 \nambient \nisotopy \nFig. 4.4 \n) \n01",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kirbycal/blocks/cor-page-014-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "cor-page-014-02.md",
+      "narrative": null,
+      "content": "Note that in the presence of a \"free\" (~ 1, adding %~)o is the same as adding +~)0-1 in that the 4-manifolds are diffeomorphic.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kirbycal/blocks/prop-page-014-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "prop-page-014-01.md",
+      "narrative": null,
+      "content": "Given a link L, then we may add to (or substract from) L a copy of either ~ or q~ (separated from L by an imbedded 2-sphere) without changing the ~-equivalence class of L. This corresponds to either of the connected sums \"~ ML # S 2 x S 2 or ML # S 2 x S . Proof For S 2 ~S 2, we proceed as follows. -1 +1 L (~, O 0 ~2 -- -- Lu b Lu Fig. 4.5 For S 2 x $2: Prop. 1A L--~LU ~, LU ~, LU Fig. 4.6",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kirbycal/blocks/prop-page-014-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "prop-page-014-03.md",
+      "narrative": null,
+      "content": "If L and L' are the two links in S 3 in Figure 4.7, then L ~ E. # L L' Fig. 4.7 Proof The proof should be clear from the sequence in Figure 4.8. We push offcopies 0f71 and add them where needed. This does not change any framing in L 0 because nothing in Lo links 71 and 71 has framing zero. Anytime we add 71 to 72 to unknot )'2, we also subtract 71 from 72 in a trivial way, thereby preserving the framing 0f72. In principle, this argument is the same as the one showing that any knot K in S 1 x S 2 is unknotted if K n p x S 2 = one point for some peS 1. If L'and L lie in some non-simply connected",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kirbycal/blocks/prose-page-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 14",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/page-014.md",
+      "narrative": null,
+      "content": "48 \nR. Kirby \nProposition 2. Given a link L, then we may add to (or substract from) L a copy of \neither ~ \nor q~ \n(separated from L by an imbedded 2-sphere) without changing \nthe ~-equivalence class of L. This corresponds to either of the connected sums \n\"~ \n2 \nML # S 2 x S 2 or ML # S 2 x S . \nProof For S 2 ~S 2, we proceed as follows. \n-1 \n+1 \nL (~, \nO 0 \n~2 \n-- \n-- Lu \nb \nLu \nFig. 4.5 \nFor S 2 x $2: \nProp. 1A \n0 \nL--~LU \n~, LU \n~, LU \nFig. 4.6 \nCorollary. Note that in the presence of a \"free\" (~ 1, adding %~)o is the same as \nadding +~)0-1 \nin that the 4-manifolds are diffeomorphic. \nPropos",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kirbycal/blocks/prose-page-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 15",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/page-015.md",
+      "narrative": null,
+      "content": "A Calculus for Framed Links in S 3 \n49 \nAn interesting example involves the homology sphere 1;(2, 7, 13). If L is the left \nhand (2, 7) torus knot with - 1 framing, see Figure 4.9, then 0M L has fundamental \nFig. 4,9 \ngroup {x, y lx 13 = y7 = (x 3 y)2}. Also, if we consider the complex variety V given by \nthe solution in C 3 of zl 3+ z~ + z~ = 0 and intersect V with the unit 5-sphere in C 3, \nthen we get a 3-manifold 2;(2, 7, 13) which is ~ML. To prove this, we first resolve the \nisolated singularity of V at 0, and obtain the 4-manifold Q with 0Q= vc~ S 5 \n=2;(2, 7, 13), gotten by plumbing on",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kirbycal/blocks/prose-page-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 16",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/page-016.md",
+      "narrative": null,
+      "content": "5O \nRemove the -1 by Proposition 1A: \n@@@ ....... \n2 \n-1 \n-2 \nFig. 4.12 \nR. Kirby \nAgain, remove - 1: \n+ 3 \n-1 \n-2 \n-2 \n.... \nFig. 4.13 \nWe iterate, obtaining Figure 4.14: \n-1 \n-2 \n-4 \nFig. 4.14 \nDo the same thing with the -2 circle hanging down: \n0 \n-2 \nFi2. 4.15",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kirbycal/blocks/prose-page-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 17",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../sections/page-017.md",
+      "narrative": null,
+      "content": "A Calculus for Framed Links in S 3 \n51 \nSeveral applications of Propositions 1A or 1B give: \n0 \n-1 \n1 \n-3 \n1 \n2 \n1 \n3 \n2 \n1 \n3 \n1 \n-t \n1 \n13~2~~~2~ \n1 3 ~ 2 ~ ~ ~ ~ \nFig. 4.16 \nNow remove five + 1 circles successively as in Figure 4.17. \n2 2 \n1 \n1 \n1 \n11 \n2 2",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kirbycal/blocks/prose-page-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 18",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../sections/page-018.md",
+      "narrative": null,
+      "content": "52 \nR. Kirby \nThe variety V can be compactified at infinity by adding a complex curve with a \ncusp which is topologically just a 2-sphere imbedded with a non locally flat point \nwhich comes from a cone on the right-handed (2, 7) torus knot. We see this by \nchanging the orientation of M L and adding it to Q. Note that - L 7 - A, where - L \nis the right hand (2, 7) torus knot with + 1 framing, and -A is the link in Figure \n4.10, with all framings positive. \nw 5. Remark 1. The techniques from complex surface theory which suggested the \ncalculus are two. First, a three manifold may be the link of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kirbycal/blocks/rem-page-018-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "rem-page-018-01.md",
+      "narrative": null,
+      "content": "Looking back over the proof of the theorem, we see that we can perform (91 on both L 1 and L2 so that the resulting links are equivalent using just (92. This is because MLI and ML2 become diffeomorphic after adding enough + CP 2. In w 3 we show that after adding enough S 2 x S 2 to ML, the two Morse functions are related by isotopy and (92 . But adding an S 2 x S 2, in the presence of(~ 1, is done by adding C) 1 C)- 1 and then sliding handles over handles (see the Corollary to Proposition 2 in w 4).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kirbycal/blocks/rem-page-018-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "rem-page-018-02.md",
+      "narrative": null,
+      "content": "A framed link L is called even if all the framings are even integers, or equivalently, the intersection form on H2(ML; Z) is even (Type II), which is the same as M L being parallelizable. It is desirable to know an even link L that gives a specific 3-manifold Q3, Q3 = 0ML, for then we can \"read off\" the Rohlin invariant [Robertello] of Q3 if Q3 is a homology 3-sphere, or the #-invariant [E-K], [C-S], [-Gordon], [Hirzebruch] if Q3 is a Z/2Z-homology 3-sphere. Steve Kaplan has found an efficient algorithm for transforming a link L, via (91 and (9 z, to an even link [Kaplan]. Now suppose Q3 = 0ML",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kirbycal/blocks/prose-page-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 19",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/page-019.md",
+      "narrative": null,
+      "content": "A Calculus for Framed Links in S 3 \n53 \nthe answer is yes, for in w 2, N is almost parallelizable, so W can be spin, and then we \ncan pass from ML, to M 4 by only connected summing with S 2 x S 2 and not S z ~ S 2 \n([Wall], p. 147). The remainder of the proof goes through as in the non-even case. \nRemark 4. What happens to the calculus if we consider links in an arbitrary 3- \nmanifold Y The Theorem continues to hold if Y-~S 3 (same proof) or if the \ndiffeomorphism from 0ML~ to ~ML2 and the identity from Y to Y extend to a \nhomotopy equivalence from MLI to ML:. A proof of the latter (and genera",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kirbycal/blocks/rem-page-019-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "rem-page-019-01.md",
+      "narrative": null,
+      "content": "What happens to the calculus if we consider links in an arbitrary 3- manifold Y The Theorem continues to hold if Y-~S 3 (same proof) or if the diffeomorphism from 0ML~ to ~ML2 and the identity from Y to Y extend to a homotopy equivalence from MLI to ML:. A proof of the latter (and generalizations) is given in [F-Rz]. But the Theorem fails if Y is not simply connected. An easy counterexample occurs when Y= S 1 x S 2. Think of Y as the boundary of MLo where L 0 is the unknot with framing 0. Then add a pair of unknots in two different ways to get L 1 and L 2 (see Fig. 5.0). Then t?+ ML1 ~--t?+ ML",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kirbycal/blocks/rem-page-019-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "rem-page-019-02.md",
+      "narrative": null,
+      "content": "The greatest value of the theorem is not in its corollaries (of which I know none), but that it suggests a practical method for trying to show that two oriented 3- manifolds are diffeomorphic, which is bound to work if in fact they are diffeomorphic, e.g. see [Lickorisha]. Three manifold have traditionally been studied using our knowledge of 2- manifolds, e.g., via Heegard decompositions and their homeomorphisms of surfaces, or via imbedded surfaces in the 3-manifold. The philosophy we encourage here is to study 3-manifolds by studying some 4-manifolds they bound. Along these lines, we have al",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kirbycal/blocks/prose-page-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 20",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/page-020.md",
+      "narrative": null,
+      "content": "54 \nR. Kirby \nAkbulut and I have tried to find a homology 3-sphere with Rohlin (or #- \ninvariant zero which does not bound a contractible manifold, or even a homology \nball. We conjecture that the (2, 3, 11)-homology sphere does not. It is the link of the \nhypersurface x 2 + y3 + z 11 = 0 in C 3 (with fundamental group {a, b, c la 2 = b 3 = C 11 \nand a = b c2}), and is also described by the links in Figure 5.2. \n2 \nFig. 5.2 \nRemark 6. There is a description in [Rolfsen], Chapter 10, of a related calculus for \nDehn surgeries on a link in S 3. Briefly, a knot and an associated rational number q",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kirbycal/blocks/rem-page-020-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "rem-page-020-01.md",
+      "narrative": null,
+      "content": "There is a description in [Rolfsen], Chapter 10, of a related calculus for Dehn surgeries on a link in S 3. Briefly, a knot and an associated rational number q P describe a 3-manifold obtained by removing a solid torus (the thickened knot) from S 3 and sewing it back in so that the meridian goes to p times the longitude and q times the meridian, where the longitude lies on the Seifert surface of the knot. This \"Dehn surgery\" corresponds to ordinary surgery when p = 1 and then q is just our framing. Rolfsen gives a calculus for these links with associated fractions which shows how to change to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kirbycal/blocks/rem-page-020-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "rem-page-020-02.md",
+      "narrative": null,
+      "content": "R.A. Fenn and C.P. Rourke have shown [F-R] that the operation in Figure 4.1 (and its companion) is equivalent to our (91 and (.o z. Propositions 1 A and 1 B prove half this equivalence and here is Fenn and Rourke's argument for the other half. Their operation, which they call a K-move, consists of introducing or removing an unknotted circle with framing _+ 1, twisting left or right all arcs passing through a spanning disk of the circle, and changing the framings as explained in Propositions 1A and 1 B. Thus (91 is just a K-move with no arcs passing through the spanning disk. What remains is to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/kirbycal/blocks/prose-page-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 21",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/page-021.md",
+      "narrative": null,
+      "content": "A Calculus for Framed Links in S 3 \n55 \nK- move \n~'~+I \no 2 \n~ x,...~ \nn-I \nisotopy \ni sotopy~ \n-move \n@ \nFig. 5.3 \nIn general, we can make 7i unknotted with framing - i by a series of K-moves, \n\"blowing up\" circles to change crossings and unknot 71 (e-g-,X---~ ,'c~,- 1) and \nblowing up circles to make the framing - 1. We proceed as in Figure 5.3 and then \nreverse this process, \"blowing down\" the circles to restore ?g to its original \nknottedness and framing. \nReferences \nAkbulut, S., Kirby, R.C.: (To appear) \nAkbulut, S., Kirby, R.C.: Mazur manifolds. (To appear) \nCappel, S., Shaneson, J.: In",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/kirbycal/blocks/prose-page-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 22",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/page-022.md",
+      "narrative": null,
+      "content": "56 \nR. Kirby \nLickorish, W.B.R.: A representation of orientable combinatorial 3-manifolds. Ann. Math. 76, 531-540 \n(1962) \nLickorish, W.B.R.: Surgery on knots. Proc. A.M.S. 60, 296-298 (1977) \nMilnor, J.: On simply connected 4-manifolds. Syrup. Int. Top. Alg., Mexico 1958 \nMilnor, J., Husemoller, D.: Symmetric Bilinear Forms. New York: Springer-Verlag 1973 \nRobertello, R.: An invariant of knot cobordism. Comm. Pure Appl. Math. 18, 543-555 (1965) \nRohlin, V.A.: New examples of 4-dimensional manifolds. Doklady, 1965, 660-663 \nRolfsen, D.: Knots and Links. Berkeley, Publish or Perish 1976 \nWall,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

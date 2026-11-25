@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2402.08782v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Hecke–Farey coordinates for Bring’s surface",
+      "dcterms:creator": [
+        "Kattan1, Doha",
+        "Singerman2, David"
+      ],
+      "dcterms:issued": "D:20240215",
+      "dcterms:identifier": "https://arxiv.org/abs/2402.08782",
+      "dcterms:abstract": "The modular group Γ (which is the Hecke group H3) can be used to study triangular maps, Here we use the Hecke group H4 to study the reg- ular map that underlies Bring’s surface of genus 4. Our main result is the determination of the 20-sided hyperbnolic polygon that gives Bring’s surface.",
+      "dcterms:source": "library/arxiv-2402.08782v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2402.08782v1"
+    }
+  ]
+}

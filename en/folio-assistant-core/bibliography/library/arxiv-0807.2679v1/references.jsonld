@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-0807.2679v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "A cabling formula for the colored Jones polynomial",
+      "dcterms:creator": [
+        "Veen, Roland van der"
+      ],
+      "dcterms:issued": "D:20211117",
+      "dcterms:identifier": "https://arxiv.org/abs/0807.2679",
+      "dcterms:abstract": "We prove an explicit cabling formula for the colored Jones polynomial. As an application we prove the volume conjecture for all zero volume knots and links, i.e. all knots and links that are obtained from the unknot by repeated cabling and connected sum.",
+      "dcterms:source": "library/arxiv-0807.2679v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-0807.2679v1"
+    }
+  ]
+}

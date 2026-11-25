@@ -1,0 +1,30 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/the-period-matrix-of-bring-s-curve-1hik02mwva",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "The period matrix of Bring’s curve",
+      "dcterms:creator": [
+        "RlERA, GONZALO",
+        "RODRIGUEZ, RUBI E."
+      ],
+      "dcterms:source": "library/the-period-matrix-of-bring-s-curve-1hik02mwva/manifest.jsonld",
+      "dcterms:hasVersion": "library/the-period-matrix-of-bring-s-curve-1hik02mwva"
+    }
+  ]
+}

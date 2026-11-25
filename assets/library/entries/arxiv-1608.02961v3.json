@@ -1,0 +1,251 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1608.02961v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1608.02961v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Perturbative and nonperturbative aspects of complex\nChern-Simons Theory\nTudor Dimofte\nPerimeter Institute for Theoretical Physics, 31 Caroline St. N, Waterloo, ON N2J 2Y5, Canada\n(on leave) Department of Mathematics, University of California, Davis, CA 95616, USA\ntudor@math.ucdavis.edu\nAbstract\nWe present an elementary review of some aspects of Chern-Simons theory with complex\ngauge group SL(N, C). We discuss some of the challenges in deﬁning the theory as a full-\nﬂedged TQFT, as well as some successes inspired by the 3d-3d correspondence. The 3d-3d\ncorrespondence relates partition functions (",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.02961v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Chern-Simons theory with complex gauge group came to prominence in the late 80's, partly as a tool for understanding three-dimensional gravity with a negative cosmological constant \\cite{DIAT-CSgrav, DIWitten-gravCS, DIWitten-top, DIWitten-cx}.\nMany early developments were due to Witten.\nSince then, it has found a multitude of applications and deep connections with many parts of theoretical physics and mathematics. A highly incomplete list includes:\n\n\\begin{itemize}\n\\item Many further applications of $SL(2,\\BC)$ Chern-Simons theory (and its $SL(2,\\BR)\\times SL(2,\\BR)$ cousin) to three-dimensio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.02961v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Warmup: quantization of H(T2)",
+      "pageStart": 4,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-2-warmup-quantization-of-ht2.md",
+      "narrative": null,
+      "content": "\\label{DI.sec:quant}\n\nTo get a feel for the structure of complex Chern-Simons theory, we begin with a (seemingly) elementary exercise: the quantization of the phase space that $SL(2,\\BC)$ Chern-Simons theory attaches to a two-torus.\n\nFirst, some generalities. As discussed in \\cite{DIWitten-cx}, the action of complex Chern-Simons theory on a Euclidean three-manifold $M$ takes the form\n\n\\DIbe I_{k,s} = \\tfrac12(k+is)S_{CS}(\\CalA) + \\tfrac12(k-is)S_{CS}(\\ol\\CalA)\\,, \\label{DI.action} \\DIee\n\nwhere $S_{CS} = \\frac{1}{4\\pi}\\int_M \\text{Tr}\\big(\\CalA\\wedge\\CalA+\\frac23\\CalA\\wedge\\CalA\\wedge\\CalA\\big)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.02961v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Equivariant quantization",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-21-equivariant-quantization.md",
+      "narrative": null,
+      "content": "\\label{DI.sec:equiv}\n\nThere are several things to notice about \\eqref{DI.Hks}. Perhaps the most salient is that, unlike in the case of Chern-Simons theory with compact gauge group \\cite{DIWit-Jones, DIaxelrod-witten}, the Hilbert space is infinite-dimensional. This is no surprise, since it comes from quantizing a noncompact phase space. One may also recognize the $\\BC^{2k}$ factor as being related to the standard Hilbert space for $SU(2)$ theory at (bare) level $k$. Indeed, if we ignore $\\mu$ and consider functions $f(m)$ of an integer $m\\in \\BZ/(2k\\BZ)$, such that $f(m)=f(-m)$ as in \\eqref{DI",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.02961v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Holomorphic polarizations and CFT",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-22-holomorphic-polarizations-and-cft.md",
+      "narrative": null,
+      "content": "Often in geometric quantization of Chern-Simons theory, one uses a holomorphic polarization instead of the real polarization above. In Chern-Simons theory with compact gauge group (\\DIcf\\ \\cite{DIaxelrod-witten}), this means to choose a complex structure `$\\tau$' on a surface $\\Sigma$, to write the connection one-form as $A = A_zdz+A_{\\bar z}d\\bar z$ in local complex coordinates, and, when quantizing, to define the Hilbert space to consist of sections of the line bundle $\\CalL\\to \\CalP[\\Sigma]$ that are covariantly constant with respect to $A_{\\bar z}$.\n\nNaively, it may appear that choosing su",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.02961v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Complex Chern-Simons theory as a TQFT?",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-004-3-complex-chern-simons-theory-as-a-tqft.md",
+      "narrative": null,
+      "content": "\\label{DI.sec:TQFT}\n\nNow, having seen very explicitly that complex Chern-Simons Hilbert spaces are infinite-dimensional (and exactly how they're infinite-dimensional), let us think a bit about the properties of partition functions.\n\nFor a closed three-manifold $M$, it is expected that the complex Chern-Simons partition function takes the form\n\n\\DIbe \\CalZ[M]_{k,s} = \\sum_{\\text{flat $\\alpha$}} \\frac{1}{|\\text{Stab}(\\alpha)|} \\CalB_\\alpha(q^{\\frac12})\\widetilde\\CalB_\\alpha(\\tilde q^{\\frac12}) \\,. \\label{DI.fact} \\DIee\n\nThe sum here is over flat complex connections $\\alpha$ on $M$, which are the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.02961v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetries, regularizations, and the 3d-3d correspondence",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-005-31-symmetries-regularizations-and-the-3d-3d-corr.md",
+      "narrative": null,
+      "content": "\\label{DI.sec:sym}\n\nIn principle, the 3d-3d correspondence itself may suffice to resolve the difficulties with cutting and gluing in complex Chern-Simons theory.\n\n\\footnote{We will not review the 3d-3d correspondence here. For recent reviews and discussions, especially in the context of Chern-Simons theory and TQFT, see \\cite{DID-volume, DICDGS, DIGukovPei, DIPeiKe} as well as the related \\cite{DIYamazaki-defects}.} \n\nThe correspondence assigns to a closed 3-manifold $M$ and a Lie algebra $\\mathfrak g$ of type $ADE$ (and a bit of extra discrete data) a three-dimensional field theory $T_G[M]$ w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.02961v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Three connections to three-manifold topology",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-006-4-three-connections-to-three-manifold-topology.md",
+      "narrative": null,
+      "content": "\\label{DI.sec:topol}\n\nAs discussed in Section \\ref{DI.sec:TQFT}, the partition function of Chern-Simons theory with gauge group $G_\\BC$ will take a finite, well-defined value on manifolds $M$ that only admit finitely many flat $G_\\BC$ connections.  For $G_\\BC=SL(2,\\BC)$ and possibly $G_\\BC=SL(N,\\BC)$, hyperbolic manifolds are expected to be of this type. (Indeed, there exist systematic computations of partition functions for hyperbolic manifolds with boundary of genus $\\geq 1$.) One may then try to relate properties of the partition function with the topology of $M$. We proceed to outline some",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.02961v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hyperbolic volumes, twisted torsion, and large N",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-007-41-hyperbolic-volumes-twisted-torsion-and-large.md",
+      "narrative": null,
+      "content": "\\label{DI.sec:vol}\n\nThe most fundamental relation between complex Chern-Simons theory and hyperbolic geometry has been understood for a long time, and concerns the semi-classical asymptotic expansion of partition functions \\cite{DIWitten-gravCS} (see also \\cite{DIgukov-2003, DIGukovMurakami}). It is easiest to formulate it first in terms of the ``holomorphic blocks'' $\\CalB_\\alpha,\\,\\widetilde\\CalB_\\alpha$ appearing in \\eqref{DI.fact}, labelled by flat connections $\\alpha$\\,:\n\n\\DIbe \\label{DI.B-asymp}\n\\begin{array}{ll} \\text{as $k+is\\to\\infty$ or $q^{\\frac12} = e^{\\frac{2\\pi i}{k+is}}\\to 1$}\\,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.02961v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "State-integral models and angle structures",
+      "pageStart": 15,
+      "pageEnd": 20,
+      "target": "../sections/sec-008-42-state-integral-models-and-angle-structures.md",
+      "narrative": null,
+      "content": "\\label{DI.sec:angle}\n\nWhen $M= S^3\\bs K$ is an oriented hyperbolic knot or link complement (or, more generally, an oriented hyperbolic manifold with non-empty boundary of genus $\\geq 1$), there exists a systematic construction of $SL(2,\\BC)$ Chern-Simons partition functions $\\CalZ[M]_{k,s}$ for all levels $k,s$. The full definition of these partition functions appears in \\cite{DIGar-index, DIGHRS-index} for $k=0$, and \\cite{DID-levelk, DIAK-complexCS} for $k\\neq 0$, respectively. It is a culmination of much previous work, including  \\cite{DIhikami-2006,DIDGLZ,DIDimofte-QRS, DIKashAnd, DIAK-new",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.02961v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Embedded surfaces and M2 branes in the 3d index (k=0)",
+      "pageStart": 20,
+      "pageEnd": 22,
+      "target": "../sections/sec-009-43-embedded-surfaces-and-m2-branes-in-the-3d-ind.md",
+      "narrative": null,
+      "content": "\\label{DI.sec:M2}\n\nThe partition function of complex Chern-Simons theory at level $k=0$ is rather special. Via the 3d-3d correspondence, it takes the form of a supersymmetric index \\cite{DIDGG-index}. Schematically:\n\n\\DIbe \\CalZ[M]_{k=0,s} = \\CalZ[\\text{$T[M]$ on $S^2\\!\\times_q\\!S^1$}] = \\text{Tr}_{\\CalH[\\text{$T[M]$ on $S^2$}]} (-1)^Rq^{\\frac{R}{2}+J_3}\\,, \\label{DI.index} \\DIee\n\nwith $q=\\exp\\frac{4\\pi}{2}$ as usual.\nHere $S^2\\!\\times_q\\!S^1$ denotes a geometry that is fibered over $S^1$, in such a way that $S^2$ rotates around an axis (by an amount $\\pi/s$) as $S^1$ is traversed. Just as in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.02961v3/blocks/conj-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 22,
+      "pageEnd": 33,
+      "target": "conj-sec-010-01.md",
+      "narrative": null,
+      "content": "13 Heuristically, one may think of the Volume Conjecture as studying a limit of colored Jones polynomials as q →1, and the QMC as studying limits where q approaches all the rational points on the unit circle. In order to embed the QMC in SL(2, C) Chern-Simons theory, one can consider singular limits very similar to (4.3).14 Namely, it was argued in [35] that when ﬁxing the integer level k and sending s →−ik in complex Chern-Simons theory, or equivalently (k + is, k −is) → 13The number-theoretic properties of the asymptotic expansion in the Volume Conjecture were explored from a physical perspe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.02961v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Quantum Modularity Conjecture",
+      "pageStart": 22,
+      "pageEnd": 33,
+      "target": "../sections/sec-010-5-the-quantum-modularity-conjecture.md",
+      "narrative": null,
+      "content": "The Quantum Modularity Conjecture\nOur ﬁnal topic concerns the relation between complex Chern-Simons theory and Zagier’s\nQuantum Modularity Conjecture (QMC) [36]. Strictly speaking, the QMC concerns certain\nlimits of colored Jones polynomials of knots in S3. Physically, colored Jones polynomials\nhave to do with SU(2) Chern-Simons theory. However, by embedding SU(2) theory into a\nholomorphic sector of SL(2, C) theory, one can use complex Chern-Simons theory to study\nthe very same limits [35]. Moreover, SL(2, C) theory and its various stringy realizations may\nhave a chance of explaining some of t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

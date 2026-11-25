@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-categorical-neutrality-saturated-shells-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:categorical-neutrality-saturated-shells-interpretation",
+  "kind": "remark",
+  "title": "Self-conjugate support, the dropped locality assumption, and operator-level vs character-sum reading",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-categorical-neutrality-saturated-shells",
+    "papers/quantum-observable-universe/blocks/prop-hoefsmit-seminormal-form",
+    "papers/quantum-observable-universe/blocks/rem-phi-n-global-section",
+    "papers/quantum-observable-universe/blocks/conj-atom-knot-mass-derivation"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-categorical-neutrality-saturated-shells",
+  "cites": [
+    "references/geckpfeiffer2000",
+    "references/mathas1999"
+  ],
+  "tags": [
+    "magic-numbers",
+    "shell-closure",
+    "full-twist",
+    "global-section",
+    "categorical-neutrality"
+  ],
+  "text": "categorical-neutrality-saturated-shells-interpretation.md",
+  "provenance": "authored"
+}

@@ -1,0 +1,3948 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "0310279v5",
+  "title": "Stabilization in the braid groups I: MTWS",
+  "variant": "pdf",
+  "pages": 128,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "413",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "The problem",
+      "number": "1.1",
+      "page": 1,
+      "pageLabel": "413",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-the-problem"
+    },
+    {
+      "level": 2,
+      "title": "Block-strand diagrams and templates",
+      "number": "1.2",
+      "page": 5,
+      "pageLabel": "417",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-block-strand-diagrams-and-templates"
+    },
+    {
+      "level": 3,
+      "title": "The two destabilization templates",
+      "number": "1.2.1",
+      "page": 7,
+      "pageLabel": "419",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-121-the-two-destabilization-templates"
+    },
+    {
+      "level": 3,
+      "title": "The admissible flype templates",
+      "number": "1.2.2",
+      "page": 7,
+      "pageLabel": "419",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-122-the-admissible-flype-templates"
+    },
+    {
+      "level": 3,
+      "title": "The exchange move template and sequences of exchange moves",
+      "number": "1.2.3",
+      "page": 9,
+      "pageLabel": "421",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-123-the-exchange-move-template-and-sequences-of"
+    },
+    {
+      "level": 3,
+      "title": "The cyclic templates",
+      "number": "1.2.4",
+      "page": 11,
+      "pageLabel": "423",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-124-the-cyclic-templates"
+    },
+    {
+      "level": 3,
+      "title": "The G–flype and G–exchange templates",
+      "number": "1.2.5",
+      "page": 11,
+      "pageLabel": "423",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-125-the-gflype-and-gexchange-templates"
+    },
+    {
+      "level": 2,
+      "title": "Statement of results",
+      "number": "1.3",
+      "page": 12,
+      "pageLabel": "424",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-13-statement-of-results"
+    },
+    {
+      "level": 2,
+      "title": "Plan of the paper",
+      "number": "1.4",
+      "page": 17,
+      "pageLabel": "429",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-14-plan-of-the-paper"
+    },
+    {
+      "level": 1,
+      "title": "Getting started",
+      "number": "2",
+      "page": 19,
+      "pageLabel": "431",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-2-getting-started"
+    },
+    {
+      "level": 2,
+      "title": "The basic construction for knots",
+      "number": "2.1",
+      "page": 19,
+      "pageLabel": "431",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-21-the-basic-construction-for-knots"
+    },
+    {
+      "level": 2,
+      "title": "The general case",
+      "number": "2.2",
+      "page": 23,
+      "pageLabel": "435",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-22-the-general-case"
+    },
+    {
+      "level": 2,
+      "title": "A key example of the basic construction",
+      "number": "2.3",
+      "page": 24,
+      "pageLabel": "436",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-23-a-key-example-of-the-basic-construction"
+    },
+    {
+      "level": 1,
+      "title": "Introducing braid foliations",
+      "number": "3",
+      "page": 26,
+      "pageLabel": "438",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-3-introducing-braid-foliations"
+    },
+    {
+      "level": 2,
+      "title": "Braid foliations of Seifert surfaces",
+      "number": "3.1",
+      "page": 26,
+      "pageLabel": "438",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-31-braid-foliations-of-seifert-surfaces"
+    },
+    {
+      "level": 2,
+      "title": "Control over the foliations",
+      "number": "3.2",
+      "page": 30,
+      "pageLabel": "442",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-32-control-over-the-foliations"
+    },
+    {
+      "level": 2,
+      "title": "Using braid foliations to detect destabilizations and exchange moves",
+      "number": "3.3",
+      "page": 34,
+      "pageLabel": "446",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-33-using-braid-foliations-to-detect-destabilizat"
+    },
+    {
+      "level": 2,
+      "title": "Using braid foliations to detect stabilizations",
+      "number": "3.4",
+      "page": 37,
+      "pageLabel": "449",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-34-using-braid-foliations-to-detect-stabilizatio"
+    },
+    {
+      "level": 1,
+      "title": "Braid foliations of the immersed annulus",
+      "number": "4",
+      "page": 38,
+      "pageLabel": "450",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-4-braid-foliations-of-the-immersed-annulus"
+    },
+    {
+      "level": 2,
+      "title": "Tile types in PA",
+      "number": "4.1",
+      "page": 39,
+      "pageLabel": "451",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-41-tile-types-in-pa"
+    },
+    {
+      "level": 2,
+      "title": "Preliminary modifications in the clasp arcs",
+      "number": "4.2",
+      "page": 45,
+      "pageLabel": "457",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-42-preliminary-modifications-in-the-clasp-arcs"
+    },
+    {
+      "level": 2,
+      "title": "Construction of the tabs",
+      "number": "4.3",
+      "page": 46,
+      "pageLabel": "458",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-43-construction-of-the-tabs"
+    },
+    {
+      "level": 2,
+      "title": "The two finger moves",
+      "number": "4.4",
+      "page": 49,
+      "pageLabel": "461",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-44-the-two-finger-moves"
+    },
+    {
+      "level": 2,
+      "title": "Creating symmetric normal neighborhoods of the clasp arcs",
+      "number": "4.5",
+      "page": 52,
+      "pageLabel": "464",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-45-creating-symmetric-normal-neighborhoods-of-th"
+    },
+    {
+      "level": 1,
+      "title": "Pushing across CA",
+      "number": "5",
+      "page": 58,
+      "pageLabel": "470",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-5-pushing-across-ca"
+    },
+    {
+      "level": 2,
+      "title": "The complexity function c(X+,X-,CA)",
+      "number": "5.1",
+      "page": 59,
+      "pageLabel": "471",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-51-the-complexity-function-cxx-ca"
+    },
+    {
+      "level": 2,
+      "title": "Pushing across a microflype region",
+      "number": "5.2",
+      "page": 67,
+      "pageLabel": "479",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-52-pushing-across-a-microflype-region"
+    },
+    {
+      "level": 2,
+      "title": "Pushing across thin annuli",
+      "number": "5.3",
+      "page": 69,
+      "pageLabel": "481",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-53-pushing-across-thin-annuli"
+    },
+    {
+      "level": 3,
+      "title": "Constructing the thin annuli",
+      "number": "5.3.1",
+      "page": 69,
+      "pageLabel": "481",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-531-constructing-the-thin-annuli"
+    },
+    {
+      "level": 3,
+      "title": "Using flypes to push X+ across S",
+      "number": "5.3.2",
+      "page": 77,
+      "pageLabel": "489",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-532-using-flypes-to-push-x-across-s"
+    },
+    {
+      "level": 2,
+      "title": "Constructing a candidate for a template (D+,D-) from CA",
+      "number": "5.4",
+      "page": 88,
+      "pageLabel": "500",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-54-constructing-a-candidate-for-a-template-dd--f"
+    },
+    {
+      "level": 2,
+      "title": "Pushing across regions with a G–flype foliation",
+      "number": "5.5",
+      "page": 92,
+      "pageLabel": "504",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-55-pushing-across-regions-with-a-gflype-foliatio"
+    },
+    {
+      "level": 2,
+      "title": "Pushing across regions with a G–exchange foliation",
+      "number": "5.6",
+      "page": 94,
+      "pageLabel": "506",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-56-pushing-across-regions-with-a-gexchange-folia"
+    },
+    {
+      "level": 2,
+      "title": "Pushing across a standard annulus",
+      "number": "5.7",
+      "page": 101,
+      "pageLabel": "513",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-57-pushing-across-a-standard-annulus"
+    },
+    {
+      "level": 1,
+      "title": "The proof of the MTWS",
+      "number": "6",
+      "page": 102,
+      "pageLabel": "514",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-6-the-proof-of-the-mtws"
+    },
+    {
+      "level": 2,
+      "title": "6.1",
+      "number": null,
+      "page": 102,
+      "pageLabel": "514",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-61"
+    },
+    {
+      "level": 2,
+      "title": "Cleaning up the templates in T(m)",
+      "number": "6.2",
+      "page": 106,
+      "pageLabel": "518",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-62-cleaning-up-the-templates-in-tm"
+    },
+    {
+      "level": 2,
+      "title": "The set T(m) is finite",
+      "number": "6.3",
+      "page": 109,
+      "pageLabel": "521",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-63-the-set-tm-is-finite"
+    },
+    {
+      "level": 1,
+      "title": "Open problems",
+      "number": "7",
+      "page": 123,
+      "pageLabel": "535",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-7-open-problems"
+    },
+    {
+      "level": 1,
+      "title": "Bibliography",
+      "number": null,
+      "page": 127,
+      "pageLabel": "539",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "413",
+      "labelEnd": "413",
+      "words": 223,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braid representatives",
+          "heading": false
+        },
+        {
+          "term": "braid index",
+          "heading": false
+        },
+        {
+          "term": "closed braid",
+          "heading": false
+        },
+        {
+          "term": "templates",
+          "heading": false
+        },
+        {
+          "term": "stabilization",
+          "heading": false
+        }
+      ],
+      "extract": "Geometry & Topology 10 (2006) 413–540 413 arXiv version: fonts, pagination and layout may vary from GT published version Stabilization in the braid groups I: MTWS JOAN S BIRMAN WILLIAM W MENASCO Choose any oriented link type X and closed braid representatives X+, X−of X , where X−has minimal braid index among all closed braid representatives of X . The main result of this paper is a ‘Markov theorem without",
+      "extractCut": true,
+      "blocks": [
+        "library/0310279v5/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "413",
+      "labelEnd": "413",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "Introduction",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-the-problem",
+      "number": "1.1",
+      "title": "The problem",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 5,
+      "labelStart": "413",
+      "labelEnd": "417",
+      "words": 1434,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stabilization destabilization",
+          "heading": false
+        },
+        {
+          "term": "destabilization moves",
+          "heading": false
+        },
+        {
+          "term": "braid ﬂype",
+          "heading": false
+        },
+        {
+          "term": "braid representatives",
+          "heading": false
+        },
+        {
+          "term": "braid isotopy",
+          "heading": false
+        },
+        {
+          "term": "closed braid",
+          "heading": false
+        },
+        {
+          "term": "heegaard diagrams",
+          "heading": false
+        },
+        {
+          "term": "braid index",
+          "heading": false
+        }
+      ],
+      "extract": "The problem Let X be an oriented link type in the oriented 3–sphere S3 or R3 = S3 \\ {∞}. A representative X ∈X is said to be a closed braid if there is an unknotted curve A ⊂(S3 \\ X) (the axis) and a choice of ﬁbration H of the open solid torus S3 \\ A by meridian discs {Hθ; θ ∈[0, 2π]}, such that whenever X meets a ﬁber Hθ the intersection is transverse. We call the pair (A, H) a braid structure The fact that X is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-block-strand-diagrams-and-templates",
+      "number": "1.2",
+      "title": "Block-strand diagrams and templates",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": "417",
+      "labelEnd": "419",
+      "words": 1278,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "block-strand diagrams",
+          "heading": true
+        },
+        {
+          "term": "templates",
+          "heading": true
+        },
+        {
+          "term": "braid word",
+          "heading": false
+        },
+        {
+          "term": "block strand",
+          "heading": false
+        },
+        {
+          "term": "braid representative",
+          "heading": false
+        },
+        {
+          "term": "braid index",
+          "heading": false
+        },
+        {
+          "term": "closed braid",
+          "heading": false
+        },
+        {
+          "term": "elementary braid",
+          "heading": false
+        }
+      ],
+      "extract": "Block-strand diagrams and templates Before we can state our main result, we need to introduce new concepts. Our moves will be described in terms of certain pairs of ‘block-strand diagrams’ which we call ‘templates’. Examples are the block-strand diagram pairs which make up the templates in Figures 1, 2 and 3. The reader may wish to look ahead to the boxed pairs of block-strand diagrams in Figures 8, 9 and 10 for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-121-the-two-destabilization-templates",
+      "number": "1.2.1",
+      "title": "The two destabilization templates",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "419",
+      "labelEnd": "419",
+      "words": 53,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "destabilization templates",
+          "heading": true
+        },
+        {
+          "term": "join",
+          "heading": false
+        },
+        {
+          "term": "blocks",
+          "heading": false
+        }
+      ],
+      "extract": "The two destabilization templates Our two destabilization templates were deﬁned in Figure 1. We distinguish the cases of positive and negative destabilization because the strands which join the ﬁxed blocks are different, and so the templates are different. The destabilization templates do not have any moving blocks. They occur at every braid index.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-004-122-the-admissible-flype-templates",
+      "number": "1.2.2",
+      "title": "The admissible flype templates",
+      "level": 3,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "419",
+      "labelEnd": "421",
+      "words": 494,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "inadmissible ﬂype",
+          "heading": false
+        },
+        {
+          "term": "ﬂype templates",
+          "heading": false
+        },
+        {
+          "term": "admissible ﬂype",
+          "heading": false
+        },
+        {
+          "term": "weighted strands",
+          "heading": false
+        },
+        {
+          "term": "markov tower",
+          "heading": false
+        },
+        {
+          "term": "braid isotopy",
+          "heading": false
+        },
+        {
+          "term": "braid index",
+          "heading": false
+        },
+        {
+          "term": "braid groups",
+          "heading": false
+        }
+      ],
+      "extract": "The admissible ﬂype templates Flypes ﬁrst enter the picture when the braid index is 3, and we already illustrated the two 3–braid ﬂype templates in Figure 3. There is an obvious way to generalize it to Geometry & Topology 10 (2006) 420 Joan S Birman and William W Menasco any braid index n, namely declare the strands to be weighted strands. See Figure 4(a), which shows the support of the ﬂype with weighted strands.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-123-the-exchange-move-template-and-sequences-of",
+      "number": "1.2.3",
+      "title": "The exchange move template and sequences of exchange moves",
+      "level": 3,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "421",
+      "labelEnd": "423",
+      "words": 478,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exchange moves",
+          "heading": true
+        },
+        {
+          "term": "move template",
+          "heading": true
+        },
+        {
+          "term": "isotopy exchange",
+          "heading": false
+        },
+        {
+          "term": "braid isotopy",
+          "heading": false
+        },
+        {
+          "term": "braid representatives",
+          "heading": false
+        },
+        {
+          "term": "closed braid",
+          "heading": false
+        },
+        {
+          "term": "braid structure",
+          "heading": false
+        },
+        {
+          "term": "distinguished strand",
+          "heading": false
+        }
+      ],
+      "extract": "The exchange move template and sequences of exchange moves The exchange move template was deﬁned by the block-strand diagram in Figure 2. It was proved in our earlier paper [11] that for n ≤3 it is equivalent to braid isotopy, and by Fiedler [18] that for n ≥4, and generic choices of the braids P and Q, the exchange move cannot be replaced by braid isotopy. 1 exchange move and braid isotopy exchange move and braid",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-124-the-cyclic-templates",
+      "number": "1.2.4",
+      "title": "The cyclic templates",
+      "level": 3,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "423",
+      "labelEnd": "423",
+      "words": 183,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cyclic template",
+          "heading": false
+        },
+        {
+          "term": "exchange isotopy",
+          "heading": false
+        },
+        {
+          "term": "markov tower",
+          "heading": false
+        },
+        {
+          "term": "weighted strands",
+          "heading": false
+        },
+        {
+          "term": "destabilize",
+          "heading": false
+        }
+      ],
+      "extract": "The cyclic templates Figure 8 gives an example of the cyclic template. We have singled it out because it shows B D E B D E B C E B D D C C E D C E D C E D C E B C D B D C E E C B B B B E C E C B D D isotopy exchange isotopy exchange isotopy destabilize folding unfolding stabilize exchange Figure 8: Example of a 4–braid cyclic template, and the Markov tower (stabilize, exchange, exchange, exchange, destabilize) that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-125-the-gflype-and-gexchange-templates",
+      "number": "1.2.5",
+      "title": "The G–flype and G–exchange templates",
+      "level": 3,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "423",
+      "labelEnd": "424",
+      "words": 532,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exchange",
+          "heading": true
+        },
+        {
+          "term": "ﬂype template",
+          "heading": false
+        },
+        {
+          "term": "inadmissible ﬂype",
+          "heading": false
+        },
+        {
+          "term": "exchange moves",
+          "heading": false
+        },
+        {
+          "term": "braid blocks",
+          "heading": false
+        },
+        {
+          "term": "braid index",
+          "heading": false
+        },
+        {
+          "term": "block-strand diagrams",
+          "heading": false
+        },
+        {
+          "term": "ﬁnal step",
+          "heading": false
+        }
+      ],
+      "extract": "The G–ﬂype and G–exchange templates The moves that we next describe are gathered together into the set of templates that we call T (m), m = 4, 5, . . . , where m is the braid index b(X+) of X+. A G–ﬂype template (for ‘generalized’ ﬂype template) is a block-strand diagram, the support of which is the replacement for a Markov tower in which (i) the ﬁrst move Geometry & Topology 10 (2006) 424 Joan S Birman and William",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-13-statement-of-results",
+      "number": "1.3",
+      "title": "Statement of results",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 17,
+      "labelStart": "424",
+      "labelEnd": "429",
+      "words": 1278,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "destabilization templates",
+          "heading": false
+        },
+        {
+          "term": "braid representatives",
+          "heading": false
+        },
+        {
+          "term": "exchange move",
+          "heading": false
+        },
+        {
+          "term": "admissible ﬂype",
+          "heading": false
+        },
+        {
+          "term": "braid index",
+          "heading": false
+        },
+        {
+          "term": "braid iso",
+          "heading": false
+        },
+        {
+          "term": "closed braid",
+          "heading": false
+        },
+        {
+          "term": "braid groups",
+          "heading": false
+        }
+      ],
+      "extract": "Statement of results We are ﬁnally ready to state our main result, the Markov theorem without stabilization. Let B be the collection of all braid isotopy classes of closed braid representatives of oriented knot and link types in oriented 3–space. Among these, consider the subcollection B(X) of representatives of a ﬁxed link type X . Among these, let Bmin(X) Geometry & Topology 10 (2006) Stabilization in the braid",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-14-plan-of-the-paper",
+      "number": "1.4",
+      "title": "Plan of the paper",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 19,
+      "labelStart": "429",
+      "labelEnd": "431",
+      "words": 799,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ﬂype templates",
+          "heading": false
+        },
+        {
+          "term": "braid foliations",
+          "heading": false
+        },
+        {
+          "term": "immersed annulus",
+          "heading": false
+        },
+        {
+          "term": "clasp arcs",
+          "heading": false
+        },
+        {
+          "term": "grants dms",
+          "heading": false
+        },
+        {
+          "term": "block-strand diagrams",
+          "heading": false
+        },
+        {
+          "term": "closed braid",
+          "heading": false
+        },
+        {
+          "term": "braiding assignments",
+          "heading": false
+        }
+      ],
+      "extract": "Plan of the paper In Section 2 we set up the topological construction which will be the basis for our work. We will show that there is a very special isotopy that takes us from X+ to X−. The trace of the isotopy will be seen to be an immersed annulus CA whose double point set is the union of ﬁnitely many pairwise disjoint clasp arcs. We call it a ‘clasp annulus’. The principle tool in our proof of Theorem 2 is the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-2-getting-started",
+      "number": "2",
+      "title": "Getting started",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": "431",
+      "labelEnd": "431",
+      "words": 64,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "getting",
+          "heading": true
+        },
+        {
+          "term": "started",
+          "heading": true
+        },
+        {
+          "term": "ease",
+          "heading": false
+        }
+      ],
+      "extract": "Getting started In this section we develop the basic construction which will allow us to prove Theorem 2. For ease in presentation, we give our construction ﬁrst for the special case when X is a knot. After that it will be easy to modify it in the more general case when we begin with a link. The section will end with a key example.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-011-21-the-basic-construction-for-knots",
+      "number": "2.1",
+      "title": "The basic construction for knots",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 23,
+      "labelStart": "431",
+      "labelEnd": "435",
+      "words": 1807,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "clasp arcs",
+          "heading": false
+        },
+        {
+          "term": "disjoint discs",
+          "heading": false
+        },
+        {
+          "term": "basic construction",
+          "heading": true
+        },
+        {
+          "term": "braid representatives",
+          "heading": false
+        },
+        {
+          "term": "immersed annulus",
+          "heading": false
+        },
+        {
+          "term": "braid foliations",
+          "heading": false
+        },
+        {
+          "term": "closed braid",
+          "heading": false
+        },
+        {
+          "term": "preferred longitude",
+          "heading": false
+        }
+      ],
+      "extract": "The basic construction for knots Lemma 2.1.1 Let X+, X−be arbitrary disjoint closed braid representatives of the same knot type X . Then there is an intermediate representative X0 of X such that the following hold: (1) X0 is the braid connected sum of X+ and k closed braid representatives of the unknot, for some k ≥0. These k representatives of the unknot bound pairwise disjoint discs. (2) X0 −X−(resp. X+ −X0) is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-22-the-general-case",
+      "number": "2.2",
+      "title": "The general case",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "435",
+      "labelEnd": "436",
+      "words": 487,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "clasp intersections",
+          "heading": false
+        },
+        {
+          "term": "braid representatives",
+          "heading": false
+        },
+        {
+          "term": "closed braid",
+          "heading": false
+        },
+        {
+          "term": "non-split",
+          "heading": false
+        },
+        {
+          "term": "pairwise disjoint",
+          "heading": false
+        },
+        {
+          "term": "annuli",
+          "heading": false
+        },
+        {
+          "term": "resp",
+          "heading": false
+        },
+        {
+          "term": "split",
+          "heading": false
+        }
+      ],
+      "extract": "The general case Proposition 2.2.1 Choose any µ–component oriented link type X in oriented R3. Let X+, X−be closed braid representatives sharing a braid structure (A, H). Then an intermediate closed braid representative X0 ∈X exists such that the following hold: (1) Each component Xi 0 of X0 is the braid connected sum of Xi + and ki closed braid representatives of the unknot. These k = k1 + · · · + kµ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-23-a-key-example-of-the-basic-construction",
+      "number": "2.3",
+      "title": "A key example of the basic construction",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 26,
+      "labelStart": "436",
+      "labelEnd": "438",
+      "words": 768,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arc clasp",
+          "heading": false
+        },
+        {
+          "term": "clasp arcs",
+          "heading": false
+        },
+        {
+          "term": "bottom sketch",
+          "heading": false
+        },
+        {
+          "term": "puncture point",
+          "heading": false
+        },
+        {
+          "term": "top sketch",
+          "heading": false
+        },
+        {
+          "term": "ﬂype",
+          "heading": false
+        },
+        {
+          "term": "annulus",
+          "heading": false
+        },
+        {
+          "term": "key",
+          "heading": true
+        }
+      ],
+      "extract": "A key example of the basic construction The reader is referred to Figure 14. It is a key example, and we will study it in full detail during the course of this manuscript. We explain those features which can be understood at this time. In our example X is a knot, and the isotopy from X+ to X−is realized by a ﬂype. The top sketch shows PA as the union of two discs which are identiﬁed along bands which join the arcs",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-3-introducing-braid-foliations",
+      "number": "3",
+      "title": "Introducing braid foliations",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "438",
+      "labelEnd": "438",
+      "words": 132,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braid foliations",
+          "heading": true
+        },
+        {
+          "term": "pausing",
+          "heading": false
+        },
+        {
+          "term": "refresh",
+          "heading": false
+        }
+      ],
+      "extract": "Introducing braid foliations Theorem 2 is about the relationship between two closed braid diagrams which represent the same link. However, the method we use to prove it will not be in the setting of link diagrams. Rather, we will be working with the immersed annulus CA, and with certain ‘braid foliations’ of CA. Foliated surfaces have been used before, in our earlier papers [8]–[10]. In this section we will review",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-31-braid-foliations-of-seifert-surfaces",
+      "number": "3.1",
+      "title": "Braid foliations of Seifert surfaces",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 30,
+      "labelStart": "438",
+      "labelEnd": "442",
+      "words": 1667,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braid foliations",
+          "heading": true
+        },
+        {
+          "term": "non-singular leaf",
+          "heading": false
+        },
+        {
+          "term": "non-singular leaves",
+          "heading": false
+        },
+        {
+          "term": "seifert surfaces",
+          "heading": true
+        },
+        {
+          "term": "singular leaf",
+          "heading": false
+        },
+        {
+          "term": "tile edges",
+          "heading": false
+        },
+        {
+          "term": "braid axis",
+          "heading": false
+        },
+        {
+          "term": "foliated cells",
+          "heading": false
+        }
+      ],
+      "extract": "Braid foliations of Seifert surfaces We are given X ∈B(X) with b(X) = n and with braid structure (A, H) in R3. To make this review as simple as possible, we assume that X is a knot. Choose a Seifert surface F of minimal genus for X. After modifying F we will show that it supports a special type of singular foliation which was studied and used by the authors in [8]–[10]. We call it a braid foliation. There are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-32-control-over-the-foliations",
+      "number": "3.2",
+      "title": "Control over the foliations",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 34,
+      "labelStart": "442",
+      "labelEnd": "446",
+      "words": 1247,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "singular leaf",
+          "heading": false
+        },
+        {
+          "term": "foliated disc",
+          "heading": false
+        },
+        {
+          "term": "foliation",
+          "heading": false
+        },
+        {
+          "term": "approaches leaf",
+          "heading": false
+        },
+        {
+          "term": "both tiles",
+          "heading": false
+        },
+        {
+          "term": "singular leaves",
+          "heading": false
+        },
+        {
+          "term": "joan birman",
+          "heading": false
+        },
+        {
+          "term": "william menasco",
+          "heading": false
+        }
+      ],
+      "extract": "Control over the foliations Braid foliations are not unique, and in this section we describe some of the ways we have discovered to modify them. This is an essential part of the argument in the proof of the Geometry & Topology 10 (2006) Stabilization in the braid groups I: MTWS 443 MTWS, because the vertices of valence 1 and 2 that we use to recognize destabilizations and exchange moves may not be present initially,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-33-using-braid-foliations-to-detect-destabilizat",
+      "number": "3.3",
+      "title": "Using braid foliations to detect destabilizations and exchange moves",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 37,
+      "labelStart": "446",
+      "labelEnd": "449",
+      "words": 1102,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exchange moves",
+          "heading": true
+        },
+        {
+          "term": "inessential arc",
+          "heading": false
+        },
+        {
+          "term": "inessential arcs",
+          "heading": false
+        },
+        {
+          "term": "valence vertex",
+          "heading": false
+        },
+        {
+          "term": "braid",
+          "heading": true
+        },
+        {
+          "term": "destabilizations",
+          "heading": true
+        },
+        {
+          "term": "braid axis",
+          "heading": false
+        },
+        {
+          "term": "essential arc",
+          "heading": false
+        }
+      ],
+      "extract": "Using braid foliations to detect destabilizations and exchange moves In this section we will show how to recognize, from the foliation of F, when a closed braid admits a destabilization or an exchange move. Destabilizations are easy. It is shown in [4] that X+ admits a destabilization if the foliation has a vertex of valence 1, as in Figure 22(a). The embedding of a tile which contains the vertex of valence 1, for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-34-using-braid-foliations-to-detect-stabilizatio",
+      "number": "3.4",
+      "title": "Using braid foliations to detect stabilizations",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 38,
+      "labelStart": "449",
+      "labelEnd": "450",
+      "words": 302,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braid foliations",
+          "heading": true
+        },
+        {
+          "term": "stabilization along",
+          "heading": false
+        },
+        {
+          "term": "singular leaf",
+          "heading": false
+        },
+        {
+          "term": "tile",
+          "heading": false
+        },
+        {
+          "term": "detect",
+          "heading": true
+        },
+        {
+          "term": "stabilize",
+          "heading": false
+        },
+        {
+          "term": "singularity",
+          "heading": false
+        }
+      ],
+      "extract": "Using braid foliations to detect stabilizations As elaborated on in the introduction to this paper, one of the questions that motivated our work was a desire to understand why stabilization played such an important role in the classical Markov Theorem. Having braid foliations of Seifert surfaces bounded by knots and links in hand, one answer to that question became clear: they allow one to simplify a Seifert surface",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-4-braid-foliations-of-the-immersed-annulus",
+      "number": "4",
+      "title": "Braid foliations of the immersed annulus",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 39,
+      "labelStart": "450",
+      "labelEnd": "451",
+      "words": 407,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braid foliations",
+          "heading": true
+        },
+        {
+          "term": "clasp annulus",
+          "heading": false
+        },
+        {
+          "term": "clasp arcs",
+          "heading": false
+        },
+        {
+          "term": "braid position",
+          "heading": false
+        },
+        {
+          "term": "immersed",
+          "heading": true
+        },
+        {
+          "term": "tiles",
+          "heading": false
+        },
+        {
+          "term": "subarc",
+          "heading": false
+        },
+        {
+          "term": "transverse",
+          "heading": false
+        }
+      ],
+      "extract": "Braid foliations of the immersed annulus We are now ready to investigate braid foliations of the clasp annulus CA which we constructed in Section 2. We will need to confront two new aspects of the geometry: (1) There is a (basically trivial) new aspect to our geometry, which unfortunately will lead to new bookkeeping: The clasp annulus CA has two boundary components, X+ and X−. By the basic construction, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-41-tile-types-in-pa",
+      "number": "4.1",
+      "title": "Tile types in PA",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 45,
+      "labelStart": "451",
+      "labelEnd": "457",
+      "words": 2218,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "clasp arcs",
+          "heading": false
+        },
+        {
+          "term": "clasp arc",
+          "heading": false
+        },
+        {
+          "term": "tile types",
+          "heading": true
+        },
+        {
+          "term": "clasp intersection",
+          "heading": false
+        },
+        {
+          "term": "homoclinic point",
+          "heading": false
+        },
+        {
+          "term": "homoclinic loop",
+          "heading": false
+        },
+        {
+          "term": "singular leaf",
+          "heading": false
+        },
+        {
+          "term": "closed braid",
+          "heading": false
+        }
+      ],
+      "extract": "Tile types in PA Our work begins with the two closed braid representatives X+ and X−of X . Our basic construction in Section 2 gave us the immersed annulus CA = A+ ∪A−and the clasp arcs. We begin by studying the braid foliations of the two annuli. The key point which will allow us to apply the machinery of Section 3 is that each is embedded. The really new feature is the presence of the clasp arcs. We ﬁrst make the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-42-preliminary-modifications-in-the-clasp-arcs",
+      "number": "4.2",
+      "title": "Preliminary modifications in the clasp arcs",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 46,
+      "labelStart": "457",
+      "labelEnd": "458",
+      "words": 573,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "clasp arcs",
+          "heading": true
+        },
+        {
+          "term": "clasp arc",
+          "heading": false
+        },
+        {
+          "term": "short clasp",
+          "heading": false
+        },
+        {
+          "term": "clasp annulus",
+          "heading": false
+        },
+        {
+          "term": "every clasp",
+          "heading": false
+        },
+        {
+          "term": "singular leaves",
+          "heading": false
+        },
+        {
+          "term": "braid isotopy",
+          "heading": false
+        },
+        {
+          "term": "foliated",
+          "heading": false
+        }
+      ],
+      "extract": "Preliminary modiﬁcations in the clasp arcs We assume from now on that our clasp annulus CA supports a braid foliation, so that its preimage PA supports the lifted foliation. We continue to use the symbols CA and PA, but from now on CA means the foliated clasp annulus and PA means its foliated preimage. Each clasp arc γ in CA will have two preimages γ+ and γ−in PA, where γϵ indicates the preimage of γ which begins on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-43-construction-of-the-tabs",
+      "number": "4.3",
+      "title": "Construction of the tabs",
+      "level": 2,
+      "pageStart": 46,
+      "pageEnd": 49,
+      "labelStart": "458",
+      "labelEnd": "461",
+      "words": 1264,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braid foliation",
+          "heading": false
+        },
+        {
+          "term": "clasp arc",
+          "heading": false
+        },
+        {
+          "term": "singular leaf",
+          "heading": false
+        },
+        {
+          "term": "singular leaves",
+          "heading": false
+        },
+        {
+          "term": "induced foliation",
+          "heading": false
+        },
+        {
+          "term": "foliated disc",
+          "heading": false
+        },
+        {
+          "term": "tabs",
+          "heading": true
+        },
+        {
+          "term": "supports braid",
+          "heading": false
+        }
+      ],
+      "extract": "Construction of the tabs In this section we modify the discs R1, . . . , Rk which we constructed in Section 2 to special foliated discs T1 +, . . . , Tk + containing the clasp arcs. We say that Ti + ⊂PA is a tab associated to the clasp arc γi + if the following hold: • γi + ⊂Ti +. • ∂Ti + = α ∪β where α ⊂X+ and β is an arc that is transverse to the foliation of PA. • There is a simple path l+ which is contained in a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-44-the-two-finger-moves",
+      "number": "4.4",
+      "title": "The two finger moves",
+      "level": 2,
+      "pageStart": 49,
+      "pageEnd": 52,
+      "labelStart": "461",
+      "labelEnd": "464",
+      "words": 1076,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ﬁnger moves",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst ﬁnger",
+          "heading": false
+        },
+        {
+          "term": "clasp arc",
+          "heading": false
+        },
+        {
+          "term": "clasp arcs",
+          "heading": false
+        },
+        {
+          "term": "singular leaf",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst branch",
+          "heading": false
+        },
+        {
+          "term": "little signs",
+          "heading": false
+        },
+        {
+          "term": "sign choices",
+          "heading": false
+        }
+      ],
+      "extract": "The two ﬁnger moves We need tools that will allow us to modify neighborhoods of the clasp arcs in CA in a controlled manner, keeping track of the foliation on the two branches and making sure that no new self-intersections are introduced. The ‘ﬁnger moves’ will help us to do that. See Figures 35 (and eventually 36). To begin, we explain the pictures in Figure 35 The ﬁrst column shows foliated neighborhoods N of a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-45-creating-symmetric-normal-neighborhoods-of-th",
+      "number": "4.5",
+      "title": "Creating symmetric normal neighborhoods of the clasp arcs",
+      "level": 2,
+      "pageStart": 52,
+      "pageEnd": 58,
+      "labelStart": "464",
+      "labelEnd": "470",
+      "words": 2559,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "clasp arcs",
+          "heading": true
+        },
+        {
+          "term": "normal neighborhoods",
+          "heading": true
+        },
+        {
+          "term": "clasp arc",
+          "heading": false
+        },
+        {
+          "term": "tab neighborhoods",
+          "heading": false
+        },
+        {
+          "term": "ﬁnger move",
+          "heading": false
+        },
+        {
+          "term": "singular leaf",
+          "heading": false
+        },
+        {
+          "term": "singular leaves",
+          "heading": false
+        },
+        {
+          "term": "created tab",
+          "heading": false
+        }
+      ],
+      "extract": "Creating symmetric normal neighborhoods of the clasp arcs In Section 4.3 we modiﬁed the discs R1, . . . , Rk which had been constructed as part of the basic construction to very special foliated discs which we called tabs. Thus we now know that each clasp arc γi + is contained in a tab. In this section we study γi + and γi −and arrange that they are contained in much larger neighborhoods which support a canonical",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-5-pushing-across-ca",
+      "number": "5",
+      "title": "Pushing across CA",
+      "level": 1,
+      "pageStart": 58,
+      "pageEnd": 59,
+      "labelStart": "470",
+      "labelEnd": "471",
+      "words": 375,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "thin annuli",
+          "heading": false
+        },
+        {
+          "term": "across",
+          "heading": true
+        },
+        {
+          "term": "push across",
+          "heading": false
+        },
+        {
+          "term": "markov tower",
+          "heading": false
+        },
+        {
+          "term": "foliation",
+          "heading": false
+        },
+        {
+          "term": "microﬂype",
+          "heading": false
+        },
+        {
+          "term": "mtws",
+          "heading": false
+        },
+        {
+          "term": "gave earlier",
+          "heading": false
+        }
+      ],
+      "extract": "Pushing across CA The machinery has been set up. In this section we learn how to use the foliation of CA and PA to push X+ across the clasp annuli CA to X−. That is, we show how we use the foliation to look inside the black box of Markov towers. Here is an overview of the work in this section: In Section 5.1 we learn how to produce the sequences (2) and (3) of Theorem 2. Those sequences use the simplest moves of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-51-the-complexity-function-cxx-ca",
+      "number": "5.1",
+      "title": "The complexity function c(X+,X-,CA)",
+      "level": 2,
+      "pageStart": 59,
+      "pageEnd": 67,
+      "labelStart": "471",
+      "labelEnd": "479",
+      "words": 3724,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "clasp arcs",
+          "heading": false
+        },
+        {
+          "term": "clasp arc",
+          "heading": false
+        },
+        {
+          "term": "clasp annulus",
+          "heading": false
+        },
+        {
+          "term": "complexity function",
+          "heading": true
+        },
+        {
+          "term": "puncture endpoint",
+          "heading": false
+        },
+        {
+          "term": "normal neighborhoods",
+          "heading": false
+        },
+        {
+          "term": "foliated annulus",
+          "heading": false
+        },
+        {
+          "term": "inessential arcs",
+          "heading": false
+        }
+      ],
+      "extract": "By Proposition 4.5.1 we may assume that each clasp arc pair is contained in a normal neighborhood pair, and can be pushed into the union of leaves. Assume from now on that has been done. Deﬁne the complexity c(X+, X−, CA) to be the lexicographically ordered pair (c1, c2), where c1 is the number of singular points on the clasp arcs and c2 is the number of singular points that are outside normal neighborhoods. Note",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-52-pushing-across-a-microflype-region",
+      "number": "5.2",
+      "title": "Pushing across a microflype region",
+      "level": 2,
+      "pageStart": 67,
+      "pageEnd": 69,
+      "labelStart": "479",
+      "labelEnd": "481",
+      "words": 870,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "clasp arcs",
+          "heading": false
+        },
+        {
+          "term": "clasp arc",
+          "heading": false
+        },
+        {
+          "term": "long clasp",
+          "heading": false
+        },
+        {
+          "term": "microﬂype region",
+          "heading": false
+        },
+        {
+          "term": "braid block",
+          "heading": false
+        },
+        {
+          "term": "foliated annulus",
+          "heading": false
+        },
+        {
+          "term": "singular leaves",
+          "heading": false
+        },
+        {
+          "term": "ﬂype",
+          "heading": false
+        }
+      ],
+      "extract": "Pushing across a microﬂype region Having simpliﬁed the foliation of CA as much as possible with the use of exchange moves and destabilizations, we begin to investigate new features of the foliation of CA. A clasp arc γ in CA has two preimages in PA, namely γ+ and γ−. Recall that γϵ, ϵ = ±, begins on Xϵ and ends at an interior point of PA. Recall also that γϵ was deﬁned to be short if it does not intersect any",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-53-pushing-across-thin-annuli",
+      "number": "5.3",
+      "title": "Pushing across thin annuli",
+      "level": 2,
+      "pageStart": 69,
+      "pageEnd": 69,
+      "labelStart": "481",
+      "labelEnd": "481",
+      "words": 167,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "clasp arcs",
+          "heading": false
+        },
+        {
+          "term": "annuli",
+          "heading": true
+        },
+        {
+          "term": "across",
+          "heading": true
+        },
+        {
+          "term": "thin",
+          "heading": true
+        }
+      ],
+      "extract": "Pushing across thin annuli While we have been able, up to now, to make the tacit assumption that we are working with knots, we now return to the general case of links. Our task in this section is to learn how to use ﬂypes to shorten the length of long (but not necessarily doubly long) clasp arcs in the foliation of PA, thereby reducing the integer c1 in the complexity pair (c1, c2). We have already seen that in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-531-constructing-the-thin-annuli",
+      "number": "5.3.1",
+      "title": "Constructing the thin annuli",
+      "level": 3,
+      "pageStart": 69,
+      "pageEnd": 77,
+      "labelStart": "481",
+      "labelEnd": "489",
+      "words": 3862,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "thin annuli",
+          "heading": true
+        },
+        {
+          "term": "clasp arcs",
+          "heading": false
+        },
+        {
+          "term": "clasp arc",
+          "heading": false
+        },
+        {
+          "term": "inessential arcs",
+          "heading": false
+        },
+        {
+          "term": "long clasp",
+          "heading": false
+        },
+        {
+          "term": "clasp intersection",
+          "heading": false
+        },
+        {
+          "term": "foliated annulus",
+          "heading": false
+        },
+        {
+          "term": "thin annular",
+          "heading": false
+        }
+      ],
+      "extract": "Constructing the thin annuli Preparing for the shortening of long clasp arcs, we will construct a family S of ‘thin annuli’ which is a subset of PA. Normal neighborhoods will play a key role in the construction. We will prove: Lemma 5.3.1 Assume that X has µ components. Suppose that PA contains long clasp arcs γi +, γj +, i̸ = j. Then there exists a family S of µ annuli, each a subannulus of PA, and each with a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-532-using-flypes-to-push-x-across-s",
+      "number": "5.3.2",
+      "title": "Using flypes to push X+ across S",
+      "level": 3,
+      "pageStart": 77,
+      "pageEnd": 88,
+      "labelStart": "489",
+      "labelEnd": "500",
+      "words": 4511,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "grey microblocks",
+          "heading": false
+        },
+        {
+          "term": "grey microstrands",
+          "heading": false
+        },
+        {
+          "term": "clasp arcs",
+          "heading": false
+        },
+        {
+          "term": "black microblock",
+          "heading": false
+        },
+        {
+          "term": "arcs hθi",
+          "heading": false
+        },
+        {
+          "term": "associated microblocks",
+          "heading": false
+        },
+        {
+          "term": "amalgamating blocks",
+          "heading": false
+        },
+        {
+          "term": "block amalgamation",
+          "heading": false
+        }
+      ],
+      "extract": "Using ﬂypes to push X+ across S In this subsection we assume that S is a collection of thin (but not standard) annuli. The case of standard annuli will be considered separately, in Section 5.7. To simplify the notation, we use ‘bold-faced type’ for the black boundary and all its auxiliary structures; and ‘Roman type’ for the grey boundary and all its auxiliary structure. In particular, S is foliated by s–arcs,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-54-constructing-a-candidate-for-a-template-dd--f",
+      "number": "5.4",
+      "title": "Constructing a candidate for a template (D+,D-) from CA",
+      "level": 2,
+      "pageStart": 88,
+      "pageEnd": 92,
+      "labelStart": "500",
+      "labelEnd": "504",
+      "words": 1919,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "constructing candidate",
+          "heading": true
+        },
+        {
+          "term": "clasp arcs",
+          "heading": false
+        },
+        {
+          "term": "grey microstrands",
+          "heading": false
+        },
+        {
+          "term": "amalgamating blocks",
+          "heading": false
+        },
+        {
+          "term": "template",
+          "heading": true
+        },
+        {
+          "term": "block amalgamation",
+          "heading": false
+        },
+        {
+          "term": "moving blocks",
+          "heading": false
+        },
+        {
+          "term": "moving strands",
+          "heading": false
+        }
+      ],
+      "extract": "Constructing a candidate for a template (D+, D−) from CA We interrupt the ﬂow of the argument, brieﬂy. The procedure that we gave in Section 5.3.2 for constructing a candidate for a template from thin annuli is almost identical to the procedure for constructing a candidate for a template (D+, D−) from the foliation of CA. We will need to know how to do it when we reach the end of Section 6, and since the alert",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-55-pushing-across-regions-with-a-gflype-foliatio",
+      "number": "5.5",
+      "title": "Pushing across regions with a G–flype foliation",
+      "level": 2,
+      "pageStart": 92,
+      "pageEnd": 94,
+      "labelStart": "504",
+      "labelEnd": "506",
+      "words": 980,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "thin annuli",
+          "heading": false
+        },
+        {
+          "term": "clasp arcs",
+          "heading": false
+        },
+        {
+          "term": "ﬂype foliation",
+          "heading": false
+        },
+        {
+          "term": "across",
+          "heading": true
+        },
+        {
+          "term": "long clasp",
+          "heading": false
+        },
+        {
+          "term": "exchange moves",
+          "heading": false
+        },
+        {
+          "term": "foliated annulus",
+          "heading": false
+        },
+        {
+          "term": "tab neighborhoods",
+          "heading": false
+        }
+      ],
+      "extract": "Pushing across regions with a G–ﬂype foliation We have seen that if PA contains a long clasp arc, then there is a family of thin annuli S1 ⊂PA having ∂S1 = X0 ∪X1, where X0 = X+, also X0 can be pushed across S1 to X1 using a sequence of ﬂypes. The complement of S1 in PA will be a new family of annuli which has boundary X1 ∪X−. It may happen that we can then apply Proposition 5.1.1 to simplify S1 via (ab)⋆exchange",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-56-pushing-across-regions-with-a-gexchange-folia",
+      "number": "5.6",
+      "title": "Pushing across regions with a G–exchange foliation",
+      "level": 2,
+      "pageStart": 94,
+      "pageEnd": 101,
+      "labelStart": "506",
+      "labelEnd": "513",
+      "words": 3298,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exchange foliation",
+          "heading": true
+        },
+        {
+          "term": "pushing across",
+          "heading": true
+        },
+        {
+          "term": "clasp arcs",
+          "heading": false
+        },
+        {
+          "term": "tree foliation",
+          "heading": false
+        },
+        {
+          "term": "clasp arc",
+          "heading": false
+        },
+        {
+          "term": "exchange move",
+          "heading": false
+        },
+        {
+          "term": "root foliation",
+          "heading": false
+        },
+        {
+          "term": "block-strand tree",
+          "heading": false
+        }
+      ],
+      "extract": "Pushing across regions with a G–exchange foliation In this subsection all clasp arcs have intermediate length, that is the pierce points of both γ+ and γ−are on b–arcs. We begin with an example which illustrates how G–exchange moves arise. The example is the foliated subsurface of PA that supports the G–exchange move of Figure 10. It will not be difﬁcult to understand this ﬁgure, now that the main tools in this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-57-pushing-across-a-standard-annulus",
+      "number": "5.7",
+      "title": "Pushing across a standard annulus",
+      "level": 2,
+      "pageStart": 101,
+      "pageEnd": 102,
+      "labelStart": "513",
+      "labelEnd": "514",
+      "words": 449,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "standard annulus",
+          "heading": true
+        },
+        {
+          "term": "pushing across",
+          "heading": true
+        },
+        {
+          "term": "clasp arcs",
+          "heading": false
+        },
+        {
+          "term": "exchange moves",
+          "heading": false
+        },
+        {
+          "term": "singular leaves",
+          "heading": false
+        },
+        {
+          "term": "markov tower",
+          "heading": false
+        },
+        {
+          "term": "boundary arc",
+          "heading": false
+        },
+        {
+          "term": "microﬂypes",
+          "heading": false
+        }
+      ],
+      "extract": "Pushing across a standard annulus In constructing the thin annuli, we omitted the case of a standard annulus (with or without clasp arcs). Motions across a standard annulus will in general occur at the very end of the isotopy from X+ →X−, after all singularities that are on clasp arcs have been eliminated, and all short clasp arcs have been removed. To give an example of such a motion, let us suppose that X is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-6-the-proof-of-the-mtws",
+      "number": "6",
+      "title": "The proof of the MTWS",
+      "level": 1,
+      "pageStart": 102,
+      "pageEnd": 102,
+      "labelStart": "514",
+      "labelEnd": "514",
+      "words": 40,
+      "summary": null,
+      "keywords": [],
+      "extract": "The proof of the MTWS The machinery which we need to prove Theorem 2, the MTWS, has been set up. In this section we give our proof. The reader is referred to Section 1.3 for the statement of the theorem.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-036-61",
+      "number": null,
+      "title": "6.1",
+      "level": 2,
+      "pageStart": 102,
+      "pageEnd": 106,
+      "labelStart": "514",
+      "labelEnd": "518",
+      "words": 1562,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "clasp subannuli",
+          "heading": false
+        },
+        {
+          "term": "clasp arcs",
+          "heading": false
+        },
+        {
+          "term": "clasp annulus",
+          "heading": false
+        },
+        {
+          "term": "clasp subannulus",
+          "heading": false
+        },
+        {
+          "term": "long clasp",
+          "heading": false
+        },
+        {
+          "term": "clasp arc",
+          "heading": false
+        },
+        {
+          "term": "exchange moves",
+          "heading": false
+        },
+        {
+          "term": "augmented complexity",
+          "heading": false
+        }
+      ],
+      "extract": "Constructing the sequences (1–2), (1–3) and (1–4) and the templates in T (m) We are given a µ–component oriented link type X in oriented S3 or R3. We are also given closed braid representatives X+ ∈B(X) and X−∈Bmin(X). Indexing the components of X as X 1, . . . , X µ, we choose corresponding indices for the components of CA and X+ and X−, so that each annulus Aj in CA has ∂Aj = Xj + −Xj −. Geometry & Topology 10",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-62-cleaning-up-the-templates-in-tm",
+      "number": "6.2",
+      "title": "Cleaning up the templates in T(m)",
+      "level": 2,
+      "pageStart": 106,
+      "pageEnd": 109,
+      "labelStart": "518",
+      "labelEnd": "521",
+      "words": 2116,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "consolidated block-strand",
+          "heading": false
+        },
+        {
+          "term": "templates",
+          "heading": true
+        },
+        {
+          "term": "optimal template",
+          "heading": false
+        },
+        {
+          "term": "parallel strands",
+          "heading": false
+        },
+        {
+          "term": "braid parallel",
+          "heading": false
+        },
+        {
+          "term": "missing block",
+          "heading": false
+        },
+        {
+          "term": "strands entering",
+          "heading": false
+        },
+        {
+          "term": "block-strand diagram",
+          "heading": false
+        }
+      ],
+      "extract": "Cleaning up the templates in T (m) Our goal is to prove that no block in any template in T (m) has full braid index, however we will do that in a setting that yields additional information for later use. The concept of a block-strand diagram is, at this moment, rather loose. One can imagine that blocks could be slid around and amalgamated with one-another, and also subdivided. We would like them to be more",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-63-the-set-tm-is-finite",
+      "number": "6.3",
+      "title": "The set T(m) is finite",
+      "level": 2,
+      "pageStart": 109,
+      "pageEnd": 123,
+      "labelStart": "521",
+      "labelEnd": "535",
+      "words": 7269,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "clasp arcs",
+          "heading": false
+        },
+        {
+          "term": "essential arcs",
+          "heading": false
+        },
+        {
+          "term": "clasp arc",
+          "heading": false
+        },
+        {
+          "term": "arcs hθi",
+          "heading": false
+        },
+        {
+          "term": "inessential arc",
+          "heading": false
+        },
+        {
+          "term": "amalgamating blocks",
+          "heading": false
+        },
+        {
+          "term": "clasp annulus",
+          "heading": false
+        },
+        {
+          "term": "moving blocks",
+          "heading": false
+        }
+      ],
+      "extract": "The set T (m) is ﬁnite We return to the main thread of the argument. There is still one very big unanswered question: how do we know that T (m) is ﬁnite? Proving that it is, in fact, ﬁnite, is the main result in this ﬁnal subsection. See Proposition 6.3.1. The proof of the MTWS will follow immediately. We begin with an investigation of restrictions on the tiling of CA which follow from the fact that it is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-7-open-problems",
+      "number": "7",
+      "title": "Open problems",
+      "level": 1,
+      "pageStart": 123,
+      "pageEnd": 128,
+      "labelStart": "535",
+      "labelEnd": "540",
+      "words": 2393,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "heegaard splittings",
+          "heading": false
+        },
+        {
+          "term": "joan birman",
+          "heading": false
+        },
+        {
+          "term": "braid foliations",
+          "heading": false
+        },
+        {
+          "term": "heegaard diagrams",
+          "heading": false
+        },
+        {
+          "term": "william menasco",
+          "heading": false
+        },
+        {
+          "term": "braid index",
+          "heading": false
+        },
+        {
+          "term": "ivan dynnikov",
+          "heading": false
+        },
+        {
+          "term": "braid representatives",
+          "heading": false
+        }
+      ],
+      "extract": "Open problems (1) As was pointed out in Section 1.1, Markov’s Theorem is just one example of a class of theorems about 3–manifolds in which some form of stabilization and destabilization play an important role. A very different and very important example is the Kirby Calculus [21], relating two surgery representations of a 3–manifold. The stabilization move is the addition of an unknot with standard framing to the",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "clasp arcs",
+      "heading": true
+    },
+    {
+      "term": "mtws clasp",
+      "heading": false
+    },
+    {
+      "term": "braid foliation",
+      "heading": true
+    },
+    {
+      "term": "arc clasp",
+      "heading": true
+    },
+    {
+      "term": "foliated clasp",
+      "heading": true
+    },
+    {
+      "term": "clasp annulus",
+      "heading": false
+    },
+    {
+      "term": "clasp annuli",
+      "heading": false
+    },
+    {
+      "term": "exchange foliation",
+      "heading": true
+    },
+    {
+      "term": "braid isotopy",
+      "heading": true
+    },
+    {
+      "term": "braid ﬂype",
+      "heading": true
+    },
+    {
+      "term": "move braid",
+      "heading": true
+    },
+    {
+      "term": "braid across",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "413",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "414",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "415",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "416",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "417",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "418",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "419",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "420",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "421",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "422",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "423",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "424",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "425",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "426",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "427",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "428",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "429",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "430",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "431",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "432",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "433",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "434",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "435",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "436",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "437",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "438",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "439",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "440",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "441",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "442",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "443",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "444",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "445",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "446",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "447",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "448",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "449",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "450",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "451",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "452",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "453",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "454",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "455",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "456",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "457",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "458",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "459",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "460",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "461",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "462",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "463",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "464",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "465",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "466",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "467",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "468",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "469",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "470",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "471",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "472",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "473",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 62,
+      "label": "474",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "475",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "476",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "477",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "478",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 67,
+      "label": "479",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "480",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 69,
+      "label": "481",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "482",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 71,
+      "label": "483",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 72,
+      "label": "484",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 73,
+      "label": "485",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 74,
+      "label": "486",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 75,
+      "label": "487",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 76,
+      "label": "488",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 77,
+      "label": "489",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 78,
+      "label": "490",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 79,
+      "label": "491",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 80,
+      "label": "492",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 81,
+      "label": "493",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 82,
+      "label": "494",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 83,
+      "label": "495",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 84,
+      "label": "496",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 85,
+      "label": "497",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 86,
+      "label": "498",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 87,
+      "label": "499",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 88,
+      "label": "500",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 89,
+      "label": "501",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 90,
+      "label": "502",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 91,
+      "label": "503",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 92,
+      "label": "504",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 93,
+      "label": "505",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 94,
+      "label": "506",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 95,
+      "label": "507",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 96,
+      "label": "508",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 97,
+      "label": "509",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 98,
+      "label": "510",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 99,
+      "label": "511",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 100,
+      "label": "512",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 101,
+      "label": "513",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 102,
+      "label": "514",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 103,
+      "label": "515",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 104,
+      "label": "516",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 105,
+      "label": "517",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 106,
+      "label": "518",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 107,
+      "label": "519",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 108,
+      "label": "520",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 109,
+      "label": "521",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 110,
+      "label": "522",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 111,
+      "label": "523",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 112,
+      "label": "524",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 113,
+      "label": "525",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 114,
+      "label": "526",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 115,
+      "label": "527",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 116,
+      "label": "528",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 117,
+      "label": "529",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 118,
+      "label": "530",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 119,
+      "label": "531",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 120,
+      "label": "532",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 121,
+      "label": "533",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 122,
+      "label": "534",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 123,
+      "label": "535",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 124,
+      "label": "536",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 125,
+      "label": "537",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 126,
+      "label": "538",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 127,
+      "label": "539",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 128,
+      "label": "540",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The two destabilization moves",
+      "page": 2,
+      "pageLabel": "414",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The exchange move",
+      "page": 4,
+      "pageLabel": "416",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The two ﬂype moves",
+      "page": 4,
+      "pageLabel": "416",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "(a) The support of a positive ﬂype with weighted strands. (b) Example of an inadmissible ﬂype. Notice the extra twists introduced because of the weighted strands",
+      "page": 8,
+      "pageLabel": "420",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "A very simple Markov tower",
+      "page": 9,
+      "pageLabel": "421",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The exchange move can lead to arbitrarily many distinct braid isotopy classes of closed n–braid representatives of a single knot type, n ≥4",
+      "page": 9,
+      "pageLabel": "421",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "A sequence of exchange moves passes a distinguished strand (the thick black one) over a block-strand tree",
+      "page": 10,
+      "pageLabel": "422",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Example of a 4–braid cyclic template, and the Markov tower (stabilize, exchange, exchange, exchange, destabilize) that it replaces",
+      "page": 11,
+      "pageLabel": "423",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "Example of a G–ﬂype on a 6–braid",
+      "page": 13,
+      "pageLabel": "425",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "Example of a G–exchange move on a 6–braid",
+      "page": 14,
+      "pageLabel": "426",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "Clasp intersections",
+      "page": 19,
+      "pageLabel": "431",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "Constructing X0",
+      "page": 21,
+      "pageLabel": "433",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "13",
+      "title": "(a) Alexander’s trick",
+      "page": 22,
+      "pageLabel": "434",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "14",
+      "title": "A key example",
+      "page": 25,
+      "pageLabel": "437",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "15",
+      "title": "(a) Foliation of surface near a vertex",
+      "page": 27,
+      "pageLabel": "439",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "16",
+      "title": "In this sketch the ﬁbers of H are to be thought of as horizontal planes. (a) Surgering F along the disc ∆removes the singularity. (b) The change in foliation on F",
+      "page": 28,
+      "pageLabel": "440",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "17",
+      "title": "",
+      "page": 29,
+      "pageLabel": "441",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "18",
+      "title": "Tiles of type bb, ab, aa",
+      "page": 29,
+      "pageLabel": "441",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "19",
+      "title": "Embeddings of tiles of type bb, ab, aa in 3–space",
+      "page": 30,
+      "pageLabel": "442",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "20",
+      "title": "The ﬁrst change in foliation, in the case when both tiles have type bb. There are two other cases, obtained from the one which is illustrated by deleting part of the bb–tile and adding one or both dotted arcs as boundary, to convert to an ab–tile. The 3 cases are: case (1), two bb–tiles; case (2), o",
+      "page": 31,
+      "pageLabel": "443",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "21",
+      "title": "Sketch (a) shows the second change in foliation. Sketch (b) shows N, embedded in 3–space, before the change, illustrating the position of ∆. The move is a push downward of s1 along ∆",
+      "page": 33,
+      "pageLabel": "445",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "22",
+      "title": "Destabilization along a valence 1 vertex, viewed (a) on the foliated surface and (b) in 3–space",
+      "page": 34,
+      "pageLabel": "446",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "23",
+      "title": "The type ab–exchange move",
+      "page": 35,
+      "pageLabel": "447",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "24",
+      "title": "The type bb–exchange move, followed by an isotopy of F",
+      "page": 36,
+      "pageLabel": "448",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "25",
+      "title": "Changes in foliation after the removal of inessential b–arcs",
+      "page": 37,
+      "pageLabel": "449",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "26",
+      "title": "Stabilization along an ab–tile, viewed (a) as a move on the foliated surface, and (b) concentrating on how it alters the boundary",
+      "page": 37,
+      "pageLabel": "449",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "27",
+      "title": "Stabilization along an ab–tile, viewed in 3–space",
+      "page": 38,
+      "pageLabel": "450",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "28",
+      "title": "There are new issues to settle. The ﬁrst question we ask is whether a simple closed curve c could intersect both A+ and A−? Assume that the homoclinic loop determined by c is innermost in Hθ, and also innermost in the foliation of CA. Then c bounds a disc on A+ ∪A−which is foliated by simple closed",
+      "page": 40,
+      "pageLabel": "452",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "29",
+      "title": "Non-singular leaves in the foliation of A+ ∪A−, as viewed in the preimage of CA",
+      "page": 43,
+      "pageLabel": "455",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "30",
+      "title": "Type a−a−and a−s singularities do not occur",
+      "page": 44,
+      "pageLabel": "456",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "31",
+      "title": "Possible tile types in the foliation of A+ ∪A−. The black (resp. grey) arcs always represent subarcs of X+ (resp. X−), with one exception: when we construct the tabs we will be working in A−and X0 will enter the picture as a (dotted) grey arc",
+      "page": 44,
+      "pageLabel": "456",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "32",
+      "title": "Eliminating short clasp arcs",
+      "page": 45,
+      "pageLabel": "457",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "33",
+      "title": "An example of a tab",
+      "page": 47,
+      "pageLabel": "459",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "34",
+      "title": "Rechoosing the disc Ri. In sketches (a) and (b) the dark area is in R′",
+      "page": 48,
+      "pageLabel": "460",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "35",
+      "title": "Controlled local changes in the clasp arc in a neighborhood of a singularity after the ﬁrst and second ﬁnger moves",
+      "page": 50,
+      "pageLabel": "462",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "36",
+      "title": "The 4 possible choices of the signs of the pair (vertex,singularity)",
+      "page": 50,
+      "pageLabel": "462",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "37",
+      "title": "Normal neighborhoods of γ−and γ+ in PA. The left (resp. middle and right) sketch shows N+ (resp. N−, N−). The arc γ−ends near X+ in the middle sketch and in the interior of PA in the right sketch. In all 3 sketches the foliation is deﬁned up to reﬂection about a vertical axis which joins X−and X+",
+      "page": 52,
+      "pageLabel": "464",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "38",
+      "title": "Tab neighborhood pair in PA",
+      "page": 54,
+      "pageLabel": "466",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "39",
+      "title": "Local changes, as they appear on T+",
+      "page": 55,
+      "pageLabel": "467",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "40",
+      "title": "Local changes, depicted in a neighborhood of γ−on PA",
+      "page": 56,
+      "pageLabel": "468",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "41",
+      "title": "Positioning the clasp arc γ−into a ﬁnite number of leaves (singular and/or non-singular)",
+      "page": 57,
+      "pageLabel": "469",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "42",
+      "title": "The graph Gϵ,δ includes all singular leaves through vertices of sign ϵ and singularities of sign δ. The thick edges in this example illustrate the passage of G+,+, G−,−, G+,−, G−,+ through a bb–tile",
+      "page": 60,
+      "pageLabel": "472",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "43",
+      "title": "Examples of a standard annulus, a trivially foliated annulus, and regions in a thin annulus. Thin annuli will be deﬁned in Section 5.3",
+      "page": 66,
+      "pageLabel": "478",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "44",
+      "title": "The foliation of PA, near the puncture point of a clasp arc γ−but outside its normal neighborhood. It is assumed here that the puncture point of γ−is in the interior of PA",
+      "page": 67,
+      "pageLabel": "479",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "45",
+      "title": "It is a subset of Ni",
+      "page": 70,
+      "pageLabel": "482",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "46",
+      "title": "Adjacent pairs of foliated connected normal neighborhoods. Sketches a,b,c,d in the bottom row show all possibilities, after the elimination of inessential b–arcs",
+      "page": 71,
+      "pageLabel": "483",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "47",
+      "title": "Possible arrangements of clasp arcs in adjacent intersecting normal neighborhoods in PA, near the right and left boundaries of a connected collection of normal neighborhoods",
+      "page": 72,
+      "pageLabel": "484",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "48",
+      "title": "The isotopy of X+ across S in a simple example",
+      "page": 78,
+      "pageLabel": "490",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "49",
+      "title": "The 3–space embedding of X+ and X−in the Example in Figure 48",
+      "page": 78,
+      "pageLabel": "490",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "50",
+      "title": "Amalgamating microﬂypes can result in ﬂypes with weighted strands",
+      "page": 79,
+      "pageLabel": "491",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "51",
+      "title": "Four independent ﬂypes which cannot be amalgamated",
+      "page": 80,
+      "pageLabel": "492",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "52",
+      "title": "(i) The four microstrands associated to a doubly long clasp arc. (ii) The associated microblocks. (iii) The braid projection of the microstrands on the cylinder walls",
+      "page": 81,
+      "pageLabel": "493",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "53",
+      "title": "The projection of related microstrands onto the cylindrical walls in the boundaries of amalgamating blocks",
+      "page": 84,
+      "pageLabel": "496",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "54",
+      "title": "Subdividing non-trivially foliated regions in S . The black (resp. dotted grey) horizontal arcs are the arcs we refer to in the text as ‘y’ (resp. ‘y’). The intersections of the clasp arcs with the regions of interest are labeled gi",
+      "page": 86,
+      "pageLabel": "498",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "55",
+      "title": "An example that shows how a stabilization, two microﬂypes and a destabilization are amalgamated into a ﬂype. The bottom left and right sketches show the corresponding subsets of",
+      "page": 87,
+      "pageLabel": "499",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "56",
+      "title": "The foliation of PA, in the situation of the 6–braid template of Figure 9",
+      "page": 93,
+      "pageLabel": "505",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "57",
+      "title": "Foliated subsurface of PA which are the support of the G–exchange move of Figure 10",
+      "page": 94,
+      "pageLabel": "506",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "58",
+      "title": "(a) The root foliation on PA. (b) The root diagram. (c) The two viewpoints are put together",
+      "page": 96,
+      "pageLabel": "508",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "59",
+      "title": "A block and strand tree. The dotted parts will be discussed later",
+      "page": 97,
+      "pageLabel": "509",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "60",
+      "title": "Expanding root foliations to tree foliations",
+      "page": 98,
+      "pageLabel": "510",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "61",
+      "title": "Pushing across a standard annulus",
+      "page": 102,
+      "pageLabel": "514",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "62",
+      "title": "The possibilities for b–edges of bb– and ab–tiles. A black undotted b–edge means strongly essential A black dotted b–edge means weakly essential",
+      "page": 122,
+      "pageLabel": "534",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 41,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 41,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "62 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p123); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 41 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/0310279v5"
+  }
+}

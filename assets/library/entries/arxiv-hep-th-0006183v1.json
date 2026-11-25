@@ -1,0 +1,177 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-th-0006183v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-th-0006183v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Abstract",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-abstract.md",
+      "narrative": null,
+      "content": "We use the Wilson renormalization group (RG) formulation to solve the ﬁne-tuning proce-\ndure needed in renormalization schemes breaking the gauge symmetry. To illustrate this\nmethod we systematically compute the non-invariant couplings of the ultraviolet action of\nthe SU(2) pure Yang-Mills theory at one-loop order.\nKeywords: Renormalization group formalism, gauge theory, Slavnov-Taylor identity\nPACS numbers: 11.10.Gh, 11.15.-q, 11.30.Rd",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006183v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-th/0006183v1  23 Jun 2000\nUPRF-00-04\nFine-tuning and the Wilson renormalization group\nM. Bonini and E. Tricarico\nUniversit`a degli Studi di Parma\nand\nI.N.F.N., Gruppo collegato di Parma,\nviale delle Scienze, 43100 Parma, Italy",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006183v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-1-introduction.md",
+      "narrative": null,
+      "content": "The Wilsonian renormalization group (RG) provides the most physical framework to study\ngeneral properties of quantum ﬁeld theories. In this formulation [1, 2] quantum ﬂuctuations\nat short distances are integrated out to give an eﬀective action for longer distances. In\nthis approach the bare action can be though as the result of integrating out the degrees of\nfreedom with frequencies higher than the ultraviolet (UV) scale Λ0 of the underlying theory\n(eventually more fundamental). By further integrating out the ﬁelds with frequencies up\nto some lower scale Λ one obtains the so called Wilsonian e",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006183v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Renormalization group ﬂow",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-2-renormalization-group-ﬂow.md",
+      "narrative": null,
+      "content": "Consider the SU(2) gauge theory described by the classical Lagrangian (in the Feynman\ngauge)\nSY M =\nZ\nd4x\n\u001a\n−1\n4Fµν · F µν −1\n2 (∂µAµ)2 −¯c · ∂µDµc\n\u001b\n,\nwhere the gauge stress tensor and the covariant derivative are given by Fµν = ∂µAν −\n∂νAµ + g Aµ ∧Aν, Dµc = ∂µc + g Aµ ∧c and we have introduced the usual scalar and\nexternal SU(2) products. This action is invariant under the BRS transformation [9]\nδAa\nµ = 1\ngη Dab\nµ cb ,\nδca = −1\n2 η ǫabccb cc ,\nδ¯ca = −1\ng η ∂µAa\nµ\nwith η a Grassmann parameter.\nIntroducing the sources ua\nµ, va associated to the variations of Aa\nµ, ca respectively one\nhas the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006183v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Eﬀective ST identity",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-3-eﬀective-st-identity.md",
+      "narrative": null,
+      "content": "In the RG formulation the ST identity for the physical eﬀective action Γ[Φ, γ] ≡Γ[Φ, γ; 0, ∞]\nis ensured if the cutoﬀeﬀective action satisﬁes a modiﬁed ST [3]-[7]. As usual in studying\n1For a generalization of this proof to gauge theories see for instance [4].\n3\nST identities, it is convenient to remove from the functional Π given in (4) the gauge ﬁxing\nterm and introduce the Slavnov operator [13]\nSΠ′ = −i\nZ\np\n\u0012\nδ Π′\nδΦi(−p)\nδ\nδγi(p) + δ Π′\nδγi(p)\nδ\nδΦi(−p)\n\u0013\n,\nΦi = {Aµ, c}\nwith\nΠ′[Φ, γ; Λ] = Π[Φ, γ; Λ] + 1\n2\nZ\np\npµ pν Aµ(−p) · Aν(p).\nThe modiﬁed ST identity then reads\n∆Γ(Λ) ≡SΠ′Π′[Φ, γ; Λ] +",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006183v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "One-loop computations",
+      "pageStart": 5,
+      "pageEnd": 15,
+      "target": "../sections/sec-004-4-one-loop-computations.md",
+      "narrative": null,
+      "content": "At one-loop and at Λ = Λ0, the ﬁne-tuning equation (6) reduces to\nSΠ(0) Π(1)(Λ0) = −ˆ∆(1)\nΓ (Λ0) ,\n(8)\n4\nwhere the local functional Π(1)(Λ0) ≡Π(1)[Φ, γ; Λ0] contains the relevant monomials given\nin (5) (as discussed in the previous section its irrelevant contributions vanish as Λ0 →∞\nand therefore can be omitted in the calculations performed in this section). This functional\ncan be split into two contributions 2\nΠ(Λ0) = Πinv(Λ0) + ˜Π(Λ0) ,\n(9)\nwhere Πinv satisﬁes the ST identity i.e. SΠinv Πinv = 0. The explicit form of Πinv is\nΠinv(Λ0) =\nZ\nd4x\n\u001a\n−1\n4 z1 Fµν · F µν + z2 z3\n\u0012 1\ng z3\nwµ · Dµc −1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006183v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-005-5-conclusions.md",
+      "narrative": null,
+      "content": "Conclusions\nThe computation presented in this paper has shown that the requirement that the physical\neﬀective action satisﬁes the ST identity translates into a ﬁne-tuning equation which allows\nto determine the couplings of the relevant, non-invariant interactions in the bare action\nΠ(Λ0).\nOnce the ﬁeld normalization and the gauge coupling are ﬁxed at the physical\npoint Λ = 0, the problem of assigning the boundary conditions of the RG ﬂow is ﬁnally\nsolved. We explicitly compute the non-invariant couplings at one-loop, they turns out to\nbe ﬁnite. This procedure systematically generalizes to high",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006183v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A",
+      "pageStart": 16,
+      "pageEnd": 21,
+      "target": "../sections/sec-006-appendix-a.md",
+      "narrative": null,
+      "content": "In this appendix we compute the various contributions to the AAAc-vertex.\nWe ﬁrst\nconsider in (12) the terms with γi = wµ.\nIn this case both the contributions to the\nfunctional ¯Γ(0) given in (21) and (25) are needed to compute this vertex.\nThe former\ninvolves the four-vector vertex given in (14) and the corresponding graphs are shown in\nFig. 5.\n(a)\n(b)\n(c)\nFigure 5: Graphical contribution to the A-A-A-c-vertex of ˆ∆Γ.\nThe contribution to ˆ∆(AAAc)\nΓ µ1µ2µ3(p1, p2, p3; Λ0) from the the graph in ﬁg. 5a is (recall that p1,\np2 and p3 are the momenta of the vector ﬁelds and that one has to consider",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-0006183v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-007-references.md",
+      "narrative": null,
+      "content": "[1] K.G. Wilson, Phys. Rev. B 4 (1971) 3174,3184; K.G. Wilson and J.G. Kogut, Phys.\nRep. 12 (1974) 75.\n[2] J. Polchinski, Nucl. Phys. B231 (1984) 269.\n[3] C. Becchi, On the construction of renormalized quantum ﬁeld theory using renormal-\nization group techniques, in Elementary particles, Field theory and Statistical mechan-\nics, Eds. M. Bonini, G. Marchesini and E. Onofri, Parma University 1993.\n[4] M. Bonini, M. D’Attanasio and G. Marchesini, Nucl. Phys. B421 (1994) 429, Nucl.\nPhys. B437 (1995) 163, Phys. Lett. 346B (1995) 87.\n[5] U. Ellwanger, Phys. Lett. 335B (1994) 364.\n[6] M. D’Attanasio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

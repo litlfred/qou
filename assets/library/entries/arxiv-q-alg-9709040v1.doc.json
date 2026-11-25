@@ -1,0 +1,4147 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-q-alg-9709040v1",
+  "title": "Deformation quantization of Poisson manifolds",
+  "variant": "pdf",
+  "pages": 46,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Plans",
+      "number": "0.2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-02-plans"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": "0.3",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-002-03-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "Deformation quantization",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-1-deformation-quantization"
+    },
+    {
+      "level": 2,
+      "title": "Star-products",
+      "number": "1.1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-11-star-products"
+    },
+    {
+      "level": 2,
+      "title": "First approximation: Poisson structures",
+      "number": "1.2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-12-first-approximation-poisson-structures"
+    },
+    {
+      "level": 2,
+      "title": "Description of quantizations",
+      "number": "1.3",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-13-description-of-quantizations"
+    },
+    {
+      "level": 2,
+      "title": "Examples",
+      "number": "1.4",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-14-examples"
+    },
+    {
+      "level": 3,
+      "title": "Moyal product",
+      "number": "1.4.1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-141-moyal-product"
+    },
+    {
+      "level": 3,
+      "title": "Deformation quantization up to the second order",
+      "number": "1.4.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-142-deformation-quantization-up-to-the-second-or"
+    },
+    {
+      "level": 2,
+      "title": "Remarks",
+      "number": "1.5",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-15-remarks"
+    },
+    {
+      "level": 1,
+      "title": "Explicit universal formula",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-010-2-explicit-universal-formula"
+    },
+    {
+      "level": 1,
+      "title": "Deformation theory via diﬀerential graded Lie algebras",
+      "number": "3",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-011-3-deformation-theory-via-diﬀerential-graded-lie"
+    },
+    {
+      "level": 2,
+      "title": "Maurer-Cartan equation in diﬀerential graded Lie algebras",
+      "number": "3.2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-012-32-maurer-cartan-equation-in-diﬀerential-graded"
+    },
+    {
+      "level": 2,
+      "title": "Remark",
+      "number": "3.3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-013-33-remark"
+    },
+    {
+      "level": 2,
+      "title": "Examples",
+      "number": "3.4",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-014-34-examples"
+    },
+    {
+      "level": 3,
+      "title": "Tangent complex",
+      "number": "3.4.1",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-015-341-tangent-complex"
+    },
+    {
+      "level": 3,
+      "title": "Hochschild complex",
+      "number": "3.4.2",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-016-342-hochschild-complex"
+    },
+    {
+      "level": 1,
+      "title": "Homotopy Lie algebras and quasi-isomorphisms",
+      "number": "4",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-017-4-homotopy-lie-algebras-and-quasi-isomorphisms"
+    },
+    {
+      "level": 2,
+      "title": "Formal manifolds",
+      "number": "4.1",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-018-41-formal-manifolds"
+    },
+    {
+      "level": 2,
+      "title": "Pre-L∞-morphisms",
+      "number": "4.2",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-019-42-pre-l-morphisms"
+    },
+    {
+      "level": 2,
+      "title": "L∞-algebras and L∞-morphisms",
+      "number": "4.3",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-020-43-l-algebras-and-l-morphisms"
+    },
+    {
+      "level": 2,
+      "title": "Quasi-isomorphisms",
+      "number": "4.4",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-021-44-quasi-isomorphisms"
+    },
+    {
+      "level": 2,
+      "title": "A sketch of the proof",
+      "number": "4.5",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-022-45-a-sketch-of-the-proof"
+    },
+    {
+      "level": 3,
+      "title": "Homotopy classiﬁcation of L∞-algebras",
+      "number": "4.5.1",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-023-451-homotopy-classiﬁcation-of-l-algebras"
+    },
+    {
+      "level": 3,
+      "title": "Deformation functors at ﬁxed points of Q",
+      "number": "4.5.2",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-024-452-deformation-functors-at-ﬁxed-points-of-q"
+    },
+    {
+      "level": 2,
+      "title": "Formality",
+      "number": "4.6",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-025-46-formality"
+    },
+    {
+      "level": 3,
+      "title": "Two diﬀerential graded Lie algebras",
+      "number": "4.6.1",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-026-461-two-diﬀerential-graded-lie-algebras"
+    },
+    {
+      "level": 4,
+      "title": "It is a quasi-isomorphism",
+      "number": "4.6.1.1",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-027-4611-it-is-a-quasi-isomorphism"
+    },
+    {
+      "level": 3,
+      "title": "Main theorem",
+      "number": "4.6.2",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-028-462-main-theorem"
+    },
+    {
+      "level": 3,
+      "title": "Non-uniqueness",
+      "number": "4.6.3",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-029-463-non-uniqueness"
+    },
+    {
+      "level": 1,
+      "title": "Conﬁguration spaces and their compactiﬁcations",
+      "number": "5",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-031-5-conﬁguration-spaces-and-their-compactiﬁcations"
+    },
+    {
+      "level": 2,
+      "title": "Deﬁnitions",
+      "number": "5.1",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-030-51-deﬁnitions"
+    },
+    {
+      "level": 2,
+      "title": "Looking through a magnifying glass",
+      "number": "5.2",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-032-52-looking-through-a-magnifying-glass"
+    },
+    {
+      "level": 2,
+      "title": "Boundary strata",
+      "number": "5.2.1",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-033-521-boundary-strata"
+    },
+    {
+      "level": 1,
+      "title": "Universal formula",
+      "number": "6",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-034-6-universal-formula"
+    },
+    {
+      "level": 2,
+      "title": "Admissible graphs",
+      "number": "6.1",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-035-61-admissible-graphs"
+    },
+    {
+      "level": 2,
+      "title": "Diﬀerential forms on conﬁguration spaces",
+      "number": "6.2",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-036-62-diﬀerential-forms-on-conﬁguration-spaces"
+    },
+    {
+      "level": 2,
+      "title": "Pre-L∞-morphisms associated with graphs",
+      "number": "6.3",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-037-63-pre-l-morphisms-associated-with-graphs"
+    },
+    {
+      "level": 2,
+      "title": "Main Theorem for X = Rd, and the proof",
+      "number": "6.4",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-038-64-main-theorem-for-x-rd-and-the-proof"
+    },
+    {
+      "level": 3,
+      "title": "Case S1",
+      "number": "6.4.1",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-039-641-case-s1"
+    },
+    {
+      "level": 4,
+      "title": "First subcase of S1: n2 = 2",
+      "number": "6.4.1.1",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-040-6411-first-subcase-of-s1-n2-2"
+    },
+    {
+      "level": 4,
+      "title": "Second subcase of S1: n2 ≥3",
+      "number": "6.4.1.2",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-041-6412-second-subcase-of-s1-n2-3"
+    },
+    {
+      "level": 3,
+      "title": "Case S2",
+      "number": "6.4.2",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-042-642-case-s2"
+    },
+    {
+      "level": 4,
+      "title": "First subcase of S2: no bad edges",
+      "number": "6.4.2.1",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-043-6421-first-subcase-of-s2-no-bad-edges"
+    },
+    {
+      "level": 4,
+      "title": "Second subcase of S2: there is a bad edge",
+      "number": "6.4.2.2",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-044-6422-second-subcase-of-s2-there-is-a-bad-edge"
+    },
+    {
+      "level": 3,
+      "title": "We ﬁnish the proof of the theorem from 6.4",
+      "number": "6.4.3",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-045-643-we-ﬁnish-the-proof-of-the-theorem-from-64"
+    },
+    {
+      "level": 3,
+      "title": "Comparison with the formula from section 2",
+      "number": "6.4.4",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-046-644-comparison-with-the-formula-from-section-2"
+    },
+    {
+      "level": 2,
+      "title": "Grading, orientations, factorials, signs",
+      "number": "6.5",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-047-65-grading-orientations-factorials-signs"
+    },
+    {
+      "level": 2,
+      "title": "Vanishing of integrals",
+      "number": "6.6",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-048-66-vanishing-of-integrals"
+    },
+    {
+      "level": 3,
+      "title": "A trick using logarithms",
+      "number": "6.6.1",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-049-661-a-trick-using-logarithms"
+    },
+    {
+      "level": 3,
+      "title": "Remark",
+      "number": "6.6.2",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-050-662-remark"
+    },
+    {
+      "level": 1,
+      "title": "Formality conjecture for general manifolds",
+      "number": "7",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-051-7-formality-conjecture-for-general-manifolds"
+    },
+    {
+      "level": 2,
+      "title": "Formal geometry (in the sense of I. Gelfand and D. Kazhdan)",
+      "number": "7.1",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-052-71-formal-geometry-in-the-sense-of-i-gelfand-and"
+    },
+    {
+      "level": 2,
+      "title": "Flat connections and Q-equivariant maps",
+      "number": "7.2",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-053-72-flat-connections-and-q-equivariant-maps"
+    },
+    {
+      "level": 2,
+      "title": "Flat families in deformation quantization",
+      "number": "7.3",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-054-73-flat-families-in-deformation-quantization"
+    },
+    {
+      "level": 3,
+      "title": "Flat families over W",
+      "number": "7.3.1",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-055-731-flat-families-over-w"
+    },
+    {
+      "level": 4,
+      "title": "Proof of the property P4",
+      "number": "7.3.1.1",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-056-7311-proof-of-the-property-p4"
+    },
+    {
+      "level": 4,
+      "title": "Property P5",
+      "number": "7.3.3.1",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-057-7331-property-p5"
+    },
+    {
+      "level": 3,
+      "title": "Flat families over X",
+      "number": "7.3.4",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-058-734-flat-families-over-x"
+    },
+    {
+      "level": 3,
+      "title": "Passing to global sections",
+      "number": "7.3.5",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-059-735-passing-to-global-sections"
+    },
+    {
+      "level": 1,
+      "title": "Cup-products",
+      "number": "8",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-060-8-cup-products"
+    },
+    {
+      "level": 2,
+      "title": "Cup-products on tangent cohomology",
+      "number": "8.1",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-061-81-cup-products-on-tangent-cohomology"
+    },
+    {
+      "level": 2,
+      "title": "Compatibility of U with cup-products",
+      "number": "8.2",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-062-82-compatibility-of-u-with-cup-products"
+    },
+    {
+      "level": 3,
+      "title": "Pictures for the cup-product in polyvector ﬁelds",
+      "number": "8.2.1",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-063-821-pictures-for-the-cup-product-in-polyvector-ﬁ"
+    },
+    {
+      "level": 3,
+      "title": "Pictures for the cup-product in the Hochschild complex",
+      "number": "8.2.2",
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-064-822-pictures-for-the-cup-product-in-the-hochschi"
+    },
+    {
+      "level": 3,
+      "title": "Homotopy between two pictures",
+      "number": "8.2.3",
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-065-823-homotopy-between-two-pictures"
+    },
+    {
+      "level": 2,
+      "title": "First application: Duﬂo-Kirillov isomorphism",
+      "number": "8.3",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-066-83-first-application-duﬂo-kirillov-isomorphism"
+    },
+    {
+      "level": 3,
+      "title": "Quanization of the Kirillov-Poisson bracket",
+      "number": "8.3.1",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-067-831-quanization-of-the-kirillov-poisson-bracket"
+    },
+    {
+      "level": 3,
+      "title": "Three isomorphisms",
+      "number": "8.3.2",
+      "page": 40,
+      "pageLabel": "40",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-068-832-three-isomorphisms"
+    },
+    {
+      "level": 4,
+      "title": "Isomorphism IT",
+      "number": "8.3.3.1",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-069-8331-isomorphism-it"
+    },
+    {
+      "level": 3,
+      "title": "Comparison with the Duﬂo-Kirillov isomorphism",
+      "number": "8.3.4",
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-070-834-comparison-with-the-duﬂo-kirillov-isomorphis"
+    },
+    {
+      "level": 3,
+      "title": "Results in rigid tensor categories",
+      "number": "8.3.5",
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-071-835-results-in-rigid-tensor-categories"
+    },
+    {
+      "level": 2,
+      "title": "Second application: algebras of Ext-s.",
+      "number": "8.4",
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-072-84-second-application-algebras-of-ext-s"
+    },
+    {
+      "level": 2,
+      "title": "Bibiliography",
+      "number": null,
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-073-bibiliography"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 603,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deformation quantization",
+          "heading": false
+        },
+        {
+          "term": "polyvector ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "formality conjecture",
+          "heading": false
+        },
+        {
+          "term": "conﬁguration spaces",
+          "heading": false
+        },
+        {
+          "term": "poisson manifolds",
+          "heading": false
+        },
+        {
+          "term": "deformation theory",
+          "heading": false
+        },
+        {
+          "term": "graded lie",
+          "heading": false
+        },
+        {
+          "term": "lie algebras",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:q-alg/9709040v1 29 Sep 1997 DEFORMATION QUANTIZATION OF POISSON MANIFOLDS, I Maxim Kontsevich 0. Introduction In this paper it is proven that any ﬁnite-dimensional Poisson manifold can be canonically quantized (in the sense of deformation quantization). Informally, it means that the set of equivalence classes of associative algebras close to algebras of functions on manifolds is in one-to-one correspondence",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-q-alg-9709040v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-02-plans",
+      "number": "0.2",
+      "title": "Plans",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 14,
+      "summary": null,
+      "keywords": [],
+      "extract": "I am going to write a complement to the present paper. It will contain",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-star-products",
+      "number": "1.1",
+      "title": "Star-products",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 131,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "formality conjecture",
+          "heading": false
+        },
+        {
+          "term": "etingof-kazhdan",
+          "heading": false
+        },
+        {
+          "term": "aksz",
+          "heading": false
+        },
+        {
+          "term": "supermanifold",
+          "heading": false
+        }
+      ],
+      "extract": "Wilde-Lecomte and by Fedosov for the case of symplectic manifolds (see [DL], [F]), and by Etingof-Kazhdan for Poisson-Lie groups (see [EK]), 2) a reformulation of the Formality conjecture as an existence of a natural construction of a triangulated category starting from an odd symplectic supermanifold, 3) discussion of the arithmetic nature of coeﬃcients in our formulas, and of the possibility to extend main results",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-03-acknowledgements",
+      "number": "0.3",
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 9,
+      "summary": null,
+      "keywords": [],
+      "extract": "I am grateful to Y. Soibelman for many remarks.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-1-deformation-quantization",
+      "number": "1",
+      "title": "Deformation quantization",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 260,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "star-products",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential operators",
+          "heading": false
+        },
+        {
+          "term": "h2b",
+          "heading": false
+        },
+        {
+          "term": "h-adic",
+          "heading": false
+        }
+      ],
+      "extract": "1.1. Star-products Let A = Γ(X, OX) be the algebra over R of smooth functions on a ﬁnite-dimensional C∞-manifold X. The star-product on A (see [BFFLS]) is an associative R[[¯h]]-linear product on A[[¯h]] given by the following formula for f, g ∈A ⊂A[[¯h]]: (f, g) 7→f ⋆g = fg + ¯hB1(f, g) + ¯h2B2(f, g) + . . . ∈A[[¯h]] , where ¯h is the formal variable, and Bi are bidiﬀerential operators (i.e. bilinear maps A × A−→A",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-12-first-approximation-poisson-structures",
+      "number": "1.2",
+      "title": "First approximation: Poisson structures",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 410,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "poisson",
+          "heading": true
+        },
+        {
+          "term": "star-products",
+          "heading": false
+        },
+        {
+          "term": "hochschild complex",
+          "heading": false
+        },
+        {
+          "term": "poisson structure",
+          "heading": false
+        },
+        {
+          "term": "bi-vector",
+          "heading": false
+        },
+        {
+          "term": "equivalence class",
+          "heading": false
+        },
+        {
+          "term": "bracket",
+          "heading": false
+        }
+      ],
+      "extract": "It follows from the associativity of ⋆that the bilinear map B1 : A × A−→A satisﬁes the equation fB1(g, h) −B1(fg, h) + B1(f, gh) −B1(f, g)h = 0, i.e. the linear map eB1 : A ⊗A−→A associated with B1 as eB1(f ⊗g) := B1(f, g), is a 2-cocycle in the cohomological Hochschild complex of algebra A (the deﬁnition of this complex is given in 3.4.2). Let us decompose B1 into the sum of the symmetric part and of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-13-description-of-quantizations",
+      "number": "1.3",
+      "title": "Description of quantizations",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 99,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "star products",
+          "heading": false
+        },
+        {
+          "term": "gauge equivalence",
+          "heading": false
+        },
+        {
+          "term": "equivalence classes",
+          "heading": false
+        }
+      ],
+      "extract": "Theorem. The set of gauge equivalence classes of star products on a smooth manifold X can be naturally identiﬁed with the set of equivalence classes of Poisson structures depending formally on ¯h: α = α(¯h) = α1¯h + α2¯h2 + . . . ∈Γ(X, ∧2TX)[[¯h]], [α, α] = 0 ∈Γ(X, ∧3TX)[[¯h]] modulo the action of the group of formal paths in the diﬀeomorphism group of X, starting at the identity diﬀeomorphism. Any given Poisson",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-14-examples",
+      "number": "1.4",
+      "title": "Examples",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-141-moyal-product",
+      "number": "1.4.1",
+      "title": "Moyal product",
+      "level": 3,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 119,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "moyal product",
+          "heading": true
+        },
+        {
+          "term": "αij",
+          "heading": false
+        },
+        {
+          "term": "αijαkl",
+          "heading": false
+        }
+      ],
+      "extract": "The simplest example of a deformation quantization is the Moyal product for the Poisson structure on Rd with constant coeﬃcients: α = X i,j αij∂i ∧∂j, αij = −αji ∈R where ∂i = ∂/∂xi is the partial derivative in the direction of coordinate xi, i = 1, . . . , d. The formula for the Moyal product is f ⋆g = fg + ¯h X i,j αij ∂i(f) ∂j(g) + ¯h2 2 X i,j,k,l αijαkl ∂i∂k(f) ∂j∂l(g) + . . . = = ∞ X n=0 ¯hn n! X i1,...,in;",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-142-deformation-quantization-up-to-the-second-or",
+      "number": "1.4.2",
+      "title": "Deformation quantization up to the second order",
+      "level": 3,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 102,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "αij",
+          "heading": false
+        },
+        {
+          "term": "αijαkl",
+          "heading": false
+        },
+        {
+          "term": "associativity",
+          "heading": false
+        }
+      ],
+      "extract": "Let α = P i,j αij∂i ∧∂j be a Poisson bracket with variable coeﬃcients in an open domain of Rd (i.e. αij is not a constant, but a function of coordinates), then the following formula gives an associative product modulo O(¯h3): f ⋆g = fg + ¯h X i,j αij ∂i(f) ∂j(g) + ¯h2 2 X i,j,k,l αijαkl ∂i∂k(f) ∂j∂l(g)+ +¯h2 3  X i,j,k,l αij ∂j(αkl) (∂i∂k(f) ∂l(g) −∂k(f) ∂i∂l(g))  + O(¯h3) The associativity up to the second",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-15-remarks",
+      "number": "1.5",
+      "title": "Remarks",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 85,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deformation quantization",
+          "heading": false
+        },
+        {
+          "term": "bidiﬀerential",
+          "heading": false
+        },
+        {
+          "term": "real-valued",
+          "heading": false
+        }
+      ],
+      "extract": "In general, one should consider bidiﬀerential operators Bi with complex coeﬃcients, as we expect to associate by quantization self-adjoint operators in a Hilbert space to real-valued classical observables. In this paper we deal with purely formal algebraic properties of the deformation quantization and work mainly over the ﬁeld R of real numbers. Also, it is not clear whether the “deformation quantization” is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-2-explicit-universal-formula",
+      "number": "2",
+      "title": "Explicit universal formula",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": "4",
+      "labelEnd": "7",
+      "words": 1004,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bi-vector ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "labeled graph",
+          "heading": false
+        },
+        {
+          "term": "dφh",
+          "heading": false
+        },
+        {
+          "term": "star-product",
+          "heading": false
+        },
+        {
+          "term": "formula",
+          "heading": true
+        },
+        {
+          "term": "open domain",
+          "heading": false
+        },
+        {
+          "term": "ordered pair",
+          "heading": false
+        },
+        {
+          "term": "statement proven",
+          "heading": false
+        }
+      ],
+      "extract": "Here we propose a formula for the star-product for arbitrary Poisson structure α in an open domain of the standard coordinate space Rd. Terms of our formula modulo O(¯h3) are the same as in the previous section, plus a gauge-trivial term of order O(¯h2), symmetric in f and g. Terms of the formula are certain universal polydiﬀerential operators applied to coeﬃcients of the bi-vector ﬁeld α and to functions f, g. All",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-3-deformation-theory-via-diﬀerential-graded-lie",
+      "number": "3",
+      "title": "Deformation theory via diﬀerential graded Lie algebras",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 394,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "category superk",
+          "heading": false
+        },
+        {
+          "term": "graded",
+          "heading": true
+        },
+        {
+          "term": "super vector",
+          "heading": false
+        },
+        {
+          "term": "gradedk",
+          "heading": false
+        },
+        {
+          "term": "lie algebras",
+          "heading": true
+        },
+        {
+          "term": "tensor category",
+          "heading": false
+        },
+        {
+          "term": "graded manifolds",
+          "heading": false
+        },
+        {
+          "term": "graded space",
+          "heading": false
+        }
+      ],
+      "extract": "3.1. Tensor categories Super and Graded Here we make a comment about the terminology. This comment looks a bit pedantic, but it could help in the struggle with signs in formulas. The main idea of algebraic geometry is to replace spaces by commutative associative rings (at least locally). One can further generalize this considering commutative associative algebras in general tensor categories (see [De]). In this way",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-32-maurer-cartan-equation-in-diﬀerential-graded",
+      "number": "3.2",
+      "title": "Maurer-Cartan equation in diﬀerential graded Lie algebras",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 410,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "functor defg",
+          "heading": false
+        },
+        {
+          "term": "nilpotent lie",
+          "heading": false
+        },
+        {
+          "term": "lie superalgebra",
+          "heading": false
+        },
+        {
+          "term": "associative algebras",
+          "heading": false
+        },
+        {
+          "term": "commutative associative",
+          "heading": false
+        },
+        {
+          "term": "maurer-cartan",
+          "heading": true
+        },
+        {
+          "term": "diﬀerential",
+          "heading": true
+        },
+        {
+          "term": "ﬁnite-dimensional",
+          "heading": false
+        }
+      ],
+      "extract": "This part is essentially standard (see [GM], [HS1], [SS], ...). Let g be a diﬀerential graded Lie algebra over ﬁeld k of characteristic zero. Below we recall the list of structures and axioms: g = M k∈Z gk[−k], [ , ] : gk ⊗gl−→gk+l, d : gk−→gk+1, d(d(γ)) = 0, d[γ1, γ2] = [dγ1, γ2] + (−1)γ1[γ1, dγ2], [γ2, γ1] = −(−1)γ1·γ2[γ1, γ2], [γ1, [γ2, γ3]] + (−1)γ3·(γ1+γ2)[γ3, [γ1, γ2]] + (−1)γ1·(γ2+γ3)[γ2, [γ3, γ1]] = 0 . In",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-33-remark",
+      "number": "3.3",
+      "title": "Remark",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 165,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diﬀerential graded",
+          "heading": false
+        },
+        {
+          "term": "graded lie",
+          "heading": false
+        },
+        {
+          "term": "defg",
+          "heading": false
+        },
+        {
+          "term": "lie algebras",
+          "heading": false
+        },
+        {
+          "term": "equivalence classes",
+          "heading": false
+        }
+      ],
+      "extract": "Several authors, following a suggestion of P. Deligne, stressed that the set Defg(m) should be considered as the set of equivalence classes of a natural groupoid. Almost always in deformation theory, diﬀerential graded Lie algebras are supported in non-negative degrees, g<0 = 0. Our principal example in the present paper, the shifted Hochschild complex (see the next subsection), has a non-trivial component in degree",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-34-examples",
+      "number": "3.4",
+      "title": "Examples",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 14,
+      "summary": null,
+      "keywords": [],
+      "extract": "There are many standard examples of diﬀerential graded Lie algebras and related moduli problems.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-015-341-tangent-complex",
+      "number": "3.4.1",
+      "title": "Tangent complex",
+      "level": 3,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 116,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lie bracket",
+          "heading": false
+        },
+        {
+          "term": "deformation functor",
+          "heading": false
+        },
+        {
+          "term": "spec",
+          "heading": false
+        }
+      ],
+      "extract": "Let X be a complex manifold. Deﬁne g over C as g = M k∈Z gk[−k]; gk = Γ(X, Ω0,k X ⊗T 1,0 X ) for k ≥0, g<0 = 0 8 with the differential equal to 0, and the Lie bracket coming from the cup-product on 0-forms and the usual Lie bracket on holomorphic vector fields. The deformation functor related with g is the usual deformation functor for complex structures on X. The set Defg(m) can be naturally identified with the set",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-342-hochschild-complex",
+      "number": "3.4.2",
+      "title": "Hochschild complex",
+      "level": 3,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 381,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hochschild complex",
+          "heading": true
+        },
+        {
+          "term": "graded vector",
+          "heading": false
+        },
+        {
+          "term": "associative algebra",
+          "heading": false
+        },
+        {
+          "term": "deformation functor",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        },
+        {
+          "term": "bracket",
+          "heading": false
+        },
+        {
+          "term": "differential",
+          "heading": false
+        }
+      ],
+      "extract": "Let A be an associative algebra over field k of characteristic zero. The graded space of Hochschild cochains of A with coefficients in A considered as a bimodule over itself is c*(A, A) = GC*(A, A)[-k], C*(A, A) = Homyccun(A®*, A) . k>0 We define graded vector space g over k by formula g := C*(A, A)[1]. Thus, we have g= Ba g*(-k]; g® = Hom(A®*+) A) for k>-1, gS-D=0. keZ The differential in g is shifted by 1 the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-4-homotopy-lie-algebras-and-quasi-isomorphisms",
+      "number": "4",
+      "title": "Homotopy Lie algebras and quasi-isomorphisms",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 41,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homotopy",
+          "heading": true
+        },
+        {
+          "term": "lie",
+          "heading": true
+        },
+        {
+          "term": "algebras",
+          "heading": true
+        }
+      ],
+      "extract": "In this section we introduce a language convenient for the homotopy theory of diﬀerential graded Lie algebras and for the deformation theory. The ground ﬁeld k for linear algebra in our discussion is an arbitrary ﬁeld of characteristic zero, unless speciﬁed.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-018-41-formal-manifolds",
+      "number": "4.1",
+      "title": "Formal manifolds",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 434,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "formal",
+          "heading": true
+        },
+        {
+          "term": "formal pointed",
+          "heading": false
+        },
+        {
+          "term": "cofree",
+          "heading": false
+        },
+        {
+          "term": "taylor coeﬃcients",
+          "heading": false
+        },
+        {
+          "term": "base point",
+          "heading": false
+        },
+        {
+          "term": "manifolds",
+          "heading": true
+        },
+        {
+          "term": "symn",
+          "heading": false
+        },
+        {
+          "term": "coalgebra",
+          "heading": false
+        }
+      ],
+      "extract": "Let V be a vector space. We denote by C(V ) the cofree cocommutative coassociative coalgebra without counit cogenerated by V : C(V ) = M n≥1 \u0000⊗nV \u0001Σn ⊂ M n≥1 \u0000⊗nV \u0001 . Intuitively, we think about C(V ) as about an object corresponding to a formal manifold, possibly inﬁnite-dimensional, with base point: (Vformal, base point ) := \u0000Formal neighborhood of zero in V, 0 \u0001 . The reason for this is that if V is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-42-pre-l-morphisms",
+      "number": "4.2",
+      "title": "Pre-L∞-morphisms",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 161,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pre-l",
+          "heading": true
+        },
+        {
+          "term": "graded vector",
+          "heading": false
+        },
+        {
+          "term": "vector spaces",
+          "heading": false
+        }
+      ],
+      "extract": "Let g1 and g2 be two graded vector spaces. Deﬁnition. A pre-L∞-morphism F from g1 to g2 is a map of formal pointed graded manifolds F : \u0000(g1[1])formal, 0 \u0001 −→ \u0000(g2[1])formal, 0 \u0001 . Map F is deﬁned by its Taylor coeﬃcients which are linear maps ∂nF of graded vector spaces: ∂1F : g1−→g2 ∂2F : ∧2(g1)−→g2[−1] ∂3F : ∧3(g1)−→g2[−2] . . . Here we use the natural isomorphism Symn(g1[1]) ≃ \u0000∧n(g1) \u0001 [n]. In plain terms, we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-43-l-algebras-and-l-morphisms",
+      "number": "4.3",
+      "title": "L∞-algebras and L∞-morphisms",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "13",
+      "words": 759,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diﬀerential graded",
+          "heading": false
+        },
+        {
+          "term": "formal graded",
+          "heading": false
+        },
+        {
+          "term": "graded lie",
+          "heading": false
+        },
+        {
+          "term": "pre-l morphism",
+          "heading": false
+        },
+        {
+          "term": "graded vector",
+          "heading": false
+        },
+        {
+          "term": "graded manifold",
+          "heading": false
+        },
+        {
+          "term": "maurer-cartan equation",
+          "heading": false
+        },
+        {
+          "term": "graded space",
+          "heading": false
+        }
+      ],
+      "extract": "Suppose that we have an odd vector ﬁeld Q of degree +1 on formal graded manifold (g[1]formal, 0) such that the Taylor series for coeﬃcients of Q has terms of degree 1 and 2 only. The ﬁrst Taylor coeﬃcient Q1 gives a linear map g−→g of degree +1 (or, better, a map g−→g[1]). The second coeﬃcient Q2 : ∧2g−→g gives a skew-symmetric bilinear operation of degree 0 on g. It is easy to see that if [Q, Q] = 0 then g is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-44-quasi-isomorphisms",
+      "number": "4.4",
+      "title": "Quasi-isomorphisms",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 236,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diﬀerential graded",
+          "heading": false
+        },
+        {
+          "term": "deformation functors",
+          "heading": false
+        },
+        {
+          "term": "quasi-isomorphic",
+          "heading": false
+        },
+        {
+          "term": "morphism",
+          "heading": false
+        },
+        {
+          "term": "quasi-isomorphism",
+          "heading": false
+        }
+      ],
+      "extract": "L∞-morphisms generalize usual morphisms of diﬀerential graded Lie algebras. In particular, the ﬁrst Taylor coeﬃcient of an L∞-morphism from g1 to g2 is a morphism of complexes (g1, Q(g1) 1 )−→(g2, Q(g2) 1 ) where Q(gi) 1 are the ﬁrst Taylor coeﬃcients of vector ﬁelds Q(gi) (which we denoted before simply by Q). Deﬁnition. A quasi-isomorphism is an L∞-morphism F such that the ﬁrst component F1 induces isomor- phism",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-45-a-sketch-of-the-proof",
+      "number": "4.5",
+      "title": "A sketch of the proof",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 13,
+      "labelStart": "13",
+      "labelEnd": "13",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-023-451-homotopy-classiﬁcation-of-l-algebras",
+      "number": "4.5.1",
+      "title": "Homotopy classiﬁcation of L∞-algebras",
+      "level": 3,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 450,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "linear contractible",
+          "heading": false
+        },
+        {
+          "term": "formal graded",
+          "heading": false
+        },
+        {
+          "term": "graded pointed",
+          "heading": false
+        },
+        {
+          "term": "minimal algebras",
+          "heading": false
+        },
+        {
+          "term": "taylor expansion",
+          "heading": false
+        },
+        {
+          "term": "direct sum",
+          "heading": false
+        },
+        {
+          "term": "germ",
+          "heading": false
+        },
+        {
+          "term": "trivial cohomology",
+          "heading": false
+        }
+      ],
+      "extract": "Any complex of vector spaces can be decomposed into the direct sum of a complex with trivial diﬀerential and a contractible complex. There is an analogous decomposition in the non-linear case. Deﬁnition. An L∞-algebra (g, Q) is called minimal if the ﬁrst Taylor coeﬃcient Q1 of the coderivation Q vanishes. The property of being formal is invariant under L∞-isomorphisms. Thus, one can speak about minimal formal graded",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-452-deformation-functors-at-ﬁxed-points-of-q",
+      "number": "4.5.2",
+      "title": "Deformation functors at ﬁxed points of Q",
+      "level": 3,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 508,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deformation",
+          "heading": true
+        },
+        {
+          "term": "defg",
+          "heading": false
+        },
+        {
+          "term": "formal graded",
+          "heading": false
+        },
+        {
+          "term": "deformation functor",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential graded",
+          "heading": false
+        },
+        {
+          "term": "maurer-cartan equation",
+          "heading": false
+        },
+        {
+          "term": "maps spec",
+          "heading": false
+        },
+        {
+          "term": "functor deﬁned",
+          "heading": false
+        }
+      ],
+      "extract": "The deformation functor can be deﬁned in terms of a formal graded Q-manifold M with base point (denoted by 0). The set of solutions of the Maurer-Cartan equation with coeﬃcients in a ﬁnite-dimensional nilpotent non-unital algebra m is deﬁned as the set of m-points of the formal scheme of zeroes of Q: Maps \u0000\u0000Spec(m ⊕k · 1), base point \u0001 , \u0000Zeroes(Q), 0 \u0001\u0001 ⊂Maps \u0000\u0000Spec(m ⊕k · 1), base point \u0001 , \u0000M, 0 \u0001\u0001 . In terms of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-46-formality",
+      "number": "4.6",
+      "title": "Formality",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 15,
+      "labelStart": "15",
+      "labelEnd": "15",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-026-461-two-diﬀerential-graded-lie-algebras",
+      "number": "4.6.1",
+      "title": "Two diﬀerential graded Lie algebras",
+      "level": 3,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 351,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diﬀerential graded",
+          "heading": true
+        },
+        {
+          "term": "graded lie",
+          "heading": true
+        },
+        {
+          "term": "polyvector ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        },
+        {
+          "term": "local coordinates",
+          "heading": false
+        }
+      ],
+      "extract": "Let X be a smooth manifold. We associate with it two diﬀerential graded Lie algebras over R. The ﬁrst diﬀerential graded Lie algebra Dpoly(X) is a subalgebra of the shifted Hochschild complex of the algebra A of functions on X (see 3.4.2). The space Dn poly(X), n ≥−1 consists of local Hochschild cochains A⊗(n+1)−→A given by polydiﬀerential operators. In local coordinates (xi) any element of Dn poly can be written as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-4611-it-is-a-quasi-isomorphism",
+      "number": "4.6.1.1",
+      "title": "It is a quasi-isomorphism",
+      "level": 4,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 685,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cofree cocommutative",
+          "heading": false
+        },
+        {
+          "term": "coassociative coalgebra",
+          "heading": false
+        },
+        {
+          "term": "counit cogenerated",
+          "heading": false
+        },
+        {
+          "term": "quasi-isomorphism",
+          "heading": true
+        },
+        {
+          "term": "polydiﬀerential operators",
+          "heading": false
+        },
+        {
+          "term": "isomorphism ﬁberwise",
+          "heading": false
+        },
+        {
+          "term": "completed complex",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential",
+          "heading": false
+        }
+      ],
+      "extract": "Theorem. U(0) 1 is a quasi-isomorphism of complexes. This is a version of Kostant-Hochschild-Rosenberg theorem which says that for a smooth aﬃne algebraic variety Y over ﬁeld k of characteristic zero, the Hochschild cohomology of algebra O(Y ) coincides with the space ⊕k≥0Γ(X, ∧kTY )[−k] of algebraic polyvector ﬁelds on Y . Analogous statement for C∞manifolds seems to be well known, although we were not able to ﬁnd",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-462-main-theorem",
+      "number": "4.6.2",
+      "title": "Main theorem",
+      "level": 3,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 305,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diﬀerential graded",
+          "heading": false
+        },
+        {
+          "term": "star-products",
+          "heading": false
+        },
+        {
+          "term": "quasi-isomorphic",
+          "heading": false
+        },
+        {
+          "term": "theorem",
+          "heading": true
+        },
+        {
+          "term": "poisson",
+          "heading": false
+        },
+        {
+          "term": "bracket",
+          "heading": false
+        },
+        {
+          "term": "canonical",
+          "heading": false
+        }
+      ],
+      "extract": "4.6.2. Main theorem Unfortunately, the map U(0) 1 does not commute with Lie brackets, the Schouten-Nijenhuis bracket does not go to the Gerstenhaber bracket. We claim that this defect can be cured: Theorem. There exists an L∞-morphism U from Tpoly(X) to Dpoly(X) such that U1 = U(0) 1 . In other words, this theorem says that Tpoly(X) and Dpoly(X) are quasi-isomorphic diﬀerential graded Lie algebras. In analogous",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-463-non-uniqueness",
+      "number": "4.6.3",
+      "title": "Non-uniqueness",
+      "level": 3,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 47,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quasi-isomorphisms",
+          "heading": false
+        },
+        {
+          "term": "homotopic",
+          "heading": false
+        },
+        {
+          "term": "diﬀer",
+          "heading": false
+        }
+      ],
+      "extract": "There are other quasi-isomorphisms between Tpoly(X) and Dpoly(X) which diﬀer essentially from the quasi-isomorphism U, i.e. not even homotopic in a natural sense to U. By homotopy here we mean the following. L∞-morphisms from one L∞-algebra to another can be identiﬁed with ﬁxed points of Q on",
+      "extractCut": false
+    },
+    {
+      "id": "sec-030-51-deﬁnitions",
+      "number": "5.1",
+      "title": "Deﬁnitions",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 285,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "poisson structures",
+          "heading": false
+        },
+        {
+          "term": "αij",
+          "heading": false
+        },
+        {
+          "term": "evolution",
+          "heading": false
+        },
+        {
+          "term": "exotic",
+          "heading": false
+        },
+        {
+          "term": "real-analytic",
+          "heading": false
+        },
+        {
+          "term": "inﬁnitesimal",
+          "heading": false
+        },
+        {
+          "term": "quasi-isomorphisms",
+          "heading": false
+        }
+      ],
+      "extract": "deﬁne an equivalence relation (homotopy equivalence) on the set of L-morphisms. Firstly, the multiplicative group R× acts by automorphisms of Tpoly(X), multiplying elements γ ∈ Tpoly(X)k by constk. Composing these automorphisms with U one get a family of quasi-isomorphisms. Secondly, in [Ko2] we constructed an exotic inﬁnitesimal L∞-automorphism of Tpoly(X) for the case X = Rd which probably extends to general",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-5-conﬁguration-spaces-and-their-compactiﬁcations",
+      "number": "5",
+      "title": "Conﬁguration spaces and their compactiﬁcations",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 535,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "confn",
+          "heading": false
+        },
+        {
+          "term": "compactiﬁcations",
+          "heading": true
+        },
+        {
+          "term": "conﬁguration",
+          "heading": true
+        },
+        {
+          "term": "corners",
+          "heading": false
+        },
+        {
+          "term": "upper half-plane",
+          "heading": false
+        },
+        {
+          "term": "conﬁguration space",
+          "heading": false
+        },
+        {
+          "term": "arg",
+          "heading": false
+        },
+        {
+          "term": "real line",
+          "heading": false
+        }
+      ],
+      "extract": "5.1. Deﬁnitions Let n, m be non-negative integers satisfying the inequality 2n + m ≥2. We denote by Confn,m the product of the conﬁguration space of the upper half-plane with the conﬁguration space of the real line: Confn,m = {(p1, . . . , pn; q1, . . . , qm)| pi ∈H, qj ∈R, pi1̸ = pi2 for i1̸ = i2, qj1̸ = qj2 for j1̸ = j2} . Confn,m is a smooth manifold of dimension 2n + m. The group G(1) of holomorphic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-52-looking-through-a-magnifying-glass",
+      "number": "5.2",
+      "title": "Looking through a magnifying glass",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 22,
+      "labelStart": "19",
+      "labelEnd": "22",
+      "words": 1112,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stable conﬁguration",
+          "heading": false
+        },
+        {
+          "term": "conﬁguration come",
+          "heading": false
+        },
+        {
+          "term": "leaves numbered",
+          "heading": false
+        },
+        {
+          "term": "standard position",
+          "heading": false
+        },
+        {
+          "term": "except leaves",
+          "heading": false
+        },
+        {
+          "term": "horizontal line",
+          "heading": false
+        },
+        {
+          "term": "section scont",
+          "heading": false
+        },
+        {
+          "term": "magnifying",
+          "heading": true
+        }
+      ],
+      "extract": "The deﬁnition of the compactiﬁcation given in the previous subsection is not descriptive. We are going to explain an intuitive idea underlying a direct construction of the compactiﬁcation Cn,m as a manifold with corners. For more formal treatment of compactiﬁcations of conﬁguration spaces we refer the reader to [FM] (for the case of smooth algebraic varieties). Let us try to look through a magnifying glass, or",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-521-boundary-strata",
+      "number": "5.2.1",
+      "title": "Boundary strata",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 119,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "strata",
+          "heading": true
+        },
+        {
+          "term": "move close",
+          "heading": false
+        },
+        {
+          "term": "stratum",
+          "heading": false
+        }
+      ],
+      "extract": "We give here the list of all strata in CA,B of codimension 1: S1) points pi ∈H for i ∈S ⊆A where #S ≥2, move close to each other but far from R, S2) points pi ∈H for i ∈S ⊆A and points qj ∈R for j ∈S′ ⊆B where 2#S + #S′ ≥2, all move close to each other and to R, with at least one point left outside S and S′, i.e. #S + #S′ ≤#A + #B −1. The stratum of type S1 is ∂SCA,B ≃CS × C(A\\S)⊔{pt},B where {pt} is a one-element",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-6-universal-formula",
+      "number": "6",
+      "title": "Universal formula",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 31,
+      "summary": null,
+      "keywords": [],
+      "extract": "In this section we propose a formula for an L∞-morphism Tpoly(Rd)−→Dpoly(Rd) generalizing a formula for the star-product in section 2. In order to write it we need to make some preparations.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-035-61-admissible-graphs",
+      "number": "6.1",
+      "title": "Admissible graphs",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 189,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "admissible",
+          "heading": true
+        },
+        {
+          "term": "ﬁrst type",
+          "heading": false
+        },
+        {
+          "term": "graphs",
+          "heading": true
+        }
+      ],
+      "extract": "Deﬁnition. Admissible graph Γ is an oriented graph with labels such that 1) the set of vertices VΓ is {1, . . ., n} ⊔{1, . . . , m} where n, m ∈Z≥0, 2n + 2 −m ≥0; vertices from the set {1, . . . , n} are called vertices of the ﬁrst type, vertices from {1, . . . , m} are called vertices of the second type, 2) every edge (v1, v2) ∈EΓ starts at a vertex of ﬁrst type, v1 ∈{1, . . ., n}, 3) there are no loops, i.e. no",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-62-diﬀerential-forms-on-conﬁguration-spaces",
+      "number": "6.2",
+      "title": "Diﬀerential forms on conﬁguration spaces",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 462,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "angle map",
+          "heading": false
+        },
+        {
+          "term": "dφe",
+          "heading": false
+        },
+        {
+          "term": "eye",
+          "heading": false
+        },
+        {
+          "term": "confn",
+          "heading": false
+        },
+        {
+          "term": "enumeration",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential",
+          "heading": true
+        },
+        {
+          "term": "orientation",
+          "heading": false
+        },
+        {
+          "term": "edges",
+          "heading": false
+        }
+      ],
+      "extract": "The space C2,0 (the Eye) is homotopy equivalent to the standard circle S1 ≃R/2πZ. Moreover, one of its boundary components, the space C2 = C2, is naturally S1. The other component of the boundary is the union of two closed intervals (copies of C1,1) with identiﬁed end points. Deﬁnition. An angle map is a smooth map φ : C2,0−→R/2πZ ≃S1 such that the restriction of φ to C2 ≃S1 is the angle measured in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-63-pre-l-morphisms-associated-with-graphs",
+      "number": "6.3",
+      "title": "Pre-L∞-morphisms associated with graphs",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 383,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polyvector ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "pre-l",
+          "heading": true
+        },
+        {
+          "term": "dxi",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst type",
+          "heading": false
+        },
+        {
+          "term": "graph",
+          "heading": false
+        },
+        {
+          "term": "vertex",
+          "heading": false
+        }
+      ],
+      "extract": "For any admissible graph Γ with n vertices of the ﬁrst type, m vertices of the second type, and 2n + m −2 + l edges where l ∈Z, we deﬁne a linear map UΓ : ⊗nTpoly(Rd)−→Dpoly(Rd)[1 + l −n]. This map has only one non-zero graded component (UΓ)(k1,...,kn) where ki = #Star(i) −1, i = 1, . . . , n. If l = 0 then from UΓ after anti-symmetrization we obtain a pre-L∞-morphism. Let γ1, . . . , γn be polyvector ﬁelds on Rd of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-64-main-theorem-for-x-rd-and-the-proof",
+      "number": "6.4",
+      "title": "Main Theorem for X = Rd, and the proof",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 805,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dφe",
+          "heading": false
+        },
+        {
+          "term": "pre-l morphism",
+          "heading": false
+        },
+        {
+          "term": "γσk",
+          "heading": false
+        },
+        {
+          "term": "boundary strata",
+          "heading": false
+        },
+        {
+          "term": "admissible graphs",
+          "heading": false
+        },
+        {
+          "term": "γσn",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst type",
+          "heading": false
+        },
+        {
+          "term": "vertices",
+          "heading": false
+        }
+      ],
+      "extract": "We deﬁne an L∞-morphism U : Tpoly(Rd)−→Dpoly(Rd) by the formula for its n-th derivative Un, n ≥1 considered as a skew-symmetric polylinear map (see 4.2) from ⊗nTpoly(Rd) to Dpoly(Rd)[1 −n]: Un = X m≥0 X Γ∈Gn,m WΓ × UΓ . Here Gn,m denotes the set of all admissible graphs with n vertices of the ﬁrst type, m vertices in the second group and 2n + m −2 edges, where n ≥1, m ≥0 (and automatically 2n + m −2 ≥0). Theorem. U",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-641-case-s1",
+      "number": "6.4.1",
+      "title": "Case S1",
+      "level": 3,
+      "pageStart": 25,
+      "pageEnd": 25,
+      "labelStart": "25",
+      "labelEnd": "25",
+      "words": 79,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "scn",
+          "heading": false
+        },
+        {
+          "term": "stratum",
+          "heading": false
+        },
+        {
+          "term": "integral",
+          "heading": false
+        }
+      ],
+      "extract": "Points pi ∈H for i from subset S ⊂{1, . . . , n} where #S ≥2, move close to each other. The integral over the stratum ∂SCn,m is equal to the product of an integral over Cn1,m with an integral over Cn2 where n2 := #S, n1 := n −n2 + 1. The integral vanishes by dimensional reasons unless the number of edges of Γ connecting vertices from S is equal to 2n2 −3. There are several possibilities:",
+      "extractCut": false
+    },
+    {
+      "id": "sec-040-6411-first-subcase-of-s1-n2-2",
+      "number": "6.4.1.1",
+      "title": "First subcase of S1: n2 = 2",
+      "level": 4,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "25",
+      "labelEnd": "26",
+      "words": 104,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "subcase",
+          "heading": true
+        },
+        {
+          "term": "polyvector",
+          "heading": false
+        },
+        {
+          "term": "stratum",
+          "heading": false
+        }
+      ],
+      "extract": "In this subcase two vertices from S1 are connected exactly by one edge, which we denote by e. The integral over C2 here gives number ±1 (after division by 2π coming from the of the formula for weights WΓ). The total integral over the boundary stratum is equal to the integral of a new graph Γ1 obtained from Γ by the contraction of edge e. It is easy to see (up to a sign) that this corresponds to the ﬁrst line in our",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-6412-second-subcase-of-s1-n2-3",
+      "number": "6.4.1.2",
+      "title": "Second subcase of S1: n2 ≥3",
+      "level": 4,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "26",
+      "labelEnd": "26",
+      "words": 47,
+      "summary": null,
+      "keywords": [],
+      "extract": "This is the most non-trivial case. The integral corresponding to the corresponding boundary stratum vanishes because the integral of any product of 2n2 −3 angle forms over Cn2 where n2 ≥3 vanishes, as is proven later in 6.6. . .. . . . . . . .",
+      "extractCut": false
+    },
+    {
+      "id": "sec-042-642-case-s2",
+      "number": "6.4.2",
+      "title": "Case S2",
+      "level": 3,
+      "pageStart": 26,
+      "pageEnd": 26,
+      "labelStart": "26",
+      "labelEnd": "26",
+      "words": 104,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "stratum",
+          "heading": false
+        },
+        {
+          "term": "decomposes",
+          "heading": false
+        },
+        {
+          "term": "connecting",
+          "heading": false
+        }
+      ],
+      "extract": "Points pi for i ∈S1 ⊂{1, . . . , n} and points qj for j ∈S2 ⊂{1, . . . , m} move close to each other and to the horizontal line R. The condition is that 2n2+m2−2 ≥0 and n2+m2 ≤n+m−1 where n2 := #S1, m2 := #S2. The corresponding stratum is isomorphic to Cn1,m1 × Cn2,m2 where n1 := n −n2, m1 = m −m2 + 1. The integral of this stratum decomposes into the product of two integrals. It vanishes if the number of edges of Γ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-6421-first-subcase-of-s2-no-bad-edges",
+      "number": "6.4.2.1",
+      "title": "First subcase of S2: no bad edges",
+      "level": 4,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "26",
+      "labelEnd": "27",
+      "words": 119,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "subcase",
+          "heading": true
+        },
+        {
+          "term": "polydiﬀerential",
+          "heading": false
+        },
+        {
+          "term": "stratum",
+          "heading": false
+        }
+      ],
+      "extract": "In this subcase we assume that there is no edge (i, j) in Γ such that i ∈S1, j ∈{1, . . ., n} \\ S1. The integral over the boundary stratum is equal to the product WΓ1 ×WΓ2 where Γ2 is the restriction of Γ to the subset S1 ⊔S2 ⊂{1, . . . , n} ⊔{1, . . . , m} = VΓ, and Γ1 is obtained by the contraction of all vertices in this set to a new vertex of the second type. Our condition guarantees that Γ1 is an admissible",
+      "extractCut": true
+    },
+    {
+      "id": "sec-044-6422-second-subcase-of-s2-there-is-a-bad-edge",
+      "number": "6.4.2.2",
+      "title": "Second subcase of S2: there is a bad edge",
+      "level": 4,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": "27",
+      "labelEnd": "27",
+      "words": 136,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bad",
+          "heading": true
+        },
+        {
+          "term": "edge",
+          "heading": true
+        },
+        {
+          "term": "exhausted",
+          "heading": false
+        }
+      ],
+      "extract": "Now we assume that there is an edge (i, j) in Γ such that i ∈S1, j ∈{1, . . ., n} \\ S1. In this case the integral is zero because of the condition dφ(x, y) = 0 if x stays on the line R. . . . . . . . .. . edge bad The reader can wonder about what happens if after the collapsing the graph will have multiple edges. Such terms do not appear in (F). Nevertheless, we ingore them because in this case the diﬀerential form",
+      "extractCut": true
+    },
+    {
+      "id": "sec-045-643-we-ﬁnish-the-proof-of-the-theorem-from-64",
+      "number": "6.4.3",
+      "title": "We ﬁnish the proof of the theorem from 6.4",
+      "level": 3,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": "27",
+      "labelEnd": "28",
+      "words": 123,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polyvector",
+          "heading": false
+        },
+        {
+          "term": "ferential",
+          "heading": false
+        },
+        {
+          "term": "graph",
+          "heading": false
+        }
+      ],
+      "extract": "In order to check that U it is a quasi-isomorphism, we should show that its component U1 coincides with U(0) 1 introduced in 4.6.1. It follows from deﬁnitions that every admissible graph with n = 1 vertex of ﬁrst type and m ≥0 vertices of the second type, and with m edges, is the following tree: . . q q q p . . . 3 1 q m 1 2. . . 27 The integral corresponding to this graph is (2π)m/m!. The map eUΓ from polyvector",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-644-comparison-with-the-formula-from-section-2",
+      "number": "6.4.4",
+      "title": "Comparison with the formula from section 2",
+      "level": 3,
+      "pageStart": 28,
+      "pageEnd": 28,
+      "labelStart": "28",
+      "labelEnd": "28",
+      "words": 64,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bidiﬀerential",
+          "heading": false
+        },
+        {
+          "term": "comparison",
+          "heading": true
+        },
+        {
+          "term": "formula",
+          "heading": true
+        }
+      ],
+      "extract": "6.4.4. Comparison with the formula from section 2 The weight wΓ deﬁned in section 2 diﬀer from WΓ deﬁned in 6.2 by factor 2n/n!. On the other hand, the bidiﬀerential operator BΓ,α(f, g) is 2−n times UΓ(α ∧. . . ∧α)(f ⊗g). The inverse factorial 1/n! appears in the Taylor series (see the end of 4.3). Thus, we obtain the formula from section 2.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-047-65-grading-orientations-factorials-signs",
+      "number": "6.5",
+      "title": "Grading, orientations, factorials, signs",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 28,
+      "labelStart": "28",
+      "labelEnd": "28",
+      "words": 360,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "factorials",
+          "heading": true
+        },
+        {
+          "term": "integration domain",
+          "heading": false
+        },
+        {
+          "term": "star",
+          "heading": false
+        },
+        {
+          "term": "enumeration",
+          "heading": false
+        },
+        {
+          "term": "signs",
+          "heading": true
+        },
+        {
+          "term": "hom",
+          "heading": false
+        },
+        {
+          "term": "shifts",
+          "heading": false
+        },
+        {
+          "term": "orientation",
+          "heading": false
+        }
+      ],
+      "extract": "Homogeneous components of U are maps of graded spaces Symn(( M k≥0 Γ(Rd, ∧kT )[−k])[2])−→(Hom(A[1]⊗m, A[1]))[1] where Hom denotes the internal Hom in the tensor category Gradedk. We denote the expression from above by (E). First of all, in the expression (E) each polyvector ﬁeld γi ∈Γ(Rd, ∧kiT ) appears with the shift 2 −ki. In our formula for U the same γi gives ki edges of the graph, and thus ki 1-forms which we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-66-vanishing-of-integrals",
+      "number": "6.6",
+      "title": "Vanishing of integrals",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": "28",
+      "labelEnd": "29",
+      "words": 315,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "confn consisting",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential forms",
+          "heading": false
+        },
+        {
+          "term": "closed forms",
+          "heading": false
+        },
+        {
+          "term": "dφi",
+          "heading": false
+        },
+        {
+          "term": "conﬁgurations",
+          "heading": false
+        },
+        {
+          "term": "pullback",
+          "heading": false
+        }
+      ],
+      "extract": "In this subsection we consider the space Cn of G(2)-equivalence classes of conﬁgurations of points on the Euclidean plane. Every two indices i, j, i̸ = j, 1 ≤i, j ≤n give a forgetting map Cn−→C2 ≃S1. We denote by dφi,j the closed 1-form on Cn which is the pullback of the standard 1-form d(angle) on the circle. We use the same notation for the pullback of this form to Confn. 28 Lemma. Let n ≥3 be an integer. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-049-661-a-trick-using-logarithms",
+      "number": "6.6.1",
+      "title": "A trick using logarithms",
+      "level": 3,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": "29",
+      "labelEnd": "30",
+      "words": 495,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "anti-holomorphic forms",
+          "heading": false
+        },
+        {
+          "term": "trick",
+          "heading": true
+        },
+        {
+          "term": "darg",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential form",
+          "heading": false
+        },
+        {
+          "term": "normal crossings",
+          "heading": false
+        },
+        {
+          "term": "log",
+          "heading": false
+        },
+        {
+          "term": "generalized functions",
+          "heading": false
+        },
+        {
+          "term": "logarithms",
+          "heading": true
+        }
+      ],
+      "extract": "6.6.1. A trick using logarithms Theorem. Let X be a complex algebraic variety of dimension N ≥1, and Z1, . . . , Z2N be rational functions on X, not equal identically to zero. Let U be any Zariski open subset of X such that functions Zα are deﬁned and non-vanishing on U, and U consists of smooth points. Then the integral Z U(C) ∧2N α=1d(Arg Zα) is absolutely convergent, and equal to zero. This result seems to be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-050-662-remark",
+      "number": "6.6.2",
+      "title": "Remark",
+      "level": 3,
+      "pageStart": 30,
+      "pageEnd": 30,
+      "labelStart": "30",
+      "labelEnd": "30",
+      "words": 79,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vanishing",
+          "heading": false
+        },
+        {
+          "term": "involutions",
+          "heading": false
+        },
+        {
+          "term": "higher-dimensional",
+          "heading": false
+        }
+      ],
+      "extract": "6.6.2. Remark The vanishing of the integral in the lemma from 6.6 has higher-dimensional analogue which is crucial in the perturbative Chern-Simons theory in the dimension 3, and its generalizations to dimensions ≥4 (see [Ko1]). However, the vanishing of integrals in dimensions ≥3 follows from a much simpler fact which is the existence of a geometric involution making the integral equal to minus itself. In the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-051-7-formality-conjecture-for-general-manifolds",
+      "number": "7",
+      "title": "Formality conjecture for general manifolds",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": "30",
+      "labelEnd": "31",
+      "words": 381,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "formal graded",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential graded",
+          "heading": false
+        },
+        {
+          "term": "formality",
+          "heading": true
+        },
+        {
+          "term": "graded lie",
+          "heading": false
+        },
+        {
+          "term": "lie algebras",
+          "heading": false
+        },
+        {
+          "term": "q-manifolds",
+          "heading": false
+        },
+        {
+          "term": "vector ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "base points",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we establish the formality conjecture for general manifolds, not only for open domains in Rd. It turns out that that essentially all work is already done. The only new analytic result is vanishing of certain integrals over conﬁguration spaces, analogous to the lemma from 6.6. One can treat Rd formal, the formal completion of vector space Rd at zero, in many respects as usual manifold. In particular,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-052-71-formal-geometry-in-the-sense-of-i-gelfand-and",
+      "number": "7.1",
+      "title": "Formal geometry (in the sense of I. Gelfand and D. Kazhdan)",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 31,
+      "labelStart": "31",
+      "labelEnd": "31",
+      "words": 287,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "manifold xcoor",
+          "heading": false
+        },
+        {
+          "term": "xaff",
+          "heading": false
+        },
+        {
+          "term": "formal",
+          "heading": true
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        },
+        {
+          "term": "natural projection",
+          "heading": false
+        },
+        {
+          "term": "projection map",
+          "heading": false
+        },
+        {
+          "term": "principal",
+          "heading": false
+        }
+      ],
+      "extract": "Let X be a smooth manifold of dimension d. We associate with X two inﬁnite-dimensional manifolds, Xcoor and Xaff. The manifold Xcoor consists of pairs (x, f) where x is a point of X and f is an inﬁnite germ of a coordinate system on X at x, f : (Rd formal, 0)֒ →(X, x) . We consider Xcoor as a projective limit of ﬁnite-dimensional manifolds (spaces of ﬁnite germs of coordinate systems). There is an action on Xcoor of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-053-72-flat-connections-and-q-equivariant-maps",
+      "number": "7.2",
+      "title": "Flat connections and Q-equivariant maps",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 32,
+      "labelStart": "31",
+      "labelEnd": "32",
+      "words": 378,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-equivariant",
+          "heading": true
+        },
+        {
+          "term": "q-equivariant bundle",
+          "heading": false
+        },
+        {
+          "term": "ﬂat families",
+          "heading": false
+        },
+        {
+          "term": "ﬂat connection",
+          "heading": false
+        },
+        {
+          "term": "q-manifold",
+          "heading": false
+        },
+        {
+          "term": "graded manifold",
+          "heading": false
+        },
+        {
+          "term": "graded vector",
+          "heading": false
+        },
+        {
+          "term": "bundle whose",
+          "heading": false
+        }
+      ],
+      "extract": "Let M be a C∞-manifold (or a complex analytic manifold, or an algebraic manifold, or a projective limit of manifolds,...). Denote by ΠT M the supermanifold which is the total space of the tangent bundle of M endowed with the reversed parity. Functions on the ΠT M are diﬀerential forms on M. The de Rham diﬀerential dM on forms can be considered as an odd vector ﬁeld on ΠT M with the square equal to 0. Thus, ΠT M is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-054-73-flat-families-in-deformation-quantization",
+      "number": "7.3",
+      "title": "Flat families in deformation quantization",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 32,
+      "labelStart": "32",
+      "labelEnd": "32",
+      "words": 36,
+      "summary": null,
+      "keywords": [],
+      "extract": "Let us return to our concrete situation. We construct in this section two ﬂat families over ΠT X (where X is a d-dimensional manifold), and a morphism between them. This will be done in several steps.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-055-731-flat-families-over-w",
+      "number": "7.3.1",
+      "title": "Flat families over W",
+      "level": 3,
+      "pageStart": 32,
+      "pageEnd": 32,
+      "labelStart": "32",
+      "labelEnd": "32",
+      "words": 183,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-equivariant bundle",
+          "heading": false
+        },
+        {
+          "term": "q-equivariant map",
+          "heading": false
+        },
+        {
+          "term": "idw",
+          "heading": false
+        },
+        {
+          "term": "families",
+          "heading": true
+        }
+      ],
+      "extract": "The ﬁrst bundle over W is trivial as a Q-equivariant bundle, T × W−→W but with a non-trivial section σT . This section is not the zero section, but the graph of the Q-equivariant map W−→T coming from the homomorphism of diﬀerential graded Lie algebras mT : Wd−→Tpoly(Rd formal). Analogously, the second bundle is the trivial Q-equivariant bundle D × W−→W with the section σD coming from the homomorphism mD :",
+      "extractCut": true
+    },
+    {
+      "id": "sec-056-7311-proof-of-the-property-p4",
+      "number": "7.3.1.1",
+      "title": "Proof of the property P4",
+      "level": 4,
+      "pageStart": 32,
+      "pageEnd": 34,
+      "labelStart": "32",
+      "labelEnd": "34",
+      "words": 744,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "xcoor",
+          "heading": false
+        },
+        {
+          "term": "ﬂat families",
+          "heading": false
+        },
+        {
+          "term": "flat families",
+          "heading": false
+        },
+        {
+          "term": "xaff",
+          "heading": false
+        },
+        {
+          "term": "q-manifold",
+          "heading": false
+        },
+        {
+          "term": "q-equivariant",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        },
+        {
+          "term": "principal homogeneous",
+          "heading": false
+        }
+      ],
+      "extract": "7.3.1.1. Proof of the property P4 Graphs appearing in the calculation of Uk(ξ1, . . . , ξk) have k edges, k vertices of the ﬁrst type, and m vertices of the second type, where 2k + m −2 = k . Thus, there are no such graphs for k ≥3 as m is non-negative. The only intersting case is k = 2, m = 0. The graph is looking as 32 p p 1 2 . . By our construction, U2 restricted to vector ﬁelds is equal to the non-trivial",
+      "extractCut": true
+    },
+    {
+      "id": "sec-057-7331-property-p5",
+      "number": "7.3.3.1",
+      "title": "Property P5",
+      "level": 4,
+      "pageStart": 34,
+      "pageEnd": 35,
+      "labelStart": "34",
+      "labelEnd": "35",
+      "words": 335,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "edges ending",
+          "heading": false
+        },
+        {
+          "term": "edge starting",
+          "heading": false
+        },
+        {
+          "term": "vector ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "vanishing follows",
+          "heading": false
+        },
+        {
+          "term": "vertex",
+          "heading": false
+        },
+        {
+          "term": "integral",
+          "heading": false
+        }
+      ],
+      "extract": "Conclusion. We constructed two ﬂat families over ΠT (Xaff) and a morphism between them. Fibers of these families are isomorphic to T and to D. 7.3.3.1. Property P5 This is again reduces to the calculation of an integral. Let v be a vertex of Γ to which we put element of gl(d, R). There is exactly one edge starting at v because we put a vector ﬁeld here. If there are no edges ending at v, then the integral is zero",
+      "extractCut": true
+    },
+    {
+      "id": "sec-058-734-flat-families-over-x",
+      "number": "7.3.4",
+      "title": "Flat families over X",
+      "level": 3,
+      "pageStart": 35,
+      "pageEnd": 36,
+      "labelStart": "35",
+      "labelEnd": "36",
+      "words": 286,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "flat families",
+          "heading": true
+        },
+        {
+          "term": "inﬁnite jets",
+          "heading": false
+        },
+        {
+          "term": "families tsaff",
+          "heading": false
+        },
+        {
+          "term": "ﬂat families",
+          "heading": false
+        },
+        {
+          "term": "section saff",
+          "heading": false
+        },
+        {
+          "term": "xaff",
+          "heading": false
+        },
+        {
+          "term": "ﬂat connections",
+          "heading": false
+        },
+        {
+          "term": "xcoor",
+          "heading": false
+        }
+      ],
+      "extract": "7.3.4. Flat families over X Let us choose a section saff of the bundle Xaff−→X. Such section always exists because ﬁbers of this bundle are contractible. For example, any torsion-free connection ∇on the tangent bundle to X gives a section X−→Xaff. Namely, the exponential map for ∇gives an identiﬁcation of a neighborhood of each point x ∈X with a neighborhood of zero in the vector space TxX, i.e. an aﬃne structure on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-059-735-passing-to-global-sections",
+      "number": "7.3.5",
+      "title": "Passing to global sections",
+      "level": 3,
+      "pageStart": 36,
+      "pageEnd": 36,
+      "labelStart": "36",
+      "labelEnd": "36",
+      "words": 255,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tsaff",
+          "heading": false
+        },
+        {
+          "term": "q-manifold",
+          "heading": false
+        },
+        {
+          "term": "dsaff",
+          "heading": false
+        },
+        {
+          "term": "sections",
+          "heading": true
+        },
+        {
+          "term": "formal",
+          "heading": false
+        },
+        {
+          "term": "jets",
+          "heading": false
+        },
+        {
+          "term": "quasi-isomorphism",
+          "heading": false
+        }
+      ],
+      "extract": "If in general (p : E−→B, σ) is a ﬂat family, then one can make a new formal pointed Q-manifold: (Γ(E−→B)formal, σ) . This is an inﬁnite-dimensional formal super manifold, the formal completion of the space of sections of the bundle E−→B at the point σ. The structure of Q-manifold on Γ(E−→B) is evident because the Lie supergroup R0|1 acts on E−→B. Lemma. Formally completed spaces of global sections of ﬂat families",
+      "extractCut": true
+    },
+    {
+      "id": "sec-060-8-cup-products",
+      "number": "8",
+      "title": "Cup-products",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 36,
+      "labelStart": "36",
+      "labelEnd": "36",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-061-81-cup-products-on-tangent-cohomology",
+      "number": "8.1",
+      "title": "Cup-products on tangent cohomology",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 37,
+      "labelStart": "36",
+      "labelEnd": "37",
+      "words": 430,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diﬀerential graded",
+          "heading": false
+        },
+        {
+          "term": "cup-product",
+          "heading": false
+        },
+        {
+          "term": "graded commutative",
+          "heading": false
+        },
+        {
+          "term": "commutative associative",
+          "heading": false
+        },
+        {
+          "term": "hochschild complex",
+          "heading": false
+        },
+        {
+          "term": "graded lie",
+          "heading": false
+        },
+        {
+          "term": "associative algebra",
+          "heading": false
+        },
+        {
+          "term": "cohomology",
+          "heading": true
+        }
+      ],
+      "extract": "Diﬀerential graded Lie algebras Tpoly, Dpoly and (more generally) shifted by [1] Hochschild complexes of arbitrary associative algebras, all carry an additional structure. We do not know at the moment a deﬁnition, it should be something close to so called homotopy Gerstenhaber algebras (see [GV], [GJ]), although deﬁnitely not precisely this. At least, a visible part of this structure is a commutative associative",
+      "extractCut": true
+    },
+    {
+      "id": "sec-062-82-compatibility-of-u-with-cup-products",
+      "number": "8.2",
+      "title": "Compatibility of U with cup-products",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 37,
+      "labelStart": "37",
+      "labelEnd": "37",
+      "words": 144,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tangent map",
+          "heading": false
+        },
+        {
+          "term": "cup-product",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst type",
+          "heading": false
+        },
+        {
+          "term": "marked",
+          "heading": false
+        }
+      ],
+      "extract": "Theorem. The quasi-isomorphism U constructed in section 6 maps the cup-product for Tpoly(X) to the cup-product for Dpoly(X). Sketch of the proof: we translate the statement of the theorem to the language of graphs and integrals. The tangent map is given by integrals where one of vertices of the ﬁrst type is marked. This is the vertex where we put a representative t for the tangent element [t] ∈Hγ. We put copies of γ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-063-821-pictures-for-the-cup-product-in-polyvector-ﬁ",
+      "number": "8.2.1",
+      "title": "Pictures for the cup-product in polyvector ﬁelds",
+      "level": 3,
+      "pageStart": 37,
+      "pageEnd": 38,
+      "labelStart": "37",
+      "labelEnd": "38",
+      "words": 227,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cup-product",
+          "heading": true
+        },
+        {
+          "term": "pictures",
+          "heading": true
+        },
+        {
+          "term": "strata",
+          "heading": false
+        },
+        {
+          "term": "integral vanishes",
+          "heading": false
+        }
+      ],
+      "extract": "We claim that the cup-product for the case Tpoly(X) corresponds to pictures where two points (say, p1, p2) where we put representatives of elements of Hγ which we want to multiply, are inﬁnitely close points on H. Precisely, it means that we integrate over preimages Pα of some point α in R/2πZ ≃C2 ⊂C2,0 with respect to the forgetting map Cn,m−→C2,0 . It is easy to see that Pα has codimension 2 in Cn,m and contains",
+      "extractCut": true
+    },
+    {
+      "id": "sec-064-822-pictures-for-the-cup-product-in-the-hochschi",
+      "number": "8.2.2",
+      "title": "Pictures for the cup-product in the Hochschild complex",
+      "level": 3,
+      "pageStart": 38,
+      "pageEnd": 38,
+      "labelStart": "38",
+      "labelEnd": "38",
+      "words": 149,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cup-product",
+          "heading": true
+        },
+        {
+          "term": "pictures",
+          "heading": true
+        },
+        {
+          "term": "hochschild",
+          "heading": true
+        }
+      ],
+      "extract": "The cup-product for Dpoly(X) is given by pictures where these two points are separated and inﬁnitely close to R. Again, the precise deﬁnition is that we integrate of the preimage P0,1 of point [(0, 1)] ∈C0,2 ⊂ C2,0. Analysis analogous to the one from the previous subsection shows that P0,1 does not intersect any boundary stratum of Cn,m. Thus, as a chain of codimension 2 this preimage P0,1 coincides with the union",
+      "extractCut": true
+    },
+    {
+      "id": "sec-065-823-homotopy-between-two-pictures",
+      "number": "8.2.3",
+      "title": "Homotopy between two pictures",
+      "level": 3,
+      "pageStart": 38,
+      "pageEnd": 39,
+      "labelStart": "38",
+      "labelEnd": "39",
+      "words": 35,
+      "summary": null,
+      "keywords": [],
+      "extract": "Choosing a path form one (limiting) conﬁguration of two points on H to another conﬁguration, 38 . . p p 1 2 0 1 we see that two products coinside on the level of cohomology.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-066-83-first-application-duﬂo-kirillov-isomorphism",
+      "number": "8.3",
+      "title": "First application: Duﬂo-Kirillov isomorphism",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 39,
+      "labelStart": "39",
+      "labelEnd": "39",
+      "words": 5,
+      "summary": null,
+      "keywords": [],
+      "extract": "8.3. First application: Duﬂo-Kirillov isomorphism",
+      "extractCut": false
+    },
+    {
+      "id": "sec-067-831-quanization-of-the-kirillov-poisson-bracket",
+      "number": "8.3.1",
+      "title": "Quanization of the Kirillov-Poisson bracket",
+      "level": 3,
+      "pageStart": 39,
+      "pageEnd": 40,
+      "labelStart": "39",
+      "labelEnd": "40",
+      "words": 449,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bracket",
+          "heading": true
+        },
+        {
+          "term": "canonical star-product",
+          "heading": false
+        },
+        {
+          "term": "symk",
+          "heading": false
+        },
+        {
+          "term": "algebra sym",
+          "heading": false
+        },
+        {
+          "term": "poisson manifold",
+          "heading": false
+        },
+        {
+          "term": "enveloping algebra",
+          "heading": false
+        },
+        {
+          "term": "universal enveloping",
+          "heading": false
+        },
+        {
+          "term": "ialg",
+          "heading": false
+        }
+      ],
+      "extract": "Let g be a ﬁnite-dimensional Lie algebra over R. The dual space to g endowed with the Kirillov-Poisson bracket is naturally a Poisson manifold (see [Ki]). We remind here the formula for this bracket: if p ∈g∗is a point and f, g are two functions on g then the value {f, g}|p is deﬁned as ⟨p, [df|p, dg|p]⟩where diﬀerentials of functions f, g at p are considered as elements of g ≃(g∗)∗. One can consider g∗as an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-068-832-three-isomorphisms",
+      "number": "8.3.2",
+      "title": "Three isomorphisms",
+      "level": 3,
+      "pageStart": 40,
+      "pageEnd": 41,
+      "labelStart": "40",
+      "labelEnd": "41",
+      "words": 444,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ialg",
+          "heading": false
+        },
+        {
+          "term": "space sym",
+          "heading": false
+        },
+        {
+          "term": "vector ﬁelds",
+          "heading": false
+        },
+        {
+          "term": "isomorphisms",
+          "heading": true
+        },
+        {
+          "term": "translation invariant",
+          "heading": false
+        },
+        {
+          "term": "race",
+          "heading": false
+        },
+        {
+          "term": "invariant operators",
+          "heading": false
+        },
+        {
+          "term": "formal power",
+          "heading": false
+        }
+      ],
+      "extract": "In the proof of theorem 8.3.1 we introduced an isomorphism Ialg of algebras. We denote by IP BW the isomorphism of vector spaces Sym(g)−→Ug (subscript from the Poincar´e-Birkhoﬀ-Witt theorem, see 8.3.5.1), which is deﬁned as γ1γ2 . . . γn−→1 n! X σ∈Σn γσ1 · γσ2 · . . . · γσn . Analogously to arguments from above, one can see that the tangent map from polyvector ﬁelds on g∗ to the Hochschild complex of the quantized",
+      "extractCut": true
+    },
+    {
+      "id": "sec-069-8331-isomorphism-it",
+      "number": "8.3.3.1",
+      "title": "Isomorphism IT",
+      "level": 4,
+      "pageStart": 41,
+      "pageEnd": 43,
+      "labelStart": "41",
+      "labelEnd": "43",
+      "words": 792,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "individual wheels",
+          "heading": false
+        },
+        {
+          "term": "operator ialg",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential operator",
+          "heading": false
+        },
+        {
+          "term": "integrals corresponding",
+          "heading": false
+        },
+        {
+          "term": "race",
+          "heading": false
+        },
+        {
+          "term": "ﬁxed points",
+          "heading": false
+        },
+        {
+          "term": "weights equal",
+          "heading": false
+        },
+        {
+          "term": "symmetry reasons",
+          "heading": false
+        }
+      ],
+      "extract": "The isomorphism IT is given by the sum over terms corresponding to admissible graphs Γ with no vertices of the second type, one special vertex v of the ﬁrst type such that no edge start at v, and such that at any other vertex start two edges and ends no more than one edge. Vertex v is the marked vertex where we put an element of Sym(g) considered as an element of tangent cohomology. At other vertices we put the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-070-834-comparison-with-the-duﬂo-kirillov-isomorphis",
+      "number": "8.3.4",
+      "title": "Comparison with the Duﬂo-Kirillov isomorphism",
+      "level": 3,
+      "pageStart": 43,
+      "pageEnd": 44,
+      "labelStart": "43",
+      "labelEnd": "44",
+      "words": 430,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "duﬂo-kirillov isomorphism",
+          "heading": true
+        },
+        {
+          "term": "harish-chandra isomorphism",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite-dimensional lie",
+          "heading": false
+        },
+        {
+          "term": "race",
+          "heading": false
+        },
+        {
+          "term": "lie algebras",
+          "heading": false
+        },
+        {
+          "term": "sym",
+          "heading": false
+        },
+        {
+          "term": "err",
+          "heading": false
+        },
+        {
+          "term": "idk",
+          "heading": false
+        }
+      ],
+      "extract": "8.3.4. Comparison with the Duﬂo-Kirillov isomorphism For the case of semi-simple g there is so called Harish-Chandra isomorphism between algebras \u0000Sym(g) \u0001g and Center(Ug). A. Kirillov realized that there is a way to rewrite the Harish-Chandra isomorphism in a form which has sense for arbitrary ﬁnite-dimensional Lie algebra, i.e. without using the Cartan and Borel subalgebras, the Weyl group etc. Later M. Duﬂo (see",
+      "extractCut": true
+    },
+    {
+      "id": "sec-071-835-results-in-rigid-tensor-categories",
+      "number": "8.3.5",
+      "title": "Results in rigid tensor categories",
+      "level": 3,
+      "pageStart": 44,
+      "pageEnd": 44,
+      "labelStart": "44",
+      "labelEnd": "44",
+      "words": 222,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rigid",
+          "heading": true
+        },
+        {
+          "term": "duﬂo-kirillov",
+          "heading": false
+        },
+        {
+          "term": "monoidal categories",
+          "heading": false
+        },
+        {
+          "term": "q-linear",
+          "heading": false
+        },
+        {
+          "term": "symmetric monoidal",
+          "heading": false
+        },
+        {
+          "term": "tensor",
+          "heading": true
+        }
+      ],
+      "extract": "Many proofs from this paper can be transported to a more general context of rigid Q-linear tensor categories (i.e. abelian symmetric monoidal categories with the duality functor imitating the behavior of ﬁnite-dimensional vector spaces). We will be very brief here. First of all, one can formulate and prove the Poincar´e-Birkhoﬀ-Witt theorem in a great generality, in Q-linear additive symmetric monoidal categories",
+      "extractCut": true
+    },
+    {
+      "id": "sec-072-84-second-application-algebras-of-ext-s",
+      "number": "8.4",
+      "title": "Second application: algebras of Ext-s.",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 45,
+      "labelStart": "44",
+      "labelEnd": "45",
+      "words": 194,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hochschild cohomology",
+          "heading": false
+        },
+        {
+          "term": "extk",
+          "heading": false
+        },
+        {
+          "term": "ext-groups",
+          "heading": false
+        },
+        {
+          "term": "polyvector",
+          "heading": false
+        }
+      ],
+      "extract": "Let X be complex manifold, or a smooth algebraic variety of ﬁeld k of characteristic zero. We associate with it two graded vector spaces. The ﬁrst space HT •(X) is the direct sum L k,l Hk(X, ∧lTX)[−k −l]. 44 The second space HH•(X) is the space L k Extk Coh(X×X)(Odiag, Odiag)[−k] of Ext-groups in the category of coherent sheaves on X × X from the sheaf of functions on the diagonal to itself. The space HH•(X) can be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-073-bibiliography",
+      "number": null,
+      "title": "Bibiliography",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 46,
+      "labelStart": "45",
+      "labelEnd": "46",
+      "words": 579,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "birkh auser",
+          "heading": false
+        },
+        {
+          "term": "deformation theory",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        },
+        {
+          "term": "kontsevich",
+          "heading": false
+        },
+        {
+          "term": "voronov",
+          "heading": false
+        },
+        {
+          "term": "sternheimer",
+          "heading": false
+        },
+        {
+          "term": "intern",
+          "heading": false
+        },
+        {
+          "term": "hinich",
+          "heading": false
+        }
+      ],
+      "extract": "[AKSZ] M. Alexandrov, M. Kontsevich, A. Schwarz, O. Zaboronsky, The Geometry of the Master Equation and Topological Quantum Field Theory, Intern. Jour. of Mod. Phys., 12 (1997), no. 7, 1405 - 1429, and hep-th/9502010. [AGV] V. I. Arnold, S. M. Gusein-Zade, A. N. Varchenko, Singularities of Diﬀerentiable Maps, Vol. I, Birkh¨auser 1985. [BGRT] , D. Bar-Natan, S. Garoufalidis, L. Rozansky, D. Thurston, Wheels,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "diﬀerential graded",
+      "heading": true
+    },
+    {
+      "term": "formal graded",
+      "heading": false
+    },
+    {
+      "term": "graded lie",
+      "heading": true
+    },
+    {
+      "term": "graded algebras",
+      "heading": true
+    },
+    {
+      "term": "graded space",
+      "heading": false
+    },
+    {
+      "term": "graded vector",
+      "heading": false
+    },
+    {
+      "term": "graded manifold",
+      "heading": false
+    },
+    {
+      "term": "graded q-manifolds",
+      "heading": false
+    },
+    {
+      "term": "zero diﬀerential",
+      "heading": false
+    },
+    {
+      "term": "smooth diﬀerential",
+      "heading": false
+    },
+    {
+      "term": "diﬀerential operators",
+      "heading": false
+    },
+    {
+      "term": "diﬀerential forms",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 74,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 75,
+      "note": "4 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 75 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-q-alg-9709040v1"
+  }
+}

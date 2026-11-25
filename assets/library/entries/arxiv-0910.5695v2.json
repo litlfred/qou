@@ -1,0 +1,1114 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0910.5695v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Let $F$ be a field of characteristic zero and $t\\in F$. Recently P. Deligne introduced the tensor category $\\underline{\\operatorname{Re}}\\!\\operatorname{p}(S_t)$ which in a certain precise sense interpolates the categories $\\operatorname{Rep}(S_d)$ of $F-$linear representations of the symmetric groups $S_d$, see [@Del07]. In general, the category $\\underline{\\operatorname{Re}}\\!\\operatorname{p}(S_t)$ is additive but not abelian; however it is proved in [@Del07 Théorème 2.18] that for $t$ which is not a nonnegative integer the category $\\underline{\\operatorname{Re}}\\!\\operatorname{p}(S_t)$ is s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "ON BLOCKS OF DELIGNE’S CATEGORY Rep(St).\nJONATHAN COMES AND VICTOR OSTRIK\nAbstract. We describe blocks in Deligne’s category Rep(St).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Terminology and notation conventions",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-001-11-terminology-and-notation-conventions.md",
+      "narrative": null,
+      "content": "[]{#notation label=\"notation\"} Let $F$ be a field. A *tensor category* is an $F$-linear[^1] category $\\mathcal{T}$ along with an $F$-linear bifunctor $\\otimes:\\mathcal{T}\\times\\mathcal{T}\\to\\mathcal{T}$ and associativity, commutativity, and unit constraints satisfying the triangle, pentagon, and hexagon axioms (see [@MR1797619]). Moreover, we require our tensor categories to be rigid with $\\text{End}_\\mathcal{T}({\\bf 1})=F$.\n\nA *Young diagram* is an infinite tuple of nonnegative integers $\\lambda=(\\lambda_1, \\lambda_2,\\ldots)$ with $\\lambda_i\\geq\\lambda_{i+1}$ for all $i>0$ such that $\\lambda_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The tensor category Rep(St)",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-002-2-the-tensor-category-repst.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motivation",
+      "pageStart": 2,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-21-motivation.md",
+      "narrative": null,
+      "content": "[]{#motivation label=\"motivation\"}\n\nLet $d$ be a nonnegative integer, and let $F$ be a field of characteristic zero. Let us consider the tensor category $\\operatorname{Rep}(S_d; F)$ of finite dimensional representations over $F$ of the symmetric group $S_d$. Note that we take $S_0$ to be the trivial group whose one element is the identity permutation of the empty set. Let $V_d$ denote the natural $d$-dimensional representation of $S_d$ with basis $\\{v_1,\\ldots, v_d\\}$, so that $S_d$ acts by permuting the basis elements ($V_0$ is taken to be 0). Setting $V_d^{\\otimes 0}=F$ for all $d\\geq 0$, we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/ex-sec-004-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "ex-sec-004-01.md",
+      "narrative": null,
+      "content": "The identity morphism id7 : [7] →[7] is given by Before giving Rep0(St; F) the structure of a tensor category, we pause to give the following deﬁnition which will play an important role in later sections. Deﬁnition 2.13. (compare with [Mar91], [Mar94]) The partition algebra FPn(t) is deﬁned to be the endomorphism algebra EndRep0(St;F )([n]).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/ex-sec-004-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "ex-sec-004-03.md",
+      "narrative": null,
+      "content": "Suppose Then Next we wish to show that Rep0(St; F) is a tensor category with the following choices. • (associativity) αn,m,l : ([n] ⊗[m]) ⊗[l] →[n] ⊗([m] ⊗[l]) is the identity morphism idn+m+l. • (commutativity) βn,m : [n] ⊗[m] →[m] ⊗[n] is the partition in Pn+m,n+m whose parts are of the form {j, (m + j)′} or {n + j, j′} as illustrated below. • (unit) Set 1 := [0]. Both unit morphisms [0] ⊗[n] →[n] and [n] ⊗[0] →[n] are the identity morphism idn. • (duals) Set [n]∨:= [n] with the morphism evn : [n]∨⊗[n] →1 (resp. coevn : 1 →[n] ⊗[n]∨) given by the partition in P2n,0 (resp. P0,2n) whose parts",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prop-sec-004-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "prop-sec-004-05.md",
+      "narrative": null,
+      "content": "(1) The obvious tensor product on objects and morphisms, as well as the obvious associativity, commutativity, unit, and dual constraints make Rep(St; F) a tensor category. (2) Given a nonnegative integer n and a nonzero idempotent e ∈FPn(t), the object ([n], e) in Rep(St; F) is indecomposable if and only if e is primitive‡. More- over, every indecomposable object in Rep(St; F) is isomorphic to one of the form ([n], e). Finally, given two primitive idempotents e, e′ ∈FPn(t), the objects ([n], e) and ([n], e′) are isomorphic if and only if e and e′ are conjugate§ in FPn(t). (3) (Krull-Schmidt pr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definition of Rep(St; F)",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-22-definition-of-repst-f.md",
+      "narrative": null,
+      "content": "Rep(St; F) for arbitrary t ∈F following [Del07, §8] (so our deﬁnition is diﬀerent\nfrom the one given in [Del07, §2]). To construct Rep(St; F) we will ﬁrst use par-\ntitions to construct the smaller category Rep0(St; F). We then obtain Rep(St; F)\nfrom Rep0(St; F) using the process of Karoubiﬁcation.\nAs in the previous section, assume d is a nonnegative integer and that F is a ﬁeld\nof characteristic zero. Let Rep0(Sd; F) denote the full subcategory of Rep(Sd; F)\nwhose objects are of the form V ⊗n\nd\nfor n ≥0. Clearly the objects in Rep0(Sd; F) are\nindexed by nonnegative integers, and by Theorem 2.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/rem-sec-004-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "rem-sec-004-02.md",
+      "narrative": null,
+      "content": "We identify each element of the symmetric group Sn with a par- tition in Pn,n as follows: σ ↔{{i, σ(i)′} | 1 ≤i ≤n}. This identiﬁcation extends linearly to an inclusion of algebras FSn ,→FPn(t) for each t ∈F. Now to deﬁne tensor products. While reading the following deﬁnitions, the reader may ﬁnd it helpful to keep in mind the analogy studied in section 2.1 between the objects [n] (resp. morphisms π) in Rep0(St; F) and the objects V ⊗n d (resp. morphisms f(π)) in Rep(Sd; F). Deﬁnition 2.15. For objects [n], [m] in Rep0(St; F) set [n] ⊗[m] := [n + m]. For morphisms we let ⊗: FPn1,m1 × FPn2,m2 →",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/rem-sec-004-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "rem-sec-004-04.md",
+      "narrative": null,
+      "content": "For d ∈Z≥0, the connection between Rep0(Sd; F) and Rep0(Sd; F) can be made more precise as follows. The functor F0 : Rep0(Sd; F) →Rep0(Sd; F) given on objects by [n] 7→V ⊗n d , and on morphisms as the F-linear map π 7→f(π) is a tensor functor. F0 is certainly surjective on objects. Moreover, by Theorem 2.6(1), F0 is surjective on morphisms. However, by Theorem 2.6(2), F0 does not give an equivalence of categories. Now we are ready to use the process of Karoubiﬁcation to deﬁne Deligne’s cat- egory. For more on this process see [Del07, 1.7-8]. Informally, Rep(St; F) is the category obtained from",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/rem-sec-004-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 11,
+      "target": "rem-sec-004-06.md",
+      "narrative": null,
+      "content": "Informally, studying the category Rep0(St; F) is a way to simul- taneously study the partition algebras FPn(t) for all n ≥0 (see Deﬁnition 2.13). In this line of thinking, studying Rep(St; F) is a way to simultaneously study all ﬁnitely generated projective right FPn(t)-modules for all n ≥0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/ex-sec-005-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "ex-sec-005-01.md",
+      "narrative": null,
+      "content": "(i) The only endomorphisms in Rep0(S0; F) with nonzero trace are nonzero scalar multiples of id0. (ii) In Rep0(St; F), dim([0]) = tr (id0) = 1 and dim([n]) = tr (idn) = tn for all positive n. (iii) Consider π : [7] →[7] given by tr (π) = t4 since there are 4 connected components in the diagram",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "2.3.",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-23.md",
+      "narrative": null,
+      "content": "We close this section by examining the trace of a morphism in Rep0(St; F).\nFirst, notice that tr : EndRep0(St;F )([n]) →F is an F-linear map. Furthermore,\nif π : [n] →[n] is a partition diagram (not equal to id0) then, by the deﬁnition of\ntrace (see [Del07, 3.3]), tr (π) = tℓwhere ℓis the number of connected components\nin the diagram\nClearly ℓis also the number of connected components in the following trace diagram\n‡An idempotent is primitive if it is nonzero and it cannot be written as a sum e1 + e2 where\ne1 and e2 are nonzero idempotents with e1e2 = e2e1 = 0.\n§Recall that two idempotents e,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Indecomposable objects in Rep(St)",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-3-indecomposable-objects-in-repst.md",
+      "narrative": null,
+      "content": "3. Indecomposable objects in Rep(St)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Classification of indecomposable objects of Rep(St)",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "../sections/sec-007-31-classification-of-indecomposable-objects-of-r.md",
+      "narrative": null,
+      "content": "[]{#indecomposSt label=\"indecomposSt\"} In this section we will classify indecomposable objects in $\\underline{\\operatorname{Re}}\\!\\operatorname{p}(S_t; F)$ for arbitrary $t\\in F$. To do so, we first classify primitive idempotents in partition algebras. The following lemma will be useful in that endeavor.\n\n::: lemma\n[]{#ees label=\"ees\"} For $n>1$ let $\\zeta$ denote the following idempotent in $FP_n(t)$: $$\\includegraphics{diss30.pdf}$$ Then for each $n>1$ we have the following algebra isomorphisms:\n\n1.  $\\zeta FP_n(t)\\zeta\\cong\n    FP_{n-1}(t)$.\n\n2.  $FP_n(t)/(\\zeta)\\cong FS_n$ where $(\\zeta)$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/ex-sec-008-05",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "ex-sec-008-05.md",
+      "narrative": null,
+      "content": "(0) Liftt(L(∅)) = Liftt(([0], id0)) = ([0], id0) = L(∅) for all t ∈F. (1) Notice Liftt(([1], id1)) = ([1], id1) = L(2) ⊕L(∅) in Rep(ST ; K) for all t ∈F. If t̸ = 0, then ([1], id1) = L(2) ⊕L(∅). Hence (using part (0) and the additivity of Liftt) we have Liftt(L(2)) = L(2) whenever t̸ = 0. On the other hand, ([1], id1) ∼= L(2) in Rep(S0; F). Hence Lift0(L(2)) = L(2) ⊕L(∅). The following proposition lists some useful properties of Liftt. ON BLOCKS OF DELIGNE’S CATEGORY Rep(St).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prop-sec-008-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "prop-sec-008-03.md",
+      "narrative": null,
+      "content": "If ([n], e) ∼= ([n1], e1)⊕([n2], e2) in Rep(St; F) and ε, ε1, ε2 are lifts of e, e1, e2 respectively, then ([n], ε) ∼= ([n1], ε1) ⊕([n2], ε2) in Rep(ST ; K).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lifting objects",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "../sections/sec-008-32-lifting-objects.md",
+      "narrative": null,
+      "content": "is an indeterminate. In this section we use the process of lifting idempotents (see\nappendix A) to lift objects in Rep(St; F) to objects in Rep(ST ; K). We then prove\nsome useful properties of these lifted objects. In the next section we will show\nthat Rep(ST ; K) is semisimple (see Corollary 3.17), and hence uncomplicated from\n16\nJONATHAN COMES AND VICTOR OSTRIK\nour point of view. The process of lifting objects developed in this section will be\nused later in the paper to compare the structure of Rep(St; F) with that of the\nsemisimple category Rep(ST ; K). The following theorem will be used to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/thm-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "thm-sec-008-01.md",
+      "narrative": null,
+      "content": "Suppose e is an idempotent in FPn(t). Then there exists an idempo- tent ε ∈KPn(T) of the form ε = P π∈Pn,n aππ with aπ ∈F[[T −t]] for all π ∈Pn,n such that ε|T =t = e (we say ε is a lift of e). Moreover, if ([n1], e1) and ([n2], e2) are isomorphic objects in Rep(St; F) and ε1, ε2 are lifts of e1, e2 respectively, then ([n1], ε1) and ([n2], ε2) are isomorphic in Rep(ST ; K).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/thm-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "thm-sec-008-02.md",
+      "narrative": null,
+      "content": "2 along with Proposition 2.20(2). □ Lifted idempotents satisfy the following property.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/thm-sec-008-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "thm-sec-008-04.md",
+      "narrative": null,
+      "content": "along with Proposition 3.10 show that Liftt is well deﬁned.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/thm-sec-008-06",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "thm-sec-008-06.md",
+      "narrative": null,
+      "content": "2) ˜ε is conjugate to ˜e in KSn. Now suppose L(λ) ∼= ([n], e). Then ˜e is a primitive idempotent in FSn corresponding to λ (see Remark 3.5). Thus ˜e (and hence ˜ε) is also a primitive idempotent in KSn corresponding to λ. Therefore, any orthogonal decomposition of ε into primitive idempotents must contain exactly one primitive idempotent corresponding to λ and all other idempotents corresponding to Young diagrams with smaller size than λ (see Remark 3.5). The result follows. (4) Set K′ := F(T) (ﬁeld of fractions of the polynomial ring F[T]) viewed as a subﬁeld of K. Now suppose ε ∈K′Pn(T) is a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/cor-sec-009-05",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "cor-sec-009-05.md",
+      "narrative": null,
+      "content": "Rep(ST ; K) is semisimple.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/ex-sec-009-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "ex-sec-009-02.md",
+      "narrative": null,
+      "content": "(1) Consider the partition algebra FP1(t). Let π be as in the proof of Theorem 3.4 and ﬁx the ordered basis P1,1 = {id1, π} for FP1(t). Under this ordered basis the matrix with entries (x, y) for x, y ∈P1,1 is \u0012 2 t t t2 \u0013 Since the determinant of the matrix above is t2, we conclude (by Lemma 3.13) that FP1(t) is semisimple if and only if t̸ = 0. (2) Consider the partition algebra FP2(t). Using the ordered basis ON BLOCKS OF DELIGNE’S CATEGORY Rep(St). the matrix with entries (π, µ) for π, µ ∈P2,2 is                  2t4 2t3 2t3 2t3 2t3 2t3 2t3 2t2 2t2 2t2 2t2 2t2 2t2 2t2 2t 2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/lem-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "lem-sec-009-01.md",
+      "narrative": null,
+      "content": "Suppose A is a ﬁnite dimensional F-algebra. For a ∈A, let φa denote the F-linear map A →A given by x 7→ax. Deﬁne the trace form on A by (a, b) := tr (φaφb). Then A is a semisimple algebra if and only if the trace form on A is non-degenerate.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "On Rep(St; F) for generic t",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-009-33-on-repst-f-for-generic-t.md",
+      "narrative": null,
+      "content": "is semisimple for “generic” values of t.\nDeligne showed that Rep(St; F) is not\nsemisimple if and only if t is a nonnegative integer (see [Del07]). That result will\nfollow from our description of the blocks in Rep(St; F) (see Corollary 5.23). For\nnow we conﬁne ourselves to prove a weaker result (see Theorem 3.15) which allows\nus to conclude that Rep(ST ; K) is semisimple (see Corollary 3.17).\nThe following well-known lemma will be useful in showing that Rep(St; F) is\ngenerically semisimple.\nLemma 3.13. Suppose A is a ﬁnite dimensional F-algebra. For a ∈A, let φa\ndenote the F-linear map A →A giv",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/rem-sec-009-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "rem-sec-009-04.md",
+      "narrative": null,
+      "content": "If t ∈F is not an algebraic integer, then by Theorem 3.15 we know Rep(St; F) is semisimple. However, given an arbitrary t ∈F, neither Theorem 3.15 nor its proof allow us to determine if Rep(St; F) is semisimple. As mentioned at the beginning of this section, we will eventually show that Rep(St; F) is semisimple if and only if t is not a nonnegative integer. We close this section with one ﬁnal observation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/thm-sec-009-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "thm-sec-009-03.md",
+      "narrative": null,
+      "content": "Rep(St; F) is semisimple for all but countably many values of t. Moreover, if Rep(St; F) is not semisimple, then t is an algebraic integer.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/ex-sec-010-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "ex-sec-010-02.md",
+      "narrative": null,
+      "content": "(1) The only morphisms in Rep0(S0; F) which are not negligible are nonzero scalar multiples of id0 (see Example 2.22(1)). (2) Let π : [1] →[1] be as in the proof of Theorem 3.4. Then xπ : [1] →[1], deﬁned by equation (2.1), is given by xπ = π −id1. Since tr (π) = t = tr (id1), we have tr (xπ) = 0. Moreover, xππ = (t−1)π so that tr (xππ) = t(t−1). We conclude that xπ is negligible if and only if t = 0, 1. (3) Consider the morphism π ∈HomRep0(St;F )([1], [2]) given by From equation (2.1) we get xπ = π −µ1 −µ2 −µ3 + 2µ4 where If we set then one can compute tr (xπν0) = t(t −1)(t −2), and tr (xπνi)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prop-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "prop-sec-010-01.md",
+      "narrative": null,
+      "content": "F is surjective on objects and morphisms.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prop-sec-010-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "prop-sec-010-04.md",
+      "narrative": null,
+      "content": "The following statements hold in any tensor category. (1) N is a tensor ideal. (2) The image under a full tensor functor of a morphism f is negligible if and only if f is negligible.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The interpolation functor Rep(Sd; F)Rep(Sd; F)",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "../sections/sec-010-34-the-interpolation-functor-repsd-frepsd-f.md",
+      "narrative": null,
+      "content": "tion we assume d is a nonnegative integer. In this section we will describe following\n[Del07, §6] how Rep(Sd; F) “interpolates” the category Rep(Sd; F). More precisely,\n20\nJONATHAN COMES AND VICTOR OSTRIK\nwe will show Rep(Sd; F) is equivalent to the quotient of Rep(St; F) by the so-called\n“negligible morphisms.” To start, let us deﬁne the interpolation functor.\nDeﬁnition 3.18. F : Rep(Sd; F) →Rep(Sd; F) is the functor deﬁned on indecom-\nposable objects by F([n], e) = f(e)(V ⊗n\nd\n), and on morphisms α : ([n], e) →([n′], e′)\nby F(α) = f(α). Here f and Vd are as in section 2.1.\nNotice that F is c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/rem-sec-010-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "rem-sec-010-03.md",
+      "narrative": null,
+      "content": "Each of the examples 3.21 follow from the following fact: In Rep0(St; F) N([n], [m]) = \u001a SpanF {xπ | π ∈Pn,m has more than t parts}, if t ∈Z≥0 0, otherwise. ON BLOCKS OF DELIGNE’S CATEGORY Rep(St). For t ∈Z≥0 this fact follows from Theorem 2.6(2), Remark 2.17, along with the following Proposition 3.23(2). For t̸ ∈Z≥0 we will eventually show that the larger category Rep(St; F) is semisimple (see Corollary 5.23). It is well-known that there are no nonzero negligible morphisms in a semisimple category.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/thm-sec-010-05",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 21,
+      "target": "thm-sec-010-05.md",
+      "narrative": null,
+      "content": "F induces an equivalence of categories Rep(Sd; F)/N ∼= Rep(Sd; F).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dimensions",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-011-35-dimensions.md",
+      "narrative": null,
+      "content": "[]{#dim label=\"dim\"} In this section we study a hook length formula which gives the dimension of indecomposable objects in $\\underline{\\operatorname{Re}}\\!\\operatorname{p}(S_T; K)$. Let us start by defining the hook length formula.\n\n::: definition\n[]{#hookpoly label=\"hookpoly\"} The *hook length* of a fixed box in a Young diagram $\\lambda$ is the number of boxes in $\\lambda$ which are either directly below or directly to the right of the fixed box, counting the fixed box itself once. Given a Young diagram $\\lambda$ let $P_\\lambda$ denote the unique polynomial such that $$P_\\lambda(d)=\\frac{d!}{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Endomorphisms of the identity functor",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/sec-012-4-endomorphisms-of-the-identity-functor.md",
+      "narrative": null,
+      "content": "Deﬁnition 4.1. Let Ωr,d ∈FSd denote the sum of all r-cycles in Sd.\nSince Ωr,d is in the center of FSd, the action of Ωr,d on V ⊗n\nd\ngives an element\nof EndSd(V ⊗n\nn(d) denote the unique element of FPn(d) with f(Cr\nThe ﬁrst goal of this section is to deﬁne elements of FPn(t) for arbitrary t ∈F\nwhich agree with the deﬁnition of Cr\nn(t) when t is a suﬃciently large integer. We are\nable to do this because, as we will show, Cr\nThe following proposition records the properties of the (λ, d) grid marking which\nwill be useful for determining the roots of Pλ.\n(1) If\nappears in the ith row, then k = |λ|",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Interpolating sums of r-cycles",
+      "pageStart": 23,
+      "pageEnd": 27,
+      "target": "../sections/sec-013-41-interpolating-sums-of-r-cycles.md",
+      "narrative": null,
+      "content": "In this section we define morphisms in $\\underline{\\operatorname{Re}}\\!\\operatorname{p}_0(S_t; F)$ which \"interpolate\\\" the action of the sum of all $r$-cycles on representations of symmetric groups. To begin, let $r$ and $d$ be positive integers with $r\\leq d$.\n\n::: definition\n[]{#sums label=\"sums\"} Let $\\Omega_{r, d}\\in FS_d$ denote the sum of all $r$-cycles in $S_d$.\n:::\n\nSince $\\Omega_{r, d}$ is in the center of $FS_d$, the action of $\\Omega_{r, d}$ on $V_d^{\\otimes n}$ gives an element of $\\text{End}_{S_d}(V_d^{\\otimes n})$ for each integer $n\\geq 0$. This, along with Theorem [\\[sw\\]](#sw",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prop-sec-015-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "prop-sec-015-01.md",
+      "narrative": null,
+      "content": "Fix t ∈F, a positive integer r, and a Young diagram λ. Suppose that L(λ) = ([n], e) in Rep(St, F). If k is a positive integer such that λk+1 = 0, then (ωr n(t) −ξλ(t) r,k )me = 0 for some positive integer m.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Blocks",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/sec-014-5-blocks.md",
+      "narrative": null,
+      "content": "27\n(Deﬁnition 4.1), acts on the simple Sd-module corresponding to λ by the scalar\n(4.7)\nξλ\nr,k := 1\nr\nk\nX\ni=0\n(µi + k −1)(µi + k −2) · · · (µi + k −r)\nY\n0≤j≤k\nj̸=i\nµi −µj −r\nµi −µj\nwhere k is any positive integer such that λk+1 = 0.\nThe result of Theorem 4.8 ﬁrst appeared in [Fro68]. A modern proof of Theorem\n4.8 is outlined in [FH91, exercise 4.17], (see also [Mac95, Example 7 in section I.7]).\nWe close this section by showing the scalar ξ in Proposition 4.7 is given by",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Frobenius' formula",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/sec-015-42-frobenius-formula.md",
+      "narrative": null,
+      "content": "Proposition 4.9. Fix t ∈F, a positive integer r, and a Young diagram λ. Suppose\nthat L(λ) = ([n], e) in Rep(St, F). If k is a positive integer such that λk+1 = 0,\nthen (ωr\nn(t) −ξλ(t)\nr,k )me = 0 for some positive integer m.\nProof. By Theorem 3.7 we may assume n = |λ|. Let ξ and m be as in Proposition\n4.7, so that (ωr\nn(t) −ξ)me = 0. Applying the quotient map ψ : FPn(t) ↠FSn\n(Lemma 3.1(2)) to this equation yields (ψ(ωr\nn(t)) −ξ)mcλ = 0 in FSn where cλ is a\nprimitive idempotent in FSn corresponding to λ. Since ψ(ωr\nn(t)) is central in FSn,\nthis implies ψ(ωr\nn(t))cλ = ξcλ. Hence, by Deﬁnition 4.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Blocks in additive categories",
+      "pageStart": 27,
+      "pageEnd": 28,
+      "target": "../sections/sec-016-51-blocks-in-additive-categories.md",
+      "narrative": null,
+      "content": "category.\nConsider the weakest equivalence relation on the set of isomorphism\nclasses of indecomposable objects in A where two indecomposable objects are equi-\nvalent whenever there exists a nonzero morphism between them. We call the equiv-\nalence classes in this relation blocks∗. We will also use the term block to refer to a\nfull subcategory of A whose objects are direct sums of indecomposable objects in\na single block. We will say a block is trivial if it contains only one indecomposable\nobject (up to isomorphism) and the endomorphism ring of that indecomposable\nobject is F.\nConsider the fol",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/lem-sec-017-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "lem-sec-017-02.md",
+      "narrative": null,
+      "content": "Suppose λ and λ′ are Young diagrams and k > 0 is an integer with λk+1 = λ′ k+1 = 0. (1) If L(λ) and L(λ′) are in the same block in Rep(St; F), then ξλ(t) r,k = ξλ′(t) r,k for every r > 0. (2) If ξλ(t) r,k = ξλ′(t) r,k for every r > 0, then λ t∼λ′.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "5.2.",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-017-52.md",
+      "narrative": null,
+      "content": "Then µλ(7) = (3, 1, 0, −3, −4, −5, . . .) and µλ′(7) = (−3, 3, 1, 0, −4, −5, . . .). Hence\nλ\n7∼λ′.\n2\nClearly, for each t ∈F,\nt∼deﬁnes an equivalence relation on the set of all Young\ndiagrams, and hence on the indecomposable objects in Rep(St; F) (see Theorem\n3.7). The main goal of section 5 is devoted to the proof of the following theorem.\nTheorem 5.3. L(λ) and L(λ′) are in the same block of Rep(St; F) if and only if\nλ\nt∼λ′.\n5.2.\nIn this section we use Frobenius’ formula to show that\nt∼-equivalence classes\nare unions of blocks in Rep(St; F).\nLemma 5.4. Suppose λ and λ′ are Young diagrams and k",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/thm-sec-017-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "thm-sec-017-01.md",
+      "narrative": null,
+      "content": "L(λ) and L(λ′) are in the same block of Rep(St; F) if and only if λ t∼λ′. 5.2. In this section we use Frobenius’ formula to show that t∼-equivalence classes are unions of blocks in Rep(St; F).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "On the equivalence relation t",
+      "pageStart": 29,
+      "pageEnd": 34,
+      "target": "../sections/sec-018-53-on-the-equivalence-relation-t.md",
+      "narrative": null,
+      "content": "In this section we prove some elementary properties of the equivalence relation $\\stackrel{t}{\\sim}$ and give examples.\n\nWe say a $\\stackrel{t}{\\sim}$-equivalence class is *trivial* if it contains only one Young diagram. Soon we will see that the $\\stackrel{t}{\\sim}$-equivalence classes are all trivial unless $t$ is a nonnegative integer (see Corollary [\\[gensim\\]](#gensim){reference-type=\"ref\" reference=\"gensim\"}(1)). First, we prove the following easy proposition.\n\n::: proposition\n[]{#gs label=\"gs\"} Suppose $\\lambda$ is a Young diagram and write $\\lambda_\\mu(t)=(\\mu_0, \\mu_1,\\ldots)$. Suppos",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prop-sec-019-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 37,
+      "target": "prop-sec-019-01.md",
+      "narrative": null,
+      "content": "This identity was observed by Deligne, see [@Del07 §7.5]. :::",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of result on blocks",
+      "pageStart": 34,
+      "pageEnd": 37,
+      "target": "../sections/sec-019-55-proof-of-result-on-blocks.md",
+      "narrative": null,
+      "content": "[]{#secblocks label=\"secblocks\"} In this section we give a proof of Theorem [\\[blocksinSt\\]](#blocksinSt){reference-type=\"ref\" reference=\"blocksinSt\"}. To start, given a Young diagram $\\lambda$ we will describe how $\\operatorname{Lift}_t(L(\\lambda))$ decomposes as a sum of indecomposable objects in $\\underline{\\operatorname{Re}}\\!\\operatorname{p}(S_T; K)$ (see Lemma [\\[liftdec\\]](#liftdec){reference-type=\"ref\" reference=\"liftdec\"}). This description, along with Lemma [\\[equalxi\\]](#equalxi){reference-type=\"ref\" reference=\"equalxi\"} will be used to prove Theorem [\\[blocksinSt\\]](#blocksinSt){re",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/lem-sec-021-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 39,
+      "target": "lem-sec-021-02.md",
+      "narrative": null,
+      "content": "The following identities hold in Rep(S0; F): (1) snxn+1 n sn+1 = xn+1 n sn+1 for all n ≥0. (2) −nsnxn−1 n xn n−1sn = (n + 1)xn+1 n sn+1xn n+1 for all n > 0. (3) xn n−1xn+1 n sn+1 = 0 for all n > 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/lem-sec-021-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 39,
+      "target": "lem-sec-021-03.md",
+      "narrative": null,
+      "content": "The following equations hold in Rep(S0; F): (1) αn̸ = 0 for n ≥0. (2) βn̸ = 0 for n ≥0. (3) γn̸ = 0 for n > 0. (4) γ2 n = 0 for n > 0, hence γn is not a scalar multiple of sn. (5) β0α0 = 0. (6) βnαn = γn for n > 0. (7) αn−1βn−1 = γn for n > 0. (8) αnαn−1 = 0 for n > 0. (9) βn−1βn = 0 for n > 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prop-sec-021-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 39,
+      "target": "prop-sec-021-01.md",
+      "narrative": null,
+      "content": "In Rep(S0; F), ([n], sn) ∼= L((1n)) for all n ≥0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Description of a non-semisimple block",
+      "pageStart": 37,
+      "pageEnd": 37,
+      "target": "../sections/sec-020-6-description-of-a-non-semisimple-block.md",
+      "narrative": null,
+      "content": "6. Description of a non-semisimple block\nIn this section we give a complete description of nontrivial blocks in Rep(Sd; F)\nfor all d ∈Z≥0. In particular, we prove that all nontrivial blocks are equivalent",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The nontrivial block in Rep(S0; F)",
+      "pageStart": 37,
+      "pageEnd": 39,
+      "target": "../sections/sec-021-61-the-nontrivial-block-in-reps0-f.md",
+      "narrative": null,
+      "content": "Next, we show that for ﬁxed d ∈Z≥0, the nontrivial blocks in Rep(Sd; F) are all\nequivalent. We then state a conjecture which would allow us to compare blocks\nin Rep(Sd; F) with those in Rep(Sd−1; F) using a “restriction functor.” Finally,\nwe use Martin’s results on the partition algebras to give a complete description of\nnontrivial blocks.\n6.1. The nontrivial block in Rep(S0; F). In this section we give a complete\ndescription of the one nontrivial block in Rep(S0; F). In this particular case the\nconstructions of all idempotents are easy enough that we are able to fully describe\nthe block by br",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/rem-sec-021-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 39,
+      "target": "rem-sec-021-05.md",
+      "narrative": null,
+      "content": "The block described in Theorem 6.4 is equivalent to the nontrivial blocks in the Temperley-Lieb category. This can be deduced from the results in [Wes95, §10].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/thm-sec-021-04",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 39,
+      "target": "thm-sec-021-04.md",
+      "narrative": null,
+      "content": "Let Ln := L((1n)) for all n ≥0. The nontrivial block in Rep(S0; F) has the following associated quiver with relations: β0α0 = 0, αnαn−1 = 0, βn−1βn = 0, βnαn = αn−1βn−1 for n > 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Comparison of non-semisimple blocks in Rep(Sd; F).",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "../sections/sec-022-62-comparison-of-non-semisimple-blocks-in-repsd.md",
+      "narrative": null,
+      "content": "In this section we show that for fixed $d\\in\\mathbb{Z}_{\\geq0}$, the non-semisimple blocks in $\\underline{\\operatorname{Re}}\\!\\operatorname{p}(S_d; F)$ are all equivalent as additive categories. Thereafter we conjecture that a restriction functor induces an equivalence of categories between certain non-semisimple blocks in $\\underline{\\operatorname{Re}}\\!\\operatorname{p}(S_d; F)$ and $\\underline{\\operatorname{Re}}\\!\\operatorname{p}(S_{d-1}; F)$. First, let us fix some notation. Given a block $\\mathcal{B}$ in $\\underline{\\operatorname{Re}}\\!\\operatorname{p}(S_d; F)$, let $\\operatorname{Inc}_\\ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Description of blocks via Martin",
+      "pageStart": 40,
+      "pageEnd": 41,
+      "target": "../sections/sec-023-63-description-of-blocks-via-martin.md",
+      "narrative": null,
+      "content": "In this section we give a general description of the nontrivial blocks based on the results of Martin. We start by reviewing the main result in [@MR1399030].\n\nAssume $d\\not=0$ and let $\\lambda^{(0)}\\subset\\lambda^{(1)}\\subset\\cdots$ denote the Young diagrams associated to a fixed nontrivial block in $\\underline{\\operatorname{Re}}\\!\\operatorname{p}(S_d; F)$. For each $m\\geq|\\lambda^{(n)}|$, let $E_m^{(n)}$ denote the simple $FP_m(d)$-module associated to $\\lambda^{(n)}$ (see Theorem [\\[idemP\\]](#idemP){reference-type=\"ref\" reference=\"idemP\"}(1)), and let $P_m^{(n)}$ denote its projective cover.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/lem-sec-024-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 42,
+      "target": "lem-sec-024-01.md",
+      "narrative": null,
+      "content": "1. a is a unit in A if and only if ¯a is a unit in A/Au.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/lem-sec-024-03",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 42,
+      "target": "lem-sec-024-03.md",
+      "narrative": null,
+      "content": "1, x is invertible. It follows that xε′x−1 is an idempotent in A with ¯ε = xε′x−1 in A/Au. Therefore, it suﬃces to show ε and ε′ are conjugate in A whenever ¯ε = ε′. To do so, consider the element a := εε′ + (1 −ε)(1 −ε′) ∈A. If ¯ε = ε′, then ¯a = ¯1. Hence a is a unit in A (see Lemma A.1). Moreover, εa = εε′ = aε′ so that ε = aε′a−1. □",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. On lifting idempotents",
+      "pageStart": 41,
+      "pageEnd": 42,
+      "target": "../sections/sec-024-appendix-a-on-lifting-idempotents.md",
+      "narrative": null,
+      "content": "As we were unable to ﬁnd an appropriate reference, in this appendix we give\nstandard proofs of well-known results on lifting idempotents. Assume F is a ﬁeld,\nu is an indeterminate, and A is a free F[[u]]-algebra of ﬁnite rank. Finally, for\na ∈A, let ¯a denote the image of a under the quotient map A →A/Au. In this\nappendix we will show that any idempotent in the F-algebra A/Au can be lifted\nto an idempotent in A. First, we need the following lemma.\nLemma A.1. a is a unit in A if and only if ¯a is a unit in A/Au.\nProof. If a is a unit in A, then clearly ¯a is a unit in A/Au with ¯a−1 = a−1. Now",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/thm-sec-024-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 42,
+      "target": "thm-sec-024-02.md",
+      "narrative": null,
+      "content": "2. Given an idempotent e ∈A/Au, there exists an idempotent ε ∈A such that ¯ε = e (we say ε is a lift of e). Moreover, if two idempotents are conjugate in A/Au, then their lifts are conjugate in A. ‡The equations in (6.14) are only deﬁned when m is suﬃciently large. JONATHAN COMES AND VICTOR OSTRIK",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0910.5695v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "references",
+      "pageStart": 42,
+      "pageEnd": 43,
+      "target": "../sections/sec-025-references.md",
+      "narrative": null,
+      "content": "[Ben91] D. J. Benson. Representations and cohomology. I, volume 30 of Cambridge Studies in Ad-\nvanced Mathematics. Cambridge University Press, Cambridge, 1991. Basic representation\ntheory of ﬁnite groups and associative algebras.\n[BK01]\nBojko Bakalov and Alexander Kirillov, Jr. Lectures on tensor categories and modular\nfunctors, volume 21 of University Lecture Series. American Mathematical Society, Prov-\nidence, RI, 2001.\n[Del07]\nP. Deligne. La cat´egorie des repr´esentations du groupe sym´etrique St, lorsque t n’est pas\nun entier naturel. In Algebraic groups and homogeneous spaces, Tata Inst.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

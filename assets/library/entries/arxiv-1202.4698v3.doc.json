@@ -1,0 +1,2012 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1202.4698v3",
+  "title": "6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories",
+  "variant": "pdf",
+  "pages": 32,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Racah-Wigner 6j symbols for the modular double",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-racah-wigner-6j-symbols-for-the-modular-double"
+    },
+    {
+      "level": 2,
+      "title": "Self-dual representations of Uq(sl(2,R)) and the modular double",
+      "number": "2.1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-self-dual-representations-of-uqsl2r-and-the-m"
+    },
+    {
+      "level": 2,
+      "title": "Normalized Clebsch-Gordan coefficients for the modular double",
+      "number": "2.2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-normalized-clebsch-gordan-coefficients-for-th"
+    },
+    {
+      "level": 2,
+      "title": "Normalized b-6j symbols for the modular double",
+      "number": "2.3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-normalized-b-6j-symbols-for-the-modular-doubl"
+    },
+    {
+      "level": 2,
+      "title": "3j symbols for the modular double",
+      "number": "2.4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-24-3j-symbols-for-the-modular-double"
+    },
+    {
+      "level": 2,
+      "title": "A new integral formula for the b-6j symbols",
+      "number": "2.5",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-25-a-new-integral-formula-for-the-b-6j-symbols"
+    },
+    {
+      "level": 1,
+      "title": "Relations to three-dimensional hyperbolic geometry",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-3-relations-to-three-dimensional-hyperbolic-geom"
+    },
+    {
+      "level": 2,
+      "title": "Volumes of non-ideal tetrahedra",
+      "number": "3.1",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-31-volumes-of-non-ideal-tetrahedra"
+    },
+    {
+      "level": 2,
+      "title": "Semiclassical limit",
+      "number": "3.2",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-32-semiclassical-limit"
+    },
+    {
+      "level": 1,
+      "title": "Relation to Liouville theory and the representation theory of Diff(S1)",
+      "number": "4",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-4-relation-to-liouville-theory-and-the-represent"
+    },
+    {
+      "level": 2,
+      "title": "Fusion kernel",
+      "number": "4.1",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-41-fusion-kernel"
+    },
+    {
+      "level": 2,
+      "title": "Unitary normalization",
+      "number": "4.2",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-42-unitary-normalization"
+    },
+    {
+      "level": 2,
+      "title": "6j symbols of Diff(S1)",
+      "number": "4.3",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-43-6j-symbols-of-diffs1"
+    },
+    {
+      "level": 1,
+      "title": "Application to two-dimensional quantum hyperbolic geometry",
+      "number": "5",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-5-application-to-two-dimensional-quantum-hyperbo"
+    },
+    {
+      "level": 2,
+      "title": "Classical Teichmüller theory of the four-holed sphere",
+      "number": "5.1",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-51-classical-teichmüller-theory-of-the-four-hole"
+    },
+    {
+      "level": 2,
+      "title": "The quantization problem",
+      "number": "5.2",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-52-the-quantization-problem"
+    },
+    {
+      "level": 2,
+      "title": "Transitions between representation",
+      "number": "5.3",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-53-transitions-between-representation"
+    },
+    {
+      "level": 2,
+      "title": "Quantization of Fenchel-Nielsen coordinates",
+      "number": "5.4",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-54-quantization-of-fenchel-nielsen-coordinates"
+    },
+    {
+      "level": 2,
+      "title": "Classical limit",
+      "number": "5.5",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-55-classical-limit"
+    },
+    {
+      "level": 1,
+      "title": "Applications to supersymmetric gauge theories",
+      "number": "6",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-6-applications-to-supersymmetric-gauge-theories"
+    },
+    {
+      "level": 2,
+      "title": "Three-dimensional gauge theories on duality walls",
+      "number": "6.1",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-61-three-dimensional-gauge-theories-on-duality-w"
+    },
+    {
+      "level": 2,
+      "title": "Partition functions of three-dimensional supersymmetric gauge theories",
+      "number": "6.2",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-62-partition-functions-of-three-dimensional-supe"
+    },
+    {
+      "level": 2,
+      "title": "The b-6j symbols as a partition function",
+      "number": "6.3",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-63-the-b-6j-symbols-as-a-partition-function"
+    },
+    {
+      "level": 2,
+      "title": "Applications to the geometric construction of three-dimensional gauge theories?",
+      "number": "6.4",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-64-applications-to-the-geometric-construction-of"
+    },
+    {
+      "level": 1,
+      "title": "A Special functions",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-a-special-functions"
+    },
+    {
+      "level": 2,
+      "title": "A.1 The function b(x)",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-a1-the-function-bx"
+    },
+    {
+      "level": 2,
+      "title": "A.2 Double Sine function",
+      "number": null,
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-a2-double-sine-function"
+    },
+    {
+      "level": 2,
+      "title": "A.3 The elliptic Gamma function",
+      "number": null,
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-a3-the-elliptic-gamma-function"
+    },
+    {
+      "level": 1,
+      "title": "B Proof of identity (??)",
+      "number": null,
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-b-proof-of-identity"
+    },
+    {
+      "level": 2,
+      "title": "B.1 The master integral identity",
+      "number": null,
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-b1-the-master-integral-identity"
+    },
+    {
+      "level": 2,
+      "title": "B.2 Useful corollaries.",
+      "number": null,
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-b2-useful-corollaries"
+    },
+    {
+      "level": 2,
+      "title": "B.3 Derivation of the indentity (??)",
+      "number": null,
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-b3-derivation-of-the-indentity"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 168,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "b-6j",
+          "heading": false
+        },
+        {
+          "term": "supersymmetric gauge",
+          "heading": false
+        },
+        {
+          "term": "gauge theories",
+          "heading": false
+        },
+        {
+          "term": "modular double",
+          "heading": false
+        },
+        {
+          "term": "bols",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1202.4698v3 [hep-th] 30 Apr 2013 6j symbols for the modular double, quantum hyperbolic geometry, and supersymmetric gauge theories J. Teschner and G. S. Vartanov DESY Theory, Notkestr. 85, 22603 Hamburg, Germany Abstract We revisit the deﬁnition of the 6j symbols from the modular double of Uq(sl(2, R)), referred to as b-6j symbols. Our new results are (i) the identiﬁcation of particularly natural normal-",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1202.4698v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 509,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite teschner",
+          "heading": false
+        },
+        {
+          "term": "liouville theory",
+          "heading": false
+        },
+        {
+          "term": "three-dimensional supersymmetric",
+          "heading": false
+        },
+        {
+          "term": "quantum teichm",
+          "heading": false
+        },
+        {
+          "term": "uller theory",
+          "heading": false
+        },
+        {
+          "term": "chern-simons theories",
+          "heading": false
+        },
+        {
+          "term": "symbols",
+          "heading": false
+        },
+        {
+          "term": "fsl",
+          "heading": false
+        }
+      ],
+      "extract": "\\setcounter{equation}{0} Analogs of the Racah-Wigner $6j$-symbols coming from the study of a non-compact quantum group have been introduced in \\cite{PT1}. The quantum group in question is related to $\\CU_q(\\fsl(2,\\BR))$ and is often referred to as the modular double of $\\CU_q(\\fsl(2,\\BR))$. The $6j$-symbols of this quantum group, which will be called b-$6j$ symbols, play an important role for the harmonic analysis",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-racah-wigner-6j-symbols-for-the-modular-double",
+      "number": "2",
+      "title": "Racah-Wigner 6j symbols for the modular double",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": "2",
+      "labelEnd": "2",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-self-dual-representations-of-uqsl2r-and-the-m",
+      "number": "2.1",
+      "title": "Self-dual representations of Uq(sl(2,R)) and the modular double",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 326,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spp",
+          "heading": false
+        },
+        {
+          "term": "textup",
+          "heading": false
+        },
+        {
+          "term": "representations",
+          "heading": true
+        },
+        {
+          "term": "fsl",
+          "heading": false
+        },
+        {
+          "term": "noncompact quantum",
+          "heading": false
+        },
+        {
+          "term": "tilde",
+          "heading": false
+        },
+        {
+          "term": "frac cosh",
+          "heading": false
+        },
+        {
+          "term": "bytsko",
+          "heading": false
+        }
+      ],
+      "extract": "We will be considering the Hopf-algebra $\\CU_q(\\fsl(2,\\BR))$ which has generators $E$, $F$ and $K$ subject to the usual relations. This algebra has a one-parameter family of representations $\\CP_{\\al}$ \\begin{equation}\\label{Paldef} \\begin{aligned} \\SE_\\al \\equiv\\pi_{\\al}(E):=e^{+\\pi b\\sx}\\frac{\\cosh\\pi b (\\spp-s)}{\\sin\\pi b^2} e^{+\\pi b\\sx}\\,,\\\\ \\SF_\\al\\equiv\\pi_{\\al}(F):=e^{-\\pi b\\sx}\\frac{\\cosh\\pi b",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-normalized-clebsch-gordan-coefficients-for-th",
+      "number": "2.2",
+      "title": "Normalized Clebsch-Gordan coefficients for the modular double",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 619,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textup alpha",
+          "heading": false
+        },
+        {
+          "term": "alpha big",
+          "heading": false
+        },
+        {
+          "term": "frac textup",
+          "heading": false
+        },
+        {
+          "term": "clebsch-gordan",
+          "heading": true
+        },
+        {
+          "term": "alpha delta",
+          "heading": false
+        },
+        {
+          "term": "clebsch-gordan maps",
+          "heading": false
+        },
+        {
+          "term": "intertwining property",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        }
+      ],
+      "extract": "The Clebsch-Gordan maps $\\SC^{\\al_3}_{\\al_2,\\al_1}: \\CP_{\\al_2}\\ot\\CP_{\\al_1}\\ra\\CP_{\\al_3}$ were constructed in \\cite{PT2}. The defining intertwining property is \\begin{equation}\\label{inter} \\SC^{\\al_3}_{\\al_2,\\al_1}\\cdot(\\pi_{\\al_2}\\ot\\pi_{\\al_1})(\\De(X))= \\pi_{\\al_3}\\cdot\\SC^{\\al_3}_{\\al_2,\\al_1}\\,. \\end{equation} In \\cite{PT2} it was found that the $\\SC^{\\al_3}_{\\al_2,\\al_1}$ can be represented as integral",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-normalized-b-6j-symbols-for-the-modular-doubl",
+      "number": "2.3",
+      "title": "Normalized b-6j symbols for the modular double",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 449,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symbols big",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "end align",
+          "heading": false
+        },
+        {
+          "term": "alpha",
+          "heading": false
+        },
+        {
+          "term": "clebsch-gordan maps",
+          "heading": false
+        },
+        {
+          "term": "symbols corresponding",
+          "heading": false
+        },
+        {
+          "term": "textup",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        }
+      ],
+      "extract": "The composition of Clebsch-Gordan maps allows us to define two natural families of projection operators \\begin{align} &({}_{}^s\\SC^{\\al_4}_{\\al_3,\\al_2,\\al_1}(\\al_s)\\Psi)(x_4)\\,=\\, \\int_{\\BR^3}dx_1dx_2dx_3\\; \\CE_{\\al_s}^{(s)}(A|X)\\psi(x_3,x_2,x_1)\\,,\\\\ &({}_{}^t\\SC^{\\al_4}_{\\al_3,\\al_2,\\al_1}(\\al_t)\\Psi)(x_4)\\,=\\, \\int_{\\BR^3}dx_1dx_2dx_3\\; \\CE_{\\al_t}^{(t)}(A|X)\\psi(x_3,x_2,x_1)\\,, \\end{align} with integral kernels",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-3j-symbols-for-the-modular-double",
+      "number": "2.4",
+      "title": "3j symbols for the modular double",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 369,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gamma fus",
+          "heading": false
+        },
+        {
+          "term": "int textup",
+          "heading": false
+        },
+        {
+          "term": "symbols big",
+          "heading": false
+        },
+        {
+          "term": "beta gamma",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        },
+        {
+          "term": "equation label",
+          "heading": false
+        }
+      ],
+      "extract": "$3j$ coefficients describe invariants in tensor products of three representations. Such invariants may be constructed from the Clebsch-Gordon maps and the invariant bilinear form $\\CB:\\CP_{\\al}\\ot\\CP_{Q-\\al}\\ra \\BC$ defined by \\cite{PT2} \\begin{equation} \\CB(f,g):=\\,\\int_\\BR dx\\; f(x)g(x-\\textup{i}Q/2)\\,. \\end{equation} We may thereby construct an invariant trilinear form",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-25-a-new-integral-formula-for-the-b-6j-symbols",
+      "number": "2.5",
+      "title": "A new integral formula for the b-6j symbols",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 336,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "underline alpha",
+          "heading": false
+        },
+        {
+          "term": "textup infty",
+          "heading": false
+        },
+        {
+          "term": "notag end",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "align label",
+          "heading": false
+        },
+        {
+          "term": "symbols",
+          "heading": true
+        },
+        {
+          "term": "label big",
+          "heading": false
+        },
+        {
+          "term": "bigg",
+          "heading": false
+        }
+      ],
+      "extract": "One of our main results will be the following formula for the b-$6j$ symbols: \\begin{align}\\label{6j3} \\big\\{\\,{}^{\\al_1}_{\\al_3}\\;{}^{\\al_2}_{\\al_4}\\;{}^{\\al_s}_{\\al_t}\\big\\}_b^{} &=\\Delta(\\al_s,\\al_2,\\al_1)\\Delta(\\al_4,\\al_3,\\al_s)\\Delta(\\al_t,\\al_3,\\al_2) \\Delta(\\al_4,\\al_t,\\al_1)\\\\ &\\qquad \\times\\int\\limits_{\\CC}du\\; S_b(u-\\alpha_{12s}) S_b(u-\\al_{s34}) S_b(u -\\alpha_{23t}) S_b(u-\\alpha_{1t4}) \\notag \\\\[-1.5ex]",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-3-relations-to-three-dimensional-hyperbolic-geom",
+      "number": "3",
+      "title": "Relations to three-dimensional hyperbolic geometry",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 89,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bms",
+          "heading": false
+        },
+        {
+          "term": "hikami",
+          "heading": false
+        },
+        {
+          "term": "relations",
+          "heading": true
+        }
+      ],
+      "extract": "\\setcounter{equation}{0} Our goal in this section is to demonstrate by direct calculation that the b-$6j$ symbols reproduce the volume of non-ideal tetrahedra in the classical limit. A second, perhaps more conceptual proof of this fact will be outlined in section \\ref{sec:2hyp} below. Similar observations concerning relations between the semiclassical behavior of the noncompact quantum dilogarithm and hyperbolic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-31-volumes-of-non-ideal-tetrahedra",
+      "number": "3.1",
+      "title": "Volumes of non-ideal tetrahedra",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 205,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tilde delta",
+          "heading": false
+        },
+        {
+          "term": "underline",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "end align",
+          "heading": false
+        },
+        {
+          "term": "align label",
+          "heading": false
+        },
+        {
+          "term": "beq label",
+          "heading": false
+        }
+      ],
+      "extract": "We are considering non-ideal tetrahedra which are completely defined by the collection of six dihedral angles $\\eta_1,\\dots,\\eta_6$. In order to formulate the formula for their volumes from \\cite{M}, let us use the notation $A_k=e^{\\textup{i}\\eta_k}$, and define \\begin{align} \\label{Udef} U({u},\\underline{{A}}) = & \\Li_2({u}) + \\Li_2({A}_{st13} {u}) + \\ \\Li_2({A}_{st24} {u}) + \\Li_2({A}_{1234} {u}) \\\\ & -",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-32-semiclassical-limit",
+      "number": "3.2",
+      "title": "Semiclassical limit",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 351,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textup",
+          "heading": false
+        },
+        {
+          "term": "underline",
+          "heading": false
+        },
+        {
+          "term": "exp bigg",
+          "heading": false
+        },
+        {
+          "term": "quasi-classical limit",
+          "heading": false
+        },
+        {
+          "term": "alpha",
+          "heading": false
+        },
+        {
+          "term": "label int",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        }
+      ],
+      "extract": "In the following we will assume that $\\al_k\\in\\BR$, $0<\\al_k<Q/2$. In order to study the quasi-classical limit of (\\ref{6j3}) let us write the right hand side of \\rf{6j3} in the form \\begin{equation}\\label{Int} I:=E(\\underline{\\al})\\int_{\\CC}du \\,\\CI(a,b;u)\\,. \\end{equation} The integrand $\\CI(a,b;u)$ may be written as \\begin{equation}\\label{int} \\CI(a,b;u)= \\frac{\\prod_{i=1}^4 S_b(a_i+u)}{S_b(-Q+u) \\prod_{i=1}^3",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-4-relation-to-liouville-theory-and-the-represent",
+      "number": "4",
+      "title": "Relation to Liouville theory and the representation theory of Diff(S1)",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 60,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diff",
+          "heading": true
+        },
+        {
+          "term": "liouville",
+          "heading": true
+        },
+        {
+          "term": "symbols",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{Liou} \\setcounter{equation}{0} In this section we want to explain that the normalization leading to the definition of the b-$6j$ symbols is also very natural from the point of view of Liouville theory. This is closely related to the interpretation of b-$6j$ symbols as $6j$ symbols for the the infinite-dimensional group ${\\rm Diff(S^1)}$.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-011-41-fusion-kernel",
+      "number": "4.1",
+      "title": "Fusion kernel",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 300,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "int textup",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "end align",
+          "heading": false
+        },
+        {
+          "term": "t-channel",
+          "heading": false
+        },
+        {
+          "term": "align label",
+          "heading": false
+        },
+        {
+          "term": "alpha",
+          "heading": false
+        },
+        {
+          "term": "s-channel",
+          "heading": false
+        },
+        {
+          "term": "four-point functions",
+          "heading": false
+        }
+      ],
+      "extract": "Recall that the fusion kernel is usually defined in terms of the conformal blocks appearing in the holomorphically factorized form of the four-point functions, \\begin{align}\\notag & \\left\\langle\\, V_{\\al_4}(z_4,\\bz_4) V_{\\al_3}(z_3,\\bz_3) V_{\\al_2}(z_2,\\bz_2)V_{\\al_1}(z_1,\\bz_1)\\,\\right\\rangle =\\\\ \\label{s-channel} &\\qquad =\\int_{{Q}/{2}+\\textup{i}\\BR}d\\al_s\\;C(\\al_4,\\al_3,\\al_s)C(Q-\\al_s,\\al_2,\\al_1)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-42-unitary-normalization",
+      "number": "4.2",
+      "title": "Unitary normalization",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 258,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unitary normalization",
+          "heading": true
+        },
+        {
+          "term": "fusion coefﬁcients",
+          "heading": false
+        },
+        {
+          "term": "conformal blocks",
+          "heading": false
+        },
+        {
+          "term": "b-6j",
+          "heading": false
+        }
+      ],
+      "extract": "4.2 Unitary normalization The expressions (4.1) and (4.2) strongly suggest to redeﬁne the conformal blocks by absorbing the three-point functions C(α3, α2, α1) into the deﬁnition, G(s) αs (A|Z) := \u0000C(α4, α3, αs)C(Q −αs, α2, α1) \u0001 1 2F (s) αs (A|Z) , G(t) αt (A|Z) := \u0000C(α4, αt, α1)C(Q −αt, α3, α2) \u0001 1 2F (t) αt (A|Z) . (4.7) This corresponds to normalizing the conformal blocks associated to the three-punctured sphere",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-43-6j-symbols-of-diffs1",
+      "number": "4.3",
+      "title": "6j symbols of Diff(S1)",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 323,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symbols",
+          "heading": true
+        },
+        {
+          "term": "diﬀ",
+          "heading": false
+        },
+        {
+          "term": "normal ization",
+          "heading": false
+        },
+        {
+          "term": "ization condition",
+          "heading": false
+        },
+        {
+          "term": "conformal ﬁeld",
+          "heading": false
+        },
+        {
+          "term": "modular double",
+          "heading": false
+        },
+        {
+          "term": "ﬁeld theory",
+          "heading": false
+        }
+      ],
+      "extract": "It is known that Liouville theory is deeply related to the representation theory of the group Diﬀ(S1) of diffeomorphisms of the unit circle [T08]. The operator product expansion from conformal ﬁeld theory leads to the deﬁnition of a suitable generalization of the tensor product operation for representations of inﬁnite-dimensional groups like Diﬀ(S1). One may therefore interpret the chiral vertex-operators from",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-5-application-to-two-dimensional-quantum-hyperbo",
+      "number": "5",
+      "title": "Application to two-dimensional quantum hyperbolic geometry",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 163,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite nrs",
+          "heading": false
+        },
+        {
+          "term": "uller spaces",
+          "heading": false
+        },
+        {
+          "term": "darboux coordinates",
+          "heading": false
+        },
+        {
+          "term": "teichm",
+          "heading": false
+        },
+        {
+          "term": "symbols",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:2hyp} \\setcounter{equation}{0} It is known that the Racah-Wigner symbols of the modular double play an important role when the quantum Teichm\\\"uller theory \\cite{Fo97,Ka97,CF99} is studied in the length representation \\cite{Teschner:2003at,T05}. Having fixed a particular normalization in our definition of the b-$6j$ symbols above naturally leads to question what it corresponds to in this context. We are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-51-classical-teichmüller-theory-of-the-four-hole",
+      "number": "5.1",
+      "title": "Classical Teichmüller theory of the four-holed sphere",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 606,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "s-l cosh",
+          "heading": false
+        },
+        {
+          "term": "cosh frac",
+          "heading": false
+        },
+        {
+          "term": "darboux coordinates",
+          "heading": false
+        },
+        {
+          "term": "label fn-fk",
+          "heading": false
+        },
+        {
+          "term": "four-holed",
+          "heading": true
+        },
+        {
+          "term": "cite nrs",
+          "heading": false
+        },
+        {
+          "term": "poisson bracket",
+          "heading": false
+        },
+        {
+          "term": "darboux-coordinates",
+          "heading": false
+        }
+      ],
+      "extract": "To be specific, let us restrict attention to four-holed spheres $C_{0,4}$. The holes are assumed to be represented by geodesics with lengths $L=(l_1, \\dots,l_4)$. There are three simple closed curves $\\ga_s$, $\\ga_t$, and $\\ga_u$ encircling pairs of points $(z_1,z_2)$, $(z_2,z_3)$ and $(z_1,z_3)$, respectively. A set of useful coordinate functions are defined in terms of the hyperbolic cosines",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-52-the-quantization-problem",
+      "number": "5.2",
+      "title": "The quantization problem",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 370,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "diffop",
+          "heading": false
+        },
+        {
+          "term": "textup",
+          "heading": false
+        },
+        {
+          "term": "sll",
+          "heading": false
+        },
+        {
+          "term": "fn-fk",
+          "heading": false
+        },
+        {
+          "term": "psi",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        },
+        {
+          "term": "darboux",
+          "heading": false
+        }
+      ],
+      "extract": "The quantum Teichm\\\"uller theory \\cite{Fo97,Ka97,CF99,CF00} constructs a non-commutative algebra $\\CA_b$ deforming the Poisson-algebra of geodesic length functions on Teichm\\\"uller space. In the so-called length representation \\cite{Teschner:2003at,T05} one may construct natural representations of this algebra associated to pants decompositions of the Riemann surface under consideration. For the case under",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-53-transitions-between-representation",
+      "number": "5.3",
+      "title": "Transitions between representation",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 390,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "psi big",
+          "heading": false
+        },
+        {
+          "term": "loopduality",
+          "heading": false
+        },
+        {
+          "term": "frac textup",
+          "heading": false
+        },
+        {
+          "term": "difference equations",
+          "heading": false
+        },
+        {
+          "term": "pants",
+          "heading": false
+        },
+        {
+          "term": "begin equation",
+          "heading": false
+        },
+        {
+          "term": "end equation",
+          "heading": false
+        },
+        {
+          "term": "label duality",
+          "heading": false
+        }
+      ],
+      "extract": "The transition between any pair of representations $\\pi_{\\si_1}$ and $\\pi_{\\si_2}$ can be represented as an integral transformation of the form \\begin{equation}\\label{duality} \\psi_{\\si_1}(l_{\\si_1})\\,=\\,\\int dl_{\\si_2}\\;A^{\\si_1\\si_2}_L(l_{\\si_1}, l_{\\si_2}) \\,\\psi_{\\si_2}(l_{\\si_2})\\,. \\end{equation} The relations \\begin{equation}\\label{duality'} \\begin{aligned} & \\big(\\pi_s(\\sk_t)\\psi_{s}\\big)(l_{s})\\,=\\,4\\pi b^2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-54-quantization-of-fenchel-nielsen-coordinates",
+      "number": "5.4",
+      "title": "Quantization of Fenchel-Nielsen coordinates",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 516,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cosh sll",
+          "heading": false
+        },
+        {
+          "term": "sll s-l",
+          "heading": false
+        },
+        {
+          "term": "sll cos",
+          "heading": false
+        },
+        {
+          "term": "frac sinh",
+          "heading": false
+        },
+        {
+          "term": "sqrt sinh",
+          "heading": false
+        },
+        {
+          "term": "cite dgot",
+          "heading": false
+        },
+        {
+          "term": "liou",
+          "heading": false
+        },
+        {
+          "term": "frac textup",
+          "heading": false
+        }
+      ],
+      "extract": "The main observation we want to make here may be summarized in the following two statements: \\noindent {\\it 1) The geodesic length operators can be represented in terms of the quantized Fenchel-Nielsen coordinates as follows: \\begin{subequations}\\begin{align} \\pi_s^{\\rm can}(\\CL_s)\\,=\\,& 2\\cosh(\\sll_s/2)\\,,\\\\ \\pi_s^{\\rm can}(\\CL_t)\\,=\\,&\\frac{1}{ 2(\\cosh \\sll_s - \\cos 2\\pi b^2)} \\Big(2\\cos\\pi b^2(L_2L_3+L_1L_4)+",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-55-classical-limit",
+      "number": "5.5",
+      "title": "Classical limit",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 226,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite nrs",
+          "heading": false
+        },
+        {
+          "term": "darboux coordinates",
+          "heading": false
+        },
+        {
+          "term": "fn-fk",
+          "heading": false
+        },
+        {
+          "term": "quantum't",
+          "heading": false
+        },
+        {
+          "term": "semiclassical",
+          "heading": false
+        }
+      ],
+      "extract": "The classical counterpart of the expression \\rf{quantum't Hooft} is found by replacing $\\sll_s$ and $\\sk_s$ by commuting variables $l_s$ and $k_s$, respectively, and sending $b\\ra 0$. The formulae for the operators $\\pi_s^{\\rm can}(\\SL_s)$ and $\\pi_s^{\\rm can}(\\SL_t)$ given above are thereby found to be related to the formulae \\rf{FN-FK} for $L_s$ and $L_t$ in terms of the Darboux coordinates $l_s$ and $k_s$ for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-6-applications-to-supersymmetric-gauge-theories",
+      "number": "6",
+      "title": "Applications to supersymmetric gauge theories",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": "18",
+      "labelEnd": "18",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-021-61-three-dimensional-gauge-theories-on-duality-w",
+      "number": "6.1",
+      "title": "Three-dimensional gauge theories on duality walls",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 505,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "three-dimensional gauge",
+          "heading": true
+        },
+        {
+          "term": "gauge theories",
+          "heading": true
+        },
+        {
+          "term": "cite drukker",
+          "heading": false
+        },
+        {
+          "term": "three-dimensional supersymmetric",
+          "heading": false
+        },
+        {
+          "term": "four-dimensional theories",
+          "heading": false
+        },
+        {
+          "term": "cite hosomichi",
+          "heading": false
+        },
+        {
+          "term": "cite alday",
+          "heading": false
+        },
+        {
+          "term": "three-dimensional theory",
+          "heading": false
+        }
+      ],
+      "extract": "Recently remarkable relations between a certain class $\\CS$ of $\\mathcal{N}=2$ supersymmetric four-dimensional gauge theories and two-dimensional conformal field theories have been discovered in \\cite{Alday:2009aq}. One of the simplest examples for such relations are relations between the partition functions of certain gauge theories on $S^4$ \\cite{Pe} and physical correlation functions in Liouville theory. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-62-partition-functions-of-three-dimensional-supe",
+      "number": "6.2",
+      "title": "Partition functions of three-dimensional supersymmetric gauge theories",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 256,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textup infty",
+          "heading": false
+        },
+        {
+          "term": "phi chir",
+          "heading": false
+        },
+        {
+          "term": "underline",
+          "heading": false
+        },
+        {
+          "term": "partition",
+          "heading": true
+        },
+        {
+          "term": "theories",
+          "heading": true
+        },
+        {
+          "term": "superfield",
+          "heading": false
+        },
+        {
+          "term": "flavor symmetry",
+          "heading": false
+        },
+        {
+          "term": "hama",
+          "heading": false
+        }
+      ],
+      "extract": "Let us briefly review the general form of the partition functions for $3d$ supersymmetric field theories. According to \\cite{Hama:2010av}, following \\cite{Kapustin:2010xq,J,HHL1}, the partition function for $3d$ $\\mathcal{N}=2$ SYM theory with gauge group $G$ and flavor symmetry group $F$ defined on a squashed three sphere has the form \\beq \\label{PF_def} Z(\\underline{f}) \\ = \\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-63-the-b-6j-symbols-as-a-partition-function",
+      "number": "6.3",
+      "title": "The b-6j symbols as a partition function",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 454,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "partition function",
+          "heading": true
+        },
+        {
+          "term": "pf-6quarks",
+          "heading": false
+        },
+        {
+          "term": "array bigg",
+          "heading": false
+        },
+        {
+          "term": "mathcal sym",
+          "heading": false
+        },
+        {
+          "term": "array ccc",
+          "heading": false
+        },
+        {
+          "term": "alpha",
+          "heading": false
+        },
+        {
+          "term": "textup infty",
+          "heading": false
+        },
+        {
+          "term": "sym theory",
+          "heading": false
+        }
+      ],
+      "extract": "Although expression (\\ref{6j2}) for b-$6j$ symbol resembles the partition functions of $3d$ SYM theory with $U(1)$ gauge group, it cannot easily be interpreted as partition function for some three-dimensional gauge theory since the parameters entering its expression are subject to the condition that their sum equals $2Q$, while the parameters entering partitions functions are not restricted. In the course of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-64-applications-to-the-geometric-construction-of",
+      "number": "6.4",
+      "title": "Applications to the geometric construction of three-dimensional gauge theories?",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": "21",
+      "labelEnd": "22",
+      "words": 366,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gauge theories",
+          "heading": true
+        },
+        {
+          "term": "infty textup",
+          "heading": false
+        },
+        {
+          "term": "int textup",
+          "heading": false
+        },
+        {
+          "term": "three-dimensional",
+          "heading": true
+        },
+        {
+          "term": "cite dimofte",
+          "heading": false
+        },
+        {
+          "term": "supersymmetric gauge",
+          "heading": false
+        },
+        {
+          "term": "infty frac",
+          "heading": false
+        },
+        {
+          "term": "gauge symmetry",
+          "heading": false
+        }
+      ],
+      "extract": "It is interesting to observe that the result for (mass-deformed) $T[SU(2)]$ from \\cite{Hosomichi:2010vh,Hama:2010av}, after applications of the same type of identities, can be brought to $3d$ $\\mathcal{N}=2$ CS theory with $SU(2)$ gauge group at level $1$, $4$ quarks and some singlet chiral fields. The above statement can be derived from the following integral identity \\cite{SV} \\begin{align} & \\int_{-\\textup{i}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-a-special-functions",
+      "number": null,
+      "title": "A Special functions",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-026-a1-the-function-bx",
+      "number": null,
+      "title": "A.1 The function b(x)",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": "22",
+      "labelEnd": "22",
+      "words": 84,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "analyticity",
+          "heading": false
+        },
+        {
+          "term": "function",
+          "heading": true
+        },
+        {
+          "term": "meromorphic",
+          "heading": false
+        }
+      ],
+      "extract": "The function Γb(x) is a close relative of the double Gamma function studied in [Br]. It can be deﬁned by means of the integral representation log Γb(x) = ∞ Z 0 dt t \u0012 e−xt −e−Qt/2 (1 −e−bt)(1 −e−t/b) −(Q −2x)2 8et −Q −2x t \u0013 . (A.1) Important properties of Γb(x) are functional equation Γb(x + b) = √ 2πbbx−1 2Γ−1(bx)Γ(x). (A.2) analyticity Γb(x) is meromorphic, poles: x = −nb −mb−1, n, m ∈Z≥0. (A.3) A useful",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-a2-double-sine-function",
+      "number": null,
+      "title": "A.2 Double Sine function",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 384,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "double sine-function",
+          "heading": false
+        },
+        {
+          "term": "special function",
+          "heading": false
+        },
+        {
+          "term": "eiν",
+          "heading": false
+        },
+        {
+          "term": "barnes",
+          "heading": false
+        }
+      ],
+      "extract": "The special functions used in this note are all build from the so-called double Sine-function. This function is closely related to the special function here denoted eb(x), which was introduced under the name of quantum dilogarithm in [FK2]. These special functions are simply related to the Barnes double Gamma function [Br], and were also introduced in studies of quantum groups and integrable models in [F2, Ru, Wo,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-a3-the-elliptic-gamma-function",
+      "number": null,
+      "title": "A.3 The elliptic Gamma function",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 134,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "peared",
+          "heading": false
+        },
+        {
+          "term": "elliptic",
+          "heading": true
+        },
+        {
+          "term": "theta-function",
+          "heading": false
+        }
+      ],
+      "extract": "The second class of special functions we need here is the elliptic gamma function which ap- peared implicitly in [Bx] and was introduced in [Ru] Γ(z; p, q) = ∞ Y i,j=0 1 −z−1pi+1qj+1 1 −zpiqj , (A.18) 24 satisfying the following properties symmetry Γ(z; p, q) = Γ(z; q, p) , (A.19) functional equations Γ(qz; p, q) = θ(z; p)Γ(z; p, q), (A.20) Γ(pz; p, q) = θ(z; q)Γ(z; p, q) , (A.21) reﬂection property Γ(z; p, q) Γ(pq",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-b-proof-of-identity",
+      "number": null,
+      "title": "B Proof of identity (??)",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": "24",
+      "labelEnd": "24",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-030-b1-the-master-integral-identity",
+      "number": null,
+      "title": "B.1 The master integral identity",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 406,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "elliptic gamma",
+          "heading": false
+        },
+        {
+          "term": "balancing condition",
+          "heading": false
+        },
+        {
+          "term": "integral",
+          "heading": true
+        },
+        {
+          "term": "gamma function",
+          "heading": false
+        },
+        {
+          "term": "reduce",
+          "heading": false
+        },
+        {
+          "term": "so-called",
+          "heading": false
+        },
+        {
+          "term": "limit",
+          "heading": false
+        }
+      ],
+      "extract": "Let us start from the V -function [S03] which is the example from Spiridonov’ theory of elliptic hypergeometric integrals [S01, S03]4 deﬁned by V (s) = κ Z T Q8 i=1 Γ(siz±1; p, q) Γ(z±2; p, q) dz 2πiz, (B.1) where Q8 i=1 si = (pq)2 is the so-called balancing condition and κ = (p; p)∞(q; q)∞ 2 with (z; q)∞= Q∞ i=0(1 −zqi). The main building block is the elliptic gamma function deﬁned in (A.18) above. Theorem 1. [S03]",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-b2-useful-corollaries",
+      "number": null,
+      "title": "B.2 Useful corollaries.",
+      "level": 2,
+      "pageStart": 25,
+      "pageEnd": 28,
+      "labelStart": "25",
+      "labelEnd": "28",
+      "words": 666,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "balancing condition",
+          "heading": false
+        },
+        {
+          "term": "arg",
+          "heading": false
+        },
+        {
+          "term": "hand-side",
+          "heading": false
+        },
+        {
+          "term": "integral transformations",
+          "heading": false
+        },
+        {
+          "term": "corollaries",
+          "heading": true
+        },
+        {
+          "term": "corollary",
+          "heading": false
+        },
+        {
+          "term": "restrictions",
+          "heading": false
+        }
+      ],
+      "extract": "For proving the main transformation formula which allows us to get from (2.17) the expression (2.28) we need following corollaries. Corollary 1. I(µ) = Sb(µ5 + µ6)Sb(2Q − 6 X i=1 µ6) Y 1≤i<j≤4 Sb(µi + µj)I(ν), (B.6) 26 where we deﬁne the integral I(µ) as I(µ) = 1 2 Z i∞ −i∞ Q6 i=1 Sb(µi ± u) Sb(±2u) du. (B.7) Here we have [ν1, ν2, ν3, ν4, ν5, ν6] = [µ1 + ξ, µ2 + ξ, µ3 + ξ, µ4 + ξ, µ5 −ξ, µ6 −ξ] and 2ξ = Q − 4 X i=1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-b3-derivation-of-the-indentity",
+      "number": null,
+      "title": "B.3 Derivation of the indentity (??)",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 32,
+      "labelStart": "28",
+      "labelEnd": "32",
+      "words": 1700,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "energy phys",
+          "heading": false
+        },
+        {
+          "term": "teichm uller",
+          "heading": false
+        },
+        {
+          "term": "quantum teichm",
+          "heading": false
+        },
+        {
+          "term": "liouville theory",
+          "heading": false
+        },
+        {
+          "term": "spiridonov",
+          "heading": false
+        },
+        {
+          "term": "quantized teichm",
+          "heading": false
+        },
+        {
+          "term": "gauge theories",
+          "heading": false
+        },
+        {
+          "term": "teschner",
+          "heading": false
+        }
+      ],
+      "extract": "Let us start from the expression (2.17) and apply Corollary 2 taking parameters as [µ, ν] = \u0014 Q ± (αs −Q 2 ) α2 + α4 + αt −Q 2 α2 + α4 −αt + Q 2 −α4 ± (α3 −Q 2 ) Q 2 −α1 −α2 −Q 2 + α1 −α2 \u0015 , one gets A1I \u0012 Q−αt−α1−α4 2 + αs 3Q−αt−α1−α4 2 −αs Q+α1−α4+αt 2 −α3 −Q−α1+α4+αt 2 + α2 Q−α1+α4+αt 2 −α2 −Q+α1−α4+αt 2 + α3 \u0013 (B.15) with A1 = Sb(α2 + α3 −αt)Sb(α1 −α2 + αs)Sb(−Q + α1 + α4 + αt) Sb(±(Q −2αt))Sb(α2 + αt −α3)Sb(α3",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "textup alpha",
+      "heading": false
+    },
+    {
+      "term": "frac textup",
+      "heading": false
+    },
+    {
+      "term": "int textup",
+      "heading": false
+    },
+    {
+      "term": "infty textup",
+      "heading": false
+    },
+    {
+      "term": "symbols big",
+      "heading": false
+    },
+    {
+      "term": "approaches textup",
+      "heading": false
+    },
+    {
+      "term": "cite teschner",
+      "heading": false
+    },
+    {
+      "term": "underline alpha",
+      "heading": false
+    },
+    {
+      "term": "label big",
+      "heading": false
+    },
+    {
+      "term": "begin equation",
+      "heading": false
+    },
+    {
+      "term": "psi big",
+      "heading": false
+    },
+    {
+      "term": "end equation",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 33,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 34,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p28); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 6
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 34 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1202.4698v3"
+  }
+}

@@ -1,0 +1,1643 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-9905032v2",
+  "title": "Asymptotics of Plancherel measures for symmetric groups",
+  "variant": "pdf",
+  "pages": 43,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Plancherel measures",
+      "number": "1.1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-11-plancherel-measures"
+    },
+    {
+      "level": 2,
+      "title": "Poissonization and correlation functions",
+      "number": "1.2",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-12-poissonization-and-correlation-functions"
+    },
+    {
+      "level": 2,
+      "title": "Asymptotics in the bulk of the spectrum",
+      "number": "1.3",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-13-asymptotics-in-the-bulk-of-the-spectrum"
+    },
+    {
+      "level": 2,
+      "title": "Behavior near the edge of the spectrum and the Airy ensemble",
+      "number": "1.4",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-14-behavior-near-the-edge-of-the-spectrum-and-th"
+    },
+    {
+      "level": 2,
+      "title": "Poissonization and depoissonization",
+      "number": "1.5",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-15-poissonization-and-depoissonization"
+    },
+    {
+      "level": 2,
+      "title": "Organization of the paper",
+      "number": "1.6",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-16-organization-of-the-paper"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgements",
+      "number": "1.7",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-17-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "Correlation functions of the measures $M^\\theta$",
+      "number": "2",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-2-correlation-functions-of-the-measures-mtheta"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem",
+      "number": "2.1",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-21-proof-of-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem",
+      "number": "2.2",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-22-proof-of-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Various formulas for the kernel $\\mathsf{J}$",
+      "number": "2.3",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Commuting difference operator",
+      "number": "2.4",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-24-commuting-difference-operator"
+    },
+    {
+      "level": 1,
+      "title": "Correlation functions in the bulk of the spectrum",
+      "number": "3",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-3-correlation-functions-in-the-bulk-of-the-spect"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem",
+      "number": "3.1",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-013-31-proof-of-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Asymptotics of $\\rho(n,X)$",
+      "number": "3.2",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Edge of the spectrum: convergence to the Airy ensemble",
+      "number": "4",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-014-4-edge-of-the-spectrum-convergence-to-the-airy-e"
+    },
+    {
+      "level": 2,
+      "title": "Results and strategy of proof",
+      "number": "4.1",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-015-41-results-and-strategy-of-proof"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem",
+      "number": "4.2",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-016-42-proof-of-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Depoissonization and proof of Theorem",
+      "number": "4.3",
+      "page": 33,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-017-43-depoissonization-and-proof-of-theorem"
+    },
+    {
+      "level": 1,
+      "title": "General properties of determinantal point processes",
+      "number": "A",
+      "page": 35,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-018-a-general-properties-of-determinantal-point-proc"
+    },
+    {
+      "level": 2,
+      "title": "Fredholm determinants and determinantal processes",
+      "number": "A.1",
+      "page": 36,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-019-a1-fredholm-determinants-and-determinantal-proce"
+    },
+    {
+      "level": 2,
+      "title": "Correlation functions of determinantal processes",
+      "number": "A.2",
+      "page": 38,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-020-a2-correlation-functions-of-determinantal-proces"
+    },
+    {
+      "level": 2,
+      "title": "Complementation principle",
+      "number": "A.3",
+      "page": 39,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-021-a3-complementation-principle"
+    },
+    {
+      "level": 2,
+      "title": "Convergence of trace class operators",
+      "number": "A.4",
+      "page": 40,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-022-a4-convergence-of-trace-class-operators"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-000-11-plancherel-measures",
+      "number": "1.1",
+      "title": "Plancherel measures",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 48,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bessel functions",
+          "heading": false
+        },
+        {
+          "term": "plancherel",
+          "heading": true
+        },
+        {
+          "term": "measures",
+          "heading": true
+        }
+      ],
+      "extract": "arXiv:math/9905032v2 [math.CO] 11 Sep 1999 Our approach is based on an exact determinantal formula for the correlation functions of the poissonized Plancherel measures in terms of a new kernel involving Bessel functions. Our asymptotic analysis relies on the classical asymptotic formulas for the Bessel functions and depoissonization techniques.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 925,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "plancherel typical",
+          "heading": false
+        },
+        {
+          "term": "plancherel measures",
+          "heading": false
+        },
+        {
+          "term": "limit shape",
+          "heading": false
+        },
+        {
+          "term": "joint distribution",
+          "heading": false
+        },
+        {
+          "term": "typical diagram",
+          "heading": false
+        },
+        {
+          "term": "random hermitian",
+          "heading": false
+        },
+        {
+          "term": "random matrices",
+          "heading": false
+        },
+        {
+          "term": "sine kernel",
+          "heading": false
+        }
+      ],
+      "extract": "SYMMETRIC GROUPS ALEXEI BORODIN, ANDREI OKOUNKOV, AND GRIGORI OLSHANSKI Abstract. We consider the asymptotics of the Plancherel mea- sures on partitions of n as n goes to inﬁnity. We prove that the local structure of a Plancherel typical partition in the middle of the limit shape converges to a determinantal point process with the discrete sine kernel. On the edges of the limit shape, we prove that the joint distri-",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-poissonization-and-correlation-functions",
+      "number": "1.2",
+      "title": "Poissonization and correlation functions",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 803,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac mathsf",
+          "heading": false
+        },
+        {
+          "term": "textstyle frac",
+          "heading": false
+        },
+        {
+          "term": "mathbb textstyle",
+          "heading": false
+        },
+        {
+          "term": "kernel mathsf",
+          "heading": false
+        },
+        {
+          "term": "label mathsf",
+          "heading": false
+        },
+        {
+          "term": "varrho theta",
+          "heading": false
+        },
+        {
+          "term": "sqrt theta",
+          "heading": false
+        },
+        {
+          "term": "correlation functions",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#s12 label=\"s12\"} For $\\theta>0$, consider the *poissonization* $M^\\theta$ of the measures $M_n$ $$M^\\theta(\\lambda) = e^{-\\theta}\\sum_n \\frac{\\theta^n}{n!}\\, M_n(\\lambda) = e^{-\\theta} \\theta^{|\\lambda|} \\, \\left(\\frac{\\dim\\lambda}{|\\lambda|!} \\right)^2 \\,.$$ This is a probability measure on the set of all partitions. Our first result is the computation of the correlation functions of the measures $M^\\theta$. By",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-asymptotics-in-the-bulk-of-the-spectrum",
+      "number": "1.3",
+      "title": "Asymptotics in the bulk of the spectrum",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 771,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boldsymbol varrho",
+          "heading": false
+        },
+        {
+          "term": "frac omega",
+          "heading": false
+        },
+        {
+          "term": "endcases",
+          "heading": false
+        },
+        {
+          "term": "limit shape",
+          "heading": false
+        },
+        {
+          "term": "logan-shepp-vershik-kerov",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s13 label=\"s13\"} Given a sequence of subsets $$X(n)=\\left\\{x_1(n)<\\dots<x_s(n)\\right\\}\\subset\\mathbb{Z}\\,,$$ where $s=|X(n)|$ is some fixed integer, we call this sequence *regular* if the following limits $$\\begin{aligned} a_i &= \\lim_{n\\to\\infty} \\frac{x_i(n)}{\\sqrt{n}}\\,, \\label{e14}\\\\ d_{ij}&=\\lim_{n\\to\\infty}\\left(x_i(n)-x_j(n)\\right)\\,, \\label{e15} \\end{aligned}$$ exist, finite or infinite. Here",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-behavior-near-the-edge-of-the-spectrum-and-th",
+      "number": "1.4",
+      "title": "Behavior near the edge of the spectrum and the Airy ensemble",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 491,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "airy ensemble",
+          "heading": true
+        },
+        {
+          "term": "widetilde lambda",
+          "heading": false
+        },
+        {
+          "term": "boldsymbol varrho",
+          "heading": false
+        },
+        {
+          "term": "frac lambda",
+          "heading": false
+        },
+        {
+          "term": "variables widetilde",
+          "heading": false
+        },
+        {
+          "term": "lambda right",
+          "heading": false
+        },
+        {
+          "term": "lambda sqrt",
+          "heading": false
+        },
+        {
+          "term": "random variables",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s14 label=\"s14\"} The discrete sine kernel $\\mathsf{S}(k,a)$ vanishes if $a\\ge 2$. Therefore, it follows from Theorem [\\[t2\\]](#t2){reference-type=\"ref\" reference=\"t2\"} that the limit correlations $\\lim\\boldsymbol{\\varrho}(n,X(n))$ vanish if $a_i\\ge 2$ for some $i$. However, as will be shown below in Proposition [\\[p41\\]](#p41){reference-type=\"ref\" reference=\"p41\"}, after a suitable scaling near the edge $u=2$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-15-poissonization-and-depoissonization",
+      "number": "1.5",
+      "title": "Poissonization and depoissonization",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 518,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "depoissonization",
+          "heading": true
+        },
+        {
+          "term": "operatorname const",
+          "heading": false
+        },
+        {
+          "term": "const sqrt",
+          "heading": false
+        },
+        {
+          "term": "z-n",
+          "heading": false
+        },
+        {
+          "term": "bessel functions",
+          "heading": false
+        },
+        {
+          "term": "poissonization",
+          "heading": true
+        },
+        {
+          "term": "theta",
+          "heading": false
+        },
+        {
+          "term": "generating function",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s15 label=\"s15\"} We obtain Theorems [\\[t2\\]](#t2){reference-type=\"ref\" reference=\"t2\"} and [\\[t3\\]](#t3){reference-type=\"ref\" reference=\"t3\"} from Theorem [\\[t1\\]](#t1){reference-type=\"ref\" reference=\"t1\"} using the so-called depoissonization techniques. We recall that the fundamental idea of depoissonization is the following. Given a sequence $b_1,b_2,b_3,\\dots$ its *poissonization* is, by definition, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-16-organization-of-the-paper",
+      "number": "1.6",
+      "title": "Organization of the paper",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 95,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "t1b",
+          "heading": false
+        },
+        {
+          "term": "mathsf",
+          "heading": false
+        },
+        {
+          "term": "reference-type",
+          "heading": false
+        },
+        {
+          "term": "poissonized",
+          "heading": false
+        }
+      ],
+      "extract": "Section [\\[s2\\]](#s2){reference-type=\"ref\" reference=\"s2\"} contains the proof of Theorems [\\[t1\\]](#t1){reference-type=\"ref\" reference=\"t1\"} and [\\[t1b\\]](#t1b){reference-type=\"ref\" reference=\"t1b\"} and also various formulas for the kernels $\\mathsf{K}$ and $\\mathsf{J}$. We also discuss a difference operator which commutes with $\\mathsf{J}$ and its possible applications. Section [\\[s3\\]](#s3){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-17-acknowledgements",
+      "number": "1.7",
+      "title": "Acknowledgements",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 45,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "baik",
+          "heading": false
+        },
+        {
+          "term": "deift",
+          "heading": false
+        },
+        {
+          "term": "inspiration",
+          "heading": false
+        }
+      ],
+      "extract": "In many different ways, our work was inspired by the work of J. Baik, P. Deift, and K. Johansson, on the one hand, and by the work of A. Vershik and S. Kerov, on the other. It is our great pleasure to thank them for this inspiration and for many fruitful discussions.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-2-correlation-functions-of-the-measures-mtheta",
+      "number": "2",
+      "title": "Correlation functions of the measures $M^\\theta$",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-009-21-proof-of-theorem",
+      "number": "2.1",
+      "title": "Proof of Theorem",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1127,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hypergeometric kernel",
+          "heading": false
+        },
+        {
+          "term": "correlation functions",
+          "heading": false
+        },
+        {
+          "term": "veriﬁcation",
+          "heading": false
+        },
+        {
+          "term": "sgn",
+          "heading": false
+        },
+        {
+          "term": "trick",
+          "heading": false
+        },
+        {
+          "term": "theorem",
+          "heading": true
+        },
+        {
+          "term": "plancherel",
+          "heading": false
+        }
+      ],
+      "extract": "case of Theorem 3.3 of [6]. That theorem concerns a family {M(n) zz′ } of probability measures on partitions of n, where z, z′ are certain parame- ters. When the parameters go to inﬁnity, M(n) zz′ tends to the Plancherel 12 A. BORODIN, A. OKOUNKOV, AND G. OLSHANSKI measure Mn. Theorem 3.3 in [6] gives a determinantal formula for the correlation functions of the measure Mξ zz′ = (1 −ξ)t ∞ X n=1 (t)n n! ξn M(n) zz′",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-22-proof-of-theorem",
+      "number": "2.2",
+      "title": "Proof of Theorem",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 909,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "darboux kernel",
+          "heading": false
+        },
+        {
+          "term": "christoﬀel",
+          "heading": false
+        },
+        {
+          "term": "sgn",
+          "heading": false
+        },
+        {
+          "term": "proof",
+          "heading": true
+        },
+        {
+          "term": "nonnegative",
+          "heading": false
+        },
+        {
+          "term": "remains",
+          "heading": false
+        },
+        {
+          "term": "diﬀerence",
+          "heading": false
+        },
+        {
+          "term": "trace",
+          "heading": false
+        }
+      ],
+      "extract": "Fr(λ) = \u0000D(λ) + 1 2 \u0001 △ \u0000Z≤0 −1 2 \u0001 . Let us check that this and Proposition A.8 implies Theorem 2. In Proposition A.8 we substitute X = Z + 1 2 , Z = Z≤0 −1 2 , K = K . By deﬁnition, set ε(x) = sgn(x)x+1/2 , x ∈Z + 1 2 . We have the following Lemma 2.5. K△(x, y) = ε(x) ε(y) J(x −1 2, y −1 2) It is clear that since the ε-factors cancel out of all determinantal formulas, this lemma and Proposition A.8 establish the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-24-commuting-difference-operator",
+      "number": "2.4",
+      "title": "Commuting difference operator",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 388,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "difference operator",
+          "heading": true
+        },
+        {
+          "term": "theta varsigma",
+          "heading": false
+        },
+        {
+          "term": "sqrt theta",
+          "heading": false
+        },
+        {
+          "term": "airy kernel",
+          "heading": false
+        },
+        {
+          "term": "differential operator",
+          "heading": false
+        },
+        {
+          "term": "mathsf",
+          "heading": false
+        },
+        {
+          "term": "nabla",
+          "heading": false
+        },
+        {
+          "term": "alpha",
+          "heading": false
+        }
+      ],
+      "extract": "Consider the difference operators $\\Delta$ and $\\nabla$ on the lattice $\\mathbb{Z}$, $$(\\Delta f)(k)=f(k+1)-f(k)\\,, \\qquad (\\nabla f)(k)=f(k)-f(k-1)\\,.$$ Note that $\\nabla=-\\Delta^*$ as operators on $\\ell^2(\\mathbb{Z})$. Consider the following second order difference Sturm--Liouville operator $$\\label{e0002} D=\\Delta\\circ\\alpha\\circ\\nabla +\\beta\\,,$$ where $\\alpha$ and $\\beta$ are operators of multiplication by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-3-correlation-functions-in-the-bulk-of-the-spect",
+      "number": "3",
+      "title": "Correlation functions in the bulk of the spectrum",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-013-31-proof-of-theorem",
+      "number": "3.1",
+      "title": "Proof of Theorem",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1985,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "regular sequence",
+          "heading": false
+        },
+        {
+          "term": "bessel functions",
+          "heading": false
+        },
+        {
+          "term": "plancherel measures",
+          "heading": false
+        },
+        {
+          "term": "asymptotic formulas",
+          "heading": false
+        },
+        {
+          "term": "lim",
+          "heading": false
+        },
+        {
+          "term": "estimate",
+          "heading": false
+        },
+        {
+          "term": "proof",
+          "heading": true
+        },
+        {
+          "term": "cos",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction for the deﬁnition of a regular sequence X(n) ⊂Z and the statement of Theorem 3. Also, in this section, we shall be working in the bulk of the spectrum, that is, we shall assume that all numbers ai ASYMPTOTICS OF PLANCHEREL MEASURES 19 deﬁned in (1.10) lie inside (−2, 2). The edges ±2 of the spectrum and its exterior will be treated in the next section. In our proof, we shall follow the strategy",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-4-edge-of-the-spectrum-convergence-to-the-airy-e",
+      "number": "4",
+      "title": "Edge of the spectrum: convergence to the Airy ensemble",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "ensemble",
+      "extractCut": false
+    },
+    {
+      "id": "sec-015-41-results-and-strategy-of-proof",
+      "number": "4.1",
+      "title": "Results and strategy of proof",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 486,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "airy ensemble",
+          "heading": false
+        },
+        {
+          "term": "widetilde lambda",
+          "heading": false
+        },
+        {
+          "term": "sqrt theta",
+          "heading": false
+        },
+        {
+          "term": "theta approx",
+          "heading": false
+        },
+        {
+          "term": "lambda converge",
+          "heading": false
+        },
+        {
+          "term": "frac lambda",
+          "heading": false
+        },
+        {
+          "term": "zeta dots",
+          "heading": false
+        },
+        {
+          "term": "variables widetilde",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s41 label=\"s41\"} In this section we prove Theorem [\\[t3\\]](#t3){reference-type=\"ref\" reference=\"t3\"} which was stated in Section [\\[s14\\]](#s14){reference-type=\"ref\" reference=\"s14\"} of the Introduction. We refer the reader to Section [\\[s14\\]](#s14){reference-type=\"ref\" reference=\"s14\"} for a discussion of the relation between Theorem [\\[t3\\]](#t3){reference-type=\"ref\" reference=\"t3\"} and the results obtained",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-42-proof-of-theorem",
+      "number": "4.2",
+      "title": "Proof of Theorem",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 33,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2539,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "operatorname const",
+          "heading": false
+        },
+        {
+          "term": "infty mathsf",
+          "heading": false
+        },
+        {
+          "term": "kernel mathsf",
+          "heading": false
+        },
+        {
+          "term": "mathsf left",
+          "heading": false
+        },
+        {
+          "term": "operatorname arccosh",
+          "heading": false
+        },
+        {
+          "term": "tanh alpha",
+          "heading": false
+        },
+        {
+          "term": "operatorname prob",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s42 label=\"s42\"} Suppose we have a point process on $\\mathbb{R}$ with determinantal correlation functions $$\\rho_k(x_1,\\dots,x_k)=\\det[K(x_i,x_j)]_{1\\le i,j \\le k}\\,,$$ for some kernel $K(x,y)$. Let $I$ be a possibly infinite interval $I\\subset\\mathbb{R}$. By $[K]_I$ we denote the operator in $L^2(I,dx)$ obtained by restricting the kernel on $I\\times I$. Assume $[K]_I$ is a trace class operator. Then the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-43-depoissonization-and-proof-of-theorem",
+      "number": "4.3",
+      "title": "Depoissonization and proof of Theorem",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 35,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 595,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bar frac",
+          "heading": false
+        },
+        {
+          "term": "bar right",
+          "heading": false
+        },
+        {
+          "term": "theta frac",
+          "heading": false
+        },
+        {
+          "term": "varepsilon",
+          "heading": false
+        },
+        {
+          "term": "dots",
+          "heading": false
+        },
+        {
+          "term": "left",
+          "heading": false
+        },
+        {
+          "term": "sqrt",
+          "heading": false
+        },
+        {
+          "term": "distribution function",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#s43 label=\"s43\"} Fix some $m=1,2,\\dots$ and denote by $F_n$ the distribution function of $\\lambda_1,\\dots,\\lambda_m$ under the Plancherel measure $M_n$ $$F_n(x_1,\\dots,x_m)=M_n\\left(\\left\\{\\lambda\\,\\left|\\, \\lambda_i< x_i\\,, \\ 1\\le i\\le m\\right.\\right\\}\\right) \\,.$$ Also, set $$F(\\theta,x)=e^{-\\theta} \\sum_{k=0}^\\infty\\frac {\\theta^k}{k!}\\, F_k(x).$$ This is the distribution function corresponding to the measure",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-a-general-properties-of-determinantal-point-proc",
+      "number": "A",
+      "title": "General properties of determinantal point processes",
+      "level": 1,
+      "pageStart": 35,
+      "pageEnd": 36,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 178,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "point processes",
+          "heading": true
+        },
+        {
+          "term": "conf",
+          "heading": false
+        },
+        {
+          "term": "determinantal",
+          "heading": true
+        },
+        {
+          "term": "determi",
+          "heading": false
+        },
+        {
+          "term": "fredholm",
+          "heading": false
+        }
+      ],
+      "extract": "processes In this Appendix, we collected some necessary facts about determi- nantal point processes, their correlation functions, Fredholm determi- nants, and convergence of trace class operators. Let X be a countable set, let Conf(X) = 2X be the set of subsets of X and denote by Conf(X)0 ⊂Conf(X) the set of ﬁnite subsets of X. We call elements of Conf(X) conﬁgurations. Let L be a kernel on X, that is, a function on",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-a1-fredholm-determinants-and-determinantal-proce",
+      "number": "A.1",
+      "title": "Fredholm determinants and determinantal processes",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 38,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 677,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aeven det",
+          "heading": false
+        },
+        {
+          "term": "etr aeven",
+          "heading": false
+        },
+        {
+          "term": "hilbert schmidt",
+          "heading": false
+        },
+        {
+          "term": "opera tors",
+          "heading": false
+        },
+        {
+          "term": "schmidt class",
+          "heading": false
+        },
+        {
+          "term": "aodd",
+          "heading": false
+        },
+        {
+          "term": "trace norm",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite subsets",
+          "heading": false
+        }
+      ],
+      "extract": "H be a complex Hilbert space, L(H) be the algebra of bounded opera- tors in H, and L1(H), L2(H) be the ideals of trace class and Hilbert– Schmidt operators, respectively. Assume we are given a splitting H = H+ ⊕H−. According to this splitting, write operators A ∈L(H) in block form A = \u0014 A++ A+− A−+ A−− \u0015 , where A++ : H+ →H+, A+−: H−→H+, A−+ : H+ →H−, A−−: H−→H−. The algebra L(H) is equipped with a natural",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-a2-correlation-functions-of-determinantal-proces",
+      "number": "A.2",
+      "title": "Correlation functions of determinantal processes",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 39,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 292,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "correlation functions",
+          "heading": true
+        },
+        {
+          "term": "determinantal",
+          "heading": true
+        },
+        {
+          "term": "det",
+          "heading": false
+        },
+        {
+          "term": "prob",
+          "heading": false
+        },
+        {
+          "term": "conf",
+          "heading": false
+        }
+      ],
+      "extract": "X ∈Conf(X)0, let ρ(X) be the probability that a random conﬁguration contains X, that is, ρ(X) = Prob ({Y ∈Conf(X)0, X ⊂Y }) . We call ρ(X) the correlation functions. The fundamental fact about determinantal point processes is that their correlation functions have again a determinantal form. Proposition A.6. Let L be as above and set K = L(1 + L)−1. Then ρ(X) = det KX. Proof. We follow the argument in [10], Exercise",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-a3-complementation-principle",
+      "number": "A.3",
+      "title": "Complementation principle",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 40,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 272,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "conf",
+          "heading": false
+        },
+        {
+          "term": "complementation",
+          "heading": true
+        },
+        {
+          "term": "prob",
+          "heading": false
+        },
+        {
+          "term": "probability measure",
+          "heading": false
+        },
+        {
+          "term": "principle",
+          "heading": true
+        }
+      ],
+      "extract": "A.3. Complementation principle. In this section we discuss a sim- ple but useful observation which was communicated to us by S. Kerov. Consider an arbitrary probability measure on Conf(X) such that its correlation functions ρ(X) = Prob ({Y ∈Conf(X), X ⊂Y }) , X ∈Conf(X)0 , have a determinantal form ρ(X) = det h K(xi, xj) i xi∈X for some kernel K. Let Z ⊂X be an arbitrary subset of X. Consider the symmetric diﬀerence",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-a4-convergence-of-trace-class-operators",
+      "number": "A.4",
+      "title": "Convergence of trace class operators",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 43,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1287,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "λ1a λnan",
+          "heading": false
+        },
+        {
+          "term": "increasing subsequences",
+          "heading": false
+        },
+        {
+          "term": "longest increasing",
+          "heading": false
+        },
+        {
+          "term": "plancherel measures",
+          "heading": false
+        },
+        {
+          "term": "random matrices",
+          "heading": false
+        },
+        {
+          "term": "random permutations",
+          "heading": false
+        },
+        {
+          "term": "young tableaux",
+          "heading": false
+        },
+        {
+          "term": "springer verlag",
+          "heading": false
+        }
+      ],
+      "extract": "be Hermitian nonnegative operators in L1(H). The following proposi- tion is a special case of Theorem 2.20 in the book [31] (we are grateful to P. Deift for this reference). For the reader’s convenience we give a proof here. Proposition A.9. The following conditions are equivalent: (i) ∥Kn −K∥1 →0; (ii) tr Kn →tr K and Kn →K in the weak operator topology. First, prove a lemma: Lemma A.10. Let X = \u0014 A B B∗ D \u0015 be a",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "kernel mathsf",
+      "heading": true
+    },
+    {
+      "term": "frac mathsf",
+      "heading": false
+    },
+    {
+      "term": "airy kernel",
+      "heading": false
+    },
+    {
+      "term": "infty mathsf",
+      "heading": false
+    },
+    {
+      "term": "frac theta",
+      "heading": false
+    },
+    {
+      "term": "mathsf left",
+      "heading": false
+    },
+    {
+      "term": "sqrt theta",
+      "heading": false
+    },
+    {
+      "term": "plancherel measures",
+      "heading": true
+    },
+    {
+      "term": "plancherel random",
+      "heading": false
+    },
+    {
+      "term": "label mathsf",
+      "heading": false
+    },
+    {
+      "term": "frac lambda",
+      "heading": false
+    },
+    {
+      "term": "det big",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The limit shape of a typical diagram. After this scaling, the Plancherel measures Mn converge as n →∞",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 25,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 23,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p40); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 23 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-9905032v2"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-q-holography-two-regime-prior-art",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:q-holography-two-regime-prior-art",
+  "kind": "remark",
+  "title": "Prior art: $q$-Ward identities with separate unit-circle and real-$q$ solutions",
+  "interprets": "papers/quantum-observable-universe/blocks/rem-lqg-adm-ashtekar-comparison",
+  "cites": [
+    "references/belaey2025"
+  ],
+  "tags": [
+    "holography",
+    "q-deformation",
+    "hyperbolic-disk",
+    "prior-art",
+    "comparison"
+  ],
+  "text": "q-holography-two-regime-prior-art.md",
+  "provenance": "authored"
+}

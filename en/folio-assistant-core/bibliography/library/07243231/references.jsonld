@@ -1,0 +1,27 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/07243231",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "Elias, Ben; Makisumi, Shotaro; Thiel, Ulrich; Williamson, Geordie",
+      "dcterms:issued": "D:20230120",
+      "dcterms:source": "library/07243231/manifest.jsonld",
+      "dcterms:hasVersion": "library/07243231"
+    }
+  ]
+}

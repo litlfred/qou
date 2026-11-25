@@ -1,0 +1,572 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1007.2335v1",
+  "title": "t1.ps",
+  "variant": "pdf",
+  "pages": 11,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The Nicole model and volume-preserving flow",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-the-nicole-model-and-volume-preserving-flow"
+    },
+    {
+      "level": 1,
+      "title": "Initial conditions",
+      "number": "3",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-initial-conditions"
+    },
+    {
+      "level": 1,
+      "title": "Numerical results",
+      "number": "4",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-numerical-results"
+    },
+    {
+      "level": 1,
+      "title": "Conclusion",
+      "number": "5",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-conclusion"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 135,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soliton solutions",
+          "heading": false
+        },
+        {
+          "term": "nicole model",
+          "heading": false
+        },
+        {
+          "term": "hopf charges",
+          "heading": false
+        },
+        {
+          "term": "durham",
+          "heading": false
+        },
+        {
+          "term": "sutcliﬀe",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1007.2335v1 [hep-th] 14 Jul 2010 Hopf solitons in the Nicole model Mike Gillard and Paul Sutcliﬀe Department of Mathematical Sciences, Durham University, Durham DH1 3LE, U.K. Email: mike.gillard@durham.ac.uk, p.m.sutcliﬀe@durham.ac.uk July 2010 Abstract The Nicole model is a conformal ﬁeld theory in three-dimensional space. It has topo- logical soliton solutions classiﬁed by the integer-valued Hopf charge, and",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1007.2335v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 577,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hopf solitons",
+          "heading": false
+        },
+        {
+          "term": "energy solitons",
+          "heading": false
+        },
+        {
+          "term": "skyrme-faddeev model",
+          "heading": false
+        },
+        {
+          "term": "toroidal ansatz",
+          "heading": false
+        },
+        {
+          "term": "symmetric solitons",
+          "heading": false
+        },
+        {
+          "term": "hopf charges",
+          "heading": false
+        },
+        {
+          "term": "nicole model",
+          "heading": false
+        },
+        {
+          "term": "linked configurations",
+          "heading": false
+        }
+      ],
+      "extract": "Hopf solitons arise in theories in three-dimensional space where the field takes values in a two-sphere. The Skyrme-Faddeev model [@Fa2] is the most famous example of a theory with Hopf solitons and consists of the $O(3)$ sigma model modified by the addition of a Skyrme term that is quartic in the derivatives of the field. Substantial numerical work [@FN; @GH; @BS5; @HS; @Su] has led to a reasonable understanding of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-nicole-model-and-volume-preserving-flow",
+      "number": "2",
+      "title": "The Nicole model and volume-preserving flow",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 6,
+      "labelStart": "3",
+      "labelEnd": "6",
+      "words": 1507,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "volume-preserving flow",
+          "heading": true
+        },
+        {
+          "term": "nicole model",
+          "heading": true
+        },
+        {
+          "term": "mbox boldmath",
+          "heading": false
+        },
+        {
+          "term": "boldmath phi",
+          "heading": false
+        },
+        {
+          "term": "hopf soliton",
+          "heading": false
+        },
+        {
+          "term": "gradient flow",
+          "heading": false
+        },
+        {
+          "term": "soliton scale",
+          "heading": false
+        },
+        {
+          "term": "soliton size",
+          "heading": false
+        }
+      ],
+      "extract": "The Nicole model [@Ni] is a rather exotic modification of the $O(3)$ sigma model, although it involves the same field $\\mbox{\\boldmath $\\phi$}:\\hbox{\\mybb R}^3\\mapsto S^2,$ which is realized as a real three-component vector $\\mbox{\\boldmath $\\phi$}=(\\phi_1,\\phi_2,\\phi_3),$ of unit length, $\\mbox{\\boldmath $\\phi$}\\cdot\\mbox{\\boldmath $\\phi$}=1.$ As we are concerned only with static solutions then the Nicole model may",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-initial-conditions",
+      "number": "3",
+      "title": "Initial conditions",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 637,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "initial conditions",
+          "heading": true
+        },
+        {
+          "term": "label qnm",
+          "heading": false
+        },
+        {
+          "term": "frac phi",
+          "heading": false
+        },
+        {
+          "term": "hopf charge",
+          "heading": false
+        },
+        {
+          "term": "hopf solitons",
+          "heading": false
+        },
+        {
+          "term": "alpha beta",
+          "heading": false
+        },
+        {
+          "term": "volume-preserving flow",
+          "heading": false
+        },
+        {
+          "term": "profile function",
+          "heading": false
+        }
+      ],
+      "extract": "Initial conditions, for a range of values of $Q,$ need to be provided for the volume-preserving flow algorithm discussed in the previous section. We use the approach introduced in [@Su], which is briefly reviewed in this section. To construct an initial field the spatial coordinates $(x_1,x_2,x_3)\\in \\hbox{\\mybb R}^3$ are first mapped to the unit three-sphere via a degree one spherically equivariant map. Explicitly,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-numerical-results",
+      "number": "4",
+      "title": "Numerical results",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 10,
+      "labelStart": "7",
+      "labelEnd": "10",
+      "words": 1242,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "skyrme-faddeev model",
+          "heading": false
+        },
+        {
+          "term": "energy solitons",
+          "heading": false
+        },
+        {
+          "term": "qnm",
+          "heading": false
+        },
+        {
+          "term": "type cal",
+          "heading": false
+        },
+        {
+          "term": "nicole model",
+          "heading": false
+        },
+        {
+          "term": "widetilde cal",
+          "heading": false
+        },
+        {
+          "term": "axial symmetry",
+          "heading": false
+        },
+        {
+          "term": "minimal energy",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec-num label=\"sec-num\"} In this section we present the results of numerical computations of Hopf solitons using the volume-preserving flow algorithm, with initial conditions constructed as in the previous section. The simulation region $\\Omega$ consists of the cube $|x_i|\\le 75$ with spatial derivatives approximated by fourth-order accurate finite differences using a lattice spacing $\\Delta x=1.$ The flow is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-conclusion",
+      "number": "5",
+      "title": "Conclusion",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 604,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hopf solitons",
+          "heading": false
+        },
+        {
+          "term": "nicole model",
+          "heading": false
+        },
+        {
+          "term": "skyrme-faddeev model",
+          "heading": false
+        },
+        {
+          "term": "volume-preserving flow",
+          "heading": false
+        },
+        {
+          "term": "hopf charges",
+          "heading": false
+        },
+        {
+          "term": "infinite-dimensional symmetry",
+          "heading": false
+        },
+        {
+          "term": "profile function",
+          "heading": false
+        },
+        {
+          "term": "universal feature",
+          "heading": false
+        }
+      ],
+      "extract": "By introducing a volume-preserving flow we have been able to numerically investigate Hopf solitons and their stability in the Nicole model. It has been demonstrated that the known axially symmetric Hopf solitons are unstable for Hopf charges greater than two and new lower energy solutions have been computed that include links and knots. The formation of links and knots mirrors the situation in the Skyrme-Faddeev",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "hopf solitons",
+      "heading": true
+    },
+    {
+      "term": "energy solitons",
+      "heading": true
+    },
+    {
+      "term": "nicole model",
+      "heading": true
+    },
+    {
+      "term": "volume-preserving flow",
+      "heading": true
+    },
+    {
+      "term": "symmetric solitons",
+      "heading": false
+    },
+    {
+      "term": "soliton solutions",
+      "heading": false
+    },
+    {
+      "term": "skyrme-faddeev model",
+      "heading": false
+    },
+    {
+      "term": "hopf charges",
+      "heading": true
+    },
+    {
+      "term": "soliton scale",
+      "heading": false
+    },
+    {
+      "term": "soliton size",
+      "heading": false
+    },
+    {
+      "term": "boldmath phi",
+      "heading": false
+    },
+    {
+      "term": "type cal",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Position curves for the known lowest energy solitons with Hopf charges 1 ≤Q ≤8",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The ratio of the energy E to the conjectured bound Q3/4 for the known minimal energy solitons with 1 ≤Q ≤8",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Energies and types of the known minimal energy solitons with 1 ≤Q ≤8",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p008-1",
+      "file": "images/img-p008-1.png",
+      "page": 8,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 5,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 6,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 1,
+      "note": "2 captioned in the text"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 6 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1007.2335v1"
+  }
+}

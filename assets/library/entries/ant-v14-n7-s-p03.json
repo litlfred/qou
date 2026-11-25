@@ -1,0 +1,377 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "ant-v14-n7-s-p03",
+  "blocks": [
+    {
+      "id": "library/ant-v14-n7-s-p03/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 8,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\n2.\nMotifs algébriques et motifs rigides\n1754\n3.\nCalcul du complexe des périodes abstraites AK et applications\n1775\n4.\nAction du groupe de Galois motivique\n1784\nBibliographie\n1789\n1. Introduction\nOn ﬁxe un corps k de caractéristique p > 0. À un k-schéma de type ﬁni X, on sait associer :\n— suivant Berthelot [1986] et moyennant le choix d’un corps valué complet b\nK de caractéristique nulle\net de corps résiduel k, sa cohomologie rigide H∗\nrig(X/ b\nK), qui est un b\nK-vectoriel gradué,\n— suivant Grothendieck [SGA 5 1977] et moyennant le choix d’un nombre premier ℓ̸ = p et d’une\nclôture",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p03/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "msp\nALGEBRA AND NUMBER THEORY 14:7 (2020)\nhttps://doi.org/10.2140/ant.2020.14.1747\nNouvelles cohomologies de Weil\nen caractéristique positive\nJoseph Ayoub\nSoit K un corps valué de hauteur 1 et d’inégales caractéristiques (0, p), et soit k son corps résiduel.\nDans cet article, nous construisons une nouvelle cohomologie de Weil pour les k-schémas de type ﬁni à\nvaleurs dans les AK-modules, avec AK une K-algèbre de « périodes abstraites p-adiques » qui admet\nune description explicite par générateurs et relations. Nous démontrons des théorèmes de comparaison\nreliant cette nouvelle cohomologie de We",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p03/blocks/prop-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 29,
+      "target": "prop-sec-001-01.md",
+      "narrative": null,
+      "content": "Soit R un objet de DA´et(k; 3) muni d’une structure de 0W-module. Alors, la composition de 0W ⊗A R0(k; R) →0W ⊗A R →R (2-10) est un isomorphisme. (La première ﬂèche est induite par le morphisme évident 6∞ T, ♯R0(k; R)cst →R et la seconde ﬂèche est donnée par l’action de 0W sur R.) Démonstration. Il s’agit d’une généralisation de [Ayoub 2019, Proposition 2.11] (qui elle-même est un cas particulier de [Cisinski et Déglise 2012, Theorem 2.6.2]). La preuve de [Ayoub 2019, Proposition 2.11] s’étend littéralement en remplaçant « /k » par « 0W ». Esquissons quand même l’argument. On procède en deux",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p03/blocks/prop-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 29,
+      "target": "prop-sec-001-02.md",
+      "narrative": null,
+      "content": "Soit R un objet de RigDA´et(k; 3) muni d’une structure de 0W-module. Alors, la composition de 0W ⊗A R0(k; R) →0W ⊗A R →R (2-21) est un isomorphisme. (La première ﬂèche est induite par le morphisme évident 6∞ T, ♯R0(k; R)cst →R et la seconde ﬂèche est donnée par l’action de 0W sur R.) Démonstration. Il s’agit de la variante analytique rigide de la proposition 2.8. La preuve de [Ayoub 2019, Proposition 2.11] et l’esquisse de preuve de la proposition 2.8 s’étendent littéralement au contexte rigide. □ Corollaire 2.21. L’association M ⇝R0(k; 0W ⊗M) s’étend en un foncteur monoïdal RW : RigDA´et(k; 3",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p03/blocks/prop-sec-001-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 29,
+      "target": "prop-sec-001-03.md",
+      "narrative": null,
+      "content": "L’adjonction (2-36) est une équivalence de Quillen. En particulier, le foncteur σ∗: DA´et(k; 3) →FDA´et( b K ◦; 3) est une équivalence monoïdale. Démonstration. Il s’agit d’un cas particulier de [Ayoub 2015a, Corollaire 1.4.24]. □ Notation 2.27. La composition de DA´et(k; 3) σ∗ ∼/ FDA´et( b K ◦; 3) η∗/ RigDA´et( b K; 3) est le foncteur « relèvement » qu’on note rel : DA´et(k; 3) →RigDA´et( b K; 3). Ce foncteur est monoïdal d’après la proposition 2.26. Joseph Ayoub 2D. Une équivalence remarquable. On garde les notations et les hypothèses de la sous-section 2C. Notre but ici est de démontrer le",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p03/blocks/prop-sec-001-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 29,
+      "target": "prop-sec-001-04.md",
+      "narrative": null,
+      "content": "Le foncteur g Rig∗dans (2-32) est pleinement ﬁdèle. Démonstration. Il s’agit de montrer que le morphisme d’unité E →δRig∗ δRig∗E (2-40) est un isomorphisme pour tout E ∈DA´et(K; Rig∗3ﬁb). Il sufﬁt de montrer cela pour E appartenant à une classe d’objets qui engendre la catégorie triangulée avec sommes inﬁnies DA´et(K; Rig∗3ﬁb). On peut donc supposer que E = (Rig∗3ﬁb) ⊗N pour un certain N ∈DA´et(K; 3). Dans ce cas, le morphisme (2-40) s’identiﬁe au morphisme de coprojection (Rig∗3ﬁb) ⊗N →Rig∗(3ﬁb ⊗Rig∗N) qui est bien inversible d’après le lemme 2.29. □ Pour terminer la preuve du théorème 2.28,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p03/blocks/prop-sec-001-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 29,
+      "target": "prop-sec-001-05.md",
+      "narrative": null,
+      "content": "La catégorie triangulée avec sommes inﬁnies RigDA´et( b K; 3) est engendrée par l’image du foncteur Rig∗: DA´et(K; 3) →RigDA´et( b K; 3). Nouvelles cohomologies de Weil en caractéristique positive Démonstration. Aﬁn de faciliter les références, nous utiliserons dans cette preuve les motifs avec transferts (voir les remarques 2.1 et 2.13). Étant données les équivalences de catégories DA´et(K; 3) ≃DM(K; 3) et RigDA´et( b K; 3) ≃RigDM( b K; 3), il sufﬁt de démontrer la proposition pour les motifs effectifs avec transferts. Lorsque K = b K, il s’agit de [Ayoub 2015a, Théorème 2.5.35]. Le cas plus",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p03/blocks/prop-sec-001-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 29,
+      "target": "prop-sec-001-06.md",
+      "narrative": null,
+      "content": "Soit 0W (resp. 0W ′) une cohomologie de Weil (resp. de Weil rigide) à coefﬁcients dans une 3-algèbre A (resp. A′) déﬁnie sur Sm/K (resp. SmRig/ b K). On suppose donné un morphisme de cohomologies de Weil 0W →0W ′ ◦(−)anr (2-48) (voir la remarque 2.16). Alors, il existe un morphisme de A-dg-algèbres AK, 0W →A′ tel que le triangle RigDA´et( b K; 3) RK, 0W / RW′ , Ho(Mod(AK, 0W )) A′⊗AK, 0W − \u000f D(A′) commute à un isomorphisme naturel près. Démonstration. Le lemme 2.33 fournit un carré commutatif à un isomorphisme naturel près DA´et(K; Rig∗3ﬁb) g Rig∗ \u000f RW, Rig∗3ﬁb / Ho(Mod(AK, 0W )) A′⊗AK, 0W − \u000f",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p03/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motifs algébriques et motifs rigides",
+      "pageStart": 8,
+      "pageEnd": 29,
+      "target": "../sections/sec-001-2-motifs-algébriques-et-motifs-rigides.md",
+      "narrative": null,
+      "content": "On commence cette section avec des rappels sur les motifs (algébriques et rigides) qui serviront dans\nla suite. On donne ensuite la construction du foncteur g\nRig∗(voir (1-7)) et on démontre le théorème 1.7.\nOn termine avec une construction de foncteurs de réalisation à valeurs dans les modules sur certaines\ndg-algèbres. On ﬁxe une Q-algèbre commutative 3 et on écrit souvent « ⊗» au lieu de « ⊗3 ».\n2A. Rappels sur les motifs algébriques et leurs cohomologies. Soit S un schéma de base. On dispose\nd’une catégorie triangulée de motifs sur S à coefﬁcients dans 3, notée DA´et(S; 3). Aﬁn de ﬁxer les",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p03/blocks/conj-sec-002-02",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 38,
+      "target": "conj-sec-002-02.md",
+      "narrative": null,
+      "content": "L’homologie du complexe AK est nulle sauf en degré zéro.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p03/blocks/conj-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 38,
+      "target": "conj-sec-002-03.md",
+      "narrative": null,
+      "content": "Le morphisme R : AK →b K est injectif lorsque l’extension K/Q est algébrique. Voici quelques remarques sur ces conjectures. Remarque 3.22. La conjecture 3.19 est une variante de [Ayoub 2014b, §2.4, Conjecture A]. Si l’on suppose que DA´et(K; K) et RigDA´et( b K; K) possèdent des t-structures motiviques pour lesquelles le foncteur Rig∗ainsi que les foncteurs de réalisation RdR et R† dR sont t-exacts, alors la conjecture 3.19 est vraie. L’argument est le même que celui qui a servi dans la preuve de [Ayoub 2014b, Lemme 2.145] : AK est la réalisation de de Rham de Rig∗1 ∈DA´et(K; K) qui est un obj",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p03/blocks/prop-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 38,
+      "target": "prop-sec-002-01.md",
+      "narrative": null,
+      "content": "Modulo la description de AK fournie par le corollaire 3.8, le morphisme (3-9) envoie la classe d’une fonction f ∈Oalg(∂Bm × Bn) sur Z 1 · · · Z 1 cc( f ) · dz1 · · · dzn (3-10) où cc( f ) ∈O(Bn) est le coefﬁcient de t0 1 · · · t0 m dans f vue comme un élément de O(Bn){t1,t−1 1 ,...,tm,t−1 m }. (Voir la ﬁn de la construction 1.3 pour la signiﬁcation de l’intégrale multiple (3-10).) Démonstration. On divise la preuve en deux étapes. Joseph Ayoub Étape 1. On rappelle d’abord la construction du morphisme de K-dg-algèbres AK →b K. On dispose d’un morphisme de cohomologies de Weil 0dR(−) ≃0† dR(−)an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p03/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Calcul du complexe des périodes abstraites AK et applications",
+      "pageStart": 29,
+      "pageEnd": 38,
+      "target": "../sections/sec-002-3-calcul-du-complexe-des-périodes-abstraites-ak.md",
+      "narrative": null,
+      "content": "Tout au long de la section, on ﬁxe un corps K muni d’une valuation de hauteur 1 et on note b\nK son\ncomplété. On désigne par K ◦et b\nK ◦les anneaux de valuation de K et b\nK, et on note k le corps résiduel de\nK ◦qu’on identiﬁe à celui de b\nK ◦. Sauf mention explicite du contraire, on suppose que la caractéristique\nde K est nulle; on ne fait pas d’hypothèses sur la caractéristique de k.\nNotre but ici est d’expliciter le complexe AK, à quasi-isomorphisme près, et de montrer qu’il est (−1)-\nconnexe. Ceci nous permettra d’achever la construction de la nouvelle réalisation (1-3). On rappelle que,\nen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p03/blocks/prop-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 40,
+      "target": "prop-sec-003-01.md",
+      "narrative": null,
+      "content": "(i) Le complexe Hmot(K)(n) est (−1)-connexe pour tout n ∈N. (ii) Sous l’hypothèse 4.3, le complexe Bti∗(R)(n) est (−1)-connexe pour tout n ∈N. Joseph Ayoub Démonstration. Étant donné que l’algèbre cosimpliciale Hmot(K) est une algèbre de Hopf homotopique, on a des quasi-isomorphismes canoniques Hmot(K)(n) ≃Hmot(K) L⊗n. L’assertion (i) découle alors de la (−1)-connexité du complexe Hmot(K); voir [Ayoub 2014b, Corol- laire 2.105]. Par ailleurs, étant donné que Bti∗(R) est un comodule homotopique sur Hmot(K), on a des quasi-isomorphismes canoniques Bti∗(R)(n) ≃Bti∗(R) L⊗Hmot(K)(n), ce qui fournit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p03/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Action du groupe de Galois motivique",
+      "pageStart": 38,
+      "pageEnd": 40,
+      "target": "../sections/sec-003-4-action-du-groupe-de-galois-motivique.md",
+      "narrative": null,
+      "content": "Tout au long de la section, on ﬁxe un corps K muni d’une valuation de hauteur 1 et on note b\nK son\ncomplété. On désigne par K ◦et b\nK ◦les anneaux de valuation de K et b\nK, et on note k le corps résiduel\nde K ◦qu’on identiﬁe à celui de b\nK ◦. On suppose que la caractéristique de K est nulle et on ne fait pas\nd’hypothèses sur la caractéristique de k. On ﬁxe une Q-algèbre 3.\nIci, nous allons munir la nouvelle réalisation de type Betti Rnew, B d’une action du groupe de Galois\nmotivique de K. On ﬁxe une fois pour toute un plongement complexe σ : K ,→C et on note Gmot(K) =\nGmot(K, σ; Q) le groupe d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p03/blocks/conj-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "conj-sec-004-02.md",
+      "narrative": null,
+      "content": "L’action de Gmot(K) sur le Q-schéma Spec(AK, B) est transitive. Remarque 4.11. La conjecture 4.10 est équivalente à chacune des deux assertions suivantes. (a) Le Q-champs d’Artin XK, B est une gerbe. (b) La catégorie Coh(XK, B) des modules quasi-cohérents de type ﬁni sur XK, B est tannakienne. Nouvelles cohomologies de Weil en caractéristique positive En fait, il est naturel de considérer la catégorie Coh(XK, B) comme un candidat pour la catégorie tannakienne des motifs mixtes rigides sur b K. On s’attend aussi à ce que la catégorie tannakienne des motifs mixtes sur k s’identiﬁe à la sous-caté",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p03/blocks/conj-sec-004-04",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "conj-sec-004-04.md",
+      "narrative": null,
+      "content": "La catégorie Coh(XK, B) est abélienne (ce qui est le cas si la conjecture 4.10 est vraie) et le foncteur (4-25) induit une équivalence de catégories : RigDA´et ct( b K; Q) −→ ∼ Db(Coh(XK, B)). (4-26)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p03/blocks/prop-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "prop-sec-004-01.md",
+      "narrative": null,
+      "content": "Il existe un foncteur monoïdal eRnew, B : RigDA´et ct( b K; 3) →Db(QCoh(XK, B)) (4-25) qui factorise la restriction de (4-24) aux motifs rigides constructibles. Démonstration. Il s’agit d’un cas particulier du corollaire 4.7. □ 4C. Quelques conjectures. On ﬁxe un plongement complexe σ : K ,→C et on suppose que 3 = Q. Dans cette sous-section, on énonce deux conjectures. La première porte sur l’action du groupe de Galois motivique Gmot(K) sur Spec(AK, B). La deuxième concerne le foncteur (4-25).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p03/blocks/prop-sec-004-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "prop-sec-004-03.md",
+      "narrative": null,
+      "content": "La conjecture 4.10 entraîne que les nombres de Betti ℓ-adiques des motifs mixtes sur k ne dépendent pas de ℓ. Démonstration. On ﬁxe un motif M ∈DA´et ct(k; Q). Si le Q-champs d’Artin XK,B est une gerbe, les AK, B-modules Hi(Rnew, B(M)), pour i ∈Z, sont libres de rang constant sur Spec(AK, B). Le résultat recherché découle alors des théorèmes de comparaison (voir les remarques 3.18 et 3.17). □ Il est également naturel de faire la conjecture suivante qui renforce la remarque 4.11.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/ant-v14-n7-s-p03/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "→HocoMod",
+      "pageStart": 40,
+      "pageEnd": 43,
+      "target": "../sections/sec-004-hocomod.md",
+      "narrative": null,
+      "content": "\u0000B(Hmot(K)); Bti′∗(R)\n\u0001\n.\n(4-11)\nEn composant (4-8) et (4-11), on obtient un foncteur monoïdal\nBti′∗: DA´et(K; R) →HocoMod\n\u0000B(Hmot(K)); Bti′∗(R)\n\u0001\n.\n(4-12)\nSupposons maintenant que l’hypothèse 4.3 est satisfaite. Le complexe cosimplicial Bti′∗(R) est alors\n(−1)-connexe en chaque degré cosimplicial (utiliser la proposition 4.4(ii)). Ainsi, on dispose de deux\nmorphismes de comodules homotopiques sur B(Hmot(K)) :\nBti′∗(R)\nq.-i.\no\nτ⩾0Bti′∗(R) →H0(Bti′∗(R))\n(4-13)\net le premier est un quasi-isomorphisme. On pose :\nA = H0(Bti′∗(R)).\n(4-14)\nOn déduit de (4-13) un foncteur monoïdal\nA L⊗τ⩾0Bti′∗(R)−: H",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/ant-v14-n7-s-p03/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bibliographie",
+      "pageStart": 43,
+      "pageEnd": 44,
+      "target": "../sections/sec-005-bibliographie.md",
+      "narrative": null,
+      "content": "[Ayoub 2007] J. Ayoub, Les six opérations de Grothendieck et le formalisme des cycles évanescents dans le monde motivique, II,\nAstérisque 315, Soc. Math. France, Paris, 2007. MR Zbl\n[Ayoub 2014a] J. Ayoub, “La réalisation étale et les opérations de Grothendieck”, Ann. Sci. École Norm. Sup. (4) 47:1 (2014),\n1–145. MR Zbl\n[Ayoub 2014b] J. Ayoub, “L’algèbre de Hopf et le groupe de Galois motiviques d’un corps de caractéristique nulle, I”, J. Reine\nAngew. Math. 693 (2014), 1–149. MR Zbl\n[Ayoub 2014c] J. Ayoub, “L’algèbre de Hopf et le groupe de Galois motiviques d’un corps de caractéristique nulle",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

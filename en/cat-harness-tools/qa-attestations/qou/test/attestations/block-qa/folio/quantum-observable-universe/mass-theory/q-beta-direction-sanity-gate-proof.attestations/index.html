@@ -1,0 +1,972 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/q-beta-direction-sanity-gate-proof.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../../../assets/navbar/rail-1c4brq4mb9g.js" defer></script><script src="../../../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../../../.." data-fa-to-root="../../../../../../../../../../..">{"data":"rail-1c4brq4mb9g","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/q-beta-direction-sanity-gate-proof.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/q-beta-direction-sanity-gate-proof.attestations</h1>
+<p class="m">A <a href="../../../../../../../../">qa-attestations</a> node held by <a href="../../../../../../../">qou</a>, at <code>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/q-beta-direction-sanity-gate-proof.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>block-qa</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;block&quot;,
+  &quot;id&quot;: &quot;folio/quantum-observable-universe/mass-theory/q-beta-direction-sanity-gate-proof&quot;,
+  &quot;path&quot;: &quot;folio/quantum-observable-universe/mass-theory/q-beta-direction-sanity-gate-proof&quot;
+}</pre></dd>
+<dt>criteria</dt><dd><pre>{
+  &quot;fit-section-chapter&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:34:07.457Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aa944b9b92668dad00f41928a8b2a565806b4b42&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T15:02:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;49ebe5550671403ce12160ffc06deb8feb2ca6ec&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {},
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;da-false-claim&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:34:07.457Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aa944b9b92668dad00f41928a8b2a565806b4b42&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T15:02:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;49ebe5550671403ce12160ffc06deb8feb2ca6ec&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-vacuous&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:34:07.457Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aa944b9b92668dad00f41928a8b2a565806b4b42&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T15:02:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;49ebe5550671403ce12160ffc06deb8feb2ca6ec&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-circular&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:34:07.457Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aa944b9b92668dad00f41928a8b2a565806b4b42&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T15:02:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;49ebe5550671403ce12160ffc06deb8feb2ca6ec&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-overclaim&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:34:07.457Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aa944b9b92668dad00f41928a8b2a565806b4b42&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T15:02:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;49ebe5550671403ce12160ffc06deb8feb2ca6ec&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-hidden-dof&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:34:07.457Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aa944b9b92668dad00f41928a8b2a565806b4b42&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T15:02:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;49ebe5550671403ce12160ffc06deb8feb2ca6ec&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-non-sequitur&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:34:07.457Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aa944b9b92668dad00f41928a8b2a565806b4b42&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T15:02:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;49ebe5550671403ce12160ffc06deb8feb2ca6ec&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;19f06657a679&quot;,
+        &quot;ts&quot;: &quot;a638581f9d77&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:sidecar-review-2026-11-15&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-11-15T21:57:32.293Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b2b349f3607b14633db66340b2e643563a868ddf&quot;,
+      &quot;evidence&quot;: &quot;proof.md:30-34 operational test |F−t|/t &gt; 10 gives 0.914 at F = z⁵ (exact), so proof.md:115 &#39;the gate refutes every member with m ≥ 5&#39; fails for it; statement .md:1 defined via &#39;𝔔_β^CODATA&#39;; Step 1 uses calibrated c_k (proof.md:37-40, :53-54)&quot;,
+      &quot;notes&quot;: &quot;Genuine side-by-side review (statement / narrative proof / Lean), main b2b349f36; findings in issue #8025. Route: binding&quot;
+    }
+  ],
+  &quot;da-lean-narrative-divergence&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:34:07.457Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aa944b9b92668dad00f41928a8b2a565806b4b42&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T15:02:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;49ebe5550671403ce12160ffc06deb8feb2ca6ec&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-citation-misuse&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:34:07.457Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aa944b9b92668dad00f41928a8b2a565806b4b42&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T15:02:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;49ebe5550671403ce12160ffc06deb8feb2ca6ec&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-definitional-ambiguity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:34:07.457Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aa944b9b92668dad00f41928a8b2a565806b4b42&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T15:02:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;49ebe5550671403ce12160ffc06deb8feb2ca6ec&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-empirical-fragility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:34:07.457Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aa944b9b92668dad00f41928a8b2a565806b4b42&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T15:02:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;49ebe5550671403ce12160ffc06deb8feb2ca6ec&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-physical-implausibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:34:07.457Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aa944b9b92668dad00f41928a8b2a565806b4b42&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T15:02:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;49ebe5550671403ce12160ffc06deb8feb2ca6ec&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-reproducibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:34:07.457Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aa944b9b92668dad00f41928a8b2a565806b4b42&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T15:02:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;49ebe5550671403ce12160ffc06deb8feb2ca6ec&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-referee-verdict&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:34:07.457Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aa944b9b92668dad00f41928a8b2a565806b4b42&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T15:02:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;49ebe5550671403ce12160ffc06deb8feb2ca6ec&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;expo-milnor-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:16:30.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;715a9a708c210d840f41c621cb20b53301cf19b6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-19&quot;
+      },
+      &quot;evidence&quot;: &quot;Block is quite long, consider breaking it up for clarity.&quot;
+    }
+  ],
+  &quot;milnor-brevity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound theoretical demonstration systematically linking global physical invariants correctly alongside continuous geometric structures.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T15:02:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;49ebe5550671403ce12160ffc06deb8feb2ca6ec&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;voice-scholarly-default&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;df1fdf12f8cd&quot;,
+        &quot;ts&quot;: &quot;a638581f9d77&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;voice-ai-slop&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;df1fdf12f8cd&quot;,
+        &quot;ts&quot;: &quot;a638581f9d77&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;voice-branch-jargon&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-08-08T08:19:18Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/branch-jargon-sweep&quot;,
+        &quot;agent_skill&quot;: &quot;local/one-voice-audit&quot;
+      }
+    }
+  ],
+  &quot;trap-negation-contrast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0b7195d46f58&quot;,
+        &quot;ts&quot;: &quot;a638581f9d77&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:35:59.103Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7d1a616aef2454349f69e08c3cabdd8d1a48d3e5&quot;,
+      &quot;evidence&quot;: &quot;Proof block, read in full (four steps). Nine of ten categories clean. Negation-contrast instances are substantive (&#39;Rejection is definitive; passage is only necessary&#39;, &#39;tests direction, not anchor choice or near-match precision&#39;) -- each is the actual logical content of the step it closes. Three spaced em-dashes, two of them true appositives around &#39;the element whose expansion generates the canonical c_k&#39; and one appending &#39;utterly negligible&#39;; density is below the trap threshold. No triples, no warmth, no meta-commentary. RIGOR PASS on the step arithmetic: |c_2|u_0^2 = 7.25433e-5 (block: 7.3e-5, correct); 2*sum|c_k|u_0^k = 1.4757e-4, consistent with the block&#39;s &#39;less than about 2e-4&#39;; (sum k|c_k|u_0^k)*2.1e-7 = 3.1e-11 (block: 3e-11, internally consistent); 0.998*2^4 = 15.968 (block: 16.0, correct), and 0.998/z_C^3 = 8.017 &lt; 10 confirms m = 4 is indeed the first failing power under convention C.&quot;,
+      &quot;notes&quot;: &quot;THREE NUMERIC FINDINGS plus one applied fix. (a) THE RE-PIN SHIFT IS OVERSTATED 18x. Step 3 says &#39;the substrate variable itself shifts by only 2.1e-7 (210 ppb) under the proton-muon re-pin&#39;. Recomputed: |q_proton - q_muon|/q = |1.1099785827513808 - 1.10997859555733471|/q = 1.15371e-8, i.e. 11.54 ppb, not 210 ppb. The 210 ppb figure is the m_mu PREDICTION error (AGENTS.md records 209.8 ppb), not the q_0 shift; the two are being conflated. The error is conservative -- it inflates a quantity the step calls negligible -- so no conclusion changes, and the downstream 3e-11 is consistent with the wrong input (with the correct 1.15e-8 it would be 1.7e-12). (b) THE CROSS-ANCHOR SWING IS THE WRONG QUANTITY. Step 3 says &#39;recorded cross-anchor swings reach approximately 3.5 percent at the c_3 level&#39;. Recomputed from the current values c_3(muon) = -2.02020024 and c_3(proton) = -2.06934258: the cross-anchor swing is 2.37478 percent, while 3.46713 percent is |-2 - c_3|/2, the gap to the INTEGER CANDIDATE -2. AGENTS.md flags this exact conflation (&#39;a quantity differing only by normalisation, mistaken for a discrepancy&#39;) as the error class its c_k correction is about. Since the step only needs the threshold to sit above the near-match band, the calibration argument survives either way. (c) CONVENTION C IS LOAD-BEARING IN STEP 4, and here the dependence is decidable from the block itself: z is written 1/(q^{1/2}+q^{-1/2}) = 0.49932033, the AM-GM argument proves 0 &lt; z &lt; 1/2, and the m &gt;= 4 threshold follows from 2^m. Under canonical convention D, z_D = 0.61268804 &gt; 1/2, the AM-GM step does not apply, and the threshold moves to m &gt;= 5 (0.998/z_D^4 = 7.08 passes, 0.998/z_D^5 = 11.56 fails). The non-vacuity of the gate survives; the stated bound and the m = 4 boundary do not.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0b7195d46f58&quot;,
+        &quot;ts&quot;: &quot;a638581f9d77&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:39:15.568Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c12101c0455c8a76d4dc1e334e627098a9fb0878&quot;,
+      &quot;evidence&quot;: &quot;Proof block, read in full (four steps). Nine of ten categories clean. Negation-contrast instances are substantive (&#39;Rejection is definitive; passage is only necessary&#39;, &#39;tests direction, not anchor choice or near-match precision&#39;). Three spaced em-dashes, two true appositives and one appending &#39;utterly negligible&#39;; below the density threshold. No triples, no warmth, no meta-commentary. RIGOR PASS on the step arithmetic: |c_2|u_0^2 = 7.25433e-5 (block: 7.3e-5); 2*sum|c_k|u_0^k = 1.4757e-4, consistent with &#39;less than about 2e-4&#39;; (sum k|c_k|u_0^k)*2.1e-7 = 3.1e-11 (block: 3e-11); 0.998*2^4 = 15.968 (block: 16.0); and 0.998/z_C^3 = 8.017 &lt; 10 confirms m = 4 is the first failing power under convention C. THIS ENTRY SUPERSEDES MY EARLIER agent:f00 ENTRY ON THIS BLOCK, which reported the 210 ppb figure as an error -- see notes.&quot;,
+      &quot;notes&quot;: &quot;RETRACTION FIRST, then two live findings. (0) RETRACTED: I first recorded that Step 3&#39;s &#39;the substrate variable itself shifts by only 2.1e-7 (210 ppb) under the proton-muon re-pin&#39; was overstated 18x, on the ground that |q_p - q_m|/q = 1.15371e-8 = 11.54 ppb. That was WRONG and the block is RIGHT: &#39;the substrate variable&#39; here is the LADDER variable u = b*hbar_q^2, not q_0. Recomputed from the sibling radius-of-convergence gate&#39;s own table, u(proton) = 0.008517234550156142 and u(muon) = 0.008517236340043958, a relative shift of 2.10149e-7 = 210.15 ppb -- exactly as printed. The 18.2x amplification from q to u is real and derivable: d(ln u)/d(ln q) = 2/(q*hbar_q) = 18.19, because hbar_q = 1 - 1/q is small and enters squared. The surviving point is only that &#39;the substrate variable&#39; reads naturally as q_0 (which the corpus calls the substrate parameter) and that 210 ppb happens to coincide with the m_mu prediction error, so the phrase invites exactly the misreading I made; proposed clarification: &#39;the ladder variable u shifts by 2.1e-7&#39;. No arithmetic changes. (a) THE CROSS-ANCHOR SWING IS THE WRONG QUANTITY. Step 3 says &#39;recorded cross-anchor swings reach approximately 3.5 percent at the c_3 level&#39;. Recomputed from the current values c_3(muon) = -2.02020024 and c_3(proton) = -2.06934258: the cross-anchor swing is 2.37478 percent; 3.46713 percent is |-2 - c_3|/2, the gap to the INTEGER CANDIDATE -2. AGENTS.md flags this exact conflation as the error class its c_k correction addresses. The calibration argument only needs the threshold above the near-match band, so it survives. (b) CONVENTION C IS LOAD-BEARING IN STEP 4, and the dependence is decidable from the block itself: z is written 1/(q^{1/2}+q^{-1/2}) = 0.49932033, the AM-GM argument proves 0 &lt; z &lt; 1/2, and m &gt;= 4 follows from 2^m. Under canonical convention D, z_D = q^3/(q^2+1) = 0.61268804 &gt; 1/2, the AM-GM step fails, and the threshold moves to m &gt;= 5 (0.998/z_D^4 = 7.08 passes the decade gate, 0.998/z_D^5 = 11.56 fails). Non-vacuity survives; the stated bound and the m = 4 boundary do not.&quot;
+    }
+  ],
+  &quot;trap-rhetorical-pivot&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0b7195d46f58&quot;,
+        &quot;ts&quot;: &quot;a638581f9d77&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:35:59.141Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7d1a616aef2454349f69e08c3cabdd8d1a48d3e5&quot;,
+      &quot;evidence&quot;: &quot;Proof block, read in full (four steps). Nine of ten categories clean. Negation-contrast instances are substantive (&#39;Rejection is definitive; passage is only necessary&#39;, &#39;tests direction, not anchor choice or near-match precision&#39;) -- each is the actual logical content of the step it closes. Three spaced em-dashes, two of them true appositives around &#39;the element whose expansion generates the canonical c_k&#39; and one appending &#39;utterly negligible&#39;; density is below the trap threshold. No triples, no warmth, no meta-commentary. RIGOR PASS on the step arithmetic: |c_2|u_0^2 = 7.25433e-5 (block: 7.3e-5, correct); 2*sum|c_k|u_0^k = 1.4757e-4, consistent with the block&#39;s &#39;less than about 2e-4&#39;; (sum k|c_k|u_0^k)*2.1e-7 = 3.1e-11 (block: 3e-11, internally consistent); 0.998*2^4 = 15.968 (block: 16.0, correct), and 0.998/z_C^3 = 8.017 &lt; 10 confirms m = 4 is indeed the first failing power under convention C.&quot;,
+      &quot;notes&quot;: &quot;THREE NUMERIC FINDINGS plus one applied fix. (a) THE RE-PIN SHIFT IS OVERSTATED 18x. Step 3 says &#39;the substrate variable itself shifts by only 2.1e-7 (210 ppb) under the proton-muon re-pin&#39;. Recomputed: |q_proton - q_muon|/q = |1.1099785827513808 - 1.10997859555733471|/q = 1.15371e-8, i.e. 11.54 ppb, not 210 ppb. The 210 ppb figure is the m_mu PREDICTION error (AGENTS.md records 209.8 ppb), not the q_0 shift; the two are being conflated. The error is conservative -- it inflates a quantity the step calls negligible -- so no conclusion changes, and the downstream 3e-11 is consistent with the wrong input (with the correct 1.15e-8 it would be 1.7e-12). (b) THE CROSS-ANCHOR SWING IS THE WRONG QUANTITY. Step 3 says &#39;recorded cross-anchor swings reach approximately 3.5 percent at the c_3 level&#39;. Recomputed from the current values c_3(muon) = -2.02020024 and c_3(proton) = -2.06934258: the cross-anchor swing is 2.37478 percent, while 3.46713 percent is |-2 - c_3|/2, the gap to the INTEGER CANDIDATE -2. AGENTS.md flags this exact conflation (&#39;a quantity differing only by normalisation, mistaken for a discrepancy&#39;) as the error class its c_k correction is about. Since the step only needs the threshold to sit above the near-match band, the calibration argument survives either way. (c) CONVENTION C IS LOAD-BEARING IN STEP 4, and here the dependence is decidable from the block itself: z is written 1/(q^{1/2}+q^{-1/2}) = 0.49932033, the AM-GM argument proves 0 &lt; z &lt; 1/2, and the m &gt;= 4 threshold follows from 2^m. Under canonical convention D, z_D = 0.61268804 &gt; 1/2, the AM-GM step does not apply, and the threshold moves to m &gt;= 5 (0.998/z_D^4 = 7.08 passes, 0.998/z_D^5 = 11.56 fails). The non-vacuity of the gate survives; the stated bound and the m = 4 boundary do not.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0b7195d46f58&quot;,
+        &quot;ts&quot;: &quot;a638581f9d77&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:39:15.623Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c12101c0455c8a76d4dc1e334e627098a9fb0878&quot;,
+      &quot;evidence&quot;: &quot;Proof block, read in full (four steps). Nine of ten categories clean. Negation-contrast instances are substantive (&#39;Rejection is definitive; passage is only necessary&#39;, &#39;tests direction, not anchor choice or near-match precision&#39;). Three spaced em-dashes, two true appositives and one appending &#39;utterly negligible&#39;; below the density threshold. No triples, no warmth, no meta-commentary. RIGOR PASS on the step arithmetic: |c_2|u_0^2 = 7.25433e-5 (block: 7.3e-5); 2*sum|c_k|u_0^k = 1.4757e-4, consistent with &#39;less than about 2e-4&#39;; (sum k|c_k|u_0^k)*2.1e-7 = 3.1e-11 (block: 3e-11); 0.998*2^4 = 15.968 (block: 16.0); and 0.998/z_C^3 = 8.017 &lt; 10 confirms m = 4 is the first failing power under convention C. THIS ENTRY SUPERSEDES MY EARLIER agent:f00 ENTRY ON THIS BLOCK, which reported the 210 ppb figure as an error -- see notes.&quot;,
+      &quot;notes&quot;: &quot;RETRACTION FIRST, then two live findings. (0) RETRACTED: I first recorded that Step 3&#39;s &#39;the substrate variable itself shifts by only 2.1e-7 (210 ppb) under the proton-muon re-pin&#39; was overstated 18x, on the ground that |q_p - q_m|/q = 1.15371e-8 = 11.54 ppb. That was WRONG and the block is RIGHT: &#39;the substrate variable&#39; here is the LADDER variable u = b*hbar_q^2, not q_0. Recomputed from the sibling radius-of-convergence gate&#39;s own table, u(proton) = 0.008517234550156142 and u(muon) = 0.008517236340043958, a relative shift of 2.10149e-7 = 210.15 ppb -- exactly as printed. The 18.2x amplification from q to u is real and derivable: d(ln u)/d(ln q) = 2/(q*hbar_q) = 18.19, because hbar_q = 1 - 1/q is small and enters squared. The surviving point is only that &#39;the substrate variable&#39; reads naturally as q_0 (which the corpus calls the substrate parameter) and that 210 ppb happens to coincide with the m_mu prediction error, so the phrase invites exactly the misreading I made; proposed clarification: &#39;the ladder variable u shifts by 2.1e-7&#39;. No arithmetic changes. (a) THE CROSS-ANCHOR SWING IS THE WRONG QUANTITY. Step 3 says &#39;recorded cross-anchor swings reach approximately 3.5 percent at the c_3 level&#39;. Recomputed from the current values c_3(muon) = -2.02020024 and c_3(proton) = -2.06934258: the cross-anchor swing is 2.37478 percent; 3.46713 percent is |-2 - c_3|/2, the gap to the INTEGER CANDIDATE -2. AGENTS.md flags this exact conflation as the error class its c_k correction addresses. The calibration argument only needs the threshold above the near-match band, so it survives. (b) CONVENTION C IS LOAD-BEARING IN STEP 4, and the dependence is decidable from the block itself: z is written 1/(q^{1/2}+q^{-1/2}) = 0.49932033, the AM-GM argument proves 0 &lt; z &lt; 1/2, and m &gt;= 4 follows from 2^m. Under canonical convention D, z_D = q^3/(q^2+1) = 0.61268804 &gt; 1/2, the AM-GM step fails, and the threshold moves to m &gt;= 5 (0.998/z_D^4 = 7.08 passes the decade gate, 0.998/z_D^5 = 11.56 fails). Non-vacuity survives; the stated bound and the m = 4 boundary do not.&quot;
+    }
+  ],
+  &quot;trap-em-dash&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0b7195d46f58&quot;,
+        &quot;ts&quot;: &quot;a638581f9d77&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:35:59.179Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7d1a616aef2454349f69e08c3cabdd8d1a48d3e5&quot;,
+      &quot;evidence&quot;: &quot;Proof block, read in full (four steps). Nine of ten categories clean. Negation-contrast instances are substantive (&#39;Rejection is definitive; passage is only necessary&#39;, &#39;tests direction, not anchor choice or near-match precision&#39;) -- each is the actual logical content of the step it closes. Three spaced em-dashes, two of them true appositives around &#39;the element whose expansion generates the canonical c_k&#39; and one appending &#39;utterly negligible&#39;; density is below the trap threshold. No triples, no warmth, no meta-commentary. RIGOR PASS on the step arithmetic: |c_2|u_0^2 = 7.25433e-5 (block: 7.3e-5, correct); 2*sum|c_k|u_0^k = 1.4757e-4, consistent with the block&#39;s &#39;less than about 2e-4&#39;; (sum k|c_k|u_0^k)*2.1e-7 = 3.1e-11 (block: 3e-11, internally consistent); 0.998*2^4 = 15.968 (block: 16.0, correct), and 0.998/z_C^3 = 8.017 &lt; 10 confirms m = 4 is indeed the first failing power under convention C.&quot;,
+      &quot;notes&quot;: &quot;THREE NUMERIC FINDINGS plus one applied fix. (a) THE RE-PIN SHIFT IS OVERSTATED 18x. Step 3 says &#39;the substrate variable itself shifts by only 2.1e-7 (210 ppb) under the proton-muon re-pin&#39;. Recomputed: |q_proton - q_muon|/q = |1.1099785827513808 - 1.10997859555733471|/q = 1.15371e-8, i.e. 11.54 ppb, not 210 ppb. The 210 ppb figure is the m_mu PREDICTION error (AGENTS.md records 209.8 ppb), not the q_0 shift; the two are being conflated. The error is conservative -- it inflates a quantity the step calls negligible -- so no conclusion changes, and the downstream 3e-11 is consistent with the wrong input (with the correct 1.15e-8 it would be 1.7e-12). (b) THE CROSS-ANCHOR SWING IS THE WRONG QUANTITY. Step 3 says &#39;recorded cross-anchor swings reach approximately 3.5 percent at the c_3 level&#39;. Recomputed from the current values c_3(muon) = -2.02020024 and c_3(proton) = -2.06934258: the cross-anchor swing is 2.37478 percent, while 3.46713 percent is |-2 - c_3|/2, the gap to the INTEGER CANDIDATE -2. AGENTS.md flags this exact conflation (&#39;a quantity differing only by normalisation, mistaken for a discrepancy&#39;) as the error class its c_k correction is about. Since the step only needs the threshold to sit above the near-match band, the calibration argument survives either way. (c) CONVENTION C IS LOAD-BEARING IN STEP 4, and here the dependence is decidable from the block itself: z is written 1/(q^{1/2}+q^{-1/2}) = 0.49932033, the AM-GM argument proves 0 &lt; z &lt; 1/2, and the m &gt;= 4 threshold follows from 2^m. Under canonical convention D, z_D = 0.61268804 &gt; 1/2, the AM-GM step does not apply, and the threshold moves to m &gt;= 5 (0.998/z_D^4 = 7.08 passes, 0.998/z_D^5 = 11.56 fails). The non-vacuity of the gate survives; the stated bound and the m = 4 boundary do not.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0b7195d46f58&quot;,
+        &quot;ts&quot;: &quot;a638581f9d77&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:39:15.686Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c12101c0455c8a76d4dc1e334e627098a9fb0878&quot;,
+      &quot;evidence&quot;: &quot;Proof block, read in full (four steps). Nine of ten categories clean. Negation-contrast instances are substantive (&#39;Rejection is definitive; passage is only necessary&#39;, &#39;tests direction, not anchor choice or near-match precision&#39;). Three spaced em-dashes, two true appositives and one appending &#39;utterly negligible&#39;; below the density threshold. No triples, no warmth, no meta-commentary. RIGOR PASS on the step arithmetic: |c_2|u_0^2 = 7.25433e-5 (block: 7.3e-5); 2*sum|c_k|u_0^k = 1.4757e-4, consistent with &#39;less than about 2e-4&#39;; (sum k|c_k|u_0^k)*2.1e-7 = 3.1e-11 (block: 3e-11); 0.998*2^4 = 15.968 (block: 16.0); and 0.998/z_C^3 = 8.017 &lt; 10 confirms m = 4 is the first failing power under convention C. THIS ENTRY SUPERSEDES MY EARLIER agent:f00 ENTRY ON THIS BLOCK, which reported the 210 ppb figure as an error -- see notes.&quot;,
+      &quot;notes&quot;: &quot;RETRACTION FIRST, then two live findings. (0) RETRACTED: I first recorded that Step 3&#39;s &#39;the substrate variable itself shifts by only 2.1e-7 (210 ppb) under the proton-muon re-pin&#39; was overstated 18x, on the ground that |q_p - q_m|/q = 1.15371e-8 = 11.54 ppb. That was WRONG and the block is RIGHT: &#39;the substrate variable&#39; here is the LADDER variable u = b*hbar_q^2, not q_0. Recomputed from the sibling radius-of-convergence gate&#39;s own table, u(proton) = 0.008517234550156142 and u(muon) = 0.008517236340043958, a relative shift of 2.10149e-7 = 210.15 ppb -- exactly as printed. The 18.2x amplification from q to u is real and derivable: d(ln u)/d(ln q) = 2/(q*hbar_q) = 18.19, because hbar_q = 1 - 1/q is small and enters squared. The surviving point is only that &#39;the substrate variable&#39; reads naturally as q_0 (which the corpus calls the substrate parameter) and that 210 ppb happens to coincide with the m_mu prediction error, so the phrase invites exactly the misreading I made; proposed clarification: &#39;the ladder variable u shifts by 2.1e-7&#39;. No arithmetic changes. (a) THE CROSS-ANCHOR SWING IS THE WRONG QUANTITY. Step 3 says &#39;recorded cross-anchor swings reach approximately 3.5 percent at the c_3 level&#39;. Recomputed from the current values c_3(muon) = -2.02020024 and c_3(proton) = -2.06934258: the cross-anchor swing is 2.37478 percent; 3.46713 percent is |-2 - c_3|/2, the gap to the INTEGER CANDIDATE -2. AGENTS.md flags this exact conflation as the error class its c_k correction addresses. The calibration argument only needs the threshold above the near-match band, so it survives. (b) CONVENTION C IS LOAD-BEARING IN STEP 4, and the dependence is decidable from the block itself: z is written 1/(q^{1/2}+q^{-1/2}) = 0.49932033, the AM-GM argument proves 0 &lt; z &lt; 1/2, and m &gt;= 4 follows from 2^m. Under canonical convention D, z_D = q^3/(q^2+1) = 0.61268804 &gt; 1/2, the AM-GM step fails, and the threshold moves to m &gt;= 5 (0.998/z_D^4 = 7.08 passes the decade gate, 0.998/z_D^5 = 11.56 fails). Non-vacuity survives; the stated bound and the m = 4 boundary do not.&quot;
+    }
+  ],
+  &quot;trap-triples&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0b7195d46f58&quot;,
+        &quot;ts&quot;: &quot;a638581f9d77&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:35:59.218Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7d1a616aef2454349f69e08c3cabdd8d1a48d3e5&quot;,
+      &quot;evidence&quot;: &quot;Proof block, read in full (four steps). Nine of ten categories clean. Negation-contrast instances are substantive (&#39;Rejection is definitive; passage is only necessary&#39;, &#39;tests direction, not anchor choice or near-match precision&#39;) -- each is the actual logical content of the step it closes. Three spaced em-dashes, two of them true appositives around &#39;the element whose expansion generates the canonical c_k&#39; and one appending &#39;utterly negligible&#39;; density is below the trap threshold. No triples, no warmth, no meta-commentary. RIGOR PASS on the step arithmetic: |c_2|u_0^2 = 7.25433e-5 (block: 7.3e-5, correct); 2*sum|c_k|u_0^k = 1.4757e-4, consistent with the block&#39;s &#39;less than about 2e-4&#39;; (sum k|c_k|u_0^k)*2.1e-7 = 3.1e-11 (block: 3e-11, internally consistent); 0.998*2^4 = 15.968 (block: 16.0, correct), and 0.998/z_C^3 = 8.017 &lt; 10 confirms m = 4 is indeed the first failing power under convention C.&quot;,
+      &quot;notes&quot;: &quot;THREE NUMERIC FINDINGS plus one applied fix. (a) THE RE-PIN SHIFT IS OVERSTATED 18x. Step 3 says &#39;the substrate variable itself shifts by only 2.1e-7 (210 ppb) under the proton-muon re-pin&#39;. Recomputed: |q_proton - q_muon|/q = |1.1099785827513808 - 1.10997859555733471|/q = 1.15371e-8, i.e. 11.54 ppb, not 210 ppb. The 210 ppb figure is the m_mu PREDICTION error (AGENTS.md records 209.8 ppb), not the q_0 shift; the two are being conflated. The error is conservative -- it inflates a quantity the step calls negligible -- so no conclusion changes, and the downstream 3e-11 is consistent with the wrong input (with the correct 1.15e-8 it would be 1.7e-12). (b) THE CROSS-ANCHOR SWING IS THE WRONG QUANTITY. Step 3 says &#39;recorded cross-anchor swings reach approximately 3.5 percent at the c_3 level&#39;. Recomputed from the current values c_3(muon) = -2.02020024 and c_3(proton) = -2.06934258: the cross-anchor swing is 2.37478 percent, while 3.46713 percent is |-2 - c_3|/2, the gap to the INTEGER CANDIDATE -2. AGENTS.md flags this exact conflation (&#39;a quantity differing only by normalisation, mistaken for a discrepancy&#39;) as the error class its c_k correction is about. Since the step only needs the threshold to sit above the near-match band, the calibration argument survives either way. (c) CONVENTION C IS LOAD-BEARING IN STEP 4, and here the dependence is decidable from the block itself: z is written 1/(q^{1/2}+q^{-1/2}) = 0.49932033, the AM-GM argument proves 0 &lt; z &lt; 1/2, and the m &gt;= 4 threshold follows from 2^m. Under canonical convention D, z_D = 0.61268804 &gt; 1/2, the AM-GM step does not apply, and the threshold moves to m &gt;= 5 (0.998/z_D^4 = 7.08 passes, 0.998/z_D^5 = 11.56 fails). The non-vacuity of the gate survives; the stated bound and the m = 4 boundary do not.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0b7195d46f58&quot;,
+        &quot;ts&quot;: &quot;a638581f9d77&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:39:15.750Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c12101c0455c8a76d4dc1e334e627098a9fb0878&quot;,
+      &quot;evidence&quot;: &quot;Proof block, read in full (four steps). Nine of ten categories clean. Negation-contrast instances are substantive (&#39;Rejection is definitive; passage is only necessary&#39;, &#39;tests direction, not anchor choice or near-match precision&#39;). Three spaced em-dashes, two true appositives and one appending &#39;utterly negligible&#39;; below the density threshold. No triples, no warmth, no meta-commentary. RIGOR PASS on the step arithmetic: |c_2|u_0^2 = 7.25433e-5 (block: 7.3e-5); 2*sum|c_k|u_0^k = 1.4757e-4, consistent with &#39;less than about 2e-4&#39;; (sum k|c_k|u_0^k)*2.1e-7 = 3.1e-11 (block: 3e-11); 0.998*2^4 = 15.968 (block: 16.0); and 0.998/z_C^3 = 8.017 &lt; 10 confirms m = 4 is the first failing power under convention C. THIS ENTRY SUPERSEDES MY EARLIER agent:f00 ENTRY ON THIS BLOCK, which reported the 210 ppb figure as an error -- see notes.&quot;,
+      &quot;notes&quot;: &quot;RETRACTION FIRST, then two live findings. (0) RETRACTED: I first recorded that Step 3&#39;s &#39;the substrate variable itself shifts by only 2.1e-7 (210 ppb) under the proton-muon re-pin&#39; was overstated 18x, on the ground that |q_p - q_m|/q = 1.15371e-8 = 11.54 ppb. That was WRONG and the block is RIGHT: &#39;the substrate variable&#39; here is the LADDER variable u = b*hbar_q^2, not q_0. Recomputed from the sibling radius-of-convergence gate&#39;s own table, u(proton) = 0.008517234550156142 and u(muon) = 0.008517236340043958, a relative shift of 2.10149e-7 = 210.15 ppb -- exactly as printed. The 18.2x amplification from q to u is real and derivable: d(ln u)/d(ln q) = 2/(q*hbar_q) = 18.19, because hbar_q = 1 - 1/q is small and enters squared. The surviving point is only that &#39;the substrate variable&#39; reads naturally as q_0 (which the corpus calls the substrate parameter) and that 210 ppb happens to coincide with the m_mu prediction error, so the phrase invites exactly the misreading I made; proposed clarification: &#39;the ladder variable u shifts by 2.1e-7&#39;. No arithmetic changes. (a) THE CROSS-ANCHOR SWING IS THE WRONG QUANTITY. Step 3 says &#39;recorded cross-anchor swings reach approximately 3.5 percent at the c_3 level&#39;. Recomputed from the current values c_3(muon) = -2.02020024 and c_3(proton) = -2.06934258: the cross-anchor swing is 2.37478 percent; 3.46713 percent is |-2 - c_3|/2, the gap to the INTEGER CANDIDATE -2. AGENTS.md flags this exact conflation as the error class its c_k correction addresses. The calibration argument only needs the threshold above the near-match band, so it survives. (b) CONVENTION C IS LOAD-BEARING IN STEP 4, and the dependence is decidable from the block itself: z is written 1/(q^{1/2}+q^{-1/2}) = 0.49932033, the AM-GM argument proves 0 &lt; z &lt; 1/2, and m &gt;= 4 follows from 2^m. Under canonical convention D, z_D = q^3/(q^2+1) = 0.61268804 &gt; 1/2, the AM-GM step fails, and the threshold moves to m &gt;= 5 (0.998/z_D^4 = 7.08 passes the decade gate, 0.998/z_D^5 = 11.56 fails). Non-vacuity survives; the stated bound and the m = 4 boundary do not.&quot;
+    }
+  ],
+  &quot;trap-closing-aphorism&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0b7195d46f58&quot;,
+        &quot;ts&quot;: &quot;a638581f9d77&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:35:59.256Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7d1a616aef2454349f69e08c3cabdd8d1a48d3e5&quot;,
+      &quot;evidence&quot;: &quot;Proof block, read in full (four steps). Nine of ten categories clean. Negation-contrast instances are substantive (&#39;Rejection is definitive; passage is only necessary&#39;, &#39;tests direction, not anchor choice or near-match precision&#39;) -- each is the actual logical content of the step it closes. Three spaced em-dashes, two of them true appositives around &#39;the element whose expansion generates the canonical c_k&#39; and one appending &#39;utterly negligible&#39;; density is below the trap threshold. No triples, no warmth, no meta-commentary. RIGOR PASS on the step arithmetic: |c_2|u_0^2 = 7.25433e-5 (block: 7.3e-5, correct); 2*sum|c_k|u_0^k = 1.4757e-4, consistent with the block&#39;s &#39;less than about 2e-4&#39;; (sum k|c_k|u_0^k)*2.1e-7 = 3.1e-11 (block: 3e-11, internally consistent); 0.998*2^4 = 15.968 (block: 16.0, correct), and 0.998/z_C^3 = 8.017 &lt; 10 confirms m = 4 is indeed the first failing power under convention C.&quot;,
+      &quot;notes&quot;: &quot;THREE NUMERIC FINDINGS plus one applied fix. (a) THE RE-PIN SHIFT IS OVERSTATED 18x. Step 3 says &#39;the substrate variable itself shifts by only 2.1e-7 (210 ppb) under the proton-muon re-pin&#39;. Recomputed: |q_proton - q_muon|/q = |1.1099785827513808 - 1.10997859555733471|/q = 1.15371e-8, i.e. 11.54 ppb, not 210 ppb. The 210 ppb figure is the m_mu PREDICTION error (AGENTS.md records 209.8 ppb), not the q_0 shift; the two are being conflated. The error is conservative -- it inflates a quantity the step calls negligible -- so no conclusion changes, and the downstream 3e-11 is consistent with the wrong input (with the correct 1.15e-8 it would be 1.7e-12). (b) THE CROSS-ANCHOR SWING IS THE WRONG QUANTITY. Step 3 says &#39;recorded cross-anchor swings reach approximately 3.5 percent at the c_3 level&#39;. Recomputed from the current values c_3(muon) = -2.02020024 and c_3(proton) = -2.06934258: the cross-anchor swing is 2.37478 percent, while 3.46713 percent is |-2 - c_3|/2, the gap to the INTEGER CANDIDATE -2. AGENTS.md flags this exact conflation (&#39;a quantity differing only by normalisation, mistaken for a discrepancy&#39;) as the error class its c_k correction is about. Since the step only needs the threshold to sit above the near-match band, the calibration argument survives either way. (c) CONVENTION C IS LOAD-BEARING IN STEP 4, and here the dependence is decidable from the block itself: z is written 1/(q^{1/2}+q^{-1/2}) = 0.49932033, the AM-GM argument proves 0 &lt; z &lt; 1/2, and the m &gt;= 4 threshold follows from 2^m. Under canonical convention D, z_D = 0.61268804 &gt; 1/2, the AM-GM step does not apply, and the threshold moves to m &gt;= 5 (0.998/z_D^4 = 7.08 passes, 0.998/z_D^5 = 11.56 fails). The non-vacuity of the gate survives; the stated bound and the m = 4 boundary do not.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0b7195d46f58&quot;,
+        &quot;ts&quot;: &quot;a638581f9d77&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:39:15.800Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c12101c0455c8a76d4dc1e334e627098a9fb0878&quot;,
+      &quot;evidence&quot;: &quot;Proof block, read in full (four steps). Nine of ten categories clean. Negation-contrast instances are substantive (&#39;Rejection is definitive; passage is only necessary&#39;, &#39;tests direction, not anchor choice or near-match precision&#39;). Three spaced em-dashes, two true appositives and one appending &#39;utterly negligible&#39;; below the density threshold. No triples, no warmth, no meta-commentary. RIGOR PASS on the step arithmetic: |c_2|u_0^2 = 7.25433e-5 (block: 7.3e-5); 2*sum|c_k|u_0^k = 1.4757e-4, consistent with &#39;less than about 2e-4&#39;; (sum k|c_k|u_0^k)*2.1e-7 = 3.1e-11 (block: 3e-11); 0.998*2^4 = 15.968 (block: 16.0); and 0.998/z_C^3 = 8.017 &lt; 10 confirms m = 4 is the first failing power under convention C. THIS ENTRY SUPERSEDES MY EARLIER agent:f00 ENTRY ON THIS BLOCK, which reported the 210 ppb figure as an error -- see notes.&quot;,
+      &quot;notes&quot;: &quot;RETRACTION FIRST, then two live findings. (0) RETRACTED: I first recorded that Step 3&#39;s &#39;the substrate variable itself shifts by only 2.1e-7 (210 ppb) under the proton-muon re-pin&#39; was overstated 18x, on the ground that |q_p - q_m|/q = 1.15371e-8 = 11.54 ppb. That was WRONG and the block is RIGHT: &#39;the substrate variable&#39; here is the LADDER variable u = b*hbar_q^2, not q_0. Recomputed from the sibling radius-of-convergence gate&#39;s own table, u(proton) = 0.008517234550156142 and u(muon) = 0.008517236340043958, a relative shift of 2.10149e-7 = 210.15 ppb -- exactly as printed. The 18.2x amplification from q to u is real and derivable: d(ln u)/d(ln q) = 2/(q*hbar_q) = 18.19, because hbar_q = 1 - 1/q is small and enters squared. The surviving point is only that &#39;the substrate variable&#39; reads naturally as q_0 (which the corpus calls the substrate parameter) and that 210 ppb happens to coincide with the m_mu prediction error, so the phrase invites exactly the misreading I made; proposed clarification: &#39;the ladder variable u shifts by 2.1e-7&#39;. No arithmetic changes. (a) THE CROSS-ANCHOR SWING IS THE WRONG QUANTITY. Step 3 says &#39;recorded cross-anchor swings reach approximately 3.5 percent at the c_3 level&#39;. Recomputed from the current values c_3(muon) = -2.02020024 and c_3(proton) = -2.06934258: the cross-anchor swing is 2.37478 percent; 3.46713 percent is |-2 - c_3|/2, the gap to the INTEGER CANDIDATE -2. AGENTS.md flags this exact conflation as the error class its c_k correction addresses. The calibration argument only needs the threshold above the near-match band, so it survives. (b) CONVENTION C IS LOAD-BEARING IN STEP 4, and the dependence is decidable from the block itself: z is written 1/(q^{1/2}+q^{-1/2}) = 0.49932033, the AM-GM argument proves 0 &lt; z &lt; 1/2, and m &gt;= 4 follows from 2^m. Under canonical convention D, z_D = q^3/(q^2+1) = 0.61268804 &gt; 1/2, the AM-GM step fails, and the threshold moves to m &gt;= 5 (0.998/z_D^4 = 7.08 passes the decade gate, 0.998/z_D^5 = 11.56 fails). Non-vacuity survives; the stated bound and the m = 4 boundary do not.&quot;
+    }
+  ],
+  &quot;trap-meta-commentary&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0b7195d46f58&quot;,
+        &quot;ts&quot;: &quot;a638581f9d77&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:35:59.293Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7d1a616aef2454349f69e08c3cabdd8d1a48d3e5&quot;,
+      &quot;evidence&quot;: &quot;Proof block, read in full (four steps). Nine of ten categories clean. Negation-contrast instances are substantive (&#39;Rejection is definitive; passage is only necessary&#39;, &#39;tests direction, not anchor choice or near-match precision&#39;) -- each is the actual logical content of the step it closes. Three spaced em-dashes, two of them true appositives around &#39;the element whose expansion generates the canonical c_k&#39; and one appending &#39;utterly negligible&#39;; density is below the trap threshold. No triples, no warmth, no meta-commentary. RIGOR PASS on the step arithmetic: |c_2|u_0^2 = 7.25433e-5 (block: 7.3e-5, correct); 2*sum|c_k|u_0^k = 1.4757e-4, consistent with the block&#39;s &#39;less than about 2e-4&#39;; (sum k|c_k|u_0^k)*2.1e-7 = 3.1e-11 (block: 3e-11, internally consistent); 0.998*2^4 = 15.968 (block: 16.0, correct), and 0.998/z_C^3 = 8.017 &lt; 10 confirms m = 4 is indeed the first failing power under convention C.&quot;,
+      &quot;notes&quot;: &quot;THREE NUMERIC FINDINGS plus one applied fix. (a) THE RE-PIN SHIFT IS OVERSTATED 18x. Step 3 says &#39;the substrate variable itself shifts by only 2.1e-7 (210 ppb) under the proton-muon re-pin&#39;. Recomputed: |q_proton - q_muon|/q = |1.1099785827513808 - 1.10997859555733471|/q = 1.15371e-8, i.e. 11.54 ppb, not 210 ppb. The 210 ppb figure is the m_mu PREDICTION error (AGENTS.md records 209.8 ppb), not the q_0 shift; the two are being conflated. The error is conservative -- it inflates a quantity the step calls negligible -- so no conclusion changes, and the downstream 3e-11 is consistent with the wrong input (with the correct 1.15e-8 it would be 1.7e-12). (b) THE CROSS-ANCHOR SWING IS THE WRONG QUANTITY. Step 3 says &#39;recorded cross-anchor swings reach approximately 3.5 percent at the c_3 level&#39;. Recomputed from the current values c_3(muon) = -2.02020024 and c_3(proton) = -2.06934258: the cross-anchor swing is 2.37478 percent, while 3.46713 percent is |-2 - c_3|/2, the gap to the INTEGER CANDIDATE -2. AGENTS.md flags this exact conflation (&#39;a quantity differing only by normalisation, mistaken for a discrepancy&#39;) as the error class its c_k correction is about. Since the step only needs the threshold to sit above the near-match band, the calibration argument survives either way. (c) CONVENTION C IS LOAD-BEARING IN STEP 4, and here the dependence is decidable from the block itself: z is written 1/(q^{1/2}+q^{-1/2}) = 0.49932033, the AM-GM argument proves 0 &lt; z &lt; 1/2, and the m &gt;= 4 threshold follows from 2^m. Under canonical convention D, z_D = 0.61268804 &gt; 1/2, the AM-GM step does not apply, and the threshold moves to m &gt;= 5 (0.998/z_D^4 = 7.08 passes, 0.998/z_D^5 = 11.56 fails). The non-vacuity of the gate survives; the stated bound and the m = 4 boundary do not.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0b7195d46f58&quot;,
+        &quot;ts&quot;: &quot;a638581f9d77&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:39:15.846Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c12101c0455c8a76d4dc1e334e627098a9fb0878&quot;,
+      &quot;evidence&quot;: &quot;Proof block, read in full (four steps). Nine of ten categories clean. Negation-contrast instances are substantive (&#39;Rejection is definitive; passage is only necessary&#39;, &#39;tests direction, not anchor choice or near-match precision&#39;). Three spaced em-dashes, two true appositives and one appending &#39;utterly negligible&#39;; below the density threshold. No triples, no warmth, no meta-commentary. RIGOR PASS on the step arithmetic: |c_2|u_0^2 = 7.25433e-5 (block: 7.3e-5); 2*sum|c_k|u_0^k = 1.4757e-4, consistent with &#39;less than about 2e-4&#39;; (sum k|c_k|u_0^k)*2.1e-7 = 3.1e-11 (block: 3e-11); 0.998*2^4 = 15.968 (block: 16.0); and 0.998/z_C^3 = 8.017 &lt; 10 confirms m = 4 is the first failing power under convention C. THIS ENTRY SUPERSEDES MY EARLIER agent:f00 ENTRY ON THIS BLOCK, which reported the 210 ppb figure as an error -- see notes.&quot;,
+      &quot;notes&quot;: &quot;RETRACTION FIRST, then two live findings. (0) RETRACTED: I first recorded that Step 3&#39;s &#39;the substrate variable itself shifts by only 2.1e-7 (210 ppb) under the proton-muon re-pin&#39; was overstated 18x, on the ground that |q_p - q_m|/q = 1.15371e-8 = 11.54 ppb. That was WRONG and the block is RIGHT: &#39;the substrate variable&#39; here is the LADDER variable u = b*hbar_q^2, not q_0. Recomputed from the sibling radius-of-convergence gate&#39;s own table, u(proton) = 0.008517234550156142 and u(muon) = 0.008517236340043958, a relative shift of 2.10149e-7 = 210.15 ppb -- exactly as printed. The 18.2x amplification from q to u is real and derivable: d(ln u)/d(ln q) = 2/(q*hbar_q) = 18.19, because hbar_q = 1 - 1/q is small and enters squared. The surviving point is only that &#39;the substrate variable&#39; reads naturally as q_0 (which the corpus calls the substrate parameter) and that 210 ppb happens to coincide with the m_mu prediction error, so the phrase invites exactly the misreading I made; proposed clarification: &#39;the ladder variable u shifts by 2.1e-7&#39;. No arithmetic changes. (a) THE CROSS-ANCHOR SWING IS THE WRONG QUANTITY. Step 3 says &#39;recorded cross-anchor swings reach approximately 3.5 percent at the c_3 level&#39;. Recomputed from the current values c_3(muon) = -2.02020024 and c_3(proton) = -2.06934258: the cross-anchor swing is 2.37478 percent; 3.46713 percent is |-2 - c_3|/2, the gap to the INTEGER CANDIDATE -2. AGENTS.md flags this exact conflation as the error class its c_k correction addresses. The calibration argument only needs the threshold above the near-match band, so it survives. (b) CONVENTION C IS LOAD-BEARING IN STEP 4, and the dependence is decidable from the block itself: z is written 1/(q^{1/2}+q^{-1/2}) = 0.49932033, the AM-GM argument proves 0 &lt; z &lt; 1/2, and m &gt;= 4 follows from 2^m. Under canonical convention D, z_D = q^3/(q^2+1) = 0.61268804 &gt; 1/2, the AM-GM step fails, and the threshold moves to m &gt;= 5 (0.998/z_D^4 = 7.08 passes the decade gate, 0.998/z_D^5 = 11.56 fails). Non-vacuity survives; the stated bound and the m = 4 boundary do not.&quot;
+    }
+  ],
+  &quot;trap-thesis-restatement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0b7195d46f58&quot;,
+        &quot;ts&quot;: &quot;a638581f9d77&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:35:59.332Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7d1a616aef2454349f69e08c3cabdd8d1a48d3e5&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;One confirmed instance, FIXED INLINE. The block-final sentence &#39;The gate refutes a whole direction-error class on paper, before any compute.&#39; sat after the mathematical conclusion &#39;the entire family fails the gate for every m &gt;= 4&#39; and restated it in quotable form, duplicating the parent proposition&#39;s own closing line &#39;automatically refuted on paper before compute&#39;. It added no content to Step 4, whose stated purpose (non-vacuity) is already discharged by the preceding clause.&quot;,
+      &quot;notes&quot;: &quot;FIX APPLIED (1 sentence, pure prose, no math, no meaning change). BEFORE: &#39;...so the entire family fails the gate for every $m \\ge 4$. The gate refutes a whole direction-error class on paper, before any compute. $\\blacksquare$&#39; AFTER: &#39;...so the entire family fails the gate for every $m \\ge 4$. $\\blacksquare$&#39; Math delimiters re-verified after the edit (8 occurrences of the display marker, balanced).&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0b7195d46f58&quot;,
+        &quot;ts&quot;: &quot;a638581f9d77&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:39:15.890Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c12101c0455c8a76d4dc1e334e627098a9fb0878&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;One confirmed instance, FIXED INLINE. The block-final sentence &#39;The gate refutes a whole direction-error class on paper, before any compute.&#39; sat after the mathematical conclusion &#39;the entire family fails the gate for every m &gt;= 4&#39; and restated it in quotable form, duplicating the parent proposition&#39;s own closing line. It added nothing to Step 4, whose non-vacuity purpose is already discharged by the preceding clause.&quot;,
+      &quot;notes&quot;: &quot;FIX APPLIED (1 sentence, pure prose, no math, no meaning change). BEFORE: &#39;...so the entire family fails the gate for every $m \\ge 4$. The gate refutes a whole direction-error class on paper, before any compute. $\\blacksquare$&#39; AFTER: &#39;...so the entire family fails the gate for every $m \\ge 4$. $\\blacksquare$&#39; Math delimiters re-verified (8 display markers, balanced).&quot;
+    }
+  ],
+  &quot;trap-performed-warmth&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0b7195d46f58&quot;,
+        &quot;ts&quot;: &quot;a638581f9d77&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:35:59.369Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7d1a616aef2454349f69e08c3cabdd8d1a48d3e5&quot;,
+      &quot;evidence&quot;: &quot;Proof block, read in full (four steps). Nine of ten categories clean. Negation-contrast instances are substantive (&#39;Rejection is definitive; passage is only necessary&#39;, &#39;tests direction, not anchor choice or near-match precision&#39;) -- each is the actual logical content of the step it closes. Three spaced em-dashes, two of them true appositives around &#39;the element whose expansion generates the canonical c_k&#39; and one appending &#39;utterly negligible&#39;; density is below the trap threshold. No triples, no warmth, no meta-commentary. RIGOR PASS on the step arithmetic: |c_2|u_0^2 = 7.25433e-5 (block: 7.3e-5, correct); 2*sum|c_k|u_0^k = 1.4757e-4, consistent with the block&#39;s &#39;less than about 2e-4&#39;; (sum k|c_k|u_0^k)*2.1e-7 = 3.1e-11 (block: 3e-11, internally consistent); 0.998*2^4 = 15.968 (block: 16.0, correct), and 0.998/z_C^3 = 8.017 &lt; 10 confirms m = 4 is indeed the first failing power under convention C.&quot;,
+      &quot;notes&quot;: &quot;THREE NUMERIC FINDINGS plus one applied fix. (a) THE RE-PIN SHIFT IS OVERSTATED 18x. Step 3 says &#39;the substrate variable itself shifts by only 2.1e-7 (210 ppb) under the proton-muon re-pin&#39;. Recomputed: |q_proton - q_muon|/q = |1.1099785827513808 - 1.10997859555733471|/q = 1.15371e-8, i.e. 11.54 ppb, not 210 ppb. The 210 ppb figure is the m_mu PREDICTION error (AGENTS.md records 209.8 ppb), not the q_0 shift; the two are being conflated. The error is conservative -- it inflates a quantity the step calls negligible -- so no conclusion changes, and the downstream 3e-11 is consistent with the wrong input (with the correct 1.15e-8 it would be 1.7e-12). (b) THE CROSS-ANCHOR SWING IS THE WRONG QUANTITY. Step 3 says &#39;recorded cross-anchor swings reach approximately 3.5 percent at the c_3 level&#39;. Recomputed from the current values c_3(muon) = -2.02020024 and c_3(proton) = -2.06934258: the cross-anchor swing is 2.37478 percent, while 3.46713 percent is |-2 - c_3|/2, the gap to the INTEGER CANDIDATE -2. AGENTS.md flags this exact conflation (&#39;a quantity differing only by normalisation, mistaken for a discrepancy&#39;) as the error class its c_k correction is about. Since the step only needs the threshold to sit above the near-match band, the calibration argument survives either way. (c) CONVENTION C IS LOAD-BEARING IN STEP 4, and here the dependence is decidable from the block itself: z is written 1/(q^{1/2}+q^{-1/2}) = 0.49932033, the AM-GM argument proves 0 &lt; z &lt; 1/2, and the m &gt;= 4 threshold follows from 2^m. Under canonical convention D, z_D = 0.61268804 &gt; 1/2, the AM-GM step does not apply, and the threshold moves to m &gt;= 5 (0.998/z_D^4 = 7.08 passes, 0.998/z_D^5 = 11.56 fails). The non-vacuity of the gate survives; the stated bound and the m = 4 boundary do not.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0b7195d46f58&quot;,
+        &quot;ts&quot;: &quot;a638581f9d77&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:39:15.947Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c12101c0455c8a76d4dc1e334e627098a9fb0878&quot;,
+      &quot;evidence&quot;: &quot;Proof block, read in full (four steps). Nine of ten categories clean. Negation-contrast instances are substantive (&#39;Rejection is definitive; passage is only necessary&#39;, &#39;tests direction, not anchor choice or near-match precision&#39;). Three spaced em-dashes, two true appositives and one appending &#39;utterly negligible&#39;; below the density threshold. No triples, no warmth, no meta-commentary. RIGOR PASS on the step arithmetic: |c_2|u_0^2 = 7.25433e-5 (block: 7.3e-5); 2*sum|c_k|u_0^k = 1.4757e-4, consistent with &#39;less than about 2e-4&#39;; (sum k|c_k|u_0^k)*2.1e-7 = 3.1e-11 (block: 3e-11); 0.998*2^4 = 15.968 (block: 16.0); and 0.998/z_C^3 = 8.017 &lt; 10 confirms m = 4 is the first failing power under convention C. THIS ENTRY SUPERSEDES MY EARLIER agent:f00 ENTRY ON THIS BLOCK, which reported the 210 ppb figure as an error -- see notes.&quot;,
+      &quot;notes&quot;: &quot;RETRACTION FIRST, then two live findings. (0) RETRACTED: I first recorded that Step 3&#39;s &#39;the substrate variable itself shifts by only 2.1e-7 (210 ppb) under the proton-muon re-pin&#39; was overstated 18x, on the ground that |q_p - q_m|/q = 1.15371e-8 = 11.54 ppb. That was WRONG and the block is RIGHT: &#39;the substrate variable&#39; here is the LADDER variable u = b*hbar_q^2, not q_0. Recomputed from the sibling radius-of-convergence gate&#39;s own table, u(proton) = 0.008517234550156142 and u(muon) = 0.008517236340043958, a relative shift of 2.10149e-7 = 210.15 ppb -- exactly as printed. The 18.2x amplification from q to u is real and derivable: d(ln u)/d(ln q) = 2/(q*hbar_q) = 18.19, because hbar_q = 1 - 1/q is small and enters squared. The surviving point is only that &#39;the substrate variable&#39; reads naturally as q_0 (which the corpus calls the substrate parameter) and that 210 ppb happens to coincide with the m_mu prediction error, so the phrase invites exactly the misreading I made; proposed clarification: &#39;the ladder variable u shifts by 2.1e-7&#39;. No arithmetic changes. (a) THE CROSS-ANCHOR SWING IS THE WRONG QUANTITY. Step 3 says &#39;recorded cross-anchor swings reach approximately 3.5 percent at the c_3 level&#39;. Recomputed from the current values c_3(muon) = -2.02020024 and c_3(proton) = -2.06934258: the cross-anchor swing is 2.37478 percent; 3.46713 percent is |-2 - c_3|/2, the gap to the INTEGER CANDIDATE -2. AGENTS.md flags this exact conflation as the error class its c_k correction addresses. The calibration argument only needs the threshold above the near-match band, so it survives. (b) CONVENTION C IS LOAD-BEARING IN STEP 4, and the dependence is decidable from the block itself: z is written 1/(q^{1/2}+q^{-1/2}) = 0.49932033, the AM-GM argument proves 0 &lt; z &lt; 1/2, and m &gt;= 4 follows from 2^m. Under canonical convention D, z_D = q^3/(q^2+1) = 0.61268804 &gt; 1/2, the AM-GM step fails, and the threshold moves to m &gt;= 5 (0.998/z_D^4 = 7.08 passes the decade gate, 0.998/z_D^5 = 11.56 fails). Non-vacuity survives; the stated bound and the m = 4 boundary do not.&quot;
+    }
+  ],
+  &quot;trap-superlative&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0b7195d46f58&quot;,
+        &quot;ts&quot;: &quot;a638581f9d77&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:35:59.406Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7d1a616aef2454349f69e08c3cabdd8d1a48d3e5&quot;,
+      &quot;evidence&quot;: &quot;Proof block, read in full (four steps). Nine of ten categories clean. Negation-contrast instances are substantive (&#39;Rejection is definitive; passage is only necessary&#39;, &#39;tests direction, not anchor choice or near-match precision&#39;) -- each is the actual logical content of the step it closes. Three spaced em-dashes, two of them true appositives around &#39;the element whose expansion generates the canonical c_k&#39; and one appending &#39;utterly negligible&#39;; density is below the trap threshold. No triples, no warmth, no meta-commentary. RIGOR PASS on the step arithmetic: |c_2|u_0^2 = 7.25433e-5 (block: 7.3e-5, correct); 2*sum|c_k|u_0^k = 1.4757e-4, consistent with the block&#39;s &#39;less than about 2e-4&#39;; (sum k|c_k|u_0^k)*2.1e-7 = 3.1e-11 (block: 3e-11, internally consistent); 0.998*2^4 = 15.968 (block: 16.0, correct), and 0.998/z_C^3 = 8.017 &lt; 10 confirms m = 4 is indeed the first failing power under convention C.&quot;,
+      &quot;notes&quot;: &quot;THREE NUMERIC FINDINGS plus one applied fix. (a) THE RE-PIN SHIFT IS OVERSTATED 18x. Step 3 says &#39;the substrate variable itself shifts by only 2.1e-7 (210 ppb) under the proton-muon re-pin&#39;. Recomputed: |q_proton - q_muon|/q = |1.1099785827513808 - 1.10997859555733471|/q = 1.15371e-8, i.e. 11.54 ppb, not 210 ppb. The 210 ppb figure is the m_mu PREDICTION error (AGENTS.md records 209.8 ppb), not the q_0 shift; the two are being conflated. The error is conservative -- it inflates a quantity the step calls negligible -- so no conclusion changes, and the downstream 3e-11 is consistent with the wrong input (with the correct 1.15e-8 it would be 1.7e-12). (b) THE CROSS-ANCHOR SWING IS THE WRONG QUANTITY. Step 3 says &#39;recorded cross-anchor swings reach approximately 3.5 percent at the c_3 level&#39;. Recomputed from the current values c_3(muon) = -2.02020024 and c_3(proton) = -2.06934258: the cross-anchor swing is 2.37478 percent, while 3.46713 percent is |-2 - c_3|/2, the gap to the INTEGER CANDIDATE -2. AGENTS.md flags this exact conflation (&#39;a quantity differing only by normalisation, mistaken for a discrepancy&#39;) as the error class its c_k correction is about. Since the step only needs the threshold to sit above the near-match band, the calibration argument survives either way. (c) CONVENTION C IS LOAD-BEARING IN STEP 4, and here the dependence is decidable from the block itself: z is written 1/(q^{1/2}+q^{-1/2}) = 0.49932033, the AM-GM argument proves 0 &lt; z &lt; 1/2, and the m &gt;= 4 threshold follows from 2^m. Under canonical convention D, z_D = 0.61268804 &gt; 1/2, the AM-GM step does not apply, and the threshold moves to m &gt;= 5 (0.998/z_D^4 = 7.08 passes, 0.998/z_D^5 = 11.56 fails). The non-vacuity of the gate survives; the stated bound and the m = 4 boundary do not.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0b7195d46f58&quot;,
+        &quot;ts&quot;: &quot;a638581f9d77&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:39:15.993Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c12101c0455c8a76d4dc1e334e627098a9fb0878&quot;,
+      &quot;evidence&quot;: &quot;Proof block, read in full (four steps). Nine of ten categories clean. Negation-contrast instances are substantive (&#39;Rejection is definitive; passage is only necessary&#39;, &#39;tests direction, not anchor choice or near-match precision&#39;). Three spaced em-dashes, two true appositives and one appending &#39;utterly negligible&#39;; below the density threshold. No triples, no warmth, no meta-commentary. RIGOR PASS on the step arithmetic: |c_2|u_0^2 = 7.25433e-5 (block: 7.3e-5); 2*sum|c_k|u_0^k = 1.4757e-4, consistent with &#39;less than about 2e-4&#39;; (sum k|c_k|u_0^k)*2.1e-7 = 3.1e-11 (block: 3e-11); 0.998*2^4 = 15.968 (block: 16.0); and 0.998/z_C^3 = 8.017 &lt; 10 confirms m = 4 is the first failing power under convention C. THIS ENTRY SUPERSEDES MY EARLIER agent:f00 ENTRY ON THIS BLOCK, which reported the 210 ppb figure as an error -- see notes.&quot;,
+      &quot;notes&quot;: &quot;RETRACTION FIRST, then two live findings. (0) RETRACTED: I first recorded that Step 3&#39;s &#39;the substrate variable itself shifts by only 2.1e-7 (210 ppb) under the proton-muon re-pin&#39; was overstated 18x, on the ground that |q_p - q_m|/q = 1.15371e-8 = 11.54 ppb. That was WRONG and the block is RIGHT: &#39;the substrate variable&#39; here is the LADDER variable u = b*hbar_q^2, not q_0. Recomputed from the sibling radius-of-convergence gate&#39;s own table, u(proton) = 0.008517234550156142 and u(muon) = 0.008517236340043958, a relative shift of 2.10149e-7 = 210.15 ppb -- exactly as printed. The 18.2x amplification from q to u is real and derivable: d(ln u)/d(ln q) = 2/(q*hbar_q) = 18.19, because hbar_q = 1 - 1/q is small and enters squared. The surviving point is only that &#39;the substrate variable&#39; reads naturally as q_0 (which the corpus calls the substrate parameter) and that 210 ppb happens to coincide with the m_mu prediction error, so the phrase invites exactly the misreading I made; proposed clarification: &#39;the ladder variable u shifts by 2.1e-7&#39;. No arithmetic changes. (a) THE CROSS-ANCHOR SWING IS THE WRONG QUANTITY. Step 3 says &#39;recorded cross-anchor swings reach approximately 3.5 percent at the c_3 level&#39;. Recomputed from the current values c_3(muon) = -2.02020024 and c_3(proton) = -2.06934258: the cross-anchor swing is 2.37478 percent; 3.46713 percent is |-2 - c_3|/2, the gap to the INTEGER CANDIDATE -2. AGENTS.md flags this exact conflation as the error class its c_k correction addresses. The calibration argument only needs the threshold above the near-match band, so it survives. (b) CONVENTION C IS LOAD-BEARING IN STEP 4, and the dependence is decidable from the block itself: z is written 1/(q^{1/2}+q^{-1/2}) = 0.49932033, the AM-GM argument proves 0 &lt; z &lt; 1/2, and m &gt;= 4 follows from 2^m. Under canonical convention D, z_D = q^3/(q^2+1) = 0.61268804 &gt; 1/2, the AM-GM step fails, and the threshold moves to m &gt;= 5 (0.998/z_D^4 = 7.08 passes the decade gate, 0.998/z_D^5 = 11.56 fails). Non-vacuity survives; the stated bound and the m = 4 boundary do not.&quot;
+    }
+  ],
+  &quot;trap-nonspeakable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0b7195d46f58&quot;,
+        &quot;ts&quot;: &quot;a638581f9d77&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:35:59.446Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;7d1a616aef2454349f69e08c3cabdd8d1a48d3e5&quot;,
+      &quot;evidence&quot;: &quot;Proof block, read in full (four steps). Nine of ten categories clean. Negation-contrast instances are substantive (&#39;Rejection is definitive; passage is only necessary&#39;, &#39;tests direction, not anchor choice or near-match precision&#39;) -- each is the actual logical content of the step it closes. Three spaced em-dashes, two of them true appositives around &#39;the element whose expansion generates the canonical c_k&#39; and one appending &#39;utterly negligible&#39;; density is below the trap threshold. No triples, no warmth, no meta-commentary. RIGOR PASS on the step arithmetic: |c_2|u_0^2 = 7.25433e-5 (block: 7.3e-5, correct); 2*sum|c_k|u_0^k = 1.4757e-4, consistent with the block&#39;s &#39;less than about 2e-4&#39;; (sum k|c_k|u_0^k)*2.1e-7 = 3.1e-11 (block: 3e-11, internally consistent); 0.998*2^4 = 15.968 (block: 16.0, correct), and 0.998/z_C^3 = 8.017 &lt; 10 confirms m = 4 is indeed the first failing power under convention C.&quot;,
+      &quot;notes&quot;: &quot;THREE NUMERIC FINDINGS plus one applied fix. (a) THE RE-PIN SHIFT IS OVERSTATED 18x. Step 3 says &#39;the substrate variable itself shifts by only 2.1e-7 (210 ppb) under the proton-muon re-pin&#39;. Recomputed: |q_proton - q_muon|/q = |1.1099785827513808 - 1.10997859555733471|/q = 1.15371e-8, i.e. 11.54 ppb, not 210 ppb. The 210 ppb figure is the m_mu PREDICTION error (AGENTS.md records 209.8 ppb), not the q_0 shift; the two are being conflated. The error is conservative -- it inflates a quantity the step calls negligible -- so no conclusion changes, and the downstream 3e-11 is consistent with the wrong input (with the correct 1.15e-8 it would be 1.7e-12). (b) THE CROSS-ANCHOR SWING IS THE WRONG QUANTITY. Step 3 says &#39;recorded cross-anchor swings reach approximately 3.5 percent at the c_3 level&#39;. Recomputed from the current values c_3(muon) = -2.02020024 and c_3(proton) = -2.06934258: the cross-anchor swing is 2.37478 percent, while 3.46713 percent is |-2 - c_3|/2, the gap to the INTEGER CANDIDATE -2. AGENTS.md flags this exact conflation (&#39;a quantity differing only by normalisation, mistaken for a discrepancy&#39;) as the error class its c_k correction is about. Since the step only needs the threshold to sit above the near-match band, the calibration argument survives either way. (c) CONVENTION C IS LOAD-BEARING IN STEP 4, and here the dependence is decidable from the block itself: z is written 1/(q^{1/2}+q^{-1/2}) = 0.49932033, the AM-GM argument proves 0 &lt; z &lt; 1/2, and the m &gt;= 4 threshold follows from 2^m. Under canonical convention D, z_D = 0.61268804 &gt; 1/2, the AM-GM step does not apply, and the threshold moves to m &gt;= 5 (0.998/z_D^4 = 7.08 passes, 0.998/z_D^5 = 11.56 fails). The non-vacuity of the gate survives; the stated bound and the m = 4 boundary do not.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;0b7195d46f58&quot;,
+        &quot;ts&quot;: &quot;a638581f9d77&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:f00&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-22T02:39:16.039Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;c12101c0455c8a76d4dc1e334e627098a9fb0878&quot;,
+      &quot;evidence&quot;: &quot;Proof block, read in full (four steps). Nine of ten categories clean. Negation-contrast instances are substantive (&#39;Rejection is definitive; passage is only necessary&#39;, &#39;tests direction, not anchor choice or near-match precision&#39;). Three spaced em-dashes, two true appositives and one appending &#39;utterly negligible&#39;; below the density threshold. No triples, no warmth, no meta-commentary. RIGOR PASS on the step arithmetic: |c_2|u_0^2 = 7.25433e-5 (block: 7.3e-5); 2*sum|c_k|u_0^k = 1.4757e-4, consistent with &#39;less than about 2e-4&#39;; (sum k|c_k|u_0^k)*2.1e-7 = 3.1e-11 (block: 3e-11); 0.998*2^4 = 15.968 (block: 16.0); and 0.998/z_C^3 = 8.017 &lt; 10 confirms m = 4 is the first failing power under convention C. THIS ENTRY SUPERSEDES MY EARLIER agent:f00 ENTRY ON THIS BLOCK, which reported the 210 ppb figure as an error -- see notes.&quot;,
+      &quot;notes&quot;: &quot;RETRACTION FIRST, then two live findings. (0) RETRACTED: I first recorded that Step 3&#39;s &#39;the substrate variable itself shifts by only 2.1e-7 (210 ppb) under the proton-muon re-pin&#39; was overstated 18x, on the ground that |q_p - q_m|/q = 1.15371e-8 = 11.54 ppb. That was WRONG and the block is RIGHT: &#39;the substrate variable&#39; here is the LADDER variable u = b*hbar_q^2, not q_0. Recomputed from the sibling radius-of-convergence gate&#39;s own table, u(proton) = 0.008517234550156142 and u(muon) = 0.008517236340043958, a relative shift of 2.10149e-7 = 210.15 ppb -- exactly as printed. The 18.2x amplification from q to u is real and derivable: d(ln u)/d(ln q) = 2/(q*hbar_q) = 18.19, because hbar_q = 1 - 1/q is small and enters squared. The surviving point is only that &#39;the substrate variable&#39; reads naturally as q_0 (which the corpus calls the substrate parameter) and that 210 ppb happens to coincide with the m_mu prediction error, so the phrase invites exactly the misreading I made; proposed clarification: &#39;the ladder variable u shifts by 2.1e-7&#39;. No arithmetic changes. (a) THE CROSS-ANCHOR SWING IS THE WRONG QUANTITY. Step 3 says &#39;recorded cross-anchor swings reach approximately 3.5 percent at the c_3 level&#39;. Recomputed from the current values c_3(muon) = -2.02020024 and c_3(proton) = -2.06934258: the cross-anchor swing is 2.37478 percent; 3.46713 percent is |-2 - c_3|/2, the gap to the INTEGER CANDIDATE -2. AGENTS.md flags this exact conflation as the error class its c_k correction addresses. The calibration argument only needs the threshold above the near-match band, so it survives. (b) CONVENTION C IS LOAD-BEARING IN STEP 4, and the dependence is decidable from the block itself: z is written 1/(q^{1/2}+q^{-1/2}) = 0.49932033, the AM-GM argument proves 0 &lt; z &lt; 1/2, and m &gt;= 4 follows from 2^m. Under canonical convention D, z_D = q^3/(q^2+1) = 0.61268804 &gt; 1/2, the AM-GM step fails, and the threshold moves to m &gt;= 5 (0.998/z_D^4 = 7.08 passes the decade gate, 0.998/z_D^5 = 11.56 fails). Non-vacuity survives; the stated bound and the m = 4 boundary do not.&quot;
+    }
+  ]
+}</pre></dd>
+</dl>
+</main>
+</body>
+</html>

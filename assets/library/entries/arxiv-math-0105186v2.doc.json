@@ -1,0 +1,1665 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0105186v2",
+  "title": "A long exact sequence for symplectic Floer cohomology",
+  "variant": "pdf",
+  "pages": 71,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Dehn twists, and all that",
+      "number": "1",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-1-dehn-twists-and-all-that"
+    },
+    {
+      "level": 2,
+      "title": "Exact symplectic geometry and fibrations",
+      "number": "1.1",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-11-exact-symplectic-geometry-and-fibrations"
+    },
+    {
+      "level": 2,
+      "title": "The local model",
+      "number": "1.2",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-12-the-local-model"
+    },
+    {
+      "level": 2,
+      "title": "Vanishing cycles",
+      "number": "1.3",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-13-vanishing-cycles"
+    },
+    {
+      "level": 1,
+      "title": "Pseudo-holomorphic sections",
+      "number": "2",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-2-pseudo-holomorphic-sections"
+    },
+    {
+      "level": 2,
+      "title": "A simple invariant",
+      "number": "2.1",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-21-a-simple-invariant"
+    },
+    {
+      "level": 2,
+      "title": "Horizontality",
+      "number": "2.2",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-22-horizontality"
+    },
+    {
+      "level": 2,
+      "title": "A vanishing theorem",
+      "number": "2.3",
+      "page": 32,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-23-a-vanishing-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Relative invariants",
+      "number": "2.4",
+      "page": 38,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-24-relative-invariants"
+    },
+    {
+      "level": 2,
+      "title": "Horizontality and relative invariants",
+      "number": "2.5",
+      "page": 45,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-25-horizontality-and-relative-invariants"
+    },
+    {
+      "level": 1,
+      "title": "Wrapping it up",
+      "number": "3",
+      "page": 51,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-3-wrapping-it-up"
+    },
+    {
+      "level": 2,
+      "title": "Preliminaries",
+      "number": "3.1",
+      "page": 51,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-31-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "The first map",
+      "number": "3.2",
+      "page": 55,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-013-32-the-first-map"
+    },
+    {
+      "level": 2,
+      "title": "The second map",
+      "number": "3.3",
+      "page": 60,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-014-33-the-second-map"
+    },
+    {
+      "level": 2,
+      "title": "The homotopy",
+      "number": "3.4",
+      "page": 64,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-015-34-the-homotopy"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 19,
+      "summary": null,
+      "keywords": [],
+      "extract": "arXiv:math/0105186v2 [math.SG] 20 Jul 2002 A long exact sequence for symplectic Floer cohomology Paul Seidel Revised version, May 2002",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-math-0105186v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1176,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "floer cohomology",
+          "heading": false
+        },
+        {
+          "term": "exact lagrangian",
+          "heading": false
+        },
+        {
+          "term": "exact sequence",
+          "heading": false
+        },
+        {
+          "term": "lagrangian submanifolds",
+          "heading": false
+        },
+        {
+          "term": "cohomology groups",
+          "heading": false
+        },
+        {
+          "term": "coherent sheaves",
+          "heading": false
+        },
+        {
+          "term": "picard-lefschetz theory",
+          "heading": false
+        },
+        {
+          "term": "mirror symmetry",
+          "heading": false
+        }
+      ],
+      "extract": "Let $(M^{2n},\\o,\\alpha)$ be a compact symplectic manifold with contact type boundary: $\\alpha$ is a contact one-form on $\\partial M$ which satisfies $d\\alpha = \\o|\\partial M$ and makes $\\partial M$ convex. Assume in addition that $[\\o,\\alpha] \\in H^2(M,\\partial M;\\R)$ is zero, so that $\\alpha$ can be extended to a one-form $\\theta$ on $M$ satisfying $d\\theta = \\o$. After fixing such a $\\theta$ once and for all, one",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-dehn-twists-and-all-that",
+      "number": "1",
+      "title": "Dehn twists, and all that",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 118,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arnold",
+          "heading": false
+        },
+        {
+          "term": "khovanov-seidel",
+          "heading": false
+        },
+        {
+          "term": "surprised",
+          "heading": false
+        }
+      ],
+      "extract": "This chapter takes a look at basic Picard-Lefschetz theory from the symplectic viewpoint. It has been known since Arnold's note [@arnold95] that such a viewpoint makes sense, and it has been used for various purposes, see e.g. [@seidel98b], [@khovanov-seidel98]. Still, the present paper seems to be the most systematic attempt at an exposition so far. The reader may be surprised by the exactness assumptions built",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-11-exact-symplectic-geometry-and-fibrations",
+      "number": "1.1",
+      "title": "Exact symplectic geometry and fibrations",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3014,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "exact symplectic",
+          "heading": true
+        },
+        {
+          "term": "symplectic geometry",
+          "heading": true
+        },
+        {
+          "term": "iota theta",
+          "heading": false
+        },
+        {
+          "term": "theta tilde",
+          "heading": false
+        },
+        {
+          "term": "phi theta",
+          "heading": false
+        },
+        {
+          "term": "symplectic fibration",
+          "heading": false
+        },
+        {
+          "term": "theta omega",
+          "heading": false
+        },
+        {
+          "term": "lefschetz fibration",
+          "heading": false
+        }
+      ],
+      "extract": "By an exact symplectic manifold we mean a compact manifold $M$ with boundary, together with a symplectic form $\\o$ and a one-form $\\theta$ satisfying $d\\theta = \\o$, such that $\\theta|\\partial M$ is a contact one-form and makes $\\partial M$ convex. An isomorphism of exact symplectic manifolds is a diffeomorphism $\\phi: M \\rightarrow M'$ which is symplectic, satisfies $\\phi^*\\theta' = \\theta$ in some neighbourhood of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-12-the-local-model",
+      "number": "1.2",
+      "title": "The local model",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3582,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lefschetz ﬁbration",
+          "heading": false
+        },
+        {
+          "term": "θcn",
+          "heading": false
+        },
+        {
+          "term": "symplectic monodromy",
+          "heading": false
+        },
+        {
+          "term": "local model",
+          "heading": true
+        },
+        {
+          "term": "exact symplectic",
+          "heading": false
+        },
+        {
+          "term": "dehn twist",
+          "heading": false
+        },
+        {
+          "term": "symplectic parallel",
+          "heading": false
+        },
+        {
+          "term": "ωcn",
+          "heading": false
+        }
+      ],
+      "extract": "The local model Consider T = T ∗Sn with its standard forms ωT ∈Ω2(T ), θT ∈Ω1(T ). For concrete computations we use the coordinates T = {(u, v) ∈Rn+1 × Rn+1 : ⟨u, v⟩= 0, ||v|| = 1}. For each λ > 0, the subspace T (λ) of cotangent vectors of length ≤λ is an exact symplectic manifold. We write similarly T (0) ⊂T for the zero-section. The length function µ : T →R, µ(u, v) = ||u||, generates a Hamiltonian circle action",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-13-vanishing-cycles",
+      "number": "1.3",
+      "title": "Vanishing cycles",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1682,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vanishing cycles",
+          "heading": true
+        },
+        {
+          "term": "lefschetz ﬁbration",
+          "heading": false
+        },
+        {
+          "term": "exact lefschetz",
+          "heading": false
+        },
+        {
+          "term": "parallel transport",
+          "heading": false
+        },
+        {
+          "term": "morse chart",
+          "heading": false
+        },
+        {
+          "term": "exact lagrangian",
+          "heading": false
+        },
+        {
+          "term": "scrit",
+          "heading": false
+        },
+        {
+          "term": "sympe",
+          "heading": false
+        }
+      ],
+      "extract": "Vanishing cycles We have seen that all Dehn twists can be realized as monodromy maps (of standard ﬁbrations). Conversely, the geometry of any exact Lefschetz ﬁbration can be understood in terms in Dehn twists. This is again well-known on a topological level, and our exposition repeats the classical arguments while paying more attention to symplectic forms. The results will not be used again in this paper, but they",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-2-pseudo-holomorphic-sections",
+      "number": "2",
+      "title": "Pseudo-holomorphic sections",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 155,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pseudo-holomorphic",
+          "heading": true
+        },
+        {
+          "term": "sections",
+          "heading": true
+        },
+        {
+          "term": "gromov-type",
+          "heading": false
+        },
+        {
+          "term": "oﬀof",
+          "heading": false
+        }
+      ],
+      "extract": "Pseudo-holomorphic sections Before, we have considered exact Lefschetz ﬁbrations as geometric objects in the sense of elementary symplectic geometry; now we will apply the theory of pseudo-holomorphic curves to them. By today’s standards, the necessary analysis is rather unsophisticated. The basic Gromov-type invariant which will be introduced ﬁrst uses only the most familiar techniques, on the level of the book",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-21-a-simple-invariant",
+      "number": "2.1",
+      "title": "A simple invariant",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3218,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lefschetz ﬁbration",
+          "heading": false
+        },
+        {
+          "term": "exact lefschetz",
+          "heading": false
+        },
+        {
+          "term": "pseudo-holomorphic sections",
+          "heading": false
+        },
+        {
+          "term": "lagrangian submanifold",
+          "heading": false
+        },
+        {
+          "term": "ω-compatible almost",
+          "heading": false
+        },
+        {
+          "term": "ecrit",
+          "heading": false
+        },
+        {
+          "term": "jvh",
+          "heading": false
+        },
+        {
+          "term": "inﬁnite-dimensional manifold",
+          "heading": false
+        }
+      ],
+      "extract": "A simple invariant Let (E2n+2, π) be an exact Lefschetz ﬁbration over S. A Lagrangian boundary condition is an (n+1)-dimensional submanifold Q ⊂E|∂S which is disjoint from ∂hE and such that π|Q : Q →∂S is a submersion, together with κQ ∈Ω1(∂S) and KQ ∈C∞(Q, R), satisfying Θ|Q = π∗κQ + dKQ. This implies that each Qz = Q ∩Ez, z ∈∂S, is an exact Lagrangian submanifold of Ez, with function KQ|Qz (one could consider a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-22-horizontality",
+      "number": "2.2",
+      "title": "Horizontality",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 32,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1595,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "horizontal almost",
+          "heading": false
+        },
+        {
+          "term": "horizontal sections",
+          "heading": false
+        },
+        {
+          "term": "nonnegative curvature",
+          "heading": false
+        },
+        {
+          "term": "called horizontal",
+          "heading": false
+        },
+        {
+          "term": "sympe",
+          "heading": false
+        },
+        {
+          "term": "lefschetz ﬁbration",
+          "heading": false
+        },
+        {
+          "term": "symplectic connection",
+          "heading": false
+        },
+        {
+          "term": "hess",
+          "heading": false
+        }
+      ],
+      "extract": "Horizontality Let (E, π) be an exact Lefschetz ﬁbration. Choose a complex structure j on its base. J ∈J(E, π, j) is called horizontal if Jx(T Eh x) = T Eh x for all x /∈Ecrit, or what is equivalent, if Ω(·, J·) is symmetric. In terms of (2.1) these are just the J with Jvh = 0, which shows that they form a contractible subspace Jh(E, π, j) ⊂ J(E, π, j). The importance of horizontal almost complex structures is that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-23-a-vanishing-theorem",
+      "number": "2.3",
+      "title": "A vanishing theorem",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 38,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2465,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lagrangian submanifold",
+          "heading": false
+        },
+        {
+          "term": "lefschetz ﬁbration",
+          "heading": false
+        },
+        {
+          "term": "standard ﬁbration",
+          "heading": false
+        },
+        {
+          "term": "exact lagrangian",
+          "heading": false
+        },
+        {
+          "term": "tames",
+          "heading": false
+        },
+        {
+          "term": "lagrangian boundary",
+          "heading": false
+        },
+        {
+          "term": "lagrangian sphere",
+          "heading": false
+        },
+        {
+          "term": "vanishing",
+          "heading": true
+        }
+      ],
+      "extract": "A vanishing theorem Let L be a framed exact Lagrangian sphere in an exact symplectic manifold M. According to Proposition 1.11 one can associate to it a standard ﬁbration (EL, πL) over ¯D(r) for some r > 0. Each ﬁbre EL z , z̸ = 0, contains a dis- tinguished Lagrangian sphere ΣL z , described by Lemma 1.12(i); for z = r, the isomorphism φL : EL r →M takes ΣL r to L. Deﬁne the standard Lagrangian boundary condition",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-24-relative-invariants",
+      "number": "2.4",
+      "title": "Relative invariants",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 45,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3656,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "strip-like ends",
+          "heading": false
+        },
+        {
+          "term": "relative invariants",
+          "heading": true
+        },
+        {
+          "term": "floer compactiﬁcation",
+          "heading": false
+        },
+        {
+          "term": "floer cohomology",
+          "heading": false
+        },
+        {
+          "term": "lefschetz ﬁbration",
+          "heading": false
+        },
+        {
+          "term": "cφrel",
+          "heading": false
+        },
+        {
+          "term": "floer cochain",
+          "heading": false
+        },
+        {
+          "term": "jreg",
+          "heading": false
+        }
+      ],
+      "extract": "Relative invariants A surface with strip-like ends is an oriented connected surface S, together with ﬁnite sets I−, I+ and oriented proper embeddings {γe : R−× [0; 1] →S}e∈I−, {γe : R+ × [0; 1] →S}e∈I+, such that γ−1 e (∂S) = R± × {0; 1}. The images of the γe (the ends of S) should be mutually disjoint, and the complement of the union of all ends should be a relatively compact subset of S. We will always assume that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-25-horizontality-and-relative-invariants",
+      "number": "2.5",
+      "title": "Horizontality and relative invariants",
+      "level": 2,
+      "pageStart": 45,
+      "pageEnd": 51,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2349,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "r-graded vector",
+          "heading": false
+        },
+        {
+          "term": "jreg",
+          "heading": false
+        },
+        {
+          "term": "nonnegative curvature",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential maps",
+          "heading": false
+        },
+        {
+          "term": "supp",
+          "heading": false
+        },
+        {
+          "term": "horizontality",
+          "heading": true
+        },
+        {
+          "term": "exact sequence",
+          "heading": false
+        },
+        {
+          "term": "vector spaces",
+          "heading": false
+        }
+      ],
+      "extract": "Horizontality and relative invariants The aim of this section is to extend the methods of Section 2.2 to surfaces with strip-like ends. Throughout, (E, π) will be an exact Lefschetz ﬁbration over such a surface S, trivial on the ends, together with a Lagrangian boundary condition Q modelled over the ends on pairs L0,e, L1,e ⊂M of transversally intersecting exact Lagrangian submanifolds. For {xe}e∈I−∪I+ with xe ∈L0,e",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-3-wrapping-it-up",
+      "number": "3",
+      "title": "Wrapping it up",
+      "level": 1,
+      "pageStart": 51,
+      "pageEnd": 51,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 123,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nonnegative curvature",
+          "heading": false
+        },
+        {
+          "term": "wrapping",
+          "heading": true
+        },
+        {
+          "term": "structions",
+          "heading": false
+        },
+        {
+          "term": "portant",
+          "heading": false
+        }
+      ],
+      "extract": "Wrapping it up Technically, the proof of the exact sequence is an application of Lemma 2.32. The spaces C′, C, C′′ which occur in the lemma will be Floer cochain spaces, and the maps b, c relative invariants. While the deﬁnition of b is rather straight- forward, that of c uses some of the geometry from Chapter 1, speciﬁcally the standard ﬁbrations constructed in Section 1.2. In both cases, the desired prop- erties",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-31-preliminaries",
+      "number": "3.1",
+      "title": "Preliminaries",
+      "level": 2,
+      "pageStart": 51,
+      "pageEnd": 55,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1628,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kτl",
+          "heading": false
+        },
+        {
+          "term": "lagrangian submanifolds",
+          "heading": false
+        },
+        {
+          "term": "exact lagrangian",
+          "heading": false
+        },
+        {
+          "term": "aτl",
+          "heading": false
+        },
+        {
+          "term": "lagrangian sphere",
+          "heading": false
+        },
+        {
+          "term": "exact sequence",
+          "heading": false
+        },
+        {
+          "term": "symplectic embedding",
+          "heading": false
+        },
+        {
+          "term": "dehn twist",
+          "heading": false
+        }
+      ],
+      "extract": "Preliminaries This section sets up the framework for the whole chapter. The data are: M is an exact symplectic manifold. L0, L1 ⊂M are exact Lagrangian submanifolds. L ⊂M is an exact Lagrangian sphere, which comes with a diﬀeomorphism f : Sn →L and a symplectic embedding ι : T (λ) →M for some λ > 0, such that ι|T (0) = f. We use the Dehn twist τL deﬁned using ι and a function R. Also given are small constants ǫ, δ >",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-32-the-first-map",
+      "number": "3.2",
+      "title": "The first map",
+      "level": 2,
+      "pageStart": 55,
+      "pageEnd": 60,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2386,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unshaded pieces",
+          "heading": false
+        },
+        {
+          "term": "strip-like ends",
+          "heading": false
+        },
+        {
+          "term": "mpara",
+          "heading": false
+        },
+        {
+          "term": "lagrangian boundary",
+          "heading": false
+        },
+        {
+          "term": "symplectic ﬁbration",
+          "heading": false
+        },
+        {
+          "term": "parametrized moduli",
+          "heading": false
+        },
+        {
+          "term": "jreg",
+          "heading": false
+        },
+        {
+          "term": "parametrized sense",
+          "heading": false
+        }
+      ],
+      "extract": "The ﬁrst map Let S be the surface in Figure 3, which has three boundary components ∂kS and three strip-like ends (two positive and a negative one). Take the trivial exact symplectic ﬁbration π : E = S × M →S, with Ω∈Ω2(E), Θ ∈Ω1(E) pulled back from ω, θ. Equip this with the Lagrangian boundary condition Q = (∂1S × τL(L0)) ∪(∂2S × L) ∪(∂3S × L1); κQ is zero, and KQ(z, x) is equal to KτL(L0)(x), KL(x) or KL1(x), for z",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-33-the-second-map",
+      "number": "3.3",
+      "title": "The second map",
+      "level": 2,
+      "pageStart": 60,
+      "pageEnd": 64,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1295,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lefschetz ﬁbration",
+          "heading": false
+        },
+        {
+          "term": "exact lefschetz",
+          "heading": false
+        },
+        {
+          "term": "horizontal section",
+          "heading": false
+        },
+        {
+          "term": "kτl",
+          "heading": false
+        },
+        {
+          "term": "lagrangian boundary",
+          "heading": false
+        },
+        {
+          "term": "jreg",
+          "heading": false
+        },
+        {
+          "term": "monodromy around",
+          "heading": false
+        },
+        {
+          "term": "map",
+          "heading": true
+        }
+      ],
+      "extract": "The second map From this point onwards, we add one more assumption to those in Section 3.1: (VI) R is the function Rr which appears in the construction of exact Lefschetz ﬁbrations in Lemma 1.10, with the given λ and some 0 < r < 1/2 which we are free to choose; see more speciﬁcally (1.19) for this function. Since that severely restricts the choice of R, one needs to worry about possible conﬂicts with the other",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-34-the-homotopy",
+      "number": "3.4",
+      "title": "The homotopy",
+      "level": 2,
+      "pageStart": 64,
+      "pageEnd": 71,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2556,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lefschetz ﬁbrations",
+          "heading": false
+        },
+        {
+          "term": "ebc",
+          "heading": false
+        },
+        {
+          "term": "floer memorial",
+          "heading": false
+        },
+        {
+          "term": "πbc",
+          "heading": false
+        },
+        {
+          "term": "sbc",
+          "heading": false
+        },
+        {
+          "term": "floer homology",
+          "heading": false
+        },
+        {
+          "term": "birkh auser",
+          "heading": false
+        },
+        {
+          "term": "qbc",
+          "heading": false
+        }
+      ],
+      "extract": "The homotopy At this point it becomes necessary to change the notation slightly, in order to avoid conﬂicts. Thus, the ﬁbration used in Section 3.2 to deﬁne the map b will be denoted by (Eb, πb), its base by Sb, and its Lagrangian boundary condition by Qb; and correspondingly we write (Ec, πc), Sc, Qc for the objects constructed in Section 3.3 to deﬁne c. Over the unique negative end of Sb, Qb is modelled on",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "exact symplectic",
+      "heading": true
+    },
+    {
+      "term": "symplectic ﬁbration",
+      "heading": false
+    },
+    {
+      "term": "exact lagrangian",
+      "heading": false
+    },
+    {
+      "term": "exact lefschetz",
+      "heading": false
+    },
+    {
+      "term": "symplectic parallel",
+      "heading": false
+    },
+    {
+      "term": "lagrangian boundary",
+      "heading": false
+    },
+    {
+      "term": "lagrangian submanifolds",
+      "heading": false
+    },
+    {
+      "term": "standard ﬁbration",
+      "heading": false
+    },
+    {
+      "term": "pullback exact",
+      "heading": false
+    },
+    {
+      "term": "some exact",
+      "heading": false
+    },
+    {
+      "term": "symplectic monodromy",
+      "heading": false
+    },
+    {
+      "term": "because symplectic",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 53,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 54,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 55,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 56,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 57,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 58,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 59,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 60,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 61,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 62,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 63,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 64,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 65,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 66,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 67,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 68,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 69,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 70,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 71,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "",
+      "page": 28,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "",
+      "page": 55,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "",
+      "page": 56,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "",
+      "page": 60,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "",
+      "page": 61,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "",
+      "page": 61,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "",
+      "page": 62,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "",
+      "page": 64,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10",
+      "title": "",
+      "page": 65,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "11",
+      "title": "",
+      "page": 66,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "12",
+      "title": "",
+      "page": 71,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 16,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 17,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "12 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p64); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 17 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0105186v2"
+  }
+}

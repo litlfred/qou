@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-0410233v4",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "CUSP SHAPES UNDER CONE DEFORMATION",
+      "dcterms:creator": [
+        "PURCELL, JESSICA S."
+      ],
+      "dcterms:issued": "D:20211119",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0410233",
+      "dcterms:abstract": "A horospherical torus about a cusp of a hyperbolic manifold inherits a Euclidean similarity structure, called a cusp shape. We bound the change in cusp shape when the hyperbolic structure of the manifold is deformed via cone deformation preserving the cusp. The bounds are in terms of the change in structure in a neighborhood of the singular locus alone. We then apply this result to provide information on the cusp shape of many hyperbolic knots, given only a diagram of the knot. Speciﬁcally, we show there is a universal constant C such that if a knot admits a prime, twist reduced diagram with at least C crossings per twist region, then the length of the second shortest curve on the cusp torus is bounded. The bound is linear in the number of twist regions of the diagram.",
+      "dcterms:source": "library/arxiv-math-0410233v4/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-0410233v4"
+    }
+  ]
+}

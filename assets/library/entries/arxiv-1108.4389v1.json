@@ -1,0 +1,606 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1108.4389v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Preprint typeset in JHEP style - HYPER VERSION\nGauge Theories Labelled by Three-Manifolds\nTudor Dimofte1 and Davide Gaiotto1 and Sergei Gukov2,3\n1 Institute for Advanced Study, Einstein Dr., Princeton, NJ 08540, USA\n2 California Institute of Technology, Pasadena, CA 91125, USA\n3 Max-Planck-Institut f¨ur Mathematik, Vivatsgasse 7, D-53111 Bonn, Germany\nAbstract: We propose a dictionary between geometry of triangulated 3-manifolds and\nphysics of three-dimensional N = 2 gauge theories. Under this duality, standard operations\non triangulated 3-manifolds and various invariants thereof (classical as",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 3,
+      "pageEnd": 8,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "[]{#sec:intro label=\"sec:intro\"} One of the predictions of String Theory/M-Theory is the existence of a discrete family of maximally symmetric six-dimensional conformal field theories, labeled by a simply-laced Lie algebra $\\mathfrak{g}$. These theories lack a Lagrangian definition, but some of their properties are known. The existence of such six-dimensional SCFT's has a simple, but perhaps surprising, consequence: it allows a geometric description of many lower-dimensional supersymmetric field theories. Indeed, one can define large families of $6-d$ dimensional theories $T[M_d,\\mathfrak{g}]$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometry of 3-manifolds",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-001-2-geometry-of-3-manifolds.md",
+      "narrative": null,
+      "content": "[]{#sec:geom label=\"sec:geom\"}\n\nIn this section, we discuss the geometric construction of oriented 3-manifolds $M$ from basic building blocks: ideal tetrahedra. Such \"ideal triangulations\" in three dimensions were initiated by Thurston [@thurston-1980]. More precisely, we wish to build 3-manifolds that support irreducible flat $SL(2,{\\mathbb C})$ connections $\\mathcal{A}$. For this purpose, it is often convenient to replace flat $SL(2,{\\mathbb C})$ connections with hyperbolic metrics [^1]\n\non $M$ --- that is, metrics of constant curvature $-1$. Then the $SL(2,{\\mathbb C})$ structures become ge",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/figure-img-p009-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../images/img-p009-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Building blocks",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-002-21-building-blocks.md",
+      "narrative": null,
+      "content": "The fundamental building block used in building our 3-manifolds $M$ is an ideal hyperbolic tetrahedron (Figure [\\[fig:tet\\]](#fig:tet){reference-type=\"ref\" reference=\"fig:tet\"}). Geometrically, an ideal tetrahedron $\\Delta$ has faces that are geodesic surfaces and vertices that lie right on the boundary of hyperbolic 3-space ${\\mathbb H}^3$. As shown in Figure [\\[fig:tet\\]](#fig:tet){reference-type=\"ref\" reference=\"fig:tet\"}, hyperbolic 3-space can be viewed as the interior of a 3-ball, with the Riemann sphere as its boundary.\n\nThe full hyperbolic structure of $\\Delta$ is determined by a singl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gluing",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-003-22-gluing.md",
+      "narrative": null,
+      "content": "[]{#sec:geomglue label=\"sec:geomglue\"}\n\nAny 3-manifold $M$ with a combination of geodesic and cusp boundaries can be constructed from a collection of ideal tetrahedra $\\{\\Delta_i\\}_{i=1}^N$, by gluing together their faces one pair at a time. Topologically, the geodesic boundary of $M$ comes from faces of tetrahedra that remain unglued. The torus or annular cusps of $M$, however, arise from assembling collections of small truncated-vertex triangles, as in Figure [1](#fig:gluingtet){reference-type=\"ref\" reference=\"fig:gluingtet\"}. Geometrically, it is clear that the geodesic boundary of $M$ will",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/figure-img-p012-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../images/img-p012-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geodesic boundaries",
+      "pageStart": 13,
+      "pageEnd": 17,
+      "target": "../sections/sec-004-23-geodesic-boundaries.md",
+      "narrative": null,
+      "content": "[]{#sec:geobdy label=\"sec:geobdy\"}\n\nWe proceed to provide some details of the phase spaces $\\mathcal{P}_{\\partial M}$ associated to the various types of boundary for $M$, and to give explicit examples of their construction. A more complete, mathematical analysis of boundaries and phase spaces will appear in [@DGGV-hybrid].\n\nIt is perhaps simplest to begin with geodesic boundaries. As discussed above, these arise when tetrahedra $\\Delta_i$ are impartially glued; then some tetrahedron faces are left over to form one or more disjoint boundaries $\\mathcal{C}\\subset \\partial M$, each a triangulated",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/figure-img-p017-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../images/img-p017-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/figure-img-p017-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../images/img-p017-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Torus cusps",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-005-24-torus-cusps.md",
+      "narrative": null,
+      "content": "[]{#sec:cuspbdy label=\"sec:cuspbdy\"}\n\nThe cusp boundaries of a 3-manifold $M$ arise from the resolution of line defects, and have the topology of annuli or tori, depending on whether the defects are open or closed. For simplicity, we will only consider the closed, toroidal case in the present paper, though we note that annular cusps share many of the the same properties, and can be analyzed in a similar way.\n\nSuppose, then, that $\\partial M$ contains a toroidal cusp boundary $T^2$. For example, $M$ could be the complement of a knot in $S^3$. To describe the associated phase space $\\mathcal{P}_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Changing the triangulation",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-006-25-changing-the-triangulation.md",
+      "narrative": null,
+      "content": "[]{#sec:geom23 label=\"sec:geom23\"}\n\nWe have explained, in principle, how to construct 3-manifolds $M$, phase spaces $\\mathcal{P}_{\\partial M}$, and Lagrangians $\\mathcal{L}_M$ by gluing together ideal tetrahedra $\\Delta_i$. It would be useful to verify that such constructions do not depend on a precise choice of triangulation $\\{\\Delta_i\\}$. Geometrically, once we fix the triangulation of geodesic boundaries, any two triangulations of $M$ are related by a sequence of \"2--3 Pachner moves,\" *cf.* [@Matveev-book]. These replace two tetrahedra glued along a common face with three tetrahedra glued",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Operations on 3d abelian theories",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-007-3-operations-on-3d-abelian-theories.md",
+      "narrative": null,
+      "content": "[]{#sec:ops label=\"sec:ops\"}\n\nOur next goal is introduce the basic ingredients and building blocks necessary to understand the field theory side of the correspondence $(M,\\Pi)\\leftrightarrow T_{M,\\Pi}$. We will see a clear parallel with the construction of 3-manifolds in Section [\\[sec:geom\\]](#sec:geom){reference-type=\"ref\" reference=\"sec:geom\"}, which will lead us to the definition of the theory $T_{M,\\Pi}$ in Section [\\[sec:glue\\]](#sec:glue){reference-type=\"ref\" reference=\"sec:glue\"}.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An $Sp(2N,{\\mathbb Z})$ action on 3d CFTs with $U(1)^N$ flavor symmetry",
+      "pageStart": 21,
+      "pageEnd": 21,
+      "target": "../sections/sec-008-31-an-sp2nmathbb-z-action-on-3d-cfts-with-u1n-fl.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalities",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-009-311-generalities.md",
+      "narrative": null,
+      "content": "There is a beautiful $SL(2,{\\mathbb Z})$ action on the space of 3-dimensional conformal field theories with $U(1)$ flavor symmetry. This action was first described in [@Witten-SL2] as a way to understand the meaning of different choices of boundary conditions for an abelian gauge field in $AdS_4$ in the context of $AdS_4/CFT_3$.\n\nTo be precise, $SL(2,{\\mathbb Z})$ acts on the space of 3d theories equipped with a specific way to couple a $U(1)$ flavor symmetry to a background $U(1)$ gauge field. The $SL(2,{\\mathbb Z})$ action can be defined by specifying the action of its generators $S$ and $T$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Adding supersymmetry",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-010-312-adding-supersymmetry.md",
+      "narrative": null,
+      "content": "[]{#sec:susySp label=\"sec:susySp\"}\n\nThe $Sp(2N,{\\mathbb Z})$ action can be supersymmetrized to give an $Sp(2N,{\\mathbb Z})$ action on supersymmetric 3d theories equipped with a supersymmetric coupling to a background abelian gauge supermultiplet. This can be done for any amount of supersymmetry, but it is important to make a specific choice, as different choices give different group actions.\n\nIn the reference [@GW-Sduality] this was applied to theories with $\\mathcal{N}=4$ supersymmetry. As a useful example of the $S$ action in the context of $\\mathcal{N}=4$ theories, we can consider a single",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A ${\\mathbb Z}_2$ action on 3d $\\mathcal{N}=2$ theories with a chiral operator",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-011-32-a-mathbb-z-2-action-on-3d-mathcaln2-theories.md",
+      "narrative": null,
+      "content": "[]{#sec:F label=\"sec:F\"}\n\nThe basic \"matter\" action on 3d $\\mathcal{N}=2$ theories begins with a theory that has a coupling to a background 3d chiral multiplet $\\phi$. In practice, what we mean is a choice of chiral operator $\\mathcal{O}$ that can be inserted in a superpotential $$\\mathcal{W}= \\phi\\,\\mathcal{O}\\,.$$ Here and elsewhere, we will not keep track of the normalization of superpotential terms. In particular, we will view a rescaling of $\\mathcal{O}$ as a trivial operation.\n\nWe can define an operation $F$ that makes $\\phi$ dynamical (thus, setting $\\mathcal{O}$ effectively to zero). T",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Useful $\\mathcal{N}=2$ mirror symmetries",
+      "pageStart": 25,
+      "pageEnd": 30,
+      "target": "../sections/sec-012-33-useful-mathcaln2-mirror-symmetries.md",
+      "narrative": null,
+      "content": "[]{#sec:MS label=\"sec:MS\"}\n\nFrom the above, it should be clear that the $\\mathcal{N}=4$ $S$ operation consists of a combination of $\\mathcal{N}=2$ $S$ and $F$ operations. Indeed, the $\\mathcal{N}=4$ conserved current supermultiplet contains a complex moment map operator $\\mu$, which is a chiral operator for an $\\mathcal{N}=2$ subalgebra. The $\\mathcal{N}=4$ gauge multiplet contains an $\\mathcal{N}=2$ chiral multiplet $\\phi$, which is coupled to the complex moment map operator $\\mu$ by the superpotential coupling $$\\mathcal{W}= \\phi \\mu \\,.$$ Thus, for example, the basic $\\mathcal{N}=4$ mirror",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Construction of $T_M$",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "../sections/sec-013-4-construction-of-t-m.md",
+      "narrative": null,
+      "content": "[]{#sec:glue label=\"sec:glue\"}\n\nIn this section, we will now combine the ingredients of Sections [\\[sec:geom\\]](#sec:geom){reference-type=\"ref\" reference=\"sec:geom\"} and [\\[sec:ops\\]](#sec:ops){reference-type=\"ref\" reference=\"sec:ops\"} to provide the map from a pair $(M,\\Pi)$, where $M$ is a 3-manifold and $\\Pi$ a polarization of its boundary phase space $\\mathcal{P}_{\\partial M}$, to a 3d SCFT $T_{M,\\Pi}$, with specified couplings to background gauge fields and chiral multiplets. We will do so in two steps. First, we attach a 3d theory to any triangulation $\\{\\Delta_i\\}_{i=1}^N$ of the three-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definition",
+      "pageStart": 30,
+      "pageEnd": 33,
+      "target": "../sections/sec-014-41-definition.md",
+      "narrative": null,
+      "content": "[]{#sec:defTM label=\"sec:defTM\"}\n\nIn order to implement the first step, we begin by defining a theory $T_{\\Delta, \\Pi_Z}$ that we associate to a single tetrahedron $\\Delta$ in polarization $\\Pi_Z$ (as in [\\[tetpols\\]](#tetpols){reference-type=\"eqref\" reference=\"tetpols\"}): $$\\boxed{\\phantom{\\int}\nT_{\\Delta, \\Pi_Z} = \\mathcal{T}_1\\,.\n\\phantom{\\int}}\n\\label{TDelta}$$\n\nRecall from Section [\\[sec:MS\\]](#sec:MS){reference-type=\"ref\" reference=\"sec:MS\"} that $\\mathcal{T}_1$ is a theory of a single chiral multiplet coupled to a background $U(1)$ gauge field, with a level $-\\frac12$ Chern-Simons term",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The bipyramid and the 2--3 move",
+      "pageStart": 33,
+      "pageEnd": 36,
+      "target": "../sections/sec-015-42-the-bipyramid-and-the-2--3-move.md",
+      "narrative": null,
+      "content": "[]{#sec:gauge23 label=\"sec:gauge23\"}\n\nLet's consider the theory of the bipyramid, as constructed from two different triangulations. To keep things simple, we will focus on the \"equatorial\" polarization $\\Pi=\\Pi_{\\rm eq}$ for the bipyramid, as defined in [\\[bipcoord3\\]](#bipcoord3){reference-type=\"eqref\" reference=\"bipcoord3\"} or [\\[bipcoord2\\]](#bipcoord2){reference-type=\"eqref\" reference=\"bipcoord2\"}. In particular, the three equatorial edges of the bipyramid are position coordinates in $\\Pi$. We keep the same notation as in Section [\\[sec:geom\\]](#sec:geom){reference-type=\"ref\" reference=\"se",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The flip",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-016-43-the-flip.md",
+      "narrative": null,
+      "content": "[]{#sec:flip label=\"sec:flip\"}\n\nJust as $2-3$ moves change the internal triangulation of a 3-manifold, the flips described in Section [\\[sec:geom23\\]](#sec:geom23){reference-type=\"ref\" reference=\"sec:geom23\"} can change the triangulation of its (geodesic) boundary. This has a very simple effect on a theory $T_{M,\\Pi}$.\n\nFor example, suppose that $T_{M,\\Pi}$ has an operator $\\mathcal{O}_X$, charged under a global symmetry $U(1)_X$, that corresponds to an external edge with position coordinate $X$. We want to add a tetrahedron $\\Delta_Z$ to flip this edge, as in Figure [\\[fig:flip\\]](#fig:flip){",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "$T_M$ as a boundary condition",
+      "pageStart": 37,
+      "pageEnd": 37,
+      "target": "../sections/sec-017-44-t-m-as-a-boundary-condition.md",
+      "narrative": null,
+      "content": "[]{#sec:gauge4d label=\"sec:gauge4d\"}\n\nIn section [\\[sec:ops\\]](#sec:ops){reference-type=\"ref\" reference=\"sec:ops\"} we learned some useful facts about the relation between three dimensional theories and boundary conditions for four-dimensional theories. We saw that all the 3d theories in an orbit of the $Sp(N,Z)$ action can be thought of as representing the same boundary condition in different electric-magnetic duality frames of a four-dimensional abelian gauge theory. We also saw that the $F$ transformation on three-dimensional theories can be thought of as relating two mirror description of t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The octahedron",
+      "pageStart": 37,
+      "pageEnd": 39,
+      "target": "../sections/sec-018-45-the-octahedron.md",
+      "narrative": null,
+      "content": "[]{#sec:oct label=\"sec:oct\"}\n\nWe include two more brief examples of three-manifold theories. The first, the octahedron, demonstrates how $2-3$ moves can be used in the interior of a manifold, resulting in interesting chains of $\\mathcal{N}=2$ SCFT dualities. The second, the figure-eight knot complement, will illustrate how potential difficulties with \"hard\" edges can be resolved.\n\n![The octahedron from four tetrahedra](oct4){#fig:oct4 width=\"3.5in\"}\n\nThe simplest way to construct an octahedron is from four tetrahedra, glued together along a central edge (Figure [1](#fig:oct4){reference-type=\"r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Figure-eight knot",
+      "pageStart": 39,
+      "pageEnd": 42,
+      "target": "../sections/sec-019-46-figure-eight-knot.md",
+      "narrative": null,
+      "content": "[]{#sec:gauge41 label=\"sec:gauge41\"}\n\nAs our final example, we consider the theory associated to a manifold with a torus cusp boundary: the complement of the figure-eight knot $M=S^3\\backslash\\mathbf{4_1}$.\n\nThe minimal triangulation of $M$ into two tetrahedra, discussed in Section [\\[sec:cuspbdy\\]](#sec:cuspbdy){reference-type=\"ref\" reference=\"sec:cuspbdy\"}, has two internal edges and both of them are hard:\n\n$$C_1 = 2Z+Z''+2W+W''\\,,\\qquad C_2 = 2Z'+Z''+2W'+W'' \\,.$$\n\nWe could certainly try to write down a gauge theory from this triangulation. Indeed, starting with $T_{\\Delta_Z,\\Pi_{Z'}}\\otime",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The tetrahedron",
+      "pageStart": 42,
+      "pageEnd": 44,
+      "target": "../sections/sec-020-51-the-tetrahedron.md",
+      "narrative": null,
+      "content": "Now, let us illustrate this in a few concrete examples, starting with the theory $T_{\\Delta,\\Pi_Z}$ that we associate to a single tetrahedron. The theory $T_{\\Delta,\\Pi_Z}$ is a single chiral multiplet $\\phi_Z$ coupled to a $U(1)$ background gauge field that also has a (supersymmetric) Chern-Simons interaction at level $-\\tfrac{1}{2}$. On a circle of finite radius $\\beta$, this theory has the effective twisted superpotential (*cf.* [@Nek-5d; @LN; @NS-I; @DG-Sdual])\n\n$$T_{\\Delta,\\Pi_Z}\\;:\\quad \\widetilde{\\mathcal{W}}_{{\\rm eff}} (Z) \\; = \\; {\\rm Li}_2(e^{-Z}) = {\\rm Li}_2(z^{-1})\\,, \\label{CWT1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The bipyramid",
+      "pageStart": 44,
+      "pageEnd": 45,
+      "target": "../sections/sec-021-52-the-bipyramid.md",
+      "narrative": null,
+      "content": "To find the moduli space for the bipyramid theory, let us work in the equatorial polarization $\\Pi_{\\rm eq}$, as discussed in Section [\\[sec:geom\\]](#sec:geom){reference-type=\"ref\" reference=\"sec:geom\"} and Section [\\[sec:gauge23\\]](#sec:gauge23){reference-type=\"ref\" reference=\"sec:gauge23\"}. We closely follow the notation in those sections. We can start with the decomposition into two tetrahedra, and use the Lagrangian description [\\[SQEDbip\\]](#SQEDbip){reference-type=\"eqref\" reference=\"SQEDbip\"} of $T_{M,\\Pi_{\\rm eq}}$ as $N_f=1$ SQED, with a shift $V\\to V-V_{X_1}/2$, to obtain a twisted su",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "$S^3_b$ partition functions",
+      "pageStart": 45,
+      "pageEnd": 47,
+      "target": "../sections/sec-022-6-s3-b-partition-functions.md",
+      "narrative": null,
+      "content": "[]{#sec:S3b label=\"sec:S3b\"}\n\nIn the previous section, the correspondence $(M,\\Pi) \\; \\leftrightarrow \\; T_{M,\\Pi}$ was tested by comparing moduli spaces attached to each side of the correspondence. A more refined test could be obtained by associating certain functions to each side. For example, on the gauge theory side one can associate either an equivariant partition function or an index (an analog of the elliptic genus) to the 3d $\\mathcal{N}=2$ theory $T_M$, by analogy with what was done in [@AGT] or [@Rastelli-2dQFT; @Rastelli-qYM] in the context of 4d $\\mathcal{N}=2$ gauge theory. Then,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Chirals and tetrahedra",
+      "pageStart": 47,
+      "pageEnd": 48,
+      "target": "../sections/sec-023-61-chirals-and-tetrahedra.md",
+      "narrative": null,
+      "content": "[]{#sec:S3tet label=\"sec:S3tet\"}\n\nConsider a free chiral multiplet $\\phi_Z$ with twisted mass $m_Z$ for a $U(1)$ flavor symmetry, and R-charge $R_Z$. This R-charge assignment enters in a fundamental way when putting the chiral on an ellipsoid. We set $\\tilde m_Z = m_Z+\\frac{iQ}{2}R_Z$, and find a partition function\n\n[^1]\n\n[@HHL]\n\n$$Z_{S^3_b}(\\text{chiral multiplet}) = s_b\\big(\\tfrac{iQ}{2}-\\tilde m_Z\\big)\\,, \\label{Zchiral}$$\n\nwhere\n\n$$s_b(x) = \\prod_{m,n \\in {\\mathbb Z}_{\\ge 0}} \\frac{mb + nb^{-1} + \\tfrac{Q}{2}-ix}{mb + nb^{-1} + \\tfrac{Q}{2}+ix} = e^{-\\frac{i\\pi}{2}x^2}\\prod_{r=1}^\\infty\\fr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gluing and bipyramids",
+      "pageStart": 48,
+      "pageEnd": 50,
+      "target": "../sections/sec-024-62-gluing-and-bipyramids.md",
+      "narrative": null,
+      "content": "In Section [\\[sec:MS\\]](#sec:MS){reference-type=\"ref\" reference=\"sec:MS\"}, we derived $ST$-invariance of the tetrahedron theory $\\mathcal{T}_1\\simeq \\mathcal{T}_{\\Delta,\\Pi_Z}$ by starting with $\\mathcal{N}=4$ mirror symmetry, translating to $\\mathcal{N}=2$ mirror symmetry for the XYZ model and SQED with $N_f=1$, and and then reducing further to the theories $\\mathcal{T}_1$ and $ST\\circ \\mathcal{T}_1$ via a mass deformation. It is somewhat instructive to now do the same at the level of partition functions. In the process, we will see how gluing of partition functions should work.\n\nLet's begin",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Figure-eight knot",
+      "pageStart": 50,
+      "pageEnd": 52,
+      "target": "../sections/sec-025-63-figure-eight-knot.md",
+      "narrative": null,
+      "content": "We should be able to reproduce the well known Chern-Simons wavefunction for the ﬁgure-eight\nknot complement from the theory T41,Π described in Section 4.6. The deﬁnition of the actual\ntheory, including internal edge operators, required a decomposition of the knot complement\ninto six tetrahedra. However, since ellipsoid partition functions do not depend in a crucial\nway on superpotential terms, we might hope to get away with the simpler decomposition into\ntwo tetrahedra, also discussed in Section 4.6. Indeed, this turns out to work.\n– 49 –\nFrom the Lagrangian (4.20), we can immediately write do",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1108.4389v1/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Line operators and $q$--difference equations",
+      "pageStart": 52,
+      "pageEnd": 58,
+      "target": "../sections/sec-026-7-line-operators-and-q--difference-equations.md",
+      "narrative": null,
+      "content": "[]{#sec:lines label=\"sec:lines\"}\n\nIn order to understand the meaning of operator identities [\\[AZclaim\\]](#AZclaim){reference-type=\"eqref\" reference=\"AZclaim\"} in 3d $\\mathcal{N}=2$ theory, we need to incorporate line operators in our correspondence [\\[MvsTM\\]](#MvsTM){reference-type=\"eqref\" reference=\"MvsTM\"}.\n\nGiven a triangulated 3-manifold $M$ with nonempty boundary $\\partial M$, each equation in [\\[AZclaim\\]](#AZclaim){reference-type=\"eqref\" reference=\"AZclaim\"} is written in terms of quantum holonomy operators\n\n[^1]\n\nthat, from the viewpoint of Chern-Simons theory on $M$, are obtained by",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

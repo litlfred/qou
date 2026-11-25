@@ -1,0 +1,26 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-brings-smoothness",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:brings-smoothness",
+  "kind": "remark",
+  "title": "Smoothness of Bring's surface and resolution of spacetime defects",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-brings-smoothness-resolution"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-brings-smoothness-resolution",
+  "cites": [
+    "references/cook2021"
+  ],
+  "text": "brings-smoothness.md",
+  "provenance": "authored"
+}

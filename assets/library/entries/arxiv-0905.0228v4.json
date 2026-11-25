@@ -1,0 +1,264 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0905.0228v4",
+  "blocks": [
+    {
+      "id": "library/arxiv-0905.0228v4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "There are many ways to construct Hermite polynomials. \nFor example, the normalized Hermite polynomials $H_n(x,s)=s^{n/2}H_n(x/\\sqrt{s}, 1)$ ($n\\geq 0$) may be defined by\nthe recurrence relation:\n\\begin{align}\\label{eq:rec1}\nH_{n+1}(x,s)=xH_n(x,s)-nsH_{n-1}(x,s),\n\\end{align}\nwith initial values $H_0(x,s)=1$ and $H_{-1}(x,s)=0$.\nBy induction, we have \n\\begin{align}\\label{eq:op}\nH_n(x,s)=(x-s{\\D})^n\\cdot 1,\n\\end{align}\nwhere ${\\D}=\\frac{d}{dx}$ denotes the differentiation operator. It follows that \n\\begin{align}\\label{eq:rec2}\n{\\D}\\,H_n(x,s)=nH_{n-1}(x,s).\n\\end{align}\nThey have  the explicit form",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0228v4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0905.0228v4  [math.CO]  17 Jun 2010\nA CURIOUS q-ANALOGUE OF HERMITE POLYNOMIALS\nJOHANN CIGLER AND JIANG ZENG\nAbstract. Two well-known q-Hermite polynomials are the continuous and discrete q-Hermite\npolynomials.\nIn this paper we consider a new family of q-Hermite polynomials and prove\nseveral curious properties about these polynomials. One striking property is the connection\nwith q-Fibonacci and q-Lucas polynomials. The latter relation yields a generalization of the\nTouchard-Riordan formula.\nContents",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0228v4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The q-Hermite polynomials Hn(x,s|q)",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "../sections/sec-001-2-the-q-hermite-polynomials-hnxsq.md",
+      "narrative": null,
+      "content": "By (1.8) the q-Hermite polynomials Hn(x, s|q) are the moments of the measure of the or-\nthogonal polynomials Pn(z) satisfying the recurrence:\nPn+1(z) = (z −xqn)Pn(z) + s[n]qPn−1(z).\n(2.1)\nRecall [13, p.80] that the Al-Salam-Chihara polynomials Qn(x) := Qn(x; α, β) satisfy the three\nterm recurrence:\nQn+1(x) = (2x −(α + β)qn)Qn(x) −(1 −qn)(1 −αβqn−1)Qn−1(x),\n(2.2)\nwith Q0(x) = 1 and Q−1(x) = 0. They have the following explicit formulas:\nQn(x; α, β|q) = (αeiθ; q)ne−iθ2φ1\n\u0012\nq−n,\nβe−iθ\nα−1q−n+1e−iθ\n|q; α−1qeiθ\n\u0013\n,\n(2.3)\nwhere x = cos θ.\nComparing (2.1) and (2.2) we have Pn(z) =\n1\n(2a)n Qn(az; α, 0)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0228v4/blocks/rem-sec-001-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "rem-sec-001-03.md",
+      "narrative": null,
+      "content": "If we set q = 0 then (2.9) reduces to the well-known Catalan triangle (see [2, Chap. 7]), which implies c(2n, 0, 0) = Cn = n + 1 \u00122n n \u0013 , c(2n, 2k, 0) = 2k + 1 n + k + 1 \u0012 2n n −k \u0013 = \u0012 2n n −k \u0013 − \u0012 2n n −k −1 \u0013 , c(2n + 1, 2k + 1, 0) = 2k + 2 n + k + 2 \u00122n + 1 n −k \u0013 = \u00122n + 1 n −k \u0013 − \u0012 2n + 1 n −k −1 \u0013 . We shall use the standard q-notations in [6]. The recurrence (2.1) implies that the Hankel determinants of Hn(x, s|q) are det(Hi+j(x, s|q))n−1 i,j = (−s)(n 2) n−1 Y j=0 [j]q! (2.15) and det(Hi+j+1(x, s; q))n−1 i,j = hn(x, −s; q)(−s)(n 2) n−1 Y j=0 [j]q!, (2.16) where hn(x, −s; q) = (−1)nP",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0905.0228v4/blocks/thm-sec-001-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "thm-sec-001-01.md",
+      "narrative": null,
+      "content": "The q-Hermite polynomials Hn(x, s|q), deﬁned as moments Fx,0,−s(zn), have the following operator formula: Hn(x, s|q) = (x −sDq)n1. (2.10)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0905.0228v4/blocks/thm-sec-001-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 7,
+      "target": "thm-sec-001-02.md",
+      "narrative": null,
+      "content": "The matrices (c(i, j, q))n−1 i,j=0 and (b(i, j, q)(−1) i−j 2 )n−1 i,j=0 are mutually inverse.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0905.0228v4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The rescaled discrete q-Hermite polynomials II",
+      "pageStart": 7,
+      "pageEnd": 12,
+      "target": "../sections/sec-002-3-the-rescaled-discrete-q-hermite-polynomials-ii.md",
+      "narrative": null,
+      "content": "By definition \\eqref{eq:H2} and \\eqref{eq:ACR} we have \n\\begin{align}\nh_{n+1}(x,s;q)=q^nx h_n(x,s;q)-[n]_q s h_{n-1}(x,s;q).\n\\end{align}\nWe derive then\n\\begin{align}\nh_n(x,s;q)&=q^{n\\choose 2}\\sqrt{s^n} \\tilde h_n\\left(\\frac{x}{\\sqrt{s}};q\\right)\\\\\n&=\\sum_{k=0}^nq^{n-2k\\choose 2}{n\\brack 2k}[2k-1]_q!! (-s)^k x^{n-2k},\n\\end{align}\nwhere $\\tilde h_n(x;q)$ are the discrete $q$-Hermite polynomials II, see \\eqref{eq:H2}.\n\nSince ${\\D}_q(fg)={\\D}_q(f)g+f(qx){\\D}_q(g)$ and ${\\D}_q(x)=1$, we see that\n$$\n{\\D}_q(h_{n+1}(x))=q^nx{\\D}_q(h_n(x))+q^nh_n(qx)-[n]_qs{\\D}_q(h_{n-1}(x)).\n$$\nWe derive by induction",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0228v4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connection with q-Fibonacci polynomials and q-Lucas polynomials",
+      "pageStart": 12,
+      "pageEnd": 16,
+      "target": "../sections/sec-003-4-connection-with-q-fibonacci-polynomials-and-q.md",
+      "narrative": null,
+      "content": "We define the Lucas polynomials  by\n$$\nl_n(x,s)=xl_{n-1}(x,s)+sl_{n-2}(x,s)\\quad \\text{for}�\\quad n>2,\n$$\nwith initial values $l_1(x,s)=x$ and $l_2(x,s)=x^2+2s$. They have the explicit formula\n\\begin{align}\\label{eq:luc1}\nl_n(x,s)=\\sum_{2k\\leq n}\n\\frac{n}{n-k} {n-k\\choose k}s^k x^{n-2k}  \\quad (n>0).\n\\end{align}\nFurthermore we define $l_0(x,s)=1$. Note that this definition differs from the usual one in which \n$l_0(x,s)=2$. \n\nThe Fibonacci polynomials are defined by\n$$\nf_n(x,s)=xf_{n-1}(x,s)+sf_{n-2}(x,s)\n$$\nwith $f_0(x,s)=0$ and $f_1(x,s)=1$.  They have the explicit formula\n\\begin{align}\\label",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0228v4/blocks/prop-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "prop-sec-005-01.md",
+      "narrative": null,
+      "content": "The continuous q-Hermite polynomials ˜Hn(x, s|q) deﬁned by (1.9), i.e., ˜Hn+1(x, s|q) = x ˜Hn(x, s|q) −s[n]q ˜Hn−1(x, s|q), (5.8) are the moments of the measure of the orthogonal polynomials pn(z) := Pn(z; x, −s, 0) deﬁned by the recurrence pn+1(z) = (z −xqn)pn(z) + sqn−1[n]qpn−1(z). (5.9)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-0905.0228v4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-004-5-appendix.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0228v4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some well-known facts",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-005-51-some-well-known-facts.md",
+      "narrative": null,
+      "content": "onal polynomials (see [2, 18, 17]). Let pn(x) be a sequence of polynomials which satisﬁes the\nthree term recurrence relation\npn+1(x) = (x −bn)pn(x) −λnpn−1(x)\n(5.1)\nwith initial values p0(x) = 1 and p−1(x) = 0.\nDeﬁne the coeﬃcients a(n, k) (0 ≤k ≤n) by\nn\nX\nk=0\na(n, k)pk(x) = xn.\n(5.2)\nThese are characterized by the Stieltjes tableau:\na(0, k) = δk,0,\na(n, 0) = b0a(n −1, 0) + λ1a(n −1, 1),\na(n, k) = a(n −1, k −1) + bka(n −1, k) + λk+1a(n −1, k + 1).\n(5.3)\nIf F is the linear functional such that F(pn(x)) = δn,0, then\nF(xn) = a(n, 0).\n(5.4)\nThe generating function of the moments has the continued",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0228v4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A second proof of Proposition 14",
+      "pageStart": 17,
+      "pageEnd": 19,
+      "target": "../sections/sec-006-52-a-second-proof-of-proposition-14.md",
+      "narrative": null,
+      "content": "Theorem 5 and the orthogonality of the continuous q-Hermite polynomials. Clearly Theorem 5\nis equivalent to\nxn =\nX\nk≡n\n(mod 2)\nc(n, k, q)s(n−k)/2 ˜Hk(x, s|q).\n(5.14)\nTo compute c(n, k, q) we can take s = 1 and let ˜Hn(x|q) = ˜Hn(x, s|q). It is known (see [9])\nthat the continuous q-Hermite polynomials ( ˜Hn(x|q)) are orthogonal with respect to the linear\nfunctional ϕ deﬁned by\nϕ(xn) =\nZ 2/√1−q\n−2/√1−q\nxnv(x, q)dx,\n(5.15)\nwhere\nv(x, q) =\np\n(1 −q)(q)∞\np\n1 −(1 −q)x2/44π\n∞\nY\nk=0\n{1 + (2 −(1 −q)x2)qk + q2k}.\n17\nSince ϕ(( ˜Hk(x|q))2) = [k]q!, it follows from (5.14) that, for k ≡n (mod 2),\nc(n, k, q)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0228v4/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgement",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/sec-007-acknowledgement.md",
+      "narrative": null,
+      "content": "The authors thank the two anonymous referees\n for useful comments on a previous version of this paper. The second author was  supported by \nthe project PhysComb (ANR-08-Blan-0243-03).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0905.0228v4/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/sec-008-references.md",
+      "narrative": null,
+      "content": "[1] G. Andrews, R. Askey, and R. Roy, Special Functions, Encyclopedia of Mathematics and Its Ap-\nplications, 71, Cambridge University Press, Cambridge, 1999.\n[2] M. Aigner, A course in enumeration, Graduate texts in Mathematics 238, Springer, 2007.\n[3] J. Cigler, A new class of q-Fibonacci polynomials, Electr. J. Comb. 10(2003), #R19.\n[4] J. Cigler, q-Lucas polynomials and associated Rogers-Ramanujan type identities, arXiv:0907.0165.\n[5] S. Corteel, M. Josuat-Verg`es, T. Prellberg, M. Rubey, Matrix Ansatz, lattice paths and rook\nplacements, Proc. FPSAC’09.\n[6] G. Gasper and M. Rahman, Basic Hy",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

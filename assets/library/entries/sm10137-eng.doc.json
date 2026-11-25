@@ -1,0 +1,835 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "sm10137-eng",
+  "title": "Rate of convergence in the central limit theorem for the determinantal point process with Bessel kernel",
+  "variant": "pdf",
+  "pages": 26,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "§1 Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1607",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "§2 Statement of the result",
+      "number": null,
+      "page": 3,
+      "pageLabel": "1609",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-statement-of-the-result"
+    },
+    {
+      "level": 1,
+      "title": "§3 Structure of the paper",
+      "number": null,
+      "page": 5,
+      "pageLabel": "1611",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-structure-of-the-paper"
+    },
+    {
+      "level": 1,
+      "title": "§4 Trace class and Hilbert–Schmidt operators",
+      "number": null,
+      "page": 6,
+      "pageLabel": "1612",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-trace-class-and-hilbertschmidt-operators"
+    },
+    {
+      "level": 1,
+      "title": "§5 A link between the Bessel operator and the determinantal point process with Bessel kernel",
+      "number": null,
+      "page": 7,
+      "pageLabel": "1613",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-a-link-between-the-bessel-operator-and-the-det"
+    },
+    {
+      "level": 1,
+      "title": "§6 Wiener–Hopf factorization on $H_1(\\mathbb{R})$",
+      "number": null,
+      "page": 10,
+      "pageLabel": "1616",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-6-wienerhopf-factorization-on-h-1mathbbr"
+    },
+    {
+      "level": 1,
+      "title": "§7 Proof of Lemma 3",
+      "number": null,
+      "page": 12,
+      "pageLabel": "1618",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-7-proof-of-lemma-3"
+    },
+    {
+      "level": 1,
+      "title": "§8 Proof of Theorems 1 and 2",
+      "number": null,
+      "page": 20,
+      "pageLabel": "1626",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-8-proof-of-theorems-1-and-2"
+    },
+    {
+      "level": 1,
+      "title": "Bibliography",
+      "number": null,
+      "page": 25,
+      "pageLabel": "1631",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-bibliography"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1607",
+      "labelEnd": "1607",
+      "words": 122,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "additive functionals",
+          "heading": false
+        },
+        {
+          "term": "bessel kernel",
+          "heading": false
+        },
+        {
+          "term": "determinantal point",
+          "heading": false
+        },
+        {
+          "term": "sbornik",
+          "heading": false
+        }
+      ],
+      "extract": "Sbornik: Mathematics 215:12 1607–1632 Matematicheski˘ı Sbornik 215:12 30–55 DOI: https://doi.org/10.4213/sm10137e Rate of convergence in the central limit theorem for the determinantal point process with Bessel kernel S. M. Gorbunov Abstract. We consider a family of linear operators diagonalized by the Hankel transform. We express explicitly the Fredholm determinants of these operators, as restricted to L2[0, R], so",
+      "extractCut": true,
+      "blocks": [
+        "library/sm10137-eng/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": null,
+      "title": "§1 Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1607",
+      "labelEnd": "1609",
+      "words": 964,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "borodin okounkov",
+          "heading": false
+        },
+        {
+          "term": "additive functionals",
+          "heading": false
+        },
+        {
+          "term": "bessel kernel",
+          "heading": false
+        },
+        {
+          "term": "bessel operator",
+          "heading": false
+        },
+        {
+          "term": "toeplitz matrices",
+          "heading": false
+        },
+        {
+          "term": "functionals approaches",
+          "heading": false
+        },
+        {
+          "term": "okounkov formula",
+          "heading": false
+        },
+        {
+          "term": "wiener hopf",
+          "heading": false
+        }
+      ],
+      "extract": "For f ∈L∞(R+) ∩L1(R+) consider the Bessel kernel Bf(x, y) = Z R+ t√xyJν(xt)Jν(yt)f(t) dt, (1.1) where Jν is the Bessel function of order ν. Fix ν > −1. The kernel (1.1) induces a bounded linear operator on L2(R+), which we will also denote by Bf. We let B1 be equal to the identity operator. We refer to Bf as the Bessel operator. For any h ∈L∞(X) we also let h denote the operator of pointwise multiplication by this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-statement-of-the-result",
+      "number": null,
+      "title": "§2 Statement of the result",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "1609",
+      "labelEnd": "1611",
+      "words": 578,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "web",
+          "heading": false
+        },
+        {
+          "term": "heb",
+          "heading": false
+        },
+        {
+          "term": "fourier transform",
+          "heading": false
+        },
+        {
+          "term": "sobolev",
+          "heading": false
+        },
+        {
+          "term": "following estimate",
+          "heading": false
+        },
+        {
+          "term": "det",
+          "heading": false
+        }
+      ],
+      "extract": "For a function f ∈L1(R) ∩L∞(R) we define its Fourier transform by bf(λ) = 1 2π Z R e−iλxf(x) dx. Here and below, if f is defined on R+, then we extend it to an even function. In this case the Fourier transform coincides with the cosine transform. Recall that the Sobolev p-seminorm of a function f on R+ is ∥f∥2 ˙Hp = Z R+ | bf(λ)|2|λ|2p dλ. For an integer p we have ∥f∥˙Hp = (2π)−1/2∥f (p)∥L2(R+) by Parseval’s",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-structure-of-the-paper",
+      "number": null,
+      "title": "§3 Structure of the paper",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "1611",
+      "labelEnd": "1612",
+      "words": 559,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wef",
+          "heading": false
+        },
+        {
+          "term": "jacobi dodgson",
+          "heading": false
+        },
+        {
+          "term": "wiener hopf",
+          "heading": false
+        },
+        {
+          "term": "dodgson identity",
+          "heading": false
+        },
+        {
+          "term": "hopf factorization",
+          "heading": false
+        },
+        {
+          "term": "bebwe",
+          "heading": false
+        },
+        {
+          "term": "fredholm determinant",
+          "heading": false
+        },
+        {
+          "term": "det",
+          "heading": false
+        }
+      ],
+      "extract": "First recall the result of Basor and Chen and the main steps of its proof. Theorem 3. For f ∈H1(R) ∩L1(R) we have det(χ[0,R]Wef χ[0,R]) = exp(RcS 1 (f) + cS 2 (f))QS R(f), where cS 1 (f) = bf(0), cS 2 (f) = 1 2 Z R+ x bf(x) bf(−x) dx and QS R(f) = det(χ[R,∞)Wef−We−f+We−f−Wef+χ[R,∞)). Remark 2. We state Theorem 3 under assumptions different from [2] to outline clearer the proof of Theorem 1. The proof consists of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-trace-class-and-hilbertschmidt-operators",
+      "number": null,
+      "title": "§4 Trace class and Hilbert–Schmidt operators",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "1612",
+      "labelEnd": "1613",
+      "words": 499,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hilbert schmidt",
+          "heading": true
+        },
+        {
+          "term": "trace class",
+          "heading": true
+        },
+        {
+          "term": "continuous kernel",
+          "heading": false
+        },
+        {
+          "term": "trace-class",
+          "heading": false
+        },
+        {
+          "term": "fredholm determinant",
+          "heading": false
+        },
+        {
+          "term": "det",
+          "heading": false
+        },
+        {
+          "term": "operators",
+          "heading": true
+        },
+        {
+          "term": "self-adjoint",
+          "heading": false
+        }
+      ],
+      "extract": "Here and below we denote the ideals of trace-class and Hilbert–Schmidt operators by J1 and J2, respectively. For more details of the theory, we refer the reader to [24] and [22]. We let E denote R or R+ = [0, ∞). Definition 1. The operator K on L2(E) is locally trace class if for each bounded measurable subset B of E the operator χBKχB is trace class. Let J loc 1 (L2(E)) denote the space of locally trace-class",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-a-link-between-the-bessel-operator-and-the-det",
+      "number": null,
+      "title": "§5 A link between the Bessel operator and the determinantal point process with Bessel kernel",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 10,
+      "labelStart": "1613",
+      "labelEnd": "1616",
+      "words": 848,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bessel kernel",
+          "heading": true
+        },
+        {
+          "term": "point process",
+          "heading": true
+        },
+        {
+          "term": "plicative functionals",
+          "heading": false
+        },
+        {
+          "term": "multiplicative functionals",
+          "heading": false
+        },
+        {
+          "term": "sine process",
+          "heading": false
+        },
+        {
+          "term": "fredholm determinant",
+          "heading": false
+        },
+        {
+          "term": "multi plicative",
+          "heading": false
+        },
+        {
+          "term": "regularized determinant",
+          "heading": false
+        }
+      ],
+      "extract": "and the determinantal point process with Bessel kernel Let E be R or R+ = [0, ∞). Recall that a configuration on E is a discrete subset of E. We denote the set of configurations by Conf(E). It can be endowed with a σ-algebra of measurable subsets X (for instance, see [25]). A point process P is defined to be a probability measure on (Conf(E), X). For a measurable function f : E →C we define two measurable functions",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-wienerhopf-factorization-on-h-1mathbbr",
+      "number": null,
+      "title": "§6 Wiener–Hopf factorization on $H_1(\\mathbb{R})$",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "1616",
+      "labelEnd": "1618",
+      "words": 587,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wiener hopf",
+          "heading": true
+        },
+        {
+          "term": "web exp",
+          "heading": false
+        },
+        {
+          "term": "banach algebra",
+          "heading": false
+        },
+        {
+          "term": "supp",
+          "heading": false
+        },
+        {
+          "term": "bebwe",
+          "heading": false
+        },
+        {
+          "term": "hopf operators",
+          "heading": false
+        },
+        {
+          "term": "det",
+          "heading": false
+        },
+        {
+          "term": "trace class",
+          "heading": false
+        }
+      ],
+      "extract": "Recall that the Wiener–Hopf operator as a map W: f 7→Wf, L∞(R) → B(L2(R+)) is not a Banach algebra homomorphism. But it can be restricted to some subalgebras on which it preserves multiplication. Recall that H1(R) is a Banach algebra. The spaces H± 1 (R) = {f ∈H1(R): supp bf ⊂R±} are Banach subalgebras since supp( bf ∗bg) ⊂supp bf + supp bg. The operators P± = F−1χR±F map H1(R) into itself and P±H1(R) = H± 1 (R).",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-7-proof-of-lemma-3",
+      "number": null,
+      "title": "§7 Proof of Lemma 3",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 20,
+      "labelStart": "1618",
+      "labelEnd": "1626",
+      "words": 2620,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schwarz inequality",
+          "heading": false
+        },
+        {
+          "term": "trace norm",
+          "heading": false
+        },
+        {
+          "term": "cos",
+          "heading": false
+        },
+        {
+          "term": "one-dimensional projector",
+          "heading": false
+        },
+        {
+          "term": "integral operator",
+          "heading": false
+        },
+        {
+          "term": "following estimate",
+          "heading": false
+        },
+        {
+          "term": "following kernels",
+          "heading": false
+        },
+        {
+          "term": "lebesgue lemma",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we establish Lemma 3. Our calculations follow Basor and Ehrhardt (see [3], Lemmas 2.6–2.8). The section is structured as follows. In Propositions 4 and 5 and Corollary 1 we establish estimates for the trace norms of integral opera- tors with kernels of certain form. Then we recall the necessary properties of Bessel functions and their derivatives. We end the preparations to the proof by Lemma 5,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-8-proof-of-theorems-1-and-2",
+      "number": null,
+      "title": "§8 Proof of Theorems 1 and 2",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 25,
+      "labelStart": "1626",
+      "labelEnd": "1631",
+      "words": 1509,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lim det",
+          "heading": false
+        },
+        {
+          "term": "hilbert schmidt",
+          "heading": false
+        },
+        {
+          "term": "bebwe",
+          "heading": false
+        },
+        {
+          "term": "ejνsr",
+          "heading": false
+        },
+        {
+          "term": "x2b",
+          "heading": false
+        },
+        {
+          "term": "bweb",
+          "heading": false
+        },
+        {
+          "term": "xeb",
+          "heading": false
+        },
+        {
+          "term": "fredholm determinants",
+          "heading": false
+        }
+      ],
+      "extract": "Recall the Jacobi–Dodgson identity. Proposition 7 ([23], Proposition 6.2.9). Let A be an invertible operator on a sep- arable Hilbert space H and A −I ∈J1(H). Let P be an orthogonal projection in H and Q = I −P . Then det(PAP) = det(A) det(QA−1Q). (8.1) We use the following variation of this identity. Corollary 2. Let P1 and P2 be two commuting orthogonal projections in a sepa- rable Hilbert space H. Let Qi = I −Pi,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-bibliography",
+      "number": null,
+      "title": "Bibliography",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 26,
+      "labelStart": "1631",
+      "labelEnd": "1632",
+      "words": 610,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wiener hopf",
+          "heading": false
+        },
+        {
+          "term": "russian academy",
+          "heading": false
+        },
+        {
+          "term": "basor",
+          "heading": false
+        },
+        {
+          "term": "gorbunov",
+          "heading": false
+        },
+        {
+          "term": "toeplitz",
+          "heading": false
+        },
+        {
+          "term": "ehrhardt",
+          "heading": false
+        },
+        {
+          "term": "bufetov",
+          "heading": false
+        },
+        {
+          "term": "borodin",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Zhigang Bao and Yukun He, Quantitative CLT for linear eigenvalue statistics of Wigner matrices, arXiv: 2103.05402. [2] E. L. Basor and Yang Chen, “A note on Wiener–Hopf determinants and the Borodin–Okounkov identity”, Integral Equations Operator Theory 45:3 (2003), 301–308. [3] E. L. Basor and T. Ehrhardt, “Asymptotics of determinants of Bessel operators”, Comm. Math. Phys. 234:3 (2003), 491–516. [4] E. L. Basor",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "bessel kernel",
+      "heading": true
+    },
+    {
+      "term": "bessel operator",
+      "heading": true
+    },
+    {
+      "term": "determinant det",
+      "heading": false
+    },
+    {
+      "term": "fredholm determinants",
+      "heading": false
+    },
+    {
+      "term": "wiener hopf",
+      "heading": true
+    },
+    {
+      "term": "kernel pjν",
+      "heading": false
+    },
+    {
+      "term": "obtain det",
+      "heading": false
+    },
+    {
+      "term": "trace-class operator",
+      "heading": false
+    },
+    {
+      "term": "web exp",
+      "heading": false
+    },
+    {
+      "term": "hilbert schmidt",
+      "heading": true
+    },
+    {
+      "term": "continuous kernel",
+      "heading": false
+    },
+    {
+      "term": "integral operator",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1607",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "1608",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "1609",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "1610",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "1611",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "1612",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "1613",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "1614",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "1615",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "1616",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "1617",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "1618",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "1619",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "1620",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "1621",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "1622",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "1623",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "1624",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "1625",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "1626",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "1627",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "1628",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "1629",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "1630",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 25,
+      "label": "1631",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "1632",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 10,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p25); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 10 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/sm10137-eng"
+  }
+}

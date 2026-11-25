@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1108.0687v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Concentration of Lipschitz functionals of determinantal and other strong Rayleigh measures",
+      "dcterms:creator": [
+        "Robin Pemantle1, 2",
+        "Peres3, Yuval"
+      ],
+      "dcterms:issued": "D:20180521",
+      "dcterms:identifier": "https://arxiv.org/abs/1108.0687",
+      "dcterms:abstract": "Let {X1, . . . , Xn} be a collection of binary valued random variables and let f : {0, 1}n → R be a Lipschitz function. Under a negative dependence hypothesis known as the strong Rayleigh con- dition, we show that f−Ef satisﬁes a concentration inequality. The class of strong Rayleigh measures includes determinantal measures, weighted uniform matroids and exclusion measures; some familiar examples from these classes are generalized negative binomials and spanning tree measures. For instance, any Lipschitz-1 function of the edges of a uniform spanning tree on vertex set V (e.g., the number of leaves) satisﬁes the Gaussian concentration inequality P(f −Ef ≥a) ≤exp \u0012 −a2 8 |V | \u0013 . We also prove a continuous version for concentration of Lipschitz functionals of a determinantal point process.",
+      "dcterms:source": "library/arxiv-1108.0687v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1108.0687v3"
+    }
+  ]
+}

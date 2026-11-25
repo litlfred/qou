@@ -1,0 +1,29 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/cspaper",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "Combinatorics of Triangulations and the Chern-Simons Invariant for Hyperbolic 3-Manifolds",
+      "dcterms:creator": [
+        "Neumann, Walter D."
+      ],
+      "dcterms:source": "library/cspaper/manifest.jsonld",
+      "dcterms:hasVersion": "library/cspaper"
+    }
+  ]
+}

@@ -1,0 +1,431 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1202.0067v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-1202.0067v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "[]{#sec:intro label=\"sec:intro\"}\n\nTableaux combinatorics is a pivotal theme in the representation theory of the symmetric groups. Fundamental results in this area include the Murnaghan--Nakayama rule for the values taken by irreducible characters of symmetric groups and the Littlewood--Richardson rule (as well as its special case, Young's rule), which determines the restrictions of irreducible characters to Young subgroups of symmetric groups.\n\nThe two main results of this paper are Theorems [\\[thm:cd\\]](#thm:cd){reference-type=\"ref\" reference=\"thm:cd\"} and [\\[thm:hookdefl\\]](#thm:hookdefl){re",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1202.0067v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "CHARACTER DEFLATIONS AND A GENERALIZATION\nOF THE MURNAGHAN–NAKAYAMA RULE\nANTON EVSEEV, ROWENA PAGET AND MARK WILDON\nAbstract. Given natural numbers m and n, we deﬁne a deﬂation map\nfrom the characters of the symmetric group Smn to the characters of Sn.\nThis map is obtained by ﬁrst restricting a character of Smn to the wreath\nproduct Sm ≀Sn, and then taking the sum of the irreducible constituents\nof the restricted character on which the base group Sm × · · · × Sm acts\ntrivially. We prove a combinatorial formula which gives the values of\nthe images of the irreducible characters of Smn under this",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1202.0067v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Character deflations",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-11-character-deflations.md",
+      "narrative": null,
+      "content": "We now introduce the ideas needed to state Theorem [\\[thm:cd\\]](#thm:cd){reference-type=\"ref\" reference=\"thm:cd\"}. By a construction originally due to Frobenius, the irreducible characters of the symmetric group $S_r$ are canonically labelled by the partitions of $r$. As is usual, we write $\\chi^\\lambda$ for the irreducible character labelled by the partition $\\lambda$, and $\\chi^{\\lambda / \\mu}$ for the character labelled by the skew-partition $\\lambda / \\mu$. We refer the reader to [@JK Chapter 2] or [@StanleyII §7.18] for a construction of these characters and to [@StanleyII page 309] for b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1202.0067v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some special cases",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-002-12-some-special-cases.md",
+      "narrative": null,
+      "content": "It is clear than if $m=1$ then $\\mathop{\\mathrm{Def\\hskip-0.3pt res}}_{S_n} \\chi=\n\\chi$ for any character $\\chi$ of $S_n$, and so the special case $m=1$ of Theorem [\\[thm:cd\\]](#thm:cd){reference-type=\"ref\" reference=\"thm:cd\"} asserts that $\\chi^{\\lambda / \\mu} (g) = a_{\\lambda/ \\mu , \\gamma}$ for any skew-partition $\\lambda / \\mu$ of $n$ and any element $g \\in S_n$ of cycle type $\\gamma$. Equivalently, $$\\chi^{\\lambda / \\mu} (g) = \\sum_{T} \\mathrm{sgn}(T)$$ where the sum is over all border-strip tableaux of shape $\\lambda / \\mu$ and type $\\gamma$. This is the Murnaghan--Nakayama rule, as stat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1202.0067v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Outline of the paper",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-003-13-outline-of-the-paper.md",
+      "narrative": null,
+      "content": "The remainder of the paper proceeds as follows. Throughout, we shall adopt the convention that if $\\alpha$ is a partition of $r \\in \\mathbf{N}$, then $g_\\alpha \\in S_r$ is an element of cycle type $\\alpha$, and $z_\\alpha$ is the size of the centralizer of $g_\\alpha$ in $S_r$. (The choice of $g_\\alpha$ within the conjugacy class is irrelevant.) If $\\alpha = (\\alpha_1,\\ldots,\\alpha_k)$, we write $n\\alpha = (n\\alpha_1,\\ldots,n\\alpha_k)$.\n\nIn §[\\[sec:averaging\\]](#sec:averaging){reference-type=\"ref\" reference=\"sec:averaging\"} we prove Proposition [\\[prop:deflation\\]](#prop:deflation){reference-typ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1202.0067v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Deflation by averaging",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-004-2-deflation-by-averaging.md",
+      "narrative": null,
+      "content": "\\label{sec:averaging}\n\n\nLet $m$, $n \\in \\N$. \nWe shall think\nof $S_m \\wr S_n$ as the group of permutations of\n\\[ \\{1,\\ldots, m\\} \\times \\{1,\\ldots, n\\} \\]\nthat leaves invariant the set of blocks of the form $\\Delta_j = \\{(1,j), \\ldots, (m,j)\\}$, \n$1 \\le j \\le n$.\t\t\t\t\t\nGiven $h_1, \\ldots, h_n \\in S_m$ and $g \\in S_n$, we\nwrite $(h_1,\\ldots,h_n;g)$\nfor the permutation which sends $(i,j)$ \nto $(h_{gj} i,gj)$. \nThis left action is equivalent to the action\ndefined in \\hbox{\\cite[4.1.18]{JK}}. \nLet $B = S_m \\times \\cdots \\times S_m$ denote\nthe base group in the wreath product. As shorthand,\nif $k =",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1202.0067v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Skew characters",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-005-3-skew-characters.md",
+      "narrative": null,
+      "content": "[]{#sec:skew label=\"sec:skew\"}\n\nIn this section we state and prove a result on the values of skew characters on elements of the form $g_{n\\alpha}$ (Theorem [\\[thm:ind\\]](#thm:ind){reference-type=\"ref\" reference=\"thm:ind\"}). First, we give the necessary combinatorial definitions. In several arguments we shall refer to James' abacus notation for partitions, as described in [@JK page 78].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1202.0067v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quotients of skew-partitions",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-006-31-quotients-of-skew-partitions.md",
+      "narrative": null,
+      "content": "[]{#subsec:quotients label=\"subsec:quotients\"}\n\nWe shall define $n$-quotients and $n$-signs for the following class of skew-partitions.\n\n::: definition\n[]{#def:n_dec label=\"def:n_dec\"} Let $m$, $n \\in \\mathbf{N}$. We say that a skew-partition $\\lambda /\\mu$ of $mn$ is *$n$-decomposable* if there exists a border-strip tableau of shape $\\lambda / \\mu$ and type $(n^m)$.\n:::\n\n::: definition\n[]{#def:n_quo label=\"def:n_quo\"} Let $m$, $n \\in \\mathbf{N}$ and let $\\lambda / \\mu$ be an $n$-decomposable skew-partition of $mn$. Let $\\Gamma(\\lambda)$ be an abacus display for $\\lambda$ on an $n$-runner abac",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1202.0067v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A model for induction from a Young subgroup",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-007-32-a-model-for-induction-from-a-young-subgroup.md",
+      "narrative": null,
+      "content": "general result on the values of a character induced from a Young subgroup\nwill be used in the proof of Theorem 3.3. (The notation is chosen to be\nconsistent with this later use.)\nCHARACTER DEFLATIONS\n11\nLemma 3.4. Let (ℓ0, . . . , ℓn−1) be a composition of m ∈N. For each i ∈\n{0, . . . , n −1}, let ϑi be a character of Sℓi. If g ∈Sm then\nIndSm\nSℓ0×···×Sℓn−1(ϑ0 × · · · × ϑn−1)(g) =\nX\nt\nϑ0(gα0(t)) . . . ϑn−1(gαn−1(t))\nwhere the sum is over all (ℓ0, . . . , ℓn−1)-tabloids t such that gt = t, and αi(t)\nis the cycle type of the permutation induced by g on the entries of row i + 1\nof t.\nProof. Let t1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1202.0067v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 3.3",
+      "pageStart": 11,
+      "pageEnd": 13,
+      "target": "../sections/sec-008-33-proof-of-theorem-33.md",
+      "narrative": null,
+      "content": "of mn. Let α be a partition of m. If there is a border-strip tableau of shape\nλ/µ and type nα then it is clear from the abacus that λ/µ is n-decomposable.\nHence if λ/µ is not n-decomposable then, by the Murnaghan–Nakayama\nrule, χλ/µ(gnα) = 0.\nWe may therefore assume that λ/µ is n-decomposable. Let ℓi = |λ(i)/µ(i)|\nfor each i ∈{0, . . . , n −1} and let H = Sℓ0 × · · · × Sℓn−1. To show that\n(4)\nχλ/µ(gnα) = εn(λ/µ) IndSm\nH\n\u0000χλ(0)/µ(0) × · · · × χλ(n−1)/µ(n−1)\u0001\n(gα),\nwe shall use the following generalization of border-strip tableaux.\nDeﬁnition 3.5. Let m, n ∈N.\nLet λ/µ be an n-decomposable skew-\np",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1202.0067v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Example",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-009-34-example.md",
+      "narrative": null,
+      "content": "proof of Theorem 3.3. Let λ/µ = (8, 5, 3, 2, 2, 2)/(2, 2, 1, 1, 1). Any border-\nstrip tableau of shape λ/µ and type (35) has either two or four 3-border-\nstrips of height 1, with the rest of height 0, so ε3(λ/µ) = 1.\nLet α =\n(2, 1, 1, 1). By the Murnaghan–Nakayama rule, χλ/µ(g3α) is the sum of the\nsigns of the four border-strip tableaux of type λ/µ and type 3α = (6, 3, 3, 3)\n14\nANTON EVSEEV, ROWENA PAGET AND MARK WILDON\n1 1 1 1 1 1\n2 2 2\n3 3\n3\n4\n4 4\n1 1 3 4 4 4\n1 3 3\n1 1\n1\n2\n2 2\n1 1 2 4 4 4\n1 2 2\n1 1\n1\n3\n3 3\n1 1 2 3 3 3\n1 2 2\n1 1\n1\n4\n4 4\n\u0010 2\n3\n4\n,\n1 1 , ∅\n\u0011\n\u0010 1\n1\n2\n,\n3 4 , ∅\n\u0011\n\u0010 1\n1\n3\n,\n2 4 ,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1202.0067v3/blocks/lem-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "lem-sec-010-02.md",
+      "narrative": null,
+      "content": "Let m, n ∈N and let λ/µ be a skew-partition of mn. If λ/µ is n-decomposable, and each λ(i)/µ(i) is a horizontal strip, then there is a unique m-border-strip tableau of shape λ/µ and type (n); this tableau has sign εn(λ/µ). Otherwise there are no such tableaux.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.0067v3/blocks/lem-sec-010-04",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "lem-sec-010-04.md",
+      "narrative": null,
+      "content": "□ CHARACTER DEFLATIONS For the inductive step we need the following lemma and proposition. The former is well-known and can be deduced from [8, 2.3.12]. We write µ ⊆λ if µ is a subpartition of λ (i.e. the Young diagram of µ is contained in that of λ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.0067v3/blocks/lem-sec-010-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "lem-sec-010-05.md",
+      "narrative": null,
+      "content": "Let λ/µ be a skew-partition of r. If 1 ≤c < r then ResSc×Sr−c χλ/µ = X τ χτ/µ × χλ/τ where the sum is over all partitions τ such that µ ⊆τ ⊆λ and |τ/µ| = c. For later use we state and prove the following proposition for a general deﬂation map.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.0067v3/blocks/prop-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "prop-sec-010-01.md",
+      "narrative": null,
+      "content": "Let m, n ∈N, let ϑ be an irreducible character of Sm, and let λ/µ be a skew-partition of mn. Let g ∈Sn be an n-cycle. If λ/µ is not n-decomposable, then Defresϑ Sn(g) = 0. If λ/µ is n-decomposable, then (Defresϑ Sn χλ/µ)(g) = εn(λ/µ) D IndSm H \u0000χλ(0)/µ(0) × · · · × χλ(n−1)/µ(n−1)\u0001 , ϑ E , where H = S|λ(0)/µ(0)| × · · · × S|λ(n−1)/µ(n−1)|.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.0067v3/blocks/prop-sec-010-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "prop-sec-010-03.md",
+      "narrative": null,
+      "content": "Let m, n ∈N and let g ∈Sn be an n-cycle. If λ/µ is a skew-partition of mn then (DefresSn χλ/µ)(g) = aλ/µ,(n).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.0067v3/blocks/prop-sec-010-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "prop-sec-010-06.md",
+      "narrative": null,
+      "content": "Let m, n ∈N and let λ/µ be a skew-partition of mn. Let ϑ be an irreducible character of Sm. Let g ∈Sn. If g = kh where k ∈Sℓ and h ∈Sn−ℓ, then (Defresϑ Sn χλ/µ)(g) = X τ (Defresϑ Sℓχτ/µ)(k)(Defresϑ Sn−ℓχλ/τ)(h) where the sum is over all partitions τ such that µ ⊆τ ⊆λ and |τ/µ| = mℓ.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1202.0067v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 1.5",
+      "pageStart": 14,
+      "pageEnd": 18,
+      "target": "../sections/sec-010-4-proof-of-theorem-15.md",
+      "narrative": null,
+      "content": "We shall prove Theorem 1.5 by induction on the number of parts of γ.\nMost of the work occurs in proving the base case when γ has a single part.\nIn the ﬁrst step we combine the results of §3 and §4. For later use in §6, we\nstate the following proposition for a general deﬂation map.\nCHARACTER DEFLATIONS\n15\nProposition 4.1. Let m, n ∈N, let ϑ be an irreducible character of Sm,\nand let λ/µ be a skew-partition of mn. Let g ∈Sn be an n-cycle. If λ/µ is\nnot n-decomposable, then Defresϑ\nSn(g) = 0. If λ/µ is n-decomposable, then\n(Defresϑ\nSn χλ/µ)(g) = εn(λ/µ)\nD\nIndSm\nH\n\u0000χλ(0)/µ(0) × · · · × χλ(n−1)/µ(n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1202.0067v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An application to Foulkes' Conjecture",
+      "pageStart": 18,
+      "pageEnd": 22,
+      "target": "../sections/sec-011-5-an-application-to-foulkes-conjecture.md",
+      "narrative": null,
+      "content": "[]{#sec:Foulkes label=\"sec:Foulkes\"}\n\nFor $m$, $n \\in \\mathbf{N}$, let $\\phi^{(m^n)}$ be the permutation character of $S_{mn}$ acting on all unordered set partitions of $\\{1,2,\\ldots,mn\\}$ into $n$ sets each of size $m$. Equivalently, $\\phi^{(m^n)} = \\mathop{\\mathrm{Ind}}_{S_m \\wr S_n}^{S_{mn}} 1$. Foulkes' Conjecture asserts that if $m \\le n$ then $$\\left< \\phi^{(m^n)}, \\chi^\\lambda \\right> \\ge \n\\left< \\phi^{(n^m)}, \\chi^\\lambda \\right>$$ for all partitions $\\lambda$ of $mn$. Equivalent formulations of Foulkes' Conjecture exist in the language of general linear groups, symmetric polynomials,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1202.0067v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalized deflations",
+      "pageStart": 22,
+      "pageEnd": 30,
+      "target": "../sections/sec-012-6-generalized-deflations.md",
+      "narrative": null,
+      "content": "[]{#sec:gendef label=\"sec:gendef\"}\n\nIn this section we discuss deflation with respect to an arbitrary irreducible character $\\vartheta$ of $S_m$. In the case where $\\vartheta$ is labelled by a hook partition, $\\vartheta=\\chi^{(a,1^b)}$ where $a+b=m$, we give a combinatorial description, generalizing Theorem [\\[thm:cd\\]](#thm:cd){reference-type=\"ref\" reference=\"thm:cd\"}. We also prove some other general results, and show how these, together with the results of §[\\[sec:proof\\]](#sec:proof){reference-type=\"ref\" reference=\"sec:proof\"}, may be used to calculate the values of an irreducible characte",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1202.0067v3/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetric functions",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-013-7-symmetric-functions.md",
+      "narrative": null,
+      "content": "[]{#sec:concl label=\"sec:concl\"}\n\nFinally, we discuss the translation of our results\n\ninto the language of symmetric functions. The following well-known facts can be found in [@Macdonald1995 Chapter I]. Let $\\Lambda$ be the ring of symmetric functions with integer coefficients in variables $x_1, x_2,\\ldots$, and let $R=\\bigoplus_{n\\ge 0} \\, \\mathcal{C}(S_n)$. There is a well-known canonical ring isomorphism $\\operatorname{ch}\\colon R\\to \\Lambda$, where the ring structure on $R$ is given, for $f \\in \\mathcal{C}(S_m)$ and $g\\in \\mathcal{C}(S_n)$, by $fg = \\mathop{\\mathrm{Ind}}_{S_m \\times S_n}^{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1202.0067v3/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../sections/sec-014-acknowledgements.md",
+      "narrative": null,
+      "content": "The authors would like to thank Prof. Christine Bessenrodt for supplying the reference to Farahat's paper [@Farahat1954].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1202.0067v3/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "../sections/sec-015-references.md",
+      "narrative": null,
+      "content": "[1] Brion, M. Stable properties of plethysm: on two conjectures of Foulkes. Manuscripta\nMath., 80 (1993) 347–371.\n[2] Dent, S., and Siemons, J. On a conjecture of Foulkes. J. Algebra, 226(1):236–249,\n2000.\n[3] D´esarm´enien, J., Leclerc, B., and Thibon, J. Y. Hall-Littlewood functions and\nKostka-Foulkes polynomials in representation theory. S´em. Lothar. de Combin., 32\n(1994), Art. B32c, approx. 38 pp.\n[4] Dixon, J. D., and Mortimer, B. Permutation Groups, vol. 163 of Graduate Texts\nin Mathematics. Springer, 1996.\n32\nANTON EVSEEV, ROWENA PAGET AND MARK WILDON\n[5] Farahat, H. K. On the represen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

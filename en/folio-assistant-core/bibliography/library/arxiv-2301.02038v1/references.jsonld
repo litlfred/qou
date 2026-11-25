@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2301.02038v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Vinogradov's Cohomological Geometry of Partial Differential Equations",
+      "dcterms:creator": [
+        "Geometry, Vinogradov’s Cohomological"
+      ],
+      "dcterms:issued": "D:20230105",
+      "dcterms:identifier": "https://arxiv.org/abs/2301.02038",
+      "dcterms:abstract": "Secondary Calculus is a formal replacement for diﬀerential cal- culus on the space of solutions of a system of possibly non-linear partial dif- ferential equations and it is essentially due to Alexandre M. Vinogradov and his collaborators. Many coordinate free properties of PDEs ﬁnd their natu- ral place in Secondary Calculus including: symmetries and conservation laws, variational principles and the coordinate free aspects of the calculus of vari- ations, recursion operators and Hamiltonian structures, etc. The building blocks of this language are horizontal cohomologies of diﬃeties, i.e. inﬁnite prolongations of PDEs, and their versions with local coeﬃcients. The main paradigm of Secondary Calculus is the principle, due to A. M. Vinogradov, roughly stating that: diﬀerential calculus on the space of solutions of a PDE is calculus up to homotopy on the horizontal De Rham algebra of the associated diﬃety. We will review the fundamentals of Secondary Calculus including its main motivations. In the last part of the paper, we will try to explain the role of homotopy in the theory.",
+      "dcterms:source": "library/arxiv-2301.02038v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2301.02038v1"
+    }
+  ]
+}

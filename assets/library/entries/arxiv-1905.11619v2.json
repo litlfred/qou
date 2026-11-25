@@ -1,0 +1,329 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1905.11619v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1905.11619v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "[]{#Sect=Intro label=\"Sect=Intro\"} The aim of this paper is to connect the theory of quantum Markov semi-groups to certain cohomological properties of their algebras. Quantum Markov semi-groups are continuous semi-groups of trace preserving unital completely positive maps on a finite von Neumann algebra. Such quantum Markov semi-groups naturally arise in time evolutions of open systems that undergo decoherence. With the emergence of non-commutative probability, their theory had been investigated thoroughly. We refer in particular to the papers of Goldstein-Lindsay [@GoldsteinLindsay] and Cipri",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.11619v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1905.11619v2  [math.OA]  13 Feb 2020\nL2-COHOMOLOGY, DERIVATIONS AND QUANTUM MARKOV\nSEMI-GROUPS ON q-GAUSSIAN ALGEBRAS\nMARTIJN CASPERS, YUSUKE ISONO, AND MATEUSZ WASILEWSKI\nAbstract. We study (quasi-)cohomological properties through an analysis of quantum Markov\nsemi-groups. We construct higher order Hochschild cocycles using gradient forms associated with\na quantum Markov semi-group. By using Schatten-Sp estimates we analyze when these cocycles\ntake values in the coarse bimodule. For the 1-cocycles (the derivations) we show that under natural\nconditions we obtain the Akemann-Ostrand prop",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.11619v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-preliminaries.md",
+      "narrative": null,
+      "content": "construction in Section 3. We analyze when a repeated tensor product is contained in the coarse\nbimodule through the notion of being gradient-Sp (Theorem A). We also show that in the group\ncase, under a domain condition, one may always average quantum Markov semi-groups to a semi-\ngroup of Fourier multipliers retaining the gradient Sp-properties. In Section 4 we illustrate this\nusing q-Gaussians and we show that the Ornstein-Uhlenbeck semi-group is gradient-Sp for |q| <\ndim(HR)−1/p (Theorem B). Section 5 is then concerned with the question of which derivations\nimply condition AO+. We give suﬃc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.11619v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "General conventions and notation",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-21-general-conventions-and-notation.md",
+      "narrative": null,
+      "content": "Throughout the paper $M$ is a finite von Neumann algebra with a trace $\\tau$. Let $\\Omega_\\tau \\in L_2(M) := L_2(M, \\tau)$ be the cyclic vector given by $1 \\in M$. We denote by $\\mathcal{S}_p$ the Schatten-von Neumann class, which is the non-commutative $L_p$-space associated with $B(H)$ and its trace.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.11619v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Containment of bimodules",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-22-containment-of-bimodules.md",
+      "narrative": null,
+      "content": "Let $\\mathcal{A}$ be a $\\ast$-algebra. By an $\\mathcal{A}$--$\\mathcal{A}$ bimodule $H$ we mean a Hilbert space together with $\\ast$-homomorphisms $\\pi_l: \\mathcal{A}\\rightarrow B(H)$ and $\\pi_r: \\mathcal{A}^{op} \\rightarrow B(H)$ whose images commute. If $\\mathcal{A}$ is a von Neumann algebra then we assume moreover that $\\pi_l$ and $\\pi_r$ are normal.\n\nWe write $L_2(M)$ for the trivial bimodule and $L_2(M) \\otimes L_2(M)$ for the coarse bimodule with the usual left and right actions. Let $H$ and $K$ be $M$-$M$ bimodules. We say that $H$ is **contained** in $K$ if $H$ is (isomorphic to) a sub-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.11619v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hochschild cohomology",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-23-hochschild-cohomology.md",
+      "narrative": null,
+      "content": "[Tho08] and also [CoSh05]) through the bar resolution as follows. Let Fn be the space of all linear\nmaps f : A⊗n →H to a ﬁxed A-A bimodule H. For f ∈Fn we deﬁne dnf : A⊗n+1 →H by\n(dnf)(a1 ⊗a2 ⊗. . . ⊗an+1) = a1 · f(a2 ⊗. . . ⊗an+1)\n+\nn\nX\nk=1\n(−1)kf(a1 ⊗. . . ⊗akak+1 ⊗. . . ⊗an+1) + (−1)n+1f(a1 ⊗. . . ⊗an) · an+1\nwith a1, . . . , an+1 ∈A. Further, set for ξ ∈H the map d0ξ : A →H by (d0ξ)(a) = aξ −ξa, a ∈A.\nWe get a chain called the bar resolution,\n. . . ←d4 F4 ←d3 F3 ←d2 F2 ←d1 F1 ←d0 H,\nwith dn+1 ◦dn = 0. Let Cn(A, H) be the kernel of dn, which we call the Hochschild n-cocycles.\nLet Bn(A, H) b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.11619v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gradient tensoring, n-cocycles and gradient-Sp",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-3-gradient-tensoring-n-cocycles-and-gradient-sp.md",
+      "narrative": null,
+      "content": "[]{#Sect=GradientTensor label=\"Sect=GradientTensor\"} The aim of this section is to construct $n$-cocycles in Hochschild cohomology using quantum Markov semi-groups.\n\n::: dfn\nA **quantum Markov semi-group** $(\\Phi_t)_{t \\geq 0}$ on $(M, \\tau)$ is a semi-group of unital completely positive maps $\\Phi_t: M\\rightarrow M$ that preserve the trace, i.e. $\\tau \\circ \\Phi_t = \\tau$ for all $t \\geq 0$. Further we assume that $\\Phi_t$ is symmetric $\\tau(\\Phi_t(x) y) = \\tau(x \\Phi_t(y)), x,y \\in M$. Moreover, we assume that for every $x \\in M$ the map $t \\mapsto \\Phi_t(x)$ is continuous for the strong top",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.11619v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Construction of n-cocycles.",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-006-32-construction-of-n-cocycles.md",
+      "narrative": null,
+      "content": "The following proposition allows to construct cocycles at the expense of changing the bimodule. We will remedy this change by using Schatten-$\\mathcal{S}_p$ properties below.\n\n::: thm\n[]{#Thm=Gdelta label=\"Thm=Gdelta\"} Let $H$ be an $A$-$A$-bimodule and let $f\\colon \\mathcal{A}^{\\otimes (n-1)} \\rightarrow H$ be a linear map. Set $Gf\\colon \\mathcal{A}^{\\otimes n} \\rightarrow H_\\nabla$ by, $$(G f)(a_1 \\otimes \\ldots \\otimes a_{n}) := a_1 \\otimes_\\nabla f(a_2 \\otimes \\ldots \\otimes a_{n}) \\in H_\\nabla.$$ Then $Gd + dG=0$, where $d$'s are the differentials of the appropriate cochain complexes. In",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.11619v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Haagerup averaging technique",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-007-33-the-haagerup-averaging-technique.md",
+      "narrative": null,
+      "content": "We will show that under algebraic conditions gradient-$\\mathcal{S}_p$ properties behave well under Haagerup averaging techniques. We believe this result is of independent interest, though we will not use it in the subsequent sections.\n\nLet $\\Lambda$ be a discrete group with group algebra $\\mathbb{C}[\\Lambda]$ and von Neumann algebra $(\\mathcal{L}(\\Lambda), \\tau)$. We will identify $\\Lambda$ with its image under the left regular representation. So for $\\gamma \\in \\Lambda$ we will also write $\\gamma$ for the associated unitary in $\\mathcal{L}(\\Lambda)$. Let $(\\Phi_t)_{t \\geq 0}$ be a quantum Mar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.11619v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Schatten Sp-estimates for the Ornstein-Uhlenbeck semi-group on q-Gaussians",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-008-4-schatten-sp-estimates-for-the-ornstein-uhlenbe.md",
+      "narrative": null,
+      "content": "[]{#Sect=Orhnstein-Uhlenbeck label=\"Sect=Orhnstein-Uhlenbeck\"} We show that $q$-Gaussians $\\Gamma_q(H_{\\mathbb{R}})$ with the Ornstein-Uhlenbeck semi-group are gradient-$\\mathcal{S}_p$ for a range of $q$ depending on $p$ and the dimension of the Hilbert space $H_{\\mathbb{R}}$.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.11619v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "q-Gaussian algebras",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-009-41-q-gaussian-algebras.md",
+      "narrative": null,
+      "content": "Let $H_{\\mathbb{R}}$ be a finite dimensional real Hilbert space with complexification $H = H_{\\mathbb{R}}\\otimes \\mathbb{C}$. We denote by $I$ the complex conjugation on $H$ and we extend it to $H^{\\otimes n}$ by $I(v_1\\otimes\\dots\\otimes v_n):= Iv_n\\otimes\\dots\\otimes Iv_1$. Let $q \\in (-1, 1)$ and consider the symmetrization operator on $H^{\\otimes n}$ given by $$P_q^n(\\xi_1 \\otimes \\ldots \\otimes \\xi_n) = \\sum_{\\sigma \\in S_n}  q^{i(\\sigma)} \\xi_{\\sigma(1)} \\otimes \\ldots \\otimes \\xi_{\\sigma(n)},$$ where $i(\\sigma)$ is the number of inversions in $\\sigma$. Recall that an inversion is a pair",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.11619v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gradient-Sp estimates",
+      "pageStart": 11,
+      "pageEnd": 16,
+      "target": "../sections/sec-010-42-gradient-sp-estimates.md",
+      "narrative": null,
+      "content": "Let $[n]$ be the set $\\{ 1, \\ldots, n \\}$, with $n\\in \\mathbb{N}$. $[n]$ has its natural order. We will consider the operator $\\Psi^{a,b}$ associated to the Ornstein-Uhlenbeck semigroup. We will need a formula for products of Wick words to be able to work with this operator. We will follow Effros-Popa [@EffrosPopa] (see also [@DeyaSchott]).\n\n::: dfn\nLet $n_1,\\dots,n_k$ be natural numbers. By $P^{\\leqslant 2}(n_1\\otimes\\dots\\otimes n_k)$ we denote the set of partitions of the set $[n]$, where $n=n_1+\\dots+n_k$, with blocks of size at most two, such that there is no pairing inside the sets $\\{1,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.11619v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Consequences for Cartan rigidity",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-011-43-consequences-for-cartan-rigidity.md",
+      "narrative": null,
+      "content": "We gather some Cartan rigidity properties; these were already obtained in an unpublished manuscript by Avsec [@Avsec], where they were proved for any $-1 < q < 1$. Our cohomological properties in the next section are new however. Recall that we assumed that $\\dim(H_{\\mathbb{R}}) < \\infty$.\n\nWe recall that a von Neumann algebra $M$ has the W$^\\ast$CMAP (weak-$\\ast$ complete metric approximation property) if there exists a net $\\Phi_i: M \\rightarrow M$ of completely contractive normal finite rank maps such that for every $x \\in M$ we have $\\Phi_i(x) \\rightarrow x$ $\\sigma$-weakly and $\\limsup_i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.11619v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Derivations and the Akemann-Ostrand property",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-012-5-derivations-and-the-akemann-ostrand-property.md",
+      "narrative": null,
+      "content": "[]{#Sect=AO label=\"Sect=AO\"}\n\nIn this section we show that quantum Markov semi-groups may be used to prove the Akemann-Ostrand property AO$^+$ of a von Neumann algebra. In particular we find a new range of $q$ for which $q$-Gaussians have AO$^+$. Let us first recall the definition of the Akemann-Ostrand property that is most suitable for us, see [@IsonoTransactions].\n\n::: dfn\nA finite von Neumann algebra $M$ has condition AO$^+$ if there exists a $\\sigma$-weakly dense unital C$^\\ast$-subalgebra $A \\subseteq M$ such that:\n\n1.  $A$ is locally reflexive [@NateTaka Section 9];\n\n2.  There exists a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.11619v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Group algebras",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-013-51-group-algebras.md",
+      "narrative": null,
+      "content": "We first consider group von Neumann algebras. This case was (essentially) discussed in [@NateTaka Section 15], but we include all proofs for reader's convenience.\n\nLet $\\Gamma$ be a discrete group. Let $\\pi\\colon \\Gamma \\to \\mathcal{U}(H)$ be a unitary representation and $b\\colon \\Gamma \\to H$ a 1-cocycle for $\\pi$ in the sense that $b(xy)=b(x)+\\pi_xb(y)$ for all $x,y\\in \\Gamma$. Consider left and right actions of $\\Gamma$ on $H\\otimes \\ell^2(\\Gamma)$ given by $\\pi_x \\otimes \\lambda_x$ and $1\\otimes \\rho_y$ for all $x,y\\in \\Gamma$ respectively. Then using the canonical basis $(\\delta_x)_{x\\in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.11619v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Von Neumann algebras with filtration",
+      "pageStart": 19,
+      "pageEnd": 23,
+      "target": "../sections/sec-014-52-von-neumann-algebras-with-filtration.md",
+      "narrative": null,
+      "content": "We fix again $(M, \\tau)$ a finite von Neumann algebra with $(\\Phi_t)_{t \\geq 0} = (\\exp(-t \\Delta))_{t \\geq 0}$ a quantum Markov semi-group. Let $$\\partial: \\mathcal{A}\\rightarrow L_2(M)_\\nabla: a \\mapsto a \\otimes \\Omega_\\tau$$ be the derivation of Corollary [\\[Cor=Derivation\\]](#Cor=Derivation){reference-type=\"ref\" reference=\"Cor=Derivation\"}. We shall assume that $\\Delta$ satisfies certain properties that are close to being a length function.\n\n::: dfn\nWe say that $\\Delta$ is **filtered** if it has a compact resolvent and for every eigenvalue $\\lambda$ of $\\Delta$ there exists a (necessarily",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1905.11619v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-015-references.md",
+      "narrative": null,
+      "content": "[Avs11] S. Avsec, Strong Solidity of the q-Gaussian Algebras for all −1 < q < 1, preprint, arXiv 1110.4918.\n[BoSp91] M. Bozejko, R. Speicher, An example of a generalized Brownian motion, Comm. Math. Phys. 137 (1991),\nno. 3, 519–531.\n[BKS97] M. Bozejko, B. K¨ummerer, R. Speicher, q-Gaussian processes:\nnon-commutative and classical aspects,\nComm. Math. Phys. 185 (1997), no. 1, 129–154.\n[CaEi56] H. Cartan, S. Eilenberg, Homological algebra, Princeton University Press, Princeton, N. J., 1956. xv+390\npp.\n[BrOz08] N. Brown, N. Ozawa, C∗-algebras and ﬁnite-dimensional approximations, Graduate Studies",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

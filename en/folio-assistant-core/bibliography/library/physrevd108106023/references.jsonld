@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/physrevd108106023",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Knot-quiver correspondence for double twist knots",
+      "dcterms:creator": [
+        "Singh, Vivek Kumar"
+      ],
+      "dcterms:issued": "D:20231130",
+      "bibo:doi": "10.1103/PhysRevD.108.106023",
+      "dcterms:identifier": "https://doi.org/10.1103/PhysRevD.108.106023",
+      "dcterms:source": "library/physrevd108106023/manifest.jsonld",
+      "dcterms:hasVersion": "library/physrevd108106023"
+    }
+  ]
+}

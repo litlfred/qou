@@ -1,0 +1,1340 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1811.05376v4",
+  "title": "Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology Spheres",
+  "variant": "pdf",
+  "pages": 40,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Complex Chern-Simons theory on X",
+      "number": "1",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-complex-chern-simons-theory-on-x"
+    },
+    {
+      "level": 2,
+      "title": "The moduli space and complex Chern-Simons values",
+      "number": "1.1",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-the-moduli-space-and-complex-chern-simons-val"
+    },
+    {
+      "level": 1,
+      "title": "The Borel transform and Complex Cherns-Simons",
+      "number": "2",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-the-borel-transform-and-complex-cherns-simons"
+    },
+    {
+      "level": 2,
+      "title": "Resummation of the WRT invariant",
+      "number": "2.1",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-21-resummation-of-the-wrt-invariant"
+    },
+    {
+      "level": 2,
+      "title": "Resurgence of the generating function",
+      "number": "2.2",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-22-resurgence-of-the-generating-function"
+    },
+    {
+      "level": 1,
+      "title": "A resurgence formula for the GPPV invariant",
+      "number": "3",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-3-a-resurgence-formula-for-the-gppv-invariant"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem 3",
+      "number": "3.1",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-31-proof-of-theorem-3"
+    },
+    {
+      "level": 1,
+      "title": "The asymptotic expansion of the GPPV invariant",
+      "number": "4",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-4-the-asymptotic-expansion-of-the-gppv-invariant"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem 4",
+      "number": "4.1",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-41-proof-of-theorem-4"
+    },
+    {
+      "level": 3,
+      "title": "The decomposition of the GPPV invariant",
+      "number": "4.1.1",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-411-the-decomposition-of-the-gppv-invariant"
+    },
+    {
+      "level": 3,
+      "title": "Asymptotic expansions of q-series with periodic coefficients",
+      "number": "4.1.2",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-412-asymptotic-expansions-of-q-series-with-perio"
+    },
+    {
+      "level": 3,
+      "title": "The asymptotic expansion of the GPPV invariant",
+      "number": "4.1.3",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-413-the-asymptotic-expansion-of-the-gppv-invaria"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A Resurgence and resummation",
+      "number": null,
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-appendix-a-resurgence-and-resummation"
+    },
+    {
+      "level": 2,
+      "title": "A.1 Resurgent functions and the Borel transform",
+      "number": null,
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-a1-resurgent-functions-and-the-borel-transform"
+    },
+    {
+      "level": 2,
+      "title": "A.2 Borel-Laplace resummation",
+      "number": null,
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-a2-borel-laplace-resummation"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 5,
+      "labelStart": "1",
+      "labelEnd": "5",
+      "words": 1788,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gppv invariant",
+          "heading": false
+        },
+        {
+          "term": "borel transform",
+          "heading": false
+        },
+        {
+          "term": "seifert ﬁbered",
+          "heading": false
+        },
+        {
+          "term": "radial limit",
+          "heading": false
+        },
+        {
+          "term": "ˆza",
+          "heading": false
+        },
+        {
+          "term": "scs",
+          "heading": false
+        },
+        {
+          "term": "ohtsuki series",
+          "heading": false
+        },
+        {
+          "term": "ﬁbered homology",
+          "heading": false
+        }
+      ],
+      "extract": "Resurgence Analysis of Quantum Invariants of Seifert Fibered Homology Spheres Jørgen Ellegaard Andersen and William Elbæk Mistegård October 26, 2020 Abstract For a Seifert ﬁbered homology sphere X we show that the q-series invariant ˆZ0(X; q) introduced by Gukov-Pei-Putrov-Vafa, is a resummation of the Ohtsuki series Z0(X). We show that for every even k ∈N there exists a full asymptotic expansion of ˆZ0(X; q) for q",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1811.05376v4/blocks/prose-sec-front-matter",
+        "library/arxiv-1811.05376v4/blocks/thm-sec-front-matter-01",
+        "library/arxiv-1811.05376v4/blocks/thm-sec-front-matter-02",
+        "library/arxiv-1811.05376v4/blocks/rem-sec-front-matter-03",
+        "library/arxiv-1811.05376v4/blocks/thm-sec-front-matter-04",
+        "library/arxiv-1811.05376v4/blocks/thm-sec-front-matter-05"
+      ]
+    },
+    {
+      "id": "sec-000-1-complex-chern-simons-theory-on-x",
+      "number": "1",
+      "title": "Complex Chern-Simons theory on X",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 576,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "e2πikθ",
+          "heading": false
+        },
+        {
+          "term": "ezk",
+          "heading": false
+        },
+        {
+          "term": "ekg",
+          "heading": false
+        },
+        {
+          "term": "sinh",
+          "heading": false
+        },
+        {
+          "term": "lawrence",
+          "heading": false
+        },
+        {
+          "term": "chern-simons",
+          "heading": true
+        },
+        {
+          "term": "normalization",
+          "heading": false
+        },
+        {
+          "term": "loss",
+          "heading": false
+        }
+      ],
+      "extract": "Complex Chern-Simons theory on X Let X be the oriented Seifert ﬁbered homology 3-sphere from the introduction. Choose q1, ..., qn ∈ Z such that (pj, qj) = 1 and n X j=1 qj pj = 1 P . Then X has a surgery diagram as depicted in Figure 2 below. Without loss of generality we can p1/q1 p2/q2 p3/q3 pn/qn Figure 2: Surgery link for X. assume that p2, ..., pn are odd. The homeomorphism type of X is unaltered under a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-the-moduli-space-and-complex-chern-simons-val",
+      "number": "1.1",
+      "title": "The moduli space and complex Chern-Simons values",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 15,
+      "labelStart": "6",
+      "labelEnd": "15",
+      "words": 4340,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathrm hskip",
+          "heading": false
+        },
+        {
+          "term": "eqa exp",
+          "heading": false
+        },
+        {
+          "term": "rightarrow mathop",
+          "heading": false
+        },
+        {
+          "term": "subset mathop",
+          "heading": false
+        },
+        {
+          "term": "label eqa",
+          "heading": false
+        },
+        {
+          "term": "mathrm mod",
+          "heading": false
+        },
+        {
+          "term": "chern-simons values",
+          "heading": true
+        }
+      ],
+      "extract": "We now begin our investigation of $\\mathcal{M}(X,\\mathop{\\mathrm{SL}}(2,\\mathbb{C})),$ which closely follows [@FintushelStern90]. We have the following presentation of the fundamental group of $X$ $$\\label{presentation} \\pi_1(X) \\simeq \\left\\langle h, x_1,...,x_n \\mid x_1x_2\\cdots x_n, x_j^{p_j}h^{-q_j}, [x_j,h], j=1,...,n \\right\\rangle.$$ Let us first recall a few of Fintushel and Stern's results concerning the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-the-borel-transform-and-complex-cherns-simons",
+      "number": "2",
+      "title": "The Borel transform and Complex Cherns-Simons",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 17,
+      "labelStart": "15",
+      "labelEnd": "17",
+      "words": 839,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "borel transform",
+          "heading": true
+        },
+        {
+          "term": "mathrm hskip",
+          "heading": false
+        },
+        {
+          "term": "sqrt zeta",
+          "heading": false
+        },
+        {
+          "term": "mathrm theta",
+          "heading": false
+        },
+        {
+          "term": "zeta right",
+          "heading": false
+        },
+        {
+          "term": "zeta left",
+          "heading": false
+        },
+        {
+          "term": "frac sqrt",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:BOREL label=\"sec:BOREL\"} We now provide the proof of Theorem [\\[2.1\\]](#2.1){reference-type=\"ref\" reference=\"2.1\"}. The reader not familiar with the Borel transform $\\mathcal{B}$ and its relation to the Laplace transform is encouraged to read Section [\\[sec:Borel\\]](#sec:Borel){reference-type=\"ref\" reference=\"sec:Borel\"}, before reading the proof of Theorem [\\[2.1\\]](#2.1){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-21-resummation-of-the-wrt-invariant",
+      "number": "2.1",
+      "title": "Resummation of the WRT invariant",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 279,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "theta mathop",
+          "heading": false
+        },
+        {
+          "term": "tilde mathop",
+          "heading": false
+        },
+        {
+          "term": "widetilde mathop",
+          "heading": false
+        },
+        {
+          "term": "mathcal theta",
+          "heading": false
+        },
+        {
+          "term": "mathcal mathbb",
+          "heading": false
+        },
+        {
+          "term": "theta left",
+          "heading": false
+        },
+        {
+          "term": "resummation",
+          "heading": true
+        }
+      ],
+      "extract": "We now turn to the resummation of the normalized WRT invariant $\\tilde{\\mathop{\\mathrm{Z}}}_k(X)$. Recall that for $\\mu \\in \\mathbb{Q}/ \\mathbb{Z}$ we introduced the set $$\\begin{aligned} \\label{R} \\mathcal{T}(\\mu) = & \\{m=1,...,2P -1 :-m^2/4P=\\mu \\ \\mathop{\\mathrm{mod}}\\ \\mathbb{Z} \\}. \\end{aligned}$$ We also introdude the residue operator $\\mathcal{I}_\\mu$ which for a meromorphic function $\\hat{\\varphi}$ is given",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-22-resurgence-of-the-generating-function",
+      "number": "2.2",
+      "title": "Resurgence of the generating function",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 593,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "generating function",
+          "heading": true
+        },
+        {
+          "term": "resurgence",
+          "heading": true
+        },
+        {
+          "term": "e4πiθ",
+          "heading": false
+        },
+        {
+          "term": "negatives",
+          "heading": false
+        },
+        {
+          "term": "analytic continuation",
+          "heading": false
+        },
+        {
+          "term": "polylogarithm",
+          "heading": false
+        },
+        {
+          "term": "chern-simons values",
+          "heading": false
+        },
+        {
+          "term": "germ",
+          "heading": false
+        }
+      ],
+      "extract": "Resurgence of the generating function Let G be a simple, simply connected compact Lie group, and let τG,k be the level k Reshetikhin- Turaev TQFT constructed from the quantum group Uq(g), where g is the complexiﬁcation of the Lie algebra h of G. Let ˇh be the dual Coxeter number of h, and set ˇk = k+h. For a closed oriented three manifold M (possibly containing a colored framed link) we consider the normalized",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-3-a-resurgence-formula-for-the-gppv-invariant",
+      "number": "3",
+      "title": "A resurgence formula for the GPPV invariant",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 555,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deﬁnite plumbing",
+          "heading": false
+        },
+        {
+          "term": "plumbing graph",
+          "heading": false
+        },
+        {
+          "term": "plumbed manifold",
+          "heading": false
+        },
+        {
+          "term": "gppv",
+          "heading": true
+        },
+        {
+          "term": "mzs",
+          "heading": false
+        },
+        {
+          "term": "spinc",
+          "heading": false
+        },
+        {
+          "term": "neumann moves",
+          "heading": false
+        },
+        {
+          "term": "spinc-structures",
+          "heading": false
+        }
+      ],
+      "extract": "A resurgence formula for the GPPV invariant We now turn to the q-series invariant ˆZ0(X, q). We follow [28]. Let (Γ, m) be an ordered weighted tree, i.e. Γ is a tree together with an ordering of its set of vertices V and m is a map m : V →Z. Set s = |V | and let M = M(Γ, m) be the s × s matrix with entries given by Mi,j =      mv if vi = vj = v, 1 if vi and vj are joined by an edge, 0 otherwise. We say M is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-31-proof-of-theorem-3",
+      "number": "3.1",
+      "title": "Proof of Theorem 3",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 26,
+      "labelStart": "20",
+      "labelEnd": "26",
+      "words": 2248,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mock modular",
+          "heading": false
+        },
+        {
+          "term": "false modular",
+          "heading": false
+        },
+        {
+          "term": "so-called false",
+          "heading": false
+        },
+        {
+          "term": "quantum modular",
+          "heading": false
+        },
+        {
+          "term": "modular form",
+          "heading": false
+        },
+        {
+          "term": "q-series invariant",
+          "heading": false
+        },
+        {
+          "term": "resummation",
+          "heading": false
+        },
+        {
+          "term": "linear combination",
+          "heading": false
+        }
+      ],
+      "extract": "Proof of Theorem 3 We now consider X = Σ(p1, ..., pn) in more detail. Choose q1, ..., qn ∈N such that for each j = 1, ..., n we have (pj, qj) = 1, pj ≤qj and p0 := −1 P − X j=1 qj pj ∈Z<0. Then e = −1/P < 0 is the Seifert Euler number. Choose a continued fraction expansion of qj/pj for each j = 1, ..., n qj pj = kj,1 − 1 kj,2 − 1 ...−kj,sj . p0 −k2,1 −k2,s2 −k2,2 −k1,1 −k1,2 −k1,s1 −k3,1 −k3,2 −k3,s3 Figure 3:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-4-the-asymptotic-expansion-of-the-gppv-invariant",
+      "number": "4",
+      "title": "The asymptotic expansion of the GPPV invariant",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "26",
+      "labelEnd": "27",
+      "words": 359,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gppv invariant",
+          "heading": true
+        },
+        {
+          "term": "ˆzk",
+          "heading": false
+        },
+        {
+          "term": "ˆza",
+          "heading": false
+        },
+        {
+          "term": "wrt invariant",
+          "heading": false
+        },
+        {
+          "term": "radial limit",
+          "heading": false
+        },
+        {
+          "term": "unit disc",
+          "heading": false
+        },
+        {
+          "term": "zcs",
+          "heading": false
+        }
+      ],
+      "extract": "The asymptotic expansion of the GPPV invariant The invention of ˆZ was party motivated by an attempt to generalize the following discovery of Lawrence and Zagier. Set qk = exp(2πi/k). For n = 3 they proved in [40] the identity (for some σ ∈Q) τk (Σ(p1, p2, p3)) (qk −1)qσ k = −1 2 lim q→qk ∞ X m=m0 χmq m2 4P . For a closed oriented 3-manifold Y consider the normalized WRT invariant ZCS(Y ; k) = τk(Y ) τk(S2 × S1). We",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-41-proof-of-theorem-4",
+      "number": "4.1",
+      "title": "Proof of Theorem 4",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 27,
+      "labelStart": "27",
+      "labelEnd": "27",
+      "words": 126,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "e2πiτ",
+          "heading": false
+        },
+        {
+          "term": "residue",
+          "heading": false
+        },
+        {
+          "term": "q-series",
+          "heading": false
+        }
+      ],
+      "extract": "Proof of Theorem 4 To simplify notation, we write ˆZ0(X; q) = ˆZ(q). Recall the decomposition (16) of the normalized quantum invariant ˜Zk(X) into an integral part ZI and a residue part ZR. In Lemma 1 we prove the existence of an analogous decomposition for ˆZ0(q) into a Laplace integral part L and a residue part R q∆ˆZ0(q) = L(τ) + R(τ), (60) where we recall that q = e2πiτ. We present in Proposition 13 a standard",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-411-the-decomposition-of-the-gppv-invariant",
+      "number": "4.1.1",
+      "title": "The decomposition of the GPPV invariant",
+      "level": 3,
+      "pageStart": 27,
+      "pageEnd": 31,
+      "labelStart": "27",
+      "labelEnd": "31",
+      "words": 1217,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm hskip",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "mathcal mathop",
+          "heading": false
+        },
+        {
+          "term": "tau mathcal",
+          "heading": false
+        },
+        {
+          "term": "hat mathop",
+          "heading": false
+        },
+        {
+          "term": "tau int",
+          "heading": false
+        },
+        {
+          "term": "infty mathop",
+          "heading": false
+        },
+        {
+          "term": "frac tau",
+          "heading": false
+        }
+      ],
+      "extract": "Recall that $q=\\exp(2 \\pi i \\tau)$ with $\\tau \\in \\mathfrak{h}$ where $\\mathfrak{h}$ denotes the upper half plane, and recall the definitions of $F \\in \\mathcal{M}(\\mathbb{C})$ and $g \\in \\mathbb{C}[x]$ given in [\\[def:F\\]](#def:F){reference-type=\"eqref\" reference=\"def:F\"}. Let $\\tilde\\Gamma_+ = e^{\\frac{\\pi i}{4}}$. ::: lemma []{#Lemmaet label=\"Lemmaet\"} Introduce the holomorphic functions $\\mathcal{L},R \\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-412-asymptotic-expansions-of-q-series-with-perio",
+      "number": "4.1.2",
+      "title": "Asymptotic expansions of q-series with periodic coefficients",
+      "level": 3,
+      "pageStart": 31,
+      "pageEnd": 33,
+      "labelStart": "31",
+      "labelEnd": "33",
+      "words": 581,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "asymptotic expansions",
+          "heading": true
+        },
+        {
+          "term": "πim",
+          "heading": false
+        },
+        {
+          "term": "ekg",
+          "heading": false
+        },
+        {
+          "term": "periodic",
+          "heading": true
+        },
+        {
+          "term": "πip",
+          "heading": false
+        },
+        {
+          "term": "l-series",
+          "heading": false
+        },
+        {
+          "term": "q2j",
+          "heading": false
+        },
+        {
+          "term": "analytic extension",
+          "heading": false
+        }
+      ],
+      "extract": "Asymptotic expansions of q-series with periodic coeﬃcients Let Bm(x) denote the m-th Bernoulli polynomial, i.e. tetx et −1 = ∞ X m=0 Bm(x) m! tm. (74) We recall the following result. Proposition 13 ([31, 40]). Let C : Z →C be a periodic function with period M and mean value equal to zero M X m=1 C(n) = 0. Consider the L-series L(s, C), which for ℜ(s) > 1 is deﬁned by L(s, C) = ∞ X m=1 C(m) ms . This L-series admits",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-413-the-asymptotic-expansion-of-the-gppv-invaria",
+      "number": "4.1.3",
+      "title": "The asymptotic expansion of the GPPV invariant",
+      "level": 3,
+      "pageStart": 33,
+      "pageEnd": 36,
+      "labelStart": "33",
+      "labelEnd": "36",
+      "words": 1087,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "πim",
+          "heading": false
+        },
+        {
+          "term": "asymptotic expansion",
+          "heading": true
+        },
+        {
+          "term": "b2r",
+          "heading": false
+        },
+        {
+          "term": "ˇzθ",
+          "heading": false
+        },
+        {
+          "term": "csc",
+          "heading": false
+        },
+        {
+          "term": "gppv",
+          "heading": true
+        },
+        {
+          "term": "πiθ",
+          "heading": false
+        },
+        {
+          "term": "umv",
+          "heading": false
+        }
+      ],
+      "extract": "The asymptotic expansion of the GPPV invariant Recall the deﬁnition the functions F and g given in (15). Let m ∈N. For y close to 2πim we use the notation of Propositon 14 and write F(y) = n−2 X j=1 fj(m)(y −2πim)−j + reg., where each fj : Z →C is 2P-periodic. For each l ∈N there exists a uniquely determined polynomial Pl(x, y) ∈Q[πi, x, y] such that 1 l! ∂leg(y)/τ ∂yl (2πim) = eg(2πim)/τPl(τ −1, m). (79) There",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-appendix-a-resurgence-and-resummation",
+      "number": null,
+      "title": "Appendix A Resurgence and resummation",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 36,
+      "labelStart": "36",
+      "labelEnd": "36",
+      "words": 3,
+      "summary": null,
+      "keywords": [],
+      "extract": "Resurgence and resummation",
+      "extractCut": false
+    },
+    {
+      "id": "sec-013-a1-resurgent-functions-and-the-borel-transform",
+      "number": null,
+      "title": "A.1 Resurgent functions and the Borel transform",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 36,
+      "labelStart": "36",
+      "labelEnd": "36",
+      "words": 194,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "borel transform",
+          "heading": true
+        },
+        {
+          "term": "resurgent functions",
+          "heading": true
+        },
+        {
+          "term": "tilde varphi",
+          "heading": false
+        },
+        {
+          "term": "infty sequence",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "resurgence",
+          "heading": false
+        },
+        {
+          "term": "sum infty",
+          "heading": false
+        },
+        {
+          "term": "def",
+          "heading": false
+        }
+      ],
+      "extract": "The theory of resurgence was originally developed by Écalle in [@Ecalle81a] and [@Ecalle81b]. See [@MitschiSauzin16] for an introduction to the mathematical theory of resurgence and see [@DunneUnsal15] for an introduction to the general use of resurgence in quantum field theory. Garoufalidis [@Garoufalidis08] and Witten [@Witten11] where the pioneers of the use of resurgence in quantum Chern-Simons theory. :::",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-a2-borel-laplace-resummation",
+      "number": null,
+      "title": "A.2 Borel-Laplace resummation",
+      "level": 2,
+      "pageStart": 36,
+      "pageEnd": 40,
+      "labelStart": "36",
+      "labelEnd": "40",
+      "words": 1781,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arxiv e-prints",
+          "heading": false
+        },
+        {
+          "term": "borel-laplace resummation",
+          "heading": true
+        },
+        {
+          "term": "elbæk mistegård",
+          "heading": false
+        },
+        {
+          "term": "kazuhiro hikami",
+          "heading": false
+        },
+        {
+          "term": "antun milas",
+          "heading": false
+        },
+        {
+          "term": "page arxiv",
+          "heading": false
+        },
+        {
+          "term": "kathrin bringmann",
+          "heading": false
+        },
+        {
+          "term": "mathématiques orsay",
+          "heading": false
+        }
+      ],
+      "extract": "Borel-Laplace resummation We now discuss in more detail the relation between the Borel transform B and the Laplace trans- form, which we now introduce. Let γ ⊂C be an oriented contour. Let g be a measurable function deﬁned in a neighbourhood of γ. Denote by Lγ(g) the Laplace transform given by Lγ(g)(λ) = Z γ exp(−λ · z)g(z) dz, (88) for all ζ ∈C such that the integral is absolutely convergent. Here we think of λ",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mathop mathrm",
+      "heading": false
+    },
+    {
+      "term": "mathcal mathop",
+      "heading": false
+    },
+    {
+      "term": "mathrm hskip",
+      "heading": false
+    },
+    {
+      "term": "tilde mathop",
+      "heading": false
+    },
+    {
+      "term": "theta mathop",
+      "heading": false
+    },
+    {
+      "term": "rightarrow mathop",
+      "heading": false
+    },
+    {
+      "term": "mathrm res",
+      "heading": false
+    },
+    {
+      "term": "infty mathop",
+      "heading": false
+    },
+    {
+      "term": "subset mathop",
+      "heading": false
+    },
+    {
+      "term": "hat mathop",
+      "heading": false
+    },
+    {
+      "term": "exp left",
+      "heading": false
+    },
+    {
+      "term": "int exp",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The integration contour Γ = Γ+ + Γ−",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Surgery link for X. assume that p2, ..., pn are odd. The homeomorphism type of X is unaltered under a transformation",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Plumbing graph for X in the case n = 3",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The contour ∆m. through the unique saddle point of a degree two polynomial p(z) = −αz2 + βz, then we have the",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The contours Υ and ∆0",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Analytic extension of τk(M)",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Set L = L+ ∪L−",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 15,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 16,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "7 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p36); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 10
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 16 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1811.05376v4"
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1912.13486v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1912.13486v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Index for a Model of 3d-3d Correspondence for\nPlumbed 3-Manifolds\nHee-Joong Chung\nYau Mathematical Sciences Center, Tsinghua University, Beijing 100084, China\nAbstract: We consider the S2 ×q S1 supersymmetric index of a 3d N = 2 theory T[M3]\nwhen M3 is a plumbed 3-manifold. We engineer an eﬀective description of T[M3] from\nthe expression of the homological block for plumbed 3-manifolds as a D2 ×q S1 partition\nfunction of a 3d N = 2 theory T[M3] with a boundary condition.\nWe check that the\nsupersymmetric index for such a T[M3] is invariant under the 3d Kirby moves.\narXiv:1912.13486v2  [hep-th]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1912.13486v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The categorification of the Witten-Reshetikhin-Turaev (WRT) invariants for closed 3-manifolds has not been known. This is because firstly the integrality for the WRT invariants was not obvious. However, recently, a conjecture in [@Gukov-Putrov-Vafa; @Gukov-Pei-Putrov-Vafa] states that the WRT invariant can be expressed in a specific way in terms of the $q$-series with integer powers and integer coefficients, which would allow the categorification. These $q$-series invariants were called the homological block in [@Gukov-Putrov-Vafa; @Gukov-Pei-Putrov-Vafa].[^1]\n\nVia the 3d-3d correspondence, th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1912.13486v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Supersymmetric index on S2 q S1 and factorization",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-supersymmetric-index-on-s2-q-s1-and-factorizat.md",
+      "narrative": null,
+      "content": "We discuss the index and its factorization that are relevant to later discussion. We also review the lens space theory, which is a well known example in the context of the homological block and the index.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1912.13486v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Supersymmetric index, factorization, and D2 q S1 partition function",
+      "pageStart": 3,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-21-supersymmetric-index-factorization-and-d2-q-s.md",
+      "narrative": null,
+      "content": "[]{#ssec:factorization label=\"ssec:factorization\"}\n\nWe begin with a brief review on the formula for the index of the 3d $\\mathcal{N}=2$ theory with a Lagrangian description at the UV.\n\n### Supersymmetric index on $S^2 \\times_q S^1$\n\nThe supersymmetric index on $S^2 \\times_q S^1$ with fugacities for flavor symmetries turned on was obtained in [@Kapustin-Willett] based on [@KimS; @Imamura-Yokoyama]. The 1-loop contributions from the vector multiplet and the chiral mutiplet are $$\\begin{aligned}\nI_{\\text{vect}} (z =e^{i h }, m , q) &= \\prod_{\\alpha \\in \\Delta_G } q^{-\\frac{1}{4} | \\alpha(s) |} (1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1912.13486v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Analysis on homological block and index of lens space theory",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-003-22-analysis-on-homological-block-and-index-of-le.md",
+      "narrative": null,
+      "content": "When the 3-manifold is a lens space $M_3 = L(p,1) \\simeq S^3/\\mathbb{Z}_p$, the corresponding 3d $\\mathcal{N}=2$ theory $T[L(p,1)]$ has been discussed in [@Gadde-Gukov-Putrov-4manifold; @Chung-Dimofte-Gukov-Sulkowski; @Gukov-Pei] and more recently in [@Gukov-Putrov-Vafa; @Gukov-Pei-Putrov-Vafa] in the context of homological blocks. Since our analysis for the plumbed 3-manifolds can be regarded as an extrapolation of this example, we study the homological block and the index of the lens space theory in detail.\\\nThe 3d $\\mathcal{N}=2$ theory $T[L(p,1), U(N)]$ (resp. $T[L(p,1), SU(N)]$) correspon",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1912.13486v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Supersymmetric index of a 3d N=2 theory on S2 q S1 for plumbed 3-manifolds",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-3-supersymmetric-index-of-a-3d-n2-theory-on-s2-q.md",
+      "narrative": null,
+      "content": "In this section, we would like to extend the discussion above to the case of plumbed 3-manifolds. After having an effective description of a 3d $\\mathcal{N}=2$ theory $T[M_3]$ for a plumbing graph from the homological blocks, we obtain the index of $T[M_3]$ and discuss the invariance of it under the 3d Kirby moves. We also give some remarks on the topologically twisted index of $T[M_3]$ on $S^2 \\times_q S^1$.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1912.13486v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Engineering a 3d N=2 theory T[M3] from homological blocks",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "../sections/sec-005-31-engineering-a-3d-n2-theory-tm3-from-homologic.md",
+      "narrative": null,
+      "content": "We consider the case $G=SU(2)$ with $t$ turned off. The homological block for a plumbed 3-manifold with $G=SU(2)$ [@Gukov-Pei-Putrov-Vafa; @Gukov-Manolescu] is given by $$\\begin{aligned}\n\\widehat{Z}_b (q) = (-1)^{\\pi} q^{\\frac{1}{4}(3 \\sigma - \\sum_v w_v)} \\text{ v.p.} \\oint_{|s_v|=1} \\prod_{v \\in \\text{Vertices}} \\frac{ds_v}{2\\pi i s_v} (s_v - s_v^{-1})^{2- \\text{deg}(v)} \\Theta_b^{-M}(\\vec{s}) \\label{plmb-orig}\n\\end{aligned}$$ where $$\\begin{aligned}\n\\Theta_b^{-M}(\\vec{s}) = \\sum_{\\vec{l} \\in 2 M \\mathbb{Z}^L + \\vec{b}} q^{-\\frac{1}{4} (\\vec{l}, M^{-1} \\vec{l} )} \\prod_{v \\in \\text{Vertices}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1912.13486v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Index for an effective description of T[M3]",
+      "pageStart": 14,
+      "pageEnd": 21,
+      "target": "../sections/sec-006-32-index-for-an-effective-description-of-tm3.md",
+      "narrative": null,
+      "content": "Index for an eﬀective description of T[M3]\nFrom the calculations above, with t = 1 we would have\nplumbing graph\nhomological block\nindex\neﬀective description\nv ∈vertex\n⇝\n(zv −z−1\nv )2\n⇝\n∥(zv −z−1\nv )∥2\nid\nVN , Φ+\nR=2,D\n(v1, v2) ∈edge ⇝(zv1 −z−1\nv1 )−1(zv2 −z−1\nv2 )−1 ⇝\n∥(zv1 −z−1\nv1 )(zv2 −z−1\nv2 )∥−2\nid\nΦ−\nR=0,D , Φ0\nR=0,N\n−Mv,v′\n⇝\nΘ−M\nb\n(⃗s; q)\n⇝z−2Mv,vmv\nv\nor (zmv′\nv\nzmv\nv′ )−2Mv,v′\nCS levels −Mv,v′\n(3.5)\nThe S2 ×q S1 index is given by\nISU(2) =\nX\nm∈Z\nI\n|zv|=1\nY\nv∈Vertices\ndzv\n2πizv\n\n(sv −s−1\nv )2\n\n2\nid z−2Mv,vmv\nv\n×\nY\n(v1,v2)∈Edges\n\n1\n(sv1 −s−1\nv1 )\n1\n(sv2 −s−1\nv2 )\n\n2\nid\n(z\nmv2\nv1\nz\nmv1\nv2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

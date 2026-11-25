@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-categorical-quantity-map",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:categorical-quantity-map",
+  "kind": "remark",
+  "title": "Categorical quantity map: mass, Q-value, decay rate, density",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-action"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-categorical-action",
+  "tags": [
+    "mass",
+    "q-value",
+    "decay-rate",
+    "density",
+    "functional-map"
+  ],
+  "text": "categorical-quantity-map.md",
+  "provenance": "authored"
+}

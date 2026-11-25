@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1110.6212v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "On calibrated representations and the Plancherel Theorem f or affine Hecke algebras James Parkinson ∗",
+      "dcterms:creator": [
+        "November 28, 2013"
+      ],
+      "dcterms:issued": "D:20181120",
+      "dcterms:identifier": "https://arxiv.org/abs/1110.6212",
+      "dcterms:abstract": "This paper has two main purposes. Firstly we generalise Ram’s combina torial construc- tion [23] of calibrated representations of the aﬃne Hecke algebra t o the multi-parameter case (including the non-reduced BCn case). We then derive the Plancherel formulae for all rank 1 and rank 2 aﬃne Hecke algebras, using our calibrated repres entations to construct all representations involved.",
+      "dcterms:source": "library/arxiv-1110.6212v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1110.6212v2"
+    }
+  ]
+}

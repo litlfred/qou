@@ -1,0 +1,1156 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1112.0030v2",
+  "title": "Homological Algebra of Knots and BPS States",
+  "variant": "pdf",
+  "pages": 46,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Setting the stage",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-setting-the-stage"
+    },
+    {
+      "level": 1,
+      "title": "Algebra of BPS states and its representations",
+      "number": "2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-algebra-of-bps-states-and-its-representations"
+    },
+    {
+      "level": 1,
+      "title": "B-model and matrix factorizations",
+      "number": "3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-b-model-and-matrix-factorizations"
+    },
+    {
+      "level": 1,
+      "title": "Colored HOMFLY homology",
+      "number": "4",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-colored-homfly-homology"
+    },
+    {
+      "level": 1,
+      "title": "Mirror symmetry for knots",
+      "number": "5",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-mirror-symmetry-for-knots"
+    },
+    {
+      "level": 1,
+      "title": "Unreduced colored HOMFLY homology",
+      "number": "6",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-6-unreduced-colored-homfly-homology"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. Notations",
+      "number": null,
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-appendix-a-notations"
+    },
+    {
+      "level": 1,
+      "title": "Appendix B. Kauffman and S2 homologies of the knots 819 and 942",
+      "number": null,
+      "page": 37,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-appendix-b-kauffman-and-s2-homologies-of-the-kno"
+    },
+    {
+      "level": 1,
+      "title": "Appendix C. H3 homology of the figure-eight knot",
+      "number": null,
+      "page": 41,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-appendix-c-h3-homology-of-the-figure-eight-knot"
+    },
+    {
+      "level": 1,
+      "title": "Appendix D. Computation of the unreduced homology of the unknot",
+      "number": null,
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-appendix-d-computation-of-the-unreduced-homology"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 137,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bps states",
+          "heading": false
+        },
+        {
+          "term": "open bps",
+          "heading": false
+        },
+        {
+          "term": "knot homologies",
+          "heading": false
+        },
+        {
+          "term": "colored",
+          "heading": false
+        },
+        {
+          "term": "categoriﬁes",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1112.0030v2 [hep-th] 15 Mar 2012 Homological algebra of knots and BPS states Sergei Gukov and Marko Stoˇsi´c Abstract. It is known that knot homologies admit a physical description as spaces of open BPS states. We study operators and algebras acting on these spaces. This leads to a very rich story, which involves wall crossing phenomena, algebras of closed BPS states acting on spaces of open BPS states, and",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1112.0030v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-setting-the-stage",
+      "number": "1",
+      "title": "Setting the stage",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": "7",
+      "words": 2709,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "triply-graded homology",
+          "heading": false
+        },
+        {
+          "term": "eqref theorya",
+          "heading": false
+        },
+        {
+          "term": "eqref theoryb",
+          "heading": false
+        },
+        {
+          "term": "eqref hhbps",
+          "heading": false
+        },
+        {
+          "term": "eqref mirwild",
+          "heading": false
+        },
+        {
+          "term": "triply-graded knot",
+          "heading": false
+        },
+        {
+          "term": "triply-graded theories",
+          "heading": false
+        },
+        {
+          "term": "text bps",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:intro} Quantum knot invariants were introduced in 1980's \\cite{RT,Witt}: for every representation $R$ of a Lie algebra $\\g$, one can define a polynomial invariant $\\bar{P}^{\\g,R}(K)$ of a knot $K$. Its {\\it reduced} version is \\be {P}^{\\g,R}(K) \\; = \\; \\frac{\\bar{P}^{\\g,R}(K)}{\\bar{P}^{\\g,R}({\\,\\raisebox{-.08cm}{\\includegraphics[width=.4cm]{unknot}}\\,})} \\,, \\ee where",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-algebra-of-bps-states-and-its-representations",
+      "number": "2",
+      "title": "Algebra of BPS states and its representations",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 10,
+      "labelStart": "7",
+      "labelEnd": "10",
+      "words": 1278,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bps states",
+          "heading": true
+        },
+        {
+          "term": "bps text",
+          "heading": false
+        },
+        {
+          "term": "open bps",
+          "heading": false
+        },
+        {
+          "term": "closed bps",
+          "heading": false
+        },
+        {
+          "term": "text fragments",
+          "heading": false
+        },
+        {
+          "term": "text refined",
+          "heading": false
+        },
+        {
+          "term": "text grading",
+          "heading": false
+        },
+        {
+          "term": "charge gamma",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:algebra} Differentials in knot homology form a part of a larger algebraic structure that has an elegant interpretation in the geometric / physical framework. Because this algebraic structure has analogs in more general string / M-theory compactifications, in this section we shall consider aspects of such structure for an arbitrary Calabi-Yau 3-fold $X$ with extra branes supported on a general Lagrangian",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-b-model-and-matrix-factorizations",
+      "number": "3",
+      "title": "B-model and matrix factorizations",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 15,
+      "labelStart": "10",
+      "labelEnd": "15",
+      "words": 2262,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "potential frak",
+          "heading": false
+        },
+        {
+          "term": "deg frak",
+          "heading": false
+        },
+        {
+          "term": "intersecting d3-branes",
+          "heading": false
+        },
+        {
+          "term": "algebra frak",
+          "heading": false
+        },
+        {
+          "term": "representation tableau",
+          "heading": false
+        },
+        {
+          "term": "colored differentials",
+          "heading": false
+        },
+        {
+          "term": "canceling differentials",
+          "heading": false
+        },
+        {
+          "term": "eqref theorya",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:matrix} Let us denote by $\\CH^{\\frak{g}, R}$ a homology theory of knots and links colored by a representation $R$ of the Lie algebra $\\frak{g}$. Many such homology theories can be constructed using categories of matrix factorizations \\cite{KRa,KRfoam,KRb,Khov,KRso,MSV,Yonezawa,Wu}. In this approach, one of the main ingredients is a polynomial function $W_{\\frak{g},R}$ called the {\\it potential},",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-colored-homfly-homology",
+      "number": "4",
+      "title": "Colored HOMFLY homology",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 25,
+      "labelStart": "15",
+      "labelEnd": "25",
+      "words": 4401,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored homology",
+          "heading": true
+        },
+        {
+          "term": "canceling differentials",
+          "heading": false
+        },
+        {
+          "term": "triply-graded homology",
+          "heading": false
+        },
+        {
+          "term": "triply-graded theory",
+          "heading": false
+        },
+        {
+          "term": "eqnarray deg",
+          "heading": false
+        },
+        {
+          "term": "kauffman homology",
+          "heading": false
+        },
+        {
+          "term": "grading conventions",
+          "heading": false
+        },
+        {
+          "term": "homology cite",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:reduced} In this section we propose structural properties of the triply-graded theory categorifying the colored version of the reduced HOMFLY polynomial. The central role in this intricate network of structural properties belongs to the colored differentials, whose existence we already motivated in the previous sections. \\subsection{Structural properties} Let $N$ and $r$ be positive integers, and let",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-mirror-symmetry-for-knots",
+      "number": "5",
+      "title": "Mirror symmetry for knots",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 30,
+      "labelStart": "25",
+      "labelEnd": "30",
+      "words": 2028,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mirror symmetry",
+          "heading": true
+        },
+        {
+          "term": "canceling differentials",
+          "heading": false
+        },
+        {
+          "term": "colored differentials",
+          "heading": false
+        },
+        {
+          "term": "differential tableau",
+          "heading": false
+        },
+        {
+          "term": "ref mirsym",
+          "heading": false
+        },
+        {
+          "term": "anti-symmetric homology",
+          "heading": false
+        },
+        {
+          "term": "triply-graded homology",
+          "heading": false
+        },
+        {
+          "term": "label mirsym",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:mirror} In this section, we observe a remarkable ``mirror symmetry'' relation \\eqref{mirwild} between two completely different triply-graded homology theories associated with symmetric and anti-symmetric representations of $sl(N)$, which will allow us to formulate even a bigger theory that will contain both. As a first step, however, we need to extend the discussion in section \\ref{sec:reduced} to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-unreduced-colored-homfly-homology",
+      "number": "6",
+      "title": "Unreduced colored HOMFLY homology",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 36,
+      "labelStart": "30",
+      "labelEnd": "36",
+      "words": 2527,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unreduced colored",
+          "heading": true
+        },
+        {
+          "term": "colored homology",
+          "heading": true
+        },
+        {
+          "term": "unreduced superpolynomial",
+          "heading": false
+        },
+        {
+          "term": "array r-j",
+          "heading": false
+        },
+        {
+          "term": "unknot colored",
+          "heading": false
+        },
+        {
+          "term": "varphi bar",
+          "heading": false
+        },
+        {
+          "term": "array lambda",
+          "heading": false
+        },
+        {
+          "term": "varphi emptyset",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:unreduced} Here we compute the unreduced colored superpolynomial and the colored HOMFLY polynomial of the unknot and the Hopf link by using the refined topological vertex approach from \\cite{GIKV}. The formulas obtained there are partition functions, presented in the form of the quotient of two infinite series. Below we find the explicit closed form expressions for the unreduced $S^r$-colored HOMFLY",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-appendix-a-notations",
+      "number": null,
+      "title": "Appendix A. Notations",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 37,
+      "labelStart": "36",
+      "labelEnd": null,
+      "words": 352,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dim hsr",
+          "heading": false
+        },
+        {
+          "term": "psr",
+          "heading": false
+        },
+        {
+          "term": "hsl",
+          "heading": false
+        },
+        {
+          "term": "r-th symmetric",
+          "heading": false
+        },
+        {
+          "term": "two-variable colored",
+          "heading": false
+        },
+        {
+          "term": "poincar polynomial",
+          "heading": false
+        }
+      ],
+      "extract": "K denotes a knot. denotes the unknot. For every positive integer r we have: • P Sr N (K)(q) or P r z }| { · · · N (K)(q) denotes the unreduced one-variable polynomial quantum invariant of K, labelled with the r-th symmetric representation of sl(N). • P Sr N (K)(q) or P r z }| { · · · N (K)(q) denotes the reduced (a.k.a. normalized) one- variable polynomial quantum invariant of K, labeled by the r-th symmetric rep-",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-appendix-b-kauffman-and-s2-homologies-of-the-kno",
+      "number": null,
+      "title": "Appendix B. Kauffman and S2 homologies of the knots 819 and 942",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 41,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1853,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "canceling diﬀerentials",
+          "heading": false
+        },
+        {
+          "term": "kauﬀman homologies",
+          "heading": false
+        },
+        {
+          "term": "kauﬀman homology",
+          "heading": false
+        },
+        {
+          "term": "triply-graded homology",
+          "heading": false
+        },
+        {
+          "term": "q2t q4t",
+          "heading": false
+        },
+        {
+          "term": "q4t q6t",
+          "heading": false
+        },
+        {
+          "term": "kauﬀman polynomial",
+          "heading": false
+        },
+        {
+          "term": "exist canceling",
+          "heading": false
+        }
+      ],
+      "extract": "(B.1) P (942)(a, q, t) = a(q−1t2+qt4)+(q−2t−1+1+2t+q2t3)+a−1(q−1t−2+q). In particular, the reduced sl(2) Khovanov homology of 942 is: Kh(942)(q, t) = P (942)(a = q2, q, t) = The S invariant is S(942) = 0. Moreover, the δ-grading of a generator x of the homology H (K) in our conventions is given by: δ(x) = t(x) −2a(x) −q(x). HOMOLOGICAL ALGEBRA OF KNOTS AND BPS STATES 37 N (K)(q) . • The corresponding polynomials and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-appendix-c-h3-homology-of-the-figure-eight-knot",
+      "number": null,
+      "title": "Appendix C. H3 homology of the figure-eight knot",
+      "level": 1,
+      "pageStart": 41,
+      "pageEnd": 42,
+      "labelStart": null,
+      "labelEnd": "42",
+      "words": 232,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "canceling diﬀerential",
+          "heading": false
+        },
+        {
+          "term": "leaving a0q0t",
+          "heading": false
+        },
+        {
+          "term": "colored diﬀerential",
+          "heading": false
+        }
+      ],
+      "extract": "The Poincare polynomial of the H3 homology of the ﬁgure-eight knot 41 is given by: P3(41) = P (41) = 1 + (1 + a−1qt−1)(1 + a−1t−1)(1 + a−1q−1t−1) × ×(1 + a−1q−3t−3)(1 + a−1q−4t−3)(1 + a−1q−5t−3)a3q6t6 + +(1 + q + q2)(1 + a−1qt−1)(1 + a−1q−3t−3)at2 + +(1 + q + q2)(1 + a−1qt−1)(1 + a−1t−1)(1 + a−1q−3t−3)(1 + a−1q−4t−3)a2q2t4. This homology categoriﬁes the -colored HOMFLY polynomial of 41; P3(41)(a, q, t = −1) = P",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-appendix-d-computation-of-the-unreduced-homology",
+      "number": null,
+      "title": "Appendix D. Computation of the unreduced homology of the unknot",
+      "level": 1,
+      "pageStart": 42,
+      "pageEnd": 44,
+      "labelStart": "42",
+      "labelEnd": "44",
+      "words": 607,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "unknot",
+          "heading": true
+        },
+        {
+          "term": "specialization",
+          "heading": false
+        },
+        {
+          "term": "partition",
+          "heading": false
+        },
+        {
+          "term": "colored",
+          "heading": false
+        },
+        {
+          "term": "polynomial",
+          "heading": false
+        },
+        {
+          "term": "deﬁne",
+          "heading": false
+        }
+      ],
+      "extract": "For a nonnegative integer N we deﬁne the quantum dimension [N] to be [N] = qN −q−N q −q−1 . Also [N]! = [N][N −1] . . . [1] , and \u0014N k \u0015 = [N][N −1] . . . [N −k + 1] [k]! . For a partition λ = (λ1, λ2, . . .), we set: |λ| = X i λi, n(λ) = X i (i −1)λi, m(λ) = X i iλi, ||λ||2 = X i λ2 i . By λt, we denote the dual (conjugate) partition of λ. We have m(λ) = n(λ) + |λ|, 2m(λ) = ||λt||2 + |λ|. HOMOLOGICAL ALGEBRA OF",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 44,
+      "pageEnd": 46,
+      "labelStart": "44",
+      "labelEnd": null,
+      "words": 1077,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "landau-ginzburg models",
+          "heading": false
+        },
+        {
+          "term": "motivic donaldson-thomas",
+          "heading": false
+        },
+        {
+          "term": "link homology",
+          "heading": false
+        },
+        {
+          "term": "hep-th",
+          "heading": false
+        },
+        {
+          "term": "arxiv",
+          "heading": false
+        },
+        {
+          "term": "donaldson-thomas invariants",
+          "heading": false
+        },
+        {
+          "term": "wzw models",
+          "heading": false
+        },
+        {
+          "term": "wall crossing",
+          "heading": false
+        }
+      ],
+      "extract": "[1] N. Reshetikhin, V. Turaev, Invariants of 3-manifolds via link polynomials and quantum groups, Invent. Math. 103 (1) (1991), 547–597. [2] E. Witten, Quantum ﬁeld theory and Jones polynomial, Commun. Math. Phys. 121 (1989), 351–399. [3] N. M. Dunﬁeld, S. Gukov, J. Rasmussen, The Superpolynomial for Knot Homologies, Exper- iment. Math. 15 (2006) 129, math.gt/0505662, 44pp. [4] S. Gukov, A. S. Schwarz, C. Vafa,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Setting the stage"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "triply-graded homology",
+      "heading": false
+    },
+    {
+      "term": "triply-graded colored",
+      "heading": false
+    },
+    {
+      "term": "triply-graded homologies",
+      "heading": false
+    },
+    {
+      "term": "colored differentials",
+      "heading": false
+    },
+    {
+      "term": "triply-graded knot",
+      "heading": false
+    },
+    {
+      "term": "anti-symmetric homology",
+      "heading": false
+    },
+    {
+      "term": "canceling differentials",
+      "heading": false
+    },
+    {
+      "term": "unreduced triply-graded",
+      "heading": false
+    },
+    {
+      "term": "colored superpolynomial",
+      "heading": true
+    },
+    {
+      "term": "unknot colored",
+      "heading": false
+    },
+    {
+      "term": "triply-graded theories",
+      "heading": false
+    },
+    {
+      "term": "triply-graded theory",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "For the conifold X, the space of stability conditions is one-dimensional. It is parametrized by the K¨ahler parameter N ∼log(a) = Vol(CP1). This space is divided by walls of marginal",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The physics of open strings between two stacks of Lagrangian branes is described by the Landau-Ginzburg model with potential Wg,R",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The reduced S2-colored homology of the trefoil knot",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Colored superpolynomial for prime knots with up to 5 crossings",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Colored superpolynomial for prime knots with 6 crossings",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The reduced Λ2-colored homology of the trefoil",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "The reduced Kauﬀman homology of the knot T3,4 = 819. To avoid clutter, we show only canceling diﬀerentials d2, d1 and d0 (represented by red, green, and blue arrows, respectively)",
+      "page": 39,
+      "pageLabel": null,
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "5 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "2 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p44); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 18
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1112.0030v2"
+  }
+}

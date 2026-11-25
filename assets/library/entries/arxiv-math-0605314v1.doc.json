@@ -1,0 +1,4574 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0605314v1",
+  "title": "A unified Witten-Reshetikhin-Turaev invariant for integral homology spheres",
+  "variant": "pdf",
+  "pages": 66,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "The WRT invariant for integral homology spheres",
+      "number": "1.1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-11-the-wrt-invariant-for-integral-homology-spher"
+    },
+    {
+      "level": 2,
+      "title": "The ring $\\Zqh$ of analytic functions on the set of roots of unity",
+      "number": "1.2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-12-the-ring-zqh-of-analytic-functions-on-the-set"
+    },
+    {
+      "level": 2,
+      "title": "A unified WRT invariant $J_M$ with values in $\\Zqh$",
+      "number": "1.3",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-13-a-unified-wrt-invariant-j-m-with-values-in-zq"
+    },
+    {
+      "level": 2,
+      "title": "Organization of the paper",
+      "number": "1.4",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-14-organization-of-the-paper"
+    },
+    {
+      "level": 1,
+      "title": "The algebra $U_h(sl_2)$ and its subalgebras",
+      "number": "2",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-2-the-algebra-u-hsl-2-and-its-subalgebras"
+    },
+    {
+      "level": 2,
+      "title": "The quantized enveloping algebra $U_h$",
+      "number": "2.2",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": "sec-006-22-the-quantized-enveloping-algebra-u-h"
+    },
+    {
+      "level": 2,
+      "title": "The subalgebras $\\Uq$ and $\\Uqv$ of $U_h$",
+      "number": "2.3",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": "sec-007-23-the-subalgebras-uq-and-uqv-of-u-h"
+    },
+    {
+      "level": 2,
+      "title": "Adjoint action",
+      "number": "2.4",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-24-adjoint-action"
+    },
+    {
+      "level": 2,
+      "title": "Filtrations and completions",
+      "number": "2.5",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-25-filtrations-and-completions"
+    },
+    {
+      "level": 2,
+      "title": "The Hopf algebra structure for $\\tUq$",
+      "number": "2.6",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-26-the-hopf-algebra-structure-for-tuq"
+    },
+    {
+      "level": 1,
+      "title": "Braided Hopf algebra structure for $\\tUqv$",
+      "number": "3",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-3-braided-hopf-algebra-structure-for-tuqv"
+    },
+    {
+      "level": 2,
+      "title": "Ribbon structure for $U_h$",
+      "number": "3.1",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Braided Hopf algebra structure for $U_h$",
+      "number": "3.2",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-012-32-braided-hopf-algebra-structure-for-u-h"
+    },
+    {
+      "level": 2,
+      "title": "Braided Hopf algebra structure for $\\tUqv$",
+      "number": "3.3",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": "sec-011-3-braided-hopf-algebra-structure-for-tuqv"
+    },
+    {
+      "level": 1,
+      "title": "Universal $sl_2$ invariant of bottom tangles",
+      "number": "4",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-013-4-universal-sl-2-invariant-of-bottom-tangles"
+    },
+    {
+      "level": 2,
+      "title": "Bottom tangles",
+      "number": "4.1",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Universal $sl_2$ invariant of bottom tangles",
+      "number": "4.2",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": "sec-013-4-universal-sl-2-invariant-of-bottom-tangles"
+    },
+    {
+      "level": 2,
+      "title": "Universal $sl_2$-invariant of algebraically-split, $0$-framed bottom tangles",
+      "number": "4.3",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-014-43-universal-sl-2-invariant-of-algebraically-spl"
+    },
+    {
+      "level": 2,
+      "title": "Universal $sl_2$ invariant of bottom knots",
+      "number": "4.4",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": "sec-015-44-universal-sl-2-invariant-of-bottom-knots"
+    },
+    {
+      "level": 1,
+      "title": "Colored Jones polynomials",
+      "number": "5",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-016-5-colored-jones-polynomials"
+    },
+    {
+      "level": 2,
+      "title": "Finite-dimensional representations of $U_h$",
+      "number": "5.1",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-019-51-finite-dimensional-representations-of-u-h"
+    },
+    {
+      "level": 2,
+      "title": "Colored Jones polynomials",
+      "number": "5.2",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": "sec-017-52-colored-jones-polynomials"
+    },
+    {
+      "level": 2,
+      "title": "Quantum trace and the colored Jones polynomial",
+      "number": "5.3",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": "sec-018-53-quantum-trace-and-the-colored-jones-polynomia"
+    },
+    {
+      "level": 2,
+      "title": "Representation rings",
+      "number": "5.4",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-020-54-representation-rings"
+    },
+    {
+      "level": 1,
+      "title": "Knots",
+      "number": "6",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-021-6-knots"
+    },
+    {
+      "level": 2,
+      "title": "The elements $P_n$ and $P''_n$",
+      "number": "6.1",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-022-61-the-elements-p-n-and-p-n"
+    },
+    {
+      "level": 2,
+      "title": "The reduced Jones polynomials of knots",
+      "number": "6.2",
+      "page": 21,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-023-62-the-reduced-jones-polynomials-of-knots"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Proposition",
+      "number": "6.3",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-024-63-proof-of-proposition"
+    },
+    {
+      "level": 3,
+      "title": "The homomorphism $\\xi \\zzzcolon \\modR _{\\modQ [[h]]}\\rightarrow Z(U_h)$",
+      "number": "6.3.1",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "The Hopf link pairing $\\langle ,\\rangle \\zzzcolon \\modR _{\\Zvv}\\times \\modR _{\\Zvv}\\rightarrow \\Zvv$",
+      "number": "6.3.2",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "The elements $S_n$",
+      "number": "6.3.3",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 3,
+      "title": "Proof of Proposition",
+      "number": "6.3.4",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-025-634-proof-of-proposition"
+    },
+    {
+      "level": 1,
+      "title": "Remarks on knot invariants",
+      "number": "7",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-026-7-remarks-on-knot-invariants"
+    },
+    {
+      "level": 2,
+      "title": "The two-variable colored Jones invariant",
+      "number": "7.1",
+      "page": 24,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-027-71-the-two-variable-colored-jones-invariant"
+    },
+    {
+      "level": 2,
+      "title": "Melvin-Morton expansions and Rozansky's rationality theorem",
+      "number": "7.2",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-028-72-melvin-morton-expansions-and-rozanskys-ration"
+    },
+    {
+      "level": 1,
+      "title": "Algebraically-split links",
+      "number": "8",
+      "page": 28,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-029-8-algebraically-split-links"
+    },
+    {
+      "level": 2,
+      "title": "The algebra $\\modP$ and its completion $\\hat\\modP$",
+      "number": "8.1",
+      "page": 28,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Integrality for algebraically-split, $0$-framed links",
+      "number": "8.2",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-030-82-integrality-for-algebraically-split-0-framed"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem",
+      "number": "8.3",
+      "page": 29,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-031-83-proof-of-theorem"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Lemma",
+      "number": "8.4",
+      "page": 30,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-032-84-proof-of-lemma"
+    },
+    {
+      "level": 2,
+      "title": "Remarks on boundary links and boundary bottom tangles",
+      "number": "8.5",
+      "page": 31,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-033-85-remarks-on-boundary-links-and-boundary-bottom"
+    },
+    {
+      "level": 1,
+      "title": "Twists",
+      "number": "9",
+      "page": 32,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-034-9-twists"
+    },
+    {
+      "level": 2,
+      "title": "The twist element $\\omega \\in \\hP$",
+      "number": "9.1",
+      "page": 33,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Twisting theorem",
+      "number": "9.2",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-035-92-twisting-theorem"
+    },
+    {
+      "level": 1,
+      "title": "The invariant $J_M$",
+      "number": "10",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-036-10-the-invariant-j-m"
+    },
+    {
+      "level": 2,
+      "title": "Admissible framed links and the Hoste moves",
+      "number": "10.1",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-037-101-admissible-framed-links-and-the-hoste-moves"
+    },
+    {
+      "level": 2,
+      "title": "Definition of $J_M$",
+      "number": "10.2",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": 0.5,
+      "evidence": [
+        "latex"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Some remarks",
+      "number": "10.3",
+      "page": 35,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-038-103-some-remarks"
+    },
+    {
+      "level": 1,
+      "title": "Specializations at roots of unity",
+      "number": "11",
+      "page": 36,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-039-11-specializations-at-roots-of-unity"
+    },
+    {
+      "level": 2,
+      "title": "Definition of $\\tau _\\zeta (M)$",
+      "number": "11.1",
+      "page": 36,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "WRT invariants of integral homology spheres",
+      "number": "11.2",
+      "page": 37,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-040-112-wrt-invariants-of-integral-homology-spheres"
+    },
+    {
+      "level": 2,
+      "title": "Proof of Theorem",
+      "number": "11.3",
+      "page": 37,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-041-113-proof-of-theorem"
+    },
+    {
+      "level": 2,
+      "title": "An alternative proof of Theorem",
+      "number": "11.4",
+      "page": 38,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-042-114-an-alternative-proof-of-theorem"
+    },
+    {
+      "level": 1,
+      "title": "Some properties of $J_M$",
+      "number": "12",
+      "page": 38,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-043-12-some-properties-of-j-m"
+    },
+    {
+      "level": 2,
+      "title": "Connected sum and orientation reversal",
+      "number": "12.1",
+      "page": 39,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-044-121-connected-sum-and-orientation-reversal"
+    },
+    {
+      "level": 2,
+      "title": "On determination of $J_M$ by infinitely many WRT invariants",
+      "number": "12.2",
+      "page": 39,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-045-122-on-determination-of-j-m-by-infinitely-many-w"
+    },
+    {
+      "level": 2,
+      "title": "Power series invariants",
+      "number": "12.3",
+      "page": 40,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-046-123-power-series-invariants"
+    },
+    {
+      "level": 3,
+      "title": "Derivatives and power series expansions",
+      "number": "12.3.1",
+      "page": 41,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-047-1231-derivatives-and-power-series-expansions"
+    },
+    {
+      "level": 3,
+      "title": "The Ohtsuki series",
+      "number": "12.3.2",
+      "page": 41,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-048-1232-the-ohtsuki-series"
+    },
+    {
+      "level": 3,
+      "title": "Expansions at roots of unity",
+      "number": "12.3.3",
+      "page": 42,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-049-1233-expansions-at-roots-of-unity"
+    },
+    {
+      "level": 3,
+      "title": "Relations between two power series expansions at different roots of unity",
+      "number": "12.3.4",
+      "page": 42,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-050-1234-relations-between-two-power-series-expansio"
+    },
+    {
+      "level": 2,
+      "title": "Divisibility properties and applications to power series invariants",
+      "number": "12.4",
+      "page": 43,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-051-124-divisibility-properties-and-applications-to"
+    },
+    {
+      "level": 3,
+      "title": "Divisibility in the ring $\\Zqh$",
+      "number": "12.4.1",
+      "page": 43,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-052-1241-divisibility-in-the-ring-zqh"
+    },
+    {
+      "level": 3,
+      "title": "Divisibility results",
+      "number": "12.4.2",
+      "page": 44,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-053-1242-divisibility-results"
+    },
+    {
+      "level": 3,
+      "title": "Applications to the Ohtsuki series",
+      "number": "12.4.3",
+      "page": 45,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-054-1243-applications-to-the-ohtsuki-series"
+    },
+    {
+      "level": 3,
+      "title": "The eighth WRT invariant $\\tau _8(M)$",
+      "number": "12.4.4",
+      "page": 47,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "The $p$-adic and the mod $p$ WRT functions",
+      "number": "13",
+      "page": 47,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-055-13-the-p-adic-and-the-mod-p-wrt-functions"
+    },
+    {
+      "level": 2,
+      "title": "Formal evaluations in rings",
+      "number": "13.1",
+      "page": 48,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-056-131-formal-evaluations-in-rings"
+    },
+    {
+      "level": 2,
+      "title": "Evaluations at complex numbers",
+      "number": "13.2",
+      "page": 48,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-057-132-evaluations-at-complex-numbers"
+    },
+    {
+      "level": 2,
+      "title": "The $p$-adic WRT functions",
+      "number": "13.3",
+      "page": 49,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "The mod $p$ WRT functions",
+      "number": "13.4",
+      "page": 51,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 1,
+      "title": "Examples",
+      "number": "14",
+      "page": 53,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-058-14-examples"
+    },
+    {
+      "level": 2,
+      "title": "Borromean rings",
+      "number": "14.1",
+      "page": 53,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-059-141-borromean-rings"
+    },
+    {
+      "level": 2,
+      "title": "Powers of the ribbon element and the twist element",
+      "number": "14.2",
+      "page": 54,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-060-142-powers-of-the-ribbon-element-and-the-twist-e"
+    },
+    {
+      "level": 2,
+      "title": "Surgeries along the Borromean rings",
+      "number": "14.3",
+      "page": 56,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-061-143-surgeries-along-the-borromean-rings"
+    },
+    {
+      "level": 1,
+      "title": "Knots in integral homology spheres",
+      "number": "15",
+      "page": 57,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-062-15-knots-in-integral-homology-spheres"
+    },
+    {
+      "level": 2,
+      "title": "Bottom knots with links",
+      "number": "15.1",
+      "page": 57,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-063-151-bottom-knots-with-links"
+    },
+    {
+      "level": 2,
+      "title": "The invariant $J_{(M,K)}$",
+      "number": "15.2",
+      "page": 58,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Surgery along a knot with framing $1/m$",
+      "number": "15.3",
+      "page": 59,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-064-153-surgery-along-a-knot-with-framing-1m"
+    },
+    {
+      "level": 2,
+      "title": "Cyclotomic finite type invariants of integral homology spheres",
+      "number": "15.4",
+      "page": 59,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-065-154-cyclotomic-finite-type-invariants-of-integra"
+    },
+    {
+      "level": 1,
+      "title": "Concluding remarks",
+      "number": "16",
+      "page": 61,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-066-16-concluding-remarks"
+    },
+    {
+      "level": 2,
+      "title": "The WRT invariants as limiting values of holomorphic functions",
+      "number": "16.1",
+      "page": 61,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-067-161-the-wrt-invariants-as-limiting-values-of-hol"
+    },
+    {
+      "level": 2,
+      "title": "Generalizations to simple Lie algebra",
+      "number": "16.2",
+      "page": 62,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-068-162-generalizations-to-simple-lie-algebra"
+    },
+    {
+      "level": 2,
+      "title": "Rational homology spheres",
+      "number": "16.3",
+      "page": 62,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-069-163-rational-homology-spheres"
+    },
+    {
+      "level": 2,
+      "title": "Bottom tangles in homology handlebodies",
+      "number": "16.4",
+      "page": 63,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-070-164-bottom-tangles-in-homology-handlebodies"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 163,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homology spheres",
+          "heading": false
+        },
+        {
+          "term": "taylor expansion",
+          "heading": false
+        },
+        {
+          "term": "integral homology",
+          "heading": false
+        },
+        {
+          "term": "unity",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0605314v1 [math.GT] 11 May 2006 A UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANT FOR INTEGRAL HOMOLOGY SPHERES KAZUO HABIRO Abstract. We construct an invariant JM of integral homology spheres M with values in a completion d Z[q] of the polynomial ring Z[q] such that the evaluation at each root of unity ζ gives the the SU(2) Witten-Reshetikhin- Turaev invariant τζ(M) of M at ζ. Thus JM uniﬁes all the SU(2)",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0605314v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 30,
+      "summary": null,
+      "keywords": [],
+      "extract": "[]{#sec1 label=\"sec1\"} In this paper we construct an invariant of integral homology spheres which unifies the $SU(2)$ Witten-Reshetikhin-Turaev invariants at all roots of unity, which we announced in a previous paper [@H:rims2001].",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-the-wrt-invariant-for-integral-homology-spher",
+      "number": "1.1",
+      "title": "The WRT invariant for integral homology spheres",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 458,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wrt invariant",
+          "heading": true
+        },
+        {
+          "term": "tau zeta",
+          "heading": false
+        },
+        {
+          "term": "homology spheres",
+          "heading": true
+        },
+        {
+          "term": "integral homology",
+          "heading": true
+        },
+        {
+          "term": "odd prime",
+          "heading": false
+        },
+        {
+          "term": "prime power",
+          "heading": false
+        },
+        {
+          "term": "calz",
+          "heading": false
+        },
+        {
+          "term": "ohtsuki series",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:witt-resh-tura-1 label=\"sec:witt-resh-tura-1\"} Witten [@Witten] introduced the notion of Chern-Simons path integral which gives a quantum field theory interpretation of the Jones polynomial [@Jones1; @Jones2] and predicts the existence of $3$-manifold invariants. Using the quantum group $U_q(sl_2)$ at roots of unity, Reshetikhin and Turaev [@Reshetikhin-Turaev:invariants] gave a rigorous construction of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-the-ring-zqh-of-analytic-functions-on-the-set",
+      "number": "1.2",
+      "title": "The ring $\\Zqh$ of analytic functions on the set of roots of unity",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 585,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zqh",
+          "heading": true
+        },
+        {
+          "term": "calz modz",
+          "heading": false
+        },
+        {
+          "term": "mods calz",
+          "heading": false
+        },
+        {
+          "term": "calz zzzcolon",
+          "heading": false
+        },
+        {
+          "term": "mods zeta",
+          "heading": false
+        },
+        {
+          "term": "calz subset",
+          "heading": false
+        },
+        {
+          "term": "zqh rightarrow",
+          "heading": false
+        },
+        {
+          "term": "iota zeta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:ring-zqh-cyclotomic label=\"sec:ring-zqh-cyclotomic\"} The invariant $J_M$ of an integral homology sphere $M$ which we construct in the paper takes values in a completion $\\Zqh$ of the polynomial ring $\\modZ [q]$, which was introduced in [@H:rims2001] and studied in [@H:cyclotomic]. One of the simplest definitions of $\\Zqh$ is $$\\Zqh = \\varprojlim_{n}\\modZ [q]/((q)_n),$$ where we set $$(q)_n =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-a-unified-wrt-invariant-j-m-with-values-in-zq",
+      "number": "1.3",
+      "title": "A unified WRT invariant $J_M$ with values in $\\Zqh$",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 386,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tau zeta",
+          "heading": false
+        },
+        {
+          "term": "zqh",
+          "heading": true
+        },
+        {
+          "term": "iota zeta",
+          "heading": false
+        },
+        {
+          "term": "wrt",
+          "heading": true
+        },
+        {
+          "term": "modq",
+          "heading": false
+        },
+        {
+          "term": "calz",
+          "heading": false
+        },
+        {
+          "term": "ring zqh",
+          "heading": false
+        },
+        {
+          "term": "function tau",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:unif-wrt-invar-1 label=\"sec:unif-wrt-invar-1\"} The following is the main result of the present paper, and follows from Theorems [\\[thm:41\\]](#thm:41){reference-type=\"ref\" reference=\"thm:41\"} and [\\[thm:65\\]](#thm:65){reference-type=\"ref\" reference=\"thm:65\"}. ::: theorem []{#r40 label=\"r40\"} There is an invariant $J_M\\in \\Zqh$ of an integral homology sphere $M$ such that for any root of unity $\\zeta$ we have",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-organization-of-the-paper",
+      "number": "1.4",
+      "title": "Organization of the paper",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1780,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "framed bottom",
+          "heading": false
+        },
+        {
+          "term": "introduce modz",
+          "heading": false
+        },
+        {
+          "term": "tuqv",
+          "heading": false
+        },
+        {
+          "term": "bottom tangle",
+          "heading": false
+        },
+        {
+          "term": "wrt invariants",
+          "heading": false
+        },
+        {
+          "term": "tau zeta",
+          "heading": false
+        },
+        {
+          "term": "framed link",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:organization-paper label=\"sec:organization-paper\"} In Section [\\[sec2\\]](#sec2){reference-type=\"ref\" reference=\"sec2\"}, we first recall the definition of the quantized enveloping algebra $U_h=U_h(sl_2)$ of the Lie algebra $sl_2$, which is a $h$-adically complete Hopf $\\modQ [[h]]$-algebra, and then introduce $\\modZ [q,q^{-1}]$-subalgebras $\\Uq$, where $\\modZ [q,q^{-1}]$ is regarded as a subring of $\\modQ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-2-the-algebra-u-hsl-2-and-its-subalgebras",
+      "number": "2",
+      "title": "The algebra $U_h(sl_2)$ and its subalgebras",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 235,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quad bbq",
+          "heading": false
+        },
+        {
+          "term": "zqq subset",
+          "heading": false
+        },
+        {
+          "term": "cdots i-n",
+          "heading": false
+        },
+        {
+          "term": "subset zvv",
+          "heading": false
+        },
+        {
+          "term": "begin gathered",
+          "heading": false
+        },
+        {
+          "term": "end gathered",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec2 label=\"sec2\"} In this section, we recall the definition and some properties of the quantized enveloping algebra $U_h(sl_2)$. Then we define subalgebras $\\Uq$ and $\\Uqv$ of $U_h$, as well as their completions $\\tUq$ and $\\tUqv$, which we studied in [@H:uqsl2]. ## $q$-integers {#sec:q-integers} Let $h$ be an indeterminate, and set $$\\begin{gathered} v=\\exp\\frac h2\\in \\modQ [[h]],\\quad q=v^2=\\exp h\\in \\modQ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-22-the-quantized-enveloping-algebra-u-h",
+      "number": "2.2",
+      "title": "The quantized enveloping algebra $U_h$",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 192,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zzzcolon rightarrow",
+          "heading": false
+        },
+        {
+          "term": "complete modq",
+          "heading": false
+        },
+        {
+          "term": "quad epsilon",
+          "heading": false
+        },
+        {
+          "term": "begin gathered",
+          "heading": false
+        },
+        {
+          "term": "hat oplus",
+          "heading": false
+        },
+        {
+          "term": "end gathered",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:quantized-enveloping-algebra label=\"sec:quantized-enveloping-algebra\"} We define $U_h=U_h(sl_2)$ as the $h$-adically complete $\\modQ [[h]]$-algebra, topologically generated by the elements $H$, $E$, and $F$, satisfying the relations $$HE-EH=2E,\\quad HF-FH=-2F,\\quad EF-FE= \\frac{K-K^{-1}}{v-v^{-1}},$$ where we set $$\\begin{gathered} K= v^H = \\exp\\frac{hH}2. \\end{gathered}$$ The algebra $U_h$ has a complete",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-23-the-subalgebras-uq-and-uqv-of-u-h",
+      "number": "2.3",
+      "title": "The subalgebras $\\Uq$ and $\\Uqv$ of $U_h$",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 386,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uqv",
+          "heading": true
+        },
+        {
+          "term": "zqq subalgebra",
+          "heading": false
+        },
+        {
+          "term": "zqq algebra",
+          "heading": false
+        },
+        {
+          "term": "gathered label",
+          "heading": false
+        },
+        {
+          "term": "modz",
+          "heading": false
+        },
+        {
+          "term": "begin gathered",
+          "heading": false
+        },
+        {
+          "term": "end gathered",
+          "heading": false
+        },
+        {
+          "term": "uqsl",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:subalgebras-uq-uqv label=\"sec:subalgebras-uq-uqv\"} Set $$\\begin{gathered} e= (v-v^{-1})E,\\\\ F^{(n)} = F^n/[n]!,\\\\ \\tF^{(n)} = F^nK^n/[n]_q! = v^{-\\hf n(n-1)}F^{(n)}K^n \\end{gathered}$$ for $n\\ge 0$. Let $\\Uq$ denote the $\\Zqq$-subalgebra of $U_h$ generated by $K$, $K^{-1}$, $e$, and $\\tF^{(n)}$ for $n\\ge 1$. The definition of $\\Uq$ here is equivalent to that in [@H:uqsl2 Section 11]. Let $\\Uqv$ denote the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-24-adjoint-action",
+      "number": "2.4",
+      "title": "Adjoint action",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 146,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "trr sum",
+          "heading": false
+        },
+        {
+          "term": "adjoint action",
+          "heading": true
+        },
+        {
+          "term": "uqv",
+          "heading": false
+        },
+        {
+          "term": "quad text",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:adjoint-action label=\"sec:adjoint-action\"} Let $\\trr\\zzzcolon U_h\\ho U_h \\rightarrow U_h$ denote the (left) adjoint action defined by $$\\trr(x\\otimes y)=x \\trr y = \\sum x_{(1)} y S(x_{(2)})$$ for $x,y\\in U_h$. We regard $U_h$ as a left $U_h$-module via the adjoint action. Since we have $\\Uq\\trr\\Uq\\subset \\Uq$, we may regard $\\Uq$ as a left $\\Uq$-module. For each homogeneous element $x\\in U_h$, we have",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-25-filtrations-and-completions",
+      "number": "2.5",
+      "title": "Filtrations and completions",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 479,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "otimes uqv",
+          "heading": false
+        },
+        {
+          "term": "otimes modf",
+          "heading": false
+        },
+        {
+          "term": "zqq subalgebra",
+          "heading": false
+        },
+        {
+          "term": "tuq",
+          "heading": false
+        },
+        {
+          "term": "tuqv",
+          "heading": false
+        },
+        {
+          "term": "filtrations",
+          "heading": true
+        },
+        {
+          "term": "completions",
+          "heading": true
+        },
+        {
+          "term": "uqvx",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:filtration-completion label=\"sec:filtration-completion\"} Here we introduce filtrations for the algebras $\\Uq$ and $\\Uqv$, and also for the tensor powers $\\Uqvn$ of $\\Uqv$. These filtrations produce the associated completions. The definitions below are equivalent to those in [@H:uqsl2]. First, we consider the filtration and the completion for $\\Uq$. For $p\\ge 0$, set $$\\modF _p(\\Uq)=\\Uq e^p\\Uq,$$ the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-26-the-hopf-algebra-structure-for-tuq",
+      "number": "2.6",
+      "title": "The Hopf algebra structure for $\\tUq$",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 126,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uev",
+          "heading": false
+        },
+        {
+          "term": "hopf",
+          "heading": true
+        },
+        {
+          "term": "algebra",
+          "heading": true
+        }
+      ],
+      "extract": "the Z[q, q−1]-algebra ˜Uq inherits from Uh a complete Hopf algebra structure over Z[q, q−1]. (This fact is observed in [19] as a corollary to the case of a Z[v, v−1]-form ˜U ∼= ˜Uq ⊗Z[q,q−1] Z[v, v−1]. However, it is convenient to provide a direct proof here.) A UNIFIED WITTEN-RESHETIKHIN-TURAEV INVARIANT 11 ∆(Fp(Uq)) ⊂F⌊p+1 ǫ(Uq) ⊂Z[q, q−1], ǫ(F1(Uq)) = 0, S±1(Fp(Uq)) ⊂Fp(Uq), for p ≥0. Here ⌊p+1 ∆: ˜Uq →˜U ˜⊗2 of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-3-braided-hopf-algebra-structure-for-tuqv",
+      "number": "3",
+      "title": "Braided Hopf algebra structure for $\\tUqv$",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 701,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tuqv",
+          "heading": true
+        },
+        {
+          "term": "braided hopf",
+          "heading": true
+        },
+        {
+          "term": "zzzcolon otimes",
+          "heading": false
+        },
+        {
+          "term": "uqv otimes",
+          "heading": false
+        },
+        {
+          "term": "zzzcolon modq",
+          "heading": false
+        },
+        {
+          "term": "subset tuqv",
+          "heading": false
+        },
+        {
+          "term": "zzzcolon rightarrow",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sec3 label=\"sec3\"} In this section, we recall a ribbon Hopf algebra structure for $U_h$ and show that the associated braided Hopf algebra structure for $U_h$ induces that for $\\tUqv$. ## Ribbon structure for $U_h$ {#sec:ribbon-structure-uh} The Hopf algebra $U_h$ has a ribbon Hopf algebra structure as follows. The universal $R$-matrix and its inverse are given by $$\\begin{gathered} R = D\\Bigl(\\sum_{n\\ge 0}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-32-braided-hopf-algebra-structure-for-u-h",
+      "number": "3.2",
+      "title": "Braided Hopf algebra structure for $U_h$",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 588,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braided hopf",
+          "heading": true
+        },
+        {
+          "term": "zzzcolon otimes",
+          "heading": false
+        },
+        {
+          "term": "uqv otimes",
+          "heading": false
+        },
+        {
+          "term": "zzzcolon modq",
+          "heading": false
+        },
+        {
+          "term": "subset tuqv",
+          "heading": false
+        },
+        {
+          "term": "zzzcolon rightarrow",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": true
+        },
+        {
+          "term": "epsilon zzzcolon",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec3 label=\"sec3\"} In this section, we recall a ribbon Hopf algebra structure for $U_h$ and show that the associated braided Hopf algebra structure for $U_h$ induces that for $\\tUqv$. ## Ribbon structure for $U_h$ {#sec:ribbon-structure-uh} The Hopf algebra $U_h$ has a ribbon Hopf algebra structure as follows. The universal $R$-matrix and its inverse are given by $$\\begin{gathered} R = D\\Bigl(\\sum_{n\\ge 0}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-4-universal-sl-2-invariant-of-bottom-tangles",
+      "number": "4",
+      "title": "Universal $sl_2$ invariant of bottom tangles",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 639,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bottom tangles",
+          "heading": true
+        },
+        {
+          "term": "universal invariant",
+          "heading": true
+        },
+        {
+          "term": "tangle cup",
+          "heading": false
+        },
+        {
+          "term": "fundamental tangle",
+          "heading": false
+        },
+        {
+          "term": "component bottom",
+          "heading": false
+        },
+        {
+          "term": "tangles sec",
+          "heading": false
+        },
+        {
+          "term": "cdots cup",
+          "heading": false
+        },
+        {
+          "term": "framed link",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec4 label=\"sec4\"} In this section, we recall the definition of the universal invariant of bottom tangles, and prove necessary results. ## Bottom tangles {#sec:bottom-tangles} Here we recall from [@H:universal] the notion of bottom tangles. An $n$-component *bottom tangle* $T=T_1\\cup \\cdots\\cup T_n$ is a framed tangle in a cube, which is drawn as a diagram in a rectangle as usual, consisting of $n$ arcs",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-43-universal-sl-2-invariant-of-algebraically-spl",
+      "number": "4.3",
+      "title": "Universal $sl_2$-invariant of algebraically-split, $0$-framed bottom tangles",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 591,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "otimes bar",
+          "heading": false
+        },
+        {
+          "term": "bar beta",
+          "heading": false
+        },
+        {
+          "term": "bar alpha",
+          "heading": false
+        },
+        {
+          "term": "sum bar",
+          "heading": false
+        },
+        {
+          "term": "cdots otimes",
+          "heading": false
+        },
+        {
+          "term": "tuqvx",
+          "heading": false
+        },
+        {
+          "term": "tuqvn",
+          "heading": false
+        },
+        {
+          "term": "modk",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:invariant label=\"sec:invariant\"} For any left $U_h$-module $W$, let $\\Inv(W)$ denote the *invariant part* of $W$, defined by $$\\Inv(W) =\\{w\\in W\\zzzvert x\\cdot w=\\epsilon (x)w\\quad \\forall x\\in U_h\\}.$$ Recall that we regard $U_h$ as a left $U_h$-module via the adjoint action. For $n\\ge 0$, the completed tensor product $\\Uhn$ is equipped with a left $U_h$-module structure $\\trrn$ in the standard way: For",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-44-universal-sl-2-invariant-of-bottom-knots",
+      "number": "4.4",
+      "title": "Universal $sl_2$ invariant of bottom knots",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 287,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bottom knots",
+          "heading": true
+        },
+        {
+          "term": "uqv cap",
+          "heading": false
+        },
+        {
+          "term": "cong zqq",
+          "heading": false
+        },
+        {
+          "term": "tuqv",
+          "heading": false
+        },
+        {
+          "term": "string knot",
+          "heading": false
+        },
+        {
+          "term": "uqsl",
+          "heading": false
+        },
+        {
+          "term": "thm",
+          "heading": false
+        },
+        {
+          "term": "v-v",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:case-n=1 label=\"sec:case-n=1\"} By a *bottom knot*, we mean a $1$-component bottom tangle. In what follows, we assume that bottom knots are given $0$-framing. Thus the set of bottom knots (up to isotopy) is $\\BT^0_1$. By Theorem [\\[thm:8\\]](#thm:8){reference-type=\"ref\" reference=\"thm:8\"}, for any bottom knot $T\\in \\BT^0_1$, we have $$\\label{e34} J_T\\in \\Inv(\\tUqv)=Z(\\tUqv).$$ Let us recall from [@H:uqsl2] the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-5-colored-jones-polynomials",
+      "number": "5",
+      "title": "Colored Jones polynomials",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 724,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored jones",
+          "heading": true
+        },
+        {
+          "term": "jones polynomials",
+          "heading": true
+        },
+        {
+          "term": "left corner",
+          "heading": false
+        },
+        {
+          "term": "string knot",
+          "heading": false
+        },
+        {
+          "term": "right corner",
+          "heading": false
+        },
+        {
+          "term": "fundamental tangle",
+          "heading": false
+        },
+        {
+          "term": "associate",
+          "heading": false
+        },
+        {
+          "term": "framed",
+          "heading": false
+        }
+      ],
+      "extract": "of T . Remark 4.6. There is an obvious one-to-one correspondence between bottom knots and string knots (i.e., a string link consisting of just one arc component running from the above to the bottom). A bottom knot and the corresponding string knot have the same value of the universal invariant. Therefore, we have the result announced in [17, Theorem 2.1], [19, Theorem 1.2], which is the string knot version of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-52-colored-jones-polynomials",
+      "number": "5.2",
+      "title": "Colored Jones polynomials",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "KAZUO HABIRO",
+      "extractCut": false
+    },
+    {
+      "id": "sec-018-53-quantum-trace-and-the-colored-jones-polynomia",
+      "number": "5.3",
+      "title": "Quantum trace and the colored Jones polynomial",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 30,
+      "summary": null,
+      "keywords": [],
+      "extract": "dimensional representation of Uh, then the quantum trace trV \u0010 q (x) = trV (ρV (κx)) trV trV JL(W1, . . . , Wm) = (trW1 q )(JT ) (5.4)",
+      "extractCut": false
+    },
+    {
+      "id": "sec-019-51-finite-dimensional-representations-of-u-h",
+      "number": "5.1",
+      "title": "Finite-dimensional representations of $U_h$",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 194,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "trv",
+          "heading": false
+        },
+        {
+          "term": "btm",
+          "heading": false
+        },
+        {
+          "term": "uh-modules",
+          "heading": false
+        }
+      ],
+      "extract": "By the well-known isomorphism of left Uh-modules Vm ⊗Vn ∼= V|m−n| ⊕V|m−n|+2 ⊕· · · ⊕Vm+n, we have the identity in RA As an A-algebra, RA is freely generated by V1, i.e., RA ∼= A[V1]. Thus we identify RA with A[V1]. For y = P n anVn (an ∈Q[[h]]) and x ∈Uh, we set X try q(x) = n Thus we have bilinear maps tr− tr− where Q((h)) denote the quotient ﬁeld of Q[[h]]. Similarly, for a link L we have multilinear maps JL :",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-54-representation-rings",
+      "number": "5.4",
+      "title": "Representation rings",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 99,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "spana",
+          "heading": false
+        },
+        {
+          "term": "a-algebra",
+          "heading": false
+        },
+        {
+          "term": "representation",
+          "heading": true
+        }
+      ],
+      "extract": "the A-algebra RA = SpanA{Vn | n ≥0}. with the multiplication induced by tensor product. Since each ﬁnite-dimensional representation of Uh is a direct sum of copies of Vn, n ≥0, we may regard RA as the representation ring of Uh over A. VmVn = V|m−n| + V|m−n|+2 + · · · + Vm+n. antrVn q (x). q (−): RZ[v,v−1] × Uh →Q[[h]], q (−): RQ(v) × Uh →Q((h)), JL : RQ(v) × · · · × RQ(v) →Q(v1/2). If the framing of every component",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-6-knots",
+      "number": "6",
+      "title": "Knots",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 32,
+      "summary": null,
+      "keywords": [],
+      "extract": "[]{#sec6 label=\"sec6\"} In this section, we study the relationships between the universal invariant for a bottom knot $T$ and the colored Jones polynomials for the closure of $T$.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-022-61-the-elements-p-n-and-p-n",
+      "number": "6.1",
+      "title": "The elements $P_n$ and $P''_n$",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 178,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "modr zvv",
+          "heading": false
+        },
+        {
+          "term": "begin gathered",
+          "heading": false
+        },
+        {
+          "term": "end gathered",
+          "heading": false
+        },
+        {
+          "term": "iias",
+          "heading": false
+        },
+        {
+          "term": "modq",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:elements-pn-pn label=\"sec:elements-pn-pn\"} For each $n\\ge 0$ set $$\\begin{gathered} P_n = \\prod_{i=0}^{n-1}(\\V_1 - v^{2i+1}-v^{-2i-1}) \\in \\modR _{\\Zvv},\\\\ P''_n = P_n/\\BB{2n+1}{2n}\\in \\modR _{\\modQ (v)}. \\end{gathered}$$ Since $P_n$ is a monic polynomial in $\\V_1$ of degree $n$ for each $n\\ge 0$, it follows that the $P_n$ form a basis of $\\modR _{\\Zvv}$. We have the following base change formulas. ::: lemma",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-62-the-reduced-jones-polynomials-of-knots",
+      "number": "6.2",
+      "title": "The reduced Jones polynomials of knots",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 368,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reduced jones",
+          "heading": true
+        },
+        {
+          "term": "jones polynomials",
+          "heading": true
+        },
+        {
+          "term": "colored jones",
+          "heading": false
+        },
+        {
+          "term": "proof-prop-refr",
+          "heading": false
+        },
+        {
+          "term": "trq",
+          "heading": false
+        },
+        {
+          "term": "surg-borr-rings",
+          "heading": false
+        },
+        {
+          "term": "thm",
+          "heading": false
+        },
+        {
+          "term": "reference-type",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:basis-pn- label=\"sec:basis-pn-\"} We prove the following result in Section [\\[sec:proof-prop-refr22\\]](#sec:proof-prop-refr22){reference-type=\"ref\" reference=\"sec:proof-prop-refr22\"}. ::: proposition []{#r22 label=\"r22\"} For $m,n\\ge 0$ we have $$\\begin{gathered} \\trq^{P''_m}(\\sigma _n) = \\delta _{m,n}. \\end{gathered}$$ ::: Using Proposition [\\[r22\\]](#r22){reference-type=\"ref\" reference=\"r22\"} we obtain the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-63-proof-of-proposition",
+      "number": "6.3",
+      "title": "Proof of Proposition",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 613,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "modr zvv",
+          "heading": false
+        },
+        {
+          "term": "modr modq",
+          "heading": false
+        },
+        {
+          "term": "zzzcolon modr",
+          "heading": false
+        },
+        {
+          "term": "rangle zzzcolon",
+          "heading": false
+        },
+        {
+          "term": "rightarrow zvv",
+          "heading": false
+        },
+        {
+          "term": "times modr",
+          "heading": false
+        },
+        {
+          "term": "otimes trq",
+          "heading": false
+        },
+        {
+          "term": "zvv algebra",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:proof-prop-refr22 label=\"sec:proof-prop-refr22\"} ### The homomorphism $\\xi \\zzzcolon \\modR _{\\modQ [[h]]}\\rightarrow Z(U_h)$ {#sec:isomorphism-ztu} Let $c_+$ denote the $2$-component bottom tangle depicted in Figure [\\[fig:c+\\]](#fig:c+){reference-type=\"ref\" reference=\"fig:c+\"}. We have $$J_{c_+}= (S\\otimes 1)(R_{21}R)=\\sum S(\\alpha )S(\\beta ')\\otimes \\alpha '\\beta \\in \\Inv(\\Uhx2),$$ where $R=\\sum\\alpha",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-634-proof-of-proposition",
+      "number": "6.3.4",
+      "title": "Proof of Proposition",
+      "level": 3,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 22,
+      "summary": null,
+      "keywords": [],
+      "extract": "(6.8), (6.7) and (6.9), we have trPm q (σn) = trPm q (ξ(Sn)) = ⟨Pm, Sn⟩= δm,n{2m + 1}2m, hence the assertion.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-026-7-remarks-on-knot-invariants",
+      "number": "7",
+      "title": "Remarks on knot invariants",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 76,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tuqv",
+          "heading": false
+        },
+        {
+          "term": "sec",
+          "heading": false
+        },
+        {
+          "term": "skip",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec7 label=\"sec7\"} In this section we discuss some consequences of the results in Section [\\[sec6\\]](#sec6){reference-type=\"ref\" reference=\"sec6\"}. The reader may skip this section in the first reading, since it is not necessary for the proof of the existence of the invariants $J_M$ for integral homology spheres. Throughout this section, let $T$ be a bottom knot and let $K=\\cl(T)$ be the closure of $T$. By abuse",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-71-the-two-variable-colored-jones-invariant",
+      "number": "7.1",
+      "title": "The two-variable colored Jones invariant",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 474,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "varprojlim modz",
+          "heading": false
+        },
+        {
+          "term": "rightarrow modz",
+          "heading": false
+        },
+        {
+          "term": "theta zzzcolon",
+          "heading": false
+        },
+        {
+          "term": "mods zeta",
+          "heading": false
+        },
+        {
+          "term": "colored jones",
+          "heading": true
+        },
+        {
+          "term": "hat theta",
+          "heading": false
+        },
+        {
+          "term": "zzzcolon lambda",
+          "heading": false
+        },
+        {
+          "term": "cong varprojlim",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:color-jones-polyn-2 label=\"sec:color-jones-polyn-2\"} Part of the following overlaps [@H:rims2001 Section 3.3], where some results are stated without proofs. It follows from the results in the previous sections that we have $$J_K=J_T=\\sum_{n\\ge 0}J_K(P''_n)\\sigma _n\\in Z(\\tUqv) \\cong\\varprojlim_{k}\\modZ [q,q^{-1}][C^2]/(\\sigma _k).$$ Thus $J_K$ may be regarded as an invariant with two variables $q$ and $C$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-72-melvin-morton-expansions-and-rozanskys-ration",
+      "number": "7.2",
+      "title": "Melvin-Morton expansions and Rozansky's rationality theorem",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 28,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 725,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rozansky rationality",
+          "heading": true
+        },
+        {
+          "term": "rightarrow modz",
+          "heading": false
+        },
+        {
+          "term": "melvin-morton",
+          "heading": true
+        },
+        {
+          "term": "gamma zeta",
+          "heading": false
+        },
+        {
+          "term": "rationality theorem",
+          "heading": true
+        },
+        {
+          "term": "melvin-morton expansion",
+          "heading": false
+        },
+        {
+          "term": "rozansky proved",
+          "heading": false
+        },
+        {
+          "term": "zzzcolon lambda",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:melv-mort-expans label=\"sec:melv-mort-expans\"} Rozansky [@Rozansky3] proved that the colored Jones polynomials of a knot $K$ can be repackaged into one invariant $J^\\MMR_K\\in \\modZ [[q-1,\\alpha ^2]]$, which is an integer-coefficient version of the Melvin-Morton expansion [@Melvin-Morton]. (In fact, Rozansky proved much stronger results there, see below.) Let $$\\gamma \\zzzcolon \\Lambda \\rightarrow \\modZ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-8-algebraically-split-links",
+      "number": "8",
+      "title": "Algebraically-split links",
+      "level": 1,
+      "pageStart": 28,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 305,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "modp supset",
+          "heading": false
+        },
+        {
+          "term": "modp span",
+          "heading": false
+        },
+        {
+          "term": "subset modp",
+          "heading": false
+        },
+        {
+          "term": "binom n-i",
+          "heading": false
+        },
+        {
+          "term": "modr modq",
+          "heading": false
+        },
+        {
+          "term": "span zqq",
+          "heading": false
+        },
+        {
+          "term": "binom pmod",
+          "heading": false
+        },
+        {
+          "term": "equiv binom",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec8 label=\"sec8\"} In this section, we prove an integrality result for the colored Jones polynomials of algebraically-split, $0$-framed links. We also give some conjectures for boundary links in the last subsection. ## The algebra $\\modP$ and its completion $\\hat\\modP$ {#sec:algebra--its-1} For $n\\ge 0$, set $$\\begin{gathered} P'_n = \\frac{P_n}{\\{n\\}!}\\in \\modR _{\\modQ (v)},\\\\ \\tP'_n = v^{-\\hf n(n-1)}P'_n\\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-82-integrality-for-algebraically-split-0-framed",
+      "number": "8.2",
+      "title": "Integrality for algebraically-split, $0$-framed links",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 231,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "algebraically-split",
+          "heading": true
+        },
+        {
+          "term": "zqq multilinear",
+          "heading": false
+        },
+        {
+          "term": "modr modq",
+          "heading": false
+        },
+        {
+          "term": "map zzzcolon",
+          "heading": false
+        },
+        {
+          "term": "framed",
+          "heading": true
+        },
+        {
+          "term": "modp",
+          "heading": false
+        },
+        {
+          "term": "cdots times",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:maps-jlhphphaq label=\"sec:maps-jlhphphaq\"} The following theorem is proved in Section [\\[sec:proof-theorem-refr29\\]](#sec:proof-theorem-refr29){reference-type=\"ref\" reference=\"sec:proof-theorem-refr29\"}. ::: theorem []{#r29 label=\"r29\"} Let $L$ be an $m$-component, algebraically-split, $0$-framed link. For $i=1,\\ldots,m$, let $x_i\\in \\modP _{k_i}$, $k_i\\ge 0$. Then we have $$J_L(x_1,\\ldots,x_m) \\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-83-proof-of-theorem",
+      "number": "8.3",
+      "title": "Proof of Theorem",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 30,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 346,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "uev",
+          "heading": false
+        },
+        {
+          "term": "trx",
+          "heading": false
+        },
+        {
+          "term": "bottom tangle",
+          "heading": false
+        },
+        {
+          "term": "btm",
+          "heading": false
+        }
+      ],
+      "extract": "tion. Lemma 8.5. If x ∈Uev q and y ∈P, then we have try q(x) ∈Z[q, q−1]. Using Lemma 8.5, we obtain the following generalization of (4.2). Proposition 8.6. If T is an m-component, algebraically-split, 0-framed bottom tangle, and if x2, . . . , xm ∈P, then we have (1 ⊗trx2 q ⊗· · · ⊗trxm q )(JT ) ∈Z( ˜Uev q ). Proof. By Lemma 8.5, (1 ⊗trx2 q ⊗· · · ⊗trxm q )((Uev q )⊗m) ⊂Uev q . (8.3) Let N ≥0 be such that x2, . . .",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-84-proof-of-lemma",
+      "number": "8.4",
+      "title": "Proof of Lemma",
+      "level": 2,
+      "pageStart": 30,
+      "pageEnd": 31,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 445,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "trw",
+          "heading": false
+        },
+        {
+          "term": "trp",
+          "heading": false
+        },
+        {
+          "term": "lemma",
+          "heading": true
+        },
+        {
+          "term": "right-hand side",
+          "heading": false
+        },
+        {
+          "term": "assertion",
+          "heading": false
+        },
+        {
+          "term": "linear combination",
+          "heading": false
+        }
+      ],
+      "extract": "Lemma 8.7. If y, y′ ∈RQ(v) and x ∈Uh, then we have tryy′ q (x) = X try q(x(1))try′ q (x(2)), where ∆(x) = P x(1) ⊗x(2). Proof. The assertion follows from the well-known identity for any two ﬁnite-dimensional representations W, W ′ trW⊗W ′ q (x) = (trW q ⊗trW ′ q )∆(x). Lemma 8.8. (1) If n, l, l′ ≥0, l̸ = l′ and j ∈Z, then we have trPn q ( ˜F (l)K2jel′) = 0. (2) If 0 ≤n < l and j ∈Z, then we have trPn q ( ˜F",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-85-remarks-on-boundary-links-and-boundary-bottom",
+      "number": "8.5",
+      "title": "Remarks on boundary links and boundary bottom tangles",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 32,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 787,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "boundary bottom",
+          "heading": true
+        },
+        {
+          "term": "otimes trq",
+          "heading": false
+        },
+        {
+          "term": "filtration modf",
+          "heading": false
+        },
+        {
+          "term": "cap modf",
+          "heading": false
+        },
+        {
+          "term": "bottom tangle",
+          "heading": false
+        },
+        {
+          "term": "cdots otimes",
+          "heading": false
+        },
+        {
+          "term": "boundary link",
+          "heading": false
+        },
+        {
+          "term": "inv",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:remarks-bound-links label=\"sec:remarks-bound-links\"} In this subsection, we give some remarks on the case of boundary links. The reader may skip this subsection since it is not necessary in the rest of the paper. Let $\\bUqv$ denote the $\\modZ [q,q^{-1}]$-subalgebra of $\\Uqv$ generated by the elements $K^2$, $K^{-2}$, $e$ and $f:=(q-1)FK$. Define a decreasing filtration $\\modF _k(\\bUqv)$, $k\\ge 0$, by $$\\modF",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-9-twists",
+      "number": "9",
+      "title": "Twists",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 413,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mods modq",
+          "heading": false
+        },
+        {
+          "term": "rightarrow modq",
+          "heading": false
+        },
+        {
+          "term": "langle omega",
+          "heading": false
+        },
+        {
+          "term": "times mods",
+          "heading": false
+        },
+        {
+          "term": "rangle langle",
+          "heading": false
+        },
+        {
+          "term": "rangle zzzcolon",
+          "heading": false
+        },
+        {
+          "term": "modv",
+          "heading": false
+        },
+        {
+          "term": "element omega",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec9 label=\"sec9\"} In this section, we introduce an element $\\omega \\in \\hP$ satisfying a \"twisting property\". ## The twist element $\\omega \\in \\hP$ {#sec:twist-element-hr-1} Define two elements $\\omega _+,\\omega _-\\in \\hP$ by $$\\omega _\\pm =\\sum_{n=0}^\\infty (\\pm 1)^n v^{\\pm \\hf n(n+3)}P'_n.$$ Set $\\modS _{\\modQ (v)}=\\modS \\otimes _{\\Zqq}\\modQ (v)\\subset \\modR _{\\modQ (v)}$. By Proposition",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-92-twisting-theorem",
+      "number": "9.2",
+      "title": "Twisting theorem",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 255,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "strands running",
+          "heading": false
+        },
+        {
+          "term": "cdots cup",
+          "heading": false
+        },
+        {
+          "term": "framed link",
+          "heading": false
+        },
+        {
+          "term": "running through",
+          "heading": false
+        },
+        {
+          "term": "left-hand side",
+          "heading": false
+        },
+        {
+          "term": "fusing",
+          "heading": false
+        },
+        {
+          "term": "modq",
+          "heading": false
+        },
+        {
+          "term": "ldots",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:twisting-theorems label=\"sec:twisting-theorems\"} ::: theorem []{#thm:99 label=\"thm:99\"} Let $L_1\\cup \\cdots\\cup L_m\\cup K$ be an $(m+1)$-component, algebraically-split, $0$-framed link such that $K$ is an unknot. Set $L=L_1\\cup \\cdots\\cup L_m$, and let $L_{(K,\\pm 1)}$ denote the framed link in $S^3$ obtained from $L$ by $\\pm 1$-framed surgery along $K$. Then, for any $x_1,\\ldots,x_m\\in \\hP$, we have",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-10-the-invariant-j-m",
+      "number": "10",
+      "title": "The invariant $J_M$",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 34,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 16,
+      "summary": null,
+      "keywords": [],
+      "extract": "[]{#sec10 label=\"sec10\"} In this section, we construct an invariant $J_M\\in \\Zqh$ of an integral homology sphere $M$.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-037-101-admissible-framed-links-and-the-hoste-moves",
+      "number": "10.1",
+      "title": "Admissible framed links and the Hoste moves",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 35,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 448,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "admissible framed",
+          "heading": true
+        },
+        {
+          "term": "hoste moves",
+          "heading": true
+        },
+        {
+          "term": "framed links",
+          "heading": true
+        },
+        {
+          "term": "fenn-rourke move",
+          "heading": false
+        },
+        {
+          "term": "an-alternative-proof",
+          "heading": false
+        },
+        {
+          "term": "homology sphere",
+          "heading": false
+        },
+        {
+          "term": "orientation-preserving homeomorphic",
+          "heading": false
+        },
+        {
+          "term": "integral homology",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:hoste-moves label=\"sec:hoste-moves\"} A framed link $L$ in $S^3$ is said to be *admissible* if $L$ is algebraically split and $\\pm 1$-framed. Surgery on $S^3$ along an admissible framed link yields an integral homology sphere. Conversely, each integral homology sphere $M$ can be obtained as the result of surgery on $S^3$ along an admissible framed link. In the definition of the Reshetikhin-Turaev invariant",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-103-some-remarks",
+      "number": "10.3",
+      "title": "Some remarks",
+      "level": 2,
+      "pageStart": 35,
+      "pageEnd": 36,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 262,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "divisibility-results",
+          "heading": false
+        },
+        {
+          "term": "some-remarks",
+          "heading": false
+        },
+        {
+          "term": "ldots",
+          "heading": false
+        },
+        {
+          "term": "zqq",
+          "heading": false
+        },
+        {
+          "term": "zqh",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:some-remarks label=\"sec:some-remarks\"} If $M$ and $L$ are as above, then we have the following formula for $J_M$: $$\\label{e2} J_M = \\sum_{k_1,\\ldots,k_m=0}^\\infty \\Bigl(\\prod_{i=1}^m(-f_i)^{k_i}v^{\\frac{-f_i}{2} k_i(k_i+3)}\\Bigr) J_{L^0}(P'_{k_1},\\ldots,P'_{k_m}).$$ In particular, if $L$ is a knot (i.e., $m=1$), then we have $$\\label{eq:132} J_M = J_{L^0}(\\omega ^{\\mp1}) = \\sum_{k=0}^\\infty",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-11-specializations-at-roots-of-unity",
+      "number": "11",
+      "title": "Specializations at roots of unity",
+      "level": 1,
+      "pageStart": 36,
+      "pageEnd": 37,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 333,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mods zeta",
+          "heading": false
+        },
+        {
+          "term": "tau zeta",
+          "heading": false
+        },
+        {
+          "term": "zeta zzzcolon",
+          "heading": false
+        },
+        {
+          "term": "let zeta",
+          "heading": false
+        },
+        {
+          "term": "invariant tau",
+          "heading": false
+        },
+        {
+          "term": "modz",
+          "heading": false
+        },
+        {
+          "term": "modq",
+          "heading": false
+        },
+        {
+          "term": "wrt invariant",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec11 label=\"sec11\"} In this section, we prove the following. ::: theorem []{#thm:65 label=\"thm:65\"} Let $M$ be an integral homology sphere and let $\\zeta$ be a primitive $r$th root of unity, $r\\in \\modN$. Then we have $$\\label{eq:130} \\mods _\\zeta (J_M) = \\tau _\\zeta (M),$$ where $\\tau _\\zeta (M)$ denotes the $sl_2$ WRT invariant of $M$ at $\\zeta$. ::: ## Definition of $\\tau _\\zeta (M)$ {#sec:definition-m} We",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-112-wrt-invariants-of-integral-homology-spheres",
+      "number": "11.2",
+      "title": "WRT invariants of integral homology spheres",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 37,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 114,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "evζ",
+          "heading": false
+        },
+        {
+          "term": "admissible framed",
+          "heading": false
+        },
+        {
+          "term": "framings",
+          "heading": false
+        }
+      ],
+      "extract": "RQ(q1/4) to be the unique Q(q1/4)-module isomorphism, called the twist operator, characterized by JU(t±1(x)) = JU±(x) for x ∈RQ(q1/4), where U is the 0-framed unknot. We have t(Vn) = q n(n+2) 4 Vn. Set Ωr,±1 = t∓1(Ωr)/Ir(U∓). An important property of Ωr,±1 is the following: evζ(⟨Ωr,±1, x⟩) = evζ(JU±(x)) (11.3) for x ∈RQ(q1/4). For admissible framed links, we can simplify (11.2) as follows. Let L = L1 ∪ · · · ∪Lm be",
+      "extractCut": true
+    },
+    {
+      "id": "sec-041-113-proof-of-theorem",
+      "number": "11.3",
+      "title": "Proof of Theorem",
+      "level": 2,
+      "pageStart": 37,
+      "pageEnd": 38,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 415,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "evζ",
+          "heading": false
+        },
+        {
+          "term": "framed link",
+          "heading": false
+        },
+        {
+          "term": "rar",
+          "heading": false
+        },
+        {
+          "term": "unknot",
+          "heading": false
+        },
+        {
+          "term": "framing",
+          "heading": false
+        }
+      ],
+      "extract": "τ1(M) = 1 by the deﬁnition. We also have ev1(JM) = 1 by Lemma 10.3. Hence, we have (11.1) in this case. Let r ≥2. Let L be as in the last subsection. By the deﬁnition of JM, we have evζ(JM) = evζ(JL0(ω−f1, ω−f2, . . . , ω−fm)) (11.4) Set d = ⌊r−2 2 ⌋. It follows from Theorem 8.2 that if x1, . . . , xm ∈P and we have xi ∈Pd+1 for some i ∈{1, . . . , m}, then we have evζ(JL(x1, . . . , xm)) = 0. Hence, by (11.4), we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-042-114-an-alternative-proof-of-theorem",
+      "number": "11.4",
+      "title": "An alternative proof of Theorem",
+      "level": 2,
+      "pageStart": 38,
+      "pageEnd": 38,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 104,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mods zeta",
+          "heading": false
+        },
+        {
+          "term": "defin-unif-sl",
+          "heading": false
+        },
+        {
+          "term": "rati-homol-spher",
+          "heading": false
+        },
+        {
+          "term": "tau zeta",
+          "heading": false
+        },
+        {
+          "term": "an-alternative-proof",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:an-alternative-proof label=\"sec:an-alternative-proof\"} Here we give an alternative proof of Theorem [\\[thm:41\\]](#thm:41){reference-type=\"ref\" reference=\"thm:41\"} which does not use Theorem [\\[r32\\]](#r32){reference-type=\"ref\" reference=\"r32\"}, but uses the existence of the invariant $\\tau _\\zeta (M)$. Let $M$ and $L$ be as in Section [\\[sec:defin-unif-sl2\\]](#sec:defin-unif-sl2){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-043-12-some-properties-of-j-m",
+      "number": "12",
+      "title": "Some properties of $J_M$",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 39,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 25,
+      "summary": null,
+      "keywords": [],
+      "extract": "[]{#sec12 label=\"sec12\"} In this section, we give some properties of $J_M$ and some applications. Throughout this section, $M$ denotes an integral homology sphere.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-044-121-connected-sum-and-orientation-reversal",
+      "number": "12.1",
+      "title": "Connected sum and orientation reversal",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 39,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 159,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tau zeta",
+          "heading": false
+        },
+        {
+          "term": "zqh rightarrow",
+          "heading": false
+        },
+        {
+          "term": "quad tau",
+          "heading": false
+        },
+        {
+          "term": "connected sum",
+          "heading": true
+        },
+        {
+          "term": "conn-sum-orient",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:conn-sum-orient label=\"sec:conn-sum-orient\"} ::: proposition []{#thm:43 label=\"thm:43\"} (1) The invariant $J_M$ is multiplicative under connected sum, i.e., for any two integral homology spheres $M$ and $M'$ we have $J_{M\\sharp M'}=J_M J_{M'}$, where $M\\sharp M'$ denotes the connected sum of $M$ and $M'$. We also have $J_{S^3}=1$. \\(2\\) If $-M$ denotes the mirror image of an integral homology sphere, then we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-045-122-on-determination-of-j-m-by-infinitely-many-w",
+      "number": "12.2",
+      "title": "On determination of $J_M$ by infinitely many WRT invariants",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 40,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 757,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mods calz",
+          "heading": false
+        },
+        {
+          "term": "zzzcolon calz",
+          "heading": false
+        },
+        {
+          "term": "calz rightarrow",
+          "heading": false
+        },
+        {
+          "term": "calz subset",
+          "heading": false
+        },
+        {
+          "term": "zzzcolon zqh",
+          "heading": false
+        },
+        {
+          "term": "subset modn",
+          "heading": false
+        },
+        {
+          "term": "homomorphism mods",
+          "heading": false
+        },
+        {
+          "term": "rightarrow prod",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:determination-jm-wrt label=\"sec:determination-jm-wrt\"} In this subsection, we prove the following. ::: proposition []{#r56 label=\"r56\"} If $\\calZ'\\subset \\calZ$ has no limit point, then the ring homomorphism $\\mods _{\\calZ'}$ in [\\[e61\\]](#e61){reference-type=\"eqref\" reference=\"e61\"} is not injective. ::: Here, recall from Section [\\[sec:ring-zqh-cyclotomic\\]](#sec:ring-zqh-cyclotomic){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-046-123-power-series-invariants",
+      "number": "12.3",
+      "title": "Power series invariants",
+      "level": 2,
+      "pageStart": 40,
+      "pageEnd": 41,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 20,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "power-seri-expans",
+          "heading": false
+        },
+        {
+          "term": "zeta",
+          "heading": false
+        },
+        {
+          "term": "series",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sec:power-seri-expans label=\"sec:power-seri-expans\"} In this subsection, we study the power series expansions $\\iota _\\zeta (J_M)\\in \\modZ [\\zeta ][[q-\\zeta ]]$, in particular the Ohtsuki series $\\tau ^O(M)=\\iota _1(J_M)$ (see Theorem [\\[r52\\]](#r52){reference-type=\"ref\" reference=\"r52\"} below).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-047-1231-derivatives-and-power-series-expansions",
+      "number": "12.3.1",
+      "title": "Derivatives and power series expansions",
+      "level": 3,
+      "pageStart": 41,
+      "pageEnd": 41,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 147,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zzzcolon zqh",
+          "heading": false
+        },
+        {
+          "term": "rightarrow zqh",
+          "heading": false
+        },
+        {
+          "term": "modz",
+          "heading": false
+        },
+        {
+          "term": "derivation frac",
+          "heading": false
+        },
+        {
+          "term": "zeta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:power-seri-expans-1 label=\"sec:power-seri-expans-1\"} Like polynomials and analytic functions, the elements of $\\Zqh$ can be differentiated arbitrarily many times. In fact, the derivation $\\frac{d}{dq}\\zzzcolon \\modZ [q]\\rightarrow \\modZ [q]$ is continuous with respect to the topology defined by the ideals $(q)_n\\modZ [q]$, $n\\ge 0$, since we have $$\\frac{d}{dq}(q)_{2n}\\in (q)_n\\modZ [q].$$ Therefore, $\\frac",
+      "extractCut": true
+    },
+    {
+      "id": "sec-048-1232-the-ohtsuki-series",
+      "number": "12.3.2",
+      "title": "The Ohtsuki series",
+      "level": 3,
+      "pageStart": 41,
+      "pageEnd": 42,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 267,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mods zeta",
+          "heading": false
+        },
+        {
+          "term": "zzzcolon modz",
+          "heading": false
+        },
+        {
+          "term": "varprojlim modz",
+          "heading": false
+        },
+        {
+          "term": "tau zeta",
+          "heading": false
+        },
+        {
+          "term": "rightarrow modz",
+          "heading": false
+        },
+        {
+          "term": "unity zeta",
+          "heading": false
+        },
+        {
+          "term": "odd prime",
+          "heading": false
+        },
+        {
+          "term": "cong varprojlim",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:ohtsuki-series label=\"sec:ohtsuki-series\"} As mentioned in the introduction, according to Lawrence's conjecture proved by Rozansky, the Ohtsuki series $\\tau ^O(M)$ for an integral homology sphere can be defined as the unique element $\\tau ^O(M)\\in \\modZ [[q-1]]$ such that for each root of unity $\\zeta$ of odd prime power order $r$, $\\tau ^O(M)|_{q=\\zeta }$ converges $p$-adically to $\\tau _\\zeta (M)\\in \\modZ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-049-1233-expansions-at-roots-of-unity",
+      "number": "12.3.3",
+      "title": "Expansions at roots of unity",
+      "level": 3,
+      "pageStart": 42,
+      "pageEnd": 42,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 174,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "iota zeta",
+          "heading": false
+        },
+        {
+          "term": "lambda zeta",
+          "heading": false
+        },
+        {
+          "term": "modz",
+          "heading": false
+        },
+        {
+          "term": "ohtsuki series",
+          "heading": false
+        },
+        {
+          "term": "unity",
+          "heading": true
+        },
+        {
+          "term": "thm",
+          "heading": false
+        },
+        {
+          "term": "reference-type",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:expansions-at-roots label=\"sec:expansions-at-roots\"} For every root of unity $\\zeta$, $\\iota _\\zeta (J_M)\\in \\modZ [\\zeta ][[q-\\zeta ]]$ may be considered as a generalization of the Ohtsuki series $\\tau ^O(M)=\\iota _1(J_M)$. Define $\\lambda _{\\zeta ,k}(M)\\in \\modZ [\\zeta ]$, $k\\ge 0$, by $$\\iota _\\zeta (J_M)=\\sum_{k\\ge 0}\\lambda _{\\zeta ,k}(M)(q-\\zeta )^k.$$ ::: question []{#r41 label=\"r41\"} Recall that the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-050-1234-relations-between-two-power-series-expansio",
+      "number": "12.3.4",
+      "title": "Relations between two power series expansions at different roots of unity",
+      "level": 3,
+      "pageStart": 42,
+      "pageEnd": 43,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 352,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tau zeta",
+          "heading": false
+        },
+        {
+          "term": "iota zeta",
+          "heading": false
+        },
+        {
+          "term": "lambda zeta",
+          "heading": false
+        },
+        {
+          "term": "power series",
+          "heading": true
+        },
+        {
+          "term": "cong modz",
+          "heading": false
+        },
+        {
+          "term": "let zeta",
+          "heading": false
+        },
+        {
+          "term": "prime power",
+          "heading": false
+        },
+        {
+          "term": "divisibility-results",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:relat-betw-two label=\"sec:relat-betw-two\"} Let $\\zeta ,\\xi \\in \\calZ$, where $\\ord(\\zeta /\\xi )=p^e$ is a prime power. We consider how the two power series expansions $\\iota _\\zeta (J_M)\\in \\modZ [\\zeta ][[q-\\zeta ]]$ and $\\iota _\\xi (J_M)\\in \\modZ [\\xi ][[q-\\xi ]]$ are related. Note that these two formal power series rings can be regarded as subrings of $$R_{\\zeta ,\\xi }:=\\varprojlim_{i,j}\\modZ [\\zeta ,\\xi",
+      "extractCut": true
+    },
+    {
+      "id": "sec-051-124-divisibility-properties-and-applications-to",
+      "number": "12.4",
+      "title": "Divisibility properties and applications to power series invariants",
+      "level": 2,
+      "pageStart": 43,
+      "pageEnd": 43,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-052-1241-divisibility-in-the-ring-zqh",
+      "number": "12.4.1",
+      "title": "Divisibility in the ring $\\Zqh$",
+      "level": 3,
+      "pageStart": 43,
+      "pageEnd": 44,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 173,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zqh",
+          "heading": true
+        },
+        {
+          "term": "modn",
+          "heading": false
+        },
+        {
+          "term": "ord",
+          "heading": false
+        },
+        {
+          "term": "divis-ring-zqh",
+          "heading": false
+        },
+        {
+          "term": "item",
+          "heading": false
+        },
+        {
+          "term": "zeta",
+          "heading": false
+        },
+        {
+          "term": "modz",
+          "heading": false
+        },
+        {
+          "term": "factorization domain",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:divis-ring-zqh label=\"sec:divis-ring-zqh\"} Here, we make some basic observations about divisibility for elements of $\\Zqh$ by products of powers of cyclotomic polynomials, which we will freely use in the rest of this section. ::: lemma []{#r66 label=\"r66\"} Let $f(q)\\in \\Zqh$, $\\zeta \\in \\calZ$, $n=\\ord\\zeta$, and $k\\ge 0$. Then the following conditions are equivalent. 1. []{#item:9 label=\"item:9\"} $f(q)$ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-053-1242-divisibility-results",
+      "number": "12.4.2",
+      "title": "Divisibility results",
+      "level": 3,
+      "pageStart": 44,
+      "pageEnd": 45,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 414,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "divisible",
+          "heading": false
+        },
+        {
+          "term": "homology sphere",
+          "heading": false
+        },
+        {
+          "term": "divisibility",
+          "heading": true
+        },
+        {
+          "term": "integral homology",
+          "heading": false
+        },
+        {
+          "term": "melvin",
+          "heading": false
+        },
+        {
+          "term": "kirby",
+          "heading": false
+        }
+      ],
+      "extract": "Proof. In Lemma 10.3, we showed that JM −1 is divisible by (q2 −1)(q3 −1) Set ˜JM = q−λ1(M)JM ∈d Z[q], Proposition 12.15. For any integral homology sphere M, ˜JM −1 is divisible by Given f(q) ∈d Z[q] with f(q)̸ = 0, let ordn(f(q)) ≥0 denote the largest integer l such that f(q) is divisible by Φn(q)l. (Existence of such integer follows from injectivity of the natural homomorphism see [18, Corollary 4.1].) If f(q) =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-054-1243-applications-to-the-ohtsuki-series",
+      "number": "12.4.3",
+      "title": "Applications to the Ohtsuki series",
+      "level": 3,
+      "pageStart": 45,
+      "pageEnd": 47,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1074,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac modh",
+          "heading": false
+        },
+        {
+          "term": "pmod modz",
+          "heading": false
+        },
+        {
+          "term": "lambda pmod",
+          "heading": false
+        },
+        {
+          "term": "span modz",
+          "heading": false
+        },
+        {
+          "term": "equiv pmod",
+          "heading": false
+        },
+        {
+          "term": "ohtsuki series",
+          "heading": true
+        },
+        {
+          "term": "lambda k-i",
+          "heading": false
+        },
+        {
+          "term": "tilde tau",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:appl-ohts-seri label=\"sec:appl-ohts-seri\"} Here we apply Propositions [\\[thm:44\\]](#thm:44){reference-type=\"ref\" reference=\"thm:44\"} and [\\[r10\\]](#r10){reference-type=\"ref\" reference=\"r10\"} to the Ohtsuki series $\\tau ^O(M)$, and obtain some congruence relations on the coefficients of $\\tau ^O(M)$, which generalize well-known results by Murakami [@Murakami1] and Ohtsuki [@Ohtsuki1], and by Lin and Wang",
+      "extractCut": true
+    },
+    {
+      "id": "sec-055-13-the-p-adic-and-the-mod-p-wrt-functions",
+      "number": "13",
+      "title": "The $p$-adic and the mod $p$ WRT functions",
+      "level": 1,
+      "pageStart": 47,
+      "pageEnd": 48,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 70,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zqh",
+          "heading": false
+        },
+        {
+          "term": "wrt",
+          "heading": true
+        },
+        {
+          "term": "adic",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sec13 label=\"sec13\"} In this section, we first observe that the invariant $J_M\\in \\Zqh$ can be formally evaluated at any element in a commutative, unital ring, and in particular at any complex number. Then we introduce the $p$-adic analytic versions and mod $p$ versions of the WRT functions. Most constructions in this section can be applied to any invariants of links and $3$-manifolds which take values in $\\Zqh$.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-056-131-formal-evaluations-in-rings",
+      "number": "13.1",
+      "title": "Formal evaluations in rings",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 48,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 75,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mods alpha",
+          "heading": false
+        },
+        {
+          "term": "hat mods",
+          "heading": false
+        },
+        {
+          "term": "alpha zzzcolon",
+          "heading": false
+        },
+        {
+          "term": "ring homomorphism",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:form-eval-rings label=\"sec:form-eval-rings\"} Let $R$ be a commutative, unital ring, and let $\\alpha \\in R$. Let $\\mods _\\alpha \\zzzcolon \\modZ [q]\\rightarrow R$ be the ring homomorphism satisfying $\\mods _\\alpha (q)=\\alpha$. Then $\\mods _\\alpha$ induces a ring homomorphism $$\\hat{\\mods }_\\alpha \\zzzcolon \\Zqh\\rightarrow \\hat{R}^\\alpha :=\\varprojlim_{n} R/((\\alpha )_n),$$ where $$(\\alpha )_n = (1-\\alpha",
+      "extractCut": true
+    },
+    {
+      "id": "sec-057-132-evaluations-at-complex-numbers",
+      "number": "13.2",
+      "title": "Evaluations at complex numbers",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 53,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2097,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mods bfp",
+          "heading": false
+        },
+        {
+          "term": "zzzcolon bfp",
+          "heading": false
+        },
+        {
+          "term": "modo modp",
+          "heading": false
+        },
+        {
+          "term": "rightarrow modo",
+          "heading": false
+        },
+        {
+          "term": "zzzcolon modz",
+          "heading": false
+        },
+        {
+          "term": "zzzcolon zqh",
+          "heading": false
+        },
+        {
+          "term": "bfp times",
+          "heading": false
+        },
+        {
+          "term": "varprojlim modz",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:expans-at-compl label=\"sec:expans-at-compl\"} Let $\\alpha \\in \\C$. Then $\\mods _\\alpha \\zzzcolon \\modZ [q]\\rightarrow \\modZ [\\alpha ]$ induces $$\\hat{\\mods }_\\alpha \\zzzcolon \\Zqh\\rightarrow \\Za=\\varprojlim_{n} \\modZ [\\alpha ]/((\\alpha )_n).$$ Thus, one can formally evaluate $J_M$ at any complex number. We can easily verify the following. 1. If $\\alpha =0$, then $\\Zx0=0$. 2. If $\\alpha$ is transcendental,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-058-14-examples",
+      "number": "14",
+      "title": "Examples",
+      "level": 1,
+      "pageStart": 53,
+      "pageEnd": 53,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 14,
+      "summary": null,
+      "keywords": [],
+      "extract": "[]{#sec14 label=\"sec14\"} In this section, we compute the invariants of some links and integral homology spheres.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-059-141-borromean-rings",
+      "number": "14.1",
+      "title": "Borromean rings",
+      "level": 2,
+      "pageStart": 53,
+      "pageEnd": 54,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 503,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "otimes trq",
+          "heading": false
+        },
+        {
+          "term": "varphi otimes",
+          "heading": false
+        },
+        {
+          "term": "bbq",
+          "heading": false
+        },
+        {
+          "term": "k-l",
+          "heading": false
+        },
+        {
+          "term": "borromean",
+          "heading": true
+        },
+        {
+          "term": "begin split",
+          "heading": false
+        },
+        {
+          "term": "end split",
+          "heading": false
+        },
+        {
+          "term": "begin gathered",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:borromean-rings label=\"sec:borromean-rings\"} As in Section [\\[sec:invariant\\]](#sec:invariant){reference-type=\"ref\" reference=\"sec:invariant\"}, let $B\\in \\BT^0_3$ denote the Borromean tangle. The closure $A=\\cl(B)$ is the Borromean rings. ::: proposition []{#r4 label=\"r4\"} For $i,i'\\ge 0$, we have $$(1\\otimes \\trq^{P'_{i}}\\otimes \\trq^{P'_{i'}})(J_B) =\\delta _{i,i'}(-1)^i\\sigma _i .$$ ::: ::: proof *Proof.*",
+      "extractCut": true
+    },
+    {
+      "id": "sec-060-142-powers-of-the-ribbon-element-and-the-twist-e",
+      "number": "14.2",
+      "title": "Powers of the ribbon element and the twist element",
+      "level": 2,
+      "pageStart": 54,
+      "pageEnd": 56,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 538,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bbq modi",
+          "heading": false
+        },
+        {
+          "term": "sum modi",
+          "heading": false
+        },
+        {
+          "term": "modr frac",
+          "heading": false
+        },
+        {
+          "term": "sum omega",
+          "heading": false
+        },
+        {
+          "term": "langle omega",
+          "heading": false
+        },
+        {
+          "term": "rangle sum",
+          "heading": false
+        },
+        {
+          "term": "begin gathered",
+          "heading": false
+        },
+        {
+          "term": "end gathered",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:powers-ribb-elem label=\"sec:powers-ribb-elem\"} Here we give formulas for the powers of the ribbon element $\\modr$ and the twist element $\\omega$. For $p,n\\ge 0$, set $$S(n,p) = \\{(i_1,\\ldots,i_p)\\zzzvert i_1,\\ldots,i_p\\ge 0,\\quad i_1+\\cdots+i_p=n\\}.$$ For $\\modi =(i_1,\\ldots,i_p)\\in S(n,p)$, set $\\bbq{n}{\\modi }=\\frac{[n]_q!}{[n_1]_q!\\cdots[n_p]_q!}$, $f(\\modi )=\\sum_{j=1}^{p-1}(s_j^2+s_j)$ with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-061-143-surgeries-along-the-borromean-rings",
+      "number": "14.3",
+      "title": "Surgeries along the Borromean rings",
+      "level": 2,
+      "pageStart": 56,
+      "pageEnd": 57,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 293,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "omega",
+          "heading": false
+        },
+        {
+          "term": "surg-borr-rings",
+          "heading": false
+        },
+        {
+          "term": "surgery along",
+          "heading": false
+        },
+        {
+          "term": "modz",
+          "heading": false
+        },
+        {
+          "term": "borromean",
+          "heading": true
+        },
+        {
+          "term": "cup",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:surg-borr-rings label=\"sec:surg-borr-rings\"} For $i,j,k\\in \\modZ$, we define $L_i$, $K_{i,j}$ and $M_{i,j,k}$ as follows. Let $A_1,A_2,A_3$ denote the components of the Borromean rings $A$. - $L_i=(A_1\\cup A_2)_{A_3;-1/i}\\subset S^3$, the two component link obtained from $A_1\\cup A_2$ by surgery along $A_3$ with framing $-1/i$. - $K_{i,j}=(A_1)_{A_2\\cup A_3;-1/i,-1/j}\\subset S^3$, the knot obtained from",
+      "extractCut": true
+    },
+    {
+      "id": "sec-062-15-knots-in-integral-homology-spheres",
+      "number": "15",
+      "title": "Knots in integral homology spheres",
+      "level": 1,
+      "pageStart": 57,
+      "pageEnd": 57,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 190,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "huqv",
+          "heading": false
+        },
+        {
+          "term": "integral homology",
+          "heading": true
+        },
+        {
+          "term": "zqh",
+          "heading": false
+        },
+        {
+          "term": "garoufalidis-le",
+          "heading": false
+        },
+        {
+          "term": "spheres",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sec15 label=\"sec15\"} Let $K$ be a $0$-framed knot in an integral homology sphere $M$. In this section, we will define an invariant $J_{(M,K)}\\in Z(\\hUqv)$ of the pair $(M,K)$. Here $Z(\\hUqv)$ denotes the $\\Zqh$-subalgebra of $Z(U_h)$ consisting of the infinite sums $\\sum_{n\\ge 0}a_n\\sigma _n$ with $a_n\\in \\Zqh$ for $n\\ge 0$. (The notation $Z(\\hUqv)$ comes from the fact that $Z(\\hUqv)$ is equal to the center of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-063-151-bottom-knots-with-links",
+      "number": "15.1",
+      "title": "Bottom knots with links",
+      "level": 2,
+      "pageStart": 57,
+      "pageEnd": 59,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 839,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cdots cup",
+          "heading": false
+        },
+        {
+          "term": "uqv",
+          "heading": false
+        },
+        {
+          "term": "otimes trq",
+          "heading": false
+        },
+        {
+          "term": "link cup",
+          "heading": false
+        },
+        {
+          "term": "huqv",
+          "heading": false
+        },
+        {
+          "term": "hoste move",
+          "heading": false
+        },
+        {
+          "term": "let cup",
+          "heading": false
+        },
+        {
+          "term": "cdots times",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:bottom-knots-with label=\"sec:bottom-knots-with\"} Let $T=T_0\\cup L_1\\cup \\cdots\\cup L_l$ be a tangle in a cube consisting of a bottom knot $T_0$ and an algebraically-split, $0$-framed link $L_1\\cup \\cdots\\cup L_l$, where $\\lk(T_0,L_i)=0$ for $i=1,\\ldots,l$. For $x_1,\\ldots,x_l\\in \\modP$, we define $J_T(x_1,\\ldots,x_l)$ as follows. Let $T'=T_0\\cup T_1\\cup \\cdots\\cup T_l$ denote an $(l+1)$-component bottom",
+      "extractCut": true
+    },
+    {
+      "id": "sec-064-153-surgery-along-a-knot-with-framing-1m",
+      "number": "15.3",
+      "title": "Surgery along a knot with framing $1/m$",
+      "level": 2,
+      "pageStart": 59,
+      "pageEnd": 59,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 325,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "trq omega",
+          "heading": false
+        },
+        {
+          "term": "surgery along",
+          "heading": true
+        },
+        {
+          "term": "langle omega",
+          "heading": false
+        },
+        {
+          "term": "divis-ring-zqh",
+          "heading": false
+        },
+        {
+          "term": "tau zeta",
+          "heading": false
+        },
+        {
+          "term": "cup",
+          "heading": false
+        },
+        {
+          "term": "framings",
+          "heading": false
+        },
+        {
+          "term": "knot",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#sec:surgery-along-knot label=\"sec:surgery-along-knot\"} Kirby and Melvin proved periodicity results for the WRT invariant of integral homology spheres obtained from $S^3$ by surgery along a knot with framings $1/m$ (Corollaries 8.15 and 8.26 of [@Kirby-Melvin]). We have the following generalization. ::: theorem []{#r9 label=\"r9\"} Let $K$ be a knot in an integral homology sphere $M$. Let $M'=M_{K;1/m}$ be the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-065-154-cyclotomic-finite-type-invariants-of-integra",
+      "number": "15.4",
+      "title": "Cyclotomic finite type invariants of integral homology spheres",
+      "level": 2,
+      "pageStart": 59,
+      "pageEnd": 61,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 843,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "modz modm",
+          "heading": false
+        },
+        {
+          "term": "cyclotomic finite",
+          "heading": true
+        },
+        {
+          "term": "zzzcolon modz",
+          "heading": false
+        },
+        {
+          "term": "modm rightarrow",
+          "heading": false
+        },
+        {
+          "term": "finite type",
+          "heading": true
+        },
+        {
+          "term": "homology spheres",
+          "heading": true
+        },
+        {
+          "term": "modm denote",
+          "heading": false
+        },
+        {
+          "term": "modz submodule",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:cycl-finite-type label=\"sec:cycl-finite-type\"} Kricker and Spence [@Kricker-Spence] (see also [@Ohtsuki4]) proved that for integral homology spheres the Ohtsuki series $\\tau ^O(M)$ modulo $(q-1)^{k+1}$ is a finite type invariant of degree $3k$ in the sense of Ohtsuki [@Ohtsuki6]. It would be natural to ask the topological meaning of $J_M\\mod \\Phi _d(q)$ for $d\\in \\Funz$, where $\\Funz$ denote the set of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-066-16-concluding-remarks",
+      "number": "16",
+      "title": "Concluding remarks",
+      "level": 1,
+      "pageStart": 61,
+      "pageEnd": 61,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 9,
+      "summary": null,
+      "keywords": [],
+      "extract": "[]{#sec16 label=\"sec16\"} In this section, we give some remarks and discussions.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-067-161-the-wrt-invariants-as-limiting-values-of-hol",
+      "number": "16.1",
+      "title": "The WRT invariants as limiting values of holomorphic functions",
+      "level": 2,
+      "pageStart": 61,
+      "pageEnd": 62,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 527,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wrt invariants",
+          "heading": true
+        },
+        {
+          "term": "surg-borr-rings",
+          "heading": false
+        },
+        {
+          "term": "wrt-invariants-as",
+          "heading": false
+        },
+        {
+          "term": "homology sphere",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:wrt-invariants-as label=\"sec:wrt-invariants-as\"} As explained in the introduction, the invariant $J_M$ for an integral homology sphere $M$ unifies the WRT invariants $\\tau _\\zeta (M)$ for all the roots of unity in an algebraic way. It should be remarked that there is another *analytic* approach to \"unify\" the WRT invariants by realizing the radial limiting values of a holomorphic function defined on the unit",
+      "extractCut": true
+    },
+    {
+      "id": "sec-068-162-generalizations-to-simple-lie-algebra",
+      "number": "16.2",
+      "title": "Generalizations to simple Lie algebra",
+      "level": 2,
+      "pageStart": 62,
+      "pageEnd": 62,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 78,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "zqh",
+          "heading": false
+        },
+        {
+          "term": "quantum invariant",
+          "heading": false
+        },
+        {
+          "term": "in-preparation",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:general label=\"sec:general\"} In a joint work with Le [@H-Le:in-preparation], for each simple Lie algebra $\\g$, we will generalize the invariant $J_M\\in \\Zqh$ of integral homology sphere $M$ to an invariant $J^\\g_M\\in \\Zqh$. This invariant can be characterized by the property that for each root of unity $\\zeta$ such that the quantum $\\g$ invariant $\\tau ^\\g_M$ is well-defined, we have $\\mods _\\zeta",
+      "extractCut": true
+    },
+    {
+      "id": "sec-069-163-rational-homology-spheres",
+      "number": "16.3",
+      "title": "Rational homology spheres",
+      "level": 2,
+      "pageStart": 62,
+      "pageEnd": 63,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 293,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "widehat modz",
+          "heading": false
+        },
+        {
+          "term": "cong modz",
+          "heading": false
+        },
+        {
+          "term": "homology spheres",
+          "heading": true
+        },
+        {
+          "term": "rational homology",
+          "heading": true
+        },
+        {
+          "term": "modn",
+          "heading": false
+        },
+        {
+          "term": "beliakova-blanchet-le",
+          "heading": false
+        },
+        {
+          "term": "operatorname fun",
+          "heading": false
+        },
+        {
+          "term": "rati-homol-spher",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:rati-homol-spher label=\"sec:rati-homol-spher\"} The invariant $J_M$ has been generalized by Beliakova, Blanchet and Le [@Beliakova-Blanchet-Le] to closed $3$-manifold whose first homology group is isomorphic to $\\modZ /2\\modZ$, and by Le [@Le4] to rational homology spheres. These invariants take values in modifications of the ring $\\Zqh$. We briefly describe these invariants below. See the original papers for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-070-164-bottom-tangles-in-homology-handlebodies",
+      "number": "16.4",
+      "title": "Bottom tangles in homology handlebodies",
+      "level": 2,
+      "pageStart": 63,
+      "pageEnd": 66,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1957,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bottom tangles",
+          "heading": true
+        },
+        {
+          "term": "ohtsuki invariants",
+          "heading": false
+        },
+        {
+          "term": "homology spheres",
+          "heading": false
+        },
+        {
+          "term": "witten-reshetikhin-turaev invariants",
+          "heading": false
+        },
+        {
+          "term": "homology cylinders",
+          "heading": false
+        },
+        {
+          "term": "kazuo habiro",
+          "heading": false
+        },
+        {
+          "term": "quantum invariants",
+          "heading": false
+        },
+        {
+          "term": "acta math",
+          "heading": false
+        }
+      ],
+      "extract": "tion of integral homology spheres (more precisely, integral homology 3-balls) are homology cylinders over a surface [12, 15] (see also [8, 14]). (In [15] they are called “homologically-trivial homology cobordisms”.) For g ≥0, let Hg,1 denote the monoid of homology cylinders over a surface Σg,1 of genus 1 with one boundary component. For g = 0, H0,1 is identiﬁed with the monoid of integral homology spheres. The",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "zzzcolon modz",
+      "heading": false
+    },
+    {
+      "term": "calz modz",
+      "heading": false
+    },
+    {
+      "term": "rightarrow modz",
+      "heading": false
+    },
+    {
+      "term": "otimes modz",
+      "heading": false
+    },
+    {
+      "term": "varprojlim modz",
+      "heading": false
+    },
+    {
+      "term": "zeta zzzcolon",
+      "heading": false
+    },
+    {
+      "term": "subset modz",
+      "heading": false
+    },
+    {
+      "term": "zzzcolon modq",
+      "heading": true
+    },
+    {
+      "term": "zzzcolon zqh",
+      "heading": false
+    },
+    {
+      "term": "ring modz",
+      "heading": false
+    },
+    {
+      "term": "let modz",
+      "heading": false
+    },
+    {
+      "term": "cong modz",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 45,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 46,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 47,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 48,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 49,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 50,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 51,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 52,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 53,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 54,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 55,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 56,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 57,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 58,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 59,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 60,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 61,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 62,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 63,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 64,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 65,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 66,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "4.1",
+      "title": "(a) A 3-component bottom tangle T = T1 ∪T2 ∪T3",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.2",
+      "title": "Fundamental tangles: vertical line, positive and negative crossings, local minimum and local maximum. Here the orientations are arbitrary",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.3",
+      "title": "How to put elements of Uh on the strings. For each",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.4",
+      "title": "The Borromean tangle B ∈BT0",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6.1",
+      "title": "The bottom tangle c+ ∈BT2",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6.2",
+      "title": "A graphical proof of (6.6)",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9.1",
+      "title": "A fusing identity",
+      "page": 34,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "10.1",
+      "title": "A Fenn-Rourke move. Fenn-Rourke moves, where a Fenn-Rourke move is either surgery on a unknotted, ±1-framed component, or the inverse operation. See Figure 10.1",
+      "page": 35,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 86,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 72,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "8 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p63); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 72 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0605314v1"
+  }
+}

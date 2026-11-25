@@ -1,0 +1,1028 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1704.01735v4",
+  "title": "Modular curves, invariant theory and E 8",
+  "variant": "pdf",
+  "pages": 39,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Abstract",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-abstract"
+    },
+    {
+      "level": 1,
+      "title": "Contents",
+      "number": null,
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-001-contents"
+    },
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-002-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Standard construction: from the icosahedron to E8",
+      "number": "2",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-2-standard-construction-from-the-icosahedron-to"
+    },
+    {
+      "level": 2,
+      "title": "E8-singularity: from the icosahedron to E8",
+      "number": "2.1",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-21-e8-singularity-from-the-icosahedron-to-e8"
+    },
+    {
+      "level": 2,
+      "title": "The Barlow surface: from the icosahedron to E8",
+      "number": "2.2",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-22-the-barlow-surface-from-the-icosahedron-to-e8"
+    },
+    {
+      "level": 2,
+      "title": "Bring’s curve and Fricke’s octavic curve: from the icosahedron to E8",
+      "number": "2.3",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-23-brings-curve-and-frickes-octavic-curve-from-t"
+    },
+    {
+      "level": 1,
+      "title": "Modular curve X(13) and invariant theory for",
+      "number": "3",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-3-modular-curve-x13-and-invariant-theory-for"
+    },
+    {
+      "level": 1,
+      "title": "A diﬀerent construction: from the modular curve",
+      "number": "4",
+      "page": 30,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-4-a-diﬀerent-construction-from-the-modular-curve"
+    },
+    {
+      "level": 2,
+      "title": "Bring’s curve and Fricke’s octavic curve: from X(13) to E8",
+      "number": "4.3",
+      "page": 33,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-43-brings-curve-and-frickes-octavic-curve-from-x"
+    },
+    {
+      "level": 1,
+      "title": "An explicit construction of the modular curve X(13)",
+      "number": "5",
+      "page": 35,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-010-5-an-explicit-construction-of-the-modular-curve"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 37,
+      "pageLabel": null,
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-011-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 13,
+      "summary": null,
+      "keywords": [],
+      "extract": "arXiv:1704.01735v4 [math.NT] 8 Jun 2017 Modular curves, invariant theory and E8 Lei Yang",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-1704.01735v4/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-abstract",
+      "number": null,
+      "title": "Abstract",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 43,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "modular curve",
+          "heading": false
+        },
+        {
+          "term": "root lattice",
+          "heading": false
+        },
+        {
+          "term": "psl",
+          "heading": false
+        }
+      ],
+      "extract": "The E8 root lattice can be constructed from the modular curve X(13) by the invariant theory for the simple group PSL(2, 13). This gives a diﬀerent construction of the E8 root lattice. It also gives an explicit construction of the modular curve X(13).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-contents",
+      "number": null,
+      "title": "Contents",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2693,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "d0d d5d",
+          "heading": false
+        },
+        {
+          "term": "d0d d6d",
+          "heading": false
+        },
+        {
+          "term": "d0d d2d",
+          "heading": false
+        },
+        {
+          "term": "z1z z2z",
+          "heading": false
+        },
+        {
+          "term": "d9d d12d",
+          "heading": false
+        },
+        {
+          "term": "d1d d10d",
+          "heading": false
+        },
+        {
+          "term": "barlow surface",
+          "heading": false
+        },
+        {
+          "term": "d3d d4d",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction 2. Standard construction: from the icosahedron to E8 3. Modular curve X(13) and invariant theory for PSL(2, 13) 4. A diﬀerent construction: from the modular curve X(13) to E8 5. An explicit construction of the modular curve X(13) 1. Introduction The E8 root lattice (see [14]) occurs in: the equation of the E8-singularity (theory of singularities), the Barlow surface, which is homeomorphic but not",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-2-standard-construction-from-the-icosahedron-to",
+      "number": "2",
+      "title": "Standard construction: from the icosahedron to E8",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-004-21-e8-singularity-from-the-icosahedron-to-e8",
+      "number": "2.1",
+      "title": "E8-singularity: from the icosahedron to E8",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 658,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "e8-singularity",
+          "heading": true
+        },
+        {
+          "term": "binary icosahedral",
+          "heading": false
+        },
+        {
+          "term": "icosahedron",
+          "heading": true
+        },
+        {
+          "term": "icosahedral equation",
+          "heading": false
+        },
+        {
+          "term": "icosahedral group",
+          "heading": false
+        },
+        {
+          "term": "dynkin curve",
+          "heading": false
+        },
+        {
+          "term": "midpoints",
+          "heading": false
+        },
+        {
+          "term": "theta constants",
+          "heading": false
+        }
+      ],
+      "extract": "Let us recall some classical result on the relation between the icosahedron and the E8-singularity (see [31]). Starting with the polynomial invariants of the ﬁnite subgroup of SL(2, C), a surface is deﬁned from the single syzygy 8 which relates the three polynomials in two variables. This surface has a singularity at the origin; the singularity can be resolved by constructing a smooth surface which is isomorphic to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-22-the-barlow-surface-from-the-icosahedron-to-e8",
+      "number": "2.2",
+      "title": "The Barlow surface: from the icosahedron to E8",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 511,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "barlow surface",
+          "heading": true
+        },
+        {
+          "term": "minimal surface",
+          "heading": false
+        },
+        {
+          "term": "kotschick",
+          "heading": false
+        },
+        {
+          "term": "congruence subgroup",
+          "heading": false
+        },
+        {
+          "term": "hilbert modular",
+          "heading": false
+        },
+        {
+          "term": "quintic",
+          "heading": false
+        },
+        {
+          "term": "nodes",
+          "heading": false
+        },
+        {
+          "term": "general type",
+          "heading": false
+        }
+      ],
+      "extract": "In [28], Kotschick showed that the manifold CP2#8CP 2 has two distinct diﬀerentiable structures, both of which come from algebraic surfaces. The surfaces are the eight-fold blow-up of the projective plane carrying the stan- dard smooth structure and the Barlow surface (see [2]), which is a simply- connected minimal surface of general type with q = pg = 0 and K2 = 1. 10 Kotschick proved that the Barlow surface B is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-23-brings-curve-and-frickes-octavic-curve-from-t",
+      "number": "2.3",
+      "title": "Bring’s curve and Fricke’s octavic curve: from the icosahedron to E8",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 598,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bring curve",
+          "heading": true
+        },
+        {
+          "term": "tritangent planes",
+          "heading": false
+        },
+        {
+          "term": "del pezzo",
+          "heading": false
+        },
+        {
+          "term": "pezzo surface",
+          "heading": false
+        },
+        {
+          "term": "octavic",
+          "heading": true
+        },
+        {
+          "term": "sextic curve",
+          "heading": false
+        },
+        {
+          "term": "fricke",
+          "heading": true
+        },
+        {
+          "term": "fermat",
+          "heading": false
+        }
+      ],
+      "extract": "to E8 Both Bring’s curve and Fricke’s octavic curve arise from the resolution of the equation of the ﬁfth degree (see [23]). Hence, they are intimately connected with the icosahedron. Let us recall some basic facts from classical enumerative geometry (see [18]). We will use the notation that [n|a1, a2, . . . , ak] means the (not necessar- ily complete) intersection of k polynomials of degrees a1, . . . , ak",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-3-modular-curve-x13-and-invariant-theory-for",
+      "number": "3",
+      "title": "Modular curve X(13) and invariant theory for",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 30,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 5662,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ζ6νq ζ7νq",
+          "heading": false
+        },
+        {
+          "term": "z2z z3z",
+          "heading": false
+        },
+        {
+          "term": "z1z z2z",
+          "heading": false
+        },
+        {
+          "term": "a0a a1a",
+          "heading": false
+        },
+        {
+          "term": "a0a a3a",
+          "heading": false
+        },
+        {
+          "term": "d0d d5d",
+          "heading": false
+        },
+        {
+          "term": "d0d d6d",
+          "heading": false
+        },
+        {
+          "term": "d0d d2d",
+          "heading": false
+        }
+      ],
+      "extract": "PSL(2, 13) At ﬁrst, we will study the six-dimensional representation of the ﬁnite simple group PSL(2, 13) of order 1092, which acts on the ﬁve-dimensional projective space P5 = {(z1, z2, z3, z4, z5, z6) : zi ∈C (i = 1, 2, 3, 4, 5, 6)}. This representation is deﬁned over the cyclotomic ﬁeld Q(e 2πi 13 ). Put S = −1 √ 13         ζ12 −ζ ζ10 −ζ3 ζ4 −ζ9 ζ5 −ζ8 ζ2 −ζ11 ζ6 −ζ7 ζ10 −ζ3 ζ4 −ζ9 ζ12 −ζ ζ2 −ζ11 ζ6 −ζ7",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-4-a-diﬀerent-construction-from-the-modular-curve",
+      "number": "4",
+      "title": "A diﬀerent construction: from the modular curve",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 33,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1124,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "modular curve",
+          "heading": true
+        },
+        {
+          "term": "barlow surface",
+          "heading": false
+        },
+        {
+          "term": "quintic surface",
+          "heading": false
+        },
+        {
+          "term": "e8-singularity",
+          "heading": false
+        },
+        {
+          "term": "σ2σ",
+          "heading": false
+        },
+        {
+          "term": "bp4m",
+          "heading": false
+        },
+        {
+          "term": "k-sphere",
+          "heading": false
+        },
+        {
+          "term": "parallelizable manifold",
+          "heading": false
+        }
+      ],
+      "extract": "X(13) to E8 4.1. E8-singularity: from X(13) to E8 In this section, we will give a diﬀerent construction of the equation of the E8-singularity: the symmetry group is the simple group PSL(2, 13) and the equation has a modular interpretation in terms of theta constants of order thirteen. Put Φj = Φj(x1(z), . . . , x6(z)) for j = 12, 18, 20, 30. By Theorem 1.1, the relations j(z) := E4(z)3 ∆(z) = Φ3 20 Φ5 12 , j(z)",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-43-brings-curve-and-frickes-octavic-curve-from-x",
+      "number": "4.3",
+      "title": "Bring’s curve and Fricke’s octavic curve: from X(13) to E8",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 35,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 540,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fricke octavic",
+          "heading": true
+        },
+        {
+          "term": "octavic curve",
+          "heading": true
+        },
+        {
+          "term": "bring curve",
+          "heading": true
+        },
+        {
+          "term": "transversal linear",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we will construct both Bring’s curve and Fricke’s octavic curve from the modular curve X(13) by the method of transversal linear sections. By Theorem 1.1, we have      Φ4(x1(z), . . . , x6(z)) = 0, Φ8(x1(z), . . . , x6(z)) = 0, φ12(x1(z), . . . , x6(z)) = 0, which gives a morphism from X(13) to an algebraic surface S1 ⊂CP5 given by the following G-invariant equations      Φ4(z1, . . . ,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-5-an-explicit-construction-of-the-modular-curve",
+      "number": "5",
+      "title": "An explicit construction of the modular curve X(13)",
+      "level": 1,
+      "pageStart": 35,
+      "pageEnd": 37,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 496,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "modular curve",
+          "heading": true
+        },
+        {
+          "term": "cubic threefold",
+          "heading": false
+        },
+        {
+          "term": "quartics",
+          "heading": false
+        },
+        {
+          "term": "ramanan",
+          "heading": false
+        },
+        {
+          "term": "klein",
+          "heading": false
+        },
+        {
+          "term": "locus",
+          "heading": false
+        },
+        {
+          "term": "psl",
+          "heading": false
+        },
+        {
+          "term": "explicit",
+          "heading": true
+        }
+      ],
+      "extract": "In this section, we will study the following classical problem in the theory of modular curves, which goes back to F. Klein (see [24] and [25]). Problem 5.1. Let p ≥7 be a prime number. Give an explicit con- struction of the modular curve X(p) of level p from the invariant theory for PSL(2, p) using projective algebraic geometry. Example 5.2. The equation of the modular curve X(7) of level 7 is given by the Klein",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 37,
+      "pageEnd": 39,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 716,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "der elliptischen",
+          "heading": false
+        },
+        {
+          "term": "ueber die",
+          "heading": false
+        },
+        {
+          "term": "uber die",
+          "heading": false
+        },
+        {
+          "term": "singularit aten",
+          "heading": false
+        },
+        {
+          "term": "vorlesungen uber",
+          "heading": false
+        },
+        {
+          "term": "ordnung der",
+          "heading": false
+        },
+        {
+          "term": "die theorie",
+          "heading": false
+        },
+        {
+          "term": "santa cruz",
+          "heading": false
+        }
+      ],
+      "extract": "[1] A. Adler and S. Ramanan, Moduli of Abelian Varieties, Lecture Notes in Mathematics, 1644, Springer-Verlag, Berlin, 1996. [2] R. Barlow, A simply connected surface of general type with pg = 0, Invent. Math. 79 (1985), 293-301. [3] E. Brieskorn, Beispiele zur Diﬀerentialtopologie von Singularit¨aten, In- vent. Math. 2 (1966), 1-14. [4] E. Brieskorn, Singular elements of semi-simple algebraic groups, in: Actes du",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "modular curve",
+      "heading": true
+    },
+    {
+      "term": "modular surface",
+      "heading": false
+    },
+    {
+      "term": "octavic curve",
+      "heading": true
+    },
+    {
+      "term": "barlow surface",
+      "heading": true
+    },
+    {
+      "term": "bring curve",
+      "heading": true
+    },
+    {
+      "term": "modular group",
+      "heading": false
+    },
+    {
+      "term": "sextic curve",
+      "heading": false
+    },
+    {
+      "term": "modular forms",
+      "heading": false
+    },
+    {
+      "term": "d0d d9d",
+      "heading": false
+    },
+    {
+      "term": "z1z z2z",
+      "heading": false
+    },
+    {
+      "term": "d0d d3d",
+      "heading": false
+    },
+    {
+      "term": "fricke octavic",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 12,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 13,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p37); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 13 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1704.01735v4"
+  }
+}

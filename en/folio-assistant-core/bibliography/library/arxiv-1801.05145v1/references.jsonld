@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1801.05145v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "MONOIDAL CATEGORIFICATION OF CLUSTER ALGEBRAS",
+      "dcterms:creator": [
+        "SEOK-JIN KANG, MASAKI KASHIWARA1, MYUNGHO KIM2",
+        "OH3, SE-JIN"
+      ],
+      "dcterms:issued": "D:20180116",
+      "dcterms:identifier": "https://arxiv.org/abs/1801.05145",
+      "dcterms:abstract": "We prove that the quantum cluster algebra structure of a unipotent quantum coordinate ring Aq(n(w)), associated with a symmetric Kac-Moody algebra and its Weyl group element w, admits a monoidal categoriﬁcation via the representa- tions of symmetric Khovanov-Lauda- Rouquier algebras. In order to achieve this goal, we give a formulation of monoidal categoriﬁcations of quantum cluster algebras and provide a criterion for a monoidal category of ﬁnite-dimensional graded R-modules to become a monoidal categoriﬁcation, where R is a symmetric Khovanov-Lauda- Rouquier algebra. Roughly speaking, this criterion asserts that a quantum monoidal seed can be mutated successively in all the directions, once the ﬁrst-step mutations are possible. Then, we show the existence of a quantum monoidal seed of Aq(n(w)) which admits the ﬁrst-step mutations in all the directions. As a consequence, we prove the conjecture that any cluster monomial is a member of the upper global basis up to a power of q1/2. In the course of our investigation, we also give a proof of a conjecture of Leclerc on the product of upper global basis elements.",
+      "dcterms:source": "library/arxiv-1801.05145v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1801.05145v1"
+    }
+  ]
+}

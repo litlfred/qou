@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/1104248094/sections/sec-010",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Example G = SL(2, C)",
+  "pageStart": 36,
+  "pageEnd": 42,
+  "contains": [
+    "library/1104248094/blocks/prose-sec-010",
+    "library/1104248094/blocks/ex-sec-010-01",
+    "library/1104248094/blocks/lem-sec-010-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1104248094/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/1104248094/manifest.jsonld",
+  "provenance": "ingested"
+}

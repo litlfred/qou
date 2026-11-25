@@ -1,0 +1,569 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2605.09605v2",
+  "title": "Cocycle Actions on Hidden Quantum Markov Models: Symmetry Protection and Topological Order",
+  "variant": "pdf",
+  "pages": 17,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Cocycle Actions and Symmetry Protection in HQMMs",
+      "number": null,
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-cocycle-actions-and-symmetry-protection-in-hqmms"
+    },
+    {
+      "level": 1,
+      "title": "Application to AKLT's Symmetry-Protected Topological Order",
+      "number": null,
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-application-to-aklts-symmetry-protected-topologi"
+    },
+    {
+      "level": 1,
+      "title": "Discussion and Outlook",
+      "number": null,
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-discussion-and-outlook"
+    },
+    {
+      "level": 1,
+      "title": "Appedix: Hidden Quantum Markov Models",
+      "number": null,
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-appedix-hidden-quantum-markov-models"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 264,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "saudi arabia",
+          "heading": false
+        },
+        {
+          "term": "symmetry-protected topological",
+          "heading": false
+        },
+        {
+          "term": "aklt state",
+          "heading": false
+        },
+        {
+          "term": "hidden quantum",
+          "heading": false
+        },
+        {
+          "term": "markov models",
+          "heading": false
+        },
+        {
+          "term": "spt",
+          "heading": false
+        },
+        {
+          "term": "abdessatar",
+          "heading": false
+        },
+        {
+          "term": "hqmms",
+          "heading": false
+        }
+      ],
+      "extract": "Cocycle Actions on Hidden Quantum Markov Models: Symmetry Protection and Topological Order Abdessatar Souissi 1 Department of Management Information Systems, College of Business and Economics Qassim University, Buraydah 51452, Saudi Arabia 2 Institut Pr´eparatoire aux Etudes des Ing´enieurs de Monastir, Tunisia. a.souaissi@qu.edu.sa Abdessatar Barhoumi Department of Mathematics and Statistics, College of Science",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2605.09605v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 1243,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sect aklt",
+          "heading": false
+        },
+        {
+          "term": "spt phases",
+          "heading": false
+        },
+        {
+          "term": "aklt state",
+          "heading": false
+        },
+        {
+          "term": "eoh covariance",
+          "heading": false
+        },
+        {
+          "term": "hqmm state",
+          "heading": false
+        },
+        {
+          "term": "spt order",
+          "heading": false
+        },
+        {
+          "term": "sect prel",
+          "heading": false
+        },
+        {
+          "term": "hidden quantum",
+          "heading": false
+        }
+      ],
+      "extract": "Symmetry-protected topological (SPT) phases provide a unifying framework for a broad class of quantum spin systems in which global symmetries protect robust edge modes, quantized topological invariants, and nontrivial entanglement structures, even in one-dimensional settings [@H83; @Pollmann2010; @Pollmann2012]. Within this picture, the Haldane phase of spin‑1 chains and its paradigmatic representative, the AKLT",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-cocycle-actions-and-symmetry-protection-in-hqmms",
+      "number": null,
+      "title": "Cocycle Actions and Symmetry Protection in HQMMs",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 8,
+      "labelStart": "3",
+      "labelEnd": "8",
+      "words": 2062,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "caus cov",
+          "heading": false
+        },
+        {
+          "term": "eoh covariance",
+          "heading": false
+        },
+        {
+          "term": "conv cov",
+          "heading": false
+        },
+        {
+          "term": "text caus",
+          "heading": false
+        },
+        {
+          "term": "caus invariance",
+          "heading": false
+        },
+        {
+          "term": "global caus",
+          "heading": false
+        },
+        {
+          "term": "equivariance mathcal",
+          "heading": false
+        },
+        {
+          "term": "bigcirc mathcal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Sect_main label=\"Sect_main\"} Let $G$ be a locally compact group. In quantum systems, symmetry actions are typically implemented by unitary representations. However, within the framework ofHQMMs, the hidden sector may carry a *projective* representation, reflecting the anomalous nature of the symmetry in the corresponding symmetry-protected topological (SPT) phase. This projective character is encoded in a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-application-to-aklts-symmetry-protected-topologi",
+      "number": null,
+      "title": "Application to AKLT's Symmetry-Protected Topological Order",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 11,
+      "labelStart": "8",
+      "labelEnd": "11",
+      "words": 1748,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aklt",
+          "heading": true
+        },
+        {
+          "term": "aklt emission",
+          "heading": false
+        },
+        {
+          "term": "aklt covariance",
+          "heading": false
+        },
+        {
+          "term": "aklt spt",
+          "heading": false
+        },
+        {
+          "term": "aklt initial",
+          "heading": false
+        },
+        {
+          "term": "aklt transition",
+          "heading": false
+        },
+        {
+          "term": "aklt global",
+          "heading": false
+        },
+        {
+          "term": "aklt state",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Sect_AKLT label=\"Sect_AKLT\"} The AKLT state [@AKLT1987] stands as a paradigmatic example of a SPT phase in 1D. Its topological protection originates from a projective representation of the symmetry group on the virtual degrees of freedom---a structure that aligns naturally with the HQMM framework developed in the preceding sections. This projective character is encoded in a nontrivial $2$-cocycle $[\\omega] \\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-discussion-and-outlook",
+      "number": null,
+      "title": "Discussion and Outlook",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 392,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eoh covariance",
+          "heading": false
+        },
+        {
+          "term": "covariance condition",
+          "heading": false
+        },
+        {
+          "term": "twisted equivariance",
+          "heading": false
+        },
+        {
+          "term": "learning algorithms",
+          "heading": false
+        },
+        {
+          "term": "spt phases",
+          "heading": false
+        },
+        {
+          "term": "global invariance",
+          "heading": false
+        },
+        {
+          "term": "hqmms",
+          "heading": false
+        },
+        {
+          "term": "emission map",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#Sect_Discussion label=\"Sect_Discussion\"} The framework developed in this paper establishes a rigorous algebraic foundation for studying symmetry actions onHQMMs. By formulating the symmetry conditions [\\[eq:initial_invariance\\]](#eq:initial_invariance){reference-type=\"eqref\" reference=\"eq:initial_invariance\"}, [\\[eq:Eh_equivariance\\]](#eq:Eh_equivariance){reference-type=\"eqref\" reference=\"eq:Eh_equivariance\"},",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-appedix-hidden-quantum-markov-models",
+      "number": null,
+      "title": "Appedix: Hidden Quantum Markov Models",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 17,
+      "labelStart": "12",
+      "labelEnd": "17",
+      "words": 2236,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hidden quantum",
+          "heading": true
+        },
+        {
+          "term": "quantum markov",
+          "heading": true
+        },
+        {
+          "term": "markov models",
+          "heading": true
+        },
+        {
+          "term": "hidden state",
+          "heading": false
+        },
+        {
+          "term": "iah",
+          "heading": false
+        },
+        {
+          "term": "hidden transition",
+          "heading": false
+        },
+        {
+          "term": "current hidden",
+          "heading": false
+        },
+        {
+          "term": "subsequent hidden",
+          "heading": false
+        }
+      ],
+      "extract": "Appedix: Hidden Quantum Markov Models Let H and K be separable Hilbert spaces, representing the hidden and observable degrees of freedom at a single lattice site, respectively. The corresponding single-site algebras are defined as the C∗-algebras of bounded linear operators: AH := B(H) and AO := B(K), each equipped with the operator norm and containing the identity operator. For each site n ∈Z, the full single-site",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "aklt covariance",
+      "heading": false
+    },
+    {
+      "term": "aklt spt",
+      "heading": false
+    },
+    {
+      "term": "eoh covariance",
+      "heading": false
+    },
+    {
+      "term": "aklt emission",
+      "heading": false
+    },
+    {
+      "term": "causal hqmm",
+      "heading": false
+    },
+    {
+      "term": "global hqmm",
+      "heading": false
+    },
+    {
+      "term": "projective hidden",
+      "heading": false
+    },
+    {
+      "term": "caus sliced",
+      "heading": false
+    },
+    {
+      "term": "hidden markov",
+      "heading": true
+    },
+    {
+      "term": "hqmm state",
+      "heading": false
+    },
+    {
+      "term": "caus invariance",
+      "heading": false
+    },
+    {
+      "term": "aklt initial",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 5,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 6,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p12); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 6 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2605.09605v2"
+  }
+}

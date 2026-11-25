@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/1-s20-s0097316524000426-main",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Proof of a conjecture of Ballantine and Merca on truncated sums of 6-regular partitions",
+      "dcterms:creator": [
+        "Ballantine, Proof of a conjecture of",
+        "on, Merca"
+      ],
+      "bibo:doi": "10.1016/j.jcta.2024.105903",
+      "dcterms:identifier": "https://doi.org/10.1016/j.jcta.2024.105903",
+      "dcterms:abstract": "Article history: In 2012, Andrews and Merca proved a truncated theorem on Received 27 December 2023 Euler’s pentagonal number theorem. Their work has opened Accepted 29 March 2024 . : . up a new study of truncated series. Recently, Ballantine and Available online 15 April 2024 . y Merca posed a conjecture on infinite families of inequalities involving be (n), which counts the number of 6-regular partitions",
+      "dcterms:source": "library/1-s20-s0097316524000426-main/manifest.jsonld",
+      "dcterms:hasVersion": "library/1-s20-s0097316524000426-main"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-0309426v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "ELEMENTARY DIVISORS OF SPECHT MODULES",
+  "contains": [
+    "library/arxiv-math-0309426v2/sections/sec-front-matter",
+    "library/arxiv-math-0309426v2/sections/sec-000",
+    "library/arxiv-math-0309426v2/sections/sec-001",
+    "library/arxiv-math-0309426v2/sections/sec-002",
+    "library/arxiv-math-0309426v2/sections/sec-003",
+    "library/arxiv-math-0309426v2/sections/sec-004",
+    "library/arxiv-math-0309426v2/sections/sec-005",
+    "library/arxiv-math-0309426v2/sections/sec-006",
+    "library/arxiv-math-0309426v2/sections/sec-007"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "ELEMENTARY DIVISORS OF SPECHT MODULES — 9 sections: Front matter; Introduction and statement of main; The Hecke algebra and permutation\n\n**ELEMENTARY DIVISORS OF SPECHT MODULES**\n\n*MATTHIAS KÜNZER AND ANDREW MATHAS*\n\n20 pp, 9 sections.\n\n**Outline.** Front matter; 1 Introduction and statement of main results; 2 The Hecke algebra and permutation modules; 3 Specht modules; 4 Diagonalizability and elementary divisors; 5 Elementary divisors for conjugate partitions; 6 The elementary divisors for hook partitions; 7 Some counterexamples; Acknowledgements",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "licenceRecord": {
+    "status": "unknown",
+    "searched": [
+      {
+        "where": "https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:math/0309426&metadataPrefix=arXiv",
+        "result": "the arXiv metadata record has no <license> element",
+        "on": "2026-10-10"
+      }
+    ],
+    "note": "arXiv records no licence for this submission. Whether it may be republished is NOT established here; do not assume arXiv's default distribution licence grants it.",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-math-0309426v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "0309426v2.pdf",
+    "source_sha256": "f2aa01164d9f243c7c05ddb693e87b7dbbebfcd6830e0b527b58c07dab245b7b",
+    "pages": 20,
+    "arxiv": {
+      "id": "math/0309426",
+      "version": "2",
+      "primary_class": null,
+      "stamp_date": "1 Jul 2004"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

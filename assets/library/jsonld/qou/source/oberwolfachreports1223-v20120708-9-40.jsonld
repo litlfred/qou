@@ -1,0 +1,70 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/oberwolfachreports1223-v20120708-9-40/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "oberwolfachreports1223-v20120708-9-40",
+  "contains": [
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-front-matter",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-000",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-001",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-002",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-003",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-004",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-005",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-006",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-007",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-008",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-009",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-010",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-011",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-012",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-013",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-014",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-015",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-016",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-017",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-018",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-019",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-020",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-021",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-022",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-023",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-024",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-025",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-026",
+    "library/oberwolfachreports1223-v20120708-9-40/sections/sec-027"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Mathematisches Forschungsinstitut Oberwolfach Report No. 28/2012 Invariants in Low-Dimensional Topology and Knot Theory Organised by — This meeting concentrated on topological invariants in low di\n\n**Mathematisches Forschungsinstitut Oberwolfach Report No. 28/2012 Invariants in Low-Dimensional Topology and Knot Theory Organised by**\n\n*Selman Akbulut, East Lansing*\n\n67 pp, 29 sections.\n\n**Abstract.** This meeting concentrated on topological invariants in low di- mensional topology and knot theory. We include both three and four di- mensional manifolds in our phrase low dimensional topology. The intent of the conference was to understand the reach of knot theoretic invariants into four dimensions, including results in Khovanov homology, variants of Floer homology and quandle cohomology and to understand relationships among categoriﬁcation, topological quantum ﬁeld theories and four dimensional man- ifold invariants as in particular Seiberg-Witten invariants. Mathematics Subject Classiﬁcation (2000): 55-xx, 57-xx.\n\n**Outline.** Front matter; Invariants in Low-Dimensional Topology and Kno; Virtual Knot Theory - Problems and Ideas; Invariants and homology of biquandle classifyi; Injectivity of satellite operators in knot con; A new construction of the Fukaya–Seidel catego; Naturality of Heegaard Floer homology; Free Knots and Parity in Low-Dimensional Topol; Hugh R Morton Mutant knots with symmetry; Cork twisting exotic Stein 4-manifolds; Towards a categoriﬁcation of the universal sl(; Corks and Exotic Smooth Structures of 4-Manifo; Unlinking numbers of links and their families; Detecting tightness through open book decompos; Yokonuma–Hecke algebras; Seiberg-Witten maps and stable homotopy; Recognizing trivial links in polynomial time; Gluck twisting 4-manifolds with odd intersecti",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "oberwolfachreports1223-v20120708-9-40",
+    "title_source": "slug",
+    "source_file": "OberwolfachReports1223_v20120708_9_40.pdf",
+    "source_sha256": "94f82cfc185955bab2b3bcba5a9d73e3db549ed14f8a9c075b77557ca80f0b82",
+    "pages": 67,
+    "arxiv": null,
+    "doi": "10.4171/OWR/2012/28",
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

@@ -1,0 +1,626 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1508.06401v2",
+  "title": "Isospin splittings of meson and baryon masses from three-flavor lattice QCD + QED",
+  "variant": "pdf",
+  "pages": 14,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction and general strategy",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction-and-general-strategy"
+    },
+    {
+      "level": 1,
+      "title": "Lattice matters",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-lattice-matters"
+    },
+    {
+      "level": 1,
+      "title": "Results",
+      "number": "3",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-results"
+    },
+    {
+      "level": 1,
+      "title": "Conclusion and outlook",
+      "number": "4",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-conclusion-and-outlook"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 251,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "united kingdom",
+          "heading": false
+        },
+        {
+          "term": "isospin splittings",
+          "heading": false
+        },
+        {
+          "term": "qcd qed",
+          "heading": false
+        },
+        {
+          "term": "baryon masses",
+          "heading": false
+        },
+        {
+          "term": "lattice qcd",
+          "heading": false
+        },
+        {
+          "term": "ulich",
+          "heading": false
+        },
+        {
+          "term": "hamburg",
+          "heading": false
+        },
+        {
+          "term": "leipzig",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1508.06401v2 [hep-lat] 15 Jul 2016 Isospin splittings of meson and baryon masses from three-ﬂavor lattice QCD + QED R. Horsleya, Y. Nakamurab, H. Perltc, D. Pleiterd, P. E. L. Rakowe, G. Schierholzf, A. Schillerc, R. Stokesg, H. St¨ubenh, R. D. Youngg and J. M. Zanottig a School of Physics and Astronomy, University of Edinburgh, Edinburgh EH9 3FD, United Kingdom b RIKEN Advanced Institute for Computational",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1508.06401v2/blocks/prose-sec-front-matter",
+        "library/arxiv-1508.06401v2/blocks/prop-sec-front-matter-01"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction-and-general-strategy",
+      "number": "1",
+      "title": "Introduction and general strategy",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": "2",
+      "labelEnd": "4",
+      "words": 1368,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "δma δmb",
+          "heading": false
+        },
+        {
+          "term": "δµa δµb",
+          "heading": false
+        },
+        {
+          "term": "βem",
+          "heading": false
+        },
+        {
+          "term": "γem",
+          "heading": false
+        },
+        {
+          "term": "sea quark",
+          "heading": false
+        },
+        {
+          "term": "octet baryons",
+          "heading": false
+        },
+        {
+          "term": "octet mesons",
+          "heading": false
+        },
+        {
+          "term": "quark masses",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction and general strategy Isospin breaking eﬀects are crucial for the existence of our Universe. Our Universe would not exist in the present form if the n −p mass diﬀerence would only be slightly diﬀerent. If it would be larger than the binding energy of the deuteron, no fusion would take place. If it would be a little smaller, all hydrogen would have been burned to helium. Isospin breaking in hadron masses",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-lattice-matters",
+      "number": "2",
+      "title": "Lattice matters",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 7,
+      "labelStart": "4",
+      "labelEnd": "7",
+      "words": 1742,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "δµs δµu",
+          "heading": false
+        },
+        {
+          "term": "δµu δµa",
+          "heading": false
+        },
+        {
+          "term": "bin averaged",
+          "heading": false
+        },
+        {
+          "term": "quark masses",
+          "heading": false
+        },
+        {
+          "term": "ensemble averaged",
+          "heading": false
+        },
+        {
+          "term": "amπ",
+          "heading": false
+        },
+        {
+          "term": "meson masses",
+          "heading": false
+        },
+        {
+          "term": "background ﬁeld",
+          "heading": false
+        }
+      ],
+      "extract": "Lattice matters The action we are using is S = S G + S A + S u F + S d F + S s F . (5) Here S G is the tree-level Symanzik improved SU(3) gauge action with gauge coupling β = 6/g2, and S A is the noncompact U(1) gauge action [8, 9] of the photon, S A = 1 2e2 X x,µ<ν \u0010 Aµ(x) + Aν(x + µ) −Aµ(x + ν) −Aν(x) \u00112 . (6) We employ the nonperturbatively O(a) improved SLiNC fermion action [10] for each quark ﬂavor, ˜S q F = X",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-results",
+      "number": "3",
+      "title": "Results",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 13,
+      "labelStart": "7",
+      "labelEnd": "13",
+      "words": 2813,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "δµu δµd",
+          "heading": false
+        },
+        {
+          "term": "qcd qed",
+          "heading": false
+        },
+        {
+          "term": "dashen scheme",
+          "heading": false
+        },
+        {
+          "term": "pseudoscalar meson",
+          "heading": false
+        },
+        {
+          "term": "meson masses",
+          "heading": false
+        },
+        {
+          "term": "baryon masses",
+          "heading": false
+        },
+        {
+          "term": "qed contribution",
+          "heading": false
+        },
+        {
+          "term": "octet pseudoscalar",
+          "heading": false
+        }
+      ],
+      "extract": "Results After the initial small volume tuning runs, it turns out that the chosen κ values do not quite satisfy our constraint of equal neutral pseudoscalar meson masses. A more accurate estimate can be determined from a ﬁt to the pseudoscalar meson masses. On the 483 × 96 lattice we obtain ¯κu = 0.124382 , ¯κd = ¯κs = 0.121703, ¯κn = 0.120814 , (11) which is only a small displacement from the underlying simulation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-conclusion-and-outlook",
+      "number": "4",
+      "title": "Conclusion and outlook",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 747,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hep-lat",
+          "heading": false
+        },
+        {
+          "term": "pos lattice",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "arxiv",
+          "heading": false
+        },
+        {
+          "term": "horsley",
+          "heading": false
+        },
+        {
+          "term": "lattice spacing",
+          "heading": false
+        },
+        {
+          "term": "valence quark",
+          "heading": false
+        }
+      ],
+      "extract": "Conclusion and outlook We have outlined a program to systematically investigate the ﬂavor structure of hadrons in a full QCD + QED lattice simulation. By treating the valence quark masses diﬀerently to those in the sea allows for a range of valence quark masses and charges to be explored and signiﬁcantly enhances our ability to accurately constrain the ﬁt parameters in our ﬂavor-breaking expansions. As a result, we",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "δµu δµa",
+      "heading": false
+    },
+    {
+      "term": "δµu δµd",
+      "heading": false
+    },
+    {
+      "term": "quark masses",
+      "heading": true
+    },
+    {
+      "term": "meson masses",
+      "heading": true
+    },
+    {
+      "term": "qcd qed",
+      "heading": false
+    },
+    {
+      "term": "δµa δµb",
+      "heading": false
+    },
+    {
+      "term": "δµs δµu",
+      "heading": false
+    },
+    {
+      "term": "baryon masses",
+      "heading": true
+    },
+    {
+      "term": "lattice qcd",
+      "heading": false
+    },
+    {
+      "term": "pseudoscalar meson",
+      "heading": true
+    },
+    {
+      "term": "quark mass",
+      "heading": false
+    },
+    {
+      "term": "coeﬃcients βem",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Examples of Feynman diagrams contributing to the meson electromagnetic mass to",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Left panel: The background ﬁeld on the 243 × 48 lattice divided into three bins of",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The neutral pseudoscalar meson masses M2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The charge eN = +1 (p and Σ+) baryon masses M2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Fan plots of pseudoscalar meson (top) and baryon masses (bottom) on the 483 × 96",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The QED contribution to the p −n mass splitting on the 323 × 64 and 483 × 96 lattices",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Mass splittings of pseudoscalar meson (top) and baryon masses (bottom) as a function",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Mass splittings ∆M of octet pseudoscalar meson and baryon masses compared to",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Mass splittings in the inﬁnite volume, in units of MeV. The ﬁrst error is the statistical",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "The allowed ratio of quark masses mu/md for a range of against αEM. The solid circle is",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 4,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 5,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "9 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p13); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 5 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1508.06401v2"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-wedderburn-as-noncomm-fourier",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:wedderburn-as-noncomm-fourier",
+  "kind": "proposition",
+  "title": "The Wedderburn--Artin mass sum is the inverse non-commutative Fourier transform on $H_n(q)$",
+  "cites": [
+    "references/jones1987",
+    "references/kassel1995",
+    "references/fulton1997"
+  ],
+  "tags": [
+    "wedderburn-artin",
+    "peter-weyl",
+    "non-commutative-fourier",
+    "hecke-algebra",
+    "plancherel"
+  ],
+  "leanRef": "qou:QOU.WedderburnFourier.peter_weyl_decomposition",
+  "text": "wedderburn-as-noncomm-fourier.md",
+  "leanSource": "wedderburn-as-noncomm-fourier.lean",
+  "provenance": "authored"
+}

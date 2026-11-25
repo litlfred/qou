@@ -1,0 +1,234 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2311.05446v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-2311.05446v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2311.05446v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Improved Brunn–Minkowski inequalities",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-11-improved-brunnminkowski-inequalities.md",
+      "narrative": null,
+      "content": "Let $\\nu$ be a Borel measure on $\\mathbb{R}^{n}$. We say that $\\nu$ satisfies a Brunn--Minkowski inequality with exponent $a$ if for all Borel sets $K_{0}, K_{1} \\subseteq\\mathbb{R}^{n}$ satisfying $\\nu(K_{0}),\\nu(K_{1})>0$ and every $0\\le t \\le1$ we have $$\\label{eq:BM}\n\\nu\\left((1-t)K_{0}+ t K_{1}\\right)\\ge\\left((1-t)\\nu(K_{0})^{a}+ t \\nu(K_{1})^{a}\\right)^{1/a}.$$ Here $(1-t)K_{0} +t K_{1}=\\left\\{ (1-t) x+ t  y:\\ x\\in K_{0},\\ y\\in K_{1}\\right\\}$ is the $t$-*Minkowski average* of the sets $K_{0}$ and $K_{1}$. Note that the inequality becomes stronger as $a$ increases. The prototypical exampl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2311.05446v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "NEW BRUNN–MINKOWSKI AND FUNCTIONAL\nINEQUALITIES VIA CONVEXITY OF ENTROPY\nGAUTAM AISHWARYA AND LIRAN ROTEM\nAbstract. We study the connection between the concavity properties\nof a measure ν and the convexity properties of the associated relative\nentropy D(·∥ν) along optimal transport. As a corollary we prove a new\ndimensional Brunn–Minkowski inequality for centered star-shaped bod-\nies, when the measure ν is log-concave with a p-homogeneous potential\n(such as the Gaussian measure). Our method allows us to go beyond the\nusual convexity assumption on the sets that is fundamentally essential\nfor th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2311.05446v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weighted Brunn–Minkowski inequalities for star bodies",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-12-weighted-brunnminkowski-inequalities-for-star.md",
+      "narrative": null,
+      "content": "Despite the difficulties mentioned above when dealing with non-convex sets, in this paper we prove the following theorem:\n\n::: thm\n[]{#thm:main-BM intro label=\"thm:main-BM intro\"}Let $V:\\mathbb{R}^{n}\\to[0,\\infty)$ be a $p$-homogeneous convex function for $1<p<\\infty$, and let $\\nu$ be a measure with density $\\frac{\\mathrm{d}\\nu}{\\mathrm{d}x}$ proportional to $e^{-V}$. Let $K_{0},K_{1}\\subseteq\\mathbb{R}^{n}$ be star bodies. Then for all $0\\le t \\le1$ we have $$\\text{\\ensuremath{\\nu\\left((1-t)K_{0}+t K_{1}\\right)^{\\frac{p-1}{pn}}\\ge(1-t)\\nu(K_{0})^{\\frac{p-1}{pn}}+ t \\nu\\left(K_{1}\\right)^{\\fr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2311.05446v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Towards the best possible exponent in the entropy inequality",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-13-towards-the-best-possible-exponent-in-the-ent.md",
+      "narrative": null,
+      "content": "As mentioned, Theorem [\\[thm:main-BM intro\\]](#thm:main-BM intro){reference-type=\"ref\" reference=\"thm:main-BM intro\"} implies the Kolesnikov-Livshyts inequality [\\[eq:gassian-BM-2n\\]](#eq:gassian-BM-2n){reference-type=\"eqref\" reference=\"eq:gassian-BM-2n\"}, but not the result of Eskenazis--Moschidis with the optimal exponent $\\frac{1}{n}$. Since this result is known to be true, one can hope for a version of Theorem [\\[thm:main-entropy\\]](#thm:main-entropy){reference-type=\"ref\" reference=\"thm:main-entropy\"} that will imply it, that is, a version with the sharp coefficient $\\frac{1}{n}$, under su",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2311.05446v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Functional Inequalities",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-14-functional-inequalities.md",
+      "narrative": null,
+      "content": "While we cannot answer Question [\\[qstn: poincare\\]](#qstn: poincare){reference-type=\"ref\" reference=\"qstn: poincare\"} in full generality, the case where $\\mu_0$ or $\\mu_1$ is $\\gamma$ itself does suffice to prove several fundamental functional inequalities.\n\nThe HWI inequality, originally introduced by Otto and Villani in [@OttoVillani00], asserts a relationship between the three elemental quantities--- $D(\\cdot \\Vert \\gamma), \\mathscr{W}_{2}(\\cdot, \\gamma)$, and $I(\\cdot \\Vert \\gamma)$. The \"H\" in HWI stands for relative entropy (as it is sometimes denoted), \"W\" is for the Wasserstein distan",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2311.05446v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some notation and conventions:",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-some-notation-and-conventions.md",
+      "narrative": null,
+      "content": "-   The standard Euclidean norm on $\\mathbb{R}^n$ is denoted by $\\vert \\cdot \\vert$ .\n\n-   Let $K \\subseteq \\mathbb{R}^n$ be a measurable subset. We denote by $\\mathcal{P}(K)$ the space of all Borel probability measures on $K$, $\\mathcal{P}_{2}(K)$ all Borel probability measures on $K$ with finite second moments, and $\\mathcal{P}_{ac}(K)$ the space of Borel probability measures on $K$ absolutely continuous with respect to the Lebesgue measure $\\textnormal{Vol}_{n}$ on $\\mathbb{R}^n$. Further, we set $\\mathcal{P}_{2,ac}(K) = \\mathcal{P}_{2}(K) \\cap \\mathcal{P}_{ac}(K)$.\n\n-   We will sometimes w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2311.05446v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Optimal transport, entropy, and an overview of our method",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "../sections/sec-006-2-optimal-transport-entropy-and-an-overview-of-o.md",
+      "narrative": null,
+      "content": "[]{#sec: overview label=\"sec: overview\"} While the general problem of optimal transport can be posed in a much more abstract setting, we will focus on the setup relevant for our purpose, namely the optimal transport problem in $\\mathbb{R}^n$ with quadratic cost. For details beyond the short treatment we present below, the reader is referred to the excellent textbook [@Villani03], especially Chapters 2 and 5.\n\nFor $\\mu_{0}, \\mu_{1} \\in \\mathcal{P}_{2}(\\mathbb{R}^n)$, denote by $\\Pi (\\mu_{0}, \\mu_{1})$ the collection of all couplings between $\\mu_{0}$ and $\\mu_{1}$. This means, $\\Pi (\\mu_{0}, \\m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2311.05446v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dimensional convexity properties of relative entropy for log-concave measures with homogeneous potential",
+      "pageStart": 13,
+      "pageEnd": 18,
+      "target": "../sections/sec-007-3-dimensional-convexity-properties-of-relative-e.md",
+      "narrative": null,
+      "content": "[]{#sec: dimconhomo label=\"sec: dimconhomo\"} In this section, we fix a measure $\\nu$ of the form $\\textnormal{ d}\\nu = e^{-V} \\textnormal{ d}x$, where $V: \\mathbb{R}^n \\to \\mathbb{R}\\cup \\{ + \\infty \\}$ is a convex function. We will break down the proof of the main result of this section into several lemmas, for the convenience of the reader who may wish to generalize our results.\n\nThe relative entropy with respect to $\\nu$ can be decomposed into two parts. Suppose $\\mu$ is a probability measure that has density with respect to $\\nu$. Write $\\frac{\\textnormal{ d}\\mu}{\\textnormal{ d}x} = f$. Th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2311.05446v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dimensional convexity properties of the Gaussian relative entropy",
+      "pageStart": 18,
+      "pageEnd": 25,
+      "target": "../sections/sec-008-4-dimensional-convexity-properties-of-the-gaussi.md",
+      "narrative": null,
+      "content": "[]{#sec: gaussian label=\"sec: gaussian\"} In this section, we will differentiate the relative entropy $D(\\cdot \\Vert \\nu)$, where $\\textnormal{ d}\\nu = e^{-V} \\textnormal{ d}x$, directly along displacement interpolations without decomposing it into two parts as in the previous section. While we focus on the Gaussian measure, $\\nu = \\gamma$, we will introduce the relevant setup for a general $\\nu$.\n\nIn this direction, the presentation is cleaner and more insightful if we use the language of the Bakry--Émery $\\Gamma$-calculus. Measures $\\textnormal{ d}\\nu = e^{-V} \\textnormal{ d}x$, for smooth en",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2311.05446v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Applications to functional inequalities",
+      "pageStart": 25,
+      "pageEnd": 29,
+      "target": "../sections/sec-009-5-applications-to-functional-inequalities.md",
+      "narrative": null,
+      "content": "[]{#sec: gaussianapp label=\"sec: gaussianapp\"}\n\nIn this section, we present some applications of the second part of Proposition [\\[prop: oneendgaussian\\]](#prop: oneendgaussian){reference-type=\"ref\" reference=\"prop: oneendgaussian\"}, that is, the $(2,n)$-convexity of $D(\\mu_{t} \\Vert \\gamma)$ when one endpoint of the geodesic segment $\\{ \\mu_{t} \\}_{t \\in [0,1]}$ is an even strongly log-concave probability measure, and the other is the $\\gamma$ itself. More specifically, we will prove improved $(2,n)$ versions to the (a priori $(1, \\infty)-$) Gaussian *HWI*, Logarithmic Sobolev, and Talagrand",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2311.05446v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 29,
+      "pageEnd": 32,
+      "target": "../sections/sec-010-references.md",
+      "narrative": null,
+      "content": "1. Luigi Ambrosio, Nicola Gigli, and Giuseppe Savar´e, Gradient flows in metric spaces\nand in the space of probability measures, second ed., Lectures in Mathematics ETH\nZ¨urich, Birkh¨auser Verlag, Basel, 2008. MR 2401600\n2. Efe Aras and Thomas A. Courtade, Sharp maximum-entropy comparisons, 2021 IEEE\nInternational Symposium on Information Theory (ISIT), IEEE, 2021, pp. 1504–1509.\n3. D. Bakry and Michel ´Emery, Diffusions hypercontractives, S´eminaire de probabilit´es,\nXIX, 1983/84, Lecture Notes in Math., vol. 1123, Springer, Berlin, 1985, pp. 177–206.\nMR 889476\n4. Dominique Bakry, Fran¸cois",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

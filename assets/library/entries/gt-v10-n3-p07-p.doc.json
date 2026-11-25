@@ -1,0 +1,1030 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "gt-v10-n3-p07-p",
+  "title": "Stabilization in the braid groups II:Transversal simplicity of knots",
+  "variant": "pdf",
+  "pages": 28,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction and description of results",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1425",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction-and-description-of-results"
+    },
+    {
+      "level": 1,
+      "title": "The MTWS and transversal isotopies",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "1428",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-the-mtws-and-transversal-isotopies"
+    },
+    {
+      "level": 2,
+      "title": "Block-strand diagrams, templates and the MTWS",
+      "number": "2.1",
+      "page": 4,
+      "pageLabel": "1428",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-21-block-strand-diagrams-templates-and-the-mtws"
+    },
+    {
+      "level": 2,
+      "title": "The construction of transversal clasp annuli",
+      "number": "2.2",
+      "page": 8,
+      "pageLabel": "1432",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-22-the-construction-of-transversal-clasp-annuli"
+    },
+    {
+      "level": 2,
+      "title": "Braid foliations on transversal clasp annuli",
+      "number": "2.3",
+      "page": 13,
+      "pageLabel": "1437",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-23-braid-foliations-on-transversal-clasp-annuli"
+    },
+    {
+      "level": 2,
+      "title": "A weak transversal MTWS",
+      "number": "2.4",
+      "page": 20,
+      "pageLabel": "1444",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-24-a-weak-transversal-mtws"
+    },
+    {
+      "level": 1,
+      "title": "Transversal simplicity and its failure",
+      "number": "3",
+      "page": 24,
+      "pageLabel": "1448",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-3-transversal-simplicity-and-its-failure"
+    },
+    {
+      "level": 2,
+      "title": "The failure of transversal simplicity for certain closed 3–braids",
+      "number": "3.1",
+      "page": 24,
+      "pageLabel": "1448",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-31-the-failure-of-transversal-simplicity-for-cer"
+    },
+    {
+      "level": 2,
+      "title": "Future work and some open problems",
+      "number": "3.2",
+      "page": 26,
+      "pageLabel": "1450",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-32-future-work-and-some-open-problems"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 27,
+      "pageLabel": "1451",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-009-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1425",
+      "labelEnd": "1425",
+      "words": 75,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transversal knot",
+          "heading": false
+        },
+        {
+          "term": "knot types",
+          "heading": false
+        },
+        {
+          "term": "indirect",
+          "heading": false
+        }
+      ],
+      "extract": "Geometry & Topology 10 (2006) 1425–1452 1425 Stabilization in the braid groups II: Transversal simplicity of knots JOAN S BIRMAN WILLIAM W MENASCO The main result of this paper is a negative answer to the question: are all transversal knot types transversally simple? An explicit inﬁnite family of examples is given of closed 3–braids that deﬁne transversal knot types that are not transversally simple. The method of",
+      "extractCut": true,
+      "blocks": [
+        "library/gt-v10-n3-p07-p/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction-and-description-of-results",
+      "number": "1",
+      "title": "Introduction and description of results",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": "1425",
+      "labelEnd": "1428",
+      "words": 1403,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transversal knot",
+          "heading": false
+        },
+        {
+          "term": "braid isotopy",
+          "heading": false
+        },
+        {
+          "term": "deﬁne transversal",
+          "heading": false
+        },
+        {
+          "term": "tight contact",
+          "heading": false
+        },
+        {
+          "term": "closed braid",
+          "heading": false
+        },
+        {
+          "term": "transverse knot",
+          "heading": false
+        },
+        {
+          "term": "bennequin showed",
+          "heading": false
+        },
+        {
+          "term": "braid structure",
+          "heading": false
+        }
+      ],
+      "extract": "This paper is about knots which are transverse to the standard tight contact structure in R3, and about the ways in which topological information about braids can be used to learn new things about these ‘transversal knots’. Our approach to contact topology had its origins in the foundational paper of D Bennequin [2]. The results in this paper are direct outgrowths of our work on the Markov Theorem without",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-mtws-and-transversal-isotopies",
+      "number": "2",
+      "title": "The MTWS and transversal isotopies",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "1428",
+      "labelEnd": "1428",
+      "words": 232,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transversal",
+          "heading": true
+        },
+        {
+          "term": "transversal clasp",
+          "heading": false
+        },
+        {
+          "term": "transversal setting",
+          "heading": false
+        },
+        {
+          "term": "clasp annulus",
+          "heading": false
+        },
+        {
+          "term": "foliation",
+          "heading": false
+        },
+        {
+          "term": "goal",
+          "heading": false
+        }
+      ],
+      "extract": "The goal of this section is to prove Theorem 2, a special and limited version of Theorem 1, the main result in [6]. Theorem 1 is valid in the topological setting, whereas Theorem 2 is valid in the transversal setting. In Section 2.1 our goal is to review enough of the background so that we can state Theorem 1. Its proof is in [6]. After that, we will redo some parts of the proof which were given in [6] in a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-block-strand-diagrams-templates-and-the-mtws",
+      "number": "2.1",
+      "title": "Block-strand diagrams, templates and the MTWS",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 8,
+      "labelStart": "1428",
+      "labelEnd": "1432",
+      "words": 1499,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "block-strand diagrams",
+          "heading": true
+        },
+        {
+          "term": "templates",
+          "heading": true
+        },
+        {
+          "term": "destabilization template",
+          "heading": false
+        },
+        {
+          "term": "braid isotopy",
+          "heading": false
+        },
+        {
+          "term": "move template",
+          "heading": false
+        },
+        {
+          "term": "braid index",
+          "heading": false
+        },
+        {
+          "term": "braid isotopies",
+          "heading": false
+        },
+        {
+          "term": "exchange moves",
+          "heading": false
+        }
+      ],
+      "extract": "Let B be the collection of all braid isotopy classes of closed braid representatives of oriented knot types in oriented R3. Among these, consider the sub-collection B.X/ of representatives of a ﬁxed knot type X . Among these, let Bmin.X/ be the sub-collection of representatives whose braid index is equal to the braid index of X . Choose any Geometry & Topology, Volume 10 (2006) Stabilization in the braid groups II",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-the-construction-of-transversal-clasp-annuli",
+      "number": "2.2",
+      "title": "The construction of transversal clasp annuli",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 13,
+      "labelStart": "1432",
+      "labelEnd": "1437",
+      "words": 2402,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transversal clasp",
+          "heading": true
+        },
+        {
+          "term": "transversal isotopy",
+          "heading": false
+        },
+        {
+          "term": "clasp annulus",
+          "heading": false
+        },
+        {
+          "term": "clasp arcs",
+          "heading": false
+        },
+        {
+          "term": "transversal closed",
+          "heading": false
+        },
+        {
+          "term": "transversal link",
+          "heading": false
+        },
+        {
+          "term": "clasp arc",
+          "heading": false
+        },
+        {
+          "term": "exists transversal",
+          "heading": false
+        }
+      ],
+      "extract": "The goal in this subsection and the two that follow it is to state and prove a modiﬁed version of Theorem 1 which holds in the transversal setting. The proof of the MTWS in [6] began with the construction of a ‘clasp annulus’. We were given closed braids XC and X\u0000 which represent the same topological knot type X . The goal was to ﬁnd an isotopy from XC ! X\u0000 through closed braids, which would give us moves that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-braid-foliations-on-transversal-clasp-annuli",
+      "number": "2.3",
+      "title": "Braid foliations on transversal clasp annuli",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 20,
+      "labelStart": "1437",
+      "labelEnd": "1444",
+      "words": 3583,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transversal clasp",
+          "heading": true
+        },
+        {
+          "term": "braid foliations",
+          "heading": true
+        },
+        {
+          "term": "transversal isotopy",
+          "heading": false
+        },
+        {
+          "term": "transversal disc",
+          "heading": false
+        },
+        {
+          "term": "graph txc",
+          "heading": false
+        },
+        {
+          "term": "clasp arcs",
+          "heading": false
+        },
+        {
+          "term": "transversal isotopies",
+          "heading": false
+        },
+        {
+          "term": "clasp arc",
+          "heading": false
+        }
+      ],
+      "extract": "The principle tool in the proof of the MTWS is the study of the braid foliation of CA, the singular foliation which is determined by the intersections of CA with the disc ﬁbers H\u0012 of H. Braid foliations have been reviewed in several places. We refer readers who are unfamiliar with them to the review in Sections 3 and 4 of [6], and if necessary thence to [3] for additional details. However, there are aspects of these",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-a-weak-transversal-mtws",
+      "number": "2.4",
+      "title": "A weak transversal MTWS",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 24,
+      "labelStart": "1444",
+      "labelEnd": "1448",
+      "words": 1740,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "weak transversal",
+          "heading": true
+        },
+        {
+          "term": "transversal clasp",
+          "heading": false
+        },
+        {
+          "term": "transversal template",
+          "heading": false
+        },
+        {
+          "term": "transversal isotopies",
+          "heading": false
+        },
+        {
+          "term": "transversal isotopy",
+          "heading": false
+        },
+        {
+          "term": "clasp annulus",
+          "heading": false
+        },
+        {
+          "term": "clasp arcs",
+          "heading": false
+        },
+        {
+          "term": "transversal closed",
+          "heading": false
+        }
+      ],
+      "extract": "We are now ready to state and prove our transverse version of the MTWS. Geometry & Topology, Volume 10 (2006) Stabilization in the braid groups II 1445 By Proposition 1 we know that there is a transversal clasp annulus TA associated to any pair .TXC; TX\u0000/. The characteristic foliation on TA, which is trivial, illustrates that the isotopy of TXC to TX\u0000 through TA is in fact a transversal isotopy. We also have a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-3-transversal-simplicity-and-its-failure",
+      "number": "3",
+      "title": "Transversal simplicity and its failure",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 24,
+      "labelStart": "1448",
+      "labelEnd": "1448",
+      "words": 179,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transversal",
+          "heading": true
+        },
+        {
+          "term": "transversal template",
+          "heading": false
+        },
+        {
+          "term": "txc",
+          "heading": false
+        },
+        {
+          "term": "failure",
+          "heading": true
+        }
+      ],
+      "extract": "In this section we develop our examples illustrating the failure of transversal simplicity. In particular, we will produce examples of pairs of closed braids, .XC; X\u0000/ such that: XC; X\u0000 2 Bmin.X/; their associated transversal knots TXC and TX\u0000 will have ˇ.TXC/ D ˇ.TX\u0000/; but, TXC is not transversally isotopic to TX\u0000. Our over-riding strategy will be to employ Theorem 1 and Theorem 2 through the following line of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-31-the-failure-of-transversal-simplicity-for-cer",
+      "number": "3.1",
+      "title": "The failure of transversal simplicity for certain closed 3–braids",
+      "level": 2,
+      "pageStart": 24,
+      "pageEnd": 26,
+      "labelStart": "1448",
+      "labelEnd": "1450",
+      "words": 1121,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transversal",
+          "heading": true
+        },
+        {
+          "term": "ﬂype template",
+          "heading": false
+        },
+        {
+          "term": "closed braids",
+          "heading": true
+        },
+        {
+          "term": "transversal isotopy",
+          "heading": false
+        },
+        {
+          "term": "braids txc",
+          "heading": false
+        },
+        {
+          "term": "transversal knot",
+          "heading": false
+        },
+        {
+          "term": "braid representatives",
+          "heading": false
+        },
+        {
+          "term": "œtx top",
+          "heading": false
+        }
+      ],
+      "extract": "Theorem 3 There exist inﬁnitely many transversal knot types of braid index 3 which are not transversally simple. In particular, consider the collection of inﬁnitely many pairs of transversal knots .TXC; TX\u0000/ deﬁned by the pairs of transversal closed 3–braids TXC D \u001b2pC1 1 \u001b2r 2 \u001b2q 1 \u001b\u00001 2 ; TX\u0000 D \u001b2pC1 1 \u001b\u00001 2 \u001b2q 1 \u001b2r 2 ; Geometry & Topology, Volume 10 (2006) Stabilization in the braid groups II 1449 where p C1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-32-future-work-and-some-open-problems",
+      "number": "3.2",
+      "title": "Future work and some open problems",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "1450",
+      "labelEnd": "1451",
+      "words": 418,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braid index",
+          "heading": false
+        },
+        {
+          "term": "cable knots",
+          "heading": false
+        },
+        {
+          "term": "open",
+          "heading": true
+        },
+        {
+          "term": "contact structures",
+          "heading": false
+        },
+        {
+          "term": "open book",
+          "heading": false
+        },
+        {
+          "term": "bennequin number",
+          "heading": false
+        },
+        {
+          "term": "transversal",
+          "heading": false
+        },
+        {
+          "term": "counterexample",
+          "heading": false
+        }
+      ],
+      "extract": "Here are some of the ideas and questions that occurred to us in the course of the work in this paper. Geometry & Topology, Volume 10 (2006) Stabilization in the braid groups II 1451 (1) With the help of techniques that use only the machinery of contact structures and characteristic foliations, Etnyre and Honda have proved, in [9], the existence of examples of pairs of transversal cable knots that are of the same",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": "1451",
+      "labelEnd": "1452",
+      "words": 377,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "columbia university",
+          "heading": false
+        },
+        {
+          "term": "closed braids",
+          "heading": false
+        },
+        {
+          "term": "buffalo",
+          "heading": false
+        },
+        {
+          "term": "standard contact",
+          "heading": false
+        },
+        {
+          "term": "birman",
+          "heading": false
+        },
+        {
+          "term": "schnepfenried",
+          "heading": false
+        },
+        {
+          "term": "menasco",
+          "heading": false
+        },
+        {
+          "term": "contact space",
+          "heading": false
+        }
+      ],
+      "extract": "[1] V I Arnol’d, Topological invariants of plane curves and caustics, University Lecture Series 5, American Mathematical Society, Providence, RI (1994) MR1286249 Geometry & Topology, Volume 10 (2006) 1452 Joan S Birman and William W Menasco [2] D Bennequin, Entrelacements et ´equations de Pfaff, from: “Third Schnepfenried geometry conference, Vol. 1 (Schnepfenried, 1982)”, Ast´erisque 107, Soc. Math. France, Paris",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [
+      "figure 5"
+    ],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "transversal isotopy",
+      "heading": false
+    },
+    {
+      "term": "transversal clasp",
+      "heading": true
+    },
+    {
+      "term": "transversal template",
+      "heading": false
+    },
+    {
+      "term": "transversal closed",
+      "heading": true
+    },
+    {
+      "term": "transversal knot",
+      "heading": false
+    },
+    {
+      "term": "transversal markov",
+      "heading": false
+    },
+    {
+      "term": "transversal isotopies",
+      "heading": true
+    },
+    {
+      "term": "transversal oriented",
+      "heading": false
+    },
+    {
+      "term": "transversal disc",
+      "heading": false
+    },
+    {
+      "term": "transversal setting",
+      "heading": false
+    },
+    {
+      "term": "associated transversal",
+      "heading": false
+    },
+    {
+      "term": "transversal graph",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1425",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "1426",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "1427",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "1428",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "1429",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "1430",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "1431",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "1432",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "1433",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "1434",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "1435",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "1436",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "1437",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "1438",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "1439",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "1440",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "1441",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "1442",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "1443",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "1444",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "1445",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "1446",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "1447",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "1448",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "1449",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "1450",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "1451",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "1452",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "(a) Braid structure on R3; (b) 2–planes in the standard contact structure on R3. Note that these 2–planes are invariant under rotation about z–axis and translation along the z–axis (which we use as the braid axis A)",
+      "page": 2,
+      "pageLabel": "1426",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "The two destabilization templates. Each template is a pair of block-strand diagrams",
+      "page": 5,
+      "pageLabel": "1429",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The exchange move template, w \u0015 2, braid index m \u0015 4",
+      "page": 6,
+      "pageLabel": "1430",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "The two ﬂype templates. The weights must satisfy k0 \u0000 w \u0015 0. Note that the device of weighted strands may conceal half-twists introduced during the ﬂype. See Figure 4 of [6]",
+      "page": 7,
+      "pageLabel": "1431",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "The left sketch illustrates the types of non-singular leaves in the foliation of CA. The right sketch illustrates a foliated neighborhood of a type bb–singularity",
+      "page": 13,
+      "pageLabel": "1437",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Possible tile types in the foliation of CA. The black (resp. gray) arcs represent subarcs of XC (resp. X\u0000)",
+      "page": 14,
+      "pageLabel": "1438",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "The graph G\u000f;ı includes all singular leaves through vertices of sign \u000f and singularities of sign ı. The thick edges illustrate the passage of GC;C; G\u0000;\u0000; GC;\u0000; G\u0000;C through a bb–tile",
+      "page": 16,
+      "pageLabel": "1440",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "9",
+      "title": "The graph G, as it appears in the annulus PA",
+      "page": 19,
+      "pageLabel": "1443",
+      "confidence": 0.6,
+      "evidence": [
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 10,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "8 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p27); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/gt-v10-n3-p07-p"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/104171-owr-2018-52",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Enveloping Algebras and Geometric Representation Theory (Oberwolfach Report No. 52/2018)",
+      "dcterms:creator": [
+        "Algebras, Enveloping",
+        "Theory, Geometric Representation"
+      ],
+      "dcterms:issued": "D:20191209",
+      "bibo:doi": "10.4171/OWR/2018/52",
+      "dcterms:identifier": "https://doi.org/10.4171/OWR/2018/52",
+      "dcterms:abstract": "The workshop brought together experts investigating algebraic Lie theory from the geometric and categorical viewpoints. Mathematics Subject Classiﬁcation (2010): 17B35, 17B37, 20G15.",
+      "dcterms:source": "library/104171-owr-2018-52/manifest.jsonld",
+      "dcterms:hasVersion": "library/104171-owr-2018-52"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-generation-completeness-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:generation-completeness-interpretation",
+  "kind": "remark",
+  "title": "Physical content of the spectral filter and embeddable spectrum",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-generation-completeness"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-generation-completeness",
+  "tags": [
+    "completeness",
+    "skein",
+    "spectral-filter",
+    "genus",
+    "particle-spectrum",
+    "brings-surface"
+  ],
+  "text": "generation-completeness-interpretation.md",
+  "provenance": "authored"
+}

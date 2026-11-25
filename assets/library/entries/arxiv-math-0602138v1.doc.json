@@ -1,0 +1,481 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0602138v1",
+  "title": "arxiv-math-0602138v1",
+  "variant": "pdf",
+  "pages": 24,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Poisson Algebras with Internal Symmetry",
+      "number": null,
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-poisson-algebras-with-internal-symmetry"
+    },
+    {
+      "level": 1,
+      "title": "Formal Groups and Distribution Algebras",
+      "number": null,
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-formal-groups-and-distribution-algebras"
+    },
+    {
+      "level": 1,
+      "title": "Geometric Formal Groups",
+      "number": null,
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-geometric-formal-groups"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 790,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-commutative formal",
+          "heading": false
+        },
+        {
+          "term": "commutative formal",
+          "heading": false
+        },
+        {
+          "term": "geometric non-commutative",
+          "heading": false
+        },
+        {
+          "term": "charac teristic",
+          "heading": false
+        },
+        {
+          "term": "formal groups",
+          "heading": false
+        },
+        {
+          "term": "poisson structures",
+          "heading": false
+        },
+        {
+          "term": "splay",
+          "heading": false
+        },
+        {
+          "term": "dist",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0602138v1 [math.RA] 7 Feb 2006 Non-Commutative Formal Groups in Positive Characteristic Frederick Leitner December 22, 2017 Abstract We describe geometric non-commutative formal groups in ter ms of a ge- ometric commutative formal group with a Poisson structure o n its splay algebra. We describe certain natural properties of such Poi sson structures and show that any such Poisson structure gives rise to a",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0602138v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-poisson-algebras-with-internal-symmetry",
+      "number": null,
+      "title": "Poisson Algebras with Internal Symmetry",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 4295,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "poisson",
+          "heading": true
+        },
+        {
+          "term": "splay algebras",
+          "heading": false
+        },
+        {
+          "term": "poisson bracket",
+          "heading": false
+        },
+        {
+          "term": "internal symmetry",
+          "heading": true
+        },
+        {
+          "term": "poisson structure",
+          "heading": false
+        },
+        {
+          "term": "obner basis",
+          "heading": false
+        },
+        {
+          "term": "coordinate algebras",
+          "heading": false
+        },
+        {
+          "term": "commutative algebra",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we generalize the algebraic relationship as indicated in (Eqn. 1) for a Lie algebra g over R. Choosing any R-module basis g = R⟨Xi⟩i∈I , one can view Sg as the tensor product of the one dimensional algebras S{Xi}. It is from this vantage point that we wish to generalize. We will be looking a t S, a commutative algebra, which has a ﬁxed identiﬁcation as the tensor product S = ⨂ i∈I Ai of commutative",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-formal-groups-and-distribution-algebras",
+      "number": null,
+      "title": "Formal Groups and Distribution Algebras",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1681,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dist",
+          "heading": false
+        },
+        {
+          "term": "formal",
+          "heading": true
+        },
+        {
+          "term": "formal group",
+          "heading": false
+        },
+        {
+          "term": "δxpr",
+          "heading": false
+        },
+        {
+          "term": "fp-algebra",
+          "heading": false
+        }
+      ],
+      "extract": "We wish to apply the results of §1 in order to give a description of non- commutative formal groups over a ﬁeld k of characteristic p > 0. We establish some notation and conventions for general rings R. We say that G is a formal group (over R) if it is a group object in the category of smooth formal varieties over R. We denote its dimension by n < ∞. We recall some basic results of such formal groups (c.f [2], [3],",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-geometric-formal-groups",
+      "number": null,
+      "title": "Geometric Formal Groups",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 24,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3018,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "yps δxpr",
+          "heading": false
+        },
+        {
+          "term": "formal groups",
+          "heading": true
+        },
+        {
+          "term": "geometric formal",
+          "heading": true
+        },
+        {
+          "term": "commutative formal",
+          "heading": false
+        },
+        {
+          "term": "obner bases",
+          "heading": false
+        },
+        {
+          "term": "formal varieties",
+          "heading": false
+        },
+        {
+          "term": "lie groups",
+          "heading": false
+        },
+        {
+          "term": "math ematical",
+          "heading": false
+        }
+      ],
+      "extract": "Although (Prop. 2.4) gives some reasonable control on the algebra structure of Dist(G), some diﬃculties remain in trying to characterize formal groups in s uch a manner. First, our construction depended on the choice of an or dered coor- dinate system. Second, we have yet to address the DVPS-co-alge bra structure and its compatibility with the algebra structure. For this, we will need to make an assumption on G,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "splay algebras",
+      "heading": false
+    },
+    {
+      "term": "commutative formal",
+      "heading": false
+    },
+    {
+      "term": "yps δxpr",
+      "heading": false
+    },
+    {
+      "term": "obner basis",
+      "heading": false
+    },
+    {
+      "term": "obner bases",
+      "heading": false
+    },
+    {
+      "term": "non-commutative formal",
+      "heading": false
+    },
+    {
+      "term": "formal groups",
+      "heading": true
+    },
+    {
+      "term": "poisson structure",
+      "heading": false
+    },
+    {
+      "term": "geometric formal",
+      "heading": true
+    },
+    {
+      "term": "dist",
+      "heading": false
+    },
+    {
+      "term": "poisson bracket",
+      "heading": false
+    },
+    {
+      "term": "lie algebras",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 3,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 4,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p16); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 4 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0602138v1"
+  }
+}

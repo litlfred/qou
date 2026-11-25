@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="fa-search-exclude" content="true">
+<title>trace-cache · Subgraph</title>
+<link rel="alternate" type="application/ld+json" href="trace-cache.jsonld">
+<script type="application/ld+json">
+{"@context":"https://litlfred.github.io/qou/qou.context.jsonld","@id":"https://litlfred.github.io/qou/directory/trace-cache.jsonld","partOf":"https://litlfred.github.io/qou/qou.jsonld","@graph":[{"@id":"https://litlfred.github.io/qou/directory/trace-cache","@type":"https://litlfred.github.io/bootstrap/v0/ns/Subgraph","name":"trace-cache","path":"trace-cache/","contentSource":{"kind":"family","branch":"cat/qou/trace-cache/","keyFrom":"\u003cfunction>-\u003cengine-key>-q\u003cq-key>-dps\u003cdps>, e.g. tr-m-atomic-mpfr-suffixes-\u003c12 hex>-q\u003c12 hex>-dps40; function is tr-m-atomic-mpfr or tr-m-atomic-mpfr-suffixes, one member per route because two routes to one exact value may round its last digits differently; engine-key hashes the git trees of tools/hecke-engine and tools/pyhecke-native (the wheel-cache source key), q-key hashes the q0 decimal string","declaredIn":"storage"},"holdsGraph":["https://litlfred.github.io/cat-harness/v0/ns/graphTypology/trace-cache"],"description":"Exact results of qou's native trace producers (`pyhecke_native.tr_m_atomic_mpfr` and `tr_m_atomic_mpfr_suffixes`), stored so a long probe run resumes and a re-run recomputes nothing. One orphan branch per producer function, engine source key, q0 string and dps; inside it, content-addressed JSONL shards of (n, signed word, suffix) -> the producer's exact decimal string, never a float. A dirty engine tree has no key, so a stale value is never served, and `computations/trace_cache.py` re-evaluates a sample of loaded entries against the live binary before using any. Read and written by scripts/trace-cache.sh, whose git objects live in a private bare repository; computations/trace_cache.py restores by default but seeds origin only when QOU_TRACE_CACHE_PUSH=1; a seed adds a shard on top of the tip and never forces. `trace-cache/` is where a member is mounted; nothing is tracked there. The kind is `typologies/trace-cache.json`.","inSubgraph":"https://litlfred.github.io/qou/directory/trace-cache"}]}
+</script>
+<style>
+:root { color-scheme: light dark; --fg: #1d1d1f; --bg: #fff; --muted: #6e6e73; --line: #d2d2d7; }
+@media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg: #f5f5f7; --bg: #1c1c1e; --muted: #a1a1a6; --line: #3a3a3c; } }
+  :root[data-fa-scheme="dark"] { --fg: #f5f5f7; --bg: #1c1c1e; --muted: #a1a1a6; --line: #3a3a3c; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+body { margin: 0; font: 15px/1.5 system-ui, sans-serif; color: var(--fa-pl-fg, var(--fg)); background: var(--fa-pl-bg, var(--bg)); }
+.fa-page-main { box-sizing: border-box; padding: 1rem 1.5rem 3rem; max-width: 72rem; overflow-wrap: anywhere; }
+code, .iri { font-family: var(--fa-font-mono,Menlo,Consolas,monospace); font-size: 0.9em; overflow-wrap: anywhere; word-break: break-word; }
+.muted { color: var(--fa-pl-muted, var(--muted)); }
+.fa-page-main .subject-kind { margin: 0; }
+.fa-page-main h1 { margin-top: 0.25rem; }
+.subject-pin { margin-left: 0.35rem; padding: 0.1rem 0.5rem; font: inherit; font-size: 0.85em; border: 1px solid var(--fa-pl-line, var(--line)); border-radius: 999px; background: transparent; color: inherit; cursor: pointer; }
+.subject-pin[aria-pressed="true"] { border-color: #2e7d32; background: #2e7d32; color: #fff; }
+table { border-collapse: collapse; width: 100%; margin: 0.5rem 0 1.5rem; table-layout: fixed; }
+th, td { text-align: left; vertical-align: top; padding: 0.3rem 0.5rem; border-top: 1px solid var(--fa-pl-line, var(--line)); overflow-wrap: anywhere; }
+th { width: 10rem; font-weight: 600; }
+.schema-fields th, .schema-fields td { width: auto; }
+.schema-prose pre { overflow-x: auto; padding: 0.5rem; border: 1px solid var(--fa-pl-line, var(--line)); }
+td .iri { font-size: 0.8em; }
+@media (max-width: 40rem) { th { width: 6.5rem; } }
+</style>
+</head>
+<body>
+<main class="fa-page-main">
+<p class="muted subject-kind">Subgraph</p>
+<h1>trace-cache</h1>
+<p class="iri muted">https://litlfred.github.io/qou/directory/trace-cache</p>
+<p data-fa-pin="https://litlfred.github.io/qou/directory/trace-cache" data-fa-pin-kind="pin" data-fa-pin-node-kind="cat-harness" data-fa-pin-title="trace-cache" data-fa-pin-href="trace-cache.html" data-fa-pin-source="qou"><a href="trace-cache.jsonld">JSON-LD</a> · in graph <a class="iri" href="https://litlfred.github.io/qou/qou.jsonld">qou.jsonld</a> · <button type="button" class="subject-pin" data-fa-pin-control aria-pressed="false" aria-label="Pin trace-cache to your folio glass" title="Pin to your folio">&#x1f4cc; Pin to folio</button></p>
+<table class="fa-page-wide">
+<tr><th>name</th><td>trace-cache</td></tr>
+<tr><th>path</th><td>trace-cache/</td></tr>
+<tr><th>contentSource</th><td><code>{&quot;kind&quot;:&quot;family&quot;,&quot;branch&quot;:&quot;cat/qou/trace-cache/&quot;,&quot;keyFrom&quot;:&quot;&lt;function&gt;-&lt;engine-key&gt;-q&lt;q-key&gt;-dps&lt;dps&gt;, e.g. tr-m-atomic-mpfr-suffixes-&lt;12 hex&gt;-q&lt;12 hex&gt;-dps40; function is tr-m-atomic-mpfr or tr-m-atomic-mpfr-suffixes, one member per route because two routes to one exact value may round its last digits differently; engine-key hashes the git trees of tools/hecke-engine and tools/pyhecke-native (the wheel-cache source key), q-key hashes the q0 decimal string&quot;,&quot;declaredIn&quot;:&quot;storage&quot;}</code></td></tr>
+<tr><th>holdsGraph</th><td><a href="https://litlfred.github.io/cat-harness/v0/ns/graphTypology/trace-cache">trace-cache</a><br><span class="iri muted">https://litlfred.github.io/cat-harness/v0/ns/graphTypology/trace-cache</span></td></tr>
+<tr><th>description</th><td>Exact results of qou&#39;s native trace producers (<code>pyhecke_native.tr_m_atomic_mpfr</code> and <code>tr_m_atomic_mpfr_suffixes</code>), stored so a long probe run resumes and a re-run recomputes nothing. One orphan branch per producer function, engine source key, q0 string and dps; inside it, content-addressed JSONL shards of (n, signed word, suffix) -&gt; the producer&#39;s exact decimal string, never a float. A dirty engine tree has no key, so a stale value is never served, and <code>computations/trace_cache.py</code> re-evaluates a sample of loaded entries against the live binary before using any. Read and written by scripts/trace-cache.sh, whose git objects live in a private bare repository; computations/trace_cache.py restores by default but seeds origin only when QOU_TRACE_CACHE_PUSH=1; a seed adds a shard on top of the tip and never forces. <code>trace-cache/</code> is where a member is mounted; nothing is tracked there. The kind is <code>typologies/trace-cache.json</code>.</td></tr>
+<tr><th>inSubgraph</th><td><a href="https://litlfred.github.io/qou/directory/trace-cache">trace-cache</a><br><span class="iri muted">https://litlfred.github.io/qou/directory/trace-cache</span></td></tr>
+</table>
+
+</main>
+</body>
+</html>

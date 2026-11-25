@@ -1,0 +1,1269 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2504.18825v2",
+  "title": "Murnaghan-Nakayama rule for the cyclotomic Hecke algebra and applications",
+  "variant": "pdf",
+  "pages": 56,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-preliminaries"
+    },
+    {
+      "level": 1,
+      "title": "Murnaghan–Nakayama rule for the cyclotomic Hecke algebra",
+      "number": "3",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-murnaghannakayama-rule-for-the-cyclotomic-heck"
+    },
+    {
+      "level": 1,
+      "title": "Special cases of the Murnaghan–Nakayama rule",
+      "number": "4",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-special-cases-of-the-murnaghannakayama-rule"
+    },
+    {
+      "level": 1,
+      "title": "A dual Murnaghan–Nakayama rule via vertex operators",
+      "number": "5",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-a-dual-murnaghannakayama-rule-via-vertex-opera"
+    },
+    {
+      "level": 1,
+      "title": "Application I: Regev-type formula",
+      "number": "6",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-6-application-i-regev-type-formula"
+    },
+    {
+      "level": 1,
+      "title": "Application II: Lübeck–Prasad–Adin–Roichman-type formula",
+      "number": "7",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-7-application-ii-lübeckprasadadinroichman-type-f"
+    },
+    {
+      "level": 1,
+      "title": "Multiple bitrace for the irreducible characters",
+      "number": "8",
+      "page": 43,
+      "pageLabel": "43",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-8-multiple-bitrace-for-the-irreducible-character"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. An alternative proof of Corollary 6.3",
+      "number": null,
+      "page": 49,
+      "pageLabel": "49",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-appendix-a-an-alternative-proof-of-corollary-63"
+    },
+    {
+      "level": 1,
+      "title": "Appendix B. SageMath implementation of the Murnaghan–Nakayama rule",
+      "number": null,
+      "page": 51,
+      "pageLabel": "51",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-appendix-b-sagemath-implementation-of-the-murnag"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 55,
+      "pageLabel": "55",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 349,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "murnaghan nakayama",
+          "heading": false
+        },
+        {
+          "term": "nakayama rule",
+          "heading": false
+        },
+        {
+          "term": "dual murnaghan",
+          "heading": false
+        },
+        {
+          "term": "prasad adin",
+          "heading": false
+        },
+        {
+          "term": "adin roichman",
+          "heading": false
+        },
+        {
+          "term": "ubeck prasad",
+          "heading": false
+        },
+        {
+          "term": "multiple bitrace",
+          "heading": false
+        },
+        {
+          "term": "cyclotomic hecke",
+          "heading": false
+        }
+      ],
+      "extract": "MURNAGHAN–NAKAYAMA RULE FOR THE CYCLOTOMIC HECKE ALGEBRA AND APPLICATIONS NAIHUAN JING AND NING LIU Abstract. We establish a Murnaghan–Nakayama rule for the irreducible characters of the cyclotomic Hecke algebra Hm,n(q, u) on Shoji’s standard elements. Combined with Shoji’s determinacy result, our formula provides a direct combinatorial route to the full irreducible character table of Hm,n(q, u). Our construction is",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2504.18825v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 7,
+      "labelStart": "2",
+      "labelEnd": "7",
+      "words": 2159,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "murnaghan--nakayama rule",
+          "heading": false
+        },
+        {
+          "term": "shoji frobenius-type",
+          "heading": false
+        },
+        {
+          "term": "murnaghan--nakayama formula",
+          "heading": false
+        },
+        {
+          "term": "dual murnaghan--nakayama",
+          "heading": false
+        },
+        {
+          "term": "mathscr schur",
+          "heading": false
+        },
+        {
+          "term": "regev cite",
+          "heading": false
+        },
+        {
+          "term": "mainthm medskip",
+          "heading": false
+        },
+        {
+          "term": "mathscr rtimes",
+          "heading": false
+        }
+      ],
+      "extract": "\\subsection{Background}\\label{ss:Backgroud} The Murnaghan--Nakayama rule \\cite{Mur,Nak1,Nak2} serves as a combinatorial algorithm for calculating the irreducible characters of symmetric groups $\\mathfrak{S}_n$. The Iwahori--Hecke algebra $\\mathscr{H}_{n}(q)$ in type $A$, which is the $q$-deformation of $\\mathfrak{S}_n$, is a unital associative algebra over the field of rational functions $\\mathbb{C}(q)$. Ram",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 12,
+      "labelStart": "7",
+      "labelEnd": "12",
+      "words": 2192,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "scope draw",
+          "heading": false
+        },
+        {
+          "term": "scope clip",
+          "heading": false
+        },
+        {
+          "term": "fill black",
+          "heading": false
+        },
+        {
+          "term": "color black",
+          "heading": false
+        },
+        {
+          "term": "fill white",
+          "heading": false
+        },
+        {
+          "term": "begin scope",
+          "heading": false
+        },
+        {
+          "term": "end scope",
+          "heading": false
+        },
+        {
+          "term": "begin tikzpicture",
+          "heading": false
+        }
+      ],
+      "extract": "\\subsection{Multipartitions and corresponding symmetric functions} The terminologies and notations about classical {\\it partitions}, such as {\\it length, weight, diagram}, etc, can be found in \\cite[Chapter I]{Mac}. Now we introduce the corresponding notions and definitions in the context of {\\em multipartitions}. A $m$-multipartition (resp. $m$-multicomposition) of $n$ is an ordered tuple",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-murnaghannakayama-rule-for-the-cyclotomic-heck",
+      "number": "3",
+      "title": "Murnaghan–Nakayama rule for the cyclotomic Hecke algebra",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 18,
+      "labelStart": "12",
+      "labelEnd": "18",
+      "words": 2066,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bla bmu",
+          "heading": false
+        },
+        {
+          "term": "scope draw",
+          "heading": false
+        },
+        {
+          "term": "generalized multi-ribbon",
+          "heading": false
+        },
+        {
+          "term": "scope clip",
+          "heading": false
+        },
+        {
+          "term": "multi-ribbon tableau",
+          "heading": false
+        },
+        {
+          "term": "multi-ribbon tableaux",
+          "heading": false
+        },
+        {
+          "term": "chi bmu",
+          "heading": false
+        },
+        {
+          "term": "color black",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s:M-N} In this section, we will present our Murnaghan--Nakayama rule for the cyclotomic Hecke algebra. \\subsection{Murnaghan--Nakayama rule} A skew diagram $\\lambda/\\mu$ is a {\\it vertical} (resp. {\\it horizontal}) {\\it strip} if each row (resp. column) contains at most one box. We say a skew diagram of $\\la/\\mu$ is a {\\it ribbon} (also known as {\\it border strip} or {\\it rim hook}) if it is connected and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-special-cases-of-the-murnaghannakayama-rule",
+      "number": "4",
+      "title": "Special cases of the Murnaghan–Nakayama rule",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 911,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "generalized multi-ribbon",
+          "heading": false
+        },
+        {
+          "term": "align summed",
+          "heading": false
+        },
+        {
+          "term": "iwahori--hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "subsection iwahori--hecke",
+          "heading": false
+        },
+        {
+          "term": "murnaghan--nakayama rule",
+          "heading": false
+        },
+        {
+          "term": "generalized ribbon",
+          "heading": false
+        },
+        {
+          "term": "double ribbon",
+          "heading": false
+        },
+        {
+          "term": "special cases",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{s:special} In this section, we will explain how our Murnaghan--Nakayama rule recovers the existing formulae as special cases. Three special cases of Corollary \\ref{t:m-n2} will be considered case by case, which correspond to the complex reflection group of type $G(m, 1, n)$, the Iwahori--Hecke algebra in type $A$ and type $B$ respectively. \\subsection{Complex reflection group of type $G(m, 1, n)$} As pointed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-a-dual-murnaghannakayama-rule-via-vertex-opera",
+      "number": "5",
+      "title": "A dual Murnaghan–Nakayama rule via vertex operators",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 25,
+      "labelStart": "20",
+      "labelEnd": "25",
+      "words": 1702,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathcal bmu",
+          "heading": false
+        },
+        {
+          "term": "bmu frac",
+          "heading": false
+        },
+        {
+          "term": "tau chi",
+          "heading": false
+        },
+        {
+          "term": "align chi",
+          "heading": false
+        },
+        {
+          "term": "tau langle",
+          "heading": false
+        },
+        {
+          "term": "align summed",
+          "heading": false
+        },
+        {
+          "term": "schurop iota",
+          "heading": false
+        },
+        {
+          "term": "align begin",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s:OV} In the previous section, we establish a Murnaghan--Nakayama rule, which can be regarded as an iterative formula on the lower multipartitions of the irreducible characters. In this section, as duality, an iteration of the characters on the upper multipartitions will be derived with the help of the vertex operator realization of Schur functions. \\subsection{Vertex operator realization of Schur functions}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-application-i-regev-type-formula",
+      "number": "6",
+      "title": "Application I: Regev-type formula",
+      "level": 1,
+      "pageStart": 25,
+      "pageEnd": 34,
+      "labelStart": "25",
+      "labelEnd": "34",
+      "words": 3358,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bla bmu",
+          "heading": false
+        },
+        {
+          "term": "orange textcolor",
+          "heading": false
+        },
+        {
+          "term": "pmatrix textcolor",
+          "heading": false
+        },
+        {
+          "term": "regev formula",
+          "heading": false
+        },
+        {
+          "term": "orange end",
+          "heading": false
+        },
+        {
+          "term": "bla vdash",
+          "heading": false
+        },
+        {
+          "term": "align summed",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s:Regev} In this section, as the first application of our Murnaghan--Nakayama rule, we are devoted to giving the Regev formula for the cyclotomic Hecke algebra $\\mathscr{H}_{m,n}(q,\\bm{u})$. Once the Murnaghan--Nakayama rule is set up right, the proof of the Regev formula, which is based on the classical deep work on symmetric groups and Hecke algebras in type $A$, is remarkably natural. To proceed with it,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-7-application-ii-lübeckprasadadinroichman-type-f",
+      "number": "7",
+      "title": "Application II: Lübeck–Prasad–Adin–Roichman-type formula",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 43,
+      "labelStart": "34",
+      "labelEnd": "43",
+      "words": 3821,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bla btau",
+          "heading": false
+        },
+        {
+          "term": "postaction decorate",
+          "heading": false
+        },
+        {
+          "term": "decoration markings",
+          "heading": false
+        },
+        {
+          "term": "arrow stealth",
+          "heading": false
+        },
+        {
+          "term": "eta bla",
+          "heading": false
+        },
+        {
+          "term": "sum btau",
+          "heading": false
+        },
+        {
+          "term": "chi bla",
+          "heading": false
+        },
+        {
+          "term": "draw",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s:LPAR} In this section, as the second application of our Murnaghan--Nakayama rule, we will establish a L\\\"ubeck--Prasad--Adin--Roichman formula for the cyclotomic Hecke algebra $\\mathscr{H}_{m,n}(q,\\bm{u})$. To proceed with this, We will present an algorithm for $\\chi^{(\\la^{(1)},\\la^{(2)},\\cdots,\\la^{(m)})}_{\\bmu}$ using the corresponding single partition $\\la$ with empty $m$-core and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-8-multiple-bitrace-for-the-irreducible-character",
+      "number": "8",
+      "title": "Multiple bitrace for the irreducible characters",
+      "level": 1,
+      "pageStart": 43,
+      "pageEnd": 49,
+      "labelStart": "43",
+      "labelEnd": "49",
+      "words": 2116,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "align mbtr",
+          "heading": false
+        },
+        {
+          "term": "multiple bitrace",
+          "heading": true
+        },
+        {
+          "term": "split mbtr",
+          "heading": false
+        },
+        {
+          "term": "bar bnu",
+          "heading": false
+        },
+        {
+          "term": "bnu setminus",
+          "heading": false
+        },
+        {
+          "term": "sim bnu",
+          "heading": false
+        },
+        {
+          "term": "bmu setminus",
+          "heading": false
+        },
+        {
+          "term": "cdots zeta",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{s:mbtr} In this section, we firstly introduce multiple bitrace for the irreducible characters of the cyclotomic Hecke algebra. Subsequently, a combinatorial formula for it will be given. Finally, we will consider the special case for $\\mathscr{W}_{m,n}$, which gives the second orthogonality relation for the irreducible characters of $\\mathscr{W}_{m,n}$. For this reason, the multiple bitrace can be also viewed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-appendix-a-an-alternative-proof-of-corollary-63",
+      "number": null,
+      "title": "Appendix A. An alternative proof of Corollary 6.3",
+      "level": 1,
+      "pageStart": 49,
+      "pageEnd": 51,
+      "labelStart": "49",
+      "labelEnd": "51",
+      "words": 440,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alternative proof",
+          "heading": true
+        },
+        {
+          "term": "cyclotomic hecke",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "regev formula",
+          "heading": false
+        },
+        {
+          "term": "hook",
+          "heading": false
+        }
+      ],
+      "extract": "In this appendix, we present an alternative proof of Corollary 6.3 based on the Regev formula for the Hecke algebra of type A. To proceed with this, we elaborate on the associ- ation between the irreducible characters of the cyclotomic Hecke algebra and those of the Hecke algebra of type A. For a m-multimatrix M ∈Mm(µ), recall that ci(M) := (m(1) 1,i , · · · , m(1) l(µ(1)),i, m(2) 1,i , · · · , m(2) l(µ(2)),i, · · ·",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-appendix-b-sagemath-implementation-of-the-murnag",
+      "number": null,
+      "title": "Appendix B. SageMath implementation of the Murnaghan–Nakayama rule",
+      "level": 1,
+      "pageStart": 51,
+      "pageEnd": 55,
+      "labelStart": "51",
+      "labelEnd": "55",
+      "words": 1048,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lam tuple",
+          "heading": false
+        },
+        {
+          "term": "murnaghan nakayama",
+          "heading": true
+        },
+        {
+          "term": "return mps",
+          "heading": false
+        },
+        {
+          "term": "nakayama rule",
+          "heading": true
+        },
+        {
+          "term": "normalize multipartition",
+          "heading": false
+        },
+        {
+          "term": "return none",
+          "heading": false
+        },
+        {
+          "term": "def normalize",
+          "heading": false
+        },
+        {
+          "term": "ribbon removals",
+          "heading": false
+        }
+      ],
+      "extract": "This appendix provides a SageMath script for computing the irreducible character values χλ µ = χλ(g(µ)) via our Murnaghan–Nakayama rule (cf. Corollary 3.4). Usage. After setting m and n in the script, one obtains the full character table \u0000χλ µ \u0001 λ,µ∈Pn,m by calling character table(m,n). Individual values are returned by chi(lam mp, mu mp); for instance, λ = ((2, 2), (4)) and µ = ((2, 1), (3, 2)) are entered as",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 55,
+      "pageEnd": 56,
+      "labelStart": "55",
+      "labelEnd": "56",
+      "words": 1047,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "murnaghan nakayama",
+          "heading": false
+        },
+        {
+          "term": "iwahori hecke",
+          "heading": false
+        },
+        {
+          "term": "ariki-koike algebras",
+          "heading": false
+        },
+        {
+          "term": "koike algebras",
+          "heading": false
+        },
+        {
+          "term": "jing",
+          "heading": false
+        },
+        {
+          "term": "nakayama rule",
+          "heading": false
+        },
+        {
+          "term": "irreducible characters",
+          "heading": false
+        },
+        {
+          "term": "nakayama formula",
+          "heading": false
+        }
+      ],
+      "extract": "References [AR22] R. Adin, Y. Roichman, On characters of wreath products, Comb. Theory 2 (2022), no. 2, Paper No. 17, 12 pp. 3, 34, 36, 37, 40, 41, 43 [AK94] S. Ariki, K. Koike, A Hecke algebra of (Z/rZ) ≀Sn and construction of its irreducible represen- tations, Adv. Math. 106 (1994), 216–243. 9, 18, 44 [BKK00] G. Benkart, S. Kang, M. Kashiwara, Crystal bases for the quantum superalgebra Uq(gl(m, n)), J. Amer. Math.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 1,
+        "items": [
+          "4 Let us take the leftmost one as an example. We firstly remove a 6-generalized ribbon θ"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "bla bmu",
+      "heading": false
+    },
+    {
+      "term": "bmu chi",
+      "heading": false
+    },
+    {
+      "term": "mathcal bmu",
+      "heading": false
+    },
+    {
+      "term": "align chi",
+      "heading": false
+    },
+    {
+      "term": "align begin",
+      "heading": false
+    },
+    {
+      "term": "align end",
+      "heading": false
+    },
+    {
+      "term": "align sum",
+      "heading": false
+    },
+    {
+      "term": "bmu setminus",
+      "heading": false
+    },
+    {
+      "term": "bmu n-l",
+      "heading": false
+    },
+    {
+      "term": "align summed",
+      "heading": false
+    },
+    {
+      "term": "bmu frac",
+      "heading": false
+    },
+    {
+      "term": "align mbtr",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "contents",
+      "confidence": 0.75
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "interpolated",
+      "confidence": 0.5
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Murnaghan–Nakayama rules for various algebras",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "λ is obtained from µ by adding a horizontal strip (to get ν) and then adding a vertical strip (to ν)",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "SE(λ/µ) consists of the green boxes. The subset formed by the boxes with bullets is an element of R9(λ/µ)",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "An example for Rα,β where α = ((2, 3), (3, 2, 2)) and β =",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Four possible removal processes for η(3,1),(2,1,1),(2,2)",
+      "page": 35,
+      "pageLabel": "35",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "λ = (7, 7, 7, 6, 3, 3, 2, 1), the boundary of λ is marked by arrows. Thus, ∂(λ) = 10101001 | 1101000 and the anchor of ∂(λ) is 8",
+      "page": 36,
+      "pageLabel": "36",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "˜∂(λ) = 010101001 | 110100011, k(˜∂(λ)) = 9 and the row-color sequence is marked in the leftmost column. Thus, the green generalized ribbon is colored by 1",
+      "page": 37,
+      "pageLabel": "37",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Four removal processes corresponding to those in Figure 4. The sum terms they contribute are same as those in Figure 4",
+      "page": 42,
+      "pageLabel": "42",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "7 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p55); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2504.18825v2"
+  }
+}

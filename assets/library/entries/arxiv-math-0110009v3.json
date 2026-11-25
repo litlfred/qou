@@ -1,0 +1,459 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-0110009v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-0110009v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Abstract",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-abstract.md",
+      "narrative": null,
+      "content": "We develop an analogue for sphere packing of the linear programming\nbounds for error-correcting codes, and use it to prove upper bounds for the\ndensity of sphere packings, which are the best bounds known at least for di-\nmensions 4 through 36. We conjecture that our approach can be used to solve\nthe sphere packing problem in dimensions 8 and 24.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0110009v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Contents",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-001-contents.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0110009v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\n2.\nLattices, Fourier transforms, and Poisson summation\n3.\nPrincipal theorems\n4.\nHomogeneous spaces\n5.\nConditions for a sharp bound\n6.\nStationary points\n7.\nNumerical results\n8.\nUniqueness\nAppendix A. Technicalities about density\nAppendix B. Other convex bodies\nAppendix C. Numerical data\nAcknowledgements\nReferences\n1. Introduction\nThe sphere packing problem asks for the densest packing of spheres into\nEuclidean space. More precisely, what fraction of Rn can be covered by congru-\nent balls that do not intersect except along their boundaries? This problem ﬁts\ninto a broad framework of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0110009v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/0110009v3  [math.MG]  3 Sep 2003\nAnnals of Mathematics, 157 (2003), 689–714\nNew upper bounds on sphere packings I\nBy Henry Cohn and Noam Elkies*",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0110009v3/blocks/prop-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "prop-sec-003-01.md",
+      "narrative": null,
+      "content": "Let α = n/2 −1. If f : Rn →R is a radial function, then bf(t) = 2π|t|−α Z ∞ f(r)Jα(2πr|t|)rn/2 dr, where “f(r)” denotes the common value of f on vectors of length r. For a proof, see Theorem 9.10.3 of [AAR]. Here Jα denotes the Bessel function of order α.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0110009v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Lattices, Fourier transforms, and Poisson summation",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-2-lattices-fourier-transforms-and-poisson-summat.md",
+      "narrative": null,
+      "content": "Given a lattice Λ ⊂Rn, the dual lattice Λ∗is deﬁned by\nΛ∗= {y | ⟨x, y⟩∈Z for all x ∈Λ};\nit is easily seen to be the lattice with basis given by the dual basis to any\nbasis of Λ. The covolume |Λ| = vol(Rn/Λ) of a lattice Λ is the volume of any\nfundamental parallelotope. It satisﬁes |Λ||Λ∗| = 1. Given any lattice Λ with\nNEW UPPER BOUNDS ON SPHERE PACKINGS I\n693\nshortest nonzero vectors of length r, the density of the corresponding lattice\npacking is\nπn/2\n(n/2)!\n\u0012r\n2\n\u0013n 1\n|Λ|,\nand the center density is therefore (r/2)n/|Λ|.\nThe Fourier transform of an L1 function f : Rn →R will be deﬁned by\nbf(t)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0110009v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Principal theorems",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-3-principal-theorems.md",
+      "narrative": null,
+      "content": "Our principal result is the following theorem. It is similar in spirit to work\nof Siegel [S], but is capable of giving much better bounds. Gorbachev [Go] has\nindependently discovered essentially the same result, with a slightly diﬀerent\nproof. (He concentrates on deriving Levenshtein’s bound using functions f\nfor which bf has fairly small support, but mentions that one could let the size\nof the support go to inﬁnity.)\nTheorem 3.1.\nSuppose f : Rn →R is an admissible function, is not\nidentically zero, and satisﬁes the following two conditions:\n(1) f(x) ≤0 for |x| ≥1, and\n(2) bf(t) ≥0 for all t.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0110009v3/blocks/thm-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "thm-sec-004-01.md",
+      "narrative": null,
+      "content": "Suppose f : Rn →R is an admissible function, is not identically zero, and satisﬁes the following two conditions: (1) f(x) ≤0 for |x| ≥1, and (2) bf(t) ≥0 for all t. Then the center density of n-dimensional sphere packings is bounded above by f(0) 2n bf(0) .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0110009v3/blocks/thm-sec-004-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 8,
+      "target": "thm-sec-004-02.md",
+      "narrative": null,
+      "content": "Suppose f : Rn →R is an admissible function satisfying the following three conditions: (1) f(0) = bf(0) > 0, (2) f(x) ≤0 for |x| ≥r, and (3) bf(t) ≥0 for all t. Then the center density of sphere packings in Rn is bounded above by (r/2)n. HENRY COHN AND NOAM ELKIES",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0110009v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Homogeneous spaces",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "../sections/sec-005-4-homogeneous-spaces.md",
+      "narrative": null,
+      "content": "The space Rn is a 2-point homogeneous space; i.e., its isometry group acts\ntransitively on ordered pairs of points a given distance apart. By studying\npacking problems in homogeneous spaces, one can put Theorem 3.1 into a\nbroader context, in which it can be seen to be analogous to previously known\ntheorems about compact homogeneous spaces.\nNEW UPPER BOUNDS ON SPHERE PACKINGS I\n697\nWe start by reviewing the theory of compact homogeneous spaces. See\nChapter 9 of [CS] for a more detailed treatment of this material. Suppose X\nis a compact 2-point homogeneous space. We assume that X is a connected",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0110009v3/blocks/thm-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Delsarte [D]",
+      "pageStart": 8,
+      "pageEnd": 10,
+      "target": "thm-sec-005-01.md",
+      "narrative": null,
+      "content": "Suppose f(t) = m X j=0 ajPj(t) with aj ≥0 for all j and f(t) ≤0 for 0 ≤t ≤τ. If t(x, y) ≤τ whenever x and y are distinct points of C, then |C| ≤f(1)/a0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0110009v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conditions for a sharp bound",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-006-5-conditions-for-a-sharp-bound.md",
+      "narrative": null,
+      "content": "In one dimension, we have already seen how to use Theorem 3.1 to solve\nthe (admittedly trivial) sphere packing problem. Based on numerical evidence\nand analogy with the kissing problem, we conjecture that it can also be used\nto get sharp bounds in dimensions 2, 8, and 24. For reasons to be explained\nshortly, it is more convenient to work with Theorem 3.2 instead of Theorem 3.1,\nso we shall do so; we can convert everything to the framework of Theorem 3.1\nby rescaling the variables.\nIn each of dimensions 1, 2, 8, and 24, the densest known packing is a lattice\npacking, given by a lattice that is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0110009v3/blocks/prop-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "prop-sec-007-01.md",
+      "narrative": null,
+      "content": "The function f(x) = Jn/2(jn/2|x|)2 (1 −|x|2)|x|n satisﬁes the hypotheses of Theorem 3.1, and leads to the upper bound jn n/2 (n/2)!24n for the densities of n-dimensional sphere packings. This function does not optimize the bound in Theorem 3.1, but it does optimize it within the class of functions whose Fourier transforms have sup- port in the ball of radius jn/2/π about the origin. This was ﬁrst proved by Gorbachev [Go]. For another proof, see [C]. It is not a coincidence that this proves exactly the same bound as in Levenshtein’s paper [Lev]. Levenshtein studies spherical codes with minimal",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0110009v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stationary points",
+      "pageStart": 12,
+      "pageEnd": 15,
+      "target": "../sections/sec-007-6-stationary-points.md",
+      "narrative": null,
+      "content": "We do not know how to use Theorem 3.1 to match the best density bound\nknown in high dimensions, that of Kabatiansky and Levenshtein [KL]. How-\never, it provides a new proof of the second-best bound known, due to Leven-\nshtein [Lev]:\n\nA< Ina\n~ (n/2)!24\"\"\nwhere j; is the smallest positive zero of the Bessel function Jj. (For more\ninformation about the asymptotics of this bound and how it compares with\nother bounds, see page 19 of [CS], but note that equation (42) is missing the\nexponent in 7’ /2°) We will show how to use a calculus of variations argument\nto find functions that prove that bound.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0110009v3/blocks/conj-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "conj-sec-008-02.md",
+      "narrative": null,
+      "content": "The smallest possible value of r in Proposition 7.1 equals that in Theorem 3.2, and for each optimal g from Proposition 7.1, there exists an optimal f from Theorem 3.2 such that g = bf −f.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0110009v3/blocks/conj-sec-008-03",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "conj-sec-008-03.md",
+      "narrative": null,
+      "content": "There exist functions that satisfy the hypotheses of",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0110009v3/blocks/conj-sec-008-04",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "conj-sec-008-04.md",
+      "narrative": null,
+      "content": "The numerical method described above gives bounds that converge (as m →∞) to the optimal bounds obtainable using Theorem 3.2.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0110009v3/blocks/prop-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "prop-sec-008-01.md",
+      "narrative": null,
+      "content": "Suppose g : Rn →R is a radial, admissible function, is not identically zero, and satisﬁes the following three properties: (1) g(0) = 0, (2) g(x) ≥0 for |x| ≥r, and (3) bg = −g. Then every isodual lattice in dimension n must contain a nonzero vector of length at most r. Proof of special case. For simplicity, we deal only with the case in which g(x) > 0 for |x| ≫0. Let Λ ∼= Λ∗be an isodual lattice. By Poisson summation, X x∈Λ g(x) = X x∈Λ∗ bg(x) = − X x∈Λ g(x), HENRY COHN AND NOAM ELKIES so X x∈Λ g(x) = 0. In order for the sum not to be positive, the lattice Λ must contain some nonzero vector of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0110009v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Numerical results",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "../sections/sec-008-7-numerical-results.md",
+      "narrative": null,
+      "content": "It is possible to get numerical results by using linear programming to\nﬁnd functions for use in Theorem 3.1, as was done for the kissing problem by\nOdlyzko and Sloane in [OS]. The idea is to ﬁx one of f(0) and bf(0), and view\nextremizing the other as an inﬁnite-dimensional linear programming problem.\nOne can try to approximate it with a ﬁnite-dimensional problem, and solve it\non a computer. Although we obtained some numerical results this way, it was\ncumbersome and generally ineﬀective. Instead, we use the following approach.\nFirst, consider trying to use our techniques to bound the density of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0110009v3/blocks/lem-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "lem-sec-009-01.md",
+      "narrative": null,
+      "content": "Suppose S is a subset of Rn such that 0 ∈S, there are n linearly independent vectors in S, and for all x, y ∈S, the distance |x −y| is the square root of an even integer. Then the subgroup of Rn generated by S is an even integral lattice. Recall that an integral lattice is a lattice in which the inner product of each pair of vectors is an integer; it is even if every vector has even norm.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0110009v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Uniqueness",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-009-8-uniqueness.md",
+      "narrative": null,
+      "content": "It is natural to ask whether the densest sphere packing in Rn is unique.\nOf course, it is trivially not unique, since for example removing a single sphere\ndoes not change the global density. However, it is conjectured that E8 and the\nLeech lattice are unique among periodic packings. By contrast, in R3 there are\ninﬁnitely many distinct periodic packings of maximal density. Our techniques\ncan be used to prove this uniqueness in 8 and 24 dimensions, given the following\nslight strengthening of Conjecture 7.3. At the same time, we will deal with the\nhexagonal lattice, although uniqueness in that ca",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0110009v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Technicalities about density",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-010-appendix-a-technicalities-about-density.md",
+      "narrative": null,
+      "content": "In this appendix, we provide precise statements and references for what it\nmeans for a packing to have a density and whether there is a maximally dense\npacking. Much of our discussion closely follows Section I of [K].\nLet P be any sphere packing in Rn. We say that P has density ∆if for\nall p ∈Rn, we have\n∆= lim\nr→∞\nvol(B(p, r) ∩P)\nvol B(p, r)\n,\nwhere B(p, r) is the ball of radius r centered at p, and B(p, r) ∩P consists of\nthose parts of the balls in P that lie within B(p, r). It is proved in [Gr] that\nif this limit exists for one p, then it exists for all p and is equal for all p. We\nsay that",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0110009v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Other convex bodies",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-011-appendix-b-other-convex-bodies.md",
+      "narrative": null,
+      "content": "Our methods are not limited to studying sphere packings, but instead\napply to packings with translates of any convex, symmetrical body. In fact, it\nis straightforward to prove the following generalization of our main theorem:\nTheorem B.1.\nLet C be a convex body in Rn, symmetric with respect to\nthe origin. Suppose f : Rn →R is an admissible function, is not identically\nzero, and satisﬁes the following two conditions:\n(1) f(x) ≤0 for x̸ ∈C, and\n(2) bf(t) ≥0 for all t.\nThen all packings with translates of C have density bounded above by\nvol(C)f(0)\n2n bf(0)\n.\nUnfortunately, when C is not a sphere,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-0110009v3/blocks/thm-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "thm-sec-011-01.md",
+      "narrative": null,
+      "content": "1. Let C be a convex body in Rn, symmetric with respect to the origin. Suppose f : Rn →R is an admissible function, is not identically zero, and satisﬁes the following two conditions: (1) f(x) ≤0 for x̸ ∈C, and (2) bf(t) ≥0 for all t. Then all packings with translates of C have density bounded above by vol(C)f(0) 2n bf(0) . Unfortunately, when C is not a sphere, there does not seem to be a good analogue of the reduction to radial functions in Theorem 3.1. That makes these cases somewhat less convenient to deal with. There always exist functions that HENRY COHN AND NOAM ELKIES prove the trivial",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-math-0110009v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Numerical data",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "../sections/sec-012-appendix-c-numerical-data.md",
+      "narrative": null,
+      "content": "Table 3 compares the best packings known, the previous best upper bound\nknown, and our bound. The packings and previous bounds are from [CS] (see\nin particular Tables I.1(a) and I.1(b) on pages xix and xx). Table 4 lists the\nchoices of forced double roots that lead to our new bounds.\nAcknowledgements. We thank Richard Askey, Tom Brennan, Harold Di-\namond, Pavel Etingof, George Gasper, David Jerison, Greg Kuperberg, Ben\nLogan, L´aszl´o Lov´asz, Steve Miller, Amin Shokrollahi, Neil Sloane, Jeﬀrey\nVaaler, David Vogan, and Michael Weinstein for helpful discussions.\nNEW UPPER BOUNDS ON SPHERE PACKI",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

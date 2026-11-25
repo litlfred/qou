@@ -1,0 +1,981 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2507.13840v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-front-matter.md",
+      "narrative": null,
+      "content": "Quantifying mixed-state entanglement via partial transpose\nand realignment moments\nPoetri Sonya Tarabunga1,2 and Tobias Haug3\n1Technical University of Munich, TUM School of Natural Sciences, Physics Department, 85748 Garching, Germany\n2Munich Center for Quantum Science and Technology (MCQST), Schellingstr. 4, 80799 M¨unchen, Germany\n3Quantum Research Center, Technology Innovation Institute, Abu Dhabi, UAE\nEntanglement plays a crucial role in\nquantum information science and many-\nbody physics, yet quantifying it in mixed\nquantum\nmany-body\nsystems\nhas\nre-\nmained a notoriously difficult problem.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/figure-img-p003-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/figure-img-p003-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/figure-img-p003-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../images/img-p003-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-2-preliminaries.md",
+      "narrative": null,
+      "content": "we introduce the families of quantitative entan-\nglement witnesses. In Sec. 3, we show how our\nfamilies of witness quantify entanglement dimen-\nsionality. In Sec. 5 we discuss the relation be-\ntween the rα-negativity and the operator space\nentanglement entropy.\nIn Sec. 6 we introduce\nan algorithm for entanglement testing in mixed\nstates, as well as the Schmidt rank and opera-\ntor Schmidt rank testing. In Sec. 7 we propose\na certification scheme for the minimal depth to\nprepare a given state. In Sec. 8 we discuss the en-\ntanglement properties of pseudorandom density\nmatrices and pseudoentanglem",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantitative",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-3-quantitative.md",
+      "narrative": null,
+      "content": "(e.g. in terms of inequalities) related to the PT\nnegativity.\nAn alternative approach to detect entangle-\nment in mixed states is via the CCNR crite-\nrion [24]. We define the realignment matrix Rρ\nas\n\na, a′\n\n Rρ\n\nb, b′\n = ⟨a, b| ρ\n\na′, b′\n ,\n(8)\nwhich provides a necessary condition for separa-\nbility that ∥Rρ∥1 ≤1. The CCNR negativity is\ndefined by [73, 117, 118]\nC(ρ) = ln∥Rρ∥1 = ln\nX\ni\n|λi|,\n(9)\nwhere λi are singular values of Rρ. Unlike the\nPT negativity, C(ρ) is not a proper entanglement\nmeasure, since it can become negative. Never-\ntheless, by the CCNR criterion, C(ρ) > 0 implies\nthat the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From the PT moments",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-003-31-from-the-pt-moments.md",
+      "narrative": null,
+      "content": "From the PT moments\nFor an n-qubit state ρ, we define our entangle-\nment witness, pα-negativity, as\nEα(ρ) =\n1\n2 −α ln (˜pα) + 1 −α\n2 −α ln (p2)\n=\n1\n2 −α[ln(˜pα) + (α −1)S2(ρ)] ,\n(13)\nwhere we define ˜pα(ρ) = tr((|ρΓ|)α). Note that\n˜pα = pα for even integer α. Eα(ρ) is an entan-\nglement witness since Eα(ρ) > 0 implies that the\nstate is entangled. To see this, let qi = λ2\ni /p2,\nwhich forms a probability distribution since qi >\n0 and P\ni qi = 1. We will consider the (classical)\nα-R´enyi entropy\nHα({q}) =\n1\n1 −α ln\n X\ni\nqα\ni\n!\n,\n(14)\nwhich is known to satisfy the monotonicity Ha ≥\nHb for a < b.\nS",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From the realignment moments",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-004-32-from-the-realignment-moments.md",
+      "narrative": null,
+      "content": "From the realignment moments\nWe also define entanglement witnesses based on\nthe CCNR negativity C(ρ) using the realignment\nmatrix moments. We define the rα-negativity as\nCα(ρ) =\n1\n2 −α ln (rα) + 1 −α\n2 −α ln (r2)\n=\n1\n2 −α[ln(rα) + (α −1)S2(ρ)] ,\n(20)\nUsing similar argument for the pα-negativity, by\nreplacing pα with rα, one can show that Cα sat-\nisfies the monotonicity Cα ≥Cβ for α < β, which\nAccepted in Quantum 2026-08-11, click title to verify. Published under CC-BY 4.0.\n6\nimplies\nCα(ρ) ≤C(ρ),\n(21)\nwhere C(ρ) ≡C1(ρ). Although C(ρ) is not an en-\ntanglement monotone, it provides a lower bound",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetry-resolved",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-33-symmetry-resolved.md",
+      "narrative": null,
+      "content": "Symmetry-resolved\nentanglement\nwit-\nnesses\nWe will now discuss how to exploit symmetry to\nenhance the bounds from the witnesses. We will\nfirst focus on the witnesses from the PT moments\nbefore commenting on the realignment moments.\nIn the presence of a global symmetry, the den-\nsity matrix ρ can be split into different charge sec-\ntors. For concreteness, we consider a global U(1)\nsymmetry where the state commutes with the to-\ntal number operator Q = P\ni(I −Zi)/2.\nSuch\na state has a block-diagonal form ρ = L\nq ρ(q),\nwhere ρ(q) is a block corresponding to the charge\nq.\nIn a bipartite system, we",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantifying",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-006-4-quantifying.md",
+      "narrative": null,
+      "content": "Quantifying\nentanglement\ndimen-\nsionality\nBeyond traditional entanglement measures, en-\ntanglement dimensionality has been identified\nas a crucial resource that quantifies the min-\nimum dimension required to represent a given\nstate [105].\nThis is formally measured by the\nSchmidt number, which we define as follows.\nConsider the Schmidt decomposition for a pure\nstate |ψ⟩in the subsystem A:\n|ψ⟩=\ns(|ψ⟩)\nX\ni=1\np\nλi |i⟩A |i⟩B ,\n(39)\nwhere λi are known as the Schmidt coefficients\nThe number of nonzero Schmidt coefficients is\ncalled the Schmidt rank s(|ψ⟩), which is an en-\ntanglement monotone for pure",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relation to operator space entanglement entropy",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-007-5-relation-to-operator-space-entanglement-entrop.md",
+      "narrative": null,
+      "content": "ment entropy\nNext, we discuss the connection between the rα-\nnegativity and the operator space entanglement\nentropy (OSEE) [86]. For a mixed state ρ, the\noperator Schmidt decomposition with respect to\nthe bipartition A and B is given by [120]\nρ\nq\ntr(ρ2\nA)\n=\nX\ni\nq\nλO\ni OA,i ⊗OB,i ,\n(44)\nwhere λO\ni\nare the operator Schmidt coefficients\nand {OA,i} and {OB,i} are a set of orthonormal\noperators in the subsystem A and B, respectively.\nThe operator Schmidt decomposition can be ob-\ntained by vectorizing the (normalized) operator\n|ρ⟩=\nρ\n√\ntr(ρ2\nA) and performing the Schmidt de-\ncomposition for pure sta",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Entanglement testing",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-008-6-entanglement-testing.md",
+      "narrative": null,
+      "content": "Entanglement testing\nWhile witnessing indicates the presence of entan-\nglement, it is not a necessary criterion, as there\nare entangled states that have non-positive wit-\nness. An alternative way to study entanglement\nis via property testing [18, 74]: Here, one asks\nwhether a given state has a property, or is it far\nfrom it? Notably, as our witnesses are quantita-\ntive, they can be utilized for this task.\nWe now give an efficient testing algorithm to\ndetermine whether a state ρ has high or low en-\ntanglement, where we assume that ρ has low en-\ntropy S2(ρ) = O(log n). This has been an open\nprob",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/thm-sec-008-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Efficient testing of entanglement",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "thm-sec-008-01.md",
+      "narrative": null,
+      "content": "Let ρ be an n-qubit state with S2(ρ) = O(log n) where for a bipartition it is promised that either (a) E(ρ) = O(log n) and DF(ρ) = O(log n) , or (b) E(ρ) = ω(log n) and DF(ρ) = ω(log n) . Then, there exists an efficient quantum algorithm to distinguish case (a) and (b) using poly(n) copies of ρ with high probability. We provide a short sketch of the proof idea in the following: For case (a) one has E4(ρ) = O(log n), which follows from the bound on E of Eq. (15). Case (b) implies that S2(ρA) = ω(log n), which can be shown using a bound on the fidelity of separability Sα(ρA(B)) ≥DF(ρ), (47) whic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/thm-sec-008-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Efficient testing of Schmidt rank",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "thm-sec-008-02.md",
+      "narrative": null,
+      "content": "Let |ψ⟩be an n-qubit state where it is promised that either (a) Fr(|ψ⟩) ≥ϵ1 , or (b) , Fr(|ψ⟩) ≤ϵ2 , across a given bipartition, where it is assumed that ϵ2 1/r > ϵ2 + 2ϵ. Assuming ϵ = 1/poly(n), there exists an efficient quantum algorithm to dis- tinguish case (a) and (b) using O(r2) two-copy measurements of |ψ⟩with high probability.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Circuit depth certification",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-009-7-circuit-depth-certification.md",
+      "narrative": null,
+      "content": "Circuit depth certification\nA key task is to certify the depth of the cir-\ncuit that was used to prepare a given quantum\nstate ρ.\nFor noiseless circuits, i.e.\nS2(ρ) = 0,\nthe circuit depth can be certified efficiently using\nBell measurements [51]. We now prove that the\nsame task is also efficient for noisy quantum cir-\ncuits, assuming the final state has low entropy,\ni.e. S2(ρ) = O(log n).\nWe apply a noisy circuit of d layers ρ = Λd ◦\nΛd−1 · · · ◦Λ1(|0⟩⟨0|), where Λi consists of noisy\ntwo-qubit gates implemented in a fixed architec-\nture. The entanglement usually grows with each\nlayer, and can",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prop-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "Entanglement of PRDM",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "prop-sec-010-01.md",
+      "narrative": null,
+      "content": "Any ensemble of PRDMs with entropy S2 = O(log n) must have PT negativity E(ρ) = ω(log n) with high probability. This is proven in Appendix I. The key idea is to assume by contradiction that there exists a PRDM with E(ρ) = O(log n). This would im- ply that p4 = 1/poly(n), which can be efficiently distinguished from Haar random states via the efficient measurement of the PT moment p4 in Appendix A. A related notion is pseudoentanglement [2, 10], which are (efficiently preparable) ensemble of states with low entanglement g(n) that are in- distinguishable from an ensemble with high en- tanglement",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prop-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "prop-sec-010-02.md",
+      "narrative": null,
+      "content": "(Pseudoentanglement of mixed states). Pseudoentangled state ensembles with entropy S2 = O(log n) can have a pseudoentan- glement gap of at most f(n) = Θ(n) vs g(n) = ω(log n), where entanglement is measured by both PT negativity E(ρ) and fidelity of separability DF(ρ).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Pseudorandom density matrices and pseudoentanglement",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-010-8-pseudorandom-density-matrices-and-pseudoentang.md",
+      "narrative": null,
+      "content": "pseudoentanglement\nOur quantitative witnesses have direct implica-\ntions on recent developments in quantum cryp-\ntography.\nIn particular, pseudorandom states\n(PRS) have been proposed as efficiently prepara-\nble pure state ensembles that are indistinguish-\nable from Haar random states by any efficient\nquantum algorithm [59]. Such states have been\ngeneralized to mixed states, known as pseudoran-\ndom density matrices (PRDMs). They are effi-\nciently preparable states which are indistinguish-\nable from random mixed states with entropy S2\nfor any efficient algorithm [10]. Their formal def-\ninition i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Entanglement phase diagram",
+      "pageStart": 12,
+      "pageEnd": 12,
+      "target": "../sections/sec-011-9-entanglement-phase-diagram.md",
+      "narrative": null,
+      "content": "Entanglement phase diagram\nIn this section, we discuss the entanglement\nphase diagram in two different sets of states:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Haar random states",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-012-91-haar-random-states.md",
+      "narrative": null,
+      "content": "9.1\nHaar random states\nWe will consider a tripartite system in a pure\nstate |ψ⟩∈HA ⊗HB ⊗HC, where |ψ⟩is Haar\nrandom. Here, the region X consists of nX qubits\nwith Hilbert space dimension LX = 2nX, where\nX ∈{A, B, C}. We also denote nAB = nA + nB\nand LAB = LALB = 2nAB. We will analyze the\nHaar-random induced mixed states ρ = trC(|ψ⟩)\nwhich are generated by tracing out subsystem C\nfrom tripartite pure Haar random states.\nFor\nnC = 0, such random states are Haar random\nstates, while for nC →∞, they asymptotically\nbecome maximally mixed states.\nTheir entanglement properties have been stud-\nied in [",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Stabilizer states",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-013-92-stabilizer-states.md",
+      "narrative": null,
+      "content": "Stabilizer states\nPure stabilizer states |ψS⟩are states generated\nby applying Clifford unitaries UC onto the |0⟩\nstate. Here, Clifford unitaries UC are unitaries\ngenerated from Hadamard, S-gate and CNOT\ngates [44].\nClifford unitaries map (under con-\njugation) any n-qubit Pauli operator P to some\nn-qubit Pauli operator, P ′, i.e. P ′ = UCPU†\nC. It\nis known by the Gottesman-Knill theorem that\nstabilizer states can be simulated efficiently on\nclassical computers [1, 43–45].\nAs shown in Ref. [16], any three-partite sta-\nbilizer state |ψS⟩can be decomposed into GHZ\nstates, Bell states, and product",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Entanglement and noise",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-014-10-entanglement-and-noise.md",
+      "narrative": null,
+      "content": "Entanglement and noise\nIn this section, we analyze the average bipartite\nentanglement of Haar-random pure states sub-\njected to global depolarizing noise.\nThese sys-\ntems approximate deep random quantum circuits\nwith local noise [31]. We are interested in deter-\nmining under which condition entanglement sur-\nvives in the presence of noise. We consider Haar\nstates subject to global depolarizing noise\nρ′ = (1 −p) |ψ⟩⟨ψ| + pI/2n,\n(69)\nwith noise probability p and |ψ⟩being drawn\nfrom the Haar measure. One can show that the\nR´enyi-2 entropy of the depolarized state is given\nby EH[S2[ρ′]]\n=\n−ln\n\u0002(1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Matrix product states and matrix product operators algorithms",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-015-11-matrix-product-states-and-matrix-product-oper.md",
+      "narrative": null,
+      "content": "product operators algorithms\nHere, we introduce algorithms to compute par-\ntial transpose and realignment moments for ma-\ntrix product states (MPS) and matrix product\noperators (MPO).\nLet us consider a system of n qubits in a pure\nstate |ψ⟩given by an MPS of bond dimension χ:\n|ψ⟩=\nX\ns1,s2,··· ,sn\nAs1\n1 As2\n2 · · · Asn\nn |s1, s2, · · · sn⟩\n(73)\nwith Asi\ni being χ × χ matrices, except at the left\n(right) boundary where As1\n1 (Asn\nn ) is a 1×χ (χ×\n1) row (column) vector.\nHere si ∈{0, 1} is a\nlocal computational basis.\nWe then study the\nentanglement within ρ = trC(|ψ⟩⟨ψ|), where C\nis a subsystem o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Partial transpose moments",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-016-111-partial-transpose-moments.md",
+      "narrative": null,
+      "content": "Partial transpose moments\nThe PT moments pα can be computed efficiently\nfor integer α ≥1 for MPS. To do so, we write pα\nas\npα =\nX\na(γ),a′\n(γ),b(γ),b′\n(γ)\nα\nY\nγ=1\nh\nδa′\n(γ),a(σ+(γ))δb′\n(γ),b(σ−(γ))\n⟨a(γ), b(γ)|ρ|a′\n(γ), b′\n(γ)⟩\ni\n.\n(75)\nUsing this identity, we can compute pα for MPS\nby forming a transfer matrix at each site, defined\nas\nLi =\nX\n{s(γ),s′\n(γ)}\nα\nY\nγ=1\nδs′\n(γ),s(π(γ))\nα\nO\nγ=1\nA\ns(γ)\ni\n⊗A\ns′\n(γ)\ni\n,\n(76)\nwhere A indicates the complex conjugate of A,\nπ() is a permutation of indices, with π = σ+ if\ni ∈A, π = σ−if i ∈B, and π = e if i ∈C. The\nterms δs′\n(γ),s(π(γ)) imply contractions of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Realignment moments",
+      "pageStart": 16,
+      "pageEnd": 18,
+      "target": "../sections/sec-017-112-realignment-moments.md",
+      "narrative": null,
+      "content": "Realignment moments\nFor the realignment moment, we first consider an\nMPO with the subsystem A = {1, 2, · · · , nA} and\nB = Ac. The MPO contraction for computing r4\nis sketched in Fig. 2(b). Viewing the MPO as an\nMPS with two physical indices, one can see that\nthe contraction is equivalent to the purity of the\nMPS. Similarly, higher order rα is equivalent to\nthe higher order α−R´enyi entanglement entropy\nof the corresponding MPS. The latter can be ob-\ntained from the Schmidt coefficients of the MPS,\nwhich can be calculated using standard MPS rou-\ntines with cost O(nχ3) for any α. Indeed, as has",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discussion",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-018-13-discussion.md",
+      "narrative": null,
+      "content": "Discussion\nIn this work, we introduced a generalization of\nentanglement Renyi entropies to mixed states,\nwhich we call the pα-negativity.\nFor α = 1,\nit equals the PT negativity, while for α > 1 it\nserves as a quantitative witness for mixed state\nentanglement. In other words, they offer useful\nquantitative information about the degree of en-\ntanglement by rigorously bounding entanglement\nmonotones [36]. Further, we showed that sym-\nmetries can be exploited to enhance the entan-\nglement witnessing capabilities, improving over\nprevious symmetry-resolved approaches. We also\nintroduced similar witn",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-019-acknowledgments.md",
+      "narrative": null,
+      "content": "P.S.T. acknowledges funding by the Deutsche\nForschungsgemeinschaft\n(DFG,\nGerman\nRe-\nsearch Foundation) under Germany’s Excellence\nStrategy – EXC-2111 – 390814868.\nAuthor contributions\nP.S.T. conceived the initial idea and carried out\nmost of the analytical and numerical calculations,\nwith the guidance of T.H. T.H. developed the\nanalysis of pseudorandom density matrices and\npseudoentanglement, and the measurements of\nthe witnesses. Both authors discussed the results\nand contributed to the writing of the manuscript.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 20,
+      "pageEnd": 28,
+      "target": "../sections/sec-020-references.md",
+      "narrative": null,
+      "content": "[1] Scott Aaronson and Daniel Gottesman.\nImproved simulation of stabilizer circuits.\nAccepted in Quantum 2026-08-11, click title to verify. Published under CC-BY 4.0.\n20\nPhys.\nRev.\nA,\n70:052328,\nNov\n2004.\nDOI: 10.1103/PhysRevA.70.052328. URL\nhttps://link.aps.org/doi/10.1103/\nPhysRevA.70.052328.\n[2] Scott Aaronson, Adam Bouland, Bill Fef-\nferman, Soumik Ghosh, Umesh Vazirani,\nChenyi Zhang, and Zixin Zhou.\nQuan-\ntum pseudoentanglement.\narXiv preprint\narXiv:2211.00747, 2022.\nURL https://\ndoi.org/10.48550/arXiv.2211.00747.\n[3] Shruti Aggarwal, Satyabrata Adhikari, and\nA. S. Majumdar. Entanglement",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prop-sec-021-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "prop-sec-021-01.md",
+      "narrative": null,
+      "content": "1 (Efficient PT moment). For a given (mixed) n-qubit state ρ, there exists an efficient algo- rithm to measure p4(ρ) = tr(ρΓ)4, where ρΓ = (I ⊗Γ)ρ is the partial transpose, to additive precision ϵ with failure probability δ using O(ϵ−2 log(2/δ)) copies of ρ, O(n) circuit depth, O(n) Toffoli gates, 1 auxiliary qubit, and O(ϵ−2 log(2/δ)) classical post-processing time.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "URL",
+      "pageStart": 28,
+      "pageEnd": 30,
+      "target": "../sections/sec-021-8-url.md",
+      "narrative": null,
+      "content": "http://dx.doi.org/10.1103/PhysRevB.\n95.165101.\n[100] Hassan Shapourian,\nShang Liu,\nJonah\nKudler-Flam,\nand\nAshvin\nVishwanath.\nEntanglement\nnegativity\nspectrum\nof\nrandom mixed states:\nA diagrammatic\napproach.\nPRX Quantum, 2(3):030347,\nSeptember\n2021.\nISSN\n2691-3399.\nDOI:\n10.1103/prxquantum.2.030347.\nURL\nhttp://dx.doi.org/10.1103/\nPRXQuantum.2.030347.\n[101] Adam L. Shaw,\nZhuo Chen,\nJoonhee\nChoi,\nDaniel K. Mark,\nPascal Scholl,\nRan Finkelstein, Andreas Elben, Soonwon\nChoi, and Manuel Endres.\nBenchmark-\ning highly entangled states on a 60-atom\nanalogue quantum simulator. Nature, 628\n(8006):71–77, Ma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prop-sec-022-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "prop-sec-022-01.md",
+      "narrative": null,
+      "content": "1 (Efficient PT moment). For a given (mixed) n-qubit state ρ, there exists an efficient algo- rithm to measure p4(ρ) = tr(ρΓ)4, where ρΓ = (I ⊗Γ)ρ is the partial transpose, to additive precision ϵ with failure probability δ using O(ϵ−2 log(2/δ)) copies of ρ, O(n) circuit depth, O(n) Toffoli gates, 1 auxiliary qubit, and O(ϵ−2 log(2/δ)) classical post-processing time.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Efficient algorithm to measure PT negativity moment",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-022-efficient-algorithm-to-measure-pt-negativity-mom.md",
+      "narrative": null,
+      "content": "30\nB Efficient algorithm to measure CCNR negativity moment\n31\nC Upper bounds for the PT negativity and the CCNR negativity\n32\nD Upper bound on DF\n33\nE\nRelationship between PT negativity, CCNR negativity, and robustness of entanglement\n34\nF\nRelationship between PT negativity, CCNR negativity, and the Schmidt number\n34\nG Depth-dependent bound on the PT negativity and the CCNR negativity\n35\nH Certification of circuit depth\n35\nI\nEntanglement of pseudorandom density matrices and pseudoentanglement\n36\nJ\nSchmidt rank testing\n37\nK Operator Schmidt rank testing\n38\nL\npα-negativity in Haar random states",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prop-sec-023-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "Efficient CCNR negativity moment",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "prop-sec-023-01.md",
+      "narrative": null,
+      "content": "For a given (mixed) n-qubit state ρ, there exists an efficient algorithm to measure r4(ρ) to additive precision ϵ with failure probability δ using O(ϵ−2 log(2/δ)) copies of ρ, O(1) circuit depth, O(1) CNOT and Hadamard gates, and O(Nϵ−2 log(2/δ)) classical post-processing time.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Efficient algorithm to measure CCNR negativity moment",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "../sections/sec-023-efficient-algorithm-to-measure-ccnr-negativity-m.md",
+      "narrative": null,
+      "content": "Efficient algorithm to measure CCNR negativity moment\nWe now study the measurement complexity of the CCNR negativity moment\nC4(ρ) = 1\n2[−ln(r4) −3S2(ρ)] ,\n(88)\nAccepted in Quantum 2026-08-11, click title to verify. Published under CC-BY 4.0.\n31\nwith\nr4 = tr(S1,2\nA S3,4\nA ⊗S1,3\nB S2,4\nB ρ⊗4) .\n(89)\nNotably, the different SWAPs Si,j\nA act on different qubits. Thus, in contrast to the PT moments,\none can measure r4 using destructive Bell measurements instead of SWAP test [42]. We show the\nmeasurement setup using Bell measurements in Fig. S2.\nFigure S2: Bell measurements to measure expectation val",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Upper bounds for the PT negativity and the CCNR negativity",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "../sections/sec-024-upper-bounds-for-the-pt-negativity-and-the-ccnr.md",
+      "narrative": null,
+      "content": "Upper bounds for the PT negativity and the CCNR negativity\nHere, we prove upper bounds for the PT negativity and the CCNR negativity. First, we show an\ninequality that holds for the pα-negativity:\nEα(ρ) ≤1\n2(n ln 2 −S2(ρ)),\n(90)\nfor any α ≥0. This can be directly shown using the monotonicity of the pα-negativity E0(ρ) ≥Eα(ρ).\nAn upper bound for the PT negativity is thus obtained by setting α = 1.\nNext, we have\nE(ρ) ≤m ln 2,\n(91)\nwhere m = min(nA, nB). To see this, we will show that\nE(ρ) ≤min(S1/2(ρA), S1/2(ρB)),\n(92)\nwhich immediately leads to Eq. (91) since S1/2(ρA(B)) ≤nA(B) ln 2. We define",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Upper bound on DF",
+      "pageStart": 33,
+      "pageEnd": 34,
+      "target": "../sections/sec-025-upper-bound-on-df.md",
+      "narrative": null,
+      "content": "Upper bound on DF\nHere, we prove the bound on the fidelity of separability DF as\nSα(ρA(B)) ≥DF(ρ) ,\n(98)\nfor any α ≥0.\nFirst, by the Uhlman’s theorem [80], we can write\nDF(ρ) = min\nσ∈SEP min\n|ψσ⟩−ln | ⟨√ρ|ψσ⟩|2\n(99)\nwhere\n\n√ρ\n\n is the canonical purification of ρ defined in Eq. (93) and |ψσ⟩is a purification of σ in\nHA ⊗HB ⊗HA′ ⊗HB′ ≃C2n ⊗C2n. Consider the Schmidt decomposition for the state\n\n√ρ\n\n in the\nsubsystem A:\n|√ρ⟩=\nX\ni\np\nλi |ϕi⟩A ⊗|ϕi⟩A′BB′ ,\n(100)\nAccepted in Quantum 2026-08-11, click title to verify. Published under CC-BY 4.0.\n33\nwhere λi are the eigenvalues of ρA = TrB(ρ), where λ1 i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Relationship between PT negativity, CCNR negativity, and robustness of entanglement",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "../sections/sec-026-relationship-between-pt-negativity-ccnr-negativi.md",
+      "narrative": null,
+      "content": "Relationship between PT negativity, CCNR negativity, and robustness of entan-\nglement\nHere, we prove the inequality between the PT negativity and robustness of entanglement:\nE(ρ) ≤ln(2R(ρ) + 1).\n(103)\nNote that this has previously been proven in Ref. [107], and here we give an alternative proof. Let s\nbe the optimal value such that ρ = (1 + s)ρ+ −sρ−for ρ+, ρ−∈SEP, so that R(ρ) = s. We have\nρΓ = (1 + s)ρΓ\n+ −sρΓ\n−, with ρΓ\n+, ρΓ\n−∈SEP, yielding\n∥ρΓ∥1 ≤(1 + s)∥ρΓ\n+∥1 + s∥ρΓ\n−∥1 = 2s + 1.\n(104)\nIn the first inequality, we used the triangle inequality on the trace norm ∥·∥1, and the second equati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prop-sec-028-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "Efficient certification of circuit depth",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "prop-sec-028-01.md",
+      "narrative": null,
+      "content": "Given n-qubit mixed state ρ, there exists an efficient quantum algorithm to certify the minimal circuit depth d needed to generate the state using a fixed architecture where |∂A| noisy two-qubit gates act across an equal-sized bipartition. In particular, for c > 0 and L = n2c+1 SWAP tests to measure the estimators ˆp4(ρ) and ˆp2(ρ), we have d ≥ 2|∂A| ln 2[−ln \u0000ˆp4(ρ) + n−c\u0001 + 3 ln \u0000ˆp2(ρ) −n−c\u0001] (112) with exponentially small failure probability.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Depth-dependent bound on the PT negativity and the CCNR negativity",
+      "pageStart": 35,
+      "pageEnd": 35,
+      "target": "../sections/sec-027-depth-dependent-bound-on-the-pt-negativity-and-t.md",
+      "narrative": null,
+      "content": "Depth-dependent bound on the PT negativity and the CCNR negativity\nHere, we prove the depth-dependent bound:\nE(ρ) ≤d|∂A| ln 2 .\n(109)\nTo this end, we recall that the Schmidt number s(ρ) is an entanglement monotone for mixed\nstates [105]. Since S0(|ψ⟩) ≤d|∂A| ln 2 in noiseless quantum circuits [51], it follows that we have\nthe bound\ns(ρ) ≤2d|∂A|,\n(110)\nin the case of noisy circuits. Now, combining Eq. (110) and Eq. (106), we obtain Eq. (109). Finally,\nwe note that by Eq. (108), we can also show\nC(ρ) ≤d|∂A| ln 2 .\n(111)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Certification of circuit depth",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "../sections/sec-028-certification-of-circuit-depth.md",
+      "narrative": null,
+      "content": "Certification of circuit depth\nHere, we give bounds on the number of measurements needed to certify the circuit depth d for preparing\nmixed states:\nProposition 4 (Efficient certification of circuit depth). Given n-qubit mixed state ρ, there exists an\nefficient quantum algorithm to certify the minimal circuit depth d needed to generate the state using a\nfixed architecture where |∂A| noisy two-qubit gates act across an equal-sized bipartition. In particular,\nfor c > 0 and L = n2c+1 SWAP tests to measure the estimators ˆp4(ρ) and ˆp2(ρ), we have\nd ≥\n1\n2|∂A| ln 2[−ln\n\u0000ˆp4(ρ) + n−c\u0001 + 3 ln\n\u0000ˆp2(ρ)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/def-sec-029-01",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "def-sec-029-01.md",
+      "narrative": null,
+      "content": "1 (Pseudo-random density matrix (PRDM) [10]). Let κ = poly(n) be the security pa- rameter with keyspace K = {0, 1}κ. A family of n-qubit density matrices {ρk,m}k∈K are pseudorandom density matrices (PRDMs) with mixedness parameter m if: 1. Efficiently preparable: There exists an efficient quantum algorithm G such that G(1κ, k, m) = ρk,m. 2. Computational indistinguishability: t = poly(n) copies of ρk,m are computationally indistinguish- able (for any quantum polynomial time adversary A) from the GHSE ηn,m",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/def-sec-029-03",
+      "types": [
+        "folio-assistant-sci:Definition",
+        "doco:Section"
+      ],
+      "kind": "definition",
+      "title": "",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "def-sec-029-03.md",
+      "narrative": null,
+      "content": "2 (Pseudoentanglement). A pseudoentangled state ensemble with gap f(n) vs g(n) consists of two ensembles of n-qubit states ρk and σk, indexed by a key k ∈{0, 1}poly(n) with the following properties: Accepted in Quantum 2026-08-11, click title to verify. Published under CC-BY 4.0. 1. Efficient Preparation: Given k, ρk (or σk, respectively) is efficiently preparable by a uniform, poly-sized quantum circuit. 2. Pseudoentanglement: With probability ≥1−1/poly(n) over the choice of k, the PT negativity E(ρ) and fidelity of separability DF(ρ) for ρk (or σk, respectively) is Θ(f(n)) (or Θ(g(n)), respe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prop-sec-029-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "Lower bound on entanglement of PRDM",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "prop-sec-029-02.md",
+      "narrative": null,
+      "content": "Any ensemble of PRDMs with entropy S2 = O(log n) must have PT negativity E(ρ) = ω(log n) with high probability.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Entanglement of pseudorandom density matrices and pseudoentanglement",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-029-entanglement-of-pseudorandom-density-matrices-an.md",
+      "narrative": null,
+      "content": "Entanglement of pseudorandom density matrices and pseudoentanglement\nIn this section, we show that pseudorandom density matrices (PRDMs) with S2 = O(log n) must have\nE(ρ) = ω(log n).\nPRDMs are efficiently preparable states that are indistinguishable for any efficient observer from\ntruly random mixed states [10]. They generalize pseudorandom states (PRSs), which are computa-\ntionally indistinguishable from Haar random states [59]. PRDMs are indistinguishable from random\nmixed states. Formally, these random mixed states are sampled from the generalized Hilbert-Schmidt\nensemble (GHSE) [10, 15, 50",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Schmidt rank testing",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "../sections/sec-030-schmidt-rank-testing.md",
+      "narrative": null,
+      "content": "Schmidt rank testing\nHere, we present an efficient algorithm to test the Schmidt rank of a given pure state. Consider the\nSchmidt decomposition of a pure n-qubit state |ψ⟩with respect to bipartition A, B\n|ψ⟩=\nR\nX\ni=1\np\nλi |ϕi⟩A ⊗|ϕi⟩B ,\n(120)\nwhere |ϕi⟩A and |ϕi⟩B are normalized states on subsystem A and B, λi ≥0 are the Schmidt coefficients\nwith λ1 ≥· · · ≥λR, P\ni λi = 1 and Schmidt rank R ≤2n. The maximum overlap of |ψ⟩with the\nset of states Mr = {|η⟩: |η⟩= Pr\ni=1\n√λi |ϕi⟩A ⊗|ϕi⟩B} of at most Schmidt rank r is given by the\nEckart-Young theorem: [35]\nFr(|ψ⟩) = max\n|η⟩∈Mr | ⟨η|ψ⟩|2 =\nr\nX\ni=1\nλ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/thm-sec-030-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "thm-sec-030-01.md",
+      "narrative": null,
+      "content": "1 (Efficient testing of Schmidt rank). Let |ψ⟩be an n-qubit state where it is promised that either (a) Fr(|ψ⟩) ≥ϵ1 , or (b) Fr(|ψ⟩) ≤ϵ2 , across a given bipartition, where it is assumed that ϵ2 1/r > ϵ2+2ϵ. Assuming ϵ = 1/poly(n), there exists an efficient quantum algorithm to distinguish case (a) and (b) using O(r2) two-copy measurements of |ψ⟩with high probability.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Operator Schmidt rank testing",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "../sections/sec-031-operator-schmidt-rank-testing.md",
+      "narrative": null,
+      "content": "Operator Schmidt rank testing\nHere, we present an efficient algorithm to test the operator Schmidt rank of a given mixed state.\nConsider the operator Schmidt decomposition of a mixed n-qubit state ρ with respect to bipartition\nA, B\nρ\nq\ntr(ρ2\nA)\n=\nX\ni\nq\nλO\ni OA,i ⊗OB,i,\n(123)\nwhere {OA,i} and {OB,i} are a set of orthonormal operators in the subsystem A and B, λO\ni ≥0 are the\noperator Schmidt coefficients with λO\n1 ≥· · · ≥λO\nR, P\ni λO\ni = 1 and operator Schmidt rank R ≤4n. The\noperator Schmidt decomposition can be obtained by vectorizing the normalized operator |ρ⟩=\nρ\n√\ntr(ρ2\nA)\nand performing",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/thm-sec-031-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "thm-sec-031-01.md",
+      "narrative": null,
+      "content": "1 (Efficient testing of operator Schmidt rank). Let ρ be an n-qubit state where it is promised that either (a) FO r (ρ) ≥ϵ1 , or (b) FO r (ρ) ≤ϵ2 , Accepted in Quantum 2026-08-11, click title to verify. Published under CC-BY 4.0. across a given bipartition, where it is assumed that tr(ρ2 A) = 1/poly(n) and (ϵ2 1/r −ϵ2) tr(ρ2 A)2 > 1/poly(n). Then, there exists an efficient quantum algorithm to distinguish case (a) and (b) using O(r2) copies of |ψ⟩with high probability.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "p-negativity in Haar random states",
+      "pageStart": 39,
+      "pageEnd": 40,
+      "target": "../sections/sec-032-p-negativity-in-haar-random-states.md",
+      "narrative": null,
+      "content": "Here, we compute the Haar average of pα-negativity as a function of the partition sizes. The compu-\ntation for E4 has been given in the main text, and here we discuss Eα for α ≥0.\nWe recall an upper bound for EH[E(ρ)], which we report here for convenience\nEH[E(ρ)] ≤min{nA ln 2, nB ln 2, 1\n2(nAB ln 2 −min(nAB ln 2, nC ln 2))}.\n(134)\nAccepted in Quantum 2026-08-11, click title to verify. Published under CC-BY 4.0.\n39\n0.00\n0.25\n0.50\n0.75\n1.00\nnA/nAB\n0.0\n0.1\n0.2\n0.3\nEα/nAB\nα = 0\nα = 1\nα = 4\na\n0.00\n0.25\n0.50\n0.75\n1.00\nnA/nAB\n0.0\n0.1\n0.2\nb\nFigure S3: pα-negativity for Haar random states. The system",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "PT and realignment moments in translation-invariant MPS",
+      "pageStart": 40,
+      "pageEnd": 41,
+      "target": "../sections/sec-033-pt-and-realignment-moments-in-translation-invari.md",
+      "narrative": null,
+      "content": "PT and realignment moments in translation-invariant MPS\nLet us consider a translationally invariant (TI) MPS of n qubits of bond dimension χ:\n|ψ⟩=\nX\ns1,s2,··· ,sn\ntr (As1As2 · · · Asn) |s1, s2, · · · sn⟩\n(138)\nAccepted in Quantum 2026-08-11, click title to verify. Published under CC-BY 4.0.\n40\nwith As being a χ × χ matrix. We consider the entanglement within ρ = trC(|ψ⟩⟨ψ|), where C is\na contiguous subsystem of |ψ⟩.\nIn particular, we study entanglement for ρ with bipartition A =\n{1, 2, · · · , nA}, B = {nA + 1, nA + 2, · · · , nA + nB}, and we assume that all subsystems are extensive.\nThe tran",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Matrix product states algorithm for the PT negativity and the CCNR negativity",
+      "pageStart": 41,
+      "pageEnd": 42,
+      "target": "../sections/sec-034-matrix-product-states-algorithm-for-the-pt-negat.md",
+      "narrative": null,
+      "content": "Matrix product states algorithm for the PT negativity and the CCNR negativity\nGiven MPS |ψ⟩, we consider the entanglement within ρ = trC(|ψ⟩⟨ψ|), where C is a contiguous\nsubsystem in the middle of the chain, C = {nA + 1, nA + 2, · · · , nA + nC}, and we take the subsystem\nA = {1, 2, · · · , nA} and B is the complement of A in ρ, i.e. the subsystem connected to the right edge.\nBoth the PT negativity and the CCNR can be efficiently computed in this scenario. The method for\nthe PT negativity was given in Ref. [91].\nAccepted in Quantum 2026-08-11, click title to verify. Published under CC-BY 4.0.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Effects of depolarizing noise on entanglement",
+      "pageStart": 42,
+      "pageEnd": 43,
+      "target": "../sections/sec-035-effects-of-depolarizing-noise-on-entanglement.md",
+      "narrative": null,
+      "content": "Effects of depolarizing noise on entanglement\nIn this section, we consider the effects of global depolarizing noise\nρ′ = (1 −p) |ψ⟩⟨ψ| + pI/2n,\n(147)\non the bipartite entanglement of a general pure state |ψ⟩. For a given subsystem A, the entanglement\nin the pure state (p = 0) is characterized by the Schmidt coefficients λi for i = 1, . . . , r, where λi ≥λj\nfor i < j, and the Schmidt decomposition of the state is given by\n|ψ⟩=\nr\nX\ni=1\np\nλi |i⟩A |i⟩B .\n(148)\nApplying the partial transpose on a pure state ρ = |ψ⟩⟨ψ|, one can show that the spectrum of ρΓ is\nsij\npλiλj for i, j = 1, . . . , r and s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2507.13840v2/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Witnessing entanglement in Werner States",
+      "pageStart": 43,
+      "pageEnd": 43,
+      "target": "../sections/sec-036-witnessing-entanglement-in-werner-states.md",
+      "narrative": null,
+      "content": "Witnessing entanglement in Werner States\nWerner states are bipartite quantum states in a Hilbert space HAB = HA ⊗HB with dimensions\ndA = dB ≡d, defined as\nρW = α\n \nd + 1\n2\n!−1\nΠ+ + (1 −α)\n \nd\n2\n!−1\nΠ−\n(152)\nwith α ∈[0, 1] and Π± = 1\n2 (I ± Π12) projectors onto symmetric H+ and anti-symmetric H−subspaces\nof H = H+ ⊕H−, respectively. Here, Π12 = Pd\ni,j=1 |i⟩⟨j| ⊗|j⟩⟨i| is the swap operator. Using that\nΠTA\n± = 1/2(∆1 ±(d±1)∆0) with ∆0 = |ϕ+⟩⟨ϕ+| being a projector onto the maximally entangled state\nand ∆1 = I −∆0, we have\nρTA\nW = 2α −1\nd\n∆0 + 1 + d −2α\nd\n∆1\nd2 −1\n(153)\nwith eigenvalues λ0 = (2α−1)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

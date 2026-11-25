@@ -1,0 +1,35 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-tm-gs-normal-form",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:tm-gs-normal-form",
+  "kind": "proposition",
+  "title": "Hecke-only Gröbner--Shirshov reduction of the nucleus element",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-hecke-normal-form"
+  ],
+  "cites": [
+    "references/jones1987",
+    "references/bergman1978"
+  ],
+  "tags": [
+    "transfer-matrix",
+    "groebner",
+    "normal-form",
+    "hecke-algebra",
+    "inductive",
+    "appendix"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.GSNormalForm.hecke_linear_mul",
+  "text": "tm-gs-normal-form.md",
+  "provenance": "authored"
+}

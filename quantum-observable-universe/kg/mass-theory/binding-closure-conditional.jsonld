@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/thm-binding-closure-conditional",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:binding-closure-conditional",
+  "kind": "theorem",
+  "title": "Binding closure, conditional on the per-term mass identity",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-sw-period-residue-sum",
+    "papers/quantum-observable-universe/blocks/prop-binding-genfun-qdifference"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-binding-closure-conditional"
+  ],
+  "leanRef": "qou:QOU.Mass.binding_closure_conditional",
+  "text": "binding-closure-conditional.md",
+  "leanSource": "binding-closure-conditional.lean",
+  "provenance": "authored"
+}

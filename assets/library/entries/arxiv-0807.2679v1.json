@@ -1,0 +1,82 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-0807.2679v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-0807.2679v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "In this note we study how the unnormalized colored Jones polynomial or quantum $sl_2$ invariant of a link changes under the operation of cabling. We work with a banded link or ribbon link $L$ so that every component is an embedded annulus. Given a diagram $D$ of a banded link inside an annulus we can construct a satellite of $L$ by embedding $D$ into a component $L_i$ of $L$. The $(r,s)$-cabling operation is the special case where we take $D$ to be the closure of the $(r,s)$-torus braid $B_s^r = (\\sigma_1\\cdots \\sigma_{s-1})^r$, where $r\\in \\mathbb{Z},s\\in\\mathbb{N}$. To turn $B^r_s$ into a ba",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0807.2679v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:0807.2679v1  [math.GT]  17 Jul 2008\nA cabling formula for the colored Jones\npolynomial\nRoland van der Veen\nNovember 18, 2021\nAbstract\nWe prove an explicit cabling formula for the colored Jones polynomial. As\nan application we prove the volume conjecture for all zero volume knots\nand links, i.e. all knots and links that are obtained from the unknot by\nrepeated cabling and connected sum.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0807.2679v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of the cabling formula",
+      "pageStart": 4,
+      "pageEnd": 10,
+      "target": "../sections/sec-001-proof-of-the-cabling-formula.md",
+      "narrative": null,
+      "content": "Let us fix a banded link $L$ with $c$ components $L_1,\\hdots, L_c$. Choosing a component $L_i$ of $L$ and opening it up we can write $L$ as the closure of a banded $(1,1)$-tangle $T_i$. Define $T_{i;s}$ to be the banded $(s,s)$-tangle obtained from $T_i$ by replacing the opened component $L_i$ of $T_i$ by $s$ parallel bands. In terms of these tangles the $(i;r,s)$-cabling of $L$ is equal to the closure of the composition $T_{i;s} \\circ B_s^r$, see also figure 1.\n\nNote that the link $L_{i;s}^r$ has $c+g-1$ components, where $g = \\mathrm{gcd}(r,s)$, since the component $L_i$ of $L$ is replaced b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-0807.2679v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of the volume conjecture for zero volume links",
+      "pageStart": 10,
+      "pageEnd": 12,
+      "target": "../sections/sec-002-proof-of-the-volume-conjecture-for-zero-volume-l.md",
+      "narrative": null,
+      "content": "As an application of the cabling formula we just proved we will show that the volume conjecture holds true for all zero volume knots and links (corollary 1). Such links are related to cabling by the fact that all links of zero simplicial volume are obtained from the unknot by repeated cabling and connected sum [@Gordon].\n\nIn the volume conjecture the usual normalization of the colored Jones polynomial for knots is to divide by the value of the unknot. However, if a link has $s$ split components then the unnormalized Jones has at least an $s$ fold zero at the $N$-th root of unity [@vanderVeen].",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

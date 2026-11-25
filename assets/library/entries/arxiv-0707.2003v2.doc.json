@@ -1,0 +1,685 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0707.2003v2",
+  "title": "A geometric model for Hochschild homology of Soergel bimodules",
+  "variant": "pdf",
+  "pages": 20,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "Knot homology and Soergel bimodules",
+      "number": "2",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-2-knot-homology-and-soergel-bimodules"
+    },
+    {
+      "level": 1,
+      "title": "The equivariant derived category and dg-modules",
+      "number": "3",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-3-the-equivariant-derived-category-and-dg-module"
+    },
+    {
+      "level": 1,
+      "title": "Hochschild homology and dg-algebras",
+      "number": "4",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-4-hochschild-homology-and-dg-algebras"
+    },
+    {
+      "level": 1,
+      "title": "The geometry of Bott-Samelson bimodules",
+      "number": "5",
+      "page": 14,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-5-the-geometry-of-bott-samelson-bimodules"
+    },
+    {
+      "level": 1,
+      "title": "Equivariant formality",
+      "number": "6",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-6-equivariant-formality"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 14,
+      "summary": null,
+      "keywords": [],
+      "extract": "A geometric model for Hochschild homology of Soergel bimodules arXiv:0707.2003v2 [math.AG] 7 Aug 2007",
+      "extractCut": false,
+      "blocks": [
+        "library/arxiv-0707.2003v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1386,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "soergel bimodules",
+          "heading": false
+        },
+        {
+          "term": "hochschild homology",
+          "heading": false
+        },
+        {
+          "term": "geom-soerg-bimod",
+          "heading": false
+        },
+        {
+          "term": "knot-homol-soerg",
+          "heading": false
+        },
+        {
+          "term": "grading shift",
+          "heading": false
+        },
+        {
+          "term": "equivariant cohomology",
+          "heading": false
+        },
+        {
+          "term": "bsi",
+          "heading": false
+        },
+        {
+          "term": "grading-match",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:introduction label=\"sec:introduction\"} In this paper, we consider the Hochschild homology of Soergel bimodules, and construct a geometric interpretation of it. This will allow us to explicitly compute the Hochschild homology of a special class of Soergel bimodules. Soergel bimodules are bimodules over a polynomial ring, which appear naturally both in the study of perverse sheaves on flag varieties and of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 155,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "acknowledgments",
+          "heading": true
+        },
+        {
+          "term": "scholarship",
+          "heading": false
+        },
+        {
+          "term": "fellowship",
+          "heading": false
+        },
+        {
+          "term": "andersen",
+          "heading": false
+        },
+        {
+          "term": "nsf",
+          "heading": false
+        },
+        {
+          "term": "grant",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:acknowledgments label=\"sec:acknowledgments\"} The authors would like to thank Catharina Stroppel, Olaf Schnürer, Allen Knutson, Shrawan Kumar, Peter Fiebig, Michel Brion and Tom Baird for their helpful suggestions and Wolfgang Soergel for discussions which greatly enhanced their understanding of the equivariant derived category. They would also like to thank the organizers of the conference \"Microlocal and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-knot-homology-and-soergel-bimodules",
+      "number": "2",
+      "title": "Knot homology and Soergel bimodules",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 581,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "longrightarrow hspace",
+          "heading": false
+        },
+        {
+          "term": "cdots longrightarrow",
+          "heading": false
+        },
+        {
+          "term": "bimodules",
+          "heading": true
+        },
+        {
+          "term": "kho",
+          "heading": false
+        },
+        {
+          "term": "hochschild homology",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": false
+        },
+        {
+          "term": "equivariant cohomology",
+          "heading": false
+        },
+        {
+          "term": "knot-homol-soerg",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:knot-homol-soerg label=\"sec:knot-homol-soerg\"} While Soergel bimodules merit study simply by being connected so much delightful mathematics, we have applications in knot theory in mind, as we will now briefly describe. The interested reader can find more details in the papers of Khovanov [@Kho05], Rasmussen [@Ras06], and Webster [@Web06a]. The braid group $B_G$ of $G$ is a finitely presented group, with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-the-equivariant-derived-category-and-dg-module",
+      "number": "3",
+      "title": "The equivariant derived category and dg-modules",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1803,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dg-modules",
+          "heading": true
+        },
+        {
+          "term": "equivariant derived",
+          "heading": true
+        },
+        {
+          "term": "derived category",
+          "heading": true
+        },
+        {
+          "term": "dgmod mathcal",
+          "heading": false
+        },
+        {
+          "term": "res mathcal",
+          "heading": false
+        },
+        {
+          "term": "equivariant sheaf",
+          "heading": false
+        },
+        {
+          "term": "differential graded",
+          "heading": false
+        },
+        {
+          "term": "mathcal projective",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:equi-derived-cat label=\"sec:equi-derived-cat\"} Since our readers may be less well-acquainted with the formalism of equivariant derived categories and their connection with dg-modules, as developed by Bernstein and Lunts, in this section, we will provide a brief overview of the necessary background for later sections. This material is discussed in considerably more detail in their monograph [@BL]. Suppose a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-hochschild-homology-and-dg-algebras",
+      "number": "4",
+      "title": "Hochschild homology and dg-algebras",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 397,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hochschild homology",
+          "heading": true
+        },
+        {
+          "term": "dgmod mathcal",
+          "heading": false
+        },
+        {
+          "term": "times mathcal",
+          "heading": false
+        },
+        {
+          "term": "formal-isom",
+          "heading": false
+        },
+        {
+          "term": "res times",
+          "heading": false
+        },
+        {
+          "term": "res-lemma",
+          "heading": false
+        },
+        {
+          "term": "equiv-thm",
+          "heading": false
+        },
+        {
+          "term": "hochsch-homol-dg",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:hochsch-homol-dg label=\"sec:hochsch-homol-dg\"} Recall that the Hochschild homology of an $\\HT\\otimes S$-module $R$ can be defined as $$\\HH_*(\\S{})=\\HT \\Lotimes_{\\HT\\otimes \\HT} \\S{}$$ where $\\HT$ has been made into an $\\HT\\otimes\\HT$ algebra by the multiplication map. Since $\\HT\\cong\\A_{B}$ and $\\HT\\otimes\\HT\\cong\\A_{\\BB}$, this map is that induced by the diagonal group homomorphism $B\\hookrightarrow\\BB$.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-the-geometry-of-bott-samelson-bimodules",
+      "number": "5",
+      "title": "The geometry of Bott-Samelson bimodules",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 525,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bott-samelson bimodules",
+          "heading": true
+        },
+        {
+          "term": "ind times",
+          "heading": false
+        },
+        {
+          "term": "bott-samelson variety",
+          "heading": false
+        },
+        {
+          "term": "res times",
+          "heading": false
+        },
+        {
+          "term": "times dots",
+          "heading": false
+        },
+        {
+          "term": "gamma times",
+          "heading": false
+        },
+        {
+          "term": "times mathcal",
+          "heading": false
+        },
+        {
+          "term": "times equivariant",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:geom-soerg-bimod label=\"sec:geom-soerg-bimod\"} In this section, we discuss Bott-Samelson bimodules, calculate their $B \\times B$-equivariant cohomology and obtain the formality results needed above. Since we have already described the geometric realization of indecomposable bimodules, as intersection cohomology of subvarieties of $G$, we know abstractly that the Bott-Samelson bimodule $\\S\\Bi$ must be the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-6-equivariant-formality",
+      "number": "6",
+      "title": "Equivariant formality",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1681,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "equivariant formality",
+          "heading": true
+        },
+        {
+          "term": "equiv-form label",
+          "heading": false
+        },
+        {
+          "term": "bs-match",
+          "heading": false
+        },
+        {
+          "term": "bsi",
+          "heading": false
+        },
+        {
+          "term": "equivariant cohomology",
+          "heading": false
+        },
+        {
+          "term": "sum deg",
+          "heading": false
+        },
+        {
+          "term": "cohomology ring",
+          "heading": false
+        },
+        {
+          "term": "hochschild homology",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:equiv-form label=\"sec:equiv-form\"} Now, we will carry out some actual computations of $B$-equivariant cohomology, and thus of Hochschild homology. Of course, the best setting in which to compute equivariant cohomology of a variety is when that variety (or more precisely, the sheaf one intends to compute the hypercohomology of) is equivariantly formal. ::: deth []{#eq-for-def label=\"eq-for-def\"} We call $\\mc",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "equivariant cohomology",
+      "heading": false
+    },
+    {
+      "term": "times equivariant",
+      "heading": false
+    },
+    {
+      "term": "cong otimes",
+      "heading": false
+    },
+    {
+      "term": "equivariant sheaf",
+      "heading": false
+    },
+    {
+      "term": "equivariant sheaves",
+      "heading": false
+    },
+    {
+      "term": "soergel bimodules",
+      "heading": true
+    },
+    {
+      "term": "equivariant intersection",
+      "heading": false
+    },
+    {
+      "term": "equivariant formality",
+      "heading": true
+    },
+    {
+      "term": "equivariant hypercohomology",
+      "heading": false
+    },
+    {
+      "term": "bott-samelson bimodules",
+      "heading": true
+    },
+    {
+      "term": "equivariant derived",
+      "heading": true
+    },
+    {
+      "term": "hochschild homology",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 7,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 8,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 8 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0707.2003v2"
+  }
+}

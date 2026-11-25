@@ -1,0 +1,28 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/tbl-vertex-operator-dictionary-table-data",
+  "@type": [
+    "folio-assistant-core:Table",
+    "doco:Table"
+  ],
+  "label": "tbl:vertex-operator-dictionary-table-data",
+  "kind": "table",
+  "title": "Vertex operator algebra (VOA) to QOU dictionary",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-vertex-operator-dictionary"
+  ],
+  "tags": [
+    "vertex-operator",
+    "VOA",
+    "dictionary",
+    "summary-table"
+  ],
+  "text": "vertex-operator-dictionary-table-data.md",
+  "provenance": "authored"
+}

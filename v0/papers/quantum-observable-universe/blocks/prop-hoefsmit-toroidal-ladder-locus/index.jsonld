@@ -1,0 +1,37 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-hoefsmit-toroidal-ladder-locus",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:hoefsmit-toroidal-ladder-locus",
+  "kind": "proposition",
+  "title": "Toroidal locus of the Hoefsmit mixing ladder: $(n,\\mu) = (d - \\tfrac{1}{2}, \\tfrac{1}{2})$ is forced",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-hoefsmit-binding-amplitude"
+  ],
+  "cites": [
+    "references/wenzl1988c",
+    "references/whipple1917",
+    "references/lebedev1965"
+  ],
+  "tags": [
+    "hoefsmit",
+    "toroidal-harmonics",
+    "legendre-ladder",
+    "channel-interpolation",
+    "half-integer-degree",
+    "lepton-meson-bridge"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.toroidal_locus_forced",
+  "text": "hoefsmit-toroidal-ladder-locus.md",
+  "leanSource": "hoefsmit-toroidal-ladder-locus.lean",
+  "provenance": "authored"
+}

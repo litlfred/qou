@@ -1,0 +1,39 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-hecke-satisfies-blitvic-hypothesis",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:hecke-satisfies-blitvic-hypothesis",
+  "kind": "proposition",
+  "title": "The Hecke generators under the Markov trace do not satisfy Blitvić's pair-partition hypothesis",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/rem-non-commutative-probability-dictionary",
+    "papers/quantum-observable-universe/blocks/thm-jones-markov-trace"
+  ],
+  "proofs": [
+    "papers/quantum-observable-universe/blocks/prf-hecke-satisfies-blitvic-hypothesis"
+  ],
+  "cites": [
+    "references/blitvic2012",
+    "references/wenzl1988"
+  ],
+  "tags": [
+    "q-clt",
+    "blitvic",
+    "pair-partition",
+    "hecke-quadratic-relation",
+    "established",
+    "negative-result"
+  ],
+  "leanRef": "qou:HeckeTemperleyLieb.hecke_satisfies_blitvic_hypothesis.markovTrace_centred_cube_ne_zero",
+  "text": "hecke-satisfies-blitvic-hypothesis.md",
+  "provenance": "authored"
+}

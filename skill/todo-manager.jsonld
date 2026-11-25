@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/todo-manager.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/todo-manager",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "todo-manager",
+      "title": "Session Task Manager (`beans`)",
+      "description": "Maintain and display work-in-progress task lists using the TodoWrite tool. Track implementation progress, open computations, missing Lean files, and blocked items across content blocks.",
+      "instructionsPath": "skills/local/todo-manager.md",
+      "instructionLines": 151,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

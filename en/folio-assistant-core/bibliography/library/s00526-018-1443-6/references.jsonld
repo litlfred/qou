@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/s00526-018-1443-6",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "On the analyticity of critical points of the Möbius energy",
+      "dcterms:creator": [
+        "Blatt, Simon"
+      ],
+      "dcterms:issued": "D:20181207",
+      "bibo:doi": "10.1007/s00526-018-1443-6",
+      "dcterms:identifier": "https://doi.org/10.1007/s00526-018-1443-6",
+      "dcterms:abstract": "We prove that smooth critical points of the Möbius energy E parametrized by arc-length are analytic. Together with the main result in Blatt et al. (Trans Am Math Soc 368(9):6391–6438, 2016) this implies that critical points of the Möbius energy with merely bounded energy are not only C∞but also analytic. Our proof is based on Cauchy’s method of majorants and a decomposition of the gradient which has already proved useful in the proof of the regularity results in Blatt and Reiter (Manuscr Math 140(1–2):29–50, 2013) and Blatt et al. (Trans Am Math Soc 368(9):6391–6438, 2016). To the best of the authors knowledge, this is the ﬁrst analyticity result in the context of non-local differential equations. Mathematics Subject Classiﬁcation 35B65 · 57M25",
+      "dcterms:source": "library/s00526-018-1443-6/manifest.jsonld",
+      "dcterms:hasVersion": "library/s00526-018-1443-6"
+    }
+  ]
+}

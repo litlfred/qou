@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/poincare-proof-outline/sections/sec-036",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "H-betweenness and h-collinearity",
+  "pageStart": 86,
+  "pageEnd": 87,
+  "contains": [
+    "library/poincare-proof-outline/blocks/prose-sec-036"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/poincare-proof-outline/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/poincare-proof-outline/manifest.jsonld",
+  "provenance": "ingested"
+}

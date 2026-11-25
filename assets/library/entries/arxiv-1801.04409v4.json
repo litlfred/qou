@@ -1,0 +1,670 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1801.04409v4",
+  "blocks": [
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "The notion of the *semisimplification* of a spherical tensor category was introduced in [@BW], although in the context of algebraic geometry it can be traced back to the notion of numerical equivalence of cycles in the theory of motives, see e.g. [@Ja]. More generally, various *adequate equivalence relations* in the same theory can be considered as examples of *tensor ideals* in the symmetric tensor category of Chow motives.\n\nRecall that a morphism $f:X\\to Y$ in a spherical tensor category $\\mathcal{C}$ over a field $\\bold k$ is called *negligible* if for any morphism $g: Y\\to X$, one has $\\te",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES\narXiv:1801.04409v4  [math.RT]  9 Nov 2019\nTo Sasha Beilinson and Vitya Ginzburg\non their 60th birthdays with admiration",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Preliminaries",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-preliminaries.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Tensor ideals",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-21-tensor-ideals.md",
+      "narrative": null,
+      "content": "Let ${\\bold k}$ be a field and let $\\mathcal{C}$ be a ${\\bold k}-$linear monoidal category. Recall that a *tensor ideal* $I$ in $\\mathcal{C}$ is a collection of subspaces $I(X,Y)\\subset \\mathrm{Hom}(X,Y)$ for all $X,Y\\in \\mathcal{C}$ such that for all $X,Y,Z,T \\in \\mathcal{C}$\n\n\\(1\\) for $\\alpha \\in I(X,Y)$ and $\\beta \\in \\mathrm{Hom}(Y,Z), \\gamma \\in \\mathrm{Hom}(Z,X)$ we have $\\alpha \\circ \\gamma \\in I(Z,Y)$ and $\\beta \\circ \\alpha \\in I(X,Z)$;\n\n\\(2\\) for $\\alpha \\in I(X,Y), \\beta \\in \\mathrm{Hom}(Z,T)$ we have $\\alpha \\otimes\\beta \\in\nI(X\\otimes Z, Y\\otimes T)$ and $\\beta \\otimes\\alpha \\in",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Semisimplification of a spherical tensor category",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-22-semisimplification-of-a-spherical-tensor-cate.md",
+      "narrative": null,
+      "content": "We recall the theory of semisimplifications of spherical tensor categories, due to Barrett and Westbury, [@BW]. We give proofs for reader's convenience.\n\nLet $\\mathbf{k}$ be an algebraically closed field, and $\\mathcal{C}$ be a spherical tensor category over $\\mathbf{k}$ (see [@EGNO], Subsection 4.7).\n\n::: definition\nA morphism $f: X\\to Y$ in $\\mathcal{C}$ is called *negligible* if for any morphism $g: Y\\to X$ one has $\\text{Tr}(f\\circ g)=0$.\n:::\n\n::: lemma\n[]{#charneg label=\"charneg\"} ([@B2], Exercise 3(ii), Subsection 2.18) Let $X=\\oplus_i X_i$ and $Y=\\oplus_j Y_j$ be decompositions of $X,Y$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generalization to pivotal Karoubian categories",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "../sections/sec-004-23-generalization-to-pivotal-karoubian-categorie.md",
+      "narrative": null,
+      "content": "The above results generalize to pivotal tensor categories ([@EGNO], Subsection 4.7) such that $\\dim^L X=0$ if and only if $\\dim^R X=0$ for any indecomposable object $X\\in \\mathcal{C}$ (an example of such a category which is not spherical is the category of representations of the Taft Hopf algebra). Namely, in such a category, for any endomorphism $h: X\\to X$ of an indecomposable object $X$, one has $\\text{Tr}^L(h)=0$ if and only if $\\text{Tr}^R(h)=0$. Thus, if $f: X\\to Y$ is a morphism between arbitrary objects of $\\mathcal{C}$, then the condition that for any $g:Y\\to X$, one has $\\text{Tr}^L(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "General results on semisimplification of tensor categories",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-005-3-general-results-on-semisimplification-of-tenso.md",
+      "narrative": null,
+      "content": "categories\nq2 = −2 is then a root of unity (or some order dividing p −1), so one\nmay replace Uq(b) with the corresponding small quantum group uq(b).\n2. Condition (1) of Theorem 2.6 holds true if C is an abelian tensor\ncategory, since the quantum trace is additive on exact sequences, see\ne.g. [EGNO, Proposition 4.7.5]. Moreover, assume that there exists a\npivotal tensor functor C →D, where the category D satisﬁes condition\n(1) of Theorem 2.6 (e.g., D is abelian). Then obviously the category\nC also satisﬁes condition (1) of Theorem 2.6.\nThis observation was\nused by U. Jannsen to prove that the c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Splitting of the semisimplification functor for Tannakian categories in characteristic zero, reductive envelopes, and the Jacobson-Morozov lemma",
+      "pageStart": 8,
+      "pageEnd": 13,
+      "target": "../sections/sec-006-31-splitting-of-the-semisimplification-functor-f.md",
+      "narrative": null,
+      "content": "For Tannakian categories in characteristic zero, André and Kahn showed that the semisimplification functor $\\bold S$ admits a splitting $\\bold S^*$, and used it to show the existence and uniqueness (up to conjugation) of the reductive envelope of any affine proalgebraic group in characteristic zero. In this subsection we review this theory (cf. [@AK],[@S]).\n\n::: theorem\n[]{#splitting label=\"splitting\"} ([@AK], Theorem 1, Theorem 2) If ${\\rm char}(\\mathbf{k})=0$ and $\\mathcal{C}=\\mathop{\\mathrm{Rep}}\\nolimits G$ is a Tannakian category over $\\mathbf{k}$ (where $G$ is an affine proalgebraic grou",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Compatibility of semisimplification with equivariantization",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-007-32-compatibility-of-semisimplification-with-equi.md",
+      "narrative": null,
+      "content": "Now let $\\mathcal{C}$ be a tensor category and $L$ be a finite group acting on $\\mathcal{C}$. Let $\\mathcal{C}^L$ be the $L$-equivariantization of $\\mathcal{C}$ ([@EGNO], Subsection 4.15). The following lemma is easy ([@EGNO], Exercise 4.15.3).\n\n::: lemma\n[]{#equivar label=\"equivar\"} If $$1\\to N\\to G\\to L\\to 1$$ is an exact sequence of groups then $L$ acts naturally on $\\mathop{\\mathrm{Rep}}\\nolimits_{\\bold k} N$, and $(\\mathop{\\mathrm{Rep}}\\nolimits_{\\bold k} N)^L\\cong \\mathop{\\mathrm{Rep}}\\nolimits_{\\bold k} G$.\n:::\n\nClearly, any action of $L$ on $\\mathcal{C}$ descends to its action on the s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Compatibility of negligible morphisms with surjective tensor functors",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-008-33-compatibility-of-negligible-morphisms-with-su.md",
+      "narrative": null,
+      "content": "Let $\\mathcal{C},\\mathcal{D}$ be finite spherical tensor categories ([@EGNO], Section 6), and $F: \\mathcal{C}\\to \\mathcal{D}$ a surjective tensor functor ([@EGNO], Subsection 6.3). Let $I: \\mathcal{D}\\to \\mathcal{C}$ be the right adjoint of $F$. Note that $I$ is exact since $F$ maps projectives to projectives, ([@EGNO], Theorem 6.1.16).\n\n::: definition\nThe *index* of $F$ is $d:=\\dim I(\\bold 1)$.\n:::\n\n::: definition\nLet us say that $I$ is *dimension-scaling* if $\\dim I(V)=d\\dim V$ for all $V\\in \\mathcal{D}$.\n:::\n\n::: proposition\n[]{#negli label=\"negli\"} If $F$ has a nonzero index and $I$ is dim",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/cor-sec-010-03",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "cor-sec-010-03.md",
+      "narrative": null,
+      "content": "One has Repk G ∼= (Repk P)L.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prop-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "prop-sec-010-01.md",
+      "narrative": null,
+      "content": "Let f : X →Y be a negligible morphism of G- modules. Then f is negligible as a morphism of NG(P)-modules. Thus, the restriction functor F : Repk G →Repk NG(P) descends to a tensor functor between semisimpliﬁcations F : Repk G →Repk NG(P). Our main result in this section is the following theorem.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The result",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../sections/sec-009-41-the-result.md",
+      "narrative": null,
+      "content": "□",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Semisimplification of representation categories of finite groups in characteristic p.",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-010-4-semisimplification-of-representation-categorie.md",
+      "narrative": null,
+      "content": "finite groups in characteristic p.\n4.1. The result. Let char(k) = p > 0. Let G be a ﬁnite group, and\nP be a Sylow p-subgroup of G. Let NG(P) be the normalizer of P in\nG. Since [G : NG(P)]̸ = 0 in k, Corollary 3.23 implies\n15\nProposition 4.1. Let f : X →Y be a negligible morphism of G-\nmodules. Then f is negligible as a morphism of NG(P)-modules. Thus,\nthe restriction functor F : Repk G →Repk NG(P) descends to a tensor\nfunctor between semisimpliﬁcations F : Repk G →Repk NG(P).\nOur main result in this section is the following theorem.\nTheorem 4.2. The functor F in Proposition 4.1 is an equivalen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/thm-sec-010-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "thm-sec-010-02.md",
+      "narrative": null,
+      "content": "The functor F in Proposition 4.1 is an equivalence of tensor categories.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prop-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "prop-sec-011-01.md",
+      "narrative": null,
+      "content": "(see e.g. [A], Section 9) For each indecomposable G-module M, the minimal subgroups H ⊂G such that M is relatively H-projective are conjugate, and they are p-groups. Deﬁnition 4.6. The minimal subgroup H ⊂G such that M is rela- tively H-projective (well-deﬁned up to conjugation thanks to Proposi- tion 4.5) is called the vertex of M.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prop-sec-011-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "prop-sec-011-02.md",
+      "narrative": null,
+      "content": "([G], Theorem 9) If dim M̸ = 0 in k then the vertex of M is the Sylow p-subgroup P ⊂G.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem 4.2",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-011-42-proof-of-theorem-42.md",
+      "narrative": null,
+      "content": "theory of vertices of modular representations and the Green correspon-\ndence (see e.g. [A], Chapter III), which we will now recall. Let M be\na ﬁnite dimensional representation of a ﬁnite group G over a ﬁeld k of\ncharacteristic p. Let H be a subgroup of G.\nDeﬁnition 4.4. We say that M is relatively H-projective if M is a\ndirect summand in IndG\nHV for some ﬁnite dimensional H-module V .\nProposition 4.5. (see e.g. [A], Section 9) For each indecomposable\nG-module M, the minimal subgroups H ⊂G such that M is relatively\nH-projective are conjugate, and they are p-groups.\nDeﬁnition 4.6. The minimal su",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/thm-sec-011-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "thm-sec-011-03.md",
+      "narrative": null,
+      "content": "[A] (Green’s correspondence) For each p-subgroup H ⊂ NG(P), there is a bijection between indecomposable representations of G with vertex H and indecomposable representations of NG(P) with vertex H, given by X 7→X◦for X ∈Repk G, such that X|NG(P ) = X◦⊕N, where N is a direct sum of indecomposable NG(P)-modules with vertices other than H. We can now prove Theorem 4.2. Let T ∈Rep G be a simple object. Then T = X, where X ∈Rep G is an indecomposable module of nonzero dimension. Hence, by Proposition 4.7, the vertex of X is P. Hence, by Theorem 4.8, X|NG(P ) = X◦⊕N, where N is a direct sum of indec",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The case of Sylow subgroup of prime order",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-012-43-the-case-of-sylow-subgroup-of-prime-order.md",
+      "narrative": null,
+      "content": "Let us now consider the simplest nontrivial special case of Theorem [\\[equiv\\]](#equiv){reference-type=\"ref\" reference=\"equiv\"}, when the $p$-Sylow subgroup of $G$ has order $p$.\n\n::: corollary\n[]{#cyc label=\"cyc\"} If $P=\\Bbb Z/p$ then $\\overline{\\mathop{\\mathrm{Rep}}\\nolimits_\\mathbf{k}G}=({\\rm Ver}_p)^L$, where ${\\rm Ver}_p$ is the Verlinde category (see Example [\\[ex1\\]](#ex1){reference-type=\"ref\" reference=\"ex1\"}(2)).\n:::\n\nNote that if $p=2$ then ${\\rm Ver}_p=\\mathrm{Vec}$. Thus, if $P=\\Bbb Z/2$ then Corollary [\\[cyc\\]](#cyc){reference-type=\"ref\" reference=\"cyc\"} says that $\\overline{\\math",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The case of the symmetric group Sp+n, where n<p",
+      "pageStart": 18,
+      "pageEnd": 20,
+      "target": "../sections/sec-013-44-the-case-of-the-symmetric-group-spn-where-np.md",
+      "narrative": null,
+      "content": "[]{#symgroup label=\"symgroup\"}\n\nIf $p=2$ then we have $\\overline{\\mathop{\\mathrm{Rep}}\\nolimits_\\mathbf{k}S_2}=\\overline{\\mathop{\\mathrm{Rep}}\\nolimits_\\mathbf{k}S_3}=\\mathrm{Vec}_\\mathbf{k}$. So consider the case $p>2$. Let $G=S_{p+n}$, where $0\\le n<p$. Then $P=\\Bbb Z/p$, and $N_G(P)=S_n\\times \\Bbb Z/(p-1)\\ltimes \\Bbb Z/p$. Thus, by Corollary [\\[corro\\]](#corro){reference-type=\"ref\" reference=\"corro\"}, $$\\overline{\\mathop{\\mathrm{Rep}}\\nolimits_\\mathbf{k}S_{p+n}}\\cong \\mathop{\\mathrm{Rep}}\\nolimits_\\mathbf{k}S_n\\boxtimes {\\rm Ver}_p^+\\boxtimes \\mathop{\\mathrm{Rep}}\\nolimits_\\mathbf{k}(\\Bbb Z",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Application: the semisimplification of the Deligne category Repab Sn",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-014-45-application-the-semisimplification-of-the-del.md",
+      "narrative": null,
+      "content": "Let $n$ be a nonnegative integer, and $\\mathbf{k}$ be a field of characteristic zero. Let $\\underline{\\mathop{\\mathrm{Rep}}\\nolimits} S_n$ denote the Karoubian Deligne category over $\\mathbf{k}$ defined in [@D3] (its main property is that it can be interpolated to non-integer values of $n$ in $\\mathbf{k}$). This category has a tensor ideal $I$ such that $\\underline{\\mathop{\\mathrm{Rep}}\\nolimits} S_n/I=\\mathop{\\mathrm{Rep}}\\nolimits_\\mathbf{k}S_n$. Moreover, it is known (see [@D3],[@CO]) that $\\underline{\\mathop{\\mathrm{Rep}}\\nolimits} S_n$ has an abelian envelope $\\underline{\\mathop{\\mathrm{R",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Semisimplification of some non-symmetric categories",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-015-5-semisimplification-of-some-non-symmetric-categ.md",
+      "narrative": null,
+      "content": "Let ${\\rm char}(\\mathbf{k})=0$, $q\\in \\mathbf{k}^\\times$, and $H_q$ be the Hopf algebra generated by the grouplike element $g$ and element $E$ with defining relation $gEg^{-1}=qE$ and coproduct defined by $\\Delta(E)=E\\otimes g+1\\otimes E$. Then $S(E)=-Eg^{-1}$, so $S^2(E)=gEg^{-1}=qE$. Let $\\mathcal{C}_q\\subset \\mathop{\\mathrm{Rep}}\\nolimits H_q$ be the category of finite dimensional representations of $H_q$ on which $g$ acts semisimply with eigenvalues being powers of $q$. This category has a pivotal structure defined by the element $g$.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Generic q",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-016-51-generic-q.md",
+      "narrative": null,
+      "content": "First assume that $q$ is not a root of unity. Then for any $V\\in \\mathcal{C}_q$, $E|_V$ is nilpotent, since $E$ maps eigenvectors of $g$ with eigenvalue $\\lambda$ to those with eigenvalue $\\lambda q$. Thus, the indecomposable objects of $\\mathcal{C}_q$ are $V_{m_1,m_2}$, where $m_1\\ge m_2$ are integers, namely, Jordan blocks for $E$ of size $m_1-m_2+1$ containing a nonzero vector $v$ with $gv=q^{m_1}v, Ev=0$. Then $\\dim V_{m_1,m_2}=q^{m_2}+...+q^{m_1}$, which is never zero, so there is no nonzero negligible objects. It is easy to see that the tensor product of $V_{m_1,m_2}$ obeys the same fusi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Roots of unity",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "../sections/sec-017-52-roots-of-unity.md",
+      "narrative": null,
+      "content": "Now consider the case when $q$ is a root of unity of some order $n$, which is more interesting. For simplicity assume that $n\\ge 3$ is odd, and let $\\bold q$ be a root of unity of order $2n$ such that $\\bold q^2=q$. In this case, by definition, $\\mathcal{C}_q=\\mathop{\\mathrm{Rep}}\\nolimits H_q/(g^n-1)$ is the category of finite dimensional representations of the quotient Hopf algebra $H_q/(g^n-1)$. Note that the action of $E$ on objects of $\\mathcal{C}_q$ no longer needs to be nilpotent. Namely, $E^n$ is a central element which can act on a simple module by an arbitrary scalar. However, if $E^",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Surjective symmetric tensor functors between Verlinde categories Verp(G)",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-018-6-surjective-symmetric-tensor-functors-between-v.md",
+      "narrative": null,
+      "content": "Let $G$ be a simple algebraic group over $\\Bbb Z$, $h=h(G)$ the Coxeter number of $G$, and $p\\ge h$ a prime. Let $\\mathbf{k}$ be an algebraically closed field of characteristic $p$. Let $\\mathrm{Ver}_p(G)=\\mathrm{Ver}_p(G,\\mathbf{k})$ be the associated Verlinde category of $G$, i.e., the semisimplification of the category ${\\rm Tilt}(G)$ of tilting modules for $G$ over $\\mathbf{k}$. For example, $\\mathrm{Ver}_p(SL(2))=\\mathrm{Ver}_p$.\n\nSimilarly one defines $\\mathrm{Ver}_p(G)$ when $G$ is connected reductive. In this case we should require that $p\\ge h_i$ for all $i$, where $h_i$ are the Coxet",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Objects of finite type in semisimplifications",
+      "pageStart": 26,
+      "pageEnd": 29,
+      "target": "../sections/sec-019-7-objects-of-finite-type-in-semisimplifications.md",
+      "narrative": null,
+      "content": "Let $\\mathcal{D}$ be a semisimple tensor category and $X\\in \\mathcal{D}$. Let us say that $X$ is of finite type if the number of isomorphism classes of simple objects occurring in tensor products of $X$ and $X^*$ is finite; i.e., $X$ generates a fusion subcategory $\\mathcal{D}_X\\subset \\mathcal{D}$. If $\\overline{\\mathcal{C}}$ is the semisimplification of a category $\\mathcal{C}$, and $X\\in \\mathcal{C}$, we will say that $X$ is of finite type if so is $\\overline{X}$. It is an interesting question which objects of $\\mathcal{C}$ are of finite type. Note that according to Example [\\[ex1\\]](#ex1){",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prop-sec-020-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "prop-sec-020-01.md",
+      "narrative": null,
+      "content": "Let nj = 2m1 + · · · + 2mj, 1 ≤j ≤s, and let Yj := ∧njV . Then Yj is invertible. Moreover, Yj = Xmj ⊗Yj−1 (where Y0 := 1), so Xmj are invertible as well. Hence the category C is pointed.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Semisimplification of Tilt(GL(n)) when char(k)=2",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "../sections/sec-020-8-semisimplification-of-tiltgln-when-chark2.md",
+      "narrative": null,
+      "content": "In this section we describe the category C when C = Tilt(GL(n))\nand char(k) = 2.\nFirst recall Lucas’ theorem in elementary number theory:\nLet a ∈Z, b ∈Z+ with p-adic expansions\na =\nX\ni\naipi, b =\nX\ni\nbipi,\nwith 0 ≤ai, bi ≤p −1.\nProposition 8.1. (Lucas’ theorem) One has\n\u0012a\nb\n\u0013\n=\nY\ni\n\u0012ai\nbi\n\u0013\nmod p.\nIn particular,\n\u0000a\nb\n\u0001\nis not divisible by p if and only if bi ≤ai for all i.\nLet V = kn be the tautological representation of GL(n). Recall that\nthe indecomposable objects of the category C are the indecomposable\ndirect summands in tensor products of the fundamental modules ∧ℓV ,\n1 ≤ℓ≤n. Moreover, it",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. Categorifications of based rings attached to SO(3).",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../sections/sec-021-appendix-a-categorifications-of-based-rings-atta.md",
+      "narrative": null,
+      "content": "to SO(3).\nThe goal of this Appendix is to deduce some classiﬁcation results\non categoriﬁcations of certain based rings from the results of [MPS].\nWe assume that the base ﬁeld k is algebraically closed of characteristic\nzero.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.1.",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "../sections/sec-022-a1.md",
+      "narrative": null,
+      "content": "We consider the based ring K∞(see [EGNO, Chapter 3]) with\nbasis Xi, i ∈Z≥0 and with multiplication determined by\nX0 = 1, X1Xi = XiX1 = Xi−1 + Xi + Xi+1, i ≥1.\nIt is a classical fact that K∞is isomorphic to the representation ring\nof the group SO(3) via the map sending Xi to a unique irreducible\nrepresentation of dimension 2i + 1.\nWe will consider pivotal categoriﬁcations of K∞, that is, semisimple\npivotal tensor categories C equipped with an isomorphism of based rings\nK(C) ≃K∞(cf. [EGNO, 4.10]). Any such category C is automatically\nspherical since every object of C is self-dual. Let X ∈C be an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/rem-sec-022-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "rem-sec-022-02.md",
+      "narrative": null,
+      "content": "2. (i) We expect that the assumption on q in Theorem A.1 is automatically satisﬁed, i.e., there is no categoriﬁcation of K∞where q2̸ = ±1 is a root of 1. Moreover, it seems likely that the assumption on pivotality of C can also be dropped.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/thm-sec-022-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "thm-sec-022-01.md",
+      "narrative": null,
+      "content": "1. (i) Assume that q2 = 1 or that q2 is not a root of 1. Then C is equivalent to the category Rep(SO(3)q) (see [MPS, Section 4]). (ii) Assume q2 = −1. Then C is equivalent to the category Rep(OSp(1|2)) (see [MPS, Section 4]).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "A.2. Fusion categories",
+      "pageStart": 32,
+      "pageEnd": 34,
+      "target": "../sections/sec-023-a2-fusion-categories.md",
+      "narrative": null,
+      "content": "ring Kl with basis Xi, i = 0, . . . , l and with multiplication determined\nby\nThe category ˜C is an example of a (possibly twisted) trivalent category,\nas deﬁned in [MPS, Section 7] (thus ˜C satisﬁes the assumptions of\n[MPS, Deﬁnition 2.1] except, possibly, the rotational invariance of the\nmorphism X →X ⊗X). Moreover, the numbers dim Hom ˜C(1, X⊗k)\nare bounded by the numbers dk = dim HomC(1, X⊗k), which are eas-\nily computable using the isomorphism K(C) ≃K∞.\nIn particular,\ndk = 1, 0, 1, 1, 3 for k = 0, 1, 2, 3, 4. Since d̸ = 2, [MPS, Proposition\n7.1] implies that ˜C is not twisted, that is, ˜C",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/thm-sec-023-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 34,
+      "target": "thm-sec-023-01.md",
+      "narrative": null,
+      "content": "3. Let C be a pivotal fusion category which is a cate- goriﬁcation of Kl where l > 2. Then there is a tensor equivalence C ≃Rep(SO(3)q) where q is a primitive root of 1 of degree 4(l + 1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1801.04409v4/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "../sections/sec-024-references.md",
+      "narrative": null,
+      "content": "[A]\nJ. L. Alperin, Local representation theory, Modular Representations as an\nIntroduction to the Local Representation Theory of Finite Groups, Cam-\nbridge Studies in Advanced Mathematics, 11, Cambridge University Press,\n1993.\n[AK]\nY. Andre, B. Kahn, with an appendix by P. O’Sullivan, Nilpotence, radicaux\net structures mono´ıdales, arXiv:math/0203273, Rendiconti del Seminario\nMatematico dell’Universita di Padova 108 (2002), 107–291.\n[BW] J. Barrett and B. Westbury, Spherical categories, Adv. Math. 143 (1999),\n357–375.\n[B1]\nD. J. Benson, Representations and Cohomology, I: Basic representation t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

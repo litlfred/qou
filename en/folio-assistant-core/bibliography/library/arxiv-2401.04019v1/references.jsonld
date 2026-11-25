@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2401.04019v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "TRUNCATED THETA SERIES RELATED TO THE JACOBI TRIPLE PRODUCT IDENTITY",
+      "dcterms:creator": [
+        "BALLANTINE, CRISTINA",
+        "FEIGON, BROOKE"
+      ],
+      "dcterms:issued": "D:20240108",
+      "dcterms:identifier": "https://arxiv.org/abs/2401.04019",
+      "dcterms:abstract": "The work of Andrews and Merca on the truncated Euler’s pen- tagonal number theorem led to a resurgence in research on truncated theta series identities. In particular, Yee proved a truncated version of the Jacobi Triple Product (JTP) identity. Recently, Merca conjectured a stronger form of the truncated JTP identity. In this article we prove the ﬁrst three cases of the conjecture and several related truncated identities. We prove combinato- rially an identity related to the JTP identity which in particular cases reduces to identities conjectured by Merca and proved analytically by Krattenthaler, Merca and Radu. Moreover, we introduce a new combinatorial interpretation for the number of distinct 5-regular partitions of n.",
+      "dcterms:source": "library/arxiv-2401.04019v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2401.04019v1"
+    }
+  ]
+}

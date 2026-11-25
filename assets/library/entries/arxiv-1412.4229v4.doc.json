@@ -1,0 +1,964 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1412.4229v4",
+  "title": "arxiv-1412.4229v4",
+  "variant": "pdf",
+  "pages": 44,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "0",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-0-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Some Facts on DG Rings and Modules",
+      "number": "1",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-some-facts-on-dg-rings-and-modules"
+    },
+    {
+      "level": 1,
+      "title": "Resolutions of DG Modules",
+      "number": "2",
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-resolutions-of-dg-modules"
+    },
+    {
+      "level": 1,
+      "title": "Central Pairs of DG Rings and their Resolutions",
+      "number": "3",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-3-central-pairs-of-dg-rings-and-their-resolution"
+    },
+    {
+      "level": 1,
+      "title": "DG Ring Homotopies",
+      "number": "4",
+      "page": 23,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-4-dg-ring-homotopies"
+    },
+    {
+      "level": 1,
+      "title": "Pairs of DG Modules, Compound Resolutions, and Rectangles",
+      "number": "5",
+      "page": 26,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-5-pairs-of-dg-modules-compound-resolutions-and-r"
+    },
+    {
+      "level": 1,
+      "title": "The Rectangle Operation",
+      "number": "6",
+      "page": 32,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-6-the-rectangle-operation"
+    },
+    {
+      "level": 1,
+      "title": "The Squaring Operation",
+      "number": "7",
+      "page": 38,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-7-the-squaring-operation"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 43,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 269,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "squaring operation",
+          "heading": false
+        },
+        {
+          "term": "sqb",
+          "heading": false
+        },
+        {
+          "term": "grothendieck duality",
+          "heading": false
+        },
+        {
+          "term": "rings",
+          "heading": false
+        },
+        {
+          "term": "commutative",
+          "heading": false
+        },
+        {
+          "term": "reproduce",
+          "heading": false
+        },
+        {
+          "term": "rigid",
+          "heading": false
+        }
+      ],
+      "extract": "THE SQUARING OPERATION FOR COMMUTATIVE DG RINGS AMNON YEKUTIELI Abstract. Let A →B be a homomorphism of commutative rings. The squar- ing operation is a functor SqB/A from the derived category D(B) of complexes of B-modules into itself. This operation is needed for the deﬁnition of rigid complexes (in the sense of Van den Bergh), that in turn leads to a new approach to Grothendieck duality for rings, schemes and",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1412.4229v4/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-0-introduction",
+      "number": "0",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3015,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pdgr mrm",
+          "heading": false
+        },
+        {
+          "term": "cat pdgr",
+          "heading": false
+        },
+        {
+          "term": "dgr mrm",
+          "heading": false
+        },
+        {
+          "term": "k-flat resolutions",
+          "heading": false
+        },
+        {
+          "term": "til",
+          "heading": false
+        },
+        {
+          "term": "rigid dualizing",
+          "heading": false
+        },
+        {
+          "term": "opn rhom",
+          "heading": false
+        },
+        {
+          "term": "commutative rings",
+          "heading": false
+        }
+      ],
+      "extract": "\\numberwithin{equation}{subsection} \\subsection{Background: Rigid Dualizing Complexes} The concept of {\\em rigid dualizing complex} was introduced by M. Van den Bergh in his influential paper \\cite{VdB} from 1997. This was done for a noncommutative ring $A$ over a base field $\\K$. Let us recall the definition; but to simplify matters (and because here we are interested in the commutative situation), we shall state",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-some-facts-on-dg-rings-and-modules",
+      "number": "1",
+      "title": "Some Facts on DG Rings and Modules",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2807,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "opn cyl",
+          "heading": false
+        },
+        {
+          "term": "mrm cyl",
+          "heading": false
+        },
+        {
+          "term": "dgr mrm",
+          "heading": false
+        },
+        {
+          "term": "cat dgr",
+          "heading": false
+        },
+        {
+          "term": "dgr centover",
+          "heading": false
+        },
+        {
+          "term": "ring mrm",
+          "heading": false
+        },
+        {
+          "term": "opn hom",
+          "heading": false
+        },
+        {
+          "term": "opn end",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:facts-DG-mods} \\numberwithin{equation}{section} In this section we review some known facts about DG rings and modules. We talk about central homomorphisms of DG rings. Finally, we introduce the cylinder construction for DG rings and modules. A {\\em differential graded ring}, or {\\em DG ring} for short, is a graded ring $A = \\bigoplus_{i \\in \\Z} A^i$, together with an additive endomorphism $\\d_A$ of degree",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-resolutions-of-dg-modules",
+      "number": "2",
+      "title": "Resolutions of DG Modules",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1752,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "til cat",
+          "heading": false
+        },
+        {
+          "term": "cat dgmod",
+          "heading": false
+        },
+        {
+          "term": "til psi",
+          "heading": false
+        },
+        {
+          "term": "opn hom",
+          "heading": false
+        },
+        {
+          "term": "til chi",
+          "heading": false
+        },
+        {
+          "term": "hom mrm",
+          "heading": false
+        },
+        {
+          "term": "homomorphisms opn",
+          "heading": false
+        },
+        {
+          "term": "opn adj",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:resolutions-modules} Let $A$ be a DG ring. We already mentioned that $\\cat{M}(A) = \\cat{DGMod} A$ is a DG category, equipped with a translation automorphism $\\opn{T}$. The homotopy category of $\\cat{DGMod} A$ is $\\til{\\cat{K}}(\\cat{DGMod} A)$, where by definition \\begin{equation} \\label{eqn:1016} \\opn{Hom}_{\\til{\\cat{K}}(\\cat{DGMod} A)}(M, N) := \\mrm{H}^0 \\bigl( \\opn{Hom}_A(M, N) \\bigr) . \\end{equation}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-central-pairs-of-dg-rings-and-their-resolution",
+      "number": "3",
+      "title": "Central Pairs of DG Rings and their Resolutions",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 23,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 3995,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "resolution til",
+          "heading": false
+        },
+        {
+          "term": "cat pdgr",
+          "heading": false
+        },
+        {
+          "term": "homomorphism til",
+          "heading": false
+        },
+        {
+          "term": "morphism til",
+          "heading": false
+        },
+        {
+          "term": "cat dgr",
+          "heading": false
+        },
+        {
+          "term": "noncommutative semi-free",
+          "heading": false
+        },
+        {
+          "term": "semi-free ring",
+          "heading": false
+        },
+        {
+          "term": "let til",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:resolutions-rings} In this section we introduce several special kinds of DG rings and homomorphisms. Recall that $\\cat{DGR}$ is the category of DG rings. \\begin{dfn} A DG ring $A = \\bigoplus_{i \\in \\Z} A^i$ is called {\\em nonpositive} if $A^i = 0$ for all $i > 0$. The full subcategory of $\\cat{DGR}$ consisting of nonpositive DG rings is denoted by $\\cat{DGR}^{\\leq 0}$. \\end{dfn} \\begin{dfn}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-dg-ring-homotopies",
+      "number": "4",
+      "title": "DG Ring Homotopies",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 26,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1560,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "til xar",
+          "heading": false
+        },
+        {
+          "term": "cat dgr",
+          "heading": false
+        },
+        {
+          "term": "dgr mrm",
+          "heading": false
+        },
+        {
+          "term": "leq centover",
+          "heading": false
+        },
+        {
+          "term": "semi-free ring",
+          "heading": false
+        },
+        {
+          "term": "noncommutative semi-free",
+          "heading": false
+        },
+        {
+          "term": "mrm cyl",
+          "heading": false
+        },
+        {
+          "term": "because opn",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:homotopies-rings} In this section we introduce the concept of homotopy between DG ring homomorphisms. Many of the ideas in this section were communicated to us privately by B. Keller (but of course the responsibility for correctness is ours). \\begin{dfn} \\label{dfn:70} Suppose $u_0, u_1 : A \\to B$ are homomorphisms of DG rings. \\begin{enumerate} \\item An additive homomorphism $\\ga : A \\to B$ of degree",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-pairs-of-dg-modules-compound-resolutions-and-r",
+      "number": "5",
+      "title": "Pairs of DG Modules, Compound Resolutions, and Rectangles",
+      "level": 1,
+      "pageStart": 26,
+      "pageEnd": 32,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2865,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rect til",
+          "heading": false
+        },
+        {
+          "term": "til mrm",
+          "heading": false
+        },
+        {
+          "term": "compound resolutions",
+          "heading": true
+        },
+        {
+          "term": "til opn",
+          "heading": false
+        },
+        {
+          "term": "bsym mrm",
+          "heading": false
+        },
+        {
+          "term": "eta mrm",
+          "heading": false
+        },
+        {
+          "term": "centover til",
+          "heading": false
+        },
+        {
+          "term": "homomorphisms til",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:pairs-DG-modules} Recall that $\\cat{PDGR}$ is the category of central pairs DG rings. See Definition \\ref{dfn:910}. Resolutions in $\\cat{PDGR}$ were defined in Definition \\ref{dfn:912} and \\ref{dfn:52}. The category of central DG $A$-rings $\\cat{DGR} \\centover A$ was defined in Definition \\ref{dfn:750}(4). \\begin{dfn} \\label{dfn:914} Let $\\til{B} / \\til{A}$ be an object of $\\cat{PDGR}$. The {\\em",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-6-the-rectangle-operation",
+      "number": "6",
+      "title": "The Rectangle Operation",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 38,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2420,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "til mrm",
+          "heading": false
+        },
+        {
+          "term": "rect til",
+          "heading": false
+        },
+        {
+          "term": "til opn",
+          "heading": false
+        },
+        {
+          "term": "cyl til",
+          "heading": false
+        },
+        {
+          "term": "diamondsuit til",
+          "heading": false
+        },
+        {
+          "term": "til xar",
+          "heading": false
+        },
+        {
+          "term": "heartsuit til",
+          "heading": false
+        },
+        {
+          "term": "pdgr mrm",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:rect-oper} In this section we continue with the material of Section \\ref{sec:pairs-DG-modules}, but with slightly different notation. Recall that $\\cat{PDGR}$ is the category of central pairs of DG rings, and $\\cat{PDGR}^{\\leq 0}$ is the full subcategory of nonpositive central pairs. See Definitions \\ref{dfn:910} and \\ref{dfn:911}. The main result here is Theorem \\ref{thm:840}. Throughout this section we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-7-the-squaring-operation",
+      "number": "7",
+      "title": "The Squaring Operation",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 43,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2242,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bun aun",
+          "heading": false
+        },
+        {
+          "term": "squaring operation",
+          "heading": true
+        },
+        {
+          "term": "sqv ida",
+          "heading": false
+        },
+        {
+          "term": "k-ﬂat resolution",
+          "heading": false
+        },
+        {
+          "term": "commutative k-ﬂat",
+          "heading": false
+        },
+        {
+          "term": "compound resolution",
+          "heading": false
+        },
+        {
+          "term": "category pdgr",
+          "heading": false
+        },
+        {
+          "term": "functor sqb",
+          "heading": false
+        }
+      ],
+      "extract": "In this section all DG rings are commutative; namely, we work inside the category DGR≤0 sc . See Deﬁnition 3.3. The category PDGR≤0 sc of commutative pairs of DG rings was introduced in Deﬁnition 3.7(2); it is a full subcategory of the category PDGR of central pairs of DG rings. Deﬁnition 7.1. (1) Let B/A be an object of PDGR≤0 sc . A K-ﬂat resolution of B/A in PDGR≤0 sc is a resolution s/r : ˜B/ ˜A →B/A in the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 43,
+      "pageEnd": 44,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 497,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eprint arxiv",
+          "heading": false
+        },
+        {
+          "term": "dualizing complexes",
+          "heading": false
+        },
+        {
+          "term": "rigid dualizing",
+          "heading": false
+        },
+        {
+          "term": "commutative rings",
+          "heading": false
+        },
+        {
+          "term": "commutative algebras",
+          "heading": false
+        },
+        {
+          "term": "yekutieli",
+          "heading": false
+        },
+        {
+          "term": "triangulated categories",
+          "heading": false
+        },
+        {
+          "term": "lecture notes",
+          "heading": false
+        }
+      ],
+      "extract": "[AFH] L.L. Avramov, H.-B. Foxby and S. Halperin, Diﬀerential Graded Homological Algebra, preprint dated 21 June 2006, available from the authors. [AILN] L.L. Avramov, S.B. Iyengar, J. Lipman and S. Nayak, Reduction of derived Hochschild functors over commutative algebras and schemes, Advances in Mathematics 223 (2010) 735-772. [AIL] L.L. Avramov, S.B. Iyengar and J. Lipman, Reﬂexivity and rigidity for complexes, I.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "til mrm",
+      "heading": false
+    },
+    {
+      "term": "til opn",
+      "heading": false
+    },
+    {
+      "term": "til cat",
+      "heading": false
+    },
+    {
+      "term": "til xar",
+      "heading": false
+    },
+    {
+      "term": "rect til",
+      "heading": false
+    },
+    {
+      "term": "circ til",
+      "heading": false
+    },
+    {
+      "term": "resolution til",
+      "heading": false
+    },
+    {
+      "term": "pdgr mrm",
+      "heading": false
+    },
+    {
+      "term": "cyl til",
+      "heading": false
+    },
+    {
+      "term": "homomorphism til",
+      "heading": false
+    },
+    {
+      "term": "dgr mrm",
+      "heading": false
+    },
+    {
+      "term": "centover til",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 35,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 36,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 37,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 38,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 39,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 40,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 41,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 42,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 43,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 44,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 9,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 10,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p43); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 5
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 10 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1412.4229v4"
+  }
+}

@@ -1,0 +1,885 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "ant-v14-n7-s-p10",
+  "title": "ant-v14-n7-s-p10",
+  "variant": "pdf",
+  "pages": 22,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1981",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Some algebraic lemmas",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "1984",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-some-algebraic-lemmas"
+    },
+    {
+      "level": 1,
+      "title": "Ramiﬁcation and postcritically inﬁnite quadratic maps",
+      "number": "3",
+      "page": 5,
+      "pageLabel": "1985",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-ramiﬁcation-and-postcritically-inﬁnite-quadrat"
+    },
+    {
+      "level": 1,
+      "title": "Heights and Bogomolov constants",
+      "number": "4",
+      "page": 8,
+      "pageLabel": "1988",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-heights-and-bogomolov-constants"
+    },
+    {
+      "level": 1,
+      "title": "Powering maps and Chebyshev maps",
+      "number": "5",
+      "page": 9,
+      "pageLabel": "1989",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-5-powering-maps-and-chebyshev-maps"
+    },
+    {
+      "level": 1,
+      "title": "Maps with small Arakelov–Zhang pairing",
+      "number": "6",
+      "page": 11,
+      "pageLabel": "1991",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-6-maps-with-small-arakelovzhang-pairing"
+    },
+    {
+      "level": 1,
+      "title": "Numerical approximation of Archimedean Arakelov–Zhang integrals",
+      "number": "8",
+      "page": 15,
+      "pageLabel": "1995",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-8-numerical-approximation-of-archimedean-arakelo"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgements",
+      "number": null,
+      "page": 17,
+      "pageLabel": "1997",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-007-acknowledgements"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 18,
+      "pageLabel": "1998",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-008-references"
+    },
+    {
+      "level": 1,
+      "title": "Guidelines for Authors",
+      "number": null,
+      "page": 21,
+      "pageLabel": null,
+      "confidence": 0.55,
+      "evidence": [
+        "style",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-guidelines-for-authors"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1981",
+      "labelEnd": "1981",
+      "words": 102,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dynamical galois",
+          "heading": false
+        },
+        {
+          "term": "amoroso",
+          "heading": false
+        },
+        {
+          "term": "p-extensions",
+          "heading": false
+        },
+        {
+          "term": "dvornicich",
+          "heading": false
+        }
+      ],
+      "extract": "msp ALGEBRA AND NUMBER THEORY 14:7 (2020) https://doi.org/10.2140/ant.2020.14.1981 Abelian extensions in dynamical Galois theory Jesse Andrews and Clayton Petsche We propose a conjectural characterization of when the dynamical Galois group associated to a polynomial is abelian, and we prove our conjecture in several cases, including the stable quadratic case over Q. In the postcritically inﬁnite case, the proof uses",
+      "extractCut": true,
+      "blocks": [
+        "library/ant-v14-n7-s-p10/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": "1981",
+      "labelEnd": "1984",
+      "words": 1845,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arboreal galois",
+          "heading": false
+        },
+        {
+          "term": "arakelov zhang",
+          "heading": false
+        },
+        {
+          "term": "stable pairs",
+          "heading": false
+        },
+        {
+          "term": "chebyshev map",
+          "heading": false
+        },
+        {
+          "term": "chebyshev maps",
+          "heading": false
+        },
+        {
+          "term": "powering map",
+          "heading": false
+        },
+        {
+          "term": "abelian extensions",
+          "heading": false
+        },
+        {
+          "term": "clayton petsche",
+          "heading": false
+        }
+      ],
+      "extract": "Let K be a number ﬁeld with algebraic closure K. Let φ(x) ∈K[x] be a polynomial of degree d ≥2, and denote by φn = φ ◦· · · ◦φ the n-fold composition of φ with itself. Let α ∈K be a nonexceptional point for φ; that is, assume that the backward orbit {β ∈K | φn(β) = α for some n ≥0} of α is an inﬁnite set. For each n ≥1, deﬁne the n-th inverse image set of the pair (φ, α) by φ−n(α) = {β ∈K | φn(β) = α}, and let Kn =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-some-algebraic-lemmas",
+      "number": "2",
+      "title": "Some algebraic lemmas",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "1984",
+      "labelEnd": "1985",
+      "words": 772,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "disjoint ℓ-cycles",
+          "heading": false
+        },
+        {
+          "term": "transitive subgroup",
+          "heading": false
+        },
+        {
+          "term": "c1c",
+          "heading": false
+        },
+        {
+          "term": "some disjoint",
+          "heading": false
+        },
+        {
+          "term": "sgn",
+          "heading": false
+        },
+        {
+          "term": "cycles",
+          "heading": false
+        },
+        {
+          "term": "a2n",
+          "heading": false
+        },
+        {
+          "term": "tree",
+          "heading": false
+        }
+      ],
+      "extract": "Lemma 2. Let G be a ﬁnite abelian group acting faithfully and transitively on a ﬁnite set X. Then |G| = |X|. Proof. For each x ∈X, let Gx be the stabilizer of x. Then Gx = G y for all x, y ∈X. Indeed, writing y = gx for g ∈G, if h ∈Gx then hy = hgx = ghx = gx = y, showing that h ∈G y as well. Thus Gx ⊆G y, and Gx = G y follows from symmetry. Since the action is faithful, we have T x∈X Gx = {1}, and since the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-ramiﬁcation-and-postcritically-inﬁnite-quadrat",
+      "number": "3",
+      "title": "Ramiﬁcation and postcritically inﬁnite quadratic maps",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 8,
+      "labelStart": "1985",
+      "labelEnd": "1988",
+      "words": 1141,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cyclic p-group",
+          "heading": false
+        },
+        {
+          "term": "clayton petsche",
+          "heading": false
+        },
+        {
+          "term": "gal",
+          "heading": false
+        },
+        {
+          "term": "ramiﬁcation",
+          "heading": true
+        },
+        {
+          "term": "jesse andrews",
+          "heading": false
+        },
+        {
+          "term": "iqi",
+          "heading": false
+        },
+        {
+          "term": "aψn",
+          "heading": false
+        },
+        {
+          "term": "intermediate ﬁelds",
+          "heading": false
+        }
+      ],
+      "extract": "We recall standard facts and notation surrounding a ﬁnite Galois extension L/K of number ﬁelds; see Lang [1970, Chapter 1]. Given a prime p of K, by the Galois assumption we have a factorization of the form pOL = qe 1 · · · qe r for primes q1, . . . , qr of L, and ref = [L : K], where e = e(qi/p) and f = f (qi/p) 1986 Jesse Andrews and Clayton Petsche are the (common) ramiﬁcation indices and inertial degrees of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-heights-and-bogomolov-constants",
+      "number": "4",
+      "title": "Heights and Bogomolov constants",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "1988",
+      "labelEnd": "1989",
+      "words": 838,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ζ2m",
+          "heading": false
+        },
+        {
+          "term": "amoroso",
+          "heading": false
+        },
+        {
+          "term": "dvornicich",
+          "heading": false
+        },
+        {
+          "term": "bogomolov",
+          "heading": true
+        },
+        {
+          "term": "max",
+          "heading": false
+        },
+        {
+          "term": "nonroot",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite extension",
+          "heading": false
+        },
+        {
+          "term": "log",
+          "heading": false
+        }
+      ],
+      "extract": "We recall the deﬁnition of the absolute Weil height function h : K →R for a number ﬁeld K. For each ﬁnite extension L/K, denote by ML the set of places of L, and for each place v let |·|v be a corresponding absolute value normalized so that it coincides with either the standard real or p-adic absolute value when restricted to Q. Given α ∈K, Let L/K be a ﬁnite extension containing α, and deﬁne h(α) = X v∈ML rv",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-powering-maps-and-chebyshev-maps",
+      "number": "5",
+      "title": "Powering maps and Chebyshev maps",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "1989",
+      "labelEnd": "1991",
+      "words": 1096,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "abelian extension",
+          "heading": false
+        },
+        {
+          "term": "ﬁnite extension",
+          "heading": false
+        },
+        {
+          "term": "ab-conjugate",
+          "heading": false
+        },
+        {
+          "term": "chebyshev",
+          "heading": true
+        },
+        {
+          "term": "k-conjugate",
+          "heading": false
+        },
+        {
+          "term": "nonexceptional point",
+          "heading": false
+        },
+        {
+          "term": "powering",
+          "heading": true
+        },
+        {
+          "term": "hence abelian",
+          "heading": false
+        }
+      ],
+      "extract": "In a slightly more general framework than what has been described above, in this section we consider pairs (φ, α), where φ(x)∈K[x] is a polynomial and where α ∈K. We deﬁne recursively K0 = K0(φ, α)= K(α) and Kn = Kn(φ, α) = Kn−1(φ−n(α)) for n ≥1, and set K∞(φ, α) = S Kn(φ, α). Since the requirement that φ and α are deﬁned over K have been relaxed, K0/K may be a proper extension and the Kn/K may no longer be Galois",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-maps-with-small-arakelovzhang-pairing",
+      "number": "6",
+      "title": "Maps with small Arakelov–Zhang pairing",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 15,
+      "labelStart": "1991",
+      "labelEnd": "1995",
+      "words": 1720,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arakelov zhang",
+          "heading": true
+        },
+        {
+          "term": "zhang pairing",
+          "heading": true
+        },
+        {
+          "term": "clayton petsche",
+          "heading": false
+        },
+        {
+          "term": "ˆhφ",
+          "heading": false
+        },
+        {
+          "term": "characteristic ramify",
+          "heading": false
+        },
+        {
+          "term": "odd residue",
+          "heading": false
+        },
+        {
+          "term": "canonical height",
+          "heading": false
+        },
+        {
+          "term": "powering map",
+          "heading": false
+        }
+      ],
+      "extract": "We now describe how to extend the ideas used in the proof of Theorem 12 to treat polynomials which are not necessarily K-conjugate to powering maps, but which are K ab-conjugate to some polynomial φ(x) ∈K[x] that is arithmetically close to a powering map. We ﬁrst recall the deﬁnitions of several arithmetic-dynamical objects associated to a polynomial φ(x) ∈K[x] of degree d ≥2 deﬁned over a number ﬁeld K; see",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-8-numerical-approximation-of-archimedean-arakelo",
+      "number": "8",
+      "title": "Numerical approximation of Archimedean Arakelov–Zhang integrals",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 17,
+      "labelStart": "1995",
+      "labelEnd": "1997",
+      "words": 1005,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "e2πit",
+          "heading": false
+        },
+        {
+          "term": "archimedean",
+          "heading": true
+        },
+        {
+          "term": "sup log",
+          "heading": false
+        },
+        {
+          "term": "n0t",
+          "heading": false
+        },
+        {
+          "term": "triangle inequality",
+          "heading": false
+        },
+        {
+          "term": "arakelov",
+          "heading": true
+        },
+        {
+          "term": "chain rule",
+          "heading": false
+        },
+        {
+          "term": "local height",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we prove a result which may be of use in numerically approximating the value of the Archimedean part of the Arakelov–Zhang pairing ⟨x2 + c, x2⟩. Given a polynomial φ(x) ∈C[x] of degree 2, we may express the corresponding canonical local height function as λφ(x) = lim n→+∞ 1 2n log(1 + |φn(x)|2)1/2. (15) Note that, compared to (10), we have replaced log+|·| with log(1+|·|2)1/2; this choice gives",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-acknowledgements",
+      "number": null,
+      "title": "Acknowledgements",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "1997",
+      "labelEnd": "1998",
+      "words": 14,
+      "summary": null,
+      "keywords": [],
+      "extract": "We thank Rafe Jones for several helpful suggestions. 1998 Jesse Andrews and Clayton Petsche",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 21,
+      "labelStart": "1998",
+      "labelEnd": null,
+      "words": 812,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arboreal galois",
+          "heading": false
+        },
+        {
+          "term": "zbl",
+          "heading": false
+        },
+        {
+          "term": "odoni",
+          "heading": false
+        },
+        {
+          "term": "dynamical galois",
+          "heading": false
+        },
+        {
+          "term": "galois groups",
+          "heading": false
+        },
+        {
+          "term": "p-adic mandelbrot",
+          "heading": false
+        },
+        {
+          "term": "galois representations",
+          "heading": false
+        },
+        {
+          "term": "galois theory",
+          "heading": false
+        }
+      ],
+      "extract": "[Ahmad et al. 2019] F. Ahmad, R. L. Benedetto, J. Cain, G. Carroll, and L. Fang, “The arithmetic basilica: a quadratic PCF arboreal Galois group”, preprint, 2019. arXiv [Amoroso and Dvornicich 2000] F. Amoroso and R. Dvornicich, “A lower bound for the height in abelian extensions”, J. Number Theory 80:2 (2000), 260–272. MR Zbl [Amoroso and Zannier 2000] F. Amoroso and U. Zannier, “A relative Dobrowolski lower bound",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-guidelines-for-authors",
+      "number": null,
+      "title": "Guidelines for Authors",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 658,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pdf format",
+          "heading": false
+        },
+        {
+          "term": "vector graphics",
+          "heading": false
+        },
+        {
+          "term": "page breaks",
+          "heading": false
+        },
+        {
+          "term": "submit",
+          "heading": false
+        },
+        {
+          "term": "authors",
+          "heading": true
+        },
+        {
+          "term": "ﬁles",
+          "heading": false
+        },
+        {
+          "term": "manuscript",
+          "heading": false
+        },
+        {
+          "term": "submission",
+          "heading": false
+        }
+      ],
+      "extract": "Authors may submit manuscripts in PDF format on-line at the Submission page at the ANT website. Originality. Submission of a manuscript acknowledges that the manuscript is original and and is not, in whole or in part, published or under consideration for publication elsewhere. It is understood also that the manuscript will not be submitted elsewhere while under consideration for publication in this journal.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "clayton petsche",
+      "heading": false
+    },
+    {
+      "term": "dynamical galois",
+      "heading": false
+    },
+    {
+      "term": "galois extensions",
+      "heading": false
+    },
+    {
+      "term": "abelian extensions",
+      "heading": false
+    },
+    {
+      "term": "arboreal galois",
+      "heading": false
+    },
+    {
+      "term": "galois theory",
+      "heading": false
+    },
+    {
+      "term": "jesse andrews",
+      "heading": false
+    },
+    {
+      "term": "galois representations",
+      "heading": false
+    },
+    {
+      "term": "galois group",
+      "heading": false
+    },
+    {
+      "term": "ﬁnite extension",
+      "heading": false
+    },
+    {
+      "term": "abelian hypotheses",
+      "heading": false
+    },
+    {
+      "term": "arakelov zhang",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1981",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "1982",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "1983",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "1984",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "1985",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "1986",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "1987",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "1988",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "1989",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "1990",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "1991",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "1992",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "1993",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "1994",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "1995",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "1996",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "1997",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "1998",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "1999",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 10,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p18); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/ant-v14-n7-s-p10"
+  }
+}

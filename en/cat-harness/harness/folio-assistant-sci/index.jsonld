@@ -1,0 +1,41 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/"
+  },
+  "@id": "https://litlfred.github.io/qou/en/cat-harness/harness/folio-assistant-sci/",
+  "url": "https://litlfred.github.io/qou/en/cat-harness/harness/folio-assistant-sci/",
+  "@type": "WebPage",
+  "name": "folio-assistant-sci on Quantum Observable Universe",
+  "about": {
+    "@id": "https://litlfred.github.io/folio-assistant-sci/",
+    "@type": "SoftwareSourceCode",
+    "identifier": "folio-assistant-sci",
+    "name": "folio-assistant-sci",
+    "description": "Scientific source material used by folios that formalise mathematics, and the methodologies for formalising it in Lean that this layer adopts from that material.",
+    "version": "0.1.0",
+    "codeRepository": "https://github.com/litlfred/folio-assistant-sci",
+    "isBasedOn": [
+      {
+        "@id": "https://litlfred.github.io/folio-assistant-core/"
+      }
+    ],
+    "additionalProperty": {
+      "@type": "PropertyValue",
+      "name": "pinnedCommit",
+      "value": "78f33214788754a4858f942ef6379a3a8a9b0d40"
+    },
+    "keywords": [
+      "paper"
+    ]
+  },
+  "isPartOf": {
+    "@id": "https://litlfred.github.io/qou/",
+    "name": "Quantum Observable Universe"
+  },
+  "significantLink": [
+    "https://litlfred.github.io/folio-assistant/folio-assistant-sci/",
+    "https://github.com/litlfred/folio-assistant-sci/tree/78f33214788754a4858f942ef6379a3a8a9b0d40",
+    "https://github.com/litlfred/folio-assistant-sci/blob/78f33214788754a4858f942ef6379a3a8a9b0d40/README.md",
+    "https://github.com/litlfred/folio-assistant-sci/blob/78f33214788754a4858f942ef6379a3a8a9b0d40/AGENTS.md"
+  ]
+}

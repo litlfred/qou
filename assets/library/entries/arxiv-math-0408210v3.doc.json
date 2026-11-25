@@ -1,0 +1,726 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0408210v3",
+  "title": "A simple algebraic proof of the algebraic index theorem",
+  "variant": "pdf",
+  "pages": 17,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "The Feigin-Felder-Shoikhet cocycles",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-21-the-feigin-felder-shoikhet-cocycles"
+    },
+    {
+      "level": 2,
+      "title": "The Chern-Weil homomorphism",
+      "number": "2.2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-22-the-chern-weil-homomorphism"
+    },
+    {
+      "level": 2,
+      "title": "Fedosov deformation quantization with twisted coefficients.",
+      "number": "2.3",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-23-fedosov-deformation-quantization-with-twisted"
+    },
+    {
+      "level": 2,
+      "title": "The Feigin-Felder-Shoikhet trace density map.",
+      "number": "2.4",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-24-the-feigin-felder-shoikhet-trace-density-map"
+    },
+    {
+      "level": 1,
+      "title": "The local version of the algebraic index theorem",
+      "number": "3",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-3-the-local-version-of-the-algebraic-index-theor"
+    },
+    {
+      "level": 1,
+      "title": "Concluding remarks.",
+      "number": "4",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-4-concluding-remarks"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 154,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symplectic manifold",
+          "heading": false
+        },
+        {
+          "term": "algebraic index",
+          "heading": false
+        },
+        {
+          "term": "mit",
+          "heading": false
+        },
+        {
+          "term": "quantum algebra",
+          "heading": false
+        },
+        {
+          "term": "e-mails",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0408210v3 [math.QA] 7 May 2005 ITEP-TH-29/04 A SIMPLE ALGEBRAIC PROOF OF THE ALGEBRAIC INDEX THEOREM. PoNing Chen and Vasiliy Dolgushev1 Department of Mathematics, MIT, 77 Massachusetts Avenue, Cambridge, MA, USA 02139-4307, E-mails: pnchen@MIT.EDU, vald@MIT.EDU Abstract In math.QA/0311303 B. Feigin, G. Felder, and B. Shoikhet proposed an explicit formula for the trace density map from the quantum algebra",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0408210v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 1011,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cite ffs",
+          "heading": false
+        },
+        {
+          "term": "cite bnt",
+          "heading": false
+        },
+        {
+          "term": "atiyah-singer index",
+          "heading": false
+        },
+        {
+          "term": "deligne-fedosov class",
+          "heading": false
+        },
+        {
+          "term": "pseudo-differential operator",
+          "heading": false
+        },
+        {
+          "term": "algebraic index",
+          "heading": false
+        },
+        {
+          "term": "symplectic manifold",
+          "heading": false
+        },
+        {
+          "term": "deformation quantization",
+          "heading": false
+        }
+      ],
+      "extract": "The famous Atiyah-Singer index theorem \\cite{AS} relates the index of an elliptic pseudo-differential operator on a compact manifold $X$ to the Todd class of $X$ and the Chern character of the bundle naturally associated with the symbol of the pseudo-differential operator. It is well-known that the algebra of pseudo-differential operators can be viewed as a ``quantization'' of the cotangent bundle $T^{*}X$. Starting",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 39,
+      "summary": null,
+      "keywords": [],
+      "extract": "In this section we review the Fedosov deformation quantization of endomorphisms of a vector bundle $V$ over a symplectic manifold ${\\cal M}$ (See [@F1], section $5.3$). We also recall the Felder-Feigin-Shoikhet construction [@FFS] of the trace density map.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-the-feigin-felder-shoikhet-cocycles",
+      "number": "2.1",
+      "title": "The Feigin-Felder-Shoikhet cocycles",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 5,
+      "labelStart": "3",
+      "labelEnd": "5",
+      "words": 669,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cal otimes",
+          "heading": false
+        },
+        {
+          "term": "dots otimes",
+          "heading": false
+        },
+        {
+          "term": "algebra cal",
+          "heading": false
+        },
+        {
+          "term": "cal subset",
+          "heading": false
+        },
+        {
+          "term": "module cal",
+          "heading": false
+        },
+        {
+          "term": "frac hbar",
+          "heading": false
+        },
+        {
+          "term": "partial otimes",
+          "heading": false
+        },
+        {
+          "term": "varepsilon dots",
+          "heading": false
+        }
+      ],
+      "extract": "First, we recall that for any associative algebra ${\\cal A}$ with a unit over a field $K$ (of characteristic zero) we have a chain map $\\phi^N$ from the Hochschild cochain complex $C^{\\bullet}({\\cal A},{\\cal A}^*)$ with coefficients in the dual module ${\\cal A}^*$ to the Lie algebra cochain complex $C^{\\bullet}({\\mathfrak{gl}}_N ({\\cal A}); {\\mathfrak{gl}}_N({\\cal A})^{*})$ with coefficients in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-the-chern-weil-homomorphism",
+      "number": "2.2",
+      "title": "The Chern-Weil homomorphism",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 398,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "chern-weil homomorphism",
+          "heading": true
+        },
+        {
+          "term": "oplus mathfrak",
+          "heading": false
+        },
+        {
+          "term": "mathfrak equivariant",
+          "heading": false
+        },
+        {
+          "term": "cocycle chi",
+          "heading": false
+        },
+        {
+          "term": "frac hbar",
+          "heading": false
+        },
+        {
+          "term": "algebra cocycle",
+          "heading": false
+        },
+        {
+          "term": "relative lie",
+          "heading": false
+        },
+        {
+          "term": "equivariant projection",
+          "heading": false
+        }
+      ],
+      "extract": "Let ${\\mathfrak{g}}$ be a Lie algebra and ${\\mathfrak{h}}\\subset{\\mathfrak{g}}$ be a subalgebra of ${\\mathfrak{g}}$. Suppose that there is an ${\\mathfrak{h}}$-equivariant projection $pr\\,:\\,{\\mathfrak{g}}\\mapsto {\\mathfrak{h}}$, that is a map commuting with the adjoint action of ${\\mathfrak{h}}$ and satisfying the property $\\displaystyle pr\\, |_{{\\mathfrak{h}}} = Id_{{\\mathfrak{h}}}\\,.$ The amount by which $pr$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-fedosov-deformation-quantization-with-twisted",
+      "number": "2.3",
+      "title": "Fedosov deformation quantization with twisted coefficients.",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 11,
+      "labelStart": "6",
+      "labelEnd": "11",
+      "words": 1888,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fedosov",
+          "heading": true
+        },
+        {
+          "term": "hbar omega",
+          "heading": false
+        },
+        {
+          "term": "widetilde nabla",
+          "heading": false
+        },
+        {
+          "term": "omega bullet",
+          "heading": false
+        },
+        {
+          "term": "fedosov connection",
+          "heading": false
+        },
+        {
+          "term": "nabla eta",
+          "heading": false
+        },
+        {
+          "term": "frac hbar",
+          "heading": false
+        },
+        {
+          "term": "widetilde partial",
+          "heading": false
+        }
+      ],
+      "extract": "Let ${\\cal M}$ be a symplectic manifold of dimension $2n$. We denote by ${\\omega}={\\omega}_{ij}(x)dx^i dx^j$ the corresponding symplectic form and by $$\\overline{\\omega}= {\\omega}^{ij}(x)\\frac{{\\partial}}{{\\partial}x^i}\\wedge \\frac{{\\partial}}{{\\partial}x^j}$$ the corresponding Poisson tensor. Here $x^i$ denote local coordinates and the indices $i,j$ run from $1$ from $2n$ . For a vector bundle $V$ of rank $N$ over",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-the-feigin-felder-shoikhet-trace-density-map",
+      "number": "2.4",
+      "title": "The Feigin-Felder-Shoikhet trace density map.",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 518,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "map trd",
+          "heading": false
+        },
+        {
+          "term": "trace density",
+          "heading": true
+        },
+        {
+          "term": "f-conn",
+          "heading": false
+        },
+        {
+          "term": "oplus mathfrak",
+          "heading": false
+        },
+        {
+          "term": "feigin-felder-shoikhet",
+          "heading": true
+        },
+        {
+          "term": "fedosov connection",
+          "heading": false
+        },
+        {
+          "term": "frac hbar",
+          "heading": false
+        },
+        {
+          "term": "ffs",
+          "heading": false
+        }
+      ],
+      "extract": "Let as above $V$ be a vector bundle of rank $N$ over the symplectic manifold ${\\cal M}$ and $*$ be a star-product ([\\[star\\]](#star){reference-type=\"ref\" reference=\"star\"}) in the algebra $End_V(({\\hbar}))$ . Then, ::: defi A trace density map $trd$ is a ${\\Bbb C}(({\\hbar}))$-linear map $$trd\\,:\\, End_V(({\\hbar})) \\mapsto H^{2n}({\\cal M})(({\\hbar}))$$ vanishing on commutators $$trd(a * b - b * a)=0\\,, \\qquad a,b \\in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-3-the-local-version-of-the-algebraic-index-theor",
+      "number": "3",
+      "title": "The local version of the algebraic index theorem",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 15,
+      "labelStart": "12",
+      "labelEnd": "15",
+      "words": 1409,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fedosov star-product",
+          "heading": false
+        },
+        {
+          "term": "oplus widetilde",
+          "heading": false
+        },
+        {
+          "term": "fedosov connection",
+          "heading": false
+        },
+        {
+          "term": "omega hbar",
+          "heading": false
+        },
+        {
+          "term": "big hbar",
+          "heading": false
+        },
+        {
+          "term": "nabla oplus",
+          "heading": false
+        },
+        {
+          "term": "frac hbar",
+          "heading": false
+        },
+        {
+          "term": "partial oplus",
+          "heading": false
+        }
+      ],
+      "extract": "Let ${\\cal M}$ be either a smooth real symplectic manifold of dimension $2n$ or a smooth affine algebraic variety (over ${\\Bbb C}$) of the complex dimension $2n$ endowed with an algebraic symplectic form. Let $*$ be a star-product in the vector space $C({\\cal M})(({\\hbar}))$ of smooth (resp. regular) functions on ${\\cal M}$. Throughout this section we denote the algebra $(C({\\cal M})(({\\hbar})),*)$ by ${\\Bbb A}$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-4-concluding-remarks",
+      "number": "4",
+      "title": "Concluding remarks.",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 17,
+      "labelStart": "15",
+      "labelEnd": "17",
+      "words": 765,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bnt",
+          "heading": false
+        },
+        {
+          "term": "riemann-roch-hirzebruch theorem",
+          "heading": false
+        },
+        {
+          "term": "riemann-roch theorem",
+          "heading": false
+        },
+        {
+          "term": "diff",
+          "heading": false
+        },
+        {
+          "term": "cal",
+          "heading": false
+        },
+        {
+          "term": "ffs",
+          "heading": false
+        },
+        {
+          "term": "ackp",
+          "heading": false
+        },
+        {
+          "term": "lie algebra",
+          "heading": false
+        }
+      ],
+      "extract": "We would like to mention that our result (theorem [\\[index\\]](#index){reference-type=\"ref\" reference=\"index\"}) is derived from the purely algebraic fact ([\\[FFS\\]](#FFS){reference-type=\"ref\" reference=\"FFS\"}) about the cohomology of Lie algebra of matrices over the Weyl algebra. In this respect our approach is very reminiscent of finding \"local\" proofs of the Riemann-Roch-Hirzebruch theorem [@ACKP], [@BS], [@BNT],",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "nabla hbar",
+      "heading": false
+    },
+    {
+      "term": "hbar omega",
+      "heading": false
+    },
+    {
+      "term": "algebra cal",
+      "heading": false
+    },
+    {
+      "term": "frac hbar",
+      "heading": false
+    },
+    {
+      "term": "bundle cal",
+      "heading": false
+    },
+    {
+      "term": "fedosov star-product",
+      "heading": false
+    },
+    {
+      "term": "big hbar",
+      "heading": false
+    },
+    {
+      "term": "manifold cal",
+      "heading": false
+    },
+    {
+      "term": "cal subset",
+      "heading": false
+    },
+    {
+      "term": "fedosov connection",
+      "heading": false
+    },
+    {
+      "term": "oplus mathfrak",
+      "heading": false
+    },
+    {
+      "term": "cal otimes",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 8,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0408210v3"
+  }
+}

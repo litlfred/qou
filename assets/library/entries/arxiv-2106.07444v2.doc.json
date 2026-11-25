@@ -1,0 +1,1596 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2106.07444v2",
+  "title": "arxiv-2106.07444v2",
+  "variant": "pdf",
+  "pages": 88,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": null,
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Purity, Mixedness, and Realization",
+      "number": "1",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-purity-mixedness-and-realization"
+    },
+    {
+      "level": 1,
+      "title": "Mixed Categories in Representation Theory",
+      "number": "2",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-mixed-categories-in-representation-theory"
+    },
+    {
+      "level": 1,
+      "title": "The AW Trace",
+      "number": "3",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-3-the-aw-trace"
+    },
+    {
+      "level": 1,
+      "title": "Steinberg Schemes",
+      "number": "4",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-4-steinberg-schemes"
+    },
+    {
+      "level": 1,
+      "title": "Steinberg Schemes of Braids",
+      "number": "5",
+      "page": 38,
+      "pageLabel": "38",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-5-steinberg-schemes-of-braids"
+    },
+    {
+      "level": 1,
+      "title": "Khovanov–Rozansky Homology",
+      "number": "6",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-6-khovanovrozansky-homology"
+    },
+    {
+      "level": 1,
+      "title": "The Decategorified Trace",
+      "number": "7",
+      "page": 45,
+      "pageLabel": "45",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-7-the-decategorified-trace"
+    },
+    {
+      "level": 1,
+      "title": "Deligne–Lusztig Theory",
+      "number": "8",
+      "page": 52,
+      "pageLabel": "52",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-8-delignelusztig-theory"
+    },
+    {
+      "level": 1,
+      "title": "Periodic Braids",
+      "number": "9",
+      "page": 61,
+      "pageLabel": "61",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-9-periodic-braids"
+    },
+    {
+      "level": 1,
+      "title": "The Rational DAHA",
+      "number": "10",
+      "page": 64,
+      "pageLabel": "64",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-10-the-rational-daha"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. Coxeter Groups and Their Characters",
+      "number": null,
+      "page": 71,
+      "pageLabel": "71",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-appendix-a-coxeter-groups-and-their-characters"
+    },
+    {
+      "level": 1,
+      "title": "Appendix B. Braid Varieties in the Literature",
+      "number": null,
+      "page": 78,
+      "pageLabel": "78",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-appendix-b-braid-varieties-in-the-literature"
+    },
+    {
+      "level": 1,
+      "title": "Appendix C. Examples of the Decategorified Trace",
+      "number": null,
+      "page": 82,
+      "pageLabel": "82",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-appendix-c-examples-of-the-decategorified-trace"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 84,
+      "pageLabel": "84",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": "2",
+      "words": 338,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "minh-tâm quang",
+          "heading": false
+        },
+        {
+          "term": "quang trinh",
+          "heading": false
+        },
+        {
+          "term": "decategoriﬁed trace",
+          "heading": false
+        },
+        {
+          "term": "khovanov rozansky",
+          "heading": false
+        },
+        {
+          "term": "steinberg schemes",
+          "heading": false
+        },
+        {
+          "term": "rozansky homology",
+          "heading": false
+        },
+        {
+          "term": "periodic braids",
+          "heading": false
+        },
+        {
+          "term": "unipotent locus",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:2106.07444v2 [math.RT] 21 Jun 2021 FROM THE HECKE CATEGORY TO THE UNIPOTENT LOCUS MINH-TÂM QUANG TRINH Abstract. Let W be the Weyl group of a split semisimple group G. Its Hecke category HW can be built from pure perverse sheaves on the double ﬂag variety of G. By developing a formalism of generalized realization functors, we construct a monoidal trace from HW to a category of bigraded modules over a certain",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2106.07444v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-introduction",
+      "number": null,
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 15,
+      "labelStart": "2",
+      "labelEnd": "15",
+      "words": 5940,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathit rat",
+          "heading": false
+        },
+        {
+          "term": "mathit aff",
+          "heading": false
+        },
+        {
+          "term": "epsilon mathit",
+          "heading": false
+        },
+        {
+          "term": "subseteq mathit",
+          "heading": false
+        },
+        {
+          "term": "mathit act",
+          "heading": false
+        },
+        {
+          "term": "beta rangle",
+          "heading": false
+        },
+        {
+          "term": "langle beta",
+          "heading": false
+        },
+        {
+          "term": "cal times",
+          "heading": false
+        }
+      ],
+      "extract": "## Summary Let $\\bb{V}$ be a finite-dimensional vector space over a subfield of $\\bb{R}$, and let $W$ be a finite group of automorphisms of $\\bb{V}$ generated by reflections. Coxeter showed that $W$ admits a remarkable presentation in terms of generators and relations [@coxeter_1934]. Via this presentation, the group ring of $W$ can be deformed to a $\\bb{Z}[\\bm{q}^{\\pm\\frac{1}{2}}]$-algebra known as the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-purity-mixedness-and-realization",
+      "number": "1",
+      "title": "Purity, Mixedness, and Realization",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 22,
+      "labelStart": "15",
+      "labelEnd": "22",
+      "words": 2355,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ast shom",
+          "heading": false
+        },
+        {
+          "term": "aligned shom",
+          "heading": false
+        },
+        {
+          "term": "shom purity",
+          "heading": false
+        },
+        {
+          "term": "shom pure",
+          "heading": false
+        },
+        {
+          "term": "rider lem",
+          "heading": false
+        },
+        {
+          "term": "node ast",
+          "heading": false
+        },
+        {
+          "term": "hom underline",
+          "heading": false
+        },
+        {
+          "term": "font scriptsize",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:mixed label=\"sec:mixed\"} ## Fix a finite field $\\bb{F}$ and an algebraic closure $\\bar{\\bb{F}}$. Throughout the paper, *we assume that the characteristic of $\\bb{F}$ is large*. Recall that the Galois group of $\\bar{\\bb{F}}$ over $\\bb{F}$ is pro-generated by the automorphism $a \\mapsto a^q$. We write $F$ for the inverse generator, also known as the geometric Frobenius element. Fix a root datum $(\\Phi, \\bb{X},",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-mixed-categories-in-representation-theory",
+      "number": "2",
+      "title": "Mixed Categories in Representation Theory",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 30,
+      "labelStart": "22",
+      "labelEnd": "30",
+      "words": 3098,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ast cal",
+          "heading": false
+        },
+        {
+          "term": "aligned mathit",
+          "heading": false
+        },
+        {
+          "term": "times mathit",
+          "heading": false
+        },
+        {
+          "term": "node ast",
+          "heading": false
+        },
+        {
+          "term": "bar cal",
+          "heading": false
+        },
+        {
+          "term": "cal langle",
+          "heading": false
+        },
+        {
+          "term": "stratify cal",
+          "heading": false
+        },
+        {
+          "term": "hat cal",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:hecke label=\"sec:hecke\"} ## In this section, we introduce the various choices of $X_0$ and $\\sf{C}(X_0)$ that we need in the rest of the paper. They, and the functors between them, will be summarized by the following commutative diagram: $$\\label{eq:big} \\begin{tikzpicture}[baseline=(current bounding box.center), >=stealth] \\matrix(m)[matrix of math nodes, row sep=2.5em, column sep=4em, text height=2ex, text",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-the-aw-trace",
+      "number": "3",
+      "title": "The AW Trace",
+      "level": 1,
+      "pageStart": 30,
+      "pageEnd": 32,
+      "labelStart": "30",
+      "labelEnd": "32",
+      "words": 658,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cal langle",
+          "heading": false
+        },
+        {
+          "term": "mathsf mod",
+          "heading": false
+        },
+        {
+          "term": "node bigoplus",
+          "heading": false
+        },
+        {
+          "term": "hom underline",
+          "heading": false
+        },
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "edge node",
+          "heading": false
+        },
+        {
+          "term": "rangle circ",
+          "heading": false
+        },
+        {
+          "term": "ast langle",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:a_w label=\"sec:a_w\"} ## If $A$ is a $\\bb{Z}$-graded $\\bar{\\mathbf{Q}}_\\ell$-algebra, then we write: 1. $\\mathsf{Mod}_1(A)$ for the category of graded left $A$-modules in which the grading is bounded below and each graded piece is finite-dimensional. 2. $\\mathsf{Mod}_2^b(A)$ for the category of left $A$-modules $M$ equipped with a $\\bb{Z}^2$-grading such that $M \\in \\sf{Mod}_1(A)$ with respect to both",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-steinberg-schemes",
+      "number": "4",
+      "title": "Steinberg Schemes",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 38,
+      "labelStart": "32",
+      "labelEnd": "38",
+      "words": 1897,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cal preceq",
+          "heading": false
+        },
+        {
+          "term": "cal ast",
+          "heading": false
+        },
+        {
+          "term": "node cal",
+          "heading": false
+        },
+        {
+          "term": "cal prec",
+          "heading": false
+        },
+        {
+          "term": "dagger cal",
+          "heading": false
+        },
+        {
+          "term": "cal tilde",
+          "heading": false
+        },
+        {
+          "term": "ast shom",
+          "heading": false
+        },
+        {
+          "term": "ast xrightarrow",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:steinberg label=\"sec:steinberg\"} ## In Section [\\[sec:hecke\\]](#sec:hecke){reference-type=\"ref\" reference=\"sec:hecke\"}, we reviewed the (mixed) Springer sheaf $\\cal{S} \\in \\sf{D}_{G, m}^b(\\cal{U}_0)$ and the (mixed) Grothendieck--Springer sheaf $\\cal{G} \\in \\sf{D}_{G, m}^b(G_0)$. In Section [\\[sec:a_w\\]](#sec:a_w){reference-type=\"ref\" reference=\"sec:a_w\"}, we gave a construction of a graded algebra",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-steinberg-schemes-of-braids",
+      "number": "5",
+      "title": "Steinberg Schemes of Braids",
+      "level": 1,
+      "pageStart": 38,
+      "pageEnd": 41,
+      "labelStart": "38",
+      "labelEnd": "41",
+      "words": 882,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "star cal",
+          "heading": false
+        },
+        {
+          "term": "cal times",
+          "heading": false
+        },
+        {
+          "term": "underline mathit",
+          "heading": false
+        },
+        {
+          "term": "beta rangle",
+          "heading": false
+        },
+        {
+          "term": "langle beta",
+          "heading": false
+        },
+        {
+          "term": "let mathit",
+          "heading": false
+        },
+        {
+          "term": "bar mathbf",
+          "heading": false
+        },
+        {
+          "term": "ast bar",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:varieties label=\"sec:varieties\"} ## Let $S \\subseteq W$ be the set of simple reflections in the chosen Coxeter presentation of $W$. Let $\\mathit{Br}_W$ be the Artin braid group of $W$, and let $\\mathit{Br}_W^+ \\subseteq \\mathit{Br}_W$ be the monoid of positive braids determined by $S$. Each element $s \\in S$ lifts to an element $\\sigma_s \\in \\mathit{Br}_W^+$, such that $\\{\\sigma_s\\}_{s \\in S}$ is a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-6-khovanovrozansky-homology",
+      "number": "6",
+      "title": "Khovanov–Rozansky Homology",
+      "level": 1,
+      "pageStart": 41,
+      "pageEnd": 45,
+      "labelStart": "41",
+      "labelEnd": "45",
+      "words": 1232,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "simeq shom",
+          "heading": false
+        },
+        {
+          "term": "cal langle",
+          "heading": false
+        },
+        {
+          "term": "vee simeq",
+          "heading": false
+        },
+        {
+          "term": "bar mathbf",
+          "heading": false
+        },
+        {
+          "term": "mathbf ell",
+          "heading": false
+        },
+        {
+          "term": "ast langle",
+          "heading": false
+        },
+        {
+          "term": "cal varepsilon",
+          "heading": false
+        },
+        {
+          "term": "simeq hom",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:kr label=\"sec:kr\"} ## A link in a $3$-manifold is the image of a disjoint union of finitely many circles under a smooth embedding. The HOMFLY series of a link in $S^3$ is a bivariate Laurent series that only depends on its isotopy class [@homfly]. Dunfield--Gukov--Rasmussen predicted [@dgr], and Khovanov--Rozansky constructed [@kr], a categorification of the HOMFLY series, sending a link in $3$-space to a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-7-the-decategorified-trace",
+      "number": "7",
+      "title": "The Decategorified Trace",
+      "level": 1,
+      "pageStart": 45,
+      "pageEnd": 52,
+      "labelStart": "45",
+      "labelEnd": "52",
+      "words": 2571,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gomi markov",
+          "heading": false
+        },
+        {
+          "term": "aligned mathsf",
+          "heading": false
+        },
+        {
+          "term": "beta rangle",
+          "heading": false
+        },
+        {
+          "term": "beta langle",
+          "heading": false
+        },
+        {
+          "term": "varepsilon psi",
+          "heading": false
+        },
+        {
+          "term": "frac mathsf",
+          "heading": false
+        },
+        {
+          "term": "varepsilon phi",
+          "heading": false
+        },
+        {
+          "term": "hat beta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:decat label=\"sec:decat\"} ## To state the main definition of this section, let $W$ denote an *arbitrary* finite Coxeter group. As before, $H_W$ is the Iwahori--Hecke algebra of $W$. Moreover, we will draw freely upon the notation introduced in Appendix [\\[sec:coxeter\\]](#sec:coxeter){reference-type=\"ref\" reference=\"sec:coxeter\"}: - $R(W)$ is the representation ring of $W$. - $\\bb{Q}_W \\subseteq \\bar{\\bb{Q}}$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-8-delignelusztig-theory",
+      "number": "8",
+      "title": "Deligne–Lusztig Theory",
+      "level": 1,
+      "pageStart": 52,
+      "pageEnd": 61,
+      "labelStart": "52",
+      "labelEnd": "61",
+      "words": 3414,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aligned cal",
+          "heading": false
+        },
+        {
+          "term": "mathrm uch",
+          "heading": false
+        },
+        {
+          "term": "subseteq cal",
+          "heading": false
+        },
+        {
+          "term": "beta rangle",
+          "heading": false
+        },
+        {
+          "term": "beta langle",
+          "heading": false
+        },
+        {
+          "term": "dim cal",
+          "heading": false
+        },
+        {
+          "term": "cal times",
+          "heading": false
+        },
+        {
+          "term": "hat beta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:dl label=\"sec:dl\"} ## The goal of this section is to prove Theorems [\\[thm:virtual\\]](#thm:virtual){reference-type=\"ref\" reference=\"thm:virtual\"}, [\\[thm:induction\\]](#thm:induction){reference-type=\"ref\" reference=\"thm:induction\"}, and [\\[thm:pole\\]](#thm:pole){reference-type=\"ref\" reference=\"thm:pole\"}. Throughout, we assume that $W$ is a Weyl group and use the notation and hypotheses of Sections",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-9-periodic-braids",
+      "number": "9",
+      "title": "Periodic Braids",
+      "level": 1,
+      "pageStart": 61,
+      "pageEnd": 64,
+      "labelStart": "61",
+      "labelEnd": "64",
+      "words": 1053,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "broue-michel label",
+          "heading": false
+        },
+        {
+          "term": "feg phi",
+          "heading": false
+        },
+        {
+          "term": "periodic",
+          "heading": true
+        },
+        {
+          "term": "mathrm feg",
+          "heading": false
+        },
+        {
+          "term": "aligned phi",
+          "heading": false
+        },
+        {
+          "term": "zeta regular",
+          "heading": false
+        },
+        {
+          "term": "mathit",
+          "heading": false
+        },
+        {
+          "term": "hat phi",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:periodic label=\"sec:periodic\"} ## In this section and the next, *we no longer assume that $W$ is crystallographic*. Let $w_0$ be the longest element of $W$ with respect to the chosen Coxeter presentation (see §[\\[subsec:coxeter-group\\]](#subsec:coxeter-group){reference-type=\"ref\" reference=\"subsec:coxeter-group\"}). The **full twist** of $\\mathit{Br}_W$ is the positive braid $$\\begin{aligned} \\pi =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-10-the-rational-daha",
+      "number": "10",
+      "title": "The Rational DAHA",
+      "level": 1,
+      "pageStart": 64,
+      "pageEnd": 71,
+      "labelStart": "64",
+      "labelEnd": "71",
+      "words": 2794,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cuspidal slopes",
+          "heading": false
+        },
+        {
+          "term": "mathit rat",
+          "heading": false
+        },
+        {
+          "term": "phi zeta",
+          "heading": false
+        },
+        {
+          "term": "zeta defect",
+          "heading": false
+        },
+        {
+          "term": "cuspidal implies",
+          "heading": false
+        },
+        {
+          "term": "deg phi",
+          "heading": false
+        },
+        {
+          "term": "aligned phi",
+          "heading": false
+        },
+        {
+          "term": "cuspidal number",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:daha label=\"sec:daha\"} ## As in the previous section, *we do not assume that $W$ is crystallographic*. Let $\\mathrm{Ref}(W) \\subseteq W$ be the subset of elements that act on $\\bb{V}$ by reflections, *cf.* §[\\[subsec:families\\]](#subsec:families){reference-type=\"ref\" reference=\"subsec:families\"}. We continue to assume that $\\bb{V}^W = 0$. We write $\\langle-, -\\rangle : \\bb{V} \\times \\bb{V}^\\vee \\to \\bb{Q}_W$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-appendix-a-coxeter-groups-and-their-characters",
+      "number": null,
+      "title": "Appendix A. Coxeter Groups and Their Characters",
+      "level": 1,
+      "pageStart": 71,
+      "pageEnd": 78,
+      "labelStart": "71",
+      "labelEnd": "78",
+      "words": 2878,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "coxeter groups",
+          "heading": true
+        },
+        {
+          "term": "minh-tâm quang",
+          "heading": false
+        },
+        {
+          "term": "quang trinh",
+          "heading": false
+        },
+        {
+          "term": "uch",
+          "heading": false
+        },
+        {
+          "term": "brauer tree",
+          "heading": false
+        },
+        {
+          "term": "characters",
+          "heading": true
+        },
+        {
+          "term": "ﬁnite coxeter",
+          "heading": false
+        },
+        {
+          "term": "principal block",
+          "heading": false
+        }
+      ],
+      "extract": "Appendix A. Coxeter Groups and Their Characters A.1. Our main reference for this appendix is the book [GP]. A Coxeter group is a group W that admits a ﬁnite presentation of the form W = ⟨s ∈S : (st)ms,t = 1⟩, where ms,s = 1 and ms,t ≥1 for all s, t ∈S. We say that W is irreducible iﬀit is both nontrivial and not a product of smaller Coxeter groups. The pair (W, S) is called a Coxeter system, and S is called its set",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-appendix-b-braid-varieties-in-the-literature",
+      "number": null,
+      "title": "Appendix B. Braid Varieties in the Literature",
+      "level": 1,
+      "pageStart": 78,
+      "pageEnd": 82,
+      "labelStart": "78",
+      "labelEnd": "82",
+      "words": 1387,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "varieties",
+          "heading": true
+        },
+        {
+          "term": "minh-tâm quang",
+          "heading": false
+        },
+        {
+          "term": "quang trinh",
+          "heading": false
+        },
+        {
+          "term": "bott samelson",
+          "heading": false
+        },
+        {
+          "term": "variety denoted",
+          "heading": false
+        },
+        {
+          "term": "lusztig paper",
+          "heading": false
+        },
+        {
+          "term": "cggs",
+          "heading": false
+        },
+        {
+          "term": "ﬁrst appears",
+          "heading": false
+        }
+      ],
+      "extract": "B.1. In this appendix, we explain how the varieties U(β), Z(β), X(β) are related to other varieties that have appeared in the literature. Throughout, we assume the notation and hypotheses of Sections 1-2. All varieties in this section can be constructed over F, not just ¯F, but we will omit the subscript 0’s anyway to lighten notation. B.2. Let w ∈W. As in Section 2, let Ow ⊆B × B be the G-orbit indexed by w, and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-appendix-c-examples-of-the-decategorified-trace",
+      "number": null,
+      "title": "Appendix C. Examples of the Decategorified Trace",
+      "level": 1,
+      "pageStart": 82,
+      "pageEnd": 84,
+      "labelStart": "82",
+      "labelEnd": "84",
+      "words": 893,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "table lists",
+          "heading": false
+        },
+        {
+          "term": "σst",
+          "heading": false
+        },
+        {
+          "term": "iterated torus",
+          "heading": false
+        },
+        {
+          "term": "brw",
+          "heading": false
+        },
+        {
+          "term": "q2k",
+          "heading": false
+        },
+        {
+          "term": "following table",
+          "heading": false
+        },
+        {
+          "term": "orbits",
+          "heading": false
+        }
+      ],
+      "extract": "In this appendix, we list some values of ⟨−⟩q and ⟨−⟩0 q. Throughout, we rely on Table 8.1 in [GP] and the descriptions of {−, −} in [L84-1, Ch. 4]. Type A1. Here, W = S2 and ˆ W = {1, ε}. Writing σ for the positive generator of BrW = Br2, we have: ⟨σm⟩q = (q 1 2 )m + (−q−1 2 )mε, ⟨σm⟩0 q = 1 1 −q2 ((1 −(−q)m+1) + (q + (−q)m)ε). For instance, we have ⟨σ2k+1⟩0 q = (1 + q2 + · · · + q2k) + (q + q3 + · · · + q2k−1)ε",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 84,
+      "pageEnd": 88,
+      "labelStart": "84",
+      "labelEnd": "88",
+      "words": 2161,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deligne lusztig",
+          "heading": false
+        },
+        {
+          "term": "duke math",
+          "heading": false
+        },
+        {
+          "term": "chevalley groups",
+          "heading": false
+        },
+        {
+          "term": "finite chevalley",
+          "heading": false
+        },
+        {
+          "term": "lusztig variety",
+          "heading": false
+        },
+        {
+          "term": "perverse sheaves",
+          "heading": false
+        },
+        {
+          "term": "unipotent character",
+          "heading": false
+        },
+        {
+          "term": "hautes études",
+          "heading": false
+        }
+      ],
+      "extract": "[AHJR] P. N. Achar, A. Henderson, D. Juteau, S. Riche. Weyl Group Actions on the Springer Sheaf. Proc. London Math. Soc., 108(3) (2014), 1501-1528. [AR] P. Achar & S. Riche. Koszul Duality and Semisimplicity of Frobenius. Ann. Inst. Fourier, tome 63, n◦(2013), 1511-1612. [AL] D. Alvis & G. Lusztig. The Representations and Generic Degrees of the Hecke Algebra of Type H4. J. Reine Angew. Math., (1982), 201-212. [B] A.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "aligned mathit",
+      "heading": false
+    },
+    {
+      "term": "aligned cal",
+      "heading": false
+    },
+    {
+      "term": "cal langle",
+      "heading": false
+    },
+    {
+      "term": "node cal",
+      "heading": false
+    },
+    {
+      "term": "ast cal",
+      "heading": false
+    },
+    {
+      "term": "subseteq mathit",
+      "heading": false
+    },
+    {
+      "term": "bar cal",
+      "heading": false
+    },
+    {
+      "term": "aligned shom",
+      "heading": false
+    },
+    {
+      "term": "cal simeq",
+      "heading": false
+    },
+    {
+      "term": "times mathit",
+      "heading": false
+    },
+    {
+      "term": "cal phi",
+      "heading": false
+    },
+    {
+      "term": "underline mathit",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 65,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 67,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 69,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 71,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 72,
+      "label": "72",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 73,
+      "label": "73",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 74,
+      "label": "74",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 75,
+      "label": "75",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 76,
+      "label": "76",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 77,
+      "label": "77",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 78,
+      "label": "78",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 79,
+      "label": "79",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 80,
+      "label": "80",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 81,
+      "label": "81",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 82,
+      "label": "82",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 83,
+      "label": "83",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 84,
+      "label": "84",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 85,
+      "label": "85",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 86,
+      "label": "86",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 87,
+      "label": "87",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 88,
+      "label": "88",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 15,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 16,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p84); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 16 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2106.07444v2"
+  }
+}

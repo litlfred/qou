@@ -1,0 +1,3206 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1603.06017v2",
+  "title": "Automatic Theorem Proving in Walnut",
+  "variant": "pdf",
+  "pages": 34,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Basics",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-basics"
+    },
+    {
+      "level": 2,
+      "title": "Words and Automata",
+      "number": "2.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-words-and-automata"
+    },
+    {
+      "level": 2,
+      "title": "Number Systems",
+      "number": "2.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-number-systems"
+    },
+    {
+      "level": 2,
+      "title": "Automatic Words",
+      "number": "2.3",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-automatic-words"
+    },
+    {
+      "level": 2,
+      "title": "Automata accepting Predicates",
+      "number": "2.4",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-24-automata-accepting-predicates"
+    },
+    {
+      "level": 1,
+      "title": "Syntax and Semantic of Predicates in Walnut",
+      "number": "3",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-3-syntax-and-semantic-of-predicates-in-walnut"
+    },
+    {
+      "level": 2,
+      "title": "Alphabets",
+      "number": "3.1",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-31-alphabets"
+    },
+    {
+      "level": 2,
+      "title": "Arithmetic and Alphabetic Constants",
+      "number": "3.2",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-32-arithmetic-and-alphabetic-constants"
+    },
+    {
+      "level": 2,
+      "title": "Variables",
+      "number": "3.3",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-33-variables"
+    },
+    {
+      "level": 2,
+      "title": "Operators",
+      "number": "3.4",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-34-operators"
+    },
+    {
+      "level": 2,
+      "title": "Arithmetic Expressions",
+      "number": "3.5",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-35-arithmetic-expressions"
+    },
+    {
+      "level": 2,
+      "title": "Indexing Expressions and Their Semantic Rules",
+      "number": "3.6",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-36-indexing-expressions-and-their-semantic-rules"
+    },
+    {
+      "level": 2,
+      "title": "Calling Expressions and Their Semantic Rules",
+      "number": "3.7",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-37-calling-expressions-and-their-semantic-rules"
+    },
+    {
+      "level": 2,
+      "title": "Relative Expressions",
+      "number": "3.8",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-38-relative-expressions"
+    },
+    {
+      "level": 2,
+      "title": "Predicates",
+      "number": "3.9",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-39-predicates"
+    },
+    {
+      "level": 1,
+      "title": "Decision Procedure: Walnut's Implementation",
+      "number": "4",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-4-decision-procedure-walnuts-implementation"
+    },
+    {
+      "level": 2,
+      "title": "Cross Product",
+      "number": "4.1",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-41-cross-product"
+    },
+    {
+      "level": 2,
+      "title": "Quantification",
+      "number": "4.2",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-42-quantification"
+    },
+    {
+      "level": 2,
+      "title": "Complement and Reverse",
+      "number": "4.3",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-43-complement-and-reverse"
+    },
+    {
+      "level": 2,
+      "title": "Arithmetic and Comparison Operators",
+      "number": "4.4",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-44-arithmetic-and-comparison-operators"
+    },
+    {
+      "level": 2,
+      "title": "Calling an Automaton",
+      "number": "4.5",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-45-calling-an-automaton"
+    },
+    {
+      "level": 2,
+      "title": "Indexing an Automatic Word",
+      "number": "4.6",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-46-indexing-an-automatic-word"
+    },
+    {
+      "level": 1,
+      "title": "Special Automata in Walnut",
+      "number": "5",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-5-special-automata-in-walnut"
+    },
+    {
+      "level": 2,
+      "title": "True and False Automata",
+      "number": "5.1",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-51-true-and-false-automata"
+    },
+    {
+      "level": 2,
+      "title": "Non-arithmetic Automata",
+      "number": "5.2",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-52-non-arithmetic-automata"
+    },
+    {
+      "level": 1,
+      "title": "Installation",
+      "number": "6",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-6-installation"
+    },
+    {
+      "level": 2,
+      "title": "Eclipse",
+      "number": "6.1",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-61-eclipse"
+    },
+    {
+      "level": 1,
+      "title": "Commands",
+      "number": "7",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-7-commands"
+    },
+    {
+      "level": 2,
+      "title": "eval: eval <name> <predicate>",
+      "number": "7.1",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-71-eval-eval-name-predicate"
+    },
+    {
+      "level": 2,
+      "title": "def: def <name> <predicate>",
+      "number": "7.2",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-72-def-def-name-predicate"
+    },
+    {
+      "level": 2,
+      "title": "macro: macro <name> <template>",
+      "number": "7.3",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-73-macro-macro-name-template"
+    },
+    {
+      "level": 2,
+      "title": "Matrices with eval and def",
+      "number": "7.4",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-74-matrices-with-eval-and-def"
+    },
+    {
+      "level": 2,
+      "title": "reg",
+      "number": "7.5",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-75-reg"
+    },
+    {
+      "level": 2,
+      "title": "load: load <file name>",
+      "number": "7.6",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-76-load-load-file-name"
+    },
+    {
+      "level": 1,
+      "title": "Working with Input/Output",
+      "number": "8",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-8-working-with-inputoutput"
+    },
+    {
+      "level": 2,
+      "title": "Defining Automata in Text Files",
+      "number": "8.1",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-81-defining-automata-in-text-files"
+    },
+    {
+      "level": 2,
+      "title": "Defining New Automatic Words",
+      "number": "8.2",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-82-defining-new-automatic-words"
+    },
+    {
+      "level": 2,
+      "title": "Defining New Number Systems",
+      "number": "8.3",
+      "page": 33,
+      "pageLabel": "33",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-83-defining-new-number-systems"
+    },
+    {
+      "level": 2,
+      "title": "Converting .gv files to .jpeg",
+      "number": "8.4",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-84-converting-gv-files-to-jpeg"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 1853,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "semantic rules",
+          "heading": false
+        },
+        {
+          "term": "automatic words",
+          "heading": false
+        },
+        {
+          "term": "automata",
+          "heading": false
+        },
+        {
+          "term": "walnut",
+          "heading": false
+        },
+        {
+          "term": "eval",
+          "heading": false
+        },
+        {
+          "term": "predicates",
+          "heading": false
+        }
+      ],
+      "extract": "Automatic Theorem Proving in Walnut Hamoon Mousavi May 27, 2021 Contents 1 Introduction 2 2 Basics 3 2.1 Words and Automata . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3 2.2 Number Systems . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4 2.3 Automatic Words . . . . . . . . . . . . . . . . . .",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1603.06017v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 638,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rampersad shallit",
+          "heading": false
+        },
+        {
+          "term": "jeffrey shallit",
+          "heading": false
+        },
+        {
+          "term": "walnut relies",
+          "heading": false
+        },
+        {
+          "term": "automatic words",
+          "heading": false
+        },
+        {
+          "term": "special automata",
+          "heading": false
+        },
+        {
+          "term": "emph automatic",
+          "heading": false
+        },
+        {
+          "term": "decision procedures",
+          "heading": false
+        },
+        {
+          "term": "mechanical decision",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:introduction} Walnut is a software package that implements a \\emph{mechanical decision procedure} for deciding certain combinatorial properties of some special words referred to as \\emph{automatic words} or \\emph{automatic sequences}. To learn more about automatic words and their applications, see \\cite{Allouche&Shallit:book}. To learn about decision procedures for automatic words, see Schaeffer's",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-basics",
+      "number": "2",
+      "title": "Basics",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "\\label{sec:basics}",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-words-and-automata",
+      "number": "2.1",
+      "title": "Words and Automata",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 936,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "automaton accepting",
+          "heading": false
+        },
+        {
+          "term": "nondeterministic automaton",
+          "heading": false
+        },
+        {
+          "term": "automata",
+          "heading": true
+        },
+        {
+          "term": "alphabet sigma",
+          "heading": false
+        },
+        {
+          "term": "accepting tuples",
+          "heading": false
+        },
+        {
+          "term": "output alphabet",
+          "heading": false
+        },
+        {
+          "term": "sigma big",
+          "heading": false
+        },
+        {
+          "term": "sigma times",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:words and automata} A word $(a_i)_{i\\in I}$ for a finite, infinite, or a possibly empty subset $I$ of natural numbers $\\mathbb{N}$, is a sequence of symbols $a_i$ over a finite set called an alphabet. The set $I$ usually equals $\\mathbb{N}$ or $\\mathbb{N}_l=\\{k\\in \\mathbb{N}:k<l \\}$ for some $l$. The set of finite and infinite words over the alphabet $\\Sigma$ are denoted by $\\Sigma^*$ and $\\Sigma^\\omega$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-number-systems",
+      "number": "2.2",
+      "title": "Number Systems",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 1024,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "accepting msd",
+          "heading": false
+        },
+        {
+          "term": "computing msd",
+          "heading": false
+        },
+        {
+          "term": "msd number",
+          "heading": false
+        },
+        {
+          "term": "relation msd",
+          "heading": false
+        },
+        {
+          "term": "define msd",
+          "heading": false
+        },
+        {
+          "term": "number systems",
+          "heading": true
+        },
+        {
+          "term": "fib representations",
+          "heading": false
+        },
+        {
+          "term": "automaton accepting",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:number systems} In any course on theory of computation, it is customary to talk about the representations of the objects an algorithm/Turing machine takes as inputs. At the core of Walnut are automata taking natural numbers as inputs, and doing various computations on them, so fixing a representation for natural numbers is essential. We could limit ourselves to binary representations. However, there are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-automatic-words",
+      "number": "2.3",
+      "title": "Automatic Words",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 543,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "automatic words",
+          "heading": true
+        },
+        {
+          "term": "thue-morse word",
+          "heading": false
+        },
+        {
+          "term": "automata accepting",
+          "heading": false
+        },
+        {
+          "term": "mathbf big",
+          "heading": false
+        },
+        {
+          "term": "accepting predicates",
+          "heading": false
+        },
+        {
+          "term": "output big",
+          "heading": false
+        },
+        {
+          "term": "msd",
+          "heading": false
+        },
+        {
+          "term": "automaton",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:automatic words} An automatic word $W=(a_i)_{i\\geq 0}$ is a word in $\\Sigma^\\omega$ for which there exists a number system $\\mathbf{S}$ and an automaton with output $M\\big(Q,q_0,O,\\delta,\\Sigma,\\mathbf{S}\\big)$ for which reading $x\\in R_{\\mathbf{S}}$ outputs $W[[x]_\\mathbf{S}] = a_{[x]_\\mathbf{S} }$. In other words, for an automatic word, the symbol at position $i$ for all $i$ can be effectively computed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-automata-accepting-predicates",
+      "number": "2.4",
+      "title": "Automata accepting Predicates",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "9",
+      "words": 1161,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "automata accepting",
+          "heading": true
+        },
+        {
+          "term": "automaton accepting",
+          "heading": false
+        },
+        {
+          "term": "automaton accepts",
+          "heading": false
+        },
+        {
+          "term": "accepting mathbin",
+          "heading": false
+        },
+        {
+          "term": "annotated predicate",
+          "heading": false
+        },
+        {
+          "term": "msd fib",
+          "heading": false
+        },
+        {
+          "term": "presburger arithmetic",
+          "heading": false
+        },
+        {
+          "term": "accepting tuples",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:automata accepting predicates} In Walnut, we are interested in automaton $M$ accepting same-length representations in number systems $\\mathbf{S_1},\\mathbf{S_2},\\ldots,\\mathbf{S_n}$ of integers $x_1,x_2,\\ldots,x_n$ satisfying some predicate $P$. When this is the case we say that automaton $M$ accepts the predicate $P$ (or equivalently$M$ accepts relation $R$ of tuples satisfying $P$). We already saw a few",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-3-syntax-and-semantic-of-predicates-in-walnut",
+      "number": "3",
+      "title": "Syntax and Semantic of Predicates in Walnut",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 7,
+      "summary": null,
+      "keywords": [],
+      "extract": "\\label{sec:syntax and semantic}",
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-31-alphabets",
+      "number": "3.1",
+      "title": "Alphabets",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 35,
+      "summary": null,
+      "keywords": [],
+      "extract": "\\label{sec:alphabets} We mentioned in earlier sections that all input and output alphabets of automata are subsets of integers in Walnut. Specifically for any automatic word $W$, we can assume $W[i]$ is an integer.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-32-arithmetic-and-alphabetic-constants",
+      "number": "3.2",
+      "title": "Arithmetic and Alphabetic Constants",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 207,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alphabetic constants",
+          "heading": true
+        },
+        {
+          "term": "arithmetic constants",
+          "heading": true
+        },
+        {
+          "term": "indexing expressions",
+          "heading": false
+        },
+        {
+          "term": "relative expressions",
+          "heading": false
+        },
+        {
+          "term": "expressions ref",
+          "heading": false
+        },
+        {
+          "term": "predicate",
+          "heading": false
+        },
+        {
+          "term": "ref sec",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:arithmetic and alphabetic constants} Arithmetic constants in a predicate are allowed to be natural numbers only. There is, however, another type of constant: the alphabetic constant. Alphabetic constants are useful when referring to symbols at particular positions in automatic words. For example, the predicate that accepts positions for which the automatic word $W$ is $1$ is written as $W[i]=@1$. In order",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-33-variables",
+      "number": "3.3",
+      "title": "Variables",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 9,
+      "labelStart": "9",
+      "labelEnd": "9",
+      "words": 26,
+      "summary": null,
+      "keywords": [],
+      "extract": "\\label{sec:variables} A variable's name must start with a letter and can contain upper- and lower-case alphanumerics and underscores. A variable's name cannot be E or A.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-010-34-operators",
+      "number": "3.4",
+      "title": "Operators",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 222,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "disjunction hline",
+          "heading": false
+        },
+        {
+          "term": "text hline",
+          "heading": false
+        },
+        {
+          "term": "hline greater",
+          "heading": false
+        },
+        {
+          "term": "quantifier text",
+          "heading": false
+        },
+        {
+          "term": "operators",
+          "heading": true
+        },
+        {
+          "term": "reverseblack",
+          "heading": false
+        },
+        {
+          "term": "walnut",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:operators} The full list of operators allowed in predicates can be found in Table \\ref{tab:operators}\\footnote{we prefer this notation to those familiar from mathematical logic, because we want to liken our notation to those of programming languages, as Walnut is ultimately a programming language.}. This list has operator precedences. The lower this number is, the higher the precedence is. For example,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-35-arithmetic-expressions",
+      "number": "3.5",
+      "title": "Arithmetic Expressions",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 247,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arithmetic expressions",
+          "heading": true
+        },
+        {
+          "term": "automaton accepting",
+          "heading": false
+        },
+        {
+          "term": "arithmetic operators",
+          "heading": false
+        },
+        {
+          "term": "cdots otimes",
+          "heading": false
+        },
+        {
+          "term": "constant expression",
+          "heading": false
+        },
+        {
+          "term": "olessthan",
+          "heading": false
+        },
+        {
+          "term": "talking",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:arithmetic expressions} The permissible arithmetic operators are $+,-,*,/$. Equality $=$ is {\\it not\\/} an arithmetic operator. A constant expression is an expression involving only constants and arithmetic operators that evaluates to a natural number, e.g., $4,3+2,6/4,2*3$ but not $-3$ nor $2-3$. An arithmetic expression is defined recursively in the usual way: \\begin{itemize} \\item A constant expression",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-36-indexing-expressions-and-their-semantic-rules",
+      "number": "3.6",
+      "title": "Indexing Expressions and Their Semantic Rules",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 265,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "indexing expressions",
+          "heading": true
+        },
+        {
+          "term": "involving indexing",
+          "heading": false
+        },
+        {
+          "term": "semantic",
+          "heading": true
+        },
+        {
+          "term": "predicates involving",
+          "heading": false
+        },
+        {
+          "term": "arithmetic expressions",
+          "heading": false
+        },
+        {
+          "term": "automatic word",
+          "heading": false
+        },
+        {
+          "term": "free variable",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:indexing expressions} For an $n$-dimensional automatic word $W$, an indexing expression is $W[e_1][e_2]\\cdots[e_n]$ where the $e_i$ are either arithmetic expressions or predicates with one free variable. An indexing expression on its own is not a valid predicate, and it is not meaningful to talk about automata accepting indexing expressions. Smallest predicates involving indexing expressions are defined",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-37-calling-expressions-and-their-semantic-rules",
+      "number": "3.7",
+      "title": "Calling Expressions and Their Semantic Rules",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 195,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "calling",
+          "heading": true
+        },
+        {
+          "term": "calling expression",
+          "heading": false
+        },
+        {
+          "term": "arithmetic expressions",
+          "heading": false
+        },
+        {
+          "term": "predicate",
+          "heading": false
+        },
+        {
+          "term": "semantic",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{sec:calling expressions} For an automaton $M$ with $n$ inputs a calling expression is $\\$M(e_1,e_2,\\ldots,e_n)$ where the $e_i$ are either arithmetic expressions or predicates with one free variable. For such an expression, we say that $M$ is called with arguments $e_1,e_2,\\ldots,e_n$. A calling expression on its own is a valid predicate, as we will see in Section \\ref{sec:relative expressions}.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-38-relative-expressions",
+      "number": "3.8",
+      "title": "Relative Expressions",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 117,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "relative expressions",
+          "heading": true
+        },
+        {
+          "term": "expression olessthan",
+          "heading": false
+        },
+        {
+          "term": "comparison operator",
+          "heading": false
+        },
+        {
+          "term": "indexing",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:relative expressions} Comparison operators are $=$,!=,$<$,$>$,<=, and >=. A relative expression is any of the following: \\begin{itemize} \\item An expression $e_1 \\olessthan e_2$ where $e_1$ and $e_2$ are arithmetic expressions and $\\olessthan$ is any comparison operator. \\item An expression $e_1 \\olessthan e_2$ where $e_1$ and $e_2$ are indexing expressions and/or alphabetic constants and $\\olessthan$ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-39-predicates",
+      "number": "3.9",
+      "title": "Predicates",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 133,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "predicates",
+          "heading": true
+        },
+        {
+          "term": "mathbin text",
+          "heading": false
+        },
+        {
+          "term": "every predicate",
+          "heading": false
+        },
+        {
+          "term": "semantic rules",
+          "heading": false
+        },
+        {
+          "term": "eval",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:predicates} A predicate is an expression formed from relative expressions and logical operators: \\begin{itemize} \\item Every relative expression is a predicate. \\item For every predicate $P$ all of $(P)$, ${\\sim (P)}$ and ${\\text{\\textasciigrave}(P)}$ are predicates. \\item For every predicate $P_1$ and $P_2$ all of $P_1 \\mathbin{\\&} P_2$, $P_1 \\mid P_2$, $P_1 \\wedge P_2$, $P_1 \\mathbin{\\text{ => }} P_2$,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-4-decision-procedure-walnuts-implementation",
+      "number": "4",
+      "title": "Decision Procedure: Walnut's Implementation",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 12,
+      "labelStart": "12",
+      "labelEnd": "12",
+      "words": 87,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "decision procedure",
+          "heading": true
+        },
+        {
+          "term": "predicates formed",
+          "heading": false
+        },
+        {
+          "term": "complex predicates",
+          "heading": false
+        },
+        {
+          "term": "walnut",
+          "heading": true
+        },
+        {
+          "term": "automata",
+          "heading": false
+        },
+        {
+          "term": "logical operators",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:decision procedure} In this section, we learn about a procedure that takes a predicate and constructs an automaton accepting that predicate. The procedure explained here is what implemented in Walnut, and we shall call it the decision procedure. For every defined number system, Walnut knows the automata for valid representations, addition, equality, and less-than predicates/relations. Every predicate is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-41-cross-product",
+      "number": "4.1",
+      "title": "Cross Product",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 710,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cross product",
+          "heading": true
+        },
+        {
+          "term": "caption automaton",
+          "heading": false
+        },
+        {
+          "term": "mathbf big",
+          "heading": false
+        },
+        {
+          "term": "centering includegraphics",
+          "heading": false
+        },
+        {
+          "term": "sigma mathbf",
+          "heading": false
+        },
+        {
+          "term": "begin minipage",
+          "heading": false
+        },
+        {
+          "term": "end minipage",
+          "heading": false
+        },
+        {
+          "term": "textwidth centering",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:cross product} Let $M\\big(Q,q_0,F,\\delta,\\mathbf{S_1},\\ldots,\\mathbf{S_m}\\big)$ and $M'\\big(Q',q'_0,F',\\delta',\\mathbf{S'_1},\\ldots,\\mathbf{S'_n}\\big)$ be the automaton $(x_1,\\ldots,x_m):P$ and $(x'_1,\\ldots,x'_n):P'$ respectively. Let us assume that if $x_i=x'_j$ then $\\mathbf{S_i}=\\mathbf{S'_j}$. Let $\\{x''_1,\\ldots,x''_p\\}$ where $p\\leq m+n$ be the union of $\\{x_1,\\ldots,x_m\\}$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-42-quantification",
+      "number": "4.2",
+      "title": "Quantification",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 948,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "nondeterministic automaton",
+          "heading": false
+        },
+        {
+          "term": "non-deterministic automaton",
+          "heading": false
+        },
+        {
+          "term": "automaton accepting",
+          "heading": false
+        },
+        {
+          "term": "text mathbin",
+          "heading": false
+        },
+        {
+          "term": "mathbf big",
+          "heading": false
+        },
+        {
+          "term": "quantified caption",
+          "heading": false
+        },
+        {
+          "term": "insignificant tuples",
+          "heading": false
+        },
+        {
+          "term": "quantified end",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:quantification} In this section we learn how to construct an automaton $(x_1,\\ldots,x_{i-1},x_{i+1},\\ldots,x_m): \\text{E}x_{i}\\text{ }P$ from automaton $(x_1,\\ldots,x_m): P$. Let $M\\big(Q,q_0,F,\\delta,\\mathbf{S_1},\\ldots,\\mathbf{S_m}\\big)$ be the automaton $(x_1,\\ldots,x_m):P$ and let $P'$ be the predicate $\\text{E}x_{i}\\text{ }P$. We first construct the nondeterministic automaton $E(M,i)$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-43-complement-and-reverse",
+      "number": "4.3",
+      "title": "Complement and Reverse",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 319,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "orig dead",
+          "heading": false
+        },
+        {
+          "term": "automaton accepting",
+          "heading": false
+        },
+        {
+          "term": "orig switch",
+          "heading": false
+        },
+        {
+          "term": "orig complement",
+          "heading": false
+        },
+        {
+          "term": "msd fib",
+          "heading": false
+        },
+        {
+          "term": "accepting mathbf",
+          "heading": false
+        },
+        {
+          "term": "dead state",
+          "heading": false
+        },
+        {
+          "term": "non-final states",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:complement and reverse} To obtain $(x_1,\\ldots,x_m): \\sim (P)$ from $(x_1,\\ldots,x_m): P$, one has to add all transitions to dead state (in Walnut, we call this totalizing an automaton), and then switching final and non-final states, but one also has to make sure that the resulting automaton is intersected with the automaton accepting $R_{\\mathbf{S_1}}\\times\\cdots\\times R_{\\mathbf{S_m}}$ where",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-44-arithmetic-and-comparison-operators",
+      "number": "4.4",
+      "title": "Arithmetic and Comparison Operators",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 583,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "arithmetic operators",
+          "heading": true
+        },
+        {
+          "term": "text mathbin",
+          "heading": false
+        },
+        {
+          "term": "construct automaton",
+          "heading": false
+        },
+        {
+          "term": "presburger arithmetic",
+          "heading": false
+        },
+        {
+          "term": "walnut",
+          "heading": false
+        },
+        {
+          "term": "predicate",
+          "heading": false
+        },
+        {
+          "term": "automata",
+          "heading": false
+        },
+        {
+          "term": "systems mathbf",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:arithmetic and comparison} Recall that for every number system $\\mathbf{S}$ that we use in Walnut the three automata $(a,b,c):\\text{?S }a=b+c$, $(a,b): \\text{?S }a=b$\\footnote{This automaton does not need to be defined explicitly by the user, because we assumed for all number systems $\\mathbf{S}$ in Walnut $a=_{\\mathbf{S}}b$ if and only if $a=b$.}, and $(a,b):\\text{?S }a<b$ are defined. In this section we",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-45-calling-an-automaton",
+      "number": "4.5",
+      "title": "Calling an Automaton",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 408,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "automaton",
+          "heading": true
+        },
+        {
+          "term": "calling",
+          "heading": true
+        },
+        {
+          "term": "calling expressions",
+          "heading": false
+        },
+        {
+          "term": "mathbin",
+          "heading": false
+        },
+        {
+          "term": "begin mdframed",
+          "heading": false
+        },
+        {
+          "term": "end mdframed",
+          "heading": false
+        },
+        {
+          "term": "style myframe",
+          "heading": false
+        },
+        {
+          "term": "predicate",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:calling an automaton} In Section \\ref{sec:calling expressions}, we learned about the syntax and semantic of calling an automaton. A calling expression is a kind of syntactic sugar to save some space when writing long and complicated predicates. Suppose we already have computed the automaton $(x_1,x_2,\\ldots,x_n): P$ and given it the name $M$. We can refer to $P$ in a predicate $P'$ without writing $P$ all",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-46-indexing-an-automatic-word",
+      "number": "4.6",
+      "title": "Indexing an Automatic Word",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 180,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "automatic word",
+          "heading": true
+        },
+        {
+          "term": "mathbf big",
+          "heading": false
+        },
+        {
+          "term": "indexing",
+          "heading": true
+        },
+        {
+          "term": "dimensional automatic",
+          "heading": false
+        },
+        {
+          "term": "automaton",
+          "heading": false
+        },
+        {
+          "term": "calling",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:indexing to an automatic word} Suppose $W$ is an $n$-dimensional automatic word and $M\\big(Q,q_0,O,\\delta,\\Sigma,\\mathbf{S_1},\\mathbf{S_2},\\ldots,\\mathbf{S_n}\\big)$ is its corresponding automaton with output. Also let $\\alpha$ be an alphabetic constant. We note that $(x_1,x_2,\\ldots,x_n): W[x_1][x_2]\\cdots[x_n]=@\\alpha$ is the automaton",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-5-special-automata-in-walnut",
+      "number": "5",
+      "title": "Special Automata in Walnut",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": "19",
+      "labelEnd": "19",
+      "words": 4,
+      "summary": null,
+      "keywords": [],
+      "extract": "\\label{sec:special automata}",
+      "extractCut": false
+    },
+    {
+      "id": "sec-024-51-true-and-false-automata",
+      "number": "5.1",
+      "title": "True and False Automata",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 19,
+      "labelStart": "19",
+      "labelEnd": "19",
+      "words": 281,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "false automata",
+          "heading": true
+        },
+        {
+          "term": "false automaton",
+          "heading": false
+        },
+        {
+          "term": "true automaton",
+          "heading": false
+        },
+        {
+          "term": "text false",
+          "heading": false
+        },
+        {
+          "term": "automaton yields",
+          "heading": false
+        },
+        {
+          "term": "automaton label",
+          "heading": false
+        },
+        {
+          "term": "mathbin text",
+          "heading": false
+        },
+        {
+          "term": "item mathbin",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:true and false} In Section \\ref{sec:automata accepting predicates} we saw an example of a predicate with no free variables: $$\\text{A}x\\text{ }\\text{E}y\\text{ } x=2*y \\mid x=2*y+1$$ This predicate evaluates to true (it is a tautology). Here is an example of a predicate with no free variable that evaluates to false (contradiction): $$\\text{E}x\\text{ } x>x+1$$ Walnut assigns a special automaton called true",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-52-non-arithmetic-automata",
+      "number": "5.2",
+      "title": "Non-arithmetic Automata",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 174,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "non-arithmetic automata",
+          "heading": true
+        },
+        {
+          "term": "paperfolding words",
+          "heading": false
+        },
+        {
+          "term": "pattern represents",
+          "heading": false
+        },
+        {
+          "term": "represents powers",
+          "heading": false
+        },
+        {
+          "term": "lsd",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:non-arithmetic automata} There is a need for automata in which inputs (or some of them) do not represent numbers in a specific number system. These automata might accept patterns, or they might be relying on some non-arithmetic instructions. For example, the pattern $0^*10^*$ represents powers of $2$ in $\\MSD[2]$. However, the same pattern represents powers of $2$ in $\\LSD[2]$. Therefore, by not assigning",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-6-installation",
+      "number": "6",
+      "title": "Installation",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 202,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "run walnut",
+          "heading": false
+        },
+        {
+          "term": "utf encoding",
+          "heading": false
+        },
+        {
+          "term": "begin lstlisting",
+          "heading": false
+        },
+        {
+          "term": "end lstlisting",
+          "heading": false
+        },
+        {
+          "term": "command line",
+          "heading": false
+        },
+        {
+          "term": "language bash",
+          "heading": false
+        },
+        {
+          "term": "text files",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:installation} Walnut is a command line program. You can run Walnut on any platform as long as you have Java 8 or later (preferably JDK 8 or higher) installed. To see which version of Java is installed on your machine type the following in the terminal (without the command line prompt \\$): \\begin{lstlisting}[language=bash] $java -version \\end{lstlisting} If you download Walnut as the zipped file Walnut.zip",
+      "extractCut": true
+    },
+    {
+      "id": "sec-027-61-eclipse",
+      "number": "6.1",
+      "title": "Eclipse",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 20,
+      "labelStart": "20",
+      "labelEnd": "20",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "Eclipse",
+      "extractCut": false
+    },
+    {
+      "id": "sec-028-7-commands",
+      "number": "7",
+      "title": "Commands",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": "20",
+      "labelEnd": "22",
+      "words": 748,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "textcolor blue",
+          "heading": false
+        },
+        {
+          "term": "eval test",
+          "heading": false
+        },
+        {
+          "term": "style cmd",
+          "heading": false
+        },
+        {
+          "term": "end lstlisting",
+          "heading": false
+        },
+        {
+          "term": "begin lstlisting",
+          "heading": false
+        },
+        {
+          "term": "textcolor out",
+          "heading": false
+        },
+        {
+          "term": "states determinizing",
+          "heading": false
+        },
+        {
+          "term": "commands",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{sec:commands} Every command ends in either a colon, double colon, or a semicolon. If you want to see the reports on the intermediate steps of a computation use colon or double colon, otherwise use semicolon. For example, if we type: \\begin{lstlisting}[style=cmd] eval test \"(*\\textcolor{blue}{$a=b+1$}*)\": \\end{lstlisting} we get an output similar to the following written in the console:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-71-eval-eval-name-predicate",
+      "number": "7.1",
+      "title": "eval: eval <name> <predicate>",
+      "level": 2,
+      "pageStart": 22,
+      "pageEnd": 26,
+      "labelStart": "22",
+      "labelEnd": "26",
+      "words": 1575,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eval",
+          "heading": true
+        },
+        {
+          "term": "eval invalid",
+          "heading": false
+        },
+        {
+          "term": "style cmd",
+          "heading": false
+        },
+        {
+          "term": "lstlisting vspace",
+          "heading": false
+        },
+        {
+          "term": "begin lstlisting",
+          "heading": false
+        },
+        {
+          "term": "end lstlisting",
+          "heading": false
+        },
+        {
+          "term": "textcolor blue",
+          "heading": false
+        },
+        {
+          "term": "thue-morse word",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:eval} This is the most important command in Walnut and it stands for ``evaluate.'' This command takes two arguments. The first argument is a name for the evaluation. Name of the evaluation starts with a letter and could contain alphanumerics and underscore. The files generated as the result of the eval command, all share the name given in the first argument. The second argument is a predicate that we want",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-72-def-def-name-predicate",
+      "number": "7.2",
+      "title": "def: def <name> <predicate>",
+      "level": 2,
+      "pageStart": 26,
+      "pageEnd": 27,
+      "labelStart": "26",
+      "labelEnd": "27",
+      "words": 531,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "style cmd",
+          "heading": false
+        },
+        {
+          "term": "eval nonsense",
+          "heading": false
+        },
+        {
+          "term": "begin lstlisting",
+          "heading": false
+        },
+        {
+          "term": "end lstlisting",
+          "heading": false
+        },
+        {
+          "term": "lstlisting vspace",
+          "heading": false
+        },
+        {
+          "term": "textcolor blue",
+          "heading": false
+        },
+        {
+          "term": "eval invalid",
+          "heading": false
+        },
+        {
+          "term": "style err",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:def} The word def stands for define. The syntax for this command is exactly the same as the syntax for eval command. The only difference between this command and eval is that the automaton constructed is saved in the directory ``/Walnut/Automata Library/'' for later use. Suppose we write the following: \\begin{lstlisting}[style=cmd] def sum10 \"(*\\textcolor{blue}{$x+y=10$}*)\"; \\end{lstlisting} This creates",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-73-macro-macro-name-template",
+      "number": "7.3",
+      "title": "macro: macro <name> <template>",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 29,
+      "labelStart": "27",
+      "labelEnd": "29",
+      "words": 659,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "macro",
+          "heading": true
+        },
+        {
+          "term": "thue border",
+          "heading": false
+        },
+        {
+          "term": "fibonacci border",
+          "heading": false
+        },
+        {
+          "term": "style cmd",
+          "heading": false
+        },
+        {
+          "term": "eval thue",
+          "heading": false
+        },
+        {
+          "term": "fibonacci pal",
+          "heading": false
+        },
+        {
+          "term": "msd fib",
+          "heading": false
+        },
+        {
+          "term": "begin lstlisting",
+          "heading": false
+        }
+      ],
+      "extract": "Recall that a subword $W[i..i+n-1]$ is a palindrome if $W[i+k]=W[i+n-1-k]$ for all $k<n$. The following calculates the palindromes in the Thue-Morse word\\footnote{In specific terms, this calculation constructs an automaton accepting $(i,n)$'s for which $W[i..i+n-1]$ is a palindrome.}: \\begin{lstlisting}[style=cmd] eval thue_pal \"Ak k<n => T[i+k] = T[i+n-1-k]\"; \\end{lstlisting} Now in order to calculate palindromes",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-74-matrices-with-eval-and-def",
+      "number": "7.4",
+      "title": "Matrices with eval and def",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 29,
+      "labelStart": "29",
+      "labelEnd": "29",
+      "words": 347,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eval",
+          "heading": true
+        },
+        {
+          "term": "begin bmatrix",
+          "heading": false
+        },
+        {
+          "term": "bmatrix end",
+          "heading": false
+        },
+        {
+          "term": "begin lstlisting",
+          "heading": false
+        },
+        {
+          "term": "style cmd",
+          "heading": false
+        },
+        {
+          "term": "incidence matrices",
+          "heading": false
+        },
+        {
+          "term": "walnut",
+          "heading": false
+        },
+        {
+          "term": "sigma mathbf",
+          "heading": false
+        }
+      ],
+      "extract": "We postponed discussing the exact syntax of the eval and def commands until this section. These two commands can take an optional argument: \\begin{itemize} \\item eval <name> <space separated list of free variables>? <predicate> \\item def <name> <space separated list of free variables>? <predicate> \\end{itemize} The question marks are representing the fact that the corresponding arguments are optional. When a list of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-033-75-reg",
+      "number": "7.5",
+      "title": "reg",
+      "level": 2,
+      "pageStart": 29,
+      "pageEnd": 31,
+      "labelStart": "29",
+      "labelEnd": "31",
+      "words": 829,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "reg",
+          "heading": true
+        },
+        {
+          "term": "reg command",
+          "heading": false
+        },
+        {
+          "term": "captionof lstlisting",
+          "heading": false
+        },
+        {
+          "term": "style reg",
+          "heading": false
+        },
+        {
+          "term": "style file",
+          "heading": false
+        },
+        {
+          "term": "begin lstlisting",
+          "heading": false
+        },
+        {
+          "term": "end lstlisting",
+          "heading": false
+        },
+        {
+          "term": "lstlisting vspace",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:reg} The word reg stands for regular expression. Before we talk about this command in detail, let us motivate the need for it through an example. Suppose we need an automaton accepting $\\MSD[2]$ representations of powers of $2$ that are less than $20$. There is no straightforward way of constructing an automaton accepting representations of powers of $2$ using eval and def commands\\footnote{The set of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-76-load-load-file-name",
+      "number": "7.6",
+      "title": "load: load <file name>",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 32,
+      "labelStart": "31",
+      "labelEnd": "32",
+      "words": 61,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "load",
+          "heading": true
+        },
+        {
+          "term": "file name",
+          "heading": false
+        },
+        {
+          "term": "walnut",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:load} We can write any series of legitimate Walnut commands in a text file and save it in the directory ``/Walnut/Command Files/''. Then we can load it by writing the following in Walnut: \\begin{lstlisting}[style=reg] load file_name.txt; \\end{lstlisting} This runs all commands in file\\_name.txt in the order they appear. Recall that the file's encoding must be UTF-8.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-035-8-working-with-inputoutput",
+      "number": "8",
+      "title": "Working with Input/Output",
+      "level": 1,
+      "pageStart": 32,
+      "pageEnd": 32,
+      "labelStart": "32",
+      "labelEnd": "32",
+      "words": 24,
+      "summary": null,
+      "keywords": [],
+      "extract": "\\label{sec:working with input and output} Throughout this section it is assumed that all files have UTF-8 encoding. This is the default encoding for most text editors.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-036-81-defining-automata-in-text-files",
+      "number": "8.1",
+      "title": "Defining Automata in Text Files",
+      "level": 2,
+      "pageStart": 32,
+      "pageEnd": 33,
+      "labelStart": "32",
+      "labelEnd": "33",
+      "words": 529,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "text files",
+          "heading": true
+        },
+        {
+          "term": "automata",
+          "heading": true
+        },
+        {
+          "term": "alpha text",
+          "heading": false
+        },
+        {
+          "term": "alpha mathbin",
+          "heading": false
+        },
+        {
+          "term": "ref file",
+          "heading": false
+        },
+        {
+          "term": "ldots text",
+          "heading": false
+        },
+        {
+          "term": "output alphabet",
+          "heading": false
+        },
+        {
+          "term": "paperfolding words",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:define automata in text files} In this section we learn how to manually define all automata types in text files. Recall that an ordinary automaton can be thought of as an automaton with output, in which states with non-zero outputs are treated as final states; see Section \\ref{sec:words and automata}. Therefore suppose $M\\big(Q,q_0,O,\\delta,\\Sigma,\\mathbf{S_1},\\mathbf{S_2},\\ldots,\\mathbf{S_n}\\big)$ is an",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-82-defining-new-automatic-words",
+      "number": "8.2",
+      "title": "Defining New Automatic Words",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 33,
+      "labelStart": "33",
+      "labelEnd": "33",
+      "words": 90,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "word automata",
+          "heading": false
+        },
+        {
+          "term": "automata library",
+          "heading": false
+        },
+        {
+          "term": "walnut word",
+          "heading": false
+        },
+        {
+          "term": "automatic",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{sec:define new automatic words} The eval and def commands always produce automata accepting a predicate, therefore the result is never an automaton with output. So to define an automatic word $W$, we need to manually define its corresponding automaton with output in the directory ``/Walnut/Word Automata Library/''. For example, the Thue-Morse word is defined in the file ``/Walnut/Word Automata Library/T.txt''",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-83-defining-new-number-systems",
+      "number": "8.3",
+      "title": "Defining New Number Systems",
+      "level": 2,
+      "pageStart": 33,
+      "pageEnd": 34,
+      "labelStart": "33",
+      "labelEnd": "34",
+      "words": 328,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "msd",
+          "heading": false
+        },
+        {
+          "term": "lsd",
+          "heading": false
+        },
+        {
+          "term": "system mathbf",
+          "heading": false
+        },
+        {
+          "term": "sigma mathbf",
+          "heading": false
+        },
+        {
+          "term": "number systems",
+          "heading": true
+        },
+        {
+          "term": "corresponding automata",
+          "heading": false
+        },
+        {
+          "term": "lexicographic ordering",
+          "heading": false
+        },
+        {
+          "term": "txt",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:define new number systems} Based on Definition \\ref{def:walnut_number_system}, to define a new number system $\\mathbf{S}$, we need to define automata for $R_{\\mathbf{S}}$, $+_{\\mathbf{S}}$, and $<_{\\mathbf{S}}$. We do not need to define an automaton for $=_{\\mathbf{S}}$, because it can be generated easily, since we assumed that $w_1=_{\\mathbf{S}} w_2$ if and only if $w_1 = w_2$ for any two words $w_1$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-84-converting-gv-files-to-jpeg",
+      "number": "8.4",
+      "title": "Converting .gv files to .jpeg",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 34,
+      "labelStart": "34",
+      "labelEnd": "34",
+      "words": 81,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jpeg",
+          "heading": true
+        },
+        {
+          "term": "files",
+          "heading": true
+        },
+        {
+          "term": "automaton",
+          "heading": false
+        }
+      ],
+      "extract": "The drawings of automata in Walnut are stored in .gv files. Not only can the software Graphviz open the files with this extension, but it can also convert them to many different file formats. For example, suppose you have a file named automaton.gv. To convert it to automaton.jpeg type the following in the terminal: \\begin{lstlisting}[language=bash] $dot -Tjpg automaton.gv -o automaton.jpeg \\end{lstlisting} See",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 34,
+      "pageEnd": 34,
+      "labelStart": "34",
+      "labelEnd": "34",
+      "words": 348,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shallit",
+          "heading": false
+        },
+        {
+          "term": "automatic sequences",
+          "heading": false
+        },
+        {
+          "term": "antti valmari",
+          "heading": false
+        },
+        {
+          "term": "decision algorithms",
+          "heading": false
+        },
+        {
+          "term": "mousavi",
+          "heading": false
+        },
+        {
+          "term": "schaeffer",
+          "heading": false
+        },
+        {
+          "term": "computer science",
+          "heading": false
+        },
+        {
+          "term": "decidable properties",
+          "heading": false
+        }
+      ],
+      "extract": "[1] J. R. Buchi. “On a Decision Method in Restricted Second Order Arithmetic”. In: Logic, Methodology and Philosophy of ScienceProceeding of the 1960 International Congress. Studies in Logic and the Foundations of Mathematics 44 (1966). Ed. by Patrick Suppes Ernest Nagel and Alfred Tarski, pp. 1 –11. [2] J.-P. Allouche and J. Shallit. Automatic Sequences: Theory, Applications, Generalizations. Vol. 1. CUP, 2003. [3]",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Hamoon Mousavi May 27,"
+        ]
+      },
+      "found_not_listed": {
+        "count": 9,
+        "items": [
+          "7 Commands",
+          "8 Working with Input/Output",
+          "7 Commands",
+          "7.4 Matrices with eval and def",
+          "8 Working with Input/Output",
+          "8.1 Deﬁning Automata in Text Files",
+          "8.2 Deﬁning New Automatic Words",
+          "8.3 Deﬁning New Number Systems",
+          "8.4 Converting .gv ﬁles to .jpeg"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "walnut automata",
+      "heading": true
+    },
+    {
+      "term": "automaton accepting",
+      "heading": true
+    },
+    {
+      "term": "automaton accepts",
+      "heading": true
+    },
+    {
+      "term": "caption automaton",
+      "heading": false
+    },
+    {
+      "term": "automaton big",
+      "heading": false
+    },
+    {
+      "term": "automaton label",
+      "heading": false
+    },
+    {
+      "term": "non-arithmetic automaton",
+      "heading": false
+    },
+    {
+      "term": "automaton footnote",
+      "heading": false
+    },
+    {
+      "term": "false automaton",
+      "heading": true
+    },
+    {
+      "term": "walnut word",
+      "heading": false
+    },
+    {
+      "term": "nondeterministic automaton",
+      "heading": false
+    },
+    {
+      "term": "walnut command",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "2.1",
+      "title": "Automaton accepting tuples of same length representations of 4 and 5 in binary In other words, the automaton accepts tuples t = (w1,w2) ∈{0,1}∗×{0,1}∗where w1 and w2 are representations of the the same length, in the most-signiﬁcant-digit-ﬁrst binary system, of natural numbers 4 and 5 respectively",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.2",
+      "title": "Automaton computing Rmsd_2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.3",
+      "title": "Automaton computing +msd_2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.4",
+      "title": "Automaton computing =msd_2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.5",
+      "title": "Automaton computing <msd_2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.6",
+      "title": "Automaton computing Rmsd_ﬁb",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.7",
+      "title": "The Thue-Morse word",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.8",
+      "title": "The automaton accepting a = 4&b = 13, does not accept all representations of 4",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2.9",
+      "title": "Automaton accepting a = 1&(?lsd_2 b = 1)",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3.1",
+      "title": "List of operators in Walnut",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.1",
+      "title": "Automaton (a) : a = 1",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.2",
+      "title": "Automaton (b) : b = 2",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.3",
+      "title": "Cross product (a) : a = 1×(b) : b = 2",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.4",
+      "title": "Automaton (a,b) : a = 1&b = 2",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.5",
+      "title": "Non-deterministic automaton E(M,2)",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.6",
+      "title": "Non-deterministic automaton accepting Eb a = 1&b = 2",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.7",
+      "title": "(a) : Eb a = 1&b = 2",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.8",
+      "title": "Number 1 in Fibonacci",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.9",
+      "title": "Totalized automaton",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.10",
+      "title": "Switching ﬁnal and non-ﬁnal states",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.11",
+      "title": "Automata accepting all numbers in Fibonacci except 1",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.12",
+      "title": "Automaton for 0<=a −1+1 does not accept 0∗",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.13",
+      "title": "Automata for 0<=a +1−1 accepts 0∗",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4.14",
+      "title": "Automaton accepting Q",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5.1",
+      "title": "True automaton",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5.2",
+      "title": "False automaton",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7.1",
+      "title": "Content of the ﬁle four.gv",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7.2",
+      "title": "lsd_four.gv",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7.3",
+      "title": "ternary_example.gv",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7.4",
+      "title": "two_inputs.gv",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7.5",
+      "title": "order_of_squares_in_thue_morse_word.gv",
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7.6",
+      "title": "thue_morse_does_not_have_overlaps.gv",
+      "page": 25,
+      "pageLabel": "25",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7.7",
+      "title": "lessThanThree.gv",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7.8",
+      "title": "ﬁve.gv",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7.9",
+      "title": "three.gv",
+      "page": 26,
+      "pageLabel": "26",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7.10",
+      "title": "another_nonsense.gv",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7.11",
+      "title": "power2LessThan20.gv",
+      "page": 30,
+      "pageLabel": "30",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7.12",
+      "title": "note_the_intersection.gv",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "7.1",
+      "title": "syntax summary for regular expressions",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": 0.6,
+      "evidence": [
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8.1",
+      "title": "Automata for paperfolding words",
+      "page": 32,
+      "pageLabel": "32",
+      "confidence": 0.7,
+      "evidence": [
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p004-1",
+      "file": "images/img-p004-1.png",
+      "page": 4,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-1",
+      "file": "images/img-p005-1.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-2",
+      "file": "images/img-p005-2.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-3",
+      "file": "images/img-p005-3.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p005-4",
+      "file": "images/img-p005-4.png",
+      "page": 5,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p006-1",
+      "file": "images/img-p006-1.png",
+      "page": 6,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-1",
+      "file": "images/img-p007-1.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p008-1",
+      "file": "images/img-p008-1.png",
+      "page": 8,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p009-1",
+      "file": "images/img-p009-1.png",
+      "page": 9,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-1",
+      "file": "images/img-p013-1.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-2",
+      "file": "images/img-p013-2.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-3",
+      "file": "images/img-p013-3.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-4",
+      "file": "images/img-p013-4.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-1",
+      "file": "images/img-p014-1.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-1",
+      "file": "images/img-p015-1.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-2",
+      "file": "images/img-p015-2.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-1",
+      "file": "images/img-p016-1.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-2",
+      "file": "images/img-p016-2.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-3",
+      "file": "images/img-p016-3.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-4",
+      "file": "images/img-p016-4.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p017-1",
+      "file": "images/img-p017-1.png",
+      "page": 17,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p017-2",
+      "file": "images/img-p017-2.png",
+      "page": 17,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p018-1",
+      "file": "images/img-p018-1.png",
+      "page": 18,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p019-1",
+      "file": "images/img-p019-1.png",
+      "page": 19,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p019-2",
+      "file": "images/img-p019-2.png",
+      "page": 19,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p022-1",
+      "file": "images/img-p022-1.png",
+      "page": 22,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p023-1",
+      "file": "images/img-p023-1.png",
+      "page": 23,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p023-2",
+      "file": "images/img-p023-2.png",
+      "page": 23,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p023-3",
+      "file": "images/img-p023-3.png",
+      "page": 23,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p024-1",
+      "file": "images/img-p024-1.png",
+      "page": 24,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p025-1",
+      "file": "images/img-p025-1.png",
+      "page": 25,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p026-1",
+      "file": "images/img-p026-1.png",
+      "page": 26,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p026-2",
+      "file": "images/img-p026-2.png",
+      "page": 26,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p026-3",
+      "file": "images/img-p026-3.png",
+      "page": 26,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p027-1",
+      "file": "images/img-p027-1.png",
+      "page": 27,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p030-1",
+      "file": "images/img-p030-1.png",
+      "page": 30,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p031-1",
+      "file": "images/img-p031-1.png",
+      "page": 31,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p032-1",
+      "file": "images/img-p032-1.png",
+      "page": 32,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 41,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 42,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 38
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "2 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p34); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 15
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 42 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1603.06017v2"
+  }
+}

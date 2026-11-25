@@ -1,0 +1,323 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1203.3404v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1203.3404v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "In this papar, we show two essentially different connection formulae of some basic hypergeometric series between the origin and the infinity. In 1846, E. Heine [@hein] introduced the basic hypergeometric series ${}_2\\varphi_1(a,b;c;q,x)$ as follows; $${}_2\\varphi_1(a,b;c;q,x):=\\sum_{n\\ge 0}\\frac{(a,b;q)_n}{(c;q)_n(q;q)_n}x^n,\\quad c\\not \\in q^{-\\mathbb{N}}.\n\\label{heine}$$ Here, $(a;q)_n$ is the $q$-shifted factorial; $$(a;q)_n:=\n\\begin{cases}\n1, &n=0, \\\\\n(1-a)(1-aq)\\dots (1-aq^{n-1}), &n\\ge 1,\n\\end{cases}$$ moreover, $(a;q)_\\infty :=\\lim_{n\\to \\infty}(a;q)_n$ and $$(a_1,a_2,\\dots ,a_m;q)_\\inf",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.3404v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1203.3404v1  [math.CA]  15 Mar 2012\nOn local solutions of the Ramanujan equation\nand their connection formulae\nTakeshi MORITA∗\nAbstract\nWe show connection formulae of local solutions of the Ramanujan\nequation between the origin and the inﬁnity. These solutions are given\nby the Ramanujan function, the q-Airy function and the divergent\nbasic hypergeometric series 2ϕ0(0, 0; −; q, x). We use two diﬀerent q-\nBorel-Laplace transformations to obtain our connection formulae.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.3404v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Basic notations",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-2-basic-notations.md",
+      "narrative": null,
+      "content": "In this section, we review our notations. We assume that $q\\in\\mathbb{C}^*$ satisfies $0<|q|<1$. The $q$-shifted operator $\\sigma_q$ is given by $\\sigma_qf(x)=f(qx)$. For any fixed $\\lambda\\in\\mathbb{C}^*\\setminus q^{\\mathbb{Z}}$, the set $[\\lambda ;q]$-spiral is $[\\lambda ;q]:=\\lambda q^{\\mathbb{Z}}=\\{\\lambda q^k;k\\in\\mathbb{Z}\\}$. The (generalized) basic hypergeometric series ${}_r\\varphi_s(a_1,\\dots ,a_r;b_1,\\dots ,b_s;q,x)$ is $$\\begin{aligned}\n{}_r\\varphi_s(a_1,\\dots ,a_r&;b_1,\\dots ,b_s;q,x)\\\\\n&:=\\sum_{n\\ge 0}\\frac{(a_1,\\dots ,a_r;q)_n}{(b_1,\\dots ,b_s;q)_n(q;q)_n}\\left\\{(-1)^nq^{\\frac{n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.3404v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two types of the q-analogue of the Airy function and the connection formula",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-002-3-two-types-of-the-q-analogue-of-the-airy-functi.md",
+      "narrative": null,
+      "content": "There are two different $q$-analogue of the Airy function. One is called the Ramanujan function which appears in [@Ramanujan]. Ismail [@Is] pointed out that the Ramanujan function can be considered as a $q$-analogue of the Airy function. The other one is called the $q$-Airy function which is obtained by K.  Kajiwara, T. Masuda, M. Noumi, Y. Ohta and Y. Yamada [@KMNOY] . In this section, we see the properties of these functions. We explain the reason why they are called $q$-analogue of the Airy function and we show $q$-difference equations which they satisfy.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.3404v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Ramanujan function Aq(x)",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-31-the-ramanujan-function-aqx.md",
+      "narrative": null,
+      "content": "The Ramanujan function appears in Ramanujan's \"Lost notebook\" [@Ramanujan]. Ismail has pointed out that the Ramanujan function can be considered as a $q$-analogue of the Airy function. The Ramanujan function is defined by following convergent series; $$\\operatorname{A}_q(x):=\\sum_{n\\ge 0}\\frac{q^{n^2}}{(q;q)_n}(-x)^n\n={_0\\varphi_1}(-;0;q,-qx).$$\n\nIn the theory of ordinary differencial equations, the term Plancherel-Rotach asymptotics refers to asymptotics around the largest and smallest zeros. With $x=\\sqrt{2n+1}-2^{\\frac{1}{2}}3^{\\frac{1}{3}}n^{\\frac{1}{6}}t$ and for $t\\in\\mathbb{C}$, the Pla",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.3404v1/blocks/prop-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "prop-sec-004-01.md",
+      "narrative": null,
+      "content": "With q = e−δ3 2 , x = −2ie−s 2δ2 as δ →0, 1ϕ1(0; −q; q, −qx) = 2π 2δ−1 2e−( πi δ3) ln 2+( πi 2δ)s+ πi h Ai \u0010 se πi \u0011 + O(δ2) i , 1ϕ1(0; −q; q, qx) = 2π 2δ−1 2e−( πi δ3) ln 2−( πi 2δ)s−πi h Ai \u0010 se−πi \u0011 + O(δ2) i for s in any compact domain of C. Here, Ai(·) is the Airy function. From this proposition, we can regard the q-Airy function as a q-analogue of the Airy function. We can easily check out that the q-Airy function satisﬁes the second order linear q-diﬀerence equation \u0000σ2 q + xσq −1 \u0001 u(x) = 0. (10) Another solution of the equation (10) is given by u(x) = eπi( log x log q) 1ϕ1(0; −q; q, x",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1203.3404v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The q-Airy function Aiq(x)",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-004-32-the-q-airy-function-aiqx.md",
+      "narrative": null,
+      "content": "The q-Airy function Aiq(x)\nThe q-Airy function is found by K. Kajiwara, T. Masuda, M. Noumi, Y.\nOhta and Y. Yamada [8], in their study of the q-Painlev´e equations. This\nfunction is the special solution of the second q-Painlev´e equations and given\nby the following series\nAiq(x) :=\nX\nn≥0\n1\n(−q, q; q)n\nn\n(−1)nq\nn(n−1)\n2\no\n(−x)n = 1ϕ1(0; −q; q, −x).\nT. Hamamoto, K. Kajiwara, N. S. Witte [4] proved following asymptotic\nexpansions;\nProposition 2. With q = e−δ3\n2 , x = −2ie−s\n2δ2 as δ →0,\n1ϕ1(0; −q; q, −qx) = 2π\n1\n2δ−1\n2e−( πi\nδ3) ln 2+( πi\n2δ)s+ πi\n12\nh\nAi\n\u0010\nse\nπi\n3\n\u0011\n+ O(δ2)\ni\n,\n1ϕ1(0; −q; q, qx)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.3404v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Covering transformations",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-005-33-covering-transformations.md",
+      "narrative": null,
+      "content": "We define a covering transformation of a second order linear $q$-difference equation.\n\n::: defi\nFor a $q$-difference equation $$\\label{sh}\na(x)u(q^2x)+b(x)u(qx)+c(x)u(x)=0,$$ we define the covering transformation as follows $$t^2:=x,\\quad v(t):=u(t^2),\\quad p:=\\sqrt{q}.$$\n:::\n\nThe covering transform of the equation ([\\[sh\\]](#sh){reference-type=\"ref\" reference=\"sh\"}) is given by $$a(t^2)v(p^2t)+b(t^2)v(pt)+c(t^2)v(t)=0.$$ By the covering transformation, the equation $$\\left(K\\cdot x\\sigma_q^2-\\sigma_q+1\\right)u(x)=0$$ is transformed to $$\\left(K\\cdot t^2\\sigma_p^2-\\sigma_p+1\\right)v(t)=0,\\labe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.3404v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The q-Airy equation around the infinity",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-006-34-the-q-airy-equation-around-the-infinity.md",
+      "narrative": null,
+      "content": "We consider the behavior of the equation ([\\[qai\\]](#qai){reference-type=\"ref\" reference=\"qai\"}) around the infinity. We set $x=1/t$ and $z(t)=u(1/t)$. Then $z(t)$ satisfies $$\\left(-\\sigma_q^2+\\frac{1}{q^2t}\\sigma_q+1\\right)z(t)=0.$$ We set $\\mathcal{E}(t)=1/\\theta (-q^2t)$ and $f(t)=\\sum_{n\\ge 0}a_nt^n,\\quad a_0=1$. We assume that $z(t)$ can be described as $$z(t)=\\mathcal{E}(t)f(t)=\\frac{1}{\\theta (-q^2t)}\\left(\\sum_{n\\ge 0}a_nt^n\\right).$$\n\nThe function $\\mathcal{E}(t)$ has the following property;\n\n::: lem\nFor any $t\\in\\mathbb{C}^*$, $$\\sigma_q\\mathcal{E}(t)=-q^2t\\mathcal{E}(t),\n\\qquad \\si",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.3404v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The q-Borel transformation and the q-Laplace transformation",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-007-35-the-q-borel-transformation-and-the-q-laplace.md",
+      "narrative": null,
+      "content": "::: defi\nFor $f(t)=\\sum_{n\\ge 0}a_nt^n$, the $q$-Borel transformation is defined by $$g(\\tau )=\\left(\\mathcal{B}_q^-f\\right)(\\tau ):=\\sum_{n\\ge 0}a_nq^{-\\frac{n(n-1)}{2}}\\tau^n,$$ and the $q$-Laplace transformation is given by $$\\left(\\mathcal{L}_q^-g\\right)(t):=\\frac{1}{2\\pi i}\\int_{|\\tau |=r}g(\\tau )\\theta\\left(\\frac{t}{\\tau}\\right)\\frac{d\\tau}{\\tau },\\qquad 0<r<\\frac{1}{|q^2|}.$$\n:::\n\nThe $q$-Borel transformation can be considered as a formal inverse of the $q$-Laplace transformation.\n\n::: lem\nFor any entire function $f$, $$\\mathcal{L}_q^-\\circ\\mathcal{B}_q^-f=f.$$\n:::\n\n::: proof\n*Proof.* W",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.3404v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The connection formula of the q-Airy function",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-008-36-the-connection-formula-of-the-q-airy-function.md",
+      "narrative": null,
+      "content": "Applying the $q$-Borel transformation in [\\[qbql\\]](#qbql){reference-type=\"ref\" reference=\"qbql\"} to the equation ([\\[kram\\]](#kram){reference-type=\"ref\" reference=\"kram\"}) and using lemma [\\[orqb\\]](#orqb){reference-type=\"ref\" reference=\"orqb\"}, we obtain the first order $q$-difference equation $$g(q\\tau )=(1+q^2\\tau )(1-q^2\\tau )g(\\tau ).$$ Since $g(0)=1$, $g(\\tau )$ is given by an infinite product $$g(\\tau )=\\frac{1}{(-q^2\\tau ;q)_\\infty(q^2\\tau ;q)_\\infty}$$ which has single poles at $$\\left\\{\\tau ;\\tau =\\pm q^{-2-k},\\quad \\forall k\\in\\mathbb{Z}_{\\ge 0}\\right\\}.$$ By Cauchy's residue theor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.3404v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Connection formula of the divergent series 20(0,0;-;q,)",
+      "pageStart": 13,
+      "pageEnd": 13,
+      "target": "../sections/sec-009-4-connection-formula-of-the-divergent-series-200.md",
+      "narrative": null,
+      "content": "In this section, we show a connection formula of the divergent series ${}_2\\varphi_0$. This series appears in the second solution of the Ramanujan equation [\\[ram\\]](#ram){reference-type=\"eqref\" reference=\"ram\"}. At first, we review two $q$-exponential functions to consider our connection formula.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.3404v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two different q-exponential functions",
+      "pageStart": 13,
+      "pageEnd": 14,
+      "target": "../sections/sec-010-41-two-different-q-exponential-functions.md",
+      "narrative": null,
+      "content": "In this section, we review two different $q$-exponential functions from the viewpoint of the connection problems. One of the $q$-exponential function $e_q(x)$ is given by $$e_q(x):={}_1\\varphi_0 (0;-;q,x)=\\sum_{n\\ge 0}\\frac{x^n}{(q;q)_n}.$$ The other $q$-exponential function $E_q(x)$ is $$E_q(x):={}_0\\varphi_0(-;-;q,-x)=\\sum_{n\\ge 0}\\frac{q^{\\frac{n(n-1)}{2}}}{(q;q)_n}x^n.$$ The function $e_q(x)$ satisfies the following first order $q$-difference equation $$\\left\\{\\sigma_q-(1-x)\\right\\}u(x)=0$$ and $E_q(x)$ satisfies $$\\left\\{(1+x)\\sigma_q-1\\right\\}u(x)=0.$$ The limit $q\\to 1-0$ converges the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.3404v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The connection formula and alternate representation",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-011-42-the-connection-formula-and-alternate-represen.md",
+      "narrative": null,
+      "content": "At first, we show the following connection formula between $e_q(\\cdot )$ and $E_q(\\cdot )$.\n\n::: thm\n[]{#eqEq label=\"eqEq\"} For any $x\\in\\mathbb{C}^*\\setminus [1;q]$, $$e_q(x)=\\frac{(q;q)_\\infty}{\\theta_q(-x)}E_q\\left(-\\frac{q}{x}\\right)$$ where $|x|<1$.\n:::\n\n::: proof\n*Proof.* The function $e_q(x)$ and $E_q(x)$ have infinite product as follows: $$e_q(x)=\\frac{1}{(x;q)_\\infty},\\qquad |x|<1$$ and $$E_q(x)=(-x;q)_\\infty .$$ We remark that $e_q(x)$ can be described as $$e_q(x)=\\frac{1}{\\theta_q(-x)}\\left(q,\\frac{q}{x};q\\right)_\\infty =\\frac{(q;q)_\\infty}{\\theta_q(-x)}E_q\\left(-\\frac{q}{x}\\right)$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.3404v1/blocks/lem-sec-012-02",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 19,
+      "target": "lem-sec-012-02.md",
+      "narrative": null,
+      "content": "For any entire function f(x), we have L+ q ◦B+ q f = f. We give the proof of theorem 3.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1203.3404v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The connection formula of the series 20(0,0;-;q,)",
+      "pageStart": 15,
+      "pageEnd": 19,
+      "target": "../sections/sec-012-43-the-connection-formula-of-the-series-2000-q.md",
+      "narrative": null,
+      "content": "The aim of this section is to give a proof for the following theorem;\n15\nTheorem 3. For any x ∈C∗\\ [−λ; q],\nθq(x)2f0\n\u0012\n0, 0; −; q, −x\nq\n\u0013\n= (q; q)∞\nθq(x)θq2\n\u0010\n−λ2\nqx\n\u0011\nθq\n\u0010\n−λ\nq\n\u0011\nθq\n\u0000 λ\nx\n\u0001 1ϕ1\n\u0012\n0; q; q2, q2\nx\n\u0013\n+ (q; q)∞\n1 −q\nθq(x)θq2\n\u0010\n−λ2\nx\n\u0011\nθq\n\u0010\n−λ\nq\n\u0011\nθq\n\u0000 λ\nx\n\u0001\nλ\nx 1ϕ1\n\u0012\n0; q3; q2, q3\nx\n\u0013\n.\nWe deﬁne the q-Borel-Laplace transformations of the ﬁrst kind to obtain\nthe connection formula between the origin and the inﬁnity.\nDeﬁnition 3. For any analytic function f(x), the q-Borel transformation of\nthe ﬁrst kind B+\nq is\n\u0000B+\nq f\n\u0001\n(ξ) :=\nX\nn≥0\nanq\nn(n−1)\n2\nξn =: ϕ(ξ),\nthe q-Laplace transform",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1203.3404v1/blocks/thm-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 19,
+      "target": "thm-sec-012-01.md",
+      "narrative": null,
+      "content": "For any x ∈C∗\\ [−λ; q], θq(x)2f0 \u0012 0, 0; −; q, −x q \u0013 = (q; q)∞ θq(x)θq2 \u0010 −λ2 qx \u0011 θq \u0010 −λ q \u0011 θq \u0000 λ x \u0001 1ϕ1 \u0012 0; q; q2, q2 x \u0013 + (q; q)∞ 1 −q θq(x)θq2 \u0010 −λ2 x \u0011 θq \u0010 −λ q \u0011 θq \u0000 λ x \u0001 λ x 1ϕ1 \u0012 0; q3; q2, q3 x \u0013 . We deﬁne the q-Borel-Laplace transformations of the ﬁrst kind to obtain the connection formula between the origin and the inﬁnity. Deﬁnition 3. For any analytic function f(x), the q-Borel transformation of the ﬁrst kind B+ q is \u0000B+ q f \u0001 (ξ) := X n≥0 anq n(n−1) ξn =: ϕ(ξ), the q-Laplace transformation of the ﬁrst kind L+ q is \u0000L+ q ϕ \u0001 (x) := X n∈Z ϕ(λqn) θq \u0000λqn x \u0001. We remark th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}

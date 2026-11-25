@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/bib-verification/reference/geck-rouquier-centsim.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../assets/navbar/rail-2463orjuei9.js" defer></script><script src="../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../.." data-fa-to-root="../../../../../../../../..">{"data":"rail-2463orjuei9","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/bib-verification/reference/geck-rouquier-centsim.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/bib-verification/reference/geck-rouquier-centsim.attestations</h1>
+<p class="m">A <a href="../../../../../../">qa-attestations</a> node held by <a href="../../../../../">qou</a>, at <code>test/attestations/bib-verification/reference/geck-rouquier-centsim.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>bib-verification</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;reference&quot;,
+  &quot;id&quot;: &quot;geck-rouquier-centsim&quot;,
+  &quot;path&quot;: null
+}</pre></dd>
+<dt>verifications</dt><dd><pre>[
+  {
+    &quot;position&quot;: 375,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/centsim/centsim.pdf&quot;
+      },
+      &quot;id&quot;: &quot;geck-rouquier-centsim&quot;,
+      &quot;status&quot;: &quot;unreviewed&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;core&quot;,
+        &quot;rationale&quot;: &quot;Geck-Rouquier, &#39;Centers and Simple Modules for Iwahori-Hecke Algebras&#39;. The file has NO text layer (22 pages, CCITTFax scan; pdftotext, pypdf, pdfminer and the built-in stream extractor all return 0 chars, and tesseract is unavailable in this sandbox) -- it was identified and read via the vision path only. It is not merely relevant, it is the primary source for a claim a corpus probe made TODAY. Section 5.1 constructs the centre of the generic Iwahori-Hecke algebra as the basis {z_C} indexed by conjugacy classes C of W, via the class polynomials f_{w,C} determined by phi(T_w) = sum_C f_{w,C} phi(T_{w_C}); that is exactly the object docs/audits/2026-08-08-hh1-h5-bring-root-cocenter-action.md invokes when it writes &#39;dim Z = 7 is independently the expected value (|Partitions(5)| = 7, the rank of the Geck-Rouquier centre basis)&#39;, and the probe computations/hh1_h5_cocenter_action.py carries no reference comment at all. Theorem 5.2 (the reduction map Z(H) -&gt; Z(kH) is surjective for Iwahori-Hecke algebras) is the stability statement that licenses reading the centre after specializing H_5 to the Bring root zeta_5, which is precisely what the probe does; Theorems 3.3 / 5.4 give the genericity of the number of simple modules under specialization. No Geck-Rouquier entry exists in references.ts.&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;Sec. 5.1 (the class-polynomial centre basis)&quot;,
+            &quot;statement&quot;: &quot;For the generic Iwahori-Hecke algebra H of a finite Weyl group W, the elements z_C = sum_w ind(T_w)^{-1} f_C(T_w) T_{w^{-1}}, one per conjugacy class C of W, form an A-basis of the centre of H.&quot;,
+            &quot;useForFolio&quot;: &quot;The source of the &#39;Geck-Rouquier centre basis&#39; the H_5(zeta_5) cocenter probe uses as its dim Z = 7 consistency check, currently asserted by name with no citation.&quot;,
+            &quot;targets&quot;: [
+              &quot;computations/hh1_h5_cocenter_action.py&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Thm. 5.2&quot;,
+            &quot;statement&quot;: &quot;For Iwahori-Hecke algebras the reduction map Z(H) -&gt; Z(kH) on centres is surjective (the centre is stable under specialization).&quot;,
+            &quot;useForFolio&quot;: &quot;The statement that licenses computing the centre of H_5 after specializing to the Bring root of unity, which is the setting of the HH^0 / HH^1 computation; it is currently taken for granted.&quot;,
+            &quot;targets&quot;: [
+              &quot;computations/hh1_h5_cocenter_action.py&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Thm. 3.3 / Thm. 5.4&quot;,
+            &quot;statement&quot;: &quot;Under stated height-1 / height-2 prime conditions the number of simple modules of the specialized algebra equals that of a cyclotomic specialization -- the &#39;genericity&#39; of the number of simple modules for Iwahori-Hecke algebras.&quot;,
+            &quot;useForFolio&quot;: &quot;The general control on how the Wedderburn block count behaves at a root of unity, which the corpus&#39;s root-of-unity Hecke work (H_5 at zeta_5) needs and currently reasons about case by case.&quot;,
+            &quot;targets&quot;: [
+              &quot;computations/hh1_h5_cocenter_action.py&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;add-reference&quot;,
+            &quot;rationale&quot;: &quot;A same-day probe and audit cite the &#39;Geck-Rouquier centre basis&#39; by name; there is no Geck-Rouquier entry, and the probe script carries no -- Ref: at all.&quot;,
+            &quot;target&quot;: &quot;computations/hh1_h5_cocenter_action.py&quot;,
+            &quot;bean&quot;: &quot;qou-olwz&quot;
+          },
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;Once the key exists, the probe&#39;s dim Z = 7 consistency check and its specialization-to-zeta_5 step should cite Sec. 5.1 and Thm 5.2 rather than asserting them.&quot;,
+            &quot;target&quot;: &quot;computations/hh1_h5_cocenter_action.py&quot;,
+            &quot;bean&quot;: &quot;qou-pd8e&quot;
+          },
+          {
+            &quot;action&quot;: &quot;new-remark&quot;,
+            &quot;rationale&quot;: &quot;Record the extraction fact so the next agent does not re-fail: this upload is an image-only scan with no text layer; pdftotext/pypdf/pdfminer all return zero characters and tesseract is unavailable, so it must be read via the vision path. It sat as &#39;UNVERIFIED -- identify on ingestion&#39; in the 2026-06-08 ingestion backlog for that reason.&quot;,
+            &quot;target&quot;: &quot;docs/workplans/2026-06-08-uploaded-paper-results-ingestion-backlog.md&quot;,
+            &quot;bean&quot;: &quot;qou-gbvs&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-08T23:34:05.459Z&quot;,
+        &quot;source_sha&quot;: &quot;41eaa1d757e6&quot;
+      },
+      &quot;note&quot;: &quot;Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \&quot;held but uncitable\&quot;; the join already existed on the references.ts side.&quot;,
+      &quot;verified_at&quot;: &quot;2026-09-03T04:37:40Z&quot;,
+      &quot;verified_by&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;model&quot;: &quot;claude-opus-5&quot;
+      }
+    }
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-staircase-partition-remark",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:staircase-partition-remark",
+  "kind": "remark",
+  "title": "Self-conjugacy and electroweak role of the staircase partition",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-staircase-partition"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/def-staircase-partition",
+  "text": "staircase-partition-remark.md",
+  "provenance": "authored"
+}

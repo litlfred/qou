@@ -1,0 +1,894 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0102098v1",
+  "title": "Skein theory and the Murphy operators",
+  "variant": "pdf",
+  "pages": 22,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "The skein models.",
+      "number": "1",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-the-skein-models"
+    },
+    {
+      "level": 2,
+      "title": "Variants of the Hecke algebras.",
+      "number": "1.1",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-11-variants-of-the-hecke-algebras"
+    },
+    {
+      "level": 1,
+      "title": "Geometric views of the Murphy operators.",
+      "number": "2",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-2-geometric-views-of-the-murphy-operators"
+    },
+    {
+      "level": 1,
+      "title": "The skein of the annulus.",
+      "number": "3",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-3-the-skein-of-the-annulus"
+    },
+    {
+      "level": 2,
+      "title": "Symmetric functions and the skein of the annulus.",
+      "number": "3.1",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-31-symmetric-functions-and-the-skein-of-the-annu"
+    },
+    {
+      "level": 2,
+      "title": "Symmetric functions of the Murphy operators.",
+      "number": "3.2",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-32-symmetric-functions-of-the-murphy-operators"
+    },
+    {
+      "level": 1,
+      "title": "The annulus with two boundary points.",
+      "number": "4",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-4-the-annulus-with-two-boundary-points"
+    },
+    {
+      "level": 2,
+      "title": "Algebraic properties of A.",
+      "number": "4.1",
+      "page": 17,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-41-algebraic-properties-of-a"
+    },
+    {
+      "level": 2,
+      "title": "Skein interaction between Hn, A and C.",
+      "number": "4.2",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-42-skein-interaction-between-hn-a-and-c"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 21,
+      "pageLabel": null,
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-009-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 735,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "murphy operators",
+          "heading": false
+        },
+        {
+          "term": "homﬂy skein",
+          "heading": false
+        },
+        {
+          "term": "skein theory",
+          "heading": false
+        },
+        {
+          "term": "mth power",
+          "heading": false
+        },
+        {
+          "term": "centre",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "power sums",
+          "heading": false
+        },
+        {
+          "term": "power sum",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0102098v1 [math.GT] 13 Feb 2001 Skein theory and the Murphy operators HUGH R. MORTON Department of Mathematical Sciences, University of Liverpool, Peach St, Liverpool, L69 7ZL, England. morton@liv.ac.uk Abstract The Murphy operators in the Hecke algebra Hn of type A are ex- plicit commuting elements whose sum generates the centre. They can be represented by simple tangles in the Homﬂy skein theory version",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0102098v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-the-skein-models",
+      "number": "1",
+      "title": "The skein models.",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 409,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "skein",
+          "heading": true
+        },
+        {
+          "term": "homﬂy skein",
+          "heading": false
+        },
+        {
+          "term": "n-tangles",
+          "heading": false
+        },
+        {
+          "term": "quadratic relations",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "σiσi",
+          "heading": false
+        },
+        {
+          "term": "transposition",
+          "heading": false
+        },
+        {
+          "term": "models",
+          "heading": true
+        }
+      ],
+      "extract": "The skein models. The skein theory model of Hn is based on the framed Homﬂy skein relations, in their simplest form − = (s −s−1) and = v−1 . The Homﬂy skein S(F) of a planar surface F, with some designated input and output boundary points, is deﬁned as linear combinations of oriented tangles in F, modulo these two local relations, and Reidemeister moves II and III. The coeﬃcient ring can be taken as Λ = Z[v±1, s±1]",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-variants-of-the-hecke-algebras",
+      "number": "1.1",
+      "title": "Variants of the Hecke algebras.",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 287,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hecke",
+          "heading": true
+        },
+        {
+          "term": "skein",
+          "heading": false
+        },
+        {
+          "term": "variants",
+          "heading": true
+        },
+        {
+          "term": "murphy",
+          "heading": false
+        },
+        {
+          "term": "match",
+          "heading": false
+        }
+      ],
+      "extract": "Variants of the Hecke algebras. A simple adjustment of the skein relations, as in [13], allows for a skein model of Hn whose parameters can be readily adapted to match any of the diﬀerent appearances of the algebra. 4 Extend the coeﬃcient ring to include an invertible parameter x, and deﬁne the skein Rn n(x, v, s) by linear combinations of oriented n-tangles modulo the relations x−1 −x = (s −s−1) and = xv−1 . There",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-geometric-views-of-the-murphy-operators",
+      "number": "2",
+      "title": "Geometric views of the Murphy operators.",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 501,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "murphy operators",
+          "heading": true
+        },
+        {
+          "term": "repre sented",
+          "heading": false
+        },
+        {
+          "term": "z2v",
+          "heading": false
+        },
+        {
+          "term": "single braid",
+          "heading": false
+        },
+        {
+          "term": "skein",
+          "heading": false
+        },
+        {
+          "term": "linear combination",
+          "heading": false
+        },
+        {
+          "term": "views",
+          "heading": true
+        },
+        {
+          "term": "ram",
+          "heading": false
+        }
+      ],
+      "extract": "Geometric views of the Murphy operators. The Murphy operators M(j) and their sum M have simple skein represen- tatives as shown here, using Rn n(v, s) as the model for the Hecke algebra Hn. Theorem 2.1 (Ram). The Murphy operator M(j) can be represented in Hn by a single braid T(j), up to linear combination with the identity. 5 Theorem 2.2 (Morton). The sum M of the Murphy operators can be rep- resented in Hn by a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-the-skein-of-the-annulus",
+      "number": "3",
+      "title": "The skein of the annulus.",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 639,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "skein",
+          "heading": true
+        },
+        {
+          "term": "annulus",
+          "heading": true
+        },
+        {
+          "term": "homﬂy skein",
+          "heading": false
+        },
+        {
+          "term": "simple skein",
+          "heading": false
+        },
+        {
+          "term": "skein theory",
+          "heading": false
+        },
+        {
+          "term": "murphy operators",
+          "heading": false
+        },
+        {
+          "term": "eigenvector",
+          "heading": false
+        },
+        {
+          "term": "kawagoe",
+          "heading": false
+        }
+      ],
+      "extract": "The skein of the annulus. The Homﬂy skein of the annulus, C, as discussed in [12] and originally in [16], is deﬁned as linear combinations of diagrams in the annulus, modulo the Homﬂy skein relations. The element X ∈C will be indicated on a diagram as X . We shall make use of the results of section 2 to study C, and also to ﬁnd simple skein representatives for the power sums of the Murphy operators in Hn in a way",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-31-symmetric-functions-and-the-skein-of-the-annu",
+      "number": "3.1",
+      "title": "Symmetric functions and the skein of the annulus.",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 966,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "symmetric functions",
+          "heading": true
+        },
+        {
+          "term": "skein",
+          "heading": true
+        },
+        {
+          "term": "column idempotent",
+          "heading": false
+        },
+        {
+          "term": "aiston showed",
+          "heading": false
+        },
+        {
+          "term": "σian",
+          "heading": false
+        },
+        {
+          "term": "amtm",
+          "heading": false
+        },
+        {
+          "term": "closed braid",
+          "heading": false
+        },
+        {
+          "term": "anan",
+          "heading": false
+        }
+      ],
+      "extract": "Symmetric functions and the skein of the annulus. In this section I recall some explicit results about elements in the Hecke algebras and their closure in C, and their interpretation in the context of symmetric functions, following the methods of Macdonald. This leads to a simple description in terms of generating functions of some interrelations in C, and also of the elements to be used later to represent the power",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-32-symmetric-functions-of-the-murphy-operators",
+      "number": "3.2",
+      "title": "Symmetric functions of the Murphy operators.",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 606,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "murphy operators",
+          "heading": true
+        },
+        {
+          "term": "murphy series",
+          "heading": false
+        },
+        {
+          "term": "symmetric functions",
+          "heading": true
+        },
+        {
+          "term": "centre",
+          "heading": false
+        },
+        {
+          "term": "hecke algebra",
+          "heading": false
+        },
+        {
+          "term": "power sum",
+          "heading": false
+        },
+        {
+          "term": "coeﬃcients",
+          "heading": false
+        },
+        {
+          "term": "annulus",
+          "heading": false
+        }
+      ],
+      "extract": "Symmetric functions of the Murphy operators. The main result in this paper, besides theorem 2.2 and its consequences, is an expression for the mth power sum of the Murphy operators in Hn in terms of the element Pm ∈C. For this I use a previously unremarked relation between the Hecke alge- bras and the skein of the annulus. This relation takes the form of a very natural homomorphism ψn from C to the centre of each",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-4-the-annulus-with-two-boundary-points",
+      "number": "4",
+      "title": "The annulus with two boundary points.",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 201,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "annulus",
+          "heading": true
+        },
+        {
+          "term": "skein",
+          "heading": false
+        },
+        {
+          "term": "placing",
+          "heading": false
+        },
+        {
+          "term": "boundary",
+          "heading": true
+        }
+      ],
+      "extract": "The annulus with two boundary points. To prove theorems 3.6 and 3.9 I introduce a third skein S(F), whose under- lying surface is the annulus with a single input on one boundary component and corresponding output on the other, as shown, . Write A for this skein, whose elements are represented as linear combi- nations of oriented tangles in the annulus consisting of a single arc and a number of closed curves. As for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-41-algebraic-properties-of-a",
+      "number": "4.1",
+      "title": "Algebraic properties of A.",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 255,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "algebraic properties",
+          "heading": true
+        },
+        {
+          "term": "kawagoe",
+          "heading": false
+        },
+        {
+          "term": "c1c",
+          "heading": false
+        },
+        {
+          "term": "skein",
+          "heading": false
+        },
+        {
+          "term": "a1a",
+          "heading": false
+        }
+      ],
+      "extract": "Algebraic properties of A. Kawagoe [9] and other authors have used a skein which is linearly isomorphic to A, based on the annulus with input and output on the same component. The signiﬁcant advantage of A lies in its algebraic properties. Both l and r are algebra homomorphisms, since it is clear diagrammati- cally that l(c1, a1)l(c2, a2) = l(c1c2, a1a2), while r behaves similarly. Theorem 4.1 The algebra A is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-42-skein-interaction-between-hn-a-and-c",
+      "number": "4.2",
+      "title": "Skein interaction between Hn, A and C.",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 746,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "wiring diagram",
+          "heading": false
+        },
+        {
+          "term": "skein",
+          "heading": true
+        },
+        {
+          "term": "aty",
+          "heading": false
+        },
+        {
+          "term": "s2t",
+          "heading": false
+        },
+        {
+          "term": "linear map",
+          "heading": false
+        },
+        {
+          "term": "sat",
+          "heading": false
+        },
+        {
+          "term": "induces linear",
+          "heading": false
+        },
+        {
+          "term": "strings",
+          "heading": false
+        }
+      ],
+      "extract": "Skein interaction between Hn, A and C. We can make use of wiring diagrams, as described in [13], to induce linear maps between skeins. A wiring diagram W is an inclusion of one surface F into another F ′, along with a ﬁxed diagram of curves in F ′ which avoid F, and connect any distinguished input and output points on the boundaries of both, respecting orientation. A wiring W induces a linear map, denoted S(W) :",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 22,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 342,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hecke algebras",
+          "heading": false
+        },
+        {
+          "term": "phd dissertation",
+          "heading": false
+        },
+        {
+          "term": "quan tum",
+          "heading": false
+        },
+        {
+          "term": "london math",
+          "heading": false
+        },
+        {
+          "term": "liverpool",
+          "heading": false
+        },
+        {
+          "term": "aiston",
+          "heading": false
+        },
+        {
+          "term": "braid groups",
+          "heading": false
+        },
+        {
+          "term": "theory ramiﬁcations",
+          "heading": false
+        }
+      ],
+      "extract": "[1] A.K. Aiston, Skein theoretic idempotents of Hecke algebras and quan- tum group invariants. PhD dissertation, University of Liverpool, 1996. [2] A.K. Aiston, Adams operators and knot decorations. Liverpool Univer- sity preprint 1997, q-alg 9711015. [3] C. Blanchet, Hecke algebras, modular categories and 3-manifolds quan- tum invariants. Topology 39 (2000), 193-223. [4] R. Dipper and G.D. James, Blocks and",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "homﬂy skein",
+      "heading": false
+    },
+    {
+      "term": "skein relation",
+      "heading": false
+    },
+    {
+      "term": "skein theory",
+      "heading": false
+    },
+    {
+      "term": "murphy operators",
+      "heading": true
+    },
+    {
+      "term": "simple skein",
+      "heading": false
+    },
+    {
+      "term": "skein theoretic",
+      "heading": false
+    },
+    {
+      "term": "skein representatives",
+      "heading": false
+    },
+    {
+      "term": "murphy series",
+      "heading": false
+    },
+    {
+      "term": "hecke algebra",
+      "heading": false
+    },
+    {
+      "term": "annulus outside",
+      "heading": false
+    },
+    {
+      "term": "single tangle",
+      "heading": false
+    },
+    {
+      "term": "jucys-murphy elements",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 10,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 11,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p21); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 11 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0102098v1"
+  }
+}

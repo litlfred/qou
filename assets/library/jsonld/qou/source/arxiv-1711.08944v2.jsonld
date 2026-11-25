@@ -1,0 +1,59 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1711.08944v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "The second largest eigenvalues of some Cayley graphs on alternating groups ∗",
+  "contains": [
+    "library/arxiv-1711.08944v2/sections/sec-front-matter",
+    "library/arxiv-1711.08944v2/sections/sec-000",
+    "library/arxiv-1711.08944v2/sections/sec-001",
+    "library/arxiv-1711.08944v2/sections/sec-002"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "The second largest eigenvalues of some Cayley graphs on alternating groups ∗ — Let An denote the alternating group of degree n with n ≥3.\n\n**The second largest eigenvalues of some Cayley graphs on alternating groups ∗**\n\n*Xueyi Huang*\n\n12 pp, 4 sections.\n\n**Abstract.** Let An denote the alternating group of degree n with n ≥3. The al- ternating group graph AGn, extended alternating group graph EAGn and complete alternating group graph CAGn are the Cayley graphs Cay(An, T1), Cay(An, T2) and Cay(An, T3), respectively, where T1 = {(1, 2, i), (1, i, 2) | 3 ≤i ≤n}, T2 = {(1, i, j), (1, j, i) | 2 ≤i < j ≤n} and T3 = {(i, j, k), (i, k, j) | 1 ≤i < j < k ≤n}. In this paper, we determine the second largest eigenvalues of AGn, EAGn and CAGn.\n\n**Outline.** Front matter; 1 Introduction; 2 The second largest eigenvalue of AGn; 3 The second largest eigenvalues of EAGn and C",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1711.08944&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1711.08944v2",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "1711.08944v2.pdf",
+    "source_sha256": "ad7a020e7e92b788c3344cb1910ded6fda534908c9d08c1c44096e796d737234",
+    "pages": 12,
+    "arxiv": {
+      "id": "1711.08944",
+      "version": "2",
+      "primary_class": "math.CO",
+      "stamp_date": "12 Dec 2018"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

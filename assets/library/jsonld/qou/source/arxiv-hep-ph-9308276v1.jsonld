@@ -1,0 +1,66 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-hep-ph-9308276v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "The Electroweak Chiral Lagrangian for the Standard Model with a heavy Higgs",
+  "contains": [
+    "library/arxiv-hep-ph-9308276v1/sections/sec-front-matter",
+    "library/arxiv-hep-ph-9308276v1/sections/sec-000",
+    "library/arxiv-hep-ph-9308276v1/sections/sec-001",
+    "library/arxiv-hep-ph-9308276v1/sections/sec-002",
+    "library/arxiv-hep-ph-9308276v1/sections/sec-003",
+    "library/arxiv-hep-ph-9308276v1/sections/sec-004",
+    "library/arxiv-hep-ph-9308276v1/sections/sec-005",
+    "library/arxiv-hep-ph-9308276v1/sections/sec-006",
+    "library/arxiv-hep-ph-9308276v1/sections/sec-007",
+    "library/arxiv-hep-ph-9308276v1/sections/sec-008",
+    "library/arxiv-hep-ph-9308276v1/sections/sec-009"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "The Electroweak Chiral Lagrangian for the Standard Model with a heavy Higgs — The most general chiral Lagrangian for electroweak interactions with the complete set of SU(2)L × U(1)Y invariant\n\n**The Electroweak Chiral Lagrangian for the Standard Model with a heavy Higgs**\n\n*Maria J. Herrero∗and Ester Ruiz Morales†*\n\n24 pp, 11 sections.\n\n**Abstract.** The most general chiral Lagrangian for electroweak interactions with the complete set of SU(2)L × U(1)Y invariant operators up to dimen- sion four is considered. The two-point and three-point functions with external gauge ﬁelds are derived from this eﬀective chiral Lagrangian to one-loop order in a generic Rξ-gauge. The same set of Green’s functions are paralelly studied in the renormalizable standard model to one-loop order, in a Rξ-gauge and in the large Higgs mass limit. An appropri- ate set of matching conditions connecting the Green’s functions of the two theories allows us to derive, systematically, the values of the chi- ral Lagrangian coeﬃcients corresponding to the large Higgs mass limit of the standard model.\n\n**Outline.** Front matter; 1 Introduction; 2 The electroweak chiral Lagrangian; 3 Effective Lagrangian parameters for a heavy ; 4 Some physical consequences; 5 Conclusions; Aknowledgments; Appendix A; Appendix B; Two point functions; Three point functions",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/assumed-1991-2003/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/assumed-1991-2003/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:hep-ph/9308276&metadataPrefix=arXiv), submitted 1993-08-14, assumed licence per http://arxiv.org/licenses/assumed-1991-2003/",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-hep-ph-9308276v1",
+    "title_source": "corroborated",
+    "title_from": "structure.json metadata.title",
+    "title_verified": true,
+    "source_file": "9308276v1.pdf",
+    "source_sha256": "498931b15afb3f650b39794aa3624328e154dd4ae3ee83e68564ee4b11000aff",
+    "pages": 24,
+    "arxiv": {
+      "id": "hep-ph/9308276",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "14 Aug 1993"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

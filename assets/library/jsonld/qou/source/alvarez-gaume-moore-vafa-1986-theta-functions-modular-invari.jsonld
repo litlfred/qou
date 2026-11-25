@@ -1,0 +1,59 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari",
+  "contains": [
+    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-front-matter",
+    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-000",
+    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-001",
+    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-002",
+    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-003",
+    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-004",
+    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-005",
+    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-006",
+    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-007",
+    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-008",
+    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-009",
+    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-010",
+    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-011",
+    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-012",
+    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-013",
+    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-014",
+    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-015",
+    "library/alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari/sections/sec-016"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Theta Functions, Modular Invariance, and Strings — We use Quillen's theorem and algebraic geometry to investigate the modular transformation properties of some quantities of interest in string\n\n**Theta Functions, Modular Invariance, and Strings**\n\n*Theta Functions, Modular Invariance, and Strings*\n\n40 pp, 18 sections.\n\n**Abstract.** We use Quillen's theorem and algebraic geometry to investigate the modular transformation properties of some quantities of interest in string theory. In particular, we show that the spin structure dependence of the chiral Dirac determinant on a Riemann surface is given by Riemann's theta function. We use this result to investigate the modular invariance of multiloop heterotic string amplitudes.\n\n**Outline.** Front matter; 1 Introduction; 17 Vi; 10 L. Alvarez-Gaume, G. Moore, and C. Vafa Usi; Ω-Ωy; d Theta Functions; 18 L. Alvarez-Gaume, G. Moore, and C. Vafa cas; LooJ; 4 Holomorphic Factorization; 1 -εj dsTrδϊ); 1 -εj dsTrδϊ) tD-ί-e-\"; 1 \" ~Az(p)Az(-p).; W PJ>, '; Vfl^dtlΩ/; Γo lΊ; Γl OΊ Γl oΊ; (EL ED (EL ED; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "alvarez-gaume-moore-vafa-1986-theta-functions-modular-invari",
+    "title_source": "slug",
+    "source_file": "alvarez-gaume-moore-vafa-1986-theta-functions-modular-invariance-and-strings.pdf",
+    "source_sha256": "c99ca1cd756f7aa615133e9608b66473d6a90f2a5d3c111dc38443674da292e1",
+    "pages": 40,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

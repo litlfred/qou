@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/cor-ma1",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "Overpartitions, lattice paths and Rogers-Ramanujan identities",
+      "dcterms:creator": [
+        "teaching, The documents may come from",
+        "research"
+      ],
+      "dcterms:issued": "D:20260712",
+      "dcterms:source": "library/cor-ma1/manifest.jsonld",
+      "dcterms:hasVersion": "library/cor-ma1"
+    }
+  ]
+}

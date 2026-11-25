@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-borel-partial-resolution",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:borel-partial-resolution",
+  "kind": "proposition",
+  "title": "Borel's theorem partially discharges the depth correspondence's sharpness target — explicit dimensions",
+  "cites": [
+    "references/bloch2000",
+    "references/suslin1991"
+  ],
+  "tags": [
+    "borel-theorem",
+    "k-theory",
+    "keystone-discharge",
+    "bring-natural-fields",
+    "beilinson-conjecture",
+    "graded-mikusinski",
+    "explicit-dimensions"
+  ],
+  "leanRef": "qou:QOU.Observations.BorelPartialResolution.borel_partial",
+  "text": "borel-partial-resolution.md",
+  "provenance": "authored"
+}

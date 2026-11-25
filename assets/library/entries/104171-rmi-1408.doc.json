@@ -1,0 +1,679 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "104171-rmi-1408",
+  "title": "104171-rmi-1408",
+  "variant": "pdf",
+  "pages": 24,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "129",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "From algebras to superalgebras",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "131",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-from-algebras-to-superalgebras"
+    },
+    {
+      "level": 1,
+      "title": "From octonions to composition superalgebras",
+      "number": "3",
+      "page": 10,
+      "pageLabel": "138",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-from-octonions-to-composition-superalgebras"
+    },
+    {
+      "level": 1,
+      "title": "Semisimplification: skew transformations, derivations",
+      "number": "4",
+      "page": 15,
+      "pageLabel": "143",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-semisimplification-skew-transformations-deriva"
+    },
+    {
+      "level": 1,
+      "title": "The extended Freudenthal magic square",
+      "number": "5",
+      "page": 19,
+      "pageLabel": "147",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-the-extended-freudenthal-magic-square"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 23,
+      "pageLabel": "151",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "129",
+      "labelEnd": "129",
+      "words": 137,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "composition superalgebras",
+          "heading": false
+        },
+        {
+          "term": "alberto",
+          "heading": false
+        },
+        {
+          "term": "tensor category",
+          "heading": false
+        },
+        {
+          "term": "española",
+          "heading": false
+        }
+      ],
+      "extract": "Rev. Mat. Iberoam. 40 (2024), no. 1, 129–152 DOI 10.4171/RMI/1408 © 2023 Real Sociedad Matemática Española Published by EMS Press and licensed under a CC BY 4.0 license From octonions to composition superalgebras via tensor categories Alberto Daza-García, Alberto Elduque and Umut Sayin Abstract. The nontrivial unital composition superalgebras, of dimension 3 and 6, which exist only in characteristic 3, are obtained",
+      "extractCut": true,
+      "blocks": [
+        "library/104171-rmi-1408/blocks/prose-sec-front-matter",
+        "library/104171-rmi-1408/blocks/figure-img-p001-1"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "129",
+      "labelEnd": "131",
+      "words": 1011,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lie superalgebras",
+          "heading": false
+        },
+        {
+          "term": "freudenthal magic",
+          "heading": false
+        },
+        {
+          "term": "composition superalgebras",
+          "heading": false
+        },
+        {
+          "term": "superalgebras appeared",
+          "heading": false
+        },
+        {
+          "term": "extended freudenthal",
+          "heading": false
+        },
+        {
+          "term": "magic square",
+          "heading": false
+        },
+        {
+          "term": "classical freudenthal",
+          "heading": false
+        },
+        {
+          "term": "semisimplification",
+          "heading": false
+        }
+      ],
+      "extract": "In [5], Lie algebras g over a field F that admit a Z=2-grading such that the even part is the direct sum of sl2.F/ and another ideal d, and its odd part is, as a module for the even part, a tensor product of the two-dimensional natural module for sl2.F/ and a module T for d, were considered. Thus, we have (1.1) g D .sl2.F/ ˚ d/ ˚ .F2 ˝ T /: In this case, T becomes a so-called symplectic triple system, and the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-from-algebras-to-superalgebras",
+      "number": "2",
+      "title": "From algebras to superalgebras",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 10,
+      "labelStart": "131",
+      "labelEnd": "138",
+      "words": 3249,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "category svec",
+          "heading": false
+        },
+        {
+          "term": "category rep",
+          "heading": false
+        },
+        {
+          "term": "superalgebras",
+          "heading": true
+        },
+        {
+          "term": "ver",
+          "heading": false
+        },
+        {
+          "term": "semisimplification functor",
+          "heading": false
+        },
+        {
+          "term": "homrep",
+          "heading": false
+        },
+        {
+          "term": "negligible homomorphisms",
+          "heading": false
+        },
+        {
+          "term": "parity swap",
+          "heading": false
+        }
+      ],
+      "extract": "This section will review, in a way suitable for our purposes, known results on the cate- gories Rep C3, Ver3, and sVec. For details, the reader may consult [12, 13, 17] and refer- ences therein. Throughout this section, the characteristic of the ground field F will always be 3. 2.1. Semisimplification of Rep C3 The category Rep C3, whose objects are the finite-dimensional representations of the finite group C3 over",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-from-octonions-to-composition-superalgebras",
+      "number": "3",
+      "title": "From octonions to composition superalgebras",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 15,
+      "labelStart": "138",
+      "labelEnd": "143",
+      "words": 2218,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "composition superalgebras",
+          "heading": true
+        },
+        {
+          "term": "split cayley",
+          "heading": false
+        },
+        {
+          "term": "cayley algebras",
+          "heading": false
+        },
+        {
+          "term": "unital composition",
+          "heading": false
+        },
+        {
+          "term": "octonions",
+          "heading": true
+        },
+        {
+          "term": "semisimplification functor",
+          "heading": false
+        },
+        {
+          "term": "hurwitz algebras",
+          "heading": false
+        },
+        {
+          "term": "fixed elementwise",
+          "heading": false
+        }
+      ],
+      "extract": "3. From octonions to composition superalgebras The notion of composition algebra on a symmetric tensor category over a field of charac- teristic not 2 will be considered here. The order 3 automorphisms of the Cayley algebras, i.e., of the eight-dimensional unital composition algebras, were determined in [7]. In par- ticular, any such automorphism on a Cayley algebra over a field of characteristic 3 allows us to view",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-semisimplification-skew-transformations-deriva",
+      "number": "4",
+      "title": "Semisimplification: skew transformations, derivations",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 19,
+      "labelStart": "143",
+      "labelEnd": "147",
+      "words": 2117,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "adu adv",
+          "heading": false
+        },
+        {
+          "term": "semisimplification",
+          "heading": true
+        },
+        {
+          "term": "superalgebra der",
+          "heading": false
+        },
+        {
+          "term": "derivations",
+          "heading": true
+        },
+        {
+          "term": "vss",
+          "heading": false
+        },
+        {
+          "term": "skew transformations",
+          "heading": true
+        },
+        {
+          "term": "lie superalgebra",
+          "heading": false
+        },
+        {
+          "term": "splitting der",
+          "heading": false
+        }
+      ],
+      "extract": "4. Semisimplification: skew transformations, derivations This section will show some features of the semisimplification process. The Lie algebra of derivations of an algebra .A; \u0016/ in Rep C3 is also an algebra in Rep C3 in a natural way, but its semisimplification may fail to be the Lie superalgebra of derivations of the semisimplification of .A; \u0016/. However, the semisimplification of the Lie algebra of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-the-extended-freudenthal-magic-square",
+      "number": "5",
+      "title": "The extended Freudenthal magic square",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 23,
+      "labelStart": "147",
+      "labelEnd": "151",
+      "words": 1830,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "freudenthal magic",
+          "heading": true
+        },
+        {
+          "term": "magic square",
+          "heading": true
+        },
+        {
+          "term": "extended freudenthal",
+          "heading": true
+        },
+        {
+          "term": "idc swap",
+          "heading": false
+        },
+        {
+          "term": "isomorphism tri",
+          "heading": false
+        },
+        {
+          "term": "lie superalgebras",
+          "heading": false
+        },
+        {
+          "term": "composition superalgebras",
+          "heading": false
+        },
+        {
+          "term": "triality lie",
+          "heading": false
+        }
+      ],
+      "extract": "Assume for a while that the characteristic of the ground field F is just different from 2. Different authors [1,16,19] have considered several symmetric constructions of Freu- denthal’s magic square in terms of two unital composition algebras. We shall follow here [4], but restricted, for simplicity, to the use of the so-called para-Hurwitz algebras. Let .C; \u0016; n/ and .C0; \u00160; n0/ be two unital composition algebras",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "151",
+      "labelEnd": "152",
+      "words": 530,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "matemáticas instituto",
+          "heading": false
+        },
+        {
+          "term": "elduque",
+          "heading": false
+        },
+        {
+          "term": "lie superalgebras",
+          "heading": false
+        },
+        {
+          "term": "american mathematical",
+          "heading": false
+        },
+        {
+          "term": "mathematical society",
+          "heading": false
+        },
+        {
+          "term": "zaragoza",
+          "heading": false
+        },
+        {
+          "term": "magic square",
+          "heading": false
+        },
+        {
+          "term": "lie algebras",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Barton, C. H. and Sudbery, A.: Magic squares and matrix models of Lie algebras. Adv. Math. 180 (2003), no. 2, 596–647. [2] Bouarroudj, S., Grozman, P. and Leites, D.: Classification of finite dimensional modular Lie superalgebras with indecomposable Cartan matrix. SIGMA Symmetry Integrability Geom. Methods Appl. 5 (2009), article no. 060, 63 pp. [3] Cunha, I. and Elduque, A.: An extended Freudenthal magic square",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "composition superalgebras",
+      "heading": true
+    },
+    {
+      "term": "lie superalgebras",
+      "heading": false
+    },
+    {
+      "term": "semisimplification functor",
+      "heading": false
+    },
+    {
+      "term": "semisimplification process",
+      "heading": false
+    },
+    {
+      "term": "alberto elduque",
+      "heading": false
+    },
+    {
+      "term": "alternative superalgebras",
+      "heading": false
+    },
+    {
+      "term": "superalgebras appeared",
+      "heading": false
+    },
+    {
+      "term": "composition algebras",
+      "heading": false
+    },
+    {
+      "term": "cayley algebras",
+      "heading": false
+    },
+    {
+      "term": "freudenthal magic",
+      "heading": true
+    },
+    {
+      "term": "alberto daza-garcía",
+      "heading": false
+    },
+    {
+      "term": "category rep",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "129",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "130",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "131",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "132",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "133",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "134",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "135",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "136",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "137",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "138",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "139",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "140",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 13,
+      "label": "141",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "142",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 15,
+      "label": "143",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "144",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "145",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 18,
+      "label": "146",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 19,
+      "label": "147",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "148",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 21,
+      "label": "149",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 22,
+      "label": "150",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "151",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "152",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Multiplication table of the split Cayley algebra",
+      "page": 12,
+      "pageLabel": "140",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p001-1",
+      "file": "images/img-p001-1.png",
+      "page": 1,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 6,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 7,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "1 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p23); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 7 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/104171-rmi-1408"
+  }
+}

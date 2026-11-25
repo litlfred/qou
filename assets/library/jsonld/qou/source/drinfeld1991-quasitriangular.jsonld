@@ -1,0 +1,58 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/drinfeld1991-quasitriangular/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "drinfeld1991-quasitriangular",
+  "contains": [
+    "library/drinfeld1991-quasitriangular/sections/page-001",
+    "library/drinfeld1991-quasitriangular/sections/page-002",
+    "library/drinfeld1991-quasitriangular/sections/page-003",
+    "library/drinfeld1991-quasitriangular/sections/page-004",
+    "library/drinfeld1991-quasitriangular/sections/page-005",
+    "library/drinfeld1991-quasitriangular/sections/page-006",
+    "library/drinfeld1991-quasitriangular/sections/page-007",
+    "library/drinfeld1991-quasitriangular/sections/page-008",
+    "library/drinfeld1991-quasitriangular/sections/page-009",
+    "library/drinfeld1991-quasitriangular/sections/page-010",
+    "library/drinfeld1991-quasitriangular/sections/page-011",
+    "library/drinfeld1991-quasitriangular/sections/page-012",
+    "library/drinfeld1991-quasitriangular/sections/page-013",
+    "library/drinfeld1991-quasitriangular/sections/page-014",
+    "library/drinfeld1991-quasitriangular/sections/page-015",
+    "library/drinfeld1991-quasitriangular/sections/page-016",
+    "library/drinfeld1991-quasitriangular/sections/page-017"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "On quasitriangular quasi-Hopf algebras and a group closely connected with Gal(Q̄/Q) — 17 sections: Page 1; Page 2; Page 3\n\n**On quasitriangular quasi-Hopf algebras and a group closely connected with Gal(Q̄/Q)**\n\n17 pp, 17 sections.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12; Page 13; Page 14; Page 15; Page 16; Page 17",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "drinfeld1991-quasitriangular",
+    "title_source": "slug",
+    "source_file": "drinfeld1991-quasitriangular.pdf",
+    "source_sha256": "1a1d279e92445fdc15830f12d3f8226731290d9e516651971d846250cf7469ba",
+    "pages": 17,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

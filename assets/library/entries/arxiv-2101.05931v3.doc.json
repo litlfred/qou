@@ -1,0 +1,1724 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-2101.05931v3",
+  "title": "arxiv-2101.05931v3",
+  "variant": "pdf",
+  "pages": 26,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgement",
+      "number": null,
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-acknowledgement"
+    },
+    {
+      "level": 1,
+      "title": "Background on quantum groups",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-background-on-quantum-groups"
+    },
+    {
+      "level": 2,
+      "title": "The quantum group",
+      "number": "2.1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-21-the-quantum-group"
+    },
+    {
+      "level": 2,
+      "title": "Braid group actions on integrable representations of U_q(g).",
+      "number": "2.2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-22-braid-group-actions-on-integrable-representat"
+    },
+    {
+      "level": 1,
+      "title": "Categorical representations of U_q(g)",
+      "number": "3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-3-categorical-representations-of-u-qg"
+    },
+    {
+      "level": 2,
+      "title": "Notation",
+      "number": "3.1",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-31-notation"
+    },
+    {
+      "level": 2,
+      "title": "Definition",
+      "number": "3.2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-32-definition"
+    },
+    {
+      "level": 2,
+      "title": "Crystals",
+      "number": "3.3",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-33-crystals"
+    },
+    {
+      "level": 2,
+      "title": "Jordan-Hölder series",
+      "number": "3.4",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-34-jordan-hölder-series"
+    },
+    {
+      "level": 2,
+      "title": "The categorical braid group action",
+      "number": "3.5",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-35-the-categorical-braid-group-action"
+    },
+    {
+      "level": 1,
+      "title": "Perverse equivalences",
+      "number": "4",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-4-perverse-equivalences"
+    },
+    {
+      "level": 2,
+      "title": "General definition",
+      "number": "4.1",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-41-general-definition"
+    },
+    {
+      "level": 2,
+      "title": "Derived categories of graded abelian categories",
+      "number": "4.2",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-42-derived-categories-of-graded-abelian-categori"
+    },
+    {
+      "level": 1,
+      "title": "Some commutation relations",
+      "number": "5",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-5-some-commutation-relations"
+    },
+    {
+      "level": 2,
+      "title": "Cautis' relations",
+      "number": "5.1",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Marked words",
+      "number": "5.2",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-52-marked-words"
+    },
+    {
+      "level": 2,
+      "title": "The relation between _w_0 and Chevalley functors",
+      "number": "5.3",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-53-the-relation-between-w-0-and-chevalley-functo"
+    },
+    {
+      "level": 1,
+      "title": "On t-exactness and perversity of _w_0",
+      "number": "6",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-6-on-t-exactness-and-perversity-of-w-0"
+    },
+    {
+      "level": 2,
+      "title": "_w_0 on isotypic categorifications",
+      "number": "6.1",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "_w_0 on general categorical representations",
+      "number": "6.2",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-62-w-0-on-general-categorical-representations"
+    },
+    {
+      "level": 1,
+      "title": "Crystalising the braid group action",
+      "number": "7",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-7-crystalising-the-braid-group-action"
+    },
+    {
+      "level": 2,
+      "title": "Cactus groups",
+      "number": "7.1",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-71-cactus-groups"
+    },
+    {
+      "level": 2,
+      "title": "The cactus group action arising from Rickard complexes",
+      "number": "7.2",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-72-the-cactus-group-action-arising-from-rickard"
+    },
+    {
+      "level": 2,
+      "title": "Reconciling the two cactus group actions",
+      "number": "7.3",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-73-reconciling-the-two-cactus-group-actions"
+    },
+    {
+      "level": 1,
+      "title": "Examples and Applications",
+      "number": "8",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-8-examples-and-applications"
+    },
+    {
+      "level": 2,
+      "title": "Examples",
+      "number": "8.1",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": null
+    },
+    {
+      "level": 2,
+      "title": "Type A combinatorics",
+      "number": "8.2",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-82-type-a-combinatorics"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 223,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cactus group",
+          "heading": false
+        },
+        {
+          "term": "categorical representation",
+          "heading": false
+        },
+        {
+          "term": "braid group",
+          "heading": false
+        },
+        {
+          "term": "crystal",
+          "heading": false
+        },
+        {
+          "term": "equivalence",
+          "heading": false
+        },
+        {
+          "term": "action",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:2101.05931v3 [math.RT] 15 Jun 2023 CATEGORICAL BRAID GROUP ACTIONS AND CACTUS GROUPS IVA HALACHEVA, ANTHONY LICATA, IVAN LOSEV, AND ODED YACOBI Abstract. Let g be a semisimple simply-laced Lie algebra of ﬁnite type. Let C be an abelian categorical representation of the quantum group Uq(g) categorifying an integrable representation V . The Artin braid group B of g acts on Db(C) by Rickard complexes, providing a",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-2101.05931v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "4",
+      "words": 1707,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fsl categorifications",
+          "heading": false
+        },
+        {
+          "term": "rickard complexes",
+          "heading": false
+        },
+        {
+          "term": "cactus group",
+          "heading": false
+        },
+        {
+          "term": "begin namedtheorem",
+          "heading": false
+        },
+        {
+          "term": "end namedtheorem",
+          "heading": false
+        },
+        {
+          "term": "categorical braid",
+          "heading": false
+        },
+        {
+          "term": "theta bone",
+          "heading": false
+        },
+        {
+          "term": "quad curvearrowright",
+          "heading": false
+        }
+      ],
+      "extract": "In their seminal work, Chuang and Rouquier introduced $\\fsl_2$ categorifications on abelian categories \\cite{CR}. Their definition mirrors the notion of an $\\fsl_2$ representation on a vector space: weight spaces are replaced by weight categories, Chevalley generators acting on them are replaced by Chevalley functors, and Lie algebra relations are replaced by isomorphisms of functors. But, crucially, these",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-acknowledgement",
+      "number": null,
+      "title": "Acknowledgement",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 61,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ael",
+          "heading": false
+        },
+        {
+          "term": "sabin",
+          "heading": false
+        },
+        {
+          "term": "joel",
+          "heading": false
+        }
+      ],
+      "extract": "We would like to thank Sabin Cautis, Ian Grojnowski, Joel Kamnitzer, Aaron Lauda, Andrew Mathas, Peter McNamara, Bregje Pauwels, Raph\\\"ael Rouquier, and Geordie Williamson for insightful discussions. We are grateful to two anonymous referees for their helpful comments. I.L. is partially supported by the NSF under grant DMS-2001139. O.Y. is supported by the Australian Research Council Grants DP180102563 and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-background-on-quantum-groups",
+      "number": "2",
+      "title": "Background on quantum groups",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-003-21-the-quantum-group",
+      "number": "2.1",
+      "title": "The quantum group",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 336,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "alpha rangle",
+          "heading": false
+        },
+        {
+          "term": "sum langle",
+          "heading": false
+        },
+        {
+          "term": "vee",
+          "heading": false
+        },
+        {
+          "term": "quantum group",
+          "heading": true
+        },
+        {
+          "term": "simple roots",
+          "heading": false
+        },
+        {
+          "term": "item",
+          "heading": false
+        },
+        {
+          "term": "q-q",
+          "heading": false
+        },
+        {
+          "term": "let subset",
+          "heading": false
+        }
+      ],
+      "extract": "In this article we work with a simply-laced quantum group $U_q(\\fg)$ of finite type. Recall that we have an associated Cartan datum and a root datum, which consists of: \\begin{itemize} \\item A finite set $I$, \\item a symmetric bilinear form $(\\cdot,\\cdot)$ on $\\ZZ I$ satisfying $(i,i)=2$ and $(i,j)\\in \\{0,-1\\}$ for all $i \\neq j \\in I$, \\item a free $\\ZZ$-module $X$, called the weight lattice, and \\item a choice of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-22-braid-group-actions-on-integrable-representat",
+      "number": "2.2",
+      "title": "Braid group actions on integrable representations of U_q(g).",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 349,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "braid group",
+          "heading": true
+        },
+        {
+          "term": "iso lambda",
+          "heading": false
+        },
+        {
+          "term": "alpha tau",
+          "heading": false
+        },
+        {
+          "term": "sone",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "end align",
+          "heading": false
+        },
+        {
+          "term": "theta",
+          "heading": false
+        },
+        {
+          "term": "highest weight",
+          "heading": false
+        }
+      ],
+      "extract": "Given a $U_q(\\fg)$-module $V$ and $\\mu \\in X$ we let $V_\\mu$ denote the $\\mu$ weight space of $V$. For $\\lambda \\in X_+$ we let $L(\\lambda)$ be the irreducible representation of $U_q(\\fg)$ of highest weight $\\lambda$. Let $\\Iso_\\lambda(V)$ denote the $\\lambda$-isotypic component of $V$. We say that $V$ is \\textbf{isotypic} if there exists $\\lambda \\in X_+$ such that $V=\\Iso_\\lambda(V)$. The representation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-31-notation",
+      "number": "3.1",
+      "title": "Notation",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 5,
+      "labelStart": "5",
+      "labelEnd": "5",
+      "words": 59,
+      "summary": null,
+      "keywords": [],
+      "extract": "of [36], ti = t′′ i,−1. (Note that the formula given in [36] is more complicated. This simpler form was initially observed in [16] in the non-quantum setting, and generalised in [12] to the quantum setting.). The assignment θi 7→ti deﬁnes an action of B on V , and so we can unambiguously write tw for any w ∈W.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-006-3-categorical-representations-of-u-qg",
+      "number": "3",
+      "title": "Categorical representations of U_q(g)",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 206,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shift functor",
+          "heading": false
+        },
+        {
+          "term": "abelian category",
+          "heading": false
+        },
+        {
+          "term": "auto-equivalence",
+          "heading": false
+        },
+        {
+          "term": "z-graded",
+          "heading": false
+        },
+        {
+          "term": "graded",
+          "heading": false
+        }
+      ],
+      "extract": "3.1. Notation. Fix a ﬁeld k of any characteristic. In this paper we will be concerned mostly with abelian k-linear categories C. We will assume throughout that each block of C is a ﬁnite abelian category [39, Deﬁnition 1.8.6]. Recall that a category A is graded if it is equipped with an auto-equivalence ⟨1⟩: A →A called the “shift functor”. We let ⟨ℓ⟩be the auto-equivalence obtained by applying the shift functor ℓ",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-32-definition",
+      "number": "3.2",
+      "title": "Definition",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 772,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bone lambda",
+          "heading": false
+        },
+        {
+          "term": "cite cala",
+          "heading": false
+        },
+        {
+          "term": "categorical representations",
+          "heading": false
+        },
+        {
+          "term": "additive categorification",
+          "heading": false
+        },
+        {
+          "term": "chevalley functors",
+          "heading": false
+        },
+        {
+          "term": "khovanov-lauda",
+          "heading": false
+        },
+        {
+          "term": "alpha langle",
+          "heading": false
+        },
+        {
+          "term": "brundan cite",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we introduce our main objects of study: representations of the 2-quantum group on abelian categories, which we refer to as “categorical representations” of $U_q(\\fg)$. This definition of the categorified quantum groups and their categorical actions is originally due to Rouquier and Khovanov-Lauda \\cite{Rou2KM, KLI,KLII}. In the literature, there are a number of slightly different-looking examples of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-33-crystals",
+      "number": "3.3",
+      "title": "Crystals",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 310,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "crystal structure",
+          "heading": false
+        },
+        {
+          "term": "chevalley operators",
+          "heading": false
+        },
+        {
+          "term": "tilde",
+          "heading": false
+        },
+        {
+          "term": "operatorname soc",
+          "heading": false
+        },
+        {
+          "term": "irr",
+          "heading": false
+        },
+        {
+          "term": "eps",
+          "heading": false
+        },
+        {
+          "term": "canonical basis",
+          "heading": false
+        },
+        {
+          "term": "item",
+          "heading": false
+        }
+      ],
+      "extract": "We recall the definition of a crystal. \\begin{Definition} [\\cite{Kash90}] A \\textbf{$\\fg$-crystal} is a finite set $\\bB$ together with maps: $$\\tilde{e}_i,\\tilde{f}_i:\\bB \\rightarrow \\bB\\sqcup \\{0\\}, \\quad \\eps_i,\\phi_i : \\bB\\rightarrow \\ZZ, \\quad \\wt: \\bB \\rightarrow X$$ for all $i \\in I$, such that: \\begin{enumerate} \\item for any $b,b' \\in \\bB$, $\\tilde{e}_i(b)=b'$ if and only if $b=\\tilde{f}_i(b')$ , \\item for",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-34-jordan-hölder-series",
+      "number": "3.4",
+      "title": "Jordan-Hölder series",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": "7",
+      "labelEnd": "9",
+      "words": 1037,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "isotypic categorification",
+          "heading": false
+        },
+        {
+          "term": "isotypic filtration",
+          "heading": false
+        },
+        {
+          "term": "older filtration",
+          "heading": false
+        },
+        {
+          "term": "prec lambda",
+          "heading": false
+        },
+        {
+          "term": "simple categorification",
+          "heading": false
+        },
+        {
+          "term": "cite rou2km",
+          "heading": false
+        },
+        {
+          "term": "mmod",
+          "heading": false
+        },
+        {
+          "term": "highest weight",
+          "heading": false
+        }
+      ],
+      "extract": "A categorification of a simple representation (respectively an isotypic representation) is called a \\textbf{simple categorification} (respectively an \\textbf{isotypic categorification}). There is a distinguished categorification of $L(\\lambda)$ called the \\textbf{minimal categorification} and denoted $\\cL(\\lambda)$ \\cite{CR,Rou2KM,KLI,Webmerged,KK}. It is characterized by the fact that $\\cL(\\lambda)_{\\lambda}\\cong",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-35-the-categorical-braid-group-action",
+      "number": "3.5",
+      "title": "The categorical braid group action",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 383,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theta bone",
+          "heading": false
+        },
+        {
+          "term": "cong theta",
+          "heading": false
+        },
+        {
+          "term": "rickard complexes",
+          "heading": false
+        },
+        {
+          "term": "rickard complex",
+          "heading": false
+        },
+        {
+          "term": "langle rangle",
+          "heading": false
+        },
+        {
+          "term": "begin align",
+          "heading": false
+        },
+        {
+          "term": "end align",
+          "heading": false
+        },
+        {
+          "term": "rangle text",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\cC$ be a categorical representation of $U_q(\\fg), \\mu \\in X$ and $i\\in I$. We define a complex of functors $\\Theta_i\\bone_\\mu$, supported in nonpositive cohomological degrees, where for $r\\geq0$ the $-r$ component is \\begin{align*} (\\Theta_i\\bone_\\mu)^{-r}=\\begin{cases}\\sE_i^{(-\\mu_i+r)}\\sF_i^{(r)}\\bone_\\mu\\langle -s \\rangle &\\text{ if } \\mu_i\\leq0, \\\\ \\sF_i^{(\\mu_i+r)}\\sE_i^{(r)}\\bone_\\mu\\langle -r \\rangle",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-4-perverse-equivalences",
+      "number": "4",
+      "title": "Perverse equivalences",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-012-41-general-definition",
+      "number": "4.1",
+      "title": "General definition",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 896,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "heartsuit cap",
+          "heading": false
+        },
+        {
+          "term": "prime heartsuit",
+          "heading": false
+        },
+        {
+          "term": "graded perverse",
+          "heading": false
+        },
+        {
+          "term": "perverse equivalence",
+          "heading": false
+        },
+        {
+          "term": "circ varphi",
+          "heading": false
+        },
+        {
+          "term": "perversity triple",
+          "heading": false
+        },
+        {
+          "term": "perversity datum",
+          "heading": false
+        },
+        {
+          "term": "thick triangulated",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:pervdef} Let $\\cT$ be a triangulated category with shift functor $[1]:\\cT \\rightarrow \\cT$. In the cases of most interest to us, $\\cT$ is a subcategory of a derived category, in which case $[1]$ is the homological shift functor. Suppose $\\cT$ has a t-structure $t=(\\cT^{\\leq0},\\cT^{\\geq0})$, with heart $\\cT^\\heartsuit=\\cT^{\\leq0} \\cap \\cT^{\\geq0}$ \\cite{BBD}. Recall that a triangulated functor $F:\\cT \\to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-42-derived-categories-of-graded-abelian-categori",
+      "number": "4.2",
+      "title": "Derived categories of graded abelian categories",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 349,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "graded abelian",
+          "heading": true
+        },
+        {
+          "term": "abelian categories",
+          "heading": true
+        },
+        {
+          "term": "derived categories",
+          "heading": true
+        },
+        {
+          "term": "mathcal bullet",
+          "heading": false
+        },
+        {
+          "term": "mathcal subset",
+          "heading": false
+        },
+        {
+          "term": "hdots subset",
+          "heading": false
+        },
+        {
+          "term": "standard t-structure",
+          "heading": false
+        },
+        {
+          "term": "natural t-structure",
+          "heading": false
+        }
+      ],
+      "extract": "We now specialise to the case of derived categories. We recall that if $\\cA$ is an abelian category, then the bounded derived category $D^b(\\cA)$ has a standard t-structure $(D^b(\\cA)^{\\leq0},D^b(\\cA)^{\\geq0})$ whose heart is $\\cA$. Given a $\\cB \\subset \\cA$ a Serre subcategory, we let $D_\\cB^b(\\cA) \\subset D^b(\\cA)$ denote the thick subcategory consisting of complexes with cohomology supported in $\\cB$. The",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-5-some-commutation-relations",
+      "number": "5",
+      "title": "Some commutation relations",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": "12",
+      "labelEnd": "13",
+      "words": 442,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theta bone",
+          "heading": false
+        },
+        {
+          "term": "bone lambda",
+          "heading": false
+        },
+        {
+          "term": "lambda rangle",
+          "heading": false
+        },
+        {
+          "term": "lambda langle",
+          "heading": false
+        },
+        {
+          "term": "lambda cong",
+          "heading": false
+        },
+        {
+          "term": "cite cauclasp",
+          "heading": false
+        },
+        {
+          "term": "lambda alpha",
+          "heading": false
+        },
+        {
+          "term": "cases theta",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:commrels} We fix throughout a categorical representation $\\cC$ of $U_q(\\fg)$. Recall that $w_0\\in W$ is the longest word, and let $w_0=s_{i_1}s_{i_2} \\cdots s_{i_r}$ be a reduced expression. We consider the composition of Rickard complexes which categorifies the positive lift in $B$ of $w_0$: $$ \\Theta_{w_0}\\bone_\\lambda=\\Theta_{i_1} \\cdots \\Theta_{i_r}\\bone_\\mu:D^b(\\cC_\\lambda) \\to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-52-marked-words",
+      "number": "5.2",
+      "title": "Marked words",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 14,
+      "labelStart": "13",
+      "labelEnd": "14",
+      "words": 765,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "marked words",
+          "heading": true
+        },
+        {
+          "term": "ell bone",
+          "heading": false
+        },
+        {
+          "term": "theta bone",
+          "heading": false
+        },
+        {
+          "term": "marked letter",
+          "heading": false
+        },
+        {
+          "term": "bone lambda",
+          "heading": false
+        },
+        {
+          "term": "hdots",
+          "heading": false
+        },
+        {
+          "term": "reduced marked",
+          "heading": false
+        },
+        {
+          "term": "unmarked words",
+          "heading": false
+        }
+      ],
+      "extract": "We now introduce a combinatorial set-up which we'll use to prove Proposition \\ref{prop:mainrel} below. A \\textbf{marked word} is a word in the elements of $I$ with one letter marked: $\\ba=(i_1,i_2,...,\\ul{i_\\ell},...,i_n)$. From $\\ba$ we can define a functor and an element of $W$: \\begin{align*} \\Phi(\\ba)&=\\Theta_{i_1}\\cdots\\Theta_{i_{\\ell-1}}\\sF_{i_\\ell}\\Theta_{i_{\\ell1}}\\cdots \\Theta_{i_n}\\bone_\\lambda, \\\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-53-the-relation-between-w-0-and-chevalley-functo",
+      "number": "5.3",
+      "title": "The relation between _w_0 and Chevalley functors",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 15,
+      "labelStart": "14",
+      "labelEnd": "15",
+      "words": 374,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theta bone",
+          "heading": false
+        },
+        {
+          "term": "bone lambda",
+          "heading": false
+        },
+        {
+          "term": "align theta",
+          "heading": false
+        },
+        {
+          "term": "equiv theta",
+          "heading": false
+        },
+        {
+          "term": "cong theta",
+          "heading": false
+        },
+        {
+          "term": "sone lambda",
+          "heading": false
+        },
+        {
+          "term": "lambda rangle",
+          "heading": false
+        },
+        {
+          "term": "langle lambda",
+          "heading": false
+        }
+      ],
+      "extract": "We now have the machinery in place to prove our main relation. \\begin{Proposition}\\label{prop:mainrel} For any $i\\in I, \\lambda \\in X$ we have the following relations: \\begin{align*} \\Theta_{w_0}\\sE_i\\bone_\\lambda &\\cong \\sF_{\\tau(i)}\\Theta_{w_0}\\bone_\\lambda[1]\\langle \\lambda_i \\rangle, \\\\ \\Theta_{w_0}\\sF_i\\bone_\\lambda &\\cong \\sE_{\\tau(i)}\\Theta_{w_0}\\bone_\\lambda[1]\\langle -\\lambda_i \\rangle. \\end{align*}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-6-on-t-exactness-and-perversity-of-w-0",
+      "number": "6",
+      "title": "On t-exactness and perversity of _w_0",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 17,
+      "labelStart": "15",
+      "labelEnd": "17",
+      "words": 862,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theta bone",
+          "heading": false
+        },
+        {
+          "term": "bone mu-n",
+          "heading": false
+        },
+        {
+          "term": "cong theta",
+          "heading": false
+        },
+        {
+          "term": "cdots theta",
+          "heading": false
+        },
+        {
+          "term": "categorical fsl",
+          "heading": false
+        },
+        {
+          "term": "align theta",
+          "heading": false
+        },
+        {
+          "term": "t-exact equivalence",
+          "heading": false
+        },
+        {
+          "term": "isotypic categorification",
+          "heading": false
+        }
+      ],
+      "extract": "In this section we will state and prove the central results of the paper. We fix throughout a categorical representation $\\cC$ of $U_q(\\fg)$, and let $w_0=s_{i_1}s_{i_2} \\cdots s_{i_n}$ be a reduced expression. \\subsection{$\\Theta_{w_0}$ on isotypic categorifications} In this section we prove that $\\Theta_{w_0}$ is t-exact on any isotypic categorification. Fix $\\lambda \\in X_+$. We write $\\Theta=\\Theta_{w_0},",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-71-cactus-groups",
+      "number": "7.1",
+      "title": "Cactus groups",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 1,
+      "summary": null,
+      "keywords": [],
+      "extract": "17",
+      "extractCut": false
+    },
+    {
+      "id": "sec-019-62-w-0-on-general-categorical-representations",
+      "number": "6.2",
+      "title": "_w_0 on general categorical representations",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 284,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theta bone",
+          "heading": false
+        },
+        {
+          "term": "isotypic filtration",
+          "heading": false
+        },
+        {
+          "term": "perverse equivalence",
+          "heading": false
+        },
+        {
+          "term": "functor theta",
+          "heading": false
+        },
+        {
+          "term": "serre subcategories",
+          "heading": false
+        },
+        {
+          "term": "categorical",
+          "heading": true
+        },
+        {
+          "term": "crperv",
+          "heading": false
+        },
+        {
+          "term": "perveq",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:mainpf} In this section we prove that $\\Theta_{w_0}$ is a perverse equivalence on an arbitrary categorical representation. Fix $\\mu \\in X$ such that $\\cC_\\mu$ is nonzero. For ease of notation, set $\\cA=\\cC_\\mu$ and $\\cA'=\\cC_{w_0(\\mu)}$. Consider a filtration by Serre subcategories \\begin{align*} 0=\\cC_0\\subset \\cC_1\\subset \\cdots \\subset \\cC_r=\\cC, \\end{align*} which can be either the Jordan-H\\\"older",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-7-crystalising-the-braid-group-action",
+      "number": "7",
+      "title": "Crystalising the braid group action",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 634,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cactus group",
+          "heading": false
+        },
+        {
+          "term": "sch utzenberger",
+          "heading": false
+        },
+        {
+          "term": "utzenberger involutions",
+          "heading": false
+        },
+        {
+          "term": "group action",
+          "heading": true
+        },
+        {
+          "term": "braid group",
+          "heading": true
+        },
+        {
+          "term": "generalised sch",
+          "heading": false
+        },
+        {
+          "term": "hreg",
+          "heading": false
+        },
+        {
+          "term": "highest weight",
+          "heading": false
+        }
+      ],
+      "extract": "Already in the work of Chuang and Rouquier, a close connection is established between categori- cal representation theory and the theory of crystals (although it is not phrased in this language, cf. Proposition 3.4 below). In this section we describe a new component of this theory. More precisely, let V be an integrable representation of Uq(g). Recall that Lusztig has deﬁned a braid group action on V [36]. In this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-72-the-cactus-group-action-arising-from-rickard",
+      "number": "7.2",
+      "title": "The cactus group action arising from Rickard complexes",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": "18",
+      "labelEnd": "20",
+      "words": 921,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "theta bone",
+          "heading": false
+        },
+        {
+          "term": "cactus group",
+          "heading": true
+        },
+        {
+          "term": "varphi theta",
+          "heading": false
+        },
+        {
+          "term": "rel varphi",
+          "heading": false
+        },
+        {
+          "term": "bijection varphi",
+          "heading": false
+        },
+        {
+          "term": "rho vee",
+          "heading": false
+        },
+        {
+          "term": "vee rangle",
+          "heading": false
+        },
+        {
+          "term": "mainthm theta",
+          "heading": false
+        }
+      ],
+      "extract": "We now explain how cactus group actions arise from categorical representations, analogous to the construction of the crystal on $\\Irr(\\cC)$ in Proposition \\ref{prop:cryst}. Let $\\cC$ be a categorical representation of $U_q(\\fg)$. For any weight $\\mu \\in X$, by Theorem \\ref{thm:perveq} $\\Theta_{w_0}\\bone_\\mu:D^b(\\cC_\\mu) \\to D^b(\\cC_{w_0(\\mu)})$ is a perverse equivalence, and hence it induces a bijection",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-73-reconciling-the-two-cactus-group-actions",
+      "number": "7.3",
+      "title": "Reconciling the two cactus group actions",
+      "level": 2,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": "20",
+      "labelEnd": "21",
+      "words": 343,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "cactus group",
+          "heading": true
+        },
+        {
+          "term": "theta bone",
+          "heading": false
+        },
+        {
+          "term": "align theta",
+          "heading": false
+        },
+        {
+          "term": "begin tikzcd",
+          "heading": false
+        },
+        {
+          "term": "end tikzcd",
+          "heading": false
+        },
+        {
+          "term": "simple subobject",
+          "heading": false
+        },
+        {
+          "term": "varphi satisfies",
+          "heading": false
+        },
+        {
+          "term": "simple categorification",
+          "heading": false
+        }
+      ],
+      "extract": "Let $\\cC$ be a categorical representation of $U_q(\\fg)$, and consider the $\\fg$-crystal $\\bB=\\Irr(\\cC)$. There are two actions of the cactus group on $\\bB$, the first arising combinatorially via Sch\\\"utzenberger involutions (Theorem \\ref{thm:cactact}) and the other categorically via Theorem \\ref{thm:cactus}. \\begin{Theorem}\\label{thm:agree} The two actions of the cactus group on $\\bB$ agree. \\end{Theorem}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-023-8-examples-and-applications",
+      "number": "8",
+      "title": "Examples and Applications",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 23,
+      "labelStart": "21",
+      "labelEnd": "23",
+      "words": 1104,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mmod arrow",
+          "heading": false
+        },
+        {
+          "term": "theta bone",
+          "heading": false
+        },
+        {
+          "term": "isotypic filtration",
+          "heading": false
+        },
+        {
+          "term": "times syt",
+          "heading": false
+        },
+        {
+          "term": "bend left",
+          "heading": false
+        },
+        {
+          "term": "cite loscacti",
+          "heading": false
+        },
+        {
+          "term": "weight category",
+          "heading": false
+        },
+        {
+          "term": "highest weight",
+          "heading": false
+        }
+      ],
+      "extract": "\\subsection{Examples} We now examine three examples. The first two consider minimal categorifications of the adjoint representation, while the third studies the categorification of the $n$-fold tensor product of the standard representation of $\\fsl_n$. For ease of presentation, we ignore gradings and consider non-quantum categorical representations. \\begin{example} Let's consider the first non-trivial example of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-82-type-a-combinatorics",
+      "number": "8.2",
+      "title": "Type A combinatorics",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 24,
+      "labelStart": "23",
+      "labelEnd": "24",
+      "words": 956,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lambda vdash",
+          "heading": false
+        },
+        {
+          "term": "varphi theta",
+          "heading": false
+        },
+        {
+          "term": "evacuation operator",
+          "heading": false
+        },
+        {
+          "term": "utzenberger involution",
+          "heading": false
+        },
+        {
+          "term": "syt",
+          "heading": false
+        },
+        {
+          "term": "promotion operator",
+          "heading": false
+        },
+        {
+          "term": "perverse equivalence",
+          "heading": false
+        },
+        {
+          "term": "t-exact",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:typeA} In this final section, we specialise to type A and discuss the combinatorics of Kazhdan-Lusztig bases and standard Young tableaux from the vantage of perverse equivalences. Set $I=A_{n-1}=\\{1,\\hdots,n-1\\}$. We continue with the notation in Example \\ref{ex:catO} and view a partition $\\lambda \\vdash n$ simultaneously as a dominant integral highest weight for $\\fsl_n$, and as an index of the Specht",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 26,
+      "labelStart": "24",
+      "labelEnd": "26",
+      "words": 1010,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "joel kamnitzer",
+          "heading": false
+        },
+        {
+          "term": "sabin cautis",
+          "heading": false
+        },
+        {
+          "term": "oded yacobi",
+          "heading": false
+        },
+        {
+          "term": "ivan losev",
+          "heading": false
+        },
+        {
+          "term": "iva halacheva",
+          "heading": false
+        },
+        {
+          "term": "duke math",
+          "heading": false
+        },
+        {
+          "term": "selecta math",
+          "heading": false
+        },
+        {
+          "term": "perverse equivalences",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Mina Aganagic, Knot categoriﬁcation from mirror symmetry, arXiv:2004.14518. [2] Pierre Baumann, The q-Weyl group of a q-Schur algebra. Preprint available on author webpage. [3] Arkady Berenstein and Andrei Zelevinsky, Canonical bases for the quantum groups of type Ar and piecewise linear combinatorics, Duke Math. J. 82 (1996), 473–502. [4] A. A. Be˘ılinson, J. Bernstein, and P. Deligne, Faisceaux pervers,",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "theta bone",
+      "heading": false
+    },
+    {
+      "term": "bone lambda",
+      "heading": false
+    },
+    {
+      "term": "ell bone",
+      "heading": false
+    },
+    {
+      "term": "align theta",
+      "heading": false
+    },
+    {
+      "term": "bone mu-n",
+      "heading": false
+    },
+    {
+      "term": "cong theta",
+      "heading": false
+    },
+    {
+      "term": "cdots theta",
+      "heading": false
+    },
+    {
+      "term": "begin align",
+      "heading": false
+    },
+    {
+      "term": "align end",
+      "heading": false
+    },
+    {
+      "term": "varphi theta",
+      "heading": false
+    },
+    {
+      "term": "equivalence theta",
+      "heading": false
+    },
+    {
+      "term": "lambda rangle",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 29,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 27,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p24); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 27 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-2101.05931v3"
+  }
+}

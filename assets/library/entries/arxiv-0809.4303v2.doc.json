@@ -1,0 +1,307 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0809.4303v2",
+  "title": "Exact vortex solutions in an extended Skyrme-Faddeev model",
+  "variant": "pdf",
+  "pages": 12,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 10,
+      "pageLabel": "9",
+      "confidence": 0.7,
+      "evidence": [
+        "style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-000-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 10,
+      "labelStart": "1",
+      "labelEnd": "9",
+      "words": 3519,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "static vortex",
+          "heading": false
+        },
+        {
+          "term": "vortex solutions",
+          "heading": false
+        },
+        {
+          "term": "exact vortex",
+          "heading": false
+        },
+        {
+          "term": "conserved currents",
+          "heading": false
+        },
+        {
+          "term": "static hamiltonian",
+          "heading": false
+        },
+        {
+          "term": "noether charge",
+          "heading": false
+        },
+        {
+          "term": "skyrme-faddeev model",
+          "heading": false
+        },
+        {
+          "term": "bogomolny type",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:0809.4303v2 [hep-th] 5 May 2009 Exact vortex solutions in an extended Skyrme-Faddeev model L. A. Ferreira1 Instituto de F´ısica de S˜ao Carlos; IFSC/USP; Universidade de S˜ao Paulo - USP Caixa Postal 369, CEP 13560-970, S˜ao Carlos-SP, Brazil Abstract We construct exact vortex solutions in 3 + 1 dimensions to a theory which is an extension, due to Gies, of the Skyrme-Faddeev model, and that is believed to",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0809.4303v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 12,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 684,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "faddeev model",
+          "heading": false
+        },
+        {
+          "term": "hep-th",
+          "heading": false
+        },
+        {
+          "term": "soliton solutions",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "skyrme model",
+          "heading": false
+        },
+        {
+          "term": "arxiv",
+          "heading": false
+        },
+        {
+          "term": "rev",
+          "heading": false
+        },
+        {
+          "term": "yang-mills theory",
+          "heading": false
+        }
+      ],
+      "extract": "[1] L. D. Faddeev, “Quantization of solitons,”, Princeton preprint IAS Print-75-QS70 (1975). L. D. Faddeev, in 40 Years in Mathematical Physics , (World Scientiﬁc, 1995); [2] R. A. Battye and P. M. Sutcliﬀe, “Knots as stable soliton solutions in a three-dimensional classical ﬁeld theory,” Phys. Rev. Lett. 81, 4798 (1998) [arXiv:hep-th/9808129]; [3] J. Hietarinta and P. Salo, “Ground state in the Faddeev-Skyrme",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "static vortex",
+      "heading": false
+    },
+    {
+      "term": "vortex solutions",
+      "heading": false
+    },
+    {
+      "term": "exact vortex",
+      "heading": false
+    },
+    {
+      "term": "yang-mills theory",
+      "heading": false
+    },
+    {
+      "term": "static hamiltonian",
+      "heading": false
+    },
+    {
+      "term": "wave solutions",
+      "heading": false
+    },
+    {
+      "term": "skyrme-faddeev model",
+      "heading": false
+    },
+    {
+      "term": "approximate vortex",
+      "heading": false
+    },
+    {
+      "term": "soliton solutions",
+      "heading": false
+    },
+    {
+      "term": "faddeev model",
+      "heading": false
+    },
+    {
+      "term": "analytical solutions",
+      "heading": false
+    },
+    {
+      "term": "implicit solutions",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "pdf-labels",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 3,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 6,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 1,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 2,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p10); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 7
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 2 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0809.4303v2"
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1107.1559v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1107.1559v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1107.1559v1  [physics.gen-ph]  8 Jul 2011\nQuaternion-Octonion SU(3) Flavor Symmetry\nPushpa(1), P. S. Bisht(1,2), Tianjun Li(2) and O. P. S. Negi(1)\nOctober 22, 2018\n(1) Department of Physics,\nKumaun University, S. S. J. Campus,\nAlmora-263601 (Uttarakhand) India\n(2) Institute of Theoretical Physics,\nChinese Academy of Sciences,\nP. O. Box 2735, Beijing 100080,\nP. R. China\nEmail - pushpakalauni60@yahoo.co.in\nps_bisht 123@rediﬀmail.com\ntli@itp.ac.cn\nops_negi@yahoo.co.in\nAbstract\nStarting with the quaternionic formulation of isospin SU(2) group, we have derived the\nrelations for diﬀerent comp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1107.1559v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "\\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\ According to celebrated Hurwitz\ntheorem \\cite{key-1} there exits four - division algebra consisting\nof $\\mathbb{R}$ (real numbers), $\\mathbb{C}$ (complex numbers),\n$\\mathbb{H}$ (quaternions) and $\\mathcal{O}$ (octonions). All four\nalgebras are alternative with antisymmetric associators. Quaternions\nwere very first example of hyper complex numbers introduced by Hamilton\n\\cite{key-2,key-3} and octonions by Caley \\cite{key-4} and Graves\n\\cite{key-5} having the significant impacts on mathematics and physics.\nQuaternions are also described in terms of Pauli spin - matrices",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1107.1559v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quaternionic representation of isospin SU(2) group",
+      "pageStart": 2,
+      "pageEnd": 6,
+      "target": "../sections/sec-001-2-quaternionic-representation-of-isospin-su2-gro.md",
+      "narrative": null,
+      "content": "Let us consider the standard Lie algebra in terms of the quaternions\nby adopting the basic formula of the isotopic formalism for nucleons.\nAccordingly we may write a spinors $\\psi_{a}$ and $\\psi_{b}$ as\\begin{eqnarray}\n\\psi & = & \\left(\\begin{array}{c}\n\\psi_{a}\\\\\n\\psi_{b}\\end{array}\\right);\\label{eq:1}\\end{eqnarray}\nwhereas the adjoint spinor is described as\n\n\\begin{eqnarray}\n\\overline{\\psi} & = & \\left(\\begin{array}{cc}\n\\overline{\\psi_{a}} & \\overline{\\psi}_{b}\\end{array}\\right);\\label{eq:2}\\end{eqnarray}\nwhere \n\n\\begin{align}\n\\psi=( & \\psi_{0}+e_{1}\\psi_{1})+e_{2}(\\psi_{2}-e_{1}\\psi_{3})=\\ps",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1107.1559v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Octonions and Gelmann Matrices",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-002-3-octonions-and-gelmann-matrices.md",
+      "narrative": null,
+      "content": "Octonions describe the widest normed algebra after the algebra of\nreal numbers, complex numbers and quaternions. The octonions are non\nassociative and non commutative normed division algebra over the algebra\nof real numbers. A set of octets $(e_{0},\\, e_{1},\\, e_{2},\\, e_{3},\\, e_{4},\\, e_{5},\\, e_{6},\\, e_{7})$\nare known as the octonion basis elements and satisfy the following\nmultiplication rules\n\n\\begin{align}\ne_{0}=1;\\,\\, e_{0}e_{A}=e_{A}e_{0}= & e_{A};\\nonumber \\\\\ne_{A}e_{B}=-\\delta_{AB}e_{0}+f_{ABC}e_{C}.\\,\\,(\\forall\\, A,\\, B,\\, C=1,\\,2,.....,\\,7) & .\\label{eq:24}\\end{align}\nThe structur",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1107.1559v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Octonion Formulation of SU(3) Flavor Group",
+      "pageStart": 7,
+      "pageEnd": 9,
+      "target": "../sections/sec-003-4-octonion-formulation-of-su3-flavor-group.md",
+      "narrative": null,
+      "content": "The Lie algebra of $SU(3)$ exhibits most of the features of the larger\nLie algebras. The elements of $SU(3)$ group may be obtained in terms\nof $3\\times3$ Hermitian Gell Mann $\\lambda$ Hermitian matrices related\nto octonions where first three matrices describe the familiar isotopic\nspin generators from the $SU(2)$ subgroup of $SU(3)$. These generators\nconnect up $(u)$ and down quarks $(d)$. The fourth and fifth generators\nand the sixth and seventh generators are denoted as the $V$ - spin\nand the $U$ - spin. $V$ - spin connects the up $(u)$ and strange\nquarks $(s)$ while $U$ - spin connects the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1107.1559v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Commutation relations for Octonion Valued Shift Operators",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-5-commutation-relations-for-octonion-valued-shif.md",
+      "narrative": null,
+      "content": "The $I$, $U$ and $V$ - spin algebras are closed. Let us obtain\nthe commutation relations of shift operators $I_{\\pm},\\, U_{\\pm},\\, V_{\\pm}$\n\\cite{key-16} for $SU(3)$ group.Using equations (\\ref{eq:24}),\n(\\ref{eq:25}),(\\ref{eq:34}) and (\\ref{eq:35}),we get\n\n\\begin{align}\n\\left[U_{3},\\, U_{\\pm}\\right]=\\pm\\left[\\frac{i}{2}\\left(e_{6}\\pm ie_{7}\\right)\\right]= & \\pm U_{\\pm};\\nonumber \\\\\n\\left[V_{3},\\, V_{\\pm}\\right]=\\pm\\left[\\frac{i}{2}\\left(e_{4}\\pm ie_{5}\\right)\\right]= & \\pm V_{\\pm};\\nonumber \\\\\n\\left[I_{3},\\, I_{\\pm}\\right]=\\pm\\left[\\frac{i}{2}\\left(e_{1}\\pm ie_{2}\\right)\\right]= & \\pm I_{\\pm}.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1107.1559v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discussion and Conclusion",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-005-6-discussion-and-conclusion.md",
+      "narrative": null,
+      "content": "In the foregoing analysis, we have described the resemblance between\nreal Lie algebra $SU(2)$ and the quaternion formalism of isospin\n$SU((2)$ group by using the isomorphism between quaternion basis\nelements and Pauli matrices .On the same footing, we have established\nthe connection between octonion basis elements and Gell Mann $\\lambda$\nmatrices of $SU(3)$ flavor group. Accordingly, we have discussed\nthe various sub algebras of $SU(3)$ flavor group constructed in terms\nthree $SU(2)$ algebras of $I$, $U$ and $V$ -spin multiplets. It\ntherefore appears that the $SU(3)$ flavor group may represent",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

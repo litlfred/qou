@@ -1,0 +1,1972 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "hdr",
+  "blocks": [
+    {
+      "id": "library/hdr/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/figure-img-p001-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/figure-img-p001-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 16,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "HAL Id: tel-01411063\nhttps://hal.science/tel-01411063v1\nSubmitted on 6 Dec 2016\nHAL is a multi-disciplinary open access archive\nfor the deposit and dissemination of scientific re-\nsearch documents, whether they are published or not.\nThe documents may come from teaching and research\ninstitutions in France or abroad, or from public or pri-\nvate research centers.\nL’archive ouverte pluridisciplinaire HAL, est des-\ntinée au dépôt et à la diffusion de documents scien-\ntifiques de niveau recherche, publiés ou non, émanant\ndes établissements d’enseignement et de recherche\nfrançais ou étrangers, des la",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/ex-sec-001-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "ex-sec-001-01.md",
+      "narrative": null,
+      "content": "Let G be a ﬁnite group. The group algebra Z[G] has only one block, which contains all the irreducible representations of C[G].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/ex-sec-002-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "ex-sec-002-01.md",
+      "narrative": null,
+      "content": "Let G be a ﬁnite group. The linear map τ : Z[G] →Z deﬁned by τ(1) = 1 and τ(g) = 0 for all g ∈G \\ {1} is a symmetrising form on Z[G]; it is called the canonical symmetrising form on Z[G]. Suppose that there exists a symmetrising form τ on A. Let B = (bi)i∈I be an R-basis of A, and let B∨= (b∨ i )i∈I denote the dual basis of A with respect to τ, that is, τ(bib∨ j ) = δij. Let K be a ﬁeld containing R such that the algebra KA is split. The map τ can be extended to KA by extension of scalars. Let V ∈Irr(KA) with character χV . We have [GePf, Lemma 7.1.7]: bτ −1(χV ) = X i∈I χV (bi) b∨ i ∈Z(KA) .",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/ex-sec-002-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "ex-sec-002-02.md",
+      "narrative": null,
+      "content": "Let G be a ﬁnite group and let τ be the canonical symmetrising form on A := Z[G]. The set {g}g∈G forms a basis of A over Z, with {g−1}g∈G the dual basis of A with respect to τ. If K is an algebraically closed ﬁeld of characteristic 0, then KA is a split semisimple algebra and sV = |G|/χV (1) ∈Q for all V ∈Irr(KA). Because of the integrality of the Schur elements, we must have |G|/χV (1) ∈ZK ∩Q = Z for all V ∈Irr(KA). Thus, we have also shown that χV (1) divides |G|. Now, the algebra KA is semisimple if and only if sV̸ = 0 for all V ∈Irr(KA) [GePf, Theorem 7.2.6]. If this is the case, we have τ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prop-sec-002-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "prop-sec-002-03.md",
+      "narrative": null,
+      "content": "Let K be a ﬁeld containing R such that the algebra KA is split semisimple. The blocks of the symmetric algebra A are the non-empty subsets B of Irr(KA) that are minimal with respect to the property: X V ∈B sV χV (a) ∈R ∀a ∈A.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algebras of Finite Type",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-000-algebras-of-finite-type.md",
+      "narrative": null,
+      "content": "Let R be a commutative integral domain and let A be an R-algebra, free and ﬁnitely generated as an\nR-module. If R′ is a commutative integral domain containing R, we will write R′A for R′ ⊗R A and we\nwill denote by Irr(R′A) the set of irreducible representations of R′A.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Blocks",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-001-blocks.md",
+      "narrative": null,
+      "content": "Blocks\nWe deﬁne the block-idempotents of A to be the primitive idempotents of the centre Z(A) of A. Let K be\na ﬁeld containing R such that the algebra KA is semisimple. Then KA is isomorphic to a direct product\nof simple algebras,\nKA ∼=\nY\nV ∈Irr(KA)\nMV ,\nwhere MV is a simple K-algebra. For all V ∈Irr(KA), we denote by πV : KA ↠MV the projection\nonto the V -factor and by eV the element of KA such that\nπV ′(eV ) =\n\u001a 1MV\nif V = V ′,\n0\nif V̸ = V ′.\nWe have that the elements {eV }V ∈∈Irr(KA) are the block-idempotents of KA. Further, there exists a\nunique partition Bl(A) of Irr(KA) that is the ﬁnest",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetrising forms and Schur elements",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-002-symmetrising-forms-and-schur-elements.md",
+      "narrative": null,
+      "content": "Symmetrising forms and Schur elements\nA symmetrising form on the algebra A is a linear map τ : A →R such that\n(a) τ(ab) = τ(ba) for all a, b ∈A, that is, τ is a trace function, and\n(b) the map bτ : A →HomR(A, R), a 7→(x 7→τ(ax)) is an isomorphism of A-bimodules.\nIf there exists a symmetrising form on A, we say that A is a symmetric algebra.\nExample 1.2 Let G be a ﬁnite group. The linear map τ : Z[G] →Z deﬁned by τ(1) = 1 and τ(g) = 0\nfor all g ∈G \\ {1} is a symmetrising form on Z[G]; it is called the canonical symmetrising form on Z[G].\n13\nSuppose that there exists a symmetrising form τ on A.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Decomposition maps",
+      "pageStart": 17,
+      "pageEnd": 20,
+      "target": "../sections/sec-003-decomposition-maps.md",
+      "narrative": null,
+      "content": "Decomposition maps\nLet K be a ﬁeld containing R. Let R0(KA) be the Grothendieck group of ﬁnite-dimensional KA-modules.\nThe group R0(KA) is generated by expressions [V ], one for each KA-module V (up to isomorphism), with\nrelations [V ] = [V ′] + [V ′′] for each exact sequence 0 →V ′ →V →V ′′ →0 of KA-modules. Two KA-\nmodules V, V ′ give rise to the same element in R0(KA), if V and V ′ have the same composition factors,\ncounting multiplicities.\nIt follows that R0(KA) is free abelian with basis given by the isomorphism\nclasses of simple modules. Finally, let R+\n0 (KA) be the subset of R0(KA) con",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/thm-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 20,
+      "target": "thm-sec-003-01.md",
+      "narrative": null,
+      "content": "The modular reduction induces an additive map dθ : R+ 0 (KA) →R+ 0 (LA) such that dθ([K ˜V ]) = [k ˜V ], where ˜V is an OA-lattice and [k ˜V ] is regarded as an element of R+ 0 (LA) via the identiﬁcation of R0(kA) and R0(LA). The map dθ is called the decomposition map associated with the specialisation θ : R →L. Note that the map dθ depends only on θ and not on the choice of the valuation ring O. The matrix Dθ of this map with respect to the bases of R0(KA) and R0(LA) consisting of the classes of the simple modules is called the decomposition matrix associated with θ. The rows of Dθ are labell",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/thm-sec-003-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 20,
+      "target": "thm-sec-003-02.md",
+      "narrative": null,
+      "content": "Assume that KA and LA are split. If LA is semisimple, then KA is also semisimple and the decomposition map dθ is an isomorphism which preserves isomorphism classes of simple modules. In particular, we have a bijection Irr(KA) ↔Irr(LA). Finally, if A is symmetric, we can check whether the assumption of Tits’s deformation theorem is satisﬁed using the following semisimplicity criterion involving the Schur elements [GePf, Theorem 7.4.7].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/thm-sec-003-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 20,
+      "target": "thm-sec-003-03.md",
+      "narrative": null,
+      "content": "Assume that KA and LA are split and that A is symmetric with symmetrising form τ. For any simple KA-module V , let sV ∈R be the Schur element with respect to τ. Then LA is semisimple if and only if θ(sV )̸ = 0 for all V ∈Irr(KA). Chapter 2",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/ex-sec-005-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "ex-sec-005-01.md",
+      "narrative": null,
+      "content": "We have C1 = T1 = 1 and, for all s ∈S, Cs = \u001a Ts if L(s) = 0 Ts + q−L(s)T1 if L(s) > 0 . Using the Kazhdan–Lusztig basis, we can deﬁne the following three relations on W. For x, y ∈W, we have: • x ←L y , if Cx appears with non-zero coeﬃcient in hCy for some h ∈Hq(W, L). • x ←R y , if Cx appears with non-zero coeﬃcient in Cyh′ for some h′ ∈Hq(W, L). • x ←LR y , if Cx appears with non-zero coeﬃcient in hCyh′ for some h, h′ ∈Hq(W, L). If now we take the transitive closures of the above relations, we can deﬁne the following three preorders on W: ⩽L, ⩽R, ⩽LR. The preorder ⩽L deﬁnes an equivalence r",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/ex-sec-005-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "ex-sec-005-02.md",
+      "narrative": null,
+      "content": "Following the notation of Example 2.1, for W = S3 = {1, s, t, st, ts, sts = tst} and l > 0, • the left cells are {1}, {s, ts}, {t, st} and {sts} ; • the right cells are {1}, {s, st}, {t, ts} and {sts} ; • the two-sided cells are {1}, {s, t, st, ts} and {sts}. If l = 0, then all elements of W belong to the same cell (left, right or two-sided). Let now C be a left cell of W. The following two Z[q, q−1]-modules are left ideals of Hq(W, L): H⩽LC = ⟨Cy | y ⩽L w, w ∈C⟩Z[q,q−1] and H<LC = ⟨Cy | y ⩽L w, w ∈C, y /∈C⟩Z[q,q−1]. Then MC := H⩽LC/H<LC is a free left Hq(W, L)-module with basis indexed by the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Iwahori–Hecke Algebras",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-004-iwahorihecke-algebras.md",
+      "narrative": null,
+      "content": "In this chapter we will focus on real reﬂection groups, while in the next chapter we will see what happens\nin the complex case.\nLet (W, S) be a ﬁnite Coxeter system. By deﬁnition, the ﬁnite Coxeter group W has a presentation\nof the form\nW = ⟨S | (st)mst = 1 ∀s, t ∈S ⟩\nwith mss = 1 and mst ⩾2 for s̸ = t. We have a length function ℓ: W →Z⩾0 deﬁned by ℓ(w) :=\nmin { r | w = si1 . . . sir with sij ∈S } for all w ∈W.\nLet L : W →Z⩾0 be a weight function, that is, a map such that L(ww′) = L(w) + L(w′) whenever\nℓ(ww′) = ℓ(w)+ ℓ(w′). For s, t ∈S, we have L(s) = L(t) whenever s and t are conjugate in W.",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Kazhdan–Lusztig cells",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-005-kazhdanlusztig-cells.md",
+      "narrative": null,
+      "content": "Kazhdan–Lusztig cells\nLet ι be the algebra involution on Hq(W, L) given by ι(q) = q−1 and ι(Ts) = T −1\ns\nfor s ∈S (as a\nconsequence, ι(Tw) = T −1\nw−1 for all w ∈W). By [KaLu1, Theorem 1.1] (see [Lu3, Proposition 2] for the\nunequal parameter case), for each w ∈W, there exists an element Cw ∈Hq(W, L) uniquely determined\nby the conditions\nι(Cw) = Cw\nand\nι(Cw) = Tw +\nX\nx∈W, x<w\nPx,w Tx ,\n17\nwhere < stands for the Chevalley–Bruhat order on W and Px,w ∈q−1Z[q−1]. The elements (Cw)w∈W\nalso form a basis of Hq(W, L), the Kazhdan–Lusztig basis.\nExample 2.2 We have C1 = T1 = 1 and, for all s ∈S, Cs =\n\u001a T",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/ex-sec-006-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "ex-sec-006-01.md",
+      "narrative": null,
+      "content": "The irreducible representations of the symmetric group Sn are parametrised by the par- titions of n. For W = S3, there are three irreducible representations. Let E(3), E(2,1) and E(1,1,1) denote respectively the trivial, reﬂection and sign representation of S3. Using again the notation of Example 2.1, we have sE(3) = (q2l + 1)(q4l + q2l + 1), sE(2,1) = q2l + 1 + q−2l, sE(1,1,1) = (q−2l + 1)(q−4l + q−2l + 1). We can deﬁne the functions a : Irr(W) →Z and A : Irr(W) →Z by setting a(E) := −valuationq(sE) and A(E) := −degreeq(sE).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/ex-sec-006-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "ex-sec-006-02.md",
+      "narrative": null,
+      "content": "Following Example 2.4, for W = S3, we have aE(3) = 0, aE(2,1) = 2l, aE(1,1,1) = 6l and AE(3) = −6l, AE(2,1) = −2l, AE(1,1,1) = 0. The Schur elements of Hq(W, L) have been explicitly calculated for all ﬁnite Coxeter groups: • for type An by Steinberg [St1], • for type Bn by Hoefsmit [Ho], • for type Dn by Benson and Gay [BeGa] (it derives from type Bn with the use of Cliﬀord theory), • for dihedral groups I2(m) by Kilmoyer and Solomon [KiSo], • for F4 by Lusztig [Lu1], • for E6 and E7 by Surowski [Su], • for E8 by Benson [Be], • for H3 by Lusztig [Lu2], • for H4 by Alvis and Lusztig [AlLu]. The",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/ex-sec-006-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "ex-sec-006-03.md",
+      "narrative": null,
+      "content": "Following Example 2.4, for W = S3, we have sE(3) = Φ2(q2l)Φ3(q2l), sE(2,1) = q−2lΦ3(q2l), sE(1,1,1) = q−6lΦ2(q2l)Φ3(q2l) , where Φn denotes the n-th Q-cyclotomic polynomial.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Schur elements and the a-function",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-006-schur-elements-and-the-a-function.md",
+      "narrative": null,
+      "content": "Schur elements and the a-function\nFrom now on, set R := Z[q, q−1] and let K ⊆C be a ﬁeld such that he algebra K(q)Hq(W, L) is split\nsemisimple.\nUsing the standard basis of the Iwahori–Hecke algebra, we deﬁne the linear map τ : Hq(W, L) →R\nby setting\nτ(Tw) :=\n\u001a 1\nif w = 1,\n0\notherwise.\n18\nThe map τ is a symmetrising form on Hq(W, L), and the elements (Tw−1)w∈W form a basis of Hq(W, L)\ndual to the standard basis with respect to τ (that is, τ(Tw−1Tw′) = δw,w′) [GePf, Proposition 8.1.1]. The\nmap τ is called the canonical symmetrising form on Hq(W, L), because it specialises to the canonical\nsymmet",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/ex-sec-007-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "ex-sec-007-02.md",
+      "narrative": null,
+      "content": "The group S3 has three irreducible representations. Recalling the notation of Example 2.1, for l > 0, each irreducible representation forms a family on its own. This is true in general for the symmetric group Sn. For l = 0, all irreducible representations belong to the same family. This is true in general for the group algebra (L(s) = 0 for all s ∈S) of every ﬁnite Coxeter group. In [Ro1] Rouquier gave an alternative deﬁnition for Lusztig’s families. He showed that, for ﬁnite Weyl groups in the equal parameter case, the families of characters coincide with the blocks of the Iwahori–Hecke algeb",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Families of characters and Rouquier families",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-007-families-of-characters-and-rouquier-families.md",
+      "narrative": null,
+      "content": "Families of characters and Rouquier families\nThe families of characters are a special partition of the set of irreducible representations of W. In the\ncase where W is a Weyl group, these families play an essential role in the deﬁnition of the families of\nunipotent characters for the corresponding ﬁnite reductive groups. Their original deﬁnition is due to\nLusztig [Lu4, 4.2] and uses the a-function.\nLet I ⊆S and consider the parabolic subgroup WI ⊆W generated by I. Then we have a correspond-\ning parabolic subalgebra H(WI, L) ⊆Hq(W, L). By extension of scalars from R to K(q), we also have\na subal",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/thm-sec-007-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "thm-sec-007-01.md",
+      "narrative": null,
+      "content": "Assume that Lusztig’s conjectures P1–P15 hold. The Lusztig families and the Kazhdan– Lusztig families coincide. Lusztig’s conjectures P1–P15 concern properties of the Kazhdan–Lusztig basis which should hold for any ﬁnite Coxeter group and in the general multiparameter case. For the moment, Conjectures P1–P15 have been proved in the following cases: • Equal parameter case for ﬁnite Weyl groups [KaLu2, Lu6, Sp]. • Equal parameter case for H3, H4 and dihedral groups I2(m) [Al, DuCloux]. • Unequal parameter case for F4 and dihedral groups I2(m) [Ge4, Ge9]. • Asymptotic case and some other cases fo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/thm-sec-007-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "thm-sec-007-03.md",
+      "narrative": null,
+      "content": "Let (W, S) be a ﬁnite Coxeter system and let Hq(W, L) be an Iwahori–Hecke algebra associated to W. The Lusztig families and the Rouquier families of Hq(W, L) coincide.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/ex-sec-008-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "ex-sec-008-01.md",
+      "narrative": null,
+      "content": "Since S3 is a Weyl group, the algebra Q(q)Hq(S3, l) is split semisimple. Now, following",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Decomposition maps and canonical basic sets",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "../sections/sec-008-decomposition-maps-and-canonical-basic-sets.md",
+      "narrative": null,
+      "content": "Decomposition maps and canonical basic sets\nAs we saw in Section 2.2, the specialisation q 7→1 yields a bijection between the set of irreducible\nrepresentations of K(q)Hq(W, L) and Irr(W). What happens though when q specialises to a complex\nnumber? The resulting Iwahori–Hecke algebra is not necessarily semisimple and the ﬁrst questions that\nneed to be answered are the following: What are the simple modules for the newly obtained algebra? Is\nthere a good way to parametrise them? What are their dimensions? One major approach to answering\nthese questions is through the existence of “canonical bas",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cyclotomic Hecke Algebras",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-009-cyclotomic-hecke-algebras.md",
+      "narrative": null,
+      "content": "Cyclotomic Hecke algebras generalise the notion of Iwahori–Hecke algebras to the case of complex reﬂec-\ntion groups. For any positive integer e we will write ζe for exp(2πi/e) ∈C.\nLet h be a ﬁnite dimensional complex vector space.\nA pseudo-reﬂection is a non-trivial element\ns ∈GL(h) that ﬁxes a hyperplane pointwise, that is, dimCKer(s −idh) = dimCh −1. The hyperplane\nKer(s −idh) is the reﬂecting hyperplane of s. A complex reﬂection group is a ﬁnite subgroup of GL(h)\ngenerated by pseudo-reﬂections. The classiﬁcation of (irreducible) complex reﬂection groups is due to\nShephard and Todd [ShTo]:\nT",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hecke algebras for complex reflection groups",
+      "pageStart": 26,
+      "pageEnd": 28,
+      "target": "../sections/sec-010-hecke-algebras-for-complex-reflection-groups.md",
+      "narrative": null,
+      "content": "Hecke algebras for complex reﬂection groups\nLet A be the set of reﬂecting hyperplanes of W. Let hreg := h \\ S\nH∈A H and BW := π1(hreg/W, x0),\nwhere x0 is some ﬁxed basepoint. The group BW is the braid group of W. For every orbit C of the action\nof W on A, we set eC the common order of the subgroups WH, where H is any element of C and WH is\nthe pointwise stabiliser of H. Note that WH is cyclic, for all H ∈A.\nWe choose a set of indeterminates u = (uC,j)(C∈A/W )(0⩽j⩽eC−1) and we denote by Z[u, u−1] the\nLaurent polynomial ring in the indeterminates u. We deﬁne the generic Hecke algebra H(W) of W t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/rem-sec-009-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "rem-sec-009-01.md",
+      "narrative": null,
+      "content": "We have G(l, 1, n) ∼= (Z/lZ) ≀Sn ∼= (Z/lZ)n ⋊Sn.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/rem-sec-009-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "rem-sec-009-02.md",
+      "narrative": null,
+      "content": "We have G(1, 1, n) ∼= Sn, G(2, 1, n) ∼= Bn, G(2, 2, n) ∼= Dn, G(m, m, 2) ∼= I2(m), G23 ∼= H3, G28 ∼= F4, G30 ∼= H4, G35 ∼= E6, G36 ∼= E7, G37 ∼= E8. Let W ⊂GL(h) be a complex reﬂection group. Benard [Ben] and Bessis [Bes] have proved (using a case-by-case analysis) that the ﬁeld K generated by the traces on h of all the elements of W is a splitting ﬁeld for W. The ﬁeld K is called the ﬁeld of deﬁnition of W. If K ⊆R, then W is a ﬁnite Coxeter group, and if K = Q, then W is a Weyl group.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/ex-sec-011-03",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "ex-sec-011-03.md",
+      "narrative": null,
+      "content": "Let us consider the example of S3, which is isomorphic to G(1, 1, 3). We have sE(3) = Φ2(vt,0v−1 t,1)Φ3(vt,0v−1 t,1), sE(2,1) = v−1 t,0vt,1Φ3(vt,0v−1 t,1), sE(1,1,1) = v−3 t,0v3 t,1Φ2(vt,0v−1 t,1)Φ3(vt,0v−1 t,1), where Φn denotes the n-th Q-cyclotomic polynomial. Let ϕm : vC,j 7→qmC,j be a cyclotomic specialisation. The canonical symmetrising form on H(W) specialises via ϕm to become a canonical symmetrising form τϕm on Hϕm(W). The Schur elements of Hϕm(W) with respect to τϕm are (ϕm(sE))E∈Irr(W ), hence they can be written in the form (2.2). We can again deﬁne the a-function am : Irr(W) →Z an",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Schur elements and the a-function",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-011-schur-elements-and-the-a-function.md",
+      "narrative": null,
+      "content": "Schur elements and the a-function\nThe canonical symmetrising form τ on H(W) (see Assumptions 3.4) can be extended to K(v)H(W) by\nextension of scalars, and can be used to deﬁne Schur elements (sE)E∈Irr(W ) for H(W), as in the real\ncase. The Schur elements of H(W) have been explicitly calculated for all complex reﬂection groups:\n• for ﬁnite Coxeter groups see §2.2;\n• for complex reﬂection groups of type G(l, 1, n) by Geck–Iancu–Malle [GIM] and Mathas [Mat];\n• for complex reﬂection groups of type G(l, 2, 2) by Malle [Mal2];\n• for the non-Coxeter exceptional complex reﬂection groups by Malle [Mal2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/rem-sec-011-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "rem-sec-011-02.md",
+      "narrative": null,
+      "content": "Theorem 3.7 was independently obtained by Rouquier [Ro2, Theorem 3.5] using a general argument on rational Cherednik algebras.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/thm-sec-011-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "thm-sec-011-01.md",
+      "narrative": null,
+      "content": "Let E ∈Irr(W). The Schur element sE is an element of ZK[v, v−1] of the form sE = ξENE Y i∈IE ΨE,i(ME,i) (3.3) where (a) ξE is an element of ZK, (b) NE = Q C,j vbC,j C,j is a monomial in ZK[v, v−1] with PeC−1 j=0 bC,j = 0 for all C ∈A/W, (c) IE is an index set, (d) (ΨE,i)i∈IE is a family of K-cyclotomic polynomials in one variable, (e) (ME,i)i∈IE is a family of monomials in ZK[v, v−1] such that if ME,i = Q C,j vaC,j C,j , then gcd(aC,j) = 1 and PeC−1 j=0 aC,j = 0 for all C ∈A/W. Equation (3.3) gives the factorisation of sE into irreducible factors. The monomials (ME,i)i∈IE are unique up to inve",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/ex-sec-012-02",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "ex-sec-012-02.md",
+      "narrative": null,
+      "content": "For W = S3, the Rouquier families associated with no essential hyperplane are trivial (that is, every block is a singleton). The hyperplane HM corresponding to the monomial M = vt,0v−1 t,1 is essential, and it is the unique essential hyperplane for S3. Let ϕm : vt,j 7→qmj, j = 0, 1, be a cyclotomic specialisation. We have that m = (m0, m1) belongs to HM if and only if m0 = m1. There is a single Rouquier family associated with HM, which contains all irreducible representations of S3. 1The parabolic subgroups of a complex reﬂection group W ⊂GL(h) are the pointwise stabilisers of the subsets of h",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prop-sec-012-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "prop-sec-012-03.md",
+      "narrative": null,
+      "content": "The Rouquier families associated with no essential hyperplane are trivial if and only if W = G4 or W is of type G(l, 1, n).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Families of characters and Rouquier families",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "../sections/sec-012-families-of-characters-and-rouquier-families.md",
+      "narrative": null,
+      "content": "Families of characters and Rouquier families\nLet ϕm : vC,j 7→qmC,j be a cyclotomic specialisation and let Hϕm(W) be the corresponding cyclotomic\nHecke algebra associated with W. How can we deﬁne families of characters for Hϕm(W)? We cannot\napply Lusztig’s original deﬁnition, because parabolic subgroups of complex reﬂection groups1 do not have\na nice presentation as in the real case, and certainly not a “corresponding” parabolic Hecke algebra. On\nthe other hand, we do not have a Kazhdan–Lusztig basis for Hϕm(W), so we cannot construct Kazhdan–\nLusztig cells and use them to deﬁne families of cha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/thm-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Semicontinuity property of Rouquier families",
+      "pageStart": 29,
+      "pageEnd": 30,
+      "target": "thm-sec-012-01.md",
+      "narrative": null,
+      "content": "Let m = (mC,j)(C∈A/W )(0⩽j⩽eC−1) be a family of integers and let ϕm : vC,j 7→qmC,j be the corresponding cyclotomic specialisation. The Rouquier families of Hϕm(W) are unions of the Rouquier families associated with the essential hyper- planes that m belongs to and they are minimal with respect to this property. Thanks to the above result, it is enough to do calculations in a ﬁnite number of cases in order to obtain the families of characters for all cyclotomic Hecke algebras, whose number is inﬁnite.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Decomposition maps and canonical basic sets",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-013-decomposition-maps-and-canonical-basic-sets.md",
+      "narrative": null,
+      "content": "Decomposition maps and canonical basic sets\nGiven a cyclotomic Hecke algebra Hϕm(W) and a ring homomorphism θ : q 7→η ∈C \\ {0}, we obtain a\nsemisimplicity criterion and a decomposition map exactly as in §2.4. A canonical basic set with respect\nto θ is also deﬁned in the same way.\nIn [ChJa1], we showed the existence of canonical basic sets with respect to any θ for all cyclotomic\nHecke algebras associated with ﬁnite Coxeter groups, that is, when the weight function L in the deﬁnition\nof Hq(W, L) is also allowed to take negative values.\nFor non-Coxeter complex reﬂection groups, things become mor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Ariki–Koike Algebras",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "../sections/sec-014-arikikoike-algebras.md",
+      "narrative": null,
+      "content": "We will see more on canonical basic sets for type\nG(l, 1, n) in the next chapter.\nIn [ChJa2], building on work by Genet and Jacon [GenJa], we generalised the above result to obtain\ncanonical basic sets for all groups of type G(l, p, n) with n > 2, or n = 2 and p odd.\nFinally, for the exceptional complex reﬂection groups of rank 2 (G4,. . . ,G22), we have shown the\nexistence of canonical basic sets for the cyclotomic Hecke algebras appearing in [BrMa] with respect to\nany specialisation θ [ChMi].\n28\nChapter 4\n\nAriki—Koike Algebras\n\nAriki-Koike algebras were introduced by Ariki and Koike as gener",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/ex-sec-015-01",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 32,
+      "pageEnd": 34,
+      "target": "ex-sec-015-01.md",
+      "narrative": null,
+      "content": "Let us take l = 2, n = 6, λ = ((2, 1), (3)) and m = (−1, 2). Then Bcλ = \u0012 3 \u0013 We have Contcλ = {7, 3, 3, 2, 1, 1, 0}. Let s ∈Z with s ⩾hcλ. Let Bcs λ be the m-charged symbol of λ obtained from Bcλ by shifting all the rows by s −hcλ. Let κ1 ⩾κ2 ⩾· · · ⩾κt, with t = ls + Pl−1 i=0[mi], be the elements of the multiset Bcs λ written in decreasing order (if s = hcλ, these are simply the elements of Contcλ). We set nm(λ) := t X i=1 (i −1)κi. Let r ∈Z>0, By [GeJa2, Proposition 5.5.11], the following element of Q does not depend on the choice of the integer s: a(m,r)(λ) := r (nm(λ) −nm(∅)). (4.3) We wi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Combinatorics of partitions and multipartitions",
+      "pageStart": 32,
+      "pageEnd": 34,
+      "target": "../sections/sec-015-combinatorics-of-partitions-and-multipartitions.md",
+      "narrative": null,
+      "content": "Let | and n be positive integers.\n\n4.1.1 Partitions\n\nA partition X = (Aq,..., ,An) is a family of positive integers such that A; > A2 >... > An S 1. We call\nh the length or height of the partition A. We write |A| := ye , A; and we say that » is a partition of n\n\n29\nif n = |λ|. We denote by P(n) the set of partitions of n. To each partition λ we associate its β-number,\nβλ = (β1, β2, . . . , βh), deﬁned by\nβ1 := h + λ1 −1, β2 := h + λ2 −2, . . . , βh := h + λh −h = λh.\nNote that β1 > β2 > · · · > βh ⩾1.\nWe deﬁne the set of nodes [λ] of λ to be the set\n[λ] := {(i, j) | 1 ⩽i ⩽h, 1 ⩽j ⩽λi}.\nWe iden",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/prop-sec-016-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "prop-sec-016-01.md",
+      "narrative": null,
+      "content": "Let Hm,r n be the cyclotomic Ariki–Koike algebra deﬁned above, and let λ ∈P(d, n). The a-value of Eλ is a(m,r)(λ) = r  N(λ) − X 0⩽s⩽l−1 X (i,j)∈[λ(s)] X 0⩽t⩽l−1,t̸=s min(hλ(s),λ(t) i,j + ms −mt, 0)  .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Schur elements and the a-function",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "../sections/sec-016-schur-elements-and-the-a-function.md",
+      "narrative": null,
+      "content": "Schur elements and the a-function\nLet τ : Hq\nn →R be the linear map deﬁned by\nτ(Xa1\n1 Xa2\n2 . . . Xan\nn tw) =\n\u001a 1\nif a1 = a2 = · · · = an = 0 and w = 1,\n0\notherwise,\nwhere w ∈Sn and 0 ⩽am ⩽l −1 for all m = 1, 2, . . . , n. The function τ was introduced by Bremke\nand Malle [BreMa] who showed that τ is a trace form and that τ is essentially independent of the choice\nof basis of Hq\nn. It is not obvious from the deﬁnition above that τ coincides with the form introduced by\nBremke and Malle; however, this was proved by Malle and Mathas in [MalMat], where they also showed\nthat τ is a canonical symmet",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/prop-sec-017-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "prop-sec-017-01.md",
+      "narrative": null,
+      "content": "Let λ, µ ∈P(l, n) and assume that r̸ = 0. If Eλ and Eµ are in the same Rouquier family, then Contcλ = Contcµ with respect to the weight system m. The converse is true when l is a power of a prime number. Now, using the form of the Schur elements, we obtain that the essential hyperplanes for G(l, 1, n) are: • kr + rs −rt = 0 for all −n < k < n if ζs l −ζt l is not a unit in Z[ζl]. • r = 0.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prop-sec-017-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "prop-sec-017-03.md",
+      "narrative": null,
+      "content": "Let λ, µ ∈P(l, n). The following are equivalent : (1) Eλ and Eµ are in the same Rouquier family associated with the essential hyperplane kr+rs−rt = 0. (2) λ(i) = µ(i) for all i /∈{s, t} and Contc(λ(s),λ(t)) = Contc(µ(s),µ(t)) with respect to the weight system (0, k). (3) λ(i) = µ(i) for all i /∈{s, t} and Contc(λ(s),λ(t)) = Contc(µ(s),µ(t)) with respect to the weight system (ms, mt). (4) λ(i) = µ(i) for all i /∈{s, t} and E(λ(s),λ(t)), E(µ(s),µ(t)) are in the same Rouquier family of the cyclotomic Ariki–Koike algebra of type B|λ(s)|+|λ(t)| obtained via the specialisation : q 7→ur, Q0 7→urs, Q1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Families of characters and Rouquier families",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "../sections/sec-017-families-of-characters-and-rouquier-families.md",
+      "narrative": null,
+      "content": "Families of characters and Rouquier families\nThe Rouquier families for cyclotomic Hecke algebras associated with the complex reﬂection group\nG(l, 1, n), that is, cyclotomic Ariki–Koike algebras, have been ﬁrst determined by Brou´e and Kim [BrKi],\nbut it turned out that their results were only true in the case where l is a power of a prime number.\nIn [Ch3], we gave the correct families for any l, using the property of semicontinuity explained in the\nprevious chapter. In fact, we discovered that the Rouquier families for G(l, 1, n) are determined by the\nfamilies of characters of Weyl groups of t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/rem-sec-017-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "rem-sec-017-02.md",
+      "narrative": null,
+      "content": "Note that, according to Theorem 3.10, the Rouquier families do not depend on the actual values of the ri’s and r, but only on the essential hyperplanes to which they belong. Therefore, as long as r̸ = 0, we can always restrict to the case r = 1. It is obvious from the form of the Schur elements that the Rouquier families associated with no essential hyperplane are all trivial. We now have the following two results about the Rouquier families associated with the essential hyperplanes described above [Ch3, Propositions 3.15, 3.16, 3.17]:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Decomposition maps and canonical basic sets",
+      "pageStart": 36,
+      "pageEnd": 38,
+      "target": "../sections/sec-018-decomposition-maps-and-canonical-basic-sets.md",
+      "narrative": null,
+      "content": "Decomposition maps and canonical basic sets\nA few of the results in this section have been brieﬂy discussed in §3.4. They are repeated here for reasons\nof completeness.\n4.4.1\nClassical setting\nWe now consider the specialised Ariki–Koike algebra with relations\n(s −ζs0\ne )(s −ζs1\ne ) · · · (s −ζsl−1\ne\n) = 0,\n(ti −ζe)(ti + 1) = 0\nfor i = 1, . . . , n −1,\n(4.4)\nwhere (s0, . . . , sl−1) ∈Zl and e ∈Z>0.\nGeck and Jacon [GeJa1, Ja2, Ja3, GeJa2] have shown that, for a suitable choice of m, the correspond-\ning function am := a(m,r), where r can be any positive integer, yields a canonical basic set for t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rational Cherednik Algebras",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "../sections/sec-019-rational-cherednik-algebras.md",
+      "narrative": null,
+      "content": "Let W ⊂GL(h) be a complex reﬂection group. There is a natural pairing ( , ) : h × h∗→C given by\n(y, x) := x(y). Let S be the set of all pseudo-reﬂections in W and let c : S →C be a conjugacy invariant\nfunction, that is, a map such that\nc(wsw−1) = c(s)\n∀s ∈S, w ∈W.\nLet V := h ⊕h∗and let TV ∗denote the tensor algebra on the dual space of V . For s ∈S, ﬁx αs ∈h∗\nto be a basis of the one-dimensional vector space Im(s −idV )|h∗and α∨\ns ∈h to be a basis of the one-\ndimensional vector space Im(s −idV )|h. Let t ∈C. The rational Cherednik algebra Ht,c(W) of W is the\nquotient of TV ∗⋊W by the relations",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/rem-sec-019-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "rem-sec-019-01.md",
+      "narrative": null,
+      "content": "For all λ ∈C×, we have Hλt,λc(W) ∼= Ht,c(W). So we only need to consider the cases t = 1 and t = 0. There is a natural ﬁltration F on Ht,c(W) given by putting V ∗in degree one and W in degree zero. The crucial result by Etingof and Ginzburg is the Poincar´e–Birkhoﬀ–Witt (PBW) Theorem [EtGi,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/thm-sec-019-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 39,
+      "target": "thm-sec-019-02.md",
+      "narrative": null,
+      "content": "Let C[V ] be the set of regular functions on V (that is, the symmetric algebra Sym(V ∗) of the dual space of V ). There is an isomorphism of algebras grF(Ht,c(W)) ∼= C[V ] ⋊W, given by σ(v) 7→v, σ(w) 7→w, where σ(h) denotes the image of h ∈Ht,c(W) in grF(Ht,c(W)). In particular, there is an isomorphism of vector spaces Ht,c(W) ∼= C[V ] ⊗C[W]. 5.1",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prop-sec-020-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "prop-sec-020-02.md",
+      "narrative": null,
+      "content": "The following are equivalent: (1) O is semisimple. (2) ∆(E) = L(E) for all E ∈Irr(W). (3) D is the identity matrix. Now, there exist several orderings on the set of standard modules of O (and consequently on Irr(W)) for which O is a highest weight category in the sense of [CPS] (see also [Ro2, §5.1]). If <O is such an ordering on Irr(W), and if [∆(E) : L(E′)]̸ = 0 for some E, E′ ∈Irr(W), then either E = E′ or E′ <O E. Thus, we can arrange the rows of D so that the decomposition matrix is lower unitriangular. We will refer to these orderings on Irr(W) as orderings on the category O. A famous ex",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prop-sec-020-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "prop-sec-020-05.md",
+      "narrative": null,
+      "content": "Set B := {E ∈Irr(W) | KZ(L(E))̸ = 0}. (a) The set {KZ(L(E)) | E ∈B} is a complete set of pairwise non-isomorphic simple Hk(W)-modules. (b) For all E ∈Irr(W), E′ ∈B, we have [∆(E) : L(E′)] = [KZ(∆(E)) : KZ(L(E′))]. (c) If E ∈B, then [KZ(∆(E)) : KZ(L(E))] = 1. (d) If [KZ(∆(E)) : KZ(L(E′))]̸ = 0 for some E ∈Irr(W) and E′ ∈B, then either E = E′ or E′ <O E.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rational Cherednik Algebras at t =1",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "../sections/sec-020-rational-cherednik-algebras-at-t-1.md",
+      "narrative": null,
+      "content": "The PBW Theorem implies that the rational Cherednik algebra H1,c(W), as a vector space, has a\n“triangular decomposition”\nH1,c(W) ∼= C[h] ⊗C[W] ⊗C[h∗].\nAnother famous example of a triangular decomposition is the one of the enveloping algebra U(g) of a ﬁnite\ndimensional semisimple complex Lie algebra g (into the enveloping algebras of the Cartan subalgebra,\nthe nilpotent radical of the Borel subalgebra and its opposite). In the representation theory of g, one\nof the categories of modules most studied, and best understood, is category O, the abelian category\ngenerated by all highest weight module",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/rem-sec-020-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "rem-sec-020-01.md",
+      "narrative": null,
+      "content": "Each module in category O is ﬁnitely generated as a C[h]-module. Category O has been thoroughly studied in [GGOR]. Proofs of all its properties presented here can be found in this paper. For all E ∈Irr(W), we set ∆(E) := H1,c(W) ⊗C[h∗]⋊W E, where C[h∗] acts trivially on E (that is, the augmentation ideal C[h∗]+ acts on E as zero) and W acts naturally. The module ∆(E) belongs to O and is called a standard module (or Verma module). Each standard module ∆(E) has a simple head L(E) and the set {L(E) | E ∈Irr(W)} is a complete set of pairwise non-isomorphic simple modules of the category O. Every m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/rem-sec-020-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "rem-sec-020-03.md",
+      "narrative": null,
+      "content": "If cE −cE′ /∈Z \\ {0} for all E, E′ ∈Irr(W), then D is the identity matrix, and thus O is semisimple.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/rem-sec-020-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 39,
+      "pageEnd": 41,
+      "target": "rem-sec-020-04.md",
+      "narrative": null,
+      "content": "In the rational Cherednik algebra literature the function c is usually taken to be the negative of the one deﬁned here. In the context of this chapter the above deﬁnition is more natural. In both cases we obtain an ordering on the category O. 5.1.3 The KZ-functor Following [GGOR, §5.3], there exists an exact functor, known as the Knizhnik–Zamalodchikov functor or simply KZ, between the category O of Hk(W) and the category of representations of a certain specialised Hecke algebra Hk(W). Using the notation of §3.1, this specialised Hecke algebra Hk(W) is the quotient of the group algebra C[BW ]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/ex-sec-021-05",
+      "types": [
+        "folio-assistant-core:Example",
+        "doco:Section"
+      ],
+      "kind": "example",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 44,
+      "target": "ex-sec-021-05.md",
+      "narrative": null,
+      "content": "Let W be the symmetric group Sn and let l := L(s) for every transposition s ∈Sn (there exists only one orbit C in A/W). Let η2l := ζr e for some e, r ∈Z>0 with gcd(e, r) = 1. As we saw in Example 2.14, the canonical basic set Bθ of Hq(W, l) with respect to θ : q 7→η consists of the e-regular partitions of n. Now take kC,0 = r/2e and kC,1 = −r/2e. Let λ be a partition of n and let Eλ be the corresponding irreducible representation of Sn. We have KZ(L(Eλ))̸ = 0 if and only if λ is e-regular. 5.2.3 Canonical basic sets for Ariki–Koike algebras As we have said and seen earlier, there exist several",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prop-sec-021-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 44,
+      "target": "prop-sec-021-02.md",
+      "narrative": null,
+      "content": "Let W = Gn, n ∈{23, 24, 27, 29, 30}. Let m and k be deﬁned as above, and let E, E′ ∈Irr(W). If [∆(E) : L(E′)]̸ = 0, then either E = E′ or am E′ < am E . In particular, we have KZ(L(E))̸ = 0 if and only if E belongs to the canonical basic set of Hϕm(W) with respect to θ : q 7→ζr e. 5.2.2 Canonical basic sets for Iwahori–Hecke algebras Equation (5.2) has also allowed us to show that, in the case where W is a ﬁnite Coxeter group, and assuming that Lusztig’s conjectures P1 – P15 hold, the c-function is compatible with the ordering ⩽LR on two-sided cells, since a and A are (see [Ge8, Remark 5.4] fo",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prop-sec-021-03",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 44,
+      "target": "prop-sec-021-03.md",
+      "narrative": null,
+      "content": "Let (W, S) be a ﬁnite Coxeter group and let Hq(W, L) be the Iwahori–Hecke algebra of W with parameter L, as deﬁned in Chapter 2. For H ∈A, let sH ∈W be the reﬂection with reﬂecting hyperplane H and let C be the orbit of H under the action of W. If H′ ∈C, then we have L(sH) = L(sH′) and we can set LC := L(sH). Let e, r ∈Z>0 such that gcd(e, r) = 1, and take, for all C ∈A/W, kC,0 = rLC e and kC,1 = −rLC e . If E ∈Irr(W), then KZ(L(E))̸ = 0 if and only if E belongs to the canonical basic set of Hq(W, L) with respect to θ : q 7→ζr e.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prop-sec-021-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 44,
+      "target": "prop-sec-021-06.md",
+      "narrative": null,
+      "content": "Let λ, λ′ ∈P(l, n). If [∆(Eλ) : L(Eλ′)]̸ = 0, then either λ = λ′ or aEλ′ < aEλ. The above result, combined with Proposition 5.9, yields the following:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Canonical basic sets for Hecke algebras from rational Cherednik algebras",
+      "pageStart": 41,
+      "pageEnd": 44,
+      "target": "../sections/sec-021-canonical-basic-sets-for-hecke-algebras-from-rat.md",
+      "narrative": null,
+      "content": "Canonical basic sets for Hecke algebras from rational Chered-\nnik algebras\nLet Θ and Hk(W) be deﬁned as above. We have a decomposition matrix Dk for the specialised Hecke\nalgebra Hk(W) with respect to the specialisation Θ. The rows of Dk are indexed by Irr(W) and its\ncolumns by Irr(Hk(W)). Following Proposition 5.9, Dk can be obtained from the decomposition matrix\nD of the category O by removing the columns that correspond to the simple modules killed by the KZ-\nfunctor, that is, the columns labelled by Irr(W) \\ B. This implies that Dk becomes lower unitriangular\nwhen its rows are ordered with",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/rem-sec-021-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 44,
+      "target": "rem-sec-021-01.md",
+      "narrative": null,
+      "content": "The above formula was also obtained in [GGOR, §6.2] for ﬁnite Weyl groups in the equal parameter case. Equation (5.2) implies that am +Am yields the same ordering on Irr(W) as the c-function (note that in this case cE ∈Q for all E ∈Irr(W)). Thus, am + Am is also an ordering on the category O, that is, if [∆(E) : L(E′)]̸ = 0 for some E, E′ ∈Irr(W), then either E = E′ or am E′ + Am E′ < am E + Am E . If now the function am is compatible with am + Am, that is, for all E, E′ ∈Irr(W), am E′ + Am E′ < am E + Am E ⇒am E′ < am E , (5.3) then am is an ordering on the category O and we obtain the existe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/rem-sec-021-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 44,
+      "target": "rem-sec-021-04.md",
+      "narrative": null,
+      "content": "The above result can be generalised to the case where kC,0 = λLC and kC,1 = −λLC for any complex number λ. If λ ∈Z or λ ∈C \\ Q, then both category O and Hexp(2πiλ)(W, L) are semisimple, so the statement trivially holds. If λ is a negative rational number, let us say λ = −r/e for some e, r ∈Z>0 with gcd(e, r) = 1, and E ∈Irr(W), then KZ(L(E))̸ = 0 if and only if E belongs to the canonical basic set of Hq(W, −L) with respect to θ : q 7→ζr e. We recall now that the canonical basic sets for ﬁnite Coxeter groups where L can take negative values are described in [ChJa1]. In fact, E belongs to the ca",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/rem-sec-021-07",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 44,
+      "target": "rem-sec-021-07.md",
+      "narrative": null,
+      "content": "By repeating the proof of [CGG, Proposition 4.6] for W = G(l, 1, n), we can obtain that the images of the standard modules via the KZ-functor agree with the Specht modules deﬁned by the cellular structure on the Ariki–Koike algebras in [DJM], provided that the parameters k are chosen to belong to the so-called “asymptotic region” (see [Ro2, Proposition 6.4] for the explicit description of this region).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prop-sec-022-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 44,
+      "pageEnd": 45,
+      "target": "prop-sec-022-01.md",
+      "narrative": null,
+      "content": "Let E, E′ ∈Irr(W). (a) The baby Verma module ∆(E) has a simple head, L(E). Hence, ∆(E) is indecomposable. (b) ∆(E) ∼= ∆(E′) if and only if E ∼= E′. (c) The set {L(E) | E ∈Irr(W)} is a complete set of pairwise non-isomorphic simple H0,c-modules.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Rational Cherednik Algebras at t = 0",
+      "pageStart": 44,
+      "pageEnd": 45,
+      "target": "../sections/sec-022-rational-cherednik-algebras-at-t-0.md",
+      "narrative": null,
+      "content": "Rational Cherednik Algebras at t = 0\nLet us now consider the rational Cherednik algebra H0,c(W). Set A := C[h]W ⊗C[h∗]W . We deﬁne the\nrestricted rational Cherednik algebra to be\nH0,c(W) := H0,c(W)/A+H0,c(W),\nwhere A+ denotes the ideal of A consisting of elements with zero constant term.\nThis algebra was\noriginally introduced, and extensively studied, in [Go]. The PBW Theorem implies that, as a vector\nspace,\nH0,c(W) ∼= C[h]coW ⊗C[W] ⊗C[h∗]coW\nwhere C[h]coW = C[h]/⟨C[h]W\n+ ⟩is the coinvariant algebra.\nSince W is a complex reﬂection group,\nC[h]coW has dimension |W| and is isomorphic to the regul",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/conj-sec-023-03",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "Martino’s Conjecture",
+      "pageStart": 45,
+      "pageEnd": 48,
+      "target": "conj-sec-023-03.md",
+      "narrative": null,
+      "content": "Let W be a complex reﬂection group. The partition into Rouquier families (for a suitably chosen cyclotomic Hecke algebra Hc of W) reﬁnes the CMc-partition, for all choices of c; that is, if E, E′ ∈Irr(W) belong to the same Rouquier family of Hc, then E ∼CM E′.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Families of characters for Hecke algebras from rational Cherednik algebras",
+      "pageStart": 45,
+      "pageEnd": 48,
+      "target": "../sections/sec-023-families-of-characters-for-hecke-algebras-from-r.md",
+      "narrative": null,
+      "content": "Families of characters for Hecke algebras from rational Chered-\nnik algebras\nSince the algebra H0,c is ﬁnite dimensional, we can deﬁne its blocks in the usual way. Let E, E′ ∈Irr(W).\nFollowing [GoMa], we deﬁne the Calogero–Moser partition of Irr(W) to be the set of equivalence classes\nof Irr(W) under the equivalence relation:\nE ∼CM E′ if and only if L(E) and L(E′) belong to the same block of H0,c.\nWe will simply write CMc-partition for the Calogero–Moser partition of Irr(W). Using the classiﬁcation\nof irreducible complex reﬂection groups (see Theorem 3.1), Bellamy has shown the following [Bel1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/rem-sec-023-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 48,
+      "target": "rem-sec-023-02.md",
+      "narrative": null,
+      "content": "The cases where the CMc-partition is trivial for generic values of c are exactly the cases where the space (h ⊕h∗)/W admits a symplectic resolution. 5.4.1 The Calogero–Moser partition and Rouquier families It just so happens that the cases where Xc(W) is generically smooth, and the Calogero–Moser partition generically trivial, are exactly the cases where the Rouquier families are generically trivial (that is, the Rouquier families associated with no essential hyperplane are singletons). This, combined with the fact that the Calogero–Moser partition into blocks enjoys some property of semiconti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/rem-sec-023-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 48,
+      "target": "rem-sec-023-04.md",
+      "narrative": null,
+      "content": "Note that, in all the cases checked so far where W is a ﬁnite Coxeter group, the partition into Rouquier families and the CMc-partition coincide. This covers the ﬁnite Coxeter groups of types An, Bn, Dn and the dihedral groups for all choices of c, and H3 for generic c. 5.4.2 The Calogero–Moser partition and Kazhdan–Lusztig cells In an eﬀort to develop a generalised Kazhdan–Lusztig cell theory, Bonnaf´e and Rouquier [BoRo1, BoRo2] used the Calogero–Moser partition to deﬁne Calogero–Moser cells for all complex reﬂection groups. An advantage of this, quite geometric, approach is that the Caloger",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/thm-sec-023-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 48,
+      "target": "thm-sec-023-01.md",
+      "narrative": null,
+      "content": "Let W be an irreducible complex reﬂection group. The CMc-partition is trivial for generic values of c if and only if W is of type G(l, 1, n) or G4.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Yokonuma–Hecke Algebras",
+      "pageStart": 48,
+      "pageEnd": 49,
+      "target": "../sections/sec-024-yokonumahecke-algebras.md",
+      "narrative": null,
+      "content": "Yokonuma–Hecke algebras were introduced by Yokonuma [Yo] for the same reason that Ariki–Koike alge-\nbras were introduced by Ariki and Koike: as generalisations of Iwahori–Hecke algebras. More precisely,\nthe Iwahori–Hecke algebra associated to a ﬁnite reductive group G is the centraliser algebra associated\nto the permutation representation of G with respect to a Borel subgroup of G. The Yokonuma–Hecke\nalgebra is the centraliser algebra associated to the permutation representation of G with respect to a\nmaximal unipotent subgroup of G. Thus, Yokonuma–Hecke algebras can be also regarded as partic",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/prop-sec-025-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 49,
+      "pageEnd": 51,
+      "target": "prop-sec-025-01.md",
+      "narrative": null,
+      "content": "& Theorem 1] and [ChPo2, Theorem 3.7], we have the following description of the irre- ducible representations of C(q)Yd,n(q):",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prop-sec-025-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 49,
+      "pageEnd": 51,
+      "target": "prop-sec-025-02.md",
+      "narrative": null,
+      "content": "The specialised Yokonuma–Hecke algebra CYd,n(η) is (split) semisimple if and only if θ(P(q))̸ = 0, where P(q) = Y 1⩽i⩽n (1 + q + · · · + qi−1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Representation theory of Yokonuma–Hecke algebras",
+      "pageStart": 49,
+      "pageEnd": 51,
+      "target": "../sections/sec-025-representation-theory-of-yokonumahecke-algebras.md",
+      "narrative": null,
+      "content": "Representation theory of Yokonuma–Hecke algebras\nThe representation theory of Yokonuma–Hecke algebras has been ﬁrst studied by Thiem [Th1, Th2, Th3]\nin the general context of unipotent Hecke algebras. The generality of his results and the new presentation\nfor Yd,n(q) has led us to develop a combinatorial approach to the representation theory of the Yokonuma–\nHecke algebra of type A in [ChPdA1]. In this section, we will give an explicit description of the irreducible\nrepresentations of Yd,n(q) in terms of d-partitions and standard d-tableaux.\nRecall that we denote by P(d, n) the set of d-partit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/prop-sec-026-05",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 54,
+      "target": "prop-sec-026-05.md",
+      "narrative": null,
+      "content": "Let θ : Rl →C be a ring homomorphism such that θ(q) Ql−1 j=0 θ(Qj)̸ = 0. The specialised cyclotomic Yokonuma–Hecke algebra CY(d, l, n)θ, deﬁned via θ, is (split) semisimple if and only if θ(P)̸ = 0, where P = Y 1⩽i⩽n (1 + q + · · · + qi−1) Y 0⩽s<t⩽l−1 Y −n<k<n (qkQs −Qt). We deduce that the algebra CY(d, l, n)θ is semisimple if and only if the specialised Ariki–Koike algebra CH(l, n)θ is semisimple. Finally, we have proved the existence of a “canonical” symmetrising form on KlY(d, l, n) and calcu- lated the Schur elements with respect to it [ChPdA2, §7]:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Affine and Cyclotomic Yokonuma–Hecke algebras",
+      "pageStart": 51,
+      "pageEnd": 54,
+      "target": "../sections/sec-026-affine-and-cyclotomic-yokonumahecke-algebras.md",
+      "narrative": null,
+      "content": "Aﬃne and Cyclotomic Yokonuma–Hecke algebras\nWe have now seen two families of algebras that are deformations of the groups algebra of the complex\nreﬂection group G(d, 1, n): the Ariki–Koike algebras and the Yokonuma–Hecke algebras of type A. Both\nfamilies include the Iwahori–Hecke algebras of type A. The former preserve the “good” quadratic relations\nof the Iwahori–Hecke algebras, while the latter preserve the wreath product structure of G(d, 1, n) ∼=\n(Z/dZ) ≀Sn.\nIn [ChPdA2], we introduced the aﬃne and cyclotomic Yokonuma–Hecke algebras, which give rise\nto both Ariki–Koike algebras and Yokonuma",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/rem-sec-026-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 54,
+      "target": "rem-sec-026-01.md",
+      "narrative": null,
+      "content": "Let p be a prime number. In a recent series of papers [Vil] [Vi2] [Vi3], Vignéras introduced and studied a large family of algebras, called pro-p-Iwahori—Hecke algebras. They generalise convolution algebras of compactly supported functions on a p-adic connected reductive group that are bi-invariant under the pro-p-radical of an Iwahori subgroup, which play an important role in the p-modular repre- sentation theory of p-adic reductive groups. In we have shown that the affine Yokonuma~Hecke algebra Y(d,00,n) is a pro-p-Iwahori-Hecke algebra. Thus, the affine Yokonuma-Hecke algebra gener- alises",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/rem-sec-026-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 54,
+      "target": "rem-sec-026-02.md",
+      "narrative": null,
+      "content": "Following Lusztig’s approach in [Lu7], Cui has established an explicit algebra isomor- phism between the affine Yokonuma—Hecke algebra Y(d, oo, n) and a direct sum of matrix algebras over tensor products of affine Hecke algebras of type A, similar to (6-14). More recently, Poulain d’Andecy obtained the same result, as well as an isomorphism between the cyclotomic Yokonuma—Hecke algebra Y(d,1,n), where | < oo, and a direct sum of matrix algebras over tensor products of Ariki-Koike algebras, using the same approach as in [JaPdA]. The isomorphism theorem for cyclotomic Yokonuma— Hecke algebras ha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/rem-sec-026-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 54,
+      "target": "rem-sec-026-04.md",
+      "narrative": null,
+      "content": "The set BAK d,l,n is the analogue of the Ariki–Koike basis (4.1) of the Ariki–Koike algebra H(l, n) for l < ∞, and the standard Bernstein basis of the aﬃne Hecke algebra of type A for l = ∞. The four other sets are inductive sets with respect to n, which are analogous to the inductive bases of H(l, n) studied in [La2, OgPo]. Furthermore, in [ChPdA2] we have studied the representation theory of the cyclotomic Yokonuma– Hecke algebra Y(d, l, n), which is quite similar to the representation theory of the Yokonuma–Hecke algebra Yd,n(q). From now on, we only consider the case l < ∞. Let Kl denote t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/rem-sec-026-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 54,
+      "target": "rem-sec-026-06.md",
+      "narrative": null,
+      "content": "The map τ is known to be a symmetrising form on Y(d, l, n) (deﬁned over Rl) in cases d = 1 [MalMat] and l = 1 [ChPdA1]. In these cases, τ is called the canonical symmetrising form on Y(d, l, n).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/rem-sec-026-07",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 54,
+      "target": "rem-sec-026-07.md",
+      "narrative": null,
+      "content": "Equation (6.22) hints towards an isomorphism between the cyclotomic Yokonuma–Hecke algebra Y(d, l, n) and a direct sum of matrix algebras over tensor products of Ariki–Koike algebras; this isomorphism was recently described by Poulain d’Andecy in [PdA] and by Rostam in [Ros].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/thm-sec-026-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 51,
+      "pageEnd": 54,
+      "target": "thm-sec-026-03.md",
+      "narrative": null,
+      "content": "Each set BAK d,l,n, BInd d,l,n, BInd− d,l,n , eBInd d,l,n and eBInd− d,l,n is an Rl-basis of Y(d, l, n). In particular, Y(d, l, n) is a free Rl-module and, if l < ∞, its rank is equal to (dl)nn!.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Temperley–Lieb quotients of Yokonuma–Hecke algebras",
+      "pageStart": 54,
+      "pageEnd": 57,
+      "target": "../sections/sec-027-temperleylieb-quotients-of-yokonumahecke-algebra.md",
+      "narrative": null,
+      "content": "Temperley–Lieb quotients of Yokonuma–Hecke algebras\nThe Temperley–Lieb algebra was introduced by Temperley and Lieb in [TeLi] for its applications in\nstatistical mechanics. Jones [Jo1, Jo2, Jo3] later showed that it can be obtained as a quotient of the\nIwahori–Hecke algebra Hn(q) of type A by a two-sided ideal, and used it for the construction of the knot\ninvariant known as the Jones polynomial.\nSince Yokonuma–Hecke algebras can be also used for the deﬁnition of knot invariants, it was natural\nto ask what the analogue of the Temperley–Lieb algebra would be in this case. As it is explained in m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/cor-sec-028-08",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 68,
+      "target": "cor-sec-028-08.md",
+      "narrative": null,
+      "content": "Let d, d′ be positive integers with d ⩽d′. For all α ∈Bn, we have trd′,d(α) = trd,d(α) = trd, Z/dZ(α).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prop-sec-028-10",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 68,
+      "target": "prop-sec-028-10.md",
+      "narrative": null,
+      "content": "The values of the isotopy invariants Θd,D for classical links depend only on the cardinality |D| of D. Hence, for a ﬁxed d, we only obtain d invariants. Further, for d, d′ positive integers with d ⩽d′, we have Θd,D = Θd′,D′ as long as |D| = |D′|. We deduce that, if |D′| = d, then Θd′,D′ = Θd, Z/dZ. Therefore, the invariants Θd,D can be parametrised by the positive natural numbers, setting Θd := Θd, Z/dZ for all d ∈N∗.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prop-sec-028-19",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 68,
+      "target": "prop-sec-028-19.md",
+      "narrative": null,
+      "content": "The invariants Ωd,l,D with |D| > 1 are not topologically equivalent to the Homﬂypt- type invariants of oriented links in the solid torus obtained from the cyclotomic and aﬃne Hecke algebras. 6.4.4 Invariants from Temperley–Lieb quotients of Yokonuma–Hecke alge- bras The Ocneanu trace on the Iwahori–Hecke algebra Hn(q) passes to the Temperley–Lieb algebra TLn(q) if and only if z = −1/(q + 1) or z = −1. Using the natural surjection of R[Bn] onto TLn(q) given by σi 7→gi, and normalising and re-scaling the Ocneanu trace for z = −1/(q + 1) (the case z = −1 not being interesting topologically), Jone",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prop-sec-028-20",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 68,
+      "target": "prop-sec-028-20.md",
+      "narrative": null,
+      "content": "Let d ∈N, d > 1. The invariants θd are topologically equivalent to the Jones polyno- mial on knots, and more generally on links that are obtained as disjoint unions of knots. However, the invariants θd are not topologically equivalent to the Jones polynomial on links.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prop-sec-028-21",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 68,
+      "target": "prop-sec-028-21.md",
+      "narrative": null,
+      "content": "Let D be a non-empty subset of Z/dZ and let XD be the corresponding solution of the E–system. If 0 /∈D, then the invariants obtained from CTLd,n(q) coincide with the invariants obtained from Yd,n(q). If 0 ∈D, then the invariants obtained from CTLd,n(q) coincide witht the invariants obtained from FTLd,n(q).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Knot invariants",
+      "pageStart": 57,
+      "pageEnd": 68,
+      "target": "../sections/sec-028-knot-invariants.md",
+      "narrative": null,
+      "content": "Knot invariants\nOne of the reasons that the interest in Yokonuma–Hecke algebras was rekindled in the past years was\nthat Juyumaya and Lambropoulou used the Markov trace on them deﬁned by the former [Ju2] in order\nto construct isotopy invariants for framed [JuLa1, JuLa2], classical [JuLa3] and singular [JuLa4] knots\nand links. Their method is the same as the one applied by Jones, who used the Ocneanu trace on the\nIwahori–Hecke algebra of type A to deﬁne the Jones polynomial [Jo2], an invariant for classical knots\nand links arising from the Temperley–Lieb algebra. The same technique, when applie",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/hdr/blocks/rem-sec-028-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 68,
+      "target": "rem-sec-028-01.md",
+      "narrative": null,
+      "content": "Following (6.23), we have ED = 1 ⇔|D| = 1 ⇔xd 1 = 1 and xk = xk 1 (1 ⩽k ⩽d −1) and ED = 1 d ⇔D = Z/dZ ⇔xk = 0 (1 ⩽k ⩽d −1). The latter is the “trivial” solution of the E–system.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/rem-sec-028-03",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 68,
+      "target": "rem-sec-028-03.md",
+      "narrative": null,
+      "content": "Note that, for every d ∈N∗, we have 2d −1 distinct solutions of the E–system, so the above construction yields 2d −1 seemingly distinct isotopy invariants for framed links.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/rem-sec-028-04",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 68,
+      "target": "rem-sec-028-04.md",
+      "narrative": null,
+      "content": "Using (6.25), we can obtain deﬁning equations for z and ΛD with respect to λD, namely, z := (1 −q) ED qλD −1 and ΛD := z√λD . Accordingly, we can use the notation Φd,D(q, λD) instead of Φd,D(q, z) .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/rem-sec-028-05",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 68,
+      "target": "rem-sec-028-05.md",
+      "narrative": null,
+      "content": "In [JuLa2], the old quadratic relation (6.5) was used. Using the natural surjection of R[Fn] onto Yd,n(q) given by σi 7→gi and tj 7→tj, and normalising and re-scaling the specialised trace, invariants Γd,D(q, z) for oriented framed links were deﬁned in [JuLa2, Theorem 8]. In [JuLa2, Proposition 7] a skein relation is found for the invariant Γd,D, involving the braiding and the framing generators. It reads: √λD Γd,D(L+) − p λDΓd,D(L−) = 1 −q−1 d d−1 X s=0 Γd,D(Ls) + 1 −q−1 d√λD d−1 X s=0 Γd,D(Ls×) (6.26) where the links L+, L−, Ls and Ls× are illustrated in Figure 6.1. β β β β s d −s s d −s L+",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/rem-sec-028-06",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 68,
+      "target": "rem-sec-028-06.md",
+      "narrative": null,
+      "content": "Following Remark 6.24, the above construction yields 2d −1 seemingly distinct isotopy invariants for classical links. However, we shall see soon that, for classical links, we only obtain one invariant for every d ∈N∗. The invariants Θd,D(q, z) need to be compared with known invariants of classical links, especially with the Homﬂypt polynomial. The Homﬂypt (or 2-variable Jones) polynomial P(q, z) is a 2-variable isotopy invariant of oriented classical links that was constructed from the Iwahori–Hecke algebras Hn(q) after normalising and re-scaling the Ocneanu trace [Jo3]. Here we deﬁne P(q, z)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/rem-sec-028-07",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 68,
+      "target": "rem-sec-028-07.md",
+      "narrative": null,
+      "content": "Similarly to Φd,D(q, z), the invariant Γd,D(q, z) becomes an isotopy invariant of oriented classical links when restricted to L. This invariant of classical links is denoted by ∆d,D(q, z) and it is the one studied in [JuLa3] and [ChLa]. Again, there is no reason that the invariants ∆d,D(q, z) and Θd,D(q, z) are topologically equivalent. In fact, we have computational data that seem to indicate that they are not [Ai]. Note though that, for d = 1, ∆1,{0}(q, z) = Θ1,{0}(q, z) (this can be easily seen by writing down the skein relation for ∆1,{0} and for Θ1,{0}), so both families of invariants inc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/rem-sec-028-09",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 68,
+      "target": "rem-sec-028-09.md",
+      "narrative": null,
+      "content": "Recall that Z/dZ parametrises the trivial solution of the E–system, that is, the one given by x1 = x2 = · · · = xd−1 = 0. The above way of calculating the trace trd,D allows us to prove new results for the invariants Θd,D of classical knots and links and to compare them with the Homﬂypt polynomial. Here is the ﬁrst observation. The construction of the invariants Θd,D yielded seemingly 2d −1 invariants for every choice of d. However, an immediate consequence of Theorem 6.30 and Corollary 6.31 is the following [CJKL,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/rem-sec-028-13",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 68,
+      "target": "rem-sec-028-13.md",
+      "narrative": null,
+      "content": "With the old quadratic relations for the Yokonuma–Hecke algebra, we would not have been able to derive the special skein relation (6.30). The reason is that the skein relation (6.26) for the invariants Γd,D contains also diagrams Ls× of L+ with framings which cannot be collected together (to form L0) since they belong to diﬀerent components. 1Similar diagrammatic proofs can be given for the remaining ﬁve pairs. Let now L be an oriented link with l components. The value of Θd on L at variables (q, λD) can be computed diagrammatically by applying the following procedure: Step 1. Apply the skein",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/rem-sec-028-16",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 68,
+      "target": "rem-sec-028-16.md",
+      "narrative": null,
+      "content": "The invariants {Θd}d∈N∗and Θ are topologically equivalent to the Homﬂypt polynomial on knots. Since there is at least one pair of knots distinguished by the Homﬂypt polynomial but not by the Kauﬀman polynomial, the invariants {Θd}d∈N∗and Θ are not topologically equivalent to the Kauﬀman polynomial.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/rem-sec-028-18",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 68,
+      "target": "rem-sec-028-18.md",
+      "narrative": null,
+      "content": "For d = 1, the Markov trace tr1,l on the algebra H(l, n) ∼= Y(1, l, n) was introduced • by Ocneanu/Jones [Jo2, Jo3] for l = 1, • by Lambropoulou and Geck [La1, GeLa] for l = 2, and • by Lambropoulou [La2] for l ∈Z⩾3 ∪{∞}. For l = 1, trd,1 is the Markov trace trd on the Yokonuma–Hecke algebra Yd,n(q).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/thm-sec-028-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 68,
+      "target": "thm-sec-028-02.md",
+      "narrative": null,
+      "content": "For any framed braid α ∈Fn, we deﬁne Φd,D(bα) := Λn−1 D ( p λD)ϵ(α) trd,D(α) , where ϵ(α) is the sum of the exponents of the braiding generators σi in the word α. Then the map Φd,D(q, z) : Lf →RD, L 7→Φd,D(L) is a 2-variable isotopy invariant of oriented framed links.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/thm-sec-028-11",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 68,
+      "target": "thm-sec-028-11.md",
+      "narrative": null,
+      "content": "Let d ∈N, d > 1. The invariants Θd are topologically equivalent to the Homﬂypt polynomial on knots, and more generally on links that are obtained as disjoint unions of knots. However, the invariants Θd are NOT topologically equivalent to the Homﬂypt polynomial on links. For the ﬁrst part, using the properties of the specialised trace, we have proved that, for all α ∈Bn such that bα is a knot, we have [CJKL, Theorem 5.8]: Θd(q, z)(bα) = Θ1(q, dz)(bα) = P(q, dz)(bα). More generally, for all α ∈Bn such that bα is a disjoint union of k knots, we have [CJKL, Theorem 6.2]: Θd(q, z)(bα) = dk−1Θ1(q, d",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/thm-sec-028-12",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 68,
+      "target": "thm-sec-028-12.md",
+      "narrative": null,
+      "content": "The invariants Θd can be completely deﬁned via the Homﬂypt skein relation. The above result derives from the fact that the invariants Θd satisfy a special skein relation [CJKL,",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/thm-sec-028-14",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 68,
+      "target": "thm-sec-028-14.md",
+      "narrative": null,
+      "content": "Let q, λ, E be indeterminates over C. There exists a unique isotopy invariant of classical oriented links Θ : L →C[q±1/2, λ±1, E±1] deﬁned by the following rules: 1. For a disjoint union L of k knots, with k ⩾1, it holds that: Θ(L) = E1−k P(L). 2. On crossings involving diﬀerent components the following skein relation holds: √qλ Θ(L+) − p qλ Θ(L−) = (q1/2 −q−1/2) Θ(L0), where L+, L−, L0 is a Conway triple. The invariant Θ specialises to the invariant Θd for E = ED and λ = λD, where D = Z/dZ (recall that Θ1 = P). It also distinguishes the six pairs of links of Table 6.1. Hence, we conclude the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/thm-sec-028-15",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 68,
+      "target": "thm-sec-028-15.md",
+      "narrative": null,
+      "content": "The invariant Θ(q, λ, E) is stronger than the Homﬂypt polynomial.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/thm-sec-028-17",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 68,
+      "target": "thm-sec-028-17.md",
+      "narrative": null,
+      "content": "Let z and (xa,b)a∈Zl,b∈{0,...,d−1} be indeterminates over Rl. There exists a unique linear Markov trace trd,l : [ n⩾0 Y(d, l, n) −→Rl[z, (xa,b)a∈Zl,b∈{0,...,d−1}] deﬁned inductively on Y(d, l, n), for all n ⩾0, by the following rules: (1) trd,l(uv) = trd,l(vu) u, v ∈Y(d, l, n) (2) trd,l(1) = 1 ∈Y(d, l, n) (3) trd,l(ugn) = z trd,l(u) u ∈Y(d, l, n) (Markov property) (4) trd,l(u e Xa n+1tb n+1) = xa,b trd,l(u) u ∈Y(d, l, n) (a ∈Zl, 0 ⩽b ⩽d −1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/hdr/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bibliography",
+      "pageStart": 68,
+      "pageEnd": 75,
+      "target": "../sections/sec-029-bibliography.md",
+      "narrative": null,
+      "content": "[Ai] F. Aicardi, Private communication.\n[Al] D. Alvis, The left cells of the Coxeter group of type H4, J. Algebra 107 (1987) 160–168.\n[AlLu] D. Alvis, G. Lusztig, The representations and generic degrees of the Hecke algebra of type H4,\nJ. Reine Angew. Math. 336 (1982), 201–202.\n[Ar1] S. Ariki, On the semi-simplicity of the Hecke algebra of (Z/rZ)≀Sn, J. Algebra 169 (1994) 216–225.\n[Ar2] S. Ariki, On the decomposition numbers of the Hecke algebra of G(m, 1, n), J. Math. Kyoto Univ.\n36 (1996), 789–808.\n[Ar3] S. Ariki, Representations of quantum algebras and combinatorics of Young tableaux. Unive",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

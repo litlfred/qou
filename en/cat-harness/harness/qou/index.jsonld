@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/"
+  },
+  "@id": "https://litlfred.github.io/qou/en/cat-harness/harness/qou/",
+  "url": "https://litlfred.github.io/qou/en/cat-harness/harness/qou/",
+  "@type": "WebPage",
+  "name": "Quantum Observable Universe on Quantum Observable Universe",
+  "about": {
+    "@id": "https://litlfred.github.io/qou/",
+    "@type": "SoftwareSourceCode",
+    "identifier": "qou",
+    "name": "Quantum Observable Universe",
+    "description": "Quantum Observable Universe — a framework for quantum physics via rigid monoidal categories",
+    "version": "0.1.0",
+    "codeRepository": "https://github.com/litlfred/qou",
+    "isBasedOn": [
+      {
+        "@id": "https://litlfred.github.io/folio-assistant-sci/"
+      }
+    ]
+  },
+  "isPartOf": {
+    "@id": "https://litlfred.github.io/qou/",
+    "name": "Quantum Observable Universe"
+  },
+  "significantLink": [
+    "https://github.com/litlfred/qou/tree/9686001ecf1bdad1ceed93df9fc0a35e3c3c14b9",
+    "https://github.com/litlfred/qou/blob/9686001ecf1bdad1ceed93df9fc0a35e3c3c14b9/README.md",
+    "https://github.com/litlfred/qou/blob/9686001ecf1bdad1ceed93df9fc0a35e3c3c14b9/AGENTS.md"
+  ]
+}

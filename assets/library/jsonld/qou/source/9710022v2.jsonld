@@ -1,0 +1,102 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/9710022v2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "plancherelfinal.dvi",
+  "contains": [
+    "library/9710022v2/sections/page-001",
+    "library/9710022v2/sections/page-002",
+    "library/9710022v2/sections/page-003",
+    "library/9710022v2/sections/page-004",
+    "library/9710022v2/sections/page-005",
+    "library/9710022v2/sections/page-006",
+    "library/9710022v2/sections/page-007",
+    "library/9710022v2/sections/page-008",
+    "library/9710022v2/sections/page-009",
+    "library/9710022v2/sections/page-010",
+    "library/9710022v2/sections/page-011",
+    "library/9710022v2/sections/page-012",
+    "library/9710022v2/sections/page-013",
+    "library/9710022v2/sections/page-014",
+    "library/9710022v2/sections/page-015",
+    "library/9710022v2/sections/page-016",
+    "library/9710022v2/sections/page-017",
+    "library/9710022v2/sections/page-018",
+    "library/9710022v2/sections/page-019",
+    "library/9710022v2/sections/page-020",
+    "library/9710022v2/sections/page-021",
+    "library/9710022v2/sections/page-022",
+    "library/9710022v2/sections/page-023",
+    "library/9710022v2/sections/page-024",
+    "library/9710022v2/sections/page-025",
+    "library/9710022v2/sections/page-026",
+    "library/9710022v2/sections/page-027",
+    "library/9710022v2/sections/page-028",
+    "library/9710022v2/sections/page-029",
+    "library/9710022v2/sections/page-030",
+    "library/9710022v2/sections/page-031",
+    "library/9710022v2/sections/page-032",
+    "library/9710022v2/sections/page-033",
+    "library/9710022v2/sections/page-034",
+    "library/9710022v2/sections/page-035",
+    "library/9710022v2/sections/page-036",
+    "library/9710022v2/sections/page-037",
+    "library/9710022v2/sections/page-038",
+    "library/9710022v2/sections/page-039",
+    "library/9710022v2/sections/page-040",
+    "library/9710022v2/sections/page-041",
+    "library/9710022v2/sections/page-042",
+    "library/9710022v2/sections/page-043",
+    "library/9710022v2/sections/page-044",
+    "library/9710022v2/sections/page-045",
+    "library/9710022v2/sections/page-046",
+    "library/9710022v2/sections/page-047",
+    "library/9710022v2/sections/page-048",
+    "library/9710022v2/sections/page-049",
+    "library/9710022v2/sections/page-050",
+    "library/9710022v2/sections/page-051",
+    "library/9710022v2/sections/page-052",
+    "library/9710022v2/sections/page-053",
+    "library/9710022v2/sections/page-054",
+    "library/9710022v2/sections/page-055",
+    "library/9710022v2/sections/page-056",
+    "library/9710022v2/sections/page-057",
+    "library/9710022v2/sections/page-058",
+    "library/9710022v2/sections/page-059",
+    "library/9710022v2/sections/page-060"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Harmonic Analysis on the quantum Lorentz group — This w ork b egins with a review of complexi cation and reali cation of Hopf algebras.\n\n**Harmonic Analysis on the quantum Lorentz group**\n\n60 pp, 60 sections.\n\n**Abstract.** This w ork b egins with a review of complexi cation and reali cation of Hopf algebras. W e emphasize the notion of m ultiplier Hopf algebras for the description of di eren t classes of functions (compact supp orted, b ounded, un b ounded) on complex quan tum groups and the construction of the asso ciated left and righ t Haar measure. Using a con tin uation of \u0006j sym b ols of S U q (\u0002) with complex spins, w e giv e a new description of the unitary represen- tations of S L q (\u0002; C ) R and nd explicit expressions for the c haracters of S L q (\u0002; C ) R . The ma jor theorem of this article is the Planc herel theorem for the Quan tum Loren tz Group. \u0003 e-mail:bu enoi@lpm.univ-mon tp\u0002.fr y Lab oratoire du CNRS ESA \u00050\u0003\u0002 z e-mail:philipp e.ro c he@CERN.CH x Lab oratoire Propre du CNRS UPR \u0001\u0004 \u0001\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12; Page 13; Page 14; Page 15; Page 16; Page 17; Page 18",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "9710022v2",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "9710022v2.pdf",
+    "source_sha256": "e5ff373a1ec6884a46db43d20f94b467f8abd63bde63b70f5230c4b446af1da7",
+    "pages": 60,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

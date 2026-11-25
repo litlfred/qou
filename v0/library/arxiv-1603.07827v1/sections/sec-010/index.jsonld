@@ -1,0 +1,25 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/arxiv-1603.07827v1/sections/sec-010",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "SU(2) REPRESENTATIONS OF THE ARTIN BRAID GROUP",
+  "pageStart": 10,
+  "pageEnd": 14,
+  "contains": [
+    "library/arxiv-1603.07827v1/blocks/prose-sec-010",
+    "library/arxiv-1603.07827v1/blocks/recommendation-sec-010-01",
+    "library/arxiv-1603.07827v1/blocks/recommendation-sec-010-02",
+    "library/arxiv-1603.07827v1/blocks/recommendation-sec-010-03",
+    "library/arxiv-1603.07827v1/blocks/table-001"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1603.07827v1",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/source/arxiv-1603.07827v1",
+  "provenance": "ingested"
+}

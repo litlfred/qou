@@ -1,0 +1,78 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-0707.3799v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Equivariant Satake category and Kostant-Whittaker reduction",
+  "contains": [
+    "library/arxiv-0707.3799v3/sections/sec-front-matter",
+    "library/arxiv-0707.3799v3/sections/sec-000",
+    "library/arxiv-0707.3799v3/sections/sec-001",
+    "library/arxiv-0707.3799v3/sections/sec-002",
+    "library/arxiv-0707.3799v3/sections/sec-003",
+    "library/arxiv-0707.3799v3/sections/sec-004",
+    "library/arxiv-0707.3799v3/sections/sec-005",
+    "library/arxiv-0707.3799v3/sections/sec-006",
+    "library/arxiv-0707.3799v3/sections/sec-007",
+    "library/arxiv-0707.3799v3/sections/sec-008",
+    "library/arxiv-0707.3799v3/sections/sec-009",
+    "library/arxiv-0707.3799v3/sections/sec-010",
+    "library/arxiv-0707.3799v3/sections/sec-011",
+    "library/arxiv-0707.3799v3/sections/sec-012",
+    "library/arxiv-0707.3799v3/sections/sec-013",
+    "library/arxiv-0707.3799v3/sections/sec-014",
+    "library/arxiv-0707.3799v3/sections/sec-015",
+    "library/arxiv-0707.3799v3/sections/sec-016",
+    "library/arxiv-0707.3799v3/sections/sec-017",
+    "library/arxiv-0707.3799v3/sections/sec-018",
+    "library/arxiv-0707.3799v3/sections/sec-019",
+    "library/arxiv-0707.3799v3/sections/sec-020",
+    "library/arxiv-0707.3799v3/sections/sec-021",
+    "library/arxiv-0707.3799v3/sections/sec-022"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Equivariant Satake category and Kostant-Whittaker reduction — 24 sections: Front matter; Introduction; Notation and statements of the res\n\n**Equivariant Satake category and Kostant-Whittaker reduction**\n\n*KOSTANT-WHITTAKER REDUCTION*\n\n32 pp, 24 sections.\n\n**Outline.** Front matter; 1 Introduction; 2 Notation and statements of the results; 2.2 Asymptotic ˇg-modules; 2.3 Kostant functor κℏ; 2.4 Equivariant cohomology of GrG; 2.5 Equivariant homology and quantum Toda latt; 2.6 Quasiclassical limit; 2.7 Equivalences; 3 Topology; 3.3 Levi-equivariant cohomology; 3.4 Transitivity for a pair of Levi subgroups; 3.5 Tensor structure on equivariant cohomology; 4 Algebra; 4.1 Some properties of the Kostant functor κℏ; 4.2 De-symmetrized Kostant functor κℏ; 4.3 Canonical filtration on φ(V ); 4.4 Whittaker modules for Levi subalgebras",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:0707.3799&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-0707.3799v3",
+    "title_source": "pdf-info",
+    "title_from": "structure.json metadata.docinfo.Title",
+    "source_file": "0707.3799v3.pdf",
+    "source_sha256": "0b29cbced7939f7265a53bdefb095c3f72162f1f526e4460631d4a3602b6ed3a",
+    "pages": 32,
+    "arxiv": {
+      "id": "0707.3799",
+      "version": "3",
+      "primary_class": "math.RT",
+      "stamp_date": "25 Feb 2026"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

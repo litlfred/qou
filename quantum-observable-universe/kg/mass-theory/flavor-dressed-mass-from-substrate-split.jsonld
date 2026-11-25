@@ -1,0 +1,32 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/prop-flavor-dressed-mass-from-substrate-split",
+  "@type": [
+    "folio-assistant-sci:Proposition",
+    "doco:Section"
+  ],
+  "label": "prop:flavor-dressed-mass-from-substrate-split",
+  "kind": "proposition",
+  "title": "Substrate-pure derivation of the dressed-quark mass splitting",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/def-flavor-dressing-functor",
+    "papers/quantum-observable-universe/blocks/conj-flavor-split-substrate-mass",
+    "papers/quantum-observable-universe/blocks/lem-pair-skein-mass-formula"
+  ],
+  "tags": [
+    "flavor",
+    "dressing",
+    "quark-mass",
+    "substrate-derived",
+    "no-fit"
+  ],
+  "leanRef": "qou:QOU.Confinement.FlavorDressing.dressed_mass_from_substrate_split",
+  "text": "flavor-dressed-mass-from-substrate-split.md",
+  "provenance": "authored"
+}

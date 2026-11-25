@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1006.1099v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "FLOER COHOMOLOGY AND PENCILS OF QUADRICS",
+      "dcterms:creator": [
+        "SMITH, IVAN"
+      ],
+      "dcterms:issued": "D:20241126",
+      "dcterms:identifier": "https://arxiv.org/abs/1006.1099",
+      "dcterms:abstract": "There is a classical relationship in algebraic geometry between a hyperelliptic curve and an associated pencil of quadric hypersurfaces. We investigate symplectic aspects of this relationship, with a view to applications in low-dimensional topology.",
+      "dcterms:source": "library/arxiv-1006.1099v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1006.1099v3"
+    }
+  ]
+}

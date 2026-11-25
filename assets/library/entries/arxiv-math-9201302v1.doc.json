@@ -1,0 +1,896 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-9201302v1",
+  "title": "The Quantum G_2 Link Invariant",
+  "variant": "pdf",
+  "pages": 17,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Invariants of links and graphs",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-invariants-of-links-and-graphs"
+    },
+    {
+      "level": 1,
+      "title": "Acknowledgments",
+      "number": "2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.85,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-acknowledgments"
+    },
+    {
+      "level": 2,
+      "title": "Topological preliminaries",
+      "number": "2.1",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-21-topological-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "Linearly recurrent invariants",
+      "number": "2.2",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-22-linearly-recurrent-invariants"
+    },
+    {
+      "level": 2,
+      "title": "Constructing a freeway invariant",
+      "number": "2.3",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-23-constructing-a-freeway-invariant"
+    },
+    {
+      "level": 2,
+      "title": "Two other polynomial invariants",
+      "number": "2.4",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-24-two-other-polynomial-invariants"
+    },
+    {
+      "level": 2,
+      "title": "A few calculations",
+      "number": "2.5",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-25-a-few-calculations"
+    },
+    {
+      "level": 1,
+      "title": "Invariants of Lie algebra representations",
+      "number": "3",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-3-invariants-of-lie-algebra-representations"
+    },
+    {
+      "level": 2,
+      "title": "Invariants of colored ribbon graphs",
+      "number": "3.1",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-31-invariants-of-colored-ribbon-graphs"
+    },
+    {
+      "level": 2,
+      "title": "Questions open to the author",
+      "number": "3.3",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-33-questions-open-to-the-author"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-010-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 160,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rank lie",
+          "heading": false
+        },
+        {
+          "term": "link invariant",
+          "heading": false
+        },
+        {
+          "term": "lie algebras",
+          "heading": false
+        },
+        {
+          "term": "polynomial-valued",
+          "heading": false
+        },
+        {
+          "term": "inductive",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/9201302v1 [math.QA] 7 Oct 1991 The Quantum G2 Link Invariant Greg Kuperberg ∗ University of Chicago October 7, 1991 Abstract We derive an inductive, combinatorial deﬁnition of a polynomial-valued regular isotopy invariant of links and tangled graphs. We show that the invariant equals the Reshetikhin-Turaev invariant corre- sponding to the exceptional simple Lie algebra G2. It is therefore related to G2 in",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-9201302v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-invariants-of-links-and-graphs",
+      "number": "1",
+      "title": "Invariants of links and graphs",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 4,
+      "labelStart": "1",
+      "labelEnd": "4",
+      "words": 862,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "kauﬀman bracket",
+          "heading": false
+        },
+        {
+          "term": "tangled trivalent",
+          "heading": false
+        },
+        {
+          "term": "kauﬀman polynomial",
+          "heading": false
+        },
+        {
+          "term": "recursive rules",
+          "heading": false
+        },
+        {
+          "term": "trivalent graphs",
+          "heading": false
+        },
+        {
+          "term": "following recursive",
+          "heading": false
+        },
+        {
+          "term": "graduate fellowship",
+          "heading": false
+        },
+        {
+          "term": "regular isotopy",
+          "heading": false
+        }
+      ],
+      "extract": "The simplest known deﬁnition of the Jones polynomial is the Kauﬀman bracket [8], which in this paper will be denoted by ⟨·⟩A1 and will be called the A1 bracket. The A1 bracket is given by the following recursive rules: | 〉A1 = −(q 1/2+q -1/2)| 〉A1 | 〉A1 = −q 1/4| 〉A1 − q -1/4| 〉A1 The goal of this part of the paper is to derive deﬁnitions of the following three variants of the Jones polynomial: Theorem 1.1. There is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-acknowledgments",
+      "number": "2",
+      "title": "Acknowledgments",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 50,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "acknowledgments",
+          "heading": true
+        },
+        {
+          "term": "rena",
+          "heading": false
+        },
+        {
+          "term": "zieve",
+          "heading": false
+        }
+      ],
+      "extract": "Acknowledgments The author would like to thank Andrew Casson, Vaughan Jones, Robion Kirby, Kenneth Millett, Nicolai Reshetikhin, and Oleg Viro for their sustained interest in the work that resulted in this paper and for their helpful comments. The author is also indebted to Rena Zieve for checking certain important calculations.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-002-21-topological-preliminaries",
+      "number": "2.1",
+      "title": "Topological preliminaries",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 768,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "freeway projections",
+          "heading": false
+        },
+        {
+          "term": "planar graph",
+          "heading": false
+        },
+        {
+          "term": "ribbon graph",
+          "heading": false
+        },
+        {
+          "term": "tangled ribbon",
+          "heading": false
+        },
+        {
+          "term": "graph embedded",
+          "heading": false
+        },
+        {
+          "term": "deﬁne graph",
+          "heading": false
+        },
+        {
+          "term": "graphs decorated",
+          "heading": false
+        },
+        {
+          "term": "ambient isotopy",
+          "heading": false
+        }
+      ],
+      "extract": "Topological preliminaries By a planar graph we mean a ﬁnite combinatorial graph which is embedded in the sphere S2. We allow planar graphs to have edges which go in a circle and have no vertices, as well as a multiple edges between vertices and vertices connected to themselves. A face of a planar graph is a connected component of the complement of the graph. When interpreting the illustrations of planar graphs in",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-linearly-recurrent-invariants",
+      "number": "2.2",
+      "title": "Linearly recurrent invariants",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 613,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "recurrent invariants",
+          "heading": true
+        },
+        {
+          "term": "crossingless tangles",
+          "heading": false
+        },
+        {
+          "term": "tangled graph",
+          "heading": false
+        },
+        {
+          "term": "regular isotopy",
+          "heading": false
+        },
+        {
+          "term": "isotopy move",
+          "heading": false
+        },
+        {
+          "term": "kauﬀman bracket",
+          "heading": false
+        },
+        {
+          "term": "spanning space",
+          "heading": false
+        },
+        {
+          "term": "vector invariant",
+          "heading": false
+        }
+      ],
+      "extract": "Linearly recurrent invariants The topological invariants presented in this paper are best understood as linearly recurrent invariants. Let I(G) be some k-valued invariant of some tangled graphs G which are possibly decorated in some way. There is a natural way to extend the invariant I to an invariant⃗I(B) for graph with boundary B which takes values in a certain vector space over k which depends only on ∂B. If b is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-constructing-a-freeway-invariant",
+      "number": "2.3",
+      "title": "Constructing a freeway invariant",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 9,
+      "labelStart": "6",
+      "labelEnd": "9",
+      "words": 1688,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "freeway invariant",
+          "heading": true
+        },
+        {
+          "term": "crossingless freeways",
+          "heading": false
+        },
+        {
+          "term": "acyclic freeways",
+          "heading": false
+        },
+        {
+          "term": "f1g f2g",
+          "heading": false
+        },
+        {
+          "term": "simply-connected face",
+          "heading": false
+        },
+        {
+          "term": "kauﬀman bracket",
+          "heading": false
+        },
+        {
+          "term": "fewer sides",
+          "heading": false
+        },
+        {
+          "term": "g2f",
+          "heading": false
+        }
+      ],
+      "extract": "Constructing a freeway invariant We assume that there is a scalar freeway invariant ⟨·⟩G2 whose corresponding vector invariant is | ·⟩G2 and which satisﬁes the following condition: For n < 6, the bracket of the acyclic, crossingless freeways with n endpoints are linearly independent vectors, and that the bracket of a freeway which consists of a face with n sides is a linear combination of these acyclic freeways.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-two-other-polynomial-invariants",
+      "number": "2.4",
+      "title": "Two other polynomial invariants",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": "9",
+      "labelEnd": "11",
+      "words": 1123,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tetravalent graphs",
+          "heading": false
+        },
+        {
+          "term": "deﬁne freeway",
+          "heading": false
+        },
+        {
+          "term": "tetravalent vertex",
+          "heading": false
+        },
+        {
+          "term": "polynomial invariants",
+          "heading": true
+        },
+        {
+          "term": "acyclic graphs",
+          "heading": false
+        },
+        {
+          "term": "switching move",
+          "heading": false
+        },
+        {
+          "term": "oriented inward",
+          "heading": false
+        },
+        {
+          "term": "double edges",
+          "heading": false
+        }
+      ],
+      "extract": "Two other polynomial invariants We can repeat the approach of Section 2.3 two more times by changing the notion of a freeway and picking a new Ansatz. To avoid confusion, let us deﬁne a G2 freeway to be what we previously called a freeway. The solutions will be polynomial invariants of a single variable. However, for the purpose of a uniform treatment of all of the invariants, it is desirable in general to make this",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-25-a-few-calculations",
+      "number": "2.5",
+      "title": "A few calculations",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 117,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "few calculations",
+          "heading": true
+        },
+        {
+          "term": "borromean rings",
+          "heading": false
+        },
+        {
+          "term": "rules",
+          "heading": false
+        }
+      ],
+      "extract": "A few calculations In this section we present the results of a few calculations with ⟨·⟩G2. We begin with the auxiliary recursive rules: (Figure 28) Note that these rules can be inferred from [10, p. 61], and that they allow one to compute the bracket for any knot with 7 or fewer crossings. The simplest link which seems to defeat these rules is the Borromean rings, with 6 crossings and 3 components. Unfortunately,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-3-invariants-of-lie-algebra-representations",
+      "number": "3",
+      "title": "Invariants of Lie algebra representations",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 12,
+      "labelStart": "11",
+      "labelEnd": "12",
+      "words": 46,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "invariants",
+          "heading": true
+        },
+        {
+          "term": "lie",
+          "heading": true
+        },
+        {
+          "term": "rtg",
+          "heading": false
+        }
+      ],
+      "extract": "Invariants of Lie algebra representations In this part of the paper we place the invariants ⟨·⟩g in the proper context of the invariants RTg deﬁned by Reshetikhin and Turaev in [11] and study their properties from the point of view of representation theory of Lie algebras.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-31-invariants-of-colored-ribbon-graphs",
+      "number": "3.1",
+      "title": "Invariants of colored ribbon graphs",
+      "level": 2,
+      "pageStart": 12,
+      "pageEnd": 14,
+      "labelStart": "12",
+      "labelEnd": "14",
+      "words": 1942,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colored ribbon",
+          "heading": true
+        },
+        {
+          "term": "ribbon graphs",
+          "heading": true
+        },
+        {
+          "term": "ribbon hopf",
+          "heading": false
+        },
+        {
+          "term": "hopf superalgebra",
+          "heading": false
+        },
+        {
+          "term": "hopf algebra",
+          "heading": false
+        },
+        {
+          "term": "rtg",
+          "heading": false
+        },
+        {
+          "term": "canonical identiﬁcation",
+          "heading": false
+        },
+        {
+          "term": "edge labeled",
+          "heading": false
+        }
+      ],
+      "extract": "Invariants of colored ribbon graphs We begin with a summary of Reshetikhin and Turaev’s deﬁnition and some basic properties. We review some of the theory of ﬁnite-dimensional left modules, or representations, of a Hopf algebra H. If we have two representations V and W, the tensor product V ⊗W is also a representation by the coalgebra structure of H. There is a trivial representation I such that I ⊗V ∼= V ⊗I ∼= V",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-33-questions-open-to-the-author",
+      "number": "3.3",
+      "title": "Questions open to the author",
+      "level": 2,
+      "pageStart": 14,
+      "pageEnd": 17,
+      "labelStart": "14",
+      "labelEnd": "17",
+      "words": 1666,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "freeways span",
+          "heading": false
+        },
+        {
+          "term": "freeways equals",
+          "heading": false
+        },
+        {
+          "term": "non-positive curvature",
+          "heading": false
+        },
+        {
+          "term": "up-down tableau",
+          "heading": false
+        },
+        {
+          "term": "nonpositive curvature",
+          "heading": false
+        },
+        {
+          "term": "young tableau",
+          "heading": false
+        },
+        {
+          "term": "schensted insertion",
+          "heading": false
+        },
+        {
+          "term": "x2y",
+          "heading": false
+        }
+      ],
+      "extract": "Questions open to the author The coeﬃcients a, b, c, d1, d2, e1, and e2 in the deﬁnition of the G2 bracket, as well as their analogues for the A2 and C2 brackets, are all Laurent polynomials in q with either nonpositive or nonnegative integer coeﬃcients. This is a coincidence which cannot be explained by the freedom in choosing the parameter q. The coeﬃcients could be complicated rational or even algebraic functions",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 297,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "marseille",
+          "heading": false
+        },
+        {
+          "term": "nicolai",
+          "heading": false
+        },
+        {
+          "term": "jones polynomial",
+          "heading": false
+        },
+        {
+          "term": "math",
+          "heading": false
+        },
+        {
+          "term": "vladimir",
+          "heading": false
+        },
+        {
+          "term": "kauﬀman",
+          "heading": false
+        },
+        {
+          "term": "quantum groups",
+          "heading": false
+        },
+        {
+          "term": "reshetikhin",
+          "heading": false
+        }
+      ],
+      "extract": "[1] Nicolas Bourbaki, Groupes et alg´ebres de Lie, vol. 4–6, Hermann, Paris, 1968. [2] Vladimir Drinfel’d, Quantum groups, Proceedings of the International Congress of Mathematicians (Berkeley, California), vol. 1, 1986, pp. 798–820. [3] Peter Freyd, David Yetter, Jim Hoste, W. B. R. Lickorish, Kenneth Millett, and Adrian Ocneanu, A new polynomial invariant of knots and links, Bull. Amer. Math. Soc. (N.S.) 12",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "crossingless freeway",
+      "heading": false
+    },
+    {
+      "term": "freeway invariant",
+      "heading": true
+    },
+    {
+      "term": "tetravalent freeway",
+      "heading": false
+    },
+    {
+      "term": "deﬁne freeway",
+      "heading": false
+    },
+    {
+      "term": "freeway projections",
+      "heading": false
+    },
+    {
+      "term": "acyclic freeways",
+      "heading": false
+    },
+    {
+      "term": "kauﬀman bracket",
+      "heading": false
+    },
+    {
+      "term": "tangled graphs",
+      "heading": false
+    },
+    {
+      "term": "freeways span",
+      "heading": false
+    },
+    {
+      "term": "freeways equals",
+      "heading": false
+    },
+    {
+      "term": "isotopy invariant",
+      "heading": false
+    },
+    {
+      "term": "invariant rtg",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p17); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-9201302v1"
+  }
+}

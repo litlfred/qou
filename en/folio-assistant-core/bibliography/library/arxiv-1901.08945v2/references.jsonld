@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1901.08945v2",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Decompositions of derived categories of gerbes and families of Brauer–Severi varieties",
+      "dcterms:creator": [
+        "VARIETIES, AND OF FAMILIES OF BRAUER–SEVERI"
+      ],
+      "dcterms:issued": "D:20190219",
+      "dcterms:identifier": "https://arxiv.org/abs/1901.08945",
+      "dcterms:abstract": "It is well known that the category of quasi-coherent sheaves on a gerbe banded by a diagonalizable group decomposes according to the char- acters of the group. We establish the corresponding decomposition of the unbounded derived category of complexes of sheaves with quasi-coherent co- homology. This generalizes earlier work by Lieblich for gerbes over schemes whereas our gerbes may live over arbitrary algebraic stacks. By combining this decomposition with the semi-orthogonal decomposition for a projectivized vector bundle, we deduce a semi-orthogonal decomposition of the derived category of a family of Brauer–Severi varieties whose components can be described in terms of twisted sheaves on the base. This reproves and generalizes a result of Bernardara.",
+      "dcterms:source": "library/arxiv-1901.08945v2/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1901.08945v2"
+    }
+  ]
+}

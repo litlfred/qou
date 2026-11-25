@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-nuclear-operator-regimes-interpretation",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:nuclear-operator-regimes-interpretation",
+  "kind": "remark",
+  "title": "Physical interpretation of the three nuclear binding regimes",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/prop-nuclear-operator-regimes"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/prop-nuclear-operator-regimes",
+  "tags": [
+    "nuclear-binding",
+    "operator-selection",
+    "magic-numbers",
+    "torus-knot",
+    "hopf-link",
+    "shell-closure"
+  ],
+  "text": "nuclear-operator-regimes-interpretation.md",
+  "provenance": "authored"
+}

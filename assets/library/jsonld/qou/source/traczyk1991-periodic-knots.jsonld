@@ -1,0 +1,53 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/traczyk1991-periodic-knots/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "traczyk1991-periodic-knots",
+  "contains": [
+    "library/traczyk1991-periodic-knots/sections/page-001",
+    "library/traczyk1991-periodic-knots/sections/page-002",
+    "library/traczyk1991-periodic-knots/sections/page-003",
+    "library/traczyk1991-periodic-knots/sections/page-004",
+    "library/traczyk1991-periodic-knots/sections/page-005",
+    "library/traczyk1991-periodic-knots/sections/page-006",
+    "library/traczyk1991-periodic-knots/sections/page-007",
+    "library/traczyk1991-periodic-knots/sections/page-008",
+    "library/traczyk1991-periodic-knots/sections/page-009",
+    "library/traczyk1991-periodic-knots/sections/page-010",
+    "library/traczyk1991-periodic-knots/sections/page-011",
+    "library/traczyk1991-periodic-knots/sections/page-012"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Periodic knots and the skein polynomial — 12 sections: Page 1; Page 2; Page 3\n\n**Periodic knots and the skein polynomial**\n\n12 pp, 12 sections.\n\n**Outline.** Page 1; Page 2; Page 3; Page 4; Page 5; Page 6; Page 7; Page 8; Page 9; Page 10; Page 11; Page 12",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "traczyk1991-periodic-knots",
+    "title_source": "slug",
+    "source_file": "traczyk1991-periodic-knots.pdf",
+    "source_sha256": "2e9236877cec46044e45476754b2a1a854f5f41d52190ad97b620bc4d09f80d9",
+    "pages": 12,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

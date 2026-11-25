@@ -1,0 +1,940 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1012.4941v2",
+  "title": "arxiv-1012.4941v2",
+  "variant": "pdf",
+  "pages": 21,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Automorphisms of Linear Programs",
+      "number": "2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-automorphisms-of-linear-programs"
+    },
+    {
+      "level": 1,
+      "title": "Symmetries of Integer Linear Programs",
+      "number": "3",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-symmetries-of-integer-linear-programs"
+    },
+    {
+      "level": 1,
+      "title": "Layers of Integer Points",
+      "number": "4",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-layers-of-integer-points"
+    },
+    {
+      "level": 1,
+      "title": "Searching Integer Layers Efficiently",
+      "number": "5",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-5-searching-integer-layers-efficiently"
+    },
+    {
+      "level": 1,
+      "title": "Finding All Symmetries",
+      "number": "6",
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-6-finding-all-symmetries"
+    },
+    {
+      "level": 1,
+      "title": "Hypertruncated Cubes",
+      "number": "7",
+      "page": 16,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-7-hypertruncated-cubes"
+    },
+    {
+      "level": 1,
+      "title": "Computational Results",
+      "number": "8",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-8-computational-results"
+    },
+    {
+      "level": 2,
+      "title": "Hypertruncated Cubes",
+      "number": "8.1",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-81-hypertruncated-cubes"
+    },
+    {
+      "level": 2,
+      "title": "Wild Input",
+      "number": "8.2",
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-82-wild-input"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 20,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 98,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "linear programs",
+          "heading": false
+        },
+        {
+          "term": "solving linear",
+          "heading": false
+        },
+        {
+          "term": "katrin",
+          "heading": false
+        },
+        {
+          "term": "programming",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1012.4941v2 [math.OC] 13 Jan 2011 ALGORITHMS FOR HIGHLY SYMMETRIC LINEAR AND INTEGER PROGRAMS RICHARD B ¨ODI, KATRIN HERR, AND MICHAEL JOSWIG Abstract. This paper deals with exploiting symmetry for solving linear and integer programming problems. Basic properties of linear representations of ﬁnite groups can be used to reduce symmetric linear programming to solving linear programs of lower dimension. Combining",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1012.4941v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 499,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "barycenter ineqs",
+          "heading": false
+        },
+        {
+          "term": "linear programming",
+          "heading": false
+        },
+        {
+          "term": "margot",
+          "heading": false
+        },
+        {
+          "term": "ilps",
+          "heading": false
+        },
+        {
+          "term": "linear programs",
+          "heading": false
+        },
+        {
+          "term": "hypertruncated",
+          "heading": false
+        },
+        {
+          "term": "ilp",
+          "heading": false
+        },
+        {
+          "term": "linear automorphisms",
+          "heading": false
+        }
+      ],
+      "extract": "It is a known fact that many standard (integer) linear programming formulations of relevant problems in optimization show a lot of symmetry. In this situation a standard branch-and-cut framework repeatedly enumerates symmetric solutions, and sometimes this renders such methods useless. To address these issues the last decade saw a number of approaches to devise algorithms specialized to symmetric optimization",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-automorphisms-of-linear-programs",
+      "number": "2",
+      "title": "Automorphisms of Linear Programs",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 2781,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "barycenter ineqs",
+          "heading": false
+        },
+        {
+          "term": "opt sol",
+          "heading": false
+        },
+        {
+          "term": "operatorname aut",
+          "heading": false
+        },
+        {
+          "term": "program operatorname",
+          "heading": false
+        },
+        {
+          "term": "operatorname fix",
+          "heading": false
+        },
+        {
+          "term": "vphantom gamma",
+          "heading": false
+        },
+        {
+          "term": "operatorname eig",
+          "heading": false
+        },
+        {
+          "term": "feasible region",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:LP label=\"sec:LP\"} The purpose of this section is to introduce the notation and to collect basic facts for future reference. The results of this section up to and including Corollary [\\[cor:opt_sol_in_fix\\]](#cor:opt_sol_in_fix){reference-type=\"ref\" reference=\"cor:opt_sol_in_fix\"} can be found in the literature which is why we skip some of the proofs. We consider linear programs $\\operatorname{LP}(A,b,c)$ of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-symmetries-of-integer-linear-programs",
+      "number": "3",
+      "title": "Symmetries of Integer Linear Programs",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1206,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "operatorname ilp",
+          "heading": false
+        },
+        {
+          "term": "unipolar orbit",
+          "heading": false
+        },
+        {
+          "term": "operatorname aut",
+          "heading": false
+        },
+        {
+          "term": "operatorname mathbb",
+          "heading": false
+        },
+        {
+          "term": "bipolar orbit",
+          "heading": false
+        },
+        {
+          "term": "program operatorname",
+          "heading": false
+        },
+        {
+          "term": "operatorname fix",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:ILP label=\"sec:ILP\"} We now turn to our main focus. Associated with $\\operatorname{LP}(A,b,c)$ is the integer linear program $$\\label{eq:ILP} \\begin{array}{ll} \\max & c^tx\\\\ \\textrm{s.t.} & Ax \\le b \\, , \\ x \\in {\\mathbb{Z}}^n \\, , \\end{array}$$ which we denote as $\\operatorname{ILP}(A,b,c)$. Throughout we make the same assumptions as above: the linear program $\\operatorname{LP}(A,b,c)$ is feasible, the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-layers-of-integer-points",
+      "number": "4",
+      "title": "Layers of Integer Points",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 904,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "layers",
+          "heading": true
+        },
+        {
+          "term": "operatorname ilp",
+          "heading": false
+        },
+        {
+          "term": "operatorname coprime",
+          "heading": false
+        },
+        {
+          "term": "rfloor mathbbm",
+          "heading": false
+        },
+        {
+          "term": "zeta mathbbm",
+          "heading": false
+        },
+        {
+          "term": "relaxation operatorname",
+          "heading": false
+        },
+        {
+          "term": "layers label",
+          "heading": false
+        },
+        {
+          "term": "lfloor zeta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:layers label=\"sec:layers\"} Our goal is to describe an algorithm for the efficient solution of a highly symmetric integer linear program. Again we consider $\\operatorname{ILP}(A,b,c)$ with a group $\\Gamma$ of automorphisms as above. Let us assume that the objective function $c\\ne 0$ is *projectively rational*. This means that we require $c$ to be a constant real multiple of a rational vector. For such a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-searching-integer-layers-efficiently",
+      "number": "5",
+      "title": "Searching Integer Layers Efficiently",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1489,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "layers",
+          "heading": true
+        },
+        {
+          "term": "mathbbm layer",
+          "heading": false
+        },
+        {
+          "term": "lfloor rfloor",
+          "heading": false
+        },
+        {
+          "term": "core point",
+          "heading": false
+        },
+        {
+          "term": "lfloor zeta",
+          "heading": false
+        },
+        {
+          "term": "operatorname ilp",
+          "heading": false
+        },
+        {
+          "term": "feasible point",
+          "heading": false
+        },
+        {
+          "term": "core label",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:searching label=\"sec:searching\"} The question remaining is how to test ILP-feasibility of a $c$-layer in an efficient way. Our key observation is that some optimal integral solution is close to the fixed space if the group of symmetries acts sufficiently transitive. ::: definition Given a $c$-layer with center $z$, an integral point in the $c$-layer is a *core point* if it minimizes the distance to $z$. :::",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-finding-all-symmetries",
+      "number": "6",
+      "title": "Finding All Symmetries",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 16,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1845,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "operatorname ilp",
+          "heading": false
+        },
+        {
+          "term": "ilp graph",
+          "heading": false
+        },
+        {
+          "term": "reduced ilp",
+          "heading": false
+        },
+        {
+          "term": "node zeta",
+          "heading": false
+        },
+        {
+          "term": "node adjacent",
+          "heading": false
+        },
+        {
+          "term": "restricted ilp",
+          "heading": false
+        },
+        {
+          "term": "node hat",
+          "heading": false
+        },
+        {
+          "term": "column node",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:finding label=\"sec:finding\"} For the algorithms presented it is never necessary to know the entire group of automorphisms of $\\operatorname{LP}(A,b,c)$ or $\\operatorname{ILP}(A,b,c)$. Generally, any subgroup will do, the larger the better. Yet here we would like to discuss the question of how to find automorphisms of integer linear programs. From the input data we will construct a labeled graph",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-7-hypertruncated-cubes",
+      "number": "7",
+      "title": "Hypertruncated Cubes",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 723,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hypertruncated",
+          "heading": true
+        },
+        {
+          "term": "hypertruncated facets",
+          "heading": false
+        },
+        {
+          "term": "hypertruncated cube",
+          "heading": false
+        },
+        {
+          "term": "deletion facet",
+          "heading": false
+        },
+        {
+          "term": "hypersimplex facet",
+          "heading": false
+        },
+        {
+          "term": "truncating facet",
+          "heading": false
+        },
+        {
+          "term": "truncated cube",
+          "heading": false
+        },
+        {
+          "term": "hypersimplex delta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:hypertruncated label=\"sec:hypertruncated\"} In this section we will construct a specific class of highly symmetric convex polytopes among which one can find examples of rather high Gomory-Chvátal rank. The motivation for this construction is rooted in the systematic study of Gomory-Chvátal cuts and cutting-plane proof systems. Pokutta and Stauffer [@PokuttaStauffer10] propose a new method for computing lower",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-81-hypertruncated-cubes",
+      "number": "8.1",
+      "title": "Hypertruncated Cubes",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 29,
+      "summary": null,
+      "keywords": [],
+      "extract": "(m−1)/m approach n/e−o(1) as m ∈N goes to inﬁnity. In our experiments below we look at the case r = ⌊n/e⌋and λ = 1/2, that is, m = 2.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-8-computational-results",
+      "number": "8",
+      "title": "Computational Results",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 393,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hypertruncated facets",
+          "heading": false
+        },
+        {
+          "term": "hypertruncated cubes",
+          "heading": false
+        },
+        {
+          "term": "floating-point arithmetic",
+          "heading": false
+        },
+        {
+          "term": "conventional branch-and-cut",
+          "heading": false
+        },
+        {
+          "term": "core point",
+          "heading": false
+        },
+        {
+          "term": "rational arithmetic",
+          "heading": false
+        },
+        {
+          "term": "algo",
+          "heading": false
+        },
+        {
+          "term": "overhead",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sec:experiments label=\"sec:experiments\"} The following experiments were carried out on an Intel(R) Core(TM) i7 920 2.67GHz machine, with 12GB of main memory, running Ubuntu 10.04 (Lucid Lynx). The performance of each core is estimated at 5346.16 bogomips each. All our tests were run single-threaded. The goal of the experiments is to compare the performances of a conventional branch-and-cut approach (with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-82-wild-input",
+      "number": "8.2",
+      "title": "Wild Input",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 20,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 799,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathbb vphantom",
+          "heading": false
+        },
+        {
+          "term": "mathrm conv",
+          "heading": false
+        },
+        {
+          "term": "mathbb epsilon",
+          "heading": false
+        },
+        {
+          "term": "mathop mathrm",
+          "heading": false
+        },
+        {
+          "term": "conv left",
+          "heading": false
+        },
+        {
+          "term": "mathbb times",
+          "heading": false
+        },
+        {
+          "term": "conv bigl",
+          "heading": false
+        },
+        {
+          "term": "cross polytope",
+          "heading": false
+        }
+      ],
+      "extract": "One way to produce symmetric input for (integer) linear optimization algorithms is by brute force: One can take any system $Ax\\le b$ of linear inequalities and let the full group $\\mathop{\\mathrm{Sym}}(n)$ act. This way each original inequality may give up to $n!$ inequalities in the resulting *symmetrized* system. The symmetrized system of inequalities is $\\mathop{\\mathrm{Sym}}(n)$-invariant by construction. In",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 21,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 589,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "volker kaibel",
+          "heading": false
+        },
+        {
+          "term": "achill sch",
+          "heading": false
+        },
+        {
+          "term": "sch urmann",
+          "heading": false
+        },
+        {
+          "term": "cois margot",
+          "heading": false
+        },
+        {
+          "term": "fran cois",
+          "heading": false
+        },
+        {
+          "term": "integer programming",
+          "heading": false
+        },
+        {
+          "term": "integer programs",
+          "heading": false
+        },
+        {
+          "term": "birkh auser",
+          "heading": false
+        }
+      ],
+      "extract": "1. Timo Berthold and Marc E. Pfetsch, Detecting orbitopal symmetries, Operations Research Proceedings 2008 (Bernhard Fleischmann, Karl Heinz Borgwardt, Robert Klein, and Axel Tuma, eds.), Springer- Verlag, 2009, pp. 433–438. 2. Robert Bixby and D. K. Wagner, A note on detecting simple redundancies in linear systems, OR Letters 6 (1987), no. 1, 15–17. 3. Richard B¨odi, Theo Grundh¨ofer, and Katrin Herr, Symmetries of",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "operatorname ilp",
+      "heading": false
+    },
+    {
+      "term": "operatorname mathbb",
+      "heading": false
+    },
+    {
+      "term": "program operatorname",
+      "heading": false
+    },
+    {
+      "term": "mathbb vphantom",
+      "heading": false
+    },
+    {
+      "term": "vphantom gamma",
+      "heading": false
+    },
+    {
+      "term": "reduced ilp",
+      "heading": true
+    },
+    {
+      "term": "hypertruncated facets",
+      "heading": false
+    },
+    {
+      "term": "mathop mathrm",
+      "heading": false
+    },
+    {
+      "term": "ilp graph",
+      "heading": true
+    },
+    {
+      "term": "group operatorname",
+      "heading": false
+    },
+    {
+      "term": "relaxation operatorname",
+      "heading": false
+    },
+    {
+      "term": "linear program",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "The reduced ILP graph for (10)",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Hypertruncated Cubes",
+      "page": 19,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Symmetrized distorted joins of a hexagon with cross-polytopes",
+      "page": 20,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "1 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "2 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p20); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1012.4941v2"
+  }
+}

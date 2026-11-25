@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2103.07383v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "On the Analyticity of Critical Points of the Generalized Integral Menger Curvature in the Hilbert Case",
+      "dcterms:creator": [
+        "Steenebrügge, Daniel"
+      ],
+      "dcterms:issued": "D:20211123",
+      "dcterms:identifier": "https://arxiv.org/abs/2103.07383",
+      "dcterms:abstract": "We prove the analyticity of smooth critical points for generalized integral Menger cur- vature energies intM(p,2), with p ∈( 7 3, 8 3), subject to a ﬁxed length constraint. This implies, together with already well-known regularity results, that ﬁnite-energy, critical C1-curves γ : R/Z →Rn of generalized integral Menger curvature intM(p,2) subject to a ﬁxed length constraint are not only C∞but also analytic. Our approach is inspired by analyticity results on critical points for O’Hara’s knot energies based on Cauchy’s method of majorants and a decomposition of the ﬁrst variation. The main new idea is an additional iteration in the recursive estimate of the derivatives to obtain a suﬃcient diﬀerence in the order of regularity.",
+      "dcterms:source": "library/arxiv-2103.07383v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2103.07383v1"
+    }
+  ]
+}

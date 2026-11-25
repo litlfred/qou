@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-0707.3910v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "LANDEN TRANSFORMATIONS AND THE INTEGRATION OF RATIONAL FUNCTIONS",
+      "dcterms:creator": [
+        "BOROS, GEORGE",
+        "MOLL, VICTOR H."
+      ],
+      "dcterms:issued": "D:20210811",
+      "dcterms:identifier": "https://arxiv.org/abs/0707.3910",
+      "dcterms:abstract": "We present a rational version of the classical Landen transfor- mation for elliptic integrals. This is employed to obtain explicit closed-form expressions for a large class of integrals of even rational functions and to de- velop an algorithm for numerical integration of these functions.",
+      "dcterms:source": "library/arxiv-0707.3910v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-0707.3910v1"
+    }
+  ]
+}

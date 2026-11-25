@@ -1,0 +1,175 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-hep-th-9306069v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-hep-th-9306069v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "ABSTRACT",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-abstract.md",
+      "narrative": null,
+      "content": "Three postulates asserting the validity of conventional quantum theory, semi-classical\ngeneral relativity and the statistical basis for thermodynamics are introduced as a foundation\nfor the study of black hole evolution. We explain how these postulates may be implemented\nin a “stretched horizon” or membrane description of the black hole, appropriate to a distant\nobserver. The technical analysis is illustrated in the simpliﬁed context of 1+1 dimensional\ndilaton gravity. Our postulates imply that the dissipative properties of the stretched horizon\narise from a course graining of microphysical de",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9306069v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:hep-th/9306069v2  28 Jun 1993\nSU-ITP-93-15\nJune 1993\nhep-th/9306069\nThe Stretched Horizon and Black Hole Complementarity\nLeonard Susskind,\n⋆L´arus Thorlacius,\n† and John Uglum\n‡\nDepartment of Physics\nStanford University, Stanford, CA 94305-4060",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9306069v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-1-introduction.md",
+      "narrative": null,
+      "content": "The formation and evaporation of a macroscopic black hole is a complex process which\ncertainly leads to a practical loss of information and an increase of thermal entropy. The\nsame is true of almost all macroscopic phenomena. It is exceedingly diﬃcult to keep track\nof all the degrees of freedom involved when a large block of ice melts or a bomb explodes,\nbut in principle it can be done. According to the standard rules of quantum ﬁeld theory in\na ﬁxed Minkowski spacetime, the time evolution of any system from a given initial state is\ndescribed unambiguously by a unitary transformation acting on",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9306069v2/blocks/prop-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 18,
+      "target": "prop-sec-002-01.md",
+      "narrative": null,
+      "content": "Semi-classical solutions It was observed in [23] that the global causal nature of dynamical semi-classical ge- ometries depends on the incoming energy ﬂux.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-hep-th-9306069v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Two-dimensional dilaton gravity",
+      "pageStart": 8,
+      "pageEnd": 18,
+      "target": "../sections/sec-002-2-two-dimensional-dilaton-gravity.md",
+      "narrative": null,
+      "content": "It is very useful to have a simpliﬁed setting in which to study black hole physics. Callan,\nGiddings, Harvey and Strominger (CGHS) suggested for this purpose two-dimensional dila-\nton gravity coupled to conformal matter [11]. Their model can be exactly solved at the\nclassical level and has solutions which are two-dimensional analogs of black holes. Quantum\ncorrections are much more amenable to study in this theory than in four-dimensional Ein-\nstein gravity. In this section we will review the classical theory and then show how quantum\ncorrections can be implemented via a set of semi-classical",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9306069v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The stretched horizon",
+      "pageStart": 18,
+      "pageEnd": 34,
+      "target": "../sections/sec-003-3-the-stretched-horizon.md",
+      "narrative": null,
+      "content": "Our postulates require us to build a theory in which a distant observer makes no reference\nto events inside a black hole. For this purpose it is very useful to introduce the idea of a\nstretched horizon, HS, which is a visible timelike curve, in front of the global event horizon of\nthe black hole. Each point on HS is identiﬁed with a point on HG, so the stretched horizon\ncan act as a “surrogate” for the global horizon in a phenomenological description of black\nhole evolution.\n3.1. Definition and properties of the classical stretched horizon\nWe deﬁne the classical stretched horizon as follows. C",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9306069v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Brownian motion of the horizon⋆",
+      "pageStart": 34,
+      "pageEnd": 37,
+      "target": "../sections/sec-004-4-brownian-motion-of-the-horizon.md",
+      "narrative": null,
+      "content": "Lagrangian mechanics and thermodynamics are quite diﬀerent descriptions of a system.\nAccording to the usual principles of lagrangian mechanics, the motion of any system is\nreversible and the concepts of heat and entropy have no place. Thermodynamics, on the\nother hand, is the theory of the irreversible dissipation of organized energy into heat. The\nthermodynamic description arises from the coarse graining of the mechanical description, in\nwhich conﬁgurations which are macroscopically similar are considered identical.\nThe equations of semi-classical gravity are peculiarly thermodynamic near the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9306069v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Consequences of the postulates",
+      "pageStart": 37,
+      "pageEnd": 47,
+      "target": "../sections/sec-005-5-consequences-of-the-postulates.md",
+      "narrative": null,
+      "content": "5.1. Microstructure of the stretched horizon\nConsider a quantum ﬁeld theory in a two-dimensional spacetime with a strictly time-like\nboundary. Suppose the boundary is stationary at σ = 0, except for a brief time interval\n[ta, tb], during which it moves toward negative σ (left) and then returns.\nThe ﬁelds are\ndeﬁned to the right of the boundary. The boundary may have additional degrees of freedom.\nWithout loss of generality we can pretend that the boundary is permanently at σ = 0\nby assigning it extra degrees of freedom during the interval [ta, tb]. During this period the\nsystem has ﬁeld degree",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-hep-th-9306069v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "REFERENCES",
+      "pageStart": 47,
+      "pageEnd": 48,
+      "target": "../sections/sec-006-references.md",
+      "narrative": null,
+      "content": "1. S. W. Hawking, Comm .Math. Phys. 43 (1975), 199, Phys. Rev. D14 (1976), 2460.\n2. For an early critique of Hawking’s proposal, see D. N. Page, Phys. Rev. Lett. 44\n(1980), 301.\n3. G. ’t Hooft, Nucl. Phys. B335 (1990), 138, and references therein.\n4. E. Verlinde and H. Verlinde, A Unitary S-matrix for 2D Black Hole Formation and\nEvaporation, Princeton preprint, PUPT-1380,IASSNS-HEP-93/8, February 1993;\nK. Schoutens, E. Verlinde, and H. Verlinde, Quantum Black Hole Evaporation, Prince-\nton preprint, PUPT-1395,IASSNS-HEP-93/25, February 1993.\n5. J. D. Bekenstein, Phys. Rev. D9 (1974), 3292.\n6. R",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

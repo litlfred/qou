@@ -1,0 +1,439 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0108215v1",
+  "title": "arxiv-math-0108215v1",
+  "variant": "pdf",
+  "pages": 16,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The Lemmas",
+      "number": "2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-the-lemmas"
+    },
+    {
+      "level": 1,
+      "title": "Thick knots have bounded energy",
+      "number": "3",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-thick-knots-have-bounded-energy"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 121,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "obius energy",
+          "heading": false
+        },
+        {
+          "term": "iowa",
+          "heading": false
+        },
+        {
+          "term": "rawdon",
+          "heading": false
+        },
+        {
+          "term": "ropelength",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0108215v1 [math.GT] 30 Aug 2001 M¨obius Energy of Thick Knots Eric J. Rawdon 2 Department of Mathematics and Computer Science, Duquesne University, Pittsburgh, PA 15282, USA Email: rawdon@mathcs.duq.edu Jonathan Simon 1,3 Department of Mathematics, University of Iowa, Iowa City, IA 52242, USA Email: jsimon@math.uiowa.edu Abstract The M¨obius energy of a knot is an energy functional for smooth curves based",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0108215v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "3",
+      "words": 909,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm acn",
+          "heading": false
+        },
+        {
+          "term": "int nolimits",
+          "heading": false
+        },
+        {
+          "term": "ropelength",
+          "heading": false
+        },
+        {
+          "term": "möbius energy",
+          "heading": false
+        },
+        {
+          "term": "mathrm arc",
+          "heading": false
+        },
+        {
+          "term": "arclength along",
+          "heading": false
+        },
+        {
+          "term": "fhw",
+          "heading": false
+        },
+        {
+          "term": "frac x-y",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper, we exhibit a bound for the Möbius energy of a knot, in terms of the amount of \"rope\" needed to make the knot. This is the energy introduced in [@O1] and studied extensively in [@FHW; @KS]. We follow an overall approach suggested by G. Buck for showing that any inverse-square knot energy should be bounded by the $4/3$ power of the ropelength. We and other researchers have defined a number of different",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-lemmas",
+      "number": "2",
+      "title": "The Lemmas",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 8,
+      "labelStart": "3",
+      "labelEnd": "8",
+      "words": 1872,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm arc",
+          "heading": false
+        },
+        {
+          "term": "nolimits mathrm",
+          "heading": false
+        },
+        {
+          "term": "radius rho",
+          "heading": false
+        },
+        {
+          "term": "lsdr",
+          "heading": false
+        },
+        {
+          "term": "leq rho",
+          "heading": false
+        },
+        {
+          "term": "x-y geq",
+          "heading": false
+        },
+        {
+          "term": "frac x-y",
+          "heading": false
+        },
+        {
+          "term": "geq s-t",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#thelemmas label=\"thelemmas\"} The first lemma is a version of a theorem of Schur. This is taken from [@Ch], with the slight adjustment that we do not need to consider general planar convex curves as the reference curves, just circles. ::: lem Let $K$ be a $C^2$ smooth curve in $\\Rset^3$ whose curvature everywhere is $\\leq$ some number $k$. Let $C$ be a circle of curvature $k$, i.e. of radius $r = {\\frac1k}$. Let",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-thick-knots-have-bounded-energy",
+      "number": "3",
+      "title": "Thick knots have bounded energy",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 16,
+      "labelStart": "8",
+      "labelEnd": "16",
+      "words": 2667,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathrm dist",
+          "heading": false
+        },
+        {
+          "term": "dist leq",
+          "heading": false
+        },
+        {
+          "term": "mathrm prox",
+          "heading": false
+        },
+        {
+          "term": "dist int",
+          "heading": false
+        },
+        {
+          "term": "x-y leq",
+          "heading": false
+        },
+        {
+          "term": "nolimits mathrm",
+          "heading": false
+        },
+        {
+          "term": "dist cap",
+          "heading": false
+        },
+        {
+          "term": "frac x-y",
+          "heading": false
+        }
+      ],
+      "extract": "In this section, we prove that the Möbius energy of a knot is bounded by the ropelength. Our goal is partly the theorem itself and partly the paradigm: any \"energy\" defined in terms of inverse-square distances should have an analogous bound, with the proof following this model. ::: thm If $K$ is a smooth knot in $\\Rset^3$ then $$E_{O4}(K) < 4.57\\, E_L(K)^{4/3}. \\label{powbound}$$ []{#main label=\"main\"} ::: ::: thm",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "nolimits mathrm",
+      "heading": false
+    },
+    {
+      "term": "x-y leq",
+      "heading": false
+    },
+    {
+      "term": "mathrm arc",
+      "heading": false
+    },
+    {
+      "term": "int nolimits",
+      "heading": false
+    },
+    {
+      "term": "frac x-y",
+      "heading": false
+    },
+    {
+      "term": "mathrm prox",
+      "heading": false
+    },
+    {
+      "term": "x-y geq",
+      "heading": false
+    },
+    {
+      "term": "leq rho",
+      "heading": false
+    },
+    {
+      "term": "mathrm dist",
+      "heading": false
+    },
+    {
+      "term": "radius rho",
+      "heading": false
+    },
+    {
+      "term": "subseteq mathrm",
+      "heading": false
+    },
+    {
+      "term": "mathrm acn",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 3,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 4,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 3
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 4 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0108215v1"
+  }
+}

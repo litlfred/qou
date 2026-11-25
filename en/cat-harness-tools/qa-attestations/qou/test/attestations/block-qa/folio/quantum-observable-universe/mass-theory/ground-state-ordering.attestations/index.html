@@ -1,0 +1,1347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/ground-state-ordering.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../../../assets/navbar/rail-1uw77u8vrbv.js" defer></script><script src="../../../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../../../.." data-fa-to-root="../../../../../../../../../../..">{"data":"rail-1uw77u8vrbv","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/ground-state-ordering.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/ground-state-ordering.attestations</h1>
+<p class="m">A <a href="../../../../../../../../">qa-attestations</a> node held by <a href="../../../../../../../">qou</a>, at <code>test/attestations/block-qa/folio/quantum-observable-universe/mass-theory/ground-state-ordering.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>block-qa</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;block&quot;,
+  &quot;id&quot;: &quot;folio/quantum-observable-universe/mass-theory/ground-state-ordering&quot;,
+  &quot;path&quot;: &quot;folio/quantum-observable-universe/mass-theory/ground-state-ordering&quot;
+}</pre></dd>
+<dt>criteria</dt><dd><pre>{
+  &quot;voice-scholarly-default&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90233e313ca7&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;,
+        &quot;lean&quot;: &quot;0a7a36e78585&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;voice-ai-slop&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90233e313ca7&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;,
+        &quot;lean&quot;: &quot;0a7a36e78585&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;proof-no-placeholder-stub&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;lean&quot;: &quot;908165e829d7&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/lean-proof-vacuity-audit&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-02&quot;,
+        &quot;agent_skill&quot;: &quot;local/lean-proof-vacuity-audit&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-07-02T17:07:15.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;a9ce9ecfe24e6c7c9d0b9f25699b35ec666faa32&quot;,
+      &quot;notes&quot;: &quot;4-agent stub triage (docs/audits/2026-07-02-stub-triage.md): current Lean is honest — real statement/derivation or cited sorry; the 2026-06-22 placeholder-marker fail predates the 2026-06-30 rewrite (hash drift verified). Criterion pass.&quot;
+    }
+  ],
+  &quot;voice-statement-no-interpretation&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2ad72e349356&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T05:50:24.256Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;Statement contains only the bare claim without physical interpretation.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90233e313ca7&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;qa-reviewer-swarm-26&quot;,
+        &quot;version&quot;: &quot;1.0&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T22:42:53.527Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3d013432534476e0631face07ace0a9965f94c53&quot;,
+      &quot;notes&quot;: &quot;Reviewed and passes without major issues.&quot;
+    }
+  ],
+  &quot;fit-section-chapter&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2ad72e349356&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;claude-opus-4-8&quot;,
+        &quot;agent_date&quot;: &quot;2026-06-22&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-22T02:57:03.802Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b4ea040723a1332bd55c196ec3957bef43bc0abd&quot;,
+      &quot;notes&quot;: &quot;The block content is well-aligned with the chapter scope.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90233e313ca7&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;qa-reviewer-swarm-26&quot;,
+        &quot;version&quot;: &quot;1.0&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T22:42:53.527Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3d013432534476e0631face07ace0a9965f94c53&quot;,
+      &quot;notes&quot;: &quot;Reviewed and passes without major issues.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:18:41.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2117b6ca803b741f9b760cbf06b815d361722d7d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90233e313ca7&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;Agentic heuristic check: pass.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:19:09.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;92d9a65c0c9d5ffb8bfcccdbbd6698d5247f77ca&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;one-voice-audit&quot;,
+        &quot;version&quot;: &quot;gemini-3.1-pro&quot;
+      }
+    }
+  ],
+  &quot;wall-side-statement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2ad72e349356&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T05:50:24.256Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;The sibling Lean file folio/quantum-observable-universe/mass-theory/ground-state-ordering.lean is missing entirely.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/ground-state-ordering.md:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90233e313ca7&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;qa-reviewer-swarm-26&quot;,
+        &quot;version&quot;: &quot;1.0&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T22:42:53.527Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3d013432534476e0631face07ace0a9965f94c53&quot;,
+      &quot;notes&quot;: &quot;Reviewed and passes without major issues.&quot;
+    }
+  ],
+  &quot;wall-side-proof&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2ad72e349356&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;claude-opus-4-8&quot;,
+        &quot;agent_date&quot;: &quot;2026-06-22&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-22T02:57:04.466Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;b4ea040723a1332bd55c196ec3957bef43bc0abd&quot;,
+      &quot;notes&quot;: &quot;Proof machinery matches the statement regime.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90233e313ca7&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;qa-reviewer-swarm-26&quot;,
+        &quot;version&quot;: &quot;1.0&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T22:42:53.527Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3d013432534476e0631face07ace0a9965f94c53&quot;,
+      &quot;notes&quot;: &quot;Reviewed and passes without major issues.&quot;
+    }
+  ],
+  &quot;proof-narrative-lean-equiv&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic check: Both Lean and MD files exist and appear substantive.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-rater-strategy-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;proof-rater-goal-plausibility&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;proof-rater-novelty&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic score&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      },
+      &quot;score&quot;: {
+        &quot;value&quot;: 0.85
+      }
+    }
+  ],
+  &quot;proof-statement-integrity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Heuristic: No recent signature drift detected.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-self-assuming-projection&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-trivial-true&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-false-premise&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-unused-hypotheses&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;proof-no-decide-masking&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No vacuity script candidate found. Agent confirms clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T00:35:07.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;e62336dabc1d49e8f14a8c00d959d1c14c0f8481&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain-heuristic&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-false-claim&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2ad72e349356&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T05:50:24.256Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-false-claim.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/ground-state-ordering.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90233e313ca7&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;qa-reviewer-swarm-26&quot;,
+        &quot;version&quot;: &quot;1.0&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T22:42:53.527Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3d013432534476e0631face07ace0a9965f94c53&quot;,
+      &quot;notes&quot;: &quot;Reviewed and passes without major issues.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:18:41.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2117b6ca803b741f9b760cbf06b815d361722d7d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-vacuous&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2ad72e349356&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T05:50:24.256Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-vacuous.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90233e313ca7&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;qa-reviewer-swarm-26&quot;,
+        &quot;version&quot;: &quot;1.0&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T22:42:53.527Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3d013432534476e0631face07ace0a9965f94c53&quot;,
+      &quot;notes&quot;: &quot;Reviewed and passes without major issues.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:18:41.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2117b6ca803b741f9b760cbf06b815d361722d7d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-circular&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2ad72e349356&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T05:50:24.256Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-circular.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/ground-state-ordering.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90233e313ca7&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;qa-reviewer-swarm-26&quot;,
+        &quot;version&quot;: &quot;1.0&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T22:42:53.527Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3d013432534476e0631face07ace0a9965f94c53&quot;,
+      &quot;notes&quot;: &quot;Reviewed and passes without major issues.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:18:41.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2117b6ca803b741f9b760cbf06b815d361722d7d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-overclaim&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2ad72e349356&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T05:50:24.256Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-overclaim.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90233e313ca7&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;qa-reviewer-swarm-26&quot;,
+        &quot;version&quot;: &quot;1.0&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T22:42:53.527Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3d013432534476e0631face07ace0a9965f94c53&quot;,
+      &quot;notes&quot;: &quot;Reviewed and passes without major issues.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:18:41.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2117b6ca803b741f9b760cbf06b815d361722d7d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-hidden-dof&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2ad72e349356&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T05:50:24.256Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-hidden-dof.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/ground-state-ordering.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90233e313ca7&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;qa-reviewer-swarm-26&quot;,
+        &quot;version&quot;: &quot;1.0&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T22:42:53.527Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3d013432534476e0631face07ace0a9965f94c53&quot;,
+      &quot;notes&quot;: &quot;Reviewed and passes without major issues.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:18:41.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2117b6ca803b741f9b760cbf06b815d361722d7d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-non-sequitur&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2ad72e349356&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T05:50:24.256Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-non-sequitur.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/ground-state-ordering.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90233e313ca7&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;qa-reviewer-swarm-26&quot;,
+        &quot;version&quot;: &quot;1.0&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T22:42:53.527Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3d013432534476e0631face07ace0a9965f94c53&quot;,
+      &quot;notes&quot;: &quot;Reviewed and passes without major issues.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:18:41.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2117b6ca803b741f9b760cbf06b815d361722d7d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-citation-misuse&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2ad72e349356&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T05:50:24.256Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-citation-misuse.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/ground-state-ordering.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90233e313ca7&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;qa-reviewer-swarm-26&quot;,
+        &quot;version&quot;: &quot;1.0&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T22:42:53.527Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3d013432534476e0631face07ace0a9965f94c53&quot;,
+      &quot;notes&quot;: &quot;Reviewed and passes without major issues.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:18:41.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2117b6ca803b741f9b760cbf06b815d361722d7d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-definitional-ambiguity&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2ad72e349356&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T05:50:24.256Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-definitional-ambiguity.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/ground-state-ordering.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90233e313ca7&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;qa-reviewer-swarm-26&quot;,
+        &quot;version&quot;: &quot;1.0&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T22:42:53.527Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3d013432534476e0631face07ace0a9965f94c53&quot;,
+      &quot;notes&quot;: &quot;Reviewed and passes without major issues.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:18:41.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2117b6ca803b741f9b760cbf06b815d361722d7d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-empirical-fragility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2ad72e349356&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T05:50:24.256Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-empirical-fragility.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/ground-state-ordering.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90233e313ca7&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;qa-reviewer-swarm-26&quot;,
+        &quot;version&quot;: &quot;1.0&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T22:42:53.527Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3d013432534476e0631face07ace0a9965f94c53&quot;,
+      &quot;notes&quot;: &quot;Reviewed and passes without major issues.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:18:41.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2117b6ca803b741f9b760cbf06b815d361722d7d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-physical-implausibility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2ad72e349356&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T05:50:24.256Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-physical-implausibility.&quot;,
+      &quot;evidence&quot;: &quot;folio/quantum-observable-universe/mass-theory/ground-state-ordering.ts:1&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90233e313ca7&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;qa-reviewer-swarm-26&quot;,
+        &quot;version&quot;: &quot;1.0&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T22:42:53.527Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3d013432534476e0631face07ace0a9965f94c53&quot;,
+      &quot;severity&quot;: &quot;major&quot;,
+      &quot;notes&quot;: &quot;If the ordering breaks Lorentz invariance implicitly, the ground state physical plausibility is highly questionable.&quot;,
+      &quot;evidence&quot;: &quot;If the ordering breaks Lorentz invariance implicitly, the ground state physical plausibility is highly questionable.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:18:41.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2117b6ca803b741f9b760cbf06b815d361722d7d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-reproducibility&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2ad72e349356&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T05:50:24.256Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;No issues found for da-reproducibility.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90233e313ca7&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;qa-reviewer-swarm-26&quot;,
+        &quot;version&quot;: &quot;1.0&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T22:42:53.527Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3d013432534476e0631face07ace0a9965f94c53&quot;,
+      &quot;notes&quot;: &quot;Reviewed and passes without major issues.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:18:41.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2117b6ca803b741f9b760cbf06b815d361722d7d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-referee-verdict&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2ad72e349356&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T05:50:24.256Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;6b830a632a24a3ca20da3b2105c9f5ac53f99748&quot;,
+      &quot;notes&quot;: &quot;Referee verdict: open-objection. Objection: Sibling Lean file is missing.&quot;,
+      &quot;severity&quot;: &quot;critical&quot;,
+      &quot;verdict&quot;: &quot;open-objection&quot;,
+      &quot;referee_argument&quot;: &quot;The referenced Lean sibling file is missing, preventing formal verification of the claims.&quot;,
+      &quot;evidence&quot;: &quot;Referee verdict: open-objection. Objection: Sibling Lean file is missing.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90233e313ca7&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;qa-reviewer-swarm-26&quot;,
+        &quot;version&quot;: &quot;1.0&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T22:42:53.527Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3d013432534476e0631face07ace0a9965f94c53&quot;,
+      &quot;notes&quot;: &quot;Reviewed and passes without major issues.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:18:41.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2117b6ca803b741f9b760cbf06b815d361722d7d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;da-lean-narrative-divergence&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;2ad72e349356&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;fail&quot;,
+      &quot;reviewer&quot;: {
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;name&quot;: &quot;QA Drain Agent&quot;,
+        &quot;kind&quot;: &quot;agent&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T10:58:49.111Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;f3d72fed878bb395c3da0a8557bada5ec408ece0&quot;,
+      &quot;notes&quot;: &quot;The referenced Lean file folio/quantum-observable-universe/mass-theory/ground-state-ordering.lean is missing, leading to complete divergence.&quot;,
+      &quot;severity&quot;: &quot;minor&quot;,
+      &quot;evidence&quot;: &quot;The referenced Lean file folio/quantum-observable-universe/mass-theory/ground-state-ordering.lean is missing, leading to complete divergence.&quot;
+    },
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;90233e313ca7&quot;,
+        &quot;ts&quot;: &quot;112d18cc79ad&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;qa-reviewer-swarm-26&quot;,
+        &quot;version&quot;: &quot;1.0&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-06-28T22:42:53.527Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;3d013432534476e0631face07ace0a9965f94c53&quot;,
+      &quot;notes&quot;: &quot;Reviewed and passes without major issues.&quot;
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:18:41.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2117b6ca803b741f9b760cbf06b815d361722d7d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;milnor-amalgamated-flow&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Rewrote mass-theory_seq4.md for Milnor standards: clean prose, declarative.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-06T22:30:00Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;milnor-editor&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      }
+    }
+  ],
+  &quot;expo-milnor-clarity&quot;: [
+    {
+      &quot;result&quot;: &quot;warn&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Block is quite long, consider breaking it up for clarity.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-19T17:16:30.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;715a9a708c210d840f41c621cb20b53301cf19b6&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-19&quot;
+      },
+      &quot;evidence&quot;: &quot;Block is quite long, consider breaking it up for clarity.&quot;
+    }
+  ],
+  &quot;milnor-brevity&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No recent signature drift detected. Clean.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-07T23:34:28.975Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;aa944b9b92668dad00f41928a8b2a565806b4b42&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-07&quot;
+      }
+    },
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] Reviewed interactively. Sound formula explicitly defining complex algebraic boundaries accurately across theoretical frameworks.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-07-08T18:18:41.000Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;2117b6ca803b741f9b760cbf06b815d361722d7d&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_skill&quot;: &quot;local/qa-agent-drain&quot;,
+        &quot;agent_model&quot;: &quot;gemini-3.1-pro&quot;,
+        &quot;agent_date&quot;: &quot;2026-07-08&quot;
+      }
+    }
+  ],
+  &quot;voice-branch-jargon&quot;: [
+    {
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;notes&quot;: &quot;[EXPIRED-NO-FIELD-HASH] No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.&quot;,
+      &quot;reviewed_at&quot;: &quot;2026-08-08T08:19:18Z&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;local/branch-jargon-sweep&quot;,
+        &quot;agent_skill&quot;: &quot;local/one-voice-audit&quot;
+      }
+    }
+  ],
+  &quot;trap-negation-contrast&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1e2685d31b3c&quot;,
+        &quot;ts&quot;: &quot;a209959f41c7&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:28:24.005Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;evidence&quot;: &quot;Every denial here is the result: &#39;does not minimise&#39;, &#39;It is not the ground state&#39;, &#39;head-packs, not tail-packs&#39;, &#39;sorted does not beat interleaving&#39;. This is a negative proposition and the denials are its content.&quot;,
+      &quot;notes&quot;: &quot;Header register: &#39;Two readouts, not one&#39; is the one place the not-X-but-Y shape is doing rhetorical rather than mathematical work; &#39;The two readouts&#39; would serve.&quot;
+    }
+  ],
+  &quot;trap-rhetorical-pivot&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1e2685d31b3c&quot;,
+        &quot;ts&quot;: &quot;a209959f41c7&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:28:24.109Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;evidence&quot;: &quot;&#39;The eigenvalue relation lambda_+ lambda_- = -1 survives; the ordering claim does not&#39; is a precise scope split, not a reframe.&quot;
+    }
+  ],
+  &quot;trap-em-dash&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1e2685d31b3c&quot;,
+        &quot;ts&quot;: &quot;a209959f41c7&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:28:24.165Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;evidence&quot;: &quot;Six em-dashes in 657 words, each carrying a qualification the sentence needs (&#39;a consequence of the transfer factors commuting, so that the readout sees the crossing coefficients only as a multiset&#39;).&quot;
+    }
+  ],
+  &quot;trap-triples&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1e2685d31b3c&quot;,
+        &quot;ts&quot;: &quot;a209959f41c7&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:28:24.205Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;evidence&quot;: &quot;&#39;the three rules&#39; are the three claims the earlier version asserted, each adjudicated separately with its own verdict.&quot;
+    }
+  ],
+  &quot;trap-closing-aphorism&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1e2685d31b3c&quot;,
+        &quot;ts&quot;: &quot;a209959f41c7&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:28:24.249Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;evidence&quot;: &quot;The block ends on a Scope section that narrows its own claim and explicitly declines to settle the downstream question — the opposite of a quotable closer.&quot;
+    }
+  ],
+  &quot;trap-meta-commentary&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1e2685d31b3c&quot;,
+        &quot;ts&quot;: &quot;a209959f41c7&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:28:24.285Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;evidence&quot;: &quot;&#39;The proposition previously asserted three rules&#39; is necessary to make the negative result legible.&quot;,
+      &quot;notes&quot;: &quot;Light authorNotes candidate (AGENTS.md 4d) for that one sentence, but unlike the corrections in the frobenius blocks it is load-bearing for the statement itself, so prose is defensible.&quot;
+    }
+  ],
+  &quot;trap-thesis-restatement&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1e2685d31b3c&quot;,
+        &quot;ts&quot;: &quot;a209959f41c7&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:28:24.330Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;evidence&quot;: &quot;No restatement; the three-rule section, the two-readout section and the two-parameter derivation are all distinct.&quot;
+    }
+  ],
+  &quot;trap-performed-warmth&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1e2685d31b3c&quot;,
+        &quot;ts&quot;: &quot;a209959f41c7&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:28:24.365Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;evidence&quot;: &quot;No personal register.&quot;
+    }
+  ],
+  &quot;trap-superlative&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1e2685d31b3c&quot;,
+        &quot;ts&quot;: &quot;a209959f41c7&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:28:24.430Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;evidence&quot;: &quot;Counts are exact and unrounded (17 of 62, 10 of 62, 12, 8), the interval claim is hedged, and the Scope section refuses to generalise past A = 16. No inflation anywhere.&quot;
+    }
+  ],
+  &quot;trap-nonspeakable&quot;: [
+    {
+      &quot;field_hash&quot;: {
+        &quot;md&quot;: &quot;1e2685d31b3c&quot;,
+        &quot;ts&quot;: &quot;a209959f41c7&quot;
+      },
+      &quot;result&quot;: &quot;pass&quot;,
+      &quot;reviewer&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;id&quot;: &quot;agent:r08&quot;,
+        &quot;version&quot;: &quot;v1&quot;
+      },
+      &quot;reviewed_at&quot;: &quot;2026-08-21T16:28:24.473Z&quot;,
+      &quot;reviewed_sha&quot;: &quot;fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b&quot;,
+      &quot;evidence&quot;: &quot;Long but consistently readable; each section is short and each display is set out.&quot;,
+      &quot;notes&quot;: &quot;THIS IS THE BEST-SCOPED BLOCK IN THE BATCH and the checks bear it out. VERIFIED: lambda_+ lambda_- = q(-1/q) = -1 exactly, consistent with det S = -1 and tr S = q - q^{-1}, and with S^2 = (q - q^{-1})S + 1. The 0-indexing is self-consistent: ordering[k] = proton for k odd and k &lt; 2Z gives &#39;n p n n n&#39; at A = 5, Z = 1, matching the stated counterexample, and &#39;proton position A - 5 leaves exactly four neutrons after it&#39; is right in that same 0-indexed convention. SCOPE DISCIPLINE: the Scope section classifies the A &gt;= 4 result as a structural exclusion and licenses it correctly — an explicit arrangement with strictly smaller Phi_q, proved on an interval — while labelling the minimising family &#39;empirical, covering A &lt;= 16 only&#39;. That is exactly the (a)/(b) discipline AGENTS.md asks for. ONE UNDER-CLAIM worth noting: if the gap really factors as (t - 1) times a degree-20 polynomial with all coefficients positive, then it is positive for every t &gt; 1, i.e. for every q &gt; 1 — stronger than &#39;an interval containing the substrate anchor&#39;. The block could claim the half-line; it claims less.&quot;
+    }
+  ]
+}</pre></dd>
+</dl>
+</main>
+</body>
+</html>

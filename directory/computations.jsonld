@@ -1,0 +1,25 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/directory/computations.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/directory/computations",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Subgraph",
+      "name": "computations",
+      "path": "computations/",
+      "contentSource": {
+        "kind": "directory",
+        "declaredIn": "default"
+      },
+      "holdsGraph": [
+        "https://litlfred.github.io/cat-harness/v0/ns/graphTypology/code",
+        "https://litlfred.github.io/folio-assistant-core/v0/ns/graphTypology/computation-witness"
+      ],
+      "description": "Python computations and the witnesses they write (<name>.witness.json). A witness value is addressable in prose as {{ qou.computations.<witness>.<json path> }}, resolved once for the PDF, the blueprint and the site.",
+      "readmePath": "computations/README.md",
+      "fileCount": 10978,
+      "inSubgraph": "https://litlfred.github.io/qou/directory/computations"
+    }
+  ]
+}

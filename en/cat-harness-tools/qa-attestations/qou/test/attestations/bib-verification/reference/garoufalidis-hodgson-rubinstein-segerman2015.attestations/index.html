@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/bib-verification/reference/garoufalidis-hodgson-rubinstein-segerman2015.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../assets/navbar/rail-r8nnu336jc.js" defer></script><script src="../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../.." data-fa-to-root="../../../../../../../../..">{"data":"rail-r8nnu336jc","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/bib-verification/reference/garoufalidis-hodgson-rubinstein-segerman2015.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/bib-verification/reference/garoufalidis-hodgson-rubinstein-segerman2015.attestations</h1>
+<p class="m">A <a href="../../../../../../">qa-attestations</a> node held by <a href="../../../../../">qou</a>, at <code>test/attestations/bib-verification/reference/garoufalidis-hodgson-rubinstein-segerman2015.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>bib-verification</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;reference&quot;,
+  &quot;id&quot;: &quot;garoufalidis-hodgson-rubinstein-segerman2015&quot;,
+  &quot;path&quot;: null
+}</pre></dd>
+<dt>verifications</dt><dd><pre>[
+  {
+    &quot;position&quot;: 239,
+    &quot;verifier&quot;: &quot;unknown&quot;,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/arxiv-1303.5278v1/1303.5278v1.pdf&quot;
+      },
+      &quot;id&quot;: &quot;garoufalidis-hodgson-rubinstein-segerman2015&quot;,
+      &quot;status&quot;: &quot;unreviewed&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;supporting&quot;,
+        &quot;rationale&quot;: &quot;JOIN CONFIRMED from front matter: the document self-identifies as arXiv:1303.5278v1, and its four-author byline and title match the registered entry. CITATION STATE: a true bib orphan — zero sites in content/ and zero in computations/. RELEVANCE: it promotes the 3D index from a triangulation-dependent collection of q-series to a topological invariant of oriented cusped hyperbolic 3-manifolds, by showing a triangulation admits an index structure iff it is 1-efficient and that hyperbolic manifolds carry a canonical family of such triangulations related by index-preserving 2-3 and 0-2 moves. QOU uses the 3d index directly: lean/QOU/QBeta/GZWeightSelection.lean:20-24 asserts the A_omega Stokes constant is the integer DT/BPS 3d-index count [q^0] Ind^rot_{4_1} = 3, citing garoufalidis-gu-marino2021 for the count but with no source for the index&#39;s well-definedness. This document is that missing source. Held at supporting because the QOU argument uses a specific coefficient rather than this invariance theorem, but the invariance is what licenses calling it &#39;the&#39; index of 4_1.&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;§1.2-1.3 (index structures and topological invariance)&quot;,
+            &quot;statement&quot;: &quot;An ideal triangulation admits an index structure iff it is 1-efficient; a hyperbolic cusped manifold has a canonical set of 1-efficient ideal triangulations related by 2-3 and 0-2 moves that preserve the 3D index, so the index is a topological invariant of the manifold.&quot;,
+            &quot;useForFolio&quot;: &quot;Licenses the phrase &#39;the 3d index of 4_1&#39; used when reading off [q^0] Ind^rot = 3 in the Stokes-constant argument, which currently presumes triangulation-independence without a source.&quot;,
+            &quot;targets&quot;: [
+              &quot;folio/quantum-observable-universe/lean/QOU/QBeta/GZWeightSelection.lean&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;GZWeightSelection.lean reads a specific 3d-index coefficient off 4_1 as if the index were canonically attached to the manifold; that well-definedness is this document&#39;s theorem and is currently uncited anywhere in the corpus.&quot;,
+            &quot;target&quot;: &quot;folio/quantum-observable-universe/lean/QOU/QBeta/GZWeightSelection.lean&quot;,
+            &quot;bean&quot;: &quot;qou-p2o4&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-08T23:34:05.459Z&quot;,
+        &quot;source_sha&quot;: &quot;92e417c93f8b&quot;
+      }
+    }
+  },
+  {
+    &quot;position&quot;: 405,
+    &quot;verifier&quot;: &quot;unknown&quot;,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/topologicalinvariance3dindex/topological.invariance.3Dindex.pdf&quot;
+      },
+      &quot;id&quot;: &quot;garoufalidis-hodgson-rubinstein-segerman2015&quot;,
+      &quot;status&quot;: &quot;unreviewed&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;tangential&quot;,
+        &quot;rationale&quot;: &quot;JOIN CONFIRMED from the document&#39;s own title page: the four-author paper on 1-efficient triangulations and the index of a cusped hyperbolic 3-manifold, matching the seeded key. TWO SECONDARY FINDINGS. (1) DUPLICATE UPLOAD: the same paper is already in the tree as library/arxiv-1303.5278v1/1303.5278v1.pdf, which is the file the reference entry&#39;s own note names as its provenance; this is a second copy under a descriptive filename (the two shas differ, the paper is the same). (2) BIB ORPHAN: a repo-wide grep for the key returns references.ts, the ledger, and exactly one narrative mention in docs/audits/2026-07-18-g3-stokes-keystone-evidence-base.md - there is NO .md \\cite, NO .ts cites[] and NO Lean -- Ref: anywhere under content/. So the entry is registered and unused. On merits the paper is adjacent to work the corpus does do: it promotes the 3d index of an ideal triangulation to a topological invariant of the cusped hyperbolic 3-manifold, via the equivalence &#39;T admits an index structure iff T is 1-efficient&#39; plus invariance under 2-3 and 0-2 moves, and the corpus computes 3d indices in computations/probes/borromean_3d_index.py and borromean_3d_index_graded.py. But those probes never invoke triangulation-independence, so no block currently consumes a result from it. Tangential against the corpus as it stands, scope-(a).&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;Main theorem (a)+(b)&quot;,
+            &quot;statement&quot;: &quot;An ideal triangulation T admits an index structure iff T is 1-efficient; a hyperbolic M has a canonical set of 1-efficient triangulations related by 2-3 and 0-2 moves preserving the 3d index, so the index is a topological invariant of M.&quot;,
+            &quot;useForFolio&quot;: &quot;Would license the corpus&#39;s Borromean 3d-index probes to speak of &#39;the 3d index of the manifold&#39; rather than &#39;of this triangulation&#39; - the step those probes currently leave implicit.&quot;,
+            &quot;targets&quot;: [
+              &quot;computations/probes/borromean_3d_index.py&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;The 3d-index probes compute an index from a specific triangulation and report it as a manifold invariant without citing the triangulation-independence theorem that licenses that. This registered-but-uncited entry is exactly the missing source.&quot;,
+            &quot;target&quot;: &quot;computations/probes/borromean_3d_index.py&quot;,
+            &quot;bean&quot;: &quot;qou-dyby&quot;
+          },
+          {
+            &quot;action&quot;: &quot;no-action&quot;,
+            &quot;rationale&quot;: &quot;On the duplicate upload: both copies are the same paper and library/arxiv-1303.5278v1/1303.5278v1.pdf is the one the reference entry names, so this row simply records the duplication rather than proposing a deletion (branch/file removal is not this skill&#39;s business).&quot;,
+            &quot;target&quot;: &quot;library/topologicalinvariance3dindex/topological.invariance.3Dindex.pdf&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-08T23:34:05.459Z&quot;,
+        &quot;source_sha&quot;: &quot;22953b4eee66&quot;
+      }
+    }
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

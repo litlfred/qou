@@ -1,0 +1,736 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1009.4034v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "KEROV’S CENTRAL LIMIT THEOREM FOR SCHUR-WEYL\nMEASURES OF PARAMETER α = 1/2\nPIERRE-LOÏC MÉLIOT\nAbstract. In this article, we show that Kerov’s central limit theorem related to the ﬂuctuations of\nYoung diagrams under the Plancherel measure extends to the case of Schur-Weyl measures, which are\nthe probability measures on partitions associated to the representations of the symmetric groups Sn on\ntensor products of vector spaces V ⊗n (see [Bia01]). The proof is inspired by the one given in [IO02] for\nthe Plancherel measure, and it relies on the combinatorics of the algebra of observables of diagram",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Schur-Weyl measures of parameter =1/2",
+      "pageStart": 2,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-1-schur-weyl-measures-of-parameter-12.md",
+      "narrative": null,
+      "content": "[]{#swbiane label=\"swbiane\"} In the following, we fix two positive real numbers $\\alpha$ and $c$. Recall that the irreducible representations of the symmetric group $\\sym_{n}$ are labelled by partitions of size $n$, that is to say, non-increasing sequences $$\\lambda=(\\lambda_{1},\\ldots,\\lambda_{r})$$ of positive integers that sum up to $n$; see for instance [@Weyl39 Chapter 4]. Such a sequence can be represented by its **Young diagram**, which is an array of $n$ boxes with $\\lambda_{1}$ boxes in the first line, $\\lambda_{2}$ boxes in the second line, etc.\n\nWe denote by $\\Part_{n}$ the set of i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p004-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p004-13",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-13.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p004-19",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-19.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p004-25",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-25.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p004-31",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-31.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p004-7",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../images/img-p004-7.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Observables of diagrams",
+      "pageStart": 5,
+      "pageEnd": 8,
+      "target": "../sections/sec-001-2-observables-of-diagrams.md",
+      "narrative": null,
+      "content": "[]{#obs label=\"obs\"} In the setting of random partitions, the algebra of polynomial functions[^1] on Young diagrams and its various bases play an extremely important role that can be compared to the one played by the moments of a real random variable. Hence, the **generating function** of a Young diagram $\\lambda$ is defined by $$G_{\\lambda}(z)=\\frac{\\prod_{i=1}^{v-1}z-y_{i}}{\\prod_{i=1}^{v}z-x_{i}},$$ where $x_{1}<y_{1}<x_{2}<y_{2}<\\cdots<x_{v-1}<y_{v-1}<x_{v}$ are the **interlacing coordinates** of $\\lambda$, that is to say, the sequences of local minima and local maxima of the function $s\\m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p006-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p006-17",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-17.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p006-20",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-20.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p006-28",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-28.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p006-36",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-36.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p006-39",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-39.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p006-47",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-47.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p006-50",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-50.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p006-52",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-52.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p006-54",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-54.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p006-62",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-62.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p006-70",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-70.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p006-9",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-9.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p008-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p008-100",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-100.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p008-112",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-112.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p008-124",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-124.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p008-136",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-136.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p008-14",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-14.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p008-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p008-26",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-26.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p008-38",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-38.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p008-39",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-39.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p008-40",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-40.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p008-52",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-52.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p008-64",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-64.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p008-76",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-76.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/figure-img-p008-88",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-88.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some computations around the limit shapes c",
+      "pageStart": 8,
+      "pageEnd": 12,
+      "target": "../sections/sec-002-3-some-computations-around-the-limit-shapes-c.md",
+      "narrative": null,
+      "content": "[]{#limitshape label=\"limitshape\"} By using observables of diagrams, it is very easy to prove Theorem [\\[firstasymptotic\\]](#firstasymptotic){reference-type=\"ref\" reference=\"firstasymptotic\"}; let us recall briefly this proof. If $\\lambda$ is a partition of size $n$ picked randomly according to a Schur-Weyl measure, then any observable of diagram $f \\in \\obs$ yields a random variable $f(\\lambda)$. When $f=\\varSigma_{\\mu}$, the expectation of the random variable $\\varSigma_{\\mu}(\\lambda)$ is easy to compute: $$\\begin{aligned}\n\\SWa[\\varSigma_{\\mu}]&=\\begin{cases}n^{\\downarrow |\\mu|}\\,\\tr_{(\\C^{N",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gaussian concentration of measures on partitions",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-003-4-gaussian-concentration-of-measures-on-partitio.md",
+      "narrative": null,
+      "content": "[]{#sniady label=\"sniady\"} To establish the gaussian concentration of probability measures on partitions coming from reducible representations of symmetric groups, P. Śniady has developed in [@Sni06] a theory of cumulants of observables that works in a very general setting, and in particular for Schur-Weyl measures. If $X_{1},\\ldots,X_{r}$ are real or complex random variables, we recall that the **joint cumulant** of $X_{1},\\ldots,X_{r}$ is $$k(X_{1},\\ldots,X_{r})=\\left.\\frac{\\partial^{r}}{\\partial t_{1}\\cdots \\partial t_{r}}\\right|_{t_{1}=t_{2}=\\cdots=t_{r}=0}\\!\\!\\!\\log \\esper[\\exp(t_{1}X_{1}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Moments of the deviations and Chebyshev polynomials of the second kind",
+      "pageStart": 13,
+      "pageEnd": 21,
+      "target": "../sections/sec-004-5-moments-of-the-deviations-and-chebyshev-polyno.md",
+      "narrative": null,
+      "content": "[]{#core label=\"core\"} To make appear the Chebyshev polynomials of the second type, we start by computing the moments of the deviation $\\Delta_{\\lambda,c}$ of a rescaled Young diagram from its limit shape. If $\\lambda$ is a partition of size $n$, let us denote by $\\tilq_{k,c}(\\lambda)$ the following quantity: $$\\widetilde{q}_{k,c}(\\lambda)=\\frac{\\widetilde{p}_{k+1}(\\lambda)}{(k+1)\\,n^{k/2}}-\\sum_{l=1}^{\\lfloor\\frac{k+1}{2}\\rfloor} \\frac{k^{\\downarrow 2l-1}}{(k+1-l)\\,l!\\,l-1!}\\,c^{k+1-2l}\\,n^{1/2}$$ Because of the factors $n^{-k/2}$ and $n^{1/2}$, $\\widetilde{q}_{k,c}$ is not contained in $\\obs",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "An extension of Kerov's central limit theorem",
+      "pageStart": 21,
+      "pageEnd": 23,
+      "target": "../sections/sec-005-6-an-extension-of-kerovs-central-limit-theorem.md",
+      "narrative": null,
+      "content": "[]{#ksw label=\"ksw\"} Let us denote by $(X_{k,\\infty})_{k \\geq 2}$ the limit in law of the random process $(X_{k})_{k \\geq 2}$ under the Schur-Weyl measures $\\mathrm{SW}_{n,1/2,c}$; the covariance matrix of this centered gaussian process has been computed in §[\\[sniady\\]](#sniady){reference-type=\"ref\" reference=\"sniady\"}. One sees easily that in the gaussian space generated by the process $(X_{k,\\infty})_{k \\geq 2}$, the orthogonal basis deduced from $(X_{k,\\infty})_{k \\geq 2}$ by performing the Gram-Schmidt orthogonalisation procedure is: $$Y_{k,\\infty}=\\sum_{l=0}^{k-2} \\binom{k}{l}(-c)^{l}\\,X",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1009.4034v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 23,
+      "pageEnd": 23,
+      "target": "../sections/sec-006-references.md",
+      "narrative": null,
+      "content": "[Bia98]\nP. Biane. Representations of symmetric groups and free probability. Adv. Math., 138:126–181, 1998.\n[Bia01]\nP. Biane. Approximate factorization and concentration for characters of symmetric groups. Internat. Math. Res.\nNotices, 4:179–192, 2001.\n[BO00]\nA. Borodin and G. Olshanski. Distributions on partitions, point processes, and the hypergeometric kernel. Com-\nmun. Math. Phys., 211(2):335–358, 2000.\n[BO05]\nA. Borodin and G. Olshanski. Representation theory and random point processes. European Congress of Mathe-\nmatics, pages 73–94, 2005.\n[DFS08]\nM. Dołega, V. Féray, and P. Śniady. Expli",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

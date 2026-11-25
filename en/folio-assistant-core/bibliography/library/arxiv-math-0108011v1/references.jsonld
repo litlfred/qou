@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-math-0108011v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "The Homfly polynomial of the decorated Hopf link",
+      "dcterms:creator": [
+        "MORTON, HUGH R.",
+        "1, SASCHA G. LUKAC"
+      ],
+      "dcterms:issued": "D:20181030",
+      "dcterms:identifier": "https://arxiv.org/abs/math/0108011",
+      "dcterms:abstract": "The main goal is to ﬁnd the Homﬂy polynomial of a link formed by decorating each component of the Hopf link with the closure of a directly oriented tangle. Such decorations are spanned in the Hom- ﬂy skein of the annulus by elements Qλ, depending on partitions λ. We show how the 2-variable Homﬂy invariant ⟨λ, µ⟩of the Hopf link arising from decorations Qλ and Qµ can be found from the Schur symmetric function sµ of an explicit power series depending on λ. We show also that the quantum invariant of the Hopf link coloured by irreducible sl(N)q modules Vλ and Vµ, which is a 1-variable speciali- sation of ⟨λ, µ⟩, can be expressed in terms of an N × N minor of the Vandermonde matrix (qij).",
+      "dcterms:source": "library/arxiv-math-0108011v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-math-0108011v1"
+    }
+  ]
+}

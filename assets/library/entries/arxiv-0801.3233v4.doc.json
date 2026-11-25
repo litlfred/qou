@@ -1,0 +1,1019 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-0801.3233v4",
+  "title": "arxiv-0801.3233v4",
+  "variant": "pdf",
+  "pages": 19,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "0",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-0-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Some background on Deformation Quantization",
+      "number": "1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-1-some-background-on-deformation-quantization"
+    },
+    {
+      "level": 1,
+      "title": "Poisson Deformations of Algebraic Varieties",
+      "number": "2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-2-poisson-deformations-of-algebraic-varieties"
+    },
+    {
+      "level": 1,
+      "title": "Associative Deformations of Algebraic Varieties",
+      "number": "3",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-3-associative-deformations-of-algebraic-varietie"
+    },
+    {
+      "level": 1,
+      "title": "Deformation Quantization",
+      "number": "4",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-4-deformation-quantization"
+    },
+    {
+      "level": 1,
+      "title": "Twisted Deformations of Algebraic Varieties",
+      "number": "5",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-5-twisted-deformations-of-algebraic-varieties"
+    },
+    {
+      "level": 1,
+      "title": "Twisted Deformation Quantization",
+      "number": "6",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-6-twisted-deformation-quantization"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. DG Lie Algebras and Deformations",
+      "number": null,
+      "page": 9,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-appendix-a-dg-lie-algebras-and-deformations"
+    },
+    {
+      "level": 1,
+      "title": "Appendix B. The Universal Quantization Map",
+      "number": null,
+      "page": 12,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-appendix-b-the-universal-quantization-map"
+    },
+    {
+      "level": 1,
+      "title": "Appendix C. The L quasi-isomorphism of the Level of Sheaves",
+      "number": null,
+      "page": 13,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-appendix-c-the-l-quasi-isomorphism-of-the-level"
+    },
+    {
+      "level": 1,
+      "title": "Appendix D. Twisted Deformations and their Gauge Gerbes",
+      "number": null,
+      "page": 15,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-appendix-d-twisted-deformations-and-their-gauge"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 18,
+      "pageLabel": null,
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 73,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted associative",
+          "heading": false
+        },
+        {
+          "term": "stack-like",
+          "heading": false
+        },
+        {
+          "term": "defor",
+          "heading": false
+        }
+      ],
+      "extract": "Contemporary Mathematics Twisted Deformation Quantization of Algebraic Varieties (Survey) Amnon Yekutieli Abstract. Let X be a smooth algebraic variety over a ﬁeld of characteristic 0. We introduce the notion of twisted associative (resp. Poisson) deformation of the structure sheaf OX. These are stack-like versions of usual deformations. We prove that there is a twisted quantization map from twisted Poisson defor-",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-0801.3233v4/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-0-introduction",
+      "number": "0",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 457,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mcal tup",
+          "heading": false
+        },
+        {
+          "term": "sheaf mcal",
+          "heading": false
+        },
+        {
+          "term": "tup twisted",
+          "heading": false
+        },
+        {
+          "term": "deformation gerbe",
+          "heading": false
+        },
+        {
+          "term": "twisted associative",
+          "heading": false
+        },
+        {
+          "term": "twisted gauge",
+          "heading": false
+        },
+        {
+          "term": "frac tup",
+          "heading": false
+        },
+        {
+          "term": "poisson",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Int} Let $\\K$ be a field of characteristic $0$, and let $X$ be a smooth algebraic variety over $\\K$, with structure sheaf $\\mcal{O}_X$. An {\\em associative deformation of $\\mcal{O}_X$} is a sheaf $\\mcal{A}$ of flat complete associative $\\K[[\\hbar]]$-algebras on $X$, with an isomorphism $\\K \\otimes_{\\K[[\\hbar]]} \\mcal{A} \\cong \\mcal{O}_X$, called an augmentation. Similarly, a {\\em Poisson deformation of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-1-some-background-on-deformation-quantization",
+      "number": "1",
+      "title": "Some background on Deformation Quantization",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 503,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deformation quantization",
+          "heading": true
+        },
+        {
+          "term": "mod hbar",
+          "heading": false
+        },
+        {
+          "term": "star equiv",
+          "heading": false
+        },
+        {
+          "term": "product star",
+          "heading": false
+        },
+        {
+          "term": "poisson bracket",
+          "heading": false
+        },
+        {
+          "term": "equiv opn",
+          "heading": false
+        },
+        {
+          "term": "mrm infty",
+          "heading": false
+        },
+        {
+          "term": "order bracket",
+          "heading": false
+        }
+      ],
+      "extract": "Throughout $\\K$ is a field of characteristic $0$. Let $C$ be a commutative $\\K$-algebra. Recall that a {\\em Poisson bracket} on $C$ is a $\\K$-bilinear function \\[ \\{-,-\\} : C \\times C \\to C \\] which makes $C$ into a Lie algebra, and is a biderivation (i.e.\\ a derivation in each argument). The pair $\\bigl( C, \\{-,-\\} \\bigr)$ is called a Poisson algebra. Poisson algebras arise in several ways, e.g.\\ classical",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-2-poisson-deformations-of-algebraic-varieties",
+      "number": "2",
+      "title": "Poisson Deformations of Algebraic Varieties",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 305,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "poisson deformations",
+          "heading": true
+        },
+        {
+          "term": "sheaf mcal",
+          "heading": false
+        },
+        {
+          "term": "poisson bracket",
+          "heading": false
+        },
+        {
+          "term": "poisson algebras",
+          "heading": false
+        },
+        {
+          "term": "formal poisson",
+          "heading": false
+        },
+        {
+          "term": "hbar",
+          "heading": false
+        },
+        {
+          "term": "order bracket",
+          "heading": false
+        },
+        {
+          "term": "til",
+          "heading": false
+        }
+      ],
+      "extract": "In algebraic geometry we have to consider deformations as sheaves. Let $X$ be a smooth algebraic variety over $\\K$, with structure sheaf $\\mcal{O}_{X}$. We view $\\mcal{O}_{X}$ as a Poisson $\\K$-algebra with zero bracket. \\begin{dfn} A {\\em Poisson deformation} of $\\mcal{O}_X$ is a sheaf $\\mcal{A}$ of flat, $\\hbar$-adically complete, commutative Poisson $\\K[[\\hbar]]$-algebras on $X$, with an isomorphism of Poisson",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-3-associative-deformations-of-algebraic-varietie",
+      "number": "3",
+      "title": "Associative Deformations of Algebraic Varieties",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 244,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "associative deformations",
+          "heading": true
+        },
+        {
+          "term": "mcal",
+          "heading": false
+        },
+        {
+          "term": "star til",
+          "heading": false
+        },
+        {
+          "term": "hbar",
+          "heading": false
+        },
+        {
+          "term": "differential operators",
+          "heading": false
+        },
+        {
+          "term": "order bracket",
+          "heading": false
+        },
+        {
+          "term": "mrm",
+          "heading": false
+        },
+        {
+          "term": "dfn",
+          "heading": false
+        }
+      ],
+      "extract": "Let $X$ be a smooth algebraic variety over $\\K$ as before. \\begin{dfn} An {\\em associative deformation of $\\mcal{O}_X$} is a sheaf $\\mcal{A}$ of flat, $\\hbar$-adically complete, associative, unital $\\K[[\\hbar]]$-algebras on $X$, with an isomorphism of algebras \\[ \\psi : \\mcal{A} / (\\hbar) \\iso \\mcal{O}_X , \\] called an augmentation. A {\\em gauge equivalence} $\\mcal{A} \\to \\mcal{A}'$ between associative deformations",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-4-deformation-quantization",
+      "number": "4",
+      "title": "Deformation Quantization",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 517,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mcal mrm",
+          "heading": false
+        },
+        {
+          "term": "mix bsym",
+          "heading": false
+        },
+        {
+          "term": "opn mix",
+          "heading": false
+        },
+        {
+          "term": "mrm infty",
+          "heading": false
+        },
+        {
+          "term": "psi bsym",
+          "heading": false
+        },
+        {
+          "term": "covering bsym",
+          "heading": false
+        },
+        {
+          "term": "bsym sigma",
+          "heading": false
+        },
+        {
+          "term": "tup gauge",
+          "heading": false
+        }
+      ],
+      "extract": "Kontsevich \\cite{Ko1} proved that any Poisson deformation of a real $\\mrm{C}^{\\infty}$ manifold $X$ can be canonically quantized. In this section we present an algebraic version of this result. But first a definition. \\begin{dfn} Let $\\mcal{A}$ be a Poisson deformation of $\\mcal{O}_X$. A {\\em quantization} of $\\mcal{A}$ is an associative deformation $\\mcal{B}$, such that the first order brackets satisfy \\[ \\{ -,-",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-5-twisted-deformations-of-algebraic-varieties",
+      "number": "5",
+      "title": "Twisted Deformations of Algebraic Varieties",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 853,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted deformations",
+          "heading": true
+        },
+        {
+          "term": "bsym mcal",
+          "heading": false
+        },
+        {
+          "term": "coh mcal",
+          "heading": false
+        },
+        {
+          "term": "twisted associative",
+          "heading": false
+        },
+        {
+          "term": "let bsym",
+          "heading": false
+        },
+        {
+          "term": "opn exp",
+          "heading": false
+        },
+        {
+          "term": "group opn",
+          "heading": false
+        },
+        {
+          "term": "poisson bracket",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:twdefs} What can be done in general, when the variety $X$ is not affine? Can we still make use of Theorem \\ref{thm2}? In the paper \\cite{Ko3} Kontsevich suggests that in general the deformation quantization of a Poisson bracket might have to be a {\\em stack of algebroids}. This is a generalization of the notion of sheaf of algebras. Actually stacks of algebroids appeared earlier, under the name {\\em",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-6-twisted-deformation-quantization",
+      "number": "6",
+      "title": "Twisted Deformation Quantization",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 501,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "bsym mcal",
+          "heading": false
+        },
+        {
+          "term": "twisted quantization",
+          "heading": true
+        },
+        {
+          "term": "mcal tup",
+          "heading": false
+        },
+        {
+          "term": "opn quant",
+          "heading": false
+        },
+        {
+          "term": "twisted poisson",
+          "heading": false
+        },
+        {
+          "term": "deformation bsym",
+          "heading": false
+        },
+        {
+          "term": "tup gauge",
+          "heading": false
+        },
+        {
+          "term": "twisted associative",
+          "heading": false
+        }
+      ],
+      "extract": "Just as in the case of usual deformations, given a twisted (associative or Poisson) deformation $\\bsym{\\mcal{A}}$ of $\\mcal{O}_X$, we can define the first order bracket $\\{ -,- \\}_{\\bsym{\\mcal{A}}}$ on $\\mcal{O}_X$. The first order bracket is invariant under twisted gauge equivalence. Let $\\bsym{\\mcal{A}}$ be a twisted Poisson deformation, and let $\\bsym{\\mcal{B}}$ be a twisted associative deformation. We say that",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-appendix-a-dg-lie-algebras-and-deformations",
+      "number": null,
+      "title": "Appendix A. DG Lie Algebras and Deformations",
+      "level": 1,
+      "pageStart": 9,
+      "pageEnd": 12,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1025,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lie algebras",
+          "heading": true
+        },
+        {
+          "term": "diﬀerential star",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential graded",
+          "heading": false
+        },
+        {
+          "term": "star products",
+          "heading": false
+        },
+        {
+          "term": "hochschild cochain",
+          "heading": false
+        },
+        {
+          "term": "lie bracket",
+          "heading": false
+        },
+        {
+          "term": "diﬀerential gauge",
+          "heading": false
+        },
+        {
+          "term": "poisson deformations",
+          "heading": false
+        }
+      ],
+      "extract": "The ﬁrst time DG (diﬀerential graded) Lie algebras were used to study problems in deformation theory was in the paper [SS] of Schlessinger and Stasheﬀ(1977). In 1986 Deligne (in a letter to Millson, see [GM]) formulated the idea that “in characteristic zero, a deformation problem is controlled by a diﬀerential graded Lie algebra, with quasi-isomorphic diﬀerential graded Lie algebras giving the same deformation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-appendix-b-the-universal-quantization-map",
+      "number": null,
+      "title": "Appendix B. The Universal Quantization Map",
+      "level": 1,
+      "pageStart": 12,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 401,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "higher homotopies",
+          "heading": false
+        },
+        {
+          "term": "quasi-isomorphism",
+          "heading": false
+        },
+        {
+          "term": "canonical bijection",
+          "heading": false
+        },
+        {
+          "term": "quantization",
+          "heading": true
+        },
+        {
+          "term": "deformation quantization",
+          "heading": false
+        },
+        {
+          "term": "lie algebras",
+          "heading": false
+        },
+        {
+          "term": "gauge equivalence",
+          "heading": false
+        },
+        {
+          "term": "brackets",
+          "heading": false
+        }
+      ],
+      "extract": "Let C be a smooth K-algebra. There is a canonical homomorphism of complexes of K-modules Υ1 : Tpoly(C) →Dpoly(C) given by Υ1(∂1 ∧· · · ∧∂k)(f1, . . . , fk) := 1 k! P σ∈Sk sgn(σ)∂σ(1)(f1) · · · ∂σ(k)(fk) for fi ∈C and ∂i ∈TC. Here Sk is the group of permutations. The homomorphism Υ1 is called the antisymmetrization map or the HKR map, the latter because of its similarity to the famous Hochschild-Kostant-Rosenberg",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-appendix-c-the-l-quasi-isomorphism-of-the-level",
+      "number": null,
+      "title": "Appendix C. The L quasi-isomorphism of the Level of Sheaves",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1038,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "projection lcc",
+          "heading": false
+        },
+        {
+          "term": "scheme coor",
+          "heading": false
+        },
+        {
+          "term": "quasi-isomorphism",
+          "heading": true
+        },
+        {
+          "term": "mixu",
+          "heading": false
+        },
+        {
+          "term": "left ox-module",
+          "heading": false
+        },
+        {
+          "term": "formal coordinate",
+          "heading": false
+        },
+        {
+          "term": "sheaves",
+          "heading": true
+        },
+        {
+          "term": "coordinate systems",
+          "heading": false
+        }
+      ],
+      "extract": "Here is an outline of the proof of Theorem 4.3. Details can be found in the Erratum to [Ye1]. We assume R ⊂K, and X is a smooth n-dimensional algebraic variety over K. A formal coordinate system at a closed point x ∈X is an isomorphism of K-algebras k(x)[[t]] = k(x)[[t1, . . . , tn]] ≃ −→b OX,x, where k(x) is the residue ﬁeld, and b OX,x is the complete local ring. There is an inﬁnite dimensional scheme Coor X,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-appendix-d-twisted-deformations-and-their-gauge",
+      "number": null,
+      "title": "Appendix D. Twisted Deformations and their Gauge Gerbes",
+      "level": 1,
+      "pageStart": 15,
+      "pageEnd": 18,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 864,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "twisted gauge",
+          "heading": true
+        },
+        {
+          "term": "cosimplicial groupoid",
+          "heading": false
+        },
+        {
+          "term": "cosimplicial quantum",
+          "heading": false
+        },
+        {
+          "term": "gauge gerbe",
+          "heading": false
+        },
+        {
+          "term": "mixu",
+          "heading": false
+        },
+        {
+          "term": "twisted poisson",
+          "heading": false
+        },
+        {
+          "term": "twisted associative",
+          "heading": false
+        },
+        {
+          "term": "poisson deformations",
+          "heading": false
+        }
+      ],
+      "extract": "This section summarizes the main concepts of the paper [Ye5]. Recall that a groupoid G is a category in which all morphisms are invertible. We denote by G(i, j) the set of arrows from the object i to the object j. Note that G(i, i) is a group. Any element g ∈G(i, j) deﬁnes a group isomorphism Ad(g) : G(i, i) ≃ −→G(j, j), namely Ad(g)(h) := g ◦h ◦g−1. A stack of groupoids G on X is the geometrization of the notion of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 750,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "deformation quantization",
+          "heading": false
+        },
+        {
+          "term": "den bergh",
+          "heading": false
+        },
+        {
+          "term": "van den",
+          "heading": false
+        },
+        {
+          "term": "global deformation",
+          "heading": false
+        },
+        {
+          "term": "deformation theory",
+          "heading": false
+        },
+        {
+          "term": "symplectic manifolds",
+          "heading": false
+        },
+        {
+          "term": "poisson manifolds",
+          "heading": false
+        },
+        {
+          "term": "yekutieli",
+          "heading": false
+        }
+      ],
+      "extract": "BFFLS. F. Bayen, M. Flato, C. Fronsdal, A. Lichnerowicz and D. Sternheimer, Deformation theory and quantization I, II, Ann. Physics 111 (1978), 61-110, 111-151. BGNT. P. Bressler, A. Gorokhovsky, R. Nest and B. Tsygan, Deformation quantization of gerbes, Adv. Math. 214, Issue 1 (2007), 230-266. BK. R. Bezrukavnikov and D. Kaledin, Fedosov quantization in algebraic context, Moscow Math. J. 4, no. 3 (2004), 559592.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "deformation mcal",
+      "heading": false
+    },
+    {
+      "term": "mcal mrm",
+      "heading": false
+    },
+    {
+      "term": "sheaf mcal",
+      "heading": false
+    },
+    {
+      "term": "poisson deformation",
+      "heading": false
+    },
+    {
+      "term": "bsym mcal",
+      "heading": false
+    },
+    {
+      "term": "algebras mcal",
+      "heading": false
+    },
+    {
+      "term": "mcal tup",
+      "heading": false
+    },
+    {
+      "term": "equivalence mcal",
+      "heading": false
+    },
+    {
+      "term": "twisted poisson",
+      "heading": false
+    },
+    {
+      "term": "iso mcal",
+      "heading": false
+    },
+    {
+      "term": "poisson bracket",
+      "heading": false
+    },
+    {
+      "term": "associative deformation",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 17,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 18,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 19,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Simplicial sections, q = 1. We start with sections over two open sets U0 and U1 in the left diagram; and we pass to a simplicial section σ on the right",
+      "page": 15,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p008-1",
+      "file": "images/img-p008-1.png",
+      "page": 8,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-1",
+      "file": "images/img-p015-1.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 12,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 13,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p18); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 13 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-0801.3233v4"
+  }
+}

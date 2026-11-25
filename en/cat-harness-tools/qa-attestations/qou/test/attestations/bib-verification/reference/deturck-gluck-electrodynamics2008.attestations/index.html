@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/bib-verification/reference/deturck-gluck-electrodynamics2008.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../assets/navbar/rail-v44mrwli3o.js" defer></script><script src="../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../.." data-fa-to-root="../../../../../../../../..">{"data":"rail-v44mrwli3o","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/bib-verification/reference/deturck-gluck-electrodynamics2008.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/bib-verification/reference/deturck-gluck-electrodynamics2008.attestations</h1>
+<p class="m">A <a href="../../../../../../">qa-attestations</a> node held by <a href="../../../../../">qou</a>, at <code>test/attestations/bib-verification/reference/deturck-gluck-electrodynamics2008.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>bib-verification</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;reference&quot;,
+  &quot;id&quot;: &quot;deturck-gluck-electrodynamics2008&quot;,
+  &quot;path&quot;: null
+}</pre></dd>
+<dt>verifications</dt><dd><pre>[
+  {
+    &quot;position&quot;: 175,
+    &quot;verifier&quot;: &quot;unknown&quot;,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/0510388v1/0510388v1.pdf&quot;
+      },
+      &quot;id&quot;: &quot;deturck-gluck-electrodynamics2008&quot;,
+      &quot;status&quot;: &quot;unreviewed&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;supporting&quot;,
+        &quot;rationale&quot;: &quot;JOIN CORRECT — and it is the better of two candidates. This file is the FULL paper whose title the registered entry&#39;s title field names; the other file in uploads/ under the arXiv id the entry&#39;s URL points at is the SHORT ANNOUNCEMENT, as this document itself says on p. 1. The theorems the registry note cites live here, not there. THREE FINDINGS. (1) THE &#39;CORRUPTED PDF&#39; CLAIM IS WRONG. `docs/audits/2026-08-01-em-linking-reads-round1.md:53` records this file as &#39;mixed/corrupted; only tail pages recovered&#39; and line 55 puts the source on a re-upload list. It is NOT corrupted: pdftotext (poppler 24.02.0) extracts 115 kB of clean text end-to-end — p. 3 statements of results, p. 8 Thm 1(3), p. 11 Thm 2(3), p. 14–15 §5. The earlier finding was a tooling artifact and the re-upload is unnecessary. (2) THE REGISTRY MISSTATES THE SOURCE&#39;S OWN FORMULA. The note says the source supplies the H³ Laplacian Green&#39;s function φ₀(α) = −coth(α)/4π. The source (§5, p. 15) gives φ₀(α) = (−1/4π)(coth α − 1). The −1 is load-bearing, not cosmetic: it is exactly what makes the property stated on the next line, &#39;Gr(f)(y) → 0 as y → ∞&#39;, hold in H³; dropping it leaves a nonzero constant at infinity. Anyone building the EM-linking pair energy from the note rather than the source inherits a wrong kernel. (3) BIB ORPHAN. `rg` over content/, computations/ and docs/ finds exactly one hit — the `ref()` entry at references.ts:8051. The audit doc names the authors in prose but never writes the refid.&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;Thm 1(3), p. 8 (statements at p. 3)&quot;,
+            &quot;statement&quot;: &quot;The H³ Gauss linking integral in parallel-transport format, with kernel φ(α) = (−1/4π) csch α — stated on the same page to be the fundamental solution of a SHIFTED Laplacian on H³, not of the plain Laplacian.&quot;,
+            &quot;useForFolio&quot;: &quot;The H³ analogue of the Euclidean 1/r linking kernel for the EM-linking attack; the &#39;shifted&#39; qualifier matters.&quot;,
+            &quot;targets&quot;: [
+              &quot;docs/audits/2026-08-01-em-linking-reads-round1.md&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;§5, p. 14–15&quot;,
+            &quot;statement&quot;: &quot;The scalar Green&#39;s operator on H³ is convolution with φ₀(α) = (−1/4π)(coth α − 1), satisfying Δ Gr(f) = f and Gr(f)(y) → 0 at infinity.&quot;,
+            &quot;useForFolio&quot;: &quot;Corrects the registry note&#39;s φ₀ = −coth(α)/4π; the −1 is what enforces decay at infinity.&quot;,
+            &quot;targets&quot;: [
+              &quot;docs/audits/2026-08-01-em-linking-reads-round1.md&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Thm 2(3), p. 11&quot;,
+            &quot;statement&quot;: &quot;The H³ Biot–Savart operator BS(V)(y) = ∫_{H³} P_yx V(x) × ∇_y φ(x,y) dx with the same csch kernel; the authors state they do not yet know how to characterise BS in H³.&quot;,
+            &quot;useForFolio&quot;: &quot;The magnetic-field half of the pair-energy construction, with its stated limitation.&quot;,
+            &quot;targets&quot;: [
+              &quot;docs/audits/2026-08-01-em-linking-reads-round1.md&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;new-remark&quot;,
+            &quot;rationale&quot;: &quot;Correct the audit doc&#39;s &#39;mixed/corrupted; only tail pages recovered&#39; verdict for this file and remove the source from the re-upload list — the PDF reads cleanly and all three cited theorems are verifiable in-repo.&quot;,
+            &quot;target&quot;: &quot;docs/audits/2026-08-01-em-linking-reads-round1.md&quot;,
+            &quot;bean&quot;: &quot;qou-ut4e&quot;
+          },
+          {
+            &quot;action&quot;: &quot;cite-in-block&quot;,
+            &quot;rationale&quot;: &quot;Fix the φ₀ formula in the references.ts note (restore the −1) and give the reference a refid-keyed citation site so the H³ kernels are reachable from the dependency graph rather than only from bibliography metadata.&quot;,
+            &quot;target&quot;: &quot;folio/schema/references.ts&quot;,
+            &quot;bean&quot;: &quot;qou-tk1r&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-08T23:34:05.459Z&quot;,
+        &quot;source_sha&quot;: &quot;c83c0f6a2eaa&quot;
+      },
+      &quot;notes&quot;: &quot;Re-keyed 2026-08-16: two rows claimed [deturck-gluck2008]. This file is the 108pp &#39;Electrodynamics and the Gauss linking integral&#39;, a different paper from the 40pp &#39;The Gauss linking integral&#39;, and now has its own entry.&quot;
+    }
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/unital-groebner-bases/blocks/thm-ugb-main",
+  "@type": [
+    "folio-assistant-sci:Theorem",
+    "doco:Section"
+  ],
+  "label": "thm:ugb-main",
+  "kind": "theorem",
+  "title": "Freeness of quotient by unital Gröbner--Shirshov basis",
+  "uses": [
+    "papers/unital-groebner-bases/blocks/def-admissible-system",
+    "papers/unital-groebner-bases/blocks/def-unital-groebner-basis"
+  ],
+  "tags": [
+    "groebner-basis",
+    "freeness",
+    "main-result"
+  ],
+  "leanRef": "ugb:UGB.Introduction.main_theorem_statement",
+  "text": "ugb-main-theorem-statement.md",
+  "leanSource": "ugb-main-theorem-statement.lean",
+  "provenance": "authored"
+}

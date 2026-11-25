@@ -1,0 +1,30 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/9-81",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "Singular Euclidean Structures on a Simplicial Complex with Weighted Edges",
+      "dcterms:creator": [
+        "Satoshi, KAMEI"
+      ],
+      "dcterms:issued": "D:20030409",
+      "dcterms:source": "library/9-81/manifest.jsonld",
+      "dcterms:hasVersion": "library/9-81"
+    }
+  ]
+}

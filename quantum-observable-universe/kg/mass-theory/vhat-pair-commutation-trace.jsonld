@@ -1,0 +1,33 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-sci": "https://litlfred.github.io/folio-assistant-sci/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/lem-vhat-pair-commutation-trace",
+  "@type": [
+    "folio-assistant-sci:Lemma",
+    "doco:Section"
+  ],
+  "label": "lem:vhat-pair-commutation-trace",
+  "kind": "lemma",
+  "title": "Pair commutation at the traced-volume level: $\\hat V_i \\hat V_j = \\hat V_j \\hat V_i$ in $\\mathbb{Z}[q^{\\pm 1/2}, z]$",
+  "cites": [
+    "references/kassel1995",
+    "references/geckpfeiffer2000"
+  ],
+  "tags": [
+    "v-hat",
+    "pentagon",
+    "commutation",
+    "markov-trace",
+    "jet-tower",
+    "narrative-replacement"
+  ],
+  "leanRef": "qou:QOU.BraidsAndKnots.BraidKnot.VhatPairCommutationTrace",
+  "text": "vhat-pair-commutation-trace.md",
+  "leanSource": "vhat-pair-commutation-trace.lean",
+  "provenance": "authored"
+}

@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2410.20973v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "SUMMABILITY FOR STATE INTEGRALS OF HYPERBOLIC KNOTS",
+      "dcterms:creator": [
+        "FANTINI, VERONICA",
+        "WHEELER, CAMPBELL"
+      ],
+      "dcterms:issued": "D:20241028",
+      "dcterms:identifier": "https://arxiv.org/abs/2410.20973",
+      "dcterms:abstract": "We prove conjectures of Garoufalidis-Gu-Mari˜no [9] that perturbative series associated with the hyperbolic knots 41 and 52 are resurgent and Borel summable. In the process, we give an algorithm that can be used to explicitly compute the Borel–Laplace resummation as a combination of state integrals of Andersen–Kashaev [1]. This gives a complete description of the resurgent structure in these examples and allows for explicit computations of Stokes constants.",
+      "dcterms:source": "library/arxiv-2410.20973v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2410.20973v1"
+    }
+  ]
+}

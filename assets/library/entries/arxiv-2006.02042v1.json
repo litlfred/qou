@@ -1,0 +1,325 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2006.02042v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2006.02042v1/blocks/conj-sec-002-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "conj-sec-002-01.md",
+      "narrative": null,
+      "content": "(AJ conjecture) For every knot K in S3, ε(αK) is equal to the A- polynomial AK(M, L), up to multiplication by a polynomial depending on M only. The A-polynomial of a knot was introduced by Cooper et al. [CCGLS]; it describes the SL2(C)-character variety of the knot complement as viewed from the boundary torus. The A-polynomial always contains the factor L −1 coming from the abelian component of the character variety, so we can write AK = (L −1)A′ K where A′ K ∈Z[M, L]. The AJ conjecture has been conﬁrmed for the trefoil knot and ﬁgure eight knot [Ga], all torus knots [Hi, Tr1], some classes of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2006.02042v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The AJ conjecture",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-12-the-aj-conjecture.md",
+      "narrative": null,
+      "content": "of Garoufalidis, Sikora formulated the strong AJ conjecture which relates the A-ideal\nand recurrence ideal of a knot in the 3-sphere. This conjecture has been veriﬁed for all\ntorus knots and most of their cables. In this paper, we verify the strong AJ conjecture\nfor the ﬁgure eight knot.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2006.02042v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-001-1-introduction.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-2006.02042v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The colored Jones polynomial and recurrence ideal",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-002-11-the-colored-jones-polynomial-and-recurrence-i.md",
+      "narrative": null,
+      "content": "and a positive integer n, let JK(n) ∈Z[t±1] denote the n-colored Jones polynomial of\nK with zero-framing. The polynomial JK(n) is the quantum link invariant, as deﬁned\nby Reshetikhin and Turaev [RT], associated to the Lie algebra sl2(C), with the color n\nstanding for the irreducible sl2(C)-module Vn of dimension n. Here we use the functorial\nnormalization, i.e. the one for which Junknot(n) = [n] := (t2n −t−2n)(t2 −t−2). It is known\nthat JK(1) = 1 and JK(2) is the ordinary Jones polynomial [Jo]. The color n can take\nnon-positive integer values by setting JK(−n) = −JK(n) and JK(0) = 0.\nConsider",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2006.02042v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:2006.02042v1  [math.GT]  3 Jun 2020\nTHE STRONG AJ CONJECTURE FOR THE FIGURE EIGHT KNOT\nHOANG-AN NGUYEN AND ANH T. TRAN\nAbstract. Motivated by the theory of quantum A-ideals of Frohman-Gelca-LoFaro, the",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2006.02042v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Main result",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-003-13-main-result.md",
+      "narrative": null,
+      "content": "For a finitely generated group $G$, let $\\chi(G)$ denote the $SL_2(\\BC)$-character variety of $G$, see \\cite{CS}. Suppose  $G=\\BZ^2$.\nEvery pair of generators $\\mu, \\lambda$ defines an isomorphism\nbetween $\\chi(G)$ and $(\\BC^*)^2/\\tau$, where $(\\BC^*)^2$ is the\nset of non-zero complex pairs $(M,L)$ and $\\tau$ is the involution\n$\\tau(M,L):=(M^{-1},L^{-1})$. For an algebraic set $V$ (over $\\BC$), let $\\BC[V]$ denote the ring\nof regular functions on $V$.  For example, $\\BC[(\\BC^*)^2/\\tau]=\n\\ft^\\sigma$, the $\\sigma$-invariant subspace of  $\\ft:=\\BC[M^{\\pm\n1},L^{\\pm 1}]$, where $\\sigma(M^kL^l):= M^",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2006.02042v1/blocks/lem-sec-004-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "lem-sec-004-01.md",
+      "narrative": null,
+      "content": "Suppose there exists P ∈R[M±1, L±1] such that PJK ∈R[M±1], σ(P) = P and ε(P) = MkLl(A′ K)2m for some integers k, l, m. Then pK ⊂ p ε(Aσ K).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2006.02042v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proof of Theorem ??",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-2-proof-of-theorem.md",
+      "narrative": null,
+      "content": "For the ﬁgure eight knot E, it is known that the AJ conjecture holds true [Ga] and the\nA-polynomial A′\nE = L + L−1 −M4 −M−4 + M2 + M−2 + 2 does not have any nontrivial\nnontrivial factors depending on M only. Hence, by [Tr4, Lemma 3.1],\np\nε(Aσ\nE) ⊂pE.\nFor the converse\np\nε(Aσ\nE) ⊂pE we will apply the following.\nLemma 2.1. Suppose there exists P ∈R[M±1, L±1] such that PJK ∈R[M±1], σ(P) = P\nand ε(P) = MkLl(A′\nK)2m for some integers k, l, m. Then pK ⊂\np\nε(Aσ\nK).\nProof. Since PJK ∈R[M±1], by [Tr4, Lemma 3.3] there exists R ∈R[L±1] such that\nσ(R) = R, ε(R) = (L + L−1 −2)r and RPJK = 0 for some intege",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2006.02042v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Step 1: Applying symmetric conditions",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-005-21-step-1-applying-symmetric-conditions.md",
+      "narrative": null,
+      "content": "We first choose the leading coefficients $p_2$ and $p_{-2}$ to be the same as those of the A-polynomial squared. Namely we let\n$$p_2(t,M)= \\tilde{a}_2(M)=1 \\hspace{4mm}\\text{and}\\hspace{4mm} p_{-2}(t,M)=\\tilde{a}_{-2}(M)=1.$$\nWe see that this takes care of equation \\eqref{eq: e2}. Then\n$$\nb_1(t,M) = \\frac{1}{a_1(t,t^2 M)}  \\hspace{4mm}\\text{and}\\hspace{4mm}\nb_{-1}(t,M) = \\frac{1}{a_{-1}(t,t^{-2} M)}. \n$$\nThis implies that \n\\begin{eqnarray}\np_1(t,M) &=& a_1(t, M) b_0(t, M) + \\frac{a_0(t, t^2 M)}{a_1(t, t^2 M)},  \\label{eq:q1}\\\\\np_{-1}(t,M) &=&  a_{-1}(t, M) b_0(t, M) +  \\frac{a_0(t, t^{-2} M) }",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2006.02042v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Step 2: Applying polynomial conditions",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-006-22-step-2-applying-polynomial-conditions.md",
+      "narrative": null,
+      "content": "We now use the fact that $p_i$'s must be Laurent polynomials. This imposes additional conditions on $b_0$, but it is hard to work with rational equations in terms of $b_0$. So  we will work with equations in terms of $p_i$'s directly. To do this, we first express $b_0$ in terms of $p_i$'s.\n\nBy solving for $b_0$ from equation \\eqref{eq:q1} we have\n$$b_0(t,M)=-\\frac{a_0(t,t^2 M)-a_1(t,t^2 M) p_1(t,M)}{a_1(t,M)a_1(t,t^2 M)}.$$\n\nSubstituting this into equation \\eqref{eq:q0}, we obtain the following Diophantine equation in a polynomial ring\n\\begin{equation}\n\\label{eq:Dio1}\nA_1(t,M)p_0(t,M)+B_1(t,M)",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2006.02042v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Step 4: Finding solutions of equation (??)",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-007-24-step-4-finding-solutions-of-equation.md",
+      "narrative": null,
+      "content": "We see that  equation \\eqref{eq:Dio1} \nis reminiscent of a Diophantine equation.\nRecall for $a,b,c,x,y\\in \\BZ$, the equation\n$$ax+by=c$$\nhas the following solutions\n$$\nx = x_0 + \\frac{b}{\\gcd(a,b)}k, \\qquad\ny=y_0 - \\frac{a}{\\gcd(a,b)}k,\n$$\nwhere $(x_0,y_0)$ is a particular solution of the equation, $k\\in \\BZ$, and $\\gcd(a,b)$ is the greatest common divisor of $a,b$.\n\nWe will apply the same idea to our problem, except that our ring is a polynomial ring. Given a particular solution $(\\tilde p_0, \\tilde p_1)$ of equation \\eqref{eq:Dio1}, a family of solutions is given by\n\\begin{eqnarray*}\np_0(t,M",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2006.02042v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Step 5: Imposing condition (??) on solutions",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-008-25-step-5-imposing-condition-on-solutions.md",
+      "narrative": null,
+      "content": "We now implement the condition $b_0(t,M^{-1})=-b_0(t,M)$. Since $$b_0(t,M)=-\\frac{a_0(t,t^2 M)-a_1(t,t^2 M) p_1(t,M)}{a_1(t,M)a_1(t,t^2 M)},$$ we see that $b_0(t,M^{-1})=-b_0(t,M)$ is equivalent to\n\\begin{eqnarray*}\n&& (M^8 t^{14} - M^4 t^{10}) p_1(t, M) - (M^8 t^{10} - M^4 t^{14}) p_1(t, M^{-1}) \\\\\n&=&\n  1 + M^{12} - M^2 t^4 - M^4 t^4 - M^8 t^4 - M^{10} t^4 - M^4 t^8 - \n   M^8 t^8 + M^4 t^{16} \\\\\n   && + \\,  M^8 t^{16} + M^2 t^{20} + M^4 t^{20} + M^8 t^{20} + \n   M^{10} t^{20} - t^{24} - M^{12} t^{24}.\n\\end{eqnarray*}\n\nBy replacing $p_1(t,M)=\\tilde p_1(t,M)+\\frac{f(t,M)A_2(t,M)}{\\gcd(A_2, B_2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2006.02042v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Step 6: Applying initial conditions",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-009-26-step-6-applying-initial-conditions.md",
+      "narrative": null,
+      "content": "Now we take into account the initial conditions \\eqref{eq: 2}--\\eqref{eq}. Firstly, we note that equations \\eqref{eq: 2} and \\eqref{eq: -2} hold true since we chose $p_2(t,M)=  p_{-2}(t,M)=1.$ Secondly, by taking $t=1$ in $p_1(t,M) = p_{-1}(t,M^{-1})$ we have $p_1(1,M) = p_{-1}(1,M^{-1})$. This implies that $p_1(1,M) = \\tilde{a}_{1}(M)$ if and only if $p_{-1}(1,M)= \\tilde{a}_{-1}(M)$. Meaning equations  \\eqref{eq: 1} and \\eqref{eq: -1} are equivalent. \n\nThirdly,  by taking $t=1$ in equation \\eqref{eq:Dio1} we have \n$$A_1(1,M)p_0(1,M)+B_1(1,M)p_1(1,M)=C_1(1,M).$$\nBy a direct calculation we can",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2006.02042v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Step 7: Explicit solution",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-010-27-step-7-explicit-solution.md",
+      "narrative": null,
+      "content": "The polynomial we are constructing is\n$$P(t, M, L)=L^2+L^{-2}+p_1(t,M)L+p_{-1}(t,M)L^{-1}+p_{0}(t,M)$$\nwhere\n\\begin{eqnarray*}\np_1(t,M) &=& a_1(t, M) b_0(t, M) + \\frac{a_0(t, t^2 M)}{a_1(t, t^2 M)},  \\\\\np_{-1}(t,M) &=&  a_{-1}(t, M) b_0(t, M) +  \\frac{a_0(t, t^{-2} M) }{a_{-1}(t,t^{-2} M)}, \\\\\np_0(t,M) &=& a_0(t, M) b_0(t, M)  + \\frac{a_1(t, t^{-2} M) }{a_{-1}(t,t^{-2} M)} +  \\frac{a_{-1}(t, t^2 M)}{a_1(t,t^2 M)}.\n\\end{eqnarray*}\nHaving now an explicit expression for $b_0$, we obtain \n\\begin{eqnarray*}\np_1(t,M)&=&\\frac{-1 - t^{16} + M^4 t^8 (1 + t^4)^2 + M^2 (t^4 + t^{12}) + \n M^6 (t^{8} + t^{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2006.02042v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Double-checking the recurrence relation",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-011-28-double-checking-the-recurrence-relation.md",
+      "narrative": null,
+      "content": "Following \\cite{CM}, for $Q\\in \\BC[t,M,x]$ we define $\\left\\langle  Q\\right\\rangle: \\BZ \\rightarrow \\mathcal{R}=\\BC[t^{\\pm 1}]$ by\n$$\\left\\langle Q \\right\\rangle(n):= [n]\\sum^{n-1}_{k=0}P(t,t^{2n},t^{4k})\\prod^{k}_{l=1}(t^{4n}+t^{-4n}-t^{4l}-t^{-4l})$$\nfor $n\\geq 1$, and $\\left\\langle Q \\right\\rangle(-n)=-\\left\\langle Q \\right\\rangle(n)$ for $n\\leq 0$.\nIt is known that the colored Jones polynomial of the figure eight knot is $J_E = \\la 1 \\ra$. \n\nFor $Q, R\\in \\BC[t,M,x]$, we write $Q\\equiv R$ if $Q-R\\in \\BC[t,M]$. Then we have the following.\n\\begin{lemma}\\label{ALemma}\n\\begin{eqnarray*}\nL\\left\\",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2006.02042v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-012-acknowledgements.md",
+      "narrative": null,
+      "content": "The second author has been supported by a grant from the Simons Foundation (\\#354595).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2006.02042v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-013-references.md",
+      "narrative": null,
+      "content": "[CCGLS] D. Cooper, M. Culler, H. Gillet, D. Long and P. Shalen, Plane curves associated to character\nvarieties of 3-manifolds, Invent. Math. 118 (1994), pp. 47–84.\n[CM]\nL. Charles and J. Marche, Knot state asymptotics I: AJ conjecture and Abelian representations,\nPubl. Math. Inst. Hautes Etudes Sci. 121 (2015), 279–322.\n[CS]\nM. Culler and P. Shalen, Varieties of group representations and splittings of 3-manifolds, Ann.\nof Math. (2) 117 (1983), no. 1, 109–146.\n[FGL]\nC. Frohman, R. Gelca, and W. Lofaro, The A-polynomial from the noncommutative viewpoint,\nTrans. Amer. Math. Soc. 354 (2002), no. 2",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

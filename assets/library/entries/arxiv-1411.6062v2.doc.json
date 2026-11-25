@@ -1,0 +1,932 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1411.6062v2",
+  "title": "arxiv-1411.6062v2",
+  "variant": "pdf",
+  "pages": 18,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "State-integrals and their q-series",
+      "number": "1.1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-11-state-integrals-and-their-q-series"
+    },
+    {
+      "level": 2,
+      "title": "The Rogers and the cyclic dilogarithms",
+      "number": "1.2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-12-the-rogers-and-the-cyclic-dilogarithms"
+    },
+    {
+      "level": 2,
+      "title": "Evaluation of state-integrals",
+      "number": "1.3",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-13-evaluation-of-state-integrals"
+    },
+    {
+      "level": 2,
+      "title": "The quantum dilogarithm at roots of unity",
+      "number": "1.4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-14-the-quantum-dilogarithm-at-roots-of-unity"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgments",
+      "number": null,
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-acknowledgments"
+    },
+    {
+      "level": 1,
+      "title": "Integrals of quasi-periodic functions",
+      "number": "2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-2-integrals-of-quasi-periodic-functions"
+    },
+    {
+      "level": 2,
+      "title": "Some lemmas from complex analysis",
+      "number": "2.1",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-21-some-lemmas-from-complex-analysis"
+    },
+    {
+      "level": 2,
+      "title": "Applications to 1-dimensional state-integrals: proof of Theorem 1.1",
+      "number": "2.2",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-22-applications-to-1-dimensional-state-integrals"
+    },
+    {
+      "level": 2,
+      "title": "The case of the (-2,3,7) pretzel knot",
+      "number": "2.3",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-23-the-case-of-the--237-pretzel-knot"
+    },
+    {
+      "level": 1,
+      "title": "Proof of Theorem 1.9",
+      "number": "3",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-3-proof-of-theorem-19"
+    },
+    {
+      "level": 1,
+      "title": "Appendix A. Some useful properties of the quantum dilogarithm",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-appendix-a-some-useful-properties-of-the-quantum"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 99,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "state-integrals",
+          "heading": false
+        },
+        {
+          "term": "rational points",
+          "heading": false
+        },
+        {
+          "term": "dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "state-sums",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1411.6062v2 [math.GT] 27 Apr 2015 EVALUATION OF STATE INTEGRALS AT RATIONAL POINTS STAVROS GAROUFALIDIS AND RINAT KASHAEV Abstract. Multi-dimensional state-integrals of products of Faddeev’s quantum diloga- rithms arise frequently in Quantum Topology, quantum Teichm¨uller theory and complex Chern–Simons theory. Using the quasi-periodicity property of the quantum dilogarithm, we evaluate 1-dimensional",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1411.6062v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "Introduction 1",
+      "extractCut": false
+    },
+    {
+      "id": "sec-001-11-state-integrals-and-their-q-series",
+      "number": "1.1",
+      "title": "State-integrals and their q-series",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 810,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "state-integrals",
+          "heading": true
+        },
+        {
+          "term": "phi mathsf",
+          "heading": false
+        },
+        {
+          "term": "mathsf tau",
+          "heading": false
+        },
+        {
+          "term": "dimensional state-integrals",
+          "heading": false
+        },
+        {
+          "term": "operatorname phi",
+          "heading": false
+        },
+        {
+          "term": "nahm series",
+          "heading": false
+        },
+        {
+          "term": "state-integral mathcal",
+          "heading": false
+        },
+        {
+          "term": "tilde series",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.intro label=\"sub.intro\"} State-integrals are multi-dimensional integrals of products of Faddeev's quantum dilogarithms. They appear in abundance in Quantum Topology, quantum Teichmüller theory and in complex Chern--Simons theory. State integrals were studied among others by Hikami [@Hi], Dimofte--Gukov--Lennels--Zagier [@DGLZ], Andersen--Kashaev [@AK; @AK:complex], Kashaev--Luo--Vartanov [@KLV], Dimofte",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-the-rogers-and-the-cyclic-dilogarithms",
+      "number": "1.2",
+      "title": "The Rogers and the cyclic dilogarithms",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 127,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "slashed operatorname",
+          "heading": false
+        },
+        {
+          "term": "rogers",
+          "heading": true
+        },
+        {
+          "term": "dilog",
+          "heading": false
+        },
+        {
+          "term": "zeta",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.dilog label=\"sub.dilog\"} Recall the *Rogers dilogarithm* [@Neumann:CCS; @Goette] $$\\label{eq.rogers} \\operatorname{R}(z)= \\operatorname{Li_2}(z)+\\frac12 \\log(z)\\log(1-z)-\\frac{\\pi^2}{6}$$ and its extension as a multivalued function on the universal abelian cover of $\\mathbbm C\\setminus\\{0,1\\}$. The *cyclic (quantum) dilogarithm* $\\operatorname{D}_N(x;q)$ is the $N$-th root of a polynomial in $x$ with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-evaluation-of-state-integrals",
+      "number": "1.3",
+      "title": "Evaluation of state-integrals",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 810,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac mathsf",
+          "heading": false
+        },
+        {
+          "term": "slashed operatorname",
+          "heading": false
+        },
+        {
+          "term": "mathsf sqrt",
+          "heading": false
+        },
+        {
+          "term": "mathsf left",
+          "heading": false
+        },
+        {
+          "term": "rogers dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "mathcal frac",
+          "heading": false
+        },
+        {
+          "term": "nonabelian parabolic",
+          "heading": false
+        },
+        {
+          "term": "parabolic mathrm",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.evaluation label=\"sub.evaluation\"} Our main theorem evaluates the state-integral at $\\mathsf{b}^2=M/N$ in terms of the state-sums $G_{M,N}$, the Rogers dilogarithm and the cyclic dilogarithm. Fix an admissible pair $(M,N)$, and define $$\\label{eq.bs} \\mathsf{b}= \\sqrt{M/N}, \\qquad \\mathsf{s}= \\sqrt{MN} \\,.$$ Let $$\\label{eq.calS} \\mathcal{S}=\\{ w \\,\\, | \\,\\, \\operatorname{g}(e^{2\\pi\\mathsf{s}w})=1, \\,\\, 0 <",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-the-quantum-dilogarithm-at-roots-of-unity",
+      "number": "1.4",
+      "title": "The quantum dilogarithm at roots of unity",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 259,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathsf operatorname",
+          "heading": false
+        },
+        {
+          "term": "frac mathsf",
+          "heading": false
+        },
+        {
+          "term": "phi mathsf",
+          "heading": false
+        },
+        {
+          "term": "mathsf right",
+          "heading": false
+        },
+        {
+          "term": "phieval operatorname",
+          "heading": false
+        },
+        {
+          "term": "slashed operatorname",
+          "heading": false
+        },
+        {
+          "term": "orv",
+          "heading": false
+        },
+        {
+          "term": "infty frac",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.evalphi label=\"sub.evalphi\"} We fix an admissible pair $(M,N)$. Recall $\\mathsf{b}$ and $\\mathsf{s}$ from Equation [\\[eq.bs\\]](#eq.bs){reference-type=\"eqref\" reference=\"eq.bs\"}. Let $\\mathrm{Li}_2(z)=\\sum_{n=1}^\\infty \\frac{z^n}{n^2}$ denote the Euler dilogarithm, defined for $|z|<1$ and analytically continued as a multivalued function on $\\mathbbm C\\setminus\\{0,1\\}$. ::: theorem []{#thm.2 label=\"thm.2\"} We",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-acknowledgments",
+      "number": null,
+      "title": "Acknowledgments",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 127,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "during conference",
+          "heading": false
+        },
+        {
+          "term": "national science",
+          "heading": false
+        },
+        {
+          "term": "science foundation",
+          "heading": false
+        },
+        {
+          "term": "geneva",
+          "heading": false
+        }
+      ],
+      "extract": "The paper originated as an attempt to prove an identity conjectured by joint work of Zagier and the first author. We wish to thank Tudor Dimofte and especially Don Zagier for enlightening conversations and for a generous sharing of their ideas. The paper was conceived during a conference in Vietnam in 2013, and largely completed in Geneva in 2014 at the Confucius Institute of the University of Geneva, and during a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-2-integrals-of-quasi-periodic-functions",
+      "number": "2",
+      "title": "Integrals of quasi-periodic functions",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 7,
+      "labelStart": "7",
+      "labelEnd": "7",
+      "words": 0,
+      "summary": null,
+      "keywords": [],
+      "extract": null,
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-21-some-lemmas-from-complex-analysis",
+      "number": "2.1",
+      "title": "Some lemmas from complex analysis",
+      "level": 2,
+      "pageStart": 7,
+      "pageEnd": 10,
+      "labelStart": "7",
+      "labelEnd": "10",
+      "words": 1075,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathsf operatorname",
+          "heading": false
+        },
+        {
+          "term": "mathcal mathsf",
+          "heading": false
+        },
+        {
+          "term": "mathsf int",
+          "heading": false
+        },
+        {
+          "term": "mathsf right",
+          "heading": false
+        },
+        {
+          "term": "mathsf left",
+          "heading": false
+        },
+        {
+          "term": "mathsf frac",
+          "heading": false
+        },
+        {
+          "term": "lambda operatorname",
+          "heading": false
+        },
+        {
+          "term": "mathsf sup",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.two.lemmas label=\"sub.two.lemmas\"} ::: lemma []{#lem1 label=\"lem1\"} Let $\\operatorname{f}\\colon \\mathcal{U}\\to\\mathbb{C}$ be an analytic function satisfying the functional equation $$\\label{per} \\operatorname{f}(z-a)\\operatorname{f}(z+a)=\\operatorname{f}(z)^2,$$ with some fixed $a\\in\\mathbb{C}\\setminus\\{0\\}$, the domain $\\mathcal{U}\\subset\\mathbb{C}$ being a translationally invariant open set,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-22-applications-to-1-dimensional-state-integrals",
+      "number": "2.2",
+      "title": "Applications to 1-dimensional state-integrals: proof of Theorem 1.1",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 323,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathsf operatorname",
+          "heading": false
+        },
+        {
+          "term": "mathsf alpha",
+          "heading": false
+        },
+        {
+          "term": "frac mathsf",
+          "heading": false
+        },
+        {
+          "term": "mathsf right",
+          "heading": false
+        },
+        {
+          "term": "slashed operatorname",
+          "heading": false
+        },
+        {
+          "term": "phi mathsf",
+          "heading": false
+        },
+        {
+          "term": "state-integrals",
+          "heading": true
+        },
+        {
+          "term": "klv eqn",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.application label=\"sub.application\"} In this section we prove Theorem [\\[thm.1\\]](#thm.1){reference-type=\"ref\" reference=\"thm.1\"}. Fix integers $A$ and $B$ with $B>A>0$. The values of particular interest are $(A,B)=(1,2)$ and $(1,3)$ which correspond to the state-integrals of the knots $4_1$ and $5_2$ respectively. For the $4_1$ knot, see [@AK Eqn.38] and [@KLV Eqn.47] and [@state-integrals]. For the $5_2$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-23-the-case-of-the--237-pretzel-knot",
+      "number": "2.3",
+      "title": "The case of the (-2,3,7) pretzel knot",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "13",
+      "words": 413,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pretzel knot",
+          "heading": true
+        },
+        {
+          "term": "x-c mathsf",
+          "heading": false
+        },
+        {
+          "term": "mathsf left",
+          "heading": false
+        },
+        {
+          "term": "phi mathsf",
+          "heading": false
+        },
+        {
+          "term": "operatorname phi",
+          "heading": false
+        },
+        {
+          "term": "nonabelian parabolic",
+          "heading": false
+        },
+        {
+          "term": "parabolic mathrm",
+          "heading": false
+        },
+        {
+          "term": "frac right",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#sub.pretzel label=\"sub.pretzel\"} The second author computed the state-integral invariant of the $(-2,3,7)$ pretzel knot. The result of the long computation is the following 1-dimensional state integral, which we take as input to our analysis: $$\\label{eq.I237} I_{(-2,3,7)}(b)=\\int_{\\mathbbm R+ i \\epsilon} \\operatorname{\\Phi}_{\\mathsf{b}}(x)^2 \\operatorname{\\Phi}_{\\mathsf{b}}(2x-c_{\\mathsf{b}}) e^{-2 \\pi",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-3-proof-of-theorem-19",
+      "number": "3",
+      "title": "Proof of Theorem 1.9",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 16,
+      "labelStart": "13",
+      "labelEnd": "16",
+      "words": 847,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathsf operatorname",
+          "heading": false
+        },
+        {
+          "term": "mathsf sinh",
+          "heading": false
+        },
+        {
+          "term": "frac mathsf",
+          "heading": false
+        },
+        {
+          "term": "mathsf right",
+          "heading": false
+        },
+        {
+          "term": "mathsf left",
+          "heading": false
+        },
+        {
+          "term": "res mathsf",
+          "heading": false
+        },
+        {
+          "term": "mathsf epsilon",
+          "heading": false
+        },
+        {
+          "term": "phi mathsf",
+          "heading": false
+        }
+      ],
+      "extract": "We start by taking the logarithmic derivative of Faddeev's quantum dilogarithm $$\\begin{aligned} \\frac{\\partial}{\\partial x}\\log \\operatorname{\\Phi}_{\\mathsf{b}}(x) & =\\int_{\\mathbb{R}+\\mathsf{i}\\epsilon} \\frac{-2\\mathsf{i}e^{-2\\mathsf{i}xz}}{4\\sinh(z\\mathsf{b})\\sinh(z\\mathsf{b}^{-1})} \\operatorname{d}\\!z \\\\ \\notag & =\\int_{\\mathbb{R}+\\mathsf{i}\\epsilon} \\frac{",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-appendix-a-some-useful-properties-of-the-quantum",
+      "number": null,
+      "title": "Appendix A. Some useful properties of the quantum dilogarithm",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 186,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum dilogarithm",
+          "heading": true
+        },
+        {
+          "term": "inb",
+          "heading": false
+        },
+        {
+          "term": "e2πb",
+          "heading": false
+        }
+      ],
+      "extract": "The quantum dilogarithm Φb(x) is deﬁned by [Fad95] (75) Φb(x) = (e2πb(x+cb); q)∞ (e2πb−1(x−cb); ˜q)∞ , where q = e2πib2, ˜q = e−2πib−2, cb = i 2(b + b−1), Im(b2) > 0. An integral representation is given by Φb(x) = exp \u0012Z R+iǫ e−2ixz 4 sinh(zb) sinh(zb−1) dz z \u0013 in the strip |Imz| < |Imcb|. Remarkably, this function admits an extension to all values of b with b2̸ ∈R≤0. Φb(x) is a meromorphic function of x with poles:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 18,
+      "labelStart": "16",
+      "labelEnd": "18",
+      "words": 561,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rinat kashaev",
+          "heading": false
+        },
+        {
+          "term": "modern phys",
+          "heading": false
+        },
+        {
+          "term": "stavros garoufalidis",
+          "heading": false
+        },
+        {
+          "term": "tudor dimofte",
+          "heading": false
+        },
+        {
+          "term": "cumrun vafa",
+          "heading": false
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "don zagier",
+          "heading": false
+        },
+        {
+          "term": "quantum hyperbolic",
+          "heading": false
+        }
+      ],
+      "extract": "[AK] Jørgen E. Andersen and Rinat M. Kashaev, Complex Quantum Chern-Simons, arXiv:1409.1208, Preprint 2014. [AK14] Jørgen Ellegaard Andersen and Rinat Kashaev, A TQFT from Quantum Teichm¨uller theory, Comm. Math. Phys. 330 (2014), no. 3, 887–934. [AKMV05] Mina Aganagic, Albrecht Klemm, Marcos Mari˜no, and Cumrun Vafa, The topological vertex, Comm. Math. Phys. 254 (2005), no. 2, 425–478. [BB07] Stephane Baseilhac and",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Introduction"
+        ]
+      },
+      "found_not_listed": {
+        "count": 1,
+        "items": [
+          "2.2 Applications to 1-dimensional state-integrals: proof of Theorem 1.1. In this"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mathsf operatorname",
+      "heading": false
+    },
+    {
+      "term": "frac mathsf",
+      "heading": false
+    },
+    {
+      "term": "mathsf slashed",
+      "heading": false
+    },
+    {
+      "term": "mathsf right",
+      "heading": false
+    },
+    {
+      "term": "mathsf left",
+      "heading": false
+    },
+    {
+      "term": "mathsf mathrm",
+      "heading": false
+    },
+    {
+      "term": "mathcal mathsf",
+      "heading": false
+    },
+    {
+      "term": "phi mathsf",
+      "heading": false
+    },
+    {
+      "term": "mathsf int",
+      "heading": false
+    },
+    {
+      "term": "x-c mathsf",
+      "heading": false
+    },
+    {
+      "term": "mathsf sum",
+      "heading": false
+    },
+    {
+      "term": "mathsf sinh",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 13,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 14,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p16); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 5
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 14 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1411.6062v2"
+  }
+}

@@ -1,0 +1,1218 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "quaternioms",
+  "blocks": [
+    {
+      "id": "library/quaternioms/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/quaternioms/blocks/figure-img-p001-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "3.0\n1.3\nQuaternionic and Octonionic\nFrameworks for Quantum\nComputation: Mathematical\nStructures, Models, and\nFundamental Limitations\nJohan Heriberto Rúa Muñoz, Jorge Eduardo Mahecha Gómez and Santiago Pineda Montoya\nTopic\nTopological, Quantum, and Molecular Information Approaches to Computation and Intelligence\nEdited by\nDr. Michel Planat and Prof. Dr. Edward A. Rietman\nReview\nhttps://doi.org/10.3390/quantum7040055\nAcademic Editors: Michel Planat and\nEdward A. Rietman\nReceived: 18 October 2025\nRevised: 17 November 2025\nAccepted: 21 November 2025\nPublished: 26 November 2025\nCitation:\nRúa Muñoz,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Quantum computation is typically formulated on complex Hilbert spaces. The existence\nof exactly four real normed division algebras, R,C,H,O, motivates systematic extensions\nto H (associative, non-commutative) and O (alternative, non-associative) [1,2]. We present\na comprehensive treatment of both directions, revealing a sharp contrast: A fully consis-\ntent quaternionic model with computational equivalence to the complex standard [3–5], and\nstructural obstructions in the octonionic case [2,5].\nMain contributions.\nWe explicitly distinguish between background material (review and synthesis of\nkno",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Extended Related Work",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-001-extended-related-work.md",
+      "narrative": null,
+      "content": "Background on quantum computation, topological phases, and materials that motivate\nrobust encodings (see e.g., [10–24]).\nMathematical foundations: normed division algebras, exceptional symmetries, and\nrepresentation-theoretic tools (see e.g., [25–39]).\nControl and error mitigation, with emphasis on average-Hamiltonian theory and\ndynamical decoupling (see e.g., [40–54]).\nComplexity, universality, and emergent applications across condensed matter and\nquantum information (see e.g., [55–69]).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction: Bridging Theory and Experiment—Additional Details",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-002-introduction-bridging-theory-and-experimentaddit.md",
+      "narrative": null,
+      "content": "The transition from an abstract mathematical formalism to a concrete physical im-\nplementation is the most challenging and critical step in the development of any new\ncomputational paradigm. This section serves as a bridge between the theoretical work\nand the practical considerations of experimental realization. We will ﬁrst frame the core\nexperimental challenges posed by the quaternionic and octonionic models and then provide\na brief outline of the topics to be covered in this work [5].\nFrom Abstract Algebras to Physical Systems\nThe experimental questions for realizing quaternionic and octoni",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Materials and Methods",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-materials-and-methods.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Standard Quantum Computation over C",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-004-standard-quantum-computation-over-c.md",
+      "narrative": null,
+      "content": "We brieﬂy recall the standard (complex) formalism to ﬁx notation. A ﬁnite-dimensional\nquantum system is modeled by a complex Hilbert space H ∼= Cd with an inner product\n⟨·, ·⟩linear in the second argument and anti-linear in the ﬁrst. States are density operators\nρ ∈D(H) (positive semideﬁnite, trace one); pure states are unit vectors |ψ⟩∈H modulo\nglobal phase. Closed system dynamics is generated by a (time-dependent) Hamiltonian\nH(t) = H(t)† through the Schrödinger equation:\ni¯h d\ndt|ψ(t)⟩= H(t)|ψ(t)⟩,\n|ψ(t)⟩= U(t)|ψ(0)⟩, U(t) ∈U(d).\nOpen evolutions are completely positive, trace-preserving (CP",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Normed Division Algebras",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../sections/sec-005-normed-division-algebras.md",
+      "narrative": null,
+      "content": "A (real) normed division algebra (A, ∥· ∥) is a ﬁnite-dimensional real algebra with unit\n1, equipped with a norm such that\n∥xy∥= ∥x∥∥y∥\n∀x, y ∈A,\nand where every nonzero element is invertible. A classical result due to Hurwitz shows\nthat there are exactly four such algebras:\nR,\nC,\nH,\nO,\nwith dimR = 1, 2, 4, 8, respectively [1,2]. They arise from the Cayley–Dickson construction:\nR\ndouble\n−−−→C\ndouble\n−−−→H\ndouble\n−−−→O,\nand carry an involutive conjugation x 7→¯x, a quadratic norm N(x) = x ¯x = ¯xx = ∥x∥2 ∈\nR≥0, and a bilinear inner product ⟨x, y⟩:= 1\n2\n\u0000N(x + y) −N(x) −N(y)\n\u0001\n.\nAlgebraically, R",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quaternionic and Octonionic Preliminaries",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-006-quaternionic-and-octonionic-preliminaries.md",
+      "narrative": null,
+      "content": "The hypercomplex extensions considered here replace the complex scalar ﬁeld by\neither H or O, together with compatible notions of inner product, adjoint, dynamics,\nand composition.\nNotation on SU(2) and context.\nUnless explicitly stated otherwise, SU(2) denotes the standard group of 2 × 2 complex\nspecial unitaries acting on a single complex qubit. When we speak of “quaternionic gates\nrealised as SU(2) operations” or of “native SU(2) control” on hardware, we always mean\nthe image of quaternionic unitaries under the embedding ι : H֒ →M2(C), acting on an\nencoded complex qubit.\nQuaternionic Hilber",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Structure of Octonions and the Fano Plane",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-007-structure-of-octonions-and-the-fano-plane.md",
+      "narrative": null,
+      "content": "Let {1, e1, . . . , e7} be the standard octonion basis with e2\nk = −1 and eiej = ±ek ac-\ncording to the oriented triples encoded by the Fano plane (See Figure 1). Any three units\non a directed line multiply associatively and obey eiej = ek, ejek = ei, ekei = ej (and\nthe negatives for reversed order). This diagrammatic calculus is indispensable for track-\ning when associators vanish and for designing sequences that remain within (or near)\nassociative triples.\nFigure 1. Fano plane representation of octonion multiplication triples. Each oriented line encodes an\nassociative copy of H inside O.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/figure-img-p008-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../images/img-p008-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometric and Group-Theoretic Side Notes",
+      "pageStart": 8,
+      "pageEnd": 8,
+      "target": "../sections/sec-008-geometric-and-group-theoretic-side-notes.md",
+      "narrative": null,
+      "content": "The unit spheres of the normed division algebras, S0 ⊂R, S1 ⊂C, S3 ⊂H, and\nS7 ⊂O, are parallelizable and admit Hopf ﬁbrations that often guide intuition about\nstate spaces and control: S3 →S2 for qubits, and S7 →S4 in the quaternionic setting.\nAutomorphism groups also play a role: Aut(H) ∼= SO(3) acts by conjugation on imag-\ninary quaternions, while Aut(O) ∼= G2 preserves the octonionic product and underlies\nthe idea of G2-invariant codes used to detect associator “syndromes” in the octonionic\nmitigation strategies.\nAssociativity (present in H, absent in O) is the decisive structural property",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quaternionic Formalism",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-009-quaternionic-formalism.md",
+      "narrative": null,
+      "content": "Many of the structural ingredients of this subsection are standard in the literature\non quaternionic quantum mechanics and quaternionic quantum computing. In par-\nticular, our use of right H-modules and adjoints follows the foundational treatments\nin [3,4], while the existence of simulations of quaternionic circuits and channels by\ncomplex ones builds on [6–8]. Our contribution here is to package these ingredients into\na self-contained circuit model tailored to quantum information, and to connect them\nexplicitly to the complexity-theoretic results of Section 3.\nState space and inner product on",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Octonionic Formalism",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-010-octonionic-formalism.md",
+      "narrative": null,
+      "content": "In the octonionic case, there is comparatively little work at the level of quantum\ninformation. Our starting point here is the general discussion of octonions in physics\nin [2] and the measurement-only scheme of Freedman, Shokrian-Zini, and Wang [9], which\nrealizes universal quantum computation using equiangular projections associated with O.\nThe goal of this section is not to propose a new measurement-only model, but rather to\nanalyse, from ﬁrst principles, which parts of the standard gate-based quantum computing\nframework survive if one insists on using O as a scalar ﬁeld and where fundament",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hybrid Architectures and Embeddings—Additional Details",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-011-hybrid-architectures-and-embeddingsadditional-de.md",
+      "narrative": null,
+      "content": "A fully octonionic computer appears infeasible at present. Instead, hybrid architectures\nthat combine quaternionic and octonionic subsystems are more promising. Most of a circuit\ncould run in the stable quaternionic regime, with specialized subroutines using octonionic\nembeddings for speciﬁc tasks where their unique symmetries might be advantageous.\nWhile the direct physical realization of hypercomplex quantum computing poses\nsigniﬁcant experimental hurdles, a more immediately viable approach involves hybrid\narchitectures and simulation protocols. These strategies acknowledge the current limit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Quaternionic-to-Complex Embedding Protocol in Practice",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "../sections/sec-012-the-quaternionic-to-complex-embedding-protocol-i.md",
+      "narrative": null,
+      "content": "A foundational result is the embedding of quaternionic quantum circuits into complex\nones with minimal overhead [6]. This theoretical equivalence, established in Chapter 3 [5],\nstates that any computation on n quaternionic qubits can be simulated by a standard complex\ncircuit with n + 1 qubits [6]. This mapping effectively realizes quaternionic logic on conventio-\nnal platforms:\nHn\nH −→Hn+1\nC\n.\n(4)\nTo put this embedding protocol into practice, we need concrete procedures to trans-\nform quaternionic states into complex qubit states and quaternionic gates into sequences\nof standard complex gates",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Simulating Octonionic Dynamics via Associative Decomposition",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-013-simulating-octonionic-dynamics-via-associative-d.md",
+      "narrative": null,
+      "content": "Unlike quaternions, the direct embedding of a universal octonionic quantum computer\ninto a complex one is not straightforward due to the fundamental challenges of non-\nassociativity, as extensively detailed in Chapter 4 [5]. However, the mitigation strategy of\n“algebraic gate synthesis and decomposition” (Strategy 4, Chapter 5 [5]) offers a pathway to\nsimulate octonionic dynamics on standard complex hardware by breaking down complex\nnon-associative operations into sequences of simpler, associative ones.\nThe Simulation Protocol\nThe core idea is to represent an octonionic operation on an N-octo-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mitigation Palette: Constructions and Workflows",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-014-mitigation-palette-constructions-and-workflows.md",
+      "narrative": null,
+      "content": "We deploy four complementary strategies that tame non-associativity in O at explicit\nresource costs.\n(M1) Associative conﬁnement.\nGoal: Constrain states/controls to an associative subalgebra H ⊂O (guaranteed by\nCayley–Dickson)\n= H ⊕He6",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cayley–Dickson Product",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../sections/sec-015-cayleydickson-product.md",
+      "narrative": null,
+      "content": "Writing (a, b), (c, d) ∈H ⊕He6,\n(a, b) · (c, d) = (ac −¯d b, dc + b ¯c),\nexposes quaternionic subalgebras and clarifies how non-associativity emerges beyond H [2,5].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Associative Subalgebras and Confinement",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-016-associative-subalgebras-and-confinement.md",
+      "narrative": null,
+      "content": "Each embedded copy of H in O is associative. Conﬁning states and gates to such a\nsector restores well-deﬁned composition; switching sectors incurs control overheads [5].\nConstruction: Choose a triple from the Fano plane and ﬁx an embedding as follows:\nH ∼= spanR{1, ei, ej, ek}.\nImplement all gates within this sector using the quaternionic toolset of Section 2.6; switching\nsectors is effected by explicit sector-change pulses that map one quaternionic copy to another\n(compiled as products of associative factors).\nTrade-offs: Sector switches add depth and calibration overhead; strict conﬁnement\nl",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/figure-img-p015-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../images/img-p015-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/quaternioms/blocks/cor-sec-018-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "Complexity and fault-tolerance transfer",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "cor-sec-018-04.md",
+      "narrative": null,
+      "content": "By Theorem 2, BQP-level algorithms and threshold-theorem constructions transfer between the complex and quaternionic models with polynomial overhead; noise models and compilation pipelines port through the embedding up to constant-factor rescalings in gadgetization. Justiﬁcation: Appendix A. At the control layer, the embedding is compatible with native SU(2) implementations, aligning theory with practice.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/quaternioms/blocks/figure-img-p016-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../images/img-p016-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/quaternioms/blocks/lem-sec-018-05",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Alignment with native SU(2",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "lem-sec-018-05.md",
+      "narrative": null,
+      "content": "control). If a platform implements U ∈SU(2) natively on an encoded pair, then for any unit quaternion q, ι(q) is realized by the same calibrated SU(2) pulse on that pair. Proof idea: Appendix A. Signiﬁcance: Single-quaternionic qubit gates inherit the ﬁdelity of native single-qubit SU(2) control (≳99% in reported designs). Finally, we account for the resources of the embedded synthesis itself to close the quaternionic story.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/quaternioms/blocks/prop-sec-018-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "Quaternionic universality via SU(2",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "prop-sec-018-02.md",
+      "narrative": null,
+      "content": "+ entangler). Let G1 be any dense family of single-quaternionic qubit gates (identiﬁed with SU(2) via the embedding ι in Appendix A), and let G2 contain one ﬁxed entangling two-quaternionic qubit gate (e.g., CNOT/CZ). Then G = G1 ∪G2 is universal over H. Proof: Appendix A. Signiﬁcance: The standard “single-qubit + entangler” paradigm lifts intact to H. Having established universality, we next compare computational power by explicit simulations between the quaternionic and complex models.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/quaternioms/blocks/prop-sec-018-06",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "Overhead accounting for embedded synthesis",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "prop-sec-018-06.md",
+      "narrative": null,
+      "content": "Let GH = {SU(2) on an encoded pair} ∪{CNOT between pairs}. A k-quaternionic qubit circuit with G elementary gates compiles to O(G) elementary complex gates with constant-size gadgets per elementary operation; depth scales by at most a polylogarithmic factor under Solovay–Kitaev-type reﬁnements. Proof idea: Standard complex synthesis on ι(U); see Appendix A. Signiﬁcance: Embedded implementations are asymptotically efﬁcient.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Results",
+      "pageStart": 16,
+      "pageEnd": 16,
+      "target": "../sections/sec-017-results.md",
+      "narrative": null,
+      "content": "Summary of methodology. Over H, we adopt a fully associative, hardware-aligned\npipeline via the embedding (A1) with standard universal sets and compilation. Over O,\nwe do not posit a native scalable calculus; instead, we formalize where associativity is\nrequired and deploy (M1)–(M4) to operate within associative islands or to cancel/structure\nassociator effects, making explicit the cost in depth, width, and calibration.\n3. Results\nIn this section, we collect the main formal and algorithmic results for the quaternionic\n(H) and octonionic (O) models established in the thesis-derived framework. S",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quaternionic Model: Structural, Universality, and Simulation Results",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-018-quaternionic-model-structural-universality-and-s.md",
+      "narrative": null,
+      "content": "We begin by securing the structural backbone over H: A well-deﬁned multipartite\ncomposition. This provides the substrate on which universality and simulation statements\nare built.\nTheorem 1 (Canonical tensor structure over H). Let (Hi, ⟨·, ·⟩i), i = 1, 2, 3, be right H-Hilbert\nmodules. Then\n(H1 ⊗H2) ⊗H3 ∼= H1 ⊗(H2 ⊗H3)\ncanonically and isometrically, with inner product on simple tensors ⟨u1 ⊗u2, v1 ⊗v2⟩:=\n⟨u1, v1⟩1 ⟨u2, v2⟩2. Proof: Appendix A. Signiﬁcance: Guarantees parenthesization-independent\nmultipartite composition and entanglement over H.\nWith a canonical tensor product in place, we can",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/thm-sec-018-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Canonical tensor structure over H",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "thm-sec-018-01.md",
+      "narrative": null,
+      "content": "Let (Hi, ⟨·, ·⟩i), i = 1, 2, 3, be right H-Hilbert modules. Then (H1 ⊗H2) ⊗H3 ∼= H1 ⊗(H2 ⊗H3) canonically and isometrically, with inner product on simple tensors ⟨u1 ⊗u2, v1 ⊗v2⟩:= ⟨u1, v1⟩1 ⟨u2, v2⟩2. Proof: Appendix A. Signiﬁcance: Guarantees parenthesization-independent multipartite composition and entanglement over H. With a canonical tensor product in place, we can lift the standard “single-qubit + entangler” recipe to the quaternionic setting.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/quaternioms/blocks/thm-sec-018-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Polynomial simulation equivalence H ↔C",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "thm-sec-018-03.md",
+      "narrative": null,
+      "content": "Any n-quaternionic qubit circuit of depth D compiles to a complex circuit on O(n) qubits with depth poly(D) via ι : H֒ →M2(C); conversely, complex circuits embed into quaternionic circuits with polynomial overhead. Proof sketch: Appendix A. Signiﬁcance: Computation over H captures the same complexity class as the standard model. This equivalence immediately transfers standard complexity-theoretic guarantees and fault-tolerance to H.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/quaternioms/blocks/cor-sec-019-04",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "No native, parenthesis-free wiring rule",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "cor-sec-019-04.md",
+      "narrative": null,
+      "content": "Absent conﬁnement to associative subalgebras, there is no parenthesis-free, platform-independent notion of “tensoring subsystems” over O. Consequence: Universal, scalable octonionic circuit families require associative scaffolding.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/quaternioms/blocks/lem-sec-019-01",
+      "types": [
+        "folio-assistant-sci:Lemma",
+        "doco:Section"
+      ],
+      "kind": "lemma",
+      "title": "Intrinsic path dependence via associators",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "lem-sec-019-01.md",
+      "narrative": null,
+      "content": "For time-dependent H(t) ∈O, the prop- agator U(t) = P exp \u0010 −i ¯h R t 0 H(τ) dτ \u0011 admits a Magnus-like expansion with explicit associator contributions. If the sampled triples have [x, y, z]̸ = 0, different control slicings/time orderings yield distinct U(t). Proof idea: Appendix B. Signiﬁcance: Control order matters intrinsically outside associative sectors. This path dependence already disrupts standard conservation arguments, signaling deeper structural failures.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/quaternioms/blocks/prop-sec-019-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "Energy-balance breakdown outside associative sectors",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "prop-sec-019-02.md",
+      "narrative": null,
+      "content": "For time-independent H ∈O, the usual identity d dt⟨ψ(t), Hψ(t)⟩= 0 need not hold when adjoints/inner products cannot be deﬁned associatively on the full space. Proof idea: Appendix B. Signiﬁcance: Even basic conservation proofs rely on associativity. The culmination is a failure of canonical multipartite composition, which contrasts sharply with Theorem 1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Octonionic Model: Formal Obstructions and Limits",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "../sections/sec-019-octonionic-model-formal-obstructions-and-limits.md",
+      "narrative": null,
+      "content": "We now switch to O, where the loss of associativity reverses the previous narrative.\nThe next results make precise how ordering and parenthesization cease to be benign choices.\nIn contrast to the measurement-only scheme of Freedman, Shokrian-Zini and Wang [9],\nwhich already realizes universal quantum computation using octonionic equiangular pro-\njections, the results in this subsection are, to the best of our knowledge, new: they identify\nstructural obstructions to a gate-based O-model and organize possible workarounds into\nthe mitigation strategies (M1)–(M4).\nLemma 2 (Intrinsic path dependenc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/thm-sec-019-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "No canonical multipartite tensor product in O",
+      "pageStart": 17,
+      "pageEnd": 18,
+      "target": "thm-sec-019-03.md",
+      "narrative": null,
+      "content": "For right O-modules HA, HB, HC, there is no parenthesization-independent canonical isomorphism (HA ⊗HB) ⊗HC ∼= HA ⊗ (HB ⊗HC) unless one restricts to an associative subalgebra. Proof idea: Appendix B. Signiﬁ- cance: Large-scale circuit composition is ill-deﬁned in the fully octonionic setting. Accordingly, wiring rules that were automatic over H become conditional on explicit associative scaffolding.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/quaternioms/blocks/prop-sec-020-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "Conﬁnement ⇒associativity",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "prop-sec-020-01.md",
+      "narrative": null,
+      "content": "Fix an embedded copy H ⊂O (e.g., an oriented triple in the Fano plane). Restricting states, controls, and measurements to this sector induces a fully associative calculus; Theorem 1, Proposition 1, and Theorem 2 apply verbatim. Proof: Appendix B. Overheads: Sector switches incur explicit depth/calibration cost (see Table 1). Table 1. Mitigation palette: scope, beneﬁts, and primary overheads. Strategy Scope Primary Beneﬁt Main Overheads/Limits (M1) Associative conﬁnement H ⊂O Restores associative composition and tensoring Sector-change depth/calibration; restricted reachable set under strict co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/quaternioms/blocks/prop-sec-020-02",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "Syndrome detectability",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "prop-sec-020-02.md",
+      "narrative": null,
+      "content": "Encoding into subspaces stabilized by Aut(O) ∼= G2 enables detection of errors that drive dynamics outside a chosen associative sector (“associator syndromes”). Justiﬁcation: Appendix B. Scope: Detection̸ = correction; composition still relies on (M1)/(M4). (M3) Associator-suppressing dynamical decoupling (ASD). On the control side, carefully symmetrized pulse sequences diminish the leading associator terms responsible for path dependence.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/quaternioms/blocks/prop-sec-020-04",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "Associative-factor compilation",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "prop-sec-020-04.md",
+      "narrative": null,
+      "content": "Any target transformation from an octo- nionic control model that admits a consistent associative factorization can be approximated as U ≈U1U2 · · · U7, with Uℓdrawn from associative subalgebras chosen to minimize cumulative as- sociators. Construction: Appendix C. Trade-off: Depth ampliﬁcation and compounded calibration error (Table 1). Empirical-style summaries (simulated). The ﬁgures summarize the quantitative impact of the above mitigations: ASD im- proves short-time ﬁdelities relative to associative-agnostic baselines, and its effectiveness depends on total control time and amplitude in t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mitigation Strategies: Correctness Guarantees and Quantitative Effects",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-020-mitigation-strategies-correctness-guarantees-and.md",
+      "narrative": null,
+      "content": "We formalize the scope and guarantees of the four mitigation routes introduced in\nMethods and quantify their effects using process-ﬁdelity summaries. The organizing idea\nis to recover, as far as possible, the H-like behavior within controlled regions of O.\n(M1) Associative conﬁnement restores the wiring rule.\nBy narrowing dynamics to a ﬁxed associative sector, we reinstate the benign parenthe-\nsization properties of Theorem 1 and its consequences.\nProposition 4 (Conﬁnement ⇒associativity). Fix an embedded copy H ⊂O (e.g., an oriented\ntriple in the Fano plane). Restricting states, controls, and",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/thm-sec-020-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "First-order cancellation of associator terms",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "thm-sec-020-03.md",
+      "narrative": null,
+      "content": "Within a ﬁxed associative sector H ⊂O, the symmetric ASD cycle UxUyUz · free evol. ∆t · U† z U† yU† x cancels the leading associator contributions in the Magnus-like expansion of U(t), improving short-time process ﬁdelity relative to associative-agnostic baselines. Proof sketch: Appendix C. Quantitative effect: Figure 3 (process ﬁdelity vs. time) and Figure 4 (dependence on control length/amplitude). (M4) Seven-factor algebraic synthesis. Finally, when target operations admit a decomposition via associative waypoints, we explicitly compile through them, trading depth for well-deﬁnedness.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/quaternioms/blocks/prop-sec-021-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "Complexity over H",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "prop-sec-021-01.md",
+      "narrative": null,
+      "content": "By Theorem 2, the quaternionic model is a polynomially . .. plex model; thus, it captures BQP up to polynomial reductions. Note: Fault-tolerant toolchains port through ι with standard gadget overheads. This proposition is consistent with, and can be viewed as a circuit-level reformulation of, the simulation results for quaternionic circuits and dynamics in Refs. [6–8].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Complexity Landscape and Feasibility",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-021-complexity-landscape-and-feasibility.md",
+      "narrative": null,
+      "content": "We summarize asymptotic resource implications and practical constraints for the\nquaternionic and octonionic settings. For platform-level details and additional complexity\nremarks, see Appendix A.3.2.\nTaken together, the next statements locate H within the standard complexity landscape\nand explain why native, large-scale advantages in O hinge on the mitigation toolkit above.\nProposition 7 (Complexity over H). By Theorem 2, the quaternionic model is a polynomially\n. .. plex model; thus, it captures BQP up to polynomial reductions. Note: Fault-tolerant toolchains\nport through ι with standard gadg",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/rem-sec-021-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "Octonionic costs and limits",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "rem-sec-021-02.md",
+      "narrative": null,
+      "content": "In the octonionic setting, “switching associative sectors” refers to moving states and gates between different chosen quaternionic subalgebras Hα ⊂O (or, equivalently, changing the parenthesization class of multi-octonion products). Whenever a circuit forces such sector changes—rather than remaining conﬁned to a single associative copy of H—the naive compilation overhead can grow rapidly, since one must keep track of associator corrections and update the complex encoding accordingly. In practice, feasible octonionic architectures therefore rely on conﬁning dynamics to a ﬁxed associative subalg",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Computational Equivalence and Circuit Simplification—Elaboration",
+      "pageStart": 20,
+      "pageEnd": 20,
+      "target": "../sections/sec-022-computational-equivalence-and-circuit-simplifica.md",
+      "narrative": null,
+      "content": "Having established a consistent framework for n-quaternionic qubit states and uni-\nversal gates, we now address a pivotal question: Does the richer algebraic structure of\nquaternionic quantum mechanics grant it greater computational power than the standard\ncomplex model? The answer, perhaps surprisingly, is no. In terms of computational com-\nplexity theory, the two models are equivalent; they both deﬁne the same complexity class,\nBQP (Bounded-Error Quantum Polynomial Time).\nThis section is dedicated to formally establishing this equivalence and then exploring\na more nuanced question. While qua",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Theoretical Equivalence to Complex Quantum Circuits",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-023-theoretical-equivalence-to-complex-quantum-circu.md",
+      "narrative": null,
+      "content": "The equivalence between the quaternionic and complex models is formally established\nby showing that any computation in one framework can be efﬁciently simulated by the\nother. Seminal works in the ﬁeld have demonstrated that any quantum circuit operating\non a register of n quaternionic qubits can be simulated by a standard complex quantum\ncomputer with at most a polynomial increase in resources [6,7]. The core of this argument\nlies in constructing an explicit mapping (an isomorphism) between the quaternionic state\nspace and a larger complex Hilbert space.\nMapping Quaternionic States to Complex",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Resource Analysis and the Potential for Circuit Simplification",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-024-resource-analysis-and-the-potential-for-circuit.md",
+      "narrative": null,
+      "content": "In this spirit, we explore how the representational efﬁciency of quaternionic and octo-\nnionic parametrisations can inform circuit design and algorithmic heuristics, for instance\nby suggesting compact, symmetry-adapted parametrisations and ansätze for quantum\nsimulation and variational algorithms, in close analogy with how high-dimensional qu-\ndit encodings are used to trade local dimension against circuit width or depth (see, e.g.,\nthe review [74]). We do not claim a generic asymptotic reduction in worst-case circuit\ncomplexity; any practical advantage is expected to be task- and architecture",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Emerging Applications and Future Directions—Elaboration",
+      "pageStart": 22,
+      "pageEnd": 22,
+      "target": "../sections/sec-025-emerging-applications-and-future-directionselabo.md",
+      "narrative": null,
+      "content": "The exploration of quantum computing over normed division algebras, particularly\nquaternions and octonions, extends beyond purely theoretical interest. This ﬁnal sec-\ntion delves into the potential applications where these extended formalisms might offer\na genuine advantage over standard complex quantum computation. We will discuss\ntheir role in quantum simulation, quantum machine learning, and fundamental physics,\nand conclude by proposing a concrete, multi-year experimental roadmap for advancing\nthe ﬁeld.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum Simulation with Algebraic Symmetries (SU(2) and G2)",
+      "pageStart": 22,
+      "pageEnd": 25,
+      "target": "../sections/sec-026-quantum-simulation-with-algebraic-symmetries-su2.md",
+      "narrative": null,
+      "content": "One of the most promising application areas for hypercomplex quantum models\nis quantum simulation. Many physical systems of fundamental interest are naturally\ndescribed by Hamiltonians that exhibit speciﬁc algebraic symmetries directly related to\nquaternions and octonions. Leveraging these underlying symmetries in the quantum\nsimulation itself could lead to more efﬁcient and accurate algorithms.\nSU(2) Symmetries in Quaternionic Quantum Simulation\nThe algebra of quaternions (H) is deeply intertwined with the special unitary group\nSU(2), which is the fundamental symmetry group for spin-1/2 parti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Hypercomplex Quantum Machine Learning",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../sections/sec-027-hypercomplex-quantum-machine-learning.md",
+      "narrative": null,
+      "content": "Quantum Machine Learning (QML) is a rapidly developing ﬁeld that seeks to leverage\nquantum principles and hardware to enhance machine learning algorithms. The introduc-\ntion of hypercomplex numbers offers a new avenue for QML, potentially leading to more\nexpressive models, more compact data representations, and improved performance for\ncertain types of data or tasks.\nQuaternionic Quantum Neural Networks (QNNs)\nThe natural ability of quaternions to represent rotations in 3D space makes them partic-\nularly well-suited for machine learning tasks that involve spatial data, orientations, or color\ni",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discussion",
+      "pageStart": 25,
+      "pageEnd": 26,
+      "target": "../sections/sec-028-discussion.md",
+      "narrative": null,
+      "content": "Associativity as a computational boundary. The associative nature of H preserves\nHilbert-space axioms (inner product, adjoint), enables a canonical tensor structure, and\nsupports universal multi-qubit composition. Via the matrix embedding, the full complex\ntoolkit—entanglement, universality, compilation—is inherited, while hardware realizations\nbeneﬁt from alignment with SU(2) control [4,5].\nNon-associativity as a structural obstruction. In O, alternativity is insufﬁcient for\nscalable architectures: Path dependence (Lemma 2), possible energy non-conservation\n(Proposition 3), and the lack of a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-029-conclusions.md",
+      "narrative": null,
+      "content": "•\nOver H, quantum computation is mathematically sound, universal, and polynomially\nequivalent to the complex model, with viable high-ﬁdelity realizations.\n•\nOver O, structural barriers from non-associativity necessitate conﬁnement to associa-\ntive sectors, symmetry protection or decoupling, with nontrivial overheads.\n•\nFuture directions include scaling associative-conﬁnement architectures, reﬁning G2-\ninvariant codes, advancing algebra-aware compilers, and exploring hypercomplex\nencodings in simulation and learning [5].\nFunding: This research received no external funding.\nData Availability Sta",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quaternion-to-Complex Embedding and Proof Details",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-030-quaternion-to-complex-embedding-and-proof-detail.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Explicit Embedding H-3.45muM2(C)",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-031-explicit-embedding-h-345mum2c.md",
+      "narrative": null,
+      "content": "A powerful tool for connecting quaternions to standard quantum mechanics is their\nrepresentation as 2 × 2 complex matrices. The algebra of quaternions is isomorphic to a\nsubalgebra of the 2 × 2 complex matrices M2(C). A general quaternion q = a + bi + cj + dk\ncan be represented as the matrix:\nq 7→\n \na + bi\nc + di\n−c + di\na −bi\n!\n.\n(A1)\nUnder this mapping, the quaternion basis units {1, i, j, k} have a direct correspondence\nwith the identity matrix I and the Pauli matrices (σx, σy, σz), up to a factor of −i:\n1 7→\n \n1\n0\n0\n1\n!\n= I\n(A2)\ni 7→\n \ni\n0\n0\n−i\n!\n= iσz\n(A3)\nj 7→\n \n0\n1\n−1\n0\n!\n= −iσy\n(A4)\nk",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Complexity Overhead—Proof-LEVEL Details",
+      "pageStart": 27,
+      "pageEnd": 27,
+      "target": "../sections/sec-032-complexity-overheadproof-level-details.md",
+      "narrative": null,
+      "content": "The most immediate cost comes from managing the ambiguity of gate sequences.\nAs demonstrated in Section 4.3.1 [5], a circuit diagram specifying a temporal sequence of\ngates is an incomplete description for an octonionic computer. To render a computation\ndeterministic, a speciﬁc association order for all operations must be enforced. The only\nphysically consistent way to do this is to ensure that any group of operators being applied\nsimultaneously or in a tight sequence is mutually associative.\nBeyond the increased gate count required to manage non-associativity, another critical\nmeasure of comp",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Synthesis of Contributions and Answers to Research Questions—Additional Details",
+      "pageStart": 27,
+      "pageEnd": 30,
+      "target": "../sections/sec-033-synthesis-of-contributions-and-answers-to-resear.md",
+      "narrative": null,
+      "content": "The overarching aim of this thesis was to explore the viability and implications of ex-\ntending quantum formalism to quaternionic (H) and octonionic (O) structures for quantum\ncomputing. This exploration was guided by speciﬁc objectives that sought to construct\nmodels of quantum computing based on these algebras, analyze their automorphisms,\nand investigate the limitations of non-associative structures in multi-qubit systems. Our\ncontributions provide a comprehensive understanding of the theoretical landscape and\nexperimental challenges inherent in such generalizations.\nQuaternionic Quantum Co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Gate Overhead from Associativity Management",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-034-gate-overhead-from-associativity-management.md",
+      "narrative": null,
+      "content": "The Strategy of Decomposition\nThis leads to a “divide and conquer” strategy as the default method for implementing\noctonionic logic. Any complex, non-associative operation must be decomposed into a\nsequence of smaller, elementary steps, where each step occurs entirely within a single,\nwell-behaved associative (quaternionic) subalgebra.\nConsider a logical operation that involves three non-associating octonionic operators,\nA, B, and C, which we wish to apply to a state |ψ⟩in a speciﬁc order, for example, to\ncompute (AB)C|ψ⟩. A naive implementation is impossible. Instead, the process must be\nbrok",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "State-Space Overhead: The Cost of Complex Embedding",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "../sections/sec-035-state-space-overhead-the-cost-of-complex-embeddi.md",
+      "narrative": null,
+      "content": "Dimensionality Analysis of a Single Octo-Qubit\nLet us begin by analyzing the resource cost for a single octo-qubit. As established in\nChapter 2 [5], an octonion is an element of an 8-dimensional real vector space. A single\nocto-qubit state, |ψ⟩= o1|0⟩+ o2|1⟩, is described by two such octonions, meaning its state\nvector lives in a 16-dimensional real vector space before normalization.\nTo represent this information within the standard model, we must ﬁnd a complex\nHilbert space of at least this dimension. A system of m complex qubits has a state space\nC2m, which corresponds to a 2 · 2m = 2m+1-dim",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Path-Ordered Propagators and Magnus Expansion with Associators",
+      "pageStart": 32,
+      "pageEnd": 33,
+      "target": "../sections/sec-036-path-ordered-propagators-and-magnus-expansion-wi.md",
+      "narrative": null,
+      "content": "with Associators\nThe path-ordered propagator deﬁned in the previous section provides a formal, con-\nstructive solution to the time-evolution operator in an octonionic system. However, as\nan inﬁnite product, it is often impractical for both analytical and numerical work. In\nstandard quantum mechanics, a powerful alternative for analyzing time evolution is the\nMagnus expansion. This method seeks to express the unitary evolution operator as a single\nexponential, U(t) = exp(Ω(t)), where the operator Ω(t) is given by an inﬁnite series. The\nkey advantage of this approach is that truncating the serie",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Non-Associative Hamiltonian and Its Consequences—Additional Details",
+      "pageStart": 33,
+      "pageEnd": 33,
+      "target": "../sections/sec-037-the-non-associative-hamiltonian-and-its-conseque.md",
+      "narrative": null,
+      "content": "In quantum mechanics, the Hamiltonian is the observable corresponding to the total\nenergy of the system and, via the Schrödinger equation, the generator of time evolution.\nIn the standard and quaternionic models, it is a well-behaved self-adjoint operator acting\non a Hilbert space. Its algebraic properties are consistent and unambiguous because the\nunderlying ﬁeld (C) or algebra (H) is associative.\nWhen we construct a Hamiltonian over the octonions, this consistency is lost. An\noctonionic Hamiltonian is formally an element of the algebra of observables on an\noctonionic state space, but its non",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Operator Ordering and Emergent Non-Local Effects",
+      "pageStart": 33,
+      "pageEnd": 35,
+      "target": "../sections/sec-038-operator-ordering-and-emergent-non-local-effects.md",
+      "narrative": null,
+      "content": "The ﬁrst major challenge in formulating a consistent octonionic quantum theory\narises when considering Hamiltonians that describe interacting subsystems. In standard\nquantum mechanics, an interaction Hamiltonian is composed of products of operators,\nand the associativity of the underlying complex algebra guarantees that such products\nare unambiguous. For three or more operators, the grouping of operations is irrelevant:\n(AB)C = A(BC).\nThis fundamental property of composition fails for the octonions. Let us deﬁne a\ngeneral octonionic Hamiltonian formally as a linear combination of its basis ele",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Breakdown of Energy Conservation: A Formal Derivation",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "../sections/sec-039-the-breakdown-of-energy-conservation-a-formal-de.md",
+      "narrative": null,
+      "content": "One of the most fundamental principles in physics is the connection between sym-\nmetry and conservation laws, as formalized by Noether’s theorem. In standard quantum\nmechanics, the symmetry of physical laws under time translation implies that for any\nclosed system with a time-independent Hamiltonian, the total energy is conserved. This\nprinciple is a cornerstone of our understanding of the physical world.\nThis section demonstrates that this fundamental connection between a time-independent\nHamiltonian and energy conservation is severed in a non-associative algebra. We will show\nthat for a gene",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Principle of Associative Confinement",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-040-the-principle-of-associative-confinement.md",
+      "narrative": null,
+      "content": "The viability of this strategy is rooted in a fundamental property of the octonion\nalgebra. While not globally associative, the octonions are an alternative algebra.\nThe Algebraic Foundation: Alternativity\nAs deﬁned in Chapter 2 [5], an algebra is alternative if the subalgebra generated by\nany two of its elements is associative. This has a profound consequence: any quantum\noperation that involves only two distinct octonionic elements (and the identity) will behave\nassociatively. For example, a time evolution under a static Hamiltonian proportional to a\nsingle imaginary unit, H ∝ek, is describe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Implementing Gates in an Associative Subspace",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "../sections/sec-041-implementing-gates-in-an-associative-subspace.md",
+      "narrative": null,
+      "content": "The principle of associative conﬁnement provides a clear theoretical path to a consis-\ntent octonionic model. In this section, we put this principle into practice by demonstrating\nhow quantum gates can be explicitly constructed and applied within a restricted associative\nsubspace. We will show that by adhering to this conﬁnement, the ambiguous and ill-\ndeﬁned operations of the full octonionic algebra are replaced by the well-behaved, unitary\ntransformations of quaternionic quantum mechanics, as developed in Chapter 3 [5].\nThe Setup: Selecting a Quaternionic Subspace\nTo begin, we must choose a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Seven-Factor Decomposition and Decoupling Sequences",
+      "pageStart": 38,
+      "pageEnd": 38,
+      "target": "../sections/sec-042-seven-factor-decomposition-and-decoupling-sequen.md",
+      "narrative": null,
+      "content": "Appendix C.1. Seven-Factor Algebraic Synthesis\nTarget transformations decompose as U ≈U1U2 · · · U7 with each Ui in an associative\nsubalgebra, selected to minimize associator growth; depth and calibration overheads follow\nfrom the schedule design [5].\nAppendix C.2. Associator-Suppressing Dynamical Decoupling\nAlgorithm A1 Associator-Suppressing Decoupling (ASD)\n1: Fix an associative subalgebra H ⊂O\n2: for k = 1 to N do\n3:\nApply Ux, Uy, Uz within H (cyclic)\n4:\nFree evolution ∆t; apply reverse U†\nz , U†\ny, U†\nx\n5: end for\n6: Return ﬁnal state with reduced associator-induced coherent error\nSimulat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/quaternioms/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 38,
+      "pageEnd": 41,
+      "target": "../sections/sec-043-references.md",
+      "narrative": null,
+      "content": "1.\nHurwitz, A. Über die Composition der quadratischen Formen von beliebig vielen Variablen. In Nachrichten der Gesellschaft\nder Wissenschaften zu Göttingen, Mathematisch-Physikalische Klasse; Gesellschaft der Wissenschaften: Göttingen, Germany, 1898;\npp. 309–316.\n2.\nBaez, J.C. The Octonions. Bull. Am. Math. Soc. 2002, 39, 145–205. [CrossRef]\n3.\nFinkelstein, D.; Jauch, J.M.; Schiminovich, S.; Speiser, D. Foundations of Quaternion Quantum Mechanics. J. Math. Phys. 1962,\n3, 207–220. [CrossRef]\n4.\nAdler, S.L. Quaternionic Quantum Mechanics and Quantum Fields; Oxford University Press: New York, NY,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

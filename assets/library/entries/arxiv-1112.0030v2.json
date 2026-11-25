@@ -1,0 +1,251 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1112.0030v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1112.0030v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Setting the stage",
+      "pageStart": 1,
+      "pageEnd": 7,
+      "target": "../sections/sec-000-1-setting-the-stage.md",
+      "narrative": null,
+      "content": "\\label{sec:intro}\n\nQuantum knot invariants were introduced in 1980's \\cite{RT,Witt}:\nfor every representation $R$ of a Lie algebra $\\g$, one can define a polynomial invariant $\\bar{P}^{\\g,R}(K)$ of a knot $K$.\nIts {\\it reduced} version is\n\\be\n{P}^{\\g,R}(K) \\; = \\; \\frac{\\bar{P}^{\\g,R}(K)}{\\bar{P}^{\\g,R}({\\,\\raisebox{-.08cm}{\\includegraphics[width=.4cm]{unknot}}\\,})} \\,,\n\\ee\nwhere ${\\,\\raisebox{-.08cm}{\\includegraphics[width=.4cm]{unknot}}\\,}$ denotes the unknot.\n\nA categorification of the polynomial ${P}^{\\g,R}(K)$ (or its {\\it unreduced} version $\\bar{P}^{\\g,R}(K)$)\nis a doubly-graded homolog",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.0030v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1112.0030v2  [hep-th]  15 Mar 2012\nHomological algebra of knots and BPS states\nSergei Gukov and Marko Stoˇsi´c\nAbstract. It is known that knot homologies admit a physical description\nas spaces of open BPS states.\nWe study operators and algebras acting on\nthese spaces.\nThis leads to a very rich story, which involves wall crossing\nphenomena, algebras of closed BPS states acting on spaces of open BPS states,\nand deformations of Landau-Ginzburg models.\nOne important application to knot homologies is the existence of “colored\ndiﬀerentials” that relate homological invariants of knots colored b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.0030v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algebra of BPS states and its representations",
+      "pageStart": 7,
+      "pageEnd": 10,
+      "target": "../sections/sec-001-2-algebra-of-bps-states-and-its-representations.md",
+      "narrative": null,
+      "content": "\\label{sec:algebra}\n\nDifferentials in knot homology form a part of a larger\nalgebraic structure that has an elegant interpretation in the geometric / physical framework.\nBecause this algebraic structure has analogs in more general string / M-theory compactifications,\nin this section we shall consider aspects of such structure for an arbitrary Calabi-Yau 3-fold $X$\nwith extra branes supported on a general Lagrangian submanifold $L \\subset X$, {\\it e.g.}\n\\bea\n\\text{space-time} & : & \\qquad \\R \\times X \\times M_4 \\label{theoryC} \\\\\n\\text{M5-brane} & : &  \\qquad \\R \\times L \\times D \\nonumber\n\\eea",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.0030v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "B-model and matrix factorizations",
+      "pageStart": 10,
+      "pageEnd": 15,
+      "target": "../sections/sec-002-3-b-model-and-matrix-factorizations.md",
+      "narrative": null,
+      "content": "\\label{sec:matrix}\n\nLet us denote by $\\CH^{\\frak{g}, R}$ a homology theory of knots and links colored by a representation $R$ of the Lie algebra $\\frak{g}$.\nMany such homology theories can be constructed using categories of matrix factorizations \\cite{KRa,KRfoam,KRb,Khov,KRso,MSV,Yonezawa,Wu}.\nIn this approach, one of the main ingredients is a polynomial function $W_{\\frak{g},R}$ called the {\\it potential},\nassociated to every segment of a link (or, more generally, of a tangle) away from crossings.\nFor example, for the fundamental representation of $\\frak{g} = sl(N)$ the potential\nis a functio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.0030v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Colored HOMFLY homology",
+      "pageStart": 15,
+      "pageEnd": 25,
+      "target": "../sections/sec-003-4-colored-homfly-homology.md",
+      "narrative": null,
+      "content": "\\label{sec:reduced}\n\nIn this section we propose structural properties of the triply-graded theory categorifying\nthe colored version of the reduced HOMFLY polynomial.\nThe central role in this intricate network of structural properties belongs to the colored differentials,\nwhose existence we already motivated in the previous sections.\n\n\n\\subsection{Structural properties}\nLet $N$ and $r$  be positive integers, and\nlet $\\CH^{sl(N),S^r}(K)$ denote a reduced doubly-graded homology theory categorifying $P^{S^r}_N(K)$,\nthe polynomial invariant of a knot $K$ labeled with the $r$-th symmetric representa",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.0030v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mirror symmetry for knots",
+      "pageStart": 25,
+      "pageEnd": 30,
+      "target": "../sections/sec-004-5-mirror-symmetry-for-knots.md",
+      "narrative": null,
+      "content": "\\label{sec:mirror}\n\nIn this section, we observe a remarkable ``mirror symmetry'' relation \\eqref{mirwild}\nbetween two completely different triply-graded homology theories associated with symmetric and anti-symmetric representations of $sl(N)$,\nwhich will allow us to formulate even a bigger theory that will contain both.\nAs a first step, however, we need to extend the discussion in section \\ref{sec:reduced} to the HOMFLY homology colored\nby anti-symmetric representations of $sl(N)$.\n\n\n\\subsection{Anti-symmetric representations}\n\nMuch as for the symmetric representation $S^r$, we can repeat the",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.0030v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Unreduced colored HOMFLY homology",
+      "pageStart": 30,
+      "pageEnd": 36,
+      "target": "../sections/sec-005-6-unreduced-colored-homfly-homology.md",
+      "narrative": null,
+      "content": "\\label{sec:unreduced}\n\nHere we compute the unreduced colored superpolynomial and the colored HOMFLY polynomial\nof the unknot and the Hopf link by using the refined topological vertex approach from \\cite{GIKV}.\nThe formulas obtained there are partition functions, presented in the form of the quotient of two infinite series.\nBelow we find the explicit closed form expressions for the unreduced $S^r$-colored HOMFLY homology of the unknot and the Hopf link.\nMore precisely, we evaluate eq. (67) of \\cite{GIKV}, according to which the unreduced superpolynomial\n(= the Poincar\\'e polynomial of the unred",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.0030v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix A. Notations",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-006-appendix-a-notations.md",
+      "narrative": null,
+      "content": "K denotes a knot.\ndenotes the unknot.\nFor every positive integer r we have:\n• P\nSr\nN (K)(q) or P\nr\nz }| {\n· · ·\nN\n(K)(q) denotes the unreduced one-variable polynomial\nquantum invariant of K, labelled with the r-th symmetric representation of sl(N).\n• P Sr\nN (K)(q) or P\nr\nz }| {\n· · ·\nN\n(K)(q) denotes the reduced (a.k.a. normalized) one-\nvariable polynomial quantum invariant of K, labeled by the r-th symmetric rep-\nresentation of sl(N). It is obtained from the unnormalized polynomial P\nSr\nN (K)(q)\nby\nP Sr\nN (K) = P\nSr\nN (K)\nP\nSr\nN (\n)\n,\nso that P Sr\nN (\n) = 1.\n• P Sr(K)(a, q) or P\nr\nz }| {\n· ·",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.0030v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix B. Kauffman and S2 homologies of the knots 819 and 942",
+      "pageStart": 37,
+      "pageEnd": 41,
+      "target": "../sections/sec-007-appendix-b-kauffman-and-s2-homologies-of-the-kno.md",
+      "narrative": null,
+      "content": "(B.1) P (942)(a, q, t) = a(q−1t2+qt4)+(q−2t−1+1+2t+q2t3)+a−1(q−1t−2+q).\nIn particular, the reduced sl(2) Khovanov homology of 942 is:\nKh(942)(q, t)\n=\nP (942)(a = q2, q, t) =\nThe S invariant is S(942) = 0. Moreover, the δ-grading of a generator x of the\nhomology H (K) in our conventions is given by:\nδ(x) = t(x) −2a(x) −q(x).\nHOMOLOGICAL ALGEBRA OF KNOTS AND BPS STATES\n37\nN (K)(q) .\n• The corresponding polynomials and homologies for the anti-symmetric rep-\nresentations are denoted in the same way with Sr replaced by Λr.\nRemark A.1. Conventions for the superpolynomial in the vector rep-\nresentati",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.0030v2/blocks/rem-sec-007-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 37,
+      "pageEnd": 41,
+      "target": "rem-sec-007-01.md",
+      "narrative": null,
+      "content": "1. Conventions for the superpolynomial in the vector rep- resentation: The case r = 1 corresponds to the (ordinary) HOMFLY polynomial and the Khovanov-Rozansky homology. The corresponding superpolynomial, to- gether with the structure of the triply-graded homology was studied in [3].",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1112.0030v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix C. H3 homology of the figure-eight knot",
+      "pageStart": 41,
+      "pageEnd": 42,
+      "target": "../sections/sec-008-appendix-c-h3-homology-of-the-figure-eight-knot.md",
+      "narrative": null,
+      "content": "The Poincare polynomial of the H3 homology of the ﬁgure-eight knot 41 is\ngiven by:\nP3(41) = P\n(41)\n=\n1 + (1 + a−1qt−1)(1 + a−1t−1)(1 + a−1q−1t−1) ×\n×(1 + a−1q−3t−3)(1 + a−1q−4t−3)(1 + a−1q−5t−3)a3q6t6 +\n+(1 + q + q2)(1 + a−1qt−1)(1 + a−1q−3t−3)at2 +\n+(1 + q + q2)(1 + a−1qt−1)(1 + a−1t−1)(1 + a−1q−3t−3)(1 + a−1q−4t−3)a2q2t4.\nThis homology categoriﬁes the\n-colored HOMFLY polynomial of 41;\nP3(41)(a, q, t = −1) = P\n(41)(a, q).\n42\nSERGEI GUKOV AND MARKO STOˇSI´C\nFurthermore, this homology has all of the wanted properties - namely, there\nexist following diﬀerential ons H3(41):\n• canceling diﬀerentia",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.0030v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix D. Computation of the unreduced homology of the unknot",
+      "pageStart": 42,
+      "pageEnd": 44,
+      "target": "../sections/sec-009-appendix-d-computation-of-the-unreduced-homology.md",
+      "narrative": null,
+      "content": "For a nonnegative integer N we deﬁne the quantum dimension [N] to be\n[N] = qN −q−N\nq −q−1\n.\nAlso\n[N]! = [N][N −1] . . . [1] ,\nand\n\u0014N\nk\n\u0015\n= [N][N −1] . . . [N −k + 1]\n[k]!\n.\nFor a partition λ = (λ1, λ2, . . .), we set:\n|λ|\n=\nX\ni\nλi,\nn(λ)\n=\nX\ni\n(i −1)λi,\nm(λ)\n=\nX\ni\niλi,\n||λ||2\n=\nX\ni\nλ2\ni .\nBy λt, we denote the dual (conjugate) partition of λ. We have\nm(λ)\n=\nn(λ) + |λ|,\n2m(λ)\n=\n||λt||2 + |λ|.\nHOMOLOGICAL ALGEBRA OF KNOTS AND BPS STATES\n43\nWe also deﬁne\nκ(λ) := 2(||λ||2 −||λt||2) = 2(n(λt) −n(λ)).\nWe identify a partition and its corresponding Young diagram.\nFor a box x = (i, j) ∈λ, we deﬁne its co",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1112.0030v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 44,
+      "pageEnd": 46,
+      "target": "../sections/sec-010-references.md",
+      "narrative": null,
+      "content": "[1] N. Reshetikhin, V. Turaev, Invariants of 3-manifolds via link polynomials and quantum\ngroups, Invent. Math. 103 (1) (1991), 547–597.\n[2] E. Witten, Quantum ﬁeld theory and Jones polynomial, Commun. Math. Phys. 121 (1989),\n351–399.\n[3] N. M. Dunﬁeld, S. Gukov, J. Rasmussen, The Superpolynomial for Knot Homologies, Exper-\niment. Math. 15 (2006) 129, math.gt/0505662, 44pp.\n[4] S. Gukov, A. S. Schwarz, C. Vafa, Khovanov-Rozansky homology and topological strings, Lett.\nMath. Phys. 74 (2005) 53, hep-th/0412243.\n[5] S. Gukov, Surface Operators and Knot Homologies, proceedings of the International",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

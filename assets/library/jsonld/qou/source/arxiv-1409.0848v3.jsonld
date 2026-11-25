@@ -1,0 +1,74 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1409.0848v3/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1409.0848v3",
+  "contains": [
+    "library/arxiv-1409.0848v3/sections/sec-front-matter",
+    "library/arxiv-1409.0848v3/sections/sec-000",
+    "library/arxiv-1409.0848v3/sections/sec-001",
+    "library/arxiv-1409.0848v3/sections/sec-002",
+    "library/arxiv-1409.0848v3/sections/sec-003",
+    "library/arxiv-1409.0848v3/sections/sec-004",
+    "library/arxiv-1409.0848v3/sections/sec-005",
+    "library/arxiv-1409.0848v3/sections/sec-006",
+    "library/arxiv-1409.0848v3/sections/sec-007",
+    "library/arxiv-1409.0848v3/sections/sec-008",
+    "library/arxiv-1409.0848v3/sections/sec-009",
+    "library/arxiv-1409.0848v3/sections/sec-010",
+    "library/arxiv-1409.0848v3/sections/sec-011",
+    "library/arxiv-1409.0848v3/sections/sec-012",
+    "library/arxiv-1409.0848v3/sections/sec-013",
+    "library/arxiv-1409.0848v3/sections/sec-014",
+    "library/arxiv-1409.0848v3/sections/sec-015",
+    "library/arxiv-1409.0848v3/sections/sec-016",
+    "library/arxiv-1409.0848v3/sections/sec-017",
+    "library/arxiv-1409.0848v3/sections/sec-018",
+    "library/arxiv-1409.0848v3/sections/sec-019"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "FACTORIZATION HOMOLOGY OF STRATIFIED SPACES — This work forms a foundational study of factorization homology, or topological chiral homology, at the generality of stratiﬁed spaces with tangential\n\n**FACTORIZATION HOMOLOGY OF STRATIFIED SPACES**\n\n*DAVID AYALA, JOHN FRANCIS, AND HIRO LEE TANAKA*\n\n52 pp, 21 sections.\n\n**Abstract.** This work forms a foundational study of factorization homology, or topological chiral homology, at the generality of stratiﬁed spaces with tangential structures. Examples of such factorization homology theories include intersection homology, compactly supported stratiﬁed mapping spaces, and Hochschild homology with coeﬃcients. Our main theorem characterizes factorization homology theories by a generalization of the Eilenberg–Steenrod axioms; it can also be viewed as an analogue of the Baez–Dolan cobordism hypothesis formulated for the observables, rather than state spaces, of a topological quantum ﬁeld theory. Using these axioms, we extend the nonabelian Poincar´e duality of Salvatore and Lurie to the setting of stratiﬁed spaces – this is a nonabelian version of the Poincar´e duality given by intersection homology.\n\n**Outline.** Front matter; Introduction; 1 Recollections; 1.1 Stratified spaces; 2 Factorization; 2.1 Disk algebras; 2.2 Factorization homology; 2.3 Disks and finite subsets; 2.4 Localizing with respect to isotopy equival; 2.5 Pushforward; 2.6 Algebras over a closed interval; 2.7 Homology theories; 3 Homotopy invariant homology theories; 3.1 Classical homology theories; 3.2 1-point compactifications; 3.3 Compactly supported cohomology; 3.4 Non-abelian Poincaré duality; 4 Examples of factorization homology theories",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1409.0848&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1409.0848v3",
+    "title_source": "slug",
+    "source_file": "1409.0848v3.pdf",
+    "source_sha256": "5af73ef812ccee40711d79a3493ca54c62567ff03137e1820b3a2f3987784cb8",
+    "pages": 52,
+    "arxiv": {
+      "id": "1409.0848",
+      "version": "3",
+      "primary_class": "math.AT",
+      "stamp_date": "1 Jan 2016"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

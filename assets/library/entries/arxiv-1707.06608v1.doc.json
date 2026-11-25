@@ -1,0 +1,1935 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1707.06608v1",
+  "title": "Fractional Hopﬁons in the Faddeev-Skyrme model with a symmetry breaking potential",
+  "variant": "pdf",
+  "pages": 22,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": "1",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "The model",
+      "number": "2",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-the-model"
+    },
+    {
+      "level": 1,
+      "title": "Initial approximation",
+      "number": "3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-3-initial-approximation"
+    },
+    {
+      "level": 1,
+      "title": "Numerical results",
+      "number": "4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-4-numerical-results"
+    },
+    {
+      "level": 2,
+      "title": "Q=1",
+      "number": "4.1",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-41-q1"
+    },
+    {
+      "level": 2,
+      "title": "Q=2",
+      "number": "4.2",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-42-q2"
+    },
+    {
+      "level": 2,
+      "title": "Multisoliton configurations",
+      "number": "4.3",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-43-multisoliton-configurations"
+    },
+    {
+      "level": 3,
+      "title": "Degrees 3 and 4",
+      "number": "4.3.1",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-431-degrees-3-and-4"
+    },
+    {
+      "level": 3,
+      "title": "Degrees 5,6 and 7",
+      "number": "4.3.2",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-432-degrees-56-and-7"
+    },
+    {
+      "level": 1,
+      "title": "Compact solutions",
+      "number": "5",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-5-compact-solutions"
+    },
+    {
+      "level": 1,
+      "title": "Summary",
+      "number": "6",
+      "page": 20,
+      "pageLabel": "20",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-6-summary"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": "1",
+      "labelEnd": "1",
+      "words": 214,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "faddeev-skyrme model",
+          "heading": false
+        },
+        {
+          "term": "breaking potential",
+          "heading": false
+        },
+        {
+          "term": "symmetry breaking",
+          "heading": false
+        },
+        {
+          "term": "hopﬁons",
+          "heading": false
+        },
+        {
+          "term": "tubes",
+          "heading": false
+        },
+        {
+          "term": "solutions",
+          "heading": false
+        }
+      ],
+      "extract": "Fractional Hopﬁons in the Faddeev-Skyrme model with a symmetry breaking potential A. Samoilenka† and Ya. Shnir†⋆ †Department of Theoretical Physics and Astrophysics Belarusian State University, Minsk 220004, Belarus ⋆BLTP, JINR, Dubna, Russia June 17, 2021 Abstract We construct new solutions of the Faddeev-Skyrme model with a symmetry breaking potential admitting S1 vacuum. It includes, as a limiting case, the usual",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1707.06608v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 370,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "skyrme model",
+          "heading": false
+        },
+        {
+          "term": "faddeev-skyrme model",
+          "heading": false
+        },
+        {
+          "term": "multisoliton configurations",
+          "heading": false
+        },
+        {
+          "term": "field configurations",
+          "heading": false
+        },
+        {
+          "term": "breaking potential",
+          "heading": false
+        },
+        {
+          "term": "potential term",
+          "heading": false
+        },
+        {
+          "term": "gudnason",
+          "heading": false
+        },
+        {
+          "term": "pion field",
+          "heading": false
+        }
+      ],
+      "extract": "One of the most interesting topological solitons, which appear in the scalar field theories in 3+1 dimensional space-time, are so-called \\\"Hopfions\\\" [@Faddeev-Hopf; @Faddeev:1996zj]. These stable field configurations, whose topology is defined by the first Hopf map ${S}^3 \\mapsto {S}^2$, provide a first, and the best known example of knot solitons in field theory. It was suggested later that stable knotted vortex",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-the-model",
+      "number": "2",
+      "title": "The model",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 5,
+      "labelStart": "2",
+      "labelEnd": "5",
+      "words": 1694,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vec phi",
+          "heading": false
+        },
+        {
+          "term": "partial vec",
+          "heading": false
+        },
+        {
+          "term": "faddeev-skyrme model",
+          "heading": false
+        },
+        {
+          "term": "mathcal vec",
+          "heading": false
+        },
+        {
+          "term": "usual faddeev-skyrme",
+          "heading": false
+        },
+        {
+          "term": "point vec",
+          "heading": false
+        },
+        {
+          "term": "lagr",
+          "heading": false
+        },
+        {
+          "term": "phi times",
+          "heading": false
+        }
+      ],
+      "extract": "The Lagrangian density of the Faddeev-Skyrme model in (3+1)-dimensional flat space can be written in terms of the real triplet of scalar fields $\\vec\\phi=(\\phi_1,\\phi_2,\\phi_3)$ as [@Faddeev-Hopf; @Faddeev:1996zj] $$\\label{lagr} \\ensuremath{\\mathcal{L}}=\\int d^3 x\\left[c_2\\partial_\\mu \\vec\\phi\\cdot\\partial^\\mu \\vec\\phi - \\frac{c_4}{2}\\left(\\partial_\\mu \\vec\\phi\\times\\partial_\\nu \\vec\\phi\\right)^2 - V(\\phi)\\right]$$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-initial-approximation",
+      "number": "3",
+      "title": "Initial approximation",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 935,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sutcliffe",
+          "heading": false
+        },
+        {
+          "term": "symmetric hopfions",
+          "heading": false
+        },
+        {
+          "term": "hopf indexes",
+          "heading": false
+        },
+        {
+          "term": "initial configuration",
+          "heading": false
+        },
+        {
+          "term": "position curve",
+          "heading": false
+        },
+        {
+          "term": "rational map",
+          "heading": false
+        },
+        {
+          "term": "winding number",
+          "heading": false
+        },
+        {
+          "term": "hopf index",
+          "heading": false
+        }
+      ],
+      "extract": "The peculiarity of the Faddeev-Skyrme model is that the Hopf index is not a winding number, the boundary conditions are identical for configurations in all topological sectors. As usual, the energy minimization scheme needs an appropriate initial configuration in a given sector. The most effective approach here is related with the generalization of the rational map approximation, suggested by Sutcliffe",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-numerical-results",
+      "number": "4",
+      "title": "Numerical results",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 148,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hopfenergy",
+          "heading": false
+        },
+        {
+          "term": "ensuremath mathcal",
+          "heading": false
+        },
+        {
+          "term": "samoilenka",
+          "heading": false
+        },
+        {
+          "term": "grid",
+          "heading": false
+        },
+        {
+          "term": "potential",
+          "heading": false
+        }
+      ],
+      "extract": "To find the stationary points of the energy functional ([\\[hopfenergy\\]](#hopfenergy){reference-type=\"ref\" reference=\"hopfenergy\"}) with the potential ([\\[potential\\]](#potential){reference-type=\"ref\" reference=\"potential\"}) we make use of the numerical minimization technique described in [@Samoilenka:2015bsf; @Samoilenka:2016wys]. The fields are discretized on the grid with $150^3$, or $200^3$ point with spatial",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-41-q1",
+      "number": "4.1",
+      "title": "Q=1",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 10,
+      "labelStart": "6",
+      "labelEnd": "10",
+      "words": 1273,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "energy isosurface",
+          "heading": false
+        },
+        {
+          "term": "vec phi",
+          "heading": false
+        },
+        {
+          "term": "isosurfaces showing",
+          "heading": false
+        },
+        {
+          "term": "phi sin",
+          "heading": false
+        },
+        {
+          "term": "energy density",
+          "heading": false
+        },
+        {
+          "term": "components phi",
+          "heading": false
+        },
+        {
+          "term": "lagr",
+          "heading": false
+        },
+        {
+          "term": "hopfenergy",
+          "heading": false
+        }
+      ],
+      "extract": "First, we considered simplest unknot Hopfion in the sector of degree one. We set in ([\\[potential\\]](#potential){reference-type=\"ref\" reference=\"potential\"}) the angular parameter $\\alpha=\\pi/2$, thus this is the Heisenberg type potential which explicitly breaks the symmetry as $m\\neq 0$. In Fig. [1](#q1enmass){reference-type=\"ref\" reference=\"q1enmass\"} we present isosurfaces of the energy density of the $Q=1$",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-42-q2",
+      "number": "4.2",
+      "title": "Q=2",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 666,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "widetilde ensuremath",
+          "heading": false
+        },
+        {
+          "term": "ensuremath mathcal",
+          "heading": false
+        },
+        {
+          "term": "density isosurfaces",
+          "heading": false
+        },
+        {
+          "term": "faddeev-skyrme model",
+          "heading": false
+        },
+        {
+          "term": "isosurfaces showing",
+          "heading": false
+        },
+        {
+          "term": "energytable",
+          "heading": false
+        },
+        {
+          "term": "energy density",
+          "heading": false
+        },
+        {
+          "term": "pot-nitta",
+          "heading": false
+        }
+      ],
+      "extract": "Let us consider now the Hopfion solutions in the topological sector of degree two. We can see that, as in previously considered case of the $Q=1$ Hopfion, for relatively large value of the mass parameter $m$ the spacial distribution of the energy density follows the location curves $\\mathcal{C}_1 = \\vec \\phi^{-1}(1,0,0)$ and $\\mathcal{C}_{-1} = \\vec \\phi^{-1}(-1,0,0)$. Indeed, in Fig.",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-43-multisoliton-configurations",
+      "number": "4.3",
+      "title": "Multisoliton configurations",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 11,
+      "labelStart": "11",
+      "labelEnd": "11",
+      "words": 2,
+      "summary": null,
+      "keywords": [],
+      "extract": "Multisoliton conﬁgurations",
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-431-degrees-3-and-4",
+      "number": "4.3.1",
+      "title": "Degrees 3 and 4",
+      "level": 3,
+      "pageStart": 11,
+      "pageEnd": 18,
+      "labelStart": "11",
+      "labelEnd": "18",
+      "words": 1297,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "widetilde ensuremath",
+          "heading": false
+        },
+        {
+          "term": "ensuremath mathcal",
+          "heading": false
+        },
+        {
+          "term": "mathcal vec",
+          "heading": false
+        },
+        {
+          "term": "hopftable",
+          "heading": false
+        },
+        {
+          "term": "energy configuration",
+          "heading": false
+        },
+        {
+          "term": "curves mathcal",
+          "heading": false
+        },
+        {
+          "term": "height",
+          "heading": false
+        },
+        {
+          "term": "tab configuration",
+          "heading": false
+        }
+      ],
+      "extract": "A peculiar feature of the Faddeev-Skyrme model is that for a given degree $Q$, there are usually several different stable static soliton solutions of similar energy, furthermore, the number of solutions grows with $Q$. We considered both the configurations with minimal energies and the local minima in a given sector. Results of our numerical simulations are summarized in Table",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-432-degrees-56-and-7",
+      "number": "4.3.2",
+      "title": "Degrees 5,6 and 7",
+      "level": 3,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 622,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ensuremath mathcal",
+          "heading": false
+        },
+        {
+          "term": "widetilde ensuremath",
+          "heading": false
+        },
+        {
+          "term": "link ensuremath",
+          "heading": false
+        },
+        {
+          "term": "hopftable",
+          "heading": false
+        },
+        {
+          "term": "mathcal vec",
+          "heading": false
+        },
+        {
+          "term": "curve mathcal",
+          "heading": false
+        },
+        {
+          "term": "massless faddeev-skyrme",
+          "heading": false
+        },
+        {
+          "term": "faddeev-skyrme model",
+          "heading": false
+        }
+      ],
+      "extract": "The $Q=5$ minimal energy solution is $5(\\ensuremath{\\mathcal{L}}_{1,2}\\between\\ensuremath{\\mathcal{L}}_{1,2})_{\\ensuremath{\\mathcal{L}}_{1,2}}$, it is a link, which is similar to the usual minimal energy charge five Hopfion in the massless Faddeev-Skyrme model. However, the structure of the energy density of this solution in the model with Heisenberg type potential is different, one can clearly identify four linked",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-5-compact-solutions",
+      "number": "5",
+      "title": "Compact solutions",
+      "level": 1,
+      "pageStart": 19,
+      "pageEnd": 20,
+      "labelStart": "19",
+      "labelEnd": "20",
+      "words": 367,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "submodel",
+          "heading": false
+        },
+        {
+          "term": "lagr",
+          "heading": false
+        },
+        {
+          "term": "breaking potential",
+          "heading": false
+        },
+        {
+          "term": "vec phi",
+          "heading": false
+        },
+        {
+          "term": "decaying tail",
+          "heading": false
+        },
+        {
+          "term": "hopfions",
+          "heading": false
+        },
+        {
+          "term": "spacial distribution",
+          "heading": false
+        },
+        {
+          "term": "mathcal vec",
+          "heading": false
+        }
+      ],
+      "extract": "It is known that, according to the scaling arguments of the Derrick's theorem, stable soliton solitons may exist in the truncated $c_2=0$ submodel of ([\\[lagr\\]](#lagr){reference-type=\"ref\" reference=\"lagr\"}), which contains only Skyrme term and a potential [@Foster:2010zb; @Adam-compact]. This submodel effectively corresponds to the infinite mass limit $m\\to \\infty$. Interestingly, these Hopfions usually are",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-6-summary",
+      "number": "6",
+      "title": "Summary",
+      "level": 1,
+      "pageStart": 20,
+      "pageEnd": 22,
+      "labelStart": "20",
+      "labelEnd": "22",
+      "words": 1139,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mathcal vec",
+          "heading": false
+        },
+        {
+          "term": "vec phi",
+          "heading": false
+        },
+        {
+          "term": "location curves",
+          "heading": false
+        },
+        {
+          "term": "breaking potential",
+          "heading": false
+        },
+        {
+          "term": "faddeev-skyrme model",
+          "heading": false
+        },
+        {
+          "term": "heisenberg type",
+          "heading": false
+        },
+        {
+          "term": "symmetry breaking",
+          "heading": false
+        },
+        {
+          "term": "hopfion",
+          "heading": false
+        }
+      ],
+      "extract": "The main purpose of this work was to construct Hopfion solutions of the Faddeev-Skyrme model with symmetry breaking potential $V=m^2\\left(\\phi_1\\sin\\alpha-(1-\\phi_3)\\cos\\alpha\\right)^2$, which interpolates between the usual form of the \"pion mass\" potential as $\\alpha=0$ and the Heisenberg type potential as $\\alpha = \\pi/2$, hence the vacuum of the model is a circle $S^1$. Further, we found that, in contrast to the",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "ensuremath mathcal",
+      "heading": false
+    },
+    {
+      "term": "hopfion configuration",
+      "heading": false
+    },
+    {
+      "term": "faddeev-skyrme model",
+      "heading": true
+    },
+    {
+      "term": "potential phi",
+      "heading": false
+    },
+    {
+      "term": "mathcal vec",
+      "heading": false
+    },
+    {
+      "term": "widetilde ensuremath",
+      "heading": false
+    },
+    {
+      "term": "energy configuration",
+      "heading": false
+    },
+    {
+      "term": "hopfion solutions",
+      "heading": false
+    },
+    {
+      "term": "usual faddeev-skyrme",
+      "heading": false
+    },
+    {
+      "term": "massless faddeev-skyrme",
+      "heading": false
+    },
+    {
+      "term": "breaking potential",
+      "heading": false
+    },
+    {
+      "term": "type potential",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "Isosurfaces showing the energy density distributions (ﬁrst column), φ1 = ±0.9 (second column) and φ3 = −0.9 of the Q = 1 Hopﬁon solutions in the model (1) with potential",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Proﬁles of the ﬁeld components of the Q = 1 Hopﬁons in the model (1) with potential V = m2φ2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "Q = 1 Hopﬁon solution at c2 = 0.5, c4 = 1, m = 4. Top row: location curves of the preimages of the points⃗φ = (±0.9, 0, 0) together with the energy isosurface at E = 45 (left) and E = 100 (right). Bottom row: location curves of the vector⃗φ = (0, ±0.9, 0) (left) and φ = (0, 0, −0.9) together with th",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "4",
+      "title": "Isosurfaces showing the energy density of the (A1 ≬A1)A1,1 Hopﬁon of degree one in the Faddeev-Skyrme model (4) with the potential V = m2 \u0000",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "5",
+      "title": "Isosurfaces showing the energy density of the 2( e",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "6",
+      "title": "Isosurfaces showing the energy density of the Q = 2 Hopﬁon in the Faddeev-Skyrme model (4) with the potential V = m2 \u0000",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "11",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "3",
+      "title": "However, as the parameter α in (6) varies, this conﬁguration becomes a saddle point, our algorithm is unable to ﬁnd this solution in the model with potential (15) (see Table 3)",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "7",
+      "title": "Isosurface of the energy density of the 3( e",
+      "page": 12,
+      "pageLabel": "12",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "ρE = 15 isosurface, φ1 = ±0.9 and φ3 = −0.9 for Q = 1 −7 Hopﬁons in model with",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "8",
+      "title": "Isosurfaces showing the energy density distributions E = 40 (ﬁrst column), φ1 = ±0.9 (second column) and φ3 = −0.8 of the Q = 1, 2, 3 \"compact\" Hopﬁons (ﬁrst, second and third",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "img-p007-1",
+      "file": "images/img-p007-1.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-2",
+      "file": "images/img-p007-2.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-3",
+      "file": "images/img-p007-3.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-4",
+      "file": "images/img-p007-4.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-5",
+      "file": "images/img-p007-5.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-6",
+      "file": "images/img-p007-6.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-7",
+      "file": "images/img-p007-7.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-8",
+      "file": "images/img-p007-8.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-9",
+      "file": "images/img-p007-9.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-10",
+      "file": "images/img-p007-10.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-11",
+      "file": "images/img-p007-11.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p007-12",
+      "file": "images/img-p007-12.png",
+      "page": 7,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p009-1",
+      "file": "images/img-p009-1.png",
+      "page": 9,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p009-2",
+      "file": "images/img-p009-2.png",
+      "page": 9,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p009-3",
+      "file": "images/img-p009-3.png",
+      "page": 9,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p009-4",
+      "file": "images/img-p009-4.png",
+      "page": 9,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-1",
+      "file": "images/img-p010-1.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-2",
+      "file": "images/img-p010-2.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-3",
+      "file": "images/img-p010-3.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p010-4",
+      "file": "images/img-p010-4.png",
+      "page": 10,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-1",
+      "file": "images/img-p011-1.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p011-2",
+      "file": "images/img-p011-2.png",
+      "page": 11,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-1",
+      "file": "images/img-p012-1.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-2",
+      "file": "images/img-p012-2.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p012-3",
+      "file": "images/img-p012-3.png",
+      "page": 12,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-1",
+      "file": "images/img-p013-1.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-2",
+      "file": "images/img-p013-2.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-3",
+      "file": "images/img-p013-3.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-4",
+      "file": "images/img-p013-4.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-5",
+      "file": "images/img-p013-5.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-6",
+      "file": "images/img-p013-6.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-7",
+      "file": "images/img-p013-7.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-8",
+      "file": "images/img-p013-8.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-9",
+      "file": "images/img-p013-9.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-10",
+      "file": "images/img-p013-10.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-11",
+      "file": "images/img-p013-11.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-12",
+      "file": "images/img-p013-12.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-13",
+      "file": "images/img-p013-13.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-14",
+      "file": "images/img-p013-14.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-15",
+      "file": "images/img-p013-15.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-16",
+      "file": "images/img-p013-16.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-17",
+      "file": "images/img-p013-17.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-18",
+      "file": "images/img-p013-18.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-19",
+      "file": "images/img-p013-19.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-20",
+      "file": "images/img-p013-20.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-21",
+      "file": "images/img-p013-21.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-22",
+      "file": "images/img-p013-22.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-23",
+      "file": "images/img-p013-23.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p013-24",
+      "file": "images/img-p013-24.png",
+      "page": 13,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-1",
+      "file": "images/img-p014-1.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-2",
+      "file": "images/img-p014-2.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-3",
+      "file": "images/img-p014-3.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-4",
+      "file": "images/img-p014-4.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-5",
+      "file": "images/img-p014-5.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-6",
+      "file": "images/img-p014-6.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-7",
+      "file": "images/img-p014-7.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-8",
+      "file": "images/img-p014-8.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-9",
+      "file": "images/img-p014-9.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-10",
+      "file": "images/img-p014-10.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-11",
+      "file": "images/img-p014-11.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-12",
+      "file": "images/img-p014-12.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-13",
+      "file": "images/img-p014-13.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-14",
+      "file": "images/img-p014-14.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-15",
+      "file": "images/img-p014-15.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-16",
+      "file": "images/img-p014-16.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-17",
+      "file": "images/img-p014-17.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-18",
+      "file": "images/img-p014-18.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-19",
+      "file": "images/img-p014-19.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-20",
+      "file": "images/img-p014-20.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-21",
+      "file": "images/img-p014-21.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-22",
+      "file": "images/img-p014-22.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-23",
+      "file": "images/img-p014-23.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p014-24",
+      "file": "images/img-p014-24.png",
+      "page": 14,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-1",
+      "file": "images/img-p015-1.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-2",
+      "file": "images/img-p015-2.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-3",
+      "file": "images/img-p015-3.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-4",
+      "file": "images/img-p015-4.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-5",
+      "file": "images/img-p015-5.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-6",
+      "file": "images/img-p015-6.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-7",
+      "file": "images/img-p015-7.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-8",
+      "file": "images/img-p015-8.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-9",
+      "file": "images/img-p015-9.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-10",
+      "file": "images/img-p015-10.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-11",
+      "file": "images/img-p015-11.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-12",
+      "file": "images/img-p015-12.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-13",
+      "file": "images/img-p015-13.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-14",
+      "file": "images/img-p015-14.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-15",
+      "file": "images/img-p015-15.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-16",
+      "file": "images/img-p015-16.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-17",
+      "file": "images/img-p015-17.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-18",
+      "file": "images/img-p015-18.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-19",
+      "file": "images/img-p015-19.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-20",
+      "file": "images/img-p015-20.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-21",
+      "file": "images/img-p015-21.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-22",
+      "file": "images/img-p015-22.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-23",
+      "file": "images/img-p015-23.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-24",
+      "file": "images/img-p015-24.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-25",
+      "file": "images/img-p015-25.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-26",
+      "file": "images/img-p015-26.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p015-27",
+      "file": "images/img-p015-27.png",
+      "page": 15,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-1",
+      "file": "images/img-p016-1.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-2",
+      "file": "images/img-p016-2.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-3",
+      "file": "images/img-p016-3.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-4",
+      "file": "images/img-p016-4.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-5",
+      "file": "images/img-p016-5.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-6",
+      "file": "images/img-p016-6.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-7",
+      "file": "images/img-p016-7.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-8",
+      "file": "images/img-p016-8.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-9",
+      "file": "images/img-p016-9.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-10",
+      "file": "images/img-p016-10.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-11",
+      "file": "images/img-p016-11.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-12",
+      "file": "images/img-p016-12.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-13",
+      "file": "images/img-p016-13.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-14",
+      "file": "images/img-p016-14.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-15",
+      "file": "images/img-p016-15.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-16",
+      "file": "images/img-p016-16.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-17",
+      "file": "images/img-p016-17.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p016-18",
+      "file": "images/img-p016-18.png",
+      "page": 16,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p019-1",
+      "file": "images/img-p019-1.png",
+      "page": 19,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p019-2",
+      "file": "images/img-p019-2.png",
+      "page": 19,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p019-3",
+      "file": "images/img-p019-3.png",
+      "page": 19,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p019-4",
+      "file": "images/img-p019-4.png",
+      "page": 19,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p019-5",
+      "file": "images/img-p019-5.png",
+      "page": 19,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p019-6",
+      "file": "images/img-p019-6.png",
+      "page": 19,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p019-7",
+      "file": "images/img-p019-7.png",
+      "page": 19,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p019-8",
+      "file": "images/img-p019-8.png",
+      "page": 19,
+      "narratives": {},
+      "state": "draft"
+    },
+    {
+      "id": "img-p019-9",
+      "file": "images/img-p019-9.png",
+      "page": 19,
+      "narratives": {},
+      "state": "draft"
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 11,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 12,
+      "note": "3 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "found",
+      "count": 127
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "3 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 12 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1707.06608v1"
+  }
+}

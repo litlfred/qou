@@ -1,0 +1,66 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-math-9802116v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "Quasialgebra structure of the octonions",
+  "contains": [
+    "library/arxiv-math-9802116v1/sections/sec-front-matter",
+    "library/arxiv-math-9802116v1/sections/sec-000",
+    "library/arxiv-math-9802116v1/sections/sec-001",
+    "library/arxiv-math-9802116v1/sections/sec-002",
+    "library/arxiv-math-9802116v1/sections/sec-003",
+    "library/arxiv-math-9802116v1/sections/sec-004",
+    "library/arxiv-math-9802116v1/sections/sec-005",
+    "library/arxiv-math-9802116v1/sections/sec-006",
+    "library/arxiv-math-9802116v1/sections/sec-007",
+    "library/arxiv-math-9802116v1/sections/sec-008",
+    "library/arxiv-math-9802116v1/sections/sec-009"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "Quasialgebra structure of the octonions — We show that the octonions are a twisting of the group algebra of Z2 × Z2 × Z2 in the quasitensor category of representations of a quasi-Hopf algebra asso\n\n**Quasialgebra structure of the octonions**\n\n*Helena Albuquerque1*\n\n34 pp, 11 sections.\n\n**Abstract.** We show that the octonions are a twisting of the group algebra of Z2 × Z2 × Z2 in the quasitensor category of representations of a quasi-Hopf algebra asso- ciated to a group 3-cocycle. We consider general quasi-associative algebras of this type and some general constructions for them, including quasi-linear algebra and representation theory, and an automorphism quasi-Hopf algebra. Other examples include the higher 2n-onion Cayley algebras and examples associated to Hadamard matrices.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries: General constructions; 3 More about the quasi-algebras kFG; 4 Cayley algebras; ii The quaternion algebra is of this form with; iii The octonion algebra is of this form with; 5 New quasialgebras; 6 Automorphism quasi-Hopf algebras; 7 Quasiassociative linear algebra; References",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "arxiv-math-9802116v1",
+    "title_source": "editorial",
+    "title_from": "structure.json metadata.title_correction.title",
+    "title_verified": true,
+    "title_correction": {
+      "title": "Quasialgebra structure of the octonions",
+      "basis": "Printed title on page 1 (H. Albuquerque and S. Majid, DAMTP/97-138); the extracted title was the arXiv stamp",
+      "extracted_title": "arXiv:math/9802116v1 [math.QA] 25 Feb 1998",
+      "corrected_on": "2026-11-15",
+      "extracted": "Quasialgebra structure of the octonions"
+    },
+    "source_file": "9802116v1.pdf",
+    "source_sha256": "be7999751ffb6db38d57c4bafc589c9a8683a59a0554df9adb28cecb3f4370bf",
+    "pages": 34,
+    "arxiv": {
+      "id": "math/9802116",
+      "version": "1",
+      "primary_class": null,
+      "stamp_date": "25 Feb 1998"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

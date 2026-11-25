@@ -1,0 +1,79 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1801.04409v4/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1801.04409v4",
+  "contains": [
+    "library/arxiv-1801.04409v4/sections/sec-front-matter",
+    "library/arxiv-1801.04409v4/sections/sec-000",
+    "library/arxiv-1801.04409v4/sections/sec-001",
+    "library/arxiv-1801.04409v4/sections/sec-002",
+    "library/arxiv-1801.04409v4/sections/sec-003",
+    "library/arxiv-1801.04409v4/sections/sec-004",
+    "library/arxiv-1801.04409v4/sections/sec-005",
+    "library/arxiv-1801.04409v4/sections/sec-006",
+    "library/arxiv-1801.04409v4/sections/sec-007",
+    "library/arxiv-1801.04409v4/sections/sec-008",
+    "library/arxiv-1801.04409v4/sections/sec-009",
+    "library/arxiv-1801.04409v4/sections/sec-010",
+    "library/arxiv-1801.04409v4/sections/sec-011",
+    "library/arxiv-1801.04409v4/sections/sec-012",
+    "library/arxiv-1801.04409v4/sections/sec-013",
+    "library/arxiv-1801.04409v4/sections/sec-014",
+    "library/arxiv-1801.04409v4/sections/sec-015",
+    "library/arxiv-1801.04409v4/sections/sec-016",
+    "library/arxiv-1801.04409v4/sections/sec-017",
+    "library/arxiv-1801.04409v4/sections/sec-018",
+    "library/arxiv-1801.04409v4/sections/sec-019",
+    "library/arxiv-1801.04409v4/sections/sec-020",
+    "library/arxiv-1801.04409v4/sections/sec-021",
+    "library/arxiv-1801.04409v4/sections/sec-022",
+    "library/arxiv-1801.04409v4/sections/sec-023",
+    "library/arxiv-1801.04409v4/sections/sec-024"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "ON SEMISIMPLIFICATION OF TENSOR CATEGORIES — We develop the theory of semisimpliﬁcations of ten- sor categories deﬁned by Barrett and Westbury.\n\n**ON SEMISIMPLIFICATION OF TENSOR CATEGORIES**\n\n*To Sasha Beilinson and Vitya Ginzburg*\n\n35 pp, 26 sections.\n\n**Abstract.** We develop the theory of semisimpliﬁcations of ten- sor categories deﬁned by Barrett and Westbury. In particular, we compute the semisimpliﬁcation of the category of representations of a ﬁnite group in characteristic p in terms of representations of the normalizer of its Sylow p-subgroup. This allows us to compute the semisimpliﬁcation of the representation category of the sym- metric group Sn+p in characteristic p, where 0 ≤n ≤p −1, and of the Deligne category RepabSt, where t ∈N. We also compute the semisimpliﬁcation of the category of representations of the Kac-De Concini quantum group of the Borel subalgebra of sl2.\n\n**Outline.** Front matter; 1 Introduction; 2 Preliminaries; 2.1 Tensor ideals; 2.2 Semisimplification of a spherical tensor c; 2.3 Generalization to pivotal Karoubian catego; 3 General results on semisimplification of ten; 3.1 Splitting of the semisimplification functo; 3.2 Compatibility of semisimplification with e; 3.3 Compatibility of negligible morphisms with; 4.1 The result; 4 Semisimplification of representation categor; 4.2 Proof of Theorem 4.2; 4.3 The case of Sylow subgroup of prime order; 4.4 The case of the symmetric group Sp+n, wher; 4.5 Application: the semisimplification of the; 5 Semisimplification of some non-symmetric cat; 5.1 Generic q",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1801.04409&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1801.04409v4",
+    "title_source": "slug",
+    "source_file": "1801.04409v4.pdf",
+    "source_sha256": "db61d011e3775aca54c0cc5b4f74b48d028227bf952482c6ff47f98492ee5d3f",
+    "pages": 35,
+    "arxiv": {
+      "id": "1801.04409",
+      "version": "4",
+      "primary_class": "math.RT",
+      "stamp_date": "9 Nov 2019"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

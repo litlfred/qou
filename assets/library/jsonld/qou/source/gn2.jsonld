@@ -1,0 +1,44 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/gn2/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "gn2",
+  "contains": [
+    "library/gn2/sections/sec-front-matter",
+    "library/gn2/sections/sec-000",
+    "library/gn2/sections/sec-001"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "SOME RESULTS ABOUT THE KAUFFMAN BRACKET SKEIN MODULE OF THE TWIST KNOT EXTERIOR — In this paper, we list in explicit form the factoring relations of the Kauﬀman bracket skein module (KBSM for short)\n\n**SOME RESULTS ABOUT THE KAUFFMAN BRACKET SKEIN MODULE OF THE TWIST KNOT EXTERIOR**\n\n*R˘AZVAN GELCA AND FUMIKAZU NAGASATO*\n\n11 pp, 3 sections.\n\n**Abstract.** In this paper, we list in explicit form the factoring relations of the Kauﬀman bracket skein module (KBSM for short) of a twist knot exterior. This is done using curves decorated by characters of irreducible SL(2, C)-representations. In the process, we exhibit a relation which holds in the KBSM of the knot exterior, called the minimal relation. In the ﬁnal section we prove that, when specializing the variable of the Kauﬀman bracket at t = −1, the minimal relation becomes the deﬁning polynomial of the SL(2, C)-character variety of the twist knot. 1. Motivation and background 1.1. Motivation. The Kauﬀman bracket skein module of a 3-manifold was intro- duced by J. Przyticki as a natural generalization of the Kauﬀman bracket to general 3-manifolds. It was later linked to the character variety of SL(2, C)-representations of the fundamental group of the manifold [B1], [PS].\n\n**Outline.** Front matter; 1.2 The Kauﬀman bracket skein module of the m-; 2.1 The “minimal relation” in the KBSM of the",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "meta": {
+    "doc_id": "gn2",
+    "title_source": "slug",
+    "source_file": "gn2.pdf",
+    "source_sha256": "ffe8965c496dbb2ff99fb515692fe8738823a3c6177b8e1efaa3956384969d5c",
+    "pages": 11,
+    "arxiv": null,
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

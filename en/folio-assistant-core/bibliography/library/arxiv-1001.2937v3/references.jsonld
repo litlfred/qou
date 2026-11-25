@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1001.2937v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Microscopic Spectrum of the Wilson Dirac Operator",
+      "dcterms:creator": [
+        "Damgaard, P.H.",
+        "Splittorff, 1 K.",
+        "2",
+        "Verbaarschot3, J.J.M."
+      ],
+      "dcterms:issued": "D:20181023",
+      "dcterms:identifier": "https://arxiv.org/abs/1001.2937",
+      "dcterms:source": "library/arxiv-1001.2937v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1001.2937v3"
+    }
+  ]
+}

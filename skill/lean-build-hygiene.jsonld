@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/lean-build-hygiene.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/lean-build-hygiene",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "lean-build-hygiene",
+      "title": "Lean Build & Community-Library Hygiene (`lean-build-hygiene`)",
+      "description": "Canonical CPU-throttled Lean 4 build, overlay-cone verification, script router, and Mathlib4 / Lean Reservoir community `lean_lib` hygiene gate. Enforces single-threaded `LEAN_NUM_THREADS=1 nice -n 15` execution, forbids bare `lake build`, routes across the ~75 `scripts/*lean*` helpers, and gates every Lean diff with `scripts/lean-best-practices-lint.py` and `scripts/lean-kg-detangler.py`.",
+      "instructionsPath": "skills/local/lean-build-hygiene.md",
+      "instructionLines": 166,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

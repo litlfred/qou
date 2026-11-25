@@ -1,0 +1,1016 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0108011v1",
+  "title": "The Homfly polynomial of the decorated Hopf link",
+  "variant": "pdf",
+  "pages": 25,
+  "tocSource": "inferred",
+  "tocMethod": "font",
+  "toc": [
+    {
+      "level": 1,
+      "title": "The skein models.",
+      "number": "1",
+      "page": 2,
+      "pageLabel": "2",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-the-skein-models"
+    },
+    {
+      "level": 2,
+      "title": "The plane",
+      "number": "1.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-001-11-the-plane"
+    },
+    {
+      "level": 2,
+      "title": "The Hecke algebras",
+      "number": "1.2",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-002-12-the-hecke-algebras"
+    },
+    {
+      "level": 2,
+      "title": "The annulus.",
+      "number": "1.3",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-003-13-the-annulus"
+    },
+    {
+      "level": 2,
+      "title": "Interrelations",
+      "number": "1.4",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-004-14-interrelations"
+    },
+    {
+      "level": 2,
+      "title": "The Hopf link",
+      "number": "1.5",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-005-15-the-hopf-link"
+    },
+    {
+      "level": 1,
+      "title": "Symmetric functions and the skein of the annulus.",
+      "number": "2",
+      "page": 7,
+      "pageLabel": "7",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-006-2-symmetric-functions-and-the-skein-of-the-annul"
+    },
+    {
+      "level": 2,
+      "title": "Formal Schur functions",
+      "number": "2.1",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-007-21-formal-schur-functions"
+    },
+    {
+      "level": 2,
+      "title": "Applications in the skein of the annulus",
+      "number": "2.2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-008-22-applications-in-the-skein-of-the-annulus"
+    },
+    {
+      "level": 1,
+      "title": "The Hopf link decorated with columns and rows",
+      "number": "3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-009-3-the-hopf-link-decorated-with-columns-and-rows"
+    },
+    {
+      "level": 1,
+      "title": "The Hopf link decorated with any Young diagrams",
+      "number": "4",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-010-4-the-hopf-link-decorated-with-any-young-diagram"
+    },
+    {
+      "level": 2,
+      "title": "An explicit example",
+      "number": "4.2",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 0.75,
+      "evidence": [
+        "style",
+        "number",
+        "numbered-style"
+      ],
+      "source": "inferred",
+      "section": "sec-011-42-an-explicit-example"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 24,
+      "pageLabel": "24",
+      "confidence": 0.65,
+      "evidence": [
+        "style",
+        "numbered-style",
+        "stock-name"
+      ],
+      "source": "inferred",
+      "section": "sec-012-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": "1",
+      "labelEnd": "2",
+      "words": 694,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homﬂy polynomial",
+          "heading": false
+        },
+        {
+          "term": "hopf link",
+          "heading": false
+        },
+        {
+          "term": "link invariants",
+          "heading": false
+        },
+        {
+          "term": "laurent polynomial",
+          "heading": false
+        },
+        {
+          "term": "skein theory",
+          "heading": false
+        },
+        {
+          "term": "lukac",
+          "heading": false
+        },
+        {
+          "term": "decorations",
+          "heading": false
+        },
+        {
+          "term": "manifold invariants",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0108011v1 [math.GT] 2 Aug 2001 The Homﬂy polynomial of the decorated Hopf link HUGH R. MORTON and SASCHA G. LUKAC 1 Department of Mathematical Sciences, University of Liverpool, Peach St, Liverpool, L69 7ZL, England. morton@liv.ac.uk, lukac@liv.ac.uk Abstract The main goal is to ﬁnd the Homﬂy polynomial of a link formed by decorating each component of the Hopf link with the closure of a directly oriented",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0108011v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-the-skein-models",
+      "number": "1",
+      "title": "The skein models.",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": "2",
+      "labelEnd": "3",
+      "words": 157,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homﬂy skein",
+          "heading": false
+        },
+        {
+          "term": "framed homﬂy",
+          "heading": false
+        },
+        {
+          "term": "admitted",
+          "heading": false
+        },
+        {
+          "term": "boundary points",
+          "heading": false
+        }
+      ],
+      "extract": "The skein models. The account here largely follows those of [10], [6] and [9]. The framed Homﬂy skein relations, in their simplest form, are − = (s −s−1) 2 and = v−1 . The coeﬃcient ring can be taken as Λ = Z[v±1, s±1] with monomials in {sk −s−k : k ≥0} admitted as denominators. The framed Homﬂy skein S(F) of a planar surface F, with some designated input and output boundary points, is deﬁned to be Λ-linear",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-the-plane",
+      "number": "1.1",
+      "title": "The plane",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 3,
+      "labelStart": "3",
+      "labelEnd": "3",
+      "words": 132,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "homﬂy polynomial",
+          "heading": false
+        },
+        {
+          "term": "empty diagram",
+          "heading": false
+        },
+        {
+          "term": "local relation",
+          "heading": false
+        }
+      ],
+      "extract": "The plane When F = R2 every element can be represented uniquely as a scalar multiple of the empty diagram. For a diagram D the resulting scalar χ(D) ∈Λ is the framed Homﬂy polynomial of D. Taking χu(D) = vwr(D)χ(D), where wr(D) is the writhe of the diagram, gives a scalar which is invariant under all Reidemeister moves. It is the Homﬂy polynomial of D, as a function of v and s, deﬁned by the local relation v−1 −v =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-the-hecke-algebras",
+      "number": "1.2",
+      "title": "The Hecke algebras",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 153,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hecke",
+          "heading": true
+        },
+        {
+          "term": "n-tangles",
+          "heading": false
+        },
+        {
+          "term": "σiσi",
+          "heading": false
+        }
+      ],
+      "extract": "The Hecke algebras Write Rn n for the skein S(F) of n-tangles, where F is a rectangle with n inputs at the bottom and n outputs at the top. Composing n-tangles induces a product which makes Rn n into an algebra. It has a linear basis of n! elements, and is isomorphic to the Hecke algebra Hn(z), with coeﬃcients extended to the ring Λ. This algebra has a presentation generated by the elementary 3 braids σi = i i+1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-the-annulus",
+      "number": "1.3",
+      "title": "The annulus.",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 4,
+      "labelStart": "4",
+      "labelEnd": "4",
+      "words": 130,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "annulus",
+          "heading": true
+        },
+        {
+          "term": "homﬂy skein",
+          "heading": false
+        },
+        {
+          "term": "framed homﬂy",
+          "heading": false
+        }
+      ],
+      "extract": "The annulus. The Homﬂy skein of the annulus, C, as discussed in [8] and originally in [13], is deﬁned to be linear combinations of diagrams in the annulus, modulo the framed Homﬂy skein relations. An element X ∈C will be indicated on a diagram as X . The skein C has a product induced by placing one annulus outside another, under which C becomes a commutative algebra; XY = X Y . There is an evaluation map ⟨⟩: C →Λ,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-interrelations",
+      "number": "1.4",
+      "title": "Interrelations",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": "4",
+      "labelEnd": "6",
+      "words": 475,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "interrelations",
+          "heading": true
+        },
+        {
+          "term": "skein theory",
+          "heading": false
+        },
+        {
+          "term": "αλeλ",
+          "heading": false
+        },
+        {
+          "term": "ring homomorphism",
+          "heading": false
+        },
+        {
+          "term": "decorating",
+          "heading": false
+        },
+        {
+          "term": "linear map",
+          "heading": false
+        },
+        {
+          "term": "closed curve",
+          "heading": false
+        },
+        {
+          "term": "annulus",
+          "heading": false
+        }
+      ],
+      "extract": "Interrelations The best known relation of C with the Hecke algebra Hn is the closure map Rn n →C, induced by taking a tangle T to its closure ˆT in the annulus, deﬁned 4 by ˆT = T . This is a linear map, whose image we call Cn. Elements of the skein C can be used to decorate closed curves in a framed diagram in any F to produce new skein elements of S(F). We shall restrict the decorations in our work to elements",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-15-the-hopf-link",
+      "number": "1.5",
+      "title": "The Hopf link",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 7,
+      "labelStart": "6",
+      "labelEnd": "7",
+      "words": 325,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hopf link",
+          "heading": true
+        },
+        {
+          "term": "young diagram",
+          "heading": false
+        },
+        {
+          "term": "both sides",
+          "heading": false
+        },
+        {
+          "term": "skein",
+          "heading": false
+        },
+        {
+          "term": "elements",
+          "heading": false
+        },
+        {
+          "term": "compute",
+          "heading": false
+        }
+      ],
+      "extract": "The Hopf link We consider the Hopf link with linking number 1 as shown here. Let X and Y be any elements of the skein C of the annulus. We write ⟨X, Y ⟩for the framed Homﬂy polynomial of the Hopf link with decorations X and Y on its components, giving ⟨X, Y ⟩= χ      X Y     = * X Y + = ⟨ϕ(Y )(X)⟩. Clearly ⟨Y, X⟩= ⟨X, Y ⟩. Our aim is to determine ⟨X, Y ⟩for any X, Y ∈C+. Since C+ is spanned by {Qλ} it is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-2-symmetric-functions-and-the-skein-of-the-annul",
+      "number": "2",
+      "title": "Symmetric functions and the skein of the annulus.",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 8,
+      "labelStart": "7",
+      "labelEnd": "8",
+      "words": 36,
+      "summary": null,
+      "keywords": [],
+      "extract": "annulus. In this section we recall some explicit results about elements in the Hecke algebras and their closure in C, and their interpretation in the context of symmetric functions, following the methods of Macdonald [7]. 7",
+      "extractCut": false
+    },
+    {
+      "id": "sec-007-21-formal-schur-functions",
+      "number": "2.1",
+      "title": "Formal Schur functions",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 8,
+      "labelStart": "8",
+      "labelEnd": "8",
+      "words": 324,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "schur functions",
+          "heading": true
+        },
+        {
+          "term": "formal",
+          "heading": true
+        },
+        {
+          "term": "formal power",
+          "heading": false
+        },
+        {
+          "term": "power series",
+          "heading": false
+        },
+        {
+          "term": "cells",
+          "heading": false
+        },
+        {
+          "term": "symmetric function",
+          "heading": false
+        }
+      ],
+      "extract": "Formal Schur functions We follow Macdonald in deﬁning the Schur functions of a formal power se- ries E(t) = 1 + P∞ i=1 eiti with coeﬃcients ei in a commutative ring. When E(t) is a polynomial with a formal factorisation as E(t) = QN j=1(1 + xjt) then any partition λ of n determines the classical Schur symmetric function sλ(x1, . . . , xN) in terms of determinants whose entries are powers of {xj}, given explicitly by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-22-applications-in-the-skein-of-the-annulus",
+      "number": "2.2",
+      "title": "Applications in the skein of the annulus",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 10,
+      "labelStart": "8",
+      "labelEnd": "10",
+      "words": 447,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "skein",
+          "heading": true
+        },
+        {
+          "term": "schur functions",
+          "heading": false
+        },
+        {
+          "term": "young diagrams",
+          "heading": false
+        },
+        {
+          "term": "power series",
+          "heading": false
+        },
+        {
+          "term": "lukac",
+          "heading": false
+        },
+        {
+          "term": "single row",
+          "heading": false
+        },
+        {
+          "term": "annulus",
+          "heading": true
+        },
+        {
+          "term": "eigenvectors",
+          "heading": false
+        }
+      ],
+      "extract": "Applications in the skein of the annulus The elements Qλ have a very nice interpretation as Schur functions in C. Lukac showed in [6] that Qλ can be identiﬁed with the Schur function sλ( X i≥0 citi) of the series P citi whose coeﬃcients ci ∈C are the closures Qλ of the sin- gle column idempotents with λ = 1i = (1, . . . , 1), under the convention that 8 c0 = 1 ∈C, represented by the empty diagram. This has been",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-3-the-hopf-link-decorated-with-columns-and-rows",
+      "number": "3",
+      "title": "The Hopf link decorated with columns and rows",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 13,
+      "labelStart": "10",
+      "labelEnd": "13",
+      "words": 707,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "s2j",
+          "heading": false
+        },
+        {
+          "term": "decorated",
+          "heading": true
+        },
+        {
+          "term": "homﬂy polynomial",
+          "heading": false
+        },
+        {
+          "term": "vsi",
+          "heading": false
+        },
+        {
+          "term": "eck",
+          "heading": false
+        },
+        {
+          "term": "young diagram",
+          "heading": false
+        },
+        {
+          "term": "cells",
+          "heading": false
+        },
+        {
+          "term": "link",
+          "heading": true
+        }
+      ],
+      "extract": "rows We now compute the series Eck(t) for any integer k ≥0. To do this, we start with a surprisingly simple formula for ⟨ci, dj⟩. Lemma 3.1 We have ⟨ci, dj⟩= ⟨ci⟩⟨dj⟩v−1(s2j −s2(j−i) + s−2i) −v v−1 −v for any integers i ≥0 and j ≥0. Proof : We shall prove the lemma by expressing the Homﬂy polynomial of a certain decorated link in two diﬀerent ways and comparing the results. The link in question is the 2-parallel of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-4-the-hopf-link-decorated-with-any-young-diagram",
+      "number": "4",
+      "title": "The Hopf link decorated with any Young diagrams",
+      "level": 1,
+      "pageStart": 13,
+      "pageEnd": 21,
+      "labelStart": "13",
+      "labelEnd": "21",
+      "words": 2205,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "qit",
+          "heading": false
+        },
+        {
+          "term": "schur function",
+          "heading": false
+        },
+        {
+          "term": "young",
+          "heading": true
+        },
+        {
+          "term": "determinantal formulae",
+          "heading": false
+        },
+        {
+          "term": "young diagram",
+          "heading": false
+        },
+        {
+          "term": "power series",
+          "heading": false
+        },
+        {
+          "term": "eck",
+          "heading": false
+        },
+        {
+          "term": "qhl",
+          "heading": false
+        }
+      ],
+      "extract": "diagrams We now in principle have a means of ﬁnding ⟨ck, λ⟩by calculating the Schur function sλ(Eck(t)). This in turn gives the coeﬃcients for the series Eλ(t), whose Schur function sµ ﬁnally gives ⟨λ, µ⟩. The aim of this section is to give a simple formula for the series Eλ(t) = P⟨λ, ci⟩ti/ ⟨λ⟩as a product of the known series E∅(t) = P ⟨ci⟩ti and a rational function of t, in theorem 4.5. To do this we specialise",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-42-an-explicit-example",
+      "number": "4.2",
+      "title": "An explicit example",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 24,
+      "labelStart": "21",
+      "labelEnd": "24",
+      "words": 1119,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "vandermonde minors",
+          "heading": false
+        },
+        {
+          "term": "hopf link",
+          "heading": false
+        },
+        {
+          "term": "jacobi-trudy formula",
+          "heading": false
+        },
+        {
+          "term": "q2v",
+          "heading": false
+        },
+        {
+          "term": "e1e",
+          "heading": false
+        },
+        {
+          "term": "v2q",
+          "heading": false
+        },
+        {
+          "term": "qij",
+          "heading": false
+        },
+        {
+          "term": "correction factor",
+          "heading": false
+        }
+      ],
+      "extract": "An explicit example We illustrate our results by calculating the framed Homﬂy polynomial ⟨ , ⟩. Let µ be a partition whose conjugate µ∨has r parts. The Jacobi-Trudy formula gives the Schur function sµ of the series P eiti as the determinant of the r × r matrix whose (i, j) entry is ek, with k = µ∨ i + j −i, taking ek = 0 for k < 0. The diagonal entries in the matrix are thus the coeﬃcients corresponding to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 24,
+      "pageEnd": 25,
+      "labelStart": "24",
+      "labelEnd": "25",
+      "words": 300,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "phd dissertation",
+          "heading": false
+        },
+        {
+          "term": "liverpool",
+          "heading": false
+        },
+        {
+          "term": "theory ramif",
+          "heading": false
+        },
+        {
+          "term": "strickland",
+          "heading": false
+        },
+        {
+          "term": "skein theory",
+          "heading": false
+        },
+        {
+          "term": "morton",
+          "heading": false
+        },
+        {
+          "term": "knot theory",
+          "heading": false
+        },
+        {
+          "term": "aiston",
+          "heading": false
+        }
+      ],
+      "extract": "[1] A.K.Aiston, Skein theoretic idempotents of Hecke algebras and quantum group invariants. PhD dissertation, University of Liverpool, 1996. * [2] A.Gyoja, A q-analogue of Young symmetrisers. Osaka J. Math. 23 (1986), 841–852. [3] K.Kawagoe, On the skeins in the annulus and applications to invariants of 3-manifolds. J. Knot Theory Ramif. 7 (1998), 187–203. [4] R.C.Kirby and P.M.Melvin, The 3-manifold invariants of",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "homﬂy skein",
+      "heading": false
+    },
+    {
+      "term": "homﬂy polynomial",
+      "heading": false
+    },
+    {
+      "term": "framed homﬂy",
+      "heading": false
+    },
+    {
+      "term": "skein elements",
+      "heading": false
+    },
+    {
+      "term": "homﬂy invariant",
+      "heading": false
+    },
+    {
+      "term": "skein relations",
+      "heading": false
+    },
+    {
+      "term": "skein theory",
+      "heading": false
+    },
+    {
+      "term": "skein theoretic",
+      "heading": false
+    },
+    {
+      "term": "young diagram",
+      "heading": false
+    },
+    {
+      "term": "schur functions",
+      "heading": true
+    },
+    {
+      "term": "power series",
+      "heading": false
+    },
+    {
+      "term": "hopf link",
+      "heading": true
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 13,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 14,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p24); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 14 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0108011v1"
+  }
+}

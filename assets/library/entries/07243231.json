@@ -1,0 +1,118 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "07243231",
+  "blocks": [
+    {
+      "id": "library/07243231/blocks/figure-img-p001-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../images/img-p001-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/07243231/blocks/prose-page-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 1",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/page-001.md",
+      "narrative": null,
+      "content": "Elias, Ben; Makisumi, Shotaro; Thiel, Ulrich; Williamson, Geordie\nIntroduction to Soergel bimodules. (English)\n\u0003\n\u0002\n\u0000\u0001\nZbl 07243231\nRSME Springer Series 5. Cham: Springer (ISBN 978-3-030-48825-3/hbk; 978-3-030-48828-4/pbk; 978-3-\n030-48826-0/ebook). xxv, 588 p. (2020)\nThe theory of Soergel bimodules began with the work of Wolfgang Soergel in the 1990s and 2000s [W.\nSoergel, J. Am. Math. Soc. 3, No. 2, 421–445 (1990; Zbl 0747.17008); J. Reine Angew. Math. 429, 49–74\n(1992; Zbl 0745.22014); Represent. Theory 1, 37–68 (1997; Zbl 0886.05124); Represent. Theory 1, 83–114\n(1997; Zbl 0886.05123); W. S",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/07243231/blocks/prose-page-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 2",
+      "pageStart": 2,
+      "pageEnd": 2,
+      "target": "../sections/page-002.md",
+      "narrative": null,
+      "content": "This chapter gives a ﬁrst introduction to the theory of Coxeter groups.\nChapter 2 Reﬂection Groups and Coxeter Groups\nThis chapter explains why reﬂection groups are Coxeter groups, motivating the general deﬁnition of\nCoxeter groups.\nChapter 3 The Hecke Algebra and Kazhdan-Lusztig Polynomials\nThe Hecke algebra associated to a Coxeter system (W, S) is a Z[v, v−1]-algebra that recovers the group\nalgebra Z [W] under the specialization v 7→1. It has two important bases, namely, the standard basis\nand a certain self-dual basis called the Kazhdan-Lusztig basis, with the change of basis between the tw",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/07243231/blocks/prose-page-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 3",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/page-003.md",
+      "narrative": null,
+      "content": "diagrammatic descriptions of two diﬀerent bases for these bimodules.\nPart III Historical Context: Category O and the Kazhdan-Lusztig Conjectures\nThis part places Soergel bimodules in context, describing the connections between them and the other\nincarnations of the Hecke category.\nChapter 13 Category O and the Kazhdan-Lusztig Conjectures\nThis chapter gives a historical introduction to the Kazhdan-Lusztig conjectures [D. Kazhdan and G.\nLusztig, Invent. Math. 53, 165–184 (1979; Zbl 0499.20035)], beginning with Verma’s thesis [D. N. Verma,\nBull. Am. Math. Soc. 74, 160–166 (1968; Zbl 0157.07604)]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/07243231/blocks/prose-page-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 4",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/page-004.md",
+      "narrative": null,
+      "content": "Part V Special Topics\nThis part oﬀers a sampling of more advanced topics, ranging over cell theory and Hecke algebra repre-\nsentaions (Chapter 22) and their connections to knot theory (Chapter 21), categorical diagonalization\n(Chapter 23), diagrammatics for individual Soergel bimodules (Chapter 24), Koszul duality for category\nO, reinterpreted using Soergel bimodules (Chapters 25 and 26), and the situation in positive characteristic\n(Chapter 27).\nChapter 21 Connections to Link Invariants\nThis chapter relates the quantum group of gln and the Hecke algebra of the symmetric group Sm through\na qua",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/07243231/blocks/prose-page-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Page 5",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/page-005.md",
+      "narrative": null,
+      "content": "of the Kazhdan-Lusztig basis. This chapter deﬁnes the p-canonical basis, describing how it is computed\nin practice by use of the local intersection form. The chapter presents examples that demonstrate how\nit diﬀers from the Kazhdan-Lusztig basis, and the advantages of the diagrammatic Hecke category over\nSoergel bimodules in positive characteristic. The chapter ﬁnally indicates the relation of the p-canonical\nbasis to parity complexes on the ﬂag variety and its relevance to modular representation theory.\nReviewer: Hirokazu Nishimura (Tsukuba)\nMSC:\n20-01\nIntroductory exposition (textbooks, tuto",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

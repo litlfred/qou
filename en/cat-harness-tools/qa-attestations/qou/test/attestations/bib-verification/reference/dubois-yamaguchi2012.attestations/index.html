@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script data-folio-saved-scheme>(function(){var d=document.documentElement,s=null,c="dark";try{s=localStorage.getItem("fa-color-scheme")}catch(e){}if(s!=="light"&&s!=="dark"){s="light";try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)s="dark"}catch(e){}}try{var n=document.getElementById("fa-site-scheme");if(n)c=JSON.parse(n.textContent).scheme==="light"?"light":"dark"}catch(e){}d.setAttribute("data-fa-scheme",s);var j=window.jtd;if(s!==c&&j&&typeof j.setTheme==="function"){try{j.setTheme(s)}catch(e){}}})();</script>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>test/attestations/bib-verification/reference/dubois-yamaguchi2012.attestations — qa-attestations</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1b1b1b; --bg:#fdfdfb; --muted:#5b5b5b; --line:#d6d6d0; --link:#0b5cad; --panel:#f3f4f2; }
+  @media (prefers-color-scheme: dark) { :root:not([data-fa-scheme="light"]) { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; } }
+  :root[data-fa-scheme="dark"] { --fg:#e8e8e6; --bg:#161616; --muted:#a8a8a4; --line:#3a3a38; --link:#7db4ff; --panel:#1f2124; }
+  :root[data-fa-scheme="light"] { color-scheme: light; } :root[data-fa-scheme="dark"] { color-scheme: dark; }
+  body { margin:0; font:1rem/1.5 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main { max-width:80rem; margin:0 auto; padding:1.5rem 1.5rem 4rem; min-width:0; overflow-wrap:anywhere; }
+  h1 { font-size:1.35rem; margin:0 0 .25rem; } h2 { font-size:1.05rem; margin:1.5rem 0 .5rem; }
+  a { color:var(--link); } a:focus-visible, select:focus-visible { outline:3px solid var(--link); outline-offset:2px; }
+  .m { color:var(--muted); font-size:.9rem; }
+  .tiles { display:flex; flex-wrap:wrap; gap:.5rem; margin:.5rem 0; padding:0; list-style:none; }
+  .tiles li { border:1px solid var(--line); border-radius:.4rem; padding:.35rem .7rem; }
+  .tiles b { font-size:1.2rem; margin-right:.3rem; }
+  .clip { width:100%; overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:.92rem; }
+  th, td { text-align:left; vertical-align:top; padding:.35rem .5rem; border-bottom:1px solid var(--line); }
+  th { background:var(--panel); white-space:nowrap; }
+  /* Only the node's path and long text may break mid-word; a status or a date
+     broken across lines ("in_pr ogres s") is unreadable. */
+  td { overflow-wrap:normal; } td.p, td.t { overflow-wrap:anywhere; } td.s { white-space:nowrap; }
+  dl { display:grid; grid-template-columns:minmax(8rem,14rem) 1fr; gap:.25rem 1rem; }
+  dt { font-weight:600; } dd { margin:0; }
+  pre { background:var(--panel); padding:.75rem; overflow-x:auto; font-size:.85rem; }
+  label { margin-right:1rem; }
+  @media (max-width:40rem) { dl { grid-template-columns:1fr; } }
+</style>
+<link rel="stylesheet" href="../../../../../../../../../assets/css/navbar.css"><script src="../../../../../../../../../assets/navbar/rail-1bjscsovdw8.js" defer></script><script src="../../../../../../../../../assets/js/navbar.js" defer></script><style data-folio-narrow-viewport>
+/* Narrow viewports: nothing may widen the PAGE — bean `2r2n`.
+ *
+ * At 390 px, 105 of 249 built pages scrolled sideways (measured 2026-09-24).
+ * The rule here is the bean's: wide content scrolls INSIDE ITS OWN BOX with a
+ * visible cue, and the page itself never pans.
+ *
+ * ONE FILE, TWO WAYS IN. Themed pages link it from `_includes/head_custom.html`.
+ * The standalone viewer pages carry no theme stylesheet at all, so
+ * `withViewerNav` in `scripts/viewer-page.ts` inlines this same file when it
+ * adds the rail. A copy of these rules in each place would be two answers to
+ * "what does a table do at 390 px", free to drift apart.
+ *
+ * Every selector here is written to be safe on both kinds of page: no
+ * `.main-content` scope (a standalone page has none), the navbar excluded by
+ * name, and the theme's own `.table-wrapper` left alone, since it already does
+ * this job for Markdown tables. */
+
+@media (max-width: 799.98px) {
+  /* A table the theme did not wrap: raw HTML from a generator, or one built at
+   * runtime. `display: block` makes the table its own scroll box. Its cells
+   * still lay out as a table inside the anonymous table box. */
+  table:not(.table-wrapper > table):not(.fa-nav table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* THE CUE: the edge that has more content past it fades out. The fade is a
+   * MASK over the table's own pixels, driven by its own scroll position, so
+   * it needs no knowledge of the page's background. A painted cover (the
+   * usual `background-attachment: local` trick) does: the first version used
+   * `Canvas`, and on a page that is dark under a LIGHT scheme it laid a white
+   * band over the first column.
+   *
+   * A table that does not overflow has an inactive scroll timeline, so the
+   * animation has no effect and both fades stay at their initial 0: no cue
+   * where there is nothing to scroll to. A browser without scroll-driven
+   * animations shows no fade, and the table still scrolls. */
+  @supports (animation-timeline: scroll()) {
+    table:not(.table-wrapper > table):not(.fa-nav table) {
+      mask-image: linear-gradient(to right,
+        transparent 0, #000 var(--fa-cue-l),
+        #000 calc(100% - var(--fa-cue-r)), transparent 100%);
+      animation: fa-scroll-cue linear both;
+      animation-timeline: scroll(self inline);
+    }
+  }
+
+  /* A code block scrolls in its own box, which is what `pre` is for. Mermaid
+   * SOURCE sits in a `pre` until the renderer replaces it, and at 390 px a
+   * diagram's source line is longer than the screen. */
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  /* Prose that has no break opportunity: a long path in inline code, or a
+   * glossary definition naming one. Breaking the string is better than
+   * widening the page it sits on. */
+  :not(pre) > code,
+  dd {
+    overflow-wrap: anywhere;
+  }
+}
+
+@property --fa-cue-l { syntax: "<length>"; inherits: false; initial-value: 0px; }
+@property --fa-cue-r { syntax: "<length>"; inherits: false; initial-value: 0px; }
+
+@keyframes fa-scroll-cue {
+  0%   { --fa-cue-l: 0px;    --fa-cue-r: 2.5rem; }
+  12%  { --fa-cue-l: 2.5rem; }
+  88%  { --fa-cue-r: 2.5rem; }
+  100% { --fa-cue-l: 2.5rem; --fa-cue-r: 0px; }
+}
+
+</style>
+</head>
+<body data-fa-node-kind-page><script type="application/json" id="fa-rail" data-fa-root="../../../../../../../../.." data-fa-to-root="../../../../../../../../..">{"data":"rail-1bjscsovdw8","here":"/en/cat-harness-tools/qa-attestations/qou/test/attestations/bib-verification/reference/dubois-yamaguchi2012.attestations/"}</script><nav class="fa-nav" aria-label="folio-assistant" data-fa-rail="pending"><a href="../../../../../../../../../">folio-assistant</a></nav>
+<main>
+<h1 id="nk-title">test/attestations/bib-verification/reference/dubois-yamaguchi2012.attestations</h1>
+<p class="m">A <a href="../../../../../../">qa-attestations</a> node held by <a href="../../../../../">qou</a>, at <code>test/attestations/bib-verification/reference/dubois-yamaguchi2012.attestations.json</code>.</p>
+
+<h2 id="fields">Fields</h2>
+<dl>
+<dt>$schema</dt><dd>qa-attestations/v1</dd>
+<dt>family</dt><dd>bib-verification</dd>
+<dt>subject</dt><dd><pre>{
+  &quot;kind&quot;: &quot;reference&quot;,
+  &quot;id&quot;: &quot;dubois-yamaguchi2012&quot;,
+  &quot;path&quot;: null
+}</pre></dd>
+<dt>verifications</dt><dd><pre>[
+  {
+    &quot;position&quot;: 201,
+    &quot;entry&quot;: {
+      &quot;source&quot;: {
+        &quot;kind&quot;: &quot;upload&quot;,
+        &quot;file&quot;: &quot;library/arxiv-0906.1500v4/0906.1500v4.pdf&quot;
+      },
+      &quot;id&quot;: &quot;dubois-yamaguchi2012&quot;,
+      &quot;status&quot;: &quot;unreviewed&quot;,
+      &quot;relevance&quot;: {
+        &quot;verdict&quot;: &quot;core&quot;,
+        &quot;rationale&quot;: &quot;This paper supplies a triangulation-independent computation of exactly the quantity whose triangulation-dependent computation the corpus REFUTED last week. computations/whitehead_c_sigma_torsion.py derives |tau_adjoint(L5a1)| from Neumann-Zagier ideal-triangulation data as |det J|, and carries a header note: &#39;REFUTED 2026-08-07 (PR #4691, bean qou-fl4t). |det J| as computed here is NOT a topological invariant: retriangulating the same manifold gives 8 distinct values for 5_2, 17 for 6_2, 6 for L5a1, 7 for L6a4.&#39; Dubois-Yamaguchi compute the SAME adjoint (non-abelian) Reidemeister torsion by Fox free differential calculus on a Wirtinger presentation plus a derivative formula — a CW/cut-and-paste construction with no ideal triangulation anywhere, hence manifestly retriangulation-immune. And their two worked examples (§4) are precisely QOU&#39;s two anchor manifolds: the figure-eight knot exterior (the |tau(4_1)| = sqrt(3) calibration the refuted script used) and the Whitehead link exterior (= L5a1, the c_sigma = 2^{-3/4} target). The corpus already carries the 1-loop = adjoint-torsion literature (garoufalidis-yoon2024, ohtsuki-takata, dimofte-garoufalidis) but nothing giving a computational route; this is that route, and it is unregistered.&quot;,
+        &quot;keyResults&quot;: [
+          {
+            &quot;locator&quot;: &quot;Theorem 5, §6 (eq. (15))&quot;,
+            &quot;statement&quot;: &quot;For a hyperbolic M with b torus boundary components satisfying (A_M), (A_phi), (A_rho), lim_{t-&gt;1} Delta^{phi (x) Ad.rho}_M(t) / prod_{l=1..b}(t^{a_l} - 1) = (-1)^b * T^lambda_M(rho), i.e. the derivative of the twisted Alexander invariant at t = 1 computes the non-abelian (adjoint) Reidemeister torsion for the multi-longitude lambda — for LINK exteriors, not only knot exteriors.&quot;,
+            &quot;useForFolio&quot;: &quot;A route to |tau_adjoint(L5a1)| that does not pass through an ideal triangulation, replacing the |det J| construction refuted in bean qou-fl4t. The multi-component (b &gt; 1) generality is the part that matters: the earlier corpus work needed the Whitehead link (b = 2) and would need the Borromean rings (b = 3) next.&quot;,
+            &quot;targets&quot;: [
+              &quot;computations/whitehead_c_sigma_torsion.py&quot;,
+              &quot;computations/probes/borromean_nz_adjoint_torsion.py&quot;,
+              &quot;computations/one_loop_torsion.py&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;§4 &#39;Examples of computations&#39;, p.12 onward&quot;,
+            &quot;statement&quot;: &quot;Explicit computation of the polynomial torsion for the figure-eight knot exterior and for the Whitehead link exterior, via Fox free differential calculus on Wirtinger presentations.&quot;,
+            &quot;useForFolio&quot;: &quot;Both QOU anchors done in the source. The 4_1 case is the non-circular calibration (known |tau| = sqrt(3)); the Whitehead case is the disputed value. Running the corpus&#39;s number against the paper&#39;s own computation is a direct, cheap adjudication of the 4*sqrt(2) vs 2*sqrt(2) discrepancy that motivated the per-cusp 2^{(c-1)/2} factor.&quot;,
+            &quot;targets&quot;: [
+              &quot;computations/whitehead_c_sigma_torsion.py&quot;,
+              &quot;computations/whitehead_c_sigma_hiprec.py&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Example 3, §3.1.2, p.8&quot;,
+            &quot;statement&quot;: &quot;For a link exterior E_L in S^3 whose components have pairwise linking number zero, the abelianization phi: pi_1 -&gt; H_1 = Z^b satisfies assumption (A_phi).&quot;,
+            &quot;useForFolio&quot;: &quot;The applicability check for the next step: the Borromean rings have all pairwise linking numbers zero, so the framework&#39;s hypothesis is met there as well as for the Whitehead link. That is what makes borromean_nz_adjoint_torsion.py extendable by this route rather than blocked.&quot;,
+            &quot;targets&quot;: [
+              &quot;computations/probes/borromean_nz_adjoint_torsion.py&quot;
+            ]
+          },
+          {
+            &quot;locator&quot;: &quot;Theorem 14 + eq. (32), §8, p.23&quot;,
+            &quot;statement&quot;: &quot;Duality with sign: Delta^{phi (x) Ad.rho}_{E_L}(t^{-1}) = (-1)^b * Delta^{phi (x) Ad.rho}_{E_L}(t) for a link exterior with b boundary components (sign term epsilon = (-1)^{b(b-1)/2} computed in Prop. 16).&quot;,
+            &quot;useForFolio&quot;: &quot;A proved bar-involution (t -&gt; t^{-1}) parity law for the torsion polynomial, with the parity set by the component count b. QOU&#39;s bar-even/bar-odd bookkeeping is currently asserted per-object; this is an external, proved instance of exactly that symmetry on an object the corpus already computes, and it is a falsifiable constraint on any candidate torsion polynomial the corpus produces.&quot;,
+            &quot;targets&quot;: [
+              &quot;computations/whitehead_c_sigma_torsion.py&quot;,
+              &quot;folio/quantum-observable-universe/lean/QOU/OneLoopEdgeLattice.lean&quot;
+            ]
+          }
+        ],
+        &quot;proposedActions&quot;: [
+          {
+            &quot;action&quot;: &quot;add-reference&quot;,
+            &quot;rationale&quot;: &quot;Orphan, and the only computational-method source for the adjoint torsion the corpus&#39;s 1-loop thread depends on. Suggested id dubois-yamaguchi2012 (Ann. Inst. Fourier / arXiv:0906.1500).&quot;,
+            &quot;target&quot;: &quot;folio/schema/references.ts&quot;,
+            &quot;bean&quot;: &quot;qou-gam1&quot;
+          },
+          {
+            &quot;action&quot;: &quot;compute-check&quot;,
+            &quot;rationale&quot;: &quot;Recompute |tau_adjoint| for 4_1 and for the Whitehead link L5a1 by the Theorem-5 derivative formula on the Wirtinger presentation, and compare against the corpus values sqrt(3) and 2^{5/2}. This is the highest-value item in the slice: it adjudicates a refuted computation (bean qou-fl4t) with a method that is triangulation-independent by construction, and it either restores or kills the c_sigma = 2^{-3/4} derivation.&quot;,
+            &quot;target&quot;: &quot;computations/whitehead_c_sigma_torsion.py&quot;,
+            &quot;bean&quot;: &quot;qou-1el8&quot;
+          },
+          {
+            &quot;action&quot;: &quot;new-remark&quot;,
+            &quot;rationale&quot;: &quot;Record why the refutation in qou-fl4t is a defect of the |det J| route and not of the torsion itself: the adjoint torsion is a well-defined invariant with an independent CW-level computation, so the negative is scope-(a) (this construction, as computed, is not invariant) and not scope-(b) (the quantity does not exist). Prevents the refutation from over-narrowing the search.&quot;,
+            &quot;target&quot;: &quot;folio/quantum-observable-universe/lean/QOU/OneLoopEdgeLattice.lean&quot;,
+            &quot;bean&quot;: &quot;qou-l5kl&quot;
+          }
+        ],
+        &quot;assessed_by&quot;: {
+          &quot;kind&quot;: &quot;agent&quot;,
+          &quot;model&quot;: &quot;claude-opus-5&quot;
+        },
+        &quot;assessed_at&quot;: &quot;2026-08-08T16:12:29.859Z&quot;,
+        &quot;source_sha&quot;: &quot;9a586f6d134c&quot;
+      },
+      &quot;note&quot;: &quot;Bib key backfilled from library block in references.ts. The row carried `id: null`, which read as \&quot;held but uncitable\&quot;; the join already existed on the references.ts side.&quot;,
+      &quot;verified_at&quot;: &quot;2026-09-03T04:37:40Z&quot;,
+      &quot;verified_by&quot;: {
+        &quot;kind&quot;: &quot;agent&quot;,
+        &quot;model&quot;: &quot;claude-opus-5&quot;
+      }
+    }
+  }
+]</pre></dd>
+</dl>
+</main>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1103.2082v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "MODIFIED TRACES ON DELIGNE’S CATEGORY Rep(St)",
+      "dcterms:creator": [
+        "COMES, JONATHAN",
+        "KUJAWA, JONATHAN R."
+      ],
+      "dcterms:issued": "D:20210830",
+      "dcterms:identifier": "https://arxiv.org/abs/1103.2082",
+      "dcterms:abstract": "Deligne has deﬁned a category which interpolates among the representations of the various symmetric groups. In this paper we show Deligne’s category admits a unique nontrivial family of modiﬁed trace functions. Such modiﬁed trace functions have already proven to be interesting in both low-dimensional topology and representation theory. We also introduce a graded variant of Deligne’s category, lift the modiﬁed trace functions to the graded setting, and use them to recover the well-known invariant of framed knots known as the writhe.",
+      "dcterms:source": "library/arxiv-1103.2082v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1103.2082v1"
+    }
+  ]
+}

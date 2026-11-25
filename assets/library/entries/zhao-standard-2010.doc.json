@@ -1,0 +1,1349 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "zhao-standard-2010",
+  "title": "Standard Relations of Multiple Polylogarithm Values at Roots of Unity",
+  "variant": "pdf",
+  "pages": 34,
+  "tocSource": "inferred",
+  "tocMethod": "contents",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 0.55,
+      "evidence": [
+        "contents",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Multiple polylog values at roots of unity",
+      "number": "1.1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-001-11-multiple-polylog-values-at-roots-of-unity"
+    },
+    {
+      "level": 2,
+      "title": "Standard relations of MPVs",
+      "number": "1.2",
+      "page": 4,
+      "pageLabel": "4",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-002-12-standard-relations-of-mpvs"
+    },
+    {
+      "level": 2,
+      "title": "Main results",
+      "number": "1.3",
+      "page": 5,
+      "pageLabel": "5",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-003-13-main-results"
+    },
+    {
+      "level": 2,
+      "title": "Acknowledgment",
+      "number": "1.4",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-004-14-acknowledgment"
+    },
+    {
+      "level": 1,
+      "title": "The double shuffle relations and the algebra A",
+      "number": "2",
+      "page": 6,
+      "pageLabel": "6",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-005-2-the-double-shuffle-relations-and-the-algebra-a"
+    },
+    {
+      "level": 1,
+      "title": "Weight one relations",
+      "number": "3",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-006-3-weight-one-relations"
+    },
+    {
+      "level": 1,
+      "title": "Regularized distribution relations",
+      "number": "4",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-007-4-regularized-distribution-relations"
+    },
+    {
+      "level": 1,
+      "title": "Lifted relations from lower weights",
+      "number": "5",
+      "page": 14,
+      "pageLabel": "14",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-008-5-lifted-relations-from-lower-weights"
+    },
+    {
+      "level": 1,
+      "title": "Some conjectures of FDS and RDS",
+      "number": "6",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-009-6-some-conjectures-of-fds-and-rds"
+    },
+    {
+      "level": 1,
+      "title": "The structure of MPVs and some examples",
+      "number": "7",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-010-7-the-structure-of-mpvs-and-some-examples"
+    },
+    {
+      "level": 2,
+      "title": "Weight one",
+      "number": "7.1",
+      "page": 17,
+      "pageLabel": "17",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-011-71-weight-one"
+    },
+    {
+      "level": 2,
+      "title": "Weight two",
+      "number": "7.2",
+      "page": 18,
+      "pageLabel": "18",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-012-72-weight-two"
+    },
+    {
+      "level": 2,
+      "title": "Weight three",
+      "number": "7.3",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-013-73-weight-three"
+    },
+    {
+      "level": 2,
+      "title": "Upper bound of d(w, N) by Deligne and Goncharov",
+      "number": "7.4",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-014-74-upper-bound-of-dw-n-by-deligne-and-goncharov"
+    },
+    {
+      "level": 1,
+      "title": "Computational results in weight two",
+      "number": "8",
+      "page": 21,
+      "pageLabel": "21",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-015-8-computational-results-in-weight-two"
+    },
+    {
+      "level": 1,
+      "title": "Computational results in weight three, four and five",
+      "number": "9",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": 0.8,
+      "evidence": [
+        "contents",
+        "body",
+        "number"
+      ],
+      "source": "inferred",
+      "section": "sec-016-9-computational-results-in-weight-three-four-and"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 339,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jianqiang zhao",
+          "heading": false
+        },
+        {
+          "term": "non-standard relations",
+          "heading": false
+        },
+        {
+          "term": "mpvs",
+          "heading": false
+        },
+        {
+          "term": "multiple polylogarithm",
+          "heading": false
+        },
+        {
+          "term": "standard relations",
+          "heading": false
+        },
+        {
+          "term": "distribution relations",
+          "heading": false
+        },
+        {
+          "term": "double shuﬄe",
+          "heading": false
+        },
+        {
+          "term": "relations among",
+          "heading": false
+        }
+      ],
+      "extract": "Documenta Math. 1 Standard Relations of Multiple Polylogarithm Values at Roots of Unity Dedicated to Prof. Keqin Feng on his 70th birthday Jianqiang Zhao Received: July 24, 2009 Revised: January 5, 2010 Communicated by Takeshi Saito Abstract. Let N be a positive integer. In this paper we shall study the special values of multiple polylogarithms at Nth roots of unity, called multiple polylogarithm values (MPVs) of",
+      "extractCut": true,
+      "blocks": [
+        "library/zhao-standard-2010/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": "3",
+      "words": 485,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "polylogs",
+          "heading": false
+        },
+        {
+          "term": "mpvs",
+          "heading": false
+        },
+        {
+          "term": "weight",
+          "heading": false
+        },
+        {
+          "term": "introduction",
+          "heading": true
+        },
+        {
+          "term": "revival",
+          "heading": false
+        }
+      ],
+      "extract": "Introduction 2 1.1 Multiple polylog values at roots of unity . . . . . . . . . . . . . 3 1.2 Standard relations of MPVs . . . . . . . . . . . . . . . . . . . . 4 1.3 Main results . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5 1.4 Acknowledgment . . . . . . . . . . . . . . . . . . . . . . . . . . 6 2 The double shuffle relations and the algebra A 6 3 Weight one relations 10 4 Regularized distribution",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-multiple-polylog-values-at-roots-of-unity",
+      "number": "1.1",
+      "title": "Multiple polylog values at roots of unity",
+      "level": 2,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": "3",
+      "labelEnd": "4",
+      "words": 831,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multiple polylog",
+          "heading": true
+        },
+        {
+          "term": "polylog values",
+          "heading": true
+        },
+        {
+          "term": "double shuﬄe",
+          "heading": false
+        },
+        {
+          "term": "shuﬄe relations",
+          "heading": false
+        },
+        {
+          "term": "mpvs",
+          "heading": false
+        },
+        {
+          "term": "mzvs",
+          "heading": false
+        },
+        {
+          "term": "mpv",
+          "heading": false
+        },
+        {
+          "term": "regularized double",
+          "heading": false
+        }
+      ],
+      "extract": "Multiple polylog values at roots of unity In this paper, the primary objects of study are the multiple polylog values at roots of unity (MPVs). These special values, MZVs and the alternating Euler sums in particular, have attracted a lot attention in recent years after they were found to be connected to many branches of mathematics and physics (see, for e.g., [7, 8, 10, 11, 15, 19, 28]). Results up to around year",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-standard-relations-of-mpvs",
+      "number": "1.2",
+      "title": "Standard relations of MPVs",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": "4",
+      "labelEnd": "5",
+      "words": 284,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mpvs",
+          "heading": true
+        },
+        {
+          "term": "among mpvs",
+          "heading": false
+        },
+        {
+          "term": "relations",
+          "heading": true
+        },
+        {
+          "term": "lifted relations",
+          "heading": false
+        },
+        {
+          "term": "distribution relations",
+          "heading": false
+        },
+        {
+          "term": "rdt",
+          "heading": false
+        },
+        {
+          "term": "rds",
+          "heading": false
+        },
+        {
+          "term": "regularized distribution",
+          "heading": false
+        }
+      ],
+      "extract": "Standard relations of MPVs If the level N > 3 then there are many non-trivial linear relations in MPV(1, N) of weight one whose structure is clear to us. Multiplied by MPVs of weight w −1 these relations can produce non-trivial linear relations among MPVs of weight w which are called the weight one relations. Similar to these relations one may produce new relations by multiplying MPVs on all of the other types of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-main-results",
+      "number": "1.3",
+      "title": "Main results",
+      "level": 2,
+      "pageStart": 5,
+      "pageEnd": 6,
+      "labelStart": "5",
+      "labelEnd": "6",
+      "words": 304,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "standard relations",
+          "heading": false
+        },
+        {
+          "term": "mpvs",
+          "heading": false
+        },
+        {
+          "term": "octahedral",
+          "heading": false
+        },
+        {
+          "term": "main",
+          "heading": true
+        },
+        {
+          "term": "prime",
+          "heading": false
+        },
+        {
+          "term": "thm",
+          "heading": false
+        }
+      ],
+      "extract": "Main results The main goal of this paper is to provide some extensive numerical evidence concerning the (in)completeness of the standard relations. Namely, these re- lations in general are not enough to produce all the Q-linear relation between MPVs (see Remark 8.2 and Conjecture 8.5); however, we have the following result (see Thm. 8.6 and Thm. 8.3). Theorem 1.2. Let p ≥5 be a prime. Then d(2, p) ≤(5p + 7)(p +",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-14-acknowledgment",
+      "number": "1.4",
+      "title": "Acknowledgment",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": "6",
+      "labelEnd": "6",
+      "words": 140,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "acknowledgment",
+          "heading": true
+        },
+        {
+          "term": "visiting",
+          "heading": false
+        },
+        {
+          "term": "vollinga",
+          "heading": false
+        },
+        {
+          "term": "dez",
+          "heading": false
+        }
+      ],
+      "extract": "Acknowledgment This work was started while I was visiting Chern Institute of Mathematics at Nankai University and the Morningside Center of Mathematics at Beijing, China in the summer of 2007. The paper was revised later while I was visiting the Institute for Advanced Study and the Max Planck Institut f¨ur Mathematik. I’d like to thank the above institutions for their generous support, and in partic- ular to",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-2-the-double-shuffle-relations-and-the-algebra-a",
+      "number": "2",
+      "title": "The double shuffle relations and the algebra A",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 10,
+      "labelStart": "6",
+      "labelEnd": "10",
+      "words": 1391,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "shuﬄe relations",
+          "heading": false
+        },
+        {
+          "term": "double shuﬄe",
+          "heading": false
+        },
+        {
+          "term": "documenta mathematica",
+          "heading": false
+        },
+        {
+          "term": "shuﬄe product",
+          "heading": false
+        },
+        {
+          "term": "stuﬄe product",
+          "heading": false
+        },
+        {
+          "term": "ysn",
+          "heading": false
+        },
+        {
+          "term": "jianqiang zhao",
+          "heading": false
+        },
+        {
+          "term": "mzvs",
+          "heading": false
+        }
+      ],
+      "extract": "The double shuffle relations and the algebra A In this section we recall the procedure to transform the shuﬄe relations among MPVs into some pure algebra structures. This is a rather straight-forward variation of a theme ﬁrst studied by Hoﬀman for MZVs (see, for e.g., [22, 23]) and then further developed by Ihara et al. in [24] and by Racinet in [26]. Most of the results in this section are well-known but we include",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-3-weight-one-relations",
+      "number": "3",
+      "title": "Weight one relations",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": "10",
+      "labelEnd": "10",
+      "words": 317,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "weight",
+          "heading": true
+        },
+        {
+          "term": "relations",
+          "heading": true
+        },
+        {
+          "term": "mpvs",
+          "heading": false
+        },
+        {
+          "term": "relations among",
+          "heading": false
+        },
+        {
+          "term": "linear relations",
+          "heading": false
+        }
+      ],
+      "extract": "Weight one relations When N ≥4 there exist linear relations among MPVs of weight one by a theorem of Bass [1]. These relations are important because by multiplying any MPV of weight w −1 by such a relation one can get a relation between MPVs of weight w which is called a weight one relation. This is one of the key ideas in ﬁnding the formula in [17, 5.25] concerning d(w, N). Clearly, there are N −1 MPVs of weight 1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-4-regularized-distribution-relations",
+      "number": "4",
+      "title": "Regularized distribution relations",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 14,
+      "labelStart": "10",
+      "labelEnd": "14",
+      "words": 1376,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "distribution relations",
+          "heading": true
+        },
+        {
+          "term": "documenta mathematica",
+          "heading": false
+        },
+        {
+          "term": "fdt",
+          "heading": false
+        },
+        {
+          "term": "jianqiang zhao",
+          "heading": false
+        },
+        {
+          "term": "rds",
+          "heading": false
+        },
+        {
+          "term": "fds",
+          "heading": false
+        },
+        {
+          "term": "group-like element",
+          "heading": false
+        },
+        {
+          "term": "regularized",
+          "heading": true
+        }
+      ],
+      "extract": "Regularized distribution relations It is well-known that multiple polylogs satisfy the following distribution formula (cf. [26, Prop. 2.25]): Lis1,...,sn(x1, . . . , xn) = ds1+···+sn−n X yd j =xj,1≤j≤n Lis1,...,sn(y1, . . . , yn), (14) Documenta Mathematica 15 (2010) 1–34 Relations of Multiple Polylogarithm Values 11 for all positive integer d. When s1 = 1 one has to exclude the divergent case x1 = 1. We call these",
+      "extractCut": true
+    },
+    {
+      "id": "sec-008-5-lifted-relations-from-lower-weights",
+      "number": "5",
+      "title": "Lifted relations from lower weights",
+      "level": 1,
+      "pageStart": 14,
+      "pageEnd": 16,
+      "labelStart": "14",
+      "labelEnd": "16",
+      "words": 792,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lifted relations",
+          "heading": true
+        },
+        {
+          "term": "rds",
+          "heading": false
+        },
+        {
+          "term": "weight four",
+          "heading": false
+        },
+        {
+          "term": "mpvs",
+          "heading": false
+        },
+        {
+          "term": "lower weights",
+          "heading": true
+        },
+        {
+          "term": "rdt",
+          "heading": false
+        },
+        {
+          "term": "relations among",
+          "heading": false
+        },
+        {
+          "term": "documenta mathematica",
+          "heading": false
+        }
+      ],
+      "extract": "Lifted relations from lower weights Note that when N = 3 there are no weight one relations nor (regularized) distribution relations. When we deal with MZVs (resp. alternating Euler sums) we expect that all the linear relations come from RDS (resp. RDS and RDT). Since there is no weight one relation when level N ≤3 it is natural to ask if RDS and RDT are enough when N = 3. Surprisingly, the answer is no. The ﬁrst",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-6-some-conjectures-of-fds-and-rds",
+      "number": "6",
+      "title": "Some conjectures of FDS and RDS",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 17,
+      "labelStart": "16",
+      "labelEnd": "17",
+      "words": 693,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "rds",
+          "heading": true
+        },
+        {
+          "term": "fds",
+          "heading": true
+        },
+        {
+          "term": "double shuﬄe",
+          "heading": false
+        },
+        {
+          "term": "regularized double",
+          "heading": false
+        },
+        {
+          "term": "rsr",
+          "heading": false
+        },
+        {
+          "term": "weight ﬁve",
+          "heading": false
+        },
+        {
+          "term": "mpvs",
+          "heading": false
+        },
+        {
+          "term": "standard relations",
+          "heading": false
+        }
+      ],
+      "extract": "Some conjectures of FDS and RDS Fix a level N. Let R be a commutative Q-algebra with 1 and a homomorphism ZR : A0 −→R such that the ﬁnite double shuﬄe (FDS) property holds: ZR(ω1xω2) = ZR(ω1 ∗ω2) = ZR(ω1)ZR(ω2). We then extend ZR to Zx R and Z∗ R as before. Deﬁne an R-module automor- phism ρR of R[T ] by ρR(eT u) = AR(u)eT u where AR(u) = exp ∞ X n=2 (−1)n n ZR(an−1b0)un ! ∈R[[u]]. If a map ZR : A0 −→R satisﬁes the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-7-the-structure-of-mpvs-and-some-examples",
+      "number": "7",
+      "title": "The structure of MPVs and some examples",
+      "level": 1,
+      "pageStart": 17,
+      "pageEnd": 17,
+      "labelStart": "17",
+      "labelEnd": "17",
+      "words": 172,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mpvs",
+          "heading": true
+        },
+        {
+          "term": "fds",
+          "heading": false
+        },
+        {
+          "term": "rds",
+          "heading": false
+        }
+      ],
+      "extract": "The structure of MPVs and some examples In this section we concentrate on RDS between MPVs of small weights. Most of the computations in this section are carried out by MAPLE. We have checked the consistency of these relations with many known ones and veriﬁed our results numerically using GiNac [27] and EZ-face [9]. By considering all the admissible words we see easily that the number of distinct MPVs of weight w ≥2",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-71-weight-one",
+      "number": "7.1",
+      "title": "Weight one",
+      "level": 2,
+      "pageStart": 17,
+      "pageEnd": 18,
+      "labelStart": "17",
+      "labelEnd": "18",
+      "words": 118,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "weight",
+          "heading": true
+        },
+        {
+          "term": "q-basis",
+          "heading": false
+        },
+        {
+          "term": "jianqiang",
+          "heading": false
+        }
+      ],
+      "extract": "Weight one From §3 we know that all relations in weight one follow from (11) and (12), and no RDS exists. The relations in weight one are crucial for higher level cases because they provide the weight one relations considered in §3. Moreover, easy computation by (11) and (12) shows that there is a hidden integral structure, Documenta Mathematica 15 (2010) 1–34 18 Jianqiang Zhao namely, in each level there exists a",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-72-weight-two",
+      "number": "7.2",
+      "title": "Weight two",
+      "level": 2,
+      "pageStart": 18,
+      "pageEnd": 19,
+      "labelStart": "18",
+      "labelEnd": "19",
+      "words": 347,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "weight",
+          "heading": true
+        },
+        {
+          "term": "fdt",
+          "heading": false
+        },
+        {
+          "term": "rdt",
+          "heading": false
+        },
+        {
+          "term": "rds",
+          "heading": false
+        }
+      ],
+      "extract": "Weight two There are N 2 MPVs of weight two and level N: LN(1, 1|i, j), LN(2|j), 1 ≤i ≤N −1, 0 ≤j ≤N −1. For 1 ≤i, j < N the FDS Z∗(y1,i ∗y1,j) = Zx(y1,ixy1,j) yields LN(2|i + j) + LN(1, 1|i, j) + LN(1, 1|j, i) = LN(1, 1|i, j −i) + LN(1, 1|j, i −j). (21) Now from RDS ρ(Z∗(y1,0 ∗y1,i)) = Zx(y1,0xy1,i) we get for 1 ≤i < N LN(1, 1|i, 0) + LN(2|i) = LN(1, 1|i, −i). (22) The FDT in (14) yields: for every divisor d of N,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-73-weight-three",
+      "number": "7.3",
+      "title": "Weight three",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 21,
+      "labelStart": "19",
+      "labelEnd": "21",
+      "words": 596,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "documenta mathematica",
+          "heading": false
+        },
+        {
+          "term": "rds",
+          "heading": false
+        },
+        {
+          "term": "fds",
+          "heading": false
+        },
+        {
+          "term": "mpvs",
+          "heading": false
+        }
+      ],
+      "extract": "Weight three Apparently there are N 2(N + 1) MPVs of weight three and level N: for each choice (i, j, k) with 1 ≤i ≤N −1, 0 ≤j, k ≤N −1 we have four MPVs of level N: LN(13|i, j, k) := LN(1, 1, 1|i, j, k), LN(1, 2|i, j), LN(2, 1|j, k), LN(3|k). For 1 ≤i, j, k < N the FDS Z∗\u0000y1,i ∗(y1,jy1,k) \u0001 = Zx\u0000y1,ix(y1,jy1,k) \u0001 yields LN(13|i, j −i, k) + LN(13|j, i −j, k + j −i) + LN(13|j, k, i −k −j) = LN(2, 1|i + j, k) + LN(1,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-74-upper-bound-of-dw-n-by-deligne-and-goncharov",
+      "number": "7.4",
+      "title": "Upper bound of d(w, N) by Deligne and Goncharov",
+      "level": 2,
+      "pageStart": 21,
+      "pageEnd": 21,
+      "labelStart": "21",
+      "labelEnd": "21",
+      "words": 182,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "goncharov",
+          "heading": true
+        },
+        {
+          "term": "deligne",
+          "heading": true
+        },
+        {
+          "term": "bound",
+          "heading": true
+        }
+      ],
+      "extract": "Upper bound of d(w, N) by Deligne and Goncharov By using the theory of motivic fundamental groups of P1 −({0, ∞} ∪µN) Deligne and Goncharov [17, 5.25] show that d(w, N) ≤D(w, N) where D(w, N) are deﬁned by the formal power series 1 + ∞ X w=1 D(w, N)tw =    (1 −t2 −t3)−1, if N = 1; (1 −t −t2)−1, if N = 2; (1 −at + bt2)−1, if N ≥3, (36) where a = a(N) := ϕ(N)/2 + ν(N), b = b(N) := ν(N) −1, ϕ is the Euler’s totient",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-8-computational-results-in-weight-two",
+      "number": "8",
+      "title": "Computational results in weight two",
+      "level": 1,
+      "pageStart": 21,
+      "pageEnd": 29,
+      "labelStart": "21",
+      "labelEnd": "29",
+      "words": 3345,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "documenta mathematica",
+          "heading": false
+        },
+        {
+          "term": "non-standard relations",
+          "heading": false
+        },
+        {
+          "term": "jianqiang zhao",
+          "heading": false
+        },
+        {
+          "term": "prime kernel",
+          "heading": false
+        },
+        {
+          "term": "dim ker",
+          "heading": false
+        },
+        {
+          "term": "independent non-standard",
+          "heading": false
+        },
+        {
+          "term": "prime power",
+          "heading": false
+        },
+        {
+          "term": "prime square",
+          "heading": false
+        }
+      ],
+      "extract": "Computational results in weight two In this section we combine the analysis in the previous sections and the theory developed by Deligne and Goncharov [17] to present a detailed computation in weight two and level N ≤169. Let G := ι(Lie Uω) be the motivic fundamental Lie algebra (see [17, (5.12.2)]) associated to the motivic fundamental group of P1 −({0, ∞}∪µN). As pointed out in §6.13 of op. cit. one may safely",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-9-computational-results-in-weight-three-four-and",
+      "number": "9",
+      "title": "Computational results in weight three, four and five",
+      "level": 1,
+      "pageStart": 29,
+      "pageEnd": 34,
+      "labelStart": "29",
+      "labelEnd": null,
+      "words": 1673,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "jianqiang zhao",
+          "heading": false
+        },
+        {
+          "term": "documenta mathematica",
+          "heading": false
+        },
+        {
+          "term": "multiple polylogarithm",
+          "heading": false
+        },
+        {
+          "term": "multiple zeta",
+          "heading": false
+        },
+        {
+          "term": "weight",
+          "heading": true
+        },
+        {
+          "term": "broadhurst",
+          "heading": false
+        },
+        {
+          "term": "borwein",
+          "heading": false
+        },
+        {
+          "term": "polylogarithm values",
+          "heading": false
+        }
+      ],
+      "extract": "Computational results in weight three, four and five In this last section we brieﬂy discuss our results in weight three, four and ﬁve. Since the computational complexity increases exponentially with the weight we cannot do as many cases as we have done in weight two. Combining the FDS (28), (29), RDS (30)-(35), and the weight one relations (13) and using MAPLE we have veriﬁed that d(3, 1) = 1, d(3, 2) ≤3, d(3, 3)",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 1,
+        "items": [
+          "Introduction"
+        ]
+      },
+      "found_not_listed": {
+        "count": 0,
+        "items": []
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "mpvs standard",
+      "heading": true
+    },
+    {
+      "term": "among mpvs",
+      "heading": false
+    },
+    {
+      "term": "documenta mathematica",
+      "heading": false
+    },
+    {
+      "term": "shuﬄe relations",
+      "heading": false
+    },
+    {
+      "term": "lifted rds",
+      "heading": false
+    },
+    {
+      "term": "non-standard relations",
+      "heading": false
+    },
+    {
+      "term": "jianqiang zhao",
+      "heading": false
+    },
+    {
+      "term": "octahedral relations",
+      "heading": false
+    },
+    {
+      "term": "distribution relations",
+      "heading": true
+    },
+    {
+      "term": "weight four",
+      "heading": true
+    },
+    {
+      "term": "linear relations",
+      "heading": false
+    },
+    {
+      "term": "weight ﬁve",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 15,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 20,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 22,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 23,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 24,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 25,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 26,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 27,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 28,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "contents",
+      "confidence": 0.6
+    },
+    {
+      "physical": 30,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 31,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 32,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 33,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 34,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "table",
+      "number": "1",
+      "title": "Upper bounds of d(2, N) by the standard relations and [17, 5.25]",
+      "page": 22,
+      "pageLabel": null,
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    },
+    {
+      "kind": "table",
+      "number": "2",
+      "title": "Upper bounds of d(w, N) by the standard relations and [17, 5.25]",
+      "page": 29,
+      "pageLabel": "29",
+      "confidence": 0.8,
+      "evidence": [
+        "referenced",
+        "in-sequence"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 17,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 18,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted",
+      "note": "2 captioned in the text"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p29); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 2
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 18 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/zhao-standard-2010"
+  }
+}

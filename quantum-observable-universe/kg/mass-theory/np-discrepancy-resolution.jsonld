@@ -1,0 +1,31 @@
+{
+  "@context": [
+    "https://litlfred.github.io/qou/ns/context/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/",
+      "folio-assistant-core": "https://litlfred.github.io/folio-assistant-core/v0/ns/"
+    }
+  ],
+  "@id": "papers/quantum-observable-universe/blocks/rem-np-discrepancy-resolution",
+  "@type": [
+    "folio-assistant-core:Remark",
+    "doco:Section"
+  ],
+  "label": "rem:np-discrepancy-resolution",
+  "kind": "remark",
+  "title": "n/p discrepancy resolution: calibration-dependent, not structural",
+  "uses": [
+    "papers/quantum-observable-universe/blocks/thm-knot-mass-formula-unified"
+  ],
+  "interprets": "papers/quantum-observable-universe/blocks/thm-knot-mass-formula-unified",
+  "tags": [
+    "proton",
+    "neutron",
+    "mass-splitting",
+    "calibration",
+    "beta-decay",
+    "interpretation"
+  ],
+  "text": "np-discrepancy-resolution.md",
+  "provenance": "authored"
+}

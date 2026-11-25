@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/integration-watcher.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/integration-watcher",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "integration-watcher",
+      "title": "integration-watcher (abstract parent)",
+      "description": "Abstract parent skill for domain-specific **integration watchers**. Encodes the shared mechanics — Monitor on `origin/main`, PR subscriptions, per-event QA dispatch, queue + ledger, idle backlog sweep, idle author-ask dispatcher, watch-PRs-you-prepare protocol, one-voice on PR diff, witness-drift CI recovery, billing-quick-fail flake handling — that every concrete watcher inherits. Children fill nine domain-specific slots; everything else is shared here.",
+      "instructionsPath": "skills/local/integration-watcher.md",
+      "instructionLines": 1696,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

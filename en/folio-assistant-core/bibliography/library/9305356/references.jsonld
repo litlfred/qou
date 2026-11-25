@@ -1,0 +1,28 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/9305356",
+      "@type": [
+        "fabio:Work",
+        "bibo:Document"
+      ],
+      "dcterms:title": "Introduction to Left-Right Symmetric Models",
+      "dcterms:issued": "D:20140308",
+      "dcterms:abstract": "We motivate left-right symmetric models by the possibility of spontaneous parity breaking. Th,;n we describe the multiplets and the La.grangian of such models. Finally we discuss lower bounds on the right-handed scale. *) Lectc:re given at.the 4th Hellenic School on Elementary Particle Physics, Corfu, 2- 20 September 1992.",
+      "dcterms:source": "library/9305356/manifest.jsonld",
+      "dcterms:hasVersion": "library/9305356"
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2302.08363v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-2302.08363v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Prepared for submission to JHEP\nOn the structure of trans-series in\nquantum field theory\nMarcos Mari˜noa, Ramon Miravitllasa and Tom´as Reisb\naD´epartement de Physique Th´eorique et Section de Math´ematiques\nUniversit´e de Gen`eve, Gen`eve, CH-1211 Switzerland\nbSISSA, 34136 Trieste, Italy, and\nINFN, Sezione di Trieste, 34127 Trieste, Italy\nE-mail: marcos.marino@unige.ch, ramon.miravitllasmas@unige.ch,\ntreis@sissa.it\nAbstract: Many observables in quantum field theory can be expressed in terms of trans-series,\nin which one adds to the perturbative series a typically infinite sum of exponentially",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.08363v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-introduction.md",
+      "narrative": null,
+      "content": "Introduction\n1\n2\nTrans-series and their structure\n2\n3\nThe large N sigma model, revisited\n4\n4\nComplex Chern–Simons theory\n8\n5\nIntegrable models\n10\n5.1\nThe free energy of integrable models\n10\n5.2\nBosonic models\n13\n5.2.1\nTrans-series computation\n14\n5.2.2\nNumerical analysis\n19\n5.3\nThe Gross–Neveu model\n23\n5.3.1\nSummary of the recursive problem\n24\n5.3.2\nLeading orders in ˜α\n27\n5.3.3\nNumerical analysis\n28\n5.3.4\nLarge N solution\n30\n6\nConclusions and open problems\n30\n1\nIntroduction\nIt is widely believed that renormalized perturbation theory gives the asymptotic expansions of\nobservables in quantum fie",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.08363v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Trans-series and their structure",
+      "pageStart": 3,
+      "pageEnd": 5,
+      "target": "../sections/sec-001-trans-series-and-their-structure.md",
+      "narrative": null,
+      "content": "Trans-series and their structure\nIn this paper we will consider trans-series involving two small parameters: a coupling constant g\nand an exponentially small term of the form\ny = g−be−A/g.\n(2.1)\n– 2 –\nThese trans-series are of the form\nΦ =\nX\nℓ≥0\nyℓφℓ(g),\n(2.2)\nwhere\nφℓ(g) =\nX\nn≥0\nan,ℓgn\n(2.3)\nare formal power series in g. Some of the examples we will consider will be however slightly\nmore general, including for example logarithmic terms, or involving finite sums of expressions\nlike (2.2). The series φ0(g) is the perturbative series, and the higher order series φℓ(g), with\nℓ≥1, are non-perturba",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.08363v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The large N sigma model, revisited",
+      "pageStart": 5,
+      "pageEnd": 9,
+      "target": "../sections/sec-002-the-large-n-sigma-model-revisited.md",
+      "narrative": null,
+      "content": "The large N sigma model, revisited\nOne of the most explicit results for a trans-series expansion in QFT was obtained in [32] for\nthe self-energy of the O(N) non-linear sigma model, at the first non-trivial order in the 1/N\nexpansion. Let us briefly review the result and analyze the properties of the trans-series.\nThe basic field of the O(N) non-linear sigma model is a scalar field σ : R2 →RN satisfying\nthe constraint\nσ2 = 1.\n(3.1)\nThe Lagrangian density is\nL =\n1\n2g2\n0\n∂µσ · ∂µσ,\n(3.2)\nwhere g0 is the bare coupling constant. As it is well-known, this model can be solved order by\norder in the 1/",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.08363v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Complex Chern–Simons theory",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-003-complex-chernsimons-theory.md",
+      "narrative": null,
+      "content": "\\label{sec-cs}\n\nComplex Chern--Simons (CS) theory is an ideal arena to study trans-series, \nsince as a QFT it is essentially solvable, and at the same time \nit leads to highly non-trivial perturbative series. The mathematical program of applying resurgence in \ncomplex CS theory was pioneered in \\cite{garoufalidis}, and applied in e.g. \\cite{garo-costin,gmp}. \n\nIn this section we will illustrate our considerations with the resurgent \nresults for partition functions on the complements of knots, presented in \\cite{ggm1, ggm2}. This \nobservable admits a non-perturbative definition through the so-c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.08363v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Integrable models",
+      "pageStart": 11,
+      "pageEnd": 11,
+      "target": "../sections/sec-004-integrable-models.md",
+      "narrative": null,
+      "content": "\\label{sec-integrable}",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.08363v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The free energy of integrable models",
+      "pageStart": 11,
+      "pageEnd": 14,
+      "target": "../sections/sec-005-the-free-energy-of-integrable-models.md",
+      "narrative": null,
+      "content": "Two-dimensional, integrable, asymptotically free quantum field theories are an interesting family of toy \nmodels where one can obtain an explicit but highly non-trivial trans-series \nfor the free energy \\cite{fkw-letter,fkw, volin, mr-ren, abbh1, \nabbh2, mmr, dmss, mmr-an, bbv, bbhv, \nbbhv2, mmr-theta, bbv2,s-thompson}, and therefore one can hope that the \nconvergent property of the partial series can be \ntested in detail. \n\n\n\n\nIn integrable quantum field theories, the free energy is a quantity that can be computed after we \nintroduce into the Hamiltonian $\\mathsf{H}$ a chemical potential $h$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.08363v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Bosonic models",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-006-bosonic-models.md",
+      "narrative": null,
+      "content": "Using the techniques described in \\cite{mmr-an}, one can extract the trans-series of the free energy from the equations above. \nIn this section we will concentrate on the bosonic models, which include the $O(N)$ non-linear sigma model \nand the $SU(N)$ principal chiral field (PCF). The structure of the trans-series is generically given by\n\n\\begin{equation}\n\\Phi_\\pm(\\tilde{\\alpha}) = \\sum_{\\ell\\geq 0} y^\\ell \\varphi_\\ell(\\tilde{\\alpha}) + \\mathcal{C}_{\\text{IR}}^\\pm \\tilde{\\alpha}^{2-2a} \\re^{-2/\\tilde{\\alpha}},\n\\label{eq_free_energy_transseries}\n\\end{equation}\n\nwhere $\\tilde{\\alpha}$ is a conve",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.08363v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Trans-series computation",
+      "pageStart": 15,
+      "pageEnd": 20,
+      "target": "../sections/sec-007-trans-series-computation.md",
+      "narrative": null,
+      "content": "\\label{sec_bosonic_models}\nIn this section, we will compute the formal power series $\\varphi_\\ell(\\tilde\\alpha)$ appearing in the trans-series \\eqref{eq_free_energy_transseries}. Our computation is limited to the leading and subleading corrections in $\\tilde{\\alpha}$, but to arbitrary order $\\ell$ in the exponential corrections. This will be essential in order to extract the large order behavior of the coefficients that appear in the partial series $\\mathcal{G}_n(y)$ of \\eqref{phi-y}, for $n=0$, $1$.\n\nThe computation is split in two main steps. First, we determine the trans-series of the free",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.08363v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Numerical analysis",
+      "pageStart": 20,
+      "pageEnd": 24,
+      "target": "../sections/sec-008-numerical-analysis.md",
+      "narrative": null,
+      "content": "Using the method discussed in the previous section, we can now generate the first two coefficients of the series\n\\begin{equation}\n\\varphi_\\ell(\\tilde\\alpha) = a_{0,\\ell} + a_{1,\\ell} \\tilde\\alpha + \\mathcal{O}\\big(\\tilde\\alpha^2\\big)\n\\end{equation}\nappearing in the trans-series \\eqref{eq_free_energy_transseries}, up to very large order in $\\ell$. To the very first values of $\\ell$, we find the following analytic results, valid for generic bosonic models:\n\\begin{multline}\n\\varphi_1(\\tilde{\\alpha}) = \\left( \\frac{G_+(\\ri)^2}{2\\pi k^2} \\frac{m^2}{\\Lambda^2} \\right)^{\\xi_1} \\biggl[ -\\frac{2 \\ri \\s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.08363v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Gross–Neveu model",
+      "pageStart": 24,
+      "pageEnd": 25,
+      "target": "../sections/sec-009-the-grossneveu-model.md",
+      "narrative": null,
+      "content": "\\label{sec_gross_neveu}\n\nThe Gross--Neveu model is an integrable model of $N$ Majorana fermions in 1+1 dimensions with a quartic interaction. \nWe restrict ourselves to the case $N>4$. Its Lagrangian is given by \n\n\\begin{equation}\n\\CL = \\frac{\\ri}{2}\\bar{\\boldsymbol{\\chi}}\\cdot\\slashed{\\partial}\\boldsymbol{\\chi}+\\frac{g^2}{8}\\left(\\bar{\\boldsymbol{\\chi}}\\cdot\\boldsymbol{\\chi}\\right)^2.\n\\end{equation}\n\nThis model is integrable and its $S$-matrix is known exactly. As in (\\ref{eq_hamiltonian_mod}), we \nwill introduce a chemical potential $h$ coupled to a conserved charge $\\mathsf{Q}$, which will b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.08363v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Summary of the recursive problem",
+      "pageStart": 25,
+      "pageEnd": 28,
+      "target": "../sections/sec-010-summary-of-the-recursive-problem.md",
+      "narrative": null,
+      "content": "\\label{gn-sum}\n\nIn contrast to the bosonic models studied in the previous section, the trans-series expansion of the integral equation \nof the Gross--Neveu model can be cast into a simple recursive problem. Here, we summarize its key \ningredients, originally presented in \\cite{mmr-an}.\n \nWe introduce the variable $\\eta$ and the coupling $v$ such that\n\\begin{equation}\n\\frac{1}{v}-2\\Delta\\log v = 2B, \\quad \\omega = \\ri v\\eta.\n\\label{v-def}\n\\end{equation}\nFor the double expansion, it is convenient to define the trans-monomial\n\\begin{equation}\nq= \\re^{-1/(\\Upsilon v)}v^{2\\Delta/\\Upsilon}.\n\\end{equ",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.08363v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Leading orders in alpha",
+      "pageStart": 28,
+      "pageEnd": 29,
+      "target": "../sections/sec-011-leading-orders-in-alpha.md",
+      "narrative": null,
+      "content": "The leading order in ˜α is obtained by neglecting all terms with the integral operator I. In this\ncase we obtain simple recursive relations. The uk are solved by\nu(0,0)\nk\n=\nΥ\n2k −1,\nu(0,s)\nk\n= Υ\n2\nX\ns+1\n2\n≥r≥1\n¯ρru(0,s+1−2r)\nr\nk + r −1\n,\n(5.101)\nwhich is simple to solve order by order, although hard to solve in closed form. Similarly, we\nobtain\nu(0,0)\ni\n= 1,\nu(0,s)\ni\n= Υ\nX\ns+1\n2\n≥r≥1\n¯ρru(0,s+1−2r)\nr\n2r −1 + Υ ,\nf(0,0)\nv\n= 1,\nf(0,s)\nv\n= −Υ\nX\ns+1\n2\n≥r≥1\n¯ρru(0,s+1−2r)\nr\n2r −1 −Υ .\n(5.102)\nFrom these building blocks, regular power series manipulations are sufficient to extract a0,ℓ. For\nexample,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.08363v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Numerical analysis",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "../sections/sec-012-numerical-analysis.md",
+      "narrative": null,
+      "content": "Numerical analysis\nUsing these recursion relations, the coefficients a0,ℓcan be obtained analytically, order by order.\nHowever, their expressions are very intricate and a general closed formula is unreachable.\nOne straightforward approach is to obtain the coefficients as exact functions of N. This way,\none can quickly generate data for different values of N, but it takes significant time to compute\nthe series. We calculated 20 exact coefficients in this form. In a similar strategy to previous cases,\nwe estimated the radius of convergence R with the 17-th coefficient of the second Richardson\ntr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.08363v2/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Large N solution",
+      "pageStart": 31,
+      "pageEnd": 31,
+      "target": "../sections/sec-013-large-n-solution.md",
+      "narrative": null,
+      "content": "Large N solution\nIt is interesting to compare our results with the large N expansion of the free energy in [50, 53]\n(see also [23] for further details). There, it is obtained that the leading order term in the small\n∆(large N) expansion of the free energy,\nF(h) = −h2\n2π\nX\nn≥0\nFn(h)∆n,\n(5.111)\nis given by\nF0(h) =\nr\n1 −m2\nh2 −m2\nh2 cosh−1\n\u0012 h\nm\n\u0013\n.\n(5.112)\nAs expected, F0(m) = 0. Furthermore, in the h-plane, there is a branch cut at [−m, m] due to\nthe square root, and another along (−∞, m] due to the logarithmic behavior of cosh−1. We see\nin particular the singularity at h = m shown in Fig. 3.\nI",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2302.08363v2/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Conclusions and open problems",
+      "pageStart": 31,
+      "pageEnd": 35,
+      "target": "../sections/sec-014-conclusions-and-open-problems.md",
+      "narrative": null,
+      "content": "Conclusions and open problems\nIn this paper we have addressed a question which we think is important in the resurgence program\nof QFT: when is the infinite sum over the non-perturbative sectors well defined, after Borel\nresummation in the coupling constant? Inspired by [4], we have addressed a proxy question,\nconcerning the convergence of the infinite family of what we have called partial series. In some\nsimple cases one can establish this property relatively easily, either numerically (as in the example\nof large N sigma models) or analytically (in complex CS theory).\nWe conjecture that this\nc",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

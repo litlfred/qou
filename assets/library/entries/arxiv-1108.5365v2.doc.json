@@ -1,0 +1,2912 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-1108.5365v2",
+  "title": "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R)",
+  "variant": "pdf",
+  "pages": 92,
+  "tocSource": "outline",
+  "tocMethod": null,
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 3,
+      "pageLabel": "3",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Preliminaries",
+      "number": "2",
+      "page": 8,
+      "pageLabel": "8",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-001-2-preliminaries"
+    },
+    {
+      "level": 2,
+      "title": "Mellin transform",
+      "number": "2.1",
+      "page": 9,
+      "pageLabel": "9",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-002-21-mellin-transform"
+    },
+    {
+      "level": 2,
+      "title": "Weight and multiplier algebra of a C*-algebra",
+      "number": "2.2",
+      "page": 10,
+      "pageLabel": "10",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-003-22-weight-and-multiplier-algebra-of-a-c-algebra"
+    },
+    {
+      "level": 2,
+      "title": "GNS representation and Tomita-Takesaki's theory",
+      "number": "2.3",
+      "page": 11,
+      "pageLabel": "11",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-004-23-gns-representation-and-tomita-takesakis-theor"
+    },
+    {
+      "level": 2,
+      "title": "The multiplicative unitary",
+      "number": "2.4",
+      "page": 13,
+      "pageLabel": "13",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-005-24-the-multiplicative-unitary"
+    },
+    {
+      "level": 2,
+      "title": "q-commuting operators",
+      "number": "2.5",
+      "page": 15,
+      "pageLabel": "15",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-006-25-q-commuting-operators"
+    },
+    {
+      "level": 1,
+      "title": "The quantum dilogarithm",
+      "number": "3",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-007-3-the-quantum-dilogarithm"
+    },
+    {
+      "level": 2,
+      "title": "Definition and properties",
+      "number": "3.1",
+      "page": 16,
+      "pageLabel": "16",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-008-31-definition-and-properties"
+    },
+    {
+      "level": 2,
+      "title": "Integral transformations",
+      "number": "3.2",
+      "page": 19,
+      "pageLabel": "19",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-009-32-integral-transformations"
+    },
+    {
+      "level": 1,
+      "title": "The quantum plane",
+      "number": "4",
+      "page": 22,
+      "pageLabel": "22",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-010-4-the-quantum-plane"
+    },
+    {
+      "level": 2,
+      "title": "Motivations from classical ax+b group",
+      "number": "4.1",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-011-41-motivations-from-classical-axb-group"
+    },
+    {
+      "level": 2,
+      "title": "The quantum plane algebra and its modular double",
+      "number": "4.2",
+      "page": 23,
+      "pageLabel": "23",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-012-42-the-quantum-plane-algebra-and-its-modular-dou"
+    },
+    {
+      "level": 2,
+      "title": "The Haar functional",
+      "number": "4.3",
+      "page": 27,
+      "pageLabel": "27",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-013-43-the-haar-functional"
+    },
+    {
+      "level": 2,
+      "title": "The GNS description",
+      "number": "4.4",
+      "page": 28,
+      "pageLabel": "28",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-014-44-the-gns-description"
+    },
+    {
+      "level": 2,
+      "title": "Modular maps and the right picture",
+      "number": "4.5",
+      "page": 31,
+      "pageLabel": "31",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-015-45-modular-maps-and-the-right-picture"
+    },
+    {
+      "level": 2,
+      "title": "The multiplicative unitary",
+      "number": "4.6",
+      "page": 34,
+      "pageLabel": "34",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-016-46-the-multiplicative-unitary"
+    },
+    {
+      "level": 1,
+      "title": "The dual space",
+      "number": "5",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-017-5-the-dual-space"
+    },
+    {
+      "level": 2,
+      "title": "Definitions",
+      "number": "5.1",
+      "page": 39,
+      "pageLabel": "39",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-018-51-definitions"
+    },
+    {
+      "level": 2,
+      "title": "The non-degenerate pairing",
+      "number": "5.2",
+      "page": 41,
+      "pageLabel": "41",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-019-52-the-non-degenerate-pairing"
+    },
+    {
+      "level": 2,
+      "title": "The GNS description",
+      "number": "5.3",
+      "page": 44,
+      "pageLabel": "44",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-020-53-the-gns-description"
+    },
+    {
+      "level": 2,
+      "title": "The multiplicative unitary and modular maps",
+      "number": "5.4",
+      "page": 46,
+      "pageLabel": "46",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-021-54-the-multiplicative-unitary-and-modular-maps"
+    },
+    {
+      "level": 1,
+      "title": "Transformation to new Hilbert spaces",
+      "number": "6",
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-022-6-transformation-to-new-hilbert-spaces"
+    },
+    {
+      "level": 2,
+      "title": "Unitary transformations",
+      "number": "6.1",
+      "page": 47,
+      "pageLabel": "47",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-023-61-unitary-transformations"
+    },
+    {
+      "level": 2,
+      "title": "The representation space",
+      "number": "6.2",
+      "page": 48,
+      "pageLabel": "48",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-024-62-the-representation-space"
+    },
+    {
+      "level": 2,
+      "title": "The corepresentation space",
+      "number": "6.3",
+      "page": 51,
+      "pageLabel": "51",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-025-63-the-corepresentation-space"
+    },
+    {
+      "level": 1,
+      "title": "The quantum double construction",
+      "number": "7",
+      "page": 53,
+      "pageLabel": "53",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-026-7-the-quantum-double-construction"
+    },
+    {
+      "level": 2,
+      "title": "Definitions",
+      "number": "7.1",
+      "page": 53,
+      "pageLabel": "53",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-027-71-definitions"
+    },
+    {
+      "level": 2,
+      "title": "The matrix coefficients and the fundamental corepresentation",
+      "number": "7.2",
+      "page": 58,
+      "pageLabel": "58",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-028-72-the-matrix-coefficients-and-the-fundamental-c"
+    },
+    {
+      "level": 2,
+      "title": "The multiplicative unitary",
+      "number": "7.3",
+      "page": 61,
+      "pageLabel": "61",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-029-73-the-multiplicative-unitary"
+    },
+    {
+      "level": 2,
+      "title": "The left regular corepresentation",
+      "number": "7.4",
+      "page": 66,
+      "pageLabel": "66",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-030-74-the-left-regular-corepresentation"
+    },
+    {
+      "level": 2,
+      "title": "The right regular corepresentation",
+      "number": "7.5",
+      "page": 72,
+      "pageLabel": "72",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-031-75-the-right-regular-corepresentation"
+    },
+    {
+      "level": 1,
+      "title": "Regular representation",
+      "number": "8",
+      "page": 75,
+      "pageLabel": "75",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-032-8-regular-representation"
+    },
+    {
+      "level": 2,
+      "title": "Pairing with Uq(gl(2,R))",
+      "number": "8.1",
+      "page": 75,
+      "pageLabel": "75",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-033-81-pairing-with-uqgl2r"
+    },
+    {
+      "level": 2,
+      "title": "The principal series representation",
+      "number": "8.2",
+      "page": 77,
+      "pageLabel": "77",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-034-82-the-principal-series-representation"
+    },
+    {
+      "level": 2,
+      "title": "Casimir operator",
+      "number": "8.3",
+      "page": 79,
+      "pageLabel": "79",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-035-83-casimir-operator"
+    },
+    {
+      "level": 2,
+      "title": "Left regular representation",
+      "number": "8.4",
+      "page": 82,
+      "pageLabel": "82",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-036-84-left-regular-representation"
+    },
+    {
+      "level": 2,
+      "title": "Right regular representation",
+      "number": "8.5",
+      "page": 85,
+      "pageLabel": "85",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-037-85-right-regular-representation"
+    },
+    {
+      "level": 2,
+      "title": "The modular double",
+      "number": "8.6",
+      "page": 87,
+      "pageLabel": "87",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-038-86-the-modular-double"
+    },
+    {
+      "level": 1,
+      "title": "Representation theoretic meaning for certain integral transforms",
+      "number": "9",
+      "page": 88,
+      "pageLabel": "88",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-039-9-representation-theoretic-meaning-for-certain-i"
+    },
+    {
+      "level": 1,
+      "title": "References",
+      "number": null,
+      "page": 89,
+      "pageLabel": "89",
+      "confidence": null,
+      "evidence": null,
+      "source": "outline",
+      "section": "sec-040-references"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 3,
+      "labelStart": "1",
+      "labelEnd": "3",
+      "words": 1126,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "regular corepresentation",
+          "heading": false
+        },
+        {
+          "term": "gns representation",
+          "heading": false
+        },
+        {
+          "term": "fundamental corepresentation",
+          "heading": false
+        },
+        {
+          "term": "gns description",
+          "heading": false
+        },
+        {
+          "term": "multiplicative unitary",
+          "heading": false
+        },
+        {
+          "term": "quantum double",
+          "heading": false
+        },
+        {
+          "term": "modular double",
+          "heading": false
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:1108.5365v2 [math.QA] 6 Sep 2012 Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+ q (2, R) Ivan C.H. Ip∗ May 22, 2018 Abstract We give complete detail of the description of the GNS representation of the quantum plane A and its dual ˆ A as a von Neumann algebra. In particu- lar we obtain a rather surprising result that the multiplicative unitary W is manageable in this",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-1108.5365v2/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 8,
+      "labelStart": "3",
+      "labelEnd": "8",
+      "words": 2678,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "inv dsdt",
+          "heading": false
+        },
+        {
+          "term": "multiplicative unitary",
+          "heading": false
+        },
+        {
+          "term": "til",
+          "heading": false
+        },
+        {
+          "term": "modular double",
+          "heading": false
+        },
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "haar functional",
+          "heading": false
+        },
+        {
+          "term": "gns construction",
+          "heading": false
+        },
+        {
+          "term": "haar measure",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:intro} The quantum plane $\\cA_q$ as a Hopf algebra is generated by self-adjoint elements $A,B$ satisfying $AB=q^2BA$ and the coproduct \\Eq{\\D(A)=A\\ox A,\\tab\\D(B)=B\\ox A+1\\ox B} for $q=e^{\\pi ib^2}$ with $|q|=1$. The coproduct reflects the fact that it is the quantum version of the classical $ax+b$ group, which is the group of affine transformations on the real line $\\R$. Sometimes known as the quantum",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-preliminaries",
+      "number": "2",
+      "title": "Preliminaries",
+      "level": 1,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": "8",
+      "labelEnd": "9",
+      "words": 106,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum plane",
+          "heading": false
+        },
+        {
+          "term": "qplane",
+          "heading": false
+        },
+        {
+          "term": "mellin",
+          "heading": false
+        },
+        {
+          "term": "gns",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Pre} In this section, we recall several technical results that will be needed in the description of the quantum plane. We will first remind the definitions and properties of the Mellin transform which serves as a motivation to define the quantum plane algebra in Section \\ref{sec:QPlane}. Then we describe the details of weights and multiplier algebra of a $C^*$-algebra, and its GNS construction and modular",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-21-mellin-transform",
+      "number": "2.1",
+      "title": "Mellin transform",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": "9",
+      "labelEnd": "10",
+      "words": 363,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mellin",
+          "heading": true
+        },
+        {
+          "term": "strip",
+          "heading": false
+        },
+        {
+          "term": "c-i",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Pre:Mellin} In this subsection, let us recall the Mellin transform of a function and its properties. \\begin{Thm}Let $f(x)$ be a continuous function on the half line $0<x<\\oo$. Then its Mellin transform is defined by \\Eq{\\phi(s):=(\\cM f)(s)=\\int_0^\\oo x^{s-1} f(x)dx,} whenever the integration is absolutely convergent for $a<Re(s)<b$. By the Mellin inversion theorem, $f(x)$ is recovered from $\\phi(s)$ by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-22-weight-and-multiplier-algebra-of-a-c-algebra",
+      "number": "2.2",
+      "title": "Weight and multiplier algebra of a C*-algebra",
+      "level": 2,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": "10",
+      "labelEnd": "11",
+      "words": 434,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multiplier algebra",
+          "heading": true
+        },
+        {
+          "term": "multiplier hopf",
+          "heading": false
+        },
+        {
+          "term": "begin def",
+          "heading": false
+        },
+        {
+          "term": "end def",
+          "heading": false
+        },
+        {
+          "term": "haar functional",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "weight",
+          "heading": true
+        },
+        {
+          "term": "phi",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:pre:C*} In this subsection, we recall the definition of weights on a $C^*$-algebra, and the language of multiplier algebra. Most of the notions are adopted from \\cite{KV1,T}. Let $\\cA$ be a $C^*$-algebra and $\\cA^+$ its positive self-adjoint elements. \\begin{Def} A weight on a $C^*$-algebra $\\cA$ is a function $\\phi: \\cA^+\\to [0,\\oo]$ such that \\begin{eqnarray} \\phi(x+y)&=&\\phi(x)+\\phi(y),\\\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-23-gns-representation-and-tomita-takesakis-theor",
+      "number": "2.3",
+      "title": "GNS representation and Tomita-Takesaki's theory",
+      "level": 2,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": "11",
+      "labelEnd": "13",
+      "words": 426,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "gns representation",
+          "heading": true
+        },
+        {
+          "term": "tab forall",
+          "heading": false
+        },
+        {
+          "term": "modular element",
+          "heading": false
+        },
+        {
+          "term": "end prop",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:pre:GNS} Let us recall the main objects in the study of GNS representation of a $C^*$-algebra (see e.g. \\cite{KV1}). \\begin{Def} A Gelfand-Naimark-Segal (GNS) representation of a $C^*$-algebra $\\cA$ with a weight $\\phi$ is a triple $$(\\cH, \\pi, \\L),$$ where $\\cH$ is a Hilbert space, $\\L:\\cA\\to\\cH$ is a linear map, and $\\pi:\\cA\\to\\cB(\\cH)$ is a representation of $\\cA$ on $\\cH$ such that $\\L(\\cN)$ is dense",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-24-the-multiplicative-unitary",
+      "number": "2.4",
+      "title": "The multiplicative unitary",
+      "level": 2,
+      "pageStart": 13,
+      "pageEnd": 15,
+      "labelStart": "13",
+      "labelEnd": "15",
+      "words": 644,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multiplicative unitary",
+          "heading": true
+        },
+        {
+          "term": "unitary operator",
+          "heading": false
+        },
+        {
+          "term": "begin def",
+          "heading": false
+        },
+        {
+          "term": "end def",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "pentagon equation",
+          "heading": false
+        },
+        {
+          "term": "pontryagin duality",
+          "heading": false
+        },
+        {
+          "term": "def let",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:pre:mu} Multiplicative unitaries are fundamental to the theory of quantum groups in the setting of $C^*$-algebras and von Neumann algebras, and to generalization of Pontryagin duality. In particular, a multiplicative unitary encodes all the structure maps of a quantum group and its dual. A very good exposition is given in \\cite{T}. First let us define the leg notation. \\begin{Def}Let $\\cH$ be a Hilbert",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-25-q-commuting-operators",
+      "number": "2.5",
+      "title": "q-commuting operators",
+      "level": 2,
+      "pageStart": 15,
+      "pageEnd": 16,
+      "labelStart": "15",
+      "labelEnd": "16",
+      "words": 416,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hat inv",
+          "heading": false
+        },
+        {
+          "term": "log inv",
+          "heading": false
+        },
+        {
+          "term": "hat frac",
+          "heading": false
+        },
+        {
+          "term": "operators",
+          "heading": true
+        },
+        {
+          "term": "dense subspace",
+          "heading": false
+        },
+        {
+          "term": "commutation relations",
+          "heading": false
+        },
+        {
+          "term": "fourier transform",
+          "heading": false
+        },
+        {
+          "term": "sch",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:pre:qcom} Throughout the paper, we will consider positive operators $A,B$ satisfying $AB=q^2BA$ for $q=e^{\\pi ib^2}, |q|=1$. We will realize the operators using the canonical pair $A=e^{2\\pi bx}, B=e^{2\\pi bp}$ where $p=\\frac{1}{2\\pi i}\\frac{d}{dx}$. Then it is well-known that \\begin{Prop} Both $A,B$ are positive unbounded operators on $L^2(\\R)$ and they are essentially self-adjoint. The domain for $A$ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-3-the-quantum-dilogarithm",
+      "number": "3",
+      "title": "The quantum dilogarithm",
+      "level": 1,
+      "pageStart": 16,
+      "pageEnd": 16,
+      "labelStart": "16",
+      "labelEnd": "16",
+      "words": 28,
+      "summary": null,
+      "keywords": [],
+      "extract": "\\label{sec:QDilog} We recall the definition of the quantum dilogarithm given in \\cite{Ip} (see also \\cite{BT}), an important special function that will be used throughout the paper.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-31-definition-and-properties",
+      "number": "3.1",
+      "title": "Definition and properties",
+      "level": 2,
+      "pageStart": 16,
+      "pageEnd": 19,
+      "labelStart": "16",
+      "labelEnd": "19",
+      "words": 561,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "label qsum",
+          "heading": false
+        },
+        {
+          "term": "inv",
+          "heading": false
+        },
+        {
+          "term": "qdilog",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:QDilog:Def} Throughout this section, we let $q=e^{\\pi i b^2}$ where $b^2\\in \\R\\setminus\\Q$ and $0<b^2<1$, so that $|q|=1$. We also denote $Q=b+b\\inv$. Let $\\w:=(w_1,w_2)\\in\\C^2$. \\begin{Def}The Double Zeta function is defined as \\Eq{\\ze_2(s,z|\\w):=\\sum_{m_1,m_2\\in\\Z_{\\geq0}}(z+m_1w_1+m_2w_2)^{-s}.} The Double Gamma function is defined as \\Eq{\\G_2(z|\\w):=\\exp\\left(\\frac{\\partial}{\\partial",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-32-integral-transformations",
+      "number": "3.2",
+      "title": "Integral transformations",
+      "level": 2,
+      "pageStart": 19,
+      "pageEnd": 22,
+      "labelStart": "19",
+      "labelEnd": "22",
+      "words": 882,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eqnarray lim",
+          "heading": false
+        },
+        {
+          "term": "int frac",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        },
+        {
+          "term": "contour goes",
+          "heading": false
+        },
+        {
+          "term": "sim frac",
+          "heading": false
+        },
+        {
+          "term": "begin lem",
+          "heading": false
+        },
+        {
+          "term": "frac bar",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:QDilog:Int} Here we describe several properties of the quantum dilogarithm involving integrations. \\begin{Lem}\\label{FT} \\cite[(3.31), (3.32)]{BT} We have the following Fourier transformation formula: \\Eq{\\int_{\\R+i0} e^{2\\pi i t r}\\frac{e^{-\\pi i t^2}}{G_b(Q+i t)}dt=\\frac{\\bar{\\ze_b}}{G_b(\\frac{Q}{2}-ir)}=g_b(e^{2\\pi b r}), } \\Eq{\\int_{\\R+i0} e^{2\\pi i t r}\\frac{e^{-\\pi Qt}}{G_b(Q+i t)}dt=\\ze_b",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-4-the-quantum-plane",
+      "number": "4",
+      "title": "The quantum plane",
+      "level": 1,
+      "pageStart": 22,
+      "pageEnd": 23,
+      "labelStart": "22",
+      "labelEnd": "23",
+      "words": 181,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "haar functional",
+          "heading": false
+        },
+        {
+          "term": "kms",
+          "heading": false
+        },
+        {
+          "term": "corollary ref",
+          "heading": false
+        },
+        {
+          "term": "quantum",
+          "heading": true
+        },
+        {
+          "term": "antipode",
+          "heading": false
+        },
+        {
+          "term": "theorem ref",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:QPlane} In this section, we will define the main object of study in this paper, the $C^*$-algebra $\\cA$ of ``functions vanishing at infinity\" on the quantum plane. Its Haar functional is established, and we obtain the GNS construction of $\\cA$ on a Hilbert space $\\cH\\simeq L^2(\\R\\x\\R)$. Finally we construct the multiplicative unitary $W$, and show that it is in fact manageable. Note that in analogy to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-41-motivations-from-classical-axb-group",
+      "number": "4.1",
+      "title": "Motivations from classical ax+b group",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 23,
+      "labelStart": "23",
+      "labelEnd": "23",
+      "words": 342,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "mellin transform",
+          "heading": false
+        },
+        {
+          "term": "veca",
+          "heading": false
+        },
+        {
+          "term": "int",
+          "heading": false
+        },
+        {
+          "term": "analytic",
+          "heading": false
+        },
+        {
+          "term": "group",
+          "heading": true
+        },
+        {
+          "term": "classical",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{sec:QPlane:ax+b} Recall that the classical $ax+b$ group is the group $G$ of affine transformations on the real line $\\R$, where $a>0$ and $b\\in\\R$, and they can be represented by a matrix of the form (we use the transposed version): \\Eq{g(a,b)=\\veca{a&0\\\\b&1},} where the multiplication is given by \\Eq{\\label{ax+bprod} g(a_1,b_1)g(a_2,b_2)=\\veca{a_1a_2&0\\\\b_1a_2+b_2&1}.} We can then talk about the space",
+      "extractCut": true
+    },
+    {
+      "id": "sec-012-42-the-quantum-plane-algebra-and-its-modular-dou",
+      "number": "4.2",
+      "title": "The quantum plane algebra and its modular double",
+      "level": 2,
+      "pageStart": 23,
+      "pageEnd": 27,
+      "labelStart": "23",
+      "labelEnd": "27",
+      "words": 1231,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "inv dsdt",
+          "heading": false
+        },
+        {
+          "term": "dsdt int",
+          "heading": false
+        },
+        {
+          "term": "inv duality",
+          "heading": false
+        },
+        {
+          "term": "dsdt right",
+          "heading": false
+        },
+        {
+          "term": "til",
+          "heading": false
+        },
+        {
+          "term": "unitary antipode",
+          "heading": false
+        },
+        {
+          "term": "multiplier algebra",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:QPlane:alg} Throughout the section, we let $q=e^{\\pi ib^2}, \\til[q]=e^{\\pi ib^{-2}}$ where $b^2\\in\\R\\setminus \\Q, 0<b^2<1$. We have $|q|=|\\til[q]|=1$. The quantum plane $\\cA_q$ is formally the Hopf algebra generated by positive self-adjoint operators $A, B$ satisfying \\Eq{AB=q^2BA,} with coproduct \\begin{eqnarray} \\D(A)&=&A\\ox A,\\\\ \\label{copB}\\D(B)&=&B\\ox A+1\\ox B. \\end{eqnarray} Hence it is clear from",
+      "extractCut": true
+    },
+    {
+      "id": "sec-013-43-the-haar-functional",
+      "number": "4.3",
+      "title": "The Haar functional",
+      "level": 2,
+      "pageStart": 27,
+      "pageEnd": 28,
+      "labelStart": "27",
+      "labelEnd": "28",
+      "words": 286,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "haar functional",
+          "heading": true
+        },
+        {
+          "term": "inv dsdt",
+          "heading": false
+        },
+        {
+          "term": "int r-i",
+          "heading": false
+        },
+        {
+          "term": "dsdt right",
+          "heading": false
+        },
+        {
+          "term": "invariant haar",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        },
+        {
+          "term": "t-s",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:QPlane:Haar} Recall from Definition \\ref{leftinv} that a linear functional on $\\cA$ is called a left invariant Haar functional if it satisfies \\Eq{(1\\ox h)(\\D x) = h(x)\\cdot 1_{M(\\cA)},} and a right invariant Haar functional if it satisfies \\Eq{(h\\ox 1)(\\D x)=h(x)\\cdot 1_{M(\\cA)},} where $1_{M(\\cA)}$ is the unital element in the multiplier algebra $M(\\cA)$. \\begin{Thm}\\label{Haar} There exists a left",
+      "extractCut": true
+    },
+    {
+      "id": "sec-014-44-the-gns-description",
+      "number": "4.4",
+      "title": "The GNS description",
+      "level": 2,
+      "pageStart": 28,
+      "pageEnd": 31,
+      "labelStart": "28",
+      "labelEnd": "31",
+      "words": 710,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "inv dsdt",
+          "heading": false
+        },
+        {
+          "term": "dsdt iint",
+          "heading": false
+        },
+        {
+          "term": "dsdt int",
+          "heading": false
+        },
+        {
+          "term": "ds'dt int",
+          "heading": false
+        },
+        {
+          "term": "inv cdot",
+          "heading": false
+        },
+        {
+          "term": "dsdt right",
+          "heading": false
+        },
+        {
+          "term": "int overgf",
+          "heading": false
+        },
+        {
+          "term": "gns",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{sec:QPlane:GNS} The GNS representation enables us to bring the quantum plane into the Hilbert space level, where the algebra is realized as operators on certain Hilbert space. This Hilbert space is nothing but the space of ``$L^2$ functions on the quantum plane\", which gives the necessary background later to describe the $L^2$ functions on $GL_q^+(2,\\R)$ using the quantum double construction. This will allow",
+      "extractCut": true
+    },
+    {
+      "id": "sec-015-45-modular-maps-and-the-right-picture",
+      "number": "4.5",
+      "title": "Modular maps and the right picture",
+      "level": 2,
+      "pageStart": 31,
+      "pageEnd": 34,
+      "labelStart": "31",
+      "labelEnd": "34",
+      "words": 608,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "sbib tdsdt",
+          "heading": false
+        },
+        {
+          "term": "bib tdsdt",
+          "heading": false
+        },
+        {
+          "term": "aib sbib",
+          "heading": false
+        },
+        {
+          "term": "right picture",
+          "heading": true
+        },
+        {
+          "term": "modular",
+          "heading": true
+        },
+        {
+          "term": "haar weight",
+          "heading": false
+        },
+        {
+          "term": "πiq",
+          "heading": false
+        },
+        {
+          "term": "dsdt",
+          "heading": false
+        }
+      ],
+      "extract": "Modular maps and the right picture In this section we describe the remaining objects deﬁned in Section 2.3, as well as the description of the right invariant picture for the quantum plane. From now on, let us restrict all operators on the dense subspace W, and we will extend any bounded operators on W to the whole space H. Proposition 4.13. The conjugation map T (cf. (2.20)) is given by T (f) = f(−s, −t)e2πist,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-016-46-the-multiplicative-unitary",
+      "number": "4.6",
+      "title": "The multiplicative unitary",
+      "level": 2,
+      "pageStart": 34,
+      "pageEnd": 39,
+      "labelStart": "34",
+      "labelEnd": "39",
+      "words": 1485,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multiplicative unitary",
+          "heading": true
+        },
+        {
+          "term": "ˆbib",
+          "heading": false
+        },
+        {
+          "term": "unitary operator",
+          "heading": false
+        },
+        {
+          "term": "e2πb",
+          "heading": false
+        },
+        {
+          "term": "bib",
+          "heading": false
+        },
+        {
+          "term": "quantum semigroups",
+          "heading": false
+        },
+        {
+          "term": "eπq",
+          "heading": false
+        },
+        {
+          "term": "dsdt",
+          "heading": false
+        }
+      ],
+      "extract": "The multiplicative unitary In this section we will describe the multiplicative unitary W explicitly. Recall (cf. (2.30)) that it is deﬁned as a unitary operator on H ⊗H by W ∗(Λ(a) ⊗Λ(b)) = (Λ ⊗Λ)(∆(b)(a ⊗1)). (4.56) We will use extensively the following variants of Lemma 3.7: Corollary 4.18. For AB = q2BA, ˆA ˆB = q−2 ˆB ˆA, using Lemma 2.24 we have gb(B ⊗q ˆB ˆA−1) = Z R+i0 Bib−1τ ⊗ˆA−ib−1τ ˆBib−1τ Gb(Q + iτ) dτ,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-017-5-the-dual-space",
+      "number": "5",
+      "title": "The dual space",
+      "level": 1,
+      "pageStart": 39,
+      "pageEnd": 39,
+      "labelStart": "39",
+      "labelEnd": "39",
+      "words": 83,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dual space",
+          "heading": true
+        },
+        {
+          "term": "gns representation",
+          "heading": false
+        },
+        {
+          "term": "hat",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Dual} We have encountered the dual space elements in the expression for the multiplicative unitary $W$. Following the recipe in \\cite{KV1}, in order to describe the GNS representation for the dual space $\\hat{\\cA}$, which is self-dual for quantum plane, we need to establish a non-degenerate pairing between $\\cA$ and $\\hat{\\cA}$. First of all let us describe its own GNS representation",
+      "extractCut": true
+    },
+    {
+      "id": "sec-018-51-definitions",
+      "number": "5.1",
+      "title": "Definitions",
+      "level": 2,
+      "pageStart": 39,
+      "pageEnd": 41,
+      "labelStart": "39",
+      "labelEnd": "41",
+      "words": 490,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hat inv",
+          "heading": false
+        },
+        {
+          "term": "eqnarray hat",
+          "heading": false
+        },
+        {
+          "term": "tab hat",
+          "heading": false
+        },
+        {
+          "term": "int hat",
+          "heading": false
+        },
+        {
+          "term": "inv dsdt",
+          "heading": false
+        },
+        {
+          "term": "define hat",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Dual:def} First let us describe the dual space on the Hopf algebra level. \\begin{Def} The algebraic dual space $\\cA_q^*\\simeq \\cA_q$ is generated by self-adjoint operators $X,Y$ with $XY=q^2YX$ and the same coproduct. \\end{Def} Following \\cite{FK}, occasionally we will use the notation $\\cB_q$ to denote $\\cA_q^*$ when we want to think about the dual space as the quantum \\emph{algebra} counterpart of the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-019-52-the-non-degenerate-pairing",
+      "number": "5.2",
+      "title": "The non-degenerate pairing",
+      "level": 2,
+      "pageStart": 41,
+      "pageEnd": 44,
+      "labelStart": "41",
+      "labelEnd": "44",
+      "words": 763,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "inv dsdt",
+          "heading": false
+        },
+        {
+          "term": "hat inv",
+          "heading": false
+        },
+        {
+          "term": "dsdt iint",
+          "heading": false
+        },
+        {
+          "term": "dsdt int",
+          "heading": false
+        },
+        {
+          "term": "overline hat",
+          "heading": false
+        },
+        {
+          "term": "pairing",
+          "heading": true
+        },
+        {
+          "term": "log inv",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Dual:pairing} Recall that a Hopf pairing between two Hopf algebras $\\cA$ and $\\cA^*$ is a non-degenerate pairing such that \\Eq{\\label{pairingdef}\\<a, xy\\> = \\<\\D(a),x\\ox y\\>,\\tab \\<ab,x\\>=\\< a\\ox b, \\D(x)\\>.} for $a,b\\in\\cA, x,y\\in\\cA^*$. (In this paper we will not consider counit and antipode in the pairing.) In the current setting, we have the pairing between $\\cA_q$ and $\\cA_q^*$ from the compact case:",
+      "extractCut": true
+    },
+    {
+      "id": "sec-020-53-the-gns-description",
+      "number": "5.3",
+      "title": "The GNS description",
+      "level": 2,
+      "pageStart": 44,
+      "pageEnd": 46,
+      "labelStart": "44",
+      "labelEnd": "46",
+      "words": 650,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "ˆbib ˆaib",
+          "heading": false
+        },
+        {
+          "term": "ˆaib sdsdt",
+          "heading": false
+        },
+        {
+          "term": "gns",
+          "heading": true
+        },
+        {
+          "term": "e2πis",
+          "heading": false
+        },
+        {
+          "term": "πis",
+          "heading": false
+        },
+        {
+          "term": "dsdt",
+          "heading": false
+        },
+        {
+          "term": "gns representation",
+          "heading": false
+        },
+        {
+          "term": "zzz",
+          "heading": false
+        }
+      ],
+      "extract": "The GNS description Given our multiplicative unitary W = e i 2πb2 log A−1⊗log ˆ Agb(B ⊗q ˆB ˆA−1) ∈M(A ⊗B(H)), (5.28) the space ˆ A ⊂B(H) is originally deﬁned to be ˆ A = {(ω ⊗1)W : ω ∈A∗}norm closure. (5.29) In order to ﬁnd the GNS representation ˆΛ of ˆ A on the original space HL, we introduce the contraction map λ [24, (8.2)] which relates A∗to the deﬁnition of ˆ A above using the multiplicative unitary, and the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-021-54-the-multiplicative-unitary-and-modular-maps",
+      "number": "5.4",
+      "title": "The multiplicative unitary and modular maps",
+      "level": 2,
+      "pageStart": 46,
+      "pageEnd": 47,
+      "labelStart": "46",
+      "labelEnd": "47",
+      "words": 262,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eqnarray hat",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        },
+        {
+          "term": "overfe",
+          "heading": false
+        },
+        {
+          "term": "begin prop",
+          "heading": false
+        },
+        {
+          "term": "inv",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Dual:multi} Under the transformation $\\xi$, we can now express all the operators defined earlier on $\\hat{\\cH}$ to $\\cH$. We have \\begin{Prop} The action $\\pi: \\hat{\\cA}\\to \\cH$ is given by \\begin{eqnarray} \\pi(\\hat{A}) &=& e^{-2\\pi bs},\\\\ \\pi(\\hat{B}) &=& G_b(-it) \\circ e^{2\\pi b(p_t-p_s)} \\circ G_b(-it)\\inv. \\end{eqnarray} \\end{Prop} Hence in particular $W$ is indeed a genuine element in $M(\\cA\\ox",
+      "extractCut": true
+    },
+    {
+      "id": "sec-022-6-transformation-to-new-hilbert-spaces",
+      "number": "6",
+      "title": "Transformation to new Hilbert spaces",
+      "level": 1,
+      "pageStart": 47,
+      "pageEnd": 47,
+      "labelStart": "47",
+      "labelEnd": "47",
+      "words": 61,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "transformation",
+          "heading": true
+        },
+        {
+          "term": "hilbert",
+          "heading": true
+        },
+        {
+          "term": "hat",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Trans} To prepare for the construction of the quantum double, we found it useful to introduce a transformation of the Hilbert space $\\cH$ as well as $\\hat{\\cH}$, so that the action of $\\cA$ and $\\hat{\\cA}$ acts as the canonical Weyl algebra. Furthermore, this transformation will bring the inner product to the canonical form for $L^2(\\R)$.",
+      "extractCut": false
+    },
+    {
+      "id": "sec-023-61-unitary-transformations",
+      "number": "6.1",
+      "title": "Unitary transformations",
+      "level": 2,
+      "pageStart": 47,
+      "pageEnd": 48,
+      "labelStart": "47",
+      "labelEnd": "48",
+      "words": 186,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tab",
+          "heading": false
+        },
+        {
+          "term": "transformations",
+          "heading": true
+        },
+        {
+          "term": "corr",
+          "heading": false
+        },
+        {
+          "term": "inv",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Trans:unit} In this section, we list the transformations that will be used. They are all unitary transformations on $L^2(\\R\\x\\R)$ equipped with the standard Lebesgue measure. For an operator $P$, its action under any transformation $\\cT$ is given by \\Eq{P\\mapsto \\cT\\circ P \\circ \\cT\\inv.} \\begin{Prop} The following lists the transformations and their effects on the multiplication and differential",
+      "extractCut": true
+    },
+    {
+      "id": "sec-024-62-the-representation-space",
+      "number": "6.2",
+      "title": "The representation space",
+      "level": 2,
+      "pageStart": 48,
+      "pageEnd": 51,
+      "labelStart": "48",
+      "labelEnd": "51",
+      "words": 633,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "circ hat",
+          "heading": false
+        },
+        {
+          "term": "tab hat",
+          "heading": false
+        },
+        {
+          "term": "mapsto t-s",
+          "heading": false
+        },
+        {
+          "term": "inv circ",
+          "heading": false
+        },
+        {
+          "term": "int hat",
+          "heading": false
+        },
+        {
+          "term": "t-s frac",
+          "heading": false
+        },
+        {
+          "term": "overline hat",
+          "heading": false
+        },
+        {
+          "term": "frac is-it",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Trans:rep} We introduce the transformations such that $\\cA$ acts on $\\cH$ canonically, and $\\hat{\\cA}$ acts on $\\hat{\\cH}$ canonically. We will use capital letter to denote the transformed function. All the new Hilbert spaces are $L^2(\\R\\x\\R)$. \\begin{Def} We define $\\cT: \\cH \\to \\cH_{rep}$ by \\Eq{\\cT: f(s,t)\\mapsto \\int_\\R f(\\a, t-s+\\frac{iQ}{2})e^{2\\pi i\\a s} d\\a,} \\Eq{\\cT\\inv: F(s,t)\\mapsto \\int_\\R",
+      "extractCut": true
+    },
+    {
+      "id": "sec-025-63-the-corepresentation-space",
+      "number": "6.3",
+      "title": "The corepresentation space",
+      "level": 2,
+      "pageStart": 51,
+      "pageEnd": 53,
+      "labelStart": "51",
+      "labelEnd": "53",
+      "words": 725,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "hat inv",
+          "heading": false
+        },
+        {
+          "term": "corepresentation",
+          "heading": true
+        },
+        {
+          "term": "inv frac",
+          "heading": false
+        },
+        {
+          "term": "eqnarray hat",
+          "heading": false
+        },
+        {
+          "term": "transformation hat",
+          "heading": false
+        },
+        {
+          "term": "mapsto t-s",
+          "heading": false
+        },
+        {
+          "term": "frac is-it",
+          "heading": false
+        },
+        {
+          "term": "regular corepresentation",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:Trans:corep} Recall that $W$ satisfies the pentagon equation and the coaction axiom \\eqref{DW}. In a more familiar form we see that $W'=W_{21}:=\\S W \\S \\in M(\\hat{\\cA}\\ox \\cA)$ satisfies \\Eq{(1\\ox \\D)W' = W_{12}'W_{13}'.} Hence if we treat $W'$ as an element in $M(\\cB(\\cH)\\ox \\cA)$ instead, we obtain the \\emph{left regular corepresentation} \\begin{eqnarray} \\Pi: \\cH &\\to& \\cH \\ox M(\\cA)\\nonumber\\\\",
+      "extractCut": true
+    },
+    {
+      "id": "sec-026-7-the-quantum-double-construction",
+      "number": "7",
+      "title": "The quantum double construction",
+      "level": 1,
+      "pageStart": 53,
+      "pageEnd": 53,
+      "labelStart": "53",
+      "labelEnd": "53",
+      "words": 4,
+      "summary": null,
+      "keywords": [],
+      "extract": "The quantum double construction",
+      "extractCut": false
+    },
+    {
+      "id": "sec-027-71-definitions",
+      "number": "7.1",
+      "title": "Definitions",
+      "level": 2,
+      "pageStart": 53,
+      "pageEnd": 58,
+      "labelStart": "53",
+      "labelEnd": "58",
+      "words": 1246,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "aib s1bib",
+          "heading": false
+        },
+        {
+          "term": "minkowski spacetime",
+          "heading": false
+        },
+        {
+          "term": "z12z",
+          "heading": false
+        },
+        {
+          "term": "gauss decomposition",
+          "heading": false
+        },
+        {
+          "term": "quantum double",
+          "heading": false
+        },
+        {
+          "term": "coproduct",
+          "heading": false
+        },
+        {
+          "term": "ˆhr",
+          "heading": false
+        },
+        {
+          "term": "q2z21z",
+          "heading": false
+        }
+      ],
+      "extract": "Deﬁnitions In this section we will describe the quantum double group construction given by [30] (see also [34]) associated with the quantum plane, and show that the object we obtain is exactly the quantum “semigroup” GL+ q (2, R), also called the split quantum Minkowski spacetime, which is a generalization of the compact Minkowski spacetime introduced in [8, 9]. Deﬁnition 7.1. We deﬁne the split quantum Minkowski",
+      "extractCut": true
+    },
+    {
+      "id": "sec-028-72-the-matrix-coefficients-and-the-fundamental-c",
+      "number": "7.2",
+      "title": "The matrix coefficients and the fundamental corepresentation",
+      "level": 2,
+      "pageStart": 58,
+      "pageEnd": 61,
+      "labelStart": "58",
+      "labelEnd": "61",
+      "words": 897,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fundamental corepresentation",
+          "heading": true
+        },
+        {
+          "term": "bib",
+          "heading": false
+        },
+        {
+          "term": "eπq",
+          "heading": false
+        },
+        {
+          "term": "aib",
+          "heading": false
+        },
+        {
+          "term": "ˆaib",
+          "heading": false
+        },
+        {
+          "term": "ˆbib",
+          "heading": false
+        },
+        {
+          "term": "ˆtλ",
+          "heading": false
+        },
+        {
+          "term": "matrix coeﬃcient",
+          "heading": false
+        }
+      ],
+      "extract": "The matrix coeﬃcients and the fundamental corepresen- tation Recall that for SL+(2, R) ⊂SL(2, R) the positive semigroup, the class of principal series representation can be expressed by considering the actions on homogeneous monomials (see e.g. [43]): xl−iµyl+iµ 7→ (ax + cy)l−iµ(bx + dy)l+iµ := Z R tl µν(g)xl−iνyl+iνdν, (7.22) where µ ∈R, l ∈−1 2 + iR, so that the representation is unitary. In terms of coordinates,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-029-73-the-multiplicative-unitary",
+      "number": "7.3",
+      "title": "The multiplicative unitary",
+      "level": 2,
+      "pageStart": 61,
+      "pageEnd": 66,
+      "labelStart": "61",
+      "labelEnd": "66",
+      "words": 1447,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "multiplicative unitary",
+          "heading": true
+        },
+        {
+          "term": "zxz wxw",
+          "heading": false
+        },
+        {
+          "term": "matching satisﬁes",
+          "heading": false
+        },
+        {
+          "term": "pentagon equation",
+          "heading": false
+        },
+        {
+          "term": "unitary operator",
+          "heading": false
+        },
+        {
+          "term": "e2πiτ",
+          "heading": false
+        },
+        {
+          "term": "ˆbib",
+          "heading": false
+        },
+        {
+          "term": "log",
+          "heading": false
+        }
+      ],
+      "extract": "The multiplicative unitary Given two locally compact quantum groups (M1, ∆1) and (M2, ∆2), with a match- ing m : M1 ⊗M2 −→M1 ⊗M2, the multiplicative unitary for the double crossed product is ﬁrst constructed in [1]. The quantum double group construction is a spe- cial case given by (M1, ∆1) = (A, ∆op) and (M2, ∆2) = ( ˆ A, ˆ∆), while the matching m is given by m(x) = W(x)W ∗as before [16]. Let us restrict to the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-030-74-the-left-regular-corepresentation",
+      "number": "7.4",
+      "title": "The left regular corepresentation",
+      "level": 2,
+      "pageStart": 66,
+      "pageEnd": 72,
+      "labelStart": "66",
+      "labelEnd": "72",
+      "words": 1406,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "inv hat",
+          "heading": false
+        },
+        {
+          "term": "inv int",
+          "heading": false
+        },
+        {
+          "term": "eqnarray int",
+          "heading": false
+        },
+        {
+          "term": "int t-i",
+          "heading": false
+        },
+        {
+          "term": "regular corepresentation",
+          "heading": true
+        },
+        {
+          "term": "eqnarray mapsto",
+          "heading": false
+        },
+        {
+          "term": "cdot int",
+          "heading": false
+        },
+        {
+          "term": "eqnarray mbox",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:double:left} With the construction of the multiplicative unitary $\\bW$, we can talk about the corepresentation induced by it. By the unitary transformations given in Section \\ref{sec:Trans:corep}, we can choose the Hilbert space to be $\\cH_{corep}\\ox\\hat{\\cH}_{corep}$ so that the action can be nicely described. Recall that the left regular corepresentation is given by \\Eq{f\\ox g \\mapsto \\bW'(f\\ox g\\ox",
+      "extractCut": true
+    },
+    {
+      "id": "sec-031-75-the-right-regular-corepresentation",
+      "number": "7.5",
+      "title": "The right regular corepresentation",
+      "level": 2,
+      "pageStart": 72,
+      "pageEnd": 75,
+      "labelStart": "72",
+      "labelEnd": "75",
+      "words": 887,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "regular corepresentation",
+          "heading": true
+        },
+        {
+          "term": "hat inv",
+          "heading": false
+        },
+        {
+          "term": "eqnarray hat",
+          "heading": false
+        },
+        {
+          "term": "log hat",
+          "heading": false
+        },
+        {
+          "term": "right regular",
+          "heading": true
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        },
+        {
+          "term": "mapsto int",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:double:right} In analogy to the left regular action, there is a notion of a right regular action. First we consider the quantum plane. \\begin{Prop} Given $W$ that defines the left regular corepresentation, \\Eq{W_R:=(\\hat{J}\\ox\\hat{J}) W_{21}^* (\\hat{J}\\ox\\hat{J})\\in \\cB(\\cH)\\ox \\cA} is also a multiplicative unitary and satisfies \\Eq{(1\\ox \\D)W_R=W_{R,12}W_{R,13},} i.e. it defines a corepresentation,",
+      "extractCut": true
+    },
+    {
+      "id": "sec-032-8-regular-representation",
+      "number": "8",
+      "title": "Regular representation",
+      "level": 1,
+      "pageStart": 75,
+      "pageEnd": 75,
+      "labelStart": "75",
+      "labelEnd": "75",
+      "words": 43,
+      "summary": null,
+      "keywords": [],
+      "extract": "Regular representation To obtain a representation of Uq(sl(2, R)) on the space L2(GL+ q (2, R)), we need to describe the non-degenerate pairing between them. Then we apply the pairing to the corepresentations constructed above and obtain the desired representations for Uq(gl(2, R)).",
+      "extractCut": false
+    },
+    {
+      "id": "sec-033-81-pairing-with-uqgl2r",
+      "number": "8.1",
+      "title": "Pairing with Uq(gl(2,R))",
+      "level": 2,
+      "pageStart": 75,
+      "pageEnd": 77,
+      "labelStart": "75",
+      "labelEnd": "77",
+      "words": 639,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pairing",
+          "heading": true
+        },
+        {
+          "term": "δnn δmm",
+          "heading": false
+        },
+        {
+          "term": "kib",
+          "heading": false
+        },
+        {
+          "term": "general pairing",
+          "heading": false
+        },
+        {
+          "term": "k0k",
+          "heading": false
+        },
+        {
+          "term": "coproduct",
+          "heading": false
+        },
+        {
+          "term": "monomial",
+          "heading": false
+        },
+        {
+          "term": "turns out",
+          "heading": false
+        }
+      ],
+      "extract": "Pairing with Uq(gl(2, R)) Let us ﬁrst recall the following deﬁnition of Uq(gl(2, R)) serving as a dual space for Mq = GL+ q (2, R) that is observed by I. Frenkel [8]: Deﬁnition 8.1. As a Hopf *-algebra, Uq(gl(2, R)) is generated by positive self- adjoint operators E, F, K, K0 such that KE = qEK, KF = q−1FK, EF −FE = K2 −K−2 q −q−1 , ∆(K) = K ⊗K, ∆(K0) = K0 ⊗K0, ∆(E) = K−1 0 K−1 ⊗E + E ⊗K0K, ∆(F) = K0K−1 ⊗F + F ⊗K−1",
+      "extractCut": true
+    },
+    {
+      "id": "sec-034-82-the-principal-series-representation",
+      "number": "8.2",
+      "title": "The principal series representation",
+      "level": 2,
+      "pageStart": 77,
+      "pageEnd": 79,
+      "labelStart": "77",
+      "labelEnd": "79",
+      "words": 441,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-q inv",
+          "heading": false
+        },
+        {
+          "term": "frac q-q",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        },
+        {
+          "term": "s-ib",
+          "heading": false
+        },
+        {
+          "term": "mapsto frac",
+          "heading": false
+        },
+        {
+          "term": "dis lim",
+          "heading": false
+        },
+        {
+          "term": "series representation",
+          "heading": true
+        }
+      ],
+      "extract": "\\label{sec:regular:principal} By taking the pairing above with the fundamental corepresentation defined in Section \\ref{sec:double:matrix}, we obtain: \\begin{Thm}\\label{fundrep} The fundamental corepresentation $T^{\\l,t}$ corresponds to the representation $\\cP_{\\l,t}$, called the \\emph{principal series representation}, given on $L^2(\\R,ds)$ by: \\begin{eqnarray*} K_0 &=& e^{\\pi bt},\\\\ K&=&e^{-\\pi bs},\\\\ E",
+      "extractCut": true
+    },
+    {
+      "id": "sec-035-83-casimir-operator",
+      "number": "8.3",
+      "title": "Casimir operator",
+      "level": 2,
+      "pageStart": 79,
+      "pageEnd": 82,
+      "labelStart": "79",
+      "labelEnd": "82",
+      "words": 690,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "casimir operator",
+          "heading": true
+        },
+        {
+          "term": "phi inv",
+          "heading": false
+        },
+        {
+          "term": "eqnarray lim",
+          "heading": false
+        },
+        {
+          "term": "q-q inv",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        },
+        {
+          "term": "unitary transformation",
+          "heading": false
+        },
+        {
+          "term": "e-ix",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:regular:Casimir} Next we will study the action induced from the pairing with the multiplicative unitary $\\bW$. It turns out that the technical difficulty comes from the analysis of the following positive operator: \\Eq{\\bC=e^{2\\pi bx}+e^{-2\\pi bx}+e^{-2\\pi bp},} which is studied in detail in \\cite{Ka4} in a different context. This expression comes from the Casimir operator defined by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-036-84-left-regular-representation",
+      "number": "8.4",
+      "title": "Left regular representation",
+      "level": 2,
+      "pageStart": 82,
+      "pageEnd": 85,
+      "labelStart": "82",
+      "labelEnd": "85",
+      "words": 870,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-q inv",
+          "heading": false
+        },
+        {
+          "term": "inv frac",
+          "heading": false
+        },
+        {
+          "term": "inv left",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        },
+        {
+          "term": "mapsto frac",
+          "heading": false
+        },
+        {
+          "term": "eqref leftcorep",
+          "heading": false
+        },
+        {
+          "term": "multiplicative unitary",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:regular:left} Now we apply the pairing to the left corepresentation \\eqref{leftcorep}. \\begin{Thm} \\label{ThmLeft}The representation of $U_q(\\gl(2,\\R))$ is equivalent to $$\\int_\\R\\int_{\\R^+}^\\o+\\cP_{\\l,s_2/2}|S_b(Q+2i\\l)|^2d\\l ds_2\\ox L^2(\\R, dt_2),$$ where the representation space $\\cP_{\\l,s_2/2}=L^2(\\R,ds_1)$ is defined in Theorem \\ref{fundrep}. \\end{Thm} \\begin{proof} Recall that we have to multiply",
+      "extractCut": true
+    },
+    {
+      "id": "sec-037-85-right-regular-representation",
+      "number": "8.5",
+      "title": "Right regular representation",
+      "level": 2,
+      "pageStart": 85,
+      "pageEnd": 87,
+      "labelStart": "85",
+      "labelEnd": "87",
+      "words": 434,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "q-q inv",
+          "heading": false
+        },
+        {
+          "term": "inv frac",
+          "heading": false
+        },
+        {
+          "term": "right regular",
+          "heading": true
+        },
+        {
+          "term": "mapsto frac",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "becomes frac",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        },
+        {
+          "term": "regular corepresentation",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:regular:right} Similarly by applying the pairing to the right regular corepresentation we obtain \\begin{Thm}\\label{ThmRight} The right regular corepresentation is equivalent to $$ L^2(\\R, ds_1)\\ox\\int_\\R\\int_{\\R^+}^\\o+ \\cP_{\\l,-s_2/2}|S_b(Q+2i\\l)|^2d\\l ds_2.$$ \\end{Thm} \\begin{proof} We apply the pairing to \\eqref{rightcorep} and get { \\allowdisplaybreaks \\begin{eqnarray*} K_0&=& e^{-\\pi",
+      "extractCut": true
+    },
+    {
+      "id": "sec-038-86-the-modular-double",
+      "number": "8.6",
+      "title": "The modular double",
+      "level": 2,
+      "pageStart": 87,
+      "pageEnd": 88,
+      "labelStart": "87",
+      "labelEnd": "88",
+      "words": 309,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "frac til",
+          "heading": false
+        },
+        {
+          "term": "hat til",
+          "heading": false
+        },
+        {
+          "term": "modular double",
+          "heading": true
+        },
+        {
+          "term": "inv",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        },
+        {
+          "term": "begin prop",
+          "heading": false
+        },
+        {
+          "term": "sin",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:regular:MD} It is known that the representation space $\\cP_{\\l,t}$ is actually a nontrivial representation for the modular double $U_q(\\gl(2,\\R))\\ox U_{\\til[q]}(\\gl(2,\\R))$. In this section we describe its action using the same multiplicative unitary $\\bW_m$. The modular double counterpart $U_{\\til[q]}(\\gl(2,\\R))$ is defined in the same way with $q$ replaced by $\\til[q]$ throughout. In particular we can",
+      "extractCut": true
+    },
+    {
+      "id": "sec-039-9-representation-theoretic-meaning-for-certain-i",
+      "number": "9",
+      "title": "Representation theoretic meaning for certain integral transforms",
+      "level": 1,
+      "pageStart": 88,
+      "pageEnd": 89,
+      "labelStart": "88",
+      "labelEnd": "89",
+      "words": 515,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "eqnarray int",
+          "heading": false
+        },
+        {
+          "term": "c-i",
+          "heading": false
+        },
+        {
+          "term": "ref classicallimit",
+          "heading": false
+        },
+        {
+          "term": "nonumber frac",
+          "heading": false
+        },
+        {
+          "term": "begin eqnarray",
+          "heading": false
+        },
+        {
+          "term": "end eqnarray",
+          "heading": false
+        },
+        {
+          "term": "d-i",
+          "heading": false
+        },
+        {
+          "term": "inv",
+          "heading": false
+        }
+      ],
+      "extract": "\\label{sec:meaning} In this section, we state without proof certain integral transformations of $G_b$ that arise in the calculations of certain representation relations. \\begin{Prop} The pentagon equation $W_{23}W_{12}=W_{12}W_{13}W_{23}$ is equivalent to the 4-5 relation (Lemma \\ref{45}) \\Eq{\\frac{G_b(\\a)G_b(\\b)G_b(\\c)}{G_b(\\a+\\c)G_b(\\b+\\c)}=\\int_C d\\t e^{-2\\pi",
+      "extractCut": true
+    },
+    {
+      "id": "sec-040-references",
+      "number": null,
+      "title": "References",
+      "level": 1,
+      "pageStart": 89,
+      "pageEnd": 92,
+      "labelStart": "89",
+      "labelEnd": "92",
+      "words": 939,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quantum dilogarithm",
+          "heading": false
+        },
+        {
+          "term": "teichm uller",
+          "heading": false
+        },
+        {
+          "term": "compact quantum",
+          "heading": false
+        },
+        {
+          "term": "phys",
+          "heading": false
+        },
+        {
+          "term": "quantum group",
+          "heading": false
+        },
+        {
+          "term": "quantum deformation",
+          "heading": false
+        },
+        {
+          "term": "modular double",
+          "heading": false
+        },
+        {
+          "term": "kustermans",
+          "heading": false
+        }
+      ],
+      "extract": "[1] S. Baaj and S. Vaes, Double crossed products of locally compact quantum groups, J. Inst. Math. Jussieu 4, 135-173, (2005) 89 [2] A.G. Bytsko, K. Teschner, R-operator, co-product and Haar-measure for the modular double of Uq(sl(2, R)), Comm. Math. Phys. 240, 171-196, (2003) [3] L. Chekhov and V.V. Fock, A quantum Teichm¨uller space, Theor. Math. Phys. 120, 511-528, (1999) [4] E. E. Demidov, Yu. I. Manin, E. E.",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "tocAlignment": {
+      "listed_not_found": {
+        "count": 0,
+        "items": []
+      },
+      "found_not_listed": {
+        "count": 4,
+        "items": [
+          "9 Representation theoretic meaning for certain integral transforms 88",
+          "2 . The limit converges uniformly for any compact set in C.",
+          "8.6 The modular double",
+          "9 Representation theoretic meaning for certain integral transforms"
+        ]
+      },
+      "page_mismatch": {
+        "count": 0,
+        "items": []
+      }
+    },
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "hat inv",
+      "heading": false
+    },
+    {
+      "term": "inv int",
+      "heading": false
+    },
+    {
+      "term": "inv dsdt",
+      "heading": false
+    },
+    {
+      "term": "inv frac",
+      "heading": false
+    },
+    {
+      "term": "eqnarray hat",
+      "heading": false
+    },
+    {
+      "term": "inv left",
+      "heading": false
+    },
+    {
+      "term": "log inv",
+      "heading": false
+    },
+    {
+      "term": "inv cdot",
+      "heading": false
+    },
+    {
+      "term": "q-q inv",
+      "heading": false
+    },
+    {
+      "term": "inv iint",
+      "heading": false
+    },
+    {
+      "term": "inv circ",
+      "heading": false
+    },
+    {
+      "term": "phi inv",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": "1",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 2,
+      "label": "2",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 3,
+      "label": "3",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 4,
+      "label": "4",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 5,
+      "label": "5",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 6,
+      "label": "6",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 7,
+      "label": "7",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 8,
+      "label": "8",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 9,
+      "label": "9",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 10,
+      "label": "10",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 11,
+      "label": "11",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 12,
+      "label": "12",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 13,
+      "label": "13",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 14,
+      "label": "14",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 15,
+      "label": "15",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 16,
+      "label": "16",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 17,
+      "label": "17",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 18,
+      "label": "18",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 19,
+      "label": "19",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 20,
+      "label": "20",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 21,
+      "label": "21",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 22,
+      "label": "22",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 23,
+      "label": "23",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 24,
+      "label": "24",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 25,
+      "label": "25",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 26,
+      "label": "26",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 27,
+      "label": "27",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 28,
+      "label": "28",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 29,
+      "label": "29",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 30,
+      "label": "30",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 31,
+      "label": "31",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 32,
+      "label": "32",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 33,
+      "label": "33",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 34,
+      "label": "34",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 35,
+      "label": "35",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 36,
+      "label": "36",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 37,
+      "label": "37",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 38,
+      "label": "38",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 39,
+      "label": "39",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 40,
+      "label": "40",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 41,
+      "label": "41",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 42,
+      "label": "42",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 43,
+      "label": "43",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 44,
+      "label": "44",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 45,
+      "label": "45",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 46,
+      "label": "46",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 47,
+      "label": "47",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 48,
+      "label": "48",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 49,
+      "label": "49",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 50,
+      "label": "50",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 51,
+      "label": "51",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 52,
+      "label": "52",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 53,
+      "label": "53",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 54,
+      "label": "54",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 55,
+      "label": "55",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 56,
+      "label": "56",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 57,
+      "label": "57",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 58,
+      "label": "58",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 59,
+      "label": "59",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 60,
+      "label": "60",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 61,
+      "label": "61",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 62,
+      "label": "62",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 63,
+      "label": "63",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 64,
+      "label": "64",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 65,
+      "label": "65",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 66,
+      "label": "66",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 67,
+      "label": "67",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 68,
+      "label": "68",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 69,
+      "label": "69",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 70,
+      "label": "70",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 71,
+      "label": "71",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 72,
+      "label": "72",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 73,
+      "label": "73",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 74,
+      "label": "74",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 75,
+      "label": "75",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 76,
+      "label": "76",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 77,
+      "label": "77",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 78,
+      "label": "78",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 79,
+      "label": "79",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 80,
+      "label": "80",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 81,
+      "label": "81",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 82,
+      "label": "82",
+      "source": "printed",
+      "confidence": 0.85
+    },
+    {
+      "physical": 83,
+      "label": "83",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 84,
+      "label": "84",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 85,
+      "label": "85",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 86,
+      "label": "86",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 87,
+      "label": "87",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 88,
+      "label": "88",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 89,
+      "label": "89",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 90,
+      "label": "90",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 91,
+      "label": "91",
+      "source": "printed",
+      "confidence": 0.7
+    },
+    {
+      "physical": 92,
+      "label": "92",
+      "source": "printed",
+      "confidence": 0.7
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 41,
+      "note": "outline"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 42,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "not-extracted",
+      "note": "a references section is in the text (p89); its entries are not extracted"
+    },
+    {
+      "kind": "glossary",
+      "state": "not-extracted",
+      "note": "a glossary section is in the text (p39); its entries are not extracted"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 10
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 42 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-1108.5365v2"
+  }
+}

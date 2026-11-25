@@ -1,0 +1,932 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0005038v1",
+  "title": "Braid groups are linear",
+  "variant": "pdf",
+  "pages": 13,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 2,
+      "title": "Definitions",
+      "number": "1.1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-11-definitions"
+    },
+    {
+      "level": 2,
+      "title": "Outline",
+      "number": "1.2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-12-outline"
+    },
+    {
+      "level": 2,
+      "title": "Notation",
+      "number": "1.3",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-13-notation"
+    },
+    {
+      "level": 1,
+      "title": "Forks and Noodles",
+      "number": "2",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-2-forks-and-noodles"
+    },
+    {
+      "level": 2,
+      "title": "Proof of the Basic Lemma",
+      "number": "2.1",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-21-proof-of-the-basic-lemma"
+    },
+    {
+      "level": 2,
+      "title": "Alternative proofs",
+      "number": "2.2",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-22-alternative-proofs"
+    },
+    {
+      "level": 1,
+      "title": "The representation is faithful",
+      "number": "3",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-3-the-representation-is-faithful"
+    },
+    {
+      "level": 2,
+      "title": "Computing the pairing",
+      "number": "3.1",
+      "page": 6,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-008-31-computing-the-pairing"
+    },
+    {
+      "level": 2,
+      "title": "Proof of the Key Lemma",
+      "number": "3.2",
+      "page": 8,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-009-32-proof-of-the-key-lemma"
+    },
+    {
+      "level": 2,
+      "title": "Proof of the Theorem",
+      "number": "3.3",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-010-33-proof-of-the-theorem"
+    },
+    {
+      "level": 1,
+      "title": "Matrices for the Lawrence-Krammer representation",
+      "number": "4",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-011-4-matrices-for-the-lawrence-krammer-representati"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 87,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "n-punctured disc",
+          "heading": false
+        },
+        {
+          "term": "braid groups",
+          "heading": false
+        },
+        {
+          "term": "daan",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0005038v1 [math.GR] 4 May 2000 BRAID GROUPS ARE LINEAR STEPHEN J. BIGELOW Abstract. The braid groups Bn can be deﬁned as the mapping class group of the n-punctured disc. The Lawrence-Krammer representation of the braid group is the induced action on a certain twisted second homology of the space C of unordered pairs of points in the n-punctured disc. Recently, Daan Krammer showed that this is a faithful",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0005038v1/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 121,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lawrence-krammer representation",
+          "heading": false
+        },
+        {
+          "term": "krammer",
+          "heading": false
+        },
+        {
+          "term": "braid groups",
+          "heading": false
+        },
+        {
+          "term": "introduction",
+          "heading": true
+        }
+      ],
+      "extract": "[]{#INTRODUCTION label=\"INTRODUCTION\"} Let $B_n$ denote Artin's braid group on $n$ strands. Recently, Krammer [@krammer] proved that a certain representation of the braid groups is faithful on $B_4$. The representation he used is essentially the same as one used by Lawrence in [@lawrence] to give a topological definition of a certain summand of the Jones representation. We call this representation the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-11-definitions",
+      "number": "1.1",
+      "title": "Definitions",
+      "level": 2,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 461,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tilde sigma",
+          "heading": false
+        },
+        {
+          "term": "alpha frac",
+          "heading": false
+        },
+        {
+          "term": "int alpha",
+          "heading": false
+        },
+        {
+          "term": "alpha around",
+          "heading": false
+        },
+        {
+          "term": "let tilde",
+          "heading": false
+        },
+        {
+          "term": "puncture points",
+          "heading": false
+        },
+        {
+          "term": "winding numbers",
+          "heading": false
+        },
+        {
+          "term": "z-p",
+          "heading": false
+        }
+      ],
+      "extract": "Let $D$ be an oriented disc in the complex plane. Fix a set $P \\subset D$ consisting of $n$ distinct points $p_1,\\dots,p_n$ in the interior of $D$. Let ${\\mathcal{H}}(D,P)$ be the group of all homeomorphisms $h \\colon\\thinspace D \\rightarrow D$ such that $h(P) = P$ and $h$ fixes $\\partial D$ pointwise. Let ${\\mathcal{I}}(D,P)$ be the group of all such homeomorphisms which are isotopic to the identity relative to $P",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-12-outline",
+      "number": "1.2",
+      "title": "Outline",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 95,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lawrence-krammer representation",
+          "heading": false
+        },
+        {
+          "term": "lkmatrices",
+          "heading": false
+        },
+        {
+          "term": "noodles",
+          "heading": false
+        },
+        {
+          "term": "forks",
+          "heading": false
+        }
+      ],
+      "extract": "In Section [\\[fn\\]](#fn){reference-type=\"ref\" reference=\"fn\"} we will define forks and noodles. These will be one-dimensional objects in the disc designed to represent elements of the second homology and cohomology of $\\tilde{C}$. We define a pairing between forks and noodles, which will be preserved by any element of the kernel of the Lawrence-Krammer representation. In Section [\\[key\\]](#key){reference-type=\"ref\"",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-13-notation",
+      "number": "1.3",
+      "title": "Notation",
+      "level": 2,
+      "pageStart": 2,
+      "pageEnd": 3,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 133,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "define alpha",
+          "heading": false
+        },
+        {
+          "term": "arc",
+          "heading": false
+        },
+        {
+          "term": "beta",
+          "heading": false
+        }
+      ],
+      "extract": "If $\\alpha$ and $\\beta$ are arcs in $D \\setminus P$ such $\\alpha(s) \\neq \\beta(s)$ for all $s \\in I$ then we define $\\{\\alpha,\\beta\\}$ to be the arc in $C$ given by $$\\{\\alpha,\\beta\\}(s) = \\{\\alpha(s),\\beta(s)\\}.$$ If $y$ is a point in $D \\setminus P$ and $\\alpha$ is an arc in $D \\setminus (P \\cup \\{y\\})$ then we define $\\{\\alpha,y\\}$ to be the arc in $C$ given by $$\\{\\alpha,y\\}(s) = \\{\\alpha(s),y\\}.$$ The same arc",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-2-forks-and-noodles",
+      "number": "2",
+      "title": "Forks and Noodles",
+      "level": 1,
+      "pageStart": 3,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 480,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tilde sigma",
+          "heading": false
+        },
+        {
+          "term": "noodles",
+          "heading": true
+        },
+        {
+          "term": "tilde beta",
+          "heading": false
+        },
+        {
+          "term": "forks",
+          "heading": true
+        },
+        {
+          "term": "tine edge",
+          "heading": false
+        },
+        {
+          "term": "let tilde",
+          "heading": false
+        },
+        {
+          "term": "contains tilde",
+          "heading": false
+        },
+        {
+          "term": "surface sigma",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#fn label=\"fn\"} In this section we define forks and noodles and a pairing between them. The idea of using a fork to represent an element of $H_2(\\tilde{C})$ is due to Krammer [@krammer]. A *fork* is an embedded tree $F \\subset D$ with four vertices $d_1$, $p_i$, $p_j$ and $z$ such that $F \\cap \\partial D = \\{d_1\\}$, $F \\cap P = \\{p_i,p_j\\}$, and all three edges have $z$ as a vertex. The edge containing $d_1$ is",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-21-proof-of-the-basic-lemma",
+      "number": "2.1",
+      "title": "Proof of the Basic Lemma",
+      "level": 2,
+      "pageStart": 4,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 636,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "tilde sigma",
+          "heading": false
+        },
+        {
+          "term": "surface tilde",
+          "heading": false
+        },
+        {
+          "term": "label hrel",
+          "heading": false
+        },
+        {
+          "term": "aligned label",
+          "heading": false
+        },
+        {
+          "term": "immersed closed",
+          "heading": false
+        },
+        {
+          "term": "begin aligned",
+          "heading": false
+        },
+        {
+          "term": "end aligned",
+          "heading": false
+        },
+        {
+          "term": "blem",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#BLEM label=\"BLEM\"} The problem is that one cannot necessarily define an algebraic intersection number between two properly embedded surfaces, since it might be possible to eliminate intersections by pushing them off to infinity. We overcome this problem by proving the existence of an immersed closed surface $\\tilde{\\Sigma}_2(F)$ which is equal to $(1-q)^2(1+qt)\\tilde{\\Sigma}(F)$ outside a small neighborhood of",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-22-alternative-proofs",
+      "number": "2.2",
+      "title": "Alternative proofs",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 314,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "lkmatrices",
+          "heading": false
+        },
+        {
+          "term": "tilde sigma",
+          "heading": false
+        },
+        {
+          "term": "forks",
+          "heading": false
+        },
+        {
+          "term": "lawrence-krammer representation",
+          "heading": false
+        },
+        {
+          "term": "constructive proof",
+          "heading": false
+        },
+        {
+          "term": "krammer",
+          "heading": false
+        },
+        {
+          "term": "basic lemma",
+          "heading": false
+        },
+        {
+          "term": "pairing",
+          "heading": false
+        }
+      ],
+      "extract": "There are many possible approaches to proving the Basic Lemma. The proof given above is a compromise of sorts, since it proves the existence of an appropriate element of $H_2(\\tilde{C})$, but does so in a non-constructive way. It is possible to give a more constructive proof which uses an explicit computation of $H_2(\\tilde{C})$. One obtains a concrete description of an immersed genus two surface which can be seen",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-3-the-representation-is-faithful",
+      "number": "3",
+      "title": "The representation is faithful",
+      "level": 1,
+      "pageStart": 6,
+      "pageEnd": 6,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 61,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "noodle",
+          "heading": false
+        },
+        {
+          "term": "faithful",
+          "heading": true
+        },
+        {
+          "term": "lawrence-krammer",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#key label=\"key\"} In this section, we prove that the Lawrence-Krammer representation is faithful. The main ingredient in the proof is the following lemma. ::: lem Let $N$ be a noodle and let $F$ be a fork. Then $\\langle N,F \\rangle = 0$ if and only if $T(F)$ is isotopic relative to $\\partial D \\cup P$ to an arc which is disjoint from $N$. :::",
+      "extractCut": false
+    },
+    {
+      "id": "sec-008-31-computing-the-pairing",
+      "number": "3.1",
+      "title": "Computing the pairing",
+      "level": 2,
+      "pageStart": 6,
+      "pageEnd": 8,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 863,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "colon thinspace",
+          "heading": false
+        },
+        {
+          "term": "puncture points",
+          "heading": false
+        },
+        {
+          "term": "zeta around",
+          "heading": false
+        },
+        {
+          "term": "tilde sigma",
+          "heading": false
+        },
+        {
+          "term": "let zeta",
+          "heading": false
+        },
+        {
+          "term": "winding numbers",
+          "heading": false
+        },
+        {
+          "term": "clm",
+          "heading": false
+        },
+        {
+          "term": "noodle",
+          "heading": false
+        }
+      ],
+      "extract": "We now describe how to compute the pairing between a give noodle and fork. Let $N$ be a noodle and let $F$ be a fork. By applying a preliminary isotopy, we can assume that $T(F)$ intersects $N$ transversely at a finite number of points, which we label $z_1,\\dots,z_l$. Let $F'$ be a parallel copy of $F$. Choose $F'$ so that $T(F')$ intersects $N$ transversely at $z'_1,\\dots,z'_l$, where $z_i$ and $z'_i$ are joined by",
+      "extractCut": true
+    },
+    {
+      "id": "sec-009-32-proof-of-the-key-lemma",
+      "number": "3.2",
+      "title": "Proof of the Key Lemma",
+      "level": 2,
+      "pageStart": 8,
+      "pageEnd": 9,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 620,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "pairsum",
+          "heading": false
+        },
+        {
+          "term": "noodle",
+          "heading": false
+        },
+        {
+          "term": "monomials",
+          "heading": false
+        },
+        {
+          "term": "sign",
+          "heading": false
+        },
+        {
+          "term": "rangle",
+          "heading": false
+        }
+      ],
+      "extract": "Let $N$ be a noodle and let $F$ be a fork. By applying a preliminary isotopy, we can assume that $T(F)$ intersects $N$ transversely at a finite number of points, which we label $z_1,\\dots,z_l$. Further, we can assume that $l$ is the minimal possible number of points of intersection. Let $F'$ be a parallel copy of $F$. Choose $F'$ so that and $T(F')$ intersects $N$ transversely at $z'_1,\\dots,z'_l$, where $z_i$ and",
+      "extractCut": true
+    },
+    {
+      "id": "sec-010-33-proof-of-the-theorem",
+      "number": "3.3",
+      "title": "Proof of the Theorem",
+      "level": 2,
+      "pageStart": 9,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 602,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "isotopic relative",
+          "heading": false
+        },
+        {
+          "term": "partial cup",
+          "heading": false
+        },
+        {
+          "term": "digon",
+          "heading": false
+        },
+        {
+          "term": "lawrence-krammer representation",
+          "heading": false
+        },
+        {
+          "term": "sigma",
+          "heading": false
+        },
+        {
+          "term": "key lemma",
+          "heading": false
+        },
+        {
+          "term": "subarc",
+          "heading": false
+        },
+        {
+          "term": "basic lemma",
+          "heading": false
+        }
+      ],
+      "extract": "In this subsection we use the Basic Lemma and the Key Lemma to prove that the Lawrence-Krammer representation is faithful. The following lemma will be useful. ::: lem []{#digon label=\"digon\"} Let $\\alpha$ and $\\beta$ be simple closed curves in $D \\setminus P$ which intersect transversely at finitely many points. The following are equivalent. - $\\alpha$ is isotopic relative to $\\partial D \\cup P$ to a simple closed",
+      "extractCut": true
+    },
+    {
+      "id": "sec-011-4-matrices-for-the-lawrence-krammer-representati",
+      "number": "4",
+      "title": "Matrices for the Lawrence-Krammer representation",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 1790,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "fork sigma",
+          "heading": false
+        },
+        {
+          "term": "standard fork",
+          "heading": false
+        },
+        {
+          "term": "bar mathcal",
+          "heading": false
+        },
+        {
+          "term": "let tilde",
+          "heading": false
+        },
+        {
+          "term": "lambda module",
+          "heading": false
+        },
+        {
+          "term": "free lambda",
+          "heading": false
+        },
+        {
+          "term": "lambda linear",
+          "heading": false
+        },
+        {
+          "term": "some lambda",
+          "heading": false
+        }
+      ],
+      "extract": "[]{#lkmatrices label=\"lkmatrices\"} In this section we give an explicit description of the Lawrence-Krammer representation in terms of matrices. ::: thm []{#lkmatrix label=\"lkmatrix\"} $H_2(\\tilde{C})$ is a free $\\Lambda$-module of rank $\\binom{n}{2}$. There is a basis $$\\{v_{j,k}:1 \\le j < k \\le n\\}$$ on which the braid $\\sigma_i$ acts as follows. $$\\sigma_i(v_{j,k}) = \\left\\{ \\begin{array}{ll} v_{j,k} &i \\not \\in",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "tilde sigma",
+      "heading": false
+    },
+    {
+      "term": "fork sigma",
+      "heading": false
+    },
+    {
+      "term": "tilde beta",
+      "heading": false
+    },
+    {
+      "term": "lawrence-krammer representation",
+      "heading": true
+    },
+    {
+      "term": "let tilde",
+      "heading": false
+    },
+    {
+      "term": "surface tilde",
+      "heading": false
+    },
+    {
+      "term": "lift tilde",
+      "heading": false
+    },
+    {
+      "term": "contains tilde",
+      "heading": false
+    },
+    {
+      "term": "define forks",
+      "heading": false
+    },
+    {
+      "term": "standard fork",
+      "heading": false
+    },
+    {
+      "term": "let alpha",
+      "heading": false
+    },
+    {
+      "term": "rangle langle",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [
+    {
+      "kind": "figure",
+      "number": "1",
+      "title": "A fork F and a parallel copy F ′",
+      "page": 3,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "2",
+      "title": "Arcs",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    },
+    {
+      "kind": "figure",
+      "number": "3",
+      "title": "The edge E1 and the noodle N4 otherwise we could isotope T (F ′) so as to have fewer points of intersection with N",
+      "page": 9,
+      "pageLabel": null,
+      "confidence": 0.9,
+      "evidence": [
+        "referenced",
+        "in-sequence",
+        "graphic"
+      ]
+    }
+  ],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 12,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 13,
+      "note": "2 levels"
+    },
+    {
+      "kind": "figures",
+      "state": "partial",
+      "count": 0,
+      "note": "3 captioned in the text, none kept"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "not-extracted",
+      "note": "a glossary section is in the text (p1); its entries are not extracted"
+    },
+    {
+      "kind": "footnotes",
+      "state": "none"
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 13 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0005038v1"
+  }
+}

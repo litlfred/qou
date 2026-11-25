@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-1608.02961v3",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "Perturbative and nonperturbative aspects of complex Chern-Simons Theory Contents",
+      "dcterms:creator": [
+        "Theory, Chern-Simons"
+      ],
+      "dcterms:issued": "D:20161018",
+      "dcterms:identifier": "https://arxiv.org/abs/1608.02961",
+      "dcterms:abstract": "We present an elementary review of some aspects of Chern-Simons theory with complex gauge group SL(N, C). We discuss some of the challenges in deﬁning the theory as a full- ﬂedged TQFT, as well as some successes inspired by the 3d-3d correspondence. The 3d-3d correspondence relates partition functions (and other aspects) of complex Chern-Simons the- ory on a 3-manifold M to supersymmetric partition functions (and other observables) in an associated 3d theory T[M]. Many of these observables may be computed by supersymmetric localization. We present several prominent applications to 3-manifold topology and number theory in light of the 3d-3d correspondence. This is a contribution to the review volume “Localization techniques in quantum ﬁeld theories” (eds. V. Pestun and M. Zabzine) which contains 17 Chapters available at [1]",
+      "dcterms:source": "library/arxiv-1608.02961v3/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-1608.02961v3"
+    }
+  ]
+}

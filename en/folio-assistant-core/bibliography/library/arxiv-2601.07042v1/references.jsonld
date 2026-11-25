@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@base": "https://litlfred.github.io/folio/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bibo": "http://purl.org/ontology/bibo/",
+    "fabio": "http://purl.org/spar/fabio/",
+    "dcterms:source": {
+      "@type": "@id"
+    },
+    "dcterms:hasVersion": {
+      "@type": "@id"
+    }
+  },
+  "@graph": [
+    {
+      "@id": "references/arxiv-2601.07042v1",
+      "@type": [
+        "fabio:Work",
+        "bibo:AcademicArticle"
+      ],
+      "dcterms:title": "A Tannakian description of the local Kaletha gerbe",
+      "dcterms:creator": [
+        "MELI, ALEXANDER BERTOLONI",
+        "DILLERY, PETER"
+      ],
+      "dcterms:identifier": "https://arxiv.org/abs/2601.07042",
+      "dcterms:abstract": "We construct, for a p-adic field F, an explicit semisimple Tannakian category RigIsocF whose category of fiber functors recovers Kaletha’s Galois gerbe EKal. We then classify and write down the simple objects in RigIsocF , all of which come from elliptic twisted Levi subgroups of GLn.",
+      "dcterms:source": "library/arxiv-2601.07042v1/manifest.jsonld",
+      "dcterms:hasVersion": "library/arxiv-2601.07042v1"
+    }
+  ]
+}

@@ -1,0 +1,418 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-2605.28781v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-2605.28781v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Given any finite set $A$ in some ring we define the sum set and product set of $A$ as $$A+A=\\{a+b: a,b\\in A\\}\\quad\\textrm{and}\\quad AA=\\{ ab : a,b\\in A\\}.$$ The sum-product conjecture in a given ring is that at least one of these must grow near-maximally; more precisely $$\\label{eq-sp}\\max(\\mathopen{}\\left| A+A\\mathclose{}\\right|,\\mathopen{}\\left| AA\\mathclose{}\\right|)\\geq \\mathopen{}\\left| A\\mathclose{}\\right|^{2-o(1)}$$ (where the $o(1)$ term tends $0$ as $\\mathopen{}\\left| A\\mathclose{}\\right|\\to \\infty$). This is often attributed to Erdős and Szemerédi, who proved the first results in thi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.28781v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL\nNUMBERS\nTHOMAS F. BLOOM, WILL SAWIN, CARL SCHILDKRAUT, AND DMITRII ZHELEZOV\nAbstract. We disprove the sum-product conjecture for real numbers by con-\nstructing arbitrarily large A ⊂R (whose elements are algebraic integers in a\nnumber field of degree ≍log|A|) such that\nmax(|A + A| , |AA|) ≤|A|2−c\nwhere c > 0 is an absolute constant.\nWe also disprove the many sums and products conjecture by constructing,\nfor any k ≥3, arbitrarily large A ⊂R such that\nmax(|kA| , |A(k)|) ≤|A|C\nlog k\nlog log k\nfor some constant C > 0. We obtain similar constructions for",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.28781v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Many sums and products",
+      "pageStart": 2,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-11-many-sums-and-products.md",
+      "narrative": null,
+      "content": "Erdős [@Er77] also made the stronger conjecture that, for any $k\\geq 2$ and $\\epsilon>0$, $$\\max(\\mathopen{}\\left| kA\\mathclose{}\\right|,\\lvert A^{(k)}\\rvert) \\gg_{k,\\epsilon}\\mathopen{}\\left| A\\mathclose{}\\right|^{k-\\epsilon},$$ where $kA$ and $A^{(k)}$ denote the $k$-fold sum set and $k$-fold product set, respectively. (Once again this was for $A\\subset \\mathbb{Z}$ originally, but Erdős and Szemerédi [@ErSz83] asked it also for $A\\subset \\mathbb{R}$). Our methods provide a strong counterexample to this conjecture for large $k$.\n\n::: theorem\n[]{#th-mainmult label=\"th-mainmult\"} There exists a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.28781v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Linear equations in a multiplicative group",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-002-12-linear-equations-in-a-multiplicative-group.md",
+      "narrative": null,
+      "content": "Another application of our construction is to provide new lower bounds for the number of solutions to linear equations in a multiplicative group.\n\n::: theorem\n[]{#th-linearmain label=\"th-linearmain\"} There is an absolute constant $C>1$ such that the following holds. Let $k\\geq C$ be any integer. There exist infinitely many $d\\geq 2$ and multiplicative groups $\\Gamma\\leq\\mathbb{R}^\\times$ of rank $\\leq d$ such that there are at least $$\\geq (Ck)^{kd}$$ solutions to $$x_1+\\cdots+x_k=1$$ with $x_i\\in \\Gamma$ and $x_i>0$ for $1\\leq i\\leq k$.\n:::\n\nIn particular this shows that the dependence on $d$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.28781v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sum-product in other settings",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-13-sum-product-in-other-settings.md",
+      "narrative": null,
+      "content": "Finally, in Section [\\[sec-variants\\]](#sec-variants){reference-type=\"ref\" reference=\"sec-variants\"} we discuss variants of our construction. We first obtain, via only a slight modification of the argument, analogues of all of the above results for $A\\subset \\mathbb{Q}_p$ for any prime $p$.\n\nThe second variant, obtained by taking the construction in $\\mathbb{Q}_p$ 'modulo $p$' in a suitable sense, provides an upper bound for the sum-product problem in the finite field $\\mathbb{F}_p$, another natural setting. We state a slightly simplified version here (see Theorem [\\[finite-field-main\\]](#fini",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.28781v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The role of AI in this proof",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-the-role-of-ai-in-this-proof.md",
+      "narrative": null,
+      "content": "The authors were inspired to revisit the possibility of disproving the sum-product conjecture using number fields of large degree by the recent OpenAI counterexample to the unit distance conjecture (see [@ABGLSSTWW2026UnitDistance]). Curiously, the final construction given here required far less number theoretic input than the unit distance counterexample. GPT-5.5 Pro was used as a sounding board in the early stages of the development of this proof, but the final proof, including all the main ideas, was almost entirely human-generated (the exception being the suggestion of Lemma [\\[lem-unitsep",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.28781v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-005-acknowledgements.md",
+      "narrative": null,
+      "content": "We thank Akshat Mudgal for clarifying the quantitative aspects of [@Mu24], and suggesting that our construction could also be used to prove something like Theorem [\\[th-linearmain\\]](#th-linearmain){reference-type=\"ref\" reference=\"th-linearmain\"}. We thank Jacob Fox and Sarah Peluse for many helpful comments and Spencer Dembner for his careful reading of an earlier version of this article.\n\nTB is a Royal Society University Research Fellow. WS is supported by NSF grant DMS-2502029 and is a Sloan Research Fellow. CS is supported by the National Science Foundation Graduate Research Fellowship Pro",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.28781v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sketch of the construction",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-006-2-sketch-of-the-construction.md",
+      "narrative": null,
+      "content": "In this section we give a sketch of the construction which is used to prove Theorem [\\[th-main\\]](#th-main){reference-type=\"ref\" reference=\"th-main\"}. The construction is a high-dimensional version of the standard Balog--Wooley example first introduced in [@BalogWooleyLowEnergy]. In its simplest one-dimensional form, one takes $$A=GP,$$ where $G$ is a short geometric progression and $P$ is an interval. The multiplicative structure of $G$ gives[^1] $$\\mathopen{}\\left| GG\\mathclose{}\\right|\\ll \\mathopen{}\\left| G\\mathclose{}\\right|,$$ while the additive structure of $P$ keeps $GP+GP$ inside a re",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.28781v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Algebraic number theory",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-007-3-algebraic-number-theory.md",
+      "narrative": null,
+      "content": "In this section we review the necessary concepts required from algebraic number theory; with the exception of Theorem [\\[th-tower\\]](#th-tower){reference-type=\"ref\" reference=\"th-tower\"}, these are all classical results that can be found in most textbooks on the subject.\n\nLet $K$ be a totally real number field of degree $d$ over $\\mathbb{Q}$, and let $\\Delta_K$ be the discriminant of $K$ (which is strictly positive if $K$ is totally real). Let $R_K$ be the regulator of $K$. For those unfamiliar with algebraic number theory, the important role of these parameters for our purposes is that they c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.28781v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The additive lattice",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-008-31-the-additive-lattice.md",
+      "narrative": null,
+      "content": "The ring of algebraic integers $\\mathcal{O}_K$ can be viewed as a lattice of rank $d$ in $\\mathbb{R}^d$ via the Minkowski embedding $$\\alpha \\mapsto (\\sigma_1(\\alpha),\\ldots,\\sigma_d(\\alpha)),$$ where $\\sigma_1,\\ldots,\\sigma_d$ are the embeddings $\\sigma_i\\colon K\\hookrightarrow \\mathbb{R}$. The covolume of this lattice is $\\Delta_K^{1/2}$ (see [@La70 V, Lemma 2]). We write $$B^+(X) = \\{ \\alpha \\in \\mathcal{O}_K : \\mathopen{}\\left| \\sigma_i(\\alpha)\\mathclose{}\\right|\\leq X\\textrm{ for all }1\\leq i\\leq d\\}.$$\n\n::: lemma\n[]{#lem-ball label=\"lem-ball\"} Let $K$ be a totally real number field of de",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.28781v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The unit lattice",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-009-32-the-unit-lattice.md",
+      "narrative": null,
+      "content": "The group of units $\\mathcal{O}_K^\\times$ of $K$ is the set of algebraic integers $\\alpha$ such that $\\alpha^{-1}$ is also an algebraic integer. By Dirichlet's unit theorem (see, for example, [@Ne99 Chapter 1.7]) the group of units (modulo the roots of unity) $\\mathcal{O}_K^\\times/\\{\\pm 1\\}$ can be viewed as a lattice of rank $d-1$ in $\\mathbb{R}^{d}$ via the embedding $$u\\mapsto (\\log \\mathopen{}\\left| \\sigma_1(u)\\mathclose{}\\right|,\\ldots,\\log \\mathopen{}\\left| \\sigma_d(u)\\mathclose{}\\right|).$$ This is a lattice of rank $d-1$ inside the hyperplane $$H=\\{ x\\in \\mathbb{R}^d : x_1+\\cdots+x_d=0",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.28781v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The construction",
+      "pageStart": 9,
+      "pageEnd": 11,
+      "target": "../sections/sec-010-4-the-construction.md",
+      "narrative": null,
+      "content": "In this section we use the algebraic number theory facts of the previous section to prove Theorems [\\[th-main\\]](#th-main){reference-type=\"ref\" reference=\"th-main\"} and [\\[th-mainmult\\]](#th-mainmult){reference-type=\"ref\" reference=\"th-mainmult\"}.\n\n::: lemma\n[]{#lem-main label=\"lem-main\"} There exists an absolute constant $c>0$ such that the following holds. Let $K$ be a totally real number field of degree $d\\geq 2$ with discriminant $\\Delta_K$ and let $X,Y\\geq 2$. There exists a set $A\\subset \\mathcal{O}_K$ such that $$\\frac{(cXY)^d}{Y\\Delta_K^{3/2}}\\leq \\mathopen{}\\left| A\\mathclose{}\\right|",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.28781v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Numerical estimates",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-011-5-numerical-estimates.md",
+      "narrative": null,
+      "content": "We have not tried to keep track of explicit constants in the proofs above, since\nthese would obscure the main ideas of the proof, and the calculations become quite\nmessy.\nIn this section we sketch what a quantified version of the construction\nwould give, yielding in particular c ≥0.00000087. We have not made any attempt\nto change the structure of the argument, even slightly, to optimize the constants.\nDoing so would likely yield a better value, although we expect a c obtained by any\nvariant of this kind of argument to be very small.\nAn earlier version of our argument constructed a field with s",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.28781v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Linear equations in a multiplicative group",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-012-6-linear-equations-in-a-multiplicative-group.md",
+      "narrative": null,
+      "content": "Let Γ ≤C× be a multiplicative group. A natural question is how many solutions\nthe equation\n(6.1)\nx1 + · · · + xk = 1\ncan have with xi ∈Γ. We are concerned only with non-degenerate solutions, which\nare those such that P\ni∈I xi̸ = 0 for every non-empty I ⊆{1, . . . , k}. Building\non a sequence of earlier results, Evertse, Schlickewei, and Schmidt [16] proved the\nfollowing.\nTheorem 6.1 (Evertse-Schlickewei-Schmidt). If Γ ≤C× is a multiplicative group\nof rank d then, for any k ≥2, the number of non-degenerate solutions to (6.1) is\nat most\nexp(Ckd)\nfor some constant Ck > 0 depending only on k.\nTHE",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.28781v1/blocks/thm-sec-012-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "Evertse-Schlickewei-Schmidt",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "thm-sec-012-01.md",
+      "narrative": null,
+      "content": "If Γ ≤C× is a multiplicative group of rank d then, for any k ≥2, the number of non-degenerate solutions to (6.1) is at most exp(Ckd) for some constant Ck > 0 depending only on k. THE SUM-PRODUCT CONJECTURE IS FALSE FOR REAL NUMBERS They gave Ck as an explicit function of k, which has been improved (most recently by Amoroso and Viada [3], and is now polynomial in k), but here we are most concerned with the dependence on the rank d. Erd˝os, Stewart, and Tijdeman [12] constructed,2 for any k ≥2 and large enough d, multiplicative groups Γ ≤Q× of rank d in which the number of non-degenerate solutio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.28781v1/blocks/thm-sec-012-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "thm-sec-012-02.md",
+      "narrative": null,
+      "content": "There is an absolute constant C > 0 such that the following holds. Let k ≥C be any integer. There exist infinitely many d ≥2 and multiplicative groups Γ ≤R× of rank ≤d such that there are at least exp((C−1k log k)d) many non-degenerate solutions to (6.1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.28781v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Variants",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "../sections/sec-013-7-variants.md",
+      "narrative": null,
+      "content": "A related question is to bound the number of solutions to (6.1) in the group of\nunits O×\nK. Evertse [14] proved that the number of solutions to x1 + x2 = 1 with\nx1, x2 ∈O×\nK is at most 3 · 73d, where d is the degree of K. (Such xi are often\ncalled ‘exceptional units’.) Niklasch [34] considered this question further and in\nparticular, generalising a conjecture of Stewart (see [15, p.120]), conjectured [34,\nConjecture 4.2] the sub-exponential upper bound of\nexp(d2/3+o(1)).\nWe are able to prove that if we consider the analogous question with 2 variables\nreplaced by a sufficiently large (but still",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.28781v1/blocks/thm-sec-013-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 15,
+      "target": "thm-sec-013-01.md",
+      "narrative": null,
+      "content": "There exists an integer k ≥2 and an absolute constant C > 1 such that, for infinitely many d, there exists a number field K of degree d such that there are at least Cd non-degenerate solutions to (6.1) with xi ∈O× K. This is, in hindsight, a simple consequence of the fact that units of bounded height still have small height after O(1) many sums, and so the size of their k-fold sumset is small. To highlight the simplicity of the example we will present the construction from first principles, at the cost of some slight repetition of earlier arguments.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-2605.28781v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The p-adics",
+      "pageStart": 15,
+      "pageEnd": 16,
+      "target": "../sections/sec-014-71-the-p-adics.md",
+      "narrative": null,
+      "content": "We now explain the $p$-adic variant. If the field $K$ in Lemma [\\[lem-main\\]](#lem-main){reference-type=\"ref\" reference=\"lem-main\"} has a prime lying over $p$ that is split, for example, if $p$ splits completely in $K$, then $K$ embeds into $\\mathbb Q_p$ and thus the set $A \\subseteq \\mathcal O_K$ constructed in Lemma [\\[lem-main\\]](#lem-main){reference-type=\"ref\" reference=\"lem-main\"} embeds into $\\mathbb Z_p$. Thus, to prove the analogue of Theorem [\\[th-headline\\]](#th-headline){reference-type=\"ref\" reference=\"th-headline\"} in $\\mathbb Z_p$, it suffices to prove the following variant of The",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.28781v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Finite fields",
+      "pageStart": 16,
+      "pageEnd": 17,
+      "target": "../sections/sec-015-72-finite-fields.md",
+      "narrative": null,
+      "content": "::: theorem\n[]{#finite-field-main label=\"finite-field-main\"} There exist constants $c>0$ and $f<1$ such that for each $\\delta \\in (0,1)$, for each prime $p$ sufficiently large depending on $\\delta$, there exists $A \\subset \\mathbb F_p$ with $p^{f\\delta}< \\mathopen{}\\left| A\\mathclose{}\\right| < p^{\\delta}$ and $\\max(\\mathopen{}\\left| A+A\\mathclose{}\\right|,\\mathopen{}\\left| AA\\mathclose{}\\right|)\\leq \\mathopen{}\\left| A\\mathclose{}\\right|^{2-c}$.\n:::\n\nSum-product results in finite fields typically require both an upper bound and a lower bound on the size of $A$, so we have stated this result w",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.28781v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Function fields",
+      "pageStart": 17,
+      "pageEnd": 23,
+      "target": "../sections/sec-016-73-function-fields.md",
+      "narrative": null,
+      "content": "We now construct counterexamples to the sum-product conjecture in fields of characteristic $p$. The constructions will lie in a sequence of fields $\\mathbb F_q(C_i)$ for a sequence of algebraic curves $C_i$, and hence give counterexamples to the sum-product conjecture in any field containing all of them as subfields, such as $\\overline{\\mathbb F_q(t)}$ or $\\mathbb F_q((t))$ (since our curves $C_i$ will have rational points so that $\\mathbb F_q(C_i) \\subseteq \\mathbb F_q((t))$).\n\nThe rational places of $C_i$ will play the role that the infinite places play in the main argument of this paper, or",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-2605.28781v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 23,
+      "pageEnd": 25,
+      "target": "../sections/sec-017-references.md",
+      "narrative": null,
+      "content": "[1] R. Agrawal, T. F. Bloom, and G. Petridis. More on the sum-product problem for integers\nwith few prime factors. arXiv:2512.04931, 2025. 6\n[2] Noga Alon, Thomas F. Bloom, W. T. Gowers, Daniel Litt, Will Sawin, Arul Shankar, Jacob\nTsimerman, Victor Wang, and Melanie Matchett Wood. Remarks on the disproof of the unit\ndistance conjecture, 2026. 10.48550/arXiv.2605.20695. 1.3, 5\n[3] Francesco Amoroso and Evelina Viada. Small points on subvarieties of a torus. Duke Math.\nJ., 150(3):407–442, 2009. 6\n[4] Antal Balog and Trevor D. Wooley. A low-energy decomposition theorem. The Quarterly\nJournal of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

@@ -1,0 +1,2240 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1608.07308v1",
+  "blocks": [
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "1.1.",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-001-11.md",
+      "narrative": null,
+      "content": "It has been slightly more than ten years since Khovanov and Rozansky deﬁned a triply-\ngraded homology theory HHH categorifying the HOMFLY-PT polynomial [41].\nWe have\nlearned a lot about the structure of this invariant in the intervening time, but there is much\nthat remains mysterious. In [27], the third author conjectured a relation between HHH of the\n(n, n + 1) torus knot and the q, t-Catalan numbers studied by Haiman and Garsia [26, 34].\nA key feature of this conjecture is that it relates HHH(T(n, n + 1)) to the cohomology of a\nparticular sheaf on the Hilbert scheme of n points in C2. This i",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "1.2.",
+      "pageStart": 1,
+      "pageEnd": 2,
+      "target": "../sections/sec-002-12.md",
+      "narrative": null,
+      "content": "Recall the Hecke algebra Hn of type An, whose objects can be perceived as isotopy\nclasses of braids on n strands modulo the relation:\n\u0010\nσk −q\n1\n2\n\u0011 \u0010\nσk + q−1\n2\n\u0011\n= 0\n1\narXiv:1608.07308v1  [math.GT]  25 Aug 2016\n2\nEUGENE GORSKY, ANDREI NEGUT, , AND JACOB RASMUSSEN\nwhere σk denotes a single crossing between the k and (k + 1)–th strands. The product in\nthe Hecke algebra corresponds to stacking braids on top of each other, from which the non-\ncommutativity of Hn is manifest. Ocneanu constructed a collection of linear maps:\n(1.1)\nχ :\n∞\nG\nn=0\nHn →C(a, q)\nwhich is uniquely determined by the fact tha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "FLAG HILBERT SCHEMES, COLORED PROJECTORS AND\nKHOVANOV-ROZANSKY HOMOLOGY\nEUGENE GORSKY, ANDREI NEGUT, , AND JACOB RASMUSSEN\nABSTRACT. We construct a categoriﬁcation of the maximal commutative subalgebra of the type\nA Hecke algebra. Speciﬁcally, we propose a monoidal functor from the (symmetric) monoidal\ncategory of coherent sheaves on the ﬂag Hilbert scheme to the (non-symmetric) monoidal cat-\negory of Soergel bimodules. The adjoint of this functor allows one to match the Hochschild\nhomology of any braid with the Euler characteristic of a sheaf on the ﬂag Hilbert scheme. The\ncategoriﬁed Jones-W",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/conj-sec-003-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "conj-sec-003-01.md",
+      "narrative": null,
+      "content": "There exists a pair of adjoint functors which preserve the q and t gradings: (1.9) Kb(SBimn) ι∗ −\u0000==\u0001− ι∗ Db \u0000CohC∗×C∗\u0000FHilbdg n (C) \u0001\u0001 where ι∗is monoidal and fully faithful. Furthermore, we have: (1.10) FTk ι∗ −\u0000==\u0001− ι∗ (det Tk) ⊗OFHilbdg n (C) for all k ∈{1, ..., n}. Moreover, the map HHH of (1.6) factors as: (1.11) HHH : Kb(SBimn) ι∗ −→Db \u0000CohC∗×C∗\u0000FHilbdg n (C) \u0001\u0001 R −→3-graded vector spaces where R refers to the derived push-forward map in equivariant cohomology.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "1.3.",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "../sections/sec-003-13.md",
+      "narrative": null,
+      "content": "The Hecke algebra admits a well-known categoriﬁcation, namely the monoidal category:\n(SBimn, ⊗R) ⇝K(SBimn) = Hn\nof certain bimodules over R = C[x1, ..., xn] called Soergel bimodules (see [53],[52]). This\ncategory admits three gradings:\n• the internal grading given by considering graded bimodules with respect to deg xi =\n1. We write q for the variable that keeps track of this grading.\n• the homological grading that arises from chain complexes in the homotopy category\nKb(SBimn). We write s for the variable that keeps track of this grading.\n• the Hochschild grading that appears when considering D",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/rem-sec-003-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 2,
+      "pageEnd": 4,
+      "target": "rem-sec-003-02.md",
+      "narrative": null,
+      "content": "To account for the a grading in (1.9) and (1.11), we conjecture that one can lift the setup of Conjecture 1.1 to functors: (1.12) Kb(Db(SBimn)) eι∗ −\u0000==\u0001− eι∗ Db \u0010 CohC∗×C∗ \u0010 TotFHilbdg n (C)Tn[1] \u0011\u0011 which preserve the q, t and a gradings, deﬁned by: (1.13) eι∗(σ) = ι∗(σ) ⊗∧•T ∨ n where a keeps track of the exterior degree in the right hand side. With this in mind, we note that the target of the map R from (1.11) can be lifted to quadruply graded vector spaces, since we may separate the derived category grading on FHilbdg n (C) from the exterior grading a. EUGENE GORSKY, ANDREI NEGUT, , AND JA",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/conj-sec-005-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "conj-sec-005-01.md",
+      "narrative": null,
+      "content": "The objects F(σ) satisfy the following properties: (1.19) F(σσ′) ∼= F(σ′σ) for all braids σ and σ′ on n strands, and: (1.20) F(i(σ)) = α (F(σ)) where: (1.21) α : Db (CohC∗×C∗(Hilbn)) −→Db (CohC∗×C∗(Hilbn+1)) denotes the simple correspondence of Nakajima and Grojnowski (as in Subsection 3.10). For any braid σ, the Euler characteristic of F(σ) at t = 1 q coincides with χ(σ) of (1.1).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "1.4.",
+      "pageStart": 4,
+      "pageEnd": 4,
+      "target": "../sections/sec-004-14.md",
+      "narrative": null,
+      "content": "Besides the fact that the category Db(CohC∗×C∗(FHilbdg\nn (C))) and the functors ι∗, ι∗\ncategorify (1.4), one of the main applications of Conjecture 1.1 is a geometric incarnation of\nKhovanov’s Hochschild homology functor. Indeed, since SBimn is a categoriﬁcation of the\nHecke algebra, to any braid σ one may associate a homonymous object σ ∈Kb(SBimn) (see\nSection 3 for an overview). Therefore, we have:\n(1.14)\nHHH(σ) =\nZ\nFHilbdg\nn (C)\nB(σ) ⊗∧•T ∨\nn\nwhere\nB(σ) := ι∗(σ)\nis the sheaf on the dg scheme FHilbdg\nn (C) that our construction associates to the braid σ. We\ntensor with ∧•T ∨\nn as in Remark 1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "1.5.",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-005-15.md",
+      "narrative": null,
+      "content": "Since HHH(σ) only depends on the closure σ, formula (1.14) might suggest that the\ncoherent sheaf B(σ) actually only depends on σ. While this cannot be strictly speaking true\n(after all, B(σ) lives on FHilbdg\nn (C) where n is the number of strands of the braid), we may\nconsider the natural map from the ﬂag Hilbert scheme to the usual Hilbert scheme of n points\non C2:\nFHilbdg\nn (C)\nν\n−→Hilbn\n(1.17)\n(In ⊂... ⊂I0) 7→In\nFLAG HILBERT SCHEMES, COLORED PROJECTORS AND KHOVANOV-ROZANSKY HOMOLOGY\n5\nThe composition:\nKb(SBimn)\nι∗−→Db \u0000CohC∗×C∗\u0000FHilbdg\nn (C)\n\u0001\u0001 ν∗\n−→Db (CohC∗×C∗(Hilbn))\nassociates to a brai",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/rem-sec-005-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "rem-sec-005-02.md",
+      "narrative": null,
+      "content": "While the present paper was being written, Oblomkov and Rozansky ([45]) inde- pendently gave an alternative construction of objects very similar to B(σ) and F(σ), although in a very different presentation. Speciﬁcally, their construction associates to any braid an object in the category of matrix factorizations, which descends to an object on the commuting vari- ety. The authors then show that the corresponding object is actually supported on the Hilbert scheme. We strongly suspect that their objects coincide with ours, and hope that the connection will be elucidated in the near future.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "1.6.",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "../sections/sec-006-16.md",
+      "narrative": null,
+      "content": "We show that Conjecture 1.1 would follow from certain computations in the Soergel\ncategory, which we believe may be proved using the techniques developed in an upcoming\npaper of Elias and Hogancamp (see [22] for a special case). In the present paper, we develop\nthe geometric machinery necessary to prove such results. Speciﬁcally, we outline a strategy\nfor constructing the functors ι∗, ι∗with equation (1.10) in mind. The starting point for us is\nto reinterpret geometrically a concept introduced by Elias and Hogancamp under the name\nof categorical diagonalization ([23]). Suppose that C is a grad",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/thm-sec-006-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "thm-sec-006-01.md",
+      "narrative": null,
+      "content": "An object F ∈C is diagonalizable in the sense of [23] if and only if there is a pair of adjoint functors: Kb(C) ι∗ −\u0000==\u0001− ι∗ Db(Coh(Pn A)), where A = EndC(1). If the category C is graded and the maps αi preserve the grading, then ι∗ and ι∗can be lifted to the equivariant derived category: Kb(C) ι∗ −\u0000==\u0001− ι∗ Db(CohT(Pn A)), where T is a torus acting on Pn with weights prescribed by the eigenvalues of F. Furthermore, the following result of Elias-Hogancamp provides one of the ﬁrst proved facts about our conjectural connection between SBimn and FHilbdg n (C).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/thm-sec-006-02",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "[23]",
+      "pageStart": 5,
+      "pageEnd": 7,
+      "target": "thm-sec-006-02.md",
+      "narrative": null,
+      "content": "The full twist FTn is diagonalizable in SBimn, and its eigenvalues agree with the equivariant weights of det Tn at ﬁxed points. The ﬂag Hilbert scheme is more complicated than a projective space, but it turns out to be presented by a tower of projective ﬁbrations. More precisely, the ﬁbers of the natural projection: FHilbn(C) →FHilbn−1(C) × C, (In ⊂... ⊂I0) 7→(In−1 ⊂... ⊂I0) × supp(In−1/In) are projective spaces. They are rather badly behaved, but we will show in Section 2.7 that the corresponding map on the level of our dg schemes: πn : FHilbdg n (C) →FHilbdg n−1(C) × C is the projectivizatio",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/figure-img-p006-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 6,
+      "pageEnd": 6,
+      "target": "../images/img-p006-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "1.7.",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-007-17.md",
+      "narrative": null,
+      "content": "1.7.\nConjecture 1.1 implies very explicit facts about the existence of various morphisms and\nextensions between the twists FTk in the Soergel category. The easiest of these conjectures\ninvolves the objects Lk := FTk ⊗FT−1\nk−1 ∈Kb(SBimn) for all k ∈{1, ..., n}:",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "1.8.",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-008-18.md",
+      "narrative": null,
+      "content": "... →T1, which satisfy:\n(1.24)\nLk ∼= [Tk →Tk−1]\nfor all k ∈{1, ..., n}. Furthermore, there exist two commuting morphisms:\nX : qTk →Tk\nY : s2\nq Tk →Tk\nwhich commute: [X, Y ] = 0 and are compatible with the isomorphisms (1.24). Moreover, X|Lk\nis multiplication by the element xk ∈R and Y |Lk = 0.\nVarious matrix elements of products of X and Y can be used to construct morphisms between\nvarious Lk. See Conjecture 3.9 for more conjectures of similar kind.\n1.8.\nAn important role in the geometry of ﬂag Hilbert schemes is played by torus ﬁxed points:\nFHilbn(C)C∗×C∗= {IT}T is a standard Young tableau of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/cor-sec-009-02",
+      "types": [
+        "folio-assistant-sci:Corollary",
+        "doco:Section"
+      ],
+      "kind": "corollary",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "cor-sec-009-02.md",
+      "narrative": null,
+      "content": "Assuming Conjecture 1.1, the reduced HOMFLY-PT homology of any object σ ∈Kb(SBimn) is: HHHred(σ) ∼= Z FHilb dg n (C) (r1 ◦ι)∗(σ) ⊗∧•T ∨ n. FLAG HILBERT SCHEMES, COLORED PROJECTORS AND KHOVANOV-ROZANSKY HOMOLOGY",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "1.9.",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-009-19.md",
+      "narrative": null,
+      "content": "isomorphic as an algebra to:\n(1.26)\nEnd(PT) = AT(C) ⊗\n\u0010\n∧•T ∨\nn |\n˚\nFHilbT (C)\n\u0011\nNote that T ∨\nn is a trivial rank n vector bundle on the afﬁne chart\n˚\nFHilbT(C), and so the\nexterior power that appears in (1.26) is free on n odd generators, whose equivariant weights\nmatch the inverse q, t–weights of the boxes in the Young tableau T. Following recent results of\nAbel and Hogancamp [1, 36], we prove (1.26) in the two extremal cases, corresponding to the\nsymmetric and anti–symmetric projectors:\nTheorem 1.10. If T = (n) or (1, . . . , 1) then the endomorphis algebra of the resulting projector\nis is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/thm-sec-009-01",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "thm-sec-009-01.md",
+      "narrative": null,
+      "content": "For all standard Young tableaux T , the Euler characteristic of the algebra: ˚ AT(C) ⊗ \u0010 ∧•T ∨ n | ˚ FHilbT (C) \u0011 equals the Markov trace of the Hecke idempotent pλ, where λ is the partition associated to T. 1.9. One can easily modify the above constructions to describe the reduced HOMFLY-PT homology. Indeed, it is proven in [49] that the HOMFLY-PT homology of any braid is a free module over the homology of the unknot, which is isomorphic to a free algebra in one even and one odd variable. Let us explain how these variables arise from the geometry. First, deﬁne the reduced ﬂag Hilbert scheme F",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/conj-sec-010-01",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "conj-sec-010-01.md",
+      "narrative": null,
+      "content": "For all braids σ, the glN spectral sequence on the homology of σ is induced by the contraction of: ∧•T ∨ n on FHilbdg n (C) with the section sN,0, which induces a differential on the vector space (1.14).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/conj-sec-010-03",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "[32]",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "conj-sec-010-03.md",
+      "narrative": null,
+      "content": "The spectral sequence from HOMFLY-PT homology (given by (1.28)) to the glN homology of P(1,...,1) degenerates after the ﬁrst nontrivial differential dN, which is given by the equation: (1.30) dN n X k=1 zk−1ξk ! = n X k=1 zk−1uk !N mod zn, dN(ui) = 0. This conjecture has been extensively veriﬁed against computer-generated data for N = 2 and 3 (see [29, 31]). We prove that Conjecture 1.15 immediately follows from Conjecture 1.13.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "1.10.",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "../sections/sec-010-110.md",
+      "narrative": null,
+      "content": "1.10.\nFinally, we give a conjectural geometric description of glN Khovanov-Rozansky ho-\nmology [40, 41] for all N. Recall that in [49] the third author constructed a spectral sequence\nfrom the HOMFLY-PT homology to the glN homology of any knot. For any pair of nonnegative\nintegers N, M, there is an equivariant section:\nsN,M ∈Γ (FHilbn(C), Tn) ,\nsN,M|In⊂...⊂I0 = xNyM ∈C[x, y]\nIn\n= Tn|In⊂...⊂I0\nConjecture 1.13. For all braids σ, the glN spectral sequence on the homology of σ is induced\nby the contraction of:\n∧•T ∨\nn\non\nFHilbdg\nn (C)\nwith the section sN,0, which induces a differential on the vect",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "1.11.",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-011-111.md",
+      "narrative": null,
+      "content": "This paper is naturally divided into two parts. The ﬁrst part (Sections 2, 3, 4) presents\nthe non-equivariant picture, which relates the global geometry of the ﬂag Hilbert scheme with\nthe Soergel category. Sections 5 and 6 present examples of many of our constructions for\nn = 2 and n = 3, respectively. The second part of the paper (Sections 7, 8, 9) is an equivariant\nreﬁnement of the previous framework, which relates the local geometry of the ﬂag Hilbert\nscheme with categorical idempotents in the Soergel category. More speciﬁcally:\n• In Section 2, we deﬁne ﬂag Hilbert schemes and the associate",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/rem-sec-010-02",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 9,
+      "pageEnd": 9,
+      "target": "rem-sec-010-02.md",
+      "narrative": null,
+      "content": "A similar conjecture can be stated for the reduced glN homology. However, the map (1.29) does not commute with the differential, and hence the unreduced homology is no longer a free module over the homology of the unknot. We are hopeful that the contraction with more general sN,M may correspond to an (as yet undeﬁned) knot homology theory associated to the Lie superalgebra glN|M (see some conjec- tural properties in [28]). In particular, the differential induced by s1,1 = xy should give rise to a knot homology theory associated to gl1|1. Recent work of Ellis, Petkova and V´ertesi [24] shows th",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/figure-img-p010-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../images/img-p010-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgments",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-012-acknowledgments.md",
+      "narrative": null,
+      "content": "The authors would like to thank Michael Abel, Ben Elias and Matt Hogancamp for explaining to us their results [@AbHog; @EH; @Hog], and Mikhail Gorsky, Daniel Halpern-Leistner, Mikhail Khovanov, Ivan Losev, Davesh Maulik, Michael McBreen, Hugh Morton, Alexei Oblomkov, Andrei Okounkov, Claudiu Raicu, Sam Raskin, Raphael Rouquier, Lev Rozansky, Peter Samuelson, Peng Shan and Monica Vazirani for very useful discussions. Special thanks to Ian Grojnowski for explaining Example [\\[ex:not lci\\]](#ex:not lci){reference-type=\"ref\" reference=\"ex:not lci\"} to us. The work of E. G. was partially supported",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-013",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The flag Hilbert scheme",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-013-2-the-flag-hilbert-scheme.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-014",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Definition",
+      "pageStart": 10,
+      "pageEnd": 11,
+      "target": "../sections/sec-014-21-definition.md",
+      "narrative": null,
+      "content": "[]{#sub:defflag label=\"sub:defflag\"}\n\nLet us recall the usual **Hilbert scheme** of $n$ points on $\\mathbb{C}^2$: $$\\mathrm{Hilb}_n = \\{\\text{ideal } I \\subset \\mathbb{C}[x,y], \\text{ dim}_{\\mathbb{C}} \\ \\mathbb{C}[x,y]/I = n \\}$$ There is a **tautological bundle** of rank $n$ on the Hilbert scheme given by: $$\\mathcal{T}_n|_I = \\mathbb{C}[x,y]/I$$ Similarly, one can define the **flag Hilbert scheme** $\\mathrm{FHilb}_n(\\mathbb{C}^2)$ of $n$ points on $\\mathbb{C}^2$ [@Cheah; @Tikh] as the moduli space of complete flags of ideals: $$\\label{eqn:flagdef}\n\\mathrm{FHilb}_n(\\mathbb{C}^2) = \\{I_n \\sub",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-015",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The matrix presentation",
+      "pageStart": 11,
+      "pageEnd": 12,
+      "target": "../sections/sec-015-22-the-matrix-presentation.md",
+      "narrative": null,
+      "content": "[]{#sub:adhm hilbert label=\"sub:adhm hilbert\"}\n\nThroughout this section, we fix the Lie groups: $$G = GL_n, \\qquad B_0 = \\text{invertible lower triangular }n \\times n\\text{ matrices}$$ and the flag variety $\\text{Fl}= G/B_0$. We will also consider the Lie algebras: $$\\mathfrak{g}= n\\times n \\text{ matrices}, \\qquad \\mathfrak{b}_0 = \\text{lower triangular }n \\times n\\text{ matrices}$$ We will also write $\\mathfrak{n}_0 \\subset \\mathfrak{b}_0$ for the nilpotent subgroup of strictly lower triangular matrices, and $V$ for the $n$ dimensional vector space on which all the above matrix groups and al",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-016",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "DG schemes",
+      "pageStart": 12,
+      "pageEnd": 13,
+      "target": "../sections/sec-016-23-dg-schemes.md",
+      "narrative": null,
+      "content": "[]{#sub:dg schemes label=\"sub:dg schemes\"}\n\nBecause the quotient in [\\[eqn:defhilbert\\]](#eqn:defhilbert){reference-type=\"eqref\" reference=\"eqn:defhilbert\"} is taken in the sense of GIT, the Hilbert scheme is a quasi-projective variety. But let us neglect its interesting structure as a topological space, and describe its ring of functions locally. By definition, the locus of cyclic triples $(\\mathfrak{g}\\times \\mathfrak{g}\\times V)^\\text{cyc}$ is an open subset of affine space, and the moment map [\\[eqn:defmoment\\]](#eqn:defmoment){reference-type=\"eqref\" reference=\"eqn:defmoment\"} gives rise t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-017",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Explicit matrices",
+      "pageStart": 13,
+      "pageEnd": 15,
+      "target": "../sections/sec-017-24-explicit-matrices.md",
+      "narrative": null,
+      "content": "[]{#sub:explicit matrices label=\"sub:explicit matrices\"}\n\nAlthough the definition of $\\mathfrak{z}$ and $\\mathrm{FHilb}_n(\\mathbb{C}^2)$ is given by allowing the Borel subgroup to vary, to keep the presentation explicit we will henceforth fix it to be $B=B_0$. Therefore, points of the flag Hilbert scheme will be triples: $$\\label{eqn:triple matrices}\nX = \\left( \\begin{array}{cccc}\nx_1 & 0 & 0 & 0 \\\\\n* & x_2 & 0 & 0 \\\\\n* & * & ... & 0 \\\\\n* & * & * & x_{n} \\end{array} \\right), \\quad Y = \\left( \\begin{array}{cccc}\ny_1 & 0 & 0 & 0 \\\\\n* & y_2 & 0 & 0 \\\\\n* & * & ... & 0 \\\\\n* & * & * & y_{n} \\end{arr",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/figure-img-p015-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../images/img-p015-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/figure-img-p015-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 15,
+      "pageEnd": 15,
+      "target": "../images/img-p015-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-018",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Projective tower construction",
+      "pageStart": 15,
+      "pageEnd": 18,
+      "target": "../sections/sec-018-25-projective-tower-construction.md",
+      "narrative": null,
+      "content": "[]{#sub:tower label=\"sub:tower\"}\n\nLet us consider the action: $$\\mathbb{C}^* \\times \\mathbb{C}^* \\curvearrowright \\mathrm{FHilb}_n$$ which scales the matrices $X,Y$ independently. We denote the basic characters of this action by $q$ and $t$, so the $\\mathbb{C}^{*} \\times \\mathbb{C}^*$ action is explicitly given by: $$(z_1,z_2) \\cdot (X,Y) = (q(z_1) X ,t(z_2) Y), \\qquad \\forall \\ (z_1,z_2) \\in \\mathbb{C}^* \\times \\mathbb{C}^*$$ In the matrix presentation, the tautological bundle $\\mathcal{T}_n$ on $\\mathrm{FHilb}_n$ has fibers consisting simply of the vector spaces $V$ on which the matrices $X,",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/figure-img-p017-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 17,
+      "pageEnd": 17,
+      "target": "../images/img-p017-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/figure-img-p018-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 18,
+      "pageEnd": 18,
+      "target": "../images/img-p018-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-019",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The dg scheme",
+      "pageStart": 18,
+      "pageEnd": 19,
+      "target": "../sections/sec-019-27-the-dg-scheme.md",
+      "narrative": null,
+      "content": "[]{#sub:dg scheme label=\"sub:dg scheme\"}\n\nWe will now give an alternative definition of the dg scheme [\\[eqn:def dg zero\\]](#eqn:def dg zero){reference-type=\"eqref\" reference=\"eqn:def dg zero\"}, and we leave it as an exercise to the interested reader to show that the two descriptions are equivalent (we will only use the definition in this Subsection for the remainder of this paper). The idea is to note that the map $\\Psi$ of the complex [\\[eqn:two step\\]](#eqn:two step){reference-type=\"eqref\" reference=\"eqn:two step\"} fails to be injective on many fibers, and this will lead to the flag Hilbert",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/figure-img-p019-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../images/img-p019-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-020",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Serre duality",
+      "pageStart": 19,
+      "pageEnd": 19,
+      "target": "../sections/sec-020-28-serre-duality.md",
+      "narrative": null,
+      "content": "[]{#sub:serre label=\"sub:serre\"}\n\nAs explained in Subsection [\\[sub:proj dg\\]](#sub:proj dg){reference-type=\"ref\" reference=\"sub:proj dg\"} of the Appendix, we may embed the dg scheme $\\mathrm{FHilb}_{n+1}^\\text{dg}$ into an actual projective bundle: $$\\includegraphics{2_39.png}\n\\label{eqn:triangle}$$ where we implicitly use the description [\\[eqn:two step\\]](#eqn:two step){reference-type=\"eqref\" reference=\"eqn:two step\"} of the complex of vector bundles $\\mathcal{E}_n$. This allows us to compute the push-forward $\\pi_*$ of sheaves by factoring them through the diagram [\\[eqn:triangle\\]](#eqn:t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-021",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Hecke algebra and Soergel category",
+      "pageStart": 19,
+      "pageEnd": 20,
+      "target": "../sections/sec-021-3-the-hecke-algebra-and-soergel-category.md",
+      "narrative": null,
+      "content": "[]{#sec:Sbim label=\"sec:Sbim\"}\n\n## The Hecke algebra\n\nRecall that the Hecke algebra of type $A_n$ has $n-1$ generators: $$H_n = \\mathbb{C}(q) \\langle \\sigma_1,...,\\sigma_{n-1} \\rangle$$ modulo relations: $$\\label{eqn:hecke1}\n\\left(\\sigma_i-q^{\\frac 12} \\right)\\left(\\sigma_i+q^{-\\frac 12} \\right) = 0 \\ \\qquad \\ \\forall \\ i\\in \\{1,\\ldots,n-1\\}$$ $$\\label{eqn:hecke2}\n\\sigma_i\\sigma_{i+1}\\sigma_i = \\sigma_{i+1}\\sigma_i\\sigma_{i+1} \\qquad \\forall \\ i\\in \\{1,\\ldots,n-2\\}$$ $$\\label{eqn:hecke3}\n\\sigma_i\\sigma_j = \\sigma_j\\sigma_i \\qquad \\quad \\ \\ \\forall \\ |i-j|>1.$$ The algebra $H_n$ is a $q$-deform",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-022",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The braid group",
+      "pageStart": 20,
+      "pageEnd": 21,
+      "target": "../sections/sec-022-32-the-braid-group.md",
+      "narrative": null,
+      "content": "The Hecke algebra is a quotient of the braid group on $n$ strands, which is defined by removing relation [\\[eqn:hecke1\\]](#eqn:hecke1){reference-type=\"eqref\" reference=\"eqn:hecke1\"}. Specifically, the braid group is generated by $\\sigma_1^{\\pm 1},...,\\sigma_{n-1}^{\\pm 1}$ modulo relations [\\[eqn:hecke2\\]](#eqn:hecke2){reference-type=\"eqref\" reference=\"eqn:hecke2\"} and [\\[eqn:hecke3\\]](#eqn:hecke3){reference-type=\"eqref\" reference=\"eqn:hecke3\"}. By definition, the **full twist** on $n$ strands is the braid: $$\\mathbf{FT}_n = (\\sigma_1 \\cdots \\sigma_{n-1})^{n}.$$\n\n<figure id=\"fig:ft\">\n\n<figcapti",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-023",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Soergel bimodules",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-023-33-soergel-bimodules.md",
+      "narrative": null,
+      "content": "[]{#sub:soergel label=\"sub:soergel\"}\n\nThe category of Soergel bimodules, which we will denote $\\mathrm{SBim}_n$, is a categorification of the Hecke algebra. We will consider $R = \\mathbb{C}[x_1,...,x_n]$ and study graded $R-$bimodules, where $\\deg x_i = 1$. We will write $q M$ for the graded module $M$ with the grading shifted by 1. Among the most important such $R-$bimodules are the elementary **Bott-Samelson** bimodules: $$\\label{eqn:bs}\nB_i = q^{-\\frac 12} R \\otimes_{R^{i,i+1}} R$$ for any simple transposition $s_i = (i,i+1)$, where we write $R^{i,i+1}$ for those polynomials which are invar",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-024",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "From Rouquier complexes to Khovanov-Rozansky homology",
+      "pageStart": 22,
+      "pageEnd": 23,
+      "target": "../sections/sec-024-34-from-rouquier-complexes-to-khovanov-rozansky.md",
+      "narrative": null,
+      "content": "[]{#sub:khr label=\"sub:khr\"}\n\nSince $\\sigma_i=[B_i]-q^{-\\frac 12}$, it is clear that $\\sigma_i$ does not correspond to any Soergel bimodule. However, Rouquier showed that $\\sigma_i$ can be realized in the homotopy category of complexes: $$K^b(\\mathrm{SBim}_n)$$ where we use the variable $s$ to keep track of homological degree. Explicitly, objects in the homotopy category of complexes will be denoted by: $$\\Big[s^k M_k \\rightarrow ... \\rightarrow s^{k'} M_{k'} \\Big]$$ for some $k \\leq k' \\in \\mathbb{Z}$. The variable $s$ may seem redundant when writing down chain complexes, but we keep track of",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-025",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The trace functor",
+      "pageStart": 23,
+      "pageEnd": 24,
+      "target": "../sections/sec-025-35-the-trace-functor.md",
+      "narrative": null,
+      "content": "[]{#sub:trace label=\"sub:trace\"}\n\nWe will henceforth write $R_n = \\mathbb{C}[x_1,...,x_n]$ to avoid confusion as to which number $n$ we are considering. For an extra variable $x_{n+1}$, we consider the category: $$\\label{eqn:upgrade}\n\\mathrm{SBim}_n[x_{n+1}]$$ of Soergel bimodules which are equipped with an additional endomorphism denoted by $x_{n+1}$ that commutes with the action of $R_n$. In other words, $\\mathrm{SBim}_n[x_{n+1}]$ is the Karoubian envelope of the smallest full subcategory of $R_{n+1}\\text{--mod--}R_{n+1}$ that contains the modules $B_1,\\ldots B_{n-1}$ and is closed under $\\o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/figure-img-p024-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 24,
+      "pageEnd": 24,
+      "target": "../images/img-p024-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-026",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The main conjectures",
+      "pageStart": 24,
+      "pageEnd": 26,
+      "target": "../sections/sec-026-36-the-main-conjectures.md",
+      "narrative": null,
+      "content": "[]{#sub:mainconj label=\"sub:mainconj\"}\n\nFor the remainder of this Section, we will write $\\mathrm{FHilb}_n^\\text{dg}= \\mathrm{FHilb}_n^\\text{dg}(\\mathbb{C})$ and $\\mathcal{E}_n = \\mathcal{E}_n(\\mathbb{C})$, in the notation of Section [\\[sec:flag\\]](#sec:flag){reference-type=\"ref\" reference=\"sec:flag\"}. Our main Conjecture can be restated more precisely as follows:\n\n::: Conjecture\nThere exists a pair of adjoint functors: $$\\label{eqn:funk}\nK^b(\\mathrm{SBim}_n) \\xtofrom[\\iota^*]{\\iota_*} D^b\\left(\\mathrm{Coh}_{\\mathbb{C}^{*} \\times \\mathbb{C}^*} \\left( \\mathrm{FHilb}_n^{\\emph{dg}} \\right) \\right",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/figure-img-p025-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 25,
+      "pageEnd": 25,
+      "target": "../images/img-p025-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/conj-sec-027-02",
+      "types": [
+        "folio-assistant-sci:Conjecture",
+        "doco:Section"
+      ],
+      "kind": "conjecture",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "conj-sec-027-02.md",
+      "narrative": null,
+      "content": "The following topological facts hold for all n ≥0. (a) En is an explicit complex in terms of I(En−1) and Ln, as in (3.31) below. (b) The following equation holds in Kb(SBimn[xn+1]): (3.28) SkEn ∼= Tr(Lk n+1) ∀k ≥0. (c) The Koszul complex (3.29) h ... η −→I(∧2En) ⊗L−2 n+1 η −→I(En) ⊗L−1 n+1 η −→R i is acyclic, where I(En) η→Ln+1 denotes the adjoint map to (3.26). Statement (a) implies that En lies in the monoidal subcategory of Kb(SBimn) generated by L1, ..., Ln. Since this subcategory is symmetric and Karoubian, the objects SkEn and ∧kEn that appear in (b) and (c) are well-deﬁned: as in [20],",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prop-sec-027-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "prop-sec-027-01.md",
+      "narrative": null,
+      "content": "describes ﬂag Hilbert schemes as projective towers, which implies that: En ∼= π∗(Ln+1) ∈Db \u0000CohC∗×C∗\u0000FHilbdg n \u0001\u0001 Deﬁne the following object: (3.26) En := Tr(Ln+1) ∈Kb(SBimn)",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-027",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "3.7.",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "../sections/sec-027-37.md",
+      "narrative": null,
+      "content": "Proposition 2.10 describes ﬂag Hilbert schemes as projective towers, which implies that:\nEn ∼= π∗(Ln+1) ∈Db \u0000CohC∗×C∗\u0000FHilbdg\nn\n\u0001\u0001\nDeﬁne the following object:\n(3.26)\nEn := Tr(Ln+1) ∈Kb(SBimn)\nConjecture 1.1 implies that:\n(3.27)\nι∗(En) = ι∗(Tr(Ln+1)) = π∗(ι∗(Ln+1)) = π∗(Ln+1)) ∼= En.\nConjecture 3.9. The following topological facts hold for all n ≥0.\n(a) En is an explicit complex in terms of I(En−1) and Ln, as in (3.31) below.\n(b) The following equation holds in Kb(SBimn[xn+1]):\n(3.28)\nSkEn ∼= Tr(Lk\nn+1)\n∀k ≥0.\n(c) The Koszul complex\n(3.29)\nh\n...\nη\n−→I(∧2En) ⊗L−2\nn+1\nη\n−→I(En) ⊗L−1\nn+1\nη\n−→R\ni\ni",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-028",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "En as an explicit braid",
+      "pageStart": 26,
+      "pageEnd": 27,
+      "target": "../sections/sec-028-38-en-as-an-explicit-braid.md",
+      "narrative": null,
+      "content": "[]{#sub:explicit braid label=\"sub:explicit braid\"}\n\nThe object $E_n = \\mathop{\\mathrm{Tr}}(L_{n+1}) \\in K^b(\\mathrm{SBim}_n[x_{n+1}])$ has a simple topological meaning, represented below.\n\n<figure>\n\n<figcaption>The braid <span class=\"math inline\"><em>L</em><sub>4</sub></span> and its partial trace <span class=\"math inline\"><em>E</em><sub>3</sub></span>.</figcaption>\n</figure>\n\nThe relation between the tangle $E_n$ and the complex $\\mathcal{E}_n$ is expected to categorify the classical formula for $E_n$ (e.g. [@Morton]) in the skein algebra. Specifically, skein relations are topological equalit",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/thm-sec-027-03",
+      "types": [
+        "folio-assistant-sci:Theorem",
+        "doco:Section"
+      ],
+      "kind": "theorem",
+      "title": "",
+      "pageStart": 26,
+      "pageEnd": 26,
+      "target": "thm-sec-027-03.md",
+      "narrative": null,
+      "content": "Conjecture 3.9 implies Conjecture 1.1.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-029",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Geometric Markov invariance",
+      "pageStart": 27,
+      "pageEnd": 30,
+      "target": "../sections/sec-029-39-geometric-markov-invariance.md",
+      "narrative": null,
+      "content": "[]{#sub:markov label=\"sub:markov\"}\n\nIn the category of Soergel bimodules, equation [\\[eqn: R1 upgraded\\]](#eqn: R1 upgraded){reference-type=\"eqref\" reference=\"eqn: R1 upgraded\"} governs the behavior of objects under Markov moves: $$\\label{eqn:markov}\n\\alpha \\leadsto i(\\alpha), \\qquad \\alpha \\leadsto i(\\alpha) \\cdot \\sigma_n, \\qquad \\alpha \\leadsto i(\\alpha) \\cdot \\sigma^{-1}_n$$ where $i$ is the operation of adding an extra strand to a braid $\\alpha$ on $n$ strands. We will now study how the complexes of sheaves $\\mathcal{B}(\\alpha) = \\iota_*(\\alpha) \\in D^b(\\mathrm{Coh}_{\\mathbb{C}^{*} \\times",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/figure-img-p030-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "../images/img-p030-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-030",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Correspondences",
+      "pageStart": 30,
+      "pageEnd": 30,
+      "target": "../sections/sec-030-310-correspondences.md",
+      "narrative": null,
+      "content": "[]{#sub:nakajima label=\"sub:nakajima\"}\n\nFormula [\\[eqn:markov 0\\]](#eqn:markov 0){reference-type=\"eqref\" reference=\"eqn:markov 0\"} can be expressed in terms of the complexes of sheaves: $$\\mathcal{F}( \\sigma ) = \\nu_*(\\mathcal{B}(\\sigma)) \\ \\in \\ D^b(\\mathrm{Coh}_{\\mathbb{C}^{*} \\times \\mathbb{C}^*}(\\mathrm{Hilb}_n))$$ of [\\[eqn:sheaf on hilb\\]](#eqn:sheaf on hilb){reference-type=\"eqref\" reference=\"eqn:sheaf on hilb\"}, where $\\nu: \\mathrm{FHilb}_n^\\text{dg}\\rightarrow \\mathrm{Hilb}_n$ is the map [\\[eqn:map to hilb\\]](#eqn:map to hilb){reference-type=\"eqref\" reference=\"eqn:map to hilb\"}. Specif",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-031",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Mirror braids",
+      "pageStart": 30,
+      "pageEnd": 31,
+      "target": "../sections/sec-031-311-mirror-braids.md",
+      "narrative": null,
+      "content": "[]{#sub:mirror label=\"sub:mirror\"}\n\nIn this section, we will relate the operation of mirroring braids (i.e. looking at them from behind) with Verdier duality on the category of coherent sheaves on $\\mathrm{FHilb}_n$.\n\n::: proposition\n[]{#prop:mirror label=\"prop:mirror\"}\n\nFor any $\\mathcal{F}\\in D^b\\mathrm{Coh}(\\mathrm{FHilb}^\\emph{dg}_n)$ one has: $$\\int_{\\mathrm{FHilb}_n^\\emph{dg}} \\mathcal{F}\\otimes \\wedge^\\bullet \\mathcal{T}_n^\\vee \\cong \\left[\\int_{\\mathrm{FHilb}_n^\\emph{dg}}\\mathcal{F}^{\\vee} \\otimes \\wedge^\\bullet \\mathcal{T}_n \\right]^{\\vee}$$ where the $a$-grading in the right hand sid",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-032",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Some remarks on support",
+      "pageStart": 31,
+      "pageEnd": 32,
+      "target": "../sections/sec-032-312-some-remarks-on-support.md",
+      "narrative": null,
+      "content": "[]{#sub:knots label=\"sub:knots\"}\n\nWe now explore what the endpoints of a braid $\\sigma$ say about the sheaf $\\mathcal{B}_\\sigma$ on $\\mathrm{FHilb}_n^\\text{dg}$. For any braid $\\sigma$, let $w_\\sigma \\in S_n$ denote the underlying permutation.\n\n::: proposition\n(e.g. [@Hog Proposition 2.16]) For any braid $\\sigma$ and for all $i\\in \\{1,...,n\\}$, the left action of $x_i$ on the complex $\\sigma \\in K^b(\\mathrm{SBim}_n)$ is homotopic to the right action of $x_{w_{\\sigma(i)}}$.\n:::\n\nIn short, we will say that the left action $R \\curvearrowright \\sigma$ is homotopic to the right action $\\sigma \\curv",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-033",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Categories and schemes",
+      "pageStart": 32,
+      "pageEnd": 32,
+      "target": "../sections/sec-033-4-categories-and-schemes.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-034",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Motivation: maps to projective space",
+      "pageStart": 32,
+      "pageEnd": 34,
+      "target": "../sections/sec-034-41-motivation-maps-to-projective-space.md",
+      "narrative": null,
+      "content": "[]{#sub:linear label=\"sub:linear\"}\n\nWe start by recalling certain classical constructions in algebraic geometry which will guide all subsequent generalizations. Let $X$ be a projective algebraic variety and let $\\mathcal{L}$ be a line bundle (i.e. a rank one locally free sheaf) over $X$. One says that $\\mathcal{L}$ is generated by global sections if the map of sheaves: $$\\mathcal{O}_X \\otimes \\Gamma(X, \\mathcal{L}) \\rightarrow \\mathcal{L}$$ is surjective. If we choose a basis $s_0,...,s_n$ of the vector space $\\Gamma(X,\\mathcal{L})$, this comes down to requiring that any local section of $\\mat",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/figure-img-p034-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 34,
+      "pageEnd": 34,
+      "target": "../images/img-p034-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-035",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Notations for categories",
+      "pageStart": 34,
+      "pageEnd": 35,
+      "target": "../sections/sec-035-42-notations-for-categories.md",
+      "narrative": null,
+      "content": "[]{#def:cat label=\"def:cat\"}\n\nIn this subsection, we would like to collect all homological algebra notations, definitions and assumptions which will be frequently used below. Let $\\mathcal{C}$ be an additive unital monoidal category with tensor product $\\otimes$ and direct sum $\\oplus$. The monoidal structure is not necessary symmetric. We will denote the unit object of $\\mathcal{C}$ by $\\mathbf{1}_{\\mathcal{C}}$, or $\\mathbf{1}$ if the category is clear from context. The endomorphism algebra $\\mathrm{End}(\\mathbf{1})$ is always commutative, and we assume that it is Noetherian. For any object",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-036",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Categories over schemes",
+      "pageStart": 35,
+      "pageEnd": 36,
+      "target": "../sections/sec-036-43-categories-over-schemes.md",
+      "narrative": null,
+      "content": "[]{#sub:spec label=\"sub:spec\"}\n\nIn this section, we will develop a general setup relating a category $\\mathcal{C}$ with a scheme $X$, with the goal of reducing Conjecture [\\[conj:1\\]](#conj:1){reference-type=\"ref\" reference=\"conj:1\"} to Conjecture [\\[conj:main\\]](#conj:main){reference-type=\"ref\" reference=\"conj:main\"}. Though we will not always say this explicitly, $X$ should be thought of as a dg scheme.\n\n::: definition\n[]{#def:morphism label=\"def:morphism\"}\n\nA **morphism** from the category $\\mathcal{C}$ to the scheme $X$, written as: $$\\mathcal{C}\\stackrel{\\iota}\\longrightarrow X$$ consists",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-037",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The affine case",
+      "pageStart": 36,
+      "pageEnd": 37,
+      "target": "../sections/sec-037-44-the-affine-case.md",
+      "narrative": null,
+      "content": "[]{#sub:aff label=\"sub:aff\"}\n\nLet $\\mathcal{C}$ be an additive monoidal category. Suppose we are given a Noetherian commutative ring $A$ and a ring homomorphism $$\\label{eqn:affine}\nA \\stackrel{f}\\longrightarrow \\mathrm{End}_\\mathcal{C}(\\mathbf{1})$$ satisfying $$(\\#) \\quad \\mathop{\\mathrm{Hom}}_\\mathcal{C}(\\mathbf{1},C) \\text{ is finitely generated over }A$$ for any object $C$ of $\\mathcal{C}$. Then there is a derived morphism: $$\\label{eqn:affine0}\n \\mathcal{C}\\stackrel{\\iota}\\longrightarrow  \\mathrm{Spec}\\ A.$$ The functors $$K(\\mathcal{C}) \\xtofrom[\\iota^*]{\\iota_*} D(A\\text{--mod})$$ are",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-038",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The projective case",
+      "pageStart": 37,
+      "pageEnd": 38,
+      "target": "../sections/sec-038-45-the-projective-case.md",
+      "narrative": null,
+      "content": "[]{#sub:proj label=\"sub:proj\"}\n\nIn the previous Subsection, we showed that any category can be realized over the spectrum of the endomorphism ring of its unit. We may upgrade this construction if we are given an **invertible** object $F \\in K(\\mathcal{C})$, i.e. one which is endowed with isomorphisms: $$\\label{eqn:def invertible}\nF \\otimes F^{-1} \\cong F^{-1} \\otimes F \\cong \\mathbf{1}$$\n\n::: assumption\n[]{#ass:commute label=\"ass:commute\"} We assume that the graded algebra: $$\\label{eqn:commalg}\n\\mathop{\\mathrm{Hom}}_{K(\\mathcal{C})}(\\mathbf{1},F^{\\bullet}) := \\bigoplus_{k=0}^\\infty \\mathop{\\m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/figure-img-p038-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 38,
+      "target": "../images/img-p038-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/figure-img-p038-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 38,
+      "pageEnd": 38,
+      "target": "../images/img-p038-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-039",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The relative case",
+      "pageStart": 38,
+      "pageEnd": 40,
+      "target": "../sections/sec-039-46-the-relative-case.md",
+      "narrative": null,
+      "content": "[]{#sub:relative label=\"sub:relative\"}\n\nThe situation of Example [\\[ex:projective\\]](#ex:projective){reference-type=\"ref\" reference=\"ex:projective\"} captures a very interesting problem, namely when can we factor a map from a category to a scheme through another scheme: $$\\label{eqn:iota0}\n\\includegraphics{4_23.png}$$ More precisely, $\\iota'$ should satisfy the equations $\\iota^*=\\iota'^*\\circ \\pi^*$ and $\\iota_*=\\pi_*\\circ \\iota'_*$ and all the functors should be derived from now on. The situation we will study in this paper is when: $$Y = \\mathbb{P}\\mathcal{V}^{\\vee} := \\mathrm{Proj}_X (S^{\\b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/figure-img-p040-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 40,
+      "pageEnd": 40,
+      "target": "../images/img-p040-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-040",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Projective dimension one",
+      "pageStart": 40,
+      "pageEnd": 41,
+      "target": "../sections/sec-040-47-projective-dimension-one.md",
+      "narrative": null,
+      "content": "[]{#sub:one label=\"sub:one\"}\n\nFor the setting of this paper, we will need a version of Proposition [\\[prop:lift0\\]](#prop:lift0){reference-type=\"ref\" reference=\"prop:lift0\"} when the vector bundle $\\mathcal{V}$ is replaced by the quotient: $$0 \\longrightarrow\\mathcal{W}\\stackrel{\\psi}\\longrightarrow \\mathcal{V}\\longrightarrow \\mathcal{Q}\\longrightarrow 0$$ where $\\mathcal{W}$ is another vector bundle. More precisely, we are interested in the case when: $$Y \\hookrightarrow \\mathbb{P}\\mathcal{V}^\\vee$$ is the (derived) zero locus of the section: $$\\label{eqn:section}\ns : \\pi^*(\\mathcal{W}) \\stac",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/figure-img-p041-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 41,
+      "pageEnd": 41,
+      "target": "../images/img-p041-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-041",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Deducing Conjecture ?? from Conjecture ??",
+      "pageStart": 41,
+      "pageEnd": 42,
+      "target": "../sections/sec-041-48-deducing-conjecture-from-conjecture.md",
+      "narrative": null,
+      "content": "section allows one to deduce the main conjecture from Conjecture 3.9 (a)–(c). We will proceed\nby induction on n, so let assume that the functors (3.16) are well-deﬁned for some ﬁxed n. Our\ntask is to construct functors:\nKb(SBimn+1)\nιn+1∗\n−\u0000====\u0001−\nι∗\nn+1\nDb(Coh(FHilbdg\nn+1))\ngiven the functors:\nKb(SBimn)[xn+1]\nιn∗\n−\u0000===\u0001−\nι∗n\nDb(Coh(FHilbdg\nn × C))\nobtained from the inductive hypothesis and tensoring with the extra variable xn+1. We deﬁne\nthe composed functors:\nι∗: Kb(SBimn+1)\nTr\n−\u0000==\u0001−\nI\nSBimn[xn+1]\nιn∗\n−\u0000===\u0001−\nιn∗\nDb(Coh(FHilbdg\nn × C)) : ι∗\nAccording to Proposition 2.10, we have FHilbdg\nn+1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-042",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Invertible objects in monoidal categories",
+      "pageStart": 42,
+      "pageEnd": 42,
+      "target": "../sections/sec-042-49-invertible-objects-in-monoidal-categories.md",
+      "narrative": null,
+      "content": "[]{#sub:invertible label=\"sub:invertible\"}\n\nWe summarize several important properties of invertible objects [\\[eqn:def invertible\\]](#eqn:def invertible){reference-type=\"eqref\" reference=\"eqn:def invertible\"} in arbitrary monoidal categories. The proofs are straightforward, and left as exercises to the interested reader.\n\n::: proposition\n[]{#prop:inv label=\"prop:inv\"} For any invertible object $F\\in \\mathcal{C}$ and two arbitrary objects $C,C'\\in \\mathcal{C}$, there exist canonical isomorphisms: $$\\mathop{\\mathrm{Hom}}_{\\mathcal{C}}(F \\otimes C, F \\otimes C') \\cong \\mathop{\\mathrm{Hom}}_{\\math",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-043",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Example: the case of two strands",
+      "pageStart": 42,
+      "pageEnd": 42,
+      "target": "../sections/sec-043-5-example-the-case-of-two-strands.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-044",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The geometry of FHilb2",
+      "pageStart": 42,
+      "pageEnd": 43,
+      "target": "../sections/sec-044-51-the-geometry-of-fhilb2.md",
+      "narrative": null,
+      "content": "this section we construct explicitly the functors ι∗and ι∗between the category of sheaves on\nFHilb2 and the category of Soergel bimodules SBim2. We have the matrix presentation:\nFHilb2 =\n\u001a\nX =\n\u0012\nx1\n0\nz\nx2\n\u0013\n, Y =\n\u0012\n0\n0\nw\n0\n\u0013\n, [X, Y ] = 0, v =\n\u0012\n1\n0\n\u0013\ncyclic\n\u001b\nconjugation by g =\n\u0012\n1\n0\n0\nc\n\u0013\nNote that in the presentation above, we ﬁxed the vector v (and this ﬁxes the ﬁrst column of the\nconjugating matrix) to eliminate some coordinates. Unwinding the above gives us:\n(5.1)\nFHilb2 = {(x1, x2, z, w), (x1 −x2)w = 0, z, w not both zero}\n(x1, x2, z, w) ∼(x1, x2, cz, cw)\n= Proj(A)\nwhere x1, x2, z, w ha",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-045",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Cohomology of sheaves on FHilb2",
+      "pageStart": 43,
+      "pageEnd": 44,
+      "target": "../sections/sec-045-52-cohomology-of-sheaves-on-fhilb2.md",
+      "narrative": null,
+      "content": "[]{#sub:coh 2 label=\"sub:coh 2\"}\n\nOn the projectivization [\\[eqn:matrix fh 2\\]](#eqn:matrix fh 2){reference-type=\"eqref\" reference=\"eqn:matrix fh 2\"}, the line bundles of importance for us are $\\mathcal{L}_1 \\cong \\mathcal{O}$ and $\\mathcal{L}_2 \\cong \\mathcal{O}(1)$, where the latter denotes the Serre twisting sheaf. Note that: $$\\label{eqn:taut 2}\n\\mathcal{T}_2 \\cong \\mathcal{O}\\oplus \\mathcal{O}(1)$$ We will now compute the cohomology groups of certain line bundles on $\\mathrm{FHilb}_2$. To simplify our computations by removing a factor of $\\mathbb{C}$, we will work with the reduced version",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-046",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Soergel bimodules for n=2",
+      "pageStart": 44,
+      "pageEnd": 45,
+      "target": "../sections/sec-046-53-soergel-bimodules-for-n2.md",
+      "narrative": null,
+      "content": "[]{#sub:soergel n=2 label=\"sub:soergel n=2\"}\n\nThe category of Soergel bimodules is generated by two objects: $R = \\mathbb{C}[x_1,x_2]$ and $B = R \\otimes_{R^{(12)}} R$. With our grading conventions, we have: $$\\label{eqn:square}\nB^2 = B \\otimes_R B \\cong q^{\\frac 12}B\\oplus q^{- \\frac 12}B$$ In the reduced category, we can set $x_1+x_2=0$ and $x_1-x_2 = x$, and write $\\overline{R}=\\mathbb{C}[x]$ and: $$\\overline{B}=\\overline{R}\\otimes_{\\overline{R}^s}\\overline{R}=\\mathbb{C}[x]\\otimes_{\\mathbb{C}[x^2]}\\mathbb{C}[x].$$ This object also satisfies property [\\[eqn:square\\]](#eqn:square){reference-t",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/figure-img-p045-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 45,
+      "target": "../images/img-p045-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-047",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Proj construction",
+      "pageStart": 45,
+      "pageEnd": 47,
+      "target": "../sections/sec-047-54-proj-construction.md",
+      "narrative": null,
+      "content": "(5.15)\nDb (CohC∗×C∗(FHilb2))\nι∗\n−\u0000==\u0001−\nι∗\nKb(SBim2)\nand prove Conjecture 1.1 for n = 2. To keep our notation simple, we will perform the compu-\ntation for the reduced versions of the above categories. As was shown in Section 4, in order to\nconstruct ι∗one needs to prove the following isomorphism of graded algebras:\n(5.16)\n∞\nM\nk=0\nHom\n\u0010\n1, FT\nk\u0011\n∼=\n∞\nM\nk=0\nHom\n\u0000FHilb2, O(k)\n\u0001\n46\nEUGENE GORSKY, ANDREI NEGUT, , AND JACOB RASMUSSEN\nTo compute the left hand side of (5.16), recall from [39] that we have the following identity in\nSBim2 for all k > 0:\nFT\nk ≃\n\nqk−1\n2B →qk−3\n2sB →· · · →s2k−3B\nqk−5",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/rem-sec-047-01",
+      "types": [
+        "folio-assistant-core:Remark",
+        "doco:Section"
+      ],
+      "kind": "remark",
+      "title": "",
+      "pageStart": 45,
+      "pageEnd": 47,
+      "target": "rem-sec-047-01.md",
+      "narrative": null,
+      "content": "By analogy with (5.17), we have: Ext1(1, FT k) ∼=  qk−1R 0→qk−1t 2R x−→· · · 0→qtk−3 2R x−→tk−1R 0→tk−1 2R | {z } 2k 1→tkR  ∼= FLAG HILBERT SCHEMES, COLORED PROJECTORS AND KHOVANOV-ROZANSKY HOMOLOGY (5.19) ∼= zk−1C[x] k−1 M i=1 wizk−1−iC[x] x = A k−1 and therefore: RHom \u0010 1, FT k\u0011 ∼= Hom \u0010 1, FT k−1\u0011 This is precisely (3.25) for M = FT k and T 2 = ι∗(T 2) = ι∗(O(1)) = FT.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-048",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sheaves for two-strand braids",
+      "pageStart": 47,
+      "pageEnd": 48,
+      "target": "../sections/sec-048-55-sheaves-for-two-strand-braids.md",
+      "narrative": null,
+      "content": "[]{#sub:sheaves n=2 label=\"sub:sheaves n=2\"}\n\nTo construct the sheaf $\\iota_*(M)$ for any object $M \\in \\mathrm{SBim}_2$, one needs to consider the module $\\mathop{\\mathrm{Hom}}(\\mathbf{1}, M \\otimes \\overline{\\mathbf{FT}}^{\\bullet})$ over the graded algebra $A = \\mathop{\\mathrm{Hom}}(\\mathbf{1},\\overline{\\mathbf{FT}}^{\\bullet})$. In the previous subsection, we have studied the case $M = \\overline{\\mathbf{FT}}^k$ for positive integers $k$, and we found that $\\iota_*(M) = \\mathcal{O}(k)$. The computation for negative $k$ is more interesting: $$\\overline{\\mathbf{FT}}^{-k} \\cong  \\left[t^{-k} \\ov",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-049",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Example: the case of three strands",
+      "pageStart": 48,
+      "pageEnd": 48,
+      "target": "../sections/sec-049-6-example-the-case-of-three-strands.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-050",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The geometry of FHilb3",
+      "pageStart": 48,
+      "pageEnd": 49,
+      "target": "../sections/sec-050-61-the-geometry-of-fhilb3.md",
+      "narrative": null,
+      "content": "late a precise conjecture about the sheaf ι∗(ﬁgure eight knot). Recall the matrix presentation:\nFHilb3 =\n\n\nX =\n\n\nx1\n0\n0\na\nx2\n0\nα1\nα2\nx3\n\n, Y =\n\n\n0\n0\n0\nb\n0\n0\nβ1\nβ2\n0\n\n, [X, Y ] = 0,\n(6.1)\nv =\n\n\n1\n0\n0\n\ncyclic\n\n\n\n.\nconjugation by g =\n\n\n1\n0\n0\n0\nc\n0\n0\nt\nd\n\n\nNote that in the presentation above, we ﬁxed the vector v (and this ﬁxes the ﬁrst column of the\nconjugating matrix) to eliminate certain coordinates. Note that the map FHilb3 →FHilb2 is\ngiven by only retaining the top 2 × 2 corners of the matrices in question. If one is given the\neigenvalues x1, x2, x3 and the point [a : b]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-051",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Torus braids",
+      "pageStart": 49,
+      "pageEnd": 50,
+      "target": "../sections/sec-051-62-torus-braids.md",
+      "narrative": null,
+      "content": "[]{#sec:n=3 torus label=\"sec:n=3 torus\"}\n\nIn this section, we compare our conjectures to the ones of [@GORS; @ORS] for three-strand torus braids. The remainder of this Section provides explicit computations that follow from Conjectures [\\[conj:1\\]](#conj:1){reference-type=\"ref\" reference=\"conj:1\"} and [\\[conj:knots\\]](#conj:knots){reference-type=\"ref\" reference=\"conj:knots\"}.\n\n::: proposition\n[]{#prop:3 strand label=\"prop:3 strand\"}\n\nThe sheaves on $\\mathrm{FHilb}_3$ associated to torus braids on 3 strands are: $$\\label{eqn:3 strand}\n\\iota_{*}(\\sigma_1\\sigma_2)^{k} = \\iota_{*}(\\sigma_2\\sigma_1",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-052",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The longest word",
+      "pageStart": 50,
+      "pageEnd": 50,
+      "target": "../sections/sec-052-63-the-longest-word.md",
+      "narrative": null,
+      "content": "[]{#sub:longest label=\"sub:longest\"}\n\nLet us describe the sheaf for the positive lift $\\sigma_1\\sigma_2\\sigma_1$ of the longest word in $S_3$. Remark that the following equation holds for all $a$ and $b$: $$\\label{eqn:conj for 121}\n\\mathop{\\mathrm{Tr}}(\\sigma_1\\sigma_2\\sigma_1\\mathcal{L}_2^{a}\\mathcal{L}_3^{b})=\\mathop{\\mathrm{Tr}}(\\sigma_2\\sigma_1\\sigma_1\\mathcal{L}_2^{a}\\mathcal{L}_3^{b}),$$ since $\\sigma_1$ commutes both with $\\mathcal{L}_2$ and $\\mathcal{L}_3$ and the trace satisfies $\\mathop{\\mathrm{Tr}}(\\sigma \\sigma') = \\mathop{\\mathrm{Tr}}(\\sigma'\\sigma)$. By Corollary [\\[cor:trace twi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-053",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The figure eight knot",
+      "pageStart": 50,
+      "pageEnd": 52,
+      "target": "../sections/sec-053-64-the-figure-eight-knot.md",
+      "narrative": null,
+      "content": "[]{#sub:figure eight label=\"sub:figure eight\"}\n\nIn this section we describe a sheaf for the braid $\\beta=\\sigma_1\\sigma_2^{-1}\\sigma_1\\sigma_2^{-1}$ representing the figure eight knot. There is a skein exact sequence relating $B_{\\beta}$ with the following objects in $\\mathrm{SBim}_3$: $$\\sigma_1\\sigma_2\\sigma_1\\sigma_2^{-1}=\\sigma_2\\sigma_1, \\sigma_1\\sigma_1\\sigma_2^{-1}=\\mathcal{L}_2\\sigma_2^{-1}.$$ More precisely, there is an exact sequence: $$\\label{skein fig 8}\n0\\xleftarrow{}\\sigma_2\\sigma_1\\xleftarrow{}\\mathop{\\mathrm{Cone}}\\left[\\mathcal{L}_2\\sigma_2^{-1}\\xleftarrow{x_1-x_2} \\mathcal{L}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-054",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Categorical idempotents and equivariant localization",
+      "pageStart": 52,
+      "pageEnd": 52,
+      "target": "../sections/sec-054-7-categorical-idempotents-and-equivariant-locali.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-055",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Categories over equivariant schemes",
+      "pageStart": 52,
+      "pageEnd": 53,
+      "target": "../sections/sec-055-71-categories-over-equivariant-schemes.md",
+      "narrative": null,
+      "content": "[]{#sub:equivcategories label=\"sub:equivcategories\"}\n\nWe will now enhance the setup of Section [\\[sec:geometry\\]](#sec:geometry){reference-type=\"ref\" reference=\"sec:geometry\"} to schemes endowed with a torus action $T \\curvearrowright X$.\n\n::: definition\n[]{#def:equivariantcategory label=\"def:equivariantcategory\"}\n\nA $T$--equivariant category $\\mathcal{C}$ is one which the Hom spaces are representations of $T$. If the category is monoidal, we require the tensor product to preserve the $T$ action.\n:::\n\n::: definition\n[]{#def:equivariant label=\"def:equivariant\"}\n\nGiven a $T$--equivariant categor",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-056",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Categorical diagonalization",
+      "pageStart": 53,
+      "pageEnd": 53,
+      "target": "../sections/sec-056-72-categorical-diagonalization.md",
+      "narrative": null,
+      "content": "[]{#sub:cat diag label=\"sub:cat diag\"}\n\nIn [@EH], Elias and Hogancamp developed a theory of categorical diagonalization, which we will now recall. Assume we are given an equivariant monoidal category $T \\curvearrowright \\mathcal{C}$, which can be taken to be triangulated or dg.\n\n::: definition\n([@EH]) []{#def:EH1 label=\"def:EH1\"} Fix an object $F \\in K^b(\\mathcal{C})$. An arrow: $$\\label{eqn:eigenmap}\n\\lambda\\cdot \\mathbf{1} \\stackrel{\\alpha}\\longrightarrow F$$ is called an **eigenmap** of $F$, and the grading shift $\\lambda \\in T^\\vee$ is called an **eigenvalue** of $F$.\n:::\n\n::: definition\n(",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-057",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Eigenobjects",
+      "pageStart": 53,
+      "pageEnd": 54,
+      "target": "../sections/sec-057-73-eigenobjects.md",
+      "narrative": null,
+      "content": "[]{#sub:eigenobjects label=\"sub:eigenobjects\"}\n\nIn Definition [\\[def:EH1\\]](#def:EH1){reference-type=\"ref\" reference=\"def:EH1\"} we have recalled the categorical version of eigenvalues. In [@EH], the authors complete the picture by categorifying eigenvectors:\n\n::: definition\n[]{#def:EH3 label=\"def:EH3\"} If for some $P \\in \\mathcal{C}$ the arrow: $$\\label{eqn:eigenobject}\n\\alpha \\otimes \\mathop{\\mathrm{Id}}_P : \\lambda\\cdot P \\stackrel{\\cong}\\longrightarrow F\\otimes P$$ is an isomorphism, then we call $P$ an **eigenobject** for the datum of Definition [\\[def:EH1\\]](#def:EH1){reference-type=\"ref\"",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/figure-img-p054-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 54,
+      "pageEnd": 54,
+      "target": "../images/img-p054-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-058",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The geometric realization over a fixed base",
+      "pageStart": 54,
+      "pageEnd": 57,
+      "target": "../sections/sec-058-74-the-geometric-realization-over-a-fixed-base.md",
+      "narrative": null,
+      "content": "[]{#sub:geometric diagonalization label=\"sub:geometric diagonalization\"}\n\nAs we saw in Lemma [\\[lem:universal\\]](#lem:universal){reference-type=\"ref\" reference=\"lem:universal\"}, any categorical diagonalization in a category $\\mathcal{C}$ comes from a $T$--equivariant map: $$\\mathcal{C}\\rightarrow \\mathbb{P}^n_A \\qquad \\text{i.e.} \\qquad K^b(\\mathcal{C}) \\xtofrom[\\iota^*]{\\iota_*} \\mathcal{D}$$ where $\\mathcal{D}= D^b(\\mathrm{Coh}_T(\\mathbb{P}^n_A))$, and the action $T \\curvearrowright \\mathbb{P}^n_A$ is given in [\\[eqn:action\\]](#eqn:action){reference-type=\"eqref\" reference=\"eqn:action\"}. The",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/figure-img-p055-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 55,
+      "pageEnd": 55,
+      "target": "../images/img-p055-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/figure-img-p056-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 56,
+      "pageEnd": 56,
+      "target": "../images/img-p056-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/figure-img-p056-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 56,
+      "pageEnd": 56,
+      "target": "../images/img-p056-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/figure-img-p057-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 57,
+      "target": "../images/img-p057-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prop-sec-059-01",
+      "types": [
+        "folio-assistant-sci:Proposition",
+        "doco:Section"
+      ],
+      "kind": "proposition",
+      "title": "",
+      "pageStart": 57,
+      "pageEnd": 58,
+      "target": "prop-sec-059-01.md",
+      "narrative": null,
+      "content": "Let n+1 = rank V. There exist objects Px i for all i ∈{0, ..., n} and x ∈XT, such that we have a semi-orthogonal decomposition: (7.14) OPV∨∼= \"0≤i≤n M x∈XT Pi x, a certain differential # ∈Db(CohT(PV∨)) whenever the homological subtorus C∗⊂T acts with distinct weights in the ﬁbers V|x for all x ∈XT. We have Hom(Pi x, Pj y) = 0 if x > y or if x = y and i < j. The object Pi x is precisely of the form (7.9) if one replaces O with Px, and λ0, ..., λn are precisely the weights of the torus T in the ﬁber V|x.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-059",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The relative case",
+      "pageStart": 57,
+      "pageEnd": 58,
+      "target": "../sections/sec-059-75-the-relative-case.md",
+      "narrative": null,
+      "content": "from Pn\nA to projective bundles PV∨on an arbitrary base scheme X, as in Example 7.5. We\nassume that both X and V are acted on by a torus T, and that we have a decomposition:\n(7.13)\nOX ∼=\n\" M\nx∈XT\nPx, a certain differential\n#\n∈Db(CohT(X))\n58\nEUGENE GORSKY, ANDREI NEGUT, , AND JACOB RASMUSSEN\nwhere the indexing set goes over the ﬁxed points of X. We assume that the above is semi-\northogonal, in the sense that Hom(Px, Py) = 0 whenever x > y with respect to some total\norder. We wish to upgrade the decomposition (7.13) to the projective bundle PV∨.\nProposition 7.17. Let n+1 = rank V. There exist ob",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-060",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Local charts and fixed points of FHilbn",
+      "pageStart": 58,
+      "pageEnd": 58,
+      "target": "../sections/sec-060-8-local-charts-and-fixed-points-of-fhilbn.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-061",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Affine charts for Hilbert schemes",
+      "pageStart": 58,
+      "pageEnd": 59,
+      "target": "../sections/sec-061-81-affine-charts-for-hilbert-schemes.md",
+      "narrative": null,
+      "content": "[]{#sub:affinecharts1 label=\"sub:affinecharts1\"}\n\nRecall the action of $\\mathbb{C}^{*} \\times \\mathbb{C}^*$ on Hilbert schemes given by rescaling the $X$ and $Y$ matrices. The fixed points of this action on the Hilbert scheme are well-known. They are given by monomial ideals, which are indexed by partitions of $n$: $$\\mathrm{Hilb}_n^{\\mathbb{C}^{*} \\times \\mathbb{C}^*} = \\{I_\\lambda\\}_{\\lambda \\vdash n}, \\qquad I_\\lambda = (x^{\\lambda_1}, x^{\\lambda_2}y,...)\\subset \\mathbb{C}[x,y]$$ Haiman described a set of affine charts on the Hilbert scheme, each of which is $\\mathbb{C}^{*} \\times \\mathbb{C",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/figure-img-p059-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 59,
+      "pageEnd": 59,
+      "target": "../images/img-p059-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-062",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Affine charts for flag Hilbert schemes",
+      "pageStart": 59,
+      "pageEnd": 59,
+      "target": "../sections/sec-062-82-affine-charts-for-flag-hilbert-schemes.md",
+      "narrative": null,
+      "content": "[]{#sub:affinecharts2 label=\"sub:affinecharts2\"}\n\nThe situation is somewhat better in the case of flag Hilbert schemes $\\mathrm{FHilb}_n(*)$ for any $* \\in \\{\\mathbb{C}^2, \\mathbb{C}, \\mathrm{point}\\}$, where one has affine coverings: $$\\label{eqn:chart}\n\\mathrm{FHilb}_n(*) = \\bigcup_{T \\vdash n} \\mathring{\\mathrm{FHilb}}_T(*)$$ indexed by standard Young tableaux $T$ of size $n$. Recall that a standard Young tableau is a numbering of the boxes of a Young diagram of size $n$ with the numbers $1,...,n$ such that the numbers increase as we go up and right in the diagram. A covering [\\[eqn:chart\\]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-063",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Defining the charts",
+      "pageStart": 59,
+      "pageEnd": 61,
+      "target": "../sections/sec-063-83-defining-the-charts.md",
+      "narrative": null,
+      "content": "[]{#sub:defcharts label=\"sub:defcharts\"}\n\nIn this Section, we will define affine charts on the flag Hilbert scheme which only satisfy Conjecture [\\[conj:charts\\]](#conj:charts){reference-type=\"ref\" reference=\"conj:charts\"} on the local rings around the fixed points. $\\mathrm{FHilb}_n$ will henceforth refer to either of $\\mathrm{FHilb}_n(*)$ for $* \\in \\{\\mathbb{C}^2,\\mathbb{C},\\mathrm{point}\\}$.\n\n::: definition\n[]{#def:chart label=\"def:chart\"}\n\nFor any point $(X,Y,v) \\in \\mathrm{FHilb}_n$ and standard Young tableau $T$, consider the following algorithm to construct a basis $e_1 = v, e_2,...,e_",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-064",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The special coefficients",
+      "pageStart": 61,
+      "pageEnd": 62,
+      "target": "../sections/sec-064-84-the-special-coefficients.md",
+      "narrative": null,
+      "content": "[]{#sub:special label=\"sub:special\"}\n\nNote that the coefficients $x_i^i$ and $y_i^i$ in [\\[eqn:chartx\\]](#eqn:chartx){reference-type=\"eqref\" reference=\"eqn:chartx\"} and [\\[eqn:charty\\]](#eqn:charty){reference-type=\"eqref\" reference=\"eqn:charty\"} are precisely the eigenvalues of the matrices $(X,Y,v) \\in \\mathrm{FHilb}_n$. If we are in the case $* = \\mathbb{C}$ or $* = \\mathrm{point}$, then we must set $y_i^i = 0$ or $x_i^i = y_i^i = 0$ in [\\[eqn:chartx\\]](#eqn:chartx){reference-type=\"eqref\" reference=\"eqn:chartx\"} and [\\[eqn:charty\\]](#eqn:charty){reference-type=\"eqref\" reference=\"eqn:charty\"}",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-065",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Explicit local coordinates",
+      "pageStart": 62,
+      "pageEnd": 64,
+      "target": "../sections/sec-065-85-explicit-local-coordinates.md",
+      "narrative": null,
+      "content": "[]{#sub:localcoord label=\"sub:localcoord\"}\n\nIn this section, we will use the special coefficients to describe the neighborhood of the fixed point $I_T$ for any standard Young tableau $T$: $$\\label{eqn:localization}\n\\mathring{\\mathrm{FHilb}}_T := \\left( \\mathrm{FHilb}_n \\right)_{\\text{localized at }T}$$ and the dg local ring $\\mathring{\\mathcal{A}}^\\text{dg}_T = \\mathbb{C}[\\mathring{\\mathrm{FHilb}}^\\text{dg}_T ]$. In fact, we will actually describe an open subscheme of $\\mathrm{FHilb}_T$ given by the non-vanishing of certain torus invariant functions. The resulting open subschemes also form a c",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-066",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Examples",
+      "pageStart": 64,
+      "pageEnd": 66,
+      "target": "../sections/sec-066-86-examples.md",
+      "narrative": null,
+      "content": "[]{#sec:exprojectors label=\"sec:exprojectors\"}\n\nIn this subsection, we use the local geometry of the flag Hilbert scheme to describe the homology of categorified projectors on two and three strands.\n\n::: example\nFor the $S^2$ projector, we have $$Y=\\left(\\begin{matrix}\n0 & 0\\\\\n1 & 0\\\\\n\\end{matrix}\\right).$$ The commutation relation implies that $X$ is of the form $$X=\\left(\\begin{matrix}\nu_1 & 0\\\\\nu_2 & u_1\\\\\n\\end{matrix}\\right).$$ One has $\\deg(u_1)=q$, $\\deg(u_2)=q/t$, so the Poincaré series equals $$P(\\mathring{\\mathcal{A}}_T)=\\frac{1}{(1-q)(1-q/t)}.$$\n:::\n\n::: example\nFor the $\\Lambda^2$ p",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-067",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Poincare series",
+      "pageStart": 66,
+      "pageEnd": 67,
+      "target": "../sections/sec-067-87-poincare-series.md",
+      "narrative": null,
+      "content": "In general, Proposition [\\[prop:chart\\]](#prop:chart){reference-type=\"ref\" reference=\"prop:chart\"} can be used to show\n\n::: proposition\n[]{#prop:poincare label=\"prop:poincare\"}\n\nFor any standard Young tableau of size $n$, the bigraded Poincaré series of graded algebras $\\mathring{\\mathcal{A}}_T(*)$ are given by the following formulas: $$\\label{eqn:poincare1}\nP(\\mathring{\\mathcal{A}}_T(\\mathbb{C}^2)) = (1-q)^{-n} (1-t)^{-n} \\prod_{i=1}^{n} \\frac{1}{1-z_i^{-1}} \\prod_{1\\leq i<j \\leq n} \\zeta \\left(\\frac {z_i}{z_j}\\right)$$ $$\\label{eqn:poincare2}\nP(\\mathring{\\mathcal{A}}_T(\\mathbb{C})) = (1-q)^{",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-068",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Differentials and glN homology",
+      "pageStart": 67,
+      "pageEnd": 67,
+      "target": "../sections/sec-068-9-differentials-and-gln-homology.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-069",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Spectral sequence for glN homology",
+      "pageStart": 67,
+      "pageEnd": 68,
+      "target": "../sections/sec-069-91-spectral-sequence-for-gln-homology.md",
+      "narrative": null,
+      "content": "[]{#sub:spectral diff label=\"sub:spectral diff\"}\n\nBy [@RasDiff], for each $N$ there exists a spectral sequence starting at the HOMFLY-PT homology and converging to $\\mathfrak{sl}_N$ homology of a given knot. More precisely, for a given braid $\\sigma$ one can construct a complex of Soergel bimodules as described in Subsection [\\[sub:khr\\]](#sub:khr){reference-type=\"ref\" reference=\"sub:khr\"}. The Hochschild homology of this complex coincides with the HOMFLY-PT homology of the closure of $\\sigma$. Given a polynomial $p \\in \\mathbb{C}[x]$, we can construct an additional differential $d_-$ which ac",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-070",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Sections and schemes",
+      "pageStart": 68,
+      "pageEnd": 69,
+      "target": "../sections/sec-070-92-sections-and-schemes.md",
+      "narrative": null,
+      "content": "[]{#sub:sections schemes label=\"sub:sections schemes\"}\n\nOn the geometric side, we have a remarkable family of dg schemes closely related to $\\mathrm{FHilb}^\\text{dg}_n = \\mathrm{FHilb}_n^\\text{dg}(\\mathbb{C})$. Namely, let $s$ be an arbitrary section of the tautological bundle $\\mathcal{T}_n$. It defines a contraction map: $$\\label{eqn:contraction}\nd_s:\\wedge^{\\bullet}\\mathcal{T}_n^{\\vee}\\to \\wedge^{\\bullet-1}\\mathcal{T}_n^{\\vee}$$ Recall the construction [\\[eqn:iota wedge\\]](#eqn:iota wedge){reference-type=\"eqref\" reference=\"eqn:iota wedge\"}: $$\\widetilde{\\iota}_*(\\sigma) = \\iota_*(\\sigma) \\o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/figure-img-p069-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 69,
+      "pageEnd": 69,
+      "target": "../images/img-p069-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/figure-img-p069-2",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 69,
+      "pageEnd": 69,
+      "target": "../images/img-p069-2.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/figure-img-p069-3",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 69,
+      "pageEnd": 69,
+      "target": "../images/img-p069-3.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-071",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The commutative tower",
+      "pageStart": 69,
+      "pageEnd": 70,
+      "target": "../sections/sec-071-93-the-commutative-tower.md",
+      "narrative": null,
+      "content": "[]{#sub:conj differentials label=\"sub:conj differentials\"}\n\nWe conjecture that the differential $d_N$ in the Soergel category is closely related to the section $f=x^N$ of the tautological bundle on the flag Hilbert scheme. More precisely, we propose the following:\n\n::: conjecture\n[]{#conj:differentials label=\"conj:differentials\"} There is a map $\\iota_N : (\\mathrm{SBim}_n,d_N) \\to (Z_n(\\mathbb{C}),s_N)$ in the sense of Definition [\\[def:morphism\\]](#def:morphism){reference-type=\"ref\" reference=\"def:morphism\"}. The corresponding functors fit into the commutative diagram: $$\\label{eqn:conj diffe",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-072",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Differentials in affine charts",
+      "pageStart": 70,
+      "pageEnd": 71,
+      "target": "../sections/sec-072-94-differentials-in-affine-charts.md",
+      "narrative": null,
+      "content": "[]{#sub:affine diff label=\"sub:affine diff\"}\n\nRecall the affine charts $\\mathrm{FHilb}_T \\subset \\mathrm{FHilb}_n$ defined in Subsection [\\[sub:defcharts\\]](#sub:defcharts){reference-type=\"ref\" reference=\"sub:defcharts\"}. In each of these, the vector space $\\mathbb{C}^n$ is endowed with a preferred basis $e_1,...,e_n$, which more abstractly means that the tautological bundle is trivialized: $$\\mathcal{T}_n|_{\\mathrm{FHilb}_T} \\cong \\mathcal{O}\\cdot e_1 \\oplus...\\oplus \\mathcal{O}\\cdot e_n$$ The basis vectors are indexed by boxes $\\square$ in the Young diagram of $T$, and the torus $\\mathbb{C}^",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-073",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Appendix",
+      "pageStart": 71,
+      "pageEnd": 71,
+      "target": "../sections/sec-073-10-appendix.md",
+      "narrative": null,
+      "content": "",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": {
+        "status": "empty"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-074",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Dg algebras",
+      "pageStart": 71,
+      "pageEnd": 72,
+      "target": "../sections/sec-074-101-dg-algebras.md",
+      "narrative": null,
+      "content": "[]{#sub:dg algebras label=\"sub:dg algebras\"}\n\nA vector space $V$ will be called dg (short for \"differential graded\\\") if it comes endowed with a grading: $$V = \\bigoplus_{n\\in \\mathbb{Z}} V^i$$ and a differential $d : V^\\bullet \\rightarrow V^{\\bullet+1}$ such that $d^2=0$. A vector $v \\in V$ is called homogeneous if $v\\in V^i$ for some integer $i$. If this is the case, then we will write $\\deg v = i$.\n\n::: definition\n[]{#def:dg algebra label=\"def:dg algebra\"}\n\nA **dg algebra** $A^\\bullet$ is a dg vector space concentrated in non-positive degrees ($A^n=0$ for $n>0$), which is endowed with a mul",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-075",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Symmetric and exterior algebras",
+      "pageStart": 72,
+      "pageEnd": 73,
+      "target": "../sections/sec-075-102-symmetric-and-exterior-algebras.md",
+      "narrative": null,
+      "content": "[]{#sub:sym ext label=\"sub:sym ext\"}\n\nThere will be two main examples of dg algebras, both associated to a vector space $V$. The first is the **symmetric algebra**: $$\\label{eqn:symm}\nS V = \\bigoplus_{d=0}^\\infty S^d V$$ concentrated in degree 0 and with trivial differential, and the **exterior algebra**: $$\\label{eqn:ext}\n\\wedge V = \\bigoplus_{d=0}^\\infty \\wedge^d V$$ situated in degrees $...,-2,-1,0$ and with trivial differential. By definition, the spaces [\\[eqn:symm\\]](#eqn:symm){reference-type=\"eqref\" reference=\"eqn:symm\"} and [\\[eqn:ext\\]](#eqn:ext){reference-type=\"eqref\" reference=\"eqn:",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-076",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Affine dg schemes",
+      "pageStart": 73,
+      "pageEnd": 74,
+      "target": "../sections/sec-076-103-affine-dg-schemes.md",
+      "narrative": null,
+      "content": "[]{#sub:affine dg schemes label=\"sub:affine dg schemes\"}\n\nDg schemes can be defined as spectra of dg algebras with respect to the étale topology, as detailed in [@B]. We will not need the full theory, and instead follow the original definition of Kontsevich.\n\n::: definition\n[]{#def:dg scheme label=\"def:dg scheme\"}\n\nIf $X$ is an scheme with structure sheaf $\\mathcal{O}_X$, an **affine dg** scheme supported on $X$ is a sheaf $\\mathcal{A}$ of dg algebras, concentrated in non-positive degrees, such that $\\mathcal{O}_X = H^0(\\mathcal{A})$.\n:::\n\nWe will write $\\mathrm{Spec}\\ \\mathcal{A}$ for the aff",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/figure-img-p074-1",
+      "types": [
+        "folio-assistant-core:Figure",
+        "doco:Figure"
+      ],
+      "kind": "figure",
+      "title": "",
+      "pageStart": 74,
+      "pageEnd": 74,
+      "target": "../images/img-p074-1.png",
+      "narrative": "not-authored",
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-077",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Projective dg bundles",
+      "pageStart": 74,
+      "pageEnd": 75,
+      "target": "../sections/sec-077-104-projective-dg-bundles.md",
+      "narrative": null,
+      "content": "[]{#sub:proj dg label=\"sub:proj dg\"}\n\nWe do not wish to define projective dg schemes in complete generality, but instead focus on projectivizations of dg vector bundles $\\mathcal{V}^\\bullet$ on a space $X$.\n\n::: definition\n[]{#def:prog dg space label=\"def:prog dg space\"}\n\nA projective dg bundle is defined through its category of coherent sheaves: $$\\mathrm{Coh}(\\mathrm{Proj}\\ S_X \\mathcal{V}^\\bullet) = \\frac {\\left\\{\\text{graded }S^*_X\\mathcal{V}^\\bullet \\text{ dg modules} \\right\\}}{\\left( S^{*}\\mathcal{V}^\\bullet/S^{* > 0}\\mathcal{V}^\\bullet \\right) \\cong 0}$$\n:::\n\nLet us make two remarks: fi",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1608.07308v1/blocks/prose-sec-078",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "References",
+      "pageStart": 75,
+      "pageEnd": 77,
+      "target": "../sections/sec-078-references.md",
+      "narrative": null,
+      "content": "[1] M. Abel, M. Hogancamp. Stable homology of torus links via categoriﬁed Young symmetrizers II: one-\ncolumn partitions. arXiv:1510.05330\n[2] M. Aganagic, S. Shakirov. Reﬁned Chern-Simons theory and knot homology. String-Math 2011, 3–31, Proc.\nSympos. Pure Math., 85, Amer. Math. Soc., Providence, RI, 2012.\n[3] A. Aiston. A skein theoretic proof of the hook formula for quantum dimension. arXiv:q-alg/9711019\n[4] A. Aiston, H. Morton. Idempotents of Hecke algebras of type A. J. Knot Theory Ramif. 7 (1998), 463–487.\n[5] L. Avramov. Complete intersections and symmetric algebras, Jour. Alg. 73, 248-",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

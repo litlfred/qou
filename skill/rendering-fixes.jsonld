@@ -1,0 +1,19 @@
+{
+  "@context": "https://litlfred.github.io/qou/qou.context.jsonld",
+  "@id": "https://litlfred.github.io/qou/skill/rendering-fixes.jsonld",
+  "partOf": "https://litlfred.github.io/qou/qou.jsonld",
+  "@graph": [
+    {
+      "@id": "https://litlfred.github.io/qou/skill/rendering-fixes",
+      "@type": "https://litlfred.github.io/bootstrap/v0/ns/Skill",
+      "name": "rendering-fixes",
+      "title": "Rendering Fixes",
+      "description": "Quick-fix reference for common rendering errors found by the rendering-auditor. Agents should consult this when editing content blocks to avoid introducing issues and to fix flagged problems efficiently.",
+      "instructionsPath": "skills/local/rendering-fixes.md",
+      "instructionLines": 518,
+      "hasInstructions": true,
+      "hasIOContract": false,
+      "ambiguous": true
+    }
+  ]
+}

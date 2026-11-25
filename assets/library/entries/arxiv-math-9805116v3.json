@@ -1,0 +1,272 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-math-9805116v3",
+  "blocks": [
+    {
+      "id": "library/arxiv-math-9805116v3/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 4,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:math/9805116v3  [math.QA]  8 Jun 1999\nWeak Hopf Algebras\nI. Integral Theory and C∗-structure\nGabriella B¨ohm 1, Florian Nill 2, Korn´el Szlach´anyi 3\nAbstract\nWe give an introduction to the theory of weak Hopf algebras proposed recently as a\ncoassociative alternative of weak quasi-Hopf algebras. We follow an axiomatic approach\nkeeping as close as possible to the ”classical” theory of Hopf algebras. The emphasis is put\non the new structure related to the presence of canonical subalgebras AL and AR in any\nweak Hopf algebra A that play the role of non-commutative numbers in many respects. A",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9805116v3/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The axioms",
+      "pageStart": 4,
+      "pageEnd": 6,
+      "target": "../sections/sec-000-11-the-axioms.md",
+      "narrative": null,
+      "content": "\\begin{defi}\nA {\\em weak bialgebra} (WBA) is a quintuple\n$(A,\\mu,u,\\cop,\\eps)$ satisfying Axioms 1, 2, and 3 below.\nIf $(A,\\mu,u,\\cop,\\eps,S)$ satisfies Axioms 1, 2, 3, and 4 below\nit is called a {\\em weak Hopf algebra} (WHA).\n\\end{defi}\n\\begin{description}\n\\item [\\bf Axiom 1.] $A$ is a finite dimensional associative\nalgebra over a field $K$ with multiplication\n$\\mu\\colon A\\o A\\to A$ and unit $u\\colon K\\to A$. I.e. $\\mu$ and\n$u$ are $K$-linear and satisfy\n\\begin{description}\n\\item[\\sf Associativity:] $\\quad\\mu\\circ(\\mu\\o\\id)=\n                           \\mu\\circ(\\id\\o\\mu)\\quad$\\hfill$(A.1)$\n\\it",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9805116v3/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weak bialgebras",
+      "pageStart": 6,
+      "pageEnd": 9,
+      "target": "../sections/sec-001-12-weak-bialgebras.md",
+      "narrative": null,
+      "content": "In a WBA define the maps $\\PL,\\PR\\colon A\\to A$ by the formulae\n\\beq                              \\label{Pi}\n\\PL(x):=\\eps(\\1\\c x)\\1\\cc\\ ,\\qquad\n\\PR(x):=\\1\\c\\eps(x\\1\\cc)\n\\eeq\nand introduce the notation $A^L:=\\PL(A)$, $A^R:=\\PR(A)$ for their\nimages. The analogue objects in the dual bialgebra $\\duA$ will be\ndenoted by $\\duPL,\\duPR,\\duA^L,$ and $\\duA^R$, respectively.\n \nSubstituting $y=\\1$ in Axiom (A.6b) one obtains\nimmediately the identities\n\\begin{lrarray}\n\\eps(x\\PL(y))=\\eps(xy)\\eql&\n\\eps(\\PR(x)y)=\\eps(xy)\\eqr\\label{5}\\\\\n\\PL\\circ\\PL=\\PL\\eql&\\PR\\circ\\PR=\\PR\\eqr\\label{6}\n\\end{lrarray}\nAs a first",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9805116v3/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weak Hopf algebras",
+      "pageStart": 9,
+      "pageEnd": 12,
+      "target": "../sections/sec-002-13-weak-hopf-algebras.md",
+      "narrative": null,
+      "content": "In this Subsection we\nwill show how the existence of an antipode relates $\\PL$, $A^L$\nwith $\\PR$, $A^R$ and derive the expected properties\nof $S$ that have been axioms in earlier formulations.\nThe two most important results will be invertibility of the\nantipode and separability of the algebras $A^L$ and $A^R$.\nLet us start with the question of uniqueness of the antipode.\n\\begin{lem} \\label{lem: uniq S}\nThe unit, the counit, and the antipode, if exist, are unique. I.e.\nif \\break\n$(A,\\mu,u,\\cop,\\eps,S)$ and $(A,\\mu,u',\\cop,\\eps',S')$ are both\nweak Hopf algebras then $u'=u$, $\\eps'=\\eps$,\\break a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9805116v3/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The \"trivial\" representation",
+      "pageStart": 12,
+      "pageEnd": 14,
+      "target": "../sections/sec-003-14-the-trivial-representation.md",
+      "narrative": null,
+      "content": "Since the counit of a WHA is in general not an algebra map, weak\nHopf algebras may be lacking of any 1-dimensional representation.\nNevertheless the axioms ensure that any WHA $A$ has a\ndistinguished representation providing a unit object for the\n(relaxed) monoidal category of left $A$-modules. We shall discuss\nthis category in detail in \\cite{BNSzII}. Now we concentrate\nonly on the properties of this representation. We remark that the\ntrivial representation exists already in WBA's \\cite{WBA} and\ntherefore the use of the antipode in this subsection is not\nobligatory.\n \nSince the algebras $A^{L/",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9805116v3/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Integrals in weak Hopf algebras",
+      "pageStart": 14,
+      "pageEnd": 16,
+      "target": "../sections/sec-004-15-integrals-in-weak-hopf-algebras.md",
+      "narrative": null,
+      "content": "The following definition provides the weak Hopf generalization of\nthe well known notion of integrals in a Hopf algebra \\cite{Sweedler}.\n \n\\begin{defi} \\label{def: integral}\nA left (right) integral in a weak Hopf algebra $A$ is an\nelement $l\\in A$ {\\rm (}$r\\in A${\\rm )} satisfying\n\\beq                                                 \\label{l (r)}\nxl\\ =\\ \\PL(x)l\\qquad \\left(\\ rx\\ =\\ r\\PR(x)\\ \\right)\n\\eeq\nfor all $x\\in A$. The space of left (right) integrals in $A$ is\ndenoted by $\\IL$ $(\\IR)$. Elements of $\\I:=\\IL\\cap\\IR$ are called\ntwo-sided integrals.\nA left or right integral in $A$ is called n",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9805116v3/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Weak Hopf modules",
+      "pageStart": 16,
+      "pageEnd": 21,
+      "target": "../sections/sec-005-16-weak-hopf-modules.md",
+      "narrative": null,
+      "content": "Let $A$ be a WHA. Recall that a {\\em left $A$-module} is a\n$K$-linear\nspace $M$ carrying a left action of the algebra $A$, denoted by\n$x\\in A,m\\in M\\mapsto x\\cdot m$. A {\\em right $A$-module} is a\nleft module $M$ of the opposite algebra $A^{op}$ with action\ndenoted by $x\\in A,m\\in M\\mapsto m\\cdot x$. Since $A$ is unital,\nall modules are assumed to be non-degenerate, i.e. $\\1$ acts as\nthe identity. The left $A$-module $M$ is called {\\em faithful} if\n$x\\cdot m=0$, $\\forall m\\in M$ implies $x=0$.\n \nThe $A$-modules know nothing about the coalgebra structure of $A$.\nThe {\\em left $A$-comodules} $M$",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9805116v3/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Restrictions on the algebraic structure",
+      "pageStart": 21,
+      "pageEnd": 22,
+      "target": "../sections/sec-006-17-restrictions-on-the-algebraic-structure.md",
+      "narrative": null,
+      "content": "The existence of a weak Hopf structure on the $K$-algebra $A$\ninvolves certain restrictions on the algebra $A$, just like in\ncase of Hopf algebras. In this subsection we show that any WHA\n$A$ is quasi-Frobenius, i.e. self-injective. The notions of\nsemisimple and separable algebras coincide within the class of\nWHAs. Moreover, we prove an analogue of Maschke's Theorem which\nclaims that $A$ is semisimple if and only if it has normalized\nleft integrals.\n \n\\begin{thm}     \\label{th:q-Frob}\nEvery weak Hopf algebra over a field $K$ is a\nquasi-Frobenius algebra.\n\\end{thm}\n\\Proof By Theorem 61.2 of \\ci",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9805116v3/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Non-degenerate integrals",
+      "pageStart": 22,
+      "pageEnd": 26,
+      "target": "../sections/sec-007-18-non-degenerate-integrals.md",
+      "narrative": null,
+      "content": "Until now we have not been able to decide whether the WHM Theorem\nof Subsection 3.2 implies the existence of non-degenerate\nintegrals, as it does in case of Hopf algebras. In the present\nsubsection we will show that the existence of non-degenerate\nintegrals in the WHA $\\duA$ is equivalent to the existence of\nnon-degenerate functionals on $A$, i.e. that $A$ is a Frobenius\nalgebra. As a byproduct we obtain that the class of Frobenius WHAs\nis selfdual.\n \nThe space $\\RI$ of right integrals can be viewed as a $K$-module,\nas a left $A^L$-module $_{A^L}\\RI$ by left multiplication, and as\na left $A$-m",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9805116v3/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "2-sided non-degenerate integrals",
+      "pageStart": 26,
+      "pageEnd": 29,
+      "target": "../sections/sec-008-19-2-sided-non-degenerate-integrals.md",
+      "narrative": null,
+      "content": "The space of 2-sided integrals $\\I(A):=\\LI(A)\\cap\\RI(A)$ in a weak\nHopf algebra $A$ is a possibly zero subalgebra of $A$. The\nassumption $\\I(A)\\neq 0$ is independent of the\nassumption $\\LI_*(A)\\neq\\emptyset$ since already Hopf algebras\nprovide examples \\cite{Van Daele} for $\\LI_*(A)\\neq 0$ and $\\I(A)=0$.\nIn this Subsection we will make the\nstronger assumption $\\I_*(A):=\\LI_*(A)\\cap\\I(A)\\neq\\emptyset$ and\nstudy some of the consequences. The main result will be finding a\ncriterion for a WHA to be a symmetric algebra.\n \nAt first we observe that if a non-degenerate 2-sided integral\n$j$ exists\nthen",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9805116v3/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Haar integrals",
+      "pageStart": 29,
+      "pageEnd": 31,
+      "target": "../sections/sec-009-110-haar-integrals.md",
+      "narrative": null,
+      "content": "Since finite dimensional weak Hopf algebras do not go beyond the\n\"compact\" and \"discrete\" case, the following very conservative\ndefinition of Haar measure will suffice.\n\\begin{defi}  \\label{def: Haar}\nAn element $h$ of a WHA $A$ is called a Haar integral in $A$ or\nHaar measure on $\\duA$ if $h$ is a normalized 2-sided integral,\ni.e. $h\\in \\I(A)$ and $\\PL(h)=\\PR(h)=\\1$.\n\\end{defi}\nObviously, if Haar integral exists then it is a unique\n$S$-invariant idempotent.\nAs a matter of fact let $h$ and $h'$ be Haar integrals. Then\n$h'=\\PL(h)h'=hh'=h\\PR(h')=h$. In particular $h^2=h$.\n$S$-invariance follows",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9805116v3/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "First consequences of the $C^*$-structure",
+      "pageStart": 31,
+      "pageEnd": 33,
+      "target": "../sections/sec-010-111-first-consequences-of-the-c-structure.md",
+      "narrative": null,
+      "content": "\\begin{defi}\nWe define a $^*$-WHA as a WHA $(A,\\1,\\cop,\\eps,S)$ over the\ncomplex\nnumbers $\\C$ together with an antilinear involution $^*$ such that\n\\begin{description}\n\\item[i)]\\ $(A,\\ ^*)$  is a $^*$-algebra,\n\\item[ii)]\\ $\\cop$ is a $^*$-algebra map, i.e.\n      $(x^*)\\c\\o(x^*)\\cc=(x\\c)^*\\o(x\\cc)^*$ for all $x\\in A$.\n\\end{description}\n\\end{defi}\nBy uniqueness of the unit, counit, and the antipode (see Lemma\n\\ref{lem: uniq S}) we have the following additional relations in a\n$^*$-WHA.\n\\beq   \\label{eq: 66}\n\\1^*=\\1,\\quad\\eps(x^*)=\\overline{\\eps(x)},\\quad\nS(x^*)^*=S^{-1}(x).\n\\eeq\nNow it is easy to",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9805116v3/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Haar measure and selfduality",
+      "pageStart": 33,
+      "pageEnd": 35,
+      "target": "../sections/sec-011-112-the-haar-measure-and-selfduality.md",
+      "narrative": null,
+      "content": "Recall that the Haar measure in a WHA $A$ has been defined in\nDefinition \\ref{def: Haar} as the unique element $h\\in A$ making\nthe integral $\\int\\varphi:=\\bra\\varphi,\\,h\\ket$ of a function\n$\\varphi\\colon A\\to\\C$ to be a non-degenerate functional invariant\nunder left and right translations and normalized according to\n$\\int\\varphi^L=\\dueps(\\varphi^L)$ for $\\varphi^L\\in\\duA^L$. The\nsufficient conditions for its existence given by Theorem \\ref{thm:\nHaar} will be used here to prove the next Theorem.\n\\begin{thm}             \\label{thm: C^* Haar}\nIn a $C^*$-WHA $A$ Haar measure $h\\in A$ exists. It is",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-math-9805116v3/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The canonical grouplike element",
+      "pageStart": 35,
+      "pageEnd": 40,
+      "target": "../sections/sec-012-113-the-canonical-grouplike-element.md",
+      "narrative": null,
+      "content": "In this Subsection we investigate further properties of the\nelement $g$ of Proposition \\ref{pro: g}. We show that it is always\na product of left and right elements, implying its\ngrouplikeness immediately, and obtain expressions for the\nmodular automorphisms of the Haar measures of $A$ and $\\duA$.\n \n\\begin{prop}        \\label{pro: gg}\nIn a $C^*$-WHA $A$ there exists a unique $g\\in A$ such that\n\\begin{description}\n\\item[i)] $g\\geq 0$ and invertible,\n\\item[ii)] $gxg^{-1}=S^2(x)$ for all $x\\in A$,\n\\item[iii)] $h\\cc\\o h\\c=h\\c\\o gh\\cc g$.\n\\end{description}\n\\end{prop}\n\\Proof {\\em Existence}\\,: Let $g",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

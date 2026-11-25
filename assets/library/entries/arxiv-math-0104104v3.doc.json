@@ -1,0 +1,719 @@
+{
+  "$schema": "folio-library-document/v1",
+  "id": "arxiv-math-0104104v3",
+  "title": "Geometry of Four-Vector Fields on Quaternionic Flag Manifolds",
+  "variant": "pdf",
+  "pages": 13,
+  "tocSource": "inferred",
+  "tocMethod": "latex",
+  "toc": [
+    {
+      "level": 1,
+      "title": "Introduction",
+      "number": "1",
+      "page": 1,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-000-1-introduction"
+    },
+    {
+      "level": 1,
+      "title": "Quaternionic matrices and flags",
+      "number": "2",
+      "page": 2,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-001-2-quaternionic-matrices-and-flags"
+    },
+    {
+      "level": 1,
+      "title": "Quatrisson and tetraplectic structures",
+      "number": "3",
+      "page": 4,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-002-3-quatrisson-and-tetraplectic-structures"
+    },
+    {
+      "level": 1,
+      "title": "Quatrisson structures on ${\\bf HP}^1$.",
+      "number": "4",
+      "page": 5,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-003-4-quatrisson-structures-on-bf-hp1"
+    },
+    {
+      "level": 1,
+      "title": "Quatrisson structures on flag manifolds",
+      "number": "5",
+      "page": 7,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-004-5-quatrisson-structures-on-flag-manifolds"
+    },
+    {
+      "level": 1,
+      "title": "Quatrisson action and intrinsic derivative",
+      "number": "6",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-005-6-quatrisson-action-and-intrinsic-derivative"
+    },
+    {
+      "level": 1,
+      "title": "Dressing action",
+      "number": "7",
+      "page": 10,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-006-7-dressing-action"
+    },
+    {
+      "level": 1,
+      "title": "Further remarks.",
+      "number": "8",
+      "page": 11,
+      "pageLabel": null,
+      "confidence": 1,
+      "evidence": [
+        "latex",
+        "body"
+      ],
+      "source": "inferred",
+      "section": "sec-007-8-further-remarks"
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-front-matter",
+      "number": null,
+      "title": "Front matter",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 1,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 76,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "foth",
+          "heading": false
+        },
+        {
+          "term": "quaternionic",
+          "heading": false
+        },
+        {
+          "term": "frederick",
+          "heading": false
+        }
+      ],
+      "extract": "arXiv:math/0104104v3 [math.DG] 29 Mar 2002 Geometry of Four-vector Fields on Quaternionic Flag Manifolds. Philip Foth & Frederick Leitner March 28, 2002 Abstract The purpose of this paper is to describe certain natural 4-vector ﬁelds on quaternionic ﬂag manifolds, which geometrically determine the Bruhat cell decomposition. These structures naturally descend from the sym- plectic group Sp(n), and are related to the",
+      "extractCut": true,
+      "blocks": [
+        "library/arxiv-math-0104104v3/blocks/prose-sec-front-matter"
+      ]
+    },
+    {
+      "id": "sec-000-1-introduction",
+      "number": "1",
+      "title": "Introduction",
+      "level": 1,
+      "pageStart": 1,
+      "pageEnd": 2,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 327,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quaternionic flag",
+          "heading": false
+        },
+        {
+          "term": "flag manifolds",
+          "heading": false
+        },
+        {
+          "term": "quatrisson vector",
+          "heading": false
+        },
+        {
+          "term": "poisson geometry",
+          "heading": false
+        },
+        {
+          "term": "tetraplectic",
+          "heading": false
+        },
+        {
+          "term": "vector fields",
+          "heading": false
+        },
+        {
+          "term": "bruhat",
+          "heading": false
+        },
+        {
+          "term": "certain natural",
+          "heading": false
+        }
+      ],
+      "extract": "In this paper we wish to describe certain natural $4$-vector fields on quaternionic flag manifolds. In the context of the Poisson geometry, a bi-vector field is penultimate in the study of the geometry of the underlying manifold. Analogously, we make use of a $4$-vector field, closed under the Schouten bracket with itself, which we call a \\emph{quatrisson} structure, to reveal the internal structures of certain",
+      "extractCut": true
+    },
+    {
+      "id": "sec-001-2-quaternionic-matrices-and-flags",
+      "number": "2",
+      "title": "Quaternionic matrices and flags",
+      "level": 1,
+      "pageStart": 2,
+      "pageEnd": 4,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 667,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "displaymath noindent",
+          "heading": false
+        },
+        {
+          "term": "simeq sph",
+          "heading": false
+        },
+        {
+          "term": "sph backslash",
+          "heading": false
+        },
+        {
+          "term": "begin displaymath",
+          "heading": false
+        },
+        {
+          "term": "end displaymath",
+          "heading": false
+        },
+        {
+          "term": "bruhat cells",
+          "heading": false
+        },
+        {
+          "term": "cdot len",
+          "heading": false
+        },
+        {
+          "term": "bruhat decomposition",
+          "heading": false
+        }
+      ],
+      "extract": "We begin with some generalities on quaternionic matrices for which we define the following subgroups of $\\GL{\\H}$: \\begin{eqnarray*} \\RR & := & \\{ \\diag{r_1,\\dots,r_n} \\ | \\ r_i \\in \\R_+ \\} \\\\ \\UU & := & \\{\\mbox{upper triangular matrices with }1\\mbox{'s along the diagonal}\\} \\\\ \\VV_w & := & \\{ U\\in \\UU \\ | \\ \\left( P_w U P_w^{-1}\\right)^{t} \\in \\UU \\} \\\\ & & \\mbox{here} \\ P_w \\ \\mbox{denotes the permutation matrix}",
+      "extractCut": true
+    },
+    {
+      "id": "sec-002-3-quatrisson-and-tetraplectic-structures",
+      "number": "3",
+      "title": "Quatrisson and tetraplectic structures",
+      "level": 1,
+      "pageStart": 4,
+      "pageEnd": 5,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 780,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quatrisson",
+          "heading": true
+        },
+        {
+          "term": "tetraplectic",
+          "heading": true
+        },
+        {
+          "term": "emph quatrisson",
+          "heading": false
+        },
+        {
+          "term": "tetraplectic manifold",
+          "heading": false
+        },
+        {
+          "term": "wedge chi",
+          "heading": false
+        },
+        {
+          "term": "quatrisson structure",
+          "heading": false
+        },
+        {
+          "term": "phi wedge",
+          "heading": false
+        },
+        {
+          "term": "schouten bracket",
+          "heading": false
+        }
+      ],
+      "extract": "Recall that a symplectic manifold is a manifold equipped with a closed non-degenerate 2-form. We also recall that a Poisson manifold is a manifold equipped with a bi-vector field that induces a Lie algebra structure on the space of smooth functions, compatible with the commutative product of functions via the Leibniz rule. In the case of quaternionic flags, we make use of the following structures which reflect the",
+      "extractCut": true
+    },
+    {
+      "id": "sec-003-4-quatrisson-structures-on-bf-hp1",
+      "number": "4",
+      "title": "Quatrisson structures on ${\\bf HP}^1$.",
+      "level": 1,
+      "pageStart": 5,
+      "pageEnd": 7,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 709,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "displaymath sham",
+          "heading": false
+        },
+        {
+          "term": "quatrisson",
+          "heading": true
+        },
+        {
+          "term": "bruhat quatrisson",
+          "heading": false
+        },
+        {
+          "term": "begin displaymath",
+          "heading": false
+        },
+        {
+          "term": "end displaymath",
+          "heading": false
+        },
+        {
+          "term": "rho wedge",
+          "heading": false
+        },
+        {
+          "term": "theta wedge",
+          "heading": false
+        },
+        {
+          "term": "invariant quatrisson",
+          "heading": false
+        }
+      ],
+      "extract": "For our flag manifolds, we construct a Bruhat quatrisson structure explicitly by analogy to the Poisson case as in \\cite{LW} or \\cite{Soibel}. We begin by defining a quatrisson 4-vector field, $\\sham$, on $\\Sp[2]$, which we show descends to the quotient $\\Sph\\backslash\\Sp[2]$. We begin by defining an element $\\Lambda$ of $\\wedge^4\\sp[2]$ in terms of the following basis for $\\sp[2]$: \\begin{eqnarray*} E =",
+      "extractCut": true
+    },
+    {
+      "id": "sec-004-5-quatrisson-structures-on-flag-manifolds",
+      "number": "5",
+      "title": "Quatrisson structures on flag manifolds",
+      "level": 1,
+      "pageStart": 7,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 760,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "quatrisson",
+          "heading": true
+        },
+        {
+          "term": "sph backslash",
+          "heading": false
+        },
+        {
+          "term": "bruhat quatrisson",
+          "heading": false
+        },
+        {
+          "term": "field sham",
+          "heading": false
+        },
+        {
+          "term": "tetraplectic leaf",
+          "heading": false
+        },
+        {
+          "term": "begin displaymath",
+          "heading": false
+        },
+        {
+          "term": "end displaymath",
+          "heading": false
+        },
+        {
+          "term": "quatrisson structure",
+          "heading": false
+        }
+      ],
+      "extract": "Following \\cite{Lu2} we will produce the quatrisson structure on the full flag of $\\H^{n}$ by way of the so-called multiplication formula. By analogy to the $\\Sp[2]$ case, for $1\\le p<q \\le n$ we denote by $E^{p,q}$ the quaternionic matrix whose entries are $0$'s everywhere except in the ($p$,$q$)-th position which is $1$, and the ($q$,$p$)-th position which is $-1$. We also let $S_x^{p,q}$ denote the matrix with",
+      "extractCut": true
+    },
+    {
+      "id": "sec-005-6-quatrisson-action-and-intrinsic-derivative",
+      "number": "6",
+      "title": "Quatrisson action and intrinsic derivative",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 10,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 170,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "begin displaymath",
+          "heading": false
+        },
+        {
+          "term": "end displaymath",
+          "heading": false
+        },
+        {
+          "term": "omega wedge",
+          "heading": false
+        },
+        {
+          "term": "quatrisson",
+          "heading": true
+        },
+        {
+          "term": "zeta",
+          "heading": false
+        },
+        {
+          "term": "intrinsic",
+          "heading": true
+        }
+      ],
+      "extract": "We elaborate on some general notions related to group actions in the quatrisson context where we recall the notation set forth in Definition \\ref{def:mult-act} and assume that we have a multiplicative action. Denoting the Lie algebra of $H$ by $\\hh$, we let: \\begin{displaymath} \\gamma: \\hh\\to \\Chi(P) \\end{displaymath} be the usual Lie algebra anti-homomorphism, and recall the \\emph{intrinsic derivative} of $\\xi$ at",
+      "extractCut": true
+    },
+    {
+      "id": "sec-006-7-dressing-action",
+      "number": "7",
+      "title": "Dressing action",
+      "level": 1,
+      "pageStart": 10,
+      "pageEnd": 11,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 513,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "dressing action",
+          "heading": true
+        },
+        {
+          "term": "tetraplectic leaf",
+          "heading": false
+        },
+        {
+          "term": "tetraplectic leaves",
+          "heading": false
+        },
+        {
+          "term": "sph",
+          "heading": false
+        },
+        {
+          "term": "bruhat decomposition",
+          "heading": false
+        },
+        {
+          "term": "sham",
+          "heading": false
+        },
+        {
+          "term": "orbits",
+          "heading": false
+        },
+        {
+          "term": "displaymath",
+          "heading": false
+        }
+      ],
+      "extract": "The Iwasawa decomposition of $\\GL{\\H}=\\RR\\UU \\Sp = \\Sp \\RR \\UU $ allows us to define: \\begin{definition} The \\emph{dressing action} of $\\RR\\UU$ on $\\Sp$ is the map $\\RR\\UU\\times \\Sp \\rightarrow \\Sp $ given by $(G,K)\\mapsto K'$ where $G \\cdot K = K' \\cdot R \\cdot U$ for the unique $R\\in\\RR$ and $U\\in\\UU$. \\end{definition} Our goal of this section is to relate the orbits of the dressing action with the tetraplectic",
+      "extractCut": true
+    },
+    {
+      "id": "sec-007-8-further-remarks",
+      "number": "8",
+      "title": "Further remarks.",
+      "level": 1,
+      "pageStart": 11,
+      "pageEnd": 13,
+      "labelStart": null,
+      "labelEnd": null,
+      "words": 768,
+      "summary": null,
+      "keywords": [
+        {
+          "term": "iota sham",
+          "heading": false
+        },
+        {
+          "term": "bibitem",
+          "heading": false
+        },
+        {
+          "term": "quaternionic flag",
+          "heading": false
+        },
+        {
+          "term": "sham circ",
+          "heading": false
+        },
+        {
+          "term": "kostant harmonic",
+          "heading": false
+        },
+        {
+          "term": "bruhat poisson",
+          "heading": false
+        },
+        {
+          "term": "flag manifolds",
+          "heading": false
+        },
+        {
+          "term": "quatrisson structure",
+          "heading": false
+        }
+      ],
+      "extract": "First of all, the approach that we pursued in the present paper can be easily extended to all partial quaternionic flag manifolds, in particular the Grassmannians and projective spaces. It would be interesting to express the dressing action as a quatrisson action, with respect to a multiplicative $4$-vector field on $\\RR\\UU$. While it is clear that such a structure exists, it is not easy to write down a local",
+      "extractCut": true
+    }
+  ],
+  "checks": {
+    "figureSequenceGaps": [],
+    "pageLabelConflicts": {
+      "count": 0,
+      "items": []
+    }
+  },
+  "withheld": false,
+  "keywords": [
+    {
+      "term": "displaymath sham",
+      "heading": false
+    },
+    {
+      "term": "bruhat quatrisson",
+      "heading": false
+    },
+    {
+      "term": "displaymath noindent",
+      "heading": false
+    },
+    {
+      "term": "begin displaymath",
+      "heading": false
+    },
+    {
+      "term": "end displaymath",
+      "heading": false
+    },
+    {
+      "term": "emph quatrisson",
+      "heading": false
+    },
+    {
+      "term": "quatrisson vector",
+      "heading": false
+    },
+    {
+      "term": "quatrisson structure",
+      "heading": false
+    },
+    {
+      "term": "invariant quatrisson",
+      "heading": false
+    },
+    {
+      "term": "emph tetraplectic",
+      "heading": false
+    },
+    {
+      "term": "tetraplectic leaf",
+      "heading": false
+    },
+    {
+      "term": "quatrisson manifold",
+      "heading": false
+    }
+  ],
+  "pageLabels": [
+    {
+      "physical": 1,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 2,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 3,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 4,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 5,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 6,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 7,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 8,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 9,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 10,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 11,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 12,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    },
+    {
+      "physical": 13,
+      "label": null,
+      "source": null,
+      "confidence": 0
+    }
+  ],
+  "figures": [],
+  "coverage": [
+    {
+      "kind": "contents",
+      "state": "found",
+      "count": 8,
+      "note": "inferred"
+    },
+    {
+      "kind": "sections",
+      "state": "found",
+      "count": 9,
+      "note": "one level"
+    },
+    {
+      "kind": "figures",
+      "state": "none"
+    },
+    {
+      "kind": "tables",
+      "state": "not-extracted"
+    },
+    {
+      "kind": "references",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "glossary",
+      "state": "none",
+      "note": "no such heading in the text"
+    },
+    {
+      "kind": "footnotes",
+      "state": "found",
+      "count": 1
+    },
+    {
+      "kind": "summaries",
+      "state": "not-extracted",
+      "count": 0,
+      "note": "0 of 9 sections"
+    }
+  ],
+  "links": {
+    "repo": "litlfred/qou",
+    "branch": "main",
+    "dir": "library/arxiv-math-0104104v3"
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1706.06494v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1706.06494v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 5,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "Sampling General N-Body Interactions with Auxiliary Fields\nChristopher Körber,1, ∗Evan Berkowitz,1, † and Thomas Luu1, ‡\n1Institut für Kernphysik and Institute for Advanced Simulation\nForschungszentrum Jülich\n52425 Jülich Germany\n(Dated: October 14, 2018)\nWe present a general auxiliary ﬁeld transformation which generates eﬀective interactions con-\ntaining all possible N-body contact terms. The strength of the induced terms can analytically be\ndescribed in terms of general coeﬃcients associated with the transformation and thus are control-\nlable. This transformation provides a novel way for sam",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1706.06494v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Acknowledgements",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-000-acknowledgements.md",
+      "narrative": null,
+      "content": "We thank A. Rokash, D. Lee and A. Cherman for in-\nsightful discussions. This work was done in part through\nﬁnancial support from the Deutsche Forschungsgemein-\nschaft (Sino-German CRC 110).\n∗Electronic address: c.koerber@fz-juelich.de\n† Electronic address: e.berkowitz@fz-juelich.de\n‡ Electronic address: t.luu@fz-juelich.de\n[1] R. L. Stratonovich, Doklady Akad. Nauk S.S.S.R. 115,\n1097 (1957).\n[2] J. Hubbard, Physical Review Letters 3, 77 (1959).\n[3] J. Gubernatis, N. Kawashima,\nand P. Werner, Quan-\ntum Monte Carlo Methods: Algorithms for Lattice Mod-\nels (Cambridge University Press, 2016).\n[4]",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    }
+  ]
+}

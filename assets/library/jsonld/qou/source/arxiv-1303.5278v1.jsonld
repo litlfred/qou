@@ -1,0 +1,87 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/folio/"
+    }
+  ],
+  "@id": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/arxiv-1303.5278v1/manifest.jsonld",
+  "@type": [
+    "cat-harness:SourceDocument"
+  ],
+  "title": "arxiv-1303.5278v1",
+  "contains": [
+    "library/arxiv-1303.5278v1/sections/sec-front-matter",
+    "library/arxiv-1303.5278v1/sections/sec-000",
+    "library/arxiv-1303.5278v1/sections/sec-001",
+    "library/arxiv-1303.5278v1/sections/sec-002",
+    "library/arxiv-1303.5278v1/sections/sec-003",
+    "library/arxiv-1303.5278v1/sections/sec-004",
+    "library/arxiv-1303.5278v1/sections/sec-005",
+    "library/arxiv-1303.5278v1/sections/sec-006",
+    "library/arxiv-1303.5278v1/sections/sec-007",
+    "library/arxiv-1303.5278v1/sections/sec-008",
+    "library/arxiv-1303.5278v1/sections/sec-009",
+    "library/arxiv-1303.5278v1/sections/sec-010",
+    "library/arxiv-1303.5278v1/sections/sec-011",
+    "library/arxiv-1303.5278v1/sections/sec-012",
+    "library/arxiv-1303.5278v1/sections/sec-013",
+    "library/arxiv-1303.5278v1/sections/sec-014",
+    "library/arxiv-1303.5278v1/sections/sec-015",
+    "library/arxiv-1303.5278v1/sections/sec-016",
+    "library/arxiv-1303.5278v1/sections/sec-017",
+    "library/arxiv-1303.5278v1/sections/sec-018",
+    "library/arxiv-1303.5278v1/sections/sec-019",
+    "library/arxiv-1303.5278v1/sections/sec-020",
+    "library/arxiv-1303.5278v1/sections/sec-021",
+    "library/arxiv-1303.5278v1/sections/sec-022",
+    "library/arxiv-1303.5278v1/sections/sec-023",
+    "library/arxiv-1303.5278v1/sections/sec-024",
+    "library/arxiv-1303.5278v1/sections/sec-025",
+    "library/arxiv-1303.5278v1/sections/sec-026",
+    "library/arxiv-1303.5278v1/sections/sec-027",
+    "library/arxiv-1303.5278v1/sections/sec-028",
+    "library/arxiv-1303.5278v1/sections/sec-029",
+    "library/arxiv-1303.5278v1/sections/sec-030",
+    "library/arxiv-1303.5278v1/sections/sec-031",
+    "library/arxiv-1303.5278v1/sections/sec-032"
+  ],
+  "provenance": "ingested",
+  "narrative": [
+    {
+      "text": "1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD — In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifoldM (a collection\n\n**1-EFFICIENT TRIANGULATIONS AND THE INDEX OF A CUSPED HYPERBOLIC 3-MANIFOLD**\n\n*STAVROS GAROUFALIDIS, CRAIG D. HODGSON, J. HYAM RUBINSTEIN*\n\n60 pp, 22 sections.\n\n**Abstract.** In this paper we will promote the 3D index of an ideal triangulation T of an oriented cusped 3-manifoldM (a collection ofq-series with integer coeﬃcients, intro- duced by Dimofte-Gaiotto-Gukov) to a topological invariant of oriented cusped hyperbolic 3-manifolds. To achieve our goal we show that (a)T admits an index structure if and only if T is 1-eﬃcient and (b) ifM is hyperbolic, it has a canonical set of 1-eﬃcient ideal triangu- lations related by 2-3 and 0-2 moves which preserve the 3D index. We illustrate our results with several examples.\n\n**Outline.** 1 Introduction; 1.1 The 3D index of Dimofte-Gaiotto-Gukov; 1.3 Regular ideal triangulations and topologic; 1.4 Plan of the paper; 2 Definitions; 3 Index structures and 1–efficiency; 4 A review of the index of an ideal triangulat; 4.1 The tetrahedron index and its properties; 4.2 The degree of the tetrahedron index; 4.3 Angle structure equations; 4.4 Peripheral equations; 4.5 The index of an ideal triangulation; 4.6 Choice of edges in the summation for index; 4.8 Invariance of index under isotopy of perip; 5 Invariance of index under the 0–2 move; 6.1 Subdivisions of the Epstein–Penner decompo; 6.2 Regular triangulations; 6.4 Moving paths in the 1–skeleton of the asso\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: (a) IT is well-deﬁned if and only ifT admits anindex structure.\n- Theorem 1.2: An ideal triangulation T of an oriented 3-manifold with cusps admits an\n- Theorem 1.5: Let T be an ideal triangulation of an oriented atoroidal 3–manifold with at\n- Theorem: s 1.1(a) and 1.2. We show that any two of these triangulations are related to each\n- Theorem 1.8: If M is a cusped hyperbolic 3-manifold, andT∈ XEP\n- Theorem 1.9: Fix a cusped hyperbolic 3-manifoldM.",
+      "lang": "en",
+      "state": "draft",
+      "drafted_by": {
+        "kind": "script",
+        "id": "scripts/summarize-library.py"
+      },
+      "drafted_at": "2026-11-24"
+    }
+  ],
+  "inSubgraph": "https://litlfred.github.io/qou/directory/library",
+  "license": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+  "licenceRecord": {
+    "status": "stated",
+    "id": "http://arxiv.org/licenses/nonexclusive-distrib/1.0/",
+    "basis": "arXiv metadata record (https://export.arxiv.org/oai2?verb=GetRecord&identifier=oai:arXiv.org:1303.5278&metadataPrefix=arXiv), <license> element, read 2026-10-10",
+    "written_by": "arxiv-source.py"
+  },
+  "meta": {
+    "doc_id": "arxiv-1303.5278v1",
+    "title_source": "slug",
+    "source_file": "1303.5278v1.pdf",
+    "source_sha256": "92e417c93f8b883ae2ad5be1f10abcdc703bd80e32bb2988d7479cdfb45cf4d6",
+    "pages": 60,
+    "arxiv": {
+      "id": "1303.5278",
+      "version": "1",
+      "primary_class": "math.GT",
+      "stamp_date": "21 Mar 2013"
+    },
+    "doi": null,
+    "document_class": "math",
+    "extractor_validated": true,
+    "disposition": "proposals only — promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean"
+  }
+}

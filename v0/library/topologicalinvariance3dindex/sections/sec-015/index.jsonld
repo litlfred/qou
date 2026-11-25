@@ -1,0 +1,23 @@
+{
+  "@context": [
+    "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
+    {
+      "@base": "https://litlfred.github.io/qou/v0/"
+    }
+  ],
+  "@id": "library/topologicalinvariance3dindex/sections/sec-015",
+  "@type": [
+    "doco:Section"
+  ],
+  "title": "Invariance of index under isotopy of peripheral curve",
+  "pageStart": 26,
+  "pageEnd": 29,
+  "contains": [
+    "library/topologicalinvariance3dindex/blocks/prose-sec-015",
+    "library/topologicalinvariance3dindex/blocks/thm-sec-015-01",
+    "library/topologicalinvariance3dindex/blocks/rem-sec-015-02"
+  ],
+  "derivedFrom": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/topologicalinvariance3dindex/manifest.jsonld",
+  "sourceDocument": "https://litlfred.github.io/folio-assistant/assets/library/jsonld/qou/topologicalinvariance3dindex/manifest.jsonld",
+  "provenance": "ingested"
+}

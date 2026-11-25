@@ -1,0 +1,385 @@
+{
+  "$schema": "folio-library-entry/v1",
+  "id": "arxiv-1607.01632v2",
+  "blocks": [
+    {
+      "id": "library/arxiv-1607.01632v2/blocks/prose-sec-000",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Introduction",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "../sections/sec-000-1-introduction.md",
+      "narrative": null,
+      "content": "Introduction\nThe aim of the present paper is to obtain octet and decuplet baryon mass\nrelations of improved accuracy. This is achieved by ﬁrst replacing the classical\nﬂavor symmetries by their quantum group counterparts (as in [1–3]) and then\naccounting for the electromagnetic contributions to baryons masses (as in [4–6]).\nQuantum groups (which are algebras rather than groups) provide a general-\nization of familiar symmetry concepts through the deformation of Lie groups and\nalgebras. These deformations of classical Lie groups (algebras) into quantum\ngroups (algebras) extends the domain of clas",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1607.01632v2/blocks/prose-sec-front-matter",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Front matter",
+      "pageStart": 1,
+      "pageEnd": 1,
+      "target": "../sections/sec-front-matter.md",
+      "narrative": null,
+      "content": "arXiv:1607.01632v2  [hep-ph]  19 Sep 2016\nCharge speciﬁc baryon mass relations with\ndeformed SUq(3) ﬂavor symmetry\nNiels G. Gresnigt\nniels.gresnigt@xjtlu.edu.cn\nDepartment of Mathematical Sciences\nXi’an Jiaotong-Liverpool University\n111 Ren’ai Road, Suzhou HET, Jiangsu\nChina 215123\nOctober 9, 2018\nAbstract\nThe quantum group SUq(3) = Uq(su(3)) is taken as a baryon ﬂa-\nvor symmetry. Accounting for electromagnetic contributions to baryons\nmasses to zeroth order, new charge speciﬁc q-deformed octet and decuplet\nbaryon mass formulas are obtained. These new mass relations have errors\nof only 0.02% a",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1607.01632v2/blocks/recommendation-sec-000-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 1,
+      "pageEnd": 3,
+      "target": "recommendation-sec-000-01.md",
+      "narrative": null,
+      "content": "We argue here that at the level of accuracy of the q-deformed mass relations, the mass splittings within isoplets become signiﬁcant and should be accounted for.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1607.01632v2/blocks/prose-sec-001",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "q-Deformed baryon mass relations",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "../sections/sec-001-2-q-deformed-baryon-mass-relations.md",
+      "narrative": null,
+      "content": "accurate, holding to within 0.02% and 0.08% for octet (1/2)+ and decuplet\n(3/2)+ baryons respectively.\nThe values of the deformation parameter q that give these exceptionally\naccurate octet and decuplet baryons, together with the assertion made in [16,22]\nthat there should be a direct connection between q and the Cabibbo angle\nconspire to suggest a particularly simple formula for the Cabibbo angle in terms\nof q and spin parity JP .\nIn section 2 a very brief overview of quantum groups is given and their ap-\nplication as ﬂavor symmetries discussed. Section 3 focuses on electromagnetic\nmass split",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1607.01632v2/blocks/prose-sec-002",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum groups and algebras",
+      "pageStart": 3,
+      "pageEnd": 4,
+      "target": "../sections/sec-002-21-quantum-groups-and-algebras.md",
+      "narrative": null,
+      "content": "Quantum groups and algebras\nOnly a very brief introduction to the relevant aspects of quantum groups is pro-\nvided here. The literature on quantum groups and algebras is extensive. For an\nexcellent introduction the reader is directed to [23]. The manifold applications\nof quantum groups to physics are discussed in [15].\nThe quantum (enveloping) algebra SUq(n) ≡Uq(su(n)) corresponding to a\none-parameter deformation of the universal enveloping algebra of su(n), is a\nHopf algebra with unit 1 and generators Hi, X±\ni , i = 1, 2, ..., n −1, deﬁned\nthrough the commutation relations in the Cartan-Cheva",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1607.01632v2/blocks/recommendation-sec-001-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 3,
+      "pageEnd": 3,
+      "target": "recommendation-sec-001-01.md",
+      "narrative": null,
+      "content": "The values of the deformation parameter q that give these exceptionally accurate octet and decuplet baryons, together with the assertion made in [16,22] that there should be a direct connection between q and the Cabibbo angle conspire to suggest a particularly simple formula for the Cabibbo angle in terms of q and spin parity JP .",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1607.01632v2/blocks/prose-sec-003",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Quantum groups as flavor symmetries",
+      "pageStart": 4,
+      "pageEnd": 5,
+      "target": "../sections/sec-003-22-quantum-groups-as-flavor-symmetries.md",
+      "narrative": null,
+      "content": "Quantum groups as ﬂavor symmetries\nIn [1–3, 16], the q-analogues SUq(n) ≡Uq(su(n)) instead of the groups SU(n)\nare taken as hadronic ﬂavor symmetries and improved baryon mass relations are\nderived. The basic approach of the construction is the representation theory of\nUq(su(n)) [16,26]. q-Deformed mass relations are computed from the expecta-\ntion value of the mass operator which is deﬁned in terms of the generators of the\ndynamical algebras (quantum groups) Uq(u(n+1)) or Uq(u(n, 1)). The expecta-\ntion values are computed from the matrix elements of these generators. Utilizing\nthe q-algebras U",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1607.01632v2/blocks/prose-sec-004",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Octet baryons",
+      "pageStart": 5,
+      "pageEnd": 5,
+      "target": "../sections/sec-004-23-octet-baryons.md",
+      "narrative": null,
+      "content": "Octet baryons\nWith the restriction that q = qn = eiπ/n for integer n, the q-deformed mass\nrelation for octet baryons obtained in [3] is\nN +\n1\n[2]qn −1Ξ = [3]qn\n[2]qn\nΛ +\n\u0012\n[2]qn\n[2]qn −1 −[3]qn\n[2]qn\n\u0013\nΣ.\n(11)\nThe deformed mass relations depend on the deformation parameter q and\nthe set of integers n produces an inﬁnite set of mass relations. The value on\nn that leads to the closest agreement with experimental data [27] is n = 7\nwhere it is the average mass of isoplets that has been used2. When q = eiπ/7,\n[3]q7 =\n[2]q7\n[2]q7 −1 and the mass relation (11) simpliﬁes to\nN +\nΞ\n[2]q7 −1 =\nΛ\n[2]q7 −",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1607.01632v2/blocks/prose-sec-005",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Decuplet baryons",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "../sections/sec-005-24-decuplet-baryons.md",
+      "narrative": null,
+      "content": "Decuplet baryons\nFor the decuplet baryons, the equal spacing rule (3) is deformed to [26]\n(Σ∗−∆+ Ω−Ξ∗) = [2]q(Ξ∗−Σ∗).\n(13)\nRearranging, (13) may be written as\nΩ−∆= (1 + [2]q)(Ξ∗−Σ∗),\n(14)\nwhich is reminiscent of the relations obtained by Okubo [20]\nΩ−∆= 3(Ξ∗−Σ∗),\n(15)\nthat, unlike the equal spacing rule holds for second order ﬂavor symmetry break-\ning.\nTaking q = eiπ/n one ﬁnds excellent agreement with data for n = 14. We\nnote however that n = 14 does not provide the best ﬁt to the experimental data.\nSolving for integer n suggests n = 16 should provide the best ﬁt. Experimental\nuncertainties o",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1607.01632v2/blocks/recommendation-sec-005-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 5,
+      "pageEnd": 6,
+      "target": "recommendation-sec-005-01.md",
+      "narrative": null,
+      "content": "Solving for integer n suggests n = 16 should provide the best ﬁt.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1607.01632v2/blocks/prose-sec-006",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Electromagnetic contributions",
+      "pageStart": 6,
+      "pageEnd": 7,
+      "target": "../sections/sec-006-3-electromagnetic-contributions.md",
+      "narrative": null,
+      "content": "Electromagnetic contributions\nThe masses within a given isoplet of a baryon multiplet diﬀer by a few tenths of\na percent. This mass splitting is the result of the electromagnetic contributions\nto baryon masses. The electromagnetic contributions to baryon masses may be\ndetermined within the QCD general parametrization scheme in the spin-ﬂavor\nspace considered by Morpurgo [21]. To zeroth order symmetry breaking the\nelectromagnetic contributions to the octet baryon masses are given in terms of\nfour parameters as [5]\nδ0p\n=\nµ + 5\n9ν + η + ρ\nδ0n = 2\n3µ\nδ0Λ\n=\n2\n3µ + 1\n9ν\nδ0Σ+ = µ + 5\n9ν + η + ρ\nδ0Σ−",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1607.01632v2/blocks/prose-sec-007",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Charge specific q-deformed baryon mass relations",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "../sections/sec-007-4-charge-specific-q-deformed-baryon-mass-relatio.md",
+      "narrative": null,
+      "content": "tions\nAs discussed in the introduction, the impressive accuracy of the q-deformed\nbaryon mass relations means that mass splitting within isoplets can no longer\nbe ignored. To account for these mass splitting the speciﬁc charges or baryons\nmust be inserted into the mass relations in such a way that the electromagnetic\ncontribution to masses is the same on both sides of the equation. In this section\nwe apply the work discussed in section 3 to the q-deformed octet and decuplet\nmass relations (12) and (13).\nWhat we ﬁnd is remarkably accurate charge\nspeciﬁc q-deformed mass relations for both octet",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1607.01632v2/blocks/prose-sec-008",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "New octet baryon mass relation",
+      "pageStart": 7,
+      "pageEnd": 8,
+      "target": "../sections/sec-008-41-new-octet-baryon-mass-relation.md",
+      "narrative": null,
+      "content": "New octet baryon mass relation\nOur starting point is the q-deformed octet baryon mass relations, eqn. (11). We\nnow apply the parametrization of Morpurgo [5] in order to rewrite the deformed\nmass relations in such a way that both sides have equal electromagnetic mass\ncontributions. Although somewhat more tedious than the case described in the\nprevious section, one may check that\np + 2[3]q\n3[2]q\nΞ0 +\n\u0012\n1\n[2]q −1 −2[3]q\n3[2]q\n\u0013\nΞ−= [3]q\n[2]q\nΛ −[3]q\n3[2]q\nΣ0 +\n\u0012\n1\n[2]q −1 −2[3]q\n3[2]q\n\u0013\nΣ−+ Σ+ (22)\nis unaﬀected by the electromagnetic corrections (to zeroth order in ﬂavor break-\ning).\nSubstituting",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1607.01632v2/blocks/recommendation-sec-007-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 7,
+      "pageEnd": 7,
+      "target": "recommendation-sec-007-01.md",
+      "narrative": null,
+      "content": "To account for these mass splitting the speciﬁc charges or baryons must be inserted into the mass relations in such a way that the electromagnetic contribution to masses is the same on both sides of the equation.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1607.01632v2/blocks/prose-sec-009",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "New decuplet baryon mass relation",
+      "pageStart": 8,
+      "pageEnd": 9,
+      "target": "../sections/sec-009-42-new-decuplet-baryon-mass-relation.md",
+      "narrative": null,
+      "content": "New decuplet baryon mass relation\nSimilarly to the octet case, accounting for the electromagnetic mass contribution\nto the SUq(3) deformed decuplet mass relation (13) leads to the new decuplet\nformula\nΩ−−∆−= ([2]q + 1)(Ξ∗−−Σ∗−).\n(24)\nIn [3] it was suggested that choosing q = eiπ/14 provides a good ﬁt to data.\nAlthough this remains true in the present case, there are other values of q for\nwhich the error is smaller. In particular, we consider the case where q = eiπ/21.\n8\nAlthough this is not the absolute best choice for q 4, because 21 is a multiple\nof 7, it allows for an elegant new relation b",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1607.01632v2/blocks/prose-sec-010",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Octet-decuplet mass relation",
+      "pageStart": 9,
+      "pageEnd": 10,
+      "target": "../sections/sec-010-43-octet-decuplet-mass-relation.md",
+      "narrative": null,
+      "content": "Octet-decuplet mass relation\nBoth formulas (23) and (24) provide excellent ﬁts to experimental data. The\noctet formula is valid only for q = eiπ/7 whereas the decuplet formula is valid\nfor all any qn = eiπ/n, where n is an integer. In particular we chose n = 21 as\nit provides (with the exception of n = 22) the best ﬁt to data. Because 21 is a\nmultiple of 7, we can ﬁnd a relation between octet and decuplet baryon masses\nby solving both mass relations for [2]q7 and [2]q21 respectively and using the fact\nthat [2]3\nq21 = (q21 + q−1\n21 )3 = [2]q7 + 3[2]q21 to obtain\n\u0012 Ω−−∆−\nΞ∗−−Σ∗−−1\n\u00133\n−3\n\u0012 Ω−−∆−",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1607.01632v2/blocks/prose-sec-011",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "The Cabibbo angle as a function of q and JP",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "../sections/sec-011-5-the-cabibbo-angle-as-a-function-of-q-and-jp.md",
+      "narrative": null,
+      "content": "The Cabibbo angle as a function of q and JP\nIt is asserted in [16, 22] that there should be a direct connection between the\ndeformation parameter q and the Cabibbo angle θC.\nWith the choice of θ8 = π\n7 , such that q = eiθ8 for octet baryons and θ10 = π\n14,\nsuch that q = eiθ10 for decuplet baryons, the suggested explicit form between\nthese angles (which are related to q) and the Cabibbo angle is\nθ10 = θC,\nθ8 = 2θC.\n(26)\nThe Cabibbo angle here takes the exact value θC = π\n14.\nThese choices for θ8 and θ10 are a result of ﬁtting data to the q-deformed\noctet and decuplet mass sum rules in [2,3]. On",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1607.01632v2/blocks/prose-sec-012",
+      "types": [
+        "folio-assistant-core:Prose",
+        "doco:Section"
+      ],
+      "kind": "prose",
+      "title": "Discussion and conclusion",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "../sections/sec-012-6-discussion-and-conclusion.md",
+      "narrative": null,
+      "content": "Discussion and conclusion\nIn earlier works, the quantum group SUq(3) has been taken as a ﬂavor symmetry\nand mass formulas of improved accuracy derived for octet and decuplet baryons.\nIn the present paper we have built on these earlier works by taking into account\n(via Morpurgo’s parametrization scheme) the electromagnetic contributions to\noctet and decuplet baryons mass.\nThe deformed mass relations derived in [1–3] use the average of the isospin\nmultiplet masses. The mass diﬀerences within the isoplets should not be ignored\nat the level of accuracy aﬀorded by these deformed mass relations beca",
+      "truncated": true,
+      "provenance": "ingested",
+      "summary": {
+        "status": "not-summarised"
+      }
+    },
+    {
+      "id": "library/arxiv-1607.01632v2/blocks/recommendation-sec-011-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 10,
+      "target": "recommendation-sec-011-01.md",
+      "narrative": null,
+      "content": "The Cabibbo angle as a function of q and JP It is asserted in [16, 22] that there should be a direct connection between the deformation parameter q and the Cabibbo angle θC.",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1607.01632v2/blocks/recommendation-sec-012-01",
+      "types": [
+        "folio-assistant-core:Recommendation"
+      ],
+      "kind": "recommendation",
+      "title": "",
+      "pageStart": 10,
+      "pageEnd": 14,
+      "target": "recommendation-sec-012-01.md",
+      "narrative": null,
+      "content": "The mass diﬀerences within the isoplets should not be ignored at the level of accuracy aﬀorded by these deformed mass relations because they exceed the error in these formulas (for the best ﬁt value of the deformation parameter q).",
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    },
+    {
+      "id": "library/arxiv-1607.01632v2/blocks/table-001",
+      "types": [
+        "folio-assistant-core:Table",
+        "doco:Table"
+      ],
+      "kind": "table",
+      "title": "",
+      "pageStart": 14,
+      "pageEnd": 14,
+      "target": "../tables/table-1.csv",
+      "narrative": null,
+      "content": null,
+      "truncated": false,
+      "provenance": "ingested",
+      "summary": null
+    }
+  ]
+}
